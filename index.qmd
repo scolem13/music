@@ -1,0 +1,40 @@
+---
+title: "Music Practice (demo)"
+---
+
+This is a throwaway **Quarto** site wired to **Supabase** so you can get a feel
+for the new concepts before integrating any of it into your real site:
+
+- **Site-wide auth** — the bar at the top appears on *every* page. Sign in once
+  (email/password is easiest to start), and the session follows you around.
+- **Automatic time-on-page tracking** — every page you visit logs how long you
+  actively look at it. You wrote no tracking code on these pages; it's wired in
+  once via `_quarto.yml`.
+- **In-app action logging** — the Practice pages embed your real apps and log
+  plays and note-clicks.
+- **Role-based reporting** — the Teacher Report shows time + actions, but only
+  for students the signed-in person is allowed to see (enforced by the
+  database, not the page).
+
+## Try this
+
+1. Make sure you've run the one-time setup (see `README.md`): create the
+   Supabase tables and paste your URL + anon key into `config.js`.
+2. Use the bar at the top to **create an account** and **sign in**.
+3. Wander through a few **Lessons** — linger on each, switch browser tabs and
+   come back (watch that hidden time isn't counted).
+4. Open a **Practice** page, press play, click some notes.
+5. Open the **Teacher Report** to see your time and actions per page.
+
+::: callout-note
+For the first pass, sign in with **email/password** — it needs no extra setup.
+Google sign-in also works but requires a Google Cloud OAuth client and a
+redirect URL; see `README.md`.
+:::
+
+## What's new here vs. a plain Quarto site
+
+Nothing about your authoring changes — these are ordinary `.qmd` pages. The
+only additions live in `_quarto.yml` (three `include-*` lines) and three small
+files (`config.js`, `track.js`, and the `_includes/` partials). That's the
+whole integration surface.

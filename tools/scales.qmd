@@ -1,0 +1,7 @@
+---
+title: "Scales"
+---
+
+::: {.column-screen}
+{{< include _scales.qmd >}}
+:::

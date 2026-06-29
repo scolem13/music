@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "teacher/report.html",
+    "href": "teacher/report.html",
+    "title": "Teacher Report",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\nTime + actions per page, per student. This page runs the same queries for everyone — the database (Row Level Security) decides which rows come back: a student sees only themselves, a teacher their enrolled students, an admin the whole school, a parent only their children.\nLoading… (sign in as a teacher/admin/parent above)\nRefresh\n\n\n\n\nStudent\nPage\nActive time\nVisits\nPlays\nNote clicks"
+  },
+  {
+    "objectID": "practice/tunes.html",
+    "href": "practice/tunes.html",
+    "title": "Practice: Tunes",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n    \n    \n    \n    \n\n\n    \n        \n            Download\n            \n                Seek: \n                \n                    Percent\n                    Seconds\n                    Beats\n                \n                Seek\n                First start playing to load audio before seeking.\n            \n            MIDI\n            \n            \n            Next Tune\n            \n            \n                \n                    \n                        \n                            \n                                \n                                \n                            \n                            \n                                Instrument:\n                                \n                                    Piano\n                                    Flute\n                                    Clarinet\n                                    Alto Sax\n                                    Trumpet\n                                    Trombone\n                                    Tuba\n                                    Percussion\n                                \n                            \n                            \n                                Show options?\n                                \n                            \n                        \n                        \n                            \n                                Playback instrument:\n                                \n                            \n                            \n                                Key:\n                                \n                                    CDbD\n                                    EbEF\n                                    GbGAb\n                                    ABbB\n                                \n                            \n                            \n                                Semitones:\n                                \n                            \n                            \n                                Further midi transposition:\n                                \n                            \n                            \n                                Octaves:\n                                \n                            \n                            \n                                Play chords?\n                                \n                            \n                            \n                                Play tune?\n                                \n                            \n                            \n                                Bass clef?\n                                \n                            \n                            \n                                Show cursor?\n                                \n                            \n                        \n                    \n                \n            \n            \n                Rand. Warp\n                Seek to Middle\n            \n            \n            Click on a note to play that note."
+  },
+  {
+    "objectID": "practice/assessment.html",
+    "href": "practice/assessment.html",
+    "title": "Assessment: Tonal Accuracy",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n  Enable the mic to begin.\n\n  \n    \n      Collection\n      Pattern\n      Next\n      Random\n       🔀 Shuffle order\n    \n    \n      Assessment\n        Repeat the pattern\n        Sing the resting tone\n        Sing the first pitch\n      \n      Concert Key\n      Transposed Key\n      View\n        Concert pitchTransposed\n      \n      Octave\n        -2-1\n        0+1+2\n      \n      Clef\n        treblebass\n        altotenor\n      \n      ▶ Hear pattern\n      \n    \n  \n\n  \n    \n      Pattern\n      \n    \n    \n      Your response\n      \n    \n  \n\n  \n  \n    \n      \n        Enable mic\n        ● Record attempt\n        ∞ Continuous mode\n      \n    \n\n    \n      Live\n      \n        —\n        \n      \n      \n        \n        \n        \n      \n      -50¢nearest note+50¢\n    \n  \n  \n    \n      Result\n      \n        Listening — sing the notes…\n        \n      \n      Enable the mic, pick a pattern, then record — or start Continuous mode.\n    \n\n    \n      Recording — saved for manual review\n      \n      ⬇ Download\n      No recording yet.\n    \n\n    \n      Continuous session — all responses in one file\n      \n        ⬇ Download responses\n        ⬇ Download labels (SRT)\n      \n      Run Continuous mode, then Stop to download every response (model playback and gaps excluded).\n    \n\n    \n      Options & diagnostics\n      \n        \n          Tolerance (± cents)\n          \n            25 (strict)\n            50 (default)\n            100 (lenient)\n          \n        \n        \n          Octave tolerance\n           accept ±1–2 octaves"
+  },
+  {
+    "objectID": "practice/reading-benchmarks.html",
+    "href": "practice/reading-benchmarks.html",
+    "title": "Reading Benchmarks",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n  Enable the mic to begin.\n\n  \n    \n      Benchmark set\n      Line\n      Next line\n      Tempo (quarter BPM): 100\n        \n      Metronome volume: 70\n        \n    \n    Sight-reading: the line isn't played for you. You get a two-bar count-off, then read and play it.\n  \n\n  \n    \n      Read this\n      \n    \n  \n\n  \n  \n    \n      \n        Enable mic\n        ● Record performance\n        Beat \n      \n    \n\n    \n      Live\n      \n      —\n    \n  \n  \n    \n      Result\n      …\n      \n      Enable the mic, pick a line, then record a performance.\n      \n        TargetYou\n        Rhythm: target vs your onsets (green = on time). Pitch is in the table.\n      \n    \n\n    \n      Recording — saved for manual review\n      \n      ⬇ Download\n      \n    \n\n    \n      Tolerances\n      \n        Pitch (± cents)\n          3550100\n        Rhythm (± ms)\n          80120180\n        Onset sensitivity\n          HighMediumLow\n        Octaves ±1–2"
+  },
+  {
+    "objectID": "lessons/quarter-notes.html",
+    "href": "lessons/quarter-notes.html",
+    "title": "Lesson: The Quarter Note",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\nThe quarter note gets one beat in common time. In a 4/4 measure you can fit four of them — one per beat. We count them simply: 1 – 2 – 3 – 4."
+  },
+  {
+    "objectID": "lessons/quarter-notes.html#hear-it-then-say-it",
+    "href": "lessons/quarter-notes.html#hear-it-then-say-it",
+    "title": "Lesson: The Quarter Note",
+    "section": "Hear it, then say it",
+    "text": "Hear it, then say it\nBefore reading a single quarter note, you should be able to audiate a steady beat — feel it internally — and chant a neutral syllable on each beat. Only after the sound is secure do we attach the symbol."
+  },
+  {
+    "objectID": "lessons/quarter-notes.html#practice-steps",
+    "href": "lessons/quarter-notes.html#practice-steps",
+    "title": "Lesson: The Quarter Note",
+    "section": "Practice steps",
+    "text": "Practice steps\n\nTap a steady beat with your foot.\nChant “bah” on each tap for four beats.\nNow look at four quarter notes and chant them while tapping.\n\nWhen you’re ready, head to Practice → Rhythm Patterns and play a few quarter-note patterns. Your time on this page and your plays over there are both recorded automatically.\n\n\n\n\n\n\nTip\n\n\n\nThis page is being timed. Stay as long as you need; switch tabs and the timer pauses. Come back and it resumes."
+  },
+  {
+    "objectID": "lessons/tonal-do-re-mi.html",
+    "href": "lessons/tonal-do-re-mi.html",
+    "title": "Lesson: Do, Re, Mi (Tonal Patterns)",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\nTonal patterns are short groups of pitches we learn by ear first, with solfège, before we ever name a key signature. The foundation is the major tonic and dominant."
+  },
+  {
+    "objectID": "lessons/tonal-do-re-mi.html#stepwise-motion",
+    "href": "lessons/tonal-do-re-mi.html#stepwise-motion",
+    "title": "Lesson: Do, Re, Mi (Tonal Patterns)",
+    "section": "Stepwise motion",
+    "text": "Stepwise motion\nThe most basic tonal pattern is stepwise: Do – Re – Mi – Fa – Sol and back down. Sing it on a neutral syllable first, then with solfège, then connect it to what you see on the staff."
+  },
+  {
+    "objectID": "lessons/tonal-do-re-mi.html#tonic-and-dominant",
+    "href": "lessons/tonal-do-re-mi.html#tonic-and-dominant",
+    "title": "Lesson: Do, Re, Mi (Tonal Patterns)",
+    "section": "Tonic and dominant",
+    "text": "Tonic and dominant\n\nTonic (Do – Mi – Sol): the “home” chord, restful.\nDominant (Sol – Ti – Re): the “tension” chord that wants to resolve home.\n\nHearing the difference between these two is the single most important tonal skill in beginning band."
+  },
+  {
+    "objectID": "lessons/tonal-do-re-mi.html#practice-steps",
+    "href": "lessons/tonal-do-re-mi.html#practice-steps",
+    "title": "Lesson: Do, Re, Mi (Tonal Patterns)",
+    "section": "Practice steps",
+    "text": "Practice steps\n\nSing Do, then find Sol.\nSing the tonic arpeggio, then the dominant.\nGo to Practice → Tonal Patterns and play major stepwise patterns, singing along with solfège."
+  },
+  {
+    "objectID": "tools/chord-sheet.html",
+    "href": "tools/chord-sheet.html",
+    "title": "Chord Sheet",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n        Sheet title\n        \n      \n      \n        Key\n        \n      \n      \n       Show solfege labels\n    \n  \n\n  \n    \n      Chords\n      \n        0 chords\n        Clear\n      \n    \n    \n    Enter or Tab to parse · click × to remove\n    \n\n    \n    \n      \n        Add by type\n        \n      \n      \n        Chord type\n        \n      \n      + Add\n    \n\n    \n    \n      \n        Add by Roman numeral\n        \n      \n      Add\n    \n    \n  \n\n  \n    \n      Instruments\n      \n        All\n        None\n      \n    \n    \n\n    \n    \n       Favor voice leading\n       Show fingerings\n    \n    \n      Piano: Right hand\n      Piano: Left hand\n      Piano: Two hands\n    \n    Voice leading auto-picks each chord's voicing to minimize motion from the previous chord. Fretboard: barre = 1, then ascending frets. Piano two-hand: left hand in red, right in gray.\n  \n\n  \n    \n      Preview\n      Add chords and select instruments to build your sheet\n    \n    Print / Save PDF"
+  },
+  {
+    "objectID": "tools/chord-sheet-deluxe.html",
+    "href": "tools/chord-sheet-deluxe.html",
+    "title": "Chord Sheet — Stage Edition",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\nChangesStage EditionThe whole tune book as chord charts. Pick one, set the tempo, and play along with the rhythm section.Find a tune▶ PlayTempo♩=110KeyBeat linesOffEvery beatEvery 2 beatsAccompanimentSoundfont (melody)NotationTenorTreble 8Bass clef Roman numerals 🔁 CycleMelodyChordsBassDrums"
+  },
+  {
+    "objectID": "tools/keyboard.html",
+    "href": "tools/keyboard.html",
+    "title": "Keyboard",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n\n  \n  \n    Keyboard\n    Label All\n    Add Text\n    Add Dot\n    Delete\n    Undo\n    Redo\n    Reset\n    \n    Canvas\n    Export SVG\n    Copy PNG\n    Export PNG\n  \n\n  \n  \n    Keyboard\n    Labels\n    Add Text\n    Add Dot\n    Delete\n    Undo\n    Redo\n    Reset\n    Canvas\n    Copy PNG\n    Export SVG\n    Export PNG\n  \n\n  \n    \n      Close\n    \n    \n  \n\n  \n    \n      \n        \n          \n        \n      \n    \n  \n\n  \n    Keyboard Diagram Generator — Local Copy"
+  },
+  {
+    "objectID": "tools/drumset.html",
+    "href": "tools/drumset.html",
+    "title": "Drumset",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n  \n  \n\n\n  \n    Modern Band Drum Machine V2\n\n    \n      Note: This local copy requires audio sample files (samples/*.mp3)\n      and instrument icon images (images/*.png) to be placed next to this HTML file.\n      The sequencer UI and grid work without them; playback needs the samples/ folder.\n    \n\n    \n      \n      \n        \n          Playback\n          \n            ▶ Play\n            ■ Stop\n            BPM:\n            \n          \n          Tempo note value\n          \n            ♪\n            ♩\n            ♪.\n          \n          \n            \n              \n              Metronome\n            \n            \n              \n              Eighth pulse\n            \n          \n        \n\n        \n          Grid Settings\n          \n            Beats:\n            \n            Note value:\n            \n              4\n              8\n            \n          \n          Subdivision\n          \n            ♪\n            ♩\n            𝅘𝅥𝅯\n          \n        \n      \n\n      \n      \n        \n          Rhythm Labels\n          \n            Style:\n            \n              Standard\n              Eastman\n            \n            \n              \n              Use & for +\n            \n          \n          \n            Customize Labels\n          \n          \n            Label size: 1rem\n            \n          \n        \n\n        \n          Title\n          \n            \n          \n          \n            Title size:\n            \n          \n        \n\n        \n          Diagram Size\n          \n            Scale: 1\n          \n          \n        \n      \n    \n\n    \n    \n      \n        Export resolution:\n        \n          Small (1×)\n          Medium (2×)\n          Large (3×)\n        \n      \n      Export PNG\n    \n\n    \n    \n      \n        \n        \n          \n            \n          \n        \n      \n    \n\n    \n    \n      Instrument Selection\n      \n        \n          Top Row (cymbals)\n          \n        \n        \n        \n          Middle Row (snare / toms)\n          \n        \n        \n        \n          Bottom Row (kick / foot)"
+  },
+  {
+    "objectID": "tools/solfege-keyboard.html",
+    "href": "tools/solfege-keyboard.html",
+    "title": "Solfège Keyboard",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSolfège Keyboard \nCreated by Keith William Horwood © 2013\nAdapted by Sean Coleman © 2016\n\nSound\n\n    Keyboard\n    Organ\n    Acoustic Guitar\n    \n\n\n\nWhat is Do?\n\n    C\n    C#/Db\n    D\n    D#/Eb\n    E\n    F\n    F#/Gb\n    G\n    G#/Ab\n    A\n    A#/Bb\n    B\n\n\n\n\n\n\nRange [C3-B5]\n\n\n(Use left/right arrows to adjust with keyboard)"
+  },
+  {
+    "objectID": "tools/circle-of-fifths.html",
+    "href": "tools/circle-of-fifths.html",
+    "title": "Circle of Fifths",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      Tonality\n      \n        Major (do)\n        Dorian (re)\n        Phrygian (mi)\n        Lydian (fa)\n        Mixo (so)\n        Minor (la)\n        Locrian (ti)\n      \n    \n    \n      \n    \n    \n      Minor type\n      \n        Natural (Aeolian)\n        Harmonic\n      \n    \n  \n  \n    ☾ dark"
+  },
+  {
+    "objectID": "tools/scales.html",
+    "href": "tools/scales.html",
+    "title": "Scales",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n        Improv Scale Library\n        Current: C Major\n      \n      \n        Mode\n        Improv Scale Library\n        Play\n      \n      \n        \n          \n            Mode\n            \n              \n              Scales\n              \n              Chords\n            \n          \n          \n            Root\n            \n              CC#Db\n              DD#Eb\n              EFF#Gb\n              GG#Ab\n              AA#BbB\n            \n          \n          \n            Scale Type\n            \n          \n          \n            Chord Quality\n            \n          \n          \n            Enharmonics\n            Arrange layout\n            Play\n          \n        \n        \n          \n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n          \n            \n              ▾\n              Notation\n            \n            \n              \n                Export\n                \n                  PNG\n                  SVG\n                \n              \n              \n                ⋮\n                \n                  Labels\n                  Stemless\n                  BackgroundWhiteTransparent\n                  \n                  \n                    Spacing1.00×\n                    Measure width1.00×\n                  \n                  \n                  \n                    ClefTrebleBassAltoTenor\n                    Octave–14+1\n                  \n                  \n                  \n                    Download SVG\n                    Download PNG\n                    Reset section\n                  \n                \n              \n            \n          \n          \n        \n      \n\n      \n        \n          \n            \n              ▾\n              Piano\n            \n            \n              \n                Export\n                PNGSVG\n              \n              \n                ⋮\n                \n                  Labels\n                  BackgroundWhiteTransparent\n                  \n                  \n                    Highlight color\n                    StripesEnable stripes\n                    Stripe thickness\n                  \n                  \n                  \n                    Download SVG\n                    Download PNG\n                    Reset section\n                  \n                \n              \n            \n          \n          \n        \n      \n\n      \n        \n          \n            \n              ▾\n              Fretboard\n            \n            \n              \n                Export\n                PNGSVG\n              \n              \n                ⋮\n                \n                  Labels\n                  InstrumentGuitar (E A D G B E)Bass (E A D G)Ukulele (G C E A)\n                  BackgroundWhiteTransparent\n                  \n                  \n                    Fret count\n                    Label size\n                  \n                  \n                  \n                    Download SVG\n                    Download PNG\n                    Reset section\n                  \n                \n              \n            \n          \n          \n        \n      \n    \n    Based on the Jamey Aebersold Scale Syllabus.\n  \n\n  \n    Enharmonics\n    Override any note spelling for the current selection.Reset to defaults\n  \n\n  \n    Arrange layout\n    Drag to reorder. Toggle visibility to show/hide sections.Reset order\n  \n\n  Current: C Major"
+  },
+  {
+    "objectID": "tools/director.html",
+    "href": "tools/director.html",
+    "title": "Director",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    \n      \n        \n          Temperament\n          \n            \n            Equal\n            \n            Pure (JI)\n          \n        \n        \n          A4 Reference\n          \n            \n            Hz\n          \n        \n        \n          Stop All\n          \n            Transpose\n            \n              −\n              \n              +\n              st\n            \n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n          Chord: —\n        \n        \n          \n            Key (Do)\n            \n              Auto (detected)\n              CC#/Db\n              DD#/Eb\n              EF\n              F#/GbG\n              G#/AbA\n              A#/BbB\n            \n            \n          \n        \n      \n    \n  \n\n  \n    \n      \n        \n          \n            \n              \n                ▾\n              \n              Keyboard\n            \n            \n              \n                Tone\n                \n                  Sine\n                  Triangle\n                  Square\n                  Saw\n                \n              \n              Stop All\n            \n          \n          \n          \n            \n              Volume\n              \n              \n                \n                \n              \n            \n            \n              \n            \n            \n              \n            \n            —\n            \n              \n                \n                Show black key labels\n              \n              \n                \n                Show solfege labels\n              \n              \n                \n                Transpose labels\n              \n              \n                Set root (JI)\n                \n                  Auto (detected)\n                  CC#/Db\n                  DD#/Eb\n                  EF\n                  F#/GbG\n                  G#/AbA\n                  A#/BbB\n                \n              \n            \n            \n              PLAY\n              \n                Computer keyboard: Q-U / I-] / Z-. play white keys, number row /\n                A,S / F-L play black keys (low/mid/high octave rows).\n                Press Esc for command mode (? for help).\n              \n              Base octave:\n              -\n              C4\n              +\n            \n          \n          \n        \n      \n\n      \n        \n          \n            \n              \n                ▾\n              \n              Metronome\n            \n            \n          \n          \n          \n            \n              \n                Tempo\n                \n                  \n                  BPM\n                \n              \n              \n                Start\n                Stop\n              \n            \n            \n            \n              Quarter\n              Eighth\n              Triplet\n              Sixteenth\n            \n          \n          \n        \n      \n\n      \n        \n          \n            \n              \n                ▾\n              \n              Drones\n            \n            \n              \n                \n                Equal\n                \n                Pure\n              \n              Stop All\n            \n          \n          \n          \n\n            \n            \n              \n                Drones\n              \n              \n                Shruti Box\n              \n              \n                Drawbars\n              \n            \n\n            \n\n              \n              \n                \n                  Tone\n                  \n                    Sine\n                    Triangle\n                    Square\n                    Saw\n                  \n                \n                Chord: —\n                \n                  \n                    Add drone\n                    \n                      \n                      Add\n                    \n                  \n                  \n                    Master Volume\n                    \n                  \n                \n                \n                  \n                    Add chord (Roman numeral)\n                    \n                      \n                      Add Chord\n                    \n                    \n                  \n                \n                \n                  \n\n\n\nNote\nFreq\nDetune (¢ / Hz)\nSolo\nMute\n\n\n\n\n\n\n\n                \n              \n\n              \n              \n                \n                  \n                    Wave\n                    \n                      Triangle\n                      Sine\n                      Square\n                      Saw\n                    \n                  \n                  Clear All\n                \n                \n                —\n              \n\n              \n              \n                \n                  \n                    Root\n                    \n                  \n                  ▶ Play\n                  00000 0000\n                \n                \n                  Presets:\n                  Full\n                  Jazz\n                  Rock\n                  Church\n                  Gospel\n                  Strings\n                  Clear\n                \n                \n              \n\n            \n          \n          \n        \n      \n\n      \n        \n          \n            \n              \n                ▾\n              \n              MIDI Keyboard\n            \n            Not connected\n          \n          \n          \n            Connect a class compliant USB or Bluetooth MIDI keyboard. Incoming Note On/Off will trigger the on screen instrument and respect temperament settings.\n            \n              \n                Input Device\n                \n              \n              \n                Velocity → Volume curve\n                \n              \n            \n          \n          \n        \n      \n    \n  \n\n  \n  \n    \n      \n        COMMAND MODE\n        press a key · Esc or Enter to return to play\n      \n      \n        \n          Transport\n          SpaceStop all (panic)\n          mMetronome start/stop\n          ,.Tempo −/+ (Shift ×10)\n          tTemperament Equal↔Pure\n          hHold on/off\n        \n        \n          Navigate\n          dDrones tab\n          sShruti tab\n          bDrawbars tab\n          wCycle keyboard wave\n          []Keyboard volume −/+\n        \n        \n          Pitch & key\n          ←→Transpose −/+\n          ↑↓Octave −/+\n          kSet key (Do)… then c-b, or 0=Auto\n          rReset transpose + key\n          ngToggle note / solfège labels\n        \n        \n          Drones / Shruti / Bars\n          xShruti: clear all\n          pDrawbars: play/stop\n          1–7Drawbar presets"
+  },
+  {
+    "objectID": "tools/fretboard.html",
+    "href": "tools/fretboard.html",
+    "title": "Fretboard",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n  \n    Fretboard Diagram Generator\n    \n      \n        \n          Layout\n        \n        \n          \n            \n              Preset TuningCustomGuitar StandardGuitar Drop DGuitar Open GUkulele SopranoUkulele BaritoneUkulele BassBanjoBass (4-string)\n              Strings\n              Frets\n              OrientationVerticalHorizontal\n              String Labels (comma-separated)Show String Labels\n            \n          \n        \n      \n      \n        \n          Text\n        \n        \n          \n            Title\n            Title Size\n            Start Fret\n            Hide Start Fret Label\n            Fret Label Size\n            Watermark Text\n            Watermark Size\n          \n        \n      \n      \n        \n          Open / Muted Strings\n        \n        \n          \n        \n      \n    \n\n    \n      Customize Dot\n      \n        Fill Color\n        Stroke Color\n        Stroke Width\n        Label Text\n        Label Color\n        Label Size\n      \n    \n\n    \n      Customize Dots\n      Clear Dots\n      Download SVG\n      Download PNG\n      Hand-drawn Style\n    \n\n    \n      \n        \n          \n        \n      \n    \n\n    \n      Diagram Max Width: 600px"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Music Practice (demo)",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\nThis is a throwaway Quarto site wired to Supabase so you can get a feel for the new concepts before integrating any of it into your real site:"
+  },
+  {
+    "objectID": "index.html#try-this",
+    "href": "index.html#try-this",
+    "title": "Music Practice (demo)",
+    "section": "Try this",
+    "text": "Try this\n\nMake sure you’ve run the one-time setup (see README.md): create the Supabase tables and paste your URL + anon key into config.js.\nUse the bar at the top to create an account and sign in.\nWander through a few Lessons — linger on each, switch browser tabs and come back (watch that hidden time isn’t counted).\nOpen a Practice page, press play, click some notes.\nOpen the Teacher Report to see your time and actions per page.\n\n\n\n\n\n\n\nNote\n\n\n\nFor the first pass, sign in with email/password — it needs no extra setup. Google sign-in also works but requires a Google Cloud OAuth client and a redirect URL; see README.md."
+  },
+  {
+    "objectID": "index.html#whats-new-here-vs.-a-plain-quarto-site",
+    "href": "index.html#whats-new-here-vs.-a-plain-quarto-site",
+    "title": "Music Practice (demo)",
+    "section": "What’s new here vs. a plain Quarto site",
+    "text": "What’s new here vs. a plain Quarto site\nNothing about your authoring changes — these are ordinary .qmd pages. The only additions live in _quarto.yml (three include-* lines) and three small files (config.js, track.js, and the _includes/ partials). That’s the whole integration surface."
+  },
+  {
+    "objectID": "lessons/dotted-rhythms.html",
+    "href": "lessons/dotted-rhythms.html",
+    "title": "Lesson: Dotted Rhythms",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\nA dot adds half the value of the note again. A dotted half note (normally two beats) becomes three beats. A dotted quarter becomes one-and-a-half."
+  },
+  {
+    "objectID": "lessons/dotted-rhythms.html#the-dotted-quarter-plus-eighth-figure",
+    "href": "lessons/dotted-rhythms.html#the-dotted-quarter-plus-eighth-figure",
+    "title": "Lesson: Dotted Rhythms",
+    "section": "The dotted-quarter-plus-eighth figure",
+    "text": "The dotted-quarter-plus-eighth figure\nThe classic figure is a dotted quarter followed by an eighth — the “long- short” pattern you hear at the start of countless tunes. It’s tricky because the eighth note lands on the and of beat two, not on a beat."
+  },
+  {
+    "objectID": "lessons/dotted-rhythms.html#practice-steps",
+    "href": "lessons/dotted-rhythms.html#practice-steps",
+    "title": "Lesson: Dotted Rhythms",
+    "section": "Practice steps",
+    "text": "Practice steps\n\nChant a steady “1 & 2 & 3 & 4 &”.\nHold the dotted quarter across “1 & 2”, then say the eighth on “&”.\nTry it slowly, then bring it up to tempo.\n\nThen go to Practice → Tunes and find a tune that uses this figure. Play it a few times and listen for the long-short.\n\n\n\n\n\n\nTip\n\n\n\nNotice this lesson tracks separately from the quarter-note lesson — the report will show your time on each page, not just “lessons” as a lump."
+  },
+  {
+    "objectID": "practice/assessment-rhythm.html",
+    "href": "practice/assessment-rhythm.html",
+    "title": "Assessment: Rhythmic Accuracy",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n  Enable the mic to begin.\n\n  \n    \n      Collection\n      Pattern\n      Next\n      Random\n       🔀 Shuffle order\n      ▶ Hear pattern (with count-in)\n      Tempo (macrobeats/min): 90\n        \n    \n  \n\n  \n    \n      Pattern\n      \n    \n    \n      Performed rhythm — your last recording\n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        Enable mic\n        ● Record attempt\n        ∞ Continuous mode\n        Macrobeat \n      \n    \n\n    \n      Result\n      \n        Listening — clap/tap the rhythm…\n        \n      \n      Enable the mic, pick a pattern, then record — or start Continuous mode.\n      \n        \n          Target\n          You\n        \n        Green = matched attack · red = missed target or extra attack.\n      \n    \n  \n  \n    \n      Recording — saved for manual review\n      \n      ⬇ Download\n      No recording yet.\n    \n\n    \n      Continuous session — all responses in one file\n      \n        ⬇ Download responses\n        ⬇ Download labels (SRT)\n      \n      Run Continuous mode, then Stop to download every response (count-in/model and gaps excluded).\n    \n\n    \n      Options & diagnostics\n      \n        \n          Timing tolerance (± ms)\n          \n            60 (strict)\n            100 (default)\n            150 (lenient)\n          \n        \n        \n          Count-in (manual record)\n          \n            2 macrobeats\n            4 macrobeats\n          \n        \n        \n          Onset sensitivity\n          \n            High\n            Medium\n            Low\n          \n        \n        \n          Metronome\n           audible (headphones)\n           visual\n        \n      \n      \n        🎯 Calibrate latency (speakers)\n        Not calibrated — using the browser's output-latency estimate.\n      \n      \n        Live input level\n        \n        Attacks detected: 0"
+  },
+  {
+    "objectID": "practice/assessment-tune.html",
+    "href": "practice/assessment-tune.html",
+    "title": "Assessment: Tune (pitch + rhythm) — prototype",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n\n\n\n\n  Enable the mic to begin.\n\n  \n    Find a tune\n    \n  \n\n  \n    Setup & controls\n    \n    \n      Collection\n      Tune\n      Next\n      ▶ Play tune\n      Tempo (quarter BPM): 100\n        \n       🎹 Chords\n       🎵 Play melody\n       🔁 Cycle\n    \n    \n      Melody voice\n        \n          PianoElectric piano\n          Nylon guitarBass\n          VibraphoneMarimba\n        \n      Accompaniment voice\n        \n          PianoElectric piano\n          Nylon guitarBass\n          VibraphoneMarimba\n        \n    \n    \n      Instrument (display)\n        \n          PianoFlute\n          ClarinetAlto Sax\n          TrumpetTrombone\n          TubaPercussion\n        \n      Concert Key\n        \n          As written\n          CD♭D\n          E♭EF\n          G♭GA♭\n          AB♭B\n        \n      Transposed Key\n        \n          As written\n          CD♭D\n          E♭EF\n          G♭GA♭\n          AB♭B\n        \n      ⇄ Enharmonic\n    \n    \n      Metronome volume: 70\n        \n      Chord volume: 55\n        \n    \n    \n  \n\n  \n    \n      Notation\n      \n        \n        \n        \n      \n    \n    \n      Chord chart\n      \n        \n          Beat lines\n            OffEvery beatEvery 2 beats\n           Roman numerals\n        \n        \n      \n    \n  \n\n  \n  \n    \n      \n        Enable mic\n        ● Record performance\n        Beat \n      \n    \n\n    \n      Live\n      \n      —\n    \n  \n  \n    \n      Result\n      …\n      \n      Enable the mic, pick a tune, then record a performance.\n      \n        TargetYou\n        Rhythm: target vs your onsets (green = on time). Pitch is in the table.\n      \n    \n\n    \n      Recording — saved for manual review\n      \n      ⬇ Download\n      \n    \n\n    \n      Tolerances\n      \n        Pitch (± cents)\n          3550100\n        Rhythm (± ms)\n          80120180\n        Onset sensitivity\n          HighMediumLow\n        Octaves ±1–2"
+  },
+  {
+    "objectID": "practice/rhythms.html",
+    "href": "practice/rhythms.html",
+    "title": "Practice: Rhythm Patterns",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n    \n    \n    \n    \n\n\n    \n        \n            Download\n            \n                Seek: \n                \n                    Percent\n                    Seconds\n                    Beats\n                \n                Seek\n                First start playing to load audio before seeking.\n            \n            MIDI\n            \n            \n            \n                \n                    \n                        \n                            \n                                \n                                \n                            \n                            Next\n                            Rand\n                            \n                            \n                        \n                    \n                \n            \n            \n                Rand. Warp\n                Seek to Middle\n            \n            \n            Click on a note to play that note."
+  },
+  {
+    "objectID": "practice/patterns.html",
+    "href": "practice/patterns.html",
+    "title": "Practice: Tonal Patterns",
+    "section": "",
+    "text": "Checking sign-in…\n\n  \n    \n    \n    Sign in\n    Create\n    Google\n  \n\n  \n\n  \n    \n    Sign out\n  \n\n\n\n\n\n\n\n\n\n    \n    \n    \n    \n    \n\n\n    \n        \n            \n                \n                \n            \n            \n            \n                \n                \n            \n            \n                \n                \n            \n        \n    \n    Do Re Mi\n    \n        \n            \n            \n                \n                Next\n                Random\n                \n                \n                \n                    Opts?\n                    \n                \n                \n                    Notes?\n                    \n                \n                \n                    Solfege?\n                    \n                \n            \n            \n                Key: \n                \n                    CDbD\n                    EbEF\n                    GbGAb\n                    ABbB\n                \n                Semitones: \n                \n                \n                    Octaves: \n                    -\n                    \n                    \n                    \n                    \n                    +\n                \n                \n                    Top: \n                    \n                    \n                    \n                    \n                \n                \n                    Oct 2?"
+  }
+]

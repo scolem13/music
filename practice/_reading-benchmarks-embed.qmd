@@ -1,0 +1,88 @@
+```{=html}
+<link rel="stylesheet" href="/apps/shared/assessment.css?v=8">
+<link rel="stylesheet" href="/apps/tune-assessment/app.css">
+<div id="app-root">
+  <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
+
+  <div class="card">
+    <div class="row" style="align-items:end">
+      <div><label for="collection">Benchmark set</label><select id="collection"></select></div>
+      <div><label for="tune">Line</label><select id="tune"></select></div>
+      <button id="next" type="button">Next line</button>
+      <div><label for="tempo">Tempo (quarter BPM): <span id="tempoVal">100</span></label>
+        <input type="range" id="tempo" min="40" max="160" value="100" style="width:170px"></div>
+      <div><label for="metroVol">Metronome volume: <span id="metroVolV">70</span></label>
+        <input type="range" id="metroVol" min="0" max="100" value="70" style="width:150px"></div>
+    </div>
+    <div class="muted" style="margin-top:.4rem">Sight-reading: the line isn't played for you. You get a two-bar count-off, then read and play it.</div>
+  </div>
+
+  <div class="score-row single">
+    <div class="score-pane">
+      <h2>Read this</h2>
+      <div id="notation"></div>
+    </div>
+  </div>
+
+  <div class="cols">
+  <div class="col">
+    <div class="card">
+      <div class="row" style="align-items:center">
+        <button id="mic" class="primary">Enable mic</button>
+        <button id="record" disabled>● Record performance</button>
+        <span>Beat <span id="beatdot" style="display:inline-block;width:18px;height:18px;border-radius:50%;background:#e9ecef;box-shadow:0 0 0 1px #ced4da inset;vertical-align:middle;transition:background .12s;"></span></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Live</label>
+      <div class="level"><div id="levelbar"></div></div>
+      <div class="muted" id="liveNote" style="margin-top:.35rem">—</div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <label>Result</label>
+      <div id="capturing" class="muted" style="display:none">…</div>
+      <div class="bar" id="progwrap" style="display:none"><div id="prog"></div></div>
+      <div id="resultArea"><div class="muted">Enable the mic, pick a line, then record a performance.</div></div>
+      <div id="timelineWrap" style="display:none">
+        <div id="timeline"><div class="tl-label" style="top:6px">Target</div><div class="tl-label" style="top:46px">You</div></div>
+        <div class="muted" style="margin-top:.3rem">Rhythm: target vs your onsets (green = on time). Pitch is in the table.</div>
+      </div>
+    </div>
+
+    <div class="card" id="recCard" style="display:none">
+      <label>Recording — saved for manual review</label>
+      <audio id="player" controls style="width:100%; margin-top:.25rem"></audio>
+      <div class="row" style="margin-top:.6rem"><a id="download" class="btn">⬇ Download</a></div>
+      <div class="muted" id="recMeta" style="margin-top:.5rem"></div>
+    </div>
+
+    <div class="card">
+      <label>Tolerances</label>
+      <div class="row">
+        <div><label for="ptol">Pitch (± cents)</label><select id="ptol">
+          <option value="35">35</option><option value="50" selected>50</option><option value="100">100</option></select></div>
+        <div><label for="rtol">Rhythm (± ms)</label><select id="rtol">
+          <option value="80">80</option><option value="120" selected>120</option><option value="180">180</option></select></div>
+        <div><label for="sens">Onset sensitivity</label><select id="sens">
+          <option value="0.04">High</option><option value="0.06" selected>Medium</option><option value="0.10">Low</option></select></div>
+        <div><label>Octaves</label><label class="cb" style="padding:.55rem 0"><input type="checkbox" id="octtol" checked> ±1–2</label></div>
+      </div>
+    </div>
+  </div>
+  </div>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/tunes/reading-benchmarks-object.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js"></script>
+<script src="/apps/shared/session-log.js"></script>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/abc-transpose.js?v=1"></script>
+<script>window.TUNE_APP_CONFIG = { source:"readingBenchmarks", playback:false, storeKey:"readingBenchLast" };</script>
+<script src="/apps/tune-assessment/app.js?v=21"></script>
+</div>
+<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/establish-button.js"></script>
+```

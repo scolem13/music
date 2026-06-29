@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Drumset – Music Practice (demo)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<style>
+  #auth-bar {
+    font-family: sans-serif; font-size: 14px;
+    background: #f4f6f8; border-bottom: 1px solid #dde;
+    padding: 6px 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  #auth-bar input { font-size: 14px; padding: 3px 6px; width: 150px; }
+  #auth-bar button { font-size: 14px; padding: 3px 8px; cursor: pointer; }
+  #auth-bar .who { font-weight: bold; }
+  #auth-bar .spacer { flex: 1; }
+</style>
+<!-- App pages (Tools/Practice): hide the site-wide auth bar and add a small edge
+     margin so the full-bleed apps don't grind against the window. -->
+<style>
+  #auth-bar { display: none !important; }
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+</style>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice (demo)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/quarter-notes.html">
+ <span class="dropdown-text">Lesson: The Quarter Note</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/dotted-rhythms.html">
+ <span class="dropdown-text">Lesson: Dotted Rhythms</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tonal-do-re-mi.html">
+ <span class="dropdown-text">Lesson: Do, Re, Mi (Tonal Patterns)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Assessment: Tune (pitch + rhythm) — prototype</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Practice: Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Practice: Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Assessment: Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Assessment: Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/fretboard.html">
+ <span class="dropdown-text">Fretboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/keyboard.html">
+ <span class="dropdown-text">Keyboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/director.html">
+ <span class="dropdown-text">Director</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/solfege-keyboard.html">
+ <span class="dropdown-text">Solfège Keyboard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../teacher/report.html"> 
+<span class="menu-text">Teacher Report</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+<!-- Injected at the top of <body> on every page. Sign in once, anywhere;
+     the session persists across the whole site (shared localStorage). -->
+<div id="auth-bar">
+  <span id="auth-status">Checking sign-in…</span>
+
+  <span id="auth-signedout" style="display:none">
+    <input id="auth-email" placeholder="email">
+    <input id="auth-pass" type="password" placeholder="password">
+    <button onclick="authSignIn()">Sign in</button>
+    <button onclick="authSignUp()">Create</button>
+    <button onclick="authGoogle()">Google</button>
+  </span>
+
+  <span class="spacer"></span>
+
+  <span id="auth-signedin" style="display:none">
+    <span class="who" id="auth-who"></span>
+    <button onclick="authSignOut()">Sign out</button>
+  </span>
+</div>
+
+<script>
+  async function authRefresh() {
+    const { data: { session } } = await window.sb.auth.getSession();
+    const out = document.getElementById("auth-signedout");
+    const inn = document.getElementById("auth-signedin");
+    const status = document.getElementById("auth-status");
+    if (session) {
+      status.textContent = "";
+      out.style.display = "none";
+      inn.style.display = "inline";
+      document.getElementById("auth-who").textContent =
+        "Signed in: " + (session.user.user_metadata.full_name || session.user.email);
+    } else {
+      status.textContent = "Not signed in —";
+      out.style.display = "inline";
+      inn.style.display = "none";
+    }
+  }
+  async function authSignIn() {
+    const { error } = await window.sb.auth.signInWithPassword({
+      email: authEmail.value, password: authPass.value });
+    if (error) alert(error.message); else location.reload();
+  }
+  async function authSignUp() {
+    const { error } = await window.sb.auth.signUp({
+      email: authEmail.value, password: authPass.value });
+    alert(error ? error.message : "Account created. Now Sign in.");
+  }
+  async function authGoogle() {
+    await window.sb.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin + window.location.pathname }
+    });
+  }
+  async function authSignOut() { await window.sb.auth.signOut(); location.reload(); }
+  authRefresh();
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Drumset</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <style>
+/* ── drummachine.css ── */
+#drumset-root {
+  --label-font-size: 1rem;
+  --title-font-size: 1.5rem;
+  --dial-size: 50px;
+  --dial-border: 2px;
+  --dial-color: #333;
+  --dial-bg: transparent;
+  --dial-active-bg: #333;
+  --dial-active-color: #fff;
+}
+
+.sequencer {
+  background: #fff;
+  color: #000;
+  padding: 20px;
+  min-width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sequencer-container {
+  min-width: 500px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+#exportArea .row {
+  margin: 0;
+  flex-wrap: nowrap;
+  --bs-gutter-x: 0;
+  --bs-gutter-y: 0;
+}
+
+#exportArea .row > .label,
+#exportArea .row > .step {
+  width: auto;
+  max-width: none;
+  flex-shrink: 1;
+  margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.step-labels { order: 1; }
+.instrument-row { order: 0; align-items: center; }
+
+.label,
+.step {
+  flex: 1 1 0;
+  text-align: center;
+  font-weight: bold;
+  border: 1px solid #000;
+  background: #fff;
+  box-sizing: border-box;
+  padding: 5px 0;
+}
+
+.step-labels .label {
+  border: none;
+  border-top: 1px solid #000;
+  font-size: var(--label-font-size);
+}
+
+.step {
+  cursor: pointer;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step img {
+  max-height: 100%;
+  width: auto;
+}
+
+.current-step {
+  background: #ddd;
+  transition: background 0.1s;
+}
+
+#gridTitleDisplay {
+  font-size: var(--title-font-size);
+  text-align: center;
+  margin: 1em 0;
+}
+
+fieldset {
+  margin-bottom: 1em;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+legend {
+  font-weight: 600;
+  padding: 0 6px;
+  font-size: 0.9rem;
+}
+
+.dial-option {
+  width: var(--dial-size);
+  height: var(--dial-size);
+  border: var(--dial-border) solid var(--dial-color);
+  border-radius: 50%;
+  background: var(--dial-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: var(--dial-color);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  margin: 0 0.5rem;
+  user-select: none;
+}
+
+.dial-option.selected {
+  background: var(--dial-active-bg);
+  color: var(--dial-active-color);
+}
+
+.dial-option.disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+#subdivisionDial,
+#tempoDial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75em auto;
+}
+
+.centered-container {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  justify-content: flex-start;
+}
+
+.inline-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+#exportArea {
+  transform-origin: top left;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+#exportArea .overflow-auto {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sequencer-scale-stage {
+  display: inline-block;
+}
+
+.diagram-size-controls {
+  margin-top: 0.75rem;
+}
+
+.diagram-size-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.diagram-size-header label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+article#instrumentsMenu {
+  margin: 1em 0;
+}
+
+.instrument-group {
+  margin-bottom: 1em;
+}
+
+.instrument-group h4 {
+  margin: 0.5em 0;
+}
+
+.instrument-options img {
+  width: 50px;
+  height: auto;
+  margin: 0.25em;
+  opacity: 0.3;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.instrument-options img.active {
+  opacity: 1;
+}
+
+.sequencer-container {
+  transform-origin: top left;
+}
+
+/* ── accent theme ── */
+#drumset-root {
+  --accent-pink:      #e88697;
+  --accent-turquoise: #00b4ce;
+}#drumset-root {
+  background: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.btn-success {
+  background-color: var(--accent-turquoise) !important;
+  border-color:     var(--accent-turquoise) !important;
+  color: #fff !important;
+}
+.btn-success:hover { background-color: #00a4bc !important; }
+
+.btn-secondary {
+  background-color: var(--accent-pink) !important;
+  border-color:     var(--accent-pink) !important;
+  color: #fff !important;
+}
+.btn-secondary:hover { background-color: #d37686 !important; }
+
+.btn-outline-primary {
+  color: var(--accent-turquoise) !important;
+  border-color: var(--accent-turquoise) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--accent-turquoise) !important;
+  color: #fff !important;
+}
+
+/* Missing-image fallback: show instrument name as text */
+.step img[src*="images/"] {
+  font-size: 0.6rem;
+}
+
+/* Sample-missing note */
+.samples-warning {
+  background: #fff3cd;
+  border: 1px solid #ffc107;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+  </style>
+
+<div id="drumset-root">
+  <div class="container py-4">
+    <h1 class="mb-3">Modern Band Drum Machine V2</h1>
+
+    <div class="samples-warning">
+      <strong>Note:</strong> This local copy requires audio sample files (<code>samples/*.mp3</code>)
+      and instrument icon images (<code>images/*.png</code>) to be placed next to this HTML file.
+      The sequencer UI and grid work without them; playback needs the <code>samples/</code> folder.
+    </div>
+
+    <div class="row g-3 mb-3">
+      <!-- Left column: Playback + Grid -->
+      <div class="col-lg-6">
+        <fieldset>
+          <legend>Playback</legend>
+          <div class="inline-controls mb-2">
+            <button id="playBtn" class="btn btn-success">▶ Play</button>
+            <button id="stopBtn" class="btn btn-secondary">■ Stop</button>
+            <label for="tempo" class="mb-0">BPM:</label>
+            <input type="number" id="tempo" min="20" max="300" value="120" class="form-control form-control-sm" style="width:75px">
+          </div>
+          <div class="text-center" style="font-size:0.8rem;color:#666;margin-bottom:4px">Tempo note value</div>
+          <div id="tempoDial">
+            <div class="dial-option selected" id="tempo-quarter" data-value="1" title="Quarter note = BPM">♪</div>
+            <div class="dial-option" id="tempo-eighth" data-value="0.5" title="Eighth note = BPM">♩</div>
+            <div class="dial-option" id="tempo-dotted" data-value="1.5" title="Dotted quarter = BPM">♪.</div>
+          </div>
+          <div class="inline-controls mt-1">
+            <div class="form-check form-check-inline mb-0">
+              <input class="form-check-input" type="checkbox" id="metronomeToggle">
+              <label class="form-check-label" for="metronomeToggle">Metronome</label>
+            </div>
+            <div class="form-check form-check-inline mb-0">
+              <input class="form-check-input" type="checkbox" id="metronomePulseToggle">
+              <label class="form-check-label" for="metronomePulseToggle">Eighth pulse</label>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Grid Settings</legend>
+          <div class="inline-controls mb-2">
+            <label for="numerator" class="mb-0">Beats:</label>
+            <input type="number" id="numerator" min="1" max="16" value="4" class="form-control form-control-sm" style="width:65px">
+            <label for="bottomNote" class="mb-0">Note value:</label>
+            <select id="bottomNote" class="form-select form-select-sm" style="width:auto">
+              <option value="4">4</option>
+              <option value="8">8</option>
+            </select>
+          </div>
+          <div class="text-center" style="font-size:0.8rem;color:#666;margin-bottom:4px">Subdivision</div>
+          <div id="subdivisionDial">
+            <div class="dial-option" id="dial-option-quarter" title="Quarter notes">♪</div>
+            <div class="dial-option selected" id="dial-option-eighth" title="Eighth notes">♩</div>
+            <div class="dial-option" id="dial-option-sixteenth" title="Sixteenth notes">𝅘𝅥𝅯</div>
+          </div>
+        </fieldset>
+      </div>
+
+      <!-- Right column: Labels + Title + Size -->
+      <div class="col-lg-6">
+        <fieldset>
+          <legend>Rhythm Labels</legend>
+          <div class="inline-controls mb-2">
+            <label for="labelStyle" class="mb-0">Style:</label>
+            <select id="labelStyle" class="form-select form-select-sm" style="width:auto">
+              <option value="Standard">Standard</option>
+              <option value="Eastman">Eastman</option>
+            </select>
+            <div class="form-check form-check-inline mb-0">
+              <input class="form-check-input" type="checkbox" id="symbolToggle">
+              <label class="form-check-label" for="symbolToggle">Use &amp; for +</label>
+            </div>
+          </div>
+          <div class="mb-2">
+            <button id="customizeLabelsBtn" class="btn btn-outline-primary btn-sm">Customize Labels</button>
+          </div>
+          <div class="inline-controls">
+            <label for="labelSizeRange" class="mb-0 text-nowrap">Label size: <span id="labelSizeValue">1</span>rem</label>
+            <input type="range" id="labelSizeRange" min="0.5" max="2" step="0.1" value="1" class="form-range">
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Title</legend>
+          <div class="mb-2">
+            <input type="text" id="gridTitleInput" class="form-control form-control-sm" placeholder="Drum sequence title...">
+          </div>
+          <div class="inline-controls">
+            <label for="titleSizeRange" class="mb-0 text-nowrap">Title size:</label>
+            <input type="range" id="titleSizeRange" min="0.8" max="4" step="0.1" value="1.5" class="form-range">
+          </div>
+        </fieldset>
+
+        <fieldset class="diagram-size-controls">
+          <legend>Diagram Size</legend>
+          <div class="diagram-size-header">
+            <label for="sizeRange" class="mb-0">Scale: <strong><span id="sizeValue">1</span></strong></label>
+          </div>
+          <input type="range" id="sizeRange" min="0.5" max="6" step="0.05" value="1" class="form-range">
+        </fieldset>
+      </div>
+    </div>
+
+    <!-- Export controls -->
+    <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
+      <div class="inline-controls">
+        <label for="exportResolution" class="mb-0">Export resolution:</label>
+        <select id="exportResolution" class="form-select form-select-sm" style="width:auto">
+          <option value="1">Small (1×)</option>
+          <option value="2" selected="">Medium (2×)</option>
+          <option value="3">Large (3×)</option>
+        </select>
+      </div>
+      <button id="exportBtn" class="btn btn-success">Export PNG</button>
+    </div>
+
+    <!-- Diagram output -->
+    <div class="card mb-4">
+      <div class="card-body p-2" id="exportArea">
+        <div id="gridTitleDisplay"></div>
+        <div class="overflow-auto">
+          <div class="sequencer-scale-stage">
+            <div class="sequencer sequencer-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Instruments menu -->
+    <article id="instrumentsMenu" class="card">
+      <div class="card-header"><strong>Instrument Selection</strong></div>
+      <div class="card-body">
+        <div class="instrument-group" data-row="top">
+          <h5 class="anchored">Top Row <small class="text-muted">(cymbals)</small></h5>
+          <div class="instrument-options"></div>
+        </div>
+        <hr>
+        <div class="instrument-group" data-row="middle">
+          <h5 class="anchored">Middle Row <small class="text-muted">(snare / toms)</small></h5>
+          <div class="instrument-options"></div>
+        </div>
+        <hr>
+        <div class="instrument-group" data-row="bottom">
+          <h5 class="anchored">Bottom Row <small class="text-muted">(kick / foot)</small></h5>
+          <div class="instrument-options"></div>
+        </div>
+      </div>
+    </article>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+// ── drummachine.js ──
+
+// 1) Audio setup
+const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+const sampleUrls = {
+  hihat:     'samples/hihat.mp3',
+  hihatopen: 'samples/hihatopen.mp3',
+  crash:     'samples/crash.mp3',
+  snare:     'samples/snare.mp3',
+  hitom:     'samples/hitom.mp3',
+  lowtom:    'samples/lowtom.mp3',
+  floortom:  'samples/floortom.mp3',
+  rim:       'samples/rim.mp3',
+  rimshot:   'samples/rimshot.mp3',
+  flam:      'samples/flam.mp3',
+  kick:      'samples/kick.mp3',
+  hatfoot:   'samples/hatfoot.mp3',
+  metronome: 'samples/click.mp3'
+};
+const samples = {};
+
+async function loadSamples() {
+  for (const [name, url] of Object.entries(sampleUrls)) {
+    try {
+      const resp = await fetch(url);
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const buf = await resp.arrayBuffer();
+      samples[name] = await audioCtx.decodeAudioData(buf);
+    } catch (e) {
+      console.warn(`Sample not loaded: ${name}`);
+    }
+  }
+}
+
+function playSample(buffer) {
+  if (!buffer) return;
+  const src = audioCtx.createBufferSource();
+  src.buffer = buffer;
+  src.connect(audioCtx.destination);
+  src.start();
+}
+
+// 2) Instrument/menu state
+const instrumentOptions = {
+  top:    ['hihat','hihatopen','crash'],
+  middle: ['snare','hitom','lowtom','floortom','rim','rimshot','flam'],
+  bottom: ['kick','hatfoot']
+};
+const allInstruments = Object.keys(sampleUrls).filter(i => i !== 'metronome');
+let activeInstruments = {
+  top:    [...instrumentOptions.top],
+  middle: [...instrumentOptions.middle],
+  bottom: [...instrumentOptions.bottom]
+};
+
+// 3) Sequencer state
+let sequence = { top: [], middle: [], bottom: [] };
+let totalStepsGlobal = 16;
+let currentStep = 0;
+let isPlaying = false;
+let intervalId = null;
+let customLabels = [];
+
+// 4) UI refs
+const sequencerContainer   = document.querySelector('.sequencer-container');
+const playBtn              = document.getElementById('playBtn');
+const stopBtn              = document.getElementById('stopBtn');
+const tempoInput           = document.getElementById('tempo');
+const metronomeToggle      = document.getElementById('metronomeToggle');
+const metronomePulseToggle = document.getElementById('metronomePulseToggle');
+const numeratorInput       = document.getElementById('numerator');
+const bottomNoteSelect     = document.getElementById('bottomNote');
+const sizeRange            = document.getElementById('sizeRange');
+const sizeValue            = document.getElementById('sizeValue');
+const customizeLabelsBtn   = document.getElementById('customizeLabelsBtn');
+const labelStyleSelect     = document.getElementById('labelStyle');
+const symbolToggle         = document.getElementById('symbolToggle');
+const labelSizeRange       = document.getElementById('labelSizeRange');
+const labelSizeValue       = document.getElementById('labelSizeValue');
+const titleSizeRange       = document.getElementById('titleSizeRange');
+const gridTitleInput       = document.getElementById('gridTitleInput');
+const gridTitleDisplay     = document.getElementById('gridTitleDisplay');
+const tempoQuarter         = document.getElementById('tempo-quarter');
+const tempoEighth          = document.getElementById('tempo-eighth');
+const tempoDotted          = document.getElementById('tempo-dotted');
+const tempoDial            = document.getElementById('tempoDial');
+const exportBtn            = document.getElementById('exportBtn');
+const exportArea           = document.getElementById('exportArea');
+const scrollWrapper        = exportArea.querySelector('.overflow-auto');
+const scaleStage           = exportArea.querySelector('.sequencer-scale-stage');
+const dialQuarter          = document.getElementById('dial-option-quarter');
+const dialEighth           = document.getElementById('dial-option-eighth');
+const dialSixteenth        = document.getElementById('dial-option-sixteenth');
+
+let currentDialValue   = 2;
+let currentLabelStyle  = labelStyleSelect.value || 'Standard';
+let currentSymbol      = symbolToggle.checked ? '&' : '+';
+let metronomePulse     = metronomePulseToggle.checked ? 'eighth' : 'quarter';
+let currentTempoFactor = 1;
+let customLabelMode    = false;
+const MIN_SCALE        = parseFloat(sizeRange.min) || 0.5;
+const MAX_SCALE        = parseFloat(sizeRange.max) || 6;
+const FIT_BUFFER_PX    = 2;
+let currentScale       = parseFloat(sizeRange.value) || 1;
+let scaleTouched       = false;
+let baseGridWidth      = 0;
+let baseGridHeight     = 0;
+
+// 5) Step-cell visuals & rotation
+function updateStepVisual(el, instr) {
+  el.innerHTML = '';
+  el.classList.toggle('active', Boolean(instr));
+  if (instr) {
+    const img = document.createElement('img');
+    img.src = `images/${instr}.png`;
+    img.alt = instr;
+    // fallback text if image missing
+    img.onerror = () => { img.style.display='none'; el.title=instr; el.style.background='#e0e8ff'; };
+    el.appendChild(img);
+  } else {
+    el.style.background = '';
+    el.title = '';
+  }
+}
+
+function handleStepClick(el, row, idx) {
+  const opts = activeInstruments[row];
+  const cur  = sequence[row][idx];
+  const i    = opts.indexOf(cur);
+  let next   = i < 0 ? opts[0] : (i === opts.length-1 ? '' : opts[i+1]);
+  sequence[row][idx] = next;
+  updateStepVisual(el, next);
+  if (next && samples[next]) audioCtx.resume().then(() => playSample(samples[next]));
+}
+
+// 6) Label/subdivision logic
+function getLabel(beat, subIndex, dialVal, labelStyle, bottom, numerator) {
+  if (bottom === '4') {
+    if (subIndex === 0) return `${beat}`;
+    if (labelStyle === 'Eastman') {
+      if (dialVal===2 && subIndex===1) return 'te';
+      if (dialVal===4) {
+        if (subIndex===1) return 'ti';
+        if (subIndex===2) return 'te';
+        if (subIndex===3) return 'ta';
+      }
+    }
+    if (dialVal===2 && subIndex===1) return currentSymbol;
+    if (dialVal===4) {
+      if (subIndex===1) return 'e';
+      if (subIndex===2) return currentSymbol;
+      if (subIndex===3) return 'a';
+    }
+    return currentSymbol;
+  }
+  if (bottom === '8') {
+    const isCompound = numerator % 3 === 0;
+    if (dialVal===2 && isCompound) {
+      if (subIndex===0) return `${beat}`;
+      return subIndex===1?'la':'li';
+    }
+    if (dialVal===4 && isCompound) {
+      if (subIndex===0) return `${beat}`;
+      const map=['','ta','la','ta','li','ta'];
+      return map[subIndex]||currentSymbol;
+    }
+    return '+';
+  }
+  return currentSymbol;
+}
+
+function updateDefaultLabels() {
+  const cells = document.querySelectorAll('.step-labels .label');
+  const bottom = bottomNoteSelect.value;
+  const numerator = parseInt(numeratorInput.value, 10);
+  cells.forEach(cell => {
+    const idx = parseInt(cell.dataset.index, 10);
+    if (customLabels[idx] != null) return;
+    if (bottom === '4') {
+      const beat = Math.floor(idx/currentDialValue)+1;
+      const sub  = idx % currentDialValue;
+      cell.innerHTML = sub===0
+        ? `${beat}`
+        : getLabel(beat, sub, currentDialValue, currentLabelStyle, bottom, numerator);
+    } else {
+      const isCompound = numerator % 3 === 0;
+      if (!isCompound) {
+        cell.innerHTML = '+';
+      } else {
+        const grp = currentDialValue===2?3:6;
+        const beatNum = Math.floor(idx/grp)+1;
+        const sub = idx % grp;
+        if (sub===0) cell.innerHTML = `${beatNum}`;
+        else if (currentDialValue===2) cell.innerHTML = sub===1?'la':'li';
+        else {
+          const map=['','ta','la','ta','li','ta'];
+          cell.innerHTML = map[sub]||'+';
+        }
+      }
+    }
+  });
+}
+
+function updateSubdivisionDials() {
+  if (bottomNoteSelect.value === '8') {
+    dialQuarter.classList.add('disabled');
+    if (currentDialValue===1) {
+      dialQuarter.classList.remove('selected');
+      dialEighth.classList.add('selected');
+      currentDialValue = 2;
+    }
+  } else {
+    dialQuarter.classList.remove('disabled');
+  }
+}
+
+// 7) Build grid
+function generateSequencer() {
+  updateSubdivisionDials();
+  const numerator = parseInt(numeratorInput.value, 10);
+  const bottom    = bottomNoteSelect.value;
+  let total = 0;
+  if (bottom==='4') total = numerator * currentDialValue;
+  else              total = (currentDialValue===2 ? numerator : numerator*2);
+
+  totalStepsGlobal = total;
+  customLabels = Array(total).fill(null);
+
+  sequencerContainer.innerHTML = '';
+  ['top','middle','bottom'].forEach(row => {
+    sequence[row] = Array(total).fill('');
+    const r = document.createElement('div');
+    r.classList.add('row','instrument-row');
+    r.dataset.row = row;
+    for (let i=0; i<total; i++) {
+      const s = document.createElement('div');
+      s.classList.add('step');
+      s.addEventListener('click', () => handleStepClick(s, row, i));
+      r.appendChild(s);
+    }
+    sequencerContainer.appendChild(r);
+  });
+
+  const labelRow = document.createElement('div');
+  labelRow.classList.add('row','step-labels');
+
+  if (bottom==='4') {
+    for (let b=1; b<=numerator; b++) {
+      for (let s=0; s<currentDialValue; s++) {
+        const idx = (b-1)*currentDialValue + s;
+        const cell = document.createElement('div');
+        cell.classList.add('label');
+        cell.dataset.index = idx;
+        cell.innerHTML = s===0
+          ? `${b}`
+          : getLabel(b, s, currentDialValue, currentLabelStyle, bottom, numerator);
+        cell.addEventListener('click', () => {
+          if (!customLabelMode) return;
+          const txt = prompt('New label:', cell.textContent);
+          if (txt != null) { customLabels[idx] = txt; cell.textContent = txt; }
+        });
+        labelRow.appendChild(cell);
+      }
+    }
+  } else {
+    const isCompound = numerator % 3 === 0;
+    const grp = currentDialValue===2?3:6;
+    if (!isCompound) {
+      for (let i=0; i<total; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('label');
+        cell.dataset.index = i;
+        cell.innerHTML = '+';
+        cell.addEventListener('click', () => {
+          if (!customLabelMode) return;
+          const txt = prompt('New label:', cell.textContent);
+          if (txt != null) { customLabels[i] = txt; cell.textContent = txt; }
+        });
+        labelRow.appendChild(cell);
+      }
+    } else {
+      for (let i=0; i<total; i++) {
+        const cell = document.createElement('div');
+        cell.classList.add('label');
+        cell.dataset.index = i;
+        const beatNum = Math.floor(i/grp)+1;
+        const sub = i % grp;
+        if (sub===0) cell.innerHTML = `${beatNum}`;
+        else if (currentDialValue===2) cell.innerHTML = sub===1?'la':'li';
+        else {
+          const map=['','ta','la','ta','li','ta'];
+          cell.innerHTML = map[sub]||'+';
+        }
+        cell.addEventListener('click', () => {
+          if (!customLabelMode) return;
+          const txt = prompt('New label:', cell.textContent);
+          if (txt != null) { customLabels[i] = txt; cell.textContent = txt; }
+        });
+        labelRow.appendChild(cell);
+      }
+    }
+  }
+
+  sequencerContainer.appendChild(labelRow);
+  updateDefaultLabels();
+}
+
+// 8) Playback
+function highlightCurrentStep(i) {
+  document.querySelectorAll('.step-labels .label')
+    .forEach(c => c.classList.toggle('current-step', c.dataset.index == i));
+}
+
+function playStep(i) {
+  ['top','middle','bottom'].forEach(r => {
+    const inst = sequence[r][i];
+    if (inst && samples[inst]) playSample(samples[inst]);
+  });
+  if (!metronomeToggle.checked) return;
+  const bottom = bottomNoteSelect.value;
+  const num = parseInt(numeratorInput.value, 10);
+  if (bottom==='4') {
+    const half = currentDialValue/2;
+    if (i%currentDialValue===0 ||
+        (metronomePulse==='eighth' && i%currentDialValue===half)) {
+      playSample(samples.metronome);
+    }
+  } else {
+    const isComp = num % 3 === 0;
+    if (!isComp) playSample(samples.metronome);
+    else {
+      const grp = currentDialValue===2?3:6;
+      if (metronomePulse==='quarter') {
+        if (i%grp===0) playSample(samples.metronome);
+      } else {
+        playSample(samples.metronome);
+      }
+    }
+  }
+}
+
+function startPlaying() {
+  if (isPlaying) return;
+  isPlaying = true;
+  const bpm = parseInt(tempoInput.value, 10) || 120;
+  const base = 60 / (bpm * currentTempoFactor);
+  const bottom = bottomNoteSelect.value;
+  const num = parseInt(numeratorInput.value, 10);
+  let subdiv;
+  if (bottom==='4') subdiv = currentDialValue;
+  else {
+    const isComp = num % 3 === 0;
+    subdiv = isComp ? (currentDialValue===2?3:6) : currentDialValue;
+  }
+  const stepDur = (base / subdiv) * 1000;
+  currentStep = 0; highlightCurrentStep(0); playStep(0);
+  intervalId = setInterval(() => {
+    currentStep = (currentStep+1) % totalStepsGlobal;
+    highlightCurrentStep(currentStep);
+    playStep(currentStep);
+  }, stepDur);
+}
+
+function stopPlaying() {
+  isPlaying = false;
+  clearInterval(intervalId);
+  document.querySelectorAll('.step-labels .label').forEach(c => c.classList.remove('current-step'));
+}
+
+function updatePlaybackInterval() {
+  if (!isPlaying) return;
+  clearInterval(intervalId);
+  const bpm = parseInt(tempoInput.value, 10) || 120;
+  const base = 60 / (bpm * currentTempoFactor);
+  const bottom = bottomNoteSelect.value;
+  const num = parseInt(numeratorInput.value, 10);
+  let subdiv;
+  if (bottom==='4') subdiv = currentDialValue;
+  else {
+    const isComp = num % 3 === 0;
+    subdiv = isComp ? (currentDialValue===2?3:6) : currentDialValue;
+  }
+  const stepDur = (base / subdiv) * 1000;
+  intervalId = setInterval(() => {
+    currentStep = (currentStep+1) % totalStepsGlobal;
+    highlightCurrentStep(currentStep);
+    playStep(currentStep);
+  }, stepDur);
+}
+
+// 9) UI bindings
+function selectTempoOption(el) {
+  tempoDial.querySelectorAll('.dial-option').forEach(d => d.classList.remove('selected'));
+  el.classList.add('selected');
+  currentTempoFactor = parseFloat(el.dataset.value);
+  updatePlaybackInterval();
+}
+
+tempoQuarter.addEventListener('click', () => selectTempoOption(tempoQuarter));
+tempoEighth.addEventListener('click',  () => selectTempoOption(tempoEighth));
+tempoDotted.addEventListener('click',  () => selectTempoOption(tempoDotted));
+
+metronomePulseToggle.addEventListener('change', () => {
+  if (metronomePulseToggle.checked) {
+    metronomeToggle.checked = true;
+    metronomeToggle.dispatchEvent(new Event('change'));
+  }
+  metronomePulse = metronomePulseToggle.checked ? 'eighth' : 'quarter';
+});
+
+function clampScale(value) {
+  return Math.min(MAX_SCALE, Math.max(MIN_SCALE, value));
+}
+
+function updateScaleReadout(value) {
+  sizeValue.textContent = Number(value.toFixed(2)).toString();
+}
+
+function captureBaseGridSize() {
+  const priorTransform   = sequencerContainer.style.transform;
+  const priorGridWidth   = sequencerContainer.style.width;
+  const priorGridHeight  = sequencerContainer.style.height;
+  const priorStageWidth  = scaleStage.style.width;
+  const priorStageHeight = scaleStage.style.height;
+
+  sequencerContainer.style.transform = 'none';
+  sequencerContainer.style.width = 'auto';
+  sequencerContainer.style.height = 'auto';
+  scaleStage.style.width = 'auto';
+  scaleStage.style.height = 'auto';
+
+  baseGridWidth  = sequencerContainer.scrollWidth;
+  baseGridHeight = sequencerContainer.scrollHeight;
+
+  sequencerContainer.style.transform = priorTransform;
+  sequencerContainer.style.width  = priorGridWidth;
+  sequencerContainer.style.height = priorGridHeight;
+  scaleStage.style.width  = priorStageWidth;
+  scaleStage.style.height = priorStageHeight;
+}
+
+function syncScaleStageSize(scaleVal) {
+  if (!baseGridWidth || !baseGridHeight) captureBaseGridSize();
+  if (!baseGridWidth || !baseGridHeight) return;
+  sequencerContainer.style.width  = `${Math.ceil(baseGridWidth)}px`;
+  sequencerContainer.style.height = `${Math.ceil(baseGridHeight)}px`;
+  scaleStage.style.width  = `${Math.ceil(baseGridWidth * scaleVal)}px`;
+  scaleStage.style.height = `${Math.ceil(baseGridHeight * scaleVal)}px`;
+}
+
+function syncHorizontalOverflow() {
+  if (!scrollWrapper || !scaleStage) return;
+  const needsScroll = scaleStage.scrollWidth > scrollWrapper.clientWidth;
+  scrollWrapper.style.overflowX = needsScroll ? 'auto' : 'hidden';
+}
+
+function applyGridScale(rawScale, { updateSlider = true } = {}) {
+  const normalized = clampScale(rawScale);
+  currentScale = normalized;
+  sequencerContainer.style.transform = `scale(${normalized})`;
+  syncScaleStageSize(normalized);
+  syncHorizontalOverflow();
+  if (updateSlider) sizeRange.value = normalized.toString();
+  updateScaleReadout(normalized);
+}
+
+function fitGridToViewport() {
+  if (!baseGridWidth) captureBaseGridSize();
+  const naturalWidth  = baseGridWidth;
+  const visibleWidth  = scrollWrapper.clientWidth;
+  if (!naturalWidth || !visibleWidth) { applyGridScale(currentScale); return; }
+  const fitScale = clampScale((visibleWidth - FIT_BUFFER_PX) / naturalWidth);
+  applyGridScale(fitScale);
+}
+
+function refreshScaleAfterLayoutChange() {
+  if (scaleTouched) applyGridScale(currentScale);
+  else fitGridToViewport();
+}
+
+function regenerateSequencer() {
+  generateSequencer();
+  updateTempoDialDefaults();
+  captureBaseGridSize();
+  refreshScaleAfterLayoutChange();
+}
+
+function updateTempoDialDefaults() {
+  const bottom = bottomNoteSelect.value;
+  const num = parseInt(numeratorInput.value, 10);
+  if (bottom==='4') selectTempoOption(tempoQuarter);
+  else {
+    const isComp = num % 3 === 0;
+    selectTempoOption(isComp ? tempoDotted : tempoEighth);
+  }
+}
+
+labelStyleSelect.addEventListener('change', () => {
+  currentLabelStyle = labelStyleSelect.value;
+  updateDefaultLabels();
+});
+
+symbolToggle.addEventListener('change', () => {
+  currentSymbol = symbolToggle.checked ? '&' : '+';
+  updateDefaultLabels();
+});
+
+customizeLabelsBtn.addEventListener('click', () => {
+  customLabelMode = !customLabelMode;
+  customizeLabelsBtn.textContent = customLabelMode ? 'Done Customizing' : 'Customize Labels';
+  customizeLabelsBtn.classList.toggle('btn-warning', customLabelMode);
+});
+
+sizeRange.addEventListener('input', () => {
+  scaleTouched = true;
+  applyGridScale(parseFloat(sizeRange.value), { updateSlider: false });
+});
+
+labelSizeRange.addEventListener('input', () => {
+  labelSizeValue.textContent = labelSizeRange.value;
+  document.documentElement.style.setProperty('--label-font-size', `${labelSizeRange.value}rem`);
+});
+
+titleSizeRange.addEventListener('input', () => {
+  document.documentElement.style.setProperty('--title-font-size', `${titleSizeRange.value}rem`);
+});
+
+gridTitleInput.addEventListener('input', () => {
+  gridTitleDisplay.textContent = gridTitleInput.value;
+});
+
+dialQuarter.addEventListener('click', () => {
+  if (bottomNoteSelect.value === '8') return;
+  dialQuarter.classList.add('selected');
+  dialEighth.classList.remove('selected');
+  dialSixteenth.classList.remove('selected');
+  currentDialValue = 1;
+  regenerateSequencer();
+});
+
+dialEighth.addEventListener('click', () => {
+  dialQuarter.classList.remove('selected');
+  dialEighth.classList.add('selected');
+  dialSixteenth.classList.remove('selected');
+  currentDialValue = 2;
+  regenerateSequencer();
+});
+
+dialSixteenth.addEventListener('click', () => {
+  dialQuarter.classList.remove('selected');
+  dialEighth.classList.remove('selected');
+  dialSixteenth.classList.add('selected');
+  currentDialValue = 4;
+  regenerateSequencer();
+});
+
+numeratorInput.addEventListener('change', regenerateSequencer);
+bottomNoteSelect.addEventListener('change', regenerateSequencer);
+tempoInput.addEventListener('input', () => updatePlaybackInterval());
+
+playBtn.addEventListener('click', () => audioCtx.resume().then(startPlaying));
+stopBtn.addEventListener('click', stopPlaying);
+
+exportBtn.addEventListener('click', () => {
+  const stage = exportArea.querySelector('.sequencer-scale-stage');
+  if (!stage) return;
+
+  const captureRoot = document.createElement('div');
+  captureRoot.style.cssText = 'position:fixed;left:-10000px;top:0;display:inline-block;padding:0;margin:0;overflow:visible;background:transparent;';
+
+  const titleText = (gridTitleDisplay.textContent || '').trim();
+  if (titleText) {
+    const titleClone = gridTitleDisplay.cloneNode(true);
+    captureRoot.appendChild(titleClone);
+  }
+
+  const stageClone = stage.cloneNode(true);
+  stageClone.style.display = 'inline-block';
+  stageClone.style.overflow = 'visible';
+  captureRoot.appendChild(stageClone);
+  document.body.appendChild(captureRoot);
+
+  stageClone.querySelectorAll('.row').forEach(row => {
+    row.style.cssText += 'margin:0;flex-wrap:nowrap;--bs-gutter-x:0;--bs-gutter-y:0;';
+  });
+  stageClone.querySelectorAll('.row > .label, .row > .step').forEach(cell => {
+    cell.style.cssText += 'width:auto;max-width:none;flex-shrink:1;margin-top:0;padding-left:0;padding-right:0;';
+  });
+  stageClone.querySelectorAll('.step img').forEach(img => {
+    img.style.cssText += 'width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;display:block;';
+  });
+
+  const res = parseFloat(document.getElementById('exportResolution').value) || 2;
+  const width  = Math.ceil(captureRoot.scrollWidth);
+  const height = Math.ceil(captureRoot.scrollHeight);
+
+  html2canvas(captureRoot, { scale: res, useCORS: true, width, height })
+    .then(canvas => {
+      const a = document.createElement('a');
+      a.href = canvas.toDataURL('image/png');
+      a.download = 'drum-sequence.png';
+      a.click();
+    })
+    .catch(err => console.error('Export failed', err))
+    .finally(() => captureRoot.remove());
+});
+
+function renderInstrumentMenu() {
+  document.querySelectorAll('.instrument-group').forEach(group => {
+    const row  = group.dataset.row;
+    const cont = group.querySelector('.instrument-options');
+    cont.innerHTML = '';
+    allInstruments.forEach(instr => {
+      const img = document.createElement('img');
+      img.src = `images/${instr}.png`;
+      img.alt = instr;
+      img.title = instr;
+      img.classList.toggle('active', activeInstruments[row].includes(instr));
+      img.onerror = () => {
+        // fallback: show text badge
+        img.replaceWith((() => {
+          const span = document.createElement('span');
+          span.textContent = instr;
+          span.title = instr;
+          span.style.cssText = 'display:inline-block;margin:0.25em;padding:2px 6px;font-size:0.7rem;border:1px solid #ccc;border-radius:4px;cursor:pointer;';
+          span.style.opacity = activeInstruments[row].includes(instr) ? '1' : '0.4';
+          span.addEventListener('click', () => {
+            const idx = activeInstruments[row].indexOf(instr);
+            if (idx === -1) activeInstruments[row].push(instr);
+            else {
+              activeInstruments[row].splice(idx, 1);
+              sequence[row] = sequence[row].map(i => i===instr?'':i);
+              document.querySelectorAll(`.instrument-row[data-row="${row}"] .step`)
+                .forEach((el, i) => updateStepVisual(el, sequence[row][i]));
+            }
+            renderInstrumentMenu();
+          });
+          return span;
+        })());
+      };
+      img.addEventListener('click', () => {
+        const idx = activeInstruments[row].indexOf(instr);
+        if (idx === -1) activeInstruments[row].push(instr);
+        else {
+          activeInstruments[row].splice(idx, 1);
+          sequence[row] = sequence[row].map(i => i===instr?'':i);
+          document.querySelectorAll(`.instrument-row[data-row="${row}"] .step`)
+            .forEach((el, i) => updateStepVisual(el, sequence[row][i]));
+        }
+        renderInstrumentMenu();
+      });
+      cont.appendChild(img);
+    });
+  });
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  loadSamples().then(() => {
+    selectTempoOption(tempoQuarter);
+    dialEighth.classList.add('selected');
+    currentDialValue = 2;
+    generateSequencer();
+    renderInstrumentMenu();
+    refreshScaleAfterLayoutChange();
+  });
+});
+
+window.addEventListener('resize', () => {
+  refreshScaleAfterLayoutChange();
+});
+  </script>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

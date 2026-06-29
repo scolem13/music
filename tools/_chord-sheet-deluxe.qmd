@@ -1,0 +1,299 @@
+```{=html}
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap');
+
+#csd{
+  --stage:#14171c; --riser:#1c2027; --riser-2:#232831;
+  --line:#363c46; --line-soft:#2a2f38;
+  --ink-stage:#ece8df; --muted:#9098a5; --faint:#5b6270;
+  --brass:#d8a753; --brass-dim:#9c7a3d;
+  --live:#3fc2b4; --live-soft:rgba(63,194,180,.16);
+  --paper:#f4efe2; --paper-edge:#e6dcc4; --paper-line:#cdbf9f; --paper-faint:#b7a987;
+  --ink:#22201b;
+}
+#csd *{box-sizing:border-box}
+/* Quarto stamps its multi-track .page-columns grid onto our container divs (because
+   we're inside .column-screen). Force the containers back to plain blocks; the .stage
+   grid is restored below with a higher-specificity selector so it wins outright. */
+#csd.page-columns,#csd .wrap.page-columns,#csd .marquee.page-columns{display:block!important;grid-template-columns:none!important;gap:0!important}
+#csd{
+  background:
+    radial-gradient(120% 80% at 50% -10%, #1b2129 0%, var(--stage) 55%) ,
+    var(--stage);
+  color:var(--ink-stage); font-family:'Inter',system-ui,sans-serif;
+  margin:0; padding:0 0 4rem; min-height:100vh; line-height:1.5;
+}
+#csd .wrap{max-width:1220px;margin:0 auto;padding:0 clamp(1rem,3.5vw,2.5rem)}
+
+/* ===== marquee header ===== */
+#csd .marquee{
+  display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;
+  padding:2.4rem 0 1.4rem; border-bottom:1px solid var(--line-soft);
+}
+#csd .marquee h1{
+  font-family:'Oswald',sans-serif;font-weight:700;letter-spacing:.045em;
+  font-size:clamp(1.7rem,4.2vw,2.9rem);margin:0;line-height:.98;text-transform:uppercase;
+}
+#csd .marquee h1 .sub{display:block;font-size:.34em;letter-spacing:.42em;color:var(--brass);font-weight:600;margin-top:.55rem}
+#csd .marquee p{margin:.15rem 0 0;color:var(--muted);max-width:34ch;font-size:.92rem}
+
+/* ===== stage layout ===== */
+#csd .stage,#csd .stage.page-columns{display:grid!important;grid-template-columns:248px minmax(0,1fr)!important;gap:clamp(1rem,2.5vw,2rem)!important;margin-top:1.6rem;align-items:start}
+/* Quarto's `.page-columns.page-full > *` forces children onto named page grid-lines
+   that don't exist in our 2-col template (spawning phantom tracks). Reset them. */
+#csd .stage>*{grid-column:auto!important}
+
+/* ----- set list ----- */
+#csd .setlist{position:sticky;top:1rem}
+#csd .panel-label{font-family:'JetBrains Mono',monospace;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--faint);margin:0 0 .55rem .15rem}
+/* dark-stage theme for the shared faceted picker */
+#csd #csd-picker.tl-picker{--tlp-ink:var(--ink-stage);--tlp-muted:var(--muted);--tlp-line:var(--line);--tlp-bg:var(--riser);--tlp-soft:var(--riser-2);--tlp-accent:var(--brass)}
+#csd #csd-picker .tl-results{max-height:54vh;background:rgba(0,0,0,.16)}
+#csd #csd-picker .tl-pop{background:var(--riser-2)}
+#csd select.coll{
+  width:100%;appearance:none;background:var(--riser);color:var(--ink-stage);
+  border:1px solid var(--line);border-radius:9px;padding:.6rem .8rem;font:inherit;font-weight:500;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--brass) 50%),linear-gradient(135deg,var(--brass) 50%,transparent 50%);
+  background-position:calc(100% - 18px) 1.15rem,calc(100% - 13px) 1.15rem;background-size:5px 5px,5px 5px;background-repeat:no-repeat;
+}
+#csd .tunes{list-style:none;margin:.75rem 0 0;padding:0;max-height:62vh;overflow:auto;border:1px solid var(--line-soft);border-radius:11px;background:rgba(0,0,0,.16)}
+#csd .tunes li{display:flex;align-items:baseline;gap:.55rem;padding:.5rem .8rem;border-bottom:1px solid var(--line-soft);cursor:pointer;transition:background .12s,color .12s}
+#csd .tunes li:last-child{border-bottom:0}
+#csd .tunes li .n{font-family:'JetBrains Mono',monospace;font-size:.72rem;color:var(--faint);min-width:1.6em;text-align:right}
+#csd .tunes li .t{font-size:.92rem;color:var(--ink-stage);font-weight:500;line-height:1.25}
+#csd .tunes li .k{margin-left:auto;font-family:'JetBrains Mono',monospace;font-size:.7rem;color:var(--brass-dim)}
+#csd .tunes li:hover{background:var(--riser)}
+#csd .tunes li[aria-current="true"]{background:var(--riser-2)}
+#csd .tunes li[aria-current="true"] .t{color:var(--brass)}
+#csd .tunes li[aria-current="true"] .n{color:var(--brass)}
+
+/* ----- chart card (the lit page) ----- */
+#csd .stand{display:flex;flex-direction:column;gap:1rem;min-width:0}
+/* The chart grid + its cream paper come from the shared tune-chart.js (.tune-chart …).
+   Here we only add the dark-stage extras: a deep drop shadow + a stand-light glow. */
+#csd .chart.tune-chart{position:relative;box-shadow:0 1px 0 #fffaf0 inset, 0 26px 60px -28px rgba(0,0,0,.85), 0 0 70px -10px rgba(216,167,83,.10)}
+#csd .chart.tune-chart::before{content:"";position:absolute;inset:-2px -2px auto;height:60%;border-radius:6px;
+  background:radial-gradient(80% 120% at 50% -30%,rgba(255,244,214,.5),transparent 70%);pointer-events:none;z-index:1}
+
+/* ----- accompaniment notation (visible written-out parts; multi-voice ABC = stacked staves) ----- */
+#csd .csd-notation{background:linear-gradient(180deg,#f7f2e6,var(--paper));color:var(--ink);
+  border:1px solid var(--paper-edge);border-radius:6px;padding:.7rem 1rem;
+  box-shadow:0 1px 0 #fffaf0 inset, 0 20px 50px -28px rgba(0,0,0,.8)}
+#csd .csd-notation svg{width:100%!important;height:auto!important}
+
+/* ----- transport ----- */
+#csd .transport{display:flex;align-items:center;gap:1.1rem;flex-wrap:wrap;
+  background:var(--riser);border:1px solid var(--line);border-radius:12px;padding:.75rem 1rem}
+#csd .play{display:inline-flex;align-items:center;gap:.55rem;background:var(--brass);color:#1c1505;border:0;border-radius:9px;
+  padding:.62rem 1.25rem;font:inherit;font-weight:700;letter-spacing:.02em;cursor:pointer;font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.95rem}
+#csd .play:hover{background:#e6b863}
+#csd .play[data-on="true"]{background:var(--live);color:#04201d}
+#csd .ctrl{display:flex;align-items:center;gap:.5rem;font-size:.84rem;color:var(--muted)}
+#csd .ctrl label{font-family:'JetBrains Mono',monospace;font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--faint)}
+#csd input[type=range]{accent-color:var(--brass);width:120px}
+#csd select.mini{appearance:none;background:var(--riser-2);color:var(--ink-stage);border:1px solid var(--line);border-radius:7px;
+  padding:.34rem 1.6rem .34rem .6rem;font:inherit;font-size:.82rem;cursor:pointer;
+  background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);
+  background-position:calc(100% - 14px) .9rem,calc(100% - 10px) .9rem;background-size:4px 4px,4px 4px;background-repeat:no-repeat}
+#csd .tempo-val{font-family:'JetBrains Mono',monospace;color:var(--brass);font-weight:600;min-width:2.6em}
+#csd .cb{display:inline-flex;align-items:center;gap:.4rem;font-size:.84rem;color:var(--muted);cursor:pointer}
+#csd .cb input{accent-color:var(--brass)}
+/* ----- mixer (Melody / Chords / Bass / Drums faders) ----- */
+#csd .mixer{display:flex;gap:.9rem;flex-wrap:wrap;padding:.35rem .8rem;border:1px solid var(--line-soft);border-radius:9px;background:rgba(0,0,0,.18)}
+#csd .ctrl.mix{flex-direction:column;align-items:flex-start;gap:.15rem}
+#csd .ctrl.mix input[type=range]{width:86px}
+#csd .note{color:var(--faint);font-size:.78rem;margin:.2rem .15rem 0}
+
+@media (max-width:780px){
+  #csd .stage,#csd .stage.page-columns{grid-template-columns:1fr!important}
+  #csd .setlist{position:static}
+  #csd .tunes{max-height:230px}
+  #csd .system{grid-template-columns:repeat(2,1fr)}
+}
+@media (prefers-reduced-motion:reduce){ #csd *{transition:none!important} }
+</style>
+
+<div id="csd"><div class="wrap"><div class="marquee"><div><h1>Changes<span class="sub">Stage Edition</span></h1><p>The whole tune book as chord charts. Pick one, set the tempo, and play along with the rhythm section.</p></div></div><div class="stage"><aside class="setlist"><p class="panel-label">Find a tune</p><div id="csd-picker"></div></aside><section class="stand"><div class="chart" id="csd-chart"></div><div class="transport"><button class="play" id="csd-play" type="button" aria-label="Play">&#9654; Play</button><div class="ctrl"><label for="csd-tempo">Tempo</label><input type="range" id="csd-tempo" min="50" max="200" value="110"><span class="tempo-val" id="csd-tempo-v">&#9833;=110</span></div><div class="ctrl"><label for="csd-key">Key</label><select id="csd-key" class="mini" aria-label="Transpose to key"></select></div><div class="ctrl"><label for="csd-subbar">Beat lines</label><select id="csd-subbar" class="mini" aria-label="Beat lines"><option value="0">Off</option><option value="1">Every beat</option><option value="2">Every 2 beats</option></select></div><div class="ctrl"><label for="csd-accomp">Accompaniment</label><select id="csd-accomp" class="mini" aria-label="Accompaniment style"><option value="off">Soundfont (melody)</option></select></div><div class="ctrl"><label for="csd-notation">Notation</label><select id="csd-notesel" class="mini" aria-label="Notation"></select></div><div class="ctrl"><label for="csd-tenorclef">Tenor</label><select id="csd-tenorclef" class="mini" aria-label="Tenor clef"><option value="treble8">Treble 8</option><option value="bass">Bass clef</option></select></div><label class="cb"><input type="checkbox" id="csd-roman"> Roman numerals</label><label class="cb"><input type="checkbox" id="csd-cycle"> &#128257; Cycle</label><div class="mixer" aria-label="Mixer"><div class="ctrl mix"><label for="csd-vol-melody">Melody</label><input type="range" id="csd-vol-melody" min="0" max="100" value="90"></div><div class="ctrl mix"><label for="csd-vol-chords">Chords</label><input type="range" id="csd-vol-chords" min="0" max="100" value="80"></div><div class="ctrl mix"><label for="csd-vol-bass">Bass</label><input type="range" id="csd-vol-bass" min="0" max="100" value="90"></div><div class="ctrl mix"><label for="csd-vol-drums">Drums</label><input type="range" id="csd-vol-drums" min="0" max="100" value="80"></div></div></div><div id="csd-notation" class="csd-notation" style="display:none"></div><p class="note" id="csd-note"></p></section></div><div id="csd-hidden-notation" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden"></div><div id="csd-hidden-ctrl" style="position:absolute;left:-9999px;top:0"></div></div></div>
+
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/abc-transpose.js?v=1"></script>
+<script src="/apps/shared/tune-chart.js?v=5"></script>
+<script src="/apps/shared/tune-library.js?v=5"></script>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/satb.js?v=1"></script>
+<script src="/apps/shared/arranger.js?v=11"></script>
+<script>
+(function(){
+  if (typeof tunesObject === "undefined" || typeof ABCJS === "undefined") return;
+  var SF_URL = "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/";
+  var GM = { piano:0, nylon:24, bass:32 };
+  var FLAT = ["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
+  var ASCII = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var PC = { C:0, D:2, E:4, F:5, G:7, A:9, B:11 };
+  var $ = function(id){ return document.getElementById(id); };
+  var esc = function(s){ return String(s).replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); };
+
+  // ---- state ----
+  var current = null;       // the selected TuneLibrary record
+  var keyOffset = 0;        // semitones (0 = original key)
+  var chart = null;
+  var synth = null, playing = false;
+
+  // ---- header field + key pitch class (chart rendering is delegated to TuneChart) ----
+  function header(abc, tag){ var m = new RegExp("^"+tag+":\\s*(.+)$","m").exec(abc); return m ? m[1].trim() : ""; }
+  function keyPcOf(k){ var m = /^([A-Ga-g])([#b]?)/.exec(k||""); if(!m) return 0;
+    return (((PC[m[1].toUpperCase()] + (m[2]==="#"?1:m[2]==="b"?-1:0)) % 12) + 12) % 12; }
+  function subBarSel(){ return parseInt(($("csd-subbar")||{}).value, 10) || 0; }
+  function cycleOn(){ var el = $("csd-cycle"); return !!(el && el.checked); }
+
+  // render/refresh the shared chord chart for the current tune + key + beat-lines
+  function renderChart(){
+    if (!current) return;
+    chart = TuneChart.render($("csd-chart"), current.abc, {
+      transpose: keyOffset, preferFlats: true, subBarBeats: subBarSel(), header: true
+    });
+  }
+
+  // ---- playback (abcjs soundfont band); the live bar travels via TuneChart.setLive ----
+  var cursor = {
+    // Time-based chart highlight (loop-safe): the chart maps each event's time → played
+    // measure → written bar via playOrder, so repeats AND cycle both track correctly.
+    onStart: function(){ if (chart) chart.resetPlayback(); },
+    onEvent: function(ev){ if (chart) chart.onPlaybackEvent(ev); },
+    onFinished: function(){ playing = false; if (chart) chart.resetPlayback(); paintPlay(); }
+  };
+  function ensureSynth(){
+    if (synth || !(ABCJS.synth && ABCJS.synth.supportsAudio())) return synth;
+    synth = new ABCJS.synth.SynthController();
+    synth.load("#csd-hidden-ctrl", cursor, { displayPlay:false, displayProgress:false, displayLoop:false, displayRestart:false, displayWarp:false });
+    return synth;
+  }
+  function accompStyle(){ var e = $("csd-accomp"); return e ? e.value : "off"; }
+  function vol(part){ var el = $("csd-vol-" + part); return el ? (parseInt(el.value, 10) || 0) : 100; }
+
+  // The tune, transposed to the current key (shared by off-mode playback + melody extraction).
+  function srcAbc(){ var abc = current.abc;
+    if (keyOffset){ try { abc = AbcTranspose.transpose(abc, ASCII[(((current.keyPc + keyOffset) % 12) + 12) % 12]); } catch(e){} }
+    return abc; }
+  // Pull just the melody line from a tune as L:1/8 tokens (for layering into the band). Strips
+  // chords/decorations/grace/repeats/endings and normalizes note lengths to eighths. Returns
+  // null if the result doesn't parse cleanly (some tunes use syntax we don't translate).
+  function extractMelody(abc){
+    abc = abc.replace(/<!--[\s\S]*?-->/g, "");
+    var Lm = /L:\s*1\/(\d+)/.exec(abc), Lden = Lm ? parseInt(Lm[1], 10) : 8;
+    var music = abc.split("\n").filter(function(l){ return l && !/^[A-Za-z]:/.test(l) && !/^%/.test(l); });
+    var body = music.join(" ");
+    body = body.replace(/"[^"]*"/g, "").replace(/![^!]*!/g, "").replace(/\{[^}]*\}/g, "");           // chord syms, decorations, grace
+    body = body.replace(/\$/g, " ").replace(/\(\d+(:\d+)*/g, "").replace(/[()]/g, "");                 // line-break $, tuplets, slurs
+    body = body.replace(/\|\s*[12]/g, "|").replace(/\[[12]/g, "").replace(/:\|:|\|:|:\||::|\[\||\|\]/g, "|");  // repeats/endings → plain bar
+    body = body.replace(/[^A-Ga-gxyzZ0-9_=^,''\/|\s\[\]>-]/g, "");                                     // drop anything else stray
+    body = body.replace(/\s+/g, " ").trim();
+    function fmt(v){ for (var den=1; den<=16; den*=2){ var num=v*den; if (Math.abs(num-Math.round(num))<1e-6){ num=Math.round(num);
+      function g(a,b){ return b?g(b,a%b):a; } var d2=g(num,den)||1; num/=d2; den/=d2;
+      if (den===1) return num===1?"":String(num); if (num===1) return "/"+den; return num+"/"+den; } } return ""; }
+    if (Lden < 8){ var f = 8/Lden;                                                                     // L:1/4 → ×2 to eighths
+      body = body.replace(/(\[[^\]]*\]|[\^=_]*[A-Ga-gxyzZ][,']*)(\d+)?(\/+\d*)?/g, function(m,head,n,sl){
+        if (!head) return m; var num = n?parseInt(n,10):1, d=1;
+        if (sl){ if (/^\/+$/.test(sl)) d=Math.pow(2,sl.length); else { var mm=/^(\/+)(\d+)$/.exec(sl); d=mm?parseInt(mm[2],10):2; } }
+        return head + fmt((num/d)*f); }); }
+    try { var v = ABCJS.parseOnly("X:1\nL:1/8\nK:C\n" + body); if (!v || !v.length) return null; } catch(e){ return null; }
+    return body;
+  }
+
+  function playAbc(forPlay){
+    var qpm = parseInt($("csd-tempo").value, 10) || 110;
+    if (accompStyle() !== "off" && window.Arranger && chart){     // arranger band (+ optional melody layer)
+      var opts = { style: accompStyle(), notation: (($("csd-notesel")||{}).value || "piano"),
+        tempo: qpm, transpose: keyOffset, program: GM.piano, tenorClef: ($("csd-tenorclef") || {}).value || "treble8",
+        drums: vol("drums") > 0 };
+      if (forPlay){                                               // dynamics, volumes + melody only in the PLAYED abc
+        opts.dynamics = true;
+        opts.vol = { melody: vol("melody"), chords: vol("chords"), bass: vol("bass"), drums: vol("drums") };
+        if (vol("melody") > 0){ var mel = extractMelody(srcAbc());
+          if (mel) opts.melody = { body: mel, program: GM.piano, vol: vol("melody") }; }
+      }
+      return Arranger.toAbc(chart.parsed, opts);
+    }
+    var lines = srcAbc().split("\n").filter(function(l){ return !/^\s*(Q:|%%MIDI)/.test(l); });   // "Soundfont (melody)" = tune + abcjs auto-accomp
+    var x = lines.findIndex(function(l){ return /^\s*X:/.test(l); }); if (x < 0) x = 0;
+    var hdr = ["Q:1/4="+qpm, "%%MIDI program "+GM.piano, "%%MIDI chordprog "+GM.nylon, "%%MIDI bassprog "+GM.bass];
+    if (forPlay) hdr = hdr.concat(["%%MIDI vol "+Math.max(1, vol("melody")),
+      "%%MIDI chordvol "+Math.round(vol("chords")*1.27), "%%MIDI bassvol "+Math.round(vol("bass")*1.27)]);
+    lines.splice.apply(lines, [x+1, 0].concat(hdr));
+    return lines.join("\n");
+  }
+  // Update the VISIBLE notation: the clean written-out accompaniment (no dynamics marks).
+  // Hidden for "Soundfont melody" so the chord sheet stays clean.
+  function renderNotation(){
+    var vis = $("csd-notation");
+    if (accompStyle() !== "off"){ vis.style.display = ""; ABCJS.renderAbc("csd-notation", playAbc(false), { responsive:"resize", add_classes:true }); }
+    else if (vis){ vis.style.display = "none"; vis.innerHTML = ""; }
+  }
+  function loadForPlay(){
+    if (!ensureSynth()) return null;
+    // play the DYNAMICS version (rendered off-screen) so the printed staff stays clean
+    var visual = ABCJS.renderAbc("csd-hidden-notation", playAbc(true), { add_classes:true })[0];
+    var voicesOff = accompStyle() === "off" ? (vol("melody") === 0) : false;  // arranger ABC IS the voice — never mute it
+    return synth.setTune(visual, false, { soundFontUrl:SF_URL, chordsOff:false, voicesOff:voicesOff })
+      .then(function(){ try { synth.isLoaded = false; synth.isLooping = cycleOn(); } catch(e){} return true; });   // setTune resets isLooping
+  }
+  function togglePlay(){
+    if (!ensureSynth()){ $("csd-note").textContent = "Audio isn't available in this browser."; return; }
+    if (playing){ synth.pause(); playing = false; paintPlay(); return; }
+    var p = loadForPlay(); if (!p) return;
+    p.then(function(){ synth.play(); playing = true; paintPlay(); }).catch(function(){});
+  }
+  function stop(){ if (synth){ try { synth.pause(); synth.seek(0); } catch(e){} } playing = false; if (chart) chart.resetPlayback(); paintPlay(); }
+  function paintPlay(){ var b = $("csd-play"); b.innerHTML = playing ? "&#10074;&#10074; Pause" : "&#9654; Play"; b.setAttribute("data-on", playing ? "true" : "false"); }
+
+  // ---- key menu + tune selection (tunes come from the shared faceted library) ----
+  function buildKeyMenu(){
+    var sel = $("csd-key"); sel.innerHTML = "";
+    var origPc = current ? current.keyPc : 0;
+    // option 0 = the written key shown BY NAME; only call it "original" when the tune's
+    // key is canonical (%%key-fixed) — most tunes are key-agnostic.
+    var o0 = document.createElement("option"); o0.value = "orig";
+    o0.textContent = FLAT[origPc] + (current && current.keyFixed ? " (original)" : "");
+    sel.appendChild(o0);
+    for (var s = 1; s <= 11; s++){
+      var pc = (origPc + s) % 12, o = document.createElement("option");
+      o.value = String(s); o.textContent = FLAT[pc] + " (" + (s <= 6 ? "+"+s : "−"+(12-s)) + ")"; sel.appendChild(o);
+    }
+    sel.value = keyOffset ? String(((keyOffset % 12) + 12) % 12) : "orig";
+  }
+  function selectRec(rec){
+    if (!rec) return;
+    if (playing) stop();
+    current = rec; keyOffset = 0;
+    buildKeyMenu(); renderChart(); renderNotation();
+  }
+
+  // ---- wire ----
+  TuneLibrary.build(tunesObject);
+  var first = TuneLibrary.all()[0];
+  var picker = TuneLibrary.renderPicker($("csd-picker"), { onSelect: selectRec, selectedId: first && first.id });
+  if (first) selectRec(first);
+  $("csd-play").addEventListener("click", togglePlay);
+  $("csd-tempo").addEventListener("input", function(){ $("csd-tempo-v").innerHTML = "&#9833;=" + $("csd-tempo").value; });
+  $("csd-key").addEventListener("change", function(){ var v = $("csd-key").value; keyOffset = (v === "orig") ? 0 : (parseInt(v,10) || 0); if (playing) stop(); renderChart(); renderNotation(); });
+  if (window.Arranger){ var as = $("csd-accomp");                       // populate accompaniment styles + notations
+    Arranger.styles().forEach(function (s){ var o = document.createElement("option"); o.value = s.id; o.textContent = s.label; as.appendChild(o); });
+    as.addEventListener("change", function (){ if (playing) stop(); renderNotation(); });
+    var ns = $("csd-notesel");
+    Arranger.notations().forEach(function (n){ var o = document.createElement("option"); o.value = n.id; o.textContent = n.label; ns.appendChild(o); });
+    ns.addEventListener("change", function (){ if (playing) stop(); renderNotation(); }); }
+  (function (){ var tc = $("csd-tenorclef"); if (tc) tc.addEventListener("change", function (){ if (playing) stop(); renderNotation(); }); })();
+  $("csd-subbar").addEventListener("change", function(){ if (chart) chart.setSubBars(subBarSel()); });
+  $("csd-roman").addEventListener("change", function(){ if (chart) chart.setRoman($("csd-roman").checked); });
+  $("csd-cycle").addEventListener("change", function(){ if (synth) synth.isLooping = cycleOn(); });
+  ["melody","chords","bass","drums"].forEach(function(part){    // mixer faders — applied on next play
+    var el = $("csd-vol-" + part); if (el) el.addEventListener("change", function(){ if (playing) stop(); }); });
+  document.addEventListener("keydown", function(e){
+    if (e.code !== "Space") return; var a = document.activeElement;
+    if (a && (a.tagName === "INPUT" || a.tagName === "SELECT" || a.tagName === "BUTTON")) return;
+    e.preventDefault(); togglePlay();
+  });
+})();
+</script>
+```

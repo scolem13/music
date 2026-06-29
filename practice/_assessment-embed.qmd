@@ -1,0 +1,181 @@
+```{=html}
+<link rel="stylesheet" href="/apps/shared/assessment.css?v=8">
+<link rel="stylesheet" href="/apps/assessment/app.css">
+<div id="app-root">
+  <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
+
+  <div class="card">
+    <div class="row">
+      <div><label for="collection">Collection</label><select id="collection"></select></div>
+      <div><label for="pattern">Pattern</label><select id="pattern"></select></div>
+      <button id="next" type="button">Next</button>
+      <button id="random" type="button">Random</button>
+      <label class="cb" style="align-self:center"><input type="checkbox" id="shuffle"> 🔀 Shuffle order</label>
+    </div>
+    <div class="row" style="margin-top:.5rem">
+      <div><label for="assess">Assessment</label><select id="assess">
+        <option value="repeat" selected>Repeat the pattern</option>
+        <option value="resting">Sing the resting tone</option>
+        <option value="first">Sing the first pitch</option>
+      </select></div>
+      <div><label for="key">Concert Key</label><select id="key"></select></div>
+      <div id="transKeyWrap" style="display:none"><label for="transKey" id="transKeyLabel">Transposed Key</label><select id="transKey"></select></div>
+      <div><label for="viewSel">View</label><select id="viewSel">
+        <option value="concert" selected>Concert pitch</option><option value="transposed">Transposed</option>
+      </select></div>
+      <div><label for="octave">Octave</label><select id="octave">
+        <option value="-2">-2</option><option value="-1">-1</option>
+        <option value="0" selected>0</option><option value="1">+1</option><option value="2">+2</option>
+      </select></div>
+      <div><label for="clef">Clef</label><select id="clef">
+        <option value="treble" selected>treble</option><option value="bass">bass</option>
+        <option value="alto">alto</option><option value="tenor">tenor</option>
+      </select></div>
+      <button id="play" type="button" style="align-self:end">▶ Hear pattern</button>
+      <span id="estNote" class="muted" style="align-self:center"></span>
+    </div>
+  </div>
+
+  <div class="score-row">
+    <div class="score-pane">
+      <h2>Pattern</h2>
+      <div id="notation"></div>
+    </div>
+    <div class="score-pane">
+      <h2>Your response</h2>
+      <div id="responseCard" class="hidden"><div id="responseNotation"></div></div>
+    </div>
+  </div>
+
+  <div class="cols">
+  <div class="col">
+    <div class="card">
+      <div class="row" style="align-items:center">
+        <button id="mic" class="primary">Enable mic</button>
+        <button id="record" disabled>● Record attempt</button>
+        <button id="continuous" disabled>∞ Continuous mode</button>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Live</label>
+      <div class="readout">
+        <span class="freq" id="freq">—</span>
+        <span class="note" id="livenote"></span>
+      </div>
+      <div class="meter" id="meter">
+        <div class="zone" id="zone"></div>
+        <div class="center"></div>
+        <div class="needle" id="needle"></div>
+      </div>
+      <div class="scale"><span>-50¢</span><span>nearest note</span><span>+50¢</span></div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <label>Result</label>
+      <div id="captureSlot">
+        <div id="capturing" class="muted hidden">Listening — sing the notes…</div>
+        <div class="bar hidden" id="progwrap"><div id="prog"></div></div>
+      </div>
+      <div id="resultArea"><div class="muted">Enable the mic, pick a pattern, then record — or start Continuous mode.</div></div>
+    </div>
+
+    <div class="card" id="recCard">
+      <label>Recording — saved for manual review</label>
+      <audio id="player" controls style="width:100%; margin-top:.25rem"></audio>
+      <div class="row" style="margin-top:.6rem"><a id="download" class="btn">⬇ Download</a></div>
+      <div class="muted" id="recMeta" style="margin-top:.5rem">No recording yet.</div>
+    </div>
+
+    <div class="card" id="sessionCard">
+      <label>Continuous session — all responses in one file</label>
+      <div class="row">
+        <a id="sessionDownload" class="btn hidden">⬇ Download responses</a>
+        <a id="sessionSrt" class="btn hidden">⬇ Download labels (SRT)</a>
+      </div>
+      <div class="muted" id="sessionMeta" style="margin-top:.5rem">Run Continuous mode, then Stop to download every response (model playback and gaps excluded).</div>
+    </div>
+
+    <details class="card" id="options">
+      <summary>Options &amp; diagnostics</summary>
+      <div class="row" style="margin-top:.75rem">
+        <div>
+          <label for="tol">Tolerance (± cents)</label>
+          <select id="tol">
+            <option value="25">25 (strict)</option>
+            <option value="50" selected>50 (default)</option>
+            <option value="100">100 (lenient)</option>
+          </select>
+        </div>
+        <div>
+          <label>Octave tolerance</label>
+          <label class="cb" style="padding:.55rem 0"><input type="checkbox" id="octtol" checked> accept ±1–2 octaves</label>
+        </div>
+      </div>
+    </details>
+  </div>
+  </div>
+
+  <!-- vendored abcjs + the shared ABC pattern library + the pitch parser -->
+  <script src="/apps/shared/abcjs-basic.js"></script>
+  <script src="/apps/patterns/pattern-object.js"></script>
+  <script src="/apps/assessment/abc-pitch.js"></script>
+  <script src="/apps/shared/session-log.js"></script>
+<script src="/apps/assessment/app.js?v=8"></script>
+</div>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/tonality.js?v=4"></script>
+<script>
+(function(){
+  // Consume the shared tonality: minor tune → minor collection; set the key to the
+  // RESTING tone (collections are written so the key offset = resting-tone pc for
+  // both major and minor patterns).
+  var MINOR = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/;  // minor-3rd modes (not "mix"/"lyd")
+  var COUNTERPART = { "major-stepwise":"minor-stepwise", "minor-stepwise":"major-stepwise",
+                      "major-I-V":"minor-i-V", "minor-i-V":"major-I-V" };
+  function applyTonality(st){
+    if (!st || st.do == null || typeof loadCollection !== "function") return;
+    var wantMinor = !!(st.mode && MINOR.test(st.mode));
+    var cur = collectionSel.value, curMinor = /^minor/.test(cur);
+    if (wantMinor !== curMinor && COUNTERPART[cur]){ collectionSel.value = COUNTERPART[cur]; loadCollection(); }
+    var rest = st.resting != null ? st.resting : st.do;
+    var keyEl = document.getElementById("key");
+    if (keyEl && keyEl.value !== String(rest)){ keyEl.value = String(rest); if (typeof applyControls === "function") applyControls(); }
+  }
+  var cur = function(){ return { do: Tonality.getDo(), resting: Tonality.getResting(), mode: Tonality.getMode() }; };
+
+  // ---- Concert Key / Transposed Key menus + Concert/Transposed view ----
+  var NAMES=["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
+  var keyEl=document.getElementById("key"), tWrap=document.getElementById("transKeyWrap"),
+      tSel=document.getElementById("transKey"), tLbl=document.getElementById("transKeyLabel"),
+      vSel=document.getElementById("viewSel");
+  var instSemis=function(){ return (Tonality.getInstrument()||{}).semis||0; };
+  var instName =function(){ return (Tonality.getInstrument()||{}).name||"Piano"; };
+  function syncKeys(){
+    if(!keyEl) return;
+    var ia=instSemis(), resting=parseInt(keyEl.value,10)||0;
+    if(tWrap) tWrap.style.display = ia ? "" : "none";
+    if(ia && tSel){
+      if(tLbl) tLbl.textContent="Transposed Key ("+instName()+")";
+      var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[(pc+ia)%12]+'</option>';
+      tSel.innerHTML=h; tSel.value=String(resting);
+    }
+    if(vSel) vSel.value = Tonality.getView();
+  }
+  function publish(){
+    var resting=parseInt(keyEl.value,10)||0, minor=/^minor/.test(collectionSel.value);
+    Tonality.setAll(minor?((resting+3)%12):resting, resting, minor?"m":"maj", "local");
+  }
+  if(keyEl) keyEl.addEventListener("change", function(){ publish(); syncKeys(); });
+  if(tSel) tSel.addEventListener("change", function(){ keyEl.value=tSel.value; if(typeof applyControls==="function")applyControls(); publish(); syncKeys(); });
+  if(vSel) vSel.addEventListener("change", function(){ Tonality.setView(vSel.value,"local"); if(typeof renderPattern==="function")renderPattern(); });
+
+  Tonality.onChange(function(st, src){ if (src !== "local") applyTonality(st); syncKeys(); if(typeof renderPattern==="function") renderPattern(); });
+  applyTonality(cur()); syncKeys();
+  window.addEventListener("load", function(){ applyTonality(cur()); syncKeys(); });
+})();
+</script>
+<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/establish-button.js"></script>
+```

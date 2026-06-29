@@ -1,0 +1,63 @@
+---
+title: "Teacher Report"
+---
+
+Time + actions per page, per student. This page runs the *same* queries for
+everyone — the database (Row Level Security) decides which rows come back:
+a student sees only themselves, a teacher their enrolled students, an admin the
+whole school, a parent only their children.
+
+```{=html}
+<p id="report-status">Loading… (sign in as a teacher/admin/parent above)</p>
+<button onclick="loadReport()">Refresh</button>
+<table id="report" hidden style="border-collapse:collapse; width:100%; margin-top:16px;">
+  <thead><tr>
+    <th style="border:1px solid #ddd;padding:8px;text-align:left;">Student</th>
+    <th style="border:1px solid #ddd;padding:8px;text-align:left;">Page</th>
+    <th style="border:1px solid #ddd;padding:8px;text-align:right;">Active time</th>
+    <th style="border:1px solid #ddd;padding:8px;text-align:right;">Visits</th>
+    <th style="border:1px solid #ddd;padding:8px;text-align:right;">Plays</th>
+    <th style="border:1px solid #ddd;padding:8px;text-align:right;">Note clicks</th>
+  </tr></thead>
+  <tbody></tbody>
+</table>
+
+<script>
+  function rFmt(sec){ const m=Math.floor(sec/60), s=sec%60; return m?`${m}m ${s}s`:`${s}s`; }
+  function rCell(map,name,page){ const k=name+"|"+page;
+    if(!map[k]) map[k]={name,page,sec:0,visits:0,plays:0,notes:0}; return map[k]; }
+
+  async function loadReport(){
+    const { data:{ session } } = await window.sb.auth.getSession();
+    const status = document.getElementById("report-status");
+    if(!session){ status.textContent = "Not signed in. Use the bar at the top."; return; }
+
+    const [{ data:time, error:e1 }, { data:acts, error:e2 }] = await Promise.all([
+      window.sb.from("page_sessions").select("student_name, page, active_seconds"),
+      window.sb.from("activity_events").select("actor_name, app, event")
+    ]);
+    if(e1||e2){ status.textContent = (e1||e2).message; return; }
+
+    const agg={};
+    for(const r of time){ const c=rCell(agg,r.student_name,r.page);
+      c.sec+=r.active_seconds||0; c.visits+=1; }
+    for(const r of acts){ const c=rCell(agg,r.actor_name,r.app);
+      if(r.event==="play") c.plays+=1; else if(r.event==="note_click") c.notes+=1; }
+
+    const rows=Object.values(agg).sort((a,b)=>a.name.localeCompare(b.name)||b.sec-a.sec);
+    const tbody=document.querySelector("#report tbody"); tbody.innerHTML="";
+    const td='style="border:1px solid #ddd;padding:8px;"';
+    const tdn='style="border:1px solid #ddd;padding:8px;text-align:right;"';
+    for(const r of rows){ const tr=document.createElement("tr");
+      tr.innerHTML=`<td ${td}>${r.name}</td><td ${td}>${r.page}</td>`+
+        `<td ${tdn}>${rFmt(r.sec)}</td><td ${tdn}>${r.visits}</td>`+
+        `<td ${tdn}>${r.plays}</td><td ${tdn}>${r.notes}</td>`;
+      tbody.appendChild(tr); }
+
+    status.textContent = rows.length ? `Showing ${rows.length} rows.` : "No activity yet.";
+    document.getElementById("report").hidden = rows.length===0;
+  }
+  // window.sb is created in <head>; run once the page settles.
+  setTimeout(loadReport, 300);
+</script>
+```

@@ -1,0 +1,1731 @@
+#+TITLE: Record & Grade — Music Performance Assessment
+#+AUTHOR: Sean Coleman
+#+STARTUP: overview
+#+OPTIONS: toc:2
+
+* Goal
+Create assessments delivered through a website where students record themselves
+*playing / singing / entering MIDI*, and the system *automatically grades* the
+performance. Also save raw recordings for *manual review*.
+
+Target tasks (kept deliberately simple):
+- *Pitch-blind rhythmic accuracy* — grade timing only, ignore pitch.
+- *Rhythm-blind tonal accuracy* — grade pitch only, ignore timing.
+- Very short passages: *1 to 5 pitches*.
+
+* Integrated into pages-dev (2026-06-22)
+This project was moved into the *pages-dev* music platform as a Quarto app:
+~quarto-demo/apps/assessment/~ (this file lives there now).
+
+** What was wired up
+- App: ~quarto-demo/apps/assessment/index.html~ — the tonal-accuracy grader,
+  generalized from a fixed 3-note demo to an *N-note* grader (N = number of
+  notes in the chosen pattern).
+- Targets now come from the existing *ABC pattern library*
+  (~../patterns/pattern-object.js~) instead of manual dropdowns:
+  - Collection dropdown = keys of ~patternObject~ (major-stepwise, minor-stepwise,
+    major-I-V, minor-i-V).
+  - Pattern dropdown = tunes within the collection (parsed by ~ABCJS.TuneBook~).
+  - Notation rendered with the vendored abcjs (~../shared/abcjs-basic.js~);
+    solfège pulled from the ~w:~ line.
+- *Grading targets* (MIDI numbers for the V1 melody) are parsed by a small
+  purpose-built module: ~abc-pitch.js~ (~AbcPitch.melodyMidi(abc)~).
+  - Why a custom parser and not abcjs's MIDI: it's deterministic and *testable
+    in node* (verified C major→Do-Re-Mi, C minor flattens E/A/B, explicit ~=B~
+    naturals, chord-symbol skipping). abcjs is still used for notation + the
+    library parse.
+  - Scope/limitation: handles the constrained ABC in pattern-object.js (keys
+    C/Cm, single notes, octave ,/' marks, ^ _ = accidentals, trailing durations,
+    "w:" lyrics). Per-note accidentals only (no measure-persistence) — exact for
+    this data; revisit if richer ABC is added.
+- Kept from the standalone demo: YIN detection, damped needle, silence-gap
+  segmentation, octave-tolerance toggle (default on), MediaRecorder save
+  (filename now embeds collection + pattern id + grade).
+- Site wiring: ~practice/assessment.qmd~ embeds the app via iframe and is added
+  to the Practice navbar menu in ~_quarto.yml~. ~apps/**~ is already in Quarto
+  ~resources~, so the app ships as-is.
+
+** Verified
+- ~abc-pitch.js~ parser output checked in node against real pattern data.
+- App JS passes ~node --check~.
+- All resources resolve over HTTP (index, abc-pitch.js, shared/abcjs-basic.js,
+  patterns/pattern-object.js → 200).
+
+** [2026-06-22] Response notation
+- After recording, the detected pitches are rendered as notation via abcjs in the
+  same style as the pattern (stemless "0" noteheads, light panel, %%score (V1)).
+- ~midiToAbcToken(midi, minorKey)~ inverts MIDI→ABC, spelling notes under the
+  pattern's key: diatonic notes rely on the key signature, exceptions get an
+  explicit accidental (e.g. Cm: sung Eb → "E", sung B-natural → "=B"; major: Eb →
+  "_E"). Verified in node across 12 cases.
+- Shows for any non-empty detection (even when the note count ≠ expected), so the
+  student sees what was actually heard. ~#responseCard~ / ~#responseNotation~.
+
+** [2026-06-22] Notation polish + controls + establish tonality
+- *Fully black notation*: abcjs inherits ~currentColor~, which was the page's
+  light dark-mode text → forced ~color:#000~ on the staves + ~fill:#000~ on the
+  pattern SVG.
+- *Disabled click-to-color*: all ~renderAbc~ calls now pass ~selectTypes:false~
+  (and ~cursor:default~), so clicking notes no longer selects/colors them.
+- *Response coloring*: response renders with ~add_classes:true~; ~colorNotes()~
+  walks ~.abcjs-note~ in order and sets fill green (#138000) for in-tolerance
+  notes, red (#cc0000) for out (index-aligned to targets; extra notes red).
+- *Octave folding + 8va*: each sung note is folded into the displayed octave
+  (kept on the staff) and gets a text marker (8va/8vb/15ma/15mb, or "+N8ve") when
+  it was actually sung that many octaves from the target. Implemented by
+  rendering ~written = sung - 12*octShift - transpose~ then ~visualTranspose~,
+  so spelling/key/clef match the pattern automatically.
+- *Key / Octave / Clef controls*: ~transpose = keyOffset + 12*octave~ is applied
+  to both the targets (what to sing) and the display (~visualTranspose~); clef is
+  display-only (appended to the K: line). Changing any re-renders + re-targets;
+  a shown response re-renders too (~lastDetected~).
+- *Establish tonality* button: plays I–IV–V7–I (triangle tones) in the current
+  key. *Major only* for now (minor/other tonalities deferred — shows a note).
+
+** [2026-06-23] Rhythm assessment app (pitch-blind rhythmic accuracy)
+- New app ~quarto-demo/apps/rhythm-assessment/~ — the other half of the goal.
+  Reuses the tonal app's card/shell design; swaps the engine for timing.
+- Targets from ~../rhythms/rhythm-pattern-object.js~ (collection + pattern
+  dropdowns via ~ABCJS.TuneBook~; notation via vendored abcjs, fully black).
+- ~abc-rhythm.js~ (~AbcRhythm.parse(abc)~) → ~{events, onsets, total, lQuarters}~
+  in L-unit beats. Handles durations (B2/B3/B/ etc.), broken rhythm (>,<),
+  rests (z, advance no onset), ties (- → continuation, no new onset).
+  *Verified in node*: 5 spot-checks (incl. broken/rest/tie) + full-file sweep
+  (every pattern parses to valid onsets).
+- Detection: *energy-based onset detection* (not pitch). Per-frame RMS captured
+  during the window; post-processed rising-edge peak picking with refractory
+  (~110ms). Live input-level meter + live attack counter; "Onset sensitivity"
+  control (threshold).
+- Grading is *tempo-LOCKED* (changed 2026-06-23 per request — was tempo-
+  independent): the count-in sets the tempo and the performance is graded in
+  *absolute seconds* against it.
+  - Tempo slider = *macrobeats per minute*. ~secPerLunit = (60/bpm)/macroLUnits~.
+  - ~macroLUnits~ (macrobeat length in L-units) is meter-derived:
+    ~AbcRhythm.macrobeatLUnits(abc, isTriple)~ = (isTriple?3:1)*(4/d)/lQuarters;
+    ~isTriple~ from the collection name. *Verified in node*: every pattern is a
+    whole number of macrobeats (all 4).
+  - Target attack times (sec) = onset_Lunits * secPerLunit, relative to the
+    downbeat. Tolerance is in *ms* (default ±100). Requires matching attack count.
+- *Count-in synchronized with capture*: on Record, N macrobeat clicks (N=2 or 4,
+  selectable) are scheduled on ~audioCtx~; the downbeat after them is mapped into
+  ~performance.now()~ via a one-shot ~(ctxNow, perfNow)~ offset → ~perfT0~.
+  Detected onsets are measured as seconds from ~perfT0~. Capture window auto-sized
+  = count-in + pattern duration + 700ms tail. UI flips "Count-in…" → "Perform
+  now!" at the downbeat; live attack counter only tallies after ~perfT0~ (so
+  count-in click leakage isn't counted).
+- Feedback: per-attack table (target s / your s / off ms / hit) + overall
+  PASS/FAIL + an *absolute-time timeline* (target row vs your row, green/red).
+- Playback: "Hear pattern (with count-in)" = count-in then a model performance
+  (square-wave clicks) at the chosen tempo.
+- Caveat: count-in clicks play through speakers and can leak into the mic;
+  they're before ~perfT0~ so filtered out, but *headphones recommended*. Onset
+  resolution still ~rAF-bound (~16ms).
+
+** [2026-06-23] Metronome + latency compensation (lag fix)
+- User reported perceptible lag making it hard. Two fixes:
+  1. *Latency compensation*: ~latencyComp() = audioCtx.outputLatency ||
+     baseLatency~. Clicks are HEARD ~outputLatency after being scheduled, so
+     grading-from-scheduled-time made every attack read late. ~perfT0~ now adds
+     ~lat~ (= heard downbeat). Residual = mic input latency (not exposed by the
+     API) — could add a manual calibration offset later.
+  2. *Continuous metronome* (count-in + through the whole performance), via
+     ~scheduleMetronome(ctxNow, perfNow, nBeats, downbeatIndex, spm, lat)~:
+     - *Audible* click on each macrobeat (toggle ~#metroAudible~, default on;
+       labeled "headphones" since it leaks into the mic otherwise). Accent on
+       beat 0 and the downbeat.
+     - *Visual* crisp flash on a beat dot (~#beatdot~, toggle ~#metroVisual~,
+       default on). Flash timing offset by ~lat~ so it aligns with the heard
+       click; ~setTimeout~ list cleared via ~clearVisualTimers()~ on stop/restart.
+- Same metronome now also drives "Hear pattern" (count-in + steady macrobeat +
+  model attacks).
+- Removed old ~scheduleCountIn~ (superseded by ~scheduleMetronome~).
+- User confirmed audible metronome works well even without headphones.
+
+** [2026-06-23] Performed-rhythm notation (generated ABC)
+- Now feasible because grading is tempo-LOCKED: detected onset seconds → L-units
+  (÷secPerLunit) → quantize to nearest half-beat (~GRID=0.5~) → durations from
+  inter-onset deltas → ABC. (This was unreliable in the tempo-independent version
+  and was explicitly deferred then.)
+- ~performedAbc(detSec)~ reuses the target's M:/L: and ~K: clef=none~, inserts
+  barlines at measure boundaries (~measureLUnits = 4n/(d·lQuarters)~), last note
+  fills to ~target.total~. ~abcDur()~ renders half-beat durations (e.g. 1.5 →
+  "3/2", 0.5 → "/2"). *Verified in node*: perfect performances reproduce the
+  target rhythm (duple/triple/broken).
+- ~renderPerformed()~ + ~colorPerformed()~: green (#138000)/red (#cc0000)
+  noteheads per attack when counts match (analog to the tonal app's response);
+  uncolored when counts mismatch (still shown, so the student sees what they did).
+  New card ~#performedCard~ / ~#performedNotation~.
+- Barlines + beams: ABC beams via whitespace (adjacent short notes w/o spaces
+  beam; spaces break beams). ~performedAbc~ now emits beam groups by writing
+  notes <a quarter (~dur·lQuarters<1~) without spaces, breaking at macrobeat
+  boundaries and barlines; barlines at ~measureLUnits~. *Verified in node*:
+  duple/triple/duple-division reproduce the source beaming + barlines exactly.
+- MediaRecorder save (filename embeds collection + pattern id + grade), same as
+  tonal app.
+- Site wiring: ~practice/assessment-rhythm.qmd~ (iframe) + navbar entry in
+  ~_quarto.yml~.
+- Design deltas vs tonal app (intentional): no key/octave/clef or establish-
+  tonality (pitch concepts); response shown as a timeline rather than re-notated
+  (quantizing free onsets back to notation is unreliable — timeline is honest).
+
+** [2026-06-23] Spacebar flow + mic gating (rhythm app)
+- Record button stays disabled until mic enabled (was already; now also enforced
+  by the flow + a status banner).
+- Spacebar state machine (~flowState~, banner ~#flowStatus~):
+  nomic → (enable mic) ready → SPACE hear → listened → SPACE record → recording
+  → pass: "passed" (SPACE = next pattern) | fail/incomplete: "failed" (SPACE =
+  re-record). ~advanceNext()~ steps pattern → next collection → wrap; ~loadPattern~
+  sets flow ready (or nomic). Buttons (Hear/Record) call the same
+  ~hearPattern()~ / ~recordAttempt()~ so clicks and SPACE stay in sync.
+- Keydown handler ignores SPACE when focus is on INPUT/SELECT (so sliders/selects
+  keep native space behavior); else preventDefault (no page scroll / no double
+  button activation). Note: in the Quarto iframe the user must click the app once
+  to give it focus before SPACE works.
+- Marked as the *starting* flow; to be extended later (per user).
+
+** [2026-06-23] Constant mode (automatic call-and-response loop)
+- "∞ Constant mode" button (enabled with mic). Runs hands-free:
+  per cycle = *model plays automatically* (no count-in) → ~CONST_GAP=2~ macrobeats
+  of clicks ("your turn") → *record* → grade → pass: ~advanceNext()~, fail: same
+  pattern → ~setTimeout(runConstantCycle, 500)~ loop.
+- Metronome is *constant*: one ~scheduleMetronome~ call spans the whole cycle
+  (model + gap + record), accenting both the model downbeat (0) and the record
+  downbeat (~pm+CONST_GAP~). ~perfT0~ = record downbeat (model/gap onsets are
+  negative → filtered out of grading).
+- ~scheduleMetronome~ generalized: ~accents~ is now an array of beat indices
+  (was a single ~downbeatIndex~); the two manual call sites pass ~[0, N]~.
+- ~capturing~ banner shows phases Listen… → Your turn… → Perform!.
+- Stop: the Constant button toggles, or *SPACE bails out* (~stopConstant()~).
+  Caveat: already-scheduled audio clicks for the in-flight cycle finish playing
+  after Stop (oscillators aren't tracked for cancellation); it won't loop again.
+- Manual Record/Hear buttons disabled while constant mode runs.
+
+** [2026-06-23] Constant mode → Continuous mode (refined)
+- Renamed constant→continuous (button id ~#continuous~, vars/functions).
+- New cycle timing: model plays *with* metronome (beats 0..pm-1) → *NO clicks*,
+  straight into a *silent recording* (beats pm..2pm-1; record downbeat = right
+  after the model, no pre-record gap) → grade → *2 turnaround clicks* (beats 2pm,
+  2pm+1) → pass: ~advanceNext()~, fail: same pattern → loop. The 2 clicks moved
+  from before-record to after-record.
+  - Bonus: silent recording window means zero click bleed during grading.
+- ~scheduleMetronome~ refactored into per-beat ~scheduleBeat()~ (continuous mode
+  schedules non-contiguous beats: model + turnaround, skipping the record window).
+- Status bar (~#flowStatus~ via new ~setStatus(text,cls)~) now drives continuous
+  feedback: "🔊 Listen…" → "🎤 Your turn — perform!" → "✓ Passed — next pattern"
+  / "✗ Not yet — repeating this pattern" (visible through the turnaround).
+- Performed-rhythm notation moved to the *top of the Result card* and now
+  *persists until the next recording starts* (hidden at the record downbeat, not
+  on pattern load/advance). ~loadPattern~ no longer hides it and skips the flow
+  reset while continuous mode runs.
+- Tweaks: metronome clicks ON through the recording again (model+record = beats
+  0..2pm-1 via one ~scheduleMetronome~, accents at 0 and pm); model→record still
+  immediate (no gap); the 2-beat turnaround is now *silent* (no clicks). Feedback
+  shown ASAP: grade()+status fire synchronously at ~perfEndMs+150ms~, then the
+  recording playback card is presented after the async blob resolves.
+
+** [2026-06-23] Steady layout (no wiggle) + collapsible options (rhythm app)
+- Wiggle cause: result elements toggled ~display:none/block~ → layout reflow.
+  Fix: keep them in the layout always; ~.hidden{visibility:hidden}~ + reserved CSS
+  heights (~#performedNotation~ 64, ~#captureSlot~ 24, ~#resultArea~ 150,
+  ~#recCard~ 108). Helpers ~show(id)/hide(id)~ toggle the class.
+  - performedCard: hidden via class (reserved), shown after grade.
+  - timelineWrap + recCard: now *always visible* (empty timeline + "No recording
+    yet." placeholders); ~clearTimeline()~ / ~resetRecCard()~ manage content.
+- Moved secondary options to a bottom ~<details id="options">~ ("Options &
+  diagnostics"): timing tolerance, count-in, onset sensitivity, metronome
+  toggles, and the live input-level meter. Kept up top: collection/pattern/
+  next/random, notation, tempo, Hear, mic/record/continuous, beat dot, status.
+- Note: result table can still exceed the 150px reserve for high-onset patterns
+  (minor growth); cards no longer appear/disappear, which was the big jump.
+
+** [2026-06-23] Acoustic latency calibration (speakers)
+- "🎯 Calibrate latency (speakers)" button in Options. ~calibrateLatency()~
+  plays 6 loud short clicks (0.4s apart), captures mic frames, and for each
+  click finds the detected onset within (sched, sched+350ms); the *median* of
+  (detected − scheduled) = full round-trip latency (output + propagation + mic
+  input). Stored in ~calibratedLatencyMs~.
+- ~latencyComp()~ now returns the calibrated round trip when available, else
+  falls back to ~audioCtx.outputLatency~ (which omits unmeasurable mic input
+  latency). This feeds ~perfT0~ everywhere, removing the residual lag for
+  speaker users.
+- Works *only on speakers* (mic must hear the clicks) and relies on
+  ~echoCancellation:false~ (already set). Precision is rAF-bound (~16ms); median
+  of 6 mitigates. Upgrade path: sample-accurate cross-correlation vs the known
+  click waveform (AudioWorklet/OfflineAudioContext) for ~1ms.
+
+** [2026-06-23] Ported rhythm-app UX to the tonal app
+- Brought the workflow/UX refinements from rhythm-assessment to ~apps/assessment~:
+  - *Status bar* (~#flowStatus~) + ~setStatus/setFlow~.
+  - *Spacebar flow*: ready → SPACE hear → record → pass: next / fail: re-record.
+    Buttons (Hear/Record) call shared ~hearPattern()~ / ~recordAttempt()~.
+  - *Continuous mode* (auto loop): model plays target pitches (with gaps) →
+    record window (capture dur) → grade → pass: ~advanceNext()~, fail: repeat →
+    loop. Uses ~flowTimers~/~clearFlowTimers~. *No metronome/count-in/tempo/latency*
+    — tonal is rhythm-blind (fixed-duration capture, silence segmentation).
+  - *Steady layout*: ~.hidden~ (visibility) + reserved heights (#responseNotation,
+    #captureSlot, #resultArea, #recCard); ~show/hide~ helpers. responseCard moved
+    to *top of Result card* and persists until the next recording; recCard always
+    visible with "No recording yet." placeholder (~resetRecCard~).
+  - *Collapsible bottom options*: tolerance, capture duration, octave toggle moved
+    into ~<details id="options">~. Kept up top: collection/pattern/next/random,
+    key/octave/clef, notation/solfège, Establish/Hear, mic/record/continuous, Live.
+  - Continuous button mic-gated; ~<kbd>SPACE</kbd>~ hint in intro.
+- *Intentionally NOT ported* (timing-specific, N/A to rhythm-blind tonal):
+  metronome (audible/visual), count-in, tempo, acoustic latency calibration.
+
+** [2026-06-23] Time-per-note capture (tonal app)
+- Replaced the fixed "Capture (s)" selector with *"Time per note (s)"* (#perNote,
+  default 0.8; options 0.6/0.8/1.0/1.5). Capture window now scales with the
+  pattern: ~captureMs() = (targets.length * perNoteSec() + CAPTURE_TAIL[0.6]) * 1000~.
+- ~hearPattern~, ~recordAttempt~, and ~runContinuousCycle~ all use ~perNoteSec()~:
+  model note spacing = perNote (sound = 0.7·perNote), capture = captureMs(). Fixes
+  awkward fixed windows when patterns have different note counts (1–5).
+
+** [2026-06-23] Download full continuous session (responses only) — tonal app
+- New ~#sessionCard~ with a "⬇ Download responses" link. One audio file containing
+  *only the student responses* from a continuous session (model playback + gaps
+  excluded).
+- Implemented via a session-level ~MediaRecorder~ (~sessionRecorder~) started+paused
+  when Continuous mode begins; ~sessionResume()~ at each response-window start,
+  ~sessionPause()~ + ~sessionResponses++~ at grade. ~finalizeSession()~ on Stop builds
+  one Blob from the buffered chunks → ~session_<ts>_<N>responses.<ext>~.
+  - pause/resume yields a single valid container with only the recorded spans;
+    guarded with try/catch (pause/resume unsupported → degrades, not fatal).
+  - Runs alongside the existing per-cycle recorder (last-attempt playback); two
+    MediaRecorders on one micStream.
+** [2026-06-23] Session refinements (both apps)
+- *SRT export* alongside the session audio: ~buildSRT(sessionEntries)~ where each
+  entry = ~{label: "<collection> — Pattern <id>", durMs}~ logged at grade time;
+  timestamps accumulate over the responses-only audio so they line up. Second
+  link "⬇ Download labels (SRT)" in ~#sessionCard~. Verified format in node.
+- *Immediate STOP*: ~stopAllTones()~ tracks scheduled oscillators (~activeOscs~ in
+  ~playTone~/rhythm ~click~) and stops them at once; ~endSession()~ also clears the
+  cycle timers, stops the per-cycle MediaRecorder, finalizes the session, and
+  hides capture UI — no more waiting for audio/recording to play out.
+- *End at collection end*: passing the last pattern in the collection →
+  ~endSession("complete")~ with a "🎉 Session complete" status (does not wrap to
+  the next collection in continuous mode).
+
+*** Tonal-only
+- *Establish tonality* once per session at start: I–IV–V7–I (major) / i–iv–V7–i
+  (minor), then the first cycle. ~establishTonality()~ now supports minor and the
+  standalone button works for both.
+- *Time per note*: removed the user selector; fixed ~PLAY_PER_NOTE=0.6~ (playback)
+  and ~REC_PER_NOTE=0.8~ (recording window = N·0.8 + tail).
+
+*** Rhythm app — transferable parts applied
+- Added the session recorder + SRT, ~stopAllTones~/immediate STOP, and end-at-
+  collection. NOT applied (N/A to pitch-blind rhythm): establish tonality, the
+  0.6/0.8 per-note timing (rhythm is tempo/metronome-driven).
+
+** [2026-06-23] Hybrid segmentation — pitch-change + smaller gaps (tonal app)
+- Notes now split on a *sustained pitch change* as well as silence, so legato
+  singing with distinct pitches no longer needs gaps. Gap threshold reduced
+  ~GAP_MS 120→70~, ~MIN_VOICED 5→4~.
+- ~segmentNotes()~: split decisions run on an *EMA-smoothed* contour (~ALPHA_SEG
+  0.3~) so vibrato/wobble don't false-split, while the note pitch is the median
+  of RAW frames. New note when a candidate holds ~NEW_NOTE_FRAMES~ steady frames
+  ≥ ~NEW_NOTE_CENTS(80)~ from the current note's smoothed ref (~SAME_CENTS 70~ =
+  same-note tolerance). Glide frames auto-discarded (candidate resets while
+  unstable).
+- *Verified in node*: legato whole-steps → 3 notes, legato semitone → 2, wide
+  vibrato ±55¢ → 1 note, descending leap → 2, same-pitch-with-gap → 2.
+- *Limitation*: repeated SAME-pitch notes still need a small gap (no pitch change
+  to detect; would need energy/onset detection to split re-articulations). Intro
+  copy updated to say so.
+
+** [2026-06-23] Segmentation #3 — offline optimal N-segment partition (tonal)
+- Replaced the streaming EMA hybrid (too twitchy w/ vibrato/glide) with an
+  *offline DP*: grading is batch + N is known, so partition the captured pitch
+  contour into *exactly N* contiguous segments minimizing within-segment variance.
+  Boundaries land at real transitions; vibrato/wobble = within-segment spread,
+  glides too short to form a segment → not twitchy.
+- ~dpPartition(x, mand, N)~: O(N·T²) DP over MIDI-float series with prefix sums
+  for variance·n; ~mand[i]~ = mandatory boundary at a silent gap (segments can't
+  span it). ~segment()~ groups voiced frames into gap-delimited chunks (drop
+  <MIN_VOICED), then: chunks>N → count mismatch (return chunk medians); else DP
+  into N; each segment's pitch = median of RAW freqs.
+- Gaps still force boundaries → same-pitch repeats separate when a gap is left;
+  over-singing (more chunks than N) → "Detected X, expected N".
+- *Verified in node*: legato C-D-E →3; legato semitone →2; wide vibrato ±55¢ →1;
+  C-D-E each w/ wide vibrato →3; descending leap →2; same-pitch+gap →2; flat sing
+  vs C-D-E →C C C (fails notes 2-3 correctly).
+- Tradeoff (accepted): under-singing *with chunks ≤ N* is force-split to N rather
+  than flagged incomplete, but per-note cents grading still fails the missing
+  note. Same-pitch repeats without a gap remain unsplittable (pitch-only).
+
+** [2026-06-23] Shuffle pattern order (both apps)
+- "🔀 Shuffle order" checkbox (next to Next/Random). A ~playOrder~ array defines
+  traversal within the current collection; ~buildOrder()~ (Fisher–Yates when
+  checked) runs on collection load and on toggle. Next, spacebar advance, and
+  continuous-mode advance all step through ~playOrder~ via ~gotoOrder/orderPos~;
+  ~isLastInCollection()~ (order-based) ends a continuous session after the last
+  pattern in the shuffled order. Collection load starts at ~playOrder[0]~.
+- Independent of continuous mode (works for manual Next too). The "Random" button
+  (one-off jump) is unchanged.
+- Applied to both the tonal and rhythm apps.
+
+** [2026-06-23] Assessment-type dropdown (tonal app)
+- New ~#assess~ dropdown: "Repeat the pattern" (default), "Sing the resting tone",
+  "Sing the first pitch". Tonal-only (pitch concepts; N/A to rhythm app).
+- The *stimulus* (notation shown + "Hear pattern"/continuous model) is always the
+  full pattern; only the *graded target* changes via ~gradeTargets()~:
+  repeat → all ~targets~; resting → ~[60+transpose]~ (tonic in current key/octave);
+  first → ~[targets[0]]~.
+- Wired ~gradeTargets()~ through ~captureMs~ (window sized to graded length),
+  ~segment()~ N, ~grade()~, ~renderResponse()~, and ~targetInfo~ ("Sing the …").
+  Change listener on #assess re-applies. Recording filename + SRT label now
+  include the assess type for review.
+
+** [2026-06-23] Combined tune assessment — AUDIO PROTOTYPE
+- New app ~quarto-demo/apps/tune-assessment/~ — grades real tunes on *both* pitch
+  and rhythm from one monophonic audio capture. Enabled by the offline DP
+  pitch-segmentation insight (F0 segmentation is robust; onsets give timing).
+- ~abc-tune.js~ (~AbcTune.melodyNotes(abc)~): full ABC melody parser for the tunes
+  library — key signatures (any major/minor/mode via circle-of-fifths),
+  per-measure accidental persistence, octave marks, durations (incl broken
+  rhythm > <), rests, ties, chord-symbol skipping. Returns
+  ~{notes:[{midi,onset,dur}], total, lq, meter, tempoQ}~. *Verified in node*:
+  Lightly Row (Bb)=F D D Eb C C Bb…, Yankee Doodle (Eb), Gm tune w/ ^F accidental;
+  all 109 tunes parse cleanly.
+- Grading (combined): tempo-locked (count-in + quarter metronome, tune's Q,
+  tempo slider). YIN F0 + energy per frame. ~detectOnsets~ (energy) → performed
+  onset times; *greedy alignment* of each target note to the nearest unused
+  onset within a window → rhythm deviation (ms); pitch = median F0 in that note's
+  window vs target (cents, octave-tolerant). Per-note table (pitch/timing ✓),
+  scores "Pitch x/N · Rhythm y/N · Both z/N", + rhythm timeline.
+- Reuses: YIN, energy onset, metronome+latencyComp, MediaRecorder save, steady-ish
+  layout, status bar. Wired via ~practice/assessment-tune.qmd~ + navbar.
+- *Known limits (honest)*: monophonic + clear attacks only; legato & repeated
+  same-pitch notes = missed onsets (greedy align tolerates, shows as misses);
+  onset/pitch resolution rAF-bound (~16ms) so slow the tempo for fast tunes;
+  no continuous/session/SRT yet (prototype). MIDI path still the reliable option.
+- [2026-06-23] Added *chord accompaniment* (play-along): ~abc-tune.js~ now parses
+  chord symbols → ~chords:[{onset,midis,name}]~ via ~chordMidis()~ (root+quality →
+  triad/7th in the C3 region). ~scheduleChords()~ plays soft triangle pads
+  synced to the metronome/tempo in both Hear-tune and record. Toggle ~#chords~
+  (default on). *Requires headphones* — accompaniment through speakers bleeds into
+  the mic and corrupts onset/pitch detection; toggle off if no headphones.
+
+** [2026-06-23] Class session logging + makeup replay (all 3 apps, local-first)
+- Shared ~apps/shared/session-log.js~: floating "Class log" panel. Teacher
+  improvises → each presented item logged (deduped) in order; *Export* JSON or
+  *Copy link* (state base64-encoded in URL ~#makeup=…~). Student opens that link →
+  app enters *replay/makeup* mode and steps the exact sequence (Next/Prev).
+- Generic module; each app supplies ~getState()~ (snapshot + ~label~) and
+  ~applyState(s)~ (set controls for replay). Calls: ~SessionLog.init({...})~,
+  ~SessionLog.present()~ on each load/param change, ~SessionLog.begin()~ after init.
+  - tonal: logs coll/idx/key/octave/clef/assess (present() in applyControls).
+  - rhythm: coll/idx/tempo/countin (present() in loadPattern + tempo/countin).
+  - tune: coll/idx/tempo/chords (present() in loadTune + tempo/chords).
+- Event shape is flat (~{app, occurred_at, ...state}~) → maps onto Supabase
+  ~session_events~ later (architecture.org Phase 1/2: log → makeup pages).
+- *Verified in node*: unicode-safe link encode/decode roundtrip.
+- Local-first prototype: in-memory + URL/JSON; no backend yet. NEXT: POST events
+  to Supabase + persist recordings; per-student log; unify cross-app session link.
+- [2026-06-23] *Auto-advance replay on pass*: ~SessionLog.onResult(pass)~ — in
+  replay mode a pass advances to the next step after 1.5s (result stays visible
+  first); last step → "✅ Makeup complete". Manual Prev/Next still work.
+  Pass source: tonal/rhythm ~summary==="pass"~ (in recordAttempt completion);
+  tune = every note correct on both axes (~bothPass===N~, in grade()).
+
+** [2026-06-23] Wider embeds in the Quarto site
+- The three ~practice/assessment*.qmd~ pages wrap their iframe in
+  ~::: {.column-screen-inset}~ so the app breaks out of Quarto's narrow article
+  column (was shrinking the ~720px apps). Re-render with ~quarto render~ (whole
+  project; per-file render args were flaky). View at ~/_site/...~ or ~quarto preview~.
+
+** [2026-06-23] De-iframe → inline page integration (tonal = proof)
+- Goal: no independent scroll + inherit site CSS → requires removing the iframe
+  (iframe = separate doc = own scrollbar + isolated CSS). Decision: keep dark
+  component styling, scoped; tonal first.
+- Verified ~{{< include >}}~ passes raw HTML/CSS/JS through intact (throwaway test).
+- Converted ~apps/assessment/index.html~ into a *scoped fragment* (single source,
+  works standalone AND embedded): dropped <!DOCTYPE>/<html>/<head>/<body>; all CSS
+  nested under ~#app-root~ (native CSS nesting); ~#app-root~ carries the dark bg +
+  max-width container; *dropped font-family* so it inherits the site font; script
+  srcs → absolute ~/apps/...~; body wrapped in ~<div id="app-root">~.
+- ~practice/assessment.qmd~: replaced the iframe with
+  ~::: {.column-page}\n{{< include ../apps/assessment/index.html >}}\n:::~.
+- Verified: rendered page has #app-root inline, 0 iframes, abcjs ref present;
+  standalone + in-site both serve 200.
+- Caveat: relies on native CSS nesting (modern browsers); standalone fragment has
+  no <head> charset/viewport (fine on localhost/desktop).
+- *Fix (first attempt failed → black-on-black raw HTML)*: ~{{< include >}}~ runs
+  the file through pandoc as Markdown, so blank lines in the big inline <script>
+  (and indented markup) became code blocks / escaped text. Working recipe:
+  1. Style → ~apps/assessment/app.css~ (scoped under #app-root, nested).
+  2. Inline script → ~apps/assessment/app.js~ (860 lines).
+  3. Markup → a *raw-block partial* ~practice/_assessment-embed.qmd~ wrapping
+     ~<link app.css>~ + ~<div id="app-root">…</div>~ + script srcs in a
+     ` ```{=html} ` block (guaranteed verbatim passthrough).
+  4. ~practice/assessment.qmd~: ~::: {.column-page}\n{{< include _assessment-embed.qmd >}}\n:::~.
+  5. Removed the old standalone ~index.html~ (partial is canonical; app.css/app.js/
+     abc-pitch.js are shared resources, copied to _site/apps on render).
+  - Verified: 0 escaped tags / 0 <pre> in output; #app-root + controls present;
+    app.css/app.js linked + copied to _site; partial (~_~ prefix) not a standalone page.
+  - Lost: direct ~/apps/<app>/index.html~ view (use the rendered site / preview).
+- [2026-06-23] *Rolled out to rhythm + tune* (scripted transform): each now has
+  ~app.css~ (scoped #app-root) + ~app.js~ + ~practice/_rhythm-embed.qmd~ /
+  ~_tune-embed.qmd~ (raw-block partial); ~assessment-rhythm.qmd~ /
+  ~assessment-tune.qmd~ include them in ~.column-page~; index.html removed for
+  both. Verified: 0 leakage, #app-root + css present, app.css/app.js reachable.
+  All three assessment tools are now inline-in-site (no iframe, no independent
+  scroll, inherit site font).
+
+** [2026-06-23] Supabase lessons + makeups (written ahead of setup; local fallback)
+- ~setup-lessons.sql~ (run after setup.sql once Supabase is configured):
+  - ~lessons~ {id, teacher_id, title, app, items jsonb, created_at} — a saved
+    ordered session-log item list. RLS: teachers manage own; *anyone can SELECT*
+    (makeup links work unauthenticated).
+  - ~makeup_events~ {lesson_id, student_name, idx, app, item_id, passed, ts} —
+    logged on each replay pass. RLS: anyone inserts; owning teacher reads.
+- ~session-log.js~ extended with CLOUD MODE, gated on ~cloudReady()~ (~window.sb~
+  exists AND ~CONFIG.URL~ not the PASTE placeholder):
+  - Teacher panel button becomes *"Save lesson"* (vs local "Copy link"):
+    inserts into ~lessons~, copies a short ~?lesson=<uuid>~ makeup link. Requires
+    teacher sign-in (RLS insert check teacher_id=auth.uid()).
+  - ~begin()~ now async: a ~?lesson=<uuid>~ URL fetches items from Supabase →
+    replay. ~#makeup=~ base64 links still work (local).
+  - ~onResult~ → ~logMakeup()~ inserts a ~makeup_events~ row (best-effort; student
+    name prompted once, cached in localStorage).
+  - *Until keys are pasted in config.js, all of this is inert* → falls back to
+    Export / #makeup= links (verified: module loads + runs in placeholder mode).
+- TO ACTIVATE: paste URL/ANON in ~config.js~; run ~setup.sql~ then
+  ~setup-lessons.sql~; sign in as teacher; "Save lesson" → share ?lesson= link.
+- NEXT: surface ~makeup_events~ in ~teacher/report.qmd~ (who did the makeup, when).
+
+** [2026-06-23] Tune makeup = engagement bar (not mastery)
+- Tune pass-off is now mode-dependent: normal use stays strict (~bothPass===N~);
+  *makeup/replay* (~SessionLog.isReplay()~) passes on *evidence of engagement* —
+  ~perf.length >= max(2, ceil(N*0.4))~ OR ~bothPass >= max(1, ceil(N*0.25))~ (a
+  real attempt, given the janky audio detection). Result line notes "(makeup:
+  counts if you gave it a real go)".
+- Tunable knobs in ~apps/tune-assessment/app.js~ grade(). Tonal/rhythm makeup
+  still use their binary pass (could get a similar engagement bar if wanted).
+
+** [2026-06-23] Added chord-library + solfege-keyboard tools to the site
+- Copied ~chord-library/~ and ~solfege-keyboard/~ into ~quarto-demo/apps/~ (served
+  via ~apps/**~ resource; excluded .claude/.git/.DS_Store). Both use relative
+  asset refs, so they work under /apps/.
+- New "Tools" navbar menu → ~tools/chord-library.qmd~, ~tools/solfege-keyboard.qmd~.
+- *Embedded via iframe* (not inlined like the assessment apps): these are full
+  standalone, multi-styled pages — chord-library is multi-page (index studio +
+  independent scales/fretboard/circle-of-fifths/keyboard/director/chord-sheet/
+  drumset), so inlining would break navigation + risk CSS clashes. chord-library
+  page iframes the studio + links the 7 sub-tools (open in new tab); solfege page
+  iframes ~audioSynthKeyboard.html~.
+- Verified: tools pages render + serve 200; apps + their JS copied into _site/apps.
+
+** [2026-06-24] Tools dropdown — all tools inlined full-bleed (de-iframed)
+- New "Tools" navbar menu with 8 pages, each the tool *inlined into the page*
+  (no iframe), full-bleed via ~::: {.column-screen}~: Scales, Fretboard, Circle of
+  Fifths, Keyboard, Director, Chord Sheet, Drumset (chord-library/*.html) +
+  Solfège Keyboard (solfege-keyboard/audioSynthKeyboard.html).
+- Scripted transform (per tool): strip wrapper tags → fragment; *targeted-scope*
+  only page-level selectors (~:root/html/body/*~ → ~#<tid>-root~) so the tools'
+  complex CSS (incl. @keyframes/@font-face — can't be CSS-nested) stays intact;
+  rewrite relative asset URLs → absolute ~/apps/<tooldir>/~; wrap markup in
+  ~<div id="<tid>-root">~ inside a ` ```{=html} ` raw-block partial
+  (~tools/_<tid>.qmd~); page ~tools/<tid>.qmd~ includes it in column-screen.
+- Verified: all 8 render with 0 leakage, #<tid>-root present, 200; rewritten
+  assets (pitch-spelling.js, audiosynth*.js) resolve 200.
+- Caveat: only page-level selectors are scoped; the tools' class-based rules stay
+  global on their own page (classnames are tool-specific, so no clash). The
+  chord-library "studio" index is not in the list (per request). Source HTML
+  files remain in apps/ as asset hosts.
+
+** [2026-06-24] Shared tonality (DO / resting tone persists across tools)
+- ~apps/shared/tonality.js~: one "current tonic" as pitch class 0–11 (C=0) in
+  localStorage ("musicTonic"), synced across tabs (storage event). ~bindSelect(el,
+  "pc"|"note")~ sets a tool's tonic control from the shared value on load (firing
+  the tool's own change handler) and writes back on user change. ~parseNote~
+  handles pc indices, note names + enharmonics ("A#/Bb", "Db", "G major", "Eb4").
+  Verified parse + get/set in node.
+- Wired (confident — both are pitch-class, C=0): *solfège #do-selector* ("DO") and
+  *tonal assessment #key* ("resting tone" = tonic). These are exactly what the
+  user named; switching one persists to the other on navigation.
+- Wired (best-effort note-name; defensive no-op if it can't parse): chord-library
+  *scales #root-select*, *chord-sheet #sel-key*. NEEDS in-browser check.
+- NOT wired: fretboard, keyboard, director (multiple roots, ambiguous). Mode
+  (maj/min) not unified, only the tonic.
+- [2026-06-24] *Circle of fifths NOW wired* (canvas, no <select>): not an IIFE, so
+  a later script hooks its globals — wrapped ~draw()~ to publish
+  ~FIFTHS_TO_CHROMA[selectedRoot]~ as the tonic after every redraw, and applies
+  external changes via ~selectedRoot~ + ~lockSpelling/syncUI/draw~. So clicking
+  G-DO on the circle → tonal assessment opens in G. (Tonic only; in la-based minor
+  circle modes the published pc is the major-key root — fine for the major-DO flow.)
+- Confirmed: tonal *assessment IS synced* (its #key, pc) — the resting tone follows
+  the shared tonic across navigation.
+- Injected ~tonality.js~ + a bind line into the 4 partials (~tools/_solfege-keyboard~,
+  ~_scales~, ~_chord-sheet~, ~practice/_assessment-embed~).
+
+** [2026-06-24] Tunes steer tonality; track DO + RESTING TONE (redesign)
+- ~tonality.js~ rewritten: tracks *three* values in localStorage (tonalDo,
+  tonalResting, tonalMode). DO = key-signature major tonic; RESTING TONE = modal
+  tonic (do for major, la for minor, etc.); mode = maj/m/dor/mix/...
+  ~keyToTonality(K)~ derives all three from an ABC key field
+  (resting = K: tonic pc; do = (fifths·7) mod 12 where fifths = majorFifths(tonic)
+  + modeOffset). *Verified node*: Bbmaj→DO/REST Bb; Gm→DO Bb/REST G; Ddor→DO C/
+  REST D; Dmix→DO G/REST D; Edor→DO D/REST E; Cm→DO Eb/REST C.
+- *Tunes are the master*: ~apps/tunes/index.html~ — removed random-on-load
+  (refreshSongbook now starts at tune 0); loads tonality.js; ~publishTonality()~
+  (called in setTune on every tune change) reads the tune's K: and
+  ~Tonality.setFromKey(..,"tunes")~. (Tunes page still iframed, but localStorage is
+  shared same-origin so navigation picks it up.)
+- Consumers bind to *DO*: ~bindSelect~ → DO (solfège #do-selector, scales
+  #root-select, chord-sheet #sel-key, tonal assessment #key); circle of fifths
+  hook → getDo/setDo. Resting tone is stored + readable (~Tonality.getResting()~)
+  but no tool consumes it yet.
+- DATA: K: already encodes mode for every tune (incl. Ddor/Dmix/Edor/Gm/Cm/…), so
+  DO+resting derive correctly *with no data edits*. "Updating tunes data" only
+  needed for any tune whose K: mode is wrong/missing (can't auto-detect — flag
+  individually). Published tonality uses the *written* K: (ignores vis-transpose).
+
+** [2026-06-24] Circle shows resting tone (LA for minor); assessment → minor patterns
+- Key realization: the circle's ~selectedRoot~ chroma is the MODE TONIC (= resting
+  tone), not DO (steps[0]=0; DO/parent-major = root + fifthsOffset). Earlier hook
+  was wrong (published resting as DO) — fixed.
+- *Circle of fifths* now consumes ~{resting, mode}~: sets ~selectedRoot~ =
+  FIFTHS_TO_CHROMA.indexOf(resting) and ~selectedMode~ via C_MODE map (maj→0,
+  m→5 natural minor, dor→1, mix→4, phr→2, lyd→3, loc→7) → displays the resting
+  tone with LA solfège for minor. Publishes ~setAll(do,resting,mode)~ on draw
+  (do = (resting + fifthsOffset·7) mod 12). Bidirectional, guarded against echo.
+- *Tonal assessment* consumer: minor-3rd mode (m/min/aeo/dor/phr/loc — NOT
+  mix/lyd) → switch to the minor collection (preserving stepwise↔I-V type via
+  COUNTERPART map), and set #key = RESTING tone pc (collections are written so the
+  key offset = resting pc for both major & minor). Replaced its DO bindSelect; now
+  consume-only.
+- solfège #do-selector / scales / chord-sheet still bind DO (the key signature) —
+  correct (DO=Bb for a G-minor tune). Resting tone now actively consumed by the
+  circle + assessment.
+
+** [2026-06-25] establish() uses per-mode characteristic chords (not always I-IV-V)
+- Fixed: establish was hardcoded I–IV–V. Now uses the circle's
+  CHARACTERISTIC_CHORD_DEFS per mode via an EST degree-sequence table:
+  maj/m: I-IV-V-I ; aeo(nat min): i-iv-bVII-i ; dor: i-bVII-IV-i ;
+  phr: i-bVII-bII-i (Phrygian cadence) ; lyd: I-II-V-I ; mix: I-IV-bVII-I ;
+  loc: i°-bIII-bVII-i°. Roots/qualities from MODE_DEF (circle MODES). cache-bust
+  tonality.js?v=3 across all 8 partials.
+
+** [2026-06-25] Chord sheet steering: republish tuneChords/tuneTonality
+- Chord sheet's passive KEY steering (applyFromShared reads Tonality.getDo/Resting/Mode
+  on load + onChange → render → drives #sel-key; main app spells from getDo()) is
+  verified working in a node stub. If it lags, it's stale HTML cache → hard-reload.
+- REAL gap: the chord sheet's "Load tune chords" + its tune-spelling read localStorage
+  "tuneChords"/"tuneTonality" — published by the ORIGINAL tunes app, which we unlisted.
+  The assessment tune page never wrote them. Added publishTuneData() (called from
+  steerTonality): writes tuneTonality (concert do/resting/mode) + unique tuneChords
+  (chord symbols, transposed to concert via transposeChordSymbol). cache-bust app.js?v=15.
+
+** [2026-06-25] Tune assessment: persist last tune + confirm steering
+- Persistence: saveLast() writes localStorage "tuneAssessLast" {coll,idx,key,mel,acc,
+  tempo} on loadTune + every control change; init restores it (set collection →
+  loadCollection → set tuneSel.selectedIndex → loadTune → apply key/voices/tempo →
+  renderTune/steer). Fixes the "page reset to tune #1 and re-steered the default" issue.
+- Steering was newly ADDED this session (the assessment-tune page never called
+  Tonality.setAll before) — verified via DOM stub that loadTune→steerTonality writes
+  tonalResting/tonalDo/tonalMode. Consuming pages (circle/patterns) read on load.
+  NOTE: python http.server heuristically caches the HTML pages → must HARD-RELOAD the
+  circle/patterns pages to pick up the new consume glue. cache-bust app.js?v=14.
+
+** [2026-06-26] Tune metadata migration — Phase A (data+engine) + Chord Sheet picker
+- Baked a stable %%id into all 108 tunes in tunes-object.js (slug from title, deduped;
+  one-off node script, backtick-aware for the `X:1 first-line case). %%id is a directive
+  → ignored by abcjs/AbcTune/TuneChart, transparent to every consumer.
+- NEW shared/tune-library.js: builds a flat index from tunesObject (collection key →
+  a TAG), auto-derives attributes via TuneChart.parse + regex: hasChords, hasLyrics
+  (w:), meter, key, tonality bucket (K: mode→major/minor/dorian/…), measures, hasPickup.
+  Hybrid: reads %%id + %%tags from the ABC if present, else derives. API: build/all/
+  byId/facets/filter({text,tags,tonality,meter,key,hasChords,hasLyrics}). Node-verified
+  over all 108 (tags 28/10/70; tonality maj81/min20/dor4/mix2; lyrics 59; meter spread
+  incl 5/8,7/8). Also includes renderPicker(container,{onSelect,selectedId}) — a shared,
+  themeable faceted UI (search + Tags/Tonality/Meter/Key dropdowns + Chords/Lyrics
+  toggles + results list w/ key·meter).
+- Chord Sheet tool (deluxe) CONVERTED to the picker: dropped its collection dropdown +
+  set-list + own TuneBook iteration; now TuneLibrary.build(tunesObject) + renderPicker
+  into #csd-picker, current = selected record. Dark-themed via --tlp-* vars. Verified:
+  search/lyrics filter/select all drive the chart. tune-library.js?v=1.
+- DONE: assessment page now uses the faceted picker too ("Find a tune" panel). Low-risk
+  integration: the existing #collection/#tune selects are KEPT but hidden; the picker
+  drives them. selectById(id): set collectionSel→rec.collection, loadCollection(false)
+  (new flag skips auto-loadTune), find index by idOf(abc)==id, set tuneSel, loadTune().
+  loadTune syncs the picker highlight via tunePicker.setSelected(idOf(currentAbc)); Next
+  → tunePicker.next(). Gated on a #tunePicker element existing, so the Reading Benchmarks
+  page (no #tunePicker, app.js shared) keeps its set/line dropdowns untouched. saveLast/
+  SessionLog still key off collection+idx (unchanged). app.js?v=20, tune-library.js?v=1.
+- GOTCHA: `quarto render <file>` did NOT pick up edits to an {{< include >}}'d partial
+  (served stale app.js?v=19); a full `quarto render` (no args) was required. Use full
+  render after editing _*-embed.qmd partials.
+- TODO remaining: Supabase class-exposure (stable ids exist); optional manual %%tags.
+
+** [2026-06-26] Tune library: alphabetical default, key-agnostic handling, romans, sort
+- Default order is now ALPHABETICAL (records.sort by title in build; affects picker +
+  the deluxe's all()[0] initial pick → "Admiral Anderson").
+- KEY-AGNOSTIC by default. New flag directive %%key-fixed marks a tune whose K: key is
+  canonical (published/common practice). hasDirective() detects flag directives.
+  • Key FACET only tallies keyFixed tunes (empty facet is hidden by the picker).
+  • Key shown in the results row ONLY for keyFixed tunes.
+  • Key FILTER matches keyFixed tunes only.
+  • Deluxe Key selector option 0 = the written key BY NAME (e.g. "G"); appends
+    " (original)" only when keyFixed. (tonality facet still applies to all — it's mode,
+    not absolute key.)
+- Roman numerals per tune: DEGREE[] table (major-relative w/ ♭/♯ chromatics, key-
+  independent) + chordRootPc/chordQuality/romanOf; build() collects distinct chords →
+  rec.chordCount and rec.romans (deduped, ordered by scale degree). Minor casing comes
+  from the chord quality (e.g. Gm tune → "i V"). Shown under each title in the picker.
+  Verified: Lightly Row I V, Yankee Doodle I IV V, Amazing Grace I II IV ♯iv° V.
+- Picker SORT select: A–Z (default) / fewest chords / most chords (by rec.chordCount).
+  cache-bust tune-library.js?v=3.
+
+** [2026-06-26] Roman numerals: secondary/applied chords (vii°/V, V/V, V/IV…)
+- Existing project roman logic: PitchSpelling.romanNumeral(rootPc,quality,keyCtx) — basic
+  per-chord diatonic/chromatic only, NO secondary functions, and NOT loaded on the Chord
+  Sheet tool. So tune-library keeps its own self-contained roman logic.
+- Switched roman labeling from raw degree to INTRINSIC applied-chord analysis (by chord
+  SPELLING, not resolution — the textbook treatment the user wants). appliedRoman():
+  • diminished a half-step below a diatonic degree → vii°/<that degree> (♯iv°7 = vii°/V),
+  • chromatic major / any dom7 a fifth above a diatonic degree → V/<that degree>
+    (II = V/V, I7 = V/IV, VI = V/ii, III = V/vi …).
+  Target named via DIATONIC_LABEL{0:I,2:ii,4:iii,5:IV,7:V,9:vi,11:vii°}; target=tonic is
+  excluded (the real V / vii°). isDom7 + isChromaticRoman gate the dominant case.
+  Verified: Amazing Grace I V/IV IV vii°/V V/V V; 19 tunes have applied chords.
+  NOTE: triad-level (V/IV not V7/IV); key-/resolution-independent by design. cache-bust
+  tune-library.js?v=4.
+
+** [2026-06-26] PROTOTYPE: in-browser arranger engine (phase 1 of P4)
+- Decision: phased — JS text/JSON style engine now, optional SFF/MMA importer later.
+- NEW apps/shared/arranger.js: meter-generic style engine. Style = data-driven event list
+  [{b:beatIndex, t:"bass"|"chord", d:beats|"bar"}]; events with b>=beatsPerBar are skipped
+  so one pattern fits 2/4,3/4,4/4,6/8… Reads TuneChart.parse output (bars+chord onsets,
+  beatsPerBar, meterD, unitsPerBeat, playOrder for repeats), schedules via MusicAudio
+  (audio.js) noteAt — bass = low root (oct2), chord = close triad(+7th) in oct4. Drives a
+  chart-highlight callback off ctx.currentTime via rAF. 3 starter styles: Block / Waltz /
+  Pop-ballad. Self-contained chord parser (root+quality+7th). Node-verified scheduling.
+- Wired into the Chord Sheet tool: "Accompaniment" select (Soundfont melody = existing
+  abcjs path [default, unchanged]; Block/Waltz/Pop = arranger via MusicAudio). togglePlay
+  branches on the select; onBar→chart.setLive; stop() stops the arranger. Also removed an
+  accidental duplicate listener block. cache-bust arranger.js?v=1; loads audio.js on deluxe.
+- NEEDS BROWSER CHECK (headless can't run real-time Web Audio): audible styles + the chart
+  bar-highlight advancing during arranger playback. Engine confirmed to SCHEDULE (32 notes)
+  + flip play state without errors.
+- SOUNDFONT RENDER (done): arranger now plays through the SOUNDFONT, not the osc synth.
+  Added Arranger.toAbc(parsed,{style,tempo,transpose,program}) → a one-voice comping ABC
+  (bass note + close triad as [stacks], L:1/8, durations in eighths = 8/meterD per beat;
+  block = sustained chord segments, waltz/pop = beat-comping via BEAT_RULES; bars 1:1 with
+  the chart so abcjs-mm lines up → existing cursor drives chart.setLive). Deluxe: playAbc()
+  returns toAbc when a style≠off is selected; plays via the SAME loadForPlay→setTune(
+  {soundFontUrl})→play path as melody mode (so transport/cursor reused). KEY FIX: loadForPlay
+  sets voicesOff:false in arranger mode (the accompaniment IS the voice — don't mute it).
+  Removed the MusicAudio branch + audio.js from the deluxe (toAbc needs neither; Arranger.play
+  kept for non-abcjs hosts). Verified the accompaniment ABC parses + renders (48 notes waltz).
+- NOT DONE (future): drums, swing feel, intros/fills/endings, per-section variation; arranger
+  ABC plays bars ONCE (repeats not expanded yet) + accompaniment-only (no melody voice);
+  SFF/MMA import. Needs a real-browser LISTEN (headless can't run Web Audio).
+
+** [2026-06-27] SATB chorale voicing (4-part, common-practice voice-leading)
+- NEW apps/shared/satb.js: SATB.voice(symbols, keyPc) → [{s,a,t,b} midi]. Rules (Open Music
+  Theory / Kostka&Payne / Aldwell&Schachter): voice RANGES (S60-81,A55-74,T48-67,B40-62);
+  SPACING adjacent uppers ≤8ve, T-B wider; no CROSSING (S≥A≥T≥B); DOUBLING root in root
+  position, dim→double 3rd, never double the leading tone; no ‖P5/P8/unison (both voices
+  moving); resolve LT up (strict in soprano) + chord 7th down by step; minimize motion /
+  keep common tones; soft penalties for overlap, direct 5/8 in outer voices, melodic +aug2.
+  Algorithm: enumerate valid candidates per chord (ranges/spacing/doubling/no-LT-double) →
+  greedy pick by seedCost (1st chord) then transCost (motion + the rules above). Node-verified
+  on I IV V7 I / ii V7 I / I vi IV V I / Am: i iv V7 i → ZERO range/crossing/parallel issues;
+  LT→tonic + 7th↓ confirmed.
+- arranger.js (v2): style "satb" + toAbcSATB() — segments(parsed) splits the chart into chord
+  segments (sym+durE+barEnd), SATB.voice() voices them, emits 4 ABC voices (V:1-4, S/A/T
+  treble + B bass) → abcjs renders 4 SEPARATE STAVES and plays all 4 via soundfont. transpose
+  applied to output midis (voice-led in the original key). Spelling: K:C + flat accidentals
+  (readable; key-sig spelling is a later polish).
+- Deluxe loads satb.js?v=1 + arranger.js?v=2; "SATB chorale" appears in the Accompaniment
+  select (added at runtime from Arranger.styles()). Verified: visible 4-stave render, no errors.
+- LATER: per-part instrument transposition (Bb/Eb), inversions/figured
+  bass from slash chords, staff playback cursor, repeats. Needs a real-browser LISTEN.
+
+** [2026-06-27] 4-channel mixer (Melody / Chords / Bass / Drums faders)
+- abcjs facts (tested): %%MIDI control 7 (CC7 channel volume) is NOT handled by our build
+  ("midi cmd not handled: control"); %%MIDI vol N DOES set per-voice velocity; but a note's
+  dynamic DECORATION overrides %%MIDI vol. Per-voice inline [L:] LEAKS globally (unusable).
+- So volume is applied differently per channel:
+  • chords/bass/drums: scale the per-note value. arranger opts.vol{chords,bass,drums,melody}
+    (0-100). dynScaled() = nearestDyn(DYNV[dynFor()]*frac) → the metric accent curve attenuated
+    by the fader. drums scale DVEL by frac. vol 0 on chords/bass → that voice emits all rests
+    (activeFn gate); drums 0 → no drum header.
+  • melody: NEW optional voice. arranger opts.melody{body,program,vol}; melodyVoiceLines emits
+    V:Mel + %%MIDI program + %%MIDI vol (melody has no decorations so vol works).
+- MELODY EXTRACTION (deluxe extractMelody): strip chords/decorations/grace/$/tuplets/slurs/
+  repeats/endings, scale L:1/4→1/8, validate via standalone ABCJS.parseOnly (return null on
+  fail → graceful no-melody fallback). Transpose first via AbcTranspose (srcAbc) so the melody
+  matches the transposed band. Coverage: 92/95 chord-tunes layer cleanly, 3 fall back. Melody
+  is PLAYBACK-ONLY (forPlay) — visible Piano/SATB notation stays the clean accompaniment.
+- Off-mode ("Soundfont melody"): melody vol→%%MIDI vol, chords→%%MIDI chordvol (×1.27),
+  bass→%%MIDI bassvol (×1.27); melody 0 → voicesOff. Style-mode drums slider gates drums.
+- UI: replaced the Melody+Drums CHECKBOXES with a .mixer panel of 4 range faders
+  (#csd-vol-melody/chords/bass/drums; defaults 90/80/90/80). change → stop (next play applies).
+  Verified node: drums0→0 hits, melody0→melody notes drop, chords0+bass0→only melody plays.
+  cache-bust arranger.js?v=11. NEEDS A REAL-BROWSER LISTEN for balance.
+
+** [2026-06-27] Dynamics — fix "same volume / loud / amusical"
+- All melodic notes were a flat velocity 85 (no metric accent); only drums varied. abcjs maps
+  dynamic decorations to velocity (ppp30 pp35 p50 mp65 mf90 f95 ff110 fff125) and a dynamic
+  persists until the next. %%MIDI beat misfired (made everything one value). Fix:
+  • arranger dynFor(role,sl,M): downbeat→f, on-beat→mp, offbeat→p; bass down→f else mp;
+    arp beat→mp else p. Emitted as !x! decorations, GATED on opts.dynamics.
+  • %%MIDI nobeataccents in the playback header so OUR dynamics are the only velocity source
+    (else abcjs double-scales → offbeats ~35, too soft). Result: distinct 50/65/95.
+  • DVEL eased (kick 105→98, snare 100→90, hats 55→46…) so drums sit under the softer harmony.
+- KEEP DYNAMICS OUT OF THE PRINTED NOTATION: dynamic decorations would render as mf/p marks on
+  every note. So toAbc takes opts.dynamics; deluxe renders the CLEAN ABC (dynamics:false) into
+  the visible #csd-notation and a SEPARATE dynamics ABC (playAbc(true) → #csd-hidden-notation)
+  for synth.setTune. renderNotation()=display only; loadForPlay()=its own played visualObj.
+  Verified: displayNotes 48 / dynamicMarks 0; playback velocities {50,65,95}. cache-bust
+  arranger.js?v=10. NEEDS A REAL-BROWSER LISTEN to fine-tune levels.
+
+** [2026-06-27] Drums (channel-10 %%MIDI drum; no staff)
+- User: the styles "fall flat without drums." abcjs plays %%MIDI drum once you also emit
+  %%MIDI drumon (drumon/drumoff are param0 MIDI cmds; drum is param1String+variable ints:
+  pattern d/z chars + one GM-note per d + one velocity per d). Node-verified it produces
+  channel-10 note-ons and adds NO staff (so the Piano/SATB notation is untouched).
+- arranger.js: DRUM token→GM note map (k36 s38 h42 o46 r51 x37 c49 t54) + DVEL accents
+  (kick/snare loud, hats soft). drumGroove(styleId,M): per-style `drum` override, else a
+  waltz groove "kzhzhz" when beats===3, else backbeat "khsh"; tiled one token per eighth
+  across M.barE (meter-generic). drumHeader() emits ["%%MIDI drumon","%%MIDI drum …"];
+  toAbcPiano/toAbcSATB splice it into the header when opts.drums. Do NOT emit "%%MIDI
+  channel 10" (it would hijack the melodic voices — the drum directive auto-uses ch10).
+- Deluxe: "Drums" checkbox (default ON) → playAbc passes drums; toggle stops playback so the
+  next play picks it up (header-only, no notation change). cache-bust arranger.js?v=8.
+- Verified node: piano+folk 16 ch10 hits, satb layers drums (4 staves, no drum staff), 3/4
+  waltz drum = kick+hat+hat, drums:false = none. NEEDS A REAL-BROWSER LISTEN (headless can't
+  run Web Audio).
+- [2026-06-27] GENRE DRUM KITS added via per-style `drum` cells. Can't layer (one %%MIDI drum
+  line) so feels INTERLEAVE (ride/hat fill gaps): offbeat→reggae one-drop "zhzhkhzh" (kick on
+  3); bossa→"xrrxrrxr" (ride + side-stick 3+3+2 tresillo); tango→"khhkhhkh" (habanera kick
+  tresillo + hats); charleston→"rzrrrzrr" + jazzwaltz→"rzrrrz" (swing ride); driving8→"khshkhsh".
+  Default backbeat "khsh"; waltz "kzhzhz" when beats===3 (viennese). Node-verified distinct +
+  still 2 staves (no drum staff). FULL LAYERING needs a perc voice (clef=perc + chords) but
+  that ALWAYS renders a staff (omitting from %%score didn't hide it) — would need CSS-hiding or
+  a 2nd synth; deferred. cache-bust arranger.js?v=9. Still needs a real-browser LISTEN.
+
+** [2026-06-27] gchord-pattern styles (12 new, from Eskin/abc2midi vocabulary)
+- Source: a michaeleskin.com/abctools share link (def= is URL-safe-base64 + zlib of ABC)
+  with 55 accompaniment styles defined via %%MIDI gchord + gchordstress + gchordduration +
+  chordprog/bassprog. Our abcjs has gchord/gchordduration but NOT gchordstress (velocity).
+- Chose to TRANSLATE the gchord vocabulary into our explicit-note engine (keeps written
+  Piano/SATB notation + key-aware spelling + see=hear), NOT native %%MIDI gchord (which would
+  play but render no written parts).
+- arranger.js: TOK map (z rest / f bass / c chord / b bass+chord / g h i j k arpeggio tones
+  ascending / G H I J octave-down). TWO style flavours:
+    • `cell` = a short token cell tiled ONE TOKEN PER EIGHTH across the bar → METER-GENERIC
+      (folk "fc", oompah "bc", driving8 "cc", offbeat "zc", bassroot "fz", arpcell "gi").
+    • `gchord` = a full-bar pattern for a specific `meter` (charleston, bossa, tango, arpflow
+      4/4; viennese, jazzwaltz 3/4) — label carries the meter; mismatch → block.
+  barHits → patternFor() picks cell (any meter) or gchord (matching meter), else block;
+  barHitsCell/barHitsPattern build slots; partial/pickup bars fall back to blockSlots().
+  emitVoice clamps each note to the next own-hit (per-slot durations → staccato/legato + gaps).
+  Piano RH plays arp tones (voicing[idx]+oct); SATB treats arp as a chord onset. cache-bust v7.
+- BUG FIXED (user: "all sound/render as block chords"): the first cut made every pattern a
+  full-bar 4/4 gchord, but the library is mostly 2/4 (45 tunes), 6/8 (16), 2/2 (8) — so almost
+  everything fell back to block. Fix = meter-generic per-eighth `cell` styles. Verified the 6
+  cells produce distinct output on 2/4, 3/4, 4/4 AND 6/8 (the default tune), note-counts differ
+  per style in-browser (block 24 / folk 48 / oompah 72 …), no errors.
+- NOT YET ported: the syncopated/fractional styles (31-55 use 0.25/0.5/0.75-eighth stress &
+  duration → need a 16th grid); the 6/8 Afro-Cuban; per-style GM instruments (chordprog/bassprog
+  → would map to %%MIDI program per voice); velocity (gchordstress; our abcjs lacks it).
+
+** [2026-06-27] Split accompaniment STYLE from NOTATION (two independent axes)
+- "SATB" was wrongly an accompaniment STYLE alongside block/waltz/pop. Now:
+  • STYLE (rhythm): block / waltz / pop  (Arranger.styles()).
+  • NOTATION (layout): "piano" (grand staff: RH triad + LH bass, %%score {1 2}) or
+    "satb" (4 voice-led staves). (Arranger.notations()). toAbc dispatches on opts.notation.
+- Refactor: one shared rhythm engine — metrics(), barHits(bar,style,M) → position-tiling
+  {pos,dur,bass,chord,sym} slots; emitVoice(hits,activeFn,tokFn) fills a voice w/ notes+rests.
+  toAbcPiano (RH=chord slots, LH=bass slots) and toAbcSATB (S/A/T=chord slots, B=bass slots,
+  voice-led via satb.js, voicingAt(bar,pos)) both consume it → style × notation fully
+  independent (e.g. SATB+waltz = voices articulate the oom-pah-pah; Piano+block = sustained).
+  Keeps key-aware spelling + tenor-clef option.
+- Deluxe: separate "Accompaniment" (off/block/waltz/pop) + "Notation" (Piano/SATB) selects.
+  GOTCHA fixed: the notation SELECT first collided with the notation STAFF DIV (both
+  id="csd-notation"); renamed the select to #csd-notesel. cache-bust arranger.js?v=5.
+
+** [2026-06-27] SATB tenor clef: treble-8 (fixes "octave too low") or bass, user choice
+- The tenor read an octave low because it was on a plain treble clef at sounding pitch.
+  abcjs's clef=treble-8 is COSMETIC (verticalPos 0, mid:0 — same as treble + an "8" glyph;
+  does NOT shift display or MIDI). So a real vocal-tenor clef = write the tenor +12 (so it
+  sits in the treble staff) with clef=treble-8, and a PER-VOICE %%MIDI transpose -12 to keep
+  the sound at pitch. Verified via getMidiFile bytes: %%MIDI transpose is per-voice and does
+  NOT leak to later voices (3-voice test), and both clef modes produce IDENTICAL sounding
+  pitches.
+- toAbcSATB opts.tenorClef: "treble8" (default; +12 written, clef=treble-8, %%MIDI transpose
+  -12) or "bass" (clef=bass, at pitch). voiceBody(role, octShift) adds the display octave.
+  Deluxe: new "Tenor" select (Treble 8 / Bass clef) in the transport → playAbc passes
+  tenorClef; change re-renders. cache-bust arranger.js?v=4.
+
+** [2026-06-27] Arranger notation: key-aware pitch spelling + key signatures
+- The accompaniment ABC was flat-only + K:C. Now uses the project's spelling: loads
+  pitch-spelling.js on the deluxe; arranger keyContext(parsed,transpose) derives the key
+  (fifths from keyField + mode) → centerLof, per-letter key signature, K: = relative-major
+  name (same sig; abcjs shows the sig, not a name).
+- CHORD-AWARE spelling (key-centered alone mis-spelled chromatic chord tones — A7 in Dm
+  gave Db). chordSpellingMap(sym) spells each tone by FUNCTION off the chord-root letter
+  (root/3rd/5th/7th + slash bass) → A7 = A C# E G. Falls back to PitchSpelling key-centered
+  for non-chord pcs and for transposed playback (map is built from the untransposed symbol).
+- spellNote() emits minimal accidentals: ^/_/= only when the note differs from the key sig
+  or the in-measure state (ms, reset each barline); octave from the spelled LETTER (handles
+  Cb/B#). Used by BOTH the block/waltz/pop comping AND SATB; K: set on both. Node-verified:
+  G→F#, F→Bb, Dm A7→C#, E-major sharps; all reparse + key sig renders. Fallback to flats+K:C
+  if PitchSpelling absent. cache-bust: deluxe loads pitch-spelling.js + arranger.js?v=3.
+
+** [2026-06-27] Chord Sheet: VISIBLE accompaniment notation (+ ready for flex-ensemble parts)
+- The accompaniment ABC was rendered to an off-screen div; now there's a VISIBLE cream
+  staff panel (#csd-notation, .csd-notation) in .stand below the transport. renderNotation():
+  style≠off → render playAbc() into #csd-notation (display block) and return its visualObj;
+  style=off → keep it hidden and render melody into the off-screen #csd-hidden-notation (chord
+  sheet stays clean by default). loadForPlay uses renderNotation()'s visualObj (what you see =
+  what you hear). Called live on tune/style/key change. Verified: waltz → visible staff, 48
+  notes, no errors.
+- READY FOR MULTI-PART (flex ensemble): abcjs renders multi-voice ABC (V:1/V:2/…) as stacked
+  staves automatically, so when Arranger.toAbc emits N voices they'll appear on separate lines
+  here with no view changes. NEXT: extend toAbc with a `parts` option that distributes chord
+  tones across N singable lines (+ ranges/voice-leading/per-part transposition); optional staff
+  playback cursor. cache-bust: deluxe is inline (re-renders); arranger.js?v=1 unchanged.
+
+** [2026-06-26] RESEARCH: open-source arranger/auto-accompaniment options (P4 backlog)
+Goal: build the accompaniment-styles engine on existing work, not from scratch. Finding:
+NO browser/JS arranger engine exists to drop in — the reusable value is the STYLE
+FORMATS + their free libraries; build a small JS engine that consumes one.
+- ENGINES (all desktop, wrong runtime to embed):
+  • MMA "Musical MIDI Accompaniment" — Python, GPL, ~2000 styles, PLAIN-TEXT groove
+    format (easy to parse/author), outputs SMF. mellowood.ca/mma. BandInMuseScore wraps
+    it. Best for a hand-authorable text style format.
+  • JJazzLab + YamJJazz — Java, open source, reads Yamaha .sty/.prs (SFF1/SFF2). Desktop.
+    The de-facto reference implementation for parsing Yamaha styles. jjazzlab.org.
+  • Ensembles — Vala/GTK + FluidSynth, Linux, 100+ styles.
+  • One Man Band / vArranger / Band-in-a-Box / Chordpulse / Strum Machine — closed.
+- FORMATS / DATA (the actual reuse target):
+  • Yamaha SFF (.sty) = SMF0 MIDI patterns (Intro/Main A-D/Fill/Ending markers) + a CASM
+    section (per-part chord-transposition/voicing rules). Binary but documented (jososoft
+    style2_*, wierzba StyleFileDescription_v21.pdf). HUGE free library (psrtutorial). JS
+    binary parsing is feasible — the in-browser AUS→STY converter (ArrayBuffer/Uint8Array)
+    proves it. Richest ecosystem; most parsing work (CASM).
+  • MMA grooves = text, GPL data. Easiest to parse + lets the teacher author styles.
+- BUILDING BLOCKS for a homegrown JS engine: Tone.js (scheduling/transport), Tonal.js
+  (chord/voicing math). We already have: TuneChart (bar/beat/chord data) + soundfont
+  player → an engine just maps (chord × style pattern) → scheduled notes.
+- LICENSE flags: MMA GPL (reuse groove DATA w/ attribution; keep our engine code ours);
+  JJazzLab/YamJJazz open but Java (study, don't port); .sty FORMAT is open knowledge but
+  individual style FILES vary in copyright — curate sources.
+- RECOMMENDED PATH: small JS "style engine" with a simple text/JSON pattern format
+  (MMA-inspired), feeding the existing soundfont player; later add an optional SFF
+  importer to pull in the Yamaha library. NEEDS USER DECISION before building.
+
+** [2026-06-26] Chart: toggle roman numerals instead of letter chords
+- TuneChart render gains a `roman` option + setRoman(on): when on, each chord cell shows
+  TuneLibrary.roman(sym, parsed.keyPc) (the applied-chord roman) instead of fmtChord.
+  Romans are transposition-invariant, so the Key/transpose state is ignored in roman
+  mode. Reused tune-library's roman (exported as TuneLibrary.roman = appliedRoman) rather
+  than duplicating — TuneLibrary is loaded on both chart pages; graceful fallback to the
+  letter symbol if absent. CSS .tc-roman-mode shrinks .tc-rt + uses JetBrains Mono.
+- Toggle added on BOTH: Chord Sheet transport (#csd-roman → chart.setRoman) and the
+  assessment Chord-chart panel (#chartRoman → renderChart passes roman:chartRomanOn()).
+  Verified: Amazing Grace cells G G7 C C♯dim7 → I V/IV IV vii°/V … . cache-bust
+  tune-chart.js?v=5, tune-library.js?v=5, app.js?v=21.
+
+** [2026-06-26] Reading Benchmarks: separate file + dedicated page (no chart/playback)
+- Reading benchmarks aren't tunes → moved out of tunes-object.js into
+  apps/tunes/reading-benchmarks-object.js (var readingBenchmarks {set: bigAbcString};
+  added `window.readingBenchmarks=` since a top-level const isn't a window prop). Added
+  stable %%id (rb-1a-N) to each line. tunesObject now back to 3 collections.
+- app.js is now CONFIG-AWARE + null-safe so it can be reused without playback/chart:
+    window.TUNE_APP_CONFIG = { source, playback, storeKey }   (set before app.js loads)
+  TUNES = window[source]||tunesObject; ALLOW_PLAYBACK=playback!==false (setupSynth
+  bails when off OR when #tune-audio absent); saved-state key = storeKey. Null-guarded
+  every #chords / #chordVol / #metroVol read + listener and chordsOn()/chordVol() so an
+  embed can omit those controls. renderChart already no-ops when #tuneChart absent.
+- New page practice/reading-benchmarks.qmd + _reading-benchmarks-embed.qmd: assessment
+  tool only — NO chord chart, NO preview playback (config playback:false; omits Play/
+  tune-audio/chords/voices/cycle/transpose/chart). Keeps mic/record/grade + 2-bar
+  count-off + metronome + tolerances. Establish-tonality KEPT (key reference is standard
+  before sight-reading; easy to drop if unwanted). Nav: under Practice, after Tune.
+  Verified both pages + the deluxe tool render clean, no JS errors.
+
+** [2026-06-26] Anacrusis = measure 0, first FULL bar = measure 1 (+ layout config)
+- tune-chart.js parse() now flags a leading partial bar as anacrusis (parsed.anacrusis,
+  anacrusisUnits) and numbers bars measureNo (pickup=0, first full bar=1). Verified
+  32/108 tunes have a real pickup (e.g. Rattling Bog starts "d/e/|").
+- Chart render: the pickup is no longer a full grid cell — it's a "⤴ PICKUP" flag at the
+  top-left (in extra top padding via .tc-has-pickup), carrying the pickup's chord if any.
+  The flag IS barEls[0] so the live bar sits on it while the anacrusis plays; the grid
+  proper starts at measure 1. barEls is now indexed BY BAR INDEX (sparse-safe) so
+  playOrder/setPlayMeasure still map correctly.
+- Layout config (hard-codable per tune in the ABC, opts override at render):
+  %%score-bars N  → N measures/line;  %%score-breaks a,b,c → explicit per-line counts.
+  render buildRows() honors lineBreaks else barsPerRow (default 4).
+- Recording count-off reworked: now 2 BARS (was COUNT_IN=4 quarters). barQ=meter*4/d,
+  countInQ=2*barQ, accentEvery=round(barQ) (fixes bar-accent for 6/8 etc.). With a
+  pickup, target onset 0 sounds at (2 bars − anaQ) so measure 1's downbeat lands on the
+  bar-3 click; caption tells the user to "come in on the pickup in bar 2". anaQ from the
+  shared TuneChart parse (single source of truth). cache-bust tune-chart.js?v=3, app.js?v=18.
+- FUTURE (designed-for, not built): mid-tune time/key signature changes. parse() is
+  meter/L-driven and per-bar; would extend bars[] with per-bar meter + recompute
+  unitsPerBar/beat locally, and the count-off/grid already key off per-bar lengths.
+
+** [2026-06-26] Chart: highlight on both pages, repeat fix, cycle on chord-sheet
+- PARSER BUG FIX (this also fixed "repeats don't work"): `|:` mid-stream wasn't tagging
+  the bar — the preceding `:|` flush already created the next `cur` with left="plain"
+  before `|:` set pendingLeft. Now `|:` also sets `cur.left="repeat-open"`. So section-B
+  `|:` repeat barlines RENDER (they didn't before) AND playOrder is correct.
+- computePlayOrder(bars): expands |: … :| (+ implicit start-of-tune open, ::, 1st-ending
+  skip) into the WRITTEN-bar sequence playback visits. Node-checked: Sportsman/Rattling
+  Bog/Childgrove all expand to proper AABB. Exposed as parsed.playOrder + a render method
+  setPlayMeasure(m) that maps the m-th played measure → written bar → setLive.
+- Highlight now driven by setPlayMeasure on BOTH pages: deluxe cursor.onEvent and the
+  assessment cursorControl.onEvent count measureStarts (chartMeasure) and call
+  setPlayMeasure, so the live bar follows repeats correctly instead of running off the end.
+- Cycle added to the Chord Sheet tool (#csd-cycle → synth.isLooping, re-applied after
+  setTune since it resets). Assessment already had Cycle.
+- cache-bust tune-chart.js?v=2, app.js?v=17.
+- NOT browser-verifiable here: headless Chrome won't run real-time Web Audio (virtual
+  time doesn't drive the audio clock), so the live-highlight-through-repeats + cycle need
+  a real-browser check. Watch the pickup/anacrusis case: if the highlight is off by one
+  measure on tunes with a pickup, abcjs's measureStart count differs from playOrder and
+  we'd switch to mapping via ev.startChar instead of counting.
+
+** [2026-06-26] Shared chord-chart module + beat lines + assessment-page chart
+- NEW shared/tune-chart.js (TuneChart.parse/render) — ONE backend file for the chart,
+  used by BOTH the Chord Sheet tool and the Tune Assessment page (per user: keep chart
+  code shared). Self-injects scoped `.tune-chart` CSS + the Oswald/JetBrains fonts.
+- parse() now tracks NOTE DURATIONS (L-unit math: handles num/den durations, "/"//,
+  broken rhythm > <, tuplets (p, [chord] groups, grace {}, rests) so every chord gets
+  an onset IN BEATS. Generic for any meter (M: n/d, C, C|, none) and L (1/4,1/8) —
+  computes unitsPerBar/unitsPerBeat/beatsPerBar. Node-validated: 1060 interior bars sum
+  exactly to unitsPerBar; the ~134 "off" ones are all anacrusis / repeat-split bars
+  (correct). Meters in the data incl. 5/8, 7/8, 6/8 → generic was essential.
+- Chords are now ABSOLUTELY positioned at left = onset/unitsPerBar (beat-accurate,
+  multi-chord bars line up). Toggleable sub-bar "beat lines" (.tc-subline) every N
+  beats, drawn only within a bar's filled length. Off/1/2 via a select on each page.
+- Chord Sheet tool: ripped out its inline parseBars/fmtChord/renderChart; now calls
+  TuneChart.render + setLive/setSubBars/setTranspose. Added a "Beat lines" select.
+- Tune Assessment: added a "Chord chart" panel (TuneChart, transpose=keyTrans concert,
+  preferFlats=!keyAlt). Made Setup/Notation/Chord-chart each a collapsible <details>
+  (.ta-panel) so you can view both or collapse either. renderTune() calls renderChart().
+  cache-bust app.js?v=16, tune-chart.js?v=1.
+
+** [2026-06-25] NEW TOOL: Chord Sheet — Stage Edition (iRealPro-style + playback)
+- tools/chord-sheet-deluxe.qmd (wrapper) + tools/_chord-sheet-deluxe.qmd (the tool).
+  The old _chord-sheet-deluxe was just a restyled copy of the chord-DIAGRAM tool; fully
+  replaced with the real thing. Nav entry already in _quarto.yml.
+- What it does: set-list rail (collection + every tune) → iRealPro-ish measure-grid
+  chord chart (4 bars/row, real barlines/repeats/endings, beat-slash for empty bars) →
+  transport that plays the whole tune via the SAME abcjs SynthController + MusyngKite
+  soundfont as the tune assessment (piano/nylon/bass GM band; bass+chords always,
+  melody optional). Tempo slider, Key transpose (uses shared/abc-transpose.js), and a
+  teal "live" bar that travels measure-by-measure via cursor.onEvent measureStart.
+- Self-contained IIFE; parses tunesObject directly (own parseBars). No grading, no mic.
+- QUARTO GOTCHA (cost a lot of debugging — remember this): inside `::: {.column-screen}`
+  Quarto stamps `page-columns page-full` onto your CONTAINER divs AND, via
+  `.page-columns.page-full > *`, sets `grid-column:<named page lines>` on their direct
+  CHILDREN. If your container is your own CSS grid, those non-existent named lines spawn
+  phantom tracks (saw `grid-template-columns: 248px 178px 0px 610px`) and the layout
+  collapses/offsets. FIX = (a) force the decorated containers back to display:block, and
+  (b) on your real grid, `#csd .stage>*{grid-column:auto!important}` to wipe Quarto's
+  child placement. Higher-specificity (#id .cls.page-columns) + !important to win the
+  cascade. The original chord-sheet sidesteps this by keeping ALL layout inside one
+  undecorated #...-root with no top-level grid.
+- Headless-screenshot tip: Chrome on Retina defaults to DPR=2, so --window-size=1280
+  becomes 640 CSS px and trips mobile breakpoints; pass --force-device-scale-factor=1.
+
+** [2026-06-25] Tune assessment = hub: nav, shared steer, concert/transposed everywhere
+- NAV (_quarto.yml): unlisted practice/tunes.qmd (original tunes app); moved
+  practice/assessment-tune.qmd to the TOP of Practice.
+- tonality.js (v4): added a SHARED instrument + view store — getInstrument/setInstrument
+  ({name,semis} via INSTRUMENTS map), getView/setView ("concert"|"transposed"),
+  storage-synced. Cross-page propagation is via localStorage (next page reads on load)
+  + storage events; in-page src "local"/"tune" are ignored by their own onChange.
+- Tune page (app.js v13): steerTonality() publishes the SOUNDING (concert) key on
+  tune load + concert/transposed key change (so circle/patterns follow). Remembers the
+  transposing instrument (restores instSel from Tonality.getInstrument; instSel change
+  → setInstrument). Reacts to external key/instrument changes (onChange, src!="tune").
+- Patterns assessment: "Key"→"Concert Key" + Transposed Key menu + View(Concert/
+  Transposed). renderPattern adds the instrument offset to visualTranspose ONLY in
+  transposed view (targets/grading/sound stay concert). #key change now steers the
+  shared tonality. (assessment app.js v8; glue in _assessment-embed.qmd)
+- Circle of fifths: injected #cof-keybar (Concert Key / Transposed Key / View). Shared
+  store stays CONCERT; transposed view highlights the read key (concert+instSemis) and
+  publish() subtracts instSemis to store concert. (inline glue in _circle-of-fifths.qmd)
+- NEEDS BROWSER CHECK: cross-page steering (set key/instrument on tune → circle &
+  patterns follow on navigation) and the transposed-view displays.
+
+** [2026-06-25] Tune: enharmonic STAFF (abc-transpose wired) + fixes
+- FIX notation-blank bug: syncKeyUI() ran at init before the const instAdjust/INST
+  existed → TDZ throw halted the whole script → nothing rendered. Moved syncKeyUI()
+  to the end (after the const helpers, before loadCollection).
+- shared/abc-transpose.js: line-of-fifths transposer (notes + chord symbols + K:),
+  caller picks the spelling. Node-verified: every tune to every sensible
+  (<=7-accidental) key with 100% correct pitches.
+- WIRED: previewAbc transposes currentAbc to the chosen WRITTEN key
+  (keyNameAscii(writtenRootPc + keyTrans + instAdjust), spelling per keyAlt) when
+  shift!=0 or keyAlt; renders at visualTranspose:0 (transpose baked into the ABC). So
+  the STAFF key sig + accidentals now follow Concert/Transposed key AND ⇄ Enharmonic
+  (F#<->Gb, Cb, ...). midiTranspose=-instAdjust keeps SOUND at concert; grading still
+  on original notes + keyTrans. Enharmonic button re-renders.
+- Cycle instructions: #cycleHint under the notation updates on Cycle toggle / region
+  clicks. cache-bust app.js?v=12, abc-transpose.js?v=1.
+
+** [2026-06-25] Tune: DAW region cycle (loop a span)
+- Cycle checkbox now = region loop. With Cycle on, click two noteheads → loop In/Out
+  (loopInMs/loopOutMs from each note's currentTrackMilliseconds; 3rd click restarts
+  the region). cursorControl.onEvent: when ev.milliseconds>=loopOut → seek(loopIn/dur).
+  Region notes tinted purple (.loop-region). No region set + Cycle on → whole-tune
+  loop (applyCycle: isLooping when no region). Region cleared on tune/tempo/key change
+  (timing changes ⇒ stale ms). cache-bust tune app.js?v=10.
+- STILL TODO: staff enharmonic (flip the STAFF key sig F#↔Gb). abcjs transposeKey is
+  fixed-spelling-per-pc, so needs a custom ABC transposer (notes + chord symbols +
+  K:, line-of-fifths spelling). Will write + VERIFY IN NODE (transpose→reparse→compare
+  MIDI for all tunes) before shipping. Keep grading on original notes + keyTrans.
+
+** [2026-06-25] Tune: Concert/Transposed key, enharmonic toggle, cycle
+- "Key" → "Concert Key". Transposed Key dropdown (#transKey, label "Transposed Key
+  (<inst>)") shows only for transposing instruments; mirrors the concert selection
+  (transposed = concert + instAdjust); both write the same concert pc → bidirectional
+  via syncKeyUI(). Like the chord-sheet's paired dropdowns.
+- "⇄ Enharmonic" button flips key-name spelling via ENHARM[pc]=[default,alt] incl.
+  C♭(B), B♯(C), E♯(F), F♭(E). LABELS ONLY — abcjs transposeKey picks one spelling per
+  pc (no enharmonic option), so the STAFF key-signature spelling isn't flipped.
+  Caveat noted; would need SVG post-processing to sync the staff.
+- "🔁 Cycle" = whole-tune loop (synthControl.isLooping, re-applied after each setTune
+  since setTune resets it). NOT yet DAW region-cycle (in/out points) — TODO: set a
+  loop region by clicking two noteheads + seek-back-on-tick.
+  cache-bust tune app.js?v=9.
+
+** [2026-06-25] Tune: drop info line, SPACE=play/pause always, Key + Instrument
+- Removed the #tuneInfo line ("N notes · M/M · written tempo ♩=…") (markup + JS).
+- SPACE = play/pause even when a menu/slider/checkbox is focused: keydown guard now
+  only skips real text inputs; else preventDefault + blur(focused) + hearTune().
+- Added Instrument (display-only) + Key to the top controls. Instrument map = the
+  original's INST{adj,clef}; Key = note-name select (or "As written"), transpose vs
+  the tune's written DO (computed in loadTune via Tonality.keyToTonality).
+  visualTranspose = keyTrans + instAdjust (display); midiTranspose = keyTrans (sound
+  = concert; abcjs visualTranspose is display-only for the synth, confirmed by the
+  original's formula); GRADING + record chords shifted by keyTrans (concert), NOT
+  instAdjust (so a transposing instrument is purely a reading aid). Instrument also
+  sets clef=bass (Trombone/Tuba) in previewAbc. cache-bust tune app.js?v=8.
+  NEEDS BROWSER CHECK: transpose direction/octave for transposing instruments.
+
+** [2026-06-25] Fix notehead-seek + hide the abcjs widget grey band
+- Noteheads weren't clickable: renderAbc had selectTypes:false (disables selectable
+  elements → clickListener never fires). Removed it. Now onNoteClick fires + seeks.
+- Grey band = abcjs .abcjs-inline-audio widget (26px, #424242). Hid the whole widget
+  (#tune-audio{display:none}); play/pause via the button+SPACE, seek via noteheads,
+  tempo via the slider — the hidden control still works through the API. NOTE: this
+  also hides the loop/restart/warp UI; add a custom loop toggle later if wanted.
+  cache-bust tune app.js?v=7.
+
+** [2026-06-25] Tune transport: drop progress bar, notehead seek, Play/Pause + SPACE
+- SynthController load opts: displayProgress:false + displayPlay:false (progress bar
+  removed per user; widget keeps loop/restart/warp). The #play button is the
+  play/pause: hearTune() toggles synthControl.play(), label "▶ Play tune" / "⏸ Pause"
+  via previewPlaying + updatePlayLabel (reset on onFinished / stopPlayback).
+- SPACE now bound to play/pause (hearTune), not stopAll (guards INPUT/SELECT/BUTTON
+  so a focused #play doesn't double-fire).
+- Click a notehead → seek: renderAbc clickListener=onNoteClick reads
+  abcElem.currentTrackMilliseconds, converts to a fraction of midiBuffer.duration,
+  calls synthControl.seek(frac)+setProgress. Builds the buffer first via
+  synthControl.go() if not loaded (currentTrackMilliseconds is only set after the
+  buffer/timing is built). Doesn't auto-play — next play starts from there.
+  cache-bust tune app.js?v=6.
+
+** [2026-06-25] FIX root cause of stuck preview: abcjs isLoaded guard
+- The disable(true) attempt didn't fix it. Real cause: abcjs SynthController
+  runWhenReady() only calls go() (which REBUILDS the audio buffer from the current
+  visualObj/options) when !isLoaded; after the first play isLoaded stays true and
+  setTune never resets it → every later play reused the FIRST buffer (stuck on the
+  first tune/tempo/instruments). FIX in renderTune: drop the throwaway CreateSynth,
+  pass {soundFontUrl} to setTune, and set synthControl.isLoaded=false after setTune
+  so the next play rebuilds with the current settings. cache-bust tune app.js?v=5.
+
+** [2026-06-25] Tune preview fixes: stuck-playback + controls now drive preview
+- BUG (stuck / replays old tune on tune change): renderTune didn't reset the
+  transport. FIX: synthControl.disable(true) at the top of renderTune before
+  re-setTune (mirrors the tunes app) → loading a new tune resets cleanly.
+- Tempo slider + voice menus only affected RECORD before. FIX: previewAbc() injects
+  Q:1/4=<slider> + %%MIDI program (melody GM) / chordprog (accompaniment GM) /
+  bassprog into the ABC the abcjs synth plays; voices map to GM via
+  GM={piano:0,epiano:4,nylon:24,bass:32,vibraphone:11,marimba:12}. tempo/melVoice/
+  accVoice change → renderTune re-cues. So both controls now drive preview AND
+  record (preview = soundfont GM, record = MusicAudio synth voices — same SELECTION,
+  different engine). cache-bust tune app.js?v=4.
+
+** [2026-06-25] Tune assessment ← tunes-app playback (transport + cursor)
+- Preview "Hear tune" now runs through abcjs SynthController (soundfont MusyngKite +
+  auto bass/chord accompaniment from chord symbols). The #tune-audio widget gives
+  Loop / Restart / Progress+scrub / Warp; a custom cursorControl highlights notes
+  on #notation (renders add_classes:true; .highlight overrides the forced-black fill;
+  .abcjs-cursor line). Added "🎵 Play melody" toggle (voicesOff) + the existing
+  Chords toggle (chordsOff) re-setTune. #play + SPACE toggle synthControl.play/pause;
+  record start / stopAll pause the synth. Loaded /apps/shared/abcjs-audio.css.
+  NOTE: preview = soundfont (abcjs); the RECORD play-along still = MusicAudio
+  (metronome click + chords + bass) for grading sync, so melVoice/accVoice apply to
+  the play-along, not the preview. cache-bust tune app.js?v=3.
+- STILL TODO from the tunes-app feature list (transposition entangles GRADING — mic
+  captures CONCERT pitch): Key selector, Octaves shift, Instrument transposition
+  (Bb/Eb… re-spell + auto-clef; display+playback only, concert for grading), Clef
+  toggle. Plus the custom seek-by-beats/measures (progress scrub already covers
+  basic seeking). DO NEXT.
+
+** [2026-06-25] Audio overhaul — done + BACKLOG (prioritized)
+*** DONE this pass
+- MusicAudio voices = the requested 6: piano, epiano (Electric piano), nylon
+  (Nylon guitar), bass, vibraphone, marimba. voiceList() returns {id,label}.
+- Tune assessment ported off raw oscillators onto MusicAudio (shares MusicAudio.ctx
+  so the count-in/record scheduling still lines up): melody + accompaniment chords +
+  a BASS note (chord root dropped to the bass register) + click() metronome. Added
+  Melody voice / Accompaniment voice menus; bass line always uses "bass". STOP now
+  calls MusicAudio.stopAll() (added source tracking) to cut scheduled notes.
+- establish-tonality now plays the PRIMARY chords (I–IV–V–I) of the CURRENT tonality,
+  built from the circle's per-mode scale steps + chord qualities (minor=harmonic →
+  major V; dorian → major IV; etc.). [[tonality.js]] MODE_DEF/TRIAD.
+- cache-bust: audio.js?v=3, tonality.js?v=2, tune app.js?v=2.
+*** BACKLOG / remind me
+- [P1] Limited synth-control menu: reverb amount, brightness/attack, master vol.
+  (Voice menus are the first slice.)
+- [P2] Soundfont OPTION (toggle synth↔samples) + better free soundfont. See research
+  below. Likely surikov/webaudiofont or danigb/smplr loading FluidR3/GeneralUser.
+- [P3] Drum app (apps/chord-library/drumset.html): load drum sounds from a soundfont
+  instead of local samples; expose those drum sounds as METRONOME options.
+- [P4] Accompaniment STYLES (keyboard-arranger): beyond the current boom-chick — a
+  library of styles (waltz/swing/bossa/rock/…) applied to ALL accompaniment
+  instruments, chord-driven. No off-the-shelf JS arranger → build a small style
+  engine (per-style rhythmic/voicing templates fed by the chord symbols). Tonal.js
+  can help with voicings.
+- [P5] Drumset patterns (depends on P3 + the style engine in P4).
+- [RESOURCE WATCH] MusicAudio uses a convolution reverb (1 shared convolver) + per
+  note ~2-3 osc + filter + gains; chords(+bass+melody) every beat = many concurrent
+  voices. Fine so far, but on long tunes / low-end devices watch CPU. Levers if it
+  bites: shorten/disable the reverb IR, cap polyphony, simpler filter.
+
+** [2026-06-25] Better shared synth (audio.js v2) — foundation for tune-assessment audio
+- Rewrote MusicAudio: detuned osc stack → per-note low-pass filter w/ its own
+  (brighter-on-attack) envelope → ADSR amp → master bus (DynamicsCompressor +
+  convolution reverb from a generated IR). 6 curated voices (piano/epiano/strings/
+  pluck/flute/vibes) instead of a GM list; added click() (band-passed noise tick)
+  for metronomes and setVoice()/voices(). API back-compatible (note/noteAt/chord/
+  ctx/midiToFreq) so establish/chord-sheet/circle just sound better. cache-bust
+  audio.js?v=2 across all 8 partials that load it.
+- NEXT (pending user eval of the new sound + voice choice): port the tune assessment
+  off its raw oscillator tone() onto this engine — melody + ADVANCED ACCOMPANIMENT
+  (bass + chords from the chord symbols, like the original tunes app) + click()
+  metronome, sharing MusicAudio.ctx() so the precise count-in/record scheduling
+  still lines up. Add a SHORT curated instrument selector. (User: "do better than
+  current soundfonts; definitely improve osc synthesis" — synth-first, samples later.)
+
+** [2026-06-24] Removed rhythm performed caption; equal-height notation boxes
+- Removed the muted caption under #performedNotation ("Green = on time · red = off…
+  Snapped to the nearest half-beat.").
+- Equal-height notation boxes (shared assessment.css): score-row grid stretches the
+  panes; .score-pane is flex-column and the notation box (#notation / #responseCard>
+  #responseNotation / #performedCard>#performedNotation) flex:1 fills its pane, so
+  the Pattern (original) box matches the response/performed box height. css ?v=8.
+
+** [2026-06-24] Stripped intro text + per-pattern info lines
+- Removed the descriptive line below the original notation: tonal #solfege
+  ("Solfège: …") + #targetInfo ("Sing the pattern: …"); rhythm #targetInfo
+  ("N attacks · M macrobeats"). Removed both the markup divs and the JS that set
+  them (applyControls/loadPattern; rhythm loadPattern). solfegeOf() now unused.
+- Removed the intro/instructions on every assessment page: the <p class="muted">
+  in each partial AND the markdown blurb paragraph in each .qmd. Tune #tuneInfo
+  left as-is (not a "pattern" page; user didn't flag it). cache-bust app.js?v=7.
+
+** [2026-06-24] Reserve headroom for the octave bracket (no staff shift)
+- The staff appeared to "shift down" when the 8va/8vb bracket/annotation was added.
+  FIX: added ~%%topspace 22~ to BOTH the original (v1RenderAbc) and the response ABC
+  → constant headroom above the staff. The bracket now lives in that reserved space,
+  and the original + response staves stay aligned whether or not 8vb shows, so the
+  staff position is stable. (22 is tunable.) cache-bust app.js?v=6.
+
+** [2026-06-24] Notation: stable two-pane + fill pane width
+- The "size change after response" was the :has() collapse (full-width single →
+  two half-panes on response), which also contradicted the spec "original only ever
+  in the left half." REMOVED the collapse: score-row is always 2-col, so the
+  original stays left-half and never resizes; response fills the right (empty until
+  recorded). Removed the now-pointless original re-render from renderResponse /
+  renderPerformed.
+- *Fill the column width*: added ~#notation svg / #responseNotation svg /
+  #performedNotation svg { width:100% !important; height:auto !important }~ so the
+  abcjs SVG fills the pane (height follows via viewBox). Canvas-size model:
+  responsive:"resize" + svg{width:100%} → fills container width; %%staffwidth =
+  internal layout density (LOWER staffwidth → more magnified/taller when filled).
+- cache-bust app.js?v=5 + assessment.css?v=5.
+
+** [2026-06-24] Notation: stable two-pane + single octave bracket
+- *Half-size notation after recording*: the response was rendered while its pane
+  was still collapsed (:has → display:none → 0 width), and the original kept its
+  full-width viewBox after the row split. FIX (renderResponse / renderPerformed):
+  show() the pane FIRST, then in requestAnimationFrame render the response (now
+  measures its real half-pane width) and RE-RENDER the original #notation (re-fit to
+  its new half-pane). Re-render only the original — a global window 'resize' would
+  make abcjs re-render ALL tunes, wiping the response colors + octave bracket.
+- *Single dotted 8vb bracket*: when every detected note shares the same nonzero
+  octShift (whole pattern an octave away), drop the per-note "^8vb" marks; instead
+  ~drawOctaveBracket()~ appends one italic label + dotted line (+ end hook) over the
+  passage via SVG (getBBox of .abcjs-note). Mixed octaves still mark per note.
+- Cache-busted app.js → ?v=4 (it changed; css already fresh after the user's
+  hard-refresh). Browser-heuristic caching of python http.server static files.
+
+** [2026-06-24] Assessment parity: original notation full-width until response
+- All three pages share identical structure/CSS (verified: no dark remnants,
+  column-screen, shared.css). The tonal/rhythm "step behind" look = the EMPTY right
+  score-pane on load (tune has a single full-width notation). Fix: CSS :has() —
+  while #responseCard/#performedCard carry .hidden, the .score-row collapses to one
+  column and the empty pane is display:none → original notation is full-width like
+  the tune; once the app reveals the card (show()=remove .hidden), it splits to two
+  panes (original left, response right). Graceful fallback (stays 2-col) on browsers
+  without :has().
+
+** [2026-06-24] Assessment pages: full redesign (light, site-integrated)
+- New shared ~apps/shared/assessment.css~ (light theme + layout) loaded by all three
+  partials BEFORE their per-app css. Per-app app.css slimmed to app-specific bits
+  only (tuner meter / level bar / timeline / beat dot), recolored light. Dropped the
+  dark isolated #app-root panel → integrates with the cosmo theme.
+- Dropped each app's <h1> (Quarto frontmatter title covers it); kept the intro <p>.
+- Pages switched ::: {.column-page} → {.column-screen}; #app-root max-width 1200
+  centered → real room for two columns.
+- *Full-width notation* via ~.score-row~ (grid 1fr/1fr, stacks <720px):
+  - tonal & rhythm: original (left pane) + user response (right pane) side by side
+    — moved #responseNotation / #performedNotation OUT of the result card into the
+    right pane. Original is always the left half.
+  - tune: ~.score-row.single~ (one full-width pane).
+- Controls/results below in ~.cols~ two-column (flex, ≥900px; stacks below). All JS
+  element IDs preserved (verified) so app.js keeps working after the reflow.
+- *Establish button*: removed the tonal inline #establish; app.js handler guarded
+  (if present). Added shared establish-button.js to tonal + tune partials (floating,
+  → Tonality.establish). Rhythm has no tonality → no establish.
+
+** [2026-06-24] Assessment two-column layout + chord-sheet label stretch fix
+- *Two columns on wide screens*: each assessment partial wraps its cards in
+  ~<div class="cols"><div class="col">…</div><div class="col">…</div></div>~
+  (left = setup/mic/live; right = result/recording/session/options — order matches
+  document order so narrow screens stack identically). CSS (each app.css):
+  @media(min-width:980px){ #app-root{max-width:1180px} .cols{display:flex;
+  align-items:flex-start;gap:1.25rem} .col{flex:1 1 0;min-width:0} }. Used explicit
+  flex columns (NOT multicol) so cards don't hop columns when result/recording
+  cards grow during use.
+- *Chord-sheet label stretch*: svgNoteLabel had textLength+lengthAdjust=
+  'spacingAndGlyphs' → stretched glyph SHAPES of 2-char labels (B♭ widened the
+  capital B). Removed both; kept letter-spacing -0.5 so the accidental tucks close.
+  Capital letter now matches single-note label width. Both partial + source.
+
+** [2026-06-24] Chord-sheet: note exclusion, label-only play, restyled labels
+- *Play restricted to the chord LABEL*: svgDiagramTitle adds a transparent hit
+  rect (+ class diagram-title) over the top 40px; card click plays only when
+  e.target.closest('.diagram-title'). (Was whole-card.)
+- *Click a note circle to include/exclude it from the voicing*: per-token,
+  per-instrument ~t.excluded[inst.id]~ Set of pitch classes. Circles+labels tagged
+  class=note-marker data-pc; card click toggles, redraw() (drawKbd/drawFret closure
+  via a ~redraw~ var). Excluded → EXCL_COLORS grey; card._midis (the played voicing)
+  filters out excluded pcs. PIANO DEFAULT: chord with >3 notes drops the 5th
+  (pc=root+7). Fret has no default (starts empty).
+- *Label restyle*: svgNoteLabel un-bolded (font-weight 500; root 700). labelForPc
+  converts b/#/x → ♭/♯/♯♯. Root marker now dark fill (#2b2b2b) + WHITE bold text
+  (was grey #c6c6c6 fill / dark text). Both partial + source edited (11 paired
+  string replacements, node-checked).
+- FUTURE (user): track per-student known inversions/voicings — each starts at root
+  position only; default "favor voice leading" → TRUE and include only voicings the
+  student has experience with (extensions will be tricky). Not built yet. See
+  voice-leading note in prior entry.
+
+** [2026-06-24] Chord-sheet: click-to-play, Sol→So, DO-based solfège
+- *Click a chord to play its current voicing* (screen only; PDF unaffected — audio
+  can't render to PDF, handlers no-op in print): buildDiagramCard stashes
+  ~card._midis~ in drawKbd (buildChordMidis) and drawFret (pos string midis);
+  card click → MusicAudio.chord(card._midis). Skips clicks on the voicing <select>.
+  Edited BOTH partial + source (apps/chord-library/chord-sheet.html).
+- *Sol → So*: only the chord-sheet SOLFEGE array had the "Sol" syllable. Verified
+  the others already use it: solfege-keyboard solfegeList uses "So"; circle
+  MODE_SOLFEGE uses "so". (assessment "sol" = a JS var; abcjs/director hits = the
+  word/Solo, untouched.)
+- *Solfège was resting-based (wrong for non-major)*: solfegeForPc used
+  currentKeyContext().tonicPc (= manualKeyPc = RESTING tone), so it treated the
+  resting tone as Do. Now DO-based: uses Tonality.getDo() (fallback to key context)
+  → minor tonic = La. circle (per-mode) + solfege-keyboard (do-selector) already
+  correct.
+
+** [2026-06-24] Load-tune-chords: adopt tune tonality + key-aware chord spelling
+- Tunes now also store ~tuneTonality~ {do,resting,mode} in publishTonality (next to
+  tuneChords). loadTuneChords reads it → render()+publish() so DO/Tonality/Resting
+  dropdowns (and shared tonality, sel-key) snap to the tune's key BEFORE loading.
+- Chord-sheet ~bestSpelling~ was key-AGNOSTIC (lowest-accidental/canonical). Patched
+  (partial + source) to be key-aware: when manualKeyPc set, spell on the line of
+  fifths via window.PitchSpelling.spellPitchClass(rootPc, keyTonicLOF(manualKeyPc)).
+  → B major chords show D♯/F♯, B♭ major B♭/E♭, C minor A♭/B♭ (verified). Applies to
+  ALL chords, not just imported ones (consistent). Regenerated _tunes-embed.qmd.
+- *FOLLOWUP (A# still showed)*: renderChips uses ~t.rootName~ (the LITERAL parsed
+  token), only falling back to chordDisplayName/bestSpelling when rootName is empty
+  — so textarea-parsed chords never hit the key-aware path. FIX: loadTuneChords now
+  RE-SPELLS each chord root (parseEntry → spellAtLof centered on resting LOF, ASCII)
+  before filling the textarea, so the token itself is correct ("A#"→"Bb" in flat
+  keys; stays "A#" in B major). Verified.
+
+** [2026-06-24] Tune chord import = unique chords only
+- publishChords dedupe changed consecutive→UNIQUE (names.indexOf===-1), so each
+  chord lists once, first-seen order (Lightly Row → "Bb F7"). Regenerated
+  practice/_tunes-embed.qmd ([[deiframe-partials-stale]]).
+- FUTURE (user flagged): voice leading will want *contextual* voicings — the same
+  chord may need different voicings depending on neighbors. Current import is just
+  the chord-symbol set; revisit when adding progression-aware voicing.
+
+** [2026-06-24] Chord-sheet combobox spelling + stale-partial fix
+- DO/Resting are now editable *comboboxes* (input + shared datalist), not selects:
+  type with b/#/bb/##/x (or pick a suggestion); display uses ♯/♭ glyphs. Full
+  enharmonic range incl. Cb/B#/Fb/E# and double accidentals.
+- Spelling is line-of-fifths centered on the ANCHOR (the field last edited), via
+  parseEntry → {pc, lof}; the other field = spellPitchClass(otherPc, anchorLof).
+  Fixes: DO=B minor → resting G♯ (was Ab); resting=Ab minor → DO C♭ (was B);
+  resting=C minor → DO E♭. Earlier bug was spelling resting centered on itself +
+  Cb/B# missing from the fixed option list (fell back to wrong enharmonic).
+  applyFromShared anchors on resting with keyTonicLOF default (pc-only storage
+  can't distinguish G#m vs Abm — defaults flat; user can retype).
+- *Load-tune-chords "No tune chords"* root cause: the de-iframed
+  practice/_tunes-embed.qmd was generated BEFORE publishChords was added (stale
+  static copy). FIX: regenerated _tunes/_patterns/_rhythms-embed.qmd from current
+  sources. LESSON: re-running the de-iframe transform is required after editing the
+  source apps/*/index.html — the partials don't auto-update.
+
+** [2026-06-24] Chord-sheet enharmonic spelling + app-page chrome cleanup
+- *Enharmonic DO/resting dropdowns*: options now list every spelling
+  [C,C#,Db,D,D#,Eb,…] (value=name, pc via parseNote). Programmatic selection uses
+  PitchSpelling.spellPitchClass(pc, keyTonicLOF(restingPc)) so DO is spelled in the
+  resting-tone key context — C minor → DO = Eb (verified), A minor → C, D dor → C.
+  Added /apps/shared/pitch-spelling.js to the chord-sheet partial.
+- *Strip auth bar + edge margin on Tools/Practice*: ~_includes/embed-page.html~
+  (<style> hiding #auth-bar + 3px padding on .column-screen and [id$="-root"]),
+  included via ~practice/_metadata.yml~ + ~tools/_metadata.yml~ (include-in-header is
+  ADDITIVE — project head.html/Supabase still loads; verified embed CSS on
+  practice/tools=1, index=0). The #auth-bar div ("Checking sign-in…" / signed-in
+  name) stays in DOM but hidden on those pages only.
+
+** [2026-06-24] Chord-sheet: 3 key dropdowns, fix load btn, piano default, persist
+- The chord-sheet tool is an *IIFE* — ALL integration must go through the DOM
+  (#chords-textarea parsed on blur, #sel-key change handler, [data-inst-id] boxes).
+  That's why the first "Load tune chords" (calling appendToken) did nothing.
+- *Three key dropdowns* replace the single "X major" #sel-key (now hidden, still
+  the tool's internal key input): DO (pitch), Tonality (Major/Minor/Dorian/…),
+  Resting tone (pitch). Relation: do = (resting + MO[mode]*7) mod 12; resting =
+  (do − MO[mode]*7) mod 12. Change DO→recompute resting; change resting→recompute
+  DO; change tonality→keep resting, recompute DO. Each change publishes
+  Tonality.setAll(do,resting,mode) AND drives #sel-key=resting so romans use the
+  resting tonic. Pitch labels re-spell via spellPc on DO change.
+- *Load tune chords* fixed: sets #chords-textarea = tuneChords.join + dispatches
+  'blur' → tool's parseTextarea. Feedback if empty ("open a tune first").
+- *Default piano*: S.instruments init 'guitar'→'keyboard' (both partial + source).
+- *Remember instruments*: localStorage "csInstruments" = {enabled ids, hand-mode,
+  voice-leading, fingerings}; applied on load (retries until #instrument-list
+  built), saved on any change.
+
+** [2026-06-24] Chord-sheet: autopopulate from tune + DO/resting awareness
+- *Tunes publishes chords*: ~publishChords()~ (in setTune) extracts the tune's
+  chord symbols, transposes by vis-transpose, spells via Tonality.spellPc, dedupes
+  consecutive → localStorage "tuneChords" (e.g. Lightly Row → Bb F7 Bb F7…).
+- *Chord-sheet builder* (tools/_chord-sheet.qmd):
+  - Roman key context now = RESTING TONE: ~#sel-key~ (values are pitch classes →
+    manualKeyPc → currentKeyContext().tonicPc) is set from Tonality.getResting().
+    (Was bound to DO — wrong for minor romans.) Note: sel-key labels still say
+    "X major" (cosmetic); tonic is correct so romans work.
+  - "↪ Load tune chords" button (next to the roman Add) → ~loadTuneChords()~:
+    clears the sheet + ~addChordByName()~ each (parses root+quality → chordId →
+    the sheet's ~appendToken~). Reuses chord-sheet globals (appendToken, parseNote,
+    noteName, preferFlats, parsedTokens) by name (inlined → same scope).
+- Caveat: button replaces the current sheet (explicit load, not auto-on-every-tune
+  to avoid clobbering edits).
+
+** [2026-06-24] De-iframed the original tunes/patterns/rhythms + SPACE plays
+- Original ~apps/tunes~, ~apps/patterns~, ~apps/rhythms~ (still iframed in
+  practice/{tunes,patterns,rhythms}.qmd) → inlined via the scoped-fragment recipe
+  (scope CSS under #<tid>-root, strip wrapper, abs URLs, raw-block partial
+  ~practice/_<tid>-embed.qmd~, ~.column-screen~). URL rewrite: ~../shared/x~ →
+  ~/apps/shared/x~; bare → ~/apps/<tid>/x~. Verified all srcs/links resolve, 0
+  iframes, 0 leakage, 200.
+- ~apps/shared/space-play.js~ (added to all three partials): SPACE clicks the abcjs
+  ~.abcjs-midi-start~ play/pause button (ignored while typing in a control).
+- These three now share the page (no independent scroll, inherit site font) like
+  the assessment apps; distinct partial names from the assessment ones
+  (_tunes-embed vs _tune-embed, _patterns-embed vs _assessment-embed, etc.).
+
+** [2026-06-24] Establish-tonality everywhere (shared)
+- ~Tonality.establish()~: plays a cadence on the current resting tone via
+  MusicAudio — major I–IV–V7–I; minor (incl harmonic) i–iv–V7–i. One impl.
+- ~apps/shared/establish-button.js~: drops a floating "♪ Establish tonality"
+  button (bottom-left) on any tonal app; skips if the app already has its own
+  ~#establish~ (the tonal assessment).
+- Added to all tonal apps (audio.js + tonality.js + establish-button.js as
+  needed): tune assessment, tunes, patterns, circle of fifths, solfège, scales,
+  chord-sheet. Tonal assessment keeps its inline button, rewired to
+  ~Tonality.establish()~. Rhythm app excluded (no tonal content).
+- All use MusicAudio → consistent cadence sound = first real payoff of the audio
+  unification (assessment cue/metronome oscillators still to migrate).
+
+** [2026-06-24] Tunes memory; patterns minor-switch; circle chords; shared audio
+- *Tunes remembers last*: ~saveTunesState()~ (in setTune) persists {collection,
+  tune index, transpose} → "tunesLast"; ~load()~ restores them before setTune, so
+  returning goes back to the same tune in the same key (no tonality change).
+- *Patterns now switches collection by mode*: its tonality consumer maps
+  major↔minor collections (COUNTERPART) by the shared mode (minor-3rd modes →
+  minor) before transposing to the resting tone. (Was transposing only.)
+- *Circle roman-numeral chords*: roman numerals live in the OUTER ring
+  [R_OUTER_I,R_OUTER_O] (the tool ignores clicks there). Capture-phase canvas
+  listener on that ring computes the diatonic degree + quality (getQualities) and
+  plays the triad via MusicAudio. (First try targeted the inner solfège ring →
+  did nothing; fixed to the outer ring.)
+- *Shared audio* ~apps/shared/audio.js~ = ~MusicAudio~ (one Web Audio synth:
+  triangle+sine ADSR, single ctx; note/noteAt/chord). Circle uses it now.
+  UNIFICATION PLAN (option A): migrate the cue/model/metronome oscillators in the
+  assessment trio (+ optionally solfège & chord tools) to MusicAudio; keep abcjs
+  soundfont synth ONLY for notation players (tunes/patterns). Then swapping
+  voice() internals (e.g. soundfont) upgrades every app at once. NOT migrated yet.
+
+** [2026-06-24] Pitch spelling shared; circle harmonic-minor default; direct key select
+- *Pitch spelling everywhere*: copied chord-library's ~pitch-spelling.js~ →
+  ~apps/shared/~. ~tonality.js~ now exposes ~spellPc(pc)~/~noteName(midi)~ (line-of-
+  fifths via PitchSpelling, centered on current DO; sharps fallback). Tonal + tune
+  assessment ~noteName~ delegate to ~Tonality.noteName~ (loaded pitch-spelling.js +
+  tonality.js in both partials) → note names match the key (Bb not A# in flat keys).
+- *Circle minor default → Harmonic Minor* (C_MODE: m/min/minor→6; aeo/aeolian→5 so
+  tunes can request natural via K:Xaeo).
+- *Direct key selection* (instead of half-steps): added a "Key" dropdown to the
+  multi-staff patterns app (~apps/patterns~) and the tunes app (~apps/tunes~). The
+  dropdown = the *tonal center (resting tone)*:
+  - patterns (written tonic C): consumes resting → vis-transpose = resting pc;
+    local picks just transpose (consumer-only, doesn't publish).
+  - tunes (master): ~onKeySelect~ transposes so resting tone = chosen pitch
+    (G-minor tune → "D" = D minor); ~publishTonality~ now publishes the SOUNDING key
+    (written K: + vis-transpose) and sets the dropdown to the sounding resting tone.
+- TODO from user: update some tunes' K: (e.g. mark tunes that should be natural
+  minor as ~aeo~, fix any wrong modes). Patterns app doesn't auto-switch major/
+  minor collection by mode (manual) — could add like the assessment if wanted.
+- Rhythm response: optionally color the TARGET notation noteheads green/red per
+  matched onset (needs notehead↔onset alignment incl. tied continuations via
+  ~events~ isOnset flags; ~.abcjs-note~ excludes rests). Timeline is primary for
+  now.
+- Onset resolution is limited by rAF frame rate (~16ms); fast microbeats at high
+  tempo may be coarse. Consider AudioWorklet for sample-accurate energy if needed.
+- Establish tonality for minor + other tonalities (Gordon-style resting tone /
+  tonic triad patterns).
+- Supabase persistence (upload recording to Storage + write a grades row, log a
+  ~session_events~/assessment event) — deferred. See architecture.org Phase 1
+  and the Layer 4 plan below.
+- Original standalone demos remain at ~~/Projects/record-and-grade/demos/~ as the
+  prototype origin; safe to delete once this app is confirmed working.
+- Render currently shows V1 at written octave (middle-C region). Consider a
+  visual octave transpose for readability (the patterns app uses +12 on paper0).
+
+* Landscape Research (2026-06-22)
+
+** Top-line finding
+There is *no single open-source project* that does the whole pipeline
+(assessment delivery → recording → auto-grading → manual-review storage).
+The academic systems that do exactly this are *research codebases*, not
+deployable platforms — useful as references/algorithms, not as a drop-in
+backend. Practical path: browser library for capture + pitch/onset detection,
+then ~100 lines of our own grading logic (passages are short → easy + full
+control).
+
+** Layer 1 — Capture in the browser (MIDI + audio)
+- *WEBMIDI.js* / *webmidi* (https://webmidijs.org) and *JZZ* (https://jzz.js.org)
+  — wrap the raw Web MIDI API. For MIDI-entry tasks this is all we need: note-on
+  events with timestamps = the data we grade on. MIDI is the *easiest* case:
+  perfect onset times + pitches handed to us, no detection.
+- *Web Audio API* ~MediaRecorder~ — record mic to a .webm/.wav blob for the
+  manual-review archive (Layer 4). Capture raw regardless of grading.
+
+** Layer 2 — Pitch & onset detection (sung/played audio)
+- *Pitchfinder* (JS, npm) https://github.com/peterkhayes/pitchfinder — multiple
+  algorithms (YIN, AMDF, ...) on Float32Arrays. Best-maintained JS option; YIN
+  is right for monophonic voice/instrument.
+- *cwilso/PitchDetect* https://github.com/cwilso/PitchDetect — canonical
+  autocorrelation demo; good to read, simpler than we'll ultimately want.
+- *aubio* (C, + Python/WASM) https://github.com/aubio/aubio — the serious
+  option. Onset detection (attack segmentation) + pitch + audio→MIDI. For robust
+  rhythm grading from audio, aubio's onset detector is the standard tool.
+  Compile to WASM for browser, or run server-side on the uploaded recording.
+
+Mapping tasks → detection:
+- *Rhythm-blind tonal accuracy* → need pitch only (median F0 per note).
+  Pitchfinder/YIN is enough.
+- *Pitch-blind rhythmic accuracy* → need onset times only. aubio onset
+  detection cleaner than deriving from pitch tracks.
+
+** Layer 3 — Grading logic
+Recurring technique across the literature: *Dynamic Time Warping (DTW)* to align
+student note sequence to reference, then measure deviation. For 1–5 note
+passages we may not even need DTW — direct positional comparison works:
+- *Tonal*: deviation of each note from target in *cents*; threshold (e.g.
+  ±50 cents = correct).
+- *Rhythmic*: normalize onset times to tempo (or to total duration → tempo-blind),
+  compare inter-onset intervals vs target ratios with a tolerance window.
+
+Reference implementations to mine for algorithms:
+- *helenacuesta/intonation-assessment* (Python)
+  https://github.com/helenacuesta/intonation-assessment — per-note intonation
+  scoring (TROMPA/Cantamus choir project); color-coded per-note accuracy.
+  Closest to "production-minded" of the research repos.
+- *madhavlab/2023_narottam_engine* — singing-mistake detection; dataset
+  annotated for pitch, amplitude, pronunciation *and rhythm* errors; rule-based +
+  DL (CNN/CRNN/TCN).
+- *MTG/smc-2016* https://github.com/MTG/smc-2016 — teacher-vs-student intonation
+  comparison (F0 extraction, transcription, alignment); clean
+  compare-to-reference template.
+- *Matchmaker* (Python) https://arxiv.org/html/2510.10087v1 — real-time score
+  following; overkill for 5 notes but relevant if passages grow.
+
+** Layer 4 — Saving recordings for manual review
+No special project needed: ~MediaRecorder~ blob → upload to storage (S3/etc.),
+store alongside the auto-grade and the detected note/onset data so a reviewer
+sees both audio + what the grader "heard". Keeping the extracted F0/onset trace
+next to the audio makes manual review much faster.
+
+** Suggested assembly
+1. *MIDI tasks*: WEBMIDI.js → comparison logic. (Trivial; do first.)
+2. *Audio tasks*: Web Audio capture → Pitchfinder (pitch) and/or aubio-wasm
+   (onset) → DTW/positional comparison → store blob + grade.
+3. Steal scoring thresholds from intonation-assessment / narottam repos rather
+   than reinventing tolerance tuning.
+
+** Key open design decision
+*Run detection client-side or server-side?*
+- Client-side (WASM): instant feedback.
+- Server-side (Python aubio + research code): more robust algorithms; keeps
+  grading logic out of the user's hands — matters for high-stakes grades.
+
+** Sources
+- https://github.com/peterkhayes/pitchfinder
+- https://github.com/cwilso/PitchDetect
+- https://github.com/notthetup/awesome-webaudio
+- https://github.com/aubio/aubio
+- https://arxiv.org/html/2510.10087v1
+- https://github.com/helenacuesta/intonation-assessment
+- https://arxiv.org/html/2602.06917v1
+- https://github.com/MTG/smc-2016
+- https://www.sciencedirect.com/science/article/abs/pii/S1051200422004973
+- https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11289018/
+- https://arxiv.org/pdf/2601.12153
+
+* Decisions
+- [2026-06-22] First demo target = *rhythm-blind tonal accuracy on a single
+  sustained pitch*. Rationale: monophonic pitch detection of a held note is the
+  single most robust thing in the whole space → highest chance of immediate
+  success. MIDI deferred per user.
+- [2026-06-22] Demo is *fully client-side, zero-dependency, single HTML file*
+  using autocorrelation (ACF2+). Defers the client/server question; good enough
+  to validate UX + detection quality.
+
+* Work Log
+** [2026-06-22] Session 1
+- Did landscape research (above).
+- Created this running notes file.
+- Built first audio demo: ~demos/tonal-accuracy.html~ (see Demos section).
+  - Live tuner readout (frequency, nearest note, cents).
+  - Pick a target note; "Record attempt" captures ~1.5s, grades median F0
+    against target in cents (±50¢ default = pass).
+  - Zero deps; run via local http server (getUserMedia needs secure context).
+- Extended to 3-note passages: ~demos/tonal-passage-3.html~.
+  - Three dropdowns for the target passage (defaults C4–E4–G4 arpeggio).
+  - *Segmentation strategy*: since the task is rhythm-blind, the student sings
+    the 3 notes with a short silent gap between each; the grader splits the
+    recording on silence (~GAP_MS=120ms~ of unvoiced frames ends a note,
+    ~MIN_VOICED=5~ frames = a real note), then grades each segment's
+    middle-60% median pitch in cents, in performance order.
+  - Per-note results table + overall PASS/FAIL. Requires exactly 3 detected
+    segments, else it tells the user to add clearer gaps.
+  - "Hear passage" plays the 3 targets as separate tones (note+gap) to model
+    how to perform it.
+
+** [2026-06-22] Session 1 — detector fix
+- Symptom: demo "picking up a lot of noise" + accurate performances FAILING.
+- Diagnosis:
+  1. Old detector (ACF2+ autocorrelation) gated only on volume (RMS>0.01) →
+     any background sound returned a bogus pitch → spurious voiced frames broke
+     the silence-based segmentation.
+  2. Raw autocorrelation is octave-error prone (locks to sub-harmonic). The live
+     meter snaps to the *nearest* note so it still looked in tune, but grading is
+     vs a *specific target octave* → octave error reads as ~1200¢ off → FAIL on a
+     correctly sung note.
+- Fix: replaced detector with *YIN* in BOTH demos.
+  - YIN's cumulative-mean-normalized difference + absolute threshold = octave
+    robust; its aperiodicity gives a real confidence so noise/unvoiced returns
+    -1 instead of a guess (this is the noise gate).
+  - Params: ~RMS_GATE=0.012~, ~YIN_THRESHOLD=0.15~, ~FMIN=70~, ~FMAX=1100~.
+  - Added per-note octave-outlier rejection in the 3-note grader (drop frames
+    >150¢ from the provisional median before taking the final median).
+- Tuning knobs if issues persist: raise YIN_THRESHOLD (more permissive / catches
+  breathy voices) or RMS_GATE (more aggressive silence gating in a loud room).
+
+** [2026-06-22] Session 1 — short capture + octave tolerance
+- Added 2s and 3s options to the 3-note demo capture dropdown (for quick
+  testing of the detector/octave changes). Default still 5s.
+- Added *octave-tolerance toggle* (~#octtol~, default ON): grading picks the
+  best-fitting octave among target ±0/±1/±2 octaves via ~bestCents()~. Helps
+  with (a) students singing in a different octave and (b) any residual octave
+  detection errors. Per-note row shows "(+1 oct)" etc. when a transposition was
+  applied; result footer notes whether octave tolerance was on.
+- (Only applied to ~tonal-passage-3.html~ so far; can mirror to the single-note
+  demo if needed.)
+
+** [2026-06-22] Session 1 — needle damping
+- Live tuner was twitchy (YIN frame jitter + needle snapping instantly).
+- Added *display-only* exponential smoothing (EMA) on frequency in both demos:
+  needle/readout now driven by ~smoothedFreq~ for physical-needle inertia.
+  - ~NEEDLE_ALPHA=0.15~ (lower = heavier/slower needle).
+  - Snaps instead of gliding when the pitch jumps >200¢ (new note) so it stays
+    responsive; holds last reading on unvoiced frames (no flicker).
+  - *Grading is unaffected*: raw per-frame pitches still feed ~collected~ /
+    ~samples~; only the display is smoothed. CSS untouched.
+
+** [2026-06-22] Session 1 — recorder wired up (Layer 4)
+- Added ~MediaRecorder~ capture to ~tonal-passage-3.html~. During the grading
+  window it records the mic to a Blob; afterward shows an ~<audio>~ player +
+  a download link.
+  - MIME picked by feature detection: opus/webm → webm → mp4 → ogg; graceful
+    no-op if MediaRecorder unsupported (Safari quirks).
+  - Filename: ~attempt_YYYYMMDD_HHMMSS_<pass|fail|incomplete>.<ext>~ — the grade
+    is embedded so manual-review files self-label.
+  - Record button disabled during capture; object URLs revoked between attempts.
+- *Demo persistence = local download for now.* Real app: POST the Blob + the
+  grade JSON + the detected F0/segment trace to object storage (S3) so a
+  reviewer sees audio + what the grader "heard" (see Layer 4 plan).
+
+* Demos
+** demos/tonal-accuracy.html
+Single-pitch tonal-accuracy grader. Zero dependencies.
+
+Run:
+#+begin_src sh
+cd /Users/sean/Projects/record-and-grade
+python3 -m http.server 8000
+# then open http://localhost:8000/demos/tonal-accuracy.html
+#+end_src
+
+Why localhost and not just opening the file: ~getUserMedia~ (mic access)
+requires a *secure context*; ~http://localhost~ qualifies, ~file://~ generally
+does not.
+
+How grading works:
+- Autocorrelation (ACF2+) estimates fundamental frequency every animation frame.
+- On "Record attempt", it collects per-frame F0 for ~1.5s, takes the *median*
+  (robust to onset/offset glitches), converts to cents relative to the target,
+  pass if |cents| ≤ tolerance.
+
+* TODO / Next
+- [X] Extend tonal demo from 1 pitch → short passage (3 pitches) with
+  silence-gap segmentation. (~demos/tonal-passage-3.html~)
+- [ ] Generalize 3 → configurable 1–5 notes (add/remove dropdown rows).
+- [ ] Evaluate gap-based vs pitch-change segmentation (gap-based requires the
+  student to pause; pitch-change handles legato but struggles on semitones).
+- [X] Add ~MediaRecorder~ capture so the raw attempt is saved (Layer 4).
+  (~tonal-passage-3.html~: player + download, grade in filename.)
+- [ ] Replace local download with upload to object storage + persist grade JSON
+  and F0/segment trace next to the audio.
+- [ ] Prototype *pitch-blind rhythmic accuracy* (tap/clap onset detection) —
+  evaluate aubio-wasm vs a simple energy-based onset detector.
+- [ ] MIDI-entry grader via WEBMIDI.js (deferred, but the quickest "win").
+- [ ] Decide client- vs server-side detection for real assessments.

@@ -1,0 +1,7 @@
+---
+title: "Drumset"
+---
+
+::: {.column-screen}
+{{< include _drumset.qmd >}}
+:::

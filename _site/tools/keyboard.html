@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Keyboard – Music Practice (demo)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<style>
+  #auth-bar {
+    font-family: sans-serif; font-size: 14px;
+    background: #f4f6f8; border-bottom: 1px solid #dde;
+    padding: 6px 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  #auth-bar input { font-size: 14px; padding: 3px 6px; width: 150px; }
+  #auth-bar button { font-size: 14px; padding: 3px 8px; cursor: pointer; }
+  #auth-bar .who { font-weight: bold; }
+  #auth-bar .spacer { flex: 1; }
+</style>
+<!-- App pages (Tools/Practice): hide the site-wide auth bar and add a small edge
+     margin so the full-bleed apps don't grind against the window. -->
+<style>
+  #auth-bar { display: none !important; }
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+</style>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice (demo)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/quarter-notes.html">
+ <span class="dropdown-text">Lesson: The Quarter Note</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/dotted-rhythms.html">
+ <span class="dropdown-text">Lesson: Dotted Rhythms</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tonal-do-re-mi.html">
+ <span class="dropdown-text">Lesson: Do, Re, Mi (Tonal Patterns)</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Assessment: Tune (pitch + rhythm) — prototype</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Practice: Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Practice: Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Assessment: Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Assessment: Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/fretboard.html">
+ <span class="dropdown-text">Fretboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/keyboard.html">
+ <span class="dropdown-text">Keyboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/director.html">
+ <span class="dropdown-text">Director</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/solfege-keyboard.html">
+ <span class="dropdown-text">Solfège Keyboard</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../teacher/report.html"> 
+<span class="menu-text">Teacher Report</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+<!-- Injected at the top of <body> on every page. Sign in once, anywhere;
+     the session persists across the whole site (shared localStorage). -->
+<div id="auth-bar">
+  <span id="auth-status">Checking sign-in…</span>
+
+  <span id="auth-signedout" style="display:none">
+    <input id="auth-email" placeholder="email">
+    <input id="auth-pass" type="password" placeholder="password">
+    <button onclick="authSignIn()">Sign in</button>
+    <button onclick="authSignUp()">Create</button>
+    <button onclick="authGoogle()">Google</button>
+  </span>
+
+  <span class="spacer"></span>
+
+  <span id="auth-signedin" style="display:none">
+    <span class="who" id="auth-who"></span>
+    <button onclick="authSignOut()">Sign out</button>
+  </span>
+</div>
+
+<script>
+  async function authRefresh() {
+    const { data: { session } } = await window.sb.auth.getSession();
+    const out = document.getElementById("auth-signedout");
+    const inn = document.getElementById("auth-signedin");
+    const status = document.getElementById("auth-status");
+    if (session) {
+      status.textContent = "";
+      out.style.display = "none";
+      inn.style.display = "inline";
+      document.getElementById("auth-who").textContent =
+        "Signed in: " + (session.user.user_metadata.full_name || session.user.email);
+    } else {
+      status.textContent = "Not signed in —";
+      out.style.display = "inline";
+      inn.style.display = "none";
+    }
+  }
+  async function authSignIn() {
+    const { error } = await window.sb.auth.signInWithPassword({
+      email: authEmail.value, password: authPass.value });
+    if (error) alert(error.message); else location.reload();
+  }
+  async function authSignUp() {
+    const { error } = await window.sb.auth.signUp({
+      email: authEmail.value, password: authPass.value });
+    alert(error ? error.message : "Account created. Now Sign in.");
+  }
+  async function authGoogle() {
+    await window.sb.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin + window.location.pathname }
+    });
+  }
+  async function authSignOut() { await window.sb.auth.signOut(); location.reload(); }
+  authRefresh();
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Keyboard</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<style>
+/* ── globals ── */
+#keyboard-root *{box-sizing:border-box}#keyboard-root,#keyboard-root{margin:0;padding:0}
+#keyboard-root{
+  --mw-mint:#7ac4b4;--mw-teal:#00acc3;--mw-deep-teal:#0d6f7f;
+  --mw-pink:#f4bbca;--mw-rose:#d989a4;--mw-ink:#163933;
+  --mw-paper:#f7fffd;--mw-border:#abd9d0;
+  --font-body:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --font-display:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+}#keyboard-root{color:var(--mw-ink);background:#f6fcf9;font-family:var(--font-body);line-height:1.5}
+a{color:inherit;text-decoration:none}
+.container{width:min(1120px,92vw);margin:0 auto}
+.section{padding:clamp(18px,3vw,36px) 0}
+.section.alt{
+  position:relative;
+  background:linear-gradient(180deg,rgba(246,255,252,.95),rgba(246,255,252,.95));
+  border-top:1px solid rgba(134,201,190,.5);
+  border-bottom:1px solid rgba(134,201,190,.5);
+}
+
+/* ── keyboard-diagram-studio module CSS ── */
+.keyboard-diagram-studio_sectionShell__R2KLw{padding-top:clamp(18px,2.8vw,28px)}
+.keyboard-diagram-studio_editorShell__hN7jA{display:grid;gap:10px}
+.keyboard-diagram-studio_feedbackToast__xkCcV{align-self:flex-start;padding:8px 12px;border-radius:12px;border:1px solid rgba(171,217,208,.88);background:rgba(255,255,255,.94);color:#145a66;font-size:.8rem;letter-spacing:.01em}
+.keyboard-diagram-studio_headerLink__uYexN,
+.keyboard-diagram-studio_menuActionButton__umJIe,
+.keyboard-diagram-studio_menuButton__y_vOL,
+.keyboard-diagram-studio_menuCloseButton___MZmp,
+.keyboard-diagram-studio_mobileToolButton__CYFgx,
+.keyboard-diagram-studio_primaryButton__MkUmh,
+.keyboard-diagram-studio_segmentButton__9izws{
+  appearance:none;border-radius:12px;border:1px solid rgba(134,201,190,.88);
+  background:rgba(255,255,255,.94);color:#145a66;cursor:pointer;
+  font-family:var(--font-display);font-size:.84rem;letter-spacing:.01em;
+  padding:8px 11px;text-decoration:none;transition:background-color .2s,border-color .2s,transform .2s,color .2s
+}
+.keyboard-diagram-studio_headerLink__uYexN:hover,
+.keyboard-diagram-studio_menuActionButton__umJIe:hover,
+.keyboard-diagram-studio_menuButton__y_vOL:hover,
+.keyboard-diagram-studio_menuCloseButton___MZmp:hover,
+.keyboard-diagram-studio_mobileToolButton__CYFgx:hover,
+.keyboard-diagram-studio_primaryButton__MkUmh:hover,
+.keyboard-diagram-studio_segmentButton__9izws:hover{transform:translateY(-1px)}
+.keyboard-diagram-studio_menuButton__y_vOL:disabled,
+.keyboard-diagram-studio_mobileToolButton__CYFgx:disabled{opacity:.46;cursor:default;transform:none}
+.keyboard-diagram-studio_menuBar__146hP,
+.keyboard-diagram-studio_menuPanel__nHKlJ,
+.keyboard-diagram-studio_mobileToolDock__dsAU8,
+.keyboard-diagram-studio_stageFrame__u4F_0{
+  border-radius:20px;border:1px solid rgba(171,217,208,.88);
+  background:linear-gradient(180deg,rgba(255,255,255,.94),rgba(249,255,253,.96));
+  box-shadow:0 12px 24px rgba(24,54,49,.08)
+}
+.keyboard-diagram-studio_menuBar__146hP{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding:8px}
+.keyboard-diagram-studio_mobileToolDock__dsAU8{display:none;gap:6px;padding:7px;overflow-x:auto;scrollbar-width:none}
+.keyboard-diagram-studio_mobileToolDock__dsAU8::-webkit-scrollbar{display:none}
+.keyboard-diagram-studio_mobileToolButton__CYFgx{font-size:.73rem;padding:9px 6px;flex:0 0 auto;white-space:nowrap}
+.keyboard-diagram-studio_menuButtonActive__NpUZ_,
+.keyboard-diagram-studio_mobileToolButtonActive__wasQX,
+.keyboard-diagram-studio_segmentButtonActive___MDmq{border-color:rgba(13,111,127,.9);background:rgba(15,125,142,.12);color:#0d6f7f}
+.keyboard-diagram-studio_dangerButtonActive__XIv2b{border-color:rgba(177,51,55,.9);background:rgba(177,51,55,.12);color:#9d1e24}
+.keyboard-diagram-studio_dangerButtonActive__XIv2b:hover{background:rgba(177,51,55,.18)}
+.keyboard-diagram-studio_addActionButton__k5Ppi{border-color:rgba(13,111,127,.95);background:rgba(13,111,127,.14);color:#0b5562}
+.keyboard-diagram-studio_addActionButton__k5Ppi:hover{background:rgba(13,111,127,.22)}
+.keyboard-diagram-studio_menuSpacer__MUjwf{flex:1 1 auto}
+.keyboard-diagram-studio_primaryButton__MkUmh{border-color:rgba(13,111,127,.9);background:#0f7d8e;color:#effffd}
+.keyboard-diagram-studio_menuPanel__nHKlJ{padding:8px 10px 10px;position:relative;z-index:12}
+.keyboard-diagram-studio_menuPanelHeader__yQ0Od{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:6px}
+.keyboard-diagram-studio_menuGrid__52lKA{margin-top:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px;align-items:start}
+.keyboard-diagram-studio_panelBlock__eOd7w{display:grid;gap:8px;padding:8px 10px;border-radius:16px;border:1px solid rgba(171,217,208,.72);background:rgba(255,255,255,.78)}
+.keyboard-diagram-studio_compactPanel__UfzzJ{gap:8px 12px}
+.keyboard-diagram-studio_compactWide___0tKs{grid-column:1/-1}
+.keyboard-diagram-studio_menuBackdrop___fkph{display:none}
+.keyboard-diagram-studio_menuActions__P2KR2{display:flex;flex-wrap:wrap;gap:5px 6px}
+.keyboard-diagram-studio_menuDescription__0jiXX{margin:0;color:#355a53;font-size:.88rem;line-height:1.45}
+.keyboard-diagram-studio_stageFrame__u4F_0{padding:14px}
+.keyboard-diagram-studio_stageSurface__VbdYa{position:relative;overflow:hidden;border-radius:18px;background:rgba(255,255,255,.46)}
+.keyboard-diagram-studio_transparentPreview__UPS2Y{background-image:linear-gradient(45deg,rgba(227,241,237,.76) 25%,transparent 0),linear-gradient(-45deg,rgba(227,241,237,.76) 25%,transparent 0),linear-gradient(45deg,transparent 75%,rgba(227,241,237,.76) 0),linear-gradient(-45deg,transparent 75%,rgba(227,241,237,.76) 0);background-size:24px 24px;background-position:0 0,0 12px,12px -12px,-12px 0}
+.keyboard-diagram-studio_stageScroll__V9tWE{overflow:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.keyboard-diagram-studio_stageCanvas__jK2Dp{position:relative;display:block;margin:0 auto;width:var(--stage-width);max-width:none}
+.keyboard-diagram-studio_stageSvg__3ivrT{display:block;width:100%;height:auto}
+.keyboard-diagram-studio_newObjectPulseBox__YlbvT,
+.keyboard-diagram-studio_newObjectPulseDot__a37yy{transform-box:fill-box;transform-origin:center;animation:kds_pulse 1.2s ease-out}
+@keyframes kds_pulse{0%{opacity:0;transform:scale(.86)}28%{opacity:.95;transform:scale(1)}to{opacity:0;transform:scale(1.08)}}
+.keyboard-diagram-studio_field__pE7xQ{display:grid;gap:4px;color:#234941;font-size:.84rem}
+.keyboard-diagram-studio_field__pE7xQ>span{color:#35615a;font-size:.72rem;letter-spacing:.04em;text-transform:uppercase}
+.keyboard-diagram-studio_control__vMrCj{width:100%;border-radius:12px;border:1px solid rgba(171,217,208,.92);background:#fff;color:#163933;font:inherit;padding:6px 10px}
+.keyboard-diagram-studio_control__vMrCj:focus{outline:none;border-color:rgba(0,172,195,.54);box-shadow:0 0 0 4px rgba(0,172,195,.12)}
+.keyboard-diagram-studio_colorControl__YDWyI{min-height:42px;padding:6px}
+.keyboard-diagram-studio_colorRow__UTNlr{display:grid;gap:6px}
+.keyboard-diagram-studio_colorInlineRow__yRa7g{display:grid;gap:8px}
+.keyboard-diagram-studio_labelSettingsRow__vRl7Q{display:grid;gap:8px 12px}
+.keyboard-diagram-studio_swatchRow__tMV1_{display:flex;flex-wrap:wrap;gap:6px}
+.keyboard-diagram-studio_swatchDivider__QEXqc{align-self:stretch;width:1px;min-height:30px;margin:0 3px;background:rgba(22,57,51,.24)}
+.keyboard-diagram-studio_colorSwatch__qFMhH{appearance:none;width:30px;height:30px;border-radius:999px;border:2px solid rgba(22,57,51,.18);cursor:pointer;padding:0}
+.keyboard-diagram-studio_segmentRow__Usg0n{display:flex;flex-wrap:wrap;gap:5px}
+.keyboard-diagram-studio_toggleSegmentRow__SQB3i{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.keyboard-diagram-studio_toggleSegmentRow__SQB3i .keyboard-diagram-studio_segmentButton__9izws{width:100%;justify-content:center}
+.keyboard-diagram-studio_segmentButton__9izws{padding:5px 8px}
+.keyboard-diagram-studio_toggleRow__MmGPi{display:flex;align-items:center;justify-content:space-between;gap:12px;color:#234941;font-size:.9rem}
+.keyboard-diagram-studio_toggleControl__QUarr{width:20px;height:20px;accent-color:#0f7d8e}
+.keyboard-diagram-studio_rangeRow__h7FlT{display:flex;align-items:center;gap:6px}
+.keyboard-diagram-studio_rangeControl__R7GD4{width:100%;accent-color:#0f7d8e}
+.keyboard-diagram-studio_rangeValue__YV_KA{min-width:56px;text-align:right;color:#2e6e68;font-size:.84rem}
+.keyboard-diagram-studio_bottomLinks__8NxkB{display:flex;justify-content:flex-end}
+@media(min-width:861px){
+  .keyboard-diagram-studio_compactPanel__UfzzJ{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .keyboard-diagram-studio_colorInlineRow__yRa7g{grid-template-columns:minmax(120px,148px) minmax(0,1fr);align-items:center}
+  .keyboard-diagram-studio_labelSettingsRow__vRl7Q{grid-template-columns:minmax(0,1fr) 128px;align-items:end}
+}
+@media(max-width:720px){
+  .keyboard-diagram-studio_sectionShell__R2KLw{padding-top:12px}
+  .keyboard-diagram-studio_editorShell__hN7jA{gap:8px;padding-bottom:calc(88px + env(safe-area-inset-bottom,0px))}
+  .keyboard-diagram-studio_menuBar__146hP{display:none}
+  .keyboard-diagram-studio_mobileToolDock__dsAU8{display:flex;position:sticky;top:8px;z-index:9}
+  .keyboard-diagram-studio_stageFrame__u4F_0{padding:8px}
+  .keyboard-diagram-studio_stageCanvas__jK2Dp{width:min(100%,var(--stage-width))}
+  .keyboard-diagram-studio_bottomLinks__8NxkB{justify-content:stretch}
+}
+@media(max-width:560px){
+  .keyboard-diagram-studio_menuActions__P2KR2,.keyboard-diagram-studio_segmentRow__Usg0n{width:100%}
+  .keyboard-diagram-studio_menuActionButton__umJIe,.keyboard-diagram-studio_menuCloseButton___MZmp,.keyboard-diagram-studio_primaryButton__MkUmh,.keyboard-diagram-studio_segmentButton__9izws{flex:1 1 100%;justify-content:center}
+}
+</style>
+
+<div id="keyboard-root">
+<section class="section alt keyboard-diagram-studio_sectionShell__R2KLw">
+<div class="container">
+<div class="keyboard-diagram-studio_editorShell__hN7jA">
+
+  <div id="feedbackToast" class="keyboard-diagram-studio_feedbackToast__xkCcV" style="display:none"></div>
+
+  <!-- Desktop toolbar -->
+  <div id="menuBar" class="keyboard-diagram-studio_menuBar__146hP" role="toolbar" aria-label="Keyboard diagram tools">
+    <button id="btn-keyboard" class="keyboard-diagram-studio_menuButton__y_vOL">Keyboard</button>
+    <button id="btn-label-all" class="keyboard-diagram-studio_menuButton__y_vOL">Label All</button>
+    <button id="btn-addText" class="keyboard-diagram-studio_menuButton__y_vOL keyboard-diagram-studio_addActionButton__k5Ppi">Add Text</button>
+    <button id="btn-addDot" class="keyboard-diagram-studio_menuButton__y_vOL keyboard-diagram-studio_addActionButton__k5Ppi">Add Dot</button>
+    <button id="btn-delete" class="keyboard-diagram-studio_menuButton__y_vOL" disabled="">Delete</button>
+    <button id="btn-undo" class="keyboard-diagram-studio_menuButton__y_vOL" disabled="">Undo</button>
+    <button id="btn-redo" class="keyboard-diagram-studio_menuButton__y_vOL" disabled="">Redo</button>
+    <button id="btn-reset" class="keyboard-diagram-studio_menuButton__y_vOL">Reset</button>
+    <div class="keyboard-diagram-studio_menuSpacer__MUjwf"></div>
+    <button id="btn-canvas" class="keyboard-diagram-studio_menuButton__y_vOL">Canvas</button>
+    <button id="btn-exportSVG" class="keyboard-diagram-studio_menuActionButton__umJIe">Export SVG</button>
+    <button id="btn-copyPNG" class="keyboard-diagram-studio_menuActionButton__umJIe">Copy PNG</button>
+    <button id="btn-exportPNG" class="keyboard-diagram-studio_primaryButton__MkUmh">Export PNG</button>
+  </div>
+
+  <!-- Mobile toolbar -->
+  <div id="mobileToolDock" class="keyboard-diagram-studio_mobileToolDock__dsAU8" aria-label="Keyboard diagram tools">
+    <button id="mbtn-keyboard" class="keyboard-diagram-studio_mobileToolButton__CYFgx">Keyboard</button>
+    <button id="mbtn-label-all" class="keyboard-diagram-studio_mobileToolButton__CYFgx">Labels</button>
+    <button id="mbtn-addText" class="keyboard-diagram-studio_mobileToolButton__CYFgx keyboard-diagram-studio_addActionButton__k5Ppi">Add Text</button>
+    <button id="mbtn-addDot" class="keyboard-diagram-studio_mobileToolButton__CYFgx keyboard-diagram-studio_addActionButton__k5Ppi">Add Dot</button>
+    <button id="mbtn-delete" class="keyboard-diagram-studio_mobileToolButton__CYFgx" disabled="">Delete</button>
+    <button id="mbtn-undo" class="keyboard-diagram-studio_mobileToolButton__CYFgx" disabled="">Undo</button>
+    <button id="mbtn-redo" class="keyboard-diagram-studio_mobileToolButton__CYFgx" disabled="">Redo</button>
+    <button id="mbtn-reset" class="keyboard-diagram-studio_mobileToolButton__CYFgx">Reset</button>
+    <button id="mbtn-canvas" class="keyboard-diagram-studio_mobileToolButton__CYFgx">Canvas</button>
+    <button id="mbtn-copyPNG" class="keyboard-diagram-studio_mobileToolButton__CYFgx">Copy PNG</button>
+    <button id="mbtn-exportSVG" class="keyboard-diagram-studio_mobileToolButton__CYFgx">Export SVG</button>
+    <button id="mbtn-exportPNG" class="keyboard-diagram-studio_primaryButton__MkUmh">Export PNG</button>
+  </div>
+
+  <div id="menuPanel" class="keyboard-diagram-studio_menuPanel__nHKlJ" style="display:none">
+    <div class="keyboard-diagram-studio_menuPanelHeader__yQ0Od">
+      <button id="menuCloseBtn" class="keyboard-diagram-studio_menuCloseButton___MZmp">Close</button>
+    </div>
+    <div id="menuContent" class="keyboard-diagram-studio_menuGrid__52lKA"></div>
+  </div>
+
+  <div class="keyboard-diagram-studio_stageFrame__u4F_0">
+    <div id="stageSurface" class="keyboard-diagram-studio_stageSurface__VbdYa">
+      <div class="keyboard-diagram-studio_stageScroll__V9tWE">
+        <div id="stageCanvas" class="keyboard-diagram-studio_stageCanvas__jK2Dp" style="--stage-width:800px">
+          <svg id="kbdSvg" class="keyboard-diagram-studio_stageSvg__3ivrT" role="img" aria-label="Keyboard diagram preview"></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="keyboard-diagram-studio_bottomLinks__8NxkB">
+    <span class="keyboard-diagram-studio_headerLink__uYexN">Keyboard Diagram Generator — Local Copy</span>
+  </div>
+
+</div><!-- editorShell -->
+</div><!-- container -->
+</section>
+
+<script>
+'use strict';
+// ── constants ──
+const NOTES   = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+const W_NOTES = ["C","D","E","F","G","A","B"];
+const BLACK   = new Set(["C#","D#","F#","G#","A#"]);
+const FLATS   = {"C#":"Db","D#":"Eb","F#":"Gb","G#":"Ab","A#":"Bb"};
+const DIMS    = { ww:72, wh:250, bw:42, bh:156, ls:15, la:38, lb:46 };
+const PAD_FIT = { top:52, right:44, bottom:56, left:44 };
+const ACC_COLORS = ["#0f7d8e","#00acc3","#7ac4b4","#f4bbca","#f28482"];
+const FIXED_COLORS = [{v:"#111111",l:"black"},{v:"#ffffff",l:"white"},{v:"#d9dde2",l:"grey"}];
+const FILL_STYLES = ["solid","transparent","diagonal","horizontal","vertical"];
+
+// ── CSS class aliases ──
+const C = {
+  menuBtn:      "keyboard-diagram-studio_menuButton__y_vOL",
+  mbtn:         "keyboard-diagram-studio_mobileToolButton__CYFgx",
+  btnActive:    "keyboard-diagram-studio_menuButtonActive__NpUZ_",
+  mbtnActive:   "keyboard-diagram-studio_mobileToolButtonActive__wasQX",
+  segBtn:       "keyboard-diagram-studio_segmentButton__9izws",
+  segActive:    "keyboard-diagram-studio_segmentButtonActive___MDmq",
+  danger:       "keyboard-diagram-studio_dangerButtonActive__XIv2b",
+  panelBlock:   "keyboard-diagram-studio_panelBlock__eOd7w",
+  compact:      "keyboard-diagram-studio_compactPanel__UfzzJ",
+  wide:         "keyboard-diagram-studio_compactWide___0tKs",
+  actions:      "keyboard-diagram-studio_menuActions__P2KR2",
+  desc:         "keyboard-diagram-studio_menuDescription__0jiXX",
+  field:        "keyboard-diagram-studio_field__pE7xQ",
+  ctrl:         "keyboard-diagram-studio_control__vMrCj",
+  colorCtrl:    "keyboard-diagram-studio_colorControl__YDWyI",
+  colorRow:     "keyboard-diagram-studio_colorRow__UTNlr",
+  colorInline:  "keyboard-diagram-studio_colorInlineRow__yRa7g",
+  labelRow:     "keyboard-diagram-studio_labelSettingsRow__vRl7Q",
+  swatchRow:    "keyboard-diagram-studio_swatchRow__tMV1_",
+  swatchDiv:    "keyboard-diagram-studio_swatchDivider__QEXqc",
+  swatch:       "keyboard-diagram-studio_colorSwatch__qFMhH",
+  segRow:       "keyboard-diagram-studio_segmentRow__Usg0n",
+  toggleSeg:    "keyboard-diagram-studio_toggleSegmentRow__SQB3i",
+  toggleRow:    "keyboard-diagram-studio_toggleRow__MmGPi",
+  toggleCtrl:   "keyboard-diagram-studio_toggleControl__QUarr",
+  rangeRow:     "keyboard-diagram-studio_rangeRow__h7FlT",
+  rangeCtrl:    "keyboard-diagram-studio_rangeControl__R7GD4",
+  rangeVal:     "keyboard-diagram-studio_rangeValue__YV_KA",
+  actionBtn:    "keyboard-diagram-studio_menuActionButton__umJIe",
+  primaryBtn:   "keyboard-diagram-studio_primaryButton__MkUmh",
+};
+
+// ── state ──
+const state = {
+  noteCount: 12, startNote: "C",
+  noteCountDraft: "12",
+  sizeMode: "fit", customWidth: 1100, customHeight: 520,
+  transparent: false, background: "#ffffff",
+  whiteKeyColor: "#111111", blackKeyColor: "#ffffff", fontSize: 15,
+  keyEdits: {}, textItems: [], dotItems: [],
+  selection: { type: "stage" },
+  activeMenu: null,
+  fillOrLabel: "fill",
+  labelKeyColor: "white",
+  recentColors: [...ACC_COLORS],
+  exportBusy: null,
+  feedbackMsg: "",
+  feedbackTimer: null,
+};
+
+// ── history ──
+const hist = { undo: [], redo: [] };
+function snap() {
+  return JSON.parse(JSON.stringify({
+    noteCount:state.noteCount, startNote:state.startNote,
+    sizeMode:state.sizeMode, customWidth:state.customWidth, customHeight:state.customHeight,
+    transparent:state.transparent, background:state.background,
+    whiteKeyColor:state.whiteKeyColor, blackKeyColor:state.blackKeyColor, fontSize:state.fontSize,
+    keyEdits:state.keyEdits, textItems:state.textItems, dotItems:state.dotItems,
+  }));
+}
+function saveHist() {
+  hist.undo.push(snap());
+  if (hist.undo.length > 50) hist.undo.shift();
+  hist.redo = [];
+}
+function applySnap(s) {
+  Object.assign(state, JSON.parse(JSON.stringify(s)));
+  state.noteCountDraft = String(s.noteCount);
+  state.selection = { type: "stage" };
+  state.feedbackMsg = "";
+}
+function doUndo() { if (!hist.undo.length) return; hist.redo.push(snap()); applySnap(hist.undo.pop()); renderAll(); }
+function doRedo() { if (!hist.redo.length) return; hist.undo.push(snap()); applySnap(hist.redo.pop()); renderAll(); }
+
+// ── keyboard math ──
+function buildKbd(noteCount, startNote) {
+  const si = NOTES.indexOf(startNote);
+  let wc = 0; const keys = [];
+  for (let i = 0; i < noteCount; i++) {
+    const note = NOTES[(si + i) % 12];
+    if (BLACK.has(note)) {
+      keys.push({ id:`key-${i}`, note, flatNote: FLATS[note]||null, isBlack:true,
+        x: Math.max(wc-1,0)*DIMS.ww + DIMS.ww - DIMS.bw/2,
+        width:DIMS.bw, height:DIMS.bh, defaultFill:"#111111" });
+    } else {
+      keys.push({ id:`key-${i}`, note, flatNote:null, isBlack:false,
+        x: wc*DIMS.ww, width:DIMS.ww, height:DIMS.wh, defaultFill:"#ffffff" });
+      wc++;
+    }
+  }
+  const kw = keys.reduce((m,k) => Math.max(m, k.x+k.width), wc*DIMS.ww);
+  return { keys, kw };
+}
+
+function computeLayout(kw) {
+  const pad = state.sizeMode==="match" ? {top:0,right:0,bottom:0,left:0} : PAD_FIT;
+  const ih  = DIMS.la + DIMS.wh + DIMS.lb;
+  const minW = Math.ceil(pad.left + kw + pad.right);
+  const minH = Math.ceil(pad.top + ih + pad.bottom);
+  let w, h;
+  if (state.sizeMode==="custom") { w=Math.max(minW,state.customWidth); h=Math.max(minH,state.customHeight); }
+  else if (state.sizeMode==="match") { w=kw+2; h=DIMS.wh+2; }
+  else { w=minW; h=minH; }
+  const kx = state.sizeMode==="match" ? 1 : Math.round((w-kw)/2);
+  const extraH = Math.max(0, h-pad.top-pad.bottom-ih);
+  const ky = state.sizeMode==="match" ? 1 : pad.top+DIMS.la+Math.round(extraH/2);
+  return { w, h, minW, minH, kx, ky };
+}
+
+// ── SVG helpers ──
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function clamp(v,a,b){ return Math.min(b,Math.max(a,v)); }
+
+function getFill(key) {
+  const e = state.keyEdits[key.id] || {};
+  const style = e.fillStyle || "solid";
+  if (style==="transparent") return "transparent";
+  const col = (e.fillColor && e.fillColor!=="transparent") ? e.fillColor : key.defaultFill;
+  if (style==="solid") return col;
+  return `url(#pat-${key.id})`;
+}
+
+function patternDef(key) {
+  const e = state.keyEdits[key.id] || {};
+  const style = e.fillStyle || "solid";
+  if (style==="solid"||style==="transparent") return "";
+  const col = e.fillColor || key.defaultFill;
+  const bg  = key.isBlack ? "#101010" : "#ffffff";
+  const pid = `pat-${key.id}`;
+  const base = `<rect fill="${esc(bg)}" width="12" height="12" shape-rendering="geometricPrecision"/>`;
+  if (style==="diagonal")   return `<pattern id="${pid}" width="12" height="12" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">${base}<path d="M 3 0 V 12" stroke="${esc(col)}" stroke-width="3"/><path d="M 9 0 V 12" stroke="${esc(col)}" stroke-width="3"/></pattern>`;
+  if (style==="horizontal") return `<pattern id="${pid}" width="12" height="12" patternUnits="userSpaceOnUse">${base}<path d="M 0 4 H 14" stroke="${esc(col)}" stroke-width="4"/><path d="M 0 10 H 14" stroke="${esc(col)}" stroke-width="4"/></pattern>`;
+  if (style==="vertical")   return `<pattern id="${pid}" width="12" height="12" patternUnits="userSpaceOnUse">${base}<path d="M 4 0 V 14" stroke="${esc(col)}" stroke-width="4"/><path d="M 10 0 V 14" stroke="${esc(col)}" stroke-width="4"/></pattern>`;
+  return "";
+}
+
+function keyLabel(key, layout) {
+  const e = state.keyEdits[key.id] || {};
+  const lbl = e.label || ""; if (!lbl.trim()) return "";
+  const lines = lbl.split("\n").slice(0,2);
+  const fs  = e.labelFontSize || state.fontSize;
+  const col = e.labelColor || (key.isBlack ? state.blackKeyColor : state.whiteKeyColor);
+  const pos = e.labelPosition || "on";
+  const cx  = layout.kx + key.x + key.width/2;
+  const lh  = Math.round(1.18*fs);
+  let y = pos==="above" ? layout.ky-12-(lines.length-1)*lh
+         : pos==="below" ? layout.ky+DIMS.wh+28-(lines.length-1)*lh
+         : layout.ky+key.height-18-(lines.length-1)*lh;
+  const tspans = lines.map((l,i)=>`<tspan x="${cx}" dy="${i?lh:0}">${esc(l)}</tspan>`).join("");
+  return `<text x="${cx}" y="${y}" text-anchor="middle" font-family='"Avenir Next","Segoe UI",sans-serif' font-size="${fs}" font-weight="700" fill="${esc(col)}" pointer-events="none">${tspans}</text>`;
+}
+
+function keyDot(key, layout) {
+  const e = state.keyEdits[key.id] || {};
+  if (!e.dotVisible) return "";
+  const sz  = e.dotSize || Math.min(key.width-18,38);
+  const fil = e.dotFillColor || e.dotColor || "#111111";
+  const str = e.dotStrokeColor || "#111111";
+  const sw  = e.dotStrokeWidth ?? 2;
+  const pos = e.dotPosition || "on";
+  const cx  = layout.kx + key.x + key.width/2;
+  const cy  = pos==="above" ? layout.ky-18 : pos==="below" ? layout.ky+DIMS.wh+24 : layout.ky+0.58*key.height;
+  return `<circle cx="${cx}" cy="${cy}" r="${sz/2}" fill="${esc(fil)}" stroke="${esc(str)}" stroke-width="${sw}"/>`;
+}
+
+// ── SVG render ──
+let _lastKw = 0;
+function renderSVG() {
+  const { keys, kw } = buildKbd(state.noteCount, state.startNote);
+  _lastKw = kw;
+  const L = computeLayout(kw);
+  const svg = document.getElementById('kbdSvg');
+  document.getElementById('stageCanvas').style.setProperty('--stage-width', `${L.w}px`);
+  svg.setAttribute('width', L.w);
+  svg.setAttribute('height', L.h);
+  svg.setAttribute('viewBox', `0 0 ${L.w} ${L.h}`);
+
+  const sel = state.selection;
+
+  // defs (patterns)
+  const defs = keys.map(k=>patternDef(k)).join("");
+
+  // background
+  const bg = state.transparent ? "" :
+    `<rect fill="${esc(state.background)}" width="${L.w}" height="${L.h}" rx="22" ry="22"/>`;
+
+  // editor dash outline
+  const outline = `<rect data-eo fill="none" width="${L.w-2}" height="${L.h-2}" x="1" y="1" rx="22" ry="22" stroke="rgba(0,172,195,0.5)" stroke-dasharray="10 8" stroke-width="2"/>`;
+
+  // white keys
+  let wk = "";
+  keys.filter(k=>!k.isBlack).forEach(k=>{
+    const selected = sel.type==="key" && sel.id===k.id;
+    wk += `<rect data-key="${k.id}" cursor="pointer" fill="${esc(getFill(k))}" width="${k.width}" height="${k.height}" x="${L.kx+k.x}" y="${L.ky}" rx="3" ry="3" stroke="#121212" stroke-width="2"/>`;
+    if (selected) wk += `<rect data-eo fill="none" width="${k.width+8}" height="${k.height+8}" x="${L.kx+k.x-4}" y="${L.ky-4}" rx="8" ry="8" stroke="#00acc3" stroke-width="3"/>`;
+  });
+
+  // black keys
+  let bk = "";
+  keys.filter(k=>k.isBlack).forEach(k=>{
+    const selected = sel.type==="key" && sel.id===k.id;
+    bk += `<rect data-key="${k.id}" cursor="pointer" fill="${esc(getFill(k))}" width="${k.width}" height="${k.height}" x="${L.kx+k.x}" y="${L.ky}" rx="4" ry="4" stroke="#121212" stroke-width="2"/>`;
+    if (selected) bk += `<rect data-eo fill="none" width="${k.width+8}" height="${k.height+8}" x="${L.kx+k.x-4}" y="${L.ky-4}" rx="8" ry="8" stroke="#00acc3" stroke-width="3"/>`;
+  });
+
+  // key dots + labels
+  const kdots  = keys.map(k=>keyDot(k,L)).join("");
+  const klbls  = keys.map(k=>keyLabel(k,L)).join("");
+
+  // floating dots
+  let fdots = "";
+  state.dotItems.forEach(d=>{
+    const sz  = d.size||28;
+    const isSel = sel.type==="dot" && sel.id===d.id;
+    fdots += `<g data-dot="${d.id}" style="touch-action:none" cursor="move">`;
+    if (isSel) fdots += `<rect data-eo fill="none" width="${sz+10}" height="${sz+10}" x="${d.x-sz/2-5}" y="${d.y-sz/2-5}" rx="999" ry="999" stroke="#00acc3" stroke-dasharray="8 6" stroke-width="2"/>`;
+    fdots += `<circle data-eo cx="${d.x}" cy="${d.y}" r="${Math.max(sz/2+12,22)}" fill="rgba(0,0,0,.001)" pointer-events="all" style="touch-action:none"/>`;
+    fdots += `<circle cx="${d.x}" cy="${d.y}" r="${sz/2}" fill="${esc(d.fillColor||'#111111')}" stroke="${esc(d.strokeColor||'#111111')}" stroke-width="${d.strokeWidth??2}" pointer-events="none"/>`;
+    fdots += `</g>`;
+  });
+
+  // floating text
+  let ftxts = "";
+  state.textItems.forEach(t=>{
+    const lines = (t.text||"Text").split("\n").slice(0,2);
+    const fs    = t.fontSize||28;
+    const tw    = lines.reduce((m,l)=>Math.max(m,l.length),1)*fs*0.62+24;
+    const th    = lines.length*fs*1.18+14;
+    const isSel = sel.type==="text" && sel.id===t.id;
+    ftxts += `<g data-txt="${t.id}" style="touch-action:none" cursor="move">`;
+    if (isSel) ftxts += `<rect data-eo fill="none" width="${tw}" height="${th}" x="${t.x-tw/2}" y="${t.y-fs}" rx="10" ry="10" stroke="#00acc3" stroke-dasharray="8 6" stroke-width="2"/>`;
+    const tspans = lines.map((l,i)=>`<tspan x="${t.x}" dy="${i?1.16*fs:0}">${esc(l)}</tspan>`).join("");
+    ftxts += `<text fill="${esc(t.color||'#111111')}" font-family='"Avenir Next","Segoe UI",sans-serif' font-size="${fs}" font-weight="700" text-anchor="${t.align||'middle'}" x="${t.x}" y="${t.y}" style="touch-action:none">${tspans}</text>`;
+    ftxts += `</g>`;
+  });
+
+  svg.innerHTML = `<defs>${defs}</defs>${bg}${outline}${wk}${bk}${kdots}${fdots}${klbls}${ftxts}`;
+
+  // attach key click handlers
+  svg.querySelectorAll('[data-key]').forEach(el=>{
+    el.addEventListener('click', e=>{
+      e.stopPropagation();
+      const id = el.dataset.key;
+      state.selection = { type:"key", id };
+      if (state.activeMenu!=="keyboard" && state.activeMenu!=="label-all") state.activeMenu = "keyboard";
+      state.fillOrLabel = "fill";
+      renderAll();
+    });
+  });
+
+  // draggable floating items
+  svg.querySelectorAll('[data-dot]').forEach(el=>{
+    el.addEventListener('pointerdown', e=>startDrag(e,"dot",el.dataset.dot));
+  });
+  svg.querySelectorAll('[data-txt]').forEach(el=>{
+    el.addEventListener('pointerdown', e=>startDrag(e,"text",el.dataset.txt));
+  });
+
+  // stage background click → deselect
+  svg.addEventListener('click', ()=>{
+    if (state.selection.type!=="stage") {
+      state.selection = { type:"stage" };
+      renderAll();
+    }
+  });
+}
+
+// ── drag ──
+let drag = null;
+function svgPt(cx, cy) {
+  const svg = document.getElementById('kbdSvg');
+  const pt  = svg.createSVGPoint();
+  pt.x = cx; pt.y = cy;
+  return pt.matrixTransform(svg.getScreenCTM().inverse());
+}
+function startDrag(e, type, id) {
+  e.preventDefault(); e.stopPropagation();
+  const pt = svgPt(e.clientX, e.clientY);
+  const item = type==="dot"
+    ? state.dotItems.find(d=>d.id===id)
+    : state.textItems.find(t=>t.id===id);
+  if (!item) return;
+  saveHist();
+  drag = { type, id, ox:item.x-pt.x, oy:item.y-pt.y, moved:false, sx:e.clientX, sy:e.clientY };
+  state.selection = { type, id };
+  e.currentTarget.setPointerCapture(e.pointerId);
+  window.addEventListener('pointermove', onDragMove, {passive:false});
+  window.addEventListener('pointerup',   onDragEnd);
+  window.addEventListener('pointercancel', onDragEnd);
+  renderAll();
+}
+function onDragMove(e) {
+  if (!drag) return;
+  e.preventDefault();
+  if (Math.hypot(e.clientX-drag.sx, e.clientY-drag.sy) > 6) drag.moved = true;
+  const { kw } = buildKbd(state.noteCount, state.startNote);
+  const L = computeLayout(kw);
+  const pt = svgPt(e.clientX, e.clientY);
+  const nx = pt.x + drag.ox, ny = pt.y + drag.oy;
+  if (drag.type==="text") {
+    const t = state.textItems.find(t=>t.id===drag.id);
+    if (t) {
+      const tw = Math.max(1,(t.text||"").split("\n")[0].length)*t.fontSize*0.62+24;
+      t.x = clamp(nx, 12+tw/2, L.w-12-tw/2);
+      t.y = clamp(ny, 20+t.fontSize, L.h-20);
+    }
+  } else {
+    const d = state.dotItems.find(d=>d.id===drag.id);
+    if (d) {
+      const sz = d.size||28;
+      d.x = clamp(nx, 12+sz/2, L.w-12-sz/2);
+      d.y = clamp(ny, 20+sz/2, L.h-20);
+    }
+  }
+  renderSVG();
+}
+function onDragEnd(e) {
+  if (!drag) return;
+  if (!drag.moved) {
+    state.activeMenu = drag.type==="text" ? "text" : "dot";
+  }
+  drag = null;
+  window.removeEventListener('pointermove', onDragMove);
+  window.removeEventListener('pointerup',   onDragEnd);
+  window.removeEventListener('pointercancel', onDragEnd);
+  renderAll();
+}
+
+// ── menu rendering ──
+function swatchesHTML(prefix, cb) {
+  const swatches = state.recentColors.map(c=>
+    `<button class="${C.swatch}" data-swatch-cb="${prefix}" data-color="${esc(c)}" style="background:${esc(c)}" aria-label="Use ${esc(c)}" type="button"></button>`
+  ).join("");
+  const fixed = FIXED_COLORS.map(f=>
+    `<button class="${C.swatch}" data-swatch-cb="${prefix}" data-color="${esc(f.v)}" style="background:${esc(f.v)}" title="${f.l}" type="button"></button>`
+  ).join("");
+  return `<div class="${C.swatchRow}">${swatches}<span class="${C.swatchDiv}" aria-hidden="true"></span>${fixed}</div>`;
+}
+
+function segBtn(label, active, id) {
+  return `<button class="${C.segBtn}${active?' '+C.segActive:''}" data-seg="${id}" type="button">${label}</button>`;
+}
+
+function renderMenu() {
+  const panel = document.getElementById('menuPanel');
+  const content = document.getElementById('menuContent');
+  const menu = state.activeMenu;
+  panel.style.display = menu ? '' : 'none';
+  if (!menu) return;
+
+  const sel = state.selection;
+  const selKey = sel.type==="key" ? state.keyEdits[sel.id]||{} : null;
+  const selKeyBase = sel.type==="key" ? (() => { const {keys}=buildKbd(state.noteCount,state.startNote); return keys.find(k=>k.id===sel.id); })() : null;
+  const selText = sel.type==="text" ? state.textItems.find(t=>t.id===sel.id) : null;
+  const selDot  = sel.type==="dot"  ? state.dotItems.find(d=>d.id===sel.id) : null;
+
+  let html = "";
+
+  if (menu==="keyboard") {
+    html = `<div class="${C.panelBlock} ${C.compact}">
+      <label class="${C.field}"><span>Number of notes</span>
+        <input id="inp-noteCount" class="${C.ctrl}" type="number" min="1" max="26" value="${esc(state.noteCountDraft)}">
+      </label>
+      <label class="${C.field}"><span>Starting note</span>
+        <select id="inp-startNote" class="${C.ctrl}">
+          ${W_NOTES.map(n=>`<option${n===state.startNote?' selected':''}>${n}</option>`).join("")}
+        </select>
+      </label>
+      <div class="${C.actions} ${C.wide}">
+        <button class="${C.actionBtn}" data-action="resetFills" type="button">Reset all fills</button>
+        <button class="${C.actionBtn}" data-action="clearTexts" type="button">Remove floating text</button>
+        <button class="${C.actionBtn}" data-action="clearDots"  type="button">Remove floating dots</button>
+      </div>
+    </div>`;
+
+    // if a key is selected, also show key panel inline
+    if (sel.type==="key" && selKeyBase) {
+      const e  = selKey;
+      const fs = e.fillStyle || "solid";
+      const fc = (e.fillColor && e.fillColor!=="transparent") ? e.fillColor : selKeyBase.defaultFill;
+      const lc = e.labelColor || (selKeyBase.isBlack ? state.blackKeyColor : state.whiteKeyColor);
+      const lfs= e.labelFontSize || state.fontSize;
+      const fo = state.fillOrLabel;
+      html += `<div class="${C.panelBlock} ${C.compact}">
+        <div class="${C.segRow} ${C.toggleSeg} ${C.wide}">
+          ${segBtn("Fill","fill"===fo,"fill")}
+          ${segBtn("Label","label"===fo,"label")}
+        </div>
+        ${fo==="fill" ? `
+          <label class="${C.field} ${C.wide}"><span>Fill style</span>
+            <select id="key-fillStyle" class="${C.ctrl}">
+              ${FILL_STYLES.map(s=>`<option${s===fs?' selected':''}>${s[0].toUpperCase()+s.slice(1)}</option>`).join("")}
+            </select>
+          </label>
+          <label class="${C.field} ${C.wide}"><span>Fill color</span>
+            <div class="${C.colorInline}">
+              <input id="key-fillColor" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(fc)}">
+              ${swatchesHTML("keyFill")}
+            </div>
+          </label>
+        ` : `
+          <label class="${C.field} ${C.wide}"><span>Key label</span>
+            <input id="key-label" class="${C.ctrl}" type="text" placeholder="Type label" value="${esc(e.label||"")}">
+          </label>
+          <label class="${C.field} ${C.wide}"><span>Label placement</span>
+            <select id="key-labelPos" class="${C.ctrl}">
+              <option${(e.labelPosition||"on")==="on"?' selected':''} value="on">On key</option>
+              <option${e.labelPosition==="above"?' selected':''} value="above">Above key</option>
+              <option${e.labelPosition==="below"?' selected':''} value="below">Below key</option>
+            </select>
+          </label>
+          <div class="${C.labelRow} ${C.wide}">
+            <label class="${C.field}"><span>Label color</span>
+              <div class="${C.colorInline}">
+                <input id="key-labelColor" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(lc)}">
+                ${swatchesHTML("keyLabel")}
+              </div>
+            </label>
+            <label class="${C.field}"><span>Label size</span>
+              <div class="${C.rangeRow}">
+                <input id="key-labelSize" class="${C.rangeCtrl}" type="range" min="11" max="24" step="1" value="${lfs}">
+                <span class="${C.rangeVal}" id="key-labelSizeVal">${lfs}px</span>
+              </div>
+            </label>
+          </div>
+        `}
+      </div>`;
+    }
+  }
+
+  if (menu==="label-all") {
+    const lkc = state.labelKeyColor;
+    const curC = lkc==="black" ? state.blackKeyColor : state.whiteKeyColor;
+    html = `<div class="${C.panelBlock} ${C.compact}">
+      <p class="${C.desc} ${C.wide}">Labels will be placed on the keys.</p>
+      <div class="${C.segRow} ${C.toggleSeg} ${C.wide}">
+        ${segBtn("White keys","white"===lkc,"whiteKeys")}
+        ${segBtn("Black keys","black"===lkc,"blackKeys")}
+      </div>
+      <label class="${C.field} ${C.wide}"><span>Color</span>
+        <div class="${C.colorInline}">
+          <input id="la-color" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(curC)}">
+          ${swatchesHTML("labelAll")}
+        </div>
+      </label>
+      <label class="${C.field}"><span>Size</span>
+        <div class="${C.rangeRow}">
+          <input id="la-size" class="${C.rangeCtrl}" type="range" min="11" max="24" step="1" value="${state.fontSize}">
+          <span class="${C.rangeVal}" id="la-sizeVal">${state.fontSize}px</span>
+        </div>
+      </label>
+      <div class="${C.actions} ${C.wide}">
+        <button class="${C.primaryBtn}" data-action="labelAll" type="button">Label all keys</button>
+        <button class="${C.actionBtn}"  data-action="clearLabels" type="button">Clear all labels</button>
+      </div>
+    </div>`;
+  }
+
+  if (menu==="text" && selText) {
+    const t = selText;
+    html = `<div class="${C.panelBlock} ${C.compact}">
+      <label class="${C.field} ${C.wide}"><span>Text</span>
+        <input id="txt-text" class="${C.ctrl}" type="text" value="${esc(t.text||"")}">
+      </label>
+      <label class="${C.field}"><span>Text color</span>
+        <div class="${C.colorRow}">
+          <input id="txt-color" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(t.color||'#111111')}">
+          ${swatchesHTML("txtColor")}
+        </div>
+      </label>
+      <label class="${C.field}"><span>Font size</span>
+        <div class="${C.rangeRow}">
+          <input id="txt-size" class="${C.rangeCtrl}" type="range" min="16" max="60" value="${t.fontSize||28}">
+          <span class="${C.rangeVal}" id="txt-sizeVal">${t.fontSize||28}px</span>
+        </div>
+      </label>
+    </div>`;
+  } else if (menu==="text" && !selText) {
+    html = `<div class="${C.panelBlock}"><p class="${C.desc}">Add text from the toolbar, then tap it to edit here.</p></div>`;
+  }
+
+  if (menu==="dot" && selDot) {
+    const d = selDot;
+    html = `<div class="${C.panelBlock} ${C.compact}">
+      <label class="${C.field}"><span>Dot fill</span>
+        <div class="${C.colorRow}">
+          <input id="dot-fill" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(d.fillColor||'#111111')}">
+          ${swatchesHTML("dotFill")}
+        </div>
+      </label>
+      <label class="${C.field}"><span>Dot line</span>
+        <div class="${C.colorRow}">
+          <input id="dot-stroke" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(d.strokeColor||'#111111')}">
+          ${swatchesHTML("dotStroke")}
+        </div>
+      </label>
+      <label class="${C.field}"><span>Line width</span>
+        <div class="${C.rangeRow}">
+          <input id="dot-sw" class="${C.rangeCtrl}" type="range" min="0" max="8" value="${d.strokeWidth??2}">
+          <span class="${C.rangeVal}" id="dot-swVal">${d.strokeWidth??2}px</span>
+        </div>
+      </label>
+      <label class="${C.field}"><span>Dot size</span>
+        <div class="${C.rangeRow}">
+          <input id="dot-size" class="${C.rangeCtrl}" type="range" min="12" max="64" value="${d.size||28}">
+          <span class="${C.rangeVal}" id="dot-sizeVal">${d.size||28}px</span>
+        </div>
+      </label>
+    </div>`;
+  } else if (menu==="dot" && !selDot) {
+    html = `<div class="${C.panelBlock}"><p class="${C.desc}">Add a dot from the toolbar, then tap it to edit here.</p></div>`;
+  }
+
+  if (menu==="canvas") {
+    const { kw } = buildKbd(state.noteCount, state.startNote);
+    const L = computeLayout(kw);
+    html = `
+    <div class="${C.panelBlock} ${C.compact}">
+      <label class="${C.toggleRow}">
+        <span>Transparent background</span>
+        <input id="cv-transparent" class="${C.toggleCtrl}" type="checkbox"${state.transparent?' checked':''}>
+      </label>
+      <label class="${C.field} ${C.wide}"><span>Background color</span>
+        <input id="cv-bg" class="${C.ctrl} ${C.colorCtrl}" type="color" value="${esc(state.background)}"${state.transparent?' disabled':''}>
+      </label>
+    </div>
+    <div class="${C.panelBlock} ${C.compact}">
+      <div class="${C.field} ${C.wide}"><span>Canvas size</span>
+        <div class="${C.segRow}">
+          ${segBtn("Fit content",   state.sizeMode==="fit",    "fit")}
+          ${segBtn("Custom",        state.sizeMode==="custom",  "custom")}
+          ${segBtn("Match keyboard",state.sizeMode==="match",   "match")}
+        </div>
+      </div>
+      ${state.sizeMode==="custom" ? `
+        <label class="${C.field}"><span>Canvas width</span>
+          <input id="cv-w" class="${C.ctrl}" type="number" min="${L.minW}" value="${state.customWidth}">
+        </label>
+        <label class="${C.field}"><span>Canvas height</span>
+          <input id="cv-h" class="${C.ctrl}" type="number" min="${L.minH}" value="${state.customHeight}">
+        </label>
+      ` : ""}
+    </div>`;
+  }
+
+  content.innerHTML = html;
+  bindMenuEvents();
+}
+
+function bindMenuEvents() {
+  const menu = state.activeMenu;
+  const sel  = state.selection;
+
+  // segment buttons
+  document.querySelectorAll('[data-seg]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const seg = btn.dataset.seg;
+      if (seg==="fill"||seg==="label") { state.fillOrLabel=seg; renderMenu(); }
+      if (seg==="whiteKeys") { state.labelKeyColor="white"; renderMenu(); }
+      if (seg==="blackKeys") { state.labelKeyColor="black"; renderMenu(); }
+      if (seg==="fit"||seg==="custom"||seg==="match") {
+        saveHist();
+        if (seg==="match") {
+          const {kw}=buildKbd(state.noteCount,state.startNote);
+          const L=computeLayout(kw);
+          state.customWidth=L.minW; state.customHeight=L.minH;
+        }
+        state.sizeMode=seg; renderAll();
+      }
+    });
+  });
+
+  // action buttons
+  document.querySelectorAll('[data-action]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const a = btn.dataset.action;
+      saveHist();
+      if (a==="resetFills") {
+        Object.keys(state.keyEdits).forEach(id=>{
+          const e={...state.keyEdits[id]};
+          delete e.fillColor; delete e.fillStyle;
+          if (!Object.keys(e).length) delete state.keyEdits[id];
+          else state.keyEdits[id]=e;
+        });
+        renderAll();
+      }
+      if (a==="clearTexts") { state.textItems=[]; if(sel.type==="text") state.selection={type:"stage"}; renderAll(); }
+      if (a==="clearDots")  { state.dotItems=[]; if(sel.type==="dot") state.selection={type:"stage"}; renderAll(); }
+      if (a==="labelAll") {
+        const {keys}=buildKbd(state.noteCount,state.startNote);
+        keys.forEach(k=>{
+          const lbl = k.isBlack && k.flatNote ? `${k.note}\n${k.flatNote}` : k.note;
+          const lkc = k.isBlack ? state.blackKeyColor : state.whiteKeyColor;
+          state.keyEdits[k.id]={...state.keyEdits[k.id], label:lbl, labelColor:lkc, labelPosition:"on", labelFontSize:state.fontSize};
+        });
+        renderAll();
+      }
+      if (a==="clearLabels") {
+        Object.keys(state.keyEdits).forEach(id=>{
+          const e={...state.keyEdits[id]};
+          delete e.label; delete e.labelColor; delete e.labelPosition; delete e.labelFontSize;
+          if (!Object.keys(e).length) delete state.keyEdits[id];
+          else state.keyEdits[id]=e;
+        });
+        renderAll();
+      }
+    });
+  });
+
+  // swatch buttons
+  document.querySelectorAll('[data-swatch-cb]').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const cb  = btn.dataset.swatchCb;
+      const col = btn.dataset.color;
+      pushRecentColor(col);
+      applyColorCb(cb, col);
+    });
+  });
+
+  // keyboard panel inputs
+  if (menu==="keyboard") {
+    const ncInp = document.getElementById('inp-noteCount');
+    if (ncInp) {
+      ncInp.addEventListener('input', e=>{
+        state.noteCountDraft = e.target.value;
+        const n = parseInt(e.target.value, 10);
+        if (!isNaN(n) && n>=1 && n<=26) {
+          saveHist(); state.noteCount=n; state.keyEdits={}; state.selection={type:"stage"};
+          renderSVG(); renderToolbar();
+        }
+      });
+      ncInp.addEventListener('blur', ()=>{
+        const n=clamp(parseInt(state.noteCountDraft,10)||12,1,26);
+        state.noteCount=n; state.noteCountDraft=String(n);
+        state.keyEdits={}; state.selection={type:"stage"};
+        renderAll();
+      });
+    }
+    const snInp = document.getElementById('inp-startNote');
+    if (snInp) snInp.addEventListener('change', e=>{
+      saveHist(); state.startNote=e.target.value; state.keyEdits={}; state.selection={type:"stage"}; renderAll();
+    });
+
+    if (sel.type==="key") {
+      const id = sel.id;
+      function keyEdit(update) {
+        if (!state.keyEdits[id]) state.keyEdits[id]={};
+        Object.assign(state.keyEdits[id], update);
+        // Clean up empty
+        const e=state.keyEdits[id];
+        if (!e.label) { delete e.label; delete e.labelColor; delete e.labelPosition; delete e.labelFontSize; }
+        if (!e.fillStyle||e.fillStyle==="solid") delete e.fillStyle;
+        if (Object.keys(e).length===0) delete state.keyEdits[id];
+        else state.keyEdits[id]=e;
+      }
+      const fsEl = document.getElementById('key-fillStyle');
+      if (fsEl) fsEl.addEventListener('change', e=>{ saveHist(); keyEdit({fillStyle:e.target.value.toLowerCase()}); renderSVG(); });
+      const fcEl = document.getElementById('key-fillColor');
+      if (fcEl) fcEl.addEventListener('input', e=>{ keyEdit({fillColor:e.target.value}); renderSVG(); });
+      if (fcEl) fcEl.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+
+      const lblEl = document.getElementById('key-label');
+      if (lblEl) lblEl.addEventListener('input', e=>{ keyEdit({label:e.target.value,labelPosition:(state.keyEdits[id]?.labelPosition||"on"),labelColor:(state.keyEdits[id]?.labelColor||(selKeyBase?.isBlack?state.blackKeyColor:state.whiteKeyColor))}); renderSVG(); });
+      const lpEl = document.getElementById('key-labelPos');
+      if (lpEl) lpEl.addEventListener('change', e=>{ saveHist(); keyEdit({labelPosition:e.target.value}); renderSVG(); });
+      const lcEl = document.getElementById('key-labelColor');
+      if (lcEl) lcEl.addEventListener('input', e=>{ keyEdit({labelColor:e.target.value}); renderSVG(); });
+      if (lcEl) lcEl.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+      const lsEl = document.getElementById('key-labelSize');
+      if (lsEl) lsEl.addEventListener('input', e=>{
+        const v=parseInt(e.target.value,10);
+        keyEdit({labelFontSize:v});
+        const sp=document.getElementById('key-labelSizeVal'); if(sp) sp.textContent=v+"px";
+        renderSVG();
+      });
+      if (lsEl) lsEl.addEventListener('change', ()=>saveHist());
+    }
+  }
+
+  if (menu==="label-all") {
+    const laC = document.getElementById('la-color');
+    if (laC) laC.addEventListener('input', e=>{ applyColorCb("labelAll",e.target.value); });
+    if (laC) laC.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+    const laS = document.getElementById('la-size');
+    if (laS) laS.addEventListener('input', e=>{
+      saveHist();
+      const v=parseInt(e.target.value,10);
+      state.fontSize=v;
+      const sp=document.getElementById('la-sizeVal'); if(sp) sp.textContent=v+"px";
+      // update existing labeled keys
+      const {keys}=buildKbd(state.noteCount,state.startNote);
+      keys.forEach(k=>{ if(state.keyEdits[k.id]?.label) state.keyEdits[k.id].labelFontSize=v; });
+      renderSVG();
+    });
+  }
+
+  if (menu==="text" && sel.type==="text") {
+    const id = sel.id;
+    function txtEdit(upd){ const t=state.textItems.find(t=>t.id===id); if(t) Object.assign(t,upd); }
+    const ttEl = document.getElementById('txt-text');
+    if (ttEl) ttEl.addEventListener('input', e=>{ txtEdit({text:e.target.value}); renderSVG(); });
+    const tcEl = document.getElementById('txt-color');
+    if (tcEl) tcEl.addEventListener('input', e=>{ txtEdit({color:e.target.value}); renderSVG(); });
+    if (tcEl) tcEl.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+    const tsEl = document.getElementById('txt-size');
+    if (tsEl) tsEl.addEventListener('input', e=>{
+      const v=parseInt(e.target.value,10);
+      txtEdit({fontSize:v});
+      const sp=document.getElementById('txt-sizeVal'); if(sp) sp.textContent=v+"px";
+      renderSVG();
+    });
+    if (tsEl) tsEl.addEventListener('change', ()=>saveHist());
+  }
+
+  if (menu==="dot" && sel.type==="dot") {
+    const id = sel.id;
+    function dotEdit(upd){ const d=state.dotItems.find(d=>d.id===id); if(d) Object.assign(d,upd); }
+    const dfEl=document.getElementById('dot-fill');
+    if (dfEl) dfEl.addEventListener('input', e=>{ dotEdit({fillColor:e.target.value}); renderSVG(); });
+    if (dfEl) dfEl.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+    const dsEl=document.getElementById('dot-stroke');
+    if (dsEl) dsEl.addEventListener('input', e=>{ dotEdit({strokeColor:e.target.value}); renderSVG(); });
+    if (dsEl) dsEl.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+    const swEl=document.getElementById('dot-sw');
+    if (swEl) swEl.addEventListener('input', e=>{
+      const v=parseInt(e.target.value,10); dotEdit({strokeWidth:v});
+      const sp=document.getElementById('dot-swVal'); if(sp) sp.textContent=v+"px";
+      renderSVG();
+    });
+    if (swEl) swEl.addEventListener('change', ()=>saveHist());
+    const szEl=document.getElementById('dot-size');
+    if (szEl) szEl.addEventListener('input', e=>{
+      const v=parseInt(e.target.value,10); dotEdit({size:v});
+      const sp=document.getElementById('dot-sizeVal'); if(sp) sp.textContent=v+"px";
+      renderSVG();
+    });
+    if (szEl) szEl.addEventListener('change', ()=>saveHist());
+  }
+
+  if (menu==="canvas") {
+    const cvT=document.getElementById('cv-transparent');
+    if (cvT) cvT.addEventListener('change', e=>{ saveHist(); state.transparent=e.target.checked; renderAll(); });
+    const cvB=document.getElementById('cv-bg');
+    if (cvB) cvB.addEventListener('input', e=>{ state.background=e.target.value; renderSVG(); });
+    if (cvB) cvB.addEventListener('change', e=>{ saveHist(); pushRecentColor(e.target.value); });
+    const cvW=document.getElementById('cv-w');
+    if (cvW) cvW.addEventListener('change', e=>{ saveHist(); state.customWidth=Math.max(parseInt(e.target.value,10)||state.customWidth, 100); renderAll(); });
+    const cvH=document.getElementById('cv-h');
+    if (cvH) cvH.addEventListener('change', e=>{ saveHist(); state.customHeight=Math.max(parseInt(e.target.value,10)||state.customHeight, 100); renderAll(); });
+  }
+}
+
+// helper: find selected key base
+let selKeyBase = null;
+function getSelKeyBase() {
+  if (state.selection.type!=="key") return null;
+  const {keys}=buildKbd(state.noteCount,state.startNote);
+  return keys.find(k=>k.id===state.selection.id)||null;
+}
+
+function applyColorCb(cb, col) {
+  saveHist();
+  const sel = state.selection;
+  if (cb==="keyFill") {
+    if (sel.type==="key") {
+      if (!state.keyEdits[sel.id]) state.keyEdits[sel.id]={};
+      state.keyEdits[sel.id].fillColor=col;
+      renderSVG();
+    }
+  } else if (cb==="keyLabel") {
+    if (sel.type==="key") {
+      if (!state.keyEdits[sel.id]) state.keyEdits[sel.id]={};
+      state.keyEdits[sel.id].labelColor=col;
+      renderSVG();
+    }
+  } else if (cb==="labelAll") {
+    const lkc = state.labelKeyColor;
+    const prop = lkc==="black" ? "blackKeyColor" : "whiteKeyColor";
+    state[prop]=col;
+    // update existing labeled keys of this type
+    const {keys}=buildKbd(state.noteCount,state.startNote);
+    keys.forEach(k=>{
+      if ((k.isBlack && lkc==="black") || (!k.isBlack && lkc==="white")) {
+        if (state.keyEdits[k.id]?.label) state.keyEdits[k.id].labelColor=col;
+      }
+    });
+    renderSVG();
+  } else if (cb==="txtColor") {
+    if (sel.type==="text") { const t=state.textItems.find(t=>t.id===sel.id); if(t){t.color=col;renderSVG();} }
+  } else if (cb==="dotFill") {
+    if (sel.type==="dot") { const d=state.dotItems.find(d=>d.id===sel.id); if(d){d.fillColor=col;renderSVG();} }
+  } else if (cb==="dotStroke") {
+    if (sel.type==="dot") { const d=state.dotItems.find(d=>d.id===sel.id); if(d){d.strokeColor=col;renderSVG();} }
+  }
+}
+
+function pushRecentColor(col) {
+  const c = col.toLowerCase();
+  if (FIXED_COLORS.some(f=>f.v===c)) return;
+  state.recentColors = [c, ...state.recentColors.filter(r=>r!==c)].slice(0,8);
+}
+
+// ── toolbar rendering ──
+function renderToolbar() {
+  const sel = state.selection;
+  const hasSelItem = sel.type==="text"||sel.type==="dot";
+  const canUndo = hist.undo.length > 0;
+  const canRedo = hist.redo.length > 0;
+  const menus = ["keyboard","label-all","canvas"];
+  const am = state.activeMenu;
+
+  const pairs = [
+    ["btn-keyboard","mbtn-keyboard","keyboard"],
+    ["btn-label-all","mbtn-label-all","label-all"],
+    ["btn-canvas","mbtn-canvas","canvas"],
+  ];
+  pairs.forEach(([did,mid,key])=>{
+    const d=document.getElementById(did), m=document.getElementById(mid);
+    if (d) { d.classList.toggle(C.btnActive,  am===key); }
+    if (m) { m.classList.toggle(C.mbtnActive, am===key); }
+  });
+
+  const delD=document.getElementById('btn-delete'), delM=document.getElementById('mbtn-delete');
+  if (delD) { delD.disabled=!hasSelItem; delD.classList.toggle(C.danger, hasSelItem); }
+  if (delM) { delM.disabled=!hasSelItem; delM.classList.toggle(C.danger, hasSelItem); }
+
+  ["btn-undo","mbtn-undo"].forEach(id=>{ const el=document.getElementById(id); if(el) el.disabled=!canUndo; });
+  ["btn-redo","mbtn-redo"].forEach(id=>{ const el=document.getElementById(id); if(el) el.disabled=!canRedo; });
+
+  // export button labels
+  const busy = state.exportBusy;
+  const epng=document.getElementById('btn-exportPNG'); if(epng) epng.textContent=busy==="png"?"Exporting…":"Export PNG";
+  const esvg=document.getElementById('btn-exportSVG'); if(esvg) esvg.textContent=busy==="svg"?"Saving SVG…":"Export SVG";
+  const copy=document.getElementById('btn-copyPNG'); if(copy) copy.textContent=busy==="copy"?"Copying…":"Copy PNG";
+  const mepng=document.getElementById('mbtn-exportPNG'); if(mepng) mepng.textContent=busy==="png"?"Exporting…":"Export PNG";
+  const mesvg=document.getElementById('mbtn-exportSVG'); if(mesvg) mesvg.textContent=busy==="svg"?"Saving…":"Export SVG";
+  const mcopy=document.getElementById('mbtn-copyPNG'); if(mcopy) mcopy.textContent=busy==="copy"?"Copying…":"Copy PNG";
+}
+
+function renderAll() {
+  renderSVG();
+  renderMenu();
+  renderToolbar();
+}
+
+// ── export ──
+function svgBlob() {
+  const svg = document.getElementById('kbdSvg');
+  const clone = svg.cloneNode(true);
+  clone.querySelectorAll('[data-eo]').forEach(el=>el.remove());
+  clone.setAttribute('xmlns','http://www.w3.org/2000/svg');
+  clone.setAttribute('xmlns:xlink','http://www.w3.org/1999/xlink');
+  return new Blob([new XMLSerializer().serializeToString(clone)], {type:"image/svg+xml;charset=utf-8"});
+}
+async function pngBlob() {
+  const blob = svgBlob();
+  const url  = URL.createObjectURL(blob);
+  try {
+    const img = new Image();
+    img.decoding = "async";
+    await new Promise((res,rej)=>{ img.onload=res; img.onerror=rej; img.src=url; });
+    const {kw}=buildKbd(state.noteCount,state.startNote);
+    const L=computeLayout(kw);
+    const scale = Math.max(2, Math.ceil(window.devicePixelRatio||1));
+    const canvas = document.createElement('canvas');
+    canvas.width = L.w*scale; canvas.height = L.h*scale;
+    const ctx = canvas.getContext('2d');
+    ctx.scale(scale,scale);
+    ctx.drawImage(img, 0, 0, L.w, L.h);
+    return await new Promise(res=>canvas.toBlob(res,"image/png"));
+  } finally { URL.revokeObjectURL(url); }
+}
+function download(blob, filename) {
+  const a=document.createElement('a'), url=URL.createObjectURL(blob);
+  a.href=url; a.download=filename; a.click(); URL.revokeObjectURL(url);
+}
+function showFeedback(msg) {
+  const el=document.getElementById('feedbackToast');
+  if (!el) return;
+  state.feedbackMsg=msg;
+  el.textContent=msg; el.style.display='';
+  if (state.feedbackTimer) clearTimeout(state.feedbackTimer);
+  state.feedbackTimer = setTimeout(()=>{ el.style.display='none'; state.feedbackMsg=''; }, 2400);
+}
+async function doExportPNG() {
+  if (state.exportBusy) return;
+  state.exportBusy="png"; renderToolbar();
+  try { const b=await pngBlob(); download(b,"keyboard-diagram.png"); showFeedback("PNG downloaded"); }
+  catch(e){ showFeedback("PNG export failed"); }
+  finally { state.exportBusy=null; renderToolbar(); }
+}
+function doExportSVG() {
+  if (state.exportBusy) return;
+  state.exportBusy="svg"; renderToolbar();
+  try { download(svgBlob(),"keyboard-diagram.svg"); showFeedback("SVG downloaded"); }
+  catch(e){ showFeedback("SVG export failed"); }
+  finally { state.exportBusy=null; renderToolbar(); }
+}
+async function doCopyPNG() {
+  if (state.exportBusy) return;
+  state.exportBusy="copy"; renderToolbar();
+  try {
+    const b=await pngBlob();
+    if (navigator.clipboard?.write && typeof ClipboardItem!=="undefined") {
+      await navigator.clipboard.write([new ClipboardItem({[b.type]:Promise.resolve(b)})]);
+      showFeedback("PNG copied to clipboard");
+    } else {
+      download(b,"keyboard-diagram.png");
+      showFeedback("PNG downloaded instead");
+    }
+  } catch(e){ showFeedback("Copy not available — PNG downloaded"); try{ download(await pngBlob(),"keyboard-diagram.png"); }catch(e2){} }
+  finally { state.exportBusy=null; renderToolbar(); }
+}
+
+// ── add items ──
+function addText() {
+  const {kw}=buildKbd(state.noteCount,state.startNote);
+  const L=computeLayout(kw);
+  const n=state.textItems.length;
+  const item={id:`text-${Date.now()}-${n}`, text:"New text", x:L.w/2, y:Math.max(34,.5*L.kx+n%3*28), fontSize:28, color:"#111111", align:"middle"};
+  saveHist();
+  state.textItems.push(item);
+  state.selection={type:"text",id:item.id};
+  state.activeMenu="text";
+  renderAll();
+}
+function addDot() {
+  const {kw}=buildKbd(state.noteCount,state.startNote);
+  const L=computeLayout(kw);
+  const n=state.dotItems.length;
+  const item={id:`dot-${Date.now()}-${n}`, x:L.w/2, y:Math.max(52,L.ky-48+n%3*34), size:28, fillColor:"#111111", strokeColor:"#111111", strokeWidth:2};
+  saveHist();
+  state.dotItems.push(item);
+  state.selection={type:"dot",id:item.id};
+  state.activeMenu="dot";
+  renderAll();
+}
+function deleteSelected() {
+  const sel=state.selection;
+  if (sel.type==="text") {
+    saveHist(); state.textItems=state.textItems.filter(t=>t.id!==sel.id); state.selection={type:"stage"};
+  } else if (sel.type==="dot") {
+    saveHist(); state.dotItems=state.dotItems.filter(d=>d.id!==sel.id); state.selection={type:"stage"};
+  }
+  renderAll();
+}
+function doReset() {
+  saveHist();
+  state.noteCount=12; state.noteCountDraft="12"; state.startNote="C";
+  state.sizeMode="fit"; state.customWidth=1100; state.customHeight=520;
+  state.transparent=false; state.background="#ffffff";
+  state.whiteKeyColor="#111111"; state.blackKeyColor="#ffffff"; state.fontSize=15;
+  state.keyEdits={}; state.textItems=[]; state.dotItems=[];
+  state.selection={type:"stage"}; state.activeMenu=null;
+  renderAll();
+}
+
+// ── wire toolbar buttons ──
+function toggleMenu(key) {
+  state.activeMenu = state.activeMenu===key ? null : key;
+  renderAll();
+}
+
+[
+  ["btn-keyboard","keyboard"],["mbtn-keyboard","keyboard"],
+  ["btn-label-all","label-all"],["mbtn-label-all","label-all"],
+  ["btn-canvas","canvas"],["mbtn-canvas","canvas"],
+].forEach(([id,key])=>{
+  document.getElementById(id)?.addEventListener('click',()=>toggleMenu(key));
+});
+["btn-addText","mbtn-addText"].forEach(id=>document.getElementById(id)?.addEventListener('click',addText));
+["btn-addDot","mbtn-addDot"].forEach(id=>document.getElementById(id)?.addEventListener('click',addDot));
+["btn-delete","mbtn-delete"].forEach(id=>document.getElementById(id)?.addEventListener('click',deleteSelected));
+["btn-undo","mbtn-undo"].forEach(id=>document.getElementById(id)?.addEventListener('click',doUndo));
+["btn-redo","mbtn-redo"].forEach(id=>document.getElementById(id)?.addEventListener('click',doRedo));
+["btn-reset","mbtn-reset"].forEach(id=>document.getElementById(id)?.addEventListener('click',doReset));
+["btn-exportPNG","mbtn-exportPNG"].forEach(id=>document.getElementById(id)?.addEventListener('click',doExportPNG));
+["btn-exportSVG","mbtn-exportSVG"].forEach(id=>document.getElementById(id)?.addEventListener('click',doExportSVG));
+["btn-copyPNG","mbtn-copyPNG"].forEach(id=>document.getElementById(id)?.addEventListener('click',doCopyPNG));
+document.getElementById('menuCloseBtn')?.addEventListener('click',()=>{ state.activeMenu=null; renderAll(); });
+
+// Delete key shortcut
+window.addEventListener('keydown', e=>{
+  if (e.key!=="Delete"&&e.key!=="Backspace") return;
+  const t=document.activeElement;
+  if (t instanceof HTMLInputElement||t instanceof HTMLTextAreaElement||t instanceof HTMLSelectElement||t?.isContentEditable) return;
+  const sel=state.selection;
+  if (sel.type==="text"||sel.type==="dot") { e.preventDefault(); deleteSelected(); }
+});
+
+// ── init ──
+renderAll();
+</script>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

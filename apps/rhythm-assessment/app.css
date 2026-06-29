@@ -1,0 +1,19 @@
+/* Rhythm-specific styling (light). Common styles live in /apps/shared/assessment.css */
+#app-root .readout { font-variant-numeric: tabular-nums; }
+#app-root .level { position: relative; height: 28px; background: #f1f3f5; border-radius: .375rem;
+  margin-top: .5rem; overflow: hidden; border: 1px solid #dee2e6; }
+#app-root .level > #levelbar { position: absolute; left:0; top:0; bottom:0; width:0%;
+  background:#2780e3; transition: width .03s linear; }
+#app-root .level > #thresh { position: absolute; top:0; bottom:0; width:2px; background:#fd7e14; }
+#app-root #timeline { position: relative; height: 90px; background:#f8f9fa; border:1px solid #dee2e6;
+  border-radius:.375rem; margin-top:.5rem; }
+#app-root .tl-label { position:absolute; left:6px; font-size:.7rem; color:#adb5bd; }
+#app-root .tick { position:absolute; width:3px; border-radius:2px; transform:translateX(-1.5px); }
+#app-root #beatdot { display:inline-block; width:22px; height:22px; border-radius:50%;
+  background:#e9ecef; vertical-align:middle; margin-left:.25rem; box-shadow:0 0 0 1px #ced4da inset;
+  transition: background .13s ease-out; }
+#app-root #beatdot.on { background:#495057; transition:none; }
+#app-root #beatdot.accent { background:#fd7e14; transition:none; }
+#app-root #captureSlot { min-height: 24px; }
+#app-root #resultArea { min-height: 150px; }
+#app-root #recCard { min-height: 108px; }

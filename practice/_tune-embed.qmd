@@ -1,0 +1,175 @@
+```{=html}
+<link rel="stylesheet" href="/apps/shared/assessment.css?v=8">
+<link rel="stylesheet" href="/apps/shared/abcjs-audio.css">
+<link rel="stylesheet" href="/apps/tune-assessment/app.css">
+<style>
+/* Collapsible panels (setup / notation / chord chart). Click a heading to fold. */
+#app-root .ta-panel{margin:0 0 1rem}
+#app-root .score-stack{display:flex;flex-direction:column;gap:1rem;margin:1rem 0}
+#app-root .ta-panel>summary{cursor:pointer;list-style:none;font-weight:600;font-size:1rem;
+  padding:.55rem .2rem;border-bottom:1px solid #e3e6ea;display:flex;align-items:center;gap:.5rem;user-select:none}
+#app-root .ta-panel>summary::-webkit-details-marker{display:none}
+#app-root .ta-panel>summary::before{content:"▾";color:#6b7280;font-size:.8rem;transition:transform .15s}
+#app-root .ta-panel:not([open])>summary{border-bottom:none}
+#app-root .ta-panel:not([open])>summary::before{transform:rotate(-90deg)}
+#app-root .ta-panel:not([open])>summary{color:#6b7280}
+#app-root .ta-panel-body{padding-top:.8rem}
+#app-root #tuneChart{max-width:100%}
+#app-root #tunePicker .tl-results{max-height:300px}
+</style>
+<div id="app-root">
+  <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
+
+  <details class="ta-panel card" id="panelTunes" open>
+    <summary>Find a tune</summary>
+    <div class="ta-panel-body"><div id="tunePicker"></div></div>
+  </details>
+
+  <details class="ta-panel card" id="panelSetup" open>
+    <summary>Setup &amp; controls</summary>
+    <div class="ta-panel-body">
+    <div class="row">
+      <div style="display:none"><label for="collection">Collection</label><select id="collection"></select></div>
+      <div style="display:none"><label for="tune">Tune</label><select id="tune"></select></div>
+      <button id="next" type="button">Next</button>
+      <button id="play" type="button" style="align-self:end">▶ Play tune</button>
+      <div><label for="tempo">Tempo (quarter BPM): <span id="tempoVal">100</span></label>
+        <input type="range" id="tempo" min="40" max="160" value="100" style="width:170px"></div>
+      <label class="cb" style="align-self:center"><input type="checkbox" id="chords" checked> 🎹 Chords</label>
+      <label class="cb" style="align-self:center"><input type="checkbox" id="play-tune" checked> 🎵 Play melody</label>
+      <label class="cb" style="align-self:center"><input type="checkbox" id="cycle"> 🔁 Cycle</label>
+    </div>
+    <div class="row" style="margin-top:.5rem; align-items:center">
+      <div><label for="melVoice">Melody voice</label>
+        <select id="melVoice">
+          <option value="piano" selected>Piano</option><option value="epiano">Electric piano</option>
+          <option value="nylon">Nylon guitar</option><option value="bass">Bass</option>
+          <option value="vibraphone">Vibraphone</option><option value="marimba">Marimba</option>
+        </select></div>
+      <div><label for="accVoice">Accompaniment voice</label>
+        <select id="accVoice">
+          <option value="piano">Piano</option><option value="epiano" selected>Electric piano</option>
+          <option value="nylon">Nylon guitar</option><option value="bass">Bass</option>
+          <option value="vibraphone">Vibraphone</option><option value="marimba">Marimba</option>
+        </select></div>
+    </div>
+    <div class="row" style="margin-top:.5rem; align-items:center">
+      <div><label for="instSel">Instrument (display)</label>
+        <select id="instSel">
+          <option value="Piano" selected>Piano</option><option value="Flute">Flute</option>
+          <option value="Clarinet">Clarinet</option><option value="Alto Sax">Alto Sax</option>
+          <option value="Trumpet">Trumpet</option><option value="Trombone">Trombone</option>
+          <option value="Tuba">Tuba</option><option value="Percussion">Percussion</option>
+        </select></div>
+      <div><label for="keySel">Concert Key</label>
+        <select id="keySel">
+          <option value="written" selected>As written</option>
+          <option value="0">C</option><option value="1">D♭</option><option value="2">D</option>
+          <option value="3">E♭</option><option value="4">E</option><option value="5">F</option>
+          <option value="6">G♭</option><option value="7">G</option><option value="8">A♭</option>
+          <option value="9">A</option><option value="10">B♭</option><option value="11">B</option>
+        </select></div>
+      <div id="transKeyWrap" style="display:none"><label for="transKey" id="transKeyLabel">Transposed Key</label>
+        <select id="transKey">
+          <option value="written" selected>As written</option>
+          <option value="0">C</option><option value="1">D♭</option><option value="2">D</option>
+          <option value="3">E♭</option><option value="4">E</option><option value="5">F</option>
+          <option value="6">G♭</option><option value="7">G</option><option value="8">A♭</option>
+          <option value="9">A</option><option value="10">B♭</option><option value="11">B</option>
+        </select></div>
+      <button id="enharmBtn" type="button" style="align-self:end">⇄ Enharmonic</button>
+    </div>
+    <div class="row" style="margin-top:.5rem; align-items:center">
+      <div><label for="metroVol">Metronome volume: <span id="metroVolV">70</span></label>
+        <input type="range" id="metroVol" min="0" max="100" value="70" style="width:150px"></div>
+      <div><label for="chordVol">Chord volume: <span id="chordVolV">55</span></label>
+        <input type="range" id="chordVol" min="0" max="100" value="55" style="width:150px"></div>
+    </div>
+    </div>
+  </details>
+
+  <div class="score-stack">
+    <details class="ta-panel" id="panelNotation" open>
+      <summary>Notation</summary>
+      <div class="ta-panel-body">
+        <div id="notation"></div>
+        <div class="muted" id="cycleHint" style="display:none; margin-top:.4rem"></div>
+        <div id="tune-audio" class="tune-audio"></div>
+      </div>
+    </details>
+    <details class="ta-panel" id="panelChart" open>
+      <summary>Chord chart</summary>
+      <div class="ta-panel-body">
+        <div class="row" style="margin:0 0 .6rem; align-items:center">
+          <div><label for="chartBeats">Beat lines</label>
+            <select id="chartBeats"><option value="0" selected>Off</option><option value="1">Every beat</option><option value="2">Every 2 beats</option></select></div>
+          <label class="cb" style="align-self:center"><input type="checkbox" id="chartRoman"> Roman numerals</label>
+        </div>
+        <div id="tuneChart"></div>
+      </div>
+    </details>
+  </div>
+
+  <div class="cols">
+  <div class="col">
+    <div class="card">
+      <div class="row" style="align-items:center">
+        <button id="mic" class="primary">Enable mic</button>
+        <button id="record" disabled>● Record performance</button>
+        <span>Beat <span id="beatdot" style="display:inline-block;width:18px;height:18px;border-radius:50%;background:#e9ecef;box-shadow:0 0 0 1px #ced4da inset;vertical-align:middle;transition:background .12s;"></span></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Live</label>
+      <div class="level"><div id="levelbar"></div></div>
+      <div class="muted" id="liveNote" style="margin-top:.35rem">—</div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <label>Result</label>
+      <div id="capturing" class="muted" style="display:none">…</div>
+      <div class="bar" id="progwrap" style="display:none"><div id="prog"></div></div>
+      <div id="resultArea"><div class="muted">Enable the mic, pick a tune, then record a performance.</div></div>
+      <div id="timelineWrap" style="display:none">
+        <div id="timeline"><div class="tl-label" style="top:6px">Target</div><div class="tl-label" style="top:46px">You</div></div>
+        <div class="muted" style="margin-top:.3rem">Rhythm: target vs your onsets (green = on time). Pitch is in the table.</div>
+      </div>
+    </div>
+
+    <div class="card" id="recCard" style="display:none">
+      <label>Recording — saved for manual review</label>
+      <audio id="player" controls style="width:100%; margin-top:.25rem"></audio>
+      <div class="row" style="margin-top:.6rem"><a id="download" class="btn">⬇ Download</a></div>
+      <div class="muted" id="recMeta" style="margin-top:.5rem"></div>
+    </div>
+
+    <div class="card">
+      <label>Tolerances</label>
+      <div class="row">
+        <div><label for="ptol">Pitch (± cents)</label><select id="ptol">
+          <option value="35">35</option><option value="50" selected>50</option><option value="100">100</option></select></div>
+        <div><label for="rtol">Rhythm (± ms)</label><select id="rtol">
+          <option value="80">80</option><option value="120" selected>120</option><option value="180">180</option></select></div>
+        <div><label for="sens">Onset sensitivity</label><select id="sens">
+          <option value="0.04">High</option><option value="0.06" selected>Medium</option><option value="0.10">Low</option></select></div>
+        <div><label>Octaves</label><label class="cb" style="padding:.55rem 0"><input type="checkbox" id="octtol" checked> ±1–2</label></div>
+      </div>
+    </div>
+  </div>
+  </div>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/tune-assessment/abc-tune.js"></script>
+<script src="/apps/shared/session-log.js"></script>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/abc-transpose.js?v=1"></script>
+<script src="/apps/shared/tune-chart.js?v=5"></script>
+<script src="/apps/shared/tune-library.js?v=5"></script>
+<script src="/apps/tune-assessment/app.js?v=21"></script>
+</div>
+<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/establish-button.js"></script>
+```

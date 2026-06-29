@@ -1,0 +1,7 @@
+---
+title: "Fretboard"
+---
+
+::: {.column-screen}
+{{< include _fretboard.qmd >}}
+:::

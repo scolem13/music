@@ -1,0 +1,7 @@
+# Applies to every page in this directory (Tools / Practice app pages):
+# strip the site auth bar and add a 3px edge margin (in addition to the
+# project-level head include, which still loads Supabase/config).
+format:
+  html:
+    include-in-header:
+      - ../_includes/embed-page.html

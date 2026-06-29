@@ -1,0 +1,1209 @@
+```{=html}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="https://cdn.jsdelivr.net/npm/svguitar@2.4.1/dist/svguitar.umd.min.js"></script>
+<style>
+/* guitar2.css */
+#fretboard-root {
+  /* …other vars… */
+  --accent-pink:      #e88697;
+  --accent-turquoise: #00b4ce;
+}
+/* Reset margins and set a light background */
+#fretboard-root {
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Wrapper around the diagram */
+#diagram-wrapper {
+  position: relative;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: .375rem;
+  overflow: hidden;
+}
+
+/* Container for the SVG chord – ensure it fills the wrapper */
+#chord-container {
+  position: relative;
+  width: 100%;
+  height: auto;
+}
+
+/* Transparent overlay to capture clicks */
+.click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  background: transparent;
+  z-index: 10;
+}
+
+/* Inline Dot customization panel */
+#dot-menu {
+  display: none;
+  margin-bottom: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: .375rem;
+  background-color: #ffffff;
+}
+
+#dot-menu .card-header {
+  background-color: #f1f3f5;
+  border-bottom: 1px solid #dee2e6;
+}
+
+#dot-menu .btn-close {
+  border: none;
+  background: transparent;
+  font-size: 1.25rem;
+}
+
+/* Inputs inside the menu get full width */
+#dot-menu .form-control,
+#dot-menu .form-control-color {
+  width: 100%;
+}
+
+/* Fix for color pickers */
+.form-control-color {
+  padding: .375rem .75rem;
+}
+
+/* Ensure SVG scales responsively */
+#chord-container svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Button spacing */
+.btn {
+  min-width: 120px;
+}
+
+/* Small adjustment for form labels */
+.form-label {
+  font-weight: 500;
+}
+
+/* — RESPONSIVE WRAPPER RULES — */
+
+/* Base: fluid width, with JS‐controlled max-width, centered */
+.svg-wrapper {
+  width: 100%;
+  margin: 0 auto;
+
+  /* allow horizontal scroll if contents overflow */
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  overflow-y: hidden;
+}
+
+/* Ensure the inner SVG always fills its parent */
+.svg-wrapper svg {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+
+/* On very small viewports, remove any side cap entirely */
+@media (max-width: 576px) {
+  .svg-wrapper {
+    padding: 0 0.5rem;
+  }
+}
+
+/* Slider label styling */
+#config-max-width {
+  margin-top: 0.25rem;
+}
+#max-width-value {
+  font-weight: bold;
+}
+@media (max-width: 576px) {
+  /* hide the slider input */
+  #config-max-width {
+    display: none !important;
+  }
+  /* hide the "600px" live‐value span */
+  #max-width-value {
+    display: none !important;
+  }
+  /* hide the label that shows “Diagram Max Width:” */
+  label[for="config-max-width"] {
+    display: none !important;
+  }
+}
+.btn-secondary {
+  background-color: var(--accent-pink) !important;
+  border-color:     var(--accent-pink) !important;
+  color:            #fff;
+}
+.btn-secondary:hover {
+  background-color: #d37686;  /* a slightly darker hover */
+}
+
+.btn-success {
+  background-color: var(--accent-turquoise) !important;
+  border-color:     var(--accent-turquoise) !important;
+  color:            #fff;
+}
+.btn-success:hover {
+  background-color: #00a4bc;  /* a slightly darker hover */
+}
+
+.btn-outline-primary {
+  color:           var(--accent-turquoise);
+  border-color:    var(--accent-turquoise);
+}
+.btn-outline-primary:hover {
+  background-color: var(--accent-turquoise);
+  color:            #fff;
+}
+.accordion .accordion-item::before {
+  background: var(--accent-pink);
+}
+.accordion-button:not(.collapsed) {
+  background-color: var(--accent-turquoise);
+  color:            #fff;
+}
+/* allow the open/muted buttons to wrap on small screens */
+@media (max-width: 576px) {
+  #nut-controls-container {
+    flex-wrap: wrap !important;
+    justify-content: center;
+    gap: 0.75rem; /* same as on desktop */
+  }
+}
+@font-face {
+  font-family: "MW Neutra Demi";
+  src: url("/brand/fonts/NeutraText-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MW Neutra Bold Alt";
+  src: url("/brand/fonts/NeutraText-BoldAlt.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+#fretboard-root {
+  --mw-mint: #7ac4b4;
+  --mw-teal: #00acc3;
+  --mw-deep-teal: #0d6f7f;
+  --mw-pink: #f4bbca;
+  --mw-rose: #d989a4;
+  --mw-ink: #163933;
+  --mw-paper: #f7fffd;
+  --mw-border: #abd9d0;
+  --mw-body-font: "MW Neutra Demi", "Avenir Next", "Segoe UI", sans-serif;
+  --mw-display-font: "MW Neutra Bold Alt", "Avenir Next", sans-serif;
+}
+
+body.mw-legacy-page {
+  margin: 0;
+  color: var(--mw-ink);
+  background-image:
+    linear-gradient(180deg, rgba(248, 255, 252, 0.88), rgba(248, 255, 252, 0.93)),
+    url("/brand/backgrounds/MW_paleturquoise_bg.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 620px auto;
+  font-family: var(--mw-body-font);
+}
+
+body.mw-legacy-page h1,
+body.mw-legacy-page h2,
+body.mw-legacy-page h3,
+body.mw-legacy-page h4,
+body.mw-legacy-page h5,
+body.mw-legacy-page .panel-title {
+  font-family: var(--mw-display-font);
+  color: var(--mw-ink);
+  letter-spacing: 0.01em;
+}
+
+body.mw-legacy-page .container {
+  width: min(1120px, 92vw);
+}
+
+.mw-legacy-nav {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-padding-x: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  margin-bottom: 1.5rem !important;
+  backdrop-filter: blur(8px);
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 253, 250, 0.94)),
+    url("/brand/patterns/SquarePattern_White.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 200px auto;
+  border-bottom: 1px solid rgba(171, 217, 208, 0.86);
+  box-shadow: 0 8px 20px rgba(22, 57, 51, 0.08);
+}
+
+.mw-legacy-nav .container-fluid {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  min-height: 74px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.mw-legacy-nav .navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: auto;
+}
+
+.mw-legacy-nav .navbar-brand img {
+  width: min(300px, 40vw);
+  height: auto;
+  display: block;
+}
+
+.mw-legacy-nav ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.mw-legacy-nav li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mw-legacy-nav a {
+  text-decoration: none !important;
+}
+
+.mw-legacy-nav [role="button"] {
+  margin: 0 !important;
+}
+
+.mw-legacy-nav .navbar-nav {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-left: auto;
+}
+
+.mw-legacy-nav .nav-link,
+.mw-legacy-nav .dropdown-item {
+  font-family: var(--mw-display-font);
+  letter-spacing: 0.02em;
+  font-size: 0.84rem;
+  line-height: 1.1;
+}
+
+.mw-legacy-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--mw-ink);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mw-legacy-nav .navbar-collapse {
+  flex-grow: 0;
+  justify-content: flex-end;
+}
+
+.mw-legacy-nav .dropdown-toggle::after {
+  content: "▾";
+  border: 0;
+  margin-left: 6px;
+  font-size: 0.62rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.mw-legacy-nav .nav-link:hover,
+.mw-legacy-nav .nav-link:focus,
+.mw-legacy-nav .nav-link.show,
+.mw-legacy-nav .dropdown-toggle.show {
+  background: #ffffff;
+  border-color: #c6e9e1;
+  color: var(--mw-deep-teal);
+  box-shadow: none !important;
+  outline: 0;
+}
+
+.mw-legacy-nav .dropdown-menu {
+  right: 0;
+  left: auto;
+  min-width: 220px !important;
+  display: none !important;
+  gap: 6px !important;
+  margin-top: 8px !important;
+  padding: 8px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(171, 217, 208, 0.9) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 14px 24px rgba(22, 57, 51, 0.12) !important;
+}
+
+.mw-legacy-nav .dropdown-menu.show {
+  display: grid !important;
+}
+
+.mw-legacy-nav .dropdown-item {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 8px 10px !important;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--mw-ink);
+  line-height: 1.1 !important;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mw-legacy-nav .dropdown-item:hover,
+.mw-legacy-nav .dropdown-item:focus {
+  background: #ffffff;
+  border-color: #c6e9e1;
+  color: var(--mw-deep-teal);
+}
+
+.mw-legacy-nav .navbar-toggler {
+  border-radius: 12px;
+  border: 1px solid rgba(171, 217, 208, 0.9);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+body.mw-legacy-page main.container,
+body.mw-legacy-page .container.py-4,
+body.mw-legacy-page main.container-fluid {
+  padding-bottom: 3rem;
+}
+
+body.mw-legacy-page article,
+body.mw-legacy-page .card,
+body.mw-legacy-page .accordion-item,
+body.mw-legacy-page .composer,
+body.mw-legacy-page .toolsbar {
+  border-radius: 16px;
+  border: 1px solid rgba(171, 217, 208, 0.9);
+  background: linear-gradient(180deg, #ffffff, #f9fffd);
+  box-shadow: 0 10px 18px rgba(24, 54, 49, 0.08);
+}
+
+body.mw-legacy-page .card,
+body.mw-legacy-page .accordion-item {
+  overflow: hidden;
+}
+
+body.mw-legacy-page .card-header,
+body.mw-legacy-page .accordion-button,
+body.mw-legacy-page .composer,
+body.mw-legacy-page .toolsbar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 253, 250, 0.96));
+  color: var(--mw-deep-teal);
+}
+
+body.mw-legacy-page .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+body.mw-legacy-page .card-header strong,
+body.mw-legacy-page .accordion-button,
+body.mw-legacy-page summary[role="button"] {
+  font-family: var(--mw-display-font);
+  letter-spacing: 0.01em;
+}
+
+body.mw-legacy-page button:not(.navbar-toggler):not(.btn-close):not(.accordion-button),
+body.mw-legacy-page .btn,
+body.mw-legacy-page summary[role="button"],
+body.mw-legacy-page details summary {
+  border-radius: 10px;
+  font-family: var(--mw-display-font);
+  letter-spacing: 0.015em;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body.mw-legacy-page button:not(.navbar-toggler):not(.btn-close):not(.btn):not(.accordion-button):not(.nav-link):not(.dropdown-item) {
+  border: 1px solid rgba(217, 137, 164, 0.88);
+  background: #f4bbca;
+  color: #4f2030;
+  box-shadow: none;
+}
+
+body.mw-legacy-page button.outline,
+body.mw-legacy-page .btn-outline-primary,
+body.mw-legacy-page .btn-outline-secondary,
+body.mw-legacy-page .btn-outline-success,
+body.mw-legacy-page summary[role="button"],
+body.mw-legacy-page .accordion-button,
+body.mw-legacy-page .dropdown-toggle.btn-outline-secondary,
+body.mw-legacy-page .dropdown-toggle.btn-outline-success {
+  border-color: rgba(134, 201, 190, 0.9);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--mw-deep-teal);
+  box-shadow: none;
+}
+
+body.mw-legacy-page .btn-primary,
+body.mw-legacy-page .btn-success {
+  border-color: rgba(217, 137, 164, 0.88);
+  background: #f4bbca;
+  color: #4f2030;
+  box-shadow: none;
+}
+
+body.mw-legacy-page .btn-secondary {
+  border-color: rgba(13, 111, 127, 0.88);
+  background: #0f7d8e;
+  color: #effffd;
+  box-shadow: none;
+}
+
+body.mw-legacy-page button:not(.navbar-toggler):not(.btn-close):not(.btn):not(.accordion-button):not(.nav-link):not(.dropdown-item):hover,
+body.mw-legacy-page .btn-primary:hover,
+body.mw-legacy-page .btn-success:hover {
+  background: #efafc0;
+  border-color: rgba(196, 112, 143, 0.9);
+  color: #4f2030;
+}
+
+body.mw-legacy-page .btn-secondary:hover {
+  background: #0d6f7f;
+  border-color: rgba(10, 89, 100, 0.9);
+  color: #effffd;
+}
+
+body.mw-legacy-page .btn-link {
+  color: var(--mw-deep-teal);
+  font-family: var(--mw-display-font);
+}
+
+body.mw-legacy-page .form-control:focus,
+body.mw-legacy-page .form-select:focus,
+body.mw-legacy-page input:focus,
+body.mw-legacy-page select:focus,
+body.mw-legacy-page textarea:focus {
+  border-color: rgba(0, 172, 195, 0.45);
+  box-shadow: 0 0 0 0.2rem rgba(0, 172, 195, 0.14);
+}
+
+body.mw-legacy-page .keyboard-outer-container,
+body.mw-legacy-page #diagram-wrapper,
+body.mw-legacy-page #exportArea,
+body.mw-legacy-page .notation-container,
+body.mw-legacy-page .card-body,
+body.mw-legacy-page .svg-wrapper,
+body.mw-legacy-page .panel-col .card-body {
+  background: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .mw-legacy-nav .container-fluid {
+    width: min(1120px, 94vw);
+    padding: 8px 0;
+    flex-wrap: wrap;
+  }
+
+  .mw-legacy-nav .navbar-collapse {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .mw-legacy-nav .navbar-nav {
+    align-items: stretch;
+    gap: 8px;
+    margin-left: 0;
+  }
+
+  .mw-legacy-nav .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .mw-legacy-nav .navbar-collapse {
+    justify-content: flex-start;
+  }
+
+  .mw-legacy-nav .dropdown-menu {
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 680px) {
+  .mw-legacy-nav .navbar-brand img {
+    width: min(240px, 78vw);
+  }
+}
+
+</style>
+
+<div id="fretboard-root">
+  <div class="container py-4">
+    <h1 class="mb-4">Fretboard Diagram Generator</h1>
+    <div class="accordion mb-3" id="mainAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingLayout">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLayout">Layout</button>
+        </h2>
+        <div id="collapseLayout" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+          <div class="accordion-body">
+            <div class="row g-3 mb-3">
+              <div class="col-md-2"><label class="form-label">Preset Tuning</label><select id="preset-tuning" class="form-select"><option value="">Custom</option><option value="gtr-std">Guitar Standard</option><option value="gtr-dropd">Guitar Drop D</option><option value="gtr-openg">Guitar Open G</option><option value="uke-soprano">Ukulele Soprano</option><option value="uke-baritone">Ukulele Baritone</option><option value="uke-bass">Ukulele Bass</option><option value="banjo">Banjo</option><option value="bass-4">Bass (4-string)</option></select></div>
+              <div class="col-md-2"><label class="form-label">Strings</label><input id="config-strings" type="number" class="form-control" value="6" min="1"/></div>
+              <div class="col-md-2"><label class="form-label">Frets</label><input id="config-frets" type="number" class="form-control" value="4" min="1"/></div>
+              <div class="col-md-2"><label class="form-label">Orientation</label><select id="config-orientation" class="form-select"><option value="vertical">Vertical</option><option value="horizontal">Horizontal</option></select></div>
+              <div class="col-md-4"><label class="form-label">String Labels (comma-separated)</label><input id="config-string-labels" type="text" class="form-control" placeholder="E, A, D, G, B, E"/><div class="form-check form-switch mt-2"><input class="form-check-input" type="checkbox" id="config-show-string-labels" checked/><label class="form-check-label" for="config-show-string-labels">Show String Labels</label></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingText">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseText">Text</button>
+        </h2>
+        <div id="collapseText" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+          <div class="accordion-body row g-3">
+            <div class="col-md-4"><label class="form-label">Title</label><input id="config-title" type="text" class="form-control" placeholder="Chord Name"/></div>
+            <div class="col-md-2"><label class="form-label">Title Size</label><input id="config-title-size" type="number" class="form-control" value="48" min="8"/></div>
+            <div class="col-md-2"><label class="form-label">Start Fret</label><input id="config-position" type="number" class="form-control" value="1" min="1"/></div>
+            <div class="col-md-2 d-flex align-items-end"><div class="form-check form-switch w-100"><input class="form-check-input" type="checkbox" id="config-hide-position-label"/><label class="form-check-label" for="config-hide-position-label">Hide Start Fret Label</label></div></div>
+            <div class="col-md-2"><label class="form-label">Fret Label Size</label><input id="config-fret-label-size" type="number" class="form-control" value="38" min="1"/></div>
+            <div class="col-md-4"><label class="form-label">Watermark Text</label><input id="config-watermark-text" type="text" class="form-control" value="MusicalWonders.org" placeholder="Enter watermark or leave blank"/></div>
+            <div class="col-md-2"><label class="form-label">Watermark Size</label><input id="config-watermark-size" type="number" class="form-control" value="12" min="6"/></div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingMute">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMute">Open / Muted Strings</button>
+        </h2>
+        <div id="collapseMute" class="accordion-collapse collapse" data-bs-parent="#mainAccordion">
+          <div class="accordion-body"><div id="nut-controls-container" class="d-flex flex-wrap justify-content-center gap-3"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="dot-menu" class="card mb-3" style="display:none;">
+      <div class="card-header d-flex justify-content-between align-items-center"><span>Customize Dot</span><button id="dot-menu-close" type="button" class="btn-close"></button></div>
+      <div class="card-body row g-3">
+        <div class="col-6"><label for="config-dot-fill-color" class="form-label">Fill Color</label><input type="color" id="config-dot-fill-color" class="form-control form-control-color" value="#000000"/></div>
+        <div class="col-6"><label for="config-dot-stroke-color" class="form-label">Stroke Color</label><input type="color" id="config-dot-stroke-color" class="form-control form-control-color" value="#000000"/></div>
+        <div class="col-4"><label for="config-dot-stroke-width" class="form-label">Stroke Width</label><input type="number" id="config-dot-stroke-width" class="form-control" value="1" min="0" step="0.1"/></div>
+        <div class="col-8"><label for="config-dot-label-text" class="form-label">Label Text</label><input type="text" id="config-dot-label-text" class="form-control" placeholder="e.g. 1"/></div>
+        <div class="col-6"><label for="config-dot-label-color" class="form-label">Label Color</label><input type="color" id="config-dot-label-color" class="form-control form-control-color" value="#ffffff"/></div>
+        <div class="col-6"><label for="config-dot-label-size" class="form-label">Label Size</label><input type="number" id="config-dot-label-size" class="form-control" value="12" min="6"/></div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-wrap mb-3 align-items-center justify-content-center">
+      <button id="btn-customize" class="btn btn-outline-primary me-2 mb-2">Customize Dots</button>
+      <button id="btn-clear" class="btn btn-secondary me-2 mb-2">Clear Dots</button>
+      <button id="download-svg" class="btn btn-success me-2 mb-2">Download SVG</button>
+      <button id="download-png" class="btn btn-success me-2 mb-2">Download PNG</button>
+      <div class="form-check form-switch ms-3 mb-2"><input class="form-check-input" type="checkbox" id="config-style"/><label class="form-check-label" for="config-style">Hand-drawn Style</label></div>
+    </div>
+
+    <div class="svg-wrapper mx-auto mb-3">
+      <div id="diagram-wrapper" class="border p-3 position-relative">
+        <div id="chord-container" class="position-relative">
+          <div id="click-overlay" class="click-overlay"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row gx-2 align-items-center">
+      <div class="col-auto"><label for="config-max-width" class="form-label mb-0">Diagram Max Width: <span id="max-width-value">600px</span></label></div>
+      <div class="col"><input id="config-max-width" type="range" class="form-range" min="200" max="1200" step="10" value="600"/></div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+// guitar2.js
+
+// 1) Preset tunings
+const PRESETS = {
+  'gtr-std':     { strings: 6, tuning: 'E,A,D,G,B,E' },
+  'gtr-dropd':   { strings: 6, tuning: 'D,A,D,G,B,E' },
+  'gtr-openg':   { strings: 6, tuning: 'D,G,D,G,B,D' },
+  'uke-soprano': { strings: 4, tuning: 'G,C,E,A' },
+  'uke-baritone':{ strings: 4, tuning: 'D,G,B,E' },
+  'uke-bass':    { strings: 4, tuning: 'E,A,D,G' },
+  'banjo':       { strings: 5, tuning: 'G,D,G,B,D' },
+  'bass-4':      { strings: 4, tuning: 'E,A,D,G' }
+};
+
+// 2) Application state
+let chordData  = { fingers: [], barres: [] };
+let configData = {
+  strings:            6,
+  frets:              4,
+  tuning:            ['E','A','D','G','B','E'],
+  orientation:       'vertical',
+  title:              '',
+  titleFontSize:      48,
+  position:           1,
+  hidePositionLabel: false,
+  fretLabelFontSize:  38,
+  fretLabelColor:    '#000000',
+  style:             'normal',
+  strokeWidth:        2,
+  backgroundColor:  '#ffffff',
+  fingerTextSize:     20,
+  // watermark defaults
+  watermarkText:      'MusicalWonders.org',
+  watermarkFontSize:  12,
+  // new: user override for wrapper max-width (px)
+  maxWidth:          600
+};
+
+// 3) Dot customization options
+let dotOptions = {
+  fillColor:     '#000000',
+  strokeColor:   '#000000',
+  strokeWidth:    1,
+  labelText:     '',
+  labelColor:    '#ffffff',
+  labelFontSize: 12
+};
+
+// 4) Drag state for barre creation
+let dragStart = null;
+
+// 4b) Ghost preview state
+let preview = { finger: null, barre: null };
+
+// 5) Initialize SVGuitar
+const chordChart = new svguitar.SVGuitarChord('#chord-container');
+
+document.addEventListener('DOMContentLoaded', () => {
+  const $ = id => document.getElementById(id);
+
+  // Dot customization panel toggle
+  $('btn-customize').addEventListener('click', () => {
+    const menu = $('dot-menu');
+    menu.style.display = (menu.style.display === 'none') ? 'block' : 'none';
+  });
+  $('dot-menu-close').addEventListener('click', () => {
+    $('dot-menu').style.display = 'none';
+  });
+
+  // Dot option inputs
+  [
+    'config-dot-fill-color',
+    'config-dot-stroke-color',
+    'config-dot-stroke-width',
+    'config-dot-label-text',
+    'config-dot-label-color',
+    'config-dot-label-size'
+  ].forEach(id => {
+    const el = $(id);
+    if (!el) return;
+    el.addEventListener('input', () => {
+      switch(id) {
+        case 'config-dot-fill-color':    dotOptions.fillColor    = el.value; break;
+        case 'config-dot-stroke-color':  dotOptions.strokeColor  = el.value; break;
+        case 'config-dot-stroke-width':  dotOptions.strokeWidth  = parseFloat(el.value) || dotOptions.strokeWidth; break;
+        case 'config-dot-label-text':    dotOptions.labelText    = el.value; break;
+        case 'config-dot-label-color':   dotOptions.labelColor   = el.value; break;
+        case 'config-dot-label-size':
+          dotOptions.labelFontSize = parseInt(el.value,10) || dotOptions.labelFontSize;
+          configData.fingerTextSize = dotOptions.labelFontSize;
+          chordData.fingers.forEach(f => f[2] && (f[2].textSize = dotOptions.labelFontSize));
+          chordData.barres.forEach(b => b.textSize != null && (b.textSize = dotOptions.labelFontSize));
+          renderChord();
+          break;
+      }
+    });
+  });
+
+  // Core config controls (auto-redraw), now including max-width
+  [
+    'preset-tuning','config-strings','config-frets','config-orientation',
+    'config-title','config-title-size','config-position','config-hide-position-label',
+    'config-fret-label-size','config-style',
+    'config-string-labels','config-show-string-labels',
+    'config-watermark-text','config-watermark-size'
+  ].forEach(id => {
+    const el = $(id);
+    if (el) el.addEventListener('input', onConfigChange);
+  });
+  // —— NEW SLIDER HANDLING ——
+  const maxWidthSlider = $('config-max-width');
+  const maxWidthLabel  = $('max-width-value');
+  maxWidthSlider.addEventListener('input', () => {
+    maxWidthLabel.textContent = maxWidthSlider.value + 'px';
+    onConfigChange();
+  });
+  // Overlay events: mousedown for barre start, mouseup for barre/dot end
+  const overlay = $('click-overlay');
+  overlay.addEventListener('mousedown', onOverlayDown);
+  overlay.addEventListener('mouseup',   onOverlayUp);
+  overlay.addEventListener('mousemove', onOverlayMove);
+  overlay.addEventListener('mouseleave', () => {
+    preview = { finger: null, barre: null };
+    renderChord();
+  });
+	
+overlay.addEventListener('touchstart', e => {
+  e.preventDefault();
+  const touch = e.touches[0];
+
+  // seed dragStart with a “mouse‐like” event
+  onOverlayDown({ clientX: touch.clientX, clientY: touch.clientY });
+  // show the ghost preview immediately
+  onOverlayMove({ clientX: touch.clientX, clientY: touch.clientY });
+});
+
+overlay.addEventListener('touchmove', e => {
+  e.preventDefault();
+  const touch = e.touches[0];
+  onOverlayMove({ clientX: touch.clientX, clientY: touch.clientY });
+});
+
+overlay.addEventListener('touchend', e => {
+  e.preventDefault();
+  const touch = e.changedTouches[0];
+  onOverlayUp({ clientX: touch.clientX, clientY: touch.clientY });
+});
+
+  // Clear & download
+  $('btn-clear').addEventListener('click', clearAll);
+  $('download-svg').addEventListener('click', downloadSVG);
+  $('download-png').addEventListener('click', downloadPNG);
+
+  // Initial render
+  onConfigChange();
+});
+
+// 6) Read config & redraw
+function onConfigChange() {
+  readConfig();
+  buildNutControls();
+  renderChord();
+
+  // enforce the user's chosen max-width
+  document.querySelector('.svg-wrapper')
+          .style.maxWidth = configData.maxWidth + 'px';
+}
+
+function readConfig() {
+  const $ = id => document.getElementById(id);
+  const preset = $('preset-tuning').value;
+  if (preset && PRESETS[preset]) {
+    configData.strings = PRESETS[preset].strings;
+    configData.tuning  = PRESETS[preset].tuning.split(',');
+    $('config-strings').value = configData.strings;
+  }
+
+  configData.strings           = parseInt($('config-strings').value,10)   || configData.strings;
+  configData.frets             = parseInt($('config-frets').value,10)     || configData.frets;
+  configData.orientation       = $('config-orientation').value;
+  configData.title             = $('config-title').value;
+  configData.titleFontSize     = parseInt($('config-title-size').value,10)|| configData.titleFontSize;
+  configData.position          = parseInt($('config-position').value,10)  || configData.position;
+  configData.hidePositionLabel = $('config-hide-position-label').checked;
+  configData.fretLabelFontSize = parseInt($('config-fret-label-size').value,10)|| configData.fretLabelFontSize;
+  configData.fretLabelColor    = configData.hidePositionLabel ? '#ffffff' : '#000000';
+  configData.style             = $('config-style').checked ? 'handdrawn' : 'normal';
+
+  const raw = $('config-string-labels').value
+                .split(',').map(s=>s.trim()).filter(s=>s);
+  if ($('config-show-string-labels').checked && raw.length === configData.strings) {
+    configData.tuning = raw.slice();
+  } else if (!$('config-show-string-labels').checked) {
+    configData.tuning = [];
+  }
+
+  // watermark fields
+  configData.watermarkText     = $('config-watermark-text').value;
+  configData.watermarkFontSize = parseInt($('config-watermark-size').value,10)||configData.watermarkFontSize;
+
+  // diagram max-width override
+  const mw = parseInt($('config-max-width').value, 10);
+  if (!isNaN(mw) && mw > 0) {
+    configData.maxWidth = mw;
+  }
+}
+
+// 7) Nut selectors
+function buildNutControls() {
+  const c = document.getElementById('nut-controls-container');
+  c.innerHTML = '';
+  for (let s = configData.strings; s >= 1; s--) {
+    const lbl = document.createElement('label');
+    lbl.style.marginRight = '1rem';
+    lbl.textContent = `String ${s}: `;
+    const sel = document.createElement('select');
+    sel.id = `nut-${s}`;
+    [ ['', '—'], ['0','Open ◯'], ['x','Muted ✕'] ].forEach(([v,t])=>{
+      const o = document.createElement('option');
+      o.value = v; o.textContent = t;
+      sel.appendChild(o);
+    });
+    sel.addEventListener('input', renderChord);
+    lbl.appendChild(sel);
+    c.appendChild(lbl);
+  }
+}
+
+/**
+ * Map a mouse event to a string and fret index (1-based).
+ * If any string is muted, we skip the first two fret‐bands,
+ * so a click at the topmost visible fret still maps to fret 1.
+ */
+function getHit(event) {
+  const svgEl = document.querySelector('#chord-container svg');
+  if (!svgEl) return null;
+
+  // 1) Gather & sort the string (vert) and fret (horiz) lines
+  const lines = Array.from(svgEl.querySelectorAll('line'));
+  const vert = [], horiz = [];
+  lines.forEach(l => {
+    const x1 = +l.getAttribute('x1'), x2 = +l.getAttribute('x2');
+    const y1 = +l.getAttribute('y1'), y2 = +l.getAttribute('y2');
+    (Math.abs(x1-x2) < 1e-3 ? vert : horiz).push(l);
+  });
+  const strLines  = configData.orientation==='vertical' ? vert  : horiz;
+  const fretLines = configData.orientation==='vertical' ? horiz : vert;
+  if (!strLines.length || !fretLines.length) return null;
+
+  // 2) Sort them in drawing order
+  if (configData.orientation==='vertical') {
+    strLines.sort((a,b)=>+a.getAttribute('x1') - +b.getAttribute('x1'));
+    fretLines.sort((a,b)=>+a.getAttribute('y1') - +b.getAttribute('y1'));
+  } else {
+    strLines.sort((a,b)=>+a.getAttribute('y1') - +b.getAttribute('y1'));
+    fretLines.sort((a,b)=>+a.getAttribute('x1') - +b.getAttribute('x1'));
+  }
+
+  // 3) Compute pixel positions of each line
+  const rect = svgEl.getBoundingClientRect();
+  const vb   = svgEl.viewBox.baseVal;
+  const sX   = rect.width  / vb.width;
+  const sY   = rect.height / vb.height;
+
+  const stringPx = strLines.map(l => {
+    const c = configData.orientation==='vertical'
+            ? +l.getAttribute('x1')
+            : +l.getAttribute('y1');
+    return configData.orientation==='vertical'
+      ? rect.left + (c - vb.x)*sX
+      : rect.top  + (c - vb.y)*sY;
+  });
+  const allFretPx = fretLines.map(l => {
+    const c = configData.orientation==='vertical'
+            ? +l.getAttribute('y1')
+            : +l.getAttribute('x1');
+    return configData.orientation==='vertical'
+      ? rect.top  + (c - vb.y)*sY
+      : rect.left + (c - vb.x)*sX;
+  });
+
+  // 4) Determine how many bands to skip
+  const anyMuted = Array.from(document.querySelectorAll('[id^="nut-"]'))
+                         .some(sel => sel.value === 'x');
+  const skip = anyMuted ? 2 : 0;
+
+  // 5) Build the active fret‐band array
+  const fretPx = allFretPx.slice(skip);
+
+  // 6) Map the click into string/fret‐band coordinates
+  const px = configData.orientation==='vertical' ? event.clientX : event.clientY;
+  const py = configData.orientation==='vertical' ? event.clientY : event.clientX;
+
+  // horizontal bounds
+  const half = Math.abs(stringPx[1]-stringPx[0]) / 2;
+  if (px < stringPx[0]-half || px > stringPx[stringPx.length-1]+half) return null;
+  // vertical bounds (on active bands)
+  if (py < fretPx[0] || py > fretPx[fretPx.length-1]) return null;
+
+  // 7) Nearest string
+  let best = { idx: 0, dist: Infinity };
+  stringPx.forEach((v,i) => {
+    const d = Math.abs(px - v);
+    if (d < best.dist) best = { idx: i, dist: d };
+  });
+  let stringIdx = configData.orientation==='vertical'
+                ? configData.strings - best.idx
+                : best.idx + 1;
+  stringIdx = Math.max(1, Math.min(configData.strings, stringIdx));
+
+  // 8) Which fret‐band?
+  let fretIdx = 1;
+  for (let i = 1; i < fretPx.length; i++) {
+    if (py >= fretPx[i-1] && py < fretPx[i]) {
+      fretIdx = i;
+      break;
+    }
+  }
+  // clamp to total frets
+  fretIdx = Math.max(1, Math.min(configData.frets, fretIdx));
+
+  return { stringIdx, fretIdx };
+}
+// 9) Preview on hover/drag
+function onOverlayMove(e) {
+  const hit = getHit(e);
+  if (!hit) {
+    preview = { finger: null, barre: null };
+  } else if (dragStart && hit.stringIdx !== dragStart.stringIdx) {
+    preview = {
+      finger: null,
+      barre: {
+        fromString: Math.max(dragStart.stringIdx, hit.stringIdx),
+        toString:   Math.min(dragStart.stringIdx, hit.stringIdx),
+        fret:       dragStart.fretIdx
+      }
+    };
+  } else if (!dragStart && hit.fretIdx > 0) {
+    preview = { finger: hit, barre: null };
+  } else {
+    preview = { finger: null, barre: null };
+  }
+  renderChord();
+}
+
+// 10) Overlay click/drag handlers
+function onOverlayDown(e) {
+  dragStart = getHit(e);
+}
+function onOverlayUp(e) {
+  const hit = getHit(e);
+  if (!hit) { dragStart = null; return; }
+  if (dragStart && hit.stringIdx !== dragStart.stringIdx) {
+    toggleBarre(dragStart.stringIdx, hit.stringIdx, dragStart.fretIdx);
+  } else {
+    toggleDot(hit.stringIdx, hit.fretIdx);
+  }
+  dragStart = null;
+  preview = { finger: null, barre: null };
+  renderChord();
+}
+
+// 11) toggleDot
+function toggleDot(s,f){
+  const idx=chordData.fingers.findIndex(x=>x[0]===s&&x[1]===f);
+  if(idx>=0) chordData.fingers.splice(idx,1);
+  else chordData.fingers.push([
+    s,f,{
+      shape:'circle',
+      color:dotOptions.fillColor,
+      strokeColor:dotOptions.strokeColor,
+      strokeWidth:dotOptions.strokeWidth,
+      text:dotOptions.labelText,
+      textColor:dotOptions.labelColor,
+      textSize:dotOptions.labelFontSize
+    }
+  ]);
+}
+
+// 12) toggleBarre
+function toggleBarre(a,b,f){
+  const from=Math.max(a,b), to=Math.min(a,b);
+  const idx=chordData.barres.findIndex(bar=>bar.fromString===from&&bar.toString===to&&bar.fret===f);
+  if(idx>=0) chordData.barres.splice(idx,1);
+  else chordData.barres.push({
+    shape:'barre',
+    fromString:from,
+    toString:to,
+    fret:f,
+    color:dotOptions.fillColor,
+    strokeColor:dotOptions.strokeColor,
+    strokeWidth:dotOptions.strokeWidth,
+    text:dotOptions.labelText||undefined,
+    textColor:dotOptions.labelColor,
+    textSize:dotOptions.labelFontSize
+  });
+}
+
+// 13) clearAll
+function clearAll(){
+  chordData.fingers=[];
+  chordData.barres=[];
+  for(let s=1;s<=configData.strings;s++){
+    const sel=document.getElementById(`nut-${s}`);
+    if(sel) sel.value='';
+  }
+  renderChord();
+}
+
+// 14) renderChord (with ghost + horizontal fix)
+function renderChord() {
+  const wrapper = document.getElementById('diagram-wrapper');
+  const overlay = document.getElementById('click-overlay');
+
+  // (1) Build up the arrays of “fingers” and “barres” including preview shapes
+  const fingers = chordData.fingers.slice();
+  const barres  = chordData.barres.slice();
+
+  // (2) Add nut‐markers (open/muted) from your selects
+  for (let s = configData.strings; s >= 1; s--) {
+    const sel = document.getElementById(`nut-${s}`);
+    if (!sel) continue;
+    if (sel.value === '0') {
+      fingers.push([s, 0, {
+        shape: 'circle',
+        color: 'none',
+        strokeColor: dotOptions.fillColor,
+        strokeWidth: dotOptions.strokeWidth
+      }]);
+    } else if (sel.value === 'x') {
+      fingers.push([s, 'x']);
+    }
+  }
+
+  // (3) Build ghost‐preview shapes (on hover/drag)
+  const pF = [], pB = [];
+  const toRGBA = (hex, a) => {
+    const [r, g, b] = hex.match(/\w\w/g).map(x => parseInt(x, 16));
+    return `rgba(${r},${g},${b},${a})`;
+  };
+  if (preview.finger) {
+    const { stringIdx, fretIdx } = preview.finger;
+    pF.push([stringIdx, fretIdx, {
+      shape:       'circle',
+      color:       toRGBA(dotOptions.fillColor, 0.5),
+      strokeColor: toRGBA(dotOptions.strokeColor, 0.5),
+      strokeWidth: dotOptions.strokeWidth,
+      text:        dotOptions.labelText,
+      textColor:   toRGBA(dotOptions.labelColor, 0.5),
+      textSize:    dotOptions.labelFontSize
+    }]);
+  }
+  if (preview.barre) {
+    const { fromString, toString, fret } = preview.barre;
+    pB.push({
+      shape:       'barre',
+      fromString,
+      toString,
+      fret,
+      color:       toRGBA(dotOptions.fillColor, 0.5),
+      strokeColor: toRGBA(dotOptions.strokeColor, 0.5),
+      strokeWidth: dotOptions.strokeWidth,
+      text:        dotOptions.labelText || undefined,
+      textColor:   toRGBA(dotOptions.labelColor, 0.5),
+      textSize:    dotOptions.labelFontSize
+    });
+  }
+
+  // (4) Now draw with SVGuitar, injecting watermark props here:
+  chordChart
+    .configure({
+      ...configData,
+      watermark:         configData.watermarkText || undefined,
+      watermarkFontSize: configData.watermarkFontSize
+    })
+    .chord({
+      fingers: [...fingers, ...pF],
+      barres:  [...barres,  ...pB]
+    })
+    .draw();
+	if (configData.orientation === 'horizontal') {
+    const svgEl   = document.querySelector('#chord-container svg');
+    const texts   = Array.from(svgEl.querySelectorAll('text'));
+    const labelEl = texts.find(t => /fr$/.test(t.textContent));
+    if (labelEl) {
+      const bb     = labelEl.getBBox();
+      const gutter = bb.width + 5;
+      const vbArr  = svgEl.getAttribute('viewBox')
+                         .split(/[\s,]+/)
+                         .map(Number); // [minX, minY, w, h]
+      vbArr[0]    -= gutter;       // shift left
+      vbArr[2]    += gutter * 2;   // widen both sides
+      svgEl.setAttribute('viewBox', vbArr.join(' '));
+      svgEl.setAttribute('preserveAspectRatio','xMinYMid meet');
+    }
+  }
+
+  // now re-attach overlay as before
+  if (overlay.parentNode !== wrapper) {
+    wrapper.appendChild(overlay);
+  }
+
+  // (5) Re‐attach the overlay if needed
+  if (overlay.parentNode !== wrapper) {
+    wrapper.appendChild(overlay);
+  }
+}
+
+// 15) Download helpers
+function downloadSVG(){
+  const svgEl=document.querySelector('#chord-container svg');
+  if(!svgEl) return alert('No diagram to download');
+  const data=new XMLSerializer().serializeToString(svgEl),
+        blob=new Blob([data],{type:'image/svg+xml'}),
+        url=URL.createObjectURL(blob),
+        a=document.createElement('a');
+  a.href=url; a.download='fretboard.svg';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+function downloadPNG() {
+  const svgEl = document.querySelector('#chord-container svg');
+  if (!svgEl) return alert('No diagram to export');
+
+  // 1) Decide your target pixel size (e.g. 3× on-screen)
+  const onScreenRect = svgEl.getBoundingClientRect();
+  const targetW      = Math.round(onScreenRect.width  * 3);
+  const targetH      = Math.round(onScreenRect.height * 3);
+
+  // 2) Clone & upscale
+  const clone = svgEl.cloneNode(true);
+  clone.setAttribute('width',  targetW);
+  clone.setAttribute('height', targetH);
+  // keep the same viewBox so contents scale to fill
+  clone.setAttribute('viewBox', svgEl.getAttribute('viewBox'));
+
+  // 3) Serialize the clone
+  const data = new XMLSerializer().serializeToString(clone);
+  const base = 'data:image/svg+xml;base64,' + btoa(data);
+
+  // 4) Draw & download
+  const img = new Image();
+  img.onload = () => {
+    const canvas = document.createElement('canvas');
+    canvas.width  = targetW;
+    canvas.height = targetH;
+    const ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0, targetW, targetH);
+
+    canvas.toBlob(blob => {
+      const url = URL.createObjectURL(blob);
+      const a   = document.createElement('a');
+      a.href    = url;
+      a.download= 'fretboard.png';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }, 'image/png');
+  };
+  img.src = base;
+}
+  </script>
+</div>
+```

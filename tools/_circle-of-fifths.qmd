@@ -1,0 +1,394 @@
+```{=html}
+<style>#circle-of-fifths-root * { box-sizing: border-box; }
+#cof-wrap { display: flex; flex-direction: column; align-items: center; padding: 1rem 0; gap: 8px; }
+#h-layout { display: flex; flex-direction: row; align-items: center; gap: 8px; width: 100%; max-width: 676px; }
+.side-panel { flex: 0 0 85px; display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
+.side-panel label { font-size: 11px; color: var(--color-text-tertiary); text-align: center; letter-spacing: 0.04em; }
+.side-panel select {
+  font-size: 11px; padding: 5px 4px; border-radius: 6px;
+  border: 0.5px solid var(--color-border-secondary);
+  background: var(--color-background-primary); color: var(--color-text-primary);
+  cursor: pointer; outline: none; width: 100%;
+}
+.side-panel select:hover { border-color: var(--color-border-primary); }
+#right-panel { opacity: 0; pointer-events: none; transition: opacity .15s; }
+#right-panel.visible { opacity: 1; pointer-events: auto; }
+#canvas-wrap { flex: 1; max-width: 490px; }
+#cof-canvas { display: block; cursor: pointer; width: 100%; height: auto; }
+#bottom-row { display: flex; align-items: center; justify-content: flex-end; max-width: 676px; width: 100%; }
+#theme-btn {
+  background: transparent; border: 0.5px solid var(--color-border-secondary);
+  border-radius: 6px; padding: 4px 10px; font-size: 11px;
+  cursor: pointer; color: var(--color-text-tertiary); transition: background .12s, color .12s;
+}
+#theme-btn:hover { background: var(--color-background-secondary); color: var(--color-text-secondary); }
+</style>
+
+<div id="circle-of-fifths-root"><div id="cof-wrap">
+  <div id="h-layout">
+    <div class="side-panel" id="left-panel">
+      <label>Tonality</label>
+      <select id="mode-select">
+        <option value="0" selected="selected">Major (do)</option>
+        <option value="1">Dorian (re)</option>
+        <option value="2">Phrygian (mi)</option>
+        <option value="3">Lydian (fa)</option>
+        <option value="4">Mixo (so)</option>
+        <option value="5">Minor (la)</option>
+        <option value="7">Locrian (ti)</option>
+      </select>
+    </div>
+    <div id="canvas-wrap">
+      <canvas id="cof-canvas" width="980" height="980" style="width: 490px; height: 490px;"></canvas>
+    </div>
+    <div class="side-panel" id="right-panel">
+      <label>Minor type</label>
+      <select id="minor-mode">
+        <option value="5">Natural (Aeolian)</option>
+        <option value="6">Harmonic</option>
+      </select>
+    </div>
+  </div>
+  <div id="bottom-row">
+    <button id="theme-btn">☾ dark</button>
+  </div>
+</div>
+
+<script>
+const canvas = document.getElementById('cof-canvas');
+const ctx = canvas.getContext('2d');
+const CSS_SIZE = 490;
+const DPR = window.devicePixelRatio || 1;
+canvas.width  = CSS_SIZE * DPR;
+canvas.height = CSS_SIZE * DPR;
+canvas.style.width  = CSS_SIZE + 'px';
+canvas.style.height = CSS_SIZE + 'px';
+ctx.scale(DPR, DPR);
+const W = CSS_SIZE, CX = W/2, CY = W/2;
+const R_OUTER_O=235,R_OUTER_I=184,R_MID_O=182,R_MID_I=122,R_SOL_O=120,R_SOL_I=52;
+
+const FIFTHS_LETTER_CYCLE=[3,0,4,1,5,2,6];
+const LETTERS=['C','D','E','F','G','A','B'];
+const LETTER_CHROMA=[0,2,4,5,7,9,11];
+function buildExtendedLine(){
+  const line=[];
+  for(let i=0;i<29;i++){
+    const li=FIFTHS_LETTER_CYCLE[i%7], acc=Math.floor(i/7)-1;
+    line.push({chroma:(LETTER_CHROMA[li]+acc+120)%12, name:LETTERS[li]+['𝄫','♭','','♯','𝄪'][acc+2]});
+  }
+  return line;
+}
+const EXT_LINE=buildExtendedLine();
+function buildSpellingMap(t){
+  const map={};
+  for(let i=t-5;i<=t+6;i++){
+    if(i<0||i>=EXT_LINE.length)continue;
+    const e=EXT_LINE[i]; if(!(e.chroma in map))map[e.chroma]=e.name;
+  }
+  return map;
+}
+const FIFTHS_TO_CHROMA=[0,7,2,9,4,11,6,1,8,3,10,5];
+const FIFTHS_TO_EXT=[
+  {sharp:8,flat:8},{sharp:9,flat:9},{sharp:10,flat:10},{sharp:11,flat:11},
+  {sharp:12,flat:12},{sharp:13,flat:1},{sharp:14,flat:2},{sharp:15,flat:3},
+  {sharp:16,flat:4},{sharp:17,flat:5},{sharp:18,flat:6},{sharp:7,flat:7},
+];
+function hasTwoSpellings(i){return FIFTHS_TO_EXT[i].sharp!==FIFTHS_TO_EXT[i].flat;}
+const toggleState=FIFTHS_TO_EXT.map((e,i)=>[8,9,10].includes(i)?1:0);
+function getRootExtIdx(){return toggleState[selectedRoot]===0?FIFTHS_TO_EXT[selectedRoot].sharp:FIFTHS_TO_EXT[selectedRoot].flat;}
+function getSpellingMap(){return buildSpellingMap(getRootExtIdx());}
+function getParentMajorExtIdx(){return getRootExtIdx()+MODES[selectedMode].fifthsOffset;}
+function keySigValue(){return getParentMajorExtIdx()-8;}
+function keySigLabel(){const ks=keySigValue();if(ks===0)return'♮';if(ks>0)return ks+'♯';return Math.abs(ks)+'♭';}
+function getRingDisplayName(i){
+  if(i===selectedRoot)return EXT_LINE[toggleState[i]===0?FIFTHS_TO_EXT[i].sharp:FIFTHS_TO_EXT[i].flat].name;
+  const map=getSpellingMap();return map[FIFTHS_TO_CHROMA[i]]||EXT_LINE[FIFTHS_TO_EXT[i].sharp].name;
+}
+function lockSpelling(i){
+  const map=getSpellingMap(), shown=map[FIFTHS_TO_CHROMA[i]]||EXT_LINE[FIFTHS_TO_EXT[i].sharp].name;
+  toggleState[i]=(hasTwoSpellings(i)&&shown===EXT_LINE[FIFTHS_TO_EXT[i].flat].name)?1:0;
+}
+
+const MODES=[
+  {name:'Major / Ionian', short:'Major',   tonic:'do',fifthsOffset: 0, steps:[0,2,4,5,7,9,11],qualities:['M','m','m','M','M','m','d']},
+  {name:'Dorian',         short:'Dorian',  tonic:'re',fifthsOffset:-2, steps:[0,2,3,5,7,9,10],qualities:['m','m','M','M','m','d','M']},
+  {name:'Phrygian',       short:'Phryg',   tonic:'mi',fifthsOffset:-4, steps:[0,1,3,5,7,8,10],qualities:['m','M','M','m','d','M','m']},
+  {name:'Lydian',         short:'Lydian',  tonic:'fa',fifthsOffset: 1, steps:[0,2,4,6,7,9,11],qualities:['M','M','m','d','M','m','m']},
+  {name:'Mixolydian',     short:'Mixo',    tonic:'so',fifthsOffset:-1, steps:[0,2,4,5,7,9,10],qualities:['M','m','d','M','m','m','M']},
+  {name:'Natural Minor',  short:'Minor',   tonic:'la',fifthsOffset:-3, steps:[0,2,3,5,7,8,10],qualities:['m','d','M','m','m','M','M']},
+  {name:'Harmonic Minor', short:'Harm.Min',tonic:'la',fifthsOffset:-3, steps:[0,2,3,5,7,8,11],qualities:['m','d','aug','m','M','M','d'],harmonic:true},
+  {name:'Locrian',        short:'Locrian', tonic:'ti',fifthsOffset:-5, steps:[0,1,3,5,6,8,10],qualities:['d','M','m','m','M','M','m']},
+];
+const MODE_SOLFEGE=[
+  ['do','re','mi','fa','so','la','ti'],
+  ['re','mi','fa','so','la','ti','do'],
+  ['mi','fa','so','la','ti','do','re'],
+  ['fa','so','la','ti','do','re','mi'],
+  ['so','la','ti','do','re','mi','fa'],
+  ['la','ti','do','re','mi','fa','so'],
+  ['la','ti','do','re','mi','fa','si'],
+  ['ti','do','re','mi','fa','so','la'],
+];
+const TONIC_GROUPS={do:[0],re:[1],mi:[2],fa:[3],so:[4],la:[5,6],ti:[7]};
+function resolveTonicClick(syllable){
+  const group=TONIC_GROUPS[syllable]; if(!group)return;
+  const idx=group.indexOf(selectedMode);
+  selectedMode=idx===-1?group[0]:group[(idx+1)%group.length];
+}
+
+const HARM_MIN_QUALITIES=['m','d','aug','m','M','M','d'];
+const ROMAN=['I','II','III','IV','V','VI','VII'];
+
+// ── Characteristic chords ─────────────────────────────────────────────
+// Strips quality suffixes (°, +, ø, Δ) before mapping, so 'i°' → degree 0.
+const ROMAN_TO_DEGREE={
+  'I':0,'II':1,'III':2,'IV':3,'V':4,'VI':5,'VII':6,
+  'i':0,'ii':1,'iii':2,'iv':3,'v':4,'vi':5,'vii':6,
+};
+function parseRomanDegree(rn){
+  return ROMAN_TO_DEGREE[rn.replace(/[°+øΔ]/g,'').trim()];
+}
+const CHARACTERISTIC_CHORD_DEFS={
+  0: ['I',  'V',   'IV' ],  // Major
+  1: ['i',  'IV',  'VII'],  // Dorian
+  2: ['i',  'II',  'vii'],  // Phrygian
+  3: ['I',  'II',  'V'  ],  // Lydian
+  4: ['I',  'IV',  'VII'],  // Mixolydian
+  5: ['i',  'iv',  'VII'],  // Natural Minor (Aeolian)
+  6: ['i',  'iv',  'V'  ],  // Harmonic Minor
+  7: ['i°', 'iii', 'vii'],  // Locrian
+};
+const CHARACTERISTIC_CHORDS={};
+Object.entries(CHARACTERISTIC_CHORD_DEFS).forEach(([modeIdx,rns])=>{
+  CHARACTERISTIC_CHORDS[parseInt(modeIdx)]=new Set(rns.map(parseRomanDegree));
+});
+
+let selectedRoot=0, selectedMode=0;
+
+let themeOverride=null;
+function isDark(){if(themeOverride!==null)return themeOverride;return window.matchMedia('(prefers-color-scheme:dark)').matches;}
+function updateThemeBtn(){document.getElementById('theme-btn').textContent=isDark()?'☀ light':'☾ dark';}
+document.getElementById('theme-btn').onclick=()=>{themeOverride=!isDark();updateThemeBtn();draw();};
+
+function rc(){
+  const d=isDark();
+  return{
+    major:d?'#2d5fa0':'#378ADD', minor:d?'#7b4e9e':'#7F77DD',
+    dim:d?'#8a4a3a':'#D85A30',   aug:d?'#7a6a00':'#B8960A',
+    chromOuter:d?'#1e1e1a':'#e0deda',
+    diaNote:d?'#1a3a24':'#eaf3de', chromNote:d?'#222220':'#f1efe8', rootNote:d?'#3a3010':'#faeeda',
+    diaSol:d?'#0e2618':'#c0dd97',  chromSol:d?'#1a1a16':'#e8e6e0',  rootSol:d?'#2e2608':'#FAC775',
+    stroke:d?'rgba(255,255,255,0.11)':'rgba(0,0,0,0.12)',
+    onColored:'#f0eeea', onAug:d?'#f5e87a':'#2a2000',
+    charGold:'#FFD700',
+    noteText:d?'#c0dd97':'#3B6D11', rootNoteText:d?'#FAC775':'#BA7517', chromNoteText:d?'#7a7870':'#888780',
+    solText:d?'#5DCAA5':'#0F6E56',  rootSolText:d?'#EF9F27':'#854F0B',
+    centerText:d?'#c2c0b6':'#3d3d3a', centerBg:d?'#141412':'#f8f6f0',
+    centerWarn:d?'#f08080':'#cc2222', toggleHint:d?'#5a5852':'#aaa8a0',
+    canvasBg:d?'#1a1a18':'#ffffff',
+  };
+}
+
+function sliceAngles(i){const step=(2*Math.PI)/12,off=-Math.PI/2-step/2;return{start:off+i*step,end:off+(i+1)*step,mid:off+(i+0.5)*step};}
+function drawSector(r_o,r_i,a_s,a_e,fill,stroke){
+  ctx.beginPath();ctx.arc(CX,CY,r_o,a_s,a_e);ctx.arc(CX,CY,r_i,a_e,a_s,true);
+  ctx.closePath();ctx.fillStyle=fill;ctx.fill();
+  if(stroke){ctx.strokeStyle=stroke;ctx.lineWidth=0.75;ctx.stroke();}
+}
+function spt(r,a){return{x:CX+r*Math.cos(a),y:CY+r*Math.sin(a)};}
+function drawText(txt,x,y,size,color,weight){
+  ctx.font=`${weight||'400'} ${size}px "Anthropic Sans",system-ui,sans-serif`;
+  ctx.fillStyle=color;ctx.textAlign='center';ctx.textBaseline='middle';ctx.fillText(txt,x,y);
+}
+function diatonicSet(){const rc2=FIFTHS_TO_CHROMA[selectedRoot];return MODES[selectedMode].steps.map(s=>(rc2+s)%12);}
+function getQualities(){return MODES[selectedMode].harmonic?HARM_MIN_QUALITIES:MODES[selectedMode].qualities;}
+
+function draw(){
+  const c=rc(); ctx.fillStyle=c.canvasBg; ctx.fillRect(0,0,W,W);
+  const dia=diatonicSet(),quals=getQualities(),solSet=MODE_SOLFEGE[selectedMode];
+  const charSet=CHARACTERISTIC_CHORDS[selectedMode]||new Set();
+
+  for(let i=0;i<12;i++){
+    const{start,end,mid}=sliceAngles(i);
+    const noteC=FIFTHS_TO_CHROMA[i],isDia=dia.includes(noteC),isRoot=i===selectedRoot;
+    const diaStep=dia.indexOf(noteC);
+
+    // Outer ring
+    let oFill=c.chromOuter,oTxt=c.onColored;
+    if(isDia){const q=quals[diaStep];if(q==='M')oFill=c.major;else if(q==='m')oFill=c.minor;else if(q==='aug'){oFill=c.aug;oTxt=c.onAug;}else oFill=c.dim;}
+    drawSector(R_OUTER_O,R_OUTER_I,start,end,oFill,c.stroke);
+    if(isDia){
+      const q=quals[diaStep],base=ROMAN[diaStep];
+      const lbl=q==='M'?base:q==='m'?base.toLowerCase():q==='aug'?base+'+':base.toLowerCase()+'°';
+      const isChar=charSet.has(diaStep);
+      const pt=spt((R_OUTER_O+R_OUTER_I)/2,mid);
+      drawText(lbl,pt.x,pt.y,isChar?18:14,isChar?c.charGold:oTxt,'500');
+    }
+
+    // Mid ring
+    const nFill=isRoot?c.rootNote:(isDia?c.diaNote:c.chromNote);
+    drawSector(R_MID_O,R_MID_I,start,end,nFill,c.stroke);
+    const nCol=isRoot?c.rootNoteText:(isDia?c.noteText:c.chromNoteText);
+    const dn=getRingDisplayName(i),pt_m=spt((R_MID_O+R_MID_I)/2,mid);
+    if(isRoot&&hasTwoSpellings(i)){
+      const altIdx=toggleState[i]===0?FIFTHS_TO_EXT[i].flat:FIFTHS_TO_EXT[i].sharp;
+      drawText(dn,pt_m.x,pt_m.y-5,14,nCol,'500');
+      drawText(EXT_LINE[altIdx].name,pt_m.x,pt_m.y+8,9,c.toggleHint,'400');
+    } else {
+      drawText(dn,pt_m.x,pt_m.y,isRoot?14:13,nCol,isRoot?'500':'400');
+    }
+
+    // Solfège ring
+    const sFill=isRoot?c.rootSol:(isDia?c.diaSol:c.chromSol);
+    drawSector(R_SOL_O,R_SOL_I,start,end,sFill,c.stroke);
+    if(isDia){
+      const syl=solSet[diaStep],sCol=isRoot?c.rootSolText:c.solText;
+      const pt_s=spt((R_SOL_O+R_SOL_I)/2,mid);
+      drawText(syl,pt_s.x,pt_s.y,isRoot?13:11,sCol,isRoot?'500':'400');
+    }
+  }
+
+  // Center key sig
+  ctx.beginPath();ctx.arc(CX,CY,R_SOL_I-4,0,2*Math.PI);
+  ctx.fillStyle=c.centerBg;ctx.fill();ctx.strokeStyle=c.stroke;ctx.lineWidth=0.75;ctx.stroke();
+  const ksl=keySigLabel(),ksColor=Math.abs(keySigValue())>7?c.centerWarn:c.centerText;
+  drawText(ksl,CX,CY,ksl.length>2?13:16,ksColor,'500');
+}
+
+const modeSelect=document.getElementById('mode-select');
+const minorSelect=document.getElementById('minor-mode');
+const rightPanel=document.getElementById('right-panel');
+const LA_MODES=new Set([5,6]);
+function syncUI(){
+  modeSelect.value=LA_MODES.has(selectedMode)?'5':String(selectedMode);
+  minorSelect.value=String(selectedMode);
+  rightPanel.classList.toggle('visible',LA_MODES.has(selectedMode));
+}
+modeSelect.addEventListener('change',()=>{
+  const val=parseInt(modeSelect.value);
+  selectedMode=TONIC_GROUPS[MODES[val].tonic][0];
+  syncUI();draw();
+});
+minorSelect.addEventListener('change',()=>{selectedMode=parseInt(minorSelect.value);syncUI();draw();});
+
+canvas.addEventListener('click',e=>{
+  const rect=canvas.getBoundingClientRect(),sc2=CSS_SIZE/rect.width;
+  const mx=(e.clientX-rect.left)*sc2-CX,my=(e.clientY-rect.top)*sc2-CY;
+  const dist=Math.sqrt(mx*mx+my*my);
+  if(dist<R_SOL_I||dist>R_OUTER_O)return;
+  let angle=Math.atan2(my,mx)+Math.PI/2+Math.PI/12;
+  if(angle<0)angle+=2*Math.PI;if(angle>=2*Math.PI)angle-=2*Math.PI;
+  const i=Math.floor(angle/(2*Math.PI/12))%12;
+  if(dist>=R_OUTER_I)return;
+  if(dist<R_MID_I){
+    const dia=diatonicSet(),noteC=FIFTHS_TO_CHROMA[i];
+    if(dia.includes(noteC)){resolveTonicClick(MODE_SOLFEGE[selectedMode][dia.indexOf(noteC)]);syncUI();draw();}
+    return;
+  }
+  if(i===selectedRoot){if(hasTwoSpellings(i)){toggleState[i]=1-toggleState[i];draw();}return;}
+  lockSpelling(i);selectedRoot=i;draw();
+});
+
+window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(themeOverride===null){updateThemeBtn();draw();}});
+updateThemeBtn();syncUI();draw();
+</script>
+</div><div style="display: block; opacity: 1; color-scheme: light;"></div>
+<script src="/apps/shared/tonality.js?v=4"></script>
+<script>
+(function(){
+  // The circle's selectedRoot chroma is the MODE TONIC (= resting tone). Consume the
+  // shared tonality + add Concert/Transposed key menus and a Concert/Transposed view:
+  // the SHARED store is always CONCERT, but in "transposed" view the wheel highlights
+  // the key the player reads (concert + instrument offset).
+  if (typeof FIFTHS_TO_CHROMA === "undefined" || typeof draw !== "function" || typeof MODES === "undefined") return;
+  var C_MODE = {maj:0,major:0,ion:0,ionian:0, m:6,min:6,minor:6, aeo:5,aeolian:5, dor:1,dorian:1, phr:2,phrygian:2, lyd:3,lydian:3, mix:4,mixolydian:4, loc:7,locrian:7};
+  var OUR_MODE = {0:"maj",1:"dor",2:"phr",3:"lyd",4:"mix",5:"m",6:"m",7:"loc"};
+  var NAMES=["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
+  var instSemis=function(){ return (Tonality.getInstrument()||{}).semis||0; };
+  var instName =function(){ return (Tonality.getInstrument()||{}).name||"Piano"; };
+  var view=function(){ return Tonality.getView(); };
+  var applying=false;
+
+  // inject a small key/view control bar at the top of the tool
+  var root=document.getElementById("circle-of-fifths-root");
+  if(root){ var bar=document.createElement("div"); bar.id="cof-keybar";
+    bar.style.cssText="display:flex;gap:1rem;flex-wrap:wrap;align-items:end;margin:0 0 .75rem";
+    bar.innerHTML='<div><label for="cofConcert" style="display:block;font-size:.85em">Concert Key</label><select id="cofConcert"></select></div>'+
+      '<div id="cofTransWrap" style="display:none"><label for="cofTrans" id="cofTransLbl" style="display:block;font-size:.85em">Transposed Key</label><select id="cofTrans"></select></div>'+
+      '<div><label for="cofView" style="display:block;font-size:.85em">View</label><select id="cofView"><option value="concert">Concert pitch</option><option value="transposed">Transposed</option></select></div>';
+    root.insertBefore(bar, root.firstChild); }
+  var cSel=document.getElementById("cofConcert"), tSel=document.getElementById("cofTrans"),
+      tWrap=document.getElementById("cofTransWrap"), tLbl=document.getElementById("cofTransLbl"), vSel=document.getElementById("cofView");
+  if(cSel){ var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[pc]+'</option>'; cSel.innerHTML=h; }
+
+  function publish(){
+    if(applying) return;
+    try{
+      var resting = FIFTHS_TO_CHROMA[selectedRoot];
+      if(view()==="transposed") resting = ((resting - instSemis())%12+12)%12;   // displayed transposed → store concert
+      var off = MODES[selectedMode].fifthsOffset;
+      var doPc = (((resting + off*7) % 12) + 12) % 12;
+      Tonality.setAll(doPc, resting, OUR_MODE[selectedMode], "local");
+    }catch(e){}
+    syncBar();
+  }
+  var _draw = draw;
+  draw = function(){ var r = _draw.apply(this, arguments); publish(); return r; };
+  function applyTonality(st){
+    if (!st || st.resting == null){ syncBar(); return; }
+    var m = C_MODE[st.mode] != null ? C_MODE[st.mode] : 0;
+    var chroma = st.resting; if(view()==="transposed") chroma = (st.resting + instSemis())%12;   // show the read key
+    var i = FIFTHS_TO_CHROMA.indexOf(((chroma%12)+12)%12);
+    if (i < 0 || (selectedRoot === i && selectedMode === m)){ syncBar(); return; }
+    applying=true; selectedRoot = i; selectedMode = m;
+    try { if (typeof lockSpelling === "function") lockSpelling(i); } catch(e){}
+    try { if (typeof syncUI === "function") syncUI(); } catch(e){}
+    applying=false; draw();
+  }
+  function syncBar(){
+    var rest = Tonality.getResting(); if(rest==null) return; var ia=instSemis();
+    if(cSel) cSel.value=String(rest);
+    if(tWrap) tWrap.style.display = ia ? "" : "none";
+    if(ia && tSel){ if(tLbl) tLbl.textContent="Transposed Key ("+instName()+")";
+      var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[(pc+ia)%12]+'</option>'; tSel.innerHTML=h; tSel.value=String(rest); }
+    if(vSel) vSel.value=view();
+  }
+  function curSt(){ return { do: Tonality.getDo(), resting: Tonality.getResting(), mode: Tonality.getMode() }; }
+  function pick(restPc){ var mode=Tonality.getMode()||"maj"; var mi=C_MODE[mode]!=null?C_MODE[mode]:0;
+    var off=MODES[mi].fifthsOffset; var doPc=(((restPc+off*7)%12)+12)%12; Tonality.setAll(doPc, restPc, mode, "local"); applyTonality(curSt()); }
+  if(cSel) cSel.addEventListener("change", function(){ pick(parseInt(cSel.value,10)||0); });
+  if(tSel) tSel.addEventListener("change", function(){ pick(parseInt(tSel.value,10)||0); });
+  if(vSel) vSel.addEventListener("change", function(){ Tonality.setView(vSel.value,"local"); applyTonality(curSt()); });
+
+  if (curSt().resting != null) applyTonality(curSt()); else publish();
+  syncBar();
+  Tonality.onChange(function(st, src){ if (src !== "local") applyTonality(st); else syncBar(); });
+})();
+</script>
+<script src="/apps/shared/audio.js?v=3"></script>
+<script>
+(function(){
+  // Click a roman numeral / diatonic chord wedge → play that chord (instead of
+  // re-tonicizing). Capture-phase so it runs before the tool's own click handler.
+  if (typeof FIFTHS_TO_CHROMA === "undefined" || !window.MusicAudio) return;
+  var c = document.getElementById("cof-canvas"); if (!c) return;
+  c.addEventListener("click", function(e){
+    var rect = c.getBoundingClientRect(), sc = CSS_SIZE / rect.width;
+    var mx = (e.clientX-rect.left)*sc - CX, my = (e.clientY-rect.top)*sc - CY;
+    var dist = Math.sqrt(mx*mx + my*my);
+    if (dist < R_OUTER_I || dist > R_OUTER_O) return;       // only the OUTER ring (roman numerals)
+    var angle = Math.atan2(my,mx) + Math.PI/2 + Math.PI/12;
+    if (angle < 0) angle += 2*Math.PI; if (angle >= 2*Math.PI) angle -= 2*Math.PI;
+    var i = Math.floor(angle/(2*Math.PI/12)) % 12;
+    var dia = diatonicSet(), noteC = FIFTHS_TO_CHROMA[i], step = dia.indexOf(noteC);
+    if (step < 0) return;
+    var q = getQualities()[step];
+    var iv = q==="m" ? [0,3,7] : q==="d" ? [0,3,6] : (q==="aug"||q==="+") ? [0,4,8] : [0,4,7];
+    var base = 60 + noteC;
+    window.MusicAudio.chord(iv.map(function(x){ return base + x; }), 1.1);
+    e.stopImmediatePropagation();
+  }, true);
+})();
+</script>
+<script src="/apps/shared/establish-button.js"></script>
+```

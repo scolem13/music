@@ -1,0 +1,286 @@
+```{=html}
+<link rel="icon" href="/apps/rhythms/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/apps/shared/abcjs-audio.css">
+	
+	<style>
+		/* App-specific overrides and additions */
+		select {
+			height: 26px;
+		}
+		.abcjs-inline-audio .abcjs-midi-tempo {
+			margin: 0 0 0 -10px;
+		}
+		.abcjs-midi-clock, .abcjs-midi-progress-background,
+		.abcjs-midi-progress-indicator, .abcjs-midi-reset {
+			display: none !important;
+		}
+		#audio {
+			width: 160px;
+			height: 26px;
+		}
+		#the-top {
+			padding: 20px 0;
+		}
+		main {
+			max-width: 770px;
+			margin: 0 auto;
+		}
+		.feedback {
+			display: none;
+		}
+		.highlight {
+			fill: #0057b7;
+		}
+		.abcjs-cursor {
+			stroke: #ffd700;
+			stroke-width: 4;
+		}
+		.click-explanation {
+			color: #ffd700;
+			font-style: italic;
+		}
+		.beat {
+			display: none;
+			font-weight: bold;
+		}
+		.label {
+			color: #888888;
+		}
+		.midi {
+			margin-top: -20px;
+			margin-left: 5px;
+		}
+		.seek-controls {
+			margin-top: 5px;
+		}
+		.seek-controls.disabled {
+			background-color: #cccccc;
+			opacity: 0.5;
+		}
+		.warp, .seek, .download {
+			display: none;
+		}
+		textarea, .seek-controls, .abcjs-download-midi, .clicked-info {
+			display: none;
+		}
+		.tuneButtons, input {
+			display: inline-block;
+		}
+		input {
+			width: 40px;
+		}
+		button {
+			margin: 0 1%;
+			height: 26px;
+		}
+		.buddy {
+			display: inline-block;
+		}
+		.buddy > label {
+			margin-left: 15px;
+		}
+		.checkbox {
+			margin-left: -13px;
+		}
+		.abcjs-staff {
+			display: none;
+		}
+		.abcjs-btn {
+			margin-left: -5px;
+		}
+		.options {
+			display: flex;
+			align-items: left;
+			justify-content: left;
+			flex-wrap: wrap;
+			row-gap: 2px;
+		}
+	</style>
+	<script>
+		let abc = [];
+		let bars = [];
+		let details = "";
+		let rests = false;
+		let currentTune = 0;
+		let synthControl;
+
+		function setRests() {
+			rests = document.getElementById("set-rests").checked;
+			setTune();
+		}
+
+		function refreshSongbook(someAbc) {
+			const tuneBook = new ABCJS.TuneBook(someAbc);
+			const selectTune = document.getElementById("tune-selector");
+			selectTune.innerHTML = "";
+			abc.length = 0;
+			bars.length = 0;
+			for (let i = 0; i < tuneBook.tunes.length; i++) {
+				const option = document.createElement("option");
+				option.textContent = tuneBook.tunes[i].id;
+				option.value = i;
+				let abcString = tuneBook.tunes[i].abc;
+				abc.push(abcString);
+				const lines = abcString.split("\n");
+				if (i !== tuneBook.tunes.length - 1) lines.pop();
+				bars.push(lines.pop());
+				lines.shift();
+				details = lines.join("\n");
+				selectTune.appendChild(option);
+			}
+		}
+
+		function refreshCollection() {
+			const collection = document.getElementById("collection-selector").value;
+			refreshSongbook(patternObject[collection]);
+			pickTune();
+		}
+
+		function load() {
+			const selectCollection = document.getElementById("collection-selector");
+			for (const key in patternObject) {
+				const option = document.createElement("option");
+				option.textContent = key;
+				option.value = key;
+				selectCollection.appendChild(option);
+			}
+
+			refreshSongbook(patternObject[selectCollection.value]);
+
+			document.querySelector(".next").addEventListener("click", next);
+			document.querySelector(".warp").addEventListener("click", warp);
+			document.querySelector(".seek").addEventListener("click", seek);
+			document.querySelector(".seek2").addEventListener("click", seek2);
+			document.querySelector("#seek-units").addEventListener("change", seekExplanation);
+
+			if (ABCJS.synth.supportsAudio()) {
+				synthControl = new ABCJS.synth.SynthController();
+				synthControl.load("#audio", cursorControl, {
+					displayLoop: true, displayRestart: true,
+					displayPlay: true, displayProgress: true, displayWarp: true
+				});
+			} else {
+				document.querySelector("#audio").innerHTML =
+					"<div class='audio-error'>Audio is not supported in this browser.</div>";
+			}
+
+			setTune(false);
+		}
+
+		function setTune(userAction, r) {
+			// Disable the random-pattern button for "Unmetered" collections
+			const pattern = document.getElementById("collection-selector").value;
+			const isUnmetered = /U/.test(pattern);
+			document.getElementById("randomPattern").disabled = isUnmetered;
+			if (isUnmetered) r = false;
+
+			let abcString = abc[currentTune];
+
+			if (r) {
+				const pattern1 = bars[Math.floor(Math.random() * bars.length)];
+				const pattern2 = bars[Math.floor(Math.random() * bars.length)];
+				abcString = details + "\n" + pattern1 + pattern2;
+			}
+
+			const barCount = (abcString.match(/\|/g) || []).length;
+			const lines = abcString.split("\n");
+			lines[0] += "\n%%MIDI channel 10 ";
+
+			// Append closing bar and optional rest measure
+			const lastIndex = (currentTune === abc.length - 1 && !r)
+				? lines.length - 1
+				: lines.length - 2;
+			if (rests) lines[lastIndex] += "Z" + barCount + "|";
+			lines[lastIndex] += "|";
+			if (r) lines.push("");
+
+			abcString = lines.join("\n");
+
+			const abcOptions = { add_classes: true, clickListener: clickListener };
+			const seekControls = document.querySelector(".seek-controls");
+			seekControls.classList.add("disabled");
+			synthControl.disable(true);
+
+			const visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+			document.querySelector(".midi").innerHTML = ABCJS.synth.getMidiFile(abc[currentTune]);
+
+			const synthOpts = { midiTranspose: -11 };
+
+			new ABCJS.synth.CreateSynth().init({
+				visualObj: visualObj,
+				options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+			}).then(function() {
+				if (synthControl) {
+					synthControl.setTune(visualObj, userAction, synthOpts).then(function() {
+						seekControls.classList.remove("disabled");
+						seekExplanation();
+					}).catch(function(error) { console.warn("Audio problem:", error); });
+				}
+			}).catch(function(error) { console.warn("Audio problem:", error); });
+		}
+
+		function next() {
+			currentTune = (parseInt(currentTune) + 1) % abc.length;
+			document.getElementById("tune-selector").value = currentTune;
+			setTune(true);
+		}
+
+		function pickTune() {
+			currentTune = parseInt(document.getElementById("tune-selector").value);
+			setTune(true);
+		}
+	</script>
+
+<div id="rhythms-root">
+	<div class="container">
+		<main>
+			<button class="download" style="display: none;">Download</button>
+			<div class="seek-controls disabled">
+				<label>Seek: <input type="number" min="0" id="seek-amount"></label>
+				<select aria-label="seek units" id="seek-units">
+					<option value="percent">Percent</option>
+					<option value="seconds">Seconds</option>
+					<option value="beats">Beats</option>
+				</select>
+				<button class="seek2">Seek</button>
+				<span id="unit-explanation" class="click-explanation">First start playing to load audio before seeking.</span>
+			</div>
+			<div class="midi">MIDI</div>
+			<div id="paper"></div>
+			<br>
+			<div class="inflow">
+				<div class="positioner">
+					<div class="fixed">
+						<div id="the-top" class="options">
+							<div class="buddy">
+								<select id="collection-selector" onchange="refreshCollection()"></select>
+								<select id="tune-selector" onchange="pickTune()"></select>
+							</div>
+							<button class="next">Next</button>
+							<button id="randomPattern" onclick="setTune(true, true)">Rand</button>
+							<div id="audio"></div>
+							<input type="checkbox" id="set-rests" onclick="setRests()">
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tuneButtons">
+				<button class="warp">Rand. Warp</button>
+				<button class="seek">Seek to Middle</button>
+			</div>
+			<p class="beat"></p>
+			<p class="click-explanation" style="display:none;">Click on a note to play that note.</p>
+			<pre class="clicked-info"></pre>
+			<pre class="feedback"></pre>
+		</main>
+	</div>
+	<script src="/apps/shared/abcjs-basic.js"></script>
+	<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+	<script src="/apps/shared/cursor-synth.js"></script>
+	<script>
+		const cursorControl = new CursorControl();
+		load();
+	</script>
+</div>
+<script src="/apps/shared/space-play.js"></script>
+```
