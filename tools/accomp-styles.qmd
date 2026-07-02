@@ -1,0 +1,7 @@
+---
+title: "Accompaniment Styles"
+---
+
+::: {.column-screen}
+{{< include _accomp-styles.qmd >}}
+:::

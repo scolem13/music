@@ -1,0 +1,786 @@
+```{=html}
+<style>
+/* ── Accompaniment Styles catalog ───────────────────────────────────────── */
+#as-root {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--parch-ink, #22201b);
+}
+
+/* Intro */
+.as-intro {
+  border-left: 3px solid var(--site-accent, #3fc2b4);
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+  color: var(--site-ink-2, #5c5246);
+  font-size: .95rem;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* View toggle */
+.as-toggle {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1.5px solid var(--site-border, #e0d8ce);
+  padding-bottom: 0;
+}
+.as-toggle button {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1.5px;
+  padding: .45rem .9rem;
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--site-ink-3, #9a8d7e);
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.as-toggle button.active {
+  color: var(--site-accent-dk, #2b9c90);
+  border-bottom-color: var(--site-accent, #3fc2b4);
+}
+.as-toggle button:hover:not(.active) { color: var(--site-ink-2, #5c5246); }
+
+/* Section / group */
+.as-group { margin-bottom: 2.75rem; }
+.as-group-title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--parch-dim, #6f6450);
+  border-bottom: 1px solid var(--site-border-soft, #ece6dc);
+  padding-bottom: .4rem;
+  margin-bottom: 1rem;
+}
+
+/* Card grid */
+.as-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Individual card */
+.as-card {
+  background: var(--site-surface, #fff);
+  border: 1px solid var(--site-border, #e0d8ce);
+  border-radius: 6px;
+  padding: 1rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.as-card-head {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.as-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--parch-ink, #22201b);
+}
+.as-id {
+  font-family: var(--font-mono, monospace);
+  font-size: .72rem;
+  color: var(--site-ink-3, #9a8d7e);
+  background: var(--site-surface-2, #f2ede5);
+  border-radius: 3px;
+  padding: .1rem .35rem;
+}
+.as-meter {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--site-ink-2, #5c5246);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Play button */
+.as-play {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--site-accent, #3fc2b4);
+  background: none;
+  color: var(--site-accent, #3fc2b4);
+  cursor: pointer;
+  font-size: .7rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .12s, color .12s;
+  margin-left: .35rem;
+  padding: 0;
+  line-height: 1;
+}
+.as-play:hover { background: var(--site-accent-bg, rgba(63,194,180,.12)); }
+.as-play--on  { background: var(--site-accent, #3fc2b4) !important; color: #fff !important; }
+
+/* Notation container */
+.as-notation {
+  background: var(--site-surface-2, #f2ede5);
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 36px;
+}
+.as-notation svg { display: block !important; }
+.as-notation-msg {
+  font-size: .75rem;
+  color: var(--site-ink-3, #9a8d7e);
+  padding: .5rem .6rem;
+  font-style: italic;
+}
+
+.as-desc {
+  font-size: .875rem;
+  line-height: 1.55;
+  color: var(--site-ink-2, #5c5246);
+  margin: 0;
+}
+
+/* Tags */
+.as-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.as-tag {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  padding: .15rem .45rem;
+}
+.as-tag.genre {
+  background: var(--site-accent-bg, rgba(63,194,180,.12));
+  color: var(--site-accent-text, #0a4f47);
+}
+.as-tag.instr {
+  background: var(--site-surface-2, #f2ede5);
+  color: var(--parch-dim, #6f6450);
+}
+
+/* Placeholder sections */
+.as-placeholders {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-top: .2rem;
+  border-top: 1px dashed var(--site-border-soft, #ece6dc);
+  padding-top: .65rem;
+}
+.as-ph {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .75rem;
+}
+.as-ph-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--site-ink-3, #9a8d7e);
+}
+.as-ph-note { color: var(--parch-faint, #b7a987); font-style: italic; }
+</style>
+
+<div id="as-root">
+
+  <p class="as-intro">
+    These patterns are built into the accompaniment engine and can be selected on any tune page.
+    Each style adapts automatically to the tune's meter and chord chart.
+    Styles marked <strong>any meter</strong> work in 2/4, 3/4, 4/4, and 6/8; fixed-meter styles
+    fall back to block chords when the meter doesn't match. Examples shown in C major at 110 bpm.
+  </p>
+
+  <div class="as-toggle">
+    <button class="active" onclick="asSwitch('genre',this)">By genre</button>
+    <button onclick="asSwitch('instrument',this)">By instrument</button>
+  </div>
+
+  <!-- hidden SynthController mount point -->
+  <div id="as-synth" style="display:none"></div>
+
+  <!-- ── BY GENRE ─────────────────────────────────────────────────────── -->
+  <div id="as-genre">
+
+    <div class="as-group">
+      <div class="as-group-title">Jazz</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Jazz Charleston</span>
+            <span class="as-id">charleston</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="charleston" onclick="asPlay(this)" aria-label="Play Jazz Charleston">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-charleston"></div>
+          <p class="as-desc">Chord on beat 1 and the and-of-2, leaving beats 3 and 4 open. Named for the 1920s dance; the defining syncopation of early jazz and Swing Era big-band writing.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Swing</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Full band</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Jazz waltz</span>
+            <span class="as-id">jazzwaltz</span>
+            <span class="as-meter">3/4</span>
+            <button class="as-play" data-style="jazzwaltz" onclick="asPlay(this)" aria-label="Play Jazz waltz">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-jazzwaltz"></div>
+          <p class="as-desc">Swung bass on beat 1, ride-cymbal implied chord on beat 3. The feel of bebop and post-bop piano trios — Evans, Peterson, Monk in 3/4.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Bebop</span>
+            <span class="as-tag instr">Piano trio</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Latin</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Bossa nova</span>
+            <span class="as-id">bossa</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="bossa" onclick="asPlay(this)" aria-label="Play Bossa nova">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-bossa"></div>
+          <p class="as-desc">Tresillo-derived bass pattern with chords on the off-beats; ride cymbal and side-stick percussion. Rooted in the guitar style of João Gilberto and the samba-jazz fusion of late-1950s Rio.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Brazilian</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Tango</span>
+            <span class="as-id">tango</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="tango" onclick="asPlay(this)" aria-label="Play Tango">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-tango"></div>
+          <p class="as-desc">Habanera rhythmic cell in the bass (long–short–short–long) with syncopated chords. Descended from Cuban contradanza via the Argentine arrabal — the tresillo pattern that underlies both the habanera and early tango.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Argentine</span>
+            <span class="as-tag genre">Cuban</span>
+            <span class="as-tag instr">Bandoneón</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Waltz &amp; Dance</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Waltz</span>
+            <span class="as-id">waltz</span>
+            <span class="as-meter">3/4</span>
+            <button class="as-play" data-style="waltz" onclick="asPlay(this)" aria-label="Play Waltz">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-waltz"></div>
+          <p class="as-desc">Bass on beat 1, chord on beats 2 and 3. The universal dance-band formula for 3/4 time. The slight delay before the chord creates the characteristic lilt that distinguishes waltz from a march.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Dance</span>
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Orchestra</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Viennese waltz</span>
+            <span class="as-id">viennese</span>
+            <span class="as-meter">3/4</span>
+            <button class="as-play" data-style="viennese" onclick="asPlay(this)" aria-label="Play Viennese waltz">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-viennese"></div>
+          <p class="as-desc">A short downbeat chord followed by slightly-early beats 2 and 3 (the "anticipated" Viennese lilt). The elastic timing distinguishes the Strauss concert hall waltz from the plainer ballroom waltz.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Dance</span>
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Romantic</span>
+            <span class="as-tag instr">Orchestra</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Boom-chick</span>
+            <span class="as-id">oompah</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="oompah" onclick="asPlay(this)" aria-label="Play Boom-chick">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-oompah"></div>
+          <p class="as-desc">Root on the downbeat, chord on every other beat. The engine of polka, march, and German dance-band styles; derived from tuba–horn interplay in brass ensembles.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Folk</span>
+            <span class="as-tag genre">Polka</span>
+            <span class="as-tag genre">March</span>
+            <span class="as-tag instr">Brass</span>
+            <span class="as-tag instr">Accordion</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Folk &amp; Country</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Folk — alternating bass</span>
+            <span class="as-id">folk</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="folk" onclick="asPlay(this)" aria-label="Play Folk alternating bass">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-folk"></div>
+          <p class="as-desc">Alternating root–fifth bass note with a chord on the off-beat. The defining guitar and banjo accompaniment pattern in American folk, bluegrass, and country; also called the "Carter scratch."</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Folk</span>
+            <span class="as-tag genre">Country</span>
+            <span class="as-tag genre">Bluegrass</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Banjo</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Pop &amp; Rock</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Pop / ballad</span>
+            <span class="as-id">pop</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="pop" onclick="asPlay(this)" aria-label="Play Pop ballad">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-pop"></div>
+          <p class="as-desc">Bass on beats 1 and 3, steady quarter-note chords on all beats. The most common piano and keyboard pattern in popular music since the 1950s.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag genre">Rock</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Keyboard</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Driving 8ths</span>
+            <span class="as-id">driving8</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="driving8" onclick="asPlay(this)" aria-label="Play Driving 8ths">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-driving8"></div>
+          <p class="as-desc">Steady eighth-note chords with no gaps. Propulsive and energetic; fills every subdivision. Found across rock, country, and pop guitar — sometimes called a "strum pattern."</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Rock</span>
+            <span class="as-tag genre">Country</span>
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Offbeat chords</span>
+            <span class="as-id">offbeat</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="offbeat" onclick="asPlay(this)" aria-label="Play Offbeat chords">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-offbeat"></div>
+          <p class="as-desc">Chord only on the off-beats, silence on the downbeats. The defining rhythmic gesture of ska and reggae; known as the "skank" or "chop." In reggae, the kick lands on beat 3 (the "one-drop").</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Ska</span>
+            <span class="as-tag genre">Reggae</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Keyboard</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Classical &amp; Piano</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Block chords</span>
+            <span class="as-id">block</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="block" onclick="asPlay(this)" aria-label="Play Block chords">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-block"></div>
+          <p class="as-desc">All voices together on every beat, sustained until the next chord. The simplest possible accompaniment; used for chorale writing, teaching chord shapes, and very slow tempos.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Chorale</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Keyboard</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Piano arpeggio ↑</span>
+            <span class="as-id">arpflow</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="arpflow" onclick="asPlay(this)" aria-label="Play Piano arpeggio">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-arpflow"></div>
+          <p class="as-desc">Rising arpeggios through the full bar (root–third–fifth–octave). Characteristic of Romantic-era piano writing and nocturne accompaniment; adds forward motion when chord changes are sparse.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Romantic</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Arpeggio (root–5th)</span>
+            <span class="as-id">arpcell</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="arpcell" onclick="asPlay(this)" aria-label="Play Arpeggio root-5th">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-arpcell"></div>
+          <p class="as-desc">Root and fifth as individual tones in a repeating per-beat cell. Creates a light, open texture that suggests harmonic motion without dense block chords; useful for harp or guitar figuration.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag instr">Harp</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Bass line (roots)</span>
+            <span class="as-id">bassroot</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="bassroot" onclick="asPlay(this)" aria-label="Play Bass line roots">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-bassroot"></div>
+          <p class="as-desc">Root note only in the bass, no chord voices above. Use as a harmonic foundation when the melody instrument carries the full harmonic content, or when learning to hear bass motion in isolation.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Teaching</span>
+            <span class="as-tag genre">Minimal</span>
+            <span class="as-tag instr">Bass</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- #as-genre -->
+
+  <!-- ── BY INSTRUMENT ─────────────────────────────────────────────────── -->
+  <div id="as-instrument" style="display:none">
+
+    <div class="as-group">
+      <div class="as-group-title">Piano &amp; Keyboard</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Block chords</span><span class="as-id">block</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Sustained block voicing on every beat. The starting point for learning chord shapes and for chorale-style writing.</p>
+          <div class="as-tags"><span class="as-tag genre">Classical</span><span class="as-tag genre">Chorale</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Waltz</span><span class="as-id">waltz</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Left-hand bass on 1, right-hand chord on 2–3. The standard piano waltz texture from Chopin through the ballroom repertoire.</p>
+          <div class="as-tags"><span class="as-tag genre">Dance</span><span class="as-tag genre">Classical</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Pop / ballad</span><span class="as-id">pop</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Bass on 1 and 3, chords on every beat. Ubiquitous in pop piano; easy to adapt to either hands-together or stride-style playing.</p>
+          <div class="as-tags"><span class="as-tag genre">Pop</span><span class="as-tag genre">Rock</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Piano arpeggio ↑</span><span class="as-id">arpflow</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Rising broken chord through the full bar. Nocturne and ballad texture; standard left-hand figure in Romantic piano writing.</p>
+          <div class="as-tags"><span class="as-tag genre">Classical</span><span class="as-tag genre">Romantic</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Viennese waltz</span><span class="as-id">viennese</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Elastic 3/4 with the characteristic early-beat anticipation. Strauss orchestra and salon piano repertoire.</p>
+          <div class="as-tags"><span class="as-tag genre">Dance</span><span class="as-tag genre">Classical</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Jazz Charleston</span><span class="as-id">charleston</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Syncopated 4/4 comping with a chord on beat 1 and the and-of-2. Common in Stride, Swing, and mainstream jazz piano.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Swing</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Jazz waltz</span><span class="as-id">jazzwaltz</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Swung bass on 1, light chord on 3. The texture of jazz piano trios playing in 3 — Evans, Peterson, Monk.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Bebop</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Guitar &amp; Plucked Strings</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Folk — alternating bass</span><span class="as-id">folk</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Thumb alternates root–fifth in the bass; fingers strum the chord on the off-beat. The foundational fingerpicking and flatpicking pattern in folk, bluegrass, and country guitar.</p>
+          <div class="as-tags"><span class="as-tag genre">Folk</span><span class="as-tag genre">Country</span><span class="as-tag genre">Bluegrass</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Driving 8ths</span><span class="as-id">driving8</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Steady downstroke eighth notes, no rests. The strum pattern behind countless rock, country, and pop songs.</p>
+          <div class="as-tags"><span class="as-tag genre">Rock</span><span class="as-tag genre">Country</span><span class="as-tag genre">Pop</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Offbeat chords</span><span class="as-id">offbeat</span><span class="as-meter">any</span></div>
+          <p class="as-desc">The ska/reggae "skank": chord only between the beats. In reggae the downstroke is muted, leaving only the upstroke chop.</p>
+          <div class="as-tags"><span class="as-tag genre">Ska</span><span class="as-tag genre">Reggae</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bossa nova</span><span class="as-id">bossa</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Tresillo bass with off-beat chords. João Gilberto's original bossa guitar part is the blueprint; the pattern is also widely adapted to keyboard.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Brazilian</span><span class="as-tag genre">Jazz</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Arpeggio (root–5th)</span><span class="as-id">arpcell</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Open-voiced ascending tones per beat. Evokes harp, classical guitar, and lute figuration; widely used in Renaissance and Baroque lute tablature.</p>
+          <div class="as-tags"><span class="as-tag genre">Classical</span><span class="as-tag genre">Pop</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Brass &amp; Ensemble</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Boom-chick</span><span class="as-id">oompah</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Tuba carries the root on 1; horns answer with the chord on 2 (and 4). The pattern maps directly to the brass section interplay in polka bands, march bands, and German Blasmusik.</p>
+          <div class="as-tags"><span class="as-tag genre">Polka</span><span class="as-tag genre">March</span><span class="as-tag genre">Folk</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Tango</span><span class="as-id">tango</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Habanera cell in the bass with syncopated upper chords. In Argentine tango this interplay moves between bandoneón and piano; in orchestral tango (Piazzolla) it drives the entire ensemble.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Argentine</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Bass &amp; Foundation</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bass line (roots)</span><span class="as-id">bassroot</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Root note only, no chords. Use this when practicing bass lines in isolation, or when the melody is dense enough to imply the harmony on its own.</p>
+          <div class="as-tags"><span class="as-tag genre">Teaching</span><span class="as-tag genre">Minimal</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- #as-instrument -->
+
+</div><!-- #as-root -->
+
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/arranger.js"></script>
+<script>
+(function () {
+  var SF = 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/';
+
+  // Styles that need 3/4 for the example; everything else gets 4/4.
+  var BEATS3 = { waltz:1, viennese:1, jazzwaltz:1 };
+
+  function makeParsed(styleId) {
+    var b = BEATS3[styleId] ? 3 : 4;
+    return {
+      beatsPerBar: b, meterD: 4, meterStr: b + '/4',
+      unitsPerBar: 1, unitsPerBeat: 1, tempoQ: 110,
+      keyPc: 0, keyField: 'C',
+      bars: ['C','F','G','C'].map(function (sym) {
+        return { chords: [{sym:sym, onset:0}], lengthUnits:1,
+                 left:'plain', right:'plain', ending:null };
+      })
+    };
+  }
+
+  var visuals = {};   // styleId → ABCJS visualObj
+  var ctrl = null, activeBtn = null;
+
+  function renderAll() {
+    if (!window.ABCJS || !window.Arranger) return;
+    document.querySelectorAll('[data-style]').forEach(function (btn) {
+      var id = btn.dataset.style;
+      if (visuals[id]) return;
+      var el = document.getElementById('as-n-' + id);
+      if (!el) return;
+      var abc = window.Arranger.toAbc(makeParsed(id), {
+        style: id, notation: 'piano', tempo: 110, repeats: 1,
+        intro: 'none', program: 4, dynamics: false, drums: false
+      });
+      if (!abc) {
+        el.innerHTML = '<span class="as-notation-msg">No notation available for this meter.</span>';
+        return;
+      }
+      var vObjs = ABCJS.renderAbc(el, abc, {
+        add_classes: true, responsive: 'resize', scale: 0.65
+      });
+      if (vObjs && vObjs[0]) visuals[id] = vObjs[0];
+    });
+  }
+
+  function getCtrl() {
+    if (ctrl) return ctrl;
+    ctrl = new ABCJS.synth.SynthController();
+    ctrl.load('#as-synth', {
+      onFinished: function () {
+        if (activeBtn) {
+          activeBtn.textContent = '▶';
+          activeBtn.classList.remove('as-play--on');
+          activeBtn = null;
+        }
+      }
+    }, { displayLoop:false, displayRestart:false, displayPlay:false,
+         displayProgress:false, displayVolume:false });
+    return ctrl;
+  }
+
+  window.asPlay = function (btn) {
+    var id = btn.dataset.style, vo = visuals[id];
+    if (!vo || !window.ABCJS) return;
+    var c = getCtrl();
+    if (activeBtn === btn) {
+      try { c.pause(); } catch (e) {}
+      btn.textContent = '▶'; btn.classList.remove('as-play--on');
+      activeBtn = null; return;
+    }
+    if (activeBtn) {
+      activeBtn.textContent = '▶'; activeBtn.classList.remove('as-play--on');
+    }
+    activeBtn = btn; btn.textContent = '■'; btn.classList.add('as-play--on');
+    c.setTune(vo, true, { soundFontUrl: SF }).then(function () {
+      return c.play();
+    }).catch(function () {
+      btn.textContent = '▶'; btn.classList.remove('as-play--on'); activeBtn = null;
+    });
+  };
+
+  window.asSwitch = function (view, btn) {
+    document.getElementById('as-genre').style.display      = view === 'genre'      ? '' : 'none';
+    document.getElementById('as-instrument').style.display = view === 'instrument' ? '' : 'none';
+    document.querySelectorAll('.as-toggle button').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+  };
+
+  // Render after both abcjs and Arranger have loaded.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderAll);
+  } else {
+    renderAll();
+  }
+  window.addEventListener('load', renderAll);
+})();
+</script>
+```

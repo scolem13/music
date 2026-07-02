@@ -1,0 +1,287 @@
+/*-- scss:rules --*/
+
+/* =============================================================================
+   SITE DESIGN SYSTEM — "Academic Paper" theme
+
+   TO SWITCH THEMES: change only the CSS variables in the :root block below.
+   Every color, border, and font decision on the site flows from these tokens.
+   To create an alternate theme, copy this file, rename it, swap the :root
+   block, and point _quarto.yml at the new file.
+
+   Note: the chord chart widget (apps/shared/tune-chart.js) embeds its own
+   hard-coded --tc-* variable values. They match --parch-* below by design.
+   If you change the parchment palette, update the matching hex values in
+   tune-chart.js as well to keep the chart and nav visually in sync.
+   ============================================================================= */
+
+/* ── THEME TOKENS ──────────────────────────────────────────────────────────── */
+:root {
+  /* Surfaces */
+  --site-bg:        #f7f4ef;   /* page canvas — barely warm, like a piano key    */
+  --site-surface:   #ffffff;   /* card / panel fill                               */
+  --site-surface-2: #f2ede5;   /* alternate surface: hover rows, quiet panels     */
+
+  /* Parchment — the chord chart's own paper color (#f4efe2), propagated to   */
+  /* the nav bar and auth strip so they read as one warm horizontal surface.  */
+  --parch:         #f4efe2;
+  --parch-2:       #f7f2e6;
+  --parch-edge:    #ddd3bc;
+  --parch-ink:     #22201b;
+  --parch-dim:     #6f6450;
+  --parch-faint:   #b7a987;
+
+  /* Borders */
+  --site-border:      #e0d8ce;
+  --site-border-soft: #ece6dc;
+
+  /* Text */
+  --site-ink:   #1e1c18;    /* primary body text                                 */
+  --site-ink-2: #5c5246;    /* secondary / muted                                 */
+  --site-ink-3: #9a8d7e;    /* placeholder / faint labels                        */
+
+  /* Accent — the chord chart's "live" teal. Used for ALL interactive states  */
+  /* (links, buttons, focus rings) so chart and site share one vocabulary.    */
+  --site-accent:      #3fc2b4;
+  --site-accent-dk:   #2b9c90;
+  --site-accent-bg:   rgba(63,194,180,.12);
+  --site-accent-text: #0a4f47;
+
+  /* Status */
+  --site-pass:     #1a6b44;
+  --site-fail:     #b5251c;
+  --site-warn-bg:  #fdf8ed;
+  --site-warn-bdr: #e0cfaa;
+  --site-warn-ink: #664d03;
+
+  /* Typography */
+  --font-display: 'Oswald', system-ui, sans-serif;
+  --font-mono:    'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+}
+/* ── END THEME TOKENS ───────────────────────────────────────────────────────── */
+
+
+/* ── Bootstrap variable overrides ────────────────────────────────────────── */
+/* Redirect Bootstrap/Cosmo's hard-coded blue (#2780e3) to the site accent.  */
+:root {
+  --bs-primary:           var(--site-accent);
+  --bs-primary-rgb:       63, 194, 180;
+  --bs-link-color:        var(--site-accent-dk);
+  --bs-link-hover-color:  var(--site-accent);
+  --bs-body-bg:           var(--site-bg);
+  --bs-body-color:        var(--site-ink);
+  --bs-border-color:      var(--site-border);
+}
+.btn-primary, .btn-primary:active {
+  background-color: var(--site-accent) !important;
+  border-color:     var(--site-accent) !important;
+  color:            var(--site-accent-text) !important;
+  font-weight: 600 !important;
+}
+.btn-primary:hover, .btn-primary:focus {
+  background-color: var(--site-accent-dk) !important;
+  border-color:     var(--site-accent-dk) !important;
+}
+a { color: var(--site-accent-dk); }
+a:hover, a:focus { color: var(--site-accent); }
+
+
+/* ── Page canvas ─────────────────────────────────────────────────────────── */
+body {
+  background-color: var(--site-bg);
+  color: var(--site-ink);
+}
+
+
+/* ── Page title ──────────────────────────────────────────────────────────── */
+/* Quarto sets the frontmatter `title:` as h1.title. Apply the chord chart's */
+/* Oswald display treatment so every page title reads like a score heading.  */
+/* Body h2/h3 (lesson sections, etc.) keep system font — prose headings      */
+/* should not be forced uppercase.                                            */
+h1.title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--parch-ink);
+  border-bottom: 2px solid var(--parch-ink);
+  padding-bottom: .4rem;
+  margin-bottom: 1.6rem;
+}
+h2 { color: var(--parch-ink); }
+h3 { color: var(--site-ink-2); }
+
+
+/* ── Navbar ──────────────────────────────────────────────────────────────── */
+/* The nav uses the chord chart's exact parchment. Auth bar + nav + chart    */
+/* sit on the same warm horizontal surface — the music stand's reading area. */
+.navbar {
+  background-color: var(--parch) !important;
+  border-bottom: 1px solid var(--parch-edge) !important;
+  box-shadow: none !important;
+}
+.navbar-brand {
+  font-family: var(--font-display) !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: .08em !important;
+  font-size: .88rem !important;
+  color: var(--parch-ink) !important;
+}
+.navbar .nav-link {
+  color: var(--parch-dim) !important;
+  font-size: .86rem;
+  letter-spacing: .01em;
+}
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active,
+.navbar .nav-link.show {
+  color: var(--site-accent-dk) !important;
+}
+.navbar .navbar-toggler {
+  border-color: var(--parch-edge) !important;
+}
+.dropdown-menu {
+  background-color: var(--parch-2) !important;
+  border: 1px solid var(--parch-edge) !important;
+  border-radius: 4px !important;
+  box-shadow: 0 6px 24px rgba(34,32,27,.14);
+  padding: .3rem 0;
+}
+.dropdown-item {
+  font-size: .86rem;
+  color: var(--parch-ink) !important;
+  padding: .44rem 1rem;
+}
+.dropdown-item:hover,
+.dropdown-item:focus {
+  background-color: var(--site-accent-bg) !important;
+  color: var(--site-accent-text) !important;
+}
+/* Quarto adds active styling on the current page's nav link */
+.navbar .active > .nav-link { color: var(--site-accent-dk) !important; }
+
+
+/* ── Auth bar ────────────────────────────────────────────────────────────── */
+/* The auth strip sits above the nav in the same parchment band.             */
+/* Inline styles from head.html set layout; we override only the palette.   */
+#auth-bar {
+  background:   var(--parch-2) !important;
+  border-bottom: 1px solid var(--parch-edge) !important;
+  color: var(--parch-dim) !important;
+}
+#auth-bar .who {
+  color: var(--parch-ink);
+  font-weight: 600;
+}
+#auth-bar button {
+  background: transparent !important;
+  border: 1px solid var(--parch-edge) !important;
+  border-radius: 3px !important;
+  color: var(--parch-ink) !important;
+  font-size: 13px;
+  padding: 2px 8px !important;
+  cursor: pointer;
+}
+#auth-bar button:hover {
+  border-color: var(--site-accent) !important;
+  color: var(--site-accent-dk) !important;
+}
+#auth-bar input {
+  border: 1px solid var(--parch-edge) !important;
+  border-radius: 3px !important;
+  background: var(--parch) !important;
+  color: var(--parch-ink) !important;
+  padding: 2px 7px !important;
+  font-size: 13px;
+}
+
+
+/* ── Assessment apps (scoped to #app-root) ────────────────────────────────── */
+/* Warm the palette that assessment.css sets with Bootstrap-grey hardcodes.  */
+#app-root .card {
+  border-color: var(--site-border) !important;
+  background: var(--site-surface);
+  box-shadow: 0 1px 4px rgba(34,32,27,.05) !important;
+}
+#app-root label { color: var(--site-ink-2) !important; }
+#app-root select,
+#app-root input[type=range] {
+  border-color: var(--site-border) !important;
+  color: var(--site-ink) !important;
+}
+#app-root button.primary {
+  background: var(--site-accent) !important;
+  border-color: var(--site-accent) !important;
+  color: var(--site-accent-text) !important;
+  font-weight: 600 !important;
+}
+#app-root button.primary:hover {
+  background: var(--site-accent-dk) !important;
+  border-color: var(--site-accent-dk) !important;
+}
+#app-root .muted { color: var(--site-ink-2) !important; }
+
+/* Flow / status banners */
+#app-root .flow {
+  background: var(--site-surface-2) !important;
+  border-color: var(--site-border-soft) !important;
+  color: var(--site-ink) !important;
+}
+#app-root .flow.passed {
+  color: var(--site-pass) !important;
+  background: #d4edda !important;
+  border-color: #a3cfbb !important;
+}
+#app-root .flow.failed {
+  color: var(--site-warn-ink) !important;
+  background: var(--site-warn-bg) !important;
+  border-color: var(--site-warn-bdr) !important;
+}
+#app-root .flow.recording {
+  background: var(--site-accent-bg) !important;
+  border-color: rgba(63,194,180,.4) !important;
+  color: var(--site-accent-text) !important;
+}
+
+/* Progress / level bars */
+#app-root .bar > div { background: var(--site-accent) !important; }
+#app-root #levelbar  { background: var(--site-accent) !important; }
+
+/* Table styling */
+#app-root th { color: var(--site-ink-2) !important; }
+#app-root td { border-bottom-color: var(--site-border-soft) !important; }
+
+
+/* ── Panel TOC jump anchors ─────────────────────────────────────────────── */
+/* These h2 headings live in the .qmd source so Quarto adds them to the      */
+/* sidebar TOC. They're invisible in the page body; the JS in _tune-embed    */
+/* redirects TOC clicks to the actual collapsible panel elements.            */
+h2.panel-jump {
+  position: absolute;
+  width: 1px; height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: none;
+  margin: 0; padding: 0;
+}
+
+/* ── Collapsible panel headings (ta-panel) ───────────────────────────────── */
+/* These appear on the Tune assessment page. Keep warm ink. */
+#app-root .ta-panel > summary { color: var(--parch-ink) !important; }
+#app-root .ta-panel > summary::before { color: var(--parch-dim) !important; }
+#app-root .ta-panel:not([open]) > summary { color: var(--site-ink-2) !important; }
+#app-root .ta-panel { border-color: var(--site-border-soft) !important; }
+
+
+/* ── Notation panels ─────────────────────────────────────────────────────── */
+/* Light parchment tint on the notation boxes, consistent with the chart.    */
+#app-root #notation,
+#app-root #responseNotation,
+#app-root #performedNotation,
+#app-root #accompNotation {
+  background: var(--parch-2) !important;
+  border-color: var(--parch-edge) !important;
+}

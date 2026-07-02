@@ -12,11 +12,11 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - text: Lessons
-        menu:
-          - lessons/quarter-notes.qmd
-          - lessons/dotted-rhythms.qmd
-          - lessons/tonal-do-re-mi.qmd
+#      - text: Lessons
+#        menu:
+#          - lessons/quarter-notes.qmd
+#          - lessons/dotted-rhythms.qmd
+#          - lessons/tonal-do-re-mi.qmd
       - text: Practice
         menu:
           - practice/assessment-tune.qmd

@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Accompaniment Styles – Music Practice (demo)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-9fb21ea8d6c9988e7f3648e3d9bcd9bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<style>
+  #auth-bar {
+    font-family: sans-serif; font-size: 14px;
+    background: #f4f6f8; border-bottom: 1px solid #dde;
+    padding: 6px 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  }
+  #auth-bar input { font-size: 14px; padding: 3px 6px; width: 150px; }
+  #auth-bar button { font-size: 14px; padding: 3px 8px; cursor: pointer; }
+  #auth-bar .who { font-weight: bold; }
+  #auth-bar .spacer { flex: 1; }
+</style>
+<!-- App pages (Tools/Practice): hide the site-wide auth bar and add a small edge
+     margin so the full-bleed apps don't grind against the window. -->
+<style>
+  #auth-bar { display: none !important; }
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice (demo)</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Assessment: Tune (pitch + rhythm) — prototype</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Practice: Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Practice: Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Assessment: Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Assessment: Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/fretboard.html">
+ <span class="dropdown-text">Fretboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/keyboard.html">
+ <span class="dropdown-text">Keyboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/director.html">
+ <span class="dropdown-text">Director</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/solfege-keyboard.html">
+ <span class="dropdown-text">Solfège Keyboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../teacher/report.html"> 
+<span class="menu-text">Teacher Report</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+<!-- Injected at the top of <body> on every page. Sign in once, anywhere;
+     the session persists across the whole site (shared localStorage). -->
+<div id="auth-bar">
+  <span id="auth-status">Checking sign-in…</span>
+
+  <span id="auth-signedout" style="display:none">
+    <input id="auth-email" placeholder="email">
+    <input id="auth-pass" type="password" placeholder="password">
+    <button onclick="authSignIn()">Sign in</button>
+    <button onclick="authSignUp()">Create</button>
+    <button onclick="authGoogle()">Google</button>
+  </span>
+
+  <span class="spacer"></span>
+
+  <span id="auth-signedin" style="display:none">
+    <span class="who" id="auth-who"></span>
+    <button onclick="authSignOut()">Sign out</button>
+  </span>
+</div>
+
+<script>
+  async function authRefresh() {
+    const { data: { session } } = await window.sb.auth.getSession();
+    const out = document.getElementById("auth-signedout");
+    const inn = document.getElementById("auth-signedin");
+    const status = document.getElementById("auth-status");
+    if (session) {
+      status.textContent = "";
+      out.style.display = "none";
+      inn.style.display = "inline";
+      document.getElementById("auth-who").textContent =
+        "Signed in: " + (session.user.user_metadata.full_name || session.user.email);
+    } else {
+      status.textContent = "Not signed in —";
+      out.style.display = "inline";
+      inn.style.display = "none";
+    }
+  }
+  async function authSignIn() {
+    const { error } = await window.sb.auth.signInWithPassword({
+      email: authEmail.value, password: authPass.value });
+    if (error) alert(error.message); else location.reload();
+  }
+  async function authSignUp() {
+    const { error } = await window.sb.auth.signUp({
+      email: authEmail.value, password: authPass.value });
+    alert(error ? error.message : "Account created. Now Sign in.");
+  }
+  async function authGoogle() {
+    await window.sb.auth.signInWithOAuth({
+      provider: "google",
+      options: { redirectTo: window.location.origin + window.location.pathname }
+    });
+  }
+  async function authSignOut() { await window.sb.auth.signOut(); location.reload(); }
+  authRefresh();
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Accompaniment Styles</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<style>
+/* ── Accompaniment Styles catalog ───────────────────────────────────────── */
+#as-root {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem 1.25rem 4rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  color: var(--parch-ink, #22201b);
+}
+
+/* Intro */
+.as-intro {
+  border-left: 3px solid var(--site-accent, #3fc2b4);
+  padding-left: 1rem;
+  margin-bottom: 2.5rem;
+  color: var(--site-ink-2, #5c5246);
+  font-size: .95rem;
+  line-height: 1.6;
+  max-width: 680px;
+}
+
+/* View toggle */
+.as-toggle {
+  display: flex;
+  gap: .5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1.5px solid var(--site-border, #e0d8ce);
+  padding-bottom: 0;
+}
+.as-toggle button {
+  background: none;
+  border: none;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1.5px;
+  padding: .45rem .9rem;
+  font-size: .88rem;
+  font-weight: 600;
+  letter-spacing: .03em;
+  text-transform: uppercase;
+  color: var(--site-ink-3, #9a8d7e);
+  cursor: pointer;
+  transition: color .15s, border-color .15s;
+}
+.as-toggle button.active {
+  color: var(--site-accent-dk, #2b9c90);
+  border-bottom-color: var(--site-accent, #3fc2b4);
+}
+.as-toggle button:hover:not(.active) { color: var(--site-ink-2, #5c5246); }
+
+/* Section / group */
+.as-group { margin-bottom: 2.75rem; }
+.as-group-title {
+  font-family: var(--font-display, 'Oswald', sans-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--parch-dim, #6f6450);
+  border-bottom: 1px solid var(--site-border-soft, #ece6dc);
+  padding-bottom: .4rem;
+  margin-bottom: 1rem;
+}
+
+/* Card grid */
+.as-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+/* Individual card */
+.as-card {
+  background: var(--site-surface, #fff);
+  border: 1px solid var(--site-border, #e0d8ce);
+  border-radius: 6px;
+  padding: 1rem 1.1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .6rem;
+}
+
+.as-card-head {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+.as-name {
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--parch-ink, #22201b);
+}
+.as-id {
+  font-family: var(--font-mono, monospace);
+  font-size: .72rem;
+  color: var(--site-ink-3, #9a8d7e);
+  background: var(--site-surface-2, #f2ede5);
+  border-radius: 3px;
+  padding: .1rem .35rem;
+}
+.as-meter {
+  font-size: .78rem;
+  font-weight: 600;
+  color: var(--site-ink-2, #5c5246);
+  white-space: nowrap;
+  margin-left: auto;
+}
+
+/* Play button */
+.as-play {
+  width: 28px; height: 28px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1.5px solid var(--site-accent, #3fc2b4);
+  background: none;
+  color: var(--site-accent, #3fc2b4);
+  cursor: pointer;
+  font-size: .7rem;
+  display: flex; align-items: center; justify-content: center;
+  transition: background .12s, color .12s;
+  margin-left: .35rem;
+  padding: 0;
+  line-height: 1;
+}
+.as-play:hover { background: var(--site-accent-bg, rgba(63,194,180,.12)); }
+.as-play--on  { background: var(--site-accent, #3fc2b4) !important; color: #fff !important; }
+
+/* Notation container */
+.as-notation {
+  background: var(--site-surface-2, #f2ede5);
+  border-radius: 4px;
+  overflow: hidden;
+  min-height: 36px;
+}
+.as-notation svg { display: block !important; }
+.as-notation-msg {
+  font-size: .75rem;
+  color: var(--site-ink-3, #9a8d7e);
+  padding: .5rem .6rem;
+  font-style: italic;
+}
+
+.as-desc {
+  font-size: .875rem;
+  line-height: 1.55;
+  color: var(--site-ink-2, #5c5246);
+  margin: 0;
+}
+
+/* Tags */
+.as-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem;
+}
+.as-tag {
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  padding: .15rem .45rem;
+}
+.as-tag.genre {
+  background: var(--site-accent-bg, rgba(63,194,180,.12));
+  color: var(--site-accent-text, #0a4f47);
+}
+.as-tag.instr {
+  background: var(--site-surface-2, #f2ede5);
+  color: var(--parch-dim, #6f6450);
+}
+
+/* Placeholder sections */
+.as-placeholders {
+  display: flex;
+  flex-direction: column;
+  gap: .4rem;
+  margin-top: .2rem;
+  border-top: 1px dashed var(--site-border-soft, #ece6dc);
+  padding-top: .65rem;
+}
+.as-ph {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: .75rem;
+}
+.as-ph-label {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--site-ink-3, #9a8d7e);
+}
+.as-ph-note { color: var(--parch-faint, #b7a987); font-style: italic; }
+</style>
+
+<div id="as-root">
+
+  <p class="as-intro">
+    These patterns are built into the accompaniment engine and can be selected on any tune page.
+    Each style adapts automatically to the tune's meter and chord chart.
+    Styles marked <strong>any meter</strong> work in 2/4, 3/4, 4/4, and 6/8; fixed-meter styles
+    fall back to block chords when the meter doesn't match. Examples shown in C major at 110 bpm.
+  </p>
+
+  <div class="as-toggle">
+    <button class="active" onclick="asSwitch('genre',this)">By genre</button>
+    <button onclick="asSwitch('instrument',this)">By instrument</button>
+  </div>
+
+  <!-- hidden SynthController mount point -->
+  <div id="as-synth" style="display:none"></div>
+
+  <!-- ── BY GENRE ─────────────────────────────────────────────────────── -->
+  <div id="as-genre">
+
+    <div class="as-group">
+      <div class="as-group-title">Jazz</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Jazz Charleston</span>
+            <span class="as-id">charleston</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="charleston" onclick="asPlay(this)" aria-label="Play Jazz Charleston">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-charleston"></div>
+          <p class="as-desc">Chord on beat 1 and the and-of-2, leaving beats 3 and 4 open. Named for the 1920s dance; the defining syncopation of early jazz and Swing Era big-band writing.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Swing</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Full band</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Jazz waltz</span>
+            <span class="as-id">jazzwaltz</span>
+            <span class="as-meter">3/4</span>
+            <button class="as-play" data-style="jazzwaltz" onclick="asPlay(this)" aria-label="Play Jazz waltz">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-jazzwaltz"></div>
+          <p class="as-desc">Swung bass on beat 1, ride-cymbal implied chord on beat 3. The feel of bebop and post-bop piano trios — Evans, Peterson, Monk in 3/4.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Bebop</span>
+            <span class="as-tag instr">Piano trio</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Latin</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Bossa nova</span>
+            <span class="as-id">bossa</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="bossa" onclick="asPlay(this)" aria-label="Play Bossa nova">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-bossa"></div>
+          <p class="as-desc">Tresillo-derived bass pattern with chords on the off-beats; ride cymbal and side-stick percussion. Rooted in the guitar style of João Gilberto and the samba-jazz fusion of late-1950s Rio.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Brazilian</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Tango</span>
+            <span class="as-id">tango</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="tango" onclick="asPlay(this)" aria-label="Play Tango">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-tango"></div>
+          <p class="as-desc">Habanera rhythmic cell in the bass (long–short–short–long) with syncopated chords. Descended from Cuban contradanza via the Argentine arrabal — the tresillo pattern that underlies both the habanera and early tango.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Argentine</span>
+            <span class="as-tag genre">Cuban</span>
+            <span class="as-tag instr">Bandoneón</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Waltz &amp; Dance</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Waltz</span>
+            <span class="as-id">waltz</span>
+            <span class="as-meter">3/4</span>
+            <button class="as-play" data-style="waltz" onclick="asPlay(this)" aria-label="Play Waltz">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-waltz"></div>
+          <p class="as-desc">Bass on beat 1, chord on beats 2 and 3. The universal dance-band formula for 3/4 time. The slight delay before the chord creates the characteristic lilt that distinguishes waltz from a march.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Dance</span>
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Orchestra</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Viennese waltz</span>
+            <span class="as-id">viennese</span>
+            <span class="as-meter">3/4</span>
+            <button class="as-play" data-style="viennese" onclick="asPlay(this)" aria-label="Play Viennese waltz">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-viennese"></div>
+          <p class="as-desc">A short downbeat chord followed by slightly-early beats 2 and 3 (the "anticipated" Viennese lilt). The elastic timing distinguishes the Strauss concert hall waltz from the plainer ballroom waltz.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Dance</span>
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Romantic</span>
+            <span class="as-tag instr">Orchestra</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Boom-chick</span>
+            <span class="as-id">oompah</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="oompah" onclick="asPlay(this)" aria-label="Play Boom-chick">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-oompah"></div>
+          <p class="as-desc">Root on the downbeat, chord on every other beat. The engine of polka, march, and German dance-band styles; derived from tuba–horn interplay in brass ensembles.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Folk</span>
+            <span class="as-tag genre">Polka</span>
+            <span class="as-tag genre">March</span>
+            <span class="as-tag instr">Brass</span>
+            <span class="as-tag instr">Accordion</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Folk &amp; Country</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Folk — alternating bass</span>
+            <span class="as-id">folk</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="folk" onclick="asPlay(this)" aria-label="Play Folk alternating bass">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-folk"></div>
+          <p class="as-desc">Alternating root–fifth bass note with a chord on the off-beat. The defining guitar and banjo accompaniment pattern in American folk, bluegrass, and country; also called the "Carter scratch."</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Folk</span>
+            <span class="as-tag genre">Country</span>
+            <span class="as-tag genre">Bluegrass</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Banjo</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Pop &amp; Rock</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Pop / ballad</span>
+            <span class="as-id">pop</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="pop" onclick="asPlay(this)" aria-label="Play Pop ballad">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-pop"></div>
+          <p class="as-desc">Bass on beats 1 and 3, steady quarter-note chords on all beats. The most common piano and keyboard pattern in popular music since the 1950s.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag genre">Rock</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Keyboard</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Driving 8ths</span>
+            <span class="as-id">driving8</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="driving8" onclick="asPlay(this)" aria-label="Play Driving 8ths">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-driving8"></div>
+          <p class="as-desc">Steady eighth-note chords with no gaps. Propulsive and energetic; fills every subdivision. Found across rock, country, and pop guitar — sometimes called a "strum pattern."</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Rock</span>
+            <span class="as-tag genre">Country</span>
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Offbeat chords</span>
+            <span class="as-id">offbeat</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="offbeat" onclick="asPlay(this)" aria-label="Play Offbeat chords">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-offbeat"></div>
+          <p class="as-desc">Chord only on the off-beats, silence on the downbeats. The defining rhythmic gesture of ska and reggae; known as the "skank" or "chop." In reggae, the kick lands on beat 3 (the "one-drop").</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Ska</span>
+            <span class="as-tag genre">Reggae</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Keyboard</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Classical &amp; Piano</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Block chords</span>
+            <span class="as-id">block</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="block" onclick="asPlay(this)" aria-label="Play Block chords">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-block"></div>
+          <p class="as-desc">All voices together on every beat, sustained until the next chord. The simplest possible accompaniment; used for chorale writing, teaching chord shapes, and very slow tempos.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Chorale</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Keyboard</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Piano arpeggio ↑</span>
+            <span class="as-id">arpflow</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="arpflow" onclick="asPlay(this)" aria-label="Play Piano arpeggio">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-arpflow"></div>
+          <p class="as-desc">Rising arpeggios through the full bar (root–third–fifth–octave). Characteristic of Romantic-era piano writing and nocturne accompaniment; adds forward motion when chord changes are sparse.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Romantic</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Arpeggio (root–5th)</span>
+            <span class="as-id">arpcell</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="arpcell" onclick="asPlay(this)" aria-label="Play Arpeggio root-5th">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-arpcell"></div>
+          <p class="as-desc">Root and fifth as individual tones in a repeating per-beat cell. Creates a light, open texture that suggests harmonic motion without dense block chords; useful for harp or guitar figuration.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Classical</span>
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag instr">Harp</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Bass line (roots)</span>
+            <span class="as-id">bassroot</span>
+            <span class="as-meter">any</span>
+            <button class="as-play" data-style="bassroot" onclick="asPlay(this)" aria-label="Play Bass line roots">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-bassroot"></div>
+          <p class="as-desc">Root note only in the bass, no chord voices above. Use as a harmonic foundation when the melody instrument carries the full harmonic content, or when learning to hear bass motion in isolation.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Teaching</span>
+            <span class="as-tag genre">Minimal</span>
+            <span class="as-tag instr">Bass</span>
+          </div>
+          <div class="as-placeholders">
+            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
+            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- #as-genre -->
+
+  <!-- ── BY INSTRUMENT ─────────────────────────────────────────────────── -->
+  <div id="as-instrument" style="display:none">
+
+    <div class="as-group">
+      <div class="as-group-title">Piano &amp; Keyboard</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Block chords</span><span class="as-id">block</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Sustained block voicing on every beat. The starting point for learning chord shapes and for chorale-style writing.</p>
+          <div class="as-tags"><span class="as-tag genre">Classical</span><span class="as-tag genre">Chorale</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Waltz</span><span class="as-id">waltz</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Left-hand bass on 1, right-hand chord on 2–3. The standard piano waltz texture from Chopin through the ballroom repertoire.</p>
+          <div class="as-tags"><span class="as-tag genre">Dance</span><span class="as-tag genre">Classical</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Pop / ballad</span><span class="as-id">pop</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Bass on 1 and 3, chords on every beat. Ubiquitous in pop piano; easy to adapt to either hands-together or stride-style playing.</p>
+          <div class="as-tags"><span class="as-tag genre">Pop</span><span class="as-tag genre">Rock</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Piano arpeggio ↑</span><span class="as-id">arpflow</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Rising broken chord through the full bar. Nocturne and ballad texture; standard left-hand figure in Romantic piano writing.</p>
+          <div class="as-tags"><span class="as-tag genre">Classical</span><span class="as-tag genre">Romantic</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Viennese waltz</span><span class="as-id">viennese</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Elastic 3/4 with the characteristic early-beat anticipation. Strauss orchestra and salon piano repertoire.</p>
+          <div class="as-tags"><span class="as-tag genre">Dance</span><span class="as-tag genre">Classical</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Jazz Charleston</span><span class="as-id">charleston</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Syncopated 4/4 comping with a chord on beat 1 and the and-of-2. Common in Stride, Swing, and mainstream jazz piano.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Swing</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Jazz waltz</span><span class="as-id">jazzwaltz</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Swung bass on 1, light chord on 3. The texture of jazz piano trios playing in 3 — Evans, Peterson, Monk.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Bebop</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Guitar &amp; Plucked Strings</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Folk — alternating bass</span><span class="as-id">folk</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Thumb alternates root–fifth in the bass; fingers strum the chord on the off-beat. The foundational fingerpicking and flatpicking pattern in folk, bluegrass, and country guitar.</p>
+          <div class="as-tags"><span class="as-tag genre">Folk</span><span class="as-tag genre">Country</span><span class="as-tag genre">Bluegrass</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Driving 8ths</span><span class="as-id">driving8</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Steady downstroke eighth notes, no rests. The strum pattern behind countless rock, country, and pop songs.</p>
+          <div class="as-tags"><span class="as-tag genre">Rock</span><span class="as-tag genre">Country</span><span class="as-tag genre">Pop</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Offbeat chords</span><span class="as-id">offbeat</span><span class="as-meter">any</span></div>
+          <p class="as-desc">The ska/reggae "skank": chord only between the beats. In reggae the downstroke is muted, leaving only the upstroke chop.</p>
+          <div class="as-tags"><span class="as-tag genre">Ska</span><span class="as-tag genre">Reggae</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bossa nova</span><span class="as-id">bossa</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Tresillo bass with off-beat chords. João Gilberto's original bossa guitar part is the blueprint; the pattern is also widely adapted to keyboard.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Brazilian</span><span class="as-tag genre">Jazz</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Arpeggio (root–5th)</span><span class="as-id">arpcell</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Open-voiced ascending tones per beat. Evokes harp, classical guitar, and lute figuration; widely used in Renaissance and Baroque lute tablature.</p>
+          <div class="as-tags"><span class="as-tag genre">Classical</span><span class="as-tag genre">Pop</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Brass &amp; Ensemble</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Boom-chick</span><span class="as-id">oompah</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Tuba carries the root on 1; horns answer with the chord on 2 (and 4). The pattern maps directly to the brass section interplay in polka bands, march bands, and German Blasmusik.</p>
+          <div class="as-tags"><span class="as-tag genre">Polka</span><span class="as-tag genre">March</span><span class="as-tag genre">Folk</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Tango</span><span class="as-id">tango</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Habanera cell in the bass with syncopated upper chords. In Argentine tango this interplay moves between bandoneón and piano; in orchestral tango (Piazzolla) it drives the entire ensemble.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Argentine</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Bass &amp; Foundation</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bass line (roots)</span><span class="as-id">bassroot</span><span class="as-meter">any</span></div>
+          <p class="as-desc">Root note only, no chords. Use this when practicing bass lines in isolation, or when the melody is dense enough to imply the harmony on its own.</p>
+          <div class="as-tags"><span class="as-tag genre">Teaching</span><span class="as-tag genre">Minimal</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- #as-instrument -->
+
+</div><!-- #as-root -->
+
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/arranger.js"></script>
+<script>
+(function () {
+  var SF = 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/';
+
+  // Styles that need 3/4 for the example; everything else gets 4/4.
+  var BEATS3 = { waltz:1, viennese:1, jazzwaltz:1 };
+
+  function makeParsed(styleId) {
+    var b = BEATS3[styleId] ? 3 : 4;
+    return {
+      beatsPerBar: b, meterD: 4, meterStr: b + '/4',
+      unitsPerBar: 1, unitsPerBeat: 1, tempoQ: 110,
+      keyPc: 0, keyField: 'C',
+      bars: ['C','F','G','C'].map(function (sym) {
+        return { chords: [{sym:sym, onset:0}], lengthUnits:1,
+                 left:'plain', right:'plain', ending:null };
+      })
+    };
+  }
+
+  var visuals = {};   // styleId → ABCJS visualObj
+  var ctrl = null, activeBtn = null;
+
+  function renderAll() {
+    if (!window.ABCJS || !window.Arranger) return;
+    document.querySelectorAll('[data-style]').forEach(function (btn) {
+      var id = btn.dataset.style;
+      if (visuals[id]) return;
+      var el = document.getElementById('as-n-' + id);
+      if (!el) return;
+      var abc = window.Arranger.toAbc(makeParsed(id), {
+        style: id, notation: 'piano', tempo: 110, repeats: 1,
+        intro: 'none', program: 4, dynamics: false, drums: false
+      });
+      if (!abc) {
+        el.innerHTML = '<span class="as-notation-msg">No notation available for this meter.</span>';
+        return;
+      }
+      var vObjs = ABCJS.renderAbc(el, abc, {
+        add_classes: true, responsive: 'resize', scale: 0.65
+      });
+      if (vObjs && vObjs[0]) visuals[id] = vObjs[0];
+    });
+  }
+
+  function getCtrl() {
+    if (ctrl) return ctrl;
+    ctrl = new ABCJS.synth.SynthController();
+    ctrl.load('#as-synth', {
+      onFinished: function () {
+        if (activeBtn) {
+          activeBtn.textContent = '▶';
+          activeBtn.classList.remove('as-play--on');
+          activeBtn = null;
+        }
+      }
+    }, { displayLoop:false, displayRestart:false, displayPlay:false,
+         displayProgress:false, displayVolume:false });
+    return ctrl;
+  }
+
+  window.asPlay = function (btn) {
+    var id = btn.dataset.style, vo = visuals[id];
+    if (!vo || !window.ABCJS) return;
+    var c = getCtrl();
+    if (activeBtn === btn) {
+      try { c.pause(); } catch (e) {}
+      btn.textContent = '▶'; btn.classList.remove('as-play--on');
+      activeBtn = null; return;
+    }
+    if (activeBtn) {
+      activeBtn.textContent = '▶'; activeBtn.classList.remove('as-play--on');
+    }
+    activeBtn = btn; btn.textContent = '■'; btn.classList.add('as-play--on');
+    c.setTune(vo, true, { soundFontUrl: SF }).then(function () {
+      return c.play();
+    }).catch(function () {
+      btn.textContent = '▶'; btn.classList.remove('as-play--on'); activeBtn = null;
+    });
+  };
+
+  window.asSwitch = function (view, btn) {
+    document.getElementById('as-genre').style.display      = view === 'genre'      ? '' : 'none';
+    document.getElementById('as-instrument').style.display = view === 'instrument' ? '' : 'none';
+    document.querySelectorAll('.as-toggle button').forEach(function (b) { b.classList.remove('active'); });
+    btn.classList.add('active');
+  };
+
+  // Render after both abcjs and Arranger have loaded.
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderAll);
+  } else {
+    renderAll();
+  }
+  window.addEventListener('load', renderAll);
+})();
+</script>
+</div>
+
+
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
