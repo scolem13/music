@@ -36,12 +36,14 @@ website:
           - tools/chord-sheet-deluxe.qmd
           - tools/drumset.qmd
           - tools/solfege-keyboard.qmd
+          - tools/accomp-styles.qmd
       - href: teacher/report.qmd
         text: Teacher Report
 
 format:
   html:
-    theme: cosmo
+    theme: [cosmo, custom.css]
+    toc: true
     # Load Supabase + your config in <head>, on every page:
     include-in-header:
       - _includes/head.html

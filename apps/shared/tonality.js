@@ -146,8 +146,9 @@
     let t = global.MusicAudio.ctx().currentTime + 0.05;
     for (const di of degrees){
       const root = tonic + def.steps[di], triad = TRIAD[def.q[di]] || TRIAD.M;
-      triad.forEach(iv => global.MusicAudio.noteAt(root + iv, t, 0.7, 0.12));
-      t += 0.8;
+      global.MusicAudio.noteAt(root - 12, t, 0.9, 0.18, "bass");
+      triad.forEach(iv => global.MusicAudio.noteAt(root + iv, t, 0.7, 0.12, "epiano_dry"));
+      t += 1.056;
     }
   }
 

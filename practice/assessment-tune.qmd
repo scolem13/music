@@ -2,6 +2,9 @@
 title: "Assessment: Tune (pitch + rhythm) — prototype"
 ---
 
-::: {.column-screen}
+## Find a tune {#sec-tunes .panel-jump}
+## Setup & controls {#sec-setup .panel-jump}
+## Notation {#sec-notation .panel-jump}
+## Chord chart {#sec-chart .panel-jump}
+
 {{< include _tune-embed.qmd >}}
-:::

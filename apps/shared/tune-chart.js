@@ -75,7 +75,7 @@
       return t && !/^[A-Za-z]:/.test(t) && !/^%/.test(t); }).join(" ");
 
     var bars = [], pendingLeft = "plain", pendingEnding = null;
-    function newBar(){ return { chords:[], left:pendingLeft, right:"plain", ending:pendingEnding, lengthUnits:0 }; }
+    function newBar(){ return { chords:[], left:pendingLeft, right:"plain", ending:pendingEnding, lengthUnits:0, meter:{ n:meter.n, d:meter.d } }; }
     var cur = newBar(), content = false, pos = 0;
     var lastDur = 0, brokenMul = 1, tupletLeft = 0, tupletMul = 1;
 
@@ -96,7 +96,10 @@
       var c = music[i];
       if (c === ' '){ i++; continue; }
       if (c === '"'){ var e = music.indexOf('"', i+1); if (e < 0) break;
-        var s = music.slice(i+1, e).trim(); if (/^[A-G]/.test(s)) { cur.chords.push({ sym:s, onset:pos }); content = true; } i = e+1; continue; }
+        var s = music.slice(i+1, e).trim();
+        if (/^[A-G]/.test(s)) { cur.chords.push({ sym:s, onset:pos }); content = true; }
+        else if (/^n\.?c\.?$/i.test(s)) { cur.chords.push({ sym:"N.C.", onset:pos, nc:true }); content = true; }
+        i = e+1; continue; }
       if (c === '!'){ var e2 = music.indexOf('!', i+1); if (e2 >= 0){ i = e2+1; continue; } }
       if (c === '{'){ var e3 = music.indexOf('}', i+1); if (e3 >= 0){ i = e3+1; continue; } } // grace notes: 0 dur
       if (c === '>'){ pos += 0.5 * lastDur; brokenMul = 0.5; i++; continue; }                 // broken rhythm A>B
@@ -109,7 +112,14 @@
       if (c === '(' || c === ')' || c === '-'){ i++; continue; }                              // slurs / ties
       // inline field or note-chord group in brackets
       if (c === '['){
-        if (/^[A-Z]:/.test(music.slice(i+1))){ var ef = music.indexOf(']', i+1); if (ef >= 0){ i = ef+1; continue; } }
+        if (/^[A-Z]:/.test(music.slice(i+1))){ var ef = music.indexOf(']', i+1); if (ef >= 0){
+          var fld = music.slice(i+1, ef);
+          if (/^M:/.test(fld)){                                 // inline meter change e.g. [M:3/4]
+            var inM = parseMeter(fld.slice(2).trim());
+            meter = inM; unitsPerBar = (inM.n / inM.d) / unit; unitsPerBeat = (1 / inM.d) / unit;
+            cur.meter = { n:inM.n, d:inM.d };
+          }
+          i = ef+1; continue; } }
         var eg = music.indexOf(']', i+1);
         if (eg >= 0){ var d = readDuration(music, eg+1); var dur = applyMods(d.dur); pos += dur; lastDur = dur; content = true; i = d.next; continue; }
       }
@@ -126,7 +136,8 @@
       var nm = /^(\^\^|\^|__|_|=)?([A-Ga-gxzZ])([,']*)/.exec(music.slice(i));
       if (nm){
         var dd = readDuration(music, i + nm[0].length);
-        var dur2 = applyMods(dd.dur);
+        // Z = multi-bar rest: Z1 = 1 bar, Z2 = 2 bars, Z alone = 1 bar
+        var dur2 = applyMods(nm[2] === 'Z' ? unitsPerBar * dd.dur : dd.dur);
         pos += dur2; lastDur = dur2;                          // octave marks (nm[2]) don't affect duration
         content = true; i = dd.next; continue;
       }
@@ -205,10 +216,16 @@
   // ---- one-time scoped CSS ----
   function injectCss(){
     if (document.getElementById("tune-chart-css")) return;
-    if (!document.getElementById("tune-chart-fonts")){            // load the chart fonts once
+    if (!document.getElementById("tune-chart-fonts")){
       var lk = document.createElement("link"); lk.id = "tune-chart-fonts"; lk.rel = "stylesheet";
       lk.href = "https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=JetBrains+Mono:wght@500;600&display=swap";
       document.head.appendChild(lk);
+    }
+    // Bravura: SMuFL font for U+E504 (repeatBarSlash) and other music glyphs
+    if (!document.getElementById("tune-chart-bravura")){
+      var bst = document.createElement("style"); bst.id = "tune-chart-bravura";
+      bst.textContent = "@font-face{font-family:'Bravura';src:url('https://raw.githubusercontent.com/steinbergmedia/bravura/master/redist/woff/Bravura.woff2')format('woff2');font-display:swap}";
+      document.head.appendChild(bst);
     }
     var css = ''
     + '.tune-chart{--tc-paper:#f4efe2;--tc-paper-2:#f7f2e6;--tc-edge:#e6dcc4;--tc-line:#cdbf9f;'
@@ -238,7 +255,10 @@
     + '.tune-chart.tc-roman-mode .tc-rt{font-size:1.3rem;font-family:"JetBrains Mono",monospace;letter-spacing:.01em}'
     + '.tune-chart .tc-q{font-size:.95rem;font-weight:600;position:relative;top:-.55em;margin-left:.02em;color:#3a352b}'
     + '.tune-chart .tc-bass{font-size:1rem;color:#6f6450}'
-    + '.tune-chart .tc-bar.tc-empty::after{content:"/";position:absolute;left:.7rem;top:50%;transform:translateY(-50%);color:var(--tc-faint);font-size:1.25rem}'
+    + '.tune-chart .tc-nc-chord{font-size:.9rem;font-style:italic;color:var(--tc-faint)}'
+    + '.tune-chart .tc-beat-slash{position:absolute;top:50%;transform:translateY(-50%);font-family:"Bravura",serif;font-size:1.5rem;color:var(--tc-sub);line-height:1;pointer-events:none}'
+    + '.tune-chart .tc-bar.tc-empty::after{content:"";font-family:"Bravura",serif;position:absolute;left:.2rem;top:50%;transform:translateY(-50%);color:var(--tc-sub);font-size:1.5rem;line-height:1}'
+    + '.tune-chart .tc-bar.tc-nc-bar::after,.tune-chart.tc-with-beats .tc-bar.tc-empty::after{content:none}'
     + '.tune-chart .tc-bar[data-right="double"]{box-shadow:3px 0 0 -1px var(--tc-ink)}'
     + '.tune-chart .tc-bar[data-right="final"]{box-shadow:5px 0 0 -1px var(--tc-ink)}'
     + '.tune-chart .tc-bar[data-right="repeat-close"]{box-shadow:4px 0 0 -1px var(--tc-ink)}'
@@ -246,6 +266,9 @@
     + '.tune-chart .tc-bar[data-left="repeat-open"]{box-shadow:inset 3px 0 0 -1px var(--tc-ink)}'
     + '.tune-chart .tc-bar[data-left="repeat-open"] .tc-open{position:absolute;left:4px;top:50%;transform:translateY(-50%);width:4px;height:4px;border-radius:50%;background:var(--tc-ink);box-shadow:0 -8px 0 var(--tc-ink)}'
     + '.tune-chart .tc-ending{position:absolute;top:2px;left:5px;font-family:"JetBrains Mono",monospace;font-size:.62rem;color:var(--tc-ink);border-top:1.5px solid var(--tc-ink);border-left:1.5px solid var(--tc-ink);padding:1px 0 0 3px;min-width:1.3em}'
+    + '.tune-chart .tc-meter{position:absolute;top:3px;left:4px;display:flex;flex-direction:column;align-items:center;font-family:"JetBrains Mono",monospace;font-weight:700;line-height:1;color:var(--tc-ink)}'
+    + '.tune-chart .tc-mn,.tune-chart .tc-md{display:block;font-size:.6rem;line-height:1.15}'
+    + '.tune-chart .tc-mn{border-bottom:1px solid currentColor;padding-bottom:1px}'
     + '.tune-chart .tc-bar.tc-live{background:var(--tc-live-soft)}'
     + '.tune-chart .tc-bar.tc-live::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--tc-live)}'
     + '.tune-chart .tc-bar.tc-live .tc-chord{color:#0c5a52}'
@@ -282,10 +305,15 @@
     }
     function fillChord(cell, bar, upb){
       bar.chords.forEach(function(ch){
-        var el = document.createElement("span"); el.className = "tc-chord";
-        el.style.left = "calc(" + (100 * ch.onset / upb) + "% + .55rem)";
-        if (state.roman && global.TuneLibrary && TuneLibrary.roman){   // roman numerals instead of letter chords
-          var rn = TuneLibrary.roman(ch.sym, state.parsed.keyPc);      // key-independent → transpose doesn't change it
+        var el = document.createElement("span");
+        var leftCss = "calc(" + (100 * ch.onset / upb) + "% + .2rem)";
+        if (ch.nc){
+          el.className = "tc-chord tc-nc-chord"; el.textContent = "N.C."; el.style.left = leftCss;
+          cell.appendChild(el); return;
+        }
+        el.className = "tc-chord"; el.style.left = leftCss;
+        if (state.roman && global.TuneLibrary && TuneLibrary.roman){
+          var rn = TuneLibrary.roman(ch.sym, state.parsed.keyPc);
           el.innerHTML = '<span class="tc-rt">' + esc(rn || ch.sym) + '</span>';
         } else {
           el.innerHTML = fmtChord(ch.sym, state.transpose, state.preferFlats);
@@ -328,10 +356,17 @@
         container.appendChild(pk); state.barEls[0] = pk;
       }
 
+      container.classList.toggle("tc-with-beats", state.subBarBeats > 0);
       var sys = document.createElement("div"); sys.className = "tc-systems"; container.appendChild(sys);
       var startBar = p.anacrusis ? 1 : 0, idxs = [];
       for (var bb = startBar; bb < p.bars.length; bb++) idxs.push(bb);
       var rows = buildRows(idxs, perRow, lineBreaks);
+
+      // Show a stacked time-signature indicator whenever the meter changes bar-to-bar.
+      // Seed lastMeter with the tune's initial meter so the first bar doesn't duplicate
+      // what the header already shows; use a sentinel when the header is hidden so the
+      // very first bar shows the initial meter.
+      var lastMeter = state.header ? { n:p.meterN, d:p.meterD } : { n:-1, d:-1 };
 
       rows.forEach(function(rowIdxs){
         var cols = lineBreaks ? rowIdxs.length : perRow;     // uniform mode pads to perRow
@@ -344,6 +379,12 @@
             cell.setAttribute("data-left", bar.left); cell.setAttribute("data-right", bar.right);
             if (bar.left === "repeat-open"){ var od = document.createElement("span"); od.className = "tc-open"; cell.appendChild(od); }
             if (bar.ending){ var en = document.createElement("span"); en.className = "tc-ending"; en.textContent = bar.ending + "."; cell.appendChild(en); }
+            var bm = bar.meter || { n:p.meterN, d:p.meterD };
+            if (bm.n !== lastMeter.n || bm.d !== lastMeter.d){
+              var mt = document.createElement("div"); mt.className = "tc-meter";
+              mt.innerHTML = '<span class="tc-mn">'+bm.n+'</span><span class="tc-md">'+bm.d+'</span>';
+              cell.appendChild(mt); lastMeter = { n:bm.n, d:bm.d };
+            }
             if (state.subBarBeats > 0){
               for (var bt = state.subBarBeats; bt < beats; bt += state.subBarBeats){
                 var beatUnits = bt * (p.unitsPerBeat || 1);
@@ -351,8 +392,25 @@
                 var ln = document.createElement("div"); ln.className = "tc-subline";
                 ln.style.left = (100 * beatUnits / upb) + "%"; cell.appendChild(ln);
               }
+              // Repeat-bar slashes on every beat that has no new chord starting
+              var isNcOnly = bar.chords.length && bar.chords.every(function(cc){ return cc.nc; });
+              if (!isNcOnly){
+                for (var sb = 0; sb < beats; sb += state.subBarBeats){
+                  var sbUnits = sb * (p.unitsPerBeat || 1);
+                  if (sbUnits >= (bar.lengthUnits || upb) - 1e-6) continue;
+                  var hasChordHere = bar.chords.some(function(cc){ return !cc.nc && Math.abs(cc.onset - sbUnits) < 1e-6; });
+                  if (!hasChordHere){
+                    var slEl = document.createElement("span"); slEl.className = "tc-beat-slash";
+                    slEl.textContent = ""; slEl.style.left = "calc(" + (100 * sbUnits / upb) + "% + .2rem)";
+                    cell.appendChild(slEl);
+                  }
+                }
+              }
             }
-            if (bar.chords.length) fillChord(cell, bar, upb); else cell.classList.add("tc-empty");
+            var realChords = bar.chords.filter(function(cc){ return !cc.nc; });
+            var ncChords   = bar.chords.filter(function(cc){ return  cc.nc; });
+            if (realChords.length || ncChords.length){ fillChord(cell, bar, upb); if (ncChords.length && !realChords.length) cell.classList.add("tc-nc-bar"); }
+            else cell.classList.add("tc-empty");
             state.barEls[b] = cell;
           } else { cell.style.visibility = "hidden"; }
           row.appendChild(cell);
@@ -383,9 +441,10 @@
       setRoman: function(on){ state.roman = !!on; draw(); },
       setTranspose: function(semis, preferFlats){ state.transpose = semis || 0; if (preferFlats != null) state.preferFlats = preferFlats; draw(); },
       setTune: function(newAbc){ state.parsed = (typeof newAbc === "string") ? parse(newAbc) : newAbc; draw(); },
-      setLive: function(i){ if (state.liveBar === i) return; state.liveBar = i;   // called per-event → dedupe
+      setLive: function(i){ var wasOff = state.liveBar < 0; if (state.liveBar === i) return; state.liveBar = i;
         state.barEls.forEach(function(el, k){ el.classList.toggle("tc-live", k === i); });
-        var el = state.barEls[i]; if (el && i >= 0) el.scrollIntoView({ block:"nearest", behavior:"smooth" }); },
+        // Scroll only on the first bar of each playback so the user can scroll freely during playback
+        var el = state.barEls[i]; if (el && i >= 0 && wasOff) el.scrollIntoView({ block:"nearest", behavior:"smooth" }); },
       // map the m-th played measure (cursor follows the expanded/repeated timeline)
       // back to its written bar and highlight that. m < 0 clears.
       setPlayMeasure: function(m){

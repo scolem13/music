@@ -10,7 +10,8 @@
 //   total:  total length in L-units
 //   lq:     quarter-notes per L-unit (e.g. L:1/4 -> 1, L:1/8 -> 0.5)
 //   meter:  { n, d }
-//   tempoQ: quarter-note BPM (from Q:), default 100
+//   tempoQ: display BPM (from Q:), default 100
+//   tempoNote: Q: note value in quarters (e.g. Q:3/8=… → 1.5); multiply display BPM by this to get quarter-BPM
 // }
 // Convention: ABC "C" = middle C = MIDI 60.
 
@@ -42,7 +43,10 @@
   const field = (abc, re, dflt) => { const m = re.exec(abc); return m ? m : dflt; };
   function lUnitQuarters(abc){ const m = /^L:\s*(\d+)\s*\/\s*(\d+)/m.exec(abc); return m ? (+m[1]/+m[2])*4 : 0.25*4; }
   function meter(abc){ const m = /^M:\s*(\d+)\s*\/\s*(\d+)/m.exec(abc); return m ? {n:+m[1],d:+m[2]} : {n:4,d:4}; }
+  // Raw BPM from Q: (e.g. "Q:3/8=100" → 100). Use with tempoNoteQ to convert to quarter-BPM.
   function tempoQ(abc){ const m = /^Q:\s*\d+\/\d+\s*=\s*(\d+)/m.exec(abc); return m ? +m[1] : 100; }
+  // Note value of Q: expressed in quarter notes (e.g. "Q:3/8=…" → 1.5, "Q:1/4=…" → 1, default 1).
+  function tempoNoteQ(abc){ const m = /^Q:\s*(\d+)\s*\/\s*(\d+)\s*=/m.exec(abc); return m ? (+m[1]/+m[2])*4 : 1; }
   function keyField(abc){ const m = /^K:\s*(.+)$/m.exec(abc); return m ? m[1] : "C"; }
 
   function musicText(abc){
@@ -129,7 +133,7 @@
       if (prevTie && notes.length){ notes[notes.length-1].dur += e.dur; t += e.dur; prevTie = e.tie; continue; }
       notes.push({ midi: e.midi, onset: t, dur: e.dur }); t += e.dur; prevTie = e.tie;
     }
-    return { notes, chords, total: t, lq, meter: M, tempoQ: Q };
+    return { notes, chords, total: t, lq, meter: M, tempoQ: Q, tempoNote: tempoNoteQ(abc) };
   }
 
   const api = { melodyNotes, keyAccidentals, chordMidis };

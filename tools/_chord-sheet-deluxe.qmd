@@ -118,8 +118,8 @@
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
 <script src="/apps/shared/abc-transpose.js?v=1"></script>
-<script src="/apps/shared/tune-chart.js?v=5"></script>
-<script src="/apps/shared/tune-library.js?v=5"></script>
+<script src="/apps/shared/tune-chart.js?v=11"></script>
+<script src="/apps/shared/tune-library.js?v=6"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>
 <script src="/apps/shared/satb.js?v=1"></script>
 <script src="/apps/shared/arranger.js?v=11"></script>
@@ -271,9 +271,10 @@
 
   // ---- wire ----
   TuneLibrary.build(tunesObject);
-  var first = TuneLibrary.all()[0];
-  var picker = TuneLibrary.renderPicker($("csd-picker"), { onSelect: selectRec, selectedId: first && first.id });
-  if (first) selectRec(first);
+  var savedId = null; try { savedId = localStorage.getItem("sharedTuneId"); } catch(e) {}
+  var initRec = (savedId && TuneLibrary.byId(savedId)) || TuneLibrary.all()[0];
+  var picker = TuneLibrary.renderPicker($("csd-picker"), { onSelect: selectRec, selectedId: initRec && initRec.id });
+  if (initRec) selectRec(initRec);
   $("csd-play").addEventListener("click", togglePlay);
   $("csd-tempo").addEventListener("input", function(){ $("csd-tempo-v").innerHTML = "&#9833;=" + $("csd-tempo").value; });
   $("csd-key").addEventListener("change", function(){ var v = $("csd-key").value; keyOffset = (v === "orig") ? 0 : (parseInt(v,10) || 0); if (playing) stop(); renderChart(); renderNotation(); });
@@ -293,6 +294,12 @@
     if (e.code !== "Space") return; var a = document.activeElement;
     if (a && (a.tagName === "INPUT" || a.tagName === "SELECT" || a.tagName === "BUTTON")) return;
     e.preventDefault(); togglePlay();
+  });
+  // steer to a tune when the Tune page changes its selection
+  window.addEventListener("storage", function(e){
+    if (e.key !== "sharedTuneId" || !e.newValue) return;
+    var rec = TuneLibrary.byId(e.newValue);
+    if (rec && (!current || current.id !== rec.id)){ picker.setSelected(rec.id); selectRec(rec); }
   });
 })();
 </script>

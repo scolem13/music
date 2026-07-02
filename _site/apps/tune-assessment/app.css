@@ -3,7 +3,7 @@
   border-radius:5px; vertical-align:middle; }
 #app-root .level { position:relative; height:24px; background:#f1f3f5; border-radius:.375rem;
   margin-top:.4rem; overflow:hidden; border:1px solid #dee2e6; }
-#app-root #levelbar { position:absolute; left:0; top:0; bottom:0; width:0%; background:#2780e3; }
+#app-root #levelbar { position:absolute; left:0; top:0; bottom:0; width:0%; background:var(--site-accent,#2780e3); }
 #app-root #timeline { position:relative; height:84px; background:#f8f9fa; border:1px solid #dee2e6;
   border-radius:.375rem; margin-top:.5rem; }
 #app-root .tl-label { position:absolute; left:6px; font-size:.7rem; color:#adb5bd; }

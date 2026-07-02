@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-c1fac2584b48ed01fb6e278e36375074.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-9fb21ea8d6c9988e7f3648e3d9bcd9bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,6 +68,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 <!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
 <script src="../config.js"></script>
 <script>
@@ -97,7 +101,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -209,6 +213,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../tools/solfege-keyboard.html">
  <span class="dropdown-text">Solfège Keyboard</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item">
@@ -226,7 +234,9 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
 <main class="content page-columns page-full" id="quarto-document-content">
 <!-- Injected at the top of <body> on every page. Sign in once, anywhere;
@@ -427,8 +437,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../apps/shared/abcjs-basic.js"></script>
 <script src="../apps/tunes/tunes-object.js"></script>
 <script src="../apps/shared/abc-transpose.js?v=1"></script>
-<script src="../apps/shared/tune-chart.js?v=5"></script>
-<script src="../apps/shared/tune-library.js?v=5"></script>
+<script src="../apps/shared/tune-chart.js?v=11"></script>
+<script src="../apps/shared/tune-library.js?v=6"></script>
 <script src="../apps/shared/pitch-spelling.js"></script>
 <script src="../apps/shared/satb.js?v=1"></script>
 <script src="../apps/shared/arranger.js?v=11"></script>
@@ -580,9 +590,10 @@ ul.task-list li input[type="checkbox"] {
 
   // ---- wire ----
   TuneLibrary.build(tunesObject);
-  var first = TuneLibrary.all()[0];
-  var picker = TuneLibrary.renderPicker($("csd-picker"), { onSelect: selectRec, selectedId: first && first.id });
-  if (first) selectRec(first);
+  var savedId = null; try { savedId = localStorage.getItem("sharedTuneId"); } catch(e) {}
+  var initRec = (savedId && TuneLibrary.byId(savedId)) || TuneLibrary.all()[0];
+  var picker = TuneLibrary.renderPicker($("csd-picker"), { onSelect: selectRec, selectedId: initRec && initRec.id });
+  if (initRec) selectRec(initRec);
   $("csd-play").addEventListener("click", togglePlay);
   $("csd-tempo").addEventListener("input", function(){ $("csd-tempo-v").innerHTML = "&#9833;=" + $("csd-tempo").value; });
   $("csd-key").addEventListener("change", function(){ var v = $("csd-key").value; keyOffset = (v === "orig") ? 0 : (parseInt(v,10) || 0); if (playing) stop(); renderChart(); renderNotation(); });
@@ -602,6 +613,12 @@ ul.task-list li input[type="checkbox"] {
     if (e.code !== "Space") return; var a = document.activeElement;
     if (a && (a.tagName === "INPUT" || a.tagName === "SELECT" || a.tagName === "BUTTON")) return;
     e.preventDefault(); togglePlay();
+  });
+  // steer to a tune when the Tune page changes its selection
+  window.addEventListener("storage", function(e){
+    if (e.key !== "sharedTuneId" || !e.newValue) return;
+    var rec = TuneLibrary.byId(e.newValue);
+    if (rec && (!current || current.id !== rec.id)){ picker.setSelected(rec.id); selectRec(rec); }
   });
 })();
 </script>

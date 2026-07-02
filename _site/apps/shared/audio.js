@@ -48,6 +48,8 @@
                   a:0.004,d:0.6,s:0.0,r:0.4, cut:1100,cutEnv:4200,cutDecay:0.4, send:0.16 },
     epiano:     { label:"Electric piano",  osc:[["sine",0,1,0],["triangle",4,0.35,0]],
                   a:0.006,d:1.0,s:0.28,r:0.5, cut:1700,cutEnv:1400,cutDecay:0.5, trem:5,tremDepth:0.10, send:0.24 },
+    epiano_dry: { label:"Electric piano (dry)", osc:[["sine",0,1,0],["triangle",4,0.35,0]],
+                  a:0.002,d:1.0,s:0.28,r:0.5, cut:1700,cutEnv:1400,cutDecay:0.5, send:0.10 },
     nylon:      { label:"Nylon guitar",    osc:[["triangle",0,1,0],["sine",0,0.4,0],["sine",4,0.15,1]],
                   a:0.004,d:0.5,s:0.0,r:0.35, cut:1300,cutEnv:3000,cutDecay:0.25, send:0.2 },
     bass:       { label:"Bass",            osc:[["sine",0,1,0],["triangle",0,0.4,0]],

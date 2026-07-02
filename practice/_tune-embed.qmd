@@ -16,6 +16,7 @@
 #app-root .ta-panel-body{padding-top:.8rem}
 #app-root #tuneChart{max-width:100%}
 #app-root #tunePicker .tl-results{max-height:300px}
+#app-root #accompNotation svg{width:100%!important;height:auto!important}
 </style>
 <div id="app-root">
   <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
@@ -37,6 +38,7 @@
         <input type="range" id="tempo" min="40" max="160" value="100" style="width:170px"></div>
       <label class="cb" style="align-self:center"><input type="checkbox" id="chords" checked> 🎹 Chords</label>
       <label class="cb" style="align-self:center"><input type="checkbox" id="play-tune" checked> 🎵 Play melody</label>
+      <button id="reloadAudio" type="button" style="align-self:center" title="Reload audio with current settings">↺ Audio</button>
       <label class="cb" style="align-self:center"><input type="checkbox" id="cycle"> 🔁 Cycle</label>
     </div>
     <div class="row" style="margin-top:.5rem; align-items:center">
@@ -85,6 +87,49 @@
       <div><label for="chordVol">Chord volume: <span id="chordVolV">55</span></label>
         <input type="range" id="chordVol" min="0" max="100" value="55" style="width:150px"></div>
     </div>
+    <div class="row" style="margin-top:.5rem; align-items:center">
+      <div><label for="taAccomp">Accompaniment</label>
+        <select id="taAccomp"><option value="off">Melody only</option></select></div>
+      <div id="taNoteselWrap" style="display:none"><label for="taNotesel">Notation</label>
+        <select id="taNotesel"></select></div>
+      <div id="taTenorWrap" style="display:none"><label for="taTenorclef">Tenor</label>
+        <select id="taTenorclef"><option value="treble8">Treble 8</option><option value="bass">Bass</option></select></div>
+    </div>
+    <div id="taMixerRow" style="display:none; margin-top:.5rem">
+      <div class="row" style="align-items:center">
+        <div><label for="ta-vol-melody">Melody: <span id="ta-vol-melody-v">90</span></label>
+          <input type="range" id="ta-vol-melody" min="0" max="100" value="90" style="width:100px"></div>
+        <div><label for="ta-vol-chords">Chords: <span id="ta-vol-chords-v">80</span></label>
+          <input type="range" id="ta-vol-chords" min="0" max="100" value="80" style="width:100px"></div>
+        <div><label for="ta-vol-bass">Bass: <span id="ta-vol-bass-v">90</span></label>
+          <input type="range" id="ta-vol-bass" min="0" max="100" value="90" style="width:100px"></div>
+        <div><label for="ta-vol-drums">Drums: <span id="ta-vol-drums-v">80</span></label>
+          <input type="range" id="ta-vol-drums" min="0" max="100" value="80" style="width:100px"></div>
+      </div>
+      <div style="margin-top:.35rem;display:flex;gap:1.2rem;flex-wrap:wrap">
+        <label class="cb"><input type="checkbox" id="taShowDrums"> Show drums in notation</label>
+        <label class="cb"><input type="checkbox" id="taCombined"> Combined score</label>
+      </div>
+      <div style="margin-top:.35rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center">
+        <div><label for="taRepeats">Repeats</label>
+          <select id="taRepeats">
+            <option value="1" selected>1×</option>
+            <option value="2">2×</option>
+            <option value="3">3×</option>
+            <option value="4">4×</option>
+            <option value="6">6×</option>
+            <option value="8">8×</option>
+          </select></div>
+        <div><label for="taIntro">Intro</label>
+          <select id="taIntro">
+            <option value="none" selected>None</option>
+            <option value="count-in-1">Count-in (1 bar)</option>
+            <option value="count-in-2">Count-in (2 bars)</option>
+            <option value="last-2">Last 2 bars</option>
+            <option value="last-4">Last 4 bars</option>
+          </select></div>
+      </div>
+    </div>
     </div>
   </details>
 
@@ -95,6 +140,12 @@
         <div id="notation"></div>
         <div class="muted" id="cycleHint" style="display:none; margin-top:.4rem"></div>
         <div id="tune-audio" class="tune-audio"></div>
+      </div>
+    </details>
+    <details class="ta-panel" id="panelAccomp" style="display:none">
+      <summary>Accompaniment notation</summary>
+      <div class="ta-panel-body">
+        <div id="accompNotation"></div>
       </div>
     </details>
     <details class="ta-panel" id="panelChart" open>
@@ -159,17 +210,95 @@
     </div>
   </div>
   </div>
+<div id="taHiddenNotation" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden"></div>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
-<script src="/apps/tune-assessment/abc-tune.js"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=2"></script>
 <script src="/apps/shared/session-log.js"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>
 <script src="/apps/shared/tonality.js?v=4"></script>
 <script src="/apps/shared/abc-transpose.js?v=1"></script>
-<script src="/apps/shared/tune-chart.js?v=5"></script>
-<script src="/apps/shared/tune-library.js?v=5"></script>
-<script src="/apps/tune-assessment/app.js?v=21"></script>
+<script src="/apps/shared/tune-chart.js?v=11"></script>
+<script src="/apps/shared/tune-library.js?v=6"></script>
+<script src="/apps/shared/satb.js?v=1"></script>
+<script src="/apps/shared/arranger.js?v=16"></script>
+<script src="/apps/tune-assessment/app.js?v=33"></script>
 </div>
 <script src="/apps/shared/audio.js?v=3"></script>
 <script src="/apps/shared/establish-button.js"></script>
+<script>
+(function(){
+  // Map from TOC anchor IDs to collapsible panel IDs.
+  var ENTRIES=[
+    {href:'sec-tunes',    panelId:'panelTunes'},
+    {href:'sec-setup',    panelId:'panelSetup'},
+    {href:'sec-notation', panelId:'panelNotation'},
+    {href:'sec-chart',    panelId:'panelChart'},
+  ];
+  var MAP={}; ENTRIES.forEach(function(e){ MAP[e.href]=e.panelId; });
+
+  // The QMD headings are stacked at the top of the page (they only exist so
+  // Quarto generates the TOC entries). Hide them to avoid a block of bare
+  // headings and so they don't confuse Scrollspy.
+  document.querySelectorAll('h2.panel-jump').forEach(function(h){
+    h.style.cssText='position:absolute;height:0;overflow:hidden;pointer-events:none;margin:0;padding:0;';
+  });
+
+  // Open a panel and scroll to it (works whether collapsed or expanded).
+  function jumpTo(panelId){
+    var p=document.getElementById(panelId); if(!p) return;
+    p.open=true;
+    // Wait one frame so the browser reflows the newly opened panel before scrolling.
+    requestAnimationFrame(function(){ p.scrollIntoView({behavior:'smooth',block:'start'}); });
+  }
+
+  // Intercept TOC link clicks and hash-change navigation.
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a[href]'); if(!a) return;
+    var id=MAP[(a.getAttribute('href')||'').replace(/^#/,'')];
+    if(id){ e.preventDefault(); jumpTo(id); }
+  });
+  window.addEventListener('hashchange',function(){
+    var id=MAP[location.hash.slice(1)]; if(id) jumpTo(id);
+  });
+  if(MAP[location.hash.slice(1)]) setTimeout(function(){ jumpTo(MAP[location.hash.slice(1)]); },150);
+
+  // Replace Quarto/Bootstrap Scrollspy with a panel-aware scroll tracker.
+  // Scrollspy targets heading elements, but all four headings are at the very
+  // top of the page (before the embed), so it always lands on the last one.
+  var toc=document.getElementById('TOC');
+  if(!toc) return;
+
+  // Disable Bootstrap Scrollspy on the body if Quarto enabled it.
+  try{
+    var spy=window.bootstrap&&window.bootstrap.ScrollSpy&&window.bootstrap.ScrollSpy.getInstance(document.body);
+    if(spy) spy.dispose();
+  }catch(e){}
+
+  function setActive(href){
+    toc.querySelectorAll('a').forEach(function(a){
+      a.classList.toggle('active', a.getAttribute('href')==='#'+href);
+    });
+  }
+
+  function updateActive(){
+    // Find the panel whose top edge is highest on screen but still within the
+    // upper 45% of the viewport — i.e., the last section header the user has
+    // scrolled past.
+    var limit=window.innerHeight*0.45, best=null, bestTop=-Infinity;
+    ENTRIES.forEach(function(item){
+      var el=document.getElementById(item.panelId); if(!el) return;
+      var top=el.getBoundingClientRect().top;
+      if(top<=limit&&top>bestTop){ bestTop=top; best=item; }
+    });
+    if(!best) best=ENTRIES[0]; // above all panels → highlight first entry
+    setActive(best.href);
+  }
+
+  window.addEventListener('scroll', updateActive, {passive:true});
+  // Re-check when any <details> opens or closes (panel height changes).
+  document.addEventListener('toggle', updateActive, true);
+  updateActive();
+})();
+</script>
 ```

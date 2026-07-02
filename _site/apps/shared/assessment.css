@@ -17,12 +17,12 @@
 }
 #app-root input[type=range]{ padding:0; vertical-align:middle; }
 #app-root button { cursor:pointer; }
-#app-root button.primary { background:#2780e3; border-color:#2780e3; color:#fff; font-weight:600; }
+#app-root button.primary { background:var(--site-accent,#2780e3); border-color:var(--site-accent,#2780e3); color:var(--site-accent-text,#fff); font-weight:600; }
 #app-root button:disabled { opacity:.5; cursor:not-allowed; }
 #app-root .muted { color:#6c757d; font-size:.85rem; }
 #app-root .row { display:flex; gap:.75rem; align-items:end; flex-wrap:wrap; }
 #app-root .bar { height:6px; background:#e9ecef; border-radius:3px; overflow:hidden; margin-top:.4rem; }
-#app-root .bar > div { height:100%; width:0%; background:#2780e3; transition:width .05s linear; }
+#app-root .bar > div { height:100%; width:0%; background:var(--site-accent,#2780e3); transition:width .05s linear; }
 #app-root table { width:100%; border-collapse:collapse; margin-top:.5rem; font-variant-numeric:tabular-nums; }
 #app-root th, #app-root td { text-align:left; padding:.4rem .5rem; border-bottom:1px solid #e9ecef; font-size:.92rem; }
 #app-root th { color:#6c757d; font-weight:600; font-size:.78rem; }

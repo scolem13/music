@@ -66,6 +66,18 @@
     var suf = (m && m[1] || "").toLowerCase();
     return MODE.hasOwnProperty(suf) ? MODE[suf] : (suf === "" ? "major" : "other");
   }
+  // Normalize a meter to "N/D" display string (treats C as 4/4 and C| as 2/2).
+  function meterLabel(n, d){ return n + "/" + d; }
+  // Return short display name for a key field string (e.g. "Dm", "Bb", "G mix").
+  function keyLabel(s){
+    s = (s || "").trim(); if (!s) return "";
+    var m = /^([A-Ga-g][#b]?)\s*([A-Za-z]*)/.exec(s); if (!m) return "";
+    var root = m[1].charAt(0).toUpperCase() + m[1].slice(1);
+    var suf = (m[2] || "").toLowerCase();
+    if (!suf || suf === "major" || suf === "maj" || suf === "ion" || suf === "ionian") return root;
+    if (suf === "minor" || suf === "min" || suf === "m" || suf === "aeo" || suf === "aeolian") return root + "m";
+    return root + " " + suf.slice(0, 3);
+  }
 
   var records = [], byIdMap = {};
 
@@ -90,13 +102,26 @@
         p.bars.forEach(function (b){ (b.chords||[]).forEach(function (ch){ chordSet[ch.sym] = 1;
           var lab = appliedRoman(ch.sym, p.keyPc);
           if (lab && !seenR[lab]){ seenR[lab] = 1; romans.push(lab); } }); });
+        // allMeters: ordered unique meters in order of first appearance, normalized to N/D.
+        var allMeters = [], seenM = {};
+        function addMeter(n, d){ var s = meterLabel(n, d); if (!seenM[s]){ seenM[s] = 1; allMeters.push(s); } }
+        addMeter(p.meterN, p.meterD);
+        if (p.bars) p.bars.forEach(function (b){ if (b.meter) addMeter(b.meter.n, b.meter.d); });
+        // allKeys: ordered unique keys (initial header + inline [K:X] changes).
+        var allKeys = [], seenK = {};
+        function addKey(s){ var k = keyLabel(s); if (k && !seenK[k]){ seenK[k] = 1; allKeys.push(k); } }
+        addKey(p.keyField || field(abc, "K") || "");
+        var kre = /\[K:([^\]]+)\]/g, km;
+        while ((km = kre.exec(abc)) !== null) addKey(km[1]);
         var rec = {
           id: id, title: title, abc: abc, collection: coll, tags: tags,
           composer: field(abc, "C"),
           hasChords: p.bars.some(function (b){ return b.chords && b.chords.length; }),
           chordCount: Object.keys(chordSet).length, romans: romans,
           hasLyrics: /^w:/m.test(abc),
-          meterStr: p.meterStr || (field(abc,"M") || ""), meterN: p.meterN, meterD: p.meterD,
+          meterStr: meterLabel(p.meterN, p.meterD), meterN: p.meterN, meterD: p.meterD,
+          allMeters: allMeters,
+          allKeys: allKeys,
           keyPc: p.keyPc, keyField: p.keyField || field(abc,"K"),
           tonality: tonalityOf(p.keyField || field(abc,"K")),
           keyName: FLAT[((p.keyPc % 12) + 12) % 12],
@@ -121,7 +146,9 @@
     return {
       tags: tally(function (r){ return r.tags; }),
       tonality: tally(function (r){ return r.tonality; }),
-      meter: tally(function (r){ return r.meterStr; }),
+      // Each tune contributes a count to every meter it contains; mixed-meter tunes also
+      // get a "mixed meter" entry so users can filter for them specifically.
+      meter: tally(function (r){ var ms = r.allMeters.slice(); if (ms.length > 1) ms.push("mixed meter"); return ms; }),
       // key is only meaningful for canonical-key tunes; agnostic tunes aren't grouped by key
       key: tally(function (r){ return r.keyName; }, records.filter(function (r){ return r.keyFixed; })),
       chords: { yes: records.filter(function (r){ return r.hasChords; }).length, no: records.filter(function (r){ return !r.hasChords; }).length },
@@ -139,7 +166,12 @@
       if (txt && r.title.toLowerCase().indexOf(txt) < 0) return false;
       if (!anyTag(crit.tags, r.tags)) return false;
       if (!anyOf(crit.tonality, r.tonality)) return false;
-      if (!anyOf(crit.meter, r.meterStr)) return false;
+      if (crit.meter && crit.meter.length){
+        var mOk = crit.meter.some(function(f){
+          return f === "mixed meter" ? r.allMeters.length > 1 : r.allMeters.indexOf(f) >= 0;
+        });
+        if (!mOk) return false;
+      }
       if (crit.key && crit.key.length && (!r.keyFixed || crit.key.indexOf(r.keyName) < 0)) return false;   // key filters canonical-key tunes only
       if (crit.hasChords === true && !r.hasChords) return false;
       if (crit.hasChords === false && r.hasChords) return false;
@@ -274,7 +306,12 @@
         var t = document.createElement("span"); t.className = "tl-rt"; t.textContent = r.title; main.appendChild(t);
         if (r.romans && r.romans.length){ var rom = document.createElement("span"); rom.className = "tl-romans"; rom.textContent = r.romans.join("  "); main.appendChild(rom); }
         var meta = document.createElement("span"); meta.className = "tl-rmeta";
-        var bits = []; if (r.keyFixed) bits.push(r.keyName); bits.push(r.meterStr);   // key shown only when canonical
+        var bits = [];
+        // Key: show when canonical (keyFixed) or when the tune has inline key changes.
+        if (r.keyFixed || r.allKeys.length > 1) bits.push(r.allKeys.join(" → "));
+        // Meter: show all unique meters; prefix "mixed meter" when there is more than one.
+        if (r.allMeters.length > 1) bits.push("mixed meter " + r.allMeters.join(" "));
+        else if (r.allMeters.length) bits.push(r.allMeters[0]);
         if (r.hasChords) bits.push(r.chordCount + (r.chordCount === 1 ? " chord" : " chords")); if (r.hasLyrics) bits.push("lyrics");
         bits.forEach(function (b){ var s = document.createElement("span"); s.textContent = b; meta.appendChild(s); });
         li.appendChild(main); li.appendChild(meta);

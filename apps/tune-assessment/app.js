@@ -30,11 +30,17 @@ const idOf=abc=>{ const m=/^%%\s*id\s+(\S+)/m.exec(abc||""); return m?m[1]:null;
 function loadTune(){
   const idx=parseInt(tuneSel.value,10)||0;
   currentAbc=tuneBook.tunes[idx].abc;
+  try{ localStorage.setItem("sharedTuneId",idOf(currentAbc)||""); }catch(e){}
   target=AbcTune.melodyNotes(currentAbc);
   try{ const km=/^K:\s*(.+)$/m.exec(currentAbc); const tt=km&&window.Tonality&&Tonality.keyToTonality(km[1]); writtenDoPc=tt?tt.do:0; }catch(e){ writtenDoPc=0; }
   try{ const rm=/^K:\s*([A-Ga-g])([#b]?)/m.exec(currentAbc); writtenRootPc = rm ? ((({C:0,D:2,E:4,F:5,G:7,A:9,B:11})[rm[1].toUpperCase()]+(rm[2]==="#"?1:rm[2]==="b"?-1:0))%12+12)%12 : 0; }catch(e){ writtenRootPc=0; }
   document.getElementById("tempo").value=Math.min(160,Math.max(40,target.tempoQ));
   document.getElementById("tempoVal").textContent=document.getElementById("tempo").value;
+  // Restore the last-used accompaniment style for this tune before rendering
+  (function(){ const el=document.getElementById("taAccomp"); if(!el||!window.Arranger) return;
+    try{ const m=JSON.parse(localStorage.getItem("taAccompStyles")||"{}"); const saved=m[idOf(currentAbc)];
+      if(saved&&[...el.options].some(o=>o.value===saved)){ el.value=saved; if(window._taRefreshAccompUI) window._taRefreshAccompUI(); }
+    }catch(e){} })();
   renderTune(false);   // render + (re)load the abcjs synth transport/cursor for this tune
   steerTonality();     // propagate this tune's key to the circle / patterns / etc.
   saveLast();          // remember this tune for next visit
@@ -52,16 +58,26 @@ const SF_URL="https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/";
 const chordsOn=()=>{ const e=document.getElementById("chords"); return e?e.checked:false; };
 const playTuneOn=()=>{ const el=document.getElementById("play-tune"); return el?el.checked:true; };
 let previewPlaying=false;
+// When accompaniment is ON, the synth plays the hidden arranger ABC (#taHiddenNotation).
+// ev.left/top come from that SVG's coordinate space, so we use positionCursorByTime()
+// (which looks up pre-computed notationTimings) instead of the direct ev coordinates.
+let usingArrVisual=false;
+let currentPlayVisual=null; // visualObj currently loaded into synthControl
+let lastPlayMs=0;           // last known playback position (ms); used by reloadAudio to seek back
+let notationTimings=[];     // [{milliseconds,left,top,height,elements,startCharArray}] from visualObj.setTiming()
+let introMs=0;              // accompaniment intro offset in ms; subtract from ev.ms before notation lookup
 function updatePlayLabel(){ const b=document.getElementById("play"); if(b) b.textContent=previewPlaying?"⏸ Pause":"▶ Play tune"; }
 const cursorControl={
   onStart(){ if(tuneChartObj) tuneChartObj.resetPlayback(); const svg=document.querySelector("#notation svg"); if(!svg)return;
     let c=svg.querySelector(".abcjs-cursor"); if(!c){ c=document.createElementNS("http://www.w3.org/2000/svg","line"); c.setAttribute("class","abcjs-cursor"); svg.appendChild(c); } },
   onEvent(ev){ if(ev.measureStart&&ev.left===null)return;
+    if(ev.milliseconds!=null) lastPlayMs=ev.milliseconds;  // always track position for reloadAudio seek
     // loop-back is INCLUSIVE of the end note: loopOutMs is its onset, so we wait until
     // we're strictly PAST it (the next event) before seeking, letting it sound fully.
     if(cycleOn()&&loopInMs!=null&&loopOutMs!=null&&ev.milliseconds!=null&&ev.milliseconds>loopOutMs){
       const d=durMs(); if(d){ try{ synthControl.seek(loopInMs/d); synthControl.setProgress(loopInMs/d,d); }catch(e){} return; } }
     if(tuneChartObj) tuneChartObj.onPlaybackEvent(ev);   // time-based chart highlight (loop-safe)
+    if(usingArrVisual){ if(ev.milliseconds!=null) positionCursorByTime(ev.milliseconds); return; }
     document.querySelectorAll("#notation svg .highlight").forEach(e=>e.classList.remove("highlight"));
     (ev.elements||[]).forEach(n=>n.forEach(e=>e.classList.add("highlight")));
     const c=document.querySelector("#notation svg .abcjs-cursor");
@@ -78,10 +94,18 @@ function applyCycle(){ if(synthControl) synthControl.isLooping = cycleOn() && !(
 function markLoopRegion(){
   document.querySelectorAll("#notation svg .loop-region").forEach(e=>e.classList.remove("loop-region"));
   if(loopInMs==null||loopOutMs==null) return;
-  document.querySelectorAll("#notation svg .abcjs-note").forEach(n=>{
-    let ms=n.currentTrackMilliseconds; if(Array.isArray(ms))ms=ms[0];
-    if(ms!=null && ms>=loopInMs && ms<=loopOutMs) n.classList.add("loop-region");   // inclusive of the end note
-  });
+  if(notationTimings.length){
+    // arranger mode: loopIn/Out are in accompaniment time; notation events are in notation time
+    notationTimings.forEach(t=>{
+      const ms=t.milliseconds+introMs;
+      if(ms>=loopInMs&&ms<=loopOutMs) (t.elements||[]).forEach(g=>g.forEach(e=>e.classList.add("loop-region")));
+    });
+  }else{
+    document.querySelectorAll("#notation svg .abcjs-note").forEach(n=>{
+      let ms=n.currentTrackMilliseconds; if(Array.isArray(ms))ms=ms[0];
+      if(ms!=null && ms>=loopInMs && ms<=loopOutMs) n.classList.add("loop-region");
+    });
+  }
 }
 function updateCycleHint(){
   const h=document.getElementById("cycleHint"); if(!h) return;
@@ -95,12 +119,18 @@ function onNoteClick(abcElem){
   if(!synthControl) return;
   const apply=()=>{
     let ms=abcElem.currentTrackMilliseconds; if(Array.isArray(ms)) ms=ms[0];
+    // In arranger mode currentTrackMilliseconds is not set on notation notes; use startChar lookup
+    if(ms==null&&notationTimings.length){
+      for(const t of notationTimings){
+        if((t.startCharArray||[]).indexOf(abcElem.startChar)>=0){ ms=t.milliseconds+introMs; break; }
+      }
+    }
     const d=durMs(); if(ms==null||!d) return;
-    if(cycleOn()){                                    // set the loop region: 1st click=in, 2nd=out
+    if(cycleOn()){
       if(loopInMs==null||loopOutMs!=null){ loopInMs=ms; loopOutMs=null; try{synthControl.seek(ms/d);synthControl.setProgress(ms/d,d);}catch(e){} }
-      else { loopOutMs=ms; if(loopOutMs<loopInMs){const t=loopInMs;loopInMs=loopOutMs;loopOutMs=t;} }
+      else { loopOutMs=ms; if(loopOutMs<loopInMs){const tmp=loopInMs;loopInMs=loopOutMs;loopOutMs=tmp;} }
       applyCycle(); markLoopRegion(); updateCycleHint();
-    } else {                                          // plain seek
+    } else {
       const frac=Math.max(0,Math.min(0.999,ms/d));
       try{ synthControl.seek(frac); synthControl.setProgress(frac,d); }catch(e){}
     }
@@ -119,8 +149,97 @@ function setupSynth(){
 // map the 6 synth voices → General MIDI programs so the soundfont preview uses the
 // same instrument the menu selects (melody=program, accompaniment=chordprog, bass).
 const GM={piano:0,epiano:4,nylon:24,bass:32,vibraphone:11,marimba:12};
+const accompStyle=()=>(document.getElementById("taAccomp")||{}).value||"off";
+const accompNotesel=()=>(document.getElementById("taNotesel")||{}).value||"piano";
+const accompTenor=()=>(document.getElementById("taTenorclef")||{}).value||"treble8";
+const accompShowDrums=()=>!!(document.getElementById("taShowDrums")||{}).checked;
+const combinedScore=()=>!!(document.getElementById("taCombined")||{}).checked;
+const taRepeats=()=>Math.max(1,parseInt((document.getElementById("taRepeats")||{}).value||"1",10)||1);
+const taIntro=()=>(document.getElementById("taIntro")||{}).value||"none";
+const taVol=part=>{ const el=document.getElementById("ta-vol-"+part); return el?(parseInt(el.value,10)||0):100; };
+// Build setTune opts from current UI state. arrAbc=null means direct tune path (no arranger).
+const synthOpts=arrAbc=>({soundFontUrl:SF_URL,
+  midiTranspose:arrAbc?0:-instAdjust(),chordsOff:arrAbc?false:!chordsOn(),voicesOff:arrAbc?false:!playTuneOn()});
+// Extract just the melody line from a tune ABC string for layering into the arranger band.
+// Strips chords/decorations/grace/repeats/endings; normalizes note lengths to L:1/8.
+// Returns null if the result doesn't parse cleanly (some tunes use syntax we can't translate).
+function extractMelody(abc){
+  abc=abc.replace(/<!--[\s\S]*?-->/g,"");
+  const Lm=/L:\s*1\/(\d+)/.exec(abc),Lden=Lm?parseInt(Lm[1],10):8;
+  const music=abc.split("\n").filter(l=>l&&!/^[A-Za-z]:/.test(l)&&!/^%/.test(l));
+  let body=music.join(" ");
+  body=body.replace(/"[^"]*"/g,"").replace(/![^!]*!/g,"").replace(/\{[^}]*\}/g,"");
+  body=body.replace(/\$/g," ").replace(/\(\d+(:\d+)*/g,"").replace(/[()]/g,"");
+  body=body.replace(/\|\s*[12]/g,"|").replace(/\[[12]/g,"").replace(/:\|:|\|:|:\||::|\[\||\|\]/g,"|");
+  body=body.replace(/[^A-Ga-gxyzZ0-9_=^,''\/|\s\[\]>-]/g,"");
+  body=body.replace(/\s+/g," ").trim();
+  function fmt(v){ for(let den=1;den<=16;den*=2){ const num=v*den; if(Math.abs(num-Math.round(num))<1e-6){
+    let n=Math.round(num),d=den; const g=(a,b)=>b?g(b,a%b):a; const r=g(n,d)||1; n/=r;d/=r;
+    if(d===1)return n===1?"":String(n); if(n===1)return "/"+d; return n+"/"+d; } } return ""; }
+  if(Lden<8){ const f=8/Lden;
+    body=body.replace(/(\[[^\]]*\]|[\^=_]*[A-Ga-gxyzZ][,']*)(\d+)?(\/+\d*)?/g,(m,head,n,sl)=>{
+      if(!head)return m; let num=n?parseInt(n,10):1,d=1;
+      if(sl){ if(/^\/+$/.test(sl))d=Math.pow(2,sl.length); else{ const mm=/^(\/+)(\d+)$/.exec(sl);d=mm?parseInt(mm[2],10):2; } }
+      return head+fmt((num/d)*f); }); }
+  try{ const v=ABCJS.parseOnly("X:1\nL:1/8\nK:C\n"+body); if(!v||!v.length)return null; }catch(e){ return null; }
+  return body;
+}
+// Build the arranger ABC for the current tune (clean for display when forPlay=false;
+// with dynamics + optional melody when forPlay=true). Returns null when unavailable/off.
+// forPlay=true → add dynamics + volumes (for audio); includeMelody=true → layer the
+// melody voice into the display score (for combined score view).
+function arrangerAbc(forPlay, includeMelody){
+  if(accompStyle()==="off"||!window.Arranger||!tuneChartObj) return null;
+  const qpm=Math.round((parseInt(tempoEl.value,10)||target.tempoQ||100)*(target.tempoNote||1));
+  const opts={style:accompStyle(),notation:accompNotesel(),tempo:qpm,transpose:keyTrans(),
+    program:GM[accompVoice()]??GM.piano,tenorClef:accompTenor(),drums:taVol("drums")>0,showDrums:accompShowDrums(),
+    repeats:taRepeats(),intro:taIntro()};
+  if(forPlay){
+    opts.dynamics=true;
+    opts.vol={melody:playTuneOn()?taVol("melody"):0, chords:chordsOn()?taVol("chords"):0,
+              bass:taVol("bass"), drums:taVol("drums")};
+  }
+  if(forPlay?taVol("melody")>0:includeMelody){
+    let abc=currentAbc; const shift=keyTrans()+instAdjust();
+    if(window.AbcTranspose&&(shift!==0||keyAlt)){
+      try{ abc=AbcTranspose.transpose(currentAbc,keyNameAscii((((writtenRootPc+shift)%12)+12)%12)); }catch(e){}
+    }
+    const mel=extractMelody(abc);
+    if(mel) opts.melody={body:mel,program:GM[melodyVoice()]??0,vol:forPlay?taVol("melody"):100};
+  }
+  try{ return Arranger.toAbc(tuneChartObj.parsed,opts); }catch(e){ return null; }
+}
+// Prepare accomp ABC for display: remove RH/LH labels, force last staff to fill
+// the full width, and insert explicit line breaks every bpr bars so the stave
+// layout matches the chord grid.
+function injectAccompLineBreaks(abc, bpr){
+  if(!bpr||bpr<=0) return abc;
+  abc=abc.replace(/\s+name="[^"]*"/g,'')              // strip RH / LH / S / A / T / B labels
+         .replace(/^(K:)/m,'%%stretchlast true\n$1'); // always fill last line to viewport width
+  return abc.split('\n').map(function(line){
+    if(/^[A-Za-z]:/.test(line)||/^%%/.test(line)||!line.trim()) return line;
+    var end=''; if(/ \|\]$/.test(line)){ end=' |]'; line=line.slice(0,-3); }
+    var bars=line.split(' | ');
+    var groups=[]; for(var i=0;i<bars.length;i+=bpr) groups.push(bars.slice(i,i+bpr).join(' | '));
+    return groups.join(' |\n')+end;
+  }).join('\n');
+}
+function renderAccompNotation(){
+  const el=document.getElementById("accompNotation"); if(!el) return;
+  const pa=document.getElementById("panelAccomp");
+  // In combined-score mode the accompaniment is shown inside #notation, not here.
+  const abc=combinedScore()?null:arrangerAbc(false);
+  if(!abc){
+    el.innerHTML="";
+    if(pa) pa.style.display="none";
+    return;
+  }
+  if(pa) pa.style.display="";
+  const bpr=(tuneChartObj&&tuneChartObj.parsed&&tuneChartObj.parsed.barsPerRow)||4;
+  ABCJS.renderAbc("accompNotation",injectAccompLineBreaks(abc,bpr),{responsive:"resize",add_classes:true});
+}
 function previewAbc(){
-  const qpm=parseInt(tempoEl.value,10)||target.tempoQ||100;
+  const qpm=Math.round((parseInt(tempoEl.value,10)||target.tempoQ||100)*(target.tempoNote||1));
   const melGM=GM[melodyVoice()]??0, accGM=GM[accompVoice()]??0;
   // Transpose to the chosen WRITTEN key with the chosen spelling (so the staff key
   // signature follows the enharmonic toggle). The shift = key + instrument transpose.
@@ -136,19 +255,55 @@ function previewAbc(){
   if(instClef()==="bass") lines=lines.map(l=>/^\s*K:/.test(l)?l.replace(/\s*clef=\S+/i,"")+" clef=bass":l);
   return lines.join("\n");
 }
-function renderTune(userAction){
-  const visualObj=ABCJS.renderAbc("notation",previewAbc(),{responsive:"resize",add_classes:true,clickListener:onNoteClick})[0];
-  setupSynth();
-  if(synthControl&&visualObj){
-    // setTune stores the tune+options and stops any current playback; resetting
-    // isLoaded forces abcjs to REBUILD the audio buffer on the next play. The ABC is
-    // already transposed to the written key, so undo only the instrument offset
-    // (midiTranspose=-instAdjust) to keep the SOUND at concert pitch.
-    synthControl.setTune(visualObj,!!userAction,{soundFontUrl:SF_URL,midiTranspose:-instAdjust(),chordsOff:!chordsOn(),voicesOff:!playTuneOn()}).catch(()=>{});
-    try{ synthControl.isLoaded=false; }catch(e){}
-    loopInMs=loopOutMs=null; markLoopRegion(); applyCycle(); updateCycleHint();   // tempo/key change ⇒ stale region; reset, re-apply cycle
+// When accompaniment is playing (usingArrVisual), cursor events come from the hidden
+// accompaniment SVG. Use pre-computed notationTimings (from visualObj.setTiming()) to
+// find the matching notation note by time, then position the cursor in notation SVG
+// coordinates directly — no currentTrackMilliseconds or AudioContext needed.
+function positionCursorByTime(ms){
+  if(!notationTimings.length) return;
+  const t=ms-introMs;
+  let best=null;
+  for(let i=0;i<notationTimings.length;i++){
+    if(notationTimings[i].milliseconds<=t) best=notationTimings[i]; else break;
   }
-  renderChart();
+  if(!best) return;
+  const svg=document.querySelector("#notation svg"); if(!svg) return;
+  svg.querySelectorAll(".highlight").forEach(e=>e.classList.remove("highlight"));
+  (best.elements||[]).forEach(g=>g.forEach(e=>e.classList.add("highlight")));
+  const c=svg.querySelector(".abcjs-cursor"); if(!c) return;
+  if(best.left!=null){
+    c.setAttribute("x1",best.left-2); c.setAttribute("x2",best.left-2);
+    c.setAttribute("y1",best.top); c.setAttribute("y2",best.top+best.height);
+  }
+}
+function renderTune(userAction){
+  lastPlayMs=0;
+  renderChart(); // must precede arrangerAbc (needs tuneChartObj)
+  // In combined mode render melody+accompaniment together in #notation.
+  const combineNow=combinedScore()&&window.Arranger&&tuneChartObj&&accompStyle()!=="off";
+  const displayAbc=combineNow?arrangerAbc(false,true):null;
+  const visualObj=ABCJS.renderAbc("notation",displayAbc||previewAbc(),{responsive:"resize",add_classes:true,clickListener:onNoteClick})[0];
+  renderAccompNotation();
+  setupSynth();
+  if(synthControl){
+    const arrAbc=window.Arranger&&tuneChartObj&&accompStyle()!=="off"?arrangerAbc(true):null;
+    usingArrVisual=!!arrAbc;
+    // Pre-compute notation timing for cursor positioning — avoids needing currentTrackMilliseconds
+    // (which requires an active AudioContext) and makes the cursor work immediately on first play.
+    if(arrAbc&&visualObj){
+      notationTimings=(visualObj.setTiming()||[]).filter(e=>e.type==="event"&&e.left!=null);
+      const introBarCount=parseInt((taIntro().match(/\d+/)||["0"])[0],10)||0;
+      introMs=introBarCount*(visualObj.millisecondsPerMeasure?visualObj.millisecondsPerMeasure():0);
+    }else{ notationTimings=[]; introMs=0; }
+    let playVisual=visualObj;
+    if(arrAbc) playVisual=ABCJS.renderAbc("taHiddenNotation",arrAbc,{add_classes:true})[0];
+    if(playVisual){
+      currentPlayVisual=playVisual;
+      synthControl.setTune(playVisual,!!userAction,synthOpts(arrAbc)).catch(()=>{});
+      try{ synthControl.isLoaded=false; }catch(e){}
+      loopInMs=loopOutMs=null; markLoopRegion(); applyCycle(); updateCycleHint();
+    }
+  }
 }
 // shared iRealPro-style chord chart (same module the Chord Sheet tool uses). Chords
 // follow the CONCERT key (keyTrans); instrument transposition is the player's part only.
@@ -164,8 +319,8 @@ function renderChart(){
 (function(){ const r=document.getElementById("chartRoman"); if(r) r.addEventListener("change",()=>{ if(tuneChartObj) tuneChartObj.setRoman(chartRomanOn()); }); })();
 collectionSel.addEventListener("change",loadCollection);
 tuneSel.addEventListener("change",loadTune);
-(function(){ const pt=document.getElementById("play-tune"); if(pt) pt.addEventListener("change",()=>renderTune(false)); })();
-(function(){ const ch=document.getElementById("chords"); if(ch) ch.addEventListener("change",()=>renderTune(false)); })();
+(function(){ const pt=document.getElementById("play-tune"); if(pt) pt.addEventListener("change",()=>scheduleReloadAudio()); })();
+(function(){ const ch=document.getElementById("chords"); if(ch) ch.addEventListener("change",()=>scheduleReloadAudio()); })();
 // tempo slider + voice menus now drive the preview too (re-cue on release/change)
 ["tempo","melVoice","accVoice"].forEach(id=>{ const el=document.getElementById(id); if(el) el.addEventListener("change",()=>{ renderTune(false); saveLast(); }); });
 (function(){ const el=document.getElementById("keySel"); if(el) el.addEventListener("change",()=>{ syncKeyUI(); renderTune(false); steerTonality(); saveLast(); }); })();
@@ -180,7 +335,10 @@ tempoEl.addEventListener("change",()=>{ if(window.SessionLog)SessionLog.present(
 (function(){ const ch=document.getElementById("chords"); if(ch) ch.addEventListener("change",()=>{ if(window.SessionLog)SessionLog.present(); }); })();
 
 // ---------- timing ----------
-const secPerQuarter=()=>60/parseInt(tempoEl.value,10);
+// Convert display BPM (slider) to seconds-per-quarter. For compound meters like 6/8
+// the Q: note value is a dotted-quarter (tempoNote=1.5), so 100 dotted-quarter BPM
+// equals 150 quarter BPM — multiply here so all timing stays in quarter-note units.
+const secPerQuarter=()=>60/(parseInt(tempoEl.value,10)*(target.tempoNote||1));
 const secPerLunit=()=>secPerQuarter()*target.lq;
 const COUNT_IN=4, INITIAL_DELAY=0.15;
 const latencyComp=()=>(audioCtx&&(audioCtx.outputLatency||audioCtx.baseLatency))||0;
@@ -322,10 +480,10 @@ function tone(midi,start,dur,gain,type){
 let beatTimers=[];
 function clearBeatTimers(){ beatTimers.forEach(clearTimeout); beatTimers=[]; }
 function flashBeat(){ const d=document.getElementById("beatdot"); d.style.background="#e8eaed"; setTimeout(()=>d.style.background="#2c3038",90); }
-function scheduleMetronome(ctxNow,perfNow,quarters,accentEvery){
-  const spq=secPerQuarter();
-  for(let k=0;k<quarters;k++){
-    const bt=ctxNow+INITIAL_DELAY+k*spq, accent=(k%accentEvery===0);
+function scheduleMetronome(ctxNow,perfNow,beats,accentEvery,spb){
+  if(!spb) spb=secPerQuarter();
+  for(let k=0;k<beats;k++){
+    const bt=ctxNow+INITIAL_DELAY+k*spb, accent=(k%accentEvery===0);
     if(window.MusicAudio) MusicAudio.click(bt,accent,metroVol());
     else tone(accent?84:76,bt,0.05,(accent?0.28:0.15)*metroVol(),"square");
     const delay=perfNow+(bt-ctxNow+latencyComp())*1000-performance.now();
@@ -348,10 +506,44 @@ function scheduleChords(perfStart){
     } else { for(const m of ch.midis) tone(m+kt,cStart,dur,0.10*cv,"triangle"); }
   });
 }
+// Rebuild the synth audio with current volume/checkbox settings without touching the notation.
+// For the accompaniment path the arranger ABC is re-baked (volumes live in %%MIDI vol /
+// dynamics decorations). For the direct tune path the existing visualObj is reused and
+// only the setTune opts (chordsOff / voicesOff) are updated — no notation re-render.
+let reloadAudioTimer=null;
+function reloadAudio(){
+  if(!synthControl||!currentPlayVisual) return;
+  const wasPlaying=previewPlaying, seekMs=lastPlayMs;
+  const arrAbc=window.Arranger&&tuneChartObj&&accompStyle()!=="off"?arrangerAbc(true):null;
+  usingArrVisual=!!arrAbc;
+  const pv=arrAbc?ABCJS.renderAbc("taHiddenNotation",arrAbc,{add_classes:true})[0]:currentPlayVisual;
+  if(!pv) return;
+  currentPlayVisual=pv;
+  if(wasPlaying){
+    // Force go() so the new buffer (with updated volumes) is ready, then seek to the saved
+    // position before starting playback to avoid a stutter from position 0.
+    synthControl.setTune(pv,true,synthOpts(arrAbc)).then(()=>{
+      const d=durMs();
+      if(seekMs>0&&d>0){
+        const frac=Math.max(0,Math.min(0.999,seekMs/d));
+        try{ synthControl.seek(frac); synthControl.setProgress(frac,d); }catch(e){}
+      }
+      try{ synthControl.play(); previewPlaying=true; updatePlayLabel(); }catch(e){}
+    }).catch(()=>{});
+  }else{
+    synthControl.setTune(pv,false,synthOpts(arrAbc)).catch(()=>{});
+    try{ synthControl.isLoaded=false; }catch(e){}
+  }
+}
+function scheduleReloadAudio(){
+  clearTimeout(reloadAudioTimer);
+  reloadAudioTimer=setTimeout(reloadAudio,200);
+}
 // "Hear tune" now drives the abcjs transport (play/pause toggle). Loop/restart/
 // progress/scrub/warp + the cursor live in the #tune-audio widget.
 function hearTune(){ if(collecting||!synthControl)return; try{ synthControl.play(); previewPlaying=!previewPlaying; updatePlayLabel(); }catch(e){} }
 const playBtn=document.getElementById("play"); if(playBtn) playBtn.addEventListener("click",hearTune);
+(function(){ const b=document.getElementById("reloadAudio"); if(b) b.addEventListener("click",()=>reloadAudio()); })();
 document.getElementById("mic").addEventListener("click",enableMic);
 
 // ---------- recording ----------
@@ -382,11 +574,19 @@ document.getElementById("record").addEventListener("click",async()=>{
   // the bar-3 click). anacrusis length comes from the shared TuneChart parser.
   const cp=window.TuneChart?TuneChart.parse(currentAbc):null;
   const anaUnits=cp?cp.anacrusisUnits:0, anaQ=anaUnits*target.lq;   // pickup length, in quarters
-  const barQ=(target.meter.n/target.meter.d)*4;                     // quarters per bar
-  const countInQ=2*barQ, accentEvery=Math.max(1,Math.round(barQ));  // 2 bars of count-off
+  const M=target.meter;
+  const barQ=(M.n/M.d)*4;                                            // quarters per bar
+  const countInQ=2*barQ;                                             // count-in length in quarters
   const perfQAfter=Math.ceil(target.total*target.lq - anaQ);        // quarters from m1 downbeat → end
+  // Compound meters (6/8, 9/8, 12/8): count in dotted-quarter beats (groups of 3 eighths).
+  // 6/8 → 2 beats/bar, dotted-quarter = 1.5 quarter-notes. Simple meters: quarter beats.
+  const isCompound=M.n%3===0&&M.n>=6&&M.d>=8;
+  const beatsPerBar=isCompound?M.n/3:Math.max(1,Math.round(barQ));
+  const spb=isCompound?spq*1.5:spq;                                  // seconds per count-off click
+  const countInBeats=Math.round(countInQ/(isCompound?1.5:1));        // count-in in click units
+  const perfBeats=isCompound?Math.ceil(perfQAfter/1.5):perfQAfter;
   const ctxNow=audioCtx.currentTime, perfNow=performance.now();
-  scheduleMetronome(ctxNow,perfNow,countInQ+perfQAfter,accentEvery);
+  scheduleMetronome(ctxNow,perfNow,countInBeats+perfBeats,beatsPerBar,spb);
   const pickupDelayQ=countInQ-anaQ;                                 // when target onset 0 (the pickup) sounds
   scheduleChords(ctxNow+INITIAL_DELAY+pickupDelayQ*spq);            // play-along accompaniment
   perfT0=perfNow+(INITIAL_DELAY+pickupDelayQ*spq+latencyComp())*1000;
@@ -532,3 +732,45 @@ if(window.Tonality) Tonality.onChange((st,src)=>{
   if(changed){ syncKeyUI(); renderTune(false); }
 });
 SessionLog.begin();
+// ---- arranger controls (populated + wired when arranger.js is loaded) ----
+(function(){
+  if(!window.Arranger) return;
+  const as=document.getElementById("taAccomp"); if(!as) return;
+  Arranger.styles().forEach(s=>{ const o=document.createElement("option"); o.value=s.id; o.textContent=s.label; as.appendChild(o); });
+  const ns=document.getElementById("taNotesel");
+  if(ns) Arranger.notations().forEach(n=>{ const o=document.createElement("option"); o.value=n.id; o.textContent=n.label; ns.appendChild(o); });
+  function refreshAccompUI(){
+    const on=as.value!=="off";
+    ["taNoteselWrap","taTenorWrap","taMixerRow"].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display=on?"":"none"; });
+    const pa=document.getElementById("panelAccomp"); if(pa) pa.style.display=on?"":"none";
+  }
+  // Persist the accompaniment style selection per tune so it's restored on next visit.
+  const STYLE_KEY="taAccompStyles";
+  function saveAccompStyle(){ const id=idOf(currentAbc); if(!id) return;
+    try{ const m=JSON.parse(localStorage.getItem(STYLE_KEY)||"{}"); m[id]=as.value; localStorage.setItem(STYLE_KEY,JSON.stringify(m)); }catch(e){} }
+  window._taRefreshAccompUI=refreshAccompUI;
+  as.addEventListener("change",()=>{ saveAccompStyle(); refreshAccompUI(); renderTune(false); });
+  if(ns) ns.addEventListener("change",()=>{ renderTune(false); });
+  const tc=document.getElementById("taTenorclef");
+  if(tc) tc.addEventListener("change",()=>{ renderTune(false); });
+  ["melody","chords","bass","drums"].forEach(part=>{
+    const el=document.getElementById("ta-vol-"+part); if(!el) return;
+    el.addEventListener("input",()=>{ const v=document.getElementById("ta-vol-"+part+"-v"); if(v) v.textContent=el.value; });
+    el.addEventListener("change",()=>scheduleReloadAudio());
+  });
+  const sd=document.getElementById("taShowDrums");
+  if(sd) sd.addEventListener("change",()=>renderAccompNotation());
+  const cb=document.getElementById("taCombined");
+  if(cb) cb.addEventListener("change",()=>renderTune(false));
+  const rp=document.getElementById("taRepeats");
+  if(rp) rp.addEventListener("change",()=>renderTune(false));
+  const it=document.getElementById("taIntro");
+  if(it) it.addEventListener("change",()=>renderTune(false));
+  refreshAccompUI();
+  // Restore the saved style for the tune that was already loaded during init — the IIFE runs
+  // after loadTune(), so options weren't populated yet when loadTune()'s restore code ran.
+  (function(){ const id=idOf(currentAbc); if(!id) return;
+    try{ const m=JSON.parse(localStorage.getItem(STYLE_KEY)||"{}"); const saved=m[id];
+      if(saved&&[...as.options].some(o=>o.value===saved)){ as.value=saved; refreshAccompUI(); renderTune(false); }
+    }catch(e){} })();
+})();

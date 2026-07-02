@@ -64,12 +64,13 @@
   // `drum` (optional) = a per-eighth drum cell overriding the default backbeat. We can't layer
   // (one %%MIDI drum line), so genre feels INTERLEAVE — ride/hat fill the gaps between accents.
   var PATTERNS = [
-    { id:"folk",       label:"Folk — alternating bass", cell:"fc" },
-    { id:"oompah",     label:"Boom-chick (oom-pah)",    cell:"bc" },
-    { id:"driving8",   label:"Driving 8ths",            cell:"cc",  drum:"khshkhsh" },
-    { id:"offbeat",    label:"Offbeat chords (ska)",    cell:"zc",  drum:"zhzhkhzh" },  // reggae one-drop: kick on 3
-    { id:"bassroot",   label:"Bass line (roots)",       cell:"fz" },
-    { id:"arpcell",    label:"Arpeggio (root–5th)",     cell:"gi",  arp:true },
+    { id:"block",      label:"Block chords (sustained)" },                              // no cell/gchord → falls through to blockSlots: held whole-bar chords
+    { id:"folk",       label:"Folk — alternating bass", cell:"fc",  cellComp:"fcc" },   // 6/8: bass·chord·chord per dotted-quarter
+    { id:"oompah",     label:"Boom-chick (oom-pah)",    cell:"bc",  cellComp:"bcc" },
+    { id:"driving8",   label:"Driving 8ths",            cell:"cc",  cellComp:"ccc", drum:"khshkhsh" },
+    { id:"offbeat",    label:"Offbeat chords (ska)",    cell:"zc",  cellComp:"zcc", drum:"zhzhkhzh" },  // reggae one-drop: kick on 3
+    { id:"bassroot",   label:"Bass line (roots)",       cell:"fz",  cellComp:"fzz" },   // 6/8: bass·rest·rest per beat
+    { id:"arpcell",    label:"Arpeggio (root–5th)",     cell:"gi",  cellComp:"ghi", arp:true },  // 6/8: root·3rd·5th
     { id:"charleston", label:"Jazz Charleston (4/4)",   meter:"4/4", gchord:"czczzzzz", dur:[2,0,1,0,0,0,0,0], drum:"rzrrrzrr" },  // swing ride
     { id:"bossa",      label:"Bossa nova (4/4)",        meter:"4/4", gchord:"fczzzfcz", drum:"xrrxrrxr" },                          // ride + side-stick tresillo
     { id:"tango",      label:"Tango (4/4)",             meter:"4/4", gchord:"fzccfzcz", dur:[2,0,1,1,2,0,1,0], drum:"khhkhhkh" },   // habanera kick tresillo
@@ -77,7 +78,7 @@
     { id:"viennese",   label:"Viennese waltz (3/4)",    meter:"3/4", gchord:"fczczc",   dur:[2,1,1,1,1,1] },
     { id:"jazzwaltz",  label:"Jazz waltz (3/4)",        meter:"3/4", gchord:"fzczzc",   dur:[2,0,1,0,0,1],     drum:"rzrrrz" }      // swung ride in 3
   ];
-  PATTERNS.forEach(function (p){ STYLES[p.id] = { label:p.label, cell:p.cell || null, gchord:p.gchord || null, meter:p.meter || null, dur:p.dur || null, arp:!!p.arp, drum:p.drum || null }; });
+  PATTERNS.forEach(function (p){ STYLES[p.id] = { label:p.label, cell:p.cell || null, cellComp:p.cellComp||null, gchord:p.gchord || null, meter:p.meter || null, dur:p.dur || null, arp:!!p.arp, drum:p.drum || null }; });
 
   // ---- soundfont path: render the styled accompaniment to ABC (one comping voice:
   // bass note(s) + close triad as chord-stacks), so it plays through abcjs's soundfont
@@ -187,13 +188,28 @@
     return out;
   }
   function isFullBar(bar, M){ return Math.abs((bar.lengthUnits || M.upb) * M.e8 - M.barE) < 0.5; }
-  // tile a cell across the bar one token per eighth (meter-generic — any meter, incl. 6/8)
+  // tile a cell across the bar, one token per eighth for simple meters; for compound meters
+  // (6/8, 9/8…) use cellComp — each element covers one eighth WITHIN a dotted-quarter beat,
+  // so 3-element "fcc" gives bass·chord·chord per beat rather than the quarter-note tiling.
   function barHitsCell(bar, st, M, barLen){
     if (!isFullBar(bar, M)) return { barLen:barLen, slots: blockSlots(bar, M, barLen) };
-    var cell = st.cell, n = cell.length, ons = chordOnsetsE(bar, M), slots = [];
-    for (var pos=0; pos<barLen; pos++){
-      var f = TOK[cell[pos % n]]; if (!f) continue;
-      var sym = chordSymAtE(ons, pos); if (!sym) continue;
+    var ons = chordOnsetsE(bar, M), slots = [], pos, f, sym;
+    var isComp = M.d >= 8 && M.beats % 3 === 0 && M.beats >= 6;
+    if (isComp){
+      var cc = st.cellComp || st.cell, ccLen = cc.length;
+      for (pos=0; pos<barLen; pos++){
+        var j = pos % 3;          // offset within the dotted-quarter beat (0, 1 or 2)
+        if (j >= ccLen) continue; // cell shorter than 3 → implicit rest on remaining eighths
+        f = TOK[cc[j]]; if (!f) continue;
+        sym = chordSymAtE(ons, pos); if (!sym) continue;
+        slots.push(mkSlot(f, pos, 1, sym));
+      }
+      return { barLen:barLen, slots:slots };
+    }
+    var cell = st.cell, n = cell.length;
+    for (pos=0; pos<barLen; pos++){
+      f = TOK[cell[pos % n]]; if (!f) continue;
+      sym = chordSymAtE(ons, pos); if (!sym) continue;
       slots.push(mkSlot(f, pos, 1, sym));
     }
     return { barLen:barLen, slots:slots };
@@ -231,21 +247,26 @@
   // emit one voice's ABC for a bar from the slots this voice is active in. A note rings for
   // its own length but never past the next hit in this voice (so per-slot durations give
   // staccato/legato, and patterns with gaps fill with rests). Works for tiling + pattern slots.
-  function emitVoice(hits, activeFn, tokFn){
+  function emitVoice(hits, activeFn, tokFn, M){
     if (!hits.slots.length) return "z" + hits.barLen;
     var own = hits.slots.filter(activeFn).sort(function (a,b){ return a.pos - b.pos; });
     if (!own.length) return "z" + hits.barLen;
     var toks = [], cur = 0;
     own.forEach(function (sl, i){
-      if (sl.pos > cur) toks.push("z" + (sl.pos - cur));
+      if (sl.pos > cur) toks.push({t:"z"+(sl.pos-cur), p:cur});
       var avail = ((i+1 < own.length) ? own[i+1].pos : hits.barLen) - sl.pos;
       var play = Math.max(1, Math.min(sl.dur, avail));
-      toks.push(tokFn(sl, play));
-      if (play < avail) toks.push("z" + (avail - play));
+      toks.push({t:tokFn(sl, play), p:sl.pos});
+      if (play < avail) toks.push({t:"z"+(avail-play), p:sl.pos+play});
       cur = sl.pos + avail;
     });
-    if (cur < hits.barLen) toks.push("z" + (hits.barLen - cur));
-    return toks.join(" ");
+    if (cur < hits.barLen) toks.push({t:"z"+(hits.barLen-cur), p:cur});
+    // Beam tokens within the same beat group (no space); space at beat boundary so abcjs
+    // auto-beams in groups of 3 (compound: 6/8) or 2 (simple: 4/4, 3/4).
+    var bg = M ? (M.d >= 8 && M.beats % 3 === 0 && M.beats >= 6 ? M.beatE * 3 : M.beatE) : 2;
+    return toks.map(function(tk, i){
+      return (i > 0 && Math.floor(tk.p/bg) === Math.floor(toks[i-1].p/bg) ? "" : (i > 0 ? " " : "")) + tk.t;
+    }).join("").trim();
   }
 
   // ---- drums: played on MIDI channel 10 via %%MIDI drum (adds NO staff) ----
@@ -270,9 +291,11 @@
   function dynScaled(role, sl, M, frac){ return nearestDyn(DYNV[dynFor(role, sl, M)] * frac); }
   function volFrac(opts, part){ var v = opts.vol && opts.vol[part]; return (v == null ? 100 : v) / 100; }
   function drumGroove(styleId, M){ var st = STYLES[styleId];
-    if (st && st.drum) return st.drum;                          // per-style override
-    if (M.beats === 3) return "kzhzhz";                         // waltz: kick on 1, hats on 2 & 3
-    return "khsh"; }                                            // default kick/hat/snare/hat backbeat
+    if (st && st.drum) return st.drum;                                    // per-style override
+    var isComp = M.d >= 8 && M.beats % 3 === 0 && M.beats >= 6;
+    if (isComp) return "khhshh";                                          // compound duple: kick·hat·hat·snare·hat·hat
+    if (M.beats === 3) return "kzhzhz";                                   // waltz: kick on 1, hats on 2 & 3
+    return "khsh"; }                                                      // default kick/hat/snare/hat backbeat
   function drumHeader(M, styleId, frac){
     frac = frac == null ? 1 : frac;
     var g = drumGroove(styleId, M), pat = "", notes = [], vels = [];
@@ -281,12 +304,144 @@
     if (!notes.length) return [];
     return ["%%MIDI drumon", "%%MIDI drum " + pat + " " + notes.join(" ") + " " + vels.join(" ")];
   }
+  // Percussion notation staff for the drum groove (display only; sound comes from %%MIDI drum).
+  // Cymbal-family hits (h/o/r/c) → 'e' (above middle line); kick/snare → 'B' (middle line).
+  // Beams respect the meter: groups of 2 for simple, groups of 3 for compound.
+  // Groove is computed per bar so inline meter changes (e.g. 3/4→2/2) render correctly.
+  function drumVoiceLines(M, styleId, bars){
+    var CYM = { h:1, o:1, r:1, c:1 };
+    var isComp = M.d >= 8 && M.beats % 3 === 0 && M.beats >= 6;
+    var bg = isComp ? M.beatE * 3 : M.beatE;
+    function grooveFor(len){
+      if (len === M.barE) return drumGroove(styleId, M);
+      var beats = Math.max(1, Math.round(len / M.beatE));
+      return drumGroove(styleId, { beats:beats, d:M.d, beatE:M.beatE, barE:len });
+    }
+    function barBody(bar){
+      var len = barLenOf(bar, M), toks = [], i;
+      var g = grooveFor(len);
+      for (i=0; i<len; i++) toks.push({ t: g[i % g.length] === "z" ? "z1" : (CYM[g[i % g.length]] ? "e1" : "B1"), p:i });
+      return toks.map(function(tk, i){
+        return (i > 0 && Math.floor(tk.p/bg) !== Math.floor(toks[i-1].p/bg) ? " " : "") + tk.t;
+      }).join("").trim();
+    }
+    return ['V:drums clef=perc name="Dr."', bars.map(barBody).join(" | ") + " |]"];
+  }
+  // Build a voice body string; when bars have varying lengths (inline meter change), insert
+  // an updated %%MIDI drum line before each new-length group so audio adapts per section.
+  function voiceBodyMixed(allBars, barFn, M, styleId, drF){
+    // Only treat a different bar length as a genuine meter change when it is at least 2 beats
+    // long. Single-beat pickup bars and Z-rest artifacts are shorter and must be ignored.
+    var minLen = M.beatE * 2;
+    var hasChange = allBars.some(function(b){ var l = barLenOf(b, M); return l !== M.barE && l >= minLen; });
+    if (!hasChange || !drF || drF <= 0) return allBars.map(barFn).join(" | ") + " |]";
+    var lines = [], curLen = M.barE, curBars = [], drumChanged = false;
+    function flush(){ if (curBars.length){ lines.push({ type:"bars", body:curBars.join(" | ") }); curBars = []; } }
+    allBars.forEach(function(bar, barIdx){
+      var len = barLenOf(bar, M);
+      if (len !== curLen){
+        flush();
+        if (len >= minLen) {  // skip short bars (pickups, Z artifacts)
+          if (len !== M.barE) {
+            var beats = Math.max(1, Math.round(len / M.beatE));
+            var dh = drumHeader({ beats:beats, d:M.d, beatE:M.beatE, barE:len }, styleId, drF);
+            if (dh.length >= 2) { lines.push({ type:"drum", body:dh[1] }); drumChanged = true; }
+          } else if (drumChanged) {
+            // Returned to initial meter; restore original drum pattern
+            var dh2 = drumHeader(M, styleId, drF);
+            if (dh2.length >= 2) lines.push({ type:"drum", body:dh2[1] });
+            drumChanged = false;
+          }
+        }
+        curLen = len;
+      }
+      curBars.push(barFn(bar, barIdx));
+    });
+    flush();
+    var barGroupIdxs = lines.map(function(l,i){ return l.type === "bars" ? i : -1; }).filter(function(i){ return i >= 0; });
+    barGroupIdxs.forEach(function(idx, k){
+      var trail = k === barGroupIdxs.length - 1 ? " |]" : " |";
+      lines[idx] = { type:"bars", body:lines[idx].body + trail };
+    });
+    return lines.map(function(l){ return l.body; }).join("\n");
+  }
   // optional melody voice (playback only): the tune line on its own channel, set by %%MIDI vol.
   // opts.melody = { body:"<L:1/8 tokens + barlines>", program:<gm>, vol:<0-100> }
   function melodyVoiceLines(opts){
     var m = opts.melody; if (!m || !m.body || volFrac(opts, "melody") <= 0) return [];
     return ['V:Mel clef=treble', '%%MIDI program ' + (m.program || 0),
             '%%MIDI vol ' + Math.max(1, Math.round((m.vol == null ? 100 : m.vol))), m.body];
+  }
+
+  // Expand bars into the sequence of written-bar indices that playback visits.
+  // Mirrors tune-chart.js computePlayOrder: handles |: … :| (incl. implicit start-of-tune),
+  // :: , and skips first-ending bars on the repeat pass.
+  function computePlayOrder(bars){
+    var order = [], n = bars.length, startStack = [0];
+    for (var i = 0; i < n; i++){
+      var b = bars[i];
+      if (b.left === "repeat-open") startStack.push(i);
+      order.push(i);
+      if (b.right === "repeat-close" || b.right === "repeat-close-open"){
+        var start = startStack[startStack.length - 1];
+        for (var j = start; j <= i; j++){ if (bars[j].ending === 1) continue; order.push(j); }
+        if (startStack.length > 1) startStack.pop();
+      }
+    }
+    return order;
+  }
+
+  // Propagate the most recent chord into bars that carry no chord annotation.
+  // An explicit N.C. chord (c.nc===true) silences carry-over and resets the running chain.
+  function barsWithCarryover(bars){
+    var last = [], result = [];
+    bars.forEach(function(bar){
+      var hasNc = bar.chords.some(function(c){ return c.nc; });
+      if (hasNc)  { last = []; result.push(bar); return; }
+      if (bar.chords.length){ last = bar.chords; result.push(bar); return; }
+      if (!last.length){ result.push(bar); return; }
+      var nb = {}; for (var k in bar) if (Object.prototype.hasOwnProperty.call(bar,k)) nb[k]=bar[k];
+      nb.chords = last; result.push(nb);
+    });
+    return result;
+  }
+
+  // ---- intro + repeat helpers ----
+  // Build the full bar sequence: optional intro section + cbars repeated N times.
+  //   opts.repeats (int ≥ 1)  — how many times to loop the whole chart
+  //   opts.intro   (string)   — "none"|"count-in-1"|"count-in-2"|"last-2"|"last-4"
+  function buildAllBars(cbars, M, opts){
+    var repeats = Math.max(1, parseInt(opts.repeats, 10) || 1);
+    var intro = opts.intro || "none";
+    var restBar = { chords: [], lengthUnits: M.upb };   // all-rest bar (no chords)
+    var introBars = [];
+    if      (intro === "count-in-1") introBars = [restBar];
+    else if (intro === "count-in-2") introBars = [restBar, restBar];
+    else if (intro === "last-2")     introBars = cbars.slice(Math.max(0, cbars.length - 2));
+    else if (intro === "last-4")     introBars = cbars.slice(Math.max(0, cbars.length - 4));
+    var order = computePlayOrder(cbars);
+    var repeated = [];
+    for (var i = 0; i < repeats; i++) for (var k = 0; k < order.length; k++) repeated.push(cbars[order[k]]);
+    return introBars.concat(repeated);
+  }
+  // Return a copy of opts where opts.melody.body is extended with rest bars for the
+  // intro and repeated once per cycle, so it stays in sync with allBars.
+  function buildPlayOpts(opts, allBars, cbars, M){
+    if (!opts.melody || !opts.melody.body) return opts;
+    var repeats = Math.max(1, parseInt(opts.repeats, 10) || 1);
+    var order = computePlayOrder(cbars);
+    var introLen = allBars.length - order.length * repeats;
+    if (introLen === 0 && repeats === 1 && order.length === cbars.length) return opts;
+    var restStr = "z" + M.barE;
+    var melBars = opts.melody.body.split("|").map(function(s){ return s.trim(); }).filter(Boolean);
+    var full = [];
+    for (var i = 0; i < introLen; i++) full.push(restStr);
+    for (var r = 0; r < repeats; r++) for (var k = 0; k < order.length; k++) full.push(melBars[order[k]] || restStr);
+    var newMel = { body: full.join(" | "), program: opts.melody.program, vol: opts.melody.vol };
+    var newOpts = {};
+    for (var p in opts) if (Object.prototype.hasOwnProperty.call(opts, p)) newOpts[p] = opts[p];
+    newOpts.melody = newMel;
+    return newOpts;
   }
 
   // ---- notation: PIANO grand staff (RH = triad, LH = bass), styled rhythm ----
@@ -301,16 +456,23 @@
       function (sl, dur){ var m = chordMidis(sl.sym, transpose); if (!m) return "z" + dur; var sm = chordSmap(sl.sym);
         if (sl.arp != null){ var tone = m.voicing[sl.arp % m.voicing.length] + (sl.oct || 0); return dpre("arp", sl, chF) + noteTok(tone, sm, ctx, ms) + dur; }
         var notes = m.voicing.map(function (x){ return noteTok(x, sm, ctx, ms); });
-        return dpre("chord", sl, chF) + (notes.length > 1 ? "[" + notes.join("") + "]" : notes[0]) + dur; }); }
+        return dpre("chord", sl, chF) + (notes.length > 1 ? "[" + notes.join("") + "]" : notes[0]) + dur; }, M); }
     function lh(bar){ var ms = {}; return emitVoice(barHits(bar, opts.style, M),
       function (sl){ return baF > 0 && sl.bass; },
       function (sl, dur){ var m = chordMidis(sl.sym, transpose); if (!m) return "z" + dur;
-        return dpre("bass", sl, baF) + noteTok(m.bass, chordSmap(sl.sym), ctx, ms) + dur; }); }
-    var rhBody = parsed.bars.map(rh).join(" | ") + " |]", lhBody = parsed.bars.map(lh).join(" | ") + " |]";
-    var head = ["X:1","T:Piano","M:" + M.meterStr,"L:1/8","Q:1/4=" + tempo,"%%score {1 2}","%%MIDI program " + prog];
+        return dpre("bass", sl, baF) + noteTok(m.bass, chordSmap(sl.sym), ctx, ms) + dur; }, M); }
+    var cbars = barsWithCarryover(parsed.bars);
+    var allBars = buildAllBars(cbars, M, opts);
+    var pOpts = buildPlayOpts(opts, allBars, cbars, M);
+    var drumDisp = opts.showDrums && !opts.dynamics && opts.drums;
+    var rhBody = voiceBodyMixed(allBars, rh, M, opts.style, drF);
+    var lhBody = voiceBodyMixed(allBars, lh, M, opts.style, drF);
+    var head = ["X:1","T:Piano","M:" + M.meterStr,"L:1/8","Q:1/4=" + tempo,
+                drumDisp ? "%%score {1 2} drums" : "%%score {1 2}", "%%MIDI program " + prog];
     if (opts.dynamics) head.push("%%MIDI nobeataccents");        // let our dynamics fully control velocity
     if (opts.drums && drF > 0) head = head.concat(drumHeader(M, opts.style, drF));
-    var voices = melodyVoiceLines(opts).concat(['V:1 clef=treble name="R.H."', rhBody, 'V:2 clef=bass name="L.H."', lhBody]);
+    var voices = melodyVoiceLines(pOpts).concat(['V:1 clef=treble name="R.H."', rhBody, 'V:2 clef=bass name="L.H."', lhBody]);
+    if (drumDisp) voices = voices.concat(drumVoiceLines(M, opts.style, allBars));
     return head.concat(["K:" + (ctx ? ctx.keyAbc : "C")]).concat(voices).join("\n");
   }
 
@@ -318,8 +480,11 @@
   function toAbcSATB(parsed, opts){
     var M = metrics(parsed), transpose = opts.transpose || 0, tempo = opts.tempo || parsed.tempoQ || 100;
     var ctx = keyContext(parsed, transpose);
+    var cbars = barsWithCarryover(parsed.bars);
+    var allBars = buildAllBars(cbars, M, opts);
+    var pOpts = buildPlayOpts(opts, allBars, cbars, M);
     var flat = [], barOns = [];                                   // voice-leading runs over chord CHANGES
-    parsed.bars.forEach(function (bar){ var arr = []; chordOnsetsE(bar, M).forEach(function (c){ arr.push({ onsetE:c.onsetE, idx:flat.length, sym:c.sym }); flat.push(c.sym); }); barOns.push(arr); });
+    allBars.forEach(function (bar){ var arr = []; chordOnsetsE(bar, M).forEach(function (c){ arr.push({ onsetE:c.onsetE, idx:flat.length, sym:c.sym }); flat.push(c.sym); }); barOns.push(arr); });
     var voicings = global.SATB ? SATB.voice(flat, parsed.keyPc) : flat.map(function (){ return null; });
     function voicingAt(bi, pos){ var arr = barOns[bi]; if (!arr.length) return null; var e = arr[0];
       for (var k=0;k<arr.length;k++){ if (arr[k].onsetE <= pos) e = arr[k]; } return { v: voicings[e.idx], sym: e.sym }; }
@@ -330,7 +495,7 @@
         function (sl, dur){ var vv = voicingAt(bi, sl.pos); if (!vv || !vv.v) return "z" + dur;
           var sm = (ctx && !transpose) ? chordSpellingMap(vv.sym) : null;
           var pre = opts.dynamics ? "!" + dynScaled(isBass ? "bass" : "chord", sl, M, frac) + "!" : "";
-          return pre + noteTok(vv.v[role] + transpose + (octShift || 0), sm, ctx, ms) + dur; }); }
+          return pre + noteTok(vv.v[role] + transpose + (octShift || 0), sm, ctx, ms) + dur; }, M); }
     var bassTenor = opts.tenorClef === "bass";   // treble-8 (vocal tenor, sounds at pitch) or bass clef
     var defs = [ { nm:"S", role:"s", clef:"treble", oct:0, mt:0 }, { nm:"A", role:"a", clef:"treble", oct:0, mt:0 },
       bassTenor ? { nm:"T", role:"t", clef:"bass", oct:0, mt:0 } : { nm:"T", role:"t", clef:"treble-8", oct:12, mt:-12 },
@@ -339,10 +504,11 @@
     if (opts.dynamics) lines.push("%%MIDI nobeataccents");
     if (opts.drums && drF > 0) lines = lines.concat(drumHeader(M, opts.style, drF));
     lines.push("K:" + (ctx ? ctx.keyAbc : "C"));
-    lines = lines.concat(melodyVoiceLines(opts));
+    lines = lines.concat(melodyVoiceLines(pOpts));
     defs.forEach(function (vd, i){ lines.push('V:' + (i+1) + ' clef=' + vd.clef + ' name="' + vd.nm + '"');
       if (vd.mt) lines.push("%%MIDI transpose " + vd.mt);
-      lines.push(parsed.bars.map(function (bar, bi){ return voiceBody(bi, bar, vd.role, vd.oct, vd.role === "b"); }).join(" | ") + " |]"); });
+      lines.push(voiceBodyMixed(allBars, function(bar, bi){ return voiceBody(bi, bar, vd.role, vd.oct, vd.role === "b"); }, M, opts.style, drF)); });
+    if (opts.showDrums && !opts.dynamics && opts.drums) lines = lines.concat(drumVoiceLines(M, opts.style, allBars));
     return lines.join("\n");
   }
 
