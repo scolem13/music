@@ -718,7 +718,7 @@
       if (!el) return;
       var abc = window.Arranger.toAbc(makeParsed(id), {
         style: id, notation: 'piano', tempo: 110, repeats: 1,
-        intro: 'none', program: 4, dynamics: false, drums: false
+        intro: 'none', program: 4, dynamics: false, drums: true, articulation: 0.5
       });
       if (!abc) {
         el.innerHTML = '<span class="as-notation-msg">No notation available for this meter.</span>';

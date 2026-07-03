@@ -75,15 +75,19 @@
       return t && !/^[A-Za-z]:/.test(t) && !/^%/.test(t); }).join(" ");
 
     var bars = [], pendingLeft = "plain", pendingEnding = null;
-    function newBar(){ return { chords:[], left:pendingLeft, right:"plain", ending:pendingEnding, lengthUnits:0, meter:{ n:meter.n, d:meter.d } }; }
+    function newBar(){ return { chords:[], left:pendingLeft, right:"plain", ending:pendingEnding, lengthUnits:0, meter:{ n:meter.n, d:meter.d }, groupOnsets:[] }; }
     var cur = newBar(), content = false, pos = 0;
     var lastDur = 0, brokenMul = 1, tupletLeft = 0, tupletMul = 1;
+    // groupBoundary: a space after a note means the next note starts a new beaming group.
+    // Used to detect asymmetric meter sub-groupings (e.g. 3+2+2 in 7/8).
+    var lastWasNote = false, groupBoundary = true;
 
     function flush(right){
       if (!content && !cur.chords.length){ if (right === "repeat-open") pendingLeft = "repeat-open"; return; }
       cur.right = right; cur.lengthUnits = pos; bars.push(cur);
       pendingLeft = (right === "repeat-close-open") ? "repeat-open" : "plain";
       pendingEnding = null; cur = newBar(); content = false; pos = 0; lastDur = 0; brokenMul = 1; tupletLeft = 0; tupletMul = 1;
+      groupBoundary = true; lastWasNote = false;
     }
     function applyMods(dur){
       if (tupletLeft > 0){ dur *= tupletMul; tupletLeft--; if (tupletLeft === 0) tupletMul = 1; }
@@ -94,13 +98,21 @@
     var i = 0;
     while (i < music.length){
       var c = music[i];
-      if (c === ' '){ i++; continue; }
+      if (c === ' '){ if (lastWasNote) groupBoundary = true; lastWasNote = false; i++; continue; }
       if (c === '"'){ var e = music.indexOf('"', i+1); if (e < 0) break;
         var s = music.slice(i+1, e).trim();
         if (/^[A-G]/.test(s)) { cur.chords.push({ sym:s, onset:pos }); content = true; }
         else if (/^n\.?c\.?$/i.test(s)) { cur.chords.push({ sym:"N.C.", onset:pos, nc:true }); content = true; }
         i = e+1; continue; }
-      if (c === '!'){ var e2 = music.indexOf('!', i+1); if (e2 >= 0){ i = e2+1; continue; } }
+      if (c === '!'){ var e2 = music.indexOf('!', i+1); if (e2 >= 0){
+        var dec = music.slice(i+1, e2);
+        if (dec === 'fine' || dec === 'segno' || dec === 'coda' ||
+            dec === 'D.C.' || dec === 'D.S.' ||
+            dec === 'D.C.alfine' || dec === 'D.S.alfine' ||
+            dec === 'D.C.alcoda' || dec === 'D.S.alcoda'){
+          cur.decors = cur.decors || []; cur.decors.push(dec);
+        }
+        i = e2+1; continue; } }
       if (c === '{'){ var e3 = music.indexOf('}', i+1); if (e3 >= 0){ i = e3+1; continue; } } // grace notes: 0 dur
       if (c === '>'){ pos += 0.5 * lastDur; brokenMul = 0.5; i++; continue; }                 // broken rhythm A>B
       if (c === '<'){ pos -= 0.5 * lastDur; brokenMul = 1.5; i++; continue; }                 // broken rhythm A<B
@@ -120,26 +132,42 @@
             cur.meter = { n:inM.n, d:inM.d };
           }
           i = ef+1; continue; } }
+        // volta bracket [1 or [2 — mark the current bar as that ending
+        if (/^[12]/.test(music[i+1])){ flush("plain"); cur.ending = parseInt(music[i+1], 10); i += 2; continue; }
         var eg = music.indexOf(']', i+1);
-        if (eg >= 0){ var d = readDuration(music, eg+1); var dur = applyMods(d.dur); pos += dur; lastDur = dur; content = true; i = d.next; continue; }
+        if (eg >= 0){ if (groupBoundary){ cur.groupOnsets.push(pos); groupBoundary = false; }
+          var d = readDuration(music, eg+1); var dur;
+          if (d.next === eg+1){
+            // No explicit duration after ] — derive from the first note's duration inside the bracket.
+            // [c2e2] → the '2' belongs to each inner note (duration 2), not after ].
+            var inner = music.slice(i+1, eg);
+            var nm2 = /(?:\^\^|\^|__|_|=)?[A-Ga-gxzZ][,']*/.exec(inner);
+            if (nm2){ var di = readDuration(inner, nm2.index + nm2[0].length); dur = applyMods(di.dur); }
+            else { dur = applyMods(1); }
+          } else { dur = applyMods(d.dur); }
+          pos += dur; lastDur = dur; content = true; lastWasNote = true; i = d.next; continue; }
       }
       // barlines (longest match first)
       if (music.substr(i,2) === "|]"){ flush("final"); i += 2; continue; }
       if (music.substr(i,2) === ":|" && music[i+2] === ":"){ flush("repeat-close-open"); i += 3; continue; }
+      if (music.substr(i,2) === ":|" && /[12]/.test(music[i+2])){ flush("repeat-close"); cur.ending = parseInt(music[i+2], 10); i += 3; continue; }
       if (music.substr(i,2) === "::"){ flush("repeat-close-open"); i += 2; continue; }
       if (music.substr(i,2) === ":|"){ flush("repeat-close"); i += 2; continue; }
       if (music.substr(i,2) === "|:"){ flush("plain"); cur.left = pendingLeft = "repeat-open"; i += 2; continue; } // also tag the already-created next bar
       if (music.substr(i,2) === "||"){ flush("double"); i += 2; continue; }
       if (music.substr(i,2) === "[|"){ flush("double"); i += 2; continue; }
+      // volta pipe |1 or |2 — flush current bar and mark the new bar as that ending
+      if (c === '|' && /[12]/.test(music[i+1])){ flush("plain"); cur.ending = parseInt(music[i+1], 10); i += 2; continue; }
       if (c === '|'){ flush("plain"); i += 1; continue; }
       // note: [accidental][letter][octave marks][duration]
       var nm = /^(\^\^|\^|__|_|=)?([A-Ga-gxzZ])([,']*)/.exec(music.slice(i));
       if (nm){
+        if (groupBoundary && nm[2] !== 'z' && nm[2] !== 'Z'){ cur.groupOnsets.push(pos); groupBoundary = false; }
         var dd = readDuration(music, i + nm[0].length);
         // Z = multi-bar rest: Z1 = 1 bar, Z2 = 2 bars, Z alone = 1 bar
         var dur2 = applyMods(nm[2] === 'Z' ? unitsPerBar * dd.dur : dd.dur);
         pos += dur2; lastDur = dur2;                          // octave marks (nm[2]) don't affect duration
-        content = true; i = dd.next; continue;
+        content = true; lastWasNote = (nm[2] !== 'z' && nm[2] !== 'Z'); i = dd.next; continue;
       }
       i++;                                                    // decorations / stray chars
     }
@@ -160,6 +188,12 @@
     var brkM = /^%%\s*score-breaks\s+([\d,\s]+)/m.exec(abc);
     var lineBreaks = brkM ? brkM[1].split(",").map(function(x){ return parseInt(x,10); }).filter(function(x){ return x > 0; }) : null;
 
+    // Detect beat grouping for asymmetric meters (5/8, 7/8, etc.) by reading the
+    // beam-group boundaries that were recorded during note parsing above.
+    // For symmetric meters (≤4 beats, compound) we leave this null.
+    var isCompM = meter.d >= 8 && meter.n % 3 === 0 && meter.n >= 6;
+    var beatGrouping = (meter.n > 4 && !isCompM) ? detectGroupingFromBars(bars, unitsPerBar) : null;
+
     return {
       title: field(abc, "T") || "Untitled", composer: field(abc, "C"),
       meterStr: field(abc, "M") || "", meterN: meter.n, meterD: meter.d,
@@ -167,24 +201,87 @@
       unitsPerBar: unitsPerBar, unitsPerBeat: unitsPerBeat, beatsPerBar: meter.n,
       anacrusis: anacrusis, anacrusisUnits: anacrusisUnits,
       barsPerRow: bprM ? parseInt(bprM[1], 10) : 0, lineBreaks: lineBreaks,
-      bars: bars, abc: abc, playOrder: computePlayOrder(bars)
+      bars: bars, abc: abc, playOrder: computePlayOrder(bars), beatGrouping: beatGrouping
     };
   }
 
-  // Expand repeats into the sequence of WRITTEN-bar indices that playback visits, so a
-  // measure-by-measure cursor (which follows the expanded timeline) can map each step
-  // back to the right written bar. Handles |: … :| (incl. an implicit start-of-tune
-  // open), :: , and skips 1st-ending bars on the repeat pass.
+  // Analyse beam-group boundaries recorded in bar.groupOnsets to determine the sub-beat
+  // grouping of an asymmetric meter (e.g. [3,2,2] for 7/8 beamed as GGG d2 dd).
+  // Returns an array of L-unit group sizes, or null if no consistent pattern is found.
+  function detectGroupingFromBars(bars, unitsPerBar){
+    var countMap = {};
+    bars.forEach(function(b){
+      if (!b.groupOnsets || !b.groupOnsets.length) return;
+      if (Math.abs(b.lengthUnits - unitsPerBar) > 0.5) return; // skip anacrusis / final partial bar
+      var onsets = b.groupOnsets, groups = [];
+      for (var k = 0; k < onsets.length; k++){
+        var end = k + 1 < onsets.length ? onsets[k+1] : b.lengthUnits;
+        groups.push(Math.round((end - onsets[k]) * 100) / 100); // round to avoid float noise
+      }
+      var key = groups.join(',');
+      countMap[key] = (countMap[key] || 0) + 1;
+    });
+    var keys = Object.keys(countMap);
+    if (!keys.length) return null;
+    var best = keys.sort(function(a, b){ return countMap[b] - countMap[a]; })[0];
+    return best.split(',').map(Number);
+  }
+
+  // Expand repeats + D.C./D.S./Fine into the sequence of written-bar indices that playback visits.
+  // Handles |: … :| (incl. implicit start-of-tune open), ::, 1st/2nd volta, and jump directives:
+  //   !fine!         — marks the stopping point for D.C./D.S. al Fine jumps
+  //   !segno!        — marks the jump-back target for D.S. variants
+  //   !D.C.alfine!   — jump back to bar 0, stop at Fine
+  //   !D.S.alfine!   — jump back to !segno!, stop at Fine
+  //   !D.C.!  !D.S.! — full repeat without a Fine stop (play through to end)
   function computePlayOrder(bars){
-    var order = [], n = bars.length, startStack = [0];
-    for (var i = 0; i < n; i++){
+    var n = bars.length;
+    // Locate landmark bars for jump directives.
+    var fineIdx = -1, segnoIdx = -1, jumpIdx = -1, jumpType = null;
+    for (var k = 0; k < n; k++){
+      var dd = bars[k].decors;
+      if (!dd) continue;
+      for (var m2 = 0; m2 < dd.length; m2++){
+        if (dd[m2] === 'fine' && fineIdx < 0)  fineIdx  = k;
+        if (dd[m2] === 'segno')                 segnoIdx = k;
+        if (!jumpType && (dd[m2] === 'D.C.alfine' || dd[m2] === 'D.S.alfine' ||
+                          dd[m2] === 'D.C.'       || dd[m2] === 'D.S.')){
+          jumpIdx  = k;
+          jumpType = dd[m2];
+        }
+      }
+    }
+    // First pass: expand barline repeats through to the jump bar (or the end).
+    var passEnd = (jumpIdx >= 0) ? jumpIdx : n - 1;
+    var order = [], startStack = [0];
+    for (var i = 0; i <= passEnd; i++){
       var b = bars[i];
       if (b.left === "repeat-open") startStack.push(i);
       order.push(i);
-      if (b.right === "repeat-close" || b.right === "repeat-close-open"){
+      if ((b.right === "repeat-close" || b.right === "repeat-close-open") && b.ending !== 2){
         var start = startStack[startStack.length - 1];
         for (var j = start; j <= i; j++){ if (bars[j].ending === 1) continue; order.push(j); }
         if (startStack.length > 1) startStack.pop();
+      }
+    }
+    // Any written bars after the jump bar (but before the true end) play once before the jump.
+    for (var i2 = passEnd + 1; i2 < n && jumpIdx >= 0; i2++) order.push(i2);
+
+    // Second pass: D.C./D.S. jump — repeat from target to Fine (or end).
+    if (jumpIdx >= 0){
+      var jumpStart = (jumpType === 'D.S.alfine' || jumpType === 'D.S.') ? Math.max(0, segnoIdx) : 0;
+      var jumpStop  = (jumpType === 'D.C.alfine' || jumpType === 'D.S.alfine')
+                        ? (fineIdx >= 0 ? fineIdx : n - 1) : n - 1;
+      var startStack2 = [jumpStart];
+      for (var i3 = jumpStart; i3 <= jumpStop; i3++){
+        var b3 = bars[i3];
+        if (b3.left === "repeat-open") startStack2.push(i3);
+        order.push(i3);
+        if ((b3.right === "repeat-close" || b3.right === "repeat-close-open") && b3.ending !== 2){
+          var start3 = startStack2[startStack2.length - 1];
+          for (var j3 = start3; j3 <= i3; j3++){ if (bars[j3].ending === 1) continue; order.push(j3); }
+          if (startStack2.length > 1) startStack2.pop();
+        }
       }
     }
     return order;
@@ -248,7 +345,7 @@
     + '.tune-chart .tc-systems{display:flex;flex-direction:column;gap:.5rem}'
     + '.tune-chart .tc-system{display:grid;border-left:2px solid var(--tc-ink)}'
     + '.tune-chart .tc-bar{position:relative;min-height:60px;border-right:2px solid var(--tc-ink);'
-    +   'border-top:1px solid var(--tc-line);border-bottom:1px solid var(--tc-line);overflow:hidden;transition:background .14s}'
+    +   'border-top:1px solid var(--tc-line);border-bottom:1px solid var(--tc-line);overflow:hidden;transition:background .14s;cursor:pointer}'
     + '.tune-chart .tc-subline{position:absolute;top:0;bottom:0;width:1px;background:var(--tc-sub);pointer-events:none}'
     + '.tune-chart .tc-chord{position:absolute;top:50%;transform:translateY(-50%);white-space:nowrap;font-weight:600;line-height:.9;letter-spacing:.01em}'
     + '.tune-chart .tc-rt{font-size:1.6rem}'
@@ -288,7 +385,8 @@
       roman: !!opts.roman,
       header: opts.header !== false,
       opts: opts,           // keep the explicit overrides; per-tune layout is read in draw()
-      barEls: [], liveBar: -2
+      barEls: [], liveBar: -2,
+      introLen: 0, introBars: []  // set by setIntro() when an arranger intro is active
     };
     container.classList.add("tune-chart");
 
@@ -376,6 +474,7 @@
           var cell = document.createElement("div"); cell.className = "tc-bar";
           if (c < rowIdxs.length){
             var b = rowIdxs[c], bar = p.bars[b];
+            cell.setAttribute("data-bar", b);
             cell.setAttribute("data-left", bar.left); cell.setAttribute("data-right", bar.right);
             if (bar.left === "repeat-open"){ var od = document.createElement("span"); od.className = "tc-open"; cell.appendChild(od); }
             if (bar.ending){ var en = document.createElement("span"); en.className = "tc-ending"; en.textContent = bar.ending + "."; cell.appendChild(en); }
@@ -443,24 +542,31 @@
       setTune: function(newAbc){ state.parsed = (typeof newAbc === "string") ? parse(newAbc) : newAbc; draw(); },
       setLive: function(i){ var wasOff = state.liveBar < 0; if (state.liveBar === i) return; state.liveBar = i;
         state.barEls.forEach(function(el, k){ el.classList.toggle("tc-live", k === i); });
-        // Scroll only on the first bar of each playback so the user can scroll freely during playback
-        var el = state.barEls[i]; if (el && i >= 0 && wasOff) el.scrollIntoView({ block:"nearest", behavior:"smooth" }); },
-      // map the m-th played measure (cursor follows the expanded/repeated timeline)
-      // back to its written bar and highlight that. m < 0 clears.
+        },
+      // Tell the chart how many intro bars precede the main play sequence, and which
+      // written-bar indices they map to (for "last-N" intros; empty for count-ins).
+      setIntro: function(len, bars){ state.introLen = len || 0; state.introBars = bars || []; },
+      // map the m-th played measure (in the expanded/repeated timeline) back to its
+      // written bar and highlight that. Cycles via % so repeats > 1 wrap correctly.
       setPlayMeasure: function(m){
         var po = state.parsed.playOrder || [];
+        var il = state.introLen || 0;
+        var mm = m - il;
         if (m < 0){ this.setLive(-1); return; }
-        var bar = (m < po.length) ? po[m] : po[po.length - 1];
-        this.setLive(bar == null ? -1 : bar);
+        if (mm < 0){
+          // Still in the intro: highlight the corresponding intro bar (if it's a tune bar).
+          var ib = state.introBars || [];
+          this.setLive(m < ib.length ? ib[m] : -1); return;
+        }
+        if (!po.length){ this.setLive(mm); return; }
+        this.setLive(po[mm % po.length]);
       },
       // feed every abcjs cursor event here; highlights the written bar of the sounding
       // note (loop/seek/repeat-safe). Call resetPlayback() on start/finish.
       resetPlayback: function(){ this.setLive(-1); },
       onPlaybackEvent: function(ev){
         var mm = measureOf(ev); if (mm == null) return;
-        var n = (state.parsed.bars || []).length;
-        if (mm < 0) mm = 0; else if (mm >= n) mm = n - 1;
-        this.setLive(mm);
+        this.setPlayMeasure(mm);
       },
       get playOrder(){ return state.parsed.playOrder || []; }
     };

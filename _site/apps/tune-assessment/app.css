@@ -12,6 +12,8 @@
 /* abcjs playback cursor + note highlight (override the forced-black notation fill) */
 #app-root #notation svg .highlight, #app-root #notation svg .highlight path { fill:#1769d6 !important; }
 #app-root #notation svg .abcjs-cursor { stroke:#d33; stroke-width:2; }
+#app-root #accompNotation svg .highlight, #app-root #accompNotation svg .highlight path { fill:#1769d6 !important; }
+#app-root #accompNotation svg .abcjs-cursor { stroke:#d33; stroke-width:2; }
 #app-root .tune-audio { margin-top:.5rem; }
 
 /* Hide the abcjs transport widget (grey progress band) — playback is the Play tune

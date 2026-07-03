@@ -36,11 +36,11 @@ function loadTune(){
   try{ const rm=/^K:\s*([A-Ga-g])([#b]?)/m.exec(currentAbc); writtenRootPc = rm ? ((({C:0,D:2,E:4,F:5,G:7,A:9,B:11})[rm[1].toUpperCase()]+(rm[2]==="#"?1:rm[2]==="b"?-1:0))%12+12)%12 : 0; }catch(e){ writtenRootPc=0; }
   document.getElementById("tempo").value=Math.min(160,Math.max(40,target.tempoQ));
   document.getElementById("tempoVal").textContent=document.getElementById("tempo").value;
-  // Restore the last-used accompaniment style for this tune before rendering
-  (function(){ const el=document.getElementById("taAccomp"); if(!el||!window.Arranger) return;
-    try{ const m=JSON.parse(localStorage.getItem("taAccompStyles")||"{}"); const saved=m[idOf(currentAbc)];
-      if(saved&&[...el.options].some(o=>o.value===saved)){ el.value=saved; if(window._taRefreshAccompUI) window._taRefreshAccompUI(); }
-    }catch(e){} })();
+  // Re-filter selectors by new tune's meter, then restore saved selections.
+  if(window._taPopulateByMeter) window._taPopulateByMeter();
+  const _tuneId=idOf(currentAbc);
+  if(_tuneId&&window._taRestoreSettings) window._taRestoreSettings(_tuneId);
+  if(window._taRefreshAccompUI) window._taRefreshAccompUI();
   renderTune(false);   // render + (re)load the abcjs synth transport/cursor for this tune
   steerTonality();     // propagate this tune's key to the circle / patterns / etc.
   saveLast();          // remember this tune for next visit
@@ -65,7 +65,9 @@ let usingArrVisual=false;
 let currentPlayVisual=null; // visualObj currently loaded into synthControl
 let lastPlayMs=0;           // last known playback position (ms); used by reloadAudio to seek back
 let notationTimings=[];     // [{milliseconds,left,top,height,elements,startCharArray}] from visualObj.setTiming()
-let introMs=0;              // accompaniment intro offset in ms; subtract from ev.ms before notation lookup
+let measureTimings=[];      // [milliseconds] — downbeat of each measure in notation time (no intro offset)
+let accompTimings=[];       // same, but for #accompNotation (display ABC has no intro; use ms-introMs for lookup)
+let introMs=0, introBarCount=0;  // intro offset: ms and bar count
 function updatePlayLabel(){ const b=document.getElementById("play"); if(b) b.textContent=previewPlaying?"⏸ Pause":"▶ Play tune"; }
 const cursorControl={
   onStart(){ if(tuneChartObj) tuneChartObj.resetPlayback(); const svg=document.querySelector("#notation svg"); if(!svg)return;
@@ -84,13 +86,22 @@ const cursorControl={
     if(c){ c.setAttribute("x1",ev.left-2); c.setAttribute("x2",ev.left-2); c.setAttribute("y1",ev.top); c.setAttribute("y2",ev.top+ev.height); } },
   onFinished(){ previewPlaying=false; updatePlayLabel(); if(tuneChartObj) tuneChartObj.resetPlayback();
     document.querySelectorAll("#notation svg .highlight").forEach(e=>e.classList.remove("highlight"));
-    const c=document.querySelector("#notation svg .abcjs-cursor"); if(c){ ["x1","x2","y1","y2"].forEach(a=>c.setAttribute(a,0)); } }
+    const c=document.querySelector("#notation svg .abcjs-cursor"); if(c){ ["x1","x2","y1","y2"].forEach(a=>c.setAttribute(a,0)); }
+    document.querySelectorAll("#accompNotation svg .highlight").forEach(e=>e.classList.remove("highlight"));
+    const c2=document.querySelector("#accompNotation svg .abcjs-cursor"); if(c2){ ["x1","x2","y1","y2"].forEach(a=>c2.setAttribute(a,0)); }
+    if(cycleOn()&&!(loopInMs!=null&&loopOutMs!=null)){
+      const d=durMs(); if(d&&currentPlayVisual){
+        // intro-only (no gap): skip intro on repeat. gap present (with or without intro): replay from 0.
+        const seekMs=(introBarCount>0&&taGapBars()===0)?introMs:0;
+        const frac=Math.max(0,Math.min(0.999,seekMs/d));
+        setTimeout(()=>{ try{ synthControl.seek(frac); synthControl.setProgress(frac,d); }catch(e){}
+          try{ synthControl.play(); previewPlaying=true; updatePlayLabel(); }catch(e2){} },50); } } }
 };
 // click a notehead → seek playback to that note (build the buffer first if needed)
 // ---- DAW-style cycle (loop a region between two clicked noteheads) ----
 let loopInMs=null, loopOutMs=null;
 const durMs=()=>(synthControl&&synthControl.midiBuffer&&synthControl.midiBuffer.duration)?synthControl.midiBuffer.duration*1000:0;
-function applyCycle(){ if(synthControl) synthControl.isLooping = cycleOn() && !(loopInMs!=null&&loopOutMs!=null); }
+function applyCycle(){ if(synthControl) synthControl.isLooping=false; } // cycling handled in onFinished
 function markLoopRegion(){
   document.querySelectorAll("#notation svg .loop-region").forEach(e=>e.classList.remove("loop-region"));
   if(loopInMs==null||loopOutMs==null) return;
@@ -113,7 +124,12 @@ function updateCycleHint(){
   h.style.display="";
   if(loopInMs!=null&&loopOutMs!=null) h.textContent="🔁 Looping the highlighted region — press Play tune. Click a notehead to start a new region, or uncheck Cycle to clear.";
   else if(loopInMs!=null) h.textContent="🔁 Loop start set — now click the notehead where the loop should end.";
-  else h.textContent="🔁 Cycle on — click a notehead for the loop start, then another for the end (or just press Play tune to loop the whole tune).";
+  else {
+    const gb=taGapBars(), hi=introBarCount>0;
+    if(hi&&gb===0) h.textContent="🔁 Cycle on — intro plays once, then the tune repeats. Click a notehead to set a loop region.";
+    else if(gb>0) h.textContent="🔁 Cycle on — tune → "+(gb)+" bar gap"+(hi?" → intro":"")+", repeating. Click a notehead to set a loop region.";
+    else h.textContent="🔁 Cycle on — click a notehead for the loop start, then another for the end (or just press Play tune to loop the whole tune).";
+  }
 }
 function onNoteClick(abcElem){
   if(!synthControl) return;
@@ -153,10 +169,19 @@ const accompStyle=()=>(document.getElementById("taAccomp")||{}).value||"off";
 const accompNotesel=()=>(document.getElementById("taNotesel")||{}).value||"piano";
 const accompTenor=()=>(document.getElementById("taTenorclef")||{}).value||"treble8";
 const accompShowDrums=()=>!!(document.getElementById("taShowDrums")||{}).checked;
+const accompShowHand=()=>!!(document.getElementById("taShowHand")||{}).checked;
+const accompPercOnly=()=>!!(document.getElementById("taPercOnly")||{}).checked;
 const combinedScore=()=>!!(document.getElementById("taCombined")||{}).checked;
 const taRepeats=()=>Math.max(1,parseInt((document.getElementById("taRepeats")||{}).value||"1",10)||1);
 const taIntro=()=>(document.getElementById("taIntro")||{}).value||"none";
+const taGapBars=()=>{ const el=document.getElementById("taGapBars"); const v=el?el.value:"auto";
+  if(v==="auto"){ return parseInt((taIntro().match(/\d+/)||["0"])[0],10)||0; } return parseInt(v,10)||0; };
+const taGapClick=()=>!!(document.getElementById("taGapClick")||{}).checked;
+const taTimeFeel=()=>{ const el=document.querySelector('input[name="taTimeFeel"]:checked'); return el?el.value:"normal"; };
 const taVol=part=>{ const el=document.getElementById("ta-vol-"+part); return el?(parseInt(el.value,10)||0):100; };
+const taDrumPattern=()=>(document.getElementById("taDrumPattern")||{}).value||"none";
+const taDrumFill=()=>(document.getElementById("taDrumFill")||{}).value||"none";
+const taHandPattern=()=>(document.getElementById("taHandPattern")||{}).value||"none";
 // Build setTune opts from current UI state. arrAbc=null means direct tune path (no arranger).
 const synthOpts=arrAbc=>({soundFontUrl:SF_URL,
   midiTranspose:arrAbc?0:-instAdjust(),chordsOff:arrAbc?false:!chordsOn(),voicesOff:arrAbc?false:!playTuneOn()});
@@ -169,9 +194,9 @@ function extractMelody(abc){
   const music=abc.split("\n").filter(l=>l&&!/^[A-Za-z]:/.test(l)&&!/^%/.test(l));
   let body=music.join(" ");
   body=body.replace(/"[^"]*"/g,"").replace(/![^!]*!/g,"").replace(/\{[^}]*\}/g,"");
-  body=body.replace(/\$/g," ").replace(/\(\d+(:\d+)*/g,"").replace(/[()]/g,"");
+  body=body.replace(/\$/g," ").replace(/\((?!\d)/g,"").replace(/\)/g,"");
   body=body.replace(/\|\s*[12]/g,"|").replace(/\[[12]/g,"").replace(/:\|:|\|:|:\||::|\[\||\|\]/g,"|");
-  body=body.replace(/[^A-Ga-gxyzZ0-9_=^,''\/|\s\[\]>-]/g,"");
+  body=body.replace(/[^A-Ga-gxyzZ0-9_=^,''\/|:(\s\[\]>-]/g,"");
   body=body.replace(/\s+/g," ").trim();
   function fmt(v){ for(let den=1;den<=16;den*=2){ const num=v*den; if(Math.abs(num-Math.round(num))<1e-6){
     let n=Math.round(num),d=den; const g=(a,b)=>b?g(b,a%b):a; const r=g(n,d)||1; n/=r;d/=r;
@@ -191,13 +216,20 @@ function extractMelody(abc){
 function arrangerAbc(forPlay, includeMelody){
   if(accompStyle()==="off"||!window.Arranger||!tuneChartObj) return null;
   const qpm=Math.round((parseInt(tempoEl.value,10)||target.tempoQ||100)*(target.tempoNote||1));
+  const dp=taDrumPattern(), df=taDrumFill(), hp=taHandPattern();
   const opts={style:accompStyle(),notation:accompNotesel(),tempo:qpm,transpose:keyTrans(),
-    program:GM[accompVoice()]??GM.piano,tenorClef:accompTenor(),drums:taVol("drums")>0,showDrums:accompShowDrums(),
-    repeats:taRepeats(),intro:taIntro()};
+    program:GM[accompVoice()]??GM.piano,tenorClef:accompTenor(),
+    drumPattern:dp, drumFill:df, drums:dp!=="none"&&taVol("drums")>0,
+    handPattern:hp,
+    showDrums:accompShowDrums(), showHandDrums:accompShowHand(), percOnly:accompPercOnly(), repeats:taRepeats(),
+    intro:forPlay?taIntro():"none",           // display has no intro bars
+    gapBars:forPlay?taGapBars():0,            // display has no gap bars
+    gapClick:forPlay?taGapClick():false,
+    timeFeel:taTimeFeel()};
   if(forPlay){
     opts.dynamics=true;
     opts.vol={melody:playTuneOn()?taVol("melody"):0, chords:chordsOn()?taVol("chords"):0,
-              bass:taVol("bass"), drums:taVol("drums")};
+              bass:taVol("bass"), drums:taVol("drums"), handDrums:taVol("handDrums")};
   }
   if(forPlay?taVol("melody")>0:includeMelody){
     let abc=currentAbc; const shift=keyTrans()+instAdjust();
@@ -230,13 +262,14 @@ function renderAccompNotation(){
   // In combined-score mode the accompaniment is shown inside #notation, not here.
   const abc=combinedScore()?null:arrangerAbc(false);
   if(!abc){
-    el.innerHTML="";
+    el.innerHTML=""; accompTimings=[];
     if(pa) pa.style.display="none";
     return;
   }
   if(pa) pa.style.display="";
   const bpr=(tuneChartObj&&tuneChartObj.parsed&&tuneChartObj.parsed.barsPerRow)||4;
-  ABCJS.renderAbc("accompNotation",injectAccompLineBreaks(abc,bpr),{responsive:"resize",add_classes:true});
+  const vObj=ABCJS.renderAbc("accompNotation",injectAccompLineBreaks(abc,bpr),{responsive:"resize",add_classes:true})[0];
+  accompTimings=vObj?(vObj.setTiming()||[]).filter(e=>e.type==="event"&&e.left!=null):[];
 }
 function previewAbc(){
   const qpm=Math.round((parseInt(tempoEl.value,10)||target.tempoQ||100)*(target.tempoNote||1));
@@ -260,20 +293,40 @@ function previewAbc(){
 // find the matching notation note by time, then position the cursor in notation SVG
 // coordinates directly — no currentTrackMilliseconds or AudioContext needed.
 function positionCursorByTime(ms){
-  if(!notationTimings.length) return;
-  const t=ms-introMs;
-  let best=null;
-  for(let i=0;i<notationTimings.length;i++){
-    if(notationTimings[i].milliseconds<=t) best=notationTimings[i]; else break;
+  // ---- main notation (no intro → subtract introMs) ----
+  if(notationTimings.length){
+    const t=ms-introMs;
+    let best=null;
+    for(let i=0;i<notationTimings.length;i++){
+      if(notationTimings[i].milliseconds<=t) best=notationTimings[i]; else break;
+    }
+    const svg=document.querySelector("#notation svg"); if(svg){
+      svg.querySelectorAll(".highlight").forEach(e=>e.classList.remove("highlight"));
+      if(best)(best.elements||[]).forEach(g=>g.forEach(e=>e.classList.add("highlight")));
+      const c=svg.querySelector(".abcjs-cursor");
+      if(c&&best&&best.left!=null){
+        c.setAttribute("x1",best.left-2); c.setAttribute("x2",best.left-2);
+        c.setAttribute("y1",best.top); c.setAttribute("y2",best.top+best.height);
+      }
+    }
   }
-  if(!best) return;
-  const svg=document.querySelector("#notation svg"); if(!svg) return;
-  svg.querySelectorAll(".highlight").forEach(e=>e.classList.remove("highlight"));
-  (best.elements||[]).forEach(g=>g.forEach(e=>e.classList.add("highlight")));
-  const c=svg.querySelector(".abcjs-cursor"); if(!c) return;
-  if(best.left!=null){
-    c.setAttribute("x1",best.left-2); c.setAttribute("x2",best.left-2);
-    c.setAttribute("y1",best.top); c.setAttribute("y2",best.top+best.height);
+  // ---- accompaniment notation (display has no intro → subtract introMs, same as melody) ----
+  if(accompTimings.length){
+    const tA=ms-introMs;
+    let bestA=null;
+    if(tA>=0) for(let i=0;i<accompTimings.length;i++){
+      if(accompTimings[i].milliseconds<=tA) bestA=accompTimings[i]; else break;
+    }
+    const asvg=document.querySelector("#accompNotation svg"); if(asvg){
+      asvg.querySelectorAll(".highlight").forEach(e=>e.classList.remove("highlight"));
+      if(bestA)(bestA.elements||[]).forEach(g=>g.forEach(e=>e.classList.add("highlight")));
+      let c2=asvg.querySelector(".abcjs-cursor");
+      if(!c2){ c2=document.createElementNS("http://www.w3.org/2000/svg","line"); c2.setAttribute("class","abcjs-cursor"); asvg.appendChild(c2); }
+      if(c2&&bestA&&bestA.left!=null){
+        c2.setAttribute("x1",bestA.left-2); c2.setAttribute("x2",bestA.left-2);
+        c2.setAttribute("y1",bestA.top); c2.setAttribute("y2",bestA.top+bestA.height);
+      }
+    }
   }
 }
 function renderTune(userAction){
@@ -291,10 +344,26 @@ function renderTune(userAction){
     // Pre-compute notation timing for cursor positioning — avoids needing currentTrackMilliseconds
     // (which requires an active AudioContext) and makes the cursor work immediately on first play.
     if(arrAbc&&visualObj){
-      notationTimings=(visualObj.setTiming()||[]).filter(e=>e.type==="event"&&e.left!=null);
-      const introBarCount=parseInt((taIntro().match(/\d+/)||["0"])[0],10)||0;
+      const allT=visualObj.setTiming()||[];
+      notationTimings=allT.filter(e=>e.type==="event"&&e.left!=null);
+      measureTimings=[...new Set(allT.filter(e=>e.measureStart).map(e=>e.milliseconds))].sort((a,b)=>a-b);
+      introBarCount=parseInt((taIntro().match(/\d+/)||["0"])[0],10)||0;
       introMs=introBarCount*(visualObj.millisecondsPerMeasure?visualObj.millisecondsPerMeasure():0);
-    }else{ notationTimings=[]; introMs=0; }
+      // Tell the chord grid how many intro bars precede the main sequence so it doesn't
+      // jump to bar 1 while the intro is still playing.
+      if(tuneChartObj){
+        const n=tuneChartObj.parsed.bars.length;
+        const intro=taIntro();
+        const introBars=intro==="last-2"?[Math.max(0,n-2),n-1].filter(i=>i>=0)
+                        :intro==="last-4"?[Math.max(0,n-4),Math.max(0,n-3),Math.max(0,n-2),n-1].filter((v,i,a)=>a.indexOf(v)===i&&v>=0)
+                        :[];
+        tuneChartObj.setIntro(introBarCount,introBars);
+      }
+    }else{
+      notationTimings=[]; introMs=0; introBarCount=0; if(tuneChartObj) tuneChartObj.setIntro(0,[]);
+      const elseT=visualObj?(visualObj.setTiming()||[]):[];
+      measureTimings=[...new Set(elseT.filter(e=>e.measureStart).map(e=>e.milliseconds))].sort((a,b)=>a-b);
+    }
     let playVisual=visualObj;
     if(arrAbc) playVisual=ABCJS.renderAbc("taHiddenNotation",arrAbc,{add_classes:true})[0];
     if(playVisual){
@@ -513,6 +582,12 @@ function scheduleChords(perfStart){
 let reloadAudioTimer=null;
 function reloadAudio(){
   if(!synthControl||!currentPlayVisual) return;
+  // Blank cursor and highlights so the old position doesn't linger during buffer rebuild.
+  ["#notation","#accompNotation"].forEach(sel=>{
+    const svg=document.querySelector(sel+" svg"); if(!svg) return;
+    svg.querySelectorAll(".highlight").forEach(e=>e.classList.remove("highlight"));
+    const c=svg.querySelector(".abcjs-cursor"); if(c) ["x1","x2","y1","y2"].forEach(a=>c.setAttribute(a,0));
+  });
   const wasPlaying=previewPlaying, seekMs=lastPlayMs;
   const arrAbc=window.Arranger&&tuneChartObj&&accompStyle()!=="off"?arrangerAbc(true):null;
   usingArrVisual=!!arrAbc;
@@ -538,6 +613,43 @@ function reloadAudio(){
 function scheduleReloadAudio(){
   clearTimeout(reloadAudioTimer);
   reloadAudioTimer=setTimeout(reloadAudio,200);
+}
+// Click a chord-grid bar to seek the playhead to that measure.
+(function(){
+  const el=document.getElementById("tuneChart"); if(!el) return;
+  el.addEventListener("click",function(ev){
+    if(!synthControl) return;
+    const d=durMs(); if(!d||!measureTimings.length) return;
+    const cell=ev.target.closest("[data-bar]"); if(!cell) return;
+    const b=parseInt(cell.getAttribute("data-bar"),10); if(isNaN(b)) return;
+    const po=tuneChartObj?tuneChartObj.playOrder:[];
+    const k=po.indexOf(b); if(k<0) return;
+    const targetAudio=Math.max(0, measureTimings[k]+introMs);
+    const frac=Math.max(0,Math.min(0.999,targetAudio/d));
+    try{ synthControl.seek(frac); synthControl.setProgress(frac,d); lastPlayMs=targetAudio; }catch(e){}
+    if(tuneChartObj) tuneChartObj.setPlayMeasure(k+introBarCount);
+    positionCursorByTime(targetAudio);
+  });
+})();
+// Step one measure back (dir=-1) or forward (dir=1) while paused.
+// measureTimings are in notation time (no intro); add introMs for audio time.
+function stepMeasure(dir){
+  if(previewPlaying||!synthControl) return;
+  const d=durMs(); if(!d||!measureTimings.length) return;
+  const notePos=Math.max(0, lastPlayMs-introMs);
+  let targetAudio;
+  if(dir>0){
+    const t=measureTimings.find(m=>m>notePos+10); if(t==null) return;
+    targetAudio=t+introMs;
+  }else{
+    const cur=measureTimings.findLast(m=>m<=notePos)??0;
+    const prev=measureTimings.findLast(m=>m<cur-1);
+    // within 100ms of current measure start → go to previous; else go to current start
+    const backNote=(notePos-cur<100)?(prev??-introMs):cur;
+    targetAudio=Math.max(0, backNote+introMs);
+  }
+  const frac=Math.max(0,Math.min(0.999,targetAudio/d));
+  try{ synthControl.seek(frac); synthControl.setProgress(frac,d); lastPlayMs=targetAudio; }catch(e){}
 }
 // "Hear tune" now drives the abcjs transport (play/pause toggle). Loop/restart/
 // progress/scrub/warp + the cursor live in the #tune-audio widget.
@@ -608,16 +720,25 @@ document.getElementById("record").addEventListener("click",async()=>{
   },totalMs);
 });
 
-// SPACE = Play tune / Pause (the play button)
+// SPACE = Play/Pause. ENTER = reload audio. ←/H = prev measure. →/L = next measure (paused only).
 document.addEventListener("keydown",e=>{
-  if(e.code!=="Space")return;
   const ae=document.activeElement, tag=ae?ae.tagName:"";
-  // only let SPACE type into a real text field; otherwise it's play/pause even when
-  // a menu/slider/checkbox is focused (blur it so it doesn't also react)
-  if(tag==="TEXTAREA"||(tag==="INPUT"&&/^(text|number|search|email|password|url|tel)$/i.test(ae.type||"text")))return;
-  e.preventDefault();
-  if(ae&&ae.blur)ae.blur();
-  hearTune();
+  const inText=tag==="TEXTAREA"||(tag==="INPUT"&&/^(text|number|search|email|password|url|tel)$/i.test(ae.type||"text"));
+  if(e.code==="Space"){
+    if(inText)return;
+    e.preventDefault();
+    if(ae&&ae.blur)ae.blur();
+    hearTune();
+  }else if(e.code==="Enter"){
+    if(inText)return;
+    e.preventDefault();
+    reloadAudio();
+  }else if(e.code==="ArrowLeft"||e.code==="KeyH"||e.code==="ArrowRight"||e.code==="KeyL"){
+    if(inText)return;
+    e.preventDefault();
+    if(ae&&ae.blur)ae.blur();
+    stepMeasure(e.code==="ArrowRight"||e.code==="KeyL"?1:-1);
+  }
 });
 
 function grade(){
@@ -736,41 +857,116 @@ SessionLog.begin();
 (function(){
   if(!window.Arranger) return;
   const as=document.getElementById("taAccomp"); if(!as) return;
-  Arranger.styles().forEach(s=>{ const o=document.createElement("option"); o.value=s.id; o.textContent=s.label; as.appendChild(o); });
+  const dp=document.getElementById("taDrumPattern");
+  const df=document.getElementById("taDrumFill");
+  const hd=document.getElementById("taHandPattern");
   const ns=document.getElementById("taNotesel");
   if(ns) Arranger.notations().forEach(n=>{ const o=document.createElement("option"); o.value=n.id; o.textContent=n.label; ns.appendChild(o); });
+
+  // Derive the meter string for the currently loaded tune.
+  function currentMeterStr(){ const m=target&&target.meter; return m?m.n+"/"+m.d:"4/4"; }
+
+  // Rebuild the style + drum selectors to show only options compatible with the current meter.
+  function populateByMeter(){
+    const ms=currentMeterStr(), cur=as.value, curDp=dp?dp.value:"none", curDf=df?df.value:"none", curHd=hd?hd.value:"none";
+    // --- chord/bass styles ---
+    while(as.options.length>1) as.remove(1); // keep "Melody only" at index 0
+    Arranger.styles(ms).forEach(s=>{ const o=document.createElement("option"); o.value=s.id; o.textContent=s.label; as.appendChild(o); });
+    if([...as.options].some(o=>o.value===cur)) as.value=cur;
+    // --- drum patterns ---
+    if(dp){
+      while(dp.options.length>0) dp.remove(0);
+      Arranger.drumPatterns(ms).forEach(p=>{ const o=document.createElement("option"); o.value=p.id; o.textContent=p.label; dp.appendChild(o); });
+      if([...dp.options].some(o=>o.value===curDp)) dp.value=curDp; else dp.value="none";
+    }
+    // --- drum fills ---
+    if(df){
+      while(df.options.length>0) df.remove(0);
+      Arranger.drumFills(ms).forEach(f=>{ const o=document.createElement("option"); o.value=f.id; o.textContent=f.label; df.appendChild(o); });
+      if([...df.options].some(o=>o.value===curDf)) df.value=curDf; else df.value="none";
+    }
+    // --- hand drum patterns ---
+    if(hd){
+      while(hd.options.length>0) hd.remove(0);
+      Arranger.handPatterns(ms).forEach(p=>{ const o=document.createElement("option"); o.value=p.id; o.textContent=p.label; hd.appendChild(o); });
+      if([...hd.options].some(o=>o.value===curHd)) hd.value=curHd; else hd.value="none";
+    }
+  }
+  populateByMeter();
+  // Expose so loadTune() can re-filter after the tune changes.
+  window._taPopulateByMeter=populateByMeter;
+
   function refreshAccompUI(){
     const on=as.value!=="off";
     ["taNoteselWrap","taTenorWrap","taMixerRow"].forEach(id=>{ const el=document.getElementById(id); if(el) el.style.display=on?"":"none"; });
+    const dr=document.getElementById("taDrumRow"); if(dr) dr.style.display=on?"":"none";
+    const fw=document.getElementById("taDrumFillWrap");
+    if(fw) fw.style.display=(on&&dp&&dp.value!=="none")?"":"none";
+    const hvw=document.getElementById("ta-vol-handDrums-wrap");
+    if(hvw) hvw.style.display=(on&&hd&&hd.value!=="none")?"":"none";
     const pa=document.getElementById("panelAccomp"); if(pa) pa.style.display=on?"":"none";
   }
-  // Persist the accompaniment style selection per tune so it's restored on next visit.
-  const STYLE_KEY="taAccompStyles";
+
+  // Persist chord/bass style and drum pattern per tune.
+  const STYLE_KEY="taAccompStyles", DRUM_KEY="taDrumSettings";
   function saveAccompStyle(){ const id=idOf(currentAbc); if(!id) return;
     try{ const m=JSON.parse(localStorage.getItem(STYLE_KEY)||"{}"); m[id]=as.value; localStorage.setItem(STYLE_KEY,JSON.stringify(m)); }catch(e){} }
+  function saveDrumSettings(){ const id=idOf(currentAbc); if(!id) return;
+    try{ const m=JSON.parse(localStorage.getItem(DRUM_KEY)||"{}");
+      m[id]={pattern:dp?dp.value:"none",fill:df?df.value:"none",hand:hd?hd.value:"none"};
+      localStorage.setItem(DRUM_KEY,JSON.stringify(m)); }catch(e){} }
+  function restoreSettings(id){
+    try{
+      const sm=JSON.parse(localStorage.getItem(STYLE_KEY)||"{}"), sv=sm[id];
+      if(sv&&[...as.options].some(o=>o.value===sv)) as.value=sv;
+      const dm=JSON.parse(localStorage.getItem(DRUM_KEY)||"{}"), dv=dm[id];
+      if(dv){
+        if(dp&&dv.pattern&&[...dp.options].some(o=>o.value===dv.pattern)) dp.value=dv.pattern;
+        if(df&&dv.fill&&[...df.options].some(o=>o.value===dv.fill)) df.value=dv.fill;
+        if(hd&&dv.hand&&[...hd.options].some(o=>o.value===dv.hand)) hd.value=dv.hand;
+      }
+    }catch(e){}
+  }
+
   window._taRefreshAccompUI=refreshAccompUI;
   as.addEventListener("change",()=>{ saveAccompStyle(); refreshAccompUI(); renderTune(false); });
+  if(dp){ dp.addEventListener("change",()=>{ saveDrumSettings(); refreshAccompUI(); renderTune(false); }); }
+  if(df){ df.addEventListener("change",()=>{ saveDrumSettings(); renderTune(false); }); }
+  if(hd){ hd.addEventListener("change",()=>{ saveDrumSettings(); refreshAccompUI(); scheduleReloadAudio(); }); }
   if(ns) ns.addEventListener("change",()=>{ renderTune(false); });
   const tc=document.getElementById("taTenorclef");
   if(tc) tc.addEventListener("change",()=>{ renderTune(false); });
-  ["melody","chords","bass","drums"].forEach(part=>{
+  ["melody","chords","bass","drums","handDrums"].forEach(part=>{
     const el=document.getElementById("ta-vol-"+part); if(!el) return;
     el.addEventListener("input",()=>{ const v=document.getElementById("ta-vol-"+part+"-v"); if(v) v.textContent=el.value; });
     el.addEventListener("change",()=>scheduleReloadAudio());
   });
+  function updatePercOnlyWrap(){
+    const anyNotation=accompShowDrums()||accompShowHand();
+    const wrap=document.getElementById("taPercOnlyWrap"); if(!wrap) return;
+    wrap.style.display=anyNotation?"":"none";
+    if(!anyNotation){ const pc=document.getElementById("taPercOnly"); if(pc) pc.checked=false; }
+  }
   const sd=document.getElementById("taShowDrums");
-  if(sd) sd.addEventListener("change",()=>renderAccompNotation());
+  if(sd) sd.addEventListener("change",()=>{ updatePercOnlyWrap(); renderAccompNotation(); });
+  const sh=document.getElementById("taShowHand");
+  if(sh) sh.addEventListener("change",()=>{ updatePercOnlyWrap(); renderAccompNotation(); });
+  const po=document.getElementById("taPercOnly");
+  if(po) po.addEventListener("change",()=>renderAccompNotation());
   const cb=document.getElementById("taCombined");
   if(cb) cb.addEventListener("change",()=>renderTune(false));
   const rp=document.getElementById("taRepeats");
   if(rp) rp.addEventListener("change",()=>renderTune(false));
   const it=document.getElementById("taIntro");
   if(it) it.addEventListener("change",()=>renderTune(false));
+  const gbEl=document.getElementById("taGapBars");
+  if(gbEl) gbEl.addEventListener("change",()=>{ scheduleReloadAudio(); updateCycleHint(); });
+  const gcEl=document.getElementById("taGapClick");
+  if(gcEl) gcEl.addEventListener("change",()=>scheduleReloadAudio());
+  document.querySelectorAll('input[name="taTimeFeel"]').forEach(el=>el.addEventListener("change",()=>renderTune(false)));
   refreshAccompUI();
-  // Restore the saved style for the tune that was already loaded during init — the IIFE runs
-  // after loadTune(), so options weren't populated yet when loadTune()'s restore code ran.
-  (function(){ const id=idOf(currentAbc); if(!id) return;
-    try{ const m=JSON.parse(localStorage.getItem(STYLE_KEY)||"{}"); const saved=m[id];
-      if(saved&&[...as.options].some(o=>o.value===saved)){ as.value=saved; refreshAccompUI(); renderTune(false); }
-    }catch(e){} })();
+  // Restore saved selections for the tune already loaded during init (options weren't ready then).
+  (function(){ const id=idOf(currentAbc); if(!id) return; restoreSettings(id); refreshAccompUI(); renderTune(false); })();
+  // Expose restoreSettings so loadTune() can call it after populating by meter.
+  window._taRestoreSettings=restoreSettings;
 })();

@@ -17,6 +17,16 @@
 #app-root #tuneChart{max-width:100%}
 #app-root #tunePicker .tl-results{max-height:300px}
 #app-root #accompNotation svg{width:100%!important;height:auto!important}
+/* ½ / 1× / 2× time feel segmented buttons */
+#app-root .ta-time-feel{display:flex;gap:0;margin-left:.4rem;align-items:center}
+#app-root .ta-feel-btn{display:inline-flex;align-items:center;justify-content:center;cursor:pointer;
+  padding:.15rem .5rem;border:1px solid #ced4da;font-size:.78rem;line-height:1.4;
+  background:#fff;color:#495057;transition:background .12s,color .12s;user-select:none;white-space:nowrap}
+#app-root .ta-feel-btn:first-child{border-radius:.25rem 0 0 .25rem}
+#app-root .ta-feel-btn:last-child{border-radius:0 .25rem .25rem 0}
+#app-root .ta-feel-btn:not(:first-child){margin-left:-1px}
+#app-root .ta-feel-btn input{position:absolute;opacity:0;width:0;height:0}
+#app-root .ta-feel-btn:has(input:checked){background:var(--site-accent,#3fc2b4);color:#fff;border-color:var(--site-accent,#3fc2b4);position:relative;z-index:1}
 </style>
 <div id="app-root">
   <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
@@ -95,6 +105,14 @@
       <div id="taTenorWrap" style="display:none"><label for="taTenorclef">Tenor</label>
         <select id="taTenorclef"><option value="treble8">Treble 8</option><option value="bass">Bass</option></select></div>
     </div>
+    <div id="taDrumRow" style="display:none; margin-top:.35rem" class="row">
+      <div><label for="taDrumPattern">Drums</label>
+        <select id="taDrumPattern"><option value="none">No drums</option></select></div>
+      <div id="taDrumFillWrap" style="display:none"><label for="taDrumFill">Fill every 4 bars</label>
+        <select id="taDrumFill"><option value="none">No fill</option></select></div>
+      <div><label for="taHandPattern">Hand drums</label>
+        <select id="taHandPattern"><option value="none">No hand drums</option></select></div>
+    </div>
     <div id="taMixerRow" style="display:none; margin-top:.5rem">
       <div class="row" style="align-items:center">
         <div><label for="ta-vol-melody">Melody: <span id="ta-vol-melody-v">90</span></label>
@@ -105,9 +123,13 @@
           <input type="range" id="ta-vol-bass" min="0" max="100" value="90" style="width:100px"></div>
         <div><label for="ta-vol-drums">Drums: <span id="ta-vol-drums-v">80</span></label>
           <input type="range" id="ta-vol-drums" min="0" max="100" value="80" style="width:100px"></div>
+        <div id="ta-vol-handDrums-wrap" style="display:none"><label for="ta-vol-handDrums">Hand drums: <span id="ta-vol-handDrums-v">80</span></label>
+          <input type="range" id="ta-vol-handDrums" min="0" max="100" value="80" style="width:100px"></div>
       </div>
       <div style="margin-top:.35rem;display:flex;gap:1.2rem;flex-wrap:wrap">
-        <label class="cb"><input type="checkbox" id="taShowDrums"> Show drums in notation</label>
+        <label class="cb"><input type="checkbox" id="taShowDrums"> Show drum set in notation</label>
+        <label class="cb"><input type="checkbox" id="taShowHand"> Show hand drums in notation</label>
+        <label class="cb" id="taPercOnlyWrap" style="display:none"><input type="checkbox" id="taPercOnly"> Percussion only</label>
         <label class="cb"><input type="checkbox" id="taCombined"> Combined score</label>
       </div>
       <div style="margin-top:.35rem;display:flex;gap:1.2rem;flex-wrap:wrap;align-items:center">
@@ -128,6 +150,20 @@
             <option value="last-2">Last 2 bars</option>
             <option value="last-4">Last 4 bars</option>
           </select></div>
+        <div><label for="taGapBars">Gap</label>
+          <select id="taGapBars">
+            <option value="auto" selected>Auto</option>
+            <option value="0">None</option>
+            <option value="1">1 bar</option>
+            <option value="2">2 bars</option>
+            <option value="4">4 bars</option>
+          </select></div>
+        <label class="cb"><input type="checkbox" id="taGapClick"> Click in gap</label>
+        <div class="ta-time-feel">
+          <label class="ta-feel-btn"><input type="radio" name="taTimeFeel" value="half"> ½</label>
+          <label class="ta-feel-btn"><input type="radio" name="taTimeFeel" value="normal" checked> 1×</label>
+          <label class="ta-feel-btn"><input type="radio" name="taTimeFeel" value="double"> 2×</label>
+        </div>
       </div>
     </div>
     </div>
