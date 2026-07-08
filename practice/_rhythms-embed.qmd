@@ -132,20 +132,26 @@
 
 		function refreshCollection() {
 			const collection = document.getElementById("collection-selector").value;
-			refreshSongbook(patternObject[collection]);
+			refreshSongbook(rhythmPatternObject[collection]);
 			pickTune();
 		}
 
 		function load() {
 			const selectCollection = document.getElementById("collection-selector");
-			for (const key in patternObject) {
+			for (const key in rhythmPatternObject) {
 				const option = document.createElement("option");
 				option.textContent = key;
 				option.value = key;
 				selectCollection.appendChild(option);
 			}
 
-			refreshSongbook(patternObject[selectCollection.value]);
+			const RH_CFG = window.TOOL_CONFIG || {};
+			if (RH_CFG.collections && RH_CFG.collections.length)
+				Array.from(selectCollection.options).forEach(function(o) { if (RH_CFG.collections.indexOf(o.value) === -1) o.remove(); });
+			if (RH_CFG.lockCollections || selectCollection.options.length <= 1)
+				document.getElementById('collection-selector').style.display = 'none';
+
+			refreshSongbook(rhythmPatternObject[selectCollection.value]);
 
 			document.querySelector(".next").addEventListener("click", next);
 			document.querySelector(".warp").addEventListener("click", warp);

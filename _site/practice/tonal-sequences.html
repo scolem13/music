@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Tonal Patterns – Music Practice</title>
+<title>Tonal Sequences – Music Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -339,7 +339,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Tonal Patterns</h1>
+<h1 class="title">Tonal Sequences</h1>
 </div>
 
 
@@ -357,369 +357,337 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 
 <div class="column-screen">
-<link rel="icon" href="../apps/patterns/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../apps/shared/abcjs-audio.css">
-    <link rel="stylesheet" href="../apps/patterns/examples-styles.css">
-    
-    <style>
-        .input, .output {
-            display: flex;
-            column-gap: 10px;
-            margin: 0;
-        }
-        .output > div {
-            width: 100%;
-            height: 100%;
-        }
-        label {
-            margin-top: 10px;
-            display: block;
-        }
-        textarea, pre, #warnings {
-            display: none;
-        }
-        .stupid-label {
-            margin-right: 5px;
-            margin-left: 5px;
-        }
-        .buddy {
-            display: flex;
-            margin: 2px 6px;
-            padding: 1px;
-            text-align: center;
-            align-items: center;
-            justify-content: center;
-        }
-        .number-input-label {
-            display: inline-block;
-            margin: 6px;
-        }
-        select {
-            width: 45px;
-            height: 30px;
-        }
-        input {
-            width: 60px;
-        }
-        .octave-transpose {
-            width: 40px;
-        }
-        .checkbox {
-            width: 25px;
-            height: 25px;
-        }
-        div.inflow {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #the-bottom {
-            position: fixed;
-            bottom: 30px;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        #more {
-            display: none;
-            flex-wrap: wrap;
-        }
-        #audio {
-            width: 200px;
-            position: fixed;
-            bottom: 1vh;
-            margin: auto;
-        }
-        #pattern-selector {
-            width: max-content;
-        }
-        text[font-family*="Times New Roman"] {
-            display: none;
-        }
-        #solfege-display {
-            height: 90%;
-            width: 100%;
-            display: none;
-            align-content: flex-start;
-            justify-content: center;
-            font-weight: bolder;
-            font-size: 12vw;
-        }
-        #selections {
-            display: flex;
-            margin: 6px 10%;
-        }
-        .abcjs-midi-clock {
-            display: none;
-        }
-    </style>
-    <script>
-        const abcList = [];
-        let solfegeString = "";
-        let currentTune = 0;
-        let secondOctave = [0, 0, 0, 0];
-        let synthControl;
+<link rel="stylesheet" href="../apps/shared/abcjs-audio.css">
 
-        function showOptions() {
-            const show = document.getElementById("show-options").checked;
-            document.getElementById("more").style.display = show ? "flex" : "none";
-            document.getElementById("tune-selector").style.display = show ? "block" : "none";
-        }
+<style>
+#ts-root {
+  --pr:#2780e3; --br:#dee2e6; --bl:#e9ecef; --mu:#6c757d;
+  --in:#212529; --sf:#fff; --bs:#f8f9fa;
+  max-width:860px; margin:0 auto 2rem;
+  font-family:var(--bs-font-sans-serif,system-ui,sans-serif); color:var(--in);
+}
+#ts-root .sq-card {
+  background:var(--sf); border:1px solid var(--br); border-radius:.5rem;
+  padding:1rem 1.15rem; margin:0 0 1rem; box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+#ts-root .sq-row { display:flex; gap:.5rem .75rem; align-items:flex-end; flex-wrap:wrap; }
+#ts-root .sq-group { display:flex; flex-direction:column; }
+#ts-root .sq-label {
+  font-size:.78rem; color:var(--mu); font-weight:600;
+  text-transform:uppercase; letter-spacing:.03em; margin-bottom:.25rem;
+}
+#ts-root select {
+  padding:.35rem .6rem; font-size:.9rem; border:1px solid #ced4da;
+  border-radius:.375rem; background:var(--sf); color:var(--in); height:auto;
+}
+#ts-root .sq-btn {
+  padding:.35rem .7rem; font-size:.9rem; border:1px solid #ced4da;
+  border-radius:.375rem; background:var(--sf); color:var(--in);
+  cursor:pointer; line-height:1.5; white-space:nowrap;
+}
+#ts-root .sq-btn:disabled { opacity:.5; cursor:not-allowed; }
+#ts-root .sq-paper {
+  background:var(--sf); border:1px solid var(--bl); border-radius:.375rem;
+  padding:.4rem .5rem; min-height:56px; margin-bottom:.75rem;
+}
+#ts-root .sq-paper svg { width:100% !important; height:auto !important; display:block; }
+#ts-root .cell-bank { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px; margin-top:4px; }
+#ts-root .cell-buttons { display:contents; }
+#ts-root .cell-wrapper { display:flex; flex-direction:column; align-items:flex-start; }
+#ts-root .cell-number { font-size:11px; color:var(--mu); margin-bottom:2px; margin-left:4px; }
+#ts-root .cell-btn {
+  background:var(--sf) !important; border:1px solid #ced4da !important;
+  border-radius:.375rem !important; cursor:pointer !important;
+  padding:2px !important; box-sizing:content-box !important;
+  position:relative; overflow:hidden;
+  transition:border-color .12s, box-shadow .12s;
+}
+#ts-root .cell-btn:hover {
+  border-color:var(--pr) !important; box-shadow:0 0 0 3px rgba(39,128,227,.15) !important;
+}
+#ts-root .cell-preview { pointer-events:none; }
+#ts-root .cell-preview svg { display:block; }
+#ts-root #abc-editor {
+  display:block; box-sizing:border-box; width:100%; min-height:80px;
+  padding:.4rem .5rem; font-family:monospace; font-size:.82rem;
+  border:1px solid var(--br); border-radius:.375rem;
+  background:var(--bs); color:var(--in); resize:vertical;
+}
+</style>
 
-        function showNotes() {
-            document.getElementById("main").style.display =
-                document.getElementById("show-notes").checked ? "block" : "none";
-            paramChanged();
-        }
+<script>
+    let activeCells_ts = [];
+    let synthControl_ts;
+    let tsVisTranspose = 0;
 
-        function showSolfege() {
-            document.getElementById("solfege-display").style.display =
-                document.getElementById("show-solfege").checked ? "flex" : "none";
-        }
+    const MINOR_MODE_ts = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/;
+    const COLL_PAIRS_ts = {
+        "major-stepwise": "minor-stepwise", "minor-stepwise": "major-stepwise",
+        "major-I-V": "minor-i-V", "minor-i-V": "major-I-V"
+    };
 
-        function refreshSongbook() {
-            const pattern = document.getElementById("pattern-selector").value;
-            abcList.length = 0;
-            const abcString = patternObject[pattern];
-            const tuneBook = new ABCJS.TuneBook(abcString);
-            const selectTune = document.getElementById("tune-selector");
-            selectTune.innerHTML = "";
-            for (let i = 0; i < tuneBook.tunes.length; i++) {
-                const option = document.createElement("option");
-                option.textContent = tuneBook.tunes[i].id;
-                option.value = i;
-                abcList.push(tuneBook.tunes[i].abc);
-                selectTune.appendChild(option);
+    function applyTonality_ts() {
+        if (!window.Tonality) return;
+        var r = Tonality.getResting();
+        if (r == null) return;
+        var mode = Tonality.getMode();
+        var wantMinor = !!(mode && MINOR_MODE_ts.test(mode));
+        var sel = document.getElementById("collection-selector-ts");
+        var switched = false;
+        if (sel && COLL_PAIRS_ts[sel.value]) {
+            if (wantMinor !== /^minor/.test(sel.value)) {
+                sel.value = COLL_PAIRS_ts[sel.value];
+                switched = true;
             }
-            paramChanged();
         }
-
-        function moveStuff(target, aspect, source) {
-            document.getElementById(target).style[aspect] =
-                document.getElementById(source).value + "%";
+        tsVisTranspose = r <= 6 ? r : r - 12;
+        if (switched) {
+            loadCollection_ts();
+        } else {
+            var editor = document.getElementById("abc-editor-ts");
+            if (editor && editor.value.trim()) renderSequence_ts(editor.value, false);
+            renderCellBank_ts();
         }
+    }
 
-        function nextTune() {
-            currentTune = (currentTune + 1) % abcList.length;
-            document.getElementById("tune-selector").value = currentTune;
-            paramChanged();
-        }
+    function indexToLetter(i) {
+        return String.fromCharCode(65 + i);
+    }
 
-        function randomTune() {
-            if (abcList.length <= 1) { paramChanged(); return; }
-            let tuneIndex;
-            do { tuneIndex = Math.floor(Math.random() * abcList.length); }
-            while (tuneIndex === currentTune);
-            document.getElementById("tune-selector").selectedIndex = tuneIndex;
-            currentTune = tuneIndex;
-            paramChanged();
-        }
+    function extractV1Notes(tuneAbc, stripChords) {
+        let v1Line = "";
+        tuneAbc.split("\n").forEach(function(line) {
+            if (line.indexOf("[V: V1]") !== -1) v1Line = line;
+        });
+        v1Line = v1Line.replace("[V: V1]", "").trim();
+        if (stripChords) v1Line = v1Line.replace(/"[^"]*"/g, "").trim();
+        return v1Line;
+    }
 
-        function octaveToChange(i) {
-            secondOctave[i] = document.getElementById("second-octave-box" + i).checked;
-            paramChanged();
-        }
+    function getCollectionKeyField_ts(collectionName) {
+        const tuneBook = new ABCJS.TuneBook(patternObject[collectionName]);
+        const match = tuneBook.tunes[0].abc.match(/^K:\s*(.+)$/m);
+        return match ? match[1].trim() : "C";
+    }
 
-        function octaveAll(n) {
-            for (let i = 0; i < 4; i++) {
-                const el = document.getElementById("octave-transpose" + i);
-                el.value = parseInt(el.value) + n;
+    function splitHeaderAndBody_ts(abcString) {
+        const headerLines = [];
+        let bodyLine = "";
+        for (const line of abcString.split("\n")) {
+            if (/^[A-Za-z]:/.test(line) || line.startsWith("%%")) {
+                headerLines.push(line);
+            } else if (line.trim() !== "") {
+                bodyLine = line;
             }
-            paramChanged();
         }
+        return { headerLines, bodyLine };
+    }
 
-        function paramChanged(userAction) {
-            currentTune = parseInt(document.getElementById("tune-selector").value);
-            const semis = parseInt(document.getElementById("vis-transpose").value);
-            const octs0 = parseInt(document.getElementById("octave-transpose0").value);
-            const octs1 = parseInt(document.getElementById("octave-transpose1").value);
-            const octs2 = parseInt(document.getElementById("octave-transpose2").value);
-            const octs3 = parseInt(document.getElementById("octave-transpose3").value);
+    function getStaffCenter_ts(svg, bbox) {
+        const lines = Array.from(svg.querySelectorAll("path")).map(function(p) { return p.getBBox(); })
+            .filter(function(b) { return b.height < 2 && b.width > bbox.width * 0.5; });
+        if (lines.length === 0) return bbox.y + bbox.height / 2;
+        const top = Math.min.apply(null, lines.map(function(b) { return b.y; }));
+        const bottom = Math.max.apply(null, lines.map(function(b) { return b.y + b.height; }));
+        return (top + bottom) / 2;
+    }
 
-            const renderParams  = { responsive: "resize", selectTypes: false, visualTranspose: 12 + semis + octs0 * 12 };
-            const renderParams2 = { responsive: "resize", selectTypes: false, visualTranspose:  2 + semis + octs1 * 12 };
-            const renderParams4 = { responsive: "resize", selectTypes: false, visualTranspose:  9 + semis + octs2 * 12 };
-            const renderParams3 = { responsive: "resize", selectTypes: false, visualTranspose: -12 + semis + octs3 * 12 };
+    function loadCollection_ts() {
+        const collectionName = document.getElementById("collection-selector-ts").value;
+        const tuneBook = new ABCJS.TuneBook(patternObject[collectionName]);
+        activeCells_ts = tuneBook.tunes.map(function(t) {
+            return {
+                abc: extractV1Notes(t.abc, false),
+                preview: extractV1Notes(t.abc, true)
+            };
+        });
+        renderCellBank_ts();
+        clearSequence_ts();
+    }
 
-            let tune = abcList[currentTune];
-            solfegeString = "";
-            for (const line of tune.split("\n")) {
-                if (line.startsWith("w: "))      solfegeString = line.slice(3);
-                else if (line.startsWith("w:")) solfegeString = line.slice(2);
+    function renderCellBank_ts() {
+        const collectionName = document.getElementById("collection-selector-ts").value;
+        const key = getCollectionKeyField_ts(collectionName);
+
+        const container = document.getElementById("cell-buttons-ts");
+        container.innerHTML = "";
+
+        const entries = [];
+        activeCells_ts.forEach(function(cell, i) {
+            const wrapper = document.createElement("div");
+            wrapper.className = "cell-wrapper";
+
+            const numberLabel = document.createElement("span");
+            numberLabel.className = "cell-number";
+            numberLabel.textContent = indexToLetter(i);
+            wrapper.appendChild(numberLabel);
+
+            const button = document.createElement("button");
+            button.type = "button";
+            button.className = "cell-btn";
+            button.setAttribute("aria-label", "Pattern " + (i + 1) + ": " + cell.preview);
+            button.addEventListener("click", function() { appendCell_ts(i); });
+
+            const preview = document.createElement("div");
+            preview.className = "cell-preview";
+            button.appendChild(preview);
+            wrapper.appendChild(button);
+
+            container.appendChild(wrapper);
+
+            const abcString = "X:1\nM:none\n%%staffwidth 100\nK:" + key + "\n" + cell.preview;
+            ABCJS.renderAbc(preview, abcString, { add_classes: true, visualTranspose: tsVisTranspose });
+
+            const svg = preview.querySelector("svg");
+            const bbox = svg.getBBox();
+            const staffCenterY = getStaffCenter_ts(svg, bbox);
+            entries.push({ button: button, svg: svg, bbox: bbox, staffCenterY: staffCenterY });
+        });
+
+        if (entries.length === 0) return;
+
+        const marginX = Math.max.apply(null, entries.map(function(e) { return e.bbox.width; })) * 0.1;
+        const halfHeight = Math.max.apply(null, entries.map(function(e) {
+            return Math.max(e.staffCenterY - e.bbox.y, (e.bbox.y + e.bbox.height) - e.staffCenterY);
+        }));
+        const contentHeight = halfHeight * 2;
+        const marginY = contentHeight * 0.10;
+        const totalHeight = contentHeight + marginY * 2;
+
+        entries.forEach(function(entry) {
+            entry.button.style.width = (entry.bbox.width + marginX * 2) + "px";
+            entry.button.style.height = totalHeight + "px";
+            entry.svg.style.transform =
+                "translate(" + (-entry.bbox.x + marginX) + "px, " + (totalHeight / 2 - entry.staffCenterY) + "px)";
+        });
+    }
+
+    function appendCell_ts(index) {
+        const editor = document.getElementById("abc-editor-ts");
+        const { headerLines, bodyLine } = splitHeaderAndBody_ts(editor.value);
+
+        let newBody = bodyLine.replace(/\s*\|\|\s*$/, "");
+        newBody += (newBody ? " || " : "") + activeCells_ts[index].abc + " ||";
+
+        renderSequence_ts(headerLines.join("\n") + "\n" + newBody, true);
+    }
+
+    function clearSequence_ts() {
+        const collectionName = document.getElementById("collection-selector-ts").value;
+        const key = getCollectionKeyField_ts(collectionName);
+        const header = "X:1\n%%MIDI program 4 \nM:none\nK:" + key;
+        renderSequence_ts(header + "\n", true);
+    }
+
+    function renderSequence_ts(abcString, userAction) {
+        document.getElementById("abc-editor-ts").value = abcString;
+
+        const abcOptions = { add_classes: true, visualTranspose: tsVisTranspose };
+        const visualObj = ABCJS.renderAbc("paper-ts", abcString, abcOptions)[0];
+        document.querySelector("#ts-root .midi").innerHTML = ABCJS.synth.getMidiFile(abcString);
+
+        new ABCJS.synth.CreateSynth().init({
+            visualObj: visualObj,
+            options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+        }).then(function() {
+            if (synthControl_ts) {
+                synthControl_ts.setTune(visualObj, userAction).catch(function(error) { console.warn("Audio problem:", error); });
             }
-            document.getElementById("solfege-display").innerHTML = solfegeString;
+        }).catch(function(error) { console.warn("Audio problem:", error); });
+    }
 
-            const tuneLines = tune.split("\n");
-            tuneLines[0] += "\n%%MIDI program 4 ";
-            tuneLines[0] += "\nM:none";
-            tuneLines[0] += "\n%%staffwidth 100";
-            tuneLines[0] += "\n%%score (V1 V2)";
-            tune = tuneLines.join("\n");
+    let editTimeout_ts;
+    function editSequence_ts() {
+        clearTimeout(editTimeout_ts);
+        editTimeout_ts = setTimeout(function() {
+            renderSequence_ts(document.getElementById("abc-editor-ts").value, true);
+        }, 400);
+    }
 
-            function octaver(t, index) {
-                if (!secondOctave[index]) {
-                    const lines = t.split("\n");
-                    lines.pop(); lines.pop();
-                    return lines.join("\n");
-                }
-                return t;
-            }
-
-            const visualObj = ABCJS.renderAbc("paper0", octaver(tune, 0), renderParams)[0];
-            ABCJS.renderAbc("paper1", octaver(tune, 1), renderParams2);
-            const tuneBass = tune.split("\n");
-            tuneBass[0] += "\nK: clef=bass";
-            ABCJS.renderAbc("paper2", octaver(tuneBass.join("\n"), 2), renderParams3);
-            ABCJS.renderAbc("paper3", octaver(tune, 3), renderParams4);
-
-            createSynth(visualObj, { midiTranspose: semis });
-        }
-
-        function createSynth(visualObj, synthOpts) {
-            synthControl = new ABCJS.synth.SynthController();
-            synthControl.load("#audio", null, {
-                displayRestart: true, displayPlay: true, displayProgress: true
-            });
-            new ABCJS.synth.CreateSynth().init({
-                visualObj: visualObj,
-                options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
-            }).then(function() {
-                synthControl.setTune(visualObj, true, synthOpts)
-                    .catch(function(error) { console.warn("Audio problem:", error); });
-            }).catch(function(error) { console.warn("Audio problem:", error); });
-        }
-    </script>
-
-<div id="patterns-root">
-    <div class="container">
-        <main id="main">
-            <section class="input">
-                <div></div>
-                <div><pre id="transposed"></pre></div>
-            </section>
-            <div id="warnings"></div>
-            <section class="output">
-                <div><div id="paper0"></div></div>
-                <div><div id="paper1"></div></div>
-            </section>
-            <section class="output">
-                <div><div id="paper2"></div></div>
-                <div><div id="paper3"></div></div>
-            </section>
-        </main>
-    </div>
-    <p id="solfege-display">Do Re Mi</p>
-    <div class="inflow">
-        <div id="the-bottom" class="the-bottom">
-            <div id="audio"></div>
-            <div id="selections" class="buddy">
-                <div class="buddy"></div>
-                <button type="button" onclick="nextTune()">Next</button>
-                <button type="button" onclick="randomTune()">Random</button>
-                <select id="pattern-selector" onchange="refreshSongbook(); paramChanged()"></select>
-                <select id="tune-selector" onchange="paramChanged()"></select>
-                <div class="buddy">
-                    <label class="bottom-label">Opts?</label>
-                    <input type="checkbox" id="show-options" class="checkbox" onchange="showOptions()">
-                </div>
-                <div class="buddy">
-                    <label class="notes-label">Notes?</label>
-                    <input type="checkbox" checked="" id="show-notes" class="checkbox" onchange="showNotes()">
-                </div>
-                <div class="buddy">
-                    <label class="solfege-label">Solfege?</label>
-                    <input type="checkbox" id="show-solfege" class="checkbox" onchange="showSolfege()">
-                </div>
-            </div>
-            <div id="more" class="buddy more">
-                <label for="key-select" class="number-input-label">Key: </label>
-                <select id="key-select" onchange="document.getElementById('vis-transpose').value=this.value; paramChanged();">
-                    <option value="0">C</option><option value="1">Db</option><option value="2">D</option>
-                    <option value="3">Eb</option><option value="4">E</option><option value="5">F</option>
-                    <option value="6">Gb</option><option value="7">G</option><option value="8">Ab</option>
-                    <option value="9">A</option><option value="10">Bb</option><option value="11">B</option>
-                </select>
-                <label for="vis-transpose" class="number-input-label">Semitones: </label>
-                <input id="vis-transpose" class="number-input" value="0" type="number" min="-12" max="12" oninput="paramChanged()">
-                <div class="buddy">
-                    <label for="octave-transpose" class="number-input-label">Octaves: </label>
-                    <button type="button" onclick="octaveAll(-1)">-</button>
-                    <input id="octave-transpose0" class="number-input octave-transpose" value="0" type="number" min="-2" max="2" oninput="paramChanged()">
-                    <input id="octave-transpose1" class="number-input octave-transpose" value="0" type="number" min="-2" max="2" oninput="paramChanged()">
-                    <input id="octave-transpose3" class="number-input octave-transpose" value="0" type="number" min="-2" max="2" oninput="paramChanged()">
-                    <input id="octave-transpose2" class="number-input octave-transpose" value="0" type="number" min="-2" max="2" oninput="paramChanged()">
-                    <button type="button" onclick="octaveAll(1)">+</button>
-                </div>
-                <div class="buddy">
-                    <label for="paper0-top" class="number-input-label">Top: </label>
-                    <input id="paper0-top" class="trial" value="-12" type="number" oninput="moveStuff('paper0', 'marginTop', 'paper0-top')">
-                    <input id="paper1-top" class="trial" value="-12" type="number" oninput="moveStuff('paper1', 'marginTop', 'paper1-top')">
-                    <input id="paper2-top" class="trial" value="5" type="number" oninput="moveStuff('paper2', 'marginTop', 'paper2-top')">
-                    <input id="paper3-top" class="trial" value="-3" type="number" oninput="moveStuff('paper3', 'marginTop', 'paper3-top')">
-                </div>
-                <div class="buddy">
-                    <p class="stupid-label">Oct 2? </p>
-                    <input id="second-octave-box0" class="checkbox" type="checkbox" onchange="octaveToChange(0)">
-                    <input id="second-octave-box1" class="checkbox" type="checkbox" onchange="octaveToChange(1)">
-                    <input id="second-octave-box2" class="checkbox" type="checkbox" onchange="octaveToChange(2)">
-                    <input id="second-octave-box3" class="checkbox" type="checkbox" onchange="octaveToChange(3)">
-                </div>
-            </div>
-        </div>
-    </div>
-    <script src="../apps/shared/abcjs-basic.js"></script>
-    <script src="../apps/patterns/pattern-object.js"></script>
-    <script src="../apps/shared/tonality.js?v=4"></script>
-    <script src="../apps/shared/audio.js?v=3"></script>
-    <script src="../apps/shared/establish-button.js"></script>
-    <script>
-        // Key dropdown = the tonal center (resting tone). Patterns are written with
-        // tonic = C, so transpose = resting pitch class. Consumes the shared tonality
-        // (set by the tunes); local key picks just transpose the display.
-        (function(){
-            if (!window.Tonality) return;
-            var MINOR = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/;
-            var CP = { "major-stepwise":"minor-stepwise","minor-stepwise":"major-stepwise",
-                       "major-I-V":"minor-i-V","minor-i-V":"major-I-V" };
-            function applyT(){
-                var r = Tonality.getResting(); if (r == null) return;
-                var mode = Tonality.getMode();
-                var ps = document.getElementById("pattern-selector");
-                var wantMinor = !!(mode && MINOR.test(mode));
-                if (ps && CP[ps.value] && wantMinor !== /^minor/.test(ps.value)){
-                    ps.value = CP[ps.value];
-                    if (typeof refreshSongbook === "function") refreshSongbook();
-                }
-                document.getElementById("key-select").value = String(r);
-                document.getElementById("vis-transpose").value = String(r);
-                if (typeof paramChanged === "function") paramChanged();
-            }
-            Tonality.onChange(function(st, src){ if (src !== "local") applyT(); });
-            window.addEventListener("load", applyT);
-        })();
-    </script>
-    <script>
-        // Populate pattern selector, then initialize
-        const selectPattern = document.getElementById("pattern-selector");
+    function load_ts() {
+        const selectCollection = document.getElementById("collection-selector-ts");
         for (const key in patternObject) {
             const option = document.createElement("option");
             option.textContent = key;
             option.value = key;
-            selectPattern.appendChild(option);
+            selectCollection.appendChild(option);
         }
-        const P_CFG = window.TOOL_CONFIG || {};
-        if (P_CFG.collections && P_CFG.collections.length)
-            Array.from(selectPattern.options).forEach(function(o) { if (P_CFG.collections.indexOf(o.value) === -1) o.remove(); });
-        if (P_CFG.lockCollections || selectPattern.options.length <= 1)
-            selectPattern.style.display = 'none';
-        refreshSongbook();
-        for (let i = 0; i < 4; i++) {
-            moveStuff("paper" + i, "marginTop", "paper" + i + "-top");
+
+        const TS_CFG = window.TOOL_CONFIG || {};
+        if (TS_CFG.collections && TS_CFG.collections.length)
+            Array.from(selectCollection.options).forEach(function(o) { if (TS_CFG.collections.indexOf(o.value) === -1) o.remove(); });
+        if (TS_CFG.lockCollections || selectCollection.options.length <= 1)
+            (selectCollection.closest('.sq-group') || selectCollection).style.display = 'none';
+
+        if (ABCJS.synth.supportsAudio()) {
+            synthControl_ts = new ABCJS.synth.SynthController();
+            synthControl_ts.load("#audio-ts", cursorControl_ts, {
+                displayLoop: true, displayRestart: true,
+                displayPlay: true, displayProgress: true, displayWarp: true
+            });
+        } else {
+            document.querySelector("#audio-ts").innerHTML =
+                "<div class='audio-error'>Audio is not supported in this browser.</div>";
         }
-    </script>
+
+        loadCollection_ts();
+
+        if (window.Tonality) {
+            Tonality.onChange(function(st, src) { if (src !== "local") applyTonality_ts(); });
+            applyTonality_ts();
+        }
+
+        document.addEventListener("keydown", function(e) {
+            const active = document.activeElement;
+            const isTyping = active && (active.tagName === "TEXTAREA" || (active.tagName === "INPUT" && active.type !== "checkbox" && active.type !== "radio"));
+            if (isTyping) return;
+            if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+            const letterIndex = e.key.length === 1 ? e.key.toUpperCase().charCodeAt(0) - 65 : -1;
+            if (letterIndex >= 0 && letterIndex < activeCells_ts.length) {
+                appendCell_ts(letterIndex);
+            }
+        });
+    }
+</script>
+
+<div id="ts-root">
+    <div class="midi" style="display:none">MIDI</div>
+
+    <!-- Playback controls -->
+    <div class="sq-card">
+        <div class="sq-row">
+            <div class="sq-group">
+                <span class="sq-label">Collection</span>
+                <select id="collection-selector-ts" onchange="loadCollection_ts()"></select>
+            </div>
+            <div id="audio-ts"></div>
+            <button type="button" class="sq-btn" onclick="clearSequence_ts()">Clear</button>
+        </div>
+    </div>
+
+    <!-- Cell bank -->
+    <div class="sq-card">
+        <div class="cell-bank">
+            <div class="cell-buttons" id="cell-buttons-ts"></div>
+        </div>
+    </div>
+
+    <!-- Notation output -->
+    <div id="paper-ts" class="sq-paper"></div>
+
+    <!-- ABC editor -->
+    <textarea id="abc-editor-ts" spellcheck="false" oninput="editSequence_ts()"></textarea>
 </div>
-<script src="../apps/shared/space-play.js"></script>
+
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/patterns/pattern-object.js"></script>
+<script src="../apps/shared/tonality.js?v=4"></script>
+<script src="../apps/shared/cursor-synth.js"></script>
+<script>
+    const cursorControl_ts = new CursorControl();
+    load_ts();
+</script>
 </div>
 
 

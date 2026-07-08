@@ -1,0 +1,611 @@
+---
+title: "Session Builder"
+toc: false
+---
+
+```{=html}
+<style>
+/* ── tokens (scoped to #sb-app to avoid polluting the Quarto page) ── */
+#sb-app {
+  --ed-bg:      #161B22;
+  --ed-gutter:  #1C2128;
+  --ed-border:  #30363D;
+  --ed-text:    #C9D1D9;
+  --ed-muted:   #484F58;
+  --ed-caret:   #C9D1D9;
+  --ed-comment: #6E7681;
+  --ed-sep:     #E3B341;
+  --ed-key:     #79C0FF;
+  --ed-ln:      #4D5562;
+
+  --pv-bg:      #FAFBFC;
+  --pv-surface: #FFFFFF;
+  --pv-border:  #D0D7DE;
+  --pv-text:    #24292F;
+  --pv-muted:   #57606A;
+  --pv-label:   #6E7781;
+
+  --sb-accent:  var(--site-accent);
+  --t-rhythm:   #8250DF;
+  --t-tonal:    #0969DA;
+  --t-songs:    #BF8700;
+  --t-rhythms:  #BC4C00;
+  --t-patterns: #1A7F37;
+
+  --locked:     #2DA44E;
+  --err:        #CF222E;
+  --warn:       #9A6700;
+
+  --font-ui:    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:  ui-monospace, 'Cascadia Code', 'Fira Code', 'JetBrains Mono', 'Consolas', monospace;
+  --r:          .375rem;
+}
+@media (prefers-color-scheme: dark) {
+  #sb-app {
+    --pv-bg:      #0D1117;
+    --pv-surface: #161B22;
+    --pv-border:  #30363D;
+    --pv-text:    #C9D1D9;
+    --pv-muted:   #8B949E;
+    --pv-label:   #6E7781;
+    --locked:     #3FB950;
+  }
+}
+:root[data-theme="dark"] #sb-app {
+  --pv-bg: #0D1117; --pv-surface: #161B22; --pv-border: #30363D;
+  --pv-text: #C9D1D9; --pv-muted: #8B949E; --pv-label: #6E7781;
+  --locked: #3FB950;
+}
+:root[data-theme="light"] #sb-app {
+  --pv-bg: #FAFBFC; --pv-surface: #FFFFFF; --pv-border: #D0D7DE;
+  --pv-text: #24292F; --pv-muted: #57606A; --pv-label: #6E7781;
+  --locked: #2DA44E;
+}
+
+/* ── app container ───────────────────────────────────────────────── */
+/* Sits below Quarto navbar (~56px) + auth bar (~38px) + session bar if present.
+   Use margin:-1rem to cancel Quarto's default page padding. */
+#sb-app {
+  margin: -1rem -1rem 0;
+  height: calc(100svh - 94px);
+  min-height: 400px;
+  display: flex; flex-direction: column; overflow: hidden;
+  font-family: var(--font-ui); font-size: 14px;
+  color: var(--pv-text); background: var(--pv-bg);
+}
+/* If session-nav-bar is also present, shrink further */
+#session-nav-bar ~ * #sb-app,
+body:has(#session-nav-bar) #sb-app {
+  height: calc(100svh - 138px);
+}
+
+/* ── toolbar ─────────────────────────────────────────────────────── */
+.sb-toolbar {
+  display: flex; align-items: center; gap: .5rem;
+  padding: .55rem 1rem;
+  background: var(--ed-bg); border-bottom: 1px solid var(--ed-border);
+  flex-shrink: 0; flex-wrap: wrap;
+}
+.sb-brand {
+  font-size: .8rem; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: #8B949E; margin-right: .5rem; white-space: nowrap;
+}
+.sb-brand span { color: #C9D1D9; }
+.sb-spacer { flex: 1; }
+.sb-btn {
+  font-family: var(--font-ui); font-size: .78rem; font-weight: 500;
+  padding: .3rem .65rem; border-radius: var(--r);
+  border: 1px solid var(--ed-border); background: transparent;
+  color: #8B949E; cursor: pointer; white-space: nowrap;
+  transition: color .12s, border-color .12s, background .12s;
+}
+.sb-btn:hover { color: #C9D1D9; border-color: #6E7681; background: rgba(255,255,255,.04); }
+.sb-btn-primary { background: var(--sb-accent); border-color: var(--sb-accent); color: #fff; }
+.sb-btn-primary:hover { background: #1a6cc4; border-color: #1a6cc4; color: #fff; }
+
+/* ── split body ──────────────────────────────────────────────────── */
+.sb-split { display: flex; flex: 1; overflow: hidden; min-height: 0; }
+
+/* ── editor pane ─────────────────────────────────────────────────── */
+.sb-editor-pane {
+  width: 55%; display: flex; flex-direction: column;
+  border-right: 1px solid var(--ed-border);
+  background: var(--ed-bg); min-width: 280px; flex-shrink: 0;
+}
+.sb-pane-header {
+  display: flex; align-items: baseline; gap: .75rem;
+  padding: .45rem .75rem .45rem 1rem;
+  border-bottom: 1px solid var(--ed-border); flex-shrink: 0;
+}
+.sb-pane-label {
+  font-size: .72rem; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--ed-muted);
+}
+.sb-pane-hint { font-size: .72rem; color: var(--ed-comment); }
+.sb-pane-hint code { font-family: var(--font-mono); color: var(--ed-sep); }
+
+.sb-editor-wrap { display: flex; flex: 1; overflow: hidden; min-height: 0; }
+.sb-line-nums {
+  padding: .65rem 0; background: var(--ed-gutter);
+  border-right: 1px solid var(--ed-border);
+  min-width: 2.6rem; width: 2.6rem; text-align: right; user-select: none;
+  font-family: var(--font-mono); font-size: .79rem; line-height: 1.65;
+  color: var(--ed-ln); overflow: hidden; flex-shrink: 0;
+}
+.sb-line-nums span { display: block; padding-right: .55rem; }
+#sb-editor {
+  flex: 1; padding: .65rem .75rem;
+  font-family: var(--font-mono); font-size: .79rem; line-height: 1.65;
+  background: transparent; color: var(--ed-text);
+  border: none; outline: none; resize: none;
+  caret-color: var(--ed-caret); tab-size: 2;
+  overflow-y: auto; overflow-x: auto; white-space: pre;
+}
+#sb-editor::selection { background: rgba(56,139,253,.25); }
+
+/* ── preview pane ────────────────────────────────────────────────── */
+.sb-preview-pane {
+  flex: 1; display: flex; flex-direction: column;
+  background: var(--pv-bg); overflow: hidden; min-width: 0;
+}
+.sb-preview-pane .sb-pane-header {
+  background: var(--pv-bg); border-bottom: 1px solid var(--pv-border);
+}
+.sb-preview-pane .sb-pane-label { color: var(--pv-label); }
+#sb-step-count { font-size: .72rem; color: var(--pv-muted); margin-left: auto; }
+.sb-preview-scroll { flex: 1; overflow-y: auto; padding: .85rem 1rem; }
+
+/* ── step cards ──────────────────────────────────────────────────── */
+.sb-step-card {
+  background: var(--pv-surface); border: 1px solid var(--pv-border);
+  border-radius: .5rem; margin-bottom: .65rem; border-left-width: 3px; overflow: hidden;
+}
+.sb-card-head {
+  display: flex; align-items: center; gap: .5rem; padding: .55rem .75rem .4rem;
+}
+.sb-step-num {
+  width: 1.35rem; height: 1.35rem; border-radius: 50%; font-size: .7rem; font-weight: 700;
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center; color: #fff;
+}
+.sb-step-label {
+  font-weight: 500; font-size: .9rem; flex: 1;
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  color: var(--pv-text);
+}
+.sb-tool-tag {
+  font-size: .67rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase;
+  padding: .15rem .4rem; border-radius: 99px; flex-shrink: 0; border: 1px solid; opacity: .85;
+}
+.sb-card-body { padding: .25rem .75rem .6rem; display: flex; flex-direction: column; gap: .35rem; }
+.sb-step-row { display: flex; flex-wrap: wrap; align-items: center; gap: .3rem; }
+.sb-row-label {
+  font-size: .7rem; text-transform: uppercase; letter-spacing: .05em;
+  color: var(--pv-muted); width: 5.5rem; flex-shrink: 0;
+}
+.sb-chip {
+  font-size: .72rem; padding: .1rem .4rem; border-radius: 3px;
+  background: var(--pv-bg); border: 1px solid var(--pv-border);
+  font-family: var(--font-mono); color: var(--pv-text);
+  white-space: nowrap;
+}
+.sb-chip-locked {
+  background: rgba(45,164,78,.1); border-color: rgba(45,164,78,.35);
+  color: var(--locked); font-family: var(--font-ui); font-size: .7rem;
+}
+.sb-chip-criteria {
+  background: rgba(39,128,227,.08); border-color: rgba(39,128,227,.25);
+  color: var(--sb-accent); font-family: var(--font-ui);
+}
+.sb-card-msgs { padding: .4rem .75rem .55rem; }
+.sb-err { font-size: .78rem; color: var(--err); }
+.sb-warn { font-size: .78rem; color: var(--warn); }
+.sb-empty {
+  color: var(--pv-muted); font-size: .88rem; text-align: center;
+  padding: 2.5rem 1.5rem; line-height: 1.6;
+}
+.sb-empty code { font-family: var(--font-mono); font-size: .82rem; color: var(--sb-accent); }
+
+/* ── footer ──────────────────────────────────────────────────────── */
+.sb-preview-footer {
+  padding: .6rem 1rem; border-top: 1px solid var(--pv-border);
+  display: flex; align-items: center; gap: .75rem; flex-shrink: 0;
+  background: var(--pv-bg);
+}
+.sb-start-btn {
+  font-family: var(--font-ui); font-size: .85rem; font-weight: 600;
+  padding: .4rem .9rem; border-radius: var(--r);
+  background: var(--sb-accent); border: 1px solid var(--sb-accent); color: #fff;
+  cursor: pointer; transition: background .12s;
+}
+.sb-start-btn:hover { background: #1a6cc4; }
+.sb-copy-json {
+  font-family: var(--font-ui); font-size: .82rem; padding: .38rem .75rem;
+  border-radius: var(--r); background: transparent;
+  border: 1px solid var(--pv-border); color: var(--pv-muted);
+  cursor: pointer; transition: border-color .12s, color .12s;
+}
+.sb-copy-json:hover { border-color: var(--pv-text); color: var(--pv-text); }
+.sb-footer-note { font-size: .75rem; color: var(--pv-muted); flex: 1; text-align: right; }
+
+/* ── reference ───────────────────────────────────────────────────── */
+details.sb-ref {
+  border-top: 1px solid var(--pv-border); flex-shrink: 0; background: var(--pv-bg);
+}
+details.sb-ref summary {
+  padding: .45rem 1rem; cursor: pointer; list-style: none; user-select: none;
+  font-size: .72rem; font-weight: 600; letter-spacing: .06em;
+  text-transform: uppercase; color: var(--pv-label);
+  display: flex; align-items: center; gap: .4rem;
+}
+details.sb-ref summary::before { content: '▶'; font-size: .6rem; transition: transform .15s; }
+details.sb-ref[open] summary::before { transform: rotate(90deg); }
+details.sb-ref summary::-webkit-details-marker { display: none; }
+.sb-ref-scroll { overflow-y: auto; max-height: 36vh; padding: .5rem 1rem .75rem; }
+.sb-ref-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .6rem; }
+.sb-ref-card {
+  border: 1px solid var(--pv-border); border-radius: var(--r);
+  overflow: hidden; font-size: .78rem; border-left-width: 3px;
+}
+.sb-ref-head { padding: .3rem .5rem; font-weight: 600; font-size: .73rem; letter-spacing: .03em; }
+.sb-ref-body { padding: .25rem .5rem .4rem; }
+.sb-ref-key { font-family: var(--font-mono); font-size: .72rem; color: var(--ed-key); }
+.sb-ref-vals { font-size: .7rem; color: var(--pv-muted); margin-top: .1rem; line-height: 1.5; }
+.sb-ref-chip {
+  display: inline-block; font-family: var(--font-mono); font-size: .67rem;
+  padding: .05rem .3rem; border-radius: 3px; background: var(--pv-bg);
+  border: 1px solid var(--pv-border); margin: .1rem .1rem 0 0;
+  cursor: pointer; color: var(--pv-text); transition: border-color .1s, color .1s;
+}
+.sb-ref-chip:hover { border-color: var(--sb-accent); color: var(--sb-accent); }
+
+/* ── responsive ──────────────────────────────────────────────────── */
+@media (max-width: 680px) {
+  .sb-split { flex-direction: column; }
+  .sb-editor-pane { width: 100%; height: 45%; border-right: none; border-bottom: 1px solid var(--ed-border); }
+  .sb-preview-pane { height: 55%; }
+}
+</style>
+
+<div id="sb-app">
+
+  <div class="sb-toolbar">
+    <div class="sb-brand">Session <span>Builder</span></div>
+    <div class="sb-spacer"></div>
+    <button class="sb-btn" onclick="sbLoadDemo()">Demo</button>
+    <button class="sb-btn" onclick="sbClear()">Clear</button>
+    <button class="sb-btn" id="sbCopyJsonBtn" onclick="sbCopyJson()">Copy JSON</button>
+    <button class="sb-btn sb-btn-primary" id="sbCopyLinkBtn" onclick="sbCopyLink()">Copy session link</button>
+  </div>
+
+  <div class="sb-split">
+
+    <div class="sb-editor-pane">
+      <div class="sb-pane-header">
+        <span class="sb-pane-label">Session spec</span>
+        <span class="sb-pane-hint">Steps separated by <code>---</code></span>
+      </div>
+      <div class="sb-editor-wrap">
+        <div class="sb-line-nums" id="sbLineNums"></div>
+        <textarea id="sb-editor" spellcheck="false" autocorrect="off" autocapitalize="off"
+          oninput="sbOnEdit()" onscroll="sbSyncScroll()"
+          placeholder="# My session&#10;&#10;tool: rhythm-sequences&#10;label: Rhythm warm-up&#10;..."></textarea>
+      </div>
+    </div>
+
+    <div class="sb-preview-pane">
+      <div class="sb-pane-header">
+        <span class="sb-pane-label">Preview</span>
+        <span id="sb-step-count"></span>
+      </div>
+      <div class="sb-preview-scroll" id="sbPreviewScroll"></div>
+      <div class="sb-preview-footer" id="sbPreviewFooter" style="display:none">
+        <button class="sb-start-btn" onclick="sbStartSession()">Start session →</button>
+        <button class="sb-copy-json" onclick="sbCopyJson()">Copy JSON</button>
+        <span class="sb-footer-note" id="sbFooterNote"></span>
+      </div>
+      <details class="sb-ref">
+        <summary>Reference</summary>
+        <div class="sb-ref-scroll"><div class="sb-ref-grid" id="sbRefGrid"></div></div>
+      </details>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function () {
+
+const SB_TOOLS = {
+  'rhythm-sequences': {
+    color: '#8250DF', label: 'Rhythm Seq.',
+    keys: [
+      { key: 'label', desc: 'Step name shown to student' },
+      { key: 'collections', vals: ['Duple-M-m-2-4','Duple-M-m-4-4','Duple-M-m-2-2','Triple-M-m-6/8','Triple-M-m-3/4','Triple-M-m-3/8','Duple-M-m-D-2/4','Duple-M-m-D-4/4','Triple-M-m-D-6/8','Duple, M-m-D-E-2/4','Triple-M-m-D-E-6/8','Duple, M-m-R-2/4','Duple, M-m-D-E-R-U-2/4'] },
+      { key: 'lock-collections', vals: ['yes','no'] },
+      { key: 'criteria', vals: ['macrobeat','microbeat','division','elongation','rest'] },
+      { key: 'lock-criteria', vals: ['yes','no'] },
+    ]
+  },
+  'tonal-sequences': {
+    color: '#0969DA', label: 'Tonal Seq.',
+    keys: [
+      { key: 'label', desc: 'Step name shown to student' },
+      { key: 'collections', vals: ['major-stepwise','minor-stepwise','major-I-V','minor-i-V'] },
+      { key: 'lock-collections', vals: ['yes','no'] },
+    ]
+  },
+  'songs': {
+    color: '#BF8700', label: 'Song Builder',
+    keys: [
+      { key: 'label', desc: 'Step name shown to student' },
+      { key: 'rhythm-family', vals: ['duple','triple'] },
+      { key: 'lock-rhythm-family', vals: ['yes','no'] },
+      { key: 'tonal-collections', vals: ['major-stepwise','minor-stepwise','major-I-V','minor-i-V'] },
+      { key: 'lock-tonal', vals: ['yes','no'] },
+      { key: 'lock-time-signature', vals: ['yes','no'] },
+      { key: 'lock-criteria', vals: ['yes','no'] },
+    ]
+  },
+  'rhythms': {
+    color: '#BC4C00', label: 'Rhythms',
+    keys: [
+      { key: 'label', desc: 'Step name shown to student' },
+      { key: 'collections', vals: ['Duple-M-m-2-4','Duple-M-m-4-4','Triple-M-m-6/8','Triple-M-m-3/4'] },
+      { key: 'lock-collections', vals: ['yes','no'] },
+    ]
+  },
+  'patterns': {
+    color: '#1A7F37', label: 'Patterns',
+    keys: [
+      { key: 'label', desc: 'Step name shown to student' },
+      { key: 'collections', vals: ['major-stepwise','minor-stepwise','major-I-V','minor-i-V'] },
+      { key: 'lock-collections', vals: ['yes','no'] },
+    ]
+  },
+};
+
+const SB_BOOL = /^(yes|y|true|1)$/i;
+
+const SB_DEMO = `# Grade 3 — Unit 2: Duple basics
+# Macrobeat and microbeat in simple duple meter
+
+tool: rhythm-sequences
+label: Rhythm warm-up
+collections: Duple-M-m-2-4, Duple-M-m-4-4
+lock-collections: yes
+criteria: macrobeat, microbeat
+lock-criteria: yes
+
+---
+
+tool: tonal-sequences
+label: Stepwise major patterns
+collections: major-stepwise
+lock-collections: yes
+
+---
+
+tool: songs
+label: Put it together
+rhythm-family: duple
+lock-rhythm-family: yes
+tonal-collections: major-stepwise
+lock-tonal: yes
+lock-time-signature: yes`;
+
+function sbParse(text) {
+  const blocks = text.split(/^---+\s*$/m);
+  const steps = [];
+  for (const block of blocks) {
+    const step = { tool: null, label: null, config: {}, errors: [], warns: [] };
+    let seenAny = false;
+    for (const line of block.split('\n')) {
+      const t = line.trim();
+      if (!t || t.startsWith('#')) continue;
+      seenAny = true;
+      const ci = t.indexOf(':');
+      if (ci < 1) { step.warns.push('Unrecognized line: ' + t.slice(0,40)); continue; }
+      const key = t.slice(0, ci).trim().toLowerCase();
+      const val = t.slice(ci + 1).trim();
+      if (!val && key !== 'label') continue;
+      switch (key) {
+        case 'tool':  step.tool  = val.toLowerCase(); break;
+        case 'label': step.label = val; break;
+        case 'collections':
+          step.config.collections = val.split(',').map(s => s.trim()).filter(Boolean); break;
+        case 'lock': case 'lock-collections':
+          step.config.lockCollections = SB_BOOL.test(val); break;
+        case 'criteria': {
+          const c = val.split(/[\s,]+/).map(s => s.trim().toLowerCase()).filter(Boolean);
+          const f = ['macrobeat','microbeat','division','elongation','rest'];
+          step.config.criteria = Object.fromEntries(f.map(k => [k, c.includes(k)]));
+          break; }
+        case 'lock-criteria':      step.config.lockCriteria = SB_BOOL.test(val); break;
+        case 'rhythm-family':      step.config.rhythmFamily = val.toLowerCase(); break;
+        case 'lock-rhythm-family': step.config.lockRhythmFamily = SB_BOOL.test(val); break;
+        case 'tonal-collections':
+          step.config.tonalCollections = val.split(',').map(s => s.trim()).filter(Boolean); break;
+        case 'lock-tonal':          step.config.lockTonalCollections = SB_BOOL.test(val); break;
+        case 'lock-time-signature': step.config.lockTimeSignature = SB_BOOL.test(val); break;
+        default: step.warns.push('Unknown key: ' + key);
+      }
+    }
+    if (!seenAny) continue;
+    if (!step.tool) step.errors.push('Missing required field: tool');
+    else if (!SB_TOOLS[step.tool]) step.warns.push('Unknown tool "' + step.tool + '"');
+    steps.push(step);
+  }
+  return steps;
+}
+
+function sbEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+function sbChips(items, cls) {
+  return items.map(v => `<span class="sb-chip ${cls||''}">${sbEsc(v)}</span>`).join('');
+}
+function sbRow(lbl, content, locked) {
+  const lock = locked ? '<span class="sb-chip sb-chip-locked" style="margin-left:.15rem">locked</span>' : '';
+  return `<div class="sb-step-row">
+    <span class="sb-row-label">${lbl}</span>
+    <div style="display:flex;flex-wrap:wrap;gap:.25rem;align-items:center;flex:1">${content}${lock}</div>
+  </div>`;
+}
+function sbRenderCard(step, idx) {
+  const info = SB_TOOLS[step.tool || ''] || {};
+  const tc = info.color || '#57606A';
+  const label = step.label || (info.label || ('Step ' + (idx+1)));
+  const cfg = step.config;
+  let rows = '';
+  if (cfg.collections?.length)    rows += sbRow('Collections', sbChips(cfg.collections), cfg.lockCollections);
+  if (cfg.criteria) {
+    const active = Object.keys(cfg.criteria).filter(k => cfg.criteria[k]);
+    if (active.length) rows += sbRow('Criteria', sbChips(active, 'sb-chip-criteria'), cfg.lockCriteria);
+  }
+  if (cfg.rhythmFamily)           rows += sbRow('Meter', `<span class="sb-chip">${sbEsc(cfg.rhythmFamily)}</span>`, cfg.lockRhythmFamily);
+  if (cfg.tonalCollections?.length) rows += sbRow('Tonal', sbChips(cfg.tonalCollections), cfg.lockTonalCollections);
+  if (cfg.lockTimeSignature)      rows += sbRow('Time sig', '<span class="sb-chip sb-chip-locked">locked</span>', false);
+  const msgs = [
+    ...step.errors.map(e => `<div class="sb-err">✕ ${sbEsc(e)}</div>`),
+    ...step.warns.map(w => `<div class="sb-warn">⚠ ${sbEsc(w)}</div>`),
+  ].join('');
+  return `<div class="sb-step-card" style="border-left-color:${tc}">
+    <div class="sb-card-head">
+      <div class="sb-step-num" style="background:${tc}">${idx+1}</div>
+      <div class="sb-step-label">${sbEsc(label)}</div>
+      ${step.tool ? `<div class="sb-tool-tag" style="color:${tc};border-color:${tc}22">${sbEsc(info.label||step.tool)}</div>` : ''}
+    </div>
+    ${rows ? `<div class="sb-card-body">${rows}</div>` : ''}
+    ${msgs ? `<div class="sb-card-msgs">${msgs}</div>` : ''}
+  </div>`;
+}
+
+let sbTimer = null, sbLastSteps = [];
+
+function sbOnEdit() {
+  sbUpdateLineNums();
+  clearTimeout(sbTimer);
+  sbTimer = setTimeout(sbUpdatePreview, 120);
+}
+function sbUpdateLineNums() {
+  const ta = document.getElementById('sb-editor');
+  const n = ta.value.split('\n').length;
+  document.getElementById('sbLineNums').innerHTML =
+    Array.from({length: n}, (_, i) => `<span>${i+1}</span>`).join('');
+}
+function sbSyncScroll() {
+  document.getElementById('sbLineNums').scrollTop =
+    document.getElementById('sb-editor').scrollTop;
+}
+function sbUpdatePreview() {
+  const steps = sbParse(document.getElementById('sb-editor').value);
+  sbLastSteps = steps;
+  const valid = steps.filter(s => s.tool && SB_TOOLS[s.tool] && !s.errors.length);
+  const scroll = document.getElementById('sbPreviewScroll');
+  const footer = document.getElementById('sbPreviewFooter');
+  const count  = document.getElementById('sb-step-count');
+  if (!steps.length) {
+    scroll.innerHTML = `<div class="sb-empty">
+      Write a session spec on the left.<br>
+      Each step starts with <code>tool:</code> and is separated by <code>---</code>.<br>
+      Open the Reference below for available tools and values.
+    </div>`;
+    footer.style.display = 'none'; count.textContent = ''; return;
+  }
+  scroll.innerHTML = steps.map((s, i) => sbRenderCard(s, i)).join('');
+  count.textContent = valid.length + ' step' + (valid.length !== 1 ? 's' : '');
+  footer.style.display = valid.length ? '' : 'none';
+  document.getElementById('sbFooterNote').textContent =
+    valid.length < steps.length ? (steps.length - valid.length) + ' step(s) have errors' : '';
+}
+
+function sbValidSteps() {
+  return sbLastSteps
+    .filter(s => s.tool && SB_TOOLS[s.tool] && !s.errors.length)
+    .map(s => ({ tool: s.tool, label: s.label || SB_TOOLS[s.tool].label, config: s.config }));
+}
+function sbEnc(obj) { return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))); }
+function sbFlash(id, msg) {
+  const btn = document.getElementById(id);
+  const orig = btn.textContent; btn.textContent = msg;
+  setTimeout(() => { btn.textContent = orig; }, 1800);
+}
+
+window.sbLoadDemo = function() {
+  document.getElementById('sb-editor').value = SB_DEMO;
+  sbUpdateLineNums(); sbUpdatePreview();
+};
+window.sbClear = function() {
+  document.getElementById('sb-editor').value = '';
+  sbUpdateLineNums(); sbUpdatePreview();
+};
+window.sbCopyJson = function() {
+  const v = sbValidSteps();
+  if (!v.length) { sbFlash('sbCopyJsonBtn', 'Nothing valid yet'); return; }
+  navigator.clipboard?.writeText(JSON.stringify(v, null, 2))
+    .then(() => sbFlash('sbCopyJsonBtn', 'Copied ✓'))
+    .catch(() => prompt('Copy JSON:', JSON.stringify(v, null, 2)));
+};
+window.sbCopyLink = function() {
+  const v = sbValidSteps();
+  if (!v.length) { sbFlash('sbCopyLinkBtn', 'Nothing valid yet'); return; }
+  const url = window.location.origin + '/practice/session.html?steps=' + sbEnc(v);
+  navigator.clipboard?.writeText(url)
+    .then(() => sbFlash('sbCopyLinkBtn', 'Copied ✓'))
+    .catch(() => prompt('Session link:', url));
+};
+window.sbStartSession = function() {
+  const v = sbValidSteps();
+  if (!v.length) return;
+  window.location.href = '/practice/session.html?steps=' + sbEnc(v);
+};
+
+// Reference panel
+(function buildRef() {
+  const grid = document.getElementById('sbRefGrid');
+  for (const [toolName, info] of Object.entries(SB_TOOLS)) {
+    const card = document.createElement('div');
+    card.className = 'sb-ref-card';
+    card.style.borderLeftColor = info.color;
+    const head = document.createElement('div');
+    head.className = 'sb-ref-head';
+    head.style.cssText = `background:${info.color}18;color:${info.color}`;
+    head.textContent = info.label;
+    card.appendChild(head);
+    const body = document.createElement('div');
+    body.className = 'sb-ref-body';
+    const toolRow = document.createElement('div');
+    toolRow.style.marginBottom = '.35rem';
+    toolRow.innerHTML = `<span class="sb-ref-key">tool:</span> <span class="sb-ref-chip" onclick="sbInsert('tool: ${toolName}')">${toolName}</span>`;
+    body.appendChild(toolRow);
+    for (const k of info.keys) {
+      const row = document.createElement('div');
+      row.style.marginBottom = '.25rem';
+      const valsHtml = k.vals
+        ? k.vals.map(v => `<span class="sb-ref-chip" onclick="sbInsert('${k.key}: ${v}')">${v}</span>`).join('')
+        : `<span style="font-size:.69rem;color:var(--pv-muted)">${k.desc||''}</span>`;
+      row.innerHTML = `<div class="sb-ref-key">${k.key}:</div><div class="sb-ref-vals">${valsHtml}</div>`;
+      body.appendChild(row);
+    }
+    card.appendChild(body);
+    grid.appendChild(card);
+  }
+})();
+
+window.sbInsert = function(text) {
+  const ta = document.getElementById('sb-editor');
+  const s = ta.selectionStart, e = ta.selectionEnd;
+  const prefix = (s > 0 && ta.value[s-1] !== '\n') ? '\n' : '';
+  ta.value = ta.value.slice(0, s) + prefix + text + '\n' + ta.value.slice(e);
+  const pos = s + prefix.length + text.length + 1;
+  ta.setSelectionRange(pos, pos); ta.focus();
+  sbUpdateLineNums();
+  clearTimeout(sbTimer); sbTimer = setTimeout(sbUpdatePreview, 120);
+};
+
+// init
+sbLoadDemo();
+
+})();
+</script>
+```

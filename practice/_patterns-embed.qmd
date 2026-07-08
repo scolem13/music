@@ -350,6 +350,11 @@
 			option.value = key;
 			selectPattern.appendChild(option);
 		}
+		const P_CFG = window.TOOL_CONFIG || {};
+		if (P_CFG.collections && P_CFG.collections.length)
+			Array.from(selectPattern.options).forEach(function(o) { if (P_CFG.collections.indexOf(o.value) === -1) o.remove(); });
+		if (P_CFG.lockCollections || selectPattern.options.length <= 1)
+			selectPattern.style.display = 'none';
 		refreshSongbook();
 		for (let i = 0; i < 4; i++) {
 			moveStuff("paper" + i, "marginTop", "paper" + i + "-top");

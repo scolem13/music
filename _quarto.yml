@@ -7,7 +7,7 @@ project:
     - apps/**
 
 website:
-  title: "Music Practice (demo)"
+  title: "Music Practice"
   navbar:
     left:
       - href: index.qmd
@@ -19,10 +19,17 @@ website:
 #          - lessons/tonal-do-re-mi.qmd
       - text: Practice
         menu:
-          - practice/assessment-tune.qmd
-          - practice/reading-benchmarks.qmd
+          - practice/session.qmd
+          - text: "---"
+          - practice/rhythm-sequences.qmd
+          - practice/tonal-sequences.qmd
+          - practice/songs.qmd
+          - practice/tunes.qmd
           - practice/patterns.qmd
           - practice/rhythms.qmd
+          - practice/reading-benchmarks.qmd
+          - text: "---"
+          - practice/assessment-tune.qmd
           - practice/assessment.qmd
           - practice/assessment-rhythm.qmd
       - text: Tools
@@ -37,8 +44,10 @@ website:
           - tools/drumset.qmd
           - tools/solfege-keyboard.qmd
           - tools/accomp-styles.qmd
-      - href: teacher/report.qmd
-        text: Teacher Report
+      - text: Teacher
+        menu:
+          - teacher/session-builder.qmd
+          - teacher/report.qmd
 
 format:
   html:
@@ -47,7 +56,7 @@ format:
     # Load Supabase + your config in <head>, on every page:
     include-in-header:
       - _includes/head.html
-    # A sign-in / status bar at the top of every page:
+    # Auth: injects sign-in controls into the navbar dropdown:
     include-before-body:
       - _includes/auth-widget.html
     # The page-time + action tracker, on every page:

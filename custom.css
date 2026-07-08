@@ -163,38 +163,45 @@ h3 { color: var(--site-ink-2); }
 .navbar .active > .nav-link { color: var(--site-accent-dk) !important; }
 
 
-/* ── Auth bar ────────────────────────────────────────────────────────────── */
-/* The auth strip sits above the nav in the same parchment band.             */
-/* Inline styles from head.html set layout; we override only the palette.   */
-#auth-bar {
-  background:   var(--parch-2) !important;
-  border-bottom: 1px solid var(--parch-edge) !important;
+/* ── Navbar auth dropdown ────────────────────────────────────────────────── */
+/* #navbar-auth is injected by auth-widget.html into the navbar collapse.    */
+.auth-email-label {
+  font-size: .8rem !important;
   color: var(--parch-dim) !important;
+  padding: .25rem 1rem !important;
 }
-#auth-bar .who {
-  color: var(--parch-ink);
-  font-weight: 600;
+.auth-signin-menu {
+  min-width: 220px !important;
+  padding: .75rem .85rem !important;
 }
-#auth-bar button {
-  background: transparent !important;
-  border: 1px solid var(--parch-edge) !important;
-  border-radius: 3px !important;
-  color: var(--parch-ink) !important;
-  font-size: 13px;
-  padding: 2px 8px !important;
-  cursor: pointer;
+
+/* ── Session navigation bar ──────────────────────────────────────────────── */
+/* Injected by session-nav.js when a ?steps= session is active.             */
+#session-nav-bar {
+  position: sticky; top: 0; z-index: 1050;
+  background: var(--site-accent);
+  color: #fff;
+  display: flex; align-items: center;
+  gap: .5rem .75rem; flex-wrap: wrap;
+  padding: .45rem 1rem; font-size: .88rem;
+  font-family: system-ui, -apple-system, sans-serif;
+  box-shadow: 0 2px 6px rgba(34,32,27,.15);
 }
-#auth-bar button:hover {
-  border-color: var(--site-accent) !important;
-  color: var(--site-accent-dk) !important;
+#session-nav-bar .snb-counter {
+  opacity: .8; white-space: nowrap; font-size: .8rem;
 }
-#auth-bar input {
-  border: 1px solid var(--parch-edge) !important;
-  border-radius: 3px !important;
-  background: var(--parch) !important;
-  color: var(--parch-ink) !important;
-  padding: 2px 7px !important;
-  font-size: 13px;
+#session-nav-bar .snb-label {
+  flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+#session-nav-bar .snb-btn {
+  padding: .2rem .55rem; border-radius: .3rem;
+  background: rgba(255,255,255,.22);
+  color: #fff; text-decoration: none;
+  white-space: nowrap; font-size: .82rem;
+}
+#session-nav-bar .snb-btn:hover {
+  background: rgba(255,255,255,.35);
+  color: #fff;
 }
 
 

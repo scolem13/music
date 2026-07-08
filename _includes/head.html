@@ -10,14 +10,6 @@
   // tracker both reuse window.sb so there's a single session.
   window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
 </script>
-<style>
-  #auth-bar {
-    font-family: sans-serif; font-size: 14px;
-    background: #f4f6f8; border-bottom: 1px solid #dde;
-    padding: 6px 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
-  }
-  #auth-bar input { font-size: 14px; padding: 3px 6px; width: 150px; }
-  #auth-bar button { font-size: 14px; padding: 3px 8px; cursor: pointer; }
-  #auth-bar .who { font-weight: bold; }
-  #auth-bar .spacer { flex: 1; }
-</style>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="/apps/shared/session-nav.js"></script>

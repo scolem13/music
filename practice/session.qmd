@@ -1,0 +1,283 @@
+---
+title: "Session"
+---
+
+```{=html}
+<style>
+#session-root {
+  max-width: 640px; margin: 0 auto 2rem;
+  font-family: var(--bs-font-sans-serif, system-ui, sans-serif);
+}
+#session-root .sq-card {
+  background: var(--parch-2, #fff);
+  border: 1px solid var(--parch-edge, #dee2e6);
+  border-radius: .5rem;
+  padding: 1.1rem 1.25rem; margin: 0 0 1rem;
+  box-shadow: 0 1px 3px rgba(34,32,27,.06);
+}
+#session-root h2 { font-size: 1.1rem; margin: 0 0 .75rem; color: var(--parch-ink, #22201b); }
+#session-root .step-list { list-style: none; margin: 0; padding: 0; }
+#session-root .step-list li {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .45rem 0; border-bottom: 1px solid var(--site-border-soft, #f0f0f0); font-size: .92rem;
+}
+#session-root .step-list li:last-child { border-bottom: none; }
+#session-root .step-num {
+  width: 1.5rem; height: 1.5rem; border-radius: 50%;
+  background: var(--site-accent, #3fc2b4); color: #fff;
+  font-size: .75rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+#session-root .step-tool {
+  font-size: .75rem; color: var(--parch-dim, #6c757d);
+  background: var(--site-surface-2, #f0f4fa); border-radius: .25rem; padding: .1rem .35rem;
+  white-space: nowrap;
+}
+#session-root .sq-btn {
+  padding: .4rem .85rem; font-size: .9rem;
+  border: 1px solid var(--parch-edge, #ced4da);
+  border-radius: .375rem;
+  background: var(--parch-2, #fff); color: var(--parch-ink, #212529);
+  cursor: pointer; line-height: 1.5;
+}
+#session-root .sq-btn-primary {
+  background: var(--site-accent, #3fc2b4);
+  border-color: var(--site-accent, #3fc2b4);
+  color: var(--site-accent-text, #fff); font-weight: 600;
+}
+#session-root .sq-btn-primary:hover {
+  background: var(--site-accent-dk, #2b9c90);
+  border-color: var(--site-accent-dk, #2b9c90);
+}
+#session-root .sq-row { display: flex; gap: .5rem; flex-wrap: wrap; margin-top: .85rem; }
+#session-root textarea {
+  width: 100%; min-height: 80px; font-family: monospace; font-size: .82rem;
+  padding: .4rem .5rem;
+  border: 1px solid var(--parch-edge, #dee2e6); border-radius: .375rem;
+  resize: vertical; box-sizing: border-box;
+  background: var(--parch, #f4efe2); color: var(--parch-ink, #22201b);
+}
+#session-done { display: none; }
+#session-error { display: none; color: var(--site-fail, #b5251c); font-size: .88rem; margin-top: .5rem; }
+</style>
+
+<div id="session-root">
+
+  <!-- Session overview (shown when a valid session is loaded) -->
+  <div id="session-overview" class="sq-card" style="display:none">
+    <h2 id="session-title">Session</h2>
+    <ol class="step-list" id="step-list"></ol>
+    <div class="sq-row">
+      <button class="sq-btn sq-btn-primary" id="start-btn" onclick="startSession()">Start &rarr;</button>
+      <button class="sq-btn" onclick="resetSession()">Clear</button>
+    </div>
+  </div>
+
+  <!-- Completion state -->
+  <div id="session-done" class="sq-card">
+    <h2>Session complete &#10003;</h2>
+    <p style="margin:.25rem 0 .75rem;color:var(--parch-dim);font-size:.92rem;">
+      You finished all the steps. Nice work.
+    </p>
+    <div class="sq-row">
+      <button class="sq-btn sq-btn-primary" id="restart-btn" onclick="restartSession()">Go again &rarr;</button>
+      <button class="sq-btn" onclick="resetSession()">New session</button>
+    </div>
+  </div>
+
+  <!-- Entry: paste JSON or use demo -->
+  <div id="session-entry" class="sq-card">
+    <h2>Load a session</h2>
+    <p style="margin:0 0 .6rem;font-size:.88rem;color:var(--parch-dim);">
+      Paste a session JSON array, or try the demo below.
+    </p>
+    <textarea id="session-json" spellcheck="false" placeholder='[{"label":"…","tool":"rhythm-sequences","config":{}}]'></textarea>
+    <div id="session-error"></div>
+    <div class="sq-row">
+      <button class="sq-btn sq-btn-primary" onclick="loadFromJson()">Load</button>
+      <button class="sq-btn" onclick="loadDemo()">Demo session</button>
+    </div>
+  </div>
+
+  <!-- Share -->
+  <div id="session-share" class="sq-card" style="display:none">
+    <h2>Share this session</h2>
+    <textarea id="share-url" readonly style="min-height:48px;"></textarea>
+    <div class="sq-row">
+      <button class="sq-btn" onclick="copyShareUrl()">Copy link</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+const DEMO_SESSION = [
+  {
+    label: "Rhythm: Duple basics",
+    tool:  "rhythm-sequences",
+    config: {
+      collections:    ["Duple-M-m-2-4", "Duple-M-m-4-4"],
+      lockCollections: true,
+      criteria:       { macrobeat: true, microbeat: true,
+                        division: false, elongation: false, rest: false },
+      lockCriteria:   true
+    }
+  },
+  {
+    label: "Tonal: Major stepwise",
+    tool:  "tonal-sequences",
+    config: {
+      collections:    ["major-stepwise"],
+      lockCollections: true
+    }
+  },
+  {
+    label: "Song builder",
+    tool:  "songs",
+    config: {
+      rhythmFamily:       "duple",
+      lockRhythmFamily:   true,
+      tonalCollections:   ["major-stepwise"],
+      lockTonalCollections: true
+    }
+  }
+];
+
+const TOOL_LABELS = {
+  "rhythm-sequences": "Rhythm Sequences",
+  "tonal-sequences":  "Tonal Sequences",
+  "songs":            "Song Builder",
+  "rhythms":          "Rhythms",
+  "patterns":         "Patterns",
+  "assessment-tune":  "Tune Assessment",
+  "assessment-rhythm":"Rhythmic Accuracy"
+};
+
+let currentSteps   = null;
+let currentStepsEnc = null;
+
+function enc(obj) { return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))); }
+function dec(s)   { try { return JSON.parse(decodeURIComponent(escape(atob(s)))); } catch(e) { return null; } }
+
+function stepUrl(steps, stepsEnc, i) {
+  return '/practice/' + steps[i].tool + '.html?' +
+    new URLSearchParams({ steps: stepsEnc, step: String(i) });
+}
+
+function showOverview(steps, stepsEnc) {
+  currentSteps    = steps;
+  currentStepsEnc = stepsEnc;
+
+  document.getElementById('session-entry').style.display   = 'none';
+  document.getElementById('session-done').style.display    = 'none';
+  document.getElementById('session-overview').style.display = '';
+  document.getElementById('session-share').style.display   = '';
+  document.getElementById('session-error').style.display   = 'none';
+
+  document.getElementById('session-title').textContent =
+    steps.length + '-step practice session';
+
+  const list = document.getElementById('step-list');
+  list.innerHTML = '';
+  steps.forEach(function(s, i) {
+    const li = document.createElement('li');
+    const num = document.createElement('span');
+    num.className = 'step-num';
+    num.textContent = String(i + 1);
+    const lbl = document.createElement('span');
+    lbl.style.flex = '1';
+    lbl.textContent = s.label || s.tool;
+    const tag = document.createElement('span');
+    tag.className = 'step-tool';
+    tag.textContent = TOOL_LABELS[s.tool] || s.tool;
+    li.appendChild(num); li.appendChild(lbl); li.appendChild(tag);
+    list.appendChild(li);
+  });
+
+  const shareUrl = window.location.origin + '/practice/session.html?' +
+    new URLSearchParams({ steps: stepsEnc });
+  document.getElementById('share-url').value = shareUrl;
+}
+
+function startSession() {
+  if (currentSteps && currentStepsEnc)
+    window.location.href = stepUrl(currentSteps, currentStepsEnc, 0);
+}
+
+function restartSession() {
+  if (currentSteps && currentStepsEnc)
+    showOverview(currentSteps, currentStepsEnc);
+}
+
+function resetSession() {
+  currentSteps = null; currentStepsEnc = null;
+  document.getElementById('session-overview').style.display = 'none';
+  document.getElementById('session-done').style.display     = 'none';
+  document.getElementById('session-share').style.display    = 'none';
+  document.getElementById('session-entry').style.display    = '';
+}
+
+function loadFromJson() {
+  const raw = document.getElementById('session-json').value.trim();
+  const errEl = document.getElementById('session-error');
+  let steps;
+  try { steps = JSON.parse(raw); } catch(e) {
+    errEl.textContent = 'Invalid JSON: ' + e.message;
+    errEl.style.display = '';
+    return;
+  }
+  if (!Array.isArray(steps) || !steps.length) {
+    errEl.textContent = 'Expected a JSON array with at least one step.';
+    errEl.style.display = '';
+    return;
+  }
+  for (const s of steps) {
+    if (!s.tool) {
+      errEl.textContent = 'Each step needs a "tool" field (e.g. "rhythm-sequences").';
+      errEl.style.display = '';
+      return;
+    }
+  }
+  errEl.style.display = 'none';
+  showOverview(steps, enc(steps));
+}
+
+function loadDemo() {
+  document.getElementById('session-json').value =
+    JSON.stringify(DEMO_SESSION, null, 2);
+  showOverview(DEMO_SESSION, enc(DEMO_SESSION));
+}
+
+function copyShareUrl() {
+  const url = document.getElementById('share-url').value;
+  if (navigator.clipboard) navigator.clipboard.writeText(url)
+    .then(function() { alert('Link copied'); })
+    .catch(function() { prompt('Copy this link:', url); });
+  else prompt('Copy this link:', url);
+}
+
+(function () {
+  const QS = new URLSearchParams(window.location.search);
+  const stepsEnc = QS.get('steps');
+  const done     = QS.get('done');
+
+  if (stepsEnc) {
+    const steps = dec(stepsEnc);
+    if (steps) {
+      if (done) {
+        currentSteps    = steps;
+        currentStepsEnc = stepsEnc;
+        document.getElementById('session-entry').style.display = 'none';
+        document.getElementById('session-done').style.display  = '';
+        document.getElementById('session-share').style.display = '';
+        const shareUrl = window.location.origin + '/practice/session.html?' +
+          new URLSearchParams({ steps: stepsEnc });
+        document.getElementById('share-url').value = shareUrl;
+      } else {
+        showOverview(steps, stepsEnc);
+      }
+    }
+  }
+})();
+</script>
+```

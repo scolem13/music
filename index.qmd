@@ -1,40 +1,113 @@
 ---
-title: "Music Practice (demo)"
+title: "Music Practice"
+toc: false
 ---
 
-This is a throwaway **Quarto** site wired to **Supabase** so you can get a feel
-for the new concepts before integrating any of it into your real site:
+```{=html}
+<style>
+.home-intro {
+  font-size: 1.05rem; color: var(--site-ink-2); max-width: 48rem;
+  margin: 0 0 2rem; line-height: 1.7;
+}
+.home-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem; margin-bottom: 2rem;
+}
+.home-card {
+  background: var(--parch-2); border: 1px solid var(--parch-edge);
+  border-radius: .5rem; padding: 1rem 1.1rem;
+  text-decoration: none; color: inherit;
+  display: flex; flex-direction: column; gap: .3rem;
+  transition: border-color .15s, box-shadow .15s;
+}
+.home-card:hover {
+  border-color: var(--site-accent); color: inherit;
+  box-shadow: 0 2px 8px rgba(63,194,180,.15);
+  text-decoration: none;
+}
+.home-card-eyebrow {
+  font-size: .7rem; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--site-accent-dk);
+}
+.home-card-title {
+  font-weight: 600; font-size: .97rem; color: var(--parch-ink);
+}
+.home-card-desc {
+  font-size: .84rem; color: var(--site-ink-2); line-height: 1.5;
+}
+.home-section-head {
+  font-family: var(--font-display); font-size: .78rem; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase; color: var(--parch-dim);
+  border-bottom: 1px solid var(--parch-edge); padding-bottom: .35rem;
+  margin: 1.75rem 0 .85rem;
+}
+</style>
 
-- **Site-wide auth** — the bar at the top appears on *every* page. Sign in once
-  (email/password is easiest to start), and the session follows you around.
-- **Automatic time-on-page tracking** — every page you visit logs how long you
-  actively look at it. You wrote no tracking code on these pages; it's wired in
-  once via `_quarto.yml`.
-- **In-app action logging** — the Practice pages embed your real apps and log
-  plays and note-clicks.
-- **Role-based reporting** — the Teacher Report shows time + actions, but only
-  for students the signed-in person is allowed to see (enforced by the
-  database, not the page).
+<p class="home-intro">
+  Rhythm, melody, and song — tools for music students from kindergarten through
+  high school. Practice on your own, or follow a session your teacher has set up.
+</p>
 
-## Try this
+<div class="home-section-head">Practice</div>
+<div class="home-grid">
+  <a class="home-card" href="practice/rhythm-sequences.html">
+    <div class="home-card-eyebrow">Rhythm</div>
+    <div class="home-card-title">Rhythm Sequences</div>
+    <div class="home-card-desc">Build rhythmic vocabulary pattern by pattern.</div>
+  </a>
+  <a class="home-card" href="practice/tonal-sequences.html">
+    <div class="home-card-eyebrow">Melody</div>
+    <div class="home-card-title">Tonal Sequences</div>
+    <div class="home-card-desc">Practice melodic patterns by ear and by sight.</div>
+  </a>
+  <a class="home-card" href="practice/songs.html">
+    <div class="home-card-eyebrow">Composition</div>
+    <div class="home-card-title">Song Builder</div>
+    <div class="home-card-desc">Assemble rhythm and melody cells into a short piece.</div>
+  </a>
+  <a class="home-card" href="practice/patterns.html">
+    <div class="home-card-eyebrow">Melody</div>
+    <div class="home-card-title">Tonal Patterns</div>
+    <div class="home-card-desc">Stepwise and harmonic patterns, major and minor.</div>
+  </a>
+  <a class="home-card" href="practice/rhythms.html">
+    <div class="home-card-eyebrow">Rhythm</div>
+    <div class="home-card-title">Rhythm Patterns</div>
+    <div class="home-card-desc">Notated rhythm reading and performance.</div>
+  </a>
+</div>
 
-1. Make sure you've run the one-time setup (see `README.md`): create the
-   Supabase tables and paste your URL + anon key into `config.js`.
-2. Use the bar at the top to **create an account** and **sign in**.
-3. Wander through a few **Lessons** — linger on each, switch browser tabs and
-   come back (watch that hidden time isn't counted).
-4. Open a **Practice** page, press play, click some notes.
-5. Open the **Teacher Report** to see your time and actions per page.
+<div class="home-section-head">Assessment</div>
+<div class="home-grid">
+  <a class="home-card" href="practice/assessment-tune.html">
+    <div class="home-card-eyebrow">Pitch &amp; Rhythm</div>
+    <div class="home-card-title">Tune Assessment</div>
+    <div class="home-card-desc">Perform a tune; get scored on pitch and rhythm accuracy.</div>
+  </a>
+  <a class="home-card" href="practice/assessment.html">
+    <div class="home-card-eyebrow">Melody</div>
+    <div class="home-card-title">Tonal Accuracy</div>
+    <div class="home-card-desc">Sing or play back tonal patterns on demand.</div>
+  </a>
+  <a class="home-card" href="practice/assessment-rhythm.html">
+    <div class="home-card-eyebrow">Rhythm</div>
+    <div class="home-card-title">Rhythmic Accuracy</div>
+    <div class="home-card-desc">Perform rhythm patterns and see your timing.</div>
+  </a>
+</div>
 
-::: callout-note
-For the first pass, sign in with **email/password** — it needs no extra setup.
-Google sign-in also works but requires a Google Cloud OAuth client and a
-redirect URL; see `README.md`.
-:::
-
-## What's new here vs. a plain Quarto site
-
-Nothing about your authoring changes — these are ordinary `.qmd` pages. The
-only additions live in `_quarto.yml` (three `include-*` lines) and three small
-files (`config.js`, `track.js`, and the `_includes/` partials). That's the
-whole integration surface.
+<div class="home-section-head">Teacher tools</div>
+<div class="home-grid">
+  <a class="home-card" href="teacher/session-builder.html">
+    <div class="home-card-eyebrow">Assign</div>
+    <div class="home-card-title">Session Builder</div>
+    <div class="home-card-desc">Write a guided practice session and share the link.</div>
+  </a>
+  <a class="home-card" href="teacher/report.html">
+    <div class="home-card-eyebrow">Review</div>
+    <div class="home-card-title">Teacher Report</div>
+    <div class="home-card-desc">Time on task, plays, and note interactions by student.</div>
+  </a>
+</div>
+```

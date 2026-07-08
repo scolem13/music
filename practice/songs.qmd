@@ -1,0 +1,7 @@
+---
+title: "Song Builder"
+---
+
+::: {.column-screen}
+{{< include _songs-embed.qmd >}}
+:::

@@ -470,6 +470,7 @@ function transposeChordSymbol(sym, semis){
 function publishTuneData(t, kt){
   try{
     localStorage.setItem("tuneTonality", JSON.stringify({ do:((t.do+kt)%12+12)%12, resting:((t.resting+kt)%12+12)%12, mode:t.mode }));
+    const M = target && target.meter; if (M) localStorage.setItem("tuneMeter", JSON.stringify({ n: M.n, d: M.d }));
     const seen=new Set(), names=[];
     (currentAbc.match(/"[^"]*"/g)||[]).forEach(q=>{ const s=q.slice(1,-1).trim(); if(!/^[A-G]/.test(s)) return;
       const sym=transposeChordSymbol(s, kt); if(!seen.has(sym)){ seen.add(sym); names.push(sym); } });

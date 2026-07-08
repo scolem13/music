@@ -1,6 +1,6 @@
 ```{=html}
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
   <style>
 /* ── drummachine.css ── */
 #drumset-root {
@@ -190,7 +190,7 @@ legend {
   white-space: nowrap;
 }
 
-article#instrumentsMenu {
+#instrumentsMenu {
   margin: 1em 0;
 }
 
@@ -202,15 +202,32 @@ article#instrumentsMenu {
   margin: 0.5em 0;
 }
 
-.instrument-options img {
-  width: 50px;
-  height: auto;
-  margin: 0.25em;
-  opacity: 0.3;
+.instrument-chip {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  width: 52px;
+  margin: 0.2em;
+  padding: 5px 4px 4px;
   cursor: pointer;
-  transition: opacity 0.2s;
+  border-radius: 7px;
+  border: 2px solid #ccc;
+  opacity: 0.4;
+  transition: opacity 0.15s, border-color 0.15s, box-shadow 0.15s;
+  font-size: 0.62rem;
+  line-height: 1.2;
+  text-align: center;
+  color: #333;
+  user-select: none;
 }
-
+.instrument-chip svg { display: block; }
+.instrument-chip.active {
+  opacity: 1;
+  border-color: #555;
+  box-shadow: 0 1px 4px rgba(0,0,0,.15);
+}
+/* legacy img rule kept so export clone img styles don't break */
 .instrument-options img.active {
   opacity: 1;
 }
@@ -251,35 +268,84 @@ article#instrumentsMenu {
   color: #fff !important;
 }
 
-/* Missing-image fallback: show instrument name as text */
-.step img[src*="images/"] {
-  font-size: 0.6rem;
+/* Collapsible sections */
+.ds-collapsible {
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+}
+.ds-collapsible-summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.88rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: #555;
+  padding: 0.5rem 0.75rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  user-select: none;
+}
+.ds-collapsible-summary::before {
+  content: '▶';
+  font-size: 0.65rem;
+  transition: transform 0.15s;
+  display: inline-block;
+}
+details[open] > .ds-collapsible-summary::before { transform: rotate(90deg); }
+.ds-collapsible-summary::-webkit-details-marker { display: none; }
+.ds-collapsible-body {
+  padding: 0.75rem;
+  border-top: 1px solid #e0e0e0;
 }
 
-/* Sample-missing note */
-.samples-warning {
-  background: #fff3cd;
-  border: 1px solid #ffc107;
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-  margin-bottom: 1rem;
-  font-size: 0.875rem;
+@media (prefers-color-scheme: dark) {
+  .ds-collapsible { background: #2a2a2a; border-color: #444; }
+  .ds-collapsible-body { border-top-color: #444; }
+  .ds-collapsible-summary { color: #aaa; }
+}
+
+/* Row icon column (left of each instrument row) */
+.row-icon {
+  width: 40px;
+  min-width: 40px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #555;
+  border: none;
+  background: transparent;
+}
+.step-label-spacer {
+  width: 40px;
+  min-width: 40px;
+  flex-shrink: 0;
+}
+/* Instrument step icons */
+.step-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
   </style>
 
 <div id="drumset-root">
   <div class="container py-4">
     <h1 class="mb-3">Modern Band Drum Machine V2</h1>
+    <p class="text-muted small mb-3">
+      See how these patterns fit into a full band texture:
+      <a href="/tools/accomp-styles.html#as-percussion">Drum &amp; Hand Percussion patterns →</a>
+    </p>
 
-    <div class="samples-warning">
-      <strong>Note:</strong> This local copy requires audio sample files (<code>samples/*.mp3</code>)
-      and instrument icon images (<code>images/*.png</code>) to be placed next to this HTML file.
-      The sequencer UI and grid work without them; playback needs the <code>samples/</code> folder.
-    </div>
-
-    <div class="row g-3 mb-3">
-      <!-- Left column: Playback + Grid -->
-      <div class="col-lg-6">
+    <!-- Always-visible: Playback + Pattern Loaders -->
+    <div class="row g-3 mb-2">
+      <div class="col-lg-5">
         <fieldset>
           <legend>Playback</legend>
           <div class="inline-controls mb-2">
@@ -305,74 +371,192 @@ article#instrumentsMenu {
               <label class="form-check-label" for="metronomePulseToggle">Eighth pulse</label>
             </div>
           </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Grid Settings</legend>
-          <div class="inline-controls mb-2">
-            <label for="numerator" class="mb-0">Beats:</label>
-            <input type="number" id="numerator" min="1" max="16" value="4"
-                   class="form-control form-control-sm" style="width:65px">
-            <label for="bottomNote" class="mb-0">Note value:</label>
-            <select id="bottomNote" class="form-select form-select-sm" style="width:auto">
-              <option value="4">4</option>
-              <option value="8">8</option>
+          <div class="inline-controls mt-2">
+            <label class="mb-0" for="swingRange" style="white-space:nowrap">Swing: <span id="swingValue">off</span></label>
+            <input type="range" id="swingRange" min="0" max="25" step="1" value="0"
+                   class="form-range" style="width:100px">
+          </div>
+          <div class="inline-controls mt-2">
+            <label class="mb-0" for="rideSelect" style="white-space:nowrap">Ride:</label>
+            <select id="rideSelect" class="form-select form-select-sm" style="width:auto">
+              <option value="medium20">20&Prime; Medium</option>
+              <option value="jazz18">18&Prime; Jazz (dark)</option>
+              <option value="rock22">22&Prime; Rock</option>
+              <option value="flat">Flat ride</option>
+              <option value="bell">Bell</option>
             </select>
           </div>
-          <div class="text-center" style="font-size:0.8rem;color:#666;margin-bottom:4px">Subdivision</div>
-          <div id="subdivisionDial">
-            <div class="dial-option" id="dial-option-quarter" title="Quarter notes">&#9834;</div>
-            <div class="dial-option selected" id="dial-option-eighth" title="Eighth notes">&#9833;</div>
-            <div class="dial-option" id="dial-option-sixteenth" title="Sixteenth notes">&#119137;</div>
+          <div class="inline-controls mt-2">
+            <label class="mb-0" for="rideDecayRange" style="white-space:nowrap">Decay: <span id="rideDecayValue">2.2</span>s</label>
+            <input type="range" id="rideDecayRange" min="0.1" max="4.5" step="0.1" value="2.2"
+                   class="form-range" style="width:100px">
+          </div>
+          <div class="inline-controls mt-2">
+            <label class="mb-0" for="reverbRange" style="white-space:nowrap">Ride reverb: <span id="reverbValue">0</span>%</label>
+            <input type="range" id="reverbRange" min="0" max="100" step="5" value="0"
+                   class="form-range" style="width:100px">
+          </div>
+          <div class="inline-controls mt-2">
+            <label class="mb-0" for="rideHpRange" style="white-space:nowrap">Ride HP: <span id="rideHpValue">20</span> Hz</label>
+            <input type="range" id="rideHpRange" min="20" max="6000" step="20" value="20"
+                   class="form-range" style="width:100px">
+          </div>
+          <div class="inline-controls mt-2">
+            <label class="mb-0" for="rideLpRange" style="white-space:nowrap">Ride LP: <span id="rideLpValue">20k</span> Hz</label>
+            <input type="range" id="rideLpRange" min="400" max="20000" step="100" value="20000"
+                   class="form-range" style="width:100px">
           </div>
         </fieldset>
       </div>
-
-      <!-- Right column: Labels + Title + Size -->
-      <div class="col-lg-6">
+      <div class="col-lg-7">
         <fieldset>
-          <legend>Rhythm Labels</legend>
+          <legend>Load Pattern</legend>
           <div class="inline-controls mb-2">
-            <label for="labelStyle" class="mb-0">Style:</label>
-            <select id="labelStyle" class="form-select form-select-sm" style="width:auto">
-              <option value="Standard">Standard</option>
-              <option value="Eastman">Eastman</option>
+            <label class="mb-0" style="font-size:0.8rem;color:#555;white-space:nowrap">Meter:</label>
+            <select id="meterFilter" class="form-select form-select-sm" style="width:auto">
+              <option value="">All</option>
+              <option value="duple">Duple (2/4, 4/4)</option>
+              <option value="triple">Triple (3/4)</option>
+              <option value="compound">Compound (6/8)</option>
             </select>
-            <div class="form-check form-check-inline mb-0">
-              <input class="form-check-input" type="checkbox" id="symbolToggle">
-              <label class="form-check-label" for="symbolToggle">Use &amp; for +</label>
-            </div>
           </div>
           <div class="mb-2">
-            <button id="customizeLabelsBtn" class="btn btn-outline-primary btn-sm">Customize Labels</button>
+            <label class="form-label mb-1" style="font-size:0.8rem;color:#555">Drum set</label>
+            <select id="loadPatternSelect" class="form-select form-select-sm">
+              <option value="">— choose a preset —</option>
+              <optgroup label="Pop / Rock">
+                <option value="backbeat"   data-mt="duple" data-ol="Backbeat">Backbeat</option>
+                <option value="driving8"   data-mt="duple" data-ol="Driving 8ths">Driving 8ths</option>
+                <option value="ska"        data-mt="duple" data-ol="Ska / reggae (one-drop)">Ska / reggae (one-drop)</option>
+              </optgroup>
+              <optgroup label="Jazz / Swing">
+                <option value="swing_ride"      data-mt="duple"  data-ol="Swing — ride cymbal">Swing — ride cymbal</option>
+                <option value="swing_hats"      data-mt="duple"  data-ol="Swing — closed hi-hat">Swing — closed hi-hat</option>
+                <option value="swing_hats_open" data-mt="duple"  data-ol="Swing — open hi-hat">Swing — open hi-hat</option>
+                <option value="swing_brushes"   data-mt="duple"  data-ol="Swing — brushes">Swing — brushes</option>
+                <option value="jazzwaltz_ride"  data-mt="triple" data-ol="Jazz waltz — ride">Jazz waltz — ride</option>
+                <option value="jazzwaltz_hats"  data-mt="triple" data-ol="Jazz waltz — hats">Jazz waltz — hats</option>
+              </optgroup>
+              <optgroup label="Latin">
+                <option value="bossa"    data-mt="duple"    data-ol="Bossa nova">Bossa nova</option>
+                <option value="tango"    data-mt="duple"    data-ol="Tango (habanera)">Tango (habanera)</option>
+                <option value="montuno"  data-mt="duple"    data-ol="Son montuno (clave)">Son montuno (clave)</option>
+                <option value="samba"    data-mt="duple"    data-ol="Samba">Samba</option>
+                <option value="mambo"    data-mt="duple"    data-ol="Mambo">Mambo</option>
+                <option value="calypso"  data-mt="duple"    data-ol="Calypso / mento">Calypso / mento</option>
+              </optgroup>
+              <optgroup label="Funk &amp; R&amp;B">
+                <option value="funk"       data-mt="duple" data-ol="Funk">Funk</option>
+                <option value="halftime"   data-mt="duple" data-ol="Half-time feel">Half-time feel</option>
+                <option value="secondline" data-mt="duple" data-ol="New Orleans second line">New Orleans second line</option>
+              </optgroup>
+              <optgroup label="Other">
+                <option value="waltz"     data-mt="triple"   data-ol="Waltz">Waltz</option>
+                <option value="compound6" data-mt="compound" data-ol="Compound (6/8)">Compound (6/8)</option>
+              </optgroup>
+            </select>
           </div>
-          <div class="inline-controls">
-            <label for="labelSizeRange" class="mb-0 text-nowrap">Label size: <span id="labelSizeValue">1</span>rem</label>
-            <input type="range" id="labelSizeRange" min="0.5" max="2" step="0.1" value="1" class="form-range">
-          </div>
-        </fieldset>
-
-        <fieldset>
-          <legend>Title</legend>
           <div class="mb-2">
-            <input type="text" id="gridTitleInput" class="form-control form-control-sm"
-                   placeholder="Drum sequence title...">
+            <label class="form-label mb-1" style="font-size:0.8rem;color:#555">Hand percussion</label>
+            <select id="loadHandPatternSelect" class="form-select form-select-sm">
+              <option value="">— choose a preset —</option>
+              <optgroup label="Bongo">
+                <option value="bongo_martillo"     data-mt="duple"    data-ol="Bongo — martillo">Bongo — martillo</option>
+                <option value="bongo_slow"         data-mt="duple"    data-ol="Bongo — quarters">Bongo — quarters</option>
+              </optgroup>
+              <optgroup label="Conga">
+                <option value="conga_tumbao"       data-mt="duple"    data-ol="Conga — tumbao">Conga — tumbao</option>
+                <option value="conga_tumbao_dense" data-mt="duple"    data-ol="Conga — tumbao (dense)">Conga — tumbao (dense)</option>
+                <option value="conga_son"          data-mt="duple"    data-ol="Conga — son">Conga — son</option>
+                <option value="conga_waltz"        data-mt="triple"   data-ol="Conga — waltz">Conga — waltz</option>
+                <option value="conga_6_8"          data-mt="compound" data-ol="Conga — 6/8">Conga — 6/8</option>
+              </optgroup>
+            </select>
           </div>
-          <div class="inline-controls">
-            <label for="titleSizeRange" class="mb-0 text-nowrap">Title size:</label>
-            <input type="range" id="titleSizeRange" min="0.8" max="4" step="0.1" value="1.5" class="form-range">
+          <div>
+            <label class="form-label mb-1" style="font-size:0.8rem;color:#555">Fill</label>
+            <select id="loadFillSelect" class="form-select form-select-sm" disabled>
+              <option value="">— fill library coming soon —</option>
+            </select>
           </div>
-        </fieldset>
-
-        <fieldset class="diagram-size-controls">
-          <legend>Diagram Size</legend>
-          <div class="diagram-size-header">
-            <label for="sizeRange" class="mb-0">Scale: <strong><span id="sizeValue">1</span></strong></label>
-          </div>
-          <input type="range" id="sizeRange" min="0.5" max="6" step="0.05" value="1" class="form-range">
         </fieldset>
       </div>
     </div>
+
+    <!-- Collapsible: Grid Settings + Display options -->
+    <details class="ds-collapsible mb-2">
+      <summary class="ds-collapsible-summary">Settings</summary>
+      <div class="ds-collapsible-body">
+        <div class="row g-3">
+          <div class="col-lg-6">
+            <fieldset>
+              <legend>Grid Settings</legend>
+              <div class="inline-controls mb-2">
+                <label for="numerator" class="mb-0">Beats:</label>
+                <input type="number" id="numerator" min="1" max="16" value="4"
+                       class="form-control form-control-sm" style="width:65px">
+                <label for="bottomNote" class="mb-0">Note value:</label>
+                <select id="bottomNote" class="form-select form-select-sm" style="width:auto">
+                  <option value="4">4</option>
+                  <option value="8">8</option>
+                </select>
+              </div>
+              <div class="text-center" style="font-size:0.8rem;color:#666;margin-bottom:4px">Subdivision</div>
+              <div id="subdivisionDial">
+                <div class="dial-option" id="dial-option-quarter" title="Quarter notes">&#9834;</div>
+                <div class="dial-option selected" id="dial-option-eighth" title="Eighth notes">&#9833;</div>
+                <div class="dial-option" id="dial-option-sixteenth" title="Sixteenth notes">&#119137;</div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-lg-6">
+            <fieldset>
+              <legend>Rhythm Labels</legend>
+              <!-- Syllable style: hidden, driven from tune page via localStorage -->
+              <div class="inline-controls mb-2" style="display:none" aria-hidden="true">
+                <label for="labelStyle" class="mb-0">Style:</label>
+                <select id="labelStyle" class="form-select form-select-sm" style="width:auto">
+                  <option value="Standard">Standard</option>
+                  <option value="Eastman">Eastman</option>
+                  <option value="Gordon">Gordon</option>
+                </select>
+              </div>
+              <div class="inline-controls mb-2">
+                <div class="form-check form-check-inline mb-0">
+                  <input class="form-check-input" type="checkbox" id="symbolToggle">
+                  <label class="form-check-label" for="symbolToggle">Use &amp; for +</label>
+                </div>
+              </div>
+              <div class="mb-2">
+                <button id="customizeLabelsBtn" class="btn btn-outline-primary btn-sm">Customize Labels</button>
+              </div>
+              <div class="inline-controls">
+                <label for="labelSizeRange" class="mb-0 text-nowrap">Label size: <span id="labelSizeValue">1</span>rem</label>
+                <input type="range" id="labelSizeRange" min="0.5" max="2" step="0.1" value="1" class="form-range">
+              </div>
+            </fieldset>
+            <fieldset>
+              <legend>Title</legend>
+              <div class="mb-2">
+                <input type="text" id="gridTitleInput" class="form-control form-control-sm"
+                       placeholder="Drum sequence title...">
+              </div>
+              <div class="inline-controls">
+                <label for="titleSizeRange" class="mb-0 text-nowrap">Title size:</label>
+                <input type="range" id="titleSizeRange" min="0.8" max="4" step="0.1" value="1.5" class="form-range">
+              </div>
+            </fieldset>
+            <fieldset class="diagram-size-controls">
+              <legend>Diagram Size</legend>
+              <div class="diagram-size-header">
+                <label for="sizeRange" class="mb-0">Scale: <strong><span id="sizeValue">1</span></strong></label>
+              </div>
+              <input type="range" id="sizeRange" min="0.5" max="6" step="0.05" value="1" class="form-range">
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </details>
 
     <!-- Export controls -->
     <div class="mb-3 d-flex align-items-center gap-3 flex-wrap">
@@ -399,10 +583,10 @@ article#instrumentsMenu {
       </div>
     </div>
 
-    <!-- Instruments menu -->
-    <article id="instrumentsMenu" class="card">
-      <div class="card-header"><strong>Instrument Selection</strong></div>
-      <div class="card-body">
+    <!-- Collapsible: Instrument Selection -->
+    <details class="ds-collapsible mb-3" id="instrumentsMenu">
+      <summary class="ds-collapsible-summary">Instrument Selection</summary>
+      <div class="ds-collapsible-body">
         <div class="instrument-group" data-row="top">
           <h5>Top Row <small class="text-muted">(cymbals)</small></h5>
           <div class="instrument-options"></div>
@@ -417,74 +601,298 @@ article#instrumentsMenu {
           <h5>Bottom Row <small class="text-muted">(kick / foot)</small></h5>
           <div class="instrument-options"></div>
         </div>
+        <hr>
+        <div class="instrument-group" data-row="hand">
+          <h5>Hand Row <small class="text-muted">(bongo / conga)</small></h5>
+          <div class="instrument-options"></div>
+        </div>
       </div>
-    </article>
+    </details>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
 // ── drummachine.js ──
 
-// 1) Audio setup
-const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-const sampleUrls = {
-  hihat:     'samples/hihat.mp3',
-  hihatopen: 'samples/hihatopen.mp3',
-  crash:     'samples/crash.mp3',
-  snare:     'samples/snare.mp3',
-  hitom:     'samples/hitom.mp3',
-  lowtom:    'samples/lowtom.mp3',
-  floortom:  'samples/floortom.mp3',
-  rim:       'samples/rim.mp3',
-  rimshot:   'samples/rimshot.mp3',
-  flam:      'samples/flam.mp3',
-  kick:      'samples/kick.mp3',
-  hatfoot:   'samples/hatfoot.mp3',
-  metronome: 'samples/click.mp3'
-};
-const samples = {};
+// 1) Audio — ABCJS soundfont for all drums except ride; Web Audio synthesis for ride.
 
-async function loadSamples() {
-  for (const [name, url] of Object.entries(sampleUrls)) {
-    try {
-      const resp = await fetch(url);
-      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
-      const buf = await resp.arrayBuffer();
-      samples[name] = await audioCtx.decodeAudioData(buf);
-    } catch (e) {
-      console.warn(`Sample not loaded: ${name}`);
-    }
+// ABCJS soundfont (GM percussion bank)
+const SF = 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/';
+const DRUM_MIDI = {
+  hihat: 42, hihatopen: 46, crash: 49, snare: 38,
+  hitom: 50, lowtom: 45, floortom: 43,
+  rim: 37, rimshot: 40, flam: 38, kick: 36, hatfoot: 44,
+  hibongo: 60, lobongo: 61, congamuted: 62, congaslap: 63, congaopen: 64,
+  metronome: 76,
+};
+let sfLoadPromise = null;
+let sfReady = false;
+function prewarmSoundfont() {
+  if (sfLoadPromise) return sfLoadPromise;
+  sfLoadPromise = window.ABCJS
+    ? ABCJS.synth.playEvent(
+        [{ pitch: 36, instrument: 128, duration: 0.001, volume: 0, cents: 0 }],
+        null, 1000, SF
+      ).then(() => { sfReady = true; })
+       .catch(() => { sfLoadPromise = null; })
+    : Promise.resolve();
+  return sfLoadPromise;
+}
+
+// Web Audio — ride cymbal only (synthesis + HP/LP filters + reverb)
+let audioCtx   = null;
+let masterDry  = null;
+let reverbSend = null;
+let rideIn     = null;   // ride hits connect here → HPF → LPF → dry + reverb
+let rideHPF    = null;
+let rideLPF    = null;
+let noiseBuffer = null;
+let currentRideVariant = 'medium20';
+
+function initAudio() {
+  if (audioCtx) {
+    if (audioCtx.state === 'suspended') audioCtx.resume();
+    return;
+  }
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+  noiseBuffer = audioCtx.createBuffer(1, audioCtx.sampleRate, audioCtx.sampleRate);
+  const nd = noiseBuffer.getChannelData(0);
+  for (let i = 0; i < nd.length; i++) nd[i] = Math.random() * 2 - 1;
+
+  masterDry = audioCtx.createGain();
+  masterDry.gain.value = 1.0;
+  masterDry.connect(audioCtx.destination);
+
+  const conv = audioCtx.createConvolver();
+  const sr = audioCtx.sampleRate;
+  const irLen = Math.round(sr * 1.6);
+  const ir = audioCtx.createBuffer(2, irLen, sr);
+  for (let c = 0; c < 2; c++) {
+    const d = ir.getChannelData(c);
+    for (let i = 0; i < irLen; i++) d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / irLen, 3);
+  }
+  conv.buffer = ir;
+  const wetGain = audioCtx.createGain();
+  wetGain.gain.value = 0.85;
+  reverbSend = audioCtx.createGain();
+  reverbSend.gain.value = 0.0;
+  reverbSend.connect(conv); conv.connect(wetGain); wetGain.connect(audioCtx.destination);
+
+  // Ride signal chain: rideIn → HPF → LPF → dry + reverb
+  rideIn  = audioCtx.createGain();
+  rideHPF = audioCtx.createBiquadFilter();
+  rideLPF = audioCtx.createBiquadFilter();
+  rideHPF.type = 'highpass'; rideHPF.frequency.value = 20;
+  rideLPF.type = 'lowpass';  rideLPF.frequency.value = 20000;
+  rideIn.connect(rideHPF); rideHPF.connect(rideLPF);
+  rideLPF.connect(masterDry); rideLPF.connect(reverbSend);
+}
+
+// --- Ride cymbal synthesis ---
+const CYM_RATIOS  = [1, 1.483, 1.789, 2.255, 2.689, 3.136];
+const BELL_RATIOS = [1, 2.0, 2.756, 4.07, 5.33];
+
+const RIDE_PARAMS = {
+  // 20" medium: balanced ping + moderate wash (workhorse ride)
+  medium20: { base: 210, decay: 2.2,  noiseAmt: 0.18, vol: 0.55 },
+  // 18" thin jazz: lower pitch, heavy wash, lots of noise, dark character
+  jazz18:   { base: 182, decay: 4.2,  noiseAmt: 0.68, vol: 0.46 },
+  // 22" heavy rock: bright, cutting, shorter wash than medium
+  rock22:   { base: 240, decay: 1.4,  noiseAmt: 0.08, vol: 0.65 },
+  // Flat ride: no bow cup, very dry and staccato, almost no wash
+  flat:     { base: 195, decay: 0.45, noiseAmt: 0.04, vol: 0.60 },
+  // Bell: struck on the cup, bell-mode partials, focused pure tone
+  bell:     { base: 270, decay: 1.8,  noiseAmt: 0.0,  vol: 0.70, ratios: BELL_RATIOS, oscType: 'sine' },
+};
+
+function synthCymbal(ctx, t, { base, decay, noiseAmt, vol, lpFreq, ratios, oscType }, out) {
+  const master = ctx.createGain();
+  master.gain.setValueAtTime(vol, t);
+  master.gain.exponentialRampToValueAtTime(0.001, t + decay);
+  if (lpFreq) {
+    const lp = ctx.createBiquadFilter();
+    lp.type = 'lowpass'; lp.frequency.value = lpFreq; lp.Q.value = 0.5;
+    master.connect(lp); lp.connect(out);
+  } else {
+    master.connect(out);
+  }
+  (ratios || CYM_RATIOS).forEach((r, i) => {
+    const osc = ctx.createOscillator();
+    osc.type = oscType || (i < 2 ? 'square' : 'sawtooth');
+    osc.frequency.value = base * r;
+    const g = ctx.createGain(); g.gain.value = 0.22 / (i + 1);
+    osc.connect(g); g.connect(master); osc.start(t); osc.stop(t + decay + 0.1);
+  });
+  if (noiseAmt > 0) {
+    const ns = ctx.createBufferSource();
+    ns.buffer = noiseBuffer; ns.loop = true;
+    const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 5000; bp.Q.value = 0.7;
+    const ng = ctx.createGain(); ng.gain.value = noiseAmt * 0.6;
+    ns.connect(bp); bp.connect(ng); ng.connect(master); ns.start(t); ns.stop(t + decay + 0.1);
   }
 }
 
-function playSample(buffer) {
-  if (!buffer) return;
-  const src = audioCtx.createBufferSource();
-  src.buffer = buffer;
-  src.connect(audioCtx.destination);
-  src.start();
+function playDrumNote(instrument) {
+  if (!instrument) return;
+  if (instrument === 'ride') {
+    initAudio();
+    synthCymbal(audioCtx, audioCtx.currentTime,
+      { ...RIDE_PARAMS[currentRideVariant], decay: rideDecay }, rideIn);
+    return;
+  }
+  const midi = DRUM_MIDI[instrument];
+  if (!midi || !window.ABCJS) return;
+  ABCJS.synth.playEvent(
+    [{ pitch: midi, instrument: 128, duration: 0.125, volume: 80, cents: 0 }],
+    null, 1000, SF
+  ).catch(() => {});
 }
+
+// 1b) Pattern presets
+const GROOVE_PATTERNS = {
+  swing_ride:      { label:'Swing — ride cymbal',    meter:'4/4', groove:'rzrrrzrr' },
+  swing_hats:      { label:'Swing — closed hi-hat',  meter:'4/4', groove:'hzhhzhzh' },
+  swing_hats_open: { label:'Swing — open hi-hat',    meter:'4/4', groove:'hzhohoho' },
+  swing_brushes:   { label:'Swing — brushes',        meter:'4/4', groove:'xzxhxhxh' },
+  jazzwaltz_ride:  { label:'Jazz waltz — ride',      meter:'3/4', groove:'rzrrrz'   },
+  jazzwaltz_hats:  { label:'Jazz waltz — hats',      meter:'3/4', groove:'hzhhhz'   },
+  backbeat:        { label:'Backbeat',               meter:'4/4', groove:'khsh'     },
+  driving8:        { label:'Driving 8ths',           meter:'4/4', groove:'khshkhsh' },
+  ska:             { label:'Ska / reggae (one-drop)', meter:'4/4', groove:'zhzhkhzh' },
+  bossa:           { label:'Bossa nova',             meter:'4/4', groove:'xrrxrrxr' },
+  tango:           { label:'Tango (habanera)',        meter:'4/4', groove:'khhkhhkh' },
+  montuno:         { label:'Son montuno (clave)',     meter:'4/4', groove:'khhskhkh' },
+  samba:           { label:'Samba',                  meter:'4/4', groove:'zhkhshkh' },
+  mambo:           { label:'Mambo',                  meter:'4/4', groove:'kzhhskhh' },
+  calypso:         { label:'Calypso / mento',        meter:'4/4', groove:'zhkzkzsh' },
+  funk:            { label:'Funk',                   meter:'4/4', groove:'kzhskhzs' },
+  halftime:        { label:'Half-time feel',         meter:'4/4', groove:'khhhshhh' },
+  secondline:      { label:'New Orleans second line',meter:'4/4', groove:'kskhkskh' },
+  waltz:           { label:'Waltz',                  meter:'3/4', groove:'kzhzhz'   },
+  compound6:       { label:'Compound (6/8)',          meter:'6/8', groove:'khhshh'   },
+};
+const TOKEN_TO_INST = {
+  k: { row:'bottom', inst:'kick'      },
+  s: { row:'middle', inst:'snare'     },
+  h: { row:'top',    inst:'hihat'     },
+  o: { row:'top',    inst:'hihatopen' },
+  r: { row:'top',    inst:'ride'      },
+  x: { row:'middle', inst:'rim'       },
+  c: { row:'top',    inst:'crash'     },
+};
+
+const HAND_GROOVE_PATTERNS = {
+  bongo_martillo:     { label:'Bongo — martillo',      meter:'4/4', groove:'HLHLHLHz' },
+  bongo_slow:         { label:'Bongo — quarters',      meter:'4/4', groove:'HzHzHzHz' },
+  conga_tumbao:       { label:'Conga — tumbao',        meter:'4/4', groove:'CzCzmzOz' },
+  conga_tumbao_dense: { label:'Conga — tumbao (dense)',meter:'4/4', groove:'CzCzmzOz' },
+  conga_son:          { label:'Conga — son',           meter:'4/4', groove:'CzmzOzmz' },
+  conga_waltz:        { label:'Conga — waltz',         meter:'3/4', groove:'CzOzOz'   },
+  conga_6_8:          { label:'Conga — 6/8',           meter:'6/8', groove:'COzCOz'   },
+};
+const TOKEN_TO_HAND_INST = {
+  H: 'hibongo', L: 'lobongo',
+  C: 'congaopen', O: 'congaslap', m: 'congamuted',
+  e: 'congamuted', u: 'congamuted', P: 'congaopen',
+};
+
+// Categorise a meter string ('4/4', '3/4', '6/8') into a family
+function meterTypeOf(meterStr) {
+  if (!meterStr) return 'duple';
+  const [n, d] = meterStr.split('/').map(Number);
+  if (d === 8) return 'compound';
+  if (n % 3 === 0) return 'triple';
+  return 'duple';
+}
+
+// Apply the meterFilter select to pattern option labels
+function applyMeterFilter() {
+  const want = meterFilterSelect ? meterFilterSelect.value : '';
+  [loadPatternSelect, loadHandPatternSelect].forEach(sel => {
+    if (!sel) return;
+    sel.querySelectorAll('option[data-mt]').forEach(opt => {
+      const matches = !want || opt.dataset.mt === want;
+      const base = opt.dataset.ol || opt.textContent.replace(/^◦\s*/, '');
+      opt.textContent = matches ? base : '◦ ' + base;
+      opt.style.color  = matches ? '' : '#999';
+    });
+  });
+}
+
+// 1c) Instrument icons — standard drum notation symbols
+// Cymbals use × noteheads; drums use filled noteheads; rim uses + crosshair.
+// All SVGs share a 14×14 viewBox so they scale inside any step cell.
+const INST_COLOR = {
+  hihat:    '#a8c8f0', hihatopen:'#c8dff8', crash:   '#b8a0e0',
+  snare:    '#f0a0a0', hitom:    '#f5c470', lowtom:  '#f0a850',
+  floortom: '#e09050', rim:      '#e0a0c8', rimshot: '#d068a8',
+  flam:     '#f4b8a0', kick:     '#88d898', hatfoot: '#70c8c0',
+  // Hand percussion: warm earth tones
+  hibongo:    '#e8c88a', lobongo:   '#d4a860',
+  congaopen:  '#c8e890', congaslap: '#a8d060', congamuted: '#d0e8b0',
+};
+const INST_SVG = {
+  // × noteheads for cymbals
+  hihat:    `<line x1="3" y1="3" x2="11" y2="11"/><line x1="11" y1="3" x2="3" y2="11"/>`,
+  hihatopen:`<line x1="3" y1="3" x2="11" y2="11"/><line x1="11" y1="3" x2="3" y2="11"/><path d="M1 12.5 Q7 11 13 12.5" fill="none"/>`,
+  crash:    `<path d="M7 2 L12.5 10 L7 8.5 L1.5 10 Z" fill="currentColor"/>`,
+  // Filled noteheads for drums
+  snare:    `<ellipse cx="7" cy="7" rx="5.5" ry="4" fill="currentColor"/>`,
+  hitom:    `<ellipse cx="7" cy="7" rx="3.5" ry="2.8" fill="currentColor"/>`,
+  lowtom:   `<ellipse cx="7" cy="7" rx="4.5" ry="3.5" fill="currentColor"/>`,
+  floortom: `<ellipse cx="7" cy="7" rx="5.5" ry="4" fill="currentColor"/>`,
+  // + crosshair for side-stick/rim
+  rim:      `<line x1="7" y1="2" x2="7" y2="12"/><line x1="2" y1="7" x2="12" y2="7"/>`,
+  rimshot:  `<ellipse cx="7" cy="7" rx="4.5" ry="3.5" fill="currentColor"/><line x1="7" y1="3" x2="7" y2="11" stroke="white" stroke-width="1.2"/><line x1="3" y1="7" x2="11" y2="7" stroke="white" stroke-width="1.2"/>`,
+  flam:     `<ellipse cx="9" cy="7.5" rx="4" ry="3" fill="currentColor"/><ellipse cx="3.5" cy="9" rx="2" ry="1.5" fill="currentColor"/>`,
+  kick:     `<circle cx="7" cy="7" r="5.5" fill="currentColor"/>`,
+  hatfoot:  `<line x1="3" y1="3" x2="11" y2="9"/><line x1="11" y1="3" x2="3" y2="9"/><line x1="2" y1="11" x2="12" y2="11"/>`,
+  // Hand percussion
+  // Hi bongo: small filled circle (high pitch = smaller shape)
+  hibongo:    `<circle cx="7" cy="7" r="3.5" fill="currentColor"/>`,
+  // Lo bongo: larger filled circle
+  lobongo:    `<circle cx="7" cy="7" r="5" fill="currentColor"/>`,
+  // Conga open tone: open circle (○ notehead — standard for open strokes)
+  congaopen:  `<circle cx="7" cy="7" r="4.5"/>`,
+  // Conga slap: filled circle with accent wedge above (standard slap notation)
+  congaslap:  `<circle cx="7" cy="8" r="4" fill="currentColor"/><path d="M4.5 2.5 L7 1 L9.5 2.5" fill="none" stroke-width="1.8"/>`,
+  // Conga muted: × notehead (standard dead/muted stroke notation)
+  congamuted: `<line x1="3" y1="3" x2="11" y2="11"/><line x1="11" y1="3" x2="3" y2="11"/>`,
+};
+// Row header icons: cymbal on stand, snare cylinder, kick circle, bongo pair
+const ROW_SVG = {
+  top:    `<ellipse cx="12" cy="14" rx="10" ry="3"/><line x1="12" y1="11" x2="12" y2="4"/>`,
+  middle: `<ellipse cx="12" cy="7" rx="9" ry="3"/><line x1="3" y1="7" x2="3" y2="17"/><line x1="21" y1="7" x2="21" y2="17"/><ellipse cx="12" cy="17" rx="9" ry="3"/>`,
+  bottom: `<circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3.5" fill="currentColor"/>`,
+  // Bongo pair: two circles of different sizes side by side
+  hand:   `<circle cx="7" cy="13" r="5"/><circle cx="17" cy="13" r="7"/><line x1="7" y1="8" x2="7" y2="4"/><line x1="17" y1="6" x2="17" y2="4"/>`,
+};
 
 // 2) Instrument/menu state
 const instrumentOptions = {
-  top:    ['hihat','hihatopen','crash'],
+  top:    ['hihat','hihatopen','ride','crash'],
   middle: ['snare','hitom','lowtom','floortom','rim','rimshot','flam'],
-  bottom: ['kick','hatfoot']
+  bottom: ['kick','hatfoot'],
+  hand:   ['hibongo','lobongo','congaopen','congaslap','congamuted'],
 };
-const allInstruments = Object.keys(sampleUrls).filter(i => i !== 'metronome');
+const allInstruments = ['hihat','hihatopen','crash','ride','hatfoot','snare','rim','rimshot','flam','hitom','lowtom','floortom','kick','hibongo','lobongo','congaopen','congaslap','congamuted'];
 let activeInstruments = {
   top:    [...instrumentOptions.top],
   middle: [...instrumentOptions.middle],
-  bottom: [...instrumentOptions.bottom]
+  bottom: [...instrumentOptions.bottom],
+  hand:   [...instrumentOptions.hand],
 };
 
 // 3) Sequencer state
-let sequence = { top: [], middle: [], bottom: [] };
+let sequence = { top: [], middle: [], bottom: [], hand: [] };
 let totalStepsGlobal = 16;
 let currentStep = 0;
 let isPlaying = false;
-let intervalId = null;
+let intervalId = null;  // timeout handle for the playback loop
 let customLabels = [];
+// Swing intent is read from swingRange.value (0–25) and combined with tempo
+// to produce the actual per-step ratio. No separate global needed.
+
 
 // 4) UI refs
 const sequencerContainer   = document.querySelector('.sequencer-container');
@@ -516,6 +924,21 @@ const scaleStage           = exportArea.querySelector('.sequencer-scale-stage');
 const dialQuarter          = document.getElementById('dial-option-quarter');
 const dialEighth           = document.getElementById('dial-option-eighth');
 const dialSixteenth        = document.getElementById('dial-option-sixteenth');
+const loadPatternSelect     = document.getElementById('loadPatternSelect');
+const loadHandPatternSelect = document.getElementById('loadHandPatternSelect');
+const meterFilterSelect     = document.getElementById('meterFilter');
+const swingRange            = document.getElementById('swingRange');
+const swingValueLabel       = document.getElementById('swingValue');
+const rideSelect            = document.getElementById('rideSelect');
+const rideDecayRange        = document.getElementById('rideDecayRange');
+const rideDecayValueLabel   = document.getElementById('rideDecayValue');
+const reverbRange           = document.getElementById('reverbRange');
+const reverbValueLabel      = document.getElementById('reverbValue');
+const rideHpRange           = document.getElementById('rideHpRange');
+const rideHpValueLabel      = document.getElementById('rideHpValue');
+const rideLpRange           = document.getElementById('rideLpRange');
+const rideLpValueLabel      = document.getElementById('rideLpValue');
+let rideDecay = RIDE_PARAMS.medium20.decay;
 
 let currentDialValue   = 2;
 let currentLabelStyle  = labelStyleSelect.value || 'Standard';
@@ -536,12 +959,17 @@ function updateStepVisual(el, instr) {
   el.innerHTML = '';
   el.classList.toggle('active', Boolean(instr));
   if (instr) {
-    const img = document.createElement('img');
-    img.src = `images/${instr}.png`;
-    img.alt = instr;
-    // fallback text if image missing
-    img.onerror = () => { img.style.display='none'; el.title=instr; el.style.background='#e0e8ff'; };
-    el.appendChild(img);
+    el.style.background = INST_COLOR[instr] || '#e0e8ff';
+    el.title = instr;
+    const paths = INST_SVG[instr];
+    if (paths) {
+      const sw = instr === 'rim' || instr === 'hatfoot' ? '2' : '1.5';
+      el.innerHTML = `<div class="step-icon">
+        <svg viewBox="0 0 14 14" width="65%" height="65%" fill="none"
+             stroke="currentColor" stroke-width="${sw}" stroke-linecap="round"
+             stroke-linejoin="round" aria-hidden="true">${paths}</svg>
+      </div>`;
+    }
   } else {
     el.style.background = '';
     el.title = '';
@@ -549,19 +977,28 @@ function updateStepVisual(el, instr) {
 }
 
 function handleStepClick(el, row, idx) {
+  prewarmSoundfont();
   const opts = activeInstruments[row];
   const cur  = sequence[row][idx];
   const i    = opts.indexOf(cur);
   let next   = i < 0 ? opts[0] : (i === opts.length-1 ? '' : opts[i+1]);
   sequence[row][idx] = next;
   updateStepVisual(el, next);
-  if (next && samples[next]) audioCtx.resume().then(() => playSample(samples[next]));
+  playDrumNote(next);
 }
 
 // 6) Label/subdivision logic
 function getLabel(beat, subIndex, dialVal, labelStyle, bottom, numerator) {
   if (bottom === '4') {
     if (subIndex === 0) return `${beat}`;
+    if (labelStyle === 'Gordon') {
+      if (dialVal===2 && subIndex===1) return 'de';
+      if (dialVal===4) {
+        if (subIndex===1) return 'ta';
+        if (subIndex===2) return 'de';
+        if (subIndex===3) return 'ta';
+      }
+    }
     if (labelStyle === 'Eastman') {
       if (dialVal===2 && subIndex===1) return 'te';
       if (dialVal===4) {
@@ -582,10 +1019,15 @@ function getLabel(beat, subIndex, dialVal, labelStyle, bottom, numerator) {
     const isCompound = numerator % 3 === 0;
     if (dialVal===2 && isCompound) {
       if (subIndex===0) return `${beat}`;
+      if (labelStyle === 'Gordon') return subIndex===1?'da':'di';
       return subIndex===1?'la':'li';
     }
     if (dialVal===4 && isCompound) {
       if (subIndex===0) return `${beat}`;
+      if (labelStyle === 'Gordon') {
+        const gmap = ['','ta','da','ta','di','ta'];
+        return gmap[subIndex] || currentSymbol;
+      }
       const map=['','ta','la','ta','li','ta'];
       return map[subIndex]||currentSymbol;
     }
@@ -615,12 +1057,9 @@ function updateDefaultLabels() {
         const grp = currentDialValue===2?3:6;
         const beatNum = Math.floor(idx/grp)+1;
         const sub = idx % grp;
-        if (sub===0) cell.innerHTML = `${beatNum}`;
-        else if (currentDialValue===2) cell.innerHTML = sub===1?'la':'li';
-        else {
-          const map=['','ta','la','ta','li','ta'];
-          cell.innerHTML = map[sub]||'+';
-        }
+        cell.innerHTML = sub===0
+          ? `${beatNum}`
+          : getLabel(beatNum, sub, currentDialValue, currentLabelStyle, bottom, numerator);
       }
     }
   });
@@ -652,11 +1091,18 @@ function generateSequencer() {
   customLabels = Array(total).fill(null);
 
   sequencerContainer.innerHTML = '';
-  ['top','middle','bottom'].forEach(row => {
+  ['top','middle','bottom','hand'].forEach(row => {
     sequence[row] = Array(total).fill('');
     const r = document.createElement('div');
     r.classList.add('row','instrument-row');
     r.dataset.row = row;
+    // Row icon: cymbal / snare / kick visual
+    const icon = document.createElement('div');
+    icon.className = 'row-icon';
+    icon.innerHTML = `<svg viewBox="0 0 24 24" width="28" height="28" fill="none"
+        stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+        stroke-linejoin="round" aria-hidden="true">${ROW_SVG[row]}</svg>`;
+    r.appendChild(icon);
     for (let i=0; i<total; i++) {
       const s = document.createElement('div');
       s.classList.add('step');
@@ -668,6 +1114,10 @@ function generateSequencer() {
 
   const labelRow = document.createElement('div');
   labelRow.classList.add('row','step-labels');
+  // Spacer to align beat labels under the steps (not the row icon)
+  const spacer = document.createElement('div');
+  spacer.className = 'step-label-spacer';
+  labelRow.appendChild(spacer);
 
   if (bottom==='4') {
     for (let b=1; b<=numerator; b++) {
@@ -710,12 +1160,9 @@ function generateSequencer() {
         cell.dataset.index = i;
         const beatNum = Math.floor(i/grp)+1;
         const sub = i % grp;
-        if (sub===0) cell.innerHTML = `${beatNum}`;
-        else if (currentDialValue===2) cell.innerHTML = sub===1?'la':'li';
-        else {
-          const map=['','ta','la','ta','li','ta'];
-          cell.innerHTML = map[sub]||'+';
-        }
+        cell.innerHTML = sub===0
+          ? `${beatNum}`
+          : getLabel(beatNum, sub, currentDialValue, currentLabelStyle, bottom, numerator);
         cell.addEventListener('click', () => {
           if (!customLabelMode) return;
           const txt = prompt('New label:', cell.textContent);
@@ -737,9 +1184,8 @@ function highlightCurrentStep(i) {
 }
 
 function playStep(i) {
-  ['top','middle','bottom'].forEach(r => {
-    const inst = sequence[r][i];
-    if (inst && samples[inst]) playSample(samples[inst]);
+  ['top','middle','bottom','hand'].forEach(r => {
+    playDrumNote(sequence[r][i]);
   });
   if (!metronomeToggle.checked) return;
   const bottom = bottomNoteSelect.value;
@@ -748,69 +1194,99 @@ function playStep(i) {
     const half = currentDialValue/2;
     if (i%currentDialValue===0 ||
         (metronomePulse==='eighth' && i%currentDialValue===half)) {
-      playSample(samples.metronome);
+      playDrumNote('metronome');
     }
   } else {
     const isComp = num % 3 === 0;
-    if (!isComp) playSample(samples.metronome);
+    if (!isComp) playDrumNote('metronome');
     else {
       const grp = currentDialValue===2?3:6;
       if (metronomePulse==='quarter') {
-        if (i%grp===0) playSample(samples.metronome);
+        if (i%grp===0) playDrumNote('metronome');
       } else {
-        playSample(samples.metronome);
+        playDrumNote('metronome');
       }
     }
   }
 }
 
-function startPlaying() {
-  if (isPlaying) return;
-  isPlaying = true;
+// At a given BPM, map the slider's intent (0.50–0.75) to the actual swing ratio.
+// Follows the Friberg & Sundström curve: full intent at 80 BPM, straight at 300 BPM.
+function computeSwingRatio(bpm) {
+  const intent = 0.5 + parseInt(swingRange.value, 10) / 100;
+  if (intent <= 0.5) return 0.5;
+  const t = Math.min(1, Math.max(0, (bpm - 80) / 220));
+  return intent * (1 - t) + 0.5 * t;
+}
+
+// Update the label next to the swing slider with the current effective ratio.
+function updateSwingDisplay() {
+  const sliderVal = parseInt(swingRange.value, 10);
+  if (sliderVal === 0) { swingValueLabel.textContent = 'off'; return; }
+  const bpm = parseInt(tempoInput.value, 10) || 120;
+  const ratio = computeSwingRatio(bpm);
+  const name = sliderVal <= 8 ? 'light' : sliderVal <= 17 ? 'swing' : 'hard';
+  swingValueLabel.textContent = `${name} · ${Math.round(ratio * 100)}%`;
+}
+
+// Returns ms to wait after playing stepIndex before advancing to the next step.
+// Swing shifts odd (upbeat) steps later within each beat pair, only in simple
+// duple meter with 8th-note subdivision.
+function getStepDelay(stepIndex) {
   const bpm = parseInt(tempoInput.value, 10) || 120;
   const base = 60 / (bpm * currentTempoFactor);
   const bottom = bottomNoteSelect.value;
   const num = parseInt(numeratorInput.value, 10);
   let subdiv;
-  if (bottom==='4') subdiv = currentDialValue;
+  if (bottom === '4') subdiv = currentDialValue;
   else {
     const isComp = num % 3 === 0;
-    subdiv = isComp ? (currentDialValue===2?3:6) : currentDialValue;
+    subdiv = isComp ? (currentDialValue === 2 ? 3 : 6) : currentDialValue;
   }
-  const stepDur = (base / subdiv) * 1000;
-  currentStep = 0; highlightCurrentStep(0); playStep(0);
-  intervalId = setInterval(() => {
-    currentStep = (currentStep+1) % totalStepsGlobal;
+  const baseMs = (base / subdiv) * 1000;
+
+  // Swing: alternate beat durations so that downbeats are longer than upbeats.
+  // Only applies to simple meter (bottom=4) with eighth-note subdivision (dialValue=2).
+  const sw = computeSwingRatio(bpm);
+  if (sw > 0.5 && bottom === '4' && currentDialValue === 2) {
+    const beatMs = baseMs * 2;           // one full beat = two eighth-note steps
+    return (stepIndex % 2 === 0)
+      ? beatMs * sw                      // downbeat: longer
+      : beatMs * (1 - sw);              // upbeat: shorter
+  }
+  return baseMs;
+}
+
+function scheduleNextTick() {
+  if (!isPlaying) return;
+  const delay = getStepDelay(currentStep);
+  intervalId = setTimeout(() => {
+    currentStep = (currentStep + 1) % totalStepsGlobal;
     highlightCurrentStep(currentStep);
     playStep(currentStep);
-  }, stepDur);
+    scheduleNextTick();
+  }, delay);
+}
+
+function startPlaying() {
+  if (isPlaying) return;
+  isPlaying = true;
+  currentStep = 0;
+  highlightCurrentStep(0);
+  playStep(0);
+  scheduleNextTick();
 }
 
 function stopPlaying() {
   isPlaying = false;
-  clearInterval(intervalId);
+  clearTimeout(intervalId);
   document.querySelectorAll('.step-labels .label').forEach(c => c.classList.remove('current-step'));
 }
 
 function updatePlaybackInterval() {
   if (!isPlaying) return;
-  clearInterval(intervalId);
-  const bpm = parseInt(tempoInput.value, 10) || 120;
-  const base = 60 / (bpm * currentTempoFactor);
-  const bottom = bottomNoteSelect.value;
-  const num = parseInt(numeratorInput.value, 10);
-  let subdiv;
-  if (bottom==='4') subdiv = currentDialValue;
-  else {
-    const isComp = num % 3 === 0;
-    subdiv = isComp ? (currentDialValue===2?3:6) : currentDialValue;
-  }
-  const stepDur = (base / subdiv) * 1000;
-  intervalId = setInterval(() => {
-    currentStep = (currentStep+1) % totalStepsGlobal;
-    highlightCurrentStep(currentStep);
-    playStep(currentStep);
-  }, stepDur);
+  clearTimeout(intervalId);
+  scheduleNextTick();
 }
 
 // 9) UI bindings
@@ -910,6 +1386,69 @@ function regenerateSequencer() {
   refreshScaleAfterLayoutChange();
 }
 
+function loadPattern(id) {
+  const p = GROOVE_PATTERNS[id];
+  if (!p) return;
+  const [num, denom] = p.meter.split('/');
+  numeratorInput.value = num;
+  bottomNoteSelect.value = denom;
+  [dialQuarter, dialEighth, dialSixteenth].forEach(el => el.classList.remove('selected'));
+  dialEighth.classList.add('selected');
+  currentDialValue = 2;
+  regenerateSequencer();
+  const steps = totalStepsGlobal;
+  let g = p.groove;
+  while (g.length < steps) g += p.groove;
+  g = g.slice(0, steps);
+  for (let i = 0; i < steps; i++) {
+    const m = TOKEN_TO_INST[g[i]];
+    if (m) sequence[m.row][i] = m.inst;
+  }
+  ['top','middle','bottom','hand'].forEach(row => {
+    sequencerContainer
+      .querySelector(`.instrument-row[data-row="${row}"]`)
+      ?.querySelectorAll('.step')
+      .forEach((el, i) => updateStepVisual(el, sequence[row][i]));
+  });
+  gridTitleInput.value = p.label;
+  gridTitleDisplay.textContent = p.label;
+  // Swing and jazz waltz patterns call for swing feel — set slider to max
+  if (/^(swing|jazzwaltz)/.test(id)) {
+    swingRange.value = 25;
+    updateSwingDisplay();
+    updatePlaybackInterval();
+  }
+}
+
+function loadHandPattern(id) {
+  const p = HAND_GROOVE_PATTERNS[id];
+  if (!p) return;
+  // Sync meter if pattern requires a different one (mirrors loadPattern behaviour)
+  const [num, denom] = p.meter.split('/');
+  if (numeratorInput.value !== num || bottomNoteSelect.value !== denom) {
+    numeratorInput.value = num;
+    bottomNoteSelect.value = denom;
+    [dialQuarter, dialEighth, dialSixteenth].forEach(el => el.classList.remove('selected'));
+    dialEighth.classList.add('selected');
+    currentDialValue = 2;
+    regenerateSequencer();
+  }
+  // Clear only the hand row; preserve drum rows
+  const steps = totalStepsGlobal;
+  sequence.hand = Array(steps).fill('');
+  let g = p.groove;
+  while (g.length < steps) g += p.groove;
+  g = g.slice(0, steps);
+  for (let i = 0; i < steps; i++) {
+    const inst = TOKEN_TO_HAND_INST[g[i]];
+    if (inst) sequence.hand[i] = inst;
+  }
+  sequencerContainer
+    .querySelector('.instrument-row[data-row="hand"]')
+    ?.querySelectorAll('.step')
+    .forEach((el, i) => updateStepVisual(el, sequence.hand[i]));
+}
+
 function updateTempoDialDefaults() {
   const bottom = bottomNoteSelect.value;
   const num = parseInt(numeratorInput.value, 10);
@@ -919,11 +1458,6 @@ function updateTempoDialDefaults() {
     selectTempoOption(isComp ? tempoDotted : tempoEighth);
   }
 }
-
-labelStyleSelect.addEventListener('change', () => {
-  currentLabelStyle = labelStyleSelect.value;
-  updateDefaultLabels();
-});
 
 symbolToggle.addEventListener('change', () => {
   currentSymbol = symbolToggle.checked ? '&' : '+';
@@ -981,10 +1515,71 @@ dialSixteenth.addEventListener('click', () => {
 
 numeratorInput.addEventListener('change', regenerateSequencer);
 bottomNoteSelect.addEventListener('change', regenerateSequencer);
-tempoInput.addEventListener('input', () => updatePlaybackInterval());
+tempoInput.addEventListener('input', () => {
+  updateSwingDisplay();
+  updatePlaybackInterval();
+});
 
-playBtn.addEventListener('click', () => audioCtx.resume().then(startPlaying));
+swingRange.addEventListener('input', () => {
+  updateSwingDisplay();
+  updatePlaybackInterval();
+});
+
+rideSelect.addEventListener('change', () => {
+  currentRideVariant = rideSelect.value;
+  rideDecay = RIDE_PARAMS[currentRideVariant].decay;
+  rideDecayRange.value = rideDecay.toFixed(1);
+  rideDecayValueLabel.textContent = rideDecay.toFixed(1);
+});
+
+rideDecayRange.addEventListener('input', () => {
+  rideDecay = parseFloat(rideDecayRange.value);
+  rideDecayValueLabel.textContent = rideDecay.toFixed(1);
+});
+
+reverbRange.addEventListener('input', () => {
+  reverbValueLabel.textContent = reverbRange.value;
+  if (reverbSend) reverbSend.gain.value = parseInt(reverbRange.value, 10) / 100;
+});
+
+function fmtHz(hz) { return hz >= 1000 ? (hz / 1000).toFixed(1) + 'k' : String(hz); }
+
+rideHpRange.addEventListener('input', () => {
+  rideHpValueLabel.textContent = fmtHz(parseInt(rideHpRange.value, 10));
+  if (rideHPF) rideHPF.frequency.value = parseInt(rideHpRange.value, 10);
+});
+rideLpRange.addEventListener('input', () => {
+  rideLpValueLabel.textContent = fmtHz(parseInt(rideLpRange.value, 10));
+  if (rideLPF) rideLPF.frequency.value = parseInt(rideLpRange.value, 10);
+});
+
+playBtn.addEventListener('click', () => {
+  if (isPlaying) return;
+  prewarmSoundfont();
+  startPlaying();
+});
 stopBtn.addEventListener('click', stopPlaying);
+
+document.addEventListener('keydown', e => {
+  if (e.code !== 'Space') return;
+  const tag = document.activeElement?.tagName;
+  if (tag === 'INPUT' || tag === 'SELECT' || tag === 'TEXTAREA') return;
+  e.preventDefault();
+  if (isPlaying) stopPlaying(); else startPlaying();
+});
+loadPatternSelect.addEventListener('change', () => {
+  if (loadPatternSelect.value) loadPattern(loadPatternSelect.value);
+});
+loadHandPatternSelect.addEventListener('change', () => {
+  if (loadHandPatternSelect.value) loadHandPattern(loadHandPatternSelect.value);
+});
+meterFilterSelect.addEventListener('change', applyMeterFilter);
+
+labelStyleSelect.addEventListener('change', () => {
+  currentLabelStyle = labelStyleSelect.value;
+  try { localStorage.setItem('countingStyle', currentLabelStyle); } catch(e) {}
+  updateDefaultLabels();
+});
 
 exportBtn.addEventListener('click', () => {
   const stage = exportArea.querySelector('.sequencer-scale-stage');
@@ -1011,8 +1606,8 @@ exportBtn.addEventListener('click', () => {
   stageClone.querySelectorAll('.row > .label, .row > .step').forEach(cell => {
     cell.style.cssText += 'width:auto;max-width:none;flex-shrink:1;margin-top:0;padding-left:0;padding-right:0;';
   });
-  stageClone.querySelectorAll('.step img').forEach(img => {
-    img.style.cssText += 'width:auto;height:auto;max-width:100%;max-height:100%;object-fit:contain;display:block;';
+  stageClone.querySelectorAll('.step-icon svg').forEach(svg => {
+    svg.style.cssText += 'display:block;';
   });
 
   const res = parseFloat(document.getElementById('exportResolution').value) || 2;
@@ -1030,40 +1625,35 @@ exportBtn.addEventListener('click', () => {
     .finally(() => captureRoot.remove());
 });
 
+const INST_LABEL = {
+  hihat:'Hi-hat',   hihatopen:'Open HH', crash:'Crash',
+  snare:'Snare',    hitom:'Hi Tom',      lowtom:'Lo Tom',
+  floortom:'Fl. Tom', rim:'Rim',         rimshot:'Rimshot',
+  flam:'Flam',      kick:'Kick',         hatfoot:'HH Foot',
+  hibongo:'Hi Bongo', lobongo:'Lo Bongo',
+  congaopen:'Conga Open', congaslap:'Conga Slap', congamuted:'Conga Muted',
+};
+
 function renderInstrumentMenu() {
   document.querySelectorAll('.instrument-group').forEach(group => {
     const row  = group.dataset.row;
     const cont = group.querySelector('.instrument-options');
     cont.innerHTML = '';
-    allInstruments.forEach(instr => {
-      const img = document.createElement('img');
-      img.src = `images/${instr}.png`;
-      img.alt = instr;
-      img.title = instr;
-      img.classList.toggle('active', activeInstruments[row].includes(instr));
-      img.onerror = () => {
-        // fallback: show text badge
-        img.replaceWith((() => {
-          const span = document.createElement('span');
-          span.textContent = instr;
-          span.title = instr;
-          span.style.cssText = 'display:inline-block;margin:0.25em;padding:2px 6px;font-size:0.7rem;border:1px solid #ccc;border-radius:4px;cursor:pointer;';
-          span.style.opacity = activeInstruments[row].includes(instr) ? '1' : '0.4';
-          span.addEventListener('click', () => {
-            const idx = activeInstruments[row].indexOf(instr);
-            if (idx === -1) activeInstruments[row].push(instr);
-            else {
-              activeInstruments[row].splice(idx, 1);
-              sequence[row] = sequence[row].map(i => i===instr?'':i);
-              document.querySelectorAll(`.instrument-row[data-row="${row}"] .step`)
-                .forEach((el, i) => updateStepVisual(el, sequence[row][i]));
-            }
-            renderInstrumentMenu();
-          });
-          return span;
-        })());
-      };
-      img.addEventListener('click', () => {
+    // Show only instruments relevant to this row
+    const rowInstrs = instrumentOptions[row] || allInstruments;
+    rowInstrs.forEach(instr => {
+      const chip = document.createElement('div');
+      chip.className = 'instrument-chip' + (activeInstruments[row].includes(instr) ? ' active' : '');
+      chip.title = INST_LABEL[instr] || instr;
+      const sw = (instr === 'rim' || instr === 'hatfoot') ? '2' : '1.5';
+      chip.innerHTML = `
+        <svg viewBox="0 0 14 14" width="28" height="28"
+             fill="none" stroke="currentColor" stroke-width="${sw}"
+             stroke-linecap="round" stroke-linejoin="round"
+             style="background:${INST_COLOR[instr]||'#eee'};border-radius:4px;padding:2px;"
+             aria-hidden="true">${INST_SVG[instr] || ''}</svg>
+        <span>${INST_LABEL[instr] || instr}</span>`;
+      chip.addEventListener('click', () => {
         const idx = activeInstruments[row].indexOf(instr);
         if (idx === -1) activeInstruments[row].push(instr);
         else {
@@ -1074,20 +1664,38 @@ function renderInstrumentMenu() {
         }
         renderInstrumentMenu();
       });
-      cont.appendChild(img);
+      cont.appendChild(chip);
     });
   });
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  loadSamples().then(() => {
-    selectTempoOption(tempoQuarter);
-    dialEighth.classList.add('selected');
-    currentDialValue = 2;
-    generateSequencer();
-    renderInstrumentMenu();
-    refreshScaleAfterLayoutChange();
-  });
+  // Sync counting style from localStorage (set by tune page)
+  try {
+    const saved = localStorage.getItem('countingStyle');
+    if (saved && labelStyleSelect.querySelector(`option[value="${saved}"]`)) {
+      labelStyleSelect.value = saved;
+      currentLabelStyle = saved;
+    }
+  } catch(e) {}
+
+  // Sync meter filter from tuneMeter stored by tune-assessment page
+  try {
+    const tm = JSON.parse(localStorage.getItem('tuneMeter') || 'null');
+    if (tm) {
+      const fam = meterTypeOf(tm.n + '/' + tm.d);
+      meterFilterSelect.value = fam;
+    }
+  } catch(e) {}
+
+  selectTempoOption(tempoQuarter);
+  dialEighth.classList.add('selected');
+  currentDialValue = 2;
+  generateSequencer();
+  renderInstrumentMenu();
+  applyMeterFilter();
+  updateSwingDisplay();
+  refreshScaleAfterLayoutChange();
 });
 
 window.addEventListener('resize', () => {

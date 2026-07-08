@@ -1,4 +1,4 @@
-const patternObject = {
+const rhythmPatternObject = {
 
 // Duple, macrobeats and microbeats
 
@@ -318,153 +318,153 @@ B3 | BBB | BBB | BBB |
 "Duple-M-m-D-2/4":
 `X:1
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B B2 | B/B/B BB |
+B//B//B/ B | B//B//B/ B/B/ |
 
 X:2
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B BB | B/B/B/B/ B2 |
+B//B//B/ B/B/ | B//B//B//B// B |
 
 X:3
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB/B/ B/B/B | B/B/B/B/ BB |
+B/B//B// B//B//B/ | B//B//B//B// B/B/ |
 
 X:4
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB BB/B/ | B/B/B BB |
+B/B/ B/B//B// | B//B//B/ B/B/ |
 
 X:5
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B/B/ B2 | B/B/B/B/ BB |
+B//B//B//B// B | B//B//B//B// B/B/ |
 
 X:6
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB/B/ BB/B/ | BB/B/ BB |
+B/B//B// B/B//B// | B/B//B// B/B/ |
 
 X:7
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B BB/B/ | B/B/B B2 |
+B//B//B/ B/B//B// | B//B//B/ B |
 
 X:8
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB/B/ B/B/B/B/ | BB B2 |
+B/B//B// B//B//B//B// | B/B/ B |
 
 `,
 
 "Duple-M-m-D-4/4":
 `X:1
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B B2  B/B/B BB |
+B//B//B/ B  B//B//B/ B/B/ |
 
 X:2
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B BB  B/B/B/B/ B2 |
+B//B//B/ B/B/  B//B//B//B// B |
 
 X:3
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB/B/ B/B/B  B/B/B/B/ BB |
+B/B//B// B//B//B/  B//B//B//B// B/B/ |
 
 X:4
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB BB/B/  B/B/B BB |
+B/B/ B/B//B//  B//B//B/ B/B/ |
 
 X:5
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B/B/ B2  B/B/B/B/ BB |
+B//B//B//B// B  B//B//B//B// B/B/ |
 
 X:6
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB/B/ BB/B/  BB/B/ BB |
+B/B//B// B/B//B//  B/B//B// B/B/ |
 
 X:7
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B BB/B/  B/B/B B2 |
+B//B//B/ B/B//B//  B//B//B/ B |
 
 X:8
 M: 4/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB/B/ B/B/B/B/  BB B2 |
+B/B//B// B//B//B//B//  B/B/ B |
 
 `,
 
 "Duple-M-m-D-2/2":
 `X:1
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B/B/B B2 | B/B/B BB |
+B//B//B/ B | B//B//B/ B/B/ |
 
 X:2
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B/B/B BB | B/B/B/B/ B2 |
+B//B//B/ B/B/ | B//B//B//B// B |
 
 X:3
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-BB/B/ B/B/B | B/B/B/B/ BB |
+B/B//B// B//B//B/ | B//B//B//B// B/B/ |
 
 X:4
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-BB BB/B/ | B/B/B BB |
+B/B/ B/B//B// | B//B//B/ B/B/ |
 
 X:5
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B/B/B/B/ B2 | B/B/B/B/ BB |
+B//B//B//B// B | B//B//B//B// B/B/ |
 
 X:6
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-BB/B/ BB/B/ | BB/B/ BB |
+B/B//B// B/B//B// | B/B//B// B/B/ |
 
 X:7
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B/B/B BB/B/ | B/B/B B2 |
+B//B//B/ B/B//B// | B//B//B/ B |
 
 X:8
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-BB/B/ B/B/B/B/ | BB B2 |
+B/B//B// B//B//B//B// | B/B/ B |
 
 `,
 
@@ -628,102 +628,102 @@ B/B/BB/B/| B/B/BB/B/ | B/B/B/B/B/B/| BBB |
 "Duple, M-m-D-E-2/4":
 `X:1
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB BB | B>B B2 |
+B/B/ B/B/ | B/>B/ B |
 
 X:2
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B B2 B | B>B BB |
+B/ B B/ | B/>B/ B/B/ |
 
 X:3
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB BB | B<B BB |
+B/B/ B/B/ | B/<B/ B/B/ |
 
 X:4
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B<B BB | B/BB/ BB |
+B/<B/ B/B/ | B//B/B// B/B/ |
 
 X:5
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B3 B | B>B B2 |
+B3/ B/ | B/>B/ B |
 
 X:6
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/BB/ BB | B2 BB |
+B//B/B// B/B/ | B B/B/ |
 
-X:7 
+X:7
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B B3 | B/BB/ BB |
+B/ B3/ | B//B/B// B/B/ |
 
 X:8
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B B2 B | B B3 |
+B/ B B/ | B/ B3/ |
 
 `,
 
 "Duple, M-m-D-E-2/2":
 `X:1
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-BB BB | B>B B2 |
+B/B/ B/B/ | B/>B/ B |
 
 X:2
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B B2 B | B>B BB |
+B/ B B/ | B/>B/ B/B/ |
 
 X:3
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-BB BB | B<B BB |
+B/B/ B/B/ | B/<B/ B/B/ |
 
 X:4
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B<B BB | B/BB/ BB |
+B/<B/ B/B/ | B//B/B// B/B/ |
 
 X:5
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B3 B | B>B B2 |
+B3/ B/ | B/>B/ B |
 
 X:6
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B/BB/ BB | B2 BB |
+B//B/B// B/B/ | B B/B/ |
 
-X:7 
+X:7
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B B3 | B/BB/ BB |
+B/ B3/ | B//B/B// B/B/ |
 
 X:8
 M: 2/2
-L: 1/4
+L: 1/2
 K: clef=none
-B B2 B | B B3 |
+B/ B B/ | B/ B3/ |
 
 `,
 
@@ -887,51 +887,51 @@ B B2 | B B2 | BB<B | BBB |
 "Duple, M-m-R-2/4":
 `X:1
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB zB | BB B2 |
+B/B/ z/B/ | B/B/ B |
 
 X:2
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-z B BB | z B BB |
+z/ B/ B/B/ | z/ B/ B/B/ |
 
-X:3 
+X:3
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B2 z2 | BB z B |
+B z | B/B/ z/ B/ |
 
 X:4
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB z2 | z2 BB |
+B/B/ z | z B/B/ |
 
 X:5
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB z2 | BB BB |
+B/B/ z | B/B/ B/B/ |
 
 X:6
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB z B | z2 B2 |
+B/B/ z/ B/ | z B |
 
 X:7
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-z2 BB | z2 BB |
+z B/B/ | z B/B/ |
 
 X:8
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-z B z B | z B B2 |
+z/ B/ z/ B/ | z/ B/ B |
 
 `,
 
@@ -940,102 +940,102 @@ z B z B | z B B2 |
 "Duple, M-m-D-E-R-U-2/4":
 `X:1
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B | BB BB | B/B/B/B/ B |
+B/ | B/B/ B/B/ | B//B//B//B// B/ |
 
 X:2
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B2 | B/B/B/B/ B2 | BB |
+B | B//B//B//B// B | B/B/ |
 
 X:3
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B/ | BB B/B/B | BB B/ |
+B//B//B// | B/B/ B//B//B/ | B/B/ B// |
 
 X:4
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B | B3 B | B/BB/ B |
+B/ | B3/ B/ | B//B/B// B/ |
 
 X:5
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/ | B B2 B | z B B3/2 |
+B// | B/ B B/ | z/ B/ B3/4 |
 
 X:6
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B2 | B2 z2 | B/B/B/B/ |
+B | B z | B//B//B//B// |
 
 X:7
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B | B/BB/ B/BB/ | BB- B |
+B/ | B//B/B// B//B/B// | B/B/- B/ |
 
 X:8
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/| B/B/B BB/B/ | B/B/B/B/ B/B/B/ |
+B//| B//B//B/ B/B//B// | B//B//B//B// B//B//B// |
 
 `,
 
 "Duple, M-m-D-E-R-U-T-2/4":
 `X:1
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB B2- |B2 BB |
+B/B/ B- |B B/B/ |
 
 X:2
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB z B- | BB B2 |
+B/B/ z/ B/- | B/B/ B |
 
 X:3
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B2 BB- | BB B2 |
+B B/B/- | B/B/ B |
 
 X:4
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B/B/B BB/B/- | B/B/B B2 |
+B//B//B/ B/B//B//- | B//B//B/ B |
 
 X:5
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-BB B2- | BB B2 |
+B/B/ B- | B/B/ B |
 
 X:6
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B<B BB- | B/BB/ BB |
+B/<B/ B/B/- | B//B/B// B/B/ |
 
 X:7
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B2 BB- | B2 BB |
+B B/B/- | B B/B/ |
 
 X:8
 M: 2/4
-L: 1/8
+L: 1/4
 K: clef=none
-B | BB/B BB/B- | BB- B |
+B/ | B/B//B/ B/B//B/- | B/B/- B/ |
 
 `,
 }

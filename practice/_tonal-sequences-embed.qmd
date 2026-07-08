@@ -1,0 +1,333 @@
+```{=html}
+<link rel="stylesheet" href="/apps/shared/abcjs-audio.css">
+
+<style>
+#ts-root {
+  --pr:#2780e3; --br:#dee2e6; --bl:#e9ecef; --mu:#6c757d;
+  --in:#212529; --sf:#fff; --bs:#f8f9fa;
+  max-width:860px; margin:0 auto 2rem;
+  font-family:var(--bs-font-sans-serif,system-ui,sans-serif); color:var(--in);
+}
+#ts-root .sq-card {
+  background:var(--sf); border:1px solid var(--br); border-radius:.5rem;
+  padding:1rem 1.15rem; margin:0 0 1rem; box-shadow:0 1px 3px rgba(0,0,0,.04);
+}
+#ts-root .sq-row { display:flex; gap:.5rem .75rem; align-items:flex-end; flex-wrap:wrap; }
+#ts-root .sq-group { display:flex; flex-direction:column; }
+#ts-root .sq-label {
+  font-size:.78rem; color:var(--mu); font-weight:600;
+  text-transform:uppercase; letter-spacing:.03em; margin-bottom:.25rem;
+}
+#ts-root select {
+  padding:.35rem .6rem; font-size:.9rem; border:1px solid #ced4da;
+  border-radius:.375rem; background:var(--sf); color:var(--in); height:auto;
+}
+#ts-root .sq-btn {
+  padding:.35rem .7rem; font-size:.9rem; border:1px solid #ced4da;
+  border-radius:.375rem; background:var(--sf); color:var(--in);
+  cursor:pointer; line-height:1.5; white-space:nowrap;
+}
+#ts-root .sq-btn:disabled { opacity:.5; cursor:not-allowed; }
+#ts-root .sq-paper {
+  background:var(--sf); border:1px solid var(--bl); border-radius:.375rem;
+  padding:.4rem .5rem; min-height:56px; margin-bottom:.75rem;
+}
+#ts-root .sq-paper svg { width:100% !important; height:auto !important; display:block; }
+#ts-root .cell-bank { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px; margin-top:4px; }
+#ts-root .cell-buttons { display:contents; }
+#ts-root .cell-wrapper { display:flex; flex-direction:column; align-items:flex-start; }
+#ts-root .cell-number { font-size:11px; color:var(--mu); margin-bottom:2px; margin-left:4px; }
+#ts-root .cell-btn {
+  background:var(--sf) !important; border:1px solid #ced4da !important;
+  border-radius:.375rem !important; cursor:pointer !important;
+  padding:2px !important; box-sizing:content-box !important;
+  position:relative; overflow:hidden;
+  transition:border-color .12s, box-shadow .12s;
+}
+#ts-root .cell-btn:hover {
+  border-color:var(--pr) !important; box-shadow:0 0 0 3px rgba(39,128,227,.15) !important;
+}
+#ts-root .cell-preview { pointer-events:none; }
+#ts-root .cell-preview svg { display:block; }
+#ts-root #abc-editor {
+  display:block; box-sizing:border-box; width:100%; min-height:80px;
+  padding:.4rem .5rem; font-family:monospace; font-size:.82rem;
+  border:1px solid var(--br); border-radius:.375rem;
+  background:var(--bs); color:var(--in); resize:vertical;
+}
+</style>
+
+<script>
+	let activeCells_ts = [];
+	let synthControl_ts;
+	let tsVisTranspose = 0;
+
+	const MINOR_MODE_ts = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/;
+	const COLL_PAIRS_ts = {
+		"major-stepwise": "minor-stepwise", "minor-stepwise": "major-stepwise",
+		"major-I-V": "minor-i-V", "minor-i-V": "major-I-V"
+	};
+
+	function applyTonality_ts() {
+		if (!window.Tonality) return;
+		var r = Tonality.getResting();
+		if (r == null) return;
+		var mode = Tonality.getMode();
+		var wantMinor = !!(mode && MINOR_MODE_ts.test(mode));
+		var sel = document.getElementById("collection-selector-ts");
+		var switched = false;
+		if (sel && COLL_PAIRS_ts[sel.value]) {
+			if (wantMinor !== /^minor/.test(sel.value)) {
+				sel.value = COLL_PAIRS_ts[sel.value];
+				switched = true;
+			}
+		}
+		tsVisTranspose = r <= 6 ? r : r - 12;
+		if (switched) {
+			loadCollection_ts();
+		} else {
+			var editor = document.getElementById("abc-editor-ts");
+			if (editor && editor.value.trim()) renderSequence_ts(editor.value, false);
+			renderCellBank_ts();
+		}
+	}
+
+	function indexToLetter(i) {
+		return String.fromCharCode(65 + i);
+	}
+
+	function extractV1Notes(tuneAbc, stripChords) {
+		let v1Line = "";
+		tuneAbc.split("\n").forEach(function(line) {
+			if (line.indexOf("[V: V1]") !== -1) v1Line = line;
+		});
+		v1Line = v1Line.replace("[V: V1]", "").trim();
+		if (stripChords) v1Line = v1Line.replace(/"[^"]*"/g, "").trim();
+		return v1Line;
+	}
+
+	function getCollectionKeyField_ts(collectionName) {
+		const tuneBook = new ABCJS.TuneBook(patternObject[collectionName]);
+		const match = tuneBook.tunes[0].abc.match(/^K:\s*(.+)$/m);
+		return match ? match[1].trim() : "C";
+	}
+
+	function splitHeaderAndBody_ts(abcString) {
+		const headerLines = [];
+		let bodyLine = "";
+		for (const line of abcString.split("\n")) {
+			if (/^[A-Za-z]:/.test(line) || line.startsWith("%%")) {
+				headerLines.push(line);
+			} else if (line.trim() !== "") {
+				bodyLine = line;
+			}
+		}
+		return { headerLines, bodyLine };
+	}
+
+	function getStaffCenter_ts(svg, bbox) {
+		const lines = Array.from(svg.querySelectorAll("path")).map(function(p) { return p.getBBox(); })
+			.filter(function(b) { return b.height < 2 && b.width > bbox.width * 0.5; });
+		if (lines.length === 0) return bbox.y + bbox.height / 2;
+		const top = Math.min.apply(null, lines.map(function(b) { return b.y; }));
+		const bottom = Math.max.apply(null, lines.map(function(b) { return b.y + b.height; }));
+		return (top + bottom) / 2;
+	}
+
+	function loadCollection_ts() {
+		const collectionName = document.getElementById("collection-selector-ts").value;
+		const tuneBook = new ABCJS.TuneBook(patternObject[collectionName]);
+		activeCells_ts = tuneBook.tunes.map(function(t) {
+			return {
+				abc: extractV1Notes(t.abc, false),
+				preview: extractV1Notes(t.abc, true)
+			};
+		});
+		renderCellBank_ts();
+		clearSequence_ts();
+	}
+
+	function renderCellBank_ts() {
+		const collectionName = document.getElementById("collection-selector-ts").value;
+		const key = getCollectionKeyField_ts(collectionName);
+
+		const container = document.getElementById("cell-buttons-ts");
+		container.innerHTML = "";
+
+		const entries = [];
+		activeCells_ts.forEach(function(cell, i) {
+			const wrapper = document.createElement("div");
+			wrapper.className = "cell-wrapper";
+
+			const numberLabel = document.createElement("span");
+			numberLabel.className = "cell-number";
+			numberLabel.textContent = indexToLetter(i);
+			wrapper.appendChild(numberLabel);
+
+			const button = document.createElement("button");
+			button.type = "button";
+			button.className = "cell-btn";
+			button.setAttribute("aria-label", "Pattern " + (i + 1) + ": " + cell.preview);
+			button.addEventListener("click", function() { appendCell_ts(i); });
+
+			const preview = document.createElement("div");
+			preview.className = "cell-preview";
+			button.appendChild(preview);
+			wrapper.appendChild(button);
+
+			container.appendChild(wrapper);
+
+			const abcString = "X:1\nM:none\n%%staffwidth 100\nK:" + key + "\n" + cell.preview;
+			ABCJS.renderAbc(preview, abcString, { add_classes: true, visualTranspose: tsVisTranspose });
+
+			const svg = preview.querySelector("svg");
+			const bbox = svg.getBBox();
+			const staffCenterY = getStaffCenter_ts(svg, bbox);
+			entries.push({ button: button, svg: svg, bbox: bbox, staffCenterY: staffCenterY });
+		});
+
+		if (entries.length === 0) return;
+
+		const marginX = Math.max.apply(null, entries.map(function(e) { return e.bbox.width; })) * 0.1;
+		const halfHeight = Math.max.apply(null, entries.map(function(e) {
+			return Math.max(e.staffCenterY - e.bbox.y, (e.bbox.y + e.bbox.height) - e.staffCenterY);
+		}));
+		const contentHeight = halfHeight * 2;
+		const marginY = contentHeight * 0.10;
+		const totalHeight = contentHeight + marginY * 2;
+
+		entries.forEach(function(entry) {
+			entry.button.style.width = (entry.bbox.width + marginX * 2) + "px";
+			entry.button.style.height = totalHeight + "px";
+			entry.svg.style.transform =
+				"translate(" + (-entry.bbox.x + marginX) + "px, " + (totalHeight / 2 - entry.staffCenterY) + "px)";
+		});
+	}
+
+	function appendCell_ts(index) {
+		const editor = document.getElementById("abc-editor-ts");
+		const { headerLines, bodyLine } = splitHeaderAndBody_ts(editor.value);
+
+		let newBody = bodyLine.replace(/\s*\|\|\s*$/, "");
+		newBody += (newBody ? " || " : "") + activeCells_ts[index].abc + " ||";
+
+		renderSequence_ts(headerLines.join("\n") + "\n" + newBody, true);
+	}
+
+	function clearSequence_ts() {
+		const collectionName = document.getElementById("collection-selector-ts").value;
+		const key = getCollectionKeyField_ts(collectionName);
+		const header = "X:1\n%%MIDI program 4 \nM:none\nK:" + key;
+		renderSequence_ts(header + "\n", true);
+	}
+
+	function renderSequence_ts(abcString, userAction) {
+		document.getElementById("abc-editor-ts").value = abcString;
+
+		const abcOptions = { add_classes: true, visualTranspose: tsVisTranspose };
+		const visualObj = ABCJS.renderAbc("paper-ts", abcString, abcOptions)[0];
+		document.querySelector("#ts-root .midi").innerHTML = ABCJS.synth.getMidiFile(abcString);
+
+		new ABCJS.synth.CreateSynth().init({
+			visualObj: visualObj,
+			options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+		}).then(function() {
+			if (synthControl_ts) {
+				synthControl_ts.setTune(visualObj, userAction).catch(function(error) { console.warn("Audio problem:", error); });
+			}
+		}).catch(function(error) { console.warn("Audio problem:", error); });
+	}
+
+	let editTimeout_ts;
+	function editSequence_ts() {
+		clearTimeout(editTimeout_ts);
+		editTimeout_ts = setTimeout(function() {
+			renderSequence_ts(document.getElementById("abc-editor-ts").value, true);
+		}, 400);
+	}
+
+	function load_ts() {
+		const selectCollection = document.getElementById("collection-selector-ts");
+		for (const key in patternObject) {
+			const option = document.createElement("option");
+			option.textContent = key;
+			option.value = key;
+			selectCollection.appendChild(option);
+		}
+
+		const TS_CFG = window.TOOL_CONFIG || {};
+		if (TS_CFG.collections && TS_CFG.collections.length)
+			Array.from(selectCollection.options).forEach(function(o) { if (TS_CFG.collections.indexOf(o.value) === -1) o.remove(); });
+		if (TS_CFG.lockCollections || selectCollection.options.length <= 1)
+			(selectCollection.closest('.sq-group') || selectCollection).style.display = 'none';
+
+		if (ABCJS.synth.supportsAudio()) {
+			synthControl_ts = new ABCJS.synth.SynthController();
+			synthControl_ts.load("#audio-ts", cursorControl_ts, {
+				displayLoop: true, displayRestart: true,
+				displayPlay: true, displayProgress: true, displayWarp: true
+			});
+		} else {
+			document.querySelector("#audio-ts").innerHTML =
+				"<div class='audio-error'>Audio is not supported in this browser.</div>";
+		}
+
+		loadCollection_ts();
+
+		if (window.Tonality) {
+			Tonality.onChange(function(st, src) { if (src !== "local") applyTonality_ts(); });
+			applyTonality_ts();
+		}
+
+		document.addEventListener("keydown", function(e) {
+			const active = document.activeElement;
+			const isTyping = active && (active.tagName === "TEXTAREA" || (active.tagName === "INPUT" && active.type !== "checkbox" && active.type !== "radio"));
+			if (isTyping) return;
+			if (e.ctrlKey || e.metaKey || e.altKey) return;
+
+			const letterIndex = e.key.length === 1 ? e.key.toUpperCase().charCodeAt(0) - 65 : -1;
+			if (letterIndex >= 0 && letterIndex < activeCells_ts.length) {
+				appendCell_ts(letterIndex);
+			}
+		});
+	}
+</script>
+
+<div id="ts-root">
+	<div class="midi" style="display:none">MIDI</div>
+
+	<!-- Playback controls -->
+	<div class="sq-card">
+		<div class="sq-row">
+			<div class="sq-group">
+				<span class="sq-label">Collection</span>
+				<select id="collection-selector-ts" onchange="loadCollection_ts()"></select>
+			</div>
+			<div id="audio-ts"></div>
+			<button type="button" class="sq-btn" onclick="clearSequence_ts()">Clear</button>
+		</div>
+	</div>
+
+	<!-- Cell bank -->
+	<div class="sq-card">
+		<div class="cell-bank">
+			<div class="cell-buttons" id="cell-buttons-ts"></div>
+		</div>
+	</div>
+
+	<!-- Notation output -->
+	<div id="paper-ts" class="sq-paper"></div>
+
+	<!-- ABC editor -->
+	<textarea id="abc-editor-ts" spellcheck="false" oninput="editSequence_ts()"></textarea>
+</div>
+
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/cursor-synth.js"></script>
+<script>
+	const cursorControl_ts = new CursorControl();
+	load_ts();
+</script>
+```

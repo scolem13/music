@@ -78,7 +78,9 @@
     { id:"viennese",   label:"Viennese waltz (3/4)",    meter:"3/4", gchord:"fczczc",   gchordDouble:"fcfcfc",   dur:[2,1,1,1,1,1] },
     { id:"jazzwaltz",  label:"Jazz waltz (3/4)",        meter:"3/4", gchord:"fzczzc",   gchordDouble:"fzcfzc",   dur:[2,0,1,0,0,1],   drum:"rzrrrz" },       // swung ride in 3
     { id:"montuno",    label:"Son montuno (4/4)",        meter:"4/4", gchord:"fcczcczc", drum:"khhskhkh" },                                                    // Cuban piano tumbao
-    { id:"walk",       label:"Walking bass (jazz)",      walk:true,                      drum:"rzrrrzrr" }                            // walking LH + Charleston RH
+    { id:"walk",       label:"Walking bass (jazz)",      walk:true,                      drum:"rzrrrzrr" },                           // walking LH + Charleston RH
+    { id:"chacha",     label:"Cha-cha (4/4)",            meter:"4/4", gchord:"fzczcccz", gchordDouble:"fzczcccz",                     drum:"hhkhhhkh" },          // 1 · 2 · cha-cha-cha
+    { id:"calypso",    label:"Calypso / mento (4/4)",    meter:"4/4", gchord:"fczcfczc", gchordDouble:"fczcfczc",                     drum:"zhkzkzsh" },          // Caribbean afterbeat; no kick on 1
   ];
   PATTERNS.forEach(function (p){ STYLES[p.id] = { label:p.label, cell:p.cell || null, cellComp:p.cellComp||null, gchord:p.gchord || null, gchordDouble:p.gchordDouble || null, meter:p.meter || null, dur:p.dur || null, arp:!!p.arp, drum:p.drum || null, walk:!!p.walk }; });
 
@@ -105,6 +107,14 @@
     // Dance / folk
     waltz:           { label:"Waltz",                  meters:["triple"],   genre:"dance", groove:"kzhzhz" },
     compound6:       { label:"Compound (6/8)",         meters:["compound"], genre:"folk",  groove:"khhshh" },
+    // Funk / R&B / New Orleans
+    halftime:        { label:"Half-time feel",         meters:["duple"],    genre:"funk",  groove:"khhhshhh" },  // snare on beat 3
+    funk:            { label:"Funk",                   meters:["duple"],    genre:"funk",  groove:"kzhskhzs" },  // syncopated snare on +2 and +4
+    secondline:      { label:"New Orleans second line",meters:["duple"],    genre:"funk",  groove:"kskhkskh" },  // kick every beat, snare on off-beats
+    // More Brazilian / Caribbean
+    samba:           { label:"Samba",                  meters:["duple"],    genre:"latin", groove:"zhkhshkh" },  // surdo kick on 2 and 4; no kick on 1
+    mambo:           { label:"Mambo",                  meters:["duple"],    genre:"latin", groove:"kzhhskhh" },  // clave kick on 1 and +3
+    calypso:         { label:"Calypso / mento",        meters:["duple"],    genre:"caribbean", groove:"zhkzkzsh" }, // floating; no downbeat kick
   };
 
   // ---- Drum fill catalog (one-bar phrases that auto-replace the groove at phrase end) ----
@@ -448,58 +458,83 @@
     });
     return tokens.join('');
   }
+  // Scale a beat-relative groove to match wider beats (e.g. cut time / 2/2 where beatE=4).
+  // Only applies when beatE > 2 AND the groove is shorter than barE (i.e. designed to tile).
+  // Inserts (beatE/2 - 1) rests after each character so the snare lands on beat 2, not the "and".
+  function scaleToBeat(groove, M){
+    if (!groove || M.beatE <= 2 || groove.length >= M.barE) return groove;
+    var factor = Math.round(M.beatE / 2), out = "";
+    for (var i = 0; i < groove.length; i++){
+      out += groove[i];
+      for (var j = 1; j < factor; j++) out += "z";
+    }
+    return out;
+  }
   // Apply half/double time feel to a raw groove string.
   // Half: keep hits only at even positions (8ths → quarters).
-  // Double: tile the groove at one-beat period so it plays twice as fast.
+  // Double: expand to 2×barE with 16th-note hi-hat fills between existing hits.
+  //   Falls back to period-compression when the groove already has no hats to fill.
   function applyGrooveTimeFeel(groove, timeFeel, M){
     if (!groove || !timeFeel || timeFeel === "normal") return groove;
     var barE = M.barE;
     var exp = "";
     for (var i = 0; i < barE; i++) exp += groove[i % groove.length];
-    function hitCount(pat, len){ var n = 0; for (var i = 0; i < len; i++) if (pat[i % pat.length] !== "z") n++; return n; }
+    function hitCount(g, len){ var n = 0; for (var i = 0; i < len; i++) if (g[i % g.length] !== "z") n++; return n; }
     if (timeFeel === "half"){
       var r = "";
       for (var i = 0; i < barE; i++) r += (i % 2 === 0) ? exp[i] : "z";
       return r;
     }
     if (timeFeel === "double"){
-      // Halve the repeating period so the pattern tiles twice as fast.
-      // Only use the denser result; if tiling produces fewer hits, keep the original.
-      var unit = Math.max(1, Math.min(M.beatE, Math.floor(barE / 2)));
-      var dbl = exp.slice(0, unit);
-      return hitCount(dbl, barE) >= hitCount(groove, barE) ? dbl : groove;
+      // Expand to 2×barE (16th-note resolution). Existing hits go to even positions;
+      // hi-hat fills every odd position when the groove already uses h/o.
+      var addHats = /[ho]/.test(groove);
+      var dbl16 = "";
+      for (var i = 0; i < barE; i++){
+        dbl16 += exp[i];
+        dbl16 += addHats ? "h" : "z";
+      }
+      if (hitCount(dbl16, barE * 2) > hitCount(exp, barE)) return dbl16;
+      // No hats to add — keep the groove at original resolution unchanged.
+      return groove;
     }
     return groove;
   }
   function drumGroove(drumId, M){
     if (!drumId || drumId === "none") return null;
-    if (Object.prototype.hasOwnProperty.call(DRUM_PATTERNS, drumId)) return DRUM_PATTERNS[drumId].groove || null;
-    var st = STYLES[drumId]; if (st && st.drum) return st.drum;
-    if (M.beatGrouping) return grooveForGrouping(M.beatGrouping, M.e8);
-    var isComp = M.d >= 8 && M.beats % 3 === 0 && M.beats >= 6;
-    if (isComp) return "khhshh";
-    if (M.beats === 3) return "kzhzhz";
-    return "khsh";
+    var raw;
+    if (Object.prototype.hasOwnProperty.call(DRUM_PATTERNS, drumId)) raw = DRUM_PATTERNS[drumId].groove || null;
+    else { var st = STYLES[drumId]; if (st && st.drum) raw = st.drum; }
+    if (!raw){
+      if (M.beatGrouping) return grooveForGrouping(M.beatGrouping, M.e8);
+      var isComp = M.d >= 8 && M.beats % 3 === 0 && M.beats >= 6;
+      raw = isComp ? "khhshh" : M.beats === 3 ? "kzhzhz" : "khsh";
+    }
+    return scaleToBeat(raw, M);
   }
   // handFrac: separate volume fraction for hand drum tokens (H/L/m/O/C); defaults to frac.
+  // Pattern length = groove.length so a 16th-note double-time groove (2×barE) is honoured.
   function drumHeaderFromGroove(M, groove, frac, handFrac){
     if (!groove) return null;
     frac = frac == null ? 1 : frac;
     if (handFrac == null) handFrac = frac;
     var HAND = { H:true, L:true, m:true, O:true, C:true, e:true, u:true, P:true };
     var pat = "", notes = [], vels = [];
-    for (var i=0;i<M.barE;i++){ var tk = groove[i % groove.length], n = DRUM[tk];
+    var patLen = Math.max(groove.length, M.barE);
+    for (var i = 0; i < patLen; i++){ var tk = groove[i % groove.length], n = DRUM[tk];
       if (n){ pat += "d"; notes.push(n);
         vels.push(Math.max(1, Math.round((DVEL[tk] || 80) * (HAND[tk] ? handFrac : frac)))); } else pat += "z"; }
     if (!notes.length) return null;
     return "%%MIDI drum " + pat + " " + notes.join(" ") + " " + vels.join(" ");
   }
   // handId/handFrac: optional hand drum pattern merged into the same %%MIDI drum channel.
+  // patLen = max groove length so a double-time drum groove (2×barE) keeps its 16th resolution.
   function drumHeader(M, drumId, frac, timeFeel, handId, handFrac){
     var dg = applyGrooveTimeFeel(drumGroove(drumId, M), timeFeel, M);
     var hg = (handId && handId !== "none" && HAND_PATTERNS[handId])
       ? applyGrooveTimeFeel(HAND_PATTERNS[handId].groove, timeFeel, M) : null;
-    var g = mergeGrooves(dg, hg, M.barE); if (!g) return [];
+    var patLen = Math.max(dg ? dg.length : M.barE, hg ? hg.length : M.barE);
+    var g = mergeGrooves(dg, hg, patLen); if (!g) return [];
     var body = drumHeaderFromGroove(M, g, frac, handFrac); if (!body) return [];
     return ["%%MIDI drumon", body];
   }

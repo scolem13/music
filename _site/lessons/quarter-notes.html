@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Lesson: The Quarter Note – Music Practice (demo)</title>
+<title>Lesson: The Quarter Note – Music Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -39,7 +39,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-9fb21ea8d6c9988e7f3648e3d9bcd9bf.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7131cfb1a32330e9a0bc117eb5aad4de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,17 +79,9 @@ ul.task-list li input[type="checkbox"] {
   // tracker both reuse window.sb so there's a single session.
   window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
 </script>
-<style>
-  #auth-bar {
-    font-family: sans-serif; font-size: 14px;
-    background: #f4f6f8; border-bottom: 1px solid #dde;
-    padding: 6px 12px; display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
-  }
-  #auth-bar input { font-size: 14px; padding: 3px 6px; width: 150px; }
-  #auth-bar button { font-size: 14px; padding: 3px 8px; cursor: pointer; }
-  #auth-bar .who { font-weight: bold; }
-  #auth-bar .spacer { flex: 1; }
-</style>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
 
 
 </head>
@@ -102,7 +94,7 @@ ul.task-list li input[type="checkbox"] {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Music Practice (demo)</span>
+    <span class="navbar-title">Music Practice</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -121,28 +113,50 @@ ul.task-list li input[type="checkbox"] {
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
         <li>
-    <a class="dropdown-item" href="../practice/assessment-tune.html">
- <span class="dropdown-text">Assessment: Tune (pitch + rhythm) — prototype</span></a>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/reading-benchmarks.html">
  <span class="dropdown-text">Reading Benchmarks</span></a>
   </li>  
+        <li><hr class="dropdown-divider"></li>
         <li>
-    <a class="dropdown-item" href="../practice/patterns.html">
- <span class="dropdown-text">Practice: Tonal Patterns</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/rhythms.html">
- <span class="dropdown-text">Practice: Rhythm Patterns</span></a>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/assessment.html">
- <span class="dropdown-text">Assessment: Tonal Accuracy</span></a>
+ <span class="dropdown-text">Tonal Accuracy</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/assessment-rhythm.html">
- <span class="dropdown-text">Assessment: Rhythmic Accuracy</span></a>
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
   </li>  
     </ul>
   </li>
@@ -193,10 +207,21 @@ ul.task-list li input[type="checkbox"] {
   </li>  
     </ul>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="../teacher/report.html"> 
-<span class="menu-text">Teacher Report</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
           </div> <!-- /navcollapse -->
             <div class="quarto-navbar-tools">
@@ -220,63 +245,97 @@ ul.task-list li input[type="checkbox"] {
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
-<!-- Injected at the top of <body> on every page. Sign in once, anywhere;
-     the session persists across the whole site (shared localStorage). -->
-<div id="auth-bar">
-  <span id="auth-status">Checking sign-in…</span>
-
-  <span id="auth-signedout" style="display:none">
-    <input id="auth-email" placeholder="email">
-    <input id="auth-pass" type="password" placeholder="password">
-    <button onclick="authSignIn()">Sign in</button>
-    <button onclick="authSignUp()">Create</button>
-    <button onclick="authGoogle()">Google</button>
-  </span>
-
-  <span class="spacer"></span>
-
-  <span id="auth-signedin" style="display:none">
-    <span class="who" id="auth-who"></span>
-    <button onclick="authSignOut()">Sign out</button>
-  </span>
-</div>
-
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
 <script>
-  async function authRefresh() {
-    const { data: { session } } = await window.sb.auth.getSession();
-    const out = document.getElementById("auth-signedout");
-    const inn = document.getElementById("auth-signedin");
-    const status = document.getElementById("auth-status");
-    if (session) {
-      status.textContent = "";
-      out.style.display = "none";
-      inn.style.display = "inline";
-      document.getElementById("auth-who").textContent =
-        "Signed in: " + (session.user.user_metadata.full_name || session.user.email);
-    } else {
-      status.textContent = "Not signed in —";
-      out.style.display = "inline";
-      inn.style.display = "none";
-    }
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
   }
-  async function authSignIn() {
-    const { error } = await window.sb.auth.signInWithPassword({
-      email: authEmail.value, password: authPass.value });
-    if (error) alert(error.message); else location.reload();
-  }
-  async function authSignUp() {
-    const { error } = await window.sb.auth.signUp({
-      email: authEmail.value, password: authPass.value });
-    alert(error ? error.message : "Account created. Now Sign in.");
-  }
-  async function authGoogle() {
-    await window.sb.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: window.location.origin + window.location.pathname }
-    });
-  }
-  async function authSignOut() { await window.sb.auth.signOut(); location.reload(); }
-  authRefresh();
+
+  collapse.appendChild(ul);
+});
 </script>
 
 <header id="title-block-header" class="quarto-title-block default">

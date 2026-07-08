@@ -234,10 +234,6 @@
             <span class="as-tag instr">Piano</span>
             <span class="as-tag instr">Full band</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -254,9 +250,22 @@
             <span class="as-tag genre">Bebop</span>
             <span class="as-tag instr">Piano trio</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Walking bass</span>
+            <span class="as-id">walk</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="walk" onclick="asPlay(this)" aria-label="Play Walking bass">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-walk"></div>
+          <p class="as-desc">Bass moves in step-wise quarter notes through chord tones and approach notes; right-hand comping on beats 2 and 4 (Charleston rhythm). The defining texture of jazz trio and big-band rhythm-section playing from bebop onward.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag genre">Bebop</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Bass</span>
           </div>
         </div>
 
@@ -283,10 +292,6 @@
             <span class="as-tag instr">Guitar</span>
             <span class="as-tag instr">Piano</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -305,9 +310,149 @@
             <span class="as-tag instr">Bandoneón</span>
             <span class="as-tag instr">Piano</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Son montuno</span>
+            <span class="as-id">montuno</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="montuno" onclick="asPlay(this)" aria-label="Play Son montuno">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-montuno"></div>
+          <p class="as-desc">Cuban piano tumbao: bass-chord-chord repeating against the clave. The foundational piano pattern of son cubano and salsa; the rhythmic motor behind virtually all Afro-Cuban popular music.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Cuban</span>
+            <span class="as-tag genre">Salsa</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Cha-cha</span>
+            <span class="as-id">chacha</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="chacha" onclick="asPlay(this)" aria-label="Play Cha-cha">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-chacha"></div>
+          <p class="as-desc">Bass on beat 1, chord on 2, then three quick chords on "3–and–4" — the "1·2·cha-cha-chá" count. Evolved from the mambo in 1950s Cuba; named for the shuffling footwork of dancers.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Cuban</span>
+            <span class="as-tag instr">Piano</span>
+            <span class="as-tag instr">Full band</span>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Calypso / mento</span>
+            <span class="as-id">calypso</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-style="calypso" onclick="asPlay(this)" aria-label="Play Calypso">▶</button>
+          </div>
+          <div class="as-notation" id="as-n-calypso"></div>
+          <p class="as-desc">Bass on beats 1 and 3, light chords on every upbeat — the Trinidadian and Jamaican "afterbeat." Mento is the Jamaican root form; calypso developed in Trinidad. Both patterns flowed into ska and reggae.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Caribbean</span>
+            <span class="as-tag genre">Roots</span>
+            <span class="as-tag instr">Guitar</span>
+            <span class="as-tag instr">Piano</span>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Samba</span>
+            <span class="as-id">samba</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-drum="samba" onclick="asPlay(this)" aria-label="Play Samba">▶</button>
+          </div>
+          <div class="as-notation" id="as-dn-samba"></div>
+          <p class="as-desc">Surdo-style kick on beats 2 and 4 (absent on beat 1), snare on beat 3, hi-hat fills every eighth. The rhythmic foundation of Brazilian carnival parade music; transferred to the drum kit from the samba bateria.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Brazilian</span>
+            <span class="as-tag instr">Drum set</span>
+            <span class="as-tag instr">Bateria</span>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Mambo</span>
+            <span class="as-id">mambo</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-drum="mambo" onclick="asPlay(this)" aria-label="Play Mambo">▶</button>
+          </div>
+          <div class="as-notation" id="as-dn-mambo"></div>
+          <p class="as-desc">Kick on beat 1 and the "and-of-3" (a clave-derived anticipation), snare on beat 3, hi-hats throughout. Developed in 1940s Havana by Dámaso Pérez Prado; bridged Cuban son and American big-band.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Latin</span>
+            <span class="as-tag genre">Cuban</span>
+            <span class="as-tag instr">Drum set</span>
+            <span class="as-tag instr">Full band</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Funk &amp; R&amp;B</div>
+      <div class="as-cards">
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Funk</span>
+            <span class="as-id">funk</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-drum="funk" onclick="asPlay(this)" aria-label="Play Funk">▶</button>
+          </div>
+          <div class="as-notation" id="as-dn-funk"></div>
+          <p class="as-desc">Kick on beats 1 and 3; syncopated snare on the "and-of-2" and "and-of-4"; hi-hat anchors the eighth-note pulse. James Brown's drummers — Clyde Stubblefield and John "Jabo" Starks — defined this feel.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Funk</span>
+            <span class="as-tag genre">R&amp;B</span>
+            <span class="as-tag instr">Drum set</span>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">Half-time feel</span>
+            <span class="as-id">halftime</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-drum="halftime" onclick="asPlay(this)" aria-label="Play Half-time feel">▶</button>
+          </div>
+          <div class="as-notation" id="as-dn-halftime"></div>
+          <p class="as-desc">Snare moves to beat 3 (rather than 2 and 4), making 2 bars feel like 1. Common in hip-hop, stadium rock, and ballad bridges where the tempo needs to feel broader without actually slowing down.</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Pop</span>
+            <span class="as-tag genre">Hip-hop</span>
+            <span class="as-tag genre">Rock</span>
+            <span class="as-tag instr">Drum set</span>
+          </div>
+        </div>
+
+        <div class="as-card">
+          <div class="as-card-head">
+            <span class="as-name">New Orleans second line</span>
+            <span class="as-id">secondline</span>
+            <span class="as-meter">4/4</span>
+            <button class="as-play" data-drum="secondline" onclick="asPlay(this)" aria-label="Play Second line">▶</button>
+          </div>
+          <div class="as-notation" id="as-dn-secondline"></div>
+          <p class="as-desc">Kick on every beat; snare on the "and-of-1" and "and-of-3." The marching parade groove of New Orleans brass bands; adopted by jazz funk, R&amp;B, and rock drummers (the Meters, Allen Toussaint, Dr. John).</p>
+          <div class="as-tags">
+            <span class="as-tag genre">Funk</span>
+            <span class="as-tag genre">New Orleans</span>
+            <span class="as-tag genre">Jazz</span>
+            <span class="as-tag instr">Drum set</span>
+            <span class="as-tag instr">Marching</span>
           </div>
         </div>
 
@@ -333,10 +478,6 @@
             <span class="as-tag instr">Piano</span>
             <span class="as-tag instr">Orchestra</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -355,10 +496,6 @@
             <span class="as-tag instr">Orchestra</span>
             <span class="as-tag instr">Piano</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -376,10 +513,6 @@
             <span class="as-tag genre">March</span>
             <span class="as-tag instr">Brass</span>
             <span class="as-tag instr">Accordion</span>
-          </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
           </div>
         </div>
 
@@ -406,10 +539,6 @@
             <span class="as-tag instr">Guitar</span>
             <span class="as-tag instr">Banjo</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
       </div>
@@ -434,10 +563,6 @@
             <span class="as-tag instr">Piano</span>
             <span class="as-tag instr">Keyboard</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -456,10 +581,6 @@
             <span class="as-tag instr">Guitar</span>
             <span class="as-tag instr">Piano</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -476,10 +597,6 @@
             <span class="as-tag genre">Reggae</span>
             <span class="as-tag instr">Guitar</span>
             <span class="as-tag instr">Keyboard</span>
-          </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
           </div>
         </div>
 
@@ -505,10 +622,6 @@
             <span class="as-tag instr">Piano</span>
             <span class="as-tag instr">Keyboard</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -524,10 +637,6 @@
             <span class="as-tag genre">Classical</span>
             <span class="as-tag genre">Romantic</span>
             <span class="as-tag instr">Piano</span>
-          </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
           </div>
         </div>
 
@@ -547,10 +656,6 @@
             <span class="as-tag instr">Guitar</span>
             <span class="as-tag instr">Piano</span>
           </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
-          </div>
         </div>
 
         <div class="as-card">
@@ -566,10 +671,6 @@
             <span class="as-tag genre">Teaching</span>
             <span class="as-tag genre">Minimal</span>
             <span class="as-tag instr">Bass</span>
-          </div>
-          <div class="as-placeholders">
-            <div class="as-ph"><span class="as-ph-label">History</span><span class="as-ph-note">Coming soon</span></div>
-            <div class="as-ph"><span class="as-ph-label">Listening</span><span class="as-ph-note">Coming soon</span></div>
           </div>
         </div>
 
@@ -680,6 +781,153 @@
       </div>
     </div>
 
+    <div class="as-group" id="as-percussion">
+      <div class="as-group-title">Drum Set</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Backbeat</span><span class="as-id">backbeat</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Kick on beats 1 and 3, snare on 2 and 4. The universal pop and rock groove; the first drum pattern most students encounter.</p>
+          <div class="as-tags"><span class="as-tag genre">Pop</span><span class="as-tag genre">Rock</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Driving 8ths</span><span class="as-id">driving8</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Continuous eighth notes on the hi-hat with backbeat snare. Energetic pop and rock feel; common in anthemic and uptempo styles.</p>
+          <div class="as-tags"><span class="as-tag genre">Pop</span><span class="as-tag genre">Rock</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Ska / reggae (one-drop)</span><span class="as-id">ska</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Kick displaced to beat 3; snare and hi-hat emphasise the off-beats. The rhythmic foundation of ska, rocksteady, and roots reggae.</p>
+          <div class="as-tags"><span class="as-tag genre">Reggae</span><span class="as-tag genre">Ska</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Swing — ride cymbal</span><span class="as-id">swing_ride</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Swung ride pattern with kick and snare on beats 2 and 4. The standard jazz ride pattern from Swing through bebop.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Swing</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Swing — hi-hat</span><span class="as-id">swing_hats</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Swung quarter-note hi-hat pulse; lighter texture than ride-cymbal swing. Used in small-group jazz and ballad settings.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Ballad</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Swing — open hi-hat</span><span class="as-id">swing_hats_open</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Swung hi-hat opening on beats 2 and 4; airy, washy texture. Common in contemporary jazz and fusion where the drummer wants more cymbal wash than the closed-hat version.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Fusion</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Swing — brushes</span><span class="as-id">swing_brushes</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Wire-brush swirl with soft backbeat. Quiet jazz trio and intimate club setting; the standard brush technique for standards and ballads.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Ballad</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Jazz waltz — ride</span><span class="as-id">jazzwaltz_ride</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Swung ride in 3; kick on beat 1, light snare elsewhere. The jazz-waltz drum feel behind Bill Evans, Miles Davis, and the post-bop trio repertoire.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Waltz</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Jazz waltz — hi-hat</span><span class="as-id">jazzwaltz_hats</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Closed hi-hat pulse in 3 with a light swing feel; more understated than the ride-cymbal version. Used in intimate trio settings where the drummer wants less projection.</p>
+          <div class="as-tags"><span class="as-tag genre">Jazz</span><span class="as-tag genre">Waltz</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bossa nova</span><span class="as-id">bossa</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Ride cymbal tresillo with side-stick; the drum kit adaptation of Brazilian percussion. Foundational in bossa nova and samba-jazz.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Bossa</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Tango (habanera)</span><span class="as-id">tango</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Habanera kick cell with closed hi-hat. The rhythmic engine of Argentine tango and early-20th-century Latin dance music.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Tango</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Son montuno (clave)</span><span class="as-id">montuno</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Cuban clave rhythm on the kick; snare and hi-hat fill the groove. The drum kit version of the son montuno pattern.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Cuban</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Waltz</span><span class="as-id">waltz</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Kick on beat 1, hi-hat on 2 and 3. Straightforward triple-meter groove for waltzes, country, and folksong accompaniment.</p>
+          <div class="as-tags"><span class="as-tag genre">Dance</span><span class="as-tag genre">Folk</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Compound (6/8)</span><span class="as-id">compound6</span><span class="as-meter">6/8</span></div>
+          <p class="as-desc">Kick on the two main beats, hi-hat subdivisions filling the compound pulse. Used in jigs, compound-feel pop, and gospel 6/8.</p>
+          <div class="as-tags"><span class="as-tag genre">Folk</span><span class="as-tag genre">Gospel</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Half-time feel</span><span class="as-id">halftime</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Snare on beat 3 only; kick and hi-hat fill the rest. Makes the bar feel twice as wide without changing tempo. Widely used in hip-hop, stadium rock, and ballad bridges.</p>
+          <div class="as-tags"><span class="as-tag genre">Pop</span><span class="as-tag genre">Hip-hop</span><span class="as-tag genre">Rock</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Funk</span><span class="as-id">funk</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Kick on beats 1 and 3; syncopated snare on the "and-of-2" and "and-of-4"; hi-hat on all eighths. The foundational James Brown / Clyde Stubblefield groove.</p>
+          <div class="as-tags"><span class="as-tag genre">Funk</span><span class="as-tag genre">R&amp;B</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">New Orleans second line</span><span class="as-id">secondline</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Kick on every beat, snare on the upbeats of 1 and 3. The marching street-parade groove; adopted by the Meters, Dr. John, and rock drummers worldwide.</p>
+          <div class="as-tags"><span class="as-tag genre">Funk</span><span class="as-tag genre">New Orleans</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Samba</span><span class="as-id">samba</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Surdo kick on beats 2 and 4; snare on beat 3; hi-hat throughout. The drum kit adaptation of the samba bateria; common in Brazilian jazz and fusion.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Brazilian</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Mambo</span><span class="as-id">mambo</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Kick on beat 1 and the "and-of-3" (a clave-derived anticipation); snare on beat 3. The driving groove of 1940s Havana; ancestor of modern salsa.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Cuban</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Calypso / mento</span><span class="as-id">calypso</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Floating kick (no downbeat on 1); side-stick on beat 3; hi-hat emphasises the upbeats. The Trinidadian and Jamaican afterbeat; ancestral to ska and reggae.</p>
+          <div class="as-tags"><span class="as-tag genre">Caribbean</span><span class="as-tag genre">Reggae</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="as-group">
+      <div class="as-group-title">Hand Percussion</div>
+      <div class="as-cards">
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bongo — martillo</span><span class="as-id">bongo_martillo</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Steady eighth-note alternation between hi and lo bongo; the "hammer" pattern. The default timekeeping groove in Cuban son and salsa.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Cuban</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Bongo — quarter</span><span class="as-id">bongo_slow</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Quarter-note hi/lo alternation; a relaxed, open texture. Works well as a simplified bongo part for classroom or beginner settings.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Teaching</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Conga — tumbao</span><span class="as-id">conga_tumbao</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Open tone on the and-of-4, muted tones elsewhere. The foundational Cuban conga pattern; ubiquitous in salsa and son.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Cuban</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Conga — tumbao (dense)</span><span class="as-id">conga_tumbao_dense</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Eight-note tumbao with slap and open tone variations; a fuller, more active feel than the standard four-note version.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Cuban</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Conga — son</span><span class="as-id">conga_son</span><span class="as-meter">4/4</span></div>
+          <p class="as-desc">Alternating lo-conga open tones across the bar; simpler and more open than the tumbao. Common in son cubano and early salsa.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Cuban</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Conga — waltz</span><span class="as-id">conga_waltz</span><span class="as-meter">3/4</span></div>
+          <p class="as-desc">Conga tones on the three main beats in 3/4; pairs with Latin waltz and compound-feel songs.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Waltz</span></div>
+        </div>
+        <div class="as-card">
+          <div class="as-card-head"><span class="as-name">Conga — 6/8</span><span class="as-id">conga_6_8</span><span class="as-meter">6/8</span></div>
+          <p class="as-desc">Open and muted conga tones across the compound-triple pulse. Works with 6/8 Afro-Cuban styles and compound jigs.</p>
+          <div class="as-tags"><span class="as-tag genre">Latin</span><span class="as-tag genre">Afro-Cuban</span></div>
+        </div>
+      </div>
+    </div>
+
   </div><!-- #as-instrument -->
 
 </div><!-- #as-root -->
@@ -706,11 +954,12 @@
     };
   }
 
-  var visuals = {};   // styleId → ABCJS visualObj
+  var visuals = {};   // key → ABCJS visualObj  ('d:id' for drum-only, 'id' for keyboard)
   var ctrl = null, activeBtn = null;
 
   function renderAll() {
     if (!window.ABCJS || !window.Arranger) return;
+    // Keyboard accompaniment styles
     document.querySelectorAll('[data-style]').forEach(function (btn) {
       var id = btn.dataset.style;
       if (visuals[id]) return;
@@ -724,10 +973,26 @@
         el.innerHTML = '<span class="as-notation-msg">No notation available for this meter.</span>';
         return;
       }
-      var vObjs = ABCJS.renderAbc(el, abc, {
-        add_classes: true, responsive: 'resize', scale: 0.65
-      });
+      var vObjs = ABCJS.renderAbc(el, abc, { add_classes: true, responsive: 'resize', scale: 0.65 });
       if (vObjs && vObjs[0]) visuals[id] = vObjs[0];
+    });
+    // Drum-only patterns (percOnly)
+    document.querySelectorAll('[data-drum]').forEach(function (btn) {
+      var id = btn.dataset.drum;
+      var key = 'd:' + id;
+      if (visuals[key]) return;
+      var el = document.getElementById('as-dn-' + id);
+      if (!el) return;
+      var abc = window.Arranger.toAbc(makeParsed('charleston'), {
+        drumPattern: id, percOnly: true, showDrums: true,
+        drums: true, dynamics: false, tempo: 110, repeats: 1, intro: 'none'
+      });
+      if (!abc) {
+        el.innerHTML = '<span class="as-notation-msg">No notation available.</span>';
+        return;
+      }
+      var vObjs = ABCJS.renderAbc(el, abc, { add_classes: true, responsive: 'resize', scale: 0.65 });
+      if (vObjs && vObjs[0]) visuals[key] = vObjs[0];
     });
   }
 
@@ -748,7 +1013,10 @@
   }
 
   window.asPlay = function (btn) {
-    var id = btn.dataset.style, vo = visuals[id];
+    var isDrum = !!btn.dataset.drum;
+    var id = isDrum ? btn.dataset.drum : btn.dataset.style;
+    var key = isDrum ? ('d:' + id) : id;
+    var vo = visuals[key];
     if (!vo || !window.ABCJS) return;
     var c = getCtrl();
     if (activeBtn === btn) {
