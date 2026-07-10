@@ -228,9 +228,11 @@
 		const visualObj = ABCJS.renderAbc("paper-ts", abcString, abcOptions)[0];
 		document.querySelector("#ts-root .midi").innerHTML = ABCJS.synth.getMidiFile(abcString);
 
-		new ABCJS.synth.CreateSynth().init({
-			visualObj: visualObj,
-			options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+		getSoundfontUrl().then(function(sfUrl) {
+			return new ABCJS.synth.CreateSynth().init({
+				visualObj: visualObj,
+				options: { soundFontUrl: sfUrl }
+			});
 		}).then(function() {
 			if (synthControl_ts) {
 				synthControl_ts.setTune(visualObj, userAction).catch(function(error) { console.warn("Audio problem:", error); });
@@ -322,6 +324,7 @@
 	<textarea id="abc-editor-ts" spellcheck="false" oninput="editSequence_ts()"></textarea>
 </div>
 
+<script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/patterns/pattern-object.js"></script>
 <script src="/apps/shared/tonality.js?v=4"></script>

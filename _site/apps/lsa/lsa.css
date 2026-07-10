@@ -1,0 +1,529 @@
+/* apps/lsa/lsa.css — shared styles for the Evaluation Chart and Data Analysis pages.
+   Scoped to #lsa-app; draws only from the site's existing design tokens (custom.css). */
+
+#lsa-app {
+  --lsa-pip: 34px;
+  --lsa-cue1: var(--site-accent);
+  --lsa-cue1-bg: var(--site-accent-bg);
+  --lsa-cue2: var(--site-accent-dk);
+  font-variant-numeric: tabular-nums;
+}
+
+#lsa-app * { box-sizing: border-box; }
+
+/* ── toolbar ─────────────────────────────────────────────────────────── */
+
+#lsa-app .lsa-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: .6rem 1rem;
+  padding: .75rem 1rem;
+  margin-bottom: .75rem;
+  background: var(--parch);
+  border: 1px solid var(--parch-edge);
+  border-radius: .5rem;
+}
+
+#lsa-app .lsa-field {
+  display: flex;
+  flex-direction: column;
+  gap: .2rem;
+}
+
+#lsa-app .lsa-field label {
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--parch-dim);
+  font-weight: 600;
+}
+
+#lsa-app select,
+#lsa-app input[type="text"] {
+  font: inherit;
+  padding: .35rem .5rem;
+  border: 1px solid var(--site-border);
+  border-radius: .35rem;
+  background: var(--site-surface);
+  color: var(--site-ink);
+}
+
+#lsa-app .lsa-criterion-select { min-width: 20rem; max-width: 28rem; }
+
+#lsa-app .lsa-toggle-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: .4rem;
+}
+#lsa-app .lsa-toggle-field label { font-size: .85rem; color: var(--site-ink-2); text-transform: none; font-weight: 500; }
+
+#lsa-app .lsa-spacer { flex: 1; }
+
+#lsa-app .lsa-btn {
+  font: inherit;
+  padding: .4rem .8rem;
+  border-radius: .35rem;
+  border: 1px solid var(--site-border);
+  background: var(--site-surface);
+  color: var(--site-ink);
+  cursor: pointer;
+}
+#lsa-app .lsa-btn:hover { background: var(--site-surface-2); }
+#lsa-app .lsa-btn:focus-visible { outline: 2px solid var(--site-accent); outline-offset: 1px; }
+#lsa-app .lsa-btn.lsa-primary {
+  background: var(--site-accent);
+  border-color: var(--site-accent-dk);
+  color: #fff;
+}
+#lsa-app .lsa-btn.lsa-primary:hover { background: var(--site-accent-dk); }
+#lsa-app .lsa-btn.lsa-danger { color: var(--site-fail); border-color: var(--site-fail); background: transparent; }
+#lsa-app .lsa-btn.lsa-danger:hover { background: var(--site-warn-bg); }
+#lsa-app .lsa-btn:disabled { opacity: .45; cursor: not-allowed; }
+
+/* view tabs (Card / Seating chart) */
+#lsa-app .lsa-view-tabs { display: flex; gap: .3rem; }
+#lsa-app .lsa-view-tabs .lsa-btn.lsa-active {
+  background: var(--site-accent);
+  border-color: var(--site-accent-dk);
+  color: #fff;
+}
+
+/* ── floating pattern-notation bar (all views) ──────────────────────── */
+
+#lsa-app .lsa-notation-bar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  gap: .5rem;
+  align-items: stretch;
+  overflow-x: auto;
+  padding: .5rem .6rem;
+  margin: 0 0 .75rem;
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: .5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+
+#lsa-app .lsa-notation-panel {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 9rem;
+  max-width: 16rem;
+  border: 1px solid var(--site-border-soft);
+  border-radius: .4rem;
+  padding: .3rem .4rem .1rem;
+  background: var(--site-surface-2);
+}
+#lsa-app .lsa-notation-panel.lsa-notation-empty { display: none; }
+#lsa-app .lsa-notation-label {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  color: var(--site-ink-3);
+  font-weight: 700;
+}
+#lsa-app .lsa-notation-svg { max-height: 92px; overflow: hidden; }
+#lsa-app .lsa-notation-svg svg { max-width: 100%; height: auto; }
+#lsa-app .lsa-notation-cue-badges { position: absolute; top: .25rem; right: .35rem; display: flex; gap: .2rem; }
+
+/* ── cue status line (card view only) ───────────────────────────────── */
+
+#lsa-app .lsa-cue-status {
+  font-size: .85rem;
+  color: var(--site-ink-2);
+  padding: .4rem .2rem .9rem;
+}
+#lsa-app .lsa-cue-status b { color: var(--site-ink); }
+
+/* ── cued-ordinal badge, shared by cards, seats, and notation panels ──── */
+
+#lsa-app .lsa-ordinal {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  font-size: .7rem;
+  font-weight: 800;
+  color: #fff;
+}
+#lsa-app .lsa-ordinal.lsa-o1 { background: var(--lsa-cue1); }
+#lsa-app .lsa-ordinal.lsa-o2 { background: var(--lsa-cue2); }
+
+/* ── student grid (card view) ───────────────────────────────────────── */
+
+#lsa-app .lsa-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15.5rem, 1fr));
+  gap: .9rem;
+}
+
+#lsa-app .lsa-card {
+  position: relative;
+  border: 2px solid var(--site-border);
+  border-radius: .6rem;
+  background: var(--site-surface);
+  padding: .85rem .95rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .55rem;
+  transition: box-shadow .15s, border-color .15s;
+}
+#lsa-app .lsa-card:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--site-accent-bg);
+}
+
+/* "very obvious" cueing: #1 gets a solid glow + gentle pulse, #2 a dashed ring */
+#lsa-app .lsa-card.lsa-cued-1 {
+  border-color: var(--lsa-cue1);
+  box-shadow: 0 0 0 4px var(--lsa-cue1-bg);
+  animation: lsa-pulse 1.8s ease-in-out infinite;
+}
+#lsa-app .lsa-card.lsa-cued-2 {
+  border: 2px dashed var(--lsa-cue2);
+  background: var(--lsa-cue1-bg);
+}
+@keyframes lsa-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px var(--lsa-cue1-bg); }
+  50%      { box-shadow: 0 0 0 8px var(--lsa-cue1-bg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #lsa-app .lsa-card.lsa-cued-1 { animation: none; }
+}
+
+#lsa-app .lsa-cue-ribbon {
+  position: absolute;
+  top: -.6rem;
+  left: .7rem;
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+  background: var(--site-surface);
+  border: 1px solid var(--site-border);
+  border-radius: 1rem;
+  padding: .05rem .5rem .05rem .05rem;
+  font-size: .72rem;
+  font-weight: 700;
+  color: var(--site-ink-2);
+}
+
+#lsa-app .lsa-card-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: .5rem;
+}
+#lsa-app .lsa-name { font-family: var(--font-display); font-size: 1.05rem; color: var(--site-ink); }
+
+/* color-coded aptitude chip */
+#lsa-app .lsa-aptitude {
+  font-size: .68rem;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  font-weight: 700;
+  border-radius: 1rem;
+  padding: .1rem .55rem;
+  white-space: nowrap;
+  border: 1px solid transparent;
+}
+#lsa-app .lsa-aptitude.lsa-apt-high  { color: var(--site-accent-text); background: var(--site-accent-bg); border-color: var(--site-accent); }
+#lsa-app .lsa-aptitude.lsa-apt-avg   { color: var(--site-ink-2); background: var(--site-surface-2); border-color: var(--site-border); }
+#lsa-app .lsa-aptitude.lsa-apt-low   { color: var(--site-warn-ink); background: var(--site-warn-bg); border-color: var(--site-warn-bdr); }
+
+#lsa-app .lsa-levels { display: flex; gap: .5rem; }
+#lsa-app .lsa-pip-wrap { display: flex; flex-direction: column; align-items: center; gap: .2rem; flex: 1; }
+#lsa-app .lsa-pip-label { font-size: .65rem; color: var(--site-ink-3); text-transform: uppercase; letter-spacing: .03em; }
+#lsa-app .lsa-pip {
+  width: var(--lsa-pip);
+  height: var(--lsa-pip);
+  border-radius: 50%;
+  border: 2px solid var(--site-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--site-ink-3);
+  background: var(--site-surface-2);
+}
+#lsa-app .lsa-pip.lsa-na { visibility: hidden; }
+#lsa-app .lsa-pip.lsa-taught { border-color: var(--site-accent); color: var(--site-accent-dk); background: var(--site-accent-bg); }
+#lsa-app .lsa-pip.lsa-achieved { border-color: var(--site-pass); color: #fff; background: var(--site-pass); }
+#lsa-app .lsa-pip.lsa-beyond-flag { box-shadow: 0 0 0 2px var(--site-warn-bdr); }
+
+#lsa-app .lsa-counts { font-size: .72rem; color: var(--site-ink-3); text-align: center; }
+
+#lsa-app .lsa-due {
+  font-size: .82rem;
+  padding: .3rem .55rem;
+  border-radius: .35rem;
+  text-align: center;
+  background: var(--site-surface-2);
+  color: var(--site-ink-2);
+}
+#lsa-app .lsa-due.lsa-due-active { background: var(--site-accent-bg); color: var(--site-accent-text); font-weight: 600; }
+#lsa-app .lsa-due.lsa-due-beyond { background: var(--site-warn-bg); color: var(--site-warn-ink); font-weight: 600; }
+#lsa-app .lsa-due.lsa-due-done { color: var(--site-pass); font-weight: 600; }
+
+#lsa-app .lsa-actions { display: flex; gap: .5rem; }
+#lsa-app .lsa-actions .lsa-btn { flex: 1; padding: .55rem .4rem; font-weight: 600; font-size: .85rem; min-height: 44px; }
+#lsa-app .lsa-btn.lsa-yes { border-color: var(--site-pass); color: var(--site-pass); }
+#lsa-app .lsa-btn.lsa-yes:hover { background: var(--site-pass); color: #fff; }
+#lsa-app .lsa-btn.lsa-no { border-color: var(--site-fail); color: var(--site-fail); }
+#lsa-app .lsa-btn.lsa-no:hover { background: var(--site-fail); color: #fff; }
+
+#lsa-app .lsa-hint {
+  font-size: .78rem;
+  color: var(--site-ink-3);
+  margin: -.4rem 0 .9rem;
+}
+#lsa-app kbd {
+  font-family: var(--font-mono);
+  font-size: .72em;
+  border: 1px solid var(--site-border);
+  border-bottom-width: 2px;
+  border-radius: .25rem;
+  padding: .05rem .35rem;
+  background: var(--site-surface);
+}
+
+/* mini seat-location map (built on every card; only shown at phone widths) */
+#lsa-app .lsa-mini-map {
+  display: none;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 2px;
+  width: 6.5rem;
+  margin: 0 auto;
+}
+#lsa-app .lsa-mini-cell { aspect-ratio: 1; border-radius: 1px; background: var(--site-surface-2); }
+#lsa-app .lsa-mini-cell.lsa-mini-occupied { background: var(--site-ink-3); }
+#lsa-app .lsa-mini-cell.lsa-mini-me { background: var(--lsa-cue1); }
+
+/* ── seating chart view ─────────────────────────────────────────────── */
+
+#lsa-app .lsa-seating-topbar {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  margin-bottom: .6rem;
+}
+#lsa-app .lsa-x-btn {
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid var(--site-border);
+  background: var(--site-surface);
+  font-size: 1.1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--site-ink-2);
+}
+#lsa-app .lsa-x-btn:hover { background: var(--site-fail); color: #fff; border-color: var(--site-fail); }
+
+#lsa-app .lsa-seating-grid-wrap {
+  display: flex;
+  justify-content: center;
+  padding: .5rem 0 1rem;
+}
+#lsa-app .lsa-seating-grid {
+  display: grid;
+  gap: .5rem;
+}
+#lsa-app .lsa-seat {
+  position: relative;
+  width: 9rem;
+  height: 7.6rem;
+  border: 2px solid var(--site-border);
+  border-radius: .6rem;
+  background: var(--site-surface);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: .45rem;
+  cursor: pointer;
+  padding: .35rem;
+  text-align: center;
+}
+#lsa-app .lsa-seat.lsa-seat-empty {
+  border-style: dashed;
+  border-color: var(--site-border-soft);
+  background: transparent;
+  cursor: default;
+}
+#lsa-app .lsa-seat-name {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--site-ink);
+  line-height: 1.25;
+}
+/* PDF convention: a line above the name marks high aptitude, a line below marks
+   low — no line for average (LSA-Instructions.pdf, Illustration 5). */
+#lsa-app .lsa-seat-name.lsa-line-above { border-top: 3px solid var(--site-ink); padding-top: .2rem; }
+#lsa-app .lsa-seat-name.lsa-line-below { border-bottom: 3px solid var(--site-ink); padding-bottom: .2rem; }
+
+/* E/M/D pip row inside a seat — same │/✕ symbols as the cards, sized up for touch */
+#lsa-app .lsa-seat .lsa-levels { gap: .45rem; }
+#lsa-app .lsa-seat .lsa-pip-wrap { gap: 0; flex: 0 0 auto; }
+#lsa-app .lsa-seat .lsa-pip-label { display: none; }
+#lsa-app .lsa-seat .lsa-pip {
+  flex: 0 0 auto;
+  width: 1.5rem;
+  height: 1.5rem;
+  min-width: 1.5rem;
+  min-height: 1.5rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  padding: 0;
+  font-size: .72rem;
+  line-height: 1;
+  border-width: 1.5px;
+}
+#lsa-app .lsa-seat.lsa-cued-1 {
+  border-color: var(--lsa-cue1);
+  box-shadow: 0 0 0 4px var(--lsa-cue1-bg);
+  animation: lsa-pulse 1.8s ease-in-out infinite;
+}
+#lsa-app .lsa-seat.lsa-cued-2 { border: 2px dashed var(--lsa-cue2); background: var(--lsa-cue1-bg); }
+#lsa-app .lsa-seat.lsa-seat-target { outline: 3px solid var(--site-ink); outline-offset: 2px; }
+#lsa-app .lsa-seat .lsa-cue-ribbon { top: -.55rem; left: 50%; transform: translateX(-50%); padding: .05rem .4rem; }
+
+#lsa-app .lsa-seating-actions {
+  position: sticky;
+  bottom: 0;
+  display: flex;
+  gap: .75rem;
+  padding: .75rem 0 .25rem;
+  background: var(--site-bg);
+}
+#lsa-app .lsa-seating-actions .lsa-target-label {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: .88rem;
+  color: var(--site-ink-2);
+  margin-bottom: .25rem;
+}
+#lsa-app .lsa-btn.lsa-big {
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 1rem;
+  min-height: 64px;
+  border-radius: .6rem;
+}
+
+/* ── phone view: two cued cards only, each with a mini seat map ───────── */
+
+#lsa-app .lsa-phone-grid { display: none; }
+
+@media (max-width: 640px) {
+  #lsa-app .lsa-criterion-select { min-width: 0; width: 100%; }
+  #lsa-app .lsa-notation-panel { min-width: 7.5rem; }
+  #lsa-app .lsa-mini-map { display: grid; }
+}
+
+/* ── analysis page: stat tiles ──────────────────────────────────────── */
+
+#lsa-app .lsa-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: .75rem;
+  margin-bottom: 1.25rem;
+}
+#lsa-app .lsa-tile {
+  border: 1px solid var(--site-border);
+  border-radius: .5rem;
+  background: var(--site-surface);
+  padding: .75rem .9rem;
+}
+#lsa-app .lsa-tile-label { font-size: .72rem; color: var(--site-ink-2); text-transform: uppercase; letter-spacing: .03em; }
+#lsa-app .lsa-tile-value { font-size: 1.7rem; font-weight: 600; color: var(--site-ink); font-variant-numeric: proportional-nums; }
+#lsa-app .lsa-tile-note { font-size: .74rem; color: var(--site-ink-3); }
+
+/* ── analysis page: balance chart ───────────────────────────────────── */
+
+#lsa-app .lsa-chart-card {
+  border: 1px solid var(--site-border);
+  border-radius: .5rem;
+  background: var(--site-surface);
+  padding: 1rem 1.1rem 1.2rem;
+  margin-bottom: 1.5rem;
+}
+#lsa-app .lsa-chart-title { font-family: var(--font-display); font-size: .95rem; margin-bottom: .1rem; }
+#lsa-app .lsa-chart-sub { font-size: .8rem; color: var(--site-ink-2); margin-bottom: .9rem; }
+#lsa-app .lsa-bars { display: flex; flex-direction: column; gap: .45rem; }
+#lsa-app .lsa-bar-row { display: grid; grid-template-columns: 8rem 1fr 3.2rem; align-items: center; gap: .6rem; }
+#lsa-app .lsa-bar-name { font-size: .85rem; color: var(--site-ink); text-align: right; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+#lsa-app .lsa-bar-track { position: relative; height: 20px; background: var(--site-surface-2); border-radius: 4px; }
+#lsa-app .lsa-bar-fill { position: absolute; left: 0; top: 0; bottom: 0; border-radius: 4px 2px 2px 4px; background: var(--site-accent); min-width: 4px; }
+#lsa-app .lsa-bar-avg { position: absolute; top: -4px; bottom: -4px; width: 0; border-left: 1px solid var(--site-ink-3); }
+#lsa-app .lsa-bar-avg-label { position: absolute; top: -1.1rem; font-size: .68rem; color: var(--site-ink-3); transform: translateX(-50%); white-space: nowrap; }
+#lsa-app .lsa-bar-value { font-size: .8rem; color: var(--site-ink-2); text-align: right; }
+
+/* ── analysis page: tables ──────────────────────────────────────────── */
+
+#lsa-app .lsa-filter-row { display: flex; flex-wrap: wrap; gap: .6rem 1rem; align-items: end; margin-bottom: .75rem; }
+
+#lsa-app table.lsa-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+#lsa-app table.lsa-table th {
+  text-align: left;
+  font-size: .72rem;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  color: var(--parch-dim);
+  font-weight: 600;
+  border-top: 2px solid var(--parch-edge);
+  border-bottom: 1px solid var(--site-border);
+  padding: .4rem .5rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+#lsa-app table.lsa-table td {
+  padding: .4rem .5rem;
+  border-bottom: 1px solid var(--site-border-soft);
+  vertical-align: middle;
+}
+#lsa-app table.lsa-table tbody tr:hover { background: var(--site-surface-2); }
+#lsa-app .lsa-num { text-align: right; font-variant-numeric: tabular-nums; }
+
+#lsa-app .lsa-meter-cell { display: flex; align-items: center; gap: .5rem; min-width: 9rem; }
+#lsa-app .lsa-meter { position: relative; flex: 1; height: 10px; border-radius: 5px; background: var(--site-accent-bg); overflow: hidden; }
+#lsa-app .lsa-meter-fill { position: absolute; inset: 0 auto 0 0; background: var(--site-accent); }
+#lsa-app .lsa-meter-fill.lsa-ready { background: var(--site-pass); }
+#lsa-app .lsa-meter-pct { font-size: .78rem; color: var(--site-ink-2); width: 2.6rem; text-align: right; }
+
+#lsa-app .lsa-pill {
+  font-size: .68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  padding: .1rem .45rem;
+  border-radius: 1rem;
+  border: 1px solid var(--site-border);
+  color: var(--site-ink-3);
+  white-space: nowrap;
+}
+#lsa-app .lsa-pill.lsa-ready { color: var(--site-pass); border-color: var(--site-pass); }
+
+#lsa-app details.lsa-raw { margin-top: 1.5rem; }
+#lsa-app details.lsa-raw > summary {
+  cursor: pointer;
+  font-family: var(--font-display);
+  font-size: .95rem;
+  color: var(--site-ink);
+  padding: .4rem 0;
+}
+#lsa-app .lsa-empty { color: var(--site-ink-3); font-size: .85rem; padding: 1rem 0; }
+
+@media (max-width: 520px) {
+  #lsa-app .lsa-bar-row { grid-template-columns: 5.2rem 1fr 2.6rem; }
+}

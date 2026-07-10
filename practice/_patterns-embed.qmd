@@ -196,11 +196,12 @@
 			tuneLines[0] += "\n%%MIDI program 4 ";
 			tuneLines[0] += "\nM:none";
 			tuneLines[0] += "\n%%staffwidth 100";
-			tuneLines[0] += "\n%%score (V1 V2)";
 			tune = tuneLines.join("\n");
 
+			// Patterns are single-voice now (no more [V: V2] duet line in the data). Kept
+			// defensive rather than a no-op so any lingering multi-voice source still works.
 			function octaver(t, index) {
-				if (!secondOctave[index]) {
+				if (!secondOctave[index] && /\[V:\s*V2\]/.test(t)) {
 					const lines = t.split("\n");
 					lines.pop(); lines.pop();
 					return lines.join("\n");
@@ -223,9 +224,11 @@
 			synthControl.load("#audio", null, {
 				displayRestart: true, displayPlay: true, displayProgress: true
 			});
-			new ABCJS.synth.CreateSynth().init({
-				visualObj: visualObj,
-				options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+			getSoundfontUrl().then(function(sfUrl) {
+				return new ABCJS.synth.CreateSynth().init({
+					visualObj: visualObj,
+					options: { soundFontUrl: sfUrl }
+				});
 			}).then(function() {
 				synthControl.setTune(visualObj, true, synthOpts)
 					.catch(function(error) { console.warn("Audio problem:", error); });
@@ -310,6 +313,7 @@
 			</div>
 		</div>
 	</div>
+	<script src="/apps/shared/soundfont.js"></script>
 	<script src="/apps/shared/abcjs-basic.js"></script>
 	<script src="/apps/patterns/pattern-object.js"></script>
 	<script src="/apps/shared/tonality.js?v=4"></script>

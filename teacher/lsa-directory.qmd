@@ -1,0 +1,257 @@
+---
+title: "LSA Directory"
+toc: false
+---
+
+Sequential organization of Learning Sequence Activities (LSAs) from the Jump Right In
+tonal and rhythm registers, by unit, skill, and content/context. Unit/skill/content
+source: `LSA-TOC.pdf`. Criteria are parsed live from the pattern libraries at
+`apps/patterns/pattern-object.js` and `apps/rhythms/rhythm-pattern-object.js` — a key
+like `t1-1A1` is Tonal Register Book 1, Unit 1, Section A, Criterion 1.
+
+Click a criterion chip (e.g. `A1`) to open that criterion's patterns in the pattern
+player. Units with no chips haven't been digitized into the pattern library yet.
+
+```{=html}
+<style>
+#lsa-dir table { margin-bottom: 2.5rem; }
+#lsa-dir th {
+  color: var(--parch-dim);
+  font-weight: 600;
+  border-top: 2px solid var(--parch-edge);
+}
+#lsa-dir td, #lsa-dir th { vertical-align: top; }
+#lsa-dir td.lsa-unit, #lsa-dir th.lsa-unit { text-align: center; white-space: nowrap; }
+#lsa-dir td.lsa-criteria { min-width: 14rem; }
+#lsa-dir .lsa-chips { display: flex; flex-wrap: wrap; gap: .3rem; }
+#lsa-dir a.lsa-link {
+  display: inline-block;
+  font-size: .78rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: .1rem .4rem;
+  border-radius: .3rem;
+  border: 1px solid var(--site-border);
+  color: var(--bs-link-color, #0969DA);
+  white-space: nowrap;
+}
+#lsa-dir a.lsa-link:hover { background: var(--site-surface-2); text-decoration: underline; }
+#lsa-dir span.lsa-nolink {
+  display: inline-block;
+  color: var(--site-ink-3);
+  font-size: .82rem;
+}
+#lsa-dir h2 { margin-top: 0; }
+#lsa-dir .lsa-book-note { color: var(--site-ink-2); font-size: .88rem; margin: -.5rem 0 1rem; }
+</style>
+
+<div id="lsa-dir">
+  <h2>Tonal Register</h2>
+  <div id="lsa-tonal-1"></div>
+  <div id="lsa-tonal-2"></div>
+
+  <h2>Rhythm Register</h2>
+  <div id="lsa-rhythm-1"></div>
+  <div id="lsa-rhythm-2"></div>
+</div>
+
+<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/lsa/curriculum.js"></script>
+<script>
+(function () {
+  // ── TOC data, transcribed from LSA-TOC.pdf ──────────────────────────────
+  const TONAL_1 = [
+    [1,  "Aural/Oral", "Tonic and Dominant/Major and Minor"],
+    [2,  "Verbal Association", "Tonic and Dominant/Major and Minor"],
+    [3,  "Creativity/Improvisation-verbal", "Tonic and Dominant/Major and Minor"],
+    [4,  "Aural/Oral", "Tonic and Dominant/Major and Minor"],
+    [5,  "Verbal Association", "Tonic and Dominant/Major and Minor"],
+    [6,  "Partial Synthesis", "Tonic and Dominant/Major and Minor"],
+    [7,  "Aural/Oral", "Tonic and Subdominant/Major and Minor"],
+    [8,  "Verbal Association", "Tonic and Subdominant/Major and Minor"],
+    [9,  "Generalization-verbal", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [10, "Aural/Oral", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [11, "Verbal Association", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [12, "Symbolic Association-reading", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [13, "Symbolic Association-writing", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [14, "Creativity/Improvisation-verbal", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [15, "Aural/Oral", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+    [16, "Verbal Association", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+    [17, "Partial Synthesis", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [18, "Generalization-symbolic", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [19, "Composite Synthesis-reading", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [20, "Partial Synthesis", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+    [21, "Symbolic Association-reading", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+  ];
+  const TONAL_2 = [
+    [22, "Generalization-verbal", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+    [23, "Symbolic Association-writing", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+    [24, "Creativity/Improvisation-verbal", "Tonic, Subtonic, Subdominant, and Dominant/Mixolydian and Dorian"],
+    [25, "Aural/Oral", "Multitonal/Multikeyal"],
+    [26, "Composite Synthesis-writing", "Tonic, Dominant, and Subdominant/Major and Minor"],
+    [27, "Aural/Oral", "All Functions/Major and Minor"],
+    [28, "Verbal Association", "All Functions/Major and Minor"],
+    [29, "Creativity/Improvisation-verbal", "All Functions/Major and Minor"],
+    [30, "Verbal Association", "Multitonal/Multikeyal"],
+    [31, "Generalization-verbal", "Multitonal/Multikeyal"],
+    [32, "Aural/Oral", "All Functions/Major and Minor"],
+    [33, "Verbal Association", "All Functions/Major and Minor"],
+    [34, "Partial Synthesis", "All Functions/Major and Minor"],
+    [35, "Symbolic Association-reading", "All Functions/Major and Minor"],
+    [36, "Generalization-verbal", "All Functions/Major and Minor"],
+    [37, "Symbolic Association-writing", "All Functions/Major and Minor"],
+    [38, "Composite Synthesis-reading", "All Functions/Major and Minor"],
+    [39, "Generalization-symbolic", "All Functions/Major and Minor"],
+    [40, "Partial Synthesis", "Multitonal/Multikeyal"],
+    [41, "Composite Synthesis-writing", "All Functions/Major and Minor"],
+    [42, "Creativity/Improvisation-verbal", "Multitonal/Multikeyal"],
+  ];
+  const RHYTHM_1 = [
+    [1,  "Aural/Oral", "Macro/Microbeats/Usual Duple and Triple"],
+    [2,  "Verbal Association", "Macro/Microbeats/Usual Duple and Triple"],
+    [3,  "Aural/Oral", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [4,  "Verbal Association", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [5,  "Generalization-verbal", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [6,  "Partial Synthesis", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [7,  "Creativity/Improvisation-verbal", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [8,  "Aural/Oral", "All Functions/Usual Duple and Triple"],
+    [9,  "Verbal Association", "All Functions/Usual Duple and Triple"],
+    [10, "Symbolic Association-reading", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [11, "Aural/Oral", "All Functions/Usual Duple and Triple"],
+    [12, "Verbal Association", "All Functions/Usual Duple and Triple"],
+    [13, "Symbolic Association-writing", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [14, "Generalization-symbolic", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [15, "Partial Synthesis", "All Functions/Usual Duple and Triple"],
+    [16, "Aural/Oral", "Macro/Microbeats and Divisions/Elongations/Usual Combined"],
+    [17, "Verbal Association", "Macro/Microbeats and Divisions/Elongations/Usual Combined"],
+    [18, "Creativity/Improvisation-verbal", "Macro/Microbeats and Divisions/Elongations/Usual Combined"],
+    [19, "Composite Synthesis-reading", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+  ];
+  const RHYTHM_2 = [
+    [20, "Aural/Oral", "Macro/Microbeats/Unusual Paired and Unpaired"],
+    [21, "Composite Synthesis-writing", "Macro/Microbeats and Divisions/Elongations/Usual Duple and Triple"],
+    [22, "Verbal Association", "Macro/Microbeats/Unusual Paired and Unpaired"],
+    [23, "Symbolic Association-reading", "All Functions/Usual Duple and Triple"],
+    [24, "Creativity/Improvisation-verbal", "All Functions/Usual Duple and Triple"],
+    [25, "Aural/Oral", "Multimetric/Multitemporal"],
+    [26, "Aural/Oral", "All Functions/Usual Combined"],
+    [27, "Verbal Association", "All Functions/Usual Combined"],
+    [28, "Partial Synthesis", "All Functions/Usual Combined"],
+    [29, "Generalization-verbal", "All Functions/Usual Duple and Triple"],
+    [30, "Partial Synthesis", "Macro/Microbeats/Unusual Paired and Unpaired"],
+    [31, "Symbolic Association-writing", "All Functions/Usual Duple and Triple"],
+    [32, "Symbolic Association-reading", "All Functions/Usual Combined"],
+    [33, "Symbolic Association-writing", "All Functions/Usual Combined"],
+    [34, "Creativity/Improvisation-verbal", "All Functions/Usual Combined"],
+    [35, "Symbolic Association-reading", "Macro/Microbeats/Unusual Paired and Unpaired"],
+    [36, "Composite Synthesis-reading", "All Functions/Usual Duple and Triple"],
+    [37, "Symbolic Association-writing", "Macro/Microbeats/Unusual Paired and Unpaired"],
+    [38, "Composite Synthesis-writing", "All Functions/Usual Duple and Triple"],
+    [39, "Verbal Association", "Multimetric/Multitemporal"],
+    [40, "Generalization-verbal", "All Functions/Usual Combined"],
+    [41, "Creativity/Improvisation-verbal", "Multimetric/Multitemporal"],
+    [42, "Generalization-symbolic", "All Functions/Usual Duple and Triple"],
+  ];
+
+  // ── link helpers ─────────────────────────────────────────────────────────
+  function enc(obj) { return btoa(unescape(encodeURIComponent(JSON.stringify(obj)))); }
+
+  function lsaLink(tool, key) {
+    return "/practice/" + tool + ".html?tc=" + enc({ collections: [key], lockCollections: true });
+  }
+
+  // All parsed criteria (curriculum.js) belonging to one register/book/unit,
+  // sorted Section A before B before C, criterion 1 before 2 before 3.
+  function criteriaForUnit(register, book, unit) {
+    const all = window.LSA_CRITERIA || [];
+    return all
+      .filter(function (c) { return c.register === register && c.book === book && c.unit === unit; })
+      .sort(function (a, b) {
+        return a.section.localeCompare(b.section) || a.criterion - b.criterion;
+      });
+  }
+
+  function renderTable(mountId, rows, register, book, tool) {
+    const mount = document.getElementById(mountId);
+    const table = document.createElement("table");
+    table.className = "table table-sm table-hover";
+    table.innerHTML =
+      '<thead><tr>' +
+      '<th class="lsa-unit">Unit</th><th>Skill</th><th>Content / Context</th><th class="lsa-criteria">Criteria</th>' +
+      '</tr></thead>';
+    const tbody = document.createElement("tbody");
+    for (const [unit, skill, content] of rows) {
+      const tr = document.createElement("tr");
+
+      const tdUnit = document.createElement("td");
+      tdUnit.className = "lsa-unit";
+      tdUnit.textContent = String(unit);
+      tr.appendChild(tdUnit);
+
+      const tdSkill = document.createElement("td");
+      tdSkill.textContent = skill;
+      tr.appendChild(tdSkill);
+
+      const tdContent = document.createElement("td");
+      tdContent.textContent = content;
+      tr.appendChild(tdContent);
+
+      const tdCrit = document.createElement("td");
+      tdCrit.className = "lsa-criteria";
+      const criteria = criteriaForUnit(register, book, unit);
+      if (criteria.length) {
+        const chips = document.createElement("div");
+        chips.className = "lsa-chips";
+        criteria.forEach(function (c) {
+          const a = document.createElement("a");
+          a.className = "lsa-link";
+          a.href = lsaLink(tool, c.familyKey);
+          a.textContent = c.section + String(c.criterion);
+          a.title = c.label + " — " + c.patternCount + " pattern" + (c.patternCount === 1 ? "" : "s") +
+            " (E:" + c.levels.E + " M:" + c.levels.M + " D:" + c.levels.D + ")";
+          chips.appendChild(a);
+        });
+        tdCrit.appendChild(chips);
+      } else {
+        const span = document.createElement("span");
+        span.className = "lsa-nolink";
+        span.textContent = "not yet digitized";
+        tdCrit.appendChild(span);
+      }
+      tr.appendChild(tdCrit);
+
+      tbody.appendChild(tr);
+    }
+    table.appendChild(tbody);
+    mount.appendChild(table);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const t1Note = document.createElement("p");
+    t1Note.className = "lsa-book-note";
+    t1Note.textContent = "Tonal Register Book 1 (units 1–21)";
+    document.getElementById("lsa-tonal-1").appendChild(t1Note);
+    renderTable("lsa-tonal-1", TONAL_1, "tonal", 1, "patterns");
+
+    const t2Note = document.createElement("p");
+    t2Note.className = "lsa-book-note";
+    t2Note.textContent = "Tonal Register Book 2 (units 22–42) — not yet digitized";
+    document.getElementById("lsa-tonal-2").appendChild(t2Note);
+    renderTable("lsa-tonal-2", TONAL_2, "tonal", 2, "patterns");
+
+    const r1Note = document.createElement("p");
+    r1Note.className = "lsa-book-note";
+    r1Note.textContent = "Rhythm Register Book 1 (units 1–19)";
+    document.getElementById("lsa-rhythm-1").appendChild(r1Note);
+    renderTable("lsa-rhythm-1", RHYTHM_1, "rhythm", 1, "rhythms");
+
+    const r2Note = document.createElement("p");
+    r2Note.className = "lsa-book-note";
+    r2Note.textContent = "Rhythm Register Book 2 (units 20–42)";
+    document.getElementById("lsa-rhythm-2").appendChild(r2Note);
+    renderTable("lsa-rhythm-2", RHYTHM_2, "rhythm", 2, "rhythms");
+  });
+})();
+</script>
+```

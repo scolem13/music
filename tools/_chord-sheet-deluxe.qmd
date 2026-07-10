@@ -115,6 +115,7 @@
 
 <div id="csd"><div class="wrap"><div class="marquee"><div><h1>Changes<span class="sub">Stage Edition</span></h1><p>The whole tune book as chord charts. Pick one, set the tempo, and play along with the rhythm section.</p></div></div><div class="stage"><aside class="setlist"><p class="panel-label">Find a tune</p><div id="csd-picker"></div></aside><section class="stand"><div class="chart" id="csd-chart"></div><div class="transport"><button class="play" id="csd-play" type="button" aria-label="Play">&#9654; Play</button><div class="ctrl"><label for="csd-tempo">Tempo</label><input type="range" id="csd-tempo" min="50" max="200" value="110"><span class="tempo-val" id="csd-tempo-v">&#9833;=110</span></div><div class="ctrl"><label for="csd-key">Key</label><select id="csd-key" class="mini" aria-label="Transpose to key"></select></div><div class="ctrl"><label for="csd-subbar">Beat lines</label><select id="csd-subbar" class="mini" aria-label="Beat lines"><option value="0">Off</option><option value="1">Every beat</option><option value="2">Every 2 beats</option></select></div><div class="ctrl"><label for="csd-accomp">Accompaniment</label><select id="csd-accomp" class="mini" aria-label="Accompaniment style"><option value="off">Soundfont (melody)</option></select></div><div class="ctrl"><label for="csd-notation">Notation</label><select id="csd-notesel" class="mini" aria-label="Notation"></select></div><div class="ctrl"><label for="csd-tenorclef">Tenor</label><select id="csd-tenorclef" class="mini" aria-label="Tenor clef"><option value="treble8">Treble 8</option><option value="bass">Bass clef</option></select></div><label class="cb"><input type="checkbox" id="csd-roman"> Roman numerals</label><label class="cb"><input type="checkbox" id="csd-cycle"> &#128257; Cycle</label><div class="mixer" aria-label="Mixer"><div class="ctrl mix"><label for="csd-vol-melody">Melody</label><input type="range" id="csd-vol-melody" min="0" max="100" value="90"></div><div class="ctrl mix"><label for="csd-vol-chords">Chords</label><input type="range" id="csd-vol-chords" min="0" max="100" value="80"></div><div class="ctrl mix"><label for="csd-vol-bass">Bass</label><input type="range" id="csd-vol-bass" min="0" max="100" value="90"></div><div class="ctrl mix"><label for="csd-vol-drums">Drums</label><input type="range" id="csd-vol-drums" min="0" max="100" value="80"></div></div></div><div id="csd-notation" class="csd-notation" style="display:none"></div><p class="note" id="csd-note"></p></section></div><div id="csd-hidden-notation" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden"></div><div id="csd-hidden-ctrl" style="position:absolute;left:-9999px;top:0"></div></div></div>
 
+<script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
 <script src="/apps/shared/abc-transpose.js?v=1"></script>
@@ -126,7 +127,8 @@
 <script>
 (function(){
   if (typeof tunesObject === "undefined" || typeof ABCJS === "undefined") return;
-  var SF_URL = "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/";
+  var SF_URL = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';
+  getSoundfontUrl().then(function(url) { SF_URL = url; });
   var GM = { piano:0, nylon:24, bass:32 };
   var FLAT = ["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
   var ASCII = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];

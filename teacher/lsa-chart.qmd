@@ -1,0 +1,80 @@
+---
+title: "Evaluation Chart"
+toc: false
+---
+
+Learning Sequence Activities seating/evaluation chart. Two students are always
+cued — mark ① with <kbd>Enter</kbd>/<kbd>Backspace</kbd> and the next cued
+student is targeted automatically. Placeholder class of 6 — swap for the real
+roster once this is wired to Supabase.
+
+```{=html}
+<div id="lsa-app">
+  <link rel="stylesheet" href="/apps/lsa/lsa.css">
+
+  <div id="lsa-notation-bar" class="lsa-notation-bar"></div>
+
+  <div id="lsa-toolbar-wrap">
+    <div class="lsa-toolbar">
+      <div class="lsa-field">
+        <label for="lsa-register">Register</label>
+        <select id="lsa-register">
+          <option value="tonal">Tonal</option>
+          <option value="rhythm">Rhythm</option>
+        </select>
+      </div>
+      <div class="lsa-field">
+        <label for="lsa-criterion">Criterion</label>
+        <select id="lsa-criterion" class="lsa-criterion-select"></select>
+      </div>
+      <div class="lsa-field lsa-toggle-field" style="margin-top:1.1rem;">
+        <input type="checkbox" id="lsa-show-counts">
+        <label for="lsa-show-counts">Show attempt counts</label>
+      </div>
+      <div class="lsa-spacer"></div>
+      <div class="lsa-view-tabs">
+        <button type="button" class="lsa-btn" id="lsa-view-cards">Card view</button>
+        <button type="button" class="lsa-btn" id="lsa-view-seating">Seating chart</button>
+      </div>
+      <button type="button" class="lsa-btn lsa-danger" id="lsa-reset-btn">Reset data</button>
+    </div>
+
+    <div id="lsa-cue-status" class="lsa-cue-status"></div>
+    <p id="lsa-criterion-meta" style="color:var(--site-ink-2);font-size:.85rem;margin:-.5rem 0 .75rem;"></p>
+  </div>
+
+  <div id="lsa-cards-view">
+    <div id="lsa-grid" class="lsa-grid"></div>
+  </div>
+
+  <div id="lsa-seating-view" style="display:none;">
+    <div class="lsa-seating-topbar">
+      <button type="button" class="lsa-x-btn" id="lsa-seating-exit" title="Exit seating chart">✕</button>
+      <div class="lsa-spacer"></div>
+      <button type="button" class="lsa-btn" id="lsa-fit-toggle">Zoom to fit grid (8×5)</button>
+    </div>
+    <div class="lsa-seating-grid-wrap">
+      <div id="lsa-seating-grid" class="lsa-seating-grid"></div>
+    </div>
+    <div class="lsa-seating-actions">
+      <div class="lsa-target-label" id="lsa-seat-target-label"></div>
+      <button type="button" class="lsa-btn lsa-yes lsa-big" id="lsa-seat-yes">✓ Success</button>
+      <button type="button" class="lsa-btn lsa-no lsa-big" id="lsa-seat-no">✗ Not yet</button>
+    </div>
+  </div>
+
+  <div id="lsa-phone-grid" class="lsa-phone-grid"></div>
+
+  <script src="/apps/patterns/pattern-object.js"></script>
+  <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+  <script src="/apps/shared/abcjs-basic.js"></script>
+  <script src="/apps/shared/tonality.js"></script>
+  <script src="/apps/shared/audio.js"></script>
+  <script src="/apps/shared/establish-button.js"></script>
+  <script src="/apps/lsa/curriculum.js"></script>
+  <script src="/apps/lsa/store.js"></script>
+  <script src="/apps/lsa/prompt-engine.js"></script>
+  <script src="/apps/lsa/notation.js"></script>
+  <script src="/apps/lsa/chart-app.js"></script>
+</div>
+```

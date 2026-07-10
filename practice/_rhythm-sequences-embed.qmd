@@ -554,9 +554,11 @@
 
 		const synthOpts = { midiTranspose: -11 };
 
-		new ABCJS.synth.CreateSynth().init({
-			visualObj: visualObj,
-			options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+		getSoundfontUrl().then(function(sfUrl) {
+			return new ABCJS.synth.CreateSynth().init({
+				visualObj: visualObj,
+				options: { soundFontUrl: sfUrl }
+			});
 		}).then(function() {
 			if (synthControl) {
 				synthControl.setTune(visualObj, userAction, synthOpts).then(function() {
@@ -683,6 +685,7 @@
 	<textarea id="abc-editor" spellcheck="false" oninput="editTune()"></textarea>
 </div>
 
+<script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
 <script src="/apps/shared/cursor-synth.js"></script>

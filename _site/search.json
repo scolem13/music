@@ -264,5 +264,26 @@
     "title": "Music Practice (demo)",
     "section": "What’s new here vs. a plain Quarto site",
     "text": "What’s new here vs. a plain Quarto site\nNothing about your authoring changes — these are ordinary .qmd pages. The only additions live in _quarto.yml (three include-* lines) and three small files (config.js, track.js, and the _includes/ partials). That’s the whole integration surface."
+  },
+  {
+    "objectID": "teacher/lsa-directory.html",
+    "href": "teacher/lsa-directory.html",
+    "title": "LSA Directory",
+    "section": "",
+    "text": "Sequential organization of Learning Sequence Activities (LSAs) from the Jump Right In tonal and rhythm registers, by unit, skill, and content/context. Unit/skill/content source: LSA-TOC.pdf. Criteria are parsed live from the pattern libraries at apps/patterns/pattern-object.js and apps/rhythms/rhythm-pattern-object.js — a key like t1-1A1 is Tonal Register Book 1, Unit 1, Section A, Criterion 1.\nClick a criterion chip (e.g. A1) to open that criterion’s patterns in the pattern player. Units with no chips haven’t been digitized into the pattern library yet.\n\n\n\n  Tonal Register\n  \n  \n\n  Rhythm Register"
+  },
+  {
+    "objectID": "teacher/lsa-analysis.html",
+    "href": "teacher/lsa-analysis.html",
+    "title": "LSA Data Analysis",
+    "section": "",
+    "text": "Every attempt recorded on the Evaluation Chart, analyzed: how evenly time is spread across students, and what percentage of the class has reached its own potential on each criterion (Gordon’s “move ahead” rule of thumb is 80%).\n\n  \n\n  \n\n  \n    Attempts per student\n    The equal-time proxy the \"suggest next\" prompt optimizes for — the tighter the spread, the more even the class's time has been.\n    \n  \n\n  Potential achieved, by criterion\n  \n    \n      Register\n      \n        Tonal\n        Rhythm\n      \n    \n    \n      Search\n      \n    \n    \n      \n      Only criteria with attempts\n    \n  \n  \n    \n\n\n\nRegister\nBook\nUnit\nSection · Criterion\nPatterns\n% achieved potential\nStatus\n\n\n\n\n\n\n  \n\n  Per student\n  \n    \n\n\n\nStudent\nAptitude\nTeach attempts\nEval attempts\nTotal attempts\nCriteria at potential\nLast given\n\n\n\n\n\n\n  \n\n  \n    Raw attempt log (every recorded cell)\n    \n      \n\n\n\nStudent\nCriterion\nLevel\nTeach\nEval\nTaught\nAchieved\n\n\n\n\n\n\n    \n  \n\n  \n    Export JSON\n    Reset data"
+  },
+  {
+    "objectID": "teacher/lsa-chart.html",
+    "href": "teacher/lsa-chart.html",
+    "title": "Evaluation Chart",
+    "section": "",
+    "text": "Learning Sequence Activities seating/evaluation chart. Two students are always cued — mark ① with Enter/Backspace and the next cued student is targeted automatically. Placeholder class of 6 — swap for the real roster once this is wired to Supabase.\n\n  \n\n  \n\n  \n    \n      \n        Register\n        \n          Tonal\n          Rhythm\n        \n      \n      \n        Criterion\n        \n      \n      \n        \n        Show attempt counts\n      \n      \n      \n        Card view\n        Seating chart\n      \n      Reset data\n    \n\n    \n    \n  \n\n  \n    \n  \n\n  \n    \n      ✕\n      \n      Zoom to fit grid (8×5)\n    \n    \n      \n    \n    \n      \n      ✓ Success\n      ✗ Not yet"
   }
 ]

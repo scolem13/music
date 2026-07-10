@@ -48,6 +48,10 @@ website:
         menu:
           - teacher/session-builder.qmd
           - teacher/report.qmd
+          - text: "---"
+          - teacher/lsa-directory.qmd
+          - teacher/lsa-chart.qmd
+          - teacher/lsa-analysis.qmd
 
 format:
   html:
