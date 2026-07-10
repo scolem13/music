@@ -459,7 +459,7 @@
     el.cueStatus.style.display = showCards ? '' : 'none';
     el.cardsView.style.display = showCards ? '' : 'none';
     el.seatingView.style.display = showSeating ? '' : 'none';
-    el.phoneGrid.style.display = phone ? '' : 'none';
+    el.phoneGrid.style.display = phone ? 'flex' : 'none';
 
     if (showSeating) renderSeatingView();
     else if (phone) renderPhoneView();

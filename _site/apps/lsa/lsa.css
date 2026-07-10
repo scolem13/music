@@ -423,7 +423,7 @@
 
 /* ── phone view: two cued cards only, each with a mini seat map ───────── */
 
-#lsa-app .lsa-phone-grid { display: none; }
+#lsa-app .lsa-phone-grid { display: none; flex-direction: column; gap: .9rem; }
 
 @media (max-width: 640px) {
   #lsa-app .lsa-criterion-select { min-width: 0; width: 100%; }
