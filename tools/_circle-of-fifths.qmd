@@ -1,31 +1,77 @@
 ```{=html}
-<style>#circle-of-fifths-root * { box-sizing: border-box; }
-#cof-wrap { display: flex; flex-direction: column; align-items: center; padding: 1rem 0; gap: 8px; }
-#h-layout { display: flex; flex-direction: row; align-items: center; gap: 8px; width: 100%; max-width: 676px; }
-.side-panel { flex: 0 0 85px; display: flex; flex-direction: column; align-items: stretch; gap: 6px; }
-.side-panel label { font-size: 11px; color: var(--color-text-tertiary); text-align: center; letter-spacing: 0.04em; }
-.side-panel select {
-  font-size: 11px; padding: 5px 4px; border-radius: 6px;
-  border: 0.5px solid var(--color-border-secondary);
-  background: var(--color-background-primary); color: var(--color-text-primary);
-  cursor: pointer; outline: none; width: 100%;
+<style>#title-block-header { display: none; }
+#circle-of-fifths-root { margin-top: -50px; }
+#circle-of-fifths-root * { box-sizing: border-box; }
+
+#cof-wrap {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  gap: clamp(1rem, 3vw, 2rem);
+  padding: 1rem clamp(1rem, 3vw, 1.5rem);
 }
-.side-panel select:hover { border-color: var(--color-border-primary); }
+
+/* Landscape: rail of controls hugs the left margin, stacked vertically. Each select is
+   sized to its own longest option (native <select> intrinsic width), not a shared column
+   width, so labels never get cut off. */
+#cof-rail {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+.side-panel { display: flex; flex-direction: column; gap: 5px; }
+.side-panel label {
+  font-size: 10.5px; color: var(--parch-dim); text-transform: uppercase; letter-spacing: 0.06em;
+}
+.side-panel select {
+  font-size: 12px; padding: 6px 8px; border-radius: .375rem;
+  border: 1px solid var(--site-border);
+  background: var(--site-surface); color: var(--site-ink);
+  cursor: pointer; outline: none; width: auto;
+  transition: border-color .15s, box-shadow .15s;
+}
+.side-panel select:hover { border-color: var(--site-accent-dk); }
+.side-panel select:focus-visible {
+  border-color: var(--site-accent);
+  box-shadow: 0 0 0 3px var(--site-accent-bg);
+}
 #right-panel { opacity: 0; pointer-events: none; transition: opacity .15s; }
 #right-panel.visible { opacity: 1; pointer-events: auto; }
-#canvas-wrap { flex: 1; max-width: 490px; }
-#cof-canvas { display: block; cursor: pointer; width: 100%; height: auto; }
-#bottom-row { display: flex; align-items: center; justify-content: flex-end; max-width: 676px; width: 100%; }
-#theme-btn {
-  background: transparent; border: 0.5px solid var(--color-border-secondary);
-  border-radius: 6px; padding: 4px 10px; font-size: 11px;
-  cursor: pointer; color: var(--color-text-tertiary); transition: background .12s, color .12s;
+
+#canvas-wrap { flex: 1; display: flex; justify-content: center; min-width: 0; }
+#cof-canvas {
+  display: block; cursor: pointer;
+  width: min(100%, calc(100vh - 120px));
+  aspect-ratio: 1 / 1;
+  height: auto;
 }
-#theme-btn:hover { background: var(--color-background-secondary); color: var(--color-text-secondary); }
+
+/* Portrait / narrow viewport: controls move below the wheel, laid out in a row, shifted
+   right so they don't sit under the fixed bottom-left "Establish tonality" button. */
+@media (max-width: 700px) {
+  #circle-of-fifths-root { margin-top: -25px; }
+  #cof-wrap { flex-direction: column; padding: 1rem; gap: 1rem; }
+  #cof-rail {
+    order: 2; width: 100%;
+    flex-direction: row; flex-wrap: wrap; justify-content: flex-start;
+    gap: 10px 14px;
+    padding-left: 18vw;
+  }
+  #canvas-wrap { order: 1; width: 100%; }
+  #cof-canvas { width: 100%; }
+  /* Stack the shared floating button's words so it reads taller/narrower instead of
+     a wide single-line strip competing with the rail for horizontal room. */
+  #establish-tonality-btn {
+    width: 62px; white-space: normal; text-align: center; line-height: 1.2;
+  }
+}
 </style>
 
 <div id="circle-of-fifths-root"><div id="cof-wrap">
-  <div id="h-layout">
+  <div id="cof-rail">
     <div class="side-panel" id="left-panel">
       <label>Tonality</label>
       <select id="mode-select">
@@ -38,9 +84,6 @@
         <option value="7">Locrian (ti)</option>
       </select>
     </div>
-    <div id="canvas-wrap">
-      <canvas id="cof-canvas" width="980" height="980" style="width: 490px; height: 490px;"></canvas>
-    </div>
     <div class="side-panel" id="right-panel">
       <label>Minor type</label>
       <select id="minor-mode">
@@ -49,22 +92,37 @@
       </select>
     </div>
   </div>
-  <div id="bottom-row">
-    <button id="theme-btn">☾ dark</button>
+  <div id="canvas-wrap">
+    <canvas id="cof-canvas" width="980" height="980"></canvas>
   </div>
 </div>
 
 <script>
 const canvas = document.getElementById('cof-canvas');
 const ctx = canvas.getContext('2d');
-const CSS_SIZE = 490;
-const DPR = window.devicePixelRatio || 1;
-canvas.width  = CSS_SIZE * DPR;
-canvas.height = CSS_SIZE * DPR;
-canvas.style.width  = CSS_SIZE + 'px';
-canvas.style.height = CSS_SIZE + 'px';
-ctx.scale(DPR, DPR);
+const CSS_SIZE = 490; // fixed logical drawing space; scaled to fit however big the canvas is actually displayed
 const W = CSS_SIZE, CX = W/2, CY = W/2;
+
+const MAX_SUPERSAMPLE = 4; // cap pinch-zoom pixel density so the backing buffer can't blow up memory
+function resizeCanvas(){
+  const displayed = canvas.getBoundingClientRect().width || canvas.clientWidth || CSS_SIZE;
+  const dpr = window.devicePixelRatio || 1;
+  // Pinch/trackpad zoom scales window.visualViewport without touching devicePixelRatio or
+  // firing resize/layout — it's invisible to both the media-query and ResizeObserver watchers
+  // below, so it has to be read here explicitly or the canvas stays under-resolved and blurs.
+  const vvScale = (window.visualViewport && window.visualViewport.scale) || 1;
+  const density = Math.min(dpr * vvScale, dpr * MAX_SUPERSAMPLE);
+  const backing = Math.max(1, Math.round(displayed * density));
+  canvas.width = backing;
+  canvas.height = backing;
+  ctx.setTransform(backing / CSS_SIZE, 0, 0, backing / CSS_SIZE, 0, 0);
+  draw();
+}
+function watchZoom(){
+  window.matchMedia(`(resolution: ${window.devicePixelRatio}dppx)`)
+    .addEventListener('change', function(){ resizeCanvas(); watchZoom(); }, {once:true});
+}
+if (window.visualViewport) window.visualViewport.addEventListener('resize', resizeCanvas);
 const R_OUTER_O=235,R_OUTER_I=184,R_MID_O=182,R_MID_I=122,R_SOL_O=120,R_SOL_I=52;
 
 const FIFTHS_LETTER_CYCLE=[3,0,4,1,5,2,6];
@@ -165,10 +223,7 @@ Object.entries(CHARACTERISTIC_CHORD_DEFS).forEach(([modeIdx,rns])=>{
 
 let selectedRoot=0, selectedMode=0;
 
-let themeOverride=null;
-function isDark(){if(themeOverride!==null)return themeOverride;return window.matchMedia('(prefers-color-scheme:dark)').matches;}
-function updateThemeBtn(){document.getElementById('theme-btn').textContent=isDark()?'☀ light':'☾ dark';}
-document.getElementById('theme-btn').onclick=()=>{themeOverride=!isDark();updateThemeBtn();draw();};
+function isDark(){return false;} // site-wide dark mode not implemented yet
 
 function rc(){
   const d=isDark();
@@ -185,7 +240,7 @@ function rc(){
     solText:d?'#5DCAA5':'#0F6E56',  rootSolText:d?'#EF9F27':'#854F0B',
     centerText:d?'#c2c0b6':'#3d3d3a', centerBg:d?'#141412':'#f8f6f0',
     centerWarn:d?'#f08080':'#cc2222', toggleHint:d?'#5a5852':'#aaa8a0',
-    canvasBg:d?'#1a1a18':'#ffffff',
+    canvasBg:d?'#1a1a18':'#f7f4ef',
   };
 }
 
@@ -289,43 +344,51 @@ canvas.addEventListener('click',e=>{
   lockSpelling(i);selectedRoot=i;draw();
 });
 
-window.matchMedia('(prefers-color-scheme:dark)').addEventListener('change',()=>{if(themeOverride===null){updateThemeBtn();draw();}});
-updateThemeBtn();syncUI();draw();
+syncUI();
+resizeCanvas();
+new ResizeObserver(resizeCanvas).observe(canvas.parentElement);
+watchZoom();
 </script>
 </div><div style="display: block; opacity: 1; color-scheme: light;"></div>
 <script src="/apps/shared/tonality.js?v=4"></script>
 <script>
 (function(){
   // The circle's selectedRoot chroma is the MODE TONIC (= resting tone). Consume the
-  // shared tonality + add Concert/Transposed key menus and a Concert/Transposed view:
-  // the SHARED store is always CONCERT, but in "transposed" view the wheel highlights
-  // the key the player reads (concert + instrument offset).
+  // shared tonality (always CONCERT) + add Concert Key / Transposition / Transposed Key
+  // menus. Transposition is local to this tool (not the shared instrument store) — it's
+  // just a written-pitch lens on top of the same concert pitch; the wheel itself always
+  // operates in concert pitch.
   if (typeof FIFTHS_TO_CHROMA === "undefined" || typeof draw !== "function" || typeof MODES === "undefined") return;
   var C_MODE = {maj:0,major:0,ion:0,ionian:0, m:6,min:6,minor:6, aeo:5,aeolian:5, dor:1,dorian:1, phr:2,phrygian:2, lyd:3,lydian:3, mix:4,mixolydian:4, loc:7,locrian:7};
   var OUR_MODE = {0:"maj",1:"dor",2:"phr",3:"lyd",4:"mix",5:"m",6:"m",7:"loc"};
   var NAMES=["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
-  var instSemis=function(){ return (Tonality.getInstrument()||{}).semis||0; };
-  var instName =function(){ return (Tonality.getInstrument()||{}).name||"Piano"; };
-  var view=function(){ return Tonality.getView(); };
+  // Written-transpose semitone offsets from concert pitch (mod 12).
+  var TRANSPOSITIONS=[{value:0,label:"Concert pitch"},{value:2,label:"B♭"},{value:9,label:"E♭"},{value:7,label:"F"}];
   var applying=false;
 
-  // inject a small key/view control bar at the top of the tool
-  var root=document.getElementById("circle-of-fifths-root");
-  if(root){ var bar=document.createElement("div"); bar.id="cof-keybar";
-    bar.style.cssText="display:flex;gap:1rem;flex-wrap:wrap;align-items:end;margin:0 0 .75rem";
-    bar.innerHTML='<div><label for="cofConcert" style="display:block;font-size:.85em">Concert Key</label><select id="cofConcert"></select></div>'+
-      '<div id="cofTransWrap" style="display:none"><label for="cofTrans" id="cofTransLbl" style="display:block;font-size:.85em">Transposed Key</label><select id="cofTrans"></select></div>'+
-      '<div><label for="cofView" style="display:block;font-size:.85em">View</label><select id="cofView"><option value="concert">Concert pitch</option><option value="transposed">Transposed</option></select></div>';
-    root.insertBefore(bar, root.firstChild); }
+  // Fold key/transposition controls into the control rail, matching the Tonality/Minor-type
+  // panels. Transposed Key is prepended first so it reads as the far-left/topmost control
+  // whenever it's shown.
+  var rail=document.getElementById("cof-rail");
+  if(rail){ var keyGroup=document.createElement("div"); keyGroup.id="cof-keybar";
+    keyGroup.style.cssText="display:contents";
+    var transOptions=TRANSPOSITIONS.map(function(t){ return '<option value="'+t.value+'">'+t.label+'</option>'; }).join('');
+    keyGroup.innerHTML='<div class="side-panel" id="cofTransWrap" style="display:none"><label for="cofTrans" id="cofTransLbl">Transposed Key</label><select id="cofTrans"></select></div>'+
+      '<div class="side-panel" id="cof-concert-panel"><label for="cofConcert">Concert Key</label><select id="cofConcert"></select></div>'+
+      '<div class="side-panel" id="cof-view-panel"><label for="cofView">Transposition</label><select id="cofView">'+transOptions+'</select></div>';
+    rail.insertBefore(keyGroup, rail.firstChild); }
   var cSel=document.getElementById("cofConcert"), tSel=document.getElementById("cofTrans"),
       tWrap=document.getElementById("cofTransWrap"), tLbl=document.getElementById("cofTransLbl"), vSel=document.getElementById("cofView");
   if(cSel){ var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[pc]+'</option>'; cSel.innerHTML=h; }
 
+  function transSemis(){ return parseInt(vSel && vSel.value, 10) || 0; }
+  function transLabel(){ var v=transSemis(); var t=TRANSPOSITIONS.filter(function(t){return t.value===v;})[0]; return t?t.label:""; }
+
   function publish(){
     if(applying) return;
     try{
-      var resting = FIFTHS_TO_CHROMA[selectedRoot];
-      if(view()==="transposed") resting = ((resting - instSemis())%12+12)%12;   // displayed transposed → store concert
+      var displayChroma = FIFTHS_TO_CHROMA[selectedRoot];      // wheel shows the WRITTEN/transposed pitch
+      var resting = ((displayChroma - transSemis())%12+12)%12; // shared store always holds CONCERT
       var off = MODES[selectedMode].fifthsOffset;
       var doPc = (((resting + off*7) % 12) + 12) % 12;
       Tonality.setAll(doPc, resting, OUR_MODE[selectedMode], "local");
@@ -337,8 +400,8 @@ updateThemeBtn();syncUI();draw();
   function applyTonality(st){
     if (!st || st.resting == null){ syncBar(); return; }
     var m = C_MODE[st.mode] != null ? C_MODE[st.mode] : 0;
-    var chroma = st.resting; if(view()==="transposed") chroma = (st.resting + instSemis())%12;   // show the read key
-    var i = FIFTHS_TO_CHROMA.indexOf(((chroma%12)+12)%12);
+    var displayChroma = ((st.resting + transSemis())%12+12)%12; // concert → written, for the wheel
+    var i = FIFTHS_TO_CHROMA.indexOf(displayChroma);
     if (i < 0 || (selectedRoot === i && selectedMode === m)){ syncBar(); return; }
     applying=true; selectedRoot = i; selectedMode = m;
     try { if (typeof lockSpelling === "function") lockSpelling(i); } catch(e){}
@@ -346,19 +409,18 @@ updateThemeBtn();syncUI();draw();
     applying=false; draw();
   }
   function syncBar(){
-    var rest = Tonality.getResting(); if(rest==null) return; var ia=instSemis();
+    var rest = Tonality.getResting(); if(rest==null) return; var ts=transSemis();
     if(cSel) cSel.value=String(rest);
-    if(tWrap) tWrap.style.display = ia ? "" : "none";
-    if(ia && tSel){ if(tLbl) tLbl.textContent="Transposed Key ("+instName()+")";
-      var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[(pc+ia)%12]+'</option>'; tSel.innerHTML=h; tSel.value=String(rest); }
-    if(vSel) vSel.value=view();
+    if(tWrap) tWrap.style.display = ts ? "" : "none";
+    if(ts && tSel){ if(tLbl) tLbl.textContent="Transposed Key ("+transLabel()+")";
+      var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[pc]+'</option>'; tSel.innerHTML=h; tSel.value=String((rest+ts)%12); }
   }
   function curSt(){ return { do: Tonality.getDo(), resting: Tonality.getResting(), mode: Tonality.getMode() }; }
   function pick(restPc){ var mode=Tonality.getMode()||"maj"; var mi=C_MODE[mode]!=null?C_MODE[mode]:0;
     var off=MODES[mi].fifthsOffset; var doPc=(((restPc+off*7)%12)+12)%12; Tonality.setAll(doPc, restPc, mode, "local"); applyTonality(curSt()); }
   if(cSel) cSel.addEventListener("change", function(){ pick(parseInt(cSel.value,10)||0); });
-  if(tSel) tSel.addEventListener("change", function(){ pick(parseInt(tSel.value,10)||0); });
-  if(vSel) vSel.addEventListener("change", function(){ Tonality.setView(vSel.value,"local"); applyTonality(curSt()); });
+  if(tSel) tSel.addEventListener("change", function(){ var written=parseInt(tSel.value,10)||0; pick(((written-transSemis())%12+12)%12); });
+  if(vSel) vSel.addEventListener("change", function(){ applyTonality(curSt()); });
 
   if (curSt().resting != null) applyTonality(curSt()); else publish();
   syncBar();
@@ -384,7 +446,11 @@ updateThemeBtn();syncUI();draw();
     if (step < 0) return;
     var q = getQualities()[step];
     var iv = q==="m" ? [0,3,7] : q==="d" ? [0,3,6] : (q==="aug"||q==="+") ? [0,4,8] : [0,4,7];
-    var base = 60 + noteC;
+    // The wheel shows the WRITTEN/transposed pitch; audio must sound the CONCERT pitch.
+    var transSel = document.getElementById("cofView");
+    var ts = transSel ? (parseInt(transSel.value,10)||0) : 0;
+    var soundingC = ((noteC - ts) % 12 + 12) % 12;
+    var base = 60 + soundingC;
     window.MusicAudio.chord(iv.map(function(x){ return base + x; }), 1.1);
     e.stopImmediatePropagation();
   }, true);

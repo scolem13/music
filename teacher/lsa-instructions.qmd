@@ -1,0 +1,197 @@
+---
+title: "LSA Instructions"
+toc: false
+---
+
+Every digitized LSA criterion, in one table, with the instruction text transcribed
+from its source page (the line just above the E/M/D patterns — e.g. "Students sing
+patterns using tonal syllables"). Tonal Register Book 1 instructions come from `JRI
+Tonal Register Analysis.docx`; the other three books were read directly off the
+rendered PDF pages. Click a row's key to open that criterion in the
+[Evaluation Chart](lsa-chart.qmd).
+
+```{=html}
+<style>
+#lsa-instr-controls { margin-bottom: .75rem; display: flex; gap: .6rem; align-items: center; flex-wrap: wrap; }
+#lsa-instr-filter { flex: 1 1 16rem; max-width: 24rem; padding: .35rem .6rem; border: 1px solid var(--site-border); border-radius: .3rem; background: var(--site-surface); color: inherit; }
+#lsa-instr-controls select { padding: .35rem .6rem; border: 1px solid var(--site-border); border-radius: .3rem; background: var(--site-surface); color: inherit; max-width: 16rem; }
+#lsa-instr-count { color: var(--site-ink-2); font-size: .85rem; }
+#lsa-instr table { width: 100%; }
+#lsa-instr th {
+  color: var(--parch-dim);
+  font-weight: 600;
+  border-top: 2px solid var(--parch-edge);
+  position: sticky;
+  top: 0;
+  background: var(--site-surface);
+}
+#lsa-instr td, #lsa-instr th { vertical-align: top; }
+#lsa-instr td.lsa-key, #lsa-instr th.lsa-key { white-space: nowrap; }
+#lsa-instr td.lsa-count, #lsa-instr th.lsa-count { text-align: center; white-space: nowrap; }
+#lsa-instr td.lsa-skill, #lsa-instr th.lsa-skill { white-space: nowrap; }
+#lsa-instr a.lsa-key-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--bs-link-color, #0969DA);
+}
+#lsa-instr a.lsa-key-link:hover { text-decoration: underline; }
+#lsa-instr tr.lsa-hidden { display: none; }
+#lsa-instr td.lsa-nolink { color: var(--site-ink-3); font-style: italic; }
+</style>
+
+<div id="lsa-instr-controls">
+  <input type="text" id="lsa-instr-filter" placeholder="Filter by key, unit, or instruction text…">
+  <select id="lsa-instr-skill-filter">
+    <option value="">All skills</option>
+  </select>
+  <select id="lsa-instr-content-filter">
+    <option value="">All content / context</option>
+  </select>
+  <span id="lsa-instr-count"></span>
+</div>
+
+<div id="lsa-instr">
+  <table class="table table-sm table-hover">
+    <thead>
+      <tr>
+        <th class="lsa-key">Key</th>
+        <th class="lsa-count">Unit</th>
+        <th>§ / Crit</th>
+        <th class="lsa-count">Tonal key</th>
+        <th class="lsa-skill">Skill</th>
+        <th>Content / Context</th>
+        <th>Instruction</th>
+      </tr>
+    </thead>
+    <tbody id="lsa-instr-body"></tbody>
+  </table>
+</div>
+
+<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/lsa/toc.js"></script>
+<script src="/apps/lsa/curriculum.js"></script>
+<script src="/apps/lsa/instructions.js"></script>
+<script>
+(function () {
+  function lsaLink(register, key) {
+    return "/teacher/lsa-chart.html?register=" + register + "&criterion=" + encodeURIComponent(key);
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    const criteria = window.LSA_CRITERIA || [];
+    const instructions = typeof LSA_INSTRUCTIONS !== "undefined" ? LSA_INSTRUCTIONS : {};
+    const tbody = document.getElementById("lsa-instr-body");
+    const filterInput = document.getElementById("lsa-instr-filter");
+    const skillSelect = document.getElementById("lsa-instr-skill-filter");
+    const contentSelect = document.getElementById("lsa-instr-content-filter");
+    const countEl = document.getElementById("lsa-instr-count");
+
+    function populateOptions(select, values) {
+      const unique = Array.from(new Set(values.filter(Boolean))).sort();
+      unique.forEach(function (v) {
+        const opt = document.createElement("option");
+        opt.value = v;
+        opt.textContent = v;
+        select.appendChild(opt);
+      });
+    }
+    populateOptions(skillSelect, criteria.map(function (c) { return c.skillLabel; }));
+    populateOptions(contentSelect, criteria.map(function (c) { return c.content; }));
+
+    const rows = [];
+    criteria.forEach(function (c) {
+      const instruction = instructions[c.familyKey] || "";
+      const tr = document.createElement("tr");
+      tr.dataset.skill = c.skillLabel || "";
+      tr.dataset.content = c.content || "";
+
+      const tdKey = document.createElement("td");
+      tdKey.className = "lsa-key";
+      const a = document.createElement("a");
+      a.className = "lsa-key-link";
+      a.href = lsaLink(c.register, c.familyKey);
+      a.textContent = c.familyKey;
+      tdKey.appendChild(a);
+      tr.appendChild(tdKey);
+
+      const tdUnit = document.createElement("td");
+      tdUnit.className = "lsa-count";
+      tdUnit.textContent = String(c.unit);
+      tr.appendChild(tdUnit);
+
+      const tdSectCrit = document.createElement("td");
+      tdSectCrit.textContent = "§" + c.section + " · " + c.criterion;
+      tr.appendChild(tdSectCrit);
+
+      const tdTonalKey = document.createElement("td");
+      tdTonalKey.className = "lsa-count";
+      if (c.register === "tonal") {
+        tdTonalKey.textContent = c.key || "—";
+        if (!c.key) tdTonalKey.className += " lsa-nolink";
+      } else {
+        tdTonalKey.className += " lsa-nolink";
+        tdTonalKey.textContent = "N/A";
+      }
+      tr.appendChild(tdTonalKey);
+
+      const tdSkill = document.createElement("td");
+      tdSkill.className = "lsa-skill";
+      if (c.skill) {
+        tdSkill.textContent = c.skill;
+        tdSkill.title = c.skillLabel;
+      } else {
+        tdSkill.className += " lsa-nolink";
+        tdSkill.textContent = "—";
+      }
+      tr.appendChild(tdSkill);
+
+      const tdContent = document.createElement("td");
+      if (c.content) {
+        tdContent.textContent = c.content;
+      } else {
+        tdContent.className = "lsa-nolink";
+        tdContent.textContent = "—";
+      }
+      tr.appendChild(tdContent);
+
+      const tdInstr = document.createElement("td");
+      if (instruction) {
+        tdInstr.textContent = instruction;
+      } else {
+        tdInstr.className = "lsa-nolink";
+        tdInstr.textContent = "not yet transcribed";
+      }
+      tr.appendChild(tdInstr);
+
+      const searchText = (c.familyKey + " " + c.unit + " " + c.section + " " + c.criterion + " " +
+        (c.key || "") + " " + (c.skillLabel || "") + " " + (c.content || "") + " " + instruction).toLowerCase();
+      tr.dataset.search = searchText;
+
+      tbody.appendChild(tr);
+      rows.push(tr);
+    });
+
+    function applyFilter() {
+      const q = filterInput.value.trim().toLowerCase();
+      const skill = skillSelect.value;
+      const content = contentSelect.value;
+      let shown = 0;
+      rows.forEach(function (tr) {
+        const match = (!q || tr.dataset.search.indexOf(q) !== -1) &&
+          (!skill || tr.dataset.skill === skill) &&
+          (!content || tr.dataset.content === content);
+        tr.classList.toggle("lsa-hidden", !match);
+        if (match) shown++;
+      });
+      countEl.textContent = shown + " of " + rows.length + " criteria";
+    }
+
+    filterInput.addEventListener("input", applyFilter);
+    skillSelect.addEventListener("change", applyFilter);
+    contentSelect.addEventListener("change", applyFilter);
+    applyFilter();
+  });
+})();
+</script>
+```

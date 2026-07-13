@@ -95,6 +95,7 @@ is 80%).
 
   <script src="/apps/patterns/pattern-object.js"></script>
   <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+  <script src="/apps/lsa/toc.js"></script>
   <script src="/apps/lsa/curriculum.js"></script>
   <script src="/apps/lsa/store.js"></script>
   <script src="/apps/lsa/prompt-engine.js"></script>

@@ -1,0 +1,128 @@
+```{=html}
+<link rel="stylesheet" href="/apps/shared/assessment.css?v=8">
+<link rel="stylesheet" href="/apps/rhythm-assessment/app.css">
+<div id="app-root">
+  <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
+
+  <div class="card">
+    <div class="row">
+      <div><label for="pattern">Pattern (Duple-M-m-2-4)</label><select id="pattern"></select></div>
+      <button id="next" type="button">Next</button>
+      <button id="random" type="button">Random</button>
+      <label class="cb" style="align-self:center"><input type="checkbox" id="shuffle"> 🔀 Shuffle order</label>
+      <button id="play" type="button" style="align-self:end">▶ Hear pattern (with count-in)</button>
+      <div><label for="tempo">Tempo (macrobeats/min): <span id="tempoVal">90</span></label>
+        <input type="range" id="tempo" min="40" max="144" value="90" style="width:160px"></div>
+    </div>
+  </div>
+
+  <div class="score-row">
+    <div class="score-pane">
+      <h2>Pattern</h2>
+      <div id="notation"></div>
+    </div>
+    <div class="score-pane">
+      <h2>Performed rhythm — your last recording</h2>
+      <div id="performedCard" class="hidden">
+        <div id="performedNotation"></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+  <div class="col">
+    <div class="card">
+      <div class="row" style="align-items:center">
+        <button id="mic" class="primary">Enable mic</button>
+        <button id="record" disabled>● Record attempt</button>
+        <button id="continuous" disabled>∞ Continuous mode</button>
+        <span>Macrobeat <span id="beatdot" title="macrobeat pulse"></span></span>
+      </div>
+    </div>
+
+    <div class="card">
+      <label>Result</label>
+      <div id="captureSlot">
+        <div id="capturing" class="muted hidden">Listening — clap/tap the rhythm…</div>
+        <div class="bar hidden" id="progwrap"><div id="prog"></div></div>
+      </div>
+      <div id="resultArea"><div class="muted">Enable the mic, pick a pattern, then record — or start Continuous mode.</div></div>
+      <div id="timelineWrap">
+        <div id="timeline">
+          <div class="tl-label" style="top:6px">Target</div>
+          <div class="tl-label" style="top:50px">You</div>
+        </div>
+        <div class="muted" style="margin-top:.3rem">Green = matched attack · red = missed target or extra attack.</div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" id="recCard">
+      <label>Recording — saved for manual review</label>
+      <audio id="player" controls style="width:100%; margin-top:.25rem"></audio>
+      <div class="row" style="margin-top:.6rem"><a id="download" class="btn">⬇ Download</a></div>
+      <div class="muted" id="recMeta" style="margin-top:.5rem">No recording yet.</div>
+    </div>
+
+    <div class="card" id="sessionCard">
+      <label>Continuous session — all responses in one file</label>
+      <div class="row">
+        <a id="sessionDownload" class="btn hidden">⬇ Download responses</a>
+        <a id="sessionSrt" class="btn hidden">⬇ Download labels (SRT)</a>
+      </div>
+      <div class="muted" id="sessionMeta" style="margin-top:.5rem">Run Continuous mode, then Stop to download every response (count-in/model and gaps excluded).</div>
+    </div>
+
+    <details class="card" id="options">
+      <summary>Options &amp; diagnostics</summary>
+      <div class="row" style="margin-top:.75rem">
+        <div>
+          <label for="tol">Timing tolerance (± ms)</label>
+          <select id="tol">
+            <option value="60">60 (strict)</option>
+            <option value="100" selected>100 (default)</option>
+            <option value="150">150 (lenient)</option>
+          </select>
+        </div>
+        <div>
+          <label for="countin">Count-in (manual record)</label>
+          <select id="countin">
+            <option value="2">2 macrobeats</option>
+            <option value="4" selected>4 macrobeats</option>
+          </select>
+        </div>
+        <div>
+          <label for="sens">Onset sensitivity</label>
+          <select id="sens">
+            <option value="0.04">High</option>
+            <option value="0.06" selected>Medium</option>
+            <option value="0.10">Low</option>
+          </select>
+        </div>
+        <div>
+          <label>Metronome</label>
+          <label class="cb"><input type="checkbox" id="metroAudible" checked> audible (headphones)</label>
+          <label class="cb"><input type="checkbox" id="metroVisual" checked> visual</label>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1rem; align-items:center">
+        <button id="calibrate" type="button" disabled>🎯 Calibrate latency (speakers)</button>
+        <span class="muted" id="calResult">Not calibrated — using the browser's output-latency estimate.</span>
+      </div>
+      <div style="margin-top:1rem">
+        <label>Live input level</label>
+        <div class="level" id="level"><div id="levelbar"></div><div id="thresh"></div></div>
+        <div class="muted" id="liveCount" style="margin-top:.4rem">Attacks detected: 0</div>
+      </div>
+    </details>
+  </div>
+  </div>
+
+  <!-- vendored abcjs + the shared rhythm library + the rhythm parser -->
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/rhythm-assessment/abc-rhythm.js"></script>
+<script src="/apps/shared/session-log.js"></script>
+<script src="/apps/lsa-rhythm-assessment/app.js"></script>
+</div>
+```

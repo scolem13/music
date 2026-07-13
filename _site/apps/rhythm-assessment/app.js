@@ -18,12 +18,23 @@ function resetRecCard(){
   if (lastUrl){ URL.revokeObjectURL(lastUrl); lastUrl = null; }
 }
 
+const RA_PATTERNS = typeof rhythmPatternObject !== "undefined" ? rhythmPatternObject : window.rhythmPatternObject;
+// Optional external override (used by the LSA Practice page): a fixed, pre-built
+// sequence of { abc, graded, isTriple } items played in order as a single virtual
+// "collection", bypassing the normal collection/pattern dropdowns entirely.
+// graded:false items are model-only playback (no recording/grading) that auto-
+// advance once heard -- see runClassCycle(). When absent, everything below behaves
+// exactly as before.
+const RA_SEQUENCE = window.RA_SEQUENCE || null;
+
 const collectionSel = document.getElementById("collection");
 const patternSel = document.getElementById("pattern");
-for (const key in patternObject){
-  const o = document.createElement("option");
-  o.value = key; o.textContent = key;
-  collectionSel.appendChild(o);
+if (!RA_SEQUENCE){
+  for (const key in RA_PATTERNS){
+    const o = document.createElement("option");
+    o.value = key; o.textContent = key;
+    collectionSel.appendChild(o);
+  }
 }
 
 let tuneBook = null;
@@ -43,7 +54,7 @@ function gotoOrder(pos){
   loadPattern();
 }
 function loadCollection(){
-  tuneBook = new ABCJS.TuneBook(patternObject[collectionSel.value]);
+  tuneBook = new ABCJS.TuneBook(RA_PATTERNS[collectionSel.value]);
   patternSel.innerHTML = "";
   tuneBook.tunes.forEach((t, i) => {
     const o = document.createElement("option");
@@ -66,7 +77,7 @@ function loadPattern(){
   const idx = parseInt(patternSel.value, 10) || 0;
   currentAbc = tuneBook.tunes[idx].abc;
   target = AbcRhythm.parse(currentAbc);
-  isTriple = /triple/i.test(collectionSel.value);
+  isTriple = RA_SEQUENCE ? !!RA_SEQUENCE[idx].isTriple : /triple/i.test(collectionSel.value);
   macroLUnits = AbcRhythm.macrobeatLUnits(currentAbc, isTriple);
   renderPattern();
   document.getElementById("resultArea").innerHTML =
@@ -621,9 +632,24 @@ function setFlow(state){
   };
   setStatus(msgs[state] || "", state);
 }
+// Builds tuneBook/patternSel from RA_SEQUENCE instead of a RA_PATTERNS collection.
+function buildSequenceCollection(){
+  tuneBook = { tunes: RA_SEQUENCE.map((item, i) => ({ id: i + 1, abc: item.abc })) };
+  patternSel.innerHTML = "";
+  tuneBook.tunes.forEach((t, i) => {
+    const o = document.createElement("option");
+    o.value = i; o.textContent = "Pattern " + t.id;
+    patternSel.appendChild(o);
+  });
+  buildOrder();
+  patternSel.selectedIndex = playOrder[0];
+  loadPattern();
+}
 function advanceNext(){
   if (!isLastInCollection()){
     gotoOrder(orderPos() + 1);
+  } else if (RA_SEQUENCE){
+    gotoOrder(0);   // safety net -- normally unreached, endSession("complete") fires first
   } else if (collectionSel.selectedIndex < collectionSel.options.length - 1){
     collectionSel.selectedIndex++;   // next collection, first pattern
     loadCollection();
@@ -680,6 +706,7 @@ function endSession(reason){
     setStatus("🎉 Session complete — you finished the collection! Download below.", "passed");
   else
     setFlow(running ? "ready" : "nomic");
+  if (window.RA_ON_END) window.RA_ON_END(reason);
 }
 function stopContinuous(){ endSession("stopped"); }
 document.getElementById("continuous").addEventListener("click", () => {
@@ -691,8 +718,144 @@ document.getElementById("continuous").addEventListener("click", () => {
   runContinuousCycle();
 });
 
+// ---------- LSA Practice: woodblock synthesis ---------------------------------
+// A short filtered noise burst reads as a woodblock/clave hit -- distinct from
+// the plain square-wave click() used by the standalone assessment page above.
+// Two voices: A (bright, for "the pattern" itself) and B (quieter/lower, for
+// keeping the beat during a response, and for the quiet "someone plays along"
+// echo). Only used by the RA_SEQUENCE (LSA Practice) code path below.
+function woodblock(ctxTime, dur, gain, freqHz){
+  const n = Math.max(1, Math.round(audioCtx.sampleRate * dur));
+  const buffer = audioCtx.createBuffer(1, n, audioCtx.sampleRate);
+  const data = buffer.getChannelData(0);
+  for (let i = 0; i < n; i++) data[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / n, 6);
+  const src = audioCtx.createBufferSource();
+  src.buffer = buffer;
+  const filt = audioCtx.createBiquadFilter();
+  filt.type = "bandpass"; filt.frequency.value = freqHz; filt.Q.value = 6;
+  const g = audioCtx.createGain();
+  g.gain.value = gain;
+  src.connect(filt); filt.connect(g); g.connect(audioCtx.destination);
+  src.start(ctxTime); src.stop(ctxTime + dur + 0.01);
+  activeOscs.push(src);
+  src.onended = () => { activeOscs = activeOscs.filter(o => o !== src); };
+}
+const woodblockA = (t, dur, gain) => woodblock(t, dur, gain, 1500);   // "the pattern"
+const woodblockB = (t, dur, gain) => woodblock(t, dur, gain, 850);    // quiet beat-keeper / echo
+const WB_PATTERN_GAIN = 0.64;   // "the pattern" itself (teaching/listen, class patterns)
+const WB_ECHO_GAIN     = 0.28;  // quiet "someone plays along" echo
+const WB_BEAT_GAIN     = 0.26;  // quiet beat-keeper during the student's response
+// LSA Practice: exact silence (in macrobeats) between the end of the student's
+// response and the start of whatever plays next (a class pattern), so the gap
+// is tempo-locked instead of drifting with JS/setTimeout timing.
+window.LSA_SILENCE_MACROBEATS = 2;
+
+// Plays `onsets` again, quietly (woodblockB), immediately after the pattern's own
+// `durSec` -- the "someone plays along" reinforcement, 40% of the time. Used for
+// class patterns and an individual pattern's teaching/listen phase -- never its
+// evaluation/record phase (only the gentle beat-keeping click there). Returns
+// whether it fired, so callers can extend their own timing to make room for it.
+function maybeEchoOnsets(onsets, startCtx, spl, durSec){
+  if (Math.random() >= 0.4) return false;
+  const echoStart = startCtx + durSec;
+  for (const on of onsets) woodblockB(echoStart + on*spl, 0.05, WB_ECHO_GAIN);
+  return true;
+}
+
+function renderPatternAbc(abc){
+  ABCJS.renderAbc("notation", abc,
+    { responsive: "resize", add_classes: true, selectTypes: false, staffwidth: 320 });
+}
+
+// Plays a chain of class patterns back-to-back (each with its own 40% quiet
+// echo), then calls onDone. Each item is parsed locally -- this never touches
+// the individual pattern's loaded target/currentAbc, so grading state is
+// untouched by the interlude. items: [{ abc, isTriple }, ...]. `startCtx`, if
+// given, is the exact Web Audio time to begin at (used to anchor the silence
+// after a response precisely, instead of drifting with setTimeout jitter);
+// otherwise starts essentially immediately.
+function playLsaInterlude(items, onDone, startCtx){
+  clearVisualTimers();
+  const spm = secPerMacrobeat();
+  const ctxNow = audioCtx.currentTime;
+  let ctxCursor = startCtx !== undefined ? startCtx : ctxNow + INITIAL_DELAY;
+  items.forEach((item) => {
+    const t = AbcRhythm.parse(item.abc);
+    const mlu = AbcRhythm.macrobeatLUnits(item.abc, !!item.isTriple);
+    const spl = spm / mlu;
+    const start = ctxCursor;
+    for (const on of t.onsets) woodblockA(start + on*spl, 0.05, WB_PATTERN_GAIN);
+    const durSec = Math.round(t.total / mlu) * spm;
+    const echoed = maybeEchoOnsets(t.onsets, start, spl, durSec);
+    const delayMs = (start - ctxNow) * 1000;
+    visualTimers.push(setTimeout(() => renderPatternAbc(item.abc), Math.max(0, delayMs)));
+    ctxCursor += durSec * (echoed ? 2 : 1);
+  });
+  const totalMs = (ctxCursor - ctxNow) * 1000 + 400;
+  visualTimers.push(setTimeout(() => { if (continuousMode) onDone(); }, totalMs));
+}
+window.playLsaInterlude = playLsaInterlude;
+
+// One individual (graded) pattern for LSA Practice: starts straight away (no
+// count-in), matching the reference Continuous mode below -- just with woodblock
+// voices instead of the plain metronome click, and the outcome (pass/fail)
+// handed off to the page's own RA_ON_GRADED hook instead of auto-advancing.
+async function runGradedCycleForSequence(){
+  await ensureAudio();
+  clearVisualTimers();
+  frames = []; liveCount = 0; liveLast = 0; loop._lastOnset = 0;
+  document.getElementById("liveCount").textContent = "Attacks detected: 0";
+  document.getElementById("resultArea").innerHTML = "";
+  resetRecCard();
+  clearTimeline();
+  hide("capturing"); hide("progwrap"); hide("performedCard");
+  renderPatternAbc(currentAbc);   // always re-show THIS pattern (a class-pattern
+                                  // interlude may have just repainted #notation)
+
+  const spm = secPerMacrobeat(), spl = secPerLunit(), lat = latencyComp();
+  const pm = Math.round(target.total / macroLUnits);
+  const ctxNow = audioCtx.currentTime, perfNow = performance.now();
+  const patternDur = pm * spm;
+
+  // Teaching / listen: the pattern, as a woodblock, straight away.
+  const listenStart = ctxNow + INITIAL_DELAY;
+  for (const on of target.onsets) woodblockA(listenStart + on*spl, 0.05, WB_PATTERN_GAIN);
+  const echoed = maybeEchoOnsets(target.onsets, listenStart, spl, patternDur);
+  const listenDur = patternDur * (echoed ? 2 : 1);
+
+  // Evaluation / record: a quiet, different woodblock keeps the beat -- no
+  // pattern replay, no echo (only the gentle click during evaluation).
+  perfT0 = perfNow + (INITIAL_DELAY + listenDur + lat) * 1000;
+  collecting = true;
+  for (let k = 0; k < pm; k++) woodblockB(listenStart + listenDur + k*spm, 0.045, WB_BEAT_GAIN);
+
+  visualTimers.push(setTimeout(() => {
+    if (continuousMode && window.RA_ON_YOUR_TURN) window.RA_ON_YOUR_TURN();
+  }, (INITIAL_DELAY + listenDur) * 1000));
+
+  // The exact (audio-clock, not wall-clock) end of the response window -- used
+  // to anchor the silence before whatever plays next precisely on the beat,
+  // rather than off however long the grading callback below took to fire.
+  const responseEndCtx = listenStart + listenDur + patternDur;
+
+  const perfEndMs = (INITIAL_DELAY + listenDur + patternDur) * 1000;
+  visualTimers.push(setTimeout(() => {
+    if (!continuousMode) return;
+    collecting = false;
+    const summary = grade();
+    window.RA_RESPONSE_END_CTX = responseEndCtx;
+    if (window.RA_ON_GRADED) window.RA_ON_GRADED(summary === "pass");
+  }, perfEndMs + 150));
+}
+
 async function runContinuousCycle(){
   if (!continuousMode || !running || collecting) return;
+  if (RA_SEQUENCE){
+    const seqIdx = parseInt(patternSel.value, 10) || 0;
+    if (window.RA_ON_CYCLE_START) window.RA_ON_CYCLE_START(RA_SEQUENCE[seqIdx]);
+    runGradedCycleForSequence();
+    return;
+  }
   await ensureAudio();
   clearVisualTimers();
   frames = []; liveCount = 0; liveLast = 0; loop._lastOnset = 0;
@@ -784,5 +947,5 @@ SessionLog.init({
 });
 
 // ---------- init ----------
-loadCollection();
+if (RA_SEQUENCE) buildSequenceCollection(); else loadCollection();
 SessionLog.begin();

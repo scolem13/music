@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>LSA Data Analysis – Music Practice</title>
+<title>LSA Practice – Music Practice</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -82,11 +82,26 @@ ul.task-list li input[type="checkbox"] {
 <!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
      tool scripts run; injects a step banner when a session is active. -->
 <script src="../apps/shared/session-nav.js"></script>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
 
 
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -149,6 +164,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../practice/lsa-practice.html">
  <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -255,9 +274,11 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 <!-- Auth: injects sign-in controls into the navbar right side via JS.
      No visible strip — auth lives in a navbar dropdown instead. -->
 <script>
@@ -353,7 +374,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">LSA Data Analysis</h1>
+<h1 class="title">LSA Practice</h1>
 </div>
 
 
@@ -370,112 +391,111 @@ document.addEventListener('DOMContentLoaded', async function () {
 </header>
 
 
-<p>Every attempt recorded on the <a href="../teacher/lsa-chart.html">Evaluation Chart</a>, analyzed: how evenly time is spread across students, and what percentage of the class has reached its own potential on each criterion (Gordon’s “move ahead” rule of thumb is 80%).</p>
-<div id="lsa-app">
+<div class="column-screen">
+<p>Work through Learning Sequence Activities on your own, continuously — a few class patterns to chant along with before each individual pattern, then your own turn, genuinely graded by ear (just like the rhythm assessment tool), but without showing the notation or the results. Nothing is saved. (Test scope: only Rhythm Unit 1 is wired up so far.)</p>
+<div id="lsa-practice">
   <link rel="stylesheet" href="../apps/lsa/lsa.css">
 
-  <div id="lsa-stats" class="lsa-stats"></div>
+  <p class="lsa-practice-status" id="lsa-practice-status">
+    Click Start, then allow microphone access when your browser asks.
+  </p>
+  <div id="beatdot" class="lsa-practice-beat"></div>
+  <div id="lsa-practice-go" class="lsa-practice-go">GO!</div>
+  <div class="lsa-practice-actions">
+    <button type="button" id="lsa-practice-start" class="lsa-btn lsa-primary">▶ Start Practice</button>
+  </div>
+</div>
 
-  <div class="lsa-chart-card">
-    <div class="lsa-chart-title">Attempts per student</div>
-    <div class="lsa-chart-sub">The equal-time proxy the "suggest next" prompt optimizes for — the tighter the spread, the more even the class's time has been.</div>
-    <div id="lsa-bars" class="lsa-bars"></div>
+<!-- Off-screen: the real rhythm-assessment tool (mic + onset-detection grading),
+     reused as-is so accuracy is genuinely evaluated -- just never shown. -->
+<div id="lsa-eval-shell" aria-hidden="true">
+  <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
+
+  <div class="card">
+    <div class="row">
+      <div><label for="collection">Collection</label><select id="collection"></select></div>
+      <div><label for="pattern">Pattern</label><select id="pattern"></select></div>
+      <button id="next" type="button">Next</button>
+      <button id="random" type="button">Random</button>
+      <label class="cb"><input type="checkbox" id="shuffle"></label>
+      <button id="play" type="button">Hear pattern</button>
+      <input type="range" id="tempo" min="40" max="144" value="90">
+      <span id="tempoVal"></span>
+    </div>
   </div>
 
-  <h3 style="font-family:var(--font-display);font-size:1rem;margin-bottom:.5rem;" class="anchored">Potential achieved, by criterion</h3>
-  <div class="lsa-filter-row">
-    <div class="lsa-field">
-      <label for="lsa-filter-register">Register</label>
-      <select id="lsa-filter-register">
-        <option value="tonal">Tonal</option>
-        <option value="rhythm">Rhythm</option>
+  <div class="score-row">
+    <div class="score-pane"><div id="notation"></div></div>
+    <div class="score-pane">
+      <div id="performedCard" class="hidden"><div id="performedNotation"></div></div>
+    </div>
+  </div>
+
+  <div class="cols">
+  <div class="col">
+    <div class="card">
+      <button id="mic" class="primary">Enable mic</button>
+      <button id="record" disabled="">Record attempt</button>
+      <button id="continuous" disabled="">Continuous mode</button>
+    </div>
+    <div class="card">
+      <div id="captureSlot">
+        <div id="capturing" class="muted hidden"></div>
+        <div class="bar hidden" id="progwrap"><div id="prog"></div></div>
+      </div>
+      <div id="resultArea"></div>
+      <div id="timelineWrap">
+        <div id="timeline"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" id="recCard">
+      <audio id="player" controls=""></audio>
+      <a id="download" class="btn"></a>
+      <div class="muted" id="recMeta"></div>
+    </div>
+    <div class="card" id="sessionCard">
+      <a id="sessionDownload" class="btn hidden"></a>
+      <a id="sessionSrt" class="btn hidden"></a>
+      <div class="muted" id="sessionMeta"></div>
+    </div>
+    <details class="card" id="options">
+      <summary>Options &amp; diagnostics</summary>
+      <select id="tol">
+        <option value="60">60</option>
+        <option value="100" selected="">100</option>
+        <option value="150">150</option>
       </select>
-    </div>
-    <div class="lsa-field">
-      <label for="lsa-filter-text">Search</label>
-      <input type="text" id="lsa-filter-text" placeholder="unit, criterion, family…">
-    </div>
-    <div class="lsa-field lsa-toggle-field" style="margin-top:1.1rem;">
-      <input type="checkbox" id="lsa-filter-touched">
-      <label for="lsa-filter-touched">Only criteria with attempts</label>
-    </div>
+      <select id="countin">
+        <option value="2">2</option>
+        <option value="4" selected="">4</option>
+      </select>
+      <select id="sens">
+        <option value="0.04">High</option>
+        <option value="0.06" selected="">Medium</option>
+        <option value="0.10">Low</option>
+      </select>
+      <label class="cb"><input type="checkbox" id="metroAudible" checked=""></label>
+      <label class="cb"><input type="checkbox" id="metroVisual" checked=""></label>
+      <button id="calibrate" type="button" disabled=""></button>
+      <span class="muted" id="calResult"></span>
+      <div id="level"><div id="levelbar"></div><div id="thresh"></div></div>
+      <div class="muted" id="liveCount"></div>
+    </details>
   </div>
-  <div style="overflow-x:auto;">
-    
-<table class="lsa-table caption-top" data-quarto-postprocess="true">
-<thead id="lsa-criteria-thead">
-<tr class="header">
-<th data-quarto-table-cell-role="th" data-sort="register">Register</th>
-<th data-quarto-table-cell-role="th" data-sort="unit">Book</th>
-<th data-quarto-table-cell-role="th" data-sort="unit">Unit</th>
-<th data-quarto-table-cell-role="th" data-sort="unit">Section · Criterion</th>
-<th data-quarto-table-cell-role="th" data-sort="unit">Patterns</th>
-<th data-quarto-table-cell-role="th" data-sort="pct">% achieved potential</th>
-<th data-quarto-table-cell-role="th" data-sort="pct">Status</th>
-</tr>
-</thead>
-<tbody id="lsa-criteria-tbody">
-</tbody>
-</table>
-
   </div>
+</div>
 
-  <h3 style="font-family:var(--font-display);font-size:1rem;margin:1.5rem 0 .5rem;" class="anchored">Per student</h3>
-  <div style="overflow-x:auto;">
-    
-<table class="lsa-table caption-top" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Student</th>
-<th data-quarto-table-cell-role="th">Aptitude</th>
-<th data-quarto-table-cell-role="th">Teach attempts</th>
-<th data-quarto-table-cell-role="th">Eval attempts</th>
-<th data-quarto-table-cell-role="th">Total attempts</th>
-<th data-quarto-table-cell-role="th">Criteria at potential</th>
-<th data-quarto-table-cell-role="th">Last given</th>
-</tr>
-</thead>
-<tbody id="lsa-student-tbody">
-</tbody>
-</table>
-
-  </div>
-
-  <details class="lsa-raw">
-    <summary>Raw attempt log (every recorded cell)</summary>
-    <div style="overflow-x:auto;">
-      
-<table class="lsa-table caption-top" data-quarto-postprocess="true">
-<thead>
-<tr class="header">
-<th data-quarto-table-cell-role="th">Student</th>
-<th data-quarto-table-cell-role="th">Criterion</th>
-<th data-quarto-table-cell-role="th">Level</th>
-<th data-quarto-table-cell-role="th">Teach</th>
-<th data-quarto-table-cell-role="th">Eval</th>
-<th data-quarto-table-cell-role="th">Taught</th>
-<th data-quarto-table-cell-role="th">Achieved</th>
-</tr>
-</thead>
-<tbody id="lsa-raw-tbody">
-</tbody>
-</table>
-
-    </div>
-  </details>
-
-  <div style="display:flex;gap:.6rem;margin-top:1.5rem;">
-    <button type="button" class="lsa-btn" id="lsa-export-btn">Export JSON</button>
-    <button type="button" class="lsa-btn lsa-danger" id="lsa-reset-btn">Reset data</button>
-  </div>
-
-  <script src="../apps/patterns/pattern-object.js"></script>
-  <script src="../apps/rhythms/rhythm-pattern-object.js"></script>
-  <script src="../apps/lsa/toc.js"></script>
-  <script src="../apps/lsa/curriculum.js"></script>
-  <script src="../apps/lsa/store.js"></script>
-  <script src="../apps/lsa/prompt-engine.js"></script>
-  <script src="../apps/lsa/analysis-app.js"></script>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="../apps/rhythm-assessment/abc-rhythm.js"></script>
+<script src="../apps/lsa/curriculum.js"></script>
+<script src="../apps/lsa/notation.js"></script>
+<script src="../apps/lsa/self-lsa-sequence.js"></script>
+<script src="../apps/lsa/self-lsa-app.js"></script>
+<script src="../apps/shared/session-log.js"></script>
+<script src="../apps/rhythm-assessment/app.js?v=7"></script>
 </div>
 
 

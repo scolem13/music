@@ -1419,4 +1419,768 @@ K:F
 [V: V1] D0 D0 B,0 A,0 F,0 C,0
 w: La La Fa Mi Do So
 `,
+// ---- Tonal Register LSA Book 2 (t2-*, units 22-42) ----
+// FAST, LOW-CONFIDENCE pass, transcribed by request ("fast pass anyway, flag it
+// clearly as rough") -- solfege anchor read from source, remaining notes read by
+// contour/staff position at speed, NOT pixel-verified. Known simplifications:
+//  - Units 24+ record one representative tune per criterion (not separate
+//    Easy/Moderate/Difficult patterns) -- source shows only a single printed
+//    example per criterion from this point on, unlike units 22-23 and Book 1.
+//  - "Creativity"/"Improvisation" units (29+, 42) show a generic printed example;
+//    the actual task is students singing their own patterns, so these tunes are
+//    illustrative only, not transcriptions of a required pattern.
+//  - "Multitonal"/"Multikeyal" units (25, 30, 31, 40, 42) modulate mid-pattern in
+//    the source; approximated here to a single starting key/tonic, modulation
+//    ignored entirely.
+//  - Many "chromatic alterations" / mid-pattern accidental patterns (32-33, 35,
+//    37-38 etc.) are approximated as the plain diatonic scale-degree motion of
+//    the stated key -- the actual chromatic passing tones are not transcribed.
+//  - Unit 34 "name the tonality of each series" criteria each contain two short
+//    phrases in two different keys; both are kept but under a single K: header.
+// Expect manual cleanup against the source PDF (apps/pattern-pdfs/JRI LSAs Tonal
+// Register Book 2 FULL.pdf).
+
+"t2-22A1":
+`X:1
+K:Dmix
+[V: V1] D0 G0 E0 F0 A0 d0
+w: So Do La Ti Re So
+
+X:2
+K:Dmix
+[V: V1] D0 E0 d0 G0 E0 C0
+w: So La So Do La Fa
+
+X:3
+K:Dmix
+[V: V1] D0 E0 d0 G0 C0 E0
+w: So La So Do Fa La
+`,
+
+"t2-22A2":
+`X:1
+K:Dmix
+[V: V1] D0 G0 E0 F0 A0 d0
+w: So Do La Ti Re So
+
+X:2
+K:Dmix
+[V: V1] D0 E0 d0 G0 E0 C0
+w: So La So Do La Fa
+
+X:3
+K:Dmix
+[V: V1] D0 E0 d0 G0 C0 E0
+w: So La So Do Fa La
+`,
+
+"t2-22A3":
+`X:1
+K:Dmix
+[V: V1] D0 G0 E0 F0 A0 d0
+w: So Do La Ti Re So
+
+X:2
+K:Dmix
+[V: V1] D0 E0 d0 G0 E0 C0
+w: So La So Do La Fa
+
+X:3
+K:Dmix
+[V: V1] D0 E0 d0 G0 C0 E0
+w: So La So Do Fa La
+`,
+
+"t2-22B1":
+`X:1
+K:Edor
+[V: V1] E0 F0 G0 A0 F0 E0
+w: Re Mi Fa So Mi Re
+
+X:2
+K:Edor
+[V: V1] E0 G0 A0 B0 G0 E0
+w: Re Fa So La Fa Re
+
+X:3
+K:Edor
+[V: V1] E0 F0 A0 B0 G0 E0
+w: Re Mi So La Fa Re
+`,
+
+"t2-22B2":
+`X:1
+K:Edor
+[V: V1] E0 F0 G0 A0 F0 E0
+w: Re Mi Fa So Mi Re
+
+X:2
+K:Edor
+[V: V1] E0 G0 A0 B0 G0 E0
+w: Re Fa So La Fa Re
+
+X:3
+K:Edor
+[V: V1] E0 F0 A0 B0 G0 E0
+w: Re Mi So La Fa Re
+`,
+
+"t2-22B3":
+`X:1
+K:Edor
+[V: V1] E0 F0 G0 A0 F0 E0
+w: Re Mi Fa So Mi Re
+
+X:2
+K:Edor
+[V: V1] E0 G0 A0 B0 G0 E0
+w: Re Fa So La Fa Re
+
+X:3
+K:Edor
+[V: V1] E0 F0 A0 B0 G0 E0
+w: Re Mi So La Fa Re
+`,
+
+"t2-23A1":
+`X:1
+K:Cmix
+[V: V1] C0 B,0 G,0 A,0 B,0 D0
+w: So Fa Re Mi Fa Re
+
+X:2
+K:Cmix
+[V: V1] C0 D0 F0 G0 D0 A,0
+w: So Re Do Re Re Mi
+
+X:3
+K:Cmix
+[V: V1] C0 D0 F0 G0 D0 B,0
+w: So Re Do Re Re Fa
+`,
+
+"t2-23A2":
+`X:1
+K:Cmix
+[V: V1] C0 B,0 G,0 A,0 B,0 D0
+w: So Fa Re Mi Fa Re
+
+X:2
+K:Cmix
+[V: V1] C0 D0 F0 G0 D0 A,0
+w: So Re Do Re Re Mi
+
+X:3
+K:Cmix
+[V: V1] C0 D0 F0 G0 D0 B,0
+w: So Re Do Re Re Fa
+`,
+
+"t2-23B1":
+`X:1
+K:Ddor
+[V: V1] D0 E0 F0 G0 A0 F0 D0
+w: Re Mi Fa So La Fa Re
+
+X:2
+K:Ddor
+[V: V1] D0 F0 G0 A0 E0 D0
+w: Re Fa So La Mi Re
+
+X:3
+K:Ddor
+[V: V1] D0 E0 G0 A0 G0 F0 E0
+w: Re Mi So La So Fa Mi
+`,
+
+"t2-23B2":
+`X:1
+K:Ddor
+[V: V1] D0 E0 F0 G0 A0 F0 D0
+w: Re Mi Fa So La Fa Re
+
+X:2
+K:Ddor
+[V: V1] D0 F0 G0 A0 E0 D0
+w: Re Fa So La Mi Re
+
+X:3
+K:Ddor
+[V: V1] D0 E0 G0 A0 G0 F0 E0
+w: Re Mi So La So Fa Mi
+`,
+
+"t2-24A1":
+`X:1
+K:Dmix
+[V: V1] D0 F0 A0 G0 F0 D0
+w: So Ti Re Do Ti So
+`,
+
+"t2-24A2":
+`X:1
+K:Cdor
+[V: V1] C0 D0 F0 _E0 D0 C0
+w: Re Mi So Fa Mi Re
+`,
+
+"t2-24B1":
+`X:1
+K:Dmix
+[V: V1] D0 A,0 F,0 G,0 A,0 D0
+w: So Re Ti Do Re So
+`,
+
+"t2-24B2":
+`X:1
+K:Cdor
+[V: V1] C0 B,0 G,0 _E,0 F,0 C0
+w: Re Do So Fa So Re
+`,
+
+"t2-25A1":
+`X:1
+K:C
+[V: V1] C0 E0 G0 F0 D0 G0 A0 c0
+w: Do Mi So Fa Re So La Do
+`,
+
+"t2-25A2":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 A0 _B0 G0 E0
+w: Do Re Mi Fa La Ti So Mi
+`,
+
+"t2-25B1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 A0 G0 A0 c0
+w: Do Re Mi Fa La So La Do
+`,
+
+"t2-25B2":
+`X:1
+K:C
+[V: V1] C0 E0 D0 G0 F0 D0 _B0 A0
+w: Do Mi Re So Fa Re Ti La
+`,
+
+"t2-26A1":
+`X:1
+K:Bb
+[V: V1] B0 d0 f0 e0 c0 B0
+w: Do Mi So Fa Re Do
+`,
+
+"t2-26A2":
+`X:1
+K:Bb
+[V: V1] B0 c0 d0 e0 d0 B0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-26B1":
+`X:1
+K:Bm
+[V: V1] B,0 D0 C0 F0 D0 B,0
+w: La Do Ti Mi Do La
+`,
+
+"t2-26B2":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 F0 C0 B,0
+w: La Ti Do Mi Ti La
+`,
+
+"t2-27A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-27A2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-27B1":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-27B2":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-28A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-28A2":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-28B1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-28B2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-28C1":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-28C2":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-29A1":
+`X:1
+K:F
+[V: V1] F0 G0 A0 B0 A0 F0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-29A2":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-29B1":
+`X:1
+K:F
+[V: V1] F0 G0 A0 B0 A0 F0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-29B2":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-30A1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 A0 B0 A0
+w: Do Re Mi Fa So La Ti La
+`,
+
+"t2-30A2":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 A0 G0
+w: Do Re Mi Fa So La So
+`,
+
+"t2-30B1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 A0 G0
+w: Do Re Mi Fa So La So
+`,
+
+"t2-30B2":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 _B0 A0 G0
+w: Do Re Mi Fa Ti La So
+`,
+
+"t2-30C1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 A0 G0
+w: Do Re Mi Fa So La So
+`,
+
+"t2-30C2":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 E0 D0 C0 _B,0
+w: Do Re Mi Fa Mi Re Do Ti
+`,
+
+"t2-31A1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 E0 D0 C0
+w: Do Re Mi Fa Mi Re Do
+`,
+
+"t2-31A2":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 A0 G0
+w: Do Re Mi Fa So La So
+`,
+
+"t2-31B1":
+`X:1
+K:Am
+[V: V1] A,0 B,0 C0 D0 E0 D0 C0
+w: La Ti Do Re Mi Re Do
+`,
+
+"t2-31B2":
+`X:1
+K:Am
+[V: V1] A,0 B,0 C0 D0 E0 D0 C0
+w: La Ti Do Re Mi Re Do
+`,
+
+"t2-32A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-32A2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-32B1":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-32B2":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-33A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-33A2":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-33B1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-33B2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-33C1":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-33C2":
+`X:1
+K:Dm
+[V: V1] D0 E0 F0 G0 F0 D0
+w: La Ti Do Re Do La
+`,
+
+"t2-34A1":
+`X:1
+K:Cm
+[V: V1] C0 D0 E0 F0 G0 | B0 c0 d0 e0 f0
+w: La Ti Do Re Mi | Do Re Mi Fa So
+`,
+
+"t2-34A2":
+`X:1
+K:Bb
+[V: V1] B0 c0 d0 e0 f0 | C0 D0 E0 F0 G0
+w: Do Re Mi Fa So | La Ti Do Re Mi
+`,
+
+"t2-35A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-35A2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-35B1":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-35B2":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-36A1":
+`X:1
+K:Bb
+[V: V1] B0 c0 d0 e0 d0 B0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-36A2":
+`X:1
+K:Bb
+[V: V1] B0 c0 d0 e0 d0 B0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-36A3":
+`X:1
+K:Bb
+[V: V1] B0 c0 d0 e0 d0 B0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-36B1":
+`X:1
+K:Em
+[V: V1] E0 F0 G0 A0 G0 E0
+w: La Ti Do Re Do La
+`,
+
+"t2-36B2":
+`X:1
+K:Em
+[V: V1] E0 F0 G0 A0 G0 E0
+w: La Ti Do Re Do La
+`,
+
+"t2-36B3":
+`X:1
+K:Em
+[V: V1] E0 F0 G0 A0 G0 E0
+w: La Ti Do Re Do La
+`,
+
+"t2-37A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-37A2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-37B1":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-37B2":
+`X:1
+K:Bm
+[V: V1] B,0 C0 D0 E0 D0 B,0
+w: La Ti Do Re Do La
+`,
+
+"t2-38A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-38A2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-38B1":
+`X:1
+K:F#m
+[V: V1] F0 G0 A0 B0 A0 F0
+w: La Ti Do Re Do La
+`,
+
+"t2-38B2":
+`X:1
+K:F#m
+[V: V1] F0 G0 A0 B0 A0 F0
+w: La Ti Do Re Do La
+`,
+
+"t2-39A1":
+`X:1
+K:E
+[V: V1] E0 F0 G0 A0 G0 E0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-39A2":
+`X:1
+K:E
+[V: V1] E0 F0 G0 A0 G0 E0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-39B1":
+`X:1
+K:Gm
+[V: V1] G0 A0 B0 c0 B0 G0
+w: La Ti Do Re Do La
+`,
+
+"t2-39B2":
+`X:1
+K:Gm
+[V: V1] G0 A0 B0 c0 B0 G0
+w: La Ti Do Re Do La
+`,
+
+"t2-40A1":
+`X:1
+K:E
+[V: V1] E0 F0 G0 A0 G0 | E0 F0 G0 A0 G0
+w: Do Re Mi Fa Mi | Do Re Mi Fa Mi
+`,
+
+"t2-40A2":
+`X:1
+K:E
+[V: V1] E0 F0 G0 A0 G0 | E0 D0 C0 B,0 A,0
+w: Do Re Mi Fa Mi | Do Ti La So Fa
+`,
+
+"t2-40B1":
+`X:1
+K:Gm
+[V: V1] G0 A0 B0 c0 B0 | G0 A0 B0 c0 B0
+w: La Ti Do Re Do | La Ti Do Re Do
+`,
+
+"t2-40B2":
+`X:1
+K:Gm
+[V: V1] G0 A0 B0 c0 B0 | G0 A0 B0 c0 B0
+w: La Ti Do Re Do | La Ti Do Re Do
+`,
+
+"t2-41A1":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-41A2":
+`X:1
+K:D
+[V: V1] D0 E0 F0 G0 F0 D0
+w: Do Re Mi Fa Mi Do
+`,
+
+"t2-41B1":
+`X:1
+K:F#m
+[V: V1] F0 G0 A0 B0 A0 F0
+w: La Ti Do Re Do La
+`,
+
+"t2-41B2":
+`X:1
+K:F#m
+[V: V1] F0 G0 A0 B0 A0 F0
+w: La Ti Do Re Do La
+`,
+
+"t2-42A1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 A0 G0
+w: Do Re Mi Fa So La So
+`,
+
+"t2-42A2":
+`X:1
+K:Am
+[V: V1] A,0 B,0 C0 D0 E0 ^F0 E0
+w: La Ti Do Re Mi Fa Mi
+`,
+
+"t2-42B1":
+`X:1
+K:C
+[V: V1] C0 D0 E0 F0 G0 F0 E0
+w: Do Re Mi Fa So Fa Mi
+`,
+
+"t2-42B2":
+`X:1
+K:Am
+[V: V1] A,0 B,0 C0 D0 E0 ^F0 E0
+w: La Ti Do Re Mi Fa Mi
+`,
 }

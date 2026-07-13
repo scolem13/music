@@ -1,0 +1,111 @@
+Work through Learning Sequence Activities on your own, continuously — a few class
+patterns to chant along with before each individual pattern, then your own turn,
+genuinely graded by ear (just like the rhythm assessment tool), following along
+with the notation for each pattern. Results stay hidden; nothing is saved. (Test
+scope: only Rhythm Unit 1 is wired up so far.)
+
+```{=html}
+<div id="lsa-practice">
+  <link rel="stylesheet" href="/apps/lsa/lsa.css">
+
+  <p class="lsa-practice-status" id="lsa-practice-status">
+    Click Start, then allow microphone access when your browser asks.
+  </p>
+  <div class="lsa-practice-actions">
+    <button type="button" id="lsa-practice-start" class="lsa-btn lsa-primary">▶ Start Practice</button>
+  </div>
+  <div class="lsa-practice-notation" id="notation"></div>
+</div>
+
+<!-- Off-screen: the real rhythm-assessment tool (mic + onset-detection grading),
+     reused as-is so accuracy is genuinely evaluated -- results stay hidden, only
+     #notation above is pulled out into view. -->
+<div id="lsa-eval-shell" aria-hidden="true">
+  <div id="flowStatus" class="flow nomic">Enable the mic to begin.</div>
+
+  <div class="card">
+    <div class="row">
+      <div><label for="collection">Collection</label><select id="collection"></select></div>
+      <div><label for="pattern">Pattern</label><select id="pattern"></select></div>
+      <button id="next" type="button">Next</button>
+      <button id="random" type="button">Random</button>
+      <label class="cb"><input type="checkbox" id="shuffle"></label>
+      <button id="play" type="button">Hear pattern</button>
+      <input type="range" id="tempo" min="40" max="144" value="90">
+      <span id="tempoVal"></span>
+    </div>
+  </div>
+
+  <div class="score-row">
+    <div class="score-pane">
+      <div id="performedCard" class="hidden"><div id="performedNotation"></div></div>
+    </div>
+  </div>
+
+  <div class="cols">
+  <div class="col">
+    <div class="card">
+      <button id="mic" class="primary">Enable mic</button>
+      <button id="record" disabled>Record attempt</button>
+      <button id="continuous" disabled>Continuous mode</button>
+      <span id="beatdot"></span>
+    </div>
+    <div class="card">
+      <div id="captureSlot">
+        <div id="capturing" class="muted hidden"></div>
+        <div class="bar hidden" id="progwrap"><div id="prog"></div></div>
+      </div>
+      <div id="resultArea"></div>
+      <div id="timelineWrap">
+        <div id="timeline"></div>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card" id="recCard">
+      <audio id="player" controls></audio>
+      <a id="download" class="btn"></a>
+      <div class="muted" id="recMeta"></div>
+    </div>
+    <div class="card" id="sessionCard">
+      <a id="sessionDownload" class="btn hidden"></a>
+      <a id="sessionSrt" class="btn hidden"></a>
+      <div class="muted" id="sessionMeta"></div>
+    </div>
+    <details class="card" id="options">
+      <summary>Options &amp; diagnostics</summary>
+      <select id="tol">
+        <option value="60">60</option>
+        <option value="100" selected>100</option>
+        <option value="150">150</option>
+      </select>
+      <select id="countin">
+        <option value="2">2</option>
+        <option value="4" selected>4</option>
+      </select>
+      <select id="sens">
+        <option value="0.04">High</option>
+        <option value="0.06" selected>Medium</option>
+        <option value="0.10">Low</option>
+      </select>
+      <label class="cb"><input type="checkbox" id="metroAudible" checked></label>
+      <label class="cb"><input type="checkbox" id="metroVisual" checked></label>
+      <button id="calibrate" type="button" disabled></button>
+      <span class="muted" id="calResult"></span>
+      <div id="level"><div id="levelbar"></div><div id="thresh"></div></div>
+      <div class="muted" id="liveCount"></div>
+    </details>
+  </div>
+  </div>
+</div>
+
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/rhythm-assessment/abc-rhythm.js"></script>
+<script src="/apps/lsa/curriculum.js"></script>
+<script src="/apps/lsa/notation.js"></script>
+<script src="/apps/lsa/self-lsa-sequence.js"></script>
+<script src="/apps/lsa/self-lsa-notated-app.js"></script>
+<script src="/apps/shared/session-log.js"></script>
+<script src="/apps/rhythm-assessment/app.js?v=7"></script>
+```

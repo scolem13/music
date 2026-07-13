@@ -124,7 +124,7 @@
   }
 
   function present(){
-    if (replay) return;
+    if (replay || global.LSA_PRACTICE_MODE) return;
     const s = getState(); if (!s) return;
     if (same(stripMeta(events[events.length-1]), s)) return;   // dedupe consecutive identical
     events.push(Object.assign({ occurred_at: new Date().toISOString() }, s));
@@ -138,6 +138,7 @@
     if (m){ const it = dec(m[1]); if (it && it.length){ replay = true; items = it; } }  // local makeup link
   }
   async function begin(){
+    if (global.LSA_PRACTICE_MODE) return;   // no floating class-log panel on this page
     if (cloudLessonId && cloudReady()){
       try {
         const { data, error } = await global.sb.from("lessons").select("items").eq("id", cloudLessonId).single();

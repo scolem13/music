@@ -8,6 +8,11 @@
   const STORE = window.LSA_STORE;
   const ENGINE = window.LSA_ENGINE;
   const NOTATION = window.LSA_NOTATION;
+  const RESPONSE = window.LSA_RESPONSE_TYPES;
+  // instructions.js declares `const LSA_INSTRUCTIONS` at top level via <script src>,
+  // which (like pattern-object.js / rhythm-pattern-object.js) never becomes a
+  // `window` property even though the bare identifier is visible here.
+  const INSTRUCTIONS = typeof LSA_INSTRUCTIONS !== 'undefined' ? LSA_INSTRUCTIONS : {};
   const LEVELS = window.LSA_LEVELS;
   const LEVEL_NAMES = window.LSA_LEVEL_NAMES;
   const CRITERIA = window.LSA_CRITERIA;
@@ -20,6 +25,17 @@
   let prefs = loadPrefs();
   let manualTargetId = null;
   let cued = []; // top-2 ranked {student, step} for the current criterion
+
+  // Deep link from e.g. the LSA Directory: /teacher/lsa-chart.html?register=tonal&criterion=t1-1A1
+  // Overrides the remembered UI state for this load only (not persisted), so following
+  // a link doesn't clobber the teacher's own last-used criterion for future visits.
+  (function applyUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    const reg = params.get('register');
+    const crit = params.get('criterion');
+    if (reg === 'tonal' || reg === 'rhythm') prefs.register = reg;
+    if (crit) prefs.criterionId = crit;
+  })();
 
   function loadPrefs() {
     try {
@@ -104,9 +120,29 @@
 
   // ── targeting: auto-cued[0], or a manual override until the next mark ──
 
+  // `cued` is deliberately persistent across renders (not recomputed from scratch
+  // every time) so "on deck" reliably becomes "up next" once the current "up next"
+  // is marked, instead of the whole pair being re-rolled by a fresh weighted draw —
+  // which would occasionally drop the untouched on-deck student for no reason, since
+  // marking anyone changes the totals the draw is seeded from. Only the student who
+  // was actually just marked gets dropped (see mark()); everyone else keeps their
+  // slot, and only the vacated slot(s) get a fresh weighted-random pick.
   function recomputeCued() {
     const c = currentCriterion();
-    cued = c ? ENGINE.cueList(db, db.students, c, 2) : [];
+    if (!c) { cued = []; return; }
+    cued = cued
+      .map(function (entry) {
+        const step = ENGINE.nextStep(db, entry.student, c);
+        return step ? { student: entry.student, step: step } : null;
+      })
+      .filter(Boolean);
+    while (cued.length < 2) {
+      const cuedIds = cued.map(function (e) { return e.student.id; });
+      const pool = db.students.filter(function (s) { return cuedIds.indexOf(s.id) === -1; });
+      const ranked = ENGINE.rankCandidates(db, pool, c);
+      if (!ranked.length) break;
+      cued.push(ranked[0]);
+    }
   }
 
   function target() {
@@ -127,6 +163,10 @@
     if (!c) return;
     STORE.recordAttempt(db, student.id, c.id, step.level, step.mode, success, step.beyond);
     manualTargetId = null;
+    // Rotate the just-marked student out of their cued slot — everyone else (i.e.
+    // "on deck") keeps theirs; recomputeCued() will promote them and draw a fresh
+    // pick for the vacated slot.
+    cued = cued.filter(function (entry) { return entry.student.id !== student.id; });
     render();
   }
   function markTarget(success) {
@@ -238,6 +278,55 @@
     return wrap;
   }
 
+  // ── VA/PS "what did they say?" multiple-choice row ─────────────────────
+  //
+  // Only appears for criteria whose instruction asks the student to NAME the
+  // tonality or meter (see response-types.js for exactly which ones qualify).
+  // Purely a reference/recording aid: clicking a choice shows the teacher
+  // whether it matches the derived correct answer (and reveals the correct one
+  // either way) but does NOT itself call mark() -- the ✓ Success / ✗ Not-yet
+  // buttons remain the actual recorded outcome, since the full task usually
+  // also asks the student to name a function (tonic/dominant/... or
+  // macrobeat/microbeat/...) that isn't verified here.
+  function buildChoiceRow(criterion) {
+    if (!RESPONSE) return null;
+    const choice = RESPONSE.getResponseChoice(criterion, INSTRUCTIONS[criterion.familyKey]);
+    if (!choice) return null;
+
+    const wrap = document.createElement('div');
+    wrap.className = 'lsa-choice-row';
+    const label = document.createElement('div');
+    label.className = 'lsa-choice-label';
+    label.textContent = 'What did they say? (' + choice.label + ')';
+    wrap.appendChild(label);
+
+    const btnWrap = document.createElement('div');
+    btnWrap.className = 'lsa-choice-btns';
+    choice.choices.forEach(function (opt) {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'lsa-choice-btn';
+      b.textContent = opt;
+      b.addEventListener('click', function () {
+        Array.prototype.forEach.call(btnWrap.children, function (sib) {
+          sib.classList.remove('lsa-choice-picked', 'lsa-choice-correct', 'lsa-choice-wrong');
+        });
+        b.classList.add('lsa-choice-picked');
+        if (opt === choice.correct) {
+          b.classList.add('lsa-choice-correct');
+        } else {
+          b.classList.add('lsa-choice-wrong');
+          Array.prototype.forEach.call(btnWrap.children, function (sib) {
+            if (sib.textContent === choice.correct) sib.classList.add('lsa-choice-correct');
+          });
+        }
+      });
+      btnWrap.appendChild(b);
+    });
+    wrap.appendChild(btnWrap);
+    return wrap;
+  }
+
   // ── card builder, shared by the card grid and the phone view ──────────
 
   function buildCard(student, criterion, cuedIdx) {
@@ -300,6 +389,9 @@
       due.textContent = met ? 'Potential met ✓' : 'Nothing due';
     }
     card.appendChild(due);
+
+    const choiceRow = buildChoiceRow(criterion);
+    if (choiceRow) card.appendChild(choiceRow);
 
     const actions = document.createElement('div');
     actions.className = 'lsa-actions';
@@ -476,6 +568,7 @@
     prefs.register = el.register.value;
     prefs.criterionId = null;
     manualTargetId = null;
+    cued = []; // fresh draw for the newly selected pattern set
     populateCriterionSelect();
     prefs.criterionId = currentCriterion() ? currentCriterion().id : null;
     savePrefs();
@@ -485,6 +578,7 @@
   el.criterion.addEventListener('change', function () {
     prefs.criterionId = el.criterion.value;
     manualTargetId = null;
+    cued = []; // fresh draw for the newly selected criterion
     savePrefs();
     render();
   });
@@ -521,6 +615,7 @@
     if (!confirm('Reset all LSA evaluation data back to the seeded demo class? This cannot be undone.')) return;
     db = STORE.resetDB();
     manualTargetId = null;
+    cued = [];
     render();
   });
 

@@ -1417,19 +1417,19 @@ X:1
 M:2/4
 L:1/4
 K: clef=none
-B/B/ B
+B/B/ B/B/ | B/B/ B/B/ ||
 
 X:2
 M:2/4
 L:1/4
 K: clef=none
-B B/B/
+B B/B/ | B/B/ B ||
 
 X:3
 M:2/4
 L:1/4
 K: clef=none
-B B
+B B | B B ||
 `,
 
 // p4: Unit 1 Section B Criterion 1 -- 6/8 triple
@@ -1566,7 +1566,23 @@ B B/B/>
 
 // p10: Unit 3 Section A Criterion 2 -- 2/4 duple
 "r1-3A2":
-`
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B. B//B// | B/B/ B/B/
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B/B//B// B | B/B//B// B
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B B//B/. | B//B/. B
 `,
 
 // p11: Unit 3 Section B Criterion 1 -- 6/8 triple
@@ -1736,7 +1752,7 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-B/B3.
+B/B3
 
 X:3
 M:6/8
@@ -1930,7 +1946,7 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-B3 B/B3.
+B3 B/B3
 
 X:3
 M:6/8
@@ -1974,7 +1990,7 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-B/B3. B3
+B/B3 B3
 
 X:3
 M:6/8
@@ -2090,7 +2106,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B B3.-
+B B3-
 `,
 
 // p36: Unit 8 Section B Criterion 3 -- 6/8 triple
@@ -2112,7 +2128,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B B3.
+B B3
 `,
 
 // p37: Unit 9 Section A Criterion 1 -- 2/4 duple
@@ -2150,13 +2166,13 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-B/B3.B//
+B/B3B//
 
 X:3
 M:6/8
 L:1/8
 K: clef=none
-B/B3.B//
+B/B3B//
 `,
 
 // p39: Unit 9 Section B Criterion 1 -- 2/4 duple
@@ -2276,7 +2292,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:2
 M:6/8
@@ -2288,7 +2304,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B/B3.
+B/B3
 `,
 
 // p45: Unit 10 Section A Criterion 1 -- 2/4 duple
@@ -2408,7 +2424,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:2
 M:6/8
@@ -2420,7 +2436,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B/B3.
+B/B3
 `,
 
 // p51: Unit 11 Section A Criterion 1 -- 2/4 duple
@@ -2496,13 +2512,13 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:2
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:3
 M:6/8
@@ -2590,7 +2606,7 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-BB B3.-
+BB B3-
 
 X:3
 M:6/8
@@ -2634,13 +2650,13 @@ X:2
 M:2/4
 L:1/4
 K: clef=none
-BB B3.-
+BB B3-
 
 X:3
 M:2/4
 L:1/4
 K: clef=none
-B/B/ B3.-
+B/B/ B3-
 `,
 
 // p61: Unit 12 Section B Criterion 3 -- 2/4 duple
@@ -2766,7 +2782,7 @@ X:2
 M:2/4
 L:1/4
 K: clef=none
-B3.-B/ B/
+B3-B/ B/
 
 X:3
 M:2/4
@@ -2810,7 +2826,7 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-B3 z/B3.
+B3 z/B3
 
 X:3
 M:6/8
@@ -2838,7 +2854,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B/B/- B3.
+B/B/- B3
 `,
 
 // p70: Unit 13 Section B Criterion 3 -- 6/8 triple
@@ -2848,7 +2864,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:2
 M:6/8
@@ -2860,7 +2876,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B/B3.
+B/B3
 `,
 
 // p71: Unit 14 Section A Criterion 1 -- 2/4 duple
@@ -2892,7 +2908,7 @@ X:1
 M:2/4
 L:1/4
 K: clef=none
-B3.B// B/.B//
+B3B// B/.B//
 
 X:2
 M:2/4
@@ -2904,7 +2920,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-B3.(3B//B//B// B/.B//
+B3(3B//B//B// B/.B//
 `,
 
 // p73: Unit 14 Section B Criterion 1 -- 6/8 triple
@@ -2914,7 +2930,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:2
 M:6/8
@@ -2926,7 +2942,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B3. B/BB.
+B3 B/BB.
 `,
 
 // p74: Unit 14 Section B Criterion 2 -- 6/8 triple
@@ -2936,7 +2952,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/BB B3.
+B/BB B3
 
 X:2
 M:6/8
@@ -2957,7 +2973,7 @@ BBB B/BB.
 M:6/8
 L:1/8
 K: clef=none
-B/BB B/.B//|B/.B// B3.|B B/B/ B/.B//|B/
+B/BB B/.B//|B/.B// B3|B B/B/ B/.B//|B/
 `,
 
 // p76: Unit 15 Section A Criterion 2 -- 2/4->6/8 combined, single pattern (no E/M/D)
@@ -2976,7 +2992,7 @@ X:1
 M:2/4
 L:1/4
 K: clef=none
-B B3.(3B/B/B/
+B B3(3B/B/B/
 
 X:2
 M:2/4
@@ -3120,7 +3136,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-BBB(3B/B/B/ B3.
+BBB(3B/B/B/ B3
 `,
 
 // p84: Unit 19 Section A Criterion 1 -- 2/4 duple, single pattern (no E/M/D)
@@ -3129,7 +3145,7 @@ BBB(3B/B/B/ B3.
 M:2/4
 L:1/4
 K: clef=none
-B/B/ B|B/B/ B|B3.B/B/|B/.B// B
+B/B/ B|B/B/ B|B3B/B/|B/.B// B
 `,
 
 // p85: Unit 19 Section A Criterion 2 -- 2/4 duple, single pattern (no E/M/D)
@@ -3138,7 +3154,7 @@ B/B/ B|B/B/ B|B3.B/B/|B/.B// B
 M:2/4
 L:1/4
 K: clef=none
-B/B/B/ B|B/B/ B/B/ B|B/ B|B/B/B/ B3.
+B/B/B/ B|B/B/ B/B/ B|B/ B|B/B/B/ B3
 `,
 
 // p86: Unit 19 Section B Criterion 1 -- 6/8 triple, single pattern (no E/M/D)
@@ -3147,7 +3163,7 @@ B/B/B/ B|B/B/ B/B/ B|B/ B|B/B/B/ B3.
 M:6/8
 L:1/8
 K: clef=none
-BBB B3|z. B3|B/B/B/B/B/B/ B/|B3. B/B/B/B/B/B/
+BBB B3|z. B3|B/B/B/B/B/B/ B/|B3 B/B/B/B/B/B/
 `,
 
 // p87: Unit 19 Section B Criterion 2 -- 6/8 triple, single pattern (no E/M/D)
@@ -3156,7 +3172,7 @@ BBB B3|z. B3|B/B/B/B/B/B/ B/|B3. B/B/B/B/B/B/
 M:6/8
 L:1/8
 K: clef=none
-BBB BBB|B/ B3.|B3. B3|B/BB. B/BB.
+BBB BBB|B/ B3|B3 B3|B/BB. B/BB.
 `,
 
 // Patterns transcribed from "Jump Right In" Rhythm Register Book Two (LSAs)
@@ -3185,7 +3201,7 @@ X:3
 M:5/8
 L:1/8
 K: clef=none
-BB B3.
+BB B3
 `,
 
 // p4: Unit 20 Section A Criterion 2 -- 5/8 unusual paired
@@ -3251,7 +3267,7 @@ X:3
 M:7/8
 L:1/8
 K: clef=none
-BB/B3.
+BB/B3
 `,
 
 // p7: Unit 21 Section A Criterion 1 -- 2/4 duple, single pattern (no E/M/D)
@@ -3278,7 +3294,7 @@ B/BB/B B|B/.B// B/|B/ B/|B/BB/B B/.
 M:6/8
 L:1/8
 K: clef=none
-BBB B3.|z. B/BB|B/B/B/B/B/B/ B/|B/BB. B3.
+BBB B3|z. B/BB|B/B/B/B/B/B/ B/|B/BB. B3
 `,
 
 // p10: Unit 21 Section B Criterion 2 -- 6/8 triple, single pattern (no E/M/D)
@@ -3303,13 +3319,13 @@ X:2
 M:5/8
 L:1/8
 K: clef=none
-B3. BB
+B3 BB
 
 X:3
 M:5/8
 L:1/8
 K: clef=none
-B3. BB
+B3 BB
 `,
 
 // p12: Unit 22 Section A Criterion 2 -- 7/8 unusual unpaired
@@ -3325,13 +3341,13 @@ X:2
 M:7/8
 L:1/8
 K: clef=none
-BBB B3.
+BBB B3
 
 X:3
 M:7/8
 L:1/8
 K: clef=none
-BB3. BB
+BB3 BB
 `,
 
 // p13: Unit 22 Section B Criterion 1 -- 5/8 unusual paired
@@ -3353,7 +3369,7 @@ X:3
 M:5/8
 L:1/8
 K: clef=none
-BB B3.
+BB B3
 `,
 
 // p14: Unit 22 Section B Criterion 2 -- 5/8 unusual paired
@@ -3441,7 +3457,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-B3. z
+B3 z
 `,
 
 // p18: Unit 23 Section A Criterion 2 -- 2/4 duple
@@ -3529,7 +3545,7 @@ X:3
 M:6/8
 L:1/8
 K: clef=none
-B3. B-
+B3 B-
 `,
 
 // p22: Unit 23 Section B Criterion 3 -- 6/8 triple
@@ -3567,13 +3583,13 @@ X:2
 M:2/4
 L:1/4
 K: clef=none
-B3.
+B3
 
 X:3
 M:2/4
 L:1/4
 K: clef=none
-B3.-
+B3-
 `,
 
 // p24: Unit 24 Section A Criterion 2 -- 6/8 triple
@@ -3627,7 +3643,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B/B3.-B/
+B/B3-B/
 
 X:2
 M:6/8
@@ -3655,7 +3671,7 @@ X:2
 M:2/4
 L:1/4
 K: clef=none
-BBB B3.
+BBB B3
 
 X:3
 M:2/4
@@ -3705,7 +3721,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-BBB. B3.(3B/B/B/
+BBB. B3(3B/B/B/
 `,
 
 // p30: Unit 26 Section A Criterion 2 -- 2/4 usual combined
@@ -3802,7 +3818,7 @@ K: clef=none
 M:2/4
 L:1/4
 K: clef=none
-(3B/B/B/B B/B//B//z/|B/. B/(3B/B/B/z/|B/. B3.
+(3B/B/B/B B/B//B//z/|B/. B/(3B/B/B/z/|B/. B3
 `,
 
 // p35: Unit 28 Section A Criterion 2 -- 2/4->2/4 combined, single pattern (no E/M/D)
@@ -3849,13 +3865,13 @@ X:2
 M:2/4
 L:1/4
 K: clef=none
-B3.B/B//B//z/
+B3B/B//B//z/
 
 X:3
 M:2/4
 L:1/4
 K: clef=none
-B3.- B/z.
+B3- B/z.
 `,
 
 // p38: Unit 29 Section B Criterion 1 -- 6/8 triple
@@ -3865,7 +3881,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B3.B/BB. B/z
+B3B/BB. B/z
 
 X:2
 M:6/8
@@ -3893,7 +3909,7 @@ X:2
 M:6/8
 L:1/8
 K: clef=none
-B/B/-B3.
+B/B/-B3
 
 X:3
 M:6/8
@@ -3908,7 +3924,7 @@ B/BBB. B/-
 M:6/8
 L:1/8
 K: clef=none
-BBB BBB|BBB B/|BBB BBB|B/ B3.
+BBB BBB|BBB B/|BBB BBB|B/ B3
 `,
 
 // p41: Unit 30 Section A Criterion 2 -- 7/8->5/8 multimetric, single pattern (no E/M/D)
@@ -3917,7 +3933,7 @@ BBB BBB|BBB B/|BBB BBB|B/ B3.
 M:7/8
 L:1/8
 K: clef=none
-B B3.B/|BBB B B3.|B/BB B/|B3.
+B B3B/|BBB B B3|B/BB B/|B3
 `,
 
 // p42: Unit 31 Section A Criterion 1 -- 2/4 duple
@@ -3939,7 +3955,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-B3. z
+B3 z
 `,
 
 // p43: Unit 31 Section A Criterion 2 -- 2/4 duple
@@ -3993,7 +4009,7 @@ X:1
 M:6/8
 L:1/8
 K: clef=none
-B3. B/
+B3 B/
 
 X:2
 M:6/8
@@ -4203,7 +4219,7 @@ X:3
 M:5/8
 L:1/8
 K: clef=none
-BB B3.
+BB B3
 `,
 
 // p55: Unit 35 Section A Criterion 2 -- 5/8 unusual paired
@@ -4296,7 +4312,7 @@ B/B//B//B//B//z/B/|z/B/. z/B/.B/|B/.B/ B/
 M:6/8
 L:1/8
 K: clef=none
-B/z3.|B/BBB. z.|B/BB. B/BB.|B/BB
+B/z3|B/BBB. z.|B/BB. B/BB.|B/BB
 `,
 
 // p61: Unit 36 Section B Criterion 2 -- 6/8 triple, single pattern (no E/M/D)
@@ -4327,7 +4343,7 @@ X:3
 M:5/8
 L:1/8
 K: clef=none
-BB B3.
+BB B3
 `,
 
 // p63: Unit 37 Section A Criterion 2 -- 5/8 unusual paired
@@ -4349,7 +4365,7 @@ X:3
 M:5/8
 L:1/8
 K: clef=none
-BB B3.
+BB B3
 `,
 
 // p64: Unit 37 Section B Criterion 1 -- 7/8 unusual unpaired
@@ -4489,13 +4505,13 @@ X:2
 M:2/4
 L:1/4
 K: clef=none
-B3. B
+B3 B
 
 X:3
 M:2/4
 L:1/4
 K: clef=none
-B3. B
+B3 B
 `,
 
 // p73: Unit 40 Section A Criterion 1 -- 2/4 usual combined
@@ -4549,7 +4565,7 @@ X:1
 M:2/4
 L:1/4
 K: clef=none
-B/B3. B/B/
+B/B3 B/B/
 
 X:2
 M:2/4
@@ -4561,7 +4577,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-B3. B/B/B/.
+B3 B/B/B/.
 `,
 
 // p76: Unit 41 Section A Criterion 2 -- 2/4->5/8 multimetric
@@ -4583,7 +4599,7 @@ X:3
 M:2/4
 L:1/4
 K: clef=none
-B3.B/.
+B3B/.
 `,
 
 // p77: Unit 42 Section A Criterion 1 -- 2/4 duple

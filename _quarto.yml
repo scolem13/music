@@ -29,6 +29,10 @@ website:
           - practice/rhythms.qmd
           - practice/reading-benchmarks.qmd
           - text: "---"
+          - practice/lsa-practice.qmd
+          - practice/lsa-practice-notated.qmd
+          - practice/lsa-rhythm-assessment.qmd
+          - text: "---"
           - practice/assessment-tune.qmd
           - practice/assessment.qmd
           - practice/assessment-rhythm.qmd
@@ -50,6 +54,7 @@ website:
           - teacher/report.qmd
           - text: "---"
           - teacher/lsa-directory.qmd
+          - teacher/lsa-instructions.qmd
           - teacher/lsa-chart.qmd
           - teacher/lsa-analysis.qmd
 

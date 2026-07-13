@@ -71,7 +71,10 @@ roster once this is wired to Supabase.
   <script src="/apps/shared/tonality.js"></script>
   <script src="/apps/shared/audio.js"></script>
   <script src="/apps/shared/establish-button.js"></script>
+  <script src="/apps/lsa/toc.js"></script>
   <script src="/apps/lsa/curriculum.js"></script>
+  <script src="/apps/lsa/instructions.js"></script>
+  <script src="/apps/lsa/response-types.js"></script>
   <script src="/apps/lsa/store.js"></script>
   <script src="/apps/lsa/prompt-engine.js"></script>
   <script src="/apps/lsa/notation.js"></script>

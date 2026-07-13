@@ -130,7 +130,7 @@
     "href": "tools/circle-of-fifths.html",
     "title": "Circle of Fifths",
     "section": "",
-    "text": "Tonality\n      \n        Major (do)\n        Dorian (re)\n        Phrygian (mi)\n        Lydian (fa)\n        Mixo (so)\n        Minor (la)\n        Locrian (ti)\n      \n    \n    \n      \n    \n    \n      Minor type\n      \n        Natural (Aeolian)\n        Harmonic\n      \n    \n  \n  \n    ☾ dark"
+    "text": "Tonality\n      \n        Major (do)\n        Dorian (re)\n        Phrygian (mi)\n        Lydian (fa)\n        Mixo (so)\n        Minor (la)\n        Locrian (ti)\n      \n    \n    \n      Minor type\n      \n        Natural (Aeolian)\n        Harmonic"
   },
   {
     "objectID": "tools/scales.html",
@@ -270,7 +270,7 @@
     "href": "teacher/lsa-directory.html",
     "title": "LSA Directory",
     "section": "",
-    "text": "Sequential organization of Learning Sequence Activities (LSAs) from the Jump Right In tonal and rhythm registers, by unit, skill, and content/context. Unit/skill/content source: LSA-TOC.pdf. Criteria are parsed live from the pattern libraries at apps/patterns/pattern-object.js and apps/rhythms/rhythm-pattern-object.js — a key like t1-1A1 is Tonal Register Book 1, Unit 1, Section A, Criterion 1.\nClick a criterion chip (e.g. A1) to open that criterion’s patterns in the pattern player. Units with no chips haven’t been digitized into the pattern library yet.\n\n\n\n  Tonal Register\n  \n  \n\n  Rhythm Register"
+    "text": "Sequential organization of Learning Sequence Activities (LSAs) from the Jump Right In tonal and rhythm registers, by unit, skill, and content/context. Unit/skill/content source: LSA-TOC.pdf. Criteria are parsed live from the pattern libraries at apps/patterns/pattern-object.js and apps/rhythms/rhythm-pattern-object.js — a key like t1-1A1 is Tonal Register Book 1, Unit 1, Section A, Criterion 1.\nClick a criterion chip (e.g. A1) to open that criterion in the evaluation chart. Units with no chips haven’t been digitized into the pattern library yet.\n\n\n\n  Tonal Register\n  \n  \n\n  Rhythm Register"
   },
   {
     "objectID": "teacher/lsa-analysis.html",
@@ -285,5 +285,33 @@
     "title": "Evaluation Chart",
     "section": "",
     "text": "Learning Sequence Activities seating/evaluation chart. Two students are always cued — mark ① with Enter/Backspace and the next cued student is targeted automatically. Placeholder class of 6 — swap for the real roster once this is wired to Supabase.\n\n  \n\n  \n\n  \n    \n      \n        Register\n        \n          Tonal\n          Rhythm\n        \n      \n      \n        Criterion\n        \n      \n      \n        \n        Show attempt counts\n      \n      \n      \n        Card view\n        Seating chart\n      \n      Reset data\n    \n\n    \n    \n  \n\n  \n    \n  \n\n  \n    \n      ✕\n      \n      Zoom to fit grid (8×5)\n    \n    \n      \n    \n    \n      \n      ✓ Success\n      ✗ Not yet"
+  },
+  {
+    "objectID": "teacher/lsa-instructions.html",
+    "href": "teacher/lsa-instructions.html",
+    "title": "LSA Instructions",
+    "section": "",
+    "text": "Every digitized LSA criterion, in one table, with the instruction text transcribed from its source page (the line just above the E/M/D patterns — e.g. “Students sing patterns using tonal syllables”). Tonal Register Book 1 instructions come from JRI Tonal Register Analysis.docx; the other three books were read directly off the rendered PDF pages. Click a row’s key to open that criterion in the Evaluation Chart.\n\n\n\n  \n  \n    All skills\n  \n  \n    All content / context\n  \n  \n\n\n\n  \n\n\n\nKey\nUnit\n§ / Crit\nTonal key\nSkill\nContent / Context\nInstruction"
+  },
+  {
+    "objectID": "practice/lsa-practice.html",
+    "href": "practice/lsa-practice.html",
+    "title": "LSA Practice",
+    "section": "",
+    "text": "Work through Learning Sequence Activities on your own, continuously — a few class patterns to chant along with before each individual pattern, then your own turn, genuinely graded by ear (just like the rhythm assessment tool), but without showing the notation or the results. Nothing is saved. (Test scope: only Rhythm Unit 1 is wired up so far.)\n\n  \n\n  \n    Click Start, then allow microphone access when your browser asks.\n  \n  \n  GO!\n  \n    ▶ Start Practice\n  \n\n\n\n\n  Enable the mic to begin.\n\n  \n    \n      Collection\n      Pattern\n      Next\n      Random\n      \n      Hear pattern\n      \n      \n    \n  \n\n  \n    \n    \n      \n    \n  \n\n  \n  \n    \n      Enable mic\n      Record attempt\n      Continuous mode\n    \n    \n      \n        \n        \n      \n      \n      \n        \n      \n    \n  \n  \n    \n      \n      \n      \n    \n    \n      \n      \n      \n    \n    \n      Options & diagnostics\n      \n        60\n        100\n        150\n      \n      \n        2\n        4\n      \n      \n        High\n        Medium\n        Low"
+  },
+  {
+    "objectID": "practice/lsa-practice-notated.html",
+    "href": "practice/lsa-practice-notated.html",
+    "title": "LSA Practice (Notated)",
+    "section": "",
+    "text": "Work through Learning Sequence Activities on your own, continuously — a few class patterns to chant along with before each individual pattern, then your own turn, genuinely graded by ear (just like the rhythm assessment tool), following along with the notation for each pattern. Results stay hidden; nothing is saved. (Test scope: only Rhythm Unit 1 is wired up so far.)\n\n  \n\n  \n    Click Start, then allow microphone access when your browser asks.\n  \n  \n    ▶ Start Practice\n  \n  \n\n\n\n\n  Enable the mic to begin.\n\n  \n    \n      Collection\n      Pattern\n      Next\n      Random\n      \n      Hear pattern\n      \n      \n    \n  \n\n  \n    \n      \n    \n  \n\n  \n  \n    \n      Enable mic\n      Record attempt\n      Continuous mode\n      \n    \n    \n      \n        \n        \n      \n      \n      \n        \n      \n    \n  \n  \n    \n      \n      \n      \n    \n    \n      \n      \n      \n    \n    \n      Options & diagnostics\n      \n        60\n        100\n        150\n      \n      \n        2\n        4\n      \n      \n        High\n        Medium\n        Low"
+  },
+  {
+    "objectID": "practice/lsa-rhythm-assessment.html",
+    "href": "practice/lsa-rhythm-assessment.html",
+    "title": "LSA Rhythm Assessment",
+    "section": "",
+    "text": "Enable the mic to begin.\n\n  \n    \n      Pattern (Duple-M-m-2-4)\n      Next\n      Random\n       🔀 Shuffle order\n      ▶ Hear pattern (with count-in)\n      Tempo (macrobeats/min): 90\n        \n    \n  \n\n  \n    \n      Pattern\n      \n    \n    \n      Performed rhythm — your last recording\n      \n        \n      \n    \n  \n\n  \n  \n    \n      \n        Enable mic\n        ● Record attempt\n        ∞ Continuous mode\n        Macrobeat \n      \n    \n\n    \n      Result\n      \n        Listening — clap/tap the rhythm…\n        \n      \n      Enable the mic, pick a pattern, then record — or start Continuous mode.\n      \n        \n          Target\n          You\n        \n        Green = matched attack · red = missed target or extra attack.\n      \n    \n  \n  \n    \n      Recording — saved for manual review\n      \n      ⬇ Download\n      No recording yet.\n    \n\n    \n      Continuous session — all responses in one file\n      \n        ⬇ Download responses\n        ⬇ Download labels (SRT)\n      \n      Run Continuous mode, then Stop to download every response (count-in/model and gaps excluded).\n    \n\n    \n      Options & diagnostics\n      \n        \n          Timing tolerance (± ms)\n          \n            60 (strict)\n            100 (default)\n            150 (lenient)\n          \n        \n        \n          Count-in (manual record)\n          \n            2 macrobeats\n            4 macrobeats\n          \n        \n        \n          Onset sensitivity\n          \n            High\n            Medium\n            Low\n          \n        \n        \n          Metronome\n           audible (headphones)\n           visual\n        \n      \n      \n        🎯 Calibrate latency (speakers)\n        Not calibrated — using the browser's output-latency estimate.\n      \n      \n        Live input level\n        \n        Attacks detected: 0"
   }
 ]
