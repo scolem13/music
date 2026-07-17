@@ -1,5 +1,11 @@
 // ---------- helpers ----------
 const NOTE_NAMES=["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+const _MODE_FULL={'':'Major','maj':'Major','major':'Major',
+  'm':'Minor','min':'Minor','minor':'Minor',
+  'aeo':'Aeolian','aeolian':'Aeolian','dor':'Dorian','dorian':'Dorian',
+  'phr':'Phrygian','phrygian':'Phrygian','lyd':'Lydian','lydian':'Lydian',
+  'mix':'Mixolydian','mixolydian':'Mixolydian','loc':'Locrian','locrian':'Locrian'};
+function kModeLabel(kFieldStr){ const m=/^[A-Ga-g][#b]?\s*([A-Za-z]*)/.exec((kFieldStr||'').trim()); return _MODE_FULL[(m?m[1]:'').toLowerCase()]||''; }
 const midiToFreq=m=>440*Math.pow(2,(m-69)/12);
 const freqToMidiFloat=f=>69+12*Math.log2(f/440);
 const noteName=m=>(window.Tonality&&Tonality.noteName)?Tonality.noteName(m):NOTE_NAMES[((m%12)+12)%12]+(Math.floor(m/12)-1);
@@ -34,6 +40,9 @@ function loadTune(){
   target=AbcTune.melodyNotes(currentAbc);
   try{ const km=/^K:\s*(.+)$/m.exec(currentAbc); const tt=km&&window.Tonality&&Tonality.keyToTonality(km[1]); writtenDoPc=tt?tt.do:0; }catch(e){ writtenDoPc=0; }
   try{ const rm=/^K:\s*([A-Ga-g])([#b]?)/m.exec(currentAbc); writtenRootPc = rm ? ((({C:0,D:2,E:4,F:5,G:7,A:9,B:11})[rm[1].toUpperCase()]+(rm[2]==="#"?1:rm[2]==="b"?-1:0))%12+12)%12 : 0; }catch(e){ writtenRootPc=0; }
+  { const _ks=document.getElementById("keySel"); if(_ks) _ks.value=String(writtenRootPc); }
+  { const _ml=document.getElementById("keyModeLabel");
+    if(_ml){ const _km=/^K:\s*(.+)$/m.exec(currentAbc||''); _ml.textContent=_km?kModeLabel(_km[1]):''; } }
   document.getElementById("tempo").value=Math.min(160,Math.max(40,target.tempoQ));
   document.getElementById("tempoVal").textContent=document.getElementById("tempo").value;
   // Re-filter selectors by new tune's meter, then restore saved selections.
@@ -331,10 +340,16 @@ function positionCursorByTime(ms){
 }
 function renderTune(userAction){
   lastPlayMs=0;
+  const abcEd=document.getElementById('abcEditor');
+  if(abcEd&&document.activeElement!==abcEd) abcEd.value=currentAbc;
   renderChart(); // must precede arrangerAbc (needs tuneChartObj)
   // In combined mode render melody+accompaniment together in #notation.
   const combineNow=combinedScore()&&window.Arranger&&tuneChartObj&&accompStyle()!=="off";
-  const displayAbc=combineNow?arrangerAbc(false,true):null;
+  let displayAbc=combineNow?arrangerAbc(false,true):null;
+  if(displayAbc){
+    const bpr=(tuneChartObj&&tuneChartObj.parsed&&tuneChartObj.parsed.barsPerRow)||4;
+    displayAbc=injectAccompLineBreaks(displayAbc,bpr);
+  }
   const visualObj=ABCJS.renderAbc("notation",displayAbc||previewAbc(),{responsive:"resize",add_classes:true,clickListener:onNoteClick})[0];
   renderAccompNotation();
   setupSynth();
@@ -374,6 +389,7 @@ function renderTune(userAction){
     }
   }
 }
+window.taSetAbc=function(abc){ currentAbc=abc; try{target=AbcTune.melodyNotes(abc);}catch(e){} renderTune(false); };
 // shared iRealPro-style chord chart (same module the Chord Sheet tool uses). Chords
 // follow the CONCERT key (keyTrans); instrument transposition is the player's part only.
 let tuneChartObj=null;
@@ -445,9 +461,8 @@ const ENHARM={0:["C","B♯"],1:["D♭","C♯"],2:["D",null],3:["E♭","D♯"],4:
   6:["G♭","F♯"],7:["G",null],8:["A♭","G♯"],9:["A",null],10:["B♭","A♯"],11:["B","C♭"]};
 let keyAlt=false;
 function keyName(pc){ pc=((pc%12)+12)%12; const e=ENHARM[pc]; return (keyAlt&&e[1])?e[1]:e[0]; }
-function concertPc(){ const el=document.getElementById("keySel"); const v=el?el.value:"written";
-  return (v==="written"||v===""||v==null)?null:parseInt(v,10); }
-function keyTrans(){ const c=concertPc(); if(c==null) return 0; let d=((c-writtenDoPc)%12+12)%12; if(d>6)d-=12; return d; }
+function concertPc(){ const el=document.getElementById("keySel"); const n=parseInt(el?el.value:"",10); return (n>=0&&n<=11)?n:null; }
+function keyTrans(){ const c=concertPc(); if(c==null) return 0; let d=((c-writtenRootPc)%12+12)%12; if(d>6)d-=12; return d; }
 const keyNameAscii=pc=>keyName(pc).replace(/♭/g,"b").replace(/♯/g,"#");
 // Steer the shared tonality from the tune + concert key (so the circle, patterns, etc.
 // follow this page). Publishes the SOUNDING (concert) key — instrument is display-only.
@@ -489,12 +504,12 @@ function saveLast(){
 // keep the Concert/Transposed key menus + labels in sync (transposed = concert + instAdjust)
 function syncKeyUI(){
   const cSel=document.getElementById("keySel"); if(!cSel) return;
-  for(const o of cSel.options) if(o.value!=="written") o.textContent=keyName(parseInt(o.value,10));
+  for(const o of cSel.options) o.textContent=keyName(parseInt(o.value,10));
   const ia=instAdjust(), wrap=document.getElementById("transKeyWrap"), tSel=document.getElementById("transKey"), tLbl=document.getElementById("transKeyLabel");
   if(wrap) wrap.style.display = ia ? "" : "none";
   if(ia && tSel){
     if(tLbl) tLbl.textContent="Transposed Key ("+instSelV()+")";
-    for(const o of tSel.options) if(o.value!=="written") o.textContent=keyName(parseInt(o.value,10)+ia);
+    for(const o of tSel.options) o.textContent=keyName(parseInt(o.value,10)+ia);
     tSel.value=cSel.value;   // mirror the concert selection
   }
 }
@@ -839,8 +854,9 @@ syncKeyUI();        // after all the const helpers above are initialized
   TuneLibrary.build(TUNES);
   function selectById(id){ const rec=TuneLibrary.byId(id); if(!rec) return;
     if(collectionSel.value!==rec.collection){ collectionSel.value=rec.collection; loadCollection(false); }
-    const i=tuneBook.tunes.findIndex(t=>idOf(t.abc)===id); if(i>=0){ tuneSel.selectedIndex=i; loadTune(); } }
-  tunePicker=TuneLibrary.renderPicker(el,{ onSelect:rec=>selectById(rec.id), selectedId:idOf(currentAbc) });
+    const i=tuneBook.tunes.findIndex(t=>t.abc===rec.abc); if(i>=0){ tuneSel.selectedIndex=i; loadTune(); } }
+  tunePicker=TuneLibrary.renderPicker(el,{ onSelect:rec=>selectById(rec.id), selectedId:idOf(currentAbc),
+    facets:["tags","tonality","meter","key","chords","lyrics","startDegree","tonalPattern","chordProgression","rhythmPattern"] });
   tunePicker.setSelected(idOf(currentAbc));
 })();
 // react to key/instrument changes made on other pages (circle, patterns)

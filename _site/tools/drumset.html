@@ -162,6 +162,19 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
     <a class="dropdown-item" href="../practice/assessment-tune.html">
  <span class="dropdown-text">Tune Assessment</span></a>
   </li>  
@@ -234,6 +247,23 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../teacher/report.html">
  <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
   </li>  
     </ul>
   </li>
@@ -367,6 +397,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <div class="column-screen">
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+<script src="../apps/shared/soundfont.js"></script>
 <script src="../apps/shared/abcjs-basic.js"></script>
   <style>
 /* ── drummachine.css ── */
@@ -752,6 +783,14 @@ details[open] > .ds-collapsible-summary::before { transform: rotate(90deg); }
             </select>
           </div>
           <div class="inline-controls mt-2">
+            <label class="mb-0" for="techniqueSelect" style="white-space:nowrap">Technique:</label>
+            <select id="techniqueSelect" class="form-select form-select-sm" style="width:auto">
+              <option value="stick">Stick</option>
+              <option value="mallet">Mallet</option>
+              <option value="brush">Brush</option>
+            </select>
+          </div>
+          <div class="inline-controls mt-2">
             <label class="mb-0" for="rideDecayRange" style="white-space:nowrap">Decay: <span id="rideDecayValue">2.2</span>s</label>
             <input type="range" id="rideDecayRange" min="0.1" max="4.5" step="0.1" value="2.2" class="form-range" style="width:100px">
           </div>
@@ -975,7 +1014,8 @@ details[open] > .ds-collapsible-summary::before { transform: rotate(90deg); }
 // 1) Audio — ABCJS soundfont for all drums except ride; Web Audio synthesis for ride.
 
 // ABCJS soundfont (GM percussion bank)
-const SF = 'https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/';
+let SF = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';
+getSoundfontUrl().then(function(url) { SF = url; });
 const DRUM_MIDI = {
   hihat: 42, hihatopen: 46, crash: 49, snare: 38,
   hitom: 50, lowtom: 45, floortom: 43,
@@ -1064,10 +1104,23 @@ const RIDE_PARAMS = {
   bell:     { base: 480, decay: 1.8,  noiseAmt: 0.0,  vol: 0.65, ratios: BELL_RATIOS, oscType: 'sine' },
 };
 
-function synthCymbal(ctx, t, { base, decay, noiseAmt, vol, lpFreq, ratios, oscType }, out) {
+function synthCymbal(ctx, t, { base, decay, noiseAmt, vol, lpFreq, ratios, oscType }, out, technique = 'stick') {
+  const isMallet = technique === 'mallet';
+  const isBrush  = technique === 'brush';
+
+  // Attack bloom for mallet (90ms) and brush (30ms); stick is instantaneous.
+  const attackTime = isMallet ? 0.09 : isBrush ? 0.03 : 0;
+  const totalDecay = attackTime + decay;
+
   const master = ctx.createGain();
-  master.gain.setValueAtTime(vol, t);
-  master.gain.exponentialRampToValueAtTime(0.001, t + decay);
+  if (attackTime > 0) {
+    master.gain.setValueAtTime(0.001, t);
+    master.gain.linearRampToValueAtTime(isBrush ? vol * 0.55 : vol, t + attackTime);
+  } else {
+    master.gain.setValueAtTime(vol, t);
+  }
+  master.gain.exponentialRampToValueAtTime(0.001, t + totalDecay);
+
   if (lpFreq) {
     const lp = ctx.createBiquadFilter();
     lp.type = 'lowpass'; lp.frequency.value = lpFreq; lp.Q.value = 0.5;
@@ -1075,22 +1128,43 @@ function synthCymbal(ctx, t, { base, decay, noiseAmt, vol, lpFreq, ratios, oscTy
   } else {
     master.connect(out);
   }
-  // All sines — square/sawtooth add their own harmonic series on top of inharmonic
-  // ratios, which produces electronic buzz rather than metallic shimmer.
+
+  // Mallet: steeper gain rolloff across partials emphasises the fundamental body.
+  // Brush: tonal partials recede so the noise swish dominates.
+  const partialMult = isBrush ? 0.30 : 1.0;
+  const partialPow  = isMallet ? 1.8  : 1.0;
   (ratios || CYM_RATIOS).forEach((r, i) => {
     const osc = ctx.createOscillator();
     osc.type = oscType || 'sine';
     osc.frequency.value = base * r;
-    const g = ctx.createGain(); g.gain.value = 0.28 / (i + 1);
-    osc.connect(g); g.connect(master); osc.start(t); osc.stop(t + decay + 0.1);
+    const g = ctx.createGain();
+    g.gain.value = (0.28 / Math.pow(i + 1, partialPow)) * partialMult;
+    osc.connect(g); g.connect(master);
+    osc.start(t); osc.stop(t + totalDecay + 0.1);
   });
-  if (noiseAmt > 0) {
+
+  // Brush amplifies noise and shifts filter to a swish bandpass (~2.5 kHz).
+  // Mallet quiets and raises the highpass so less high-end shimmer survives.
+  const effectiveNoise = isBrush
+    ? Math.max(noiseAmt * 2.5, 0.50)
+    : isMallet ? noiseAmt * 0.45 : noiseAmt;
+
+  if (effectiveNoise > 0) {
     const ns = ctx.createBufferSource();
     ns.buffer = noiseBuffer; ns.loop = true;
-    // Highpass (not bandpass) for an open, natural wash across the full high range
-    const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 3500;
-    const ng = ctx.createGain(); ng.gain.value = noiseAmt * 0.55;
-    ns.connect(hp); hp.connect(ng); ng.connect(master); ns.start(t); ns.stop(t + decay + 0.1);
+    const ng = ctx.createGain(); ng.gain.value = effectiveNoise * 0.55;
+    if (isBrush) {
+      const bp = ctx.createBiquadFilter(); bp.type = 'bandpass'; bp.frequency.value = 2500; bp.Q.value = 1.2;
+      ns.connect(bp); bp.connect(ng);
+    } else if (isMallet) {
+      const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 5000;
+      ns.connect(hp); hp.connect(ng);
+    } else {
+      const hp = ctx.createBiquadFilter(); hp.type = 'highpass'; hp.frequency.value = 3500;
+      ns.connect(hp); hp.connect(ng);
+    }
+    ng.connect(master);
+    ns.start(t); ns.stop(t + totalDecay + 0.1);
   }
 }
 
@@ -1099,7 +1173,7 @@ function playDrumNote(instrument) {
   if (instrument === 'ride') {
     initAudio();
     synthCymbal(audioCtx, audioCtx.currentTime,
-      { ...RIDE_PARAMS[currentRideVariant], decay: rideDecay }, rideIn);
+      { ...RIDE_PARAMS[currentRideVariant], decay: rideDecay }, rideIn, rideTechnique);
     return;
   }
   const midi = DRUM_MIDI[instrument];
@@ -1292,6 +1366,8 @@ const meterFilterSelect     = document.getElementById('meterFilter');
 const swingRange            = document.getElementById('swingRange');
 const swingValueLabel       = document.getElementById('swingValue');
 const rideSelect            = document.getElementById('rideSelect');
+const techniqueSelect       = document.getElementById('techniqueSelect');
+let rideTechnique = 'stick';
 const rideDecayRange        = document.getElementById('rideDecayRange');
 const rideDecayValueLabel   = document.getElementById('rideDecayValue');
 const reverbRange           = document.getElementById('reverbRange');
@@ -1893,6 +1969,7 @@ rideSelect.addEventListener('change', () => {
   rideDecayRange.value = rideDecay.toFixed(1);
   rideDecayValueLabel.textContent = rideDecay.toFixed(1);
 });
+techniqueSelect.addEventListener('change', () => { rideTechnique = techniqueSelect.value; });
 
 rideDecayRange.addEventListener('input', () => {
   rideDecay = parseFloat(rideDecayRange.value);

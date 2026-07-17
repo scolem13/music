@@ -126,14 +126,16 @@
     }
 
     // pass 2: cumulative time → onsets (ties merge into previous note)
-    const notes = [], chords = []; let t = 0, prevTie = false;
+    // events mirrors notes but also keeps rests as explicit tokens (type:'note'|'rest'),
+    // for tools that need the full note/rest sequence (e.g. rhythm-pattern matching).
+    const notes = [], chords = [], events = []; let t = 0, prevTie = false;
     for (const e of ev){
       if (e.type === "chord"){ const mm = chordMidis(e.name); if (mm) chords.push({ onset: t, midis: mm, name: e.name }); continue; }
-      if (e.type === "rest"){ t += e.dur; prevTie = false; continue; }
-      if (prevTie && notes.length){ notes[notes.length-1].dur += e.dur; t += e.dur; prevTie = e.tie; continue; }
-      notes.push({ midi: e.midi, onset: t, dur: e.dur }); t += e.dur; prevTie = e.tie;
+      if (e.type === "rest"){ events.push({ type:"rest", dur: e.dur }); t += e.dur; prevTie = false; continue; }
+      if (prevTie && notes.length){ notes[notes.length-1].dur += e.dur; events[events.length-1].dur += e.dur; t += e.dur; prevTie = e.tie; continue; }
+      notes.push({ midi: e.midi, onset: t, dur: e.dur }); events.push({ type:"note", midi: e.midi, dur: e.dur }); t += e.dur; prevTie = e.tie;
     }
-    return { notes, chords, total: t, lq, meter: M, tempoQ: Q, tempoNote: tempoNoteQ(abc) };
+    return { notes, chords, events, total: t, lq, meter: M, tempoQ: Q, tempoNote: tempoNoteQ(abc) };
   }
 
   const api = { melodyNotes, keyAccidentals, chordMidis };

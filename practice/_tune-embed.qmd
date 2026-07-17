@@ -15,6 +15,7 @@
 #app-root .ta-panel:not([open])>summary{color:#6b7280}
 #app-root .ta-panel-body{padding-top:.8rem}
 #app-root #tuneChart{max-width:100%}
+#app-root #abcEditor{display:block;box-sizing:border-box;width:100%;min-height:120px;padding:.4rem .5rem;font-family:monospace;font-size:.82rem;border:1px solid #dee2e6;border-radius:.375rem;background:var(--bs-body-bg,#fff);color:var(--bs-body-color,#212529);resize:vertical}
 #app-root #tunePicker .tl-results{max-height:300px}
 #app-root #accompNotation svg{width:100%!important;height:auto!important}
 /* ½ / 1× / 2× time feel segmented buttons */
@@ -74,16 +75,16 @@
           <option value="Tuba">Tuba</option><option value="Percussion">Percussion</option>
         </select></div>
       <div><label for="keySel">Concert Key</label>
+        <div style="display:flex;align-items:center;gap:.4rem">
         <select id="keySel">
-          <option value="written" selected>As written</option>
           <option value="0">C</option><option value="1">D♭</option><option value="2">D</option>
           <option value="3">E♭</option><option value="4">E</option><option value="5">F</option>
           <option value="6">G♭</option><option value="7">G</option><option value="8">A♭</option>
           <option value="9">A</option><option value="10">B♭</option><option value="11">B</option>
-        </select></div>
+        </select><span id="keyModeLabel" style="color:var(--bs-secondary-color,#6c757d);font-size:.88rem;white-space:nowrap"></span>
+        </div></div>
       <div id="transKeyWrap" style="display:none"><label for="transKey" id="transKeyLabel">Transposed Key</label>
         <select id="transKey">
-          <option value="written" selected>As written</option>
           <option value="0">C</option><option value="1">D♭</option><option value="2">D</option>
           <option value="3">E♭</option><option value="4">E</option><option value="5">F</option>
           <option value="6">G♭</option><option value="7">G</option><option value="8">A♭</option>
@@ -170,6 +171,12 @@
   </details>
 
   <div class="score-stack">
+    <details class="ta-panel" id="panelAbc">
+      <summary>ABC source</summary>
+      <div class="ta-panel-body">
+        <textarea id="abcEditor" spellcheck="false"></textarea>
+      </div>
+    </details>
     <details class="ta-panel" id="panelNotation" open>
       <summary>Notation</summary>
       <div class="ta-panel-body">
@@ -197,6 +204,9 @@
     </details>
   </div>
 
+  <details class="ta-panel" id="panelAssessment">
+    <summary>Assessment</summary>
+    <div class="ta-panel-body">
   <div class="cols">
   <div class="col">
     <div class="card">
@@ -246,19 +256,23 @@
     </div>
   </div>
   </div>
+    </div>
+  </details>
 <div id="taHiddenNotation" style="position:absolute;left:-9999px;top:0;width:1px;height:1px;overflow:hidden"></div>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
-<script src="/apps/tune-assessment/abc-tune.js?v=2"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/session-log.js"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>
 <script src="/apps/shared/tonality.js?v=4"></script>
 <script src="/apps/shared/abc-transpose.js?v=1"></script>
 <script src="/apps/shared/tune-chart.js?v=11"></script>
-<script src="/apps/shared/tune-library.js?v=6"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/shared/rhythm-cells.js?v=1"></script>
+<script src="/apps/shared/tune-library.js?v=7"></script>
 <script src="/apps/shared/satb.js?v=1"></script>
 <script src="/apps/shared/arranger.js?v=16"></script>
-<script src="/apps/tune-assessment/app.js?v=33"></script>
+<script src="/apps/tune-assessment/app.js?v=37"></script>
 </div>
 <script src="/apps/shared/audio.js?v=3"></script>
 <script src="/apps/shared/establish-button.js"></script>
@@ -266,10 +280,12 @@
 (function(){
   // Map from TOC anchor IDs to collapsible panel IDs.
   var ENTRIES=[
-    {href:'sec-tunes',    panelId:'panelTunes'},
-    {href:'sec-setup',    panelId:'panelSetup'},
-    {href:'sec-notation', panelId:'panelNotation'},
-    {href:'sec-chart',    panelId:'panelChart'},
+    {href:'sec-tunes',       panelId:'panelTunes'},
+    {href:'sec-setup',       panelId:'panelSetup'},
+    {href:'sec-abc',         panelId:'panelAbc'},
+    {href:'sec-notation',    panelId:'panelNotation'},
+    {href:'sec-chart',       panelId:'panelChart'},
+    {href:'sec-assessment',  panelId:'panelAssessment'},
   ];
   var MAP={}; ENTRIES.forEach(function(e){ MAP[e.href]=e.panelId; });
 
@@ -335,6 +351,13 @@
   // Re-check when any <details> opens or closes (panel height changes).
   document.addEventListener('toggle', updateActive, true);
   updateActive();
+
+  // Wire the ABC editor textarea → update chart + notation on edit.
+  (function(){
+    var ta=document.getElementById('abcEditor'); if(!ta) return;
+    var t;
+    ta.addEventListener('input',function(){ clearTimeout(t); t=setTimeout(function(){ if(window.taSetAbc) window.taSetAbc(ta.value); },500); });
+  })();
 })();
 </script>
 ```

@@ -957,10 +957,16 @@
     var handOn = handId && hdF > 0;
     var handDisp = opts.showHandDrums && !opts.dynamics && handOn
       && (M.beats <= 4 || isComp || !!M.beatGrouping);
-    var scoreStr = (drumDisp && handDisp) ? "%%score {1 2} drums hdrums"
-                 : drumDisp  ? "%%score {1 2} drums"
-                 : handDisp  ? "%%score {1 2} hdrums"
-                 :             "%%score {1 2}";
+    var hasMel = !!(opts.melody && opts.melody.body && volFrac(opts, "melody") > 0);
+    var scoreStr = hasMel
+      ? (drumDisp && handDisp) ? "%%score Mel {1 2} drums hdrums"
+        : drumDisp ? "%%score Mel {1 2} drums"
+        : handDisp ? "%%score Mel {1 2} hdrums"
+        :            "%%score Mel {1 2}"
+      : (drumDisp && handDisp) ? "%%score {1 2} drums hdrums"
+        : drumDisp ? "%%score {1 2} drums"
+        : handDisp ? "%%score {1 2} hdrums"
+        :            "%%score {1 2}";
     if (opts.percOnly && (drumDisp || handDisp)){
       var percHead = ["X:1","T:Percussion","M:" + M.meterStr,"L:1/8","Q:1/4=" + tempo, scoreStr];
       if (drumsOn || handOn) percHead = percHead.concat(drumHeader(M, drumsOn ? drumId : null, drF, opts.timeFeel, handOn ? handId : null, hdF));

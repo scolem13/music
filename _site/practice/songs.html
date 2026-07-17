@@ -87,6 +87,15 @@ ul.task-list li input[type="checkbox"] {
 <style>
   .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
   [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
 </style>
 
 
@@ -125,27 +134,27 @@ ul.task-list li input[type="checkbox"] {
         <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../practice/rhythm-sequences.html">
- <span class="dropdown-text">Practice: Rhythm Sequences</span></a>
+ <span class="dropdown-text">Rhythm Sequences</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/tonal-sequences.html">
- <span class="dropdown-text">Practice: Tonal Sequences</span></a>
+ <span class="dropdown-text">Tonal Sequences</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/songs.html">
- <span class="dropdown-text">Practice: Song Builder</span></a>
+ <span class="dropdown-text">Song Builder</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/tunes.html">
- <span class="dropdown-text">Practice: Tunes</span></a>
+ <span class="dropdown-text">Tunes</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/patterns.html">
- <span class="dropdown-text">Practice: Tonal Patterns</span></a>
+ <span class="dropdown-text">Tonal Patterns</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/rhythms.html">
- <span class="dropdown-text">Practice: Rhythm Patterns</span></a>
+ <span class="dropdown-text">Rhythm Patterns</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/reading-benchmarks.html">
@@ -153,16 +162,29 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
     <a class="dropdown-item" href="../practice/assessment-tune.html">
- <span class="dropdown-text">Assessment: Tune (pitch + rhythm) — prototype</span></a>
+ <span class="dropdown-text">Tune Assessment</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/assessment.html">
- <span class="dropdown-text">Assessment: Tonal Accuracy</span></a>
+ <span class="dropdown-text">Tonal Accuracy</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/assessment-rhythm.html">
- <span class="dropdown-text">Assessment: Rhythmic Accuracy</span></a>
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
   </li>  
     </ul>
   </li>
@@ -225,6 +247,23 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../teacher/report.html">
  <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
   </li>  
     </ul>
   </li>
@@ -1312,9 +1351,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 
     function renderFullPaper_s(abcString) {
         const visualObj = ABCJS.renderAbc("full-paper", abcString, { add_classes: true, visualTranspose: tonalVisTranspose_s })[0];
-        new ABCJS.synth.CreateSynth().init({
-            visualObj: visualObj,
-            options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+        getSoundfontUrl().then(function(sfUrl) {
+            return new ABCJS.synth.CreateSynth().init({
+                visualObj: visualObj,
+                options: { soundFontUrl: sfUrl }
+            });
         }).then(function() {
             if (synthControl_s) {
                 synthControl_s.setTune(visualObj, true).catch(function(error) { console.warn("Audio problem:", error); });
@@ -1477,6 +1518,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 </div>
 
+<script src="../apps/shared/soundfont.js"></script>
 <script src="../apps/shared/abcjs-basic.js"></script>
 <script src="../apps/rhythms/rhythm-pattern-object.js"></script>
 <script src="../apps/patterns/pattern-object.js"></script>
