@@ -1,0 +1,18 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>band harness</title>
+<body>
+<h3>band harness</h3>
+<button id="play">play</button> <button id="stop">stop</button> <span id="st"></span>
+<pre id="log"></pre>
+<script src="/apps/shared/tune-chart.js"></script>
+<script src="/apps/shared/soundfont.js"></script>
+<script>if (!/[?&]cdn=1/.test(location.search)) window.getSoundfontUrl = function (){ return Promise.resolve("/__sf/MusyngKite/"); };</script>
+<script src="/__harness/band/harmony.js"></script>
+<script src="/__harness/band/bass.js"></script>
+<script src="/__harness/band/comp.js"></script>
+<script src="/__harness/band/drums.js"></script>
+<script src="/apps/shared/band/sounds.js"></script>
+<script src="/apps/shared/band/player.js"></script>
+<script src="/__harness/harness.js"></script>
+</body>

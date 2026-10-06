@@ -1,0 +1,644 @@
+```{=html}
+<style>
+/* ── Backing Track: a swing trio that follows an ABC chord chart ─────────── */
+#bt-root{max-width:1040px;margin:0 auto;padding:1.25rem 1rem 4rem;color:var(--site-ink,#1e1c18);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+#bt-root *{box-sizing:border-box}
+/* Quarto stamps its page grid onto divs inside .column-screen; keep ours plain blocks. */
+#bt-root.page-columns,#bt-root .page-columns{display:block!important;grid-template-columns:none!important}
+#bt-root .bt-intro{border-left:3px solid var(--site-accent,#3fc2b4);padding-left:1rem;margin:0 0 1.5rem;
+  color:var(--site-ink-2,#5c5246);font-size:.95rem;line-height:1.6;max-width:680px}
+
+#bt-root .bt-panel{background:var(--site-surface,#fff);border:1px solid var(--site-border,#e0d8ce);border-radius:10px;
+  padding:.9rem 1rem;margin-top:1rem}
+#bt-root .bt-row{display:flex;align-items:flex-end;gap:.9rem 1.25rem;flex-wrap:wrap}
+#bt-root .bt-field{display:flex;flex-direction:column;gap:.3rem;min-width:0}
+#bt-root .bt-field>label,#bt-root .bt-group-label{font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);
+  font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--site-ink-3,#9a8d7e);margin:0}
+#bt-root select,#bt-root input[type=number]{font:inherit;font-size:.9rem;height:2.2rem;padding:0 .55rem;
+  border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface,#fff);color:inherit}
+#bt-root input[type=number]{width:4.6rem;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-variant-numeric:tabular-nums}
+#bt-root input[type=range]{accent-color:var(--site-accent-dk,#2b9c90);height:2.2rem;margin:0}
+#bt-root :is(select,input,button,textarea,summary):focus-visible{outline:2px solid var(--site-accent-dk,#2b9c90);outline-offset:2px}
+
+/* transport */
+#bt-root .bt-play{min-width:7.5rem;height:2.6rem;padding:0 1.1rem;border:0;border-radius:8px;cursor:pointer;
+  background:var(--site-accent,#3fc2b4);color:var(--site-accent-text,#0a4f47);
+  font-family:var(--font-display,'Oswald',system-ui,sans-serif);font-size:1rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase}
+#bt-root .bt-play:hover{background:#52cdc0}
+#bt-root .bt-play[data-state="playing"]{background:var(--site-accent-text,#0a4f47);color:#fff}
+#bt-root .bt-play[data-state="loading"]{background:var(--site-surface-2,#f2ede5);color:var(--site-ink-2,#5c5246)}
+#bt-root .bt-play:disabled{opacity:.5;cursor:not-allowed}
+#bt-root .bt-beats{display:flex;gap:.4rem;align-items:center;height:2.6rem}
+#bt-root .bt-beats i{width:.62rem;height:.62rem;border-radius:50%;background:var(--site-border,#e0d8ce)}
+#bt-root .bt-beats i.on{background:var(--site-accent,#3fc2b4)}
+#bt-root .bt-beats i.on:first-child{background:var(--site-accent-text,#0a4f47)}
+#bt-root .bt-tempo{flex:1 1 15rem}
+#bt-root .bt-inline{display:flex;align-items:center;gap:.6rem}
+#bt-root .bt-inline input[type=range]{flex:1 1 auto;min-width:6rem}
+#bt-root .bt-unit{font-size:.8rem;color:var(--site-ink-3,#9a8d7e)}
+#bt-root .bt-status{margin:.7rem 0 0;min-height:1.3em;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);
+  font-size:.78rem;color:var(--site-ink-2,#5c5246)}
+#bt-root .bt-status.is-error{color:var(--site-fail,#b5251c)}
+
+/* band options + mixer */
+#bt-root .bt-mixer{display:flex;gap:.9rem 1.5rem;flex-wrap:wrap;width:100%;margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+#bt-root .bt-mixer .bt-field{flex:1 1 7rem;max-width:14rem}
+#bt-root .bt-mixer input[type=range]{width:100%}
+#bt-root [hidden]{display:none!important}
+
+/* chart display options + the note about pinned voicings */
+#bt-root .bt-chartbar{margin-top:.8rem}
+#bt-root .bt-chartbar .bt-field{flex:1 1 11rem;max-width:22rem}
+#bt-root .bt-chartbar select{width:100%;max-width:100%}
+#bt-root .bt-chartbar .bt-btn{height:2.2rem;white-space:normal;line-height:1.15;padding:.2rem .9rem}
+#bt-root .bt-pinnote{display:flex;align-items:center;gap:.5rem .9rem;flex-wrap:wrap;margin:0 0 1rem;padding:.55rem .8rem;font-size:.88rem;
+  border:1px solid var(--site-accent-dk,#2b9c90);border-radius:8px;background:var(--site-accent-bg,rgba(63,194,180,.12))}
+#bt-root .bt-pinnote.is-info{border-color:var(--site-border,#e0d8ce);background:var(--site-surface-2,#f2ede5)}
+#bt-root .bt-pinnote span{flex:1 1 14rem}
+#bt-root .bt-pinnote .bt-btn{height:1.9rem;padding:0 .7rem;font-size:.84rem}
+#bt-root .bt-pinnote .bt-x{width:1.9rem;padding:0;font-size:1.1rem;line-height:1}
+
+/* ABC editor */
+#bt-root .bt-abc summary,#bt-root .bt-fold summary{cursor:pointer;font-weight:600;font-size:.92rem}
+/* notation + MIDI export */
+#bt-root .bt-fold .bt-row{margin-top:.8rem;align-items:center}
+#bt-root .bt-check{display:inline-flex;align-items:center;gap:.35rem;font-size:.9rem;margin:0;cursor:pointer}
+#bt-root .bt-check input{accent-color:var(--site-accent-dk,#2b9c90)}
+#bt-root .bt-btn{height:2.2rem;padding:0 .9rem;border:1px solid var(--site-accent-dk,#2b9c90);border-radius:7px;background:var(--site-surface,#fff);
+  color:var(--site-accent-text,#0a4f47);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+#bt-root .bt-btn:hover{background:var(--site-accent-bg,rgba(63,194,180,.12))}
+#bt-root .bt-score{margin-top:.8rem;overflow-x:auto}
+#bt-root .bt-score svg{max-width:100%;height:auto}
+#bt-root .bt-abc textarea{display:block;width:100%;min-height:13rem;margin-top:.8rem;padding:.7rem .8rem;resize:vertical;
+  border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface-2,#f2ede5);color:inherit;
+  font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.84rem;line-height:1.55;tab-size:2}
+#bt-root .bt-hint{margin:.6rem 0 0;font-size:.84rem;color:var(--site-ink-2,#5c5246);max-width:70ch}
+#bt-root .bt-hint code{font-size:.82rem;background:var(--site-surface-2,#f2ede5);padding:.05rem .3rem;border-radius:4px;color:inherit}
+#bt-root .bt-hint.bt-warn{color:var(--site-warn-ink,#664d03)}
+#bt-root .bt-hint.bt-warn:empty{display:none}
+
+@media (max-width:720px){
+  #bt-root .bt-mixer .bt-field{flex:1 1 5rem;max-width:none}
+  #bt-root .bt-play{flex:1 1 auto}
+}
+@media (prefers-reduced-motion:reduce){ #bt-root *{transition:none!important} }
+/* practice: start bar, cycle, tempo steps */
+#bt-root .bt-check{display:inline-flex;align-items:center;gap:.35rem;font-size:.88rem;white-space:nowrap;cursor:pointer}
+#bt-root .bt-check input{accent-color:var(--site-accent-dk,#2b9c90)}
+#bt-root #bt-practice input[type=number]{width:4.2rem}
+#bt-chart .tc-bar.bt-cyc{background:rgba(216,167,83,.2)}
+#bt-chart .tc-bar.bt-cyc.tc-live{background:var(--tc-live-soft)}
+#bt-chart .tc-bar.bt-start::before{content:"\25B6";position:absolute;top:3px;right:5px;font-size:.6rem;line-height:1;color:var(--site-accent-dk,#2b9c90)}
+</style>
+
+<div id="bt-root">
+  <p class="bt-intro">A swing trio that follows the changes below: upright bass, piano and drums. Pick the changes, set the key and tempo, and play along. The changes are plain ABC, so you can rewrite them at the bottom of the page.</p>
+
+  <div class="bt-pinnote" id="bt-pinnote" role="status" hidden>
+    <span id="bt-pinnote-text"></span>
+    <button type="button" class="bt-btn" id="bt-pin-clear">Clear pins</button>
+    <button type="button" class="bt-btn bt-x" id="bt-pin-dismiss" aria-label="Dismiss this note">&times;</button>
+  </div>
+
+  <div id="bt-chart"></div>
+
+  <div class="bt-panel bt-chartbar">
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-roman">Chord symbols</label>
+        <select id="bt-roman"><option value="off">Letters</option><option value="only">Roman numerals</option><option value="both">Both</option></select></div>
+      <div class="bt-field"><label for="bt-chartfor">Chart for</label>
+        <select id="bt-chartfor"><option value="concert">Concert pitch</option>
+          <option value="bb">B&#9837; instruments (soprano &amp; tenor sax, trumpet, clarinet)</option>
+          <option value="eb">E&#9837; instruments (alto &amp; baritone sax)</option></select></div>
+      <button type="button" class="bt-btn" id="bt-send">Show these voicings in Chord Sheet</button>
+    </div>
+    <p class="bt-hint" id="bt-chartfor-hint" hidden>Only the chart is transposed. The band, the Key menu, the ABC, the notation and the MIDI file stay in concert pitch.</p>
+    <p class="bt-hint" id="bt-send-note" role="status"></p>
+  </div>
+
+  <div class="bt-panel">
+    <div class="bt-row">
+      <button type="button" id="bt-play" class="bt-play" data-state="idle">&#9654; Play</button>
+      <div class="bt-beats" id="bt-beats" aria-hidden="true"></div>
+      <div class="bt-field bt-tempo">
+        <label for="bt-tempo">Tempo</label>
+        <div class="bt-inline">
+          <input type="range" id="bt-tempo" min="40" max="300" step="1" value="120">
+          <input type="number" id="bt-tempo-n" min="40" max="300" step="1" value="120" aria-label="Tempo in beats per minute">
+          <span class="bt-unit" id="bt-tempo-unit">bpm</span>
+        </div>
+      </div>
+      <div class="bt-field"><label for="bt-key">Key</label><select id="bt-key"></select></div>
+      <div class="bt-field"><label for="bt-changes">Changes</label><select id="bt-changes"></select></div>
+      <div class="bt-field"><label for="bt-meter">Meter</label><select id="bt-meter"></select></div>
+    </div>
+    <p class="bt-status" id="bt-status"></p>
+  </div>
+
+  <div class="bt-panel">
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-bass">Bass line</label>
+        <select id="bt-bass"></select></div>
+      <div class="bt-field"><label for="bt-comp">Comping</label><select id="bt-comp"></select></div>
+      <div class="bt-field"><label for="bt-rhythm">Comping rhythm</label><select id="bt-rhythm"></select></div>
+      <div class="bt-field"><label for="bt-voicing">Chord voicings</label><select id="bt-voicing"></select></div>
+      <div class="bt-field"><label for="bt-feel">Feel</label>
+        <select id="bt-feel"><option value="swing">Swing</option><option value="straight">Straight eighths</option></select></div>
+      <div class="bt-field"><label for="bt-variation" title="Strict plays each pattern exactly as chosen. Loose lets the band start sparse, build over four choruses and lift into each new one.">Variation</label>
+        <select id="bt-variation"><option value="0">Strict</option><option value="0.6" selected>Some</option><option value="1">Loose</option></select></div>
+      <div class="bt-field"><label for="bt-ride">Cymbal</label>
+        <select id="bt-ride"><option value="ride">Ride</option><option value="hat">Closed hi-hat</option><option value="bell">Ride bell</option></select></div>
+      <div class="bt-field"><label for="bt-countin">Count-in</label>
+        <select id="bt-countin"><option value="1">1 bar</option><option value="2">2 bars</option><option value="0">None</option></select></div>
+      <div class="bt-field"><label for="bt-choruses">Choruses</label>
+        <select id="bt-choruses"><option value="0">Loop</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select></div>
+    </div>
+    <div class="bt-mixer" role="group" aria-label="Mix">
+      <div class="bt-field"><label for="bt-vol-bass">Bass volume</label><input type="range" id="bt-vol-bass" min="0" max="150" value="100"></div>
+      <div class="bt-field"><label for="bt-vol-comp" id="bt-vol-comp-label">Piano volume</label><input type="range" id="bt-vol-comp" min="0" max="150" value="100"></div>
+      <div class="bt-field"><label for="bt-vol-drums">Drums volume</label><input type="range" id="bt-vol-drums" min="0" max="150" value="100"></div>
+    </div>
+  </div>
+
+  <div class="bt-panel" id="bt-practice">
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-start">Start at bar</label><input type="number" id="bt-start" min="1" value="1"></div>
+      <div class="bt-field"><span class="bt-group-label">Cycle</span>
+        <div class="bt-inline">
+          <label class="bt-check"><input type="checkbox" id="bt-cyc-on"> Loop bars</label>
+          <input type="number" id="bt-cyc-from" min="1" value="1" aria-label="Cycle from bar"><span class="bt-unit">to</span>
+          <input type="number" id="bt-cyc-to" min="1" value="4" aria-label="Cycle to bar">
+        </div></div>
+      <div class="bt-field"><span class="bt-group-label">Tempo change</span>
+        <div class="bt-inline">
+          <label class="bt-check"><input type="checkbox" id="bt-step-on"> Each repeat</label>
+          <input type="number" id="bt-step-a" min="-60" max="60" value="8" aria-label="Tempo change in beats per minute at each repeat"><span class="bt-unit">then</span>
+          <input type="number" id="bt-step-b" min="-60" max="60" placeholder="same" aria-label="Optional alternating tempo change, for example minus 3"><span class="bt-unit">bpm</span>
+        </div></div>
+    </div>
+    <p class="bt-hint">Click a bar on the chart to start there. With Loop bars on, clicking a later bar sets the end of the cycle. The second tempo box alternates with the first: 8 then -3 goes up 8, back 3, up 8, back 3. Stopping returns to the tempo you set.</p>
+  </div>
+
+  <details class="bt-panel bt-fold" id="bt-notation">
+    <summary>Notation</summary>
+    <div class="bt-row">
+      <label class="bt-check"><input type="checkbox" id="bt-nt-drums"> Show drums</label>
+      <button type="button" class="bt-btn" id="bt-nt-refresh">Show the latest bars</button>
+    </div>
+    <div class="bt-score" id="bt-score"></div>
+    <p class="bt-hint" id="bt-nt-hint">What the band just played, one chorus at a time; it refreshes at the end of each chorus. Swung eighths are written as plain eighths; in 6/8 and 12/8 each beat is three written eighths. The bass is written an octave above where it sounds, and note lengths are rounded to eighths.</p>
+  </details>
+
+  <details class="bt-panel bt-fold" id="bt-export">
+    <summary>Export MIDI</summary>
+    <div class="bt-row">
+      <label class="bt-check"><input type="checkbox" id="bt-mid-bass" checked> Bass</label>
+      <label class="bt-check"><input type="checkbox" id="bt-mid-comp" checked> Comping</label>
+      <label class="bt-check"><input type="checkbox" id="bt-mid-drums" checked> Drums</label>
+      <div class="bt-field"><label for="bt-mid-range">Bars</label>
+        <select id="bt-mid-range"><option value="chorus">Last full chorus</option><option value="last">Last N bars</option><option value="all">Everything played</option></select></div>
+      <div class="bt-field" id="bt-mid-n-field" hidden><label for="bt-mid-n">N</label><input type="number" id="bt-mid-n" min="1" max="999" step="1" value="12"></div>
+      <button type="button" class="bt-btn" id="bt-mid-go">Download .mid</button>
+    </div>
+    <p class="bt-hint" id="bt-mid-note" role="status">Exports the notes the band actually played, with the swing written into the timing. If nothing has been played yet, the bars are generated fresh with the current settings.</p>
+  </details>
+
+  <details class="bt-panel bt-abc">
+    <summary>Edit the changes (ABC)</summary>
+    <textarea id="bt-abc" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Changes as ABC" aria-describedby="bt-abc-hint"></textarea>
+    <p class="bt-hint" id="bt-abc-hint">The chord symbols in quotes are what the band reads. Where a symbol sits in the bar sets the beat it lands on, so <code>"Cm7"z2 "F7"z2</code> gives each chord two beats. The rests only fill out the bar. The <code>M:</code> line sets the meter: the band plays 3/4 as a jazz waltz and counts 6/8 and 12/8 in dotted quarters.</p>
+    <p class="bt-hint bt-warn" id="bt-abc-note" role="status"></p>
+  </details>
+</div>
+
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abc-transpose.js?v=2"></script>
+<script src="/apps/shared/tune-chart.js?v=13"></script>
+<script src="/apps/shared/tune-library.js?v=1"></script>
+<script src="/apps/shared/voicings.js?v=1"></script>
+<script src="/apps/shared/band/harmony.js?v=3"></script>
+<script src="/apps/shared/band/bass.js?v=2"></script>
+<script src="/apps/shared/band/comp.js?v=3"></script>
+<script src="/apps/shared/band/catalog.js?v=1"></script>
+<script src="/apps/shared/band/drums.js?v=1"></script>
+<script src="/apps/shared/band/sounds.js?v=1"></script>
+<script src="/apps/shared/band/player.js?v=91"></script>
+<script src="/apps/shared/band/midi.js?v=1"></script>
+<script src="/apps/shared/band/notation.js?v=1"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var statusEl = $("bt-status"), playBtn = $("bt-play");
+  function setStatus(msg, isError){ statusEl.textContent = msg || ""; statusEl.classList.toggle("is-error", !!isError); }
+  if (typeof TuneChart === "undefined" || typeof BandPlayer === "undefined" || typeof BandHarmony === "undefined"){
+    setStatus("The band didn't load. Reload the page to try again.", true); playBtn.disabled = true; return;
+  }
+
+  // ---- the changes: plain ABC. The band reads the quoted chord symbols and where they
+  // sit in the bar; the rests only fill each bar. Written in F, transposed by the Key menu.
+  var KEYS = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  // Each preset is its bars (one or two chords each); the Meter menu decides how they are written.
+  // `one` = rest lengths for a whole bar, `two` = for a bar shared by two chords. In 6/8 and 12/8
+  // the band counts dotted quarters, so the tempo is dotted quarters per minute.
+  var METERS = [
+    { id:"4/4",  label:"4/4",  L:"1/4", one:"4",  two:["2","2"], tempo:120 },
+    { id:"3/4",  label:"3/4",  L:"1/4", one:"3",  two:["2",""],  tempo:132 },
+    { id:"6/8",  label:"6/8",  L:"1/8", one:"6",  two:["3","3"], tempo:72 },
+    { id:"12/8", label:"12/8", L:"1/8", one:"12", two:["6","6"], tempo:60 }
+  ];
+  function meterDef(id){ return METERS.filter(function(m){ return m.id === id; })[0] || null; }
+  var PRESETS = [
+    { id:"basic", label:"Basic blues", title:"Basic Blues", bars:"F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7" },
+    { id:"quick", label:"Quick-change blues", title:"Quick-Change Blues", bars:"F7|Bb7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7" },
+    { id:"jazz", label:"Jazz blues", title:"Jazz Blues", bars:"F7|Bb7|F7|Cm7 F7|Bb7|Bdim7|F7|Am7 D7|Gm7|C7|F7 D7|Gm7 C7" }
+  ];
+  function presetAbc(p, meterId){
+    var m = meterDef(meterId) || METERS[0], bars = p.bars.split("|").map(function(b){
+      var c = b.split(" ");
+      return c.length > 1 ? '"' + c[0] + '"z' + m.two[0] + ' "' + c[1] + '"z' + m.two[1] : '"' + c[0] + '"z' + m.one; });
+    var lines = []; for (var i = 0; i < bars.length; i += 4) lines.push(bars.slice(i, i + 4).join(" | ") + (i + 4 >= bars.length ? " |]" : " |"));
+    return "X:1\nT:" + p.title + "\nM:" + m.id + "\nL:" + m.L + "\nK:F\n" + lines.join("\n");
+  }
+  // Comping instruments. The voicing styles each offers come from BandHarmony.styleList, which asks
+  // the shared ChordVoicings library (and falls back to the band's own list if it did not load).
+  var COMPING = [
+    { id:"piano", label:"Piano", name:"Piano", inst:"piano" },
+    { id:"guitar", label:"Guitar", name:"Guitar", inst:"guitar" }
+  ];
+  // Bass lines and comping rhythms: names and descriptions live in the shared catalog, which the
+  // Accompaniment Styles page lists too.
+  var CAT = window.BandCatalog || { bass: [{ id:"walk", label:"Walking" }, { id:"two", label:"Two-feel" }], comp: [{ id:"auto", label:"Varied" }] };
+
+  // ---- the chart can be written for a transposing instrument (display only) ----
+  // B-flat instruments read a major 2nd above concert, E-flat instruments a major 6th above. The key
+  // names are the usual ones (F# not Gb, Db not C#); AbcTranspose then spells every chord for that key.
+  var WRITTEN = {
+    bb: { semis: 2, short: "B♭ instruments", maj: ["D","Eb","E","F","F#","G","Ab","A","Bb","B","C","Db"], min: ["D","Eb","E","F","F#","G","G#","A","Bb","B","C","C#"] },
+    eb: { semis: 9, short: "E♭ instruments", maj: ["A","Bb","B","C","Db","D","Eb","E","F","F#","G","Ab"], min: ["A","Bb","B","C","C#","D","Eb","E","F","F#","G","G#"] }
+  };
+  function isMinorKey(keyField){ return /^[A-Ga-g][#b]?\s*(m|min|minor|aeo|aeolian)\b/i.test(keyField || ""); }
+  function writtenKeyName(keyField, keyPc, family){
+    var w = WRITTEN[family]; if (!w) return null;
+    return (isMinorKey(keyField) ? w.min : w.maj)[keyPc];
+  }
+  function flatGlyph(name){ return String(name).replace(/b/g, "♭").replace(/#/g, "♯"); }
+  // the chart's text for a given family: { abc, note } (concert pitch: the ABC as it is, no note)
+  function chartView(concertAbc, parsed, family){
+    var w = WRITTEN[family], key;
+    if (!w || typeof AbcTranspose === "undefined" || !(key = writtenKeyName(parsed.keyField, parsed.keyPc, family))) return { abc: concertAbc, note: "" };
+    var text = concertAbc; try { text = AbcTranspose.transpose(concertAbc, key); } catch (e) { return { abc: concertAbc, note: "" }; }
+    return { abc: text, note: w.short + " · concert " + flatGlyph((parsed.keyField || "").trim()) };
+  }
+
+  // ---- state ----
+  // `abc` / `parsedC` are the changes in CONCERT pitch: what the band, the notation and the MIDI file read.
+  // `chart` shows them (maybe re-written for a transposing instrument); its bars line up with parsedC's.
+  var abc = "", parsedC = null, chart = null, player = null, state = "idle", liveSrc = -1, editTimer = null, beatEls = [];
+  var pins = null;                       // pinned voicings handed over by Chord Sheet: { map:{"idx:pos":midis}, count }
+
+  function hasChords(parsed){ return parsed.bars.some(function(b){ return b.chords.some(function(c){ return !c.nc; }); }); }
+  function buildBeats(n){
+    var box = $("bt-beats"); if (beatEls.length === n) return;
+    box.innerHTML = ""; beatEls = [];
+    for (var i = 0; i < n; i++){ var d = document.createElement("i"); box.appendChild(d); beatEls.push(d); }
+  }
+  function showBeat(b){ beatEls.forEach(function(el, i){ el.classList.toggle("on", i === b); }); }
+  function showLive(src){ liveSrc = src; if (chart) chart.setLive(src); }
+
+  // Parse + show a new set of changes; hand them to the band (takes effect from its next bar).
+  function applyAbc(text, fromEditor){
+    var parsed = null; try { parsed = TuneChart.parse(text); } catch (e) {}
+    if (!parsed || !hasChords(parsed)){
+      $("bt-abc-note").textContent = 'No chord symbols found yet. Put each one in quotes before its beat, like "F7"z4.';
+      return false;
+    }
+    $("bt-abc-note").textContent = "";
+    abc = text; parsedC = parsed;
+    showChart();
+    $("bt-key").value = KEYS[parsed.keyPc];
+    showMeter(parsed);
+    if (!fromEditor) $("bt-abc").value = text;
+    if (player) player.setChart(parsedC);
+    practiceSync();
+    return true;
+  }
+  // draw the chart: concert pitch or written for the chosen instrument, letters and/or Roman numerals.
+  // The numerals follow the chart's own key, so they read the same in every transposition.
+  function showChart(){
+    var view = chartView(abc, parsedC, $("bt-chartfor").value), vp = null;
+    try { vp = TuneChart.parse(view.abc); } catch (e) {}
+    if (!vp || vp.bars.length !== parsedC.bars.length){ vp = parsedC; view.note = ""; }
+    if (chart){ chart.setKeyNote(view.note); chart.setRoman($("bt-roman").value); chart.setTune(vp); chart.setLive(liveSrc); }
+    else chart = TuneChart.render($("bt-chart"), vp, { header:true, preferFlats:true, roman:$("bt-roman").value, romanFn:BandHarmony.roman, keyNote:view.note });
+    $("bt-chartfor-hint").hidden = !view.note;
+  }
+  // What follows from the chart's meter: the beat dots, what the tempo counts, and which controls apply.
+  function showMeter(parsed){
+    var mi = BandHarmony.meterInfo(parsed.meterN, parsed.meterD), id = parsed.meterN + "/" + parsed.meterD, sel = $("bt-meter");
+    buildBeats(mi.beats);
+    $("bt-tempo-unit").textContent = mi.compound ? "dotted quarters / min" : "bpm";
+    $("bt-tempo-n").setAttribute("aria-label", mi.compound ? "Tempo in dotted quarter notes per minute" : "Tempo in beats per minute");
+    var other = sel.querySelector('option[data-other]');
+    if (meterDef(id)){ sel.value = id; if (other) other.hidden = true; }
+    else { if (!other){ other = document.createElement("option"); other.setAttribute("data-other", "1"); sel.appendChild(other); }
+      other.value = id; other.textContent = id; other.hidden = false; sel.value = id; }
+    // 6/8 and 12/8 have one feel of their own (three eighths to the beat)
+    $("bt-feel").disabled = mi.compound;
+    $("bt-feel").title = mi.compound ? "6/8 and 12/8 are played with three eighths to the beat; Swing / Straight does not apply." : "";
+  }
+  function loadPreset(id){
+    var p = PRESETS.filter(function(x){ return x.id === id; })[0]; if (!p) return;
+    var key = $("bt-key").value || "F", text = presetAbc(p, $("bt-meter").value);
+    if (key !== "F"){ try { text = AbcTranspose.transpose(text, key); } catch (e) {} }
+    clearPins("you picked different changes");
+    applyAbc(text, false);
+  }
+
+  // ---- menus ----
+  function fill(sel, items){ sel.innerHTML = ""; items.forEach(function(it){
+    var o = document.createElement("option"); o.value = it.id; o.textContent = it.label; sel.appendChild(o); }); }
+  fill($("bt-key"), KEYS.map(function(k){ return { id:k, label:k.replace("b", "♭") }; }));
+  fill($("bt-changes"), PRESETS); fill($("bt-meter"), METERS);
+  (function(){ var o = document.createElement("option"); o.value = "custom"; o.textContent = "Custom"; o.hidden = true; $("bt-changes").appendChild(o); })();
+  fill($("bt-comp"), COMPING);
+  fill($("bt-bass"), CAT.bass); fill($("bt-rhythm"), CAT.comp);
+  [["bt-bass", CAT.bass], ["bt-rhythm", CAT.comp]].forEach(function(p){            // the description as a hover hint
+    Array.prototype.forEach.call($(p[0]).options, function(o, i){ if (p[1][i].desc) o.title = p[1][i].desc; }); });
+  function compDef(){ var id = $("bt-comp").value; return COMPING.filter(function(c){ return c.id === id; })[0] || COMPING[0]; }
+  // the Voicings menu for the current instrument; `want` (a style id) is kept when that instrument offers it
+  function syncVoicings(want){
+    var c = compDef(), list = BandHarmony.styleList(c.inst); fill($("bt-voicing"), list);
+    $("bt-voicing").value = list.some(function(s){ return s.id === want; }) ? want : BandHarmony.defaultStyle(c.inst);
+    $("bt-vol-comp-label").textContent = c.name + " volume";
+  }
+  $("bt-comp").parentNode.hidden = COMPING.length < 2;        // nothing to choose until a second instrument exists
+  function bandOpts(){ var c = compDef(); return { bassFeel: $("bt-bass").value, comp: c.inst, compRhythm: $("bt-rhythm").value, voicing: $("bt-voicing").value,
+    feel: $("bt-feel").value, variation: parseFloat($("bt-variation").value), ride: $("bt-ride").value, pins: pins ? pins.map : null }; }
+  $("bt-key").value = "F";
+  syncVoicings();
+
+  function tempo(){ var v = parseInt($("bt-tempo-n").value, 10); return Math.min(300, Math.max(40, isNaN(v) ? 120 : v)); }
+  function vol(part){ return (parseInt($("bt-vol-" + part).value, 10) || 0) / 100; }
+
+  // ---- log of the bars exactly as the band generated them (newest last) ----
+  var barLog = [], LOG_MAX = 800, abcjsLoad = null;
+  function logBar(rec){
+    if (rec.bar === 0 && !rec.ending) barLog = [];                       // a new performance starts a new log
+    barLog.push(rec); if (barLog.length > LOG_MAX) barLog.splice(0, barLog.length - LOG_MAX);
+    if (rec.index === rec.length - 1 && !rec.ending && $("bt-notation").open) drawNotation();
+  }
+  function played(){ return barLog.filter(function(r){ return !r.ending; }); }
+  // the last complete chorus, or null
+  function lastChorus(){
+    var b = played();
+    for (var i = b.length - 1; i >= 0; i--){
+      if (b[i].index === b[i].length - 1 && i - b[i].length + 1 >= 0 && b[i - b[i].length + 1].index === 0) return b.slice(i - b[i].length + 1, i + 1);
+    }
+    return null;
+  }
+  function freshBars(n){ return BandMidi.generate(parsedC, { bars: n, tempo: tempo(), opts: bandOpts() }); }
+  function keyField(){ return (parsedC.keyField || "C").trim(); }
+  function loadAbcjs(){
+    if (window.ABCJS) return Promise.resolve();
+    if (!abcjsLoad) abcjsLoad = new Promise(function(res, rej){ var sc = document.createElement("script");
+      sc.src = "/apps/shared/abcjs-basic.js"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
+    return abcjsLoad;
+  }
+  function drawNotation(){
+    var bars = lastChorus() || (played().length ? played().slice(-16) : null), fresh = !bars;
+    if (fresh) bars = freshBars((parsedC.playOrder || parsedC.bars).length);
+    loadAbcjs().then(function(){
+      ABCJS.renderAbc("bt-score", BandNotation.toAbc(bars, { key: keyField(), drums: $("bt-nt-drums").checked }),
+        { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6 });
+      $("bt-nt-refresh").textContent = fresh ? "Write out another chorus" : "Show the latest bars";
+    }).catch(function(){ $("bt-score").textContent = "The notation library didn't load."; });
+  }
+  function exportMidi(){
+    var parts = ["bass","comp","drums"].filter(function(p){ return $("bt-mid-" + p).checked; }), note = $("bt-mid-note");
+    if (!parts.length){ note.textContent = "Tick at least one part to export."; return; }
+    var mode = $("bt-mid-range").value, n = Math.max(1, parseInt($("bt-mid-n").value, 10) || 12), b = played(), bars, what;
+    if (mode === "chorus") bars = lastChorus();
+    else if (mode === "last") bars = b.length ? b.slice(-n) : null;
+    else bars = b.length ? b : null;
+    if (bars) what = "as played";
+    else { bars = freshBars(mode === "last" ? n : (parsedC.playOrder || parsedC.bars).length); what = "freshly generated, since " + (b.length ? "no full chorus has been played yet" : "nothing has been played yet"); }
+    var bytes = BandMidi.build(bars, { parts: parts });
+    var name = (parsedC.title || "backing-track").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") + "-" + keyField() + "-" + Math.round(bars[0].tempo) + "bpm.mid";
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([bytes], { type: "audio/midi" })); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+    window.__btLastMidi = bytes;                                         // for tests
+    note.textContent = "Saved " + name + ": " + bars.length + " bars, " + parts.join(" + ") + " (" + what + ").";
+  }
+
+  // ---- pinned voicings (from Chord Sheet) and the hand-off both ways ----
+  // Chord Sheet leaves { v:1, from:"chord-sheet", at, abc, comp, voicing, pins:[{ bar, pos, sym, midis }] } in
+  // localStorage.bandHandoff and opens this page with ?from=chord-sheet. The pins reach the band as opts.pins.
+  var HANDOFF_MAX_AGE = 10 * 60 * 1000;
+  function pinNote(text, withClear, info){
+    $("bt-pinnote-text").textContent = text; $("bt-pin-clear").hidden = !withClear;
+    $("bt-pinnote").classList.toggle("is-info", !!info); $("bt-pinnote").hidden = false;
+  }
+  function setPins(map, count){
+    pins = count ? { map: map, count: count } : null;
+    if (player) player.setOpts(bandOpts());
+    if (pins) pinNote("Playing the voicings pinned in Chord Sheet (" + count + " chord" + (count === 1 ? "" : "s") + "). Chords without a pin use the Voicings menu.", true, false);
+  }
+  // pins are fixed pitches, so they stop applying once the key or the changes move
+  function clearPins(why){
+    if (!pins) return;
+    pins = null; if (player) player.setOpts(bandOpts());
+    pinNote(why ? "Pinned voicings cleared because " + why + ". The band is choosing its own voicings again." : "Pinned voicings cleared. The band is choosing its own voicings again.", false, true);
+  }
+  function readHandoff(){
+    var raw = null, h = null;
+    try { raw = localStorage.getItem("bandHandoff"); h = raw ? JSON.parse(raw) : null; } catch (e) { h = null; }
+    if (!h || h.from !== "chord-sheet") return null;
+    try { localStorage.removeItem("bandHandoff"); } catch (e) {}
+    if (h.v !== 1 || typeof h.abc !== "string" || !(Date.now() - h.at < HANDOFF_MAX_AGE) || !(h.at - Date.now() < HANDOFF_MAX_AGE)) return { stale: true };
+    return h;
+  }
+  // Links from the Accompaniment Styles page preselect the band: ?bass=riff&rhythm=charleston&feel=straight&comp=guitar
+  function applyQuery(){
+    var q = {}; location.search.replace(/[?&]([a-z]+)=([^&]*)/g, function(_, k, v){ q[k] = decodeURIComponent(v); });
+    function pick(id, v){ var el = $(id); if (v && Array.prototype.some.call(el.options, function(o){ return o.value === v; })){ el.value = v; return true; } return false; }
+    var any = pick("bt-feel", q.feel); any = pick("bt-bass", q.bass) || any; any = pick("bt-rhythm", q.rhythm) || any;
+    if (pick("bt-comp", q.comp)){ syncVoicings(); any = true; }
+    if (q.bass === "riff" && !q.feel) $("bt-feel").value = "straight";
+    if (any) player.setOpts(bandOpts());
+  }
+  function loadHandoff(){
+    if (!/[?&]from=chord-sheet(&|$)/.test(location.search)) return;
+    var h = readHandoff();
+    try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
+    if (!h) return;
+    if (h.stale || !applyAbc(h.abc, false)){
+      pinNote("The voicings from Chord Sheet didn't come through (they expire after ten minutes). Send them again from Chord Sheet.", false, true); return; }
+    $("bt-changes").value = "custom";
+    $("bt-comp").value = h.comp === "guitar" ? "guitar" : "piano";
+    if (h.comp === "guitar") $("bt-rhythm").value = "four";
+    syncVoicings(h.voicing);
+    var list = (h.pins || []).filter(function(p){ return p && isFinite(p.bar) && isFinite(p.pos) && Array.isArray(p.midis) && p.midis.length &&
+      p.midis.every(function(m){ return isFinite(m) && m >= 0 && m <= 127; }); });
+    var map = BandHarmony.pinMap(BandHarmony.buildForm(parsedC, 0), list);
+    setPins(map, Object.keys(map).length);
+    if (!pins) pinNote("Loaded the changes from Chord Sheet. None of its pinned voicings matched a chord, so the band chooses its own.", false, true);
+    player.setOpts(bandOpts());
+  }
+  // the most recent complete chorus as the band played it (or one generated now), handed to Chord Sheet
+  function sendToChordSheet(){
+    var note = $("bt-send-note"), bars = lastChorus(), what = "from the last chorus played";
+    if (!bars){ bars = freshBars((parsedC.playOrder || parsedC.bars).length); what = "from a chorus generated with the current settings"; }
+    var o = bars[0].opts || bandOpts(), inst = o.comp === "guitar" ? "guitar" : "piano";
+    var style = BandHarmony.hasStyle(inst, o.voicing) ? o.voicing : BandHarmony.defaultStyle(inst);
+    var seen = {}, chords = BandHarmony.asPlayed(bars, { style: style, inst: inst }).filter(function(c){     // each different chord once
+      if (seen[c.sym]) return false; seen[c.sym] = 1; return true; }).map(function(c){ return { sym: c.sym, midis: c.midis }; });
+    var payload = { v: 1, from: "backing-track", at: Date.now(), key: keyField(), comp: inst, voicing: style, chords: chords };
+    try { localStorage.setItem("bandHandoff", JSON.stringify(payload)); }
+    catch (e) { note.textContent = "Couldn't pass the voicings on: this browser is blocking storage for the page."; return; }
+    window.__btLastHandoff = payload;                                    // for tests
+    note.textContent = "Sent " + chords.length + " different chords " + what + " to Chord Sheet.";
+    if (!window.open("/tools/chord-sheet.html?from=backing-track", "_blank")) location.href = "/tools/chord-sheet.html?from=backing-track";
+  }
+
+  // ---- the band ----
+  function onState(s){
+    state = s; playBtn.setAttribute("data-state", s);
+    playBtn.innerHTML = s === "playing" ? "&#9632; Stop" : s === "loading" ? "Loading&hellip;" : "&#9654; Play";
+    if (s === "idle"){ showLive(-1); showBeat(-1); setStatus(""); }
+  }
+  loadPreset("basic");
+  player = BandPlayer.create({
+    parsed: parsedC, tempo: tempo(), transpose: 0,
+    instruments: ["bass", "piano", "guitar", "kit"],
+    countIn: parseInt($("bt-countin").value, 10), choruses: parseInt($("bt-choruses").value, 10),
+    opts: bandOpts(),
+    volumes: { bass: vol("bass"), comp: vol("comp"), drums: vol("drums") },
+    onState: onState,
+    onLoadProgress: function(done, total){ if (state === "loading") setStatus("Loading sounds " + done + " of " + total); },
+    onBar: function(info){
+      showLive(info.countIn ? -1 : info.src);
+      setStatus(info.countIn ? "Count-in" : "Chorus " + (info.chorus + 1) + " · bar " + (info.index + 1));
+    },
+    onBeat: function(info){ showBeat(info.beat); },
+    onTempo: function(bpm){ $("bt-tempo").value = bpm; $("bt-tempo-n").value = bpm; },
+    onBarEvents: function(rec){ logBar(rec); }
+  });
+
+  function toggle(){
+    if (state !== "idle"){ player.stop(); return; }
+    player.play().catch(function(){
+      onState("idle");
+      setStatus("Couldn't load the instrument sounds. Check your connection and try again.", true);
+    });
+  }
+
+  applyQuery();
+  loadHandoff();
+
+  // ---- practice: start bar, cycle, tempo steps ----
+  // Bars are FORM bars (the order the band plays them), numbered from 1 in the fields.
+  var formSrc = [];
+  function numIn(id, lo, hi, dflt){ var v = parseInt($(id).value, 10); return isNaN(v) ? dflt : Math.min(hi, Math.max(lo, v)); }
+  function practice(){
+    var n = formSrc.length || 1, a = numIn("bt-cyc-from", 1, n, 1), b = numIn("bt-cyc-to", 1, n, n), t;
+    if (b < a){ t = a; a = b; b = t; }
+    return { n: n, start: numIn("bt-start", 1, n, 1), cyc: $("bt-cyc-on").checked, from: a, to: b };
+  }
+  function markChart(){
+    var p = practice();
+    Array.prototype.forEach.call($("bt-chart").querySelectorAll(".tc-bar[data-bar]"), function(el){
+      var fi = formSrc.indexOf(parseInt(el.getAttribute("data-bar"), 10)) + 1;
+      el.classList.toggle("bt-cyc", p.cyc && fi >= p.from && fi <= p.to);
+      el.classList.toggle("bt-start", !p.cyc && fi === p.start);
+    });
+  }
+  function practiceSync(){
+    if (!player || !parsedC) return;
+    formSrc = BandHarmony.buildForm(parsedC, 0).map(function(b){ return b.src; });
+    var p = practice();
+    ["bt-start", "bt-cyc-from", "bt-cyc-to"].forEach(function(id){ $(id).max = p.n; });
+    $("bt-start").value = p.start; $("bt-cyc-from").value = p.from; $("bt-cyc-to").value = p.to;
+    $("bt-start").disabled = p.cyc;                               // a cycle starts at its own first bar
+    player.setStartBar((p.cyc ? p.from : p.start) - 1);
+    player.setCycle(p.cyc ? p.from - 1 : null, p.to - 1);
+    var sa = parseInt($("bt-step-a").value, 10), sb = parseInt($("bt-step-b").value, 10);
+    player.setTempoSteps($("bt-step-on").checked && !isNaN(sa) ? (isNaN(sb) ? [sa] : [sa, sb]) : null);
+    markChart();
+  }
+  ["bt-start", "bt-cyc-on", "bt-cyc-from", "bt-cyc-to", "bt-step-on", "bt-step-a", "bt-step-b"].forEach(function(id){
+    $(id).addEventListener("change", practiceSync); });
+  $("bt-chart").addEventListener("click", function(e){
+    var el = e.target.closest ? e.target.closest(".tc-bar[data-bar]") : null; if (!el) return;
+    var fi = formSrc.indexOf(parseInt(el.getAttribute("data-bar"), 10)) + 1; if (fi < 1) return;
+    var p = practice();
+    if (!p.cyc) $("bt-start").value = fi;
+    else if (fi < p.from) $("bt-cyc-from").value = fi;
+    else $("bt-cyc-to").value = fi;
+    practiceSync();
+  });
+  // the chart is redrawn for key, Roman numeral and instrument changes: put the marks back each time
+  if (window.MutationObserver) new MutationObserver(markChart).observe($("bt-chart"), { childList: true, subtree: true });
+  practiceSync();
+
+  // ---- wire ----
+  // Start fetching the sounds on the first touch of any control, so Play is ready sooner.
+  $("bt-root").addEventListener("pointerdown", function(){ player.load().catch(function(){}); }, { once:true });
+  playBtn.addEventListener("click", toggle);
+  $("bt-tempo").addEventListener("input", function(){ $("bt-tempo-n").value = $("bt-tempo").value; player.setTempo(tempo()); });
+  $("bt-tempo-n").addEventListener("change", function(){ var t = tempo(); $("bt-tempo-n").value = t; $("bt-tempo").value = t; player.setTempo(t); });
+  $("bt-key").addEventListener("change", function(){
+    clearPins("you changed the key");
+    var text = abc; try { text = AbcTranspose.transpose(abc, $("bt-key").value); } catch (e) {}
+    applyAbc(text, false);
+  });
+  $("bt-changes").addEventListener("change", function(){ loadPreset($("bt-changes").value); });
+  // A new meter re-writes the chosen preset and moves the tempo to a usual one for it. Changes that
+  // were typed in or handed over keep their own M: line, so the menu goes back to showing that.
+  $("bt-meter").addEventListener("change", function(){
+    var m = meterDef($("bt-meter").value), ch = $("bt-changes").value;
+    if (!m || ch === "custom"){ if (parsedC) showMeter(parsedC); $("bt-abc-note").textContent = ch === "custom" ? "These changes set their own meter: edit the M: line in the ABC below." : ""; return; }
+    loadPreset(ch);
+    $("bt-tempo").value = m.tempo; $("bt-tempo-n").value = m.tempo; player.setTempo(tempo());
+  });
+  $("bt-bass").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-feel").addEventListener("change", function(){
+    // the boogaloo riff belongs to straight eighths and the walking line to swing: follow the feel
+    var straight = $("bt-feel").value === "straight", b = $("bt-bass");
+    if (straight && b.value !== "riff" && CAT.bass.some(function(x){ return x.id === "riff"; })) b.value = "riff";
+    else if (!straight && b.value === "riff") b.value = "walk";
+    player.setOpts(bandOpts());
+  });
+  $("bt-rhythm").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-variation").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-ride").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-comp").addEventListener("change", function(){ syncVoicings($("bt-voicing").value); player.setOpts(bandOpts()); });
+  $("bt-voicing").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-countin").addEventListener("change", function(){ player.setCountIn(parseInt($("bt-countin").value, 10)); });
+  $("bt-choruses").addEventListener("change", function(){ player.setChoruses(parseInt($("bt-choruses").value, 10)); });
+  ["bass","comp","drums"].forEach(function(part){
+    $("bt-vol-" + part).addEventListener("input", function(){ player.setVolume(part, vol(part)); }); });
+  $("bt-abc").addEventListener("input", function(){
+    clearTimeout(editTimer);
+    editTimer = setTimeout(function(){ if (applyAbc($("bt-abc").value, true)){ $("bt-changes").value = "custom"; clearPins("you edited the changes"); } }, 300);
+  });
+  $("bt-roman").addEventListener("change", function(){ chart.setRoman($("bt-roman").value); chart.setLive(liveSrc); });
+  $("bt-chartfor").addEventListener("change", showChart);
+  $("bt-send").addEventListener("click", sendToChordSheet);
+  $("bt-pin-clear").addEventListener("click", function(){ clearPins(""); });
+  $("bt-pin-dismiss").addEventListener("click", function(){ $("bt-pinnote").hidden = true; });
+  document.addEventListener("keydown", function(e){                 // SPACE = play / stop
+    if (e.code !== "Space") return; var a = document.activeElement;
+    if (a && /^(INPUT|SELECT|TEXTAREA|BUTTON|SUMMARY)$/.test(a.tagName)) return;
+    e.preventDefault(); toggle();
+  });
+  // ---- what was played: notation + MIDI export (both read the bar log) ----
+  $("bt-notation").addEventListener("toggle", function(){ if ($("bt-notation").open) drawNotation(); });
+  $("bt-nt-drums").addEventListener("change", drawNotation);
+  $("bt-nt-refresh").addEventListener("click", drawNotation);
+  $("bt-mid-range").addEventListener("change", function(){ $("bt-mid-n-field").hidden = $("bt-mid-range").value !== "last"; });
+  $("bt-mid-go").addEventListener("click", exportMidi);
+  window.addEventListener("pagehide", function(){ if (state !== "idle") player.stop(); });
+})();
+</script>
+```

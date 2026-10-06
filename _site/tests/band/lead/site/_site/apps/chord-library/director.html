@@ -1,0 +1,3611 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Director Keyboard | Musical Wonders</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<style>
+@font-face {
+  font-family: "MW Neutra Demi";
+  src: url("/brand/fonts/NeutraText-Demi.otf") format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "MW Neutra Bold Alt";
+  src: url("/brand/fonts/NeutraText-BoldAlt.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --mw-mint: #7ac4b4;
+  --mw-teal: #00acc3;
+  --mw-deep-teal: #0d6f7f;
+  --mw-pink: #f4bbca;
+  --mw-rose: #d989a4;
+  --mw-ink: #163933;
+  --mw-paper: #f7fffd;
+  --mw-border: #abd9d0;
+  --mw-body-font: "MW Neutra Demi", "Avenir Next", "Segoe UI", sans-serif;
+  --mw-display-font: "MW Neutra Bold Alt", "Avenir Next", sans-serif;
+}
+
+body.mw-legacy-page {
+  margin: 0;
+  color: var(--mw-ink);
+  background-image:
+    linear-gradient(180deg, rgba(248, 255, 252, 0.88), rgba(248, 255, 252, 0.93)),
+    url("/brand/backgrounds/MW_paleturquoise_bg.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 620px auto;
+  font-family: var(--mw-body-font);
+}
+
+body.mw-legacy-page h1,
+body.mw-legacy-page h2,
+body.mw-legacy-page h3,
+body.mw-legacy-page h4,
+body.mw-legacy-page h5,
+body.mw-legacy-page .panel-title {
+  font-family: var(--mw-display-font);
+  color: var(--mw-ink);
+  letter-spacing: 0.01em;
+}
+
+body.mw-legacy-page .container {
+  width: min(1120px, 92vw);
+}
+
+.mw-legacy-nav {
+  --bs-navbar-padding-y: 0;
+  --bs-navbar-padding-x: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1040;
+  margin-bottom: 1.5rem !important;
+  backdrop-filter: blur(8px);
+  background-image:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 253, 250, 0.94)),
+    url("/brand/patterns/SquarePattern_White.svg");
+  background-repeat: no-repeat, repeat;
+  background-size: cover, 200px auto;
+  border-bottom: 1px solid rgba(171, 217, 208, 0.86);
+  box-shadow: 0 8px 20px rgba(22, 57, 51, 0.08);
+}
+
+.mw-legacy-nav .container-fluid {
+  width: min(1120px, 92vw);
+  margin: 0 auto;
+  min-height: 74px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.mw-legacy-nav .navbar-brand {
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin-right: auto;
+}
+
+.mw-legacy-nav .navbar-brand img {
+  width: min(300px, 40vw);
+  height: auto;
+  display: block;
+}
+
+.mw-legacy-nav ul {
+  padding-left: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.mw-legacy-nav li {
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.mw-legacy-nav a {
+  text-decoration: none !important;
+}
+
+.mw-legacy-nav [role="button"] {
+  margin: 0 !important;
+}
+
+.mw-legacy-nav .navbar-nav {
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 7px;
+  margin-left: auto;
+}
+
+.mw-legacy-nav .nav-link,
+.mw-legacy-nav .dropdown-item {
+  font-family: var(--mw-display-font);
+  letter-spacing: 0.02em;
+  font-size: 0.84rem;
+  line-height: 1.1;
+}
+
+.mw-legacy-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.58);
+  color: var(--mw-ink);
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mw-legacy-nav .navbar-collapse {
+  flex-grow: 0;
+  justify-content: flex-end;
+}
+
+.mw-legacy-nav .dropdown-toggle::after {
+  content: "▾";
+  border: 0;
+  margin-left: 6px;
+  font-size: 0.62rem;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.mw-legacy-nav .nav-link:hover,
+.mw-legacy-nav .nav-link:focus,
+.mw-legacy-nav .nav-link.show,
+.mw-legacy-nav .dropdown-toggle.show {
+  background: #ffffff;
+  border-color: #c6e9e1;
+  color: var(--mw-deep-teal);
+  box-shadow: none !important;
+  outline: 0;
+}
+
+.mw-legacy-nav .dropdown-menu {
+  right: 0;
+  left: auto;
+  min-width: 220px !important;
+  display: none !important;
+  gap: 6px !important;
+  margin-top: 8px !important;
+  padding: 8px !important;
+  border-radius: 12px !important;
+  border: 1px solid rgba(171, 217, 208, 0.9) !important;
+  background: rgba(255, 255, 255, 0.98) !important;
+  box-shadow: 0 14px 24px rgba(22, 57, 51, 0.12) !important;
+}
+
+.mw-legacy-nav .dropdown-menu.show {
+  display: grid !important;
+}
+
+.mw-legacy-nav .dropdown-item {
+  display: block !important;
+  width: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 8px 10px !important;
+  border-radius: 9px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--mw-ink);
+  line-height: 1.1 !important;
+  white-space: nowrap;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.mw-legacy-nav .dropdown-item:hover,
+.mw-legacy-nav .dropdown-item:focus {
+  background: #ffffff;
+  border-color: #c6e9e1;
+  color: var(--mw-deep-teal);
+}
+
+.mw-legacy-nav .navbar-toggler {
+  border-radius: 12px;
+  border: 1px solid rgba(171, 217, 208, 0.9);
+  background: rgba(255, 255, 255, 0.84);
+}
+
+body.mw-legacy-page main.container,
+body.mw-legacy-page .container.py-4,
+body.mw-legacy-page main.container-fluid {
+  padding-bottom: 3rem;
+}
+
+body.mw-legacy-page article,
+body.mw-legacy-page .card,
+body.mw-legacy-page .accordion-item,
+body.mw-legacy-page .composer,
+body.mw-legacy-page .toolsbar {
+  border-radius: 16px;
+  border: 1px solid rgba(171, 217, 208, 0.9);
+  background: linear-gradient(180deg, #ffffff, #f9fffd);
+  box-shadow: 0 10px 18px rgba(24, 54, 49, 0.08);
+}
+
+body.mw-legacy-page .card,
+body.mw-legacy-page .accordion-item {
+  overflow: hidden;
+}
+
+body.mw-legacy-page .card-header,
+body.mw-legacy-page .accordion-button,
+body.mw-legacy-page .composer,
+body.mw-legacy-page .toolsbar {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 253, 250, 0.96));
+  color: var(--mw-deep-teal);
+}
+
+body.mw-legacy-page .accordion-button:not(.collapsed) {
+  box-shadow: none;
+}
+
+body.mw-legacy-page .card-header strong,
+body.mw-legacy-page .accordion-button,
+body.mw-legacy-page summary[role="button"] {
+  font-family: var(--mw-display-font);
+  letter-spacing: 0.01em;
+}
+
+body.mw-legacy-page button:not(.navbar-toggler):not(.btn-close):not(.accordion-button),
+body.mw-legacy-page .btn,
+body.mw-legacy-page summary[role="button"],
+body.mw-legacy-page details summary {
+  border-radius: 10px;
+  font-family: var(--mw-display-font);
+  letter-spacing: 0.015em;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body.mw-legacy-page button:not(.navbar-toggler):not(.btn-close):not(.btn):not(.accordion-button):not(.nav-link):not(.dropdown-item) {
+  border: 1px solid rgba(217, 137, 164, 0.88);
+  background: #f4bbca;
+  color: #4f2030;
+  box-shadow: none;
+}
+
+body.mw-legacy-page button.outline,
+body.mw-legacy-page .btn-outline-primary,
+body.mw-legacy-page .btn-outline-secondary,
+body.mw-legacy-page .btn-outline-success,
+body.mw-legacy-page summary[role="button"],
+body.mw-legacy-page .accordion-button,
+body.mw-legacy-page .dropdown-toggle.btn-outline-secondary,
+body.mw-legacy-page .dropdown-toggle.btn-outline-success {
+  border-color: rgba(134, 201, 190, 0.9);
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--mw-deep-teal);
+  box-shadow: none;
+}
+
+body.mw-legacy-page .btn-primary,
+body.mw-legacy-page .btn-success {
+  border-color: rgba(217, 137, 164, 0.88);
+  background: #f4bbca;
+  color: #4f2030;
+  box-shadow: none;
+}
+
+body.mw-legacy-page .btn-secondary {
+  border-color: rgba(13, 111, 127, 0.88);
+  background: #0f7d8e;
+  color: #effffd;
+  box-shadow: none;
+}
+
+body.mw-legacy-page button:not(.navbar-toggler):not(.btn-close):not(.btn):not(.accordion-button):not(.nav-link):not(.dropdown-item):hover,
+body.mw-legacy-page .btn-primary:hover,
+body.mw-legacy-page .btn-success:hover {
+  background: #efafc0;
+  border-color: rgba(196, 112, 143, 0.9);
+  color: #4f2030;
+}
+
+body.mw-legacy-page .btn-secondary:hover {
+  background: #0d6f7f;
+  border-color: rgba(10, 89, 100, 0.9);
+  color: #effffd;
+}
+
+body.mw-legacy-page .btn-link {
+  color: var(--mw-deep-teal);
+  font-family: var(--mw-display-font);
+}
+
+body.mw-legacy-page .form-control:focus,
+body.mw-legacy-page .form-select:focus,
+body.mw-legacy-page input:focus,
+body.mw-legacy-page select:focus,
+body.mw-legacy-page textarea:focus {
+  border-color: rgba(0, 172, 195, 0.45);
+  box-shadow: 0 0 0 0.2rem rgba(0, 172, 195, 0.14);
+}
+
+body.mw-legacy-page .keyboard-outer-container,
+body.mw-legacy-page #diagram-wrapper,
+body.mw-legacy-page #exportArea,
+body.mw-legacy-page .notation-container,
+body.mw-legacy-page .card-body,
+body.mw-legacy-page .svg-wrapper,
+body.mw-legacy-page .panel-col .card-body {
+  background: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .mw-legacy-nav .container-fluid {
+    width: min(1120px, 94vw);
+    padding: 8px 0;
+    flex-wrap: wrap;
+  }
+
+  .mw-legacy-nav .navbar-collapse {
+    width: 100%;
+    padding-top: 10px;
+  }
+
+  .mw-legacy-nav .navbar-nav {
+    align-items: stretch;
+    gap: 8px;
+    margin-left: 0;
+  }
+
+  .mw-legacy-nav .nav-link {
+    display: block;
+    width: 100%;
+    text-align: left;
+  }
+
+  .mw-legacy-nav .navbar-collapse {
+    justify-content: flex-start;
+  }
+
+  .mw-legacy-nav .dropdown-menu {
+    margin-top: 6px;
+  }
+}
+
+@media (max-width: 680px) {
+  .mw-legacy-nav .navbar-brand img {
+    width: min(240px, 78vw);
+  }
+}
+
+:root {
+  --accent-pink:      #e88697;
+  --accent-turquoise: #00b4ce;
+  --surface:          #ffffff;
+  --surface-muted:    #f8f9fa;
+  --ink:              #212529;
+  --ink-muted:        #6c757d;
+  --key-white:        #fff;
+  --key-black:        #111;
+  --key-border:       #333;
+
+  /* Bootstrap theme hooks */
+  --bs-primary: var(--accent-turquoise);
+  --bs-danger:  var(--accent-pink);
+}
+
+/* Header tool groups can wrap on narrow screens */
+.card-header > .d-flex { flex-wrap: wrap; row-gap: .25rem; }
+
+/* Keep small form controls tidy */
+.form-select.form-select-sm,
+.input-group-sm .form-control { max-width: 200px; }
+
+body { background:#f8f9fa; }
+.kbd { user-select:none; }
+.kbd .row-wrap { overflow-x:auto; -webkit-overflow-scrolling:touch; }
+.kbd .board { position:relative; height:180px; display:inline-block; }
+
+/* Absolute layout for precise key alignment */
+.kbd .white {
+  position:absolute;
+  width:42px; height:180px;
+  background:var(--key-white);
+  border:1px solid var(--key-border);
+  border-radius:4px;
+  z-index:1;
+}
+.kbd .white.active { background:var(--play-yellow); }
+
+.kbd .black {
+  position:absolute;
+  width:28px; height:110px;
+  background:var(--key-black);
+  border:1px solid #222;
+  border-radius:4px;
+  top:0; z-index:2;
+}
+.kbd .black.active { background:#666; }
+
+.kbd .key-label {
+  position:absolute; bottom:6px; left:0; right:0;
+  font-size:.8rem; text-align:center; color:#000;
+}
+.kbd .black .key-label { color:#fff; bottom:8px; font-size:.7rem; }
+
+.kbd .solfege-label {
+  position:absolute; top:6px; left:0; right:0;
+  font-size:.7rem; text-align:center; color:#666;
+}
+.kbd .black .solfege-label { color:#ccc; top:4px; font-size:.65rem; }
+
+.panel-title { font-weight:600; }
+.mono {
+  font-variant-numeric:tabular-nums;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+/* Metronome lamps */
+.lamp { width:14px; height:14px; border-radius:50%; background:#ced4da; display:inline-block; margin-left:.35rem; vertical-align:middle; }
+.lamp.on { background:var(--accent-pink); }
+
+/* Drone table */
+#droneTable th, #droneTable td { vertical-align:middle; }
+
+/* Sticky tools bar under navbar */
+.toolsbar {
+  position:sticky; top:56px; z-index:1030;
+  background: color-mix(in srgb, #ffffff 90%, var(--accent-turquoise) 10%);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid #e9ecef;
+}
+@media (min-width: 992px){ .toolsbar { top:64px; } }
+
+/* Root marker (kept hidden by default) */
+#rootMarker{
+  position:absolute;
+  width:14px; height:14px;
+  border-radius:50%;
+  background:#ffd166;
+  border: 2px solid var(--accent-pink);
+  box-shadow:0 1px 3px rgba(0,0,0,.25);
+  top:8px; z-index:5; cursor:grab; display:none;
+}
+#rootMarker.dragging{ cursor:grabbing; }
+@media (pointer: coarse) { #rootMarker { width:18px; height:18px; top:6px; } }
+#rootMarker.visible {
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent-pink) 25%, transparent), 0 1px 3px rgba(0,0,0,.25);
+}
+
+/* Accent-aligned buttons */
+.btn-success {
+  background-color: var(--accent-turquoise) !important;
+  border-color:     var(--accent-turquoise) !important;
+  color:#fff !important;
+}
+.btn-success:hover { background-color: #00a4bc !important; }
+
+.btn-outline-primary {
+  color: var(--accent-turquoise) !important;
+  border-color: var(--accent-turquoise) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--accent-turquoise) !important;
+  color:#fff !important;
+}
+
+.btn-outline-danger {
+  color: var(--accent-pink) !important;
+  border-color: var(--accent-pink) !important;
+}
+.btn-outline-danger:hover {
+  background-color: var(--accent-pink) !important;
+  color:#fff !important;
+}
+
+.btn-secondary {
+  background-color: var(--accent-pink) !important;
+  border-color:     var(--accent-pink) !important;
+  color:#fff !important;
+}
+.btn-secondary:hover { background-color: #d37686 !important; }
+
+/* Active key inset ring to match accent */
+.kbd .white.active, .kbd .black.active {
+  box-shadow: inset 0 0 0 2px var(--accent-pink) !important;
+}
+
+/* Card header tint */
+.card > .card-header {
+  background: color-mix(in srgb, var(--accent-turquoise) 50%, #fff);
+  border-bottom: 1px solid #e9ecef;
+}
+.panel-title { color: var(--ink); }
+
+/* Hold toggle (existing custom style) */
+.toggle {
+  position: relative;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  box-sizing:border-box;
+}
+.toggle input[type="checkbox"] {
+  position: absolute; left:0; top:0; z-index:10; width:100%; height:100%;
+  cursor: pointer; opacity:0;
+}
+.toggle label { position: relative; display:flex; height:100%; align-items:center; box-sizing:border-box; }
+.toggle label:before, .toggle label:after {
+  font-size: 18px; font-weight: bold; font-family: arial; line-height: 36px; transition: .2s ease-in; box-sizing:border-box;
+}
+.toggle label:before {
+  content: 'Hold';
+  background: #e88697; color: #0002; height:36px; width:140px;
+  display:inline-flex; align-items:center; padding:0 10px; border-radius:10px;
+}
+.toggle label:after {
+  content: 'Release'; position:absolute; left:65px; top:-2px; color:#fff;
+}
+.toggle input[type="checkbox"]:checked + label:before { background:#00b4ce; color:#fff; }
+.toggle input[type="checkbox"]:checked + label:after { color:#0002; }
+
+/* Volume + hold controls bar */
+.controls-bar {
+  display:flex; justify-content:center; align-items:center;
+  gap:20px; margin-bottom:20px;
+}
+.controls-bar input[type="range"] { accent-color: var(--accent-turquoise); }
+.controls-bar .toggle { margin:0; }
+
+/* Theme all sliders, checkboxes, radios */
+input[type="range"], input[type="checkbox"], input[type="radio"] {
+  accent-color: var(--accent-turquoise);
+}
+
+/* Selects (including Equal / Pure where used as select) */
+select, .form-select {
+  background-color: var(--surface);
+  border: 1px solid var(--accent-turquoise);
+  color: var(--ink);
+}
+select:hover, select:focus,
+.form-select:focus {
+  border-color: var(--accent-pink);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent-pink) 25%, transparent);
+}
+
+/* Btn-group active/checked states */
+.btn-check:checked + .btn-outline-primary,
+.btn-outline-primary.active,
+.btn-outline-primary:active,
+.show > .btn-outline-primary.dropdown-toggle {
+  color:#fff !important;
+  background-color: var(--accent-turquoise) !important;
+  border-color: var(--accent-turquoise) !important;
+}
+.btn-outline-primary:focus,
+.btn-outline-primary:active:focus {
+  box-shadow: 0 0 0 .2rem color-mix(in srgb, var(--accent-turquoise) 35%, transparent) !important;
+  border-color: var(--accent-turquoise) !important;
+}
+
+/* Sliders: Bootstrap custom props + vendor tweaks */
+.form-range {
+  --bs-form-range-thumb-bg:   var(--accent-turquoise);
+  --bs-form-range-track-bg:   #dee2e6;
+  --bs-form-range-thumb-active-bg: var(--accent-pink);
+}
+input[type="range"].form-range::-webkit-slider-thumb { background-color: var(--accent-turquoise); border:none; }
+input[type="range"].form-range:active::-webkit-slider-thumb { background-color: var(--accent-pink); }
+input[type="range"].form-range::-webkit-slider-runnable-track { background-color: var(--surface-muted); }
+input[type="range"].form-range::-moz-range-thumb { background-color: var(--accent-turquoise); border:none; }
+input[type="range"].form-range:active::-moz-range-thumb { background-color: var(--accent-pink); }
+
+/* Drones header: wrap nicely on small screens */
+.card-header .d-flex.flex-wrap-drone { flex-wrap: wrap; gap: .5rem; }
+@media (max-width: 767.98px){
+  .card-header .d-flex.flex-wrap-drone > * { margin-right: 0 !important; }
+}
+
+/* Drones: Add + Master full width on phones */
+@media (max-width: 767.98px){
+  #droneNote { min-width: 0; }
+  #droneNote, #addDrone { width: 100%; }
+  #addDrone { margin-top: .25rem; }
+}
+
+/* Chord label style */
+#droneQuality { letter-spacing: .06em; opacity: .85; }
+
+/* Responsive drone table -> stacked cards on phones */
+@media (max-width: 767.98px){
+  #droneTable thead { display: none; }
+  #droneTable tbody, #droneTable tr, #droneTable td { display: block; width: 100%; }
+  #droneTable tr {
+    background: var(--surface);
+    border: 1px solid #e9ecef;
+    border-radius: 12px;
+    padding: .5rem .75rem;
+    margin-bottom: .75rem;
+  }
+  #droneTable td { border:0; padding:.25rem 0; }
+  #droneTable td::before{
+    content: attr(data-label);
+    display:inline-block; min-width:9.5rem; margin-right:.5rem;
+    color: var(--ink-muted); font-size:.85rem;
+  }
+  #droneTable td[data-label="Solo"],
+  #droneTable td[data-label="Mute"]{
+    display:inline-flex; align-items:center; gap:.5rem; margin-right:1rem;
+  }
+  #droneTable td[data-label=""]{ margin-top:.25rem; text-align:right; }
+}
+
+/* Top tools bar: right cluster layout */
+.toolsbar .toolbar-right{
+  display:flex; flex-wrap:wrap; justify-content:flex-end; align-items:end;
+  gap:.5rem .75rem;
+}
+.toolsbar .toolbar-ctl{ display:flex; align-items:center; gap:.5rem; }
+
+/* Match input group height to buttons */
+.toolsbar .toolbar-ctl .input-group{
+  width: 220px;          /* desktop/tablet */
+  min-width: 200px;
+}
+.toolsbar .btn,
+.toolsbar .form-control,
+.toolsbar .input-group .btn,
+.toolsbar .input-group-text{
+  height:38px; padding:.375rem .75rem; font-size:1rem; line-height:1.5;
+}
+.toolsbar .toolbar-ctl > .form-label.small{ margin-bottom:0; }
+
+/* MOBILE: keep Stop All + Transpose on one row */
+@media (max-width: 575.98px){
+  .toolsbar .toolbar-right{ flex-wrap:nowrap; align-items:center; gap:.5rem; }
+  #allStopTop{ flex:0 0 auto; }
+  .toolsbar .toolbar-right .toolbar-ctl{ flex:1 1 auto; min-width:0; }
+  .toolsbar .toolbar-right .toolbar-ctl .input-group{ width:auto; min-width:0; }
+  .toolsbar .toolbar-right .btn,
+  .toolsbar .toolbar-right .input-group .btn,
+  .toolsbar .toolbar-right .input-group-text,
+  .toolsbar .toolbar-right .form-control{
+    padding-left:.5rem; padding-right:.5rem;
+  }
+}
+/* Gray + inert look for keys that would sound beyond C2..C7 after transpose */
+.key-disabled {
+  filter: grayscale(0.6) brightness(0.9);
+  opacity: 0.55;
+  cursor: not-allowed !important;
+}
+
+/* Prominent key/chord banner */
+.chord-banner {
+  background: linear-gradient(135deg, color-mix(in srgb, var(--accent-turquoise) 14%, #ffffff), color-mix(in srgb, var(--accent-pink) 10%, #ffffff));
+  border-bottom: 1px solid #e9ecef;
+  position: sticky;
+  top: 0;
+  z-index: 1020;
+  box-shadow: 0 2px 6px rgba(0,0,0,.06);
+}
+.chord-banner .cb-chord {
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink);
+  letter-spacing: .02em;
+}
+.chord-banner .cb-chord .cb-roman {
+  color: var(--accent-turquoise);
+}
+.chord-banner .cb-chord .cb-solfege {
+  color: var(--accent-pink);
+  font-weight: 600;
+}
+.chord-banner .cb-key-wrap {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+.chord-banner .cb-key-label {
+  font-size: .75rem;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--ink-muted);
+  margin: 0;
+}
+.chord-banner #keyDetected {
+  white-space: nowrap;
+}
+@media (max-width: 575.98px){
+  .chord-banner .cb-chord { font-size: 1.2rem; }
+}
+
+/* ── Shruti pads ───────────────────────────────────────────── */
+.shruti-grid {
+  display: flex; flex-wrap: wrap; gap: 6px;
+}
+.shruti-pad {
+  width: 68px; height: 68px;
+  border-radius: 8px; border: 2px solid;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1px; cursor: pointer;
+  transition: background .1s, box-shadow .12s;
+  user-select: none;
+}
+.shruti-white { background: #fff; border-color: #ccc; color: #333; }
+.shruti-black { background: #2a2a2a; border-color: #111; color: #ddd; }
+.shruti-pad.shruti-on {
+  background: var(--accent-turquoise) !important;
+  border-color: var(--accent-turquoise) !important;
+  color: #fff !important;
+  box-shadow: 0 0 10px color-mix(in srgb, var(--accent-turquoise) 55%, transparent);
+}
+.shruti-solfege { font-weight: 700; font-size: .8rem; line-height: 1; }
+.shruti-note   { font-size: .68rem; opacity: .8; }
+
+/* ── Drawbar rig ───────────────────────────────────────────── */
+.drawbar-rig {
+  display: flex; gap: 8px; align-items: flex-end;
+  padding: 4px 0 8px; overflow-x: auto;
+}
+.drawbar-col {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 3px; flex-shrink: 0;
+}
+.drawbar-col:nth-child(6) { margin-left: 10px; } /* gap after 5th (traditional Hammond) */
+.drawbar-col-label {
+  font-size: .65rem; font-weight: 700; white-space: nowrap;
+  color: #555; text-align: center;
+}
+.drawbar-value {
+  font-size: .8rem; font-variant-numeric: tabular-nums;
+  min-width: 1.2em; text-align: center;
+}
+.drawbar-track-wrap {
+  width: 28px; height: 148px;
+  display: flex; align-items: center; justify-content: center;
+  background: #e9ecef; border-radius: 4px; overflow: hidden;
+}
+.drawbar-input {
+  -webkit-appearance: slider-vertical;
+  writing-mode: vertical-lr;
+  direction: rtl;
+  width: 20px; height: 140px;
+  cursor: pointer; margin: 0;
+}
+.drawbar-col.db-brown .drawbar-input { accent-color: #8B5A2B; }
+.drawbar-col.db-blk   .drawbar-input { accent-color: #333; }
+.drawbar-col.db-wht   .drawbar-input { accent-color: #aaa; }
+
+/* ── Keyboard mode badge ───────────────────────────────────── */
+.kb-mode-badge {
+  font-size: .72rem; font-weight: 700; letter-spacing: .06em;
+  padding: .15rem .5rem; border-radius: 6px; white-space: nowrap;
+}
+.kb-mode-play { background: #e9ecef; color: #555; }
+.kb-mode-cmd  { background: var(--accent-pink); color: #fff; box-shadow: 0 0 8px color-mix(in srgb, var(--accent-pink) 55%, transparent); }
+
+/* ── Command palette overlay ───────────────────────────────── */
+.cmd-palette {
+  position: fixed; inset: 0; z-index: 2000;
+  background: rgba(20,22,28,.55);
+  display: flex; align-items: center; justify-content: center;
+  padding: 16px;
+}
+.cmd-palette-inner {
+  background: var(--surface); color: var(--ink);
+  border-radius: 14px; padding: 18px 20px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.4);
+  max-width: 760px; width: 100%;
+}
+.cmd-palette-head {
+  display: flex; align-items: center; gap: .75rem;
+  margin-bottom: .9rem; flex-wrap: wrap;
+}
+.cmd-badge {
+  font-weight: 800; letter-spacing: .08em; font-size: .8rem;
+  background: var(--accent-pink); color: #fff;
+  padding: .2rem .6rem; border-radius: 6px;
+}
+.cmd-cols {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 14px 22px;
+}
+.cmd-group h6 {
+  font-size: .68rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--accent-turquoise); margin: 0 0 .4rem;
+}
+.cmd-row {
+  display: flex; align-items: baseline; gap: .4rem;
+  font-size: .85rem; margin-bottom: .28rem;
+}
+.cmd-row span { color: var(--ink); }
+.cmd-dim { color: var(--ink-muted); font-size: .78rem; }
+.cmd-palette kbd, .kb-mode-badge + .small kbd {
+  font-size: .72rem; background: #2a2a2a; color: #fff;
+  border-radius: 4px; padding: .08rem .35rem; border: none;
+}
+.cmd-prompt {
+  margin-top: .9rem; padding-top: .7rem; border-top: 1px solid #e9ecef;
+  font-size: .9rem; font-weight: 600; color: var(--accent-pink);
+}
+
+/* Collapsible section toggles */
+.section-toggle {
+  background: none;
+  border: none;
+  color: inherit;
+  padding: .25rem .5rem;
+  line-height: 1;
+  font-size: 1rem;
+}
+.section-toggle .chev {
+  display: inline-block;
+  transition: transform .2s ease;
+}
+.section-toggle.collapsed .chev {
+  transform: rotate(-90deg);
+}
+</style>
+<script src="https://unpkg.com/tone@14.8.49/build/Tone.js"></script>
+</head>
+<body>
+  <div class="toolsbar">
+    <div class="container py-2">
+      <div class="row g-2 align-items-end">
+        <div class="col-6 col-md-3">
+          <label class="form-label m-0 small text-muted">Temperament</label>
+          <div class="btn-group w-100" role="group">
+            <input class="btn-check" type="radio" name="temp" id="temp-eq" checked>
+            <label class="btn btn-outline-primary" for="temp-eq">Equal</label>
+            <input class="btn-check" type="radio" name="temp" id="temp-ji">
+            <label class="btn btn-outline-primary" for="temp-ji">Pure (JI)</label>
+          </div>
+        </div>
+        <div class="col-6 col-md-3">
+          <label class="form-label m-0 small text-muted">A4 Reference</label>
+          <div class="input-group">
+            <input id="a4" type="number" class="form-control" value="440" min="400" max="460" step="0.1">
+            <span class="input-group-text">Hz</span>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 toolbar-right">
+          <button id="allStopTop" class="btn btn-secondary">Stop All</button>
+          <div class="toolbar-ctl">
+            <label for="transpose" class="form-label m-0 small text-muted">Transpose</label>
+            <div class="input-group">
+              <button id="transposeMinus" class="btn btn-outline-secondary" type="button">−</button>
+              <input id="transpose" type="number" class="form-control" value="0" min="-24" max="24" step="1">
+              <button id="transposePlus" class="btn btn-outline-secondary" type="button">+</button>
+              <span class="input-group-text">st</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chord-banner">
+    <div class="container py-2">
+      <div class="row g-2 align-items-center">
+        <div class="col-12 col-md-7">
+          <div id="mainChordDisplay" class="cb-chord">Chord: —</div>
+        </div>
+        <div class="col-12 col-md-5">
+          <div class="cb-key-wrap justify-content-md-end">
+            <p class="cb-key-label">Key (Do)</p>
+            <select id="keySelect" class="form-select form-select-sm" style="width:auto">
+              <option value="">Auto (detected)</option>
+              <option value="0">C</option><option value="1">C#/Db</option>
+              <option value="2">D</option><option value="3">D#/Eb</option>
+              <option value="4">E</option><option value="5">F</option>
+              <option value="6">F#/Gb</option><option value="7">G</option>
+              <option value="8">G#/Ab</option><option value="9">A</option>
+              <option value="10">A#/Bb</option><option value="11">B</option>
+            </select>
+            <span id="keyDetected" class="small text-muted mono"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main class="container my-3 pb-5">
+    <div class="row g-3">
+      <section class="col-12">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <button class="section-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-keyboard" aria-expanded="true" aria-controls="collapse-keyboard">
+                <span class="chev">▾</span>
+              </button>
+              <span class="panel-title">Keyboard</span>
+            </div>
+            <div class="d-flex gap-2 align-items-center">
+              <div class="d-flex align-items-center">
+                <label class="form-label m-0 small text-muted me-2">Tone</label>
+                <select id="kbWave" class="form-select form-select-sm" style="width:auto">
+                  <option value="sine" selected>Sine</option>
+                  <option value="triangle">Triangle</option>
+                  <option value="square">Square</option>
+                  <option value="sawtooth">Saw</option>
+                </select>
+              </div>
+              <button id="allStop" class="btn btn-secondary me-2 mb-2">Stop All</button>
+            </div>
+          </div>
+          <div id="collapse-keyboard" class="collapse show">
+          <div class="card-body kbd">
+            <div class="controls-bar" style="gap:.75rem">
+              <label for="kbMaster" class="form-label m-0 small text-muted">Volume</label>
+              <input id="kbMaster" type="range" min="-60" max="0" step="1" value="-6" class="form-range" style="max-width:220px">
+              <div class="toggle">
+                <input type="checkbox" id="holdToggle"/>
+                <label></label>
+              </div>
+            </div>
+            <div id="kbWrap" class="row-wrap">
+              <div id="board" class="board"></div>
+            </div>
+            <div class="mt-2">
+              <input id="kbScroll" type="range" min="0" max="1000" step="1" value="0" class="form-range">
+            </div>
+            <div id="readout" class="mt-3 mono">—</div>
+            <div class="mt-2 d-flex flex-wrap gap-4">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="enh-btn" checked>
+                <label class="form-check-label" for="enh-btn">Show black key labels</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="solfege-btn">
+                <label class="form-check-label" for="solfege-btn">Show solfege labels</label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="transposeLabels">
+                <label class="form-check-label" for="transposeLabels">Transpose labels</label>
+              </div>
+              <div class="d-flex align-items-center" style="gap:.5rem">
+                <label for="jiRootSelect" class="form-label m-0 small text-muted">Set root (JI)</label>
+                <select id="jiRootSelect" class="form-select form-select-sm" style="width:auto">
+                  <option value="">Auto (detected)</option>
+                  <option value="0">C</option><option value="1">C#/Db</option>
+                  <option value="2">D</option><option value="3">D#/Eb</option>
+                  <option value="4">E</option><option value="5">F</option>
+                  <option value="6">F#/Gb</option><option value="7">G</option>
+                  <option value="8">G#/Ab</option><option value="9">A</option>
+                  <option value="10">A#/Bb</option><option value="11">B</option>
+                </select>
+              </div>
+            </div>
+            <div class="mt-2 d-flex flex-wrap align-items-center gap-2">
+              <span id="kbModeBadge" class="kb-mode-badge kb-mode-play">PLAY</span>
+              <span class="small text-muted">
+                Computer keyboard: Q-U / I-] / Z-. play white keys, number row /
+                A,S / F-L play black keys (low/mid/high octave rows).
+                Press <kbd>Esc</kbd> for command mode (<kbd>?</kbd> for help).
+              </span>
+              <span class="small text-muted mono">Base octave:</span>
+              <button id="kbOctaveDown" type="button" class="btn btn-sm btn-outline-secondary">-</button>
+              <span id="kbOctaveLabel" class="small mono">C4</span>
+              <button id="kbOctaveUp" type="button" class="btn btn-sm btn-outline-secondary">+</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <button class="section-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-metronome" aria-expanded="true" aria-controls="collapse-metronome">
+                <span class="chev">▾</span>
+              </button>
+              <span class="panel-title">Metronome</span>
+            </div>
+            <div><span id="lampQ" class="lamp"></span></div>
+          </div>
+          <div id="collapse-metronome" class="collapse show">
+          <div class="card-body">
+            <div class="row g-2 align-items-center">
+              <div class="col-6">
+                <label class="form-label small text-muted">Tempo</label>
+                <div class="input-group">
+                  <input id="tempo" type="number" class="form-control" value="84" min="20" max="240">
+                  <span class="input-group-text">BPM</span>
+                </div>
+              </div>
+              <div class="col-6 d-flex gap-2 justify-content-end">
+                <button id="metroStart" class="btn btn-success">Start</button>
+                <button id="metroStop" class="btn btn-success">Stop</button>
+              </div>
+            </div>
+            <hr>
+            <div class="row g-3">
+              <div class="col-6"><label class="form-label">Quarter</label><input id="volQ" type="range" min="-60" max="0" step="1" value="-6" class="form-range"></div>
+              <div class="col-6"><label class="form-label">Eighth</label><input id="volE" type="range" min="-60" max="0" step="1" value="-60" class="form-range"></div>
+              <div class="col-6"><label class="form-label">Triplet</label><input id="volT" type="range" min="-60" max="0" step="1" value="-60" class="form-range"></div>
+              <div class="col-6"><label class="form-label">Sixteenth</label><input id="volS" type="range" min="-60" max="0" step="1" value="-60" class="form-range"></div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12 col-md-6">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <button class="section-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-drones" aria-expanded="true" aria-controls="collapse-drones">
+                <span class="chev">▾</span>
+              </button>
+              <span class="panel-title">Drones</span>
+            </div>
+            <div class="d-flex align-items-center gap-2 flex-wrap-drone">
+              <div class="btn-group btn-group-sm ms-2" role="group">
+                <input class="btn-check" type="radio" name="droneMode" id="drone-eq" checked>
+                <label class="btn btn-outline-secondary" for="drone-eq">Equal</label>
+                <input class="btn-check" type="radio" name="droneMode" id="drone-ji">
+                <label class="btn btn-outline-secondary" for="drone-ji">Pure</label>
+              </div>
+              <button id="allStopDrone" class="btn btn-secondary me-2 mb-2">Stop All</button>
+            </div>
+          </div>
+          <div id="collapse-drones" class="collapse show">
+          <div class="card-body p-0">
+
+            <!-- Tab nav -->
+            <ul class="nav nav-tabs px-3 pt-2" id="dronesTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="tab-drones-btn" data-bs-toggle="tab" data-bs-target="#pane-drones" type="button" role="tab">Drones</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-shruti-btn" data-bs-toggle="tab" data-bs-target="#pane-shruti" type="button" role="tab">Shruti Box</button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link" id="tab-drawbars-btn" data-bs-toggle="tab" data-bs-target="#pane-drawbars" type="button" role="tab">Drawbars</button>
+              </li>
+            </ul>
+
+            <div class="tab-content p-3">
+
+              <!-- ── Drones tab (existing interface) ─────────── -->
+              <div class="tab-pane fade show active" id="pane-drones" role="tabpanel">
+                <div class="col-6">
+                  <label class="form-label m-0 small text-muted">Tone</label>
+                  <select id="droneWave" class="form-select form-select-sm" style="width:auto">
+                    <option value="sine" selected>Sine</option>
+                    <option value="triangle">Triangle</option>
+                    <option value="square">Square</option>
+                    <option value="sawtooth">Saw</option>
+                  </select>
+                </div>
+                <div id="droneQuality" class="small text-muted mono mt-2 mb-2">Chord: —</div>
+                <div class="row g-2 align-items-end">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Add drone</label>
+                    <div class="input-group">
+                      <select id="droneNote" class="form-select"></select>
+                      <button id="addDrone" class="btn btn-outline-secondary">Add</button>
+                    </div>
+                  </div>
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Master Volume</label>
+                    <input id="droneMaster" type="range" min="-60" max="0" step="1" value="-12" class="form-range">
+                  </div>
+                </div>
+                <div class="row g-2 align-items-end mt-2">
+                  <div class="col-12 col-md-6">
+                    <label class="form-label">Add chord (Roman numeral)</label>
+                    <div class="input-group">
+                      <input id="romanInput" type="text" class="form-control" placeholder="V7, ii, bVII, viio7…">
+                      <button id="addRoman" class="btn btn-outline-secondary">Add Chord</button>
+                    </div>
+                    <small id="romanFeedback" class="text-muted"></small>
+                  </div>
+                </div>
+                <div class="table-responsive mt-3">
+                  <table id="droneTable" class="table table-sm align-middle">
+                    <thead><tr><th>Note</th><th>Freq</th><th>Detune (¢ / Hz)</th><th>Solo</th><th>Mute</th><th></th></tr></thead>
+                    <tbody></tbody>
+                  </table>
+                </div>
+              </div>
+
+              <!-- ── Shruti Box tab ───────────────────────────── -->
+              <div class="tab-pane fade" id="pane-shruti" role="tabpanel">
+                <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+                  <div>
+                    <label class="form-label m-0 small text-muted">Wave</label>
+                    <select id="shrutiWave" class="form-select form-select-sm" style="width:auto">
+                      <option value="triangle" selected>Triangle</option>
+                      <option value="sine">Sine</option>
+                      <option value="square">Square</option>
+                      <option value="sawtooth">Saw</option>
+                    </select>
+                  </div>
+                  <button id="shrutiClear" class="btn btn-sm btn-secondary ms-auto">Clear All</button>
+                </div>
+                <div id="shrutiPads" class="shruti-grid"></div>
+                <div id="shrutiQuality" class="small text-muted mono mt-2">—</div>
+              </div>
+
+              <!-- ── Drawbars tab ─────────────────────────────── -->
+              <div class="tab-pane fade" id="pane-drawbars" role="tabpanel">
+                <div class="d-flex align-items-center gap-3 mb-3 flex-wrap">
+                  <div>
+                    <label class="form-label m-0 small text-muted">Root</label>
+                    <select id="drawbarRoot" class="form-select form-select-sm" style="width:auto"></select>
+                  </div>
+                  <button id="drawbarPlay" class="btn btn-sm btn-success">▶ Play</button>
+                  <span id="drawbarDisplayStr" class="mono small text-muted ms-auto">00000 0000</span>
+                </div>
+                <div class="d-flex gap-2 flex-wrap mb-3">
+                  <span class="small text-muted align-self-center me-1">Presets:</span>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="888888888">Full</button>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="808000000">Jazz</button>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="888000000">Rock</button>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="008800000">Church</button>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="886843333">Gospel</button>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="004576543">Strings</button>
+                  <button class="btn btn-sm btn-outline-secondary drawbar-preset" data-vals="000000000">Clear</button>
+                </div>
+                <div id="drawbarRig" class="drawbar-rig"></div>
+              </div>
+
+            </div><!-- /tab-content -->
+          </div><!-- /card-body -->
+          </div>
+        </div>
+      </section>
+
+      <section class="col-12">
+        <div class="card">
+          <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+              <button class="section-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-midi" aria-expanded="true" aria-controls="collapse-midi">
+                <span class="chev">▾</span>
+              </button>
+              <span class="panel-title">MIDI Keyboard</span>
+            </div>
+            <small id="midiStatus" class="text-muted">Not connected</small>
+          </div>
+          <div id="collapse-midi" class="collapse show">
+          <div class="card-body">
+            <p class="mb-2">Connect a class compliant USB or Bluetooth MIDI keyboard. Incoming Note On/Off will trigger the on screen instrument and respect temperament settings.</p>
+            <div class="row g-3">
+              <div class="col-12 col-md-6">
+                <label class="form-label">Input Device</label>
+                <select id="midiIn" class="form-select"></select>
+              </div>
+              <div class="col-12 col-md-6">
+                <label class="form-label">Velocity → Volume curve</label>
+                <input id="velCurve" type="range" min="0.5" max="2" step="0.1" value="1" class="form-range"/>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Command-mode palette overlay -->
+  <div id="cmdPalette" class="cmd-palette" hidden>
+    <div class="cmd-palette-inner">
+      <div class="cmd-palette-head">
+        <span class="cmd-badge">COMMAND MODE</span>
+        <span class="text-muted small">press a key &middot; <kbd>Esc</kbd> or <kbd>Enter</kbd> to return to play</span>
+      </div>
+      <div class="cmd-cols">
+        <div class="cmd-group">
+          <h6>Transport</h6>
+          <div class="cmd-row"><kbd>Space</kbd><span>Stop all (panic)</span></div>
+          <div class="cmd-row"><kbd>m</kbd><span>Metronome start/stop</span></div>
+          <div class="cmd-row"><kbd>,</kbd><kbd>.</kbd><span>Tempo &minus;/&plus; <span class="cmd-dim">(Shift &times;10)</span></span></div>
+          <div class="cmd-row"><kbd>t</kbd><span>Temperament Equal&harr;Pure</span></div>
+          <div class="cmd-row"><kbd>h</kbd><span>Hold on/off</span></div>
+        </div>
+        <div class="cmd-group">
+          <h6>Navigate</h6>
+          <div class="cmd-row"><kbd>d</kbd><span>Drones tab</span></div>
+          <div class="cmd-row"><kbd>s</kbd><span>Shruti tab</span></div>
+          <div class="cmd-row"><kbd>b</kbd><span>Drawbars tab</span></div>
+          <div class="cmd-row"><kbd>w</kbd><span>Cycle keyboard wave</span></div>
+          <div class="cmd-row"><kbd>[</kbd><kbd>]</kbd><span>Keyboard volume &minus;/&plus;</span></div>
+        </div>
+        <div class="cmd-group">
+          <h6>Pitch &amp; key</h6>
+          <div class="cmd-row"><kbd>&larr;</kbd><kbd>&rarr;</kbd><span>Transpose &minus;/&plus;</span></div>
+          <div class="cmd-row"><kbd>&uarr;</kbd><kbd>&darr;</kbd><span>Octave &minus;/&plus;</span></div>
+          <div class="cmd-row"><kbd>k</kbd><span>Set key (Do)&hellip; <span class="cmd-dim">then c-b, or 0=Auto</span></span></div>
+          <div class="cmd-row"><kbd>r</kbd><span>Reset transpose + key</span></div>
+          <div class="cmd-row"><kbd>n</kbd><kbd>g</kbd><span>Toggle note / solfège labels</span></div>
+        </div>
+        <div class="cmd-group">
+          <h6>Drones / Shruti / Bars</h6>
+          <div class="cmd-row"><kbd>x</kbd><span>Shruti: clear all</span></div>
+          <div class="cmd-row"><kbd>p</kbd><span>Drawbars: play/stop</span></div>
+          <div class="cmd-row"><kbd>1</kbd>&ndash;<kbd>7</kbd><span>Drawbar presets</span></div>
+        </div>
+      </div>
+      <div id="cmdKeyPrompt" class="cmd-prompt" hidden></div>
+    </div>
+  </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="pitch-spelling.js"></script>
+<script>
+// app.js - sanitized ASCII-only; no template literals, no optional chaining,
+// no destructuring, no default params. Keeps: quarter-only blink, red key
+// highlight, drone Equal/Pure with auto-moving dials (cents + Hz), chord quality
+// in drone area, All Stop stops everything, C2–C7 playable window with
+// transpose-aware greying, and ghost-note prevention on Hold toggle.
+// This version adds: (1) smoothed gain ramps to remove clicks when starting/
+// stopping notes and changing polyphony; (2) guard to avoid stray Db7 key.
+// (3) UI lock + interaction cancel + debounced Equal/Pure flip to prevent
+// ghost/lock issues when switching temperament.
+// (4) resetKeyInteractionState() integrated where needed to fix sticky keys.
+// (5) JI tap fix: blipKey() one-shot so taps in JI (no marker) are audible & highlighted.
+
+document.addEventListener("DOMContentLoaded", function () {
+  var active = new Map();   // Tracks active keyboard notes
+  var drones = new Map();
+  var droneIdSeq = 1;
+
+  function $(id){ return document.getElementById(id); }
+
+  // ---------- Helpers & constants ----------
+  var WHITE_W = 42;
+
+  function isBlackPC(pc){ return pc===1||pc===3||pc===6||pc===8||pc===10; }
+  function ratioToCents(r){ return 1200 * Math.log(r) / Math.log(2); }
+  function centsToRatio(c){ return Math.pow(2, c/1200); }
+  function midiToETFreq(m, a4){ return a4 * Math.pow(2, (m - 69)/12); }
+  function getA4(){ var el=$("a4"); return el ? Number(el.value) : 440; }
+  function etFreq(m){ return midiToETFreq(m, getA4()); }
+  function fmtHz(x){ return x.toFixed(2) + " Hz"; }
+  function fmtCents(c){ var s = c > 0 ? ("+" + c.toFixed(1)) : c.toFixed(1); return s + "c"; }
+  function intervalFrom(root, m){ return ((m - root) % 12 + 12) % 12; }
+
+  function getKbWave(){
+    var sel = $("kbWave");
+    return sel ? String(sel.value) : "triangle";
+  }
+
+  // ---- UI interlock to avoid ghost/missed events during mode flips ----
+  var uiLocked = false;           // short lock while we flip Equal/Pure
+  var lastTouchTime = 0;          // suppress synthetic mouse after touch
+
+  function cancelAllKeyInteractions(){
+    // Clears any per-key "startedHere"/long-press interaction safely
+    var boardEl = document.getElementById("board");
+    if(!boardEl) return;
+    var nodes = boardEl.querySelectorAll("[data-m]");
+    for(var i=0;i<nodes.length;i++){
+      // Triggers each key's 'mouseleave' cleanup path (no sound)
+      nodes[i].dispatchEvent(new Event("mouseleave"));
+    }
+  }
+
+  // Clears any sticky per-key state so next presses work immediately.
+  function resetKeyInteractionState(){
+    var boardEl = document.getElementById("board");
+    if(!boardEl) return;
+    var nodes = boardEl.querySelectorAll("[data-m]");
+    for(var i=0;i<nodes.length;i++){
+      var k = nodes[i];
+      try { k._down = false; } catch(e){}
+      try { k._dragging = false; } catch(e){}
+      try { k._entered = false; } catch(e){}
+      k.classList.remove("active");
+      if (typeof k.releasePointerCapture === "function") {
+        try { k.releasePointerCapture(1); } catch(e){}
+        try { k.releasePointerCapture(2); } catch(e){}
+      }
+    }
+  }
+
+  // --- Polyphony autoscaling (speaker-safe chords) ---
+  function polyScale(n){
+    n = Math.max(1, n);
+    return 1 / Math.sqrt(n); // perceptual-ish
+  }
+  function updatePolyGain(){
+    var n = active.size;
+    var scale = polyScale(n);
+    active.forEach(function(e){
+      var base = (e.baseGain != null ? e.baseGain : 0.8);
+      try {
+        e.synth.volume.rampTo(Tone.gainToDb(base * scale), 0.03);
+      } catch(err){}
+    });
+  }
+
+  // --- Transpose helpers (audio transpose; optional label transpose) ---
+  function getTransposeSemis(){
+    var el = $("transpose");
+    return el ? Number(el.value) : 0;
+  }
+  function isTransposeLabels(){
+    var el = $("transposeLabels");
+    return !!(el && el.checked);
+  }
+  // ---------- Key context (drives enharmonic spelling & chord disambiguation) ----------
+  // Decaying pitch-class histogram of recently played notes, used to estimate
+  // a tonal center via PitchSpelling.estimateKey. Positions on the line of
+  // fifths (LOF) closer to that center are preferred when spelling notes and
+  // when multiple chord interpretations share the same pitch-class set
+  // (e.g. C6 vs Am7).
+  var pcWeight = [0,0,0,0,0,0,0,0,0,0,0,0];
+  var PC_DECAY = 0.95;
+  var PC_MIN_TOTAL = 1.5; // below this, not enough context: default to C (lof 0)
+  function notePCWeightOn(midi){
+    var pc = ((midi % 12) + 12) % 12;
+    for(var i=0;i<12;i++) pcWeight[i] *= PC_DECAY;
+    pcWeight[pc] += 1;
+  }
+  // Movable-do chromatic solfege, indexed by semitones above the tonic.
+  var SOLFEGE_CHROMATIC = ["Do","Di/Ra","Re","Ri/Me","Mi","Fa","Fi/Se","So","Si/Le","La","Li/Te","Ti"];
+
+  function getManualKeyTonicPC(){
+    var sel = $("keySelect");
+    if(!sel || sel.value === "") return null;
+    return Number(sel.value);
+  }
+  // { tonicPc, mode, lof } for the current tonal center, either the
+  // manually selected "Key (Do)" or auto-detected from played notes.
+  function currentKeyContext(){
+    var manual = getManualKeyTonicPC();
+    if(manual != null){
+      return { tonicPc: manual, mode: "major", lof: PitchSpelling.keyTonicLOF(manual), auto:false };
+    }
+    var total = 0;
+    for(var i=0;i<12;i++) total += pcWeight[i];
+    if(total < PC_MIN_TOTAL) return { tonicPc: 0, mode: "major", lof: 0, auto:true };
+    var key = PitchSpelling.estimateKey(pcWeight);
+    key.auto = true;
+    return key;
+  }
+  function currentKeyLOF(){
+    return currentKeyContext().lof;
+  }
+  function solfegeForPC(pc){
+    var tonicPc = currentKeyContext().tonicPc;
+    var degree = (((pc - tonicPc) % 12) + 12) % 12;
+    return SOLFEGE_CHROMATIC[degree];
+  }
+  function chordRootSolfegeSuffix(rootMidi){
+    return "  (" + solfegeForPC(((rootMidi % 12) + 12) % 12) + ")";
+  }
+  function chordRomanNumeral(rootMidi, quality){
+    var rootPc = ((rootMidi % 12) + 12) % 12;
+    return PitchSpelling.romanNumeral(rootPc, quality, currentKeyContext());
+  }
+  function updateKeyDetectedLabel(){
+    var el = $("keyDetected"); if(!el) return;
+    var ctx = currentKeyContext();
+    if(!ctx.auto){ el.textContent = ""; return; }
+    var name = PitchSpelling.lofToSpelling(ctx.lof).name;
+    el.textContent = "(" + name + " " + ctx.mode + ")";
+  }
+
+  function midiToNameDisplay(m){
+    var t = isTransposeLabels() ? getTransposeSemis() : 0;
+    var mm = m + t;
+    var pc = ((mm % 12) + 12) % 12;
+    var oc = Math.floor(mm/12) - 1;
+    return PitchSpelling.spellPitchClass(pc, currentKeyLOF()).name + oc;
+  }
+
+  // ---------- JI data ----------
+  var JI_CENTS = {
+    0: 0,
+    1: ratioToCents(16/15) - 100,
+    2: ratioToCents(9/8)   - 200,
+    3: ratioToCents(6/5)   - 300,
+    4: ratioToCents(5/4)   - 400,
+    5: ratioToCents(4/3)   - 500,
+    6: ratioToCents(45/32) - 600,
+    7: ratioToCents(3/2)   - 700,
+    8: ratioToCents(8/5)   - 800,
+    9: ratioToCents(5/3)  - 900,
+    10: ratioToCents(9/5)  - 1000,
+    11: ratioToCents(15/8) - 1100
+  };
+
+  var CHORD_QUALITY_INTERVALS = {
+    "maj":[0,4,7], "min":[0,3,7], "dim":[0,3,6], "aug":[0,4,8],
+    "6":[0,4,7,9], "m6":[0,3,7,9], "dim_add_b6":[0,3,6,8],
+    "7":[0,4,7,10], "maj7":[0,4,7,11], "min7":[0,3,7,10],
+    "7#5":[0,4,8,10], "dim7":[0,3,6,9], "m7b5":[0,3,6,10],
+    "7b5":[0,4,6,10], "mmaj7":[0,3,7,11], "maj7#5":[0,4,8,11],
+    "dimMaj7":[0,3,6,11], "7add9":[0,4,7,10,2], "7addb9":[0,4,7,10,1],
+    "maj7add9":[0,4,7,11,2]
+  };
+
+  var CHORD_QUALITY_DETUNE = {
+    "maj":{4:-14,7:+2}, "min":{3:+16,7:+2}, "dim":{3:+16,6:-17}, "aug":{4:-14,8:-4},
+    "6":{4:-14,7:+2,9:-16}, "m6":{3:+16,7:+2,9:+19}, "dim_add_b6":{3:+16,6:-17,8:+14},
+    "7":{4:-14,7:+2,10:-31}, "maj7":{4:-14,7:+2,11:+18}, "min7":{3:+16,7:+2,10:+18},
+    "7#5":{4:-14,8:+2,10:-31}, "dim7":{3:+16,6:-17,9:+19}, "m7b5":{3:+16,6:-17,10:+16},
+    "7b5":{4:-14,6:+3,10:-31}, "mmaj7":{3:+16,7:+2,11:+11}, "maj7#5":{4:-14,8:-4,11:+26},
+    "dimMaj7":{3:+16,6:-17,11:+16},
+    "7add9":{4:-14,7:-2,10:-31,2:+4}, "7addb9":{4:-14,7:-2,10:-31,1:+5},
+    "maj7add9":{4:-14,7:+2,11:-12,2:+4}
+  };
+
+  // ---------- Audio graph ----------
+  var masterLimiter = new Tone.Limiter(-6).toDestination();
+  var mainGain      = new Tone.Gain(0.6).connect(masterLimiter);
+
+  // Keyboard chain
+  var kbBus    = new Tone.Gain(1);
+  var kbHP     = new Tone.Filter(70,   "highpass");
+  var kbLP     = new Tone.Filter(7000, "lowpass");
+  var kbWide   = new Tone.StereoWidener(0.15);
+  kbBus.connect(kbHP); kbHP.connect(kbLP); kbLP.connect(kbWide);
+
+  var kbMaster = new Tone.Gain(1);
+  kbWide.connect(kbMaster);
+  kbMaster.connect(mainGain);
+
+  function makeVoice(){
+    var isPure = (function(){ var r=document.getElementById("temp-ji"); return !!(r && r.checked); })();
+    var panAmt = (Math.random() * 0.4) - 0.2;
+    var panner = new Tone.Panner(panAmt).connect(kbBus);
+
+    // NEW: preGain to normalize loud waves (square/saw)
+    var waveType = getKbWave();
+    var waveAtten = (waveType === "square" || waveType === "sawtooth") ? 0.2 : 1.0;
+    var preGain = new Tone.Gain(waveAtten).connect(panner);
+
+    var v = new Tone.Synth({
+      oscillator:{ type: waveType },
+      envelope:{ attack:0.015, decay:0.10, sustain:0.70, release:0.30 }
+    });
+    v.connect(preGain);
+
+    try { v.oscillator.phase = Math.floor(Math.random() * 360); } catch(e){}
+    try { v.oscillator.detune.value = isPure ? 0 : ((Math.random()*2) - 1); } catch(e){}
+    v._mwPanner = panner;
+    v._mwPre = preGain; // track for disposal
+    return v;
+  }
+
+  // ---------- Metronome (quarter lamp only) ----------
+  var metro = {
+    q:{ gain:new Tone.Gain().connect(mainGain), lamp:$("lampQ") },
+    e:{ gain:new Tone.Gain().connect(mainGain), lamp:$("lampE") },
+    t:{ gain:new Tone.Gain().connect(mainGain), lamp:$("lampT") },
+    s:{ gain:new Tone.Gain().connect(mainGain), lamp:$("lampS") }
+  };
+  function makeClick(gainNode, accent){
+    var filt = new Tone.Filter(2000,"highpass").connect(gainNode);
+    var click = new Tone.Synth({
+      oscillator:{ type:"square" },
+      envelope:{ attack:0.001, decay:0.02, sustain:0, release:0.02 }
+    }).connect(filt);
+    return function(time){ click.triggerAttackRelease(accent ? "C6" : "A5", "32n", time); };
+  }
+  var clickQuarter   = makeClick(metro.q.gain, true);
+  var clickEighth    = makeClick(metro.e.gain, false);
+  var clickTriplet   = makeClick(metro.t.gain, false);
+  var clickSixteenth = makeClick(metro.s.gain, false);
+
+  function pulse(lamp){
+    if(!lamp) return;
+    lamp.classList.add("on");
+    setTimeout(function(){ lamp.classList.remove("on"); }, 60);
+  }
+  function scheduleMetronome(){
+    Tone.Transport.cancel();
+    var tempo = $("tempo"); var bpm = tempo ? Number(tempo.value) : 84;
+    Tone.Transport.bpm.value = bpm;
+    Tone.Transport.scheduleRepeat(function(t){ clickQuarter(t); pulse(metro.q.lamp); }, "4n");
+    Tone.Transport.scheduleRepeat(function(t){ clickEighth(t); }, "8n");
+    Tone.Transport.scheduleRepeat(function(t){ clickTriplet(t); }, "8t");
+    Tone.Transport.scheduleRepeat(function(t){ clickSixteenth(t); }, "16n");
+  }
+  function hookVolumes(){
+    var pairs = [["volQ","q"],["volE","e"],["volT","t"],["volS","s"]];
+    for(var i=0;i<pairs.length;i++){
+      (function(id,k){
+        var el = $(id); if(!el) return;
+        var v = Number(el.value);
+        metro[k].gain.gain.value = (v <= -60) ? 0 : Tone.dbToGain(v);
+        el.addEventListener("input", function(){
+          var vv = Number(el.value);
+          metro[k].gain.gain.value = (vv <= -60) ? 0 : Tone.dbToGain(vv);
+        });
+      })(pairs[i][0], pairs[i][1]);
+    }
+  }
+
+  // ---------- Temperament sync (global) ----------
+  var tempEqEl = $("temp-eq");
+  var tempJiEl = $("temp-ji");
+  var a4El     = $("a4");
+
+  // Debounced, safe temperament flip with UI lock
+  var tempFlipGuard = false;
+  function flipTemperament(toJI){
+    if(tempFlipGuard) return;
+    tempFlipGuard = true;
+    uiLocked = true;               // block new pointer activity
+    cancelAllKeyInteractions();    // clear any in-flight mouse/touch
+    resetKeyInteractionState();    // <-- added for sticky state fixes
+
+    var dEq = $("drone-eq"), dJi = $("drone-ji");
+    if(dEq && dJi){
+      dEq.checked = !toJI;
+      dJi.checked =  toJI;
+    }
+
+    if(toJI){
+      setDronesPureMode();
+    }else{
+      setDronesEqualMode();
+    }
+
+    try { retuneAll(); } catch(e){}
+    try { updateRootMarker(); } catch(e){}
+
+    setTimeout(function(){
+      uiLocked = false;
+      tempFlipGuard = false;
+    }, 120);
+  }
+
+  function setDronesEqualMode(){
+    var t = getTransposeSemis();
+    drones.forEach(function(d){
+      d.detune = 0;
+      if(d.detEl) d.detEl.value = "0";
+      var hz = etFreq(d.midi + t);
+      d.osc.frequency.rampTo(hz, 0.01);
+      d.freqEl.textContent = fmtHz(hz);
+      if(d.centsEl) d.centsEl.textContent = fmtCents(0);
+      if(d.hzEl) d.hzEl.textContent = fmtHz(hz);
+    });
+    updateDroneQuality();
+  }
+  function setDronesPureMode(){
+    var t = getTransposeSemis();
+    var ctx = currentContextAll();
+    var manual = getManualRoot();
+    if(manual != null){
+      var pool = midisFromCombinedAudible();
+      var forced = forcedContextFromMIDIs(pool, manual);
+      if(forced) ctx = forced;
+      else if(ctx){ ctx = { root: manual, quality: ctx.quality }; }
+      else { ctx = { root: manual, quality: "maj" }; }
+    }
+    drones.forEach(function(d){
+      var auto = pureDetuneCents(d.midi + t, ctx ? { root:(ctx.root + t), quality: ctx.quality } : ctx);
+      d.detune = auto;
+      if(d.detEl) d.detEl.value = String(Math.round(auto));
+      var hz = etFreq(d.midi + t) * centsToRatio(auto);
+      d.osc.frequency.rampTo(hz, 0.01);
+      d.freqEl.textContent = fmtHz(hz);
+      if(d.centsEl) d.centsEl.textContent = fmtCents(auto);
+      if(d.hzEl)    d.hzEl.textContent    = fmtHz(hz);
+    });
+    updateDroneQuality();
+  }
+  if (tempEqEl) tempEqEl.addEventListener("change", function(){
+    if(tempEqEl.checked) flipTemperament(false);
+  });
+  if (tempJiEl) tempJiEl.addEventListener("change", function(){
+    if(tempJiEl.checked) flipTemperament(true);
+  });
+  if (a4El) a4El.addEventListener("input",  retuneAll);
+
+  // ---------- Keyboard ----------
+  var board = $("board");
+
+  // Range: C2..C7 only (36..96)
+  var START_MIDI = 36; // C2
+  var END_MIDI   = 96; // C7
+
+  // Playable audio window (same as range), but we check against transpose
+  var PLAY_MIN = 36; // C2
+  var PLAY_MAX = 96; // C7
+
+  function isPlayableNow(midi){
+    var t = getTransposeSemis();
+    var mm = midi + t;
+    return mm >= PLAY_MIN && mm <= PLAY_MAX;
+  }
+  function setKeyDisabled(el, disabled){
+    if(!el) return;
+    if(disabled){
+      el.classList.add("key-disabled");
+      el.setAttribute("aria-disabled","true");
+    }else{
+      el.classList.remove("key-disabled");
+      el.removeAttribute("aria-disabled");
+    }
+  }
+  function updateOutOfRangeKeys(){
+    var b = document.getElementById("board"); if(!b) return;
+    var nodes = b.querySelectorAll("[data-m]");
+    for(var i=0;i<nodes.length;i++){
+      var el = nodes[i];
+      var m  = Number(el.getAttribute("data-m"));
+      setKeyDisabled(el, !isPlayableNow(m));
+    }
+  }
+
+  function solfegeLabelForMidi(m){
+    var t = isTransposeLabels() ? getTransposeSemis() : 0;
+    var pc = ((m + t) % 12 + 12) % 12;
+    return solfegeForPC(pc);
+  }
+  function refreshKeyLabels(){
+    if(!board) return;
+    var showSolfege = !!($("solfege-btn") && $("solfege-btn").checked);
+    var nodes = board.querySelectorAll("[data-m]");
+    for(var i=0;i<nodes.length;i++){
+      var el = nodes[i];
+      var m = Number(el.getAttribute("data-m"));
+      var noteLab = el.querySelector(".key-label");
+      if(noteLab) noteLab.textContent = midiToNameDisplay(m);
+      var solLab = el.querySelector(".solfege-label");
+      if(solLab){
+        solLab.textContent = solfegeLabelForMidi(m);
+        solLab.style.display = showSolfege ? "" : "none";
+      }
+    }
+    updateKeyDetectedLabel();
+  }
+
+  function buildBoard(){
+    if(!board) return;
+    board.innerHTML = "";
+    var showSolfege = !!($("solfege-btn") && $("solfege-btn").checked);
+    var whites=0, m, pc, oc;
+    for(m=START_MIDI;m<=END_MIDI;m++){ pc=((m%12)+12)%12; if(!isBlackPC(pc)) whites++; }
+    board.style.position="relative";
+    board.style.width=(whites*WHITE_W)+"px";
+    board.style.height="180px";
+
+    var x=0;
+    for(m=START_MIDI;m<=END_MIDI;m++){
+      pc=((m%12)+12)%12; oc=Math.floor(m/12)-1;
+      if(!isBlackPC(pc)){
+        var left=x*WHITE_W;
+        var w=document.createElement("div"); w.className="white"; w.setAttribute("data-m", String(m));
+        w.style.position="absolute"; w.style.left=left+"px"; w.style.width="42px"; w.style.height="180px";
+        w.style.border="1px solid #333"; w.style.borderRadius="4px"; w.style.background="#fff";
+        var lab=document.createElement("div"); lab.className="key-label"; lab.textContent = midiToNameDisplay(m);
+        lab.style.position="absolute"; lab.style.bottom="6px"; lab.style.left=0; lab.style.right=0;
+        lab.style.textAlign="center"; lab.style.fontSize=".8rem";
+        w.appendChild(lab);
+        var sLab=document.createElement("div"); sLab.className="solfege-label"; sLab.textContent = solfegeLabelForMidi(m);
+        if(!showSolfege) sLab.style.display="none";
+        w.appendChild(sLab);
+        attachKeyEvents(w,m);
+        board.appendChild(w);
+
+        // Guard: only create a black key if within END_MIDI (prevents stray Db7)
+        if(pc===0||pc===2||pc===5||pc===7||pc===9){
+          var bMidi=m+1;
+          if (bMidi <= END_MIDI) {
+            var b=document.createElement("div"); b.className="black"; b.setAttribute("data-m", String(bMidi));
+            b.style.position="absolute"; b.style.left=(left+WHITE_W-14)+"px"; b.style.width="28px"; b.style.height="110px";
+            b.style.top="0px"; b.style.background="#111"; b.style.border="1px solid #222"; b.style.borderRadius="4px"; b.style.zIndex=2;
+            var enh = $("enh-btn");
+            if(enh && enh.checked){
+              var bl=document.createElement("div"); bl.className="key-label";
+              bl.textContent = midiToNameDisplay(bMidi);
+              bl.style.position="absolute"; bl.style.bottom="8px"; bl.style.left=0; bl.style.right=0;
+              bl.style.textAlign="center"; bl.style.fontSize=".7rem"; bl.style.color="#fff";
+              b.appendChild(bl);
+            }
+            var bsLab=document.createElement("div"); bsLab.className="solfege-label"; bsLab.textContent = solfegeLabelForMidi(bMidi);
+            if(!showSolfege) bsLab.style.display="none";
+            b.appendChild(bsLab);
+            attachKeyEvents(b,bMidi);
+            board.appendChild(b);
+          }
+        }
+        x++;
+      }
+    }
+    refreshAllKeyPaint();
+    updateOutOfRangeKeys(); // gray out-of-range keys for current transpose
+  }
+
+  var enhBtn = $("enh-btn");
+  if(enhBtn){
+    enhBtn.addEventListener("change", function(){
+      buildBoard();
+      kbScrollRefresh();
+      updateRootMarker();
+    });
+  }
+
+  var solfegeBtn = $("solfege-btn");
+  if(solfegeBtn){
+    solfegeBtn.addEventListener("change", function(){
+      refreshKeyLabels();
+    });
+  }
+
+  var keySelect = $("keySelect");
+  if(keySelect){
+    keySelect.addEventListener("change", function(){
+      refreshKeyLabels();
+      updateReadout();
+      updateKbQuality();
+      updateDroneQuality();
+      retuneAll();
+    });
+  }
+
+  var kbWaveSel = $("kbWave");
+  if(kbWaveSel){
+    kbWaveSel.addEventListener("change", function(){
+      active.forEach(function(entry){
+        try{ entry.synth.oscillator.type = getKbWave(); }catch(err){}
+      });
+    });
+  }
+
+  var jiRootSelect = $("jiRootSelect");
+  if(jiRootSelect){
+    jiRootSelect.addEventListener("change", function(){
+      retuneAll();
+      updateKbQuality();
+      updateDroneQuality();
+    });
+  }
+
+  // --- Keyboard scroll sync (slider <-> horizontal scroll) ---
+  function kbScrollSet(ratio){
+    var wrap = $("kbWrap"); if(!wrap) return;
+    var max = wrap.scrollWidth - wrap.clientWidth;
+    if (max <= 0) { wrap.scrollLeft = 0; return; }
+    if (ratio < 0) ratio = 0; if (ratio > 1) ratio = 1;
+    wrap.scrollLeft = Math.round(max * ratio);
+  }
+  function kbScrollGet(){
+    var wrap = $("kbWrap"); if(!wrap) return 0;
+    var max = wrap.scrollWidth - wrap.clientWidth;
+    if (max <= 0) return 0;
+    return wrap.scrollLeft / max;
+  }
+  function kbScrollRefresh(){
+    var wrap = $("kbWrap"), slider = $("kbScroll"); if(!wrap || !slider) return;
+    var max = wrap.scrollWidth - wrap.clientWidth;
+    slider.parentNode.style.display = (max > 4) ? "block" : "none";
+    slider.value = String(Math.round(kbScrollGet() * 1000));
+  }
+  function kbScrollWire(){
+    var wrap = $("kbWrap"), slider = $("kbScroll"); if(!wrap || !slider) return;
+    slider.addEventListener("input", function(){
+      var r = Number(slider.value) / 1000;
+      kbScrollSet(r);
+    });
+    wrap.addEventListener("scroll", function(){
+      var s = $("kbScroll"); if(!s) return;
+      s.value = String(Math.round(kbScrollGet() * 1000));
+    });
+    window.addEventListener("resize", kbScrollRefresh);
+  }
+
+  // Center on C4 helpers
+  function whiteCountTo(m){
+    var count = 0, i, pc;
+    for(i=START_MIDI;i<=m;i++){
+      pc = ((i%12)+12)%12;
+      if(!isBlackPC(pc)) count++;
+    }
+    return count;
+  }
+  function kbScrollToMidiCenter(m){
+    var wrap = $("kbWrap"); if(!wrap || !board) return;
+    var whitesLeft = whiteCountTo(m) - 1;
+    var keyCenterX = whitesLeft * WHITE_W + (WHITE_W/2);
+    var viewW = wrap.clientWidth;
+    var max = wrap.scrollWidth - viewW;
+    var desired = keyCenterX - (viewW/2);
+    if (desired < 0) desired = 0;
+    if (desired > max) desired = max;
+    wrap.scrollLeft = Math.round(desired);
+    var slider = $("kbScroll");
+    if(slider && max > 0){
+      slider.value = String(Math.round((wrap.scrollLeft / max) * 1000));
+    }
+  }
+
+  // Find key element and center X (for root marker)
+  function keyElByMidi(m){
+    var b = document.getElementById("board");
+    return b ? b.querySelector('[data-m="'+String(m)+'"]') : null;
+  }
+  function keyCenterX(m){
+    var el = keyElByMidi(m);
+    var boardEl = document.getElementById("board");
+    if(!el || !boardEl) return null;
+    var rKey = el.getBoundingClientRect();
+    var rBoard = boardEl.getBoundingClientRect();
+    return (rKey.left - rBoard.left) + (rKey.width/2);
+  }
+  function nearestMidiToX(clientX){
+    var boardEl = document.getElementById("board");
+    if(!boardEl) return null;
+    var rBoard = boardEl.getBoundingClientRect();
+    var x = clientX - rBoard.left;
+    var nodes = boardEl.querySelectorAll("[data-m]");
+    var best = null, bestDist = Infinity;
+    for(var i=0;i<nodes.length;i++){
+      var m = Number(nodes[i].getAttribute("data-m"));
+      var cx = keyCenterX(m);
+      if(cx==null) continue;
+      var d = Math.abs(cx - x);
+      if(d < bestDist){ bestDist = d; best = m; }
+    }
+    return best;
+  }
+
+  // Root marker plumbing (kept, but hidden unless enabled)
+  function ensureRootMarker(){
+    var mk = document.getElementById("rootMarker");
+    var boardEl = document.getElementById("board");
+    if(!boardEl) return null;
+    if(!mk){
+      mk = document.createElement("div");
+      mk.id = "rootMarker";
+      boardEl.appendChild(mk);
+    }
+    return mk;
+  }
+  function placeRootMarkerAtMidi(m){
+    var mk = ensureRootMarker();
+    var boardEl = document.getElementById("board");
+    if(!mk || !boardEl){ return; }
+    if(m==null){
+      mk.style.display = "none";
+      return;
+    }
+    var cx = keyCenterX(m);
+    if(cx==null){
+      mk.style.display = "none";
+      return;
+    }
+    mk.style.display = "block";
+    mk.style.left = String(Math.round(cx - 7)) + "px";
+  }
+  function updateRootMarker(){
+    var mk = ensureRootMarker(); if(!mk) return;
+    if(!rootMarkerEnabled || !isPureEnabled()){
+      placeRootMarkerAtMidi(null);
+      return;
+    }
+    mk.classList.add("visible");
+    if(!isPureEnabled()){ placeRootMarkerAtMidi(null); return; }
+    var m = getManualRoot();
+    if(m==null){
+      var ctx = currentContextAll() || currentContextKeys();
+      if(!ctx){ placeRootMarkerAtMidi(null); return; }
+      m = ctx.root;
+    }
+    placeRootMarkerAtMidi(m);
+  }
+  window.addEventListener("resize", updateRootMarker);
+  var wrap = document.getElementById("kbWrap");
+  if (wrap) { wrap.addEventListener("scroll", updateRootMarker); }
+
+  function wireRootMarkerDrag(){
+    var mk = ensureRootMarker(); if(!mk) return;
+    var dragging = false;
+    function move(ev){
+      if(!dragging) return;
+      var clientX = (ev.touches && ev.touches.length) ? ev.touches[0].clientX : ev.clientX;
+      var targetMidi = nearestMidiToX(clientX);
+      if(targetMidi!=null){
+        placeRootMarkerAtMidi(targetMidi);
+      }
+    }
+    function up(ev){
+      if(!dragging) return;
+      dragging = false;
+      mk.classList.remove("dragging");
+      var clientX;
+      if(ev.changedTouches && ev.changedTouches.length){
+        clientX = ev.changedTouches[0].clientX;
+      }else{
+        clientX = ev.clientX; // fixed from clientClientX
+      }
+      var targetMidi = nearestMidiToX(clientX);
+      if(targetMidi!=null){
+        setManualRoot(targetMidi);
+      }
+      window.removeEventListener("mousemove", move);
+      window.removeEventListener("mouseup", up);
+      window.removeEventListener("touchmove", move);
+      window.removeEventListener("touchend", up);
+    }
+    function down(ev){
+      if(!isPureEnabled()) return;
+      dragging = true;
+      mk.classList.add("dragging");
+      window.addEventListener("mousemove", move);
+      window.addEventListener("mouseup", up);
+      window.addEventListener("touchmove", move, {passive:false});
+      window.addEventListener("touchend", up);
+      if(ev.cancelable) ev.preventDefault();
+    }
+    mk.addEventListener("mousedown", down);
+    mk.addEventListener("touchstart", down, {passive:false});
+    mk.addEventListener("dblclick", function(){ setManualRoot(null); });
+  }
+
+  // Visual highlight (keyboard <-> drones)
+  function getAudibleDroneSet(){
+    var s = new Set();
+    if(!drones || drones.size===0) return s;
+    var anySolo = Array.from(drones.values()).some(function(d){ return d.solo; });
+    drones.forEach(function(d){
+      var audible = !d.mute && (!anySolo || d.solo);
+      if(audible) s.add(d.midi);
+    });
+    return s;
+  }
+  function paintKey(midi){
+    var el = board ? board.querySelector("[data-m='"+String(midi)+"']") : null;
+    if(!el) return;
+    var isActive = active.has(midi);
+    var droneSet = getAudibleDroneSet();
+    var isDrone  = droneSet.has(midi);
+
+    var whiteBase = "#fff";
+    var blackBase = "#111";
+
+    var fill;
+    if(isActive && isDrone){
+      fill = el.classList.contains("black") ? "#5b2a86" : "#e5ccff";
+    }else if(isActive){
+      fill = el.classList.contains("black") ? "#7a1414" : "#ffdddd";
+    }else if(isDrone){
+      fill = el.classList.contains("black") ? "#0d3b66" : "#d0e7ff";
+    }else{
+      fill = el.classList.contains("black") ? blackBase : whiteBase;
+    }
+
+    if(isActive){
+      el.classList.add("active");
+      el.style.boxShadow = "inset 0 0 0 2px #d9534f";
+    }else{
+      el.classList.remove("active");
+      el.style.boxShadow = "";
+    }
+    el.style.background = fill;
+
+    // also maintain disabled look according to transpose
+    setKeyDisabled(el, !isPlayableNow(midi));
+  }
+  function refreshAllKeyPaint(){
+    if(!board) return;
+    var nodes = board.querySelectorAll("[data-m]");
+    for(var i=0;i<nodes.length;i++){
+      var m = Number(nodes[i].getAttribute("data-m"));
+      paintKey(m);
+    }
+  }
+  function setKeyActive(midi, on){
+    paintKey(midi);
+  }
+
+  // ---------- Chord context helpers ----------
+  function currentContextFromMIDIs(midis){
+    if(!midis || midis.length===0) return null;
+    var pcs = {};
+    for(var i=0;i<midis.length;i++){
+      var pc = ((midis[i] % 12) + 12) % 12;
+      pcs[pc] = true;
+    }
+    var cand = [];
+    for(var k=0;k<12;k++){ if(pcs[k]) cand.push(k); }
+    if(cand.length===0) return null;
+
+    var QUAL_ORDER = [
+      "dimMaj7","maj7#5","mmaj7","7b5","m7b5","dim7","dim","7#5","aug",
+      "maj7add9","7addb9","7add9","min7","maj7","7","m6","6","maj","min"
+    ];
+    function hasAllIntervals(rootPC, quality){
+      var req = CHORD_QUALITY_INTERVALS[quality];
+      if(!req) return false;
+      for(var i=0;i<req.length;i++){
+        var want = (rootPC + req[i]) % 12;
+        if(!pcs[want]) return false;
+      }
+      return true;
+    }
+    function rootMidiForPC(rpc){
+      var rootMidi = null;
+      for(var j=0;j<midis.length;j++){
+        if( (((midis[j]%12)+12)%12) === rpc ){
+          if(rootMidi===null || midis[j] < rootMidi) rootMidi = midis[j];
+        }
+      }
+      if(rootMidi===null){
+        var base = midis.slice().sort(function(a,b){return a-b;})[0];
+        var baseOc = Math.floor(base/12);
+        rootMidi = rpc + 12*baseOc;
+      }
+      return rootMidi;
+    }
+
+    var centerLof = currentKeyLOF();
+
+    // Collect every exact full-interval match. Several (root, quality) pairs
+    // can share the same pitch-class set (e.g. C6 and Am7 are both {C,E,G,A}),
+    // so prefer the root closest to the current tonal center on the line of
+    // fifths, falling back to QUAL_ORDER for ties.
+    var exactMatches = [];
+    for(var qi=0; qi<QUAL_ORDER.length; qi++){
+      var q = QUAL_ORDER[qi];
+      for(var ci=0; ci<cand.length; ci++){
+        var rpc = cand[ci];
+        if(hasAllIntervals(rpc, q)){
+          exactMatches.push({ rootPC: rpc, quality: q, qIndex: qi, lofDist: PitchSpelling.lofDistance(rpc, centerLof) });
+        }
+      }
+    }
+    if(exactMatches.length > 0){
+      exactMatches.sort(function(a,b){
+        if(a.lofDist !== b.lofDist) return a.lofDist - b.lofDist;
+        return a.qIndex - b.qIndex;
+      });
+      var winner = exactMatches[0];
+      return { root: rootMidiForPC(winner.rootPC), quality: winner.quality };
+    }
+
+    var best = null;
+    for(var ci2=0; ci2<cand.length; ci2++){
+      var rpc2 = cand[ci2];
+      for(var qj=0; qj<QUAL_ORDER.length; qj++){
+        var q2 = QUAL_ORDER[qj];
+        var req2 = CHORD_QUALITY_INTERVALS[q2];
+        if(!req2) continue;
+        var score = 0;
+        for(var t=0;t<req2.length;t++){
+          var want2 = (rpc2 + req2[t]) % 12;
+          if(pcs[want2]) score++;
+        }
+        if(score===0) continue;
+        var spec = req2.length;
+        var lofDist = PitchSpelling.lofDistance(rpc2, centerLof);
+        if(!best || score > best.score ||
+           (score===best.score && spec > best.spec) ||
+           (score===best.score && spec===best.spec && lofDist < best.lofDist) ||
+           (score===best.score && spec===best.spec && lofDist===best.lofDist && qj < best.qIndex)){
+          best = { rootPC:rpc2, quality:q2, score:score, spec:spec, lofDist:lofDist, qIndex:qj };
+        }
+      }
+    }
+    if(best){
+      return { root: rootMidiForPC(best.rootPC), quality: best.quality };
+    }
+    midis.sort(function(a,b){ return a-b; });
+    return { root: midis[0], quality: "maj" };
+  }
+  function deriveQualityForRoot(midis, rootPC){
+    if(!midis || midis.length===0) return "maj";
+    var pcs = {};
+    for(var i=0;i<midis.length;i++){ pcs[((midis[i]%12)+12)%12] = true; }
+    var QUAL_ORDER = [
+      "dimMaj7","maj7#5","mmaj7","7b5","m7b5","dim7","dim","7#5","aug",
+      "maj7add9","7addb9","7add9","min7","maj7","7","m6","6","maj","min"
+    ];
+    var best = null;
+    for(var qIndex=0; qIndex<QUAL_ORDER.length; qIndex++){
+      var q = QUAL_ORDER[qIndex];
+      var req = CHORD_QUALITY_INTERVALS[q];
+      if(!req) continue;
+      var score = 0;
+      for(var t=0;t<req.length;t++){
+        var want = (rootPC + req[t]) % 12;
+        if(pcs[want]) score++;
+      }
+      if(score===0) continue;
+      var spec = req.length;
+      if(!best || score > best.score ||
+         (score===best.score && spec > best.spec) ||
+         (score===best.score && spec===best.spec && qIndex < best.qIndex)){
+        best = { quality:q, score:score, spec:spec, qIndex:qIndex };
+      }
+    }
+    return best ? best.quality : "maj";
+  }
+  function forcedContextFromMIDIs(midis, rootMidi){
+    if(!midis || midis.length===0 || rootMidi==null) return null;
+    var rootPC = ((rootMidi % 12) + 12) % 12;
+    var q = deriveQualityForRoot(midis, rootPC);
+    return { root: rootMidi, quality: q };
+  }
+  function midisFromKeys(){
+    return (active && active.size>0) ? Array.from(active.keys()) : [];
+  }
+  function midisFromCombinedAudible(){
+    var arr = midisFromKeys();
+    if(drones && drones.size>0){
+      var anySolo = Array.from(drones.values()).some(function(d){ return d.solo; });
+      drones.forEach(function(d){
+        var audible = !d.mute && (!anySolo || d.solo);
+        if(audible) arr.push(d.midi);
+      });
+    }
+    // shruti active pads
+    for(var _s in shrutiOscs){ arr.push(shrutiMidiForSemitone(Number(_s))); }
+    return arr;
+  }
+  function currentContextKeys(){
+    if(active.size===0) return null;
+    var notes = Array.from(active.keys());
+    return currentContextFromMIDIs(notes);
+  }
+  function currentContextAll(){
+    var arr = [];
+    if(active.size>0){ arr = arr.concat(Array.from(active.keys())); }
+    if(drones.size>0){
+      drones.forEach(function(d){
+        if(!d.mute){
+          arr.push(d.midi);
+        }
+      });
+    }
+    return currentContextFromMIDIs(arr);
+  }
+
+  function isPureEnabled(){ var r=$("temp-ji"); return !!(r && r.checked); }
+  function pureDetuneCents(midi, context){
+    var root = context ? context.root : null;
+    var q    = context ? context.quality : null;
+    if(root==null) return 0;
+    var intv = intervalFrom(root, midi);
+    var specific = CHORD_QUALITY_DETUNE[q];
+    if(specific && (specific[intv]!==undefined)) return specific[intv];
+    var members = CHORD_QUALITY_INTERVALS[q];
+    if(members && members.indexOf(intv)>=0 && (JI_CENTS[intv]!==undefined)) return JI_CENTS[intv];
+    return 0;
+  }
+
+  // ---- Manual JI root override via dropdown ----
+  var rootOverrideMidi = null; // not used directly; we compute from dropdown PC
+
+  function getSelectedRootPC(){
+    var sel = document.getElementById("jiRootSelect");
+    if(!sel) return null;
+    var v = String(sel.value);
+    return v === "" ? null : Number(v);
+  }
+  function midiForPCFromPool(pc, useCombined){
+    var pool = useCombined ? midisFromCombinedAudible() : midisFromKeys();
+    if(pool && pool.length){
+      pool.sort(function(a,b){ return a-b; });
+      for(var i=0;i<pool.length;i++){
+        var m = pool[i];
+        if((((m % 12) + 12) % 12) === pc) return m;
+      }
+    }
+    return 60 + pc; // C4 octave fallback
+  }
+  function getManualRoot(){
+    if(!isPureEnabled()) return null;
+    var pc = getSelectedRootPC();
+    if(pc == null) return null;
+    var useCombined = (active && active.size>0 && drones && drones.size>0);
+    return midiForPCFromPool(pc, useCombined);
+  }
+  function setManualRoot(midi){
+    rootOverrideMidi = midi;
+    updateRootMarker();
+    retuneAll();
+  }
+
+  var rootMarkerEnabled = false;
+  function setRootMarkerEnabled(on){
+    rootMarkerEnabled = !!on;
+    var mk = document.getElementById("rootMarker");
+    if(!rootMarkerEnabled){
+      if(mk){ mk.style.display = "none"; mk.classList.remove("visible","dragging"); }
+    }
+    updateRootMarker();
+    retuneAll();
+    updateKbQuality();
+    updateDroneQuality();
+  }
+
+  function computeFreq(m){
+    var t = getTransposeSemis();
+    var base = etFreq(m + t);
+    if(!isPureEnabled()) return { hz: base, cents: 0 };
+
+    var useCombined = (active && active.size>0 && drones && drones.size>0);
+    var ctx = useCombined ? currentContextAll() : currentContextKeys();
+
+    var manual = getManualRoot();
+    if(manual != null){
+      var pool = useCombined ? midisFromCombinedAudible() : midisFromKeys();
+      var forced = forcedContextFromMIDIs(pool, manual);
+      if(forced){ ctx = forced; }
+      else{
+        ctx = { root: manual, quality: ctx ? ctx.quality : "maj" };
+      }
+    }
+
+    var cents = pureDetuneCents(m + t, ctx ? { root:(ctx.root + t), quality: ctx.quality } : ctx);
+    return { hz: base * centsToRatio(cents), cents: cents };
+  }
+
+  // --- NEW: one-shot tap for JI (hidden marker) so taps are audible & highlighted ---
+  function blipKey(midi){
+    if(!isPlayableNow(midi)) return;
+
+    var t = getTransposeSemis();
+    var targetMidi = midi + t;
+
+    var cents = 0;
+    if (isPureEnabled()){
+      var ctx = currentContextAll();
+      var manual = getManualRoot();
+      if(manual != null){
+        var pool = midisFromCombinedAudible();
+        var forced = forcedContextFromMIDIs(pool, manual);
+        if(forced) ctx = forced;
+        else if(ctx){ ctx = { root: manual, quality: ctx.quality }; }
+        else { ctx = { root: manual, quality: "maj" }; }
+      }
+      cents = pureDetuneCents(targetMidi, ctx ? { root:(ctx.root + t), quality: ctx.quality } : ctx);
+    }
+
+    var hz = etFreq(targetMidi) * centsToRatio(cents);
+
+    var v = makeVoice();
+
+    // Loudness scaled as if one more voice were active
+    var n = active.size + 1;
+    var scale = 1 / Math.sqrt(Math.max(1, n));
+    var base = 0.8;
+    try { v.volume.value = Tone.gainToDb(base * scale); } catch(e){}
+
+    try { v.frequency.rampTo(hz, 0.005); } catch(e){}
+    v.triggerAttackRelease(hz, 0.12);
+
+    setKeyActive(midi, true);
+    setTimeout(function(){
+      setKeyActive(midi, false);
+      try {
+        if(v._mwPre){ v._mwPre.dispose(); }
+        if(v._mwPanner){ v._mwPanner.dispose(); }
+        v.dispose();
+      } catch(e){}
+    }, 140);
+
+    updateReadout();
+    updateKbQuality();
+  }
+
+  function updateReadout(){
+    var out = $("readout"); if(!out) return;
+    if(active.size===0){ out.textContent = "-"; return; }
+    var list = Array.from(active.keys()).sort(function(a,b){return a-b;}).map(function(m){
+      var e = active.get(m);
+      return midiToNameDisplay(m) + " | " + fmtHz(e.nowHz) + " | " + fmtCents(e.cents||0);
+    });
+    out.textContent = list.join("   ||   ");
+  }
+
+  function ensureKbQualityNode(){
+    var readout = $("readout");
+    if(!readout) return null;
+    var el = $("kbQuality");
+    if(!el){
+      el = document.createElement("div");
+      el.id = "kbQuality";
+      el.className = "small text-muted mono mt-1";
+      el.textContent = "Chord: -";
+      readout.parentNode.insertBefore(el, readout.nextSibling);
+    }
+    return el;
+  }
+  function chordDisplayText(ctx, manual, pool){
+    if(manual != null){
+      var forced = forcedContextFromMIDIs(pool, manual);
+      if(forced){
+        return "Chord: " + midiToNameDisplay(forced.root) + " • " + forced.quality + "  " + chordRomanNumeral(forced.root, forced.quality) + "  (Pinned)";
+      }
+      return "Chord: (Pinned root " + midiToNameDisplay(manual) + ")";
+    }
+    if(!ctx) return "Chord: -";
+    return "Chord: " + midiToNameDisplay(ctx.root) + " • " + ctx.quality + "  " + chordRomanNumeral(ctx.root, ctx.quality) + chordRootSolfegeSuffix(ctx.root);
+  }
+  function chordDisplayHTML(ctx, manual, pool){
+    if(manual != null){
+      var forced = forcedContextFromMIDIs(pool, manual);
+      if(forced){
+        return "Chord: " + midiToNameDisplay(forced.root) + " • " + forced.quality +
+          '  <span class="cb-roman">' + chordRomanNumeral(forced.root, forced.quality) + '</span>  (Pinned)';
+      }
+      return "Chord: (Pinned root " + midiToNameDisplay(manual) + ")";
+    }
+    if(!ctx) return "Chord: —";
+    return "Chord: " + midiToNameDisplay(ctx.root) + " • " + ctx.quality +
+      '  <span class="cb-roman">' + chordRomanNumeral(ctx.root, ctx.quality) + '</span>' +
+      '  <span class="cb-solfege">(' + solfegeForPC(((ctx.root % 12) + 12) % 12) + ')</span>';
+  }
+  function updateMainChordDisplay(){
+    var el = $("mainChordDisplay"); if(!el) return;
+    var manual = getManualRoot();
+    var pool = midisFromCombinedAudible();
+    var ctx = currentContextAll() || currentContextKeys();
+    el.innerHTML = chordDisplayHTML(ctx, manual, pool);
+  }
+  function updateKbQuality(){
+    var el = ensureKbQualityNode(); if(!el) return;
+    var ctx = currentContextKeys();
+    var manual = getManualRoot();
+    var pool = midisFromKeys();
+    el.textContent = chordDisplayText(ctx, manual, pool);
+    updateMainChordDisplay();
+  }
+  function updateDroneQuality(){
+    var el = $("droneQuality"); if(!el) return;
+    var ctx = currentContextAll();
+    var manual = getManualRoot();
+    var pool = midisFromCombinedAudible();
+    el.textContent = chordDisplayText(ctx, manual, pool);
+    updateMainChordDisplay();
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // SHRUTI BOX
+  // ══════════════════════════════════════════════════════════════
+
+  var shrutiOscs = {}; // semitone 0-11 → { osc, gain }
+  var IS_BLACK_SEMI = [0,1,0,1,0,0,1,0,1,0,1,0];
+  var SHRUTI_SOLFEGE = ["Do","Di/Ra","Re","Ri/Me","Mi","Fa","Fi/Se","So","Si/Le","La","Li/Te","Ti"];
+
+  function shrutiSaMidi(){
+    var tpc = currentKeyContext().tonicPc;
+    // Anchor around MIDI 60 (C4) — place Sa in the octave that keeps us near 60
+    var base = 60 + (((tpc - 0) + 12) % 12);
+    if(base > 71) base -= 12;
+    return base;
+  }
+  function shrutiMidiForSemitone(semi){ return shrutiSaMidi() + semi; }
+  function shrutiFreqForSemitone(semi){
+    return etFreq(shrutiMidiForSemitone(semi) + getTransposeSemis());
+  }
+
+  function toggleShruti(semi, padEl){
+    if(shrutiOscs[semi]){
+      var ent = shrutiOscs[semi];
+      try { ent.gain.gain.rampTo(0, 0.05); } catch(e){}
+      setTimeout(function(){
+        try { ent.osc.stop(); ent.osc.dispose(); ent.gain.dispose(); } catch(e){}
+      }, 80);
+      delete shrutiOscs[semi];
+      padEl.classList.remove("shruti-on");
+    } else {
+      Tone.start().then(function(){
+        var wave = ($("shrutiWave") || {}).value || "triangle";
+        var osc  = new Tone.Oscillator({ type: wave, frequency: shrutiFreqForSemitone(semi) }).start();
+        var g    = new Tone.Gain(0).connect(droneBus);
+        osc.connect(g);
+        try { g.gain.rampTo(0.8, 0.03); } catch(e){}
+        shrutiOscs[semi] = { osc: osc, gain: g };
+        padEl.classList.add("shruti-on");
+        updateDroneQuality();
+      });
+    }
+    updateDroneQuality();
+  }
+
+  function stopAllShruti(){
+    for(var s in shrutiOscs){
+      var ent = shrutiOscs[s];
+      try { ent.gain.gain.rampTo(0, 0.05); } catch(e){}
+      setTimeout((function(e){ return function(){
+        try { e.osc.stop(); e.osc.dispose(); e.gain.dispose(); } catch(err){}
+      }; })(ent), 80);
+    }
+    shrutiOscs = {};
+    document.querySelectorAll(".shruti-pad.shruti-on").forEach(function(p){
+      p.classList.remove("shruti-on");
+    });
+    updateDroneQuality();
+  }
+
+  function retuneShrutiOscs(){
+    for(var s in shrutiOscs){
+      var hz = shrutiFreqForSemitone(Number(s));
+      try { shrutiOscs[s].osc.frequency.rampTo(hz, 0.03); } catch(e){}
+    }
+    refreshShrutiNoteLabels();
+  }
+
+  function refreshShrutiNoteLabels(){
+    document.querySelectorAll("#shrutiPads .shruti-pad").forEach(function(pad){
+      var semi = Number(pad.getAttribute("data-semi"));
+      var midi = shrutiMidiForSemitone(semi);
+      var pc   = ((midi % 12) + 12) % 12;
+      var noteEl = pad.querySelector(".shruti-note");
+      if(noteEl) noteEl.textContent = PitchSpelling.spellPitchClass(pc, currentKeyLOF()).name;
+    });
+  }
+
+  function buildShrutiPads(){
+    var container = $("shrutiPads"); if(!container) return;
+    container.innerHTML = "";
+    for(var s = 0; s < 12; s++){
+      var pad = document.createElement("button");
+      pad.type = "button";
+      pad.className = "shruti-pad " + (IS_BLACK_SEMI[s] ? "shruti-black" : "shruti-white");
+      pad.setAttribute("data-semi", s);
+      if(shrutiOscs[s]) pad.classList.add("shruti-on");
+      pad.innerHTML = '<span class="shruti-solfege">' + SHRUTI_SOLFEGE[s] + '</span>' +
+                      '<span class="shruti-note"></span>';
+      container.appendChild(pad);
+      pad.addEventListener("click", (function(semi, el){ return function(){ toggleShruti(semi, el); }; })(s, pad));
+    }
+    refreshShrutiNoteLabels();
+  }
+
+  // ══════════════════════════════════════════════════════════════
+  // DRAWBAR ORGAN
+  // ══════════════════════════════════════════════════════════════
+
+  var DRAWBAR_SPECS = [
+    { label:"16'",  ratio:0.5, color:"db-brown" },
+    { label:"8'",   ratio:1,   color:"db-brown" },
+    { label:"5⅓'", ratio:1.5, color:"db-blk"   },
+    { label:"4'",   ratio:2,   color:"db-blk"   },
+    { label:"2⅔'", ratio:3,   color:"db-blk"   },
+    { label:"2'",   ratio:4,   color:"db-wht"   },
+    { label:"1⅗'", ratio:5,   color:"db-wht"   },
+    { label:"1⅓'", ratio:6,   color:"db-blk"   },
+    { label:"1'",   ratio:8,   color:"db-wht"   }
+  ];
+  var drawbarVals    = [0,0,0,0,0,0,0,0,0];
+  var drawbarOscList = [];
+  var drawbarGainList= [];
+  var drawbarBus     = null;
+  var drawbarPlaying = false;
+
+  function drawbarRootMidi(){
+    var sel = $("drawbarRoot");
+    return sel ? Number(sel.value) : 48 + currentKeyContext().tonicPc;
+  }
+  function drawbarLevelToGain(lvl){ return lvl === 0 ? 0 : lvl / 8; }
+
+  function startDrawbars(){
+    if(drawbarPlaying) return;
+    Tone.start().then(function(){
+      drawbarBus = new Tone.Gain(1).connect(droneBus);
+      var rootFreq = etFreq(drawbarRootMidi() + getTransposeSemis());
+      for(var i = 0; i < DRAWBAR_SPECS.length; i++){
+        var freq = rootFreq * DRAWBAR_SPECS[i].ratio;
+        var osc  = new Tone.Oscillator({ type:"sine", frequency:freq }).start();
+        var g    = new Tone.Gain(drawbarLevelToGain(drawbarVals[i])).connect(drawbarBus);
+        osc.connect(g);
+        drawbarOscList.push(osc);
+        drawbarGainList.push(g);
+      }
+      drawbarPlaying = true;
+      var btn = $("drawbarPlay");
+      if(btn){ btn.textContent = "⏹ Stop"; btn.classList.remove("btn-success"); btn.classList.add("btn-danger"); }
+    });
+  }
+
+  function stopDrawbars(){
+    drawbarGainList.forEach(function(g){ try { g.gain.rampTo(0, 0.05); } catch(e){} });
+    setTimeout(function(){
+      drawbarOscList.forEach(function(o){ try { o.stop(); o.dispose(); } catch(e){} });
+      drawbarGainList.forEach(function(g){ try { g.dispose(); } catch(e){} });
+      if(drawbarBus){ try { drawbarBus.dispose(); } catch(e){} drawbarBus = null; }
+      drawbarOscList  = [];
+      drawbarGainList = [];
+      drawbarPlaying  = false;
+      var btn = $("drawbarPlay");
+      if(btn){ btn.textContent = "▶ Play"; btn.classList.remove("btn-danger"); btn.classList.add("btn-success"); }
+    }, 80);
+  }
+
+  function updateDrawbarGains(){
+    for(var i = 0; i < drawbarGainList.length; i++){
+      try { drawbarGainList[i].gain.rampTo(drawbarLevelToGain(drawbarVals[i]), 0.03); } catch(e){}
+    }
+    updateDrawbarDisplayStr();
+  }
+
+  function updateDrawbarDisplayStr(){
+    var el = $("drawbarDisplayStr"); if(!el) return;
+    var s = drawbarVals.join("");
+    el.textContent = s.slice(0,5) + " " + s.slice(5);
+  }
+
+  function retuneDrawbars(){
+    if(!drawbarPlaying) return;
+    var rootFreq = etFreq(drawbarRootMidi() + getTransposeSemis());
+    for(var i = 0; i < DRAWBAR_SPECS.length; i++){
+      try { drawbarOscList[i].frequency.rampTo(rootFreq * DRAWBAR_SPECS[i].ratio, 0.03); } catch(e){}
+    }
+  }
+
+  function applyDrawbarPreset(vals){
+    for(var i = 0; i < 9 && i < vals.length; i++){ drawbarVals[i] = Number(vals[i]); }
+    document.querySelectorAll("#drawbarRig .drawbar-input").forEach(function(inp, i){
+      inp.value = drawbarVals[i];
+      var vEl = document.getElementById("dbval" + i);
+      if(vEl) vEl.textContent = drawbarVals[i];
+    });
+    updateDrawbarGains();
+  }
+
+  function buildDrawbarRig(){
+    var rig = $("drawbarRig"); if(!rig) return;
+    rig.innerHTML = "";
+    DRAWBAR_SPECS.forEach(function(spec, i){
+      var col = document.createElement("div");
+      col.className = "drawbar-col " + spec.color;
+      col.innerHTML =
+        '<div class="drawbar-col-label">' + spec.label + '</div>' +
+        '<div class="drawbar-track-wrap">' +
+          '<input type="range" min="0" max="8" step="1" value="' + drawbarVals[i] + '" class="drawbar-input" data-db="' + i + '">' +
+        '</div>' +
+        '<div class="drawbar-value" id="dbval' + i + '">' + drawbarVals[i] + '</div>';
+      rig.appendChild(col);
+      col.querySelector("input").addEventListener("input", (function(idx){ return function(e){
+        drawbarVals[idx] = Number(e.target.value);
+        var vEl = document.getElementById("dbval" + idx);
+        if(vEl) vEl.textContent = drawbarVals[idx];
+        updateDrawbarGains();
+      }; })(i));
+    });
+    updateDrawbarDisplayStr();
+  }
+
+  function populateDrawbarRoot(){
+    var sel = $("drawbarRoot"); if(!sel) return;
+    sel.innerHTML = "";
+    var NOTE_NAMES = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"];
+    for(var m = 36; m <= 72; m++){
+      var pc = m % 12, oct = Math.floor(m/12) - 1;
+      var opt = document.createElement("option");
+      opt.value = m;
+      opt.textContent = NOTE_NAMES[pc] + oct;
+      if(m === 48) opt.selected = true; // C3 default
+      sel.appendChild(opt);
+    }
+  }
+
+  function retuneAll(){
+    var ctxKeys = currentContextKeys();
+    var ctxAll  = currentContextAll();
+    var t = getTransposeSemis();
+
+    var useCombined = (active && active.size>0 && drones && drones.size>0);
+    var ctxForKeys = useCombined ? ctxAll : ctxKeys;
+
+    var manual = getManualRoot();
+    if(manual != null){
+      var keysPool = midisFromKeys();
+      var allPool  = midisFromCombinedAudible();
+      var forcedKeys = forcedContextFromMIDIs(keysPool, manual);
+      var forcedAll  = forcedContextFromMIDIs(allPool,  manual);
+      if(forcedKeys) ctxKeys = forcedKeys;
+      if(forcedAll)  ctxAll  = forcedAll;
+      ctxForKeys = useCombined ? ctxAll : ctxKeys;
+    }
+
+    active.forEach(function(entry, midi){
+      var cents = isPureEnabled()
+        ? pureDetuneCents(midi + t, ctxForKeys ? { root:(ctxForKeys.root + t), quality: ctxForKeys.quality } : ctxForKeys)
+        : 0;
+      var hz = etFreq(midi + t) * centsToRatio(cents);
+      try { entry.synth.frequency.rampTo(hz, 0.01); } catch(err){}
+      entry.nowHz = hz; entry.cents = cents;
+    });
+
+    drones.forEach(function(entry){
+      var cents;
+      if (isPureEnabled()){
+        var auto = pureDetuneCents(entry.midi + t, ctxAll ? { root:(ctxAll.root + t), quality: ctxAll.quality } : ctxAll);
+        cents = auto;
+        entry.detune = auto;
+        if (entry.detEl) entry.detEl.value = String(Math.round(auto));
+      } else {
+        cents = entry.detune;
+      }
+      var hz = etFreq(entry.midi + t) * centsToRatio(cents);
+      try { entry.osc.frequency.rampTo(hz, 0.01); } catch(err){}
+      entry.freqEl.textContent = fmtHz(hz);
+      if (entry.centsEl) entry.centsEl.textContent = fmtCents(cents);
+      if (entry.hzEl)    entry.hzEl.textContent    = fmtHz(hz);
+    });
+
+    retuneShrutiOscs();
+    retuneDrawbars();
+
+    updateReadout();
+    updateKbQuality();
+    updateDroneQuality();
+    refreshAllKeyPaint();
+  }
+
+  // ---------- Hold + All Stop ----------
+  var hold = false;
+
+  function stopAllKeyboardVoices(){
+    try { Tone.Transport.cancel(); } catch(e){}
+    var keys = Array.from(active.keys());
+    for(var i=0;i<keys.length;i++){
+      var m = keys[i];
+      var e = active.get(m);
+      if(!e) continue;
+      try { e.synth.volume.rampTo(-60, 0.05); } catch(err){}
+      try { e.synth.triggerRelease("+0.02"); } catch(err){}
+      (function(voice){
+        setTimeout(function(){
+          try { if(voice._mwPre){ voice._mwPre.dispose(); } } catch(err){}
+          try { if(voice._mwPanner){ voice._mwPanner.dispose(); } } catch(err){}
+          try { voice.dispose(); } catch(err){}
+        }, 200);
+      })(e.synth);
+      active.delete(m);
+      setKeyActive(m, false);
+    }
+    updatePolyGain();
+    updateReadout();
+    updateKbQuality();
+  }
+
+  var holdToggle = $("holdToggle");
+  if(holdToggle){
+    holdToggle.addEventListener("change", function(e){
+      var newHold = !!e.target.checked;
+
+      // If we are exiting Hold, stop ONLY keyboard notes (leave drones alone)
+      if(hold && !newHold){
+        stopAllKeyboardVoices();
+        // IMPORTANT: fully reset sticky key interaction state
+        cancelAllKeyInteractions();
+        resetKeyInteractionState();
+        try { retuneAll(); } catch(err){}
+      }
+
+      hold = newHold;
+
+      // When entering Hold, also start from a clean slate to avoid edge cases
+      if(hold){
+        cancelAllKeyInteractions();
+        resetKeyInteractionState();
+      }
+
+      refreshAllKeyPaint();
+    });
+  }
+
+  function stopAllEverything(){
+    try { Tone.Transport.stop(); Tone.Transport.cancel(); } catch(err){}
+
+    stopAllKeyboardVoices(); // stops keyboard voices safely
+
+    drones.forEach(function(d){
+      try { d.gain.gain.rampTo(0, 0.06); } catch(err){}
+      setTimeout(function(){
+        try { d.osc.stop(); } catch(err){}
+        try { d.osc.dispose(); } catch(err){}
+      }, 100);
+      try { if(d.row && d.row.parentNode){ d.row.parentNode.removeChild(d.row); } } catch(err){}
+    });
+    drones.clear();
+
+    var tb = document.querySelector("#droneTable tbody");
+    if(tb){ tb.innerHTML = ""; }
+
+    stopAllShruti();
+    stopDrawbars();
+
+    try { retuneAll(); } catch(err){}
+    try { updateReadout(); } catch(err){}
+    try { updateDroneQuality(); } catch(err){}
+
+    refreshAllKeyPaint();
+  }
+
+  var allStopBtn = $("allStop");
+  if(allStopBtn){ allStopBtn.addEventListener("click", function(){ stopAllEverything(); }); }
+  var allStopTop = $("allStopTop");
+  if(allStopTop){ allStopTop.addEventListener("click", function(){ stopAllEverything(); }); }
+  var allStopDrone = $("allStopDrone");
+  if(allStopDrone){ allStopDrone.addEventListener("click", function(){ stopAllEverything(); }); }
+
+  // ---------- Note on/off ----------
+  function keyOn(midi, velocity){
+    if(velocity == null) velocity = 0.8;
+
+    // block playing keys that would sound outside C2..C7 under current transpose
+    if(!isPlayableNow(midi)) return;
+
+    if(hold && active.has(midi)){
+      keyOff(midi, true);
+      setKeyActive(midi, false);
+      return;
+    }
+    if(active.has(midi)) return;
+
+    notePCWeightOn(midi);
+    if(getManualKeyTonicPC() == null) refreshKeyLabels();
+
+    var f = computeFreq(midi);
+
+    var vCurveEl = document.getElementById("velCurve");
+    var velCurve = vCurveEl ? Number(vCurveEl.value) : 1;
+    var base = Math.pow(velocity, velCurve);
+
+    var v = makeVoice();
+    try { v.volume.rampTo(Tone.gainToDb(base), 0.02); } catch(err){}
+
+    v.triggerAttack(f.hz);
+
+    active.set(midi, {
+      synth:  v,
+      nowHz:  f.hz,
+      cents:  f.cents,
+      baseGain: base
+    });
+
+    updatePolyGain();
+    retuneAll();
+    paintKey(midi);
+  }
+
+  function keyOff(midi, force){
+    if(force == null) force = false;
+    if(hold && !force) return;
+
+    var e = active.get(midi); if(!e) return;
+
+    try { e.synth.volume.rampTo(-60, 0.05); } catch(err){}
+    try { e.synth.triggerRelease("+0.02"); } catch(err){}
+    (function(voice){
+      setTimeout(function(){
+        try { if(voice._mwPre){ voice._mwPre.dispose(); } } catch(err){}
+        try { if(voice._mwPanner){ voice._mwPanner.dispose(); } } catch(err){}
+        try { voice.dispose(); } catch(err){}
+      }, 200);
+    })(e.synth);
+
+    active.delete(midi);
+
+    updatePolyGain();
+    retuneAll();
+    paintKey(midi);
+  }
+
+  function attachKeyEvents(el, midi){
+    var pressTimer = null;
+    var longPressed = false;
+    var startedHere = false;
+
+    function startLongPress(){
+      longPressed = false;
+      if(!rootMarkerEnabled && isPureEnabled()){
+        pressTimer = setTimeout(function(){
+          longPressed = true;
+          setManualRoot(midi);
+          updateRootMarker();
+          paintKey(midi);
+        }, 500);
+      }
+    }
+    function clearLongPress(){
+      if(pressTimer){ clearTimeout(pressTimer); pressTimer = null; }
+    }
+
+    function down(ev){
+      if(ev && ev.type === "mousedown" && performance.now() - lastTouchTime < 500){ return; }
+      if(uiLocked) return;
+      if(!isPlayableNow(midi)) return;
+
+      startLongPress();
+
+      Tone.start().then(function(){
+        // In JI with marker hidden, we wait to see if it becomes a long-press.
+        // Tap will be handled in 'up()' (tap-to-sound path).
+        if(!rootMarkerEnabled && isPureEnabled()){
+          return;
+        }
+
+        if(hold && active.has(midi)){
+          keyOff(midi, true);
+          setKeyActive(midi, false);
+          startedHere = false;
+          return;
+        }
+        keyOn(midi);
+        setKeyActive(midi, true);
+        startedHere = true;
+      });
+    }
+
+    function up(ev){
+      if(uiLocked){ clearLongPress(); return; }
+
+      var pureTapMode = (!rootMarkerEnabled && isPureEnabled());
+
+      // --- Handle Pure (JI) with hidden marker: tap-to-sound path ---
+      if(pureTapMode){
+        if(longPressed){
+          // long-press already handled setting root; just clean up
+          clearLongPress();
+          startedHere = false;
+          return;
+        }
+        clearLongPress();
+
+        if(!isPlayableNow(midi)){ startedHere = false; return; }
+
+        if(hold){
+          // In Hold, behave like normal key toggle
+          if(active.has(midi)){
+            keyOff(midi, true);
+            setKeyActive(midi, false);
+          }else{
+            keyOn(midi);
+            setKeyActive(midi, true);
+          }
+        }else{
+          // One-shot audible tap with highlight
+          blipKey(midi);
+        }
+        startedHere = false;
+        return;
+      }
+
+      // --- Normal path (Equal, or JI with visible marker) ---
+      if(!startedHere && !longPressed){
+        clearLongPress();
+        return;
+      }
+
+      if(!isPlayableNow(midi)){
+        clearLongPress();
+        startedHere = false;
+        return;
+      }
+
+      if(longPressed){
+        clearLongPress();
+        startedHere = false;
+        return;
+      }
+      clearLongPress();
+
+      if(hold){
+        // In hold, releases don't stop sound. Just refresh visuals.
+        paintKey(midi);
+        startedHere = false;
+        return;
+      }
+
+      // Normal release
+      keyOff(midi);
+      setKeyActive(midi,false);
+      startedHere = false;
+    }
+
+    // Pointer/mouse
+    el.addEventListener("mousedown", down);
+    el.addEventListener("mouseup",   up);
+    el.addEventListener("mouseleave", function(){
+      clearLongPress();
+      // only synthesize an up if this interaction started on this key and Hold is off
+      if(!hold && startedHere) up();
+      else startedHere = false;
+    });
+
+    // Touch (prevent default so the page doesn’t scroll; mark lastTouchTime)
+    el.addEventListener("touchstart", function(e){
+      if(e.cancelable) e.preventDefault();
+      lastTouchTime = performance.now();
+      if(uiLocked) return;
+      startLongPress();
+      down(e);
+    }, {passive:false});
+
+    el.addEventListener("touchend", function(e){
+      if(e.cancelable) e.preventDefault();
+      lastTouchTime = performance.now();
+      if(uiLocked){ clearLongPress(); return; }
+      up(e);
+    }, {passive:false});
+
+    el.addEventListener("touchcancel", function(){
+      clearLongPress();
+      startedHere = false;
+    });
+  }
+
+  // ---------- Drone bus/master (declared here so addDrone can use it later) ----------
+  var droneBus    = new Tone.Gain(1);
+  var droneMaster = new Tone.Gain(1).connect(mainGain);
+  droneBus.connect(droneMaster);
+
+  // ---------- Drones ----------
+  function addDrone(midiOverride){
+    var noteSel = $("droneNote"), waveSel = $("droneWave");
+    if(!waveSel) return;
+    var m, wave = waveSel.value;
+    if(midiOverride != null){ m = Number(midiOverride); }
+    else { if(!noteSel) return; m = Number(noteSel.value); }
+
+    // NEW: attenuate square/saw drones a bit so they match sine/triangle loudness
+    var waveAtten = (wave === "square" || wave === "sawtooth") ? 0.2 : 1.0;
+
+    var osc = new Tone.Oscillator({ type:wave, frequency: etFreq(m + getTransposeSemis()), volume:-6 }).start();
+
+    // Start silent and fade in to waveAtten to avoid start click and normalize loudness
+    var gain = new Tone.Gain(0).connect(droneBus);
+    osc.connect(gain);
+    try { gain.gain.rampTo(waveAtten, 0.03); } catch(err){}
+
+    var id = droneIdSeq++;
+
+    var row = document.createElement("tr"); row.setAttribute("data-id", String(id));
+
+    var name = document.createElement("td"); name.setAttribute("data-label","Note");
+    name.innerHTML = midiToNameDisplay(m) + ' <small class="text-muted ms-1">' + wave + '</small>';
+    row.appendChild(name);
+    var freq = document.createElement("td"); freq.setAttribute("data-label","Freq"); freq.className = "mono"; freq.textContent = fmtHz(etFreq(m + getTransposeSemis())); row.appendChild(freq);
+
+    var det = document.createElement("td"); det.setAttribute("data-label","Detune (¢ / Hz)");
+    det.innerHTML =
+      '<div class="d-flex align-items-center" style="gap:.5rem">' +
+      '  <input type="range" min="-50" max="50" step="1" value="0" class="form-range" style="width:140px">' +
+      '  <div class="small mono">' +
+      '    <span class="droneCents">0c</span>' +
+      '    &nbsp;&middot;&nbsp;' +
+      '    <span class="droneHz">' + fmtHz(etFreq(m + getTransposeSemis())) + '</span>' +
+      '  </div>' +
+      '</div>';
+    row.appendChild(det);
+
+    var solo = document.createElement("td"); solo.setAttribute("data-label","Solo"); solo.innerHTML = '<input type="checkbox">'; row.appendChild(solo);
+    var mute = document.createElement("td"); mute.setAttribute("data-label","Mute"); mute.innerHTML = '<input type="checkbox">'; row.appendChild(mute);
+    var act  = document.createElement("td"); act.setAttribute("data-label",""); act.innerHTML  = '<button class="btn btn-sm btn-outline-secondary">Remove</button>'; row.appendChild(act);
+    var tbody = document.querySelector("#droneTable tbody"); if(tbody) tbody.appendChild(row);
+
+    var entry = {
+      osc:osc, midi:m, detune:0, gain:gain, row:row, freqEl:freq,
+      detEl: det.querySelector("input"),
+      centsEl: det.querySelector(".droneCents"),
+      hzEl: det.querySelector(".droneHz"),
+      nameEl: name, wave: wave,
+      solo:false, mute:false,
+      baseGain: waveAtten // NEW: remember base attenuation
+    };
+    drones.set(id, entry);
+
+    entry.detEl.addEventListener("input", function(e){
+      entry.detune = Number(e.target.value);
+      var hz = etFreq(m + getTransposeSemis()) * centsToRatio(entry.detune);
+      try { entry.osc.frequency.rampTo(hz, 0.01); } catch(err){}
+      entry.freqEl.textContent = fmtHz(hz);
+      entry.centsEl.textContent = fmtCents(entry.detune);
+      entry.hzEl.textContent = fmtHz(hz);
+    });
+    solo.querySelector("input").addEventListener("change", function(e){
+      entry.solo = !!e.target.checked; updateDroneSoloMute(); retuneAll(); refreshAllKeyPaint();
+    });
+    mute.querySelector("input").addEventListener("change", function(e){
+      entry.mute = !!e.target.checked;
+      var target = entry.mute ? 0 : entry.baseGain; // NEW: keep attenuation on unmute
+      try { entry.gain.gain.rampTo(target, 0.05); } catch(err){}
+      updateDroneSoloMute(); retuneAll(); refreshAllKeyPaint();
+    });
+    act.querySelector("button").addEventListener("click", function(){
+      try { entry.gain.gain.rampTo(0, 0.06); } catch(err){}
+      setTimeout(function(){
+        try{ entry.osc.stop(); entry.osc.dispose(); }catch(err){}
+        if(row && row.parentNode) row.parentNode.removeChild(row);
+        drones.delete(id); updateDroneSoloMute(); retuneAll(); refreshAllKeyPaint();
+      }, 100);
+    });
+
+    retuneAll();
+    refreshAllKeyPaint();
+    updateRootMarker();
+  }
+
+  function parseRomanNumeral(str) {
+    str = (str || '').trim();
+    var acc = 0;
+    if(str[0] === 'b'){ acc = -1; str = str.slice(1); }
+    else if(str[0] === '#'){ acc = 1; str = str.slice(1); }
+    var isUpper = str[0] >= 'A' && str[0] <= 'Z';
+    var ROMAN_VALS = [['vii',7],['vi',6],['iv',4],['v',5],['iii',3],['ii',2],['i',1]];
+    var deg = 0, numLen = 0;
+    var strLow = str.toLowerCase();
+    for(var ri = 0; ri < ROMAN_VALS.length; ri++){
+      if(strLow.indexOf(ROMAN_VALS[ri][0]) === 0){
+        deg = ROMAN_VALS[ri][1]; numLen = ROMAN_VALS[ri][0].length; break;
+      }
+    }
+    if(!deg) return null;
+    var suffix = str.slice(numLen);
+    var DEGREE_SEMIS = [0,0,2,4,5,7,9,11];
+    var ctx = currentKeyContext();
+    var tonicPc = (ctx && ctx.tonicPc != null) ? ctx.tonicPc : 0;
+    var rootPc = (((tonicPc + DEGREE_SEMIS[deg] + acc) % 12) + 12) % 12;
+    var sfxLow = suffix.toLowerCase();
+    var quality;
+    if(suffix === 'M7' || sfxLow === 'maj7'){ quality = 'maj7'; }
+    else if(sfxLow === 'm7' || sfxLow === 'min7'){ quality = 'min7'; }
+    else if(sfxLow === 'o7' || sfxLow === 'dim7'){ quality = 'dim7'; }
+    else if(sfxLow === 'ø7' || sfxLow === 'h7' || sfxLow === 'm7b5'){ quality = 'm7b5'; }
+    else if(sfxLow === 'o' || sfxLow === 'dim'){ quality = 'dim'; }
+    else if(sfxLow === '+' || sfxLow === 'aug'){ quality = 'aug'; }
+    else if(sfxLow === '7'){ quality = isUpper ? '7' : 'min7'; }
+    else if(sfxLow === '6'){ quality = isUpper ? '6' : 'm6'; }
+    else if(sfxLow === ''){ quality = isUpper ? 'maj' : 'min'; }
+    else { return null; }
+    return { rootPc: rootPc, quality: quality };
+  }
+
+  function addRomanChord(){
+    var input = $("romanInput"), feedback = $("romanFeedback");
+    if(!input) return;
+    var val = input.value.trim();
+    if(!val) return;
+    var parsed = parseRomanNumeral(val);
+    if(!parsed){
+      if(feedback){ feedback.textContent = 'Could not parse "' + val + '"'; feedback.className = 'text-danger small'; }
+      return;
+    }
+    var intervals = CHORD_QUALITY_INTERVALS[parsed.quality];
+    if(!intervals){
+      if(feedback){ feedback.textContent = 'Unknown quality: ' + parsed.quality; feedback.className = 'text-danger small'; }
+      return;
+    }
+    var rootMidi = 48 + parsed.rootPc;
+    for(var i = 0; i < intervals.length; i++){ addDrone(rootMidi + intervals[i]); }
+    if(feedback){
+      var rn = PitchSpelling.romanNumeral(parsed.rootPc, parsed.quality, currentKeyContext());
+      feedback.textContent = 'Added ' + intervals.length + ' notes (' + rn + ')';
+      feedback.className = 'text-muted small';
+    }
+    input.value = '';
+  }
+
+  var addDroneBtn = $("addDrone");
+  if(addDroneBtn){ addDroneBtn.addEventListener("click", function(){ Tone.start().then(addDrone); }); }
+  var addRomanBtn = $("addRoman");
+  if(addRomanBtn){ addRomanBtn.addEventListener("click", function(){ Tone.start().then(addRomanChord); }); }
+  var romanInputEl = $("romanInput");
+  if(romanInputEl){ romanInputEl.addEventListener("keydown", function(e){ if(e.key === 'Enter'){ Tone.start().then(addRomanChord); } }); }
+
+  function fillDroneMenu(){
+    var sel = $("droneNote"); if(!sel) return;
+    sel.innerHTML = "";
+    // Offer C2..C7 in the dropdown
+    for(var m=START_MIDI; m<=END_MIDI; m++){
+      var opt = document.createElement("option");
+      opt.value = String(m); opt.textContent = midiToNameDisplay(m);
+      sel.appendChild(opt);
+    }
+    var def = sel.querySelector('option[value="60"]'); // default C4
+    if(def){ def.selected = true; }
+  }
+  fillDroneMenu();
+
+  function updateDroneSoloMute(){
+    var anySolo = Array.from(drones.values()).some(function(d){ return d.solo; });
+    drones.forEach(function(d){
+      var logicalOn = d.mute ? 0 : (anySolo ? (d.solo ? 1 : 0) : 1);
+      var target = logicalOn * (d.baseGain != null ? d.baseGain : 1); // NEW: include base attenuation
+      try { d.gain.gain.rampTo(target, 0.02); } catch(err){}
+    });
+    refreshAllKeyPaint();
+  }
+
+  var droneEq = $("drone-eq");
+  if(droneEq){
+    droneEq.addEventListener("change", function(e){
+      if(e.target.checked){
+        var teq = $("temp-eq"), tji = $("temp-ji");
+        if(teq) teq.checked = true;
+        if(tji) tji.checked = false;
+        setDronesEqualMode();
+        retuneAll();
+      }
+    });
+  }
+  var droneJi = $("drone-ji");
+  if(droneJi){
+    droneJi.addEventListener("change", function(e){
+      if(e.target.checked){
+        var teq = $("temp-eq"), tji = $("temp-ji");
+        if(teq) teq.checked = false;
+        if(tji) tji.checked = true;
+        setDronesPureMode();
+        retuneAll();
+      }
+    });
+  }
+
+  // --- Transpose wiring (live updates + disable keys) ---
+  var transposeEl = $("transpose");
+  if(transposeEl){
+    transposeEl.addEventListener("input", function(){
+      retuneAll();
+      updateOutOfRangeKeys();
+      if(isTransposeLabels()){
+        buildBoard();
+        kbScrollRefresh();
+        drones.forEach(function(d){ if(d.nameEl){ d.nameEl.innerHTML = midiToNameDisplay(d.midi) + ' <small class="text-muted ms-1">' + (d.wave||"") + '</small>'; } });
+        updateReadout(); updateKbQuality(); updateDroneQuality();
+      }
+      refreshAllKeyPaint();
+    });
+  }
+  var minus = $("transposeMinus"), plus = $("transposePlus");
+  if(minus && plus && transposeEl){
+    function clamp(v){
+      var n = Number(v);
+      var mn = Number(transposeEl.min || -24), mx = Number(transposeEl.max || 24);
+      if(n < mn) n = mn; if(n > mx) n = mx;
+      return n;
+    }
+    function bump(delta){
+      var n = clamp((Number(transposeEl.value)||0) + delta);
+      transposeEl.value = String(n);
+      var evt = document.createEvent("Event");
+      evt.initEvent("input", true, true);
+      transposeEl.dispatchEvent(evt);
+    }
+    minus.addEventListener("click", function(){ bump(-1); });
+    plus.addEventListener("click",  function(){ bump(+1); });
+  }
+
+  var toggleRootEl = $("toggleRootMarker");
+  if(toggleRootEl){
+    toggleRootEl.addEventListener("change", function(){
+      setRootMarkerEnabled(!!toggleRootEl.checked);
+      if(toggleRootEl.checked){ wireRootMarkerDrag(); }
+    });
+  }
+  var transposeLabelsEl = $("transposeLabels");
+  if(transposeLabelsEl){
+    transposeLabelsEl.addEventListener("change", function(){
+      buildBoard();
+      kbScrollRefresh();
+      updateRootMarker();
+      drones.forEach(function(d){ if(d.nameEl){ d.nameEl.innerHTML = midiToNameDisplay(d.midi) + ' <small class="text-muted ms-1">' + (d.wave||"") + '</small>'; } });
+      updateReadout(); updateKbQuality(); updateDroneQuality();
+      refreshAllKeyPaint();
+    });
+  }
+
+  // ---------- MIDI ----------
+  var midiSel = $("midiIn"), midiStatus = $("midiStatus");
+  var midiAccess = null, currentInput = null;
+
+  function initMIDI(){
+    if(!navigator.requestMIDIAccess){ if(midiStatus) midiStatus.textContent = "Web MIDI not supported"; return; }
+    navigator.requestMIDIAccess().then(function(access){
+      midiAccess = access;
+      if(midiStatus) midiStatus.textContent = "MIDI ready";
+      refreshMIDIDevices();
+      midiAccess.onstatechange = refreshMIDIDevices;
+    }).catch(function(){ if(midiStatus) midiStatus.textContent = "MIDI permission denied"; });
+  }
+  function refreshMIDIDevices(){
+    if(!midiAccess || !midiSel) return;
+    midiSel.innerHTML = "";
+    var inputs = Array.from(midiAccess.inputs.values());
+
+    // populate list
+    for(var i=0;i<inputs.length;i++){
+      var opt = document.createElement("option");
+      opt.value = inputs[i].id;
+      opt.textContent = inputs[i].name || ("MIDI In " + (i+1));
+      midiSel.appendChild(opt);
+    }
+    if(inputs.length === 0){
+      var optNone = document.createElement("option");
+      optNone.value = "";
+      optNone.textContent = "No inputs";
+      midiSel.appendChild(optNone);
+    }
+
+    // auto-select first available
+    if(inputs.length > 0){
+      midiSel.value = inputs[0].id;
+      switchMIDIInput(inputs[0].id);
+    }else{
+      switchMIDIInput(null);
+    }
+
+    // wire change
+    midiSel.onchange = function(){
+      switchMIDIInput(midiSel.value || null);
+    };
+  }
+  function switchMIDIInput(id){
+    if(currentInput){
+      try { currentInput.onmidimessage = null; } catch(e){}
+    }
+    currentInput = null;
+    if(!midiAccess || !id) return;
+    var inputs = Array.from(midiAccess.inputs.values());
+    for(var i=0;i<inputs.length;i++){
+      if(inputs[i].id === id){
+        currentInput = inputs[i];
+        break;
+      }
+    }
+    if(currentInput){
+      currentInput.onmidimessage = handleMIDIMessage;
+    }
+  }
+  function handleMIDIMessage(ev){
+    var data = ev.data;
+    if(!data || data.length < 2) return;
+    var st = data[0] & 0xF0;
+    var ch = data[0] & 0x0F;
+    var d1 = data[1];
+    var d2 = data.length > 2 ? data[2] : 0;
+
+    // Note On
+    if(st === 0x90){
+      if(d2 > 0){
+        // velocity 0..127 -> 0..1
+        var vel = d2 / 127;
+        keyOn(d1, vel);
+        setKeyActive(d1, true);
+      }else{
+        // treated as Note Off
+        keyOff(d1);
+        setKeyActive(d1, false);
+      }
+      return;
+    }
+    // Note Off
+    if(st === 0x80){
+      keyOff(d1);
+      setKeyActive(d1, false);
+      return;
+    }
+    // Sustain pedal (CC64) could be added here if desired.
+  }
+  initMIDI();
+
+  // ---------- Masters (keyboard & drones) ----------
+  var kbVolSlider = $("kbMaster");
+  if(kbVolSlider){
+    var v0 = Number(kbVolSlider.value); // dB
+    kbMaster.gain.value = Tone.dbToGain(v0);
+    kbVolSlider.addEventListener("input", function(){
+      var db = Number(kbVolSlider.value);
+      try { kbMaster.gain.rampTo(Tone.dbToGain(db), 0.03); } catch(e){}
+    });
+  }
+
+  var droneVolSlider = $("droneMaster");
+  if(droneVolSlider){
+    var d0 = Number(droneVolSlider.value); // dB
+    droneMaster.gain.value = (d0 <= -60) ? 0 : Tone.dbToGain(d0);
+    droneVolSlider.addEventListener("input", function(){
+      var db = Number(droneVolSlider.value);
+      var g  = (db <= -60) ? 0 : Tone.dbToGain(db);
+      try { droneMaster.gain.rampTo(g, 0.03); } catch(e){}
+    });
+  }
+
+  // ---------- Metronome start/stop & volumes ----------
+  scheduleMetronome();
+  hookVolumes();
+
+  var metroStart = $("metroStart");
+  if(metroStart){
+    metroStart.addEventListener("click", function(){
+      Tone.start().then(function(){
+        scheduleMetronome();
+        try { Tone.Transport.start("+0.02"); } catch(e){}
+      });
+    });
+  }
+  var metroStop = $("metroStop");
+  if(metroStop){
+    metroStop.addEventListener("click", function(){
+      try { Tone.Transport.stop(); Tone.Transport.cancel(); } catch(e){}
+    });
+  }
+
+  // ---------- Computer-keyboard note entry ----------
+  // Isomorphic 3-octave layout (adapted from solfege-keyboard):
+  //   Q W E R T Y U  = C D E F G A B  (octave below base)
+  //   I O P [ ]      = C D E F G      (base octave)
+  //   Z X            = A B            (base octave)
+  //   C V B N M , .  = C D E F G A B  (octave above base)
+  //   2 3 5 6 7      = C# D# F# G# A# (below); 9 0 =/+ = C# D# F# (base)
+  //   A S            = G# A# (base);  F G J K L = C# D# F# G# A# (above)
+  var KB_NOTE_MAP = {
+    "q":{semis:0,oct:-1}, "w":{semis:2,oct:-1}, "e":{semis:4,oct:-1}, "r":{semis:5,oct:-1},
+    "t":{semis:7,oct:-1}, "y":{semis:9,oct:-1}, "u":{semis:11,oct:-1},
+    "i":{semis:0,oct:0}, "o":{semis:2,oct:0}, "p":{semis:4,oct:0}, "[":{semis:5,oct:0}, "]":{semis:7,oct:0},
+    "z":{semis:9,oct:0}, "x":{semis:11,oct:0},
+    "c":{semis:0,oct:1}, "v":{semis:2,oct:1}, "b":{semis:4,oct:1}, "n":{semis:5,oct:1},
+    "m":{semis:7,oct:1}, ",":{semis:9,oct:1}, ".":{semis:11,oct:1},
+    "2":{semis:1,oct:-1}, "3":{semis:3,oct:-1}, "5":{semis:6,oct:-1}, "6":{semis:8,oct:-1}, "7":{semis:10,oct:-1},
+    "9":{semis:1,oct:0}, "0":{semis:3,oct:0}, "=":{semis:6,oct:0}, "+":{semis:6,oct:0},
+    "a":{semis:8,oct:0}, "s":{semis:10,oct:0},
+    "f":{semis:1,oct:1}, "g":{semis:3,oct:1}, "j":{semis:6,oct:1}, "k":{semis:8,oct:1}, "l":{semis:10,oct:1}
+  };
+
+  var KB_OCTAVE_MIN = 36, KB_OCTAVE_MAX = 84;
+  var kbOctaveBase = 60; // MIDI of "C" in the base-octave row (I key)
+  var kbPressedKeys = {}; // physical key -> midi currently sounding
+
+  function updateKbOctaveLabel(){
+    var el = $("kbOctaveLabel"); if(!el) return;
+    el.textContent = "C" + ((kbOctaveBase/12) - 1);
+  }
+  function isFormFieldFocused(){
+    var el = document.activeElement; if(!el) return false;
+    var tag = el.tagName;
+    return tag==="INPUT" || tag==="SELECT" || tag==="TEXTAREA" || tag==="BUTTON";
+  }
+  function shiftKbOctave(dir){
+    if(dir > 0) kbOctaveBase = Math.min(KB_OCTAVE_MAX, kbOctaveBase + 12);
+    else        kbOctaveBase = Math.max(KB_OCTAVE_MIN, kbOctaveBase - 12);
+    updateKbOctaveLabel();
+  }
+  function releaseAllComputerNotes(){
+    for(var k in kbPressedKeys){ try { keyOff(kbPressedKeys[k]); } catch(e){} }
+    kbPressedKeys = {};
+  }
+  window.addEventListener("keydown", function(e){
+    if(e.ctrlKey || e.metaKey || e.altKey) return;
+    if(kbCommandMode) return;          // command mode owns the keyboard
+    if(isFormFieldFocused()) return;
+    var map = KB_NOTE_MAP[e.key.toLowerCase()];
+    if(!map) return;
+    e.preventDefault();
+    var key = e.key.toLowerCase();
+    if(kbPressedKeys.hasOwnProperty(key)) return; // already sounding (key repeat)
+    var midi = kbOctaveBase + map.oct*12 + map.semis;
+    kbPressedKeys[key] = midi;
+    keyOn(midi);
+  });
+  window.addEventListener("keyup", function(e){
+    var key = e.key.toLowerCase();
+    if(!kbPressedKeys.hasOwnProperty(key)) return;
+    var midi = kbPressedKeys[key];
+    delete kbPressedKeys[key];
+    keyOff(midi);
+  });
+  var kbOctaveUpBtn = $("kbOctaveUp"), kbOctaveDownBtn = $("kbOctaveDown");
+  if(kbOctaveUpBtn){ kbOctaveUpBtn.addEventListener("click", function(){ shiftKbOctave(1); }); }
+  if(kbOctaveDownBtn){ kbOctaveDownBtn.addEventListener("click", function(){ shiftKbOctave(-1); }); }
+  updateKbOctaveLabel();
+
+  // ══════════════════════════════════════════════════════════════
+  // MODAL COMMAND MODE
+  // ══════════════════════════════════════════════════════════════
+  var kbCommandMode = false;
+  var kbAwaitingKey = false; // true while waiting for the key-center sub-key after "k"
+
+  function clickById(id){ var el = $(id); if(el) el.click(); }
+  function setCheckbox(id, val){
+    var el = $(id); if(!el) return;
+    el.checked = (val === undefined) ? !el.checked : !!val;
+    el.dispatchEvent(new Event("change", { bubbles:true }));
+  }
+  function bumpRange(id, delta){
+    var el = $(id); if(!el) return;
+    var min = Number(el.min), max = Number(el.max);
+    el.value = Math.max(min, Math.min(max, Number(el.value) + delta));
+    el.dispatchEvent(new Event("input", { bubbles:true }));
+  }
+  function bumpNumber(id, delta, evt){
+    var el = $(id); if(!el) return;
+    var min = el.min!=="" ? Number(el.min) : -Infinity;
+    var max = el.max!=="" ? Number(el.max) :  Infinity;
+    el.value = Math.max(min, Math.min(max, Number(el.value) + delta));
+    el.dispatchEvent(new Event(evt || "change", { bubbles:true }));
+  }
+
+  function setCommandMode(on){
+    kbCommandMode = !!on;
+    kbAwaitingKey = false;
+    if(kbCommandMode) releaseAllComputerNotes();
+    var pal = $("cmdPalette"); if(pal) pal.hidden = !kbCommandMode;
+    var prompt = $("cmdKeyPrompt"); if(prompt){ prompt.hidden = true; prompt.textContent = ""; }
+    var badge = $("kbModeBadge");
+    if(badge){
+      badge.textContent = kbCommandMode ? "CMD" : "PLAY";
+      badge.classList.toggle("kb-mode-cmd",  kbCommandMode);
+      badge.classList.toggle("kb-mode-play", !kbCommandMode);
+    }
+  }
+
+  function cycleKbWave(){
+    var sel = $("kbWave"); if(!sel) return;
+    sel.selectedIndex = (sel.selectedIndex + 1) % sel.options.length;
+    sel.dispatchEvent(new Event("change", { bubbles:true }));
+  }
+  function toggleMetronome(){
+    var running = false;
+    try { running = (Tone.Transport.state === "started"); } catch(e){}
+    clickById(running ? "metroStop" : "metroStart");
+  }
+  function toggleTemperament(){
+    var pure = isPureEnabled();
+    var r = $(pure ? "temp-eq" : "temp-ji");
+    if(r){ r.checked = true; r.dispatchEvent(new Event("change", { bubbles:true })); }
+  }
+  function setKeyTo(pcOrAuto){
+    var sel = $("keySelect"); if(!sel) return;
+    sel.value = (pcOrAuto === null) ? "" : String(pcOrAuto);
+    sel.dispatchEvent(new Event("change", { bubbles:true }));
+  }
+  function showCmdPrompt(txt){
+    var p = $("cmdKeyPrompt"); if(!p) return;
+    p.textContent = txt; p.hidden = false;
+  }
+
+  var KEYLETTER_PC = { c:0, d:2, e:4, f:5, g:7, a:9, b:11 };
+
+  window.addEventListener("keydown", function(e){
+    if(e.ctrlKey || e.metaKey || e.altKey) return;
+
+    // Escape: leave a focused field first; otherwise toggle command mode.
+    if(e.key === "Escape"){
+      if(isFormFieldFocused() && !kbCommandMode){ document.activeElement.blur(); return; }
+      e.preventDefault();
+      setCommandMode(!kbCommandMode);
+      return;
+    }
+
+    // "?" opens the command palette (help) from play mode.
+    if(e.key === "?" && !kbCommandMode && !isFormFieldFocused()){
+      e.preventDefault();
+      setCommandMode(true);
+      return;
+    }
+
+    // Space is a global panic stop in either mode (but not while typing in a field).
+    if(e.key === " " && !isFormFieldFocused()){
+      e.preventDefault();
+      stopAllEverything();
+      return;
+    }
+
+    // Arrows work in both modes (octave / transpose), unless typing in a field.
+    if(!isFormFieldFocused()){
+      if(e.key === "ArrowUp"){   e.preventDefault(); shiftKbOctave(1);  return; }
+      if(e.key === "ArrowDown"){ e.preventDefault(); shiftKbOctave(-1); return; }
+      if(e.key === "ArrowLeft"){ e.preventDefault(); clickById("transposeMinus"); return; }
+      if(e.key === "ArrowRight"){e.preventDefault(); clickById("transposePlus");  return; }
+    }
+
+    if(!kbCommandMode) return;       // remaining commands are command-mode only
+    if(isFormFieldFocused()) return;
+
+    // Sub-mode: waiting for a key-center letter after "k"
+    if(kbAwaitingKey){
+      var kk = e.key.toLowerCase();
+      e.preventDefault();
+      if(kk === "0"){ setKeyTo(null); }                 // Auto
+      else if(KEYLETTER_PC.hasOwnProperty(kk)){ setKeyTo(KEYLETTER_PC[kk]); }
+      kbAwaitingKey = false;
+      var pr = $("cmdKeyPrompt"); if(pr){ pr.hidden = true; }
+      return;
+    }
+
+    var k = e.key.toLowerCase();
+    var handled = true;
+    switch(k){
+      case "enter": setCommandMode(false); break;
+      case "m": toggleMetronome(); break;
+      case "t": toggleTemperament(); break;
+      case "h": setCheckbox("holdToggle"); break;
+      case "d": clickById("tab-drones-btn"); break;
+      case "s": clickById("tab-shruti-btn"); break;
+      case "b": clickById("tab-drawbars-btn"); break;
+      case "w": cycleKbWave(); break;
+      case "p": clickById("drawbarPlay"); break;
+      case "x": clickById("shrutiClear"); break;
+      case "n": setCheckbox("enh-btn"); break;
+      case "g": setCheckbox("solfege-btn"); break;
+      case "r": $("transpose").value = "0"; $("transpose").dispatchEvent(new Event("change",{bubbles:true})); setKeyTo(null); break;
+      case ",": bumpNumber("tempo", e.shiftKey ? -10 : -1, "change"); break;
+      case ".": bumpNumber("tempo", e.shiftKey ?  10 :  1, "change"); break;
+      case "[": bumpRange("kbMaster", -3); break;
+      case "]": bumpRange("kbMaster",  3); break;
+      case "k": kbAwaitingKey = true; showCmdPrompt("Set key (Do): press c d e f g a b, or 0 for Auto"); break;
+      case "1": case "2": case "3": case "4": case "5": case "6": case "7": {
+        var presets = document.querySelectorAll(".drawbar-preset");
+        var idx = Number(k) - 1;
+        if(presets[idx]) presets[idx].click();
+        break;
+      }
+      case "?": case "/": /* keep palette open; it is the help */ break;
+      default: handled = false;
+    }
+    if(handled) e.preventDefault();
+  });
+
+  // Clicking the dimmed backdrop returns to play mode.
+  var cmdPaletteEl = $("cmdPalette");
+  if(cmdPaletteEl){
+    cmdPaletteEl.addEventListener("click", function(e){
+      if(e.target === cmdPaletteEl) setCommandMode(false);
+    });
+  }
+
+  // ---------- Build keyboard, wire scroll, center on C4 ----------
+  buildBoard();
+  kbScrollWire();
+  kbScrollRefresh();
+  kbScrollToMidiCenter(60); // C4
+
+  // Ensure playable greying matches initial transpose
+  updateOutOfRangeKeys();
+
+  // First UI pass
+  retuneAll();
+  updateKbQuality();
+  updateDroneQuality();
+  updateRootMarker();
+
+  // ── Shruti box ─────────────────────────────────────────────
+  buildShrutiPads();
+  var shrutiClearBtn = $("shrutiClear");
+  if(shrutiClearBtn) shrutiClearBtn.addEventListener("click", stopAllShruti);
+
+  // Rebuild pads when tab becomes visible (key may have changed while away)
+  var shrutiTabBtn = $("tab-shruti-btn");
+  if(shrutiTabBtn) shrutiTabBtn.addEventListener("shown.bs.tab", function(){
+    refreshShrutiNoteLabels();
+  });
+
+  // ── Drawbars ───────────────────────────────────────────────
+  populateDrawbarRoot();
+  buildDrawbarRig();
+
+  var drawbarPlayBtn = $("drawbarPlay");
+  if(drawbarPlayBtn) drawbarPlayBtn.addEventListener("click", function(){
+    if(drawbarPlaying) stopDrawbars(); else startDrawbars();
+  });
+
+  var drawbarRootSel = $("drawbarRoot");
+  if(drawbarRootSel) drawbarRootSel.addEventListener("change", retuneDrawbars);
+
+  document.querySelectorAll(".drawbar-preset").forEach(function(btn){
+    btn.addEventListener("click", function(){ applyDrawbarPreset(btn.getAttribute("data-vals")); });
+  });
+
+  // Keep A4 changes responsive (already hooked), and window resizes updating scroll UI
+  window.addEventListener("resize", function(){ kbScrollRefresh(); });
+});
+</script>
+</body>
+</html>

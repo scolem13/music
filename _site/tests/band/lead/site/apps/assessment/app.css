@@ -1,0 +1,18 @@
+/* Tonal-specific styling (light). Common styles live in /apps/shared/assessment.css */
+#app-root .readout { font-variant-numeric: tabular-nums; }
+#app-root .freq { font-size: 2.2rem; font-weight: 700; }
+#app-root .note { font-size: 1.2rem; color: #6c757d; }
+#app-root .meter { position: relative; height: 48px; background: #f1f3f5; border-radius: .375rem;
+  margin-top: .75rem; overflow: hidden; border: 1px solid #dee2e6; }
+#app-root .meter .center { position: absolute; left: 50%; top: 0; bottom: 0; width: 2px;
+  background: #adb5bd; transform: translateX(-1px); }
+#app-root .meter .zone { position: absolute; top: 0; bottom: 0; background: rgba(25,135,84,.15); }
+#app-root .meter .needle { position: absolute; top: 4px; bottom: 4px; width: 4px; border-radius: 2px;
+  background: #fd7e14; left: 50%; transform: translateX(-2px); transition: left .05s linear; }
+#app-root .scale { display: flex; justify-content: space-between; font-size: .7rem; color: #adb5bd; margin-top: .3rem; }
+#app-root #solfege { font-size: 1.05rem; letter-spacing: .04em; margin-top: .4rem; color: #495057; }
+#app-root #targetInfo { margin-top: .4rem; }
+/* reserved space so toggled elements don't shift the page */
+#app-root #captureSlot { min-height: 24px; }
+#app-root #resultArea { min-height: 120px; }
+#app-root #recCard { min-height: 108px; }
