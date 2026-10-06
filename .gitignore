@@ -3,3 +3,9 @@
 .quarto/
 
 /.quarto/
+
+tests/band/lead/site/
+tests/band/agent-b/out/
+tests/band/**/*.png
+
+**/*.quarto_ipynb

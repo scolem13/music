@@ -24,6 +24,7 @@ website:
           - practice/rhythm-sequences.qmd
           - practice/tonal-sequences.qmd
           - practice/songs.qmd
+          - practice/songs-classic.qmd
           - practice/tunes.qmd
           - practice/patterns.qmd
           - practice/rhythms.qmd
@@ -48,6 +49,7 @@ website:
           - tools/drumset.qmd
           - tools/solfege-keyboard.qmd
           - tools/accomp-styles.qmd
+          - tools/backing-track.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

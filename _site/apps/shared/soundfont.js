@@ -13,7 +13,7 @@
   w.getSoundfontUrl = function () {
     if (_p) return _p;
     _p = Promise.race([
-      fetch(PRIMARY + 'acousticgrandpiano-mp3.js', { method: 'HEAD' })
+      fetch(PRIMARY + 'acoustic_grand_piano-mp3.js', { method: 'HEAD' })
         .then(function (r) { return r.ok ? PRIMARY : Promise.reject(); }),
       new Promise(function (_, rej) { setTimeout(rej, 3000); })
     ]).catch(function () { return FALLBACK; });

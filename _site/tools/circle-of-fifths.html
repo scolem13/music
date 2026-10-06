@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Circle of Fifths – Music Practice</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -36,10 +42,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-7131cfb1a32330e9a0bc117eb5aad4de.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-01a82125dcc07191ca4a322ed0902c35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -232,6 +238,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../tools/accomp-styles.html">
  <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
   </li>  
     </ul>
   </li>
@@ -469,6 +479,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <div id="circle-of-fifths-root"><div id="cof-wrap">
   <div id="cof-rail">
+    <div class="side-panel" id="keysig-panel">
+      <label for="keysig-select">Sharps / Flats</label>
+      <select id="keysig-select"></select>
+    </div>
     <div class="side-panel" id="left-panel">
       <label>Tonality</label>
       <select id="mode-select">
@@ -484,8 +498,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     <div class="side-panel" id="right-panel">
       <label>Minor type</label>
       <select id="minor-mode">
-        <option value="5">Natural (Aeolian)</option>
         <option value="6">Harmonic</option>
+        <option value="5">Natural (Aeolian)</option>
       </select>
     </div>
   </div>
@@ -550,13 +564,25 @@ const FIFTHS_TO_EXT=[
 ];
 function hasTwoSpellings(i){return FIFTHS_TO_EXT[i].sharp!==FIFTHS_TO_EXT[i].flat;}
 const toggleState=FIFTHS_TO_EXT.map((e,i)=>[8,9,10].includes(i)?1:0);
-function getRootExtIdx(){return toggleState[selectedRoot]===0?FIFTHS_TO_EXT[selectedRoot].sharp:FIFTHS_TO_EXT[selectedRoot].flat;}
-function getSpellingMap(){return buildSpellingMap(getRootExtIdx());}
+// The Sharps/Flats menu can land on a root the wheel has no slot spelling for (F♭, E♯, B♯).
+// That spelling is held here until the root or tonality changes.
+let rootExtOverride=null;
+function getRootExtIdx(){
+  if(rootExtOverride&&rootExtOverride.root===selectedRoot&&rootExtOverride.mode===selectedMode)return rootExtOverride.ext;
+  return toggleState[selectedRoot]===0?FIFTHS_TO_EXT[selectedRoot].sharp:FIFTHS_TO_EXT[selectedRoot].flat;
+}
+function getSpellingMap(){
+  const map=buildSpellingMap(getRootExtIdx()),p=getParentMajorExtIdx();
+  // Diatonic notes always take the key signature's spelling — Locrian's ♭5 sits just outside
+  // the root-centred window above.
+  for(let i=p-1;i<=p+5;i++){const e=EXT_LINE[i];if(e)map[e.chroma]=e.name;}
+  return map;
+}
 function getParentMajorExtIdx(){return getRootExtIdx()+MODES[selectedMode].fifthsOffset;}
 function keySigValue(){return getParentMajorExtIdx()-8;}
 function keySigLabel(){const ks=keySigValue();if(ks===0)return'♮';if(ks>0)return ks+'♯';return Math.abs(ks)+'♭';}
 function getRingDisplayName(i){
-  if(i===selectedRoot)return EXT_LINE[toggleState[i]===0?FIFTHS_TO_EXT[i].sharp:FIFTHS_TO_EXT[i].flat].name;
+  if(i===selectedRoot)return EXT_LINE[getRootExtIdx()].name;
   const map=getSpellingMap();return map[FIFTHS_TO_CHROMA[i]]||EXT_LINE[FIFTHS_TO_EXT[i].sharp].name;
 }
 function lockSpelling(i){
@@ -584,7 +610,7 @@ const MODE_SOLFEGE=[
   ['la','ti','do','re','mi','fa','si'],
   ['ti','do','re','mi','fa','so','la'],
 ];
-const TONIC_GROUPS={do:[0],re:[1],mi:[2],fa:[3],so:[4],la:[5,6],ti:[7]};
+const TONIC_GROUPS={do:[0],re:[1],mi:[2],fa:[3],so:[4],la:[6,5],ti:[7]};
 function resolveTonicClick(syllable){
   const group=TONIC_GROUPS[syllable]; if(!group)return;
   const idx=group.indexOf(selectedMode);
@@ -656,6 +682,7 @@ function diatonicSet(){const rc2=FIFTHS_TO_CHROMA[selectedRoot];return MODES[sel
 function getQualities(){return MODES[selectedMode].harmonic?HARM_MIN_QUALITIES:MODES[selectedMode].qualities;}
 
 function draw(){
+  if(rootExtOverride&&(rootExtOverride.root!==selectedRoot||rootExtOverride.mode!==selectedMode))rootExtOverride=null;
   const c=rc(); ctx.fillStyle=c.canvasBg; ctx.fillRect(0,0,W,W);
   const dia=diatonicSet(),quals=getQualities(),solSet=MODE_SOLFEGE[selectedMode];
   const charSet=CHARACTERISTIC_CHORDS[selectedMode]||new Set();
@@ -705,6 +732,7 @@ function draw(){
   ctx.fillStyle=c.centerBg;ctx.fill();ctx.strokeStyle=c.stroke;ctx.lineWidth=0.75;ctx.stroke();
   const ksl=keySigLabel(),ksColor=Math.abs(keySigValue())>7?c.centerWarn:c.centerText;
   drawText(ksl,CX,CY,ksl.length>2?13:16,ksColor,'500');
+  syncKeySig();
 }
 
 const modeSelect=document.getElementById('mode-select');
@@ -723,6 +751,26 @@ modeSelect.addEventListener('change',()=>{
 });
 minorSelect.addEventListener('change',()=>{selectedMode=parseInt(minorSelect.value);syncUI();draw();});
 
+// Sharps/flats menu: pick a key signature, keep the current tonality, move the root to match.
+const keySigSelect=document.getElementById('keysig-select');
+for(let ks=-7;ks<=7;ks++){
+  const o=document.createElement('option');o.value=String(ks);
+  o.textContent=ks===0?'0 (♮)':Math.abs(ks)+(ks>0?'♯':'♭');
+  keySigSelect.appendChild(o);
+}
+function syncKeySig(){
+  const el=document.getElementById('keysig-select'); if(!el)return;
+  const ks=keySigValue(); el.value=Math.abs(ks)<=7?String(ks):'';
+}
+keySigSelect.addEventListener('change',()=>{
+  const ext=parseInt(keySigSelect.value)+8-MODES[selectedMode].fifthsOffset;
+  let i=FIFTHS_TO_EXT.findIndex(e=>e.sharp===ext),t=0;
+  if(i<0){i=FIFTHS_TO_EXT.findIndex(e=>e.flat===ext);t=1;}
+  if(i<0){i=FIFTHS_TO_CHROMA.indexOf(EXT_LINE[ext].chroma);rootExtOverride={root:i,mode:selectedMode,ext};}
+  else{rootExtOverride=null;toggleState[i]=t;}
+  selectedRoot=i;draw();
+});
+
 canvas.addEventListener('click',e=>{
   const rect=canvas.getBoundingClientRect(),sc2=CSS_SIZE/rect.width;
   const mx=(e.clientX-rect.left)*sc2-CX,my=(e.clientY-rect.top)*sc2-CY;
@@ -737,7 +785,7 @@ canvas.addEventListener('click',e=>{
     if(dia.includes(noteC)){resolveTonicClick(MODE_SOLFEGE[selectedMode][dia.indexOf(noteC)]);syncUI();draw();}
     return;
   }
-  if(i===selectedRoot){if(hasTwoSpellings(i)){toggleState[i]=1-toggleState[i];draw();}return;}
+  if(i===selectedRoot){if(rootExtOverride){rootExtOverride=null;draw();return;}if(hasTwoSpellings(i)){toggleState[i]=1-toggleState[i];draw();}return;}
   lockSpelling(i);selectedRoot=i;draw();
 });
 
@@ -757,15 +805,15 @@ watchZoom();
   // operates in concert pitch.
   if (typeof FIFTHS_TO_CHROMA === "undefined" || typeof draw !== "function" || typeof MODES === "undefined") return;
   var C_MODE = {maj:0,major:0,ion:0,ionian:0, m:6,min:6,minor:6, aeo:5,aeolian:5, dor:1,dorian:1, phr:2,phrygian:2, lyd:3,lydian:3, mix:4,mixolydian:4, loc:7,locrian:7};
-  var OUR_MODE = {0:"maj",1:"dor",2:"phr",3:"lyd",4:"mix",5:"m",6:"m",7:"loc"};
+  var OUR_MODE = {0:"maj",1:"dor",2:"phr",3:"lyd",4:"mix",5:"aeo",6:"m",7:"loc"};
   var NAMES=["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
   // Written-transpose semitone offsets from concert pitch (mod 12).
   var TRANSPOSITIONS=[{value:0,label:"Concert pitch"},{value:2,label:"B♭"},{value:9,label:"E♭"},{value:7,label:"F"}];
   var applying=false;
 
   // Fold key/transposition controls into the control rail, matching the Tonality/Minor-type
-  // panels. Transposed Key is prepended first so it reads as the far-left/topmost control
-  // whenever it's shown.
+  // panels. They sit just below the Sharps/Flats menu, Transposed Key first whenever it's
+  // shown.
   var rail=document.getElementById("cof-rail");
   if(rail){ var keyGroup=document.createElement("div"); keyGroup.id="cof-keybar";
     keyGroup.style.cssText="display:contents";
@@ -773,7 +821,7 @@ watchZoom();
     keyGroup.innerHTML='<div class="side-panel" id="cofTransWrap" style="display:none"><label for="cofTrans" id="cofTransLbl">Transposed Key</label><select id="cofTrans"></select></div>'+
       '<div class="side-panel" id="cof-concert-panel"><label for="cofConcert">Concert Key</label><select id="cofConcert"></select></div>'+
       '<div class="side-panel" id="cof-view-panel"><label for="cofView">Transposition</label><select id="cofView">'+transOptions+'</select></div>';
-    rail.insertBefore(keyGroup, rail.firstChild); }
+    rail.insertBefore(keyGroup, document.getElementById("left-panel")); }
   var cSel=document.getElementById("cofConcert"), tSel=document.getElementById("cofTrans"),
       tWrap=document.getElementById("cofTransWrap"), tLbl=document.getElementById("cofTransLbl"), vSel=document.getElementById("cofView");
   if(cSel){ var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[pc]+'</option>'; cSel.innerHTML=h; }
@@ -808,6 +856,8 @@ watchZoom();
   function syncBar(){
     var rest = Tonality.getResting(); if(rest==null) return; var ts=transSemis();
     if(cSel) cSel.value=String(rest);
+    var ksLbl=document.querySelector('label[for="keysig-select"]');
+    if(ksLbl) ksLbl.textContent = ts ? "Sharps / Flats (written)" : "Sharps / Flats";
     if(tWrap) tWrap.style.display = ts ? "" : "none";
     if(ts && tSel){ if(tLbl) tLbl.textContent="Transposed Key ("+transLabel()+")";
       var h=""; for(var pc=0;pc<12;pc++) h+='<option value="'+pc+'">'+NAMES[pc]+'</option>'; tSel.innerHTML=h; tSel.value=String((rest+ts)%12); }
@@ -912,13 +962,14 @@ watchZoom();
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

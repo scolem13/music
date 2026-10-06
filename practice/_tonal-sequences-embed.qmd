@@ -326,7 +326,7 @@
 
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
-<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/patterns/pattern-set.js"></script>
 <script src="/apps/shared/tonality.js?v=4"></script>
 <script src="/apps/shared/cursor-synth.js"></script>
 <script>

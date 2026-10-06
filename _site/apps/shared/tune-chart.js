@@ -9,12 +9,16 @@
 //     transpose: 0,          // semitones to transpose the chord symbols
 //     preferFlats: true,     // spell transposed roots with flats (else sharps)
 //     header: true,          // render a title + key/meter line inside the chart
-//     barsPerRow: 4
+//     barsPerRow: 4,
+//     roman: false,          // false/"off" letters | true/"only" Roman numerals | "both" letters with the numeral beneath
+//     keyNote: ""            // short text after the key in the header, e.g. "E♭ instruments · concert B♭"
 //   });
 //   chart.parsed                 // {title, composer, keyPc, keyName, meterN, meterD, …}
 //   chart.barEls                 // the bar <div>s, in order (for highlighting)
 //   chart.setSubBars(n)          // toggle/redraw beat lines
 //   chart.setTranspose(semis)    // re-render in a new key
+//   chart.setRoman(mode)         // false/"off" | true/"only" | "both" (needs TuneLibrary for the numerals)
+//   chart.setKeyNote(text)       // the header note after the key ("" = the default "(from X)" when transposed)
 //   chart.setLive(i)             // mark bar i as the sounding bar (-1 = none)
 //   chart.redraw()
 
@@ -26,6 +30,8 @@
   var TUPLET_TIME = { 2:3, 3:2, 4:3, 5:2, 6:2, 7:2, 8:3, 9:2 };   // default "in time of"
 
   function mod12(n){ return ((n % 12) + 12) % 12; }
+  // roman display mode: "off" | "only" (numerals replace the letters; the old `true`) | "both"
+  function romanMode(v){ return (!v || v === "off") ? "off" : v === "both" ? "both" : "only"; }
   function esc(s){ return String(s).replace(/[&<>]/g, function(c){ return {"&":"&amp;","<":"&lt;",">":"&gt;"}[c]; }); }
 
   // ---- header fields ----
@@ -350,6 +356,9 @@
     + '.tune-chart .tc-chord{position:absolute;top:50%;transform:translateY(-50%);white-space:nowrap;font-weight:600;line-height:.9;letter-spacing:.01em}'
     + '.tune-chart .tc-rt{font-size:1.6rem}'
     + '.tune-chart.tc-roman-mode .tc-rt{font-size:1.3rem;font-family:"JetBrains Mono",monospace;letter-spacing:.01em}'
+    + '.tune-chart.tc-roman-both .tc-chord{display:flex;flex-direction:column;align-items:flex-start;gap:.3rem}'
+    + '.tune-chart .tc-lt{display:block;white-space:nowrap}'
+    + '.tune-chart .tc-rn{display:block;font-family:"JetBrains Mono",monospace;font-size:.72rem;font-weight:600;line-height:1;color:#6f6450;letter-spacing:.02em}'
     + '.tune-chart .tc-q{font-size:.95rem;font-weight:600;position:relative;top:-.55em;margin-left:.02em;color:#3a352b}'
     + '.tune-chart .tc-bass{font-size:1rem;color:#6f6450}'
     + '.tune-chart .tc-nc-chord{font-size:.9rem;font-style:italic;color:var(--tc-faint)}'
@@ -369,7 +378,7 @@
     + '.tune-chart .tc-bar.tc-live{background:var(--tc-live-soft)}'
     + '.tune-chart .tc-bar.tc-live::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--tc-live)}'
     + '.tune-chart .tc-bar.tc-live .tc-chord{color:#0c5a52}'
-    + '@media (max-width:560px){.tune-chart .tc-rt{font-size:1.3rem}}';
+    + '@media (max-width:560px){.tune-chart .tc-rt{font-size:1.3rem}.tune-chart.tc-roman-both .tc-rt{font-size:1.1rem}.tune-chart.tc-roman-both .tc-rn{font-size:.66rem}}';
     var st = document.createElement("style"); st.id = "tune-chart-css"; st.textContent = css; document.head.appendChild(st);
   }
 
@@ -382,7 +391,8 @@
       subBarBeats: opts.subBarBeats || 0,
       transpose: opts.transpose || 0,
       preferFlats: opts.preferFlats !== false,
-      roman: !!opts.roman,
+      roman: romanMode(opts.roman),
+      keyNote: opts.keyNote || "",
       header: opts.header !== false,
       opts: opts,           // keep the explicit overrides; per-tune layout is read in draw()
       barEls: [], liveBar: -2,
@@ -410,11 +420,14 @@
           cell.appendChild(el); return;
         }
         el.className = "tc-chord"; el.style.left = leftCss;
-        if (state.roman && global.TuneLibrary && TuneLibrary.roman){
-          var rn = TuneLibrary.roman(ch.sym, state.parsed.keyPc);
+        // opts.romanFn(sym, keyPc) lets a host supply its own numerals (default: TuneLibrary's applied-chord analysis)
+        var rnFn = state.opts.romanFn || (global.TuneLibrary && TuneLibrary.roman), haveRn = !!rnFn;
+        if (state.roman === "only" && haveRn){
+          var rn = rnFn(ch.sym, state.parsed.keyPc);
           el.innerHTML = '<span class="tc-rt">' + esc(rn || ch.sym) + '</span>';
         } else {
-          el.innerHTML = fmtChord(ch.sym, state.transpose, state.preferFlats);
+          var letters = fmtChord(ch.sym, state.transpose, state.preferFlats), rn2 = (state.roman === "both" && haveRn) ? rnFn(ch.sym, state.parsed.keyPc) : null;
+          el.innerHTML = rn2 ? '<span class="tc-lt">' + letters + '</span><span class="tc-rn">' + esc(rn2) + '</span>' : letters;
         }
         cell.appendChild(el);
       });
@@ -427,7 +440,8 @@
       var upb = p.unitsPerBar || 1, beats = p.beatsPerBar || 4;
       container.innerHTML = "";
       container.classList.toggle("tc-has-pickup", !!p.anacrusis);
-      container.classList.toggle("tc-roman-mode", !!state.roman);
+      container.classList.toggle("tc-roman-mode", state.roman === "only");
+      container.classList.toggle("tc-roman-both", state.roman === "both");
       state.barEls = new Array(p.bars.length); state.liveBar = -2;   // fresh DOM ⇒ re-apply highlight
 
       if (state.header){
@@ -437,7 +451,8 @@
         if (p.composer){ var by = document.createElement("div"); by.className = "tc-by"; by.textContent = "by " + p.composer; left.appendChild(by); }
         var meta = document.createElement("div"); meta.className = "tc-meta";
         meta.innerHTML = "<b>" + keyName(p.keyPc, state.transpose, state.preferFlats) + "</b>"
-          + (state.transpose ? " <span style='color:#9c7a3d'>(from " + FLAT[p.keyPc] + ")</span>" : "")
+          + (state.keyNote ? " <span class='tc-keynote' style='color:#9c7a3d'>(" + esc(state.keyNote) + ")</span>"
+            : state.transpose ? " <span style='color:#9c7a3d'>(from " + FLAT[p.keyPc] + ")</span>" : "")
           + (p.meterStr ? "  ·  " + esc(p.meterStr) : "");
         h.appendChild(left); h.appendChild(meta); container.appendChild(h);
       }
@@ -537,7 +552,8 @@
       get barEls(){ return state.barEls; },
       redraw: draw,
       setSubBars: function(n){ state.subBarBeats = n || 0; draw(); },
-      setRoman: function(on){ state.roman = !!on; draw(); },
+      setRoman: function(mode){ state.roman = romanMode(mode); draw(); },
+      setKeyNote: function(text){ state.keyNote = text || ""; draw(); },
       setTranspose: function(semis, preferFlats){ state.transpose = semis || 0; if (preferFlats != null) state.preferFlats = preferFlats; draw(); },
       setTune: function(newAbc){ state.parsed = (typeof newAbc === "string") ? parse(newAbc) : newAbc; draw(); },
       setLive: function(i){ var wasOff = state.liveBar < 0; if (state.liveBar === i) return; state.liveBar = i;

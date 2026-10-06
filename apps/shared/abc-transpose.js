@@ -60,7 +60,7 @@
         const ch=line[i];
         if(ch==='"'){ const end=line.indexOf('"',i+1); if(end<0){ out+=line.slice(i); break; }
           const inner=line.slice(i+1,end);
-          out += '"' + (/^[\^_<>@]/.test(inner)?inner:transChord(inner)) + '"'; i=end+1; continue; }
+          out += '"' + ((/^[\^_<>@]/.test(inner)||/^n\.?c\.?$/i.test(inner.trim()))?inner:transChord(inner)) + '"'; i=end+1; continue; }   // annotations + N.C. pass through
         if(ch==='!'){ const end=line.indexOf('!',i+1); if(end>=0){ out+=line.slice(i,end+1); i=end+1; continue; } }
         if(ch==='|'||ch===':'){ measureAcc={}; outMeasure={}; out+=ch; i++; continue; }   // accidentals reset each bar
         NOTE.lastIndex=i; const m=NOTE.exec(line);

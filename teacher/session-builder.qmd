@@ -344,6 +344,7 @@ const SB_TOOLS = {
       { key: 'lock-tonal', vals: ['yes','no'] },
       { key: 'lock-time-signature', vals: ['yes','no'] },
       { key: 'lock-criteria', vals: ['yes','no'] },
+      { key: 'chords', vals: ['yes','no'] },
     ]
   },
   'rhythms': {
@@ -427,6 +428,7 @@ function sbParse(text) {
           step.config.tonalCollections = val.split(',').map(s => s.trim()).filter(Boolean); break;
         case 'lock-tonal':          step.config.lockTonalCollections = SB_BOOL.test(val); break;
         case 'lock-time-signature': step.config.lockTimeSignature = SB_BOOL.test(val); break;
+        case 'chords':              step.config.chords = SB_BOOL.test(val); break;
         default: step.warns.push('Unknown key: ' + key);
       }
     }

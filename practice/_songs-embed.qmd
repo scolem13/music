@@ -5,7 +5,7 @@
 #songs-root {
   --pr:#2780e3; --br:#dee2e6; --bl:#e9ecef; --mu:#6c757d;
   --in:#212529; --sf:#fff; --bs:#f8f9fa; --cue:#b7005a;
-  max-width:900px; margin:0 auto 2rem;
+  max-width:1240px; margin:0 auto 2rem;
   font-family:var(--bs-font-sans-serif,system-ui,sans-serif); color:var(--in);
 }
 #songs-root .sq-card {
@@ -22,10 +22,62 @@
   font-size:.78rem; color:var(--mu); font-weight:700;
   text-transform:uppercase; letter-spacing:.04em; margin:0 0 .75rem;
 }
-#songs-root select {
+#songs-root select, #songs-root input[type=number], #songs-root .sq-multi > summary {
   padding:.35rem .6rem; font-size:.9rem; border:1px solid #ced4da;
   border-radius:.375rem; background:var(--sf); color:var(--in); height:auto;
 }
+#songs-root input[type=number] { width:5rem; }
+/* Result stays pinned under the site navbar / session bar while the banks scroll;
+   --nav-h and --session-h are measured by syncStickyOffset_s(). */
+#songs-root .sq-sticky {
+  position:sticky; top:max(var(--nav-h,56px), var(--session-h,0px)); z-index:10;
+  transition:top .2s; box-shadow:0 2px 8px rgba(0,0,0,.12);
+}
+body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--session-h,0px); }
+#songs-root #full-paper { max-height:min(40vh,320px); overflow-y:auto; }
+#songs-root .sq-cols {
+  display:grid; grid-template-columns:minmax(0,2fr) minmax(0,3fr); gap:1rem; align-items:start;
+}
+#songs-root .sq-cols .sq-card { margin:0; }
+@media (max-width:760px) { #songs-root .sq-cols { grid-template-columns:minmax(0,1fr); } #songs-root #full-paper { max-height:min(22vh,190px); } }
+#songs-root .chord-palette { display:flex; flex-wrap:wrap; gap:4px; }
+#songs-root .chord-position { font-size:.82rem; color:var(--mu); margin-bottom:.45rem; white-space:nowrap; }
+#songs-root #full-paper .sq-cursor { fill:var(--pr); stroke:var(--pr); }
+#songs-root #full-paper .sq-playing { fill:var(--cue); stroke:var(--cue); }
+#songs-root .sq-settings .sq-multi-panel { display:flex; flex-wrap:wrap; gap:.5rem .75rem; align-items:flex-end; max-height:none; right:0; left:auto; }
+#songs-root .sq-settings .sq-check { flex-basis:100%; margin:0; }
+#songs-root .cell-tabs { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:.5rem; }
+#songs-root .cell-tabs .sq-btn.active { border-color:var(--pr); color:var(--pr); font-weight:600; }
+#songs-root .sq-paper.is-empty { display:none; }
+#title-block-header { display:none; }
+#songs-root .cell-btn.cell-dim { opacity:.3; }
+#songs-root .sq-check {
+  display:inline-flex; align-items:center; gap:4px; font-size:.9rem; margin:0 0 .4rem;
+}
+#songs-root .sq-check input { width:auto; margin:0; }
+#songs-root .sq-multi { position:relative; }
+#songs-root .sq-multi > summary {
+  list-style:none; cursor:pointer; max-width:16rem;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+#songs-root .sq-multi > summary::-webkit-details-marker { display:none; }
+#songs-root .sq-multi > summary::after { content:" \25BE"; color:var(--mu); }
+#songs-root .sq-multi-panel {
+  position:absolute; z-index:5; top:calc(100% + 4px); left:0;
+  width:min(22rem,80vw); max-height:300px; overflow-y:auto;
+  background:var(--sf); border:1px solid var(--br); border-radius:.375rem;
+  box-shadow:0 4px 14px rgba(0,0,0,.12); padding:.5rem .7rem;
+}
+#songs-root .sq-multi-hint { margin:0; font-size:.8rem; color:var(--mu); }
+#songs-root .sq-multi-heading {
+  font-size:.72rem; font-weight:700; color:var(--mu);
+  text-transform:uppercase; letter-spacing:.04em; margin:.5rem 0 .15rem;
+}
+#songs-root .sq-multi-group { display:grid; grid-template-columns:1fr 1fr; gap:1px 10px; }
+#songs-root .sq-multi-group label {
+  display:flex; align-items:center; gap:6px; font-size:.88rem; font-weight:normal;
+}
+#songs-root .sq-multi-group input { width:auto; margin:0; }
 #songs-root .sq-btn {
   padding:.35rem .7rem; font-size:.9rem; border:1px solid #ced4da;
   border-radius:.375rem; background:var(--sf); color:var(--in);
@@ -38,12 +90,13 @@
 }
 #songs-root .sq-paper svg { width:100% !important; height:auto !important; display:block; }
 #songs-root textarea {
-  display:block; box-sizing:border-box; width:100%; min-height:70px;
+  display:none; box-sizing:border-box; width:100%; min-height:70px;
   padding:.4rem .5rem; font-family:monospace; font-size:.82rem;
   border:1px solid var(--br); border-radius:.375rem;
   background:var(--bs); color:var(--in); resize:vertical; margin-bottom:.5rem;
 }
 #songs-root textarea[readonly] { background:#f0f0f0; color:var(--mu); }
+#songs-root.show-abc textarea { display:block; }
 #songs-root .cue-note {
   min-height:1.3em; color:var(--cue); font-style:italic;
   font-size:.88rem; margin-bottom:.5rem;
@@ -97,10 +150,17 @@
 		duple: ["Duple-M-m-2-4", "Duple-M-m-D-2/4", "Duple, M-m-D-E-2/4", "Duple, M-m-R-2/4", "Duple, M-m-D-E-R-U-2/4"],
 		triple: ["Triple-M-m-6/8", "Triple-M-m-D-6/8", "Triple-M-m-D-E-6/8"]
 	};
+	/* Enrhythmic notation: same cells, written with a different unit note length. */
+	const ENRHYTHMIC_L_s = { triple: { "3/4": "1/4" } };
 	const cellPoolCache_s = {};
 
 	function getActiveFamily_s() {
 		return document.getElementById("rhythm-family-selector").value;
+	}
+
+	function unitLength_s(family, timeSignature) {
+		const enrhythmic = ENRHYTHMIC_L_s[family];
+		return (enrhythmic && enrhythmic[timeSignature]) || FAMILIES_s[family].defaultL;
 	}
 
 	function inferCriteriaFromCollectionName_s(name) {
@@ -221,7 +281,11 @@
 			{ abc: "B/ B B/", required: { elongation: true } },
 			{ abc: "B//B/B/B/B//", required: { division: true, elongation: true } }
 		],
-		triple: [{ abc: "B6", required: { elongation: true } }]
+		triple: [
+			{ abc: "B B2", required: { elongation: true } },
+			{ abc: "B2 B", required: { elongation: true } },
+			{ abc: "B6", required: { elongation: true } }
+		]
 	};
 
 	function getLongEloCells_s(family) {
@@ -258,11 +322,31 @@
 	}
 
 	function getMeterInfo_s() {
-		const familyInfo = FAMILIES_s[getActiveFamily_s()];
-		const Lfraction = parseFraction_s(familyInfo.defaultL, 0.25);
+		const family = getActiveFamily_s();
+		const familyInfo = FAMILIES_s[family];
 		const timeSignature = document.getElementById("time-signature-selector").value;
+		const unitL = unitLength_s(family, timeSignature);
+		const Lfraction = parseFraction_s(unitL, 0.25);
 		const barCapacity = parseFraction_s(timeSignature, 1) * 4;
-		return { Lfraction: Lfraction, barCapacity: barCapacity, timeSignature: timeSignature, familyInfo: familyInfo };
+		return { Lfraction: Lfraction, barCapacity: barCapacity, timeSignature: timeSignature, familyInfo: familyInfo, unitL: unitL,
+			beatQuarters: familyInfo.unitsPerMacrobeat * Lfraction * 4 };
+	}
+
+	function getTempo_s() {
+		const input = document.getElementById("tempo-input");
+		const bpm = parseInt(input.value, 10);
+		if (isNaN(bpm)) return parseInt(input.defaultValue, 10);
+		return Math.min(Math.max(bpm, parseInt(input.min, 10)), parseInt(input.max, 10));
+	}
+
+	function tempoChanged_s() {
+		document.getElementById("tempo-input").value = getTempo_s();
+		renderFullNotation_s();
+	}
+
+	/* Tempo counts macrobeats, so enrhythmic time signatures sound alike. */
+	function tempoField_s(meter) {
+		return meter.familyInfo.unitsPerMacrobeat + "/" + meter.unitL.split("/")[1] + "=" + getTempo_s();
 	}
 
 	function getFilteredCells_s(family, criteria) {
@@ -328,39 +412,75 @@
 		return phrase.rhythmCells.reduce(function(sum, rc) { return sum + cellQuarters_s(rc.abc, Lfraction); }, 0);
 	}
 
-	function renderBarredWords_s(rhythmCells, pitches, startOffsetQuarters, Lfraction, barCapacity) {
+	function onGrid_s(quarters, step) {
+		const ratio = quarters / step;
+		return Math.abs(ratio - Math.round(ratio)) < 1e-9;
+	}
+
+	function fractionSuffix_s(lUnits) {
+		for (let den = 1; den <= 16; den *= 2) {
+			const num = Math.round(lUnits * den);
+			if (Math.abs(num - lUnits * den) > 1e-9) continue;
+			if (den === 1) return num === 1 ? "" : String(num);
+			return (num === 1 ? "" : num) + "/" + den;
+		}
+		return String(lUnits);
+	}
+
+	/* startQuarters is the absolute position in the song. harmony ({ beatQuarters, chords })
+	   is optional: a chord set on a macrobeat is written on the note that starts there, and
+	   a note held across a chord change (or a bar line) is split and tied. */
+	function renderBarredWords_s(rhythmCells, pitches, startQuarters, Lfraction, barCapacity, harmony) {
+		const unit = Lfraction * 4;
 		const words = [];
 		let wordBuffer = "";
-		let running = startOffsetQuarters;
+		let now = startQuarters;
 		let p = 0;
+		let explicitNext = false;
 
 		function flushWord() { if (wordBuffer) { words.push(wordBuffer); wordBuffer = ""; } }
 
+		function chordPrefix(quarters) {
+			if (!harmony || !onGrid_s(quarters, harmony.beatQuarters)) return "";
+			const symbol = harmony.chords[Math.round(quarters / harmony.beatQuarters)];
+			return symbol ? '"' + symbol + '"' : "";
+		}
+
+		function nextCut(from, end) {
+			let cut = (Math.floor(from / barCapacity + 1e-9) + 1) * barCapacity;
+			if (harmony) {
+				for (let b = Math.floor(from / harmony.beatQuarters + 1e-9) + 1; b * harmony.beatQuarters < cut - 1e-9; b++) {
+					if (harmony.chords[b]) { cut = b * harmony.beatQuarters; break; }
+				}
+			}
+			return cut < end - 1e-9 ? cut : null;
+		}
+
+		function closeBar() { if (onGrid_s(now, barCapacity)) { flushWord(); words.push("|"); } }
+
 		rhythmCells.forEach(function(rc) {
 			tokenizeRhythmCell_s(rc.abc).forEach(function(seg) {
-				const segQuarters = seg.duration * Lfraction * 4;
-				const remaining = barCapacity - running;
+				const isNote = seg.type === "note";
+				const pitch = isNote ? (pitches ? pitches[p++] : "B") : "z";
+				const end = now + seg.duration * unit;
 
-				if (seg.type === "note" && !seg.tie && segQuarters > remaining + 1e-9 && remaining > 1e-9) {
-					const pitch = pitches ? pitches[p++] : "B";
-					const firstLUnits = remaining / (Lfraction * 4);
-					const restLUnits = seg.duration - firstLUnits;
-					wordBuffer += pitch + lUnitsToSuffix_s(firstLUnits) + "-";
-					flushWord();
-					words.push("|");
-					wordBuffer += pitch + lUnitsToSuffix_s(restLUnits);
-					running = restLUnits * Lfraction * 4;
-					return;
+				if (nextCut(now, end) === null && !explicitNext) {
+					wordBuffer += chordPrefix(now) + pitch + seg.suffix + seg.tie + seg.dotMark;
+					now = end;
+				} else {
+					/* written with explicit lengths, so a dotted-pair mark can't be kept */
+					while (true) {
+						const cut = nextCut(now, end);
+						const pieceEnd = cut === null ? end : cut;
+						wordBuffer += chordPrefix(now) + pitch + fractionSuffix_s((pieceEnd - now) / unit) +
+							(cut === null ? seg.tie : (isNote ? "-" : ""));
+						now = pieceEnd;
+						if (cut === null) break;
+						closeBar();
+					}
+					explicitNext = !!seg.dotMark;
 				}
-
-				const pitch = seg.type === "note" ? (pitches ? pitches[p++] : "B") : "z";
-				wordBuffer += pitch + seg.suffix + seg.tie + seg.dotMark;
-				running += segQuarters;
-				if (running >= barCapacity - 1e-9) {
-					flushWord();
-					words.push("|");
-					running = 0;
-				}
+				closeBar();
 			});
 			flushWord();
 		});
@@ -427,7 +547,10 @@
 	}
 
 	/* ------- Tonal side ------- */
-	function indexToLetter_s(i) { return String.fromCharCode(65 + i); }
+	function indexToLetter_s(i) {
+		const letter = String.fromCharCode(65 + (i % 26));
+		return i < 26 ? letter : String.fromCharCode(64 + Math.floor(i / 26)) + letter;
+	}
 
 	function extractV1Notes_s(tuneAbc, stripChords) {
 		let v1Line = "";
@@ -439,15 +562,77 @@
 		return v1Line;
 	}
 
-	function getCollectionKeyField_s(collectionName) {
-		const tuneBook = new ABCJS.TuneBook(patternObject[collectionName]);
-		const match = tuneBook.tunes[0].abc.match(/^K:\s*(.+)$/m);
-		return match ? match[1].trim() : "C";
-	}
-
 	function tokenizePitches_s(tonalAbc) {
 		return tonalAbc.replace(/"[^"]*"/g, "").trim().split(/\s+/).filter(function(t) { return t !== ""; })
 			.map(function(t) { return t.replace(/0$/, ""); });
+	}
+
+	const TONALITY_LABELS_s = { maj: "Major", m: "Minor", dor: "Dorian", phr: "Phrygian", lyd: "Lydian", mix: "Mixolydian", loc: "Locrian" };
+	const NOTE_PC_s = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+	const collectionInfoCache_s = {};
+	const tonalCellCache_s = {};
+
+	function collectionInfo_s(name) {
+		if (collectionInfoCache_s[name]) return collectionInfoCache_s[name];
+		const match = /^K:\s*([A-G])([#b]?)\s*([A-Za-z]*)/m.exec(patternObject[name]) || [null, "C", "", ""];
+		const suffix = match[3];
+		const lower = suffix.toLowerCase();
+		const mode = (lower === "" || lower.indexOf("maj") === 0) ? "maj"
+			: (lower === "m" || lower.indexOf("min") === 0) ? "m" : lower.slice(0, 3);
+		const tonicPc = (NOTE_PC_s[match[1]] + (match[2] === "#" ? 1 : match[2] === "b" ? 11 : 0)) % 12;
+		collectionInfoCache_s[name] = { writtenKey: match[1] + match[2] + suffix, key: "C" + suffix, mode: mode, tonicPc: tonicPc };
+		return collectionInfoCache_s[name];
+	}
+
+	/* Collections are written in whatever key their source used. Each pitch is rewritten
+	   with C as the resting tone, so collections of one tonality can share a staff and the
+	   Key control shifts them all alike. AbcTranspose only moves up, so a resting tone that
+	   sits closer to the C below is dropped an octave afterwards. */
+	function toRestingToneC_s(line, info) {
+		if (info.tonicPc === 0) return line;
+		return line.split(/(\s+)/).map(function(token) {
+			if (!/\S/.test(token)) return token;
+			const moved = AbcTranspose.transpose("K:" + info.writtenKey + "\n" + token, "C").split("\n")[1];
+			if (info.tonicPc > 6 || moved.charAt(0) === '"') return moved;
+			return moved.replace(/([A-Ga-g])([,']*)/, function(_match, letter, marks) {
+				if (marks.charAt(0) === "'") return letter + marks.slice(1);
+				if (letter === letter.toLowerCase()) return letter.toUpperCase() + marks;
+				return letter + marks + ",";
+			});
+		}).join("");
+	}
+
+	const SINGLE_NOTES_s = "Single notes";
+
+	function shiftOctaves_s(abcText, octaves) {
+		if (!octaves) return abcText;
+		return abcText.replace(/"[^"]*"|([A-Ga-g])([,']*)/g, function(match, letter, marks) {
+			if (!letter) return match;
+			let octave = (letter === letter.toLowerCase() ? 1 : 0) + octaves;
+			for (let i = 0; i < marks.length; i++) octave += marks[i] === "'" ? 1 : -1;
+			return octave >= 1 ? letter.toLowerCase() + "'".repeat(octave - 1) : letter.toUpperCase() + ",".repeat(-octave);
+		});
+	}
+
+	function getTonalCells_s(name) {
+		if (tonalCellCache_s[name]) return tonalCellCache_s[name];
+		if (name === SINGLE_NOTES_s) {
+			tonalCellCache_s[name] = ["G,", "A,", "B,", "C", "D", "E", "F", "G", "A", "B", "c", "d", "e"].map(function(pitch) {
+				return { abc: pitch + "0", preview: pitch + "0", pitches: [pitch] };
+			});
+			return tonalCellCache_s[name];
+		}
+		const info = collectionInfo_s(name);
+		tonalCellCache_s[name] = new ABCJS.TuneBook(patternObject[name]).tunes.map(function(t) {
+			const abc = toRestingToneC_s(extractV1Notes_s(t.abc, false), info);
+			const preview = abc.replace(/"[^"]*"/g, "").trim();
+			return { abc: abc, preview: preview, pitches: tokenizePitches_s(preview) };
+		});
+		return tonalCellCache_s[name];
+	}
+
+	function getTonalKey_s() {
+		return collectionInfo_s(selectedCollections_s[0]).key;
 	}
 
 	function expandPitches_s(pitches, targetCount, strategy) {
@@ -480,30 +665,38 @@
 	let tonalVisTranspose_s = 0;
 
 	const MINOR_MODE_s = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/;
-	const COLL_PAIRS_s = {
-		"major-stepwise": "minor-stepwise", "minor-stepwise": "major-stepwise",
-		"major-I-V": "minor-i-V", "minor-i-V": "major-I-V"
-	};
+	function setKey_s(pitchClass) {
+		document.getElementById("key-selector").value = String(pitchClass);
+		tonalVisTranspose_s = pitchClass <= 6 ? pitchClass : pitchClass - 12;
+	}
+
+	function keyChanged_s() {
+		setKey_s(parseInt(document.getElementById("key-selector").value, 10));
+		renderTonalBank_s();
+		renderAll_s();
+	}
+
+	/* Choosing a tonality selects every collection written in it. */
+	function setMode_s(mode) {
+		const names = allowedCollections_s.filter(function(name) { return collectionInfo_s(name).mode === mode; });
+		if (names.length === 0) return false;
+		const changed = selectedCollections_s.length === 0 || getTonalMode_s() !== mode;
+		selectedCollections_s = names;
+		document.getElementById("mode-selector").value = mode;
+		syncCollectionPicker_s();
+		renderTonalBank_s();
+		if (changed) clearAll_s();
+		return true;
+	}
 
 	function applyTonality_s() {
 		if (!window.Tonality) return;
 		var r = Tonality.getResting();
 		if (r == null) return;
-		var mode = Tonality.getMode();
-		var wantMinor = !!(mode && MINOR_MODE_s.test(mode));
-		var sel = document.getElementById("tonal-collection-selector");
-		var switched = false;
-		if (sel && COLL_PAIRS_s[sel.value]) {
-			if (wantMinor !== /^minor/.test(sel.value)) {
-				sel.value = COLL_PAIRS_s[sel.value];
-				switched = true;
-			}
-		}
-		tonalVisTranspose_s = r <= 6 ? r : r - 12;
-		if (switched) {
-			renderTonalBank_s();
-			clearAll_s();
-		} else {
+		var shared = (Tonality.getMode() || "maj").toLowerCase();
+		var mode = MINOR_MODE_s.test(shared) && shared.indexOf("dor") !== 0 ? "m" : shared.slice(0, 3);
+		setKey_s(r);
+		if (mode === getTonalMode_s() || !setMode_s(mode)) {
 			renderTonalBank_s();
 			renderAll_s();
 		}
@@ -525,19 +718,37 @@
 	/* ------- Song state ------- */
 	let activeRhythmCells_s = [];
 	let activeTonalCells_s = [];
+	let allowedCollections_s = [];
+	let selectedCollections_s = [];
 	let phrases_s = [];
 	let pendingExpansionIndex_s = null;
-	let synthControl_s;
+	let fullVisualObj_s = null;
+	let fullTiming_s = null;
+	let activeTab_s = null;
+	let tonalOctave_s = 0;
+
+	function changeOctave_s(step) {
+		tonalOctave_s = Math.max(-2, Math.min(2, tonalOctave_s + step));
+		renderTonalBank_s();
+	}
+	let activeSynth_s = null;
+	let playTimeout_s;
 	const DEFAULT_EXPANSION_STRATEGY_s = "even";
 	let undoStack_s = [];
+	let harmony_s = {};            /* macrobeat index -> chord symbol, written with C as resting tone */
+	let chordCursor_s = 0;
+	let melodyEndQuarters_s = 0;
 
 	function snapshotBeforeChange_s() {
-		undoStack_s.push(JSON.parse(JSON.stringify(phrases_s)));
+		undoStack_s.push(JSON.stringify({ phrases: phrases_s, harmony: harmony_s, cursor: chordCursor_s }));
 	}
 
 	function undo_s() {
 		if (undoStack_s.length === 0) return;
-		phrases_s = undoStack_s.pop();
+		const state = JSON.parse(undoStack_s.pop());
+		phrases_s = state.phrases;
+		harmony_s = state.harmony;
+		chordCursor_s = state.cursor;
 		pendingExpansionIndex_s = null;
 		renderAll_s();
 	}
@@ -551,6 +762,7 @@
 	}
 
 	function isPhraseResolved_s(phrase) {
+		if (phrase.rest) return true;
 		if (phrase.rhythmCells.length === 0 || phrase.tonalCells.length === 0) return false;
 		const hits = phraseHits_s(phrase), notes = phrasePitches_s(phrase).length;
 		if (hits === notes) return true;
@@ -575,7 +787,7 @@
 	/* ------- Rhythm bank ------- */
 	const TIME_SIGNATURES_s = {
 		duple: ["2/4", "3/4", "4/4"],
-		triple: ["6/8", "9/8", "12/8"]
+		triple: ["6/8", "9/8", "12/8", "3/4"]
 	};
 
 	function refreshTimeSignatureOptions_s() {
@@ -611,7 +823,7 @@
 		const family = getActiveFamily_s();
 		const criteria = getSelectedCriteria_s();
 		activeRhythmCells_s = getFilteredCells_s(family, criteria);
-		const familyInfo = FAMILIES_s[family];
+		const unitL = getMeterInfo_s().unitL;
 
 		const container = document.getElementById("rhythm-cell-buttons");
 		container.innerHTML = "";
@@ -637,7 +849,7 @@
 			wrapper.appendChild(button);
 			container.appendChild(wrapper);
 
-			const abcString = "X:1\nM:none\nL:" + familyInfo.defaultL + "\nK:clef=none\n" + cell.abc;
+			const abcString = "X:1\nM:none\nL:" + unitL + "\nK:clef=none\n" + cell.abc;
 			ABCJS.renderAbc(preview, abcString, { add_classes: true });
 
 			const svg = preview.querySelector("svg");
@@ -662,46 +874,113 @@
 	}
 
 	/* ------- Tonal bank ------- */
-	function renderTonalBank_s() {
-		const collectionName = document.getElementById("tonal-collection-selector").value;
-		const key = getCollectionKeyField_s(collectionName);
-		const tuneBook = new ABCJS.TuneBook(patternObject[collectionName]);
-		activeTonalCells_s = tuneBook.tunes.map(function(t) {
-			const preview = extractV1Notes_s(t.abc, true);
-			return { abc: extractV1Notes_s(t.abc, false), preview: preview, pitches: tokenizePitches_s(preview) };
+	function buildCollectionPicker_s() {
+		const panel = document.getElementById("tonal-collection-options");
+		panel.innerHTML = "";
+		const groups = {};
+		allowedCollections_s.forEach(function(name) {
+			const mode = collectionInfo_s(name).mode;
+			(groups[mode] = groups[mode] || []).push(name);
 		});
+		Object.keys(groups).forEach(function(mode) {
+			const heading = document.createElement("div");
+			heading.className = "sq-multi-heading";
+			heading.textContent = TONALITY_LABELS_s[mode] || mode;
+			panel.appendChild(heading);
+			const list = document.createElement("div");
+			list.className = "sq-multi-group";
+			groups[mode].forEach(function(name) {
+				const label = document.createElement("label");
+				const box = document.createElement("input");
+				box.type = "checkbox";
+				box.value = name;
+				box.addEventListener("change", function() { toggleCollection_s(name, box.checked); });
+				label.appendChild(box);
+				label.appendChild(document.createTextNode(name));
+				list.appendChild(label);
+			});
+			panel.appendChild(list);
+		});
+	}
 
+	function syncCollectionPicker_s() {
+		document.querySelectorAll("#tonal-collection-options input").forEach(function(box) {
+			box.checked = selectedCollections_s.indexOf(box.value) !== -1;
+		});
+		document.getElementById("tonal-collection-summary").textContent = selectedCollections_s.join(", ");
+	}
+
+	/* Collections combine within one tonality; picking another tonality starts over with it. */
+	function toggleCollection_s(name, checked) {
+		const previousMode = collectionInfo_s(selectedCollections_s[0]).mode;
+		const mode = collectionInfo_s(name).mode;
+		let next = selectedCollections_s.filter(function(n) { return n !== name && collectionInfo_s(n).mode === mode; });
+		if (checked || next.length === 0) next.push(name);
+		selectedCollections_s = allowedCollections_s.filter(function(n) { return next.indexOf(n) !== -1; });
+		document.getElementById("mode-selector").value = mode;
+		syncCollectionPicker_s();
+		renderTonalBank_s();
+		if (mode !== previousMode) clearAll_s();
+	}
+
+	function renderTonalBank_s() {
+		const key = getTonalKey_s();
 		const container = document.getElementById("tonal-cell-buttons");
 		container.innerHTML = "";
+		activeTonalCells_s = [];
+
+		const tabNames = selectedCollections_s.concat([SINGLE_NOTES_s]);
+		if (tabNames.indexOf(activeTab_s) === -1) activeTab_s = tabNames[0];
+		document.getElementById("octave-value").textContent = (tonalOctave_s > 0 ? "+" : "") + tonalOctave_s;
+		const tabs = document.getElementById("tonal-tabs");
+		tabs.innerHTML = "";
+		tabNames.forEach(function(name) {
+			const tab = document.createElement("button");
+			tab.type = "button";
+			tab.className = "sq-btn" + (name === activeTab_s ? " active" : "");
+			tab.textContent = name;
+			tab.addEventListener("click", function() { activeTab_s = name; renderTonalBank_s(); });
+			tabs.appendChild(tab);
+		});
 
 		const entries = [];
-		activeTonalCells_s.forEach(function(cell, i) {
-			const wrapper = document.createElement("div");
-			wrapper.className = "cell-wrapper";
-			const numberLabel = document.createElement("span");
-			numberLabel.className = "cell-number";
-			numberLabel.textContent = indexToLetter_s(i);
-			wrapper.appendChild(numberLabel);
+		[activeTab_s].forEach(function(collectionName) {
+			getTonalCells_s(collectionName).forEach(function(written) {
+				const cell = {
+					abc: shiftOctaves_s(written.abc, tonalOctave_s),
+					preview: shiftOctaves_s(written.preview, tonalOctave_s),
+					pitches: written.pitches.map(function(pitch) { return shiftOctaves_s(pitch, tonalOctave_s); })
+				};
+				const i = activeTonalCells_s.length;
+				activeTonalCells_s.push(cell);
+				const wrapper = document.createElement("div");
+				wrapper.className = "cell-wrapper";
+				const numberLabel = document.createElement("span");
+				numberLabel.className = "cell-number";
+				numberLabel.textContent = indexToLetter_s(i);
+				wrapper.appendChild(numberLabel);
 
-			const button = document.createElement("button");
-			button.type = "button";
-			button.className = "cell-btn";
-			button.setAttribute("aria-label", "Tonal cell " + indexToLetter_s(i) + ": " + cell.preview);
-			button.addEventListener("click", function() { appendTonalCell_s(i); });
+				const button = document.createElement("button");
+				button.type = "button";
+				button.className = "cell-btn";
+				button.setAttribute("aria-label", "Tonal cell " + indexToLetter_s(i) + ": " + cell.preview);
+				button.addEventListener("click", function() { appendTonalCell_s(i); });
 
-			const preview = document.createElement("div");
-			preview.className = "cell-preview";
-			button.appendChild(preview);
-			wrapper.appendChild(button);
-			container.appendChild(wrapper);
+				const preview = document.createElement("div");
+				preview.className = "cell-preview";
+				button.appendChild(preview);
+				wrapper.appendChild(button);
+				container.appendChild(wrapper);
 
-			const abcString = "X:1\nM:none\n%%staffwidth 100\nK:" + key + "\n" + cell.preview;
-			ABCJS.renderAbc(preview, abcString, { add_classes: true, visualTranspose: tonalVisTranspose_s });
+				const abcString = "X:1\nM:none\n%%staffwidth 100\nK:" + key + "\n" +
+					(document.getElementById("show-pattern-chords").checked ? cell.abc : cell.preview);
+				ABCJS.renderAbc(preview, abcString, { add_classes: true, visualTranspose: tonalVisTranspose_s });
 
-			const svg = preview.querySelector("svg");
-			const bbox = svg.getBBox();
-			const staffCenterY = getStaffCenter_s(svg, bbox);
-			entries.push({ button: button, svg: svg, bbox: bbox, staffCenterY: staffCenterY });
+				const svg = preview.querySelector("svg");
+				const bbox = svg.getBBox();
+				const staffCenterY = getStaffCenter_s(svg, bbox);
+				entries.push({ button: button, svg: svg, bbox: bbox, staffCenterY: staffCenterY });
+			});
 		});
 
 		if (entries.length === 0) return;
@@ -710,15 +989,18 @@
 			return Math.max(e.staffCenterY - e.bbox.y, (e.bbox.y + e.bbox.height) - e.staffCenterY);
 		}));
 		const contentHeight = halfHeight * 2;
+		const TONAL_SCALE = 0.7;
 		const marginY = contentHeight * 0.10;
 		const totalHeight = contentHeight + marginY * 2;
 
 		entries.forEach(function(entry) {
-			entry.button.style.width = (entry.bbox.width + marginX * 2) + "px";
-			entry.button.style.height = totalHeight + "px";
-			entry.svg.style.transform =
+			entry.button.style.width = (entry.bbox.width + marginX * 2) * TONAL_SCALE + "px";
+			entry.button.style.height = totalHeight * TONAL_SCALE + "px";
+			entry.svg.style.transformOrigin = "0 0";
+			entry.svg.style.transform = "scale(" + TONAL_SCALE + ") " +
 				"translate(" + (-entry.bbox.x + marginX) + "px, " + (totalHeight / 2 - entry.staffCenterY) + "px)";
 		});
+		applyFitDimming_s();
 	}
 
 	/* ------- Appending & pairing ------- */
@@ -769,6 +1051,14 @@
 		const phrase = openPhraseForClick_s();
 		snapshotBeforeChange_s();
 
+		const tag = /^"([^"]+)"/.exec(cell.abc);
+		if (tag && document.getElementById("auto-chords").checked) {
+			const meter = getMeterInfo_s();
+			const at = nextPitchQuarters_s(meter);
+			if (onGrid_s(at, meter.beatQuarters) && chordInEffect_s(at, meter) !== tag[1])
+				harmony_s[Math.round(at / meter.beatQuarters)] = tag[1];
+		}
+
 		if (phrase.rhythmCells.length > 0) {
 			const rhythmHits = phraseHits_s(phrase);
 			const newTotal = phrasePitches_s(phrase).length + cell.pitches.length;
@@ -797,13 +1087,224 @@
 	}
 
 	function clearAll_s() {
-		if (phrases_s.length > 0) snapshotBeforeChange_s();
+		if (phrases_s.length > 0 || Object.keys(harmony_s).length > 0) snapshotBeforeChange_s();
 		phrases_s = [];
+		harmony_s = {};
+		chordCursor_s = 0;
 		pendingExpansionIndex_s = null;
 		renderAll_s();
 	}
 
+	/* ------- Harmony ------- */
+	const CHORD_PALETTES_s = {
+		maj: [{ sym: "C", roman: "I", tones: [0, 4, 7] }, { sym: "F", roman: "IV", tones: [5, 9, 0] }, { sym: "G7", roman: "V7", tones: [7, 11, 2, 5] }],
+		m: [{ sym: "Cm", roman: "i", tones: [0, 3, 7] }, { sym: "Fm", roman: "iv", tones: [5, 8, 0] }, { sym: "G7", roman: "V7", tones: [7, 11, 2, 5] }],
+		dor: [{ sym: "Cm", roman: "i", tones: [0, 3, 7] }, { sym: "F", roman: "IV", tones: [5, 9, 0] }, { sym: "Bb", roman: "VII", tones: [10, 2, 5] }],
+		mix: [{ sym: "C", roman: "I", tones: [0, 4, 7] }, { sym: "F", roman: "IV", tones: [5, 9, 0] }, { sym: "Bb", roman: "VII", tones: [10, 2, 5] }]
+	};
+	const MODE_FLATS_s = { maj: "", m: "BEA", dor: "BE", mix: "B" };
+	const KEY_NAMES_s = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"];
+
+	function getTonalMode_s() { return collectionInfo_s(selectedCollections_s[0]).mode; }
+	function getPalette_s() { return CHORD_PALETTES_s[getTonalMode_s()] || CHORD_PALETTES_s.maj; }
+
+	/* Chord symbols are stored in C; this is the name in the selected key. */
+	function chordLabel_s(symbol) {
+		const match = /^([A-G])(b?)(.*)$/.exec(symbol);
+		const keyPc = parseInt(document.getElementById("key-selector").value, 10);
+		return KEY_NAMES_s[(NOTE_PC_s[match[1]] + (match[2] ? 11 : 0) + keyPc) % 12] + match[3];
+	}
+
+	function tokenPc_s(token) {
+		const match = /^(\^\^|\^|__|_|=)?([A-Ga-g])/.exec(token);
+		if (!match) return null;
+		const letter = match[2].toUpperCase();
+		const accidental = match[1] === undefined
+			? ((MODE_FLATS_s[getTonalMode_s()] || "").indexOf(letter) !== -1 ? -1 : 0)
+			: { "=": 0, "^": 1, "^^": 2, "_": -1, "__": -2 }[match[1]];
+		return (NOTE_PC_s[letter] + accidental + 12) % 12;
+	}
+
+	/* Phrases that make it into the full notation, with their pitches spread over the rhythm. */
+	function fullPhrases_s() {
+		const result = [];
+		for (let i = 0; i < phrases_s.length; i++) {
+			const phrase = phrases_s[i];
+			if (phrase.rest) { result.push({ phrase: phrase, pitches: [] }); continue; }
+			if (phrase.rhythmCells.length === 0 || phrase.tonalCells.length === 0) break;
+			const hits = phraseHits_s(phrase);
+			const pitches = phrasePitches_s(phrase);
+			if (hits < pitches.length) break;
+			result.push({ phrase: phrase, pitches: hits === pitches.length ? pitches
+				: expandPitches_s(pitches, hits, phrase.expansion || DEFAULT_EXPANSION_STRATEGY_s) });
+		}
+		return result;
+	}
+
+	function melodyNotes_s(meter) {
+		const notes = [];
+		let now = 0;
+		fullPhrases_s().forEach(function(entry) {
+			let p = 0;
+			entry.phrase.rhythmCells.forEach(function(rc) {
+				tokenizeRhythmCell_s(rc.abc).forEach(function(seg) {
+					const quarters = seg.duration * meter.Lfraction * 4;
+					if (seg.type === "note") notes.push({ at: now, quarters: quarters, pc: tokenPc_s(entry.pitches[p++]) });
+					now += quarters;
+				});
+			});
+		});
+		return notes;
+	}
+
+	/* Where the next tonal pattern's first pitch will sound. */
+	function nextPitchQuarters_s(meter) {
+		let total = resolvedPhrases_s().reduce(function(sum, ph) { return sum + phraseRhythmQuartersSoFar_s(ph, meter.Lfraction); }, 0);
+		const open = currentOpenPhrase_s();
+		if (!open) return total;
+		let hitsLeft = phrasePitches_s(open).length;
+		open.rhythmCells.forEach(function(rc) {
+			tokenizeRhythmCell_s(rc.abc).forEach(function(seg) {
+				if (hitsLeft <= 0 && seg.type === "note") { hitsLeft = -1; return; }
+				if (hitsLeft < 0) return;
+				if (seg.type === "note") hitsLeft--;
+				total += seg.duration * meter.Lfraction * 4;
+			});
+		});
+		return total;
+	}
+
+	function chordInEffect_s(quarters, meter) {
+		for (let b = Math.floor(quarters / meter.beatQuarters + 1e-9); b >= 0; b--) {
+			if (harmony_s[b]) return harmony_s[b];
+		}
+		return null;
+	}
+
+	/* A pattern tagged with a chord fits that chord; otherwise it fits when most of its
+	   pitches (first and last counted double) are chord tones. */
+	function cellFitsChord_s(cell, symbol) {
+		const tag = /^"([^"]+)"/.exec(cell.abc);
+		if (tag) return tag[1] === symbol;
+		const chord = getPalette_s().filter(function(c) { return c.sym === symbol; })[0];
+		if (!chord) return true;
+		let fit = 0, total = 0;
+		cell.pitches.forEach(function(token, i) {
+			const pc = tokenPc_s(token);
+			if (pc === null) return;
+			const weight = (i === 0 || i === cell.pitches.length - 1) ? 2 : 1;
+			total += weight;
+			if (chord.tones.indexOf(pc) !== -1) fit += weight;
+		});
+		return total === 0 || fit / total >= 0.6;
+	}
+
+	function applyFitDimming_s() {
+		const meter = getMeterInfo_s();
+		const symbol = document.getElementById("fit-chord").checked ? chordInEffect_s(nextPitchQuarters_s(meter), meter) : null;
+		document.querySelectorAll("#tonal-cell-buttons .cell-btn").forEach(function(button, i) {
+			button.classList.toggle("cell-dim", !!symbol && !cellFitsChord_s(activeTonalCells_s[i], symbol));
+		});
+	}
+
+	/* Rests out the rest of the current bar, or a whole bar when the song ends on a bar line. */
+	function insertBlankBar_s() {
+		if (currentOpenPhrase_s()) return;
+		const meter = getMeterInfo_s();
+		const unit = meter.Lfraction * 4;
+		let at = phrases_s.reduce(function(sum, ph) { return sum + phraseRhythmQuartersSoFar_s(ph, meter.Lfraction); }, 0);
+		const barEnd = (Math.floor(at / meter.barCapacity + 1e-9) + 1) * meter.barCapacity;
+		const cells = [];
+		const nextBeat = Math.min(barEnd, Math.ceil(at / meter.beatQuarters - 1e-9) * meter.beatQuarters);
+		if (nextBeat > at + 1e-9) { cells.push({ abc: "z" + fractionSuffix_s((nextBeat - at) / unit), hits: 0 }); at = nextBeat; }
+		for (; at < barEnd - 1e-9; at += meter.beatQuarters) cells.push({ abc: "z" + fractionSuffix_s(meter.beatQuarters / unit), hits: 0 });
+		snapshotBeforeChange_s();
+		phrases_s.push({ rest: true, rhythmCells: cells, tonalCells: [], expansion: null });
+		renderAll_s();
+	}
+
+	function setChord_s(symbol) {
+		snapshotBeforeChange_s();
+		if (symbol) harmony_s[chordCursor_s] = symbol;
+		else delete harmony_s[chordCursor_s];
+		chordCursor_s++;
+		renderAll_s();
+	}
+
+	function moveChordCursor_s(step) {
+		chordCursor_s = Math.max(0, chordCursor_s + step);
+		renderFullNotation_s();
+	}
+
+	/* Fills beats that have no chord yet with the palette chord covering most of the melody there. */
+	function suggestChords_s() {
+		const meter = getMeterInfo_s();
+		const notes = melodyNotes_s(meter).filter(function(n) { return n.pc !== null; });
+		if (notes.length === 0) return;
+		const palette = getPalette_s();
+		const byBeat = {};
+		notes.forEach(function(n) {
+			const beat = Math.floor(n.at / meter.beatQuarters + 1e-9);
+			(byBeat[beat] = byBeat[beat] || []).push(n);
+		});
+		const lastBeat = Math.max.apply(null, Object.keys(byBeat).map(Number));
+		snapshotBeforeChange_s();
+		let current = null;
+		for (let beat = 0; beat <= lastBeat; beat++) {
+			if (harmony_s[beat]) { current = harmony_s[beat]; continue; }
+			if (!byBeat[beat]) continue;
+			let best = null, bestScore = 0;
+			palette.forEach(function(chord) {
+				let score = 0;
+				byBeat[beat].forEach(function(n, i) {
+					if (chord.tones.indexOf(n.pc) !== -1) score += n.quarters * (i === 0 ? 2 : 1);
+				});
+				if (score > bestScore + 1e-9) { best = chord.sym; bestScore = score; }
+			});
+			if (beat === lastBeat && notes[notes.length - 1].pc === 0) best = palette[0].sym;
+			if (best && best !== current) { harmony_s[beat] = best; current = best; }
+		}
+		renderAll_s();
+	}
+
+	function renderChordControls_s() {
+		const paletteBox = document.getElementById("chord-palette");
+		paletteBox.innerHTML = "";
+		getPalette_s().concat([{ sym: null }]).forEach(function(chord) {
+			const button = document.createElement("button");
+			button.type = "button";
+			button.className = "sq-btn";
+			button.textContent = chord.sym ? chord.roman + " (" + chordLabel_s(chord.sym) + ")" : "No chord";
+			button.addEventListener("click", function() { setChord_s(chord.sym); });
+			paletteBox.appendChild(button);
+		});
+	}
+
 	/* ------- Rendering ------- */
+	/* Lays notation out to the paper's own width, wrapping at bar lines, then gives the
+	   SVG a viewBox so it keeps fitting if the paper is resized. */
+	function renderPaper_s(paperId, abcString, clickListener) {
+		const paper = document.getElementById(paperId);
+		const visualObj = ABCJS.renderAbc(paper, abcString, {
+			add_classes: true,
+			clickListener: clickListener,
+			visualTranspose: tonalVisTranspose_s,
+			staffwidth: Math.max(paper.clientWidth - 46, 200),
+			wrap: { minSpacing: 1.8, maxSpacing: 2.7, preferredMeasuresPerLine: 4 }
+		})[0];
+		const svg = paper.querySelector("svg");
+		if (svg) svg.setAttribute("viewBox", "0 0 " + svg.getAttribute("width") + " " + svg.getAttribute("height"));
+		return visualObj;
+	}
+
+	function syncStickyOffset_s() {
+		const root = document.getElementById("songs-root");
+		const header = document.getElementById("quarto-header");
+		const sessionBar = document.getElementById("session-nav-bar");
+		if (header) root.style.setProperty("--nav-h", header.offsetHeight + "px");
+		if (sessionBar) root.style.setProperty("--session-h", sessionBar.offsetHeight + "px");
+	}
+
 	function joinCells_s(cells) {
 		if (cells.length === 0) return "";
 		return cells.map(function(c) { return c.abc; }).join(" || ") + " ||";
@@ -815,18 +1316,19 @@
 		const tonalCells = phrase ? phrase.tonalCells : [];
 
 		const meter = getMeterInfo_s();
-		const rhythmHeader = "X:1\nM:" + meter.timeSignature + "\nL:" + meter.familyInfo.defaultL + "\nK:clef=none\n";
+		const rhythmHeader = "X:1\nM:" + meter.timeSignature + "\nL:" + meter.unitL + "\nK:clef=none\n";
 		const rhythmOffset = pickupOffsetQuarters_s(meter.Lfraction, meter.barCapacity);
 		const rhythmBody = renderBarredWords_s(rhythmCells, null, rhythmOffset, meter.Lfraction, meter.barCapacity).join(" ");
 		document.getElementById("cued-rhythm").value = rhythmBody ? rhythmHeader + rhythmBody : "";
-		ABCJS.renderAbc("cued-rhythm-paper", rhythmHeader + rhythmBody, { add_classes: true });
+		document.getElementById("cued-rhythm-paper").classList.toggle("is-empty", rhythmCells.length === 0);
+		renderPaper_s("cued-rhythm-paper", rhythmHeader + rhythmBody);
 
-		const tonalCollectionName = document.getElementById("tonal-collection-selector").value;
-		const tonalKey = getCollectionKeyField_s(tonalCollectionName);
+		const tonalKey = getTonalKey_s();
 		const tonalHeader = "X:1\nM:none\nK:" + tonalKey + "\n";
 		const tonalBody = joinCells_s(tonalCells);
 		document.getElementById("cued-tonal").value = tonalBody ? tonalHeader + tonalBody : "";
-		ABCJS.renderAbc("cued-tonal-paper", tonalHeader + tonalBody, { add_classes: true, visualTranspose: tonalVisTranspose_s });
+		document.getElementById("cued-tonal-paper").classList.toggle("is-empty", tonalCells.length === 0);
+		renderPaper_s("cued-tonal-paper", tonalHeader + tonalBody);
 
 		let rhythmNote = "", tonalNote = "";
 		if (rhythmCells.length > 0 && tonalCells.length > 0) {
@@ -880,7 +1382,7 @@
 		const strategies = [["X", "front", "Repeat first"], ["Y", "even", "Spread evenly"], ["Z", "back", "Repeat last"]];
 		const optionsContainer = document.getElementById("expansion-options");
 		optionsContainer.innerHTML = "";
-		const tonalKey = getCollectionKeyField_s(document.getElementById("tonal-collection-selector").value);
+		const tonalKey = getTonalKey_s();
 		strategies.forEach(function(s) {
 			const key = s[0], strategy = s[1], label = s[2];
 			const expanded = expandPitches_s(pitches, hits, strategy);
@@ -917,59 +1419,118 @@
 	}
 
 	function renderFullNotation_s() {
-		const tonalCollectionName = document.getElementById("tonal-collection-selector").value;
-		const tonalKey = getCollectionKeyField_s(tonalCollectionName);
+		const tonalKey = getTonalKey_s();
 		const meter = getMeterInfo_s();
-		const { Lfraction, timeSignature, barCapacity, familyInfo } = meter;
+		const { Lfraction, timeSignature, barCapacity, unitL, beatQuarters } = meter;
+		const harmony = { beatQuarters: beatQuarters, chords: harmony_s };
 
 		const outputWords = [];
-		let runningOffset = 0;
+		let total = 0;
+		fullPhrases_s().forEach(function(entry) {
+			outputWords.push.apply(outputWords,
+				renderBarredWords_s(entry.phrase.rhythmCells, entry.pitches, total, Lfraction, barCapacity, harmony));
+			total += phraseRhythmQuartersSoFar_s(entry.phrase, Lfraction);
+		});
+		melodyEndQuarters_s = total;
 
-		for (let i = 0; i < phrases_s.length; i++) {
-			const phrase = phrases_s[i];
-			if (phrase.rhythmCells.length === 0 || phrase.tonalCells.length === 0) break;
-
-			const hits = phraseHits_s(phrase);
-			const pitches = phrasePitches_s(phrase);
-			let resolvedPitches;
-			if (hits === pitches.length) {
-				resolvedPitches = pitches;
-			} else if (hits > pitches.length) {
-				resolvedPitches = expandPitches_s(pitches, hits, phrase.expansion || DEFAULT_EXPANSION_STRATEGY_s);
-			} else {
-				break;
-			}
-
-			const words = renderBarredWords_s(phrase.rhythmCells, resolvedPitches, runningOffset, Lfraction, barCapacity);
-			outputWords.push.apply(outputWords, words);
-			runningOffset = (runningOffset + phraseRhythmQuartersSoFar_s(phrase, Lfraction)) % barCapacity;
+		/* chords (and the chord cursor) ahead of the melody sit over rests until the melody reaches them */
+		const lastChord = Math.max.apply(null, [chordCursor_s].concat(Object.keys(harmony_s).map(Number)));
+		if (lastChord * beatQuarters >= total - 1e-9) {
+			const fillEnd = (Math.floor(lastChord * beatQuarters / barCapacity + 1e-9) + 1) * barCapacity;
+			const rests = [];
+			let at = total;
+			const nextBeat = Math.ceil(at / beatQuarters - 1e-9) * beatQuarters;
+			if (nextBeat > at + 1e-9) { rests.push({ abc: "z" + fractionSuffix_s((nextBeat - at) / (Lfraction * 4)) }); at = nextBeat; }
+			for (; at < fillEnd - 1e-9; at += beatQuarters) rests.push({ abc: "z" + fractionSuffix_s(beatQuarters / (Lfraction * 4)) });
+			outputWords.push.apply(outputWords, renderBarredWords_s(rests, null, total, Lfraction, barCapacity, harmony));
 		}
 
 		const body = outputWords.join(" ");
-		const abcString = "X:1\n%%MIDI program 4 \nM:" + timeSignature + "\nL:" + familyInfo.defaultL +
-			"\nK:" + tonalKey + "\n" + body;
+		const abcString = "X:1\n%%MIDI program 4 \nM:" + timeSignature + "\nL:" + unitL +
+			"\nQ:" + tempoField_s(meter) + "\nK:" + tonalKey + "\n" + body;
 		document.getElementById("full-notation").value = body ? abcString : "";
 		renderFullPaper_s(body ? abcString : "X:1\nM:" + timeSignature + "\nK:" + tonalKey + "\n");
+		const paper = document.getElementById("full-paper");
+		paper.scrollTop = paper.scrollHeight;
 	}
 
 	function renderFullPaper_s(abcString) {
-		const visualObj = ABCJS.renderAbc("full-paper", abcString, { add_classes: true, visualTranspose: tonalVisTranspose_s })[0];
+		stopPlayback_s();
+		fullVisualObj_s = renderPaper_s("full-paper", abcString, staffClicked_s);
+		fullTiming_s = new ABCJS.TimingCallbacks(fullVisualObj_s, { eventCallback: showPlayingNote_s });
+		markChordCursor_s();
+	}
+
+	function markElements_s(className, event) {
+		document.querySelectorAll("#full-paper ." + className).forEach(function(el) { el.classList.remove(className); });
+		((event && event.elements) || []).forEach(function(group) {
+			group.forEach(function(el) { el.classList.add(className); });
+		});
+	}
+
+	function showPlayingNote_s(event) { markElements_s("sq-playing", event); }
+
+	function timedEvents_s() {
+		return fullTiming_s ? fullTiming_s.noteTimings.filter(function(t) { return t.type === "event"; }) : [];
+	}
+
+	function eventBeat_s(event) {
+		return Math.floor(event.milliseconds / (60000 / getTempo_s()) + 1e-6);
+	}
+
+	/* The chord cursor shows as the tinted note or rest on the staff; clicking one moves it there. */
+	function markChordCursor_s() {
+		let current = null;
+		timedEvents_s().forEach(function(event) { if (eventBeat_s(event) <= chordCursor_s) current = event; });
+		markElements_s("sq-cursor", current);
+		const meter = getMeterInfo_s();
+		const beatsPerBar = Math.round(meter.barCapacity / meter.beatQuarters);
+		document.getElementById("chord-position").textContent =
+			"Bar " + (Math.floor(chordCursor_s / beatsPerBar) + 1) + (beatsPerBar > 1 ? ", beat " + (chordCursor_s % beatsPerBar + 1) : "");
+	}
+
+	function staffClicked_s(abcElem) {
+		const event = timedEvents_s().filter(function(t) { return (t.startCharArray || []).indexOf(abcElem.startChar) !== -1; })[0];
+		if (!event) return;
+		chordCursor_s = eventBeat_s(event);
+		markChordCursor_s();
+	}
+
+	function stopPlayback_s() {
+		clearTimeout(playTimeout_s);
+		if (fullTiming_s) fullTiming_s.stop();
+		showPlayingNote_s(null);
+		if (activeSynth_s) { activeSynth_s.stop(); activeSynth_s = null; }
+		document.getElementById("play-button").textContent = "\u25B6 Play";
+	}
+
+	function togglePlayback_s() {
+		if (activeSynth_s) { stopPlayback_s(); return; }
+		if (!fullVisualObj_s || !ABCJS.synth.supportsAudio()) return;
+		const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+		const synth = new ABCJS.synth.CreateSynth();
+		activeSynth_s = synth;
+		document.getElementById("play-button").textContent = "\u25A0 Stop";
 		getSoundfontUrl().then(function(sfUrl) {
-			return new ABCJS.synth.CreateSynth().init({
-				visualObj: visualObj,
-				options: { soundFontUrl: sfUrl }
+			return synth.init({
+				audioContext: audioContext,
+				visualObj: fullVisualObj_s,
+				options: { soundFontUrl: sfUrl, chordsOff: !document.getElementById("play-chords-s").checked }
 			});
-		}).then(function() {
-			if (synthControl_s) {
-				synthControl_s.setTune(visualObj, true).catch(function(error) { console.warn("Audio problem:", error); });
-			}
-		}).catch(function(error) { console.warn("Audio problem:", error); });
+		}).then(function() { return synth.prime(); }).then(function(result) {
+			if (activeSynth_s !== synth) return;
+			synth.start();
+			fullTiming_s.start();
+			playTimeout_s = setTimeout(stopPlayback_s, result.duration * 1000 + 300);
+		}).catch(function(error) { console.warn("Audio problem:", error); stopPlayback_s(); });
 	}
 
 	function renderAll_s() {
 		renderCuedFields_s();
 		renderExpansionPicker_s();
 		renderFullNotation_s();
+		renderChordControls_s();
+		applyFitDimming_s();
 	}
 
 	let editTimeout_s;
@@ -981,36 +1542,46 @@
 	}
 
 	function load_s() {
-		const tonalSelector = document.getElementById("tonal-collection-selector");
-		for (const key in patternObject) {
-			const option = document.createElement("option");
-			option.textContent = key;
-			option.value = key;
-			tonalSelector.appendChild(option);
-		}
-
 		const S_CFG = window.TOOL_CONFIG || {};
-		if (S_CFG.tonalCollections && S_CFG.tonalCollections.length)
-			Array.from(tonalSelector.options).forEach(function(o) { if (S_CFG.tonalCollections.indexOf(o.value) === -1) o.remove(); });
-		if (S_CFG.lockTonalCollections || tonalSelector.options.length <= 1)
-			(tonalSelector.closest('.sq-group') || tonalSelector).style.display = 'none';
+		const configured = (S_CFG.tonalCollections || []).filter(function(name) { return patternObject[name]; });
+		allowedCollections_s = Object.keys(patternObject).filter(function(name) {
+			return configured.length === 0 || configured.indexOf(name) !== -1;
+		});
+		const modeSelector = document.getElementById("mode-selector");
+		allowedCollections_s.forEach(function(name) {
+			const mode = collectionInfo_s(name).mode;
+			if (modeSelector.querySelector('option[value="' + mode + '"]')) return;
+			const option = document.createElement("option");
+			option.value = mode;
+			option.textContent = TONALITY_LABELS_s[mode] || mode;
+			modeSelector.appendChild(option);
+		});
+		selectedCollections_s = allowedCollections_s.filter(function(name) {
+			return collectionInfo_s(name).mode === collectionInfo_s(allowedCollections_s[0]).mode;
+		});
+		buildCollectionPicker_s();
+		syncCollectionPicker_s();
+		if (modeSelector.options.length <= 1) modeSelector.closest('.sq-group').style.display = 'none';
+		setKey_s(collectionInfo_s(selectedCollections_s[0]).tonicPc);
+		const tonalPicker = document.getElementById("tonal-collection-picker");
+		if (S_CFG.lockTonalCollections || allowedCollections_s.length <= 1)
+			tonalPicker.closest('.sq-group').style.display = 'none';
+		document.addEventListener("click", function(e) {
+			document.querySelectorAll("#songs-root .sq-multi[open]").forEach(function(d) { if (!d.contains(e.target)) d.open = false; });
+		});
 		if (S_CFG.rhythmFamily) document.getElementById('rhythm-family-selector').value = S_CFG.rhythmFamily;
 		if (S_CFG.lockRhythmFamily)
 			(document.getElementById('rhythm-family-selector').closest('.sq-group') || document.getElementById('rhythm-family-selector')).style.display = 'none';
 		if (S_CFG.lockTimeSignature)
 			(document.getElementById('time-signature-selector').closest('.sq-group') || document.getElementById('time-signature-selector')).style.display = 'none';
+		if (S_CFG.chords === false) document.getElementById('chord-bar').style.display = 'none';
 		if (S_CFG.lockCriteria)
 			document.querySelectorAll('#songs-root .cell-criteria input[type=checkbox]').forEach(function(cb) { cb.disabled = true; });
 
-		if (ABCJS.synth.supportsAudio()) {
-			synthControl_s = new ABCJS.synth.SynthController();
-			synthControl_s.load("#audio-s", null, {
-				displayRestart: true, displayPlay: true, displayProgress: true
-			});
-		} else {
-			document.querySelector("#audio-s").innerHTML =
-				"<div class='audio-error'>Audio is not supported in this browser.</div>";
-		}
+
+		syncStickyOffset_s();
+		window.addEventListener("load", syncStickyOffset_s);
+		window.addEventListener("resize", syncStickyOffset_s);
 
 		refreshRhythmFamily_s();
 		renderTonalBank_s();
@@ -1056,67 +1627,120 @@
 <div id="songs-root">
 
 	<!-- Full notation (output) -->
-	<div class="sq-card">
-		<h2>Full notation</h2>
+	<div class="sq-card sq-sticky">
 		<div id="full-paper" class="sq-paper"></div>
 		<textarea id="full-notation" spellcheck="false" oninput="editFullNotation_s()"></textarea>
 		<div class="expansion-picker" id="expansion-picker">
 			<p id="expansion-explainer"></p>
 			<div class="expansion-options" id="expansion-options"></div>
 		</div>
-		<div class="sq-row" style="margin-top:.25rem">
-			<div id="audio-s"></div>
+		<div class="sq-row">
+			<button type="button" class="sq-btn" id="play-button" onclick="togglePlayback_s()">&#9654; Play</button>
 			<button type="button" class="sq-btn" onclick="undo_s()">Undo (u)</button>
-			<button type="button" class="sq-btn" onclick="clearAll_s()">Clear All</button>
+			<button type="button" class="sq-btn" onclick="insertBlankBar_s()">+ Blank bar</button>
+			<div class="sq-row" id="chord-bar">
+				<button type="button" class="sq-btn" onclick="moveChordCursor_s(-1)" aria-label="Previous beat">&#9666;</button>
+				<span class="chord-position" id="chord-position"></span>
+				<button type="button" class="sq-btn" onclick="moveChordCursor_s(1)" aria-label="Next beat">&#9656;</button>
+				<div class="chord-palette" id="chord-palette"></div>
+				<button type="button" class="sq-btn" onclick="suggestChords_s()">Suggest chords</button>
+			</div>
+			<details class="sq-multi sq-settings">
+				<summary>Settings</summary>
+				<div class="sq-multi-panel">
+					<div class="sq-group">
+						<span class="sq-label">Tonality</span>
+						<select id="mode-selector" onchange="setMode_s(this.value)"></select>
+					</div>
+					<div class="sq-group">
+						<span class="sq-label">Key</span>
+						<select id="key-selector" onchange="keyChanged_s()">
+							<option value="0">C</option><option value="1">Db</option><option value="2">D</option>
+							<option value="3">Eb</option><option value="4">E</option><option value="5">F</option>
+							<option value="6">Gb</option><option value="7">G</option><option value="8">Ab</option>
+							<option value="9">A</option><option value="10">Bb</option><option value="11">B</option>
+						</select>
+					</div>
+					<div class="sq-group">
+						<span class="sq-label">Tempo</span>
+						<input type="number" id="tempo-input" min="30" max="240" value="90" title="Macrobeats per minute" onchange="tempoChanged_s()">
+					</div>
+					<button type="button" class="sq-btn" onclick="clearAll_s()">Clear All</button>
+					<label class="sq-check"><input type="checkbox" id="fit-chord" checked onchange="applyFitDimming_s()"> Dim patterns that don't fit the chord</label>
+					<label class="sq-check"><input type="checkbox" id="auto-chords" checked> Add chords from patterns</label>
+					<label class="sq-check"><input type="checkbox" id="play-chords-s" checked onchange="stopPlayback_s()"> Play chords</label>
+					<label class="sq-check"><input type="checkbox" onchange="document.getElementById('songs-root').classList.toggle('show-abc', this.checked)"> Show ABC</label>
+				</div>
+			</details>
 		</div>
 	</div>
 
-	<!-- Rhythm input -->
-	<div class="sq-card">
-		<h2>Rhythm</h2>
-		<div id="cued-rhythm-paper" class="sq-paper"></div>
-		<textarea id="cued-rhythm" spellcheck="false" readonly></textarea>
-		<div class="cue-note" id="cued-rhythm-note"></div>
-		<div class="sq-row" style="margin-bottom:.6rem">
-			<div class="sq-group">
-				<span class="sq-label">Meter</span>
-				<select id="rhythm-family-selector" onchange="refreshRhythmFamily_s()">
-					<option value="duple">Duple</option>
-					<option value="triple">Triple</option>
-				</select>
-			</div>
-			<div class="sq-group">
-				<span class="sq-label">Time signature</span>
-				<select id="time-signature-selector" onchange="renderRhythmBank_s(); renderAll_s();"></select>
-			</div>
-			<div class="cell-criteria">
-				<label><input type="checkbox" id="crit-macrobeat" onchange="criteriaChanged_s()"> Macrobeat</label>
-				<label><input type="checkbox" id="crit-microbeat" onchange="criteriaChanged_s()"> Microbeat</label>
-				<label><input type="checkbox" id="crit-division" onchange="criteriaChanged_s()"> Division</label>
-				<label><input type="checkbox" id="crit-elongation" onchange="criteriaChanged_s()"> Elongation</label>
-				<label><input type="checkbox" id="crit-rest" onchange="criteriaChanged_s()"> Rest</label>
-			</div>
-		</div>
-		<div class="cell-bank">
-			<div class="cell-buttons" id="rhythm-cell-buttons"></div>
-		</div>
-	</div>
+	<div class="sq-cols">
 
-	<!-- Tonal input -->
-	<div class="sq-card">
-		<h2>Tonal</h2>
-		<div id="cued-tonal-paper" class="sq-paper"></div>
-		<textarea id="cued-tonal" spellcheck="false" readonly></textarea>
-		<div class="cue-note" id="cued-tonal-note"></div>
-		<div class="sq-row" style="margin-bottom:.6rem">
-			<div class="sq-group">
-				<span class="sq-label">Collection</span>
-				<select id="tonal-collection-selector" onchange="renderTonalBank_s(); clearAll_s();"></select>
+		<!-- Rhythm input -->
+		<div class="sq-card">
+			<h2>Rhythm</h2>
+			<div id="cued-rhythm-paper" class="sq-paper"></div>
+			<textarea id="cued-rhythm" spellcheck="false" readonly></textarea>
+			<div class="cue-note" id="cued-rhythm-note"></div>
+			<div class="sq-row" style="margin-bottom:.6rem">
+				<div class="sq-group">
+					<span class="sq-label">Meter</span>
+					<select id="rhythm-family-selector" onchange="refreshRhythmFamily_s()">
+						<option value="duple">Duple</option>
+						<option value="triple">Triple</option>
+					</select>
+				</div>
+				<div class="sq-group">
+					<span class="sq-label">Time signature</span>
+					<select id="time-signature-selector" onchange="renderRhythmBank_s(); renderAll_s();"></select>
+				</div>
+				<div class="cell-criteria">
+					<label><input type="checkbox" id="crit-macrobeat" onchange="criteriaChanged_s()"> Macrobeat</label>
+					<label><input type="checkbox" id="crit-microbeat" onchange="criteriaChanged_s()"> Microbeat</label>
+					<label><input type="checkbox" id="crit-division" onchange="criteriaChanged_s()"> Division</label>
+					<label><input type="checkbox" id="crit-elongation" onchange="criteriaChanged_s()"> Elongation</label>
+					<label><input type="checkbox" id="crit-rest" onchange="criteriaChanged_s()"> Rest</label>
+				</div>
+			</div>
+			<div class="cell-bank">
+				<div class="cell-buttons" id="rhythm-cell-buttons"></div>
 			</div>
 		</div>
-		<div class="cell-bank">
-			<div class="cell-buttons" id="tonal-cell-buttons"></div>
+
+		<!-- Tonal input -->
+		<div class="sq-card">
+			<h2>Tonal</h2>
+			<div id="cued-tonal-paper" class="sq-paper"></div>
+			<textarea id="cued-tonal" spellcheck="false" readonly></textarea>
+			<div class="cue-note" id="cued-tonal-note"></div>
+			<div class="sq-row" style="margin-bottom:.6rem">
+				<div class="sq-group">
+					<span class="sq-label">Collections</span>
+					<details class="sq-multi" id="tonal-collection-picker">
+						<summary id="tonal-collection-summary"></summary>
+						<div class="sq-multi-panel">
+							<p class="sq-multi-hint">Collections in the same tonality can be combined.</p>
+							<div id="tonal-collection-options"></div>
+						</div>
+					</details>
+				</div>
+				<div class="sq-group">
+					<span class="sq-label">Octave</span>
+					<div class="sq-row">
+						<button type="button" class="sq-btn" onclick="changeOctave_s(-1)" aria-label="Octave down">&minus;</button>
+						<span class="chord-position" id="octave-value">0</span>
+						<button type="button" class="sq-btn" onclick="changeOctave_s(1)" aria-label="Octave up">+</button>
+					</div>
+				</div>
+				<label class="sq-check"><input type="checkbox" id="show-pattern-chords" onchange="renderTonalBank_s()"> Show chords</label>
+			</div>
+			<div class="cell-tabs" id="tonal-tabs"></div>
+			<div class="cell-bank">
+				<div class="cell-buttons" id="tonal-cell-buttons"></div>
+			</div>
 		</div>
+
 	</div>
 
 </div>
@@ -1124,8 +1748,9 @@
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
-<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/patterns/pattern-set.js"></script>
 <script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/abc-transpose.js"></script>
 <script>
 	load_s();
 </script>

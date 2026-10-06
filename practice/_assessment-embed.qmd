@@ -119,7 +119,7 @@
 
   <!-- vendored abcjs + the shared ABC pattern library + the pitch parser -->
   <script src="/apps/shared/abcjs-basic.js"></script>
-  <script src="/apps/patterns/pattern-object.js"></script>
+  <script src="/apps/patterns/pattern-set.js"></script>
   <script src="/apps/assessment/abc-pitch.js"></script>
   <script src="/apps/shared/session-log.js"></script>
 <script src="/apps/assessment/app.js?v=8"></script>

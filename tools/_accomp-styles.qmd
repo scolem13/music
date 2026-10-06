@@ -193,6 +193,20 @@
   color: var(--site-ink-3, #9a8d7e);
 }
 .as-ph-note { color: var(--parch-faint, #b7a987); font-style: italic; }
+
+/* Backing Track band section */
+.as-band-intro { margin: 0 0 1.5rem; max-width: 680px; font-size: .95rem; line-height: 1.6; color: var(--site-ink-2, #5c5246); }
+.as-band-note { font-size: .875rem; line-height: 1.55; color: var(--site-ink-2, #5c5246); margin: 0 0 .5rem; }
+.as-band-note strong { color: var(--parch-ink, #22201b); }
+.as-link {
+  align-self: flex-start;
+  font-size: .78rem; font-weight: 600; letter-spacing: .03em;
+  color: var(--site-accent-dk, #2b9c90);
+  border: 1.5px solid var(--site-accent, #3fc2b4);
+  border-radius: 4px; padding: .25rem .6rem;
+  text-decoration: none;
+}
+.as-link:hover { background: var(--site-accent-bg, rgba(63,194,180,.12)); }
 </style>
 
 <div id="as-root">
@@ -207,6 +221,7 @@
   <div class="as-toggle">
     <button class="active" onclick="asSwitch('genre',this)">By genre</button>
     <button onclick="asSwitch('instrument',this)">By instrument</button>
+    <button id="as-band-tab" onclick="asSwitch('band',this)" style="display:none">Backing Track band</button>
   </div>
 
   <!-- hidden SynthController mount point -->
@@ -930,11 +945,16 @@
 
   </div><!-- #as-instrument -->
 
+  <!-- ── BACKING TRACK BAND (generated from BandCatalog) ──────────────── -->
+  <div id="as-band" style="display:none"></div>
+
 </div><!-- #as-root -->
 
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/shared/arranger.js"></script>
+<script src="/apps/shared/band/comp.js"></script>
+<script src="/apps/shared/band/catalog.js"></script>
 <script>
 (function () {
   var SF = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';
@@ -1040,6 +1060,9 @@
   window.asSwitch = function (view, btn) {
     document.getElementById('as-genre').style.display      = view === 'genre'      ? '' : 'none';
     document.getElementById('as-instrument').style.display = view === 'instrument' ? '' : 'none';
+    var bandEl = document.getElementById('as-band');
+    if (bandEl) bandEl.style.display = view === 'band' ? '' : 'none';
+    if (view === 'band' && window.asBandRender) window.asBandRender();
     document.querySelectorAll('.as-toggle button').forEach(function (b) { b.classList.remove('active'); });
     btn.classList.add('active');
   };
@@ -1051,6 +1074,121 @@
     renderAll();
   }
   window.addEventListener('load', renderAll);
+})();
+</script>
+
+<script>
+// Backing Track band: cards generated from BandCatalog (apps/shared/band/catalog.js).
+(function () {
+  var root = document.getElementById('as-band');
+  var cat = window.BandCatalog;
+  if (!root || !cat || !cat.bass || !cat.comp) return;   // no catalog: tab and section stay hidden
+  document.getElementById('as-band-tab').style.display = '';
+
+  var FEEL = { swing: 'Swing', straight: 'Straight 8ths', any: 'Any feel' };
+
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+
+  // One bar of 4/4 as ABC (L:1/8), single pitch, rests where nothing sounds. Always 8 eighths.
+  // L holds to the next hit (or bar end); S is one eighth then rest. A long at 3.5 is tied over the barline.
+  var LEN = { 1:'', 2:'2', 3:'3', 4:'4', 6:'6', 8:'8' };
+  function span(sym, n, tie) {         // n eighths of a note/rest, split into writable lengths
+    var parts = [];
+    while (n > 0) { var k = LEN[n] != null ? n : (n > 6 ? 6 : n > 4 ? 4 : 2); parts.push(sym + LEN[k]); n -= k; }
+    return parts.join(sym === 'z' ? ' ' : '- ') + (tie ? '-' : '');
+  }
+  function hitsToAbc(hits) {
+    var h = hits.map(function (x) { return [Math.round(x[0] * 2), x[1]]; })
+                .sort(function (a, b) { return a[0] - b[0]; });
+    var out = [], pos = 0;
+    h.forEach(function (x, i) {
+      if (x[0] > pos) out.push(span('z', x[0] - pos));
+      var next = i + 1 < h.length ? h[i + 1][0] : 8;
+      var dur = x[1] === 'S' ? 1 : next - x[0];
+      var tie = x[1] === 'L' && x[0] === 7;
+      out.push(span('B', dur, tie));
+      pos = x[0] + dur;
+      if (x[1] === 'S' && next > pos) { out.push(span('z', next - pos)); pos = next; }
+    });
+    if (pos < 8) out.push(span('z', 8 - pos));
+    return 'X:1\nM:4/4\nL:1/8\nK:C\n' + out.join(' ') + ' |]';
+  }
+  window.asHitsToAbc = hitsToAbc;
+
+  function card(e, kind) {
+    var c = el('div', 'as-card');
+    var head = el('div', 'as-card-head');
+    head.appendChild(el('span', 'as-name', e.label));
+    head.appendChild(el('span', 'as-id', e.id));
+    head.appendChild(el('span', 'as-meter', FEEL[e.feel] || e.feel));
+    c.appendChild(head);
+    var note = null;
+    if (kind === 'comp' && e.hits) {
+      note = el('div', 'as-notation');
+      note.dataset.hits = JSON.stringify(e.hits);
+      c.appendChild(note);
+    } else {
+      c.appendChild(el('div', 'as-notation-msg', kind === 'bass'
+        ? 'No fixed bar to print: this bass line is generated fresh each bar from the chords.'
+        : 'No fixed bar to print: the band picks a figure for each bar.'));
+    }
+    c.appendChild(el('p', 'as-desc', e.desc));
+    var tags = el('div', 'as-tags');
+    (e.tags || []).forEach(function (t) { tags.appendChild(el('span', 'as-tag genre', t)); });
+    tags.appendChild(el('span', 'as-tag instr', kind === 'bass' ? 'Bass' : 'Piano / guitar'));
+    c.appendChild(tags);
+    var a = el('a', 'as-link', 'Play in Backing Track');
+    a.href = kind === 'bass'
+      ? cat.url({ bass: e.id })
+      : cat.url({ rhythm: e.id, feel: (e.feel === 'swing' || e.feel === 'straight') ? e.feel : undefined });
+    c.appendChild(a);
+    return c;
+  }
+
+  function group(title, list, kind) {
+    var g = el('div', 'as-group');
+    g.appendChild(el('div', 'as-group-title', title));
+    var cards = el('div', 'as-cards');
+    list.forEach(function (e) { cards.appendChild(card(e, kind)); });
+    g.appendChild(cards);
+    return g;
+  }
+
+  function noteLine(label, list) {
+    var p = el('p', 'as-band-note');
+    p.appendChild(el('strong', null, label + ' '));
+    list.forEach(function (e, i) {
+      if (i) p.appendChild(document.createTextNode(' '));
+      p.appendChild(el('strong', null, e.label + '.'));
+      p.appendChild(document.createTextNode(' ' + e.desc));
+    });
+    return p;
+  }
+
+  root.appendChild(el('p', 'as-band-intro',
+    'These are the patterns the band on the Backing Track page plays: a bass line, a comping rhythm, a feel and a cymbal. Each card links to the page with that choice already selected.'));
+  root.appendChild(group('Bass lines', cat.bass, 'bass'));
+  root.appendChild(group('Comping rhythms', cat.comp, 'comp'));
+  var g = el('div', 'as-group');
+  g.appendChild(el('div', 'as-group-title', 'Feels and cymbals'));
+  g.appendChild(noteLine('Feels:', cat.feels || []));
+  g.appendChild(noteLine('Cymbals:', cat.cymbals || []));
+  root.appendChild(g);
+
+  var rendered = false;
+  window.asBandRender = function () {      // notation is drawn when the tab is first shown (needs a visible width)
+    if (rendered || !window.ABCJS) return;
+    rendered = true;
+    root.querySelectorAll('.as-notation[data-hits]').forEach(function (n) {
+      ABCJS.renderAbc(n, hitsToAbc(JSON.parse(n.dataset.hits)),
+        { add_classes: true, responsive: 'resize', scale: 0.65, staffwidth: 300 });
+    });
+  };
 })();
 </script>
 ```

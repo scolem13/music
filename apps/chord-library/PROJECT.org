@@ -230,7 +230,50 @@ Chord-sheet's print CSS exists but is laid out for teacher prep, not
 student handout. A "student mode" with bigger diagrams, less density,
 and optional fingerings would be useful.
 
+* Backing Track <-> Chord Sheet integrations                    :backing:
+Recorded 2026-10-06. Backing Track = tools/_backing-track.qmd + apps/shared/band/;
+shared voicing shapes = apps/shared/voicings.js (ChordVoicings).
+
+** IN-PROGRESS Unify the voicing menu
+One list of voicing styles from ChordVoicings for both pages (Standard, Shell R-3-7,
+guide tones, rootless A/B, drop 2, drop 3, three-string sets).
+** IN-PROGRESS Pinned voicings
+Pick an inversion/position per chord in Chord Sheet; the band plays exactly those.
+** IN-PROGRESS As-played view
+Send the band's logged voicings for a chorus to Chord Sheet so its diagrams show
+what the band chose.
+** IN-PROGRESS Notation for each voicing option in Chord Sheet (ABC)
+** IN-PROGRESS Roman numerals on both pages (letters, numerals, or both)
+** IN-PROGRESS Transposed chord symbols on Backing Track (B-flat / E-flat instruments)
+** IDEA Hand-off both ways
+"Play with the band" from Chord Sheet; "Show these voicings" from Backing Track.
+Needs a rule for turning a bare chord list into bars (one chord per bar by default).
+** IDEA Same sounds
+Chord Sheet click-to-play through the band's sample bank (BandSounds), strummed for guitar.
+** IDEA One chord parser
+Three exist (Chord Sheet DATA.chords, BandHarmony.parseChord, arranger.js). Share one,
+or test every library symbol through all three.
+** IDEA Shared key state between the two pages (Tonality)
+** IDEA Live diagrams on Backing Track
+Keyboard/fretboard lighting up each voicing as it plays. Needs the diagram drawing
+code extracted from the Chord Sheet page into a shared file.
+** IDEA Printable voicing sheet
+Chord Sheet diagrams + band notation + MIDI export for one progression.
+
+** Backing Track backlog (not Chord Sheet specific)
+- Load any tune from the tune library into the band
+- Loop a section of the chart; tempo ramp per chorus
+- Mute/solo per part; band lays out every other chorus (trading)
+- Show current voicing while playing; remember settings; shareable link
+- More forms/feels: minor blues, rhythm changes, bossa, jazz waltz; Watermelon Man 16-bar preset
+- Audio export (WAV/MP3); recorded samples in place of the soundfont
+- Straight-feel comping/bass variations; strict root-position Freddie Green shells
+- Per-file fallback host for samples (jsDelivr refuses one guitar note)
+- Accompaniment-pattern audit of the old arranger.js styles (never started)
+
 * Decisions Pending
+- [ ] Chord Sheet entry: add bar lines, or keep a plain chord list with bars assumed?
+- [ ] Keep Chord Sheet and Backing Track as two linked pages, or fold diagrams into Backing Track?
 - [ ] Polymorphic vs partitioned exposures table (leaning partitioned + union view)
 - [ ] Voicing-style storage: per-instrument per-student, or global catalog with student tags?
 - [ ] Comping/improv data format (JSON grid vs ABC vs MIDI)
