@@ -426,7 +426,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 #bt-root .bt-field{display:flex;flex-direction:column;gap:.3rem;min-width:0}
 #bt-root .bt-field>label,#bt-root .bt-group-label{font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);
   font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--site-ink-3,#9a8d7e);margin:0}
-#bt-root select,#bt-root input[type=number]{font:inherit;font-size:.9rem;height:2.2rem;padding:0 .55rem;
+#bt-root select,#bt-root input[type=number],#bt-root input[type=text]{font:inherit;font-size:.9rem;height:2.2rem;padding:0 .55rem;
   border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface,#fff);color:inherit}
 #bt-root input[type=number]{width:4.6rem;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-variant-numeric:tabular-nums}
 #bt-root input[type=range]{accent-color:var(--site-accent-dk,#2b9c90);height:2.2rem;margin:0}
@@ -496,42 +496,38 @@ document.addEventListener('DOMContentLoaded', async function () {
 @media (prefers-reduced-motion:reduce){ #bt-root *{transition:none!important} }
 /* practice: start bar, cycle, tempo steps */
 #bt-root .bt-check{display:inline-flex;align-items:center;gap:.35rem;font-size:.88rem;white-space:nowrap;cursor:pointer}
+#bt-root .bt-field>label.bt-check{font-family:inherit;text-transform:none;letter-spacing:0;color:inherit;height:2.2rem;font-size:.88rem}
 #bt-root .bt-check input{accent-color:var(--site-accent-dk,#2b9c90)}
-#bt-root #bt-practice input[type=number]{width:4.2rem}
+#bt-root #bt-practice input[type=number],#bt-root .bt-cyc input[type=number]{width:4.2rem}
+#bt-root .bt-row2{margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+/* band section: one labelled group per player */
+#bt-root .bt-sub{margin-top:.8rem;padding-top:.7rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+#bt-root .bt-sub:first-of-type{border-top:0;padding-top:0}
+#bt-root .bt-sub>h3{margin:0 0 .1rem;font-family:var(--font-display,'Oswald',system-ui,sans-serif);font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--site-ink-2,#5c5246);border:0;padding:0}
+#bt-root .bt-sub .bt-row{margin-top:.4rem}
 #bt-chart .tc-bar.bt-cyc{background:rgba(216,167,83,.2)}
 #bt-chart .tc-bar.bt-cyc.tc-live{background:var(--tc-live-soft)}
+#bt-chart .tc-bar.bt-cyc-end{box-shadow:inset -3px 0 0 var(--site-accent-dk,#2b9c90)}
 #bt-chart .tc-bar.bt-stop::after{content:"STOP";position:absolute;bottom:3px;right:5px;font:700 .56rem/1 var(--font-mono,monospace);letter-spacing:.06em;color:var(--site-ink-2,#5c5246)}
 #bt-root .bt-kit{margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+#bt-root .bt-more{font-size:.84rem}
+#bt-root .bt-more>summary{cursor:pointer;color:var(--site-ink-2,#5c5246)}
+#bt-root .bt-morelist{display:grid;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.2rem 1rem;margin-top:.4rem}
+#bt-root .bt-morelist .bt-morehead{grid-column:1/-1;margin-top:.3rem;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--site-ink-3,#9a8d7e)}
+#bt-root .bt-morelist .bt-morehead:first-child{margin-top:0}
+#bt-root .bt-more{margin-top:.55rem}
+#bt-root .bt-morelist label{display:flex;align-items:center;gap:.35rem;font:inherit;font-size:.84rem;text-transform:none;letter-spacing:0;color:inherit;margin:0;cursor:pointer}
+#bt-root .bt-info{margin-top:.7rem;font-size:.84rem}
+#bt-root .bt-info>summary{cursor:pointer;color:var(--site-ink-2,#5c5246);font-weight:600;width:max-content}
+#bt-root .bt-info .bt-hint,#bt-root .bt-info .bt-intro{margin-top:.4rem}
+#bt-root .bt-about{margin:0 0 1rem}
+#bt-root details.bt-fold[open]>summary{margin-bottom:.2rem}
 #bt-root .bt-kit .bt-mixer{border-top:0;padding-top:0;margin-top:.6rem}
 #bt-root #bt-stops{width:6.5rem}
 #bt-chart .tc-bar.bt-start::before{content:"\25B6";position:absolute;top:3px;right:5px;font-size:.6rem;line-height:1;color:var(--site-accent-dk,#2b9c90)}
 </style>
 
 <div id="bt-root">
-  <p class="bt-intro">A swing trio that follows the changes below: upright bass, piano and drums. Pick the changes, set the key and tempo, and play along. The changes are plain ABC, so you can rewrite them at the bottom of the page.</p>
-
-  <div class="bt-pinnote" id="bt-pinnote" role="status" hidden="">
-    <span id="bt-pinnote-text"></span>
-    <button type="button" class="bt-btn" id="bt-pin-clear">Clear pins</button>
-    <button type="button" class="bt-btn bt-x" id="bt-pin-dismiss" aria-label="Dismiss this note">×</button>
-  </div>
-
-  <div id="bt-chart"></div>
-
-  <div class="bt-panel bt-chartbar">
-    <div class="bt-row">
-      <div class="bt-field"><label for="bt-roman">Chord symbols</label>
-        <select id="bt-roman"><option value="off">Letters</option><option value="only">Roman numerals</option><option value="both">Both</option></select></div>
-      <div class="bt-field"><label for="bt-chartfor">Chart for</label>
-        <select id="bt-chartfor"><option value="concert">Concert pitch</option>
-          <option value="bb">B♭ instruments (soprano &amp; tenor sax, trumpet, clarinet)</option>
-          <option value="eb">E♭ instruments (alto &amp; baritone sax)</option></select></div>
-      <button type="button" class="bt-btn" id="bt-send">Show these voicings in Chord Sheet</button>
-    </div>
-    <p class="bt-hint" id="bt-chartfor-hint" hidden="">Only the chart is transposed. The band, the Key menu, the ABC, the notation and the MIDI file stay in concert pitch.</p>
-    <p class="bt-hint" id="bt-send-note" role="status"></p>
-  </div>
-
   <div class="bt-panel">
     <div class="bt-row">
       <button type="button" id="bt-play" class="bt-play" data-state="idle">▶ Play</button>
@@ -548,55 +544,142 @@ document.addEventListener('DOMContentLoaded', async function () {
       <div class="bt-field"><label for="bt-changes">Changes</label><select id="bt-changes"></select></div>
       <div class="bt-field"><label for="bt-meter">Meter</label><select id="bt-meter"></select></div>
     </div>
-    <p class="bt-status" id="bt-status"></p>
-  </div>
-
-  <div class="bt-panel">
-    <div class="bt-row">
-      <div class="bt-field"><label for="bt-bass">Bass line</label>
-        <select id="bt-bass"></select></div>
-      <div class="bt-field"><label for="bt-bass-sound">Bass sound</label>
-        <select id="bt-bass-sound"><option value="upright">Upright bass</option><option value="electric">Electric bass</option></select></div>
-      <div class="bt-field"><label for="bt-comp">Comping</label><select id="bt-comp"></select></div>
-      <div class="bt-field"><label for="bt-rhythm">Comping rhythm</label><select id="bt-rhythm"></select></div>
-      <div class="bt-field"><label for="bt-voicing">Chord voicings</label><select id="bt-voicing"></select></div>
+    <div class="bt-row bt-row2">
       <div class="bt-field"><label for="bt-feel">Feel</label>
         <select id="bt-feel"><option value="swing">Swing</option><option value="straight">Straight eighths</option></select></div>
-      <div class="bt-field"><label for="bt-variation" title="Strict plays each pattern exactly as chosen. Loose lets the band start sparse, build over four choruses and lift into each new one.">Variation</label>
-        <select id="bt-variation"><option value="0">Strict</option><option value="0.6" selected="">Some</option><option value="1">Loose</option></select></div>
-      <div class="bt-field"><label for="bt-ride">Cymbal</label>
-        <select id="bt-ride"><option value="ride">Ride</option><option value="hat">Closed hi-hat</option><option value="bell">Ride bell</option></select></div>
-      <div class="bt-field"><label for="bt-ride-sound">Ride cymbal</label>
-        <select id="bt-ride-sound"><option value="ride">Ride 1</option><option value="ride2">Ride 2</option></select></div>
-      <div class="bt-field"><label for="bt-stops" title="Stop time: on these bars the band plays beat 1 and stops; only the bass leads back into the next bar.">Stop on bar</label>
-        <input type="text" id="bt-stops" inputmode="numeric" placeholder="none" aria-describedby="bt-stops-hint"></div>
       <div class="bt-field"><label for="bt-countin">Count-in</label>
         <select id="bt-countin"><option value="1">1 bar</option><option value="2">2 bars</option><option value="0">None</option></select></div>
-      <div class="bt-field"><label for="bt-choruses">Choruses</label>
-        <select id="bt-choruses"><option value="0">Loop</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select></div>
+      <div class="bt-field"><label for="bt-choruses" title="How many times through the changes before the band ends. Repeat keeps going until you stop it.">Choruses</label>
+        <select id="bt-choruses"><option value="0">Repeat</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select></div>
+      <div class="bt-field bt-cyc"><span class="bt-group-label" title="Loop a few bars: press L, then click the bar the loop should end on. L again turns it off and on.">Loop (L)</span>
+        <div class="bt-inline">
+          <label class="bt-check"><input type="checkbox" id="bt-cyc-on"> Loop bars</label>
+          <input type="number" id="bt-cyc-from" min="1" value="1" aria-label="Loop from bar"><span class="bt-unit">to</span>
+          <input type="number" id="bt-cyc-to" min="1" value="4" aria-label="Loop to bar">
+        </div></div>
     </div>
+    <p class="bt-status" id="bt-status"></p>
+    <p class="bt-hint" id="bt-loop-note" role="status"></p>
+  </div>
+
+  <details class="bt-info bt-about"><summary>About this page</summary>
+  <p class="bt-intro">A swing trio that follows the changes below: upright bass, piano and drums. Pick the changes, set the key and tempo, and play along. The changes are plain ABC, so you can rewrite them at the bottom of the page.</p>
+  </details>
+
+  <div class="bt-pinnote" id="bt-pinnote" role="status" hidden="">
+    <span id="bt-pinnote-text"></span>
+    <button type="button" class="bt-btn" id="bt-pin-clear">Clear pins</button>
+    <button type="button" class="bt-btn bt-x" id="bt-pin-dismiss" aria-label="Dismiss this note">×</button>
+  </div>
+
+  <div id="bt-chart"></div>
+
+  <details class="bt-panel bt-fold bt-chartbar" id="bt-sec-chart" open="">
+    <summary>Chart</summary>
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-roman">Chord symbols</label>
+        <select id="bt-roman"><option value="off">Letters</option><option value="only">Roman numerals</option><option value="both">Both</option></select></div>
+      <div class="bt-field"><label for="bt-chartfor">Chart for</label>
+        <select id="bt-chartfor"><option value="concert">Concert pitch</option>
+          <option value="bb">B♭ instruments (soprano &amp; tenor sax, trumpet, clarinet)</option>
+          <option value="eb">E♭ instruments (alto &amp; baritone sax)</option></select></div>
+      <button type="button" class="bt-btn" id="bt-send">Show these voicings in Chord Sheet</button>
+    </div>
+    <p class="bt-hint" id="bt-chartfor-hint" hidden="">Only the chart is transposed. The band, the Key menu, the ABC, the notation and the MIDI file stay in concert pitch.</p>
+    <p class="bt-hint" id="bt-send-note" role="status"></p>
+  </details>
+
+  <details class="bt-panel bt-fold" id="bt-sec-band" open="">
+    <summary>Band</summary>
+    <div class="bt-sub">
+      <h3 class="anchored">Whole band</h3>
+      <div class="bt-row">
+        <div class="bt-field"><label for="bt-style" title="A genre and its defaults: feel, bass line, comping rhythm, drum groove and voicings that belong together.">Style</label>
+          <select id="bt-style"></select></div>
+        <div class="bt-field"><span class="bt-group-label">Combinations</span>
+          <label class="bt-check" title="Normally each menu offers only what belongs in the chosen style. Unlocked, every menu lists everything, so you can put a montuno over swing time if you want to hear it."><input type="checkbox" id="bt-unlock"> Unlock: mix anything</label></div>
+        <div class="bt-field"><label for="bt-variation" title="Strict plays each pattern exactly as chosen. Loose lets the band start sparse, build over four choruses and lift into each new one.">Variation</label>
+          <select id="bt-variation"><option value="0">Strict</option><option value="0.6" selected="">Some</option><option value="1">Loose</option></select></div>
+        <div class="bt-field"><label for="bt-stops" title="Stop time: on these bars the band plays beat 1 and stops; only the bass leads back into the next bar.">Stop on bar</label>
+          <input type="text" id="bt-stops" inputmode="numeric" placeholder="none" aria-describedby="bt-stops-hint"></div>
+        <div class="bt-field" id="bt-figs-field" hidden=""><label for="bt-figs" title="A bass line or comping rhythm taken from a tune can play on every chorus, or on the first chorus only (the head), after which the band plays the style's usual parts.">Figure from the tune</label>
+          <select id="bt-figs"><option value="always" selected="">Every chorus</option><option value="head">First chorus only</option></select></div>
+      </div>
+      <p class="bt-hint" id="bt-style-note" role="status"></p>
+      <p class="bt-hint" id="bt-stops-hint" hidden=""></p>
+    </div>
+    <div class="bt-sub">
+      <h3 class="anchored">Bass</h3>
+      <div class="bt-row">
+        <div class="bt-field"><label for="bt-bass">Bass line</label>
+          <select id="bt-bass"></select></div>
+        <div class="bt-field"><label for="bt-bass-sound">Sound</label>
+          <select id="bt-bass-sound"><option value="upright">Upright bass</option><option value="electric">Electric bass</option></select></div>
+      </div>
+    </div>
+    <div class="bt-sub">
+      <h3 class="anchored">Comping</h3>
+      <div class="bt-row">
+        <div class="bt-field"><label for="bt-comp">Instrument</label><select id="bt-comp"></select></div>
+        <div class="bt-field"><label for="bt-rhythm">Rhythm</label><select id="bt-rhythm"></select></div>
+        <div class="bt-field"><label for="bt-voicing">Chord voicings</label><select id="bt-voicing"></select></div>
+        <div class="bt-field"><label for="bt-vmove" title="Hold: one voicing per chord. Move: over a held chord the comping steps through inversions, led by the top note. Passing chords: in the sixth-diminished style, a diminished chord passes between inversions.">Voicing movement</label>
+          <select id="bt-vmove"><option value="hold">Hold each chord</option><option value="move" selected="">Move through inversions</option><option value="passing">Move, with passing chords</option></select></div>
+        <div class="bt-field"><label for="bt-ext" title="How often the comping adds colour the chart does not write: a 9th or 13th on a plain 7th chord, a 6th in place of a major 7th. Decided afresh each time a chord arrives. Extensions that ARE written are always played.">Unmarked extensions</label>
+          <select id="bt-ext"><option value="0">Never (as written)</option><option value="0.35">Sometimes</option><option value="0.7">Often</option><option value="1">Always</option></select></div>
+      </div>
+      <details class="bt-more" id="bt-rhythm-more"><summary id="bt-rhythm-more-sum">Add more rhythms</summary>
+        <div class="bt-morelist" id="bt-rhythm-extra" role="group" aria-label="More comping rhythms for the band to use as well"></div></details>
+      <details class="bt-more" id="bt-ext-more"><summary>Which extensions</summary>
+        <div class="bt-morelist" role="group" aria-label="Unmarked extensions the comping may add">
+          <label><input type="checkbox" id="bt-ext-nine" checked=""> 9th on 7th chords (C7 as C9, Cm7 as Cm9, Cmaj7 as Cmaj9)</label>
+          <label><input type="checkbox" id="bt-ext-thirteen" checked=""> 13th on dominant 7ths (C7 as C13)</label>
+          <label><input type="checkbox" id="bt-ext-six" checked=""> 6th in place of a major 7th (Cmaj7 as C6)</label>
+        </div></details>
+      <details class="bt-more" id="bt-voicing-more"><summary id="bt-voicing-more-sum">Add more voicings</summary>
+        <div class="bt-morelist" id="bt-voicing-extra" role="group" aria-label="More voicings for the band to use as well"></div></details>
+      <details class="bt-info"><summary>Info</summary>
+      <p class="bt-hint">The menus list what belongs in the chosen Style; hover over an entry for what it is and which styles it fits. Tick Unlock to see everything: what fits the style is listed first and the rest follows under its own headings.</p>
+      <p class="bt-hint">Unmarked extensions are heard in the Standard, Drop 2 and Drop 3 voicings. Shells, guide tones, the three-string guitar shapes and open chords are fixed sets of notes and stay as they are; Rootless voicings always carry a 9th and 13th. Chords written with an alteration (C7♭9, C7alt) are left alone.</p>
+      <p class="bt-hint">Tick more rhythms or voicings and the band uses all of them. Ticked rhythms: the short swing figures are mixed bar by bar; the others (four to the bar, the Latin patterns, arpeggios) are kept for four bars at a time. With Rhythm on Varied, ticking rhythms limits it to just those.</p>
+      </details>
+    </div>
+    <div class="bt-sub">
+      <h3 class="anchored">Drums</h3>
+      <div class="bt-row">
+        <div class="bt-field"><label for="bt-groove">Groove</label><select id="bt-groove"></select></div>
+        <p class="bt-hint" style="margin:0">The cymbal and the kit faders are in the Mixer.</p>
+      </div>
+    </div>
+  </details>
+
+  <details class="bt-panel bt-fold" id="bt-sec-mix" open="">
+    <summary>Mixer</summary>
     <div class="bt-mixer" role="group" aria-label="Mix">
       <div class="bt-field"><label for="bt-vol-bass">Bass volume</label><input type="range" id="bt-vol-bass" min="0" max="150" value="100"></div>
       <div class="bt-field"><label for="bt-vol-comp" id="bt-vol-comp-label">Piano volume</label><input type="range" id="bt-vol-comp" min="0" max="150" value="100"></div>
       <div class="bt-field"><label for="bt-vol-drums">Drums volume</label><input type="range" id="bt-vol-drums" min="0" max="150" value="100"></div>
     </div>
-    <details class="bt-fold bt-kit" id="bt-kit">
+    <details class="bt-fold bt-kit" id="bt-kit" open="">
       <summary>Drum kit mix</summary>
+      <div class="bt-row">
+        <div class="bt-field"><label for="bt-ride">Cymbal</label>
+          <select id="bt-ride"><option value="ride">Ride</option><option value="hat">Closed hi-hat</option><option value="bell">Ride bell</option></select></div>
+        <div class="bt-field"><label for="bt-ride-sound">Ride cymbal</label>
+          <select id="bt-ride-sound"><option value="ride">Ride 1</option><option value="ride2">Ride 2</option></select></div>
+        <button type="button" class="bt-btn" id="bt-kit-reset">Reset faders</button>
+      </div>
       <div class="bt-mixer" role="group" aria-label="Drum kit mix" id="bt-kit-faders"></div>
-      <p class="bt-hint">Each fader is on top of the Drums volume. <button type="button" class="bt-btn" id="bt-kit-reset">Reset</button></p>
+      <details class="bt-info"><summary>Info</summary>
+    <p class="bt-hint">Each fader is on top of the Drums volume. The ride and crash start low because the sampled cymbals ring loudly; Reset faders returns to those settings.</p>
     </details>
-    <p class="bt-hint" id="bt-stops-hint" hidden=""></p>
-  </div>
+    </details>
+  </details>
 
-  <div class="bt-panel" id="bt-practice">
+  <details class="bt-panel bt-fold" id="bt-practice" open="">
+    <summary>Practice</summary>
     <div class="bt-row">
       <div class="bt-field"><label for="bt-start">Start at bar</label><input type="number" id="bt-start" min="1" value="1"></div>
-      <div class="bt-field"><span class="bt-group-label">Cycle</span>
-        <div class="bt-inline">
-          <label class="bt-check"><input type="checkbox" id="bt-cyc-on"> Loop bars</label>
-          <input type="number" id="bt-cyc-from" min="1" value="1" aria-label="Cycle from bar"><span class="bt-unit">to</span>
-          <input type="number" id="bt-cyc-to" min="1" value="4" aria-label="Cycle to bar">
-        </div></div>
       <div class="bt-field"><span class="bt-group-label">Tempo change</span>
         <div class="bt-inline">
           <label class="bt-check"><input type="checkbox" id="bt-step-on"> Each repeat</label>
@@ -604,8 +687,31 @@ document.addEventListener('DOMContentLoaded', async function () {
           <input type="number" id="bt-step-b" min="-60" max="60" placeholder="same" aria-label="Optional alternating tempo change, for example minus 3"><span class="bt-unit">bpm</span>
         </div></div>
     </div>
-    <p class="bt-hint">Click a bar on the chart to start there. With Loop bars on, clicking a later bar sets the end of the cycle. The second tempo box alternates with the first: 8 then -3 goes up 8, back 3, up 8, back 3. Stopping returns to the tempo you set.</p>
-  </div>
+    <details class="bt-info"><summary>Info</summary>
+    <p class="bt-hint">The loop controls are in the Play panel at the top. Click a bar on the chart to start there, then press <kbd>L</kbd> and click the bar the loop should end on; <kbd>L</kbd> again turns the loop off and on. An end bar before the start loops over the end of the form (10 to 2 plays 10, 11, 12, 1, 2). With the loop on, a click moves its end and Shift-click moves its start. The second tempo box alternates with the first: 8 then -3 goes up 8, back 3, up 8, back 3. Stopping returns to the tempo you set.</p>
+    </details>
+  </details>
+
+  <details class="bt-panel bt-fold" id="bt-setups">
+    <summary>Save and load</summary>
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-setup-name">Name</label><input type="text" id="bt-setup-name" maxlength="60" placeholder="e.g. Watermelon Man, slow" style="width:16rem;max-width:100%"></div>
+      <button type="button" class="bt-btn" id="bt-setup-save">Save this tune and settings</button>
+    </div>
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-setup-list">Saved on this device</label><select id="bt-setup-list" style="min-width:14rem"></select></div>
+      <button type="button" class="bt-btn" id="bt-setup-load">Load</button>
+      <button type="button" class="bt-btn" id="bt-setup-del">Delete</button>
+      <button type="button" class="bt-btn" id="bt-setup-export">Download all</button>
+      <label class="bt-btn" style="display:inline-flex;align-items:center;margin:0">Import a file<input type="file" id="bt-setup-import" accept="application/json,.json" hidden=""></label>
+      <button type="button" class="bt-btn" id="bt-setup-json-btn">Show JSON for the defaults</button>
+    </div>
+    <textarea id="bt-setup-json" readonly="" hidden="" aria-label="The selected setup as JSON" style="display:block;width:100%;min-height:8rem;margin-top:.8rem;font-family:var(--font-mono,monospace);font-size:.78rem"></textarea>
+    <p class="bt-hint" id="bt-setup-note" role="status"></p>
+    <details class="bt-info"><summary>Info</summary>
+    <p class="bt-hint">A setup is the changes (in their key and meter) with the tempo, style and every band, mixer and loop setting. Setups are kept in this browser on this device, and they also appear at the bottom of the Changes menu. Download all saves them as a file you can import on another device. To make one a built-in for everybody, press Show JSON for the defaults and send that text to whoever maintains the site: it is pasted into <code>apps/shared/band/presets.js</code>.</p>
+    </details>
+  </details>
 
   <details class="bt-panel bt-fold" id="bt-notation">
     <summary>Notation</summary>
@@ -614,7 +720,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       <button type="button" class="bt-btn" id="bt-nt-refresh">Show the latest bars</button>
     </div>
     <div class="bt-score" id="bt-score"></div>
+    <details class="bt-info"><summary>Info</summary>
     <p class="bt-hint" id="bt-nt-hint">What the band just played, one chorus at a time; it refreshes at the end of each chorus. Swung eighths are written as plain eighths; in 6/8 and 12/8 each beat is three written eighths. The bass is written an octave above where it sounds, and note lengths are rounded to eighths.</p>
+    </details>
   </details>
 
   <details class="bt-panel bt-fold" id="bt-export">
@@ -634,25 +742,28 @@ document.addEventListener('DOMContentLoaded', async function () {
   <details class="bt-panel bt-abc">
     <summary>Edit the changes (ABC)</summary>
     <textarea id="bt-abc" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Changes as ABC" aria-describedby="bt-abc-hint"></textarea>
+    <details class="bt-info"><summary>Info</summary>
     <p class="bt-hint" id="bt-abc-hint">The chord symbols in quotes are what the band reads. Where a symbol sits in the bar sets the beat it lands on, so <code>"Cm7"z2 "F7"z2</code> gives each chord two beats. The rests only fill out the bar. The <code>M:</code> line sets the meter: the band plays 3/4 as a jazz waltz and counts 6/8 and 12/8 in dotted quarters.</p>
+    </details>
     <p class="bt-hint bt-warn" id="bt-abc-note" role="status"></p>
   </details>
 </div>
 
 <script src="../apps/shared/soundfont.js"></script>
-<script src="../apps/shared/abc-transpose.js?v=2"></script>
-<script src="../apps/shared/tune-chart.js?v=13"></script>
-<script src="../apps/shared/tune-library.js?v=1"></script>
-<script src="../apps/shared/voicings.js?v=1"></script>
-<script src="../apps/shared/band/harmony.js?v=3"></script>
-<script src="../apps/shared/band/bass.js?v=2"></script>
-<script src="../apps/shared/band/comp.js?v=3"></script>
-<script src="../apps/shared/band/catalog.js?v=1"></script>
-<script src="../apps/shared/band/drums.js?v=1"></script>
-<script src="../apps/shared/band/sounds.js?v=1"></script>
-<script src="../apps/shared/band/player.js?v=91"></script>
-<script src="../apps/shared/band/midi.js?v=1"></script>
-<script src="../apps/shared/band/notation.js?v=1"></script>
+<script src="../apps/shared/abc-transpose.js?v=4"></script>
+<script src="../apps/shared/tune-chart.js?v=15"></script>
+<script src="../apps/shared/tune-library.js?v=3"></script>
+<script src="../apps/shared/voicings.js?v=4"></script>
+<script src="../apps/shared/band/harmony.js?v=11"></script>
+<script src="../apps/shared/band/bass.js?v=9"></script>
+<script src="../apps/shared/band/comp.js?v=12"></script>
+<script src="../apps/shared/band/presets.js?v=3"></script>
+<script src="../apps/shared/band/catalog.js?v=12"></script>
+<script src="../apps/shared/band/drums.js?v=5"></script>
+<script src="../apps/shared/band/sounds.js?v=3"></script>
+<script src="../apps/shared/band/player.js?v=94"></script>
+<script src="../apps/shared/band/midi.js?v=3"></script>
+<script src="../apps/shared/band/notation.js?v=3"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -680,9 +791,9 @@ document.addEventListener('DOMContentLoaded', async function () {
     { id:"quick", label:"Quick-change blues", title:"Quick-Change Blues", bars:"F7|Bb7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7" },
     { id:"jazz", label:"Jazz blues", title:"Jazz Blues", bars:"F7|Bb7|F7|Cm7 F7|Bb7|Bdim7|F7|Am7 D7|Gm7|C7|F7 D7|Gm7 C7" },
     // the 16-bar blues of Watermelon Man: straight eighths, the riff bass, and a stop on bar 14.
-    // `set` = controls the preset moves; `stops` = bars the band stops on.
+    // `style` = the band style the preset picks; `stops` = bars the band stops on.
     { id:"watermelon", label:"Watermelon Man (16 bars)", title:"Watermelon Man changes", bars:"F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|C7|Bb7|C7|Bb7|F7|F7",
-      stops:"14", tempo:132, set:{ "bt-feel":"straight", "bt-bass":"riff", "bt-rhythm":"stabs" } }
+      stops:"14", tempo:132, style:"boogaloo" }
   ];
   function presetAbc(p, meterId){
     var m = meterDef(meterId) || METERS[0], bars = p.bars.split("|").map(function(b){
@@ -785,7 +896,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (key !== "F"){ try { text = AbcTranspose.transpose(text, key); } catch (e) {} }
     clearPins("you picked different changes");
     $("bt-stops").value = p.stops || "";
-    if (p.set) Object.keys(p.set).forEach(function(id){ if ($(id).querySelector('option[value="' + p.set[id] + '"]')) $(id).value = p.set[id]; });
+    if (p.style) setStyle(p.style);
     if (p.tempo && meterDef($("bt-meter").value) === METERS[0]){ $("bt-tempo").value = p.tempo; $("bt-tempo-n").value = p.tempo; if (player) player.setTempo(tempo()); }
     applyAbc(text, false);
     if (player) player.setOpts(bandOpts());
@@ -798,36 +909,141 @@ document.addEventListener('DOMContentLoaded', async function () {
   fill($("bt-changes"), PRESETS); fill($("bt-meter"), METERS);
   (function(){ var o = document.createElement("option"); o.value = "custom"; o.textContent = "Custom"; o.hidden = true; $("bt-changes").appendChild(o); })();
   fill($("bt-comp"), COMPING);
-  fill($("bt-bass"), CAT.bass); fill($("bt-rhythm"), CAT.comp);
-  [["bt-bass", CAT.bass], ["bt-rhythm", CAT.comp]].forEach(function(p){            // the description as a hover hint
-    Array.prototype.forEach.call($(p[0]).options, function(o, i){ if (p[1][i].desc) o.title = p[1][i].desc; }); });
+  // ---- style, lock, and the menus that follow from them ----
+  // A Style is a genre with its defaults. Locked (the usual state) each menu offers only the entries that
+  // fit the style; with Unlock ticked every menu lists everything, what fits first.
+  var STYLES = CAT.styles || [{ id:"swing", label:"Swing", feel:"swing", bass:"walk", rhythm:"auto", drums:"auto", voicing:{} }];
+  var DRUMS = CAT.drums || [{ id:"auto", label:"Jazz time" }];
+  function styleDef(){ var id = $("bt-style").value; return STYLES.filter(function(x){ return x.id === id; })[0] || STYLES[0]; }
+  function unlocked(){ return $("bt-unlock").checked; }
+  function fitsNow(it){ return !CAT.fits || CAT.fits(it, styleDef().id); }
+  function styleNames(it){ return (it.fits || []).map(function(id){ var x = STYLES.filter(function(y){ return y.id === id; })[0]; return x ? x.label : id; }).join(", "); }
+  function hint(it){ return [it.desc, it.fits && it.fits.length ? "Fits: " + styleNames(it) + "." : ""].filter(Boolean).join(" "); }
+  // the voicing styles of an instrument, with the styles each fits
+  function voicingItems(inst){ var V = (CAT.voicings && CAT.voicings[inst]) || {};
+    return BandHarmony.styleList(inst).map(function(x){ var m = V[x.id]; return { id: x.id, label: x.label, fits: m ? m.fits : STYLES.map(function(y){ return y.id; }), group: "Other styles" }; }); }
+  function menu(sel, items, want, dflt){
+    var fit = items.filter(fitsNow), rest = items.filter(function(it){ return !fitsNow(it); }), groups = {};
+    function add(box, it){ var o = document.createElement("option"); o.value = it.id; o.textContent = it.label; o.title = hint(it); box.appendChild(o); }
+    function group(label){ var g = document.createElement("optgroup"); g.label = label; sel.appendChild(g); return g; }
+    sel.innerHTML = "";
+    if (!unlocked()) fit.forEach(function(it){ add(sel, it); });
+    else { var top = group("Fits " + styleDef().label); fit.forEach(function(it){ add(top, it); });
+      rest.forEach(function(it){ var g = it.group || "Other"; add(groups[g] || (groups[g] = group(g)), it); }); }
+    function has(id){ return Array.prototype.some.call(sel.options, function(o){ return o.value === id; }); }
+    sel.value = has(want) ? want : has(dflt) ? dflt : sel.options.length ? sel.options[0].value : "";
+  }
+  // a tick list under a menu: the same entries, the ones outside the style under their own heading
+  function ticks(box, items, checked, onChange){
+    var fit = items.filter(fitsNow), rest = unlocked() ? items.filter(function(it){ return !fitsNow(it); }) : [];
+    box.innerHTML = "";
+    function head(t){ var h = document.createElement("span"); h.className = "bt-morehead"; h.textContent = t; box.appendChild(h); }
+    function add(it){ var l = document.createElement("label"), cb = document.createElement("input"); cb.type = "checkbox"; cb.value = it.id; cb.checked = checked.indexOf(it.id) >= 0; l.title = hint(it);
+      cb.addEventListener("change", onChange); l.appendChild(cb); l.appendChild(document.createTextNode(" " + it.label)); box.appendChild(l); }
+    if (rest.length) head("Fits " + styleDef().label);
+    fit.forEach(add);
+    if (rest.length){ head("Outside " + styleDef().label); rest.forEach(add); }
+  }
+  function ticked(boxId, main){ return Array.prototype.filter.call($(boxId).querySelectorAll("input"), function(c){ return c.checked && c.value !== main; }).map(function(c){ return c.value; }); }
+  fill($("bt-style"), []);
+  (function(){ var sel = $("bt-style"), groups = {};
+    STYLES.forEach(function(x){ var g = x.group || "", box = sel;
+      if (g){ box = groups[g]; if (!box){ box = groups[g] = document.createElement("optgroup"); box.label = g; sel.appendChild(box); } }
+      var o = document.createElement("option"); o.value = x.id; o.textContent = x.label; o.title = [x.genres, x.desc].filter(Boolean).join(". "); box.appendChild(o); });
+    sel.value = STYLES[0].id; })();
+  // the comping rhythms the band draws on: the menu's, plus any ticked under it. With Varied in the
+  // menu the ticks say what it varies between (none ticked = its own phrases).
+  function rhythmChoice(){
+    var main = $("bt-rhythm").value, extra = ticked("bt-rhythm-extra", main);
+    return main === "auto" ? (extra.length ? extra.join("+") : "auto") : [main].concat(extra).join("+");
+  }
+  function rhythmNote(){
+    var main = $("bt-rhythm").value, n = ticked("bt-rhythm-extra", main).length;
+    $("bt-rhythm-more-sum").textContent = main === "auto" ? (n ? "Varied between the " + n + " ticked rhythm" + (n === 1 ? "" : "s") : "Choose the rhythms Varied uses")
+      : n ? "Rhythm: also using " + n + " more" : "Add more rhythms";
+    Array.prototype.forEach.call($("bt-rhythm-extra").querySelectorAll("input"), function(c){ c.disabled = c.value === main; });
+    $("bt-rhythm-more").hidden = $("bt-rhythm-extra").querySelectorAll("input").length < 2;
+  }
+  // the styles the band draws on: the menu's, plus any ticked under "Add more voicings" (not with Auto)
+  function voicingChoice(){
+    var main = $("bt-voicing").value; if (main === "auto") return main;
+    return [main].concat(ticked("bt-voicing-extra", main)).join("+");
+  }
+  function extraNote(){
+    var main = $("bt-voicing").value, n = voicingChoice().split("+").length - 1;
+    $("bt-voicing-more-sum").textContent = main === "auto" ? "Add more voicings (not with Auto)" : n ? "Voicings: also using " + n + " more" : "Add more voicings";
+    Array.prototype.forEach.call($("bt-voicing-extra").querySelectorAll("input"), function(c){ c.disabled = main === "auto" || c.value === main; });
+    $("bt-voicing-more").hidden = $("bt-voicing-extra").querySelectorAll("input").length < 2;
+  }
   function compDef(){ var id = $("bt-comp").value; return COMPING.filter(function(c){ return c.id === id; })[0] || COMPING[0]; }
-  // the Voicings menu for the current instrument; `want` (a style id) is kept when that instrument offers it
-  function syncVoicings(want){
-    var c = compDef(), list = BandHarmony.styleList(c.inst); fill($("bt-voicing"), list);
-    $("bt-voicing").value = list.some(function(s){ return s.id === want; }) ? want : BandHarmony.defaultStyle(c.inst);
+  function setRhythm(want){
+    var ids = String(want || "auto").split("+"), comp = CAT.comp.filter(function(c){ return c.id !== "auto"; });
+    menu($("bt-rhythm"), CAT.comp, ids[0], styleDef().rhythm);
+    ticks($("bt-rhythm-extra"), comp, ids.slice(1), function(){ rhythmNote(); figsSync(); player.setOpts(bandOpts()); });
+    rhythmNote();
+  }
+  // `want` may be several styles ("a+b"): the first goes in the menu, the rest are ticked below it
+  function setVoicing(want){
+    var c = compDef(), items = voicingItems(c.inst), ids = String(want || "").split("+");
+    var dflt = (styleDef().voicing || {})[c.inst] || BandHarmony.defaultStyle(c.inst);
+    menu($("bt-voicing"), items, ids[0], dflt);
+    ticks($("bt-voicing-extra"), items.filter(function(x){ return x.id !== "auto"; }), ids.slice(1), function(){ extraNote(); player.setOpts(bandOpts()); });
+    extraNote();
     $("bt-vol-comp-label").textContent = c.name + " volume";
   }
+  function allowed(items, ids){ return String(ids || "").split("+").every(function(id){ var it = items.filter(function(x){ return x.id === id; })[0]; return !it || fitsNow(it); }); }
+  // Rebuild every menu for the style and the lock. reset = take the style's defaults (a new style was
+  // chosen); otherwise keep each choice that is still on offer.
+  function rebuild(reset){
+    var st = styleDef();
+    menu($("bt-bass"), CAT.bass, reset ? st.bass : $("bt-bass").value, st.bass);
+    menu($("bt-groove"), DRUMS, reset ? st.drums : $("bt-groove").value, st.drums);
+    setRhythm(reset ? st.rhythm : [$("bt-rhythm").value].concat(ticked("bt-rhythm-extra", $("bt-rhythm").value)).join("+"));
+    setVoicing(reset ? null : [$("bt-voicing").value].concat(ticked("bt-voicing-extra", $("bt-voicing").value)).join("+"));
+    if (reset || !unlocked()) $("bt-feel").value = st.feel;
+    extSync(); figsSync();
+    $("bt-style-note").textContent = [st.genres, st.desc].filter(Boolean).join(". ") + (unlocked() ? " Unlocked: every menu lists everything, what fits " + st.label + " first." : "");
+  }
+  // unmarked extensions: how often, and which kinds (null = never)
+  function extendChoice(){
+    var a = parseFloat($("bt-ext").value) || 0; if (!a || $("bt-ext").disabled) return null;
+    return { amount: a, six: $("bt-ext-six").checked, nine: $("bt-ext-nine").checked, thirteen: $("bt-ext-thirteen").checked };
+  }
+  // they belong to the jazz and bossa styles: elsewhere the menu is off unless the page is unlocked
+  function extSync(){
+    var off = !unlocked() && !styleDef().ext, sel = $("bt-ext");
+    sel.disabled = off; sel.title = off ? "Not part of " + styleDef().label + ". Tick Unlock to use it anyway." : "";
+    $("bt-ext-more").hidden = off || !(parseFloat(sel.value) > 0);
+  }
+  // the "Figure from the tune" menu shows only while a line or rhythm from a tune is chosen
+  function figsSync(){
+    var b = (CAT.byId && CAT.byId(CAT.bass, $("bt-bass").value)) || {}, ids = rhythmChoice().split("+");
+    var on = !!b.tune || CAT.comp.some(function(c){ return c.tune && ids.indexOf(c.id) >= 0; });
+    $("bt-figs-field").hidden = !on;
+  }
+  function setStyle(id){ if (STYLES.some(function(x){ return x.id === id; })) $("bt-style").value = id; rebuild(true); }
+  function syncVoicings(want){ setVoicing(want); }
   $("bt-comp").parentNode.hidden = COMPING.length < 2;        // nothing to choose until a second instrument exists
   // "14" or "6, 14" -> form bar indexes (0-based); anything that is not a bar number is ignored
   function stopBars(){ var out = []; ($("bt-stops").value.match(/\d+/g) || []).forEach(function(t){ var n = parseInt(t, 10) - 1; if (n >= 0 && out.indexOf(n) < 0) out.push(n); }); return out; }
-  function bandOpts(){ var c = compDef(); return { bassFeel: $("bt-bass").value, comp: c.inst, compRhythm: $("bt-rhythm").value, voicing: $("bt-voicing").value,
+  function bandOpts(){ var c = compDef(); return { bassFeel: $("bt-bass").value, groove: $("bt-groove").value, comp: c.inst, compRhythm: rhythmChoice(), voicing: voicingChoice(),
     feel: $("bt-feel").value, variation: parseFloat($("bt-variation").value), ride: $("bt-ride").value, pins: pins ? pins.map : null,
+    voiceMove: $("bt-vmove").value, extend: extendChoice(), figures: $("bt-figs").value,
     compSound: c.sound || c.inst, bassSound: $("bt-bass-sound").value, rideSound: $("bt-ride-sound").value, stops: stopBars() }; }
   // only the sample sets the menus ask for are loaded
   function neededSounds(){ var c = compDef(); return [$("bt-bass-sound").value === "electric" ? "ebass" : "bass", c.sound || c.inst, "kit"]; }
   // drum kit mix: one fader per group of kit pieces
   var KIT = [ { id:"kick", label:"Kick", pieces:["kick"] }, { id:"snare", label:"Snare and cross-stick", pieces:["snare","rim"] },
-              { id:"hat", label:"Hi-hat", pieces:["hatClosed","hatFoot","hatOpen"] }, { id:"ride", label:"Ride", pieces:["ride","rideBell"] },
-              { id:"crash", label:"Crash", pieces:["crash"] }, { id:"toms", label:"Toms", pieces:["tomHi","tomMid","tomLo"] } ];
+              { id:"hat", label:"Hi-hat", pieces:["hatClosed","hatFoot","hatOpen"] }, { id:"ride", label:"Ride", pieces:["ride","rideBell"], def:53 },   // 53 = 35% of the fader's travel: the sampled cymbals ring loudly
+              { id:"crash", label:"Crash", pieces:["crash"], def:53 }, { id:"toms", label:"Toms", pieces:["tomHi","tomMid","tomLo"] } ];
   KIT.forEach(function(k){
     var f = document.createElement("div"); f.className = "bt-field";
-    f.innerHTML = '<label for="bt-kit-' + k.id + '">' + k.label + '</label><input type="range" id="bt-kit-' + k.id + '" min="0" max="150" value="100">';
+    f.innerHTML = '<label for="bt-kit-' + k.id + '">' + k.label + '</label><input type="range" id="bt-kit-' + k.id + '" min="0" max="150" value="' + (k.def || 100) + '">';
     $("bt-kit-faders").appendChild(f);
   });
   function kitMix(){ var m = {}; KIT.forEach(function(k){ var v = (parseInt($("bt-kit-" + k.id).value, 10) || 0) / 100; k.pieces.forEach(function(p){ m[p] = v; }); }); return m; }
   $("bt-key").value = "F";
-  syncVoicings();
+  rebuild(true);
 
   function tempo(){ var v = parseInt($("bt-tempo-n").value, 10); return Math.min(300, Math.max(40, isNaN(v) ? 120 : v)); }
   function vol(part){ return (parseInt($("bt-vol-" + part).value, 10) || 0) / 100; }
@@ -913,11 +1129,19 @@ document.addEventListener('DOMContentLoaded', async function () {
   function applyQuery(){
     var q = {}; location.search.replace(/[?&]([a-z]+)=([^&]*)/g, function(_, k, v){ q[k] = decodeURIComponent(v); });
     function pick(id, v){ var el = $(id); if (v && Array.prototype.some.call(el.options, function(o){ return o.value === v; })){ el.value = v; return true; } return false; }
-    var any = pick("bt-feel", q.feel); any = pick("bt-bass", q.bass) || any; any = pick("bt-rhythm", q.rhythm) || any;
-    if (pick("bt-comp", q.comp)){ syncVoicings(); any = true; }
-    if (q.bass === "riff" && !q.feel) $("bt-feel").value = "straight";
+    var any = false;
+    if (pick("bt-comp", q.comp)){ rebuild(false); any = true; }
+    if (q.style && STYLES.some(function(x){ return x.id === q.style; })){ setStyle(q.style); any = true; }
+    // a link to one bass line, rhythm or groove opens the first style it belongs in, with that entry chosen
+    [["bass", "bt-bass", CAT.bass], ["rhythm", "bt-rhythm", CAT.comp], ["drums", "bt-groove", DRUMS]].forEach(function(p){
+      var it = q[p[0]] && p[2].filter(function(x){ return x.id === q[p[0]]; })[0]; if (!it) return;
+      if (!fitsNow(it) && it.fits && it.fits.length) setStyle(it.fits[0]);
+      if (p[0] === "rhythm") setRhythm(it.id); else pick(p[1], it.id);
+      any = true; });
+    if (q.feel && q.feel !== $("bt-feel").value && !q.style){ if (!allowedFeel(q.feel)) $("bt-unlock").checked = true; rebuild(false); pick("bt-feel", q.feel); any = true; }
     if (any){ player.setInstruments(neededSounds()); player.setOpts(bandOpts()); }
   }
+  function allowedFeel(f){ return unlocked() || styleDef().feel === f; }
   function loadHandoff(){
     if (!/[?&]from=chord-sheet(&|$)/.test(location.search)) return;
     var h = readHandoff();
@@ -927,7 +1151,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       pinNote("The voicings from Chord Sheet didn't come through (they expire after ten minutes). Send them again from Chord Sheet.", false, true); return; }
     $("bt-changes").value = "custom";
     $("bt-comp").value = h.comp === "guitar" ? "guitar" : "piano";
-    if (h.comp === "guitar") $("bt-rhythm").value = "four";
+    // voicings pinned in Chord Sheet may be ones the current style does not offer: unlock rather than drop them
+    if (!allowed(voicingItems(compDef().inst), h.voicing)) $("bt-unlock").checked = true;
+    rebuild(false);
+    if (h.comp === "guitar" && fitsNow({ fits: CAT.comp.filter(function(x){ return x.id === "four"; })[0].fits })) setRhythm("four");
     syncVoicings(h.voicing);
     var list = (h.pins || []).filter(function(p){ return p && isFinite(p.bar) && isFinite(p.pos) && Array.isArray(p.midis) && p.midis.length &&
       p.midis.every(function(m){ return isFinite(m) && m >= 0 && m <= 127; }); });
@@ -939,12 +1166,15 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   // the most recent complete chorus as the band played it (or one generated now), handed to Chord Sheet
   function sendToChordSheet(){
-    var note = $("bt-send-note"), bars = lastChorus(), what = "from the last chorus played";
-    if (!bars){ bars = freshBars((parsedC.playOrder || parsedC.bars).length); what = "from a chorus generated with the current settings"; }
+    var note = $("bt-send-note"), bars = lastChorus(), what = "from the last chorus played", cur = bandOpts();
+    // what was played with other comping settings is not what the menus say now: voice the changes afresh
+    if (bars && bars.some(function(r){ var o = r.opts || {}; return o.comp !== cur.comp || o.voicing !== cur.voicing || JSON.stringify(o.extend || null) !== JSON.stringify(cur.extend || null); })){
+      bars = null; what = "voiced with the current settings (they changed since the last chorus)"; }
+    if (!bars){ var regen = what; bars = freshBars((parsedC.playOrder || parsedC.bars).length); what = regen !== "from the last chorus played" ? regen : "from a chorus generated with the current settings"; }
     var o = bars[0].opts || bandOpts(), inst = o.comp === "guitar" ? "guitar" : "piano";
     var style = BandHarmony.hasStyle(inst, o.voicing) ? o.voicing : BandHarmony.defaultStyle(inst);
     var seen = {}, chords = BandHarmony.asPlayed(bars, { style: style, inst: inst }).filter(function(c){     // each different chord once
-      if (seen[c.sym]) return false; seen[c.sym] = 1; return true; }).map(function(c){ return { sym: c.sym, midis: c.midis }; });
+      if (seen[c.sym]) return false; seen[c.sym] = 1; return true; }).map(function(c){ var e = { sym: c.sym, midis: c.midis }; if (c.strings) e.strings = c.strings; return e; });
     var payload = { v: 1, from: "backing-track", at: Date.now(), key: keyField(), comp: inst, voicing: style, chords: chords };
     try { localStorage.setItem("bandHandoff", JSON.stringify(payload)); }
     catch (e) { note.textContent = "Couldn't pass the voicings on: this browser is blocking storage for the page."; return; }
@@ -992,16 +1222,19 @@ document.addEventListener('DOMContentLoaded', async function () {
   // Bars are FORM bars (the order the band plays them), numbered from 1 in the fields.
   var formSrc = [];
   function numIn(id, lo, hi, dflt){ var v = parseInt($(id).value, 10); return isNaN(v) ? dflt : Math.min(hi, Math.max(lo, v)); }
+  // A loop whose first bar comes after its last runs over the end of the form (10 to 2 = 10..last, 1, 2).
+  var cycEndSet = false, cycAwaitEnd = false;      // has an end bar been chosen; is the next chart click choosing it
   function practice(){
-    var n = formSrc.length || 1, a = numIn("bt-cyc-from", 1, n, 1), b = numIn("bt-cyc-to", 1, n, n), t;
-    if (b < a){ t = a; a = b; b = t; }
-    return { n: n, start: numIn("bt-start", 1, n, 1), cyc: $("bt-cyc-on").checked, from: a, to: b };
+    var n = formSrc.length || 1, a = numIn("bt-cyc-from", 1, n, 1), b = numIn("bt-cyc-to", 1, n, n);
+    return { n: n, start: numIn("bt-start", 1, n, 1), cyc: $("bt-cyc-on").checked, from: a, to: b, wrap: a > b };
   }
+  function inCycle(p, fi){ return p.wrap ? (fi >= p.from || fi <= p.to) : (fi >= p.from && fi <= p.to); }
   function markChart(){
     var p = practice(), stops = stopBars();
     Array.prototype.forEach.call($("bt-chart").querySelectorAll(".tc-bar[data-bar]"), function(el){
       var fi = formSrc.indexOf(parseInt(el.getAttribute("data-bar"), 10)) + 1;
-      el.classList.toggle("bt-cyc", p.cyc && fi >= p.from && fi <= p.to);
+      el.classList.toggle("bt-cyc", p.cyc && fi >= 1 && inCycle(p, fi));
+      el.classList.toggle("bt-cyc-end", p.cyc && fi === p.to && !cycAwaitEnd);
       el.classList.toggle("bt-start", !p.cyc && fi === p.start);
       el.classList.toggle("bt-stop", stops.indexOf(fi - 1) >= 0);
     });
@@ -1023,13 +1256,34 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   ["bt-start", "bt-cyc-on", "bt-cyc-from", "bt-cyc-to", "bt-step-on", "bt-step-a", "bt-step-b"].forEach(function(id){
     $(id).addEventListener("change", practiceSync); });
+  $("bt-cyc-to").addEventListener("change", function(){ cycEndSet = true; cycAwaitEnd = false; loopNote(); });
+  $("bt-cyc-on").addEventListener("change", function(){ cycAwaitEnd = false; loopNote(); });
+  function loopNote(){
+    var p = practice(), el = $("bt-loop-note");
+    el.textContent = !p.cyc ? "" : cycAwaitEnd ? "Loop starts at bar " + p.from + ". Click the bar it should end on."
+      : "Looping bars " + p.from + " to " + p.to + (p.wrap ? " (over the end of the form)" : "") + ". Press L to turn the loop off.";
+  }
+  // L toggles the loop. The first time (no end bar chosen yet) it starts at the Start bar and the next click on the chart sets the end.
+  function toggleLoop(){
+    var on = !$("bt-cyc-on").checked; $("bt-cyc-on").checked = on;
+    if (on && !cycEndSet){ var p = practice(); $("bt-cyc-from").value = p.start; $("bt-cyc-to").value = p.start; cycAwaitEnd = true; }
+    else cycAwaitEnd = false;
+    loopNote(); practiceSync();
+  }
+  document.addEventListener("keydown", function(e){
+    if ((e.key !== "l" && e.key !== "L") || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    var t = e.target, tag = t && t.tagName;
+    if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
+    e.preventDefault(); toggleLoop();
+  });
   $("bt-chart").addEventListener("click", function(e){
     var el = e.target.closest ? e.target.closest(".tc-bar[data-bar]") : null; if (!el) return;
     var fi = formSrc.indexOf(parseInt(el.getAttribute("data-bar"), 10)) + 1; if (fi < 1) return;
     var p = practice();
-    if (!p.cyc) $("bt-start").value = fi;
-    else if (fi < p.from) $("bt-cyc-from").value = fi;
-    else $("bt-cyc-to").value = fi;
+    if (!p.cyc){ $("bt-start").value = fi; cycEndSet = false; }           // a new starting bar: the loop end is chosen afresh
+    else if (e.shiftKey && !cycAwaitEnd) $("bt-cyc-from").value = fi;     // Shift-click moves the first bar of the loop
+    else { $("bt-cyc-to").value = fi; cycEndSet = true; cycAwaitEnd = false; }   // a click sets the last bar (before the first = over the end)
+    loopNote();
     practiceSync();
   });
   // the chart is redrawn for key, Roman numeral and instrument changes: put the marks back each time
@@ -1047,33 +1301,42 @@ document.addEventListener('DOMContentLoaded', async function () {
     var text = abc; try { text = AbcTranspose.transpose(abc, $("bt-key").value); } catch (e) {}
     applyAbc(text, false);
   });
-  $("bt-changes").addEventListener("change", function(){ loadPreset($("bt-changes").value); });
+  $("bt-changes").addEventListener("change", function(){
+    var v = $("bt-changes").value, su = /^setup:/.test(v) ? setupByKey(v) : null;
+    if (su) applySetup(su); else loadPreset(v);
+  });
   // A new meter re-writes the chosen preset and moves the tempo to a usual one for it. Changes that
   // were typed in or handed over keep their own M: line, so the menu goes back to showing that.
   $("bt-meter").addEventListener("change", function(){
     var m = meterDef($("bt-meter").value), ch = $("bt-changes").value;
-    if (!m || ch === "custom"){ if (parsedC) showMeter(parsedC); $("bt-abc-note").textContent = ch === "custom" ? "These changes set their own meter: edit the M: line in the ABC below." : ""; return; }
+    var own = ch === "custom" || /^setup:/.test(ch);                    // typed, handed over or saved changes carry their own meter
+    if (!m || own){ if (parsedC) showMeter(parsedC); $("bt-abc-note").textContent = own ? "These changes set their own meter: edit the M: line in the ABC below." : ""; return; }
     loadPreset(ch);
     $("bt-tempo").value = m.tempo; $("bt-tempo-n").value = m.tempo; player.setTempo(tempo());
   });
-  $("bt-bass").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-bass").addEventListener("change", function(){ figsSync(); player.setOpts(bandOpts()); });
+  $("bt-figs").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-groove").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-feel").addEventListener("change", function(){
-    // the boogaloo riff belongs to straight eighths and the walking line to swing: follow the feel
-    var straight = $("bt-feel").value === "straight", b = $("bt-bass");
-    if (straight && b.value !== "riff" && CAT.bass.some(function(x){ return x.id === "riff"; })) b.value = "riff";
-    else if (!straight && b.value === "riff") b.value = "walk";
+    // locked, the feel belongs to the style: the other feel means the plain style of that feel
+    var f = $("bt-feel").value;
+    if (!unlocked() && styleDef().feel !== f) setStyle(f === "swing" ? "swing" : "boogaloo");
     player.setOpts(bandOpts());
   });
-  $("bt-rhythm").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-rhythm").addEventListener("change", function(){ rhythmNote(); figsSync(); player.setOpts(bandOpts()); });
+  $("bt-style").addEventListener("change", function(){ rebuild(true); player.setOpts(bandOpts()); });
+  $("bt-unlock").addEventListener("change", function(){ rebuild(false); player.setOpts(bandOpts()); });
   $("bt-variation").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-ride").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-ride-sound").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-vmove").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  ["bt-ext", "bt-ext-six", "bt-ext-nine", "bt-ext-thirteen"].forEach(function(id){ $(id).addEventListener("change", function(){ extSync(); player.setOpts(bandOpts()); }); });
   $("bt-bass-sound").addEventListener("change", function(){ player.setInstruments(neededSounds()); player.setOpts(bandOpts()); });
   $("bt-stops").addEventListener("input", function(){ player.setOpts(bandOpts()); markChart(); });
   KIT.forEach(function(k){ $("bt-kit-" + k.id).addEventListener("input", function(){ var m = kitMix(); k.pieces.forEach(function(p){ player.setKitVolume(p, m[p]); }); }); });
-  $("bt-kit-reset").addEventListener("click", function(){ KIT.forEach(function(k){ $("bt-kit-" + k.id).value = 100; k.pieces.forEach(function(p){ player.setKitVolume(p, 1); }); }); });
-  $("bt-comp").addEventListener("change", function(){ syncVoicings($("bt-voicing").value); player.setInstruments(neededSounds()); player.setOpts(bandOpts()); });
-  $("bt-voicing").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-kit-reset").addEventListener("click", function(){ KIT.forEach(function(k){ $("bt-kit-" + k.id).value = k.def || 100; }); var m = kitMix(); Object.keys(m).forEach(function(p){ player.setKitVolume(p, m[p]); }); });
+  $("bt-comp").addEventListener("change", function(){ rebuild(false); player.setInstruments(neededSounds()); player.setOpts(bandOpts()); });
+  $("bt-voicing").addEventListener("change", function(){ extraNote(); player.setOpts(bandOpts()); });
   $("bt-countin").addEventListener("change", function(){ player.setCountIn(parseInt($("bt-countin").value, 10)); });
   $("bt-choruses").addEventListener("change", function(){ player.setChoruses(parseInt($("bt-choruses").value, 10)); });
   ["bass","comp","drums"].forEach(function(part){
@@ -1085,6 +1348,112 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("bt-roman").addEventListener("change", function(){ chart.setRoman($("bt-roman").value); chart.setLive(liveSrc); });
   $("bt-chartfor").addEventListener("change", showChart);
   $("bt-send").addEventListener("click", sendToChordSheet);
+  // sections remember whether they were left open or closed
+  (function(){
+    var KEY = "btSections", saved = {}; try { saved = JSON.parse(localStorage.getItem(KEY) || "{}") || {}; } catch (e) {}
+    Array.prototype.forEach.call($("bt-root").querySelectorAll("details[id]"), function(d){
+      if (typeof saved[d.id] === "boolean") d.open = saved[d.id];
+      d.addEventListener("toggle", function(){ saved[d.id] = d.open; try { localStorage.setItem(KEY, JSON.stringify(saved)); } catch (e) {} });
+    });
+  })();
+  // ---- save and load: a tune with every setting ----
+  // Saved setups live in localStorage.btSetups; built-in ones come from BandPresets (presets.js). Both
+  // are listed at the bottom of the Changes menu as "setup:b:<n>" (built-in) / "setup:u:<n>" (saved here).
+  var SETUP_KEY = "btSetups", BUILTIN = (window.BandPresets || []).filter(function(x){ return x && x.abc && x.name; });
+  var FIELDS = ["bt-bass-sound", "bt-comp", "bt-vmove", "bt-ext", "bt-variation", "bt-stops", "bt-figs", "bt-countin", "bt-choruses", "bt-ride", "bt-ride-sound", "bt-roman", "bt-chartfor",
+                "bt-start", "bt-cyc-from", "bt-cyc-to", "bt-step-a", "bt-step-b", "bt-vol-bass", "bt-vol-comp", "bt-vol-drums"].concat(KIT.map(function(k){ return "bt-kit-" + k.id; }));
+  var CHECKS = ["bt-ext-six", "bt-ext-nine", "bt-ext-thirteen", "bt-cyc-on", "bt-step-on"];
+  function savedSetups(){ var l = []; try { l = JSON.parse(localStorage.getItem(SETUP_KEY) || "[]") || []; } catch (e) { l = []; } return Array.isArray(l) ? l.filter(function(x){ return x && x.abc && x.name; }) : []; }
+  function storeSetups(l){ try { localStorage.setItem(SETUP_KEY, JSON.stringify(l)); return true; } catch (e) { return false; } }
+  function setupByKey(key){ var m = /^setup:([bu]):(\d+)$/.exec(key || ""); return m ? (m[1] === "b" ? BUILTIN : savedSetups())[+m[2]] || null : null; }
+  function snapshot(name){
+    var s = { v: 1, name: name, abc: abc, tempo: tempo(), style: $("bt-style").value, unlock: unlocked(), feel: $("bt-feel").value, bass: $("bt-bass").value, groove: $("bt-groove").value,
+              rhythm: [$("bt-rhythm").value].concat(ticked("bt-rhythm-extra", $("bt-rhythm").value)).join("+"),
+              voicing: [$("bt-voicing").value].concat(ticked("bt-voicing-extra", $("bt-voicing").value)).join("+"), fields: {}, checks: {} };
+    FIELDS.forEach(function(id){ s.fields[id] = $(id).value; }); CHECKS.forEach(function(id){ s.checks[id] = $(id).checked; });
+    return s;
+  }
+  function applySetup(s){
+    if (!s || typeof s.abc !== "string") return false;
+    var f = s.fields || {}, c = s.checks || {};
+    function has(id, v){ return Array.prototype.some.call($(id).options || [], function(o){ return o.value === String(v); }); }
+    clearPins("you loaded a saved setup");
+    if (!applyAbc(s.abc, false)){ setupNote("That setup's changes could not be read."); return false; }
+    $("bt-unlock").checked = !!s.unlock;
+    if (STYLES.some(function(x){ return x.id === s.style; })) $("bt-style").value = s.style;
+    if (has("bt-comp", f["bt-comp"])) $("bt-comp").value = f["bt-comp"];
+    rebuild(true);
+    if (has("bt-bass", s.bass)) $("bt-bass").value = s.bass;
+    if (has("bt-groove", s.groove)) $("bt-groove").value = s.groove;
+    if (s.rhythm) setRhythm(s.rhythm);
+    if (s.voicing) setVoicing(s.voicing);
+    if (has("bt-feel", s.feel) && (unlocked() || styleDef().feel === s.feel)) $("bt-feel").value = s.feel;
+    FIELDS.forEach(function(id){ if (id === "bt-comp" || f[id] == null) return; var el = $(id); if (el.tagName !== "SELECT" || has(id, f[id])) el.value = f[id]; });
+    CHECKS.forEach(function(id){ if (c[id] != null) $(id).checked = !!c[id]; });
+    if (s.tempo){ $("bt-tempo").value = s.tempo; $("bt-tempo-n").value = s.tempo; }
+    extSync(); figsSync(); cycEndSet = $("bt-cyc-on").checked; cycAwaitEnd = false;
+    // hand everything to the band
+    player.setInstruments(neededSounds()); player.setOpts(bandOpts()); player.setTempo(tempo());
+    player.setCountIn(parseInt($("bt-countin").value, 10)); player.setChoruses(parseInt($("bt-choruses").value, 10));
+    ["bass", "comp", "drums"].forEach(function(part){ player.setVolume(part, vol(part)); });
+    var m = kitMix(); Object.keys(m).forEach(function(p){ player.setKitVolume(p, m[p]); });
+    showChart(); practiceSync(); loopNote();
+    return true;
+  }
+  function setupNote(t){ $("bt-setup-note").textContent = t || ""; }
+  // the saved list, here and at the bottom of the Changes menu
+  function listSetups(selectName){
+    var saved = savedSetups(), list = $("bt-setup-list"), ch = $("bt-changes"), cur = ch.value;
+    list.innerHTML = ""; saved.forEach(function(x, i){ var o = document.createElement("option"); o.value = "setup:u:" + i; o.textContent = x.name; list.appendChild(o); });
+    if (!saved.length){ var none = document.createElement("option"); none.value = ""; none.textContent = "Nothing saved yet"; list.appendChild(none); }
+    ["bt-setup-load", "bt-setup-del", "bt-setup-export", "bt-setup-json-btn"].forEach(function(id){ $(id).disabled = !saved.length; });
+    Array.prototype.slice.call(ch.querySelectorAll("optgroup")).forEach(function(g){ g.remove(); });
+    [["Built-in setups", BUILTIN, "b"], ["Saved on this device", saved, "u"]].forEach(function(p){
+      if (!p[1].length) return; var g = document.createElement("optgroup"); g.label = p[0];
+      p[1].forEach(function(x, i){ var o = document.createElement("option"); o.value = "setup:" + p[2] + ":" + i; o.textContent = x.name; g.appendChild(o); }); ch.appendChild(g); });
+    var want = selectName != null ? "setup:u:" + saved.map(function(x){ return x.name; }).indexOf(selectName) : cur;
+    if (Array.prototype.some.call(ch.options, function(o){ return o.value === want; })){ ch.value = want; if (/^setup:u:/.test(want)) list.value = want; }
+    else if (/^setup:/.test(cur)) ch.value = "custom";
+  }
+  $("bt-setup-save").addEventListener("click", function(){
+    var name = $("bt-setup-name").value.trim() || (parsedC.title || "Untitled") + ", " + keyField() + ", " + tempo();
+    var saved = savedSetups(), at = saved.map(function(x){ return x.name; }).indexOf(name), s = snapshot(name);
+    if (at >= 0) saved[at] = s; else saved.push(s);
+    if (!storeSetups(saved)){ setupNote("Couldn't save: this browser is blocking storage for the page."); return; }
+    listSetups(name); setupNote((at >= 0 ? "Replaced " : "Saved ") + "\u201c" + name + "\u201d. It is in the Changes menu too.");
+  });
+  $("bt-setup-load").addEventListener("click", function(){ var s = setupByKey($("bt-setup-list").value); if (s && applySetup(s)){ $("bt-changes").value = $("bt-setup-list").value; $("bt-setup-name").value = s.name; setupNote("Loaded \u201c" + s.name + "\u201d."); } });
+  $("bt-setup-del").addEventListener("click", function(){
+    var m = /^setup:u:(\d+)$/.exec($("bt-setup-list").value), saved = savedSetups(); if (!m || !saved[+m[1]]) return;
+    var name = saved[+m[1]].name; saved.splice(+m[1], 1); storeSetups(saved); listSetups(); $("bt-setup-json").hidden = true; setupNote("Deleted \u201c" + name + "\u201d.");
+  });
+  $("bt-setup-export").addEventListener("click", function(){
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(savedSetups(), null, 1)], { type: "application/json" })); a.download = "backing-track-setups.json";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  });
+  function importSetups(text){
+    var inc = null; try { inc = JSON.parse(text); } catch (e) {}
+    if (inc && !Array.isArray(inc)) inc = [inc];
+    inc = (inc || []).filter(function(x){ return x && typeof x.abc === "string" && typeof x.name === "string" && x.name; });
+    if (!inc.length){ setupNote("No setups found in that file."); return 0; }
+    var saved = savedSetups();
+    inc.forEach(function(x){ var at = saved.map(function(y){ return y.name; }).indexOf(x.name); if (at >= 0) saved[at] = x; else saved.push(x); });
+    storeSetups(saved); listSetups(); setupNote("Imported " + inc.length + " setup" + (inc.length === 1 ? "" : "s") + " (same names were replaced).");
+    return inc.length;
+  }
+  window.__btImportSetups = importSetups;                                // for tests
+  $("bt-setup-import").addEventListener("change", function(){
+    var file = this.files && this.files[0]; if (!file) return; var rd = new FileReader();
+    rd.onload = function(){ importSetups(String(rd.result)); }; rd.readAsText(file); this.value = "";
+  });
+  $("bt-setup-json-btn").addEventListener("click", function(){
+    var s = setupByKey($("bt-setup-list").value), box = $("bt-setup-json"); if (!s) return;
+    box.value = JSON.stringify(s, null, 1) + ","; box.hidden = false; box.focus(); box.select();
+    var done = "The JSON for \u201c" + s.name + "\u201d is below";
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(box.value).then(function(){ setupNote(done + " and on the clipboard."); }, function(){ setupNote(done + ". Copy it from the box."); });
+    else setupNote(done + ". Copy it from the box.");
+  });
+  listSetups();
   $("bt-pin-clear").addEventListener("click", function(){ clearPins(""); });
   $("bt-pin-dismiss").addEventListener("click", function(){ $("bt-pinnote").hidden = true; });
   document.addEventListener("keydown", function(e){                 // SPACE = play / stop

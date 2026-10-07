@@ -1,10 +1,17 @@
 // bass.js — upright bass part for the jazz band engine (needs harmony.js).
 // Walking quarter notes by default, or a two-feel when ctx.opts.bassFeel === "two".
+// Variation (ctx.opts.variation, 0..1; unset = 0 = each pattern exactly): how freely the player
+// departs from the pattern. Walking gains the odd skip note or a held half note; the two-feel a 3rd
+// in place of the 5th or a dotted rhythm; the riff has relatives (a climb, an octave pop, a sparse
+// bar, an approach into the next chord) that turn up away from the top of a phrase, mostly at its end.
 // Stop time (ctx.stop): a short root on beat 1, silence through beat 2, then a lead-in to the next
 // bar's root on the last beats (eighths in the riff feel, quarters otherwise).
 // Any number of beats to the bar: 3/4 walks three quarters; in the compound meters (ctx.compound:
 // 6/8, 9/8, 12/8) a beat is a dotted quarter, the line walks one note per beat with some pickup
 // eighths (written x.5 = the beat's third eighth), and the riff becomes a shuffle figure.
+//
+// Set lines (ctx.opts.bassFeel = a LINES id: roots, alt, bossa, tango, tumbao, chacha): a fixed
+// rhythm of roots and fifths, the same every bar, for the Latin and dance styles.
 //
 //   var bass = BandBass.create({ rng });   // rng() -> [0,1); all randomness goes through it
 //   bass.bar(ctx)    -> [{ pos, dur, midi, vel }]   one bar (ctx = the band's bar context)
@@ -145,6 +152,17 @@
     return beam;
   }
 
+  // Set lines: [beat, length in beats, degree]. R = root, 5 = fifth, 8 = the root an octave up,
+  // N = the root of whatever chord comes next (an anticipation). Notes past the end of a short bar are dropped.
+  var LINES = {
+    roots:  function (beats){ var l = []; for (var b = 0; b < beats; b++) l.push([b, 0.9, "R"]); return l; },
+    alt:    function (beats){ return beats % 2 ? [[0, 0.9, "R"]] : beats === 2 ? [[0, 0.9, "R"], [1, 0.9, "5"]] : [[0, 0.9, "R"], [2, 0.9, "5"]]; },
+    bossa:  [[0, 1.4, "R"], [1.5, 0.45, "5"], [2, 1.4, "5"], [3.5, 0.45, "N"]],
+    tango:  [[0, 1.4, "R"], [1.5, 0.45, "5"], [2, 0.9, "8"], [3, 0.9, "5"]],
+    tumbao: [[1.5, 1.4, "5"], [3, 0.95, "N"]],
+    chacha: [[0, 1.9, "R"], [2, 0.9, "5"], [3, 0.9, "R"]]
+  };
+
   function create(o){
     var rng = (o && o.rng) || Math.random;
     var st;
@@ -152,6 +170,23 @@
     reset();
 
     function vel(base){ return Math.round((base + (rng() - 0.5) * 0.07) * 1000) / 1000; }
+    function vary(ctx){ var v = ctx.opts && +ctx.opts.variation; return v > 0 ? Math.min(1, v) : 0; }
+    function heat(ctx){ return ctx.intensity == null ? 0.5 : ctx.intensity; }
+    // Walking embellishments (simple meters): one skip note before a beat, or beats 1-2 held as a half note.
+    function ornaments(ev, ctx, v){
+      var r = rng(), ks = [], k;
+      if (r < 0.22 * v * (0.6 + heat(ctx))){
+        for (k = 1; k < ev.length; k++) if (ev[k].pos === Math.floor(ev[k].pos) && ev[k - 1].pos === ev[k].pos - 1) ks.push(k);
+        if (!ks.length) return ev;
+        k = ks[Math.floor(rng() * ks.length)];
+        var n = (rng() < 0.6 || !inRange(ev[k].midi - 1)) ? ev[k - 1].midi : ev[k].midi - 1;      // the last note again, or a semitone under the next
+        ev[k - 1].dur = 0.5;
+        ev.splice(k, 0, { pos: ev[k].pos - 0.5, dur: 0.3, midi: n, vel: vel(0.58) });
+      } else if (r > 1 - 0.10 * v && ev.length >= 4 && ev[0].pos === 0 && ev[1].pos === 1 && ev[2].pos === 2 && Math.abs(ev[2].midi - ev[0].midi) <= 5){
+        ev[0].dur = 1.9; ev.splice(1, 1);
+      }
+      return ev;
+    }
     // one of the best few lines, weighted toward the best
     function pick(results){
       if (!results.length) return null;
@@ -226,6 +261,7 @@
       }
       aim(target, next);
       if (ctx.compound) ev = pickups(ev, ctx);
+      else if (vary(ctx)) ev = ornaments(ev, ctx, vary(ctx));
       return ev;
     }
     // 12/8 and 6/8: some notes are cut short and struck again on the beat's last eighth ("dum, da-dum")
@@ -264,10 +300,14 @@
           var fifths = withPc(mod12(chord.root + chord.fifth)).filter(function (n){ return Math.abs(n - root) <= 7; });
           var octs = [root - 12, root + 12].filter(inRange);
           // the 5th below by default; above when the root is already low
-          if (fifths.length && (rng() < 0.72 || !octs.length)) second = (fifths.length > 1 && (root < 36 || (root < 44 && rng() < 0.35))) ? fifths[1] : fifths[0];
+          var vt = vary(ctx), third = chord.third != null ? root + chord.third : null;
+          if (vt && third != null && inRange(third) && rng() < 0.22 * vt) second = third;                 // the 3rd for a change
+          else if (fifths.length && (rng() < 0.72 || !octs.length)) second = (fifths.length > 1 && (root < 36 || (root < 44 && rng() < 0.35))) ? fifths[1] : fifths[0];
           else second = octs.length > 1 ? (Math.abs(octs[0] - MID) < Math.abs(octs[1] - MID) ? octs[0] : octs[1]) : octs[0];
         }
         if (second != null) list.push({ pos: half, midi: second });
+        // a dotted rhythm: the root again on the off-beat before the second note
+        if (second != null && vary(ctx) && half >= 2 && rng() < 0.2 * vary(ctx) * (0.6 + heat(ctx))) list.splice(1, 0, { pos: half - 0.5, midi: root, pickup: true });
       }
       if (target == null && next){
         // sometimes a pickup into the next bar: a quarter note on the last beat, or a swung eighth
@@ -294,7 +334,7 @@
     // Straight-eighths (boogaloo / rock) riff: root on 1, root pushed on the "and" of 2, then a
     // 5th-b7 (or 5th-6th) pickup back into the next root. Half-bar chords get root + pushed root.
     function riff(ctx){
-      var ev = [], next = firstChord(ctx.nextChords), cmp = !!ctx.compound;
+      var ev = [], next = firstChord(ctx.nextChords), cmp = !!ctx.compound, vr = vary(ctx), ph = ctx.phrase || { bar: 0 };
       function rootOf(chord){
         var best = null, bd = 1e9;                                       // a low root, near where we were
         withPc(chord.bass).forEach(function (n){ var d = Math.abs(n - 36) + (st.prev != null ? 0.3 * Math.abs(n - st.prev) : 0); if (d < bd){ bd = d; best = n; } });
@@ -310,17 +350,75 @@
           // shuffle: each beat struck twice (long-short), climbing root, 3rd, 5th, 6th or b7th
           var f5 = r + (c.fifth != null ? c.fifth : 7), top = f5 + (c.seventh === 10 || c.quality === "min" || c.quality === "hdim" ? 3 : 2);
           var line = seg.len <= 2 ? [r, f5] : [r, r + (c.third != null ? c.third : c.sus === 2 ? 2 : 5), f5, top];
-          for (var k = 0; k < seg.len; k++){ var n = line[k % line.length]; put(s + k, 0.6, n, k === 0 ? 0.86 : 0.80); put(s + k + 0.5, 0.3, n, 0.70); }
+          for (var k = 0; k < seg.len; k++){
+            var n = line[k % line.length], lastBeat = k === seg.len - 1 && s + k === ctx.beats - 1;
+            if (vr && lastBeat && k > 0 && next && next.key !== c.key && (ph.bar === 3 || ph.turnaround) && rng() < 0.5 * vr){
+              var tn = rootOf(next), lowA = tn - 2 >= LO; put(s + k, 0.6, lowA ? tn - 2 : tn + 2, 0.80); put(s + k + 0.5, 0.3, lowA ? tn - 1 : tn + 1, 0.76); continue; }
+            put(s + k, 0.6, n, k === 0 ? 0.86 : 0.80);
+            if (!(vr && k > 0 && rng() < 0.2 * vr)) put(s + k + 0.5, 0.3, n, 0.70);          // now and then just the beat
+          }
           return;
         }
+        // relatives of the riff: never at the top of a phrase, likeliest at its end
+        var kind = "base";
+        if (vr && seg.len >= 4 && seg.start === 0 && ph.bar !== 0){
+          var q = rng(), endP = ph.bar === 3 || ph.turnaround;
+          kind = (endP && next && next.key !== c.key && q < 0.6 * vr) ? "approach" : q < 0.22 * vr ? "climb" : q < 0.40 * vr ? "octave" : q < 0.50 * vr ? "sparse" : "base";
+        }
         put(s, seg.len >= 3 ? 1.4 : 0.9, r, 0.86);
-        if (seg.len >= 2) put(s + 1.5, seg.len >= 4 ? 0.9 : 0.45, r, 0.80);
+        if (kind === "sparse"){ put(s + 1.5, 2.3, r, 0.80); return; }
+        if (kind === "octave"){ put(s + 1.5, 0.45, r, 0.80); put(s + 2, 0.45, inRange(r + 12) ? r + 12 : r, 0.74); }
+        else if (seg.len >= 2) put(s + 1.5, seg.len >= 4 ? 0.9 : 0.45, r, 0.80);
+        if (kind === "climb"){ put(s + 2.5, 0.45, fifth, 0.76); put(s + 3, 0.45, fifth + 2, 0.76); put(s + 3.5, 0.45, sev, 0.78); return; }
+        if (kind === "approach"){
+          var t = rootOf(next), below = t - 2 >= LO;                      // walk into the next root by a whole step and a half step
+          put(s + 3, 0.45, below ? t - 2 : t + 2, 0.78); put(s + 3.5, 0.45, below ? t - 1 : t + 1, 0.80); return;
+        }
         if (seg.len === 3) put(s + 2, 0.9, fifth, 0.78);                 // 3/4: the 5th on beat 3
         if (seg.len >= 4){
           var same = next && next.key === c.key, v = rng();
           if (same && v < 0.3) put(s + 3, 0.9, fifth, 0.78);             // plainer bar now and then
           else { put(s + 3, 0.45, fifth, 0.78); put(s + 3.5, 0.45, sev, 0.76); }
         }
+      });
+      st.pending = null; st.offRoot = false;
+      return ev;
+    }
+
+    // A set line: the pattern's rhythm on the chord sounding at each note. Each chord that the pattern
+    // would pass over gets its root where it starts; in a waltz the root and fifth alternate bar by bar.
+    function setLine(ctx, id){
+      var H = global.BandHarmony, def = LINES[id], pat = typeof def === "function" ? def(ctx.beats) : def, beats = ctx.beats;
+      var next = firstChord(ctx.nextChords), list = [], ev = [], low = null;
+      function rootOf(chord){
+        var best = null, bd = 1e9;
+        withPc(chord.bass).forEach(function (n){ var d = Math.abs(n - 36) + (low != null ? 0.3 * Math.abs(n - low) : 0); if (d < bd){ bd = d; best = n; } });
+        return best;
+      }
+      pat.forEach(function (p){ if (p[0] < beats - 1e-6) list.push({ pos: p[0], dur: p[1], deg: p[2] }); });
+      if (id === "tumbao" && st.prev == null) list.push({ pos: 0, dur: 1.4, deg: "R" });            // the very first bar states the root
+      segmentsOf(ctx).forEach(function (seg){
+        if (seg.chord && id !== "tumbao" && !list.some(function (e){ return e.pos >= seg.start && e.pos < seg.start + seg.len; }))
+          list.push({ pos: seg.start, dur: Math.min(0.9, seg.len), deg: "R" });
+      });
+      list.sort(function (a, b){ return a.pos - b.pos; });
+      list.forEach(function (e, k){
+        var c = H.chordAt(ctx.chords, e.pos), deg = e.deg; if (!c) return;
+        if (id === "alt" && beats % 2 && ctx.index % 2 && e.pos === 0 && firstChord(ctx.chords) && ctx.chords.length === 1) deg = "5";
+        var n;
+        if (deg === "N"){
+          var after = H.chordAt(ctx.chords, Math.floor(e.pos) + 1), tc = Math.floor(e.pos) + 1 >= beats ? next : after;
+          n = rootOf(tc || c);
+        } else {
+          var r = rootOf(c), f = r + (c.fifth != null ? c.fifth : 7);
+          if (f > HI - 3 || (r >= 38 && inRange(f - 12))) f -= 12;                                   // the fifth below a root that sits high
+          n = deg === "5" ? f : deg === "8" ? (inRange(r + 12) && r + 12 <= HI - 5 ? r + 12 : r) : r;
+          low = r;
+        }
+        if (!inRange(n)) return;
+        var room = (k + 1 < list.length ? list[k + 1].pos : beats + 4) - e.pos;
+        ev.push({ pos: e.pos, dur: Math.round(Math.min(e.dur, room - 0.03) * 1000) / 1000, midi: n, vel: vel(e.pos === 0 ? 0.86 : e.pos === Math.floor(e.pos) ? 0.80 : 0.76) });
+        played(n);
       });
       st.pending = null; st.offRoot = false;
       return ev;
@@ -349,6 +447,7 @@
       if (!ctx || !ctx.chords || !ctx.chords.length){ st.pending = null; return []; }     // N.C.: rest
       if (ctx.stop) return stopBar(ctx);
       if (ctx.opts && ctx.opts.bassFeel === "riff") return riff(ctx);
+      if (ctx.opts && LINES.hasOwnProperty(ctx.opts.bassFeel)) return setLine(ctx, ctx.opts.bassFeel);
       // playing well down (the first chorus when the band is allowed to build), a walking line starts in two
       return ((ctx.opts && ctx.opts.bassFeel === "two") || ctx.intensity < 0.36) ? two(ctx) : walk(ctx);
     }
@@ -362,5 +461,5 @@
     return { bar: bar, ending: ending, reset: reset };
   }
 
-  global.BandBass = { create: create, LO: LO, HI: HI };
+  global.BandBass = { create: create, LO: LO, HI: HI, LINES: LINES };
 })(typeof window !== "undefined" ? window : globalThis);

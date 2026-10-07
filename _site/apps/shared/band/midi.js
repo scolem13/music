@@ -94,14 +94,16 @@
     var H = global.BandHarmony; if (!H || !parsed) return [];
     var form = H.buildForm(parsed, o.transpose || 0); if (!form.length) return [];
     var G = { bass: global.BandBass, comp: global.BandComp, drums: global.BandDrums }, parts = {}, out = [];
-    Object.keys(G).forEach(function (p){ if (G[p] && G[p].create) parts[p] = G[p].create({ rng: o.rng || Math.random }); });
+    var wrap = H.feelPart || function (x){ return x; };
+    Object.keys(G).forEach(function (p){ if (G[p] && G[p].create) parts[p] = wrap(G[p].create({ rng: o.rng || Math.random }), p); });
     var n = o.bars || form.length, tempo = o.tempo || 120, opts = o.opts || {};
     for (var i = 0; i < n; i++){
       var idx = i % form.length, fb = form[idx];
       var ctx = { bar:i, index:idx, length:form.length, chorus:Math.floor(i / form.length), beats:fb.beats, chords:fb.chords,
                   nextChords: form[(idx + 1) % form.length].chords, tempo:tempo, last:false, opts:opts,
                   stop: !!(opts.stops && opts.stops.indexOf(idx) >= 0), nextStop: !!(opts.stops && opts.stops.indexOf((idx + 1) % form.length) >= 0),
-                  meter:fb.meter, compound:!!fb.compound };
+                  meter:fb.meter, compound:!!fb.compound, form:form, nextIndex:(idx + 1) % form.length,
+                  phrase:{ bar: idx % 4, turnaround: form.length - 1 - idx < 2, top: idx === 0 } };
       var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo, ending:false,
                   meter:fb.meter, compound:!!fb.compound,
                   chords:fb.chords, opts:Object.assign({}, opts), parts:{} };

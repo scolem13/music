@@ -125,6 +125,7 @@
 }
 .as-play:hover { background: var(--site-accent-bg, rgba(63,194,180,.12)); }
 .as-play--on  { background: var(--site-accent, #3fc2b4) !important; color: #fff !important; }
+.as-band-chords { font-size: .8rem; margin: .1rem 0 .5rem; opacity: .8; }
 
 /* Notation container */
 .as-notation {
@@ -953,8 +954,15 @@
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/shared/arranger.js"></script>
-<script src="/apps/shared/band/comp.js"></script>
-<script src="/apps/shared/band/catalog.js"></script>
+<script src="/apps/shared/tune-chart.js?v=15"></script>
+<script src="/apps/shared/voicings.js?v=4"></script>
+<script src="/apps/shared/band/harmony.js?v=13"></script>
+<script src="/apps/shared/band/bass.js?v=9"></script>
+<script src="/apps/shared/band/comp.js?v=12"></script>
+<script src="/apps/shared/band/catalog.js?v=12"></script>
+<script src="/apps/shared/band/drums.js?v=5"></script>
+<script src="/apps/shared/band/sounds.js?v=3"></script>
+<script src="/apps/shared/band/player.js?v=98"></script>
 <script>
 (function () {
   var SF = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';
@@ -963,13 +971,18 @@
   // Styles that need 3/4 for the example; everything else gets 4/4.
   var BEATS3 = { waltz:1, viennese:1, jazzwaltz:1 };
 
+  // Four chords for each example, chosen to suit the style (all written in C major / A minor).
+  var CHORDS = { charleston:'Dm7 G7 Cmaj7 A7', jazzwaltz:'Dm7 G7 Cmaj7 A7', walk:'C7 F7 C7 G7', bossa:'Cmaj7 D7 Dm7 G7', tango:'Am Dm E7 Am',
+                 montuno:'C F G F', chacha:'Am D7 Am D7', calypso:'C F G7 C', offbeat:'C F C G', folk:'C F G7 C', pop:'C G Am F', driving8:'C F G F',
+                 block:'C Am F G', arpcell:'Am F C G', arpflow:'C G Am F', bassroot:'C Am F G', oompah:'C C G7 C', waltz:'C F G7 C', viennese:'C G7 G7 C' };
+  window.asChords = CHORDS;
   function makeParsed(styleId) {
     var b = BEATS3[styleId] ? 3 : 4;
     return {
       beatsPerBar: b, meterD: 4, meterStr: b + '/4',
       unitsPerBar: 1, unitsPerBeat: 1, tempoQ: 110,
       keyPc: 0, keyField: 'C',
-      bars: ['C','F','G','C'].map(function (sym) {
+      bars: (CHORDS[styleId] || 'C F G C').split(' ').map(function (sym) {
         return { chords: [{sym:sym, onset:0}], lengthUnits:1,
                  left:'plain', right:'plain', ending:null };
       })
@@ -1058,6 +1071,7 @@
   };
 
   window.asSwitch = function (view, btn) {
+    if (window.asBandStop) window.asBandStop();
     document.getElementById('as-genre').style.display      = view === 'genre'      ? '' : 'none';
     document.getElementById('as-instrument').style.display = view === 'instrument' ? '' : 'none';
     var bandEl = document.getElementById('as-band');
@@ -1121,7 +1135,7 @@
   window.asHitsToAbc = hitsToAbc;
 
   function card(e, kind) {
-    var c = el('div', 'as-card');
+    var c = el('div', 'as-card'); c.dataset.band = kind + ':' + e.id;
     var head = el('div', 'as-card-head');
     head.appendChild(el('span', 'as-name', e.label));
     head.appendChild(el('span', 'as-id', e.id));
@@ -1134,16 +1148,16 @@
       c.appendChild(note);
     } else {
       c.appendChild(el('div', 'as-notation-msg', kind === 'bass'
-        ? 'No fixed bar to print: this bass line is generated fresh each bar from the chords.'
-        : 'No fixed bar to print: the band picks a figure for each bar.'));
+        ? (e.group && e.group !== 'Jazz' ? 'The same figure every bar, described below.' : 'No fixed bar to print: this bass line is generated fresh each bar from the chords.')
+        : kind === 'drums' ? 'The pattern is described below.' : 'No fixed bar to print: the band picks a figure for each bar.'));
     }
     c.appendChild(el('p', 'as-desc', e.desc));
     var tags = el('div', 'as-tags');
     (e.tags || []).forEach(function (t) { tags.appendChild(el('span', 'as-tag genre', t)); });
-    tags.appendChild(el('span', 'as-tag instr', kind === 'bass' ? 'Bass' : 'Piano / guitar'));
+    tags.appendChild(el('span', 'as-tag instr', kind === 'bass' ? 'Bass' : kind === 'drums' ? 'Drums' : 'Piano / guitar'));
     c.appendChild(tags);
     var a = el('a', 'as-link', 'Play in Backing Track');
-    a.href = kind === 'bass'
+    a.href = kind === 'drums' ? cat.url({ drums: e.id }) : kind === 'bass'
       ? cat.url({ bass: e.id })
       : cat.url({ rhythm: e.id, feel: (e.feel === 'swing' || e.feel === 'straight') ? e.feel : undefined });
     c.appendChild(a);
@@ -1171,9 +1185,14 @@
   }
 
   root.appendChild(el('p', 'as-band-intro',
-    'These are the patterns the band on the Backing Track page plays: a bass line, a comping rhythm, a feel and a cymbal. Each card links to the page with that choice already selected.'));
+    'These are the patterns the band on the Backing Track page plays: a bass line, a comping rhythm, a drum groove, a feel and a cymbal. Press play on a card to hear it with the band over four chords that suit it; the link opens the Backing Track page with that choice already selected.'));
   root.appendChild(group('Bass lines', cat.bass, 'bass'));
   root.appendChild(group('Comping rhythms', cat.comp, 'comp'));
+  if (cat.drums) root.appendChild(group('Drum grooves', cat.drums, 'drums'));
+  if (cat.styles) { var sg = el('div', 'as-group'); sg.appendChild(el('div', 'as-group-title', 'Styles'));
+    sg.appendChild(noteLine('Each style sets a feel, bass line, comping rhythm, drum groove and voicings that belong together:',
+      cat.styles.map(function (x) { return { label: x.label, desc: x.genres + '. ' + x.desc }; })));
+    root.appendChild(sg); }
   var g = el('div', 'as-group');
   g.appendChild(el('div', 'as-group-title', 'Feels and cymbals'));
   g.appendChild(noteLine('Feels:', cat.feels || []));
@@ -1191,4 +1210,100 @@
   };
 })();
 </script>
+
+<script>
+// Hear a catalog card: the Backing Track band plays four bars (twice) with that bass line, rhythm or groove
+// and the rest of a style it belongs to. Each card has its own four chords.
+(function () {
+  var cat = window.BandCatalog, root = document.getElementById('as-band');
+  if (!root || !cat || !window.BandPlayer || !window.TuneChart || !window.BandHarmony) return;
+  // four bars per card; "A B" = two chords in a bar. `m` = meter, `t` = tempo (beats, or dotted quarters in 6/8)
+  var BY_STYLE = {
+    swing:   { c: 'Dm7|G7|Cmaj7|A7',   t: 132 }, ballad:  { c: 'Cmaj7|Am7|Dm7|G7', t: 66 },
+    boogaloo:{ c: 'F7|F7|Bb7|F7',      t: 126 }, bossa:   { c: 'Cmaj7|D7|Dm7|G7',  t: 132 },
+    montuno: { c: 'C|F|G|F',           t: 176 }, chacha:  { c: 'Am|D7|Am|D7',      t: 116 },
+    tango:   { c: 'Am|Dm|E7|Am',       t: 116 }, calypso: { c: 'C|F|G7|C',         t: 112 },
+    reggae:  { c: 'G|C|G|D',           t: 84 },  reggaeton:{ c: 'Bm|G|D|A',        t: 90 },
+    folk:    { c: 'C|F|G7|C',          t: 108 }, rock:    { c: 'A|D|E|D',          t: 120 },
+    pop:     { c: 'C|G|Am|F',          t: 80 }
+  };
+  var OWN = {
+    'bass:sowhat': { c: 'Dm7|Dm7|Dm7|Dm7', t: 136, with: { compRhythm: 'sowhat', voicing: 'sowhat' } },
+    'comp:sowhat': { c: 'Dm7|Dm7|Dm7|Dm7', t: 136, with: { bassFeel: 'sowhat', voicing: 'sowhat' } },
+    'bass:killerjoe': { c: 'C7|Bb7|C7|Bb7', t: 120, with: { compRhythm: 'charleston' } },
+    'bass:songfather': { c: 'Fm9|Fm9|Eb9|Eb9', t: 132 },
+    'bass:footprints': { c: 'Cm7|Cm7|Cm7|Cm7', t: 168, m: '3/4' },
+    'bass:allblues': { c: 'G7|G7|G7|G7', t: 69, m: '6/8', with: { compRhythm: 'pad' } },
+    'bass:chameleon': { c: 'Bbm7|Eb7|Bbm7|Eb7', t: 96, with: { groove: 'funk', bassSound: 'electric' } },
+    'bass:maiden': { c: 'D7sus|D7sus|F7sus|F7sus', t: 120, with: { compRhythm: 'maiden', voicing: 'sowhat' } },
+    'comp:maiden': { c: 'D7sus|D7sus|F7sus|F7sus', t: 120, with: { bassFeel: 'maiden', voicing: 'sowhat' } },
+    'bass:takefive': { c: 'Ebm Bbm7|Ebm Bbm7|Ebm Bbm7|Ebm Bbm7', t: 168, m: '5/4', with: { compRhythm: 'takefive' } },
+    'comp:takefive': { c: 'Ebm Bbm7|Ebm Bbm7|Ebm Bbm7|Ebm Bbm7', t: 168, m: '5/4', with: { bassFeel: 'takefive' } },
+    'bass:walk': { c: 'F7|Bb7|F7|Cm7 F7' }, 'bass:two': { c: 'Cmaj7|A7|Dm7|G7' }, 'bass:riffwalk': { c: 'F7|F7|F7|F7' },
+    'bass:tumbao': { c: 'C|F|G|F' }, 'bass:tresillo': { c: 'Eb|Bbm|Bbm|Fm', t: 126, style: 'pop', with: { compRhythm: 'tresillo', groove: 'rock' } },
+    'comp:charleston': { c: 'C7|Bb7|C7|Bb7' }, 'comp:four': { c: 'Bb6|G7|Cm7|F7', t: 160 }, 'comp:garland': { c: 'Dm7|G7|Cmaj7|A7' },
+    'comp:pad': { c: 'Cmaj7|Am7|Dm7|G7', t: 72 }, 'comp:oompah': { c: 'C|C|G7|C' }, 'comp:eighths': { c: 'C|Am|F|G' },
+    'comp:tresillo': { c: 'Eb|Bbm|Bbm|Fm', t: 126, with: { groove: 'rock' } },                 // the Clocks progression
+    'comp:clave32': { c: 'G|G|C|G', t: 104, with: { groove: 'bodiddley' } },
+    'comp:barbara': { c: 'C|C|F|C', t: 138 }, 'comp:alberti': { c: 'C|G7|C|F', t: 96 },
+    'comp:g333322': { c: 'A|Bm|D|G', t: 132 }, 'comp:g33433': { c: 'Am|F|C|G', t: 128 }, 'comp:g3x8': { c: 'B|B|A|E', t: 112 },
+    'comp:arp': { c: 'A|C#m|F#m|D', t: 68 }, 'comp:arp2': { c: 'C|Am|F|G', t: 76 },
+    'comp:strumCamp': { c: 'G|D|Em|C', t: 100 }, 'comp:strumFolk': { c: 'G|C|D|G', t: 104 }, 'comp:strumEights': { c: 'E|A|B|A', t: 120 },
+    'comp:strumQuarters': { c: 'C|Am|F|G', t: 72 }, 'comp:strum332': { c: 'Em|C|G|D', t: 112 }, 'comp:strum16': { c: 'Am|F|C|G', t: 76 },
+    'drums:bodiddley': { c: 'G|G|C|G', t: 104, with: { compRhythm: 'clave32' } }, 'drums:dembow': { c: 'Bm|G|D|A', t: 90 },
+    'drums:funk': { c: 'F7|F7|Bb7|F7', t: 104 }, 'drums:halftime': { c: 'C|G|Am|F', t: 80 }, 'drums:clave32': { c: 'C|F|G|F' }
+  };
+  var ELECTRIC = { rock: 1, pop: 1, reggae: 1, reggaeton: 1, calypso: 1 };
+  function styleOf(id) { return cat.byId(cat.styles, id); }
+  function plan(e, kind) {
+    var own = OWN[kind + ':' + e.id] || {}, st = styleOf(own.style || (e.fits && e.fits[0])) || cat.styles[0], base = BY_STYLE[st.id] || BY_STYLE.swing;
+    var strum = kind === 'comp' && /^strum/.test(e.id), inst = strum ? 'guitar' : 'piano';
+    var opts = { bassFeel: st.bass, compRhythm: st.rhythm, groove: st.drums, feel: st.feel, comp: inst, voicing: strum ? 'open' : st.voicing[inst],
+                 variation: 0, bassSound: ELECTRIC[st.id] ? 'electric' : 'upright', compSound: inst, ride: 'ride', figures: 'always' };
+    opts[kind === 'bass' ? 'bassFeel' : kind === 'comp' ? 'compRhythm' : 'groove'] = e.id;
+    if (own.with) Object.keys(own.with).forEach(function (k) { opts[k] = own.with[k]; });
+    return { chords: own.c || base.c, tempo: own.t || base.t, meter: own.m || '4/4', opts: opts, style: st };
+  }
+  function abcOf(p) {
+    var m = p.meter.split('/'), n = +m[0], eighths = m[1] === '8';
+    return 'X:1\nT:Example\nM:' + p.meter + '\nL:' + (eighths ? '1/8' : '1/4') + '\nK:C\n' + p.chords.split('|').map(function (b) {
+      var c = b.split(' '), a = n === 5 ? 3 : Math.ceil(n / 2);
+      return c.length > 1 ? '"' + c[0] + '"z' + a + ' "' + c[1] + '"z' + (n - a) : '"' + c[0] + '"z' + n; }).join(' | ') + ' |]';
+  }
+  function pretty(ch) { return ch.replace(/\|/g, '  |  ').replace(/b/g, '♭').replace(/#/g, '♯'); }
+
+  var player = null, active = null;
+  function reset() { if (active) { active.textContent = '▶'; active.classList.remove('as-play--on'); active.disabled = false; active = null; } }
+  function play(btn, p) {
+    if (player) { try { player.stop(); } catch (e) {} }
+    var other = document.querySelector('.as-play--on[data-style], .as-play--on[data-drum]'); if (other) other.click();   // an example on the other tabs is playing
+    if (active === btn) { reset(); return; }
+    reset();
+    var parsed; try { parsed = TuneChart.parse(abcOf(p)); } catch (e) { return; }
+    var need = [p.opts.bassSound === 'electric' ? 'ebass' : 'bass', p.opts.comp, 'kit'];
+    active = btn; btn.textContent = '■'; btn.classList.add('as-play--on');
+    if (!player) player = BandPlayer.create({ parsed: parsed, tempo: p.tempo, countIn: 0, choruses: 2, opts: p.opts, instruments: need,
+      onEnd: function () { reset(); } });
+    else { player.setInstruments(need); player.setChart(parsed); player.setOpts(p.opts); player.setTempo(p.tempo); player.setChoruses(2); player.setCountIn(0); }
+    player.play().catch(function () { reset(); });
+  }
+  window.asBandStop = function () { if (player) { try { player.stop(); } catch (e) {} } reset(); };
+  window.asBandPlan = plan;                                    // (read by the tests)
+
+  [['bass', cat.bass], ['comp', cat.comp], ['drums', cat.drums || []]].forEach(function (g) {
+    g[1].forEach(function (e) {
+      var card = root.querySelector('.as-card[data-band="' + g[0] + ':' + e.id + '"]'); if (!card) return;
+      var p = plan(e, g[0]), head = card.querySelector('.as-card-head');
+      var btn = document.createElement('button'); btn.className = 'as-play'; btn.type = 'button'; btn.textContent = '▶';
+      btn.setAttribute('aria-label', 'Play ' + e.label + ' with the band'); btn.title = 'Four bars, played twice, in the ' + p.style.label + ' style';
+      btn.addEventListener('click', function () { play(btn, p); });
+      head.insertBefore(btn, head.firstChild);
+      var line = document.createElement('p'); line.className = 'as-band-chords';
+      line.textContent = 'Example: ' + pretty(p.chords) + (p.meter !== '4/4' ? '  (' + p.meter + ')' : '') + '  ·  ' + p.style.label + ', ' + p.tempo + ' bpm';
+      card.insertBefore(line, card.querySelector('.as-tags'));
+    });
+  });
+})();
+</script>
+
 ```

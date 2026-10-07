@@ -32,6 +32,7 @@
 // and only the bass leads back in) and the bar before gets ctx.nextStop, so nothing rings across.
 //   player.setStartBar(i)          // form bar the next play() starts on (after the count-in)
 //   player.setCycle(from, to)      // loop just those form bars (inclusive); setCycle(null) = whole form. Live.
+//                                  // from > to loops OVER THE END of the form: setCycle(9, 1) plays bars 10..last, 1, 2.
 //   player.setTempoSteps([8, -3])  // bpm added at each repeat, taken in turn; null = off. cfg.onTempo(bpm) reports
 //                                  // each step; stopping returns to the tempo that was set.
 //   BandPlayer.renderOffline({ parsed, tempo, transpose, choruses, countIn, opts, volumes,
@@ -149,7 +150,7 @@
     PARTS.forEach(function (p){ if (G[p] && G[p].create) self.parts[p] = G[p].create({ rng: mulberry32(seed + SEED[p]) }); });
     this.nextL = 0; this.barNo = 0; this.chorus = 0; this.pass = 0; this.prev = null;
     var r0 = this.range(), sb = c.startBar | 0;
-    this.formIdx = (sb >= r0.from && sb <= r0.to) ? sb : r0.from;       // first pass may start part-way in
+    this.formIdx = (sb < this.form.length && r0.has(sb)) ? sb : r0.from;   // first pass may start part-way in
     this.countIn = this.countInLeft = clamp(c.countIn | 0, 0, 2);
     this.pending = []; this.timeline = []; this.wantEnding = false; this.done = false; this.endL = null;
   }
@@ -167,9 +168,11 @@
   // The bars being looped: the whole form, or the cycle the page set (clamped to the form).
   Session.prototype.range = function (){
     var n = this.form.length, cy = this.c.cycle;
-    if (!cy) return { from: 0, to: n - 1 };
-    var a = clamp(cy.from | 0, 0, n - 1), b = clamp(cy.to | 0, 0, n - 1);
-    return { from: Math.min(a, b), to: Math.max(a, b) };
+    if (!cy) return { from: 0, to: n - 1, len: n, has: function (){ return true; }, pos: function (i){ return i; } };
+    var a = clamp(cy.from | 0, 0, n - 1), b = clamp(cy.to | 0, 0, n - 1), wrap = a > b;      // from after to: the loop runs over the end
+    return { from: a, to: b, len: wrap ? n - a + b + 1 : b - a + 1,
+             has: function (i){ return wrap ? (i >= a || i <= b) : (i >= a && i <= b); },
+             pos: function (i){ return (i - a + n) % n; } };                               // how far into the loop bar i is
   };
   // Tempo-change practice: at each repeat add the next step (e.g. [8] or [8, -3] alternating),
   // taking effect on the barline at linear beat L.
@@ -231,15 +234,16 @@
       this.endL = L0; this.nextL += beats; this.done = true; return;
     }
     var r = this.range();
-    if (this.formIdx < r.from || this.formIdx > r.to) this.formIdx = r.from;      // the cycle moved under us
-    var fb = form[this.formIdx], atEnd = this.formIdx === r.to, nextIdx = atEnd ? r.from : this.formIdx + 1;
+    if (this.formIdx >= form.length || !r.has(this.formIdx)) this.formIdx = r.from;   // the cycle moved under us
+    var fb = form[this.formIdx], atEnd = this.formIdx === r.to, nextIdx = atEnd ? r.from : (this.formIdx + 1) % form.length;
+    var cp = r.pos(this.formIdx);
     var last = c.choruses > 0 && this.chorus >= c.choruses - 1 && atEnd;
     beats = fb.beats;
     this.callParts("bar", { bar: this.barNo, index: this.formIdx, length: form.length, chorus: this.chorus, beats: beats,
       chords: fb.chords, nextChords: form[nextIdx].chords, tempo: this.tempo, last: last, loopEnd: atEnd, opts: c.opts,
       meter: fb.meter, compound: !!fb.compound, stop: isStop(c.opts, this.formIdx), nextStop: !last && isStop(c.opts, nextIdx),
-      intensity: intensityFor(this.formIdx - r.from, r.to - r.from + 1, this.chorus, c.choruses, c.opts && c.opts.variation),
-      phrase: { bar: (this.formIdx - r.from) % 4, turnaround: r.to - this.formIdx < 2, top: this.formIdx === r.from } }, L0);
+      intensity: intensityFor(cp, r.len, this.chorus, c.choruses, c.opts && c.opts.variation),
+      phrase: { bar: cp % 4, turnaround: r.len - 1 - cp < 2, top: this.formIdx === r.from } }, L0);
     this.timeline.push({ L: L0, beats: beats, info: { bar: this.barNo, index: this.formIdx, chorus: this.chorus, src: fb.src, beats: beats, countIn: false } });
     this.nextL += beats; this.barNo++; this.formIdx = nextIdx;
     if (atEnd){ this.chorus++; if (!last) this.stepTempo(this.nextL); }

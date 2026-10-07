@@ -14,7 +14,16 @@
 //         | "standard" (close position) | "drop2" | "drop3"   (shell, standard, drop2, drop3 from voicings.js
 //         when it has them; shell and standard fall back to the tables below)
 //       guitar styles (inst "guitar"): "shell3" | "drop2" | "drop3" | "triad3" (from voicings.js),
-//       and "triadvl" | "uppervl": triads voice-led string by string on strings 4-3-2
+//       "triadvl" | "uppervl" (triads on strings 4-3-2) and "guide2" (two-note chords on strings 4-5,
+//       3-4, 2-3). Guitar shapes follow each other by the smallest move of the fretting hand.
+//   BandHarmony.candidates(chord, style, inst, kind) -> [{ midis, strings? }] every shape the style offers
+//       (kind "passing": the passing diminished chord of a "bh" voicing)
+//   BandHarmony.toward(chord, style, prev, inst, { top, differ, passing }) -> the shape whose top note is
+//       nearest `top` (how comping moves through inversions); .sixthOf(chord), .asSixth(chord): see below
+//       Several styles can be combined as "a+b" (e.g. "guide2+top3"): the band draws on the shapes of all.
+//       Guitar also has "top3" / "mid3": the three-string shapes on strings 3-2-1 / 4-3-2 only.
+//       Band-level styles for both instruments: "bh" (drop 2 on the chord read as a sixth chord, Barry
+//       Harris) and "auto" (the comping part chooses a style for the moment).
 //   BandHarmony.styleList(inst)            -> [{ id, label }] the voicing styles to offer for "piano" | "guitar"
 //       (ChordVoicings.styles minus the sheet-only ones, plus whichever band styles it lacks)
 //   BandHarmony.defaultStyle(inst)         -> "rootless" | "shell3"
@@ -25,7 +34,8 @@
 //       TuneChart.parse output -> the bars the band plays, in play order (repeats expanded).
 //   BandHarmony.pinMap(form, pins)         -> { "<form bar index>:<beat>": midis } for comp.js's opts.pins, from
 //       [{ bar: written bar index, pos, midis }] (a written bar that plays twice is pinned both times)
-//   BandHarmony.asPlayed(bars, o)          -> [{ sym, midis, played }] one entry per chord of the form, in order,
+//   BandHarmony.asPlayed(bars, o)          -> [{ sym, midis, played, strings? }] (guitar: strings = [{ string, fret, midi }], the grip)
+//       one entry per chord of the form, in order,
 //       from bar records (the player's onBarEvents): the notes of the first comp event that sounded the chord
 //       (played: true), else a fresh voicing in style o.style / o.inst (played: false)
 //   BandHarmony.chordAt(chords, pos)        -> the chord sounding at beat `pos` (or null)
@@ -245,12 +255,28 @@
       sus:   [["R","4","5"], ["4","5","R"], ["5","R","4"]],
       sus2:  [["R","2","5"], ["2","5","R"], ["5","R","2"]],
       power: [["R","5"], ["5","R"]]
+    } },
+    // fourths: the "So What" voicing (Bill Evans on So What): three perfect 4ths with a major 3rd on top,
+    // from the root of a minor chord (Dm11 = D G C F A); the nearest stack of 4ths for the other kinds.
+    sowhat: { lo: 45, hi: 76, centre: 59, forms: {
+      dom:   [["7","3","13","9","5"]],
+      sus7:  [["R","4","7","9","5"]],
+      maj7:  [["3","6","9","5","7"]],
+      maj6:  [["3","6","9","5","R"]],
+      min7:  [["R","4","7","3","5"]],
+      min6:  [["R","4","7","3","5"]],
+      hdim:  [["3","5","7","R"],  ["7","R","3","5"]],
+      dim:   [["R","3","5","bb7"], ["3","5","bb7","R"], ["5","bb7","R","3"], ["bb7","R","3","5"]],
+      aug:   [["3","5","R"], ["5","R","3"], ["R","3","5"]],
+      sus:   [["5","R","4"], ["R","4","5"]],
+      sus2:  [["2","5","R"], ["5","R","2"]],
+      power: [["R","5"], ["5","R"]]
     } }
   };
   // own-table styles by instrument: rootless and guide are always the band's own shapes; shell
   // and standard come from the library when it has them. Guitar is the library's alone.
-  var OWN = { piano: ["rootless", "guide", "shell", "standard"], guitar: [] };
-  var OWN_LABEL = { rootless: "Rootless (A/B forms)", guide: "Guide tones (3rd & 7th)", shell: "Shells (root, 3rd, 7th)", standard: "Standard (close position)" };
+  var OWN = { piano: ["rootless", "guide", "shell", "standard", "sowhat"], guitar: [] };
+  var OWN_LABEL = { rootless: "Rootless (A/B forms)", guide: "Guide tones (3rd & 7th)", shell: "Shells (root, 3rd, 7th)", standard: "Standard (close position)", sowhat: "Fourths (So What voicing)" };
   var GUITAR_FALLBACK = [{ id:"shell3", label:"Shells, no 5th (three strings)" }, { id:"drop2", label:"Drop 2" },
                          { id:"drop3", label:"Drop 3" }, { id:"triad3", label:"Triads (three strings)" }];
   var DEFAULT_STYLE = { piano: "rootless", guitar: "shell3" };
@@ -263,12 +289,17 @@
   function styleList(inst){
     inst = inst === "guitar" ? "guitar" : "piano";
     var lib = libStyles(inst).map(function (s){ return { id: s.id, label: s.label || OWN_LABEL[s.id] || s.id }; });
-    if (inst === "guitar") return lib.length ? lib : GUITAR_FALLBACK.slice();
+    var band = (global.ChordVoicings ? BAND_STYLES : BAND_STYLES.slice(1)).map(function (s){ return { id: s.id, label: s.label }; });   // "bh" needs the library's drop 2
+    if (inst === "guitar") return (lib.length ? lib.concat(GUITAR_BAND.map(function (s){ return { id: s.id, label: s.label }; })) : GUITAR_FALLBACK.slice()).concat(band);
     var have = {}; lib.forEach(function (s){ have[s.id] = 1; });
     var missing = OWN.piano.filter(function (id){ return !have[id]; }).map(function (id){ return { id: id, label: OWN_LABEL[id] }; });
-    return missing.concat(lib);
+    var tail = missing.filter(function (x){ return x.id === "sowhat"; });                 // the specialised one goes after the everyday styles
+    return missing.filter(function (x){ return x.id !== "sowhat"; }).concat(lib, tail, band);
   }
-  function hasStyle(inst, id){ return styleList(inst).some(function (s){ return s.id === id; }); }
+  function hasStyle(inst, id){
+    var list = styleList(inst), parts = String(id || "").split("+");
+    return parts.length > 0 && parts.every(function (p){ return p && (parts.length === 1 || p !== "auto") && list.some(function (s){ return s.id === p; }); });
+  }
   function defaultStyle(inst){ return DEFAULT_STYLE[inst === "guitar" ? "guitar" : "piano"]; }
 
   function voicingClass(c){
@@ -339,14 +370,21 @@
   // Guitar string sets are limited to comping registers (string index 0 = lowest).
   var GUITAR_SETS = { drop2: [[1,2,3,4],[2,3,4,5]], drop3: [[0,2,3,4],[1,3,4,5]],
                       shell3: [[0,2,3],[1,2,3],[2,3,4]], triad3: [[1,2,3],[2,3,4],[3,4,5]],
-                      triadvl: [[2,3,4]], uppervl: [[2,3,4]] };
+                      triadvl: [[2,3,4]], uppervl: [[2,3,4]], guide2: [[1,2],[2,3],[3,4]], top3: [[3,4,5]], mid3: [[2,3,4]] };
+  // The guitar is led by the HAND, not the ear: the next shape is the smallest move for the fretting
+  // hand from the last one (ChordVoicings.easiest). lastGrip remembers where the fingers were.
+  // Where a comping guitarist lives: low on the neck, the chord centred around C below middle C..E above.
+  // Without this pull the hand drifted up to frets 9-12 and stayed, a fifth to an octave above the idiom.
+  var GTR = { fret: 4, pull: 0.45, centre: 52, pitch: 0.3 };
+  var lastGrip = null, grips = {};                             // grips: notes -> the strings and frets they were last played on
   function isLed(style){ return style === "triadvl" || style === "uppervl"; }
-  function sharedVoicing(chord, style, prev, inst){
-    var V = global.ChordVoicings; if (!V || !chord.tones || !chord.tones.length) return null;
-    var spec = { root: chord.root, intervals: chord.tones }, cands, p = (prev && prev.length) ? prev : null;
+  // Every shape the shared library offers for a chord spec in a style, kept to the comping register.
+  function libCands(spec, style, inst){
+    var V = global.ChordVoicings, cands; if (!V || !spec.intervals || !spec.intervals.length) return [];
     if (inst === "guitar"){
-      cands = V.guitar(spec, style, { maxSpan: 4, stringSets: GUITAR_SETS[style], allPositions: isLed(style), maxFret: isLed(style) ? 12 : 15 });
-      if (!cands.length) cands = V.guitar(spec, style, { maxSpan: 4 });
+      var lib = LIB_ALIAS[style] || style, one = !!LIB_ALIAS[style];                       // one string set: every position on it
+      cands = V.guitar(spec, lib, { maxSpan: 4, stringSets: GUITAR_SETS[style], allPositions: isLed(style) || one, maxFret: (isLed(style) || one) ? 12 : 15 });
+      if (!cands.length) cands = V.guitar(spec, lib, { maxSpan: 4 });
       var ok = cands.filter(function (c){ return c.midis[0] >= 40 && c.midis[c.midis.length - 1] <= 76 && (c.span == null || c.span <= 4); });
       if (ok.length) cands = ok;
     } else {
@@ -354,17 +392,10 @@
       var fit = cands.filter(function (c){ return c.midis[0] >= 48 && c.midis[c.midis.length - 1] <= 77; });
       if (fit.length) cands = fit;
     }
-    if (!cands || !cands.length) return null;
-    var best = (inst === "guitar" && isLed(style) && V.lead) ? V.lead(cands, p, 62) : V.nearest(cands, p, inst === "guitar" ? 55 : 62);
-    return best ? best.midis.slice() : null;
+    return cands || [];
   }
-
-  function voicing(chord, style, prev, inst){
-    if (!chord || chord.nc) return [];
-    inst = inst || "piano";
-    var own = OWN[inst === "guitar" ? "guitar" : "piano"];
-    if ((own.indexOf(style) < 0 || style === "shell" || style === "standard") && libHas(inst, style)){
-      var sv = sharedVoicing(chord, style, prev, inst); if (sv && sv.length) return sv; }
+  // The band's own tables (rootless, guide, ...): [{ midis, fi }] with fi = which form.
+  function ownCands(chord, style){
     var st = STYLES[style] || STYLES.rootless;
     var forms = st.forms[voicingClass(chord)] || st.forms.power;
     var cands = [], loose = [];
@@ -377,20 +408,198 @@
         if (v[v.length - 1] > st.hi + 5) break;
         if (st.accept && !st.accept(v, chord)) continue;
         var muddy = v.length > 1 && v[1] - v[0] === 1 && v[0] < 52;           // no semitone cluster at the bottom
-        var item = { v: v, fi: fi };
+        var item = { midis: v, fi: fi, drift: Math.abs(centreOf(v) - st.centre) };
         if (v[v.length - 1] <= st.hi && !muddy) cands.push(item); else loose.push(item);
       }
     });
-    if (!cands.length) cands = loose;
-    if (!cands.length) return [];
-    var best = null, bestCost = Infinity;
-    cands.forEach(function (it){
-      var drift = Math.abs(centreOf(it.v) - st.centre);
-      var cost = (prev && prev.length) ? motion(prev, it.v) + 0.3 * drift : drift;
-      cost += it.fi * 0.01;                                                    // stable tie-break
-      if (cost < bestCost){ bestCost = cost; best = it; }
+    return cands.length ? cands : loose;
+  }
+
+  // ---- Barry Harris: a chord as a SIXTH chord, and the diminished chord that passes between its inversions ----
+  // The sixth-diminished scale is a 6th chord interleaved with a diminished 7th a tone above its root:
+  //   major 7 / 6 / triad -> the major 6 on the root          minor 7 -> the major 6 a minor 3rd up (Dm7 = F6)
+  //   minor 6 / triad     -> the minor 6 on the root          half-diminished -> the minor 6 a minor 3rd up
+  //   dominant 7          -> the minor 6 on its 5th (G7 = Dm6), or a semitone up when altered (G7alt = Abm6)
+  // Diminished, augmented, sus and power chords have no such reading (null).
+  function sixthOf(chord){
+    if (!chord || chord.nc) return null;
+    var r = chord.root, q = chord.quality, alt = chord.alt || chord.b9 || chord.s9 || chord.b13 || chord.s5, root, minor;
+    if (q === "maj"){ root = r; minor = false; }
+    else if (q === "min"){ if (chord.seventh === 10){ root = r + 3; minor = false; } else { root = r; minor = true; } }
+    else if (q === "dom"){ root = alt ? r + 1 : r + 7; minor = true; }
+    else if (q === "hdim"){ root = r + 3; minor = true; }
+    else return null;
+    root = mod12(root);
+    return { six: { root: root, intervals: minor ? [0, 3, 7, 9] : [0, 4, 7, 9] }, dim: { root: mod12(root + 2), intervals: [0, 3, 6, 9] } };
+  }
+  // A major 7th chord read as a 6th (Cmaj7 -> C6, Cmaj9 -> C6/9); any other chord comes back as it is.
+  var sixCache = {};
+  function asSixth(chord){
+    if (!chord || chord.nc || chord.quality !== "maj" || chord.seventh !== 11 || chord.s11 || chord.s5 || chord.b5) return chord;
+    var k = chord.key; if (sixCache[k]) return sixCache[k];
+    var c = {}; for (var f in chord) c[f] = chord[f];
+    c.seventh = null; c.sixth = 9; c.key = chord.key + "~6";
+    c.tones = chord.tones.filter(function (t){ return t !== 11; }); if (c.tones.indexOf(9) < 0) c.tones.push(9);
+    c.tones.sort(function (a, b){ return a - b; });
+    return (sixCache[k] = c);
+  }
+
+  // ---- colour: the chord as the comping voices it ----
+  // chord.tones is the basic chord (triad or 7th). colour() returns a copy whose tones also hold
+  //   - the natural 9th / 13th the symbol WRITES (C9, C13, Cmaj9, Cm9, C6/9, Cadd9), and
+  //   - the unmarked ones asked for in `add`: { six: a major 7th played as a 6th, nine: a 9th on a plain
+  //     7th chord, thirteen: a 9th and 13th on a plain dominant 7th }.
+  // Unmarked colour only goes on a chord with nothing written beyond its 7th: no extension, alteration or sus.
+  // Altered chords (b9, #9, #11, b13, alt...) come back unchanged for now: alterations are the next step.
+  // Styles that are defined by their notes (shells, guide tones, three-string shapes, open chords) ignore
+  // the extra tones; standard, drop 2 and drop 3 use them; rootless adds its own 9th and 13th regardless.
+  var colourCache = {};
+  function colour(chord, add){
+    if (!chord || chord.nc) return chord;
+    add = add || {};
+    var q = chord.quality, altered = chord.alt || chord.b9 || chord.s9 || chord.s11 || chord.b5 || chord.s5 || chord.b13;
+    if (altered) return chord;
+    var plain = chord.sus === 0 && chord.ext <= 7 && !chord.add9 && !chord.six9 && chord.sixth == null && chord.seventh != null;
+    var six = plain && add.six && q === "maj" && chord.seventh === 11;
+    var thirteen = (chord.ext === 13 && (q === "dom" || q === "maj")) || (plain && add.thirteen && q === "dom");
+    var nine = thirteen || chord.ext >= 9 || chord.add9 || chord.six9 || (plain && add.nine && (q === "maj" || q === "min" || q === "dom"));
+    if (q === "hdim" || q === "dim" || q === "aug" || q === "power") nine = thirteen = false;
+    if (!six && !nine && !thirteen) return chord;
+    var tag = (six ? "6" : "") + (nine ? "9" : "") + (thirteen ? "13" : ""), k = chord.key + "~c" + tag;
+    if (colourCache[k]) return colourCache[k];
+    var base = six ? asSixth(chord) : chord, c = {}; for (var f in base) c[f] = base[f];
+    c.tones = base.tones.slice();
+    if (nine && c.tones.indexOf(2) < 0) c.tones.push(2);
+    if (thirteen && c.tones.indexOf(9) < 0) c.tones.push(9);
+    c.tones.sort(function (a, b){ return a - b; });
+    c.key = k; c.colour = { six: !!six, nine: !!nine, thirteen: !!thirteen };
+    return (colourCache[k] = c);
+  }
+
+  // Band-level styles on top of the library's: "auto" (the comping part picks; here it means the
+  // instrument's default) and "bh" (drop 2 on the chord's sixth-chord reading).
+  var BAND_STYLES = [{ id: "bh", label: "Drop 2, sixth-diminished (Barry Harris)" }, { id: "auto", label: "Auto (the band chooses)" }];
+  // Guitar only: the three-string shapes (triads, and R-3-7 for 7th chords) kept to ONE string set.
+  var GUITAR_BAND = [{ id: "top3", label: "Three strings: 3-2-1 (top)", lib: "shell3" }, { id: "mid3", label: "Three strings: 4-3-2", lib: "shell3" },
+                     { id: "open", label: "Open and barre chords" }];
+
+  // ---- "open": the strummer's chords. An open-position shape where the chord has one, otherwise the
+  // E-shape or A-shape barre chord, whichever sits nearer the nut. One shape per chord, so nothing to lead.
+  // Frets are low E to high E; x = string not played. Movable shapes are written at the nut.
+  // Extensions are dropped (C9 and C13 are played C7, C6 and Cadd9 as C, Cm6 as Cm) and a slash bass is left to the bassist.
+  var OPEN_TUNING = [40, 45, 50, 55, 59, 64];
+  var OPEN_SHAPES = {                                   // "<root pitch class>:<type>"
+    "0:maj": "x32010", "0:7": "x32310", "0:maj7": "x32000",
+    "2:maj": "xx0232", "2:min": "xx0231", "2:7": "xx0212", "2:maj7": "xx0222", "2:m7": "xx0211", "2:sus4": "xx0233", "2:sus2": "xx0230",
+    "4:maj7": "021100", "5:maj7": "xx3210",
+    "7:maj": "320003", "7:7": "320001", "7:maj7": "320002", "11:7": "x21202"
+  };
+  var E_SHAPE = { maj: "022100", min: "022000", "7": "020100", m7: "020000", maj7: "0x110x", sus4: "022200", "7sus4": "020200", power: "022xxx", aug: "032110" };
+  var A_SHAPE = { maj: "x02220", min: "x02210", "7": "x02020", m7: "x02010", maj7: "x02120", sus4: "x02230", sus2: "x02200", "7sus4": "x02030", power: "x022xx",
+                  aug: "x03221", dim7: "x01212", m7b5: "x0101x" };
+  function openType(c){
+    switch (c.quality){
+      case "power": return "power";
+      case "sus":   return c.sus === 2 ? "sus2" : c.seventh === 10 ? "7sus4" : "sus4";
+      case "dom":   return "7";
+      case "min":   return c.seventh === 10 ? "m7" : "min";
+      case "hdim":  return "m7b5";
+      case "dim":   return "dim7";
+      case "aug":   return "aug";
+      default:      return c.seventh === 11 ? "maj7" : "maj";
+    }
+  }
+  function openShape(chord){
+    var type = openType(chord), pc = mod12(chord.root), pick = null;
+    function shape(str, fret, name){
+      var strings = [];
+      for (var i = 0; i < 6; i++){ var ch = str.charAt(i); if (ch === "x") continue; var f = parseInt(ch, 10) + fret; strings.push({ string: i, fret: f, midi: OPEN_TUNING[i] + f }); }
+      var fretted = strings.filter(function (s){ return s.fret > 0; }).map(function (s){ return s.fret; });
+      return { midis: strings.map(function (s){ return s.midi; }), strings: strings, style: "open", fretPos: fret, label: name,
+               span: fretted.length ? Math.max.apply(null, fretted) - Math.min.apply(null, fretted) + 1 : 0 };
+    }
+    if (OPEN_SHAPES[pc + ":" + type]) return shape(OPEN_SHAPES[pc + ":" + type], 0, "Open chord");
+    [[E_SHAPE, 4, "E shape"], [A_SHAPE, 9, "A shape"]].forEach(function (m){
+      if (!m[0][type]) return; var fret = mod12(pc - m[1]);
+      if (!pick || fret < pick.fret) pick = { str: m[0][type], fret: fret, name: m[2] };
     });
-    return best.v.slice();
+    if (!pick) return null;
+    if (type === "m7b5" && pick.fret === 0) pick.fret = 12;                    // (that shape has no open form)
+    return shape(pick.str, pick.fret, pick.fret ? pick.name + " barre, fret " + pick.fret : "Open chord");
+  }
+  var LIB_ALIAS = { top3: "shell3", mid3: "shell3" };
+  // Several styles at once are written "a+b" (opts.voicing "guide2+top3"): the band draws on all of them.
+  function splitStyle(style){ return String(style || "").split("+").filter(function (x){ return x && x !== "auto"; }); }
+  // kind "passing" asks for the passing diminished chord of a "bh" voicing instead of the chord itself.
+  function candidates(chord, style, inst, kind){
+    if (!chord || chord.nc) return [];
+    inst = inst === "guitar" ? "guitar" : "piano";
+    if (String(style).indexOf("+") >= 0){                              // several styles: every shape of each, once
+      var pool = [], seen = {};
+      splitStyle(style).forEach(function (one){ candidates(chord, one, inst, kind).forEach(function (c){
+        var k = c.midis.join(","); if (!seen[k]){ seen[k] = 1; pool.push(c); } }); });
+      if (pool.length || kind === "passing") return pool;
+      style = defaultStyle(inst);
+    }
+    if (style === "auto" || !style) style = defaultStyle(inst);
+    if (style === "open"){
+      if (kind === "passing") return [];
+      var os = inst === "guitar" ? openShape(chord) : null; if (os) return [os];
+      style = defaultStyle(inst);
+    }
+    if (LIB_ALIAS[style] && inst === "guitar"){ var ac = libCands({ root: chord.root, intervals: chord.tones }, style, inst); if (ac.length || kind === "passing") return kind === "passing" ? [] : ac; style = "shell3"; }
+    if (style === "bh"){
+      var sx = sixthOf(chord);
+      if (sx){ var bc = libCands(kind === "passing" ? sx.dim : sx.six, "drop2", inst); if (bc.length) return bc; }
+      if (kind === "passing") return [];
+      style = "drop2";
+    } else if (kind === "passing") return [];
+    var own = OWN[inst];
+    if ((own.indexOf(style) < 0 || style === "shell" || style === "standard") && libHas(inst, style)){
+      var lc = libCands({ root: chord.root, intervals: chord.tones }, style, inst); if (lc.length) return lc; }
+    return ownCands(chord, style);                     // (also the guitar's fallback when the library did not load)
+  }
+  function gripFor(prev){ return (prev && prev.length && lastGrip && lastGrip.key === prev.join(",")) ? lastGrip.strings : null; }
+  function remember(best){ if (best && best.strings){ lastGrip = { key: best.midis.join(","), strings: best.strings }; grips[lastGrip.key] = best.strings; } }
+
+  function voicing(chord, style, prev, inst){
+    if (!chord || chord.nc) return [];
+    inst = inst === "guitar" ? "guitar" : "piano";
+    var cands = candidates(chord, style, inst), V = global.ChordVoicings, p = (prev && prev.length) ? prev : null, best = null;
+    if (!cands.length) return [];
+    if (cands.every(function (c){ return c.fi != null; })){                    // the band's own tables: least motion, near the style's centre
+      var bestCost = Infinity;
+      cands.forEach(function (it){
+        var cost = (p ? motion(p, it.midis) + 0.3 * it.drift : it.drift) + it.fi * 0.01;    // stable tie-break
+        if (cost < bestCost){ bestCost = cost; best = it; }
+      });
+    } else if (inst === "guitar" && V.easiest){
+      var grip = gripFor(p);
+      best = (grip || !p) ? V.easiest(cands, grip, p, GTR.fret, GTR) : V.nearest(cands, p, GTR.centre);          // a pinned chord has no known grip: go by ear
+      remember(best);
+    } else best = V.nearest(cands, p, 62);
+    return best ? best.midis.slice() : [];
+  }
+
+  // A voicing chosen for its TOP NOTE: the shape whose highest note is nearest o.top, moving the other
+  // voices (and on guitar the hand) as little as that allows. o.differ skips the shape already sounding;
+  // o.passing asks for the passing diminished chord ("bh" only; [] when the style has none).
+  function toward(chord, style, prev, inst, o){
+    o = o || {}; inst = inst === "guitar" ? "guitar" : "piano";
+    var cands = candidates(chord, style, inst, o.passing ? "passing" : null), V = global.ChordVoicings;
+    if (!cands.length) return o.passing ? [] : voicing(chord, style, prev, inst);
+    var p = (prev && prev.length) ? prev : null, key = p ? p.join(",") : "", grip = inst === "guitar" ? gripFor(p) : null;
+    var best = null, bestCost = Infinity;
+    cands.forEach(function (c){
+      if (o.differ && cands.length > 1 && c.midis.join(",") === key) return;
+      var top = c.midis[c.midis.length - 1];
+      var cost = 2 * Math.abs(top - (o.top == null ? top : o.top)) + (p ? 0.25 * motion(p, c.midis) : 0) + (c.fi || 0) * 0.01;
+      if (grip && V && V.handMotion) cost += 0.6 * V.handMotion(grip, c.strings);
+      if (inst === "guitar") cost += GTR.pitch * Math.abs((c.midis[0] + top) / 2 - GTR.centre);
+      if (cost < bestCost){ bestCost = cost; best = c; }
+    });
+    if (inst === "guitar") remember(best);
+    return best ? best.midis.slice() : [];
   }
 
   // ---- chart -> form ----
@@ -403,6 +612,107 @@
   // What a beat is in a meter. 6/8, 9/8 and 12/8 are COMPOUND: the band counts dotted quarters
   // (2, 3 or 4 beats to the bar) and each beat divides in three. Everything else counts the
   // meter's own lower note.
+  // ---- half time / double time ----
+  // feelPart(part) wraps a part (bass, comp or drums) so that ctx.opts.timeFeel can change the size of
+  // its beat without the chart, the tempo or the bar count changing:
+  //   "double": the part plays TWO of its bars inside each bar of the chart, at twice the tempo;
+  //   "half":   the part plays ONE of its bars across two bars of the chart, at half the tempo
+  //             (bars pair up by form index: 1+2, 3+4, ...; two bars of 5/8 make one bar of five).
+  // The wrapper builds the bar the part sees (chords re-placed on the new beats, tempo scaled) and maps
+  // the events back, already swung (straight:true), so the player and the MIDI export need no changes.
+  // Not in compound meters and not on stop bars. ctx.form / ctx.nextIndex (the form and the bar played
+  // next) are used when given. Pinned voicings follow their chords onto the new bar numbers.
+  // Which parts change: ctx.opts.timeFeelParts, the names joined by spaces. Unset = "bass drums": the
+  // comping keeps its own rhythm, as a pianist or guitarist usually does when the rhythm section shifts.
+  function feelPart(part, name){
+    var carry = null;
+    function swingOf(ctx, tempo){
+      if (ctx.opts && ctx.opts.feel === "straight") return 0.5;
+      var P = global.BandPlayer; return (P && P.swingFor) ? P.swingFor(tempo) : 2 / 3;
+    }
+    function warp(pos, s){ var b = Math.floor(pos), f = pos - b; return b + (f <= 0.5 ? f * (s / 0.5) : s + (f - 0.5) * ((1 - s) / 0.5)); }
+    function back(ev, s, k, off){
+      var e = Object.assign({}, ev);
+      e.pos = Math.round(((ev.straight ? ev.pos : warp(ev.pos, s)) * k + off) * 10000) / 10000;
+      if (e.dur != null) e.dur = Math.round(e.dur * k * 1000) / 1000;
+      e.straight = true; delete e.of;
+      return e;
+    }
+    // the pins of the chart's chords, re-keyed for the bar the part is shown (`src` = "chart bar:beat")
+    function pinsFor(ctx, c2, nextLen){
+      var pins = ctx.opts && ctx.opts.pins; if (!pins) return Object.assign({}, ctx.opts);
+      var map = {};
+      (c2.chords || []).forEach(function (c){ if (c.src && pins[c.src]) map[c2.index + ":" + c.pos] = pins[c.src]; });
+      (c2.nextChords || []).forEach(function (c){ if (c.src && pins[c.src]) map[(nextLen > 0 ? (c2.index + 1) % nextLen : c2.index + 1) + ":" + c.pos] = pins[c.src]; });
+      return Object.assign({}, ctx.opts, { pins: map });
+    }
+    // chords of chart beats [lo, hi) of chart bar `src` on a beat `k` times as long, starting at band beat `at`
+    function place(chords, lo, hi, k, at, out, src){
+      (chords || []).forEach(function (c){
+        if (c.pos < lo - 1e-6 || c.pos >= hi - 1e-6) return;
+        var p = at + Math.floor((c.pos - lo) / k + 1e-6), prev = out[out.length - 1], it = { pos: p, chord: c.chord, src: src == null ? null : src + ":" + c.pos };
+        if (prev && prev.pos === p){ if (c.pos === lo) out[out.length - 1] = it; return; }   // a bar's first chord wins a shared beat
+        if (prev && sameChord(prev.chord, c.chord)) return;
+        out.push(it);
+      });
+      return out;
+    }
+    // where the chord sounding at `pos` of a bar started ("bar:beat"), for its pin
+    function srcAt(chords, pos, index){ var s = null; (chords || []).forEach(function (c){ if (c.pos <= pos + 1e-6) s = c.pos; }); return s == null ? null : index + ":" + s; }
+    function doubled(ctx){
+      var B = ctx.beats, h = B / 2, ph = ctx.phrase || { bar: ctx.index % 4 }, s = swingOf(ctx, ctx.tempo * 2), out = [];
+      var nxi = ctx.nextIndex != null ? ctx.nextIndex : (ctx.length > 0 ? (ctx.index + 1) % ctx.length : ctx.index + 1);
+      function sub(chords, k, idx){
+        var list = place(chords, k * h, (k + 1) * h, 0.5, 0, [], idx), c0 = chordAt(chords, k * h);
+        if (c0 && (!list.length || list[0].pos > 0)) list.unshift({ pos: 0, chord: c0, src: srcAt(chords, k * h, idx) });
+        return list.filter(function (c){ return c.pos < B; });
+      }
+      var subs = [sub(ctx.chords, 0, ctx.index), sub(ctx.chords, 1, ctx.index)], after = sub(ctx.nextChords, 0, nxi);
+      for (var k = 0; k < 2; k++){
+        var c2 = Object.assign({}, ctx, { bar: ctx.bar * 2 + k, index: ctx.index * 2 + k, length: (ctx.length || 0) * 2, chords: subs[k], nextChords: k ? after : subs[1],
+          tempo: ctx.tempo * 2, last: !!ctx.last && k === 1, loopEnd: !!ctx.loopEnd && k === 1, nextStop: !!ctx.nextStop && k === 1,
+          phrase: { bar: (ph.bar * 2 + k) % 4, turnaround: !!ph.turnaround, top: !!ph.top && k === 0 } });
+        c2.opts = pinsFor(ctx, c2, 0);                       // (the bar after is found by its own number, never by wrapping)
+        (part.bar(c2) || []).forEach(function (ev){ if (ev && ev.pos >= 0 && ev.pos < B + 1e-6) out.push(back(ev, s, 0.5, k * h)); });
+      }
+      return out.filter(function (e){ return e.pos < B - 1e-6; });
+    }
+    function halved(ctx){
+      var B = ctx.beats, i = ctx.index, form = ctx.form, ph = ctx.phrase || { bar: i % 4 }, s = swingOf(ctx, ctx.tempo / 2);
+      if (carry && carry.bar === ctx.bar && carry.index === i){ var kept = carry.evs; carry = null; return kept; }
+      carry = null;
+      var first = i % 2 === 0, len = ctx.length || (form ? form.length : 0);
+      var paired = first && form && ctx.nextIndex === i + 1 && form[i + 1] && form[i + 1].beats === B && !ctx.last && !ctx.nextStop;
+      var a = first ? ctx.chords : (form && form[i - 1] && form[i - 1].beats === B ? form[i - 1].chords : ctx.chords);
+      var b = first ? (paired ? form[i + 1].chords : ctx.nextChords) : ctx.chords;
+      var nxi = ctx.nextIndex != null ? ctx.nextIndex : (len > 0 ? (i + 1) % len : i + 1);
+      var chords = place(b, 0, B, 2, Math.floor(B / 2 + 1e-6), place(a, 0, B, 2, 0, [], first ? i : i - 1), first ? (paired ? i + 1 : nxi) : i);
+      var nx = paired && len ? form[(i + 2) % len].chords : ctx.nextChords, nxSrc = paired && len ? (i + 2) % len : first ? null : nxi;
+      var c2 = Object.assign({}, ctx, { bar: Math.floor(ctx.bar / 2), index: Math.floor(i / 2), length: Math.ceil(len / 2), chords: chords, nextChords: place(nx, 0, B, 2, 0, [], nxSrc),
+        tempo: ctx.tempo / 2, last: !!ctx.last, phrase: { bar: Math.floor(i / 2) % 4, turnaround: !!ph.turnaround, top: !!ph.top } });
+      c2.opts = pinsFor(ctx, c2, c2.length);
+      var now = [], later = [];
+      (part.bar(c2) || []).forEach(function (ev){
+        if (!ev || !(ev.pos >= 0)) return;
+        var e = back(ev, s, 2, 0);
+        if (e.pos < B - 1e-6) now.push(e); else if (e.pos < 2 * B - 1e-6){ e.pos = Math.round((e.pos - B) * 10000) / 10000; later.push(e); }
+      });
+      if (!first) return later;                              // came in on the second bar of a pair
+      if (paired) carry = { bar: ctx.bar + 1, index: i + 1, evs: later };
+      return now;
+    }
+    return {
+      bar: function (ctx){
+        var f = ctx && ctx.opts && ctx.opts.timeFeel, who = ctx && ctx.opts && ctx.opts.timeFeelParts;
+        if (name && String(who == null ? "bass drums" : who).split(" ").indexOf(name) < 0) f = null;
+        if ((f !== "double" && f !== "half") || ctx.compound || ctx.stop || !ctx.chords || !ctx.chords.length){ carry = null; return part.bar(ctx); }
+        return f === "double" ? doubled(ctx) : halved(ctx);
+      },
+      ending: function (ctx){ carry = null; return part.ending ? part.ending(ctx) : []; },
+      reset: function (){ carry = null; if (part.reset) part.reset(); }
+    };
+  }
+
   function meterInfo(n, d){
     n = n || 4; d = d || 4;
     var compound = d === 8 && n >= 6 && n % 3 === 0;
@@ -474,15 +784,18 @@
     return map;
   }
   function asPlayed(bars, o){
-    o = o || {}; var first = {}, out = [], prev = null;
+    o = o || {}; var first = {}, firstGrip = {}, out = [], prev = null;
     (bars || []).forEach(function (r){ ((r.parts && r.parts.comp) || []).forEach(function (e){
-      if (e && e.of != null && e.midis && e.midis.length && !first[e.of]) first[e.of] = e.midis.slice(); }); });
+      if (e && e.of != null && !e.passing && !e.arp && e.midis && e.midis.length && !first[e.of]){ first[e.of] = e.midis.slice(); if (e.strings) firstGrip[e.of] = e.strings; } }); });
     (bars || []).forEach(function (r){ (r.chords || []).forEach(function (c){
       if (!c.chord || c.chord.nc) return;
       var m = first[r.index + ":" + c.pos], played = !!m;
       if (!m) m = voicing(c.chord, o.style || "rootless", prev, o.inst || "piano");
       if (m.length) prev = m;
-      out.push({ sym: c.chord.sym, midis: m.slice(), played: played });
+      // the fingering: the one that event was played with, else the last one used for these notes
+      var entry = { sym: c.chord.sym, midis: m.slice(), played: played }, g = o.inst === "guitar" && (firstGrip[r.index + ":" + c.pos] || grips[m.join(",")]);
+      if (g) entry.strings = g.map(function (s){ return { string: s.string, fret: s.fret, midi: s.midi }; });   // the fingering the band had in mind
+      out.push(entry);
     }); });
     return out;
   }
@@ -506,6 +819,7 @@
     parseChord: parseChord, chordScale: chordScale, voicing: voicing, buildForm: buildForm,
     chordAt: chordAt, sameChord: sameChord, noteName: noteName, pcName: pcName,
     voicingClass: voicingClass, motion: motion, STYLES: STYLES,
-    styleList: styleList, defaultStyle: defaultStyle, hasStyle: hasStyle, pinMap: pinMap, asPlayed: asPlayed, roman: roman, meterInfo: meterInfo
+    styleList: styleList, defaultStyle: defaultStyle, openShape: openShape, hasStyle: hasStyle, pinMap: pinMap, asPlayed: asPlayed, roman: roman, meterInfo: meterInfo,
+    candidates: candidates, toward: toward, gripOf: function (midis){ return gripFor(midis); }, sixthOf: sixthOf, asSixth: asSixth, colour: colour, feelPart: feelPart
   };
 })(typeof window !== "undefined" ? window : globalThis);

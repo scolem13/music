@@ -45,6 +45,7 @@ const KNOWN = /supabaseUrl|createClient|favicon/;          // pre-existing site 
     await set("bt-vol-drums", 60, "input"); await set("bt-key", "Eb"); await set("bt-changes", "basic");
     await b.eval(`(function(){ var e = ${$v("bt-abc")}; e.value = e.value.replace('"Eb7"z4', '"Eb13"z4'); e.dispatchEvent(new Event('input', { bubbles:true })); })()`);
     await b.sleep(1500);
+    await b.eval(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);   // triads are outside the Swing style
     for (const [comp, voic] of [["guitar", "shell3"], ["guitar", "drop2"], ["guitar", "drop3"], ["guitar", "triad3"], ["piano", "drop2"], ["piano", "drop3"]]) {
       await set("bt-comp", comp); await set("bt-voicing", voic); await b.sleep(1800);
       assert.strictEqual(await b.eval(`${$v("bt-voicing")}.value`), voic, comp + " offers " + voic);

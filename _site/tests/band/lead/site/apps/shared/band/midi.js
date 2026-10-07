@@ -101,7 +101,8 @@
       var ctx = { bar:i, index:idx, length:form.length, chorus:Math.floor(i / form.length), beats:fb.beats, chords:fb.chords,
                   nextChords: form[(idx + 1) % form.length].chords, tempo:tempo, last:false, opts:opts,
                   stop: !!(opts.stops && opts.stops.indexOf(idx) >= 0), nextStop: !!(opts.stops && opts.stops.indexOf((idx + 1) % form.length) >= 0),
-                  meter:fb.meter, compound:!!fb.compound };
+                  meter:fb.meter, compound:!!fb.compound,
+                  phrase:{ bar: idx % 4, turnaround: form.length - 1 - idx < 2, top: idx === 0 } };
       var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo, ending:false,
                   meter:fb.meter, compound:!!fb.compound,
                   chords:fb.chords, opts:Object.assign({}, opts), parts:{} };

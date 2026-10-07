@@ -155,7 +155,7 @@ assert.deepStrictEqual(CV.intervalsFromFormula("1 b3 5 b7"), [0,3,7,10]);
 assert.deepStrictEqual(CV.intervalsFromFormula("1 3 #5 b7 b9 #9"), [0,4,8,10,13,15]);
 assert.deepStrictEqual(CV.intervalsFromFormula("1 3 5 b7 9 13"), [0,4,7,10,14,21]);
 assert.deepStrictEqual(CV.styles("piano").map(s => s.id), ["standard","shell","guide","rootless","drop2","drop3"]);
-assert.deepStrictEqual(CV.styles("guitar").map(s => s.id), ["standard","shell","drop2","drop3","triad3","shell3","triadvl","uppervl"]); assert.deepStrictEqual(CV.styles("guitar").filter(s=>s.sheetOnly).map(s=>s.id), ["standard","shell"]);
+assert.deepStrictEqual(CV.styles("guitar").map(s => s.id), ["standard","shell","drop2","drop3","triad3","shell3","triadvl","uppervl","guide2"]); assert.deepStrictEqual(CV.styles("guitar").filter(s=>s.sheetOnly).map(s=>s.id), ["standard","shell"]);
 
 const sum = o => Object.fromEntries(Object.entries(o).map(([k, v]) => [k, typeof v === "object" ? Object.entries(v).map(([n, t]) => `${n} shapes×${t} keys`).join(", ") : v]));
 console.log("ALL OK —", stats.checks, "assertions,", nearChecks, "nearest checks");

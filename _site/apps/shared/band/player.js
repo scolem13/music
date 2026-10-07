@@ -10,6 +10,9 @@
 //     tempo: 120, transpose: 0,
 //     countIn: 1,                  // bars of stick clicks: 0, 1 or 2 (2 = "1 . 2 . | 1 2 3 4")
 //     choruses: 0,                 // 0 = loop until stopped; N = N choruses, the ending hit, then onEnd
+//     intro: null,                 // { bars: 4, kind: "vamp" (the first chord) | "last" (the last bars of the form), tacet: "drums" }
+//                                  // played once after the count-in when starting from the top; onBar gets intro:true,
+//                                  // introBar / introBars, index -1. Stops and pins do not apply to it. player.setIntro(o)
 //     opts: {},                    // handed to the parts untouched, as ctx.opts
 //     volumes: { bass:1, comp:1, drums:1 },   // faders, 0..1.5 (1 = the default balance)
 //     seed,                        // optional int → the same performance every time
@@ -32,6 +35,7 @@
 // and only the bass leads back in) and the bar before gets ctx.nextStop, so nothing rings across.
 //   player.setStartBar(i)          // form bar the next play() starts on (after the count-in)
 //   player.setCycle(from, to)      // loop just those form bars (inclusive); setCycle(null) = whole form. Live.
+//                                  // from > to loops OVER THE END of the form: setCycle(9, 1) plays bars 10..last, 1, 2.
 //   player.setTempoSteps([8, -3])  // bpm added at each repeat, taken in turn; null = off. cfg.onTempo(bpm) reports
 //                                  // each step; stopping returns to the tempo that was set.
 //   BandPlayer.renderOffline({ parsed, tempo, transpose, choruses, countIn, opts, volumes,
@@ -146,12 +150,24 @@
     this.human = mulberry32(seed + SEED.human);
     this.parts = {};
     var self = this, G = { bass: global.BandBass, comp: global.BandComp, drums: global.BandDrums };
-    PARTS.forEach(function (p){ if (G[p] && G[p].create) self.parts[p] = G[p].create({ rng: mulberry32(seed + SEED[p]) }); });
+    var H = global.BandHarmony, wrap = (H && H.feelPart) || function (x){ return x; };                 // half time / double time (opts.timeFeel)
+    PARTS.forEach(function (p){ if (G[p] && G[p].create) self.parts[p] = wrap(G[p].create({ rng: mulberry32(seed + SEED[p]) }), p); });
     this.nextL = 0; this.barNo = 0; this.chorus = 0; this.pass = 0; this.prev = null;
     var r0 = this.range(), sb = c.startBar | 0;
-    this.formIdx = (sb >= r0.from && sb <= r0.to) ? sb : r0.from;       // first pass may start part-way in
+    this.formIdx = (sb < this.form.length && r0.has(sb)) ? sb : r0.from;   // first pass may start part-way in
     this.countIn = this.countInLeft = clamp(c.countIn | 0, 0, 2);
+    this.intro = this.formIdx === 0 ? introBars(this.form, c.intro) : []; this.introAt = 0;      // only from the top of the form
     this.pending = []; this.timeline = []; this.wantEnding = false; this.done = false; this.endL = null;
+  }
+  // The bars of an intro: a vamp on the form's first chord, or the last bars of the form.
+  function introBars(form, o){
+    var n = o ? clamp(o.bars | 0, 0, 16) : 0, out = [], k;
+    if (!n || !form.length) return out;
+    if (o.kind === "last"){ for (k = n; k >= 1; k--) out.push(form[((form.length - k) % form.length + form.length) % form.length]); return out; }
+    var fb = form[0], first = null;
+    for (k = 0; k < fb.chords.length && !first; k++) if (fb.chords[k].chord && !fb.chords[k].chord.nc) first = fb.chords[k].chord;
+    for (k = 0; k < n; k++) out.push({ src: -1, beats: fb.beats, chords: first ? [{ pos: 0, chord: first }] : [], meter: fb.meter, compound: fb.compound });
+    return out;
   }
   Session.prototype.start = function (t0){ this.anchorT = t0; this.anchorL = 0; };
   // `prev` is the anchor before a scheduled tempo step, so bars already generated at the
@@ -167,9 +183,11 @@
   // The bars being looped: the whole form, or the cycle the page set (clamped to the form).
   Session.prototype.range = function (){
     var n = this.form.length, cy = this.c.cycle;
-    if (!cy) return { from: 0, to: n - 1 };
-    var a = clamp(cy.from | 0, 0, n - 1), b = clamp(cy.to | 0, 0, n - 1);
-    return { from: Math.min(a, b), to: Math.max(a, b) };
+    if (!cy) return { from: 0, to: n - 1, len: n, has: function (){ return true; }, pos: function (i){ return i; } };
+    var a = clamp(cy.from | 0, 0, n - 1), b = clamp(cy.to | 0, 0, n - 1), wrap = a > b;      // from after to: the loop runs over the end
+    return { from: a, to: b, len: wrap ? n - a + b + 1 : b - a + 1,
+             has: function (i){ return wrap ? (i >= a || i <= b) : (i >= a && i <= b); },
+             pos: function (i){ return (i - a + n) % n; } };                               // how far into the loop bar i is
   };
   // Tempo-change practice: at each repeat add the next step (e.g. [8] or [8, -3] alternating),
   // taking effect on the barline at linear beat L.
@@ -199,12 +217,13 @@
     var rec = { bar: bctx.bar, index: bctx.index, chorus: bctx.chorus, length: bctx.length, beats: bctx.beats, tempo: bctx.tempo,
                 meter: bctx.meter, compound: !!bctx.compound,
                 ending: method === "ending", chords: bctx.chords, opts: Object.assign({}, bctx.opts), parts: {} };
-    PARTS.forEach(function (p){ var part = self.parts[p]; if (!part || typeof part[method] !== "function") return;
+    var tacet = bctx.tacet ? String(bctx.tacet).split(" ") : [];
+    PARTS.forEach(function (p){ var part = self.parts[p]; if (!part || typeof part[method] !== "function" || tacet.indexOf(p) >= 0) return;
       try { var evs = part[method](bctx) || [], dyn = 0.86 + 0.28 * (bctx.intensity == null ? 0.5 : bctx.intensity);
         evs.forEach(function (e){ if (e && e.vel != null) e.vel = Math.round(clamp(e.vel * dyn, 0.03, 1) * 1000) / 1000; });   // louder as the band builds
         rec.parts[p] = evs; self.collect(p, evs, L0, bctx.beats, bctx.compound); }
       catch (e){ if (global.console) console.error("BandPlayer: " + p + "." + method + " failed", e); } });
-    if (this.barTap) this.barTap(rec);                       // onBarEvents: the bar exactly as generated (notation / MIDI export)
+    if (this.barTap && !bctx.intro) this.barTap(rec);        // (the intro is not part of the log of choruses)                       // onBarEvents: the bar exactly as generated (notation / MIDI export)
   };
   // Generate the next bar (count-in, a bar of the form, or the ending) into `pending`.
   Session.prototype.generate = function (){
@@ -221,6 +240,17 @@
       this.timeline.push({ L: L0, beats: beats, info: { bar: -this.countInLeft, index: -1, chorus: 0, src: -1, beats: beats, countIn: true } });
       this.countInLeft--; this.nextL += beats; return;
     }
+    if (this.introAt < this.intro.length){                   // the intro: once, between the count-in and the top
+      var ib = this.intro, ik = this.introAt, ibar = ib[ik], inext = ik + 1 < ib.length ? ib[ik + 1] : form[this.formIdx];
+      beats = ibar.beats;
+      this.callParts("bar", { bar: ik - ib.length, index: ik, length: ib.length, chorus: 0, beats: beats, chords: ibar.chords, nextChords: inext.chords,
+        tempo: this.tempo, last: false, loopEnd: false, opts: Object.assign({}, c.opts, { pins: null, stops: null }), form: ib, nextIndex: ik + 1,
+        meter: ibar.meter, compound: !!ibar.compound, stop: false, nextStop: ik + 1 === ib.length && isStop(c.opts, this.formIdx),
+        intensity: intensityFor(0, form.length, 0, c.choruses, c.opts && c.opts.variation), intro: true, tacet: c.intro && c.intro.tacet,
+        phrase: { bar: ik % 4, turnaround: ib.length - 1 - ik < 2, top: ik === 0 } }, L0);
+      this.timeline.push({ L: L0, beats: beats, info: { bar: ik - ib.length, index: -1, chorus: 0, src: ibar.src, beats: beats, countIn: false, intro: true, introBar: ik, introBars: ib.length } });
+      this.introAt++; this.nextL += beats; return;
+    }
     if (this.wantEnding){                                    // the final hit: every part lands on the top chord
       var top = form[this.range().from], first = top.chords.length ? [{ pos: 0, chord: top.chords[0].chord }] : [];
       beats = top.beats;
@@ -231,15 +261,16 @@
       this.endL = L0; this.nextL += beats; this.done = true; return;
     }
     var r = this.range();
-    if (this.formIdx < r.from || this.formIdx > r.to) this.formIdx = r.from;      // the cycle moved under us
-    var fb = form[this.formIdx], atEnd = this.formIdx === r.to, nextIdx = atEnd ? r.from : this.formIdx + 1;
+    if (this.formIdx >= form.length || !r.has(this.formIdx)) this.formIdx = r.from;   // the cycle moved under us
+    var fb = form[this.formIdx], atEnd = this.formIdx === r.to, nextIdx = atEnd ? r.from : (this.formIdx + 1) % form.length;
+    var cp = r.pos(this.formIdx);
     var last = c.choruses > 0 && this.chorus >= c.choruses - 1 && atEnd;
     beats = fb.beats;
     this.callParts("bar", { bar: this.barNo, index: this.formIdx, length: form.length, chorus: this.chorus, beats: beats,
-      chords: fb.chords, nextChords: form[nextIdx].chords, tempo: this.tempo, last: last, loopEnd: atEnd, opts: c.opts,
+      chords: fb.chords, nextChords: form[nextIdx].chords, tempo: this.tempo, last: last, loopEnd: atEnd, opts: c.opts, form: form, nextIndex: nextIdx,
       meter: fb.meter, compound: !!fb.compound, stop: isStop(c.opts, this.formIdx), nextStop: !last && isStop(c.opts, nextIdx),
-      intensity: intensityFor(this.formIdx - r.from, r.to - r.from + 1, this.chorus, c.choruses, c.opts && c.opts.variation),
-      phrase: { bar: (this.formIdx - r.from) % 4, turnaround: r.to - this.formIdx < 2, top: this.formIdx === r.from } }, L0);
+      intensity: intensityFor(cp, r.len, this.chorus, c.choruses, c.opts && c.opts.variation),
+      phrase: { bar: cp % 4, turnaround: r.len - 1 - cp < 2, top: this.formIdx === r.from } }, L0);
     this.timeline.push({ L: L0, beats: beats, info: { bar: this.barNo, index: this.formIdx, chorus: this.chorus, src: fb.src, beats: beats, countIn: false } });
     this.nextL += beats; this.barNo++; this.formIdx = nextIdx;
     if (atEnd){ this.chorus++; if (!last) this.stepTempo(this.nextL); }
@@ -262,6 +293,8 @@
       var ms = (ev.midis || []).slice().sort(function (a, b){ return a - b; }), n = ms.length;
       var spread = h() * STRUM * hz, dur = (ev.dur || 0.4) * this.spb;     // chords are rolled very slightly, low to high
       var sound = ev.inst || "piano"; if (sound === "piano" && o.compSound === "epiano") sound = "epiano";
+      // a strum is a slower roll: low string first on a downstroke, high string first on an upstroke
+      if (ev.strum){ spread = Math.min(0.028, 0.12 * this.spb) * (ev.strum === "up" ? 0.6 : 1) * hz; if (ev.strum === "up") ms.reverse(); }
       for (var i = 0; i < n; i++) this.bank.play(sound, { midi: ms[i], vel: vel, dur: dur }, t + (n > 1 ? spread * i / (n - 1) : 0), dest);
     }
     if (this.tap) this.tap({ part: p.part, time: t, L: L, pos: ev.pos, vel: vel, piece: ev.piece, midi: ev.midi, midis: ev.midis, dur: ev.dur });
@@ -305,7 +338,7 @@
       countIn: cfg.countIn == null ? 1 : clamp(cfg.countIn | 0, 0, 2), choruses: Math.max(0, cfg.choruses | 0),
       opts: Object.assign({}, cfg.opts), humanize: cfg.humanize, kit: Object.assign({}, cfg.kit),
       volumes: { bass: v.bass == null ? 1 : v.bass, comp: v.comp == null ? 1 : v.comp, drums: v.drums == null ? 1 : v.drums },
-      startBar: Math.max(0, cfg.startBar | 0), cycle: cfg.cycle || null, tempoSteps: cfg.tempoSteps || null,
+      intro: cfg.intro || null, startBar: Math.max(0, cfg.startBar | 0), cycle: cfg.cycle || null, tempoSteps: cfg.tempoSteps || null,
       instruments: cfg.instruments || ["bass", "piano", "kit"] };
   }
   function newSeed(seed){ return seed == null ? (Math.random() * 0x7fffffff) | 0 : seed | 0; }
@@ -390,6 +423,7 @@
       setInstruments: function (list){ c.instruments = list.slice(); if (shared) load().catch(function (){}); },   // before the first play this only records the list
       setKitVolume: function (piece, v){ c.kit[piece] = clamp(+v, 0, 1.5); },
       setCountIn: function (n){ c.countIn = clamp(n | 0, 0, 2); },
+      setIntro: function (o){ c.intro = o || null; },             // takes effect at the next play()
       setChoruses: function (n){ c.choruses = Math.max(0, n | 0); },
       setStartBar: function (i){ c.startBar = Math.max(0, i | 0); },                       // form bar index for the next play()
       setCycle: function (from, to){ c.cycle = from == null ? null : { from: from | 0, to: (to == null ? from : to) | 0 }; },   // live
@@ -409,6 +443,7 @@
     if (!form.length) return Promise.reject(new Error("BandPlayer: no bars to play"));
     var beats = c.countIn * form[0].beats + form[0].beats;
     form.forEach(function (b){ beats += b.beats * c.choruses; });
+    introBars(form, c.intro).forEach(function (b){ beats += b.beats; });
     var seconds = START_DELAY + beats * 60 / c.tempo + RING;
 
     function one(volumes, tap){
@@ -432,5 +467,21 @@
     });
   }
 
-  global.BandPlayer = { create: create, renderOffline: renderOffline, swingFor: swingFor, warp: warp, intensityFor: intensityFor };
+  // One chord on the band's sampled instruments, for pages that only want to hear a voicing:
+  //   BandPlayer.chord(midis, { inst: "piano" | "epiano" | "guitar" | "bass" | "ebass", dur: seconds, vel, roll: seconds low to high })
+  // Loads that instrument on first use (the returned promise settles when the notes are scheduled).
+  var chordOut = null;
+  function chord(midis, o){
+    o = o || {};
+    var a = audio(), inst = o.inst || "piano", ms = (midis || []).slice().sort(function (x, y){ return x - y; }), n = ms.length;
+    if (!n) return Promise.resolve();
+    if (a.ctx.state === "suspended" && a.ctx.resume) a.ctx.resume();
+    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); }
+    return a.bank.load([inst]).then(function (){
+      var t = a.ctx.currentTime + 0.03, roll = o.roll != null ? o.roll : (inst === "guitar" ? 0.045 : 0.012);
+      ms.forEach(function (m, i){ a.bank.play(inst, { midi: m, vel: o.vel == null ? 0.66 : o.vel, dur: o.dur || 1.6 }, t + (n > 1 ? roll * i / (n - 1) : 0), chordOut); });
+    });
+  }
+
+  global.BandPlayer = { chord: chord, create: create, renderOffline: renderOffline, swingFor: swingFor, warp: warp, intensityFor: intensityFor };
 })(typeof window !== "undefined" ? window : globalThis);

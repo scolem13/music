@@ -42,7 +42,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await v("bt-meter"), "5/4"); assert.strictEqual(await ev(`document.querySelectorAll("#bt-beats i").length`), 5);
     await set("bt-meter", "3/4"); assert.strictEqual(await v("bt-meter"), "5/4", "custom changes keep their meter");
     // guitar, voice-led triads
-    await set("bt-changes", "jazz"); await set("bt-meter", "4/4"); await set("bt-comp", "guitar");
+    await set("bt-changes", "jazz"); await set("bt-meter", "4/4"); await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`); await set("bt-comp", "guitar");
     const styles = await ev(`Array.from(document.getElementById("bt-voicing").options).map(function(o){ return o.value; }).join(",")`); console.log("guitar voicings:", styles);
     assert(/triadvl/.test(styles) && /uppervl/.test(styles));
     for (const st of ["triadvl", "uppervl"]){ await set("bt-voicing", st); await set("bt-tempo-n", "260"); await ev(`document.getElementById("bt-play").click()`);

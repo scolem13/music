@@ -458,6 +458,9 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 #songs-root .sq-settings .sq-multi-panel { display:flex; flex-wrap:wrap; gap:.5rem .75rem; align-items:flex-end; max-height:none; right:0; left:auto; }
 #songs-root .sq-settings .sq-check { flex-basis:100%; margin:0; }
 #songs-root .cell-tabs { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:.5rem; }
+#songs-root.all-patterns #tonal-collection-picker { opacity:.5; pointer-events:none; }
+#songs-root:not(.by-chord) #include-stepwise-label { display:none; }
+#songs-root .cell-tabs .sq-label { align-self:center; margin:0 .25rem 0 0; min-width:3.2rem; }
 #songs-root .cell-tabs .sq-btn.active { border-color:var(--pr); color:var(--pr); font-weight:600; }
 #songs-root .sq-paper.is-empty { display:none; }
 #title-block-header { display:none; }
@@ -466,7 +469,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
   display:inline-flex; align-items:center; gap:4px; font-size:.9rem; margin:0 0 .4rem;
 }
 #songs-root .sq-check input { width:auto; margin:0; }
-#songs-root .sq-multi { position:relative; }
+#songs-root .sq-multi { position:relative; margin-bottom:0; }
 #songs-root .sq-multi > summary {
   list-style:none; cursor:pointer; max-width:16rem;
   white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
@@ -530,7 +533,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
   display:inline-flex; align-items:center; gap:4px; font-weight:normal; color:var(--in);
 }
 #songs-root .cell-criteria input[type=checkbox] { width:auto; margin:0; }
-#songs-root .cell-bank { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px; margin-top:4px; }
+#songs-root .cell-bank { display:flex; flex-wrap:wrap; align-items:flex-end; gap:6px; margin:4px 0 .75rem; }
 #songs-root .cell-buttons { display:contents; }
 #songs-root .cell-wrapper { display:flex; flex-direction:column; align-items:flex-start; }
 #songs-root .cell-number { font-size:11px; color:var(--mu); margin-bottom:2px; margin-left:4px; }
@@ -838,62 +841,117 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         return String(lUnits);
     }
 
-    /* startQuarters is the absolute position in the song. harmony ({ beatQuarters, chords })
-       is optional: a chord set on a macrobeat is written on the note that starts there, and
-       a note held across a chord change (or a bar line) is split and tied. */
-    function renderBarredWords_s(rhythmCells, pitches, startQuarters, Lfraction, barCapacity, harmony) {
-        const unit = Lfraction * 4;
-        const words = [];
-        let wordBuffer = "";
-        let now = startQuarters;
-        let p = 0;
-        let explicitNext = false;
+    /* ------- Rhythm spelling ------- */
+    /* Chords are keyed by position in macrobeats; a chord over a note inside a beat has a fractional key. */
+    function chordKey_s(beats) { return Math.round(beats * 96) / 96; }
 
-        function flushWord() { if (wordBuffer) { words.push(wordBuffer); wordBuffer = ""; } }
+    /* Grid sizes in quarters, coarsest first: bar, half bar (four-beat bars), macrobeat,
+       microbeat, then halves of the microbeat. */
+    function metricGrid_s(meter) {
+        const beats = Math.round(meter.barCapacity / meter.beatQuarters);
+        const levels = [meter.barCapacity];
+        if (beats === 4) levels.push(meter.beatQuarters * 2);
+        if (beats > 1) levels.push(meter.beatQuarters);
+        let size = meter.beatQuarters / meter.familyInfo.microbeatCount;
+        for (let i = 0; i < 5; i++, size /= 2) levels.push(size);
+        return { levels: levels, bar: meter.barCapacity, beat: meter.beatQuarters, beats: beats,
+            micro: meter.beatQuarters / meter.familyInfo.microbeatCount, compound: meter.familyInfo.microbeatCount === 3 };
+    }
 
-        function chordPrefix(quarters) {
-            if (!harmony || !onGrid_s(quarters, harmony.beatQuarters)) return "";
-            const symbol = harmony.chords[Math.round(quarters / harmony.beatQuarters)];
-            return symbol ? '"' + symbol + '"' : "";
+    function isPlainValue_s(quarters) {
+        for (let value = 4; value > 1 / 32; value /= 2) if (Math.abs(quarters - value) < 1e-9) return true;
+        return false;
+    }
+
+    /* Can [from, to), measured from the bar line, be written as one note?
+       - it has to be a plain or dotted note value;
+       - anything goes inside a macrobeat;
+       - a note that starts on a macrobeat may run over later ones (in compound meters only
+         if it also ends on one);
+       - a note that starts inside a macrobeat stops at the next one, except the short-long-short
+         syncopation of simple meters, which may not hide the middle of a four-beat bar. */
+    function noteFits_s(from, to, grid) {
+        const length = to - from;
+        if (!isPlainValue_s(length) && !isPlainValue_s(length / 1.5)) return false;
+        const nextBeat = (Math.floor(from / grid.beat + 1e-9) + 1) * grid.beat;
+        if (to <= nextBeat + 1e-9) return true;
+        if (onGrid_s(from, grid.beat)) return !grid.compound || onGrid_s(to, grid.beat);
+        if (grid.compound || !isPlainValue_s(length) || length > grid.beat + 1e-9) return false;
+        if (Math.abs((nextBeat - from) - length / 2) > 1e-9) return false;
+        return !(grid.beats === 4 && onGrid_s(nextBeat, grid.beat * 2));
+    }
+
+    /* Can [from, to) be written as one rest? Rests show the metric grid: each is one grid size
+       long and starts on that grid. A silent bar takes a whole-bar rest, and the first two
+       microbeats of a compound macrobeat may share a rest. */
+    function restFits_s(from, to, grid) {
+        const length = to - from;
+        if (grid.compound && Math.abs(length - grid.micro * 2) < 1e-9 && onGrid_s(from, grid.beat)) return true;
+        for (let i = 0; i < grid.levels.length; i++) {
+            if (Math.abs(length - grid.levels[i]) < 1e-9) return onGrid_s(from, grid.levels[i]);
         }
+        return false;
+    }
 
-        function nextCut(from, end) {
-            let cut = (Math.floor(from / barCapacity + 1e-9) + 1) * barCapacity;
-            if (harmony) {
-                for (let b = Math.floor(from / harmony.beatQuarters + 1e-9) + 1; b * harmony.beatQuarters < cut - 1e-9; b++) {
-                    if (harmony.chords[b]) { cut = b * harmony.beatQuarters; break; }
-                }
-            }
-            return cut < end - 1e-9 ? cut : null;
+    /* Splits [from, to) at the strongest grid line inside it until every piece can be written. */
+    function spellSpan_s(from, to, isRest, grid) {
+        if (isRest ? restFits_s(from, to, grid) : noteFits_s(from, to, grid)) return [[from, to]];
+        for (let i = 0; i < grid.levels.length; i++) {
+            const size = grid.levels[i];
+            const first = (Math.floor(from / size + 1e-9) + 1) * size;
+            if (first >= to - 1e-9) continue;
+            const cut = onGrid_s(from, size) ? (Math.ceil(to / size - 1e-9) - 1) * size : first;
+            return spellSpan_s(from, cut, isRest, grid).concat(spellSpan_s(cut, to, isRest, grid));
         }
+        return [[from, to]];
+    }
 
-        function closeBar() { if (onGrid_s(now, barCapacity)) { flushWord(); words.push("|"); } }
+    /* Writes rhythm cells (with pitches, or on B without) as ABC words, one per macrobeat so
+       beams follow the beat, with "|" words for bar lines. startQuarters is the absolute
+       position in the song. The cells are respelled as a whole each time: neighbouring rests
+       merge, and notes and rests are split (notes tied) at bar lines, at chord changes
+       (chords: position in macrobeats -> symbol, optional) and wherever spellSpan_s says. */
+    function renderBarredWords_s(rhythmCells, pitches, startQuarters, meter, chords) {
+        const unit = meter.Lfraction * 4;
+        const grid = metricGrid_s(meter);
+        const chordTimes = Object.keys(chords || {}).map(function(key) { return Number(key) * grid.beat; });
 
+        const events = [];
+        let now = startQuarters, p = 0;
         rhythmCells.forEach(function(rc) {
             tokenizeRhythmCell_s(rc.abc).forEach(function(seg) {
-                const isNote = seg.type === "note";
-                const pitch = isNote ? (pitches ? pitches[p++] : "B") : "z";
                 const end = now + seg.duration * unit;
-
-                if (nextCut(now, end) === null && !explicitNext) {
-                    wordBuffer += chordPrefix(now) + pitch + seg.suffix + seg.tie + seg.dotMark;
-                    now = end;
-                } else {
-                    /* written with explicit lengths, so a dotted-pair mark can't be kept */
-                    while (true) {
-                        const cut = nextCut(now, end);
-                        const pieceEnd = cut === null ? end : cut;
-                        wordBuffer += chordPrefix(now) + pitch + fractionSuffix_s((pieceEnd - now) / unit) +
-                            (cut === null ? seg.tie : (isNote ? "-" : ""));
-                        now = pieceEnd;
-                        if (cut === null) break;
-                        closeBar();
-                    }
-                    explicitNext = !!seg.dotMark;
-                }
-                closeBar();
+                const last = events[events.length - 1];
+                if (seg.type === "rest" && last && last.rest) last.end = end;
+                else if (seg.type === "rest") events.push({ rest: true, start: now, end: end });
+                else events.push({ start: now, end: end, pitch: pitches ? pitches[p++] : "B", tie: seg.tie });
+                now = end;
             });
-            flushWord();
+        });
+
+        const words = [];
+        let wordBuffer = "";
+        function flushWord() { if (wordBuffer) { words.push(wordBuffer); wordBuffer = ""; } }
+
+        events.forEach(function(event) {
+            let from = event.start;
+            while (from < event.end - 1e-9) {
+                const barStart = Math.floor(from / grid.bar + 1e-9) * grid.bar;
+                let to = Math.min(event.end, barStart + grid.bar);
+                chordTimes.forEach(function(time) { if (time > from + 1e-9 && time < to - 1e-9) to = time; });
+                spellSpan_s(from - barStart, to - barStart, !!event.rest, grid).forEach(function(span) {
+                    const start = barStart + span[0], end = barStart + span[1];
+                    const symbol = chords && chords[chordKey_s(start / grid.beat)];
+                    /* abcjs draws a whole rest as a centred whole-bar rest in bars up to 4/4 */
+                    const wholeBar = event.rest && Math.abs(end - start - grid.bar) < 1e-9 && grid.bar <= 4;
+                    wordBuffer += (symbol ? '"' + symbol + '"' : "") + (event.rest ? "z" : event.pitch) +
+                        fractionSuffix_s((wholeBar ? 4 : end - start) / unit) +
+                        (event.rest ? "" : (end < event.end - 1e-9 ? "-" : event.tie));
+                    if (onGrid_s(end, grid.bar)) { flushWord(); words.push("|"); }
+                    else if (onGrid_s(end, grid.beat)) flushWord();
+                });
+                from = to;
+            }
         });
         flushWord();
         return words;
@@ -1013,7 +1071,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         }).join("");
     }
 
-    const SINGLE_NOTES_s = "Single notes";
+    const SINGLE_NOTES_s = "1 note";
 
     function shiftOctaves_s(abcText, octaves) {
         if (!octaves) return abcText;
@@ -1025,14 +1083,32 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         });
     }
 
-    function getTonalCells_s(name) {
-        if (tonalCellCache_s[name]) return tonalCellCache_s[name];
-        if (name === SINGLE_NOTES_s) {
-            tonalCellCache_s[name] = ["G,", "A,", "B,", "C", "D", "E", "F", "G", "A", "B", "c", "d", "e"].map(function(pitch) {
-                return { abc: pitch + "0", preview: pitch + "0", pitches: [pitch] };
-            });
-            return tonalCellCache_s[name];
+    /* How many staff positions the selected key moves a written pitch, as abcjs spells it. */
+    const keyStepCache_s = {};
+    function keySteps_s() {
+        const id = getTonalKey_s() + "/" + tonalVisTranspose_s;
+        if (keyStepCache_s[id] === undefined) {
+            const tune = ABCJS.renderAbc("*", "X:1\nK:" + getTonalKey_s() + "\nC", { visualTranspose: tonalVisTranspose_s })[0];
+            const note = tune.lines[0].staff[0].voices[0].filter(function(el) { return el.pitches; })[0];
+            keyStepCache_s[id] = note.pitches[0].pitch;
         }
+        return keyStepCache_s[id];
+    }
+
+    /* The seven single notes, shown as A below the staff up to G whatever the key. Each
+       carries the letter it is shown as, which is also the key that enters it. */
+    function singleNoteCells_s() {
+        const shift = keySteps_s();
+        return ["A", "B", "C", "D", "E", "F", "G"].map(function(letter, i) {
+            const position = i - 2 - shift;
+            const pitch = shiftOctaves_s("CDEFGAB".charAt(((position % 7) + 7) % 7), Math.floor(position / 7));
+            return { abc: pitch + "0", preview: pitch + "0", pitches: [pitch], letter: letter };
+        });
+    }
+
+    function getTonalCells_s(name) {
+        if (name === SINGLE_NOTES_s) return singleNoteCells_s();
+        if (tonalCellCache_s[name]) return tonalCellCache_s[name];
         const info = collectionInfo_s(name);
         tonalCellCache_s[name] = new ABCJS.TuneBook(patternObject[name]).tunes.map(function(t) {
             const abc = toRestingToneC_s(extractV1Notes_s(t.abc, false), info);
@@ -1129,6 +1205,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
     /* ------- Song state ------- */
     let activeRhythmCells_s = [];
     let activeTonalCells_s = [];
+    let tonalHotkeys_s = {};       /* letter -> pattern; A-G are always the single notes */
     let allowedCollections_s = [];
     let selectedCollections_s = [];
     let phrases_s = [];
@@ -1136,6 +1213,8 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
     let fullVisualObj_s = null;
     let fullTiming_s = null;
     let activeTab_s = null;
+    let noteFilter_s = null;       /* number of notes shown in the all-patterns view, or null for any */
+    let chordFilter_s = null;      /* chord symbol (in C) shown in the all-patterns view, or null for any */
     let tonalOctave_s = 0;
 
     function changeOctave_s(step) {
@@ -1146,7 +1225,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
     let playTimeout_s;
     const DEFAULT_EXPANSION_STRATEGY_s = "even";
     let undoStack_s = [];
-    let harmony_s = {};            /* macrobeat index -> chord symbol, written with C as resting tone */
+    let harmony_s = {};            /* position in macrobeats (see chordKey_s) -> chord symbol, written with C as resting tone */
     let chordCursor_s = 0;
     let melodyEndQuarters_s = 0;
 
@@ -1334,47 +1413,137 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         if (mode !== previousMode) clearAll_s();
     }
 
+    /* Every pattern in the current tonality, single notes first, each pattern once. */
+    function allTonalCells_s() {
+        const mode = getTonalMode_s();
+        const cells = getTonalCells_s(SINGLE_NOTES_s).slice(), seen = {};
+        allowedCollections_s.forEach(function(name) {
+            if (collectionInfo_s(name).mode !== mode) return;
+            getTonalCells_s(name).forEach(function(cell) {
+                if (seen[cell.abc] || cell.pitches.length < 2) return;
+                seen[cell.abc] = true;
+                cells.push(cell);
+            });
+        });
+        return cells;
+    }
+
+    /* Patterns are tagged with their chord. Single notes belong to the chords they are tones
+       of; other untagged (stepwise) patterns join the chords they fit (see cellFitsChord_s)
+       unless that is switched off. */
+    function cellInChord_s(cell, symbol) {
+        const tag = /^"([^"]+)"/.exec(cell.abc);
+        if (tag) return tag[1] === symbol;
+        if (!getPalette_s().some(function(chord) { return chord.sym === symbol; })) return false;
+        return (cell.pitches.length === 1 || document.getElementById("include-stepwise").checked) && cellFitsChord_s(cell, symbol);
+    }
+
+    function addTab_s(row, label, active, onClick) {
+        const tab = document.createElement("button");
+        tab.type = "button";
+        tab.className = "sq-btn" + (active ? " active" : "");
+        tab.textContent = label;
+        tab.addEventListener("click", function() { onClick(); renderTonalBank_s(); });
+        row.appendChild(tab);
+    }
+
+    function addTabRow_s(label) {
+        const row = document.createElement("div");
+        row.className = "cell-tabs";
+        if (label) {
+            const caption = document.createElement("span");
+            caption.className = "sq-label";
+            caption.textContent = label;
+            row.appendChild(caption);
+        }
+        document.getElementById("tonal-tabs").appendChild(row);
+        return row;
+    }
+
+    /* Draws the tabs and returns the patterns to show: one collection at a time, or every
+       pattern in the tonality narrowed by number of notes and by chord, which combine. */
+    function renderTonalTabs_s() {
+        const root = document.getElementById("songs-root");
+        const showAll = document.getElementById("pattern-grouping").value === "all";
+        document.getElementById("tonal-tabs").innerHTML = "";
+        root.classList.toggle("all-patterns", showAll);
+        if (!showAll) {
+            root.classList.remove("by-chord");
+            const names = [SINGLE_NOTES_s].concat(selectedCollections_s);
+            if (names.indexOf(activeTab_s) === -1) activeTab_s = names[1] || names[0];
+            const row = addTabRow_s(null);
+            names.forEach(function(name) { addTab_s(row, name, name === activeTab_s, function() { activeTab_s = name; }); });
+            return getTonalCells_s(activeTab_s);
+        }
+
+        const cells = allTonalCells_s();
+        const counts = [], symbols = getPalette_s().map(function(chord) { return chord.sym; });
+        cells.forEach(function(cell) {
+            const tag = /^"([^"]+)"/.exec(cell.abc);
+            if (counts.indexOf(cell.pitches.length) === -1) counts.push(cell.pitches.length);
+            if (tag && symbols.indexOf(tag[1]) === -1) symbols.push(tag[1]);
+        });
+        counts.sort(function(a, b) { return a - b; });
+        if (counts.indexOf(noteFilter_s) === -1) noteFilter_s = null;
+        if (symbols.indexOf(chordFilter_s) === -1) chordFilter_s = null;
+        root.classList.toggle("by-chord", chordFilter_s !== null);
+
+        const noteRow = addTabRow_s("Notes");
+        addTab_s(noteRow, "Any", noteFilter_s === null, function() { noteFilter_s = null; });
+        counts.forEach(function(count) {
+            addTab_s(noteRow, String(count), noteFilter_s === count, function() { noteFilter_s = count; });
+        });
+        const chordRow = addTabRow_s("Chord");
+        addTab_s(chordRow, "Any", chordFilter_s === null, function() { chordFilter_s = null; });
+        symbols.forEach(function(symbol) {
+            const chord = getPalette_s().filter(function(c) { return c.sym === symbol; })[0];
+            addTab_s(chordRow, chord ? chord.roman + " (" + chordLabel_s(symbol) + ")" : chordLabel_s(symbol),
+                chordFilter_s === symbol, function() { chordFilter_s = symbol; });
+        });
+
+        return cells.filter(function(cell) {
+            return (noteFilter_s === null || cell.pitches.length === noteFilter_s) &&
+                (chordFilter_s === null || cellInChord_s(cell, chordFilter_s));
+        });
+    }
+
     function renderTonalBank_s() {
         const key = getTonalKey_s();
         const container = document.getElementById("tonal-cell-buttons");
         container.innerHTML = "";
         activeTonalCells_s = [];
-
-        const tabNames = selectedCollections_s.concat([SINGLE_NOTES_s]);
-        if (tabNames.indexOf(activeTab_s) === -1) activeTab_s = tabNames[0];
         document.getElementById("octave-value").textContent = (tonalOctave_s > 0 ? "+" : "") + tonalOctave_s;
-        const tabs = document.getElementById("tonal-tabs");
-        tabs.innerHTML = "";
-        tabNames.forEach(function(name) {
-            const tab = document.createElement("button");
-            tab.type = "button";
-            tab.className = "sq-btn" + (name === activeTab_s ? " active" : "");
-            tab.textContent = name;
-            tab.addEventListener("click", function() { activeTab_s = name; renderTonalBank_s(); });
-            tabs.appendChild(tab);
-        });
+
+        function inOctave(written) {
+            return {
+                abc: shiftOctaves_s(written.abc, tonalOctave_s),
+                preview: shiftOctaves_s(written.preview, tonalOctave_s),
+                pitches: written.pitches.map(function(pitch) { return shiftOctaves_s(pitch, tonalOctave_s); })
+            };
+        }
+        tonalHotkeys_s = {};
+        getTonalCells_s(SINGLE_NOTES_s).forEach(function(written) { tonalHotkeys_s[written.letter] = inOctave(written); });
+        let nextLetter = 7;
 
         const entries = [];
-        [activeTab_s].forEach(function(collectionName) {
-            getTonalCells_s(collectionName).forEach(function(written) {
-                const cell = {
-                    abc: shiftOctaves_s(written.abc, tonalOctave_s),
-                    preview: shiftOctaves_s(written.preview, tonalOctave_s),
-                    pitches: written.pitches.map(function(pitch) { return shiftOctaves_s(pitch, tonalOctave_s); })
-                };
+        [renderTonalTabs_s()].forEach(function(cells) {
+            cells.forEach(function(written) {
+                const cell = inOctave(written);
                 const i = activeTonalCells_s.length;
                 activeTonalCells_s.push(cell);
+                const letter = written.letter || indexToLetter_s(nextLetter++);
+                if (!written.letter) tonalHotkeys_s[letter] = cell;
                 const wrapper = document.createElement("div");
                 wrapper.className = "cell-wrapper";
                 const numberLabel = document.createElement("span");
                 numberLabel.className = "cell-number";
-                numberLabel.textContent = indexToLetter_s(i);
+                numberLabel.textContent = letter;
                 wrapper.appendChild(numberLabel);
 
                 const button = document.createElement("button");
                 button.type = "button";
                 button.className = "cell-btn";
-                button.setAttribute("aria-label", "Tonal cell " + indexToLetter_s(i) + ": " + cell.preview);
+                button.setAttribute("aria-label", "Tonal cell " + letter + ": " + cell.preview);
                 button.addEventListener("click", function() { appendTonalCell_s(i); });
 
                 const preview = document.createElement("div");
@@ -1457,8 +1626,9 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         renderAll_s();
     }
 
-    function appendTonalCell_s(index) {
-        const cell = activeTonalCells_s[index];
+    function appendTonalCell_s(index) { addTonalCell_s(activeTonalCells_s[index]); }
+
+    function addTonalCell_s(cell) {
         const phrase = openPhraseForClick_s();
         snapshotBeforeChange_s();
 
@@ -1494,6 +1664,25 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 
         phrase.tonalCells.push({ abc: cell.abc, pitches: cell.pitches });
         phrase.expansion = null;
+        renderAll_s();
+    }
+
+    /* Takes back the last pattern added to the rhythm or tonal buffer, along with the chord
+       that pattern brought with it. */
+    function undoBuffer_s(side) {
+        const phrase = currentOpenPhrase_s();
+        if (!phrase || phrase[side].length === 0) return;
+        snapshotBeforeChange_s();
+        const removed = phrase[side].pop();
+        phrase.expansion = null;
+        const tag = side === "tonalCells" && /^"([^"]+)"/.exec(removed.abc);
+        if (tag) {
+            const meter = getMeterInfo_s();
+            const at = nextPitchQuarters_s(meter);
+            const key = Math.round(at / meter.beatQuarters);
+            if (onGrid_s(at, meter.beatQuarters) && harmony_s[key] === tag[1]) delete harmony_s[key];
+        }
+        if (phrase.rhythmCells.length === 0 && phrase.tonalCells.length === 0) phrases_s.pop();
         renderAll_s();
     }
 
@@ -1586,28 +1775,29 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
     }
 
     function chordInEffect_s(quarters, meter) {
-        for (let b = Math.floor(quarters / meter.beatQuarters + 1e-9); b >= 0; b--) {
-            if (harmony_s[b]) return harmony_s[b];
-        }
-        return null;
+        const at = quarters / meter.beatQuarters + 1e-9;
+        let latest = null;
+        Object.keys(harmony_s).forEach(function(key) {
+            if (Number(key) <= at && (latest === null || Number(key) > Number(latest))) latest = key;
+        });
+        return latest === null ? null : harmony_s[latest];
     }
 
-    /* A pattern tagged with a chord fits that chord; otherwise it fits when most of its
-       pitches (first and last counted double) are chord tones. */
+    /* A pattern tagged with a chord fits that chord. An untagged one fits when it starts and
+       ends on chord tones and every pitch outside the chord is a passing or neighboring
+       tone: reached by step and left by step. */
     function cellFitsChord_s(cell, symbol) {
         const tag = /^"([^"]+)"/.exec(cell.abc);
         if (tag) return tag[1] === symbol;
         const chord = getPalette_s().filter(function(c) { return c.sym === symbol; })[0];
         if (!chord) return true;
-        let fit = 0, total = 0;
-        cell.pitches.forEach(function(token, i) {
-            const pc = tokenPc_s(token);
-            if (pc === null) return;
-            const weight = (i === 0 || i === cell.pitches.length - 1) ? 2 : 1;
-            total += weight;
-            if (chord.tones.indexOf(pc) !== -1) fit += weight;
+        const pcs = cell.pitches.map(tokenPc_s).filter(function(pc) { return pc !== null; });
+        if (pcs.length === 0) return true;
+        function inChord(pc) { return chord.tones.indexOf(pc) !== -1; }
+        function isStep(a, b) { const d = (a - b + 12) % 12; return d === 1 || d === 2 || d === 10 || d === 11; }
+        return inChord(pcs[0]) && inChord(pcs[pcs.length - 1]) && pcs.every(function(pc, k) {
+            return inChord(pc) || (isStep(pcs[k - 1], pc) && isStep(pc, pcs[k + 1]));
         });
-        return total === 0 || fit / total >= 0.6;
     }
 
     function applyFitDimming_s() {
@@ -1622,15 +1812,11 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
     function insertBlankBar_s() {
         if (currentOpenPhrase_s()) return;
         const meter = getMeterInfo_s();
-        const unit = meter.Lfraction * 4;
-        let at = phrases_s.reduce(function(sum, ph) { return sum + phraseRhythmQuartersSoFar_s(ph, meter.Lfraction); }, 0);
+        const at = phrases_s.reduce(function(sum, ph) { return sum + phraseRhythmQuartersSoFar_s(ph, meter.Lfraction); }, 0);
         const barEnd = (Math.floor(at / meter.barCapacity + 1e-9) + 1) * meter.barCapacity;
-        const cells = [];
-        const nextBeat = Math.min(barEnd, Math.ceil(at / meter.beatQuarters - 1e-9) * meter.beatQuarters);
-        if (nextBeat > at + 1e-9) { cells.push({ abc: "z" + fractionSuffix_s((nextBeat - at) / unit), hits: 0 }); at = nextBeat; }
-        for (; at < barEnd - 1e-9; at += meter.beatQuarters) cells.push({ abc: "z" + fractionSuffix_s(meter.beatQuarters / unit), hits: 0 });
         snapshotBeforeChange_s();
-        phrases_s.push({ rest: true, rhythmCells: cells, tonalCells: [], expansion: null });
+        phrases_s.push({ rest: true, tonalCells: [], expansion: null,
+            rhythmCells: [{ abc: "z" + fractionSuffix_s((barEnd - at) / (meter.Lfraction * 4)), hits: 0 }] });
         renderAll_s();
     }
 
@@ -1638,12 +1824,12 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         snapshotBeforeChange_s();
         if (symbol) harmony_s[chordCursor_s] = symbol;
         else delete harmony_s[chordCursor_s];
-        chordCursor_s++;
+        chordCursor_s = Math.floor(chordCursor_s + 1e-9) + 1;
         renderAll_s();
     }
 
     function moveChordCursor_s(step) {
-        chordCursor_s = Math.max(0, chordCursor_s + step);
+        chordCursor_s = step > 0 ? Math.floor(chordCursor_s + 1e-9) + 1 : Math.max(0, Math.ceil(chordCursor_s - 1e-9) - 1);
         renderFullNotation_s();
     }
 
@@ -1660,10 +1846,9 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         });
         const lastBeat = Math.max.apply(null, Object.keys(byBeat).map(Number));
         snapshotBeforeChange_s();
-        let current = null;
         for (let beat = 0; beat <= lastBeat; beat++) {
-            if (harmony_s[beat]) { current = harmony_s[beat]; continue; }
-            if (!byBeat[beat]) continue;
+            if (harmony_s[beat] || !byBeat[beat]) continue;
+            const current = chordInEffect_s(beat * meter.beatQuarters, meter);
             let best = null, bestScore = 0;
             palette.forEach(function(chord) {
                 let score = 0;
@@ -1673,7 +1858,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                 if (score > bestScore + 1e-9) { best = chord.sym; bestScore = score; }
             });
             if (beat === lastBeat && notes[notes.length - 1].pc === 0) best = palette[0].sym;
-            if (best && best !== current) { harmony_s[beat] = best; current = best; }
+            if (best && best !== current) harmony_s[beat] = best;
         }
         renderAll_s();
     }
@@ -1729,14 +1914,15 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         const meter = getMeterInfo_s();
         const rhythmHeader = "X:1\nM:" + meter.timeSignature + "\nL:" + meter.unitL + "\nK:clef=none\n";
         const rhythmOffset = pickupOffsetQuarters_s(meter.Lfraction, meter.barCapacity);
-        const rhythmBody = renderBarredWords_s(rhythmCells, null, rhythmOffset, meter.Lfraction, meter.barCapacity).join(" ");
+        const rhythmBody = renderBarredWords_s(rhythmCells, null, rhythmOffset, meter, null).join(" ");
         document.getElementById("cued-rhythm").value = rhythmBody ? rhythmHeader + rhythmBody : "";
         document.getElementById("cued-rhythm-paper").classList.toggle("is-empty", rhythmCells.length === 0);
         renderPaper_s("cued-rhythm-paper", rhythmHeader + rhythmBody);
 
         const tonalKey = getTonalKey_s();
         const tonalHeader = "X:1\nM:none\nK:" + tonalKey + "\n";
-        const tonalBody = joinCells_s(tonalCells);
+        const showChords = document.getElementById("show-pattern-chords").checked;
+        const tonalBody = showChords ? joinCells_s(tonalCells) : joinCells_s(tonalCells).replace(/"[^"]*"/g, "");
         document.getElementById("cued-tonal").value = tonalBody ? tonalHeader + tonalBody : "";
         document.getElementById("cued-tonal-paper").classList.toggle("is-empty", tonalCells.length === 0);
         renderPaper_s("cued-tonal-paper", tonalHeader + tonalBody);
@@ -1752,6 +1938,8 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                     " to match the rhythm — pick more tonal patterns, or choose an expansion below.";
             }
         }
+        document.getElementById("undo-rhythm").disabled = rhythmCells.length === 0;
+        document.getElementById("undo-tonal").disabled = tonalCells.length === 0;
         document.getElementById("cued-rhythm-note").textContent = rhythmNote;
         document.getElementById("cued-tonal-note").textContent = tonalNote;
     }
@@ -1833,13 +2021,13 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         const tonalKey = getTonalKey_s();
         const meter = getMeterInfo_s();
         const { Lfraction, timeSignature, barCapacity, unitL, beatQuarters } = meter;
-        const harmony = { beatQuarters: beatQuarters, chords: harmony_s };
 
-        const outputWords = [];
+        /* the whole song is spelled in one go, so beams and rests join across phrases */
+        const cells = [], pitches = [];
         let total = 0;
         fullPhrases_s().forEach(function(entry) {
-            outputWords.push.apply(outputWords,
-                renderBarredWords_s(entry.phrase.rhythmCells, entry.pitches, total, Lfraction, barCapacity, harmony));
+            cells.push.apply(cells, entry.phrase.rhythmCells);
+            pitches.push.apply(pitches, entry.pitches);
             total += phraseRhythmQuartersSoFar_s(entry.phrase, Lfraction);
         });
         melodyEndQuarters_s = total;
@@ -1848,13 +2036,9 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         const lastChord = Math.max.apply(null, [chordCursor_s].concat(Object.keys(harmony_s).map(Number)));
         if (lastChord * beatQuarters >= total - 1e-9) {
             const fillEnd = (Math.floor(lastChord * beatQuarters / barCapacity + 1e-9) + 1) * barCapacity;
-            const rests = [];
-            let at = total;
-            const nextBeat = Math.ceil(at / beatQuarters - 1e-9) * beatQuarters;
-            if (nextBeat > at + 1e-9) { rests.push({ abc: "z" + fractionSuffix_s((nextBeat - at) / (Lfraction * 4)) }); at = nextBeat; }
-            for (; at < fillEnd - 1e-9; at += beatQuarters) rests.push({ abc: "z" + fractionSuffix_s(beatQuarters / (Lfraction * 4)) });
-            outputWords.push.apply(outputWords, renderBarredWords_s(rests, null, total, Lfraction, barCapacity, harmony));
+            cells.push({ abc: "z" + fractionSuffix_s((fillEnd - total) / (Lfraction * 4)) });
         }
+        const outputWords = renderBarredWords_s(cells, pitches, 0, meter, harmony_s);
 
         const body = outputWords.join(" ");
         const abcString = "X:1\n%%MIDI program 4 \nM:" + timeSignature + "\nL:" + unitL +
@@ -1886,18 +2070,21 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
     }
 
     function eventBeat_s(event) {
-        return Math.floor(event.milliseconds / (60000 / getTempo_s()) + 1e-6);
+        return chordKey_s(event.milliseconds / (60000 / getTempo_s()));
     }
 
-    /* The chord cursor shows as the tinted note or rest on the staff; clicking one moves it there. */
+    /* The chord cursor shows as the tinted note or rest on the staff. Clicking a note or rest
+       moves it there, so the next chord picked changes over that note, on the beat or not. */
     function markChordCursor_s() {
         let current = null;
-        timedEvents_s().forEach(function(event) { if (eventBeat_s(event) <= chordCursor_s) current = event; });
+        timedEvents_s().forEach(function(event) { if (eventBeat_s(event) <= chordCursor_s + 1e-6) current = event; });
         markElements_s("sq-cursor", current);
         const meter = getMeterInfo_s();
         const beatsPerBar = Math.round(meter.barCapacity / meter.beatQuarters);
         document.getElementById("chord-position").textContent =
-            "Bar " + (Math.floor(chordCursor_s / beatsPerBar) + 1) + (beatsPerBar > 1 ? ", beat " + (chordCursor_s % beatsPerBar + 1) : "");
+            "Bar " + (Math.floor(chordCursor_s / beatsPerBar + 1e-9) + 1) +
+            (beatsPerBar > 1 ? ", beat " + (Math.floor(chordCursor_s + 1e-9) % beatsPerBar + 1) : "") +
+            (onGrid_s(chordCursor_s, 1) ? "" : ", selected note");
     }
 
     function staffClicked_s(abcElem) {
@@ -1952,6 +2139,18 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         }, 400);
     }
 
+    /* The settings panel hangs from the right edge of its button, shifted as needed to stay on screen. */
+    function placeSettingsPanel_s() {
+        const details = document.querySelector("#songs-root .sq-settings");
+        if (!details.open) return;
+        const panel = details.querySelector(".sq-multi-panel");
+        const anchor = details.getBoundingClientRect();
+        const width = panel.offsetWidth, viewport = document.documentElement.clientWidth;
+        const left = Math.max(8, Math.min(anchor.right - width, viewport - width - 8));
+        panel.style.right = "auto";
+        panel.style.left = (left - anchor.left) + "px";
+    }
+
     function load_s() {
         const S_CFG = window.TOOL_CONFIG || {};
         const configured = (S_CFG.tonalCollections || []).filter(function(name) { return patternObject[name]; });
@@ -1993,6 +2192,8 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         syncStickyOffset_s();
         window.addEventListener("load", syncStickyOffset_s);
         window.addEventListener("resize", syncStickyOffset_s);
+        document.querySelector("#songs-root .sq-settings").addEventListener("toggle", placeSettingsPanel_s);
+        window.addEventListener("resize", placeSettingsPanel_s);
 
         refreshRhythmFamily_s();
         renderTonalBank_s();
@@ -2027,10 +2228,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                 return;
             }
 
-            const letterIndex = e.key.length === 1 ? key.charCodeAt(0) - 65 : -1;
-            if (letterIndex >= 0 && letterIndex < activeTonalCells_s.length) {
-                appendTonalCell_s(letterIndex);
-            }
+            if (e.key.length === 1 && tonalHotkeys_s[key]) addTonalCell_s(tonalHotkeys_s[key]);
         });
     }
 </script>
@@ -2072,6 +2270,17 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                             <option value="9">A</option><option value="10">Bb</option><option value="11">B</option>
                         </select>
                     </div>
+                        <div class="sq-group">
+                            <span class="sq-label">Meter</span>
+                            <select id="rhythm-family-selector" onchange="refreshRhythmFamily_s()">
+                                <option value="duple">Duple</option>
+                                <option value="triple">Triple</option>
+                            </select>
+                        </div>
+                        <div class="sq-group">
+                            <span class="sq-label">Time signature</span>
+                            <select id="time-signature-selector" onchange="renderRhythmBank_s(); renderAll_s();"></select>
+                        </div>
                     <div class="sq-group">
                         <span class="sq-label">Tempo</span>
                         <input type="number" id="tempo-input" min="30" max="240" value="90" title="Macrobeats per minute" onchange="tempoChanged_s()">
@@ -2091,21 +2300,14 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
         <!-- Rhythm input -->
         <div class="sq-card">
             <h2 class="anchored">Rhythm</h2>
+            <div class="cell-bank">
+                <div class="cell-buttons" id="rhythm-cell-buttons"></div>
+            </div>
             <div id="cued-rhythm-paper" class="sq-paper"></div>
             <textarea id="cued-rhythm" spellcheck="false" readonly=""></textarea>
             <div class="cue-note" id="cued-rhythm-note"></div>
             <div class="sq-row" style="margin-bottom:.6rem">
-                <div class="sq-group">
-                    <span class="sq-label">Meter</span>
-                    <select id="rhythm-family-selector" onchange="refreshRhythmFamily_s()">
-                        <option value="duple">Duple</option>
-                        <option value="triple">Triple</option>
-                    </select>
-                </div>
-                <div class="sq-group">
-                    <span class="sq-label">Time signature</span>
-                    <select id="time-signature-selector" onchange="renderRhythmBank_s(); renderAll_s();"></select>
-                </div>
+                <button type="button" class="sq-btn" id="undo-rhythm" onclick="undoBuffer_s('rhythmCells')" aria-label="Undo last rhythm pattern">Undo</button>
                 <div class="cell-criteria">
                     <label><input type="checkbox" id="crit-macrobeat" onchange="criteriaChanged_s()"> Macrobeat</label>
                     <label><input type="checkbox" id="crit-microbeat" onchange="criteriaChanged_s()"> Microbeat</label>
@@ -2114,18 +2316,20 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                     <label><input type="checkbox" id="crit-rest" onchange="criteriaChanged_s()"> Rest</label>
                 </div>
             </div>
-            <div class="cell-bank">
-                <div class="cell-buttons" id="rhythm-cell-buttons"></div>
-            </div>
         </div>
 
         <!-- Tonal input -->
         <div class="sq-card">
             <h2 class="anchored">Tonal</h2>
+            <div id="tonal-tabs"></div>
+            <div class="cell-bank">
+                <div class="cell-buttons" id="tonal-cell-buttons"></div>
+            </div>
             <div id="cued-tonal-paper" class="sq-paper"></div>
             <textarea id="cued-tonal" spellcheck="false" readonly=""></textarea>
             <div class="cue-note" id="cued-tonal-note"></div>
             <div class="sq-row" style="margin-bottom:.6rem">
+                <button type="button" class="sq-btn" id="undo-tonal" onclick="undoBuffer_s('tonalCells')" aria-label="Undo last tonal pattern">Undo</button>
                 <div class="sq-group">
                     <span class="sq-label">Collections</span>
                     <details class="sq-multi" id="tonal-collection-picker">
@@ -2137,6 +2341,13 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                     </details>
                 </div>
                 <div class="sq-group">
+                    <span class="sq-label">Show</span>
+                    <select id="pattern-grouping" onchange="renderTonalBank_s()">
+                        <option value="collection">Selected collections</option>
+                        <option value="all">All patterns</option>
+                    </select>
+                </div>
+                <div class="sq-group">
                     <span class="sq-label">Octave</span>
                     <div class="sq-row">
                         <button type="button" class="sq-btn" onclick="changeOctave_s(-1)" aria-label="Octave down">−</button>
@@ -2144,11 +2355,8 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
                         <button type="button" class="sq-btn" onclick="changeOctave_s(1)" aria-label="Octave up">+</button>
                     </div>
                 </div>
-                <label class="sq-check"><input type="checkbox" id="show-pattern-chords" onchange="renderTonalBank_s()"> Show chords</label>
-            </div>
-            <div class="cell-tabs" id="tonal-tabs"></div>
-            <div class="cell-bank">
-                <div class="cell-buttons" id="tonal-cell-buttons"></div>
+                <label class="sq-check"><input type="checkbox" id="show-pattern-chords" onchange="renderTonalBank_s(); renderCuedFields_s()"> Show chords</label>
+                <label class="sq-check" id="include-stepwise-label"><input type="checkbox" id="include-stepwise" checked="" onchange="renderTonalBank_s()"> Include stepwise patterns (passing and neighboring tones)</label>
             </div>
         </div>
 

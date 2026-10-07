@@ -19,6 +19,10 @@
 // Stop time (ctx.stop): one hit on beat 1 — kick, snare and a closed hat — then nothing; a
 // { pos, choke:"cymbals" } event asks the player to damp whatever cymbal is still ringing. The
 // bar after it comes back in with a crash.
+// Grooves (ctx.opts.groove = a GROOVES id; unset or "auto" = the time described above): fixed one- or
+// two-bar patterns for the Latin, Caribbean, folk and rock styles. They are written for 4/4 (a 2/4 bar
+// takes the first half; 3/4 only where the groove has its own three-beat bar) and fall back to the
+// time above in any other meter. The Latin and Caribbean ones play no fills: a tom fill is a rock habit.
 // Meters: 3/4 is a jazz waltz (ride "ding, ding-a, ding", hat foot on 2 and 3, kick on 1). The
 // compound meters (ctx.compound: 6/8, 9/8, 12/8, where a beat is a dotted quarter) get their own
 // groove whatever opts.feel says: all three eighths on the cymbal, kick on 1 (and 3), backbeat on
@@ -71,6 +75,28 @@
     ]
   };
 
+  // Grooves: bars = [[pos, piece, vel], ...] for each bar of the pattern (two-bar patterns follow the
+  // form bar's parity). "cym" / "cymOff" = the time-keeping cymbal chosen in opts.ride, on and off the beat.
+  function cymEighths(on, off){ var h = []; for (var b = 0; b < 4; b++){ h.push([b, "cym", on]); h.push([b + 0.5, "cymOff", off]); } return h; }
+  function cymBeats(v){ return [[0, "cym", v], [1, "cym", v], [2, "cym", v], [3, "cym", v]]; }
+  var FOOT = [[1, "hatFoot", 0.36], [3, "hatFoot", 0.36]];
+  var BOSSA_K = [[0, "kick", 0.46], [1.5, "kick", 0.38], [2, "kick", 0.46], [3.5, "kick", 0.38]];
+  var GROOVES = {
+    bossa:   { bars: [ cymEighths(0.48, 0.38).concat(BOSSA_K, FOOT, [[0, "rim", 0.50], [1.5, "rim", 0.50], [3, "rim", 0.50]]),
+                       cymEighths(0.48, 0.38).concat(BOSSA_K, FOOT, [[1, "rim", 0.50], [2.5, "rim", 0.50]]) ] },
+    clave:   { bars: [ cymBeats(0.52).concat([[1.5, "cymOff", 0.42], [3.5, "cymOff", 0.42], [1, "rim", 0.56], [2, "rim", 0.56], [1.5, "kick", 0.36], [3, "kick", 0.44]], FOOT),
+                       cymBeats(0.52).concat([[1.5, "cymOff", 0.42], [3.5, "cymOff", 0.42], [0, "rim", 0.56], [1.5, "rim", 0.56], [3, "rim", 0.56], [1.5, "kick", 0.36], [3, "kick", 0.44]], FOOT) ] },
+    chacha:  { bars: [ cymBeats(0.56).concat([[0, "kick", 0.44], [1, "rim", 0.52], [3, "tomHi", 0.50], [3.5, "tomMid", 0.46]]) ] },
+    tango:   { bars: [ cymBeats(0.36).concat([[0, "kick", 0.50], [1.5, "kick", 0.38], [2, "kick", 0.46], [3, "kick", 0.42]]) ] },
+    calypso: { bars: [ cymEighths(0.40, 0.52).concat([[0, "kick", 0.52], [2, "kick", 0.50], [1.5, "rim", 0.54], [3, "rim", 0.54]]) ] },
+    onedrop: { bars: [ cymEighths(0.36, 0.52).concat([[2, "kick", 0.60], [2, "rim", 0.58]]) ] },
+    boomchick: { bars: [ [[0, "kick", 0.54], [2, "kick", 0.50], [1, "snare", 0.40], [3, "snare", 0.40], [1, "hatFoot", 0.40], [3, "hatFoot", 0.40]] ],
+                 three: [[0, "kick", 0.54], [1, "snare", 0.36], [2, "snare", 0.38], [1, "hatFoot", 0.38], [2, "hatFoot", 0.38]], fills: true },
+    rock:    { bars: [ cymEighths(0.58, 0.44).concat([[0, "kick", 0.62], [2, "kick", 0.58], [2.5, "kick", 0.46], [1, "snare", 0.66], [3, "snare", 0.66]]) ], fills: true },
+    halftime:{ bars: [ cymEighths(0.54, 0.40).concat([[0, "kick", 0.60], [1.5, "kick", 0.46], [2, "snare", 0.68]]) ], fills: true },
+    funk:    { bars: [ cymEighths(0.54, 0.44).concat([[0, "kick", 0.62], [1.5, "kick", 0.50], [2.5, "kick", 0.52], [1, "snare", 0.66], [3, "snare", 0.66]]) ], fills: true }
+  };
+
   // ctx.intensity (0..1, from the player's conductor; 0.5 = the plain pattern)
   function busy(ctx){ return ctx.intensity == null ? 0.5 : ctx.intensity; }
   function onEighthGrid(x){ return Math.abs(x * 2 - Math.round(x * 2)) < 1e-6; }
@@ -105,7 +131,7 @@
       var size = fillSize(ctx, beats); if (!size) return null;
       var playable = FILLS[size].filter(function (f){ return !(f.trip && ctx.tempo > 220); });
       if (ctx.compound){ var tr = playable.filter(function (f){ return f.trip; }); if (tr.length) playable = tr; }   // the beat is already in three
-      else if (ctx.opts && ctx.opts.feel === "straight") playable = playable.filter(function (f){ return !f.trip; });
+      else if ((ctx.opts && ctx.opts.feel === "straight") || grooveOf(ctx)) playable = playable.filter(function (f){ return !f.trip; });
       var pool = playable.filter(function (f){ return f !== lastFill; });   // don't play the same fill twice running
       if (!pool.length) pool = playable;
       var f = pool[Math.floor(rng() * pool.length)];
@@ -147,6 +173,34 @@
       return ev;
     }
 
+    // the groove this bar is played in, or null for the jazz time
+    function grooveOf(ctx){
+      var g = ctx.opts && GROOVES.hasOwnProperty(ctx.opts.groove) ? GROOVES[ctx.opts.groove] : null, beats = ctx.beats || 4;
+      if (!g || ctx.compound) return null;
+      return (beats === 4 || beats === 2 || (beats === 3 && g.three)) ? g : null;
+    }
+    function grooveBar(ctx, g){
+      var ev = [], beats = ctx.beats || 4, cym = (ctx.opts && ctx.opts.ride) || "ride";
+      var beatPiece = cym === "hat" ? "hatClosed" : cym === "bell" ? "rideBell" : "ride", offPiece = cym === "hat" ? "hatClosed" : "ride";
+      var fill = g.fills ? chooseFill(ctx, beats) : null, timeEnds = fill ? beats - fill.n : beats;
+      var landing = afterFill; afterFill = null;
+      if (landing === "crash") ev.push({ pos:0, piece:"crash", vel:0.74 });
+      var pat = beats === 3 ? g.three : g.bars[ctx.index % g.bars.length];
+      pat.forEach(function (h){
+        if (h[0] >= timeEnds - 1e-6) return;
+        var piece = h[1] === "cym" ? beatPiece : h[1] === "cymOff" ? offPiece : h[1];
+        if (piece === "hatFoot" && cym === "hat") return;                // the hat is being played with the stick
+        if (h[0] === 0 && landing === "crash" && (h[1] === "cym" || h[1] === "cymOff")) return;
+        ev.push({ pos:h[0], piece:piece, vel:h[2] });
+      });
+      if (fill){
+        fill.hits.forEach(function (h){ var e = { pos: timeEnds + h[0], piece: h[1], vel: h[2] }; if (!onEighthGrid(h[0])) e.straight = true; ev.push(e); });
+        afterFill = fill.size === "small" ? (rng() < 0.4 ? "crash" : "kick") : (rng() < 0.9 ? "crash" : "kick");
+      }
+      ev.sort(function (a, b){ return a.pos - b.pos; });
+      return ev;
+    }
+
     function stopBar(){
       afterFill = "crash";
       return [ { pos:0, piece:"kick", vel:0.70 }, { pos:0, piece:"snare", vel:0.62 }, { pos:0, piece:"hatClosed", vel:0.55 },
@@ -156,6 +210,7 @@
     function bar(ctx){
       if (ctx.stop) return stopBar();
       if (ctx.compound) return compoundBar(ctx);
+      var gr = grooveOf(ctx); if (gr) return grooveBar(ctx, gr);
       var ev = [], beats = ctx.beats || 4, i, waltz = beats === 3;
       var two = !!(ctx.opts && ctx.opts.bassFeel === "two");
       var fill = chooseFill(ctx, beats), timeEnds = fill ? beats - fill.n : beats;
@@ -236,5 +291,5 @@
     return { bar: bar, ending: ending, reset: reset };
   }
 
-  global.BandDrums = { create: create };
+  global.BandDrums = { create: create, GROOVES: GROOVES };
 })(typeof window !== "undefined" ? window : globalThis);

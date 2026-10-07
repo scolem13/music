@@ -17,7 +17,7 @@
 //        one nearest `center`
 //        candidate { midis:[low..high], inversion, label, bass, tones:[names low..high], note }
 //   ChordVoicings.guitar(chord, style, opts)        -> [candidate]   style: "drop2" | "drop3" | "triad3" | "shell3"
-//                                                                    | "triadvl" | "uppervl"
+//                                                                    | "triadvl" | "uppervl" | "guide2"
 //        opts { tuning:[40,45,50,55,59,64], maxFret:15, maxSpan:4, stringSets:[[idx..]..], allPositions:false }
 //        candidate adds { strings:[{ string, fret, midi }], stringSet:[idx..], span, order }
 //   ChordVoicings.nearest(candidates, prevMidis, target) -> candidate with the least voice motion
@@ -27,6 +27,12 @@
 //        from the same voice of prevMidis (string by string when both sit on one string set),
 //        pulled gently toward `target` so a long tune does not climb the neck. Falls back to
 //        nearest() when the note counts differ.
+//   ChordVoicings.handMotion(prevStrings, strings)  -> how far the fretting HAND moves between two shapes
+//        ([{ string, fret }] each): frets the hand position shifts, plus half the fret change on each
+//        string both shapes use, plus 0.75 for each string picked up or let go. 0 = the same grip.
+//   ChordVoicings.easiest(candidates, prevStrings, prevMidis, target) -> the candidate that is the smallest
+//        move for the hand (voice motion only breaks near-ties); with no previous shape, the one
+//        nearest fret `target` (default 5). This is how fretted instruments are voice-led.
 //   ChordVoicings.analyze(chord) / .reduce(chord, n) / .intervalsFromFormula("1 b3 5 b7")
 //
 //   standard  every chord tone in close position, one candidate per inversion (extensions
@@ -58,6 +64,9 @@
 //           C7 -> E dim, Dm7 -> F, Bm7b5 -> D minor); a 6th chord its relative triad (6-R-3),
 //           a 7sus the triad a tone below the root (b7-9-4). Chords with no 7th give triads.
 //   Ask for these with allPositions and one stringSets entry, then pick with lead().
+//   guide2  two-note chords on the adjacent string PAIRS 4-5, 3-4 and 2-3 (never the outer strings):
+//           the 3rd and 7th (6th) of a 7th chord in either order, root and 3rd of a plain triad,
+//           4th and b7th of a 7sus, root and 5th of a power chord
 // triad3 and shell3 answer for each other (a 7th chord asked for as triad3 gives shells, a
 // triad asked for as shell3 gives triads), so either always yields something. One shape per
 // string set and inversion (the lowest on the neck) unless allPositions is set. A fret span
@@ -170,6 +179,11 @@
       return [r, th, sv].sort(function (x, y){ return x.off - y.off; });
     }
     if (T.length < 2) return { kind: "none", tones: T, note: "" };
+    if (style === "guide2"){
+      var lo2 = a.third && a.seventh ? a.third : a.rootTone, hi2 = a.third && a.seventh ? a.seventh : (a.third || a.fifth);
+      if (lo2 && hi2 && lo2 !== hi2) return { kind: "pair", tones: [lo2, hi2].sort(function (x, y){ return x.off - y.off; }), note: "" };
+      return { kind: "pair", tones: T.slice(0, 2), note: "" };
+    }
     if (T.length === 2) return { kind: "dyad", tones: T, note: "" };
     if (style === "triadvl" || style === "uppervl"){
       var tr = leadTriad(a, style === "uppervl");
@@ -433,7 +447,10 @@
   function stringSets(style, kind, n){
     var sets = [], i;
     function push(a){ if (a[a.length - 1] < n && a[0] >= 0) sets.push(a); }
-    if (kind === "dyad"){                                                                        // power chord: same grips in every style
+    if (kind === "pair"){                                                                        // two-note chords: inner adjacent pairs, highest first
+      for (i = n - 3; i >= 1; i--) push([i, i + 1]);
+      if (!sets.length) for (i = n - 2; i >= 0; i--) push([i, i + 1]);                           // fewer than four strings: any pair
+    } else if (kind === "dyad"){                                                                 // power chord: same grips in every style
       for (i = n - 3; i >= 0; i--) push([i, i + 1, i + 2]);
     } else if (kind === "four"){
       if (style === "drop3") for (i = 0; i + 4 < n; i++) push([i, i + 2, i + 3, i + 4]);          // one skipped string above the bass
@@ -454,6 +471,7 @@
   function fits(style, kind, m){
     var n = m.length, a = m[0] + 12;
     if (kind === "shell") return true;
+    if (kind === "pair") return m[1] - m[0] < 12;
     if (kind === "dyad") return m[n - 1] - m[0] === 12;
     if (kind === "four"){
       if (m[3] - m[1] >= 12) return false;
@@ -493,8 +511,8 @@
     opts = opts || {};
     var tuning = opts.tuning || DEFAULT_TUNING, nStr = tuning.length;
     var maxFret = opts.maxFret == null ? 15 : opts.maxFret, maxSpan = opts.maxSpan == null ? 4 : opts.maxSpan;
-    if (["drop2", "drop3", "triad3", "shell3", "triadvl", "uppervl"].indexOf(style) < 0) return [];
-    var led = style === "triadvl" || style === "uppervl";             // close triads, named by tone order
+    if (["drop2", "drop3", "triad3", "shell3", "triadvl", "uppervl", "guide2"].indexOf(style) < 0) return [];
+    var led = style === "triadvl" || style === "uppervl" || style === "guide2";   // named by tone order
     var v = voicesFor(chord, style), tones = v.tones, root = mod12(chord.root || 0), out = [];
     if (v.kind === "none") return out;
     var voices = v.kind === "dyad" ? [0, 1, 0] : tones.map(function (_, i){ return i; });   // tone index per voice
@@ -604,6 +622,27 @@
     return best || nearest(cands, prev, target);
   }
 
+  // ---- the fretting hand ----
+  function handPos(strings){ var p = Infinity; strings.forEach(function (s){ if (s.fret > 0 && s.fret < p) p = s.fret; }); return p === Infinity ? 0 : p; }
+  function handMotion(prev, cur){
+    if (!prev || !prev.length || !cur || !cur.length) return 0;
+    var cost = Math.abs(handPos(cur) - handPos(prev)), at = {}, used = {};
+    prev.forEach(function (s){ at[s.string] = s.fret; });
+    cur.forEach(function (s){ used[s.string] = 1; cost += at[s.string] == null ? 0.75 : 0.5 * Math.abs(s.fret - at[s.string]); });
+    prev.forEach(function (s){ if (!used[s.string]) cost += 0.75; });
+    return cost;
+  }
+  function easiest(cands, prevStrings, prevMidis, target){
+    if (!cands || !cands.length) return null;
+    var t = typeof target === "number" ? target : 5, has = !!(prevStrings && prevStrings.length), best = null, bestCost = Infinity;
+    cands.forEach(function (c){
+      var pos = handPos(c.strings || []);
+      var cost = has ? handMotion(prevStrings, c.strings || []) + 0.2 * motion(prevMidis || [], c.midis) + 0.12 * Math.abs(pos - t) : Math.abs(pos - t);
+      if (cost < bestCost - 1e-9){ best = c; bestCost = cost; }
+    });
+    return best;
+  }
+
   // The menu both pages list from. sheetOnly = drawn by the Chord Sheet's own fret-position
   // search, not by guitar() here.
   var STYLES = {
@@ -613,14 +652,15 @@
     guitar: [ { id:"standard", label:"Standard", sheetOnly:true }, { id:"shell", label:"Shell (R-3-7)", sheetOnly:true },
               { id:"drop2", label:"Drop 2" }, { id:"drop3", label:"Drop 3" },
               { id:"triad3", label:"Triads (three strings)" }, { id:"shell3", label:"7ths, no 5th (three strings)" },
-              { id:"triadvl", label:"Voice-led triads (root-3rd-5th)" }, { id:"uppervl", label:"Voice-led upper triads (3rd-5th-7th)" } ]
+              { id:"triadvl", label:"Voice-led triads (root-3rd-5th)" }, { id:"uppervl", label:"Voice-led upper triads (3rd-5th-7th)" },
+              { id:"guide2", label:"Two-note chords (3rd & 7th)" } ]
   };
 
   global.ChordVoicings = {
     styles: function (instrument){
       return (STYLES[instrument] || []).map(function (s){ var o = { id:s.id, label:s.label }; if (s.sheetOnly) o.sheetOnly = true; return o; });
     },
-    piano: piano, guitar: guitar, nearest: nearest, motion: motion, lead: lead,
+    piano: piano, guitar: guitar, nearest: nearest, motion: motion, lead: lead, handMotion: handMotion, easiest: easiest,
     analyze: analyze, reduce: reduce, intervalsFromFormula: intervalsFromFormula,
     DEFAULT_TUNING: DEFAULT_TUNING.slice()
   };

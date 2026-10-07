@@ -1545,16 +1545,16 @@ document.addEventListener('DOMContentLoaded', async function () {
       c.appendChild(note);
     } else {
       c.appendChild(el('div', 'as-notation-msg', kind === 'bass'
-        ? 'No fixed bar to print: this bass line is generated fresh each bar from the chords.'
-        : 'No fixed bar to print: the band picks a figure for each bar.'));
+        ? (e.group && e.group !== 'Jazz' ? 'The same figure every bar, described below.' : 'No fixed bar to print: this bass line is generated fresh each bar from the chords.')
+        : kind === 'drums' ? 'The pattern is described below.' : 'No fixed bar to print: the band picks a figure for each bar.'));
     }
     c.appendChild(el('p', 'as-desc', e.desc));
     var tags = el('div', 'as-tags');
     (e.tags || []).forEach(function (t) { tags.appendChild(el('span', 'as-tag genre', t)); });
-    tags.appendChild(el('span', 'as-tag instr', kind === 'bass' ? 'Bass' : 'Piano / guitar'));
+    tags.appendChild(el('span', 'as-tag instr', kind === 'bass' ? 'Bass' : kind === 'drums' ? 'Drums' : 'Piano / guitar'));
     c.appendChild(tags);
     var a = el('a', 'as-link', 'Play in Backing Track');
-    a.href = kind === 'bass'
+    a.href = kind === 'drums' ? cat.url({ drums: e.id }) : kind === 'bass'
       ? cat.url({ bass: e.id })
       : cat.url({ rhythm: e.id, feel: (e.feel === 'swing' || e.feel === 'straight') ? e.feel : undefined });
     c.appendChild(a);
@@ -1585,6 +1585,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     'These are the patterns the band on the Backing Track page plays: a bass line, a comping rhythm, a feel and a cymbal. Each card links to the page with that choice already selected.'));
   root.appendChild(group('Bass lines', cat.bass, 'bass'));
   root.appendChild(group('Comping rhythms', cat.comp, 'comp'));
+  if (cat.drums) root.appendChild(group('Drum grooves', cat.drums, 'drums'));
+  if (cat.styles) { var sg = el('div', 'as-group'); sg.appendChild(el('div', 'as-group-title', 'Styles'));
+    sg.appendChild(noteLine('Each style sets a feel, bass line, comping rhythm, drum groove and voicings that belong together:',
+      cat.styles.map(function (x) { return { label: x.label, desc: x.genres + '. ' + x.desc }; })));
+    root.appendChild(sg); }
   var g = el('div', 'as-group');
   g.appendChild(el('div', 'as-group-title', 'Feels and cymbals'));
   g.appendChild(noteLine('Feels:', cat.feels || []));
