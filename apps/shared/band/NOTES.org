@@ -401,3 +401,28 @@ more forms and feels (minor blues, rhythm changes, bossa, jazz waltz); audio exp
   A pickup would be one more (short) bar at the end of that list; rule still to write: the intro's last bar
   leaves room for it. The short LAST bar that balances a pickup is separate.
 - Not built: an intro with its own chords; other parts sitting out; a drum fill into the top.
+
+* Chord entry from a keyboard (apps/shared/chord-entry.js, "Enter the changes from a keyboard" on the Backing Track page)
+- ChordEntry.analyse / symbol: Director's chord table and key tie-break, tightened: every played note must belong to the chord, the
+  perfect fifth may be missing from four-note chords, the lowest note decides C6 / Am7 before the key does. Added sus, 9ths, 13, 6/9, add9, 5.
+  Director itself is unchanged and still has its own copy of the analysis (inline in tools/_director.qmd).
+- ChordEntry.listener: "step" = everything pressed until all keys are up; "live" = reported 70 ms after the first note, timed at that note.
+- ChordEntry.grid: bars of symbols in eighth-note units; put / hold / back (step), place (quantized), load (from a parsed chart), toAbc.
+- In time: the page's own player runs the bars once (choruses 1, bass and comp faders at 0, groove "click" for a metronome) and
+  player.where(t) gives the unrounded beat a chord was played on. Swung off-beats are un-swung before snapping.
+- Tests: tests/band/entry/t_entry.js ("ENTRY OK"), tests/band/entry/entry.cdp.js ("ENTRY UI OK").
+** VERIFY with a real MIDI keyboard: nothing here has been played by hand. Timing offset default is 0 ms; the 70 ms settle time is a guess.
+** TODO Rootless voicings are named as what their notes spell (E G Bb D = Em7b5, not C9). Needs either a bass note in the left hand or context.
+** TODO The played notes are thrown away once the chord is named. Keeping them would let the band play the voicings as entered (as pins).
+** TODO In-time takes always replace the changes: no overdub, no loop-until-right, no punch-in on a range of bars.
+** TODO No sustain pedal, no computer-keyboard notes; the on-screen keys are a plain row, not a piano layout.
+** TODO Undo covers one-at-a-time entry only, and cannot bring back the changes that were there before the first chord.
+** TODO The panel sits near the bottom of the page, far from the chart it fills in.
+** LATER (user, 2026-10-07): choose voicings on the Chord Sheet by MIDI entry. The chord is already known there, so the notes say which
+   voicing is meant: C7 with [E, Bb] = guide tones; [C, G, Bb, E] = drop 2. Not built. What it needs:
+   - a classifier: for the card's chord, run ChordVoicings.piano(chord, style, { allOctaves:true }) over every style and compare the played
+     notes' intervals from the bottom (octave-free); report style + inversion, or "as played" when nothing matches;
+   - Chord Sheet keeps ONE voicing style per instrument (S.instruments.get(id).voicingStyle) and per chord only an index (t.voicings[inst])
+     and, after a Backing Track hand-off, t.played = { midis }. A per-chord style needs either a per-chord override or the "As played" path;
+   - a way to say which card is listening, and ChordEntry.listener("step") + the Web MIDI code from the Backing Track page.
+   The entered voicings already have a road to the band: Chord Sheet's hand-off sends pins.

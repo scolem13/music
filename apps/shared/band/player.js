@@ -415,6 +415,14 @@
       isPlaying: function (){ return state === "playing"; },
       state: function (){ return state; },
       context: function (){ return shared ? shared.ctx : null; },   // the AudioContext, once it exists
+      // What the listener was hearing at context time t (now if omitted): the bar's info and how many
+      // beats into it, unrounded. null when nothing is sounding. For timing something played along.
+      where: function (t){
+        if (!session) return null;
+        var ctx = session.ctx, L = session.linAt((t == null ? ctx.currentTime : t) - (ctx.outputLatency || 0)), tl = session.timeline, e = null;
+        for (var i = 0; i < tl.length; i++){ if (tl[i].L <= L + 1e-6) e = tl[i]; else break; }
+        return e ? { info: e.info, pos: L - e.L, beats: e.beats } : null;
+      },
       setTempo: function (bpm){ c.tempo = baseTempo = clamp(+bpm || c.tempo, 30, 400); if (session) session.setTempo(c.tempo); },
       setTranspose: function (n){ c.transpose = n | 0; if (session) session.refreshForm(); },
       setChart: function (parsed){ c.parsed = parsed; if (session) session.refreshForm(); },

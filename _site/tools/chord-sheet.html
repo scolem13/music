@@ -1948,7 +1948,15 @@ function superFretVoicings(tokens,inst,tuning,styleId){
     return{t,pos:positions[idx],fingers:computeFretboardFingerings(positions[idx])};
   });
 }
-function superPlay(el,midis){el.addEventListener('click',()=>{if(window.MusicAudio&&midis.length)MusicAudio.chord(midis,1.3)})}
+// A voicing on the band's sampled instruments (the sounds of the Backing Track page): piano for the
+// keyboard, guitar for fretted instruments, electric bass for a bass. Falls back to the plain synth.
+function hearChord(midis,inst){
+  if(!midis||!midis.length)return;
+  const sound=!inst||inst.type==='keyboard'?'piano':/bass/i.test(inst.id||'')?'ebass':'guitar';
+  if(window.BandPlayer&&BandPlayer.chord){BandPlayer.chord(midis,{inst:sound,dur:1.8}).catch(()=>{if(window.MusicAudio)MusicAudio.chord(midis,1.3)});return}
+  if(window.MusicAudio)MusicAudio.chord(midis,1.3);
+}
+function superPlay(el,midis){el.addEventListener('click',()=>hearChord(midis,null))}
 function renderSuperKeyboard(voiced){
   const all=voiced.flatMap(v=>v.midis),{startMidi,endMidi,whites}=selectKeyboardRange(all);
   const G=104,WW=40,LH=50,top=8,kbY=top+LH*voiced.length+8,KH=118,w=G+WW*whites.length+10,h=kbY+KH+8;
@@ -2093,7 +2101,7 @@ function buildDiagramCard(inst, tuning, t){
   card.addEventListener('click',e=>{
     if(e.target.closest('select'))return;
     if(e.target.closest('.diagram-title')){
-      if(window.MusicAudio&&card._midis&&card._midis.length) MusicAudio.chord(card._midis,1.3);
+      hearChord(card._midis,inst);
       return;
     }
     const nm=e.target.closest('.note-marker');
@@ -2809,6 +2817,9 @@ renderChips();
 })();
 </script>
 <script src="../apps/shared/audio.js?v=5"></script>
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/band/sounds.js?v=3"></script>
+<script src="../apps/shared/band/player.js?v=99"></script>
 <script src="../apps/shared/establish-button.js"></script>
 </div>
 

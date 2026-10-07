@@ -960,9 +960,9 @@
 <script src="/apps/shared/band/bass.js?v=9"></script>
 <script src="/apps/shared/band/comp.js?v=12"></script>
 <script src="/apps/shared/band/catalog.js?v=12"></script>
-<script src="/apps/shared/band/drums.js?v=5"></script>
+<script src="/apps/shared/band/drums.js?v=6"></script>
 <script src="/apps/shared/band/sounds.js?v=3"></script>
-<script src="/apps/shared/band/player.js?v=98"></script>
+<script src="/apps/shared/band/player.js?v=99"></script>
 <script>
 (function () {
   var SF = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';

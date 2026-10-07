@@ -54,3 +54,4 @@ The sample CDN is sometimes unreachable. `node meter/fetch-samples.js` mirrors t
 - `tests/band/pat/accomp.cdp.js` ("ACCOMP OK") and `tests/band/sheet/hear.cdp.js` ("HEAR OK"): the band audio on the Accompaniment Styles page and the Chord Sheet. Run from `tests/band/lead` with the server on 8500.
 - `node tests/band/pat/t_timefeel.js` ("TIME FEEL OK") and `tests/band/pat/timefeel-ui.cdp.js` ("TIME FEEL UI OK"): half time / double time in the engine and on the page.
 - `tests/band/pat/intro.cdp.js` ("INTRO OK"): intros (vamp / last bars, drums waiting, not when starting part-way, cleared by other changes).
+- `node tests/band/entry/t_entry.js` ("ENTRY OK") and `tests/band/entry/entry.cdp.js` ("ENTRY UI OK", from `tests/band/lead` with the server): chord entry from a keyboard. Notes are fed through `window.__btEntry.on(midi, vel, ms)` / `.off(midi, ms)`; no MIDI device is involved.
