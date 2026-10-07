@@ -27,6 +27,6 @@ const { launch } = require("./cdp.js"); const assert = require("assert");
     console.log("sheet progression:", txt, "| 'As played' shown:", /as played/i.test(body));
     assert(/Dm7\s+G7\s+Cmaj7\s+A7/.test(txt), "progression came back"); assert(/as played/i.test(body), "as-played view");
     await b.shot("roundtrip-sheet.png");
-    const errs = b.errors.filter(e => !/supabaseUrl/.test(e)); console.log("errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
+    const errs = b.errors.filter(e => !/supabaseUrl|createClient/.test(e)); console.log("errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
     console.log("ROUND TRIP OK");
   } finally { await b.close(); } })().catch(e => { console.error("FAILED:", e.message); process.exit(1); });

@@ -47,7 +47,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert(/triadvl/.test(styles) && /uppervl/.test(styles));
     for (const st of ["triadvl", "uppervl"]){ await set("bt-voicing", st); await set("bt-tempo-n", "260"); await ev(`document.getElementById("bt-play").click()`);
       await waitFor(`/bar 6/.test(document.getElementById("bt-status").textContent)`, 20000, st + " plays"); await ev(`document.getElementById("bt-play").click()`); await b.sleep(300); }
-    let errs = b.errors.filter(e => !/supabaseUrl/.test(e)); console.log("backing track errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
+    let errs = b.errors.filter(e => !/supabaseUrl|createClient/.test(e)); console.log("backing track errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
 
     // Chord Sheet: voice-led triads on strings 4-3-2; picking a shape moves the chords after it
     await b.goto(B + "/tools/chord-sheet.html"); await b.sleep(1200);
@@ -66,6 +66,6 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
       const f2 = c.split(" | ").map(x => +/fret (\d+)/.exec(x)[1]); assert(f2[1] > frets[1], "the second chord followed the first up the neck");
       await b.shot("sheet-" + st.replace(/:/g, "-") + ".png");
     }
-    errs = b.errors.filter(e => !/supabaseUrl/.test(e)); console.log("chord sheet errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
+    errs = b.errors.filter(e => !/supabaseUrl|createClient/.test(e)); console.log("chord sheet errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
     console.log("METER + TRIAD PAGES OK");
   } finally { await b.close(); } })().catch(e => { console.error("FAILED:", e.message); process.exit(1); });

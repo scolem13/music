@@ -29,6 +29,6 @@ const { launch } = require("./cdp.js"); const assert = require("assert");
     await set("bt-key", "Bb"); await b.sleep(200); assert.strictEqual(await b.eval(`document.querySelectorAll('#bt-chart .bt-cyc').length`), 2);
     await b.eval(`document.getElementById("bt-play").click()`); await b.sleep(300);
     assert.strictEqual(await b.eval(`document.getElementById("bt-tempo-n").value`), "280");
-    const errs = b.errors.filter(e => !/supabaseUrl/.test(e)); console.log("errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
+    const errs = b.errors.filter(e => !/supabaseUrl|createClient/.test(e)); console.log("errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0);
     console.log("PRACTICE OK");
   } finally { await b.close(); } })().catch(e => { console.error("FAILED:", e.message); process.exit(1); });

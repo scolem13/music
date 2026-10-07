@@ -1,7 +1,8 @@
 #+TITLE: Backing Track band — state and to-do for the next session
 #+TODO: TODO DECIDE | DONE
 
-Written 2026-10-06 at the end of the first build session. Broader ideas live in
+Written 2026-10-06 at the end of the first build session; updated the same day after the
+second (guitar voice-led triads, and 3/4, 6/8, 12/8). Broader ideas live in
 apps/chord-library/PROJECT.org ("Backing Track <-> Chord Sheet integrations").
 
 * State
@@ -27,8 +28,34 @@ apps/chord-library/PROJECT.org ("Backing Track <-> Chord Sheet integrations").
 Also changed: tools/_chord-sheet.qmd, tools/_accomp-styles.qmd, apps/shared/tune-chart.js (additive),
 apps/shared/soundfont.js (probe filename fix), apps/shared/abc-transpose.js (N.C. passes through), _quarto.yml (nav).
 
-Tests and browser drivers are in the session scratchpad only, not in the repo. If they are wanted
-long-term they need a home (the repo has no test directory yet).
+Tests and browser drivers are in tests/band/ (see its README.md).
+
+* Added in the second session
+** Guitar voice-led triads
+Two guitar voicing styles in voicings.js, both three notes on ONE string set, each chord taking the
+shape whose strings move least from the one before (ChordVoicings.lead):
+- =triadvl= root-3rd-5th of every chord (a 7th chord gives its plain triad).
+- =uppervl= the triad on the 3rd of a 7th chord (3-5-7), 6-R-3 for a 6th chord, b7-9-4 for a 7sus.
+The band plays them on strings 4-3-2 up to fret 12 (GUITAR_SETS in harmony.js). The Chord Sheet has a
+menu item per string set; a shape picked by hand is kept and the chords after it follow.
+Known: through a cycle of fourths (ii-V-I-VI) the nearest shape is always the next one UP, so the
+line climbs the neck until it hits fret 12 and jumps back down. That is true voice leading, but it
+may not be what is wanted; an alternative is to keep every chord inside one five-fret position.
+** Meters
+- A beat is the meter's lower note, except in 6/8, 9/8 and 12/8 (compound), where it is the dotted
+  quarter: 6/8 has 2 beats, 12/8 has 4, and the tempo counts dotted quarters. BandHarmony.meterInfo
+  decides; form bars, ctx and bar records carry =meter= and =compound=.
+- In a compound bar x.5 is the beat's THIRD eighth (the player warps it to 2/3); x.333 needs straight:true.
+- 3/4: jazz waltz (ride ding, ding-a, ding; hat foot on 2 and 3; kick on 1), bass walks three quarters.
+- 6/8, 12/8: every eighth on the cymbal, kick on 1 (and 3), backbeat on 2 (and 4), whatever Feel says
+  (the Feel menu is disabled). Bass walks one note per beat with pickup eighths; the riff is a shuffle.
+  Comping uses the same figures as 4/4, which land on the triplet grid.
+- The page has a Meter menu that re-writes the three blues presets; custom ABC keeps its own M: line.
+- Notation writes compound bars in eighths (M:12/8, Q:3/8=); MIDI writes the time signature and
+  converts the tempo to quarters.
+- NOT done: 5/4, 7/4 and other meters still get the generic four-beat patterns cut to length; 2/2 is
+  counted as two half-note beats; no 12/8-specific comping figure (repeated triplet chords); a tune
+  that changes between simple and compound meter keeps one tempo number for both kinds of beat.
 
 * First thing next session: LISTEN
 ** TODO Listen to the swing trio (jazz blues, 120 and 200 bpm) and note what is wrong
@@ -37,6 +64,9 @@ Mix was balanced by loudness measurement only. Suspects: ride level, feathered k
 Kick 0.50 / rim 0.55 / bell levels are guesses.
 ** TODO Listen to guitar comping
 Guitar gain was never measured. Four-to-the-bar shells are not always root position.
+** TODO Listen to 3/4, 6/8 and 12/8 (Meter menu), and to the two voice-led triad styles on guitar
+Compound drum levels (snare 0.60, kick 0.54, eighths 0.34/0.44) and the default tempos (3/4 132,
+6/8 72, 12/8 60) are guesses. The 6/8 bar is short (2 beats), so a figure every bar may be too busy.
 ** TODO Listen to Variation: Strict vs Some vs Loose
 Arc is [0.30, 0.50, 0.65, 0.80] in player.js; it restarts every 4th chorus when looping (may feel abrupt).
 Bass lay -6 ms, comp +8 ms are starting values.
@@ -47,7 +77,7 @@ Bass lay -6 ms, comp +8 ms are starting values.
 ** DECIDE Two linked pages, or fold diagrams into Backing Track (needs diagram code extracted)
 ** DECIDE Should rootless m7b5 drop the root (it keeps it, like dim7/sus/aug)
 ** DECIDE Name "Boogaloo riff" (one edit in catalog.js renames it on both pages)
-** DECIDE Keep the scratch tests: move them into the repo?
+** DECIDE Voice-led triads: keep both styles (plain and upper), and let them climb the neck or hold one position
 
 * Variation: remaining steps (agreed plan, do one at a time and listen between)
 ** TODO Step 3: embellishments on top of a pattern
@@ -70,7 +100,7 @@ Each needs an entry in bass.js and catalog.js.
 ** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
 ** TODO Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size
 ** TODO Count-in and the final ending hit are not notated or exported
-** TODO Meters other than 4/4 are untested in comp figures, notation and MIDI
+** TODO Meters other than 4/4, 3/4, 6/8, 9/8, 12/8 are untested in comp figures, notation and MIDI
 ** TODO "Both" Roman mode is crowded at phone width in two-chord bars with a flat root
 ** TODO "Start at bar" still shows its old number while a cycle is on
 ** TODO Chord Sheet print preview with notation on has not been checked; staff is small (180px)

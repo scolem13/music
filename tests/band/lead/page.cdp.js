@@ -2,7 +2,7 @@
 const { launch } = require("./cdp.js");
 const assert = require("assert");
 const URL = "http://127.0.0.1:8500/tools/backing-track.html";
-const KNOWN = /supabaseUrl|favicon/;          // pre-existing site noise: unconfigured Supabase demo keys
+const KNOWN = /supabaseUrl|createClient|favicon/;          // pre-existing site noise: unconfigured Supabase demo keys
 (async () => {
   const b = await launch({ width: 1280, height: 900 });
   const $v = id => `document.getElementById(${JSON.stringify(id)})`;

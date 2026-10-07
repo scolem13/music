@@ -1,5 +1,7 @@
 // bass.js — upright bass part for the jazz band engine (needs harmony.js).
 // Walking quarter notes by default, or a two-feel when ctx.opts.bassFeel === "two".
+// Stop time (ctx.stop): a short root on beat 1, silence through beat 2, then a lead-in to the next
+// bar's root on the last beats (eighths in the riff feel, quarters otherwise).
 // Any number of beats to the bar: 3/4 walks three quarters; in the compound meters (ctx.compound:
 // 6/8, 9/8, 12/8) a beat is a dotted quarter, the line walks one note per beat with some pickup
 // eighths (written x.5 = the beat's third eighth), and the riff becomes a shuffle figure.
@@ -324,8 +326,28 @@
       return ev;
     }
 
+    // Stop time: root, a gap, then walk up into the next root from a whole step (and a 4th) below.
+    function stopBar(ctx){
+      var c = firstChord(ctx.chords) || global.BandHarmony.chordAt(ctx.chords, 0), next = firstChord(ctx.nextChords), beats = ctx.beats, ev = [];
+      if (!c){ st.pending = null; return []; }
+      var root = startNote(c, true, 0.6);
+      ev.push({ pos: 0, dur: 0.45, midi: root, vel: vel(0.88) }); played(root);
+      if (!next || beats < 2){ st.pending = null; return ev; }
+      var t = nearestNot(next.bass, root, 0.6), up = t - 5 >= LO, line = up ? [t - 5, t - 2, t - 1] : [t + 7, t + 2, t + 1];
+      var eighths = !ctx.compound && ctx.opts && (ctx.opts.bassFeel === "riff" || ctx.opts.feel === "straight");
+      var slots = beats < 3 ? [beats - 0.5] : eighths ? [beats - 1.5, beats - 1, beats - 0.5] : beats === 3 ? [2] : [beats - 2, beats - 1];
+      slots = slots.filter(function (p){ return p >= 2 || (beats < 3 && p >= 1.5); });           // nothing sounds on beat 2
+      line.slice(-slots.length).forEach(function (n, k){
+        var gap = (k + 1 < slots.length ? slots[k + 1] : beats) - slots[k];
+        ev.push({ pos: slots[k], dur: Math.round(gap * 0.92 * 1000) / 1000, midi: n, vel: vel(0.80) }); played(n);
+      });
+      st.offRoot = false; aim(t, next);
+      return ev;
+    }
+
     function bar(ctx){
       if (!ctx || !ctx.chords || !ctx.chords.length){ st.pending = null; return []; }     // N.C.: rest
+      if (ctx.stop) return stopBar(ctx);
       if (ctx.opts && ctx.opts.bassFeel === "riff") return riff(ctx);
       // playing well down (the first chorus when the band is allowed to build), a walking line starts in two
       return ((ctx.opts && ctx.opts.bassFeel === "two") || ctx.intensity < 0.36) ? two(ctx) : walk(ctx);

@@ -19,6 +19,9 @@
 // off-beat stays a push; hits past the end are dropped). In the compound meters (ctx.compound) a
 // beat is a dotted quarter and x.5 is its third eighth, so the same figures become 12/8 comping.
 //
+// Stop time (ctx.stop): one short chord on beat 1 and nothing else. The bar before it
+// (ctx.nextStop) does not push into it and lets nothing ring over the barline.
+//
 // Anticipation: a hit on the off-beat just before a chord change plays the UPCOMING chord
 // and is held across the change; after a push on the "and of 4" the next bar does not
 // re-attack beat 1. To time those holds, each bar's rhythm is settled one bar ahead.
@@ -142,6 +145,13 @@
       var H = global.BandHarmony, beats = ctx.beats, chords = ctx.chords, nextChords = ctx.nextChords || [];
       var su = setup(ctx.opts), style = su.style, inst = su.inst;
       var tempo = ctx.tempo || 120;
+      if (ctx.stop){
+        st.antic = false; st.plan = null; st.queue = [];
+        var c0 = H.chordAt(chords, 0), k0 = keyAt(ctx.index, chords, 0);
+        if (!c0) return [];
+        pick(c0, su, k0); st.started = true;
+        return st.prevV.length ? [{ pos: 0, dur: Math.max(0.3, 0.13 * tempo / 60), midis: st.prevV.slice(), vel: 0.68, inst: inst, of: k0 }] : [];
+      }
       if (su.four) return fourToBar(ctx, su);
       if (su.stabs || (!su.fig && !ctx.compound && ctx.opts && ctx.opts.feel === "straight")) return straightBar(ctx, su);
       if (st.fixed !== su.fig){ st.fixed = su.fig; st.queue = []; st.plan = null; }   // rhythm choice changed: replan
@@ -152,14 +162,15 @@
       var plan = st.plan; st.plan = null;
       var hits = (plan && plan.bar === ctx.bar && plan.sig === sigOf(chords)) ? plan.hits : realise(figName, chords, beats, st.antic);
       hits = hits.filter(function (h){ return h.pos < beats - 1e-6; });                       // the plan assumed a bar as long as the last one
-      if (ctx.last) hits = hits.filter(function (h){ return h.pos < beats - 0.5 - 1e-6; });   // leave the final hit to the ending
+      var close = ctx.last || ctx.nextStop;                                                   // the next bar is the ending or a stop: no push into it
+      if (close) hits = hits.filter(function (h){ return h.pos < beats - 0.5 - 1e-6; });      // leave that hit to the next bar
 
       var nextC = firstChord(nextChords);
       var lastHit = hits[hits.length - 1];
       var endsAntic = !!(lastHit && nextC && Math.abs(lastHit.pos - (beats - 0.5)) < 1e-6);
       fill(tempo, ctx.intensity);
-      var nextHits = ctx.last ? [] : realise(st.queue[0], nextChords, beats, endsAntic);
-      var nextFirst = ctx.last ? 0 : (nextHits.length ? nextHits[0].pos : Infinity);
+      var nextHits = close ? [] : realise(st.queue[0], nextChords, beats, endsAntic);
+      var nextFirst = close ? 0 : (nextHits.length ? nextHits[0].pos : Infinity);
 
       var sLen = Math.max(0.3 + rng() * 0.1, 0.13 * tempo / 60);       // a stab never gets shorter than ~130 ms
       var ev = [];
@@ -177,7 +188,7 @@
           for (var k = 0; k < chords.length; k++){ if (chords[k].pos > from + 1e-6){ changeAt = chords[k].pos; break; } }
           if (changeAt === beats && nextC && nextC.key === chord.key) changeAt = beats + (nextChords.length > 1 ? nextChords[1].pos : beats);
         }
-        if (ctx.last) changeAt = Math.min(changeAt, beats);
+        if (close) changeAt = Math.min(changeAt, beats);
         var room = Math.min(nextPos, changeAt) - h.pos;
         var dur = h.len === "S" ? Math.min(sLen, room - 0.05) : Math.min(2.5, room - 0.12);
         dur = Math.max(0.1, Math.min(Math.max(dur, 0.15), nextPos - h.pos - 0.02));
@@ -189,7 +200,7 @@
                   vel: Math.round(clamp(v, 0.45, 0.7) * 1000) / 1000, inst: inst, of: ck });
       });
       st.antic = endsAntic;
-      st.plan = { bar: ctx.bar + 1, sig: sigOf(nextChords), hits: nextHits };
+      st.plan = ctx.nextStop ? null : { bar: ctx.bar + 1, sig: sigOf(nextChords), hits: nextHits };
       return ev;
     }
 

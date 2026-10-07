@@ -24,5 +24,5 @@ const { launch } = require("./cdp.js"); const assert = require("assert");
     await b.goto(U + "?rhythm=garland&feel=swing&comp=guitar"); await b.sleep(900);
     assert.deepStrictEqual([await v("bt-rhythm"), await v("bt-comp")], ["garland", "guitar"]);
     await b.goto(U + "?bass=riff"); await b.sleep(900); assert.deepStrictEqual([await v("bt-bass"), await v("bt-feel")], ["riff", "straight"]);
-    const errs = b.errors.filter(e => !/supabaseUrl/.test(e)); console.log("errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0); console.log("OPTS OK");
+    const errs = b.errors.filter(e => !/supabaseUrl|createClient/.test(e)); console.log("errors:", JSON.stringify(errs)); assert.strictEqual(errs.length, 0); console.log("OPTS OK");
   } finally { await b.close(); } })().catch(e => { console.error("FAILED:", e.message); process.exit(1); });

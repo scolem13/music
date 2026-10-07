@@ -16,6 +16,9 @@
 // tempo, last and opts: bassFeel ("walk" | "two"), feel ("swing" | "straight": a straight-
 // eighths groove with cross-stick on 2 and 4) and ride ("ride" | "hat" | "bell": which
 // cymbal keeps the time).
+// Stop time (ctx.stop): one hit on beat 1 — kick, snare and a closed hat — then nothing; a
+// { pos, choke:"cymbals" } event asks the player to damp whatever cymbal is still ringing. The
+// bar after it comes back in with a crash.
 // Meters: 3/4 is a jazz waltz (ride "ding, ding-a, ding", hat foot on 2 and 3, kick on 1). The
 // compound meters (ctx.compound: 6/8, 9/8, 12/8, where a beat is a dotted quarter) get their own
 // groove whatever opts.feel says: all three eighths on the cymbal, kick on 1 (and 3), backbeat on
@@ -144,7 +147,14 @@
       return ev;
     }
 
+    function stopBar(){
+      afterFill = "crash";
+      return [ { pos:0, piece:"kick", vel:0.70 }, { pos:0, piece:"snare", vel:0.62 }, { pos:0, piece:"hatClosed", vel:0.55 },
+               { pos:0.3, choke:"cymbals", straight:true } ];
+    }
+
     function bar(ctx){
+      if (ctx.stop) return stopBar();
       if (ctx.compound) return compoundBar(ctx);
       var ev = [], beats = ctx.beats || 4, i, waltz = beats === 3;
       var two = !!(ctx.opts && ctx.opts.bassFeel === "two");

@@ -500,6 +500,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 #bt-root #bt-practice input[type=number]{width:4.2rem}
 #bt-chart .tc-bar.bt-cyc{background:rgba(216,167,83,.2)}
 #bt-chart .tc-bar.bt-cyc.tc-live{background:var(--tc-live-soft)}
+#bt-chart .tc-bar.bt-stop::after{content:"STOP";position:absolute;bottom:3px;right:5px;font:700 .56rem/1 var(--font-mono,monospace);letter-spacing:.06em;color:var(--site-ink-2,#5c5246)}
+#bt-root .bt-kit{margin-top:.9rem;padding-top:.7rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+#bt-root .bt-kit .bt-mixer{border-top:0;padding-top:0;margin-top:.6rem}
+#bt-root #bt-stops{width:6.5rem}
 #bt-chart .tc-bar.bt-start::before{content:"\25B6";position:absolute;top:3px;right:5px;font-size:.6rem;line-height:1;color:var(--site-accent-dk,#2b9c90)}
 </style>
 
@@ -551,6 +555,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     <div class="bt-row">
       <div class="bt-field"><label for="bt-bass">Bass line</label>
         <select id="bt-bass"></select></div>
+      <div class="bt-field"><label for="bt-bass-sound">Bass sound</label>
+        <select id="bt-bass-sound"><option value="upright">Upright bass</option><option value="electric">Electric bass</option></select></div>
       <div class="bt-field"><label for="bt-comp">Comping</label><select id="bt-comp"></select></div>
       <div class="bt-field"><label for="bt-rhythm">Comping rhythm</label><select id="bt-rhythm"></select></div>
       <div class="bt-field"><label for="bt-voicing">Chord voicings</label><select id="bt-voicing"></select></div>
@@ -560,6 +566,10 @@ document.addEventListener('DOMContentLoaded', async function () {
         <select id="bt-variation"><option value="0">Strict</option><option value="0.6" selected="">Some</option><option value="1">Loose</option></select></div>
       <div class="bt-field"><label for="bt-ride">Cymbal</label>
         <select id="bt-ride"><option value="ride">Ride</option><option value="hat">Closed hi-hat</option><option value="bell">Ride bell</option></select></div>
+      <div class="bt-field"><label for="bt-ride-sound">Ride cymbal</label>
+        <select id="bt-ride-sound"><option value="ride">Ride 1</option><option value="ride2">Ride 2</option></select></div>
+      <div class="bt-field"><label for="bt-stops" title="Stop time: on these bars the band plays beat 1 and stops; only the bass leads back into the next bar.">Stop on bar</label>
+        <input type="text" id="bt-stops" inputmode="numeric" placeholder="none" aria-describedby="bt-stops-hint"></div>
       <div class="bt-field"><label for="bt-countin">Count-in</label>
         <select id="bt-countin"><option value="1">1 bar</option><option value="2">2 bars</option><option value="0">None</option></select></div>
       <div class="bt-field"><label for="bt-choruses">Choruses</label>
@@ -570,6 +580,12 @@ document.addEventListener('DOMContentLoaded', async function () {
       <div class="bt-field"><label for="bt-vol-comp" id="bt-vol-comp-label">Piano volume</label><input type="range" id="bt-vol-comp" min="0" max="150" value="100"></div>
       <div class="bt-field"><label for="bt-vol-drums">Drums volume</label><input type="range" id="bt-vol-drums" min="0" max="150" value="100"></div>
     </div>
+    <details class="bt-fold bt-kit" id="bt-kit">
+      <summary>Drum kit mix</summary>
+      <div class="bt-mixer" role="group" aria-label="Drum kit mix" id="bt-kit-faders"></div>
+      <p class="bt-hint">Each fader is on top of the Drums volume. <button type="button" class="bt-btn" id="bt-kit-reset">Reset</button></p>
+    </details>
+    <p class="bt-hint" id="bt-stops-hint" hidden=""></p>
   </div>
 
   <div class="bt-panel" id="bt-practice">
@@ -662,7 +678,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   var PRESETS = [
     { id:"basic", label:"Basic blues", title:"Basic Blues", bars:"F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7" },
     { id:"quick", label:"Quick-change blues", title:"Quick-Change Blues", bars:"F7|Bb7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7" },
-    { id:"jazz", label:"Jazz blues", title:"Jazz Blues", bars:"F7|Bb7|F7|Cm7 F7|Bb7|Bdim7|F7|Am7 D7|Gm7|C7|F7 D7|Gm7 C7" }
+    { id:"jazz", label:"Jazz blues", title:"Jazz Blues", bars:"F7|Bb7|F7|Cm7 F7|Bb7|Bdim7|F7|Am7 D7|Gm7|C7|F7 D7|Gm7 C7" },
+    // the 16-bar blues of Watermelon Man: straight eighths, the riff bass, and a stop on bar 14.
+    // `set` = controls the preset moves; `stops` = bars the band stops on.
+    { id:"watermelon", label:"Watermelon Man (16 bars)", title:"Watermelon Man changes", bars:"F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|C7|Bb7|C7|Bb7|F7|F7",
+      stops:"14", tempo:132, set:{ "bt-feel":"straight", "bt-bass":"riff", "bt-rhythm":"stabs" } }
   ];
   function presetAbc(p, meterId){
     var m = meterDef(meterId) || METERS[0], bars = p.bars.split("|").map(function(b){
@@ -675,6 +695,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   // the shared ChordVoicings library (and falls back to the band's own list if it did not load).
   var COMPING = [
     { id:"piano", label:"Piano", name:"Piano", inst:"piano" },
+    { id:"epiano", label:"Electric piano", name:"Electric piano", inst:"piano", sound:"epiano" },   // the piano's voicings, another sound
     { id:"guitar", label:"Guitar", name:"Guitar", inst:"guitar" }
   ];
   // Bass lines and comping rhythms: names and descriptions live in the shared catalog, which the
@@ -763,7 +784,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     var key = $("bt-key").value || "F", text = presetAbc(p, $("bt-meter").value);
     if (key !== "F"){ try { text = AbcTranspose.transpose(text, key); } catch (e) {} }
     clearPins("you picked different changes");
+    $("bt-stops").value = p.stops || "";
+    if (p.set) Object.keys(p.set).forEach(function(id){ if ($(id).querySelector('option[value="' + p.set[id] + '"]')) $(id).value = p.set[id]; });
+    if (p.tempo && meterDef($("bt-meter").value) === METERS[0]){ $("bt-tempo").value = p.tempo; $("bt-tempo-n").value = p.tempo; if (player) player.setTempo(tempo()); }
     applyAbc(text, false);
+    if (player) player.setOpts(bandOpts());
   }
 
   // ---- menus ----
@@ -784,8 +809,23 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("bt-vol-comp-label").textContent = c.name + " volume";
   }
   $("bt-comp").parentNode.hidden = COMPING.length < 2;        // nothing to choose until a second instrument exists
+  // "14" or "6, 14" -> form bar indexes (0-based); anything that is not a bar number is ignored
+  function stopBars(){ var out = []; ($("bt-stops").value.match(/\d+/g) || []).forEach(function(t){ var n = parseInt(t, 10) - 1; if (n >= 0 && out.indexOf(n) < 0) out.push(n); }); return out; }
   function bandOpts(){ var c = compDef(); return { bassFeel: $("bt-bass").value, comp: c.inst, compRhythm: $("bt-rhythm").value, voicing: $("bt-voicing").value,
-    feel: $("bt-feel").value, variation: parseFloat($("bt-variation").value), ride: $("bt-ride").value, pins: pins ? pins.map : null }; }
+    feel: $("bt-feel").value, variation: parseFloat($("bt-variation").value), ride: $("bt-ride").value, pins: pins ? pins.map : null,
+    compSound: c.sound || c.inst, bassSound: $("bt-bass-sound").value, rideSound: $("bt-ride-sound").value, stops: stopBars() }; }
+  // only the sample sets the menus ask for are loaded
+  function neededSounds(){ var c = compDef(); return [$("bt-bass-sound").value === "electric" ? "ebass" : "bass", c.sound || c.inst, "kit"]; }
+  // drum kit mix: one fader per group of kit pieces
+  var KIT = [ { id:"kick", label:"Kick", pieces:["kick"] }, { id:"snare", label:"Snare and cross-stick", pieces:["snare","rim"] },
+              { id:"hat", label:"Hi-hat", pieces:["hatClosed","hatFoot","hatOpen"] }, { id:"ride", label:"Ride", pieces:["ride","rideBell"] },
+              { id:"crash", label:"Crash", pieces:["crash"] }, { id:"toms", label:"Toms", pieces:["tomHi","tomMid","tomLo"] } ];
+  KIT.forEach(function(k){
+    var f = document.createElement("div"); f.className = "bt-field";
+    f.innerHTML = '<label for="bt-kit-' + k.id + '">' + k.label + '</label><input type="range" id="bt-kit-' + k.id + '" min="0" max="150" value="100">';
+    $("bt-kit-faders").appendChild(f);
+  });
+  function kitMix(){ var m = {}; KIT.forEach(function(k){ var v = (parseInt($("bt-kit-" + k.id).value, 10) || 0) / 100; k.pieces.forEach(function(p){ m[p] = v; }); }); return m; }
   $("bt-key").value = "F";
   syncVoicings();
 
@@ -876,7 +916,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var any = pick("bt-feel", q.feel); any = pick("bt-bass", q.bass) || any; any = pick("bt-rhythm", q.rhythm) || any;
     if (pick("bt-comp", q.comp)){ syncVoicings(); any = true; }
     if (q.bass === "riff" && !q.feel) $("bt-feel").value = "straight";
-    if (any) player.setOpts(bandOpts());
+    if (any){ player.setInstruments(neededSounds()); player.setOpts(bandOpts()); }
   }
   function loadHandoff(){
     if (!/[?&]from=chord-sheet(&|$)/.test(location.search)) return;
@@ -894,6 +934,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var map = BandHarmony.pinMap(BandHarmony.buildForm(parsedC, 0), list);
     setPins(map, Object.keys(map).length);
     if (!pins) pinNote("Loaded the changes from Chord Sheet. None of its pinned voicings matched a chord, so the band chooses its own.", false, true);
+    player.setInstruments(neededSounds());
     player.setOpts(bandOpts());
   }
   // the most recent complete chorus as the band played it (or one generated now), handed to Chord Sheet
@@ -921,7 +962,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   loadPreset("basic");
   player = BandPlayer.create({
     parsed: parsedC, tempo: tempo(), transpose: 0,
-    instruments: ["bass", "piano", "guitar", "kit"],
+    instruments: neededSounds(), kit: kitMix(),
     countIn: parseInt($("bt-countin").value, 10), choruses: parseInt($("bt-choruses").value, 10),
     opts: bandOpts(),
     volumes: { bass: vol("bass"), comp: vol("comp"), drums: vol("drums") },
@@ -957,12 +998,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     return { n: n, start: numIn("bt-start", 1, n, 1), cyc: $("bt-cyc-on").checked, from: a, to: b };
   }
   function markChart(){
-    var p = practice();
+    var p = practice(), stops = stopBars();
     Array.prototype.forEach.call($("bt-chart").querySelectorAll(".tc-bar[data-bar]"), function(el){
       var fi = formSrc.indexOf(parseInt(el.getAttribute("data-bar"), 10)) + 1;
       el.classList.toggle("bt-cyc", p.cyc && fi >= p.from && fi <= p.to);
       el.classList.toggle("bt-start", !p.cyc && fi === p.start);
+      el.classList.toggle("bt-stop", stops.indexOf(fi - 1) >= 0);
     });
+    var over = stops.filter(function(i){ return i >= p.n; }), hint = $("bt-stops-hint");
+    hint.hidden = !over.length; hint.textContent = over.length ? "These changes have " + p.n + " bars, so there is no bar " + over.map(function(i){ return i + 1; }).join(", ") + " to stop on." : "";
   }
   function practiceSync(){
     if (!player || !parsedC) return;
@@ -1023,7 +1067,12 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("bt-rhythm").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-variation").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-ride").addEventListener("change", function(){ player.setOpts(bandOpts()); });
-  $("bt-comp").addEventListener("change", function(){ syncVoicings($("bt-voicing").value); player.setOpts(bandOpts()); });
+  $("bt-ride-sound").addEventListener("change", function(){ player.setOpts(bandOpts()); });
+  $("bt-bass-sound").addEventListener("change", function(){ player.setInstruments(neededSounds()); player.setOpts(bandOpts()); });
+  $("bt-stops").addEventListener("input", function(){ player.setOpts(bandOpts()); markChart(); });
+  KIT.forEach(function(k){ $("bt-kit-" + k.id).addEventListener("input", function(){ var m = kitMix(); k.pieces.forEach(function(p){ player.setKitVolume(p, m[p]); }); }); });
+  $("bt-kit-reset").addEventListener("click", function(){ KIT.forEach(function(k){ $("bt-kit-" + k.id).value = 100; k.pieces.forEach(function(p){ player.setKitVolume(p, 1); }); }); });
+  $("bt-comp").addEventListener("change", function(){ syncVoicings($("bt-voicing").value); player.setInstruments(neededSounds()); player.setOpts(bandOpts()); });
   $("bt-voicing").addEventListener("change", function(){ player.setOpts(bandOpts()); });
   $("bt-countin").addEventListener("change", function(){ player.setCountIn(parseInt($("bt-countin").value, 10)); });
   $("bt-choruses").addEventListener("change", function(){ player.setChoruses(parseInt($("bt-choruses").value, 10)); });

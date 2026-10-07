@@ -2,7 +2,7 @@
 const { launch } = require("../lead/cdp.js");
 const assert = require("assert");
 const URL = "http://127.0.0.1:8500/tools/backing-track.html";
-const KNOWN = /supabaseUrl|favicon/;
+const KNOWN = /supabaseUrl|createClient|favicon/;
 const OUT = __dirname + "/";
 (async () => {
   const b = await launch({ width: 1280, height: 900 });

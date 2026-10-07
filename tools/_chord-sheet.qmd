@@ -1824,7 +1824,10 @@ function importPlayed(h){
   S.instruments.get(instId).voicingStyle=PLAYED;
   u.fillStyles();u.resetStyleState();
   const note=document.getElementById('handoff-note');
-  if(note){note.textContent='Loaded from the Backing Track: each diagram shows the notes its band actually played (style "As played"). Pick another style from the menu to compare.';note.style.display='block'}
+  if(note){note.textContent='Loaded from the Backing Track: each diagram shows the notes its band actually played (style "As played"), with the same notes on a staff below it. Pick another style from the menu to compare.';note.style.display='block'}
+  // every voicing handed over is also written out on a staff under its diagram
+  const nb=document.getElementById('chk-notation');
+  if(nb&&!nb.checked){nb.checked=true;nb.dispatchEvent(new Event('change',{bubbles:true}))}
   applyAllVoiceLeading();scheduleRender();
   return true;
 }

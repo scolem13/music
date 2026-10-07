@@ -24,6 +24,12 @@
 //   player.load() / play() -> Promise     player.stop()     player.isPlaying() state() context()
 //   player.setTempo(bpm) setTranspose(semis) setChart(parsed) setVolume(part, v)
 //   player.setOpts(obj) setCountIn(n) setChoruses(n)
+//   player.setInstruments([names]) // the sample sets to have loaded (the page asks for the ones its menus need)
+//   player.setKitVolume(piece, v)  // fader for one kit piece, 0..1.5 (1 = as mixed); cfg.kit = { piece: v } to start with
+// Sounds: opts.bassSound "electric" plays the bass part on "ebass"; opts.compSound "epiano" plays
+// piano comping on "epiano"; opts.rideSound "ride2" swaps the ride cymbal. The parts never know.
+// Stop time: opts.stops = [form bar index, ...]. On those bars ctx.stop is true (the band hits beat 1
+// and only the bass leads back in) and the bar before gets ctx.nextStop, so nothing rings across.
 //   player.setStartBar(i)          // form bar the next play() starts on (after the count-in)
 //   player.setCycle(from, to)      // loop just those form bars (inclusive); setCycle(null) = whole form. Live.
 //   player.setTempoSteps([8, -3])  // bpm added at each repeat, taken in turn; null = off. cfg.onTempo(bpm) reports
@@ -65,6 +71,7 @@
   var STRUM = 0.010, VEL_JITTER = 0.06, WET = 0.55, MASTER = 1.0;
   var SEED = { bass: 101, comp: 211, drums: 307, human: 401 };
 
+  function isStop(opts, idx){ var s = opts && opts.stops; return !!(s && s.indexOf && s.indexOf(idx) >= 0); }
   var TEMPO_MIN = 40, TEMPO_MAX = 300;                      // limits for the tempo-step practice mode
   function clamp(v, lo, hi){ return v < lo ? lo : v > hi ? hi : v; }
   function mulberry32(a){ return function (){ a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a);
@@ -230,7 +237,7 @@
     beats = fb.beats;
     this.callParts("bar", { bar: this.barNo, index: this.formIdx, length: form.length, chorus: this.chorus, beats: beats,
       chords: fb.chords, nextChords: form[nextIdx].chords, tempo: this.tempo, last: last, loopEnd: atEnd, opts: c.opts,
-      meter: fb.meter, compound: !!fb.compound,
+      meter: fb.meter, compound: !!fb.compound, stop: isStop(c.opts, this.formIdx), nextStop: !last && isStop(c.opts, nextIdx),
       intensity: intensityFor(this.formIdx - r.from, r.to - r.from + 1, this.chorus, c.choruses, c.opts && c.opts.variation),
       phrase: { bar: (this.formIdx - r.from) % 4, turnaround: r.to - this.formIdx < 2, top: this.formIdx === r.from } }, L0);
     this.timeline.push({ L: L0, beats: beats, info: { bar: this.barNo, index: this.formIdx, chorus: this.chorus, src: fb.src, beats: beats, countIn: false } });
@@ -244,12 +251,18 @@
     var ev = p.ev, h = this.human, hz = this.c.humanize == null ? 1 : this.c.humanize, dest = this.bus.ins[p.part];
     var t = this.timeOf(L) + (LAY[p.part] + (h() + h() - 1) * JITTER[p.part]) * hz;
     var vel = clamp((ev.vel == null ? 0.7 : ev.vel) * (1 + (h() * 2 - 1) * VEL_JITTER * hz), 0, 1);
-    if (p.part === "drums") this.bank.play("kit", { piece: ev.piece, vel: vel }, t, dest);
-    else if (p.part === "bass") this.bank.play("bass", { midi: ev.midi, vel: vel, dur: (ev.dur || 0.9) * this.spb }, t, dest);
+    var o = this.c.opts || {};
+    if (ev.choke){ if (this.bank.choke) this.bank.choke(ev.choke, this.timeOf(L)); return; }
+    if (p.part === "drums"){
+      var piece = (ev.piece === "ride" && o.rideSound === "ride2") ? "ride2" : ev.piece, kv = this.c.kit && this.c.kit[ev.piece];
+      this.bank.play("kit", { piece: piece, vel: vel, gain: kv == null ? 1 : kv * kv }, t, dest);
+    }
+    else if (p.part === "bass") this.bank.play(o.bassSound === "electric" ? "ebass" : "bass", { midi: ev.midi, vel: vel, dur: (ev.dur || 0.9) * this.spb }, t, dest);
     else {
       var ms = (ev.midis || []).slice().sort(function (a, b){ return a - b; }), n = ms.length;
       var spread = h() * STRUM * hz, dur = (ev.dur || 0.4) * this.spb;     // chords are rolled very slightly, low to high
-      for (var i = 0; i < n; i++) this.bank.play(ev.inst || "piano", { midi: ms[i], vel: vel, dur: dur }, t + (n > 1 ? spread * i / (n - 1) : 0), dest);
+      var sound = ev.inst || "piano"; if (sound === "piano" && o.compSound === "epiano") sound = "epiano";
+      for (var i = 0; i < n; i++) this.bank.play(sound, { midi: ms[i], vel: vel, dur: dur }, t + (n > 1 ? spread * i / (n - 1) : 0), dest);
     }
     if (this.tap) this.tap({ part: p.part, time: t, L: L, pos: ev.pos, vel: vel, piece: ev.piece, midi: ev.midi, midis: ev.midis, dur: ev.dur });
   };
@@ -290,7 +303,7 @@
     var v = cfg.volumes || {};
     return { parsed: cfg.parsed || null, tempo: clamp(+cfg.tempo || 120, 30, 400), transpose: cfg.transpose | 0,
       countIn: cfg.countIn == null ? 1 : clamp(cfg.countIn | 0, 0, 2), choruses: Math.max(0, cfg.choruses | 0),
-      opts: Object.assign({}, cfg.opts), humanize: cfg.humanize,
+      opts: Object.assign({}, cfg.opts), humanize: cfg.humanize, kit: Object.assign({}, cfg.kit),
       volumes: { bass: v.bass == null ? 1 : v.bass, comp: v.comp == null ? 1 : v.comp, drums: v.drums == null ? 1 : v.drums },
       startBar: Math.max(0, cfg.startBar | 0), cycle: cfg.cycle || null, tempoSteps: cfg.tempoSteps || null,
       instruments: cfg.instruments || ["bass", "piano", "kit"] };
@@ -305,10 +318,11 @@
     function setState(s){ if (s === state) return; state = s; if (cfg.onState) cfg.onState(s); }
     function hidden(){ return typeof document !== "undefined" && document.hidden; }
 
-    function load(){
-      if (!loadP){
-        var a = audio();
+    function load(){                                            // the bank skips what it already has
+      var a = audio(), key = c.instruments.join(",");
+      if (!loadP || loadP.key !== key){
         loadP = a.bank.load(c.instruments, cfg.onLoadProgress).catch(function (e){ loadP = null; throw e; });
+        loadP.key = key;
       }
       return loadP;
     }
@@ -373,6 +387,8 @@
       setChart: function (parsed){ c.parsed = parsed; if (session) session.refreshForm(); },
       setVolume: function (part, v){ if (!(part in c.volumes)) return; c.volumes[part] = v; if (bus) bus.setVolume(part, v); },
       setOpts: function (o){ Object.assign(c.opts, o); },
+      setInstruments: function (list){ c.instruments = list.slice(); if (shared) load().catch(function (){}); },   // before the first play this only records the list
+      setKitVolume: function (piece, v){ c.kit[piece] = clamp(+v, 0, 1.5); },
       setCountIn: function (n){ c.countIn = clamp(n | 0, 0, 2); },
       setChoruses: function (n){ c.choruses = Math.max(0, n | 0); },
       setStartBar: function (i){ c.startBar = Math.max(0, i | 0); },                       // form bar index for the next play()

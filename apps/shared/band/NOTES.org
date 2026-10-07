@@ -57,6 +57,21 @@ may not be what is wanted; an alternative is to keep every chord inside one five
   counted as two half-note beats; no 12/8-specific comping figure (repeated triplet chords); a tune
   that changes between simple and compound meter keeps one tempo number for both kinds of beat.
 
+* Added in the third session (2026-10-07)
+- Drum kit mix: six faders (kick, snare + cross-stick, hi-hat, ride, crash, toms) on top of Drums volume.
+  player.setKitVolume(piece, v); the bank takes spec.gain.
+- Ride cymbal menu: Ride 1 / Ride 2 (the soundfont's second ride, kit piece "ride2", swapped in by the
+  player through opts.rideSound). The soundfont has no more rides; further ones need recorded samples.
+- Electric piano (Comping menu; piano voicings, instrument "epiano") and electric bass (Bass sound menu,
+  "ebass"). Gains set from raw sample levels, NOT by ear. Only the sample sets in use are loaded now.
+- Stop time: opts.stops = [form bar index]; page field "Stop on bar" (e.g. 14, or 6, 14). ctx.stop /
+  ctx.nextStop reach the parts; drums ask the player to damp ringing cymbals ({ choke:"cymbals" }).
+- Preset "Watermelon Man (16 bars)": sets straight eighths, riff bass, boogaloo stabs, tempo 132, stop on 14.
+  Picking another preset clears the stop but leaves the feel where it is.
+- "Show these voicings in Chord Sheet" now switches notation on there.
+Not done: stops are not saved in the ABC (they are a page setting); the stop bar is not marked in
+the notation panel; in a two-beat bar (6/8) the bass pickup necessarily falls in beat 2.
+
 * First thing next session: LISTEN
 ** TODO Listen to the swing trio (jazz blues, 120 and 200 bpm) and note what is wrong
 Mix was balanced by loudness measurement only. Suspects: ride level, feathered kick, reverb amount, piano register.
@@ -96,7 +111,6 @@ Each needs an entry in bass.js and catalog.js.
 ** TODO Chord Sheet auto-detects the wrong key for ii-V-I-VI (G for Dm7 G7 Cmaj7 A7); the key travels in the hand-off
 ** TODO Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
 ** TODO jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js
-** TODO Guitar samples always load even when only piano is used
 ** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
 ** TODO Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size
 ** TODO Count-in and the final ending hit are not notated or exported
@@ -112,7 +126,6 @@ Each needs an entry in bass.js and catalog.js.
 ** TODO Audit of the old accompaniment patterns (arranger.js / Accompaniment Styles page)
 Known problems: bass is a piano left hand (one MIDI program), no swing, maj7 chords get a flat 7th,
 root-position triads in one octave, one drum per eighth, rock fills for every style.
-** TODO Watermelon Man 16-bar changes preset
 ** TODO Recorded samples (structure is ready: replace zone lists in sounds.js)
 
 * Feature backlog (see PROJECT.org for the full list)

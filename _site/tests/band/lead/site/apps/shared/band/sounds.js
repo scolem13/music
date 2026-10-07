@@ -14,16 +14,20 @@
 //   bank.load(["bass","piano","kit"], onProgress)      -> Promise (idempotent; onProgress(done,total))
 //   bank.play("bass",  { midi:41, vel:0.8, dur:0.45 }, when, destNode)
 //   bank.play("kit",   { piece:"ride", vel:0.6 },      when, destNode)
+//   bank.choke("cymbals", when)                        // damp ringing cymbals (a stop-time hit)
 //   bank.stopAll()                                     // fade + cut everything sounding or scheduled
 //   bank.has(name)                                     // loaded and playable?
 //   BandSounds.define(name, def | function (sf) -> def)  // override/add an instrument at runtime
 //   BandSounds.pieces                                  // the kit-piece names the drum part may use
 //
 // vel is 0..1 (0.7 = normal mf); dur is in SECONDS here (the player converts from beats).
+// spec.gain (default 1) is a plain level trim on top: the player's per-piece drum faders.
+// Alternatives the player can swap in: "ebass" for "bass", "epiano" for "piano", and the kit
+// piece "ride2" (a second ride cymbal) for "ride".
 
 (function (global) {
   var SF_DEFAULT = "https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/";
-  var PIECES = ["kick","snare","rim","hatClosed","hatFoot","hatOpen","ride","rideBell","crash","tomHi","tomMid","tomLo","sticks"];
+  var PIECES = ["kick","snare","rim","hatClosed","hatFoot","hatOpen","ride","ride2","rideBell","crash","tomHi","tomMid","tomLo","sticks"];
 
   // ======================================================================================
   // INSTRUMENT DEFINITIONS — edit this block (and nothing else) to change the sounds.
@@ -54,15 +58,20 @@
                 zones: soundfontZones(sf, "acoustic_bass", 28, 57, 3) },
       piano:  { gain: 4.05, release: 0.12, tone: { base: 1200, range: 11000 },
                 zones: soundfontZones(sf, "acoustic_grand_piano", 43, 84, 3) },
+      // electric alternatives; gains set from the level of the raw samples against the two above, not yet by ear
+      ebass:  { gain: 1.1, release: 0.07,
+                zones: soundfontZones(sf, "electric_bass_finger", 28, 57, 3) },
+      epiano: { gain: 1.6, release: 0.14, tone: { base: 1500, range: 9000 },
+                zones: soundfontZones(sf, "electric_piano_1", 43, 84, 3) },
       guitar: { gain: 2.9, release: 0.08,
                 zones: soundfontZones(sf, "electric_guitar_jazz", 40, 78, 3) },
       kit:    { gain: 1.25,
                 zones: soundfontKit(sf, { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46,
-                                          crash:49, ride:51, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31 }),
+                                          crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31 }),
                 // per-piece trim (the soundfont's kick is ~8x hotter than its ride); group/chokes =
-                // the closed hat and the foot cut a ringing open hat
+                // the closed hat and the foot cut a ringing open hat; the cymbals can be damped by choke("cymbals")
                 pieces: { kick:{ gain:0.56 }, snare:{ gain:0.80 }, rim:{ gain:1.15 }, sticks:{ gain:0.50 },
-                          ride:{ gain:1.95 }, rideBell:{ gain:1.5 }, crash:{ gain:1.9 },
+                          ride:{ gain:1.95, group:"cymbals" }, ride2:{ gain:2.4, group:"cymbals" }, rideBell:{ gain:1.5, group:"cymbals" }, crash:{ gain:1.9, group:"cymbals" },
                           hatClosed:{ gain:1.6, chokes:"hat" }, hatFoot:{ gain:1.6, chokes:"hat" }, hatOpen:{ gain:1.4, group:"hat" },
                           tomHi:{ gain:0.95 }, tomMid:{ gain:0.95 }, tomLo:{ gain:0.95 } } }
     };
@@ -204,7 +213,8 @@
       var group = pickZones(def.zones.filter(function (z){ return z.buffer; }), spec); if (!group.length) return null;
       var key = inst + ":" + (spec.piece != null ? spec.piece : group[0].midi), z = group[(rr[key] = (rr[key] || 0) + 1) % group.length];
       var pc = (spec.piece != null && def.pieces && def.pieces[spec.piece]) || {};
-      var level = Math.pow(vel, def.curve || 1.6) * (def.gain || 1) * (z.gain || 1) * (pc.gain || 1);
+      var level = Math.pow(vel, def.curve || 1.6) * (def.gain || 1) * (z.gain || 1) * (pc.gain || 1) * (spec.gain == null ? 1 : Math.max(0, spec.gain));
+      if (!(level > 0)) return null;
       var t = Math.max(when || 0, ctx.currentTime);
 
       var src = ctx.createBufferSource(); src.buffer = z.buffer;
@@ -227,7 +237,8 @@
         g.gain.setTargetAtTime(0, end, rel / 3); src.stop(end + rel * 2 + 0.02);
       }
       live.add(v);
-      src.onended = function (){ live.delete(v); try { g.disconnect(); } catch (e) {} };
+      src.onended = function (){ live.delete(v); try { g.disconnect(); } catch (e) {}
+        if (pc.group && ringing[pc.group]){ var k = ringing[pc.group].indexOf(v); if (k >= 0) ringing[pc.group].splice(k, 1); } };
       return v;
     }
 
@@ -239,7 +250,7 @@
       ringing = {};
     }
 
-    return { load: load, play: play, stopAll: stopAll, has: function (n){ return !!ready[n]; }, context: ctx };
+    return { load: load, play: play, stopAll: stopAll, choke: function (group, when){ choke(group, Math.max(when || 0, ctx.currentTime)); }, has: function (n){ return !!ready[n]; }, context: ctx };
   }
 
   global.BandSounds = {

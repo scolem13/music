@@ -21,6 +21,9 @@ async function launch({ width = 1280, height = 900 } = {}) {
   const send = (method, params = {}) => new Promise((res, rej) => { const i = ++id; pending.set(i, { res, rej }); ws.send(JSON.stringify({ id: i, method, params })); });
   await send("Runtime.enable"); await send("Page.enable"); await send("Network.enable");
   await send("Emulation.setDeviceMetricsOverride", { width, height, deviceScaleFactor: 1, mobile: false });
+  // When the samples are mirrored locally (meter/fetch-samples.js), every page uses the mirror instead of the CDN.
+  if (fs.existsSync(require("path").join(__dirname, "site/sf/percussion-mp3"))) await send("Page.addScriptToEvaluateOnNewDocument", { source:
+    'Object.defineProperty(window, "getSoundfontUrl", { configurable: true, get: function(){ return function(){ return Promise.resolve("http://127.0.0.1:8500/sf/"); }; }, set: function(){} });' });
   const api = {
     logs, errors, failed, send,
     async goto(url) { const loaded = new Promise(r => { const h = ev => { const m = JSON.parse(ev.data); if (m.method === "Page.loadEventFired") { ws.removeEventListener("message", h); r(); } }; ws.addEventListener("message", h); }); await send("Page.navigate", { url }); await loaded; },
