@@ -70,6 +70,9 @@
                 zones: soundfontZones(sf, "acoustic_guitar_steel", 40, 84, 3) },
       cguitar:{ gain: 2.6, release: 0.08,
                 zones: soundfontZones(sf, "electric_guitar_clean", 40, 84, 3) },
+      // for hymns: the piano's voicings on a church organ (level a first guess; the samples are a few seconds long, so very long chords fade)
+      organ:  { gain: 1.3, release: 0.18,
+                zones: soundfontZones(sf, "church_organ", 36, 84, 3) },
       kit:    { gain: 1.25,
                 zones: soundfontKit(sf, { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46,
                                           crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 }),

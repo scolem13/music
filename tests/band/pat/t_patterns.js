@@ -17,7 +17,7 @@ const C = BandCatalog, GRID = Object.keys(BandComp.GRID), LINES = Object.keys(Ba
 GRID.forEach(id => assert(C.byId(C.comp, id), "catalog has comp " + id));
 LINES.forEach(id => assert(C.byId(C.bass, id), "catalog has bass " + id));
 C.styles.forEach(s => { assert(/^(swing|straight)$/.test(s.feel) && s.group && s.genres && s.desc, s.id);
-  [["bass", C.bass], ["rhythm", C.comp], ["drums", C.drums]].forEach(([k, l]) => assert(C.fits(C.byId(l, s[k]), s.id), s.id + ": its own " + k + " fits it"));
+  [["bass", C.bass], ["rhythm", C.comp], ["drums", C.drums]].forEach(([k, l]) => String(s[k]).split("+").forEach(id => assert(C.fits(C.byId(l, id), s.id), s.id + ": its own " + k + " fits it")));
   ["piano", "guitar"].forEach(i => { assert(C.voicings[i][s.voicing[i]].fits.includes(s.id), s.id + " " + i + " voicing"); assert(BandHarmony.hasStyle(i, s.voicing[i])); }); });
 ["piano", "guitar"].forEach(i => BandHarmony.styleList(i).forEach(v => assert(C.voicings[i][v.id], "voicing " + i + " " + v.id + " has genres")));
 Object.keys(BandDrums.GROOVES).forEach(id => assert(C.byId(C.drums, id), "catalog has groove " + id));
@@ -43,9 +43,10 @@ const want = { oompah: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3.5"], upbeats: [
                strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
                strum16: ["0 0.5 0.75 1.25 1.5 1.75 2 2.5 2.75 3.25 3.5 3.75"], sowhat: ["", "2 3.5"], maiden: ["0 1.5 3", "1.5 3"], takefive: ["0 1.5 3"], tresillo: ["0 1.5 3"], clave32: ["0 1.5 3", "1 2"], barbara: ["0 1 2 3.5", "0.5 1.5 2"], g333322: ["0 1.5 3", "0.5 2 3"], g33433: ["0 1.5 3", "1 2.5"],
                g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"],
-               quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
+               ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], hymn: ["0"], quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
 // (the piano's left-hand root under a strum or an lh pattern is a separate one-note event, marked arp like an arpeggio note)
-const rh = (id, evs) => BandComp.GRID[id].arp ? evs : evs.filter(e => !(e.arp && e.midis.length === 1));
+const rh = (id, evs) => BandComp.GRID[id].arp ? evs : BandComp.GRID[id].ballad ? evs.filter(e => e.midis.length > 1 && e.hand !== "L")   /* (the ballad: the right hand's chords and pairs) */
+  : evs.filter(e => !(e.arp && e.midis.length === 1));
 for (const id of GRID) gen("4/4", { compRhythm: id }, 5, ONE, 16).forEach(r => assert.strictEqual(pos(rh(id, r.parts.comp)), want[id][r.index % want[id].length], id + " bar " + r.index));
 // the left hand: one root below the chord each time a chord arrives, on the piano only, and never in the hand-off
 { const q = gen("4/4", { compRhythm: "quarters" }, 5, ONE, 8), lh = r => r.parts.comp.filter(e => e.arp);
@@ -124,15 +125,17 @@ const sig = r => pos(r.parts.comp);
   const recs = gen("4/4", { compRhythm: "charleston+and2" }, 21, ONE, 64), seen = new Set(recs.map(sig));
   assert(seen.has("0 1.5") && seen.has("1.5"), "both figures are heard: " + [...seen].join(" | ")); assert(seen.size <= 2, "and nothing else: " + [...seen].join(" | "));
 }
-{ // textures: one for each four-bar phrase, and all of them turn up
-  const recs = gen("4/4", { compRhythm: "four+bossa+upbeats" }, 22, ONE, 96), kinds = new Set();
+{ // textures: one is at home for each four bars, with at most one bar of another (a callback, a break or foreshadowing); all of them turn up
+  const recs = gen("4/4", { compRhythm: "four+bossa+upbeats" }, 22, ONE, 192), kinds = new Set(); let pure = 0, visited = 0;
   const kindOf = r => sig(r) === "0 1 2 3" ? "four" : sig(r) === "0.5 1.5 2.5 3.5" ? "upbeats" : /^(0 1.5 3|1 2.5)$/.test(sig(r)) ? "bossa" : "?" + sig(r);
-  for (let i = 0; i < recs.length; i += 4){ const k = kindOf(recs[i]); kinds.add(k); for (let j = 1; j < 4; j++) assert.strictEqual(kindOf(recs[i + j]), k, "one texture per phrase, bar " + (i + j)); }
-  assert.deepStrictEqual([...kinds].sort(), ["bossa", "four", "upbeats"]);
+  for (let i = 0; i < recs.length; i += 4){ const ks = [0, 1, 2, 3].map(j => kindOf(recs[i + j])), count = {}; ks.forEach(k => count[k] = (count[k] || 0) + 1);
+    const home = Object.keys(count).sort((a, b) => count[b] - count[a])[0]; kinds.add(home); assert(count[home] >= 2 && Object.keys(count).length <= 3 && ks[0] === home, "bars " + i + ": " + ks.join(" "));
+    if (count[home] === 4) pure++; else visited++; }
+  assert.deepStrictEqual([...kinds].sort(), ["bossa", "four", "upbeats"]); assert(pure > 8 && visited > 8, "plain spans " + pure + ", spans with a visitor " + visited);
 }
 { // figures and a texture together: no push into a phrase that may change texture
   const recs = gen("4/4", { compRhythm: "garland+charleston+four" }, 23, ONE, 96); let fig = 0, four = 0;
-  recs.forEach((r, i) => { if (sig(r) === "0 1 2 3") four++; else fig++; if (r.index % 4 === 3) assert(r.parts.comp.every(e => e.pos < 3.5), "bar " + i + " does not push over a phrase line"); });
+  recs.forEach((r, i) => { const isFour = x => sig(x) === "0 1 2 3"; if (isFour(r)) four++; else fig++; if (recs[i + 1] && isFour(recs[i + 1]) !== isFour(r)) assert(r.parts.comp.every(e => e.pos < 3.5), "bar " + i + " does not push into another texture"); });
   assert(fig > 8 && four > 8, "both kinds heard: " + fig + " / " + four);
 }
 { // "auto" in a set is ignored; a single member behaves as before; unknown ids fall back to Varied

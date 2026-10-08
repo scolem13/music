@@ -158,7 +158,30 @@
     this.countIn = this.countInLeft = clamp(c.countIn | 0, 0, 2);
     this.intro = this.formIdx === 0 ? introBars(this.form, c.intro) : []; this.introAt = 0;      // only from the top of the form
     this.pending = []; this.timeline = []; this.wantEnding = false; this.done = false; this.endL = null;
+    this.gen = []; this.firedL = 0;                          // form bars generated so far (for rewind), and how far events have been handed to the bank
   }
+  // Writing ahead (c.ahead): how many beats beyond the scheduling horizon are generated early, so the page can
+  // show the music before it is played: one pass of the form (or loop) plus a bar. Not while the tempo steps at
+  // each repeat (a second pending tempo change would have nowhere to live).
+  // Following the player (c.follow = 0..1, how loud the page hears the user): mostly that, a little of the conductor's arc.
+  Session.prototype.level = function (arc){ var f = this.c.follow; return f == null ? arc : clamp(0.3 * arc + 0.7 * f, 0, 1); };
+  Session.prototype.aheadBeats = function (){
+    var c = this.c; if (!c.ahead || c.follow != null || (c.tempoSteps && c.tempoSteps.length)) return 0;      // (music written ahead could not follow anyone)
+    var r = this.range(), n = 0, form = this.form; for (var i = 0; i < form.length; i++) if (r.has(i)) n += form[i].beats;
+    return n + (form[r.from] ? form[r.from].beats : 4);
+  };
+  // Something changed (options, choruses, loop, chart) while bars had been written ahead: throw away every bar
+  // that has not started to be scheduled and go back to generate it again. Returns its bar number, or null.
+  // The parts keep their state (they have "played" the discarded bars), which only costs a little continuity.
+  Session.prototype.rewind = function (){
+    var k = -1; for (var i = 0; i < this.gen.length; i++) if (this.gen[i].L0 > this.firedL + 1e-6){ k = i; break; }
+    if (k < 0) return null;
+    var g = this.gen[k], L0 = g.L0; this.gen.length = k;
+    this.nextL = L0; this.formIdx = g.formIdx; this.barNo = g.barNo; this.chorus = g.chorus; this.wantEnding = false; this.done = false; this.endL = null;
+    this.pending = this.pending.filter(function (p){ return p.L0 < L0 - 1e-6; });
+    this.timeline = this.timeline.filter(function (e){ return e.L < L0 - 1e-6; });
+    return g.barNo;
+  };
   // The bars of an intro: a vamp on the form's first chord, or the last bars of the form.
   function introBars(form, o){
     var n = o ? clamp(o.bars | 0, 0, 16) : 0, out = [], k;
@@ -219,6 +242,9 @@
                 ending: method === "ending", chords: bctx.chords, opts: Object.assign({}, bctx.opts), parts: {} };
     var tacet = bctx.tacet ? String(bctx.tacet).split(" ") : [];
     PARTS.forEach(function (p){ var part = self.parts[p]; if (!part || typeof part[method] !== "function" || tacet.indexOf(p) >= 0) return;
+      // the drummer listens: how busy and how loud the bass and the chords are in this bar, half and half with the conductor's intensity
+      if (p === "drums" && method === "bar"){ var n = 0, vs = 0; ["bass", "comp"].forEach(function (q){ (rec.parts[q] || []).forEach(function (e){ if (e.hand === "L") return; n++; vs += e.vel || 0.6; }); });
+        if (n){ var dens = clamp(n / (2 * (bctx.beats || 4)) * 1.3, 0, 1), loud = clamp((vs / n - 0.5) / 0.3, 0, 1); bctx.energy = clamp(0.5 * (bctx.intensity == null ? 0.5 : bctx.intensity) + 0.25 * dens + 0.25 * loud, 0, 1); } }
       try { var evs = part[method](bctx) || [], dyn = 0.86 + 0.28 * (bctx.intensity == null ? 0.5 : bctx.intensity);
         evs.forEach(function (e){ if (e && e.vel != null) e.vel = Math.round(clamp(e.vel * dyn, 0.03, 1) * 1000) / 1000; });   // louder as the band builds
         rec.parts[p] = evs; self.collect(p, evs, L0, bctx.beats, bctx.compound); }
@@ -264,18 +290,20 @@
     if (this.formIdx >= form.length || !r.has(this.formIdx)) this.formIdx = r.from;   // the cycle moved under us
     var fb = form[this.formIdx], atEnd = this.formIdx === r.to, nextIdx = atEnd ? r.from : (this.formIdx + 1) % form.length;
     var cp = r.pos(this.formIdx);
+    this.gen.push({ L0: L0, formIdx: this.formIdx, barNo: this.barNo, chorus: this.chorus }); if (this.gen.length > 600) this.gen.splice(0, this.gen.length - 600);
     var last = c.choruses > 0 && this.chorus >= c.choruses - 1 && atEnd;
     beats = fb.beats;
     this.callParts("bar", { bar: this.barNo, index: this.formIdx, length: form.length, chorus: this.chorus, beats: beats,
       chords: fb.chords, nextChords: form[nextIdx].chords, tempo: this.tempo, last: last, loopEnd: atEnd, opts: c.opts, form: form, nextIndex: nextIdx,
       meter: fb.meter, compound: !!fb.compound, stop: isStop(c.opts, this.formIdx), nextStop: !last && isStop(c.opts, nextIdx),
-      intensity: intensityFor(cp, r.len, this.chorus, c.choruses, c.opts && c.opts.variation),
+      intensity: this.level(intensityFor(cp, r.len, this.chorus, c.choruses, c.opts && c.opts.variation)),
       phrase: { bar: cp % 4, turnaround: r.len - 1 - cp < 2, top: this.formIdx === r.from } }, L0);
     this.timeline.push({ L: L0, beats: beats, info: { bar: this.barNo, index: this.formIdx, chorus: this.chorus, src: fb.src, beats: beats, countIn: false } });
     this.nextL += beats; this.barNo++; this.formIdx = nextIdx;
     if (atEnd){ this.chorus++; if (!last) this.stepTempo(this.nextL); }
     if (last) this.wantEnding = true;
-    if (this.timeline.length > 8) this.timeline.splice(0, this.timeline.length - 8);
+    var keepT = this.c.ahead ? 600 : 8;                      // (bars written ahead are still to come: keep them findable)
+    if (this.timeline.length > keepT) this.timeline.splice(0, this.timeline.length - keepT);
   };
   // Hand one event to the sample bank: swing is already in L; add the human touches here.
   Session.prototype.fire = function (p, L){
@@ -292,7 +320,7 @@
     else {
       var ms = (ev.midis || []).slice().sort(function (a, b){ return a - b; }), n = ms.length;
       var spread = h() * STRUM * hz, dur = (ev.dur || 0.4) * this.spb;     // chords are rolled very slightly, low to high
-      var sound = ev.inst || "piano"; if (sound === "piano" && o.compSound === "epiano") sound = "epiano";
+      var sound = ev.inst || "piano"; if (sound === "piano" && (o.compSound === "epiano" || o.compSound === "organ")) sound = o.compSound;
       if (sound === "guitar" && (o.compSound === "aguitar" || o.compSound === "cguitar")) sound = o.compSound;       // the guitar's voicings, another sound
       // a strum is a slower roll: low string first on a downstroke, high string first on an upstroke
       if (ev.strum){ spread = Math.min(0.028, 0.12 * this.spb) * (ev.strum === "up" ? 0.6 : 1) * hz; if (ev.strum === "up") ms.reverse(); }
@@ -303,7 +331,9 @@
   // Generate and schedule everything that sounds before `horizonT` (Infinity = the whole performance).
   Session.prototype.pump = function (horizonT){
     var hL = this.linAt(horizonT);
-    while (!this.done && this.nextL <= hL + GEN_MARGIN) this.generate();
+    var far = hL + GEN_MARGIN + this.aheadBeats();
+    while (!this.done && this.nextL <= far) this.generate();
+    if (hL > this.firedL) this.firedL = hL;
     var straight = this.c.opts && this.c.opts.feel === "straight";                 // straight eighths: no warp
     var s = straight ? 0.5 : swingFor(this.tempo), keep = [];
     for (var i = 0; i < this.pending.length; i++){
@@ -340,7 +370,7 @@
       opts: Object.assign({}, cfg.opts), humanize: cfg.humanize, kit: Object.assign({}, cfg.kit),
       volumes: { bass: v.bass == null ? 1 : v.bass, comp: v.comp == null ? 1 : v.comp, drums: v.drums == null ? 1 : v.drums },
       intro: cfg.intro || null, startBar: Math.max(0, cfg.startBar | 0), cycle: cfg.cycle || null, tempoSteps: cfg.tempoSteps || null,
-      instruments: cfg.instruments || ["bass", "piano", "kit"] };
+      instruments: cfg.instruments || ["bass", "piano", "kit"], ahead: !!cfg.ahead };
   }
   function newSeed(seed){ return seed == null ? (Math.random() * 0x7fffffff) | 0 : seed | 0; }
 
@@ -408,6 +438,8 @@
                          function (e){ if (my === token) setState("idle"); throw e; });
     }
     function stop(){ token++; teardown(false); }
+    // bars written ahead are out of date: generate them again from the first one not yet scheduled
+    function redo(){ if (!session || !session.gen.length) return; var b = session.rewind(); if (b != null && cfg.onRewind) cfg.onRewind(b); }
 
     if (typeof document !== "undefined") document.addEventListener("visibilitychange", function (){ if (session) tick(); });
 
@@ -425,17 +457,22 @@
         return e ? { info: e.info, pos: L - e.L, beats: e.beats } : null;
       },
       setTempo: function (bpm){ c.tempo = baseTempo = clamp(+bpm || c.tempo, 30, 400); if (session) session.setTempo(c.tempo); },
-      setTranspose: function (n){ c.transpose = n | 0; if (session) session.refreshForm(); },
-      setChart: function (parsed){ c.parsed = parsed; if (session) session.refreshForm(); },
+      setTranspose: function (n){ c.transpose = n | 0; if (session) session.refreshForm(); redo(); },
+      setChart: function (parsed){ c.parsed = parsed; if (session) session.refreshForm(); redo(); },
       setVolume: function (part, v){ if (!(part in c.volumes)) return; c.volumes[part] = v; if (bus) bus.setVolume(part, v); },
-      setOpts: function (o){ Object.assign(c.opts, o); },
+      setOpts: function (o){ Object.assign(c.opts, o); redo(); },
+      // Write the music a pass of the form ahead of the playing (cfg.ahead), so it can be shown before it sounds.
+      // cfg.onRewind(barNo) says that the bars from barNo on were discarded and will come again through onBarEvents.
+      setAhead: function (on){ c.ahead = !!on; },
+      // How hard the user is playing, 0..1 (the page measures it from the microphone); null = stop following.
+      setFollow: function (x){ var was = c.follow; c.follow = x == null ? null : clamp(+x || 0, 0, 1); if (was == null && c.follow != null) redo(); },
       setInstruments: function (list){ c.instruments = list.slice(); if (shared) load().catch(function (){}); },   // before the first play this only records the list
       setKitVolume: function (piece, v){ c.kit[piece] = clamp(+v, 0, 1.5); },
       setCountIn: function (n){ c.countIn = clamp(n | 0, 0, 2); },
       setIntro: function (o){ c.intro = o || null; },             // takes effect at the next play()
-      setChoruses: function (n){ c.choruses = Math.max(0, n | 0); },
+      setChoruses: function (n){ c.choruses = Math.max(0, n | 0); redo(); },
       setStartBar: function (i){ c.startBar = Math.max(0, i | 0); },                       // form bar index for the next play()
-      setCycle: function (from, to){ c.cycle = from == null ? null : { from: from | 0, to: (to == null ? from : to) | 0 }; },   // live
+      setCycle: function (from, to){ c.cycle = from == null ? null : { from: from | 0, to: (to == null ? from : to) | 0 }; redo(); },   // live
       setTempoSteps: function (steps){ c.tempoSteps = (steps && steps.length) ? steps.slice() : null; }     // bpm added at each repeat, in turn
     };
   }

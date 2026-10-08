@@ -80,6 +80,19 @@
   var GRID = {
     oompah:  { bars: function (beats){ var h = []; for (var b = 1; b < beats; b++) if (beats % 2 || b % 2) h.push([b, "S"]); return h; } },
     eighths: { bars: everyEighth, quiet: true },
+    // The piano ballad (balladBar): left-hand octaves on the root, the right hand a first-inversion triad broken
+    // into its top pair and its thumb. F = the whole right hand, P = its top two notes, T = the thumb (lowest
+    // note), M = the middle note, H = the top note. mix: when several are chosen they change bar by bar.
+// Kept sparse on purpose (user, 2026-10-08, on a version in running eighths: "frenetic and tasteless"): the pulse
+    // is the quarter note, an eighth is a passing detail, and each pattern is two bars long and is played whole.
+    ballRock:   { ballad: true, mix: true, bars: [ [[0, "F"], [1, "T"], [2, "P"], [3, "T"]],
+                                                   [[0, "F"], [1, "T"], [2, "P"], [3, "T"], [3.5, "P"]] ] },
+    ballBroken: { ballad: true, mix: true, bars: [ [[0, "T"], [0.5, "M"], [1, "H"], [2, "F"]],
+                                                   [[0, "F"], [2, "T"], [2.5, "M"], [3, "H"]] ] },
+    ballSync:   { ballad: true, mix: true, bars: [ [[0, "F"], [1.5, "P"], [3, "P"]],
+                                                   [[0, "F"], [1.5, "P"], [3, "T"]] ] },
+    // the hymn: every chord struck once and held until the next, three voices above the left hand's root (four parts on the piano)
+    hymn:    { lh: true, hold: true, bars: function (){ return [[0, "L"]]; } },
     // lh: on the piano the left hand adds the root under each chord as it arrives
     quarters: { lh: true, bars: function (beats){ var h = []; for (var b = 0; b < beats; b++) h.push([b, "L"]); return h; } },
     // the doo-wop piano: the chord on all three eighths of every beat (12/8, or triplets over 4/4)
@@ -136,7 +149,7 @@
     var figs = list.filter(isFig), tex = list.filter(isTexture), r = list.length === 1 ? list[0] : list.length ? list.join("+") : (opts && opts.compRhythm);
     var mv = opts && opts.voiceMove;
     return { inst: inst, style: style, four: r === "four", stabs: r === "stabs", grid: GRID[r] ? r : null, figs: figs, tex: tex, pins: (opts && opts.pins) || null, rhythm: r,
-             move: mv === "move" || mv === "passing", passing: mv === "passing",
+             move: mv === "move" || mv === "passing", passing: mv === "passing", weights: (opts && opts.rhythmMix) || null,
              ext: (opts && opts.extend && opts.extend.amount > 0) ? opts.extend : (opts && opts.maj6) ? { amount: 1, six: true } : null };
   }
   // the beat where the chord sounding at `pos` started (the chord list is in beat order)
@@ -223,6 +236,34 @@
       return pickS;
     }
 
+    // one of `ids` at random, each as likely as its weight (opts.rhythmMix: { id: 0..1 }; unlisted = 0.5); all zero = any
+    var curW = null;
+    function byWeight(ids, W, group){
+      var ws = ids.map(function (id){ if (id === "figs") return (group || []).reduce(function (s, f){ return s + (W[f] == null ? 0.5 : Math.max(0, +W[f] || 0)); }, 0);
+        return W[id] == null ? 0.5 : Math.max(0, +W[id] || 0); }), sum = ws.reduce(function (a, b){ return a + b; }, 0);
+      if (!(sum > 0)) return ids[Math.floor(rng() * ids.length)];
+      var r = rng() * sum; for (var i = 0; i < ids.length - 1; i++){ r -= ws[i]; if (r < 0) return ids[i]; } return ids[ids.length - 1];
+    }
+    // Several rhythms in the blend: which one each bar gets, planned four bars at a time. One of them is at home
+    // for the four bars (chosen by the blend sliders when there are any; otherwise mostly a different one from
+    // last time). So that one pattern does not simply stop and another start, a span may also hold one visitor:
+    //   a callback   - its second bar goes back to the pattern just left (35% after a change);
+    //   foreshadowing - its last bar is already the pattern that comes next (40% before a change);
+    //   a break      - its third bar is some other pattern, and the fourth returns (30% otherwise).
+    // Only patterns with some weight take part, so one slider up and the rest at zero is still that pattern alone.
+    function planSpan(ch, su){
+      var W = su.weights, live = W ? ch.filter(function (m){ return m === "figs" ? su.figs.some(function (x){ return W[x] == null || W[x] > 0; }) : (W[m] == null || W[m] > 0); }) : ch;
+      if (!live.length) live = ch;
+      function choose(not){ if (W) return byWeight(live, W, su.figs); var pool = live.length > 1 && not != null && rng() < 0.7 ? live.filter(function (m){ return m !== not; }) : live; return pool[Math.floor(rng() * pool.length)]; }
+      var home = st.nextHome && live.indexOf(st.nextHome) >= 0 ? st.nextHome : choose(st.home), next = choose(home), span = [home, home, home, home], prev = st.home;
+      if (live.length > 1){
+        var others = live.filter(function (m){ return m !== home; });
+        if (prev && prev !== home && live.indexOf(prev) >= 0 && rng() < 0.35) span[1] = prev;
+        if (next !== home && rng() < 0.4) span[3] = next;
+        else if (others.length && rng() < 0.3) span[2] = W ? byWeight(others, W, su.figs) : others[Math.floor(rng() * others.length)];
+      }
+      st.home = home; st.nextHome = next; span.forEach(function (m){ st.modePlan.push(m); });
+    }
     // keep at least this bar's and the next bar's figure queued
     function fill(tempo, busy, figs){
       while (st.queue.length < 2){
@@ -230,8 +271,10 @@
           var last = st.queue.length ? st.queue[st.queue.length - 1] : st.lastFig;
           var opts = figs.filter(function (f){ return st.started || (FIG[f][0] && FIG[f][0][0] === 0); });   // state the first chord on beat 1 when one of them can
           if (!opts.length) opts = figs;
-          if (opts.length > 1 && rng() < 0.6) opts = opts.filter(function (f){ return f !== last; });        // mostly a different one from the last bar
-          var f = opts[Math.floor(rng() * opts.length)];
+          var f;
+          if (curW) f = byWeight(opts, curW);                                                               // the blend sliders decide
+          else { if (opts.length > 1 && rng() < 0.6) opts = opts.filter(function (f){ return f !== last; });        // mostly a different one from the last bar
+            f = opts[Math.floor(rng() * opts.length)]; }
           st.queue.push(f); st.lastFig = f; st.started = true; continue;
         }
         var fast = tempo > 200, sum = 0;
@@ -293,15 +336,15 @@
         return st.prevV.length ? [{ pos: 0, dur: Math.max(0.3, 0.13 * tempo / 60), midis: st.prevV.slice(), vel: 0.68, inst: inst, of: k0 }] : [];
       }
       // several rhythms: the figures (as a group) or one of the textures, settled for each four-bar phrase
-      var figs = su.figs, phraseEnds = false;
+      var figs = su.figs, phraseEnds = false; curW = su.weights;
       if (su.tex.length && su.figs.length + su.tex.length > 1){
-        if (st.modeSet !== su.rhythm || !st.mode || ctx.index % 4 === 0){
-          var ch = su.tex.slice(); if (su.figs.length) ch.push("figs");
-          if (ch.length > 1 && st.modeSet === su.rhythm && rng() < 0.7) ch = ch.filter(function (m){ return m !== st.mode; });   // mostly move on
-          st.mode = ch[Math.floor(rng() * ch.length)]; st.modeSet = su.rhythm;
-        }
+        var ch = su.tex.slice(); if (su.figs.length) ch.push("figs");
+        var sig = su.rhythm + "|" + (su.weights ? ch.map(function (m){ return m + ":" + su.weights[m]; }).join(",") : "");
+        if (st.modeSet !== sig || !st.modePlan){ st.modeSet = sig; st.modePlan = []; st.home = null; st.nextHome = null; }
+        while (st.modePlan.length < 2) planSpan(ch, su);
+        st.mode = st.modePlan.shift();
         su.four = st.mode === "four"; su.stabs = st.mode === "stabs"; su.grid = GRID[st.mode] ? st.mode : null;
-        phraseEnds = ctx.length > 0 ? ((ctx.index + 1) % ctx.length) % 4 === 0 : ctx.index % 4 === 3;       // the next bar may be another texture
+        phraseEnds = st.modePlan[0] !== st.mode;                              // the next bar is another texture
       }
       if (su.four) return fourToBar(ctx, su);
       if (su.grid) return gridBar(ctx, su);
@@ -415,19 +458,160 @@
       return ev;
     }
 
+    // The piano ballad, after the user's own playing (2026-10-08). On the piano with the plain "standard" voicing:
+    //   Right hand: close-position triads led by the smallest motion from one chord to the next, starting from
+    //     the first chord in first inversion (so I in first inversion goes to IV in root position). A seventh
+    //     chord is its 3rd, 5th and 7th. The pattern (GRID) plays pieces of that voicing.
+    //   Left hand: a bassist's part, rarely below A2. Octave on the root as each chord arrives, the fifth on the
+    //     and of 2 after it and the upper root on beat 3.
+    //   Voicing movement "move" (su.move): a chord held over from the bar before, and some later chord or top-pair
+    //     hits on one chord, step to the next inversion up or down instead of staying put.
+    //   With opts.variation > 0: the left hand takes other bass figures (an octave bounce, fifth on 3, a lead-in
+    //     to the next root, a held bar, quarter notes) and now and then another register; the right hand often leaves its
+    //     root out (the left hand is doubling it already) or brings it in late, or leaves the fifth out; and
+    //     neighbour notes of the key appear (2 for the root, 6 for the 5th; less often 4 for the 3rd or the major
+    //     7th under the root, only where the next hit of that voice puts the chord tone back).
+    // Any other voicing style, a pin or a guitar is broken up by the pattern as it stands.
+    function balladBar(ctx, su, g){
+      var H = global.BandHarmony, ev = [], beats = ctx.beats, pat = g.bars[ctx.index % g.bars.length];
+      var own = su.inst === "piano" && su.style === "standard", amount = Math.max(0, Math.min(1, +(ctx.opts && ctx.opts.variation) || 0));
+      var K = ctx.form && ctx.form[ctx.index] && ctx.form[ctx.index].keyPcs, lift = !!(H.lifted && H.lifted(ctx));
+      function pc(n){ return ((n % 12) + 12) % 12; }
+      function inKey(n){ return !!K && K.indexOf(pc(n)) >= 0; }
+      var hits = pat.filter(function (h){ return h[0] < beats - 1e-6; }).map(function (h){ return { pos: h[0], what: h[1] }; });
+      var segs = []; (ctx.chords || []).forEach(function (c, k){ if (!c.chord || c.chord.nc) return; segs.push({ start: c.pos, end: k + 1 < ctx.chords.length ? ctx.chords[k + 1].pos : beats, chord: c.chord }); });
+      function out(e){ if (lift) e.vel = Math.min(0.78, e.vel * 1.09); e.vel = Math.round(e.vel * 1000) / 1000; e.dur = Math.round(Math.max(0.12, Math.min(e.dur, beats - e.pos)) * 1000) / 1000;
+        if (Math.abs(e.pos * 2 - Math.round(e.pos * 2)) > 1e-6) e.straight = true; e.inst = su.inst; ev.push(e); return e; }
+      // the first chord: first inversion (the root, or a seventh chord's 7th, on top), the top note near C5
+      function opening(root, ivs, seventh){
+        var order = seventh ? ivs : ivs.slice(1).concat([ivs[0] + 12]), last = order[order.length - 1], top = null;
+        function far(n){ return Math.abs(n - 72) + 0.8 * Math.abs(n - 70); }
+        for (var n = 62; n <= 77; n++) if (pc(n - root - last) === 0 && (top == null || far(n) < far(top))) top = n;
+        return order.map(function (iv){ return top - (last - iv); });
+      }
+      // every later chord: the inversion and octave that move the hand least, kept between E3 and A5 and drawn gently to the middle
+      function ledFrom(prev, root, ivs){
+        var pcs = ivs.map(function (iv){ return pc(root + iv); }).sort(function (x, y){ return x - y; }), best = null, bc = 1e9;
+        for (var r = 0; r < pcs.length; r++) for (var base = 48; base <= 72; base += 12){
+          var v = [], last = -1;
+          for (var k = 0; k < pcs.length; k++){ var n = base + pcs[(r + k) % pcs.length]; while (n <= last) n += 12; v.push(n); last = n; }
+          if (v[0] < 57 || v[v.length - 1] > 84) continue;                // (from A3 up: the left hand lives just below)
+          var cost = 0; v.forEach(function (n){ cost += Math.min.apply(null, prev.map(function (p){ return Math.abs(p - n); })); });
+          prev.forEach(function (p){ cost += Math.min.apply(null, v.map(function (n){ return Math.abs(p - n); })); });
+          cost += 0.3 * Math.abs((v[0] + v[v.length - 1]) / 2 - 69);
+          if (cost < bc - 1e-9){ bc = cost; best = v; }
+        }
+        return best;
+      }
+      // the next inversion of the same chord, up or down; the line keeps its direction until it reaches A3 or C6, and now and then turns of itself
+      function turn(v0){
+        var d = st.balDir || 1; if (rng() < 0.15) d = -d;
+        if (d > 0 && v0[0] + 12 > 84) d = -1; else if (d < 0 && v0[v0.length - 1] - 12 < 57) d = 1;
+        st.balDir = d;
+        return d > 0 ? v0.slice(1).concat([v0[0] + 12]) : [v0[v0.length - 1] - 12].concat(v0.slice(0, -1));
+      }
+      function has(w, idx, nn){ return w === "F" || (w === "P" && idx >= nn - 2) || (w === "T" && idx === 0) || (w === "H" && idx === nn - 1) || (w === "M" && idx === Math.max(0, nn - 2)); }
+      segs.forEach(function (sg){
+        var ck = ctx.index + ":" + sg.start, chord = sg.chord, pin = pinOf(su, ck), v, role = null, c2 = chord;
+        if (own && !pin){
+          c2 = tint(chord, su);
+          var sev = c2.seventh != null, third = c2.sus === 2 ? 2 : c2.sus ? 5 : c2.third != null ? c2.third : null, fifth = c2.fifth != null ? c2.fifth : 7;
+          var ivs = sev ? [third == null ? 0 : third, fifth, c2.seventh] : third == null ? [0, fifth] : [0, third, fifth];
+          // "Move through inversions" (su.move): a chord that is still the chord from the bar before does not sit where it was
+          var again = su.move && st.balKey === c2.key && st.balV && st.balV.length === ivs.length;
+          v = again ? turn(st.balV) : ((st.balV && st.balV.length && ledFrom(st.balV, c2.root, ivs)) || opening(c2.root, ivs, sev));
+          st.balKey = c2.key;
+          st.balV = v.slice(); st.prevV = v.slice(); st.lastKey = null; st.top = v[v.length - 1];
+          function at(iv){ for (var k = 0; k < v.length; k++) if (pc(v[k] - c2.root - iv) === 0) return k; return -1; }
+          var roles = function (){ return { root: sev ? -1 : at(0), third: c2.third != null && !c2.sus ? at(c2.third) : -1, fifth: at(fifth) }; };
+          role = roles();
+        } else { pick(chord, su, ck); v = (st.prevV || []).slice(); st.balV = null; }
+        if (!v.length) return;
+        var mine = hits.filter(function (h){ return h.pos >= sg.start - 1e-6 && h.pos < sg.end - 1e-6; });
+        if (!mine.length || mine[0].pos > sg.start + 1e-6) mine.unshift({ pos: sg.start, what: "F" });       // every chord is stated when it arrives
+        else if (mine[0].what !== "F" && sg.start > 0) mine[0] = { pos: mine[0].pos, what: "F" };
+        // what the right hand does with this chord: all of it, no root, the root late, or no fifth
+        var mode = "full", rm = amount > 0 && role && v.length === 3 ? rng() : 1;
+        if (role && v.length === 3){
+          if (role.root >= 0) mode = rm < 0.30 * amount ? "noRoot" : rm < 0.55 * amount ? "late" : rm < 0.85 * amount && role.fifth >= 0 ? "no5" : "full";
+          else if (role.fifth >= 0 && rm < 0.30 * amount) mode = "no5";
+        }
+        var pending = null;                                             // a tension note waiting for its chord tone
+        mine.forEach(function (h, i){
+          // moving: a later chord or top-pair hit on the same chord may step to the next inversion (never while a tension note waits to resolve)
+          if (su.move && own && !pin && role && i > 0 && (h.what === "F" || h.what === "P") && pending == null && rng() < 0.4){ v = turn(v); st.balV = v.slice(); st.prevV = v.slice(); st.top = v[v.length - 1]; role = roles(); }
+          var notes = v.slice(), nn = notes.length, last = i === mine.length - 1, r = rng(), r2 = rng(), tense = false;
+          function move(idx, to){                                       // a neighbour note for one voice, if the hit plays that voice and the hand keeps its order
+            if (idx < 0 || !has(h.what, idx, nn) || !inKey(to) || (idx > 0 && to <= notes[idx - 1]) || (idx < nn - 1 && to >= notes[idx + 1])) return false;
+            notes[idx] = to; return true;
+          }
+          if (pending != null){ if (!has(h.what, pending, nn)) h.what = "F"; pending = null; }             // (this hit puts the chord tone back)
+          else if (mode !== "late" && role && nn === 3 && role.root >= 0 && role.third >= 0 && i > 0 && amount > 0){
+            var gone = mode === "noRoot" ? role.root : mode === "no5" ? role.fifth : -1;                    // (a voice that is left out cannot be decorated)
+            if (r < 0.05 * amount && !last){                            // gentle tension: the 4th for the 3rd, or the major 7th under the root
+              var which = (r2 < 0.5 || gone === role.root) ? role.third : role.root;
+              tense = which === role.third ? move(which, notes[which] + (c2.third === 4 ? 1 : 2)) : move(which, notes[which] - 1);
+              if (tense) pending = which;
+            } else if (r < 0.17 * amount){                              // colour: the 2nd above the root, or the 6th above the 5th
+              if (!(r2 < 0.5 && gone !== role.root && move(role.root, notes[role.root] + 2)) && gone !== role.fifth) move(role.fifth, notes[role.fifth] + 2);
+            }
+          }
+          var w = h.what, drop = mode === "noRoot" || (mode === "late" && i === 0) ? role.root : mode === "no5" ? role.fifth : -1;
+          var cur = notes.filter(function (_, k){ return k !== drop; }), cn = cur.length, ms;
+          if (mode === "late" && i === 1 && w !== "F" && w !== "P") ms = [notes[role.root]];                 // the root arrives on its own
+          else ms = w === "F" ? cur : w === "P" ? cur.slice(-2) : w === "T" ? [cur[0]] : w === "H" ? [cur[cn - 1]] : [cur[Math.max(0, cn - 2)]];
+          var on = h.pos === Math.floor(h.pos), base = w === "F" ? 0.58 : w === "P" ? 0.50 : 0.42;
+          var e = { pos: h.pos, dur: Math.min(sg.end - h.pos - 0.03, ms.length > 1 ? 8 : 2), midis: ms, vel: clamp(base + (h.pos === 0 ? 0.03 : on ? 0 : -0.02) + (rng() - 0.5) * 0.05, 0.4, 0.7), of: ck };
+          if (w !== "F" || tense || ms.join() !== v.join()) e.arp = true;         // (a piece of the voicing, or an ornament: not the chord's voicing for the hand-off)
+          out(e.arp ? e : grip(e));
+        });
+        if (su.inst === "piano" && !pin){
+          // The left hand plays like a bassist, and rarely below A2 (user): the root sits as high as its octave still
+          // fits under the right hand; if that would be below A2 it goes up an octave, plays single notes, and finds its fifth below.
+          var f5 = chord.fifth != null ? chord.fifth : 7, len = sg.end - sg.start, plain = chord.bass === chord.root, room = v[0] - 2, lo = null, hi = null;
+          for (var n = 33; n <= 57; n++) if (pc(n - chord.bass) === 0){ if (n + 12 <= room) lo = n; if (n <= v[0] - 3) hi = n; }
+          if (lo == null || lo < 45) lo = hi != null ? hi : 36 + pc(chord.bass - 36);
+          if (amount > 0){ var rj = rng();                              // now and then another register: up an octave, or (rarely) down below A2
+            if (rj < 0.08 * amount && lo - 12 >= 33) lo -= 12; else if (rj < 0.30 * amount && lo + 12 <= v[0] - 3) lo += 12; }
+          var up8 = lo + 12 <= room ? lo + 12 : lo, up5 = !plain ? up8 : lo + f5 <= room ? lo + f5 : lo + f5 - 12 >= 45 ? lo + f5 - 12 : up8, nextC = firstChord(ctx.nextChords);
+          function lead(){                                              // a step into the next bar's root, from the key
+            if (!nextC || nextC.bass === chord.bass || sg.end < beats) return up5;
+            var t = lo; for (var m = lo - 6; m <= lo + 6; m++) if (pc(m - nextC.bass) === 0) t = m;
+            var c = [t - 1, t - 2, t + 1, t + 2].filter(function (m){ return inKey(m) && m <= room && m >= 33; });
+            return c.length ? c[0] : up5;
+          }
+          // root (octave) on 1, then: fifth on the and of 2 and the upper root on 3 (the plain one) | octave bounce | fifth on 3, root on 4 |
+          // upper root on 3 and a lead-in | held | root, fifth, octave, fifth in quarters
+          var LH = [ [[0, "O"], [1.5, "F"], [2, "E"]], [[0, "O"], [1.5, "E"], [2, "R"]], [[0, "O"], [2, "F"], [3, "E"]],
+                     [[0, "O"], [2, "E"], [3.5, "A"]], [[0, "O"]], [[0, "R"], [1, "F"], [2, "E"], [3, "F"]] ], LW = [0.30, 0.12, 0.18, 0.15, 0.13, 0.12], fig = LH[0];
+          if (amount > 0){ var rf = rng(), acc = 0; for (var q = 0; q < LH.length; q++){ acc += q === 0 ? LW[0] + (1 - amount) * 0.7 : LW[q] * amount; if (rf < acc){ fig = LH[q]; break; } } }       // (less variation: more of the plain figure)
+          fig = fig.filter(function (x){ return x[0] < len - 1e-6; });
+          fig.forEach(function (x, k){
+            var end = k + 1 < fig.length ? fig[k + 1][0] : len, w = x[1];
+            var ms = w === "O" ? (up8 !== lo ? [lo, up8] : [lo]) : w === "R" ? [lo] : w === "E" ? [up8] : w === "F" ? [up5] : [lead()];
+            out({ hand: "L", pos: sg.start + x[0], dur: end - x[0] - 0.03, midis: ms, vel: (k === 0 ? 0.56 : 0.48) + (rng() - 0.5) * 0.04, of: ck, arp: true });
+          });
+        }
+      });
+      ev.sort(function (a, b){ return a.pos - b.pos; });
+      st.started = true; st.pushed = false;
+      return ev;
+    }
+
     // A set pattern (GRID): its hits exactly, each on the chord sounding there; every chord in the bar is heard.
     function gridBar(ctx, su){
       var H = global.BandHarmony, ev = [], tempo = ctx.tempo || 120, beats = ctx.beats, g = GRID[su.grid];
       st.antic = false; st.plan = null; st.queue = [];
+      if (g.ballad) return balladBar(ctx, su, g);
       var pat = typeof g.bars === "function" ? g.bars(beats) : g.bars[ctx.index % g.bars.length];
       var hits = pat.filter(function (h){ return h[0] < beats - 1e-6; }).map(function (h){ return { pos: h[0], len: h[1], stroke: h[2], shift: h[3] || 0 }; });
       (ctx.chords || []).forEach(function (c, k){
         if (g.exact || !c.chord || c.chord.nc) return;
         var e = k + 1 < ctx.chords.length ? ctx.chords[k + 1].pos : beats;
-        if (!hits.some(function (h){ return h.pos >= c.pos - 1e-6 && h.pos < e - 1e-6; })) hits.push({ pos: c.pos, len: g.strum ? "L" : "S", stroke: g.strum ? "D" : undefined });
+        if (!hits.some(function (h){ return h.pos >= c.pos - 1e-6 && h.pos < e - 1e-6; })) hits.push({ pos: c.pos, len: g.strum || g.hold ? "L" : "S", stroke: g.strum ? "D" : undefined });
       });
       // a pushed chord: the next bar's chord on the last eighth, ringing over the barline; the bar after it starts late
-      var tied = st.pushed, lift = !!(H.lifted && H.lifted(ctx)), lhDone = {}; st.pushed = false;
+      var tied = st.pushed, lift = !!(H.lifted && H.lifted(ctx)), lhDone = {}, no5 = {}; st.pushed = false;
       if (tied) hits = hits.filter(function (h){ return h.pos >= 0.5 - 1e-6; });
       if (H.pushes && H.pushes(ctx) && !g.arp && !g.exact && !g.tune){
         hits = hits.filter(function (h){ return h.pos < 3.5 - 1e-6; }); hits.push({ pos: 3.5, push: true }); st.pushed = true; }
@@ -438,7 +622,11 @@
       function left(e, h, chord, ck, v, changeAt){
         if (!(g.lh || g.strum) || su.inst !== "piano" || lhDone[ck] || pinOf(su, ck)) return;
         var lo = 41 + (((chord.bass - 41) % 12) + 12) % 12; if (lo > v[0] - 4) lo -= 12; lhDone[ck] = 1;
-        if (lo >= 36) out({ pos: h.pos, dur: Math.round(Math.max(0.4, Math.min(changeAt, beats) - h.pos - 0.1) * 1000) / 1000, midis: [lo], vel: Math.round((e.vel - 0.04) * 1000) / 1000, inst: su.inst, of: ck, arp: true });
+        // with variation the left hand is sometimes an octave, or the root with its fifth (from G2 up, not under a slash chord)
+        var amt = Math.max(0, Math.min(1, +(ctx.opts && ctx.opts.variation) || 0)), rl = amt ? rng() : 1, f5 = chord.fifth != null ? chord.fifth : 7, lhs = [lo];
+        if (rl < 0.25 * amt && lo - 12 >= 36) lhs = [lo - 12, lo];
+        else if (rl < 0.45 * amt && chord.bass === chord.root && lo + f5 >= 43 && lo + f5 < v[0] - 2) lhs = [lo, lo + f5];
+        if (lo >= 36) out({ pos: h.pos, dur: Math.round(Math.max(0.4, Math.min(changeAt, beats) - h.pos - 0.1) * 1000) / 1000, midis: lhs, vel: Math.round((e.vel - 0.04) * 1000) / 1000, inst: su.inst, of: ck, arp: true, hand: "L" });
       }
       hits.forEach(function (h, i){
         if (h.push){
@@ -467,9 +655,18 @@
           if (up) e.arp = true;                                         // (part of the shape: not the chord's voicing for the hand-off)
           out(up ? e : grip(e)); if (!up) left(e, h, chord, ck, v, changeAt); return;
         }
-        var room = Math.min(nextPos, changeAt) - h.pos, dur = h.len === "S" ? Math.min(sLen, room - 0.05) : Math.min(2.5, room - 0.1);
+        var room = Math.min(nextPos, changeAt) - h.pos, dur = h.len === "S" ? Math.min(sLen, room - 0.05) : g.hold ? room - 0.04 : Math.min(2.5, room - 0.1);
         var vel = (g.quiet ? (on ? 0.56 : 0.48) : h.len === "L" ? 0.60 : 0.58) + (rng() - 0.5) * 0.06;
+        // boom-chick strength (opts.boom, 0..1; 0.5 = as written): soft and a little longer, or short and hard
+        if (su.grid === "oompah" && ctx.opts && ctx.opts.boom != null){ var bm = Math.max(0, Math.min(1, +ctx.opts.boom)); vel *= 0.72 + 0.56 * bm; dur = Math.min(room - 0.05, dur * (1.7 - 1.4 * bm)); }
         e = { pos: h.pos, dur: Math.round(Math.max(0.12, dur) * 1000) / 1000, midis: v.slice(), vel: Math.round(clamp(vel, 0.42, 0.7) * 1000) / 1000, inst: su.inst, of: ck };
+        // the piano's plain triads often go without their root or their fifth (opts.variation > 0; settled once for each chord; not in the hymn's four parts)
+        var amt5 = Math.max(0, Math.min(1, +(ctx.opts && ctx.opts.variation) || 0));
+        if (amt5 > 0 && su.inst === "piano" && su.style === "standard" && v.length === 3 && !g.hold && !h.shift && !pinOf(su, ck)){
+          if (no5[ck] == null){ var rd = rng(); no5[ck] = rd < 0.3 * amt5 && chord.seventh == null ? "root" : rd < 0.6 * amt5 ? "fifth" : ""; }       // the root (the left hand has it) or the fifth
+          var f5pc = (((chord.root + (no5[ck] === "root" ? 0 : chord.fifth != null ? chord.fifth : 7)) % 12) + 12) % 12, kept = v.filter(function (m){ return ((m % 12) + 12) % 12 !== f5pc; });
+          if (no5[ck] && kept.length === 2){ e.midis = kept; e.arp = true; out(e); left(e, h, chord, ck, v, changeAt); return; }
+        }
         if (h.shift){ e.midis = v.map(function (m){ return m + h.shift; }); e.arp = true; out(e); return; }      // (planed: not the chord's own voicing for the hand-off)
         out(grip(e));
         left(e, h, chord, ck, v, changeAt);

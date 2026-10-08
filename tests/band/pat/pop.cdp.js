@@ -19,7 +19,26 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     let o = await opts(); assert.deepStrictEqual([o.comp, o.compSound, o.voicing, o.push, o.bassSound, o.ride], ["guitar", "aguitar", "open", true, "electric", "hat"]);
     await set("bt-style", "rock"); assert.strictEqual(await v("bt-comp"), "cguitar", "still a guitar, now the clean electric");
     await set("bt-style", "swing"); assert.deepStrictEqual(await snap(), ["guitar", "upright", "ride", false, "walk", "auto", "auto"]);
-    await set("bt-style", "pop"); assert.deepStrictEqual(await snap(), ["piano", "electric", "hat", false, "dotted", "quarters", "ballad"]);
+    await set("bt-style", "pop"); assert.deepStrictEqual(await snap(), ["piano", "electric", "hat", false, "dotted", "ballRock", "ballad"]);
+    // the ballad is a blend of three rhythms, each with a slider for its share
+    const sliders = () => ev(`Array.from(document.querySelectorAll("#bt-rhythm-extra .bt-mixw")).filter(function(s){ return !s.hidden; }).map(function(s){ return s.getAttribute("data-id") + "=" + s.value; }).join(" ")`);
+    const slide = (id, val) => ev(`(function(){ var s = document.querySelector('#bt-rhythm-extra .bt-mixw[data-id="${id}"]'); s.value = "${val}"; s.dispatchEvent(new Event("input", { bubbles:true })); })()`);
+    assert.strictEqual(await sliders(), "ballRock=50 ballBroken=50 ballSync=50");
+    o = await opts(); assert.strictEqual(o.compRhythm, "ballRock+ballBroken+ballSync"); assert.deepStrictEqual(o.rhythmMix, { ballRock: 0.5, ballBroken: 0.5, ballSync: 0.5 });
+    await slide("ballSync", 0); await slide("ballRock", 90); o = await opts(); assert.strictEqual(o.compRhythm, "ballRock+ballBroken"); assert.deepStrictEqual(o.rhythmMix, { ballRock: 0.9, ballBroken: 0.5, ballSync: 0 });
+    await slide("ballBroken", 0); assert.strictEqual((await opts()).compRhythm, "ballRock", "one alone is pure");
+    await slide("ballRock", 0); assert.strictEqual((await opts()).compRhythm, "ballRock", "all at zero: the menu's rhythm");
+    // the sliders survive a rebuild, appear for any ticked rhythm, and Unlock offers rhythms from other styles to blend in
+    await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
+    assert.strictEqual(await sliders(), "ballRock=0 ballBroken=0 ballSync=0");
+    await ev(`(function(){ var c = document.querySelector('#bt-rhythm-extra input[type=checkbox][value="montuno"]'); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
+    await slide("montuno", 30); await slide("ballRock", 70); o = await opts(); assert.strictEqual(o.compRhythm, "ballRock+montuno"); assert.strictEqual(o.rhythmMix.montuno, 0.3);
+    await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = false; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
+    await set("bt-style", "swing"); assert.strictEqual(await sliders(), "", "one rhythm: nothing to blend");
+    await ev(`(function(){ var c = document.querySelector('#bt-rhythm-extra input[type=checkbox][value="charleston"]'); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
+    assert.strictEqual(await sliders(), "", "Varied with one rhythm ticked: still nothing to blend");
+    await ev(`(function(){ var c = document.querySelector('#bt-rhythm-extra input[type=checkbox][value="garland"]'); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
+    assert.strictEqual(await sliders(), "charleston=50 garland=50"); await set("bt-style", "pop");
     await set("bt-style", "doowop"); assert.deepStrictEqual((await snap()).slice(4), ["twelve8", "triplets", "twelve8"]); assert.strictEqual(await v("bt-feel"), "swing");
     await set("bt-style", "dance"); assert.strictEqual(await v("bt-comp"), "epiano");
     // Push chords and Chorus bars
@@ -35,6 +54,24 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     const reqs = (b.requests || []).join(" ");
     if (b.requests) assert(/acoustic_guitar_steel/.test(reqs) && /electric_bass_finger/.test(reqs), "samples requested");
     assert(!b.errors.filter(e => !/supabaseUrl/.test(e)).length, "page errors: " + b.errors.join(" | "));
+    // the ballad pulls the hi-hat fader down; the next style puts it back; a fader the user moved in another style is left alone
+    await set("bt-style", "pop"); assert.strictEqual(await v("bt-kit-hat"), "53"); await set("bt-style", "rock"); assert.strictEqual(await v("bt-kit-hat"), "100");
+    await set("bt-kit-hat", "80"); await set("bt-style", "swing"); assert.strictEqual(await v("bt-kit-hat"), "80"); await set("bt-kit-hat", "100"); await set("bt-style", "pop");
+    // follow my playing: loudness fed in (as the microphone would) becomes the band's level, relative to the quietest and loudest heard
+    assert.strictEqual(await ev(`document.getElementById("bt-follow").checked`), false);
+    let lv = await ev(`(function(){ var x; for (var i = 0; i < 40; i++) x = __follow.feed(-50); return x; })()`); assert(lv < 0.2, "quiet: " + lv);
+    lv = await ev(`(function(){ var x; for (var i = 0; i < 40; i++) x = __follow.feed(-15); return x; })()`); assert(lv > 0.8, "loud: " + lv);
+    assert(/Hearing you: loud/.test(await ev(`document.getElementById("bt-follow-note").textContent`)));
+    lv = await ev(`(function(){ var x; for (var i = 0; i < 60; i++) x = __follow.feed(-45); return x; })()`); assert(lv < 0.35, "eased off: " + lv);
+    await ev(`__follow.stop(); 0`); assert.strictEqual(await ev(`document.getElementById("bt-follow-note").textContent`), "");
+    // hymns and carols; the organ; the boom-chick slider appears only with a boom-chick part
+    await set("bt-style", "hymn"); assert.deepStrictEqual(await snap(), ["piano", "upright", "ride", false, "held", "hymn", "none"]);
+    assert.strictEqual(await ev(`document.getElementById("bt-boom-field").hidden`), true);
+    await set("bt-comp", "organ"); o = await opts(); assert.deepStrictEqual([o.comp, o.compSound, o.groove], ["piano", "organ", "none"]);
+    await set("bt-style", "carol"); assert.deepStrictEqual(await snap(), ["aguitar", "upright", "hat", false, "halves", "strumFolk", "brushes"]);
+    await set("bt-style", "folk"); assert.strictEqual(await ev(`document.getElementById("bt-boom-field").hidden`), false); assert.strictEqual((await opts()).boom, 0.35);
+    await ev(`(function(){ var e = document.getElementById("bt-boom"); e.value = "100"; e.dispatchEvent(new Event("input", { bubbles:true })); })()`); assert.strictEqual((await opts()).boom, 1);
+    await set("bt-groove", "none"); await set("bt-bass", "roots"); await set("bt-rhythm", "pad"); assert.strictEqual(await ev(`document.getElementById("bt-boom-field").hidden`), true);
     // a link names the family; the style gives the sound
     await b.goto(B + "/tools/backing-track.html?style=rock&comp=guitar"); await b.sleep(1200);
     assert.deepStrictEqual([await v("bt-style"), await v("bt-comp"), await v("bt-voicing")], ["rock", "cguitar", "open"]);

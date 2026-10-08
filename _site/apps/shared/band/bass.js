@@ -171,6 +171,9 @@
                        [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 1.4, "R"], [3.5, 0.45, "N"]] ] },          // every second bar leads into the next root
     motown:  { rise: true, top: 12, bars: [ [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 0.9, "5"], [3, 0.45, "8"], [3.5, 0.45, "5"]],
                                             [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 0.9, "5"], [3, 0.45, "5"], [3.5, 0.45, "N"]] ] },
+    // Hymns and carols. hold: each note lasts until the next one, or to the end of its chord or bar.
+    held:    { hold: true, bars: [ [[0, 8, "R"]] ] },                                                   // the bass voice: the root of each chord, sustained
+    halves:  function (beats){ return beats % 2 ? [[0, beats - 0.2, "R"]] : beats === 2 ? [[0, 1.8, "R"]] : [[0, 1.8, "R"], [2, 1.8, "R"]]; },   // the root on 1 and 3
     // 12/8 (or triplets over 4/4): long notes on 1 and 3, each set up by the last eighth of the beat before
     twelve8: [[0, 1.6, "R"], [1 + 2 / 3, 0.3, "R"], [2, 1.6, "5"], [3 + 2 / 3, 0.3, "N"]],
     // Lines from tunes. bars = the pattern bar by bar (it repeats). rise: every degree sits above a low
@@ -441,7 +444,7 @@
       if (id === "tumbao" && st.prev == null) list.push({ pos: 0, dur: 1.4, deg: "R" });            // the very first bar states the root
       segmentsOf(ctx).forEach(function (seg){
         if (seg.chord && id !== "tumbao" && !list.some(function (e){ return e.pos >= seg.start && e.pos < seg.start + seg.len; }))
-          list.push({ pos: seg.start, dur: Math.min(0.9, seg.len), deg: "R" });
+          list.push({ pos: seg.start, dur: def.hold ? seg.len : Math.min(0.9, seg.len), deg: "R" });
       });
       // a pushed chord: the next bar's root on the last eighth, held over the barline (the bar after starts late)
       var tied = st.pushed; st.pushed = false;
@@ -478,7 +481,11 @@
         }
         if (!inRange(n)) return;
         var room = (k + 1 < list.length ? list[k + 1].pos : beats + 4) - e.pos;
-        var note = { pos: e.pos, dur: Math.round(Math.min(e.dur, room - 0.03) * 1000) / 1000, midi: n, vel: vel((e.pos === 0 ? 0.86 : e.pos === Math.floor(e.pos) ? 0.80 : 0.76) + (lift ? 0.04 : 0)) };
+        // boom-chick strength (opts.boom, 0..1; 0.5 = as written): long and soft at one end, short and hard at the other
+        var bm = id === "alt" && ctx.opts && ctx.opts.boom != null ? Math.max(0, Math.min(1, +ctx.opts.boom)) : null, bf = bm == null ? 1 : 0.78 + 0.44 * bm;
+        var len = bm == null ? e.dur : 1.7 - 1.25 * bm;
+        if (def.hold) len = Math.min(len, beats - e.pos - 0.03);                                          // (nothing held past the barline)
+        var note = { pos: e.pos, dur: Math.round(Math.min(len, room - 0.03) * 1000) / 1000, midi: n, vel: Math.round(Math.min(0.98, vel((e.pos === 0 ? 0.86 : e.pos === Math.floor(e.pos) ? 0.80 : 0.76) + (lift ? 0.04 : 0)) * bf) * 1000) / 1000 };
         if (Math.abs(e.pos * 2 - Math.round(e.pos * 2)) > 1e-6) note.straight = true;               // (a triplet eighth: placed exactly, not swung)
         ev.push(note);
         played(n);

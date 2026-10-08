@@ -66,6 +66,10 @@
       desc:"The root on every beat and the root an octave up on every off-beat." },
     { id:"motown", label:"Motown: root, fifth, octave", feel:"straight", group:"Folk, rock and pop", tags:["Motown","Soul","Pop"],
       desc:"A two-bar line: the root on 1 and the and of 2, the fifth on 3, then the octave and fifth in eighths; the second bar ends by leading into the next chord. A plain stand-in for a Motown bass part, which would move far more." },
+    { id:"held", label:"Held roots (the bass voice)", feel:"any", group:"Hymns and carols", tags:["Hymn","Carol","Chorale"],
+      desc:"The root of every chord, held until the next chord: the bass part of a four-part hymn." },
+    { id:"halves", label:"Roots on 1 and 3", feel:"any", group:"Hymns and carols", tags:["Carol","Folk","Hymn"],
+      desc:"The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives." },
     { id:"twelve8", label:"12/8 ballad", feel:"any", group:"Folk, rock and pop", tags:["Doo-wop","Blues","Ballad"],
       desc:"Long notes on beats 1 and 3, root then fifth, each set up by a short note on the last eighth of the beat before." },
     { id:"bossa", label:"Bossa nova", feel:"straight", group:"Latin", tags:["Bossa nova","Latin"],
@@ -104,6 +108,14 @@
       desc:"For 5/4, grouped 3 + 2: a held chord on 1, a short one on the and of 2, then short chords on 4 and 5.", hits:[[0,"L"],[1.5,"S"],[3,"S"],[4,"S"]] },
     { id:"oompah", label:"Boom-chick / oom-pah-pah", feel:"any", group:"Folk, rock and pop", tags:["Folk","Country","Polka","Waltz"],
       desc:"Short chords on the beats the bass leaves free: 2 and 4 in 4/4, 2 and 3 in a waltz. Goes with the Root and fifth bass line.", hits:[[1,"S"],[3,"S"]] },
+    { id:"hymn", label:"Hymn: four parts", feel:"any", group:"Hymns and carols", tags:["Hymn","Carol","Chorale"],
+      desc:"Every chord played once and held until the next one. On the piano or organ it is four parts: the root in the left hand and three voices above it that move as little as possible from chord to chord. It follows the chart's chords, so a carol written with a chord on every beat sounds like the hymnal.", hits:[[0,"L"]] },
+    { id:"ballRock", label:"Ballad: rocking", feel:"any", group:"Folk, rock and pop", tags:["Ballad","Pop"],
+      desc:"Quarter notes: the chord on 1, the thumb on 2, the top two notes on 3, the thumb on 4, over held left-hand octaves on the root. On the piano with the Standard voicing the chord is a triad in first inversion.", hits:[[0,"L"],[1,"S"],[2,"L"],[3,"S"]] },
+    { id:"ballBroken", label:"Ballad: half-broken", feel:"any", group:"Folk, rock and pop", tags:["Ballad","Pop"],
+      desc:"A two-bar pattern. Three notes up the chord (thumb, middle, top) and the whole chord held from beat 3; then the chord held from beat 1 and the three notes on beats 3 and 4.", hits:[[0,"S"],[0.5,"S"],[1,"S"],[2,"L"]] },
+    { id:"ballSync", label:"Ballad: syncopated", feel:"any", group:"Folk, rock and pop", tags:["Ballad","Pop"],
+      desc:"Three held sounds a bar: the chord on beat 1, its top two notes on the and of 2 and on beat 4 (3+3+2).", hits:[[0,"L"],[1.5,"L"],[3,"L"]] },
     { id:"quarters", label:"Quarter-note chords", feel:"any", group:"Folk, rock and pop", tags:["Pop","Ballad","Rock"],
       desc:"The chord on every beat, held. On the piano the left hand adds the root underneath as each chord arrives: Let It Be, Imagine, Someone Like You.", hits:[[0,"L"],[1,"L"],[2,"L"],[3,"L"]] },
     { id:"triplets", label:"Triplet chords (12/8)", feel:"any", group:"Folk, rock and pop", tags:["Doo-wop","Blues","Ballad"],
@@ -190,6 +202,10 @@
       desc:"The snare on all four beats, louder on 2 and 4 with a tambourine, over eighths on the cymbal. You Can't Hurry Love, Reach Out I'll Be There." },
     { id:"train", label:"Train beat", feel:"straight", group:"Folk, rock and pop", tags:["Country","Rockabilly","Folk"],
       desc:"The snare on every eighth note, leaning on 2 and 4, over a kick on 1 and 3. Folsom Prison Blues." },
+    { id:"none", label:"No drums", feel:"any", group:"Hymns and carols", tags:["Hymn","Carol","Ballad"],
+      desc:"The drummer sits out." },
+    { id:"brushes", label:"Light time", feel:"straight", group:"Hymns and carols", tags:["Carol","Folk"],
+      desc:"Very quiet eighths on the hi-hat, a soft kick on 1 and 3 and a light cross-stick on 2 and 4. No fills. A stand-in for brushes." },
     { id:"twelve8", label:"12/8", feel:"any", group:"Folk, rock and pop", tags:["Doo-wop","Blues","Ballad"],
       desc:"Three eighths to every beat on the cymbal, kick on 1 and 3, backbeat on 2 and 4. In 4/4 the eighths are triplets." },
     { id:"halftime", label:"Half-time", feel:"straight", group:"Folk, rock and pop", tags:["Pop","Ballad","Rock"],
@@ -198,17 +214,17 @@
 
   // which styles each entry belongs in
   var FITS = {
-    bass: { walk:"swing ballad", two:"swing ballad", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum", alt:"folk calypso reggae train strum", eighths:"rock", dotted:"strum pop rock", octaves:"dance", motown:"motown", twelve8:"doowop",
+    bass: { walk:"swing ballad", two:"swing ballad", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol", alt:"folk calypso reggae train strum carol", held:"hymn carol pop", halves:"carol hymn pop strum", eighths:"rock", dotted:"strum pop rock", octaves:"dance", motown:"motown", twelve8:"doowop",
             bossa:"bossa", tango:"tango", tumbao:"montuno chacha", chacha:"chacha", tresillo:"dance rock reggaeton",
             sowhat:"swing", killerjoe:"swing boogaloo", songfather:"bossa", footprints:"swing", allblues:"swing", chameleon:"boogaloo rock", maiden:"boogaloo bossa", takefive:"swing" },
     comp: { auto:"swing ballad boogaloo", charleston:"swing ballad", reverse:"swing", garland:"swing", offbeats:"swing", four:"swing", stabs:"boogaloo",
-            pad:"swing ballad boogaloo bossa tango pop folk rock reggaeton strum dance doowop", oompah:"folk train motown", eighths:"rock", quarters:"pop rock strum motown", triplets:"doowop",
-            strumCamp:"strum rock folk", strumFolk:"folk strum train", strumEights:"rock strum", strumQuarters:"strum rock folk pop", strum332:"strum rock dance", strum16:"strum rock dance", upbeats:"calypso reggae", bossa:"bossa", tango:"tango",
-            montuno:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop", arp2:"pop folk strum", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
+            pad:"swing ballad boogaloo bossa tango pop folk rock reggaeton strum dance doowop hymn carol", oompah:"folk train motown carol", eighths:"rock", hymn:"hymn carol pop", ballRock:"pop strum carol hymn doowop", ballBroken:"pop strum carol hymn", ballSync:"pop strum carol",  quarters:"pop rock strum motown hymn carol", triplets:"doowop",
+            strumCamp:"strum rock folk carol", strumFolk:"carol folk strum train", strumEights:"rock strum", strumQuarters:"strum rock folk pop carol", strum332:"strum rock dance", strum16:"strum rock dance", upbeats:"calypso reggae", bossa:"bossa", tango:"tango",
+            montuno:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
     drums: { auto:"swing ballad boogaloo", funk:"boogaloo rock", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
-             onedrop:"reggae", boomchick:"folk train", rock:"rock", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock" }
+             onedrop:"reggae", none:"hymn carol pop folk strum", brushes:"carol strum folk pop", boomchick:"folk train carol", rock:"rock", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock" }
   };
-  var JAZZ = "swing ballad boogaloo", POP = "folk rock pop strum dance motown doowop train", PLAIN = POP + " calypso reggae reggaeton tango montuno chacha";
+  var JAZZ = "swing ballad boogaloo", POP = "folk rock pop strum dance motown doowop train hymn carol", PLAIN = POP + " calypso reggae reggaeton tango montuno chacha";
   var VOICE = {
     piano: { standard:[PLAIN, "Folk, rock, pop, Latin"], shell:[JAZZ + " bossa", "Jazz, bossa nova"], guide:[JAZZ, "Jazz"], rootless:[JAZZ + " bossa", "Jazz, bossa nova"], sowhat:[JAZZ + " bossa", "Modal jazz"],
              drop2:["swing ballad bossa tango montuno chacha", "Jazz, Latin"], drop3:["swing ballad bossa", "Jazz, bossa nova"], bh:["swing ballad", "Bebop"], auto:[JAZZ, "Jazz"] },
@@ -252,9 +268,9 @@
     { id:"strum", label:"Acoustic strum", group:"Folk, rock and pop", genres:"Folk-pop, singer-songwriter, campfire songs", feel:"straight", bass:"dotted", rhythm:"strumCamp", drums:"strum", voicing:STRUMV, push:true,
       sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"guitar" },
       desc:"A strummed steel-string guitar over a light backbeat, with the bass and kick together on 1, the and of 2 and 3." },
-    { id:"pop", label:"Piano ballad", group:"Folk, rock and pop", genres:"Pop and rock ballads", feel:"straight", bass:"dotted", rhythm:"quarters", drums:"ballad", voicing:STRUMV,
-      sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"piano" },
-      desc:"Quarter-note piano chords with the root in the left hand, a quiet kick and a cross-stick on 2 and 4." },
+    { id:"pop", label:"Piano ballad", group:"Folk, rock and pop", genres:"Pop and rock ballads", feel:"straight", bass:"dotted", rhythm:"ballRock+ballBroken+ballSync", drums:"ballad", voicing:STRUMV,
+      sound:{ bass:"electric", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"piano", kit:{ hat:53 } },       // kit = Backing Track kit faders (0-150; 53 = 35% of the travel): the hi-hat well down
+      desc:"Left-hand octaves and a first-inversion right hand broken three ways (rocking, half-broken, syncopated), two bars of one and then two of another, with a quiet kick and a cross-stick on 2 and 4." },
     { id:"dance", label:"Dance pop", group:"Folk, rock and pop", genres:"Disco, dance pop, four on the floor", feel:"straight", bass:"octaves", rhythm:"tresillo", drums:"dance", voicing:PLAINV,
       sound:{ bass:"electric", cymbal:"hat", piano:"epiano", guitar:"cguitar" },
       desc:"Kick on every beat, the open hi-hat and the bass octave on every off-beat, chords on a 3+3+2." },
@@ -271,6 +287,13 @@
       sound:{ bass:"upright", cymbal:"hat", piano:"piano", guitar:"aguitar" },
       desc:"Bass on 1 and 3, chords on 2 and 4. In 3/4 it is oom-pah-pah." }
   ];
+  styles.push(
+    { id:"hymn", label:"Hymn (four parts)", group:"Hymns and carols", genres:"Hymns, chorales, traditional carols", feel:"straight", bass:"held", rhythm:"hymn", drums:"none", voicing:PLAINV,
+      sound:{ bass:"upright", cymbal:"ride", piano:"piano", guitar:"aguitar", lead:"piano" },
+      desc:"No drums. Every chord is held until the next: three voices over the root on the piano, with the bass doubling the root. Choose Church organ as the instrument for the other obvious sound." },
+    { id:"carol", label:"Folk carol", group:"Hymns and carols", genres:"Carols and folk hymns with a band: between a hymn and acoustic rock", feel:"straight", bass:"halves", rhythm:"strumFolk", drums:"brushes", voicing:STRUMV,
+      sound:{ bass:"upright", cymbal:"hat", piano:"piano", guitar:"aguitar", lead:"guitar" },
+      desc:"A strummed steel-string guitar, upright bass on 1 and 3 and very light time, for Deck the Halls or God Rest Ye Merry, Gentlemen played by a folk-rock band." });
   // The sounds a style is played on. Jazz and Latin styles: upright bass, ride cymbal, the plain piano or
   // jazz guitar. lead = the instrument the style is built around, which the pages switch to when it is chosen.
   var ELECTRIC = { reggae: 1, reggaeton: 1 }, HAT = { reggae: 1, reggaeton: 1, calypso: 1 };

@@ -514,3 +514,135 @@ Nothing here has been heard. Every level, rhythm and sample choice is a first gu
    the bass sound and cymbal they saved are kept.
 ** TODO Chord Sheet "hear" and the static cards on Accompaniment Styles do not use the new sounds (only the catalog cards do).
 ** NOTE tests/band/bt/page2.cdp.js expected a key change to clear pins; pins have been transposed since the voicing pass. Test corrected.
+
+* Hymns and carols; boom-chick strength; Style in the top panel -- 2026-10-08
+Nothing here has been heard.
+- Style menu moved to the top row of the Backing Track page (after Meter). Unlock and the style's description stay in the Band panel.
+- New group "Hymns and carols": hymn = Hymn (four parts), carol = Folk carol (user's reference: Barenaked Ladies' God Rest Ye Merry Gentlemen).
+- hymn: comp GRID "hymn" (hold: each chord struck once, held to the next; lh root) + bass "held" + groove "none". Four parts = left-hand root
+  plus the "standard" close triad led by least motion. It is keyboard-style harmony, NOT real part-writing: no doubling rules, no check for
+  parallel fifths or octaves, no soprano line (the band has no melody), no inversions unless the chart writes a slash chord.
+- carol: strumFolk on the steel guitar, bass "halves" (roots on 1 and 3, upright), groove "brushes" (soft hi-hat eighths, cross-stick 2 and 4,
+  soft kick 1 and 3, no fills; there are no brush samples).
+- Groove "none" = no drummer (bar and ending both empty). Instrument "Church organ" (sounds.js organ = church_organ, the piano's voicings).
+- opts.boom (0..1, page slider "Boom-chick: subtle to polka power", default 35, shown only while bass alt, rhythm oompah or groove boomchick
+  is chosen; 0.5 = the patterns as written). Bass alt: length 1.7 -> 0.45 beats, level x0.78 -> x1.22. Comp oompah: level x0.72 -> x1.28, shorter
+  as it rises. Drums boomchick: below 0.3 only the hi-hat foot and a soft kick on 1, no fills; from 0.75 the cymbal on every beat and a kick
+  on the last eighth; levels x0.62 -> x1.38.
+** VERIFY BY EAR: organ level (1.3) and whether the samples loop or die away under a long chord (soundfont mp3s are a few seconds long);
+   the slider's two ends, and whether 35 is the right default; the brushes stand-in.
+** TODO Real four-part writing (SATB ranges, doubling, contrary motion against the bass, a top line taken from the tune's melody).
+** TODO Polka power adds nothing to the bass but level and length (no run-ups between chords, no accordion-style off-beat doubling).
+** TODO No sleigh bells in the kit (the tambourine sample is the nearest thing; unused in carol).
+** NOTE t_timefeel line 70 and one t_pop assertion depended on random fills / pushes and failed some runs; both made independent of them.
+
+* Piano ballad rewritten; blend sliders for comping rhythms -- 2026-10-08
+Nothing here has been heard. User's own practice, as given: left-hand octaves on the root, right hand the triad in first inversion,
+variation with 2 and 6, plus 4 and major 7 for gentle tension that resolves quickly; the three patterns "work best when combined".
+- comp.js balladBar (GRID ballRock, ballBroken, ballSync; ballad:true, mix:true). LH: octave on the root as each chord arrives, fifth on the
+  and of 2 after it, upper root on beat 3 (the "dotted" bass and the ballad kick). RH pieces: F whole chord, P top pair, T thumb, M, H.
+  Piano + "standard" voicing = first inversion built here (3 5 1; 3 5 7 on seventh chords; top note 62..77 near the last, drawn to 70).
+  Any other voicing style, a pin or a guitar is broken up as it stands (no left hand on guitar).
+- Neighbour notes: amount = opts.variation (Strict 0 = none). 2 for the top root / 6 for the 5th on one hit (24% x amount per hit); 4 for
+  the 3rd / major 7th under the root (10% x amount), only when a later hit of the same chord restores the chord tone. Only notes of the
+  key: buildForm now puts keyPcs on every form bar (K: field, minor = natural minor). Major-7th therefore only on I and IV.
+- Below 66 bpm the right-hand figure is played in sixteenths, twice a bar.
+- Blend: opts.rhythmMix = { rhythm id: 0..1 } (unlisted = 0.5). Textures are chosen by weight; patterns marked mix change every bar, others
+  every four bars; swing figures are weighted inside their group. Without rhythmMix the old behaviour (even, "mostly move on") is unchanged.
+- Page: every rhythm in use (the menu's and the ticked ones) has a slider in the "Blend in more rhythms" list, default 50; 0 leaves it out;
+  all at 0 = the menu's rhythm alone. Weights live in mixW (kept across rebuilds, saved in setups as mix). Unlock lists every rhythm there.
+- Piano ballad style: rhythm "ballRock+ballBroken+ballSync" (a style's rhythm may now be several joined by +).
+** VERIFY BY EAR: everything; first the left-hand octaves against the bass guitar (same roots, an octave apart), the level of single thumb
+   notes (0.48), whether bar-by-bar switching is too restless (alternative: every two bars), how often the neighbour notes come.
+** TODO Tension notes resolve on the next hit of that voice, which can be a beat away in the syncopated pattern ("pretty quickly"?).
+** TODO No blend sliders for voicings, bass lines or grooves; Chord Entry and Accompaniment Styles play the style's even blend.
+** TODO Quarter-note chords and the hymn still use the close root-position-led triad plus a single left-hand root, not this voicing.
+** FEEDBACK 2026-10-08 (user, after hearing the first version): "The piano rhythm is frenetic and tasteless." That version ran eighths in
+   every bar of all three patterns, changed pattern every bar, added a left-hand fifth and octave inside the bar, and doubled to sixteenths
+   under 66 bpm. Changed the same day: quarter-note pulse (at most five right-hand attacks a bar), two-bar patterns played whole, left hand
+   only the held octave, no sixteenths, neighbour notes half as often, softer thumb. My reading of the complaint, not confirmed by the user.
+
+* Piano "standard" voicing widened; grand staff in the notation -- 2026-10-08
+Nothing here has been heard, and the drawn score has not been looked at (the test counts staves and braces only).
+User: "I'm sometimes also playing the fifth in my left hand. There's variation of what I'm playing in the right -- exploring the range of
+the instrument, leaving notes out." Then: "The fifth can certainly be omitted from the right more often with standard voicings."
+All of it hangs on opts.variation (Strict = none of it: octaves, full triad, middle register).
+- Ballad left hand (balladBar): octave as a rule; root-fifth-octave 28% x variation, root and fifth 14%, root alone 6%. The fifth only from
+  G2 up and never under a slash chord's bass.
+- Other piano left hands (left(): quarter-note chords, hymn, strums on piano): single root; a lower octave added 25% x variation, root
+  and fifth 20%.
+- Right-hand register (ballad only): st.reg, re-chosen at a phrase start 55% x variation from low 64 / middle 70 / 76 / high 82 (a chorus
+  bar never picks the low one); the top note may run 60..88. Still first inversion everywhere.
+- Fifth left out of the right hand: 60% x variation of chords, settled once per chord. Ballad: the outer two notes. Other piano patterns on
+  the "standard" voicing with a three-note triad: the fifth removed (not the hymn, not strums, not pins). Those hits are marked arp, so
+  the Chord Sheet hand-off does not take the two-note version as the chord's voicing.
+- Comping events now carry hand:"L" for the left hand.
+- notation.js: piano = grand staff, %%score {K L} B. By hand, not by pitch: hand:"L" events go to the bass clef; if the bar has no
+  separate left hand the voicing is shared by leftCount() (ported from Chord Sheet's leftHandCount, plus: all below G3 = left; up to
+  three notes within an octave = right). Events of one hand at one moment are merged into one chord (before, the later one overwrote
+  the earlier). Guitar keeps one staff.
+** VERIFY BY EYE: the engraving (ledger lines for low right-hand thumbs, whole notes written as two tied halves, rests in an idle left hand).
+** VERIFY BY EAR: how often the fifth goes at "Some" (36% of chords) and "Loose" (60%); register changes at phrase starts.
+** TODO Right-hand inversions other than the first; register exploration outside the ballad; leaving out notes other than the fifth.
+** TODO Two notes of one hand with different lengths at one moment are written with the longer length (no second voice per staff).
+
+* Piano ballad hands, after the user's description -- 2026-10-08 (replaces the register and first-inversion rules in the section above)
+User: "my left hand jumps all over the place but my right focused on voice leading. If I go to IV, that's in root position in the right.
+I often omit or delay the octave in the right because of all the doubling already happening enough in the left."
+I read "the octave in the right" as the root, which the left hand is doubling; not confirmed.
+- Right hand (balladBar, piano + "standard"): opening() = first chord in first inversion; ledFrom() = every later chord in the close
+  inversion and octave that moves least (both directions summed, + 0.3 x distance of its middle from F#4), kept E3..A5. C first
+  inversion -> F root position is tested. st.balV holds the last voicing. The right hand no longer changes register by phrase (st.reg gone).
+- Right hand per chord, with variation a: no root 30% x a, root late 25% x a (left out of the first hit, arrives alone on the second
+  when that is a single note), no fifth 30% x a, else whole. Seventh chords (3 5 7): only "no fifth".
+- Neighbour notes now go by role (root / third / fifth wherever they sit in the inversion) and only when the hand keeps its order.
+- Left hand with variation: register chosen per chord from an octave lower (down to F1), the usual one, or an octave higher when it fits
+  under the right hand, mostly not where it just was; shapes as before; 30% x a of whole-bar chords strike again on beat 3 elsewhere.
+  Strict: the octave from C2..B2, as before.
+- Other piano patterns on "standard" (gridBar): root left out 30% x a, fifth 30% x a, per chord.
+** VERIFY BY EAR: the left hand below C2 against the bass guitar; whether the voice-led right hand drifts upward over a long form (the pull to
+   the middle is weak); how the late root sounds when the second hit is the top pair (then the root simply appears in the pair).
+** TODO Voice leading and the no-root / late-root habit are in the ballad patterns only. Quarter-note chords, the hymn and the rest still
+   take their voicing from the shared library's "standard" (its own least-motion triads, not seeded from first inversion).
+** TODO "Delay" is only one hit late; no control over how late, and no delayed fifth.
+** FEEDBACK 2026-10-08, same day, on the left hand above: "My left hand plays more interesting rhythms than what you've put in -- closer
+   to what a bassist would do. It's rare I play below A2." Replaces the left-hand rules above:
+   - Register: the root as high as its octave still fits under the right hand; if that is below A2 (45) it goes up an octave, plays single
+     notes and takes its fifth from below. With variation 22% an octave up, 8% an octave down (the only way below A2). No F1 any more.
+   - Rhythm (LH table in balladBar): Strict = octave on 1, fifth on the and of 2, upper root on 3 (so the earlier "held octave only" reading
+     of "frenetic" was wrong for the left hand). With variation also: octave bounce, fifth on 3 and root on 4, upper root on 3 with a
+     lead-in to the next root on the and of 4 (a key step), a held bar, root-fifth-octave-fifth in quarters.
+   - Right hand floor raised to A3, its centre to A4, to leave the left hand room.
+** VERIFY BY EAR: left hand and bass guitar now share rhythm AND register more than before; the lead-in note choice.
+
+* Notation ahead, pattern transitions, drums that listen, follow-my-playing -- 2026-10-08
+Nothing here has been heard; the microphone path has never run with a real microphone.
+- Notation shows the chorus about to be played. player.js: cfg.ahead / setAhead(on) makes pump() generate one pass of the form (or loop)
+  plus a bar beyond the scheduling horizon (Session.aheadBeats). Session.rewind() (via redo() on setOpts, setChoruses, setCycle, setChart,
+  setTranspose) drops every bar not yet scheduled and generates it again; cfg.onRewind(barNo) tells the page. Parts keep their state
+  across a rewind. Off while tempo steps are on or while following the microphone. The page turns it on only while the Notation panel
+  is open; nowBar / hearing() keep played() (MIDI export, hand-off, "last chorus") to bars actually heard. The score is redrawn when
+  the chorus on show changes (during the last bar of each pass) or when its bars are rewritten.
+- Pattern transitions (comp.js planSpan): a blend is planned four bars at a time, one pattern at home, with at most one visitor: callback
+  (bar 2 = the pattern just left, 35% after a change), foreshadowing (bar 4 = the next home, 40% before a change), or a break (bar 3 =
+  another, 30% otherwise). With sliders the home is chosen by weight and zero-weight patterns never visit. Replaces "every 2 / 4 bars".
+- Drums: more fills in all three sets; vary() drops a note or shifts weight so a fill does not repeat exactly; land() decides the bar
+  after a fill: crash by energy (small fill 4-24%, larger 12-72%, into a chorus 45-85%), a quarter of that within four bars of the last
+  crash, else an open hi-hat (30%) or just the kick. Jazz test: crashes fell from 2065 to 846 in 19200 bars.
+- energy: the player gives the drums ctx.energy = half the conductor's intensity, a quarter how many bass / right-hand events the bar has,
+  a quarter how loud they are (left-hand piano notes not counted).
+- Follow my playing (page checkbox, Band panel): getUserMedia -> AnalyserNode RMS every 100 ms -> followFeed(dB): slow floor and ceiling,
+  position between them smoothed (about 1 s up, 2.5 s down) -> player.setFollow(0..1); intensity = 0.3 arc + 0.7 level. Own
+  AudioContext, analyser only (no playback), echo cancellation / AGC / noise suppression requested off. Not saved in setups.
+- Piano ballad: hi-hat fader default 53 (35% of travel, the convention the ride and crash defaults use) via style.sound.kit; put back when
+  another style is chosen.
+- Piano ballad + Voicing movement "move": a chord held from the bar before, and 40% of later chord / top-pair hits on one chord, step to the
+  next inversion (turn()). Before this the ballad ignored the menu.
+- Cost, measured: generating a bar takes 0.01 ms (ballad, rock) to 0.08 ms (swing); writing 32 bars as ABC 0.4 ms. The only heavy step
+  is abcjs drawing the score (figure in the reply), once per chorus.
+** VERIFY with a real microphone and headphones: does it track playing, how much the band's sound leaks in from open-back headphones, are
+   the time constants right. Browsers may ignore the request to turn processing off.
+** TODO The user asked whether the page can tell headphones are in use: it cannot (no browser API); it is a label on the checkbox.
+** TODO Following uses loudness only (no note density or register); it lowers / raises the whole band, drums included.
+** TODO Transitions are whole-bar substitutions; no bar that is half one pattern and half another.
+** TODO 35% hi-hat: if the user meant 35 on the fader's 0-150 scale rather than 35% of its travel, change kit:{ hat:53 } in catalog.js.

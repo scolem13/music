@@ -56,14 +56,21 @@
       { n:1, hits:[[0, "snare", 0.46], [0.5, "snare", 0.62]] },
       { n:1, trip:true, hits:[[0, "snare", 0.42], [T, "snare", 0.50], [2*T, "snare", 0.64]] },
       { n:1, hits:[[0.5, "snare", 0.62], [0.5, "kick", 0.50]] },
-      { n:1, hits:[[0, "tomHi", 0.52], [0.5, "tomLo", 0.60]] }
+      { n:1, hits:[[0, "tomHi", 0.52], [0.5, "tomLo", 0.60]] },
+      { n:1, hits:[[0.5, "snare", 0.56]] },
+      { n:1, hits:[[0, "kick", 0.50], [0.5, "snare", 0.60]] },
+      { n:1, trip:true, hits:[[T, "snare", 0.46], [2*T, "tomHi", 0.58]] }
     ],
     medium: [
       { n:2, trip:true, hits:[[0, "snare", 0.46], [T, "snare", 0.50], [2*T, "snare", 0.55],
                               [1, "tomHi", 0.60], [1+T, "tomMid", 0.64], [1+2*T, "tomLo", 0.70]] },
       { n:2, hits:[[0, "snare", 0.50], [0.5, "snare", 0.55], [1, "tomHi", 0.60], [1.5, "tomLo", 0.68]] },
       { n:2, hits:[[0.5, "snare", 0.50], [1, "snare", 0.56], [1.5, "snare", 0.68]] },
-      { n:2, trip:true, hits:[[0, "snare", 0.48], [2*T, "snare", 0.54], [1, "snare", 0.60], [1+2*T, "tomLo", 0.68]] }
+      { n:2, trip:true, hits:[[0, "snare", 0.48], [2*T, "snare", 0.54], [1, "snare", 0.60], [1+2*T, "tomLo", 0.68]] },
+      { n:2, hits:[[0, "tomHi", 0.52], [0.5, "snare", 0.50], [1, "tomMid", 0.58], [1.5, "kick", 0.56]] },
+      { n:2, hits:[[0, "snare", 0.54], [1, "kick", 0.50], [1.5, "snare", 0.64]] },
+      { n:2, trip:true, hits:[[0, "kick", 0.50], [T, "snare", 0.48], [2*T, "snare", 0.52], [1, "kick", 0.52], [1+T, "tomMid", 0.58], [1+2*T, "tomLo", 0.64]] },
+      { n:2, hits:[[1, "snare", 0.54], [1.5, "snare", 0.66]] }
     ],
     large: [
       { n:3, trip:true, hits:[[0.5, "snare", 0.48], [1, "snare", 0.50], [1+T, "snare", 0.54], [1+2*T, "snare", 0.58],
@@ -82,9 +89,16 @@
     small: [
       { n:1, hits:[[0, "snare", 0.48], [0.25, "snare", 0.50], [0.5, "snare", 0.58], [0.75, "snare", 0.66]] },
       { n:1, hits:[[0, "tomHi", 0.54], [0.5, "tomLo", 0.62]] },
-      { n:1, hits:[[0.5, "snare", 0.62], [0.5, "kick", 0.50]] }
+      { n:1, hits:[[0.5, "snare", 0.62], [0.5, "kick", 0.50]] },
+      { n:1, hits:[[0, "snare", 0.52], [0.5, "tomMid", 0.58], [0.75, "tomLo", 0.62]] },
+      { n:1, hits:[[0.5, "tomHi", 0.56], [0.75, "tomHi", 0.60]] },
+      { n:1, hits:[[0, "kick", 0.52], [0.25, "snare", 0.50], [0.5, "kick", 0.52], [0.75, "snare", 0.64]] }
     ],
     medium: [
+      { n:2, hits:[[0, "tomHi", 0.56], [0.5, "tomHi", 0.58], [1, "tomMid", 0.60], [1.25, "tomMid", 0.60], [1.5, "tomLo", 0.66], [1.75, "tomLo", 0.70]] },
+      { n:2, hits:[[0, "snare", 0.54], [0.75, "snare", 0.56], [1.5, "snare", 0.66], [1.5, "kick", 0.52]] },
+      { n:2, hits:[[0, "kick", 0.54], [0.5, "snare", 0.54], [0.75, "snare", 0.56], [1, "kick", 0.54], [1.5, "tomMid", 0.62], [1.75, "tomLo", 0.66]] },
+      { n:2, hits:[[1, "snare", 0.52], [1.25, "snare", 0.54], [1.5, "snare", 0.60], [1.75, "snare", 0.68]] },
       { n:2, hits:[[0, "snare", 0.50], [0.25, "snare", 0.50], [0.5, "snare", 0.56], [0.75, "snare", 0.58], [1, "tomHi", 0.60], [1.25, "tomHi", 0.60], [1.5, "tomLo", 0.66], [1.75, "tomLo", 0.70]] },
       { n:2, hits:[[0, "snare", 0.52], [0.5, "snare", 0.56], [1, "tomHi", 0.60], [1.5, "tomLo", 0.68]] },
       { n:2, hits:[[0.5, "snare", 0.52], [1, "snare", 0.58], [1.5, "snare", 0.68], [1.5, "kick", 0.52]] }
@@ -92,8 +106,10 @@
   };
   FILLS_ROCK.large = FILLS_ROCK.medium;
   var FILLS_LIGHT = {
-    small: [ { n:1, hits:[[0.5, "snare", 0.50]] }, { n:1, hits:[[0.5, "kick", 0.48]] } ],
-    medium: [ { n:1, hits:[[0, "snare", 0.46], [0.5, "snare", 0.58]] }, { n:1, hits:[[0, "tomMid", 0.48], [0.5, "tomLo", 0.56]] }, { n:1, hits:[[0.5, "snare", 0.56]] } ]
+    small: [ { n:1, hits:[[0.5, "snare", 0.50]] }, { n:1, hits:[[0.5, "kick", 0.48]] }, { n:1, hits:[[0.5, "rim", 0.50]] }, { n:1, hits:[[0.5, "hatOpen", 0.46]] }, { n:1, hits:[[0.5, "tomMid", 0.46]] } ],
+    medium: [ { n:1, hits:[[0, "snare", 0.46], [0.5, "snare", 0.58]] }, { n:1, hits:[[0, "tomMid", 0.48], [0.5, "tomLo", 0.56]] }, { n:1, hits:[[0.5, "snare", 0.56]] },
+              { n:1, hits:[[0, "kick", 0.48], [0.5, "snare", 0.56]] }, { n:1, hits:[[0, "tomHi", 0.46], [0.5, "snare", 0.56]] }, { n:1, hits:[[0, "snare", 0.48], [0.5, "kick", 0.50]] },
+              { n:1, hits:[[0.5, "tomLo", 0.54]] } ]
   };
   FILLS_LIGHT.large = FILLS_LIGHT.medium;
 
@@ -144,6 +160,9 @@
     // the country train beat: the snare on every eighth, leaning on 2 and 4, over a two-beat kick
     train:   { bars: [ [0, 1, 2, 3].reduce(function (h, b){ return h.concat([[b, "snare", b % 2 ? 0.60 : 0.34], [b + 0.5, "snare", 0.40]]); }, [])
                          .concat([[0, "kick", 0.54], [2, "kick", 0.50], [1, "hatFoot", 0.40], [3, "hatFoot", 0.40]]) ], fills: "light" },
+    // brushes (played on the hi-hat and cross-stick: the kit has no brush samples): very light time for a carol or a folk song
+    brushes: { bars: [ cymEighths(0.36, 0.26).concat([[0, "kick", 0.46], [2, "kick", 0.40], [1, "rim", 0.38], [3, "rim", 0.40]]) ],
+               three: cymEighths(0.34, 0.24).slice(0, 6).concat([[0, "kick", 0.46], [1, "rim", 0.32], [2, "rim", 0.36]]), fills: false },
     // 12/8 time (a slow doo-wop or blues ballad), also played as triplets over a bar of 4/4: see compoundBar
     twelve8: { triplet: true },
     halftime:{ bars: [ cymEighths(0.54, 0.40).concat([[0, "kick", 0.60], [1.5, "kick", 0.46], [2, "snare", 0.68]]) ], fills: "light" },
@@ -157,7 +176,28 @@
   function create(cfg){
     var rng = (cfg && cfg.rng) || Math.random;
     var afterFill = null;      // "crash" | "kick": how the bar after a fill lands on beat 1
-    var lastComp = -1, lastFill = null, pushedIn = false;
+    var lastComp = -1, lastFill = null, pushedIn = false, sinceCrash = 99;
+    // How hard the band is playing just now: what the bass and chords did in this bar when the player says so
+    // (ctx.energy), else the conductor's intensity.
+    function energy(ctx){ return ctx.energy != null ? ctx.energy : busy(ctx); }
+    // How the bar after a fill (or the first bar of a chorus) begins: a crash, an open hi-hat, or just the kick.
+    // The crash is earned: likelier the harder the band is playing, seldom after a small fill, and seldom twice within four bars.
+    function land(ctx, size, entering){
+      var e = energy(ctx), p = entering ? 0.45 + 0.4 * e : size === "small" ? 0.04 + 0.2 * e : 0.12 + 0.6 * e;
+      if (sinceCrash < 4) p *= 0.25;
+      if (rng() < p) return "crash";
+      return rng() < 0.3 ? "hat" : "kick";
+    }
+    function opening(ev, landing){ sinceCrash++;
+      if (landing === "crash"){ ev.push({ pos:0, piece:"crash", vel:0.74 }); sinceCrash = 0; }
+      else if (landing === "hat") ev.push({ pos:0, piece:"hatOpen", vel:0.56 }); }
+    // the same fill never comes out quite the same: now and then one note is left out, and the weight shifts a little
+    function vary(hits){
+      var h = hits.map(function (x){ return [x[0], x[1], Math.max(0.3, Math.min(0.8, x[2] + (rng() - 0.5) * 0.08))]; });
+      if (h.length > 2 && rng() < 0.35) h.splice(Math.floor(rng() * (h.length - 1)), 1);
+      if (h.length > 1 && rng() < 0.2 && h[h.length - 1][1] === "snare") h[h.length - 1][1] = rng() < 0.5 ? "tomLo" : "tomMid";
+      return h;
+    }
 
     function weighted(list, weightOf){
       var total = 0, i;
@@ -176,7 +216,7 @@
       if (ctx.last) size = "large";
       else if (lifted(ctx, nx) && !lifted(ctx)) size = "medium";                                  // into the chorus
       else if (ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) size = rng() < 0.6 ? "medium" : "large";
-      else if (ctx.index % 4 === 3){ var r = rng(), k = 2 * busy(ctx); size = r < 0.30 * k ? "small" : r < 0.42 * k ? "medium" : null; }   // more set-ups as the band builds
+      else if (ctx.index % 4 === 3){ var r = rng(), k = 2 * energy(ctx); size = r < 0.30 * k ? "small" : r < 0.42 * k ? "medium" : null; }   // more set-ups as the band builds
       // a fill never takes the whole bar: at most one beat of a two-beat bar, two of a three-beat bar
       if (size && beats === 2) size = "small";
       if (size === "large" && beats === 3) size = "medium";
@@ -192,7 +232,7 @@
       if (!pool.length) pool = playable;
       var f = pool[Math.floor(rng() * pool.length)];
       lastFill = f;
-      return { size: gr && gr.fills === "light" && !(ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) ? "small" : size, n: f.n, hits: f.hits };
+      return { size: gr && gr.fills === "light" && !(ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) ? "small" : size, n: f.n, hits: vary(f.hits) };
     }
 
     // Compound meters: every eighth on the cymbal, kick on beats 1 and 3, backbeat on 2 and 4
@@ -202,12 +242,12 @@
       var fill = chooseFill(ctx, beats), timeEnds = fill ? beats - fill.n : beats;
       var landing = afterFill; afterFill = null;
       var cym = (ctx.opts && ctx.opts.ride) || "ride", lift = lifted(ctx);
-      if (lift && !lifted(ctx, ctx.index - 1)) landing = "crash";
+      if (lift && !lifted(ctx, ctx.index - 1)) landing = land(ctx, "large", true);
       if (lift && cym === "hat") cym = "ride";
       var beatPiece = cym === "hat" ? "hatClosed" : cym === "bell" ? "rideBell" : "ride";
       var offPiece = cym === "hat" ? "hatClosed" : "ride";
       var back = lift ? "snare" : b < 0.4 ? "rim" : "snare";                              // cross-stick while the band plays down
-      if (landing === "crash") ev.push({ pos:0, piece:"crash", vel:0.74 });
+      opening(ev, landing);
       for (i = 0; i < timeEnds; i++){
         if (!(i === 0 && landing === "crash")) ev.push({ pos:i, piece:beatPiece, vel:0.66 });
         ev.push({ pos:i + T, piece:offPiece, vel:0.34, straight:true });
@@ -225,7 +265,7 @@
           if (!onEighthGrid(h[0])) e.straight = true;
           ev.push(e);
         });
-        afterFill = fill.size === "small" ? (rng() < 0.4 ? "crash" : "kick") : (rng() < 0.9 ? "crash" : "kick");
+        afterFill = land(ctx, fill.size);
       }
       ev.sort(function (a, c){ return a.pos - c.pos; });
       return ev;
@@ -243,12 +283,20 @@
       var beatPiece = cym === "hat" ? "hatClosed" : cym === "bell" ? "rideBell" : "ride", offPiece = cym === "hat" ? "hatClosed" : "ride";
       var fill = g.fills ? chooseFill(ctx, beats) : null, timeEnds = fill ? beats - fill.n : beats;
       var landing = afterFill; afterFill = null;
-      if (lift && !lifted(ctx, ctx.index - 1)) landing = "crash";
+      if (lift && !lifted(ctx, ctx.index - 1)) landing = land(ctx, "large", true);
       // a pushed chord: the kick plays it with the band on the last eighth, and leaves the next downbeat alone
       var H = global.BandHarmony, tied = pushedIn, push = !fill && !!(H && H.pushes && H.pushes(ctx)); pushedIn = push;
       if (push) ev.push({ pos:3.5, piece:"kick", vel:0.62 });
-      if (landing === "crash") ev.push({ pos:0, piece:"crash", vel:0.74 });
+      opening(ev, landing);
       var pat = beats === 3 ? g.three : g.bars[ctx.index % g.bars.length];
+      // boom-chick strength (opts.boom, 0..1; 0.5 = as written). Subtle: the hi-hat foot and a soft kick on 1.
+      // Polka power: everything harder, the cymbal on every beat and a kick into the next bar.
+      var bm = g === GROOVES.boomchick && ctx.opts && ctx.opts.boom != null ? Math.max(0, Math.min(1, +ctx.opts.boom)) : null;
+      if (bm != null){
+        pat = pat.filter(function (h){ return bm >= 0.3 || h[1] === "hatFoot" || (h[1] === "kick" && h[0] === 0); }).map(function (h){ return [h[0], h[1], Math.min(0.85, h[2] * (0.62 + 0.76 * bm))]; });
+        if (bm >= 0.75){ for (var q = 0; q < beats; q++) pat.push([q, "cym", 0.50]); if (beats >= 4) pat.push([beats - 0.5, "kick", 0.44]); }
+        if (bm < 0.3) fill = null, timeEnds = beats;
+      }
       pat.forEach(function (h){
         if (h[0] >= timeEnds - 1e-6) return;
         var piece = h[1] === "cym" ? beatPiece : h[1] === "cymOff" ? offPiece : h[1];
@@ -260,7 +308,7 @@
       });
       if (fill){
         fill.hits.forEach(function (h){ var e = { pos: timeEnds + h[0], piece: h[1], vel: h[2] }; if (!onEighthGrid(h[0])) e.straight = true; ev.push(e); });
-        afterFill = fill.size === "small" ? (rng() < 0.4 ? "crash" : "kick") : (rng() < 0.9 ? "crash" : "kick");
+        afterFill = land(ctx, fill.size);
       }
       ev.sort(function (a, b){ return a.pos - b.pos; });
       return ev;
@@ -281,6 +329,7 @@
 
     function bar(ctx){
       if (ctx.opts && ctx.opts.groove === "click") return clickBar(ctx);
+      if (ctx.opts && ctx.opts.groove === "none") return [];                // no drummer
       if (ctx.stop) return stopBar();
       if (ctx.compound || tripletGroove(ctx)) return compoundBar(ctx);
       var gr = grooveOf(ctx); if (gr) return grooveBar(ctx, gr);
@@ -295,7 +344,7 @@
       var offPiece = cym === "hat" ? "hatClosed" : "ride";
 
       // beat 1 after a fill: crash (or just a kick accent) instead of the plain ride note
-      if (landing === "crash") ev.push({ pos:0, piece:"crash", vel:0.74 });
+      opening(ev, landing);
       if (landing) ev.push({ pos:0, piece:"kick", vel:0.60 });
 
       // ride: every beat, accenting 2 and 4, with the skip note after them
@@ -336,7 +385,7 @@
           if (!onEighthGrid(h[0])) e.straight = true;
           ev.push(e);
         });
-        afterFill = fill.size === "small" ? (rng() < 0.4 ? "crash" : "kick") : (rng() < 0.9 ? "crash" : "kick");
+        afterFill = land(ctx, fill.size);
       } else if (straight){
         // the groove above is the whole part
       } else if (two){
@@ -354,12 +403,12 @@
       return ev;
     }
 
-    function ending(){
-      afterFill = null;
+    function ending(ctx){
+      afterFill = null; if (ctx && ctx.opts && ctx.opts.groove === "none") return [];
       return [ { pos:0, piece:"crash", vel:0.80 }, { pos:0, piece:"kick", vel:0.70 } ];
     }
 
-    function reset(){ afterFill = null; lastComp = -1; lastFill = null; pushedIn = false; }
+    function reset(){ afterFill = null; lastComp = -1; lastFill = null; pushedIn = false; sinceCrash = 99; }
 
     return { bar: bar, ending: ending, reset: reset };
   }

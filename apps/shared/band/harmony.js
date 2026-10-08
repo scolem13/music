@@ -784,6 +784,9 @@
     var unitL = (mN / mD) / (parsed.unitsPerBar || 1);              // the L: unit, in whole notes
     var cache = {}, carry = null;
     function chordOf(sym){ return cache[sym] || (cache[sym] = parseChord(sym, transpose)); }
+    // the notes of the key (K: field; a minor key = its natural minor), for parts that add neighbour notes
+    var kf = String(parsed.keyField || "").replace(/^[A-Ga-g][#b]?\s*/, ""), minorKey = /^(m(?!aj)|min|aeo)/i.test(kf);
+    var keyPcs = parsed.keyPc == null ? null : [0, 2, 4, 5, 7, 9, 11].map(function (iv){ return mod12(parsed.keyPc + (minorKey ? 3 : 0) + (transpose || 0) + iv); });
 
     order.forEach(function (bi){
       var bar = parsed.bars[bi];
@@ -823,7 +826,7 @@
         chords.push({ pos: p, chord: e.chord });
       });
       if (!chords.some(function (x){ return !x.chord.nc; })) chords = [];
-      out.push({ src: bi, beats: beats, chords: chords, meter: { n: mt.n, d: mt.d }, compound: mi.compound });
+      out.push({ src: bi, beats: beats, chords: chords, meter: { n: mt.n, d: mt.d }, compound: mi.compound, keyPcs: keyPcs });
     });
     return out;
   }

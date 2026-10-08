@@ -2,7 +2,13 @@
 // Input is the per-bar records from the player's onBarEvents (the notes as generated).
 //
 //   BandNotation.toAbc(bars, { key:"F", drums:false, barsPerLine:4, title:"" }) -> ABC string
-//        staves: comping (treble) · bass (bass clef) · optional drums (percussion clef, two voices)
+//        staves: comping · bass (bass clef) · optional drums (percussion clef, two voices)
+//        A piano is written on a grand staff, by hand and not by pitch: the bass clef holds what the left hand
+//        plays. Events the comping marks hand:"L" are the left hand. A voicing with no separate left hand is
+//        shared out as a pianist would (hands(), the Chord Sheet's rule): up to three notes within an octave
+//        stay in the right hand; a bass note more than an octave under the top goes to the left; four notes are
+//        one and three over a root or a wide gap, else two and two; anything lying wholly below G3 is the left
+//        hand's. So a low right-hand note stays on the treble staff with ledger lines. Guitar: one treble staff.
 //
 // Conventions:
 //   • Swung eighths are written as plain eighths under a "Swing" marking; triplets as triplets.
@@ -120,6 +126,25 @@
     return { abc: out, carry: carry };
   }
 
+  // How many of a chord's notes (ascending) the left hand takes when the hands share it (as Chord Sheet's leftHandCount).
+  function leftCount(ms, rootPc){
+    var n = ms.length, top = ms[n - 1]; if (!n) return 0;
+    if (top < 55) return n;
+    if (n <= 3) return n > 1 && top - ms[0] > 12 ? 1 : 0;
+    var gaps = ms.slice(1).map(function (m, i){ return m - ms[i]; }), rootBass = rootPc != null && mod12(ms[0]) === mod12(rootPc);
+    if (n === 4) return (rootBass || gaps[0] >= 7) ? 1 : 2;
+    var k = 1; for (var i = 1; i < n - 1; i++) if (gaps[i] > gaps[k - 1] + 1e-9 && i + 1 <= 3 && n - (i + 1) <= 5) k = i + 1;
+    return Math.max(n - 5, Math.min(k, gaps[0] >= 7 ? 1 : Math.max(2, k)));
+  }
+  // one comping event -> { R: [midis], L: [midis] }. separate = the bar has a left hand of its own.
+  function hands(e, ch, separate){
+    var ms = (e.midis || []).slice().sort(function (a, b){ return a - b; });
+    if (e.hand === "L") return { R: [], L: ms };
+    if (separate || e.hand === "R") return { R: ms, L: [] };
+    var k = leftCount(ms, ch && !ch.nc ? ch.root : null);
+    return { L: ms.slice(0, k), R: ms.slice(k) };
+  }
+
   function chordName(c){
     if (!c || c.nc) return "N.C.";
     var m = /^([A-G][#b]*)(.*)$/.exec(c.sym || "");
@@ -135,7 +160,9 @@
     var K = keyInfo(o.key), perLine = o.barsPerLine || 4, first = bars[0] || {}, beats0 = first.beats || 4;
     var guitar = bars.some(function (b){ return ((b.parts || {}).comp || []).some(function (e){ return e.inst === "guitar"; }); });
     var M = global.BandMidi, straight = M ? bars.every(function (b){ return M.swingOf(b) <= 0.5; }) : !!o.straight;
-    var voices = [ { id:"K", def:'V:K clef=treble name="' + (guitar ? "Gtr." : "Pno.") + '"' }, { id:"B", def:'V:B clef=bass name="Bass"' } ];
+    var voices = [ { id:"K", def:'V:K clef=treble name="' + (guitar ? "Gtr." : "Pno.") + '"' } ];
+    if (!guitar) voices.push({ id:"L", def:"V:L clef=bass" });               // the piano's left hand
+    voices.push({ id:"B", def:'V:B clef=bass name="Bass"' });
     if (o.drums){ voices.push({ id:"U", def:'V:U clef=perc stem=up name="Dr."' }); voices.push({ id:"D", def:"V:D clef=perc stem=down" }); }
 
     // per voice, per bar: the grid of items
@@ -145,12 +172,18 @@
         var cmp = !!bar.compound, per = cmp ? 3 : 2;                          // written eighths per beat
         if (v === "B") (P.bass || []).forEach(function (e){ var g = snap(e.pos, cmp), ch = chordAt(bar.chords, e.pos);
           items[g] = { want: Math.max(1, Math.round((e.dur || 1) * per + 0.45)), tok: function (ms){ return pitchTok(e.midi + 12, ch, K, ms); } }; });
-        else if (v === "K") (P.comp || []).forEach(function (e){ var g = snap(e.pos, cmp);
+        else if (v === "K" || v === "L"){ var separate = (P.comp || []).some(function (e){ return e.hand === "L"; });
+          (P.comp || []).forEach(function (e){ var g = snap(e.pos, cmp);
           // an off-beat hit just before a change is spelled as the chord it anticipates
-          var ch = chordAt(bar.chords, e.pos + 0.5) || chordAt(bar.chords, e.pos), ms0 = (e.midis || []).slice().sort(function (a, b){ return a - b; });
+          var ch = chordAt(bar.chords, e.pos + 0.5) || chordAt(bar.chords, e.pos);
           if (e.pos + 0.5 >= bar.beats - 1e-6 && bar.nextChord) ch = bar.nextChord;
-          items[g] = { want: Math.max(1, Math.round((e.dur || 0.5) * per)), tok: function (ms){
-            var t = ms0.map(function (m){ return pitchTok(m + (e.inst === "guitar" ? 12 : 0), ch, K, ms); }); return t.length > 1 ? "[" + t.join("") + "]" : t[0] || "z"; } }; });
+          var hd = e.inst === "guitar" ? { R: (e.midis || []).map(function (m){ return m + 12; }), L: [] } : hands(e, ch, separate), mine = v === "L" ? hd.L : hd.R;
+          if (!mine.length) return;
+          var want = Math.max(1, Math.round((e.dur || 0.5) * per)), it = items[g];
+          if (!it){ it = items[g] = { want: want, list: [], ch: ch }; it.tok = (function (it){ return function (ms){
+            var t = it.list.map(function (m){ return pitchTok(m, it.ch, K, ms); }); return t.length > 1 ? "[" + t.join("") + "]" : t[0] || "z"; }; })(it); }
+          else it.want = Math.max(it.want, want);                              // two events of one hand at one moment: one chord
+          mine.forEach(function (m){ if (it.list.indexOf(m) < 0) it.list.push(m); }); it.list.sort(function (a, b){ return a - b; }); }); }
         else (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || (v === "D") !== !!DOWN[e.piece]) return;
           var g = snap(e.pos, cmp), it = items[g] || (items[g] = { fill: true, want: 1, hits: [], tok: function (){
             var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0] + h[1]]) return; seen[h[0] + h[1]] = 1; t.push((h[1] ? "!style=x!" : "") + h[0]); });
@@ -167,7 +200,7 @@
         var marks = {}, cmp = !!bar.compound, nb = bars[i + 1], sig = sigOf(bar);
         if (v.id === "K") (bar.chords || []).forEach(function (c){ marks[Math.round(c.pos * (cmp ? 3 : G))] = chordName(c.chord); });
         var ng = gs[i + 1], nextFree = !!ng && ng[0] === undefined && (!!(nb && nb.compound) || !Object.keys(ng).some(function (g){ return g < G && (g % G === 4 || g % G === 8); }));
-        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.id === "K" || v.id === "B", cmp);
+        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.id === "K" || v.id === "L" || v.id === "B", cmp);
         carry = r.carry;
         return (i > 0 && sig !== sigOf(bars[i - 1]) ? "[M:" + sig + "]" : "") + r.abc;
       });
@@ -177,7 +210,7 @@
     var head = ["X:1"]; if (o.title) head.push("T:" + o.title);
     if (first.compound) head.push("M:" + sigOf(first), "L:1/8", "Q:3/8=" + Math.round(first.tempo || 120));
     else head.push("M:" + beats0 + "/4", "L:1/8", 'Q:"' + (straight ? "Straight" : "Swing") + '" 1/4=' + Math.round(first.tempo || 120));
-    head.push("%%score " + voices.slice(0, 2).map(function (v){ return v.id; }).join(" ") + (o.drums ? " (U D)" : ""));
+    head.push("%%score " + (guitar ? "K" : "{K L}") + " B" + (o.drums ? " (U D)" : ""));
     voices.forEach(function (v){ head.push(v.def); });
     head.push("K:" + K.abc);
     var lines = [];
