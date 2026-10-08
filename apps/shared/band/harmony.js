@@ -581,6 +581,14 @@
     return best ? best.midis.slice() : [];
   }
 
+  // voicing() for a display that looks ahead: the same choice, without moving the band's hand
+  // (the guitar's remembered grip). -> { midis, strings | null }
+  function peek(chord, style, prev, inst){
+    var lg = lastGrip, m = voicing(chord, style, prev, inst), st = (lastGrip && lastGrip !== lg) ? lastGrip.strings : null;
+    lastGrip = lg;
+    return { midis: m, strings: st || (m.length && grips[m.join(",")]) || null };
+  }
+
   // A voicing chosen for its TOP NOTE: the shape whose highest note is nearest o.top, moving the other
   // voices (and on guitar the hand) as little as that allows. o.differ skips the shape already sounding;
   // o.passing asks for the passing diminished chord ("bh" only; [] when the style has none).
@@ -623,7 +631,9 @@
   // Not in compound meters and not on stop bars. ctx.form / ctx.nextIndex (the form and the bar played
   // next) are used when given. Pinned voicings follow their chords onto the new bar numbers.
   // Which parts change: ctx.opts.timeFeelParts, the names joined by spaces. Unset = "bass drums": the
-  // comping keeps its own rhythm, as a pianist or guitarist usually does when the rhythm section shifts.
+  // comping keeps its own rhythm, as a pianist or guitarist usually does when the rhythm section shifts,
+  // but thins out / fills in and leans on the new backbeat (respond(), below). Add the word "plain"
+  // ("bass drums plain") to leave the comping exactly as it is in normal time.
   function feelPart(part, name){
     var carry = null;
     function swingOf(ctx, tempo){
@@ -701,11 +711,57 @@
       if (paired) carry = { bar: ctx.bar + 1, index: i + 1, evs: later };
       return now;
     }
+    // The comping when only the rhythm section changes time: same rhythm, different weight.
+    //   double: thinner and shorter. Each chord's first hit and the hits between the beats stay (those
+    //     are where the doubled backbeat falls, so they are played straight and a little louder); the
+    //     other hits on the beat go. A bar with nothing between the beats gets one stab on the "and" of 2.
+    //   half: fuller and longer. Every chord rings until the next hit, and beat 3 (where the half-time
+    //     backbeat falls) is accented, re-striking the chord there when the rhythm had nothing on it.
+    // Bars of broken chords (arp) and passing chords are left as they are.
+    function respond(evs, f, ctx){
+      var B = ctx.beats || 4, list = evs.filter(function (e){ return e && e.pos >= 0; }).sort(function (a, b){ return a.pos - b.pos; });
+      if (!list.length || list.some(function (e){ return e.arp || e.passing || !e.midis; })) return evs;
+      function near(x, y){ return Math.abs(x - y) < 0.02; }
+      function louder(e, k){ var c = Object.assign({}, e); c.vel = Math.round(Math.min(0.8, (e.vel == null ? 0.6 : e.vel) * k) * 1000) / 1000; return c; }
+      var out = [], seen = {}, i, e;
+      if (f === "double"){
+        for (i = 0; i < list.length; i++){
+          e = list[i]; var fr = e.pos - Math.floor(e.pos + 1e-6), firstOf = !seen[e.of]; seen[e.of] = 1;
+          if (near(fr, 0.5)){ var c = louder(e, 1.14); c.straight = true; c.dur = Math.min(c.dur == null ? 0.4 : c.dur, 0.45); out.push(c); }
+          else if (firstOf || near(e.pos, 0)){ var k0 = Object.assign({}, e); if (k0.dur != null && list.length > 1) k0.dur = Math.min(k0.dur, 0.75); out.push(k0); }
+        }
+        if (B >= 2 && !out.some(function (x){ return near(x.pos - Math.floor(x.pos + 1e-6), 0.5); })){
+          var src = null; list.forEach(function (x){ if (x.pos <= 1.5) src = x; });
+          if (src && list.length > 1){ var st = louder(src, 1.1); st.pos = 1.5; st.dur = 0.4; st.straight = true; out.push(st); }
+        }
+      } else {
+        var mid = B % 2 === 0 ? B / 2 : null, hit = false;
+        for (i = 0; i < list.length; i++){
+          e = list[i]; var until = (i + 1 < list.length ? list[i + 1].pos : B) - e.pos, c2 = Object.assign({}, e);
+          if (mid != null && e.pos < mid - 0.02 && e.pos + until > mid) until = mid - e.pos;        // ... or until beat 3, which is struck again
+          c2.dur = Math.round(Math.max(e.dur == null ? 0 : e.dur, Math.min(until, 2) * 0.96) * 1000) / 1000;
+          if (mid != null && near(e.pos, mid)){ c2 = louder(c2, 1.14); hit = true; }
+          out.push(c2);
+        }
+        if (mid != null && !hit){
+          var from = null; list.forEach(function (x){ if (x.pos < mid) from = x; });
+          var nxt = null; list.forEach(function (x){ if (nxt == null && x.pos > mid) nxt = x.pos; });
+          if (from){ var r = louder(from, 1.12); r.pos = mid; r.dur = Math.round(Math.min((nxt == null ? B : nxt) - mid, 2) * 0.96 * 1000) / 1000; delete r.straight; out.push(r); }
+        }
+      }
+      return out.sort(function (a, b){ return a.pos - b.pos; });
+    }
     return {
       bar: function (ctx){
         var f = ctx && ctx.opts && ctx.opts.timeFeel, who = ctx && ctx.opts && ctx.opts.timeFeelParts;
-        if (name && String(who == null ? "bass drums" : who).split(" ").indexOf(name) < 0) f = null;
-        if ((f !== "double" && f !== "half") || ctx.compound || ctx.stop || !ctx.chords || !ctx.chords.length){ carry = null; return part.bar(ctx); }
+        var whoL = String(who == null ? "bass drums" : who).split(" "), f0 = f;
+        if (name && whoL.indexOf(name) < 0) f = null;
+        if ((f !== "double" && f !== "half") || ctx.compound || ctx.stop || !ctx.chords || !ctx.chords.length){
+          carry = null;
+          // the comping keeps its own rhythm but answers the rhythm section (unless told "plain")
+          if (name === "comp" && f == null && (f0 === "double" || f0 === "half") && whoL.indexOf("plain") < 0 && !ctx.compound && !ctx.stop) return respond(part.bar(ctx) || [], f0, ctx);
+          return part.bar(ctx);
+        }
         return f === "double" ? doubled(ctx) : halved(ctx);
       },
       ending: function (ctx){ carry = null; return part.ending ? part.ending(ctx) : []; },
@@ -773,6 +829,16 @@
   }
 
   // ---- pinned voicings + the as-played view ----
+  // A parsed chord as the shared voicing library describes one: { root, intervals }, the written
+  // extensions and alterations above the octave (for ChordVoicings.identify / .piano).
+  function libChord(c){
+    if (!c || c.nc) return null;
+    var iv = (c.tones || []).slice();
+    if (c.b9) iv.push(13); if (c.s9) iv.push(15);
+    if (!c.b9 && !c.s9 && (c.ext >= 9 || c.add9 || c.six9)) iv.push(14);
+    if (c.s11) iv.push(18); if (c.b13) iv.push(20); else if (c.ext >= 13) iv.push(21);
+    return { root: c.root, intervals: iv };
+  }
   function pinMap(form, pins){
     var map = {};
     (pins || []).forEach(function (p){
@@ -815,11 +881,25 @@
     return num + suf.replace(/b/g, "\u266d").replace(/#/g, "\u266f");
   }
 
-  global.BandHarmony = {
+  // Pushed chords (opts.push): is the NEXT bar's chord played early, on the last eighth of this bar? The
+  // bass, the comping and the drums all ask this, so they push together: into the third bar of each
+  // four-bar phrase, when the chord changes there. Never into or out of a stop, in the last bar, in a
+  // compound or odd-length bar, or while the band is in half or double time.
+  function pushes(ctx){
+    var o = ctx && ctx.opts; if (!o || !o.push || ctx.compound || ctx.beats !== 4 || ctx.stop || ctx.nextStop || ctx.last || ctx.intro || ctx.ending) return false;
+    if (o.timeFeel && o.timeFeel !== "normal") return false;
+    if ((ctx.phrase ? ctx.phrase.bar : ctx.index % 4) !== 1) return false;
+    var n = ctx.nextChords && ctx.nextChords[0]; if (!n || n.pos !== 0 || !n.chord || n.chord.nc) return false;
+    var cur = chordAt(ctx.chords, 3.5); return !!cur && cur.key !== n.chord.key;
+  }
+  // Is this bar one of the chorus bars (opts.lift = form bar indexes), where the band plays up?
+  function lifted(ctx, index){ var l = ctx && ctx.opts && ctx.opts.lift; return !!(l && l.indexOf && !ctx.intro && l.indexOf(index == null ? ctx.index : index) >= 0); }
+
+  global.BandHarmony = { pushes: pushes, lifted: lifted,
     parseChord: parseChord, chordScale: chordScale, voicing: voicing, buildForm: buildForm,
-    chordAt: chordAt, sameChord: sameChord, noteName: noteName, pcName: pcName,
+    chordAt: chordAt, sameChord: sameChord, noteName: noteName, pcName: pcName, libChord: libChord,
     voicingClass: voicingClass, motion: motion, STYLES: STYLES,
     styleList: styleList, defaultStyle: defaultStyle, openShape: openShape, hasStyle: hasStyle, pinMap: pinMap, asPlayed: asPlayed, roman: roman, meterInfo: meterInfo,
-    candidates: candidates, toward: toward, gripOf: function (midis){ return gripFor(midis); }, sixthOf: sixthOf, asSixth: asSixth, colour: colour, feelPart: feelPart
+    candidates: candidates, toward: toward, peek: peek, gripOf: function (midis){ return gripFor(midis); }, sixthOf: sixthOf, asSixth: asSixth, colour: colour, feelPart: feelPart
   };
 })(typeof window !== "undefined" ? window : globalThis);

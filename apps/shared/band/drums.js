@@ -75,11 +75,37 @@
     ]
   };
 
+  // Fills for the rock and pop grooves (GROOVES[..].fills). "rock": sixteenths on the snare and down the
+  // toms, never longer than two beats. "light": a couple of snare notes at most, for ballads, strummed
+  // songs and dance grooves, where a tom roll would be out of character.
+  var FILLS_ROCK = {
+    small: [
+      { n:1, hits:[[0, "snare", 0.48], [0.25, "snare", 0.50], [0.5, "snare", 0.58], [0.75, "snare", 0.66]] },
+      { n:1, hits:[[0, "tomHi", 0.54], [0.5, "tomLo", 0.62]] },
+      { n:1, hits:[[0.5, "snare", 0.62], [0.5, "kick", 0.50]] }
+    ],
+    medium: [
+      { n:2, hits:[[0, "snare", 0.50], [0.25, "snare", 0.50], [0.5, "snare", 0.56], [0.75, "snare", 0.58], [1, "tomHi", 0.60], [1.25, "tomHi", 0.60], [1.5, "tomLo", 0.66], [1.75, "tomLo", 0.70]] },
+      { n:2, hits:[[0, "snare", 0.52], [0.5, "snare", 0.56], [1, "tomHi", 0.60], [1.5, "tomLo", 0.68]] },
+      { n:2, hits:[[0.5, "snare", 0.52], [1, "snare", 0.58], [1.5, "snare", 0.68], [1.5, "kick", 0.52]] }
+    ]
+  };
+  FILLS_ROCK.large = FILLS_ROCK.medium;
+  var FILLS_LIGHT = {
+    small: [ { n:1, hits:[[0.5, "snare", 0.50]] }, { n:1, hits:[[0.5, "kick", 0.48]] } ],
+    medium: [ { n:1, hits:[[0, "snare", 0.46], [0.5, "snare", 0.58]] }, { n:1, hits:[[0, "tomMid", 0.48], [0.5, "tomLo", 0.56]] }, { n:1, hits:[[0.5, "snare", 0.56]] } ]
+  };
+  FILLS_LIGHT.large = FILLS_LIGHT.medium;
+
   // Grooves: bars = [[pos, piece, vel], ...] for each bar of the pattern (two-bar patterns follow the
   // form bar's parity). "cym" / "cymOff" = the time-keeping cymbal chosen in opts.ride, on and off the beat.
   function cymEighths(on, off){ var h = []; for (var b = 0; b < 4; b++){ h.push([b, "cym", on]); h.push([b + 0.5, "cymOff", off]); } return h; }
   function cymBeats(v){ return [[0, "cym", v], [1, "cym", v], [2, "cym", v], [3, "cym", v]]; }
   var FOOT = [[1, "hatFoot", 0.36], [3, "hatFoot", 0.36]];
+  function ROCK(kicks){ return cymEighths(0.58, 0.44).concat(kicks.map(function (p){ return [p, "kick", p === 0 ? 0.62 : p === Math.floor(p) ? 0.58 : 0.48]; }), [[1, "snare", 0.66], [3, "snare", 0.66]]); }
+  function BACK(on, off, kicks, piece, v){ return cymEighths(on, off).concat(kicks.map(function (p){ return [p, "kick", p === 0 ? 0.58 : p === Math.floor(p) ? 0.52 : 0.42]; }), [[1, piece, v], [3, piece, v]]); }
+  function lifted(ctx, i){ var l = ctx.opts && ctx.opts.lift; return !!(l && l.indexOf && !ctx.intro && l.indexOf(i == null ? ctx.index : i) >= 0); }
+  function tripletGroove(ctx){ var g = ctx.opts && GROOVES.hasOwnProperty(ctx.opts.groove) ? GROOVES[ctx.opts.groove] : null; return !!(g && g.triplet); }
   var BOSSA_K = [[0, "kick", 0.46], [1.5, "kick", 0.38], [2, "kick", 0.46], [3.5, "kick", 0.38]];
   var GROOVES = {
     bossa:   { bars: [ cymEighths(0.48, 0.38).concat(BOSSA_K, FOOT, [[0, "rim", 0.50], [1.5, "rim", 0.50], [3, "rim", 0.50]]),
@@ -99,9 +125,28 @@
     calypso: { bars: [ cymEighths(0.40, 0.52).concat([[0, "kick", 0.52], [2, "kick", 0.50], [1.5, "rim", 0.54], [3, "rim", 0.54]]) ] },
     onedrop: { bars: [ cymEighths(0.36, 0.52).concat([[2, "kick", 0.60], [2, "rim", 0.58]]) ] },
     boomchick: { bars: [ [[0, "kick", 0.54], [2, "kick", 0.50], [1, "snare", 0.40], [3, "snare", 0.40], [1, "hatFoot", 0.40], [3, "hatFoot", 0.40]] ],
-                 three: [[0, "kick", 0.54], [1, "snare", 0.36], [2, "snare", 0.38], [1, "hatFoot", 0.38], [2, "hatFoot", 0.38]], fills: true },
-    rock:    { bars: [ cymEighths(0.58, 0.44).concat([[0, "kick", 0.62], [2, "kick", 0.58], [2.5, "kick", 0.46], [1, "snare", 0.66], [3, "snare", 0.66]]) ], fills: true },
-    halftime:{ bars: [ cymEighths(0.54, 0.40).concat([[0, "kick", 0.60], [1.5, "kick", 0.46], [2, "snare", 0.68]]) ], fills: true },
+                 three: [[0, "kick", 0.54], [1, "snare", 0.36], [2, "snare", 0.38], [1, "hatFoot", 0.38], [2, "hatFoot", 0.38]], fills: "light" },
+    // The rock and pop grooves are four bars long, so the kick changes from bar to bar, and each kick
+    // pattern is the rhythm of the bass line that goes with it (bass.js LINES). "back" = the backbeat:
+    // a cross-stick, or the snare in a chorus bar (opts.lift).
+    rock:    { bars: [ ROCK([0, 2, 2.5]), ROCK([0, 1.5, 2]), ROCK([0, 2, 2.5]), ROCK([0, 2, 2.5, 3.5]) ], fills: "rock" },
+    // the strummed song: kick on 1, the and of 2 and 3, with the "Dotted" bass line
+    strum:   { bars: [ BACK(0.50, 0.36, [0, 1.5, 2], "snare", 0.56), BACK(0.50, 0.36, [0, 1.5, 2, 3.5], "snare", 0.56) ],
+               three: cymEighths(0.46, 0.34).slice(0, 6).concat([[0, "kick", 0.56], [2, "snare", 0.50]]), fills: "light" },
+    // the ballad: the same kick, quieter, under a cross-stick
+    ballad:  { bars: [ BACK(0.44, 0.32, [0, 1.5, 2], "back", 0.52), BACK(0.44, 0.32, [0, 2, 3.5], "back", 0.52) ],
+               three: cymEighths(0.42, 0.30).slice(0, 6).concat([[0, "kick", 0.52], [2, "back", 0.48]]), fills: "light" },
+    // four on the floor: kick on every beat, snare and clap on 2 and 4, the open hi-hat on every off-beat
+    dance:   { bars: [ [0, 1, 2, 3].reduce(function (h, b){ return h.concat([[b, "kick", 0.64], [b, "hatClosed", 0.34], [b + 0.5, "hatOpen", 0.46]]); }, [])
+                         .concat([[1, "snare", 0.60], [3, "snare", 0.60], [1, "clap", 0.50], [3, "clap", 0.50]]) ], fills: "light" },
+    // Motown: the snare on all four beats, a tambourine on 2 and 4
+    motown:  { bars: [ cymEighths(0.50, 0.38).concat([[0, "kick", 0.60], [1.5, "kick", 0.46], [2, "kick", 0.56], [0, "snare", 0.44], [1, "snare", 0.62], [2, "snare", 0.44], [3, "snare", 0.62], [1, "tamb", 0.50], [3, "tamb", 0.50]]) ], fills: "light" },
+    // the country train beat: the snare on every eighth, leaning on 2 and 4, over a two-beat kick
+    train:   { bars: [ [0, 1, 2, 3].reduce(function (h, b){ return h.concat([[b, "snare", b % 2 ? 0.60 : 0.34], [b + 0.5, "snare", 0.40]]); }, [])
+                         .concat([[0, "kick", 0.54], [2, "kick", 0.50], [1, "hatFoot", 0.40], [3, "hatFoot", 0.40]]) ], fills: "light" },
+    // 12/8 time (a slow doo-wop or blues ballad), also played as triplets over a bar of 4/4: see compoundBar
+    twelve8: { triplet: true },
+    halftime:{ bars: [ cymEighths(0.54, 0.40).concat([[0, "kick", 0.60], [1.5, "kick", 0.46], [2, "snare", 0.68]]) ], fills: "light" },
     funk:    { bars: [ cymEighths(0.54, 0.44).concat([[0, "kick", 0.62], [1.5, "kick", 0.50], [2.5, "kick", 0.52], [1, "snare", 0.66], [3, "snare", 0.66]]) ], fills: true }
   };
 
@@ -112,7 +157,7 @@
   function create(cfg){
     var rng = (cfg && cfg.rng) || Math.random;
     var afterFill = null;      // "crash" | "kick": how the bar after a fill lands on beat 1
-    var lastComp = -1, lastFill = null;
+    var lastComp = -1, lastFill = null, pushedIn = false;
 
     function weighted(list, weightOf){
       var total = 0, i;
@@ -127,7 +172,9 @@
     function fillSize(ctx, beats){
       if (beats < 2) return null;
       var size = null;
+      var nx = ctx.nextIndex != null ? ctx.nextIndex : ctx.index + 1;
       if (ctx.last) size = "large";
+      else if (lifted(ctx, nx) && !lifted(ctx)) size = "medium";                                  // into the chorus
       else if (ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) size = rng() < 0.6 ? "medium" : "large";
       else if (ctx.index % 4 === 3){ var r = rng(), k = 2 * busy(ctx); size = r < 0.30 * k ? "small" : r < 0.42 * k ? "medium" : null; }   // more set-ups as the band builds
       // a fill never takes the whole bar: at most one beat of a two-beat bar, two of a three-beat bar
@@ -137,14 +184,15 @@
     }
     function chooseFill(ctx, beats){
       var size = fillSize(ctx, beats); if (!size) return null;
-      var playable = FILLS[size].filter(function (f){ return !(f.trip && ctx.tempo > 220); });
-      if (ctx.compound){ var tr = playable.filter(function (f){ return f.trip; }); if (tr.length) playable = tr; }   // the beat is already in three
+      var gr = grooveOf(ctx), set = gr && gr.fills === "rock" ? FILLS_ROCK : gr && gr.fills === "light" ? FILLS_LIGHT : FILLS;
+      var playable = set[size].filter(function (f){ return !(f.trip && ctx.tempo > 220); });
+      if (ctx.compound || tripletGroove(ctx)){ var tr = playable.filter(function (f){ return f.trip; }); if (tr.length) playable = tr; }   // the beat is already in three
       else if ((ctx.opts && ctx.opts.feel === "straight") || grooveOf(ctx)) playable = playable.filter(function (f){ return !f.trip; });
       var pool = playable.filter(function (f){ return f !== lastFill; });   // don't play the same fill twice running
       if (!pool.length) pool = playable;
       var f = pool[Math.floor(rng() * pool.length)];
       lastFill = f;
-      return { size: size, n: f.n, hits: f.hits };
+      return { size: gr && gr.fills === "light" && !(ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) ? "small" : size, n: f.n, hits: f.hits };
     }
 
     // Compound meters: every eighth on the cymbal, kick on beats 1 and 3, backbeat on 2 and 4
@@ -153,10 +201,12 @@
       var ev = [], beats = ctx.beats || 4, i, b = busy(ctx);
       var fill = chooseFill(ctx, beats), timeEnds = fill ? beats - fill.n : beats;
       var landing = afterFill; afterFill = null;
-      var cym = (ctx.opts && ctx.opts.ride) || "ride";
+      var cym = (ctx.opts && ctx.opts.ride) || "ride", lift = lifted(ctx);
+      if (lift && !lifted(ctx, ctx.index - 1)) landing = "crash";
+      if (lift && cym === "hat") cym = "ride";
       var beatPiece = cym === "hat" ? "hatClosed" : cym === "bell" ? "rideBell" : "ride";
       var offPiece = cym === "hat" ? "hatClosed" : "ride";
-      var back = b < 0.4 ? "rim" : "snare";                              // cross-stick while the band plays down
+      var back = lift ? "snare" : b < 0.4 ? "rim" : "snare";                              // cross-stick while the band plays down
       if (landing === "crash") ev.push({ pos:0, piece:"crash", vel:0.74 });
       for (i = 0; i < timeEnds; i++){
         if (!(i === 0 && landing === "crash")) ev.push({ pos:i, piece:beatPiece, vel:0.66 });
@@ -184,14 +234,19 @@
     // the groove this bar is played in, or null for the jazz time
     function grooveOf(ctx){
       var g = ctx.opts && GROOVES.hasOwnProperty(ctx.opts.groove) ? GROOVES[ctx.opts.groove] : null, beats = ctx.beats || 4;
-      if (!g || ctx.compound) return null;
+      if (!g || ctx.compound || g.triplet) return null;
       return (beats === 4 || beats === 2 || (beats === 3 && g.three)) ? g : null;
     }
     function grooveBar(ctx, g){
-      var ev = [], beats = ctx.beats || 4, cym = (ctx.opts && ctx.opts.ride) || "ride";
+      var ev = [], beats = ctx.beats || 4, cym = (ctx.opts && ctx.opts.ride) || "ride", lift = lifted(ctx);
+      if (lift && cym === "hat") cym = "ride";                          // the chorus moves from the hi-hat to the ride
       var beatPiece = cym === "hat" ? "hatClosed" : cym === "bell" ? "rideBell" : "ride", offPiece = cym === "hat" ? "hatClosed" : "ride";
       var fill = g.fills ? chooseFill(ctx, beats) : null, timeEnds = fill ? beats - fill.n : beats;
       var landing = afterFill; afterFill = null;
+      if (lift && !lifted(ctx, ctx.index - 1)) landing = "crash";
+      // a pushed chord: the kick plays it with the band on the last eighth, and leaves the next downbeat alone
+      var H = global.BandHarmony, tied = pushedIn, push = !fill && !!(H && H.pushes && H.pushes(ctx)); pushedIn = push;
+      if (push) ev.push({ pos:3.5, piece:"kick", vel:0.62 });
       if (landing === "crash") ev.push({ pos:0, piece:"crash", vel:0.74 });
       var pat = beats === 3 ? g.three : g.bars[ctx.index % g.bars.length];
       pat.forEach(function (h){
@@ -199,7 +254,9 @@
         var piece = h[1] === "cym" ? beatPiece : h[1] === "cymOff" ? offPiece : h[1];
         if (piece === "hatFoot" && cym === "hat") return;                // the hat is being played with the stick
         if (h[0] === 0 && landing === "crash" && (h[1] === "cym" || h[1] === "cymOff")) return;
-        ev.push({ pos:h[0], piece:piece, vel:h[2] });
+        if (piece === "back") piece = lift ? "snare" : "rim";
+        if (piece === "kick" && ((tied && h[0] === 0) || (push && h[0] >= 3.5))) return;
+        ev.push({ pos:h[0], piece:piece, vel: lift && (piece === "snare" || piece === "kick") ? Math.min(0.8, Math.round(h[2] * 1060) / 1000) : h[2] });
       });
       if (fill){
         fill.hits.forEach(function (h){ var e = { pos: timeEnds + h[0], piece: h[1], vel: h[2] }; if (!onEighthGrid(h[0])) e.straight = true; ev.push(e); });
@@ -225,7 +282,7 @@
     function bar(ctx){
       if (ctx.opts && ctx.opts.groove === "click") return clickBar(ctx);
       if (ctx.stop) return stopBar();
-      if (ctx.compound) return compoundBar(ctx);
+      if (ctx.compound || tripletGroove(ctx)) return compoundBar(ctx);
       var gr = grooveOf(ctx); if (gr) return grooveBar(ctx, gr);
       var ev = [], beats = ctx.beats || 4, i, waltz = beats === 3;
       var two = !!(ctx.opts && ctx.opts.bassFeel === "two");
@@ -302,7 +359,7 @@
       return [ { pos:0, piece:"crash", vel:0.80 }, { pos:0, piece:"kick", vel:0.70 } ];
     }
 
-    function reset(){ afterFill = null; lastComp = -1; lastFill = null; }
+    function reset(){ afterFill = null; lastComp = -1; lastFill = null; pushedIn = false; }
 
     return { bar: bar, ending: ending, reset: reset };
   }

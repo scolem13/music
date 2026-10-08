@@ -659,7 +659,34 @@
               { id:"guide2", label:"Two-note chords (3rd & 7th)" } ]
   };
 
+  // Which piano voicing a set of played notes is, for a chord that is already known.
+  //   identify({ root, intervals }, midis) -> { style, styleLabel, index, label, name, tones:[names low..high], note }
+  // `index` is the candidate's place in piano(chord, style) (the inversion / form). Octave does not
+  // matter; spacing does. Notes that fit no style come back with style null and name "As played",
+  // each note still named by its degree. A reading that uses every tone the chord has is preferred
+  // (so a half-diminished 3-5-7-R is "1st inversion" before it is a rootless form).
+  var IDENTIFY_ORDER = ["standard", "shell", "guide", "rootless", "drop2", "drop3"];
+  var DEGREE_NAMES = ["R", "b9", "9", "#9", "3", "11", "#11", "5", "b13", "13", "b7", "7"];
+  function identify(chord, midis){
+    var seen = {}, ms = (midis || []).filter(function (m){ if (!isFinite(m) || seen[m]) return false; seen[m] = 1; return true; }).sort(function (x, y){ return x - y; });
+    if (!ms.length || !chord) return null;
+    var root = mod12(chord.root || 0), low = ms[0], key = ms.map(function (m){ return m - low; }).join(","), hit = null;
+    IDENTIFY_ORDER.forEach(function (style){
+      if (hit) return;
+      pianoShapes(chord, style).forEach(function (sh, i){
+        if (hit || mod12(root + sh.bassOff) !== mod12(low) || sh.rels.join(",") !== key) return;
+        var def = STYLES.piano.filter(function (x){ return x.id === style; })[0], sl = def ? def.label : style;
+        hit = { style: style, styleLabel: sl, index: i, label: sh.label, name: sl + ": " + sh.label, tones: sh.names.slice(), note: sh.note || "" };
+      });
+    });
+    if (hit) return hit;
+    var own = {}; analyze(chord).tones.forEach(function (t){ own[mod12(t.off)] = t.name; });
+    return { style: null, styleLabel: "As played", index: -1, label: "As played", name: "As played", note: "",
+             tones: ms.map(function (m){ var iv = mod12(m - root); return own[iv] || DEGREE_NAMES[iv]; }) };
+  }
+
   global.ChordVoicings = {
+    identify: identify,
     styles: function (instrument){
       return (STYLES[instrument] || []).map(function (s){ var o = { id:s.id, label:s.label }; if (s.sheetOnly) o.sheetOnly = true; return o; });
     },

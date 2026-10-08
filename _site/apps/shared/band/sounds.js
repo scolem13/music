@@ -65,12 +65,17 @@
                 zones: soundfontZones(sf, "electric_piano_1", 43, 84, 3) },
       guitar: { gain: 2.9, release: 0.08,
                 zones: soundfontZones(sf, "electric_guitar_jazz", 40, 78, 3) },
+      // steel-string acoustic and clean electric, for the folk, rock and pop styles (gains are first guesses, not yet set by ear)
+      aguitar:{ gain: 2.6, release: 0.10,
+                zones: soundfontZones(sf, "acoustic_guitar_steel", 40, 84, 3) },
+      cguitar:{ gain: 2.6, release: 0.08,
+                zones: soundfontZones(sf, "electric_guitar_clean", 40, 84, 3) },
       kit:    { gain: 1.25,
                 zones: soundfontKit(sf, { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46,
-                                          crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31 }),
+                                          crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 }),
                 // per-piece trim (the soundfont's kick is ~8x hotter than its ride); group/chokes =
                 // the closed hat and the foot cut a ringing open hat; the cymbals can be damped by choke("cymbals")
-                pieces: { kick:{ gain:0.56 }, snare:{ gain:0.80 }, rim:{ gain:1.15 }, sticks:{ gain:0.50 },
+                pieces: { kick:{ gain:0.56 }, snare:{ gain:0.80 }, clap:{ gain:0.70 }, tamb:{ gain:0.90 }, rim:{ gain:1.15 }, sticks:{ gain:0.50 },
                           ride:{ gain:1.95, group:"cymbals" }, ride2:{ gain:2.4, group:"cymbals" }, rideBell:{ gain:1.5, group:"cymbals" }, crash:{ gain:1.9, group:"cymbals" },
                           hatClosed:{ gain:1.6, chokes:"hat" }, hatFoot:{ gain:1.6, chokes:"hat" }, hatOpen:{ gain:1.4, group:"hat" },
                           tomHi:{ gain:0.95 }, tomMid:{ gain:0.95 }, tomLo:{ gain:0.95 } } }

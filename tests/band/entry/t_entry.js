@@ -88,3 +88,22 @@ G = CE.grid({ n: 3, d: 4 }); G.setLength(2); P = TuneChart.parse(G.toAbc({}));
 gen = BandMidi.generate(P, { bars: 2, tempo: 120, opts: { comp: "piano", groove: "click" } });
 assert.strictEqual(gen.length, 2); assert.strictEqual(gen[1].parts.drums.length, 3);
 console.log("ENTRY OK");
+
+// ---- naming a played voicing for a known chord (ChordVoicings.identify) ----
+function idn(sym, midis){ var r = ChordVoicings.identify(BandHarmony.libChord(BandHarmony.parseChord(sym, 0)), midis); return r.style + ":" + r.index + ":" + r.tones.join(" "); }
+assert.strictEqual(idn("C7", [52, 57, 58, 62]), "rootless:0:3 13 b7 9", "E A Bb D on C7 is the rootless A form");
+assert.strictEqual(idn("C7", [58, 62, 64, 69]), "rootless:1:b7 9 3 13"); assert.strictEqual(idn("C7", [46, 50, 52, 57]), "rootless:1:b7 9 3 13", "any octave");
+assert.strictEqual(idn("C7", [52, 58]), "guide:0:3 b7"); assert.strictEqual(idn("C7", [58, 64]), "guide:1:b7 3");
+assert.strictEqual(idn("C7", [48, 55, 58, 64]), "drop2:0:R 5 b7 3"); assert.strictEqual(idn("C7", [48, 52, 58]), "shell:0:R 3 b7");
+assert.strictEqual(idn("C7", [48, 52, 55, 58]), "standard:0:R 3 5 b7"); assert.strictEqual(idn("C7", [52, 55, 58, 60]), "standard:1:3 5 b7 R");
+assert.strictEqual(idn("C7", [48, 58, 64, 69]), "null:-1:R b7 3 13", "no known shape: as played, degrees named");
+assert.strictEqual(idn("Dm7", [53, 57, 60, 64]), "rootless:0:b3 5 b7 9"); assert.strictEqual(idn("Cmaj7", [59, 62, 64, 67]), "rootless:1:7 9 3 5");
+assert.strictEqual(idn("C7b9", [52, 57, 58, 61]), "rootless:0:3 13 b7 b9"); assert.strictEqual(idn("F7", [57, 62, 63, 67]), "rootless:0:3 13 b7 9");
+assert.strictEqual(idn("Cm7b5", [51, 54, 58, 60]), "standard:1:b3 b5 b7 R", "a reading with every chord tone comes first");
+// every candidate the library offers is named as itself
+["C7", "Fmaj7", "Bbm7", "Em7b5", "A7b9", "Dsus4", "G6", "Cdim7", "Ab"].forEach(function (sym){
+  var lc = BandHarmony.libChord(BandHarmony.parseChord(sym, 0));
+  ["rootless", "guide", "drop2", "drop3", "shell", "standard"].forEach(function (st){ ChordVoicings.piano(lc, st, { allOctaves: true }).forEach(function (c){
+    var r = ChordVoicings.identify(lc, c.midis); assert(r && r.style, sym + " " + st + " not named: " + c.midis); assert.deepStrictEqual(r.tones, ChordVoicings.piano(lc, r.style)[r.index].tones, sym + " " + st); }); });
+});
+console.log("VOICING NAMES OK");

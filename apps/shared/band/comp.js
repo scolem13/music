@@ -80,6 +80,10 @@
   var GRID = {
     oompah:  { bars: function (beats){ var h = []; for (var b = 1; b < beats; b++) if (beats % 2 || b % 2) h.push([b, "S"]); return h; } },
     eighths: { bars: everyEighth, quiet: true },
+    // lh: on the piano the left hand adds the root under each chord as it arrives
+    quarters: { lh: true, bars: function (beats){ var h = []; for (var b = 0; b < beats; b++) h.push([b, "L"]); return h; } },
+    // the doo-wop piano: the chord on all three eighths of every beat (12/8, or triplets over 4/4)
+    triplets: { lh: true, quiet: true, bars: function (beats){ var h = []; for (var b = 0; b < beats; b++){ h.push([b, "S"]); h.push([b + 1 / 3, "S"]); h.push([b + 2 / 3, "S"]); } return h; } },
     upbeats: { bars: function (beats){ var h = []; for (var b = 0.5; b < beats; b++) h.push([b, "S"]); return h; } },
     bossa:   { bars: [ [[0, "S"], [1.5, "L"], [3, "S"]], [[1, "S"], [2.5, "L"]] ] },
     tango:   { bars: [ [[0, "L"], [1.5, "S"], [2, "S"], [3, "S"]] ] },
@@ -422,9 +426,26 @@
         var e = k + 1 < ctx.chords.length ? ctx.chords[k + 1].pos : beats;
         if (!hits.some(function (h){ return h.pos >= c.pos - 1e-6 && h.pos < e - 1e-6; })) hits.push({ pos: c.pos, len: g.strum ? "L" : "S", stroke: g.strum ? "D" : undefined });
       });
+      // a pushed chord: the next bar's chord on the last eighth, ringing over the barline; the bar after it starts late
+      var tied = st.pushed, lift = !!(H.lifted && H.lifted(ctx)), lhDone = {}; st.pushed = false;
+      if (tied) hits = hits.filter(function (h){ return h.pos >= 0.5 - 1e-6; });
+      if (H.pushes && H.pushes(ctx) && !g.arp && !g.exact && !g.tune){
+        hits = hits.filter(function (h){ return h.pos < 3.5 - 1e-6; }); hits.push({ pos: 3.5, push: true }); st.pushed = true; }
       hits.sort(function (a, b){ return a.pos - b.pos; });
       var sLen = Math.max(0.3, 0.12 * tempo / 60), n = 0;
+      function out(e){ if (lift) e.vel = Math.round(Math.min(0.78, e.vel * 1.09) * 1000) / 1000; if (Math.abs(e.pos * 2 - Math.round(e.pos * 2)) > 1e-6) e.straight = true; ev.push(e); return e; }
+      // the piano's left hand (patterns marked lh, and strums): the root, F2 to E3, under each chord as it arrives
+      function left(e, h, chord, ck, v, changeAt){
+        if (!(g.lh || g.strum) || su.inst !== "piano" || lhDone[ck] || pinOf(su, ck)) return;
+        var lo = 41 + (((chord.bass - 41) % 12) + 12) % 12; if (lo > v[0] - 4) lo -= 12; lhDone[ck] = 1;
+        if (lo >= 36) out({ pos: h.pos, dur: Math.round(Math.max(0.4, Math.min(changeAt, beats) - h.pos - 0.1) * 1000) / 1000, midis: [lo], vel: Math.round((e.vel - 0.04) * 1000) / 1000, inst: su.inst, of: ck, arp: true });
+      }
       hits.forEach(function (h, i){
+        if (h.push){
+          var nk = (ctx.nextIndex != null ? ctx.nextIndex : ctx.index + 1) + ":0"; pick(ctx.nextChords[0].chord, su, nk); if (!st.prevV.length) return;
+          var pe = { pos: 3.5, dur: 1.4, midis: st.prevV.slice(), vel: 0.66, inst: su.inst, of: nk }; if (g.strum) pe.strum = "down";
+          out(grip(pe)); return;
+        }
         var chord = H.chordAt(ctx.chords, h.pos); if (!chord) return;
         var ck = keyAt(ctx.index, ctx.chords, h.pos), slot = Math.round(h.pos * 2);
         pick(chord, su, ck, (n++ && !g.arp && !g.strum) ? { attack: true, p: 0.15 } : null);          // a strummer holds one shape per chord
@@ -436,7 +457,7 @@
           var m = v.length, per = Math.max(1, 2 * m - 2), w = slot % per, idx = g.arp === "pair" ? (slot % 2 ? m - 1 : 0) : g.arp === "alberti" ? [0, m - 1, Math.floor(m / 2), m - 1][slot % 4] : (w < m ? w : per - w);
           e = { pos: h.pos, dur: Math.round(Math.max(0.3, Math.min(1.5, changeAt - h.pos - 0.05)) * 1000) / 1000, midis: [v[idx]],
                 vel: Math.round(clamp((on ? 0.58 : 0.52) + (rng() - 0.5) * 0.05, 0.42, 0.68) * 1000) / 1000, inst: su.inst, of: ck, arp: true };
-          ev.push(e); return;
+          out(e); return;
         }
         if (g.strum){
           var up = h.stroke === "U", acc = g.accent ? g.accent.indexOf(h.pos) >= 0 : !up && on && Math.floor(h.pos) % 2 === 1;      // lean on 2 and 4 unless the pattern says otherwise
@@ -444,13 +465,14 @@
           e = { pos: h.pos, dur: Math.round(ring * 1000) / 1000, midis: up ? v.slice(-Math.min(3, v.length)) : v.slice(), strum: up ? "up" : "down",
                 vel: Math.round(clamp((acc ? (up ? 0.62 : 0.67) : up ? 0.45 : 0.53) + (rng() - 0.5) * 0.04, 0.4, 0.72) * 1000) / 1000, inst: su.inst, of: ck };
           if (up) e.arp = true;                                         // (part of the shape: not the chord's voicing for the hand-off)
-          ev.push(up ? e : grip(e)); return;
+          out(up ? e : grip(e)); if (!up) left(e, h, chord, ck, v, changeAt); return;
         }
         var room = Math.min(nextPos, changeAt) - h.pos, dur = h.len === "S" ? Math.min(sLen, room - 0.05) : Math.min(2.5, room - 0.1);
         var vel = (g.quiet ? (on ? 0.56 : 0.48) : h.len === "L" ? 0.60 : 0.58) + (rng() - 0.5) * 0.06;
         e = { pos: h.pos, dur: Math.round(Math.max(0.12, dur) * 1000) / 1000, midis: v.slice(), vel: Math.round(clamp(vel, 0.42, 0.7) * 1000) / 1000, inst: su.inst, of: ck };
-        if (h.shift){ e.midis = v.map(function (m){ return m + h.shift; }); e.arp = true; ev.push(e); return; }      // (planed: not the chord's own voicing for the hand-off)
-        ev.push(grip(e));
+        if (h.shift){ e.midis = v.map(function (m){ return m + h.shift; }); e.arp = true; out(e); return; }      // (planed: not the chord's own voicing for the hand-off)
+        out(grip(e));
+        left(e, h, chord, ck, v, changeAt);
       });
       st.started = true;
       return ev;

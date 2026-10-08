@@ -42,8 +42,17 @@ const want = { oompah: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3.5"], upbeats: [
                montuno: ["0 1 1.5 2.5 3.5", "0.5 1.5 2.5 3.5"], chacha: ["1 2 2.5 3"], arp: ["0 0.5 1 1.5 2 2.5 3 3.5"], arp2: ["0 0.5 1 1.5 2 2.5 3 3.5"],
                strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
                strum16: ["0 0.5 0.75 1.25 1.5 1.75 2 2.5 2.75 3.25 3.5 3.75"], sowhat: ["", "2 3.5"], maiden: ["0 1.5 3", "1.5 3"], takefive: ["0 1.5 3"], tresillo: ["0 1.5 3"], clave32: ["0 1.5 3", "1 2"], barbara: ["0 1 2 3.5", "0.5 1.5 2"], g333322: ["0 1.5 3", "0.5 2 3"], g33433: ["0 1.5 3", "1 2.5"],
-               g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"] };
-for (const id of GRID) gen("4/4", { compRhythm: id }, 5, ONE, 16).forEach(r => assert.strictEqual(pos(r.parts.comp), want[id][r.index % want[id].length], id + " bar " + r.index));
+               g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"],
+               quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
+// (the piano's left-hand root under a strum or an lh pattern is a separate one-note event, marked arp like an arpeggio note)
+const rh = (id, evs) => BandComp.GRID[id].arp ? evs : evs.filter(e => !(e.arp && e.midis.length === 1));
+for (const id of GRID) gen("4/4", { compRhythm: id }, 5, ONE, 16).forEach(r => assert.strictEqual(pos(rh(id, r.parts.comp)), want[id][r.index % want[id].length], id + " bar " + r.index));
+// the left hand: one root below the chord each time a chord arrives, on the piano only, and never in the hand-off
+{ const q = gen("4/4", { compRhythm: "quarters" }, 5, ONE, 8), lh = r => r.parts.comp.filter(e => e.arp);
+  q.forEach(r => { assert.strictEqual(lh(r).length, 1); const l = lh(r)[0], top = r.parts.comp.find(e => !e.arp);
+    assert(l.pos === 0 && l.midis[0] >= 36 && l.midis[0] <= 52 && l.midis[0] < top.midis[0] - 3 && l.midis[0] % 12 === r.chords[0].chord.bass, JSON.stringify(l)); });
+  assert(gen("4/4", { compRhythm: "quarters", comp: "guitar" }, 5, ONE, 4).every(r => !r.parts.comp.some(e => e.arp)), "no left hand on a guitar");
+  assert(gen("12/8", { compRhythm: "triplets" }, 5, ONE, 4).every(r => rh("triplets", r.parts.comp).length === 12 && r.parts.comp.filter(e => e.pos % 1 > 0.01).every(e => e.straight)), "triplets in 12/8"); }
 assert.strictEqual(pos(gen("3/4", { compRhythm: "oompah" }, 5, ONE, 4)[1].parts.comp), "1 2", "oom-pah-pah in 3/4");
 // arpeggios: single notes from one voicing, marked so the Chord Sheet hand-off ignores them
 gen("4/4", { compRhythm: "arp", voicing: "drop2" }, 3, ONE, 8).forEach(r => { const ms = r.parts.comp.map(e => e.midis[0]);
@@ -56,7 +65,7 @@ gen("4/4", { compRhythm: "strumCamp", voicing: "drop2", comp: "guitar", voiceMov
   assert.deepStrictEqual(c.map(e => e.strum), ["down", "down", "up", "up", "down", "up"]); assert.strictEqual(full.length, 4);
   c.forEach((e, i) => { assert.deepStrictEqual(e.midis, e.strum === "up" ? full.slice(-3) : full, "one shape for the bar"); assert(e.vel < (e.strum === "up" ? 0.5 : 0.72));
     assert(Math.abs(e.pos + e.dur - (i + 1 < c.length ? c[i + 1].pos : 4)) < 0.03, "rings to the next stroke"); }); });
-{ const acc = id => gen("4/4", { compRhythm: id }, 3, ONE, 8)[2].parts.comp.filter(e => e.vel > 0.585).map(e => e.pos).join(" ");
+{ const acc = id => rh(id, gen("4/4", { compRhythm: id }, 3, ONE, 8)[2].parts.comp).filter(e => e.vel > 0.585).map(e => e.pos).join(" ");
   assert.strictEqual(acc("strum332"), "0 1.5 3", "3-3-2 accents"); assert.strictEqual(acc("strumEights"), "1 3"); }
 BandHarmony.asPlayed(gen("4/4", { compRhythm: "strumEights", voicing: "drop2" }, 3, ONE, 8), { style: "drop2", inst: "piano" }).forEach(c => assert.strictEqual(c.midis.length, 4));
 // open and barre chords
@@ -143,7 +152,7 @@ const sig = r => pos(r.parts.comp);
   assert(leaps <= joins * 0.05, "the walked bar steps into the riff's root: " + leaps + " leaps in " + joins);
 }
 // drum grooves
-const PIECES = "kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo".split(" ");
+const PIECES = "kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo clap tamb".split(" ");
 const at = (r, piece) => r.parts.drums.filter(e => e.piece === piece).map(e => e.pos).join(" ");
 for (const id of Object.keys(M)) for (const groove of Object.keys(BandDrums.GROOVES)) for (const ride of ["ride", "hat", "bell"])
   gen(id, { groove, ride, feel: "straight", stops: [9] }, ++n).forEach((r, i) => r.parts.drums.forEach(e => { if (e.choke) return;

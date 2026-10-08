@@ -11,7 +11,7 @@ const M = { "4/4": { L: "1/4", one: "4", two: ["2", "2"], beats: 4, eighths: 8 }
             "9/8": { L: "1/8", one: "9", two: ["6", "3"], beats: 3, eighths: 9, cmp: true } };
 const abcOf = id => "X:1\nT:t\nM:" + id + "\nL:" + M[id].L + "\nK:F\n" + BARS.map(b => { const c = b.split(" "), m = M[id];
   return c.length > 1 ? `"${c[0]}"z${m.two[0]} "${c[1]}"z${m.two[1]}` : `"${c[0]}"z${m.one}`; }).join(" | ") + " |]";
-const PIECES = "kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo sticks".split(" ");
+const PIECES = "kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo sticks clap tamb".split(" ");
 const near = (x, y) => Math.abs(x - y) < 1e-6;
 
 assert.deepStrictEqual(H.meterInfo(12, 8), { n: 12, d: 8, compound: true, beats: 4, per: 3 });

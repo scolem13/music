@@ -20,7 +20,7 @@ assert.strictEqual(bass(n0[0]), "0:C2 1:C2 2:C2 3:C2"); assert.strictEqual(piece
 var d = gen("4/4", FOUR, { bassFeel: "roots", groove: "rock", compRhythm: "tresillo", timeFeel: "double" });
 assert.strictEqual(d.length, 4); assert.strictEqual(d[0].beats, 4);
 assert.strictEqual(bass(d[0]), "0:C2 0.5:C2 1:C2 1.5:C2 2:C2 2.5:C2 3:C2 3.5:C2");
-assert.strictEqual(piece(d[0], "snare"), "0.5 1.5 2.5 3.5"); assert.strictEqual(piece(d[0], "kick"), "0 1 1.25 2 3 3.25");
+assert.strictEqual(piece(d[0], "snare"), "0.5 1.5 2.5 3.5"); assert.strictEqual(piece(d[0], "kick"), "0 1 1.25 2 2.75 3");   // (the rock groove's first two bars: 1 3 3& | 1 2& 3)
 assert.strictEqual(at(d[0], "comp").join(" "), "0 0.75 1.5 2 2.75 3.5");
 assert(d[1].parts.bass.every(function (e){ return N(e.midi)[0] === "F"; }), "double follows the chart: " + bass(d[1]));
 // a chord change in mid-bar lands on the second of the two bars
@@ -52,9 +52,23 @@ BandCatalog.styles.forEach(function (st){ ["half", "double"].forEach(function (t
   assert(heard > 20, st.id + " " + tf + " " + m); }); }); });
 // compound meters are left alone
 assert.deepStrictEqual(at(gen("6/8", FOUR, { bassFeel: "roots", timeFeel: "double" })[0], "bass"), at(gen("6/8", FOUR, { bassFeel: "roots" })[0], "bass"));
-// by default only the bass and drums change: the comping keeps its rhythm
+// by default only the bass and drums change: the comping keeps its rhythm but answers them.
+// double: the hit between the beats stays (straight, louder, short), the later hit on the beat goes
 var dflt = gen("4/4", FOUR, { bassFeel: "roots", groove: "rock", compRhythm: "tresillo", timeFeel: "double", timeFeelParts: undefined });
-assert.strictEqual(at(dflt[0], "comp").join(" "), "0 1.5 3"); assert.strictEqual(piece(dflt[0], "snare"), "0.5 1.5 2.5 3.5"); assert.strictEqual(at(dflt[0], "bass").length, 8);
+var norm = gen("4/4", FOUR, { bassFeel: "roots", groove: "rock", compRhythm: "tresillo" }), pl = gen("4/4", FOUR, { bassFeel: "roots", groove: "rock", compRhythm: "tresillo", timeFeel: "double", timeFeelParts: "bass drums plain" });
+assert.strictEqual(at(norm[0], "comp").join(" "), "0 1.5 3"); assert.strictEqual(at(pl[0], "comp").join(" "), "0 1.5 3", "plain: untouched"); assert.strictEqual(at(pl[0], "bass").length, 8);
+assert.strictEqual(at(dflt[0], "comp").join(" "), "0 1.5");
+(function (){ var a = dflt[0].parts.comp[1], b = norm[0].parts.comp[1]; assert(a.straight && a.vel > b.vel && a.dur <= 0.45, JSON.stringify(a)); assert.strictEqual(a.midis.join(), b.midis.join()); })();
+// a rhythm with nothing between the beats gets one stab on the "and" of 2; a whole-bar pad is left to ring
+var four = gen("4/4", FOUR, { compRhythm: "four", timeFeel: "double", timeFeelParts: "bass drums" }); assert.strictEqual(at(four[0], "comp").join(" "), "0 1.5");
+var pad = gen("4/4", FOUR, { compRhythm: "pad", timeFeel: "double", timeFeelParts: "bass drums" }); assert.strictEqual(at(pad[0], "comp").join(" "), "0");
+// half: every chord rings on, and beat 3 is struck (again) with an accent
+var hf = gen("4/4", FOUR, { bassFeel: "roots", groove: "rock", compRhythm: "tresillo", timeFeel: "half", timeFeelParts: "bass drums" });
+assert.strictEqual(at(hf[0], "comp").join(" "), "0 1.5 2 3");
+(function (){ var c = hf[0].parts.comp, n = norm[0].parts.comp; assert.strictEqual(c[2].midis.join(), n[1].midis.join(), "the chord already sounding"); assert(c[2].vel > n[1].vel);
+  assert(c[0].dur >= 1.4 && c[1].dur >= 0.45 && c[3].dur >= 0.9, JSON.stringify(c.map(function (e){ return e.dur; }))); })();
+var hp = gen("4/4", ["C G", "F"], { compRhythm: "pad", timeFeel: "half", timeFeelParts: "drums" }); assert.strictEqual(at(hp[0], "comp").join(" "), "0 2"); assert.strictEqual(at(hp[1], "comp").join(" "), "0 2");
+var h3 = gen("3/4", FOUR, { compRhythm: "pad", timeFeel: "half", timeFeelParts: "bass drums" }); assert.strictEqual(at(h3[0], "comp").join(" "), at(gen("3/4", FOUR, { compRhythm: "pad", timeFeelParts: "bass drums" })[0], "comp").join(" "), "no beat 3 of 4 in a waltz"); assert.strictEqual(piece(dflt[0], "snare"), "0.5 1.5 2.5 3.5"); assert.strictEqual(at(dflt[0], "bass").length, 8);
 var only = gen("4/4", FOUR, { bassFeel: "roots", groove: "rock", compRhythm: "tresillo", timeFeel: "half", timeFeelParts: "drums" });
 assert.strictEqual(at(only[0], "bass").join(" "), "0 1 2 3"); assert.strictEqual(piece(only[0], "snare"), "2");
 // pinned voicings follow their chords when the comping changes time too

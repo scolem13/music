@@ -1,0 +1,435 @@
+```{=html}
+<style>
+/* ── Chord Entry: play the changes in, check them, send them to the Backing Track ─────────── */
+#ce-root{max-width:1040px;margin:0 auto;padding:1.25rem 1rem 4rem;color:var(--site-ink,#1e1c18);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+#ce-root *{box-sizing:border-box}
+#ce-root.page-columns,#ce-root .page-columns{display:block!important;grid-template-columns:none!important}
+#ce-root [hidden]{display:none!important}
+#ce-root .ce-intro{border-left:3px solid var(--site-accent,#3fc2b4);padding-left:1rem;margin:0 0 1.5rem;color:var(--site-ink-2,#5c5246);font-size:.95rem;line-height:1.6;max-width:680px}
+#ce-root .ce-panel{background:var(--site-surface,#fff);border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:1rem 1.1rem;margin:0 0 1rem}
+#ce-root .ce-panel h2{margin:0 0 .2rem;font-size:.92rem;font-weight:600;border:0;padding:0}
+#ce-root .ce-row{display:flex;gap:.7rem 1rem;flex-wrap:wrap;align-items:flex-end;margin-top:.8rem}
+#ce-root .ce-field{display:flex;flex-direction:column;gap:.25rem}
+#ce-root .ce-field label{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--site-ink-2,#5c5246)}
+#ce-root select,#ce-root input[type=number],#ce-root input[type=text]{height:2.2rem;padding:0 .6rem;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface,#fff);color:inherit;font:inherit;font-size:.92rem}
+#ce-root input[type=number]{width:5.2rem}
+#ce-root .ce-unit{font-size:.84rem;color:var(--site-ink-2,#5c5246);align-self:center}
+#ce-root .ce-check{display:inline-flex;align-items:center;gap:.35rem;font-size:.9rem;margin:0;cursor:pointer;height:2.2rem}
+#ce-root .ce-check input{accent-color:var(--site-accent-dk,#2b9c90)}
+#ce-root .ce-btn{height:2.2rem;padding:0 .9rem;border:1px solid var(--site-accent-dk,#2b9c90);border-radius:7px;background:var(--site-surface,#fff);color:var(--site-accent-text,#0a4f47);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+#ce-root .ce-btn:hover{background:var(--site-accent-bg,rgba(63,194,180,.12))}
+#ce-root .ce-btn.is-main{background:var(--site-accent-dk,#2b9c90);color:#fff}
+#ce-root .ce-btn.is-rec{background:#b3261e;border-color:#b3261e;color:#fff}
+#ce-root .ce-hint{margin:.6rem 0 0;font-size:.84rem;color:var(--site-ink-2,#5c5246);max-width:70ch}
+#ce-root .ce-heard{margin:.8rem 0 0;font-size:1.05rem;font-weight:600;min-height:1.5em}
+#ce-root .ce-status{margin:.5rem 0 0;min-height:1.3em;font-family:var(--font-mono,monospace);font-size:.78rem;color:var(--site-ink-2,#5c5246)}
+#ce-root .ce-keys{display:flex;flex-wrap:wrap;gap:2px;margin-top:.8rem;align-items:flex-start}
+#ce-root .ce-keys button{width:2.1rem;height:4.2rem;padding:0 0 .25rem;border:1px solid var(--site-border,#c9c0b4);border-radius:0 0 5px 5px;background:#fff;color:#333;font:inherit;font-size:.68rem;display:flex;align-items:flex-end;justify-content:center;cursor:pointer}
+#ce-root .ce-keys button.is-black{height:2.9rem;background:#2a2622;color:#eee;border-color:#2a2622}
+#ce-root .ce-keys button.is-on{background:var(--site-accent,#3fc2b4);color:#06302b;border-color:var(--site-accent-dk,#2b9c90)}
+#ce-root textarea{display:block;width:100%;min-height:9rem;margin-top:.8rem;padding:.7rem .8rem;resize:vertical;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;
+  background:var(--site-surface-2,#f2ede5);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.84rem;line-height:1.55}
+#ce-chart{margin:0 0 1rem}
+#ce-chart:empty::before{content:"No chords yet. Play one.";display:block;padding:1.2rem;border:1px dashed var(--site-border,#e0d8ce);border-radius:10px;color:var(--site-ink-2,#5c5246)}
+</style>
+<div id="ce-root">
+  <p class="ce-intro">Play the chords of a tune on a MIDI keyboard (or click them on the keys below) and they are written out as a chart. Check it, then send it to the Backing Track page, where the band plays it.</p>
+  <div class="ce-panel">
+    <h2>1. Set up</h2>
+    <div class="ce-row">
+      <div class="ce-field"><label for="ce-title">Title</label><input type="text" id="ce-title" maxlength="60" value="My changes" style="width:13rem"></div>
+      <div class="ce-field"><label for="ce-style" title="The kind of band you record against and check with. It goes to the Backing Track with the changes.">Style</label><select id="ce-style"></select></div>
+      <div class="ce-field"><label for="ce-key">Key</label><select id="ce-key"></select></div>
+      <div class="ce-field"><label for="ce-meter">Meter</label><select id="ce-meter"><option>4/4</option><option>3/4</option><option>6/8</option><option>12/8</option></select></div>
+      <div class="ce-field"><label for="ce-tempo">Tempo</label><input type="number" id="ce-tempo" min="40" max="300" step="1" value="100"></div>
+      <div class="ce-field"><label for="ce-midi">MIDI keyboard</label><select id="ce-midi" disabled><option value="">Not connected</option></select></div>
+      <button type="button" class="ce-btn" id="ce-connect">Connect a MIDI keyboard</button>
+      <label class="ce-check"><input type="checkbox" id="ce-sound" checked> Sound the notes I play</label>
+    </div>
+    <p class="ce-hint" id="ce-setup-note" role="status"></p>
+  </div>
+  <div class="ce-panel">
+    <h2>2. Enter</h2>
+    <div class="ce-row">
+      <div class="ce-field"><label for="ce-mode">How</label>
+        <select id="ce-mode"><option value="step" selected>Chords, one at a time</option><option value="live">Chords, in time with a click or drums</option><option value="voice">Voicings for the chords, one at a time</option></select></div>
+      <label class="ce-check" id="ce-slash-wrap" title="Off: C with E at the bottom is written C. On: it is written C/E."><input type="checkbox" id="ce-slash"> Write inversions as slash chords</label>
+    </div>
+    <div class="ce-row" id="ce-step">
+      <div class="ce-field"><label for="ce-span">Each chord lasts</label><select id="ce-span"></select></div>
+      <div class="ce-field"><label for="ce-bar">Next chord goes in bar</label><input type="number" id="ce-bar" min="1" value="1"></div>
+      <button type="button" class="ce-btn" id="ce-hold" title="The chord before carries on for the same length again.">Same chord again</button>
+      <button type="button" class="ce-btn" id="ce-back">Undo</button>
+      <button type="button" class="ce-btn" id="ce-clear">Start empty</button>
+    </div>
+    <div class="ce-row" id="ce-live" hidden>
+      <div class="ce-field"><label for="ce-bars">Bars to record</label><input type="number" id="ce-bars" min="1" max="128" value="12"></div>
+      <div class="ce-field"><label for="ce-quant" title="Each chord moves to the nearest of these. A chord played a little early goes to the bar or beat it was aiming for.">Snap chords to the nearest</label><select id="ce-quant"></select></div>
+      <div class="ce-field"><label for="ce-with">Play along with</label><select id="ce-with"><option value="click" selected>A click</option><option value="drums">The style's drums</option></select></div>
+      <div class="ce-field"><label for="ce-offset" title="If chords keep landing late, enter a positive number of milliseconds; if early, a negative one.">Timing offset</label>
+        <input type="number" id="ce-offset" min="-300" max="300" step="5" value="0"></div><span class="ce-unit">ms</span>
+      <button type="button" class="ce-btn" id="ce-rec">&#9679; Record</button>
+    </div>
+    <div class="ce-row" id="ce-voice" hidden>
+      <button type="button" class="ce-btn" id="ce-vprev">&#9664; Previous chord</button>
+      <button type="button" class="ce-btn" id="ce-vnext">Next chord &#9654;</button>
+      <button type="button" class="ce-btn" id="ce-vclear">Clear this one</button>
+      <label class="ce-check" title="The voicing also goes on every other place the same chord symbol appears, unless you have played one in there yourself."><input type="checkbox" id="ce-vsame" checked> Use it wherever the same chord has no voicing of its own</label>
+    </div>
+    <p class="ce-heard" id="ce-vnow" hidden></p>
+    <div class="ce-keys" id="ce-keys" role="group" aria-label="On-screen keys: pick the notes of a chord"></div>
+    <div class="ce-row"><button type="button" class="ce-btn" id="ce-enter">Enter these notes</button></div>
+    <p class="ce-heard" id="ce-heard" role="status"></p>
+    <p class="ce-hint" id="ce-note" role="status"></p>
+  </div>
+  <div class="ce-panel">
+    <h2>3. Check</h2>
+    <div class="ce-row">
+      <button type="button" class="ce-btn" id="ce-play">&#9654; Hear it</button>
+      <span class="ce-unit" id="ce-count"></span>
+    </div>
+    <p class="ce-status" id="ce-status"></p>
+  </div>
+  <div id="ce-chart"></div>
+  <div class="ce-panel">
+    <h2>4. Send it on</h2>
+    <div class="ce-row">
+      <button type="button" class="ce-btn is-main" id="ce-send">Open in the Backing Track</button>
+      <button type="button" class="ce-btn" id="ce-copy">Copy the ABC</button>
+      <button type="button" class="ce-btn" id="ce-download">Download .abc</button>
+    </div>
+    <p class="ce-hint" id="ce-send-note" role="status"></p>
+    <textarea id="ce-abc" readonly spellcheck="false" aria-label="The changes as ABC"></textarea>
+    <p class="ce-hint">The ABC holds the chords, key, meter and title. The style, the tempo and any voicings you played in are not part of ABC: they travel only with "Open in the Backing Track".</p>
+  </div>
+</div>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/tune-chart.js?v=15"></script>
+<script src="/apps/shared/voicings.js?v=5"></script>
+<script src="/apps/shared/chord-entry.js?v=2"></script>
+<script src="/apps/shared/band/harmony.js?v=17"></script>
+<script src="/apps/shared/band/bass.js?v=10"></script>
+<script src="/apps/shared/band/comp.js?v=13"></script>
+<script src="/apps/shared/band/catalog.js?v=13"></script>
+<script src="/apps/shared/band/drums.js?v=7"></script>
+<script src="/apps/shared/band/sounds.js?v=4"></script>
+<script src="/apps/shared/band/player.js?v=100"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  if (typeof ChordEntry === "undefined" || typeof TuneChart === "undefined" || typeof BandPlayer === "undefined" || typeof BandHarmony === "undefined"){
+    $("ce-note").textContent = "The page didn't load fully. Reload to try again."; return; }
+  var KEYS = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  var SIZE = { bar: "One bar", two: "Two bars", half: "Half a bar", beat: "One beat" }, SNAP = { bar: "Bar", half: "Half bar", beat: "Beat", eighth: "Eighth note" };
+  // grid = the bars entered; abc / parsed = the same as a chart; pins = "form bar:beat" -> { midis, ckey (the chord it was played for), auto }
+  var grid = null, abc = "", parsed = null, chart = null, player = null, state = "idle", rec = null, pins = {}, vAt = 0;
+  var lis = ChordEntry.listener({ mode: "step" }), timer = null, picked = {}, midiAccess = null, input = null;
+
+  function fill(sel, items){ sel.innerHTML = ""; items.forEach(function(it){ var o = document.createElement("option"); o.value = it.id; o.textContent = it.label; sel.appendChild(o); }); }
+  function note(msg){ $("ce-note").textContent = msg || ""; }
+  function heard(msg){ $("ce-heard").textContent = msg || ""; }
+  function mode(){ return $("ce-mode").value; }
+  function keyLof(){ return ChordEntry.keyLof($("ce-key").value); }
+  function tempo(){ var v = parseInt($("ce-tempo").value, 10); return Math.min(300, Math.max(40, isNaN(v) ? 100 : v)); }
+  function meter(){ var m = $("ce-meter").value.split("/"); return { n: +m[0], d: +m[1] }; }
+  function names(midis){ return midis.map(function(m){ return BandHarmony.noteName(m).replace(/-?\d+$/, ""); }).join(" "); }
+  function pretty(sym){ return String(sym).replace(/^([A-G])b/, "$1\u266d").replace(/^([A-G])#/, "$1\u266f"); }
+  function newGrid(){ return ChordEntry.grid(meter()); }
+  // the style: which drums you record against, how the trio plays it back, and what the Backing Track opens in
+  var STYLES = (window.BandCatalog && BandCatalog.styles) || [{ id: "swing", label: "Swing", feel: "swing", bass: "walk", rhythm: "auto", drums: "auto", voicing: { piano: "rootless" } }];
+  function style(){ var id = $("ce-style").value; return STYLES.filter(function(x){ return x.id === id; })[0] || STYLES[0]; }
+  function styleOpts(){ var o = BandCatalog.styleOpts(style().id, "piano").opts;      // (always a piano: the voicings are played in on a keyboard)
+    o.feel = o.feel === "swing" ? "swing" : "straight"; o.voicing = o.voicing || "standard"; o.voiceMove = "hold"; o.stops = []; return o; }
+  function styleSounds(){ var l = BandCatalog.styleOpts(style().id, "piano").instruments.slice(); if (l.indexOf("piano") < 0) l.push("piano"); return l; }
+  function title(){ return ($("ce-title").value || "My changes").replace(/[\r\n]+/g, " ").trim() || "My changes"; }
+
+  // every place a chord starts, in the order the band plays them
+  function slots(){
+    var out = []; if (!parsed) return out;
+    BandHarmony.buildForm(parsed, 0).forEach(function(fb, i){ (fb.chords || []).forEach(function(c){ if (c.chord && !c.chord.nc) out.push({ key: i + ":" + c.pos, bar: i, pos: c.pos, src: fb.src, chord: c.chord }); }); });
+    return out;
+  }
+  function pinMap(){ var m = {}; Object.keys(pins).forEach(function(k){ m[k] = pins[k].midis; }); return Object.keys(m).length ? m : null; }
+  // the grid changed: write it out, redraw, and drop the voicings whose chord is no longer the one they were played for
+  function refresh(){
+    if (!grid) grid = newGrid();
+    abc = grid.toAbc({ key: $("ce-key").value, title: title() });
+    parsed = null; try { parsed = TuneChart.parse(abc); } catch (e) {}
+    $("ce-abc").value = grid.length() ? abc : "";
+    var have = parsed && parsed.bars.length > 0;
+    if (!have){ $("ce-chart").innerHTML = ""; chart = null; }
+    else if (chart) chart.setTune(parsed);
+    else chart = TuneChart.render($("ce-chart"), parsed, { header: true, preferFlats: true });
+    var ok = {}; slots().forEach(function(o){ ok[o.key] = o.chord.key; });
+    Object.keys(pins).forEach(function(k){ if (ok[k] !== pins[k].ckey) delete pins[k]; });
+    if (player && have) player.setChart(parsed);
+    var locked = grid.length() > 0;
+    $("ce-key").disabled = $("ce-meter").disabled = locked;
+    $("ce-setup-note").textContent = locked ? "Key and meter are fixed once there are bars. Start empty to change them." : "";
+    var c = grid.cursor(); $("ce-bar").value = c.bar + 1;
+    var nb = grid.length(), nc = grid.count(), nv = Object.keys(pins).length;
+    $("ce-count").textContent = nb ? nb + " bar" + (nb === 1 ? "" : "s") + ", " + nc + " chord" + (nc === 1 ? "" : "s") + (nv ? ", " + nv + " with a voicing" : "") : "";
+    voiceShow();
+  }
+  function meterSync(){
+    var sizes = newGrid().sizes();
+    fill($("ce-span"), ["bar", "two"].concat(sizes.filter(function(x){ return x === "half" || x === "beat"; })).map(function(x){ return { id: x, label: SIZE[x] }; }));
+    fill($("ce-quant"), sizes.map(function(x){ return { id: x, label: SNAP[x] }; }));
+    $("ce-quant").value = sizes.indexOf("half") >= 0 ? "half" : "bar";
+  }
+
+  // ---- naming what was played ----
+  function read(midis){
+    var k = keyLof(), r = ChordEntry.analyse(midis, { keyLof: k });
+    return r ? { sym: ChordEntry.symbol(r, { keyLof: k, slash: $("ce-slash").checked }), exact: r.exact } : null;
+  }
+  function vName(o, midis){
+    var lc = BandHarmony.libChord(o.chord), id = (lc && window.ChordVoicings && ChordVoicings.identify) ? ChordVoicings.identify(lc, midis) : null;
+    return !id ? "as played" : id.style ? id.name : "as played (" + id.tones.join(" ").replace(/b/g, "\u266d").replace(/#/g, "\u266f") + ")";
+  }
+  function describe(h){
+    if (mode() === "voice"){ var o = slot(); return names(h) + (o ? "  \u00b7  " + vName(o, h) : ""); }
+    var r = read(h); return names(h) + (r ? "  \u00b7  " + r.sym : "");
+  }
+
+  // ---- a finished chord: { midis, t (ms, performance clock) } ----
+  function onChord(c){
+    if (mode() === "voice"){ voice(c.midis); return; }
+    var r = read(c.midis);
+    if (!r){ heard(names(c.midis) + ": play at least two different notes."); return; }
+    var said = r.sym + (r.exact ? "" : " (closest match)") + "  \u00b7  " + names(c.midis);
+    if (mode() === "live"){
+      if (!rec){ heard(said + "  \u00b7  press Record to enter chords in time"); return; }
+      var at = place(r.sym, c.t);
+      heard(at ? said + "  \u2192  bar " + (at.bar + 1) + (at.pos ? ", beat " + (Math.round(at.pos / grid.unitsPerBeat * 100) / 100 + 1) : "") : said + "  \u00b7  outside the bars being recorded");
+      return;
+    }
+    if (!grid) grid = newGrid();
+    var cur = grid.cursor();
+    grid.put(r.sym, $("ce-span").value); refresh();
+    heard(said + "  \u2192  bar " + (cur.bar + 1) + (cur.pos ? ", beat " + (cur.pos / grid.unitsPerBeat + 1) : ""));
+  }
+
+  // ---- the band: a click or drums to record against, and the whole trio to check the result ----
+  function makePlayer(){
+    if (player) return player;
+    player = BandPlayer.create({
+      parsed: parsed, tempo: tempo(), countIn: 1, choruses: 1, instruments: styleSounds(),
+      opts: { comp: "piano", feel: "straight" }, kit: { ride: 0.35, rideBell: 0.35, crash: 0.35 },
+      onState: function(s){
+        state = s; $("ce-play").innerHTML = s === "idle" || rec ? "&#9654; Hear it" : s === "loading" ? "Loading&hellip;" : "&#9632; Stop";
+        if (s === "idle"){ if (chart) chart.setLive(-1); $("ce-status").textContent = ""; if (rec) finish(); else voiceShow(); }
+      },
+      onLoadProgress: function(done, total){ if (state === "loading") $("ce-status").textContent = "Loading sounds " + done + " of " + total; },
+      onBar: function(info){
+        if (chart) chart.setLive(info.countIn ? -1 : info.src);
+        $("ce-status").textContent = info.countIn ? "Count-in" : info.ending ? "" : (rec ? "Recording \u00b7 " : "") + "bar " + (info.index + 1);
+      }
+    });
+    return player;
+  }
+  function failed(){ $("ce-status").textContent = "Couldn't load the instrument sounds. Check your connection and try again."; }
+  function hear(){
+    if (state !== "idle"){ player.stop(); return; }
+    if (!parsed || !grid || !grid.count()){ note("There is nothing to play yet."); return; }
+    var p = makePlayer();
+    p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(0); p.setCountIn(1);
+    p.setVolume("bass", 1); p.setVolume("comp", 1);
+    var o = styleOpts(); o.pins = pinMap(); p.setInstruments(styleSounds()); p.setOpts(o);
+    p.play().catch(failed);
+  }
+  function record(){
+    if (rec){ player.stop(); return; }
+    if (state !== "idle") player.stop();
+    var n = Math.min(128, Math.max(1, parseInt($("ce-bars").value, 10) || 12));
+    grid = newGrid(); grid.setLength(n); pins = {}; rec = { bars: n }; refresh();
+    var p = makePlayer();
+    p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(1); p.setCountIn(1);
+    p.setVolume("bass", 0); p.setVolume("comp", 0);
+    var o = styleOpts(); o.pins = null; if ($("ce-with").value === "click") o.groove = "click"; p.setInstruments(styleSounds()); p.setOpts(o);
+    $("ce-rec").innerHTML = "&#9632; Stop recording"; $("ce-rec").classList.add("is-rec");
+    lis.reset(); note("Recording " + n + " bar" + (n === 1 ? "" : "s") + ". Play after the count-in.");
+    p.play().catch(function(){ failed(); if (rec) finish(); });
+  }
+  function finish(){
+    var n = rec.bars; rec = null;
+    $("ce-rec").innerHTML = "&#9679; Record"; $("ce-rec").classList.remove("is-rec");
+    refresh();
+    var k = grid.count();
+    note(k ? "Recorded " + k + " chord" + (k === 1 ? "" : "s") + " over " + n + " bar" + (n === 1 ? "" : "s") + ". Check the chart below; Record starts a new take."
+           : "No chords were recorded. Check the MIDI keyboard is connected, then press Record again.");
+  }
+  // in time: where the chord was played against what was being heard, snapped to the grid
+  function place(sym, tMs){
+    var ctx = player && player.context(); if (!ctx || !grid) return null;
+    var off = parseFloat($("ce-offset").value) || 0;
+    var w = player.where(ctx.currentTime - (performance.now() - tMs) / 1000 - off / 1000); if (!w) return null;
+    var info = w.info, bar = info.index;
+    if (info.ending || info.intro) return null;
+    if (info.countIn){ if (info.bar !== -1) return null; bar = -1; }              // just ahead of bar 1: an early first chord
+    var pos = w.pos;
+    if (style().feel === "swing" && !grid.compound) pos = ChordEntry.unswing(pos, BandPlayer.swingFor(tempo()));   // a swung off-beat sits late
+    var at = grid.place(sym, bar, pos, $("ce-quant").value);
+    if (at) refresh();                                                            // the chart fills in as you play
+    return at;
+  }
+
+  // ---- voicings: a second pass, one chord at a time ----
+  function slot(){ var l = slots(); if (!l.length) return null; vAt = Math.min(Math.max(0, vAt), l.length - 1); var o = l[vAt]; o.at = vAt; o.of = l.length; return o; }
+  function voiceShow(){
+    if (mode() !== "voice") return;
+    var o = slot(), box = $("ce-vnow");
+    if (!o){ box.textContent = "There are no chords to voice yet. Enter the chords first."; return; }
+    var p = pins[o.key];
+    box.textContent = "Chord " + (o.at + 1) + " of " + o.of + "  \u00b7  bar " + (o.bar + 1) + (o.pos ? ", beat " + (o.pos + 1) : "") + "  \u00b7  " + pretty(o.chord.sym) + "  \u00b7  " +
+      (p ? vName(o, p.midis) + ": " + names(p.midis) + (p.auto ? " (copied from the same chord)" : "") : "no voicing yet, the band chooses");
+    if (state === "idle" && chart) chart.setLive(o.src);
+  }
+  function voice(midis){
+    var o = slot(); if (!o){ heard("There are no chords to voice yet."); return; }
+    var n = 0; pins[o.key] = { midis: midis.slice(), ckey: o.chord.key };
+    if ($("ce-vsame").checked) slots().forEach(function(x){ if (x.key !== o.key && x.chord.key === o.chord.key && (!pins[x.key] || pins[x.key].auto)){ pins[x.key] = { midis: midis.slice(), ckey: x.chord.key, auto: true }; n++; } });
+    heard(pretty(o.chord.sym) + "  \u00b7  " + vName(o, midis) + ": " + names(midis) + (n ? "  \u00b7  also on " + n + " other place" + (n === 1 ? "" : "s") : ""));
+    if (vAt < o.of - 1) vAt++; else note("That was the last chord. Hear it, or send it to the Backing Track.");
+    refresh();
+  }
+
+  // ---- notes in: MIDI, or the on-screen keys ----
+  function sound(m, vel){ if ($("ce-sound").checked) BandPlayer.chord([m], { inst: "piano", dur: 1.4, vel: Math.max(0.2, Math.min(1, vel)) }).catch(function(){}); }
+  function arm(){
+    var due = lis.due(); if (timer){ clearTimeout(timer); timer = null; }
+    if (due != null) timer = setTimeout(function(){ timer = null; lis.poll(performance.now() + 1).forEach(onChord); }, Math.max(0, due - performance.now()) + 2);
+  }
+  function noteOn(m, vel, t){ sound(m, vel); var done = lis.noteOn(m, t), h = lis.sounding(); if (h.length) heard(describe(h)); done.forEach(onChord); arm(); }
+  function noteOff(m, t){ lis.noteOff(m, t).forEach(onChord); arm(); }
+  function onMidi(e){ var d = e.data, cmd = d[0] & 0xf0, t = e.timeStamp || performance.now();
+    if (cmd === 0x90 && d[2] > 0) noteOn(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) noteOff(d[1], t); }
+  function inputs(){
+    var sel = $("ce-midi"), want = sel.value, list = [];
+    midiAccess.inputs.forEach(function(i){ list.push(i); });
+    fill(sel, list.length ? list.map(function(i){ return { id: i.id, label: i.name || "MIDI input" }; }) : [{ id: "", label: "No MIDI keyboard found" }]);
+    sel.disabled = !list.length;
+    if (list.some(function(i){ return i.id === want; })) sel.value = want;
+    if (input) input.onmidimessage = null;
+    input = list.filter(function(i){ return i.id === sel.value; })[0] || null;
+    if (input) input.onmidimessage = onMidi;
+    note(input ? "Listening to " + (input.name || "the MIDI keyboard") + "." : "No MIDI keyboard found. Plug one in, or use the on-screen keys.");
+  }
+  function connect(){
+    if (!navigator.requestMIDIAccess){ note("This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome, Edge or Firefox, or the on-screen keys."); return; }
+    navigator.requestMIDIAccess().then(function(a){ midiAccess = a; a.onstatechange = inputs; inputs(); },
+      function(){ note("The browser did not allow MIDI. Allow it for this site, or use the on-screen keys."); });
+  }
+  (function(){                                                             // the on-screen keys, C3 to C5
+    var box = $("ce-keys");
+    for (var m = 48; m <= 72; m++) (function(m){
+      var b = document.createElement("button"); b.type = "button"; b.setAttribute("data-midi", m); b.setAttribute("aria-pressed", "false");
+      var nm = BandHarmony.noteName(m); b.textContent = nm.replace("b", "\u266d"); b.setAttribute("aria-label", nm);
+      if ([1, 3, 6, 8, 10].indexOf(m % 12) >= 0) b.className = "is-black";
+      b.addEventListener("click", function(){
+        if (picked[m]) delete picked[m]; else { picked[m] = 1; sound(m, 0.66); }
+        b.classList.toggle("is-on", !!picked[m]); b.setAttribute("aria-pressed", picked[m] ? "true" : "false");
+        var h = Object.keys(picked).map(Number).sort(function(a, b){ return a - b; }); heard(h.length ? describe(h) : "");
+      });
+      box.appendChild(b);
+    })(m);
+  })();
+  $("ce-enter").addEventListener("click", function(){
+    var h = Object.keys(picked).map(Number).sort(function(a, b){ return a - b; }); if (!h.length){ heard("Pick the notes of a chord on the keys first."); return; }
+    picked = {}; Array.prototype.forEach.call($("ce-keys").children, function(b){ b.classList.remove("is-on"); b.setAttribute("aria-pressed", "false"); });
+    onChord({ midis: h, t: performance.now() });
+  });
+
+  // ---- sending it on ----
+  function sendNote(t){ $("ce-send-note").textContent = t || ""; }
+  function ready(){ if (grid && grid.count()) return true; sendNote("Enter some chords first."); return false; }
+  // localStorage.bandHandoff: { v:1, from:"chord-entry", at, abc, tempo, style, pinMap:{ "form bar:beat": midis }, pinsAuto:[keys] }
+  function handoff(){
+    var auto = Object.keys(pins).filter(function(k){ return pins[k].auto; });
+    return { v: 1, from: "chord-entry", at: Date.now(), abc: abc, tempo: tempo(), style: style().id, pinMap: pinMap() || {}, pinsAuto: auto };
+  }
+  $("ce-send").addEventListener("click", function(){
+    if (!ready()) return;
+    var h = handoff();
+    try { localStorage.setItem("bandHandoff", JSON.stringify(h)); }
+    catch (e) { sendNote("Couldn't pass the changes on: this browser is blocking storage for the page. Copy the ABC instead and paste it into the Backing Track's ABC box."); return; }
+    window.__ceLastHandoff = h;                                              // for tests
+    var nv = Object.keys(h.pinMap).length;
+    sendNote("Sent " + grid.length() + " bars" + (nv ? " and " + nv + " voicings" : "") + " to the Backing Track.");
+    if (!window.open("/tools/backing-track.html?from=chord-entry", "_blank")) location.href = "/tools/backing-track.html?from=chord-entry";
+  });
+  $("ce-copy").addEventListener("click", function(){
+    if (!ready()) return;
+    var box = $("ce-abc"); box.focus(); box.select();
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(abc).then(function(){ sendNote("The ABC is on the clipboard."); }, function(){ sendNote("Copy it from the box below."); });
+    else sendNote("Copy it from the box below.");
+  });
+  $("ce-download").addEventListener("click", function(){
+    if (!ready()) return;
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([abc + "\n"], { type: "text/vnd.abc" }));
+    a.download = title().replace(/[^\w\- ]+/g, "").trim().replace(/\s+/g, "-").toLowerCase() + ".abc" || "changes.abc";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+    sendNote("Downloaded " + a.download + ".");
+  });
+  // Changes handed over by the Backing Track ("Enter or voice these from a keyboard"): localStorage.entryHandoff
+  //   { v:1, from:"backing-track", at, abc, tempo, pinMap }
+  function loadHandoff(){
+    if (!/[?&]from=backing-track(&|$)/.test(location.search)) return;
+    var h = null; try { h = JSON.parse(localStorage.getItem("entryHandoff") || "null"); localStorage.removeItem("entryHandoff"); } catch (e) { h = null; }
+    try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
+    if (!h || h.from !== "backing-track" || typeof h.abc !== "string" || !(Math.abs(Date.now() - h.at) < 600000)){ note("The changes from the Backing Track didn't come through. Send them again from there."); return; }
+    var p = null; try { p = TuneChart.parse(h.abc); } catch (e) {}
+    if (!p || !p.bars.length){ note("The changes from the Backing Track could not be read."); return; }
+    var id = p.meterN + "/" + p.meterD;
+    if (!Array.prototype.some.call($("ce-meter").options, function(o){ return o.value === id; })){ var o = document.createElement("option"); o.textContent = id; $("ce-meter").appendChild(o); }
+    $("ce-meter").value = id; meterSync();
+    if (KEYS[p.keyPc]) $("ce-key").value = KEYS[p.keyPc];
+    var t = /^T:\s*(.+)$/m.exec(h.abc); if (t) $("ce-title").value = t[1].trim();
+    if (h.tempo) $("ce-tempo").value = h.tempo;
+    if (h.style && STYLES.some(function(x){ return x.id === h.style; })) $("ce-style").value = h.style;
+    grid = newGrid(); grid.load(p); pins = {}; refresh();
+    var ck = {}; slots().forEach(function(o){ ck[o.key] = o.chord.key; });
+    Object.keys(h.pinMap || {}).forEach(function(k){ var m = h.pinMap[k]; if (ck[k] && Array.isArray(m) && m.length && m.every(function(x){ return isFinite(x) && x >= 0 && x <= 127; })) pins[k] = { midis: m.slice(), ckey: ck[k] }; });
+    refresh();
+    note("Loaded " + grid.length() + " bars from the Backing Track. Add chords after them, set the bar number to replace one, or switch to Voicings.");
+  }
+
+  // ---- wire ----
+  function modeSync(){
+    var m = mode(); if (rec) player.stop();
+    $("ce-step").hidden = m !== "step"; $("ce-live").hidden = m !== "live"; $("ce-voice").hidden = $("ce-vnow").hidden = m !== "voice"; $("ce-slash-wrap").hidden = m === "voice";
+    lis.setMode(m === "live" ? "live" : "step");
+    note(m === "live" ? "Record replaces what is there with a new take." : m === "voice" ? "Play the notes you want for the chord shown. The band will play exactly those." : "");
+    heard(""); if (m !== "voice" && state === "idle" && chart) chart.setLive(-1);
+    voiceShow();
+  }
+  (function(){ var sel = $("ce-style"), groups = {};
+    STYLES.forEach(function(st){ var g = st.group || "Styles"; if (!groups[g]){ groups[g] = document.createElement("optgroup"); groups[g].label = g; sel.appendChild(groups[g]); }
+      var o = document.createElement("option"); o.value = st.id; o.textContent = st.label; groups[g].appendChild(o); });
+    try { var was = localStorage.getItem("ceStyle"); if (was && STYLES.some(function(x){ return x.id === was; })) sel.value = was; } catch (e) {}
+    sel.addEventListener("change", function(){ try { localStorage.setItem("ceStyle", sel.value); } catch (e) {} if (state !== "idle" && !rec){ player.setInstruments(styleSounds()); player.setOpts(styleOpts()); } });
+  })();
+  fill($("ce-key"), KEYS.map(function(k){ return { id: k, label: k.replace("b", "\u266d") }; }));
+  $("ce-connect").addEventListener("click", connect);
+  $("ce-midi").addEventListener("change", function(){ if (midiAccess) inputs(); });
+  $("ce-mode").addEventListener("change", modeSync);
+  $("ce-meter").addEventListener("change", function(){ meterSync(); grid = null; refresh(); });
+  $("ce-key").addEventListener("change", function(){ refresh(); });
+  $("ce-title").addEventListener("input", function(){ if (grid) refresh(); });
+  $("ce-tempo").addEventListener("change", function(){ $("ce-tempo").value = tempo(); if (player) player.setTempo(tempo()); });
+  $("ce-rec").addEventListener("click", record);
+  $("ce-play").addEventListener("click", hear);
+  $("ce-bar").addEventListener("change", function(){ if (!grid) grid = newGrid(); grid.setCursor((parseInt($("ce-bar").value, 10) || 1) - 1, 0); refresh(); });
+  $("ce-hold").addEventListener("click", function(){ if (!grid || !grid.count()){ heard("There is no chord to carry on yet."); return; } grid.hold($("ce-span").value); refresh(); heard("Same chord"); });
+  $("ce-back").addEventListener("click", function(){ if (!grid || !grid.back()){ heard("Nothing to undo."); return; } refresh(); heard("Undone"); });
+  $("ce-clear").addEventListener("click", function(){ if (state !== "idle") player.stop(); grid = newGrid(); pins = {}; vAt = 0; refresh(); note("Empty. The next chord goes in bar 1."); heard(""); });
+  $("ce-vprev").addEventListener("click", function(){ vAt--; note(""); voiceShow(); });
+  $("ce-vnext").addEventListener("click", function(){ vAt++; note(""); voiceShow(); });
+  $("ce-vclear").addEventListener("click", function(){ var o = slot(); if (o && pins[o.key]){ delete pins[o.key]; refresh(); } });
+  window.addEventListener("pagehide", function(){ if (player && state !== "idle") player.stop(); });
+  meterSync(); refresh(); modeSync(); loadHandoff();
+  window.__entry = { opts: styleOpts, on: noteOn, off: noteOff, grid: function(){ return grid; }, recording: function(){ return !!rec; }, pins: pinMap, state: function(){ return state; } };   // for tests
+})();
+</script>
+```

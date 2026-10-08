@@ -1,0 +1,7 @@
+---
+title: "Chord Entry"
+---
+
+::: {.column-screen}
+{{< include _chord-entry.qmd >}}
+:::

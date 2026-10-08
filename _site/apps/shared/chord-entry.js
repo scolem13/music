@@ -6,6 +6,7 @@
 //   ChordEntry.keyLof("Bb" | "Am")               -> where the key sits on the line of fifths (C = 0)
 //   ChordEntry.listener({ mode, settle })        -> groups note-ons / note-offs into chords
 //   ChordEntry.grid({ n, d })                    -> bars of chord symbols; step entry, quantized entry, ABC out
+//   ChordEntry.connect({ on, off, inputs })      -> Web MIDI: every input, note-ons and note-offs
 //
 // The chord table and the key-based tie-break started from the Director page's analysis. Two things
 // differ: a chord must account for every note played (Director accepts extra notes), and when two
@@ -213,6 +214,22 @@
   // a swung off-beat sits late in the beat: put a played position back on the even grid before snapping
   function unswing(pos, s){ var b = Math.floor(pos), f = pos - b; return b + (f <= s ? f * 0.5 / s : 0.5 + (f - s) * 0.5 / (1 - s)); }
 
-  global.ChordEntry = { QUALITIES: QUALITIES, analyse: analyse, symbol: symbol, keyLof: keyLof, lofName: lofName,
+  // Listen to every MIDI input the browser offers (new ones as they are plugged in).
+  //   connect({ on(midi, vel 0..1, ms), off(midi, ms), inputs(names) }) -> Promise (rejects when there is no Web MIDI or it is refused)
+  function connect(h){
+    var nav = global.navigator;
+    if (!nav || !nav.requestMIDIAccess) return Promise.reject(new Error("no-web-midi"));
+    return nav.requestMIDIAccess().then(function (a){
+      function msg(e){
+        var d = e.data, cmd = d[0] & 0xf0, t = e.timeStamp || global.performance.now();
+        if (cmd === 0x90 && d[2] > 0) h.on(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) h.off(d[1], t);
+      }
+      function bind(){ var names = []; a.inputs.forEach(function (i){ i.onmidimessage = msg; names.push(i.name || "MIDI input"); }); if (h.inputs) h.inputs(names); }
+      a.onstatechange = bind; bind();
+      return a;
+    });
+  }
+
+  global.ChordEntry = { connect: connect, QUALITIES: QUALITIES, analyse: analyse, symbol: symbol, keyLof: keyLof, lofName: lofName,
     listener: listener, grid: grid, unswing: unswing };
 })(typeof window !== "undefined" ? window : globalThis);

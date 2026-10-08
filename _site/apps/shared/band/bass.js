@@ -164,6 +164,15 @@
     tumbao: [[1.5, 1.4, "5"], [3, 0.95, "N"]],
     chacha: [[0, 1.9, "R"], [2, 0.9, "5"], [3, 0.9, "R"]],
     tresillo: [[0, 1.4, "R"], [1.5, 1.4, "R"], [3, 0.9, "5"]],                                          // 3+3+2
+    // Rock and pop lines, each written against a drum groove's kick (drums.js GROOVES).
+    eighths: function (beats){ var l = []; for (var b = 0; b < beats; b += 0.5) l.push([b, 0.45, "R"]); return l; },      // straight-eighth rock
+    octaves: function (beats){ var l = []; for (var b = 0; b < beats; b++){ l.push([b, 0.45, "R"]); l.push([b + 0.5, 0.4, "8"]); } return l; },   // disco: the octave on every off-beat
+    dotted:  { bars: [ [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 1.9, "R"]],                                // 1, the and of 2, 3: with the kick
+                       [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 1.4, "R"], [3.5, 0.45, "N"]] ] },          // every second bar leads into the next root
+    motown:  { rise: true, top: 12, bars: [ [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 0.9, "5"], [3, 0.45, "8"], [3.5, 0.45, "5"]],
+                                            [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 0.9, "5"], [3, 0.45, "5"], [3.5, 0.45, "N"]] ] },
+    // 12/8 (or triplets over 4/4): long notes on 1 and 3, each set up by the last eighth of the beat before
+    twelve8: [[0, 1.6, "R"], [1 + 2 / 3, 0.3, "R"], [2, 1.6, "5"], [3 + 2 / 3, 0.3, "N"]],
     // Lines from tunes. bars = the pattern bar by bar (it repeats). rise: every degree sits above a low
     // root (6, 7 = the chord's seventh, 9 as well as 5 and 8); below: 5 and 6 sit under the root.
     // L = a semitone under the next bar's root. These were written from memory of the records: check
@@ -434,9 +443,21 @@
         if (seg.chord && id !== "tumbao" && !list.some(function (e){ return e.pos >= seg.start && e.pos < seg.start + seg.len; }))
           list.push({ pos: seg.start, dur: Math.min(0.9, seg.len), deg: "R" });
       });
+      // a pushed chord: the next bar's root on the last eighth, held over the barline (the bar after starts late)
+      var tied = st.pushed; st.pushed = false;
+      if (tied) list = list.filter(function (e){ return e.pos >= 0.5 - 1e-6; });
+      if (H.pushes && H.pushes(ctx) && !AFTER[id] && id !== "tumbao"){
+        list = list.filter(function (e){ return e.pos < 3.5 - 1e-6; }); list.push({ pos: 3.5, dur: 1.4, deg: "N" }); st.pushed = true; }
       list.sort(function (a, b){ return a.pos - b.pos; });
+      var segs = segmentsOf(ctx), lift = !!(ctx.opts && ctx.opts.lift && ctx.opts.lift.indexOf(ctx.index) >= 0 && !ctx.intro);
+      // the first note a chord gets is its root, whatever the pattern has there (a fifth under a chord that has just arrived is a wrong note)
+      function opens(e, k){
+        var s0 = 0; segs.forEach(function (sg){ if (sg.start <= e.pos + 1e-6) s0 = sg.start; });
+        return s0 > 0 && !list.some(function (x, j){ return j < k && x.pos >= s0 - 1e-6; });
+      }
       list.forEach(function (e, k){
         var c = H.chordAt(ctx.chords, e.pos), deg = e.deg; if (!c) return;
+        if ((deg === "5" || deg === "8") && id !== "tumbao" && !AFTER[id] && opens(e, k)) deg = "R";
         if (id === "alt" && beats % 2 && ctx.index % 2 && e.pos === 0 && firstChord(ctx.chords) && ctx.chords.length === 1) deg = "5";
         var n;
         if (deg === "N"){
@@ -451,12 +472,15 @@
         } else {
           var r = rootOf(c), f = r + (c.fifth != null ? c.fifth : 7);
           if (f > HI - 3 || (r >= 38 && inRange(f - 12))) f -= 12;                                   // the fifth below a root that sits high
-          n = deg === "5" ? f : deg === "8" ? (inRange(r + 12) && r + 12 <= HI - 5 ? r + 12 : r) : r;
+          var up8 = inRange(r + 12) && r + 12 <= HI - 5, lowR = id === "octaves" && !up8 && inRange(r - 12);   // (octaves: when there is no room above, the pair moves down)
+          n = deg === "5" ? f : deg === "8" ? (up8 ? r + 12 : r) : lowR ? r - 12 : r;
           low = r;
         }
         if (!inRange(n)) return;
         var room = (k + 1 < list.length ? list[k + 1].pos : beats + 4) - e.pos;
-        ev.push({ pos: e.pos, dur: Math.round(Math.min(e.dur, room - 0.03) * 1000) / 1000, midi: n, vel: vel(e.pos === 0 ? 0.86 : e.pos === Math.floor(e.pos) ? 0.80 : 0.76) });
+        var note = { pos: e.pos, dur: Math.round(Math.min(e.dur, room - 0.03) * 1000) / 1000, midi: n, vel: vel((e.pos === 0 ? 0.86 : e.pos === Math.floor(e.pos) ? 0.80 : 0.76) + (lift ? 0.04 : 0)) };
+        if (Math.abs(e.pos * 2 - Math.round(e.pos * 2)) > 1e-6) note.straight = true;               // (a triplet eighth: placed exactly, not swung)
+        ev.push(note);
         played(n);
       });
       st.pending = null; st.offRoot = false;

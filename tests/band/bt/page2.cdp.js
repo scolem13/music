@@ -118,8 +118,8 @@ const OUT = __dirname + "/";
     console.log("note after clear:", t2);
     await click("bt-pin-dismiss"); assert.strictEqual(await b.eval(`${$v("bt-pinnote")}.hidden`), true);
 
-    // pins clear on key change, on a different preset, and on an ABC edit (and the note says so)
-    for (const [what, fn, word] of [["key", () => set("bt-key", "C"), /key/], ["preset", () => set("bt-changes", "quick"), /different changes/],
+    // pins clear on a different preset and on an ABC edit (and the note says so). A key change keeps them, transposed.
+    for (const [what, fn, word] of [["preset", () => set("bt-changes", "quick"), /different changes/],
       ["edit", () => b.eval(`(function(){ var e = ${$v("bt-abc")}; e.value = e.value.replace('"Eb7"z4', '"Eb9"z4'); e.dispatchEvent(new Event('input', { bubbles:true })); })()`).then(() => b.sleep(1500)), /edited/]]) {
       await b.eval(`localStorage.setItem('bandHandoff', ${JSON.stringify(hand())})`); await b.goto(URL + "?from=chord-sheet"); await b.sleep(700);
       assert.strictEqual(await b.eval(`${$v("bt-pin-clear")}.hidden`), false, "pins on again");

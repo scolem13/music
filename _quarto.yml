@@ -50,6 +50,7 @@ website:
           - tools/solfege-keyboard.qmd
           - tools/accomp-styles.qmd
           - tools/backing-track.qmd
+          - tools/chord-entry.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

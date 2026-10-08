@@ -955,14 +955,14 @@
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/shared/arranger.js"></script>
 <script src="/apps/shared/tune-chart.js?v=15"></script>
-<script src="/apps/shared/voicings.js?v=4"></script>
-<script src="/apps/shared/band/harmony.js?v=13"></script>
-<script src="/apps/shared/band/bass.js?v=9"></script>
-<script src="/apps/shared/band/comp.js?v=12"></script>
-<script src="/apps/shared/band/catalog.js?v=12"></script>
-<script src="/apps/shared/band/drums.js?v=6"></script>
-<script src="/apps/shared/band/sounds.js?v=3"></script>
-<script src="/apps/shared/band/player.js?v=99"></script>
+<script src="/apps/shared/voicings.js?v=5"></script>
+<script src="/apps/shared/band/harmony.js?v=17"></script>
+<script src="/apps/shared/band/bass.js?v=10"></script>
+<script src="/apps/shared/band/comp.js?v=13"></script>
+<script src="/apps/shared/band/catalog.js?v=13"></script>
+<script src="/apps/shared/band/drums.js?v=7"></script>
+<script src="/apps/shared/band/sounds.js?v=4"></script>
+<script src="/apps/shared/band/player.js?v=100"></script>
 <script>
 (function () {
   var SF = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';
@@ -1225,7 +1225,9 @@
     tango:   { c: 'Am|Dm|E7|Am',       t: 116 }, calypso: { c: 'C|F|G7|C',         t: 112 },
     reggae:  { c: 'G|C|G|D',           t: 84 },  reggaeton:{ c: 'Bm|G|D|A',        t: 90 },
     folk:    { c: 'C|F|G7|C',          t: 108 }, rock:    { c: 'A|D|E|D',          t: 120 },
-    pop:     { c: 'C|G|Am|F',          t: 80 }
+    pop:     { c: 'C|G|Am|F',          t: 76 },  strum:   { c: 'G|D|Em|C',          t: 104 },
+    dance:   { c: 'Am|F|C|G',          t: 120 }, motown:  { c: 'C|C|F|G',           t: 138 },
+    doowop:  { c: 'C|Am|F|G',          t: 66 },  train:   { c: 'G|G|C|D7',          t: 112 }
   };
   var OWN = {
     'bass:sowhat': { c: 'Dm7|Dm7|Dm7|Dm7', t: 136, with: { compRhythm: 'sowhat', voicing: 'sowhat' } },
@@ -1253,13 +1255,12 @@
     'drums:bodiddley': { c: 'G|G|C|G', t: 104, with: { compRhythm: 'clave32' } }, 'drums:dembow': { c: 'Bm|G|D|A', t: 90 },
     'drums:funk': { c: 'F7|F7|Bb7|F7', t: 104 }, 'drums:halftime': { c: 'C|G|Am|F', t: 80 }, 'drums:clave32': { c: 'C|F|G|F' }
   };
-  var ELECTRIC = { rock: 1, pop: 1, reggae: 1, reggaeton: 1, calypso: 1 };
   function styleOf(id) { return cat.byId(cat.styles, id); }
   function plan(e, kind) {
     var own = OWN[kind + ':' + e.id] || {}, st = styleOf(own.style || (e.fits && e.fits[0])) || cat.styles[0], base = BY_STYLE[st.id] || BY_STYLE.swing;
-    var strum = kind === 'comp' && /^strum/.test(e.id), inst = strum ? 'guitar' : 'piano';
+    var strum = kind === 'comp' && /^strum/.test(e.id), inst = strum ? 'guitar' : (st.sound && st.sound.lead) || 'piano', so = cat.styleOpts(st.id, inst).opts;
     var opts = { bassFeel: st.bass, compRhythm: st.rhythm, groove: st.drums, feel: st.feel, comp: inst, voicing: strum ? 'open' : st.voicing[inst],
-                 variation: 0, bassSound: ELECTRIC[st.id] ? 'electric' : 'upright', compSound: inst, ride: 'ride', figures: 'always' };
+                 variation: 0, bassSound: so.bassSound, compSound: so.compSound, ride: so.ride, push: so.push, figures: 'always' };
     opts[kind === 'bass' ? 'bassFeel' : kind === 'comp' ? 'compRhythm' : 'groove'] = e.id;
     if (own.with) Object.keys(own.with).forEach(function (k) { opts[k] = own.with[k]; });
     return { chords: own.c || base.c, tempo: own.t || base.t, meter: own.m || '4/4', opts: opts, style: st };
@@ -1280,7 +1281,7 @@
     if (active === btn) { reset(); return; }
     reset();
     var parsed; try { parsed = TuneChart.parse(abcOf(p)); } catch (e) { return; }
-    var need = [p.opts.bassSound === 'electric' ? 'ebass' : 'bass', p.opts.comp, 'kit'];
+    var need = [p.opts.bassSound === 'electric' ? 'ebass' : 'bass', p.opts.compSound || p.opts.comp, 'kit'];
     active = btn; btn.textContent = '■'; btn.classList.add('as-play--on');
     if (!player) player = BandPlayer.create({ parsed: parsed, tempo: p.tempo, countIn: 0, choruses: 2, opts: p.opts, instruments: need,
       onEnd: function () { reset(); } });

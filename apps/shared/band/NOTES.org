@@ -418,11 +418,99 @@ more forms and feels (minor blues, rhythm changes, bossa, jazz waltz); audio exp
 ** TODO No sustain pedal, no computer-keyboard notes; the on-screen keys are a plain row, not a piano layout.
 ** TODO Undo covers one-at-a-time entry only, and cannot bring back the changes that were there before the first chord.
 ** TODO The panel sits near the bottom of the page, far from the chart it fills in.
-** LATER (user, 2026-10-07): choose voicings on the Chord Sheet by MIDI entry. The chord is already known there, so the notes say which
-   voicing is meant: C7 with [E, Bb] = guide tones; [C, G, Bb, E] = drop 2. Not built. What it needs:
-   - a classifier: for the card's chord, run ChordVoicings.piano(chord, style, { allOctaves:true }) over every style and compare the played
-     notes' intervals from the bottom (octave-free); report style + inversion, or "as played" when nothing matches;
-   - Chord Sheet keeps ONE voicing style per instrument (S.instruments.get(id).voicingStyle) and per chord only an index (t.voicings[inst])
-     and, after a Backing Track hand-off, t.played = { midis }. A per-chord style needs either a per-chord override or the "As played" path;
-   - a way to say which card is listening, and ChordEntry.listener("step") + the Web MIDI code from the Backing Track page.
-   The entered voicings already have a road to the band: Chord Sheet's hand-off sends pins.
+** DONE (2026-10-07) Voicings by MIDI: a second pass on the Backing Track page, and "Enter voicings (MIDI)" on the Chord Sheet.
+- ChordVoicings.identify(chord, midis) names played notes for a KNOWN chord: style + form / inversion ("Rootless (A/B forms): A form
+  (3rd in bass)"), any octave, exact spacing. No match = "As played" with each note's degree. Order: standard, shell, guide, rootless,
+  drop 2, drop 3. BandHarmony.libChord(parsed chord) gives the { root, intervals } it wants, alterations included.
+- Backing Track, Entry = "Voicings, one chord at a time": the chord named above the keys takes the notes played; they are the band's
+  pins ("form bar:beat" -> midis, the same thing Chord Sheet hands over). Copies to the same chord elsewhere unless that place has its
+  own (enVAuto marks the copies). Pins now move with the key, and are saved in a setup (s.pins, s.pinsAuto).
+- Chord Sheet: t.entered = { midis, name } on a chord token wins over the Voicing menu for the keyboard card; the picker under the card
+  names it and offers "Back to the menu style". The outlined card is the one being voiced; clicking a card moves the outline.
+  "Play with the band" already sends what each card shows, so entered voicings reach the band as pins.
+- Tests: t_entry.js ("VOICING NAMES OK"), entry/voice.cdp.js ("VOICE PASS OK"), sheet/voice.cdp.js ("SHEET VOICE OK").
+** TODO What is stored is the NOTES, not "rootless A form": the name is worked out again each time it is shown. A voicing kept as
+   style + form could follow a chord that is edited (C7 -> C7b9) or be applied to a whole tune ("A forms throughout").
+** TODO Editing the changes (typing, entering more chords, a new take) clears every voicing. Only a key change keeps them.
+** TODO A voicing with a doubled note or a wider spread than the library's shape is "as played" (C7 as C Bb E A is not a known shape).
+** TODO Chord Sheet: keyboard cards only (no guitar), no on-screen way to enter without MIDI, entered voicings are lost when a chord's
+   text changes, and the superimposed view does not know about them. The MIDI path itself is untested (tests call voiceEnter directly).
+** TODO Backing Track voicing pass walks the form bar by bar, so a chord held over four bars is four stops (the copy option fills them).
+
+* Chord diagram beside the chart (Backing Track: #bt-side, "Chord diagram beside the chart" in the Chart panel)
+- It is the Chord Sheet's superimposed view, drawn by the Chord Sheet page itself in a frame (tools/chord-sheet.html?embed=super).
+  The Backing Track posts { type:"super-embed", chords (the first four DIFFERENT chords), comp, voicing, now, next }; the Chord Sheet
+  hides everything but the diagram and answers with its height. Lane colours come from superCol(): now teal, next amber, the rest grey
+  (on its own the Chord Sheet keeps its four colours). "Next" = the next different chord in the form.
+- The first version (one small keyboard / fretboard with only the two chords, drawn on the Backing Track page from the notes the band
+  played) is archived, not loaded: apps/shared/band/archive/side-now-next.js, with the steps to put it back.
+- Test: tests/band/entry/side.cdp.js ("SIDE OK").
+** TODO More than four chords: only the first four are shown (user: design the options later). Now / next outside them are named in
+   the two text lines with "(not one of the four shown)".
+** TODO The voicings are the Chord Sheet's (its style of the same name, voice-led chord to chord), not the notes the band plays: band-only
+   styles (So What fourths, block chords) and most guitar styles fall back to Standard; voicings you set (pins) are not shown.
+** TODO The frame loads the whole Chord Sheet page (its scripts and sounds) for one diagram, and redraws it at every chord change.
+** NOTE Quarto restyles <aside> into its margin layout: the box is a div.
+
+* Half / double time: the comping answers (BandHarmony.feelPart -> respond)
+- When the comping is not one of the parts that change time (the default, "bass drums", and "drums"): same rhythm, different weight.
+  double = each chord's first hit and the hits between the beats stay (straight, louder, short), other on-beat hits go; a bar with
+  nothing between the beats gets one stab on the "and" of 2. half = chords ring to the next hit, beat 3 accented or struck again.
+  "plain" in timeFeelParts ("bass drums plain", menu: "chords unchanged") switches it off. Skipped for arpeggio / passing-chord bars,
+  stop bars and compound meters. Tests: t_timefeel.js, timefeel-ui.cdp.js.
+** VERIFY BY EAR: accent size (x1.14), stab length (0.45 beat), and whether the added stab on the "and" of 2 is welcome.
+** TODO Not built from the ideas list: a rhythm per feel for each style, marking the change itself, register (lower / thicker in half time).
+** TODO Tune figures marked exact (So What answer) are thinned like any other rhythm.
+
+* Chord Entry page (tools/chord-entry.qmd, tools/_chord-entry.qmd) -- 2026-10-08
+- MIDI entry was taken OUT of the Backing Track page and is its own small page: set up (title, style, key, meter, tempo, MIDI), enter
+  (chords one at a time / in time with a click or the style's drums / voicings one chord at a time), check (chart + "Hear it"), send on.
+- Style menu = BandCatalog.styles: it sets the drums for recording, the feel (a swing style un-swings off-beats before snapping), the
+  trio for "Hear it", and the style the Backing Track opens in. Remembered in localStorage.ceStyle.
+- Out: "Open in the Backing Track" writes localStorage.bandHandoff { v:1, from:"chord-entry", at, abc, tempo, style, pinMap, pinsAuto }
+  and opens backing-track.html?from=chord-entry (loadHandoff there); also Copy the ABC and Download .abc (chords, key, meter, title only).
+- Back: the Backing Track's "Enter chords or voicings from a keyboard" (in its ABC panel) writes localStorage.entryHandoff
+  { v:1, from:"backing-track", at, abc, tempo, style, pinMap } and opens chord-entry.html?from=backing-track.
+- Voicings on this page are tied to the chord they were played for (ckey): change the chord in that slot and its voicing is dropped,
+  the others stay. On the Backing Track they are pins as before (pinsFromMap, chordSlots, pinAuto).
+- Key and meter lock once there are bars ("Start empty" unlocks). The ABC box is read-only: edit on the Backing Track.
+- Tests: tests/band/entry/entry.cdp.js ("ENTRY UI OK") covers the page and both hand-offs; t_entry.js the library.
+** VERIFY with a real MIDI keyboard (nothing here has been played by hand): timing offset, the 70 ms settle time.
+** TODO Not on the entry page: repeats / endings, pickup bars, editing a chord by typing, guitar, time feel, any band setting but Style.
+** TODO A round trip through the entry page unrolls repeats (the grid is the form as played) and drops the tune's other ABC fields.
+** TODO Chord Sheet still has its own "Enter voicings (MIDI)" button; it was not moved.
+
+* Rock and pop styles rewritten -- 2026-10-08 (user: "quite unhappy with the generic pop/rock styles"; then "Do all")
+Nothing here has been heard. Every level, rhythm and sample choice is a first guess.
+- Styles (catalog.js, group "Folk, rock and pop"): rock = Straight-eighth rock, strum = Acoustic strum, pop = Piano ballad, dance = Dance pop,
+  motown = Motown / soul, doowop = 12/8 doo-wop, train = Country train beat, folk = Boom-chick. Ids rock / pop / folk are kept from the three
+  generic styles (saved setups and links name them); their contents changed.
+- A style now carries sound: { bass, cymbal, piano, guitar, lead } and push. BandCatalog.styleOpts(id, family) -> { opts, instruments } is what
+  a page should use. Backing Track: styleSounds() in rebuild(reset). The comping instrument stays in its family (piano / guitar) and takes the
+  style's sound, unless the style has a lead (strum, train -> guitar; pop, doowop -> piano).
+- sounds.js: aguitar (acoustic_guitar_steel), cguitar (electric_guitar_clean); kit pieces clap (39) and tamb (54). Events still say
+  inst:"guitar"; the player swaps the sample set by opts.compSound, as it already did for epiano.
+- bass.js LINES: eighths, dotted, octaves, motown, twelve8. dotted and the strum / ballad grooves share one rhythm (1, and of 2, 3).
+- drums.js GROOVES: rock is four bars (kick 1 3 3& | 1 2& 3 | 1 3 3& | 1 3 3& 4&); strum, ballad, dance, motown, train; twelve8 = compoundBar
+  used in simple meters too (triplet:true). fills: "rock" (sixteenths, two beats at most) | "light" (a beat at most) | true (the jazz lists).
+  "back" in a pattern = cross-stick, snare in a chorus bar.
+- comp.js GRID: quarters, triplets (lh:true). On the piano, lh patterns and strums add the root (F2..E3) as a separate one-note event marked
+  arp so the Chord Sheet hand-off ignores it.
+- Pushes: BandHarmony.pushes(ctx), opts.push. Into the third bar of each four-bar phrase when the chord changes there; bass (set lines), comp
+  (grid patterns) and kick (grooves) each keep a "tied" flag for the bar after. Off in half / double time, compound meters, stops, last bar.
+- Chorus bars: opts.lift = form bar indexes (page: "Chorus bars", ranges like 9-16). Drums: fill going in, crash, hi-hat -> ride, snare and kick
+  x1.06; comp x1.09; bass +0.04.
+- Bug fixed: a set bass line gave a chord arriving in mid-bar the pattern's fifth (boom-chick: A under a new D). The first note a chord
+  gets is now its root in every set line except tumbao and the tune figures.
+** VERIFY BY EAR, first: gains of aguitar / cguitar (2.6), clap (0.70), tamb (0.90); open hi-hat level and ring in Dance pop (nothing chokes
+   it but the closed hat on the next beat); whether the piano left hand is muddy against the bass; the rock strum on a three-note piano triad.
+** VERIFY BY EAR: every groove and bass line above; the push (does the held bass note plus a late re-entry sound tied or dropped?).
+** TODO Pushes are one fixed place (phrase bar 2 -> 3). No per-bar choice, no pushes inside a bar (a chord on the and of 2).
+** TODO Chorus bars are typed by hand: the chart has no section labels. No verse thinning (palm mute, hat only), only the lift.
+** TODO Piano voicing for rock / pop is still the close triad ("standard"); no octave doubling or wider spread.
+** TODO Motown bass is root / fifth / octave only (a sixth would be out of key on minor chords); nothing like a real Jamerson line.
+** TODO Rock and the rest in 3/4 fall back to the jazz straight time except strum, ballad and boom-chick (they have a three-beat bar).
+** TODO Old saved setups with style rock / pop / folk load the new style's bass, rhythm and groove only if they did not save their own;
+   the bass sound and cymbal they saved are kept.
+** TODO Chord Sheet "hear" and the static cards on Accompaniment Styles do not use the new sounds (only the catalog cards do).
+** NOTE tests/band/bt/page2.cdp.js expected a key change to clear pins; pins have been transposed since the voicing pass. Test corrected.

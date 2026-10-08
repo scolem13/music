@@ -247,6 +247,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="../tools/backing-track.html">
  <span class="dropdown-text">Backing Track</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
     </ul>
   </li>
   <li class="nav-item dropdown ">
@@ -529,6 +533,15 @@ document.addEventListener('DOMContentLoaded', async function () {
 #chord-sheet-root .keyboard-grid .diagram-card{width:max-content;max-width:100%}
 #chord-sheet-root .keyboard-grid .diagram-svg-wrap svg{max-width:100%;height:auto!important}   /* a wide voicing shrinks to a phone screen */
 #chord-sheet-root .diagram-card{border-radius:.5rem;border:1px solid var(--border);background:#fff;overflow:hidden}
+html.embed-super,html.embed-super body{padding:0!important;margin:0!important;background:#fff!important;min-height:0!important;overflow:hidden}
+html.embed-super #chord-sheet-root .inst-heading,html.embed-super #chord-sheet-root .super-note,html.embed-super #chord-sheet-root .super-section-name{display:none}
+html.embed-super #chord-sheet-root .super-card{border:0;padding:0;margin:0;box-shadow:none;background:#fff}
+html.embed-super #chord-sheet-root .super-card svg{width:100%!important;height:auto!important;display:block}
+html.embed-super #chord-sheet-root .inst-section{margin:0;padding:0}
+html.embed-super #establish-tonality-btn{display:none!important}
+#chord-sheet-root .diagram-card.is-voicing{outline:3px solid #1c5fa8;outline-offset:1px}
+#chord-sheet-root .btn[aria-pressed="true"]#btn-voice{background:#1c5fa8;color:#fff;border-color:#1c5fa8}
+@media print{#chord-sheet-root .diagram-card.is-voicing{outline:none}#chord-sheet-root #voice-note{display:none}}
 #chord-sheet-root .diagram-svg-wrap{padding:6px 6px 0}
 #chord-sheet-root .diagram-card svg{display:block;width:100%;height:auto}
 #chord-sheet-root .voicing-sel{width:100%;border:none;border-top:1px solid var(--border);background:#f8f9fa;color:var(--ink);font-size:.72rem;padding:5px 8px;cursor:pointer;appearance:auto;border-radius:0}
@@ -676,15 +689,18 @@ Chorus: F C/E G Am"></textarea>
     </div>
     <div class="row tight">
       <button class="btn" id="btn-notation" type="button" aria-pressed="false" title="Show or hide each voicing written on a staff under its diagram">Show notation</button>
+      <button class="btn" id="btn-voice" type="button" aria-pressed="false" title="Choose each keyboard voicing by playing it on a MIDI keyboard. The outlined chord is the one being voiced; click another to move to it.">Enter voicings (MIDI)</button>
       <button class="btn add-btn" id="btn-band" title="Open the Backing Track page with this progression and the voicings shown here">Play with the band</button>
       <button class="btn primary" onclick="window.print()">Print / Save PDF</button>
     </div>
   </div>
   <p id="handoff-note" class="handoff-note" style="display:none"></p>
+  <p id="voice-note" class="handoff-note" role="status" style="display:none"></p>
   <div id="sheet-output"></div>
   <p class="extras" id="extras"><button type="button" id="btn-extra-preview">Show the preview bar (print, play with the band)</button> · <button type="button" id="btn-extra-insts">Show banjo, mandolin and vihuela</button></p>
 
-<script src="../apps/shared/voicings.js?v=4"></script>
+<script src="../apps/shared/voicings.js?v=5"></script>
+<script src="../apps/shared/chord-entry.js?v=2"></script>
 <script>
 (function(){
 'use strict';
@@ -1262,6 +1278,7 @@ function applyVoiceLeadingForInstrument(inst,tuning){
   let prev=null,prevGrip=null;
   valid.forEach(t=>{
     const baseChord=getChord(t.chordId);if(!baseChord)return;
+    if(isKeyboard&&t.entered){prev=t.entered.midis;prevGrip=null;return}                                             // played in: the next chord leads from it
     if(styleId===PLAYED&&t.played){prev=t.played.midis;prevGrip=t.played.strings||null;t.voicings[inst.id]=0;return}   // handed over, not chosen
     const chord=isKeyboard?baseChord:applyVoicingStyle(baseChord,styleId);   // keyboard styles shape the full chord themselves
     if(isKeyboard){
@@ -1856,6 +1873,11 @@ function drawNotation(wrap,notes){
 // jam cards), on a fretboard one colour per chord with split dots where chords share a note.
 let superOn=false,superLane='names',superDot='fingers',superSel=[],superOnly=false;
 const SUPER_COLORS=['#2b9c90','#d6336c','#d98a00','#4c5fd5'];
+// A lane's colour. Embedded beside the Backing Track's chart, colour says WHEN instead of which chord:
+// the chord sounding now, the one that follows, and grey for the rest.
+let superRole=null;                                       // { now: lane index or -1, next: lane index or -1 }
+const SUPER_NOW='#1f8f83',SUPER_NEXT='#e08a1e',SUPER_REST='#a9a39a';
+function superCol(k){return !superRole?SUPER_COLORS[k]:k===superRole.now?SUPER_NOW:k===superRole.next?SUPER_NEXT:SUPER_REST}
 const SUPER_DEG=['R','♭2','2','♭3','3','4','♭5','5','♯5','6','♭7','7'],SUPER_NUM=['1','♭2','2','♭3','3','4','♯4','5','♭6','6','♭7','7'];
 function superLetters(t){const c=getChord(t.chordId);return(t.rootName?t.rootName+c.symbol:chordDisplayName(t.rootPc,c))+(t.superBassName?'/'+t.superBassName:'')}
 // Sections: lines of the Sections box -> [{ name, tokens, extra, bad }]. Their chords are separate from the
@@ -1966,13 +1988,13 @@ function renderSuperKeyboard(voiced){
   const xOf=m=>isWhiteKey(m)?wx.get(m)+WW/2:wx.get(previousWhiteMidi(m-1))+WW;
   // the lanes, with the key edges carried up through them
   voiced.forEach((v,k)=>{
-    const y=top+LH*k,col=SUPER_COLORS[k];
+    const y=top+LH*k,col=superCol(k);
     svg.appendChild(svgEl('rect',{x:G,y,width:WW*whites.length,height:LH,fill:col,opacity:0.07}));
     svg.appendChild(svgEl('line',{x1:0,y1:y+LH,x2:w,y2:y+LH,stroke:'#e3e0da','stroke-width':1}));
   });
   whites.forEach((m,i)=>svg.appendChild(svgEl('line',{x1:G+WW*i,y1:top,x2:G+WW*i,y2:kbY,stroke:'#e3e0da','stroke-width':1})));
   voiced.forEach((v,k)=>{
-    const y=top+LH*k,cy=y+LH/2+3,col=SUPER_COLORS[k],xs=v.midis.map(xOf);
+    const y=top+LH*k,cy=y+LH/2+3,col=superCol(k),xs=v.midis.map(xOf);
     svg.appendChild(svgEl('rect',{x:Math.min(...xs),y:cy-5,width:Math.max(...xs)-Math.min(...xs),height:10,fill:'#9aa3b2',opacity:0.55}));
     const lab=svgText(svg,superLabel(v.t),G-10,cy+6,{'font-size':superLabel(v.t).length>6?15:19,'font-weight':800,'text-anchor':'end',fill:col,'class':'super-lane-label'});
     superPlay(lab,v.midis);
@@ -2008,7 +2030,7 @@ function renderSuperFretboard(voiced,tuning){
   const sx=i=>G+SS*i,fy=f=>headY+((start===0?f:f-start+1)-0.5)*FS;
   // one row per chord above the nut: its label, and which strings are open (o) or not played (x)
   ok.forEach((v,k)=>{
-    const y=top+rowH*k+14,col=SUPER_COLORS[voiced.indexOf(v)];
+    const y=top+rowH*k+14,col=superCol(voiced.indexOf(v));
     const lab=svgText(svg,superLabel(v.t),G-22,y,{'font-size':15,'font-weight':800,'text-anchor':'end',fill:col,'class':'super-lane-label'});
     superPlay(lab,positionMidis(v.pos));
     v.pos.strings.forEach((x,i)=>{if(!x||x.fret===null)svgText(svg,'×',sx(i),y,{'font-size':14,'font-weight':700,fill:col});else if(x.fret===0)svgText(svg,'○',sx(i),y,{'font-size':13,'font-weight':700,fill:col})});
@@ -2027,10 +2049,10 @@ function renderSuperFretboard(voiced,tuning){
   ok.forEach(v=>{const k=voiced.indexOf(v);v.pos.strings.forEach((x,i)=>{if(!x||!(x.fret>0))return;const key=i+':'+x.fret;if(!spots.has(key))spots.set(key,{i,fret:x.fret,by:[]});spots.get(key).by.push({k,v,x,finger:v.fingers[i]})})});
   spots.forEach(sp=>{
     const cx=sx(sp.i),cy=fy(sp.fret),m=sp.by.length,R=m>1?20:18;
-    if(m===1)svg.appendChild(svgEl('circle',{cx,cy,r:R,fill:SUPER_COLORS[sp.by[0].k]}));
+    if(m===1)svg.appendChild(svgEl('circle',{cx,cy,r:R,fill:superCol(sp.by[0].k)}));
     else sp.by.forEach((b,q)=>{
       const a0=-Math.PI/2+2*Math.PI*q/m,a1=-Math.PI/2+2*Math.PI*(q+1)/m;
-      svg.appendChild(svgEl('path',{d:`M${cx},${cy} L${cx+R*Math.cos(a0)},${cy+R*Math.sin(a0)} A${R},${R} 0 ${a1-a0>Math.PI?1:0} 1 ${cx+R*Math.cos(a1)},${cy+R*Math.sin(a1)} Z`,fill:SUPER_COLORS[b.k]}));
+      svg.appendChild(svgEl('path',{d:`M${cx},${cy} L${cx+R*Math.cos(a0)},${cy+R*Math.sin(a0)} A${R},${R} 0 ${a1-a0>Math.PI?1:0} 1 ${cx+R*Math.cos(a1)},${cy+R*Math.sin(a1)} Z`,fill:superCol(b.k)}));
     });
     const root=sp.by.some(b=>b.x.isRoot);
     svg.appendChild(svgEl('circle',{cx,cy,r:R,fill:'none',stroke:root?'#111':'#fff','stroke-width':root?3.5:1.5}));
@@ -2084,7 +2106,9 @@ function buildDiagramCard(inst, tuning, t){
   if(!baseChord) return null;
   const isKeyboard=inst.type==='keyboard';
   const menuStyle=(S.instruments.get(inst.id).voicingStyle)||'standard';
-  const played=menuStyle===PLAYED&&!!t.played;            // notes handed over by the Backing Track
+  const ent=isKeyboard&&t.entered?t.entered:null;         // a voicing played in for this chord (MIDI entry): it wins over the menu
+  const played=!!ent||(menuStyle===PLAYED&&!!t.played);   // ... or notes handed over by the Backing Track
+  const playedMidis=ent?ent.midis:t.played?t.played.midis:[];
   const styleId=menuStyle===PLAYED&&!t.played?'standard':menuStyle;
   const chord=isKeyboard?baseChord:applyVoicingStyle(baseChord,styleId);   // keyboard styles shape the full chord themselves
   const rootNote=t.rootName?parseNote(t.rootName):null;
@@ -2092,6 +2116,7 @@ function buildDiagramCard(inst, tuning, t){
   const displayName=chordLabel(t,t.rootName?t.rootName+baseChord.symbol:chordDisplayName(t.rootPc,baseChord));
 
   const card=document.createElement('div');card.className='diagram-card';
+  if(isKeyboard){card._tok=t;if(voiceOn&&voiceToken()===t)card.classList.add('is-voicing')}
   t.excluded=t.excluded||{};
   t.shown=t.shown||{};
   let redraw=()=>{};
@@ -2100,6 +2125,7 @@ function buildDiagramCard(inst, tuning, t){
   // effect in the PDF export.
   card.addEventListener('click',e=>{
     if(e.target.closest('select'))return;
+    if(isKeyboard&&voiceOn)voiceGoTo(t);                  // MIDI entry: this is the chord being voiced now
     if(e.target.closest('.diagram-title')){
       hearChord(card._midis,inst);
       return;
@@ -2159,7 +2185,7 @@ function buildDiagramCard(inst, tuning, t){
     function drawKbd(){
       svgWrap.innerHTML='';
       const excl=t.excluded[inst.id];
-      const midis=played?t.played.midis.slice().sort((a,b)=>a-b):kbMidis(t.rootPc,chord,styleId,inv,oct);
+      const midis=played?playedMidis.slice().sort((a,b)=>a-b):kbMidis(t.rootPc,chord,styleId,inv,oct);
       const tones=played?toneNames(t.rootPc,chord,rootNote,midis,null):kbTones(t.rootPc,chord,styleId,inv,rootNote,oct);
       svgWrap.appendChild(renderKeyboard({
         midis, tones,
@@ -2171,7 +2197,8 @@ function buildDiagramCard(inst, tuning, t){
     redraw=drawKbd;
     drawKbd();
 
-    if(played)addPicker(['As played'],0,()=>{});
+    if(ent)addPicker([ent.name,'Back to the menu style'],0,i=>{if(i===1){delete t.entered;delete t.excluded[inst.id];applyAllVoiceLeading();scheduleRender()}});
+    else if(played)addPicker(['As played'],0,()=>{});
     else if(maxInv>0){
       addPicker(Array.from({length:maxInv+1},(_,i)=>dropCands.length?dropCands[i].label:(i===0?'Root position':ordinal(i)+' inversion')),inv,i=>{
         inv=i;t.voicings[inst.id]=inv;oct=0;if(t.octShifts)t.octShifts[inst.id]=0;drawKbd();
@@ -2606,6 +2633,97 @@ function importPlayed(h){
 }
 window.ChordSheetTool={importPlayed};
 
+// ===== EMBEDDED SUPERIMPOSED VIEW (tools/chord-sheet.html?embed=super, in a frame on the Backing Track page) =====
+// Only the superimposed diagram is shown. The page that embeds it posts
+//   { type:'super-embed', chords:['F7','Bb7',...], comp:'piano'|'guitar', voicing:<style id>, now:<chord>|null, next:<chord>|null }
+// and this page answers { type:'super-embed-size', h } with the diagram's height. Everything is drawn by the
+// same code as the Superimposed view option, with the lanes coloured by superCol().
+const EMBED_SUPER=/[?&]embed=super(&|$)/.test(location.search);
+let embedSig='';
+// The Backing Track's name for a voicing style -> this page's menu id. The guitar's differ: here the
+// two-note and three-string styles are listed per string set, there once ("all sets" is the same grips).
+const EMBED_STYLES={
+  guitar:{guide2:'pair:all',triad3:'set3:all',shell3:'set3:all',top3:'set3:0',mid3:'set3:1',triadvl:'vl:triadvl:0',uppervl:'vl:uppervl:0',bh:'drop2',open:'standard',auto:'standard'},
+  keyboard:{bh:'drop2',sowhat:'standard',auto:'standard'}
+};
+function embedStyle(instId,id){return(EMBED_STYLES[instId]&&EMBED_STYLES[instId][id])||id||'standard'}
+function embedSuper(d){
+  const instId=d.comp==='guitar'?'guitar':'keyboard',other=instId==='guitar'?'keyboard':'guitar';
+  const sig=JSON.stringify([d.chords,d.comp,d.voicing]);
+  if(sig!==embedSig){
+    embedSig=sig;
+    document.getElementById('chords-textarea').value=(d.chords||[]).join(' ');
+    parsedTokens=[];parseTextarea();
+    const setEnabled=(id,on)=>{const u=UI[id];if(u&&u.cb.checked!==on){u.cb.checked=on;u.cb.dispatchEvent(new Event('change',{bubbles:true}))}};
+    DATA.instruments.forEach(i=>{if(i.id!==instId)setEnabled(i.id,false)});setEnabled(instId,true);
+    const u=UI[instId];
+    if(instId==='guitar'&&u.tuningSel&&u.tuningSel.value!=='guitar-standard'){u.tuningSel.value='guitar-standard';u.tuningSel.dispatchEvent(new Event('change',{bubbles:true}))}
+    playedInst=null;S.instruments.get(instId).voicingStyle=embedStyle(instId,d.voicing);   // a style this page does not have falls back to Standard
+    u.fillStyles();u.resetStyleState();
+    superOn=true;superOnly=true;superSel=[];document.getElementById('chord-sheet-root').classList.add('super-on');
+    applyAllVoiceLeading();
+  }
+  const picked=superChords(parsedTokens.filter(t=>t.valid)).picked,at=s=>s==null?-1:picked.findIndex(t=>t.token===s);
+  const role={now:at(d.now),next:at(d.next)};
+  superRole=(d.now==null&&d.next==null)?null:role;
+  clearTimeout(renderTimer);doRender();
+  const out=document.getElementById('sheet-output');
+  parent.postMessage({type:'super-embed-size',h:Math.ceil(out.getBoundingClientRect().height)+4},location.origin);
+}
+if(EMBED_SUPER){
+  document.documentElement.classList.add('embed-super');
+  // leave only the output on the page: hide everything beside it, all the way up
+  for(let el=document.getElementById('sheet-output');el&&el!==document.body;el=el.parentElement){
+    Array.from(el.parentElement.children).forEach(sib=>{if(sib!==el&&!/^(SCRIPT|STYLE|LINK)$/.test(sib.tagName))sib.style.display='none'});
+    el.parentElement.style.padding='0';el.parentElement.style.margin='0';el.parentElement.style.maxWidth='none';el.parentElement.style.border='0';
+  }
+  window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===parent&&e.data&&e.data.type==='super-embed')embedSuper(e.data)});
+  window.addEventListener('load',()=>{if(parent!==window)parent.postMessage({type:'super-embed-ready'},location.origin)});
+}
+
+// ===== VOICINGS BY MIDI =====
+// With "Enter voicings (MIDI)" on, the outlined keyboard card is the chord being voiced. Play the notes
+// you want for it: they become that chord's voicing (t.entered, which wins over the Voicing menu), named
+// by ChordVoicings.identify when they are a shape the library knows, and the outline moves to the next chord.
+let voiceOn=false,voiceAt=0,voiceLis=null,voiceMidi=null;
+function voiceTokens(){return parsedTokens.filter(t=>t.valid&&getChord(t.chordId))}
+function voiceToken(){const l=voiceTokens();if(!l.length)return null;voiceAt=Math.min(Math.max(0,voiceAt),l.length-1);return l[voiceAt]}
+function voiceSym(t){return t.rootName?t.rootName+getChord(t.chordId).symbol:chordDisplayName(t.rootPc,getChord(t.chordId))}
+function voiceNote(msg){const n=document.getElementById('voice-note');n.textContent=msg||'';n.style.display=msg?'block':'none'}
+function voiceMark(){const cur=voiceOn?voiceToken():null;document.querySelectorAll('#sheet-output .diagram-card').forEach(c=>c.classList.toggle('is-voicing',!!cur&&c._tok===cur))}
+function voiceGoTo(t){const i=voiceTokens().indexOf(t);if(i<0)return;voiceAt=i;voiceMark();voiceNote('Voicing '+voiceSym(t)+': play the notes you want for it.')}
+function voiceName(t,midis){
+  const id=CV&&CV.identify?CV.identify({root:t.rootPc,intervals:getChord(t.chordId).intervals},midis):null;
+  return !id?'As played':id.style?id.name:'As played ('+id.tones.join(' ').replace(/b/g,'\u266d').replace(/#/g,'\u266f')+')';
+}
+function voiceEnter(midis){
+  const kb=S.instruments.get('keyboard');
+  if(!kb||!kb.enabled){voiceNote('Turn on Keyboard in the instrument list: played voicings are shown on the keyboard diagrams.');return}
+  const t=voiceToken();if(!t){voiceNote('Add some chords first.');return}
+  const name=voiceName(t,midis);
+  t.entered={midis:midis.slice().sort((a,b)=>a-b),name};
+  t.excluded=t.excluded||{};t.excluded.keyboard=new Set();     // every note played is shown
+  const l=voiceTokens(),last=voiceAt>=l.length-1;if(!last)voiceAt++;
+  voiceNote(voiceSym(t)+': '+name+'. '+(last?'That was the last chord.':'Next: '+voiceSym(l[voiceAt])+'.'));
+  applyAllVoiceLeading();clearTimeout(renderTimer);doRender();
+}
+function voiceToggle(){
+  const btn=document.getElementById('btn-voice');
+  if(voiceOn){voiceOn=false;btn.setAttribute('aria-pressed','false');voiceNote('');voiceMark();return}
+  if(!window.ChordEntry){voiceNote('MIDI entry did not load. Reload the page to try again.');return}
+  voiceLis=voiceLis||ChordEntry.listener({mode:'step'});voiceLis.reset();
+  const start=()=>{voiceOn=true;btn.setAttribute('aria-pressed','true');const t=voiceToken();voiceMark();
+    voiceNote(t?'Voicing '+voiceSym(t)+': play the notes you want for it. The chord is set when every key is up. Click a keyboard diagram to voice that chord.':'Add some chords, then play a voicing for each.')};
+  if(voiceMidi){start();return}
+  ChordEntry.connect({
+    on:(m,vel,ms)=>{if(!voiceOn)return;if(window.BandPlayer)BandPlayer.chord([m],{inst:'piano',dur:1.4,vel:Math.max(.2,Math.min(1,vel))}).catch(()=>{});voiceLis.noteOn(m,ms)},
+    off:(m,ms)=>{if(!voiceOn)return;voiceLis.noteOff(m,ms).forEach(c=>voiceEnter(c.midis))}
+  }).then(a=>{voiceMidi=a;start();if(!a.inputs.size)voiceNote('No MIDI keyboard found yet. Plug one in and play.')},
+    e=>voiceNote(e&&e.message==='no-web-midi'?'This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome, Edge or Firefox.':'The browser did not allow MIDI. Allow it for this site and try again.'));
+}
+document.getElementById('btn-voice').addEventListener('click',voiceToggle);
+window.__sheetVoice={enter:voiceEnter,on:()=>{voiceOn=true;voiceMark()},at:()=>voiceAt,tokens:voiceTokens};   // for tests
+
 // ===== BOOT =====
 initUI();
 renderChips();
@@ -2818,8 +2936,8 @@ renderChips();
 </script>
 <script src="../apps/shared/audio.js?v=5"></script>
 <script src="../apps/shared/soundfont.js"></script>
-<script src="../apps/shared/band/sounds.js?v=3"></script>
-<script src="../apps/shared/band/player.js?v=99"></script>
+<script src="../apps/shared/band/sounds.js?v=4"></script>
+<script src="../apps/shared/band/player.js?v=100"></script>
 <script src="../apps/shared/establish-button.js"></script>
 </div>
 

@@ -15,7 +15,8 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     const compN = await ev(`__gen[0].parts.comp.length`);
     await set("bt-timefeel", "double"); const d = await drums(); assert.strictEqual(d.tf, "double"); assert(d.n > 1.7 * n.n, "twice the drum notes: " + n.n + " -> " + d.n); assert.strictEqual(d.beats, n.beats); assert.strictEqual(d.bars, n.bars);
     assert.strictEqual(await ev(`document.getElementById("bt-timeparts-field").hidden`), false);
-    assert.strictEqual(await ev(`__o.timeFeelParts`), "bass drums"); assert.strictEqual(await ev(`__gen[0].parts.comp.length`), compN, "the comping keeps its rhythm");
+    assert.strictEqual(await ev(`__o.timeFeelParts`), "bass drums"); assert(await ev(`__gen[0].parts.comp.length`) <= compN, "the comping thins out in answer");
+    await set("bt-timeparts", "bass drums plain"); await drums(); assert.strictEqual(await ev(`__gen[0].parts.comp.length`), compN, "chords unchanged: the comping keeps its rhythm exactly"); await set("bt-timeparts", "bass drums"); await drums();
     await set("bt-timeparts", "bass comp drums"); await drums(); assert(await ev(`__gen[0].parts.comp.length`) > compN, "whole band: the comping doubles too"); await set("bt-timeparts", "bass drums");
     await set("bt-timefeel", "half"); const h = await drums(); assert.strictEqual(h.tf, "half"); assert(h.n < 0.65 * n.n, "half the drum notes: " + n.n + " -> " + h.n);
     // live: the band plays in double time without errors

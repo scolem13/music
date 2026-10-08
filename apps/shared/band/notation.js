@@ -22,7 +22,7 @@
   var SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"], FLAT = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
   // semitones above a chord root -> letter steps above the root's letter
   var STEP = [0, 1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6];
-  var DRUM = { ride:["g",1], rideBell:["g",1], crash:["a",1], hatClosed:["f",1], hatOpen:["f",1], sticks:["c",1], rim:["c",1],
+  var DRUM = { ride:["g",1], rideBell:["g",1], crash:["a",1], hatClosed:["f",1], hatOpen:["f",1], sticks:["c",1], rim:["c",1], clap:["c",1], tamb:["g",1],
                snare:["c",0], tomHi:["e",0], tomMid:["d",0], tomLo:["A",0], kick:["D",0], hatFoot:["E",1] };
   var DOWN = { kick:1, hatFoot:1 };
 

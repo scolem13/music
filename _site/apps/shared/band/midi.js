@@ -14,7 +14,7 @@
 
 (function (global) {
   var GM = { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46, crash:49, ride:51, rideBell:53,
-             tomLo:43, tomMid:45, tomHi:48, sticks:31 };
+             tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 };
   var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, guitar:26 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
   var CHANNEL = { bass:0, comp:1, drums:9 };
   var NAME = { bass:"Bass", comp:"Comping", drums:"Drums" };

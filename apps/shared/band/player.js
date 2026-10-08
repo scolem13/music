@@ -293,6 +293,7 @@
       var ms = (ev.midis || []).slice().sort(function (a, b){ return a - b; }), n = ms.length;
       var spread = h() * STRUM * hz, dur = (ev.dur || 0.4) * this.spb;     // chords are rolled very slightly, low to high
       var sound = ev.inst || "piano"; if (sound === "piano" && o.compSound === "epiano") sound = "epiano";
+      if (sound === "guitar" && (o.compSound === "aguitar" || o.compSound === "cguitar")) sound = o.compSound;       // the guitar's voicings, another sound
       // a strum is a slower roll: low string first on a downstroke, high string first on an upstroke
       if (ev.strum){ spread = Math.min(0.028, 0.12 * this.spb) * (ev.strum === "up" ? 0.6 : 1) * hz; if (ev.strum === "up") ms.reverse(); }
       for (var i = 0; i < n; i++) this.bank.play(sound, { midi: ms[i], vel: vel, dur: dur }, t + (n > 1 ? spread * i / (n - 1) : 0), dest);
