@@ -19,6 +19,12 @@
 // Stop time (ctx.stop): one hit on beat 1 — kick, snare and a closed hat — then nothing; a
 // { pos, choke:"cymbals" } event asks the player to damp whatever cymbal is still ringing. The
 // bar after it comes back in with a crash.
+// Fills. opts.fills says how often: "auto" (unset; into every chorus and section, and at some phrase ends), "busy" (more of
+// them), "sections" (only into a chorus, a new section and the top of the form) or "none" (only the ones asked for). A fill
+// is asked for on one bar by opts.fillBars = { formIndex: "small" | "medium" | "large" }, by a "^fill" in the chart
+// (ctx.form[i].fill) or by the player (ctx.fill, its Fill now). A section starts where ctx.form[i].section is set (P: in the
+// chart); ctx.sectionEnd = true / false is the player saying so itself (it holds a section until told to move on).
+// drums.fillNow(ctx, size, room) -> { from, hits } | null: a fill for the last beats of a bar already given out.
 // Grooves (ctx.opts.groove = a GROOVES id; unset or "auto" = the time described above): fixed one- or
 // two-bar patterns for the Latin, Caribbean, folk and rock styles. They are written for 4/4 (a 2/4 bar
 // takes the first half; 3/4 only where the groove has its own three-beat bar) and fall back to the
@@ -121,6 +127,23 @@
   function ROCK(kicks){ return cymEighths(0.58, 0.44).concat(kicks.map(function (p){ return [p, "kick", p === 0 ? 0.62 : p === Math.floor(p) ? 0.58 : 0.48]; }), [[1, "snare", 0.66], [3, "snare", 0.66]]); }
   function BACK(on, off, kicks, piece, v){ return cymEighths(on, off).concat(kicks.map(function (p){ return [p, "kick", p === 0 ? 0.58 : p === Math.floor(p) ? 0.52 : 0.42]; }), [[1, piece, v], [3, piece, v]]); }
   function lifted(ctx, i){ var l = ctx.opts && ctx.opts.lift; return !!(l && l.indexOf && !ctx.intro && l.indexOf(i == null ? ctx.index : i) >= 0); }
+  // What is asked of bar `index` (this bar when left out): { fill: a size or null, sectionEnd: the next bar starts a section }.
+  // A wrapper that renumbers the bars (half time, double time) hands the answer over as ctx.fillPlan.
+  function fillPlan(ctx, index, nextIndex){
+    if (ctx.fillPlan && index == null) return ctx.fillPlan;
+    var o = ctx.opts || {}, own = index == null || index === ctx.index, i = index == null ? ctx.index : index;
+    var nx = nextIndex != null ? nextIndex : own && ctx.nextIndex != null ? ctx.nextIndex : i + 1;
+    var form = ctx.intro ? null : ctx.form, fb = form && form[i], nb = form && form[nx];
+    var fill = (own && ctx.fill) || (ctx.intro ? null : (o.fillBars && o.fillBars[i]) || (fb && fb.fill)) || null;
+    var se = own && ctx.sectionEnd != null ? !!ctx.sectionEnd : !!(nb && nb.section != null && nx !== i);
+    return { fill: fill, sectionEnd: se };
+  }
+  // where this bar sits in its four-bar phrase: counted from the start of its section when the chart has sections
+  function phraseBar(ctx){
+    var form = ctx.form;
+    if (form && !ctx.fillPlan && !ctx.intro) for (var i = ctx.index; i >= 0; i--) if (form[i] && form[i].section != null) return (ctx.index - i) % 4;
+    return ctx.index % 4;
+  }
   function tripletGroove(ctx){ var g = ctx.opts && GROOVES.hasOwnProperty(ctx.opts.groove) ? GROOVES[ctx.opts.groove] : null; return !!(g && g.triplet); }
   var BOSSA_K = [[0, "kick", 0.46], [1.5, "kick", 0.38], [2, "kick", 0.46], [3.5, "kick", 0.38]];
   var GROOVES = {
@@ -209,30 +232,59 @@
 
     // Which size of fill (if any) this bar gets. Every chorus turns around with one;
     // the other 4-bar phrase endings get a small setup less than half the time.
-    function fillSize(ctx, beats){
+    function fillSize(ctx, beats, askedOnly){
       if (beats < 2) return null;
-      var size = null;
+      var size = null, plan = fillPlan(ctx), mode = (ctx.opts && ctx.opts.fills) || "auto", asked = !!plan.fill;
+      if (askedOnly && !asked) return null;
       var nx = ctx.nextIndex != null ? ctx.nextIndex : ctx.index + 1;
-      if (ctx.last) size = "large";
+      if (asked) size = plan.fill;                                                                // marked in the chart, on the page, or Fill now
+      else if (mode === "none") return null;
+      else if (ctx.last) size = "large";
       else if (lifted(ctx, nx) && !lifted(ctx)) size = "medium";                                  // into the chorus
-      else if (ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) size = rng() < 0.6 ? "medium" : "large";
-      else if (ctx.index % 4 === 3){ var r = rng(), k = 2 * energy(ctx); size = r < 0.30 * k ? "small" : r < 0.42 * k ? "medium" : null; }   // more set-ups as the band builds
+      else if (ctx.sectionEnd !== false && (ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1)) size = rng() < 0.6 ? "medium" : "large";
+      else if (plan.sectionEnd) size = "medium";                                                  // into a new section
+      else if (mode === "sections") return null;
+      else if (phraseBar(ctx) === 3){ var r = rng(), k = mode === "busy" ? 2.2 : 2 * energy(ctx); size = r < 0.30 * k ? "small" : r < 0.42 * k ? "medium" : null; }   // more set-ups as the band builds
+      else if (mode === "busy" && phraseBar(ctx) === 1 && rng() < 0.3) size = "small";
       // a fill never takes the whole bar: at most one beat of a two-beat bar, two of a three-beat bar
       if (size && beats === 2) size = "small";
       if (size === "large" && beats === 3) size = "medium";
-      return size;
+      return size ? { size: size, asked: asked } : null;
     }
-    function chooseFill(ctx, beats){
-      var size = fillSize(ctx, beats); if (!size) return null;
-      var gr = grooveOf(ctx), set = gr && gr.fills === "rock" ? FILLS_ROCK : gr && gr.fills === "light" ? FILLS_LIGHT : FILLS;
-      var playable = set[size].filter(function (f){ return !(f.trip && ctx.tempo > 220); });
-      if (ctx.compound || tripletGroove(ctx)){ var tr = playable.filter(function (f){ return f.trip; }); if (tr.length) playable = tr; }   // the beat is already in three
-      else if ((ctx.opts && ctx.opts.feel === "straight") || grooveOf(ctx)) playable = playable.filter(function (f){ return !f.trip; });
+    // One fill of that size from the lists that suit the groove, no longer than maxN beats (a smaller one when none fits).
+    function pickFill(ctx, size, maxN){
+      var gr = grooveOf(ctx);
+      var set = gr && gr.fills === "rock" ? FILLS_ROCK : gr && gr.fills !== true ? FILLS_LIGHT : FILLS;      // (a groove with no fills of its own plays a light one when asked)
+      var sizes = size === "large" ? ["large", "medium", "small"] : size === "medium" ? ["medium", "small"] : ["small"], playable = [];
+      for (var q = 0; q < sizes.length && !playable.length; q++){
+        playable = set[sizes[q]].filter(function (f){ return !(f.trip && ctx.tempo > 220) && (maxN == null || f.n <= maxN); });
+        if (ctx.compound || tripletGroove(ctx)){ var tr = playable.filter(function (f){ return f.trip; }); if (tr.length) playable = tr; }   // the beat is already in three
+        else if ((ctx.opts && ctx.opts.feel === "straight") || grooveOf(ctx)) playable = playable.filter(function (f){ return !f.trip; });
+      }
+      if (!playable.length) return null;
       var pool = playable.filter(function (f){ return f !== lastFill; });   // don't play the same fill twice running
       if (!pool.length) pool = playable;
       var f = pool[Math.floor(rng() * pool.length)];
       lastFill = f;
-      return { size: gr && gr.fills === "light" && !(ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1) ? "small" : size, n: f.n, hits: vary(f.hits) };
+      return f;
+    }
+    function chooseFill(ctx, beats, askedOnly){
+      var want = fillSize(ctx, beats, askedOnly); if (!want) return null;
+      var f = pickFill(ctx, want.size, null); if (!f) return null;
+      var gr = grooveOf(ctx), small = !want.asked && gr && gr.fills === "light" && !(ctx.loopEnd != null ? ctx.loopEnd : ctx.index === ctx.length - 1);
+      return { size: small ? "small" : want.size, n: f.n, hits: vary(f.hits), asked: want.asked };
+    }
+    // A fill for a bar that is already sounding: only its last `room` beats can still be changed. Returns the beat the
+    // fill starts on and its events (the caller drops what the drums had from there on), or null when nothing fits.
+    function fillNow(ctx, size, room){
+      var beats = ctx.beats || 4, g = ctx.opts && ctx.opts.groove;
+      if (ctx.stop || g === "click" || g === "none" || beats < 2) return null;
+      var maxN = Math.min(Math.floor(room + 1e-6), beats === 2 ? 1 : beats === 3 ? 2 : beats - 1);
+      if (maxN < 1) return null;
+      var f = pickFill(ctx, size || "medium", maxN); if (!f) return null;
+      var from = beats - f.n, hits = vary(f.hits).map(function (h){ var e = { pos: from + h[0], piece: h[1], vel: h[2] }; if (!onEighthGrid(h[0])) e.straight = true; return e; });
+      afterFill = land(ctx, f.n > 1 ? size || "medium" : "small");
+      return { from: from, hits: hits };
     }
 
     // Compound meters: every eighth on the cymbal, kick on beats 1 and 3, backbeat on 2 and 4
@@ -281,7 +333,7 @@
       var ev = [], beats = ctx.beats || 4, cym = (ctx.opts && ctx.opts.ride) || "ride", lift = lifted(ctx);
       if (lift && cym === "hat") cym = "ride";                          // the chorus moves from the hi-hat to the ride
       var beatPiece = cym === "hat" ? "hatClosed" : cym === "bell" ? "rideBell" : "ride", offPiece = cym === "hat" ? "hatClosed" : "ride";
-      var fill = g.fills ? chooseFill(ctx, beats) : null, timeEnds = fill ? beats - fill.n : beats;
+      var fill = chooseFill(ctx, beats, !g.fills), timeEnds = fill ? beats - fill.n : beats;       // (a groove without fills still plays one that is asked for)
       var landing = afterFill; afterFill = null;
       if (lift && !lifted(ctx, ctx.index - 1)) landing = land(ctx, "large", true);
       // a pushed chord: the kick plays it with the band on the last eighth, and leaves the next downbeat alone
@@ -295,7 +347,7 @@
       if (bm != null){
         pat = pat.filter(function (h){ return bm >= 0.3 || h[1] === "hatFoot" || (h[1] === "kick" && h[0] === 0); }).map(function (h){ return [h[0], h[1], Math.min(0.85, h[2] * (0.62 + 0.76 * bm))]; });
         if (bm >= 0.75){ for (var q = 0; q < beats; q++) pat.push([q, "cym", 0.50]); if (beats >= 4) pat.push([beats - 0.5, "kick", 0.44]); }
-        if (bm < 0.3) fill = null, timeEnds = beats;
+        if (bm < 0.3 && !(fill && fill.asked)) fill = null, timeEnds = beats;
       }
       pat.forEach(function (h){
         if (h[0] >= timeEnds - 1e-6) return;
@@ -410,8 +462,8 @@
 
     function reset(){ afterFill = null; lastComp = -1; lastFill = null; pushedIn = false; sinceCrash = 99; }
 
-    return { bar: bar, ending: ending, reset: reset };
+    return { bar: bar, ending: ending, reset: reset, fillNow: fillNow };
   }
 
-  global.BandDrums = { create: create, GROOVES: GROOVES };
+  global.BandDrums = { create: create, GROOVES: GROOVES, fillPlan: fillPlan };
 })(typeof window !== "undefined" ? window : globalThis);

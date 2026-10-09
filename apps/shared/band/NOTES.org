@@ -646,3 +646,77 @@ Nothing here has been heard; the microphone path has never run with a real micro
 ** TODO Following uses loudness only (no note density or register); it lowers / raises the whole band, drums included.
 ** TODO Transitions are whole-bar substitutions; no bar that is half one pattern and half another.
 ** TODO 35% hi-hat: if the user meant 35 on the fader's 0-150 scale rather than 35% of its travel, change kit:{ hat:53 } in catalog.js.
+
+** Piano ballad defaults to half time (2026-10-09)
+- A style may carry =time:{feel, parts}=; =styleOpts= returns it as =timeFeel= / =timeFeelParts=. The ballad uses half time with "Bass and drums; chords unchanged", so the piano patterns are as written. The Backing Track page sets the Time menus from it and puts them back on the next style (=timeByStyle=). Chord Entry gets it through =styleOpts=; the Accompaniment Styles examples do not (they show each pattern in its own time).
+- Fixed: Chorus bars (=opts.lift=) were looked up by the part's halved or doubled bar number, so in half or double time the chorus landed on the wrong bars. =liftFor()= in =feelPart= renumbers them.
+- Unheard. The dotted bass at half speed is 1 and 4 of each first bar; that may be too sparse.
+
+** Emo / pop-punk style (2026-10-09)
+- Style =emo= (group "Folk, rock and pop"): bass =eighths=, comp =strumPunk=, drums =rock=, push on, guitar sound =dguitar=.
+- =dguitar=: the soundfont's =distortion_guitar= samples (MIDI program 30). Level is a guess. Samples of a distorted guitar played as chords are not the same as a chord through distortion: expect it to sound thinner and cleaner than a real amp.
+- =strumPunk= (comp.js, =punk:true=): on guitar every chord becomes a power chord on the low strings (root E2..D#3, fifth, octave), whatever the chord symbol and the Voicing menu say; a pinned voicing is played as pinned. Verse bars: eighth downstrokes, =mute:true=, 0.3 beats long, the full shape as a chord arrives and the low two strings after. Chorus bars (=opts.lift=): open down-up eighths. With no Chorus bars, the first half of the form is the verse and the second half is open (forms of four bars or more).
+- =mute:true= on a comp event: the player passes =cutoff: 1100= to the sample bank (a fixed low-pass; sounds.js =spec.cutoff=). Not in the MIDI export.
+- =opts.halfBars= (form bar indexes; the page's "Half-time bars" field): in =feelPart=, those bars go one step slower than the rest (normal to half, double to normal), bass and drums changing and the chords answering. Bars pair as 1+2, 3+4; a bar whose partner is not listed is left alone.
+- Not done: octave lead lines; a fill or crash going into a half-time section unless it is also a Chorus bar; quiet-loud beyond the Chorus bars' lift; the half-time section's chords use the general "answer" rule (ring on, accent beat 3), not something written for this style.
+- Unheard, like everything else.
+
+** Meter changes inside a tune (2026-10-09)
+- Already there: =TuneChart.parse= reads inline =[M:3/4]=, the chart draws the new signature, and every form bar has its own =beats= / =meter= / =compound=. All styles generate bars of the right length across changes (=tests/band/meter/t_change.js=).
+- Added: form bars carry =unit=, the bar's beat against the beat of the tune's header meter (the tempo's beat). 4/4 to 7/8 = 0.5, 4/4 to 6/8 = 1.5, 6/8 to 2/4 = 0.6667. The written eighth note keeps its length. The player places events at =pos * unit=, advances by =beats * unit=, and tells the parts =tempo / unit=; =where()= and =positionAt()= still answer in the bar's own beats. =BandMidi.generate= records =tempo / unit= per bar, so the MIDI file has the right tempo events.
+- Limits: the count-in, intro and ending use the first bar's meter. The Meter menu and the "half time is not available in 6/8" lock look at the header meter only. Half / double time pairs bars by form index, so a pair with different lengths is left in normal time. The band's notation writes 5/8 and 7/8 bars as 5/4 and 7/4 (as it already did for whole tunes in those meters). Tempo relations other than "the eighth stays the same" (e.g. quarter = dotted quarter) are not offered. There is no control on the page for adding a change: it is typed into the ABC as =[M:n/d]= at the start of the bar.
+
+** Chart rows follow the ABC's lines; courtesy time signatures (2026-10-09)
+- =TuneChart.parse= keeps each bar's =srcLine= and returns =srcBreaks= (bars per ABC line). The chart uses them as its rows unless the caller passes =barsPerRow= / =lineBreaks= or the ABC has =%%score-bars= / =%%score-breaks=. Every row is as wide as the longest line. A backslash at the end of a line joins it to the next. A tune on a single line of more than eight bars still gets four to a row (taken as unformatted).
+- A change of meter is drawn as a one-line tag (=6/8=, class =tc-courtesy=) in the top right corner of the bar BEFORE the change, inside its barline. Only the very first bar (when there is no header) carries its own stacked signature. Bars clip their contents (=overflow:hidden=), so the tag cannot hang outside the cell.
+- Tests: =tests/band/lead/lines.cdp.js= ("LINES OK"), =tests/band/meter/change.cdp.js=.
+- The beat dots beside Play are rebuilt in =onBar= from the bar's own =beats= (count-in and intro bars included) and go back to the header meter when the band stops.
+
+** ABC checks, tempo and style from the ABC, section list (2026-10-09)
+- =TuneChart.parse= no longer lets an inline =[M:]= change the tune's header meter (=meterN=, =unitsPerBar= ... were the LAST meter's, which turned bar 1 of a 4/4 tune ending in 5/4 into a pickup). Each bar has =fullUnits= (what its meter holds) and =misfit= when its contents differ; =TuneChart.check(parsed)= lists them. Not flagged: the pickup, a last bar that completes it, two halves of a bar split by a repeat or double barline.
+- =buildForm=: a misfit bar is a full bar of its meter, unless =parsed.asWritten= (the page's "Play these bars as written"), when it is as long as written, short or long. The chart underlines misfit bars in orange.
+- The page reads =Q:= (=Q:78=, =Q:1/4=78=, =Q:1/8=156=) and =%%style <id or menu name>= from the ABC when they appear or change; the Tempo box and Style menu override them until the ABC's value changes again. The tempo slider is gone (a hidden input keeps the id for code and tests).
+- Time signatures on the chart: one line (=6/8=, =tc-own=) in the top left of the bar's own cell; a grey stacked courtesy (=tc-courtesy=) at the far right of the previous bar only when the change starts a row.
+- Band notation: a change of meter at the start of a line is written at the end of the line before. At a line start abcjs dropped the staves' clefs, and with the drum staff it threw.
+- =#bt-nav=: links to the page's panels down the left (a row of links under 1000px). =#bt-root= is a two-column grid when it is there.
+- Tests: =tests/band/lead/abcset.cdp.js= ("ABC SETTINGS OK").
+
+* Fill control, sections, hold mode, marks in the ABC, band on the carols pages -- 2026-10-09
+Nothing here has been heard. Checked by rule and in headless Chrome only.
+- Chart marks (tune-chart.js): a =P:Name= line in the body (after K:) names the section starting at the next bar (bar.section);
+  ="^fill"= / ="^small fill"= / ="^big fill"= (bar.fill) and ="^stop"= (bar.stop) are annotations inside a bar. buildForm copies all three
+  onto the form bars. TuneChart.setMarks(abc, { stops:[bar], fills:{bar:size} }) rewrites them (each bar knows where it was written: bar.at).
+  The chart draws the section name (top right) and the fill mark (bottom right).
+- Drums: opts.fills = auto | busy | sections | none; opts.fillBars = { form index: size }; ctx.fill (the player's Fill now);
+  ctx.sectionEnd (the player, in hold mode). "none" still plays a fill that is asked for. Grooves with no fills of their own (Latin,
+  brushes) play a light one when asked. Phrase ends are counted from the start of the section when the chart has sections.
+  BandDrums.fillPlan(ctx, index, nextIndex) is what the half / double time wrapper uses to hand the request on as ctx.fillPlan.
+- Player: sections() / setHold(on) / next() / goSection(i) / fill(size); cfg.onSection, cfg.sectionLead (beats of warning), cfg.hold.
+  Hold: a section repeats (no fill) until next(); then a fill and on. next() during the section's last bar still works: that bar gets
+  the fill if a whole beat is left, and the following bar is redirected (the bass and chords had already aimed at the repeat).
+  Fill now rewrites the last beats of the sounding bar if they have not gone to the sample bank, else asks for it on the next bar.
+- Stops: opts.stops still works; form bars with stop:true are stops too (player and BandMidi.generate).
+- Backing Track page: Drum fills menu and Fill on bar box (Band panel); Fill now (F), Sections menu and Next section (N) by the Play
+  button (the last two only when the chart has sections). Stop on bar and Fill on bar now READ AND WRITE the ABC; the bar numbers are the
+  band's (a repeated bar is named by its first time round). A preset's or an old setup's stop is written into its ABC on load.
+  A section called Chorus or Refrain is played up like the Chorus bars.
+- Carols site (~/Projects/carols): site/band.html + site/libs/band (a COPY of these files, refreshed by its tools/build.sh).
+  The song page's sections become the chart's sections in the order j walks them; bars come from {start_of_grid} in the .cho.
+  Tests: tests/band/fills/ (t_fills.js, fills.cdp.js, carols.cdp.js).
+** VERIFY BY EAR, first: a Fill now patched into a bar (does the join sound right?); the late next() (bass aims at the wrong chord for a bar);
+   fills in "busy"; light fills on bossa / brushes when asked.
+** VERIFY the bars written for Deck the Halls and Feliz Navidad in the carols site (written from the chords over the words, not from a score).
+** TODO Fill now in half / double time bars only ever lands on the next bar; a fill mark on the first bar of a half-time pair moves to the second.
+** TODO Bass and comp patterns of more than one bar still count from the top of the form, not from the section.
+** TODO A patched fill is in the bar record (MIDI export) but notation already drawn for that bar is not redrawn.
+** TODO Hold mode ignores the Loop bars cycle inside a section; Choruses counts whole passes of the form.
+** TODO Carols: no transposition, no intro vamp, pickups rely on the count-in, the grid is not shown on the page.
+- Melody (same day): a page may put bar.melody = [{ pos, dur, midi }] on the parsed chart's bars; buildForm carries it and the player plays it
+  on the comping instrument through the comping fader (opts.melody false = off, opts.melodyLevel). Only the carols pages do this so far
+  (from abcjs's first voice); the Backing Track page itself does not read the notes of its ABC.
+** VERIFY BY EAR: the tune's level against the chords (0.8), and whether the chords should thin out under it.
+- Remote (same day): backing-track.html?remote=1, opened with window.open by a song page of the lyrics site, is driven from there by
+  postMessage (protocol in the comment above the "remote" block of tools/_backing-track.qmd; allowed origins: *.seancoleman.org and
+  localhost). The lyrics page sends the ABC, the tune per bar, tempo and style; this page reports state, bars, beats and sections.
+  _quarto.yml pins `quarto preview` to port 4455 so the local lyrics site can find the local page.
+** VERIFY in a real browser: the pop-up is allowed, and one click in the Backing Track window is enough for it to make sound.

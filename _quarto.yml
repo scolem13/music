@@ -1,5 +1,8 @@
 project:
   type: website
+  # A fixed port for `quarto preview`, so the lyrics site (run locally) knows where to find the local Backing Track.
+  preview:
+    port: 4455
   # Files that must be copied to the output as-is (not rendered):
   resources:
     - config.js

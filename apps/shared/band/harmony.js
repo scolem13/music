@@ -656,6 +656,10 @@
       (c2.nextChords || []).forEach(function (c){ if (c.src && pins[c.src]) map[(nextLen > 0 ? (c2.index + 1) % nextLen : c2.index + 1) + ":" + c.pos] = pins[c.src]; });
       return Object.assign({}, ctx.opts, { pins: map });
     }
+    // the chorus bars (opts.lift, chart bar indexes) in the part's own bar numbers: k = 2 doubled, 0.5 halved
+    function liftFor(opts, k){ var l = opts && opts.lift; if (!l || !l.forEach) return opts; var out = [];
+      l.forEach(function (i){ (k === 2 ? [i * 2, i * 2 + 1] : [Math.floor(i / 2)]).forEach(function (j){ if (out.indexOf(j) < 0) out.push(j); }); });
+      opts.lift = out; return opts; }
     // chords of chart beats [lo, hi) of chart bar `src` on a beat `k` times as long, starting at band beat `at`
     function place(chords, lo, hi, k, at, out, src){
       (chords || []).forEach(function (c){
@@ -669,6 +673,8 @@
     }
     // where the chord sounding at `pos` of a bar started ("bar:beat"), for its pin
     function srcAt(chords, pos, index){ var s = null; (chords || []).forEach(function (c){ if (c.pos <= pos + 1e-6) s = c.pos; }); return s == null ? null : index + ":" + s; }
+    // the drummer's fill for a chart bar, worked out here because the part is about to see other bar numbers
+    function planOf(ctx, index, nextIndex){ var D = global.BandDrums; return name === "drums" && D && D.fillPlan ? D.fillPlan(ctx, index, nextIndex) : null; }
     function doubled(ctx){
       var B = ctx.beats, h = B / 2, ph = ctx.phrase || { bar: ctx.index % 4 }, s = swingOf(ctx, ctx.tempo * 2), out = [];
       var nxi = ctx.nextIndex != null ? ctx.nextIndex : (ctx.length > 0 ? (ctx.index + 1) % ctx.length : ctx.index + 1);
@@ -682,7 +688,8 @@
         var c2 = Object.assign({}, ctx, { bar: ctx.bar * 2 + k, index: ctx.index * 2 + k, length: (ctx.length || 0) * 2, chords: subs[k], nextChords: k ? after : subs[1],
           tempo: ctx.tempo * 2, last: !!ctx.last && k === 1, loopEnd: !!ctx.loopEnd && k === 1, nextStop: !!ctx.nextStop && k === 1,
           phrase: { bar: (ph.bar * 2 + k) % 4, turnaround: !!ph.turnaround, top: !!ph.top && k === 0 } });
-        c2.opts = pinsFor(ctx, c2, 0);                       // (the bar after is found by its own number, never by wrapping)
+        c2.opts = liftFor(pinsFor(ctx, c2, 0), 2);                       // (the bar after is found by its own number, never by wrapping)
+        var pl = planOf(ctx); if (pl) c2.fillPlan = k ? pl : { fill: null, sectionEnd: false };   // a fill asked of the chart's bar is the second half's
         (part.bar(c2) || []).forEach(function (ev){ if (ev && ev.pos >= 0 && ev.pos < B + 1e-6) out.push(back(ev, s, 0.5, k * h)); });
       }
       return out.filter(function (e){ return e.pos < B - 1e-6; });
@@ -700,7 +707,9 @@
       var nx = paired && len ? form[(i + 2) % len].chords : ctx.nextChords, nxSrc = paired && len ? (i + 2) % len : first ? null : nxi;
       var c2 = Object.assign({}, ctx, { bar: Math.floor(ctx.bar / 2), index: Math.floor(i / 2), length: Math.ceil(len / 2), chords: chords, nextChords: place(nx, 0, B, 2, 0, [], nxSrc),
         tempo: ctx.tempo / 2, last: !!ctx.last, phrase: { bar: Math.floor(i / 2) % 4, turnaround: !!ph.turnaround, top: !!ph.top } });
-      c2.opts = pinsFor(ctx, c2, c2.length);
+      c2.opts = liftFor(pinsFor(ctx, c2, c2.length), 0.5);
+      var p1 = planOf(ctx), p2 = paired ? planOf(ctx, i + 1, len ? (i + 2) % len : i + 2) : null;       // the pair's fill is asked of either bar, its section ends with the second
+      if (p1) c2.fillPlan = p2 ? { fill: p2.fill || p1.fill, sectionEnd: p2.sectionEnd } : p1;
       var now = [], later = [];
       (part.bar(c2) || []).forEach(function (ev){
         if (!ev || !(ev.pos >= 0)) return;
@@ -751,12 +760,20 @@
       }
       return out.sort(function (a, b){ return a.pos - b.pos; });
     }
+    // the time feel this part plays the bar in ("double" | "half" | anything else = as written), and what the rhythm section is doing
+    function feelOf(ctx){
+      var f = ctx && ctx.opts && ctx.opts.timeFeel, who = ctx && ctx.opts && ctx.opts.timeFeelParts;
+      // opts.halfBars (form bar indexes, in pairs 1+2, 3+4, ...): those bars are one step slower than the rest, the bass and drums changing and the chords answering
+      var hb = ctx && ctx.opts && ctx.opts.halfBars;
+      if (hb && hb.indexOf && !ctx.intro && hb.indexOf(ctx.index) >= 0 && hb.indexOf(ctx.index % 2 ? ctx.index - 1 : ctx.index + 1) >= 0){ if (f === "double") f = "normal"; else if (f !== "half"){ f = "half"; who = "bass drums"; } }
+      var whoL = String(who == null ? "bass drums" : who).split(" "), f0 = f;
+      if (name && whoL.indexOf(name) < 0) f = null;
+      return { f: f, f0: f0, whoL: whoL, plain: (f !== "double" && f !== "half") || ctx.compound || ctx.stop || !ctx.chords || !ctx.chords.length };
+    }
     return {
       bar: function (ctx){
-        var f = ctx && ctx.opts && ctx.opts.timeFeel, who = ctx && ctx.opts && ctx.opts.timeFeelParts;
-        var whoL = String(who == null ? "bass drums" : who).split(" "), f0 = f;
-        if (name && whoL.indexOf(name) < 0) f = null;
-        if ((f !== "double" && f !== "half") || ctx.compound || ctx.stop || !ctx.chords || !ctx.chords.length){
+        var fo = feelOf(ctx), f = fo.f, f0 = fo.f0, whoL = fo.whoL;
+        if (fo.plain){
           carry = null;
           // the comping keeps its own rhythm but answers the rhythm section (unless told "plain")
           if (name === "comp" && f == null && (f0 === "double" || f0 === "half") && whoL.indexOf("plain") < 0 && !ctx.compound && !ctx.stop) return respond(part.bar(ctx) || [], f0, ctx);
@@ -764,6 +781,8 @@
         }
         return f === "double" ? doubled(ctx) : halved(ctx);
       },
+      // a fill for a bar already given out (the drums; see drums.js): only where the part plays the chart's own bars
+      fillNow: function (ctx, size, room){ return part.fillNow && feelOf(ctx).plain ? part.fillNow(ctx, size, room) : null; },
       ending: function (ctx){ carry = null; return part.ending ? part.ending(ctx) : []; },
       reset: function (){ carry = null; if (part.reset) part.reset(); }
     };
@@ -795,6 +814,9 @@
       var upBeat = mi.per * (1 / mt.d) / unitL;                     // L-units per beat in this bar
       var len = bar.lengthUnits > 0 ? bar.lengthUnits / upBeat : mi.beats;
       var beats = Math.max(1, Math.round(Math.min(mi.beats, len)));
+      // a bar that does not add up to its meter (TuneChart marks it misfit): a full bar of the meter, unless the chart says to
+      // play such bars as written (parsed.asWritten), short or long
+      if (bar.misfit) beats = parsed.asWritten ? Math.max(1, Math.round(len)) : mi.beats;
       var barUnits = beats * upBeat;
 
       var raw = [];
@@ -826,7 +848,16 @@
         chords.push({ pos: p, chord: e.chord });
       });
       if (!chords.some(function (x){ return !x.chord.nc; })) chords = [];
-      out.push({ src: bi, beats: beats, chords: chords, meter: { n: mt.n, d: mt.d }, compound: mi.compound, keyPcs: keyPcs });
+      // unit: this bar's beat against the beat of the tune's own meter (the tempo's beat), so that the written note values keep their length
+      // through a change of meter: 4/4 to 7/8 = 0.5 (eighths), 4/4 to 6/8 = 1.5 (dotted quarters), 6/8 to 2/4 = 2/3
+      var mi0 = meterInfo(mN, mD), unit = Math.round((mi.per / mt.d) / (mi0.per / mD) * 10000) / 10000;
+      var fbar = { src: bi, beats: beats, chords: chords, meter: { n: mt.n, d: mt.d }, compound: mi.compound, keyPcs: keyPcs, unit: unit };
+      if (bar.section != null && bar.section !== "") fbar.section = String(bar.section);      // P:Verse in the ABC: a section starts on this bar
+      // a written melody for this bar (a page puts it on the parsed bar): [{ pos (beats), dur (beats), midi }]; the player plays it on the comping instrument
+      if (bar.melody && bar.melody.length) fbar.melody = bar.melody.map(function (n){ return { pos: n.pos, dur: n.dur, midi: n.midi + (transpose || 0) }; });
+      if (bar.stop) fbar.stop = true;                                                         // "^stop": stop time on this bar
+      if (bar.fill) fbar.fill = bar.fill;                                                     // "^fill": the drummer fills at the end of it
+      out.push(fbar);
     });
     return out;
   }

@@ -40,7 +40,7 @@ for (const id of Object.keys(M)) for (const compRhythm of GRID) for (const bassF
 const ONE = "F7|F7|Bb7|Bb7|F7|F7|C7|C7".split("|");
 const want = { oompah: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3.5"], upbeats: ["0.5 1.5 2.5 3.5"], bossa: ["0 1.5 3", "1 2.5"], tango: ["0 1.5 2 3"],
                montuno: ["0 1 1.5 2.5 3.5", "0.5 1.5 2.5 3.5"], chacha: ["1 2 2.5 3"], arp: ["0 0.5 1 1.5 2 2.5 3 3.5"], arp2: ["0 0.5 1 1.5 2 2.5 3 3.5"],
-               strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
+               strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumPunk: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
                strum16: ["0 0.5 0.75 1.25 1.5 1.75 2 2.5 2.75 3.25 3.5 3.75"], sowhat: ["", "2 3.5"], maiden: ["0 1.5 3", "1.5 3"], takefive: ["0 1.5 3"], tresillo: ["0 1.5 3"], clave32: ["0 1.5 3", "1 2"], barbara: ["0 1 2 3.5", "0.5 1.5 2"], g333322: ["0 1.5 3", "0.5 2 3"], g33433: ["0 1.5 3", "1 2.5"],
                g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"],
                ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], hymn: ["0"], quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };

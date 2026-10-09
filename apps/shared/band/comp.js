@@ -107,6 +107,8 @@
     strumCamp:  { strum: true, bars: [ [[0, "L", "D"], [1, "L", "D"], [1.5, "L", "U"], [2.5, "L", "U"], [3, "L", "D"], [3.5, "L", "U"]] ] },
     strumFolk:  { strum: true, bars: [ [[0, "L", "D"], [1, "L", "D"], [1.5, "L", "U"], [2, "L", "D"], [3, "L", "D"], [3.5, "L", "U"]] ] },
     strumEights:{ strum: true, accent: [1, 3], bars: [ [[0, "L", "D"], [0.5, "L", "U"], [1, "L", "D"], [1.5, "L", "U"], [2, "L", "D"], [2.5, "L", "U"], [3, "L", "D"], [3.5, "L", "U"]] ] },
+    // muted eighth downstrokes on power chords in the verse; open down-up eighths in the chorus bars (opts.lift). With no chorus bars, the second half of the form is open.
+    strumPunk:  { strum: true, punk: true, accent: [0, 1, 2, 3], bars: [ [[0, "L", "D"], [0.5, "L", "U"], [1, "L", "D"], [1.5, "L", "U"], [2, "L", "D"], [2.5, "L", "U"], [3, "L", "D"], [3.5, "L", "U"]] ] },
     strumQuarters: { strum: true, bars: function (beats){ var h = []; for (var b = 0; b < beats; b++) h.push([b, "L", "D"]); return h; } },
     strum332:   { strum: true, accent: [0, 1.5, 3], bars: [ [[0, "L", "D"], [1, "L", "D"], [1.5, "L", "U"], [2.5, "L", "U"], [3, "L", "D"], [3.5, "L", "U"]] ] },
     strum16:    { strum: true, bars: [ [0, 2].reduce(function (h, o){ return h.concat([[o, "L", "D"], [o + 0.5, "L", "D"], [o + 0.75, "L", "U"], [o + 1.25, "L", "U"], [o + 1.5, "L", "D"], [o + 1.75, "L", "U"]]); }, []) ] },
@@ -628,10 +630,14 @@
         else if (rl < 0.45 * amt && chord.bass === chord.root && lo + f5 >= 43 && lo + f5 < v[0] - 2) lhs = [lo, lo + f5];
         if (lo >= 36) out({ pos: h.pos, dur: Math.round(Math.max(0.4, Math.min(changeAt, beats) - h.pos - 0.1) * 1000) / 1000, midis: lhs, vel: Math.round((e.vel - 0.04) * 1000) / 1000, inst: su.inst, of: ck, arp: true, hand: "L" });
       }
+      // the punk strum: power chords on the guitar's low strings (root E2..D#3, fifth, octave), muted outside the chorus
+      var fLen = ctx.length || (ctx.form && ctx.form.length) || 0, anyLift = !!(ctx.opts && ctx.opts.lift && ctx.opts.lift.length), seenP = {};
+      var verse = !!g.punk && !ctx.intro && (anyLift ? !lift : (fLen >= 4 && ctx.index < fLen / 2));
+      function power(chord, ck){ if (!g.punk || su.inst !== "guitar" || pinOf(su, ck)) return null; var lo = 40 + (((chord.root - 40) % 12) + 12) % 12, f5 = chord.fifth != null ? chord.fifth : 7; return [lo, lo + f5, lo + 12]; }
       hits.forEach(function (h, i){
         if (h.push){
           var nk = (ctx.nextIndex != null ? ctx.nextIndex : ctx.index + 1) + ":0"; pick(ctx.nextChords[0].chord, su, nk); if (!st.prevV.length) return;
-          var pe = { pos: 3.5, dur: 1.4, midis: st.prevV.slice(), vel: 0.66, inst: su.inst, of: nk }; if (g.strum) pe.strum = "down";
+          var pe = { pos: 3.5, dur: 1.4, midis: power(ctx.nextChords[0].chord, nk) || st.prevV.slice(), vel: 0.66, inst: su.inst, of: nk }; if (g.strum) pe.strum = "down";
           out(grip(pe)); return;
         }
         var chord = H.chordAt(ctx.chords, h.pos); if (!chord) return;
@@ -646,6 +652,15 @@
           e = { pos: h.pos, dur: Math.round(Math.max(0.3, Math.min(1.5, changeAt - h.pos - 0.05)) * 1000) / 1000, midis: [v[idx]],
                 vel: Math.round(clamp((on ? 0.58 : 0.52) + (rng() - 0.5) * 0.05, 0.42, 0.68) * 1000) / 1000, inst: su.inst, of: ck, arp: true };
           out(e); return;
+        }
+        if (g.punk){ var pw = power(chord, ck); if (pw) v = pw;
+          if (verse){                                                   // the chug: every eighth a short muted downstroke, the full chord only as it arrives
+            var firstP = !seenP[ck]; seenP[ck] = 1;
+            e = { pos: h.pos, dur: 0.3, midis: firstP ? v.slice() : v.slice(0, 2), strum: "down", mute: true, inst: su.inst, of: ck,
+                  vel: Math.round(clamp((firstP ? 0.64 : on ? 0.58 : 0.5) + (rng() - 0.5) * 0.04, 0.4, 0.7) * 1000) / 1000 };
+            if (!firstP) e.arp = true;
+            out(firstP ? grip(e) : e); if (firstP) left(e, h, chord, ck, v, changeAt); return;
+          }
         }
         if (g.strum){
           var up = h.stroke === "U", acc = g.accent ? g.accent.indexOf(h.pos) >= 0 : !up && on && Math.floor(h.pos) % 2 === 1;      // lean on 2 and 4 unless the pattern says otherwise

@@ -7,7 +7,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   const waitFor = async (expr, ms, what) => { const t = Date.now(); for (;;) { try { if (await ev(expr)) return; } catch (e) {} if (Date.now() - t > ms) throw new Error("timeout " + what); await b.sleep(100); } };
   try {
     await b.goto(B + "/tools/backing-track.html"); await b.sleep(1000);
-    const lay = JSON.parse(await ev(`JSON.stringify({ first: document.querySelector("#bt-root > *").querySelector("#bt-play") ? "play" : "other",
+    const lay = JSON.parse(await ev(`JSON.stringify({ first: document.querySelector("#bt-root > *:not(.bt-nav)").querySelector("#bt-play") ? "play" : "other",
       playCollapsible: !!document.getElementById("bt-play").closest("details"),
       sections: Array.from(document.querySelectorAll("#bt-root > details")).map(function(d){ return d.querySelector("summary").textContent.trim() + (d.open ? "+" : "-"); }),
       infosOpen: Array.from(document.querySelectorAll("#bt-root details.bt-info")).filter(function(d){ return d.open; }).length, infos: document.querySelectorAll("#bt-root details.bt-info").length,

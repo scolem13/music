@@ -12,7 +12,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track.html"); await b.sleep(1200); await hook();
     assert.deepStrictEqual(await snap(), ["piano", "upright", "ride", false, "walk", "auto", "auto"], "swing as before");
     assert.strictEqual(await ev(`Array.from(document.querySelectorAll("#bt-style optgroup[label='Folk, rock and pop'] option")).map(function(o){ return o.textContent; }).join(" | ")`),
-      "Straight-eighth rock | Acoustic strum | Piano ballad | Dance pop | Motown / soul | 12/8 doo-wop | Country train beat | Boom-chick");
+      "Straight-eighth rock | Emo / pop-punk | Acoustic strum | Piano ballad | Dance pop | Motown / soul | 12/8 doo-wop | Country train beat | Boom-chick");
     // a style brings its sounds; the instrument stays in its family unless the style is built around the other one
     await set("bt-style", "rock"); assert.deepStrictEqual(await snap(), ["piano", "electric", "hat", true, "eighths", "strumEights", "rock"]);
     await set("bt-style", "strum"); assert.deepStrictEqual(await snap(), ["aguitar", "electric", "hat", true, "dotted", "strumCamp", "strum"]);
@@ -55,7 +55,8 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     if (b.requests) assert(/acoustic_guitar_steel/.test(reqs) && /electric_bass_finger/.test(reqs), "samples requested");
     assert(!b.errors.filter(e => !/supabaseUrl/.test(e)).length, "page errors: " + b.errors.join(" | "));
     // the ballad pulls the hi-hat fader down; the next style puts it back; a fader the user moved in another style is left alone
-    await set("bt-style", "pop"); assert.strictEqual(await v("bt-kit-hat"), "53"); await set("bt-style", "rock"); assert.strictEqual(await v("bt-kit-hat"), "100");
+    await set("bt-style", "pop"); assert.strictEqual(await v("bt-kit-hat"), "53"); assert.strictEqual(await v("bt-timefeel") + "|" + await v("bt-timeparts"), "half|bass drums plain", "the ballad is in half time");
+    await set("bt-style", "rock"); assert.strictEqual(await v("bt-kit-hat"), "100"); assert.strictEqual(await v("bt-timefeel") + "|" + await v("bt-timeparts"), "normal|bass drums");
     await set("bt-kit-hat", "80"); await set("bt-style", "swing"); assert.strictEqual(await v("bt-kit-hat"), "80"); await set("bt-kit-hat", "100"); await set("bt-style", "pop");
     // follow my playing: loudness fed in (as the microphone would) becomes the band's level, relative to the quietest and loudest heard
     assert.strictEqual(await ev(`document.getElementById("bt-follow").checked`), false);
@@ -64,6 +65,14 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert(/Hearing you: loud/.test(await ev(`document.getElementById("bt-follow-note").textContent`)));
     lv = await ev(`(function(){ var x; for (var i = 0; i < 60; i++) x = __follow.feed(-45); return x; })()`); assert(lv < 0.35, "eased off: " + lv);
     await ev(`__follow.stop(); 0`); assert.strictEqual(await ev(`document.getElementById("bt-follow-note").textContent`), "");
+    // emo / pop-punk: the distorted guitar, the muted strum, and Half-time bars reaching the band; the sound loads and plays
+    await set("bt-style", "emo"); assert.deepStrictEqual(await snap(), ["dguitar", "electric", "hat", true, "eighths", "strumPunk", "rock"]);
+    await ev(`(function(){ var e = document.getElementById("bt-half"); e.value = "9-12"; e.dispatchEvent(new Event("input", { bubbles:true })); })()`);
+    o = await opts(); assert.deepStrictEqual([o.comp, o.compSound, o.compRhythm, o.halfBars], ["guitar", "dguitar", "strumPunk", [8, 9, 10, 11]]);
+    await ev(`(function(){ window.__dg = 0; var f = window.fetch; window.fetch = function(u){ if (/distortion_guitar/.test(String(u && u.url || u))) window.__dg++; return f.apply(this, arguments); }; document.getElementById("bt-play").click(); })()`);
+    { const t0 = Date.now(); let st = ""; while (Date.now() - t0 < 20000){ st = await ev(`document.getElementById("bt-status") ? document.getElementById("bt-status").textContent : ""`); if (/bar \d/i.test(st)) break; await b.sleep(200); }
+      assert(/bar \d/i.test(st), "emo plays: " + st); await ev(`document.getElementById("bt-play").click(); 0`); }
+    await ev(`(function(){ var e = document.getElementById("bt-half"); e.value = ""; e.dispatchEvent(new Event("input", { bubbles:true })); })()`); await set("bt-style", "swing"); assert.strictEqual(await v("bt-comp"), "guitar");
     // hymns and carols; the organ; the boom-chick slider appears only with a boom-chick part
     await set("bt-style", "hymn"); assert.deepStrictEqual(await snap(), ["piano", "upright", "ride", false, "held", "hymn", "none"]);
     assert.strictEqual(await ev(`document.getElementById("bt-boom-field").hidden`), true);

@@ -15,7 +15,7 @@
 (function (global) {
   var GM = { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46, crash:49, ride:51, rideBell:53,
              tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 };
-  var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, guitar:26 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
+  var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, guitar:26, aguitar:25, cguitar:27, dguitar:30 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
   var CHANNEL = { bass:0, comp:1, drums:9 };
   var NAME = { bass:"Bass", comp:"Comping", drums:"Drums" };
 
@@ -64,7 +64,7 @@
           var ch = CHANNEL[p], notes, len;
           if (p === "drums"){ if (GM[ev.piece] == null) return; notes = [GM[ev.piece]]; len = Math.round(ppq / 8); }
           else { notes = p === "bass" ? [ev.midi] : (ev.midis || []); len = Math.max(1, Math.round((ev.dur || 0.5) * bq)); }
-          if (p === "comp" && tracks[p].inst == null) tracks[p].inst = (ev.inst || "piano") === "piano" && (bar.opts || {}).compSound === "epiano" ? "epiano" : ev.inst || "piano";
+          if (p === "comp" && tracks[p].inst == null) tracks[p].inst = (ev.inst || "piano") === "piano" && (bar.opts || {}).compSound === "epiano" ? "epiano" : ev.inst === "guitar" && /^[acd]guitar$/.test((bar.opts || {}).compSound || "") ? bar.opts.compSound : ev.inst || "piano";
           if (p === "bass" && tracks[p].inst == null) tracks[p].inst = (bar.opts || {}).bassSound === "electric" ? "ebass" : "bass";
           notes.forEach(function (n){
             tracks[p].push({ tick:on, order:2, bytes:[0x90 | ch, n & 127, vel] });
@@ -100,11 +100,11 @@
     for (var i = 0; i < n; i++){
       var idx = i % form.length, fb = form[idx];
       var ctx = { bar:i, index:idx, length:form.length, chorus:Math.floor(i / form.length), beats:fb.beats, chords:fb.chords,
-                  nextChords: form[(idx + 1) % form.length].chords, tempo:tempo, last:false, opts:opts, form:form,
-                  stop: !!(opts.stops && opts.stops.indexOf(idx) >= 0), nextStop: !!(opts.stops && opts.stops.indexOf((idx + 1) % form.length) >= 0),
+                  nextChords: form[(idx + 1) % form.length].chords, tempo:tempo / (fb.unit || 1), unit:fb.unit || 1, last:false, opts:opts, form:form,
+                  stop: !!(fb.stop || (opts.stops && opts.stops.indexOf(idx) >= 0)), nextStop: !!(form[(idx + 1) % form.length].stop || (opts.stops && opts.stops.indexOf((idx + 1) % form.length) >= 0)),
                   meter:fb.meter, compound:!!fb.compound, form:form, nextIndex:(idx + 1) % form.length,
                   phrase:{ bar: idx % 4, turnaround: form.length - 1 - idx < 2, top: idx === 0 } };
-      var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo, ending:false,
+      var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo / (fb.unit || 1), ending:false,
                   meter:fb.meter, compound:!!fb.compound,
                   chords:fb.chords, opts:Object.assign({}, opts), parts:{} };
       Object.keys(parts).forEach(function (p){ try { rec.parts[p] = parts[p].bar(ctx) || []; } catch (e){ rec.parts[p] = []; } });

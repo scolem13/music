@@ -14,7 +14,7 @@ function bass(b){ return b.parts.bass.map(function (e){ return r2(e.pos) + ":" +
 
 // each style names real things and brings its sounds
 var POP = C.styles.filter(function (s){ return s.group === "Folk, rock and pop"; });
-assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "strum", "pop", "dance", "motown", "doowop", "train", "folk"]);
+assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "dance", "motown", "doowop", "train", "folk"]);
 assert.deepStrictEqual(C.styleOpts("rock").instruments, ["ebass", "piano", "kit"]); assert.deepStrictEqual(C.styleOpts("rock", "guitar").instruments, ["ebass", "cguitar", "kit"]);
 assert.deepStrictEqual(C.styleOpts("strum").instruments, ["ebass", "aguitar", "kit"]); assert.strictEqual(C.styleOpts("strum").opts.comp, "guitar");
 assert.deepStrictEqual(C.styleOpts("swing").instruments, ["bass", "piano", "kit"]); assert.strictEqual(C.styleOpts("swing").opts.ride, "ride"); assert.strictEqual(C.styleOpts("rock").opts.ride, "hat");
@@ -31,11 +31,15 @@ assert.strictEqual(piece(rk[0], "hatClosed"), "0 0.5 1 1.5 2 2.5 3 3.5"); assert
 assert(rk[0].parts.comp.some(function (e){ return e.arp && e.midis.length === 1 && e.pos === 0 && N(e.midis[0]) === "G2"; }));
 assert.strictEqual(gen("rock", {}, null, null, null, "guitar")[0].parts.comp.map(function (e){ return e.strum[0]; }).join(""), "dudududu");
 
-// the strummed song and the ballad: bass and kick play the same rhythm
-["strum", "pop"].forEach(function (id){ var b = gen(id, { push: false });
+// the strummed song and the ballad (in normal time): bass and kick play the same rhythm
+["strum", "pop"].forEach(function (id){ var b = gen(id, { push: false, timeFeel: "normal" });
   assert.strictEqual(at(b[0], "bass"), "0 1.5 2", id); assert.strictEqual(piece(b[0], "kick"), "0 1.5 2", id);
   assert.strictEqual(bass(b[1]).split(" ").pop(), "3.5:E2", id + ": the second bar leads into the next root"); });
-assert.strictEqual(piece(gen("pop")[0], "rim"), "1 3"); assert.strictEqual(piece(gen("pop")[0], "snare"), "");
+assert.strictEqual(piece(gen("pop", { timeFeel: "normal" })[0], "rim"), "1 3"); assert.strictEqual(piece(gen("pop")[0], "snare"), "");
+// the ballad is in half time unless told otherwise: bass and kick still together at half speed, the cross-stick on 3, the piano as written
+(function (){ var o = C.styleOpts("pop").opts; assert.strictEqual(o.timeFeel + "|" + o.timeFeelParts, "half|bass drums plain"); assert.strictEqual(C.styleOpts("rock").opts.timeFeel, "normal");
+  var h = gen("pop")[0], n = gen("pop", { timeFeel: "normal" })[0]; assert.strictEqual(at(h, "bass"), "0 3"); assert.strictEqual(piece(h, "kick"), "0 3"); assert.strictEqual(piece(h, "rim"), "2");
+  assert.strictEqual(at(gen("pop", { compRhythm: "ballRock" })[0], "comp"), at(gen("pop", { compRhythm: "ballRock", timeFeel: "normal" })[0], "comp")); })();
 assert.strictEqual(at(gen("pop", { compRhythm: "quarters" })[0], "comp", function (e){ return !e.arp; }), "0 1 2 3");
 // ---- the piano ballad: left-hand octaves, a first-inversion right hand broken into top pair and thumb ----
 function names(e){ return e.midis.map(N).join(" "); }
@@ -58,7 +62,7 @@ assert.strictEqual(gen("pop", { compRhythm: "ballRock", voicing: "drop2" }, ["Cm
 var gt = gen("pop", { compRhythm: "ballRock" }, null, 2, null, "guitar")[0].parts.comp; assert(gt[0].midis.length >= 3 && gt[1].midis.length === 1 && gt[2].midis.length === 2 && gt.every(function (e){ return e.midis[0] >= 40; }), "guitar: no left hand");
 BandHarmony.asPlayed(gen("pop", {}, null, 8), { style: "standard", inst: "piano" }).forEach(function (c){ assert.strictEqual(c.midis.length, 3, "the hand-off gets the triad"); });
 // Strict: chord tones only. Loose: neighbour notes, all in the key, and never on a chord's first hit
-var KEYG = [7, 9, 11, 0, 2, 4, 6], strict = gen("pop", { variation: 0 }, null, 64), loose = gen("pop", { variation: 1 }, null, 64), odd = 0;
+var KEYG = [7, 9, 11, 0, 2, 4, 6], strict = gen("pop", { variation: 0 }, null, 64), loose = gen("pop", { variation: 1 }, null, 192), odd = 0;
 function tones(b, e){ var c = BandHarmony.chordAt(b.chords, e.pos); return [c.root, (c.root + c.third) % 12, (c.root + c.fifth) % 12]; }
 strict.forEach(function (b){ hand(b, true).forEach(function (e){ e.midis.forEach(function (m){ assert(tones(b, e).indexOf(m % 12) >= 0, "strict: " + N(m)); }); }); });
 loose.forEach(function (b){ hand(b, true).forEach(function (e){ e.midis.forEach(function (m){ assert(KEYG.indexOf(m % 12) >= 0, "in the key: " + N(m));
@@ -164,10 +168,12 @@ assert(lf[3].parts.drums.some(function (e){ return e.piece === "snare" && e.pos 
 assert.strictEqual(piece(lf[5], "ride"), "0 0.5 1 1.5 2 2.5 3 3.5"); assert.strictEqual(piece(lf[5], "hatClosed"), ""); assert.strictEqual(piece(lf[9], "ride"), "");
 function mean(b, part){ var l = b.parts[part].filter(function (e){ return part !== "drums" || e.piece === "snare"; }); return l.reduce(function (s, e){ return s + e.vel; }, 0) / l.length; }
 ["bass", "comp", "drums"].forEach(function (p){ assert(mean(lf[5], p) + mean(lf[6], p) > mean(lf[1], p) + mean(lf[2], p), p + " louder in the chorus"); });
-assert.strictEqual(piece(gen("pop", { lift: [4, 5, 6, 7] })[5], "snare"), "1 3", "the ballad's cross-stick becomes the snare");
+assert.strictEqual(piece(gen("pop", { lift: [4, 5, 6, 7], timeFeel: "normal" })[5], "snare"), "1 3", "the ballad's cross-stick becomes the snare");
+// in half time the chorus still falls on the chart's bars: snare on 3 there, cross-stick before
+(function (){ var h = gen("pop", { lift: [4, 5, 6, 7] }); assert(/(^| )2( |$)/.test(piece(h[5], "snare")), "half-time chorus snare: " + piece(h[5], "snare")); assert.strictEqual(piece(h[1], "snare"), ""); assert.strictEqual(piece(h[1], "rim"), "2"); })();
 
 // fills fit the style: a ballad or a strummed song never gets more than one beat of fill; rock fills use sixteenths
-["pop", "strum", "folk", "train", "dance", "motown"].forEach(function (id){ gen(id, { variation: 1 }, null, 64).forEach(function (b, i){
+["pop", "strum", "folk", "train", "dance", "motown"].forEach(function (id){ gen(id, { variation: 1, timeFeel: "normal" }, null, 64).forEach(function (b, i){      // (in the band's own time: half time stretches the beat)
   var cym = b.parts.drums.filter(function (e){ return id !== "train" && id !== "folk" && /hat|ride/.test(e.piece) && e.piece !== "hatFoot"; });
   if (cym.length) assert(Math.max.apply(null, cym.map(function (e){ return e.pos; })) >= 2.5, id + " bar " + i + ": time kept to beat 3 at least"); }); });
 assert(gen("rock", { variation: 1 }, null, 64).some(function (b){ return b.parts.drums.some(function (e){ return e.piece === "snare" && Math.abs(e.pos * 4 % 2 - 1) < 1e-6; }); }), "a sixteenth-note fill");
@@ -177,6 +183,31 @@ POP.forEach(function (st){ ["4/4", "3/4", "2/4", "5/4"].forEach(function (m){ ["
   gen(st.id, { push: true, lift: [4, 5, 6, 7], stops: [6] }, ["G", "D", "Em", "C", "G", "D", "C", "D"], 16, m, fam).forEach(function (b, i){
     ["bass", "comp", "drums"].forEach(function (p){ b.parts[p].forEach(function (e){ if (e.choke) return; assert(e.pos >= 0 && e.pos < b.beats && e.vel > 0.1 && e.vel <= 1, [st.id, m, fam, p, i, JSON.stringify(e)].join(" ")); }); });
     b.parts.bass.forEach(function (e){ assert(e.midi >= BandBass.LO && e.midi <= BandBass.HI); }); }); }); }); });
+// ---- emo / pop-punk ----
+(function (){ var so = C.styleOpts("emo"); assert.deepStrictEqual(so.instruments, ["ebass", "dguitar", "kit"]); assert.strictEqual(so.opts.comp + "|" + so.opts.compRhythm + "|" + so.opts.push, "guitar|strumPunk|true");
+  var EM = ["Am", "F", "C", "G", "Am", "F", "C", "G"], b = gen("emo", { push: false, lift: [4, 5, 6, 7] }, EM, 8), vs = b[0].parts.comp, ch = b[5].parts.comp;
+  // verse: eight muted downstrokes on a power chord (A2 E3 A3 as the chord arrives, then the low two strings)
+  assert.strictEqual(at(b[0], "comp"), "0 0.5 1 1.5 2 2.5 3 3.5"); assert(vs.every(function (e){ return e.mute && e.strum === "down" && e.dur <= 0.3; }));
+  assert.strictEqual(names(vs[0]), "A2 E3 A3"); assert.strictEqual(names(vs[1]), "A2 E3"); assert(!vs[0].arp && vs[1].arp);
+  // chorus: open, down and up, nothing muted, still the power chord
+  assert(ch.every(function (e){ return !e.mute; })); assert.strictEqual(ch.map(function (e){ return e.strum[0]; }).join(""), "dudududu"); assert.strictEqual(names(ch[0]), "F2 C3 F3"); assert(ch[0].dur > 0.4);
+  BandHarmony.asPlayed(b, { style: "open", inst: "guitar" }).forEach(function (c){ assert(c.played && c.midis.length === 3, "the hand-off gets the power chord"); });
+  // no chorus bars: the first half of the form is the verse, the second half open
+  var nl = gen("emo", { push: false }, EM, 8); assert(nl[1].parts.comp.every(function (e){ return e.mute; }) && nl[6].parts.comp.every(function (e){ return !e.mute; }));
+  // a pushed chord is the next bar's power chord; a pinned voicing is played as pinned; the piano keeps its triads
+  var pu = gen("emo", { lift: [0, 1, 2, 3, 4, 5, 6, 7] }, EM, 8)[1].parts.comp.filter(function (e){ return e.pos === 3.5; })[0]; assert.strictEqual(names(pu), "C3 G3 C4");
+  assert(gen("emo", { push: false }, EM, 8, null, "piano")[0].parts.comp.some(function (e){ return e.hand !== "L" && e.midis.length === 3 && e.midis[1] - e.midis[0] !== 7; }), "piano: triads");
+  // half-time bars: the backbeat on 3 there and on 2 and 4 elsewhere; the bass at half speed; a lone bar (no pair) stays as it is
+  var hf = gen("emo", { push: false, variation: 0, halfBars: [4, 5, 6, 7] }, EM, 8);
+  assert.strictEqual(piece(hf[1], "snare"), "1 3"); assert.strictEqual(piece(hf[4], "snare"), "2"); assert.strictEqual(piece(hf[5], "snare"), "2"); assert.strictEqual(at(hf[1], "bass").split(" ").length, 8); assert.strictEqual(at(hf[4], "bass").split(" ").length, 4);
+  assert.strictEqual(at(hf[4], "comp", function (e){ return e.strum; }).split(" ").length >= 8, true, "the guitar carries on");
+  assert.strictEqual(piece(gen("emo", { push: false, variation: 0, halfBars: [4] }, EM, 8)[4], "snare"), "1 3");
+  // with the whole band in double time, half-time bars come back to normal
+  var db = gen("rock", { push: false, variation: 0, timeFeel: "double", halfBars: [2, 3] }, EM, 4); assert.strictEqual(piece(db[0], "snare"), "0.5 1.5 2.5 3.5"); assert.strictEqual(piece(db[2], "snare"), "1 3");
+  // MIDI: the distorted guitar's program
+  var mid = BandMidi.build(b, { tempo: 160 }), hasProg = false; for (var i = 0; i + 1 < mid.length; i++) if ((mid[i] & 0xF0) === 0xC0 && mid[i + 1] === 30) hasProg = true; assert(hasProg, "program 30");
+})();
+
 // ---- hymns and carols ----
 assert.deepStrictEqual(C.styles.filter(function (s){ return s.group === "Hymns and carols"; }).map(function (s){ return s.id; }), ["hymn", "carol"]);
 // the hymn: no drums at all (not even on the last chord), every chord held to the next in four parts, the bass holding each root

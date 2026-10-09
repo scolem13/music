@@ -513,6 +513,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       <button type="button" class="ce-btn is-main" id="ce-send">Open in the Backing Track</button>
       <button type="button" class="ce-btn" id="ce-copy">Copy the ABC</button>
       <button type="button" class="ce-btn" id="ce-download">Download .abc</button>
+      <button type="button" class="ce-btn" id="ce-cho-copy" title="The changes as a ChordPro song file for the lyrics site: tempo, a band block holding the ABC, and a heading for each section, ready for the words.">Copy as ChordPro</button>
+      <button type="button" class="ce-btn" id="ce-cho-download">Download .cho</button>
     </div>
     <p class="ce-hint" id="ce-send-note" role="status"></p>
     <textarea id="ce-abc" readonly="" spellcheck="false" aria-label="The changes as ABC"></textarea>
@@ -520,16 +522,16 @@ document.addEventListener('DOMContentLoaded', async function () {
   </div>
 </div>
 <script src="../apps/shared/soundfont.js"></script>
-<script src="../apps/shared/tune-chart.js?v=15"></script>
+<script src="../apps/shared/tune-chart.js?v=22"></script>
 <script src="../apps/shared/voicings.js?v=5"></script>
 <script src="../apps/shared/chord-entry.js?v=2"></script>
-<script src="../apps/shared/band/harmony.js?v=18"></script>
+<script src="../apps/shared/band/harmony.js?v=22"></script>
 <script src="../apps/shared/band/bass.js?v=11"></script>
-<script src="../apps/shared/band/comp.js?v=21"></script>
-<script src="../apps/shared/band/catalog.js?v=17"></script>
+<script src="../apps/shared/band/comp.js?v=22"></script>
+<script src="../apps/shared/band/catalog.js?v=19"></script>
 <script src="../apps/shared/band/drums.js?v=9"></script>
-<script src="../apps/shared/band/sounds.js?v=5"></script>
-<script src="../apps/shared/band/player.js?v=103"></script>
+<script src="../apps/shared/band/sounds.js?v=6"></script>
+<script src="../apps/shared/band/player.js?v=105"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -780,6 +782,32 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(abc).then(function(){ sendNote("The ABC is on the clipboard."); }, function(){ sendNote("Copy it from the box below."); });
     else sendNote("Copy it from the box below.");
   });
+  // The changes as a ChordPro song file for the lyrics site: the ABC goes in whole, in a block only the band reads, and every
+  // section named by a P: line gets a heading for its words. Changes with no sections become one section, "Verse".
+  function chordPro(){
+    var lines = abc.split("\n"), named = [], seenK = false, body = [];
+    lines.forEach(function(l){ var t = l.trim();
+      if (seenK && /^P:\s*\S/.test(t)) named.push(t.slice(2).trim());
+      if (/^K:/.test(t)){ seenK = true; body.push(l); if (!lines.some(function(x, i){ return /^P:\s*\S/.test(x.trim()) && i > lines.indexOf(l); })) body.push("P:Verse"); return; }
+      body.push(l); });
+    if (!named.length) named = ["Verse"];
+    var out = ["{title: " + title() + "}", "{tempo: " + tempo() + "}", "", "# What the band plays. Each P: line names the section whose bars follow.", "{start_of_abc: band}"].concat(body.filter(function(l){ return l.trim(); }), ["{end_of_abc}", ""]);
+    named.forEach(function(n){ out.push("{comment: " + n + "}", "# the words of this section, with [chords] in brackets where they change", ""); });
+    return out.join("\n");
+  }
+  $("ce-cho-copy").addEventListener("click", function(){
+    if (!ready()) return;
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(chordPro()).then(function(){ sendNote("The ChordPro file is on the clipboard."); }, function(){ sendNote("The browser would not copy it. Use Download .cho."); });
+    else sendNote("The browser would not copy it. Use Download .cho.");
+  });
+  $("ce-cho-download").addEventListener("click", function(){
+    if (!ready()) return;
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([chordPro()], { type: "text/plain" }));
+    a.download = (title().replace(/[^\w\- ]+/g, "").trim().replace(/\s+/g, "-").toLowerCase() || "changes") + ".cho";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+    sendNote("Downloaded " + a.download + ". Put it in the lyrics site's extra folder and add the words.");
+  });
+  window.__ceChordPro = chordPro;                             // (for the tests)
   $("ce-download").addEventListener("click", function(){
     if (!ready()) return;
     var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([abc + "\n"], { type: "text/vnd.abc" }));

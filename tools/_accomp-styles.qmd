@@ -954,15 +954,15 @@
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/shared/arranger.js"></script>
-<script src="/apps/shared/tune-chart.js?v=15"></script>
+<script src="/apps/shared/tune-chart.js?v=22"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
-<script src="/apps/shared/band/harmony.js?v=18"></script>
+<script src="/apps/shared/band/harmony.js?v=22"></script>
 <script src="/apps/shared/band/bass.js?v=11"></script>
-<script src="/apps/shared/band/comp.js?v=21"></script>
-<script src="/apps/shared/band/catalog.js?v=17"></script>
+<script src="/apps/shared/band/comp.js?v=22"></script>
+<script src="/apps/shared/band/catalog.js?v=19"></script>
 <script src="/apps/shared/band/drums.js?v=9"></script>
-<script src="/apps/shared/band/sounds.js?v=5"></script>
-<script src="/apps/shared/band/player.js?v=103"></script>
+<script src="/apps/shared/band/sounds.js?v=6"></script>
+<script src="/apps/shared/band/player.js?v=105"></script>
 <script>
 (function () {
   var SF = 'https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/';
@@ -1224,7 +1224,7 @@
     montuno: { c: 'C|F|G|F',           t: 176 }, chacha:  { c: 'Am|D7|Am|D7',      t: 116 },
     tango:   { c: 'Am|Dm|E7|Am',       t: 116 }, calypso: { c: 'C|F|G7|C',         t: 112 },
     reggae:  { c: 'G|C|G|D',           t: 84 },  reggaeton:{ c: 'Bm|G|D|A',        t: 90 },
-    folk:    { c: 'C|F|G7|C',          t: 108 }, rock:    { c: 'A|D|E|D',          t: 120 },
+    folk:    { c: 'C|F|G7|C',          t: 108 }, rock:    { c: 'A|D|E|D',          t: 120 }, emo:     { c: 'Am|F|C|G',         t: 160 },
     pop:     { c: 'C|G|Am|F',          t: 76 },  strum:   { c: 'G|D|Em|C',          t: 104 },
     dance:   { c: 'Am|F|C|G',          t: 120 }, motown:  { c: 'C|C|F|G',           t: 138 },
     doowop:  { c: 'C|Am|F|G',          t: 66 },  train:   { c: 'G|G|C|D7',          t: 112 },

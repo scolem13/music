@@ -74,14 +74,28 @@
     var unit  = parseUnit(abc, meter);                       // L-unit in whole notes
     var unitsPerBar  = (meter.n / meter.d) / unit;           // L-units in a full bar
     var unitsPerBeat = (1 / meter.d) / unit;                 // L-units per beat (1/d note)
+    var meter0 = { n: meter.n, d: meter.d }, unitsPerBar0 = unitsPerBar, unitsPerBeat0 = unitsPerBeat;   // the tune's own meter (inline [M:] changes move the three above)
     var keyField = field(abc, "K"), keyPc = keyPcOf(keyField);
 
-    // music = every non-header, non-directive line joined
-    var music = abc.split("\n").filter(function(l){ var t = l.trim();
-      return t && !/^[A-Za-z]:/.test(t) && !/^%/.test(t); }).join(" ");
+    // music = every non-header, non-directive line, joined by newlines so that each bar knows which line of the ABC it was
+    // written on (srcLine: the chart keeps the ABC's lines). A backslash at the end of a line continues it.
+    // A P: line in the body names the section that starts at the next bar (P:Verse, P:Chorus); it is kept as an inline [P:...]
+    // field. (A P: line in the header, above K:, is the old "order of parts" field and is left alone.)
+    // Every kept line remembers where it starts in the ABC, so a bar can say where it was written (bar.at; setMarks edits there).
+    var inBody = false, mLines = [], lineOff = 0;
+    abc.split("\n").forEach(function(l){ var t = l.trim(), at = lineOff; lineOff += l.length + 1;
+      if (/^K:/.test(t)){ inBody = true; return; }
+      if (inBody && /^P:\s*\S/.test(t)){ mLines.push({ text: "[P:" + t.slice(2).trim().replace(/\]/g, "") + "]", at: -1 }); return; }
+      if (t && !/^[A-Za-z]:/.test(t) && !/^%/.test(t)) mLines.push({ text: l, at: at }); });
+    var music = mLines.map(function(x){ return x.text; }).join("\n").replace(/\\[ \t]*\n/g, function(m){ return new Array(m.length + 1).join(" "); });
+    var mStart = [], mo = 0; mLines.forEach(function(x){ mStart.push(mo); mo += x.text.length + 1; });
+    function srcOff(i){ for (var k = mStart.length - 1; k >= 0; k--) if (mStart[k] <= i) return mLines[k].at < 0 ? -1 : mLines[k].at + (i - mStart[k]); return -1; }
+    var lineNo = 0;
 
     var bars = [], pendingLeft = "plain", pendingEnding = null;
-    function newBar(){ return { chords:[], left:pendingLeft, right:"plain", ending:pendingEnding, lengthUnits:0, meter:{ n:meter.n, d:meter.d }, groupOnsets:[] }; }
+    var pendingSection = null;
+    function newBar(){ var b = { chords:[], left:pendingLeft, right:"plain", ending:pendingEnding, lengthUnits:0, meter:{ n:meter.n, d:meter.d }, groupOnsets:[], srcLine:lineNo };
+      if (pendingSection != null){ b.section = pendingSection; pendingSection = null; } return b; }
     var cur = newBar(), content = false, pos = 0;
     var lastDur = 0, brokenMul = 1, tupletLeft = 0, tupletMul = 1;
     // groupBoundary: a space after a note means the next note starts a new beaming group.
@@ -90,7 +104,7 @@
 
     function flush(right){
       if (!content && !cur.chords.length){ if (right === "repeat-open") pendingLeft = "repeat-open"; return; }
-      cur.right = right; cur.lengthUnits = pos; bars.push(cur);
+      cur.right = right; cur.lengthUnits = pos; cur.fullUnits = unitsPerBar; bars.push(cur);
       pendingLeft = (right === "repeat-close-open") ? "repeat-open" : "plain";
       pendingEnding = null; cur = newBar(); content = false; pos = 0; lastDur = 0; brokenMul = 1; tupletLeft = 0; tupletMul = 1;
       groupBoundary = true; lastWasNote = false;
@@ -104,10 +118,15 @@
     var i = 0;
     while (i < music.length){
       var c = music[i];
+      if (c === '\n'){ lineNo++; if (!content && !cur.chords.length) cur.srcLine = lineNo; c = ' '; }     // (a bar belongs to the line it starts on)
       if (c === ' '){ if (lastWasNote) groupBoundary = true; lastWasNote = false; i++; continue; }
       if (c === '"'){ var e = music.indexOf('"', i+1); if (e < 0) break;
-        var s = music.slice(i+1, e).trim();
-        if (/^[A-G]/.test(s)) { cur.chords.push({ sym:s, onset:pos }); content = true; }
+        var s = music.slice(i+1, e).trim(); if (cur.at == null) cur.at = srcOff(i);
+        var fm = /^[\^_<>@]\s*(small|short|big|long)?\s*fill$/i.exec(s);                    // an annotation: "^fill", "^small fill", "^big fill"
+        if (fm || /^[\^_<>@]\s*stop$/i.test(s)) (cur.marks = cur.marks || []).push({ kind: fm ? "fill" : "stop", from: srcOff(i), to: srcOff(e) + 1 });
+        if (fm) cur.fill = !fm[1] ? "medium" : /^(small|short)$/i.test(fm[1]) ? "small" : "large";   // the drummer fills at the end of this bar
+        else if (/^[\^_<>@]\s*stop$/i.test(s)) cur.stop = true;                               // "^stop": stop time on this bar
+        else if (/^[A-G]/.test(s)) { cur.chords.push({ sym:s, onset:pos }); content = true; }
         else if (/^n\.?c\.?$/i.test(s)) { cur.chords.push({ sym:"N.C.", onset:pos, nc:true }); content = true; }
         i = e+1; continue; }
       if (c === '!'){ var e2 = music.indexOf('!', i+1); if (e2 >= 0){
@@ -137,11 +156,14 @@
             meter = inM; unitsPerBar = (inM.n / inM.d) / unit; unitsPerBeat = (1 / inM.d) / unit;
             cur.meter = { n:inM.n, d:inM.d };
           }
+          else if (/^P:/.test(fld)){                            // a section label: on this bar if nothing is in it yet, else on the next
+            if (!content && !cur.chords.length) cur.section = fld.slice(2).trim(); else pendingSection = fld.slice(2).trim();
+          }
           i = ef+1; continue; } }
         // volta bracket [1 or [2 — mark the current bar as that ending
         if (/^[12]/.test(music[i+1])){ flush("plain"); cur.ending = parseInt(music[i+1], 10); i += 2; continue; }
         var eg = music.indexOf(']', i+1);
-        if (eg >= 0){ if (groupBoundary){ cur.groupOnsets.push(pos); groupBoundary = false; }
+        if (eg >= 0){ if (cur.at == null) cur.at = srcOff(i); if (groupBoundary){ cur.groupOnsets.push(pos); groupBoundary = false; }
           var d = readDuration(music, eg+1); var dur;
           if (d.next === eg+1){
             // No explicit duration after ] — derive from the first note's duration inside the bracket.
@@ -168,6 +190,7 @@
       // note: [accidental][letter][octave marks][duration]
       var nm = /^(\^\^|\^|__|_|=)?([A-Ga-gxzZ])([,']*)/.exec(music.slice(i));
       if (nm){
+        if (cur.at == null) cur.at = srcOff(i);
         if (groupBoundary && nm[2] !== 'z' && nm[2] !== 'Z'){ cur.groupOnsets.push(pos); groupBoundary = false; }
         var dd = readDuration(music, i + nm[0].length);
         // Z = multi-bar rest: Z1 = 1 bar, Z2 = 2 bars, Z alone = 1 bar
@@ -177,15 +200,24 @@
       }
       i++;                                                    // decorations / stray chars
     }
-    if (content || cur.chords.length){ cur.right = (cur.right === "plain") ? "final" : cur.right; cur.lengthUnits = pos; bars.push(cur); }
+    if (content || cur.chords.length){ cur.right = (cur.right === "plain") ? "final" : cur.right; cur.lengthUnits = pos; cur.fullUnits = unitsPerBar; bars.push(cur); }
 
     // Anacrusis (pickup): a partial leading bar. The first FULL bar is measure 1; the
     // pickup is measure 0. Numbering ripples from there (used by the chart + the
     // recording count-off so every tool agrees on "measure 1").
-    var anacrusis = bars.length > 1 && (bars[0].lengthUnits + 1e-6) < unitsPerBar;
+    var anacrusis = bars.length > 1 && (bars[0].lengthUnits + 1e-6) < bars[0].fullUnits;      // (against its own meter: a later change of meter does not make bar 1 a pickup)
     var anacrusisUnits = anacrusis ? bars[0].lengthUnits : 0;
     if (anacrusis) bars[0].anacrusis = true;
     for (var bi = 0, mno = anacrusis ? 0 : 1; bi < bars.length; bi++) bars[bi].measureNo = mno++;
+    // Bars that do not hold what their meter says (bar.misfit; listed by check()). Not the pickup, not the last bar that
+    // completes it, and not the two halves of a bar split by a repeat or double barline.
+    bars.forEach(function(b, k){
+      if (b.anacrusis || Math.abs(b.lengthUnits - b.fullUnits) < 1e-6) return;
+      if (anacrusis && k === bars.length - 1 && Math.abs(b.lengthUnits + anacrusisUnits - b.fullUnits) < 1e-6) return;
+      var nb = bars[k + 1], pb = bars[k - 1];
+      if (nb && b.right !== "plain" && Math.abs(b.lengthUnits + nb.lengthUnits - b.fullUnits) < 1e-6) return;
+      if (pb && pb.right !== "plain" && !pb.misfit && Math.abs(b.lengthUnits + pb.lengthUnits - pb.fullUnits) < 1e-6 && Math.abs(pb.lengthUnits - pb.fullUnits) > 1e-6) return;
+      b.misfit = true; });
 
     // Per-tune layout, hard-codable in the ABC (opts can still override at render):
     //   %%score-bars N         → N measures per line (instead of the default 4)
@@ -193,22 +225,53 @@
     var bprM = /^%%\s*score-bars\s+(\d+)/m.exec(abc);
     var brkM = /^%%\s*score-breaks\s+([\d,\s]+)/m.exec(abc);
     var lineBreaks = brkM ? brkM[1].split(",").map(function(x){ return parseInt(x,10); }).filter(function(x){ return x > 0; }) : null;
+    // Otherwise the chart follows the lines of the ABC: the bars written on one line make one row. (A whole tune written on a
+    // single line of more than eight bars is taken as unformatted and gets the default four to a row.)
+    var srcBreaks = null;
+    if (!lineBreaks && !bprM){ var counts = [], lastLine = null;
+      bars.forEach(function(b){ if (b.anacrusis) return; if (b.srcLine !== lastLine){ counts.push(0); lastLine = b.srcLine; } counts[counts.length - 1]++; });
+      if (counts.length > 1 || (counts.length === 1 && counts[0] <= 8)) srcBreaks = counts; }
 
     // Detect beat grouping for asymmetric meters (5/8, 7/8, etc.) by reading the
     // beam-group boundaries that were recorded during note parsing above.
     // For symmetric meters (≤4 beats, compound) we leave this null.
-    var isCompM = meter.d >= 8 && meter.n % 3 === 0 && meter.n >= 6;
-    var beatGrouping = (meter.n > 4 && !isCompM) ? detectGroupingFromBars(bars, unitsPerBar) : null;
+    var isCompM = meter0.d >= 8 && meter0.n % 3 === 0 && meter0.n >= 6;
+    var beatGrouping = (meter0.n > 4 && !isCompM) ? detectGroupingFromBars(bars, unitsPerBar0) : null;
 
     return {
       title: field(abc, "T") || "Untitled", composer: field(abc, "C"),
-      meterStr: field(abc, "M") || "", meterN: meter.n, meterD: meter.d,
+      meterStr: field(abc, "M") || "", meterN: meter0.n, meterD: meter0.d, unitL: unit,
       keyField: keyField, keyPc: keyPc,
-      unitsPerBar: unitsPerBar, unitsPerBeat: unitsPerBeat, beatsPerBar: meter.n,
+      unitsPerBar: unitsPerBar0, unitsPerBeat: unitsPerBeat0, beatsPerBar: meter0.n,
       anacrusis: anacrusis, anacrusisUnits: anacrusisUnits,
-      barsPerRow: bprM ? parseInt(bprM[1], 10) : 0, lineBreaks: lineBreaks,
+      barsPerRow: bprM ? parseInt(bprM[1], 10) : 0, lineBreaks: lineBreaks, srcBreaks: srcBreaks,
       bars: bars, abc: abc, playOrder: computePlayOrder(bars), beatGrouping: beatGrouping
     };
+  }
+
+  // Rewrite the marks the band reads from the chart. m.stops = [bar index, ...] and / or m.fills = { bar index: "small" | "medium" | "large" }
+  // (indexes into parse(abc).bars); a kind that is given replaces every mark of that kind, a kind left out is not touched.
+  // Returns the new ABC: "^stop" / "^fill" / "^small fill" / "^big fill" written at the start of each bar.
+  function setMarks(abc, m){
+    m = m || {};
+    var cuts = [], ins = [];
+    parse(abc).bars.forEach(function(b){ (b.marks || []).forEach(function(k){ if (k.from >= 0 && ((k.kind === "stop" && m.stops) || (k.kind === "fill" && m.fills))) cuts.push(k); }); });
+    cuts.sort(function(a, b){ return b.from - a.from; }).forEach(function(k){ abc = abc.slice(0, k.from) + abc.slice(k.to); });
+    parse(abc).bars.forEach(function(b, i){ var t = "";
+      if (m.stops && m.stops.indexOf(i) >= 0) t += '"^stop"';
+      if (m.fills && m.fills[i]) t += m.fills[i] === "small" ? '"^small fill"' : m.fills[i] === "large" ? '"^big fill"' : '"^fill"';
+      if (t && b.at >= 0) ins.push({ at: b.at, t: t }); });
+    ins.sort(function(a, b){ return b.at - a.at; }).forEach(function(x){ abc = abc.slice(0, x.at) + x.t + abc.slice(x.at); });
+    return abc;
+  }
+
+  // The bars whose contents do not add up to their meter: [{ bar (index), measureNo, meter:"4/4", have, want }] (have / want in
+  // beats of that meter's lower number). Empty when the ABC is sound.
+  function check(p){
+    var out = []; if (!p || !p.bars) return out;
+    p.bars.forEach(function(b, k){ if (!b.misfit) return; var m = b.meter || { n: p.meterN, d: p.meterD }, per = b.fullUnits / m.n;
+      out.push({ bar: k, measureNo: b.measureNo, meter: m.n + "/" + m.d, want: m.n, have: Math.round(b.lengthUnits / per * 100) / 100 }); });
+    return out;
   }
 
   // Analyse beam-group boundaries recorded in bar.groupOnsets to determine the sub-beat
@@ -372,7 +435,17 @@
     + '.tune-chart .tc-bar[data-left="repeat-open"]{box-shadow:inset 3px 0 0 -1px var(--tc-ink)}'
     + '.tune-chart .tc-bar[data-left="repeat-open"] .tc-open{position:absolute;left:4px;top:50%;transform:translateY(-50%);width:4px;height:4px;border-radius:50%;background:var(--tc-ink);box-shadow:0 -8px 0 var(--tc-ink)}'
     + '.tune-chart .tc-ending{position:absolute;top:2px;left:5px;font-family:"JetBrains Mono",monospace;font-size:.62rem;color:var(--tc-ink);border-top:1.5px solid var(--tc-ink);border-left:1.5px solid var(--tc-ink);padding:1px 0 0 3px;min-width:1.3em}'
+    // a section label (P:Verse in the ABC) at the top left of the bar it starts on, set in far enough to clear a time signature there, and a fill mark ("^fill") in the bottom right
+    + '.tune-chart .tc-section{position:absolute;top:2px;left:2.4rem;max-width:calc(100% - 2.8rem);overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:"JetBrains Mono",monospace;font-size:.62rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--tc-ink)}'
+    + '.tune-chart .tc-fillmark{position:absolute;bottom:2px;right:6px;font-family:"JetBrains Mono",monospace;font-size:.58rem;font-style:italic;color:var(--tc-faint);pointer-events:none}'
     + '.tune-chart .tc-meter{position:absolute;top:3px;left:4px;display:flex;flex-direction:column;align-items:center;font-family:"JetBrains Mono",monospace;font-weight:700;line-height:1;color:var(--tc-ink)}'
+    // a change of meter: one line (6/8) in the top left corner of its own bar, above the chords; when the bar starts a row, also a grey
+    // stacked courtesy signature at the far right of the bar before it
+    + '.tune-chart .tc-systems .tc-bar.tc-misfit{border-bottom:3px solid #d9822b}'
+    + '.tune-chart .tc-meter.tc-own{top:1px;flex-direction:row;align-items:baseline}'
+    + '.tune-chart .tc-own .tc-mn{border-bottom:0;padding-bottom:0}'
+    + '.tune-chart .tc-own .tc-mn::after{content:"/"}'
+    + '.tune-chart .tc-meter.tc-courtesy{left:auto;right:2px;top:2px;color:var(--tc-faint)}'
     + '.tune-chart .tc-mn,.tune-chart .tc-md{display:block;font-size:.6rem;line-height:1.15}'
     + '.tune-chart .tc-mn{border-bottom:1px solid currentColor;padding-bottom:1px}'
     + '.tune-chart .tc-bar.tc-live{background:var(--tc-live-soft)}'
@@ -437,6 +510,9 @@
       var p = state.parsed;
       var perRow = state.opts.barsPerRow || p.barsPerRow || 4;
       var lineBreaks = state.opts.lineBreaks || p.lineBreaks || null;
+      // the ABC's own lines (unless the caller or the ABC set a layout): rows as written, every row as wide as the longest (four at least for a one-line tune)
+      var srcCols = 0;
+      if (!lineBreaks && !state.opts.barsPerRow && !p.barsPerRow && p.srcBreaks){ lineBreaks = p.srcBreaks; srcCols = Math.max.apply(null, lineBreaks.concat(lineBreaks.length === 1 ? [4] : [])); }
       var upb = p.unitsPerBar || 1, beats = p.beatsPerBar || 4;
       container.innerHTML = "";
       container.classList.toggle("tc-has-pickup", !!p.anacrusis);
@@ -481,8 +557,9 @@
       // very first bar shows the initial meter.
       var lastMeter = state.header ? { n:p.meterN, d:p.meterD } : { n:-1, d:-1 };
 
+      var prevCell = null;                                    // the bar before, for a courtesy time signature
       rows.forEach(function(rowIdxs){
-        var cols = lineBreaks ? rowIdxs.length : perRow;     // uniform mode pads to perRow
+        var cols = srcCols || (lineBreaks ? rowIdxs.length : perRow);     // uniform mode pads to perRow
         var row = document.createElement("div"); row.className = "tc-system";
         row.style.gridTemplateColumns = "repeat(" + cols + ",1fr)";
         for (var c = 0; c < cols; c++){
@@ -491,14 +568,23 @@
             var b = rowIdxs[c], bar = p.bars[b];
             cell.setAttribute("data-bar", b);
             cell.setAttribute("data-left", bar.left); cell.setAttribute("data-right", bar.right);
+            if (bar.misfit){ cell.classList.add("tc-misfit"); cell.setAttribute("title", "This bar does not add up to its meter"); }
             if (bar.left === "repeat-open"){ var od = document.createElement("span"); od.className = "tc-open"; cell.appendChild(od); }
             if (bar.ending){ var en = document.createElement("span"); en.className = "tc-ending"; en.textContent = bar.ending + "."; cell.appendChild(en); }
+            if (bar.section){ var sc = document.createElement("span"); sc.className = "tc-section"; sc.textContent = bar.section; if (bar.ending) sc.style.left = "4.2rem"; cell.appendChild(sc); }                // (an ending bracket pushes the time signature along too)
+            if (bar.fill){ var fl = document.createElement("span"); fl.className = "tc-fillmark"; fl.textContent = bar.fill === "small" ? "small fill" : bar.fill === "large" ? "big fill" : "fill";
+              fl.setAttribute("title", "The drummer fills at the end of this bar"); cell.appendChild(fl); }
             var bm = bar.meter || { n:p.meterN, d:p.meterD };
             if (bm.n !== lastMeter.n || bm.d !== lastMeter.d){
-              var mt = document.createElement("div"); mt.className = "tc-meter";
-              mt.innerHTML = '<span class="tc-mn">'+bm.n+'</span><span class="tc-md">'+bm.d+'</span>';
+              var sigHtml = '<span class="tc-mn">'+bm.n+'</span><span class="tc-md">'+bm.d+'</span>';
+              var mt = document.createElement("div"); mt.className = "tc-meter tc-own"; mt.innerHTML = sigHtml;
+              if (bar.ending) mt.style.left = "1.7rem";              // (clear of the ending bracket)
               cell.appendChild(mt); lastMeter = { n:bm.n, d:bm.d };
+              if (c === 0 && prevCell){                               // over a line break: warn at the end of the row above
+                var ct = document.createElement("div"); ct.className = "tc-meter tc-courtesy"; ct.innerHTML = sigHtml;
+                ct.setAttribute("title", "Next bar: " + bm.n + "/" + bm.d); prevCell.appendChild(ct); }
             }
+            prevCell = cell;
             if (state.subBarBeats > 0){
               for (var bt = state.subBarBeats; bt < beats; bt += state.subBarBeats){
                 var beatUnits = bt * (p.unitsPerBeat || 1);
@@ -523,7 +609,7 @@
             }
             var realChords = bar.chords.filter(function(cc){ return !cc.nc; });
             var ncChords   = bar.chords.filter(function(cc){ return  cc.nc; });
-            if (realChords.length || ncChords.length){ fillChord(cell, bar, upb); if (ncChords.length && !realChords.length) cell.classList.add("tc-nc-bar"); }
+            if (realChords.length || ncChords.length){ fillChord(cell, bar, Math.max(bar.fullUnits || upb, bar.lengthUnits || 0)); if (ncChords.length && !realChords.length) cell.classList.add("tc-nc-bar"); }
             else cell.classList.add("tc-empty");
             state.barEls[b] = cell;
           } else { cell.style.visibility = "hidden"; }
@@ -588,5 +674,5 @@
     };
   }
 
-  global.TuneChart = { parse: parse, render: render, transposeSym: transposeSym, fmtChord: fmtChord };
+  global.TuneChart = { parse: parse, check: check, setMarks: setMarks, render: render, transposeSym: transposeSym, fmtChord: fmtChord };
 })(typeof window !== "undefined" ? window : globalThis);

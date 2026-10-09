@@ -213,11 +213,15 @@
     head.push("%%score " + (guitar ? "K" : "{K L}") + " B" + (o.drums ? " (U D)" : ""));
     voices.forEach(function (v){ head.push(v.def); });
     head.push("K:" + K.abc);
-    var lines = [];
+    var lines = [], lastLine = {};
     for (var s = 0; s < bars.length; s += perLine) voices.forEach(function (v){
       var seg = body[v.id].slice(s, s + perLine), end = s + perLine >= bars.length ? " |]" : " |";
-      if (s === 0 && (v.id === "U" || v.id === "D")){ lines.push("V:" + v.id, "K:C clef=perc", seg.join(" | ") + end); return; }   // no key signature on the drum staff
-      lines.push("[V:" + v.id + "] " + seg.join(" | ") + end);
+      // a change of meter at the start of a line is written at the end of the line before (a courtesy signature): at the start of
+      // a line abcjs forgets the staff's clef, and with the drum staff it fails altogether
+      var mm = s > 0 ? /^\[M:[^\]]*\]/.exec(seg[0]) : null;
+      if (mm && lastLine[v.id] != null){ seg[0] = seg[0].slice(mm[0].length); lines[lastLine[v.id]] += " " + mm[0]; }
+      if (s === 0 && (v.id === "U" || v.id === "D")){ lines.push("V:" + v.id, "K:C clef=perc", seg.join(" | ") + end); lastLine[v.id] = lines.length - 1; return; }   // no key signature on the drum staff
+      lines.push("[V:" + v.id + "] " + seg.join(" | ") + end); lastLine[v.id] = lines.length - 1;
     });
     return head.concat(lines).join("\n");
   }

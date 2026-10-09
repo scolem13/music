@@ -63,3 +63,12 @@ The sample CDN is sometimes unreachable. `node meter/fetch-samples.js` mirrors t
 - `t_pop.js` / `pop.cdp.js` also cover the piano ballad (left-hand octaves, first-inversion right hand, the three patterns, neighbour notes in the key, sixteenths when slow) and the blend sliders (`opts.rhythmMix`).
 - `t_pop.js` also covers the widened piano voicing (left-hand shapes, right-hand register, the fifth left out) and the grand-staff notation by hand; `tests/band/pat/grandstaff.cdp.js` ("NOTATION GRAND STAFF OK", from `tests/band/lead` with the server) checks the score draws with a brace.
 - `tests/band/pat/ahead.cdp.js` ("AHEAD OK"): the Notation panel shows the chorus about to be heard, rewrites after a setting changes, turns the page in the last bar. `t_pop.js` / `pop.cdp.js` also cover pattern transitions, the crash rules, voicing movement in the ballad, the ballad's hi-hat default and follow-my-playing (fed with numbers, not a microphone).
+- `t_pop.js` and `pop.cdp.js` also cover the Emo / pop-punk style (muted power-chord strum, distorted guitar, Half-time bars) and the Piano ballad's half-time default.
+- `node tests/band/meter/t_change.js` ("METER CHANGE OK") and `tests/band/meter/change.cdp.js` ("METER CHANGE UI OK", from `tests/band/lead` with the server): meter changes inside a tune, including 4/4 to 6/8 and 7/8 with the eighth note constant.
+- `tests/band/lead/lines.cdp.js` ("LINES OK"): the chord grid keeps the lines of the ABC (ragged rows, one-line tunes, backslash continuation, `%%score-bars`).
+- `tests/band/lead/abcset.cdp.js` ("ABC SETTINGS OK"): bars that do not add up (warning, as-written override), `Q:` tempo, `%%style`, the chord diagram toggle, the list of sections.
+
+## fills/ — fill control, sections, hold mode, marks in the ABC
+- `node tests/band/fills/t_fills.js` ("FILL RULES OK", "MARKS IN THE ABC OK", "HOLD AND FILL NOW OK"): the fills menu, fills on chosen bars, `"^fill"` / `"^stop"` / `P:` in the chart, `TuneChart.setMarks`, and the player's hold / next / goSection / fill on a clock the test turns by hand.
+- `tests/band/fills/fills.cdp.js` ("FILLS UI OK", from `tests/band/lead` with the server): the Backing Track controls, and the two boxes writing the ABC.
+- `tests/band/fills/carols.cdp.js` ("CAROLS BAND OK", from `tests/band/lead`): the Band panel on the carols song pages. Serves `~/Projects/carols/site/_site` itself on port 8601; build that site first (`tools/build.sh` there).

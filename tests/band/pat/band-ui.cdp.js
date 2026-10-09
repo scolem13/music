@@ -21,7 +21,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     console.log(JSON.stringify(lay));
     assert(lay.inPlay.every(Boolean), "feel, count-in, choruses and loop are in the Play panel: " + lay.inPlay); assert(lay.inBand && lay.pre === 0 && lay.wide);
     assert.deepStrictEqual(lay.groups, ["Whole band", "Bass", "Comping", "Drums"]); assert.strictEqual(lay.practice, "bt-start bt-step-on bt-step-a bt-step-b");
-    assert.strictEqual(lay.style, "swing"); assert.strictEqual(lay.styles, 20);
+    assert.strictEqual(lay.style, "swing"); assert.strictEqual(lay.styles, 21);
     const list = id => ev(`Array.from(document.getElementById("${id}").options).map(function(o){ return o.value; }).join(" ")`);
     const groups = id => ev(`Array.from(document.querySelectorAll("#${id} optgroup")).map(function(g){ return g.label + ":" + g.children.length; }).join(" | ")`);
     // unmarked extensions: off by default, a frequency and three kinds; not offered outside the jazz styles unless unlocked
@@ -46,7 +46,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // unlocked: everything is listed, what fits first; the goofy combination reaches the band
     await set("bt-style", "swing");
     await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
-    assert.strictEqual(await groups("bt-rhythm"), "Fits Swing:9 | Jazz:1 | From tunes:1 | Folk, rock and pop:22 | Hymns and carols:1 | Caribbean:1 | Latin:4"); assert.strictEqual((await list("bt-bass")).split(" ").length, 26); assert.strictEqual((await list("bt-groove")).split(" ").length, 22);
+    assert.strictEqual(await groups("bt-rhythm"), "Fits Swing:9 | Jazz:1 | From tunes:1 | Folk, rock and pop:23 | Hymns and carols:1 | Caribbean:1 | Latin:4"); assert.strictEqual((await list("bt-bass")).split(" ").length, 26); assert.strictEqual((await list("bt-groove")).split(" ").length, 22);
     assert.deepStrictEqual([await v("bt-bass"), await v("bt-rhythm"), await v("bt-feel")], ["walk", "auto", "swing"], "unlocking changes nothing by itself");
     assert.strictEqual(await ev(`Array.from(document.querySelectorAll("#bt-rhythm-extra .bt-morehead")).map(function(h){ return h.textContent; }).join(" | ")`), "Fits Swing | Outside Swing");
     await set("bt-rhythm", "montuno"); await set("bt-voicing", "standard"); await set("bt-groove", "clave");

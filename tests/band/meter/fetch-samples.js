@@ -5,7 +5,7 @@ const fs = require("fs"), path = require("path"), { execFileSync } = require("ch
 require("/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/sounds.js");
 const SRC = "https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/", OUT = path.join(__dirname, "../lead/site/sf/");
 const S = BandSounds, list = [];
-[["acoustic_bass", 28, 57], ["electric_bass_finger", 28, 57], ["acoustic_grand_piano", 43, 84], ["electric_piano_1", 43, 84], ["electric_guitar_jazz", 40, 78], ["acoustic_guitar_steel", 40, 84], ["electric_guitar_clean", 40, 84], ["church_organ", 36, 84]]
+[["acoustic_bass", 28, 57], ["electric_bass_finger", 28, 57], ["acoustic_grand_piano", 43, 84], ["electric_piano_1", 43, 84], ["electric_guitar_jazz", 40, 78], ["acoustic_guitar_steel", 40, 84], ["electric_guitar_clean", 40, 84], ["distortion_guitar", 40, 84], ["church_organ", 36, 84]]
   .forEach(([n, lo, hi]) => S.soundfontZones("", n, lo, hi, 3).forEach(z => list.push(z.url)));
 [36, 37, 38, 42, 44, 46, 49, 51, 59, 53, 43, 45, 48, 31, 39, 54].forEach(m => list.push("percussion-mp3/" + S.noteName(m) + ".mp3"));
 let got = 0, missing = [];

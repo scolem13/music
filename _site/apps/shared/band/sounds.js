@@ -70,6 +70,9 @@
                 zones: soundfontZones(sf, "acoustic_guitar_steel", 40, 84, 3) },
       cguitar:{ gain: 2.6, release: 0.08,
                 zones: soundfontZones(sf, "electric_guitar_clean", 40, 84, 3) },
+      // distorted electric, for the emo / pop-punk style (level a first guess: the samples are compressed and loud)
+      dguitar:{ gain: 1.5, release: 0.06,
+                zones: soundfontZones(sf, "distortion_guitar", 40, 84, 3) },
       // for hymns: the piano's voicings on a church organ (level a first guess; the samples are a few seconds long, so very long chords fade)
       organ:  { gain: 1.3, release: 0.18,
                 zones: soundfontZones(sf, "church_organ", 36, 84, 3) },
@@ -228,9 +231,9 @@
       var src = ctx.createBufferSource(); src.buffer = z.buffer;
       if (spec.midi != null && z.midi != null) src.playbackRate.value = Math.pow(2, (spec.midi - z.midi) / 12);
       var g = ctx.createGain(), tail = src; g.gain.value = 0;
-      if (def.tone){                                        // softer notes are darker (one sample layer, many dynamics)
+      if (def.tone || spec.cutoff){                         // softer notes are darker (one sample layer, many dynamics); spec.cutoff = a fixed low-pass in Hz (a palm mute)
         var f = ctx.createBiquadFilter(); f.type = "lowpass"; f.Q.value = 0.5;
-        f.frequency.value = Math.min(18000, (def.tone.base + def.tone.range * Math.pow(vel, 1.3)) * Math.pow(2, ((spec.midi || 60) - 60) / 24));
+        f.frequency.value = spec.cutoff ? spec.cutoff : Math.min(18000, (def.tone.base + def.tone.range * Math.pow(vel, 1.3)) * Math.pow(2, ((spec.midi || 60) - 60) / 24));
         src.connect(f); tail = f;
       }
       tail.connect(g); g.connect(dest || ctx.destination);
