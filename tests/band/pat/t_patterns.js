@@ -38,14 +38,14 @@ for (const id of Object.keys(M)) for (const compRhythm of GRID) for (const bassF
 
 // 4/4, one chord a bar: the rhythms as described
 const ONE = "F7|F7|Bb7|Bb7|F7|F7|C7|C7".split("|");
-const want = { oompah: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3.5"], upbeats: ["0.5 1.5 2.5 3.5"], bossa: ["0 1.5 3", "1 2.5"], tango: ["0 1.5 2 3"],
+const want = { oompah: ["1 3"], waltz: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3.5"], upbeats: ["0.5 1.5 2.5 3.5"], bossa: ["0 1.5 3", "1 2.5"], tango: ["0 1.5 2 3"],
                montuno: ["0 1 1.5 2.5 3.5", "0.5 1.5 2.5 3.5"], chacha: ["1 2 2.5 3"], arp: ["0 0.5 1 1.5 2 2.5 3 3.5"], arp2: ["0 0.5 1 1.5 2 2.5 3 3.5"],
                strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumPunk: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
                strum16: ["0 0.5 0.75 1.25 1.5 1.75 2 2.5 2.75 3.25 3.5 3.75"], sowhat: ["", "2 3.5"], maiden: ["0 1.5 3", "1.5 3"], takefive: ["0 1.5 3"], tresillo: ["0 1.5 3"], clave32: ["0 1.5 3", "1 2"], barbara: ["0 1 2 3.5", "0.5 1.5 2"], g333322: ["0 1.5 3", "0.5 2 3"], g33433: ["0 1.5 3", "1 2.5"],
                g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"],
-               ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], hymn: ["0"], quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
+               ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], prine: ["0 1 1 1.5 2 3 3 3.5"], travis: ["0 0 1 1.5 2 2.5 3 3.5"], hymn: ["0"], quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
 // (the piano's left-hand root under a strum or an lh pattern is a separate one-note event, marked arp like an arpeggio note)
-const rh = (id, evs) => BandComp.GRID[id].arp ? evs : BandComp.GRID[id].ballad ? evs.filter(e => e.midis.length > 1 && e.hand !== "L")   /* (the ballad: the right hand's chords and pairs) */
+const rh = (id, evs) => BandComp.GRID[id].arp || BandComp.GRID[id].pick ? evs : BandComp.GRID[id].ballad ? evs.filter(e => e.midis.length > 1 && e.hand !== "L")   /* (the ballad: the right hand's chords and pairs) */
   : evs.filter(e => !(e.arp && e.midis.length === 1));
 for (const id of GRID) gen("4/4", { compRhythm: id }, 5, ONE, 16).forEach(r => assert.strictEqual(pos(rh(id, r.parts.comp)), want[id][r.index % want[id].length], id + " bar " + r.index));
 // the left hand: one root below the chord each time a chord arrives, on the piano only, and never in the hand-off
@@ -59,12 +59,21 @@ assert.strictEqual(pos(gen("3/4", { compRhythm: "oompah" }, 5, ONE, 4)[1].parts.
 gen("4/4", { compRhythm: "arp", voicing: "drop2" }, 3, ONE, 8).forEach(r => { const ms = r.parts.comp.map(e => e.midis[0]);
   assert(r.parts.comp.every(e => e.midis.length === 1 && e.arp)); assert.strictEqual(new Set(ms).size, 4, "four notes of a drop 2"); assert(ms[0] < ms[1] && ms[1] < ms[2] && ms[2] < ms[3] && ms[4] === ms[2] && ms[6] === ms[0]); });
 gen("4/4", { compRhythm: "arp2", voicing: "drop2" }, 3, ONE, 8).forEach(r => assert.strictEqual(new Set(r.parts.comp.map(e => e.midis[0])).size, 2));
+// fingerpicking on open chords: the thumb on root, inner string, alternate bass, inner string; the fingers on the treble strings
+{ const pk = (rhythm, id, bars) => gen(id, { compRhythm: rhythm, comp: "guitar", voicing: "open" }, 3, bars || ["C", "G", "D", "F"], 4).map(r => r.parts.comp.map(e => e.midis[0]).join(" "));
+  assert.deepStrictEqual(pk("prine", "4/4"), ["48 52 60 55 43 52 60 55", "43 50 59 55 47 50 59 55", "50 57 66 62 45 57 66 62", "41 53 60 57 48 53 60 57"]);
+  assert.strictEqual(pk("travis", "4/4")[0], "48 60 52 55 43 60 52 55");
+  assert.deepStrictEqual(pk("prine", "3/4", ["C", "C", "C", "G"]), ["48 52 60 55 52 60 55", "43 52 60 55 52 60 55", "48 52 60 55 52 60 55", "43 50 59 55 50 59 55"]);
+  assert.strictEqual(pk("prine", "6/8")[0], "48 55 60 43 55 60");
+  gen("4/4", { compRhythm: "prine", comp: "guitar", voicing: "open" }, 3, ["C G", "D"], 2).forEach(r => assert(r.parts.comp.every(e => e.midis.length === 1 && e.arp)));
+  assert.strictEqual(gen("4/4", { compRhythm: "prine", comp: "guitar", voicing: "open" }, 3, ["C G", "D"], 2)[0].parts.comp.filter(e => e.vel > 0 && [48, 52, 43, 50].includes(e.midis[0])).map(e => e.pos + ":" + e.midis[0]).join(" "), "0:48 1:52 2:43 3:50", "each chord starts on its root");
+  const lh = gen("4/4", { compRhythm: "prine" }, 3, ["C"], 1)[0].parts.comp.filter(e => e.hand === "L"); assert.strictEqual(lh.length, 4, "the piano's left hand is the thumb"); assert(lh[0].midis[0] % 12 === 0 && lh[2].midis[0] % 12 === 7); }
 BandHarmony.asPlayed(gen("4/4", { compRhythm: "arp", voicing: "drop2" }, 3, ONE, 8), { style: "drop2", inst: "piano" }).forEach(c => assert.strictEqual(c.midis.length, 4, "hand-off voices " + c.sym + " in full"));
 
 // strums: downstrokes are the whole voicing, upstrokes its top three notes and lighter; one shape per chord; chords ring to the next stroke
 gen("4/4", { compRhythm: "strumCamp", voicing: "drop2", comp: "guitar", voiceMove: "move" }, 3, ONE, 8).forEach(r => { const c = r.parts.comp, full = c[0].midis;
   assert.deepStrictEqual(c.map(e => e.strum), ["down", "down", "up", "up", "down", "up"]); assert.strictEqual(full.length, 4);
-  c.forEach((e, i) => { assert.deepStrictEqual(e.midis, e.strum === "up" ? full.slice(-3) : full, "one shape for the bar"); assert(e.vel < (e.strum === "up" ? 0.5 : 0.72));
+  c.forEach((e, i) => { assert.deepStrictEqual(e.midis, e.strum === "up" ? full.slice(-3) : full, "one shape for the bar"); assert(e.vel < (e.strum === "up" ? 0.58 : 0.77));
     assert(Math.abs(e.pos + e.dur - (i + 1 < c.length ? c[i + 1].pos : 4)) < 0.03, "rings to the next stroke"); }); });
 { const acc = id => rh(id, gen("4/4", { compRhythm: id }, 3, ONE, 8)[2].parts.comp).filter(e => e.vel > 0.585).map(e => e.pos).join(" ");
   assert.strictEqual(acc("strum332"), "0 1.5 3", "3-3-2 accents"); assert.strictEqual(acc("strumEights"), "1 3"); }

@@ -720,3 +720,166 @@ Nothing here has been heard. Checked by rule and in headless Chrome only.
   localhost). The lyrics page sends the ABC, the tune per bar, tempo and style; this page reports state, bars, beats and sections.
   _quarto.yml pins `quarto preview` to port 4455 so the local lyrics site can find the local page.
 ** VERIFY in a real browser: the pop-up is allowed, and one click in the Backing Track window is enough for it to make sound.
+
+* John Prine fingerpicking -- 2026-10-10
+Nothing here has been heard. Written from the commonly taught version of the pattern, not from a transcription; the user plays this
+style and has not yet said how their own hand differs.
+- Style =prine= was a placeholder (guitar held block chords). Now: comp =prine= on the steel guitar, bass =alt= (upright), no drums.
+- comp.js =pickBar= (GRID entries marked =pick=): single notes, all marked arp. The thumb is not in the table; it plays every beat:
+  root, inner string (the 4th; the 3rd under a D shape), alternate bass, inner string. Alternate bass = the fifth below the root when the
+  guitar has it (C: low G, D: open A, A: open E, B7 / Bm: F# on the 6th string), else the 5th string under a 6th-string root (G, E, F:
+  6-4-5-4). The table is the fingers: M / H / T = the lowest, next and top string above the thumb's.
+  - =prine=: pinch on 2 and 4 with the string below on the and after (C: C . | E+C G | G . | E+C G).
+  - =travis=: pinch on 1, then the and of 2, the and of 3, the and of 4. Offered in the style's Rhythm menu and blend list; not its default.
+  - 3/4: thumb root, inner, inner; pinches on 2 and 3; a chord held into the next bar starts it on the alternate bass.
+  - 6/8, 12/8: thumb root / alternate bass on the beats, two finger notes after each.
+- The strings come from the grip of the "open" voicing style. Other guitar voicings and pins are picked by pitch (lowest, next, the rest).
+  On the piano the thumb is the left hand (root below the chord and its fifth).
+- Variation > 0: a pinch on the top string (25% x amount), a note between the beats left out (12%) or on the other string (18%), a pinch
+  on beat 1 (15%). Strict = the pattern exactly.
+** VERIFY BY EAR, first: thumb level against the fingers (0.60 / 0.56 / 0.49 against 0.53 / 0.46) and its length (0.9 of a beat, no
+   palm mute: =mute:true= exists and is not used); the upright bass doubling the thumb on 1 and 3; G as 6-4-5-4 rather than 6-4-6-4.
+** ASK the user: which fingers and strings they really use, whether beat 1 is pinched, hammer-ons (the C-shape's 4th string, the D-shape's
+   high string), bass runs between chords, and whether the style should have a bass player at all.
+** TODO No hammer-ons, pull-offs or bass runs; no capo (keys away from C, G, D, A, E get barre shapes, which no one fingerpicks);
+   the open-shape table has no C/G or G/B, and a slash bass is ignored; nothing shows the picking on the Chord Sheet (the notes are arp).
+** NOTE tests/band/pat/t_tunes.js fails on its preset count (expects 10, there are 12) and then on the pop style demo; both are from
+   the demo setups added earlier, not from this.
+** TODO COME BACK TO THIS (user, 2026-10-10: "I have to analyze my own playing in more detail" first). The report as given:
+- Rhythm was new, voicing was not: the existing open chords, read by string. The catch: the alternate bass is often a note outside
+  the chord shape (low G under C, open A under D, open E under A).
+- Default pattern "thumb, pinch-and", on C: C | E + high C pinched, G | low G | E + high C pinched, G. Thumb on every beat
+  (root, inner string, alternate bass, inner string); inner string = the 4th, or the 3rd under a D shape; 6th-string roots go 6-4-5-4.
+- Travis pattern (pinch on 1, then the ands of 2, 3 and 4) is in the Rhythm menu, not the default.
+- Band: steel-string guitar, upright bass on root and fifth (doubling the thumb on 1 and 3), no drums. No capo.
+- Waiting on the user's answers:
+  1. Is that your pattern? Which strings do your fingers take, and do you pinch on beat 1?
+  2. On G, does your thumb go 6-4-5-4 or 6-4-6-4?
+  3. Hammer-ons (4th string of C, high string of D) and bass runs between chords? Neither exists yet.
+  4. Should this style have a bass player at all, given the thumb already plays that part?
+  5. Should the thumb be palm-muted? It is just short now (0.9 of a beat).
+- Rendered and copied to the lyrics site; nothing committed.
+
+* Guitar sounds: amp chains, nylon, a sound list in one place -- 2026-10-10
+Nothing here has been heard. Levels were matched by measurement; every tone setting is a first guess.
+User: jazz and steel acoustic acceptable; the soundfont's clean "a bit too distorted and poorly synthesized"; its distorted "without body".
+- sounds.js: an instrument may carry =chain= (its amp): its notes are summed into ONE chain per instrument and destination (ampFor),
+  built from built-in nodes the first time it plays. Stages: hp, lp, peak, shelf, lowshelf, drive (tanh, 4x oversampled), level.
+  A filter-only chain is a per-instrument EQ.
+- Every def has =family= and =label=. BandSounds.family(id) / BandSounds.sounds(family) feed the player (any sound of the comping
+  instrument's family may be opts.compSound), the Backing Track's Comping menu, and MIDI export (PROGRAM in midi.js).
+- New: =nguitar= (soundfont nylon), =clguitar= and =odguitar= (the JAZZ guitar's samples through a clean amp and a distorted amp).
+  The soundfont's own clean and distorted stay as =cguitar= / =dguitar=, labelled "old samples", unchanged, for comparison.
+- All guitars but the two old ones now have =tone= (softer = darker), as the pianos do. This changes the jazz and steel guitars a little.
+- Styles: cguitar -> clguitar (rock, dance, motown, doo-wop), dguitar -> odguitar (emo); bossa's guitar is the nylon.
+- Measured (tests/band/pat/guitars.cdp.js, comp alone through the mix bus, eighth-note open-chord strum): steel -20.0 dB, nylon -20.2,
+  clean -19.6, distorted -20.9 (set a little under: it is dense), jazz -18.0. The old clean was -27.4 and the old distorted -24.3:
+  4 to 7 dB under the acoustic, which is part of why they sounded thin.
+- The jazz samples die away about 9 dB in the first second, so the distorted amp is driven hard (pre 5, drive 16) to hold the chord:
+  attack to sustain 2.1 dB (old distorted samples: 1.2).
+- Cost, measured offline in Chrome on this Mac: 52.6 s of full-band punk strum renders in 5.3 s with the distorted amp, 5.1 s with the
+  steel acoustic (no amp), 4.0 s with the old distorted samples. The amp is about 0.2 s of that; the rest is the per-note tone filter.
+** VERIFY BY EAR, first: the distorted amp (too fuzzy on full six-string chords? cabinet too dark at 5 kHz?); the clean amp, which can only
+   be as bright as the jazz samples allow (a +10 dB shelf from 1.6 kHz); the tone filter on the steel acoustic; nylon level and bossa on nylon.
+** DONE (same day, "Amp sliders") The chains can be changed from the page, stage by stage.
+** TODO A chain, once built, stays for the life of the audio context (it is silent and near free when unused, not removed).
+** TODO Palm mute (cutoff 1100) is before the amp, which is right; nothing else in the playing reacts to the amp (no feedback, no pick noise).
+** IDEA (user, 2026-10-10) Two comping instruments at once (guitar + keys, or two guitars). Assessed, not built:
+   - The player has three parts in PARTS; a second comping part is a fourth with its own BandComp, seed, fader, reverb send and options
+     (instrument, sound, rhythm, voicing). The first part's notes do not change (its random numbers are its own).
+   - Must change: the guitar's hand (lastGrip / grips in harmony.js is one shared hand: two guitars would fight over it); bar records
+     (parts.comp is read by notation, MIDI export, the Chord Sheet hand-off and the drums' energy); the page (a second instrument row, a
+     fader, saved setups); styles (an optional second instrument with its own rhythm and voicing).
+   - The musical part is the real work: two chord players must stay out of each other's way (register, rhythm), e.g. strum + pad,
+     strum + high triads, piano ballad + fingerpicked guitar.
+** NOTE tests/band/move/layout.cdp.js fails on the page's first panel ('other' !== 'play'): from the navigation column added earlier, not this.
+
+* Second chord instrument; five-band EQ for each sound -- 2026-10-10
+Nothing here has been heard.
+** Second chord instrument (opts.second = { comp, compSound, compRhythm, voicing }; the player's part "comp2")
+- BandComp.createSecond: another instance of the comping part with those options on top of the band's. Unset = no notes and no random
+  numbers. No pins, no blend sliders, no unmarked extensions; voicing movement "hold" unless opts.second says otherwise. Events carry second:true.
+- Nothing else changes when it is on: its own random numbers (SEED.comp2, and a stream of its own in BandMidi.generate), its own
+  humanizing stream (Session.human2), its own fretting hand (BandHarmony.withHand: lastGrip was one shared hand). Tested note for note
+  and as rendered audio (pat/t_second.js, pat/second.cdp.js).
+- Player: PARTS has comp2 (fader, reverb send as comp, sits 2 ms behind it); its sample set is loaded when opts.second names one;
+  renderOffline gives a comp2 stem only then. MIDI export: a track of its own on channel 3.
+- BandCatalog.secondFor(style, sound): the rhythm and voicing suggested for a second piano-family or guitar-family sound in each
+  style (table SECOND: swing = guitar four-to-the-bar shells beside the piano; bossa = guitar on the bossa pattern; piano ballad =
+  fingerpicked guitar; rock = quarter-note triads or an organ pad; ...). Anything unlisted holds long chords.
+- Page: Band > Comping > "Second chord instrument" (None by default), "Its rhythm", "Its voicings", "Suggest for this style"; a fader
+  in the Mixer (default 80). Saved in setups. Picking a sound takes the suggestion; changing Style afterwards keeps what is set.
+** VERIFY BY EAR: every pairing in SECOND; whether two chord players are too much without the first one thinning out.
+** TODO The first player does not know the second exists: it does not leave space, change register or simplify. Nor do the drums
+   count the second player when they listen (energy is still bass + first comp).
+** TODO Not shown in the notation; the Chord Sheet hand-off, the side diagram and "as played" are the first player's only.
+** TODO Styles do not switch a second instrument on by themselves, and a section in a style of its own keeps the page's second player
+   with the page's rhythm (not that style's suggestion). Chord Entry and Accompaniment Styles have no control for it.
+** TODO The second player's rhythm menu lists every rhythm, fitting the style or not; it has no blend, no Variation of its own.
+** Five-band EQ
+- BandSounds.setEQ(sound, bands | null) / getEQ: five bands for each sound id, each { type: peaking | lowshelf | highshelf | highpass |
+  lowpass, f, gain, q }, after the sound's amp chain in the same channel strip (ampFor). Static, so it reaches every bank, live and
+  offline; a live change is smoothed over about 15 ms. A sound with no amp and no EQ still plays straight to the mix, as before.
+- Page: Mixer > Tone (EQ): pick the sound (those in use, plus any with saved settings), then per band kind, frequency (20 Hz to
+  18 kHz), amount (+/-18 dB) and width (Q 0.3 to 12). Kept in localStorage.btEQ by sound id: it belongs to the sound, not to a tune or
+  a setup. "Flat" and "All instruments flat".
+- Defaults: low shelf 100 Hz, bells at 300 Hz, 1 kHz and 3 kHz, high shelf 8 kHz, all at 0 dB.
+** TODO The EQ is on the Backing Track page only (other pages play the sounds flat); not in saved setups or share links; no curve drawn;
+   the drum kit is one sound (no EQ per piece); cut slopes are 12 dB per octave (two bands on one frequency make 24).
+
+* Sections and the Band menus: the menus are supreme -- 2026-10-10
+User: with per-section styles "I can't make edits on the fly through the menus on the page. Those should always be supreme."
+Before this the menus did NOT follow a section's style (the user believed they did); the section's style silently won over them.
+- Player and BandMidi.generate: opts.sectionOverrides = { section index: options }. A section listed there is played with those options
+  laid over the page's, and its %%style from the chart is not consulted (bar opts carry sectionStyle "menus").
+- Page (tools/_backing-track.qmd, "Sections and the Band menus"): when a section starts to sound, the Band menus change to its settings:
+  what was last set for it here, else its %%style (styleState: the style plus any single parts named after it, unlocking the menus
+  when a part does not fit), else the tune's own. A change made while a section's settings show is kept for that section (secOv);
+  in a section with no style of its own it changes the tune's settings, as before. The tune's own settings are kept underneath (secBase).
+- Hold: going round one section does not touch the menus (same section index = nothing happens).
+- Under Next section: a line saying whose settings the menus show; 'Apply to every "Chorus" (n)' copies the menus to every section whose
+  name is the same once trailing numbers are dropped (Chorus, Chorus 2); "Back to the chart's settings" forgets the change to this section.
+- What counts as a section's settings (SEC_KEYS): instrument and sound, rhythm and blend, voicings and blend, voicing movement, extensions,
+  bass line, bass sound, walk amount, groove, cymbal, feel, push, time feel, boom-chick strength, second instrument. Everything else
+  (stops, fills, chorus bars, pins, variation, tempo, mixer) belongs to the tune.
+- A chart whose sections change (names, lengths or styles) drops every kept change. Tests: styles/t_override.js, styles/menus.cdp.js.
+- Also fixed: the page's MIDI export left the second chord instrument out (it named its three parts); it now goes with the first.
+** DONE (same day, see "Section settings saved in a setup") Kept changes are saved in a setup; saving while a section shows saves the tune's own.
+** TODO Not written back to the ABC or the song file as a %%style / {style:} line.
+** TODO The menus change when the section is heard; bars already handed to the sample bank (about 0.15 s) keep the old settings.
+** TODO While stopped there is no way to choose which section the menus show: they stay on the last one heard until Play.
+** TODO A repeated section is two sections with one name: a change to the first needs "Apply to every" to reach the repeat.
+** TODO A style's kit faders and time feel are set as its section starts, as when the style is picked by hand (the faders move).
+
+* Section settings saved in a setup, by section name -- 2026-10-10
+User: starting from a ChordPro song, opening it in the Backing Track and designing the band section by section, the result must be savable.
+- A saved setup gains =sections: [{ name, nth, opts, state, sounds }]=: one entry per section changed in the menus. name + nth (which of
+  the sections with that name, from 0) is the key, NOT the bar or section number. opts = what the player is given (sectionOverrides),
+  state = the menus, sounds = the sample sets it needs.
+- BandCatalog.nameSections / placeSections put them back on a chart by name. A section whose own nth was not saved takes that name's
+  settings only if every saved section of the name has the same ones (so a song that gains a fourth chorus gives it the choruses' settings).
+  A renamed section loses its settings; names are compared without case.
+- Saving while a section's settings show now saves the tune's own settings as the setup's (they are kept underneath), not the section's.
+- Lyrics site (~/Projects/carols): nothing new to do in the song file. Save the setup, "Download all", keep it beside the song as
+  <song>.band.json (tools/chordpro.py passes =sections= through untouched). The Backing Track window gets the whole setup and places it
+  on the song's sections; site/band.html (the band on the song page itself) does the same through sectionSetup(), while the setup's own
+  style is the one chosen there.
+- Tests: styles/keep.cdp.js ("SECTION SETTINGS KEPT OK": save, reload, and the same setup on a chart with the sections reordered).
+** VERIFY the lyrics page's own band with a real <song>.band.json that has sections: band.html's side was not run end to end (only its
+   existing test, fills/carols.cdp.js, which still passes; the placing itself is the shared, tested function).
+** TODO A shared setup ({setup: swing-trio} used by many songs) carries its sections to every song with those section names.
+** TODO Only what is in SEC_KEYS is kept for a section (the second chord instrument is; the mixer, EQ, stops and variation are the tune's).
+
+* Amp sliders -- 2026-10-10
+Unheard. User: "Is it implemented but not exposed? I'd like to be able to tweak the settings on the fly."
+- BandSounds.setAmp(sound, chain | null) / getAmp: the definition's stages in the definition's order with other numbers (a page cannot
+  add, remove or reorder stages). Applied to live banks at once (filters and levels glide over about 15 ms; a new drive curve is swapped
+  in) and to every bank made later. Each stage in sounds.js has a =name= for the page.
+- Page: Mixer > Tone (EQ). When the sound chosen there has an amp (the clean and distorted electrics), "Amp: <sound>" lists one block per
+  stage: frequency / amount / width for a filter, amount and asymmetry for the drive, level in dB for a gain. Kept in localStorage.btAmp
+  by sound id; "Amp as designed" goes back to sounds.js. Test: pat/guitars.cdp.js (Input gain -20 dB and Drive 1.3: attack-to-sustain
+  drop goes from 2.1 dB to 9.2 dB).
+** TODO Once the user has settled on numbers by ear, copy them into sounds.js (CLEAN, DRIVE and the chains) so they are the defaults
+   everywhere: the sliders' values live in this browser only, and the other pages play the amp as designed.
+** TODO No amp for the jazz, steel or nylon guitar (they have no chain); no way to add a stage or pick another amp from the page.
+** TODO Changing the drive changes the loudness: nothing compensates but the Output level slider.

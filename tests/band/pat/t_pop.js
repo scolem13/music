@@ -14,8 +14,8 @@ function bass(b){ return b.parts.bass.map(function (e){ return r2(e.pos) + ":" +
 
 // each style names real things and brings its sounds
 var POP = C.styles.filter(function (s){ return s.group === "Folk, rock and pop"; });
-assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "dance", "motown", "doowop", "train", "folk"]);
-assert.deepStrictEqual(C.styleOpts("rock").instruments, ["ebass", "piano", "kit"]); assert.deepStrictEqual(C.styleOpts("rock", "guitar").instruments, ["ebass", "cguitar", "kit"]);
+assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "dance", "motown", "doowop", "train", "folk", "prine"]);
+assert.deepStrictEqual(C.styleOpts("rock").instruments, ["ebass", "piano", "kit"]); assert.deepStrictEqual(C.styleOpts("rock", "guitar").instruments, ["ebass", "clguitar", "kit"]);
 assert.deepStrictEqual(C.styleOpts("strum").instruments, ["ebass", "aguitar", "kit"]); assert.strictEqual(C.styleOpts("strum").opts.comp, "guitar");
 assert.deepStrictEqual(C.styleOpts("swing").instruments, ["bass", "piano", "kit"]); assert.strictEqual(C.styleOpts("swing").opts.ride, "ride"); assert.strictEqual(C.styleOpts("rock").opts.ride, "hat");
 assert.deepStrictEqual(C.styleOpts("dance").instruments, ["ebass", "epiano", "kit"]); assert.strictEqual(C.styleOpts("swing", "guitar").opts.compSound, "guitar");
@@ -184,7 +184,7 @@ POP.forEach(function (st){ ["4/4", "3/4", "2/4", "5/4"].forEach(function (m){ ["
     ["bass", "comp", "drums"].forEach(function (p){ b.parts[p].forEach(function (e){ if (e.choke) return; assert(e.pos >= 0 && e.pos < b.beats && e.vel > 0.1 && e.vel <= 1, [st.id, m, fam, p, i, JSON.stringify(e)].join(" ")); }); });
     b.parts.bass.forEach(function (e){ assert(e.midi >= BandBass.LO && e.midi <= BandBass.HI); }); }); }); }); });
 // ---- emo / pop-punk ----
-(function (){ var so = C.styleOpts("emo"); assert.deepStrictEqual(so.instruments, ["ebass", "dguitar", "kit"]); assert.strictEqual(so.opts.comp + "|" + so.opts.compRhythm + "|" + so.opts.push, "guitar|strumPunk|true");
+(function (){ var so = C.styleOpts("emo"); assert.deepStrictEqual(so.instruments, ["ebass", "odguitar", "kit"]); assert.strictEqual(so.opts.comp + "|" + so.opts.compRhythm + "|" + so.opts.push, "guitar|strumPunk|true");
   var EM = ["Am", "F", "C", "G", "Am", "F", "C", "G"], b = gen("emo", { push: false, lift: [4, 5, 6, 7] }, EM, 8), vs = b[0].parts.comp, ch = b[5].parts.comp;
   // verse: eight muted downstrokes on a power chord (A2 E3 A3 as the chord arrives, then the low two strings)
   assert.strictEqual(at(b[0], "comp"), "0 0.5 1 1.5 2 2.5 3 3.5"); assert(vs.every(function (e){ return e.mute && e.strum === "down" && e.dur <= 0.3; }));
@@ -209,7 +209,7 @@ POP.forEach(function (st){ ["4/4", "3/4", "2/4", "5/4"].forEach(function (m){ ["
 })();
 
 // ---- hymns and carols ----
-assert.deepStrictEqual(C.styles.filter(function (s){ return s.group === "Hymns and carols"; }).map(function (s){ return s.id; }), ["hymn", "carol"]);
+assert.deepStrictEqual(C.styles.filter(function (s){ return s.group === "Hymns and carols"; }).map(function (s){ return s.id; }), ["waltz", "hymn", "carol"]);
 // the hymn: no drums at all (not even on the last chord), every chord held to the next in four parts, the bass holding each root
 var HY = ["G D", "Em C", "G", "D G"], hy = gen("hymn", {}, HY, 4);
 hy.forEach(function (b, i){ assert.strictEqual(b.parts.drums.length, 0); var n = HY[i].split(" ").length, rh = b.parts.comp.filter(function (e){ return !e.arp; }), lh = b.parts.comp.filter(function (e){ return e.arp; });

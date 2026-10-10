@@ -33,7 +33,7 @@ const { launch } = require("./cdp.js"); const assert = require("assert"); const 
     await load(H.replace("K:C", "Q:1/4=96\nK:C") + '"C"z4|"G"z4|]'); assert.strictEqual(await v("bt-tempo-n"), "96");
     await load(H.replace("K:C", "Q:1/8=180\nK:C") + '"C"z4|"G"z4|]'); assert.strictEqual(await v("bt-tempo-n"), "90", "eighths at 180 = quarters at 90");
     // %%style: by id or by the name in the menu; the menu overrides it afterwards; an unknown name is reported
-    await load(H + '%%style emo\n"Am"z4|"F"z4|"C"z4|"G"z4|]'); assert.strictEqual(await v("bt-style") + "|" + await v("bt-comp"), "emo|dguitar");
+    await load(H + '%%style emo\n"Am"z4|"F"z4|"C"z4|"G"z4|]'); assert.strictEqual(await v("bt-style") + "|" + await v("bt-comp"), "emo|odguitar");
     await set("bt-style", "swing"); await load(H + '%%style emo\n"Am"z4|"F"z4|"C"z4|"E"z4|]'); assert.strictEqual(await v("bt-style"), "swing");
     await load(H + '%%style Piano ballad\n"Am"z4|"F"z4|]'); assert.strictEqual(await v("bt-style") + "|" + await v("bt-timefeel"), "pop|half");
     await load(H + '%%style polka metal\n"Am"z4|"F"z4|]'); assert(/No style called "polka metal"/.test(await ev(`document.getElementById("bt-abc-note").textContent`))); assert.strictEqual(await v("bt-style"), "pop");

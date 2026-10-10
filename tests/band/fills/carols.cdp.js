@@ -59,7 +59,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await key("j"); assert.strictEqual(await ev(current), "2:Interlude");
     assert.strictEqual(await ev(`document.querySelectorAll(".ch.now").length`), 0);
     // Section Navigation and Display style are folded until asked for
-    assert.deepStrictEqual(JSON.parse(await ev(`JSON.stringify(Array.prototype.map.call(document.querySelectorAll("#quarto-margin-sidebar .section-buttons-title"), function(t){ return t.textContent + (t.parentNode.classList.contains("folded") ? " -" : " +"); }))`)), ["Sections +", "Section Navigation -", "Band +", "Display style -", "Pedal +"]);
+    assert.deepStrictEqual(JSON.parse(await ev(`JSON.stringify(Array.prototype.map.call(document.querySelectorAll("#quarto-margin-sidebar .section-buttons-title"), function(t){ return t.textContent + (t.parentNode.classList.contains("folded") ? " -" : " +"); }))`)), ["Sections +", "Section Navigation -", "Band +", "Tap in the bars -", "Display style -", "Pedal +"]);
     await ev(`document.querySelector(".type-panel .section-buttons-title").click(); 0`); assert.strictEqual(await ev(`document.querySelector(".type-panel").classList.contains("folded") + "|" + document.getElementById("type-chordColour").value`), "false|rust");
     // Play starts at the section the page is on; a click on a chord starts at that chord's bar
     await ev(`document.querySelectorAll(".song-sections button")[3].click(); 0`); assert.strictEqual(await ev(current), "3:Verse");
@@ -84,7 +84,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await ev(`BandHarmony.buildForm(TuneChart.parse(window.carolBandAbc), 0).length`), 56);
     assert.strictEqual(await ev(`document.querySelectorAll(".band-panel .band-field select")[0].value`), "strum");
     // a song with no bars has no panel
-    await b.goto(B + "/songs/silent-night.html"); await b.sleep(600); assert.strictEqual(await ev(`document.querySelectorAll(".band-panel").length`), 0);
+    await b.goto(B + "/songs/silent-night.html"); await b.sleep(600); assert.strictEqual(await ev(`document.querySelectorAll(".band-panel:not(.tap-panel)").length`), 0);
     console.log("CAROLS BAND OK");
   } catch (e) { console.log("FAILED:", e.message); process.exitCode = 1; } finally { await b.close(); server.close(); }
 })();

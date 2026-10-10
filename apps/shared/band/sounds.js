@@ -22,8 +22,23 @@
 //
 // vel is 0..1 (0.7 = normal mf); dur is in SECONDS here (the player converts from beats).
 // spec.gain (default 1) is a plain level trim on top: the player's per-piece drum faders.
-// Alternatives the player can swap in: "ebass" for "bass", "epiano" for "piano", and the kit
-// piece "ride2" (a second ride cymbal) for "ride".
+// Alternatives the player can swap in: "ebass" for "bass", any sound of the same family for the comping
+// instrument (BandSounds.family: "epiano" and "organ" for "piano", the other guitars for "guitar"), and the
+// kit piece "ride2" (a second ride cymbal) for "ride".
+//   BandSounds.family(name)   -> "piano" | "guitar" | "bass" | "kit" | null
+//   BandSounds.sounds(family) -> [{ id, label }] in menu order: what a page offers for that instrument
+//
+//   BandSounds.setEQ(name, bands | null)  the mixer's EQ for one instrument: up to five bands, each
+//       { type: "peaking" | "lowshelf" | "highshelf" | "highpass" | "lowpass", f: Hz, gain: dB, q }.
+//       It applies at once to whatever is playing and to every bank made later; null = flat.
+//   BandSounds.setAmp(name, chain | null)  the numbers of an instrument's amp chain, changed from a page: the same stages in the
+//       same order as its definition, other values. Applies at once and to every bank made later; null = as defined.
+//   BandSounds.getAmp(name) -> the chain in force (a copy), or null for an instrument with no amp
+//   BandSounds.getEQ(name) -> the bands (the flat default when none are set); BandSounds.EQ_DEFAULT
+//
+// An instrument may have an AMP CHAIN (def.chain): its notes are summed and sent through the chain's
+// stages before they reach the mix, one chain for the instrument and not one per note. That is what an
+// amplifier does, and it is why a distorted chord has body: the notes are distorted together.
 
 (function (global) {
   var SF_DEFAULT = "https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/";
@@ -39,6 +54,16 @@
   // bass and drums are equally loud and the piano sits 3 LU under them (mix ≈ -16 LUFS).
   // A new sample set only needs its `gain` adjusted to land in the same place.
   //
+  // family = whose voicings the sound plays ("piano" | "guitar"); label = its name in a page's menu.
+  // chain = the amp, a list of stages in order (all built-in audio nodes, no script):
+  //   { hp: Hz } { lp: Hz, q? }           high-pass / low-pass
+  //   { peak: Hz, gain: dB, q? }          a bell boost or cut
+  //   { shelf: Hz, gain: dB }             high shelf;  { lowshelf: Hz, gain: dB }
+  //   { drive: k, bias? }                 soft clipping, tanh(k x): about 1 = warmth, 4 = crunch, 15+ = distortion
+  //   { level: x }                        a plain gain (before a drive it sets how hard the amp is hit)
+  // name = what a page calls the stage. A page may change a chain's numbers while it plays (BandSounds.setAmp), not its stages.
+  // A guitar is its samples (the source) plus its chain, so one good sample set serves several amps.
+  //
   // To move an instrument to RECORDED SAMPLES, drop the files under
   // /apps/shared/band/samples/ and replace its zone list — nothing else changes:
   //
@@ -52,31 +77,50 @@
   //     { url: "/apps/shared/band/samples/kit/ride_2.wav", piece: "ride" },          //   = round-robin
   //     ... ], pieces: { hatOpen: { group: "hat" }, hatFoot: { chokes: "hat" } } }
   // ======================================================================================
+  // levels of the new guitars, set by measuring rendered strums against the steel-string acoustic (not by ear):
+  // pre = how hard the amp is hit, post = the level it comes out at
+  var NYLON_GAIN = 3.75, CLEAN = { pre: 1, post: 0.53 }, DRIVE = { pre: 5, post: 0.095 };
   function instruments(sf){
     return {
-      bass:   { gain: 2.2, release: 0.06,
+      bass:   { family: "bass", gain: 2.2, release: 0.06,
                 zones: soundfontZones(sf, "acoustic_bass", 28, 57, 3) },
-      piano:  { gain: 4.05, release: 0.12, tone: { base: 1200, range: 11000 },
+      piano:  { family: "piano", label: "Piano", gain: 4.05, release: 0.12, tone: { base: 1200, range: 11000 },
                 zones: soundfontZones(sf, "acoustic_grand_piano", 43, 84, 3) },
       // electric alternatives; gains set from the level of the raw samples against the two above, not yet by ear
-      ebass:  { gain: 1.1, release: 0.07,
+      ebass:  { family: "bass", gain: 1.1, release: 0.07,
                 zones: soundfontZones(sf, "electric_bass_finger", 28, 57, 3) },
-      epiano: { gain: 1.6, release: 0.14, tone: { base: 1500, range: 9000 },
+      epiano: { family: "piano", label: "Electric piano", gain: 1.6, release: 0.14, tone: { base: 1500, range: 9000 },
                 zones: soundfontZones(sf, "electric_piano_1", 43, 84, 3) },
-      guitar: { gain: 2.9, release: 0.08,
+      // Guitars. tone on all of them: a softer note is darker, as on the pianos.
+      guitar: { family: "guitar", label: "Jazz guitar", gain: 2.9, release: 0.08, tone: { base: 1500, range: 12000 },
                 zones: soundfontZones(sf, "electric_guitar_jazz", 40, 78, 3) },
-      // steel-string acoustic and clean electric, for the folk, rock and pop styles (gains are first guesses, not yet set by ear)
-      aguitar:{ gain: 2.6, release: 0.10,
+      // steel-string and nylon-string acoustics (gains are first guesses, not yet set by ear)
+      aguitar:{ family: "guitar", label: "Acoustic guitar (steel)", gain: 2.6, release: 0.10, tone: { base: 2500, range: 22000 },
                 zones: soundfontZones(sf, "acoustic_guitar_steel", 40, 84, 3) },
-      cguitar:{ gain: 2.6, release: 0.08,
+      nguitar:{ family: "guitar", label: "Acoustic guitar (nylon)", gain: NYLON_GAIN, release: 0.10, tone: { base: 2200, range: 18000 },
+                zones: soundfontZones(sf, "acoustic_guitar_nylon", 40, 84, 3) },
+      // The electrics: the jazz guitar's samples (the best of the soundfont's electrics) through an amp.
+      // Clean: the lows trimmed, the top opened up, a touch of warmth from the amp, the speaker's roll-off.
+      clguitar:{ family: "guitar", label: "Electric guitar (clean)", gain: 2.9, release: 0.08, tone: { base: 1800, range: 14000 },
+                zones: soundfontZones(sf, "electric_guitar_jazz", 40, 84, 3),
+                chain: [{ name: "Low cut", hp: 85 }, { name: "Brightness", shelf: 1600, gain: 10 }, { name: "Presence", peak: 3200, gain: 3, q: 0.9 }, { name: "Input gain", level: CLEAN.pre },
+                        { name: "Drive", drive: 1.3, bias: 0.05 }, { name: "Speaker roll-off", lp: 7000, q: 0.6 }, { name: "Output level", level: CLEAN.post }] },
+      // Distorted: the mids pushed into a hard-driven stage, then a speaker cabinet (steep roll-off above
+      // 5 kHz, a presence bump, some chest around 200 Hz).
+      odguitar:{ family: "guitar", label: "Electric guitar (distorted)", gain: 2.9, release: 0.07, tone: { base: 1800, range: 14000 },
+                zones: soundfontZones(sf, "electric_guitar_jazz", 40, 84, 3),
+                chain: [{ name: "Low cut before the amp", hp: 80 }, { name: "Mid push", peak: 750, gain: 5, q: 0.7 }, { name: "Input gain", level: DRIVE.pre }, { name: "Drive", drive: 16, bias: 0.08 },
+                        { name: "Low cut after the amp", hp: 70 }, { name: "Body", peak: 210, gain: 3, q: 0.8 }, { name: "Speaker roll-off", lp: 5000, q: 0.7 }, { name: "Speaker roll-off 2", lp: 6200, q: 0.5 },
+                        { name: "Presence", peak: 2300, gain: 5, q: 1 }, { name: "Output level", level: DRIVE.post }] },
+      // the soundfont's own clean and distorted electrics, as they were (kept for comparison: no tone, no amp)
+      cguitar:{ family: "guitar", label: "Electric guitar (clean, old samples)", gain: 2.6, release: 0.08,
                 zones: soundfontZones(sf, "electric_guitar_clean", 40, 84, 3) },
-      // distorted electric, for the emo / pop-punk style (level a first guess: the samples are compressed and loud)
-      dguitar:{ gain: 1.5, release: 0.06,
+      dguitar:{ family: "guitar", label: "Electric guitar (distorted, old samples)", gain: 1.5, release: 0.06,
                 zones: soundfontZones(sf, "distortion_guitar", 40, 84, 3) },
       // for hymns: the piano's voicings on a church organ (level a first guess; the samples are a few seconds long, so very long chords fade)
-      organ:  { gain: 1.3, release: 0.18,
+      organ:  { family: "piano", label: "Church organ", gain: 1.3, release: 0.18,
                 zones: soundfontZones(sf, "church_organ", 36, 84, 3) },
-      kit:    { gain: 1.25,
+      kit:    { family: "kit", gain: 1.25,
                 zones: soundfontKit(sf, { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46,
                                           crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 }),
                 // per-piece trim (the soundfont's kick is ~8x hotter than its ride); group/chokes =
@@ -176,9 +220,84 @@
   }
 
   function clamp(v, lo, hi){ return v < lo ? lo : v > hi ? hi : v; }
+  // which instrument's voicings a sound plays, and the sounds a page can offer for an instrument
+  function family(name){ var d = buildDefs("")[name]; return (d && d.family) || null; }
+  function sounds(fam){ var d = buildDefs(""); return Object.keys(d).filter(function (k){ return d[k].family === fam; }).map(function (k){ return { id: k, label: d[k].label || k }; }); }
+  // ---- the mixer's EQ: five bands for each instrument, after its amp. Shared by every bank (live and offline). ----
+  var EQ_DEFAULT = [{ type: "lowshelf", f: 100, gain: 0, q: 0.7 }, { type: "peaking", f: 300, gain: 0, q: 1 }, { type: "peaking", f: 1000, gain: 0, q: 1 },
+                    { type: "peaking", f: 3000, gain: 0, q: 1 }, { type: "highshelf", f: 8000, gain: 0, q: 0.7 }];
+  var EQ_TYPES = ["peaking", "lowshelf", "highshelf", "highpass", "lowpass"], eqSet = {}, eqLive = [];
+  function eqBand(b, d){ b = b || {};
+    return { type: EQ_TYPES.indexOf(b.type) >= 0 ? b.type : d.type, f: clamp(+b.f || d.f, 20, 18000), gain: clamp(+b.gain || 0, -24, 24), q: clamp(+b.q || d.q, 0.1, 18) }; }
+  function getEQ(name){ var e = eqSet[name]; return EQ_DEFAULT.map(function (d, i){ return eqBand(e && e[i], d); }); }
+  function setEQ(name, bands){
+    if (bands) eqSet[name] = EQ_DEFAULT.map(function (d, i){ return eqBand(bands[i], d); }); else delete eqSet[name];
+    eqLive = eqLive.filter(function (fn){ return fn(name); });           // (a bank whose context has closed drops out)
+  }
+  // ---- amp settings changed from a page: the definition's stages with other numbers ----
+  var ampSet = {};
+  function stageKind(s){ return s.drive != null ? "drive" : s.level != null ? "level" : s.hp != null ? "hp" : s.lp != null ? "lp" : s.peak != null ? "peak" : s.shelf != null ? "shelf" : "lowshelf"; }
+  function ampDefault(name){ var d = buildDefs("")[name]; return d && d.chain && d.chain.length ? d.chain : null; }
+  function getAmp(name){ var d = ampDefault(name); return d ? (ampSet[name] || d).map(function (s){ return Object.assign({}, s); }) : null; }
+  function setAmp(name, chain){
+    var d = ampDefault(name); if (!d) return;
+    if (!chain) delete ampSet[name];
+    else ampSet[name] = d.map(function (s, i){ var c = chain[i] || {}, k = stageKind(s), o = Object.assign({}, s);          // the definition's stages; only the numbers are taken
+      if (stageKind(c) !== k) return o;
+      if (k === "drive"){ o.drive = clamp(+c.drive || s.drive, 0.2, 60); o.bias = clamp(c.bias == null ? s.bias || 0 : +c.bias || 0, 0, 0.4); }
+      else if (k === "level") o.level = clamp(c.level == null ? s.level : +c.level || 0, 0, 40);
+      else { o[k] = clamp(+c[k] || s[k], 20, 18000); if (s.gain != null) o.gain = clamp(c.gain == null ? s.gain : +c.gain || 0, -24, 24); if (s.q != null) o.q = clamp(+c.q || s.q, 0.1, 18); }
+      return o; });
+    eqLive = eqLive.filter(function (fn){ return fn(name); });
+  }
+  // the amp's clipping curve: tanh(k x), full scale kept at full scale; bias makes the two halves unequal (even harmonics)
+  function driveCurve(k, bias){
+    var n = 4097, c = new Float32Array(n), b = bias || 0, z = Math.tanh(k * b), top = Math.max(Math.tanh(k * (1 + b)) - z, z - Math.tanh(k * (b - 1)));
+    for (var i = 0; i < n; i++){ var x = (i / (n - 1)) * 2 - 1; c[i] = (Math.tanh(k * (x + b)) - z) / top; }
+    return c;
+  }
 
   function create(ctx){
     var defsP = null, defs = null, ready = {}, loading = {}, rr = {}, live = new Set(), ringing = {};
+
+    // An instrument's channel strip: its amp chain, then the mixer's five EQ bands. Built the first time the
+    // instrument plays into `dest` with an amp or an EQ to go through (otherwise its notes go straight to `dest`,
+    // as they always did): -> the node its notes connect to.
+    var amps = typeof WeakMap === "function" ? new WeakMap() : null, strips = [];
+    function tuneEQ(strip){
+      var bands = getEQ(strip.inst), t = ctx.currentTime;
+      strip.eq.forEach(function (n, i){ var b = bands[i], cut = b.type === "highpass" || b.type === "lowpass";
+        if (n.type !== b.type) n.type = b.type;
+        n.frequency.setTargetAtTime(b.f, t, 0.015); n.Q.setTargetAtTime(b.q, t, 0.015); n.gain.setTargetAtTime(cut ? 0 : b.gain, t, 0.015); });
+    }
+    function tuneAmp(strip){
+      var chain = getAmp(strip.inst) || [], t = ctx.currentTime;
+      strip.amp.forEach(function (n, i){ var s = chain[i]; if (!s) return; var k = stageKind(s);
+        if (k === "drive"){ var sig = s.drive + "/" + (s.bias || 0); if (n._sig !== sig){ n.curve = driveCurve(s.drive, s.bias); n._sig = sig; } }
+        else if (k === "level") n.gain.setTargetAtTime(s.level, t, 0.015);
+        else { n.frequency.setTargetAtTime(s[k], t, 0.015); if (s.q != null) n.Q.setTargetAtTime(s.q, t, 0.015); if (s.gain != null) n.gain.setTargetAtTime(s.gain, t, 0.015); } });
+    }
+    eqLive.push(function (name){ if (ctx.state === "closed") return false; strips.forEach(function (s){ if (s.inst === name){ tuneEQ(s); tuneAmp(s); } }); return true; });
+    function ampFor(inst, def, dest){
+      if (!amps) return dest;
+      var m = amps.get(dest); if (!m){ m = {}; amps.set(dest, m); }
+      if (m[inst]) return m[inst];
+      if (!(def.chain && def.chain.length) && !eqSet[inst]) return dest;
+      var input = ctx.createGain(), node = input, stages = [];
+      (getAmp(inst) || def.chain || []).forEach(function (s){
+        var n;
+        if (s.drive != null){ n = ctx.createWaveShaper(); n.curve = driveCurve(s.drive, s.bias); n._sig = s.drive + "/" + (s.bias || 0); n.oversample = s.oversample || "4x"; }
+        else if (s.level != null){ n = ctx.createGain(); n.gain.value = s.level; }
+        else { n = ctx.createBiquadFilter();
+          var f = s.hp != null ? ["highpass", s.hp] : s.lp != null ? ["lowpass", s.lp] : s.peak != null ? ["peaking", s.peak] : s.shelf != null ? ["highshelf", s.shelf] : ["lowshelf", s.lowshelf];
+          n.type = f[0]; n.frequency.value = f[1]; if (s.q != null) n.Q.value = s.q; else if (f[0] === "highpass" || f[0] === "lowpass") n.Q.value = 0.707; if (s.gain != null) n.gain.value = s.gain; }
+        node.connect(n); node = n; stages.push(n);
+      });
+      var strip = { inst: inst, amp: stages, eq: EQ_DEFAULT.map(function (d){ var n = ctx.createBiquadFilter(); n.type = d.type; n.frequency.value = d.f; n.Q.value = d.q; n.gain.value = 0; node.connect(n); node = n; return n; }) };
+      strips.push(strip); tuneEQ(strip);
+      node.connect(dest);
+      return (m[inst] = input);
+    }
 
     function getDefs(){ return defsP || (defsP = resolveBase().then(function (sf){ defs = buildDefs(sf); return defs; })); }
 
@@ -236,7 +355,7 @@
         f.frequency.value = spec.cutoff ? spec.cutoff : Math.min(18000, (def.tone.base + def.tone.range * Math.pow(vel, 1.3)) * Math.pow(2, ((spec.midi || 60) - 60) / 24));
         src.connect(f); tail = f;
       }
-      tail.connect(g); g.connect(dest || ctx.destination);
+      tail.connect(g); g.connect(ampFor(inst, def, dest || ctx.destination));
       g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(level, t + 0.002);
 
       var v = { src: src, g: g, t: t };
@@ -266,6 +385,6 @@
 
   global.BandSounds = {
     create: create, define: define, resolveBase: resolveBase, pieces: PIECES.slice(),
-    soundfontZones: soundfontZones, soundfontKit: soundfontKit, pickZones: pickZones, noteName: noteName
+    family: family, sounds: sounds, setEQ: setEQ, getEQ: getEQ, setAmp: setAmp, getAmp: getAmp, stageKind: stageKind, EQ_DEFAULT: EQ_DEFAULT, EQ_TYPES: EQ_TYPES, soundfontZones: soundfontZones, soundfontKit: soundfontKit, pickZones: pickZones, noteName: noteName
   };
 })(typeof window !== "undefined" ? window : globalThis);
