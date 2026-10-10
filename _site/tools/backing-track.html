@@ -788,7 +788,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         <button type="button" class="bt-btn" id="bt-eq-reset-all">All instruments flat</button>
       </div>
       <div class="bt-eq" id="bt-eq-bands" role="group" aria-label="Five EQ bands"></div>
+      <div id="bt-amp" hidden="">
+        <div class="bt-row"><span class="bt-group-label" id="bt-amp-title">Amp</span><button type="button" class="bt-btn" id="bt-amp-reset">Amp as designed</button></div>
+        <div class="bt-eq" id="bt-amp-stages" role="group" aria-label="Amp stages, in the order the sound passes through them"></div>
+      </div>
       <details class="bt-info"><summary>Info</summary>
+      <p class="bt-hint">The clean and distorted electric guitars are the jazz guitar's samples played through an amp. When one of them is chosen above, its amp is listed under the EQ, stage by stage in the order the sound passes through: Input gain is how hard the amp is hit, Drive how much it distorts, Output level makes up the loudness afterwards. The EQ comes after the amp.</p>
       <p class="bt-hint">Five bands for each sound, remembered on this computer. Every band can be a bell (boost or cut around a frequency), a shelf (everything below or above it), or a cut (low cut removes what is below the frequency, high cut what is above; the amount does not apply). Width is how narrow the band is: low is broad, high is narrow. The settings belong to the sound, so the jazz guitar keeps its tone whatever tune or style is loaded.</p>
       </details>
     </details>
@@ -892,9 +897,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/band/bass.js?v=12"></script>
 <script src="../apps/shared/band/comp.js?v=27"></script>
 <script src="../apps/shared/band/presets.js?v=5"></script>
-<script src="../apps/shared/band/catalog.js?v=25"></script>
+<script src="../apps/shared/band/catalog.js?v=26"></script>
 <script src="../apps/shared/band/drums.js?v=11"></script>
-<script src="../apps/shared/band/sounds.js?v=8"></script>
+<script src="../apps/shared/band/sounds.js?v=9"></script>
 <script src="../apps/shared/band/player.js?v=113"></script>
 <script src="../apps/shared/band/midi.js?v=14"></script>
 <script src="../apps/shared/band/notation.js?v=6"></script>
@@ -1532,7 +1537,43 @@ document.addEventListener('DOMContentLoaded', async function () {
       $("bt-eq-fo" + i).textContent = b.f >= 1000 ? (Math.round(b.f / 10) / 100) + " kHz" : b.f + " Hz"; $("bt-eq-go" + i).textContent = cut ? "-" : (b.gain > 0 ? "+" : "") + b.gain + " dB"; $("bt-eq-qo" + i).textContent = shelf ? "-" : b.q;
       $("bt-eq-g" + i).disabled = cut; $("bt-eq-q" + i).disabled = shelf; });
   }
-  function eqInstSync(){ var was = $("bt-eq-inst").value, list = eqInsts(); fill($("bt-eq-inst"), list); if (list.some(function(o){ return o.id === was; })) $("bt-eq-inst").value = was; else $("bt-eq-inst").value = list[1].id; eqShow(); }
+  // ---- the amp of the sound chosen in the EQ panel: one block of sliders for each stage of its chain (localStorage.btAmp) ----
+  var AMP_KEY = "btAmp";
+  function ampSaved(){ try { return JSON.parse(localStorage.getItem(AMP_KEY) || "{}") || {}; } catch (e) { return {}; } }
+  function ampStore(id, chain){ var all = ampSaved(); if (chain) all[id] = chain; else delete all[id]; try { localStorage.setItem(AMP_KEY, JSON.stringify(all)); } catch (e) {} }
+  function ampDb(x){ return x > 0 ? Math.round(200 * Math.log(x) / Math.LN10) / 10 : -40; }                       // level <-> dB
+  function ampDrive(v){ return Math.round(0.5 * Math.pow(80, v / 100) * 100) / 100; }                              // slider 0..100 -> 0.5 .. 40
+  function ampDrivePos(k){ return Math.round(100 * Math.log(k / 0.5) / Math.log(80)); }
+  function hzText(f){ return f >= 1000 ? (Math.round(f / 10) / 100) + " kHz" : Math.round(f) + " Hz"; }
+  function ampShow(){
+    var id = $("bt-eq-inst").value, chain = BandSounds.getAmp(id), box = $("bt-amp-stages"); $("bt-amp").hidden = !chain; box.textContent = "";
+    if (!chain) return;
+    var lab = [].filter.call($("bt-eq-inst").options, function(o){ return o.value === id; })[0]; $("bt-amp-title").textContent = "Amp: " + (lab ? lab.textContent : id);
+    function slider(parent, label, min, max, step, value, read, onval){
+      var l = document.createElement("label"), out = document.createElement("output"), inp = document.createElement("input");
+      inp.type = "range"; inp.min = min; inp.max = max; inp.step = step; inp.value = value; out.textContent = read(+value);
+      l.appendChild(document.createTextNode(label + " ")); l.appendChild(out); l.appendChild(inp); parent.appendChild(l);
+      inp.addEventListener("input", function(){ out.textContent = read(+inp.value); onval(+inp.value); BandSounds.setAmp(id, chain); chain = BandSounds.getAmp(id); ampStore(id, chain); });
+      return inp;
+    }
+    chain.forEach(function(s, i){
+      var k = BandSounds.stageKind(s), d = document.createElement("div"), h = document.createElement("strong"); d.className = "bt-eq-band"; h.textContent = (i + 1) + ". " + (s.name || k); d.appendChild(h);
+      function db(x){ return (x > 0 ? "+" : "") + x + " dB"; }
+      if (k === "drive"){ slider(d, "Amount", 0, 100, 1, ampDrivePos(s.drive), function(v){ return ampDrive(v); }, function(v){ chain[i].drive = ampDrive(v); }).id = "bt-amp-" + i + "-drive";
+        slider(d, "Asymmetry", 0, 30, 1, Math.round((s.bias || 0) * 100), function(v){ return v + "%"; }, function(v){ chain[i].bias = v / 100; }).id = "bt-amp-" + i + "-bias"; }
+      else if (k === "level") slider(d, "Level", -30, 24, 0.5, Math.max(-30, Math.min(24, ampDb(s.level))), db, function(v){ chain[i].level = Math.pow(10, v / 20); }).id = "bt-amp-" + i + "-level";
+      else { slider(d, "Frequency", 0, 1000, 1, eqPos(s[k]), function(v){ return hzText(eqHz(v)); }, function(v){ chain[i][k] = eqHz(v); }).id = "bt-amp-" + i + "-f";
+        if (s.gain != null) slider(d, "Amount", -18, 18, 0.5, s.gain, db, function(v){ chain[i].gain = v; }).id = "bt-amp-" + i + "-gain";
+        if (s.q != null) slider(d, "Width (Q)", 0, 100, 1, eqQPos(s.q), function(v){ return eqQ(v); }, function(v){ chain[i].q = eqQ(v); }).id = "bt-amp-" + i + "-q"; }
+      box.appendChild(d);
+    });
+  }
+  function ampInit(){
+    var saved = ampSaved(); Object.keys(saved).forEach(function(id){ BandSounds.setAmp(id, saved[id]); });
+    $("bt-amp-reset").addEventListener("click", function(){ var id = $("bt-eq-inst").value; BandSounds.setAmp(id, null); ampStore(id, null); ampShow(); });
+    $("bt-eq-inst").addEventListener("change", ampShow);
+  }
+  function eqInstSync(){ var was = $("bt-eq-inst").value, list = eqInsts(); fill($("bt-eq-inst"), list); if (list.some(function(o){ return o.id === was; })) $("bt-eq-inst").value = was; else $("bt-eq-inst").value = list[1].id; eqShow(); ampShow(); }
   function eqInit(){
     var saved = eqSaved(); Object.keys(saved).forEach(function(id){ BandSounds.setEQ(id, saved[id]); });
     for (var i = 0; i < 5; i++){ var d = document.createElement("div"); d.className = "bt-eq-band";
@@ -1546,7 +1587,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("bt-eq-inst").addEventListener("change", eqShow);
     $("bt-eq-reset").addEventListener("click", function(){ var id = $("bt-eq-inst").value; BandSounds.setEQ(id, null); eqStore(id, null); eqInstSync(); });
     $("bt-eq-reset-all").addEventListener("click", function(){ Object.keys(eqSaved()).forEach(function(id){ BandSounds.setEQ(id, null); }); try { localStorage.removeItem(EQ_KEY); } catch (e) {} eqInstSync(); });
-    eqInstSync();
+    ampInit(); eqInstSync();
   }
   // drum kit mix: one fader per group of kit pieces
   var KIT = [ { id:"kick", label:"Kick", pieces:["kick"] }, { id:"snare", label:"Snare and cross-stick", pieces:["snare","rim","clap"] },
