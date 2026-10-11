@@ -15,7 +15,7 @@
 (function (global) {
   var GM = { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46, crash:49, ride:51, rideBell:53,
              tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 };
-  var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, guitar:26, aguitar:25, nguitar:24, cguitar:27, clguitar:27, dguitar:30, odguitar:30 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
+  var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, rhodes:4, wurli:4, organ:19, hammond:16, guitar:26, aguitar:25, nguitar:24, cguitar:27, clguitar:27, dguitar:30, odguitar:30 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
   var CHANNEL = { bass:0, comp:1, comp2:2, drums:9 };
   var NAME = { bass:"Bass", comp:"Comping", comp2:"Second chord instrument", drums:"Drums" };
 
@@ -65,7 +65,7 @@
           var ch = CHANNEL[p], notes, len;
           if (p === "drums"){ if (GM[ev.piece] == null) return; notes = [GM[ev.piece]]; len = Math.round(ppq / 8); }
           else { notes = p === "bass" ? [ev.midi] : (ev.midis || []); len = Math.max(1, Math.round((ev.dur || 0.5) * bq)); }
-          if (p === "comp" && tracks[p].inst == null) tracks[p].inst = (ev.inst || "piano") === "piano" && (bar.opts || {}).compSound === "epiano" ? "epiano" : ev.inst === "guitar" && PROGRAM[(bar.opts || {}).compSound] != null && /guitar$/.test(bar.opts.compSound) ? bar.opts.compSound : ev.inst || "piano";
+          if (p === "comp" && tracks[p].inst == null) tracks[p].inst = (ev.inst || "piano") === "piano" && PROGRAM[(bar.opts || {}).compSound] != null && !/guitar|bass/.test(bar.opts.compSound) ? bar.opts.compSound : ev.inst === "guitar" && PROGRAM[(bar.opts || {}).compSound] != null && /guitar$/.test(bar.opts.compSound) ? bar.opts.compSound : ev.inst || "piano";
           if (p === "comp2" && tracks[p].inst == null){ var s2 = ((bar.opts || {}).second || {}).compSound; tracks[p].inst = PROGRAM[s2] != null ? s2 : ev.inst || "piano"; }
           if (p === "bass" && tracks[p].inst == null) tracks[p].inst = (bar.opts || {}).bassSound === "electric" ? "ebass" : "bass";
           notes.forEach(function (n){
@@ -80,7 +80,7 @@
     want.forEach(function (p){
       var evs = tracks[p], ch = CHANNEL[p];
       var prog = PROGRAM[evs.inst || (p === "bass" ? "bass" : "piano")];
-      var name = p === "comp2" ? NAME[p] : p === "comp" ? (evs.inst === "guitar" ? "Guitar" : evs.inst === "epiano" ? "Electric piano" : "Piano") : p === "bass" && evs.inst === "ebass" ? "Electric bass" : NAME[p];
+      var name = p === "comp2" ? NAME[p] : p === "comp" ? (evs.inst === "guitar" ? "Guitar" : PROGRAM[evs.inst] === 4 ? "Electric piano" : evs.inst === "organ" || evs.inst === "hammond" ? "Organ" : "Piano") : p === "bass" && evs.inst === "ebass" ? "Electric bass" : NAME[p];
       var headEv = [{ tick:0, order:-2, bytes: meta(0x03, str(name)) }];
       if (p !== "drums") headEv.push({ tick:0, order:-1, bytes:[0xc0 | ch, prog] });
       chunks.push(chunk(headEv.concat(evs)));

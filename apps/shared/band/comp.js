@@ -839,6 +839,47 @@
     return { bar: bar, ending: ending, reset: reset };
   }
 
+  // The organist's right foot and left hand: where the swell pedal sits and when the rotary speaker changes speed, bar by
+  // bar (ORGAN.md beside this file gives the reasons and the sources). The organ has no touch: all its dynamics are here.
+  //   organist(ctx, method, st) -> [{ pos (beats), ctl: "swell" | "leslie", value, glide (beats) }]
+  // ctx.opts.organ = { swell: "auto" | 0..1, leslie: "auto" | "slow" | "fast" | "stop" } (unset = both automatic). st is the
+  // caller's to keep between bars. No random numbers.
+  //   Swell: follows how hard the band is playing (about half open when it plays down, nearly open at full), a little more
+  //     in a chorus. The last bar of a four-bar phrase opens through the bar into the next one; the bar after settles back.
+  //     A stop bar is pulled back sharply after its chord. The last chord swells up and is let go.
+  //   Leslie: slow is home. Straight-eighth music: fast through the last bar of a phrase that leads into a chorus or the top
+  //     of the form, or that the band is playing hard; fast for the second half of the last bar of any other four-bar
+  //     phrase when one chord has been held for two bars or more (a flick: fast and straight back, so the horn is still
+  //     slowing as the next phrase starts). Swing: the speaker stays slow (jazz organists mostly leave it alone) except for
+  //     the last two bars of the form on the last chorus. Fast on the final chord.
+  function organist(ctx, method, st){
+    var o = (ctx.opts && ctx.opts.organ) || {}, out = [], beats = ctx.beats || 4, I = ctx.intensity == null ? 0.5 : ctx.intensity, H = global.BandHarmony;
+    var qp = ((ctx.phrase && ctx.phrase.bar) || 0) % 4, lift = !!(H && H.lifted && H.lifted(ctx)), swing = !!(ctx.opts && ctx.opts.feel !== "straight") && !ctx.compound;
+    var nextLift = !!(ctx.opts && ctx.opts.lift && ctx.opts.lift.indexOf && ctx.nextIndex != null && ctx.opts.lift.indexOf(ctx.nextIndex) >= 0 && !lift);
+    var toTop = ctx.nextIndex === 0 && ctx.length > 4 && !ctx.last, base = clamp(0.48 + 0.42 * I + (lift ? 0.07 : 0), 0.3, 0.97);
+    function push(pos, ctl, value, glide){ out.push({ pos: Math.round(pos * 1000) / 1000, ctl: ctl, value: value, glide: glide || 0 }); }
+    // the chord held: how many bars the first chord of this bar has now sounded
+    var c0 = ctx.chords && ctx.chords[0] && ctx.chords[0].chord, one = !!c0 && ctx.chords.length === 1, key = c0 ? c0.key : "";
+    st.held = one && st.heldKey === key ? (st.held || 1) + 1 : 1; st.heldKey = one ? key : "";
+    if (o.swell == null || o.swell === "auto"){
+      if (method === "ending"){ push(0, "swell", clamp(base + 0.15, 0, 1), 1.5); push(Math.min(2, beats - 0.5), "swell", 0.35, 2.5); }
+      else if (ctx.stop){ push(0, "swell", clamp(base + 0.08, 0, 1), 0.1); push(Math.min(0.6, beats / 2), "swell", clamp(base - 0.25, 0.2, 1), 0.3); }
+      else if (qp === 3 || nextLift){ push(0, "swell", base, 0.6); push(beats > 2 ? 1 : 0.5, "swell", clamp(base + (nextLift ? 0.16 : 0.1), 0, 1), beats - 1); }       // opening into the next phrase
+      else push(0, "swell", qp === 0 ? clamp(base - 0.03, 0, 1) : base, qp === 0 ? 1.5 : 1);
+    } else if (!st.swellSet || st.swellSet !== o.swell){ push(0, "swell", clamp(+o.swell || 0, 0, 1), 0.2); st.swellSet = o.swell; }
+    if (o.leslie == null || o.leslie === "auto"){
+      var want = "slow", back = null;
+      if (method === "ending") want = "fast";
+      else if (swing){ if (ctx.finalChorus && ctx.length - ctx.index <= 2) want = "fast"; }
+      else if (ctx.stop) want = "slow";
+      else if ((qp === 3 || nextLift) && (nextLift || toTop || I >= 0.66)) want = "fast";
+      else if (qp === 3 && st.held >= 2 && beats >= 3) back = Math.floor(beats / 2);                 // the flick on a held chord
+      if (back != null){ if (st.leslie !== "slow"){ push(0, "leslie", "slow"); } push(back, "leslie", "fast"); push(Math.min(beats - 0.25, back + 1.5), "leslie", "slow"); st.leslie = "slow"; }
+      else if (st.leslie !== want){ push(0, "leslie", want); st.leslie = want; }
+    } else if (st.leslie !== o.leslie){ push(0, "leslie", o.leslie); st.leslie = o.leslie; }
+    return out;
+  }
+
   // A second chord player (the player's part "comp2"): another instance of the same part, playing ctx.opts.second
   // ({ comp: "piano" | "guitar", compSound, compRhythm, voicing, voiceMove? }) on top of the band's other options.
   // Silent, and drawing no random numbers, while opts.second is unset. It has its own fretting hand, takes no pins,
@@ -859,5 +900,5 @@
     return { bar: function (ctx){ return run("bar", ctx); }, ending: function (ctx){ return run("ending", ctx); }, reset: function (){ inner.reset(); } };
   }
 
-  global.BandComp = { create: create, createSecond: createSecond, secondOpts: secondOpts, FIGURES: FIG, PHRASES: PHRASES, GRID: GRID };
+  global.BandComp = { create: create, organist: organist, createSecond: createSecond, secondOpts: secondOpts, FIGURES: FIG, PHRASES: PHRASES, GRID: GRID };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -883,3 +883,58 @@ Unheard. User: "Is it implemented but not exposed? I'd like to be able to tweak 
    everywhere: the sliders' values live in this browser only, and the other pages play the amp as designed.
 ** TODO No amp for the jazz, steel or nylon guitar (they have no chain); no way to add a stage or pick another amp from the page.
 ** TODO Changing the drive changes the loudness: nothing compensates but the Output level slider.
+
+* Rhodes and Wurlitzer; tremolo stage; the tone panel follows the comping sound -- 2026-10-10
+Unheard. Levels by measurement.
+- User reported "the amp section does not appear to be rendering". Not reproduced in a browser (the user stopped that check). Found by
+  reading: the tone panel kept showing a sound whose EQ had been set earlier ("not in use") after the comping sound changed, and a sound
+  with no amp showed nothing at all. Now the panel moves to the comping sound whenever it changes (eqInstSync / eqComp), and a sound
+  with no amp says so and lists the ones that have one (#bt-amp-none). The "old samples" clean and distorted guitars have no amp.
+** ASK the user whether the amp block shows now; if not, which sound was chosen in Comping and in the tone panel's Instrument menu.
+- sounds.js: =rhodes= and =wurli=, both the soundfont's electric_piano_1 samples through an amp chain. The soundfont has NO Wurlitzer
+  (its second electric piano is an FM one), so the Wurlitzer is the tine-piano samples reshaped: lows cut at 130 Hz, +7 dB around 950 Hz
+  into a drive of 4, speaker roll-off at 4.2 kHz, tremolo 5.8 Hz at 38%. Rhodes: +3 dB low shelf, drive 1.6, bell at 1.9 kHz, tremolo
+  4.6 Hz at 22%. =epiano= is unchanged and stays in the menu as "Electric piano (plain samples)"; Motown still uses it.
+- New chain stage { trem: Hz, depth: 0..1 }: a gain moved by a slow oscillator (built-in nodes). Sliders: Speed, Depth; depth 0 = off.
+- Measured (pat/keys.cdp.js, quarter-note chords alone through the bus): plain -23.0 dB, Rhodes -23.2, Wurlitzer -23.2.
+- MIDI export: any piano-family sound with a program number is named on its track (rhodes and wurli = program 4, organ = 19).
+** VERIFY BY EAR: whether the Wurlitzer reads as one at all; both tremolos (mono: a real suitcase Rhodes pans left and right).
+** TODO A real Wurlitzer, and a Rhodes with velocity layers (the bark is in the samples, not the amp), need recorded samples.
+** TODO No stereo tremolo, no chorus or phaser stage.
+
+* Tonewheel organ (sound "hammond"): tonebars, C3, swell and Leslie worked by the band -- 2026-10-10
+Unheard. The research, every number's source and every guess are in ORGAN.md beside this file; read that first.
+- sounds.js: the first SYNTHESIZED instrument (def.synth "tonewheel", zones []): three oscillators a note, key click, no touch.
+  New chain stages scanner / swell / leslie (stages may now be several nodes: _in, _out, set, ctl). BandSounds.setTonebars / getTonebars,
+  setControl / getControl; bank.control(inst, name, value, when, glide) for a control at a time.
+- comp.js BandComp.organist(ctx, method, st): the pedal and the speed for one bar. player.js calls it for comp and comp2 when their sound
+  is a tonewheel organ and schedules the result (rec.parts.ctl; opts.organ = { swell: "auto" | 0..1, leslie: "auto" | "slow" | "fast" | "stop" }).
+- Page: Mixer > Organ panel; the organ's amp stages have sliders in Tone (EQ). opts.organ is a section setting (SEC_KEYS) and is saved in setups.
+- The Leslie's two filters: BiquadFilter low-pass / high-pass take Q in dB, not as a plain number. -6.02 is the flat crossover.
+  (The other chains' lp / hp stages were written with plain numbers such as 0.7: they are a fraction of a dB of resonance, and the levels
+  were measured with them, so they are left.)
+- Level: held chords alone come out 4 dB over the plain electric piano's (which die away). Test: pat/organ.cdp.js ("ORGAN OK").
+** VERIFY BY EAR, in this order: the bare tone and key click; C3; the speaker slow and fast and the change between; then the automation.
+** ASK the user the five questions at the end of ORGAN.md, and replace the guessed rules with the answers.
+** TODO No organ style in the catalog (it is a sound: pick it in Comping, or as the second instrument); the comping is piano voicings on "pad".
+** TODO MIDI export writes the notes on program 16 with no pedal (CC 11) or speed (CC 1) data.
+** TODO A chain's oscillators (scanner, rotors) run for the life of the audio context once the organ has played.
+
+* Minor blues and rhythm changes; notation staves and section view -- 2026-10-10
+- Changes menu: "Minor blues" (12 bars; i7 | iv7 | i7 | i7 | iv7 | iv7 | i7 | i7 | bVI7 | V7 | i7 | iiø V7; opens in C minor) and
+  "Rhythm changes (32 bars)" (AABA with P: lines for the four sections; opens in Bb at 184). Like the other built-in changes they are
+  written in F in PRESETS and transposed; new preset fields =mode= ("m"), =key= (the key the Key menu goes to) and =sections= ("A:8,A:8,B:8,A:8").
+  The Meter menu rewrites them like the blues.
+- notation.js toAbc: =show: { comp, comp2, bass, drums }= and =names: { comp, comp2 }=. The second chord instrument (parts.comp2) gets a
+  staff of its own (grand staff if it is a keyboard), voices K2 / L2. Chord symbols go over whichever staff is on top. With nothing
+  chosen the comping is shown. Called the old way (no =show=) the output is unchanged unless the bars hold a second instrument.
+- Notation panel: Show [comping] [second, when one is on] [Bass] [Drums], named after the sounds in use (Pno. / E.Pno. / Org. / Gtr., "2"
+  for the second). "Only the section being played" (when the chart has sections): the bars of one pass of the section heard, turning
+  to the next section during its last bar (the band is already writing a pass ahead while the panel is open); stopped, the section
+  last heard, else the first.
+- Test: pat/notation.cdp.js ("NOTATION OK"). lead/page.test.js had the built-in tunes' bar counts written in; rhythm changes added.
+** VERIFY BY EYE: three or four staves at phone width; the second instrument's staff name; a section of one or two bars on its own line.
+** TODO The rhythm changes are one common set (I VI7 ii V | iii VI7 ii V | v I7 | IV7 #iv dim | ...); no choice of variants, and the
+   second A's ending is the same as the last A's.
+** TODO Section view in Hold mode shows one pass of the section; it does not say which time round it is.
+** TODO MIDI export still has its own three tick boxes (the second instrument goes with the comping).

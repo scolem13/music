@@ -112,11 +112,11 @@
 <script src="/apps/shared/chord-entry.js?v=2"></script>
 <script src="/apps/shared/band/harmony.js?v=23"></script>
 <script src="/apps/shared/band/bass.js?v=11"></script>
-<script src="/apps/shared/band/comp.js?v=24"></script>
+<script src="/apps/shared/band/comp.js?v=25"></script>
 <script src="/apps/shared/band/catalog.js?v=23"></script>
 <script src="/apps/shared/band/drums.js?v=9"></script>
-<script src="/apps/shared/band/sounds.js?v=9"></script>
-<script src="/apps/shared/band/player.js?v=107"></script>
+<script src="/apps/shared/band/sounds.js?v=11"></script>
+<script src="/apps/shared/band/player.js?v=108"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };

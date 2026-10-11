@@ -21,7 +21,7 @@ for (const p of PRESETS) for (const mt of METERS){
 const KEYS = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
 for (const p of PRESETS){
   const parsed = TuneChart.parse(p.abc);
-  const NB = p.bars.split("|").length; assert.strictEqual(NB, p.id === "watermelon" ? 16 : 12);
+  const NB = p.bars.split("|").length; assert.strictEqual(NB, p.id === "watermelon" ? 16 : p.id === "rhythm" ? 32 : 12);
   assert.strictEqual(parsed.bars.length, NB, p.id + " bar count");
   assert.strictEqual(parsed.beatsPerBar, 4); assert.strictEqual(parsed.unitsPerBeat, 1); assert.strictEqual(parsed.keyPc, 5);
   assert(parsed.bars.every(b => b.lengthUnits === 4 && b.chords.length >= 1), p.id + " every bar full with a chord");

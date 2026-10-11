@@ -1,8 +1,12 @@
 // notation.js — write out what the band played as ABC (BandNotation), for abcjs to draw.
 // Input is the per-bar records from the player's onBarEvents (the notes as generated).
 //
-//   BandNotation.toAbc(bars, { key:"F", drums:false, barsPerLine:4, title:"" }) -> ABC string
-//        staves: comping · bass (bass clef) · optional drums (percussion clef, two voices)
+//   BandNotation.toAbc(bars, { key:"F", drums:false, barsPerLine:4, title:"", show, names }) -> ABC string
+//        staves: comping · a second chord instrument, when the bars have one · bass (bass clef) · optional drums
+//        (percussion clef, two voices). show = { comp, comp2, bass, drums } picks the staves (a part left out of it
+//        keeps its usual answer: comping, second instrument and bass shown, drums as `drums` says); with every part
+//        switched off the comping is shown. names = { comp, comp2 } are the staff names (else "Pno." / "Gtr.").
+//        The chord symbols are written over the top staff, whichever it is.
 //        A piano is written on a grand staff, by hand and not by pitch: the bass clef holds what the left hand
 //        plays. Events the comping marks hand:"L" are the left hand. A voicing with no separate left hand is
 //        shared out as a pianist would (hands(), the Chord Sheet's rule): up to three notes within an octave
@@ -158,33 +162,42 @@
   function toAbc(bars, o){
     o = o || {}; bars = bars || [];
     var K = keyInfo(o.key), perLine = o.barsPerLine || 4, first = bars[0] || {}, beats0 = first.beats || 4;
-    var guitar = bars.some(function (b){ return ((b.parts || {}).comp || []).some(function (e){ return e.inst === "guitar"; }); });
+    function isGuitar(part){ return bars.some(function (b){ return ((b.parts || {})[part] || []).some(function (e){ return e.inst === "guitar"; }); }); }
     var M = global.BandMidi, straight = M ? bars.every(function (b){ return M.swingOf(b) <= 0.5; }) : !!o.straight;
-    var voices = [ { id:"K", def:'V:K clef=treble name="' + (guitar ? "Gtr." : "Pno.") + '"' } ];
-    if (!guitar) voices.push({ id:"L", def:"V:L clef=bass" });               // the piano's left hand
-    voices.push({ id:"B", def:'V:B clef=bass name="Bass"' });
-    if (o.drums){ voices.push({ id:"U", def:'V:U clef=perc stem=up name="Dr."' }); voices.push({ id:"D", def:"V:D clef=perc stem=down" }); }
+    var sh = o.show || {}, names = o.names || {}, has2 = bars.some(function (b){ return ((b.parts || {}).comp2 || []).length; });
+    var want = { comp: sh.comp !== false, comp2: has2 && sh.comp2 !== false, bass: sh.bass !== false, drums: sh.drums == null ? !!o.drums : !!sh.drums };
+    if (!want.comp && !want.comp2 && !want.bass && !want.drums) want.comp = true;
+    // voices: { id, def, kind: "comp" | "bass" | "drums", part (whose events), hand ("L" = a piano's left-hand staff) }
+    var voices = [], score = [];
+    [["comp", "K", "L", ""], ["comp2", "K2", "L2", " 2"]].forEach(function (x){
+      if (!want[x[0]]) return; var gtr = isGuitar(x[0]), name = names[x[0]] || (gtr ? "Gtr." : "Pno.") + x[3];
+      voices.push({ id: x[1], kind: "comp", part: x[0], hand: "R", def: "V:" + x[1] + ' clef=treble name="' + name + '"' });
+      if (!gtr) voices.push({ id: x[2], kind: "comp", part: x[0], hand: "L", def: "V:" + x[2] + " clef=bass" });        // the piano's left hand
+      score.push(gtr ? x[1] : "{" + x[1] + " " + x[2] + "}");
+    });
+    if (want.bass){ voices.push({ id:"B", kind: "bass", def:'V:B clef=bass name="Bass"' }); score.push("B"); }
+    if (want.drums){ voices.push({ id:"U", kind: "drums", def:'V:U clef=perc stem=up name="Dr."' }); voices.push({ id:"D", kind: "drums", down: true, def:"V:D clef=perc stem=down" }); score.push("(U D)"); }
 
     // per voice, per bar: the grid of items
     function grids(v){
       return bars.map(function (bar){
         var items = {}, P = bar.parts || {};
         var cmp = !!bar.compound, per = cmp ? 3 : 2;                          // written eighths per beat
-        if (v === "B") (P.bass || []).forEach(function (e){ var g = snap(e.pos, cmp), ch = chordAt(bar.chords, e.pos);
+        if (v.kind === "bass") (P.bass || []).forEach(function (e){ var g = snap(e.pos, cmp), ch = chordAt(bar.chords, e.pos);
           items[g] = { want: Math.max(1, Math.round((e.dur || 1) * per + 0.45)), tok: function (ms){ return pitchTok(e.midi + 12, ch, K, ms); } }; });
-        else if (v === "K" || v === "L"){ var separate = (P.comp || []).some(function (e){ return e.hand === "L"; });
-          (P.comp || []).forEach(function (e){ var g = snap(e.pos, cmp);
+        else if (v.kind === "comp"){ var evs = P[v.part] || [], separate = evs.some(function (e){ return e.hand === "L"; });
+          evs.forEach(function (e){ var g = snap(e.pos, cmp);
           // an off-beat hit just before a change is spelled as the chord it anticipates
           var ch = chordAt(bar.chords, e.pos + 0.5) || chordAt(bar.chords, e.pos);
           if (e.pos + 0.5 >= bar.beats - 1e-6 && bar.nextChord) ch = bar.nextChord;
-          var hd = e.inst === "guitar" ? { R: (e.midis || []).map(function (m){ return m + 12; }), L: [] } : hands(e, ch, separate), mine = v === "L" ? hd.L : hd.R;
+          var hd = e.inst === "guitar" ? { R: (e.midis || []).map(function (m){ return m + 12; }), L: [] } : hands(e, ch, separate), mine = v.hand === "L" ? hd.L : hd.R;
           if (!mine.length) return;
           var want = Math.max(1, Math.round((e.dur || 0.5) * per)), it = items[g];
           if (!it){ it = items[g] = { want: want, list: [], ch: ch }; it.tok = (function (it){ return function (ms){
             var t = it.list.map(function (m){ return pitchTok(m, it.ch, K, ms); }); return t.length > 1 ? "[" + t.join("") + "]" : t[0] || "z"; }; })(it); }
           else it.want = Math.max(it.want, want);                              // two events of one hand at one moment: one chord
           mine.forEach(function (m){ if (it.list.indexOf(m) < 0) it.list.push(m); }); it.list.sort(function (a, b){ return a - b; }); }); }
-        else (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || (v === "D") !== !!DOWN[e.piece]) return;
+        else (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || !!v.down !== !!DOWN[e.piece]) return;
           var g = snap(e.pos, cmp), it = items[g] || (items[g] = { fill: true, want: 1, hits: [], tok: function (){
             var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0] + h[1]]) return; seen[h[0] + h[1]] = 1; t.push((h[1] ? "!style=x!" : "") + h[0]); });
             return t.length > 1 ? "[" + t.join("") + "]" : t[0]; } });
@@ -195,12 +208,12 @@
     bars.forEach(function (bar, i){ var nb = bars[i + 1]; bar.nextChord = nb ? chordAt(nb.chords, 0) : null; });
 
     var body = {}; voices.forEach(function (v){
-      var gs = grids(v.id), carry = null;
+      var gs = grids(v), carry = null;
       body[v.id] = bars.map(function (bar, i){
         var marks = {}, cmp = !!bar.compound, nb = bars[i + 1], sig = sigOf(bar);
-        if (v.id === "K") (bar.chords || []).forEach(function (c){ marks[Math.round(c.pos * (cmp ? 3 : G))] = chordName(c.chord); });
+        if (v === voices[0]) (bar.chords || []).forEach(function (c){ marks[Math.round(c.pos * (cmp ? 3 : G))] = chordName(c.chord); });
         var ng = gs[i + 1], nextFree = !!ng && ng[0] === undefined && (!!(nb && nb.compound) || !Object.keys(ng).some(function (g){ return g < G && (g % G === 4 || g % G === 8); }));
-        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.id === "K" || v.id === "L" || v.id === "B", cmp);
+        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.kind !== "drums", cmp);
         carry = r.carry;
         return (i > 0 && sig !== sigOf(bars[i - 1]) ? "[M:" + sig + "]" : "") + r.abc;
       });
@@ -210,7 +223,7 @@
     var head = ["X:1"]; if (o.title) head.push("T:" + o.title);
     if (first.compound) head.push("M:" + sigOf(first), "L:1/8", "Q:3/8=" + Math.round(first.tempo || 120));
     else head.push("M:" + beats0 + "/4", "L:1/8", 'Q:"' + (straight ? "Straight" : "Swing") + '" 1/4=' + Math.round(first.tempo || 120));
-    head.push("%%score " + (guitar ? "K" : "{K L}") + " B" + (o.drums ? " (U D)" : ""));
+    head.push("%%score " + score.join(" "));
     voices.forEach(function (v){ head.push(v.def); });
     head.push("K:" + K.abc);
     var lines = [], lastLine = {};

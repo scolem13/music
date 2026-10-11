@@ -2522,7 +2522,7 @@ renderChips();
 </script>
 <script src="/apps/shared/audio.js?v=5"></script>
 <script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/band/sounds.js?v=9"></script>
-<script src="/apps/shared/band/player.js?v=107"></script>
+<script src="/apps/shared/band/sounds.js?v=11"></script>
+<script src="/apps/shared/band/player.js?v=108"></script>
 <script src="/apps/shared/establish-button.js"></script>
 ```

@@ -196,6 +196,7 @@
     this.tempo = c.tempo; this.spb = 60 / c.tempo; this.anchorL = 0; this.anchorT = 0;
     this.form = buildForm(c.parsed, c.transpose); this.sections = sectionsOf(this.form); this.arcs = sectionArcs(this.sections);
     this.advance = null; this.held = null; this.fillAsk = null; this.jump = null; this.lastInfo = null;   // hold mode and Fill now (see generate)
+    this.organ = {};                                              // the organist's memory, for each chord part played on an organ
     this.human = mulberry32(seed + SEED.human);
     this.human2 = mulberry32(seed + SEED.human + 17);             // the second chord player's own, so the others are humanized the same with or without it
     this.parts = {};
@@ -312,6 +313,16 @@
         evs.forEach(function (e){ if (e && e.vel != null) e.vel = Math.round(clamp(e.vel * dyn, 0.03, 1) * 1000) / 1000; });   // louder as the band builds
         rec.parts[p] = evs; self.collect(p, evs, L0, bctx.beats, bctx.compound, bctx.unit); }
       catch (e){ if (global.console) console.error("BandPlayer: " + p + "." + method + " failed", e); } });
+    // An instrument with a pedal and a switch (the tonewheel organ): where the swell sits and when the rotary speaker changes
+    // speed in this bar (BandComp.organist). Kept beside the notes as rec.parts.ctl and scheduled like them.
+    var S = global.BandSounds, C = global.BandComp;
+    if (S && S.getControl && C && C.organist) ["comp", "comp2"].forEach(function (p){
+      var o = bctx.opts || {}, snd = p === "comp" ? (o.compSound || o.comp) : (o.second && (o.second.compSound || o.second.comp));
+      if (!snd || !S.getTonebars(snd) || !rec.parts[p] || tacet.indexOf(p) >= 0) return;
+      var mine = self.organ[p] || (self.organ[p] = {}), cx = p === "comp2" ? Object.assign({}, bctx, { opts: Object.assign({}, o, { organ: (o.second && o.second.organ) || o.organ }) }) : bctx;
+      try { var cs = C.organist(cx, method, mine).map(function (e){ e.sound = snd; e.straight = true; return e; });
+        rec.parts.ctl = (rec.parts.ctl || []).concat(cs); self.collect("ctl", cs, L0, bctx.beats, bctx.compound, bctx.unit); }
+      catch (e){ if (global.console) console.error("BandPlayer: organist failed", e); } });
     if (this.barTap && !bctx.intro) this.barTap(rec);        // (the intro is not part of the log of choruses)                       // onBarEvents: the bar exactly as generated (notation / MIDI export)
     return rec;
   };
@@ -383,6 +394,7 @@
       fill: this.takeFill(), sectionEnd: sectionEnd,
       intensity: this.level(sec && c.opts.build !== false ? this.sectionLevel(si, this.formIdx, nextIdx) : intensityFor(cp, r.len, this.chorus, c.choruses, c.opts && c.opts.variation)),
       phrase: { bar: cp % 4, turnaround: r.len - 1 - cp < 2, top: this.formIdx === r.from } };
+    bctx.finalChorus = c.choruses > 0 && this.chorus >= c.choruses - 1;
     gi.ctx = bctx; gi.beats = beats; gi.unit = u; gi.compound = !!fb.compound;
     gi.rec = this.callParts("bar", bctx, L0);
     // The tune, where the chart's bar has one written out (fb.melody): on the comping instrument, through the comping fader.
@@ -440,6 +452,7 @@
   };
   // Hand one event to the sample bank: swing is already in L; add the human touches here.
   Session.prototype.fire = function (p, L){
+    if (p.part === "ctl"){ if (this.bank.control) this.bank.control(p.ev.sound, p.ev.ctl, p.ev.value, this.timeOf(L), (p.ev.glide || 0) * this.spb * (p.unit || 1)); return; }
     var ev = p.ev, h = p.part === "comp2" ? this.human2 : this.human, hz = this.c.humanize == null ? 1 : this.c.humanize, dest = this.bus.ins[p.part];
     var t = this.timeOf(L) + (LAY[p.part] + (h() + h() - 1) * JITTER[p.part]) * hz;
     var vel = clamp((ev.vel == null ? 0.7 : ev.vel) * (1 + (h() * 2 - 1) * VEL_JITTER * hz), 0, 1);
