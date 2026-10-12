@@ -31,6 +31,7 @@
 //   player.setKitVolume(piece, v)  // fader for one kit piece, 0..1.5 (1 = as mixed); cfg.kit = { piece: v } to start with
 // Sounds: opts.bassSound "electric" plays the bass part on "ebass"; opts.compSound (any sound of the comping instrument's family, BandSounds.family) e.g. "epiano" plays
 // piano comping on "epiano"; opts.rideSound "ride2" swaps the ride cymbal. The parts never know.
+// Octaves: opts.octave = { bass: -1, comp: 1, comp2: 0 } moves a player's notes by whole octaves (sound, notation and MIDI alike).
 // Stop time: opts.stops = [form bar index, ...]. On those bars ctx.stop is true (the band hits beat 1
 // and only the bass leads back in) and the bar before gets ctx.nextStop, so nothing rings across.
 //   player.setStartBar(i)          // form bar the next play() starts on (after the count-in)
@@ -299,6 +300,13 @@
     if (!fb || !fb.style) return c.opts; if (!(fb.style in m)){ var s = styleOptsFor(fb.style, c.opts); m[fb.style] = s ? s.opts : c.opts; }
     return m[fb.style];
   };
+  // opts.octave = { bass: n, comp: n, comp2: n }: that player's notes n octaves up (or down). The part chooses its notes as ever;
+  // they are moved afterwards, so the sound, the notation and the MIDI file all carry the move.
+  function octaves(part, evs, opts){
+    var n = opts && opts.octave ? Math.max(-3, Math.min(3, opts.octave[part] | 0)) : 0; if (!n) return evs;
+    evs.forEach(function (e){ if (!e) return; if (e.midi != null) e.midi += 12 * n; if (e.midis) e.midis = e.midis.map(function (m){ return m + 12 * n; }); });
+    return evs;
+  }
   Session.prototype.callParts = function (method, bctx, L0){
     var self = this; this.nowOpts = bctx.opts && bctx.opts !== this.c.opts ? bctx.opts : null;
     var rec = { bar: bctx.bar, index: bctx.index, chorus: bctx.chorus, length: bctx.length, beats: bctx.beats, tempo: bctx.tempo,
@@ -309,7 +317,7 @@
       // the drummer listens: how busy and how loud the bass and the chords are in this bar, half and half with the conductor's intensity
       if (p === "drums" && method === "bar"){ var n = 0, vs = 0; ["bass", "comp"].forEach(function (q){ (rec.parts[q] || []).forEach(function (e){ if (e.hand === "L") return; n++; vs += e.vel || 0.6; }); });
         if (n){ var dens = clamp(n / (2 * (bctx.beats || 4)) * 1.3, 0, 1), loud = clamp((vs / n - 0.5) / 0.3, 0, 1); bctx.energy = clamp(0.5 * (bctx.intensity == null ? 0.5 : bctx.intensity) + 0.25 * dens + 0.25 * loud, 0, 1); } }
-      try { var evs = part[method](bctx) || [], dyn = 0.86 + 0.28 * (bctx.intensity == null ? 0.5 : bctx.intensity);
+      try { var evs = octaves(p, part[method](bctx) || [], bctx.opts || self.c.opts), dyn = 0.86 + 0.28 * (bctx.intensity == null ? 0.5 : bctx.intensity);
         evs.forEach(function (e){ if (e && e.vel != null) e.vel = Math.round(clamp(e.vel * dyn, 0.03, 1) * 1000) / 1000; });   // louder as the band builds
         rec.parts[p] = evs; self.collect(p, evs, L0, bctx.beats, bctx.compound, bctx.unit); }
       catch (e){ if (global.console) console.error("BandPlayer: " + p + "." + method + " failed", e); } });

@@ -1,0 +1,102 @@
+---
+title: "Lessons"
+toc: false
+---
+
+```{=html}
+<style>
+.ll-pick{display:flex;flex-wrap:wrap;gap:.4rem;margin:1rem 0 1.4rem}
+.ll-pick button{font-family:var(--font-mono);font-size:.82rem;padding:.35rem .8rem;border:1px solid var(--site-border);border-radius:999px;background:var(--site-surface);color:var(--site-ink)}
+.ll-pick button[aria-pressed="true"]{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.ll-pick button:focus-visible{outline:2px solid var(--site-accent-dk);outline-offset:2px}
+.ll-list{display:grid;gap:.8rem;padding:0;margin:0;list-style:none}
+.ll-list li{border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface);padding:.9rem 1.1rem}
+.ll-list li[hidden]{display:none}
+.ll-list a{font-family:var(--font-display);font-size:1.2rem;font-weight:600;text-decoration:none}
+.ll-list a:hover{text-decoration:underline}
+.ll-list p{margin:.3rem 0 0;color:var(--site-ink-2)}
+.ll-step{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-3);display:block;margin-bottom:.15rem}
+.ll-note{color:var(--site-ink-2);margin:.2rem 0 1rem}
+</style>
+
+<p>These lessons are all built on the twelve-bar blues, and the site's backing band plays every example in them. Choose your instrument to see the lessons written for it, in the order to take them.</p>
+
+<div class="ll-pick" id="ll-pick" role="group" aria-label="Instrument">
+  <button type="button" data-inst="all">All</button>
+  <button type="button" data-inst="bass">Bass</button>
+  <button type="button" data-inst="guitar">Guitar</button>
+  <button type="button" data-inst="piano">Piano</button>
+  <button type="button" data-inst="drums">Drums</button>
+  <button type="button" data-inst="violin">Violin</button>
+  <button type="button" data-inst="sax">Saxophone</button>
+  <button type="button" data-inst="other">Another instrument</button>
+</div>
+<p class="ll-note" id="ll-note" aria-live="polite"></p>
+
+<ol class="ll-list" id="ll-list">
+  <li data-for="all bass guitar piano drums violin sax other">
+    <span class="ll-step"></span>
+    <a href="blues-changes.html">Changing the Changes in a 12-Bar Blues</a>
+    <p>What the chords of a blues are and how players vary them, from three chords to a jazz blues, with a chorus you can build yourself and an ear test. For every instrument: start here.</p>
+  </li>
+  <li data-for="all bass">
+    <span class="ll-step"></span>
+    <a href="blues-bass.html">Blues for Bass: From Roots to a Walking Line</a>
+    <p>Roots, then root and fifth, then the chord tones as a written line, then walking. Fretboard diagrams, bass-clef notation and the band's own bass line written out.</p>
+  </li>
+  <li data-for="all guitar">
+    <span class="ll-step"></span>
+    <a href="blues-guitar.html">Blues for Guitar: From Roots to Shell Chords</a>
+    <p>Two- and three-note chords built from the 3rd and 7th, on strings 5 and 4 and on strings 4 and 3, with the same shapes a tritone higher. No barre chords.</p>
+  </li>
+  <li data-for="all piano">
+    <span class="ll-step"></span>
+    <a href="blues-piano.html">Blues for Piano: From Roots to Rootless Voicings</a>
+    <p>Left-hand roots, guide tones in the right hand, three-note shells and rootless left-hand voicings, each on a keyboard diagram and a grand staff.</p>
+  </li>
+  <li data-for="all drums">
+    <span class="ll-step"></span>
+    <a href="blues-drums.html">Blues for Drums: From Quarter Notes to the Shuffle</a>
+    <p>How to read a drum part, then the beat, the ride pattern, swing time, fills that mark the form, the shuffle, the slow 12/8 and straight eighths.</p>
+  </li>
+  <li data-for="all violin sax other">
+    <span class="ll-step"></span>
+    <a href="blues-melody.html">Blues for Violin and Saxophone: Playing the Changes</a>
+    <p>For any instrument that plays one note at a time. Roots, chord tones, guide-tone lines, a riff, and the melody of <em>Blues in the Closet</em>, written in your own key.</p>
+  </li>
+  <li data-for="all bass guitar piano violin sax other">
+    <span class="ll-step"></span>
+    <a href="blues-improv.html">Improvising on a Blues: Blues in the Closet</a>
+    <p>Starting from the melody: hitting the change in bar 5, the blues and pentatonic scales, and a scale for each chord. Scales are shown as tablature, keyboard fingerings or a violin fingerboard, whichever you play.</p>
+  </li>
+</ol>
+
+<script>
+// Show the lessons for one instrument, numbered in the order to take them. The choice is kept (localStorage.llInst) and
+// can be given in the address: lessons/?instrument=bass
+(function () {
+  var NOTES = {
+    all: 'Every lesson. The first is for everyone; the rest each say who they are for.',
+    bass: 'Three lessons for bass, in this order.',
+    guitar: 'Three lessons for guitar, in this order.',
+    piano: 'Three lessons for piano, in this order.',
+    drums: 'Two lessons for drums. The first is worth reading even though there is nothing in it to play: a drummer who knows the chords hears the form.',
+    violin: 'Three lessons for violin, in this order. Leave the Instrument menu on those pages at violin or concert pitch.',
+    sax: 'Three lessons for saxophone, in this order. On the last two, choose your saxophone in the Instrument menu and everything is written in your key.',
+    other: 'For any other instrument that plays one note at a time (flute, trumpet, clarinet, voice). Choose concert pitch or your transposition in the Instrument menu on the last two pages.'
+  };
+  var pick = document.getElementById('ll-pick'), items = document.querySelectorAll('#ll-list li'), note = document.getElementById('ll-note');
+  function show(inst) {
+    if (!NOTES[inst]) inst = 'all';
+    var n = 0;
+    Array.prototype.forEach.call(items, function (li) { var on = li.getAttribute('data-for').split(' ').indexOf(inst) >= 0; li.hidden = !on; if (on) li.querySelector('.ll-step').textContent = inst === 'all' ? '' : 'Lesson ' + (++n); });
+    Array.prototype.forEach.call(pick.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-inst') === inst)); });
+    note.textContent = NOTES[inst];
+    try { localStorage.setItem('llInst', inst); } catch (e) {}
+  }
+  pick.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(b.getAttribute('data-inst')); });
+  var q = /[?&]instrument=([a-z]+)/.exec(location.search), saved = null; try { saved = localStorage.getItem('llInst'); } catch (e) {}
+  show(q ? q[1] : saved || 'all');
+})();
+</script>
+```

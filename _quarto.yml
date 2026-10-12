@@ -15,6 +15,17 @@ website:
     left:
       - href: index.qmd
         text: Home
+      - text: Lessons
+        menu:
+          - lessons/index.qmd
+          - text: "---"
+          - lessons/blues-changes.qmd
+          - lessons/blues-bass.qmd
+          - lessons/blues-guitar.qmd
+          - lessons/blues-piano.qmd
+          - lessons/blues-drums.qmd
+          - lessons/blues-melody.qmd
+          - lessons/blues-improv.qmd
 #      - text: Lessons
 #        menu:
 #          - lessons/quarter-notes.qmd

@@ -59,7 +59,7 @@ for (const id of Object.keys(M)){
     }
   }
   // notation: every written bar is exactly one bar long, in the right meter
-  function barLen(tok){ let t = tok.replace(/"[^"]*"/g, "").replace(/![^!]*!/g, ""), sum = 0, trip = 0, mm; const re = /\(3|\[[^\]]*\](\d*)|[_=^]*[A-Ga-gz][,']*(\d*)/g;
+  function barLen(tok){ let t = tok.replace(/"[^"]*"/g, "").replace(/![^!]*!/g, ""), sum = 0, trip = 0, mm; const re = /\(3|\[[^\]]*\](\d*)|[_=^]*[A-Ga-gxz][,']*(\d*)/g;
     while ((mm = re.exec(t))){ if (mm[0] === "(3"){ trip = 3; continue; } const n = parseInt(mm[1] || mm[2] || "1", 10); if (trip > 0){ sum += n * 2 / 3; trip--; } else sum += n; } return sum; }
   let nb = 0;
   for (const s of [3, 4, 5, 6]) for (const o of [{}, { bassFeel: "riff", feel: "straight" }, { compRhythm: "four", bassFeel: "two" }]){

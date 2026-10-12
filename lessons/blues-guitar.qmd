@@ -1,0 +1,158 @@
+---
+title: "Blues for Guitar: From Roots to Shell Chords"
+toc: true
+toc-depth: 2
+---
+
+This is how a guitarist plays chords in a band on a 12-bar blues without a single barre
+chord: two or three well-chosen notes, moved by a fret at a time. You need to know how to
+fret a note and how the strings are numbered (6 is the low E, 1 is the high E). For what
+the chords are and how the form gets varied, see
+[Changing the Changes in a 12-Bar Blues](blues-changes.qmd).
+
+**How to use the page.** Every step has fretboard diagrams, a chord chart and a ▶ button
+that starts the band. The diagrams show the neck standing upright: string 6 is on the left,
+the nut is at the top, and the numbers down the side are frets. Click a chord's name above
+a diagram to hear it. Under the diagrams the same notes are written on a staff. In every line of notation the note that is sounding lights up, whether the notation is playing by itself or the band is playing. While the band plays, its guitarist plays exactly the notes in the
+diagrams, and the bar on the chart and the chord being played both light up. Tick **Leave
+out the guitar** to take the part yourself. The strip at the bottom sets the key, the tempo
+and whether the dots show chord tones or note names.
+
+## 1. The roots
+
+The **root** is the note a chord is named after: the root of G7 is G. Find the key note on
+string 6. The root of the **IV** chord is at the same fret on string 5. The root of the
+**V** chord is two frets higher on string 5. Three chords, three notes, and the hand stays
+where it is.
+
+
+In four keys (C, D♭, D and E♭) the key note is a long way up the lowest string, so the
+diagrams start from the next string instead. Then the root of **V** is at the same fret on
+the lowest string and the root of **IV** is two frets below that.
+
+<div class="bl-step" data-part="roots" data-rhythm="pad"></div>
+
+Play one long note per bar with the band and count the form: four bars of I, two of IV,
+two of I, then V, IV, I, I. Knowing where the roots are is what lets you find every chord
+shape that follows.
+
+## 2. What the 3rd and 7th do
+
+A seventh chord has four notes, counted up the scale from the root: the **root**, the
+**3rd**, the **5th** and the **7th**. They do different jobs.
+
+- The **root** names the chord. In a band the bass player plays it.
+- The **5th** adds weight and not much else.
+- The **3rd** says whether the chord is major or minor.
+- The **7th** says what kind of seventh chord it is. Every chord in a basic blues has a
+  major 3rd and a flat 7th (♭7), which makes it a *dominant* seventh chord.
+
+So the 3rd and 7th carry the chord's character. They are called the **guide tones**. Play
+only those two notes and a listener still hears the chord, especially with a bass player
+underneath. The diagrams show all four notes of each chord, with the guide tones filled in.
+Click a chord name to hear the four notes climb.
+
+<div class="bl-step" data-part="tones" data-rhythm="pad"></div>
+
+### Where the flat 7 comes from
+
+Why is the 7th of these chords called *flat*? The answer is in the major scale. Press ▶ to
+hear each line of notation. The explanation follows the key chosen in the strip at the
+bottom.
+
+<div class="bl-scale"></div>
+
+From the root: the 3rd is one string up and one fret back, the 5th is one string up and two
+frets on, and the ♭7th is two strings up at the same fret as the root.
+
+## 3. Guide tones on strings 5 and 4
+
+Now play just the 3rd and 7th, as a two-note chord on strings 5 and 4. Look at the
+**Superimposed** view to see what makes this worth learning: the three chords are the same
+two-finger shape, one fret apart. From the I chord, move both fingers *down* one fret for
+IV and *up* one fret for V.
+
+That works because the 3rd of one chord is a half step from the 7th of the next. Going
+from I7 to IV7, the 3rd drops a fret and becomes the ♭7th, and the ♭7th drops a fret and
+becomes the 3rd. Switch the labels to chord tones and watch the two notes swap names.
+
+**Up a tritone.** The 3rd and ♭7th of a dominant chord are six frets' worth of pitch apart,
+an interval called a *tritone*, and a tritone turned upside down is still a tritone. So the
+same two-finger shape six frets higher gives the same two notes of the same chord, with the
+3rd and ♭7th changing places. Press **Up a tritone** to move all three chords there. That
+gives every chord two homes on each pair of strings. In keys where the lower home would run
+off the end of the neck (F and G♭ here), the diagrams start in the upper one, so the three
+shapes always stay one fret apart.
+
+<div class="bl-step" data-part="g54" data-view="super"></div>
+
+The hollow dot is the root. Where one is shown it is in reach on string 6 and you can add
+it; where none is shown, leave it to the bass player.
+
+## 4. Guide tones on strings 4 and 3, and the root
+
+The same pairs one string set higher sit under roots on both low strings, so every chord
+can have its root added. These three-note chords are **shell voicings**: root, 3rd and 7th
+with the 5th left out. A chord with its root on string 6 has the 7th on string 4 and the
+3rd on string 3. A chord with its root on string 5 has the 3rd on string 4 and the 7th on
+string 3. Mute string 5 with the side of your finger when the root is on string 6.
+
+First the two notes alone:
+
+<div class="bl-step" data-part="g43" data-view="super"></div>
+
+Then with the root. This is the rhythm guitar sound of the swing era. **Up a tritone** here
+moves each chord to its other shell: the root changes string and the 3rd and 7th change
+places above it.
+
+<div class="bl-step" data-part="shell"></div>
+
+The band's guitarist plays a short chord on beat 1 and another just before beat 3. Try that
+rhythm, then try four even strokes to the bar (set the feel and tempo to taste).
+
+## 5. The jazz blues
+
+The last line of a jazz blues is a **two-five**: ii7, V7, then home to I, with VI7 in bar 8
+to lead into it (the reasons are in section 3 of
+[the changes lesson](blues-changes.qmd)). The ii chord is a **minor seventh** chord: its
+3rd is one fret lower than a dominant chord's. In a shell with the root on string 6, that
+puts the 7th and the minor 3rd at the same fret, under one finger.
+
+<div class="bl-step" data-part="shell" data-chart="jazz" data-show="Gm7 C7 F7 D7"></div>
+
+In bars 11 and 12 the chords change every two beats. Press **Superimposed** to see how
+little the hand moves through ii7, V7 and I7.
+
+<div class="bl-step" data-part="g43" data-chart="jazz" data-show="Gm7 C7 F7 D7" data-view="super"></div>
+
+## 6. A tune: Blues in the Closet
+
+Oscar Pettiford's riff blues. Its changes are the three-chord blues with a two-five in bars
+9 and 10 and a V chord in bar 12. The melody is one two-bar riff played three times. Here
+it is with the shells from step 4 underneath.
+
+<div class="bl-step" data-part="shell" data-chart="closet" data-tune="closet" data-show="F7 Bb7 Gm7 C7"></div>
+
+Comp under the tune with a short chord on beat 1 and another just before beat 3, and leave
+the riff room. Then look at the guide tones alone. The riff's second note is the 3rd of the
+home chord. In bars 5 and 6 it drops a fret to become the ♭7th of IV, which is exactly what
+your guide-tone shape does at the same moment.
+
+<div class="bl-step" data-part="g43" data-chart="closet" data-tune="closet" data-show="F7 Bb7 Gm7 C7" data-view="super"></div>
+
+## Where to go next
+
+- Change the key in the strip at the bottom and find the same shapes in the new place.
+  Start with F, B♭, A and C.
+- Loop a chorus with the guitar left out and comp for yourself.
+- Learn to improvise over the same tune in [the improvising lesson](blues-improv.qmd).
+- Take any chorus from [the changes lesson](blues-changes.qmd) and find the guide tones of
+  each new chord from its root.
+- The **Chord Sheet** tool (Tools menu) draws these and fuller voicings for any chords you
+  type in, one at a time or superimposed.
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "guitar", key: 7 });</script>
+```

@@ -91,6 +91,12 @@
   }
 
   // Bars generated straight from the parts, from the top of the form, with no audio.
+  // opts.octave, as in player.js: a player's notes moved by whole octaves
+  function octaves(part, evs, opts){
+    var n = opts && opts.octave ? Math.max(-3, Math.min(3, opts.octave[part] | 0)) : 0; if (!n) return evs;
+    evs.forEach(function (e){ if (!e) return; if (e.midi != null) e.midi += 12 * n; if (e.midis) e.midis = e.midis.map(function (m){ return m + 12 * n; }); });
+    return evs;
+  }
   function generate(parsed, o){
     o = o || {};
     var H = global.BandHarmony; if (!H || !parsed) return [];
@@ -120,7 +126,7 @@
       var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo / (fb.unit || 1), ending:false,
                   meter:fb.meter, compound:!!fb.compound,
                   chords:fb.chords, opts:Object.assign({}, optsOf(fb, idx)), parts:{} };
-      Object.keys(parts).forEach(function (p){ try { rec.parts[p] = parts[p].bar(ctx) || []; } catch (e){ rec.parts[p] = []; } });
+      Object.keys(parts).forEach(function (p){ try { rec.parts[p] = octaves(p, parts[p].bar(ctx) || [], ctx.opts); } catch (e){ rec.parts[p] = []; } });
       out.push(rec);
     }
     return out;

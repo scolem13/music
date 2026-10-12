@@ -30,6 +30,8 @@
   var bass = [
     { id:"walk", label:"Walking", feel:"swing", tags:["Jazz","Swing","Blues"],
       desc:"One note on every beat (four quarter notes in 4/4, three in 3/4, dotted quarters in 12/8): the root on beat 1 when the chord changes, chord tones and scale steps in between, and an approach note on beat 4 that leads into the next bar." },
+    { id:"arp", label:"Chord tones (learning to walk)", feel:"any", tags:["Jazz","Swing","Blues"],
+      desc:"The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking." },
     { id:"two", label:"Two-feel", feel:"swing", tags:["Jazz","Swing"],
       desc:"Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk." },
     { id:"riff", label:"Boogaloo riff", feel:"straight", tags:["Boogaloo","Soul jazz","Rock"],
@@ -176,6 +178,12 @@
   var drums = [
     { id:"auto", label:"Jazz time", feel:"any", group:"Jazz", tags:["Jazz","Swing","Boogaloo"],
       desc:"Follows the Feel menu. Swing: the ride pattern, hi-hat foot on 2 and 4, a feathered kick and a little snare. Straight eighths: eighths on the cymbal, kick on 1 and 3, cross-stick on 2 and 4." },
+    { id:"quarters", label:"Quarter notes (learning swing, 1)", feel:"swing", group:"Jazz", tags:["Jazz","Swing","Blues"],
+      desc:"Only the beat: the cymbal on 1, 2, 3 and 4 and the hi-hat foot on 2 and 4. No kick, no snare, no fills. The first thing to play on a blues." },
+    { id:"ridetime", label:"Ride pattern (learning swing, 2)", feel:"swing", group:"Jazz", tags:["Jazz","Swing","Blues"],
+      desc:"The swing ride pattern and nothing else: the cymbal on every beat with a skip note before 3 and before 1 (ding, ding-a, ding, ding-a), and the hi-hat foot on 2 and 4." },
+    { id:"shuffle", label:"Blues shuffle", feel:"swing", group:"Jazz", tags:["Blues","Shuffle","Swing"],
+      desc:"Swung eighths all the way through on the cymbal, kick on 1 and 3 and a full snare on 2 and 4. The Chicago blues beat." },
     { id:"funk", label:"Funk", feel:"straight", group:"Jazz", tags:["Funk","Boogaloo","Soul jazz"],
       desc:"Snare on 2 and 4 with a syncopated kick: beat 1, the and of 2 and the and of 3. Eighths on the cymbal." },
     { id:"bossa", label:"Bossa nova", feel:"straight", group:"Latin", tags:["Bossa nova"],
@@ -224,14 +232,14 @@
 
   // which styles each entry belongs in
   var FITS = {
-    bass: { walk:"swing ballad", two:"swing ballad", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol emo", alt:"folk calypso reggae train strum carol waltz prine", held:"hymn carol pop", halves:"carol hymn pop strum", eighths:"rock emo", dotted:"strum pop rock emo", octaves:"dance", motown:"motown", twelve8:"doowop",
+    bass: { walk:"swing ballad", arp:"swing ballad boogaloo", two:"swing ballad", riff:"boogaloo", riffwalk:"boogaloo", roots:"rock pop folk reggae strum hymn carol emo", alt:"folk calypso reggae train strum carol waltz prine", held:"hymn carol pop", halves:"carol hymn pop strum", eighths:"rock emo", dotted:"strum pop rock emo", octaves:"dance", motown:"motown", twelve8:"doowop",
             bossa:"bossa", tango:"tango", tumbao:"montuno chacha", chacha:"chacha", tresillo:"dance rock reggaeton",
             sowhat:"swing", killerjoe:"swing boogaloo", songfather:"bossa", footprints:"swing", allblues:"swing", chameleon:"boogaloo rock", maiden:"boogaloo bossa", takefive:"swing" },
     comp: { auto:"swing ballad boogaloo", charleston:"swing ballad", reverse:"swing", garland:"swing", offbeats:"swing", four:"swing", stabs:"boogaloo",
             pad:"swing ballad boogaloo bossa tango pop folk rock reggaeton strum dance doowop hymn carol emo prine", oompah:"folk train motown carol", waltz:"waltz folk carol hymn", eighths:"rock", hymn:"hymn carol pop", ballRock:"pop strum carol hymn doowop", ballBroken:"pop strum carol hymn", ballSync:"pop strum carol",  quarters:"pop rock strum motown hymn carol emo", triplets:"doowop",
             strumCamp:"strum rock folk carol", strumFolk:"carol folk strum train", strumEights:"rock strum emo", strumPunk:"emo rock", strumQuarters:"strum rock folk pop carol emo", strum332:"strum rock dance", strum16:"strum rock dance", upbeats:"calypso reggae", bossa:"bossa", tango:"tango",
             montuno:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol emo prine", prine:"prine folk strum carol train", travis:"prine folk strum carol train", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
-    drums: { auto:"swing ballad boogaloo", funk:"boogaloo rock", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
+    drums: { auto:"swing ballad boogaloo", quarters:"swing ballad", ridetime:"swing ballad", shuffle:"swing doowop", funk:"boogaloo rock", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
              onedrop:"reggae", none:"hymn carol pop folk strum prine", brushes:"carol strum folk pop", boomchick:"folk train carol", waltz:"waltz folk carol", rock:"rock emo", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock emo" }
   };
   var JAZZ = "swing ballad boogaloo", POP = "folk rock emo pop strum dance motown doowop train prine hymn carol waltz", PLAIN = POP + " calypso reggae reggaeton tango montuno chacha";

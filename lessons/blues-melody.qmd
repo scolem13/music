@@ -1,0 +1,174 @@
+---
+title: "Blues for Violin and Saxophone: Playing the Changes"
+toc: true
+toc-depth: 2
+---
+
+This is the 12-bar blues for instruments that play one note at a time: violin, saxophones,
+and anything else with a single line. It starts with one note per chord and ends with a
+line that spells out a jazz blues. You need to be able to read notes in your instrument's
+range. For what the chords are and how the form gets varied, see
+[Changing the Changes in a 12-Bar Blues](blues-changes.qmd).
+
+**Choose your instrument first.** The **Instrument** menu in the strip at the bottom
+transposes the page. Violinists leave it on concert pitch. Alto and tenor players choose
+their saxophone, and every chart and line of notation is then written in *their* key, while
+the band plays in the concert key shown beside it. A B♭ tenor and an E♭ alto reading this
+page at the same time see different notes and sound the same ones.
+
+**How to use the page.** Every step is a twelve-bar line. Under each note is the name of
+its place in the chord at that moment: R for the root, then 3, 5, ♭7. Press **▶ Play**
+beside the notation to hear the line alone, or **▶ Play with the band** to hear it over the
+rhythm section, where the piano plays it. Tick **Leave out the melody** to play it yourself.
+The note that is sounding lights up in the notation either way.
+
+Sections 1 to 6 build the skills. Section 7 puts them to work on a tune, Oscar Pettiford's
+*Blues in the Closet*. If you would rather start with the tune, go there first and come
+back.
+
+## 1. The roots
+
+The **root** is the note a chord is named after. A blues has three chords and three roots.
+Play each one as a long note and count the bars: four of I, two of IV, two of I, then V,
+IV, I, I.
+
+<div class="bl-step" data-part="roots"></div>
+
+A bass player would play these notes. Playing them yourself is the quickest way to hear
+where the form turns.
+
+## 2. Chord tones, and the 3rd and 7th
+
+A seventh chord has four notes, counted up the scale from the root: the **root**, the
+**3rd**, the **5th** and the **7th**. Every chord in a basic blues has a major 3rd and a
+flat 7th (♭7), which makes it a *dominant* seventh chord. Here are the four notes of each
+chord, played up from the root.
+
+<div class="bl-step" data-part="tones"></div>
+
+The 3rd and the 7th are the **guide tones**. They are the two notes that tell a listener
+which chord this is, and they are the notes a good melody leans on.
+
+### Where the flat 7 comes from
+
+Why is the 7th of these chords called *flat*? The answer is in the major scale. Press ▶ to
+hear each line. The explanation follows the key and instrument chosen in the strip at the
+bottom.
+
+<div class="bl-scale"></div>
+
+## 3. Guide-tone lines
+
+Play only a guide tone of each chord, and at each change move to the *nearest* guide tone
+of the new chord. The line barely moves: when I7 goes to IV7 the 3rd falls a half step and
+becomes the ♭7th of the new chord. One note per bar, and the whole harmony of the blues is
+in it.
+
+Starting on the 3rd:
+
+<div class="bl-step" data-part="guide3"></div>
+
+Starting on the 7th. Two players can take one line each.
+
+<div class="bl-step" data-part="guide7"></div>
+
+## 4. Guide tones in rhythm
+
+The same notes become a background figure when they are given a rhythm. This one is the
+Charleston: a note on beat 1 and another on the "and" of 2. A horn section plays exactly
+this kind of thing behind a soloist.
+
+<div class="bl-step" data-part="rhythm"></div>
+
+## 5. A riff
+
+A riff is a short figure repeated through the form and adjusted to fit the chords. This one
+is the 3rd, 5th, 6th and 5th of the home chord. Over the IV chord only its first note
+changes: it drops a half step, which makes it the ♭7th of IV. Over the V chord the whole
+figure moves up to that chord.
+
+<div class="bl-step" data-part="riff"></div>
+
+Look at the names under the notes in bars 5 and 6. The fingers play almost the same thing,
+and every note has a new job.
+
+## 6. The jazz blues
+
+The last line of a jazz blues is a **two-five**: ii7, V7, then home to I, with VI7 in bar 8
+to lead into it (the reasons are in section 3 of
+[the changes lesson](blues-changes.qmd)). The ii chord is a minor seventh chord, with a
+minor 3rd. Through ii7, V7 and I7 the guide-tone line steps down: the 7th of each chord
+falls to the 3rd of the next.
+
+<div class="bl-step" data-part="guide3" data-chart="jazz"></div>
+
+The chord tones of the same chorus:
+
+<div class="bl-step" data-part="tones" data-chart="jazz"></div>
+
+## 7. The tune: Blues in the Closet
+
+Oscar Pettiford wrote this blues in the early 1950s. It is a *riff blues*: one two-bar idea,
+played three times over the twelve bars. Learn the first two bars and you know nearly all
+of it.
+
+<div class="bl-step" data-chart="closet" data-tune="closet"></div>
+
+### How it is built
+
+- **Four notes.** The whole melody uses the root, the 3rd, the 4th and the 5th below. Look
+  at the names under bars 1 and 2: R, 3, R, 4, 3, R.
+- **Three lines.** Bars 1 to 4, 5 to 8 and 9 to 12 are the same riff. Each ends on a long
+  note, which is where the rhythm section answers.
+- **Notes that arrive early.** Several notes are tied across the barline. They are played
+  an eighth note *before* the beat and held into the next bar. Clap the rhythm before you
+  play it. These early notes are what make the riff swing.
+
+### The one note that changes
+
+In bars 5 and 6 the riff's second note is a half step lower than it was in bars 1 and 2.
+It is the only accidental in the tune. Over the home chord that note was the **3rd**. The
+IV chord has that pitch a half step lower, as its **♭7th**, so the melody moves with the
+chord. In bar 7 the home chord returns and so does the original note. This is the sound of
+a blues going to IV, and the melody tells you the chord has changed without any help from
+the band.
+
+Hear that move by itself. This is the guide-tone line from section 3 on the tune's changes.
+Play it, then play the tune again and listen for the same half step inside the riff.
+
+<div class="bl-step" data-part="guide3" data-chart="closet"></div>
+
+### The last line
+
+Bars 9 and 10 are a two-five (ii7 then V7) instead of V then IV. The melody does not
+change at all, but look at the names under it: the same pitches are now the 9th and ♭7th of
+the ii chord. A riff this simple fits because every one of its notes belongs to the key.
+
+The roots of the tune, to learn where the chords fall:
+
+<div class="bl-step" data-part="roots" data-chart="closet"></div>
+
+### Practising it
+
+1. Sing the riff with the band before you play it.
+2. Play bars 1 and 2 alone until the tied notes sit right. Use **▶ Play** beside the
+   notation to check yourself.
+3. Play the whole tune with **Leave out the melody** ticked.
+4. Change the concert key. A riff you can play in three keys is a riff you know.
+
+When the tune is secure, go on to [the improvising lesson](blues-improv.qmd), which uses
+this melody as its starting point.
+
+## Where to go next
+
+- Change the concert key and play every step again. F, B♭, C and G are the keys a blues is
+  most often called in.
+- Loop a chorus with the melody left out and make up your own line from the chord tones,
+  landing on a guide tone at each change.
+- Take a chorus from [the changes lesson](blues-changes.qmd) and write its guide-tone line.
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "melody", key: 5 });</script>
+```

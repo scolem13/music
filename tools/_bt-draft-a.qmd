@@ -1,0 +1,118 @@
+```{=html}
+<!-- DRAFT A: by task. The transport is a bar fixed to the foot of the window, as on the lesson pages (PlayBar, apps/shared/playbar.js),
+     the chart is at the top, and everything else is on tabs, one at a time. The Mixer tab is a console: a strip for each part and each kit fader, with the EQ beside them. See _bt-draft-common.qmd. -->
+<style>
+/* in the bar (and in its Options panel) a control's name sits beside it, as on the lesson pages */
+#bt-root.dxa :is(.playbar,.playbar-pop) .bt-field{flex-direction:row;align-items:center;gap:.4rem}
+#bt-root.dxa :is(.playbar,.playbar-pop) :is(select,input[type=number]){height:1.9rem;font-size:.85rem;padding:0 .35rem}
+#bt-root.dxa :is(.playbar,.playbar-pop) select{max-width:13rem}
+#bt-root.dxa :is(.playbar,.playbar-pop) .bt-btn{height:1.9rem;padding:0 .7rem;font-size:.85rem}
+#bt-root.dxa .playbar>*{flex:0 0 auto}
+#bt-root.dxa .playbar .bt-play{height:2.3rem;min-width:6.5rem;flex:0 0 auto}
+#bt-root.dxa .playbar .bt-beats{height:auto}
+#bt-root.dxa :is(.playbar,.playbar-pop) .bt-status{margin:0;min-height:0;width:9.5rem;overflow:hidden;text-overflow:ellipsis}
+#bt-root.dxa .dxa-loopnote:empty{display:none}
+#bt-root.dxa .dxa-loopnote{margin:0 0 .5rem}
+#bt-root.dxa #bt-sec-tools{flex-wrap:wrap;margin-bottom:.6rem}
+#bt-root.dxa .dxa-tabs{display:flex;flex-wrap:wrap;gap:.25rem;margin-top:1rem;border-bottom:2px solid var(--site-border,#e0d8ce)}
+#bt-root.dxa .dxa-tabs button{padding:.4rem .9rem;border:1px solid var(--site-border,#e0d8ce);border-bottom:0;border-radius:7px 7px 0 0;background:var(--site-surface-2,#f2ede5);
+  color:inherit;font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+#bt-root.dxa .dxa-tabs button[aria-selected=true]{background:var(--site-accent-text,#0a4f47);border-color:var(--site-accent-text,#0a4f47);color:#fff}
+#bt-root.dxa .dxa-pane>.bt-panel{margin-top:.6rem}
+#bt-root.dxa .dxa-pane>details.bt-panel>summary{display:none}
+#bt-root.dxa .dxa-pane .bt-row2{margin-top:0;padding-top:0;border-top:0}
+#bt-root.dxa .dxa-pane>.bt-about{margin:.8rem 0 0}
+/* the Band tab: a card for each player. Bass over drums on the left, the chord player beside them, a second chord player beside that */
+#bt-root.dxa .dxa-band{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.8rem;align-items:start}
+#bt-root.dxa .dxa-band>div{display:flex;flex-direction:column;gap:.8rem;min-width:0}
+#bt-root.dxa .dxa-band .bt-sub,#bt-root.dxa .dxa-whole{margin:0;padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:8px}
+#bt-root.dxa .dxa-whole{margin-top:.8rem}
+#bt-root.dxa .dxa-band .bt-row{flex-direction:column;align-items:stretch;gap:.5rem}
+#bt-root.dxa .dxa-band select,#bt-root.dxa .dxa-band input[type=range]{width:100%;max-width:100%}
+#bt-root.dxa .dxa-band .bt-morelist{grid-template-columns:1fr}
+@media (max-width:900px){ #bt-root.dxa .dxa-band{grid-template-columns:minmax(0,1fr)} }
+/* the console */
+/* Three blocks side by side, each a heading, one line of menus (the same height in all three, empty for the band) and its faders, so the
+   faders line up across the page. The blocks keep their widths whatever is chosen: the band's has room for the second chord player. */
+#bt-root.dxa .dxa-console{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:flex-start}
+#bt-root.dxa .dxa-console>*{min-width:0;max-width:100%;flex:0 0 auto}
+#bt-root.dxa .dxa-console .dx-ctl{display:flex;flex-wrap:nowrap;align-items:flex-end;gap:.4rem .6rem;height:3.5rem;margin:0 0 .6rem}
+#bt-root.dxa .dxa-console .dx-strips{overflow:visible}
+#bt-root.dxa .dxa-parts{width:calc(4 * 4.6rem + 3 * .3rem)}
+#bt-root.dxa .dxa-parts div.dx-strip{flex:0 0 4.6rem}
+#bt-root.dxa #bt-eq-inst{width:14rem}
+/* under them, across the whole width: the amp of the instrument on show in the EQ, then the organ's panel */
+#bt-root.dxa .dxa-amp,#bt-root.dxa #bt-organ{margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+#bt-root.dxa .dxa-amp #bt-amp-stages{grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));margin-top:.5rem}
+#bt-root.dxa .dxa-amp .bt-hint{margin:0}
+#bt-root.dxa .dxa-amp .bt-row{margin:0}
+</style>
+<script>
+(function(){
+  var D = window.BTDraft, $ = D.$, el = D.el;
+  if (!D || !D.player) return;                                          // (the band did not load: the page says so itself)
+  var root = D.init("dxa", "A (tabs and a mixing console)", [["backing-track.html", "The current page"], ["backing-track-b.html", "Draft B"]]);
+  var top = root.querySelector(".bt-panel"), rows = top.querySelectorAll(":scope > .bt-row"), about = root.querySelector("details.bt-about"), abcBox = root.querySelector("details.bt-abc");
+  // ---- the bar at the foot of the window: everything the Play panel held, in one row. [element, importance, importance while playing]:
+  // the higher the number the sooner it leaves the bar for the Options panel when the window is narrow. Play never leaves.
+  var foot = el("div"), F = D.field; foot.id = "dxa-bar";
+  [[$("bt-play")], [$("bt-beats"), 5, 3], [F("bt-fill"), 7, 1], [$("bt-sections-field"), 6, 2], [F("bt-tempo-n"), 1, 4], [F("bt-key"), 2, 6], [F("bt-style"), 3, 7], [F("bt-meter"), 8, 8],
+   [F("bt-changes"), 9, 9], [$("bt-status"), 4, 3]].forEach(function(x){ if (x.length > 1){ x[0].setAttribute("data-pri", x[1]); x[0].setAttribute("data-pri-live", x[2]); } foot.appendChild(x[0]); });
+  root.appendChild(foot);
+  // two notes that are sentences, not controls: the loop's goes over the chart, the section's (with its two buttons) to the top of the Band tab
+  $("bt-loop-note").classList.add("dxa-loopnote"); root.insertBefore($("bt-loop-note"), $("bt-chartrow"));
+  $("bt-sec-band").insertBefore($("bt-sec-tools"), $("bt-sec-band").querySelector("summary").nextSibling);
+
+  // ---- the tabs: [id, label, the blocks it shows] ----
+  var playBox = el("div", "bt-panel"); playBox.appendChild(rows[1]);
+  var TABS = [["play", "Play", [playBox, $("bt-practice")]], ["band", "Band", [$("bt-sec-band")]], ["mix", "Mixer", [$("bt-sec-mix")]],
+              ["chart", "Chart and changes", [$("bt-sec-chart"), abcBox]], ["notation", "Notation", [$("bt-notation")]], ["files", "Save and export", [$("bt-setups"), $("bt-export"), about]]];
+  var bar = el("div", "dxa-tabs"), panes = el("div", "dxa-panes"), KEY = "btDraftATab", cur = "band";
+  bar.setAttribute("role", "tablist");
+  TABS.forEach(function(t){
+    var b = el("button", "", t[1]), pane = el("div", "dxa-pane"); b.type = "button"; b.id = "dxa-tab-" + t[0]; b.setAttribute("role", "tab"); b.setAttribute("aria-controls", "dxa-pane-" + t[0]);
+    pane.id = "dxa-pane-" + t[0]; pane.setAttribute("role", "tabpanel"); pane.setAttribute("aria-labelledby", b.id);
+    t[2].forEach(function(node){ var s = node.matches("details.bt-panel") ? node.querySelector(":scope > summary") : null;
+      if (s && t[2].length > 1) node.insertBefore(D.head(s.textContent.trim()), s.nextSibling);          // (a tab of several blocks keeps their names)
+      pane.appendChild(node); });
+    b.addEventListener("click", function(){ show(t[0]); });
+    b.addEventListener("keydown", function(e){ var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0; if (!d) return;
+      var i = (TABS.indexOf(t) + d + TABS.length) % TABS.length; show(TABS[i][0]); $("dxa-tab-" + TABS[i][0]).focus(); });
+    t.push(b, pane); bar.appendChild(b); panes.appendChild(pane);
+  });
+  root.appendChild(bar); root.appendChild(panes);
+  // A tab's panels are open while it shows and closed otherwise, so the Notation panel only draws (and the band only writes ahead) on its tab.
+  function show(id){
+    if (!TABS.some(function(t){ return t[0] === id; })) id = "band"; cur = id;
+    TABS.forEach(function(t){ var on = t[0] === id; t[3].setAttribute("aria-selected", String(on)); t[3].tabIndex = on ? 0 : -1; t[4].hidden = !on;
+      t[2].forEach(function(node){ if (node.matches("details.bt-panel")) node.open = on; }); });
+    try { localStorage.setItem(KEY, id); } catch (e) {}
+  }
+
+  // ---- the Band tab: bass over drums | chords | second chords, and what belongs to the whole band under them ----
+  (function(){
+    var band = $("bt-sec-band"), subs = band.querySelectorAll(":scope > .bt-sub"), cols = el("div", "dxa-band"), a = el("div"), b = el("div"), c = el("div"), second = el("div", "bt-sub");
+    second.appendChild(el("h3", "", "Second chords")); second.appendChild($("bt-second-row"));
+    D.put(a, subs[1], subs[3]); b.appendChild(subs[2]); c.appendChild(second); D.put(cols, a, b, c);
+    band.insertBefore(cols, subs[0]); subs[0].classList.add("dxa-whole");
+  })();
+
+  // ---- the Mixer tab: parts | kit | EQ, then the amp and the organ ----
+  var mix = $("bt-sec-mix"), cons = el("div", "dxa-console"), parts = el("div"), faders = mix.querySelector(".bt-mixer");
+  faders.classList.add("dx-strips");
+  parts.className = "dxa-parts"; D.put(parts, D.head("Band"), el("div", "dx-ctl"), faders);
+  $("bt-kit").querySelector(".bt-row").classList.add("dx-ctl"); $("bt-eq").querySelector(".bt-row").classList.add("dx-ctl");
+  var amp = el("div", "dxa-amp"); D.put(amp, $("bt-amp-none"), $("bt-amp"));
+  $("bt-kit").insertBefore(D.head("Drum kit"), $("bt-kit").firstChild);
+  $("bt-eq").insertBefore(D.head("Tone (EQ)"), $("bt-eq").firstChild);
+  D.put(cons, parts, $("bt-kit"), $("bt-eq")); mix.insertBefore(cons, mix.querySelector("summary").nextSibling);
+  mix.appendChild(amp); mix.appendChild($("bt-organ"));
+  D.partStrips(true); D.kitStrips(); D.eq(); D.amp();
+
+  var saved = null; try { saved = localStorage.getItem(KEY); } catch (e) {}
+  show(saved || "band");
+  top.hidden = true;                                                    // (the emptied Play panel)
+  PlayBar.attach(foot, { live: function(){ return $("bt-play").getAttribute("data-state") === "playing"; } });
+})();
+</script>
+```

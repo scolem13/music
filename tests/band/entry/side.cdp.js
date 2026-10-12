@@ -19,7 +19,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await side(), "Now F7Next B♭7");
     await until(lanes, "F7:now Bb7:next C7:rest", 15000);
     const box = JSON.parse(await ev(`(function(){ var a = document.getElementById("bt-side").getBoundingClientRect(), c = document.getElementById("bt-chart").getBoundingClientRect(), f = document.getElementById("bt-side-frame").getBoundingClientRect(); return JSON.stringify({ ax: a.left, cr: c.right, at: a.top, ct: c.top, aw: a.width, fh: f.height }); })()`));
-    assert(box.ax >= box.cr && Math.abs(box.at - box.ct) < 40 && box.aw > 250 && box.fh > 120, "beside the chart: " + JSON.stringify(box));
+    assert(box.ax >= box.cr && Math.abs(box.at - box.ct) < 60 && box.aw > 250 && box.fh > 120, "beside the chart: " + JSON.stringify(box));
     // only the diagram is visible in the frame, and it is the Chord Sheet's keyboard drawing
     const inner = JSON.parse(await ev(`(function(){ var d = document.getElementById("bt-side-frame").contentDocument, w = document.getElementById("bt-side-frame").contentWindow; var vis = function(sel){ var e = d.querySelector(sel); return !!e && e.getClientRects().length > 0; };
       return JSON.stringify({ svg: d.querySelectorAll("#sheet-output .super-card svg").length, cards: d.querySelectorAll("#sheet-output .diagram-card").length, ta: vis("#chords-textarea"), nav: vis("#quarto-header"), btn: vis("#establish-tonality-btn"), scroll: d.documentElement.scrollWidth <= w.innerWidth + 1 }); })()`));

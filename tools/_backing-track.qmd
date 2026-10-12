@@ -13,7 +13,7 @@
   padding:.9rem 1rem;margin-top:1rem}
 #bt-root .bt-row{display:flex;align-items:flex-end;gap:.9rem 1.25rem;flex-wrap:wrap}
 #bt-root .bt-field{display:flex;flex-direction:column;gap:.3rem;min-width:0}
-#bt-root .bt-field>label,#bt-root .bt-group-label{font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);
+#bt-root .bt-field>label,#bt-root .bt-voice>label,#bt-root .bt-group-label{font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);
   font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;color:var(--site-ink-3,#9a8d7e);margin:0}
 #bt-root select,#bt-root input[type=number],#bt-root input[type=text]{font:inherit;font-size:.9rem;height:2.2rem;padding:0 .55rem;
   border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface,#fff);color:inherit}
@@ -45,6 +45,12 @@
 #bt-root .bt-mixer{display:flex;gap:.9rem 1.5rem;flex-wrap:wrap;width:100%;margin-top:.9rem;padding-top:.8rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
 #bt-root .bt-mixer .bt-field{flex:1 1 7rem;max-width:14rem}
 #bt-root .bt-mixer input[type=range]{width:100%}
+/* the name over a mixer fader is a menu (an unseen select lying over it): click the name to give that player another sound */
+#bt-root .bt-voice{position:relative;align-self:flex-start;max-width:100%;border-radius:4px}
+#bt-root .bt-voice>label{display:block;cursor:pointer;text-decoration:underline dotted;text-underline-offset:.2em}
+#bt-root .bt-voice>label::after{content:" \25BE"}
+#bt-root .bt-voice>select{position:absolute;inset:0;width:100%;height:100%;padding:0;border:0;opacity:0;cursor:pointer}
+#bt-root .bt-voice:focus-within{outline:2px solid var(--site-accent-dk,#2b9c90);outline-offset:2px}
 #bt-root .bt-tonebars{display:grid;grid-template-columns:repeat(9,minmax(2.6rem,1fr));gap:.4rem;margin-top:.8rem;max-width:34rem}
 #bt-root .bt-tonebars label{display:flex;flex-direction:column;align-items:center;gap:.2rem;font-size:.74rem;padding:.3rem .1rem;border-radius:4px;border:1px solid var(--site-border-soft,#ece6dc)}
 #bt-root .bt-tonebars label.tb-brown{background:#7a4a2a;color:#fff} #bt-root .bt-tonebars label.tb-white{background:#fbfaf6;color:#222} #bt-root .bt-tonebars label.tb-black{background:#2b2b2b;color:#fff}
@@ -58,8 +64,25 @@
 /* the chart with the chord diagram beside it (above it on a narrow screen) */
 #bt-root .bt-chartrow{display:flex;gap:1rem;align-items:flex-start}
 #bt-root .bt-chartrow #bt-chart{flex:1 1 0;min-width:0}
-#bt-root .bt-side{flex:0 0 clamp(18rem,36vw,34rem);position:sticky;top:4.5rem;padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;background:var(--site-surface,#fff);
+#bt-root .bt-sidecol{flex:0 0 clamp(18rem,36vw,34rem);min-width:0;position:sticky;top:4.5rem}
+#bt-root .bt-side{padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;background:var(--site-surface,#fff);
   --bt-now:#1f8f83;--bt-next:#e08a1e}
+#bt-root .bt-side #bt-side-own svg{margin-top:.5rem}
+/* the diagram's own controls: the switch always on show, the rest folded away */
+#bt-root .bt-sidebar{display:flex;flex-wrap:wrap;align-items:flex-start;gap:.1rem .9rem;margin:0 0 .3rem;font-size:.8rem;line-height:1.5rem}
+#bt-root .bt-sidebar .bt-check{font-size:.8rem;font-weight:600}
+#bt-root .bt-sideopts>summary{cursor:pointer;color:var(--site-ink-2,#5c5246)}
+#bt-root .bt-sideopts[open]{flex:1 1 100%}
+#bt-root .bt-sideopts label{display:inline-flex;align-items:center;gap:.35rem;margin:.2rem .8rem .2rem 0;font-size:.8rem}
+#bt-root .bt-sideopts select{height:1.7rem;padding:0 .3rem;font-size:.8rem;max-width:14rem}
+/* below the chart, or switched off (then only the switch is left, under the chart) */
+#bt-root .bt-chartrow.bt-below,#bt-root .bt-chartrow.bt-side-off{flex-direction:column}
+#bt-root .bt-chartrow.bt-below #bt-chart,#bt-root .bt-chartrow.bt-side-off #bt-chart{flex:none;width:100%}
+#bt-root .bt-chartrow.bt-below .bt-sidecol,#bt-root .bt-chartrow.bt-side-off .bt-sidecol{position:static;flex:none;width:100%}
+#bt-root .bt-chartrow.bt-below .bt-side{max-width:46rem}
+#bt-root .bt-chartrow.bt-side-off .bt-sidecol{order:0;margin-top:-.5rem}
+#bt-root .bt-chartrow.bt-side-off .bt-sidebar{justify-content:flex-end;margin:0}
+#bt-root .bt-chartrow.bt-side-off .bt-sideopts{display:none}
 #bt-root .bt-side iframe{display:block;width:100%;height:16rem;border:0;margin-top:.5rem;background:#fff}
 #bt-root .bt-side p{margin:0 0 .25rem;font-size:.92rem;line-height:1.35}
 #bt-root .bt-side p b{font-size:1.1rem;margin-right:.35rem}
@@ -70,7 +93,7 @@
 @media (max-width:900px){
   #bt-root .bt-chartrow{flex-direction:column}
   #bt-root .bt-chartrow #bt-chart{flex:none;width:100%}
-  #bt-root .bt-side{order:-1;position:static;flex:none;width:100%;box-sizing:border-box}
+  #bt-root .bt-sidecol{order:-1;position:static;flex:none;width:100%;box-sizing:border-box}
 }
 /* bars that do not add up to their meter */
 #bt-root .bt-barwarn{margin-top:.8rem;padding:.6rem .8rem;border:1px solid #e3b071;border-left:4px solid #d9822b;border-radius:8px;background:#fdf4e7;font-size:.9rem}
@@ -164,9 +187,10 @@
 #bt-chart .bt-tabset{margin:0 0 .5rem}
 #bt-chart .bt-tabset .nav-link{cursor:pointer}
 #bt-chart .bt-tabset .tab-content{padding:.75rem .75rem .85rem;background:transparent}
-#bt-chart .bt-next-line{display:flex;gap:.7rem;align-items:baseline;margin-top:.7rem;padding-top:.5rem;border-top:1px dashed var(--site-border,#e0d8ce);font-size:.86rem;color:var(--site-ink-2,#5c5246);white-space:nowrap;overflow:hidden}
-#bt-chart .bt-next-line b{flex:0 0 auto;font:700 .66rem/1 var(--font-mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--site-ink-3,#9a8d7e)}
-#bt-chart .bt-next-line span{flex:1 1 auto;overflow:hidden;text-overflow:ellipsis;font-weight:600}
+#bt-chart .bt-next-line{margin-top:.7rem;padding-top:.5rem;border-top:1px dashed var(--site-border,#e0d8ce)}
+#bt-chart .bt-next-line b{display:block;margin-bottom:.4rem;font:700 .66rem/1 var(--font-mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--site-ink-3,#9a8d7e)}
+#bt-chart .bt-next-bars{display:grid;grid-template-columns:repeat(4,1fr);border-left:2px solid var(--tc-ink)}
+#bt-chart .bt-next-bars .tc-bar{cursor:default}
 #bt-chart .bt-tabset .nav-link.is-live::after{content:"";display:inline-block;width:.45rem;height:.45rem;margin-left:.4rem;border-radius:50%;background:var(--site-accent,#3fc2b4);vertical-align:.08em}
 @media print{ #bt-root .bt-tabstrip,#bt-chart .bt-tabset .nav{display:none} #bt-chart .bt-tabset .tab-pane{display:block!important;opacity:1!important}
   #bt-chart .bt-tabset .tab-pane::before{content:attr(data-print-title);display:block;font-weight:700;margin:.8rem 0 .3rem} #bt-chart .tc-systems[hidden]{display:flex} }
@@ -250,9 +274,18 @@
     <select id="bt-tabview" aria-label="How the chart's sections are shown" title="One tab per section: a section that comes round again shares its tab. Tabs in playing order: a tab for every section as it is played. Whole chart: everything at once.">
       <option value="unique" selected>One tab per section</option><option value="order">Tabs in playing order</option><option value="all">Whole chart</option></select>
   </div>
-  <div class="bt-chartrow">
+  <div class="bt-chartrow" id="bt-chartrow">
     <div id="bt-chart"></div>
-    <div class="bt-side" id="bt-side" role="complementary" aria-label="The chord sounding now and the one that follows"><div id="bt-side-body"></div></div>
+    <div class="bt-sidecol" id="bt-sidecol">
+      <div class="bt-sidebar">
+        <label class="bt-check" title="A fingering chart for the chords of these changes on one keyboard or fingerboard, with the chord sounding now and the one that follows picked out in two colours."><input type="checkbox" id="bt-side-on" checked> Chord diagram</label>
+        <details class="bt-sideopts"><summary>Options</summary>
+          <label>Instrument <select id="bt-side-inst" title="Piano and guitar are drawn by the Chord Sheet: up to four chords, in the band's voicings when the band plays that instrument. Bass and violin show the notes of the two chords, as the lesson pages draw them."><option value="band" selected>The band's chord instrument</option><option value="piano">Piano</option><option value="guitar">Guitar</option><option value="bass">Bass</option><option value="violin">Violin</option></select></label>
+          <label>Where <select id="bt-side-pos"><option value="beside" selected>Beside the chart</option><option value="below">Below the chart</option></select></label>
+        </details>
+      </div>
+      <div class="bt-side" id="bt-side" role="complementary" aria-label="The chord sounding now and the one that follows"><div id="bt-side-body"></div><div id="bt-side-own" hidden></div></div>
+    </div>
   </div>
 
   <div class="bt-barwarn" id="bt-barwarn" role="status" hidden>
@@ -263,7 +296,6 @@
   <details class="bt-panel bt-fold bt-chartbar" id="bt-sec-chart" open>
     <summary>Chart</summary>
     <div class="bt-row">
-      <label class="bt-check" title="The Chord Sheet's superimposed view beside the chart: the first four different chords on one keyboard (or fretboard, when the guitar is comping), with the chord sounding now and the one that follows picked out in two colours."><input type="checkbox" id="bt-side-on" checked> Chord diagram beside the chart</label>
       <div class="bt-field"><label for="bt-roman">Chord symbols</label>
         <select id="bt-roman"><option value="off">Letters</option><option value="only">Roman numerals</option><option value="both">Both</option></select></div>
       <div class="bt-field"><label for="bt-chartfor">Chart for</label>
@@ -315,6 +347,8 @@
           <select id="bt-bass"></select></div>
         <div class="bt-field"><label for="bt-bass-sound">Sound</label>
           <select id="bt-bass-sound"><option value="upright">Upright bass</option><option value="electric">Electric bass</option></select></div>
+        <div class="bt-field"><label for="bt-oct-bass" title="Move everything the bass plays up or down by whole octaves. The notes are chosen as usual and then moved, so the notation and the MIDI file move too.">Octave</label>
+          <select id="bt-oct-bass"><option value="-2">2 lower</option><option value="-1">1 lower</option><option value="0" selected>As played</option><option value="1">1 higher</option><option value="2">2 higher</option></select></div>
         <div class="bt-field" id="bt-walk-field" hidden><label for="bt-walk" title="How much of the time the bass walks. All the way left it stays in two (half notes); all the way right it walks every bar. In between it changes two bars at a time, walking more when the band is playing up.">In two &harr; walking</label>
           <input type="range" id="bt-walk" min="0" max="100" step="5" value="100"></div>
       </div>
@@ -323,6 +357,8 @@
       <h3>Comping</h3>
       <div class="bt-row">
         <div class="bt-field"><label for="bt-comp">Instrument</label><select id="bt-comp"></select></div>
+        <div class="bt-field"><label for="bt-oct-comp" title="Move everything the comping instrument plays up or down by whole octaves. The notes are chosen as usual and then moved, so the notation and the MIDI file move too.">Octave</label>
+          <select id="bt-oct-comp"><option value="-2">2 lower</option><option value="-1">1 lower</option><option value="0" selected>As played</option><option value="1">1 higher</option><option value="2">2 higher</option></select></div>
         <div class="bt-field"><label for="bt-rhythm">Rhythm</label><select id="bt-rhythm"></select></div>
         <div class="bt-field"><label for="bt-voicing">Chord voicings</label><select id="bt-voicing"></select></div>
         <div class="bt-field"><label for="bt-vmove" title="Hold: one voicing per chord. Move: over a held chord the comping steps through inversions, led by the top note. Passing chords: in the sixth-diminished style, a diminished chord passes between inversions.">Voicing movement</label>
@@ -344,6 +380,8 @@
         <div class="bt-field"><label for="bt-second" title="A second chord player beside the comping instrument: guitar and keys together, or two guitars. It has its own rhythm, voicings and fader, and does not change what the first one plays.">Second chord instrument</label><select id="bt-second"></select></div>
         <div class="bt-field" id="bt-second-rhythm-f" hidden><label for="bt-second-rhythm">Its rhythm</label><select id="bt-second-rhythm"></select></div>
         <div class="bt-field" id="bt-second-voicing-f" hidden><label for="bt-second-voicing">Its voicings</label><select id="bt-second-voicing"></select></div>
+        <div class="bt-field" id="bt-oct-comp2-f" hidden><label for="bt-oct-comp2" title="Move everything the second chord instrument plays up or down by whole octaves. The notes are chosen as usual and then moved, so the notation and the MIDI file move too.">Octave</label>
+          <select id="bt-oct-comp2"><option value="-2">2 lower</option><option value="-1">1 lower</option><option value="0" selected>As played</option><option value="1">1 higher</option><option value="2">2 higher</option></select></div>
         <button type="button" class="bt-btn" id="bt-second-suggest" hidden title="Set its rhythm and voicings to what suits the chosen Style">Suggest for this style</button>
       </div>
       <details class="bt-info"><summary>Info</summary>
@@ -364,9 +402,9 @@
   <details class="bt-panel bt-fold" id="bt-sec-mix" open>
     <summary>Mixer</summary>
     <div class="bt-mixer" role="group" aria-label="Mix">
-      <div class="bt-field"><label for="bt-vol-bass">Bass volume</label><input type="range" id="bt-vol-bass" min="0" max="150" value="100"></div>
-      <div class="bt-field"><label for="bt-vol-comp" id="bt-vol-comp-label">Piano volume</label><input type="range" id="bt-vol-comp" min="0" max="150" value="100"></div>
-      <div class="bt-field" hidden><label for="bt-vol-comp2" id="bt-vol-comp2-label">Second instrument volume</label><input type="range" id="bt-vol-comp2" min="0" max="150" value="80"></div>
+      <div class="bt-field"><span class="bt-voice"><label for="bt-vol-bass">Bass volume</label><select id="bt-voice-bass" aria-label="Bass sound" title="Change the bass sound"></select></span><input type="range" id="bt-vol-bass" min="0" max="150" value="100"></div>
+      <div class="bt-field"><span class="bt-voice"><label for="bt-vol-comp" id="bt-vol-comp-label">Piano volume</label><select id="bt-voice-comp" aria-label="Comping instrument" title="Change the comping instrument"></select></span><input type="range" id="bt-vol-comp" min="0" max="150" value="100"></div>
+      <div class="bt-field" hidden><span class="bt-voice"><label for="bt-vol-comp2" id="bt-vol-comp2-label">Second instrument volume</label><select id="bt-voice-comp2" aria-label="Second chord instrument" title="Change the second chord instrument"></select></span><input type="range" id="bt-vol-comp2" min="0" max="150" value="80"></div>
       <div class="bt-field"><label for="bt-vol-drums">Drums volume</label><input type="range" id="bt-vol-drums" min="0" max="150" value="100"></div>
     </div>
     <details class="bt-fold bt-kit" id="bt-organ" open hidden>
@@ -501,19 +539,20 @@
 
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
-<script src="/apps/shared/tune-chart.js?v=26"></script>
+<script src="/apps/shared/tune-chart.js?v=27"></script>
 <script src="/apps/shared/tune-library.js?v=3"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
+<script src="/apps/shared/lessons/diagrams.js?v=1"></script>
 <script src="/apps/shared/band/harmony.js?v=27"></script>
-<script src="/apps/shared/band/bass.js?v=12"></script>
+<script src="/apps/shared/band/bass.js?v=13"></script>
 <script src="/apps/shared/band/comp.js?v=28"></script>
 <script src="/apps/shared/band/presets.js?v=5"></script>
-<script src="/apps/shared/band/catalog.js?v=26"></script>
-<script src="/apps/shared/band/drums.js?v=11"></script>
+<script src="/apps/shared/band/catalog.js?v=28"></script>
+<script src="/apps/shared/band/drums.js?v=12"></script>
 <script src="/apps/shared/band/sounds.js?v=11"></script>
-<script src="/apps/shared/band/player.js?v=114"></script>
-<script src="/apps/shared/band/midi.js?v=16"></script>
-<script src="/apps/shared/band/notation.js?v=7"></script>
+<script src="/apps/shared/band/player.js?v=115"></script>
+<script src="/apps/shared/band/midi.js?v=17"></script>
+<script src="/apps/shared/band/notation.js?v=8"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -734,14 +773,17 @@
   // the chart's own, hidden, list. The chart redraws itself for several reasons, so this is rebuilt whenever its rows are new.
   // Under each pane, one line of what comes next: the name of the section that follows and its chords, bar by bar.
   // k = the section (in playing order) whose successor is wanted.
-  function nextLine(secs, k){
-    var nx = secs[k + 1]; if (!nx) return { name: "End", text: "" };
-    var bars = parsedC.bars.slice(nx.bar, nx.end).map(function(b){ return b.chords.length ? b.chords.map(function(c){ return c.nc ? "N.C." : TuneChart.fmtChord ? c.sym.replace(/b/g, "\u266d").replace(/#/g, "\u266f") : c.sym; }).join(" ") : "\u00b7"; });
-    return { name: nx.name, text: bars.join("  |  ") };
-  }
+  // The bars are copies of the chart's own (so they read as the chart does: letters, numerals, the instrument's key): from the top of
+  // the next section until four chords have been shown, four bars at most. They are not bars of the chart: a click does nothing.
   function tabNext(pane, secs, k){
-    var el = pane.querySelector(".bt-next-line"); if (!el) return; var n = nextLine(secs, k);
-    el.querySelector("b").textContent = "Next: " + n.name; el.querySelector("span").textContent = n.text; el.title = n.text ? n.name + ": " + n.text : "";
+    var el = pane.querySelector(".bt-next-line"); if (!el) return; var nx = secs[k + 1], box = el.querySelector(".bt-next-bars"), n = 0;
+    el.querySelector("b").textContent = "Next: " + (nx ? nx.name : "End"); box.textContent = ""; box.hidden = !nx; if (!nx) return;
+    for (var i = nx.bar; i < nx.end && i < nx.bar + 4 && n < 4; i++){
+      var src = $("bt-chart").querySelector('.tc-bar[data-bar="' + i + '"]'); if (!src) break;
+      var c = src.cloneNode(true); c.removeAttribute("data-bar"); c.removeAttribute("title");
+      c.className = src.className.split(/\s+/).filter(function(x){ return /^tc-/.test(x) && x !== "tc-live"; }).join(" ");
+      Array.prototype.forEach.call(c.querySelectorAll(".tc-section, .tc-courtesy"), function(x){ x.remove(); });
+      box.appendChild(c); n += parsedC.bars[i].chords.length || 1; }
   }
   var tabBusy = false;
   function tabShow(i){
@@ -775,11 +817,11 @@
         li.appendChild(a); nav.appendChild(li);
         var pane = document.createElement("div"); pane.className = "tab-pane"; pane.id = "bt-pane-" + i; pane.setAttribute("role", "tabpanel"); pane.setAttribute("aria-labelledby", a.id); pane.setAttribute("data-print-title", t.name);
         var list = document.createElement("div"); list.className = "tc-systems bt-pane-rows"; pane.appendChild(list); content.appendChild(pane);
-        var nl = document.createElement("div"); nl.className = "bt-next-line"; nl.appendChild(document.createElement("b")); nl.appendChild(document.createElement("span")); pane.appendChild(nl);
-        tabNext(pane, secs, t.first);
+        var nl = document.createElement("div"); nl.className = "bt-next-line"; nl.appendChild(document.createElement("b")); var nb = document.createElement("div"); nb.className = "bt-next-bars"; nl.appendChild(nb); pane.appendChild(nl);
         rows.forEach(function(r){ var first = r.querySelector(".tc-bar[data-bar]"); if (first && tabOf(secs, parseInt(first.getAttribute("data-bar"), 10)) === t.first) list.appendChild(r); });
       });
       set.appendChild(nav); set.appendChild(content); sys.parentNode.insertBefore(set, sys);
+      tabs.forEach(function(t, i){ tabNext(content.children[i], secs, t.first); });      // (once every bar is back in the page)
       sys.hidden = true;                                           // (what is left there is a repeat of something on a tab)
       tabShow(tabSel);
     } finally { tabBusy = false; }
@@ -1110,9 +1152,11 @@
   }
   window.__btSections = function(){ var o = {}; Object.keys(secOv).forEach(function(k){ o[k] = secOv[k].opts; });                   // for tests
     return { shown: secShown, now: secNow, opts: Object.assign({}, secBase, { sectionOverrides: o }) }; };
+  window.__btMenuOpts = function(){ return menuOpts(); };                // for tests
   function menuOpts(){ var c = compDef(); return { bassFeel: $("bt-bass").value, groove: $("bt-groove").value, comp: c.inst, compRhythm: rhythmChoice(), rhythmMix: rhythmMix(), voicing: voicingChoice(), voicingMix: voicingMix(), walk: walkChoice(),
     feel: $("bt-feel").value, timeFeel: $("bt-timefeel").value, timeFeelParts: $("bt-timeparts").value, variation: parseFloat($("bt-variation").value), ride: $("bt-ride").value, pins: pins ? pins.map : null, second: secondOpts(), organ: organOpts(),
     voiceMove: $("bt-vmove").value, extend: extendChoice(), figures: $("bt-figs").value,
+    octave: { bass: parseInt($("bt-oct-bass").value, 10) || 0, comp: parseInt($("bt-oct-comp").value, 10) || 0, comp2: parseInt($("bt-oct-comp2").value, 10) || 0 },
     compSound: c.sound || c.inst, bassSound: $("bt-bass-sound").value, rideSound: $("bt-ride-sound").value, stops: stopBars(), fills: $("bt-fills").value, melody: !(remote && remote.mute), push: $("bt-push").checked, lift: liftBars().concat(chorusBars()), halfBars: liftBars("bt-half"), boom: (parseInt($("bt-boom").value, 10) || 0) / 100 }; }
   // only the sample sets the menus ask for are loaded
   function neededSounds(){ var out = menuSounds(); function add(n){ if (out.indexOf(n) < 0) out.push(n); }
@@ -1126,7 +1170,7 @@
   // suggest = take the rhythm and voicings the catalog pairs with the chosen Style
   function secondSync(suggest){
     var d = secondDef(), was = $("bt-second-voicing").value;
-    ["bt-second-rhythm-f", "bt-second-voicing-f", "bt-second-suggest"].forEach(function(id){ $(id).hidden = !d; }); $("bt-vol-comp2").parentNode.hidden = !d;
+    ["bt-second-rhythm-f", "bt-second-voicing-f", "bt-oct-comp2-f", "bt-second-suggest"].forEach(function(id){ $(id).hidden = !d; }); $("bt-vol-comp2").parentNode.hidden = !d;
     if (!d) return;
     fill($("bt-second-voicing"), BandHarmony.styleList(d.inst));
     function has(id, v){ return Array.prototype.some.call($(id).options, function(o){ return o.value === String(v); }); }
@@ -1241,8 +1285,12 @@
   // The panel follows the comping instrument: when that sound changes, it is the one shown (a sound whose EQ was set earlier
   // stays in the list as "not in use", and used to keep the panel).
   var eqComp = null;
+  // The name over each mixer fader is a menu of that player's sounds: the same choice as the Sound, Instrument and Second chord
+  // instrument menus in the Band panel, which it copies and drives.
+  var VOICES = [["bt-voice-bass", "bt-bass-sound"], ["bt-voice-comp", "bt-comp"], ["bt-voice-comp2", "bt-second"]];
+  function voiceSync(){ VOICES.forEach(function(p){ var v = $(p[0]), m = $(p[1]); if (v.options.length !== m.options.length) v.innerHTML = m.innerHTML; v.value = m.value; }); }
   function eqInstSync(){ var was = $("bt-eq-inst").value, list = eqInsts(), comp = list[1].id, moved = eqComp !== comp; eqComp = comp; fill($("bt-eq-inst"), list);
-    $("bt-eq-inst").value = !moved && list.some(function(o){ return o.id === was; }) ? was : comp; eqShow(); ampShow(); organSync(); }
+    $("bt-eq-inst").value = !moved && list.some(function(o){ return o.id === was; }) ? was : comp; eqShow(); ampShow(); organSync(); voiceSync(); }
   function eqInit(){
     var saved = eqSaved(); Object.keys(saved).forEach(function(id){ BandSounds.setEQ(id, saved[id]); });
     for (var i = 0; i < 5; i++){ var d = document.createElement("div"); d.className = "bt-eq-band";
@@ -1712,9 +1760,13 @@
     $("bt-vol-" + part).addEventListener("input", function(){ player.setVolume(part, vol(part)); }); });
   $("bt-second").addEventListener("change", function(){ secondSync(true); eqInstSync(); player.setInstruments(neededSounds()); player.setOpts(bandOpts()); });
   $("bt-second-suggest").addEventListener("click", function(){ secondSync(true); player.setOpts(bandOpts()); });
-  ["bt-second-rhythm", "bt-second-voicing"].forEach(function(id){ $(id).addEventListener("change", function(){ player.setOpts(bandOpts()); }); });
+  ["bt-second-rhythm", "bt-second-voicing", "bt-oct-bass", "bt-oct-comp", "bt-oct-comp2"].forEach(function(id){ $(id).addEventListener("change", function(){ player.setOpts(bandOpts()); }); });
   ["bt-comp", "bt-bass-sound", "bt-style"].forEach(function(id){ $(id).addEventListener("change", eqInstSync); });
   eqInit();
+  VOICES.forEach(function(p){ var v = $(p[0]);
+    v.addEventListener("change", function(){ var m = $(p[1]); m.value = v.value; m.dispatchEvent(new Event("change", { bubbles: true })); });
+    v.addEventListener("pointerdown", voiceSync); v.addEventListener("focus", voiceSync); });
+  $("bt-root").addEventListener("change", voiceSync);
   $("bt-abc").addEventListener("input", function(){
     clearTimeout(editTimer);
     editTimer = setTimeout(function(){ if (applyAbc($("bt-abc").value, true)){ $("bt-changes").value = "custom"; clearPins("you edited the changes"); } }, 300);
@@ -1735,7 +1787,7 @@
   // are listed at the bottom of the Changes menu as "setup:b:<n>" (built-in) / "setup:u:<n>" (saved here).
   var SETUP_KEY = "btSetups", BUILTIN = (window.BandPresets || []).filter(function(x){ return x && x.abc && x.name; });
   var FIELDS = ["bt-tabview", "bt-fills", "bt-hold", "bt-bass-sound", "bt-walk", "bt-comp", "bt-vmove", "bt-ext", "bt-variation", "bt-boom", "bt-stops", "bt-lift", "bt-half", "bt-figs", "bt-timefeel", "bt-timeparts", "bt-intro", "bt-intro-bars", "bt-countin", "bt-choruses", "bt-ride", "bt-ride-sound", "bt-roman", "bt-chartfor",
-                "bt-start", "bt-cyc-from", "bt-cyc-to", "bt-step-a", "bt-step-b", "bt-vol-bass", "bt-vol-comp", "bt-vol-drums", "bt-second", "bt-second-rhythm", "bt-second-voicing", "bt-vol-comp2", "bt-leslie", "bt-swell", "bt-swell-pos"].concat(KIT.map(function(k){ return "bt-kit-" + k.id; }));
+                "bt-start", "bt-cyc-from", "bt-cyc-to", "bt-step-a", "bt-step-b", "bt-vol-bass", "bt-vol-comp", "bt-vol-drums", "bt-second", "bt-second-rhythm", "bt-second-voicing", "bt-vol-comp2", "bt-leslie", "bt-swell", "bt-swell-pos", "bt-oct-bass", "bt-oct-comp", "bt-oct-comp2"].concat(KIT.map(function(k){ return "bt-kit-" + k.id; }));
   var CHECKS = ["bt-push", "bt-intro-nodrums", "bt-ext-six", "bt-ext-nine", "bt-ext-thirteen", "bt-cyc-on", "bt-step-on"];
   function savedSetups(){ var l = []; try { l = JSON.parse(localStorage.getItem(SETUP_KEY) || "[]") || []; } catch (e) { l = []; } return Array.isArray(l) ? l.filter(function(x){ return x && x.abc && x.name; }) : []; }
   function storeSetups(l){ try { localStorage.setItem(SETUP_KEY, JSON.stringify(l)); return true; } catch (e) { return false; } }
@@ -1776,7 +1828,7 @@
     if (s.voicing) setVoicing(s.voicing);
     if (has("bt-feel", s.feel) && (unlocked() || styleDef().feel === s.feel)) $("bt-feel").value = s.feel;
     // what belongs to the tune goes back to its plain setting when the setup does not mention it
-    ["bt-intro", "bt-intro-bars", "bt-timefeel", "bt-timeparts", "bt-figs"].forEach(function(id){ if (f[id] == null){ var el = $(id), d = Array.prototype.filter.call(el.options, function(o){ return o.defaultSelected; })[0]; el.value = d ? d.value : el.options[0].value; } });
+    ["bt-intro", "bt-intro-bars", "bt-timefeel", "bt-timeparts", "bt-figs", "bt-oct-bass", "bt-oct-comp", "bt-oct-comp2"].forEach(function(id){ if (f[id] == null){ var el = $(id), d = Array.prototype.filter.call(el.options, function(o){ return o.defaultSelected; })[0]; el.value = d ? d.value : el.options[0].value; } });
     if (f["bt-stops"] == null) $("bt-stops").value = ""; if (f["bt-lift"] == null) $("bt-lift").value = ""; if (f["bt-half"] == null) $("bt-half").value = ""; if (c["bt-intro-nodrums"] == null) $("bt-intro-nodrums").checked = false;
     FIELDS.forEach(function(id){ if (id === "bt-comp" || f[id] == null) return; var el = $(id); if (el.tagName !== "SELECT" || has(id, f[id])) el.value = f[id]; });
     if (f["bt-second"] == null) $("bt-second").value = "";              // (a setup that does not mention a second instrument has none)
@@ -1977,6 +2029,32 @@
   // apps/shared/band/archive/side-now-next.js.)
   var sideInfo = null, sideSig = "", sideReady = true, sideFrame = null, sideFrameOk = false, sideMsg = null;
   function sideOn(){ return $("bt-side-on").checked; }
+  // Which instrument the diagram is for. Piano and guitar are the Chord Sheet's drawing; the others are drawn here with the lesson
+  // pages' LessonDiagrams, the way those pages show a chord on that instrument: its root, 3rd, 5th and 7th.
+  function sideInst(){ var v = $("bt-side-inst").value; return v === "band" ? (compDef().inst === "guitar" ? "guitar" : "piano") : v; }
+  // bass: one hand position near the key note (the bass lesson's shapes, apps/shared/lessons/blues-kit.js: SHAPE = [strings up, frets along]
+  // for each distance above a root on strings a fourth apart). violin: first position, every place the notes fall, rows named by finger.
+  var SIDE_BASS = { tuning: [28, 33, 38, 43], strings: ["E", "A", "D", "G"] }, SIDE_SHAPE = { 0: [0, 0], 2: [0, 2], 3: [0, 3], 4: [1, -1], 5: [1, 0], 6: [1, 1], 7: [1, 2], 8: [1, 3], 9: [2, -1], 10: [2, 0], 11: [2, 1] };
+  var SIDE_VIOLIN = { tuning: [55, 62, 69, 76], strings: ["G", "D", "A", "E"], rows: { 1: "low 1", 2: "1", 3: "low 2", 4: "high 2", 5: "3", 6: "high 3", 7: "4" } };
+  function sideTones(ch){ var an = ChordVoicings.analyze(BandHarmony.libChord(ch)); return [an.rootTone, an.third, an.fifth, an.seventh].filter(Boolean).map(function(t){ return { off: t.off, text: t.name.replace(/b/g, "\u266d").replace(/#/g, "\u266f") }; }); }
+  function sideBassNotes(ch){
+    var t = SIDE_BASS.tuning, key = parsedC ? parsedC.keyPc : 0, a = (key - t[0] + 120) % 12; if (a > 7) a = (key - t[1] + 120) % 12;
+    var r = null; [0, 1].forEach(function(s){ for (var f = 0; f <= 14; f++) if ((t[s] + f - ch.root + 120) % 12 === 0){ var d = Math.abs(f - a) - (s === 1 ? 0.1 : 0); if (!r || d < r.d) r = { string: s, fret: f, d: d }; } });
+    return sideTones(ch).map(function(x){ var sh = SIDE_SHAPE[x.off] || [0, x.off], s = r.string + sh[0], f = r.fret + sh[1]; if (f < 0){ s -= 1; f += 5; } return { string: s, fret: f, text: x.text, root: x.off === 0 }; })
+      .filter(function(n){ return n.string >= 0 && n.string < 4 && n.fret >= 0; });
+  }
+  function sideViolinNotes(ch){
+    var tones = sideTones(ch), out = [];
+    SIDE_VIOLIN.tuning.forEach(function(open, s){ for (var f = 0; f <= 7; f++){ var x = tones.filter(function(q){ return (open + f - ch.root + 120) % 12 === q.off; })[0]; if (x) out.push({ string: s, fret: f, text: x.text, root: x.off === 0 }); } });
+    return out;
+  }
+  function sideOwn(inst, cur, next){
+    var box = $("bt-side-own"), list = [cur, next].filter(Boolean), cols = []; if (cur) cols.push(0); if (next) cols.push(2);       // (the lesson diagrams' teal and orange)
+    box.textContent = ""; if (!list.length || typeof LessonDiagrams === "undefined") return;
+    var chords = list.map(function(o){ return { label: TuneChart.fmtChord(o.chord.sym, 0, true).replace(/<[^>]*>/g, ""), notes: inst === "violin" ? sideViolinNotes(o.chord) : sideBassNotes(o.chord) }; });
+    box.appendChild(inst === "violin" ? LessonDiagrams.fretboard(chords, { strings: SIDE_VIOLIN.strings, frets: [1, 7], rows: SIDE_VIOLIN.rows, rowHead: "finger", fretless: true, colors: cols })
+      : LessonDiagrams.fretboard(chords, { strings: SIDE_BASS.strings, colors: cols }));
+  }
   function sideSym(sym){ return String(sym).replace(/\/.*$/, "").replace(/\s+/g, ""); }     // the diagram does not draw a slash bass
   function sideNext(slots, i){ for (var k = 1; k < slots.length; k++){ var o = slots[(i + k) % slots.length]; if (o.chord.key !== slots[i].chord.key) return o; } return null; }
   function sideLine(tag, slot, cls, shown){
@@ -1997,15 +2075,18 @@
   });
   // show these two slots (either may be null) as now and next
   function sideShow(cur, next){
-    var slots = chordSlots(), seen = {}, four = [], total = 0, c = compDef();
+    var slots = chordSlots(), seen = {}, four = [], total = 0, c = compDef(), inst = sideInst(), own = inst !== "piano" && inst !== "guitar", fam = c.inst === "guitar" ? "guitar" : "piano";
     slots.forEach(function(o){ if (seen[o.chord.key]) return; seen[o.chord.key] = 1; total++; if (four.length < 4) four.push(o); });
     function at(o){ if (!o) return null; var k = four.filter(function(x){ return x.chord.key === o.chord.key; })[0]; return k ? sideSym(k.chord.sym) : null; }
-    var msg = { type: "super-embed", chords: four.map(function(o){ return sideSym(o.chord.sym); }), comp: c.inst === "guitar" ? "guitar" : "piano",
-                voicing: String(voicingChoice()).split("+")[0], now: at(cur), next: at(next) };
-    var sig = JSON.stringify(msg) + "|" + (cur && cur.chord.key) + "|" + (next && next.chord.key); if (sig === sideSig) return; sideSig = sig;
-    $("bt-side-body").innerHTML = sideLine("Now", cur, "", !cur || msg.now != null) + (next ? sideLine("Next", next, "is-next", msg.next != null) : "") +
-      (total > 4 ? "<p><small>The diagram shows the first four of the " + total + " different chords.</small></p>" : "");
-    sideMsg = msg; sideFrameMake();
+    // (an instrument the band is not playing has no voicings chosen for it: its usual ones)
+    var msg = { type: "super-embed", chords: four.map(function(o){ return sideSym(o.chord.sym); }), comp: own ? fam : inst,
+                voicing: own || inst === fam ? String(voicingChoice()).split("+")[0] : BandHarmony.defaultStyle(inst), now: at(cur), next: at(next) };
+    var sig = inst + "|" + JSON.stringify(msg) + "|" + (cur && cur.chord.key) + "|" + (next && next.chord.key); if (sig === sideSig) return; sideSig = sig;
+    $("bt-side-body").innerHTML = sideLine("Now", cur, "", own || !cur || msg.now != null) + (next ? sideLine("Next", next, "is-next", own || msg.next != null) : "") +
+      (!own && total > 4 ? "<p><small>The diagram shows the first four of the " + total + " different chords.</small></p>" : "");
+    $("bt-side-own").hidden = !own; if (sideFrame) sideFrame.hidden = own;
+    if (own){ sideOwn(inst, cur, next); return; }
+    sideMsg = msg; sideFrameMake(); sideFrame.hidden = false;
     if (sideFrameOk) sideFrame.contentWindow.postMessage(msg, location.origin);
   }
   function sideBeat(beat){
@@ -2020,14 +2101,18 @@
   // not playing: the chord at the start bar and the one after it
   function sideIdle(){
     if (!sideReady || !$("bt-side")) return;
-    $("bt-side").hidden = !sideOn();
+    $("bt-side").hidden = !sideOn(); $("bt-chartrow").classList.toggle("bt-side-off", !sideOn()); $("bt-chartrow").classList.toggle("bt-below", $("bt-side-pos").value === "below");
     if (!sideOn() || state === "playing" || !parsedC) return;
     var slots = chordSlots(); if (!slots.length){ sideSig = ""; $("bt-side-body").innerHTML = "<p>No chords yet.</p>"; return; }
     var i = 0, p = practice(), at = (p.cyc ? p.from : p.start) - 1;
     slots.some(function(o, k){ if (o.bar === at){ i = k; return true; } return false; });
     sideShow(slots[i], sideNext(slots, i));
   }
-  try { if (localStorage.getItem("btSide") === "off") $("bt-side-on").checked = false; } catch (e) {}
+  try { if (localStorage.getItem("btSide") === "off") $("bt-side-on").checked = false;
+    var sp = localStorage.getItem("btSidePos"), si = localStorage.getItem("btSideInst"); if (sp === "below") $("bt-side-pos").value = sp;
+    if (si && Array.prototype.some.call($("bt-side-inst").options, function(o){ return o.value === si; })) $("bt-side-inst").value = si; } catch (e) {}
+  $("bt-side-pos").addEventListener("change", function(){ try { localStorage.setItem("btSidePos", $("bt-side-pos").value); } catch (e) {} sideIdle(); });
+  $("bt-side-inst").addEventListener("change", function(){ try { localStorage.setItem("btSideInst", $("bt-side-inst").value); } catch (e) {} sideSig = ""; sideIdle(); });      // (while playing, the next beat draws it)
   $("bt-side-on").addEventListener("change", function(){ try { localStorage.setItem("btSide", sideOn() ? "on" : "off"); } catch (e) {} sideSig = ""; sideIdle(); });
   ["bt-start", "bt-cyc-on", "bt-cyc-from"].forEach(function(id){ $(id).addEventListener("change", sideIdle); });
 

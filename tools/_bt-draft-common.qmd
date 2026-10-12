@@ -1,0 +1,215 @@
+```{=html}
+<!-- Shared by the two DRAFT layouts of the Backing Track (backing-track-a.qmd, backing-track-b.qmd).
+     Each draft includes this file, then _backing-track.qmd UNCHANGED (its markup and its script), then its own
+     layout file, which moves the page's existing controls into a new arrangement. Every control keeps its id,
+     so the page's script, saved setups and the remote link go on working. This file must come BEFORE the include:
+     it has to see BandPlayer arrive. When a draft is chosen, fold it into _backing-track.qmd and delete the rest. -->
+<style>
+#bt-root.dx{max-width:1500px;display:block}
+#bt-root.dx .dx-note{margin:0 0 .6rem;font-size:.82rem;color:var(--site-ink-2,#5c5246)}
+#bt-root.dx .dx-h{margin:0 0 .4rem;font-family:var(--font-display,'Oswald',system-ui,sans-serif);font-size:.82rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--site-ink-2,#5c5246);border:0;padding:0}
+
+/* vertical faders */
+#bt-root.dx input[type=range].dx-v{writing-mode:vertical-lr;direction:rtl;width:1.6rem;height:8.5rem;min-width:0;margin:0;flex:0 0 auto}
+#bt-root.dx .dx-strips{display:flex;flex-wrap:nowrap;gap:.3rem;align-items:stretch;width:auto;margin:0;padding:0 0 .2rem;border:0;overflow-x:auto}
+#bt-root.dx{--dx-head:2.7rem}
+#bt-root.dx div.dx-strip{flex:0 0 4rem;max-width:none;display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.4rem .15rem;
+  border:1px solid var(--site-border,#e0d8ce);border-radius:6px;background:var(--site-surface,#fff)}
+#bt-root.dx .dx-strip label{display:none}
+#bt-root.dx .dx-strip .bt-voice{align-self:stretch}
+#bt-root.dx .dx-strip .bt-voice .dx-name{cursor:pointer;text-decoration:underline dotted;text-underline-offset:.2em}
+#bt-root.dx .dx-strip .bt-voice .dx-name::after{content:" \25BE"}
+/* every strip and every EQ band: a head of one fixed height, then the fader, so all the faders start and end on the same lines */
+#bt-root.dx .dx-name{box-sizing:border-box;height:var(--dx-head);width:100%;overflow:hidden;display:flex;align-items:center;justify-content:center;font-size:.68rem;font-weight:600;text-align:center;line-height:1.12;overflow-wrap:anywhere}
+#bt-root.dx .dx-strip .bt-voice{height:var(--dx-head);flex:0 0 auto}
+#bt-root.dx .dx-val{font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.72rem;font-variant-numeric:tabular-nums}
+#bt-root.dx .dx-ms{display:flex;gap:.2rem}
+#bt-root.dx .dx-ms button,#bt-root.dx .dx-tone{width:1.65rem;height:1.5rem;padding:0;border:1px solid var(--site-border,#e0d8ce);border-radius:4px;
+  background:var(--site-surface,#fff);color:inherit;font:inherit;font-size:.72rem;font-weight:700;cursor:pointer}
+#bt-root.dx .dx-tone{width:auto;padding:0 .45rem}
+#bt-root.dx .dx-ms button.dx-m[aria-pressed=true]{background:#b5251c;border-color:#b5251c;color:#fff}
+#bt-root.dx .dx-ms button.dx-s[aria-pressed=true]{background:#e0b01e;border-color:#b98d0c;color:#1e1c18}
+#bt-root.dx .dx-strip.is-off{background:var(--site-surface-2,#f2ede5)}
+#bt-root.dx .dx-strip.is-off input[type=range]{opacity:.4}
+
+/* EQ: one column for each band; the amount is a fader, frequency and width are typed */
+#bt-root.dx #bt-eq-bands{display:none}
+#bt-root.dx .dx-eq{display:flex;gap:.3rem;margin-top:.6rem;overflow-x:auto}
+#bt-root.dx .dx-eqband{flex:0 0 5.4rem;display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.4rem .25rem;border:1px solid var(--site-border,#e0d8ce);border-radius:6px}
+#bt-root.dx .dx-eqband select,#bt-root.dx .dx-eqband input[type=number]{width:100%;height:1.7rem;padding:0 .25rem;font-size:.76rem}
+#bt-root.dx .dx-eqband>select{flex:0 0 auto;margin:calc((var(--dx-head) - 1.7rem) / 2) 0}
+#bt-root.dx .dx-eqband label{display:flex;align-items:center;gap:.25rem;width:100%;margin:0;font-size:.7rem;color:var(--site-ink-2,#5c5246)}
+#bt-root.dx .dx-eqband label span{flex:0 0 1.3rem}
+/* amp stages: a typed number for each setting */
+#bt-root.dx #bt-amp-stages{grid-template-columns:repeat(auto-fill,minmax(13rem,1fr));gap:.5rem .8rem}
+#bt-root.dx #bt-amp-stages .bt-eq-band{padding:.4rem .5rem;border:1px solid var(--site-border,#e0d8ce);border-radius:6px}
+#bt-root.dx #bt-amp-stages label{display:flex;align-items:center;justify-content:space-between;gap:.4rem;margin:0;font-size:.78rem}
+#bt-root.dx #bt-amp-stages label input[type=range],#bt-root.dx #bt-amp-stages label output{display:none}
+#bt-root.dx #bt-amp-stages .dx-num{display:flex;align-items:center;gap:.25rem;flex:0 0 auto}
+#bt-root.dx #bt-amp-stages .dx-num input{width:4.6rem;height:1.7rem;padding:0 .3rem;font-size:.78rem}
+#bt-root.dx #bt-amp-stages .dx-num small{min-width:1.6rem;color:var(--site-ink-3,#9a8d7e)}
+/* tonebars: pulled down is louder, as on the instrument */
+#bt-root.dx .bt-tonebars{grid-template-columns:repeat(9,2.5rem);gap:.25rem;max-width:none}
+#bt-root.dx .bt-tonebars input[type=range]{writing-mode:vertical-lr;width:1.6rem;height:7rem}
+/* the parts of the mixer are always open here */
+#bt-root.dx details.bt-kit>summary{display:none}
+#bt-root.dx details.bt-kit{margin-top:0;padding-top:0;border-top:0}
+</style>
+<script>
+(function(){
+  var D = window.BTDraft = {}, $ = D.$ = function(id){ return document.getElementById(id); };
+  function el(tag, cls, text){ var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+  D.el = el;
+  D.field = function(id){ var e = $(id); return e ? e.closest(".bt-field") : null; };
+  D.put = function(parent){ for (var i = 1; i < arguments.length; i++) if (arguments[i]) parent.appendChild(arguments[i]); return parent; };
+  D.head = function(text){ return el("h3", "dx-h", text); };
+
+  // The page remembers which of its panels were open (localStorage.btSections). A draft opens and closes them for its
+  // own reasons, so what the current page remembers is put back after every toggle.
+  var keep = null; try { keep = localStorage.getItem("btSections"); } catch (e) {}
+  document.addEventListener("toggle", function(){ setTimeout(function(){
+    try { if (keep == null) localStorage.removeItem("btSections"); else localStorage.setItem("btSections", keep); } catch (e) {} }, 0); }, true);
+
+  // ---- mute and solo ----
+  // The page hands each fader's value to the player (setVolume for the four parts, setKitVolume for the kit pieces). Here the
+  // player is wrapped as it is created: the fader's value is remembered and what reaches the player is 0 while the strip
+  // is muted, or while another strip of its group is soloed. The faders, and so saved setups, never move.
+  // Keys: "bass" "comp" "comp2" "drums", and "kit:<fader id>" for the kit, which solos among itself.
+  var PARTS = ["bass", "comp", "comp2", "drums"], real = null, rawVol = null, rawKit = null;
+  var fader = {}, kitv = {}, pieceGroup = {}, curGroup = null, mute = {}, solo = {}, strips = {};
+  function isKit(key){ return key.indexOf("kit:") === 0; }
+  function off(key){
+    if (mute[key]) return true;
+    var anySolo = Object.keys(strips).some(function(k){ return isKit(k) === isKit(key) && solo[k] && !strips[k].field.hidden; });
+    return anySolo && !solo[key];
+  }
+  function kitOff(piece){ return !!pieceGroup[piece] && off("kit:" + pieceGroup[piece]); }
+  function apply(){
+    if (rawVol) PARTS.forEach(function(p){ if (fader[p] != null) sendVol(p); });
+    if (rawKit) Object.keys(kitv).forEach(sendKit);
+    paint();
+  }
+  var sent = D.sent = {};                                                // what the player was last given (for tests)
+  function sendVol(p){ rawVol(p, sent[p] = off(p) ? 0 : fader[p]); }
+  function sendKit(pc){ rawKit(pc, sent["kit:" + pc] = kitOff(pc) ? 0 : kitv[pc]); }
+  var paintT = null;
+  function paintSoon(){ if (!paintT) paintT = setTimeout(function(){ paintT = null; paint(); }, 30); }
+  function paint(){
+    Object.keys(strips).forEach(function(k){ var s = strips[k];
+      var name = s.lab ? s.lab.textContent.replace(" volume", "") : k; s.name.textContent = name; s.range.setAttribute("aria-label", name + " volume");
+      s.val.textContent = s.range.value; s.m.setAttribute("aria-pressed", String(!!mute[k])); s.s.setAttribute("aria-pressed", String(!!solo[k]));
+      s.field.classList.toggle("is-off", off(k)); });
+  }
+  Object.defineProperty(window, "BandPlayer", { configurable: true, enumerable: true, get: function(){ return real; }, set: function(BP){
+    real = BP; var create = BP.create;
+    BP.create = function(cfg){
+      PARTS.forEach(function(p){ fader[p] = cfg.volumes && cfg.volumes[p] != null ? cfg.volumes[p] : 1; });
+      Object.keys(cfg.kit || {}).forEach(function(k){ kitv[k] = cfg.kit[k]; });
+      var p = create.apply(BP, arguments); rawVol = p.setVolume; rawKit = p.setKitVolume;
+      p.setVolume = function(part, v){ fader[part] = v; sendVol(part); paintSoon(); };
+      p.setKitVolume = function(piece, v){ if (curGroup) pieceGroup[piece] = curGroup; kitv[piece] = v; sendKit(piece); paintSoon(); };
+      D.player = p; return p;
+    };
+  } });
+  // Turn one of the page's volume fields (label + range) into a channel strip: name, vertical fader, value, M and S.
+  D.strip = function(field, key){
+    var range = field.querySelector("input[type=range]"), s = { field: field, range: range, lab: field.querySelector("label"),
+      name: el("span", "dx-name"), val: el("output", "dx-val"), m: el("button", "dx-m", "M"), s: el("button", "dx-s", "S") };
+    field.classList.add("dx-strip"); range.classList.add("dx-v"); range.setAttribute("orient", "vertical");       // (orient: older Firefox)
+    var voice = field.querySelector(".bt-voice");                         // the page's own menu of sounds lies over the name
+    s.m.type = s.s.type = "button"; s.m.title = "Mute"; s.s.title = "Solo";
+    var ms = el("div", "dx-ms"); ms.appendChild(s.m); ms.appendChild(s.s);
+    if (voice) voice.insertBefore(s.name, voice.firstChild); else field.insertBefore(s.name, field.firstChild); field.appendChild(s.val); field.appendChild(ms);
+    s.m.addEventListener("click", function(){ mute[key] = !mute[key]; apply(); });
+    s.s.addEventListener("click", function(){ solo[key] = !solo[key]; apply(); });
+    range.addEventListener("input", paint);
+    strips[key] = s; return field;
+  };
+  // the four parts; with `tone` each strip also gets a button that shows that instrument in the EQ
+  D.partStrips = function(tone){
+    PARTS.forEach(function(p){ var f = D.strip(D.field("bt-vol-" + p), p); if (tone) f.appendChild(D.toneButton(p, "EQ")); });
+    paint();
+  };
+  // the kit: a strip for each fader. Moving each one once (to where it already is) shows which kit pieces it carries.
+  D.kitStrips = function(){
+    var box = $("bt-kit-faders"); box.classList.add("dx-strips");
+    Array.prototype.forEach.call(box.children, function(f){ var r = f.querySelector("input[type=range]"), id = r.id.replace("bt-kit-", "");
+      D.strip(f, "kit:" + id); curGroup = id; r.dispatchEvent(new Event("input")); curGroup = null; });
+    paint();
+  };
+  D.toneButton = function(part, text){ var b = el("button", "dx-tone", text); b.type = "button"; b.title = "Show this instrument in the EQ";
+    b.addEventListener("click", function(){ D.tone(part); }); return b; };
+  D.tone = function(part){
+    var sel = $("bt-eq-inst"), o = sel.options, v = part === "bass" ? o[0].value : part === "drums" ? "kit" : o[1].value;
+    if (part === "comp2") for (var i = 0; i < o.length; i++) if (/\(second\)$/.test(o[i].textContent)) v = o[i].value;
+    sel.value = v; sel.dispatchEvent(new Event("change", { bubbles: true }));
+    if (D.onTone) D.onTone(part);
+  };
+
+  // ---- EQ: the page's five bands, drawn again as columns. Reads and writes BandSounds and localStorage.btEQ as the page does,
+  // so a frequency or a width is kept exactly as typed. Double-click a fader to put it back where it started.
+  D.eq = function(){
+    var box = el("div", "dx-eq"), rows = [];
+    function inst(){ return $("bt-eq-inst").value; }
+    function store(id, bands){ var all = {}; try { all = JSON.parse(localStorage.getItem("btEQ") || "{}") || {}; } catch (e) {} all[id] = bands; try { localStorage.setItem("btEQ", JSON.stringify(all)); } catch (e) {} }
+    function set(i, k, v){ var id = inst(), b = BandSounds.getEQ(id); b[i][k] = v; BandSounds.setEQ(id, b); store(id, BandSounds.getEQ(id)); show(); }
+    function num(label, min, max, step, title){ var l = el("label"), n = el("input"); n.type = "number"; n.min = min; n.max = max; n.step = step; l.title = title; l.appendChild(el("span", "", label)); l.appendChild(n); return n; }
+    for (var i = 0; i < 5; i++) (function(i){
+      var d = el("div", "dx-eqband"), t = $("bt-eq-t" + i).cloneNode(true), out = el("output", "dx-val"), g = el("input", "dx-v"), f = num("Hz", 20, 18000, 1, "Frequency"), q = num("Q", 0.1, 18, 0.1, "Width (Q): low is broad, high is narrow");
+      t.removeAttribute("id"); g.type = "range"; g.setAttribute("orient", "vertical"); g.min = -18; g.max = 18; g.step = 0.5; g.setAttribute("value", "0"); g.setAttribute("aria-label", "Band " + (i + 1) + " amount");
+      d.appendChild(t); d.appendChild(g); d.appendChild(out); d.appendChild(f.parentNode); d.appendChild(q.parentNode); box.appendChild(d);
+      t.addEventListener("change", function(){ set(i, "type", t.value); });
+      g.addEventListener("input", function(){ set(i, "gain", +g.value); });
+      f.addEventListener("change", function(){ if (+f.value > 0) set(i, "f", +f.value); else show(); });
+      q.addEventListener("change", function(){ if (+q.value > 0) set(i, "q", +q.value); else show(); });
+      rows.push({ t: t, out: out, g: g, f: f, q: q });
+    })(i);
+    function show(){
+      BandSounds.getEQ(inst()).forEach(function(b, i){ var r = rows[i], cut = b.type === "highpass" || b.type === "lowpass", shelf = b.type === "lowshelf" || b.type === "highshelf";
+        r.t.value = b.type; r.g.value = b.gain; r.g.disabled = cut; r.out.textContent = cut ? "cut" : (b.gain > 0 ? "+" : "") + b.gain + " dB";
+        if (document.activeElement !== r.f) r.f.value = b.f; if (document.activeElement !== r.q) r.q.value = b.q; r.q.disabled = shelf; });
+    }
+    // the page redraws its own (hidden) bands whenever the instrument, a reset, a style or a loaded setup changes the EQ on show
+    new MutationObserver(show).observe($("bt-eq-bands"), { childList: true, subtree: true });
+    $("bt-eq-bands").parentNode.insertBefore(box, $("bt-eq-bands").nextSibling);
+    show(); return box;
+  };
+  // ---- amp stages: the page builds a slider for each setting (and builds them again for each instrument). Each is given a
+  // number box that drives it. Frequency, width and drive are on curved sliders, so those snap to the slider's nearest step.
+  // (The four formulas are the page's own: eqHz, eqPos, eqQ, eqQPos, ampDrive, ampDrivePos.)
+  function r2(x){ return Math.round(x * 100) / 100; }
+  var CURVE = { f: [function(v){ return Math.round(20 * Math.pow(900, v / 1000)); }, function(x){ return 1000 * Math.log(x / 20) / Math.log(900); }, 1, "Hz"],
+                q: [function(v){ return r2(0.3 * Math.pow(40, v / 100)); }, function(x){ return 100 * Math.log(x / 0.3) / Math.log(40); }, 0.01, ""],
+                drive: [function(v){ return r2(0.5 * Math.pow(80, v / 100)); }, function(x){ return 100 * Math.log(x / 0.5) / Math.log(80); }, 0.01, ""],
+                trem: [function(v){ return v / 10; }, function(x){ return x * 10; }, 0.1, "Hz"] };
+  D.amp = function(){
+    var box = $("bt-amp-stages");
+    function one(range){
+      if (range.dxNum) return; range.dxNum = true;
+      var c = CURVE[range.id.replace(/^bt-amp-\d+-/, "")], out = range.parentNode.querySelector("output");
+      var show = c ? c[0] : function(v){ return v; }, back = c ? c[1] : function(x){ return x; };
+      var wrap = el("span", "dx-num"), n = el("input"), unit = c ? c[3] : out ? out.textContent.replace(/^[-+\d.\s]+/, "") : "";
+      n.type = "number"; n.step = c ? c[2] : range.step; n.min = show(+range.min); n.max = show(+range.max); n.value = show(+range.value);
+      n.addEventListener("change", function(){ var x = parseFloat(n.value); if (isFinite(x) && (!c || x > 0)){ range.value = back(x); range.dispatchEvent(new Event("input")); } n.value = show(+range.value); });
+      wrap.appendChild(n); wrap.appendChild(el("small", "", unit.trim())); range.parentNode.appendChild(wrap);
+    }
+    function all(){ Array.prototype.forEach.call(box.querySelectorAll("input[type=range]"), one); }
+    new MutationObserver(all).observe(box, { childList: true }); all();
+  };
+
+  // ---- what both drafts do first ----
+  D.init = function(cls, name, others){
+    var root = $("bt-root"), nav = $("bt-nav"); if (nav) nav.remove();
+    root.classList.remove("bt-has-nav"); root.classList.add("dx", cls);
+    var note = el("p", "dx-note"); note.appendChild(document.createTextNode("Draft layout " + name + ". "));
+    others.forEach(function(o, i){ var a = el("a", "", o[1]); a.href = o[0]; if (i) note.appendChild(document.createTextNode(" · ")); note.appendChild(a); });
+    root.insertBefore(note, root.firstChild);
+    ["bt-eq", "bt-kit", "bt-organ"].forEach(function(id){ $(id).open = true; });
+    root.addEventListener("dblclick", function(e){ var t = e.target; if (!t.matches || !t.matches("input.dx-v") || t.disabled) return;
+      t.value = t.defaultValue; t.dispatchEvent(new Event("input", { bubbles: true })); });
+    root.addEventListener("change", paintSoon);
+    return root;
+  };
+})();
+</script>
+```

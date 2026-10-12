@@ -223,7 +223,7 @@ Each needs an entry in bass.js and catalog.js.
 ** TODO Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
 ** TODO jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js
 ** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
-** TODO Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size
+** DONE Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size (2026-10-12, see the end)
 ** TODO Count-in and the final ending hit are not notated or exported
 ** TODO Meters other than 4/4, 3/4, 6/8, 9/8, 12/8 are untested in comp figures, notation and MIDI
 ** TODO "Both" Roman mode is crowded at phone width in two-chord bars with a flat root
@@ -938,3 +938,47 @@ Unheard. The research, every number's source and every guess are in ORGAN.md bes
    second A's ending is the same as the last A's.
 ** TODO Section view in Hold mode shows one pass of the section; it does not say which time round it is.
 ** TODO MIDI export still has its own three tick boxes (the second instrument goes with the comping).
+
+* Drum staff rewritten; three teaching grooves; lessons on the blues -- 2026-10-12
+- notation.js, the drum staff. Pieces are placed as drum parts usually are: hi-hat above the staff (an open one with a circle), ride on
+  the top line (its bell a diamond), crash on a ledger line, kick in the bottom space, hi-hat foot under the staff. Before, the ride and
+  hi-hat were the other way round and the kick and foot a step low. A hit is now a quarter note on a beat with nothing after it and an
+  eighth anywhere else, with a rest for what is left (emitBar: =short= items); it used to take the whole gap to the next hit, so a rock
+  kick came out as half notes and dotted quarters. The foot voice's rests are not drawn. A kick quieter than FEATHER (0.3) is left out.
+- drums.js / catalog.js: grooves =quarters= (cymbal on the beats, foot on 2 and 4), =ridetime= (the ride pattern and the foot, nothing
+  else) and =shuffle= (swung cymbal eighths, kick on 1 and 3, snare on 2 and 4). The first two never fill. All three fit Swing; the
+  shuffle also 12/8 doo-wop.
+- Lessons (=lessons/blues-*.qmd=; code in =apps/shared/lessons/=, tests in =tests/band/lessons/=): the changes of a 12-bar blues, then one
+  page each for bass, guitar, piano, drums and single-line instruments (violin, saxophones; transposed by an Instrument menu). They use
+  BandPlayer, TuneChart, ChordVoicings and BandNotation as they are; =opts.pins= carries the diagrams' chords, =bar.melody= the written lines.
+- Tests: =tests/band/lessons/t_drumstaff.js= ("TEACHING GROOVES OK", "DRUM STAFF OK"); the two older notation tests count the undrawn
+  rest (=x=) as a rest.
+** VERIFY BY EAR: the three grooves; the shuffle's fills (the swing set); every lesson step.
+** VERIFY BY EYE: a 12/8 chorus written as triplets carries a 3 over every beat; two pieces on one line of the staff at once (hi-hat and
+   tambourine) are written as one.
+** TODO The Backing Track page has not been rendered since: =tools/_backing-track.qmd= names the new script versions, =_site= does not yet.
+** TODO =tests/band/pat/t_tunes.js= expects 10 built-in setups; there are 12 (it failed before these changes).
+
+* Lessons: the lit note, Blues in the Closet, an improvising lesson -- 2026-10-12
+- =apps/shared/lessons/score.js= (LessonScore): abcjs notation whose sounding note is lit, when abcjs plays it (TimingCallbacks) and
+  while the band plays (the page asks =player.where()= every frame and the score looks the beat up in abcjs's own timing).
+- =apps/shared/lessons/tunes.js= (BluesTunes): Blues in the Closet in F, with the chord-tone name of every note. Any key through
+  AbcTranspose; its notes for =bar.melody= through AbcTune. A step with =data-tune="closet"= writes it above its chart and the band's
+  piano plays it. The same ABC is X:1009 in the Standards group of =apps/tunes/tunes-object.js=.
+- =lessons/blues-improv.qmd=: the melody, the change at bar 5, the two blues scales, Mixolydian and Dorian (=.bl-notes= writes a scale).
+** VERIFY BY EAR: the melody over the band (it is the comping instrument's sound, so a guitar in the guitar lesson); the lit note runs
+   a little ahead of a swung off-beat eighth (the notation is timed straight).
+
+* A chord-tone bass line; scale charts in the improvising lesson; a Lessons landing page -- 2026-10-12
+- bass.js / catalog.js: line =arp= ("Chord tones"): root, 3rd, 5th, 7th on the four beats, rising, the same every bar; in a bar of two
+  chords each opens on its root (=def.arp= joins the "a chord's first note is its root" rule). A rising line may now name the degree "3".
+  Fits Swing, Jazz ballad and Boogaloo. The bass lesson's step 3 plays it.
+- =apps/shared/lessons/blues-kit.js=: the improvising lesson's Instrument menu also has violin, guitar, bass and piano. A scale
+  (=.bl-notes=) is then drawn on that instrument: one fretboard position with tablature (=LessonDiagrams.tab=), a first-position violin
+  fingerboard (finger names in place of fret numbers), or a keyboard with the fingering of the major scale that has the same notes
+  (=THUMBS=; five- and six-note scales are shown without fingering). Bass reads bass clef, moved down by whole octaves.
+- Notation played by abcjs is swung (its =swing= option, 66) unless the feel is straight eighths; never for notation with no meter.
+- A tune step has "Open in the Backing Track": it writes =localStorage.bandHandoff= as Chord Entry does and opens that page in a new tab.
+** VERIFY BY A PLAYER: the piano fingerings (a mode fingered as its parent major scale, so it may start on finger 2 or 3); the violin
+   finger names; the fretboard positions in keys where the root falls on the open string or past the 8th fret.
+

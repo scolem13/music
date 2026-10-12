@@ -1,0 +1,125 @@
+---
+title: "Blues for Drums: From Quarter Notes to the Shuffle"
+toc: true
+toc-depth: 2
+---
+
+This is the 12-bar blues from the drum chair, starting with nothing but the beat. You need
+to be able to hit the ride cymbal (or hi-hat), the snare and the bass drum, and to work the
+hi-hat pedal. For what the chords are and how the form gets varied, see
+[Changing the Changes in a 12-Bar Blues](blues-changes.qmd).
+
+**How to use the page.** Every step has two bars of the beat written large, a chord chart,
+and the whole chorus written on a drum staff. The note that is sounding lights up in the
+notation as the band plays. Press ▶ and the band plays it; the bar that
+is sounding lights up on the chart. Tick **Drums alone** to hear the drummer without the
+bass and piano, and **Leave out the drums** to take over. Each step starts in its own feel
+and tempo; the strip at the bottom changes both.
+
+## Reading a drum part
+
+Each line or space of the staff is one part of the kit. Cymbals and anything struck on the
+rim are written with an ✕. What the hands play has stems up; what the feet play has stems
+down.
+
+<div class="bl-drumkey"></div>
+
+## 1. The beat and the form
+
+A drummer has two jobs on a blues: keep the time, and know where in the twelve bars the
+band is. Start with the plainest time there is. The ride cymbal (or the closed hi-hat)
+plays all four beats. The left foot closes the hi-hat on **2 and 4**. Nothing else.
+
+<div class="bl-step" data-part="quarters"></div>
+
+Count the bars out loud while you play: four bars, then four more, then the last four. The
+chords change at bar 5, bar 7 and bar 9. Listen for the bass moving and learn to hear those
+moments coming.
+
+## 2. The ride pattern
+
+Swing time on the ride cymbal is the four beats plus a *skip note* just before beats 3 and
+1: **ding, ding-a, ding, ding-a**. It is written as two eighth notes, but the first is
+long and the second short, as if the beat were divided in three and you played the first
+and last parts. Keep the hi-hat foot on 2 and 4.
+
+<div class="bl-step" data-part="ride"></div>
+
+Listen with **Drums alone** to hear how late the skip note sits. Slow the tempo down and
+it gets later still.
+
+## 3. Swing time
+
+Now the other two limbs. In swing the bass drum is played very quietly on all four beats,
+felt more than heard (*feathering*), and it is not written. The snare does not keep time:
+it answers the band with a note here and there, often on the last part of a beat. The
+band's drummer improvises this, so the notation changes every chorus.
+
+<div class="bl-step" data-part="time"></div>
+
+Start with the ride pattern and the hi-hat foot. Add one snare note per bar, on the "a" of
+beat 4, and leave it at that until it is comfortable.
+
+## 4. Showing the form
+
+A fill tells the band where it is. On a blues the places to mark are the ends of the three
+four-bar phrases: **bar 4**, which leads to the IV chord; **bar 8**, which leads to the last
+line; and **bar 12**, which leads back to the top. The small ones need only a beat or two.
+The one in bar 12 can be bigger, and the crash on beat 1 of the next chorus is its landing.
+
+<div class="bl-step" data-part="fills"></div>
+
+Keep the time going right up to the fill and come out of it on beat 1. A fill that loses
+the beat is worse than no fill.
+
+## 5. The shuffle
+
+The beat of Chicago blues. The cymbal plays the swung eighths all the way through, long,
+short, long, short, with the bass drum on 1 and 3 and a full snare on **2 and 4**. This is
+the first beat on this page with a backbeat.
+
+<div class="bl-step" data-part="shuffle"></div>
+
+## 6. The slow blues in 12/8
+
+At a slow tempo every beat divides in three, and the cymbal plays all three parts. Kick on
+1 and 3, snare on 2 and 4. It is written here in 4/4 with triplets; the same beat is often
+written in 12/8.
+
+<div class="bl-step" data-part="slow"></div>
+
+## 7. Straight eighths
+
+Not every blues swings. In a boogaloo or a rock blues the eighth notes are even. The cymbal
+plays eight to the bar, the bass drum is on 1 and 3, and the left hand plays a cross-stick
+on 2 and 4.
+
+<div class="bl-step" data-part="straight"></div>
+
+## 8. A tune: Blues in the Closet
+
+Oscar Pettiford's riff blues, at a medium swing. The melody is one two-bar riff played
+three times, and each time it ends on a long note, in bars 4, 8 and 12. Those are the same
+three places step 4 marked with fills. The tune leaves the space; the drummer fills it and
+sets up the next phrase.
+
+<div class="bl-step" data-part="fills" data-chart="closet" data-tune="closet"></div>
+
+Play time through the riff and stay out of its way: no snare on top of the melody's
+accents. Read the melody while you play. A drummer who knows the tune plays the form
+without counting.
+
+## Where to go next
+
+- Loop each step with the drums left out and play it for ten choruses without losing the
+  form.
+- Play the fills step with your own fills in bars 4, 8 and 12.
+- Take a chorus from [the changes lesson](blues-changes.qmd): the busier the chords, the
+  more the band needs the form marked clearly.
+- **Tools → Backing Track** has every groove on this page, and many others, under any tune.
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "drums", key: 5 });</script>
+```

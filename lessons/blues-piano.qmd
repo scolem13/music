@@ -1,0 +1,140 @@
+---
+title: "Blues for Piano: From Roots to Rootless Voicings"
+toc: true
+toc-depth: 2
+---
+
+This is how a pianist plays chords on a 12-bar blues, built up from one finger. You need to
+be able to find notes on the keyboard by name. For what the chords are and how the form
+gets varied, see [Changing the Changes in a 12-Bar Blues](blues-changes.qmd).
+
+**How to use the page.** Every step has a keyboard diagram, a chord chart and a ▶ button
+that starts the band. Above the keys there is one coloured lane for each chord, with a
+square over every key that chord uses, so you can compare chords by looking straight up and
+down. Middle C is marked in green. Click a chord's name at the left of its lane to hear it. Under the
+keyboard the same notes are written on a grand staff. In every line of notation the note that is sounding lights up, whether the notation is playing by itself or the band is playing.
+While the band plays, its pianist plays exactly the notes shown, and the bar on the chart
+and the chord being played both light up. Tick **Leave out the piano** to take the part
+yourself. The strip at the bottom sets the key, the tempo and whether the squares show
+chord tones or note names.
+
+## 1. The roots
+
+The **root** is the note a chord is named after: the root of C7 is C. A blues has three
+chords and so three roots. Play them with the left hand, low on the keyboard, one long
+note per bar.
+
+<div class="bl-step" data-part="roots" data-rhythm="pad"></div>
+
+Count the form as you play: four bars of I, two of IV, two of I, then V, IV, I, I.
+
+## 2. What the 3rd and 7th do
+
+A seventh chord has four notes. Starting on the root, take every other note of the scale:
+the **root**, the **3rd**, the **5th** and the **7th**. They do different jobs.
+
+- The **root** names the chord. In a band the bass player plays it.
+- The **5th** adds weight and not much else.
+- The **3rd** says whether the chord is major or minor.
+- The **7th** says what kind of seventh chord it is. Every chord in a basic blues has a
+  major 3rd and a flat 7th (♭7), which makes it a *dominant* seventh chord.
+
+So the 3rd and 7th carry the chord's character. They are called the **guide tones**. Here
+are all four notes of each chord in the right hand, root at the bottom. The 5th is dashed
+because it is the first note to leave out. Click a chord name to hear the notes climb.
+
+<div class="bl-step" data-part="tones" data-rhythm="pad"></div>
+
+### Where the flat 7 comes from
+
+Why is the 7th of these chords called *flat*? The answer is in the major scale. Press ▶ to
+hear each line of notation. The explanation follows the key chosen in the strip at the
+bottom.
+
+<div class="bl-scale"></div>
+
+## 3. Guide tones over a root
+
+Now play only the 3rd and 7th in the right hand, with the root in the left. Look down the
+lanes: the right hand's two notes hardly move. Going from I7 to IV7, each note drops a half
+step, and they swap jobs: the 3rd becomes the ♭7th and the ♭7th becomes the 3rd. For V7
+both notes sit a half step *above* the I chord's.
+
+To keep the hand still, the two notes are not always in the same order. Sometimes the 3rd
+is on the bottom and sometimes the 7th. Switch the labels to chord tones to see which.
+
+<div class="bl-step" data-part="guide"></div>
+
+The band's pianist plays a short chord on beat 1 and another just before beat 3. Try that
+rhythm once the changes are comfortable.
+
+## 4. Shells in the left hand
+
+Put root, 3rd and 7th in the left hand alone and the right hand is free for a melody. A
+three-note chord with the 5th left out is a **shell voicing**. To keep the hand in one
+place the notes are rearranged from chord to chord, so the root is not always on the
+bottom.
+
+<div class="bl-step" data-part="shell"></div>
+
+Play a chorus of shells with the left hand only. Then add one note of your own in the right
+hand per bar. Any chord tone will do.
+
+## 5. Rootless voicings
+
+When there is a bass player, the root is taken care of, and the left hand can spend its
+fingers on colour instead. A **rootless voicing** is the two guide tones plus two notes
+from higher up the chord: the **9th** (a whole step above the root) and the **13th** (the
+same note as the 6th). There are two forms, one with the 3rd on the bottom and one with the
+7th on the bottom, and they alternate so the hand barely moves. This is the standard
+left-hand sound of jazz piano since the late 1950s.
+
+<div class="bl-step" data-part="rootless"></div>
+
+The dashed square is the root, shown only so you can see where the voicing sits in relation
+to it. Leave it to the bass.
+
+## 6. The jazz blues
+
+The last line of a jazz blues is a **two-five**: ii7, V7, then home to I, with VI7 in bar 8
+to lead into it (the reasons are in section 3 of
+[the changes lesson](blues-changes.qmd)). The ii chord is a **minor seventh** chord: its
+3rd is a half step lower than a dominant chord's. Through ii7, V7 and I7 the guide tones
+take turns to fall by a step: the 7th of each chord drops to become the 3rd of the next.
+
+<div class="bl-step" data-part="guide" data-chart="jazz" data-show="Gm7 C7 F7 D7"></div>
+
+The same chorus with rootless voicings in the left hand:
+
+<div class="bl-step" data-part="rootless" data-chart="jazz" data-show="Gm7 C7 F7 D7"></div>
+
+## 7. A tune: Blues in the Closet
+
+Oscar Pettiford's riff blues. Its changes are the three-chord blues with a two-five in bars
+9 and 10 and a V chord in bar 12. The melody is one two-bar riff played three times. Here
+it is over guide tones and a root.
+
+<div class="bl-step" data-part="guide" data-chart="closet" data-tune="closet" data-show="F7 Bb7 Gm7 C7"></div>
+
+The riff's second note is the 3rd of the home chord. In bars 5 and 6 it drops a half step
+to become the ♭7th of IV, the same move your right hand makes. Once the guide tones are
+secure, play the riff in the right hand and rootless voicings in the left:
+
+<div class="bl-step" data-part="rootless" data-chart="closet" data-tune="closet" data-show="F7 Bb7 Gm7 C7"></div>
+
+## Where to go next
+
+- Change the key in the strip at the bottom and work the same steps there. Start with F,
+  B♭ and G.
+- Loop a chorus with the piano left out and comp for yourself.
+- Learn to improvise over the same tune in [the improvising lesson](blues-improv.qmd).
+- Take any chorus from [the changes lesson](blues-changes.qmd) and find the guide tones of
+  each new chord.
+- The **Chord Sheet** tool (Tools menu) draws these and other voicings for any chords you
+  type in, one at a time or superimposed.
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "piano", key: 0 });</script>
+```

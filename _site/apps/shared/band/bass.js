@@ -172,6 +172,8 @@
     motown:  { rise: true, top: 12, bars: [ [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 0.9, "5"], [3, 0.45, "8"], [3.5, 0.45, "5"]],
                                             [[0, 1.4, "R"], [1.5, 0.45, "R"], [2, 0.9, "5"], [3, 0.45, "5"], [3.5, 0.45, "N"]] ] },
     // Hymns and carols. hold: each note lasts until the next one, or to the end of its chord or bar.
+    // the chord spelled out, one note a beat: root, 3rd, 5th, 7th. For learning the chord tones before walking.
+    arp:     { rise: true, top: 12, arp: true, bars: [ [[0, 0.9, "R"], [1, 0.9, "3"], [2, 0.9, "5"], [3, 0.9, "7"]] ] },
     held:    { hold: true, bars: [ [[0, 8, "R"]] ] },                                                   // the bass voice: the root of each chord, sustained
     halves:  function (beats){ return beats % 2 ? [[0, beats - 0.2, "R"]] : beats === 2 ? [[0, 1.8, "R"]] : [[0, 1.8, "R"], [2, 1.8, "R"]]; },   // the root on 1 and 3
     // 12/8 (or triplets over 4/4): long notes on 1 and 3, each set up by the last eighth of the beat before
@@ -460,7 +462,7 @@
       }
       list.forEach(function (e, k){
         var c = H.chordAt(ctx.chords, e.pos), deg = e.deg; if (!c) return;
-        if ((deg === "5" || deg === "8") && id !== "tumbao" && !AFTER[id] && opens(e, k)) deg = "R";
+        if ((deg === "5" || deg === "8" || def.arp) && id !== "tumbao" && !AFTER[id] && opens(e, k)) deg = "R";
         if (id === "alt" && beats % 2 && ctx.index % 2 && e.pos === 0 && firstChord(ctx.chords) && ctx.chords.length === 1) deg = "5";
         var n;
         if (deg === "N"){
@@ -468,7 +470,7 @@
           n = rootOf(tc || c);
         } else if (def.rise || def.below){
           var r0 = rootOf(c), f5 = c.fifth != null ? c.fifth : 7;
-          if (def.rise) n = r0 + (deg === "5" ? f5 : deg === "6" ? 9 : deg === "7" ? (c.seventh != null ? c.seventh : 10) : deg === "8" ? 12 : deg === "9" ? 14 : deg === "10" ? 12 + (c.third != null ? c.third : 4) : 0);
+          if (def.rise) n = r0 + (deg === "3" ? (c.third != null ? c.third : 4) : deg === "5" ? f5 : deg === "6" ? 9 : deg === "7" ? (c.seventh != null ? c.seventh : 10) : deg === "8" ? 12 : deg === "9" ? 14 : deg === "10" ? 12 + (c.third != null ? c.third : 4) : 0);
           else if (deg === "L" || deg === "L2"){ var nr = next ? rootOf(next) : r0, dn = deg === "L" ? 1 : 2; n = inRange(nr - 2) ? nr - dn : nr + 12 - dn; }
           else { var up = deg === "5" ? f5 : deg === "6" ? 9 : 0; n = up && inRange(r0 + up - 12) ? r0 + up - 12 : r0 + up; }
           low = r0;

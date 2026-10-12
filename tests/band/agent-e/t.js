@@ -35,7 +35,7 @@ for(const feel of ["swing","straight"]) for(const tempo of [120,220]){
 console.log("MIDI OK");
 // ---- ABC: every bar sums to the meter
 function barLen(tok){let t=tok.replace(/"[^"]*"/g,"").replace(/![^!]*!/g,""),sum=0,trip=0,m;
-  const re=/\(3|\[[^\]]*\](\d*)|[_=^]*[A-Ga-gz][,']*(\d*)/g;
+  const re=/\(3|\[[^\]]*\](\d*)|[_=^]*[A-Ga-gxz][,']*(\d*)/g;
   while((m=re.exec(t))){if(m[0]==="(3"){trip=3;continue}let n=parseInt(m[1]||m[2]||"1",10);if(trip>0){sum+=n*2/3;trip--}else sum+=n}return sum}
 let nb=0;
 for(const seed of [1,2,3,4,5,6,7,8]) for(const tempo of [100,160,260]) for(const bf of ["walk","two"]) for(const key of ["F","Bb","E"]){

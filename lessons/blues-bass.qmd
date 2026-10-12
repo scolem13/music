@@ -1,0 +1,156 @@
+---
+title: "Blues for Bass: From Roots to a Walking Line"
+toc: true
+toc-depth: 2
+---
+
+This is the 12-bar blues from the bass player's chair, starting from one note per chord. You
+need to know how to fret a note and pluck it. Everything else is built here, one step at a
+time. For what the chords are and how the form gets varied, see
+[Changing the Changes in a 12-Bar Blues](blues-changes.qmd).
+
+**How to use the page.** Every step has fretboard diagrams, a chord chart and a ▶ button
+that starts the band. The diagrams read like a bass standing upright in front of you: the
+low E string is on the left, the nut is at the top, and the numbers down the side are frets.
+Click a chord's name above a diagram to hear its notes. Under the diagrams the same notes
+are written on a staff, and below the chord chart is the bass line the band is playing. In every line of notation the note that is sounding lights up, whether the notation is playing by itself or the band is playing. While the band plays, the bar on
+the chart and the diagram of the chord being played both light up. Tick **Leave out the
+bass** and the band's bass player stops so that you can take the part. The strip at the
+bottom sets the key, the tempo and whether the dots show chord tones or note names.
+
+## 1. The roots
+
+The **root** is the note a chord is named after: the root of G7 is G. A blues has three
+chords, so it has three roots, and they sit close together. Find the key note on the E
+string. The root of the **IV** chord is at the same fret on the next string up. The root of
+the **V** chord is two frets higher on that same string. Your hand does not have to move.
+
+
+In four keys (C, D♭, D and E♭) the key note is a long way up the lowest string, so the
+diagrams start from the next string instead. Then the root of **V** is at the same fret on
+the lowest string and the root of **IV** is two frets below that.
+
+Start with two notes in each bar, on beats 1 and 3.
+
+<div class="bl-step" data-part="roots" data-bass="halves"></div>
+
+Count the bars as you play: four of I, two of IV, two of I, then V, IV, I, I. When that is
+steady, play the root on every beat. Press **Superimposed** to see all three roots on one
+fretboard.
+
+<div class="bl-step" data-part="roots" data-bass="roots" data-view="super"></div>
+
+## 2. Root, fifth and octave
+
+The **fifth** of a chord is one string up and two frets up from its root. The **octave**
+(the root again, higher) is two strings up and two frets up. Index finger on the root, ring
+or little finger on the other two: the three notes make a box that has the same shape on
+every chord. Move the box to each root you learned in step 1.
+
+<div class="bl-step" data-part="fifth" data-bass="alt"></div>
+
+The band's bass plays root on beat 1 and fifth on beat 3. Play that first, then try
+root, fifth, octave, fifth, one note to a beat.
+
+## 3. The 3rd and the 7th
+
+The root and fifth say which chord it is but not what *kind* of chord. Two other notes do
+that job.
+
+- The **3rd** says major or minor. In a dominant seventh chord (G7) it is a major 3rd: one
+  string up and one fret *back* from the root.
+- The **7th** in a blues chord is a flat 7th (written ♭7), a whole step below the octave: two
+  strings up at the *same fret* as the root.
+
+Together they are called the **guide tones**, because they are the notes that change the
+most tellingly from one chord to the next. Root, 3rd, 5th and ♭7th are the four **chord
+tones**. Click each chord's name to hear them climb.
+
+<div class="bl-step" data-part="tones" data-bass="arp"></div>
+
+### Where the flat 7 comes from
+
+Why is the 7th of these chords called *flat*? The answer is in the major scale. Press ▶ to
+hear each line of notation. The explanation follows the key chosen in the strip at the
+bottom.
+
+<div class="bl-scale"></div>
+
+The band's bass plays exactly that: root, 3rd, 5th, ♭7th, one note on every beat, the same
+shape in every bar. The line is written out below the chord chart. It is not a walking line
+yet. It is the four chord tones in order, so that your hand learns each shape and your ear
+learns what each note sounds like against its chord.
+
+Work up to it in three stages, each for a few choruses:
+
+1. Root on beat 1, 3rd on beat 3. Two notes to a bar.
+2. Root, 3rd, 5th, and rest on beat 4.
+3. All four notes, as the band plays them.
+
+Then switch to **Superimposed** and look at I and IV together. The
+3rd of the I chord is one fret below the root of IV, and the ♭7th of I is one fret above the
+3rd of IV. Those half steps are how the chords connect.
+
+## 4. Walking
+
+In step 3 every bar went the same way: up the chord from the root. A walking line also has
+one note on every beat, but it chooses its notes so that each bar *leads into the next*.
+Three changes turn the step 3 line into a walking line: the notes after the root can come
+in any order, the octave joins them, and the last note of the bar points at the next root.
+A recipe that always works:
+
+1. **Beat 1**: the root of the chord.
+2. **Beats 2 and 3**: any two other chord tones (3rd, 5th, ♭7th, or the octave).
+3. **Beat 4**: an *approach note*, one fret below or one fret above the root of the *next*
+   bar's chord.
+
+When the next bar is the same chord, beat 4 can be any chord tone. The diagram shows the
+chord tones of all three chords at once. A split dot is a note two chords share.
+
+<div class="bl-step" data-part="walk" data-bass="walk" data-view="super"></div>
+
+Listen to the band's bass player for a chorus, then tick **Leave out the bass** and walk it
+yourself. Slow the tempo down as far as you need. A plain line that lands on the root at
+every chord change is worth more than a busy one that does not.
+
+## 5. The jazz blues
+
+The last line of a jazz blues is a **two-five**: ii7, V7, then home to I, with VI7 in bar 8
+to lead into it (the reasons are in section 3 of
+[the changes lesson](blues-changes.qmd)). The ii chord is a **minor seventh** chord. Its
+3rd is a *minor* 3rd, three frets above the root on the same string. Everything else about
+the shape stays the same.
+
+<div class="bl-step" data-part="tones" data-chart="jazz" data-show="Gm7 C7 F7 D7" data-bass="walk" data-view="super"></div>
+
+In bars 11 and 12 the chords change every two beats. Play the root on the beat each chord
+arrives and one other note after it: root and 3rd, or root and an approach note into the
+next root.
+
+## 6. A tune: Blues in the Closet
+
+Oscar Pettiford, who wrote this tune, was a bass player. Its changes are the three-chord
+blues with a two-five in bars 9 and 10 and a V chord in bar 12 to turn it round. The melody
+is one two-bar riff played three times, so the bass has room to be heard.
+
+<div class="bl-step" data-part="walk" data-chart="closet" data-tune="closet" data-show="F7 Bb7 Gm7 C7" data-bass="walk" data-view="super"></div>
+
+Play roots through the form first, two to a bar, and listen to how the riff sits against
+them. Then walk it. In bars 4 and 8 the melody holds one long note: that is the place for
+your line to lead clearly into the next chord. In bar 12, aim for the root of the V chord
+and then back to the top.
+
+## Where to go next
+
+- Change the key in the strip at the bottom and find the same shapes in the new place.
+  Start with F, B♭, A and E.
+- Loop a chorus with the bass left out and record yourself over the band.
+- Learn to improvise over the same tune in [the improvising lesson](blues-improv.qmd).
+- Take any chorus from [the changes lesson](blues-changes.qmd) and walk through it with
+  the recipe from step 4.
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "bass", key: 7 });</script>
+```

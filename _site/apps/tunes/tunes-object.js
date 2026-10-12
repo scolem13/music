@@ -27549,6 +27549,17 @@ w: mo- ment I can | feel that you | feel that way | too, is |
 w: When I Fall In | Love with |  you. | _ * * |
 :|2 "Eb" _E,8- | _E,6 z2 |
 w:  you. | _ * |]
+
+X:1009
+T:Blues in the Closet
+C:Oscar Pettiford
+M:4/4
+L:1/4
+Q:1/4=132
+K:F
+F/-| "F7"F A/F/ B A/F/ | "F7"B A/F/- F/ C F/- | "F7"F A/F/ B A/F/- | "F7" F/ C3/2-C z/ F/-|
+"Bb7"F _A/F/ B A/F/ | "Bb7"B _A/F/- F/ C F/- | "F7"F =A/F/ B A/F/- | "F7" F/ C3/2-C z/ F/-|
+"Gm7"F A/F/ B A/F/ | "C7"B A/F/- F/ C F/- | "F7"F A/F/ B A/F/- | "C7"F2 z2 |]
 `,
 
 "Mullen":

@@ -22,8 +22,13 @@
 //     the chord follow the same degree logic, so an odd passing-tone spelling is possible.
 //   • Compound meters (bar.compound: 6/8, 9/8, 12/8) are written in eighths, three to the beat,
 //     with no swing marking; a change of meter is written where it happens.
-//   • Drums: ride g(x) · crash a(x) · hi-hat f(x) · snare c · cross-stick c(x) · toms e d A ·
-//     kick D · hi-hat foot E(x). Cymbals/snare/toms stem up, kick and hat foot stem down.
+//   • Drums, placed as drum parts usually are (the Percussive Arts Society's guide): hi-hat g(x) above the staff, an open
+//     one with a small circle over it · ride f(x) on the top line, its bell a diamond there · crash a(x) on a ledger line ·
+//     snare c · cross-stick c(x) · toms e d A · kick F in the bottom space · hi-hat foot D(x) under the staff.
+//     Cymbals, snare and toms stem up; kick and hat foot stem down, and that voice's rests are not drawn.
+//     A hit is written short: a quarter note on a beat with nothing after it, an eighth anywhere else, and a rest for
+//     what is left. It never takes the length of the gap to the next hit (a kick is not a half note).
+//     A feathered kick (the quiet four-to-the-bar under swing time, below FEATHER) is left out, as it is on a chart.
 
 (function (global) {
   var G = 12;                                               // grid steps per beat: eighths (6) and triplets (4)
@@ -32,9 +37,12 @@
   var SHARP = ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"], FLAT = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
   // semitones above a chord root -> letter steps above the root's letter
   var STEP = [0, 1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6];
-  var DRUM = { ride:["g",1], rideBell:["g",1], crash:["a",1], hatClosed:["f",1], hatOpen:["f",1], sticks:["c",1], rim:["c",1], clap:["c",1], tamb:["g",1],
-               snare:["c",0], tomHi:["e",0], tomMid:["d",0], tomLo:["A",0], kick:["D",0], hatFoot:["E",1] };
+  // piece -> [pitch on the staff, decorations written before it]
+  var X = "!style=x!";
+  var DRUM = { ride:["f",X], rideBell:["f","!style=harmonic!"], crash:["a",X], hatClosed:["g",X], hatOpen:["g","!open!" + X], sticks:["c",X], rim:["c",X], clap:["c",X], tamb:["g",X],
+               snare:["c",""], tomHi:["e",""], tomMid:["d",""], tomLo:["A",""], kick:["F",""], hatFoot:["D",X] };
   var DOWN = { kick:1, hatFoot:1 };
+  var FEATHER = 0.3;                                        // a kick quieter than this is felt, not read
 
   function mod12(n){ return ((n % 12) + 12) % 12; }
   function keyInfo(key){
@@ -84,11 +92,14 @@
   // items: { grid: { tok(ms) -> string, want (eighths), fill } }. Returns ABC for one bar.
   // carryIn: { tok, left } a note still sounding from the previous bar (tied in).
   // cmp: a compound bar, whose grid is three eighths to the beat (no triplets to bracket).
-  function emitBar(items, beats, marks, carryIn, nextFree, sustain, cmp){
+  // rest: what a silence is written with ("z", or "x" = a rest that takes its time but is not drawn).
+  // An item with short:true (a drum hit) is a quarter on a beat and an eighth off it, whatever follows.
+  function emitBar(items, beats, marks, carryIn, nextFree, sustain, cmp, rest){
+    rest = rest || "z";
     var G = cmp ? 3 : 12, U = cmp ? 1 : 6;                   // grid steps per beat, and per written eighth
     var total = beats * G, ms = {}, out = "", carry = carryIn || null, markKeys = Object.keys(marks || {}).map(Number).sort(function (a, b){ return a - b; });
     var onsets = Object.keys(items).map(Number).filter(function (g){ return g < total; }).sort(function (a, b){ return a - b; });
-    if (!onsets.length && !carry && !markKeys.length) return { abc: "z" + beats * G / U, carry: null };
+    if (!onsets.length && !carry && !markKeys.length) return { abc: rest + beats * G / U, carry: null };
     function trip(b){ return !cmp && onsets.some(function (g){ return Math.floor(g / G) === b && (g % G === 4 || g % G === 8); }); }
     function put(g, s){
       var pre = ""; while (markKeys.length && markKeys[0] <= g) pre += '"' + marks[markKeys.shift()] + '"';
@@ -100,7 +111,7 @@
       if (trip(b)){
         carry = null;
         [0, 4, 8].forEach(function (o, k){ var g = b * G + o, it = items[g] || (o === 8 ? items[b * G + 6] : null);
-          put(g, (k === 0 ? "(3" : "") + (it ? it.tok(ms) : "z")); });
+          put(g, (k === 0 ? "(3" : "") + (it ? it.tok(ms) : rest)); });
         b++; continue;
       }
       var b1 = b + 1; if (b % 2 === 0 && b1 < beats && !trip(b1)) b1++;        // a run of one or two plain beats
@@ -111,18 +122,18 @@
         var it = items[g], nxt = g + U; while (nxt < g1 && items[nxt] === undefined) nxt += U;
         var avail = (nxt - g) / U, n, tie;
         if (it){
-          n = it.fill ? avail : Math.max(1, Math.min(it.want, avail));
-          tie = sustain && !it.fill && it.want > avail && nxt === g1 && free(g1);
+          n = it.short ? ((g % G === 0 && avail >= G / U) ? G / U : 1) : Math.max(1, Math.min(it.want, avail));
+          tie = sustain && !it.short && it.want > avail && nxt === g1 && free(g1);
           put(g, it.tok(ms) + len(n) + (tie ? "-" : ""));
           carry = tie ? { tok: it.tok, left: it.want - avail } : null;
-          if (n < avail) put(g + n * U, "z" + len(avail - n));
+          if (n < avail) put(g + n * U, rest + len(avail - n));
         } else if (carry && g === g0){
           n = Math.max(1, Math.min(carry.left, avail));
           tie = carry.left > avail && nxt === g1 && free(g1);
           put(g, carry.tok(ms) + len(n) + (tie ? "-" : ""));
           carry = tie ? { tok: carry.tok, left: carry.left - avail } : null;
-          if (n < avail) put(g + n * U, "z" + len(avail - n));
-        } else { carry = null; put(g, "z" + len(avail)); }
+          if (n < avail) put(g + n * U, rest + len(avail - n));
+        } else { carry = null; put(g, rest + len(avail)); }
         g = nxt;
       }
       b = b1;
@@ -198,8 +209,9 @@
           else it.want = Math.max(it.want, want);                              // two events of one hand at one moment: one chord
           mine.forEach(function (m){ if (it.list.indexOf(m) < 0) it.list.push(m); }); it.list.sort(function (a, b){ return a - b; }); }); }
         else (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || !!v.down !== !!DOWN[e.piece]) return;
-          var g = snap(e.pos, cmp), it = items[g] || (items[g] = { fill: true, want: 1, hits: [], tok: function (){
-            var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0] + h[1]]) return; seen[h[0] + h[1]] = 1; t.push((h[1] ? "!style=x!" : "") + h[0]); });
+          if (e.piece === "kick" && e.vel != null && e.vel < FEATHER) return;
+          var g = snap(e.pos, cmp), it = items[g] || (items[g] = { short: true, want: 1, hits: [], tok: function (){
+            var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0]]) return; seen[h[0]] = 1; t.push(h[1] + h[0]); });      // (two pieces on one line: the first)
             return t.length > 1 ? "[" + t.join("") + "]" : t[0]; } });
           it.hits.push(d); });
         return items;
@@ -213,7 +225,7 @@
         var marks = {}, cmp = !!bar.compound, nb = bars[i + 1], sig = sigOf(bar);
         if (v === voices[0]) (bar.chords || []).forEach(function (c){ marks[Math.round(c.pos * (cmp ? 3 : G))] = chordName(c.chord); });
         var ng = gs[i + 1], nextFree = !!ng && ng[0] === undefined && (!!(nb && nb.compound) || !Object.keys(ng).some(function (g){ return g < G && (g % G === 4 || g % G === 8); }));
-        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.kind !== "drums", cmp);
+        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.kind !== "drums", cmp, v.down ? "x" : "z");
         carry = r.carry;
         return (i > 0 && sig !== sigOf(bars[i - 1]) ? "[M:" + sig + "]" : "") + r.abc;
       });

@@ -1,0 +1,9 @@
+---
+title: "Backing Track (draft B)"
+---
+
+::: {.column-screen}
+{{< include _bt-draft-common.qmd >}}
+{{< include _backing-track.qmd >}}
+{{< include _bt-draft-b.qmd >}}
+:::

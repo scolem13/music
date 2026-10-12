@@ -1,0 +1,97 @@
+```{=html}
+<!-- DRAFT B: by player. A rail down the left holds the transport and everything about the tune and the practice loop. Beside it
+     the chart, then one card for each player with all of that player's settings and its fader, mute and solo; then the settings
+     that belong to the whole band, the tone controls, and the seldom-used panels folded shut. See _bt-draft-common.qmd. -->
+<style>
+#bt-root.dxb .dxb-grid{display:grid;grid-template-columns:17rem minmax(0,1fr);gap:1rem;align-items:start}
+#bt-root.dxb .dxb-rail{position:sticky;top:72px;max-height:calc(100vh - 80px);overflow-y:auto;display:grid;grid-template-columns:1fr 1fr;gap:.55rem .6rem;align-items:end;
+  padding:.8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;background:var(--site-surface,#fff)}
+#bt-root.dxb .dxb-rail>*{min-width:0}
+#bt-root.dxb .dxb-rail>.dxb-w,#bt-root.dxb .dxb-rail>.dx-h,#bt-root.dxb .dxb-rail>p,#bt-root.dxb .dxb-rail>details{grid-column:1 / -1}
+#bt-root.dxb .dxb-rail>.dx-h{margin:.5rem 0 0;padding-top:.5rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
+#bt-root.dxb .dxb-rail select,#bt-root.dxb .dxb-rail .bt-play,#bt-root.dxb .dxb-rail .bt-btn{width:100%;max-width:100%}
+#bt-root.dxb .dxb-rail .bt-inline{flex-wrap:wrap;gap:.35rem .5rem}
+#bt-root.dxb .dxb-rail .bt-inline select{flex:1 1 100%}
+#bt-root.dxb .dxb-rail .bt-status,#bt-root.dxb .dxb-rail .bt-hint{margin:0}
+#bt-root.dxb .dxb-rail .bt-hint:empty{display:none}
+#bt-root.dxb .dxb-rail .bt-beats{height:1.2rem}
+#bt-root.dxb .dxb-rail .bt-check{white-space:normal}
+#bt-root.dxb .dxb-rail .bt-info{margin-top:0}
+#bt-root.dxb .dxb-main>*:first-child{margin-top:0}
+#bt-root.dxb .dxb-players{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:1rem;align-items:stretch}
+#bt-root.dxb .dxb-card{flex:1 1 15rem;min-width:0;margin-top:0;display:flex;gap:.7rem;align-items:flex-start}
+#bt-root.dxb .dxb-card.dxb-drums{flex:2 1 30rem}
+#bt-root.dxb .dxb-card>.dx-strip{flex:0 0 4rem}
+#bt-root.dxb .dxb-card>.dx-strip input[type=range].dx-v{height:11rem}
+#bt-root.dxb .dxb-body{flex:1 1 0;min-width:0;display:flex;flex-direction:column;gap:.5rem}
+#bt-root.dxb .dxb-body select,#bt-root.dxb .dxb-body input[type=range]:not(.dx-v){width:100%;max-width:100%}
+#bt-root.dxb .dxb-body .bt-more,#bt-root.dxb .dxb-body .bt-info{margin-top:0}
+#bt-root.dxb .dxb-body .bt-morelist{grid-template-columns:1fr}
+#bt-root.dxb .dxb-two{display:grid;grid-template-columns:repeat(auto-fit,minmax(8rem,1fr));gap:.5rem .6rem;align-items:end}
+#bt-root.dxb .dxb-card .bt-row{margin:0;gap:.4rem .6rem}
+#bt-root.dxb .dxb-band .bt-sub{margin:0;padding:0;border:0}
+#bt-root.dxb .dxb-band .bt-sub>h3{display:none}
+#bt-root.dxb .dxb-tone{display:flex;flex-wrap:wrap;gap:1rem 2rem;align-items:flex-start}
+#bt-root.dxb .dxb-tone>*{min-width:0;max-width:100%}
+#bt-root.dxb .dxb-tone .bt-row{margin:0 0 .5rem}
+#bt-root.dxb .dxb-tone #bt-amp{margin-top:.8rem}
+@media (max-width:900px){
+  #bt-root.dxb .dxb-grid{grid-template-columns:minmax(0,1fr)}
+  #bt-root.dxb .dxb-rail{position:static;max-height:none}
+}
+</style>
+<script>
+(function(){
+  var D = window.BTDraft, $ = D.$, el = D.el, F = D.field;
+  if (!D || !D.player) return;                                          // (the band did not load: the page says so itself)
+  var root = D.init("dxb", "B (a card for each player)", [["backing-track.html", "The current page"], ["backing-track-a.html", "Draft A"]]);
+  var old = root.querySelector(".bt-panel"), band = $("bt-sec-band"), subs = band.querySelectorAll(":scope > .bt-sub"), mix = $("bt-sec-mix");
+  var grid = el("div", "dxb-grid"), rail = el("div", "dxb-rail"), main = el("div", "dxb-main");
+  function wide(node){ if (node) node.classList.add("dxb-w"); return node; }
+  function box(text){ var d = el("div", "bt-field"); d.appendChild(el("span", "bt-group-label", text)); return d; }
+
+  // ---- the rail: transport, the tune, the form, practice, and what is pressed while playing ----
+  var fillF = F("bt-fill"), startF = F("bt-start"), stepF = F("bt-step-on");
+  D.put(rail, wide($("bt-play")), wide($("bt-beats")), wide($("bt-status")), wide($("bt-loop-note")),
+    fillF, wide($("bt-sections-field")),
+    D.head("Tune"), F("bt-tempo-n"), F("bt-key"), wide(F("bt-changes")), wide(F("bt-style")), F("bt-meter"), F("bt-feel"), wide(F("bt-timefeel")), wide($("bt-timeparts-field")),
+    D.head("Form"), F("bt-countin"), F("bt-choruses"), wide(F("bt-intro")), wide($("bt-intro-more")),
+    D.head("Practice"), wide(F("bt-cyc-on")), startF, wide(stepF), $("bt-practice").querySelector("details.bt-info"));
+  old.hidden = true; $("bt-practice").hidden = true;
+
+  // ---- the main column: chart, players, whole band, tone, the rest ----
+  var keep = ["bt-remote", "bt-pinnote", "bt-tabstrip"].map($).concat([root.querySelector(".bt-chartrow"), $("bt-barwarn")]);
+  keep.forEach(function(n){ main.appendChild(n); });
+
+  var players = el("div", "dxb-players");
+  function card(part, title, cls){
+    var c = el("div", "bt-panel dxb-card" + (cls ? " " + cls : "")), body = el("div", "dxb-body"), h = D.head(title);
+    c.appendChild(F("bt-vol-" + part)); c.appendChild(body); body.appendChild(h); players.appendChild(c); c.body = body; return c;
+  }
+  var cBass = card("bass", "Bass"), cComp = card("comp", "Chords"), cSecond = card("comp2", "Second chords"), cDrums = card("drums", "Drums", "dxb-drums");
+  D.put(cBass.body, F("bt-bass"), F("bt-bass-sound"), F("bt-oct-bass"), $("bt-walk-field"));
+  D.put(cComp.body, F("bt-comp"), F("bt-oct-comp"), F("bt-rhythm"), $("bt-rhythm-more"), F("bt-voicing"), $("bt-voicing-more"), F("bt-vmove"), F("bt-ext"), $("bt-ext-more"), subs[2].querySelector(":scope > details.bt-info"));
+  D.put(cSecond.body, F("bt-second"), $("bt-second-rhythm-f"), $("bt-second-voicing-f"), $("bt-oct-comp2-f"), $("bt-second-suggest"));
+  var two = el("div", "dxb-two"); D.put(two, F("bt-groove"), F("bt-fills"));
+  D.put(cDrums.body, two, $("bt-kit"));
+  // the second chord player has no fader until an instrument is chosen: say so where the fader will be
+  main.appendChild(players);
+
+  var whole = el("div", "bt-panel dxb-band"); D.put(whole, D.head("Whole band"), subs[0]); main.appendChild(whole);
+
+  var tone = el("div", "bt-panel"), toneRow = el("div", "dxb-tone"); tone.id = "dxb-tone";
+  $("bt-eq").insertBefore(D.head("Tone (EQ)"), $("bt-eq").firstChild);
+  $("bt-organ").insertBefore(D.head("Organ"), $("bt-organ").firstChild);
+  D.put(toneRow, $("bt-eq"), $("bt-organ")); tone.appendChild(toneRow); main.appendChild(tone);
+
+  [$("bt-sec-chart"), $("bt-notation"), $("bt-setups"), $("bt-export"), root.querySelector("details.bt-abc"), root.querySelector("details.bt-about")].forEach(function(d){ d.open = false; main.appendChild(d); });
+  band.hidden = true; mix.hidden = true;
+  grid.appendChild(rail); grid.appendChild(main); root.appendChild(grid);
+
+  D.partStrips(false); D.kitStrips(); D.eq(); D.amp();
+  // each card's Tone button shows that player in the EQ and brings it into view
+  [[cBass, "bass"], [cComp, "comp"], [cSecond, "comp2"], [cDrums, "drums"]].forEach(function(p){ p[0].firstChild.appendChild(D.toneButton(p[1], "Tone")); });
+  D.onTone = function(){ tone.style.scrollMarginTop = "5rem"; tone.scrollIntoView({ block: "nearest" }); };
+})();
+</script>
+```

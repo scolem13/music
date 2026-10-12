@@ -2265,6 +2265,8 @@ if(EMBED_SUPER){
   }
   window.addEventListener('message',e=>{if(e.origin===location.origin&&e.source===parent&&e.data&&e.data.type==='super-embed')embedSuper(e.data)});
   window.addEventListener('load',()=>{if(parent!==window)parent.postMessage({type:'super-embed-ready'},location.origin)});
+  // the drawing is as wide as the frame, so its height changes whenever the frame's width does (the page around it moved the diagram, or was resized)
+  if(window.ResizeObserver&&parent!==window)new ResizeObserver(es=>{const h=Math.ceil(es[0].contentRect.height);if(h>0)parent.postMessage({type:'super-embed-size',h:h+4},location.origin)}).observe(document.getElementById('sheet-output'));
 }
 
 // ===== VOICINGS BY MIDI =====

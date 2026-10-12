@@ -1,0 +1,424 @@
+---
+title: "Lesson: Changing the Changes in a 12-Bar Blues"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.bl-widget{margin:1rem 0 1.6rem}
+.bl-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.bl-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.bl-tools .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.bl-legend{font-size:.8rem;color:var(--site-ink-2);margin:.35rem 0 0}
+.bl-legend i{display:inline-block;width:.9em;height:.9em;vertical-align:-.1em;background:rgba(217,130,43,.3);border:1px solid #d9822b;border-radius:2px;margin-right:.3em}
+.tune-chart .tc-bar.bl-new{background:rgba(217,130,43,.16)}
+.tune-chart .tc-bar.bl-new.tc-live{background:var(--tc-live-soft)}
+.bl-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.6rem .8rem;margin-bottom:.8rem}
+.bl-slots label{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2)}
+.bl-slots select{width:100%}
+.bl-count{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;max-width:26rem;margin:.6rem 0}
+.bl-count div{border:1px solid var(--site-border);border-radius:4px;padding:.45rem 0;text-align:center;font-family:var(--font-mono);font-size:.85rem;color:var(--site-ink-3);background:var(--site-surface)}
+.bl-count div.bl-ask{border:2px solid #d9822b;color:var(--site-ink)}
+.bl-count div.bl-live{background:var(--site-accent-bg);color:var(--site-accent-text)}
+.bl-answers{display:flex;flex-direction:column;gap:.4rem;max-width:34rem;margin:.6rem 0}
+.bl-answers .btn{text-align:left}
+.bl-answers .btn.bl-right{background:#e3f1e8;border-color:var(--site-pass);color:var(--site-pass)}
+.bl-answers .btn.bl-wrong{background:#f8e4e2;border-color:var(--site-fail);color:var(--site-fail)}
+.bl-verdict{font-weight:600;min-height:1.5em}
+.bl-score{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.bl-abc{display:flex;flex-wrap:wrap;align-items:flex-start;gap:.5rem;margin:.3rem 0;overflow-x:auto}
+.bl-abc .btn{font-family:var(--font-mono);font-size:.8rem;margin-top:.6rem}
+.bl-abc .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.ls-on,.ls-on *{fill:#d6336c;stroke:#d6336c}
+body{padding-bottom:5.5rem}
+#bl-bar{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--parch);border-top:1px solid var(--parch-edge);box-shadow:0 -6px 18px -12px rgba(0,0,0,.35);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1rem;padding:.5rem .8rem;font-size:.85rem}
+#bl-bar label{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--parch-dim);margin-right:.3rem}
+#bl-bar select,#bl-bar input[type=number]{font-size:.85rem;padding:.15rem .3rem;border:1px solid var(--parch-edge);border-radius:4px;background:#fff}
+#bl-bar input[type=number]{width:4.2rem}
+#bl-bar input[type=range]{width:7rem;vertical-align:middle}
+#bl-status{font-family:var(--font-mono);font-size:.75rem;color:var(--parch-dim);min-width:9rem}
+</style>
+```
+
+The twelve-bar blues is three four-bar phrases on three chords. Almost everything players
+have done to it since is one of a small number of moves: go to a chord sooner, approach a
+chord with its own dominant, split a dominant into a two-five, or replace a dominant with
+the one a tritone away. This lesson adds those moves one at a time. The site's backing band
+plays every chart on this page, so you can hear each change as it arrives.
+
+**How to use the page.** Press ▶ on any chart and the band plays two choruses after a
+one-bar count-in. Section 8 has a tune written in notation, where the note that is sounding
+lights up. The bar that is sounding lights up. The strip at the bottom of the window
+sets the key, the feel, the tempo and the chord instrument for the whole page, and you can
+change them while the band plays. Under every chord is its Roman numeral, which stays the
+same in every key.
+
+## 1. The three-chord blues
+
+Four bars of **I**, two of **IV** and two of **I**, then **V**, **IV**, **I**, **I**. Every
+chord is a dominant seventh, including the home chord. That is the sound of the blues: a
+tonic that carries a flat seventh and does not need to resolve.
+
+<div class="bl-step" data-step="basic"></div>
+
+Listen for the two places the form turns. Bar 5 is the first move away from home. Bar 9 is
+the highest point of tension, and the last four bars walk it back down.
+
+## 2. The quick change and the turnaround
+
+Two small changes, both very common. In bar 2 the band goes to **IV** for one bar and comes
+straight back (the *quick change*), which breaks up four bars of the same chord. In bar 12
+the band plays **V** instead of resting on I, so the end of the chorus pulls into the top of
+the next one (a *turnaround*).
+
+<div class="bl-step" data-step="quick"></div>
+
+Use **Hear it without the changes** to compare with the chart before. The shaded bars are
+the ones that differ.
+
+## 3. The jazz blues: a two-five in the last line
+
+Swing and bebop players turned the last line round. Instead of V then IV, they play
+**ii7** then **V7**: the bass now moves by fifths (G, C, F in the key of F) all the way home.
+To set up the ii chord, bar 8 becomes **VI7**, the dominant of ii. The turnaround in bars
+11 and 12 is the same idea at twice the speed: I, VI7, ii7, V7, two beats each.
+
+<div class="bl-step" data-step="jazz"></div>
+
+## 4. Getting to IV, and getting back
+
+Three more moves, each of them a way to make an arrival stronger.
+
+- **Bar 4**: a two-five into IV. The I7 chord in bar 4 is already the dominant of IV, so put
+  its ii chord in front of it (**v7 I7**, two beats each).
+- **Bar 6**: the bass climbs a half step from IV to **♯iv°7**, and that chord pulls back
+  to I in bar 7. This one is as old as the blues on the piano.
+- **Bar 8**: split VI7 into its own two-five, **iii7 VI7**.
+
+<div class="bl-step" data-step="approach"></div>
+
+## 5. Tritone substitution
+
+A dominant seventh chord and the dominant seventh a tritone away share the same third and
+seventh (swapped). So either can stand in for the other, and the substitute's root arrives
+by a half step from above instead of by a fifth. Here it is in four places: the end of bar 4
+(**♯IV7** falling to IV), the end of bar 8 (**♭III7** falling to ii), bar 10 (**♭II7** falling
+to I), and a turnaround built entirely of substitutes: I, ♭III7, ♭VI7, ♭II7.
+
+<div class="bl-step" data-step="tritone"></div>
+
+Listen to the bass. Wherever a substitute is used, the line slides down by half step.
+
+## 6. The Bird blues
+
+Charlie Parker's "Blues for Alice" keeps only three landmarks of the form: I in bar 1, IV in
+bar 5 and the two-five in bars 9 and 10. Everything between is a chain of two-fives. Bars 2
+to 4 descend by step to reach IV. Bars 6 to 9 descend by half step to reach ii. The home
+chord is a major seventh, not a dominant.
+
+<div class="bl-step" data-step="bird"></div>
+
+Compare it with the jazz blues of section 3. The shaded bars show how little is left.
+
+## 7. The minor blues
+
+The same twelve bars with minor i and iv chords. The last line is usually **♭VI7** to
+**V7**: a dominant a half step above the dominant (the tritone substitute of V's own
+dominant). The turnaround uses a half-diminished ii chord. "Mr. P.C." and
+"Equinox" are both built this way.
+
+<div class="bl-step" data-step="minor"></div>
+
+## 8. A tune on these changes: Blues in the Closet
+
+Oscar Pettiford's *Blues in the Closet* is a good first tune because its changes are the
+three-chord blues with just two of the moves above.
+
+- **Bars 9 and 10** are a two-five, **ii7 then V7**, as in the jazz blues of section 3.
+- **Bar 12** is **V7**, the turnaround of section 2.
+
+Everything else is plain. There is no quick change in bar 2 (four full bars of I), bars 5
+and 6 are IV, bars 7 and 8 stay on I with no VI7, and bar 11 is one bar of I. The shaded
+bars are the ones that differ from the three-chord blues of section 1.
+
+<div class="bl-step" data-step="closet"></div>
+
+The melody is one two-bar riff played three times, and the note that is sounding lights up
+as it plays. Listen to bars 5 and 6: one note of the riff is a half step lower there than
+in bars 1 and 2, because the 3rd of the I chord has become the ♭7th of the IV chord. The
+changes are in the melody. In bars 9 and 10 the riff does not change at all, even though
+the chords under it are new: every note of it belongs to both the ii chord and the V
+chord.
+
+To build this chorus yourself in the next section, choose *Stay on I*, *Stay on I*,
+*Stay on IV*, *Stay on I*, *Two-five* and *V in the last bar*. **Open in the Backing Track**
+puts the tune on that page in a new tab, where the bass line, comping and drums can each be
+chosen. The instrument lessons each
+end with this tune, and [the improvising lesson](blues-improv.qmd) is built on it.
+
+## Build your own chorus
+
+Choose one option for each pair of bars and the chart rewrites itself. Change a menu while
+the band is playing and the new chords come in at the next bar. All of the options fit
+together, so there is no wrong combination: try the plainest first line with the busiest
+turnaround, or the reverse.
+
+<div id="bl-builder" class="bl-widget"></div>
+
+## Test your ear
+
+The band plays a plain blues with one pair of bars changed. The question tells you which
+bars to listen to; the counter shows where the band is. Pick what you heard.
+
+<div id="bl-quiz" class="bl-widget"></div>
+
+## Where to go next
+
+- Play along. Set the strip at the bottom to **Loop**, pick a key and improvise over each
+  version in turn. Bars 4, 8 and 12 are where the new chords ask for new notes.
+- Take a chorus you built to **Tools → Backing Track** (use *Copy as ABC* above and paste it
+  into *Edit the changes (ABC)* there) to choose the bass line, comping rhythm and drum groove part
+  by part.
+- Learn each version in the keys you play most: F and B♭ for horns, E, A and G for guitar.
+
+```{=html}
+<div id="bl-bar">
+  <span><label for="bl-key">Key</label><select id="bl-key"></select></span>
+  <span><label for="bl-feel">Feel</label><select id="bl-feel"></select></span>
+  <span><label for="bl-tempo">Tempo</label><input type="range" id="bl-tempo" min="40" max="220" step="2"> <input type="number" id="bl-tempo-n" min="40" max="220" step="2" aria-label="Tempo in beats per minute"></span>
+  <span><label for="bl-inst">Chords</label><select id="bl-inst"><option value="piano">Piano</option><option value="guitar">Guitar</option><option value="organ">Organ</option></select></span>
+  <span><input type="checkbox" id="bl-loop"> <label for="bl-loop">Loop</label></span>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="bl-stop" disabled>■ Stop</button>
+  <span id="bl-status" aria-live="polite"></span>
+</div>
+
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
+<script src="/apps/shared/lessons/score.js?v=3"></script>
+<script src="/apps/shared/lessons/tunes.js?v=2"></script>
+<script src="/apps/shared/tune-chart.js?v=26"></script>
+<script src="/apps/shared/voicings.js?v=5"></script>
+<script src="/apps/shared/band/harmony.js?v=27"></script>
+<script src="/apps/shared/band/bass.js?v=13"></script>
+<script src="/apps/shared/band/comp.js?v=28"></script>
+<script src="/apps/shared/band/catalog.js?v=28"></script>
+<script src="/apps/shared/band/drums.js?v=12"></script>
+<script src="/apps/shared/band/sounds.js?v=11"></script>
+<script src="/apps/shared/band/player.js?v=114"></script>
+<script>
+// The blues lesson: every chart on the page is drawn by TuneChart and played by the Backing Track band
+// (BandPlayer with a BandCatalog style). Charts are written in F ("A B" = two chords in a bar) and
+// transposed, on the page and in the band, to the key chosen in the strip at the bottom.
+(function () {
+  var cat = window.BandCatalog, H = window.BandHarmony;
+  if (!cat || !H || !window.BandPlayer || !window.TuneChart) return;
+  function $(id) { return document.getElementById(id); }
+  function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
+
+  // `prev` = the version a step is compared with (its shaded bars, and the "without the changes" button)
+  var STEPS = {
+    basic:    { bars: 'F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|F7' },
+    quick:    { bars: 'F7|Bb7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7', prev: 'basic' },
+    jazz:     { bars: 'F7|Bb7|F7|F7|Bb7|Bb7|F7|D7|Gm7|C7|F7 D7|Gm7 C7', prev: 'quick', loop: [7, 11] },
+    approach: { bars: 'F7|Bb7|F7|Cm7 F7|Bb7|Bdim7|F7|Am7 D7|Gm7|C7|F7 D7|Gm7 C7', prev: 'jazz', loop: [3, 7] },
+    tritone:  { bars: 'F7|Bb7|F7|Cm7 B7|Bb7|Bdim7|F7|Am7 Ab7|Gm7|Gb7|F7 Ab7|Db7 Gb7', prev: 'approach', loop: [7, 0] },
+    bird:     { bars: 'Fmaj7|Em7b5 A7|Dm7 G7|Cm7 F7|Bb7|Bbm7 Eb7|Am7 D7|Abm7 Db7|Gm7|C7|Fmaj7 D7|Gm7 C7', prev: 'jazz' },
+    minor:    { bars: 'Fm7|Fm7|Fm7|Fm7|Bbm7|Bbm7|Fm7|Fm7|Db7|C7|Fm7|Gm7b5 C7', minor: true },
+    closet:   { bars: 'F7|F7|F7|F7|Bb7|Bb7|F7|F7|Gm7|C7|F7|C7', prev: 'basic', tune: 'closet' }      // with its melody (BluesTunes)
+  };
+  // The builder and the ear test: one choice for each pair of bars. The first of each is the three-chord blues.
+  var SLOTS = [
+    { from: 0,  opts: [['Stay on I', 'F7|F7'], ['Quick change', 'F7|Bb7']] },
+    { from: 2,  opts: [['Stay on I', 'F7|F7'], ['Two-five into IV', 'F7|Cm7 F7'], ['Tritone substitute into IV', 'F7|Cm7 B7']] },
+    { from: 4,  opts: [['Stay on IV', 'Bb7|Bb7'], ['Up a half step to a diminished chord', 'Bb7|Bdim7'], ['IV turns minor', 'Bb7|Bbm7 Eb7']] },
+    { from: 6,  opts: [['Stay on I', 'F7|F7'], ['Dominant of ii', 'F7|D7'], ['Two-five into ii', 'F7|Am7 D7'], ['Two-fives falling by half step', 'Am7 D7|Abm7 Db7']] },
+    { from: 8,  opts: [['V then IV', 'C7|Bb7'], ['Two bars of V', 'C7|C7'], ['Two-five', 'Gm7|C7'], ['Two, then the tritone substitute', 'Gm7|Gb7']] },
+    { from: 10, opts: [['Stay on I', 'F7|F7'], ['V in the last bar', 'F7|C7'], ['I, VI, ii, V', 'F7 D7|Gm7 C7'], ['All tritone substitutes', 'F7 Ab7|Db7 Gb7']] }
+  ];
+  var FEELS = [{ id: 'swing', label: 'Medium swing', tempo: 120 }, { id: 'doowop', label: 'Slow blues in 12/8', tempo: 60 }, { id: 'boogaloo', label: 'Straight-eighth boogaloo', tempo: 116 }];
+  var KEYS = ['C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭', 'A', 'B♭', 'B'], SHARP = { 2: 1, 4: 1, 7: 1, 9: 1, 11: 1 };
+  var state = { key: 5, feel: 'swing', tempo: 120, inst: 'piano', loop: false };
+
+  function split(s) { return s.split('|'); }
+  function abcOf(bars, minor) {
+    var out = bars.map(function (b) { var c = b.split(' '); return c.length > 1 ? '"' + c[0] + '"z2 "' + c[1] + '"z2' : '"' + b + '"z4'; }), rows = [];
+    for (var i = 0; i < out.length; i += 4) rows.push(out.slice(i, i + 4).join(' | '));
+    return 'X:1\nT:Blues\nM:4/4\nL:1/4\nK:F' + (minor ? 'm' : '') + '\n' + rows.join(' |\n') + ' |]';
+  }
+  function numerals(bars) { return bars.map(function (b) { return b.split(' ').map(function (c) { return H.roman(c, 5); }).join(' '); }).join(' | '); }
+  function semis() { var d = state.key - 5; return d > 6 ? d - 12 : d; }
+  function band() {
+    var so = cat.styleOpts(state.feel, state.inst === 'guitar' ? 'guitar' : 'piano'), opts = Object.assign({}, so.opts, { variation: 0.5 }), need = so.instruments.slice();
+    if (state.inst === 'organ') { opts.compSound = 'hammond'; need[1] = 'hammond'; }
+    return { opts: opts, instruments: need };
+  }
+
+  // ---- a chart that follows the key and shades some of its bars ----
+  var charts = [];
+  function makeChart(host, bars, minor, marked) {
+    var c = { bars: bars, minor: !!minor, marked: marked || [] };
+    c.chart = TuneChart.render(host, abcOf(bars, minor), { header: false, barsPerRow: 4, roman: 'both', romanFn: H.roman, transpose: semis(), preferFlats: !SHARP[state.key] });
+    c.mark = function () { c.chart.barEls.forEach(function (b, i) { b.classList.toggle('bl-new', c.marked.indexOf(i) >= 0); }); };
+    c.set = function (bars, marked) { c.bars = bars; c.marked = marked || []; c.chart.setTune(abcOf(bars, c.minor)); c.mark(); };
+    c.setLive = function (i) { c.chart.setLive(i); };
+    c.rekey = function () { c.chart.setTranspose(semis(), !SHARP[state.key]); c.mark(); };
+    c.mark(); charts.push(c); return c;
+  }
+
+  // ---- one band for the page ----
+  var player = null, now = null;                               // now = { btn, label, view, tune } of what is playing
+  // a tune's melody above a chart: written in the key of the page, lit note by note, and handed to the band
+  var tunes = [], Score = window.LessonScore, Tunes = window.BluesTunes;
+  function keyName() { return KEYS[state.key].replace('♭', 'b'); }
+  function makeTune(host, id, before) {
+    var t = Tunes && Tunes[id]; if (!t || !Score) return null;
+    var head = el('p', 'bl-legend', t.title + ', by ' + t.composer + ':'), row = el('div', 'bl-abc'), btn = el('button', 'btn btn-sm btn-outline-secondary', '▶ Play'), staff = el('div'), tn = { tune: t, score: null, bars: [] };
+    btn.type = 'button'; btn.title = 'The tune alone, on a piano'; row.appendChild(btn); row.appendChild(staff); host.insertBefore(head, before); host.insertBefore(row, before);
+    btn.addEventListener('click', function () { Score.play(btn, tn.score, { onStart: stop, swing: state.feel === 'boogaloo' ? 0 : 66 }); });      // (swung, unless the feel is straight eighths)
+    var bt = el('button', 'btn btn-sm btn-outline-secondary', 'Open in the Backing Track ↗'); bt.type = 'button'; bt.title = 'Opens the Backing Track page in a new tab with this tune loaded';
+    bt.addEventListener('click', function () { Tunes.backingTrack(t, { tempo: state.tempo, style: state.feel }); }); tn.open = bt;
+    tn.draw = function () { var abc = Tunes.inKey(t, keyName()); tn.score = Score.engrave(staff, abc, { width: 680, fluid: true }); tn.bars = Tunes.melody(abc, t.pickup); };
+    tn.draw(); tunes.push(tn); return tn;
+  }
+  function follow() {
+    if (!now || !player) return;
+    var at = player.where && player.where();
+    if (now.tune && now.tune.score && at && at.info && !at.info.countIn && !at.info.ending && at.info.index >= 0) now.tune.score.mark(now.tune.tune.pickup + 4 * at.info.index + at.pos);
+    window.requestAnimationFrame(follow);
+  }
+  function status(t) { $('bl-status').textContent = t || ''; }
+  function idle() {
+    if (now) { now.btn.textContent = now.label; now.btn.classList.remove('bl-on'); if (now.view) now.view.setLive(-1); if (now.tune && now.tune.score) now.tune.score.clear(); now = null; }
+    $('bl-stop').disabled = true; status('');
+  }
+  function stop() { if (player) { try { player.stop(); } catch (e) {} } idle(); }
+  // view = whatever shows the sounding bar (setLive); cycle = [from, to] form bars to go round, to < from = over the end
+  // tune = a makeTune() whose melody the band's piano plays over the chart (written pitch less the key: the player adds the key back)
+  function withTune(parsed, tune) { if (tune) parsed.bars.forEach(function (pb, i) { var m = tune.bars[i]; if (m && m.length) pb.melody = m.map(function (n) { return { pos: n.pos, dur: n.dur, midi: n.midi - semis() }; }); }); return parsed; }
+  function play(btn, view, bars, minor, cycle, tune) {
+    var same = now && now.btn === btn; stop(); if (Score) Score.stop(); if (same) return;
+    var parsed = withTune(TuneChart.parse(abcOf(bars, minor)), tune), b = band(); b.opts.melody = !!tune; b.opts.melodyLevel = 0.95;
+    if (!player) player = window.BandPlayer.create({ parsed: parsed, tempo: state.tempo, transpose: semis(), countIn: 1, opts: b.opts, instruments: b.instruments,
+      onBar: function (info) { if (!now) return; status(info.countIn ? 'Count-in' : info.ending ? '' : 'Bar ' + (info.index + 1) + (state.loop || now.cycle ? '' : ', chorus ' + (info.chorus + 1) + ' of 2'));
+        if (now.view) now.view.setLive(info.countIn || info.ending ? -1 : info.index); },
+      onState: function (s) { if (s === 'loading') status('Loading the sounds…'); },
+      onEnd: idle });
+    else { player.setInstruments(b.instruments); player.setChart(parsed); player.setOpts(b.opts); player.setTempo(state.tempo); player.setTranspose(semis()); }
+    player.setCycle(cycle ? cycle[0] : null, cycle ? cycle[1] : null);
+    player.setStartBar(cycle ? cycle[0] : 0);
+    player.setChoruses(cycle || state.loop ? 0 : 2);
+    now = { btn: btn, label: btn.textContent, view: view, cycle: cycle, tune: tune || null, bars: bars, minor: minor };
+    btn.textContent = '■ Stop'; btn.classList.add('bl-on'); $('bl-stop').disabled = false;
+    player.play().then(function () { if (now && now.btn === btn) window.requestAnimationFrame(follow); }, function () { idle(); status('The sounds could not be loaded.'); });
+  }
+  function playBtn(label, primary) { var b = el('button', 'btn btn-sm ' + (primary ? 'btn-primary' : 'btn-outline-secondary'), label); b.type = 'button'; return b; }
+
+  // ---- the numbered sections ----
+  Array.prototype.forEach.call(document.querySelectorAll('.bl-step'), function (host) {
+    var s = STEPS[host.getAttribute('data-step')]; if (!s) return;
+    var bars = split(s.bars), before = s.prev ? split(STEPS[s.prev].bars) : null;
+    var changed = before ? bars.map(function (b, i) { return b !== before[i] ? i : -1; }).filter(function (i) { return i >= 0; }) : [];
+    host.classList.add('bl-widget');
+    var tools = el('div', 'bl-tools'), paper = el('div'); host.appendChild(tools); host.appendChild(paper);
+    var view = makeChart(paper, bars, s.minor, changed), tune = s.tune ? makeTune(host, s.tune, paper) : null;
+    var b1 = playBtn(tune ? '▶ Play with the band' : '▶ Play', true); b1.addEventListener('click', function () { play(b1, view, bars, s.minor, null, tune); }); tools.appendChild(b1);
+    if (tune && tune.open) { tune.open.className = 'btn btn-sm btn-outline-secondary'; tools.appendChild(tune.open); }
+    if (before) { var b2 = playBtn('▶ Hear it without the changes'); b2.addEventListener('click', function () { play(b2, view, before, s.minor); }); tools.appendChild(b2); }
+    if (s.loop) { var to = s.loop[1], b3 = playBtn('▶ Loop bars ' + (s.loop[0] + 1) + (to < s.loop[0] ? ' to 12 and on into bar ' : ' to ') + (to + 1));
+      b3.addEventListener('click', function () { play(b3, view, bars, s.minor, s.loop); }); tools.appendChild(b3); }
+    if (changed.length) { var lg = el('p', 'bl-legend'); lg.appendChild(el('i')); lg.appendChild(document.createTextNode('Changed from the version before')); host.appendChild(lg); }
+  });
+
+  // ---- build your own ----
+  function assemble(picks) { var out = []; SLOTS.forEach(function (sl, k) { out = out.concat(split(sl.opts[picks[k]][1])); }); return out; }
+  function optionLabel(o) { return o[0] + ':  ' + numerals(split(o[1])); }
+  (function () {
+    var host = $('bl-builder'); if (!host) return;
+    var picks = SLOTS.map(function () { return 0; }), grid = el('div', 'bl-slots'), tools = el('div', 'bl-tools'), paper = el('div'), sels = [];
+    host.appendChild(grid); host.appendChild(tools); host.appendChild(paper);
+    var view = makeChart(paper, assemble(picks), false, []);
+    function marked() { var m = []; SLOTS.forEach(function (sl, k) { if (picks[k]) m.push(sl.from, sl.from + 1); }); return m; }
+    function refresh() {
+      view.set(assemble(picks), marked());
+      if (now && now.view === view && player) player.setChart(TuneChart.parse(abcOf(view.bars, false)));
+    }
+    SLOTS.forEach(function (sl, k) {
+      var wrap = el('div'), id = 'bl-slot-' + k, lab = el('label', null, 'Bars ' + (sl.from + 1) + ' and ' + (sl.from + 2)), sel = el('select', 'form-select form-select-sm');
+      lab.htmlFor = id; sel.id = id;
+      sl.opts.forEach(function (o, i) { var op = el('option', null, optionLabel(o)); op.value = i; sel.appendChild(op); });
+      sel.addEventListener('change', function () { picks[k] = +sel.value; refresh(); });
+      wrap.appendChild(lab); wrap.appendChild(sel); grid.appendChild(wrap); sels.push(sel);
+    });
+    function setAll(fn) { picks = SLOTS.map(fn); sels.forEach(function (s, k) { s.value = picks[k]; }); refresh(); }
+    var go = playBtn('▶ Play', true); go.addEventListener('click', function () { play(go, view, view.bars, false); }); tools.appendChild(go);
+    var rnd = playBtn('Surprise me'); rnd.addEventListener('click', function () { setAll(function (sl) { return Math.floor(Math.random() * sl.opts.length); }); }); tools.appendChild(rnd);
+    var plain = playBtn('Back to three chords'); plain.addEventListener('click', function () { setAll(function () { return 0; }); }); tools.appendChild(plain);
+    var copy = playBtn('Copy as ABC'); tools.appendChild(copy);
+    copy.addEventListener('click', function () {
+      var text = abcOf(view.bars, false).replace('T:Blues', 'T:My blues (written in F)');
+      var done = function (ok) { copy.textContent = ok ? 'Copied' : 'Could not copy'; setTimeout(function () { copy.textContent = 'Copy as ABC'; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function () { done(true); }, function () { done(false); }); else done(false);
+    });
+    var lg = el('p', 'bl-legend'); lg.appendChild(el('i')); lg.appendChild(document.createTextNode('Changed from the three-chord blues')); host.appendChild(lg);
+  })();
+
+  // ---- test your ear ----
+  (function () {
+    var host = $('bl-quiz'); if (!host) return;
+    var tools = el('div', 'bl-tools'), ask = el('p', null, 'Press New question to begin.'), count = el('div', 'bl-count'), answers = el('div', 'bl-answers'),
+        verdict = el('p', 'bl-verdict'), score = el('p', 'bl-score'), paper = el('div');
+    [tools, ask, count, answers, verdict, score, paper].forEach(function (e) { host.appendChild(e); });
+    paper.hidden = true; verdict.setAttribute('aria-live', 'polite');
+    var boxes = []; for (var i = 0; i < 12; i++) { var d = el('div', null, String(i + 1)); count.appendChild(d); boxes.push(d); }
+    var counter = { setLive: function (i) { boxes.forEach(function (b, k) { b.classList.toggle('bl-live', k === i); }); } };
+    var q = null, right = 0, asked = 0, last = -1, reveal = null;
+    var next = playBtn('New question', true), again = playBtn('▶ Hear it again'); again.disabled = true; tools.appendChild(next); tools.appendChild(again);
+    function listen() { if (q) play(again, counter, q.bars, false); }
+    again.addEventListener('click', listen);
+    next.addEventListener('click', function () {
+      var k; do { k = Math.floor(Math.random() * SLOTS.length); } while (k === last); last = k;
+      var sl = SLOTS[k], picks = SLOTS.map(function () { return 0; }); picks[k] = Math.floor(Math.random() * sl.opts.length);
+      q = { slot: k, pick: picks[k], bars: assemble(picks), done: false };
+      ask.textContent = 'Listen to bars ' + (sl.from + 1) + ' and ' + (sl.from + 2) + '. Which do you hear?';
+      boxes.forEach(function (b, i) { b.classList.toggle('bl-ask', i === sl.from || i === sl.from + 1); });
+      answers.textContent = ''; verdict.textContent = ''; paper.hidden = true; again.disabled = false;
+      sl.opts.forEach(function (o, i) {
+        var b = el('button', 'btn btn-sm btn-outline-secondary', optionLabel(o)); b.type = 'button';
+        b.addEventListener('click', function () {
+          if (q.done) return; q.done = true; asked++;
+          var ok = i === q.pick; if (ok) right++; else b.classList.add('bl-wrong');
+          answers.children[q.pick].classList.add('bl-right');
+          verdict.textContent = ok ? 'Yes.' : 'Not this time. The band played "' + sl.opts[q.pick][0] + '".';
+          score.textContent = right + ' right out of ' + asked;
+          paper.hidden = false;
+          if (!reveal) reveal = makeChart(paper, q.bars, false, [sl.from, sl.from + 1]); else reveal.set(q.bars, [sl.from, sl.from + 1]);
+        });
+        answers.appendChild(b);
+      });
+      if (now && now.btn === again) stop();
+      listen();
+    });
+  })();
+
+  // ---- the strip at the bottom ----
+  KEYS.forEach(function (k, i) { var o = el('option', null, k); o.value = i; $('bl-key').appendChild(o); });
+  FEELS.forEach(function (f) { var o = el('option', null, f.label); o.value = f.id; $('bl-feel').appendChild(o); });
+  function showTempo() { $('bl-tempo').value = state.tempo; $('bl-tempo-n').value = state.tempo; }
+  function setTempo(v) { v = Math.max(40, Math.min(220, Math.round(+v) || state.tempo)); state.tempo = v; showTempo(); if (player) player.setTempo(v); }
+  function setBand() { if (!player) return; var b = band(); player.setInstruments(b.instruments); player.setOpts(b.opts); }
+  $('bl-key').value = state.key; $('bl-feel').value = state.feel; showTempo();
+  $('bl-key').addEventListener('change', function () { state.key = +this.value; charts.forEach(function (c) { c.rekey(); }); tunes.forEach(function (t) { t.draw(); });
+    if (player) { player.setTranspose(semis()); if (now && now.tune) player.setChart(withTune(TuneChart.parse(abcOf(now.bars, now.minor)), now.tune)); } });
+  $('bl-feel').addEventListener('change', function () { state.feel = this.value; var f = FEELS.filter(function (x) { return x.id === state.feel; })[0]; setBand(); setTempo(f.tempo); });
+  $('bl-inst').addEventListener('change', function () { state.inst = this.value; setBand(); });
+  $('bl-tempo').addEventListener('input', function () { setTempo(this.value); });
+  $('bl-tempo-n').addEventListener('change', function () { setTempo(this.value); });
+  $('bl-loop').addEventListener('change', function () { state.loop = this.checked; if (player && now && !now.cycle) player.setChoruses(state.loop ? 0 : 2); });
+  $('bl-stop').addEventListener('click', stop);
+})();
+</script>
+```
