@@ -1152,3 +1152,11 @@ Added =lessons/hihat-grooves.qmd= ("Hi-Hat Grooves: From Quarter Notes to Sixtee
 ** TODO The Backing Track page does not play or show the melody it is handed.
 ** VERIFY BY EAR: the Nudge (ms) default of 0 against the real latency of a MIDI keyboard; the legato rule on short detached notes.
 
+- Melody tab on the Backing Track page (same day): the Melody panel (=#bt-melody=, a tab in draft A) records over the page's own band. =mel[src]= holds the
+  notes of each SOURCE bar (so repeats share them; first time through a repeated bar wins); the band plays them as =bar.melody= (=ChordEntry.playable=
+  joins ties); the notation and the "ABC with the melody" are =ChordEntry.melodyAbc(parsedC, mel)=: the changes' own bars, repeat signs, endings and
+  sections with the notes written in. The ABC box is never rewritten. The melody follows bar numbers, moves with the Key menu, and is dropped when the
+  bar count changes. It is not saved with setups and is lost on reload.
+** TODO Save the melody with a setup / in the ABC box (needs bar text spans from TuneChart.parse, =bar.at= is only a start offset).
+** TODO Anacrusis (pickup) bars and meter changes inside a tune are not handled by the recording.
+

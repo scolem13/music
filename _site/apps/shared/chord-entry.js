@@ -321,6 +321,47 @@
     return toks.join(" ");
   }
 
+
+  // the melody as the band plays it: per bar [{ pos, dur, midi }] in beats, a tie into the next bar made one long note. `mel` may have holes.
+  function playable(mel, upb){
+    var out = [], skip = {}, i, k;
+    mel = mel || [];
+    for (i = 0; i < mel.length; i++){
+      var b = mel[i]; if (!b){ out.push([]); continue; }
+      var o = [];
+      for (k = 0; k < b.length; k++){
+        if (skip[i + ":" + k]) continue;
+        var n = b[k], d = n.dur, at = n, bi = i;
+        while (at.tie && mel[bi + 1] && mel[bi + 1][0] && mel[bi + 1][0].midi === n.midi && mel[bi + 1][0].pos === 0){ at = mel[bi + 1][0]; d += at.dur; skip[(bi + 1) + ":0"] = 1; bi++; }
+        o.push({ pos: n.pos / upb, dur: d / upb, midi: n.midi });
+      }
+      out.push(o);
+    }
+    return out;
+  }
+  // A parsed chart (TuneChart.parse) with a melody over its bars (`mel`, per source bar, in units) as ABC: the same bars, repeats, endings and
+  // section names, with the notes written in. o = { title, sections: [name or null per bar] }. Written in eighths (sixteenths when the line needs them).
+  function melodyAbc(parsed, mel, o){
+    o = o || {};
+    var n = parsed.meterN || 4, d = parsed.meterD || 4, den = Math.max(8, d), per = n * den / d, key = parsed.keyField || "C", sp = spelling(key), i;
+    var fine = false; (mel || []).forEach(function (b){ (b || []).forEach(function (m){ if (m.pos % 1 || m.dur % 1) fine = true; }); });
+    var parts = [], cur = [];
+    function flush(){ if (cur.length) parts.push(cur.join(" ")); cur = []; }
+    parsed.bars.forEach(function (bar, bi){
+      var ch = {}; (bar.chords || []).forEach(function (c){ if (c.nc) return; var u = Math.round(c.onset / parsed.unitsPerBar * per); if (u < per) ch[u] = c.sym; });
+      var sec = o.sections && o.sections[bi];
+      if (sec){ flush(); parts.push("P:" + sec); }
+      var left = bar.left === "repeat-open" ? "|: " : "", end = bar.ending ? "[" + bar.ending + " " : "";
+      var text = tuneBar(ch, (mel && mel[bi]) || [], per, fine ? 2 : 1, sp);
+      var right = bar.right === "repeat-close" ? ":|" : bar.right === "final" ? "|]" : "|";
+      cur.push(left + end + text + " " + right);
+      if (cur.length >= 4) flush();
+    });
+    flush();
+    var body = []; parts.forEach(function (x){ body.push(x); });
+    return "X:1\nT:" + (o.title || parsed.title || "Tune") + "\nM:" + n + "/" + d + "\nL:1/" + (den * (fine ? 2 : 1)) + "\nK:" + key + "\n" + body.join("\n").replace(/\|: \[/g, "|: [") + "\n";
+  }
+
   // a swung off-beat sits late in the beat: put a played position back on the even grid before snapping
   function unswing(pos, s){ var b = Math.floor(pos), f = pos - b; return b + (f <= s ? f * 0.5 / s : 0.5 + (f - s) * 0.5 / (1 - s)); }
 
@@ -341,5 +382,5 @@
   }
 
   global.ChordEntry = { connect: connect, QUALITIES: QUALITIES, analyse: analyse, symbol: symbol, keyLof: keyLof, lofName: lofName,
-    listener: listener, grid: grid, unswing: unswing, line: line, quantizeLine: quantizeLine, spelling: spelling };
+    listener: listener, grid: grid, unswing: unswing, line: line, quantizeLine: quantizeLine, spelling: spelling, playable: playable, melodyAbc: melodyAbc };
 })(typeof window !== "undefined" ? window : globalThis);

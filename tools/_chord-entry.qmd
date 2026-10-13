@@ -125,7 +125,7 @@
 <script src="/apps/shared/tune-chart.js?v=23"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
-<script src="/apps/shared/chord-entry.js?v=3"></script>
+<script src="/apps/shared/chord-entry.js?v=4"></script>
 <script src="/apps/shared/band/harmony.js?v=24"></script>
 <script src="/apps/shared/band/bass.js?v=11"></script>
 <script src="/apps/shared/band/comp.js?v=25"></script>
@@ -195,15 +195,8 @@
   // the entered melody on the parsed bars, in beats, for the band to play (a tie into the next bar becomes one long note)
   function attachMelody(){
     if (!parsed || !grid) return;
-    var mel = grid.melody(), u = grid.unitsPerBeat, skip = {};
-    parsed.bars.forEach(function(b, i){
-      var l = (mel[i] || []).map(function(n){ return { pos: n.pos / u, dur: n.dur / u, midi: n.midi, tie: n.tie }; }), out = [];
-      l.forEach(function(n, k){ if (skip[i + ":" + k]) return;
-        var at = n, bi = i, ki = k;
-        while (at.tie && mel[bi + 1] && mel[bi + 1][0] && mel[bi + 1][0].midi === n.midi){ n.dur += mel[bi + 1][0].dur / u; skip[(bi + 1) + ":0"] = 1; at = mel[bi + 1][0]; bi++; }
-        out.push({ pos: n.pos, dur: n.dur, midi: n.midi }); });
-      if (out.length) b.melody = out; else delete b.melody;
-    });
+    var pl = ChordEntry.playable(grid.melody(), grid.unitsPerBeat);
+    parsed.bars.forEach(function(b, i){ if (pl[i] && pl[i].length) b.melody = pl[i]; else delete b.melody; });
   }
   var scoreAbc = "";
   function drawScore(){

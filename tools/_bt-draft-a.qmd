@@ -66,7 +66,7 @@
   // ---- the tabs: [id, label, the blocks it shows] ----
   var playBox = el("div", "bt-panel"); playBox.appendChild(rows[1]);
   var TABS = [["play", "Play", [playBox, $("bt-practice")]], ["band", "Band", [$("bt-sec-band")]], ["mix", "Mixer", [$("bt-sec-mix")]],
-              ["chart", "Chart and changes", [$("bt-sec-chart"), abcBox]], ["notation", "Notation", [$("bt-notation")]], ["files", "Save and export", [$("bt-setups"), $("bt-export"), about]]];
+              ["chart", "Chart and changes", [$("bt-sec-chart"), abcBox]], ["notation", "Notation", [$("bt-notation")]], ["melody", "Melody", [$("bt-melody")]], ["files", "Save and export", [$("bt-setups"), $("bt-export"), about]]];
   var bar = el("div", "dxa-tabs"), panes = el("div", "dxa-panes"), KEY = "btDraftATab", cur = "band";
   bar.setAttribute("role", "tablist");
   TABS.forEach(function(t){
