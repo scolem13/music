@@ -11,6 +11,10 @@
 //   MusicAudio.click(ctxTime, accent?)                      — metronome tick (woodblock-ish)
 //   MusicAudio.setVoice(name) / MusicAudio.voices()
 //   MusicAudio.ctx() / MusicAudio.midiToFreq(midi)
+//
+// The "piano", "epiano" and "epiano_dry" voices (and the default) play the backing track's piano samples
+// (band/sounds.js, loaded on first use from beside this file). Until they have downloaded — or if they
+// cannot — those voices fall back to the oscillator patch of the same name below.
 
 (function (global) {
   let ctx = null, master = null, reverb = null, wetGain = null;
@@ -62,10 +66,42 @@
   let defaultVoice = "piano";
   const active = new Set();              // live source nodes, so stopAll() can cut scheduled sound
 
+  // ---- the band's piano samples ----
+  const SAMPLED = { piano:1, epiano:1, epiano_dry:1 };
+  const myScript = document.currentScript && document.currentScript.src;
+  let bank = null, bankOut = null, bankState = 0;            // 0 = not asked, 1 = loading, 2 = ready, 3 = failed
+  function loadBank(){
+    if (bankState) return;
+    bankState = 1;
+    const start = () => {
+      try {
+        bank = global.BandSounds.create(ctx);
+        bankOut = ctx.createGain(); bankOut.gain.value = 0.5; bankOut.connect(master);
+        const send = ctx.createGain(); send.gain.value = 0.16; bankOut.connect(send); send.connect(reverb);
+        bank.load(["piano"]).then(() => { bankState = 2; }, () => { bankState = 3; });
+      } catch (e) { bankState = 3; }
+    };
+    if (global.BandSounds) return start();
+    if (!myScript){ bankState = 3; return; }
+    const sc = document.createElement("script");
+    sc.src = myScript.replace(/audio\.js.*$/, "band/sounds.js?v=14");
+    sc.onload = start; sc.onerror = () => { bankState = 3; };
+    document.head.appendChild(sc);
+  }
+  function sampled(midi, t0, dur, gain){
+    const vel = Math.max(0.2, Math.min(0.95, gain * 4));
+    return !!bank.play("piano", { midi, vel, dur: Math.max(0.1, dur) }, t0, bankOut);
+  }
+
   function voice(midi, t0, dur, gain, voiceName){
     const c = ac();
-    const p = PATCHES[voiceName] || PATCHES[defaultVoice];
+    const name = PATCHES[voiceName] ? voiceName : defaultVoice;
     const peak = (gain == null ? 0.2 : gain); if (peak <= 0) return;
+    if (SAMPLED[name]){
+      loadBank();
+      if (bankState === 2 && sampled(midi, t0, dur, peak)) return;
+    }
+    const p = PATCHES[name];
     const f = mtf(midi);
 
     const amp = c.createGain(); amp.gain.value = 0.0001;
@@ -121,7 +157,9 @@
     src.connect(bp); bp.connect(g); g.connect(master); src.start(t0); src.stop(t0 + 0.06);
     active.add(src); src.onended = () => active.delete(src);
   }
-  function stopAll(){ active.forEach(o => { try { o.stop(); } catch(e){} }); active.clear(); }
+  function stopAll(){ if (bank) bank.stopAll(); active.forEach(o => { try { o.stop(); } catch(e){} }); active.clear(); }
+
+  global.addEventListener("pointerdown", () => { ac(); loadBank(); }, { once: true, capture: true });   // start the download before the first note
 
   global.MusicAudio = {
     note, noteAt, chord, click, stopAll, ctx: ac, midiToFreq: mtf,

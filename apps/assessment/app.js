@@ -256,7 +256,7 @@ let smoothedFreq = null;
 
 async function enableMic(){
   try {
-    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : new (window.AudioContext || window.webkitAudioContext)());
     await audioCtx.resume();
     micStream = await navigator.mediaDevices.getUserMedia({ audio: {
       echoCancellation: false, noiseSuppression: false, autoGainControl: false
@@ -669,15 +669,17 @@ document.getElementById("record").addEventListener("click", recordAttempt);
 
 // ---------- audio playback helpers ----------
 async function ensureAudio(){
-  audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+  audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : new (window.AudioContext || window.webkitAudioContext)());
   await audioCtx.resume();
 }
 let activeOscs = [];   // scheduled oscillators, so STOP can silence them at once
 function stopAllTones(){
+  if (window.MusicAudio) MusicAudio.stopAll();
   for (const osc of activeOscs){ try { osc.stop(); } catch(e){} }
   activeOscs = [];
 }
 function playTone(midi, start, dur, gain, type){
+  if (window.MusicAudio && audioCtx === MusicAudio.ctx()){ MusicAudio.noteAt(midi, start, dur, gain || 0.2, "piano"); return; }   // the backing track's piano
   const osc = audioCtx.createOscillator(), g = audioCtx.createGain();
   osc.type = type || "sine"; osc.frequency.value = midiToFreq(midi);
   g.gain.value = 0.0001; osc.connect(g); g.connect(audioCtx.destination);

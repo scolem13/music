@@ -122,10 +122,10 @@
   <script src="/apps/patterns/pattern-set.js"></script>
   <script src="/apps/assessment/abc-pitch.js"></script>
   <script src="/apps/shared/session-log.js"></script>
-<script src="/apps/assessment/app.js?v=8"></script>
+<script src="/apps/assessment/app.js?v=9"></script>
 </div>
 <script src="/apps/shared/pitch-spelling.js"></script>
-<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/tonality.js?v=9"></script>
 <script>
 (function(){
   // Consume the shared tonality: minor tune → minor collection; set the key to the
@@ -176,6 +176,6 @@
   window.addEventListener("load", function(){ applyTonality(cur()); syncKeys(); });
 })();
 </script>
-<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/audio.js?v=9"></script>
 <script src="/apps/shared/establish-button.js"></script>
 ```

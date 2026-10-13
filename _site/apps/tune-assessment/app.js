@@ -41,6 +41,7 @@ function loadTune(){
   try{ const km=/^K:\s*(.+)$/m.exec(currentAbc); const tt=km&&window.Tonality&&Tonality.keyToTonality(km[1]); writtenDoPc=tt?tt.do:0; }catch(e){ writtenDoPc=0; }
   try{ const rm=/^K:\s*([A-Ga-g])([#b]?)/m.exec(currentAbc); writtenRootPc = rm ? ((({C:0,D:2,E:4,F:5,G:7,A:9,B:11})[rm[1].toUpperCase()]+(rm[2]==="#"?1:rm[2]==="b"?-1:0))%12+12)%12 : 0; }catch(e){ writtenRootPc=0; }
   { const _ks=document.getElementById("keySel"); if(_ks) _ks.value=String(writtenRootPc); }
+  octLoad();
   { const _ml=document.getElementById("keyModeLabel");
     if(_ml){ const _km=/^K:\s*(.+)$/m.exec(currentAbc||''); _ml.textContent=_km?kModeLabel(_km[1]):''; } }
   document.getElementById("tempo").value=Math.min(160,Math.max(40,target.tempoQ));
@@ -245,7 +246,7 @@ function arrangerAbc(forPlay, includeMelody){
     if(window.AbcTranspose&&(shift!==0||keyAlt)){
       try{ abc=AbcTranspose.transpose(currentAbc,keyNameAscii((((writtenRootPc+shift)%12)+12)%12)); }catch(e){}
     }
-    const mel=extractMelody(abc);
+    const mel=extractMelody(octApply(abc));
     if(mel) opts.melody={body:mel,program:GM[melodyVoice()]??0,vol:forPlay?taVol("melody"):100};
   }
   try{ return Arranger.toAbc(tuneChartObj.parsed,opts); }catch(e){ return null; }
@@ -291,6 +292,7 @@ function previewAbc(){
     const tgt=keyNameAscii((((writtenRootPc+shift)%12)+12)%12);
     abc=AbcTranspose.transpose(currentAbc, tgt);
   }
+  abc=octApply(abc);
   let lines=abc.split("\n").filter(l=>!/^\s*(Q:|%%MIDI\s+(program|chordprog|bassprog))/.test(l));
   let i=lines.findIndex(l=>/^\s*X:/.test(l)); if(i<0)i=0;
   lines.splice(i+1,0,`Q:1/4=${qpm}`,`%%MIDI program ${melGM}`,`%%MIDI chordprog ${accGM}`,`%%MIDI bassprog ${GM.bass}`);
@@ -462,6 +464,29 @@ const ENHARM={0:["C","B♯"],1:["D♭","C♯"],2:["D",null],3:["E♭","D♯"],4:
 let keyAlt=false;
 function keyName(pc){ pc=((pc%12)+12)%12; const e=ENHARM[pc]; return (keyAlt&&e[1])?e[1]:e[0]; }
 function concertPc(){ const el=document.getElementById("keySel"); const n=parseInt(el?el.value:"",10); return (n>=0&&n<=11)?n:null; }
+// Octave = move the whole notated tune up/down by octaves (notation, playback and grading targets).
+// Remembered per tune. Reading Benchmarks has no control, so it stays 0 there.
+const OCT_KEY="tuneOctaves", OCT_MAX=2;
+let octShiftN=0;
+const octShift=()=>octShiftN;
+const octApply=abc=>(window.AbcOctave&&octShiftN)?AbcOctave.shift(abc,octShiftN):abc;
+function octLoad(){
+  let m={}; try{ m=JSON.parse(localStorage.getItem(OCT_KEY)||"{}"); }catch(e){}
+  octShiftN=Math.max(-OCT_MAX,Math.min(OCT_MAX,parseInt(m[idOf(currentAbc)||""],10)||0)); octSync();
+}
+function octSync(){
+  const v=document.getElementById("octVal"), d=document.getElementById("octDown"), u=document.getElementById("octUp");
+  if(v) v.textContent=(octShiftN>0?"+":"")+octShiftN;
+  if(d) d.disabled=octShiftN<=-OCT_MAX; if(u) u.disabled=octShiftN>=OCT_MAX;
+}
+function octSet(n){
+  octShiftN=Math.max(-OCT_MAX,Math.min(OCT_MAX,n)); octSync();
+  try{ const m=JSON.parse(localStorage.getItem(OCT_KEY)||"{}"), id=idOf(currentAbc)||"";
+    if(octShiftN) m[id]=octShiftN; else delete m[id]; localStorage.setItem(OCT_KEY,JSON.stringify(m)); }catch(e){}
+  renderTune(false);
+}
+(function(){ const d=document.getElementById("octDown"), u=document.getElementById("octUp");
+  if(d) d.addEventListener("click",()=>octSet(octShiftN-1)); if(u) u.addEventListener("click",()=>octSet(octShiftN+1)); })();
 function keyTrans(){ const c=concertPc(); if(c==null) return 0; let d=((c-writtenRootPc)%12+12)%12; if(d>6)d-=12; return d; }
 const keyNameAscii=pc=>keyName(pc).replace(/♭/g,"b").replace(/♯/g,"#");
 // Steer the shared tonality from the tune + concert key (so the circle, patterns, etc.
@@ -773,11 +798,11 @@ function grade(){
       used[best]=true; const on=perf[best];
       let end=on+tDur[i]; for(let j=0;j<perf.length;j++){ if(perf[j]>on+0.02&&perf[j]<end)end=perf[j]; }
       const fs=frames.filter(fr=>{const s=(fr.t-perfT0)/1000; return fr.f>0&&s>=on+0.03&&s<=end-0.02;}).map(fr=>fr.f);
-      if(fs.length>=3){ const fm=median(fs); const c=bestCents(fm,midiToFreq(n.midi+keyTrans()),allowOct); pOk=Math.abs(c)<=pTol; offC=(c>=0?"+":"")+c.toFixed(0); sung=noteName(Math.round(freqToMidiFloat(fm))); }
+      if(fs.length>=3){ const fm=median(fs); const c=bestCents(fm,midiToFreq(n.midi+keyTrans()+12*octShift()),allowOct); pOk=Math.abs(c)<=pTol; offC=(c>=0?"+":"")+c.toFixed(0); sung=noteName(Math.round(freqToMidiFloat(fm))); }
       const dms=(on-tSec[i])*1000; rOk=Math.abs(dms)<=rTol; offMs=(dms>=0?"+":"")+dms.toFixed(0);
     }
     if(pOk)pPass++; if(rOk)rPass++; if(pOk&&rOk)bothPass++;
-    rows+=`<tr><td>${i+1}</td><td>${noteName(n.midi+keyTrans())}</td><td>${sung}</td>`+
+    rows+=`<tr><td>${i+1}</td><td>${noteName(n.midi+keyTrans()+12*octShift())}</td><td>${sung}</td>`+
       `<td class="${pOk?'pass':'fail'}">${offC}${offC!=="—"?"¢":""}</td>`+
       `<td class="${rOk?'pass':'fail'}">${offMs}${offMs!=="—"?" ms":""}</td></tr>`;
   });

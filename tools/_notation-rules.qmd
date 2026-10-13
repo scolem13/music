@@ -1,0 +1,384 @@
+```{=html}
+<style>
+/* ── Notation Rules: how the entry is written, and a bench to see each rule at work ─────────── */
+#nr-root{max-width:1080px;margin:0 auto;padding:1.25rem 1rem 4rem;color:var(--site-ink,#1e1c18);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+#nr-root *{box-sizing:border-box}
+#nr-root.page-columns,#nr-root .page-columns{display:block!important;grid-template-columns:none!important}
+#nr-root [hidden]{display:none!important}
+#nr-root .nr-intro{border-left:3px solid var(--site-accent,#3fc2b4);padding-left:1rem;margin:0 0 1.5rem;color:var(--site-ink-2,#5c5246);font-size:.95rem;line-height:1.6;max-width:720px}
+#nr-root .nr-panel{background:var(--site-surface,#fff);border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:1rem 1.1rem;margin:0 0 1rem}
+#nr-root .nr-panel h2{margin:0 0 .2rem;font-size:.92rem;font-weight:600;border:0;padding:0}
+#nr-root h3{font-size:.8rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--site-ink-2,#5c5246);margin:1.6rem 0 .4rem;border:0;padding:0}
+#nr-root .nr-row{display:flex;gap:.7rem 1rem;flex-wrap:wrap;align-items:flex-end;margin-top:.8rem}
+#nr-root .nr-field{display:flex;flex-direction:column;gap:.25rem}
+#nr-root .nr-field label{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--site-ink-2,#5c5246)}
+#nr-root select,#nr-root input[type=number],#nr-root input[type=text]{height:2.2rem;padding:0 .6rem;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface,#fff);color:inherit;font:inherit;font-size:.92rem}
+#nr-root input[type=number]{width:5.2rem}
+#nr-root .nr-check{display:inline-flex;align-items:center;gap:.35rem;font-size:.9rem;margin:0;cursor:pointer;height:2.2rem}
+#nr-root .nr-check input{accent-color:var(--site-accent-dk,#2b9c90)}
+#nr-root .nr-btn{height:2.2rem;padding:0 .9rem;border:1px solid var(--site-accent-dk,#2b9c90);border-radius:7px;background:var(--site-surface,#fff);color:var(--site-accent-text,#0a4f47);font:inherit;font-size:.9rem;cursor:pointer}
+#nr-root .nr-btn:hover{background:var(--site-accent-bg,rgba(63,194,180,.12))}
+#nr-root .nr-hint{margin:.6rem 0 0;font-size:.84rem;color:var(--site-ink-2,#5c5246);max-width:72ch}
+#nr-root .nr-say{margin:.6rem 0 0;font-size:.9rem;min-height:1.3em;font-weight:600}
+#nr-root .nr-say.is-bad{color:#b3261e}
+#nr-root textarea,#nr-root pre{display:block;width:100%;margin-top:.7rem;padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;
+  background:var(--site-surface-2,#f2ede5);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.8rem;line-height:1.55}
+#nr-root textarea{min-height:6rem;resize:vertical}
+#nr-root pre{white-space:pre-wrap;overflow-x:auto;margin-bottom:0}
+#nr-score{margin:.8rem 0 0;background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.5rem .8rem;overflow-x:auto}
+#nr-score:empty{display:none}
+#nr-roll{margin:.8rem 0 0;overflow-x:auto;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;background:var(--site-surface,#fff)}
+#nr-roll svg{display:block;font-family:var(--font-mono,monospace)}
+#nr-root .nr-legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:.78rem;color:var(--site-ink-2,#5c5246);margin:.5rem 0 0}
+#nr-root .nr-legend i{display:inline-block;width:.9rem;height:.6rem;margin-right:.3rem;vertical-align:middle;border-radius:2px}
+#nr-root .nr-tablewrap{overflow-x:auto;margin-top:.5rem}
+#nr-root table{border-collapse:collapse;font-size:.8rem;width:100%}
+#nr-root th{text-align:left;font:600 .66rem/1.2 var(--font-mono,monospace);letter-spacing:.08em;text-transform:uppercase;color:var(--site-ink-2,#5c5246);padding:.3rem .5rem;border-bottom:2px solid var(--site-border,#e0d8ce);white-space:nowrap}
+#nr-root td{padding:.3rem .5rem;border-bottom:1px solid var(--site-border-soft,#ece6dc);vertical-align:top}
+#nr-root td.nr-m{font-family:var(--font-mono,monospace);white-space:nowrap}
+#nr-root td.nr-no{color:#b3261e}
+#nr-root details.nr-rule{border-top:1px solid var(--site-border-soft,#ece6dc);padding:.55rem 0}
+#nr-root details.nr-rule summary{cursor:pointer;font-weight:600;font-size:.95rem}
+#nr-root details.nr-rule summary span.nr-id{display:inline-block;min-width:2.6rem;font:700 .72rem/1 var(--font-mono,monospace);color:var(--site-accent-dk,#2b9c90)}
+#nr-root details.nr-rule .nr-body{padding:.4rem 0 .2rem 2.6rem;font-size:.9rem;max-width:74ch}
+#nr-root .nr-body p{margin:.3rem 0}
+#nr-root .nr-body code,#nr-root .nr-hint code{font-size:.82em;background:var(--site-surface-2,#f2ede5);padding:.05rem .3rem;border-radius:4px}
+#nr-root .nr-body .nr-where{font-size:.78rem;color:var(--site-ink-2,#5c5246)}
+#nr-root .nr-val{font-family:var(--font-mono,monospace);font-weight:700;color:var(--site-accent-text,#0a4f47)}
+</style>
+
+<div id="nr-root">
+  <p class="nr-intro">What the entry pages do with the keys you play: which notes are chords and which melody, where each one lands on the bars, how long it is written, how it is spelled. Part 1 runs the engine on a take (a preset, or the log the Chord Entry page keeps) and shows what every rule decided; change a setting and see what it would have written. Part 2 is the rules themselves, with the numbers the engine really uses.</p>
+
+  <div class="nr-panel">
+    <h2>1. Try it</h2>
+    <div class="nr-row">
+      <div class="nr-field"><label for="nr-preset">Start from</label><select id="nr-preset"></select></div>
+      <button type="button" class="nr-btn" id="nr-last" hidden>Load the last take from Chord Entry</button>
+    </div>
+    <p class="nr-hint">A take log is what the Chord Entry page copies with <em>Copy the take log</em>: every key and pedal event with its time, and the settings. Paste one here and Load it. The settings below then work on the same playing, so you can see what a different rule setting would have written.</p>
+    <textarea id="nr-log" spellcheck="false" placeholder="Paste a take log (JSON) here" aria-label="A take log"></textarea>
+    <div class="nr-row"><button type="button" class="nr-btn" id="nr-load">Load this log</button><button type="button" class="nr-btn" id="nr-download">Download the log</button></div>
+    <p class="nr-say" id="nr-say" role="status"></p>
+
+    <div class="nr-row">
+      <div class="nr-field"><label for="nr-kind">Entry</label><select id="nr-kind"><option value="chords">Chords</option><option value="melody">Melody</option><option value="both">Chords and melody (split)</option></select></div>
+      <div class="nr-field"><label for="nr-key">Key</label><select id="nr-key"></select></div>
+      <div class="nr-field"><label for="nr-meter">Meter</label><select id="nr-meter"><option>4/4</option><option>3/4</option><option>6/8</option><option>12/8</option><option>2/4</option><option>5/4</option></select></div>
+      <div class="nr-field"><label for="nr-bars">Bars</label><input type="number" id="nr-bars" min="1" max="64" value="2"></div>
+      <div class="nr-field"><label for="nr-tempo">Tempo</label><input type="number" id="nr-tempo" min="40" max="300" value="120"></div>
+      <div class="nr-field"><label for="nr-feel" title="Where the off-beat of a swung eighth is read to be.">Swing</label><select id="nr-feel"><option value="swung">Swung (by the tempo)</option><option value="straight">Straight</option><option value="logged">As in the log</option></select></div>
+      <div class="nr-field"><label for="nr-res">Shortest note</label><select id="nr-res"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
+    </div>
+    <div class="nr-row">
+      <label class="nr-check"><input type="checkbox" id="nr-poly"> Notes struck together are written as a chord</label>
+      <div class="nr-field"><label for="nr-ms">Together within (ms)</label><input type="number" id="nr-ms" min="10" max="200" step="5" value="45"></div>
+      <div class="nr-field"><label for="nr-settle">A chord closes after (ms)</label><input type="number" id="nr-settle" min="20" max="300" step="5" value="70"></div>
+      <div class="nr-field"><label for="nr-snap">Snap chords to</label><select id="nr-snap"><option value="bar">Bar</option><option value="half">Half bar</option><option value="beat">Beat</option><option value="eighth">Eighth note</option></select></div>
+      <div class="nr-field"><label for="nr-split">Melody from</label><select id="nr-split"></select></div>
+      <label class="nr-check"><input type="checkbox" id="nr-slash"> Slash chords</label>
+    </div>
+    <div class="nr-row">
+      <div class="nr-field"><label for="nr-beam">Beams</label><select id="nr-beam"><option value="beat">Within a beat</option><option value="half">Within half a bar</option><option value="none">None</option></select></div>
+      <div class="nr-field"><label for="nr-tie">Syncopation</label><select id="nr-tie"><option value="none">As played</option><option value="mid">Tied across the middle of the bar</option><option value="beat">Tied across every beat</option></select></div>
+      <div class="nr-field"><label for="nr-det">Short detached notes</label><select id="nr-det"><option value="rest">Note and rest</option><option value="staccato">Staccato note</option></select></div>
+      <div class="nr-field"><label for="nr-trip">Triplets</label><select id="nr-trip"><option value="off">Never</option><option value="auto">Where the playing fits</option></select></div>
+      <div class="nr-field"><label for="nr-pickup" title="Notes struck before the first downbeat (in the count-in).">Notes before bar 1</label><select id="nr-pickup"><option value="off">Leave them out</option><option value="auto">Write them (a pickup bar)</option></select></div>
+      <div class="nr-field"><label for="nr-grace" title="A note whose next note starts within this many milliseconds is a grace note of it (0 = none; never more than a thirty-second note).">Grace notes within (ms)</label><input type="number" id="nr-grace" min="0" max="200" step="10" value="0"></div>
+    </div>
+
+    <h3>What did I mean?</h3>
+    <div id="nr-dwim"></div>
+    <h3>What was written</h3>
+    <pre id="nr-abc"></pre>
+    <div id="nr-score" aria-label="The result as notation"></div>
+    <h3>The take against the bars</h3>
+    <div id="nr-roll" role="img" aria-label="The notes as played and as written, on the bars"></div>
+    <div class="nr-legend"><span><i style="border:2px solid #d9822b"></i>a chord's notes as played</span><span><i style="border:2px solid #2b9c90"></i>a melody note as played</span><span><i style="background:rgba(43,156,144,.4)"></i>the melody as written</span><span><i style="background:#d9822b"></i>a chord as placed</span><span><i style="background:#7b5ea7"></i>the pedal held</span></div>
+
+    <h3>Bars</h3><div class="nr-tablewrap" id="nr-t-bars"></div>
+    <h3>Melody notes, one by one</h3><div class="nr-tablewrap" id="nr-t-notes"></div>
+    <h3>Chords, one by one</h3><div class="nr-tablewrap" id="nr-t-chords"></div>
+    <h3>Pedal</h3><div class="nr-tablewrap" id="nr-t-pedal"></div>
+    <div class="nr-row"><button type="button" class="nr-btn" id="nr-report">Copy a report of this run</button><span class="nr-hint" id="nr-report-note" style="margin:0"></span></div>
+    <p class="nr-hint">The report holds the log, the settings as set here, what was written and every table above. It is everything needed to run the same take again, so it is the thing to send when a take comes out wrong.</p>
+  </div>
+
+  <div class="nr-panel">
+    <h2>2. The rules</h2>
+    <p class="nr-hint">In the order the engine applies them. Each rule says what it does, the number it uses (the numbers are read from the engine, not typed here) and where to see it in the tables above. Chords and melody are the same take: the keys you play are sorted into one or the other first (rule 1), and then each follows its own rules.</p>
+
+    <h3>Time</h3>
+    <details class="nr-rule"><summary><span class="nr-id">T1</span>The clock: beats from the first downbeat</summary><div class="nr-body">
+      <p>Every key and pedal event carries a time in milliseconds from the first downbeat after the count-in (negative in the count-in). A beat is <code>60 / tempo</code> seconds; in 6/8, 9/8 and 12/8 a beat is a dotted quarter, as the band counts it. On a click the page subtracts the sound card's output latency, and the Timing offset or Nudge field moves everything by the milliseconds you give it (a positive number is earlier).</p>
+      <p class="nr-where">Seen in: the log's <code>events</code>, and the <em>played</em> column of the note and chord tables.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">T2</span>The bars, and how the pedal changes them</summary><div class="nr-body">
+      <p>The take starts with the meter chosen and that many bars. The beat never moves; only where bars begin does. Hold the pedal (MIDI controller <span class="nr-val" data-rule="pedalCC"></span>) across two downbeats and the bars from the first of them on are as long as the gap between them, in whole beats. Notes within <span class="nr-val" data-rule="pedalGroup"></span> beats count as one strike (a chord is one downbeat); only the first and last strike while the pedal is down are used. The gap and the first downbeat are rounded to whole beats.</p>
+      <p>A change that falls inside a bar cuts that bar short (a 2/4 bar in a 4/4 tune). A change less than one beat after a bar line moves back to the bar line. In compound meters the new length is counted in dotted quarters, so three beats make 9/8. A second change must come after the first. Over chords already entered the bars are fixed and the pedal is ignored.</p>
+      <p class="nr-where">Seen in: the Bars table and the Pedal table (its <em>strikes</em> are the beats it used).</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">T3</span>Swing: a swung off-beat is put back on the even grid</summary><div class="nr-body">
+      <p>When the playing is read as swung, the second eighth of each beat is taken to sit late: at a fraction <em>s</em> of the beat (0.5 would be straight). <em>s</em> comes from the tempo: <code>0.68 − 0.08 × clamp((bpm − 100)/120) − 0.05 × clamp((bpm − 220)/80)</code>, so it is about 0.68 at a ballad tempo and 0.60 near 220. A time that far into the beat is moved back to the half beat (<code>unswing</code>) before it is rounded to the grid. This is why swung eighths come out as plain eighth notes, and the band swings them again when it plays them. Bars in compound meters are always read straight. Chords are unswung the same way before they snap to the grid.</p>
+      <p class="nr-where">Seen in: <em>unswung</em> in the note table (units from the first bar, before rounding) and the Swing setting above.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">T5</span>Pickups: notes before the first bar</summary><div class="nr-body">
+      <p>A note (or chord) struck up to <span class="nr-val" data-rule="early"></span> of a beat before the first downbeat is taken as on it. Struck earlier than that, in the count-in, it is dropped, unless <em>Notes before bar 1: Write them</em> is on: then the earliest such note sets the length of a short bar in front of bar 1, rounded up to whole beats (never longer than the count-in), and everything is written in it, with no meter mark. The chart then reads it as a pickup (anacrusis). A chart that already has a pickup bar uses its length.</p>
+      <p>On the Backing Track page, when the take starts at a later bar (a section, or "Start at bar"), the count-in is the bar <em>before</em> the one recorded from, so notes played in it are written at the end of that bar: a pickup into a verse goes at the end of the interlude before it. Only at the very start of the tune does a pickup get a short bar of its own.</p>
+      <p class="nr-where">Seen in: the Bars table (a short first bar), the note table (<em>bar 1</em> is the pickup) and the roll (the count-in is to the left of the first line).</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">T4</span>The grid: rounded to the nearest eighth or sixteenth</summary><div class="nr-body">
+      <p>A melody note's start is rounded to the nearest eighth note (or sixteenth, if chosen); the unit is an eighth, so a beat is 2 units in x/4 and 3 in compound meters. A note struck up to <span class="nr-val" data-rule="early"></span> of a beat before the first downbeat is moved onto it; one struck earlier than that is dropped. A note that rounds to the same spot as the next one is dropped and the later one stays. A note after the last bar is dropped. Chords snap by the Snap setting instead (a bar, half bar, beat or eighth).</p>
+      <p class="nr-where">Seen in: <em>on grid</em> and <em>result</em> in the note table.</p></div></details>
+
+    <h3>Notes</h3>
+    <details class="nr-rule"><summary><span class="nr-id">N1</span>Which keys are chords and which are melody</summary><div class="nr-body">
+      <p>In a chords take every key goes to the chord reader; in a melody take every key goes to the melody line. In a split take the keys below the split key are chords and the split key and those above it are melody. The pedal strikes count notes from either side.</p>
+      <p class="nr-where">Seen in: the Entry and Melody-from settings; the roll shows chord notes in orange and melody notes in teal.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N2</span>Notes struck together</summary><div class="nr-body">
+      <p>Melody notes struck within <span class="nr-val" data-rule="togetherMs"></span> ms of the first of them are one strike. By default only the highest is written and the others are left out; with <em>Notes struck together are written as a chord</em> all of them are written as an ABC chord, <code>[CEG]</code>, with one length. A note struck later than that window is a new note.</p>
+      <p class="nr-where">Seen in: <em>left out</em> in the note table, and the notes column (several pitches are one strike).</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N3</span>One note at a time</summary><div class="nr-body">
+      <p>The line is one voice: a new note ends the one before it, even if you are still holding it.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N4</span>How long a note is written</summary><div class="nr-body">
+      <p>A note lasts until the next note starts (it is written legato), unless the gap between its release and the next start is <span class="nr-val" data-rule="gap"></span> of an eighth or more: then it is written as released (rounded to the grid) and a rest follows. The last note is written to its release. A note is never shorter than one grid step. A note cannot run past the next note or the last bar line.</p>
+      <p>So a line played short and detached, as swing is, is written with full note values and no rests unless a gap is clear.</p>
+      <p class="nr-where">Seen in: <em>length</em> in the note table says which case applied and the gap it measured.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N5</span>Bar lines, chord changes and ties</summary><div class="nr-body">
+      <p>A note that runs over a bar line is split and tied. A note that runs over a chord change is split at the change and tied, so each chord symbol sits above the note under it. Only lengths that are written as one note are used: <span class="nr-val" data-rule="ticks"></span> grid steps (a dotted note is 3 or 6); any other length is split into those and tied.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N6</span>Spelling: which letter and which accidental</summary><div class="nr-body">
+      <p>Notes of the key are spelled as the key spells them. A note outside the key takes whichever of its sharp and flat spellings is nearer the middle of the key on the line of fifths (centre + <span class="nr-val" data-rule="sharpFlatMid"></span>); when they are equally near, the flat. So in C: E♭, A♭, B♭, F♯ and D♭; in F: G♭ (not F♯) and A♭.</p>
+      <p>An accidental is written only where it differs from the key signature or from what the same letter in the same octave had earlier in that bar. Octaves: middle C is <code>C</code>, the C above it <code>c</code>, then <code>c'</code>; below, <code>C,</code>.</p></div></details>
+
+    <details class="nr-rule"><summary><span class="nr-id">N7</span>Detached notes: staccato</summary><div class="nr-body">
+      <p>By default a short note followed by a rest is written as the note and the rest (an eighth and an eighth rest). With <em>Short detached notes: Staccato note</em>, a note followed by a rest <em>exactly as long as itself</em>, where the two together make a length that can be written, is written as one staccato note of both: eighths with eighth rests become staccato quarters. A staccato note is played by the band at half its length. (Triplet notes are not changed.)</p>
+      <p class="nr-where">Seen in: <em>length</em> in the note table ("a note and an equal rest are written as a staccato note of both").</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N8</span>Triplets</summary><div class="nr-body">
+      <p>Off by default. When on, each beat of a simple meter whose beat is two units (2/4, 3/4, 4/4, …; not 6/8 and the like, where the beat is already three) is read as three even parts if its notes fit thirds of the beat better than the eighth-note grid by more than <span class="nr-val" data-rule="tripletMargin"></span> of a beat (summed over the beat's onsets). The check is made on the raw time (a swung off-beat is compared after the swing is taken out, so a swung pair is not mistaken for a triplet; the same pair read as straight is). A beat read as triplets is written under a bracket: three notes <code>(3CDE</code>, or a quarter and an eighth <code>(3:2:2C2D</code>. Only whole beats are triplets (no quarter-note triplets over two beats, no sixteenth sextuplets yet).</p>
+      <p class="nr-where">Seen in: <em>triplet</em> in the note table gives the two numbers compared.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N9</span>Grace notes</summary><div class="nr-body">
+      <p>Off by default. When on, a note whose next note starts within the chosen milliseconds (never more than <span class="nr-val" data-rule="graceBeats"></span> of a beat, a thirty-second note) is not a note of its own but a slashed grace note of the next one: <code>{/D}E</code>. A run of such notes is all grace notes of the first note after them. This is for the quick note into a blue note; it is why a note that was struck first but let go before the next began is not folded into a chord (rule N2 only joins notes that are still held together). The band does not play grace notes back.</p>
+      <p class="nr-where">Seen in: <em>graces</em> in the note table.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">N10</span>Parallel thirds and other double stops</summary><div class="nr-body">
+      <p>Above the split key (or in a melody take) two notes struck together are one melody note. With <em>Notes struck together are written as a chord</em> on, both are written in one bracket (<code>[CE]</code>, <code>[DF]</code>, …) with one length, tied as a pair; with it off only the top one is written. They never reach the chord reader, so they are not named as a chord. Notes of the pair that are struck slightly apart still count as together if they are inside the Together-within window and the first is still held when the second arrives.</p></div></details>
+
+    <h3>Chords</h3>
+    <details class="nr-rule"><summary><span class="nr-id">C1</span>When a chord is finished</summary><div class="nr-body">
+      <p>A chord is closed <span class="nr-val" data-rule="settleMs"></span> ms after its first note. Keys still held from the chord before count as part of the next one, unless three or more new keys arrived. It is timed at its first note.</p>
+      <p class="nr-where">Seen in: the Chords table, <em>notes played</em>.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">C2</span>Naming a chord</summary><div class="nr-body">
+      <p>Every note played must be accounted for by the chord (the Director page, by contrast, accepts extra notes). Every pitch class played is tried as the root against the table below. A reading in which every note is a chord tone wins; a perfect fifth may be left out of any chord of four or more notes. If two readings fit equally (C6 and Am7), the lowest note played decides; then the reading whose root is nearer the key; then the order in the table. If nothing fits exactly, the closest match is written and the chord is marked as a guess. Two or more different notes are needed. Inversions are written as plain chords unless Slash chords is on (C with E at the bottom is then C/E).</p>
+      <p class="nr-where">Seen in: <em>candidates</em> in the Chords table: the five best readings, best first.</p>
+      <div class="nr-tablewrap" id="nr-qualities"></div></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">C3</span>Where a chord goes</summary><div class="nr-body">
+      <p>A chord is timed at its first note. Its position in the bar is unswung (T3), then moved to the nearest point of the Snap setting. A chord struck up to <span class="nr-val" data-rule="early"></span> of a beat before the first downbeat goes on it. The chord sits there until the next one.</p></div></details>
+
+    <h3>Writing it down</h3>
+    <details class="nr-rule"><summary><span class="nr-id">W2</span>Beams</summary><div class="nr-body">
+      <p>In ABC a space between notes breaks a beam, so the notation joins eighth notes (and shorter) by writing them without a space: within a beat by default, or within half a bar (four eighths in 4/4; three in 6/8 and the other compound meters are a beat already) with <em>Beams: Within half a bar</em>, or not at all. A rest, a note longer than an eighth, a chord change that starts a new group, or a triplet bracket ends a beam; a triplet is beamed under its own bracket.</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">W3</span>Syncopation: ties across the beat</summary><div class="nr-body">
+      <p>Jazz writes a quarter note on the “and” of 2 as one quarter. Classical notation writes it as two tied eighths. <em>Syncopation: Tied across the middle of the bar</em> splits a note that starts after the first beat and runs over the middle of the bar (beat 3 in 4/4; a half note on beat 2 too). <em>Tied across every beat</em> also splits a note that starts off the beat and runs over any beat. A note that starts on a beat, or on the bar's first beat, keeps its length. Only the written ABC changes (the band hears the same notes).</p></div></details>
+    <details class="nr-rule"><summary><span class="nr-id">W1</span>The ABC</summary><div class="nr-body">
+      <p>Bars of four to a line (the melody bars are written with the beams and ties above); <code>M:</code> is the opening meter and a bar of another meter gets <code>[M:n/d]</code> in front of it. The unit is a quarter note when nothing in an x/4 take sits between the beats, else an eighth, else a sixteenth when sixteenths were used. Chord symbols are quoted above the note or rest at their position. Rests fill what is left.</p></div></details>
+  </div>
+</div>
+
+<script src="/apps/shared/tune-chart.js?v=31"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/chord-entry.js?v=6"></script>
+<script src="/apps/shared/melody-dwim.js?v=1"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  if (typeof ChordEntry === "undefined" || typeof TuneChart === "undefined"){ $("nr-say").textContent = "The page didn't load fully. Reload to try again."; return; }
+  var CE = ChordEntry, R = CE.RULES, KEYS = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"], NAMES = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
+  function nm(m){ return NAMES[((m % 12) + 12) % 12].replace("b", "♭") + (Math.floor(m / 12) - 1); }
+  function esc(s){ return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+  function r2(x){ return Math.round(x * 100) / 100; }
+  function say(t, bad){ $("nr-say").textContent = t || ""; $("nr-say").classList.toggle("is-bad", !!bad); }
+
+  // the numbers in the rules come from the engine
+  Array.prototype.forEach.call(document.querySelectorAll("[data-rule]"), function(e){
+    var k = e.getAttribute("data-rule"), v = R[k];
+    e.textContent = k === "togetherMs" || k === "settleMs" ? v : Array.isArray(v) ? v.join(", ") : k === "early" ? v : v;
+  });
+  (function(){                                                               // the chord table
+    var rows = CE.QUALITIES.map(function(q){ return "<tr><td class=nr-m>C" + esc(q[2]) + "</td><td class=nr-m>" + q[1].join(" ") + "</td><td>" + esc(q[0]) + "</td></tr>"; }).join("");
+    $("nr-qualities").innerHTML = "<table><tr><th>Symbol (on C)</th><th>Semitones above the root</th><th>Name</th></tr>" + rows + "</table>";
+  })();
+
+  // ---- the presets: played in beats, turned into events at the tempo ----
+  function evs(beatSec, spec){
+    var out = [], ms = function(b){ return Math.round(b * beatSec * 1000 * 10) / 10; };
+    (spec.notes || []).forEach(function(n){ out.push({ t: ms(n[0]), k: "on", n: n[1], v: 0.7 }); out.push({ t: ms(n[0] + (n[2] == null ? 0.8 : n[2])), k: "off", n: n[1] }); });
+    (spec.chords || []).forEach(function(c){ c[1].forEach(function(m, i){ out.push({ t: ms(c[0] + i * 0.01), k: "on", n: m, v: 0.7 }); out.push({ t: ms(c[0] + 0.4), k: "off", n: m }); }); });
+    (spec.cc || []).forEach(function(c){ out.push({ t: ms(c[0]), k: "cc", n: 80, v: c[1] }); });
+    return out;
+  }
+  var PRESETS = [
+    { id: "swung", label: "Swung eighths: F G A B♭ C", cfg: { kind: "melody", key: "F", bars: 1, swing: "swung" },
+      spec: { notes: [[0, 65, 0.5], [0.67, 67, 0.3], [1, 69, 0.5], [1.67, 70, 0.3], [2, 72, 1.9]] } },
+    { id: "legato", label: "Legato, detached and a rest", cfg: { kind: "melody", key: "C", bars: 2, swing: "straight" },
+      spec: { notes: [[0, 60, 1], [1, 62, 1], [2, 64, 0.5], [3, 65, 0.4], [4, 67, 0.2], [5.5, 69, 0.4], [6, 71, 1.9]] } },
+    { id: "together", label: "Notes struck together, and a roll too slow to count as together", cfg: { kind: "melody", key: "C", bars: 1, swing: "straight", poly: true },
+      spec: { chords: [[0, [60, 64, 67]]], notes: [[1, 62, 0.9], [2, 64, 0.2], [2.12, 67, 0.2], [2.24, 71, 0.9]] } },
+    { id: "chords", label: "Chords on the beat, and a half bar later", cfg: { kind: "chords", key: "F", bars: 2, swing: "swung" },
+      spec: { chords: [[0.02, [53, 57, 60, 63]], [2, [46, 50, 53, 56]], [4, [48, 51, 55, 58]]] } },
+    { id: "pedal", label: "The pedal changes the bars to three beats", cfg: { kind: "chords", key: "F", bars: 4, swing: "straight" },
+      spec: { chords: [[0, [53, 57, 60, 63]], [4, [46, 50, 53, 56]], [7, [48, 51, 55, 58]], [10, [53, 57, 60, 63]]], cc: [[3.1, 127], [7.3, 0]] } },
+    { id: "sync", label: "A syncopation: a quarter on the \u201cand\u201d of 2", cfg: { kind: "melody", key: "C", bars: 1, swing: "straight", tie: "mid" },
+      spec: { notes: [[0, 60, 0.9], [1, 62, 0.45], [1.5, 64, 0.95], [2.5, 65, 0.45], [3, 67, 0.9]] } },
+    { id: "detached", label: "Short detached notes (staccato quarters)", cfg: { kind: "melody", key: "C", bars: 2, swing: "straight", detached: "staccato" },
+      spec: { notes: [[0, 60, 0.45], [1, 62, 0.45], [2, 64, 0.45], [3, 65, 0.45], [4, 67, 0.45], [5, 69, 0.45], [6, 71, 0.45], [7, 72, 0.45]] } },
+    { id: "grace", label: "A grace note before a blue note", cfg: { kind: "melody", key: "C", bars: 1, swing: "straight", graceMs: 80 },
+      spec: { notes: [[0, 62, 0.05], [0.06, 63, 0.9], [2, 65, 0.9], [3, 67, 0.9]] } },
+    { id: "triplets", label: "Triplets in 2/4", cfg: { kind: "melody", n: 2, d: 4, key: "C", bars: 2, swing: "straight", triplets: "auto" },
+      spec: { notes: [[0, 60, 0.3], [0.33, 62, 0.3], [0.67, 64, 0.3], [1, 65, 0.3], [1.5, 67, 0.3], [2, 69, 0.3], [2.33, 71, 0.3], [2.67, 72, 0.3], [3, 74, 0.9]] } },
+    { id: "thirds", label: "Parallel thirds above the split", cfg: { kind: "both", key: "C", bars: 1, swing: "straight", split: 48, poly: true },
+      spec: { chords: [[0, [36, 43, 47]]], notes: [[0, 60, 0.45], [0.01, 64, 0.44], [1, 62, 0.45], [1.01, 65, 0.44], [2, 64, 0.9], [2.01, 67, 0.89]] } },
+    { id: "pickup", label: "A pickup: three notes in the count-in", cfg: { kind: "melody", key: "C", bars: 1, swing: "straight", pickup: "auto" },
+      spec: { notes: [[-1.5, 60, 0.45], [-1, 62, 0.45], [-0.5, 64, 0.45], [0, 65, 0.95], [1, 67, 0.95], [2, 69, 1.9]] } },
+    { id: "split", label: "Split at middle C: left hand chords, right hand melody", cfg: { kind: "both", key: "C", bars: 2, swing: "straight", split: 60 },
+      spec: { chords: [[0, [48, 52, 55, 58]], [4, [41, 45, 48, 51]]], notes: [[0.1, 72, 0.9], [1, 74, 0.9], [2, 76, 1.9], [4.1, 77, 3.9]] } }
+  ];
+  PRESETS.forEach(function(p, i){ var o = document.createElement("option"); o.value = i; o.textContent = p.label; $("nr-preset").appendChild(o); });
+  var o0 = document.createElement("option"); o0.value = "log"; o0.textContent = "A take log (below)"; $("nr-preset").appendChild(o0);
+  KEYS.forEach(function(k){ var o = document.createElement("option"); o.value = k; o.textContent = k.replace("b", "♭"); $("nr-key").appendChild(o); });
+  for (var m = 36; m <= 84; m++){ var o = document.createElement("option"); o.value = m; o.textContent = nm(m) + (m === 60 ? " (middle C)" : ""); $("nr-split").appendChild(o); }
+
+  var base = null, last = null;                                              // base: { cfg, events, logged: true } -- what was loaded; last: the take just run
+  function setControls(c){
+    $("nr-kind").value = c.kind; $("nr-key").value = c.key; $("nr-meter").value = c.n + "/" + c.d;
+    if (!Array.prototype.some.call($("nr-meter").options, function(x){ return x.value === c.n + "/" + c.d; })){ var o = document.createElement("option"); o.textContent = c.n + "/" + c.d; $("nr-meter").appendChild(o); $("nr-meter").value = c.n + "/" + c.d; }
+    $("nr-bars").value = c.bars; $("nr-tempo").value = Math.round(60 / c.beatSec * 10) / 10; $("nr-res").value = String(c.res); $("nr-poly").checked = !!c.poly;
+    $("nr-ms").value = c.chordMs; $("nr-settle").value = c.settle; $("nr-snap").value = c.snap; $("nr-split").value = c.split; $("nr-slash").checked = !!c.slash;
+    $("nr-beam").value = c.beam || "beat"; $("nr-tie").value = c.tie || "none"; $("nr-pickup").value = c.pickup || "off"; $("nr-det").value = c.detached || "rest"; $("nr-trip").value = c.triplets || "off"; $("nr-grace").value = c.graceMs || 0;
+    $("nr-feel").value = typeof c.swing === "string" ? c.swing : (c.swing > 0.5 ? "logged" : "straight");
+  }
+  function num(id, lo, hi, d){ var v = parseFloat($(id).value); return isNaN(v) ? d : Math.min(hi, Math.max(lo, v)); }
+  function readCfg(){
+    var mt = $("nr-meter").value.split("/"), n = +mt[0], d = +mt[1], bpm = num("nr-tempo", 40, 300, 120), loggedSwing = base && base.cfgSwing != null ? base.cfgSwing : 0;
+    var f = $("nr-feel").value, sw = f === "swung" ? CE.swingFor(bpm) : f === "logged" ? loggedSwing : 0;
+    var c = { kind: $("nr-kind").value, n: n, d: d, bars: Math.round(num("nr-bars", 1, 64, 2)), beatSec: 60 / bpm, count: CE.geoOf(n, d).bpb, key: $("nr-key").value, slash: $("nr-slash").checked,
+      settle: num("nr-settle", 20, 300, R.settleMs), chordMs: num("nr-ms", 10, 200, R.togetherMs), poly: $("nr-poly").checked, res: parseFloat($("nr-res").value) || 1, swing: sw,
+      snap: $("nr-snap").value, split: parseInt($("nr-split").value, 10), free: true,
+      beam: $("nr-beam").value, tie: $("nr-tie").value, detached: $("nr-det").value, pickup: $("nr-pickup").value, pickupBeats: base && base.cfg && base.cfg.pickupBeats || null, triplets: $("nr-trip").value, graceMs: num("nr-grace", 0, 200, 0) };
+    if (base && base.cfg.free === false){ c.free = false; c.baseAbc = base.cfg.baseAbc; c.count = base.cfg.count != null ? base.cfg.count : c.count; }
+    return c;
+  }
+  function loadPreset(i){
+    var p = PRESETS[i], c = Object.assign({ n: 4, d: 4, bars: 2, beatSec: 0.5, res: 1, poly: false, chordMs: R.togetherMs, settle: R.settleMs, snap: "half", split: 60, slash: false, key: "C", kind: "chords" }, p.cfg);
+    base = { cfg: c, spec: p.spec, cfgSwing: null }; setControls(c); $("nr-tempo").disabled = false; $("nr-tempo").value = 120;
+    $("nr-log").value = ""; run();
+  }
+  function loadLog(text){
+    var log; try { log = JSON.parse(text); } catch (e){ say("That is not a take log: it is not valid JSON.", true); return; }
+    if (!log || !log.cfg || !Array.isArray(log.events)){ say("That is not a take log: it needs \"cfg\" and \"events\".", true); return; }
+    var c = Object.assign({ n: 4, d: 4, bars: 1, beatSec: 0.5, res: 1, poly: false, chordMs: R.togetherMs, settle: R.settleMs, snap: "half", split: 60, slash: false, key: "C", kind: "chords", swing: 0 }, log.cfg);
+    base = { cfg: c, events: log.events, cfgSwing: c.swing }; $("nr-preset").value = "log"; setControls(Object.assign({}, c, { swing: c.swing })); $("nr-tempo").disabled = true;
+    say("Loaded " + log.events.length + " events.", false); run();
+  }
+
+  // ---- run it ----
+  function run(){
+    if (!base) return;
+    var cfg = readCfg(), events = base.events || evs(cfg.beatSec, base.spec), log = { v: 1, cfg: cfg, events: events }, t;
+    try { t = CE.replay(JSON.parse(JSON.stringify(log))); } catch (e){ say("The engine could not run this: " + e.message, true); return; }
+    last = { log: log, take: t }; say(base.events ? $("nr-say").textContent : "");
+    $("nr-log").value = JSON.stringify(log);
+    show(t, log);
+  }
+  function show(t, log){
+    var abc = t.abc({ key: log.cfg.key, title: "Take" }); $("nr-abc").textContent = abc;
+    $("nr-score").innerHTML = "";
+    var mel = t.grid.hasMelody() || t.grid.count();
+    if (mel && window.ABCJS){ try { ABCJS.renderAbc("nr-score", abc, { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6, staffwidth: 760,
+      clickListener: function(a, tn, cls, an, drag, ev){ if (typeof dwim !== "undefined" && dwim) dwim.pick(cls, !!(ev && ev.shiftKey)); } }); if (typeof dwim !== "undefined" && dwim) dwim.markScore($("nr-score")); } catch (e){} }
+    roll(t, log); tables(t, log);
+  }
+
+  // ---- the roll ----
+  function table(heads, rows){ return rows.length ? "<table><tr>" + heads.map(function(h){ return "<th>" + h + "</th>"; }).join("") + "</tr>" + rows.join("") + "</table>" : "<p class=nr-hint>None in this take.</p>"; }
+  function tables(t, log){
+    var c = log.cfg, lay = t.layout();
+    $("nr-t-bars").innerHTML = table(["Bar", "Meter", "Starts at beat", "Beats"], lay.map(function(b, i){ return "<tr><td class=nr-m>" + (i + 1) + "</td><td class=nr-m>" + b.n + "/" + b.d + "</td><td class=nr-m>" + r2(b.start) + "</td><td class=nr-m>" + r2(b.len) + "</td></tr>"; }));
+    $("nr-t-notes").innerHTML = table(["#", "Played", "On–off (beats)", "Bar · beat", "Unswung (units)", "On grid", "Length", "Result"], t.trace.notes.map(function(n){
+      var bad = /^dropped/.test(n.out || "");
+      return "<tr><td class=nr-m>" + (n.i + 1) + "</td><td class=nr-m>" + n.midis.map(nm).join(" ") + (n.leftOut.length ? "<br><span title='struck with it and not written'>left out: " + n.leftOut.map(nm).join(" ") + "</span>" : "") + "</td>"
+        + "<td class=nr-m>" + n.onBeat + " – " + n.offBeat + "</td><td class=nr-m>" + n.bar + " · " + (n.beatInBar + 1) + "</td><td class=nr-m>" + n.unswungUnits + (n.swing ? "<br><span style='font-family:Inter,sans-serif'>" + esc(n.swing) + "</span>" : "") + "</td>"
+        + "<td class=nr-m>" + n.snapped + (n.note ? "<br>" + esc(n.note) : "") + "</td><td>" + esc(n.endRule || "") + (n.dur != null ? "<br><b class=nr-m>" + n.dur + " unit" + (n.dur === 1 ? "" : "s") + "</b>" : "") + "</td><td class='" + (bad ? "nr-no" : "") + "'>" + esc(n.out || "") + "</td></tr>"; }));
+    $("nr-t-chords").innerHTML = table(["#", "Beat", "Played", "Written as", "Other readings", "Where", "Result"], t.trace.chords.map(function(r, i){
+      var bad = /^(not a chord|dropped)/.test(r.out || "");
+      return "<tr><td class=nr-m>" + (i + 1) + "</td><td class=nr-m>" + r.beat + (r.barRel != null ? "<br>in bar: " + r.barRel + (r.unswung != null ? " → " + r.unswung : "") : "") + "</td><td class=nr-m>" + r.midis.map(nm).join(" ") + "</td>"
+        + "<td class=nr-m><b>" + esc(r.reading || "") + "</b>" + (r.reading && !r.exact ? " (closest match)" : "") + "</td><td class=nr-m>" + (r.candidates || []).slice(1).map(function(x){ return esc(x.symbol) + (x.exact ? "" : "?"); }).join(" ") + "</td>"
+        + "<td class=nr-m>" + (r.placed ? "bar " + (r.placed.bar + 1) + ", unit " + r.placed.pos : "") + "</td><td class='" + (bad ? "nr-no" : "") + "'>" + esc(r.out || "") + "</td></tr>"; }));
+    $("nr-t-pedal").innerHTML = table(["Down at beat", "Up at beat", "Strikes (beats)", "Result"], t.trace.pedal.map(function(p){
+      return "<tr><td class=nr-m>" + (p.beat != null ? p.beat : "") + "</td><td class=nr-m>" + (p.upBeat != null ? p.upBeat : "") + "</td><td class=nr-m>" + (p.strikes ? p.strikes.join(", ") : "") + "</td><td>" + esc(p.out || (p.down ? "(no release)" : "")) + "</td></tr>"; }));
+  }
+  function roll(t, log){
+    var c = log.cfg, bs = c.beatSec, lay = t.layout(), total = lay.length ? lay[lay.length - 1].start + lay[lay.length - 1].len : 4, g = t.grid, i;
+    function b(ms){ return ms / 1000 / bs; }
+    var open = {}, raw = [];
+    log.events.slice().sort(function(x, y){ return x.t - y.t; }).forEach(function(e){
+      if (e.k === "on"){ open[e.n] = { m: e.n, on: b(e.t), off: null }; raw.push(open[e.n]); } else if (e.k === "off" && open[e.n]){ open[e.n].off = b(e.t); delete open[e.n]; } });
+    raw.forEach(function(n){ if (n.off == null) n.off = total; });
+    function chordNote(m){ return c.kind === "chords" || (c.kind === "both" && m < c.split); }
+    var mel = g.melody(), written = [], starts = [], acc = 0;
+    for (i = 0; i < g.length(); i++){ starts.push(acc); acc += g.geo(i).bpb; }
+    mel.forEach(function(bar, k){ (bar || []).forEach(function(n){ var u = g.geo(k).beat; (n.midis && n.midis.length ? n.midis : [n.midi]).forEach(function(m){ written.push({ m: m, on: starts[k] + n.pos / u, off: starts[k] + (n.pos + n.dur) / u }); }); }); });
+    var chords = t.trace.chords.filter(function(r){ return r.placed; }).map(function(r){ return { sym: r.reading, at: starts[r.placed.bar] + r.placed.pos / g.geo(r.placed.bar).beat }; });
+    var ps = raw.map(function(n){ return n.m; }).concat(written.map(function(n){ return n.m; })), lo = ps.length ? Math.min.apply(null, ps) - 1 : 59, hi = ps.length ? Math.max.apply(null, ps) + 1 : 72;
+    var x0 = -c.count, x1 = Math.max(total, raw.reduce(function(a, n){ return Math.max(a, n.off); }, 0)) + 0.5, rowH = 11, top = 46, W = 1000, left = 46;
+    var H = top + (hi - lo + 1) * rowH + 8, sx = (W - left - 10) / (x1 - x0);
+    function X(beat){ return left + (beat - x0) * sx; } function Y(m){ return top + (hi - m) * rowH; }
+    var s = "<svg xmlns='http://www.w3.org/2000/svg' width='" + W + "' height='" + H + "' viewBox='0 0 " + W + " " + H + "'><rect width='" + W + "' height='" + H + "' fill='none'/>";
+    // beats and bars
+    for (var bt = Math.ceil(x0); bt <= x1; bt++) s += "<line x1='" + X(bt) + "' x2='" + X(bt) + "' y1='" + top + "' y2='" + (H - 6) + "' stroke='#e6dfd4' stroke-width='1'/>";
+    lay.forEach(function(bar, k){ s += "<line x1='" + X(bar.start) + "' x2='" + X(bar.start) + "' y1='" + (top - 14) + "' y2='" + (H - 6) + "' stroke='#8a7f70' stroke-width='1.5'/><text x='" + (X(bar.start) + 3) + "' y='" + (top - 4) + "' font-size='10' fill='#5c5246'>" + (k + 1) + " · " + bar.n + "/" + bar.d + "</text>"; });
+    s += "<line x1='" + X(0) + "' x2='" + X(0) + "' y1='" + (top - 14) + "' y2='" + (H - 6) + "' stroke='#2b9c90' stroke-width='2'/><text x='" + (X(x0) + 3) + "' y='" + (top - 4) + "' font-size='10' fill='#5c5246'>count-in</text>";
+    for (var m = lo; m <= hi; m++) if (m % 12 === 0 || m === lo) s += "<text x='4' y='" + (Y(m) + 9) + "' font-size='9' fill='#8a7f70'>" + nm(m) + "</text>";
+    // the pedal
+    t.trace.pedal.forEach(function(p){ if (p.beat != null) s += "<rect x='" + X(p.beat) + "' y='4' width='" + Math.max(3, (X(p.upBeat != null ? p.upBeat : total) - X(p.beat))) + "' height='9' fill='#7b5ea7' opacity='.8'><title>" + esc(p.out || "pedal down") + "</title></rect>"; });
+    // written melody, then the notes as played, then the chords
+    written.forEach(function(n){ s += "<rect x='" + X(n.on) + "' y='" + (Y(n.m) + 1) + "' width='" + Math.max(2, X(n.off) - X(n.on) - 1) + "' height='" + (rowH - 2) + "' fill='rgba(43,156,144,.38)'><title>" + nm(n.m) + " written, beats " + r2(n.on) + "–" + r2(n.off) + "</title></rect>"; });
+    raw.forEach(function(n){ var col = chordNote(n.m) ? "#d9822b" : "#2b9c90"; s += "<rect x='" + X(n.on) + "' y='" + (Y(n.m) + 2) + "' width='" + Math.max(2, X(n.off) - X(n.on)) + "' height='" + (rowH - 4) + "' fill='none' stroke='" + col + "' stroke-width='1.6'><title>" + nm(n.m) + " played, beats " + r2(n.on) + "–" + r2(n.off) + "</title></rect>"; });
+    chords.forEach(function(ch){ s += "<path d='M" + X(ch.at) + " 16 l5 7 l-5 7 l-5 -7 z' fill='#d9822b'><title>" + esc(ch.sym) + " placed at beat " + r2(ch.at) + "</title></path><text x='" + (X(ch.at) + 8) + "' y='27' font-size='11' font-weight='700' fill='#7a4a14'>" + esc(ch.sym) + "</text>"; });
+    $("nr-roll").innerHTML = s + "</svg>";
+  }
+
+  // ---- the controls ----
+  ["nr-kind", "nr-key", "nr-meter", "nr-bars", "nr-feel", "nr-res", "nr-poly", "nr-ms", "nr-settle", "nr-snap", "nr-split", "nr-slash", "nr-beam", "nr-tie", "nr-det", "nr-trip", "nr-grace", "nr-pickup"].forEach(function(id){ $(id).addEventListener("change", run); });
+  $("nr-tempo").addEventListener("change", run);
+  $("nr-preset").addEventListener("change", function(){ var v = $("nr-preset").value; if (v === "log"){ if ($("nr-log").value.trim()) loadLog($("nr-log").value); else say("Paste a take log below and press Load."); } else { say(""); loadPreset(+v); } });
+  $("nr-load").addEventListener("click", function(){ loadLog($("nr-log").value); });
+  $("nr-download").addEventListener("click", function(){
+    if (!last) return; var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([JSON.stringify(last.log) + "\n"], { type: "application/json" })); a.download = "take-log.json";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
+  $("nr-report").addEventListener("click", function(){
+    if (!last) return;
+    var rep = { what: "Notation Rules report", at: new Date().toISOString(), abc: last.take.abc({ key: last.log.cfg.key, title: "Take" }), log: last.log,
+      layout: last.take.layout().map(function(b){ return b.n + "/" + b.d + " @" + r2(b.start) + " x" + r2(b.len); }), notes: last.take.trace.notes, chords: last.take.trace.chords, pedal: last.take.trace.pedal, rules: R };
+    var text = JSON.stringify(rep), done = function(x){ $("nr-report-note").textContent = x; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(function(){ done("Copied (" + Math.round(text.length / 1000) + " kB)."); }, function(){ done("The browser would not copy it."); });
+    else done("The browser would not copy it.");
+  });
+  // the last take from the Chord Entry page
+  var stored = null; try { stored = localStorage.getItem("notationLog"); } catch (e) {}
+  if (stored){ $("nr-last").hidden = false; $("nr-last").addEventListener("click", function(){ $("nr-log").value = stored; loadLog(stored); }); }
+  var dwim = MelodyDwim.attach({
+    host: $("nr-dwim"), bars: function(){ return last ? last.take.grid.length() : 0; }, log: function(){ return last && last.log.cfg.kind !== "chords" ? last.log : null; },
+    none: function(){ return "Chords are not re-read: this is for melody. Choose a melody or split take."; },
+    options: function(){ return { beam: $("nr-beam").value, tie: $("nr-tie").value }; },
+    draw: function(el, text){ ABCJS.renderAbc(el, text, { responsive: "resize", paddingtop: 2, paddingbottom: 2, staffwidth: 420 }); },
+    mark: function(){ dwim.markScore($("nr-score")); },
+    apply: function(v){                        // here the settings above are the take's: the whole take is read this way
+      var p = v.patch;
+      if ("swing" in p) $("nr-feel").value = p.swing > 0.5 ? "swung" : "straight";
+      if ("res" in p) $("nr-res").value = String(p.res); if ("poly" in p) $("nr-poly").checked = !!p.poly;
+      if ("detached" in p) $("nr-det").value = p.detached; if ("triplets" in p) $("nr-trip").value = p.triplets; if ("graceMs" in p) $("nr-grace").value = p.graceMs;
+      run(); return "The whole take is now read as: " + v.label.toLowerCase() + " (see the settings above).";
+    } });
+  window.__nr = { dwim: function(){ return dwim; }, run: run, last: function(){ return last; }, load: loadLog, presets: PRESETS };       // for tests
+  if (stored && /[?&]from=chord-entry(&|$)/.test(location.search)){ $("nr-log").value = stored; loadLog(stored); try { history.replaceState(null, "", location.pathname); } catch (e) {} }
+  else loadPreset(0);
+})();
+</script>
+```

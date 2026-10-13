@@ -5,6 +5,7 @@
 //       toId is "4/4", "3/4", "6/8" or "12/8". Each chord keeps its share of the bar; M: and L: are re-written and the rests
 //       are re-made; every other character (title, P: lines, bar lines, repeats, endings, "^stop" and other annotations,
 //       decorations, comments, line breaks) is copied as it stood.
+//   BandRebar.pace(abc, 2 | 0.5) -> the same meter with the chords passing twice as fast or half as fast (see below).
 // The band places a chord on a whole BEAT (a dotted quarter in 6/8, 9/8 and 12/8; see BandHarmony.meterInfo and buildForm), so
 // the grid is the new meter's beats: 4/4 has 4, 3/4 has 3, 6/8 has 2, 12/8 has 4. A chord goes to round(share of the bar x beats)
 // (a tie rounds up, so beat 3 of 4 lands on the second beat of 6/8). Between 4/4 and 3/4 a chord simply keeps its beat number (beat 3 stays beat 3). If that puts two chords on one beat the
@@ -154,6 +155,93 @@
     return res;
   }
 
-  global.BandRebar = { rebar: rebar, check: check, TARGETS: TARGETS };
+  // ---- pace: the chords pass twice as fast, or half as fast, in the SAME meter (so the band's rhythm does not change) ----
+  //   BandRebar.pace(abc, factor) -> { ok: true, abc, bars } or { ok: false, why, reason }.  factor 2 = twice as fast, 0.5 = half as fast.
+  // Twice as fast: every two bars become one, each chord at half its distance into the pair, snapped to a beat as above (so two
+  // bars of 3/4 give a chord on beat 1 and one on beat 3). Only bars with a plain bar line between them on the same line are joined;
+  // a bar left over (an odd number before a repeat, an ending or the end of the line) is refused, since half a bar would break the meter.
+  // Half as fast: every bar becomes two, each chord twice as far in, and a chord still sounding is written again at the top of the
+  // second bar. A line of three or more bars is split in two so the chart keeps its rows. A chord written twice running inside one
+  // bar is written once, which is what makes slower-then-faster come back to where it started.
+  function fmt(u){ u = Math.round(u * 4) / 4; return "z" + (u === 1 ? "" : u % 1 === 0 ? u : (u * 2) % 1 === 0 ? (u * 2) + "/2" : (u * 4) + "/4"); }
+  function isSpace(t){ return t.k === "x" && /^\s+$/.test(t.s); }
+  function music(seg){ return seg.some(function (t){ return t.k === "chord" || t.k === "rest" || t.k === "full"; }); }
+  // what a bar holds, with where each thing sits (in L units from `at`, times `mul`): [{ p, s, chord }], and the bar's length
+  function events(seg, full, at, mul, out){
+    var pos = 0;
+    seg.forEach(function (t){
+      if (t.k === "rest") pos += t.v; else if (t.k === "full") pos += full;
+      else if (!isSpace(t)) out.push({ p: at + pos * mul, s: t.s, chord: t.k === "chord" }); });
+    return pos * mul;
+  }
+  function write(ev, start, end){
+    var o = "", cur = start, glued = false;                               // (glued: an annotation or decoration was just written, and belongs to what follows)
+    ev.forEach(function (e){
+      if (e.p > cur + 1e-6){ o += fmt(e.p - cur); cur = e.p; glued = false; }
+      if (o && !glued) o += " ";
+      o += e.s; glued = !e.chord; });
+    return o + (end > cur + 1e-6 ? fmt(end - cur) : "");
+  }
+  function pace(abc, factor){
+    var r = read(abc); if (!r.lines) return r;
+    var inf = infoOf(r.M.n, r.M.d), name = r.M.n + "/" + r.M.d, upb = (inf.per / r.M.d) / r.L, full = inf.beats * upb;
+    var lines = r.lines.slice(), barNo = 0, bars = 0, err = null, count = [];
+    r.body.forEach(function (ln, bi){
+      if (err || !ln.toks) return;
+      var items = [], seg = [];                                           // the line as bar lines and what lies between them
+      ln.toks.forEach(function (t){ if (t.k === "bar"){ items.push({ seg: seg }); items.push({ bar: t.s }); seg = []; } else seg.push(t); });
+      items.push({ seg: seg });
+      items.forEach(function (it){ if (it.seg){ it.raw = it.seg.map(function (t){ return t.s; }).join(""); it.mus = music(it.seg); it.pre = /^\s*/.exec(it.raw)[0]; it.post = it.mus ? /\s*$/.exec(it.raw)[0] : "";
+        if (it.seg.some(function (t){ return t.k === "full" && t.s.length > 1; })) err = fail("rest", "This chart has a rest of several bars (" + it.raw.trim() + "), which cannot be re-paced."); } });
+      if (err) return;
+      var out = "", i, n = items.filter(function (it){ return it.mus; }).length, seen = 0, cut = factor < 1 && n >= 3 ? Math.ceil(n / 2) : 0;
+      for (i = 0; i < items.length; i++){
+        var it = items[i];
+        if (it.bar){ out += it.bar; if (cut && seen === cut && i < items.length - 1){ out += "\n"; cut = 0; if (items[i + 1].seg) items[i + 1].pre = ""; } continue; }
+        if (!it.mus){ out += it.raw; continue; }
+        barNo++; seen++;
+        var ev = [], len, k;
+        if (factor < 1){                                                  // half as fast: this bar becomes two (or more, never fewer than one)
+          len = events(it.seg, full, 0, 2, ev);
+          var parts = [], c, last = null, nb = Math.max(1, Math.ceil(len / full - 1e-6));
+          for (c = 0; c < nb; c++){
+            var a = c * full, b = Math.min(len, a + full), mine = ev.filter(function (e){ return e.p >= a - 1e-6 && e.p < b - 1e-6; });
+            if (c && last && !mine.some(function (e){ return e.chord && e.p < a + 1e-6; })) mine.unshift({ p: a, s: last, chord: true });   // the chord still sounding
+            mine.forEach(function (e){ if (e.chord) last = e.s; });
+            parts.push(write(mine, a, b));
+          }
+          bars += nb; out += it.pre + parts.join(" | ") + it.post;
+          continue;
+        }
+        // twice as fast: this bar and the next one become one
+        var j = i + 1; while (j < items.length && items[j].seg && !items[j].mus && !items[j].raw.trim()) j++;
+        var plain = j < items.length && items[j].bar === "|", m = j + 1;
+        while (plain && m < items.length && items[m].seg && !items[m].mus && !items[m].raw.trim()) m++;
+        var nx = plain && m < items.length && items[m].mus ? items[m] : null;
+        if (!nx){ err = fail("odd", "Bar " + barNo + " has no bar to pair with (an odd number of bars before a repeat, an ending or the end of the line), so the chords cannot go twice as fast there."); return; }
+        len = events(it.seg, full, 0, 0.5, ev); len += events(nx.seg, full, len, 0.5, ev);
+        var prev = null; ev = ev.filter(function (e){ if (!e.chord) return true; var dup = e.s === prev; prev = e.s; return !dup; });   // the same chord twice running: once
+        var ch = ev.filter(function (e){ return e.chord; }), lim = Math.max(1, Math.min(inf.beats, Math.round(len / upb)));
+        if (ch.length > lim){ err = fail("crowd", "Bars " + barNo + " and " + (barNo + 1) + " hold " + ch.length + " chords, and one bar of " + name + " has only " + lim + " beat" + (lim === 1 ? "" : "s") + " to put them on."); return; }
+        var P = place(ch.map(function (e){ return e.p / full; }), inf.beats, lim);
+        if (!P){ err = fail("crowd", "Bars " + barNo + " and " + (barNo + 1) + ": the chords " + ch.map(function (e){ return e.s.replace(/"/g, ""); }).join(" and ") + " cannot be given separate beats of one bar."); return; }
+        // a chord moves to its beat, and whatever was written on it (a "^stop", a decoration) moves with it
+        for (k = 0; k < ch.length; k++){ var was = ch[k].p, to = P[k] * upb; ev.forEach(function (e){ if (Math.abs(e.p - was) < 1e-6 && (e === ch[k] || !e.chord)) e.p = to; }); }
+        ev.sort(function (x, y){ return x.p - y.p; });
+        bars++; barNo++; out += it.pre + write(ev, 0, lim * upb) + nx.post;
+        i = m;
+      }
+      if (!err){ lines[r.k + 1 + bi] = out; count[r.k + 1 + bi] = n / 2; }
+    });
+    if (err) return err;
+    if (!bars) return fail("empty", "There are no bars of chords to change.");
+    // twice as fast leaves half as many bars on a line: two short lines running become one, up to four bars, so the chart keeps its rows
+    if (factor > 1) for (var q = r.k + 1; q < lines.length - 1; q++)
+      if (count[q] && count[q + 1] && count[q] + count[q + 1] <= 4 && !/\\\s*$/.test(lines[q])){ lines[q] = lines[q].replace(/\s+$/, "") + " " + lines[q + 1].replace(/^\s+/, ""); lines.splice(q + 1, 1); count.splice(q + 1, 1); count[q] = 9; }
+    return { ok: true, abc: lines.join("\n"), bars: bars };
+  }
+
+
+  global.BandRebar = { rebar: rebar, check: check, pace: pace, TARGETS: TARGETS };
   if (typeof module !== "undefined" && module.exports) module.exports = global.BandRebar;
 })(typeof window !== "undefined" ? window : globalThis);

@@ -31,6 +31,7 @@ toc-depth: 2
 .bl-abc .btn{font-family:var(--font-mono);font-size:.8rem;margin-top:.6rem}
 .bl-abc .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
 .ls-on,.ls-on *{fill:#d6336c;stroke:#d6336c}
+.bl-staff{margin:.4rem 0 0}
 body{padding-bottom:5.5rem}
 #bl-bar{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--parch);border-top:1px solid var(--parch-edge);box-shadow:0 -6px 18px -12px rgba(0,0,0,.35);
   display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1rem;padding:.5rem .8rem;font-size:.85rem}
@@ -200,7 +201,8 @@ bars to listen to; the counter shows where the band is. Pick what you heard.
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script src="/apps/shared/lessons/score.js?v=4"></script>
 <script src="/apps/shared/lessons/tunes.js?v=4"></script>
-<script src="/apps/shared/tune-chart.js?v=27"></script>
+<script src="/apps/shared/lessons/chord-staff.js?v=1"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/band/harmony.js?v=28"></script>
 <script src="/apps/shared/band/bass.js?v=13"></script>
@@ -260,12 +262,13 @@ bars to listen to; the counter shows where the band is. Pick what you heard.
   // ---- a chart that follows the key and shades some of its bars ----
   var charts = [];
   function makeChart(host, bars, minor, marked) {
-    var c = { bars: bars, minor: !!minor, marked: marked || [] };
-    c.chart = TuneChart.render(host, abcOf(bars, minor), { header: false, barsPerRow: 4, roman: 'both', romanFn: H.roman, transpose: semis(), preferFlats: !SHARP[state.key] });
+    var c = { bars: bars, minor: !!minor, marked: marked || [] }, inner = el('div'), sh = el('div', 'bl-staff'); host.appendChild(inner); host.appendChild(sh);
+    c.staff = window.LessonChordStaff ? LessonChordStaff.create(sh, { bars: bars, tonic: 5, minor: !!minor, transpose: semis(), flats: !SHARP[state.key] }) : null;
+    c.chart = TuneChart.render(inner, abcOf(bars, minor), { header: false, barsPerRow: 4, roman: 'both', romanFn: H.roman, transpose: semis(), preferFlats: !SHARP[state.key] });
     c.mark = function () { c.chart.barEls.forEach(function (b, i) { b.classList.toggle('bl-new', c.marked.indexOf(i) >= 0); }); };
-    c.set = function (bars, marked) { c.bars = bars; c.marked = marked || []; c.chart.setTune(abcOf(bars, c.minor)); c.mark(); };
-    c.setLive = function (i) { c.chart.setLive(i); };
-    c.rekey = function () { c.chart.setTranspose(semis(), !SHARP[state.key]); c.mark(); };
+    c.set = function (bars, marked) { c.bars = bars; c.marked = marked || []; c.chart.setTune(abcOf(bars, c.minor)); c.mark(); if (c.staff) c.staff.set(bars); };
+    c.setLive = function (i) { c.chart.setLive(i); if (c.staff) c.staff.light(i); };
+    c.rekey = function () { c.chart.setTranspose(semis(), !SHARP[state.key]); c.mark(); if (c.staff) c.staff.rekey(semis(), !SHARP[state.key]); };
     c.mark(); charts.push(c); return c;
   }
 

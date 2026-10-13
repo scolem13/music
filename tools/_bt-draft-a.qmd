@@ -56,7 +56,7 @@
   // ---- the bar at the foot of the window: everything the Play panel held, in one row. [element, importance, importance while playing]:
   // the higher the number the sooner it leaves the bar for the Options panel when the window is narrow. Play never leaves.
   var foot = el("div"), F = D.field; foot.id = "dxa-bar";
-  [[$("bt-play")], [$("bt-beats"), 5, 3], [F("bt-fill"), 7, 1], [$("bt-sections-field"), 6, 2], [F("bt-tempo-n"), 1, 4], [F("bt-key"), 2, 6], [F("bt-style"), 3, 7], [F("bt-meter"), 8, 8],
+  [[$("bt-play")], [$("bt-beats"), 5, 3], [F("bt-fill"), 7, 1], [$("bt-sections-field"), 6, 2], [F("bt-tempo-n"), 1, 4], [F("bt-key"), 2, 6], [F("bt-style"), 3, 7], [F("bt-meter"), 8, 8], [$("bt-pace-f"), 8, 5],
    [F("bt-changes"), 9, 9], [$("bt-status"), 4, 3]].forEach(function(x){ if (x.length > 1){ x[0].setAttribute("data-pri", x[1]); x[0].setAttribute("data-pri-live", x[2]); } foot.appendChild(x[0]); });
   root.appendChild(foot);
   // two notes that are sentences, not controls: the loop's goes over the chart, the section's (with its two buttons) to the top of the Band tab

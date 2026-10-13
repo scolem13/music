@@ -20,6 +20,8 @@ website:
           - lessons/index.qmd
           - text: "---"
           - lessons/blues-changes.qmd
+          - lessons/pop-changes.qmd
+          - lessons/four-chord-loops.qmd
           - lessons/blues-bass.qmd
           - lessons/blues-guitar.qmd
           - lessons/blues-piano.qmd
@@ -57,17 +59,15 @@ website:
       - text: Tools
         menu:
           - tools/scales.qmd
-          - tools/fretboard.qmd
           - tools/circle-of-fifths.qmd
-          - tools/keyboard.qmd
-          - tools/director.qmd
+          - tools/chords-solfege.qmd
           - tools/chord-sheet.qmd
           - tools/chord-sheet-deluxe.qmd
           - tools/drumset.qmd
-          - tools/solfege-keyboard.qmd
           - tools/accomp-styles.qmd
           - tools/backing-track.qmd
           - tools/chord-entry.qmd
+          - tools/notation-rules.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd
@@ -91,3 +91,5 @@ format:
     # The page-time + action tracker, on every page:
     include-after-body:
       - _includes/track.html
+      # The floating Metronome and Drone, in the navbar on every page:
+      - _includes/practice-widgets.html

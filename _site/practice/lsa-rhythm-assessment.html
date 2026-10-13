@@ -143,6 +143,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/blues-bass.html">
  <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
   </li>  
@@ -260,20 +268,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Scales</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tools/fretboard.html">
- <span class="dropdown-text">Fretboard</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../tools/circle-of-fifths.html">
  <span class="dropdown-text">Circle of Fifths</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tools/keyboard.html">
- <span class="dropdown-text">Keyboard</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/director.html">
- <span class="dropdown-text">Director</span></a>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tools/chord-sheet.html">
@@ -288,10 +288,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Drumset</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tools/solfege-keyboard.html">
- <span class="dropdown-text">Solfège Keyboard</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../tools/accomp-styles.html">
  <span class="dropdown-text">Accompaniment Styles</span></a>
   </li>  
@@ -302,6 +298,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../tools/chord-entry.html">
  <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
   </li>  
     </ul>
   </li>
@@ -599,6 +599,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 </main> <!-- /main -->
 <!-- Injected before </body> on every page. Loads the tracker. -->
 <script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=1"></script>
+<script src="../apps/shared/practice-widgets.js?v=3"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

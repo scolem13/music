@@ -97,4 +97,23 @@ assert(!RB.check(head("4/4", "1/4") + 'L:1/8\n"C"z8 |]\n').ok);
 assert(RB.check("X:1\nM:none\nK:C\n\"C\"z4|]\n").why === "meter" && RB.check("X:1\nM:4/4\n\"C\"z4|]\n").why === "key");
 assert.strictEqual(RB.rebar(four, "7/4").ok, false);
 assert(RB.check(four).ok && RB.check(four).beats === 4 && RB.check(tf).beats === 5);
+// ---- pace: the chords twice as fast / half as fast in the same meter ----
+(function(){
+  const H = "X:1\nT:t\nM:4/4\nL:1/4\nK:F\n", TC = global.TuneChart || null;
+  const blues = H + '"F7"z4 | "Bb7"z4 | "F7"z4 | "F7"z4 |\n"Bb7"z4 | "Bb7"z4 | "F7"z4 | "^stop""Am7"z2 "D7"z2 |\n"Gm7"z4 | "C7"z4 | "F7"z2 "D7"z2 | "Gm7"z2 "C7"z2 |]';
+  const body = r => r.abc.split("\n").slice(5).join("\n");
+  const fast = RB.pace(blues, 2), slow = RB.pace(blues, 0.5);
+  assert(fast.ok && slow.ok && fast.bars === 6 && slow.bars === 24);
+  assert.strictEqual(body(fast), '"F7"z2 "Bb7"z2 | "F7"z4 | "Bb7"z4 | "F7"z2 "^stop""Am7"z "D7"z |\n"Gm7"z2 "C7"z2 | "F7"z "D7"z "Gm7"z "C7"z |]');
+  assert.strictEqual(RB.pace(slow.abc, 2).abc, blues, "slower then faster comes back");
+  assert(/M:4\/4\nL:1\/4/.test(fast.abc) && /M:4\/4\nL:1\/4/.test(slow.abc), "the meter stays");
+  assert.strictEqual(body(RB.pace(H + '"F7"z2 "C7"z2 | "Bb7"z4 |', 0.5)), '"F7"z4 | "C7"z4 | "Bb7"z4 | "Bb7"z4 |');
+  assert.strictEqual(body(RB.pace(H.replace("4/4", "3/4") + '"F7"z3 | "Bb7"z3 |', 2)), '"F7"z2 "Bb7"z |', "3/4: the second chord on beat 3");
+  assert.strictEqual(RB.pace("X:1\nT:t\nM:6/8\nL:1/8\nK:F\n" + '"F7"z6 | "Bb7"z6 |', 2).abc.split("\n")[5], '"F7"z3 "Bb7"z3 |');
+  assert.strictEqual(body(RB.pace(H + '|: "F7"z4 | "C7"z4 :|', 2)), '|: "F7"z2 "C7"z2 :|', "repeats stay");
+  assert.strictEqual(RB.pace(H + '"F7"z4 | "Bb7"z4 | "C7"z4 |', 2).why, "odd");
+  assert.strictEqual(RB.pace(H + '"F7"z4 :|1 "C7"z4 |', 2).why, "odd");
+  assert.strictEqual(RB.pace(H + '"F7"z "G7"z "A7"z "B7"z | "C7"z4 |', 2).why, "crowd");
+  assert.strictEqual(RB.pace(H + '"F7"A2 z2 | "C7"z4 |', 2).why, "melody");
+})();
 console.log("REBAR OK");

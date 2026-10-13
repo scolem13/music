@@ -198,7 +198,7 @@
 			document.getElementById("solfege-display").innerHTML = solfegeString;
 
 			const tuneLines = tune.split("\n");
-			tuneLines[0] += "\n%%MIDI program 4 ";
+			tuneLines[0] += "\n%%MIDI program 0 ";
 			tuneLines[0] += "\nM:none";
 			tuneLines[0] += "\n%%staffwidth 100";
 			tune = tuneLines.join("\n");

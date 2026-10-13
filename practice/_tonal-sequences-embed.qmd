@@ -217,7 +217,7 @@
 	function clearSequence_ts() {
 		const collectionName = document.getElementById("collection-selector-ts").value;
 		const key = getCollectionKeyField_ts(collectionName);
-		const header = "X:1\n%%MIDI program 4 \nM:none\nK:" + key;
+		const header = "X:1\n%%MIDI program 0 \nM:none\nK:" + key;
 		renderSequence_ts(header + "\n", true);
 	}
 
@@ -327,7 +327,7 @@
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/patterns/pattern-set.js"></script>
-<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/tonality.js?v=9"></script>
 <script src="/apps/shared/cursor-synth.js"></script>
 <script>
 	const cursorControl_ts = new CursorControl();

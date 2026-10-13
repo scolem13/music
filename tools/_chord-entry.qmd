@@ -27,16 +27,33 @@
 #ce-root .ce-keys{display:flex;flex-wrap:wrap;gap:2px;margin-top:.8rem;align-items:flex-start}
 #ce-root .ce-keys button{width:2.1rem;height:4.2rem;padding:0 0 .25rem;border:1px solid var(--site-border,#c9c0b4);border-radius:0 0 5px 5px;background:#fff;color:#333;font:inherit;font-size:.68rem;display:flex;align-items:flex-end;justify-content:center;cursor:pointer}
 #ce-root .ce-keys button.is-black{height:2.9rem;background:#2a2622;color:#eee;border-color:#2a2622}
+#ce-root .ce-keys button.is-typed{background:var(--site-accent-bg,rgba(63,194,180,.3));box-shadow:inset 0 -4px 0 var(--site-accent,#3fc2b4)}
 #ce-root .ce-keys button.is-on{background:var(--site-accent,#3fc2b4);color:#06302b;border-color:var(--site-accent-dk,#2b9c90)}
 #ce-root textarea{display:block;width:100%;min-height:9rem;margin-top:.8rem;padding:.7rem .8rem;resize:vertical;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;
   background:var(--site-surface-2,#f2ede5);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.84rem;line-height:1.55}
+#ce-root .ce-lab{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--site-ink-2,#5c5246)}
 #ce-chart{margin:0 0 1rem}
+#ce-chart .tc-bar[data-bar]{cursor:pointer}
+#ce-chart .tc-bar.ce-start{box-shadow:inset 4px 0 0 #b3261e}
+#ce-chart .tc-bar.ce-start::before{content:"\25CF  starts here";position:absolute;right:.3rem;bottom:.15rem;font:600 .62rem/1 var(--font-mono,monospace);color:#b3261e;letter-spacing:.04em}
+#ce-chart .tc-system[hidden]{display:none!important}
+#ce-tabs{margin:0 0 .5rem}
+#ce-tabs .nav-link{cursor:pointer}
+#ce-tabs .nav-link.has-mel::after{content:" \266A";color:var(--site-accent-dk,#2b9c90)}
+#ce-score svg[hidden],#ce-score div[hidden]{display:none!important}
+#ce-root .ce-lyr{display:grid;grid-template-columns:1fr 1fr;gap:.8rem 1rem;margin-top:.6rem}
+@media (max-width:760px){ #ce-root .ce-lyr{grid-template-columns:1fr} }
+#ce-root .ce-lyr textarea{min-height:8.5rem;margin-top:.25rem;background:var(--site-surface,#fff)}
+#ce-root .ce-warn{color:#9a4b00}
+#ce-root .ce-work{display:flex;gap:.6rem 1rem;flex-wrap:wrap;align-items:center;margin:0 0 1rem;padding:.6rem .9rem;border:1px dashed var(--site-border,#d6cdbf);border-radius:10px;font-size:.86rem;color:var(--site-ink-2,#5c5246)}
 #ce-score{margin:0 0 1rem;background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.5rem .8rem;overflow-x:auto}
 #ce-score:empty{display:none}
 #ce-chart:empty::before{content:"No chords yet. Play one.";display:block;padding:1.2rem;border:1px dashed var(--site-border,#e0d8ce);border-radius:10px;color:var(--site-ink-2,#5c5246)}
 </style>
 <div id="ce-root">
-  <p class="ce-intro">Play the chords of a tune on a MIDI keyboard (or click them on the keys below) and they are written out as a chart. Check it, then send it to the Backing Track page, where the band plays it. With the chords in, you can also play the melody along with the band and have it written as notes.</p>
+  <p class="ce-intro">Play the chords of a tune on a MIDI keyboard (or click them on the keys below) and they are written out as a chart. Check it, then send it to the Backing Track page, where the band plays it. With the chords in, you can also play the melody along with the band and have it written as notes. <a href="notation-rules.html">How it decides what to write</a>, and a bench to see it at work on your last take.</p>
+  <div class="ce-work" id="ce-work" hidden><span id="ce-work-note" role="status"></span>
+    <button type="button" class="ce-btn" id="ce-work-fresh" hidden title="Forget what was saved for this song and load it again as it was sent.">Load the song afresh</button></div>
   <div class="ce-panel">
     <h2>1. Set up</h2>
     <div class="ce-row">
@@ -48,14 +65,16 @@
       <div class="ce-field"><label for="ce-midi">MIDI keyboard</label><select id="ce-midi" disabled><option value="">Not connected</option></select></div>
       <button type="button" class="ce-btn" id="ce-connect">Connect a MIDI keyboard</button>
       <label class="ce-check"><input type="checkbox" id="ce-sound" checked> Sound the notes I play</label>
+      <label class="ce-check" title="The two rows of letter keys are two rows of piano keys. Arrow Up and Arrow Down move the octave."><input type="checkbox" id="ce-type" checked> Play with the computer keyboard</label>
     </div>
+    <p class="ce-hint" id="ce-type-note"></p>
     <p class="ce-hint" id="ce-setup-note" role="status"></p>
   </div>
   <div class="ce-panel">
     <h2>2. Enter</h2>
     <div class="ce-row">
       <div class="ce-field"><label for="ce-mode">How</label>
-        <select id="ce-mode"><option value="step" selected>Chords, one at a time</option><option value="live">Chords, in time with a click or drums</option><option value="voice">Voicings for the chords, one at a time</option><option value="melody">Melody, played along with the band</option></select></div>
+        <select id="ce-mode"><option value="step" selected>Chords, one at a time</option><option value="live">Chords, in time with a click or drums</option><option value="voice">Voicings for the chords, one at a time</option><option value="melody">Melody, played along with the band</option><option value="split">Chords and melody together (split at a key)</option></select></div>
       <label class="ce-check" id="ce-slash-wrap" title="Off: C with E at the bottom is written C. On: it is written C/E."><input type="checkbox" id="ce-slash"> Write inversions as slash chords</label>
     </div>
     <div class="ce-row" id="ce-step">
@@ -68,22 +87,52 @@
     <div class="ce-row" id="ce-live" hidden>
       <div class="ce-field"><label for="ce-bars">Bars to record</label><input type="number" id="ce-bars" min="1" max="128" value="12"></div>
       <div class="ce-field"><label for="ce-quant" title="Each chord moves to the nearest of these. A chord played a little early goes to the bar or beat it was aiming for.">Snap chords to the nearest</label><select id="ce-quant"></select></div>
-      <div class="ce-field"><label for="ce-with">Play along with</label><select id="ce-with"><option value="click" selected>A click</option><option value="drums">The style's drums</option></select></div>
+      <div class="ce-field"><label for="ce-with">Play along with</label><select id="ce-with"><option value="click" selected>A click (the pedal changes the bar length)</option><option value="drums">The style's drums</option></select></div>
       <div class="ce-field"><label for="ce-offset" title="If chords keep landing late, enter a positive number of milliseconds; if early, a negative one.">Timing offset</label>
         <input type="number" id="ce-offset" min="-300" max="300" step="5" value="0"></div><span class="ce-unit">ms</span>
       <button type="button" class="ce-btn" id="ce-rec">&#9679; Record</button>
     </div>
     <div class="ce-row" id="ce-melody" hidden>
+      <div class="ce-field" id="ce-split-f"><label for="ce-msplit" title="Notes below this key are read as chords, this key and everything above it as the melody.">Melody from</label>
+        <select id="ce-msplit"></select></div>
+      <button type="button" class="ce-btn" id="ce-msplit-set" title="Press the lowest key you want in the melody." hidden>Set it by playing a key</button>
+      <div class="ce-field"><label for="ce-mwith" title="The band plays the chords already entered. A click makes the bars as you go: with no chords entered you can play the melody first, and change the bar length with the pedal.">Play along with</label>
+        <select id="ce-mwith"><option value="band">The band (the chords entered)</option><option value="click">A click</option></select></div>
+      <div class="ce-field" id="ce-mbars-f" hidden><label for="ce-mbars">Bars to record</label><input type="number" id="ce-mbars" min="1" max="128" value="12"></div>
       <div class="ce-field"><label for="ce-mfeel" title="Swung: the long-short eighths you play are written as plain eighth notes, the way a lead sheet shows them, and the band swings them back.">You play</label>
         <select id="ce-mfeel"><option value="swing">Swung eighths (written straight)</option><option value="straight">Straight</option></select></div>
       <div class="ce-field"><label for="ce-mres" title="The shortest note written.">Shortest note</label>
         <select id="ce-mres"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
       <div class="ce-field"><label for="ce-moffset" title="If the notes land a little early or late against the band, shift them. A positive number moves them earlier.">Nudge</label>
         <input type="number" id="ce-moffset" min="-300" max="300" step="5" value="0"></div><span class="ce-unit">ms</span>
+      <div class="ce-field" id="ce-mrange-f" hidden><label for="ce-mrange" title="A take starts at the bar marked in the chart (click a bar to move it) and replaces only the bars it covers.">Record</label>
+        <select id="ce-mrange"><option value="section">From the marked bar to the end of its section</option><option value="end">From the marked bar to the end of the tune</option></select></div>
       <button type="button" class="ce-btn" id="ce-mrec">&#9679; Record melody</button>
       <button type="button" class="ce-btn" id="ce-mundo">Undo the take</button>
       <button type="button" class="ce-btn" id="ce-mclear">Remove the melody</button>
       <label class="ce-check" title="Off: Hear it plays the band alone."><input type="checkbox" id="ce-mhear" checked> Play the melody in Hear it</label>
+      <label class="ce-check" title="Off: when several notes are struck together only the top one is written. On: they are written as a chord."><input type="checkbox" id="ce-mpoly"> Notes struck together are written as a chord</label>
+      <div class="ce-field"><label for="ce-mchord" title="Notes struck within this many milliseconds of each other count as struck together.">Together within</label>
+        <input type="number" id="ce-mchord" min="10" max="200" step="5" value="45" style="width:5.2rem"></div><span class="ce-unit">ms</span>
+    </div>
+    <p class="ce-hint" id="ce-mstart" hidden></p>
+    <div class="ce-row" id="ce-keep" hidden>
+      <div class="ce-field"><label for="ce-keep-bar" title="Bars after this one go back to what they were before the take. The take's bars up to it are kept.">Keep the take up to bar</label><input type="number" id="ce-keep-bar" min="1" value="1"></div>
+      <button type="button" class="ce-btn" id="ce-keep-go">Keep up to there, discard the rest</button>
+      <span class="ce-unit" id="ce-keep-note" role="status"></span>
+    </div>
+    <div class="ce-row" id="ce-mwrite" hidden>
+      <div class="ce-field"><label for="ce-mbeam" title="Eighth notes are joined by a beam within a beat, or within half a bar (four eighths in 4/4). Rests and longer notes end a beam.">Beams</label>
+        <select id="ce-mbeam"><option value="beat">Within a beat</option><option value="half">Within half a bar</option><option value="none">None</option></select></div>
+      <div class="ce-field"><label for="ce-mtie" title="A note that starts off the beat and runs over the middle of the bar (or over a beat) can be written as two tied notes, as classical notation does.">Syncopation</label>
+        <select id="ce-mtie"><option value="none">As played</option><option value="mid">Tied across the middle of the bar</option><option value="beat">Tied across every beat</option></select></div>
+      <div class="ce-field"><label for="ce-mdet" title="A short note followed by a rest as long as itself: written as the two, or as one staccato note of both.">Short detached notes</label>
+        <select id="ce-mdet"><option value="rest">Note and rest</option><option value="staccato">Staccato note</option></select></div>
+      <div class="ce-field"><label for="ce-mtrip" title="Where the notes of a beat fit thirds better than the eighth-note grid they are written as triplets (simple meters).">Triplets</label>
+        <select id="ce-mtrip"><option value="off">Never</option><option value="auto">Where the playing fits</option></select></div>
+      <div class="ce-field"><label for="ce-mpickup" title="Notes you play before the first bar (in the count-in) can be written as a short pickup bar in front of bar 1, or left out.">Notes before bar 1</label>
+        <select id="ce-mpickup"><option value="auto">Write them (a pickup)</option><option value="off">Leave them out</option></select></div>
+      <label class="ce-check" title="A very short note struck just before another (under 80 ms, and never longer than a thirty-second note) is written as a grace note of it."><input type="checkbox" id="ce-mgrace"> Very short notes before a note are grace notes</label>
     </div>
     <div class="ce-row" id="ce-voice" hidden>
       <button type="button" class="ce-btn" id="ce-vprev">&#9664; Previous chord</button>
@@ -104,16 +153,42 @@
       <span class="ce-unit" id="ce-count"></span>
     </div>
     <p class="ce-status" id="ce-status"></p>
+    <div class="ce-row" id="ce-log" hidden>
+      <button type="button" class="ce-btn" id="ce-log-copy" title="Everything the last take played (every key and pedal event with its time) and the settings. Paste it into the Notation Rules page, or send it, to see why each note was written the way it was.">Copy the take log</button>
+      <button type="button" class="ce-btn" id="ce-log-open" title="Opens the Notation Rules page with the last take loaded, showing what each rule did.">Show how it was written</button>
+      <span class="ce-unit" id="ce-log-note" role="status"></span>
+    </div>
   </div>
+  <div id="ce-tabs" hidden></div>
   <div id="ce-chart"></div>
   <div id="ce-score" aria-label="The melody as notation"></div>
+  <div class="ce-panel" id="ce-sec" hidden>
+    <h2 id="ce-sec-name">Words</h2>
+    <div class="ce-row" id="ce-sec-tools">
+      <button type="button" class="ce-btn" id="ce-sec-apply" hidden title="Copy this section's melody to the later sections of the same kind (Verse 1 to Verse 2, Verse 3) that have the same number of bars. Their words are put under it. Undo the take puts it back."></button>
+      <span class="ce-unit" id="ce-sec-note" role="status"></span>
+    </div>
+    <div class="ce-lyr" id="ce-lyr">
+      <div><label class="ce-lab" for="ce-words" title="The words of this section, a line to a line. Changing them here changes the draft under the notes; the lines of the song file itself are not rewritten.">The words</label>
+        <textarea id="ce-words" spellcheck="false" placeholder="Type or paste the words of this section"></textarea></div>
+      <div><label class="ce-lab" for="ce-wl" title="One line for each line of music. A hyphen joins the syllables of a word, a bar line starts the next bar, a star skips a note and an underscore holds the syllable for another note. The notation follows as you type.">Under the notes</label>
+        <textarea id="ce-wl" wrap="off" spellcheck="false" placeholder="w: lines appear here once the section has a melody and words"></textarea></div>
+    </div>
+    <div class="ce-row">
+      <button type="button" class="ce-btn" id="ce-wl-draft" title="Throw away the changes made by hand and put the words under the notes again, a syllable to a note.">Draft again from the words</button>
+      <span class="ce-unit" id="ce-wl-state" role="status"></span>
+    </div>
+    <p class="ce-hint ce-warn" id="ce-wl-warn" role="status"></p>
+    <p class="ce-hint">A draft puts one syllable on each note: the second half of a tied note is skipped (<code>*</code>), rests take nothing. Where a syllable is held over several notes add <code>_</code> for each extra note; where a note has no word put <code>*</code>. A draft follows the words and the melody as they change; once you edit a line it is yours and is left alone.</p>
+  </div>
+  <div id="ce-dwim" hidden></div>
   <div class="ce-panel">
     <h2>4. Send it on</h2>
     <div class="ce-row">
       <button type="button" class="ce-btn is-main" id="ce-send">Open in the Backing Track</button>
       <button type="button" class="ce-btn" id="ce-copy">Copy the ABC</button>
       <button type="button" class="ce-btn" id="ce-download">Download .abc</button>
-      <button type="button" class="ce-btn" id="ce-cho-copy" title="The changes as a ChordPro song file for the lyrics site: tempo, a band block holding the ABC, and a heading for each section, ready for the words.">Copy as ChordPro</button>
+      <button type="button" class="ce-btn" id="ce-cho-copy" title="The song as a ChordPro file for the lyrics site. A song that came from the lyrics site is its own file with each section's melody and the words under it written in; anything else is a new file: tempo, a band block holding the ABC, and each section with its melody and words.">Copy as ChordPro</button>
       <button type="button" class="ce-btn" id="ce-cho-download">Download .cho</button>
     </div>
     <p class="ce-hint" id="ce-send-note" role="status"></p>
@@ -122,10 +197,15 @@
   </div>
 </div>
 <script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/tune-chart.js?v=23"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
-<script src="/apps/shared/chord-entry.js?v=4"></script>
+<script src="/apps/shared/chord-entry.js?v=7"></script>
+<script src="/apps/shared/lyric-align.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/band/tune-score.js?v=1"></script>
+<script src="/apps/shared/melody-dwim.js?v=1"></script>
+<script src="/apps/shared/musical-typing.js"></script>
 <script src="/apps/shared/band/harmony.js?v=24"></script>
 <script src="/apps/shared/band/bass.js?v=11"></script>
 <script src="/apps/shared/band/comp.js?v=25"></script>
@@ -133,7 +213,7 @@
 <script src="/apps/shared/band/drums.js?v=14"></script>
 <script src="/apps/shared/band/congas.js?v=2"></script>
 <script src="/apps/shared/band/sounds.js?v=14"></script>
-<script src="/apps/shared/band/player.js?v=110"></script>
+<script src="/apps/shared/band/player.js?v=120"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -142,8 +222,14 @@
   var KEYS = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
   var SIZE = { bar: "One bar", two: "Two bars", half: "Half a bar", beat: "One beat" }, SNAP = { bar: "Bar", half: "Half bar", beat: "Beat", eighth: "Eighth note" };
   // grid = the bars entered; abc / parsed = the same as a chart; pins = "form bar:beat" -> { midis, ckey (the chord it was played for), auto }
-  var line = ChordEntry.line(), grid = null, abc = "", parsed = null, chart = null, player = null, state = "idle", rec = null, pins = {}, vAt = 0;
+  var grid = null, abc = "", parsed = null, chart = null, player = null, state = "idle", pins = {}, vAt = 0;
+  var sess = null, PEDAL_CC = 80, splitSetting = false, lastLog = null;
   var lis = ChordEntry.listener({ mode: "step" }), timer = null, picked = {}, midiAccess = null, input = null;
+  // secs = the sections of the bars entered, [{ name, from (grid bar) }] in order; lyr[k] = the words of section k: { words (plain lines), wl (the w: line for
+  // each line of its music), mine (edited by hand: a draft follows the words and the melody, yours is left alone) }; song = the ChordPro file this came from
+  // (the lyrics site sends it); startBar = the bar a melody take starts on (null: the top of the section shown); tabSel = the section shown (-1: all of them);
+  // lastTake = what the last melody take replaced, so part of it can be given back.
+  var secs = [], lyr = {}, song = null, startBar = null, tabSel = -1, lastTake = null, workId = null, sourceAbc = null, freshH = null, booting = true, baseMel = {};      // baseMel[k]: section k's melody as the song came (a section left as it came is not rewritten in the file)
 
   function fill(sel, items){ sel.innerHTML = ""; items.forEach(function(it){ var o = document.createElement("option"); o.value = it.id; o.textContent = it.label; sel.appendChild(o); }); }
   function note(msg){ $("ce-note").textContent = msg || ""; }
@@ -173,9 +259,9 @@
   // the grid changed: write it out, redraw, and drop the voicings whose chord is no longer the one they were played for
   function refresh(){
     if (!grid) grid = newGrid();
-    abc = grid.toAbc({ key: $("ce-key").value, title: title() });
+    abc = grid.toAbc({ key: $("ce-key").value, title: title(), beam: $("ce-mbeam").value, tie: $("ce-mtie").value, sections: secMap() });
     parsed = null; try { parsed = TuneChart.parse(abc); } catch (e) {}
-    attachMelody(); drawScore();
+    attachMelody(); draftAll(); drawScore();
     $("ce-abc").value = grid.length() ? abc : "";
     var have = parsed && parsed.bars.length > 0;
     if (!have){ $("ce-chart").innerHTML = ""; chart = null; }
@@ -190,22 +276,32 @@
     var c = grid.cursor(); $("ce-bar").value = c.bar + 1;
     var nb = grid.length(), nc = grid.count(), nv = Object.keys(pins).length;
     $("ce-count").textContent = nb ? nb + " bar" + (nb === 1 ? "" : "s") + ", " + nc + " chord" + (nc === 1 ? "" : "s") + (nv ? ", " + nv + " with a voicing" : "") : "";
-    voiceShow();
+    voiceShow(); decorate(); saveSoon();
   }
   // the entered melody on the parsed bars, in beats, for the band to play (a tie into the next bar becomes one long note)
   function attachMelody(){
     if (!parsed || !grid) return;
-    var pl = ChordEntry.playable(grid.melody(), grid.unitsPerBeat);
+    var pl = ChordEntry.playable(grid.melody(), grid.geoList().map(function(g){ return g.beat; }));
     parsed.bars.forEach(function(b, i){ if (pl[i] && pl[i].length) b.melody = pl[i]; else delete b.melody; });
   }
-  var scoreAbc = "";
+  // The notation: the ABC with each section's words under its lines. One drawing a line (oneSvgPerLine), so the lines of the sections not shown can be put away.
+  var scoreKey = "", scoreLines = [];
   function drawScore(){
     var box = $("ce-score"), has = grid && grid.hasMelody();
-    if (!has){ box.innerHTML = ""; scoreAbc = ""; return; }
-    if (scoreAbc === abc || typeof ABCJS === "undefined") return;
-    scoreAbc = abc;
-    try { ABCJS.renderAbc("ce-score", abc, { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6, staffwidth: 760 }); } catch (e) { box.textContent = "The notation could not be drawn."; }
+    $("ce-dwim").hidden = !has;
+    if (!has){ box.innerHTML = ""; scoreKey = ""; scoreLines = []; return; }
+    var st = scoreText();
+    if (scoreKey !== st.text && typeof ABCJS !== "undefined"){
+      scoreKey = st.text; scoreLines = st.lines;
+      try { ABCJS.renderAbc("ce-score", st.text, { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6, staffwidth: 760, oneSvgPerLine: true,
+        clickListener: function(a, tn, cls, an, drag, ev){ if (dwim) dwim.pick(cls, !!(ev && ev.shiftKey)); } }); } catch (e) { box.textContent = "The notation could not be drawn."; }
+    }
+    if (dwim) dwim.markScore(box);
+    scoreTabs();
   }
+  // "what did I mean?": works on the take just made, while the melody on the page is still what that take wrote (or what the panel last put there)
+  var dwim = null, dwimSigs = {};
+  function dwimLog(){ return lastLog && grid && grid.hasMelody() && dwimSigs[JSON.stringify(grid.melody())] ? lastLog : null; }
   function meterSync(){
     var sizes = newGrid().sizes();
     fill($("ce-span"), ["bar", "two"].concat(sizes.filter(function(x){ return x === "half" || x === "beat"; })).map(function(x){ return { id: x, label: SIZE[x] }; }));
@@ -233,16 +329,11 @@
     var r = read(c.midis);
     if (!r){ heard(names(c.midis) + ": play at least two different notes."); return; }
     var said = r.sym + (r.exact ? "" : " (closest match)") + "  \u00b7  " + names(c.midis);
-    if (mode() === "live"){
-      if (!rec){ heard(said + "  \u00b7  press Record to enter chords in time"); return; }
-      var at = place(r.sym, c.t);
-      heard(at ? said + "  \u2192  bar " + (at.bar + 1) + (at.pos ? ", beat " + (Math.round(at.pos / grid.unitsPerBeat * 100) / 100 + 1) : "") : said + "  \u00b7  outside the bars being recorded");
-      return;
-    }
+    if (mode() === "live"){ heard(said + "  \u00b7  press Record to enter chords in time"); return; }
     if (!grid) grid = newGrid();
     var cur = grid.cursor();
     grid.put(r.sym, $("ce-span").value); refresh();
-    heard(said + "  \u2192  bar " + (cur.bar + 1) + (cur.pos ? ", beat " + (cur.pos / grid.unitsPerBeat + 1) : ""));
+    heard(said + "  \u2192  bar " + (cur.bar + 1) + (cur.pos ? ", beat " + (cur.pos / grid.geo(cur.bar).beat + 1) : ""));
   }
 
   // ---- the band: a click or drums to record against, and the whole trio to check the result ----
@@ -252,13 +343,14 @@
       parsed: parsed, tempo: tempo(), countIn: 1, choruses: 1, instruments: styleSounds(),
       opts: { comp: "piano", feel: "straight" }, kit: { ride: 0.35, rideBell: 0.35, crash: 0.35 },
       onState: function(s){
-        state = s; $("ce-play").innerHTML = s === "idle" || rec ? "&#9654; Hear it" : s === "loading" ? "Loading&hellip;" : "&#9632; Stop";
-        if (s === "idle"){ if (chart) chart.setLive(-1); $("ce-status").textContent = ""; if (rec) finish(); else voiceShow(); }
+        state = s; $("ce-play").innerHTML = s === "idle" || sess ? "&#9654; Hear it" : s === "loading" ? "Loading&hellip;" : "&#9632; Stop";
+        if (s === "idle"){ if (chart) chart.setLive(-1); $("ce-status").textContent = ""; if (sess && sess.src === "band") finishSession(false); else voiceShow(); }
       },
       onLoadProgress: function(done, total){ if (state === "loading") $("ce-status").textContent = "Loading sounds " + done + " of " + total; },
       onBar: function(info){
+        if (!info.countIn && !info.ending && tabSel >= 0 && !(sess && sess.range && info.src > sess.range.b)){ var pt = secOf(info.src); if (pt && pt.k !== tabSel && sections().length){ tabSel = pt.k; decorate(); } }   // the section shown turns with the band
         if (chart) chart.setLive(info.countIn ? -1 : info.src);
-        $("ce-status").textContent = info.countIn ? "Count-in" : info.ending ? "" : (rec ? "Recording \u00b7 " : "") + "bar " + (info.index + 1);
+        $("ce-status").textContent = info.countIn ? "Count-in" : info.ending ? "" : (sess ? "Recording \u00b7 " : "") + "bar " + (info.index + 1);
       }
     });
     return player;
@@ -269,77 +361,153 @@
     if (!parsed || !grid || !grid.count()){ note("There is nothing to play yet."); return; }
     var p = makePlayer();
     p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(0); p.setCountIn(1);
+    p.setStartBar(melodyMode() && (startBar != null || tabSel >= 0) ? Math.max(0, recStart() - pk0()) : 0);      // (in Melody mode: from the marked bar)
     p.setVolume("bass", 1); p.setVolume("comp", 1);
     var o = styleOpts(); o.pins = pinMap(); o.melody = $("ce-mhear").checked && grid.hasMelody(); p.setInstruments(styleSounds()); p.setOpts(o);
     p.play().catch(failed);
   }
-  function record(){
-    if (rec){ player.stop(); return; }
-    if (state !== "idle") player.stop();
-    var n = Math.min(128, Math.max(1, parseInt($("ce-bars").value, 10) || 12));
-    grid = newGrid(); grid.setLength(n); pins = {}; rec = { bars: n }; refresh();
-    var p = makePlayer();
-    p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(1); p.setCountIn(1);
-    p.setVolume("bass", 0); p.setVolume("comp", 0);
-    var o = styleOpts(); o.pins = null; if ($("ce-with").value === "click") o.groove = "click"; p.setInstruments(styleSounds()); p.setOpts(o);
-    $("ce-rec").innerHTML = "&#9632; Stop recording"; $("ce-rec").classList.add("is-rec");
-    lis.reset(); note("Recording " + n + " bar" + (n === 1 ? "" : "s") + ". Play after the count-in.");
-    p.play().catch(function(){ failed(); if (rec) finish(); });
-  }
-  // ---- a melody: played along with the band over the chords already entered ----
-  function recordMelody(){
-    if (rec){ player.stop(); return; }
-    if (!grid || !grid.count()){ note("Enter the chords first; the band plays them while you play the melody."); return; }
-    if (state !== "idle") player.stop();
-    var n = grid.length();
-    rec = { bars: n, melody: true }; line.reset();
-    var p = makePlayer();
-    p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(1); p.setCountIn(1);
-    p.setVolume("bass", 1); p.setVolume("comp", 1);
-    var o = styleOpts(); o.pins = pinMap(); o.melody = false; p.setInstruments(styleSounds()); p.setOpts(o);
-    $("ce-mrec").innerHTML = "&#9632; Stop"; $("ce-mrec").classList.add("is-rec");
-    note("Recording " + n + " bar" + (n === 1 ? "" : "s") + " of melody. Play after the count-in; one note at a time.");
-    p.play().catch(function(){ failed(); if (rec) finish(); });
-  }
-  function swingOn(){ return $("ce-mfeel").value === "swing" && !grid.compound; }
-  function finishMelody(){
-    var n = rec.bars, beats = grid.beats * n; rec = null;
-    $("ce-mrec").innerHTML = "&#9679; Record melody"; $("ce-mrec").classList.remove("is-rec");
-    var res = parseFloat($("ce-mres").value) || 1;
-    var q = ChordEntry.quantizeLine(line.notes(beats), { beat: grid.unitsPerBeat, per: grid.unitsPerBar, bars: n, res: res, swing: swingOn() ? BandPlayer.swingFor(tempo()) : 0 });
-    var k = 0; q.forEach(function(b){ k += b.length; });
-    if (!k){ note("No notes were recorded. Check the MIDI keyboard is connected, then press Record melody again. The chords are unchanged."); heard(""); return; }
-    grid.setMelody(q); refresh();
-    note("Wrote " + k + " note" + (k === 1 ? "" : "s") + (swingOn() ? ", swung eighths as plain eighth notes" : "") + ". Hear it, or record again to replace the melody.");
-  }
-  function finish(){
-    if (rec && rec.melody){ finishMelody(); return; }
-    var n = rec.bars; rec = null;
-    $("ce-rec").innerHTML = "&#9679; Record"; $("ce-rec").classList.remove("is-rec");
-    refresh();
-    var k = grid.count();
-    note(k ? "Recorded " + k + " chord" + (k === 1 ? "" : "s") + " over " + n + " bar" + (n === 1 ? "" : "s") + ". Check the chart below; Record starts a new take."
-           : "No chords were recorded. Check the MIDI keyboard is connected, then press Record again.");
-  }
-  // in time: where the chord was played against what was being heard, snapped to the grid
-  // where in the form a key was struck: { bar, pos (beats; bar -1 is the last bar of the count-in) } or null
-  function whereAt(tMs, offId){
+  // ---- a take: chords and / or a melody played against the band or a click ----
+  // ChordEntry.take decides everything (which notes are chords and which melody, the pedal, where each chord goes, how the melody is written);
+  // this page feeds it what the keyboard sends, with times in ms from the first downbeat, and shows what comes out. sess = the take in progress:
+  //   { tk (the ChordEntry take), kind ("chords" | "melody" | "both"), src ("click": this page keeps the time; "band": the band player does),
+  //     on, bars, free (the take makes the bars), offId (the timing offset field), ctx / T0 / count / k / timer (the click) }
+  function swingFor(kind){ return (kind === "chords" ? style().feel === "swing" : swingOn()) ? BandPlayer.swingFor(tempo()) : 0; }
+  function swingOn(){ return $("ce-mfeel").value === "swing"; }                // (bars in compound meters are read straight)
+  function barStart(k){ var t = 0, i; for (i = 0; i < k; i++) t += grid.geo(i).bpb; return t; }   // beats from the top of the entered bars to the start of bar k
+  function splitKey(){ var v = parseInt($("ce-msplit").value, 10); return isNaN(v) ? 60 : v; }
+  function clampInt(id, lo, hi, d){ var v = parseInt($(id).value, 10); return isNaN(v) ? d : Math.min(hi, Math.max(lo, v)); }
+  function lat(){ return (sess && sess.ctx && sess.ctx.outputLatency) || 0; }
+  function whereAt(tMs, offId){                                                  // where in the form a key was struck: { bar, pos (beats; bar -1 is the last bar of the count-in) } or null
     var ctx = player && player.context(); if (!ctx || !grid) return null;
     var off = parseFloat($(offId).value) || 0;
     var w = player.where(ctx.currentTime - (performance.now() - tMs) / 1000 - off / 1000); if (!w) return null;
-    var info = w.info, bar = info.index;
+    var info = w.info, bar = info.index + pk0();                                  // (the band's form leaves a pickup bar out; the grid has it as its bar 1)
     if (info.ending || info.intro) return null;
-    if (info.countIn){ if (info.bar !== -1) return null; bar = -1; }              // just ahead of bar 1: an early first note
-    return { bar: bar, pos: w.pos };
+    if (info.countIn){ if (info.bar !== -1) return null; bar = -1; }              // just ahead of the first bar played: an early first note
+    else if (sess && sess.range && (info.chorus || bar > sess.range.b || bar < sess.range.a)) return null;
+    return { bar: bar, pos: w.pos, beats: w.beats };
   }
-  function place(sym, tMs){
-    var at0 = whereAt(tMs, "ce-offset"); if (!at0) return null;
-    var bar = at0.bar, pos = at0.pos;
-    if (style().feel === "swing" && !grid.compound) pos = ChordEntry.unswing(pos, BandPlayer.swingFor(tempo()));   // a swung off-beat sits late
-    var at = grid.place(sym, bar, pos, $("ce-quant").value);
-    if (at) refresh();                                                            // the chart fills in as you play
-    return at;
+  // a MIDI timestamp -> ms from the first downbeat (null: not in the take)
+  function sessMs(tMs){
+    if (!sess) return null;
+    if (sess.src === "click") return (sess.ctx.currentTime - (performance.now() - tMs) / 1000 - lat() - (parseFloat($(sess.offId).value) || 0) / 1000 - sess.T0) * 1000;
+    var at = whereAt(tMs, sess.offId); if (!at) return null;
+    var a = sess.range ? sess.range.a : 0;                                        // (a take that starts part-way: the count-in ends on its first bar)
+    return ((at.bar < 0 ? barStart(a) - (sess.range ? at.beats || grid.geo(a).bpb : grid.geo(0).bpb) : barStart(at.bar)) + at.pos) * sess.tk.cfg.beatSec * 1000;
   }
+  function sessBtn(){ return sess && sess.kind === "chords" ? "ce-rec" : "ce-mrec"; }
+  function btnLabel(kind){ return kind === "chords" ? "&#9679; Record" : mode() === "split" ? "&#9679; Record chords and melody" : "&#9679; Record melody"; }
+  function heardChord(rec){
+    if (!rec.reading){ heard(names(rec.midis) + ": play at least two different notes."); return; }
+    var said = rec.reading + (rec.exact ? "" : " (closest match)") + "  ·  " + names(rec.midis), p = rec.placed;
+    heard(p ? said + "  →  bar " + (p.bar + 1) + (p.pos ? ", beat " + (Math.round(p.pos / grid.geo(p.bar).beat * 100) / 100 + 1) : "") : said + "  ·  outside the bars being recorded");
+  }
+  function startSession(kind, src){
+    if (state !== "idle") player.stop();
+    var m = meter(), n, free, g, base = null;
+    var range = null, pre = grid ? JSON.parse(JSON.stringify(grid.melody())) : [];
+    if (kind === "chords"){ n = clampInt("ce-bars", 1, 128, 12); free = src === "click"; g = newGrid(); pins = {}; forgetSections(); if (!free) g.setLength(n); }
+    else if (kind === "both"){ n = clampInt("ce-mbars", 1, 128, 12); free = true; g = newGrid(); pins = {}; forgetSections(); }
+    else {
+      var have = grid && grid.count() > 0;
+      if (src === "band" && !have){ note("Enter the chords first; the band plays them while you play the melody. Or choose a click to play the melody first."); return; }
+      free = !have; n = free ? clampInt("ce-mbars", 1, 128, 12) : grid.length();
+      if (free){ g = newGrid(); pins = {}; forgetSections(); }
+      else if (src === "band"){
+        // Over the band a take starts at the marked bar and replaces only the bars it covers. It is made on a copy of the bars (their chords, no melody),
+        // and what it wrote is put into the page's own bars when it ends (mergeTake).
+        var ra = recStart(); range = { a: ra, b: recEnd(ra) };
+        g = grid.slice(0, grid.length() - 1); g.clearMelody(); base = g.toAbc({ key: $("ce-key").value, title: title() });
+      }
+      else { g = grid; g.clearMelody(); base = abc; }
+    }
+    var bs = 60 / tempo();
+    var cfg = { kind: kind, n: m.n, d: m.d, bars: n, beatSec: bs, key: $("ce-key").value, slash: $("ce-slash").checked, poly: $("ce-mpoly").checked, chordMs: clampInt("ce-mchord", 10, 200, 45),
+      res: parseFloat($("ce-mres").value) || 1, swing: swingFor(kind), snap: $("ce-quant").value, beam: $("ce-mbeam").value, tie: $("ce-mtie").value, detached: $("ce-mdet").value, triplets: $("ce-mtrip").value, graceMs: $("ce-mgrace").checked ? 80 : 0, pickup: range && range.a > 0 ? "off" : $("ce-mpickup").value, split: splitKey(), free: free, grid: g, baseAbc: base,
+      count: free ? ChordEntry.geoOf(m.n, m.d).bpb : g.geo(range ? range.a : 0).bpb,
+      onChord: function(){ refresh(); }, onChordRec: heardChord, onLayout: function(){ refresh(); } };
+    var tk = ChordEntry.take(cfg); if (!range){ grid = tk.grid; refresh(); }
+    sess = { tk: tk, kind: kind, src: src, on: false, bars: n, free: free, offId: kind === "chords" ? "ce-offset" : "ce-moffset", range: range, pre: pre, hi: range ? range.a : 0, heard: false };
+    lastTake = null; keepShow();
+    var btn = sessBtn();
+    if (src === "band"){
+      var p = makePlayer(); p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(1); p.setCountIn(1); p.setStartBar(range ? Math.max(0, range.a - pk0()) : 0);
+      var o = styleOpts();
+      if (kind === "chords"){ p.setVolume("bass", 0); p.setVolume("comp", 0); o.pins = null; }
+      else { p.setVolume("bass", 1); p.setVolume("comp", 1); o.pins = pinMap(); o.melody = false; }
+      p.setInstruments(styleSounds()); p.setOpts(o);
+      sess.on = true; $(btn).innerHTML = "&#9632; Stop"; $(btn).classList.add("is-rec");
+      var nr = range ? range.b - range.a + 1 : n, pt = range ? secOf(range.a) : null;
+      note("Recording " + (range && (range.a > pk0() || range.b < grid.length() - 1) ? "bars " + (range.a + 1) + "\u2013" + (range.b + 1) + (pt && pt.name ? " (" + pt.name + ")" : "") : nr + " bar" + (nr === 1 ? "" : "s")) + (kind === "chords" ? "" : " over the band") + ". Play after the count-in." + (kind === "chords" ? "" : " One note at a time" + ($("ce-mpoly").checked ? ", or a chord" : "") + ".") + (range && range.a > 0 ? " Notes in the count-in go at the end of bar " + range.a + "." : ""));
+      sess.timer = setInterval(function(){ if (!sess || sess.src !== "band" || !player) return; var w = player.where(); if (!w || w.info.countIn || w.info.ending || w.info.intro) return;
+        var gb = w.info.index + pk0();
+        if (sess.range && (w.info.chorus || gb > sess.range.b)){ finishSession(false); return; }      // past the last bar of the take: it ends by itself
+        sess.heard = true; if (gb > sess.hi) sess.hi = gb;
+        sess.tk.tick((barStart(gb) + w.pos) * bs * 1000); }, 40);
+      p.play().catch(function(){ failed(); if (sess) finishSession(true); });
+      return;
+    }
+    note("Loading the click…");
+    BandPlayer.clickLoad().then(function(ctx){
+      if (!sess || sess.on || sess.tk !== tk) return;
+      sess.ctx = ctx; sess.count = cfg.count; sess.T0 = ctx.currentTime + 0.3 + cfg.count * bs; sess.k = -cfg.count; sess.on = true;
+      $(btn).innerHTML = "&#9632; Stop" + (kind === "chords" ? " recording" : ""); $(btn).classList.add("is-rec");
+      note("Recording " + n + " bar" + (n === 1 ? "" : "s") + ". Play after the count-in." + (free ? " To change the bar length, hold the pedal (CC 80) across two downbeats." : ""));
+      sess.timer = setInterval(sessTick, 25); sessTick();
+    }, function(){ sess = null; failed(); });
+  }
+  // the click: one stick a beat on the audio clock, the first of each bar louder; the take's own clock closes a chord left open
+  function sessTick(){
+    if (!sess || !sess.on || sess.src !== "click") return;
+    var ctx = sess.ctx, bs = sess.tk.cfg.beatSec, lay = sess.tk.layout(), last = lay[lay.length - 1], end = last ? last.start + last.len : 0, starts = {};
+    lay.forEach(function(b){ starts[b.start] = 1; });
+    while (sess.T0 + sess.k * bs < ctx.currentTime + 0.18 && sess.k < end){ BandPlayer.clickAt(Math.max(ctx.currentTime, sess.T0 + sess.k * bs), sess.k === -sess.count || !!starts[sess.k]); sess.k++; }
+    var ms = (ctx.currentTime - lat() - sess.T0) * 1000, now = ms / 1000 / bs;
+    sess.tk.tick(ms);
+    if (now < 0) $("ce-status").textContent = "Count-in";
+    else { var bi = 0; for (; bi < lay.length - 1; bi++) if (now < lay[bi].start + lay[bi].len) break; $("ce-status").textContent = "Recording · bar " + (bi + 1); }
+    if (now >= end + 0.15) finishSession(false);
+  }
+  function stopSession(){ if (!sess) return; if (sess.on) finishSession(true); else sess = null; }
+  function finishSession(early){
+    var s = sess; if (!s) return; clearInterval(s.timer); sess = null;
+    $("ce-status").textContent = ""; var btn = s.kind === "chords" ? "ce-rec" : "ce-mrec";
+    $(btn).innerHTML = btnLabel(s.kind); $(btn).classList.remove("is-rec");
+    if (s.src === "band" && state !== "idle") player.stop();
+    s.tk.finish();
+    if (s.range) mergeTake(s);
+    else { grid = s.tk.grid;
+      if (s.kind === "melody"){ var pre0 = s.pre || []; if (s.tk.pickup()){ pre0 = [[]].concat(pre0); shiftSections(1); } lastTake = { pre: pre0, lo: 0, hi: grid.length() - 1, steps: 1, early: !!early }; } }
+    lastLog = s.tk.log(); dwimSigs = {}; dwimSigs[JSON.stringify(grid.melody())] = 1; window.__ceLastTake = lastLog; window.__ceLastTrace = s.tk.trace; logUi();
+    refresh(); keepShow();
+    var chords = grid.count(), notes = 0, ch = s.tk.changes().length;
+    grid.melody().forEach(function(b){ notes += b ? b.length : 0; });
+    var tail = ch ? ", with " + ch + " change" + (ch === 1 ? "" : "s") + " of bar length" : "", sw = s.kind !== "chords" && swingFor(s.kind) ? ", swung eighths as plain eighth notes" : "";
+    if (s.kind === "chords") note(chords ? "Recorded " + chords + " chord" + (chords === 1 ? "" : "s") + " over " + grid.length() + " bar" + (grid.length() === 1 ? "" : "s") + tail + ". Check the chart below; Record starts a new take."
+      : "No chords were recorded. Check the MIDI keyboard is connected, then press Record again.");
+    else if (s.kind === "melody") note(notes ? "Wrote " + notes + " note" + (notes === 1 ? "" : "s") + sw + tail + ". " + (s.free ? "Enter chords over it, or hear it with the click." : "Hear it, or record again to replace the melody.")
+      : "No notes were recorded. Check the MIDI keyboard is connected, then press Record melody again.");
+    else note(chords || notes ? "Recorded " + chords + " chord" + (chords === 1 ? "" : "s") + " and wrote " + notes + " note" + (notes === 1 ? "" : "s") + " over " + grid.length() + " bars" + sw + tail + "." : "Nothing was recorded. Check the MIDI keyboard is connected and the split key (" + names([splitKey()]) + ") is where you want it.");
+  }
+  function record(){
+    if (sess){ stopSession(); return; }
+    startSession("chords", $("ce-with").value === "click" ? "click" : "band");
+  }
+  function recordMelody(){
+    if (sess){ stopSession(); return; }
+    if (mode() === "split"){ startSession("both", "click"); return; }
+    startSession("melody", $("ce-mwith").value === "click" ? "click" : "band");
+  }
+  // the pedal: CC 80, passed on to the take (it listens for two downbeats while the pedal is down)
+  function ccIn(v, t){
+    if (!sess || !sess.on) return;
+    var ms = sessMs(t); if (ms == null) return;
+    var pd = sess.tk.trace.pedal; sess.tk.cc(PEDAL_CC, v, ms); var rec = pd[pd.length - 1];
+    if (v >= 64 && rec && !rec.out) note("Pedal down: play the two downbeats, then lift the pedal.");
+    else if (rec && rec.out) note(rec.out.replace(/^bars of (\d+) beats? from beat (\d+)$/, function(_, len, at){ var g = sess.tk.layout().filter(function(b){ return Math.abs(b.start - +at) < 1e-6; })[0]; return g ? "Bars of " + g.n + "/" + g.d + " from bar " + (sess.tk.layout().indexOf(g) + 1) + "." : "Bar length changed."; }));
+  }
+  // the take just made, to look at or send for a second opinion
+  function logUi(){ $("ce-log").hidden = !lastLog; }
 
   // ---- voicings: a second pass, one chord at a time ----
   function slot(){ var l = slots(); if (!l.length) return null; vAt = Math.min(Math.max(0, vAt), l.length - 1); var o = l[vAt]; o.at = vAt; o.of = l.length; return o; }
@@ -367,17 +535,18 @@
     var due = lis.due(); if (timer){ clearTimeout(timer); timer = null; }
     if (due != null) timer = setTimeout(function(){ timer = null; lis.poll(performance.now() + 1).forEach(onChord); }, Math.max(0, due - performance.now()) + 2);
   }
-  function melodyKey(m, t, down){
-    if (!rec || !rec.melody) return;
-    var at = whereAt(t, "ce-moffset"); if (!at){ return; }
-    var b = at.bar * grid.beats + at.pos;
-    if (down) line.on(m, b); else line.off(m, b);
-  }
   function noteOn(m, vel, t){ sound(m, vel);
-    if (mode() === "melody"){ heard(names([m]) + (rec ? "" : "  \u00b7  press Record melody, then play after the count-in")); melodyKey(m, t, true); return; } var done = lis.noteOn(m, t), h = lis.sounding(); if (h.length) heard(describe(h)); done.forEach(onChord); arm(); }
-  function noteOff(m, t){ if (mode() === "melody"){ melodyKey(m, t, false); return; } lis.noteOff(m, t).forEach(onChord); arm(); }
+    if (splitSetting){ splitSetting = false; setSplit(m); return; }
+    if (sess && sess.on){ heard(names([m])); var ms = sessMs(t); if (ms != null) sess.tk.on(m, vel, ms); return; }
+    if (mode() === "melody" || mode() === "split"){ heard(names([m]) + "  \u00b7  press Record, then play after the count-in"); return; }
+    var done = lis.noteOn(m, t), h = lis.sounding(); if (h.length) heard(describe(h)); done.forEach(onChord); arm(); }
+  function noteOff(m, t){
+    if (sess && sess.on){ var ms = sessMs(t); if (ms != null) sess.tk.off(m, ms); return; }
+    if (mode() === "melody" || mode() === "split") return;
+    lis.noteOff(m, t).forEach(onChord); arm(); }
   function onMidi(e){ var d = e.data, cmd = d[0] & 0xf0, t = e.timeStamp || performance.now();
-    if (cmd === 0x90 && d[2] > 0) noteOn(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) noteOff(d[1], t); }
+    if (cmd === 0x90 && d[2] > 0) noteOn(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) noteOff(d[1], t);
+    else if (cmd === 0xB0 && d[1] === PEDAL_CC) ccIn(d[2], t); }
   function inputs(){
     var sel = $("ce-midi"), want = sel.value, list = [];
     midiAccess.inputs.forEach(function(i){ list.push(i); });
@@ -414,6 +583,271 @@
     onChord({ midis: h, t: performance.now() });
   });
 
+  // ---- sections: the bars in named runs (Intro, Verse 1 ...), one shown at a time ----
+  function pk0(){ return grid && grid.length() > 1 && grid.geo(0).pickup ? 1 : 0; }      // a pickup bar in front: the band's form does not count it
+  function melodyMode(){ return mode() === "melody"; }
+  function secMap(){ var m = {}, n = grid ? grid.length() : 0; secs.forEach(function(x){ if (x.from < n) m[x.from] = x.name; }); return secs.length ? m : null; }
+  function sections(){ var n = grid ? grid.length() : 0, list = secs.filter(function(x){ return x.from < n; });
+    return list.map(function(x, k){ return { name: x.name, from: x.from, to: (k + 1 < list.length ? list[k + 1].from : n) - 1, k: k }; }); }
+  // the same, or the whole tune as one nameless part when it has no sections: what the words belong to
+  function parts(){ var l = sections(); return l.length ? l : (grid && grid.length() ? [{ name: "", from: 0, to: grid.length() - 1, k: 0 }] : []); }
+  function secOf(bar){ var l = parts(), k = 0; l.forEach(function(x, i){ if (x.from <= bar) k = i; }); return l[k] || null; }
+  function secSig(pt){ return JSON.stringify(grid.melody().slice(pt.from, pt.to + 1).map(function(b){ return (b || []).map(function(n){ return [n.pos, n.dur, n.midi]; }); })); }
+  function forgetSections(){ baseMel = {}; secs = []; lyr = {}; song = null; startBar = null; tabSel = -1; lastTake = null; sourceAbc = null; }
+  function shiftSections(by){ secs.forEach(function(x, i){ if (i > 0 || x.from > 0) x.from += by; }); if (startBar != null) startBar += by; }
+  function hasMel(pt){ return !!grid && grid.melody().slice(pt.from, pt.to + 1).some(function(b){ return b && b.length; }); }
+  function kindOf(name){ return String(name || "").toLowerCase().replace(/[\s\d.:()#-]+$/, "").trim(); }
+  // the part whose words and tools are showing: the tab, else the one the marked bar is in, else (a tune with no sections) all of it
+  function curPart(){ var l = parts(); if (!l.length) return null; if (!sections().length) return l[0]; if (tabSel >= 0) return l[tabSel] || null; return startBar != null ? secOf(startBar) : null; }
+  function firstBar(pt){ return pt.from === 0 ? pk0() : pt.from; }
+  function recStart(){
+    if (!grid || !grid.length()) return 0;
+    if (startBar != null && startBar < grid.length()) return Math.max(pk0(), startBar);
+    var pt = tabSel >= 0 ? sections()[tabSel] : null; return pt ? firstBar(pt) : pk0();
+  }
+  function recEnd(a){ var pt = sections().length && $("ce-mrange").value === "section" ? secOf(a) : null; return pt ? pt.to : grid.length() - 1; }
+  function setTab(k){ tabSel = k; startBar = null; decorate(); saveSoon(); }
+  function drawTabs(){
+    var host = $("ce-tabs"), l = sections(); host.hidden = l.length < 2;
+    if (host.hidden){ tabSel = -1; host.innerHTML = ""; return; }
+    if (tabSel >= l.length) tabSel = -1;
+    var ul = document.createElement("ul"); ul.className = "nav nav-tabs"; ul.setAttribute("role", "tablist");
+    [{ name: "All", k: -1 }].concat(l).forEach(function(x){
+      var li = document.createElement("li"); li.className = "nav-item"; li.setAttribute("role", "presentation");
+      var a = document.createElement("a"); a.className = "nav-link" + (x.k === tabSel ? " active" : "") + (x.k >= 0 && hasMel(x) ? " has-mel" : ""); a.setAttribute("role", "tab"); a.setAttribute("data-sec", x.k);
+      a.setAttribute("aria-selected", String(x.k === tabSel)); a.tabIndex = 0; a.textContent = x.name || "Section " + (x.k + 1);
+      if (x.k >= 0) a.title = "Bars " + (x.from + 1) + "\u2013" + (x.to + 1) + (hasMel(x) ? ", with a melody" : ", no melody yet");
+      a.addEventListener("click", function(e){ e.preventDefault(); setTab(x.k); });
+      a.addEventListener("keydown", function(e){ if (e.key === "Enter" || e.key === " "){ e.preventDefault(); setTab(x.k); } });
+      li.appendChild(a); ul.appendChild(li); });
+    host.innerHTML = ""; host.appendChild(ul);
+  }
+  // the chart and the notation as the tab wants them, the bar a take starts on, and the section's own panel
+  function decorate(){
+    drawTabs();
+    var root = $("ce-chart"), cur = tabSel >= 0 ? sections()[tabSel] : null, sb = melodyMode() && grid && grid.count() ? recStart() : -1;
+    Array.prototype.forEach.call(root.querySelectorAll(".tc-system"), function(r){ var f = r.querySelector(".tc-bar[data-bar]"), b = f ? +f.getAttribute("data-bar") : -1; r.hidden = !!cur && (b < cur.from || b > cur.to); });
+    Array.prototype.forEach.call(root.querySelectorAll(".tc-bar[data-bar]"), function(c){ var b = +c.getAttribute("data-bar"); if (!c.classList.contains("tc-misfit")) c.title = "Bar " + (b + 1); c.classList.toggle("ce-start", b === sb); });
+    var pkEl = root.querySelector(".tc-pickup"); if (pkEl) pkEl.hidden = !!cur && cur.from > 0;
+    $("ce-mrange-f").hidden = !(melodyMode() && sections().length);
+    var ms = $("ce-mstart"); ms.hidden = sb < 0;
+    if (sb >= 0){ var pt = secOf(sb), e = recEnd(sb); ms.textContent = "A take starts at bar " + (sb + 1) + (pt && pt.name ? " (" + pt.name + ")" : "") + " and runs to bar " + (e + 1) + ". Click a bar in the chart to start somewhere else. Only the bars a take covers are replaced."; }
+    scoreTabs(); secPanel();
+  }
+  function scoreTabs(){
+    var box = $("ce-score"), svgs = box.querySelectorAll("svg"), off = svgs.length - scoreLines.length;
+    if (off < 0 || off > 1){ Array.prototype.forEach.call(svgs, function(v){ (v.parentNode !== box ? v.parentNode : v).hidden = false; }); return; }
+    Array.prototype.forEach.call(svgs, function(v, i){ var ln = scoreLines[i - off], hide = tabSel >= 0 && !!ln && ln.sec !== tabSel; (v.parentNode !== box ? v.parentNode : v).hidden = hide; });
+  }
+  $("ce-chart").addEventListener("click", function(e){
+    var c = e.target.closest ? e.target.closest(".tc-bar[data-bar]") : null; if (!c || sess) return; var b = +c.getAttribute("data-bar");
+    if (melodyMode()){ startBar = Math.max(pk0(), b); decorate(); saveSoon(); }
+    else if (mode() === "step"){ grid.setCursor(b, 0); $("ce-bar").value = b + 1; heard("The next chord goes in bar " + (b + 1) + "."); }
+  });
+
+  // ---- a take over the band, put into the page's bars; and giving part of it back ----
+  function copyBar(b, keepTie){ return (b || []).map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: !!(keepTie && n.tie) }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces && n.graces.length) o.graces = n.graces.slice(); return o; }); }
+  function mergeTake(s){
+    var q = s.tk.grid.melody(), pk = s.tk.pickup(), a = s.range.a, hi = Math.min(s.hi, s.range.b), pre = s.pre || [], steps = 1, early = hi < s.range.b;
+    if (!s.heard){ lastTake = null; return; }                                   // (stopped in the count-in: nothing changes)
+    if (pk){ grid.insertPickup(pk); shiftSections(1); pre = [[]].concat(pre); a = 0; hi++; steps = 2; }      // the notes played before bar 1: a short bar in front, on the page too
+    var lo = a; if (lo > 0 && q[lo - 1] && q[lo - 1].length) lo--;              // notes played in the count-in belong to the bar before
+    var next = JSON.parse(JSON.stringify(grid.melody())), i; while (next.length < grid.length()) next.push([]);
+    for (i = lo; i <= hi; i++) next[i] = copyBar(q[i], i < hi);                  // (a tie out of the last bar kept has nothing to join)
+    grid.setMelody(next);
+    lastTake = { pre: pre, lo: lo, hi: hi, steps: steps, early: early };
+  }
+  function keepShow(){
+    var row = $("ce-keep"); row.hidden = !lastTake || !melodyMode() && mode() !== "split"; if (row.hidden) return;
+    var f = $("ce-keep-bar"); f.min = lastTake.lo + 1; f.max = lastTake.hi + 1; f.value = Math.max(lastTake.lo + 1, lastTake.early ? lastTake.hi : lastTake.hi + 1);
+    $("ce-keep-note").textContent = "The take wrote bars " + (lastTake.lo + 1) + "\u2013" + (lastTake.hi + 1) + ".";
+  }
+  $("ce-keep-go").addEventListener("click", function(){
+    if (!lastTake || !grid) return;
+    var n = Math.max(lastTake.lo, Math.min(lastTake.hi + 1, parseInt($("ce-keep-bar").value, 10) || 0)) - 1, cur = JSON.parse(JSON.stringify(grid.melody())), i;      // n = the last bar kept (0-based; lo - 1 keeps none)
+    if (n >= lastTake.hi){ note("That keeps the whole take: nothing to discard."); return; }
+    while (cur.length < grid.length()) cur.push([]);
+    for (i = n + 1; i <= lastTake.hi; i++) cur[i] = copyBar(lastTake.pre[i], true);
+    if (n >= 0) cur[n] = copyBar(cur[n], false);
+    grid.setMelody(cur); var was = lastTake.hi; lastTake = { pre: lastTake.pre, lo: lastTake.lo, hi: Math.max(lastTake.lo, n), steps: lastTake.steps + 1, early: true };
+    if (n < lastTake.lo) lastTake = null;
+    startBar = Math.min(grid.length() - 1, n + 1); var pt = secOf(startBar); if (tabSel >= 0 && pt && sections().length) tabSel = pt.k;
+    dwimSigs = {}; refresh(); keepShow();
+    note((n >= 0 && lastTake ? "Kept the take up to bar " + (n + 1) + "; bars " : "Discarded the take; bars ") + (n + 2) + "\u2013" + (was + 1) + " are as they were before it. The next take starts at bar " + (startBar + 1) + ".");
+  });
+  // this section's melody onto the later sections of the same kind (Verse 1 -> Verse 2, Verse 3) with as many bars
+  function laterTwins(pt){ return !pt || !hasMel(pt) ? [] : sections().filter(function(x){ return x.k > pt.k && kindOf(x.name) === kindOf(pt.name) && x.to - x.from === pt.to - pt.from; }); }
+  $("ce-sec-apply").addEventListener("click", function(){
+    var pt = curPart(), tw = laterTwins(pt); if (!tw.length) return;
+    var m = JSON.parse(JSON.stringify(grid.melody())), len = pt.to - pt.from + 1, i; while (m.length < grid.length()) m.push([]);
+    tw.forEach(function(x){ for (i = 0; i < len; i++) m[x.from + i] = copyBar(m[pt.from + i], i < len - 1); });
+    grid.setMelody(m); dwimSigs = {}; lastTake = null; refresh(); keepShow();
+    note("The melody of " + (pt.name || "this section") + " is now on " + tw.map(function(x){ return x.name; }).join(", ") + ", each with its own words under it. Undo the take puts them back.");
+  });
+
+  // ---- the words: under the notes, a section at a time ----
+  function words(k){ return lyr[k] || (lyr[k] = { words: "", wl: [], mine: false }); }
+  // the ABC's lines: its head (to K:), then each P: line and each line of music with the section it is in and its number within it
+  function scoreParts(){
+    var head = [], music = [], k = -1, j = 0, body = false, named = sections().length > 0;
+    abc.split("\n").forEach(function(l){ var t = l.trim();
+      if (!body){ if (!/^T:/.test(t)) head.push(l); if (/^K:/.test(t)) body = true; return; }
+      if (/^P:/.test(t)){ k++; j = 0; music.push({ p: l }); return; }
+      if (t) music.push({ text: l, sec: named ? Math.max(0, k) : 0, j: j++ }); });
+    return { head: head, music: music };
+  }
+  function wLine(t){ t = String(t || "").trim(); return !t ? "" : /^w:/.test(t) ? t : "w: " + t; }
+  function scoreText(){
+    var sp = scoreParts(), out = sp.head.slice(), lines = [];
+    sp.music.forEach(function(m){ if (m.p){ out.push(m.p); return; } out.push(m.text); lines.push(m);
+      var L = lyr[m.sec], w = L ? wLine(L.wl[m.j]) : ""; if (w) out.push(w); });
+    return { text: out.join("\n"), lines: lines };
+  }
+  // a draft for every section whose words are not yours yet: one syllable to a note
+  function draftAll(){
+    if (!grid || !window.LyricAlign) return;
+    var sp = scoreParts(), by = {}; sp.music.forEach(function(m){ if (m.text != null) (by[m.sec] = by[m.sec] || []).push(m.text); });
+    parts().forEach(function(pt){ var L = lyr[pt.k]; if (!L) return; var lines = by[pt.k] || []; L.lines = lines;
+      if (L.mine){ L.wl = L.wl.slice(0, Math.max(lines.length, L.wl.length)); return; }
+      var d = hasMel(pt) && /[A-Za-z]/.test(L.words) ? LyricAlign.draft(lines, L.words.split("\n")) : { lines: [], notes: [], guesses: {} };
+      L.wl = d.lines; L.notes = d.notes; L.guesses = d.guesses; });
+    if (!dictAsked && Object.keys(lyr).some(function(k){ return /[A-Za-z]/.test(lyr[k].words); })){ dictAsked = true;
+      LyricAlign.load("/apps/shared/syllables-en.js?v=1").then(function(ok){ if (ok && grid) refresh(); }); }
+  }
+  var dictAsked = false, secShown = null;
+  function secPanel(){
+    var pt = curPart(), box = $("ce-sec"), any = parts().length > 0 && grid && grid.count() > 0;
+    box.hidden = !any; if (!any) return;
+    $("ce-lyr").hidden = !pt; $("ce-wl-draft").parentNode.hidden = !pt;
+    $("ce-sec-name").textContent = pt ? (pt.name ? pt.name + ": the words" : "The words") : "Words";
+    var tw = laterTwins(pt), ab = $("ce-sec-apply"); ab.hidden = !tw.length; if (tw.length) ab.textContent = "Apply this melody to " + tw.map(function(x){ return x.name; }).join(", ");
+    $("ce-sec-note").textContent = !pt ? "Choose a section (a tab above, or click one of its bars in Melody mode) to see its words and put them under the notes." : !hasMel(pt) ? "No melody here yet." : "";
+    if (!pt){ secShown = null; $("ce-wl-warn").textContent = ""; return; }
+    var L = words(pt.k), wa = $("ce-words"), wb = $("ce-wl"), text = L.wl.map(function(x){ return x || ""; }).join("\n");
+    if (secShown !== pt.k || document.activeElement !== wa) { if (wa.value !== L.words) wa.value = L.words; }
+    if (secShown !== pt.k || document.activeElement !== wb) { if (wb.value !== text) wb.value = text; }
+    secShown = pt.k;
+    $("ce-wl-state").textContent = !hasMel(pt) ? "" : L.mine ? "Yours: edited by hand, left alone when the melody or the words change." : /[A-Za-z]/.test(L.words) ? "A draft: it follows the words and the melody." : "No words yet.";
+    var warn = [];
+    if (hasMel(pt) && L.lines){
+      warn = LyricAlign.check(L.lines, L.wl).map(function(x){ return x.charAt(0).toUpperCase() + x.slice(1) + "."; });
+      if (!L.mine && L.notes) L.notes.forEach(function(x){ warn.push(x.charAt(0).toUpperCase() + x.slice(1) + "."); });
+      var df = /[A-Za-z]/.test(L.words) ? LyricAlign.differs(L.wl, L.words.split("\n")) : null; if (df && L.mine) warn.push(df);
+      var gs = !L.mine && L.guesses ? Object.keys(L.guesses) : []; if (gs.length) warn.push("Not in the dictionary, split by their vowels: " + gs.map(function(g){ return L.guesses[g]; }).join(", ") + ".");
+    }
+    $("ce-wl-warn").textContent = warn.join(" ");
+  }
+  var lyrTimer = null;
+  function lyrSoon(){ clearTimeout(lyrTimer); lyrTimer = setTimeout(function(){ lyrTimer = null; if (grid) refresh(); }, 250); }
+  $("ce-words").addEventListener("input", function(){ var pt = curPart(); if (!pt) return; words(pt.k).words = $("ce-words").value; lyrSoon(); });
+  $("ce-wl").addEventListener("input", function(){ var pt = curPart(); if (!pt) return; var L = words(pt.k); L.wl = $("ce-wl").value.split("\n").map(wLine); L.mine = true; lyrSoon(); });
+  $("ce-wl-draft").addEventListener("click", function(){ var pt = curPart(); if (!pt) return; words(pt.k).mine = false; secShown = null; refresh(); });
+
+  // ---- a ChordPro song file: its sections, to take the words from and to write the melody back into ----
+  var CHO_DIR = /^\s*\{\s*([a-z_]+)\s*(?::\s*(.*?)\s*)?\}\s*$/i;
+  var CHO_START = { start_of_verse: "verse", sov: "verse", start_of_chorus: "chorus", soc: "chorus", start_of_bridge: "bridge", sob: "bridge", start_of_part: "part", sop: "part" };
+  var CHO_END = { end_of_verse: 1, eov: 1, end_of_chorus: 1, eoc: 1, end_of_bridge: 1, eob: 1, end_of_part: 1, eop: 1, end_of_tab: 1, eot: 1 };
+  // [{ name, head (the line of its heading, -1 for none), abc: { a, b } (the lines of its first tune block's directives) | null, words: [plain lines], first (its first line) }]
+  function choSections(text){
+    var lines = text.split("\n"), out = [], cur = null, verses = 0, inAbc = null, inGrid = false, inVersion = false;
+    function begin(name, i){ cur = { name: name, head: i, abc: null, words: [], first: i }; out.push(cur); }
+    lines.forEach(function(raw, i){
+      var line = raw.replace(/\s+$/, ""), m = CHO_DIR.exec(line), nm = m ? m[1].toLowerCase() : "", val = m ? (m[2] || "").trim() : "";
+      if (inVersion){ if (nm === "end_of_version") inVersion = false; return; }
+      if (inGrid){ if (nm === "end_of_grid" || nm === "eog") inGrid = false; return; }
+      if (inAbc){ if (nm === "end_of_abc" || nm === "eoa"){ if (!inAbc.band){ if (!cur) begin("Tune", inAbc.a); if (!cur.abc) cur.abc = { a: inAbc.a, b: i }; } inAbc = null; } return; }
+      if (!line.trim() || /^\s*#/.test(line)) return;
+      if (m){
+        if (nm === "start_of_abc" || nm === "soa"){ inAbc = { a: i, band: val.toLowerCase() === "band" }; return; }
+        if (nm === "start_of_version"){ inVersion = true; return; }
+        if (nm === "start_of_grid" || nm === "sog"){ inGrid = true; if (!cur) begin(val || "Lyrics", i); return; }
+        if (nm === "chorus" || nm === "recall"){ cur = null; return; }
+        if (CHO_END[nm]){ cur = null; return; }
+        if (CHO_START[nm]){ var kind = CHO_START[nm];
+          if (kind === "verse" && !val){ verses++; val = "Verse " + verses; } else if (kind === "verse"){ var d = /\d+/.exec(val); if (d) verses = +d[0]; }
+          begin(val || (kind === "chorus" ? "Chorus" : kind === "bridge" ? "Bridge" : kind.charAt(0).toUpperCase() + kind.slice(1)), i); return; }
+        if (nm === "comment" || nm === "c" || nm === "comment_italic" || nm === "ci"){ begin(val, i); return; }
+        return;
+      }
+      if (!cur) begin("Lyrics", -1), cur.first = i;
+      var t = line.trim(), it = /^\*(.+)\*$/.exec(t); if (it) t = it[1];
+      t = t.replace(/\[[^\]]*\]/g, "").trim(); if (/[A-Za-z]/.test(t)) cur.words.push(t);
+    });
+    return out;
+  }
+  // which section of the file each section of the page is: the same name, the same time round (the second Chorus is the file's second Chorus, if it has one)
+  function choMatch(list){
+    var seen = {}, by = {}, out = {};
+    list.forEach(function(c, i){ var n = c.name.trim().toLowerCase(); (by[n] = by[n] || []).push(i); });
+    sections().forEach(function(x){ var n = x.name.trim().toLowerCase(), k = seen[n] || 0; seen[n] = k + 1; if (by[n] && by[n][k] != null) out[x.k] = by[n][k]; });
+    return out;
+  }
+  function wordsFromSong(){
+    if (!song || !song.cho) return; var list = choSections(song.cho), map = choMatch(list);
+    Object.keys(map).forEach(function(k){ var L = words(+k); if (!L.words && !L.mine) L.words = list[map[k]].words.join("\n"); });
+  }
+  // a section's melody as an ABC block of its own: its meter, unit and key, its lines, the words under them
+  function melodyBlock(pt){
+    var g = grid.slice(pt.from, pt.to), m = g.melody().map(function(b, i){ return copyBar(b, i < pt.to - pt.from); }); g.setMelody(m);
+    var text = g.toAbc({ key: $("ce-key").value, beam: $("ce-mbeam").value, tie: $("ce-mtie").value }).split("\n").filter(function(l){ return !/^[XT]:/.test(l); });
+    var L = lyr[pt.k], out = [], j = 0, body = false, any = L && L.wl.some(function(w){ return /\S/.test(String(w || "").replace(/^w:/, "")); });
+    text.forEach(function(l){
+      if (!body){ out.push(l); if (/^K:/.test(l)){ body = true; if (any && !L.mine) out.push("% lyrics: draft"); } return; }
+      out.push(l); var w = L ? wLine(L.wl[j]) : ""; j++; if (w) out.push(w); });
+    return out;
+  }
+  function chordProSong(){
+    var lines = song.cho.split("\n"), list = choSections(song.cho), map = choMatch(list), edits = [], done = [], left = [];
+    parts().forEach(function(pt){
+      if (!hasMel(pt)) return; var ci = map[pt.k], c = ci != null ? list[ci] : null, L = lyr[pt.k];
+      if (baseMel[pt.k] === secSig(pt) && !(L && L.wl.some(function(w){ return /\S/.test(String(w || "").replace(/^w:/, "")); }))) return;      // as it came, and no words under it: the file's own block stays
+      if (!c || done.indexOf(ci) >= 0){ if (!c) left.push(pt.name || "the tune"); return; } done.push(ci);
+      var blk = melodyBlock(pt);
+      if (c.abc) edits.push({ at: c.abc.a + 1, del: c.abc.b - c.abc.a - 1, put: blk });
+      else edits.push({ at: c.head >= 0 ? c.head + 1 : c.first, del: 0, put: ["{start_of_abc: melody}"].concat(blk, ["{end_of_abc}"]) });
+    });
+    edits.sort(function(x, y){ return y.at - x.at; }).forEach(function(e){ Array.prototype.splice.apply(lines, [e.at, e.del].concat(e.put)); });
+    chordProSong.left = left; chordProSong.done = done.length;
+    return lines.join("\n");
+  }
+
+  // ---- the work in progress, kept in this browser (localStorage "ceWork:<song>"; "ceWorkLast" names the one last worked on) ----
+  function slugOf(t){ return String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "untitled"; }
+  var saveTimer = null;
+  function saveSoon(){ if (booting) return; clearTimeout(saveTimer); saveTimer = setTimeout(saveWork, 400); }
+  function saveWork(){
+    clearTimeout(saveTimer); saveTimer = null; if (booting || !grid || sess || !grid.length()) return;
+    var id = workId || (song && song.slug) || slugOf(title()), L = {};
+    Object.keys(lyr).forEach(function(k){ L[k] = { words: lyr[k].words, wl: lyr[k].wl, mine: !!lyr[k].mine }; });
+    try {
+      localStorage.setItem("ceWork:" + id, JSON.stringify({ v: 1, at: Date.now(), id: id, title: $("ce-title").value, key: $("ce-key").value, meter: $("ce-meter").value, tempo: tempo(), style: $("ce-style").value,
+        mode: mode(), grid: grid.state(), secs: secs, lyr: L, song: song, pins: pins, startBar: startBar, tabSel: tabSel, sourceAbc: sourceAbc, baseMel: baseMel }));
+      localStorage.setItem("ceWorkLast", id); workId = id;
+    } catch (e) {}
+  }
+  function readWork(id){ try { var w = JSON.parse(localStorage.getItem("ceWork:" + id) || "null"); return w && w.v === 1 && w.grid && w.grid.bars && w.grid.bars.length ? w : null; } catch (e) { return null; } }
+  function dropWork(){ try { if (workId) localStorage.removeItem("ceWork:" + workId); localStorage.removeItem("ceWorkLast"); } catch (e) {} workId = null; workSay(""); }
+  function workSay(text, fresh){ $("ce-work").hidden = !text; $("ce-work-note").textContent = text || ""; $("ce-work-fresh").hidden = !fresh; }
+  function restoreWork(w){
+    if (!Array.prototype.some.call($("ce-meter").options, function(o){ return o.value === w.meter; })){ var o = document.createElement("option"); o.textContent = w.meter; $("ce-meter").appendChild(o); }
+    $("ce-meter").value = w.meter; meterSync();
+    if (KEYS.indexOf(w.key) >= 0) $("ce-key").value = w.key;
+    $("ce-title").value = w.title || "My changes"; if (w.tempo) $("ce-tempo").value = w.tempo;
+    if (w.style && STYLES.some(function(x){ return x.id === w.style; })) $("ce-style").value = w.style;
+    grid = newGrid(); grid.restore(w.grid);
+    secs = Array.isArray(w.secs) ? w.secs : []; lyr = w.lyr || {}; song = w.song || null; pins = w.pins || {}; startBar = w.startBar == null ? null : w.startBar; tabSel = w.tabSel == null ? -1 : w.tabSel;
+    sourceAbc = w.sourceAbc || null; workId = w.id; lastTake = null; baseMel = w.baseMel || {};
+    if (w.mode && Array.prototype.some.call($("ce-mode").options, function(o){ return o.value === w.mode; })) $("ce-mode").value = w.mode;
+    refresh(); modeSync();
+  }
+  function when(at){ var d = new Date(at); return d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + ", " + d.toLocaleTimeString(undefined, { hour: "numeric", minute: "2-digit" }); }
+  function restoreLast(){
+    var id = null; try { id = localStorage.getItem("ceWorkLast"); } catch (e) {} var w = id ? readWork(id) : null; if (!w) return;
+    restoreWork(w); workSay("Your work on " + (w.title || "this tune") + " is back as you left it (" + when(w.at) + "). It is kept in this browser as you go. Start empty clears it.");
+  }
+  $("ce-work-fresh").addEventListener("click", function(){ if (!freshH) return; var h = freshH; dropWork(); loadTune(h, true); });
+  window.addEventListener("pagehide", function(){ if (saveTimer) saveWork(); });
+
   // ---- sending it on ----
   function sendNote(t){ $("ce-send-note").textContent = t || ""; }
   function ready(){ if (grid && grid.count()) return true; sendNote("Enter some chords first."); return false; }
@@ -441,6 +875,7 @@
   // The changes as a ChordPro song file for the lyrics site: the ABC goes in whole, in a block only the band reads, and every
   // section named by a P: line gets a heading for its words. Changes with no sections become one section, "Verse".
   function chordPro(){
+    if (song && song.cho) return chordProSong();       // a song from the lyrics site: its own file, with the melodies written in
     var lines = abc.split("\n"), named = [], seenK = false, body = [];
     lines.forEach(function(l){ var t = l.trim();
       if (seenK && /^P:\s*\S/.test(t)) named.push(t.slice(2).trim());
@@ -448,7 +883,11 @@
       body.push(l); });
     if (!named.length) named = ["Verse"];
     var out = ["{title: " + title() + "}", "{tempo: " + tempo() + "}", "", "# What the band plays. Each P: line names the section whose bars follow.", "{start_of_abc: band}"].concat(body.filter(function(l){ return l.trim(); }), ["{end_of_abc}", ""]);
-    named.forEach(function(n){ out.push("{comment: " + n + "}", "# the words of this section, with [chords] in brackets where they change", ""); });
+    named.forEach(function(n, i){
+      var pt = parts()[i], L = pt && lyr[pt.k]; out.push("{comment: " + n + "}");
+      if (pt && hasMel(pt)) out = out.concat(["{start_of_abc: melody}"], melodyBlock(pt), ["{end_of_abc}"]);
+      if (L && /[A-Za-z]/.test(L.words)) out = out.concat(L.words.split("\n")); else out.push("# the words of this section, with [chords] in brackets where they change");
+      out.push(""); });
     return out.join("\n");
   }
   $("ce-cho-copy").addEventListener("click", function(){
@@ -459,9 +898,10 @@
   $("ce-cho-download").addEventListener("click", function(){
     if (!ready()) return;
     var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([chordPro()], { type: "text/plain" }));
-    a.download = (title().replace(/[^\w\- ]+/g, "").trim().replace(/\s+/g, "-").toLowerCase() || "changes") + ".cho";
+    a.download = ((song && song.slug) || title().replace(/[^\w\- ]+/g, "").trim().replace(/\s+/g, "-").toLowerCase() || "changes") + ".cho";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
-    sendNote("Downloaded " + a.download + ". Put it in the lyrics site's extra folder and add the words.");
+    sendNote(song && song.cho ? "Downloaded " + a.download + ": the song's own file with the melody of " + chordProSong.done + " section" + (chordProSong.done === 1 ? "" : "s") + " written in, the words under the notes." + (chordProSong.left.length ? " No place was found in the file for " + chordProSong.left.join(", ") + "." : "") + " Put it back in the lyrics site's extra folder."
+      : "Downloaded " + a.download + ". Put it in the lyrics site's extra folder" + (grid.hasMelody() ? "." : " and add the words."));
   });
   window.__ceChordPro = chordPro;                             // (for the tests)
   $("ce-download").addEventListener("click", function(){
@@ -474,12 +914,49 @@
   // Changes handed over by the Backing Track ("Enter or voice these from a keyboard"): localStorage.entryHandoff
   //   { v:1, from:"backing-track", at, abc, tempo, pinMap }
   function loadHandoff(){
-    if (!/[?&]from=backing-track(&|$)/.test(location.search)) return;
+    if (/^#from=tune&d=/.test(location.hash)){ loadTuneLink(); return true; }
+    if (!/[?&]from=backing-track(&|$)/.test(location.search)) return false;
     var h = null; try { h = JSON.parse(localStorage.getItem("entryHandoff") || "null"); localStorage.removeItem("entryHandoff"); } catch (e) { h = null; }
     try { history.replaceState(null, "", location.pathname + location.hash); } catch (e) {}
-    if (!h || h.from !== "backing-track" || typeof h.abc !== "string" || !(Math.abs(Date.now() - h.at) < 600000)){ note("The changes from the Backing Track didn't come through. Send them again from there."); return; }
+    if (!h || h.from !== "backing-track" || typeof h.abc !== "string" || !(Math.abs(Date.now() - h.at) < 600000)){ note("The changes from the Backing Track didn't come through. Send them again from there."); return true; }
+    var bars = takeChanges(h);
+    if (bars < 0){ note("The changes from the Backing Track could not be read."); return true; }
+    note("Loaded " + bars + " bars from the Backing Track. Add chords after them, set the bar number to replace one, or switch to Voicings.");
+    return true;
+  }
+  // A tune sent from another page (the lyrics site's Band panel, the Tune Library) that has no melody, or only part of one:
+  // the link is  chord-entry.html#from=tune&d=<encoded JSON { abc, title, tempo, style, have, total, slug, cho (the song's ChordPro file),
+  // melody (per bar of the ABC, [{ pos, dur, midi }] in beats of the meter's own note, or null) }>.  It travels in the address, not in storage, so it
+  // works from another site. The chords are loaded and the page is set to record the melody against the band, a section at a time.
+  // Work already saved here for the same song (the same chords) is picked up instead.
+  function loadTuneLink(){
+    var h = null; try { h = JSON.parse(decodeURIComponent(location.hash.slice("#from=tune&d=".length))); } catch (e) { h = null; }
+    try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {}
+    if (!h || typeof h.abc !== "string"){ note("The tune didn't come through. Send it again from the page it came from."); return; }
+    loadTune(h, false);
+  }
+  function loadTune(h, fresh){
+    var id = h.slug || slugOf(h.title || (/^T:\s*(.+)$/m.exec(h.abc) || [])[1]), w = fresh ? null : readWork(id);
+    if (w && w.sourceAbc === h.abc){
+      restoreWork(w); if (h.cho) song = { slug: h.slug || "", title: h.title || "", cho: h.cho };
+      freshH = h; $("ce-mode").value = "melody"; $("ce-mwith").value = "band"; modeSync(); wordsFromSong(); refresh();
+      workSay("Picked up your work on " + (h.title || "this tune") + " where you left it (" + when(w.at) + ").", true);
+      note("Your saved work on " + (h.title || "the tune") + " is back. Choose a section and press Record melody to carry on."); return;
+    }
+    var bars = takeChanges(h);
+    if (bars < 0){ note("The chords of that tune could not be read."); return; }
+    workId = id; sourceAbc = h.abc; freshH = null; workSay("");
+    $("ce-mode").value = "melody"; $("ce-mwith").value = "band";
+    var l = sections(), firstEmpty = l.filter(function(x){ return !hasMel(x); })[0]; if (l.length > 1) tabSel = (firstEmpty || l[0]).k;      // open on the first section still to do
+    modeSync(); refresh();
+    var part = h.total ? (h.have ? " It has the melody for " + h.have + " of its " + h.total + " bars." : " It has no melody yet.") : "";
+    note("Loaded " + bars + " bars of " + (h.title || "the tune") + "." + part + " Press Record melody and play it in with the band" + (l.length > 1 ? ", a section at a time." : "."));
+  }
+  // Put a chart (ABC) into the grid and its tempo, style, meter, key and title into the set-up; the bars read, or -1.
+  // Its sections (P: lines) come with it, the melody it has, and the words of a song file sent with it.
+  function takeChanges(h){
     var p = null; try { p = TuneChart.parse(h.abc); } catch (e) {}
-    if (!p || !p.bars.length){ note("The changes from the Backing Track could not be read."); return; }
+    if (!p || !p.bars.length) return -1;
     var id = p.meterN + "/" + p.meterD;
     if (!Array.prototype.some.call($("ce-meter").options, function(o){ return o.value === id; })){ var o = document.createElement("option"); o.textContent = id; $("ce-meter").appendChild(o); }
     $("ce-meter").value = id; meterSync();
@@ -487,35 +964,94 @@
     var t = /^T:\s*(.+)$/m.exec(h.abc); if (t) $("ce-title").value = t[1].trim();
     if (h.tempo) $("ce-tempo").value = h.tempo;
     if (h.style && STYLES.some(function(x){ return x.id === h.style; })) $("ce-style").value = h.style;
-    grid = newGrid(); grid.load(p); pins = {}; refresh();
+    forgetSections(); workId = null;
+    grid = newGrid(); grid.load(p); pins = {};
+    var order = p.playOrder && p.playOrder.length ? p.playOrder : p.bars.map(function(b, i){ return i; });
+    order.forEach(function(bi, i){ var b = p.bars[bi]; if (b && b.section != null) secs.push({ name: String(b.section || "Section " + (secs.length + 1)), from: i }); });
+    if (secs.length) secs[0].from = 0;
+    var mel = null;
+    try {
+      if (Array.isArray(h.melody) && h.melody.length === p.bars.length)
+        mel = order.map(function(bi){ var f = 8 / ((p.bars[bi].meter || { d: p.meterD }).d || 4); return (h.melody[bi] || []).map(function(n){ return { pos: Math.round(n.pos * f * 2) / 2, dur: Math.max(0.5, Math.round(n.dur * f * 2) / 2), midi: n.midi, tie: false }; }); });
+      else if (window.BandTuneScore && BandTuneScore.hasNotes(h.abc)){
+        var m = BandTuneScore.melody(h.abc, p, function(b){ var mt = b && b.meter ? b.meter : { n: p.meterN, d: p.meterD }; return ChordEntry.geoOf(mt.n, mt.d); });
+        mel = order.map(function(bi){ return (m[bi] || []).map(function(n){ return Object.assign({}, n); }); }); }
+    } catch (e) { mel = null; }
+    if (mel && mel.some(function(b){ return b.length; })) grid.setMelody(mel);
+    if (h.cho) song = { slug: h.slug || "", title: h.title || "", cho: String(h.cho) };
+    refresh(); wordsFromSong(); parts().forEach(function(pt){ baseMel[pt.k] = secSig(pt); });
     var ck = {}; slots().forEach(function(o){ ck[o.key] = o.chord.key; });
     Object.keys(h.pinMap || {}).forEach(function(k){ var m = h.pinMap[k]; if (ck[k] && Array.isArray(m) && m.length && m.every(function(x){ return isFinite(x) && x >= 0 && x <= 127; })) pins[k] = { midis: m.slice(), ckey: ck[k] }; });
     refresh();
-    note("Loaded " + grid.length() + " bars from the Backing Track. Add chords after them, set the bar number to replace one, or switch to Voicings.");
+    return grid.length();
   }
 
   // ---- wire ----
   function modeSync(){
-    var m = mode(); if (rec) player.stop();
+    var m = mode(); if (sess) stopSession();
     $("ce-step").hidden = m !== "step"; $("ce-live").hidden = m !== "live"; $("ce-voice").hidden = $("ce-vnow").hidden = m !== "voice"; $("ce-slash-wrap").hidden = m === "voice" || m === "melody";
-    $("ce-melody").hidden = m !== "melody"; $("ce-keys").hidden = $("ce-enter-row").hidden = m === "melody";
+    $("ce-melody").hidden = $("ce-mwrite").hidden = m !== "melody" && m !== "split"; $("ce-keys").hidden = $("ce-enter-row").hidden = m === "melody" || m === "split";
+    $("ce-split-f").hidden = $("ce-msplit-set").hidden = m !== "split"; $("ce-mwith").closest(".ce-field").hidden = m === "split"; mwithSync();
+    $("ce-mrec").innerHTML = btnLabel("melody");
     lis.setMode(m === "live" ? "live" : "step");
-    note(m === "melody" ? "Play one note at a time with the band; Record melody replaces the melody there." : m === "live" ? "Record replaces what is there with a new take." : m === "voice" ? "Play the notes you want for the chord shown. The band will play exactly those." : "");
+    note(m === "split" ? "Left hand chords, right hand melody, against the click. Melody from " + names([splitKey()]) + " up. Hold the pedal (CC 80) across two downbeats to change the bar length." : m === "melody" ? "Play one note at a time with the band; Record melody replaces the melody there." : m === "live" ? "Record replaces what is there with a new take." : m === "voice" ? "Play the notes you want for the chord shown. The band will play exactly those." : "");
     heard(""); if (m !== "voice" && state === "idle" && chart) chart.setLive(-1);
-    voiceShow();
+    voiceShow(); if (grid){ decorate(); keepShow(); }
   }
   (function(){ var sel = $("ce-style"), groups = {};
     STYLES.forEach(function(st){ var g = st.group || "Styles"; if (!groups[g]){ groups[g] = document.createElement("optgroup"); groups[g].label = g; sel.appendChild(groups[g]); }
       var o = document.createElement("option"); o.value = st.id; o.textContent = st.label; groups[g].appendChild(o); });
     try { var was = localStorage.getItem("ceStyle"); if (was && STYLES.some(function(x){ return x.id === was; })) sel.value = was; } catch (e) {}
-    sel.addEventListener("change", function(){ feelSync(); try { localStorage.setItem("ceStyle", sel.value); } catch (e) {} if (state !== "idle" && !rec){ player.setInstruments(styleSounds()); player.setOpts(styleOpts()); } });
+    sel.addEventListener("change", function(){ feelSync(); try { localStorage.setItem("ceStyle", sel.value); } catch (e) {} if (state !== "idle" && !sess){ player.setInstruments(styleSounds()); player.setOpts(styleOpts()); } });
   })();
   function feelSync(){ $("ce-mfeel").value = style().feel === "swing" ? "swing" : "straight"; }
   feelSync();
   $("ce-mrec").addEventListener("click", recordMelody);
-  $("ce-mundo").addEventListener("click", function(){ if (!grid || !grid.back()){ note("Nothing to undo."); return; } refresh(); note("Undone."); });
-  $("ce-mclear").addEventListener("click", function(){ if (!grid || !grid.hasMelody()){ note("There is no melody."); return; } grid.clearMelody(); refresh(); note("The melody is removed. The chords are unchanged."); });
+  ["ce-mbeam", "ce-mtie"].forEach(function(id){
+    try { var was = localStorage.getItem(id); if (was && Array.prototype.some.call($(id).options, function(o){ return o.value === was; })) $(id).value = was; } catch (e) {}
+    $(id).addEventListener("change", function(){ try { localStorage.setItem(id, $(id).value); } catch (e) {} if (grid) refresh(); });
+  });
+  function mwithSync(){ $("ce-mbars-f").hidden = mode() === "split" ? false : $("ce-mwith").value !== "click"; }
+  // the split key: a menu of every key from C2 to C6, and a button to set it by pressing one
+  (function(){ var sel = $("ce-msplit"), saved = 60; try { saved = parseInt(localStorage.getItem("ceSplit"), 10) || 60; } catch (e) {}
+    for (var m = 36; m <= 84; m++){ var o = document.createElement("option"); o.value = m; o.textContent = BandHarmony.noteName(m).replace("b", "\u266d") + (m === 60 ? " (middle C)" : ""); sel.appendChild(o); }
+    sel.value = saved; sel.addEventListener("change", function(){ try { localStorage.setItem("ceSplit", sel.value); } catch (e) {} note("Melody from " + names([splitKey()]) + " up; chords below."); });
+  })();
+  function setSplit(m){ m = Math.max(36, Math.min(84, m)); $("ce-msplit").value = m; try { localStorage.setItem("ceSplit", m); } catch (e) {} note("Melody from " + names([m]) + " up; chords below."); heard(""); }
+  $("ce-msplit-set").addEventListener("click", function(){ splitSetting = true; note("Press the lowest key you want in the melody."); });
+  // the log of the last take
+  function logJson(){ return JSON.stringify(lastLog); }
+  $("ce-log-copy").addEventListener("click", function(){
+    if (!lastLog) return; var t = logJson(), say = function(x){ $("ce-log-note").textContent = x; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function(){ say("Copied (" + lastLog.events.length + " events)."); }, function(){ say("The browser would not copy it."); });
+    else say("The browser would not copy it.");
+  });
+  $("ce-log-open").addEventListener("click", function(){
+    if (!lastLog) return;
+    try { localStorage.setItem("notationLog", logJson()); } catch (e) { $("ce-log-note").textContent = "The browser is blocking storage; copy the log instead."; return; }
+    if (!window.open("/tools/notation-rules.html?from=chord-entry", "_blank")) location.href = "/tools/notation-rules.html?from=chord-entry";
+  });
+  $("ce-mwith").addEventListener("change", mwithSync); mwithSync();
+  $("ce-mundo").addEventListener("click", function(){ if (!grid || !grid.back()){ note("Nothing to undo."); return; }
+    var was = grid.length(), more = lastTake ? lastTake.steps - 1 : 0; while (more-- > 0) grid.back();      // (a take that put a pickup bar in front, or was partly given back, is several steps)
+    if (grid.length() < was) shiftSections(grid.length() - was);
+    lastTake = null; refresh(); keepShow(); note("Undone."); });
+  $("ce-mclear").addEventListener("click", function(){ if (!grid || !grid.hasMelody()){ note("There is no melody."); return; } grid.clearMelody(); lastTake = null; refresh(); keepShow(); note("The melody is removed. The chords are unchanged."); });
+  $("ce-mrange").addEventListener("change", function(){ decorate(); });
   fill($("ce-key"), KEYS.map(function(k){ return { id: k, label: k.replace("b", "\u266d") }; }));
+  // ---- the computer keyboard as a piano: lower row Z..M, upper row Q..U; Arrow Up / Down for the octave ----
+  var typing = MusicalTyping.attach({
+    onOn: function(m, vel, t){ noteOn(m, vel, t); keyLit(m, true); }, onOff: function(m, t){ noteOff(m, t); keyLit(m, false); },
+    onOctave: typeNote, enabled: function(){ return $("ce-type").checked; }, octave: 3 });
+  function keyLit(m, on){ var b = $("ce-keys").querySelector('[data-midi="' + m + '"]'); if (b) b.classList.toggle("is-typed", on); }
+  function typeNote(){
+    var o = typing.octave();
+    $("ce-type-note").textContent = $("ce-type").checked ? "Computer keyboard: the Z row starts on C" + o + " and the Q row on C" + (o + 1) + ". Arrow Up and Arrow Down change the octave. In Melody mode, press Record melody, then play." : "";
+  }
+  $("ce-type").addEventListener("change", function(){ typing.releaseAll(); typeNote(); });
+  typeNote();
+  // a menu keeps the keyboard focus after you choose from it; hand the keys back to the piano
+  Array.prototype.forEach.call(document.querySelectorAll("#ce-root select"), function(s){ s.addEventListener("change", function(){ s.blur(); }); });
   $("ce-connect").addEventListener("click", connect);
   $("ce-midi").addEventListener("change", function(){ if (midiAccess) inputs(); });
   $("ce-mode").addEventListener("change", modeSync);
@@ -528,14 +1064,31 @@
   $("ce-bar").addEventListener("change", function(){ if (!grid) grid = newGrid(); grid.setCursor((parseInt($("ce-bar").value, 10) || 1) - 1, 0); refresh(); });
   $("ce-hold").addEventListener("click", function(){ if (!grid || !grid.count()){ heard("There is no chord to carry on yet."); return; } grid.hold($("ce-span").value); refresh(); heard("Same chord"); });
   $("ce-back").addEventListener("click", function(){ if (!grid || !grid.back()){ heard("Nothing to undo."); return; } refresh(); heard("Undone"); });
-  $("ce-clear").addEventListener("click", function(){ if (state !== "idle") player.stop(); grid = newGrid(); pins = {}; vAt = 0; refresh(); note("Empty. The next chord goes in bar 1."); heard(""); });
+  $("ce-clear").addEventListener("click", function(){ if (state !== "idle") player.stop(); grid = newGrid(); pins = {}; vAt = 0; forgetSections(); dropWork(); freshH = null; refresh(); keepShow(); note("Empty. The next chord goes in bar 1."); heard(""); });
   $("ce-vprev").addEventListener("click", function(){ vAt--; note(""); voiceShow(); });
   $("ce-vnext").addEventListener("click", function(){ vAt++; note(""); voiceShow(); });
   $("ce-vclear").addEventListener("click", function(){ var o = slot(); if (o && pins[o.key]){ delete pins[o.key]; refresh(); } });
-  window.addEventListener("pagehide", function(){ if (player && state !== "idle") player.stop(); });
-  meterSync(); refresh(); modeSync(); loadHandoff();
-  window.__entry = { opts: styleOpts, line: line, on: noteOn, off: noteOff, grid: function(){ return grid; }, recording: function(){ return !!rec; }, pins: pinMap, state: function(){ return state; },
-    where: function(){ var c = player && player.context(), w = c && player.where(c.currentTime); return w && !w.info.countIn && !w.info.ending ? w.info.index * grid.beats + w.pos : null; } };   // for tests
+  window.addEventListener("pagehide", function(){ if (player && state !== "idle") player.stop(); if (sess) stopSession(); });
+  dwim = MelodyDwim.attach({
+    host: $("ce-dwim"), log: dwimLog, bars: function(){ return grid ? grid.length() : 0; },
+    none: function(){ return "These notes are not from the take on this page any more (the melody was changed, undone or the page reloaded), so there is nothing to re-read. Record the melody again."; },
+    options: function(){ return { beam: $("ce-mbeam").value, tie: $("ce-mtie").value }; },
+    draw: function(el, text){ ABCJS.renderAbc(el, text, { responsive: "resize", paddingtop: 2, paddingbottom: 2, staffwidth: 420 }); },
+    mark: function(){ dwim.markScore($("ce-score")); },
+    apply: function(v, from, to){
+      var m = JSON.parse(JSON.stringify(grid.melody())); while (m.length < grid.length()) m.push([]);
+      v.melody.forEach(function(b, k){ m[from + k] = b; });
+      grid.setMelody(m); dwimSigs[JSON.stringify(grid.melody())] = 1; refresh();
+      return "Bar" + (from === to ? " " + (from + 1) : "s " + (from + 1) + "\u2013" + (to + 1)) + " now written as: " + v.label.toLowerCase() + ". Undo the take puts them back.";
+    } });
+  meterSync(); refresh(); modeSync(); booting = false;
+  if (!loadHandoff()) restoreLast();
+  window.__ceWork = { sections: sections, parts: parts, lyr: function(){ return lyr; }, start: function(){ return recStart(); }, tab: function(){ return tabSel; }, setTab: setTab, last: function(){ return lastTake; }, save: saveWork, song: function(){ return song; }, scoreText: function(){ return scoreText().text; } };      // (for the tests)
+  window.__entry = { dwim: function(){ return dwim; }, opts: styleOpts, on: noteOn, off: noteOff, grid: function(){ return grid; }, recording: function(){ return !!sess; }, pins: pinMap, state: function(){ return state; },
+    where: function(){ var c = player && player.context(), w = c && player.where(c.currentTime); return w && !w.info.countIn && !w.info.ending ? barStart(w.info.index + pk0()) + w.pos : null; },
+    take: function(){ return sess && sess.on && sess.src === "click" ? { beat: sess.tk.beat(sessMs(performance.now())), changes: sess.tk.changes(), bars: sess.bars } : null; },
+    lastTake: function(){ return lastLog; },
+    cc: function(v, t){ ccIn(v, t); } };   // for tests
 })();
 </script>
 ```

@@ -26,12 +26,12 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await until("ce-note", /^Wrote \d+ notes?/, 20000);
     const abc = await val("ce-abc"); const music = abc.split("\n").slice(5).join(" ");
     console.log(music);
-    assert.strictEqual(music, '"F7"F G A B c d e f | "Bb7"z c6 z |]', "swung eighths are written as eight even eighths (B is Bb in F), then a held C");
+    assert.strictEqual(music, '"F7"FG AB cd ef | "Bb7"z c6 z |]', "swung eighths are written as eight even eighths (B is Bb in F), then a held C");
     assert.strictEqual(await ev(`document.querySelectorAll("#ce-score svg").length > 0`), true, "the notation is drawn");
     assert.strictEqual(await ev(`document.getElementById("ce-score").innerHTML.length > 500`), true);
     // the chart is unchanged and the melody goes with the ABC
     assert.strictEqual(await ev(`document.querySelectorAll("#ce-chart .tc-bar[data-bar]").length`), 2);
-    assert(/"F7"F G A B c d e f/.test(await ev(`window.__ceChordPro()`)), "ChordPro carries the notes");
+    assert(/"F7"FG AB cd ef/.test(await ev(`window.__ceChordPro()`)), "ChordPro carries the notes");
     await click("ce-mundo"); assert.strictEqual(await ev(`document.getElementById("ce-score").innerHTML`), "", "undo takes the take back");
     assert.strictEqual((await val("ce-abc")).split("\n").slice(5).join(" "), '"F7"z4 | "Bb7"z4 |]');
     assert.deepStrictEqual(errs(), [], "page errors: " + errs().join(" | "));

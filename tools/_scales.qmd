@@ -1625,7 +1625,7 @@ function refreshNotation(){
 
 /* ================= Playback (yellow flash) ================= */
 let audioCtx = null;
-function ensureAudio(){ if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); return audioCtx; }
+function ensureAudio(){ if(window.MusicAudio) return MusicAudio.ctx(); if(!audioCtx) audioCtx = new (window.AudioContext||window.webkitAudioContext)(); return audioCtx; }
 
 async function play(){
   if(state.currentlyPlaying) return;
@@ -1656,11 +1656,7 @@ function updatePlayButtons(){
   if(btn){ btn.textContent = text; btn.setAttribute("data-state", state.currentlyPlaying ? "playing" : "ready"); }
 }
 function scheduleTone(ctx, midi, when, dur){
-  const osc = ctx.createOscillator(); const gain = ctx.createGain();
-  osc.type = "sine"; osc.frequency.value = 440 * Math.pow(2,(midi-69)/12);
-  gain.gain.setValueAtTime(0.0001, when); gain.gain.exponentialRampToValueAtTime(0.2, when+0.01);
-  gain.gain.exponentialRampToValueAtTime(0.0001, when+dur);
-  osc.connect(gain).connect(ctx.destination); osc.start(when); osc.stop(when+dur+0.02);
+  if(window.MusicAudio) MusicAudio.noteAt(midi, when, dur, 0.2, "piano");     // the backing track's piano
 }
 function flashFill(el, color="#ffd54f", ms=260){
   if(!el) return;
@@ -1773,7 +1769,7 @@ function refreshAll(){
 </div>
 <script src="/apps/shared/scale-fingering.js?v=1"></script>
 <script src="/apps/shared/fret-positions.js?v=1"></script>
-<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/tonality.js?v=9"></script>
 <script>Tonality.bindSelect(document.getElementById("root-select"),"note");</script>
-<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/audio.js?v=9"></script>
 ```

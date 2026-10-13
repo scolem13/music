@@ -123,7 +123,7 @@ const URL = "http://127.0.0.1:8500/tools/", IDS = `Array.prototype.map.call(docu
       return { h: Math.round(r.height), foot: Math.round(window.innerHeight - r.bottom), inBar: ids(bar), inPop: ids(pop), more: !more.hidden, popOpen: !pop.hidden, fits: Array.prototype.every.call(bar.children, function(c){ var q = c.getBoundingClientRect(); return q.width === 0 || (q.left >= -1 && q.right <= window.innerWidth + 1); }) }; })()`);
     const heights = [];
     for (const [url, id, keep, first] of [["backing-track.html", "dxa-bar", "bt-play", "bt-changes"], ["../lessons/blues-melody.html", "bl-bar", "bl-stop", "bl-dots"]]) {
-      await b.resize(1700, 900); await b.goto(URL + url); await b.sleep(900);
+      await b.resize(id === "dxa-bar" ? 2100 : 1700, 900); await b.goto(URL + url); await b.sleep(900);   // (the Backing Track's bar holds more)
       let w = await bar(id); heights.push(w.h); assert.ok(w.foot === 0 && w.fits && !w.more && w.inPop.length === 0, url + " wide: everything in the bar " + JSON.stringify(w));
       for (const width of [1000, 700, 390]) { await b.resize(width, 800); await b.sleep(400); const n = await bar(id); heights.push(n.h);
         assert.ok(n.fits && n.foot === 0 && n.inBar.indexOf(keep) >= 0, url + " at " + width + ": " + JSON.stringify(n));

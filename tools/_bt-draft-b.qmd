@@ -54,7 +54,7 @@
   var fillF = F("bt-fill"), startF = F("bt-start"), stepF = F("bt-step-on");
   D.put(rail, wide($("bt-play")), wide($("bt-beats")), wide($("bt-status")), wide($("bt-loop-note")),
     fillF, wide($("bt-sections-field")),
-    D.head("Tune"), F("bt-tempo-n"), F("bt-key"), wide(F("bt-changes")), wide(F("bt-style")), F("bt-meter"), F("bt-feel"), wide(F("bt-timefeel")), wide($("bt-timeparts-field")),
+    D.head("Tune"), F("bt-tempo-n"), F("bt-key"), wide(F("bt-changes")), wide(F("bt-style")), F("bt-meter"), F("bt-feel"), wide($("bt-pace-f")), wide(F("bt-timefeel")), wide($("bt-timeparts-field")),
     D.head("Form"), F("bt-countin"), F("bt-choruses"), wide(F("bt-intro")), wide($("bt-intro-more")),
     D.head("Practice"), wide(F("bt-cyc-on")), startF, wide(stepF), $("bt-practice").querySelector("details.bt-info"));
   old.hidden = true; $("bt-practice").hidden = true;

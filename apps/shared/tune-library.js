@@ -8,7 +8,8 @@
 //   TuneLibrary.build(tunesObject)      // {collectionName: bigAbcString}; defaults to window.tunesObject
 //   TuneLibrary.all() / .byId(id)
 //   TuneLibrary.facets()                // {tags, tonality, meter, key, chords, lyrics} → {value: count}
-//   TuneLibrary.filter({ text, tags, tonality, meter, key, hasChords, hasLyrics })
+//   TuneLibrary.filter({ text, tags, tonality, meter, key, hasChords, hasLyrics, needsMelody })
+//   (tunes tagged needs-repair are left out unless crit.tags includes "needs-repair")
 // Depends on TuneChart (parsing) + ABCJS (splitting collections into tunes).
 
 (function (global) {
@@ -97,6 +98,37 @@
 
   var records = [], byIdMap = {};
 
+  // Bars of a tune and how many of them have a written note in them (a bar of rests, or a chord and a rest,
+  // is not "sung"). A tune with chords but few sung bars is waiting for its melody (Deck the Halls: an intro
+  // and an interlude written out, the verses only chords). Scans the text, so it is cheap enough for the whole library.
+  function melodyBarStats(abc){
+    var body = false, bars = 0, sung = 0;
+    abc.split("\n").forEach(function (ln){
+      var t = ln.trim();
+      if (!t || t.charAt(0) === "%") return;
+      if (/^[A-Za-z]:/.test(t)){ if (t.charAt(0) === "K") body = true; return; }
+      if (!body) return;
+      t = t.replace(/%.*$/, "").replace(/"[^"]*"/g, "").replace(/![^!]*!/g, "").replace(/\+[^+]*\+/g, "")
+           .replace(/\{[^}]*\}/g, "").replace(/\[[A-Za-z]:[^\]]*\]/g, "").replace(/\[\d[\d,-]*/g, "").replace(/\|\d/g, "|");
+      t.split(/\|+\]?|\[\||:+/).forEach(function (bar){
+        if (!/[A-Ga-gzZ]/.test(bar)) return;   // x is only spacing
+        bars++; if (/[A-Ga-g]/.test(bar)) sung++;
+      });
+    });
+    return { bars: bars, sung: sung };
+  }
+
+  // the share of a tune's bars that have a note written in them (chord-only tunes: 0); tunes with no chords sort last
+  function melodyShare(r){ return !r.hasChords || !r.barCount ? 2 : r.melodyBars / r.barCount; }
+
+  // The Chord Entry page of this site with the tune's chords loaded and set to record the melody against the band.
+  function entryLink(r){
+    var q = /^Q:\s*(?:\d+\/\d+\s*=\s*)?(\d+)/m.exec(r.abc);
+    var d = { abc: r.abc, title: r.title, have: r.melodyBars, total: r.barCount };
+    if (q) d.tempo = +q[1];
+    return "/tools/chord-entry.html#from=tune&d=" + encodeURIComponent(JSON.stringify(d));
+  }
+
   function build(sources){
     sources = sources || (typeof global.tunesObject !== "undefined" ? global.tunesObject : {});
     records = []; byIdMap = {};
@@ -151,6 +183,7 @@
         addKey(p.keyField || field(abc, "K") || "");
         var kre = /\[K:([^\]]+)\]/g, km;
         while ((km = kre.exec(abc)) !== null) addKey(km[1]);
+        var ms = melodyBarStats(abc);
         var rec = {
           id: id, title: title, abc: abc, collection: coll, tags: tags,
           composer: field(abc, "C"), source: field(abc, "S"),
@@ -158,6 +191,8 @@
           chordCount: Object.keys(chordSet).length, romans: romans, romanSeq: romanSeq,
           solfege: solfege, startDegree: startDegree, rhythmEvents: rhythmEvents,
           hasLyrics: /^w:/m.test(abc),
+          barCount: ms.bars, melodyBars: ms.sung,
+          needsMelody: false,   // set just below, once hasChords is known
           meterStr: meterLabel(p.meterN, p.meterD), meterN: p.meterN, meterD: p.meterD,
           allMeters: allMeters,
           allKeys: allKeys,
@@ -169,6 +204,7 @@
           measures: (p.bars ? p.bars.length : 0) - (p.anacrusis ? 1 : 0),
           hasPickup: !!p.anacrusis
         };
+        rec.needsMelody = rec.hasChords && ms.bars >= 2 && ms.sung / ms.bars < 0.8;
         records.push(rec); byIdMap[id] = rec;
       });
     });
@@ -210,6 +246,8 @@
         var hay = (r.title + " " + r.composer + " " + r.source).toLowerCase();
         if (hay.indexOf(txt) < 0) return false;
       }
+      // tunes tagged needs-repair (flagged by scripts/clean-tunes.mjs) stay hidden unless asked for by tag
+      if (r.tags.indexOf("needs-repair") >= 0 && !(crit.tags && crit.tags.indexOf("needs-repair") >= 0)) return false;
       if (!anyTag(crit.tags, r.tags)) return false;
       if (!anyOf(crit.tonality, r.tonality)) return false;
       if (crit.meter && crit.meter.length){
@@ -221,6 +259,7 @@
       if (crit.key && crit.key.length && (!r.keyFixed || crit.key.indexOf(r.keyName) < 0)) return false;   // key filters canonical-key tunes only
       if (crit.hasChords === true && !r.hasChords) return false;
       if (crit.hasChords === false && r.hasChords) return false;
+      if (crit.needsMelody === true && !r.needsMelody) return false;
       if (crit.hasLyrics === true && !r.hasLyrics) return false;
       if (crit.hasLyrics === false && r.hasLyrics) return false;
       if (!anyOf(crit.startDegree, r.startDegree)) return false;
@@ -268,6 +307,8 @@
     // without it these toggles pick up an extra bottom margin and sit lower than the
     // <details>-based facet pills next to them.
     + '.tl-picker .tl-toggle{display:inline-flex!important;margin:0!important;align-items:center;gap:.35rem;font-size:.8rem;padding:.32rem .6rem;border:1px solid var(--tlp-line);border-radius:999px;cursor:pointer;white-space:nowrap}'
+    + '.tl-picker .tl-enter{font-size:.74rem;color:var(--tlp-accent);border:1px solid var(--tlp-accent);border-radius:999px;padding:.12rem .55rem;text-decoration:none;white-space:nowrap;align-self:center;margin-left:auto}'
+    + '.tl-picker .tl-enter:hover{background:rgba(23,105,214,.1)}'
     + '.tl-picker .tl-clear{font-size:.78rem;color:var(--tlp-accent);background:none;border:0;cursor:pointer;padding:.32rem .4rem}'
     + '.tl-picker .tl-count{font-size:.74rem;color:var(--tlp-muted);letter-spacing:.04em}'
     + '.tl-picker .tl-results{list-style:none;margin:0;padding:0;overflow:auto;border:1px solid var(--tlp-line);border-radius:8px;background:var(--tlp-bg)}'
@@ -343,7 +384,7 @@
   // renderPicker(container, { onSelect(rec), selectedId, facets:[...] })
   function renderPicker(container, opts){
     injectPickerCss(); opts = opts || {};
-    var wantFacets = opts.facets || ["tags","tonality","meter","key","chords","lyrics"];
+    var wantFacets = opts.facets || ["tags","tonality","meter","key","chords","lyrics","melody"];
     var crit = {}, F = facets();
     container.classList.add("tl-picker"); container.innerHTML = "";
 
@@ -353,7 +394,7 @@
     var bar = document.createElement("div"); bar.className = "tl-facets"; container.appendChild(bar);
     var rerender, sortMode = "title";
     var sortSel = document.createElement("select"); sortSel.className = "tl-sort"; sortSel.setAttribute("aria-label","Sort");
-    [["title","Sort: A–Z"],["chords-asc","Sort: fewest chords"],["chords-desc","Sort: most chords"]].forEach(function (o){
+    [["title","Sort: A–Z"],["chords-asc","Sort: fewest chords"],["chords-desc","Sort: most chords"],["melody-asc","Sort: least melody written"]].forEach(function (o){
       var op = document.createElement("option"); op.value = o[0]; op.textContent = o[1]; sortSel.appendChild(op); });
     sortSel.addEventListener("change", function (){ sortMode = sortSel.value; rerender(); });
     bar.appendChild(sortSel);
@@ -379,6 +420,7 @@
     }
     if (wantFacets.indexOf("chords") >= 0) bar.appendChild(toggle("Chords", "hasChords"));
     if (wantFacets.indexOf("lyrics") >= 0) bar.appendChild(toggle("Lyrics", "hasLyrics"));
+    if (wantFacets.indexOf("melody") >= 0) bar.appendChild(toggle("Needs melody", "needsMelody"));
     // free-text sequence searches: tonal pattern (solfège) + chord progression (roman
     // numerals), both matched as a contiguous run (see containsSeq); tokens split on
     // whitespace/hyphens/commas so "Do-Mi-So", "Do Mi So" and "ii-V-I" all work.
@@ -570,6 +612,7 @@
       lastRes = filter(crit);
       lastRes.sort(function (a,b){
         if (sortMode === "chords-asc") return (a.chordCount - b.chordCount) || a.title.localeCompare(b.title);
+        if (sortMode === "melody-asc") return (melodyShare(a) - melodyShare(b)) || a.title.localeCompare(b.title);
         if (sortMode === "chords-desc") return (b.chordCount - a.chordCount) || a.title.localeCompare(b.title);
         return a.title.localeCompare(b.title, undefined, { sensitivity:"base", numeric:true });
       });
@@ -598,6 +641,13 @@
         if (r.hasChords) bits.push(r.chordCount + (r.chordCount === 1 ? " chord" : " chords")); if (r.hasLyrics) bits.push("lyrics");
         bits.forEach(function (b){ var s = document.createElement("span"); s.textContent = b; meta.appendChild(s); });
         li.appendChild(main); li.appendChild(meta);
+        if (r.needsMelody){
+          var em = document.createElement("a"); em.className = "tl-enter"; em.target = "carols-chord-entry"; em.href = entryLink(r);
+          em.textContent = r.melodyBars ? "Enter melody (" + r.melodyBars + " of " + r.barCount + " bars)" : "Enter melody";
+          em.title = "Open Chord Entry with this tune's chords loaded, ready to record the melody with the band";
+          em.addEventListener("click", function (e){ e.stopPropagation(); });
+          li.appendChild(em);
+        }
         li.addEventListener("click", function (){ selectedId = r.id; paintCurrent(); if (opts.onSelect) opts.onSelect(r); });
         list.appendChild(li);
       });
@@ -614,6 +664,6 @@
   }
 
   global.TuneLibrary = { build: build, all: function (){ return records.slice(); },
-    byId: function (id){ return byIdMap[id] || null; }, facets: facets, filter: filter, renderPicker: renderPicker,
+    byId: function (id){ return byIdMap[id] || null; }, facets: facets, filter: filter, renderPicker: renderPicker, entryLink: entryLink,
     roman: appliedRoman };   // chord symbol → roman (with applied-chord analysis); used by the chart's roman mode
 })(typeof window !== "undefined" ? window : globalThis);

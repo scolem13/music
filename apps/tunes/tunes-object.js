@@ -5,6 +5,7 @@ T:Lightly Row
 M:2/4
 L:1/4
 Q:1/4=120
+%%id lightly-row
 K:Bbmaj
 "Bb"F/2D/2 D | "F7"E/2C/2 C | "Bb"B,/2C/2 D/2E/2 | F/2F/2 F | "Bb"F/2D/2 D | "F7"E/2C/2 C | "Bb" B,/2D/2 "F7" F/2F/2 | "Bb"D2 |
 "F7" C/2C/2 C/2C/2 | C/2D/2 E | "Bb" D/2D/2 D/2D/2 | D/2"F7"E/2 "Bb"F | "Bb"F/2D/2 D | "F7"E/2C/2 C | "Bb" B,/2D/2 "F7" F/2F/2 | "Bb"B,2 |]
@@ -15,6 +16,7 @@ C:Trad
 M:2/4
 L:1/8
 Q:1/4=120
+%%id yankee-doodle
 K:Eb
 "Eb" EE FG | EG "Bb" FB, | "Eb" EE FG | E2 "Bb"D2 | "Eb" EE FG |"Ab" AG FE | "Bb" DB, CD | "Eb" E2 E2 ||
 "Ab" C>D CB,| CD E2|"Eb" B,>C B,A, | G,2 B,2 | "Ab" C>D CB,| CD EC|"Eb" B,E "Bb"DF |"Eb"E2 E2|]
@@ -24,6 +26,7 @@ T:Skip to My Lou
 C:Trad
 M:2/4
 L:1/4
+%%id skip-to-my-lou
 K:Bbmaj
 Q: 1/4 = 72
 "Bb" DB, | D/2D/4D/4 F | "F7" CA, | C/2C/4C/4 E |
@@ -34,6 +37,7 @@ T:Skip to My Lou Minor
 C:Trad
 M:2/4
 L:1/4
+%%id skip-to-my-lou-minor
 K:Gm
 Q: 1/4 = 72
 "Gm" BG | B/2B/4B/4 d | "D7" A^F | A/2A/4A/4 c |
@@ -45,6 +49,7 @@ C:Trad
 M:4/4
 L:1/4
 Q:1/4=120
+%%id are-you-sleeping
 K:Bbmaj clef=treble
 I:linebreak $
 %%MIDI program 0
@@ -57,6 +62,7 @@ C:Trad
 M:4/4
 L:1/4
 Q:1/4=120
+%%id are-you-sleeping-minor
 K:Gm clef=treble
 I:linebreak $
 %%MIDI program 0
@@ -69,6 +75,7 @@ C:Trad
 M:C|
 L:1/4
 Q:1/4=120
+%%id down-by-the-station
 K: Eb
 I:linebreak $ | 
 "Eb"E E/F/ G G |"Bb7" F/E/F/G/ "Eb" E B, |"Eb" G/G/G/A/ B/B/B/B/ |"Bb7" A B/A/ "Eb" G2 |
@@ -80,6 +87,7 @@ C:Trad
 M:C|
 L:1/4
 Q:1/4=120
+%%id down-by-the-station-minor
 K:Cm
 I:linebreak $ | 
 "Cm"c c/2d/2 e e |"G7" d/2c/2d/2e/2 "Cm" c G |"Cm" e/2e/2e/2f/2 g/2g/2g/2g/2 |"G7" f g/2f/2 "Cm" e2 |
@@ -90,6 +98,7 @@ T:Little Johnny Johnson
 C:Mullen
 M:2/4
 L:1/8
+%%id little-johnny-johnson
 K:Bbmaj
 I:linebreak $
 "Bb" B,B, "F7" CC |"Bb" D2 D2 |"Bb" DD "F7" EE |"Bb" F2 F2 |
@@ -100,6 +109,7 @@ T:Sister Mary Margaret
 C:Mullen
 M:2/4
 L:1/8
+%%id sister-mary-margaret
 K:Gm
 I:linebreak $
 "Gm" GG "D7" AA |"Gm" B2 B2 |"Gm" BB "D7" cc |"Gm" d2 d2 |
@@ -111,6 +121,7 @@ C:Mullen
 M:6/8
 L:1/8
 Q: 3/8 = 112
+%%id principal-pinkerton
 K:Bb octave=1
 %%MIDI bassprog 25
 "Bb"B,B,B, "F7"CCC | "Bb"D3 D3 | "Bb"DDD "F7"EEE | "Bb"F3 " "F3 |
@@ -121,19 +132,19 @@ T:Admiral Anderson
 C:Mullen
 M:6/8
 L:1/8
+%%id admiral-anderson
 K:Gm
 Q: 3/8 = 112
 I:linebreak $
 "Gm"GGG "D7"AAA | "Gm"B3 B3 | "Gm"BBB "D7"ccc | "Gm"d3 d3 |
 "Gm"BBB "D7"AAA | "Gm"G3 G3 |"Gm" GGG "D7"^FFF | "Gm"G3 G3 |]
 
-
-
 X:13
 T:Mary Had a Little Ham
 C:Trad
 M:2/4
 L:1/8
+%%id mary-had-a-little-ham
 K:Bbmaj
 "Bb" D>C B,C | DD D2 |"F7" CC C2 |"Bb" DF F2 |
 "Bb" D>C B,C | DD DD |"F7" CC DC |"Bb" B,4 |]
@@ -143,6 +154,7 @@ T:Mary Had a Rotten Ham
 C:Trad
 M:2/4
 L:1/8
+%%id mary-had-a-rotten-ham
 K:Gm
 "Gm" B>A GA | BB B2 |"D7" AA A2 |"Gm" Bd d2 |
 "Gm" B>A GA | BB BB |"D7" AA BA |"Gm" G4 |]
@@ -152,6 +164,7 @@ T:London Bridge
 C:Trad
 M:2/4
 L:1/8
+%%id london-bridge
 K:Bbmaj
 "Bb" F>G FE | DE F2 | "F7" CD E2 | "Bb" DE F2 |
 "Bb" F>G FE | DE F2 | "F7" C2 F2 | "Bb" D B,3 |]
@@ -161,6 +174,7 @@ T:London Bridge, Minor
 C:Trad
 M:2/4
 L:1/8
+%%id london-bridge-minor
 K:Gm
 "Gm" d>e dc | Bc d2 | "D7" AB c2 | "Gm" Bc d2 |
 "Gm" d>e dc | Bc d2 | "D7" A2 d2 | "Gm" B G3 |]
@@ -170,6 +184,7 @@ T:Go Tell Aunt Rhody
 C:Trad
 M:2/4
 L:1/8
+%%id go-tell-aunt-rhody
 K:Bbmaj
 Q:1/4=92
 "Bb"D2 DC | B,2 B,2 | "F7" C2 CE | "Bb" DC B,2 |
@@ -180,6 +195,7 @@ T:Go Tell Aunt Rhody, Minor
 C:Trad
 M:2/4
 L:1/8
+%%id go-tell-aunt-rhody-minor
 K:Gm
 Q:1/4=92
 "Gm"B2 BA | G2 G2 | "D7" A2 Ac | "Gm" BA G2 |
@@ -190,6 +206,7 @@ T:Twinkle
 C:Trad
 M:2/4
 L:1/8
+%%id twinkle
 K:Bbmaj
 %%MIDI gchord f2hif2hi
 "Bb" B,B, FF |"Eb" GG "Bb" F2 |"F7" EE "Bb" DD | "F7" CC "Bb" B,2|
@@ -201,6 +218,7 @@ T:Twinkle, Minor
 C:Trad
 M:2/4
 L:1/8
+%%id twinkle-minor
 K:Gm
 %%MIDI gchord f2hif2hi
 "Gm" GG dd |"Cm" ee "Gm" d2 |"D7" cc "Gm" BB | "D7" AA "Gm" G2|
@@ -212,6 +230,7 @@ T:Pierrot
 C:Trad
 M:2/4
 L:1/8
+%%id pierrot
 K:Bbmaj
 %%MIDI gchord f2hif2hi
 "Bb" B,B, B,C |"Bb" D2 "F7" C2 |"Bb" B,D "F7" CC |"Bb" B,4 |
@@ -222,6 +241,7 @@ T:Pierrot, Minor
 C:Trad
 M:2/4
 L:1/8
+%%id pierrot-minor
 K:Gm
 %%MIDI gchord f2hif2hi
 "Gm" GG GA |"Gm" B2 "D7" A2 |"Gm" GB "D7" AA |"Gm" G4 |
@@ -231,6 +251,7 @@ X:23
 T:Major Duple
 M:2/4
 L:1/8
+%%id major-duple
 K:Bbmaj
 "Bb" DD DD | "F7" CC CC | "Bb" B,B, B,B, | "F7" C4 |
 "Bb" DD D2 | "F7" CC C2 | "Bb" B,B, "F7" A,A, | "Bb" B,4 |]
@@ -239,6 +260,7 @@ X:24
 T:Minor Duple
 M:2/4
 L:1/8
+%%id minor-duple
 K:Gm
 "Gm" BB BB | "D7" AA AA | "Gm" GG GG | "D7" A4 |
 "Gm" BB B2 | "D7" AA A2 | "Gm" GG "D7" ^FF | "Gm" G4 |]
@@ -247,6 +269,7 @@ X:25
 T:Major Triple
 M:6/8
 L:1/8
+%%id major-triple
 K:Bbmaj
 I:linebreak $
 %%MIDI gchord fb
@@ -258,7 +281,9 @@ T:Minor Triple
 C:Trad
 M:6/8
 L:1/8
+%%id minor-triple
 K:Gm
+I:linebreak $
 "Gm" BBB BBB | "D7" AAA AAA | "Gm" GGG GGG | "D7" A6 | 
 "Gm" BBB B3 | "D7" AAA A3 | "Gm" GGG "D7" ^FFF |"Gm" G6 |]
 
@@ -272,7 +297,6 @@ K: Bb
 "Bb" d2 c B2 B |"F" cBc"Bb" d2 B | d2 c B2 B |"F" cdc"Bb" B2 f |$"F" fed c2 f | fed c2 f |
 fed c2 f | fed c3 |$"Bb" d2 c B2 B |"F" cBc"Bb" d2 B | d2 c B2 B |"F" cdc"Bb" B3 |  -->
 
-
 X:27
 T:Fais Dodo
 C:Traditional
@@ -280,23 +304,22 @@ L:1/4
 Q:3/4=72
 M:3/4
 I:linebreak $
+%%id fais-dodo
 K:Bbmaj
 "Bb" d2 c | B2 B |"F7" cBc|"Bb" d2 B | d2 c | B2 B |"F7" cdc|"Bb" B2 f |
 "F7" fed | c2 f | fed | c2 f |fed | c2 f | fed | c3 |
 "Bb" d2 c | B2 B |"F7" cBc|"Bb" d2 B | d2 c | B2 B |"F7" cdc|"Bb" B3 |]
 
-
-
 X:28
 T:Hot Cross Buns
 C:Trad
 L:1/4
+%%id hot-cross-buns
 K:Bbmaj
 M:none
 M:4/4
 "Bb" D "F7" C "Bb"B,2 |"Bb" D "F7" C "Bb"B,2 
 |"Bb" B,/2B,/2 B,/2B,/2 "F7"C/2C/2 C/2C/2 | "Bb" D "F7"C "Bb"B,2 |]
-
 `,
 
 "ms-band":
@@ -309,6 +332,7 @@ O:Ireland
 M:2/2
 L:1/8
 Q:1/2=50
+%%id sally-gardens-down-by-the
 K:C
 CD|"C"E2DC "G"D2EG|"F"A4 "C"G2cG|"Am"A2 GE "G"D3C|"C"C4 z2CD|
 "C"E2DC "G"D2EG|"F"A4 "C"G2cG|"Am"A2GE "G"D3C|"C"C4 z2G2||
@@ -322,6 +346,7 @@ O:Ireland
 M:2/2
 L:1/4
 Q:1/2=80
+%%id rattling-bog
 K:D
 d/e/|"D"f2 "D7"f3/2e/|"G"dB B3/2B/|"D"Ad d/c/d/e/|"E7"fe "A7"e2|
 "D"f2 "D7"f3/2e/|"G"dB B3/2B/|"D"Aa af|"A7"ed "D"d:|
@@ -335,6 +360,7 @@ O:England; Northwest
 M:4/4
 L:1/8
 Q:1/4=150
+%%id sportsman-s-hornpipe-the
 K:Edor
 "Em"G2GG "D"F2FE|"Bm"DEFG "D"AFED|"Em"G2GG "D"FEFD|"Em"B,2E2 E4|
 "Em"G2GG "D"F2FE|"Bm"DEFG "D"AFED|"G"dcdB "D"AGFE|"Em"B,2E2 E4:|
@@ -348,6 +374,7 @@ O:Flanders
 M:2/2
 L:1/8
 Q:1/2=100
+%%id bear-dance
 K:Em
 "Em"B2E2E3A|B2E2E3A|"G"G2G2F2G2|"D"A6GA|"Em"B2B2"D"A2A2|"Em"G2G2 "D"F4|"Em"E2G2 "D"FED2|"Em"E8|
 |"Em"E2GGE2G2|"D"FED2D4|"Em"E2GGE2G2|"D"A6GA|"Em"B2B2"D"A2A2|"Em"G2G2 "D"F4|"Em"E2G2 "D"FED2|"Em"E8|
@@ -362,6 +389,7 @@ O:USA
 M:2/2
 L:1/4
 Q:1/2=80
+%%id wayfaring-stranger
 K:Am
 "Am"zA Ae|e4-|"Dm"ed/c/de|"Am"c>B A2-|A A Ae|"Dm"d4-|dAc>d|"Am"e4|
 "Am"zA Ae|e4-|"Dm"ed/c/de|"Am"c>B A2-|A A Ae|"Dm"d4-|ddc/A/G|"Am"A4|
@@ -375,6 +403,7 @@ O:England
 M:2/2
 L:1/4
 Q:1/2=90
+%%id nonesuch
 K:Ddor
 A|"Dm"AF "C"GA|"Dm"FE/F/ DA|"Dm"AF "C"GA|"Dm"F2 DA|
 AF "C"GA|"Dm"FE/F/ DA|AF "C"GA|"Dm"D3 E|
@@ -388,6 +417,7 @@ O:England
 M:2/2
 L:1/4
 Q:1/2=80
+%%id childgrove
 K:Ddor
 A|"Dm"Ad de|f2 ed|"Gm"gf ed|"Am"e>d c/B/A|
 "Dm"Ad de|f2 ea|"Gm"g>f "A7"e/f/e/d/|"Dm"d3:|
@@ -401,6 +431,8 @@ O:Ireland
 M:4/4
 L:1/8
 Q:1/4=130
+%%id toss-the-feathers
+%%tags needs-repair
 K:Edor
 "Em"EBB2 "Bm"dBB2|"Em"EBB2 "D"F3A|"Em"BEE2 BABc|"D"d2fe dBAF:|
 "Em"(3Bcd ed e3e|"D"fede "Em"fee2|(3gfe be (3gfe be|"D"fede "Em"fee2|
@@ -414,6 +446,7 @@ O:France
 M:2/2
 L:1/4
 Q:1/2=80
+%%id roulante-la
 K:Dmix
 "D"dA "C"c>B|"D"AF "G"GF/G/|"D"A>B A/B/A/G/|"A7"FA E2|
 "D"dA "C"c>B|"D"AF "G"GF/G/|"D"A>B "A7"A/B/A/G/|FE "D"D2:|
@@ -425,11 +458,11 @@ T: Dancing Bear, The
 C: R-116
 C: Bob McQuillen  2/22/78
 M: C|
+%%id dancing-bear-the
 K: Em
 "Em"EFGF EFGF| EFGA G2E2| "A"EFGF EFGF| EFGA G2E2|
 "C"EFGF EFGF| EFGA B2e2| "B7"B2Bc BAGF| "Em"G2E2 E4 :|
-|:\
-"Em"e2ef gfef| gfe2 e4| "A"e2ef gfef| gfe2 e4|
+|:"Em"e2ef gfef| gfe2 e4| "A"e2ef gfef| gfe2 e4|
 "C"e2ef gfef| gfe2 e2dc| "B7"BABc BcBA| "Em"GFE2 E4 :|
 `,
 
@@ -439,11 +472,10 @@ T:The Corner Grocery Store
 L:1/4
 M:2/4
 I:linebreak $
+%%id the-corner-grocery-store
 K:G
 G/>A/ | "G"B  B | B     z | B/>A/ G/>E/ | $D F/>G/  | "D7" A2 | z G/>A/ | "G"B2 | $z G/>A/ | B B | B z | B/>A/ G/>E/ | $ D F/>G/ |
 "D7"A c | B/>B/ A | "G"   G2-   | G        :|
-
-
 
 X:1
 T:The Corner Grocery Store
@@ -461,6 +493,7 @@ W: Blowing on a horn ...
 W: 
 M:2/4
 I:linebreak $
+%%id the-corner-grocery-store-2
 K:G
 G>A |"G" B2 B2 | B2 z2 | B>A G>E |$ D2 F>G |"D7" A4 | z2 G>A |"G" B4 |$ z2 G>A | B2 B2 | B2 z2 | 
 w: There was|cheese, cheese,|cheese|walk- in' on its|knees, in the|store,|in the|store.|There was|cheese, cheese,|cheese|
@@ -488,6 +521,7 @@ W:    Ah! yahabibi M'ena filaki Ah!
 W:    ta dio sou hili stazoune meli ime
 M: 4/4
 L: 1/8
+%%id misirlou
 K: Gm
 |: "D"D3 E ^F2 G2 | A3B ^c2BA | A8- | A8 |
 w: 1.~Mi-sir-lou mou i gli-kia sou ma-tia
@@ -517,21 +551,14 @@ O: Makedonija
 R: slow pravo
 M: 4/4
 L: 1/8
+%%id sva-nok-le-nado
 K: F
-[| "C"[c3e3] [df] [ce][Bd] [Bd][Ac] | "F"[Ac][G2B2] [Ac] [GB][FA] [FA][FC] \
-| [FA][GB] [GB][Ac] "C7"[GB][Ac] [GB][FA] | "F"[FA][GB] [FA][CG] [FA][GB] [Ac][Bd] |
-| "C"[dB][ce] [ce][df] [ce][Bd] [Bd][Ac] | "C7"[Ac][B2G2] [Ac] "F"[GB][FA] [F2A2] \
-| [FA][GB] [GB][Ac] "C7"[GB][Ac] [GB][FA] | "F"[F8A8] |]
-[| "F"([F3A3] [GC]) [F2A2] ([FA][GB]) | ([A3c3] [GB]) ([GB][FA][F2A2]) \
-| ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"([F3A3] [CG] [FA][GB] [A2c2]) |
-| "F"[F2A2] ([FA][CG]) [F2A2] ([FA][GB]) | ([A3c3] [GB]) ([GB][FA] [F2A2]) \
-| ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"[F8A8] |]
-[| "C"[c4e4] ([ce][Bd]) ([Bd][Ac]) | "F"([A3c3] [GB]) ([GB][FA] [F2A2]) \
-| ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"([F3A3] [CG] [FA][GB] [A2c2]) |
-| "C"[c4e4] ([ce][Bd]) ([Bd][Ac]) | "C7"([Ac][B2G2]) [Ac] "F"([GB][FA]) [F2A2] \
-| ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"[F8A8] |]
-
-
+[| "C"[c3e3] [df] [ce][Bd] [Bd][Ac] | "F"[Ac][G2B2] [Ac] [GB][FA] [FA][FC] | [FA][GB] [GB][Ac] "C7"[GB][Ac] [GB][FA] | "F"[FA][GB] [FA][CG] [FA][GB] [Ac][Bd] |
+| "C"[dB][ce] [ce][df] [ce][Bd] [Bd][Ac] | "C7"[Ac][B2G2] [Ac] "F"[GB][FA] [F2A2] | [FA][GB] [GB][Ac] "C7"[GB][Ac] [GB][FA] | "F"[F8A8] |]
+[| "F"([F3A3] [GC]) [F2A2] ([FA][GB]) | ([A3c3] [GB]) ([GB][FA][F2A2]) | ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"([F3A3] [CG] [FA][GB] [A2c2]) |
+| "F"[F2A2] ([FA][CG]) [F2A2] ([FA][GB]) | ([A3c3] [GB]) ([GB][FA] [F2A2]) | ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"[F8A8] |]
+[| "C"[c4e4] ([ce][Bd]) ([Bd][Ac]) | "F"([A3c3] [GB]) ([GB][FA] [F2A2]) | ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"([F3A3] [CG] [FA][GB] [A2c2]) |
+| "C"[c4e4] ([ce][Bd]) ([Bd][Ac]) | "C7"([Ac][B2G2]) [Ac] "F"([GB][FA]) [F2A2] | ([FA][GB]) [A2c2] "C7"([GB][Ac]) ([GB][FA]) | "F"[F8A8] |]
 
 X:2
 T:Bell Horses
@@ -540,6 +567,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id bell-horses
 K:Eb
 "Eb"B G/G/  B G/G/ |"Ab" A B/c/  "Eb"B2 | $
 w: Bell hors-es, Bell hors-es, What time of day? 
@@ -553,13 +581,12 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id hello-everybody
 K:D
 A | dc/c/ BA | FG/A/-A2 | EF/G/-G2 | FG/A/-A2 |
 w: Hel-lo ev-'ry-bod-y, yes in-deed, *  yes in-deed, * yes in-deed,
 $dc BA | FG/A/-A2 | EEAA | D2 z|]
 w: Let's make mu-sic, yes in-deed, * yes in-deed, my friends.
-
-
 
 X:4
 T:Bubble Gum
@@ -568,6 +595,8 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id bubble-gum
+%%tags needs-repair
 K:D
 "D"AA F2 | AA F2 |"G" G2 B2 |
 w: Bub-ble gum, bub-ble gum, fun to
@@ -585,6 +614,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=86
+%%id what-do-i-have
 K:Bb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -592,7 +622,6 @@ K:Bb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -612,6 +641,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/8=240
+%%id paddy-works-on-the-railroad
 K:C
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -619,7 +649,6 @@ K:C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -641,6 +670,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id sunshine
 K:D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -648,7 +678,6 @@ K:D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -662,7 +691,6 @@ $ A<A DE | FF EE | D3|
 w: geth-er with a pea-nut but-ter spoon.
 w: bub-ble, and this song is all a joke.
 
-
 X:8
 T:Song of the Pirates
 C:Anon
@@ -670,6 +698,8 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=100
+%%id song-of-the-pirates
+%%tags needs-repair
 K:Eb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -677,7 +707,6 @@ K:Eb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -692,35 +721,6 @@ w: Pi-rates are we, sing the men at the mast,
 $ d>cd GBd | cBA G3 |]
 w: Pi-rates are we, from the firtst to the last.
 
-X:7
-T:Sunshine
-C:Edwin E. Gordon
-M:2/4
-I:linebreak $
-L:1/8
-Q:1/4=120
-K:D
-%%pagewidth 16cm
-%%pageheight 29.7cm
-%%topmargin .5cm
-%%botmargin 1.5cm
-%%leftmargin 1.5cm
-%%rightmargin 1.5cm
-%%pagescale 0.9
-%%maxshrink 1
-%%notespacingfactor 
-%%measurenb 0
-A| DD EE | F F2 A |
-w: I baked a ray of sun-shine, I
-w: I ate a dish of light-ning, I
-$DD EE | F3 A | GG BB |
-w: fried a sil-ver moon, I stirred it all to-
-w: drank a glass of smoke, I jumped in-to a 
-$ A<A DE | FF EE | D3|
-w: geth-er with a pea-nut but-ter spoon.
-w: bub-ble, and this song is all a joke.
-
-
 X:9
 T:Haul Away, Joe
 C:Trad
@@ -728,6 +728,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/4=172
+%%id haul-away-joe
 K:C
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -735,14 +736,13 @@ K:C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
 "Dm"d3 d2 A |"C" c3-c2 A | 
 w: 'Way, haul a way,_ We'll
 $"G" G2 G F2 G |"Dm" (A2 B) "C"(c2 A) |
-w: haul for fin-er weath \- er_, 
+w: haul for fin-er weath - er_, 
 $"Dm" d3 d2 A |"C" (c3-c2 A) | 
 w: 'Way, haul away,__ 
 $"G" G2 G A3 |"Dm" D6 |]
@@ -755,6 +755,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id dinosaur-diet
 K:F
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -762,7 +763,6 @@ K:F
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -782,6 +782,7 @@ M:3/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id autumn-leaves
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -789,7 +790,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -802,7 +802,6 @@ w: Danc-ing in the sky. Wint-er's come a-
 $ E z z | B> A G/A/ | B z z !D.C.alfine!||
 w:gain. Wish that I could fly.
 
-
 X:13
 T:Clapping and Tapping
 C:Edwin Gordon
@@ -810,6 +809,7 @@ M:5/8
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id clapping-and-tapping
 K:D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -817,7 +817,6 @@ K:D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -835,6 +834,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id autumn
 K:F
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -842,7 +842,6 @@ K:F
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%notespacingfactor 
 %%measurenb 0
@@ -857,7 +856,6 @@ w: whirl-ing swift-ly, piled in heaps be-
 $"G7"DD "C"C z :|2 "G7"DD "C"C z:|
 w: neath the hill. neath the hill.
 
-
 X:15
 T:My Pony Bill
 C:Angela Wiechard
@@ -865,6 +863,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id my-pony-bill
 K:F
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -872,7 +871,6 @@ K:F
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%measurenb 0
 D | "Dm" F2 F A2 D | F2 F A3 | 
@@ -889,6 +887,7 @@ M:3/4
 I:linebreak $
 L:1/4
 Q:1/4=168
+%%id stirring-our-brew
 K:F
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -896,7 +895,6 @@ K:F
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%measurenb 0
 "Dm" F E D | F E D | "Bb" F E D | "Dm" A3 | 
@@ -904,7 +902,7 @@ w: Stir-ring and stir-ring and stir-ring our brew.
 $ "Gm"(B3 |"Dm" A3) |"Edim" (B3 |"A" A3) :|"Bb" d zz | "F" A zz | 
 w: Oooh_ Oooh_ Tip toe
 $ "Eb" B zz | "Gm"G zz | "F" F zz | "A7" E  z z |"Dm" !stemless!B zz | Z |]
-w: tip toe tip toe, BOO! | 
+w: tip toe tip toe, BOO! |
 
 X:17
 T:Skin and Bones
@@ -913,6 +911,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/8=168
+%%id skin-and-bones
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -920,7 +919,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%measurenb 0
 E | "Em" GGE GGE | "Am" G2A "Em" E3 | 
@@ -935,6 +933,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id chimney-sweeper
 K:Eb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -942,7 +941,6 @@ K:Eb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%measurenb 0
 c>A c<d | c/ c A/ c<d | 
@@ -957,6 +955,7 @@ M:2/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id ha-ha-thisaway
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -964,7 +963,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%maxshrink 1
 %%measurenb 0
 "G" d d | B/A/ G | "D7" AA | F/E/ D | 
@@ -976,7 +974,6 @@ w: Now we go march-ing, march-ing, march-ing
 $"G" G G/A/ | B G | "D7" A F | "G" G2 !D.C.alfine!||
 w: Now we go march-ing, all day long.
 
-
 X:20
 T:The Goat
 C:Thaikovsky
@@ -984,6 +981,7 @@ M:2/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id the-goat
 K:C
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -991,7 +989,6 @@ K:C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "C" c G |"F" A (G/F/) |"G7" E D |"C" C>z | 
 w: Once there was a lit-tle goat.
@@ -1002,9 +999,6 @@ w: And a hare came to meet him, and a hare came to meet him,
 $ "C" E "G7" D | "C" C>z | "C" E "G7" D | "C" C>z |]
 w: Soft and grey. Soft and grey.
 
-
-
-
 X:21
 T:The Little Chimney-Sweep
 C:English
@@ -1012,6 +1006,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id the-little-chimney-sweep
 K:D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1019,7 +1014,6 @@ K:D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 B/B/ | "Em" E E G A | B>A G B/B/ | "D" A G E D | 
 $ "Em" E2 z B/c/ | "G" d d c B/B/ | "Em" e2 d e | B<A G d | 
@@ -1034,6 +1028,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id come-and-follow-me
 K:A
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1041,14 +1036,11 @@ K:A
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 E/E/ | "A" A B c B/A/ | "E7" B B/c/ B E/E/ |
 w: Come and fol-low me in a line, in a line. Come and
 $ "A" A B c B/A/ | "E7" B e "A"A2 |]
 w: fol-low me, we will go this way.
-
-
 
 X:23
 T:Amazing Grace
@@ -1058,6 +1050,7 @@ L:1/4
 Q:1/4=112
 M:3/4
 I:linebreak $
+%%id amazing-grace
 K:G
 "_Flowing" D |:"G" G2 B/G/ |"G7" B2 A |"C" G2"C#dim7" E |"G" D2 D |$ G2 B/G/ |"A7" B2 A |"D7" d3- | 
 w: A-|maz- ing _|Grace! How|sweet the|sound that|saved a _|wretch like|me!|
@@ -1085,6 +1078,8 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id rig-a-jig-jig
+%%tags needs-repair
 K:A
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1092,7 +1087,6 @@ K:A
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 G | "C" GG GG | AG E2 | 
 w: As I was walk-ing down the street
@@ -1107,7 +1101,6 @@ w: way we go. Rig a jig jig and a-way we go, hi-
 $ "G7" B2 B (BAB) |"C" c3-c2|]
 w: ho, hi ho_ hi-ho._
 
-
 X:25
 T:Little Wind
 C:Ruth Stapp
@@ -1115,6 +1108,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id little-wind
 K:D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1122,7 +1116,6 @@ K:D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em" EG BB | "A" cc "Em" BG | EG BB | 
 w: Lit-tle wind, blow on the hill-top; Lit-tle wind, blow
@@ -1138,6 +1131,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id grandma
 K:A
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1145,7 +1139,6 @@ K:A
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 E2 G B2 G | A3 F2 A |
 w: Grand-ma has a hab-it of
@@ -1160,7 +1153,6 @@ $ D2 E F2 D | E3 z3 |]
 w: thinks it's shred/ded wheat.
 w: does-n't chew his feet.
 
-
 X:28
 T:Tideo
 C:Trad
@@ -1168,6 +1160,7 @@ M:4/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id tideo
 K:Eb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1175,7 +1168,6 @@ K:Eb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Eb"GB Bc GB B2 | 
 w: Skip one win-dow, Ti-de-o,
@@ -1190,7 +1182,6 @@ w: Jing-ling, jing-ling, jing-ling Joe
 $"Ab" c/c/c/c/ "Eb" BA "Bb7" GF "Eb" E2 | 
 w: Jin-gle at the win-dows, Ti-de-o.
 
-
 X:29
 T:Dhikr
 C:Tunisian
@@ -1198,6 +1189,7 @@ M:5/8
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id dhikr
 K:Eb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1205,7 +1197,6 @@ K:Eb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "F"c c "Bb" d c d | "F" c A2 GF | 
 w: Ya ha-ba-bi, Ya ha-ba-bi, Al-
@@ -1224,6 +1215,7 @@ M:2/2
 I:linebreak $
 L:1/4
 Q:1/2=80
+%%id down-in-that-valley
 K:C
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1231,7 +1223,6 @@ K:C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em" E G2 A | G E2 G | 
 w: Down in that val-ley, that
@@ -1249,13 +1240,12 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id let-s-play-in-the-snow
 K:Eb
 "Eb"EEE G2 F |"Eb" E2 G B3 |"Ab" A2 A "Bb7"F2 B |"Eb" G3 "Bb7"F3 | $ 
 w: Put on your gloves and come with me, let's go out it's snow-ing!
 "Eb"EEE G2 F |"Eb" E2 G B3 |"Ab" A2 A "Bb7"F2 D |"Eb" G3 z3 |]
 w: Put on your gloves and come with me, let's play in the snow!
-
-
 
 X: 32
 T: Yerakina
@@ -1268,16 +1258,14 @@ D: Alshire S-5242 "Greek Folk Songs & Dance" (various groups)
 Z: John Chambers <jc@trillian.mit.edu> http://trillian.mit.edu/~jc/music/
 M: 7/8
 L: 1/8
+%%id yerakina
 K: C
-[| "C"([G2E][AF]) ([BG][cA][BG][AF]) | [G7E] \
-| [G2E][AF] [BG][cA][BG][AF] | [G2E][FD] [GE][FD][E2C] \
-| "Am"([E2C][EC]) ([FD][GE][FD][EC]) | "Dm"[F7D] |
+[| "C"([G2E][AF]) ([BG][cA][BG][AF]) | [G7E] | [G2E][AF] [BG][cA][BG][AF] | [G2E][FD] [GE][FD][E2C] | "Am"([E2C][EC]) ([FD][GE][FD][EC]) | "Dm"[F7D] |
 w: 1.~Ki-*ni- | se i* Ye-*ra-*ki-*na | ya* ne- | ro
 w: 2.~Ke-*pe- | se mes*to* pi-*ga-*di | ke ev-ga- | le
 w: 3.~Ke-*tre- | xe o* kos-*mos* o-*los, | ke-*tre- | xa
 w: 4.~Ye-*ra- | ki- na* tha* se* vga-*lo | ke* gi- | neka
-| "G7"([G2E][FD]) ([FD][GE])([FD][EC]) | "C"([E2C][FD]) ([GE][AF])([BG][AF]) \
-|: "G7"[G3E] [F2D]([FD][EC]) | "C"[G3E] ([GE][AF])([BG][AF]) |
+| "G7"([G2E][FD]) ([FD][GE])([FD][EC]) | "C"([E2C][FD]) ([GE][AF])([BG][AF]) |: "G7"[G3E] [F2D]([FD][EC]) | "C"[G3E] ([GE][AF])([BG][AF]) |
 w: kri-*o* na* fe-*ri.* Droum,* droum, droum, droum,* droum, ta* vra-*
 w: fo-*ni* me-*ga-*li.* Droum,* droum, droum, droum,* droum, ta* vra-*
 w: ke~e-*go* kai-*me-*nos.* Droum,* droum, droum, droum,* droum, ta* vra-*
@@ -1308,16 +1296,14 @@ Z: John Chambers <jc@trillian.mit.edu> http://trillian.mit.edu/~jc/music/
 %W: by, and says he will pull her out if she will promise to marry him.
 M: 7/8
 L: 1/8
+%%id yerakina-d
 K: D
-[| "D"([A2F][BG]) ([cA][dB][cA][BG]) | [A7F] \
-| [A2F][BG] [cA][dB][cA][BG] | [A2F][GE] [AF][GE][F2D] \
-| "Bm"([F2D][FD]) ([GE][AF][GE][FD]) | "Em"[G7E] |
+[| "D"([A2F][BG]) ([cA][dB][cA][BG]) | [A7F] | [A2F][BG] [cA][dB][cA][BG] | [A2F][GE] [AF][GE][F2D] | "Bm"([F2D][FD]) ([GE][AF][GE][FD]) | "Em"[G7E] |
 %w: 1.~Ki-*ni- | se i* Ye-*ra-*ki-*na | ya* ne- | ro
 %w: 2.~Ke-*pe- | se mes*to* pi-*ga-*di | ke ev-ga- | le
 %w: 3.~Ke-*tre- | xe o* kos-*mos* o-*los, | ke-*tre- | xa
 %w: 4.~Ye-*ra- | ki- na* tha* se* vga-*lo | ke* gi- | neka
-| "A7"([A2F][GE]) ([GE][AF])([GE][FD]) | "D"([F2D][GE]) ([AF][BG])([cA][BG]) \
-|: "A7"[A3F] [G2E]([GE][FD]) | "D"[A3F] ([AF][BG])([cA][BG]) |
+| "A7"([A2F][GE]) ([GE][AF])([GE][FD]) | "D"([F2D][GE]) ([AF][BG])([cA][BG]) |: "A7"[A3F] [G2E]([GE][FD]) | "D"[A3F] ([AF][BG])([cA][BG]) |
 %w: kri-*o* na* fe-*ri.* Droum,* droum, droum, droum,* droum, ta* vra-*
 %w: fo-*ni* me-*ga-*li.* Droum,* droum, droum, droum,* droum, ta* vra-*
 %w: ke~e-*go* kai-*me-*nos.* Droum,* droum, droum, droum,* droum, ta* vra-*
@@ -1338,12 +1324,10 @@ D: Alshire S-5242 "Greek Folk Songs & Dance" (various groups)
 Z: John Chambers <jc@trillian.mit.edu> http://trillian.mit.edu/~jc/music/
 M: 7/8
 L: 1/8
+%%id yerakina-d-2
 K: D
-[| "D"[A2F][BG] [cA][dB][cA][BG] | [A7F] | [A2F][BG] [cA][dB][cA][BG] \
-| [A2F][GE] [AF][GE][F2D] | "Bm"[F3D] [GE][AF][GE][FD] \
-| "Em"[G7E] | "A7"[A2F][GE] [GE][AF][GE][FD] | "D"[F2D][GE] [AF][BG][cA][BG] ||
-|: "A7"[A3F] [G2E][GE][FD] | "D"[A3F] [AF][BG][cA][BG] \
-| "A7"[AF][A2F] [GE][AF][GE][FD] |1 "D"[F2D][GE] [AF][BG][cA][BG] :|2 "D"[F7-D-] | [F7D] |]
+[| "D"[A2F][BG] [cA][dB][cA][BG] | [A7F] | [A2F][BG] [cA][dB][cA][BG] | [A2F][GE] [AF][GE][F2D] | "Bm"[F3D] [GE][AF][GE][FD] | "Em"[G7E] | "A7"[A2F][GE] [GE][AF][GE][FD] | "D"[F2D][GE] [AF][BG][cA][BG] ||
+|: "A7"[A3F] [G2E][GE][FD] | "D"[A3F] [AF][BG][cA][BG] | "A7"[AF][A2F] [GE][AF][GE][FD] |1 "D"[F2D][GE] [AF][BG][cA][BG] :|2 "D"[F7-D-] | [F7D] |]
 
 X:33
 T:Mathy Groves
@@ -1352,6 +1336,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/2=120
+%%id mathy-groves
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1359,7 +1344,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 E | "Am" A2 A "G" BAB | "Em" GFG E2 E | 
 $ "C" c2 c "G7" (dc)d | "C"e3-e2 G | "F" AAe "D" d2d | 
@@ -1373,6 +1357,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id grizzly-bear
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1380,7 +1365,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "F"FF FA |"C7" GG GB |"F" AF "c7"GE |"F" F4 :|
 w: Griz-zly bear, a griz-zly bear, a-sleep-ing in a cave
@@ -1396,6 +1380,7 @@ M:3/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id five-cents-have-i
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1403,7 +1388,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 E|"Em" B2 A | B2 G | 
 w: Five cents have I, My
@@ -1419,6 +1403,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=120
+%%id postman
 K:C
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1426,7 +1411,6 @@ K:C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 c A c A | F A/>B/ B c | 
 w: Post-man, post-man, bring me a let-ter.
@@ -1442,6 +1426,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id bin-ich-mir-a-shnayderl
 K: Eb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1449,14 +1434,12 @@ K: Eb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Fm"CF FF | (G/A/)F-F2 | "Fm"CF FF |
 $ (G/A/)F-F2 | "Fm"CF FF | AB "C7"!fermata!c2 | 
 $ "Fm" AG/F/ "C7"GF/=E/ | "Fm" F3 z | "Ab" c2 c2 | c2 c2 |
 $ (c/e/)(d/e/) c(B/A/) | "Eb7"(B/c/)A-"Ab"A2 | "Ab" c2 cc | 
 $ ...
-
 
 X:38
 T:Sam, Sam, the Butcher Man
@@ -1465,6 +1448,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id sam-sam-the-butcher-man
 K: A
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1472,7 +1456,6 @@ K: A
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "D"D2 "E"E>E |"D" FD D2 | 
 w: Sam, Sam the but-cher man
@@ -1490,6 +1473,7 @@ M:4/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id you-will-never-find-me-valentine
 K: G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1497,7 +1481,6 @@ K: G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em" BG E2 BG E>E | "B7"^DE Fc "Em" BG E2 |
 w: Val-en-tine, Val-en-tine, I'm search-ing for a Val-en-tine.
@@ -1508,7 +1491,6 @@ w: You will nev-er find me, find me, find me.
 $ "C" cd ec "G" B2 G2 | "Em" BA GE "B7" F4 ||
 w: You will nev-er find me, an-y-where at all.
 
-
 X:40
 T:I'm Gonna Put On My Walkin' Shoes
 C: Trad
@@ -1516,6 +1498,7 @@ M:4/4
 I:linebreak $
 L:1/8
 Q:1/4=120
+%%id i-m-gonna-put-on-my-walkin-shoes
 K: Db
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1523,7 +1506,6 @@ K: Db
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 E FA |"Ab" c2 c2 c A2 E |
 w: I'm gon-na put, put put on my
@@ -1543,6 +1525,8 @@ L:1/8
 Q:220
 S:John Hartford's "Wild Hog in the Redbrush" transcribed by Llarry Brandon
 Z:posted by Llarry Brandon 1/98
+%%id jimmy-in-the-swamp
+%%tags needs-repair
 K:G
 GE |:"G"DEGA BAGA| Bded ef .g2|DEGA BAGA|BAGB"D" AGEG|!
 "G" DEGA BAGA|Bded  efga|bgag efge|1"D"dBAF "G"G2 GE:|2dBAF G2 z2| !
@@ -1556,6 +1540,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=96
+%%id uskudar
 K: G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1563,13 +1548,12 @@ K: G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em"E>B BB | "Am" (c/B/)(c/d/) "Em" BB | 
 $ "Am" AA/A/ GA | "B7"B4 :|
 $ "Em" E>F GA | (B/c/)(B/A/) (G/F/)E |
 $ "Am" (A/G/)(G/F/) (F/E/)(E/^D/) |"B7" F4 :| 
-$ "Am" (A/G/)(G/F/) (F/E/)(E/^D/) |"Em" E4 |] 
+$ "Am" (A/G/)(G/F/) (F/E/)(E/^D/) |"Em" E4 |]
 
 X:43
 T:Al Pasar por Sevilla
@@ -1579,6 +1563,7 @@ M:6/8
 I:linebreak $
 L:1/8
 Q:1/8=168
+%%id al-pasar-por-sevilla
 K: Ab
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1586,21 +1571,19 @@ K: Ab
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 |:"Fm" CCF- "C7"FGB | "Fm" AGF- "C7"FGB | 
-w: Al pa-sar_ por Se-vi-lla vi\-a u-na chi
+w: Al pa-sar_ por Se-vi-lla vi-a u-na chi
 w: As I strolled through the bus-y park,_ wait-ing
 $ "Fm" AGF- "C7"FED | "Fm" C3- "C7"C2 z | 
-w: qui-lla\-y me\-e--na-mo-re. _
+w: qui-lla-y me-e--na-mo-re. _
 w: for my ship_ soon to go,_
 $ "Fm" ccc- cB=A | "Bbm" BG_A- ABG | 
-w: La to-me_ de la ma-no y\-al_ cam-pa-
+w: La to-me_ de la ma-no y-al_ cam-pa-
 w: There she stood_ with her love-ly smile,_ And she
 $ "Fm" AFF- "Db7" FG"C7"=E |"Fm" F3-F z2 :|]
 w: men-to me_ la lle-re._
-w: set my heart_ all a-glow._ | 
-
+w: set my heart_ all a-glow._ |
 
 X:44
 T:Aloha 'Oe
@@ -1609,16 +1592,17 @@ Z:All Rights Reserved
 L:1/8
 M:4/4
 I:linebreak $
+%%id aloha-oe
 K:G
 DG |"G" B3 A"C" G>FG>E |"G" (D4 D2) B2 |$"D7" A3 ^G AAcB | (A4 A2) DG |"G" B3 A"C" G>FG>E |$ 
 w: Ha- 'a-|heo 'eka u- a i na|pa- li, Ke|nihi ae- la i ka na-|he- le, 'E u-|hai 'ana pa- ha 'i- ka|
-w: Proud- ly|sweeps the rain- cloud from the|sea,~\_\_\_ * Soft|winds are breath- ing sad fare-|well,~\_\_\_ * Tho'~ ~~our|part- ing brings such grief to|
+w: Proud- ly|sweeps the rain- cloud from the|sea,~___ * Soft|winds are breath- ing sad fare-|well,~___ * Tho'~ ~~our|part- ing brings such grief to|
 "G" (D4 D2) GF |"C" E2 A(G"D7" F)F(BA) |"G" (G2 G4) ||$ D2 |"C" E2 G2 c3 E |"G" D2 G2 B2 z (G/G/) | 
-w: li- ko Pu- a|ahi- hi le~\_\_ * hua o~\_\_ *|u- ka.|A-|lo- ha 'oe, A-|lo- ha 'oe, 'E ke|
-w: me,~\_\_\_ * Mem- 'ries|fond in my heart will ev- er|dwell.~\_\_\_ *|Fare-|well to thee, fare-|well to thee, the~\_\_ *|
+w: li- ko Pu- a|ahi- hi le~__ * hua o~__ *|u- ka.|A-|lo- ha 'oe, A-|lo- ha 'oe, 'E ke|
+w: me,~___ * Mem- 'ries|fond in my heart will ev- er|dwell.~___ *|Fare-|well to thee, fare-|well to thee, the~__ *|
 "D7" F>EF>G AAcc |$"G" (B4 G2) D2 |"C" E2 G2 c3 E |"G" DDGG B3 G |$"D7" F3 G (B A2) F |"G" G6 |] 
-w: o- na- o- na no- ho i ka|li- po, One|fond em- brace, a|ho- 'i a- 'e au, un-|til we meet~\_\_ * a-|gain.|
-w: one I hold most dear of all my|loved ones, One|fond em- brace, be-|fore we say good- bye, un-|til we meet~\_\_ * a-|gain.|
+w: o- na- o- na no- ho i ka|li- po, One|fond em- brace, a|ho- 'i a- 'e au, un-|til we meet~__ * a-|gain.|
+w: one I hold most dear of all my|loved ones, One|fond em- brace, be-|fore we say good- bye, un-|til we meet~__ * a-|gain.|
 
 X:45
 T:The Elephant
@@ -1627,6 +1611,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=72
+%%id the-elephant
 K: C
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1634,7 +1619,6 @@ K: C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em" BA GB/B/ | "F" AG F>A | 
 w: Way down south where ba-na-nas grow,
@@ -1652,6 +1636,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id happy-monkey
 K: G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1659,7 +1644,6 @@ K: G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 d | "G" GG "D7" AA | "G" B B2 d | GG "D7" AA | 
 w: There was a hap-py mon-key, Who lived up in a 
@@ -1679,6 +1663,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id i-went-for-a-ride
 K: F
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1686,7 +1671,6 @@ K: F
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 A | "Dm" FF/F/ "A7" ED/E/ | "Dm" F A2 A | 
 w: I went for a ride in the coun-try, And
@@ -1702,6 +1686,8 @@ M:3/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id lazy-bones
+%%tags needs-repair
 K: Eb
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1709,7 +1695,6 @@ K: Eb
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Eb" GGG | E3 | GGG | E2 E | 
 w: The cows are lost. So are the sheep. I
@@ -1727,6 +1712,7 @@ M:2/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id who-stole-my-chickens-and-my-hens
 K: D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1734,7 +1720,6 @@ K: D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "D" D D/>E/ | F/>E/ D/>F/ |"A7" E z | Z | 
 w: Who stole my chick-ens and my hens?
@@ -1752,6 +1737,7 @@ M:2/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id little-partridge
 K: G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1759,7 +1745,6 @@ K: G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em" E B | B B/c/ | d/c/ B/A/ |
 w: 1.~Lit-tle par-tridge our greet-ings we are bring
@@ -1782,6 +1767,7 @@ M:4/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id kimigayo
 K: D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1789,7 +1775,6 @@ K: D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 ED (EF) | (AF) E2 | F A (B A/B/) | 
 w: Ki-mi-ga-_yo_ wa Chi-yo-ni,__ 
@@ -1798,7 +1783,7 @@ w: Ya-chi-yo-ni sa-za-re-i-shi-no,
 $F A B A | F3/2 A/ E2 | 
 w: I-wa-o-to na-ri-te
 $ B d e2 | (d e) (B A) | (B A/F/) E2 |]
-w: ko-ke-no mu-_su_ ma-__de. | 
+w: ko-ke-no mu-_su_ ma-__de. |
 
 X:52
 T:My Little Ducklings
@@ -1808,6 +1793,7 @@ M:2/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id my-little-ducklings
 K: F
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1815,7 +1801,6 @@ K: F
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "F "F/B/ A/B/ | c c |"Bb" d/d/ d/d/ |"F" c2 | 
 w: All my lit-tle duck-lings, swim ac-ross the sea.
@@ -1824,7 +1809,6 @@ $"C7" B/B/ B/B/ | "F" A "Dm" A |"Gm" G/G "C7" G/G/ |"F" F2 |]
 w: Heads are un-der wa-ter, Tails look up at me!
 w: Pine trees keep their nee-dles, watch how they still grow.
 
-
 X:53
 T: Folk Song
 C: Anon
@@ -1832,6 +1816,7 @@ M:2/4
 I:linebreak $
 L:1/4
 Q:1/4=112
+%%id folk-song
 K: G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1839,7 +1824,6 @@ K: G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "Em" BB | "B7" A B/A/ |"Em" G/F/ E/z/ | B B | 
 $"B7" A/c/ B/A/ |"Em" G/F/ E |"B7" ^D E | F B/A/ | 
@@ -1852,6 +1836,7 @@ M:2/4
 I:linebreak $
 L:1/8
 Q:1/4=112
+%%id lucy-locket
 K: D
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1859,14 +1844,13 @@ K: D
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 "D"DF AA | DF AA | dc BA |
 w: Lu-cy Lock-et lost her pock-et, What a sil-ly
 $"G"GF "A7"E2 |"D" DF AA | DF AA |
 w: thing to do! If you are not car-ful, Lu-cy,
 $"G"GA "A7"Bc | "D"d4 |]
-w: Next you'll lose your shoe! | 
+w: Next you'll lose your shoe! |
 
 X:54
 T: Top of My Head
@@ -1875,6 +1859,7 @@ M:7/8
 I:linebreak $
 L:1/8
 Q:1/8=172
+%%id top-of-my-head
 K: G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1882,7 +1867,6 @@ K: G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 0
 dd | "G" GGG d2 dd | "D7" cAF D2 A2 | 
 w: From the top of my head to the tip of my toes, is
@@ -1897,6 +1881,7 @@ L:1/4
 M:3/4
 Q:1/4=192
 I:linebreak $
+%%id daisy-daisy
 K:G
 %%pagewidth 16cm
 %%pageheight 29.7cm
@@ -1904,7 +1889,6 @@ K:G
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 %%measurenb 1
 |: "G" d3 | B3 | G3 | D3 |"C" E F G | E2 G |$"G" D3- | D3 |"D7" A3 | d3 |"G" B3 |"Em" G3 |"A7" E F G |$ 
 w: Dai-|sy,|Dai-|sy,|give me your|ans- wer|do,|_|I'm|half|cra-|zy,|all for the|
@@ -1929,12 +1913,12 @@ C: Trad
 L:1/8
 M:6/8
 I:linebreak $
+%%id grasshoppers-three
 K:G
 "G" GGG G2 A | BGG G3 |"C" c3"G" B3 |"D7" ADD D2 D |$"G" G2 G GGA | B2 c d2 d |"C" e2 e"G" d2 d | 
 w: Gras-shop-pers~ three~ a|fid-dl-ing~ went,~|Hey~ Ho!~|Ne-ver~ be~ still,~ They~|paid~ no~ mo-ney to-ward~ their~ rent,~ But~|all~ day~ long~ with~|
 "A7" ^c2 c"D7" d2 d |$"G" GGG G2 A |"G" BBB Bcd | GGG"C" G2"D7" A |"G" BGG G3 |] 
 w: el-bows~ bent,~ They~|fid dled~ a~ tune~ called~|ril-la-by,~ ril-la-by,~|Fid-dled~ a~ tune~ called~|ril-la-by~ rill.~|
-
 
 X:57
 T: The Ant Dance
@@ -1942,6 +1926,7 @@ C: Trad
 L:1/8
 M:2/4
 I:linebreak $
+%%id the-ant-dance
 K:Dmix
 Q:1/4=96
 %%pagewidth 16cm
@@ -1950,7 +1935,6 @@ Q:1/4=96
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 E2 | "A" AB/B/ cA |"G" d/d/B/B/ G>G | 
 w: I went for a walk a week a-go to-day. I
 $ "Em" E/EE/ GE/E/ |"A" A/A/"G"G "A"A>E |"A" A/A/B/B/ cA/A/ | 
@@ -1967,6 +1951,7 @@ C: Trad
 L:1/8
 M:6/8
 I:linebreak $
+%%id git-along-little-dogies
 K:C
 Q:1/4=96
 %%pagewidth 16cm
@@ -1975,7 +1960,6 @@ Q:1/4=96
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 z3 z2 C |"C" E>CC"F" FFF |"G7" GGG"C" DCC |"C" E>CC"F" FFF |$"G7" GGG"C" C2 C |"C" E>CC"F" FFF | 
 w: 1.As~|I~ was~ a walk-ing~ one~|mor-ning~ for~ plea-sure,~ I~|spied~ a~ cow punch-er~ a|rid-ing~ a-lone;~ His~|hat~ was~ throwed~ back~ and~ his~|
 "G7" GGG"C" DCC |$"C" EEE"F" FFF |"G7" GGG"C" C2 G/G/ |"C7" _B2 B B2 G/G/ |$"C7" ccc"F" GFF | 
@@ -1991,6 +1975,8 @@ C: Trad
 L:1/8
 M:3/4
 I:linebreak $
+%%id bury-me-not-on-the-lone-prairie
+%%tags needs-repair
 K:Em
 Q: "Slowly"
 %%pagewidth 16cm
@@ -1999,7 +1985,6 @@ Q: "Slowly"
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 Z | z2 z2 z D |"Em" (3EFE E3 E/E/ |"G" GB, D3 D |
 w: "Oh, bu-ry me not on the lone prair-rie," Those
 $"Em" EF E3 D |"G" GA B3 G/A/ |"Bm" BB d3 B/A/ | 
@@ -2013,7 +1998,7 @@ w: wild_ coy-otes will howl o'er me.__ In a
 $ "G" (3:2:2 D d2 d3 d | "D7" (3dzd "Bm"d<B !fermata!z D | 
 w: nar-row grave just six by three,_  Oh,
 $ "G" (3Ddd (3:2:2 d c2- (3:2:2 c2 A | "Bm" (3:2:2 B2 "D7" B "G"B<G-G2 !D.C.alfine!|| 
-w: bu-ry me not on_ the lone prair-rie."_ | 
+w: bu-ry me not on_ the lone prair-rie."_ |
 
 X:60
 T: Who's That Tapping at the Window?
@@ -2021,15 +2006,14 @@ C: Trad
 L:1/8
 M:2/4
 I:linebreak $
+%%id who-s-that-tapping-at-the-window
 K:D
-Q: 
 %%pagewidth 16cm
 %%pageheight 29.7cm
 %%topmargin .5cm
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 "D" D4 | A4 |"A7" EE FF |"D" E2 D2 | 
 w: Who's that tap-ping at the win-dow?
 $"D" D4 | A4 |"A7" EE FF |"D" E2 z2 | 
@@ -2045,6 +2029,7 @@ C: Lithuanian
 L:1/4
 M:3/4
 I:linebreak $
+%%id mother-sent-me
 K:Fm
 Q: "Andante"
 %%pagewidth 16cm
@@ -2053,7 +2038,6 @@ Q: "Andante"
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 "Fm"F2 G | A2 F |"Fm" c2 "Bbm"(B/d/) |
 w: To the sea my moth-er_
 $ "Fm"c2 F | "Fm"c2 "Ddim"c |"Gdim" B2 "Fm"(B/A/) | 
@@ -2069,15 +2053,14 @@ C: Trad
 L:1/8
 M:6/8
 I:linebreak $
+%%id sally-go-round-the-sun
 K:D
-Q: 
 %%pagewidth 16cm
 %%pageheight 29.7cm 
 %%topmargin .5cm
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9
 "D"DDD D2D | D6 | FFF F2F | 
 w: Sal-ly go 'round the sun, Sal-ly go 'round the
 $ F6 | AAA A2B | A2F D2z | 
@@ -2085,13 +2068,13 @@ w: moon, Sal-ly go 'round the chim-ney top
 $ F2F E2E | D6 |]
 w: Ev-'ry af-ter-noon.
 
-
 X:63
 T:Round and Round
 L:1/4
 Q:1/4=100
 M:4/4
 I:linebreak $
+%%id round-and-round
 K:C
 %%pagewidth 16cm
 %%pageheight 29.7cm 
@@ -2099,7 +2082,6 @@ K:C
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9 
 "Dm"D D A A |"C" G/F/ E "Dm"D D |
 w: Round~ and~ round~ the~|earth~ * is~ turn ing,~||
 $"Dm"A A "F"c c |"G" B/A/ "Dm"G A A |
@@ -2107,13 +2089,13 @@ w: Turn ing~ al ways~|in * to~ morn ing.~
 $ "C"G E "Dm"F G |"C" E/D/ C "Dm"D2 |] 
 w: And~ from~ morn ing~|in * to~ night.~|
 
-
 X:64
 T:Braes o' Yarrow
 L:1/4
 Q:"Slowly"
 M:6/4
 I:linebreak $
+%%id braes-o-yarrow
 K:Gm
 %%pagewidth 16cm
 %%pageheight 29.7cm 
@@ -2121,7 +2103,6 @@ K:Gm
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9 
 G/G/ |"Gm" B c d2 GA | "Cm" B A "Gm"G2 z F/F/ |B c d3 G | "Cm" B c2 "Gm"z2 B/c/ | 
 $ "Dm"d f d3 G/A/ | "Gm" B A "Cm"G2 z G/A/ | "Gm" B A "Cm" G3 "Dm" D | D "Gm" !fermata!G2 z z |]
 
@@ -2132,6 +2113,7 @@ L:1/4
 Q:"Slowly"
 M:4/4
 I:linebreak $
+%%id all-the-pretty-little-horses
 K:Em
 %%pagewidth 16cm
 %%pageheight 29.7cm 
@@ -2139,13 +2121,13 @@ K:Em
 %%botmargin 1.5cm
 %%leftmargin 1.5cm
 %%rightmargin 1.5cm
-%%pagescale 0.9 
 "Em" E B B2 | "Am" A G A2 | "D" d3/2 c/ B/A/ G/F/ | "Em" E2 E2 | "Em" E B B2 | 
 w: Hush-a-bye, don't you cry, Go to sleep-y lit-tle ba-by. When you wake,
 $ "Am" A G A2 | "D" d3/2 c/ B/A/ G/F/ | "Em" E2 E2 | "G"B, E E2 | "C" E/E/ G G2 |
 w: You shall have, All the pret-ty lit-tle hor-ses. Blacks and bays, dap-ples and grays,
 $ "D" d3/2 c/ B/A/ G/F/ | "Em" E2 E2 | "Em" E B B2 | "Am" A G A2 | "D" d3/2 c/ B/A/ G/F/ | "Em" E2 E2 |]
-w: Coach and six-a lit-tle hor-ses. Hush-a-bye, don't you cry, Go to sleep-y lit-tle ba-by.`,
+w: Coach and six-a lit-tle hor-ses. Hush-a-bye, don't you cry, Go to sleep-y lit-tle ba-by.
+`,
 
 "musicianship":
 `X:1
@@ -2156,7 +2138,9 @@ N:Page 1
 M:2/4
 L:1/8
 Q:1/4=88
+%%id my-pony-john
 K:Edor
+I:linebreak $
 EE/F/ G/B/A | DF E2 | EE/F/ G/d/c | Ac B2 |
 $
 EE/F/ G/B/A | DF EB/A/ |
@@ -2170,7 +2154,9 @@ N:Page 1
 M:2/4
 L:1/8
 Q:1/4=84
+%%id daffodil
 K:Dmix
+I:linebreak $
 AF D2 | AF D2 | C2 E2 | D4 |
 $
 AF D2 | AF D2 | B2 G2 | A4 | c3/2B/ AG | F2 E2 | D2 C2 | D4 |]
@@ -2183,7 +2169,9 @@ N:Page 2
 M:6/8
 L:1/8
 Q:3/8=54
+%%id preci-cat
 K:Fdor
+I:linebreak $
 FAc B/G/E2 | FAc d3 | FAc B/G/E2 | d/c/(d2 d3) |
 $
 FAc B/G/E2 | FAc d/c/d2 |
@@ -2198,7 +2186,10 @@ N:Page 2
 M:C
 L:1/8
 Q:3/8=88
+%%id missouri
+%%tags needs-repair
 K:Dmix
+I:linebreak $
 A/B/ | cB AB cB A | DD EC D3 A/B/ | cB AB cB A2 | DD EC D4 |
 $
 [M:6/8]D2D CA,C |
@@ -2214,7 +2205,9 @@ N:Page 3
 M:6/8
 L:1/8
 Q:3/8=54
+%%id susan
 K:Ddor
+I:linebreak $
 D3/2E/F E/(C3/2C) | ECE F/G/A2 | D3/2E/F A/(c3/2c) |
 $
 [K:C]BGB A3 |
@@ -2228,7 +2221,9 @@ N:Page 3
 M:6/8
 L:1/8
 Q:3/8=48
+%%id wishing-star
 K:Dmix
+I:linebreak $
 FAD C/D/E2 | FAD c3 |
 $
 FAD C/D/E2 | F/E/(D2 D3) |
@@ -2245,7 +2240,10 @@ N:Page 4
 M:6/8
 L:1/8
 Q:3/8=48
+%%id jimmy-s-tune
+%%tags needs-repair
 K:Ddor
+I:linebreak $
 DFA c3/2B/A/B/ | c2 A3/2c/B GF/E/ |
 $
 [K:C]DFA c3/2B/A/B/ | cd e3/2e/(d d3/2) |
@@ -2262,7 +2260,9 @@ N:Page 4
 M:2/4
 L:1/8
 Q:1/4=88
+%%id siobhan
 K:Fmix
+I:linebreak $
 E/F/G/ | Ac AG | F2 z/ E/F/G/ | Ac Ac | e2 z/ E/F/G/ |
 $
 Ac AG | F2 z/ z/ E/G/ |
@@ -2276,7 +2276,9 @@ N:Page 5
 M:2/4
 L:1/8
 Q:1/4=100
+%%id joohee
 K:Edor
+I:linebreak $
 D/ | E2 B2 | Ac B2 | E3/2E/ FD | GF E3/2D/ |
 $
 E2 B2 | Ac B2 | E3/2E/ FD |1 (E3 E/)D/ :|
@@ -2301,6 +2303,7 @@ N:Page 5
 M:2/4
 L:1/8
 Q:1/4=92
+%%id choosy
 K:Dmix
 D2 d3/2B/ | AB AG | [M:3/4]FE F2 D2 | [M:2/4]C2 E3/2C/ | DE FG | [M:3/4]FE F2 D2 |]
 
@@ -2312,7 +2315,10 @@ N:Page 6
 M:3/4
 L:1/8
 Q:3/8=60
+%%id hands
+%%tags needs-repair
 K:Ddor
+I:linebreak $
 D2 F2 A2 | [M:3/8]BGB | [M:3/4]D2 F2 A2 | [M:3/8]GEC |
 $
 [M:3/4]D2 F2 A2 | [M:3/8]BGB |
@@ -2326,7 +2332,9 @@ N:Page 6
 M:5/8
 L:1/8
 Q:3/8=84
+%%id idelisa
 K:Emix
+I:linebreak $
 B G E A F | D2 F G/ F/ E | B G E A F | D2 F G/ F/ E |
 $
 D B, F E2 | D B, F G/ F/ E | D B, F E2 |
@@ -2340,7 +2348,9 @@ N:Page 7
 M:2/4
 L:1/8
 Q:1/4=88
+%%id joy
 K:Ddor
+I:linebreak $
 DD/D/ d3 cA/B/ AF E/F/D C D2 | DD/D/ FD A/B/A |
 $
 FE D2 | DD/D/ FD A/B/A |
@@ -2354,7 +2364,9 @@ N:Page 7
 M:2/4
 L:1/8
 Q:1/4=84
+%%id hey-goodbye
 K:Dmix
+I:linebreak $
 DA A3/2(c/ | c/)c/B c/c/B | DA AA/(G/ | G/)G/F E2 |
 $
 DA A3/2(c/ | c/)c/B c/c/B |
@@ -2368,7 +2380,9 @@ N:Page 8
 M:2/4
 L:1/8
 Q:1/4=88
+%%id wiggle-song
 K:Edor
+I:linebreak $
 BG EF/G/ | FD E2 | BG Ec/d/ | cA B2 |
 $
 BG EF/G/ | FD EB/A/ | BB/A/ B/A/G/F/ |
@@ -2382,7 +2396,9 @@ N:Page 8
 M:6/8
 L:1/8
 Q:3/8=100
+%%id stop-dance
 K:Dmix
+I:linebreak $
 D2F A2A | G2E C2C | D2F A2A | c3 z3 | D2F A2A | G2E C2C | D3 z3 | z6 |
 $
 D2F A2A |
@@ -2396,7 +2412,9 @@ N:Page 9
 M:2/4
 L:1/8
 Q:1/4=72
+%%id jennifer
 K:Ddor
+I:linebreak $
 A/G/F/E/ DC | A,E D2 | A/G/F/E/ DC | A,E D/E/F/G/ |
 $
 [K:C]AB cB |
@@ -2410,7 +2428,9 @@ N:Page 9
 M:2/4
 L:1/8
 Q:1/4=106
+%%id oma
 K:Dmix
+I:linebreak $
 G2 A2 | D2 AB | cB AG | FD z2 |
 $
 G2 A2 | D2 AB | cB AG | FD AB |
@@ -2426,7 +2446,9 @@ N:Page 10
 M:2/4
 L:1/8
 Q:1/4=84
+%%id carol
 K:Ddor
+I:linebreak $
 DF A2 | BG z B | A/G/F EF | D2 z2 |
 $
 [K:C]c/B/A/c/ BG | FE D2 | CE z F | D4 |]
@@ -2439,7 +2461,9 @@ N:Page 10
 M:2/4
 L:1/8
 Q:1/4=100
+%%id pickles-and-pie
 K:Dmix
+I:linebreak $
 DA A2 | B/A/G A2 | cB/c/ B/A/G | FG A2 |
 $
 DA A2 | B/A/G A2 | AG/F/ G/F/E | DC D2 |]
@@ -2452,7 +2476,10 @@ N:Page 11
 M:2/4
 L:1/8
 Q:1/4=100
+%%id mouse-in-the-pantry
+%%tags needs-repair
 K:Edor
+I:linebreak $
 EF GE | B2 z c | B2 G2 | E2 z2 |
 $
 DD FD | E2 z F | G2 F2 | E2 z2 :|
@@ -2472,7 +2499,9 @@ N:Page 11
 M:6/8
 L:1/8
 Q:3/8=112
+%%id chicken-pot-pie
 K:Dmix
+I:linebreak $
 c3 A2c | B3 G2B | A3 F2A | G2E C3 |
 $
 c3 A2c | B2A G2B | A3 z3 | z6 |
@@ -2490,7 +2519,9 @@ N:Page 12
 M:2/4
 L:1/8
 Q:1/4=84
+%%id bouncy
 K:Edor
+I:linebreak $
 E3/2F/ GF | DB, E2 | E3/2F/ Gd | cA B2 |
 $
 E3/2F/ GF | DB, E2 | BB/A/ GE | B,D E2 |]
@@ -2504,7 +2535,10 @@ N:Page 12
 M:6/8
 L:1/8
 Q:3/8=72
+%%id daisies
+%%tags needs-repair
 K:Dmix
+I:linebreak $
 AF2 AF2 | DCE D3 | AF2 AF2 | DCE D2D/E/ |
 $
 [M:2/4]FD EC | DF FD/E/ | FD EC |1 D3 D/E/ :|
@@ -2518,7 +2552,10 @@ N:Page 13
 M:6/8
 L:1/8
 Q:3/8=84
+%%id susanna
+%%tags needs-repair
 K:Ddor
+I:linebreak $
 D2D A2A | [M:3/4]BB GG BB | [M:6/8]A2A F2F | D2 |
 $
 G2G E2E | C2 | F2F E2E | D2 :|
@@ -2532,7 +2569,10 @@ N:Page 13
 M:3/8
 L:1/8
 Q:1/8=116
+%%id lifesong
+%%tags needs-repair
 K:Dmix
+I:linebreak $
 DA3/2c/ | B/A/G3/2B/ | A/G/A | DA3/2c/ | B/A/G3/2F/ | E/F/D |
 $
 CE3/2C/ | D2 | CE3/2F/ | F/E/D |]
@@ -2545,7 +2585,10 @@ N:Page 14
 M:7/8
 L:1/8
 Q:3/8=72
+%%id to-the-zoo
+%%tags needs-repair
 K:Ddor
+I:linebreak $
 D F G A2 A2 | c2 B G2 F2 | D F G A2 A2 | d2 c d4 |
 $
 D F G A2 A2 | c2 B G2 F2 | D F G A2 A2 |
@@ -2564,7 +2607,9 @@ N:Page 14
 M:5/8
 L:1/8
 Q:3/8=152
+%%id bounce-a-bye-baby
 K:Dmix
+I:linebreak $
 D3/2 F/ A G E | C3/2 E/ C D2 | D3/2 F/ A B G | c/ B/ A/ G/ A/ B/ A2 |
 $
 D3/2 F/ A G E |
@@ -2578,7 +2623,9 @@ N:Page 15
 M:2/4
 L:1/8
 Q:1/4=88
+%%id tickle-soup
 K:Ddor
+I:linebreak $
 Dc AB/c/ | B/A/G AF | Dc AB/c/ | B/A/G A2 |
 $
 Dc AB/c/ | B/A/G AF |
@@ -2592,7 +2639,9 @@ N:Page 15
 M:2/4
 L:1/8
 Q:1/4=144
+%%id a-shake
 K:Dmix
+I:linebreak $
 d2 A(B | B)B A3/2A/ | F2 E2 | D2 z2 | d2 A(B | B)B A3/2A/ | F2 G2 | A2 z2 |
 $
 d2 A(B |
@@ -2606,7 +2655,9 @@ N:Page 16
 M:2/4
 L:1/8
 Q:1/4=60
+%%id my-little-angel
 K:Ddor
+I:linebreak $
 cD BD | A/G/F G2 | F/E/D EC | A,E F/E/D |
 $
 cD BD | A/G/F G2 | F/E/D EC |
@@ -2622,7 +2673,10 @@ N:Page 16
 M:5/8
 L:1/8
 Q:3/8=60
+%%id mount-vernon-melody
+%%tags needs-repair
 K:Dmix
+I:linebreak $
 A G B A/ F/ D | E C D3 | A G B A/ F/ D | [M:2/4]EC DE/F/ |
 $
 GE FD | E/D/C DE/F/ |
@@ -2636,6 +2690,7 @@ N:Page 17
 M:2/4
 L:1/8
 Q:1/4=60
+%%id ching-ching
 K:Edor
 Ed c/B/A | BG EF/G/ | AF DE/F/ | GF E2 |
 Ed c/B/A | BG EF/G/ | AF DF |
@@ -2649,6 +2704,7 @@ N:Page 17
 M:12/8
 L:1/8
 Q:1/4=108
+%%id marisa
 K:Gmix
 DED | G3 z3 z3 z3 | e2(e e2)(d d3) DED | G3 z3 z3 z3 | e2(e e2)(d d3) DED |
 G3 z3 z3 z3 |
@@ -2663,6 +2719,7 @@ N:Page 18
 M:3/4
 L:1/8
 Q:1/4=72
+%%id babby
 K:Ddor
 D A2 Bc B | D A2 BF E | D A2 Bc B | AB F3 E |
 [K:C]D A2 Bc B | D A2 BF E | D A2 Bc B |
@@ -2680,6 +2737,7 @@ N:Page 18
 M:5/8
 L:1/8
 Q:1/8=176
+%%id vincent
 K:Gmix
 G D E C D | G D E C D | G D E C D |
 [M:3/8]
@@ -2699,6 +2757,7 @@ N:Page 19
 M:3/4
 L:1/8
 Q:1/4=120
+%%id boothbay
 K:Edor
 E2 D2 F2 | E2 B3/2A/ G3/2F/ | E2 D2 F2 | E2 E3/2F/ G3/2A/ |
 B2 c2 A2 | B3/2G/ E2 z2 |
@@ -2713,6 +2772,8 @@ N:Page 19
 M:6/8
 L:1/8
 Q:3/8=92
+%%id pachio
+%%tags needs-repair
 K:Dmix
 D2A F2A | [M:2/4]F2 A2 | [M:6/8]c2B A2G | [M:2/4]A2 F2 |
 [M:6/8]D2A F2A | [M:2/4]F2 A2 |
@@ -2730,6 +2791,7 @@ N:Page 20
 M:3/4
 L:1/8
 Q:1/4=144
+%%id joshua
 K:Edor
 E2 G2 B2 | AF z2 z2 | E2 G2 B2 | cA z2 z2 | E2 G2 B2 | AF z2 z2 | GE z2 z2 | z2 z2 z2 |
 E2 G2 B2 | AF z2 z2 | E2 G2 B2 | cA z2 z2 | BG z2 z2 | AF z2 z2 | GE z2 z2 | z2 z2 z2 |]
@@ -2742,6 +2804,7 @@ N:Page 20
 M:2/4
 L:1/8
 Q:1/4=72
+%%id sanquipoca
 K:Fmix
 Fc dc | z/ AG/ FC | Fc dc | z/ AG/ A z |
 Fc dc | z/ AG/ FC | FF/(E/ E/)E/F | z4 |]
@@ -2754,6 +2817,7 @@ N:Page 21
 M:2/4
 L:1/8
 Q:1/4=96
+%%id piggety-gigue
 K:Gdor
 DF | G2 B/A/G/F/ | G2 DF | Gd/c/ B/A/G/F/ | G2 DF |
 G2 B/A/G/F/ |
@@ -2767,6 +2831,7 @@ N:Page 21
 M:7/8
 L:1/8
 Q:1/8=200
+%%id top-of-the-world
 K:Dmix
 A F D G2 G2 | A F D C2 C2 | A F D G2 G2 | F/ E/ D C D4 |
 |: A B c d2 c2 | B A G A2 D2 |
@@ -2780,7 +2845,9 @@ N:Page 22
 M:3/4
 L:1/8
 Q:1/4=132
+%%id matty
 K:Ddor
+I:linebreak $
 A2 c4 | B2 G4 | FG A2 F2 | G6 |
 $
 A2 c4 | d2 B4 | c2 A2 F2 | D6 |
@@ -2798,7 +2865,9 @@ N:Page 22
 M:2/4
 L:1/8
 Q:1/4=92
+%%id kaikoura-harbor
 K:Dmix
+I:linebreak $
 AA AG/F/ | E/F/G FD |1 AA AG/F/ | E/D/C D2 :|
 [2 AA AG/F/ | E/D/C D2 |]
 cc cB/A/ | GB AD | cc cB/A/ |
@@ -2814,7 +2883,9 @@ N:Page 23
 M:4/4
 L:1/8
 Q:1/4=100
+%%id hopin
 K:Ddor
+I:linebreak $
 D2 (B4 B)G | A3/2G/ FE D3 C | D2 (B4 B)G | A3/2G/ FE D3 z |
 $
 C3/2C/ EC DA A2 |
@@ -2831,7 +2902,9 @@ N:Page 23
 M:6/8
 L:1/8
 Q:3/8=80
+%%id the-race
 K:Dmix
+I:linebreak $
 D2A A3/2G/F | E3/2F/G F2D | D2A A3/2G/F | E3/2D/C D3 |
 $
 c2c c3/2B/A |
@@ -2848,7 +2921,9 @@ N:Page 24
 M:2/4
 L:1/8
 Q:1/4=120
+%%id cool
 K:Ddor
+I:linebreak $
 z CB, C | D2 c z | z2 D(c | c) A2 c | B2 G2 | D2 c z | z A2 c | B2 z2 |
 $
 z CB, C |
@@ -2862,7 +2937,9 @@ N:Page 24
 M:4/4
 L:1/8
 Q:1/4=144
+%%id are-you-happy
 K:Dmix
+I:linebreak $
 D3 (A( A4) | A2) AB cB AG | F2 D2 E2 C(D | D) A2 G F2 E2 |
 $
 D3 (A( A4) | A2) AB cB AG |
@@ -2876,7 +2953,9 @@ N:Page 25
 M:2/4
 L:1/8
 Q:1/4=108
+%%id rosin-on-the-bow
 K:Ddor
+I:linebreak $
 D A2 B | c2 Bc | z BA B | F2 E2 | D A2 B | c2 Bc | z BA B | F3 E |
 $
 D A2 B | c2 Bc |
@@ -2893,7 +2972,9 @@ N:Page 25
 M:6/8
 L:1/8
 Q:3/8=92
+%%id five
 K:Dmix
+I:linebreak $
 AFA | D3 AFA | D3 AFA | c2(B B2)(A | A3) AFA |
 $
 D3 AFA | D3 AFA | c2(B B2)(A |
@@ -2911,7 +2992,10 @@ N:Page 26
 M:2/4
 L:1/8
 Q:1/4=72
+%%id vytas
+%%tags needs-repair
 K:Ddor
+I:linebreak $
 Dc z A/c/ | BG z A/B/ | AF z G/A/ | G3/2E/ F/D/E/C/ |
 $
 [K:C]Dc z A/c/ | BG z A/B/ |
@@ -2927,7 +3011,9 @@ N:Page 26
 M:6/8
 L:1/8
 Q:3/8=138
+%%id suzy-blue-eyes
 K:Dmix
+I:linebreak $
 A | d3 B3 | A2G F2G | A2 F3 (D | (D3) D2)A |
 $
 d3 B3 | A2G F2G | (A6 | (A3) A2)A |
@@ -2945,7 +3031,9 @@ N:Page 27
 M:2/4
 L:1/8
 Q:1/4=72
+%%id hugh
 K:Ddor
+I:linebreak $
 DF Ad | e/d/c d2 | fe/d/ ed/c/ | (A2 A/)G/F/E/ |
 $
 [K:C]DF Ad | e/d/c d2 |
@@ -2959,6 +3047,7 @@ N:Page 27
 M:2/4
 L:1/8
 Q:1/4=76
+%%id sing-hello
 K:Dmix
 D/E/F/G/ AF | BG AF | D/E/F/G/ AF | EC D2 |]
 
@@ -2970,7 +3059,9 @@ N:Page 28
 M:2/4
 L:1/8
 Q:1/4=72
+%%id peekabooo-now
 K:Ddor
+I:linebreak $
 D/F/A z B/G/ | AF ED | D/F/A z B/G/ | A2 z2 |
 $
 [K:C]D/F/A z B/G/ | AF ED |
@@ -2984,7 +3075,9 @@ N:Page 28
 M:6/8
 L:1/8
 Q:3/8=112
+%%id blessings
 K:Dmix
+I:linebreak $
 DFA | c2 B3 (A | A2)G F2G | A2 F3 (D | D3) DFA |
 $
 c2 B3 (A | A2)G F2G | (A6 | A3) DFA |
@@ -3001,7 +3094,9 @@ N:Page 29
 M:2/4
 L:1/8
 Q:1/4=84
+%%id out-for-a-walk
 K:Ddor
+I:linebreak $
 DF AA | B/A/G/B/ AF | DF/F/ AG |
 $
 [K:C]E/D/C/E/ D2 | E/D/C/E/ DE/D/ | CE D2 :|]
@@ -3014,7 +3109,9 @@ N:Page 29
 M:3/4
 L:1/8
 Q:1/4=100
+%%id ladybug
 K:Dmix
+I:linebreak $
 D3/2E/ | F2 E2 D2 | B2 A2 D3/2E/ | F2 E2 D2 | C4 D3/2E/ |
 $
 F2 E2 D2 | B2 A2 c3/2B/ |
@@ -3033,7 +3130,9 @@ N:Page 30
 M:3/4
 L:1/8
 Q:1/4=104
+%%id butterfly
 K:Edor
+I:linebreak $
 E3 G B2 | E3 G B2 | c2 A2 c2 | B6 |
 $
 E3 G B2 | E3 G B2 | A2 G2 F2 | E6 |
@@ -3049,7 +3148,9 @@ N:Page 30
 M:2/4
 L:1/8
 Q:1/4=120
+%%id antonio
 K:Dmix
+I:linebreak $
 AA | d2 A(c | c)B (A2 | A)G FG | A2 AA |
 $
 d2 A(c | c)B (A2 | A)G FG | A2 DD |
@@ -3066,7 +3167,9 @@ N:Page 31
 M:3/4
 L:1/8
 Q:1/4=126
+%%id bamboo-garden
 K:Ddor
+I:linebreak $
 c2 A2 F2 | D2 F2 A2 | c3 de d | c2 A2 z2 | c2 A2 F2 | D2 E2 C2 | D3 CB, C | D6 |
 $
 [K:C]c2 A2 F2 | D2 F2 A2 | c3 de d | c2 A2 z2 | c2 A2 F2 | B2 G2 E2 | D3 CB, C | D6 |]
@@ -3079,7 +3182,9 @@ N:Page 31
 M:9/8
 L:1/8
 Q:3/8=64
+%%id assisi
 K:Bmix
+I:linebreak $
 FGF | B3 B3 AFE | F6 FGF | B3 B3 AFE | F6 B,CB, |
 $
 F3 F3 EB,A, | B,6 FGF |
@@ -3095,7 +3200,9 @@ N:Page 32
 M:3/4
 L:1/8
 Q:1/4=112
+%%id tango-blue
 K:Ddor
+I:linebreak $
 D A2 FA F | G2 F2 E2 | C E2 CE C | D6 |
 $
 [K:C]BA GA BG | A2 G2 F2 | ED CD EC | D6 |]
@@ -3108,7 +3215,10 @@ N:Page 32
 M:4/4
 L:1/8
 Q:1/4=120
+%%id wydleeump
+%%tags needs-repair
 K:Dmix
+I:linebreak $
 D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D2 A,2 | D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D4 |
 $
 A3/2B/ cB AG FE | DF EC D2 A,2 | A3/2B/ cB AG FE | DF EC D4 |
@@ -3123,7 +3233,9 @@ N:Page 33
 M:2/4
 L:1/8
 Q:1/4=72
+%%id tippy-toe
 K:Ddor
+I:linebreak $
 A/G/F/E/ | DF EC | DA, A/G/F/E/ | DF EC | D2 A/G/F/E/ |
 $
 [K:C]DF EC |
@@ -3137,7 +3249,10 @@ N:Page 33
 M:5/8
 L:1/8
 Q:1/8=120
+%%id maria
+%%tags needs-repair
 K:Dmix
+I:linebreak $
 (F D) .A .F A | (F D) .A .F A | (c3/2 B/) A | (G3/2 F/) E |
 $
 (F D) z z A | (F D) .A .F A |
@@ -3151,7 +3266,10 @@ N:Page 34
 M:7/8
 L:1/8
 Q:3/8=138
+%%id little-pony
+%%tags needs-repair
 K:Ddor
+I:linebreak $
 A B c B A2 G | F G A G F2 E | D E F E D2 C | A, C A, C D3 |
 $
 [K:C]A B c B A2 G | F G A G F2 E |
@@ -3169,7 +3287,9 @@ N:Page 34
 M:4/4
 L:1/8
 Q:1/4=144
+%%id hershey-park
 K:Dmix
+I:linebreak $
 D3 E3 F2 | D3 A,3 A,2 | D3 E3 F2 | A3 z z4 |
 $
 D3 E3 F2 | D3 A,3 A,2 | C3 C3 B,2 | A,3 z z4 |]
@@ -3182,7 +3302,9 @@ N:Page 35
 M:2/4
 L:1/8
 Q:1/4=88
+%%id flowers
 K:Ddor
+I:linebreak $
 Ac BG | A3 E | Ac BG | A2 E2 | D3/2E/ FG |
 $
 [K:C]AG FE | DF EC | D/E/F/G/ cB |
@@ -3200,7 +3322,9 @@ N:Page 35
 M:2/4
 L:1/8
 Q:1/4=116
+%%id tangerine
 K:Fmix
+I:linebreak $
 F3 (G | G) E2 G | FA c z | z4 |
 $
 F3 (G | G) E2 G | FA c z | z d2 B |
@@ -3216,7 +3340,9 @@ N:Page 36
 M:2/4
 L:1/8
 Q:1/4=112
+%%id magic
 K:Ddor
+I:linebreak $
 D |: DE FG | A4 | .B2 .G2 | .A2 z A |
 $
 [K:C]AG FE | D4 |1 .C2 .E2 | .D2 z D :|
@@ -3235,7 +3361,9 @@ N:Page 36
 M:2/4
 L:1/8
 Q:1/4=100
+%%id sweet-child
 K:Amix
+I:linebreak $
 A2 E2 | A2 E2 | GF ED | E3 A, | A2 E2 | A2 E2 | GF ED | E4 |
 $
 A,B, CD | E2 DC | B,2 A,B, |
@@ -3249,7 +3377,9 @@ N:Page 37
 M:2/4
 L:1/8
 Q:1/4=96
+%%id hypsie-gap
 K:Ddor
+I:linebreak $
 DE FG | AB AA/B/ | cB AG | A3 A |
 $
 [K:C]DE FG | AB AA/G/ | FE DC | D3 A/B/ |
@@ -3266,7 +3396,9 @@ N:Page 37
 M:5/8
 L:1/8
 Q:3/8=152
+%%id australia
 K:Dmix
+I:linebreak $
 D F A D/ F/ A | C E G C/ E/ G |
 $
 D F A D/ F/ A | C E G F/ D3/2 |
@@ -3282,7 +3414,9 @@ N:Page 38
 M:9/8
 L:1/8
 Q:3/8=88
+%%id groovin
 K:Ddor
+I:linebreak $
 A2(D (D3) D3) | A2(D (D3) D3) | EDC E3 CDE | E2(D (D2)C D3) |
 $
 [K:C]BAG B3 GAB |
@@ -3300,7 +3434,9 @@ N:Page 38
 M:6/8
 L:1/8
 Q:3/8=112
+%%id pretty-fancy
 K:Dmix
+I:linebreak $
 z3 DFA | c3 z3 | z3 cBA | F3 z3 |
 $
 z3 DFA | c3 c3 | c2B A2G | F2(D D) z z :|
@@ -3318,7 +3454,9 @@ N:Page 39
 M:12/8
 L:1/8
 Q:3/8=60
+%%id jam
 K:Ddor
+I:linebreak $
 AB2 A | d3 B2A B2A B2(D | (D6) D2)D E2D |
 $
 [K:C]A3 G2D F2D F2(D | (D6) D3) D2D |
@@ -3336,7 +3474,9 @@ N:Page 39
 M:2/4
 L:1/8
 Q:1/4=84
+%%id fanfare-for-the-new-year
 K:Dmix
+I:linebreak $
 FF/G/ AF | G3/2D/ DD | FF/G/ AF | G4 |
 $
 FF/G/ AF | G3/2D/ DD | CC/D/ EC | D4 |]
@@ -3349,7 +3489,9 @@ N:Page 40
 M:2/4
 L:1/8
 Q:1/4=100
+%%id hatcho
 K:Ddor
+I:linebreak $
 A/G/F/E/ | DF EC | D2 A/G/F/E/ | DA BG |
 $
 [K:C]A2 A/G/F/E/ | DF EC |
@@ -3363,7 +3505,9 @@ N:Page 40
 M:6/8
 L:1/8
 Q:3/8=72
+%%id oh-baby
 K:Dmix
+I:linebreak $
 z3 A3 | D2D z3 | z2 AB2 A | D3 z3 | z3 A3 | D2D z3 | z2 AB2 A | D3 z3 |
 $
 z3 A3 | G2G z3 |
@@ -3380,7 +3524,9 @@ N:Page 41
 M:2/4
 L:1/8
 Q:1/4=112
+%%id lemon-verbena
 K:Ddor
+I:linebreak $
 A2 D2 | z2 A2 | D2 A(D | D)A D2 | G2 E2 | C2 E2 |1 DC DE | FE FG :|
 [2 D2 z2 | z4 |
 $
@@ -3398,7 +3544,9 @@ N:Page 41
 M:2/4
 L:1/8
 Q:1/4=112
+%%id orange-cat
 K:Fmix
+I:linebreak $
 c B2 A | B A2 G | F2 C(C | C)C C2 |
 $
 c B2 A | B A2 G | F2 C(E | E)C G2 | F2 z2 | z4 |
@@ -3417,7 +3565,9 @@ N:Page 42
 M:2/4
 L:1/8
 Q:1/4=68
+%%id adobe-house
 K:Ddor
+I:linebreak $
 .D.A z2 | (c/B/).A/.G/ !tenuto!A2 | .D.A z .G/.F/ | .E.C !tenuto!D2 |
 $
 [K:C].D.A z2 |
@@ -3447,7 +3597,10 @@ N:Page 44
 M:9/8
 L:1/8
 Q:1/4=100
+%%id fluffy-cat
+%%tags needs-repair
 K:Ephr
+I:linebreak $
 [M:9/8]BcA B2 G2 E2 | [M:7/8]D F D E2 G2 | [M:9/8]BcA B2 G2 E2 | [M:7/8]D F D E4 |
 $
 [M:2/4]ee dd | ee B2 |
@@ -3463,7 +3616,9 @@ N:Page 44
 M:5/8
 L:1/8
 Q:1/4=88
+%%id elk-river
 K:Flyd
+I:linebreak $
 B d | c A F E G | F3 B d | c A F E G | F3 d B | c3 d B |
 $
 [M:3/8]cBd | [M:5/8]c A F G E | [M:3/8]F3 |]
@@ -3476,7 +3631,9 @@ N:Page 45
 M:6/8
 L:1/8
 Q:1/8=104
+%%id whisper-a-secret
 K:Ephr
+I:linebreak $
 BGE FE2 | DF2 (G/F/)E2 | BGE FE2 | DDF E3 |
 $
 [K:C]Bcd (c/B/)A2 | GAB (A/G/)F2 |
@@ -3490,7 +3647,9 @@ N:Page 45
 M:5/8
 L:1/8
 Q:1/8=72
+%%id vanessa
 K:Dlyd
+I:linebreak $
 D F A G/ B/ A | D F A G/ F/ E | D F A B/ c/ d | e c e d2 |
 $
 D F A G/ B/ A | D F A G/ F/ E |
@@ -3504,7 +3663,9 @@ N:Page 46
 M:2/4
 L:1/8
 Q:1/4=72
+%%id monkey-monkey
 K:Ephr
+I:linebreak $
 EG F/E/D | EG B2 | cA/c/ B/A/G | FG E2 |
 $
 [K:C]EG F/E/D | EG B2 | c/B/A/c/ BG |
@@ -3518,7 +3679,10 @@ N:Page 46
 M:5/8
 L:1/8
 Q:1/4=88
+%%id nicole
+%%tags needs-repair
 K:Flyd
+I:linebreak $
 F3/2 A/ c B c | [M:3/8]dBG | [M:7/8]F3/2 A/ c B c d2 |
 $
 [M:5/8]F3/2 A/ c B c | [M:3/8]dBG | [M:7/8]F3/2 A/ c B G F2 |]
@@ -3531,7 +3695,9 @@ N:Page 47
 M:6/8
 L:1/8
 Q:3/8=100
+%%id joan-marie
 K:Fphr
+I:linebreak $
 ccc d2d | c2A F3 | EEE G2G | F3 z3 |
 $
 cdc B2d | c3 z3 | FGF E2G | F3 z3 |]
@@ -3544,6 +3710,7 @@ N:Page 47
 M:4/4
 L:1/8
 Q:1/4=100
+%%id chewbacca
 K:Dlyd
 D2 A2 GB A2 | F2 E2 D4 | D2 A2 GB A2 | B2 c2 d4 | ee ce d4 | A3/2G/ FE D4 |]
 
@@ -3555,7 +3722,9 @@ N:Page 48
 M:5/8
 L:1/8
 Q:1/4=72
+%%id bwia
 K:Ephr
+I:linebreak $
 E F G F A | E2 F E2 | B/ A/ B c d c | B3 B2 |
 $
 [K:C]E F G F A | E2 F E2 | [M:6/8]B/A/GA GFD | E3 E3 |]
@@ -3568,7 +3737,9 @@ N:Page 48
 M:6/8
 L:1/8
 Q:1/4=72
+%%id bruce
 K:Glyd
+I:linebreak $
 dBd c/(A/A2) | dBd e3/4d/4c2 | dBd c/(A/A2) |1
 $
 B3/4A/4(G2 (G3/2)G/4)A/4B3/4c/4 :|
@@ -3583,7 +3754,9 @@ N:Page 49
 M:2/4
 L:1/8
 Q:1/4=100
+%%id peoria
 K:Ephr
+I:linebreak $
 F2 B2 | cA F2 | EE FD | E4 |
 $
 [K:C]F2 B2 | cA F2 | EB, EG |
@@ -3597,7 +3770,9 @@ N:Page 49
 M:3/4
 L:1/8
 Q:1/4=144
+%%id livia
 K:Eblyd
+I:linebreak $
 B2 G2 E2 | A3 z z c | B2 G2 E2 | D3 z z2 |
 $
 B2 G2 E2 | A3 z z c | Bc d2 e2 | f3 z z2 |
@@ -3614,7 +3789,9 @@ N:Page 50
 M:2/4
 L:1/8
 Q:1/4=80
+%%id potato-man
 K:Ephr
+I:linebreak $
 BG ED/F/ | EC B,2 | BG c/A/B/G/ | F3 G/A/ |
 $
 [K:C]BG ED/F/ | EC B,2 |
@@ -3628,7 +3805,9 @@ N:Page 50
 M:3/4
 L:1/8
 Q:1/4=132
+%%id checco
 K:Eblyd
+I:linebreak $
 B2 G2 E2 | F3 z Ac | B2 G2 E2 | F3 z z c |
 $
 B2 G2 E2 | F2 D2 B,2 | E3 z z2 | z2 z2 z2 |
@@ -3645,7 +3824,9 @@ N:Page 51
 M:6/8
 L:1/8
 Q:1/8=104
+%%id spanish-guitar
 K:Dphr
+I:linebreak $
 ddd d3/2c/B | AAA A3/2G/F | EEE E3/2F/E | (D3 D3) |
 $
 C/D/E/F/G/F/ D3 |
@@ -3659,6 +3840,7 @@ N:Page 51
 M:5/4
 L:1/8
 Q:1/4=116
+%%id louisville
 K:Flyd
 F2 A2 c2 B d2 E | F2 A2 c2 B G2 E | F2 A2 c2 B d2 c | ed c2 B2 c4 |]
 
@@ -3670,7 +3852,9 @@ N:Page 52
 M:6/8
 L:1/8
 Q:1/8=120
+%%id pretty-children
 K:Ephr
+I:linebreak $
 EDF E3 | EDF E3 | B/c/d/c/B/A/ GF3/2E/ | DFD E3 |
 $
 [K:C]B/B/BB EE2 | z6 |
@@ -3686,7 +3870,9 @@ N:Page 52
 M:2/4
 L:1/8
 Q:1/4=88
+%%id cookie
 K:Flyd
+I:linebreak $
 cA cA | Bd cA | EG F3/2C/ | EG F2 |
 $
 [K:C]dB dB | cA F2 | GE GE | FA c2 |
@@ -3702,7 +3888,9 @@ N:Page 53
 M:2/4
 L:1/8
 Q:1/4=72
+%%id aroo
 K:Dphr
+I:linebreak $
 d2 cB | A3 G | F2 E2 | D4 |
 $
 [K:F]CD EF | D4 | AB AG | A4 :|]
@@ -3715,7 +3903,9 @@ N:Page 53
 M:2/4
 L:1/8
 Q:1/4=88
+%%id maessage
 K:Eblyd
+I:linebreak $
 EG A3/2(B/ | B/)B/G AF | EG A3/2(B/ | B/)B/G A2 |
 $
 dc B3/2(A/ | A/)A/G FD |
@@ -3729,7 +3919,9 @@ N:Page 54
 M:2/4
 L:1/8
 Q:1/4=64
+%%id bella-barbara
 K:Ephr
+I:linebreak $
 E3/2B/ B2 | z2 AG | E3/2B/ B2 | z2 A/B/A/G/ |
 $
 [K:C]E3/2B/ B2 | z B/c/d/c/ B/A/ |
@@ -3748,7 +3940,9 @@ N:Page 54
 M:3/4
 L:1/8
 Q:1/4=152
+%%id clown
 K:Glyd
+I:linebreak $
 D2 G2 G2 | D2 A2 A2 | G2 GA Bc | d2 z2 z2 |
 $
 D2 G2 G2 | D2 A2 A2 | d2 dc BA | G2 z2 z2 |]
@@ -3761,7 +3955,9 @@ N:Page 55
 M:3/4
 L:1/8
 Q:1/4=108
+%%id giro-verdi
 K:Ephr
+I:linebreak $
 B3 G E2 | F2 D2 F2 | F2 E2 z2 | z6 | B3 G E2 | F2 D2 F2 | F2 E2 z2 | z6 |
 $
 [K:C]B,2 E2 G2 |
@@ -3775,7 +3971,9 @@ N:Page 55
 M:3/4
 L:1/8
 Q:1/4=120
+%%id edoardo-1
 K:Flyd
+I:linebreak $
 F3 G A2 | B3 A G2 | F2 E2 G2 | F2 C4 | F3 G A2 | B3 A G2 | F2 E2 G2 | F6 |
 $
 [K:C]F3 E D2 |
@@ -3789,7 +3987,9 @@ N:Page 56
 M:2/4
 L:1/8
 Q:1/4=72
+%%id olive-angel
 K:Ephr
+I:linebreak $
 B3/2G/ EB | GE B3/2G/ | A/G/F G3/2F/ | (E/F/E/F/ E) z |
 $
 [K:C]B3/2G/ EB |
@@ -3809,7 +4009,9 @@ N:Page 56
 M:2/4
 L:1/8
 Q:1/4=88
+%%id flavio
 K:Flyd
+I:linebreak $
 F3/4F/4F z C | (DC) DE | F3/4F/4F z C | (DC) DE |
 $
 [K:C]F3/4F/4F z G | (AG) AB |
@@ -3828,7 +4030,9 @@ N:Page 57
 M:6/8
 L:1/8
 Q:3/8=52
+%%id primavera
 K:Ephr
+I:linebreak $
 F3/2D/ | E2 B,2 F3/2D/ | E2 B2c A | B3/2A/G FDF | (E3 E)F3/2D/ |
 $
 [K:C]E2 B,2 F3/2D/ |
@@ -3842,7 +4046,9 @@ N:Page 57
 M:3/4
 L:1/8
 Q:1/4=108
+%%id red-maple
 K:Flyd
+I:linebreak $
 c2 A3 c | B2 d2 z2 | c2 A3 c | B2 G2 z2 | c2 A3 c | B2 d2 z2 | cA F3 G | F6 |
 $
 [K:C]d2 B2 dB |
@@ -3857,7 +4063,9 @@ N:Page 58
 M:3/4
 L:1/8
 Q:1/4=72
+%%id donna-s-tune
 K:Ephr
+I:linebreak $
 B2 F4 | B2 F2 G2 | E6 | B2 F4 | B2 F2 G2 | E6 |
 $
 [K:C]D/E/F EB, E2 | D/E/F EB !fermata!E2 |]
@@ -3870,7 +4078,9 @@ N:Page 58
 M:2/4
 L:1/8
 Q:1/4=88
+%%id ducks
 K:Glyd
+I:linebreak $
 CD CD | GG G2 | CD CD | GG G2 |
 $
 B3/2A/ GF | E3/2D/ CD | GG G2 | z4 |
@@ -3888,7 +4098,9 @@ N:Page 59
 M:2/4
 L:1/8
 Q:1/4=96
+%%id breguet-hands
 K:Dphr
+I:linebreak $
 DD/D/ E/D/C | D G2 G | DD/D/ E/D/C | D4 |
 $
 DD/D/ E/D/C | D G2 G | c/B/A/G/ FE |
@@ -3902,7 +4114,9 @@ N:Page 65
 M:2/4
 L:1/8
 Q:1/4=60
+%%id skittery-mouse
 K:Dmin
+I:linebreak $
 A, | DF AF | E/F/G FA, | DF AF |
 $
 G/A/B A2 | B/A/G/B/ A/G/F/E/ | DF d2 |]
@@ -3915,7 +4129,9 @@ N:Page 65
 M:2/4
 L:1/8
 Q:1/4=42
+%%id lake-afton
 K:Gmaj
+I:linebreak $
 Dc dc | B/G/ D2 F/E/ | Dc dc |
 $
 B/c/ d3 | C/D/E/G/ FC/D/ | EG A2 |]
@@ -3929,7 +4145,9 @@ N:Page 66
 M:2/4
 L:1/8
 Q:1/4=64
+%%id helenac
 K:Dmin
+I:linebreak $
 B/A/G/B/ | A3/2B/ A2 | z2 A/G/F/A/ | ^G3/2^A/ G2 |
 $
 z2 ^G/F/^E/G/ | F3/2G/ ^^F2 |
@@ -3943,7 +4161,9 @@ N:Page 66
 M:3/4
 L:1/8
 Q:1/4=60
+%%id baby-dundee
 K:Gmaj
+I:linebreak $
 B/c/d B/c/d AF | G/A/B G/A/B FD |
 $
 E/F/G E/F/G FD | CE/C/ C/E/C D2 :|]
@@ -3956,7 +4176,9 @@ N:Page 67
 M:2/4
 L:1/8
 Q:1/4=88
+%%id trisha
 K:Dmin
+I:linebreak $
 FA z F | G/F/E/F/ D2 | FA z F | G/F/E/F/ D2 |
 $
 B/A/G/F/ E^C | D2 z2 |
@@ -3970,7 +4192,9 @@ N:Page 67
 M:6/8
 L:1/8
 Q:3/8=112
+%%id bah-bop
 K:Dmaj
+I:linebreak $
 A | F2A D2(A | (A3) A2)G | F2A D2(A | (A3) A2)F | G2B D2(B | (B3) B2)A | G2B D2(B |
 (B3) B2)G |
 $
@@ -3988,7 +4212,9 @@ N:Page 68
 M:9/8
 L:1/8
 Q:3/8=52
+%%id cat
 K:Bmin
+I:linebreak $
 DFB ^A/G/F3/2E/ D2 z | DFB ^A/B/c3/2B/ A2 z | d/c/B/c/d c^AF E/D/!fermata!C2 |
 $
 DFB ^A/G/F3/2E/ D2 z | DFB ^A/B/c3/2B/ A2 z | B/G/E2 B/F/D2 B/E/CD | B,3 z3 z3 |]
@@ -4001,7 +4227,9 @@ N:Page 68
 M:2/4
 L:1/8
 Q:1/4=72
+%%id infants
 K:Cmaj
+I:linebreak $
 DF A | cd B2 | z DF A | d2 B2 | z fe d |1 Bc dB | (G4 | (G4) | G)D FA :|
 [2
 $
@@ -4018,6 +4246,7 @@ N:Page 61
 M:4/4
 L:1/8
 Q:1/4=92
+%%id hello-goodbye
 K:Dmin
 dd ^cc d4 | AG FG AA A2 | dd ^cc d4 | AG FE D4 |]
 
@@ -4029,6 +4258,7 @@ N:Page 61
 M:7/8
 L:1/8
 Q:3/8=54
+%%id tep
 K:Dmaj
 D F A G/ F/ E F D | E3 z4 | D F A B/ A/ G F D | E3 z4 |
 B A G A/ G/ F G E | F3 z4 | D F A G/ F/ E E C | D3 z4 |]
@@ -4041,6 +4271,7 @@ N:Page 62
 M:4/4
 L:1/8
 Q:1/4=72
+%%id gino
 K:Gmin
 D2 | G2 z2 z GB G | c2 z2 z Ac A | ^F2 z2 z GA F | G2 z2 z2 D2 |
 G2 z2 z GB G | c2 z2 z Ac A | ^F2 z2 z GA F | G2 z2 z2 |]
@@ -4053,6 +4284,7 @@ N:Page 62
 M:6/8
 L:1/8
 Q:3/8=48
+%%id my-puppy-dog
 K:Dmaj
 FAd c/e/d2 | FGE F3 | FAd c/e/d3/2F/ | FGE D3 |
 B/A/GB dA | G/F/EA F3 | B/A/GB dA3/2A/ | G/F/EA A3 |]
@@ -4065,6 +4297,7 @@ N:Page 63
 M:6/8
 L:1/8
 Q:1/4=54
+%%id amy
 K:Amin
 EAc B/A/^GB | AE3/2F/ E2 z | EAc B/A/^GA | Bd3/2c/ B2 z |
 d/c/B/c/d cA2 | ^GFE G/F/E2 | d/c/B/c/d cA2 |1 ^GFE D/C/!fermata!B,2 :|
@@ -4079,7 +4312,10 @@ N:Page 63
 M:7/8
 L:1/8
 Q:1/4=108
+%%id emilia
+%%tags needs-repair
 K:Dmaj
+I:linebreak $
 D E F G2 E2 | [M:5/8]A,2 F D2 | [M:7/8]D E F G2 E2 | [M:5/8]^G2 B A2 |
 $
 [M:7/8]c d e d2 B2 | [M:5/8]^G2 B A2 | [M:7/8]D E F G2 E2 | [M:5/8]A,2 F D2 |]
@@ -4092,6 +4328,7 @@ N:Page 64
 M:6/8
 L:1/8
 Q:3/8=52
+%%id helenar
 K:Dmin
 DFA B/A/GB | A3 z3 | DFA G/F/EF | D3 z3 |
 DFA B/A/G^c | d3 z3 | f/e/df e/d/^ce |1 ^c3 z3 :|
@@ -4105,6 +4342,7 @@ N:Page 64
 M:2/4
 L:1/8
 Q:1/4=64
+%%id nap-song
 K:Gmaj
 G/A/B GF | EA D2 | G/A/B GF | EC D2 | c/B/A d2 | c/B/A D2 | c/B/A e(d | d4) |
 G/A/B GF | EA D2 | G/A/B GF | EC D2 | c/B/A/B/ G2 | CD G2 | c/B/A/B/ G2 | DA d2 |]
@@ -4117,6 +4355,7 @@ N:Page 69
 M:6/8
 L:1/8
 Q:3/8=72
+%%id jp
 K:Dmin
 AG3/2E/ FD2 | A/B/^c3/2d/ A3 | G/F/E3/2^C/ A,/F/D2 | ^CA3/2G/ F3 | z6 |]
 
@@ -4128,7 +4367,9 @@ N:Page 69
 M:2/4
 L:1/8
 Q:1/8=108
+%%id bukelevedea
 K:Gmaj
+I:linebreak $
 (D/ | D/)F/A/e/ d(F | (F2) F3/2)(D/ | D/)F/A/e/ d(F | (F2) F3/2)(D/ |
 $
 D/)F/A/e/ d(F | (F2) F3/2)(G/ | (G4) | (G2) G3/2) |]
@@ -4141,7 +4382,9 @@ N:Page 70
 M:2/4
 L:1/8
 Q:1/4=76
+%%id lietuvos
 K:Dmin
+I:linebreak $
 D2 B2 | A3/2G/ F/E/C/E/ | D2 B2 | A3/2G/ F/E/C/E/ |
 $
 D2 B2 | AE F^C/E/ | D2 z2 | z4 :|]
@@ -4154,7 +4397,9 @@ N:Page 70
 M:4/4
 L:1/8
 Q:1/4=58
+%%id nature
 K:Dmaj
+I:linebreak $
 (Dd) | (dB) B4 (Dd) | (dA) A4 (A,A) | (AE) E4 (A,A) | (AF) F4 (Dd) |
 $
 (dB) B4 (Dd) |
@@ -4169,7 +4414,9 @@ N:Page 71
 M:3/4
 L:1/8
 Q:1/4=56
+%%id the-letter
 K:Emin
+I:linebreak $
 B, G3/2F/ | ^D3 B, G3/2F/ | ^D3 B, G3/2F/ | ^DE FG Ac | [M:4/4]B3 AG FE/^D/ E/F/ |
 $
 [M:3/4]^D3 B, G3/2F/ | E6 | A,2 C2 F2 | E6 |]
@@ -4182,7 +4429,9 @@ N:Page 71
 M:2/4
 L:1/8
 Q:1/4=96
+%%id fanfare
 K:Dmaj
+I:linebreak $
 DC/E/ DC/E/ | DF A2 | d3/2A/ AA | F4 |
 $
 DC/E/ DC/E/ | DF A2 | A3/2A/ BG | A4 |
@@ -4199,7 +4448,9 @@ N:Page 72
 M:4/4
 L:1/8
 Q:1/4=54
+%%id rhode-island-red
 K:Emin
+I:linebreak $
 GE z/ GE/ F^D z2 | F^D z/ FD/ E2 z2 |
 $
 GE z/ GE/ F^D z2 | F^D z/ FD/ E2 z2 |
@@ -4216,7 +4467,9 @@ N:Page 72
 M:2/4
 L:1/8
 Q:1/4=112
+%%id catherina-s-violin
 K:Dmaj
+I:linebreak $
 A/G/F/A/ G/F/E/G/ | F/E/D/F/ E/D/C/E/ | D z z z | z4 |
 $
 A/G/F/A/ G/F/E/G/ |
@@ -4233,7 +4486,9 @@ N:Page 147
 M:5/8
 L:1/8
 Q:1/4=92
+%%id alex
 K:Bb
+I:linebreak $
 E2 G B2 | A A c B2 | B3/2 c/ d e c | B3- B2 |
 $
 E2 G B2 | A A c B2 | B3/2 A/ G F G | E3- E2 |
@@ -4251,7 +4506,10 @@ N:Page 147
 M:6/8
 L:1/8
 Q:1/4=84
+%%id sara
+%%tags needs-repair
 K:C
+I:linebreak $
 cBd cBd | c3 A3 |1 [M:2/4]FF _E_D | C2 z2 :|
 $
 [2 FF _E_D | [M:6/8]C3 z _B,_D | [M:2/4]C2 DE | F2 z2 |]
@@ -4264,7 +4522,9 @@ N:Page 147
 M:6/8
 L:1/8
 Q:1/8=138
+%%id jamie
 K:C
+I:linebreak $
 B3/2A/G F3 | _EEG F3 | B3/2A/G FG2 | A6 | B3/2A/G F3 | _EEG F3 |
 $
 A3/2G/F GF2 | _D6 | A3/2G/F GF2 | _D6 | A3/2G/F GF2 | C6 |]
@@ -4278,7 +4538,9 @@ N:Page 148
 M:2/4
 L:1/8
 Q:1/4=72
+%%id victor
 K:F
+I:linebreak $
 DE F/E/D | AA D2 | DC B,A,/G,/ | A,2 z/ A,/=B,/^C/ |
 $
 DE F/E/D | AA D2 | DC B,C | D2 z2 |
@@ -4296,7 +4558,9 @@ N:Page 148
 M:7/8
 L:1/8
 Q:1/4=100
+%%id egri
 K:F
+I:linebreak $
 B d | c A F D2 E C | D3 D2 B d | c A F D2 E C | D3 D2 F G |
 $
 [K:D]A c e c2 d B | c3 c2 c B | A c e c2 d B | c3 c2 |]
@@ -4310,7 +4574,10 @@ N:Page 148
 M:6/8
 L:1/8
 Q:3/8=108
+%%id christine
+%%tags needs-repair
 K:D
+I:linebreak $
 dce d3 | dce d3 | dcB AGF |1 E2D E3 :|
 $
 [2 E2D E2 | [M:2/4]D/E/ | FA FD/E/ | FA F2 |
@@ -4327,6 +4594,7 @@ N:Page 149
 M:6/8
 L:1/8
 Q:3/8=64
+%%id julia
 K:C
 DFE CD | DFG A3 | AcB Acd | e3 z dc | B^GE c2B | AEc A3 |]
 
@@ -4338,7 +4606,9 @@ N:Page 149
 M:6/8
 L:1/8
 Q:3/8=64
+%%id terry
 K:G
+I:linebreak $
 DFA Gc2 | dBG =F/E/D2 | DFA Gc2 | B/A/G=F G3 |
 $
 |: BGB A=FA | G/A/B2- B3 | BGB A=FA | G3 z3 :|
@@ -4352,7 +4622,9 @@ N:Page 149
 M:4/4
 L:1/8
 Q:1/4=72
+%%id spring
 K:Ddor
+I:linebreak $
 B2 d2 G2 G_G | F2 G2 A3 ^A | B2 D2 d2 ^c2 | c6 z2 |
 $
 B2 d2 G2 G_G | F2 G2 A2 Bc | B2 ^CD _B2 A2 | G6 z2 |]
@@ -4366,7 +4638,10 @@ N:Page 150
 M:2/4
 L:1/8
 Q:1/4=104
+%%id dawn
+%%tags needs-repair
 K:D
+I:linebreak $
 B/c/ |: dA FE | D2 z B/c/ | dA Bc |1 d3 B/c/ :|
 $
 [2 d4 | [M:6/8]D2D CA,C | D6 | D2D CA,C | D3- D2 |]
@@ -4380,7 +4655,9 @@ N:Page 150
 M:3/8
 L:1/8
 Q:1/8=92
+%%id hippopotamus
 K:C
+I:linebreak $
 DAG/B/ | A/F/DE/F/ | E/^C/A,C/E/ | D/E/F z |
 $
 DAG/B/ | A/F/DE/F/ | E/^C/A,F3/4E/4 | D2 z |
@@ -4397,7 +4674,9 @@ N:Page 150
 M:2/4
 L:1/8
 Q:1/4=58
+%%id helena-y-sergio
 K:C
+I:linebreak $
 D/E3/4D/4 | GG FF | E z z3/4 D/4E3/4D/4 | GG FF |
 $
 E z z3/4 D/4E3/4D/4 | GG AA | BB ^cc | d z z2 |
@@ -4414,7 +4693,9 @@ N:Page 151
 M:2/4
 L:1/8
 Q:1/4=88
+%%id song-for-andrea
 K:Bb
+I:linebreak $
 Gd dc/B/ | A/G/F E2 | DG G/A/B | A4 | $
 Gd dc/B/ | A/G/F E2 | DG A/G/F | G3 A/B/ | $
 cA FG/A/ | B/A/G/F/ G2 | G/A/B/c/ d=e | d4 | $
@@ -4428,7 +4709,9 @@ N:Page 151
 M:2/4
 L:1/8
 Q:1/4=56
+%%id peek-a-boo
 K:F
+I:linebreak $
 A/A/G/G/ F/F/E/E/ | z2 D2 | A/A/G/G/ F/F/E/E/ | z2 D2 | $
 D/E/F F/G/A | A/=B/A/G/ A2 | A/A/G/G/ F/F/E/E/ | z2 D2 :|
 
@@ -4441,7 +4724,9 @@ N:Page 151
 M:2/4
 L:1/8
 Q:1/4=76
+%%id aaron
 K:Bb
+I:linebreak $
 z2 B,2 |: E2 z2 | z B_G E | A2 z2 | z B_G E | $
 ^C2 z2 | z F_A _d | c2 z2 | z2 B,2 :|
 
@@ -4453,7 +4738,9 @@ N:Page 152
 M:2/4
 L:1/8
 Q:1/4=112
+%%id lady-fair
 K:C
+I:linebreak $
 DF DF | A/B/A/G/ AB/^c/ | dA FD | E3 B/^c/ | $
 dA GF | G/A/G/F/ EF/E/ | Dd AF | D3 C/D/ | $
 ED CD/E/ | FE DF/G/ | AB AG | A3 D/E/ | $
@@ -4467,7 +4754,9 @@ N:Page 152
 M:4/4
 L:1/8
 Q:1/4=80
+%%id lt-s
 K:C
+I:linebreak $
 z FA c B2 G2 | z FA c d3/2c/ B2 | z FA c B2 G2 | A3/2G/ F_E C4 | $
 z FA c B2 G2 | z FA c d3/2c/ B2 | z FA c B2 GA/G/ | FE/G/ F2 z4 |]
 
@@ -4479,7 +4768,9 @@ N:Page 152
 M:2/4
 L:1/8
 Q:1/4=88
+%%id benjerlain
 K:F
+I:linebreak $
 .D2 .F2 | .A2 z (B | .A)(E .F)(^C | .D) z z2 | $
 .D2 .F2 | .A2 z (B | .A)(E .F)(^C | .D) z z (d | $
 .c)(B .A)(G | F)(E D)(C | .D2) z2 | z4 |]
@@ -4492,7 +4783,9 @@ N:Page 153
 M:2/4
 L:1/8
 Q:1/8=88
+%%id doppelbaum
 K:D
+I:linebreak $
 Dc d z | Dc d z | d/B/G A z | $
 G/E/C D z | D/B/A G z |]
 
@@ -4505,7 +4798,9 @@ N:Page 153
 M:4/4
 L:1/8
 Q:1/8=168
+%%id boxter
 K:C
+I:linebreak $
 B2 AG AB d^c | B2 AG F_E GF | $
 B2 AG AB d^c | BA GF _EG F2 |]
 
@@ -4517,7 +4812,9 @@ N:Page 153
 M:2/4
 L:1/8
 Q:1/4=96
+%%id buffalo-bound
 K:F
+I:linebreak $
 d3/2^c/ dA | BG A2 | A3/2G/ FD | EC D2 | $
 d3/2^c/ dA | BG A3/2G/ | FD EC | D4 |]
 
@@ -4530,7 +4827,9 @@ N:Page 154
 M:2/4
 L:1/8
 Q:1/8=92
+%%id nockamixon
 K:F
+I:linebreak $
 ^F(A A/)FA/ | F(D D/)FD/ | C(A, A,/)CA,/ | ^C4 | $
 ^F(A A/)FA/ | F(D D/)FD/ | C(A, A,/)^CA,/ | D4 |]
 
@@ -4542,7 +4841,9 @@ N:Page 154
 M:6/8
 L:1/8
 Q:3/8=54
+%%id baby-blues
 K:C
+I:linebreak $
 A^FA c2B | ABA F2D | A^FA ccB | A3 z3 | $
 A^FA c2B | ABA F2D | DCA, DCA, | D3 z3 | $
 A^FA c2B | ABA F2D | A^FA ccB | A3 z3 | $
@@ -4556,7 +4857,9 @@ N:Page 154
 M:6/8
 L:1/8
 Q:1/8=126
+%%id blues-goodbye
 K:F
+I:linebreak $
 E | G2E ^G2E | (A3 A2)E | G2E ^G2E | (A3 A)e^d | $
 eA^G Ae^d | ecB A2E | G2E ^G2E | (A3 A2) |]
 
@@ -4568,7 +4871,9 @@ N:Page 155
 M:6/8
 L:1/8
 Q:3/8=54
+%%id lazy-afternoon
 K:G
+I:linebreak $
 A^GA | D2E F2G | A3 A^GA | D2E F2G | A3 A^GA | $
 c2B A2G | c2B A2G | A3 z3 | z3 A^GA | $
 D2E F2G | A3 A^GA | D2E F2G | A3 cBA | $
@@ -4582,7 +4887,9 @@ N:Page 155
 M:2/4
 L:1/8
 Q:1/4=56
+%%id gianicolense
 K:G
+I:linebreak $
 BG ^C3/2D/ | BG ^C3/2D/ | BG ^C3/2D/ | A2 F2 | BG ^C3/2D/ | BG ^C3/2D/ | BG ^C3/2D/ | $
 A2 F2 | GE ^A,3/2B,/ | GE ^A,3/2B,/ | GE ^A,3/2B,/ | F2 ^D2 | E/F/G/A/ BB, | E4 |]
 
@@ -4595,7 +4902,9 @@ N:Page 155
 M:6/8
 L:1/8
 Q:3/8=52
+%%id jixer
 K:F
+I:linebreak $
 d2d cAG | ADC D3 | d2d cAG | A6 | D2d dcA | $
 GFD CD2 | FDC A,^CE | (D3 D2)A, | C2A, ^C2A, | D6 |]
 
@@ -4608,7 +4917,9 @@ N:Page 156
 M:2/4
 L:1/8
 Q:1/4=80
+%%id jazzy-walk
 K:F
+I:linebreak $
 D2 F3/2F/ | DD F2 | E/D/C A,C | DE FE | D2 F3/2F/ | DD F2 | $
 E/D/C/C/ A,C | D2 C2 | D2 F3/2F/ | DD F2 | E/D/C A,C | DE FE | D2 F3/2F/ | $
 DD F2 | E/D/C/C/ A,C | D2 C2 | F2 A3/2A/ | FF A2 | G/F/E/D/ CE | $
@@ -4623,7 +4934,9 @@ N:Page 156
 M:6/8
 L:1/8
 Q:3/8=116
+%%id my-family
 K:A
+I:linebreak $
 D2 B3 G | A2F D3 | C2 E3 (D | D3) z3 | $
 D2 B3 G | A2F D3 | C2 E3 (D | D3) z3 | $
 B2B A2A | =G3 F3 | E2E D2D | E2 D3 A- | $
@@ -4640,7 +4953,9 @@ N:Page 157
 M:4/4
 L:1/8
 Q:1/4=108
+%%id don-t-cry
 K:F
+I:linebreak $
 z2 A2 C4 | A^G A(C C4) | z2 A2 C4 | A^G A(G G4) | $
 z2 G2 C4 | G^F G(C C4) | z2 c2 B4 | A^G A(F F4) |]
 
@@ -4652,7 +4967,9 @@ N:Page 157
 M:6/8
 L:1/8
 Q:3/8=100
+%%id ocean
 K:F
+I:linebreak $
 A,3 | D2^C D2E | F2E D2E | F2(A (A3) | A3) D3 | $
 B2A B2c | .d2(B B3) | A2G .A2(F | F6) | B2A B2c | .d2(B B3) | $
 A2G .A2(F | F2)G A3 | G2F G2(E | E2)F E3 | (D6 | D3) z3 |]
@@ -4665,7 +4982,9 @@ N:Page 157
 M:6/8
 L:1/8
 Q:3/8=126
+%%id yes-i-do
 K:G
+I:linebreak $
 D | D3 F3 | A2(A A2) z | c2 B3 (A | A3) z2 C | C3 E3 | G2(G G2) z | (_B2 A3) (G | G3) z2 D | $
 D3 F3 | A2(A A2) z | c2 B3 (A | A3) z z A | d3 B3 | A2F G2^G | A2 F3 (D | (D3) D2) |]
 
@@ -4678,7 +4997,9 @@ N:Page 158
 M:6/8
 L:1/8
 Q:3/8=56
+%%id adirondack
 K:C
+I:linebreak $
 BGE BGE | cAF E3 | BGE BGE | $
 FGF EB/c/^d/e/ | ^d/c/B/A/G/A/ !fermata!B3 |]
 
@@ -4690,7 +5011,9 @@ N:Page 159
 M:2/4
 L:1/8
 Q:1/4=66
+%%id celtic-engraver
 K:D
+I:linebreak $
 D/E/F GE | BG F2 | D/E/F GF | E2 E2 | $
 D/E/F GE | BG F2 | D/E/F GF | E2 E2 | $
 dB cA | B/A/G AF | G/F/E FD | E2 E2 | $
@@ -4711,7 +5034,10 @@ N:Page 160
 M:2/4
 L:1/8
 Q:1/4=78
+%%id goodbye-old-friend
+%%tags needs-repair
 K:F
+I:linebreak $
 DA AG/F/ | E/D/C B,2 | A,D D/E/F | E4 | $
 DA AG/F/ | E/D/C B,2 | A,D E/D/C | D3 E/F/ | $
 GE CD/E/ | F/E/D/C/ D2 | D/E/F/G/ A=B | A=B A2 | $
@@ -4731,7 +5057,10 @@ N:Page 161
 M:6/8
 L:1/8
 Q:3/8=72
+%%id cilantro
+%%tags needs-repair
 K:F
+I:linebreak $
 (A^G)A (EF)=G | [M:2/4]F2 D2 | [M:6/8](A^G)A (EF)=G | [M:2/4]F4 | $
 [M:6/8]CDE CDE | [M:2/4]F2 D2 | [M:6/8]CDE CDE | [M:2/4]D4 | $
 [M:6/8](A^G)A (EF)E | [M:2/4]D2 A,2 | [M:6/8](A^G)A (EF)E | [M:2/4]D4 | $
@@ -4745,7 +5074,9 @@ N:Page 161
 M:3/4
 L:1/8
 Q:1/4=126
+%%id pansy
 K:G
+I:linebreak $
 D2 | G4 D2 | ^G4 D2 | (A4 A)G | FE !fermata!D3 D | (G4 G)D | (^G4 G)D | $
 (A4 A)G | FE D3 c | BA G3 E | DC B,A, G,c | BA G3 E | D2 A4 |]
 
@@ -4758,7 +5089,9 @@ N:Page 158
 M:3/4
 L:1/8
 Q:1/4=120
+%%id intrada
 K:Dmin
+I:linebreak $
 D2 G2 B2 | cB A2 c2 | BA G2 F2 | G2 z2 z2 | $
 D2 G2 B2 | cB A2 F2 | G2 z2 z2 | z2 GA B^c | $
 d2 B3 G | A2 GA B^c | d2 B3 G | A2 z2 z2 | $
@@ -4773,7 +5106,9 @@ N:Page 73
 M:6/8
 L:1/8
 Q:3/8=54
+%%id paola
 K:Emin
+I:linebreak $
 B/c/d/c/B/A/ GE z/ G/ | F^D z/ B,/E/F/G/ z/ z | B/c/d/c/B/A/ GE z/ G/ | F^D z/ B,/ E3 | $
 ^D/E/F/B,/^C/D/ E/F/G2 | ^D/E/F/B,/^C/D/ E/F/G2 | B/c/d/c/B/A/ GE z/ G/ | F^D z/ B,/ E3 |]
 
@@ -4785,7 +5120,9 @@ N:Page 73
 M:4/4
 L:1/8
 Q:1/4=56
+%%id time-to-greet-the-day
 K:Dmaj
+I:linebreak $
 A2 F2 z2 DF | E2 A,2 D4 | A2 F2 z2 DF | E2 A,2 D3 G | $
 GA Bc d2 B2 | G2 B2 A3 G | GA Bc d2 B2 | GG B2 A4 | $
 A2 F2 z2 DF | E2 A,2 D4 | A2 F2 z2 DF | E2 A,2 D4 |]
@@ -4799,7 +5136,9 @@ N:Page 74
 M:2/4
 L:1/8
 Q:1/4=100
+%%id pia
 K:Gdor
+I:linebreak $
 D2 B2 | A2 z2 | D2 B2 | A2 z2 | $
 D2 B2 | AE F^C | D2 z2 | z4 |]
 
@@ -4812,7 +5151,9 @@ N:Page 74
 M:6/8
 L:1/8
 Q:3/8=116
+%%id a-sing-hello
 K:Gmaj
+I:linebreak $
 z z DE2 D | B2 z z3 | z2 DE2 D | A2 z z3 | z2 DE2 D | c2 z z3 | z2 cd2 c | B2 z z3 | $
 z2 GA2 G | d2 z z3 | z2 de2 d | c2 z z3 | z2 cB2 A | D2 z D2 z | E2(F F3) | G2 z z3 |]
 
@@ -4825,7 +5166,9 @@ N:Page 75
 M:4/4
 L:1/8
 Q:1/4=120
+%%id amokeake
 K:Emin
+I:linebreak $
 EB, E G2 F2 ^D | E2 B, B,2 B, B,2 | EB, E G2 F2 ^D | E2 z2 z4 | $
 cB A c2 B2 A | BA G B2 A2 G | AG F A2 G2 F | G2 A2 !fermata!B2 z2 |]
 
@@ -4838,7 +5181,9 @@ N:Page 75
 M:4/4
 L:1/8
 Q:1/4=124
+%%id sing-a-hello
 K:Gmaj
+I:linebreak $
 D3/2F/ A3/2(c/ c3/2)A/ c2 | B3/2d/ z2 z4 | D3/2F/ A3/2(c/ c3/2)A/ c2 | B3/2G/ z2 z4 | $
 D3/2F/ A3/2(c/ c3/2)A/ c2 | B3/2d/ z2 z4 | (3D2D2D2) D3 A | (3D2D2D2) D4 | $
 D3/2F/ A3/2(c/ c3/2)A/ c2 | B3/2d/ z2 z4 | D3/2F/ A3/2(c/ c3/2)A/ c2 | B3/2G/ z2 z4 | $
@@ -4854,7 +5199,9 @@ N:Page 76
 M:4/4
 L:1/8
 Q:1/4=108
+%%id jazzy
 K:Dmin
+I:linebreak $
 A, | D2 ^c(d d2) z A, | D2 A(D D2) z2 | AG FD F F2 (E | (E6) E)A, | $
 D2 ^c(d d2) z A, | D2 A(D D2) z2 | AG FD F F3 | D6 z z |]
 
@@ -4867,7 +5214,9 @@ N:Page 76
 M:2/4
 L:1/8
 Q:1/4=72
+%%id good-morning
 K:Dmaj
+I:linebreak $
 D | dB z D | G z z D | dA z A, | D z z A, | $
 AG EC | DD EG | FD z B, | D z z |]
 
@@ -4879,7 +5228,9 @@ N:Page 77
 M:2/4
 L:1/8
 Q:1/4=88
+%%id farm-song
 K:Emin
+I:linebreak $
 B, | EB A/G/F | E3 B, | EB AG/A/ | B3 G/A/ | $
 Be BB | A/B/A/G/ FB, | EB A/G/F | E3 |]
 
@@ -4892,7 +5243,9 @@ N:Page 77
 M:7/8
 L:1/8
 Q:1/4=144
+%%id backity
 K:D
+I:linebreak $
 D2 D2 D F A | D2 D2 D F A | D2 D2 D F A | [M:9/8]GFE C2 B,2 A,2 | $
 [M:7/8]D2 D2 D F A | D2 D2 D F A | D2 D2 D F A | [M:9/8]GFE C2 D2 z z |]
 
@@ -4905,7 +5258,9 @@ N:Page 78
 M:6/8
 L:1/8
 Q:3/8=48
+%%id taxicab
 K:Dmin
+I:linebreak $
 DFD ^CE2 | ^CEC D/E/F2 | DFD ^CE2 | A/G/FE D3 | $
 BGB A/G/F2 | EGE F/G/A2 | BGB A/G/F2 | G/F/ED ^C3 |]
 
@@ -4918,7 +5273,9 @@ N:Page 78
 M:4/4
 L:1/8
 Q:1/4=100
+%%id greetings
 K:D
+I:linebreak $
 DA, B(A A)F EA, | DA, B(A A)F EA, | DA, B(A A)F EA, | D2 z2 z4 | $
 DA, B(A A)F EA, | DA, B(A A)F EA, | DA, B(A A)F EA, | D2 z2 z4 | $
 BG e(d d)B G2 | AD B(A A)F D2 | EA, B(A A)E A,2 | DC DE FG A^A | $
@@ -4933,7 +5290,9 @@ N:Page 79
 M:4/4
 L:1/8
 Q:1/4=108
+%%id arlington
 K:Gmin
+I:linebreak $
 G2 (B2 B) G2 B | (A^F) D(A F)D AD | G2 (B2 B) G2 B | d2 z2 z4 | $
 G2 (B2 B) G2 B | (A^F) D(A F)D AD | G2 z2 z AB G | A2 z2 z4 | $
 G2 (B2 B) G2 B | (A^F) D(A F)D AD | G2 (B2 B) G2 B | d2 z2 z4 | $
@@ -4948,7 +5307,9 @@ N:Page 79
 M:3/4
 L:1/8
 Q:1/4=112
+%%id dorina
 K:D
+I:linebreak $
 F3/2G/ |: A2 A2 A2 | A2 d2 F3/2G/ | A2 A2 A2 | A2 d2 G3/2F/ | $
 E2 E2 E2 | E2 F2 E2 |1 D2 F2 B2 | (A2 A3/2)G/ F3/2G/ :| (D2 D3/2)E/ F3/2E/ | D4 d3/2c/ | $
 |: B2 B2 B2 | B2 d2 z3/2 B/ | (A2 A3/2)G/ F3/2G/ | A4 G3/2F/ | $
@@ -4962,7 +5323,9 @@ N:Page 80
 M:6/8
 L:1/8
 Q:3/8=138
+%%id spinning
 K:Dmin
+I:linebreak $
 d^cd A^GA | FEF D3 | A,=B,^C DEF | GAB A3 | $
 d^cd A^GA | FEF D3 | AGF ED^C | D6 |]
 
@@ -4974,7 +5337,9 @@ N:Page 80
 M:6/8
 L:1/8
 Q:3/8=46
+%%id addition
 K:D
+I:linebreak $
 A3/2F/D ECA, | D2 z z3 | A3/2F/D A,CE | D2 z z3 | $
 B3/2A/G AGF | G3/2F/E A3 | A3/2F/D A,CE | D2 z z3 |]
 
@@ -4986,7 +5351,9 @@ N:Page 81
 M:6/8
 L:1/8
 Q:3/8=126
+%%id high-point
 K:Dmin
+I:linebreak $
 D^CD FEF | A^GA d3 | fed ^c2e | A6 | $
 D^CD FEF | A^GA d2c | BAG F2E | D6 |]
 
@@ -4999,7 +5366,9 @@ N:Page 81
 M:3/4
 L:1/8
 Q:1/4=80
+%%id piccolina-esabina
 K:D
+I:linebreak $
 D3/2E/ | F2 E2 D3/2D/ | c2 d2 D3/2E/ | F2 E2 D3/2F/ | E4 D3/2E/ | $
 F2 E2 D3/2D/ | c2 d2 D3/2E/ | F2 A2 F3/2E/ | D4 z !fermata!A | $
 [M:6/8]
@@ -5014,7 +5383,9 @@ N:Page 82
 M:6/8
 L:1/8
 Q:3/8=40
+%%id isabella
 K:Dmin
+I:linebreak $
 D3/4E/4FD A3/4^G/4A2 | B3/4^c/4dB A3 | $
 ^G3/4F/4ED ^C3/4B,/4A,2 | A,3/4B,/4^CB, A,3 | $
 D3/4E/4FD A3/4^G/4A2 | B3/4^c/4dB A3 | $
@@ -5028,7 +5399,9 @@ N:Page 82
 M:3/4
 L:1/8
 Q:1/4=66
+%%id wylewee
 K:D
+I:linebreak $
 A3/2A/ F2 E3/2A/ | F6 | E3/2D/ B,2 A,3/2B,/ | D6 | A3/2A/ F2 E3/2A/ | F6 | E3/2D/ B,2 A,3/2B,/ | D6 | $
 B3/2c/ dc Bd | cA F4 | G3/2A/ BA GF | EC A,4 | $
 A3/2A/ F2 E3/2A/ | F6 | E3/2D/ B,2 A,3/2B,/ | D6 | A3/2A/ F2 E3/2A/ | F6 | E3/2D/ B,2 A,3/2B,/ | D6 |]
@@ -5041,7 +5414,9 @@ N:Page 83
 M:6/8
 L:1/8
 Q:3/8=48
+%%id olivia
 K:Dmin
+I:linebreak $
 B | A3/2G/F G3/2F/E | D(A,2 A,3) | A,A,A, B,2A, | (E3 E2)B | $
 A3/2G/F G3/2F/E | D(A,2 A,3) | A,A,A, F2E | D6 |]
 
@@ -5054,7 +5429,9 @@ N:Page 83
 M:7/8
 L:1/8
 Q:1/4=104
+%%id sandy-and-michael
 K:D
+I:linebreak $
 A, |: A F E D2 z A, | A F E D2 z A, | B A G F2 E2 | d2 e d2 z A | f e d c2 z B | $
 e d c B2 z A |1 d c B A G F E | D2 E D2 z A, :| B A G F2 E2 | D2 E D3 z |]
 
@@ -5067,7 +5444,9 @@ N:Page 84
 M:4/4
 L:1/8
 Q:1/4=126
+%%id waiting-for-paola
 K:Dmin
+I:linebreak $
 D3 F3 D2 | E3 ^C3 A,2 | D3 F3 A2 | B2 z2 z4 | D3 F3 D2 | E3 ^C3 A,2 | D2 z2 z4 | z8 | $
 D3 F3 D2 | E3 ^C3 A,2 | D3 F3 A2 | B2 z2 z4 | D3 F3 D2 | E3 ^C3 A,2 | D2 z2 z4 | z8 | $
 B3 G3 B2 | A3 F3 A2 | G3 E3 G2 | FE DE FG AD | B3 G3 B2 | A3 F3 A2 | GF ED ^C2 B,2 | A,B, A,B, A,2 z2 | $
@@ -5082,7 +5461,9 @@ N:Page 84
 M:6/8
 L:1/8
 Q:3/8=112
+%%id reilly-boy
 K:G
+I:linebreak $
 D | B,2D C2E | D2F G3 | BAG F2A | (G3 G2)D | $
 B,2D C2E | D2F G3 | BAG F2A | G6 | $
 B2B B2B | c2c c3 | A2A A2G | F2E !fermata!D2C | $
@@ -5096,7 +5477,9 @@ N:Page 85
 M:2/4
 L:1/8
 Q:1/4=72
+%%id little-bird
 K:Gmin
+I:linebreak $
 d/c/B/A/ | GD ED | ED d/c/B/A/ | GD E^F | G2 d/c/B/A/ | $
 GD ED | ED G/A/B/c/ | dc BA | $
 G3 B/c/ | dB cA | B/A/G AD | GG/A/ BA | G2 z2 |]
@@ -5110,6 +5493,7 @@ N:Page 85
 M:4/4
 L:1/8
 Q:1/4=100
+%%id glenwood-springs
 K:D
 A, A,2 A2 F D2 | A, A,2 A2 F D2 |1 BA GF ED CB, | A,B, CE A4 :| BA GF ED CE | D2 AF D4 |]
 
@@ -5122,7 +5506,9 @@ N:Page 86
 M:2/4
 L:1/8
 Q:1/4=84
+%%id far-away
 K:Emin
+I:linebreak $
 G/F/ | E z z G/F/ | E z z G/F/ | EG/A/ Bd/c/ | BA BG/F/ | $
 E z z G/F/ | E z z G/F/ | ED/C/ B,A, | G,F, E,2 | $
 B,/B,/B,/B,/ GF | E^D E z | B/c/B/A/ B/A/G/F/ | E2 z G/A/ | $
@@ -5138,7 +5524,9 @@ N:Page 86
 M:2/4
 L:1/8
 Q:1/4=72
+%%id hello-children
 K:D
+I:linebreak $
 A,D FA | z4 | BG E2 | z4 | $
 A,C EG | z4 | FA D2 | z4 |]
 
@@ -5152,7 +5540,9 @@ N:Page 87
 M:6/8
 L:1/8
 Q:3/8=120
+%%id katangaroo
 K:Emin
+I:linebreak $
 B, | E2 G3 B, | E2 G3 B | A3 G2^F- | ^F3- ^F2B, | ^D2 ^F3 c | B2A G3 | E6- | E3- E2B, | $
 E2 G3 B, | E2 G3 B | A2B, G3 | ^F2B,- B,3 | B2B A3 | G3 ^F2E- | E6- | E6 || $
 c3 A2c | B3 G2B | A3 ^F2A | G3 E3 | ^F3 E3 | ^D3 C2B,- | B,6- | B,6 | $
@@ -5167,7 +5557,9 @@ N:Page 87
 M:2/4
 L:1/8
 Q:1/4=80
+%%id kerplunk
 K:D
+I:linebreak $
 A | FD A,A | FD A,A | G3/2F/ ED | CB, A,A | GE A,A | GE A,A | F3/2E/ DC | D3 A | $
 d3/2c/ BA | GF ED | CB, A,A | D3 A | d3/2c/ BA | GF ED | CB, A,A | D3 z |]
 
@@ -5180,7 +5572,9 @@ N:Page 88
 M:2/4
 L:1/8
 Q:1/4=72
+%%id til-we-meet-another-day
 K:Dmin
+I:linebreak $
 z2 AF |: D2 AF | D2 AF | G3/2F/ EF | G2 GE | $
 ^C2 GE | ^C2 GE | F3/2E/ FG | A2 AF | $
 D2 AF | D2 AF | G3/2F/ GA | B2 AG | $
@@ -5196,7 +5590,9 @@ N:Page 88
 M:2/4
 L:1/8
 Q:1/4=60
+%%id shira
 K:D
+I:linebreak $
 z DF A | G2 G2 | z A/G/F D | E2 E2 | $
 z DF A | G2 G2 | z A/G/F D | E2 E2 | $
 z dc B | A2 F2 | z E/F/G E | F2 A2 | z dc B | A2 F2 | z E/F/G E | D2 D2 | z4 |]
@@ -5210,7 +5606,9 @@ N:Page 89
 M:5/8
 L:1/8
 Q:3/8=60
+%%id if-you-see-an-armadillo
 K:Dmin
+I:linebreak $
 D/ E/ F/ D/ E/ F/ E A | A/ G/ F/ E/ D/ ^C/ D A, | $
 D/ E/ F/ D/ E/ F/ E A | A/ G/ F/ E/ D/ ^C/ D2 :| $
 B/ A/ G/ F/ E/ D/ ^C !fermata!A/ A/ | A/ G/ F/ E/ D/ ^C/ !fermata!D2 |]
@@ -5223,7 +5621,9 @@ N:Page 89
 M:2/4
 L:1/8
 Q:1/4=96
+%%id isaiah
 K:D
+I:linebreak $
 A, | FD z A, | FD z A, | G3/2F/ ED | CB, A,A, | GE z A, | GE z A, | A3/2G/ FE | $
 DC B,A, | FD z A, | FD z A, | G3/2F/ ED | $
 CB, A,A, | GE z A, | GE z A, | A3/2G/ FE | $
@@ -5239,7 +5639,9 @@ N:Page 90
 M:3/4
 L:1/8
 Q:3/4=48
+%%id i-m-an-armadillo
 K:Dmin
+I:linebreak $
 A,D D2 D2 | (A,E) E3 A | AG FE FG | AF D4 | $
 A,D D2 D2 | A,E E4 | AG FE D^C | D6 | $
 BA G2 z2 | AG F2 z2 | GF E2 G2 | FE D2 z2 | $
@@ -5254,7 +5656,9 @@ N:Page 90
 M:3/4
 L:1/8
 Q:3/4=44
+%%id my-papa
 K:Eb
+I:linebreak $
 B3 G E2 | F2 G2 F2 | E2 C4 | B,6 | $
 B3 G E2 | F2 A3 c | B6- | B6 | $
 B2 G3 E | F2 G2 F2 | E4 C2 | B,6 | $
@@ -5270,7 +5674,9 @@ N:Page 91
 M:12/8
 L:1/8
 Q:3/8=100
+%%id marsupial
 K:Dmin
+I:linebreak $
 A,3 | D2E F2A- A2G F3 | E2^C- C3 z3 A,3 | $
 D2E F2A- A2G F3 | E6 z3 A,3 | $
 D2E F2A- A2G F3 | G2G A2B- B2A G3 | $
@@ -5285,7 +5691,9 @@ N:No tempo marking is printed above this tune in the source (unlike the other tu
 N:Page 91
 M:6/8
 L:1/8
+%%id edoardo
 K:Eb
+I:linebreak $
 B,/B,/CB, C | G2E- E z z | z2 B,/B,/CB, C | G2E- E z z | z z BA2 G | F2E DCB,- | $
 B, z A-A2 G- | G6 | z2 B,/B,/CB, C | G2E- E z z | z2 B,/B,/CB, C | $
 G2E- E z z |
@@ -5300,7 +5708,9 @@ N:Page 92
 M:2/4
 L:1/8
 Q:1/4=72
+%%id spider
 K:Emin
+I:linebreak $
 BE z F | ^D/E/F E2 | BE z F | ^D/E/F E2 | $
 c/B/A BG | A/G/F G2 | F/E/^D E/F/G/A/ | Bc B2 |]
 
@@ -5312,7 +5722,9 @@ N:Page 92
 M:12/8
 L:1/8
 Q:3/8=100
+%%id mark
 K:D
+I:linebreak $
 DC2 B, | A,2 z F2D z3 B2A | z3 z3 z z DC2 B, | A,2 z F2D z3 B2A | z3 z3 z z DC2 B, | $
 A,2 z F2E z3 B2A | z3 z3 z z A,B,2 C | D2 z C2 z B,2_B, z3 | A,2 z z3 z3 z3 |]
 
@@ -5324,7 +5736,9 @@ N:Page 93
 M:3/4
 L:1/8
 Q:1/4=96
+%%id snowflake
 K:Emin
+I:linebreak $
 G3 E B,2 | E4 B,2 | G3 E B,2 | E4 FG | $
 AG F3 A | GF E3 G | FE ^D3 F | E6 |]
 
@@ -5337,7 +5751,9 @@ N:Page 93
 M:2/4
 L:1/8
 Q:1/4=84
+%%id joppatowne
 K:D
+I:linebreak $
 A/F/ D2 E/F/ | EE E2 | A/F/ D2 E/F/ | D4 | $
 A/F/ D2 E/F/ | EE E2 | A/F/ D2 E/F/ | D4 | $
 B/A/G AF | G/F/E F2 | B/A/G AF | G/F/E !fermata!A,2 |]
@@ -5350,7 +5766,9 @@ N:Page 94
 M:2/4
 L:1/8
 Q:1/4=100
+%%id winter
 K:Dmin
+I:linebreak $
 .D2 .F2 | (D.F) z .D | .E2 .^C2 | A,4 | $
 .^C2 .E2 | (^C.E) z .C | .D2 .F2 | A4 | $
 .D2 .F2 | (D.F) z .D | .E2 .^C2 | A,4 | $
@@ -5364,7 +5782,10 @@ N:Page 94
 M:7/8
 L:1/8
 Q:1/4=88
+%%id windy
+%%tags needs-repair
 K:D
+I:linebreak $
 A, A, | A F D E2 A, A, | A F D E2 A, A, | [M:5/8]B A G F E | $
 [M:9/8]DCB, A,2 A,2A, A, | [M:7/8]A F D E2 A, A, | $
 A F D E2 A, A, | [M:5/8]B A G F E | D C E D2 |]
@@ -5377,7 +5798,9 @@ N:Page 95
 M:2/4
 L:1/8
 Q:1/4=100
+%%id molly-pitcher-highway
 K:Dmin
+I:linebreak $
 DE FG | A2 d2 | B2 GB | A4 | $
 AG F2 | G2 FE | A,2 F2 |1 E4 :| D4 |]
 
@@ -5389,7 +5812,9 @@ N:Page 95
 M:6/8
 L:1/8
 Q:3/8=112
+%%id tickle
 K:D
+I:linebreak $
 A2F z3 | z2 A z2 F | G2E z2 A,- | A,6 | G2E z3 | z2 G z2 E | F2G z2 A- | A6 | $
 A2F z3 | z2 A z2 F | G2A z2 B- | B3- B2B | A2F z2 A | G2E z2 A, | D6 |]
 
@@ -5401,7 +5826,9 @@ N:Page 96
 M:6/8
 L:1/8
 Q:3/8=72
+%%id mason-dixon-line
 K:Gmin
+I:linebreak $
 D | B2 G3 B | A2^F- F3 | G2 E3 D- | D3- D2D | $
 B2 G3 B | c3 B2A- | A6- | A3- A2D | $
 B2 G3 B | A2^F- F3 | G2 E3 D- | D2B B2G- | $
@@ -5415,7 +5842,9 @@ N:Page 96
 M:6/8
 L:1/8
 Q:3/8=112
+%%id i-m-happy
 K:D
+I:linebreak $
 z3 F3 | D2 D3 z | z3 z3 | z3 z3 | z3 F3 | D2 D3 z | z3 z3 | z3 z3 | $
 z3 F3 | E2 E3 z | z3 z3 | z3 z3 | z3 F3 | D2 D3 z | z3 z3 | z3 z3 | $
 z3 F3 | D2 D3 z | z3 z3 | z3 z3 | z3 F3 | D2 D3 z | z3 z3 | z3 z3 | $
@@ -5429,7 +5858,9 @@ N:Page 97
 M:6/8
 L:1/8
 Q:3/8=112
+%%id sneaky
 K:Dmin
+I:linebreak $
 A, | D2 z A2 z | D2A z3 | F2 z z3 | z3 z z A, | $
 D2 z A2 z | D2A z3 | B2 z z3 | z3 z z A, | $
 D2 z A2 z | D2A z3 | F2 z z3 | z3 z z E | $
@@ -5444,7 +5875,9 @@ N:Page 97
 M:4/4
 L:1/8
 Q:1/4=132
+%%id tickle-my-toe
 K:D
+I:linebreak $
 A .F2 .D .A,2 A2 | G .E2 .C .A,2 G2 | F .D2 .B, .A,2 E2 | D2 z CD EF G | $
 A .F2 .D .A,2 A2 | G .E2 .C .A,2 G2 | F .D2 .B, .A,2 E2 | D2 z2 z4 | $
 B .G2 B .d2 B2 | A .F2 A .d2 A2 | G .F2 E .A,2 G2 | FE A,2 GF E2 |]
@@ -5457,7 +5890,9 @@ N:Page 98
 M:6/8
 L:1/8
 Q:3/8=72
+%%id louisa-groundhog
 K:Amin
+I:linebreak $
 z2 EF2 E | C2A- A3- | A2A G2F | E2A,- A,3- | A,2E F2E | $
 c3 c3 | B2A- A2^G- | ^G6- | ^G2E F2E | $
 c2A- A3- | A2A G2F | E2A,- A,3- | A,2 z C2A, | $
@@ -5471,7 +5906,9 @@ N:Page 98
 M:4/4
 L:1/8
 Q:1/4=76
+%%id buon-giorno
 K:D
+I:linebreak $
 A | FD z A,A, z z A/F/ | G3/2G/ F2 E3 G | $
 EC z A,A, z z G/E/ | F3/2F/ E2 D2 |]
 
@@ -5485,7 +5922,9 @@ N:Page 99
 M:6/8
 L:1/8
 Q:3/8=52
+%%id movin-to-brooklyn
 K:Dmin
+I:linebreak $
 DFA, DFA, | ^C/D/EC D/C/D/E/F | DFA, DFA, | ^CC/D/E/C/ D3 | $
 B/A/GB A/G/F2 | G/F/EG F/E/F/G/A | B/A/GB A/G/F2 | E/D/^C/B,/A,/G,/ A,/G/E2 |]
 
@@ -5498,10 +5937,12 @@ N:Page 99
 M:4/4
 L:1/8
 Q:1/4=84
+%%id bamboo
 K:D
-A, F2 A,B, A, B,2 | A, F2 A,B, A, B,2 | A, F2 A,B, A, B,2 | E3 D- D4 | A, F2 A,B, A, B,2 | $
-A, F2 A,B, A, B,2 | A, F2 A,B, A, B,2 | E3 D- D4 | z BA FE DB, A, | $
-D E2 F- F4 | z BA FE DB, A, | F E2 D- D4 |]
+I:linebreak $
+A f2 AB A B2 | A f2 AB A B2 | A f2 AB A B2 | e3 d- d4 | A f2 AB A B2 | $
+A f2 AB A B2 | A f2 AB A B2 | e3 d- d4 | z ba fe dB A | $
+d e2 f- f4 | z ba fe dB A | f e2 d- d4 |]
 
 X:231
 T:Pumpkin
@@ -5512,7 +5953,9 @@ N:Page 100
 M:9/8
 L:1/8
 Q:3/8=120
+%%id pumpkin
 K:Dmin
+I:linebreak $
 D2F- F2D F3 | E2G- G2E G3 | F2A- A2F A3 | G2B- B2G B3 | $
 A2G F2A G2F | G2F E2G F2E | D2A,- A,3- A,2F | E2A,- A,3- A,2E | $
 D2F- F2D F3 | E2G- G2E G3 | F2A- A2F A3 | G2B- B2G B3 | $
@@ -5527,7 +5970,9 @@ N:Page 100
 M:12/8
 L:1/8
 Q:3/8=100
+%%id i-love-my-baby
 K:D
+I:linebreak $
 z z AA2 FA2 A2 z F | A2A F2 A2 z z z3 | z z AA2 FA2 A2 z F | A2A F2 A2 z z z3 | $
 z z dd2 Bd2 d2 z B | d2d B2 d2 z z z3 | z z AA2 FA2 A2 z F | $
 A2A F2 A2 z z z3 | z z ee2 ec2 e2 z z | z z dd2 dB2 d2 z z | $
@@ -5541,7 +5986,9 @@ N:Page 101
 M:2/4
 L:1/8
 Q:1/4=84
+%%id ciao-diego
 K:D
+I:linebreak $
 (D3/2E/ FD) | .G.F .E2 | (C3/2D/ EC) | .F.E (.DA,) | $
 (D3/2E/ FD) | .G.A .B(F/G/) | .A.G .F.E | .D.C .B,.A, |]
 
@@ -5553,7 +6000,9 @@ N:Page 101
 M:2/4
 L:1/8
 Q:1/4=64
+%%id my-blessings
 K:D
+I:linebreak $
 A, | A F2 G/A/ | G E2 A, | G E2 G/E/ | F/E/F/G/ AA, | $
 A F2 A/F/ | G/F/G/A/ BB | A/G/F/E/ DE | D3 z |]
 
@@ -5565,7 +6014,9 @@ N:Page 102
 M:6/8
 L:1/8
 Q:3/8=100
+%%id my-day
 K:D
+I:linebreak $
 A,B,A, | D3 z3 | z3 A,B,A, | D3 z3 | z3 BAG | $
 F2E DCB, | A,3 A,B,C | D3 z3 | z6 |]
 
@@ -5578,7 +6029,9 @@ N:Page 102
 M:5/8
 L:1/8
 Q:3/8=48
+%%id midlothian-road
 K:Bb
+I:linebreak $
 F | d3/2 c/ B A G | F3/2 G/ E F F | d3/2 c/ B A G | F3/2 G/ E F2 | $
 E3/2 D/ C B, G | F3/2 G/ A B2 | E3/2 D/ C B, G |1 F3 F :| F4 |]
 
@@ -5590,7 +6043,9 @@ N:Page 103
 M:2/4
 L:1/8
 Q:1/4=72
+%%id dunda-dee
 K:F
+I:linebreak $
 C3/4C/4 | AC3/4C/4 GC3/4C/4 | FD CC3/4C/4 | DD3/4D/4 EE3/4E/4 | F3 C3/4C/4 | $
 AC3/4C/4 GC3/4C/4 | FD CC3/4C/4 | DD3/4D/4 EE3/4E/4 | F3 F3/4F/4 | $
 dB Fd3/4d/4 | cA Fc3/4c/4 | BA3/4A/4 GF3/4F/4 | ED CC3/4C/4 | $
@@ -5604,7 +6059,9 @@ N:Page 103
 M:6/8
 L:1/8
 Q:3/8=100
+%%id insadong-market
 K:Eb
+I:linebreak $
 B, | G2E z z B, | F2D z z B, | E2G, A,2B,- | B,3- B,2B, | $
 G2E z z B, | F2D z z B, | E2G, A,2B,- | B,6 | $
 c2A F2c | B2A G2F | E2D C2B,- | B,3- B,2B, | $
@@ -5618,6 +6075,7 @@ N:Page 104
 M:5/4
 L:1/8
 Q:1/4=132
+%%id scotland-pennsylvania
 K:F
 c2 A2 FA G2 C2 | c2 A2 FA G2 C2 | FG AB cd c2 Ac | BA G2 F2 z4 |]
 
@@ -5629,7 +6087,9 @@ N:Page 104
 M:2/4
 L:1/8
 Q:1/4=96
+%%id mt-rushmore
 K:D
+I:linebreak $
 D/E/F AF | B/A/G/F/ EA, | D/E/F EC | D/C/D/E/ D2 :| $
 B/A/G/F/ E/D/C/E/ | DB, A,2 | B/A/G/F/ E/D/C/E/ | D/C/D/E/ D2 | $
 B/A/G/F/ E/D/C/E/ | DB, A,2 | A,/B,/C EF | D/C/D/E/ D2 |]
@@ -5642,7 +6102,9 @@ N:Page 105
 M:2/4
 L:1/8
 Q:1/4=100
+%%id parachute
 K:Eb
+I:linebreak $
 B,2 G2 | E2 FG | FD B,2 | z4 | $
 B,2 G2 | E2 FG | FE F2 | z4 | $
 AF DB, | E3 B, | AF DB, | E2 GB | E2 z2 |]
@@ -5655,7 +6117,9 @@ N:Page 105
 M:2/4
 L:1/8
 Q:1/4=100
+%%id snooza
 K:A
+I:linebreak $
 CE | A2 cE | A2 CE | A2 cE | A4 | $
 B3/2A/ GF | E4 | B3/2A/ GF | E2 CE | $
 A2 cE | A2 CE | A2 cE | A4 | $
@@ -5670,7 +6134,10 @@ N:Page 106
 M:5/8
 L:1/8
 Q:1/8=172
+%%id spotted-fawn
+%%tags needs-repair
 K:F
+I:linebreak $
 A/ B/ |: (c A) F (G/ F/) (E/ G/) | (F D) (C/ =B,/ C) A/ B/ | $
 (c A) F (G/ F/) (E/ G/) |1 (F/ E/ F) (F/ E/ F) A/ B/ :| (F/ E/ F) (F/ E/ F) d/ e/ | $
 [M:2/4](f/e/)(d/c/) (B/A/)(G/F/) | [M:7/8](E G) C (F/ E/ F/ G/ A) d/ e/ | $
@@ -5685,7 +6152,10 @@ N:Page 108
 M:6/8
 L:1/8
 Q:1/8=96
+%%id langston
+%%tags needs-repair
 K:Emin
+I:linebreak $
 (EGB e2)e | d3/2c/B- B3 | [M:2/4]B/A/G A/G/F | G3/2F/ E2- | $
 ED B,D | %5
 [M:6/8](EG/F/G e3) |]
@@ -5699,7 +6169,9 @@ N:Page 108
 M:2/4
 L:1/8
 Q:1/4=52
+%%id lullaby-baby
 K:F#loc
+I:linebreak $
 F/G/A BG | F/E/F- F2 | F/G/A BG | F/E/F- F2 | $
 c/B/A/G/ F2 | c/B/A/G/ F2 | EG F2 | EG F2 |]
 
@@ -5712,7 +6184,9 @@ N:Page 109
 M:2/4
 L:1/8
 Q:1/4=64
+%%id lee
 K:Dmin
+I:linebreak $
 A/B/A/G/ Ac/B/ | A2 z2 | A/B/A/G/ Ac/d/ | e2 z2 | $
 d/c/B c/B/A | GB A2 | A/B/A/G/ A/G/F/E/ | D2 z2 |]
 
@@ -5725,7 +6199,9 @@ N:Page 109
 M:6/8
 L:1/8
 Q:3/8=56
+%%id spring-thaw
 K:Dmin
+I:linebreak $
 dAF D3 | ^C/D/E/A,/=B,/C/ D/E/F2 | dAF D3 | ^C/D/E/A,/=B,/C/ D3 | $
 ^CEC D/E/F2 | EGE F/G/A2 | dAF D3 | ^C/D/E/A,/=B,/C/ D3 |]
 
@@ -5738,6 +6214,7 @@ N:Page 110
 M:5/8
 L:1/8
 Q:1/8=176
+%%id rickett-s-glen
 K:Dmin
 G/ A/ B/ A/ G/ F/ G G | G/ A/ B/ A/ G/ F/ G G | F/ G/ A/ G/ F/ E/ D2 | G/ A/ G/ F/ E/ C/ D2 |]
 
@@ -5750,7 +6227,9 @@ N:Page 110
 M:6/8
 L:1/8
 Q:3/8=52
+%%id bear-song
 K:Dloc
+I:linebreak $
 AFD CD2 | E2C D3 | $
 A/G/FE D/C/D2 | EEC D3 |]
 
@@ -5763,7 +6242,9 @@ N:Page 111
 M:2/4
 L:1/8
 Q:1/4=42
+%%id campo-di-coniglio
 K:Dmin
+I:linebreak $
 A3/2D/ A3/2D/ | E3/4D/4C/E/ DA, | A3/2D/ A3/2D/ | E3/4D/4C/E/ D3/2G/4A/4 | $
 B3/4A/4G/B/ A/4G/4AE/4F/4 | G3/4F/4E/G/ F/4E/4FD/4E/4 | F/E/F/G/ A3/4G/4F/E/ | DD3/4F/4 D2 |]
 
@@ -5776,6 +6257,7 @@ N:Page 111
 M:6/8
 L:1/8
 Q:3/8=54
+%%id luke
 K:Emin
 EB,E G/F/E2 | DDF E3 | B/c/B^d e/d/c/B/A/G/ | F^DF E3 |]
 
@@ -5787,7 +6269,9 @@ N:Page 112
 M:6/8
 L:1/8
 Q:3/8=100
+%%id cruisin
 K:Dmin
+I:linebreak $
 DE2 D |: G3 z3 | z6 | z6 | z2 DE2 D | $
 G3 z3 | z6 | z6 | z3 z z G | $
 B2B A2A | G2G A2A | B2 A3 G- | G3- G2D | $
@@ -5801,7 +6285,9 @@ N:Page 112
 M:6/8
 L:1/8
 Q:1/4=84
+%%id snake-song
 K:Eloc
+I:linebreak $
 EDF E3 | EDF E3 | B2A G2F | E6 | $
 EDF E3 | EDF E3 | FGF E2D | E6 |]
 
@@ -5813,7 +6299,9 @@ N:Page 113
 M:2/4
 L:1/8
 Q:1/4=100
+%%id tamarindo
 K:Dmin
+I:linebreak $
 |: A2 Gc- | cB AG | A2 DA- | AG FE | F2 ED- | DC A,C | D2 CD- | D4 :| $
 z AG F | DC A,C | D2 CD- | D4 | z AG F | DC A,C | D4- | D4 |]
 
@@ -5825,7 +6313,9 @@ N:Page 113
 M:2/4
 L:1/8
 Q:1/4=84
+%%id erie
 K:Dmin
+I:linebreak $
 d2 A2 | B2 A2 | FF EE | A2 =B^c | $
 d2 A2 | B2 A2 | FF EE | D4 |]
 
@@ -5837,7 +6327,9 @@ N:Page 114
 M:2/4
 L:1/8
 Q:1/4=84
+%%id here-i-am
 K:Emin
+I:linebreak $
 BG | A4 | z2 GF | E4 | z2 BG | A4 | z2 GF | E4 | z2 FE | $
 D2 A2 | F4 | GF ED | E2 FE | D2 A2 | F4 | GF ED | E2 z2 |]
 
@@ -5849,7 +6341,9 @@ N:Page 114
 M:6/8
 L:1/8
 Q:3/8=40
+%%id dance
 K:Dloc
+I:linebreak $
 DFA G3 | DFA G3 | DFA cAc | d3 z3 | $
 DFA G3 | DFA G3 | AFD GEC | D3 z3 |]
 
@@ -5861,7 +6355,9 @@ N:Page 115
 M:2/4
 L:1/8
 Q:1/4=100
+%%id pohoq
 K:Dmin
+I:linebreak $
 D/E/F/G/ A/G/F/E/ | DA FD | C/D/E/F/ G/F/E/D/ | CG EC | $
 D/E/F/G/ A/G/F/E/ | DA FD | C/D/E FE | DD D2 |]
 
@@ -5873,7 +6369,9 @@ N:Page 115
 M:6/8
 L:1/8
 Q:3/8=54
+%%id brian
 K:Dmin
+I:linebreak $
 D/F/AF BG z | A/G/FE D2 z | D/F/AF BG z | $
 A=B^c d3 | e^ce d/=c/B/A/G/F/ | E^CE D2 z |]
 
@@ -5885,7 +6383,9 @@ N:Page 116
 M:2/4
 L:1/8
 Q:1/4=84
+%%id alison
 K:Emin
+I:linebreak $
 z (B,G F | E2) (DC | B,)(B, GF | E2) (GA | B)(B, GF | $
 E2) (DC | B,)A, (G,A, | (B,4) | $
 E2) (DC | B,)(B, GF | E2) (GA | B2) (GA | $
@@ -5899,7 +6399,9 @@ N:Page 116
 M:2/4
 L:1/8
 Q:1/4=64
+%%id thanksgiving
 K:Gmin
+I:linebreak $
 GB AF | DA G2 | GB AF | DA G2 | $
 Bd cB | Ac BG | ^FA GD | BA G2 |]
 
@@ -5911,7 +6413,9 @@ N:Page 117
 M:2/4
 L:1/8
 Q:1/4=84
+%%id crown
 K:Gmin
+I:linebreak $
 G2 B2 | A2 F2 | D3 d | dd d2 | G2 B2 | A2 F2 | G3 d | dd d2 | $
 G2 B2 | A2 F2 | D3 d | dd d2 | d2 c2 | B2 A2 | G3 z | z4 |]
 
@@ -5923,7 +6427,9 @@ N:Page 117
 M:6/8
 L:1/8
 Q:1/8=152
+%%id bread-baking-song
 K:Dmin
+I:linebreak $
 D3/2E/F E3/2F/G | F3/2G/A A3 | G/F/EF D3 | G/F/EF D3 | $
 D3/2E/F E3/2F/G | F3/2G/A A3 | G/F/EF D3 | A,=B,^C D3 |]
 
@@ -5935,7 +6441,9 @@ N:Page 118
 M:2/4
 L:1/8
 Q:1/4=120
+%%id hello
 K:Dmin
+I:linebreak $
 d2 A2 | d2 A2 | AG FG | A4 | $
 d2 A2 | d2 AA | AG FE | D3 A/A/ | $
 AA/A/ AA/A/ | AA A2 | z4 | z4 | $
@@ -5949,7 +6457,9 @@ N:Page 118
 M:3/4
 L:1/8
 Q:1/4=112
+%%id joto
 K:Dmin
+I:linebreak $
 A2 G3 F | E6 | DF A3 F | E2 A,4 | $
 d2 c3 B | A3 GA B | (A6 | A2) =B2 ^c2 | dc BA GF | $
 E2 ^C4 | (D6 | D6) |]
@@ -5962,7 +6472,9 @@ N:Page 119
 M:6/8
 L:1/8
 Q:3/8=100
+%%id trombatom
 K:Dmin
+I:linebreak $
 !fermata!A3 |: F2E D2F | E3 !fermata!A3 | F2E D2F | E3 !fermata!A3 | $
 F2E D2F | E3 A,3 | D3 z3 |1 z3 !fermata!A3 :|2 z3 !fermata!A3 || $
 B2A G2B | A3 F3 | G2F E3 | D3 A3 | $
@@ -5976,7 +6488,9 @@ N:Page 119
 M:6/8
 L:1/8
 Q:3/8=46
+%%id waiting
 K:Emin
+I:linebreak $
 BBB A3/2G/F | (^DF)D E3 | BBB A3/2G/F | (^DF)D E3 | $
 DB,D E3/2F/G | FAF (G2G/)A/ | BBB A3/2G/F | (^DF)D E3 |]
 
@@ -5989,7 +6503,9 @@ N:Page 120
 M:5/8
 L:1/8
 Q:1/8=164
+%%id marquis
 K:Gmin
+I:linebreak $
 |: G D (G F) D | G D (G F) D | G D (G F) D | (B/ A/ G) F G2 :| $
 (d/ e/) d c (B G) | (A G) F G2 | (d/ e/) d c (B G) | (A G) F G2 |]
 
@@ -6002,7 +6518,9 @@ N:Page 120
 M:2/4
 L:1/8
 Q:1/4=96
+%%id yellow-house
 K:Gmin
+I:linebreak $
 GG GG | GB A/G/F | GG GG | GB A/G/F | $
 EE EE |1 EG ^F/E/F | D2 z2 | z3/2 c/B A :| $
 |2 EG ^F/E/D/C/ | D2 z2 | z3/2 D/=E ^F | G2 z2 |]
@@ -6016,7 +6534,9 @@ N:Page 121
 M:2/4
 L:1/8
 Q:1/4=84
+%%id bart
 K:Emin
+I:linebreak $
 |: E2 E/F/G/A/ | B/Ad/- d/d/B | A z z/ A/B | E z z2 :| $
 z BB A | G/GE/- EE/E/ | DD D/F3/2 | E z z2 | $
 z BB A | G/GE/- EE/E/ | FF F/D3/2 | E z z2 | $
@@ -6031,7 +6551,9 @@ N:Page 121
 M:3/4
 L:1/8
 Q:1/4=112
+%%id happy-wife
 K:Dmin
+I:linebreak $
 DA A2 GF | EF D4 | ^CA, B,A, B,A, | ^CA, B,A, B,C | $
 DA A2 GF | EF D4 | ^CA, B,A, F3/2E/ | D6 |]
 
@@ -6044,7 +6566,10 @@ N:Page 122
 M:5/4
 L:1/8
 Q:1/4=120
+%%id shai-and-razi
+%%tags needs-repair
 K:Amin
+I:linebreak $
 E2 A2 z2 A2 E2 | E2 A2 z2 A2 E2 | E2 G2 z2 F2 D2 | DF E3 D E2 z2 | $
 E2 A2 z2 A2 E2 | E2 A2 z2 A2 E2 | E2 G2 z2 F2 D2 | DF E3 DE Bc B | $
 [M:2/4]A2 G2 | EB cB | A4- | AB cB | $
@@ -6059,7 +6584,9 @@ N:Page 122
 M:12/8
 L:1/8
 Q:3/8=100
+%%id someone
 K:Dmin
+I:linebreak $
 z z A,2 D2 A2 G3 F | E2 z z3 z3 z3 | z z A,2 ^C2 G2 F3 E | F2 G2 A2 z3 z3 | $
 z z A,2 D2 A2 G2 F2 | B3 A3 G2 F2 E2- | E2 z z2 z E2D C2D- | D z z z3 z3 z3 |]
 
@@ -6072,7 +6599,9 @@ N:Page 123
 M:2/4
 L:1/8
 Q:1/4=72
+%%id monarch
 K:Amin
+I:linebreak $
 D/E/F/G/ A/B/A/G/ | AD E2 | D/E/F/G/ A/B/A/G/ | AD Ec/B/ | $
 AG E/D/c/B/ | A3 c/B/ | AG E/D/c/B/ | A4 |]
 
@@ -6085,7 +6614,9 @@ N:Page 123
 M:12/8
 L:1/8
 Q:3/8=72
+%%id baby
 K:Dmin
+I:linebreak $
 z A,A,B, A, | F2 D2 z FE2 ^C2 z A, | D6 z z A,A,B, A, | $
 F2 D2 z FG2 E2 z G | A6 z z ccB A | G2 E4 z z BBA G | $
 F6 z z AAG F | E2 ^C2 z A,B,A, A, z GF | $
@@ -6099,7 +6630,9 @@ N:Page 124
 M:2/4
 L:1/8
 Q:1/4=60
+%%id lament
 K:Amin
+I:linebreak $
 A | GA EA | GA EA | cB AG | A3 A | $
 GA EA | GA EA | cB AG | A3 A | $
 ed cA | cB AG | cB AG | A3 A | $
@@ -6113,7 +6646,9 @@ N:Page 124
 M:2/4
 L:1/8
 Q:1/4=84
+%%id ranunculus
 K:Dmin
+I:linebreak $
 dA FD | A,/=B,/^C D2 | dA FD | A,/=B,/^C D2 | $
 FD FD | F/E/F/G/ A2 | dA FD | A,/=B,/^C D2 |]
 
@@ -6125,7 +6660,9 @@ N:Page 125
 M:3/4
 L:1/8
 Q:1/4=138
+%%id luna
 K:Emin
+I:linebreak $
 E2 B2 B2 | E2 c2 c2 | E2 B2 B2 | AG F2 D2 | $
 E2 B2 B2 | E2 c2 c2 | BA G2 F2 | E6 :|
 
@@ -6137,7 +6674,9 @@ N:Page 125
 M:12/8
 L:1/8
 Q:3/8=100
+%%id coral-bells
 K:Emin
+I:linebreak $
 B, | E3 B3 A2G- GED | E2D- D2B,- B,2-B,- B,2B, | E3 B3 A2G- GED | $
 F6- F3- F2B, | E3 B3 d2B- B3 | ^d2B- B2e- e2B A2G | A3 G3 F2E- E3 | B,2D- D2E- E3- E2 z |]
 
@@ -6149,7 +6688,9 @@ N:Page 126
 M:6/8
 L:1/8
 Q:3/8=76
+%%id brodheadsville
 K:Dmin
+I:linebreak $
 A | d2A d2A | cBA G2A | BAG F2G | A2F D2A | $
 d2A d2A | cBA G2A | BAG F2E | D3- D2 |]
 
@@ -6161,7 +6702,9 @@ N:Page 126
 M:2/4
 L:1/8
 Q:1/4=92
+%%id missed-my-turn
 K:Dmin
+I:linebreak $
 |: d2 A2 | d2 A2 | FE D2 | E2 A,2 | $
 d2 A2 | d2 A2 | FE D2 | E4 :| $
 G,A, B,C | D2 E2 | F2 G2 | A4 |]
@@ -6174,7 +6717,9 @@ N:Page 127
 M:3/4
 L:1/8
 Q:1/4=66
+%%id spanish-dancer
 K:F#min
+I:linebreak $
 C | DE FG AB | c/d/c/B/ c3 C | DE FG AB | c/d/c/B/ c3 e | $
 dc BA GE | F/G/F/E/ F3 e | dc BA GE | F/G/F/E/ F3 |]
 
@@ -6186,7 +6731,9 @@ N:Page 127
 M:2/4
 L:1/8
 Q:1/4=72
+%%id peeka-hah-boo
 K:Dmin
+I:linebreak $
 A/A/G/G/ F/F/E/E/ | z2 D2 | A/A/G/G/ F/F/E/E/ | z2 D2 | $
 D/E/F F/G/A | A/B/A/G/ A2 | A/A/G/G/ F/F/E/E/ | z2 D2 :|
 
@@ -6198,7 +6745,9 @@ N:Page 128
 M:3/4
 L:1/8
 Q:3/8=54
+%%id dimmick
 K:Emin
+I:linebreak $
 C | E2 C2 G2 | (E4 E)C | E2 C2 G2 | E6 | $
 DE FG A2 | G2 E3 C | F2 D3 C | E6 |]
 
@@ -6210,7 +6759,9 @@ N:Page 128
 M:6/8
 L:1/8
 Q:3/8=64
+%%id water-wheel
 K:Emin
+I:linebreak $
 G/A/ |: BAG FED | ECG F2G/A/ | BAG FED |1 (E3 E2)G/A/ :|2 (E3 E2)B/c/ | $
 dcB AGF | EDG F2B/c/ | dcB AGF | ECG E3 |]
 
@@ -6222,7 +6773,9 @@ N:Page 129
 M:3/4
 L:1/8
 Q:3/8=52
+%%id i-see-the-moon
 K:Emin
+I:linebreak $
 E2 G2 C2 | E6 | DE FE D2 | E2 C4 | $
 E2 G2 C2 | E6 | DE FE D2 | E6 |]
 
@@ -6234,7 +6787,9 @@ N:Page 129
 M:3/4
 L:1/8
 Q:3/8=48
+%%id firefly
 K:Emin
+I:linebreak $
 E2 B3 A | GF E3 G | FE D2 F2 | E2 C4 | $
 E2 B3 A | GF E3 G | FE D2 F2 | E6 | $
 DE FG AF | G2 E3 G | F2 D3 F | E2 C4 | $
@@ -6248,7 +6803,9 @@ N:Page 130
 M:3/4
 L:1/8
 Q:1/4=138
+%%id wild-turkeys
 K:Emin
+I:linebreak $
 |: E2 C2 E2 | FG F4 | E2 C2 E2 | DC C4 | $
 E2 C2 E2 | FG F4 |1 Bc B3 A | B3 AG F :|2 BA G2 F2 | E6 |]
 
@@ -6260,7 +6817,9 @@ N:Page 130
 M:6/8
 L:1/8
 Q:3/8=54
+%%id little-flat-brook
 K:Dmin
+I:linebreak $
 D3/2C/B A3/2G/F | EDC D/A,/A,2 | d3/2c/B A3/2G/F | EDC D3 | C3/2D/E F3/2E/D | $
 EDC D/A,/A,2 | C3/2D/E F3/2E/D | EDC D3 | d3/2c/B A3/2G/F | EDC D3 |]
 
@@ -6272,7 +6831,9 @@ N:Page 131
 M:3/4
 L:1/8
 Q:1/4=116
+%%id mac
 K:Dmin
+I:linebreak $
 A,2 | D2 (A4 | A)G F2 E2 | GF E2 D2 | EF D2 A,2 | $
 D2 (A4 | A)G F2 E2 | GF E2 F2 | D4 z2 |]
 
@@ -6284,7 +6845,9 @@ N:Page 131
 M:2/4
 L:1/8
 Q:1/4=88
+%%id burgundy-boots
 K:Emin
+I:linebreak $
 EB B3/2G/ | AG F2 | DA A3/2F/ | GF E3/2C/ | $
 EB B3/2G/ | AG F2 | DA A3/2F/ | E4 |]
 
@@ -6296,7 +6859,9 @@ N:Page 132
 M:6/8
 L:1/8
 Q:3/8=112
+%%id karingadulla
 K:Bmin
+I:linebreak $
 BBB | F3 F3 | z2 BB2 B | F3 F3 | z2 FF2 F | E3 E2E | $
 G2G G3 |1 F2F F2F | F2 :|2 F2F F2F | B3- B2 z |]
 
@@ -6308,7 +6873,9 @@ N:Page 132
 M:2/4
 L:1/8
 Q:1/4=108
+%%id happy-day
 K:Dmin
+I:linebreak $
 A | D2 z A | D2 z E | C3/2C/ CE | DE FA | $
 D2 z A | D2 z E | C3/2C/ EC | D3 F/G/ | $
 AF/F/ GE/E/ | FD EC | DE FG | A3 F/G/ | $
@@ -6322,7 +6889,9 @@ N:Page 133
 M:2/4
 L:1/8
 Q:1/4=80
+%%id largo-argentina
 K:Dmin
+I:linebreak $
 A | D2 AD | G3 F | ED C2 | D2 A,A | $
 D2 AD | G3 F | ED C2 | D2 AB | $
 c2 d2 | e2 dc | BA G2 | A2 AB | $
@@ -6336,7 +6905,9 @@ N:Page 133
 M:2/4
 L:1/8
 Q:1/4=84
+%%id monkey-puzzle
 K:Dmin
+I:linebreak $
 (F/G/ | A)G FE | (DA) A(F/G/ | A)G FE | D3 (E/D/ | $
 C3/2)C/ EF | (DA) A(F/G/ | A)G FE | D3 |]
 
@@ -6349,7 +6920,9 @@ N:Page 134
 M:7/8
 L:1/8
 Q:1/4=120
+%%id claudio-and-antonella
 K:Dmin
+I:linebreak $
 D2 C D E F E | D2 E F G A2 | D2 E F G A G | F2 E D2 C2 | D2 C D E F E | $
 D2 E F G A2 | D2 E F G A G | F2 E D2 D2 | G2 A B A G B | A2 G A2 D2 | $
 G2 A B A G B | A2 G A4 | G2 A B A G B | A2 G A2 D2 | G2 F E2 D2 | E2 D E2 A,2 |]
@@ -6362,7 +6935,9 @@ N:Page 134
 M:2/4
 L:1/8
 Q:1/4=100
+%%id kubica
 K:Dmin
+I:linebreak $
 A, | DF EC | D3 A, | DF E/D/C | D3 F/G/ | $
 AF G/F/E | FD E/D/C | DF EC | D3 z |]
 
@@ -6374,7 +6949,9 @@ N:Page 135
 M:2/4
 L:1/8
 Q:1/4=92
+%%id niobi
 K:Dmin
+I:linebreak $
 DA DA | DA D2 | C/D/E FG | AB A2 | $
 DA DA | DA D2 | C/D/E FE | D4 | $
 AD AD | AD A2 | G/F/E DC | A,C D2 | $
@@ -6388,7 +6965,9 @@ N:Page 135
 M:5/8
 L:1/8
 Q:1/8=152
+%%id missing-tooth
 K:Dmin
+I:linebreak $
 A3/2 G/ F E D | A, C E D2 | A3/2 G/ F E D | A, C E D2 | $
 D/ E/ F G A2 | A/ G/ F E D2 | A3/2 G/ F E D | A, C E D2 |]
 
@@ -6400,7 +6979,9 @@ N:Page 136
 M:6/8
 L:1/8
 Q:1/4=144
+%%id jacob
 K:Dmin
+I:linebreak $
 D2A F2(G | G2)(E E3) | C2E C2(D | D2)(A, A,3) | $
 D2A F2(G | G2)(E E3) | C2E C2(D | D6) | $
 D2A F2(G | G2)(E E3) | C2E C2(D | D2)(A, A,3) | $
@@ -6415,7 +6996,9 @@ N:Page 136
 M:2/4
 L:1/8
 Q:1/4=88
+%%id bus-to-trakai
 K:Bmin
+I:linebreak $
 Bc/B/ FF | Bc/B/ FF | EF GE | FB c2 | $
 Bc/B/ FF | Bc/B/ FF | FE DC | B,D B,2 |]
 
@@ -6427,7 +7010,9 @@ N:Page 137
 M:4/4
 L:1/8
 Q:1/4=100
+%%id singapore
 K:Bmin
+I:linebreak $
 F3 .c z2 z .F | G3 .d z2 z .G | F3 .c z2 z .F | .A2 .G2 .F2 .E2 | $
 F3 .c z2 z .F | G3 .d z2 z .G | .F2 .E2 .D2 .C2 | B,3 .B, z4 | $
 F3 .c z2 z .F | G3 .d z2 z .G | F3 .c z2 z .F | .A2 .G2 .F2 .E2 | $
@@ -6441,7 +7026,9 @@ N:Page 137
 M:2/4
 L:1/8
 Q:1/4=88
+%%id deedle-dumpling-boys
 K:Dmin
+I:linebreak $
 D/D/D/D/ AA | DD A2 | GF EC/C/ | DD A,2 | $
 DD AA/A/ | D/D/D A2 | G/G/F/F/ EC | DD D2 |]
 
@@ -6453,7 +7040,9 @@ N:Page 138
 M:6/8
 L:1/8
 Q:3/8=104
+%%id king-s-path
 K:Emin
+I:linebreak $
 B,3 | E3 z z F | G2A BG(A | A3) G2(F | F3) B,3 | E3 z z F | G2A BG(A | $
 A3) z3 | z3 B,3 | E3 z z F | G2A BG(A | A3) B2(c | $
 c2)B A3 | G2A G2(F | F2)G F2(E | (E6) | E3) |]
@@ -6466,7 +7055,9 @@ N:Page 138
 M:6/8
 L:1/8
 Q:3/8=96
+%%id brighty
 K:Dmin
+I:linebreak $
 A | D2A D2A | DEC D2A | D2A D2A | DEC D3 | CDE FED | $
 CDA, C3 | CDE FED | CDA, C2A | D2A D2A | DEC D2 z |]
 
@@ -6478,7 +7069,9 @@ N:Page 139
 M:2/4
 L:1/8
 Q:1/4=88
+%%id michael
 K:Dmin
+I:linebreak $
 A,2 | DF DF | DF DF | DF E/D/C | DA, B,G, | $
 A,F DF | DF DF | DF E/D/C | D3 F/G/ | $
 AF G/F/E | FD E/D/C | DA, B,G, | D3 F/G/ | $
@@ -6492,7 +7085,9 @@ N:Page 139
 M:2/4
 L:1/8
 Q:1/4=80
+%%id la-colonial
 K:Dmin
+I:linebreak $
 z DF G | A2 z2 | z GE F | D2 z2 | z DF G | A2 z2 | z GE F | D2 z2 | $
 z dc B | A2 z2 | z FG A | D2 z2 | z dc B | A2 z2 | z FG A | D2 z2 |]
 
@@ -6504,7 +7099,9 @@ N:Page 140
 M:2/4
 L:1/8
 Q:1/4=108
+%%id city-life
 K:Emin
+I:linebreak $
 G/A/ | BG AF | GE FD | EG FD | B, z z G/A/ | $
 BG AF | GE FD | EG FD | E z z :|
 
@@ -6516,7 +7113,9 @@ N:Page 140
 M:6/8
 L:1/8
 Q:3/8=60
+%%id fern
 K:Dmin
+I:linebreak $
 A, | DFA d2c/d/ | ecA A2A, | DFA d2c/B/ | AGA E2A, | $
 DFA d2c/d/ | ecA A2G/A/ | BGF/G/ AFE/F/ | EDD D3 |]
 
@@ -6528,7 +7127,9 @@ N:Page 141
 M:2/4
 L:1/8
 Q:1/4=108
+%%id gardenia
 K:Dmin
+I:linebreak $
 A2 D2 | C2 E2 | DE F z | z4 | A2 D2 | C2 E2 | DC D z | z4 | $
 A2 D2 | C2 E2 | DE F z | z2 FG | AG FE | D2 C2 | D4- | D2 z2 |]
 
@@ -6540,7 +7141,9 @@ N:Page 141
 M:2/4
 L:1/8
 Q:1/4=64
+%%id lavender-garden
 K:Emin
+I:linebreak $
 B F2 G | E2 B,2 | B F2 G | E4 | D3/2E/ F3/2G/ | A3/2B/ A/F/D | G F2 G | E4 | $
 BF AF | G/F/E F2 | E/F/G/A/ Bc | B3/2c/ B/A/G/A/ | BF AF | G/F/E F2 | E/F/G/A/ BA | GF E2 |]
 
@@ -6552,7 +7155,9 @@ N:Page 142
 M:2/4
 L:1/8
 Q:1/4=88
+%%id lily
 K:Emin
+I:linebreak $
 EG z2 | FA z2 | G3/2F/ GA | BE z2 | $
 EG z2 | FA z2 | G3/2F/ ED | E4 :| $
 c3/2B/ cd | eB z2 | A3/2G/ FG | E4 | $
@@ -6568,7 +7173,9 @@ N:Page 142
 M:6/8
 L:1/8
 Q:3/8=72
+%%id robin-reflection
 K:Gmin
+I:linebreak $
 z3 z BG | ABG ABG | A2(D D)BG | ABG ABG | A2(d d)de | $
 fed ccd | edc BBc | dcB A2B | A2(G G) z z |]
 
@@ -6580,7 +7187,9 @@ N:Page 143
 M:2/4
 L:1/8
 Q:1/4=54
+%%id snow-on-the-mountain
 K:Dmin
+I:linebreak $
 A, | DF DE/F/ | E/C/A, z A, | DF DF/G/ | A/c/A z F/G/ | $
 Ad AF | G/F/D/C/ DF/G/ | AG/F/ A,C | D3 z |]
 
@@ -6592,7 +7201,9 @@ N:Page 143
 M:2/4
 L:1/8
 Q:1/4=52
+%%id stephenotis
 K:Emin
+I:linebreak $
 GE F/G/F/E/ | DE B,2 | GE F/G/F/E/ | D B3 | $
 d/c/B/A/ G/F/E | D/E/F/G/ EE | d/c/B/A/ G/F/E | D/E/F/G/ E2 |]
 
@@ -6604,7 +7215,9 @@ N:Page 144
 M:2/4
 L:1/8
 Q:1/4=64
+%%id suzyma-cue
 K:Emin
+I:linebreak $
 (E/F/)(G/A/) .B.E | (c/B/).A !tenuto!B2 | (A/G/).F !tenuto!G(F/E/) | .D.F .E.B, | $
 (E/F/)(G/A/) .B.E | (c/B/).A !tenuto!B2 | (A/G/).F (G/F/).E | .D.F !tenuto!E2 |]
 
@@ -6616,7 +7229,9 @@ N:Page 144
 M:4/4
 L:1/8
 Q:1/4=92
+%%id tik-tok
 K:Gmin
+I:linebreak $
 BG BG A/G/F GD | BG BG A/G/F G2 | $
 BG BG A/G/F GD | BG BG A/G/F G2 | $
 dc BA Bc dd/c/ | BA GF G2 D2 | $
@@ -6630,7 +7245,9 @@ N:Page 145
 M:2/4
 L:1/8
 Q:1/4=64
+%%id silver-artemesia
 K:Amin
+I:linebreak $
 eA eA | d/c/B A3/2F/ | E/F/E/F/ EA | Bc A2 | $
 eA eA | d/c/B A3/2F/ | E/F/E/F/ Ec | A4 |]
 
@@ -6642,7 +7259,9 @@ N:Page 145
 M:3/4
 L:1/8
 Q:1/4=112
+%%id la-loma
 K:Amin
+I:linebreak $
 D A2 DA D | G6 | D A2 DA D | B6 | $
 e c2 e2 c | d2 B4 | c A2 c2 A | B6 | $
 D A2 DA D | G6 | D A2 DA D | B6 | $
@@ -6655,7 +7274,9 @@ T:After You've Gone
 C:Turner Layton / Henry Creamer
 M:4/4
 L:1/8
+%%id after-you-ve-gone
 K:Bb
+I:linebreak $
 |: "Ebmaj7""^Medium slow"GB cd- d4 | "Ebm6"z cd cd c3 | "Bbmaj7"DF GA- A4 | "G9"z GA GA G3 | $
 w: Af- ter you've gone *|and left me cry- ing,|Af- ter you've gone, *|there's no de- ny- ing,|
 w: Af- ter you've gone, *|af- ter we break up,|Af- ter you've gone, *|you're gon- na wake up.|
@@ -6679,7 +7300,9 @@ N:Original title "Manhã de Carnaval". Source score shows two coda symbols (end 
 M:4/4
 L:1/8
 Q:1/4=110
+%%id black-orpheus
 K:Amin
+I:linebreak $
 E2 |: "Am"c6 BA | "Bm7(b5)"A6 "E7(b9)"^GB | "Am"E8- | "Bm7(b5)"E6 "E7(b9)"E2 | $
 "Am"c6 BA |
 "Dm7"A6 "G7"GB | "Cmaj7"E8- | "C#dim7"E4 z "A7(b9)"EF G || $
@@ -6700,7 +7323,9 @@ C:Antonio Carlos Jobim
 N:Original title "Insensatez".
 M:4/4
 L:1/8
+%%id how-insensitive
 K:F
+I:linebreak $
 |: "Dm"A8- | A2 z B2 A2 B | "A7/C#"A8- | A2 z B2 A2 B | $
 "Cm6"A4 z2 ^GA | c =B2 _B2 A2 A- |
 "G/B"A3 G- G4- | G4 z4 | $
@@ -6720,8 +7345,11 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id 1612
+%%tags needs-repair
 K:C
-"^Intro\n"GA cd |: cc z3/2 e/ z3/2 E/ z2 | FF z f/f/ z/ A/ z/ ^A/ z/ B/ z/ d/ $
+I:linebreak $
+"^Intro"GA cd |: cc z3/2 e/ z3/2 E/ z2 | FF z f/f/ z/ A/ z/ ^A/ z/ B/ z/ d/ $
 "C"c z/ c/c z/ c/ z/ c/ z/ c/c z | "F"F z/ F/F z/ F/ z/ F/ z/ F/F z :| $
 "_A""G"z8 | "F9"z8 | "G"z8 |
 "F9"z8 | "G"z8 | "F9"z8 || $
@@ -6732,7 +7360,8 @@ K:C
 "C"z8 | "F"z8 | "C"z8 |
 "F9"z8 || "E7"z8 || $
 "Am7""_C"z8 | "D7"z8 | "F9"z8 | "G6"z8 | z8 | z8 | z8 | z8 |: $
-"C""_Repeat\n and end"z8 | "F"z8 | "C"z8 | "F9"z8 :|]
+"C""_Repeat
+ and end"z8 | "F"z8 | "C"z8 | "F9"z8 :|]
 
 X:5
 T:1974 Blues
@@ -6741,7 +7370,9 @@ N:Source: jazzXML
 M:7/4
 L:1/8
 Q:1/4=150
+%%id 1974-blues
 K:C
+I:linebreak $
 "F7"D,D, E,B,, "G7"D,D, E, D,2 "D7"D,E, B,,D, B,, |
 "F7"D,D, E,"G7"B,, D,D, E, "D7"D,2 D,E, B,,D, B,, |: $
 [K:treble]"^Head"z "D7"d' c'2 _ag z ^f z cd d F2 | "D7"z cd df g z a z cd c d2 | $
@@ -6758,7 +7389,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id 6-30-blues
+%%tags needs-repair
 K:Ab
+I:linebreak $
 z4 z2 Af _Ge |: "Ab7"Ge Af _Ge | "Ab7"Ge Af _Ge | "Ab7"Ge Af _Ge | $
 "Ab7"Ge DB _CA | "Db7"CA DB _CA | "Db7"CA Af _Ge | "Ab7"Ge Af _Ge |
 "Ab7"Ge Ec DB | $
@@ -6772,7 +7406,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id 728
 K:Fmin
+I:linebreak $
 z4 z2 z c |: "F7#9"ff ef z e z f | z F z2 z FA B | "Db7"_cB AF "C7"BA FA | $
 "F7#9"z2 z2 "C7"z2 z c |
 "F7#9"ff ef z e z f | z F z2 z FA B | "Db7"_cB AF BA FE | $
@@ -6788,7 +7424,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id 8-counts-for-rita
 K:C
+I:linebreak $
 "G7""_Head"z8 | "G7"z8 | "G7"z8 | "G7"z8 | "C7"z8 | "C7"z8 | "G7"z8 | $
 "G7"z8 |
 "Db/Eb"c'3 b- "C/D"b4 | "Cm7"b3 "F7"b4- b | "C"z8 | z8 | "G7"z8 | "G7"z8 | "G7"z8 | $
@@ -6796,7 +7434,7 @@ K:C
 z2 "E7"b2 z2 "F7"b"E7"b | $
 "Eb7"b"D7"b "Db7"b"C7"b "Db7"b"C7"b "Db7"b"C7"b | $
 "G7"z8 |
-"G7"z8 | "Db/Eb"c'3 b- "C/D"b4 | "Cm7"b3 "F7"b4- b | "G7"z8 |: "G7""^Solos\n"z8 | "G7"z8 | $
+"G7"z8 | "Db/Eb"c'3 b- "C/D"b4 | "Cm7"b3 "F7"b4- b | "G7"z8 |: "G7""^Solos"z8 | "G7"z8 | $
 "G7"z8 | "G7"z8 | "G7"z8 | "C7"z8 | "C7"z8 | "G7"z8 | "G7"z8 | "Db/Eb"c'3 b- "C/D"b4 | $
 "Cm7"b3 "F7"b4- b | "C"z8 | z8 :|]
 
@@ -6807,7 +7445,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id a-little-busy
+%%tags needs-repair
 K:F
+I:linebreak $
 |: "F7"FF z F z F z F | "F"_E2 "Eb"E2 "D"D2 "C"C2 :| z2 FA DF _EG |: "F7"C_E | CE | $
 CE | z Bd GB _EG z ED C | E^G FA DF B,D _E=G CE | CE | CE | $
 "Eb""E""F"z8 | z2 "Bb7#9"_A_d | FB (3FBF B_E _A (3DFD FE (3_F-FE |
@@ -6822,9 +7463,9 @@ E^G FA DF B,D _E=G CE |
 CE | !coda!CE |: "F7"z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |
 z8 | "Bb7"z8 | z8 | z8 | z8 | "Eb7"z8 | z8 | $
 "Dm7"z8 | z8 | "Cm7"z8 | "F7"z8 | "Bbmaj7"z8 |
-z8 | "_After Solos\n"z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |
+z8 | "_After Solos"z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 |
 z8 | z8 | z8 | z8 :| $
-"^Coda\n"!coda!z8 | z8 | z8 | $
+"^Coda"!coda!z8 | z8 | z8 | $
 z Bd GB _EG z ED C |
 E^G FA DF B,D _E=G CE | CE | CE |]
 
@@ -6835,7 +7476,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id a-smooth-one
 K:F
+I:linebreak $
 "Bm7"d _A3 F"Bbmaj7"G FD | "Fmaj7"F A3 z4 | "Bm7"d _A3 F"Bbmaj7"G FD | "Fmaj7"F D3 z4 | $
 "Bm7"d _A3 F"Bbmaj7"G FD | "Fmaj7"F A3 z2 "Fmaj7"(3D_DC | "G7"=B,D FA "C7"D D2 D- |
 "Fmaj7"D4 z2 z2 | $
@@ -6859,7 +7502,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id a-la-mode
+%%tags needs-repair
 K:Ab
+I:linebreak $
 |: "Fm7""^A"z CE =DF EG EG DF | CE =DF EG z2 "Fm7"z3 C z3 C | z3 C z3 C $
 "Fm7""^B"CF A,C CF EA CF EA CF | CF A,C CF EA CF EA CF | CF |
 z F,A, A,C B,E | $
@@ -6894,8 +7540,11 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id afrodisia
+%%tags needs-repair
 K:Ab
-"^Intro\n"z4 z FA B || "Eb9"z2 z2 z FA B | "Eb9"z FA "C7#9"B z FA B- | "Fm7"B4 z4 | z4 z FA- A | $
+I:linebreak $
+"^Intro"z4 z FA B || "Eb9"z2 z2 z FA B | "Eb9"z FA "C7#9"B z FA B- | "Fm7"B4 z4 | z4 z FA- A | $
 z "Eb9"B- B2 z FA B | "Eb9"z FA B "Ddim7"z FA B- | "Fm7"B4 z4 | z8 | z8 | z8 |:
 "C7sus4""^A"z2 z FB c z4 | $
 "C7"z EB c z2 z4 | "C7sus4"z2 z FB c z4 | "C7"z =EB c z2 z4 |
@@ -6918,7 +7567,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id a-go-go
 K:C
+I:linebreak $
 |: B4 z4 | ^F4 A4 | B6 z2 | ^E4 z4 $
 "^A"z4 "Bm7"^FE DB, | ED z ^F z EB, B, | z B,3- B,4 | z8 |
 z4 ^FE DB, | $
@@ -6938,7 +7589,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id air-mail-special
 K:C
+I:linebreak $
 |: z "C"CE Gc c z C | EG cc z CE G | cc AG cc AG | cc AG- G2 z2 | $
 z CE Gc c z C | EG cc z CE G | cc AG cc AG |
 cG Bc z2 z2 :| "Cdim7"z Ac _ec Ac e | $
@@ -6962,7 +7615,9 @@ N:Source: jazzXML
 M:6/8
 L:1/8
 Q:1/4=96
+%%id all-blues
 K:G
+I:linebreak $
 |: G,"G7"B,"^Bass/Guitar"C/B,/ =FDE/D/ | G,DE/D/ =FDE/D/
 "^Other Non-lead instruments do this (piano vibes etc)"gba c'bd' ac' |
 gba c'bd' ac' $
@@ -6971,7 +7626,7 @@ gba c'bd' ac' $
 "G7"B6 |
 "G7"G3- G2-G/^G/ | "D7#9"A6 | "Eb7#9"_B6 | "G7"A3 B3 | "G7"A3 G3 |1 "G7"z6 | z6 | $
 z6 |
-z6 :|2 "^Solos\n"z6 |]
+z6 :|2 "^Solos"z6 |]
 
 X:16
 T:All of Me
@@ -6980,7 +7635,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id all-of-me
 K:C
+I:linebreak $
 "C6"c2 GE- E4- | E4 (3c2d2c2 | "E7"B2 ^GE- E4- | E8 | "A7"A3 G E4- | E2 ^D2 (3E2_B2A2 | $
 "Dm7"G4 F4- | F8 | "E7"E3 _E D4- | D4 (3_E2^G2B2 | "Am7"d4 c4- | c8 | "D7"B3 _B A4- | $
 A4 (3A2d2B2 | "Dm7"A8 | "G7"B8 | "Cmaj7"c2 GE- E4- | E4 (3c2d2c2 | "E7"B2 ^GE- E4- | E8 | $
@@ -6996,7 +7653,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id alone-in-the-morning
 K:D
+I:linebreak $
 "Dmaj7"f8- | f3 f g3 f | "F#7/C#"f8- | f4 z2 (3zde | $
 f3 f4- f- | "Cmaj7"f4 b3 a | f3 e e2 ^df- |
 "B7"f6 z2 | $
@@ -7017,7 +7676,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id along-came-betty
+%%tags needs-repair
 K:Ab
+I:linebreak $
 |: "_A""^Slovenly!"!ffff!"Bbm7"z4 c2 Bd- | "Bm7"_d4- "E7"d4 | "Bbm9"z2 z c2 _B=A B |
 d4- "Bm"_d4 | $
 "Amaj9"z =E^F _A=B =A (3_AFA- | "Ab7"A4- A2- A2 | "Gmaj7"z =D=E ^F=A- AG F- |
@@ -7052,7 +7714,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id always-there
 K:Ab
+I:linebreak $
 |: "Fm7""_Intro""Cm7"z8 | "Ab9""Dbmaj7"z8 | "Fm7""Cm11"z8 | "Ab9""Dbmaj7"z8 $
 "Fm7""_Head"c2 z/ A/G/F/- "Cm7"F2 z/ C/E | "Ab9"GA/E/- E2 "Dbmaj7"z2 C_C |
 "Fm7"B,/A,/F,- F,2 "Cm11"z2 z/ B/A/F/- | $
@@ -7077,7 +7741,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=225
+%%id ambidextrous
 K:C
+I:linebreak $
 "F7""_Bass Vamp"F,,2 _E,C, F,E, C,F,, | "F7"z C,_E, C, F,2 E, z | "F7"F,,2 _E,C, F,E, C,F,, |
 "F7"z C,_E, C, F,2 E, z | $
 "Bb7"_B,,2 _A,F, _B,A, F,B,, | "Bb7"z F,_A, F, _B,2 A, z |
@@ -7103,7 +7769,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id amsterdam-after-dark-ii
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Eb/Db"z8 | z8 | z8 | z8 | z8 | z8 | z8 | z8 | "Eb/Db"z4 "Eb"z2 B,_D |: "Eb/Db"F2 F2 z4 |
 z B,_D FE DB, A, | $
 _D B,2 z z2 z z | z4 z2 B,_D | F2 FF F z z2 | z B,_D FE DB, A, | $
@@ -7123,7 +7792,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=280
+%%id appointment-in-ghana
 K:Bb
+I:linebreak $
 "Bbmaj7""^Slovenly Intro"a6 d2 | "E7#9"g6 d2 | "D7#9"f4 d2 c2 | "G13"=e4 d2 z2 | "Bbmaj7"a6 d2 |
 "E7"g6 d2 | $
 "D7"f4 d2 c2 | "G13"=e4 d2 z2 | "Bb"z8 |:
@@ -7149,7 +7820,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id arriving-soon
+%%tags needs-repair
 K:Bb
+I:linebreak $
 z4 z "^Slovenly!"G,D/E/ G/B/ |: "Cm7"d3 cd c d2- | d3 c d2 (3dc/4A/4G/4F/4 E | DC D6 | $
 z4 z G,D/E/ G/B/ | d3 cd f (3dcd- | d3 c (3d2dA/ G/F/E- E3/8 z5/64 | DC D6- | $
 D4 z CE _G |
@@ -7172,7 +7846,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id asmara-mood
 K:C
+I:linebreak $
 "Cm7""_A"z8 | z8 | "Abmaj7"z8 | z8 | $
 "Cm7"z8 | z8 | "Abmaj7"z8 | z8 | $
 "Cm7"z8 | z8 |
@@ -7191,7 +7867,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=172
+%%id azule-serape
+%%tags needs-repair
 K:F
+I:linebreak $
 |: "^Bass Intro, Latin Feel"F3 c2 F2 E | _E2 B2 E2 =E2 | F3 c2 F2 E |1 _E2 B2 E2 =E2 :|2 $
 (3z"F"c_d _e f2 g2 b |: "F7""^A""^Piano"a3 f- f4 | "Eb7"(3zc_d _e f2 g2 b | "F7"a3 c'4- c' | $
 "Eb7"(3zc_d _e f2 g2 b | "Em7"a3 g2 a"A7"g f- | f3 "Dm"e2 fe d- | "Gm7"d3 c4- c |1
@@ -7211,7 +7890,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id back-at-the-chicken-shack
 K:F
+I:linebreak $
 c z d z | "F7"_e6 dc | z2 F2 cF dF | _e6 dc | c z B z fd gf | $
 "Bb7"_a6 gf | z2 F2 cF dF | "F7"_e6 dc |
 z4 z2 z c | "C7"ec f^f gc z B | $
@@ -7224,7 +7905,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id ballad
 K:Eb
+I:linebreak $
 Be gA _df z2 | A_d fG ce z2 || "Ebm7"B8 | "Db"z ee B"Ab"B EE C |
 "Ebm7"CB,- "Db/Eb"B,6 | $
 "Db/Eb"z ee BB "Ab/Eb"GG C | "Ebm7"E8 | "B/Eb"z BB _G"Db7"G EE G |
@@ -7244,7 +7927,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id beautiful-love
 K:F
+I:linebreak $
 D2 E2 F2 |: "Em7b5"A6 G2 | "A7"F3 E D2 EF- | "Dm7"F8- | "^(D7)"F F3 G2 A2 | $
 "Gm7"c6 B2 |
 "C7"A3 G F2 GA- | "Fmaj7"A8 | "Em7b5"z A3 "A7"=B2 ^c2 | $
@@ -7260,7 +7945,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id bei-mir-bistu-shein
 K:Bb
+I:linebreak $
 "Gm7""F"z8 | "Eb""D7"z8 | "Gm7""F"z8 | "Eb""D7"z8 | "Gm7""F"z8 | "Eb""D7"z8 | "Gm7""F"z8 | $
 "D7"z8 | "Bb"z4 z D3 |: "Gm7"B4 A3/2 G3/2 B- | B4 z D3 | B4 A G2 B- | B4 z c3/2 B3/2 | $
 "D7"A4 ^F D2 A- | A A2 B2 A2 G- |1 "Gm7"G8 | "Eb7"z4 "D7"z D3 :|2 "Gm7"G8 || z2 z G A2 B2 || $
@@ -7277,7 +7964,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id bemsha-swing
 K:Bb
+I:linebreak $
 F2 |: "Bbmaj7"B4 z z "G7"z =EF | "Gbmaj7"z B_A _G"B7"F F E2 | "Bbmaj7"DD A,2 B,3 "Db7"z |
 "C7"z4 "B7"z2 F2 | $
 "Bbmaj7"B2 z2 z z "Gm7"z =EF | "Gbmaj7"z B_A _G"B7"F F E2 |
@@ -7294,7 +7983,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id benin-city
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "Dm7""^Intro"FA EG FA z/ Ac FA EG FA FA |
 FA EG FA z/ Ac FA EG FA FA "G7""^Keyboard Intro""^4x"A,/CD/ z/ C/F- F4 |
 "Dm7""^4x"A,/CD/ z/ C/F/D/- D4 $
@@ -7310,7 +8002,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=170
+%%id big-blues
 K:F
+I:linebreak $
 "F7#9""_C"_A2 F4 _cB- | "Bb13"B4 _A2 B2 | "F7#9"F4 FF z2 | z8 | "Bb13"f2 F4 _AB- | B4 D2 F2 | $
 "F7#9"_A4 AA z2 | z8 | "C7#9"_e2 c4 _cB- | "Bb13"B4 _A2 B2 | "F7#9"F4 FF z2 | "C7#9"z8 |]
 [K:G]"G7#9""_Bb"_B2 G4 _dc- | "C13"c4 _B2 c2 | "G7#9"G4 GG z2 | z8 | "C13"g2 G4 _Bc- | c4 E2 G2 | $
@@ -7327,7 +8021,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id birk-s-works
 K:Ab
+I:linebreak $
 FA B |: "Fm7"=Bc B_B AF AB | "Gdim7"B2 Ac "C7"z FA B | "Fm7"=Bc B_B AF A=B | "Cdim7"z4 "F7"z FA B | $
 "Bbm7"=Bc B_B AF AB | "Bbm7"B2 A=B z FA _B | "Fm7"=Bc B_B AF AB | "Fm7"z4 z FA B- | $
 "Abm9"B B3 "Db9"z FA B- | "G7b5"B B3 "C7"(3A/B/A/F EF- | "Fm7"F2 z2 z4 | "Fm7"z8 |]
@@ -7339,7 +8035,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id bith-aneth
 K:G
+I:linebreak $
 |: "B"B,3 F B2 F2 | "C"C3 G c2 G2 :| $
 B,C ^DE GF ED | E3 F (3E2^D2C2 | ^D3 E D3 E/D/ | C4- CA, B,C |
 B,B, z F,B, z F,2 | $
@@ -7360,7 +8058,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id black-ice
+%%tags needs-repair
 K:G
+I:linebreak $
 E/ | G/A/^A/B/ d/e/g/d'/- "B7"d'4 | "Em9""Fmaj7"z8 | "Em7""A13"z8 | "Em7""F6"z8 | "Em7""A13"z8 | $
 "A13"z2 z2 z2 e/d/_B/A/- |: !segno!"Em7"A/_B/A- "F7"A6 | "Em7"z2 z3/2 B,/D/"A13"^D/F/ D/E/F/G/ A/ |
 "Em7"B/G/F/E/ A/"Fmaj7"G/ z z4 | $
@@ -7390,7 +8091,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id k-c-blues
+%%tags needs-repair
 K:C
+I:linebreak $
 "^Swing"C || "C"G2- (3GFE F G2 C | "Dm7"GG- (3GF_E "Cdim7"F G2 C | "C"G2- (3GFE FE C_B,- | $
 "C7"B,4 z CG G- | "F7"G2- (3GF_E F G2 z | c2- (3c_BG (3F_EC _G/F/E/C/ | "C"DC (3G,F,^D, "Dm7"(3E,G,C- C2- | $
 "C"C2 z "A7"B- B2 (3A^DE | "Dm7"G F3- F2 z c/c/ | "G7"_gf- (3f_ec =ec (3GFG | "C"EC (3_B,/C/G,/F, (3^D,E,C- C2- | $
@@ -7403,7 +8107,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id kary-s-trance
 K:C
+I:linebreak $
 "^Swing"^F || "Am6"A^F =F^F Ac d^d | ec A^G BA E_E | "Dm6"DF A^c A^A B2 | $
 z8 | "Bm7b5"z2 (3FAc A^A B=A | "E7b9b5"^Gc (3Beg (3ecA d^d | "Am"ed ^AB c2 z2 | $
 "Am6"z4 z2 z c'- | c' c'2 a (3bc'b ac' | _ab- b(3c'/b/a/ ^ga ba | "Dm6"c' c'2 a (3bc'b ab- | $
@@ -7421,7 +8127,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=96
+%%id kenny-i-ll-make-it
 K:F
+I:linebreak $
 "^(Blues Swing)""Bb7"z2 FG B c2 _d- | "Eb7"d2 GB- B4 | "Bb7"z2 FG B c2 B- | "Fm""Bb7"B6 z2 | $
 "Eb7"z2 FG B c2 _d- | "Bb7"d2 GB- B4 | "Bb7"z2 FG B c2 B- | "Dm7b5"B4 "G7#5"dB F_E- | $
 "Cm"E4- EG Bd | "F7"_ed BF _E F2 D- | "Dm"D3 B- "G7"B4 | "Cm""F7"z8 |]
@@ -7433,7 +8141,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=180
+%%id kentucky-oysters
 K:F
+I:linebreak $
 "F7""^(Med. Swing)"DF FD FD | F2 _A2 z2 | "Bb7"F/F/ z _A/A/ z B/B/ z | c2 F2 z2 | $
 "F7"f6 | c2- c/=B/_B/_A/ F2 | c2- c/=B/_B/_A/ F2 | "Bb7"DF FD FD | $
 F3 _A-A B- | BF _A2 B2 | "F7"f6- | f6 | $
@@ -7448,7 +8158,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id kicker-the
 K:Bb
+I:linebreak $
 "^(Up)"F |: "Bb13"cB z2 z2 FG | _AF z2 CD EC | DB, z B,C _A, z2 | $
 "Em7"z8 | "Eb13"z _GF Gc B_A F | "Ab13"_G2 FE- E2 _DE | "Db"FB, z2 z2 _A,B, | $
 CF, z2 z4 | "Cm7b5"z ee _d e2 de | "F7"fB B_A B2 AB | "Bbm7"cF z2 z2 z E | $
@@ -7461,7 +8173,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id kids-are-pretty-people
+%%tags needs-repair
 K:F
+I:linebreak $
 "^(Swing)"z g (3ecG |: "Dm"d4- "A7"dc (3A/B/A/G | "Dm"AD z2 "Cm7""F7"z4 | "Bb7"z2 cc- "A7"c3 A/G/ | $
 "Dm7"AD z2 "G7"z4 | "F"(3z2A2c2 "A7"(3e_e_d- (3dBA | "Dm7"Gc "Dm7/C"F6 | "Bm7b5"z2 z F/E/ "E7"G2 Fc- | $
 "A7"c4 z/ g3/2 (3ecG :| "F"(3z2A2c2 "A7"(3e_e_d- (3dBA | "Dm7"(3GFG- "Bm7b5"G4 DF | "F/C"{/^G}AF- "C7"F4 DF- | $
@@ -7478,7 +8193,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id killer-joe
 K:F
+I:linebreak $
 |: "C13""^(Med. Swing)""^A"z4 F2 EG- | "Bb13"G8- | "C13"G4 E2 CB,- | "Bb13"B,8- | $
 "C13"B,4 F2 EG- | "Bb13"G6 EG- | "C13"G8- | "Bb13"G8 :| $
 "Em7b5""^B"G8- | "A7b9"G4 A4 | "Ebm7"B8- | "Ab7"B4 c4 | $
@@ -7494,7 +8211,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id killing-me-softly-with-his-song
 K:C
+I:linebreak $
 "Dm7""^(Straight)"z2 EF- F G2 A- | "G"A2 GD- D G3 | "C"z3 A G2 FE- | "F"EF C6 | $
 "Dm7"z2 EF- F G2 A- | "G"A2 GA- A B2 B | "Am"c3 BA G2 A- | A6 z2 | $
 "Dm7"z2 cA- A F2 E- | "G"E2 DE- E F3 | "C"z3 G G2 G^G- | "E"G ^G2 (A-A B3) | $
@@ -7510,7 +8229,9 @@ N:Source: Ultime Jazz Real Book
 M:6/8
 L:1/8
 Q:3/8=60
+%%id la-fiesta
 K:C
+I:linebreak $
 |: "E""^Straight"e/4f/4e/4d/4e2- e2-e/d/ | "F"Fd2- d2-d/c/ | "G"A3/2Bc/ "F"B2G | "E"(3F/G/F/E2- E3 "E"D2!tenuto!B .B.B.B | $
 "F"B/4c/4B/4A/4c2- c3- | "G"c2d- "F"d3 | "E"e/4f/4e/4d/4e2- e3- | "E"e3/2g3/2 d3/2c3/2 | $
 "F"d3/2f3/2 c3/2B3/2 | "G"B3 "F"A3 |1 "E"^G/A/B2- B3 :|2 "E"^G/F/E2- E3 || $
@@ -7529,7 +8250,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id ladies-in-mercedes
 K:G
+I:linebreak $
 |: "Gmaj7""^Salsa"E3 F- F3 E- | E3 F- F4 | "C7"E3 F- F3 E- | E3 F- F4 | $
 "Bm7"E3 F- F3 E- | E3 F- F4 | "E7"E3 F- F3 E- | E3 F- F4 | $
 "Db7"^G3 A- A3 G- | G3 A- A4 | "Gbm7"^G3 A- A3 G- | G3 A- A4 | $
@@ -7547,7 +8270,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=254
+%%id lady-bird
 K:C
+I:linebreak $
 |: "Cmaj7""^Fast Swing"z G3 .G2 .G2 | G3 G z G3 | "Fm7"_B4 (3_A2E2C2 | "Bb7"G2 F6 | $
 "Cmaj7"z G3 .G2 .G2 | G3 G z G3 | "Bbm7"c4 (3_B2F2_D2 | "Eb7"c2 B6 | $
 "Abmaj7"z _B3 A2 ._A2 | _B2 =A_A- A4 | "Am7"z =B3 _B2 .=A2 | "D7"=B2 _BA- A4 | $
@@ -7560,7 +8285,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id lady-is-a-tramp
 K:C
+I:linebreak $
 |: "Cmaj7""^Swing"z2 c2 B3 d | "A7b9"_B2 B4 B2 | "Dm7"A3 F A2 B2- | "G7"B8 | $
 "Cmaj7"z2 c2 B3 d | "A7b9"_B2 B4 B2 | "Dm7"A3 F A2 B2- | B8 | $
 "C7sus4"z2 c2 G3 E | "Gm7"D2 "C7"D4 D2 | "Fmaj7"C3 D E2 F2- | "Bb7sus4""Bb7"F8 | $
@@ -7578,7 +8305,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=103
+%%id last-nite
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: "^Funk""Cpower"C,G, C"Bsus4/C"^F, =B,=E "Bbsus4/C"=F,_B, _E |1 F,B, E :| z4 z2 [K:treble](3CEF |: "B/C""^A"_GF E"Bbsus4/C"F- FE C"B/C"G- | $
 GF E"Bbsus4/C"F- FE C"D7#9"F- | F4- FG- (3GF"G7#9#5"E | (3FEC- C4 (3CEF | "B/C"_GF E"Bbsus4/C"F- FE C"B/C"G- | $
 GF E"Bbsus4/C"F- FE C"D7#9"F- | F6 =E/F/"B7#9"^F- | F6 (3=EG=A | "Em7"=B3 =A/G/A G=E "Eb9/E"_B- | $
@@ -7600,7 +8330,9 @@ z8 | z8 || "Bb9""^D"z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z8 | z8 || z8 | z8 | $
 z8 | z8 | z8 | z8 | $
-z8 | "_solos CD\nlast solo \nB on D"z8 :| "Ebmaj7#11"D6 (3_D/C/B,/C- | "Dbmaj7#11"C6 B,C | $
+z8 | "_solos CD
+last solo 
+B on D"z8 :| "Ebmaj7#11"D6 (3_D/C/B,/C- | "Dbmaj7#11"C6 B,C | $
 "Ebmaj7#11"D7 C/B,/ | "Dbmaj7#11"C4 A,_D _GG, CF G,C FF, B,E | "Cmaj911"D,G, C |]
 
 X:49
@@ -7609,7 +8341,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id last-train-home
 K:Eb
+I:linebreak $
 |: "Bb""^Straight"B4 d4 | "C/Bb"d4 c2 B2 | "Abmaj7"c2 B2 B2 G2 | "Bb"B8 | $
 z4 B2 d2 | "Dm7"f4 f4 | "Gm"B4 d3 c | "Ebmaj7"B6 G2 | $
 "F7sus4"F8- | "F7"F4 z2 F2 | "Gm"G6 B2 | "D7/F#"c6 d2 | $
@@ -7627,7 +8361,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id last-time-i-saw-paris
 K:G
+I:linebreak $
 "^Swing"D2 || "G"E2 D2 B,2 D2 | G2 G4 D2 | E2 D2 "G#dim7"B,2 D2 | $
 "D7/A""D7"F6 D2 | E2 D2 C2 D2 | "Cm"c2 c2 "D7"A2 D2 | "Am7"c2 c2 "D7"A2 B2 | $
 "G6"G6 D2 | E2 D2 B,2 D2 | G2 G4 D2 | E2 D2 "G#dim7"B,2 D2 | $
@@ -7645,7 +8381,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=100
+%%id laura
 K:C
+I:linebreak $
 "^Ballade swing""Am9"B4 B4- | "D7b9"B2 ^AB (3A2^F2G2 | "G69"A3 A "D9sus4"E4- | "G69"E4 z4 | $
 "Gm9"A4 A4- | "C7b9"A2 ^GA (3G2E2F2 | "Fmaj9""C7sus4"G8- | "Fmaj9"G8 | $
 "Fm7"z2 _E2 F4- | "Bb7sus4"F2 _E2 "Bb7b9"(3F2E2F2 | "Ebmaj7"G3 G D4- | "Cm7"D2 _E2 G2 _B2 | $
@@ -7662,7 +8400,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id lazy-afternoon-2
 K:C
+I:linebreak $
 "^Ballade"EA |: "Am7"G4- GG ^FG | "A9"^F4 z2 EA | "Am7"GG ^FG FF EF | $
 "D7"EE DE DD CD | "Am7"CC B,C (3B,2B,2A,2 | "D7"B,4- (3B,2E2A2 | "Am7"^F8- | $
 "D7"F3 z z2 Ad || "Dm7"c4- cc Bc | "D9"B4 z2 Ad | "Dm9"cc Bc BB AB | $
@@ -7680,7 +8420,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id lazy-bird
 K:G
+I:linebreak $
 |: "Am""^Swing""D7"B6 A2 | "Cm7"d4 "F7"c3 _B- | "Fm7"B6- B=F- | "Bb7"F4 G2 _A_B- | $
 "Ebmaj7"B4 G2 _Bc- | "Am7"c4 "D7"A2 cd- | "Gmaj7"d8 |1 "Abm7""Db7"z8 :|2 $
 "Gmaj7"d6 B2 || "Bm7"d8- | "E7"(3d2B2c2 (3d2f2e2 | "Amaj7"^c8- | $
@@ -7698,7 +8440,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id left-bank-two
 K:G
+I:linebreak $
 "^Swing"z2 BG cG _dG |: "G"d4- "Gmaj7"de Bd- | "Abdim7"d4 de Bd- | "Am7"d2 c_E- "Am7b5"E4- | $
 "D7"E4 d_d cB | "Gmaj7"A4- AB FA- | "Bm7"A4- AB FA- | "Bbdim7"A2 GC- "Am7"C4- | $
 C4 C^C D^D | "C"E4 "Cmaj7/B"e2 dc- |1 "Am7b5"c4- cB AG | "B7"F4 "F#m7b5"BF "B7b9"AG- | $
@@ -7715,6 +8459,7 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id lester-leaps-in
 K:Bb
 U:s=!stemless! "^Swing" F G2 |: "Bb" B4 B4 | "Cm" B2 B B "F7" d2 f2 | "Bb" B3 G- "Gm" G4 | $ "Cm" z4 "F7" z F G2 | "Bb" B4 "Bb7" B4 | "Eb6" B2 B B "Edim7" d2 f2 | "Bb" B8 |1 $ "Cm" z4 "F7" z F G2 :| "Bb" z8 || "D7" B2 B2 B2 B2 | B2 B2 B2 B2 | $ "G7" B2 B2 B2 B2 | B2 B2 B2 B2 | "C7" B2 B2 B2 B2 | B2 B2 B2 B2 | $ "F7" B2 B2 B2 B2 | B2 B2 z F G2 || "Bb" B4 "Gm" B4 | "Cm" B2 B B "F7" d2 f2 | $ "Bb" B3 G- "Gm" G4 | "Cm" z4 "F7" z F G2 | "Bb" B4 "Bb7" B4 | "Eb6" B2 B B "Edim7" d2 f2 | $ "Bb" B8 | "Cm" z4 "F7" z F G2 |]
 
@@ -7725,7 +8470,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id let-there-be-love
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "^Swing Ballade"(3G2A2B2 |: "Ebmaj7"B8- | "Gm7"B2 G2 (3G2A2B2 | "Cm7b5"B8- | $
 "C7b9"B4 (3G2A2B2 | "Fm7b5"A4 A4- | "Bb7b9"A4 (3F2G2A2 | "Ebmaj9""Fm7"B8- | $
 "Gm7"B4 "Gbdim7"(3=A2d2c2 | "Fm7"B8- | "Bb7b9"(3B2F2F2 (3F2G2A2 | "Ebmaj9"B8- | $
@@ -7743,7 +8491,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id let-s-fall-in-love
 K:C
+I:linebreak $
 "C6""^Swing"c4 "Am7"G2 E2 | "Dm7"A4 "G7"GB dc- | "C6"c4 "Am7"G2 E2 | "Dm7"A4 "G7"FE DG- | $
 "Em7"GG G2 "Am7"ED CF- | "Dm7"F4 "G7"DC B,E- | "E7"E3 E "A7"E4- | "D9""G9"E8 | $
 "C6"c4 "Am7"G2 E2 | "Dm7"A4 "G7"GB dc- | "C6"c4 "Am7"G2 E2 | "Dm7"A4 "Fm6"FE DG- | $
@@ -7760,7 +8510,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id let-s-get-away-from-it-all
 K:Eb
+I:linebreak $
 |: "Eb6""^Swing"GG GA- "Bb7b9"AB AG- | "Eb6"GE- "Eb7"E6 | "Ab6"cc cc- "F#dim7"cd cB- | "Gm7b5""C7"B8 | $
 "Fm"AA GA- "Bb7"A B2 A | "Db9"GG ^F"C9"G- G A3 |1 "F9"GG GG- Gc GF- | "Fm7""Bb7"F8 :|2 $
 "F9"GG GF- "Bb7"FE DE- || "Eb6"E6 "Eb7"E2 || "Ab6"c2 c2 "Am7b5"c2 "D7"c2 | "Gm7"c d2 B- "C7"B2 c2 | $
@@ -7776,7 +8528,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id let-s-stay-together
 K:F
+I:linebreak $
 "Gm9""^Intro""^IntroAABCAABBBBB(Bfade)""^Swing"z2 B,D FA "Am7"z .A,C EG A,C EG | "Gm7"z2 G,B, DF "Am7"z .A,C EG z2 | "Gm9"z2 B,D FA "Am7"z .A,C EG A,C EG | "Gm7"z2 G,B, DF "C7"z .G,B, CE z2 |: $
 "F""^A"A8 | z2 z CA B c2 | "Dm9"e2 cc- c2 z2 | z2 z FA B c2 | $
 "Bbmaj7"d2 BB- B4 | z2 z F (3B2B2B2 | "Bbm6/Db"_d3 c B4 | F4 z2 z F | $
@@ -7794,7 +8548,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id li-l-darlin
 K:F
+I:linebreak $
 |: "G9""^Swing"z d3 A2 "Db9#11"G2 | "C7sus4"F2 D2 F2 GA- | "Am7"A8- | "D7sus4""D7b9"A8 | $
 "G9"z d3 A2 "Db9#11"G2 | "C7sus4"F2 D2 F2 GA- | "F7"A8- | "B7#11"A6 z ^F || $
 "Bb6"G2 G^F "Bbm6"G_A GF | "F/C"z C3 "Cm7"z2 "F7"z ^F | "Bb6"G2 G^F "Bbm6"GA Bc- | "Am7b5""D7b9"c8 |1 $
@@ -7811,7 +8567,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id like-a-lover
 K:C
+I:linebreak $
 |: "Cmaj7""^Bossa"z2 CD E E2 G | "G7sus4"F2 ED- D4 | "Cmaj7"z2 CD E E2 G | "D/C"^F2 FE- E E2 D- | $
 "Bm7"D4 "Em7"z2 G2 | "A91113sus4"^F2 FE- "A9"E E2 F- | "Dmaj7"FD A,D ^FA G2- | "G13"G2 GG- "G7#5"G G2 c- | $
 "Fmaj7"c8 | "G/F"B4 A G2 E- | "Cmaj7"E2 CD E E2 G | "G7sus4"F2 ED- D2 CC- | $
@@ -7831,7 +8589,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id like-someone-in-love
 K:Eb
+I:linebreak $
 |: "Ebmaj7""^Swing"G2 "G7/D"G4 G2 | "Cm7"G2 c2 "Cm7/Bb"B2 G2 | "Am7b5"F2 "Ab7#9"F4 d2 | "Gm7""C7b9"B8 | $
 "Fm7"A2 A4 e2 | "Am7""D7"d6 c2 | "Gm7"B2 B4 g2 | "Bbm7""Eb7"f8 |1 $
 "Abmaj7"f2 f4 =e2 | "Dm7"g2 f2 "G7"=e2 d2 | "Cmaj7"G4 G4- | G8 | $
@@ -7846,7 +8606,9 @@ N:Source: Ultime Jazz Real Book
 M:2/4
 L:1/8
 Q:1/4=180
+%%id limehouse-blues
 K:Ab
+I:linebreak $
 |: "Db9#11""^Swing"FG AF- | F "D9"G2 A | "Db7"FG AF- | F4 | $
 "Bb9"FG AF- | F "B9"G2 A | "Bb7"FG AF- | F4 | $
 "Abmaj7"EF GA- | "Dbmaj7"A B2 =B | "Gm7"c=B "C7"_BA- | "Fm7"A4 | $
@@ -7864,7 +8626,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id line-for-lyons
 K:G
+I:linebreak $
 |: "G6""^Swing"GB dg "G7b9"=f2 d_e- | "Cm7"e4 "F7"z =f_e d | "Bm7"z _ed d "E7"z =ed _d | "Am7"cd cc- "D7"c2 z2 | $
 "Gmaj7"Bc Bd- "E7"d2 G2 | "Am7"AB Ac- "D7"c2 FG- |1 "G6"G3 "Em7"d- d4- | "Am7"d4 "D7"z4 :|2 $
 "G6"G8 || z2 GA "G7"Bc d_e || "Cmaj7"e8- | "F#7"(3e2^d2e2 g2 f2 | $
@@ -7881,7 +8645,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=140
+%%id little-b-s-poem
 K:Ab
+I:linebreak $
 "Gbmaj7#11""^Swing"c4- cB | "Fm7"c4- cB | "Gbmaj7#11"c2 f2 e2 | "Fm7"c4 eA | $
 "Ebm7"B4- BA | "Dbmaj7"B4- BA | "Ebm7"B2 e2 c2 | "C7b9"B4 cF | $
 "Fm7"A4 FA | "F#m7"=A2 =e2 "B7"^d2 | "Emaj7"^G4 ^F=E | "Fm7"A2 e2 "Bb7"=d2 | $
@@ -7894,7 +8660,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=116
+%%id little-boat
 K:F
+I:linebreak $
 "Fmaj7""^Bossa"E F2 E G2 EF- | FE G2 _G2 F2 | "Bm7"EE EE EB, =B,E- | "E7"EE EE E2 z2 | $
 "Ebmaj7"D _E2 D F2 DE- | ED F2 E2 E2 | "Am7"DD DD D^G, A,D- | "D7"DD DD D2 z2 | $
 "Dbmaj7"C _D2 C _E2 CD | z C _E2 D2 _D2 | "Gm7"CC CC C^F, G,C- | "C7"C4 z G2 F/F/ | $
@@ -7911,6 +8679,7 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=140
+%%id little-dancer
 K:Db
 U:s=!stemless! "Ebm7/Ab" "^Swing" B2 B2 B2 | B2 B2 B2 | B2 B2 B2 | B2 B2 B2 |: $ "Gm7b5" c3 B z =A | "C7b9" B4 =G2 | "Fm7b5" B3 e3 | "Bb7b9" A4 z F | $ "Ebm7" A3 G z F | "Ab7b9" G2 d c z G | "Dbmaj7" F6- | "G7#11" F2 D2 E2 | $ "Gbmaj7" D6 | B2 F2 E2 | "F#m7" D6- | "B7" D4 z E |1 $ "Bbm7" C D z F z A | "Eb7" e2 c2 B2 | "Em7" =A3 "A7" _F3 | "Ebm7" A4 "Ab7" z B :|2 $ "Bbm7" C D z F z A || "Bbm7/Ab" c2 =A2 B2 | "Gm7b5" e6- | "F#7" e2 "B7" d2 c2 || $ "Emaj7" =B6- | "Bb7b9" B6- | "Amaj7" B6- | "Dmaj7#11" B2 A2 G2 | $ "Ebm7/Ab" A6- | "Ab7" A6- | "Ebm7/Ab" A6 | "Ab7" d2 A2 G2 | $ "Ebm7/Ab" A6- | "Ab7" A6- | "Ebm7/Ab" A6- | "Ab7" A6 |: $ "F#m7/B" B2 B2 B2 | "B7" B2 B2 B2 "Ebm7/Ab" B2 B2 B2 | "Ab7" B2 B2 B2 :| "Dmaj7" B2 B2 B2 |]
 
@@ -7921,7 +8690,10 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=72
+%%id little-girl-blue
+%%tags needs-repair
 K:F
+I:linebreak $
 "^Swing Ballade"z CD EF A |: "Gm7"c4 z B | "C7#11"^F4 z G | "Fmaj7"B2 A3 F | $
 "Ab7"C4 C2 | "Gm7"D4 C2 | "C7"G4 C2 |1 "Fmaj7"A6- | $
 AC DE FA :|2 "Fmaj7"F6- || F4 z2 || "Em7"A2 A2 A2 | $
@@ -7942,7 +8714,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=144
+%%id little-niles
 K:Db
+I:linebreak $
 |: "Bbm""^Swing"CD d4 | "Bbm6"z c2 BF _C | "Gb7"B,D A3 G | "F7"=A,C G2 z2 | $
 "Bbm"CD d4 | "Bbm6"z c2 BF _C | "Gb7"B,D A3 G | "F7"=A,C G2 z2 | $
 "Bbm"CD =EF GF | "Bbmb6"=EC EF G2 | "Bbm6"z DE FG F | "Bbmb6"=EC EF GF | $
@@ -7958,7 +8732,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id little-sunflower
 K:F
+I:linebreak $
 |: "Dm7""^Latin""^Intro"D,3 A,D D2 A, | D,3 A, D2 D2 | D,3 A,D D2 A, | D,3 A, D2 D2 [K:treble]"^A"z4 "Dm7"A =B2 B- | $
 B c2 c- c4- | c2 z2 c d2 d- | d e2 e- e2 dc | .=B2 G2 A4- | $
 A8- | A8- |1 A8 :|2 z4 AB AF |: $
@@ -7975,7 +8751,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=100
+%%id little-waltz
 K:Ab
+I:linebreak $
 |: "Fm""^Swing"C2 A4 | "C7/E"C2 B4 | "Ebm6"C2 c4 | "Dbmaj7"C2 d4 | $
 "G7"C2 =B4 | "C7"C2 _B4 | "Fm"C2 A4 |1 "C7"C2 =E4 :|2 $
 "C7"C2 =E3 G/A/ || "Fm"F6- | F6 || "Dm7b5"=D3 FA c | $
@@ -7991,7 +8769,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=246
+%%id lone-jack
 K:Db
+I:linebreak $
 "^Straight"f2 e2 |: "Bbm7"d3 e- e4- | e4 f2 z d | "Gbmaj7"cd c2- c4- | $
 c4 B2 c2 | "Bbm7"d2 e2 f2 ba- | a2 f2 e2 d2 | "Gbmaj7"c3 c'- c'3 a | $
 a4 f2 e2 | "Bbm7"f3 e- e4- | e4 f2 c'd' | "Gbmaj7"c'8- | $
@@ -8012,7 +8792,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id long-ago-and-far-away
 K:F
+I:linebreak $
 |: "F6""^Swing""Dm7"F6 F2 | "Gm7"F2 A2 "C7"E3 D | "Fmaj7"E6 E2 | "Gm7"E2 F2 "C7"D2 B,2 | $
 "F6"D6 C2 | "Gm7""C7"D6 C2 | "F6"D2 E2 F2 "D7"^F2 | "Gm7"A4 "C7"G4 |1 $
 "Ab6""Fm7"_A6 A2 | "Bbm7"_A2 c2 "Eb7"G2 F2 | "Abmaj7"G6 G2 | "G7"G2 =B2 F2 E2 | $
@@ -8027,7 +8809,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id lonnie-s-lament
 K:Bb
+I:linebreak $
 "^Swing"GF || "Cm7"E3 D/C/"Dm7"D F3 | "Ebmaj7"EC (A,2 "Dm7"A,2) DB, | "Cm7""Dm7"(G,8 | $
 "Ebmaj7""Dm7"G,6) GF | "Cm7"E3 D/C/"Dm7"D F3 | "Ebmaj7"EC A,2- "Dm7"A,2 DB, | "Cm7""Dm7"(G,8 | $
 "Ebmaj7""Dm7"G,6) CD || "Cm7"E3 D/C/ "Bb7"c3 B | "Ebmaj7"F3 G"Abmaj7"E C2 D | "Ab7"DF "A7"(B6 | $
@@ -8041,7 +8825,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id look-for-the-silver-lining
 K:C
+I:linebreak $
 "Cmaj7""^Swing"E4 E4- | "Dm7/G"E2 F2 "G7b9"D2 E2 | "C6""Am7"C4 C4- | "Dm7"C2 D2 "G7"E2 F2 | $
 "Cmaj9"G4 G4 | "F"c2 B4 A2 | "Em7"G8- | "Am7"G2 C2 D2 E2 | $
 "Dm7"F4 F4- | "G7"F2 A,2 "G7/F"B,2 D2 | "Em7"G4 G4- | G2 E2 G2 A2 | $
@@ -8058,7 +8844,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id look-to-the-sky
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Ebmaj7""^Bossa"(3D2B,2C2 D4- | (3D2B,2C2 (3D2F2E2 | "Ebm7"_D3 C (3F2E2D2 | "Ab7"C8 | $
 "Ebmaj7"(3D2B,2C2 D4- | (3D2B,2C2 (3D2F2E2 | "Gm7"B8- | "C7b9"B8 | $
 "Fm7"(3G2E2F2 G4- | (3G2E2F2 G2 BA- | "Abm7"A3 A A4 | "Db7"A8 | $
@@ -8078,7 +8867,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id lot-of-living-to-do
 K:C
+I:linebreak $
 "^Swing"x4 G2 A2 |: "Cmaj7"B2 z4 z2 | z2 cB- BG E2 | "C6"D3 E- E4 | $
 z4 C2 D2 | "Cmaj7"E8 | "C7"z2 Gc- cA G2 | "F6"D8 | $
 z4 F2 G2 | "Fmaj7"A8 | "G7"z2 Bd- dc B2 | "C"d3 G- G4 | $
@@ -8102,7 +8893,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id lover-man
 K:F
+I:linebreak $
 |: "Dm7""^Swing Ballade"z DE D "G7"G2 DE | "Dm7"FD AG- "G7"G4 | "Gm7"z GA G "C7"c2 GA | "Gm7"BG dc- "C7"c4 | $
 "F7#9"_AF GF A F3 | "Bb7"_AF GF c F3 | "Bbm7"_DF "Eb7"G_A "Gm7"G2 "C7"F=D |1 "Fmaj7"F4 "Em7b5""A7#9"z4 :|2 $
 "Fmaj7"F4 "Bb7"z4 || "Am"c2 A=B "Amaj"c2 AB | "Am7"c3 A "D7"(3c2d2c2 | "Gmaj7"=B2 GA "Am7"(3_B2A2G2 | $
@@ -8118,7 +8911,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id lover-come-back-to-me
 K:G
+I:linebreak $
 |: "G6""^Swing"z GG A B4 | "F#m7b5"z FF G "B7b9"A4 | "Em7"z GG A B4 | "A7"z EE F "Bbdim7"G4 | $
 "G6/B"z DD E"Em7"G AB d | "A7"B4 "D7"A4 | "G6"DE "G6/B"G2 "C6"G2 "C#dim7"G2 |1 "G/D"G4 "D7"d2 z2 :|2 $
 "G/D"G4 "F#m7b5""B7b9"F4 || "Em"EF "Emaj"GA "Em7"Be "Em6"^de | "F#m7b5"ce "B7b9"^de "Em7"B4 | "F#m7b5"B4 "B7"F4 | $
@@ -8134,7 +8929,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=192
+%%id lucky-southern
 K:D
+I:linebreak $
 |: "Dmaj7""^Bossa"z8 | "Dmaj7#5"z8 | "D6"z8 | "Dmaj7#5"z8 :| $
 "Dmaj7"z2 Ad- d e2 f- | f8 | "E7"f2 ed- de fe- | e2 d6 | $
 "Gmaj7"z4 B2 d2 | "Bb7"=f3 e- "A7"e2 dd- | "Dmaj7"dB A6 | "Ebmaj7#11"z2 !>!a6 | $
@@ -8152,7 +8949,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id lullaby-of-birdland
 K:Ab
+I:linebreak $
 |: "Fm""^Swing"c2 BA G F2 =D- | "G7"D2 F=E- "C7"E2 z C- | "Fm"C2 GF- F2 z D- | "Bbm7"D2 cB- "Eb7"B2 z e- | $
 "Abmaj7"e2 dc "Fm7"B A2 F- | "Bbm7"Fc B=E- "Eb7"Ec B_E- |1 "Abmaj7"E4 z BA D- | "Db7"DA GC- "C7"C4 :|2 $
 "Abmaj7"E4 "Eb7"z EG A || "Abmaj7"z8 || "F7"c2 d=d e2 e_d | "Bbm7"z B3- B2 z2 | $
@@ -8168,7 +8967,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id lullaby-of-the-leaves
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: "Cm""^Swing"C3 D "Am7b5"E3 F | "D7"^F2 G2 "G7#5"e3 d | "Gm7"c3 d "C7"c3 G | "Fm7"B2 A2 "Eb9"E2 F2 | $
 "Dm7b5"(3G2G2G2 G4 | "G7#5"(3G2G2G2 G2 E2 |1 "Cm"C8- | "Ab7"C4 "G7"z4 :|2 $
 "Cm"C8- || "Ab7""G7"C6 z C || "Ab7"(3C^CD EE (3ED_D =CC | (3C^CD EE (3ED_D =CC | $
@@ -8184,7 +8986,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id lulu-s-back-in-town
 K:Eb
+I:linebreak $
 |: "C7""^Swing"Bc BG "F7"=A2 F2 | "Bb7"A B2 G- "Ebmaj7"G4 | "C7"Bc BG "F7"=A2 F2 | "Bb7"A B2 "Ebmaj7"G-G "G7#5"G2 E | $
 "Abmaj7"F2 E2 "Adim7"_G2 E2 | "Ebmaj7/Bb"F E2 G- "C7"G4 | "F7"G E3 "Bb7sus4"E "Bb7"F2 E- |1 "Eb69"E6 z2 :|2 $
 "Eb69"E4 z e2 c || "Abmaj7"e4 "Adim7"d2 c2 | "Eb/Bb"B4- "Eb7"B e2 c | "Abmaj7"e4 "Adim7"d2 c2 | $
@@ -8200,7 +9004,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=96
+%%id lush-life
+%%tags needs-repair
 K:Db
+I:linebreak $
 "^Swing Ballade"A, |: "Db6"DD DD "Cb9"EE EE | "Dbmaj7"(3F2F2F2- "Cb9"FF EE | "Dbmaj7"(3F2F2F2- "Cb9"FF EE | $
 "Dbmaj7"FF "Ebm7"GG "Fm7"AA "F#m7"=AA |1 "Abm7"=BB B2- "D13#11"B=A BA | "Fm7"_AA A2- "D9#11"AB =EE | "Dbm69"_E E3 "D13#11"z2 z A, :|2 $
 "Abm7"(3=B2B2B2- "D13#11"B=A (3BAB || "Fm7"_AA A4 "D9#11"=EE | "Dbm69"_E E3 "Gm7b5"z2 "C7"c2 || "Fm"C2 CC "Fm6"=D3 D | $
@@ -8223,7 +9030,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id lyresto
 K:Eb
+I:linebreak $
 "Eb9""^Swing"z C2 E F2 EC- | "Gm7"C3 E"C7"F F E2 | "Fm7"G2 E4 FG- | "Bb7"G4 z4 | $
 z "Eb9"C2 E (3FGF EC | "Gm7"C3 E"C7"F F E2 | "Abm7"B2 _G4 AB- | "Db7"B6 (3GA^F | $
 "Gm7"G B,2 B,-B, B,2 C | "F#m7"_DE DE- "B7"E3 =B, | "Fm7"CE FE G3 E | "Fm7"FC z2 "Bb7"z2 (3ABA | $
@@ -8240,7 +9049,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=114
+%%id a-child-is-born
 K:Bb
+I:linebreak $
 "Bb""^A""^(Ballade)""^Swing"D4 z2 | "Ebm/Bb"E2 F2 B2 | "Bb"D6 | "Ebm/Bb"E2 F2 B2 | $
 "Bb"D6 | "Ebm/B"E2 F2 B2 | "Am7b5"d6 | "D7#9"c6 | $
 "Gm"D6 | "D7b9"E2 F2 B2 | "Gm"D6 | "D7b9"E2 F2 B2 | $
@@ -8269,7 +9080,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id a-fine-romance
 K:C
+I:linebreak $
 "^(Moderate""^Swing)"E2 |: "C6"C8 | "Am7""C#other"A2 G4 A2 | "G7""G7/D"B,8 | $
 "D#dim7"B2 A4 B2 | "Em7"E8 | "Am7"d2 c4 E2 | "Dm7"G8 | $
 "G7"e2 d4 G2 |1 "C6""C"c2 B2 c2 d2 | "Em7""C7"(3c2B2_B2 "A13"A2 "Ab7""Ab13"_A2 | "Dm7""G13"G4 "G7""Dm7"G4- | $
@@ -8285,7 +9098,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id actual-proof
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "^(Med Funk)""Cm7"z4 "^sample keyboard for intro and bars 1 and 2 of coda"z2 z/ Gd x/ x/ | D^F _EG z/ Gd z2 z/ Gd x/ x/ DF EG z/ Gd "Cm7"z8 | z8 | z2 z G-G _B f2- | $
 f2 _e/.fe/- e4- | "Gb/Bb"e6 z2 | "A7#9#5""A13"z8 | "A91113sus4"z2 z _B-B =B ^f2- | $
 f2 ^f/.ga/- a4- | "Ebm7b5"a3 _d_a =a _g2- | g z "B7sus4"!>!^f z/ "C#7sus4/Bb"!>!^g/-g/ z/ "Dm7"!>!a z/ "Em7"!>!b3/2 | "Amaj9"b8- | $
@@ -8305,7 +9121,9 @@ C:Jose Feliciano
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id affirmation
 K:C
+I:linebreak $
 x3/2 A/B/^c/d/ e/ |: "Em9""^A"!slide!^ff z/ e/a- a.g f/e/ z | !slide!^ff z/ e/a- a.g f/e/ z | "Bm7"!slide!ee- ed- d2 z/ ^F/A/B/ | $
 !slide!^cc z/ A/B- BA B/c/d/e/ | "Em9"!slide!^ff z/ e/a- a.g f/e/ z | !slide!^ff z/ e/a- ab g/a/f/g/ | "Bm7"e!slide!e- ed- d2 z/ ^F/A/B/ | $
 !slide!^c!slide!c z/ A/B- B2 z2 | "Bm7"!slide!ee- ed- d2 (3ze^f | "Am7"ed- dA- "D7"A2 (3ze^f |1 "G"eB- Bd- d2- d2 | $
@@ -8323,7 +9141,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id african-flower
+%%tags needs-repair
 K:Db
+I:linebreak $
 "Ebm7""^(Med.Latin)""^A""^Straight"AB AB A2- A2- | A8 | GA GA G4- | G8 | $
 "Abm7"_FG FG F4- | "Gbm7"F8 | "Ebm7"EF EF E4- | E8 | $
 "Bbm"_FG FG F4 | _F2 F2 (3G2d2_c2 | "Ebm7"GA AB E4- | E8 | $
@@ -8353,7 +9174,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=190
+%%id afro-blue
 K:Ab
+I:linebreak $
 "^(Med.Fast)""^Swing""Fm7"F2 c3 A | "Gm7"B6 | "Ab"A3 B3 | "Gm7"F4 z C | $
 "Fm7"F2 c3 A | "Gm7"B6 | "Ab"A3 "Gm7"B3 | "Fm7"F6 | $
 "Eb7sus4""Eb"E2 E2 G2 | E6 | "Db7sus4""Db"D3 "Eb7sus4""Eb"E3 | "Fm7"F6 | $
@@ -8372,7 +9195,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=217
+%%id afro-centric
 K:Ab
+I:linebreak $
 "^(Med.-Up Swinging Afro)"CD FG- |: "Db#11"G4- G c3 | f3 =e- e3 _e- | e3 c- c4- | $
 c4 _c_G D=C- | "Cm11"C4- C F3 | B3 =d- d2 B2- | B F3 B4- | $
 B6 e2 | "Db#11""Bbm11"z8 | z4 z2 FB Ad | Be Be z Ad z Ad z FB | $
@@ -8388,14 +9213,16 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=217
+%%id afro-centric-2
 K:Ab
-|: "Db#11""^(Med.-Up Swinging Afro)"D,3 G,C B,G, C | z4 z2 G,D, | CC z CB, B, z B, | G,G, z F, z E, D,2- | $
-D,3 G,=D B,G, C, | z4 z2 G,B, | =DD z C z C z B, | z B, z G, z F, C,2- | $
-"Db#11""Bbm11"C,3 G,C B,G, C | z4 z2 G,D, | CC z B, z B, z G, | z G, z F, z E, "Ab#11"A,,2- | $
-A,,3 G,C B,G, C | z4 z2 G,D, | CC z B, z B, z G, | z G, z F,- F,3 D, | $
-"Gb#11"_G,,3 _G,B, B, z B, | z4 z3 G, | CC z B, z B, z A, | z A, z _G,- G,3 G, | $
-"Fm7".F,2 F,4- F,F, | "Gb#11"._G,2 G,4- G,G, | "Fm7".F,2 F,4- F,F, | "Gb#11"._G,2 G,4- G,G, | $
-"Gm7b5".G,2 G,4- G,G, | "C#11".C,2 C,6 |]
+I:linebreak $
+|: "Db#11""^(Med.-Up Swinging Afro)"D3 Gc BG c | z4 z2 GD | cc z cB B z B | GG z F z E D2- | $
+D3 G=d BG C | z4 z2 GB | =dd z c z c z B | z B z G z F C2- | $
+"Db#11""Bbm11"C3 Gc BG c | z4 z2 GD | cc z B z B z G | z G z F z E "Ab#11"A,2- | $
+A,3 Gc BG c | z4 z2 GD | cc z B z B z G | z G z F- F3 D | $
+"Gb#11"_G,3 _GB B z B | z4 z3 G | cc z B z B z A | z A z _G- G3 G | $
+"Fm7".F2 F4- FF | "Gb#11"._G2 G4- GG | "Fm7".F2 F4- FF | "Gb#11"._G2 G4- GG | $
+"Gm7b5".G2 G4- GG | "C#11".C2 C6 |]
 
 X:94
 T:After you
@@ -8404,7 +9231,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id after-you
 K:D
+I:linebreak $
 "^(Med.)"x2 "^Straight"Ad de ef |: "G/A"g3 f- "F#/A"f4 | "Bm7"f3 Ad ee f | "Em"g2 "D"f2 "A/C#"e3 d | $
 "G/A"d2 AB Bd da | "G/A"g2 a"F#/D"f- f4 | "Bm7"f3 A (3d2e2f2 | "Em"g2 "D"f2 "Am7"e2 "Bm7"d2 | $
 "Gmaj7"B6 Bd | "F#m7"A6 ac |1 "F7"d8 | "G/A"d2 Ad de ef :|2 $
@@ -8422,7 +9251,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=190
+%%id after-you-ve-gone-2
 K:C
+I:linebreak $
 "Eb""^Swing""^(Fast Swing)"G_B cd- d4 | z "Ebm6"cd c"Ab7"d c3 | "Bbm7"DF GA- A4 | "D7"z GA G"G7"A G3 | $
 "C7"G d2 d- d4 | "F7"G c2 c- c4 | "Bb6"z FG FA FG F | "F7"_B D2 F- F4 | $
 "Eb"G_B cd- d4 | z "Ebm6"cd _B"Ab7"d c3 | "Bb"DF GA- A4 | "Dm7"z GA G"G7"_B G3 | $
@@ -8436,7 +9267,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id afternoon-in-paris
 K:C
+I:linebreak $
 "^Swing""^(Moderate)"!tenuto!e!^!g |: "C""^A"z !^!d2 cB cd e | "Cm7"_eG _Bd "F7"c2 !tenuto!d!^!f | "Bb"z !^!c2 _BA Bc d | $
 "Bbm7"_dF _Ac "Eb7"_B2 !tenuto!c!^!_e | "Ab"z !^!c2 _AG _BA G- | "Dm7""Dm7b5"G4- "G7b9"G_B _AG- | "C""Am7"G8 |1 $
 "Dm7"z4 "G7"z2 !tenuto!e!^!g :|2 "C"z4 A2 Bc- || "Dm7""^B"c6 de- | "G9b7"e6 dc- | $
@@ -8452,7 +9285,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id ain-t-it-the-truth
 K:Db
+I:linebreak $
 "Db""^( Fast""^Swing )"F2 A2 B2 F2 | B2 AB z2 A2 | z G2 A B2 A2 | "Ebm7"GA B"Ab7"c z2 "E7"=B2 || $
 "Eb7"c4 B c2 E- | "Ab7"E4 z E3 | "Db7"B4 A B2 E- | "Gb7"E6 DB, | $
 "Eb7"z F3 B,2 C2 | D2 EF z B3 | "Ebm7"z F2 D"Ab7"F DF D- | "Db"D4 z B=B c- || $
@@ -8471,7 +9306,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=96
+%%id ain-t-misbehavin
 K:Eb
+I:linebreak $
 |: "Eb""^A""Eb6""^(Med. Slow Swing)""^Swing"z EF E"Eother""C7"B B3 | "Fm7""Fm7"z FG F "F#other""Bb7"c4 | "Eb/G""Eb6"z Bc B"G#75""Eb7"e e2 d | "Ab""Ab6"f2 ec "Db7""Abm6"G/_G/F- F z | $
 "Eb""Eb6/G"z EF E"C7b9"B B3 | "Fm7"z FG F"Bb9"c c2 B- |1 "G7"B G3- "C7"G4- | "F7"G4 "Bb7"z4 :|2 $
 "Eb""Eb6"E4- "Ab6""Abm6"E4- || "Eb6""D7b9"E4 "G7""G7#5"z4 || "Cm7""^B"z2 ec e c3 | "Ab7"z2 ec e c3 | $
@@ -8493,7 +9330,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=232
+%%id airegin
 K:Ab
+I:linebreak $
 |: "^(Meduim-Up Latin)""^Head Swing"z2 (3F_GF C4 | (3_G=G_G D4 .A2 | z2 (3F_GF C4 | (3DED B,4 .E2 "Fm""^A"z2 (3FGF CF Ac | $
 "C7#9#5"._G2 e4 .d2 | "Fm"z8 | "F7b9"z C F2 G2 .=A2 | "Bbm"z2 (3B_cB FB df | $
 "F7#9#5".=B2 a4 ._g2 | "Bbm7"z8 | "Bb7"z F B2 c2 .d2 || "Db""^B""Bbm7"z2 f6 | $
@@ -8520,7 +9359,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id air-mail-special-2
 K:Ab
+I:linebreak $
 "^Swing""^(Fast Swing)"A2 | "Ab6""^A"z (Ac e"Fm7"a a) z (A | "Bbm7"ce aa) "Eb7"z (Ac e | "Ab6"aa fe "Fm7"aa fe | $
 "Bbm7"aa fe- "Eb7"e) z A2 | "Ab6"z Ac e"Ab7"a a z A | "Db6"ce aa "Dother"z Ac e | "Ab6/Eb"aa fe "Fm7"aa fe | $
 "Bbm7"aa fa- "Eb7"a z A2 || "^A'"z "Ab6"Ac e"Fm7"a a z A | "Bbm7"ce aa "Eb7"z Ac e | "Ab6"aa fe "Fm7"aa fe | $
@@ -8537,7 +9378,9 @@ C:Donald Fagen
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id aja
 K:C
+I:linebreak $
 |: "B""^Intro"z4 z ^F^f ^d- | d3 ^A-A ^F2 ^C | z ^c!-(!^a !-)!^ga g z ^f | ^e^f e^d- d4 :| $
 "B""^A"^A,B, A,^G,- G,2 z A,- | A,2 B,2 ^C ^D2 "Bm11"E- | E2 z2 z2 E2 | "B/F#"^D4 "E"B,4 | $
 "Bm11"E4 z4 | z8 | "C"z8 | z8 | $
@@ -8581,7 +9424,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id alfie
 K:C
+I:linebreak $
 |: "C""^A""^(Med.)""^Straight"G/F/E/F/ G6 | "G7sus4"F c3- c2 GA | "C"G2 CB A B,2 C | "Em7"D4 "A7"z2 EG | $
 "Dm7"ec c2- c/d/c Bc | "Em7"dG G2 "A7"z4 |1 "Dm7"AD E2 "G7sus4"FG A2 | "F#other"Ad B4 c2 | $
 "G7sus4"AD E2 FG A2- | "G7"A2 A2 "G7#5"A4 :|2 "Dm7"AD E2 FG A2 || "F#m7b5"Ad "F7"B4 z c | $
@@ -8599,7 +9444,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=144
+%%id alfie-s-theme
 K:Db
+I:linebreak $
 "^(Med.""^Swing)"F |: "Bbm"Bd fd "Ab7"e2 de | "Gb"fd ee "F7b9"de BF | "Bbm"Bd fd "Ab7"e2 de | $
 "Gb"e2 df- "F7b9"f3 F | "Bbm"Bd fd "Ab7"e2 de | "Gb"fd ee "F7b9"de BF | "Bbm"Bd fd "Cother"e2 de | $
 "F7b9"e2 dB- "Bbm"B4 :| [M:4/4]"Db"z2 z DA A z G- | "Gb"G8 | "Db"z2 z DA A z G- | $
@@ -8615,7 +9462,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=114
+%%id alice-in-wonderland
 K:C
+I:linebreak $
 |: "Dm7""^(Med.)""^Swing"G6 | "G7"g4 f2 | "C"e4 c2 | "F"G6 | $
 "Bm7b5"d2 e2 f2 | "E7"e4 d2 | "Am7"e4 c2 | "Eb7"G6 | $
 "Dm7"d2 e2 f2 | "G7"e4 d2 | "Em7"e4 g2 | "Am7"c'4 a2 | $
@@ -8637,7 +9486,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=90
+%%id all-alone
 K:D
+I:linebreak $
 "^(Lento""^Straight)"B,2 B2 |: "Bm"F3 D"Em"E DB, A, | "Bm"B,6 B,B | "Em7"F3 D"C#m7b5"E D"F#7"B, A, | $
 "G"B,6 B,D | "C#m7b5"EF- "D"F4 AF | "G"ED- D2- DF EB, |1 "C#m7b5"C6 DB, | $
 "F#7"C4 B,2 B2 :|2 "C#m7b5"C6 "F#7"D^A, || "Bm"B,8 || "Em7"AA A2- "A7"AF ED | $
@@ -8651,7 +9502,9 @@ C:Miles Davis
 N:Source: Ultime Jazz Real Book
 M:6/8
 L:1/8
+%%id all-blues-2
 K:C
+I:linebreak $
 "G7"B3- B2-B/D/ | B/c/B2- B2-B/D/ | B/c/B2- B2-B/D/ | B6 | $
 "C7"A2_B c2d | c2_B A2-A/D/ | "G7"B6 | G3- G2-G/^G/ | $
 "D7#9"A6 | "Eb7#9""D7#9b13"_B6 | "G7"A3 B3 | A3 G3 |]
@@ -8662,7 +9515,9 @@ C:Stevie Wonder
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id all-in-love-is-fair
 K:F
+I:linebreak $
 "Dm"z8 | "Dm/C"z8 | "Bb""Ab"z8 | "G7sus4"z2 z2 "C7sus4"GA FA |: $
 "Dm"A6 z2 | "Dm/C"z2 z FG AF F | "Bm7b5"d6 z2 | "Bb"z2 z dd dB c | $
 "Am7b5"c6 z2 | "D7"z2 z AA AB c | "G7"A6 z2 | "C7sus4"z2 z CG AF F || $
@@ -8680,7 +9535,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id all-my-tomorrows
 K:G
+I:linebreak $
 "^(Ballade)""^Swing"E2 |: "Am7""^A"BB BA B3 A | "D7b9"BA _E4 z F | "Bm7"AA AG A3 G | $
 "Bbm7"_D6 z E | "Am7"GG GG G2 FE | "Bm7"F D2 E "E7b9"=F2 ED |1 "Am7"E C2 D "D7b9"_E3 D | $
 "Bm7""E7b9"D6 E2 :|2 "Am7"E C2 D "D7b9"_E3 D || "G7sus4""G7"D8 || "C""^B"z2 E2 F2 G2 | $
@@ -8697,7 +9554,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=116
+%%id all-of-me-2
 K:C
+I:linebreak $
 "C""^(Med.""^Swing)"c2 GE- E4- | E4 (3c2d2c2 | "E7"B2 ^GE- E4- | E8 | $
 "A7"A3 G E4- | E2 ^D2 (3E2_B2A2 | "Dm"G4 F4- | F8 | $
 "E7"E3 _E D4- | D4 (3E2^G2B2 | "Am"d4 c4- | c8 | $
@@ -8714,7 +9573,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id all-of-you
 K:Eb
+I:linebreak $
 "^(Ballade)""^Swing"E2 F2 G2 |: "Abm6"A6 G2 | "Eb"G6 B,2 | "Fm7b5"_C6 A2 | $
 "Bb7b9"A6 F2 | "Abm6"A6 G2 | "Eb"G6 B,2 | "Fm7b5"_C6 B2 | $
 "Bb7"B6 A2 || "Eb6/G"c6 B2 | "Gbdim"c6 B2 | "Fm7"c6 D2 | $
@@ -8732,7 +9593,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id all-or-nothing-at-all
 K:C
+I:linebreak $
 |: "Am""^Swing)""^(Med.""^A"E8- | "Amaj"E2 E2 (3E2F2C2 | "Am7"E8- | "Am6"E6 z2 | $
 "Am"E4 "Amaj"E4 | "Gm7""Am7"E4 "C7""Am6"(3E2G2C2 | "Bb9""Bb7"D3 D "Bb6"D4- | "Gb#5""Bb7"D6 z2 | $
 "Gm7"D4 D4 | "Gm6"D4 (3E2^C2D2 | "Dm7""Dm69"A3 A A4- | "Dother""Ebother"A4 B2 A2 | $
@@ -8753,7 +9616,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id all-the-things-you-are
 K:Ab
+I:linebreak $
 "Fm7""^Swing)""^(Med."A8 | "Bbm7"d6 A2 | "Eb7"G2 G2 G2 G2 | "Ab"G2 c4 G2 | $
 "Db"F2 F2 F2 F2 | "G7"F2 =B4 F2 | "C"=E8- | E8 | $
 "Cm7"E8 | "Fm7"A6 E2 | "Bb7"=D2 D2 D2 D2 | "Eb"=D2 G4 D2 | $
@@ -8771,7 +9636,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id almost-like-being-in-love
 K:Bb
+I:linebreak $
 "Bb7""^Swing)""^(Med."B2 c2 |: "Ebmaj7""^A"d4 B2 G2 | "F7"A4 A2 B2 | "Bbmaj9""Dm7"c4 A2 F2 | $
 "Dm7""Gm7"G4 "G7"G2 A2 | "Cm7"z2 B2 G2 A2 | "F9sus4"B2 "F7b9"G4 A2 | "Bb6"B8- |1 $
 "Fm7"B2 z2 "Bb7"B2 c2 :|2 B2 z2 B2 c2 || "Am7""^B"d4 A2 =B2 | "D7"c4 =e2 d2 | $
@@ -8788,7 +9655,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=116
+%%id alone-together
 K:F
+I:linebreak $
 "^(Ballade)""^Straight"D |: "Dm"F7 D | "Eother"E E3- "A7b9"E4- | "Dm"E2 z D E3 F | $
 "Eother""A7b9"A8- | "Dm"A2 z D E3 F | "Aother""D7b9"A8- | "Gm"A2 z G A3 B | $
 "Gm7"d7 d | "Bm7""E7"e7 d | "Gm7"c c3- "C7"c3 B | "F"A3 G "F7"A3 G | $
@@ -8806,7 +9675,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id along-came-betty-2
 K:Ab
+I:linebreak $
 |: "Bbm7""^(Med.""^Swing)""^A"z4 c2 Bd- | "Bm7"d8 | "Bbm7"z2 z c-"E7"c B=A B | "Bm7""E7"d8 | $
 "A"z =E^F ^G=B =A (3_AFA- | "Ab7"A8 | "G"z =D=E ^F =A2 G_G- | "Gb7"G8 | $
 "Gbm7"z4 A2 _G=A- | "Gm7""C7"A8 | "Gbm7"z2 z A-A _GF G | "Gm7""C7"=A6 cG- | $
@@ -8824,8 +9695,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=50
+%%id always-and-forever
 K:C
-"Am7""^8 Ballade)""^(Straight\n"z2 E2 E2 E2 | "Dm7"z4 z cB G | "Am7"E2 E2 E2 E2 | "Dm7"z4 z cB G |: $
+I:linebreak $
+"Am7""^8 Ballade)""^(Straight"z2 E2 E2 E2 | "Dm7"z4 z cB G | "Am7"E2 E2 E2 E2 | "Dm7"z4 z cB G |: $
 "Am7"z2 (3zBG "Dm7"(3c2E"Em7"G2 | "F"z2 (3zFA "F/G"(3G2F"E/G#"(3E2 D | "Am7"C3 A, "Fm/Ab"C4 | "C/G"z2 (3zEB "F#m7b5"^GA Bc | $
 "F"C3 A, "Eb69"C4 | "D7"z2 (3zA,E "F/G"C2 A,2 | "C"z2 E2 E2 E2 | "Fmaj/G"E4 E^F/G/ "G7b9/B"(3^GA^A | $
 "Am7"B2- (3BBG "Dm7"(3c2E"Em7"G2 | "Fm7"z2 (3z_A_e "Bb7"(3dzc (3_BzA | "Eb"_B3 c "Bb/D"B3 c | "Db"(3_A2GA2- A3 _B | $
@@ -8849,7 +9722,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=124
+%%id ana-maria
 K:C
+I:linebreak $
 |: "Gb97sus4""^Straight""^(Half time rock feel)"z8 | "Eb/G"z8 | "Gb97sus4"z8 | "Eb/G"z8 "G"d8- | $
 "Cm7/G"(3d2_e2d2 c _B2 A- | "G7sus4"A6- AG- | "Cm7/G"G8 | "Db/F"_d8- | $
 "Gb#11"(3d2c2_B2 _A G2 _G- | "Abm7"G8 | "Bb/Ab"_G8 | "Gm7"_B8 | $
@@ -8871,7 +9746,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id angel-eyes
 K:Eb
+I:linebreak $
 |: "^A""^(Med. Ballade)""^Swing""Cm7"z CG _G- "Ab7""D7""G7"G3 F | "Cm7"E2 (3ECE- "Ab9"E4 | "Cm7"z CE G"Am7b5"d _dc G- | "Dm7b5""G7"G8 | $
 "Cm7"z CG _G- "D7""Ab7"G3 "G7"F | "Cm7"EE CE- "A7b5#5b9#9"E3 C | "Ab9"EC EC "G7#5"E2 EC- |1 "Cm7"C4 "Dm7b5""G7"z4 :|2 $
 "Cm6"C6 c2 || "^B""Bbm9"c c3- "Eb13"cc BE- | "Ab"E E3- "Aother"E4 | "Bbm9"c c2 c/B/ "Eb13"c2 BE- | $
@@ -8887,7 +9764,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id another-star
 K:A
+I:linebreak $
 "^(Med. Samba)""^Straight""F#m9"F,3/2 F,3/2 C, F,3/2 F,3/2 C, | "E13"E,3/2 E,3/2 B,, E,3 B,,/C,/ | "D"D,3/2 D,3/2 A,, D,3/2 D,3/2 A,, | "C#m7"C,3/2 C,3/2 G,, C,3 F,, | $
 "Bm7"B,,3/2 B,,3/2 F,, B,,3/2 B,,3/2 F,, | "C#7#5#9"C,3/2 C,3/2 G,, C,3 A,,/G,,/ | "F#m9"F,,3/2 F,,3/2 C, F,,3 G,, | [K:treble](3F,2Cc ^D=c (3^EBF A G2 |: $
 [K:treble]"F#m9""^A"(3z2F2G2 (3A2B2c2- | "E13"c3 B/A/ G3/2 BA G/ | "F#m9"F8 | "C#m7"z8 | $
@@ -8907,7 +9786,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=116
+%%id another-time
 K:F
+I:linebreak $
 "F69""^(Med.""^Swing)"F,, C,2 D,G, A,D, G,A, | "Eb9/F"F,, C,2 _D,G, A,D, G,A, | "F69"F,, C,2 D,G, A,D, G,A, | "Eb9/F"x x2 x x2 .C2 |: $
 [K:treble]"F69"A6 cG- | "Eb9/F"G6 FA- | "F69"A6 cG- | "Eb9/F"G6 FE- | $
 "Dm69"E6 AD- | "Bb7/D"D6 CE- | "Dm69"E6 AD- | "Bb7/E"D4 .F2 .E2 || $
@@ -8933,7 +9814,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=187
+%%id anthropology
 K:Bb
+I:linebreak $
 |: "Bb6""^(Bop)""^Swing""^A"Bd =Bc "G7"e^c d!>!f | "Cm7"z2 z e "F7"z !>!f !>!.e2 | "Bb6"z de d"Gm7"c AB d | "C7"cG BA "F7"z2 z B- | $
 "Bb7""Fm7"B2 GB "Bb7"dB z =e- | "Eb6"e _e2 _G-"Em6""Ab7"G Bc d |1 "Dm7"f2 z =B "G7"z _a z ^f | "Cm7"gf BG "F7"de z F :|2 $
 "Dm7"ef df "G7"z de G || "Cm7"cG "F7"B!>!c "Bb6"z2 z !>!^f- || "D7""^B"f2 g^g a^f =ga | ^fd z2 z2 z =e | $
@@ -8949,7 +9832,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id antigua
 K:F
+I:linebreak $
 |: "^A""^(Samba)""^Straight""Dm"A4 ^G3 A | "Em7b5"z A,2 "A7"^C2 E2 B | "Dm"A4 ^G3 A- | "Em7b5""A7"A8 | $
 "Dm"A4 ^G3 A |1 "Em7b5"z E2 G2 "A7"F2 E | "Dm"D8- | "Em7b5"D8 :|2 $
 "Gm7"z B2 "C7"G2 F2 E || "F"F8 | "Cm7"z3 "F7"A2 B2 c || "Bb"d4 ^c3 d- | $
@@ -8971,7 +9856,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=184
+%%id april
+%%tags needs-repair
 K:G
+I:linebreak $
 "G""^Swing""^(Bop)"z2 BG E _E2 G/E/ | D ^C2 G/C/D EG _B | "C7"=Bd eg (3fgf (3dfd | AE z2 z4 | $
 "C9#11"z2 A,_B, DE AG | FE !^!F2 z _BF E | FA (3FDF (3GFE c2 | z8 | $
 "Eb7"z2 =FG Ac A_B | "D7"B^G FE GB GA | "Bm7b5"de =fe f(3f/d/A/ =Fe- | "E7b9b13"(3e/c/^G/=F ce g z2 | $
@@ -8992,8 +9880,11 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id april-in-paris
+%%tags needs-repair
 K:C
-"Fm""G7b9sus4""^(Med.""^Swing)\n"(3F2F2F2 ^D2 E2- | "C"E8 | "Dm7b5"(3F2F2F2 ^D2 E2- | "G7"E8 | $
+I:linebreak $
+"Fm""G7b9sus4""^(Med.""^Swing)"(3F2F2F2 ^D2 E2- | "C"E8 | "Dm7b5"(3F2F2F2 ^D2 E2- | "G7"E8 | $
 "C"(3D2D2D2 B,2 C2- | C2 E2 G2 Bd- | "Gm7"d8 | "C7"d8 | $
 "F"(3d2d2d2 B2 c2- | c8 | "Bm7b5"(3d2d2d2 "E7"B2 c2- | "Am""Am/G"c8 | $
 "F#m7b5"(3c2c2c2 A2 B2- | "B7b9"B4 c4 | "Bm7""E7"e8- | "Em7b5""A7b9"e8 | $
@@ -9009,7 +9900,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=184
+%%id april-joy
 K:C
+I:linebreak $
 "^(Fast)""^Straight"z4 z/ G/c/d/f/ e/d/c/ |: "Bb""^A"d3 g- g4- | g4 z/ G/c/d/f/ e/d/c/ | (3dea "Am7/D"d'6- | $
 d'6- d'd' | "Bb"(3e'2c'2a2- a4- | a6- ag/c'/ | "A/Bb"a8- | $
 a8 | "Bb"d'2 d'f' "Am7"e'c' ad'- | "Bb""Am7"d'8- | "D7"d'8 | $
@@ -9026,7 +9919,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/2=100
+%%id armando-s-rhumba
 K:Eb
+I:linebreak $
 "_Intro""^Intro""_Unis.""^Straight"c _d2 =Bc d2 B | c3 G- G2 ec | G2 cG E2 GE | C2 z2 z2 !>!c2 | $
 !>!c3 !>!c- c4 |: "Cm""^A"z Gc e g2 e2 | "D7"^f3 d- d4 | "G7"(3z2f2d2 f d2 e- | $
 "Cm"(3e2A2G2 e2 z2 | "Cm"z Gc e g2 e2 | "D7"_g3 d- d4 | "G7"(3z2f2e2 d f2 e- | $
@@ -9044,7 +9939,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=96
+%%id as-time-goes-by
 K:Eb
+I:linebreak $
 "^(Ballade)""^Swing"G2 |: "Fm7"AG FE "Bb9""Bb9sus4"F3 G | "Bbm6""Gm7b5"BA GF "Bb7b9"A3 B | "Eb69"ed cB "Fm7"c4 | $
 "F#dim7"z4 "Gm7"z2 d2 | "F7"fe dc "Adim7"d2 e2 | "Fm7""Ebmaj7/Bb"B2 B2 "Bb7""Bb9sus4"E2 "Bb7b9"F2 |1 "Eb""G7#5""G7"G8- | $
 "Fm7""Gm7b5"G4 "Bb7""C7"z2 z G :|2 "Eb69"E8- || "Bbm7"E4 "Eb7"z4 || "Ab"EF Ec- "Dm7b5/Ab"c2 c2 | $
@@ -9060,7 +9957,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=104
+%%id asa
 K:F
+I:linebreak $
 |: "Dm7""^(Med. Funk)""^Intro""^Straight"z/ EA z/ DG .EA z2 z3/2 Ad | "Bb13"Gc _Ad Gc Gc z "A7#9#5"z2 FG/ E=A | "Dm7"z/ EA z/ DG .EA z2 z3/2 Ad |1 "Bb13"Gc _Ad Gc Gc z "A7#9#5"z2 FG/ E=A :|2 $
 "CN.C."Gc _Ad Gc Gc z z2 z =A/A/ |: "Dm7""^A"d/d/c ed z2 z c/d/ | "Bb13"c_A FA "A7#9#5"z4 | "Dm7"z/ G3/2F/ F/BA/ A/d fd/d/- | $
 "Bbmaj7"d/A/G FG "A7#9#5"z2 z A/A/ | "Dm7"d/d/c ed z2 z c/d/ | "Bb13"c_A FA "A7#9#5"z4 | "Dm7"z/ G3/2F/ F/BA/ A/d fd/d/- | $
@@ -9084,15 +9983,17 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id asa-2
 K:F
-|: "Dm7""^(Med. Funk)""^Intro""^Straight"!8vb(!D,, z/ D,,/!8vb)!G,,/A,,/D,/ A,,/C, z/ C,/ z/ G,,/A,,/B,,/ | "Bb13"z3/2 B,,/ z/ B,,/ z/ B,,/"A7#9#5"A,, z/ A,,/G,,/A,,/D,/ A,,/ | "Dm7"!8vb(!D,, z/ D,,/!8vb)!G,,/A,,/D,/ A,,/C, z/ C,/ z/ A,,/ z/ B,,/ |1 "Bb13"z3/2 B,/ z/ F,/ z/ B,,/"A7#9#5"A,, z/ A,,/G,,/A,,/C,/ A,,/ :|2 $
-"CN.C."!8vb(!z2 (3zD,,F,, G,, z/ A,,/ z2 || "Dm7""^A"!8vb(!D,, z/ D,,/!8vb)!G,,/A,,/D,/ A,,/C, z/ C,/ z/ G,,/A,,/B,,/ | "Bb13"z3/2 B,,/ z/ B,,/ z/ B,,/"A7#9#5"A,, z/ A,,/G,,/A,,/D,/ A,,/ | "Dm7"!8vb(!D,, z/ D,,/!8vb)!G,,/A,,/D,/ A,,/C, z/ C,/ z/ A,,/ z/ B,,/ | $
-"Bbmaj7"z3/2 B,/ z/ F,/ z/ B,,/"A7#9#5"A,, z/ A,,/G,,/A,,/D,/ A,,/ | "Dm7"!8vb(!D,, z/ D,,/!8vb)!G,,/A,,/D,/ A,,/C, z/ C,/ z/ G,,/A,,/B,,/ || "Bb13"z3/2 B,,/ z/ B,,/ z/ B,,/"A7#9#5"A,, z/ A,,/G,,/A,,/D,/ A,,/ | "Dm7"!8vb(!D,, z/ D,,/!8vb)!G,,/A,,/D,/ A,,/C, z/ C,/ z/ A,,/ z/ B,,/ | $
-"Bbmaj7"z3/2 B,/ z/ F,/ z/ B,,/"A7#9#5"A,, z/ A,,/G,,/A,,/D,/ A,,/ || "Gm7""^B"!8vb(!G,,C,,- "C9"C,,D,,- "D7#9"D,,/D,/ z D,,F,,/D,,/ | "Gm7"G,,G,,/C,,/- "C9"C,,/C,/ z/ D,,/ "D7#9"z/ D,,D,,/ D,,F,,/D,,/ | "Gm7"G,,C,, "C9"z/ C,,/ z/ D,,/ "D7#9"z/ D,/ z/ D,,/D,/D,,/ D,, | $
-"Gm7"G,,C,- "C9"C,D, "D7#9"z/ D,,/ z/ D,,/D,, D,, | "Gm7"G,,C,,- "C9"C,,/C,D,,/- "D7#9"D,,/D,/ z/ D,,/D,D,,/ F,,/ | "Gm7"G,,C,,- "C9"C,,/C,/ z/ D,,/ "D7#9"z/ D,/ z/ D,,/D,,F,,/ D,,/ | "Gm7"G,,C,,- "C9"C,,/C,/ z/ D,,/ "D7#9"z/ D,/ z/ D,,/D,, D,, | $
-z/ "Gm7"G,,/ z/ F,,/ z/ "Gm11"G,,/ z "Em11"z/ E,,/ z "A7#9#5"A,,2 || "Dm9""^C"D,D CD/D,/ z2 z D,/A,,/ | "Bb13"B,,/B,,/F,/B,,/ z2 z3/2 B,,/ z B,,/_A,,/ | "Gm7"G,,G,/G,/ F,/F,/G, z2 z G,,/A,,/ | $
-"Bb13"B,,/B,,/ z z3/2 B,,/"A7#9#5"A,,/A,,/ z A,,/C,/F,/C,/ |: "Dm9"!8vb(!D,,/D,,/D,/D,/ C,/C,/D,/D,,/ z D,, z !8vb)!G,,/A,,/ | "Bb13"B,,B,, z2 z3/2 B,,/ z/ B,,/ z/ A,,/ | "Gm7"G,,/G,,/G,/G,/ F,/F,/G,,/G,,/ z2 z G,,/F,,/ | $
-"Em7b5"E,,E, z/ E,,/G,,/E,,/ "A7#9#5"A,,2 A,,/C,/F,/C,/ :|
+I:linebreak $
+|: "Dm7""^(Med. Funk)""^Intro""^Straight"!8vb(!D z/ D/!8vb)!G/A/d/ A/c z/ c/ z/ G/A/B/ | "Bb13"z3/2 B/ z/ B/ z/ B/"A7#9#5"A z/ A/G/A/d/ A/ | "Dm7"!8vb(!D z/ D/!8vb)!G/A/d/ A/c z/ c/ z/ A/ z/ B/ |1 "Bb13"z3/2 b/ z/ f/ z/ B/"A7#9#5"A z/ A/G/A/c/ A/ :|2 $
+"CN.C."!8vb(!z2 (3zDF G z/ A/ z2 || "Dm7""^A"!8vb(!D z/ D/!8vb)!G/A/d/ A/c z/ c/ z/ G/A/B/ | "Bb13"z3/2 B/ z/ B/ z/ B/"A7#9#5"A z/ A/G/A/d/ A/ | "Dm7"!8vb(!D z/ D/!8vb)!G/A/d/ A/c z/ c/ z/ A/ z/ B/ | $
+"Bbmaj7"z3/2 b/ z/ f/ z/ B/"A7#9#5"A z/ A/G/A/d/ A/ | "Dm7"!8vb(!D z/ D/!8vb)!G/A/d/ A/c z/ c/ z/ G/A/B/ || "Bb13"z3/2 B/ z/ B/ z/ B/"A7#9#5"A z/ A/G/A/d/ A/ | "Dm7"!8vb(!D z/ D/!8vb)!G/A/d/ A/c z/ c/ z/ A/ z/ B/ | $
+"Bbmaj7"z3/2 b/ z/ f/ z/ B/"A7#9#5"A z/ A/G/A/d/ A/ || "Gm7""^B"!8vb(!GC- "C9"CD- "D7#9"D/d/ z DF/D/ | "Gm7"GG/C/- "C9"C/c/ z/ D/ "D7#9"z/ DD/ DF/D/ | "Gm7"GC "C9"z/ C/ z/ D/ "D7#9"z/ d/ z/ D/d/D/ D | $
+"Gm7"Gc- "C9"cd "D7#9"z/ D/ z/ D/D D | "Gm7"GC- "C9"C/cD/- "D7#9"D/d/ z/ D/dD/ F/ | "Gm7"GC- "C9"C/c/ z/ D/ "D7#9"z/ d/ z/ D/DF/ D/ | "Gm7"GC- "C9"C/c/ z/ D/ "D7#9"z/ d/ z/ D/D D | $
+z/ "Gm7"G/ z/ F/ z/ "Gm11"G/ z "Em11"z/ E/ z "A7#9#5"A2 || "Dm9""^C"dd' c'd'/d/ z2 z d/A/ | "Bb13"B/B/f/B/ z2 z3/2 B/ z B/_A/ | "Gm7"Gg/g/ f/f/g z2 z G/A/ | $
+"Bb13"B/B/ z z3/2 B/"A7#9#5"A/A/ z A/c/f/c/ |: "Dm9"!8vb(!D/D/d/d/ c/c/d/D/ z D z !8vb)!G/A/ | "Bb13"BB z2 z3/2 B/ z/ B/ z/ A/ | "Gm7"G/G/g/g/ f/f/G/G/ z2 z G/F/ | $
+"Em7b5"Ee z/ E/G/E/ "A7#9#5"A2 A/c/f/c/ :|
 
 X:130
 T:Ask me now
@@ -9101,7 +10002,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id ask-me-now
 K:C
+I:linebreak $
 |: "Gm7""^Swing)""^(Med."cG "C7"EC "F#m7"B, "B7"B3 | "Fm7"_BF "Bb7"D_B, "Em7"A,A- "A7"A2 | "Ebm7"_A_B AB "Ab7"A2 E2 | "B7b5""Bb7"F8 | $
 "Eb7"F_D _B,G, "D7"^F,E- E2 | "Db"_E_D (3CDF "Eb7"c_B- B2 |1 "Ebm7"_d_B (3_G_E_B, "Ab7"F2 =E2 | "Fm7"F2 "E7"_B2 "Ebm7"_E2 "D7"_A2 :|2 $
 "Ebm7"_d_B (3_G_E_B, "Ab7"F3 _A, || "Db"_D8 | "Ebm7"_EF _G_B "Abb5#5b9#9"c3 B | "Db""Fm7""Em7"_A8 | $
@@ -9117,7 +10020,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=114
+%%id at-last
 K:C
+I:linebreak $
 "^(Med.""^Swing)"G2 |: "C""A7"c8- | "Dm7"c2 d_e- "G13"ed cA | "C""A7"G8- | $
 "Dm7"G z A_B- "G7#9"BA GF | "C"E4 "A7"E4- | "Dm7"E z EG- "G7b9"GF ED | "C""A7"C8- | $
 "Dm7"C4 "G7"z2 G2 | "C""A7"c8- | "Dm7"c2 d_e- "G7b13"ed c_B | "C""A7"G8 | $
@@ -9135,7 +10040,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=196
+%%id au-privave
 K:F
+I:linebreak $
 "F""^(Bop)""^Swing"FE F!>!C z2 A^G | "Gm7"A!>!C z !^!E "C7"z GF C | "F"GF AB "Gm7"AF G._E | "Cm7"z !>!d3 "F7#5"z !^!_d2 .F | $
 "Bb7b9"=B3 f z B !^!_B2 | "Bbm7"z2 z _A-"Eb7"A FG F | "F"!^!c2 z =A "Gm7"!^!B2 z G | "Am7"!^!c2 !^!c2 "D7"z AB c | $
 "Gm7"AG FE F2 z c | "Gm7"B2 z !^!f-"C7"f ce .f | "F"z2 z c "D7b9"c2 z A | "Gm7"BA FD "C7"A !>!A3 |]
@@ -9147,7 +10054,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=70
+%%id autumn-in-new-york
+%%tags needs-repair
 K:F
+I:linebreak $
 "Gm7""^(Ballade)""^Swing"AG- (3GFD "Am7"C4 | "Bb6"z D- (3DFB "C7"d d2 c | "F"d4 "Gm7"A4 | "Am7""D7b9"z8 | $
 "Gm7"AG- (3GFD "Am7"C4 | "Bb6"z D- (3DFB "C7"d d2 c | "Am7b5"d4 A4 | "D7"z8 | $
 "Gm7"c c2 A G3 F | "Bbm7"_A A2 F "Eb7"_E3 _D | "Ab"(3_E2=B,2C2 E4- | E4 "Dm7b5"F4 | $
@@ -9164,7 +10074,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id autumn-leaves-2
 K:Bb
+I:linebreak $
 "^(Med.""^Swing)"G2 A2 B2 |: "Cm7""^A"e8- | "F7"e2 F2 G2 A2 | "Bb""Bm7"d4 "E7"d4- | $
 "Eb""Bbm7"d2 E2 "Eb7"F2 G2 | "Am7b5"c8- |1 "D7"c2 D2 =E2 ^F2 | "Gm"B8 | $
 z2 G2 A2 B2 :|2 "D7"c2 A2 c2 B2 || "Gm"G8- | G2 z2 ^F2 G2 || $
@@ -9180,7 +10092,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=350
+%%id avalon
 K:Bb
+I:linebreak $
 "^(Up)"F4 || "Cm7"c4 d4 | e4 f4 | "F7"e2 d2 c4- | $
 c4 F4 | "Bb"B8- | B4 c4 | "Bb"d8- | $
 d4 F4 | "F7"A4 B4 | c4 B4 | "Cm7"A2 G2 F4- | $
@@ -9198,7 +10112,9 @@ N:Source: Ultime Jazz Real Book
 M:6/4
 L:1/8
 Q:1/4=172
+%%id avanc
 K:C
+I:linebreak $
 "C#11/E""^(Med.bossa)""^Straight"^f8- f2 ef- | "Bm9/E"f4- f2 {/d}e d2 c2 B- | "C/E"B8- B2 AB- | "E9sus4"B4- B2 z A "E7#9#5"E3 G | $
 "C#11/E"^f8- f2 ef- | "Bm9/E"f4- f2 {/d}e d2 c2 B- | "C/E"B8- B2 AB- | "C/D"B4- B C2 "D7b9#5"_E2 E2 D- |: $
 "Eb/G"D8- D2 CD- | "F#other"D8 D _D2 C- | "Fm7"C8- C2 _B,C- | "Fm7/Bb""Bb13#11"C8 C2 DE- | $
@@ -9219,8 +10135,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=78
+%%id baby-it-s-cold-outside
 K:Eb
-"^(Medium Slow\n""^Swing)"B, |: "Eb""Eb6"GF EB- "Ebmaj7"B4- | "Eb6"B4 "Edim7""Cm7"z3 B, | "Fm7"AG FB- "Bb7"B4- | $
+I:linebreak $
+"^(Medium Slow""^Swing)"B, |: "Eb""Eb6"GF EB- "Ebmaj7"B4- | "Eb6"B4 "Edim7""Cm7"z3 B, | "Fm7"AG FB- "Bb7"B4- | $
 "Fm7"B4 "Bb7"z2 z B, | "Eb""Eb6"GF EB- "Ebmaj7"B4- | "Eb6"B2 B2 "Cm7""Cm7"G2 E2 | "Bbm7"F8- | $
 "Eb7"F4 z2 z E | "Ab"cE E2 "Ab6"E2 E2 | "Ab"E "Ab6"E3 z2 z E |1 "Abm7"_cE EE "Abm6"EE E2 | $
 "Abm7""Db9"E6 z E | "Eb6"cE E2 E2 E2 | "Cm7"E E3 z2 z E | "F7"cF FF FF F2 | $
@@ -9244,7 +10162,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id bag-s-groove
+%%tags needs-repair
 K:Bb
+I:linebreak $
 "^Swing""^(Med. Up Blues)".F z | "F7"_Ac GB Ac GB FA | GB F_A GB FA EF FA EF FA EF CE | "F7"EF CE z4 | $
 z4 z2 .F z | "Bb7"_Ac GB Ac GB FA | GB F_A GB FA EF FA EF FA EF CE | "F7"EF CE z4 | $
 z4 z2 .F z | "Gm7"_Ac GB Ac GB FA | "C7"GB F_A GB FA EF FA EF FA EF CE | "F7"EF CE z4 | $
@@ -9260,7 +10181,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id ballin-the-jack
 K:C
+I:linebreak $
 "G""^A""^(Moderate""^Swing)"G2 G2 G2 G2 | "A7"z2 GE "D7"^FG A2 | "Eb7"_B2 B2 B2 B2 | "C7"z2 _BG "F#dim7"AB "F7"c2 | $
 "Gb7"_d2 d2 d2 d2 | z2 _Bc _dc B2 | "Eb7"_BA GA BA Bc | "D"d4 "D7"D4 || $
 "G""^B"G2 G2 G2 G2 | "A7"z GG E"D7"^F G A2 | "Eb7"_B2 B2 B2 B2 | "C7"z _BB G"F#dim7"A B "F7"c2 | $
@@ -9277,7 +10200,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id ba-lue-bolivar-ba-lues-are
 K:Bb
+I:linebreak $
 "^(Moderate""^Swing)"B, |: "Bb"{/^C}DF G2 "Bb7"_A2 FB, | "Eb7"{/^F}GB c_d- "Eb7#11"d2 z B, | "Bb7"{/^C}DF G2 _A2 F_A,- | $
 A,4 "Bb7#11"z3 E | "Eb7"{/^F}GB c2 _d2 BE | "Ab7"{/=B}ce f_g- g2 z E | "Eb7"{/^F}GB c2 _d2 B_D- | $
 D4 "G7"z3 B, | "C"EG B2 _dB, EG | "F7"B2 _dB, DF B2 | "Bb7#11"=e6 B2- | $
@@ -9290,7 +10215,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id barbados
 K:F
+I:linebreak $
 "^(Mod. Bop)""^Swing"z EF GA GF E | z EF GA GF E | z EF GA GF E | z EF GA GF E |: $
 "F"A2 z c A3 B | "Gm"(3c2A2B2 "C7"(3_d2a3g | "F7"eg fc Bd cc | "Cm7"z A/B/c d"F7"_e fd A | $
 "Bb7"cF G_A- A3 F | GF B_A cB _ec- | "F"c2 z c c3 z | z c2 AB Ac B | $
@@ -9303,7 +10230,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=116
+%%id basin-street-blues
 K:Bb
+I:linebreak $
 "^(Med. Slow Dixieland)""^Swing"FF |: "Bb""^A"DD "Cm7"E2 "C#dim7"=E "Bb/D"F3 | "Bb"DD "Cm7"E2 "Dbdim"=E "Bb/D"F3 | "Bb/D"BB "Dbm7"_AG "Cm7"F "F7"G3 | $
 "Bb/D"BB "Dbm7"_AG "Cm7"F "F7"G3 | F "Bb"B2 F "Bb7/Ab"B2 FF | "Eb6/G"B2 B"Ebm6/Gb"c- c4 | "Bb/F"B2 "^break--------------------------------------------------"_AG FG (3DE=E |1 $
 FE DB,- B,2 "F7"F2 :|2 "^-----------------------------"FE DB,- B,4 |: "Bb"D D2 D- D4 | "D7"D D2 D- D2 z D | $
@@ -9319,7 +10248,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id be-bop
 K:Ab
+I:linebreak $
 "^(Bop)""^Swing"(3FAc || "Fm"f2 z c "C7"=e2 z c | "Fm"e^c "Bb7"=d2 z2 _d=B | "Fm"cA FC "C7"B3 G | $
 "Fm"AF z2 z2 z C | FA GF =EG Bd | cB AF GB d=e | fc AF =EG Bd | $
 cA F2 "C7b5"_G3 =E | F2 z2 z4 | z4 z2 z C |: "Fm"FA z F"Edim7"G B z G | $
@@ -9338,7 +10269,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id beautiful-love-2
 K:F
+I:linebreak $
 "^(Med.""^Swing)"z D3 E2 F2 | "Em7b5"A6 G2 | "A7#5"F3 E D2 EF- | "Dm"F8 | $
 "D7"z F3 G2 A2 | "Gm7"c6 B2 | "C7"A3 G F2 GA- | "F"A8 | $
 "Em7b5"z A3 "A7"=B2 ^c2 | "Dm"e2 d4 A2 | "Gm7"c2 B4 D2 | "Bb7""E7"E8 | $
@@ -9353,7 +10286,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id bemsha-swing-2
 K:C
+I:linebreak $
 "^(Med.""^Swing)".G2 | "C7"c2 z2 "Am7"z2 z G | "Ab"z c_B _A"Db7"G G .F2 | "C7"=EE .=B,2 "Eb7"!tenuto!C2 z2 | $
 "D7"z4 "Db7"z2 .G2 | "C"c2 z2 "Am7"z2 z G | "Ab"z c_B _A"Db7"G G .F2 | "C7"=EE .=B,2 "Ab7"!tenuto!C2 z2 | $
 "Db7"z4 "Gb7"z2 .c2 | "F"f2 z2 "Dm7"z2 z c | "Db"z f_e _d"Ab7"c c ._B2 | "F"AA .E2 "Ab7"!tenuto!F2 z2 | $
@@ -9367,7 +10302,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id bernie-s-tune
 K:F
+I:linebreak $
 |: "Dm""^A""^(Medium""^Swing)"z A z ^G .A2 z A | z ^G .A2 A,D FA | "Bb9"_A7 E- | E4 z4 | $
 "Em7b5"z G z ^F .G2 z G | "A7"z ^F .G2 A,^C EG | "Dm"=F7 D- |1 "Em7b5"D4 "A7"z4 :|2 $
 {D-}D4 x4 || "^B""Bb6".B,2 z2 "Gm7"GF z D | "Cm7"C3 D- "F7"D4 | "Bb6".B,2 .B,2 "Gm7"GF z D | $
@@ -9383,7 +10320,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=184
+%%id bessie-s-blues
 K:Eb
+I:linebreak $
 |: "Eb7""^(Med.""^Swing)"g2 e_d z z2 c'- | "Ab7"c'2 ae _g2 z B | "Eb7"ge g2 g2 gg | "Eb7"z ed _d- d4 | $
 "Ab7"z c'2 ec' b z c'- | c'3 b z _g z B | "Eb7"ge .g2 g2 gg | "Db7"z ed _d "C7"z2 gf- |1 $
 "Bb7"f2 dc Bc df | "Ab7"ec AF cA ee- | "Eb7"e3 fe c z2 | "Eb7"z3 B"Bb7"f ga b :|2 $
@@ -9397,7 +10336,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=90
+%%id bewitched
 K:C
+I:linebreak $
 "^(Ballade)""^Swing"G2 |: "C"EB "C#other"c4 E2 | "Dm7"FB "D#other"c4 F2 | "C/E"GB c2 "E7"^GB c2 | $
 "F"AB "F#other"c4 B2 | "C/G"c2 z2 "D7"BA G^F | "G7"G2 D4 E2 |1 "Dm7"F8- | $
 "G7"F6 "C7"G2 :|2 "F"A8- || "Em7""A7"A6 z2 || "Dm7"BA "G7"F4 BA | $
@@ -9413,7 +10354,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id billie-s-bounce
 K:C
+I:linebreak $
 "^(Blues)""^Swing"C |: "F7"B,C F^G AF DF- | "Bb7"FD F z "Bother"z F2 D | "F7"F z2 F-F DF D | $
 "Cm7"_A=A (3F/G/F/D "F7"FG FF | "Bb7"z2 z A_B F z _A- | "Bother"A _B3 _ec fe | "F7""F7/C"z f c2 z2 z e- | $
 "Am7"e2 GE "D7"^F_e c^c | "Gm"d2 z g(3^f/g/f/ d_B F | "C7"f2 z fe ed d | "F7"c2 z F-"D7"F DF z | $
@@ -9429,7 +10372,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id bird-feather
 K:Bb
+I:linebreak $
 |: "Bb7""^(Bebop)""^Swing"c2 z B-B G A2 | "Cm7"z GA c"F7"A GA G | "Bb7"F2 z de d/c/B c- | c _G2 B d3 F | $
 "Eb7"E2 z DF E (3GBc | ^Ff eF d3 A | "Bb"c2 z B-B G2 F | "G7"A e3 d2 z ^F/G/ | $
 "Cm7"c2 c2- c B2 G | "F7"EG d=B c^F d=F- | "Bb"FG/A/ B=E- E G2 A |1 "Cm7"BG EC "F7"_AF Ac :|2 $
@@ -9442,8 +10387,11 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id birdland
+%%tags needs-repair
 K:G
-"^(Med.)""^Straight\n"x |: "^(3x)"x8 | x8 | x8 |1 $
+I:linebreak $
+"^(Med.)""^Straight"x |: "^(3x)"x8 | x8 | x8 |1 $
 x6 x z :|2 x6 x _b- |: "^(4x)"ba _ba g2 eg- | g2 e2 g2 a_b- | $
 b2 a2 g2 ed | z g- g4 z _b- :| "Eb"b2 "F"aa z2 z "F"a- | a2 "Eb"gg z2 z "F"a- | $
 aa "Dm"=ff z2 z "F"a- | a2 "Eb"gg z2 z "F"a- | a2 "Em"gg z2 z "Gm"_b- | b2 "F"a2 z4 | $
@@ -9492,7 +10440,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id birk-s-works-2
+%%tags needs-repair
 K:Ab
+I:linebreak $
 "^Swing)""^(March"FA B |: "Fm"=Bc (3B/c/B/_B AF AB | "Gm7b5"B2 Ac "C7#5"z FA B | "Fm"=Bc (3B/c/B/_B AF AB | $
 "Cm7b5"z4 "F7#9"z FA B | "Bbm7"B=B (3B/c/B/_B AF AB | B2 A_c z FA B | "Fm"=Bc (3B/c/B/_B AF AB | $
 z4 z FA B | "Abm7"z B3 "Db9"z FA B | "Gm7b5"z B3 "C7#5"(3A/B/A/F EF- | "Fm"F6 EF | $
@@ -9505,7 +10456,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=71
+%%id birth-of-the-blues
 K:C
+I:linebreak $
 "^(Med. Slow""^Swing)"G2 _G2 F2 |: "C"E4 A "C#other"G2 F- | "Dm7"F4 B "D#other"A2 G- | "Em7"G4 c "E7#5"B2 A- | $
 "F6"A4 d "F#other"c2 B- | "G7""F6"B4 "Em7""Ebm7"B4 | "Dm7"z2 B "G7"B2 c d2 |1 "C6""Am7"c8- | $
 "Dm7"c2 !tenuto!G2 "Db7"!tenuto!_G2 !tenuto!F2 :|2 "C6""Db"c8- || "C6"c2 z2 "F7"Bc d^d | "E7"e4 "Bm7b5"dB dB- | $
@@ -9521,7 +10474,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id black-and-tan-fantasy
 K:Db
+I:linebreak $
 "^(Slow Blues)""^Swing"F2 | "Bbm6"B8 | F2 z2 z2 F2 | d/c/d- d6 | $
 B2 z2 z4 | "Ebm6"B4 B3 =A | B4 e4 | "Bbm6"d/c/d- d6 | $
 B2 z2 z2 d2 | "F7b9"c6 =A2 | "F7"F4 "Gb7"d2 "F7"c2 | "Bbm6"B4 "Ebm6"B3 B | $
@@ -9536,7 +10491,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=69
+%%id black-coffe
 K:Db
+I:linebreak $
 "^(Slow Bluesy Ballad)""^Swing"A |: "Db7#9"dd dA "D7#9"_c A3 | "Db7#9"dd dA "D7#9"_c3 A | "Db7#9"dd dA "D7#9"_cc cA | $
 "Db7#9"dd dA "G13"_c2 d2 | "Gb7"_fB- B6 | "Gb7"(3z2a2g2 (3_f2d2B2 | "Db7#9""D7#9"A8- | $
 "Db7#9""Bb7#9"A6 z A | "Ebm7"ef ga {/=e}f d3 |1 "Ab9sus4"z2 B_f e2 dd- | "Db7""D7"d8- | $
@@ -9554,7 +10511,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=92
+%%id black-narcissus
 K:C
+I:linebreak $
 |: "Abm9""^(Med. Jazz Walz)""^Swing"_B6 | "Bbm7/Ab"_B6 | "Abm9""_Bass simile"_B6 | "Bbm7/Ab"_B6 | $
 "Abm9"_B3 _e3 | "Bbm7/Ab"_d3 _B3 | "Abm9"_A3 _G3 | "Cbmaj9#11"_B3 !~(!_D3 | $
 "Fm9"!~)!^G6 | "G#m7/F#"^G6 | "F#m9"^G6 | "G#m7/F#"^G6 | $
@@ -9575,8 +10534,11 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id black-nile
+%%tags needs-repair
 K:F
-"Fm9""Cm7""^Intro""^(Medium-Up\n""^Swing)"z g3 c4 | "Gb"f3 B- B4 | "Ebm7"_d2 dc d _e2 "Fm7"c- | c B2 "Dm7""B"A-A F3 | $
+I:linebreak $
+"Fm9""Cm7""^Intro""^(Medium-Up""^Swing)"z g3 c4 | "Gb"f3 B- B4 | "Ebm7"_d2 dc d _e2 "Fm7"c- | c B2 "Dm7""B"A-A F3 | $
 "Bb13"z g3 c4 | "Eb9"f3 B- B4 | "Em7b59""Eb7"_GB GB FA GB Fc | "A7#9#5"Fc |: $
 "Dm6""^A"A8- | "Eb9"A2 BA B c3 | "Dm6"A8- | "Cm7"A2 BA "F7b9#5"B _d3 | $
 "Bb"A3 D- D3 A/B/ |1 "A7#5""Em7b5"A2 G2 "A7#5"F2 DF- | "Dm6"F8- | "Eb9""A7#5"F4- F G3 :|2 $
@@ -9593,7 +10555,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id black-orpheus-2
 K:C
+I:linebreak $
 "^(Bossa)""^Straight"E2 || "Am"c6 BA | "Bm7b5""E7b9"A6 ^GB | "Am"E8- | $
 "Bm7b5""E7b9"E6 E2 | "Am"c6 BA | "Dm7""G7"A6 GB | "C"E8- | $
 "C#other"E4 z EF G | "Dm7"A3 D D4- | "G7"D4 z DE F | "C"G3 C C4- | $
@@ -9612,7 +10576,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id blame-it-on-my-youth
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Ebmaj7""^A""^(Med. Ballade)""^Swing"G4 "Fm7"AB (3GAB- | "Gm7"B2 B,2 "Cm7"C2 E2 | "Fm7"F4 "Edim7"GA (3FGA- | "Fm7""Bb7"A8 | $
 "Fm"A4 "Edim7"Bc (3ABc- | "Fm7"c2 C2 "Bb7"D2 F2 | "Gm7"B4 "Fm7"AB "Bb7"(3GAB- | "Eb""Eb7sus4""Eb7"B8 | $
 "Ab"c4- "Bb7"cC DF | "Cm"BB B6 | "A"A2 c2 "C7"B2 A2 | "E"G8 | $
@@ -9629,7 +10596,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=114
+%%id blessed-relief
 K:F
+I:linebreak $
 |: "Bb#11""^(Jazz Waltz)""^Straight"B,,2- B,,F, B,F, | CF, C2 z z/ F,/ | B,,2- B,,F, B,F, | C6 [K:treble]"Fmaj7""^A"cA A/ z G/G/ z A/ | $
 "Gm7"E2 D4 | "Am7"A,C C/ z A,/C/ z D/ | "Eb"F2 D4 "Bb""^B"(3FEF- F4 | "C7/Bb"(3GFG- G4 | $
 "Gm7"A3 (3B/A/G/A B |1 "C7"c6 :|2 "C7"c3 F/G/A/B/ G/A/ |: "Bb""^C"D2- D2 DD | $
@@ -9650,7 +10619,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id bloomdido
 K:Bb
+I:linebreak $
 |: "Bb""^(Fast Bebop)""^Swing"B,C B,G, z2 z G, | "Bb7"D2 FC z F, z D | B,C B,F, ED B,_A, | z G z FC _A,^F, G, | $
 "Eb7"FE B,G, B,2 z !slide!_D- | D2 B,_G, CB, G,F,- | "Bb7"F, z2 B, A,2 z C | "Dbm7"_G_F (3_C_A,E- E z2 _D | $
 "Cm7"CG, z A,C B,A, G, | "F7"^F,B, CD EB, DE | "Bb7"(3D/E/D/B, EB, DE (3D/E/D/B, | "Cm7"E2 "F7"z4 z2 :|
@@ -9662,7 +10633,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id blue-bossa
 K:Eb
+I:linebreak $
 "^(Medium-Up Bossa)""^Straight".G2 || "Cm6"!slide!g3 fe d2 c- | c6 B2 | "Fm9"A4 g3 f- | $
 f8 | "Dm7b5"f3 ed c2 B- | "G7#5#9"B6 A2 | "Cm6"G4 f3 e- | $
 e8 | "Ebm9"e3 _dc B2 A- | "Ab13"A6 _G2 | "Db"_G2 F B2 F A2- | $
@@ -9676,7 +10649,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=132
+%%id blue-daniel
 K:D
+I:linebreak $
 "^(Medium Jazz Waltz)""^Swing Shuffle"(DE |: "D6"F.D) z2 (DE | "C9"F.E) z2 (DE | "Bm7"F) z/ (B/.F) z/ (E/.D)( E | $
 "E13"F.E) z2 z2 | "Bm9".C/.C/ z/ (B,/ !tenuto!C2) .D/.D/ z | "E13#11"E/E/ z/ (F/.B) z/ (F/ (3ED)z | "Bm9"(E4- ED/E/ | $
 "E13#11"CB,- B,2) z (A, | "Gm9"_B,A AA) z (G | "C13"AG- G2) (3z(DE) | "D"(3(FGA) (3(FGA) (3(FGA) | $
@@ -9690,8 +10665,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id blue-in-green
 K:C
-|: "Bb#11""^(Ballade)\n""^Straight"e6 d2 | "A7b13"c6 _B2 | "Dm9""Db7"A6 G2 | "Cm9"F2 "F7b9"d6 | $
+I:linebreak $
+|: "Bb#11""^(Ballade)""^Straight"e6 d2 | "A7b13"c6 _B2 | "Dm9""Db7"A6 G2 | "Cm9"F2 "F7b9"d6 | $
 "Bb#11"E3 D^C DF A | "A7b13"c6 A2 | "Dm69"G6 "Cm11"F2 | "E7#9"c6 ^G2 | $
 "Am9"B6 A2 | "Dm9"f6 ^c2 :| "Bb#11"e6 d2 | "A7#9"c6 _B2 | $
 "Dm69"A8 |]
@@ -9703,7 +10680,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=76
+%%id blue-monk
 K:Bb
+I:linebreak $
 "Bb7""^(Cool Blues)""^Swing"DE =EF- F4 | "Eb7"G^G AB- B4 | "Bb7"FG F=E "F7"_EF, ^CD- | "Bb7"D _D2 C- C4 | $
 "Eb7"G_A =AB- B4 | "Eother"B=B c_d- d4 | "Bb7"FG F=E "F7"_EF, ^CD- | "Bb7"D6 (3FFF | $
 "F7"F F,3- F,4 | FG F=E _EF, ^CD- | "Bb7"D2 FG F=E _EF, | ^C D3- "F7"D4 |]
@@ -9715,7 +10694,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=80
+%%id blue-moon
 K:Eb
+I:linebreak $
 "^(Medium or ballade)""^Swing"B2 || "Eb""^A""Cm7"B8 | "Fm7"z AB c"Bb7"B BA B- | "Eb""Cm7"B8 | $
 "Fm7"z FG A"Bb7"G GF G- | "Eb""Db9#11""Cm7""C7#9"G8 | "Fm7""B9"z EF G"Bb9sus4""Bb9#9"E EE E | "Eb6""A7b5""Cm7""Abm7"E8- | $
 "Fm7""Gb7""Bb7""E"E6 B2 | "Eb""Cm7"B8 | "Fm7"z AB c"Bb7"B BA B- | "Eb""Cm7"B8 | $
@@ -9733,7 +10714,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id blue-room
 K:F
+I:linebreak $
 |: "F6""^(Med.""^Swing)"C2 "Dm7"F4 D2 | "Gm7"C2 "C7"G4 D2 | "F"C2 "Dm7"A4 D2 | "Gm7"C2 "C7"B4 D2 | $
 "F"C2 c2 c2 "F7"c2 | "Bb"cd "Bbm6"B4 G2 |1 "F/A"F2 F2 "Abdim"FG A2 | "Gm7""C7"C6 z2 :|2 $
 "F"F2 F2 "Gm7"FG "C7"AG || "F"F6 z2 || "C7"E2 F2 G2 A2 | B2 c2 d2 e2 | $
@@ -9749,7 +10732,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id blue-trane
 K:Eb
+I:linebreak $
 "^(Slow""^Swing)"x2 x G"Fm7"B d"Bb7"B c- |: "Cm"c8 | z2 z G"Fm7"B d"Bb7"B c- | "Cm"c8 | $
 z2 z c"Bbm7"e g"Eb7"e f- | "Fm"f8 | z2 z G"Fm7"B d"Bb7"B c- | "Cm"c8 | $
 "Am7"z2 z G"D7"c ec B- | "Gm"B8 | "Fm7"z2 z G"Bb7"B dB c- |1 "Cm"c8 | $
@@ -9762,7 +10747,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id blueberry-hill
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Eb7""^(Med.""^Swing)"E2 G2 B2 |: "Ab"e8- | e2 c2 (3A2E2c2 | "Eb"B8- | $
 B2 G2 (3E2B,2A2 | "Bb7"F8- | F2 F2 E2 F2 | "Eb""Eb"G8- | $
 "Eb6"G2 E2 "Eb7"G2 B2 | "Ab"e8- | e2 c2 (3A2E2c2 | "Eb"B8- | $
@@ -9780,7 +10768,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id blues-for-alice
 K:F
+I:linebreak $
 "F""^(Bebop)""^Swing"f2 cA e2 cA | "Em7b5"de =Bd "A7b9"^c_B GA- | "Dm7"A2 FD "G7"GA FE | "Cm7"(3_EGB d_d "F7"z F (3FGF | $
 "Bb7"c2 BF _A B,2 G | "Bbm7"_e_d B=B "Eb7"cF GA- | "Am7"A2 EC "D7"D2 z _d- | "Abm7"d2 _c_E "Db7"B2 z _A | $
 "Gm7"(3G2f2f2 fd BD | "C7"AG cB _e2 z c- | "F"c2 AE G2 z d- | "Gm7"d2 BD "C7"A2 z2 |]
@@ -9792,7 +10782,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=144
+%%id bluesette
 K:Bb
+I:linebreak $
 "Bb""^(Jazz Walt)""^Swing"F2 G2 A2 | B2 c2 d2 | "Am7b5"e4 G2 | "D7"^F6 | $
 "Gm7"d4 F2 | "C7"=E6 | "Fm7"c4 E2 | "Bb7"D6 | $
 "Eb"B4 D2 | E3 F_G _A | "Ebm7"B4 _g2 | "Ab7"f4 e2 | $
@@ -9807,7 +10799,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id body-and-soul
 K:Db
+I:linebreak $
 |: "Ebm7""^(Ballade)""^Swing"z EF E "Bb7"F2 E2 | "Ebm7"B2 "Ab7"B6 | "Db"z AB A "Gb9"B2 A2 | "Fm7"e2 d2 "Edim7"c2 B2 | $
 "Ebm7"z2 d2 B G2 B, | "Cm7b5"F4 "F7b9"E4 | "Bbm7"z DE "Ebm7"F A2 "Ab7"(3AB=E |1 "Db6"D4 "Fm7b5""Bb7"z4 :|2 $
 "Db6"D4 "Em7""A7"z4 || [K:D]"D"z DE F"Em7"A A2 A | "F#m7"^d d2 F"Gm6"A A2 G | "F#m7"F F2 "Bm7"D "Em7"E2 "A7"CA,- | $
@@ -9823,7 +10817,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=184
+%%id bohemia-after-dark
 K:C
+I:linebreak $
 |: "Gm7""^A""^(Med.""^Swing)"z ^F,G, A,_B, DG _B | "Am7b5"d "D7b9"c3- c4 | "Gm7"z ^F,G, A,_B, DG _B | "Am7b5"_dc _BG "D7b9"cB G2 | $
 "Gm7"z ^F,G, A,_B, DG _B | "Am7b5"d "D7b9"c3- c3 G | "Gm7"^cd g_d =c_B GB |1 "D7"c2 _BG "Gm7"z4 :|2 $
 "Gm7"G2 z2 z2 G_B || "C7""^B"c2 _BG cB G2- | G6 d2 | _B2 c2 dG F2- | $
@@ -9839,7 +10835,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id bolivia
 K:C
+I:linebreak $
 |: "G7""^(Fast)""^Swing"G,2 E2 F2 D,G,- | G,2 E2 F2 D,2 | G,2 E2 F2 D,G,- |1 G,2 E2 F2 D,2 :| $
 G,2 E2 F2 "E".^d2 || "Eb"d4 "Bb91113sus4"_B3 "A91113sus4"^F- | "A13"F6 .A2 | "D"^c2 ^FA- A4- | $
 A6 z D | "G".A2 ^FF z .D2 A | "F#7#5#9"z2 ^F2 F2 D2 | "Bm7"A2 ^FF z D2 A- | $
@@ -9854,7 +10852,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id boplicity
+%%tags needs-repair
 K:F
+I:linebreak $
 |: "Gm7""^(Bop)""^Swing"D F2 c- "Am7"(3c2A2F2 | "Bb"(3G2F2G2 "C7"A2 z C- | "F"C2 AE- EF Ac | "Cm7"dB/G/ _E^c "F7#5#9"z2 z A | $
 "Bb"cA (3BcB AF DC | "Gm7"FD FA "F/A"FD FA | "Bb"(3F2A2c2 "C7sus4"f c2 =B- |1 "F#11"B8 :|2 $
 "F#11"=B6 z _B || "Cm7"dB/G/ _E^c "F7#5#9"z2 z =c | "Cm7"d2 (3BG_E "F7#5#9"^c2 z B | "Bb"c c2 c-c BA G | $
@@ -9870,7 +10871,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=85
+%%id born-to-the-blue
 K:Eb
+I:linebreak $
 |: "^(Ballade)""^Swing"z "C7"c=A G"Db7"_A _dB A | "C7"=A c3- "Gb7"c4 | "F7"z GF E"Eb7"G cG F | "Abmaj7"E6 "G7"z D | $
 "Cm7"EE DE "Db7"G F2 F | "Cm7"(3EFE DE "F7"G F3 |1 "Fm7"z CD C"Ab7#11"D =B,C G- | "Dm7""G7"G8 :|2 $
 "Fm7"z CD C"Ab7"E C"G7b9"E C- || "Cm69"C8 || "Abm7"z BB A "Db7"B3 A | "Abm7"B_d BA "Db7"B d3 | $
@@ -9886,8 +10889,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id bossa-dorado
 K:F
-"Dm7""^(Bossa Manouche)""^Straight\n"A2 f2 Af AB- | "Dmb6"B f2 B2 fB f | "Dm6"=B2 f2 Bf B_B- | "Dmb6"B f2 B2 fB f | $
+I:linebreak $
+"Dm7""^(Bossa Manouche)""^Straight"A2 f2 Af AB- | "Dmb6"B f2 B2 fB f | "Dm6"=B2 f2 Bf B_B- | "Dmb6"B f2 B2 fB f | $
 "Dm7"A2 f2 Af AB- | "Dmb6"B f2 B2 fB f | "Dm6"=B2 f2 Bf B_B | "Em7b5"z G^G A- "A7"A4 |: $
 "Dm7"Af Af- f4 | z Aa ba fd A | "E7"^Gf Ge- e4 | z ^Gf Gf Gf G |1 $
 "Em7b5"Gf Ge- e4 | z "A7"ef ^fg e^c A | "Dm7"GA GF- F4 | z8 :|2 $
@@ -9904,7 +10909,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id both-sides-of-the-coin
+%%tags needs-repair
 K:F#
+I:linebreak $
 "F#13b9""^(Bright Latin/Rock)""^Straight"dA =G=E "F#9"(3^G=AG F"F/F#"e | z F "G#5/F#"f6 | "F#13b9"dA =G=E "F#9"(3^GAG FF- | F8 | $
 "F#13b9"dA =G=E "F#9"(3^G=AG F"F/F#"e | z F2 "G#5/F#"f- f4 | "F#13b9"dA =G=E "F#9"(3^GAG Ff- | f8 |: $
 "F#13b9""^A"dA =G=E "F#9"(3^G=AG F"F/F#"e | z F "G#5/F#"f6 | "F#13b9"dA =G=E "F#9"(3^GAG FF- | F8 | $
@@ -9920,7 +10928,9 @@ T:Both sides of the coin (2/2)
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id both-sides-of-the-coin-2-2
 K:F#
+I:linebreak $
 "Em9"F3 =G z F z =D | "C9#11"F8 | "Em9"F3 =G z F z =D |1 "Eb7#9"F8 | $
 "G#m7"D4 z D3 | "A#m7"E3 "A91113sus4"F- F3 "G#m7"D- | D8 | "C#9sus4"z4 z CF =A :|2 $
 "G#5"F8 || "G#m7"D4 z D3 | "A#m7"E3 "A91113sus4"F- F3 "G#m7"D- | D8 | $
@@ -9943,7 +10953,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=144
+%%id boy-next-door
 K:Bb
+I:linebreak $
 "^Swing""^(Jazz Waltz)"DE || "Bb"F4 ^c2 | "G7#11"^c4 d2 | "Cm7"E4 =B2 | $
 "F7#11"=B4 c2 | "Bb"D4 A2 | "Gm7"A3 Bc B | "C7sus4"C6- | $
 "C7"C6 | "Cm7"z2 CD EF | "F7"G4 G2 | "Bb"z2 DE FG | $
@@ -9961,8 +10973,11 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id bud-powell
+%%tags needs-repair
 K:F
-"Bm7b5""^(Medium Up\n""^Swing)"z8 | "E7"z8 | "Am7"z8 | "D7"z8 | $
+I:linebreak $
+"Bm7b5""^(Medium Up""^Swing)"z8 | "E7"z8 | "Am7"z8 | "D7"z8 | $
 "Gm7"z8 | "C7"z8 | "C91113sus4"z8 | z4 z2 z C |: $
 "F""^A"AB (3A/B/A/^G AC D=G- | "Bm7b5"G6 "Bb13"z F | "Am7"E2 z =B,(3D/_E/D/ B,C D | "D13b9#11"_E=B- B4 z _e | $
 "Gm7"(3d2D2D2 DE FG- | "Bbm6"G6 "Eb7"z _A | "Dm7"(3A2A,2A,2 A,C DE- | "G13""G#other"E6 z D | $
@@ -9983,7 +10998,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id bud-s-blues
 K:Bb
+I:linebreak $
 "^Swing)""^(Med Up""Bb7"ff =e2 _e2 d2 | f3 ed FA B | z8 | z8 | $
 "Eb7"ff =e2 _e2 _d2 | f3 e_d FA B | "Bb7"z8 | "G9#9"z8 | $
 "Cm7"ff =e2 _e2 d2 | "F7"f3 ed FA B | "Bb7""G7"z8 | "Cm7""F7"z8 |]
@@ -9995,7 +11012,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id but-beautyful
+%%tags needs-repair
 K:G
+I:linebreak $
 "^(Med. Ballade)""^Swing"^CD |: "G"A2 A4 GF | "Bm7b5""E7b9"=F6 ^DE | "Am9"c2 c4 A_A | $
 e | f | ad | e | | ea f | ga | be | "C#m7b5""F#7b9"G6 FG | "G"d2 d4 B_B | "Bm7b5""E7sus4"A6 "E7"^G2 | "A9"BB B6- | $
 B8 |1 ad a | gd g, | ba dB | be af | | aa | ea ac ee e | aB | be af | | "D13"BB B4 "Cother"A2 | "Bm7"d2 B2 "Em7"A3 G | "Am7"c2 A2 "D9sus4"G2 "D7"F2 | $
@@ -10011,7 +11031,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id buzzy
 K:Bb
+I:linebreak $
 "^Swing)""^(Medium"F |: "Bb"dc BA B2 Ac | z B3- B2 z F | dc BA BF G_A- | $
 "Fm7""Bb7"A6 z F | "Eb7"_dc BA B2 Ac | z B3- B2 z F | "Bb7"dc BA BF G_A- | $
 A6 z F | "Cm7"dc BA B2 Ac | "F7"z B3- B2 z F | "Bb"dc BA BF G_A- | $
@@ -10024,7 +11046,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id bye-bye-blackbird
 K:C
+I:linebreak $
 "F""^A""^(Med.""^Swing)"A2 A2 A2 A2 | "Gm7"_B2 A2 "C7"A4 | "F"A2 G2 G4 | "Fmaj7""Gm7"G2 F2 "C9sus4""C7"F4 | $
 "F"F8 | "Am7""Abother""D7b9"G8 | "Gm7"F4 E4- | "C7""D7b9"E8 | $
 "Gm7"_B2 B2 B2 B2 | c2 _B2 "D7#5"B4 | "Gm7"_B2 A2 A4 | "C7"A2 G2 G4 | $
@@ -10041,7 +11065,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id cantaloupe-island
 K:Eb
+I:linebreak $
 "Fm""^(Med. Rock)""^Straight"z A,C B,D CE B,D A,C | z A,C B,D CE B,D A,C | z A,C B,D CE B,D A,C | z A,C B,D CE [K:treble](!tenuto!F.F) |: $
 "Fm"z4 (A.B) !>!B2- | B3 (AB) cE F | "Fm"z8 | z4 z2 (!tenuto!F.F) | $
 "Db7"z4 (A.B) !>!B2- | B3 (AB) c(E F) | z8 | z4 (c.e) (c.e) | $
@@ -10060,7 +11086,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=160
+%%id caravan
 K:Ab
+I:linebreak $
 |: "C7b9""^(Bright Latin)""^Straight"c8- | "Db7"c8- | "C7"c2 d2 c2 G2 | B2 c2 =e2 G2 | $
 "C7b9"B8- | "Db7"B8- | "C7"B2 c2 d2 c2 | d2 c2 =B2 =EG | $
 B8- | B8- | B2 c2 =B2 _B2 | =A2 _A2 G2 =E2 | $
@@ -10087,7 +11115,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id careless-love
 K:F
+I:linebreak $
 "F""^(March Blues)""^Swing"A6 F2 | "C7"E2 C2 B,2 GF- | "F"F8- | "Gm7""C7"F6 G2 | $
 "F"A6 B2 | "F7"c2 c2 "F#other"d c3 | "Gm7"G8- | "C7"G6 G^G | $
 "F"A6 B2 | "F7"c4 "F7#5/A"z ^c3 | "Bb"d4 B2 G2 | "Db7"F4 G2 ^G2 | $
@@ -10100,7 +11130,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id cariba
 K:Ab
+I:linebreak $
 "Fm7""^(Med Latin)""^Straight"C2 C2 z E2 G- | G2 z E G2 E2 | C2 C2 z E2 G- | G2 z E G2 E2 | $
 "Bbm7"D2 D2 z F2 A- | A2 z F A2 F2 | "Fm7"C2 C2 z E2 G- | G2 z E G2 =A2 | $
 "Cm7"z DF DF, E,2 z | "Bbm7"z CE CE, D,2 z | "Fm7"C2 C2 z E2 G- | G2 z E G2 E2 |]
@@ -10112,7 +11144,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id casa-forte
 K:F
+I:linebreak $
 "^(Fast Samba)""^Straight"A, |: "Ebmaj9"B,C z D z _E z F | z G z A z B z G | "Dm69"A3 E- E4- | $
 E4 z2 z A, | "Ebmaj9"B,C z D z _E z F | z G z A z B z G | "Dmaj9"A8- | $
 A4 z2 z A | "C91113sus4"BA z G F2 E2- | E3 D C3 B, | "B91113sus4"^C4 A,4- | $
@@ -10130,7 +11164,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id catch-me
 K:F
+I:linebreak $
 |: "Dm7""^(Fast)""^Straight"z4 z2 DF | "Dm7"!>!A2 GF "G7"GF DC | "Dm7"D3 D z2 DF | "Dm7"!>!A2 GF "G7"GF z2 | $
 "Dm7"z4 z2 DF | "Dm7"!>!A2 GF "G7"GF DC | "Dm7"D3 D z2 DF | "A7#9"!>!A2 cA c"Dm7"!^!d z2 :| $
 "Am7b5"z8 | "D7b9"z8 | "Gm7"z8 | z8 | $
@@ -10145,7 +11181,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id cedar-s-blues
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "Bb7""^(Bebop)""^Swing"(3BcB AB cB AB | d2 fc z d2 F- | F2 GF B2 cB | d2 B_A z DA _d=E Be | $
 "Eb7"EB e | EB e z A,_E _A=B, FB | "Bb7"B,F B | B,F B z2 | $
 "Fother"FA c=E ^G=B FA cE GB | EG B_E =G_B =E^G =B_E =G_B | EG BD ^FA EG BD FA | DF A | $
@@ -10159,7 +11198,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id celia
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "Bb""^(Med. Up""^Swing)"(3B,CB, F,B, F3 E | "B7"z E z E z _D =B,2 | "Bb"(3B,CB, F,B, F3 E |1 "B7"z =B, z2 z E E2 :|2 $
 "B7"z =B,2 z2 =Bc _B |: "Bb"AF Bc dc BG | "Cm7b5"c_G z Bd fe d | "Dm7"cB de fd cB | $
 "Ebm7"_g z z _d"Ab7"c Bf e | "Dm7"dA Bc "Dbm7"(3_A=AB =BG- | "Cm7"(3G^GA B^F- "B7"(3F=G^G A=F- |1 "Bb"F2 Bc "Gm7"dc BF | $
@@ -10177,6 +11219,7 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=71
+%%id central-park-west
 K:C
 U:s=!stemless! "C#m7" "^(Med Ballade)" "^Swing" ^D2 "F#7" ^C2 || "B" "Em7" "A7" ^F8- | "D" F4 "Bbm7" _A2 "Eb7" _B2 | "Ab" c2 c2 "Gm7" c2 "C7" c2 | $ "F" A4 "C#m7" ^D2 "F#7" ^C2 | "B" "Em7" "A7" ^F8- | "D" F4 "C#m7" "F#7" ^D3 ^C | "B" ^D4 z2 z/ ^G/ ^F/ D/ | $ "C#m/B" ^C7 B,/ C/ | "B" ^D4 z2 z/ ^A/ ^F/ D/ | "C#m/B" ^C4 "C#m7" ^D2 "F#7" C2 | "B" F3 F "Em7" D2 "A7" ^C2 | $ "D" E4 "Bbm7" _A2 "Eb7" _B2 | "Ab" c2- (3 c E c "Gm7" c E "C7" (3 E c A- | "F" A4 "C#m" ^D2 "F#7" ^F2 | "B" ^A,3 B,/ ^D/ "Em7" ^F2 "A7" D ^C | $ "D" A3 ^F/ A/ "C#m" B,2 "F#7" ^A,2 | "B" ^A,4 z2 (3 ^D A, D | "C#m/B" (3 ^A, ^G,2- G,4- G, ^D | "B" ^A,4 z2 z ^D | $ "C#m/B" ^C4 "C#m" ^D2 "F#7" C2 |: "B" B2 B2 "Em7" B2 "A7" B2 | "D" B2 B2 "Bbm7" B2 "Eb7" B2 | "Ab" B2 B2 "Gm" B2 "C7" B2 | $ "F" B2 B2 "C#m7" B2 "F#7" B2 | "B" B2 B2 "Em7" B2 "A7" B2 | "D" B2 B2 "C#m7" B2 "F#7" B2 | "B" B2 B2 B2 B2 | $ "C#m/B" B2 B2 B2 B2 | "B" B2 B2 B2 B2 | "C#m7/B" B2 B2 B2 B2 | "B" B2 B2 B2 B2 | $ "C#m7/B" B2 B2 "C#m7" B2 "F#7" B2 :|
 
@@ -10187,7 +11230,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=126
+%%id ceora
+%%tags needs-repair
 K:Ab
+I:linebreak $
 |: "Ab""^(Medium Bossa)""^Straight"z E=d e z E z e/d/ | "Bbm7""Eb7b9"d8 | z "Ab"E=B c z E z _B- | "Ebm""Ab13"B8 | $
 "D"z A,G A z A, z A | "Dm9"G6- "G13"GG/A/ | "Ab"E6- EC/E/ | "F7#9#5"!trill(!A3 !trill)!_G(3=B/c/B/ =A_A G | $
 "Bbm9"FA z c z d z e/c/ | "Eb9"B6 B/A/G/F/ |1 "Cm9"GB z =d z e z f/d/ | "F9"c6 c/=d/B/c/ | $
@@ -10203,7 +11249,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=90
+%%id a-certain-smile
 K:F
+I:linebreak $
 "^(Ballade)""^Swing"C2 F2 A2 || "Gm7/C"G8- | "C7"G2 C2 E2 G2 | "F"F8- | $
 "Dm7"F2 C2 F2 c2 | "Gm7"B2 B2 B2 B2 | "C7"B2 AB c2 G2 | "F"A8- | $
 A2 A2 A2 A2 | "Em7"A8- | "A7"A2 A2 =B2 ^c2 | "Dmaj"^c2 "Dm7"d2 A2 F2 | $
@@ -10220,7 +11268,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id chameleon
 K:Bb
+I:linebreak $
 "^(Medium""^Straight)"G,,_A,, =A,, |: B,,_A, z B, z C,_D, =D, | E,B, z _D z G,,_A,, =A,, [K:treble]"Bm7""^4x"!>!B/.B/ z !>!_A/.A/ z !>!B/.B/ z _d2 | "Eb7"!^!B2 z2 z2 B/_A/F/!>!A/- | $
 "Bm7"AB z2 z z z !>!_d- | "Eb7"de z2 z4 [K:treble]"Bbm7"z f !tenuto!e2 .e!>!_d- dd/e/ |1 "Eb7"_d/B/E/_D/- DB,- B,2 B/_A/F/A/- | "Bbm7"AB z2 z2 z _d- | $
 "Eb7"de z2 z4 :| "Eb7"_d/B/E/_D/- DB,- B,4 || z8 | z4 z [K:bass]G,,_A,, =A,, |]
@@ -10232,7 +11282,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id cheek-to-cheek
 K:C
+I:linebreak $
 |: "C""^(Bright""^Swing)"A2 "C#other"G6- | "Dm7"G4 E2 "G7"F2 | "C"A2 "C#other"G6- | "Dm7"G4 "G7"E2 F2 | $
 "C"A2 G2 "Dm7"B2 A2 | "D#other"c2 B2 "Em7"d2 c2 | "Bb7#11"e8- | "A7"e4 "D7"d2 c2 | $
 "G7"B2 d2 "Dm7"c2 A2 | "Em7"G2 B2 "F7"A2 F2 | "Bb7#11"E8- | "A7"E2 z2 F2 G2 | $
@@ -10254,7 +11306,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id chega-de-saudade
 K:F
+I:linebreak $
 "Dm7""^A""^(Med. Bossa)""^Straight"f3 A- A3 d- | "Dm7/C"d4- d f2 e- | "Eb7"e3 =B- B3 d- | d4- d e2 f- | $
 "A7b9#5""Bbm6"f3 B- B3 ^c- | c4- c f2 e- | "Dm"e d2 fe d2 A- | "Em7b5""A7"A8 | $
 "Dm"f3 A- A3 =B- | "Bm7b5"B4- "E7"B d2 c- | "Am"c3 e- e4- | e2 e d2 c2 c- | $
@@ -10280,7 +11334,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=296
+%%id cherokee
 K:Bb
+I:linebreak $
 |: "Bb6""^A""^(Fast""^Swing)"D8 | F4 G4 | "Bb7"B8 | G8 | $
 "Eb"F8 | D4 F4 | "Ab9"D8 | C8 | $
 "Bb6"z4 D4 | "Dm7"F4 "G7"G4 | "C9"d8 | B8 |1 $
@@ -10303,7 +11359,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id cheryl
 K:C
+I:linebreak $
 "^(Fast Blues)""^Swing"z _B,2 D/F/_A G^C =B, |: "C"C G2 A-A EF G | "Dm7"E D2 Gd cA G- | "Gm7"GA _BA G2 z _d | $
 "C7"cA _Bc AG z c/B/ | "Cm7"A z z2 _B_G _EC | "F7"_AF ^FG A,_B, =F^D | "C"E z z F"Dm7"G FE D | $
 "Em7"(3G2A2_B2 "A7"(3A2F2A,2 | "Fm7"_A,D C=A, "Bb7"D3 C | "Dm7"G2 z2 "G7"z2 C2- | "C"C2 D2- D F2 A | $
@@ -10316,7 +11374,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=230
+%%id chicken-feathers
 K:Bb
+I:linebreak $
 |: "Gm""^(Bright""^Swing)"d3 e^c d3 | "Bb7"f3 e- e4 | "Eb"c3 d=B c3 | "Am7b5"e4 "D7"d2 c_B- | $
 "Gm"B8 | "Em7b5"(3B2A2B2 d2 c2 |1 "Am7b5"A8- | "D7"A8 :|2 $
 "Am7b5"A4 ^G2 A2 || "D7"c4 B4 || "Dm7b5"G8- | G4 (3F2G2F2 | $
@@ -10332,7 +11392,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=215
+%%id chick-s-tune
 K:C
+I:linebreak $
 |: "C""^(Latin Fast)""^Straight"gc z c d4 | z GA Bd cB A | "Db"(3_BcB _A_e B4- | B4 z F_A c | $
 "Bbm9""^Swing"z2 _e_a fe c_B | "Eb7#9#5"_ge ^cB- B2 _d_e- | "Ab"e3 c_B _A (3GFG- | G6 z2 || $
 "Bbmaj9/C"c4 AF z G- | "F/C"G3 E z C3 | "Gm/C"D3 "Am/C"E- E4- | E4 z4 | $
@@ -10350,7 +11412,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id chief-crazy-horse
 K:C
+I:linebreak $
 |: "Eb""^(Med.""^Swing)"G8- | G3 F G2 !^!F2 | z4 z2 z !>!!slide!G- | G3 F G2 !^!F2 | $
 "C13"!slide!E8- | E3 D E2 !^!D2 | z4 z2 z !>!!slide!E- | E3 D E2 !^!D2 :| $
 "F/Gb"A3 !>!c- c4- | c6 z2 | B4- BE G!>!A- | A3 !>!c- c2 z2 | $
@@ -10365,7 +11429,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=132
+%%id come-rain-or-come-shine
 K:F
+I:linebreak $
 "F""^A""^(Med.""^Swing)"A2 AA A A2 A | "Em"A2 AA "A7"A A2 A | "Dm"AF FF- F4- | F8 | $
 "G7"A2 AA A A2 A | "C7"c2 AA A A2 A | "F"AF FF- F4- | "Cm7""F7"F8 || $
 "Bbm7""^B"B4 "C7b9"B2 _AB | "Fm"c2 F4 FF | "Bbm7"B4 "Abm7"B2 _AB | "Gm7""C7"c8 | $
@@ -10382,7 +11448,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id come-sunday
 K:Bb
+I:linebreak $
 |: "F7""^A""^(Med. Slow Gospel Ballade)""^Swing"D2 G2 F2 G2 | "Eb9#11"A4 G2 F2 | "F7"D2 F2 G2 "Gb7""D7#5"B2 | "G9"A6 F2 | $
 "Cm9"d2 c2 B2 G2 | "F9"F2 D2 C3 G, | "Bb""Eb6/Bb"B,8- | "Bbother""Bb6"B,8 :| $
 "D7""^B"d2 d2 "Eb7"e2 A2 | "D7"d2 c2 B2 A2 | "Gm"c2 B2 A2 G2 | "C9"D8 | $
@@ -10397,7 +11465,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id comin-home-baby
 K:F
+I:linebreak $
 "^(Med.""^Swing)"GB !^!d |: "Gm"z8 | z GB _dc BG F | !^!G2 z2 z4 | $
 z4 z GB !^!c | "Cm"z8 | z GB _dc BG F | "Gm"!^!G2 z2 z4 | $
 "Cm"z4 z G !^!B2 | "Bb7"d8 | "A7"^c4 "Ab7"=c4 |1 "Gm"B!^!G z2 z4 | $
@@ -10409,7 +11479,9 @@ C:Dizzie Gillespie
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id con-alma
 K:C
+I:linebreak $
 |: "E"^G4 "G#7/D#"G4 | "C#m7"^G4 "B7"G4 | "Bb7"^G3 ^A/B/ A2 G2 | "Eb"G4 "Ebm7"_G2 "Ab7"_B2 | $
 "Db"F4 "F7/C"F4 | "Bbm7"F4 "Ab7"F4 | "G7"F3 G/_A/ G2 F2 | "C"E8 :| $
 "Cm7b5"(3_G2F(3_E _DE- E4- | "F7b9"E4 (3F2_G2_A2 | "F#m7"(3A2^G(3^F EF- F4- | "B7"F4 ^G2 A2 | $
@@ -10422,7 +11494,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=100
+%%id confessin-that-i-love-you
 K:G
+I:linebreak $
 |: "G""^(Ballade)""^Swing"DE FG "D7#5"F2 D2 | "G"F2 "D7#5"F6 | "G"DE FG "D+7"F2 D2 | "Bm7""E7"F8 | $
 "A7"EF GB A2 G2 | "D7sus4"A2 A2 "D7"AG F2 | "G""Bm7"G8 | "Am7"EG EG "D7"B B3 | $
 "G"DE FG "D7#5"F2 D2 | "G"F2 "D7#5"F6 | "G"DE FG F2 D2 | "Bm7""E7"F8 | $
@@ -10440,7 +11514,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=176
+%%id confirmation
 K:F
+I:linebreak $
 "^(Bop)""^Swing"C || "F"A c2 AB A (3EF^F | "Em7b5"Gd BG "A7"A ^C2 G- | "Dm"G F3 z2 z A | $
 "Cm7"GB AG "F9#5"(3z2F2B2 | "Fm7"_cB _AF "Bb7"B A3 | "Am7b5"z cB G"D7"^F AD =B- | "G7"B2 eA- A2 z e/d/ | $
 "C7b9"_d^F GE- E c3 || "F"A2 z F (3B^GA =GA | "Em7b5"F/G/_E z2 "A7"z ^C2 G- | "Dm"G F3 z2 z A | $
@@ -10458,7 +11534,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=152
+%%id coquette
 K:D
+I:linebreak $
 |: "D""^(Med.""^Swing)"d3 B- B4 | dB dB- "Fother"B2 F2 | "Em7"A2 AF- F4 | "A7"z8 | $
 "Em7"A3 F- F4 | "A7"AF AF- F2 A,2 |1 "D""Fother"B,8 | "Em7""A7"z8 :|2 $
 "D"D8 || z8 || "D7"D4 E4 | EF A2 d2 B2 | $
@@ -10474,7 +11552,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=13
+%%id corcovado
 K:C
+I:linebreak $
 "Am""^(Bossa)""^Straight"z A2 B/c/B A2 E/D/ | "Abdim7"E8 | "Gm7"z G2 A/_B/"C7"A G2 c/A/ | "F"G A2 D/C/ "Bb7"D3 C | $
 "Am"D E3- "Am/G"E G2 D/C/ | "D/F#"D C2 B,/C/ "Fdim7"B,3 A, |: "D7/A"z E2 DE D2 E- | E D2 E- E4 | $
 "Abdim"z E2 DE D2 E- | ED E6 | "Gm7"z D2 CD C2 D- | "C7sus4"D C2 F-F E2 E- | $
@@ -10494,7 +11574,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id corner-pocket
 K:Bb
+I:linebreak $
 "^(Medium)""^Swing"G, |: "Cm7""^A"CE CG, "F7"CE CG, | "Cm7"CE CG, "F7"CE C^C | "Dm7"DF DF- "G7"F4 | $
 "Dm7"=EG EG- "G7"G4 | "Cm7"z EC G,"F7"C EC G, | "Cm7"CE CG, "F7"CE _CB, |1 "Bb6"z4 z DE =E | $
 "Dm7"FF, G,_A,- "G7"A,3 G, :|2 z B,B, B, z B,B, G- || G2 FB, z FG _A- || "Fm7""^B"A3 F "Bb7"z2 z _A- | $
@@ -10510,7 +11592,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id cottontail
 K:Ab
+I:linebreak $
 |: "Ab""^(Fast Swing)"z B3 "Fm7"FA c2 | "Bbm7"B3 B "Eb7"z4 | "Cm7"z B2 z "Fm7"B3 c | "Bbm7"BA F2 "Eb7"E4 | $
 "Ab7"z2 =d2- d3 f | "Db"e d2 c-"Ddim"c B2 A- | "Ab"AF ^FG- "Eb7"GE =E=F- |1 "F7"FD =DE- "Bb7"E2 "Eb7"z2 :|2 $
 "Ab7"(F^F) GA- A2 z2 || "C7"z8 | z8 | "F7"z8 | $
@@ -10526,7 +11610,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=66
+%%id count-every-star
 K:G
+I:linebreak $
 "G6""^(Ballade)""^Swing"z B, (3DGE- "Em7"E3 D/B,/ | "Am7"C2 G2 "D7"F4 | "G6"z B, (3DGE- "Em7"E3 D/B,/ | "Am7"C2 B2 "D7"A4 | $
 "G7"z GA BA GE B, | "C"D4 "F7"C4 | "Em7"z2 B,D E2 G2 | "Am7"A4 "D7#5"D4 | $
 "G6"z B, (3DGE- "Em7"E3 D/B,/ | "Am7"C2 G2 "D7"F4 | "G6"z B, (3DGE- "Em7"E3 D/B,/ | "Am7"C2 B2 "D7"A4 | $
@@ -10540,7 +11626,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=187
+%%id cousin-mary
 K:Ab
+I:linebreak $
 "^(Fast Swing)"z2 "Ab7".E2 _G3 E- | E8 | z2 .E2 _G3 E- | E8 | $
 z2 "Db7".E2 _G3 A- | A8 | "Ab7"z2 .E2 _G3 E- | E8 | $
 "D7#11"z A_G A3 GA- | "Db7"A3 _G E2 D2 | "Ab7"z2 .E2 _G3 E- | E8 |]
@@ -10552,7 +11640,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=264
+%%id crazeology
 K:Bb
+I:linebreak $
 |: "Bb""^(Fast Swing)"dc BA cB z2 | "Cm7"AG FE "F7"DF Ac- | "Bb"c2 BF "Bbother"AG z F- | "Cm7"F2 EB, "F7"DC z2 | $
 "Abm7"z _d=B _A"Db7"_B A2 A- | "Gb"A2 _G_D F E2 ^C | "Cm7"DF A=B- "F7"B2 A_B | "Bb"z8 :| $
 "D7"z2 (3^FG^G A=G _GE | D^F Ad z4 | "Dm7"z FA d^c AF D | "G7"cB =Bg z4 | $
@@ -10567,8 +11657,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=72
+%%id cry-me-a-river
 K:Eb
-"Cm""^(Ballade)\n""^Swing"d4- "Ab/C"dc GE | "Cm6"DC- "Cm7"C6 | "Fm7"z CE c "Bb7"B2 B2 | "Eb"G4- "Dm7"GG "G7"^FG | $
+I:linebreak $
+"Cm""^(Ballade)""^Swing"d4- "Ab/C"dc GE | "Cm6"DC- "Cm7"C6 | "Fm7"z CE c "Bb7"B2 B2 | "Eb"G4- "Dm7"GG "G7"^FG | $
 "Gm7"c2- (3c_dc "C7b9"d c3 | "Cm7"z G- (3GFE "F9"F G3 | "B9"z _GF E"Bb7sus4"F EC E |1 "Eb69""G7"E8 :|2 $
 "Eb69""D7#9"E8 || "Gm"z G=A B"E"D =E^F G | "Eb7#11"=AG BA- "D7b9"A3 G | "Gm7"Bc dc- "E"c2 Bc- | $
 "Ab7#9""D7b9"c8 | "Gm7"z G=A B"E"D =E^F G | "Eb7#11"=AG BA- "D7b9"A4 | "G"z =A/G/A GA G=B G | $
@@ -10583,8 +11675,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=71
+%%id crystal-silence
 K:C
-"^(Ballade)""^Straight\n"a2 |: "Am"g6 eB | "Em"d4 B3 c | "F#11"(3d2c2B2 A3 G | $
+I:linebreak $
+"^(Ballade)""^Straight"a2 |: "Am"g6 eB | "Em"d4 B3 c | "F#11"(3d2c2B2 A3 G | $
 "Bm7"E6 E2 | "Bb"E2 D2 (3G2c2e2 | "Am"d4 c3 d |1 "Bm"e2 "C"d2 "D7sus4"c2 "E7b9"BA/G/ | $
 "Am"A8- | "Bb#11"A4 z2 a2 :|2 "Dm"e2 d2 c3 A || "E7#9"d6 cd | $
 "Dm"e2 d2 c3 A | "E7#9"d4 c3 d | "F"(3e2d2c2 B2 G2 | "G7sus4"(3d2c2B2 A3 F | $
@@ -10602,7 +11696,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id c-t-a
 K:Bb
+I:linebreak $
 |: "Bb7""^(Med. Up Swing)""Ab7"z8 | "Gb7""F7"z8 :| "Bb7""Ab7"z8 | "Gb7""F7"z8 | $
 C C2 C z2 z F,- | F,F, "F7#5"B6 |: "Bb7"z B3 "Ab7"_A E2 A | "Gb7"_G_D EF "F7"z3 F | $
 "Bb7"B c3 "Ab7"_A B3 | "Gb7"_G _A3 "F7"F2 z =G/_G/ | "Bb"F2 z G "G7#5"(3_ABA GF | "Cm7"AB GE "F7"DC z F- |1 $
@@ -10620,7 +11716,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id d-natural-blues
+%%tags needs-repair
 K:D
+I:linebreak $
 "^(Slow""^Swing)"A || "D7"dd (3dA=c- c3 D/=F/ | "G7"GG (3GD=F- F2 A=c | "D9#5"d=f- f2 d=c AD | $
 "D7"_AG (3FDF z2 D=F | "G7"GA- A2 AD _AG | =FD- D2 D A2 G | "D7"FD- D2- D=c AG | $
 "F#m7b5"FD- D2- "B9#5"DB, DF | "Em"G2 A2 z2 (3B,D=F | "A7"GG GF (3G/_A/G F (3DA,C | "D7"D3 d- "B9#5"(3d=cA (3GDF- | $
@@ -10633,7 +11732,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id daahood
 K:D
+I:linebreak $
 "^(fast Swing)"z =FD _E_G _Bd =f- |: "Ebm7""Ab7"f8 | "Dbm7"z2 _e_d "Gb7"e_g ed | "Cb"_B_G =G_A z4 | $
 "Fm7"z2 _B"Bb7"_A BA _G_E- | "Eb6"E8 | "Cb7"z _G_E _D-"Bb7"D _B,D =D- | "Ebmaj"D8 |1 $
 z =FD _E_G _Bd =f :|2 z4 z D_E _e- || "Bbm7"e4- e_e ee | "Eb7"z2 z _g2 _e2 _d | $
@@ -10650,7 +11751,9 @@ N:Source: Ultime Jazz Real Book
 M:5/4
 L:1/8
 Q:1/4=92
+%%id dancing-in-the-dark
 K:C
+I:linebreak $
 |: "Bb/Eb""^(Med.""^Straight)"z10 | "D/Eb"z10 | "Eb"z10 | "G7/Eb"z10 "Bb/Eb"D3 D D4 D2 | $
 "D/Eb"D8- D2- | "Gm7/Eb"D6 C2 D2 | "Am7b5"_E6 "Ab7#11"D2 "Gb7#11"C2 | "Fm7"_A3 A "Fmaj/E"A4 A2 | $
 "Ebm7"_A8- A2- | "D7#11b9"A6 "Db7"F2 "C7b9"G2 | "B7#11"_A6 "Bb7b9"G2 F2 | "Eb5"_B3 B "Eb69"B4 B2 | $
@@ -10666,7 +11769,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id dancing-on-the-ceiling
 K:F
+I:linebreak $
 |: "F""^(Med. Swing)"z2 C2 D2 E2 | "F7#5"F2 G2 A4 | "Bb"G2 F2 "Bdim"E2 D2 | "Am7"c2 c2 "Abother"=B4 | $
 "Gm7"_B6 "C7"c2 | "Am7b5""D7b9"A8 | "Gm7"G6 "C7"A2 | "F6"F8 :| $
 "Gm7"z2 G2 G2 G2 | "C7"GG GA F2 G2 | "F"A2 z2 c2 c2 | "Am7b5""D7"c8 | $
@@ -10681,7 +11786,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id darn-that-dream
 K:F
+I:linebreak $
 |: "G6""^(Medium Ballade)""^Swing"D2 G2 "Bbm7"_E3 "Eb7"E | "Am7"=E2 A2 "B7"F3 ^F | "Em7"G2 "Em/D"=B2 "A7/C#"^GA "Cm6"Bc | "Bm7b5"d2 e2 "E7"=B4 | $
 "Am7"=B2 d2 "F7"cB AG | "Bm7"^F2 A2 "Eb7/Bb"E2 _E2 |1 "Am7"D4 "D7"^F4 | "Bm7""E7"D4 "Am7""D7"z4 :|2 $
 "Am7"D4 "D7"=B4 || "G6"G6 "Bb7"z2 | "Eb6"z G2 G "Cm7"F2 _E2 | "Fm7"c2 cB- "Bb7"B3 c | $
@@ -10697,7 +11804,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=132
+%%id dat-dere
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "^(Med.Swing)"C |: "Cm"FG (3CFE- "Eb7"E3 C | "Am7b5"FG (3CFE- "Ab7"(3ECD (3EG=A | "Cm"d2 (3cGE "Ab7"FE (3FEG- | $
 "Dm7b5""G7"G6 z C | "Cm"FG (3CFE- "Eb7"E3 C | "Am7b5"FG (3CFE- "Ab7"EC (3FEF | "Dm7b5"(3EFE G2 "G7#5"(3FED (3B,A,C- |1 $
 "Cm"C6 "G7#5"z C :|2 "Cm"C6 c z || "Cm7"(5g/_g/f/e/c/"G7"f "Cm"e (3zGG (3GGG | "Gm7"(5d/_d/c/B/G/"D7"c "Gm7"B (3zCD (3EG=A | $
@@ -10711,7 +11821,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id day-of-wine-and-roses
 K:F
+I:linebreak $
 "^(Med.Swing)"C2 || "F"A8 | "Eb7#11"z2 G2 A2 c2 | "Am7"d4 c4- | $
 "D7#9"c4 c2 A2 | "Gm"A2 D2 D4- | D4 c2 A2 | "Ebm7#11"A2 _D2 D4- | $
 D4 A2 G2 || "Am7"G2 C2 D2 E2 | "Dm"G2 F2 A2 d2 | "Gm"c6 B2 | $
@@ -10729,7 +11841,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=230
+%%id dear-john
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "B""^(Fast""^Swing)"!>!^A3 "Abm"!>!^F- F3 "E#11"!>!^D- | D3 "C#m"!>!^G,- G,3 "C#11"!>!B,- | B,8- | B,3 "F#11".E z .E z2 | $
 "C#11"!>!B,3 !>!B,- B,3 "F#11"!>!E- | E4 !^!E2 !^!E2 | "C#11"!>!B,3 !>!B,- B,3 "F#11"!>!E- |1 E4 !^!E2 !^!E2 :|2 $
 {E-}E z z2 z A_B _A || "B"^F^G ^AG "D7"=AF DA | "G"GA Bd "Bb7"_B_A z B | "Eb"G_B, CD F_E DE | $
@@ -10746,7 +11861,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id dear-old-stockholm
+%%tags needs-repair
 K:F
+I:linebreak $
 |: "^Intro""^Swing)""^(Med.""Bb#11/A"z2 z F,A, B,E F,A, B,E | F,A, B,E F,A, B,E z F,A, B,E z | z2 z F,A, B,E F,A, B,E | F,A, B,E F,A, B,E z F,A, B,E z [K:treble]"Dm6""^A"z D2 E F2 GA- | $
 A6 z d | "Gm7"e3 d "C7"c2 BA- | "F""F6"A6 z2 | "Em7b5"AG ^FG "A7b9"B2 A=F | $
 "Dm6"z F3- FA FE- | "Bb7b5"E8 | "A7b9"z "^(Sample Fill by Miles Davis)"A,2 B,/C/D/E/ F/G/^G/A/ B/=B/ | [K:bass]"Dm7"z2 z F,A, B,E F,A, B,E | $
@@ -10772,7 +11890,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=260
+%%id dearly-beloved
 K:C
+I:linebreak $
 |: "Dm7/G""^(Fast""^Swing)"G4 D3 E | "G7"F2 G4 A2 | "Dm7/G"G4 D3 G | "G7"F8 | $
 "Dm7/G"G4 D3 E | "G7"F2 G2 A2 c2 | "Dm7/G"B4 G3 B | "G7"A8 |1 $
 "C"G2 A2 c4- | "Am7"c8 | "Dm7"C4 "G7"G4- | "Dm7""G7"G8 | $
@@ -10787,7 +11907,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=116
+%%id deed-i-do
 K:C
+I:linebreak $
 "C""^(Med.""^Swing)"A c3- c4 | "C9"A3 G- G4 | "F6"E D3- D4 | "Fm6"E D3- D4 | $
 "C"E G3- G4 | "D9"C4 "G9"D4 |1 "C""Am7"C8- | "Dm7"C4 "G7"z4 :|2 $
 "C6""F7"C8- || "C6""C9"C8 || "F"z2 A2 B2 c2 | d2 c2 A2 F2 | $
@@ -10803,7 +11925,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=132
+%%id deep-purple
 K:F
+I:linebreak $
 "^(Med.""^Swing)"C2 D2 |: "F"c4 C2 D2 | "F#dim7"_E4 C2 _D2 | "Gm"D2 G2 B2 d2 | $
 "C13"c4 ^G2 A2 | "F"g2 f2 c2 A2 | "Eb7"G2 ^G2 A2 d2 | "D7sus4"D8- | $
 "D7"D4 ^C2 D2 | "Gm"c4 =B2 _B2 | "Bbm"A2 _A2 "Bbm6"G4 | "Am7"G4 _G2 F2 | $
@@ -10821,7 +11945,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id deluge
 K:C
+I:linebreak $
 "^Intro""^(Med.""^Swing)"z4 z "B7b5"(F_B) (e | _e)(B !~(!!fermata!_B2) "Bm7"!~)!!fermata!^c'4 | B(b _b)(_B _a4) || "^A""Ebm7"_g2 z "E#11"_e- e4- | $
 e6 !mp!(^f/^g/^a/b/) | "Ebm7"f3- "E#11"f- f3 c' | z4 z2 z (_e |: "_Solo"!f!"^B""Ebm7"_e'3) "E#11"(_d _d'3) (_B | $
 _b3) (_A _a4) | "Ebm7".!^!_g2 z "E#11"_e- e4- | e7 (_e | "Ebm7"_e'3) "E#11"(_d _d'3) (_B | $
@@ -10836,7 +11962,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id desafinado
 K:C
+I:linebreak $
 |: "F""^A""^(Med. Bossa Nova)""^Straight"z C2 DE F2 E- | E D2 ^C-C D2 F- | "G7b5"F _D2 D- D4- | D8 | $
 "Gm7"z D2 EF G2 F- | "C7b9"F E2 ^D-D E2 c- | "Am7b5"c _E2 E- E4- | "D7b9"E8 || $
 "Gm7"z Dc _BA G2 B- || "A7b9"B A2 ^D-D E2 ^F- | "D7"F A2 ^F-F D2 _E- | "D7b9"E8 | $
@@ -10860,7 +11988,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id detour-ahead
 K:C
+I:linebreak $
 |: "C""^A""^(Med. Ballade)""^Swing"E2 "F#13"G6 | "B7#9#5"B2 G4- GG | "F"Ac "Em7"BG "Am"A/G/ E3 | "D7"(3D2E2D2 "Dm7""G7"E4 | $
 "Gm7"z GG A"C7"_B AG E | "F"C3 C"Bb13"G F3 | "C"CD EA "Am7"E C2 E |1 "Ab13""Dm7""G7"D8 :|2 $
 "F#other"C4 "B7"z2 z B || "Em""^B"(3B2G2A2 B c2 B | "B7b5#5b9#9"AG FG A B2 A | "E"_A4 z E^F A | $
@@ -10876,7 +12006,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id dexterity
 K:Bb
+I:linebreak $
 |: "Bb""^(Bop)""^Swing"z FB dc BA B | "Cm7"cB d^F "F7b9"z A z c | "Bb7"BF z ce d=B G | "Cm7"d2 z A"F7"c Bd c | $
 "Bb"z2 z F "Bb7"z B z ^F | "Eb"GB cd "Ab7"ef/e/ dA- |1 "Dm7"AB/c/ AB/_c/ "Db7"_A2 z G | "Cm7"z cB G"F7"d c z2 :|2 $
 "Cm7"AB/c/ "F7b5#5b9#9"AB/_c/ _A2 z G || "Bb"Bc BB z4 || "Am7"G2 z =E"D7"=B A^F D | "Am7"E=E G/=B/^F- "D7"F2 z D | $
@@ -10892,7 +12024,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=187
+%%id dinah
 K:G
+I:linebreak $
 "G""^(Fast)""^Swing"D4 E4- | E2 DE GA B2 | d B3- B4- | "G/B"B2 GA "Bbdim7"BG AB | $
 "Am7"d B3- B4- | "D7"B2 AB dB A2 | "G"G E3- "Bbdim7"E4 | "Am7"ED DD- "D7"D4 || $
 "G"D4 E4- | E2 DE GA B2 | d4 B4- | "G/B"B2 GA "Bbdim7"BG AB | $
@@ -10909,7 +12043,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id dindi
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: "Eb""^Intro""^(Slow bossa)""^Straight"G3 G (3G2G2G2 | "Db"F3 F/F/ (3A2A2A2 | "Eb"G G2 G (3G2G2G2 | "Db"F8 | $
 "C"(3=E2E2E2 =B4- | "Am9"B2 =A2 G2 F2 | "Dm9"=E6 D2 | "G13"=E6 z2 "Eb""^A"B6 G2 | $
 "Db"F6 GA | "Eb"B2 BB (3B2c2B2 | "Bbm7"_d2 cB "Eb7b9"AG- GF | "Ab"GE- EE E4 | $
@@ -10926,7 +12063,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id do-nothing-til-you-hear-from-me
 K:Bb
+I:linebreak $
 "F7""^Swing""^(Med. ballade)"z ec ^cd fe c |: "Bb""^A""F7"d8 | "Fm7"z ec ^c"Bb7"d fe c | "Eb"d8 | $
 "Ebm7"z ec ^c"Ab9#11"d fe c | "Bb"dB FE- "G7#5"E4 | "C7"z2 ^c2 "F13"dF GB- | "Bb6""Eb6""Eother"B8 |1 $
 "F9sus4"z ec ^c"F7"d fe c :|2 "Bb"z4 "Db7sus4"z BB B || "Gb""^B""Abm7""Db7"_d8 | "Gb"B_d BB- "Abm7"BB "Db7"BB | $
@@ -10943,7 +12082,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=96
+%%id do-you-know-what-it-means
 K:C
+I:linebreak $
 "^(Cool""^Swing)"CD |: "C"EG AB- "G7#5"B3 c | "C"BA GA- "Am7"A3 c | "Em7"BA GA- "Am7"A2 c2 | $
 "D7"E6 z _E | "F6"D^C D=c- "F#other"c3 B | "C/G"d_d cB "A7"_B A2 E |1 "Dm7"G_G Fc- "Ab7"c2 _ED- | $
 "G7"D6 CD :|2 "Dm7"G_G FE- "G7"E2 "G7#5"=Gc- || "C""Dm7/C""Ab7/C"c6 "C"c2 || "Bbm7"c4- "Eb7"c_B G_E | $
@@ -10959,8 +12100,13 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=118
+%%id dolphin-dance
+%%tags needs-repair
 K:C
-"Eb""^A""^(Med.""^Swing)\n\n"z4 G_A _BF- | "Db/Eb"F8 | "Eb"z4 G_A _BF- | "Dm7b5""G7"F8 || $
+I:linebreak $
+"Eb""^A""^(Med.""^Swing)
+
+"z4 G_A _BF- | "Db/Eb"F8 | "Eb"z4 G_A _BF- | "Dm7b5""G7"F8 || $
 "Cm7""^B"z4 _E .F2 G | "Abmaj9#11".D2 D6 | "Cm7"z4 _EF GD- | "Am7""D7"D6 C2 | $
 "G"B,3 ^F- F4 | "Abm7"_G3 G_A GA _B- | "Fm7"B8- | B8 | $
 "Cm7"G3 _B- B4 | ._B2 BB cB cd- | "Am11"d8- | "D13"d8 || $
@@ -10979,7 +12125,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id donna-lee
+%%tags needs-repair
 K:Ab
+I:linebreak $
 "Ab""^A""^(Up Tempo)""^Swing"z4 (3gag f=e | "F7"ed cB =AC EF | "Bb7"(3_GAG FE =DF Ac | GF z2 z2 =E=D | $
 "Bbm7"E=A, B,D FA ce | "Eb7"dF Ac =BG/=E/ _ED | "Ab"CE GB A2 EF | "Ebm7"_GB df "D7"=ec z2 | $
 "Db"e4- ed cB | "Dbm7"ed z2 _g_f ed | "Ab"cc d=d e_d cB | "F7"Ac ef (3_gag fe | $
@@ -10996,7 +12145,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id don-t-blame-me
 K:C
+I:linebreak $
 "C6""^(Slow Ballade)""^Swing"G4 "Fm7""Bb7"_B4 | "Em7""A7"A6 G2 | "Dm7"(3F2F2F2 "G7"E2 E2 | "C""Am7"D6 C2 | $
 "Dm7"(3F2F2F2 "G7"E2 D2 | "Em7b5"(3G2G2G2 "A7"F2 E2 |1 "Dm7"A4 "G7"B4 | "C6""Dm7""G7"G8 :|2 $
 "Dm7"A4 "G7"A4 || "C6""Gm7""C7"c8 || "F"^G2 A2 G2 A2 | "E7"^A2 B2 A2 B2 | $
@@ -11012,7 +12163,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id don-t-get-around-much-anymore
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "G13""^A""^(Med.""^Swing)"z e2 dc GF E- | "C"z "C"f3 "Dm7"f2 "Ebm7"f"Em7"f | z e2 dc GF E- | "A7"z "C7"f3 "B7"f2 "Bb7"f"A7"f | $
 z G2 FE DC c- | "Dm7""D7"c3 A- "D7"A4 | "G91113sus4"z EF ^F"G13"G C^D E | "C6"C8 :| $
 "C7"z8 || "F6"d4 c A2 c- | "F#other""D7"c6 c2 | "C6/G"d4 c G2 E- | $
@@ -11033,7 +12187,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id don-t-go-to-strangers
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "Bb""^A""^(Med. Ballade)""^Swing"B2 c2 "Bb9"c2- (3cBG | "Eb9"A2 BB- B3 A | "Bb"G2 A2 A2- (3AGD | "Dm7b5"F2 G"C"G- "G7"G4 | $
 "Cm7"(3E2F2E2 "Ebm7"F E3 |1 "F137sus4"D C3 B,2 "F7"CD- | "Dm7""G7"D8- | "Cm7""F7"D8 :|2 $
 "F91113sus4"D C3 B,2 "F7"CB,- || "Bb6""F9sus4"B,8- | "Bb6"B,4 z2 (3zB,=B, || "Fm7""^B"(3D2F2c2 "Bb13"A3 C | $
@@ -11049,7 +12206,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id don-t-take-your-love-from-me
 K:C
+I:linebreak $
 "^(Ballade)""^Straight"GA || "^A""C"G2 E2 "Dm7"E D2 D- | "Em7""Ebdim7"D6 CD | "Dm7"B,2 A2 "G7"A4- | $
 "Dm7"A6 "G7"AB | "Dm7"A2 F2 F E2 E- | "G7"E6 DE | "C"C2 B2 B4- | $
 B8 || "C/E""^B"B2 c2 c3 A | "Ebdim7"B2 c2 c3 A | "Dm7"c2 D2 "A7"F2 E2 | $
@@ -11067,7 +12226,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id doodlin
+%%tags needs-repair
 K:Db
+I:linebreak $
 |: "Db""^(March.""^Swing)"z2 (3D/E/D/A, CD- D2 | (3D/E/D/A, CD- D2 (3D/E/D/A, | C D3 (3D/E/D/A, CD- | "Db7"D6 z2 | $
 "Gb7"z2 (3G/A/G/D FG- G2 | (3G/A/G/D FG- G2 (3D/E/D/A, | "Db"CD- D2 (3D/E/D/A, CD- | D2 .F.G "Bb7".F.E .=D.B, | $
 "Ebm7".F z/ .=D/.E .F.G .B"Eb9".d .f | "Abm9"af- f2 (3cdA cd- | "Db"d4 (3FGD =GA- |1 A2 z2 z4 :|2 $
@@ -11083,7 +12245,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=190
+%%id douce-ambiance
 K:C
+I:linebreak $
 "D7""^(Med.""^Swing)"dd dd- d4 | "Eb"dd dd- d4 | "E7"dd dd- d4 | "F6"dd dd- d4 | $
 "Bb6"dd dd- d4 | "Eb"dd dd- d4 | "D7sus4"dd dd- d4 | "D7"d2 z2 z4 |: $
 "Gm""^A"dd dd- d4 | "D7"dd dd- d4 | "Gm"(3d_ed ^cd "F7"fe _B=c | "Bb"d4 "Bother"z4 |1 $
@@ -11101,7 +12265,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id doxy
 K:Eb
+I:linebreak $
 "^(Med.""^Swing)"F |: "Bb7""^A"Bd BG "Ab7".B2 z F | "G7"BG B._d z .G2 F | "C7"=EG B_d "F7"(3c=dc GB | $
 "Bb7"z4 "F7#5"z2 z F | "Bb7"Bd BG "Ab7".B z z F | "G7"BG B._d z .G2 F | "C7"=EG B_d (3c=dc G=A | $
 "F7"z8 || "Fm7""^B".g2 z f z2 _d2- | "Bb7"d3 .G z ._d z B | "Eb7"_d2 dd G2 c2 | $
@@ -11115,7 +12281,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id e-s-p
 K:F
+I:linebreak $
 |: "E7#9b13""^(Fast""^Swing)"c3 G- G3 D- | D3 G3 cG- | "F69"G3 D- D3 c- | cG- G4 z2 | $
 "E7#9b13"z3 c3 GD- | D3 G3 cA- | "Eb69#11"A3 F- F3 G- | GF- F4 z2 | $
 "D7b9"d7 c | "Eb69#11"A6 GF | "E7b13"D3 D- D2 GE- | "F"E4 "Eb9"F2 BG- |1 $
@@ -11129,7 +12297,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id early-autumn
 K:C
+I:linebreak $
 "G7""^(Med. Ballade)""^Swing"G^G A^A |: "C""^A"BG EC B4- | "B7"Bc dc B3 _B | "Bb"AF D_B, A4- | $
 "A7"A_B cB A3 _A | "Ab"G_E C_A, G4- | "G7"G_A _BA G3 E |1 "C""Am7"G8- | $
 "Dm7"G2 z2 "G7"G^G A^A :|2 "C6"D2 C6- || C4 z G,A, B, || "Dm7""^B"C3 A,"G13"E E3 | $
@@ -11145,7 +12315,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id east-of-the-sun
+%%tags needs-repair
 K:G
+I:linebreak $
 "G""^(Med.""^Swing)"(3D2D2D2 F4- | "C7#11"F4 E4 | "Bm7"(3B,2B,2B,2 F4- | "E7"F8 | $
 "Am7"(3E2E2E2 B2 B2- | B4 A4 | "Cm7"c8 | "F7"_E8 | $
 "Am7"(3c2c2c2 (3d2d2d2 | "D7"B8 | "F#m7b5"(3F2F2F2 "B7#5"B2 B2 | "Em7"G6 G2 | $
@@ -11163,7 +12336,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id easy-living
+%%tags needs-repair
 K:F
+I:linebreak $
 |: "F""^A""^(Med.""^Swing)"(3A2d2c2 "F#dim7"_E4 | "Gm7"z DG B"G#dim7"d f2 e | "F/A"(3=B2d2c2 "Cm7""F7"F4 | "Bb"z DF A "Eb7"c2 BB |1 $
 "F"(3A2g2f2 "Dm7"A3 e | "Gm7"d2 BD "C7"A2 G2 | "A7#5""D9"A8- | "Gpower#5""C9"A6 A2 :|2 $
 "F"(3A2g2f2 "Dm7"A3 e || "Gm7"d2 BD "C7b9"A2 G2 | "F""Bb7"F8- | "Ebm7""Ab7"F6 F2 || $
@@ -11178,7 +12354,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id easy-to-love
 K:C
+I:linebreak $
 |: "^(Ballade)""^Swing""Dm7"A8 | "Gm7"D6 E2 | "Dm7"F4 E3 F | "G7"B6 A2 | $
 "C"G4 ^F2 G2 | "F"d2 _d2 c2 B2 | "Em7"A4 ^G3 A |1 "F7"g8 || $
 "Dm7"g8 | "G7"A6 B2 | "C"e2 e2 e4- | "Am7"e2 z2 z4 | $
@@ -11194,7 +12372,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id eclypso
 K:Eb
+I:linebreak $
 "Fm7""^Latin""^(Med.)"B,2 z D "Bb7"z F E2 | "Eb"z G2 B"C7"A GF =E | "Fm7"F2 z A "Bb7"z c B2 | "Gm7"z G2 F"C7"=E G3 | $
 "Fm7"F2 z A "Bb7"z c B2 | "Gm7"z G2 F"C7"=E G2 C | "Fm7"F3 G- "Bb7"G2 BG |1 "Eb"EE EE "C7"z4 :|2 $
 "Eb"EE EE z4 || "Bbm7""^Swing"_D2 FA G2 z F | "Eb7"Ac BG B_d cc | "Ab"z8 | $
@@ -11210,7 +12390,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id eighty-one
 K:F
+I:linebreak $
 "F9sus4""^(Med. Latin Rock)""^Straight"(3z2A2c2 (3B2A2F2 | "Bb9sus4"(3B2c2_d2 "Gb/Bb"z4 | "F9sus4"z4 z2 z3/2 f/ | _g/_e/f/d/ e z z4 | $
 "Bb9sus4"z2 F6- | F4- F!>!.b z2 | "F9sus4"z8 | z8 | $
 "C9sus4"F8- | "Bb9sus4"F8- | "F9sus4"F8- | F8 | $
@@ -11241,7 +12423,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id el-gaucho
 K:C
+I:linebreak $
 "F""^(Med.""^Latin)"GC EG- G3 G | "Eb"FD FG- G3 F | "Dm"EC EF "Bb7"C4- | "Bb7b9""C7"C6 F_A | $
 "Fm11"G_B GB GB F_A | "Gb"_B_A FA F2 FA | "Fm11"G_B GB GB F_A | "Gb"_B_A FA "Eb"F4- | $
 F8- | F6 Ac | "Cm9"d3 d- d2 Ac | "Dm13"dc Ac A2 Ac | $
@@ -11259,7 +12443,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=100
+%%id emily
 K:G
+I:linebreak $
 "G""^A""^(Bright Jazz waltz)""^Straight"Bf d4 | "Em7"Bf d4 | "Am9"Bf d2 d2- | "D9""D7b9"d4 BA | $
 "G"G3 A B2 | "G13b9"e4 d2 | "C"G6- | "F13"G4 A2 | $
 "E"BE E4 | "C#m7"BE E4 | "F#m711"BE E4- | "B7b9"E2 E2 F2 | $
@@ -11278,7 +12464,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id end-of-a-love-affair
 K:F
+I:linebreak $
 "^(Ballade)""^Straight"FG |: "Gm7"A3 A "C7"(3A2G2F2 | "F"E4 z2 DC | "Fm7"G3 G "Bb7"(3G2F2_E2 | $
 "Eb"D4 z2 CB, | "Ebm7"F2 FF "Ab7"F2 _AB | "Ebm7"F2 FF "Ab7"F2 _E_D | "Gm7"C2 CB, "C7"C3 C |1 $
 "F"C4 "Dm7"z2 FG :|2 "Fmaj7"C4 z2 DE || "Dm7"F2 DF "G7"A2 FD | "Dm7"F2 "G7"F4 DE | $
@@ -11296,7 +12484,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id epistrophy
 K:C
+I:linebreak $
 |: "C#7""^A""^Swing""^(Bop)"z2 ^CD "D7"^A B3 | "C#7"^CD ^AB- "D7"B2 z2 | "C#7"z2 ^CD "D7"_B E3 | "C#7"^CD _BE- "D7"E2 z2 | $
 "D#7"z2 ^DE "E7"c ^c3 | "D#7"^DE c^c- "E7"c2 z2 | "D#7"z2 ^DE "E7"c ^F3 | "D#7"^DE c^F- "E7"F2 z2 || $
 "D#7""^B"z2 ^DE "E7"c ^c3 | "D#7"^DE c^c- "E7"c2 z2 | "D#7"z2 ^DE "E7"=c ^F3 | "D#7"^DE c^F- "E7"F2 z2 | $
@@ -11314,7 +12504,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=118
+%%id equinox
+%%tags needs-repair
 K:E
+I:linebreak $
 |: "CN.C.""^Intro""^(Med.""^Latin)"C2 z2 "C#m7"GC BC | "F#m7"F2 z2 EC F"^(3x)"B, "CN.C.""^Swing"C3 C- "C#m7"C2 C2- | z4 z2 z "^(4x)"G, :| "C#m7"E3 C- C4- | $
 C6- CG, | EC- C4 CG, | CE z2 z2 z E | "F#7"F3 C- C4- | $
 C7 F | "C#m7"E3 C- C3 G, | CE z2 z4 | "A7"z D z2 D3 C | $
@@ -11333,7 +12526,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=186
+%%id eronel
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "G""^(Bop)""^Swing"dB ce "Am7"z3 d/B/ | "Bm7"F2 FE "E7"z2 z2 | "Bbm7"z A (3_B_d=f "Eb7"_ec de | "Bbm7""Eb7"z6 z e- | $
 "Am7"e2 dc "D7"BA z _e- | "Cm7"e2 (3d/_e/d/c "F7"BA z2 |1 "Am7"z C (3EGB "D7#5"_B2 FE- | "G"E4 "Ab7"z4 :|2 $
 "Am7"z C (3EGB "D7#5"_B2 FA || "G"z A F6 || "Dm7"z E (3=FAc _ed (3c/d/c/B | "G7"_B2 z E (3=FAc _e=e | $
@@ -11349,7 +12545,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=112
+%%id estat
 K:C
+I:linebreak $
 "^(Slow Bossa Nova)""^Latin"E |: "Am7"EE- E6- | E6 z E | "Dm7"F3 FA A2 c- | $
 "E#5"c c2 B2 B2 E- | "Am7"EE- E6- | E6 z E | "Dm7"F F2 A2 A2 e- | $
 "G7"e e2 d2 d2 G- | "Gm7/C"GG- G6- | "C7"G6 z G | "F"A2 Ac- c c2 g- | $
@@ -11369,7 +12567,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=196
+%%id everybody-loves-my-baby
 K:F
+I:linebreak $
 "Dm6""^(Fast""^Swing)"A2 A2 F D3 | A2 A2 F D3 | A2 A2 FD F2 | A2 A2 FD F2 | $
 "G7"F D3- D4 | "C7"z2 EG- GG "C7#5"E2 | "F6"D8 | "A7"z8 | $
 "Dm"A2 A2 F D3 | A2 A2 F D3 | A2 A2 FD F2 | A2 A2 FD F2 | $
@@ -11386,7 +12586,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id everythong-happens-to-me
 K:Bb
+I:linebreak $
 "^(Med. Ballade)""^Swing"B |: "Cm9""Em7b5""^A"dd de "F7""Ebm6"cc BA | "Dm7"cc cd "Dbdim7"B2 z G | "Cm7"BB Bc "F7"AA "Eb7"GF | $
 "Dm7b5"_AA AB "G7"G2 z D | "Bother""Cm7"FF FG "Cm7b5""Ab9"E_G AB | "Dm7"cc (3ccA- "G9"A3 z |1 "Cm7"=GG GA- "F7""B7"AA AF- | $
 "Bb"F4 z2 z G :|2 "Cm7"=GG GA- "F7""B7"AA AB- || "Bb6"B6 z B || "Fm7""^B"BB BB "Bb7#9#5"_dd _cd | $
@@ -11402,7 +12604,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=300
+%%id everything-s-coming-up-roses
 K:C
+I:linebreak $
 "^(Fast)""^Straight"z2 "Ebdim7"B4 c2 |: "Dm7"A8- | "G7#5"A2 B4 c2 | "C6"A8- | $
 A2 B4 c2 | "Dmb7"A2 A2 A2 c2- | c2 A4 "G7"E2 | "C"A8- | $
 A2 "B7#5"G4 "B7"^F2 | "Em"G8- | "C7"G2 E4 C2 | "F"E8- | $
@@ -11427,7 +12631,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=187
+%%id evidence
 K:Eb
+I:linebreak $
 |: "Eb""^(Fast)""^Swing"z2 D2 z4 | "Gm7"F2 "C7"z4 _GB | "Fm7"z4 E2 z2 | "Bb7"z2 E2 _FA z2 | $
 "Eb7"z2 _D=A z4 | "Abm7"_G2 z E"Db7"_D F z2 | "Gm7"z2 "C7"E2 "Fm7"z2 "C7"z E | "E"B=B e z z4 :| $
 "Bbm7"z2 _DA z4 | "Eb7"z2 _D=A z4 | "Ab"z2 CB z4 | "Db7"z2 _G_c z4 | $
@@ -11442,7 +12648,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/2=110
+%%id exactly-like-you
 K:C
+I:linebreak $
 "C6""^(Med.""^Swing)"e2 B2 d2 A2 | c2 c2- c4 | "D9"e2 B2 d2 A2 | c8 | $
 "G7"B2 G2 "C#other"A2 F2 | "Dm7"G2 G2- "G7"G2 G2 | "C6"c2 C2 C2 C2- | "Dm7"C4 "G7"z4 || $
 "C6"e2 B2 d2 A2 | c2 c2- c4 | "D9"e2 B2 d2 A2 | c8 | $
@@ -11459,7 +12667,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id eye-of-the-hurricane
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "Fm""^(Fast""^Swing)"Gc "Bb7"DG | "Ebm"F_B "Ab7"_B,_E CF | "Db"CF ^f | "Bbb5"z2 _EG F2 =E_A | $
 "E#11"^F _e3- e4- | "Bbm9"ed _dB c_B =B2 | "Fm6"DG ^c^f DG cf | DG cf DG ^c^f DG cf | $
 DG cf DG ^c^f DG cf | DG cf | [M:6/4]"B7"DG _E_A "C7"z2 "Db7"=E=A _E_A "C7"z2 "B7"DG EA "C7"z2 | [M:4/4]"Fm7"Ff | $
@@ -11475,7 +12686,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id f-blues-tootsie
 K:F
+I:linebreak $
 "^(Med.""^Swing)"z4 z CF B |: "F7"AF DC F2 z _A- | "Bb7"AF GF z CF B | "F7"AF DC F G2 _E- | $
 "Cm7"E4 "F7"z CF B | "Bb7"_AF DC F2 z A- | AF GF z CF B | "F7"AF DC F G2 D- | $
 "Am7"D6 "D7"z C | "Gm7"AA F/D/F AA F/D/F | "C7b13"Ac BA FC EF- | "F7"F2 z2 "D7"z4 |1 $
@@ -11494,7 +12707,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id fables-of-faubus
 K:Ab
+I:linebreak $
 |: "Bbm7""^Intro""^Swing)""^(Med."!~(!F4 !~)!A4 | z FA B(3=B/c/B/ _B/A/ F2 | "Db7#11"!~(!G4 !~)!B4 | z GB c(3d/=d/_d/ c/B/ G2 "Bbm7""^A"!^!B2 !tenuto!B2 !^!B2 !tenuto!B2 | $
 z2 AB cB A2 | "Db7#11"!^!F2 F6 | !^!F2 F6 | "Bbm7"!^!B2 !tenuto!B2 !^!B2 !tenuto!B2 | $
 z2 AB cB A2 | "Db7#11"!^!F2 F6 | !^!F2 F2- FC (3D=EF || "Gm7b5""^B"A8- | $
@@ -11531,7 +12746,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id fair-weather
 K:C
+I:linebreak $
 "Ab13""^Swing)""^(Med."z8 | z F_G _B _d2 dB- | B8- | B6 z2 | $
 "G13"z8 | z EF A c2 cA- | A6 A_B | "Aother"z8 |: $
 "C"G,E | "E7"E7 _B,E | "Bb7"B,E (3B,E^D2 E2 | "A7"DF ^CE EA | $
@@ -11560,7 +12777,10 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/2=120
+%%id falling-grace
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "Ab""^(Fast""^Swing)"_e8- | e4- (3e2d2c2 | "D7/F#"d6- dc | "Gm7"d6- dc | $
 "Fm7"d2 c_B- "Bb7"B3 c- | "Eb/G"c2 _Bc "D7/F#"d2 cB | "Gm7/F"A2 GG- G2 dc- | "C/E"c2 Gg- g4- | $
 "F"g4 (3f2e2d2 | "F#m7b5"c6- cB/c/ | "B7"B2 Bg- g ^f2 B- | "Em"B8- | $
@@ -11576,7 +12796,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id far-wes
 K:Db
+I:linebreak $
 "^(Med.""^Swing)"z4 z2 "Ab7"A,G cf | "Db"DA cf a z4 "B7"=B,=A ea | "E"E=B ea =b z4 "A7"=A,=G dg | "D"=D=A dg =a z2 D E2 "Ab7"A,G cf | $
 z8 | "Db"AF GA z2 z A | "F#m"=A^c =ea "B#5"=g_e cA | "E"=B^G =AB z2 z ^F | $
 "Em"=G=B =d^f "A#5"=f^c BG | "D"=AG =GA z2 z A | "Ebm"BG AB "Ab7b9"z dc e |1 "Db"AF GA "E"z4 | $
@@ -11594,7 +12816,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id favela
 K:Bb
+I:linebreak $
 "^(Med.""^Bossa)"z4 z d2 g- || "Gm7""^A""G13"g4- g d2 f- | "F/G""F13"f4- f d2 g- | "Gm7""G13"g4- g d2 f- | $
 "F/G""F13"f4- f d2 g- | "Gm7""G13"g4- g d2 f- | "F/G""F13"f4- f d2 B- | "Gm7""G7#9"B8 | $
 z4 z G2 c- | "Cm7"c4- c B2 d- | "F13"d4- d c2 d- | "Bb""Bm7"d4- d f2 g | $
@@ -11614,7 +12838,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id fee-fi-fo-fum
 K:Bb
+I:linebreak $
 "Eb7""^Swing)""^(Med."a4- "D7#9"a g2 f/d/ | "Gm7"c3 B- "Abmaj7""C"B4 | "Cbmaj7"B4 "D7"=B3 d- | "G7"d6 (3dgb | $
 "Eb7"z ag f- "D7#9"f3 d | "Gm7"c3 B- "Abmaj7"B3 d- | "C7b9"d3 g- "F7"g3 f- | "Bb7"f6 bB | $
 "Eb7"c4 _d4 | ed ee- e2 d2- | "Bb7"d2 c4 BA | z4 z2 bB | $
@@ -11629,7 +12855,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id feel-like-making-love
 K:Eb
+I:linebreak $
 |: "Fm9""^(Med. Latin Rock)""^Straight"z2 EE/G/- G/G/E- E2 | "Bb91113sus4"z2 E/FG/- G/FE/- E/FG/- | "Eb""Db7"G8 | "C7"z8 | $
 "Fm9"z2 EE/G/- G/G/E- E2 | "Bb91113sus4"z2 E/FG/- G/FE/- E/FG/- | "Eb"G8 | "A7b5"z4 z3/2 G/-G/E/ F | $
 "Ab"z2 GC/E/- E2 z2 | "Gm7"z2 z z/ B,/B BG/F/ E/"Fm7"F/- | F6 E"Cm7"G- | G4 z4 | $
@@ -11651,7 +12879,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=192
+%%id feels-so-good
 K:F
+I:linebreak $
 "^(Funk)""^Straight"A8 | B8 || "F"c8- | c3 g "C/E"f2 ef- | $
 "Dm7"f8- | f3 c z B z A | "Gm7"B8- | B4 z fe f | $
 "C7"e4 c4 | "C7/Bb"A4 c3 A- | "Am7"A8- | A3 g f2 ef- | $
@@ -11674,7 +12904,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=114
+%%id felicidade
 K:Eb
+I:linebreak $
 "^(Med.""^Bossa)"z4 z2 G2 || "Cm7"c8- | c2 e2 "Ab9"d2 B2 | "Cm""Cmaj"G8- | $
 "Cm7"G4 "Cm6"z2 G2 | "Gm/D"B6 G2 | "D7b9"=A6 ^F2 | "Gm"G8- | $
 "Fm7"G4 "Bb7"z4 | "Eb"G8- | "Eb6"G2 B2 "C7b9"A2 G2 | "Fm7"G2 F2 "Fm7/Eb"=E2 F2 | $
@@ -11700,7 +12932,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id festive-minor
 K:Ab
+I:linebreak $
 "^(Med.""^Swing)"z4 z c2 A |: "Fm"F4 z f2 d | "Bbm"B4 z c2 A | "Fm"F4 z f2 d | $
 "Bbm"B4 (3z=Bc (3dcA | "Fm"F4 z f2 c | "Bbm"ed cd- d=A B{/=d}e- | "Eb7b9"e4- e3 d | $
 "Ab7"dc z2 z A (3(ABc | "Gm7b5"d3) B-B A G2- | "C7b9"G(F =E)(G B)c !>!ed | "Fm"cA Bc z4 | $
@@ -11715,7 +12949,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id fever
 K:C
+I:linebreak $
 |: "Am""^Swing""^(Moderate Jump Beat)"z D (3CDC D2 A,2 | C2 D2 z4 | DC DC DC A,2 | A,2 z2 z4 | $
 DC DC D2 A,2 | C2 D2 A,A, A,A, | "E7"DC DC DC A,2 | "Aother"A,A, "CN.C."A,A, C2 A,2 | $
 "Am"z8 | z2 _EC D2 C2 | "F6"DC DC DC A,2 | "Am"A,2 z2 z4 | $
@@ -11730,7 +12966,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id filthy-mcnasty
 K:Bb
+I:linebreak $
 "^(Med.""^Swing)""^Intro"z4 z2 z .B || !>!f(e/_d/) !tenuto!B.d z2 "Ab13"x2 | x4 "Bb13"x2 z .B | !>!e(_d/B/) !tenuto!_A.B z2 "E13"x2 | $
 x4 "Gb13"x2 z .B | "Dm7b5"!>!f(e/_d/) B"G7b9#5"e z (d/B/)_A "Cm7b5"B | z (_A/F/)E "F7b9sus4"F z (E/_D/)B, "Bb7#9"D | x8 | $
 "Ab13"x4 z2 z .B |: "Bb7""^A"!>!f(e/_d/) !tenuto!B.d z2 z .B | !>!e(_d/B/) !tenuto!_A.B z2 z .B | !>!f(e/_d/) !tenuto!B.d z2 z .B | $
@@ -11766,7 +13004,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=187
+%%id firm-roots
 K:C
+I:linebreak $
 "Fm""^Intro""^(Fast""^Swing)"_B4 G2 B2 | "Gm"c4 A2 c2 | "Am"d4 B2 d2 | "Bbm"_e4 c2 e2 | $
 "Db/Ab"c8- | c3 _Bc _ec B | c8- | c4 {/A}_B4 | $
 "F7sus4"A8- | A3 GA cA G | A8- | A4 _B,2 _B2 |: $
@@ -11798,7 +13038,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id five-brothers
 K:C
+I:linebreak $
 "^Swing)""^(Med."c |: "C"Bc Bc G2 E2 | "Dm7"A2 FD "G7"z3 G | "C"^FG FG E2 C2 | $
 "Dm7"F2 DB, "G7"z2 CA, | "Gm7"(3_B,2A2A2 "C7"(3A2G2E2 | "F"C3 G- "Bb7"G2 F2 |1 "C"z EG c-"Eb7"c _B2 G | $
 "Dm7"^GA FD "C7"=G F2 c :|2 "Dm7"z ^D (3EGA "Db7"_BA _AG- || "C"G4 "B7"B3 A || "E"^G8- | $
@@ -11814,7 +13056,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id 500-miles-high
 K:C
+I:linebreak $
 "B7#9#5""^(Med.""^Latin)"d2 |: "Em7"B8- | (3B2B,2D2 (3A2^F2D2 | "Gm7"E8- | $
 (3E2c2c2 (3A2F2D2 | "Bb"G8 | z6 F2 | "Bm7b5"F E2 G- G4- | $
 "E7#9"G4- (3G2F2E2 | "Am7"d8- | d6 c2 | "F#m7b5"c2 Bd- d4- | $
@@ -11828,7 +13072,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id five-spot-after-dark
 K:Ab
+I:linebreak $
 "Bbm7""^Swing)""^(Med."z B,D F .B2 .B2 | B2 dB z4 | z B,D F .B2 .B2 | B2 dB "Dother"z4 | $
 "Ebm7"z E_G B c2 B2 | z E_G B c2 B2 | "Bbm7"z B,D F B2 B2 | B2 dB z2 FE | $
 "Gb13"=E3 d- d2 E=D | "F13"E3 c- c2 EC | "Bbm7"D3 B- B4- | "Cm7"B2 z2 "F7"z4 |]
@@ -11840,7 +13086,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=96
+%%id flamingo
 K:F
+I:linebreak $
 "^(Med. Ballade)""^Swing"C2 |: "F""^A"c3 A- "Dm7"A4 | "Gm7"z2 Bc "C7"e2 dc | "Fm7"_A8 | $
 "Bb9"z2 G_A c2 BA | "Db9"F2 F6 | "Gm7"z2 FF "C7"G2 FG |1 "F""D7"A8- | $
 "Gm7"A4 "C7"z2 C2 :|2 "F6""Bbm7"F8 || "F"z4 "B13"z2 F2 || "Bbm7""^B"f8 | $
@@ -11856,8 +13104,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id fly-me-to-the-moon
 K:C
-|: "Am7""^A""^(Med.""^Swing)""^\n"c3 B A2 GF- | "Dm7"F G3 A2 c2 | "G7"B3 A G2 FE- | "C""C#m7"E4 "C7""F#7"z4 | $
+I:linebreak $
+|: "Am7""^A""^(Med.""^Swing)""^"c3 B A2 GF- | "Dm7"F G3 A2 c2 | "G7"B3 A G2 FE- | "C""C#m7"E4 "C7""F#7"z4 | $
 "F"A3 G F2 ED- | "Bm7b5"D E3 F2 A2 | "E7"^G3 F E2 DC- | "Am7""A7"C6 ^C2 | $
 "Dm7""D/F#"D A2 A- A4- | "G7""Dm/F"A4 c2 B2 |1 "C""Em7"G8- | "Em7""A7"G6 B,2 | $
 "Dm7"C F2 F- F4- | "G7"F2 A4 G2 | "C"F3 E- E4- | "Bm7b5"E4 "E7"z4 :|2 $
@@ -11872,7 +13122,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=210
+%%id flying-home
 K:Eb
+I:linebreak $
 |: "^A""^(Med. Bounce)""^Swing""Eb6"G B2 "Eb7/Db"F- F4 | "Cm"GB GB "B7"(3_GFE "Bb7"CB, | "Eb6"G B2 "Eb7/Db"F- F4 | "Cm"GB GB "B7"(3_GFE "Bb7"CB, | $
 "Eb6"G B2 "Eb7/Db"F- F4 | "Cm"GB GB "B7"(3_GFE "Bb7"CB, |1 "Eb6"G,B, CE- E _D3- | "Eb7"D4 z "E9"B3 :|2 $
 "Eb6"G,B, CE- E _D2 B, || "Eb7sus4"E _D2 B,- "Eb7"B,2 BG- || "^B"GB GB- BG FG | EG EG- GE "G"=B,C | $
@@ -11889,7 +13141,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id fools-rush-in
 K:C
+I:linebreak $
 "Dm7""^Straight""^(Ballade)"A3 A A4- | "G7"A2 B2 ed BA | "C"G8- | "Am7"G2 A2 cB AG | $
 "Dm7"F3 F F4- | "G7"F2 G2 BA GF | "C"E8- | "A7"E4 A2 E2 | $
 "Dm"D8- | D2 A2 "G7"G2 E2 | "C"C8- | "Am7"C2 D2 E2 G2 | $
@@ -11906,7 +13160,10 @@ N:Source: Ultime Jazz Real Book
 M:6/4
 L:1/8
 Q:1/4=144
+%%id footprints
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "^Swing"G, |: "Cm11"C,2 G,2 C2 E4- EG, | C,2 G,2 C2 E4- E"^x5"G, :| [K:treble]"Cm11"FB FB FB FB Gc Gc =E=A | $
 (4FB=E=A DG CF A,D .G,C | "Cm11"z4 z =A,D A,D .G,C | z4 z A,D A,D .G,C | "Fm11"FB FB FB FB Gc Gc _Ad | $
 (4Be=Ad Gc FB DG .CF | "Cm11"(4FB=E=A DG CF A,D .G,C | z4 z =A,D A,D .G,C | "F#m7b5911""F7#11"^F=B CF BA, FB "F13#11""E7#9"=FB =Ad Ad DG | $
@@ -11919,7 +13176,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=105
+%%id for-all-we-know
 K:Eb
+I:linebreak $
 "Bb7""^(Medium Ballade)""^Straight"B,2 |: "Eb69"E6 B,2 | "F9"G6 FE | "Fm7"DE (3FGF- F4- | $
 F2 z2 "Bb7"z2 B,2 | "Eb""Ab"G6 E2 | "Gm7b5"B6 "C7"AG | "Fm7"FG (3ABA- A4- | $
 "Abm7"A2 z2 "Bb7"z2 =A2 |1 "Eb"B4 B2 B2 | "Gbdim7""Am7""D7"d6 c2 | "Fm711"B4 A2 B2 | $
@@ -11935,7 +13194,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=168
+%%id for-regulars-only
+%%tags needs-repair
 K:Db
+I:linebreak $
 "^Swing""^Intro"A- |: "Ebm7"AA (3AAA "Em7"=AA z "Fm7"B- | B2 B2 "F#m7"=B2 z "Fm7"_B- | B2 (3BBB "Em7"=AA z "Ebm7"_A- |1 $
 A2 A2 "D7sus4"A2 z "Ebm7"A :|2 "Ebm7"A2 A2 "D7sus4"AB (3A=EF |: "Ebm7""^A"A2 (3AAA "Ab7"_cc z =G- | "Db"G4 "Bb7"z B (3A=EF | $
 "Ebm7"A2 (3AAA "Ab7"_cc z e- | "Db"e4 "Bb7"z B (3A=EF | "Ebm7"A2 (3AAA "Ab7"_cc z e- | "Db"e=d _dc- "Bb7"c=B _B2 | $
@@ -11953,7 +13215,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=80
+%%id for-sentimentals-reasons
 K:F
+I:linebreak $
 "^Swing""^(Slowly)"d2 |: "F"cc- "Dm7"c6- | "Gm7"c2 c2 "C7"BA GF | "F"AA- "Dm7"A6- | $
 "Gm7"A2 B2 "C7"AG AC | "F"FF- "Dm7"F6- | "Gm7"F2 A2 "C7"(3G2F2G2 | "Am7""D7"A8- | $
 "Gm7""C7"A6 "C9#5"d2 | "F"cc- "Dm7"c6- | "Gm7"c2 c2 "C7"BA GF | "F"A3 c "Dm7"A4- | $
@@ -11971,7 +13235,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id forest-flower
 K:C
+I:linebreak $
 "^Straight""^(Med. Latin)"A,^G, A,^C E |: "A"B8- | B4 ^G E2 ^C/G/ | "G"^F8- | $
 F2 z D/^C/B, CE G | "C"d8- | d4 B G2 E/B/ | "Bb"A8- | $
 A4 z2 A2 | "Dbm7"_A3 _e- e4- | "Dm7b5"e4 "G7b9"(3d2_A2d2 | "C"G8- | $
@@ -11989,7 +13255,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=178
+%%id four
 K:Eb
+I:linebreak $
 "^(Med.""^Swing)"B,C "Eb"D |: "^A"z B,C D z B,C D | z FE D z B,C _D- | "Ebm7"D8 | $
 "Ab7"z4 z EF "Fm7"G | z EF G z EF G | z BA G z EF _G- | "Abm7"G8 | $
 "Db7"z4 FG A=A | "Gm7"B4 EG B=B | "F#m7"z =E3 "B7"^D4 | "Fm7"z !slide!c3 B2 AG- | $
@@ -12009,7 +13277,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id four-brothers
 K:Ab
+I:linebreak $
 |: "Bb9""^A""^(Med. Up""^Swing)"c=B cB cA F=D | "Bbm7"DF Ac "Eb7#5"=BG ED | "Ab"CE GB- B A2 E | "F9"G F3 z3 G | $
 "Bbm7"AF DB, AF DB, | "Cm7"G2 !-(!B,!-)!=A,- "F7"A,2 z =E |1 "Bbm7"FD CB, "Eb7"EC DE- | "Ab"E2 z2 "F9"z2 z =B :|2 $
 "Bbm7"FD CB, "Eb7"E=B, CA,- || "Ab6"A,2 z2 z2 z G || "C#m7""^B"^G=E ^C=B, "F#7"^A,C EG | "B"^F^D =EF- F2 z2 | $
@@ -12025,7 +13295,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=230
+%%id four-on-six
 K:Bb
+I:linebreak $
 |: "CN.C.""^Intro""^(Med. Up""^Swing)"G,2 D2 C2 G2 | G,2 D2 C2 G2 | G,2 D2 C2 G2 | G,2 D2 C2 G2 |1 $
 C2 G2 F2 c2 | B,2 F2 E2 B2 | A,2 =E2 D2 A2 | ^D2 B2 ^G2 ^d2 :|2 $
 "Bb"D2 z "Gm7"C z "G#m7"^C "Am7"D2 || z2 "D7b5#5b9#9"F6 | "CN.C."G,2 D2 C2 G2 | G,2 D2 C2 G2 || $
@@ -12046,7 +13318,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id freddie-the-freeloader
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: "Bb7""^(Med Slow)""^Swing"G3 F- F4- | F4 z4 | G3 F- F4- | F4 z4 | $
 "Eb7"c3 B- B4- | B4 z4 | "Bb7"G3 F- F4- | F4 z2 .A2 | $
 "F7"=A6 ._A2 | "Eb7"G6 F_G- | "Ab7"G8- | G4 z4 :| $
@@ -12063,7 +13338,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=176
+%%id freedom-jazz-dance
 K:Bb
+I:linebreak $
 "^(Med. Funk/Rock)""^Swing"FB |: "CN.C."eg cf dB FE | Be _A_d !>!B2 "Bb7"=E2- | E8 | $
 x8 | "CN.C."z Bf c_d Be c | _d_A EB, F z "Bb7"x2 | x8 | $
 x4 z2 z E | "CN.C."_AF Be _d_G _c_f | dA cG B_c _G_D | CF BF E_A _d_g | $
@@ -12081,7 +13358,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id freight-trane
+%%tags needs-repair
 K:Ab
+I:linebreak $
 "^(Bright Bop)"EF G |: "Ab""_{Ab}"AE z4 z G | "Gm7b5"BA GF "C7"=Ed B=B | "Fm7"c=B cB "E7#5"cA z2 | $
 "Ebm7"z "_{Eb -}"=Bc A"Ab7"_B A_G A | "Db"F2- (3FAc ed z2 | "Dbm7"z2 _cB- "Gb7"B2 _FE | "Cm7"z BB B-"F7"B AE =D | $
 "Bm7"z BB B-"E7"B A=D _D | "Bbm7""_{Ab}"z6 dA | "Eb7"de z =A- A2 _A2 | "Ab7#9"_c2 A2 "F7#9"_G2 E2 | $
@@ -12097,7 +13377,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=190
+%%id friday-night-at-the-cadillac-club
+%%tags needs-repair
 K:C
+I:linebreak $
 "C91113sus4""^(Med. Up Shuffle)""^Swing"CC |: C,2 "C13"G,,2 C,2 B,,2 | "Bb91113sus4"_B,,B,, "Bb13"E,,2 F,,2 =B,,2 | "C91113sus4"C,2 "C13"G,2 G,,2 C,2 | $
 "Bb91113sus4"_B,,2 "Bb13"F,,2 B,,2 "C91113sus4""^4x"=B,,2 [K:treble]"C13"z C.F G E2 C z | "Bb91113sus4"_E2 F"Bb13"D z4 | "C91113sus4"z C.F "C13"G E2 C z | "Db91113sus4"_G_A F"Db13"_D B,_E "C91113sus4"CC | $
 "C13"z C.F G E2 CG, | "Bb91113sus4"_E^C D"Bb13"_B z4 | "C91113sus4"z C.F "C13"G "C13"E2 C z | "Gbsus4"(3z_B,C (3E_G"Gb13"_B (3z^F=G (3B_d"F91113sus4"c | $
@@ -12113,7 +13396,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=176
+%%id fried-bananas
 K:Eb
+I:linebreak $
 "^Swing)""^(Med. Up"e |: "Eb"z d z cB ^F (3GBd | "Gm7b5"_d2 Gc- "C7"c2 z g | "Fm7"z f z ed =Bc d | $
 "Am7b5"e2 f"D9#5"d- d3 c | "Eb"B2 z e z B=A _A- | "Ab"A7 B | "G#5"GG- G6 |1 $
 "C7b9"z4 _dc _G=E | "Fm7"F A2 B-B FA B | "Abm7"_GF z F"Db7"f e=B _B- | "Eb"B4 z2 z =A | $
@@ -12129,7 +13414,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=106
+%%id friends-and-strangers
+%%tags needs-repair
 K:C
+I:linebreak $
 "Dm7""^(Med. Funk)""^Straight"A2 GE "Em7"B2 G"F"c- | cA- A6 | "Dm7"A2 GE "Em7"B2 G"F"c- | cA- A6 | $
 "Dm7"A2 GE "Em7"B2 G"F"c- | cA- A4 A/B/c/d/ | "Dm7"e2 d2 "Em7"c2 B"F"G/A/- | A8 | $
 "Dm7"e2 d2 "Em7"c2 B"F"G/A/- | A8 | "C"c2 d2 e2 "Em7"ge/a/- | "Asus4"a8- | $
@@ -12164,7 +13452,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id funk-in-deep-freeze
 K:Ab
+I:linebreak $
 "^Swing)""^(Med."C=D FA |: "Fm"B3 A z2 z _c- | "Db7"cA B"C7"A z "Fm"F z A | "Gm7b5"BA BA "C7"B2 AF | $
 "Fm"z2 z A-"B7"A F A2 | "Bb7"F3 F "Eb7"z2 "Ab7"F2- | F2 "Db7"F2- FF AB- | "Gm7b5"B3 A "C7"z FE F- |1 $
 "Fm"F2 z2 C=D FA :|2 "Fm"F2 z2 z4 || "Cm7"=d2 e2 =B2 cd- | d3 =B "F7"(3c2.=d2e2 | $
@@ -12178,7 +13468,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id gee-baby-ain-t-i-good-to-you
+%%tags needs-repair
 K:Bb
+I:linebreak $
 "C7""^Swing Bluesy)""^(Med. Slow"c2- (3cG_A "Ab7"B E2 F | "G7"G2- (3G_A^F "C7"G4 | "F7"_G2 GE "Bb7"(3GGF- FE | "Eb6"E4 "G7"z G3 | $
 "C7"c2- (3cG_A B "Ab7"E2 F | "G7"G2- (3G_A^F "C7"G4 | "F7"_G2 GE "Bb7"(3GGF- FE | "Eb6"E6 "Eb7"z2 || $
 "Ab6"z F (3F=EF- "Aother"(3F_E_G- GF | "Eb6/Bb"z ^F (3GcB- "Eb7"B4 | "Ab6"z c (3_GGG "Aother"G4 | "Dm7b5"z F (3FED- "G7"D4 | $
@@ -12191,7 +13484,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id gentle-rain
 K:C
+I:linebreak $
 |: "Am6""^(Bossa)""^Straight"E6 DC | C6 DE | "Bm7b5"E6 DC | "E7"B,6 CD | $
 "Am7""D7"E8- | "Gm7"E4 "C7"EG EC | "F6"D8- | D4 z4 | $
 "F#m7b5"c6 BA | "B7b9"A6 G^F | "Em7b5"_B6 AG | "A7b9"G6 FE | $
@@ -12206,7 +13501,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id georgia-on-my-mind
 K:F
+I:linebreak $
 |: "F""^(Ballade)""^Swing"Ac- c6 | "Em7b5"AG- "A7"G6 | "Dm"z2 A2 "Dm/C"d2 AG- | "G/B""Bbm7"G6 "Eb7"FG |1 $
 "F"A2 c2 "D7"ed- d2 | "Gm7"Bd- d2 "C7"A2 G2 | "Am7""D7"c8 | "Gm7"dd dd "C7#5"^G4 :|2 $
 "Gm7"B2 D2 "C7"A2 AF- || "F"F8 | "Em7""A7"z8 || "Dm7"D F2 "A7/C#"G- G2 A2 | $
@@ -12222,7 +13519,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id get-happy
 K:F
+I:linebreak $
 "^Swing)""^(Med. Up"CF A || "F6""^A"c c2 c B2 Ac- | "Gm7"c c3- "C7"cC FA | "F6"c c2 c "D7#5"B2 AF- | $
 "Gm7"F4- "C7"FC FA | "F6"c c2 c B2 Ac- | "Bb6"c c3- "Bdim7"c f2 f- | "F6/C"fA B=B "C7"c2 AF- | $
 "F6"F4- "F7"FF Bd | "Bb6"f f2 f _e2 df- | "Cm7"f f3- "F7"fF Bd | "Bb6"f f2 f "G7#5"_e2 dB- | $
@@ -12240,7 +13539,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id getting-to-know-you
+%%tags needs-repair
 K:F
+I:linebreak $
 "^Swing)""^(Med."(3EFG || "C"c4 "C7"c4 | "C6"(3EFG c2 c3 E | "Dm"G4 G4- | $
 "G7"G6 (3FGA | "Dm"d4 "G7"d4 | "Dm"(3FGA d2 "G7"d3 F | "Am"E8- | $
 "Dm"E6 "G7"(3EFG | "C"c4 "C"c4 | "C6"(3EFG c2 "C7"c3 E | "F"A4 "F6"A4- | $
@@ -12259,7 +13561,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=187
+%%id giant-steps
 K:C
+I:linebreak $
 |: "B""^(Fast""^Swing)"^f4 "D7"d4 | "G"B4 "Bb7"G3 _B- | "Eb"B8 | "Am7"=B3 A- "D7"A4 | $
 "G"d4 "Bb7"_B4 | "Eb"G4 "F#7"^D3 ^F- | "B"F8 | "Fm7"G4 "Bb7"F3 _B- | $
 "Eb"B8 | "Am7"=B4 "D7"A3 d- | "G"d8 | "C#m7"^d4 "F#7"d3 ^f- | $
@@ -12272,7 +13576,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id girl-from-ipanema
 K:F
+I:linebreak $
 "Fmaj9""^Straight""^(Bossa)"G3 EE D2 G- | G2 EE- EE DG- | "G9"G2 E2 E2 DG- | GG EE- EE DF- | $
 "Gm7"F D2 D-D DC E- | "Gb7b5"E C2 C-C C B,2 |1 "F"z2 C6- | "Gb9"C8 :|2 $
 "F"z2 C6- || C6 z2 || "Gb"F8- | (3F2_G2F2 (3_E2F2E2 | $
@@ -12290,7 +13596,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=74
+%%id girl-talk
 K:Eb
+I:linebreak $
 |: "Ebmaj7""^(Slow Med.)""^Swing"z GG G"A9"G GG G | "Ab"GG CC "Fm7"EE "Bb7b9"F2 | "Gm7"z GG G"C7b9"G GG G | "Fm7"AA "Gm7"GG "Ab6"EE "Bb9"C2 | $
 "Ebm7"z _GG G"Abm7"G GG G | "F7b5b9"_GG _CC "Fm7/Bb"EE "Bb7b9"F2 | "Gm7"z GG G"C7b9"G GG G | "Gm7"BB "Abm6"AA "Bbm6"GG "C7"C2 | $
 "Cm7/F"z G (3GCE "F9"z G (3GCE | "Fm7/Bb"z G (3GCE "Abm7"z _GG E | "Gm7"B4 "Cm9"G2 z2 |1 "Fm7"E4 "Bb9"C2 z2 :|2 $
@@ -12303,7 +13611,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id glow-worm
 K:C
+I:linebreak $
 |: "C""^Swing)""^(Med."A2 GG ^F2 G2 | "G7"^G3 AG A z B- | B B2 A ^G2 A2 | "C"B2 c2 Bc z2 | $
 "C/E"d d2 c "Ebdim7"B2 c2 | "G7/D"B2 A^G- G A3 | "Dm7"c c2 B "G7"^A2 B2 | "C"=A2 G^F- F G3 | $
 A2 GG ^F2 G2 | "G7"^G3 AG A z B- | B B2 A^G G A2 | "C"B3 cB c z2 | $
@@ -12319,7 +13629,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id gnid
 K:F
+I:linebreak $
 "^(Med.""^Swing)"C2 |: "F"AF GA- "Bbm7""Eb7"A3 G | "F"Ac BA- "Bbm7"A2 "Eb7"z G | "Fm"E4 z F"Bbmaj"A c | $
 "Am7b5"_eA Bc- "D7b5b9"c2 z A/c/ | "Gm7"BG A"Bbm7"!>!B z "Eb7"c- (3c_cB | "Am7"A2 (3Bc^c "D7b5"d4 |1 "G7b5"z2 DF (3A2A2A2 | $
 "Gm7"G4 "C7"z3 C :|2 "G7"(3z2D2F2 "C7"(3A2A2A2 || "F""Cm7""F7"F8 || "Bbm7""Eb"z8 | $
@@ -12333,7 +13645,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id god-bless-the-child
 K:Eb
+I:linebreak $
 "^Swing""^(Ballade)"EF |: "Eb"G2 "Eb7"G2 "Ab6"F2 EF | "Eb"G2 "Eb7"G2 "Ab6"F2 Bc | "Bbm7"_d2 d2 "Eb7"c2 Bc | $
 "Bbm7"_d2 B2 "Eb7"G4 | "Ab"G G2 F C4 | "Abm"G G2 F _C3 G | "Gm7"B B2 G "C7b9"B2 G2 | $
 "Fm7"GB "Bb7"B4 B,2 | "Eb6"CE E6 |1 z4 z2 EF :|2 "Dm7b5""G7b9"z8 || $
@@ -12350,7 +13664,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/4=114
+%%id goin-out-of-my-head
 K:C
+I:linebreak $
 "^Straight""^(Med Slow Rock)"G2 A2 |: "Cm7"_BA BA Bc A2 | "C"G6 GA | "Cm7"_BA BA Bc A2 | $
 "C"G4 "C7#5"C2 c2 | "F"d2 A6- | A4 C2 c2 | "Fm7"d2 _A6- | $
 "Bb9"A6 _B,2 | "Eb"_A2 G4 _B,2 | "Gm7"c2 _B4 _B,2 | "Eb"_A G2 _B,"Gm7"c _B2 B, | $
@@ -12368,7 +13684,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id golden-lady
 K:Eb
+I:linebreak $
 |: "Eb""^(Rock Ballade)""^Straight"z8 | "Fm7"z8 | "Gm7"z8 | "Am7""D7sus4"z8 "Eb"G2 GB- BG/F/ G2- | $
 "Fm7"G2 z4 z2 | "Gm7"G2 GB- BG/F/ G2- | "Am7"G2 z2 "D7sus4"z4 | "Eb"G2 GB- BG/F/ G2- | $
 "Fm7"G2 z4 z2 | "Gm7"G2 GB- BG/F/ G2- | "Am7"G2 z2 "D7sus4"z DG/ =AB/- || "Eb"B2 Bc- c/B=A/- AG/A/- | $
@@ -12387,7 +13705,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id gone-with-the-wind
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: "Fm7""^(Med.""^Swing)"c4 "Bb7"B3 B | "Eb""G7""C7"G8 | "Fm7"c2 cc "Bb7"(3B2B2B2 | "Eb"B3 B G4 | $
 "Am7"G4 "D7"^F3 =A | "G6""E7"=E8 | "Am7"=E2 G2 "D7"(3^F2G2=A2 | "G"d3 d d4 |1 $
 "Gm7""Eb/G"z4 (3d2d2d2 | "F#other"d2 e4 d2 | "Fm7"(3e2c2e2 d4- | "Bb7"d8 | $
@@ -12402,7 +13723,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id good-bait
 K:Bb
+I:linebreak $
 "^Swing)""^(Med."F |: "Bb"B2 BA "Gm7"B2 z2 | "Cm7"z AB c"B7"_d e_g _a | "Bb"f2 f=e f2 z2 | $
 "Cm7"z dc B"F7"A cf e | "Bb"d2 d^c "Bb7"dg fd | "Eb"B2 BA "Ab7"Bd fe | "Dm7"dA "Dbm7"_A_d "Cm7"cG "B7"_G=B | $
 "Bb"B2 z2 "F7"z2 z F :| "Eb"E2 ED "Cm7"E2 z2 | "Fm7"z DE F"E7"_G _A=B _d | "Eb"B2 BA B2 z2 | $
@@ -12418,7 +13741,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id good-man-is-hard-to-find
 K:C
+I:linebreak $
 "^(Med.""^Swing)"G^G || "A7"A4- AE ^DE | A4- AE ^DE | "D7"A4- AD ^CD | $
 A6 "D7#5"^A2 | "G7"B2 A2 G B2 G | "G7"A G2 B- B2 G2 | "C"c^G A^F =G^D ED | $
 EG ED C2 G^G | "A7"A4- AE ^DE | A4- AE ^DE | "D7"A4- AD ^CD | $
@@ -12433,7 +13758,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id nood-morning-heartache
 K:C
+I:linebreak $
 |: "^(Med. ballade)""^Swing"z "Cm"CG F"Ab/C"_E C3 | "Cm6"C C2 G/F/ "Cm7"_E4 | "F"z CA G"Bb"F C2 A/_B/ | "Am7b5"cc "Eb7b9"_Bc "D7b9"A4 | $
 "Gm7"z Dc _B"Bbmaj"A G"Eb9"F E | "Am7"E2 GE "Abm7""Db9"_E4 |1 "Gm7"z CC C "C7b5#5b9#9"_E2 CE | "F""Dm7b5""G7b9"C8 :| $
 "Gm7"z CC C "C7b5#5b9#9"_E2 C=E | "F6"F8 || "Em11"z A3 "A7b5#5b9#9"(3c2A2c2 | "Dm6"A8 | $
@@ -12449,7 +13776,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id good-bye-pork-pie-hat
+%%tags needs-repair
 K:Ab
+I:linebreak $
 "^Swing""^(Ballade)"C |: "F7"FA- (3AFA "Db7"B A2 F/E/ | "Gb"F A2 F/E/ "B7"F3 C | "Eb7"FA- (3AFA "Db7"_c B2 F/E/ | $
 "Eb7"F A2 F/E/ "F7"F3 F | "Bbm7"ce- (3eFA "Db7"B A2 F/A/ | "Gm7"cf- (3fFA "C7"(3e2c(3A =ED | "D7"(3A2=B2F2 "G7"(3=E2_B2G2 | $
 "Db7"A4 "Gb"F3 _c/B/ | "B7"A4 "Bb7"F4 | "C7"BA FE "Eb7"_cB AF | "F7"A4 "Db7"F4 | $
@@ -12462,7 +13792,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=302
+%%id got-a-match
 K:F
+I:linebreak $
 "^(Fast""^Swing)"A,- |: "Dm"A,2 DF .A2 z A,- | "A7"A,2 ^CE .A2 z A,- | "Dm"A,2 DF AG FA | $
 "D7"GF EG FE _ED- | "Gm"D2 GB .d2 z D- | "D7"D2 ^FA .d2 z D- | "Gm"D2 GB dc Bd | $
 cB Ac BA GA | "Em7"z =B,D B,"A7"^C EA =C | "Fm7"_EC DF "Bb7"B_A GF | "Eb".G2 G,_A, B,C DF | $
@@ -12476,7 +13808,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id green-dolphin-street
 K:C
+I:linebreak $
 |: "C""^A""^(Med.""^Swing)"c4 c4- | c4 (3B2G2E2 | "Cm7"_B8- | B8 | $
 "D7/C"A4 A4- | A4 "Db/C"(3_A2F2_D2 | "C"G8- | G8 || $
 "Dm7""^B"z G3 D2 E2 | "G7b9"F2 G2 _A2 _B2 | "C"G4 G4- | G6 G2 | $
@@ -12491,7 +13825,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id groove-merchant
 K:Bb
+I:linebreak $
 "^(Med. Gospel)""^Swing"{/^F}GB BG |: "Bb7".d2 z2 z4 | "Eb7"z2 F^F GB BG | "Bb7".B2 z2 z4 | $
 "Bb7"z4 "F7"GB BG | "Bb"{/^c}df- "Bb/Ab"f6 | "Gm7"z2 .g2 "C7"_dc BG | "F7".c2 z2 "C7"z4 | $
 "F7"z4 df fd | "Bb7"z2 .g2 f2 {/^c}d.B- | .B4 {/^F}GB BG | "Eb7"cB- B4 G.B | $
@@ -12507,7 +13843,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id groovin-high
 K:Eb
+I:linebreak $
 "CNC""^Swing""^(Bop)"E_G z E =B3 _B | z =A z F (3_GBd f=e | ec "Eb"z2 z4 | z4 z2 z "CNC"G | $
 BG (3Ace gb ac | g2 g_g z =B2 =A |: "Eb6""^A"BG z2 z4 | BG z2 z4 | $
 "Am"z =E=A c"D7"=B A_A E | "Am7"GF ^Fd- "D7"d2 c/d/c/=A/ | "Eb6"BG z2 z2 z =A | BG z2 z4 | $
@@ -12523,7 +13861,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id hallelujah-i-love-her-so
 K:F
+I:linebreak $
 |: "F""^(Med.""^Swing)"z cd c"F/A"_A GF D | "Bb"F2 F"Bdim7"_A- A2 "C7"z2 | "F"z cd c"F/A"_A GF D | "Bb"F2 F"Bdim7"D- D2 "C7"z2 | $
 "F"z2 dc _AG FD | "F7"F2 FF- F2 "F7#5"z2 | "Bb"z DF DF DF D | "Bdim7"F2 FF- FC DF | $
 "F"A c3 "A7"z2 AA | "Dm"G F3 "Bb7"z2 _AG | "G7"_AG FD "C7sus4"F2 FF- |1 "F"F2 z2 "C7"z4 :|2 $
@@ -12541,7 +13881,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id happy-talk
 K:F
+I:linebreak $
 "F""^(Brightly)"z2 F4 C2 | "F7#5"A2 A2 A2 A2 | "Bb"G F2 E- E4- | "G7"E8 | $
 "C7sus4"CC A2 C2 A2 | "Gm7"C4 "C7"A4 | "F"C8- | "F7"C6 "F7#5"^C2 | $
 "Bb"D2 F2 G B2 c- | "Eb9"c6 B2 | "F"C2 F2 G A2 B- | "D7b9""D7"B8 | $
@@ -12559,7 +13901,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id harlem-nocturne
 K:Bb
+I:linebreak $
 "Gm""^(Med. Ballade)""^Swing"z G,D G A2 B^F- |: "Gmaj"F8- | "Gm7"FG DB, G,2 B,D- | "Cm7"DC- C6- | $
 CC Gc d2 e=B- | "Cmaj"B8- | "Eb13"Bc (3_BGE "A7"^C2 "D7"AG- |1 "Gm6""Eb9"G8 | $
 "Gm6"z G,"C/"D G A2 B^F :|2 "Gm6"G8- || G2 z2 "F9"z2 z c || "Bb9"BF G_A- "B9"A3 c | $
@@ -12578,7 +13922,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id have-you-met-miss-jones
 K:F
+I:linebreak $
 |: "F""^(Med.""^Swing)"A3 DC D2 C- | "F#dim7"C8 | "Gm7"z D2 EF G2 A- | "C7"A B2 c- c4 | $
 "Am7"d3 GF G2 F- | "Dm7"F6 A2 |1 "Gm7"B8- | "C7"B8 :|2 $
 "Cm7"c8 || "F7"z d3 d2 d2 || "Bb"c3 BF G2 _A- | "Abm7"A _A3 "Db7"A2 A2 | $
@@ -12594,7 +13940,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id havona
+%%tags needs-repair
 K:C
+I:linebreak $
 "Dsus4""^(Bright Funk samba)""^Straight"Gd ad' | "Csus4/D"Fc gc' "Bsus4/E"E_B ^fb EB fb "Asus4/B"DA ea | DA ea "G#sus4/A"^C^G ^d^g "F#sus4/G#"B,^F ^c^f "Bsus4/F#"EB fb | "G#sus4/E"^C^G ^d^g "F#sus4/G#"B,^F ^c^f B,F cf "Bsus4/G#"E,B, FB | $
 E,B, FB ^c/^d/"Esus4/B"A, EB e^F B |: [M:3/4]"F#sus4/A"^f3 "G#sus4/B"^g3 | [M:4/4]"Esus4/F#"e8- | e8- | $
 e4 z "Bsus4/G#"Bb :| "F#sus4/A"^F3 "G#sus4/B"^G- G2 "Asus4/E"A2- | A "Bsus4/D"B3 "Esus4/C#"e2 "Bsus4/G#"b2 | [M:3/4]"F#sus4/A"^f3 "G#sus4/B"^g3 | $
@@ -12615,8 +13964,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=132
+%%id hay-burner
 K:F
-|: "F""^A""^(Med.""^Swing)\n"F2 z2 "Am"{/^G}Ac z2 | "Bb"z2 z !>!d-"Gm7/C"d/e/ d/c/A G | "Dm".F2 FF "Am"A c2 G- | "Eb""C7"G8 | $
+I:linebreak $
+|: "F""^A""^(Med.""^Swing)"F2 z2 "Am"{/^G}Ac z2 | "Bb"z2 z !>!d-"Gm7/C"d/e/ d/c/A G | "Dm".F2 FF "Am"A c2 G- | "Eb""C7"G8 | $
 "F"z2 z F"Am"!tenuto!A c2 !>!f- | "Gm7"f2 "Bb"{/e_e}d_d "Am7"c=D "Dm7"z2 | "G7b9"z !>!=d !tenuto!_A2 "Gm7/C"FG FF | "F""F6""Bb""Am""F7""Gm7"z8 :| $
 "^B""Bb"z2 !slide!d_A- "Bother"A4- | "F6"Ad- d/e/d/c/ "F7"dc _AF | "Bb"z2 !slide!d_A- "Bother"A4- | "F6"Ad- d/e/d/c/ "F7"dc _AF | $
 "Bb"z2 !slide!d_A- "Bother"A4- | "F6"A=A FC "D7"E D2 E- | "G7#11"E2 ^CD EG Ac- | c2 !~(!!>!f4 !~)!!^!d2 || $
@@ -12630,7 +13981,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id head-and-shoulders
 K:Bb
+I:linebreak $
 "^(Bright)""^Swing"F |: "Ab7"BA Bc "G7"dB "Gb7"e2- | ed ed "F7"c3 F | "Ab7"BA Bc "G7b9"dc B_A | $
 "Gb7"_G_D EF "F7"z4 | "E#11"e2 ee "Ebm7"_AA z _d- | "D#11"d8 | "Em7""A7"z8 | $
 "D"z4 z _A_G =E | "C#m7"^D3 ^C"F#7"D C z D- | "Bb"D8 | "Cm7b5"z EF _G"F7b9"F E_D C- |1 $
@@ -12645,7 +13998,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id hello-dolly
 K:Bb
+I:linebreak $
 "^(Marching""^Swing)"D2 |: "Bb"F8 | D2 B,2 D2 F2 | "Gm"G8 | $
 D2 B,2 D2 F2 | "Bb"A2 B2 A2 B2 | "Bbother"A2 B2 c2 z B | "Cm7"F8 | $
 "F7"z2 =E2 F2 ^F2 | "Cm7"G8 | E2 C2 E2 G2 | "Ab/C"_A8 | $
@@ -12664,7 +14019,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=130
+%%id hello-young-lovers
 K:C
+I:linebreak $
 "^(Med.""^Swing)"G2 |: "Cmaj9"G4 G2 | "Dm7"G3 A B2 | "Em7"A3 G F2 | $
 "Dm7"E4 E2 | "C"E4 E2 | "A7b9"E3 G A2 | "Dm7"D6- | $
 "G7"D6 | "Dm7b5"F3 F F2 | "G7"D3 D D2 | "Eb"G3 A G2 | $
@@ -12686,7 +14043,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id here-s-that-rainy-day
 K:G
+I:linebreak $
 "G""^A""^(Med. Ballade)""^Straight Latin"D2 D4 D2 | "Bb7"D2 =F2 _B2 d2 | "Eb"d4- (3d2c2B2 | "Ab"c8 | $
 "Am711"D2 D4 D2 | "D7"D2 F2 A2 c2 | "G"B8- | "Dm7""G7b9"B8 | $
 "Cm7"_e4 e4 | "F7""Cm7"_e2 G2 "F#9"^G2 "F7"A2 | "Bb"d4 =F2 "E9"^F2 | "Eb"G4 F2 G2 | $
@@ -12703,8 +14062,11 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id hideaway
+%%tags needs-repair
 K:Ab
-|: "^\n""^(Med Funk)""^Straight"z2 "Ab7sus4"_Gd ea "Ab7"Gc ea | "Ab7sus4"_Gd ea "Ab7"Gc ea Gc ea | Gc ea "Gb7sus4"_F_c d_g "Gb7"FB dg | "Gb7sus4"_F_c d_g "Gb7"FB dg FB dg :| $
+I:linebreak $
+|: "^""^(Med Funk)""^Straight"z2 "Ab7sus4"_Gd ea "Ab7"Gc ea | "Ab7sus4"_Gd ea "Ab7"Gc ea Gc ea | Gc ea "Gb7sus4"_F_c d_g "Gb7"FB dg | "Gb7sus4"_F_c d_g "Gb7"FB dg FB dg :| $
 "Ab7sus4"z3 E/F/"Ab7"A Bc c | "Ab7sus4"d2 c"Ab7"A- A E2 D- | D z "Gb7sus4".D.E "Gb7"_GA B(_c | "Gb7sus4".B)(d .B)"Gb7"_G- G2 z2 | $
 "Ab7sus4"z3 E/F/"Ab7"A Bc c | "Ab7sus4"(d.e) .c"Ab7"A- A E2 D- | D z "Gb7sus4".D.E "Gb7"_GA B(_c | "Gb7sus4".B)d .B"Gb7"_G- G2 "Ab7sus4"z2 |: $
 "Ab7sus4""^A"z4 z .E.F .A | A2 F/E/.A z "D9#11"(_c.F) A- | "Db9"A_c z2 z4 | "E7"(d._c) (d"Eb7".c) e c2 "Ab7sus4"A- | $
@@ -12721,8 +14083,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id honeysuckle-rose
 K:F
-"Gm7""^A""^(Medium (-Up)""^Swing)\n"cB DF "C7"A4 | "Gm7"cB DF "C7"A4 | "Gm7"cB DF "C9"A2 A2 | "Gm7"A4 "C9"AG FD | $
+I:linebreak $
+"Gm7""^A""^(Medium (-Up)""^Swing)"cB DF "C7"A4 | "Gm7"cB DF "C7"A4 | "Gm7"cB DF "C9"A2 A2 | "Gm7"A4 "C9"AG FD | $
 "F6"F2 F2 "F7/A"F4- | "Bb6"F4 "C7""Bother"AG FD | "Bb7""F/C"F8 | "Am7""Am7b5""D7"z8 | $
 "Gm7"cB DF "C7"A4 | "Gm7"cB DF "C7"A4 | "Gm7"cB DF "C9"A2 A2 | "Gm7"A4 "C9"AG FD | $
 "F6"F2 F2 "F7/A"F4- | "Bb6"F4 "C7""Bother"AG FD | "F6""F/C""C7"F8 | "F6"z8 || $
@@ -12738,7 +14102,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=192
+%%id hot-house
 K:Bb
+I:linebreak $
 "^(Med. Up Bop)""^Swing"B- | "Gm7b5"BB A_A G2 _GF | "C7#5"=EF _GB G2 z _A- | "Fm7b5"A_A G_G F2 =E_E | $
 "B7#5"DE =E_A E2 z2 | "Dm7b5"z G_A B (3ABA G=B- | "G7#5"B_B z _A(3G/A/G/ FE _D | "C"C_G F2- F3 =E- | $
 EC z2 z4 || "Gm7b5"z G_A Bc B^F G | "C7#5"(3B_da ^f=d z4 | "Fm7b5"z FG _AB A=E F | $
@@ -12756,7 +14122,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=186
+%%id how-about-you
 K:C
+I:linebreak $
 "C""^(Easy""^Swing)"z2 c2 "F7"d3 B | "Em7"c d2 B- "Ebother"B4 | "Dm7"AA A2 e4- | "G7"e6 z2 | $
 "C"z2 c2 "F7"d3 B | "Em7"c d2 B- "Ebother"B4 | "Em7b5"_BB B2 f4- | "A7#5"f6 z2 || $
 "Dm7"z2 e2 d3 c | "Fm6"d e2 c- c4 | "Em7"de c2 "Am7"c2 cc- | "Fm7b5"c4 "B7#9"=d2 c2 | $
@@ -12773,7 +14141,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id how-deep-is-the-ocean
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Cm7""^(Easy""^Swing"z2 E2 (3E2D2E2 | "Bother"G2 G6 | "Eb6/Bb"z2 E2 (3E2D2E2 | "Am7b5""D7"G8 | $
 "Gm7"z2 B2 (3B2=A2B2 | "Am7b5"c2 "D7b9"c6 | "Gm"z2 B2 "D7/F#"(3B2=A2B2 | "Fm7""Bb7"c8 | $
 "Bbm7"z2 e2 e2 e2 | "Eb7"e B2 B- B2 B2 | "Ebm7"B2 _G2 G2 G2- | "Ab7"G8 | $
@@ -12790,7 +14161,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id how-high-the-moon
 K:G
+I:linebreak $
 "^(Med.""^Swing)"z2 D2 G2 A2 |: "G"A4 B4- | B2 D2 G2 A2 | "Gm7"_B8- | $
 "C7"B2 C2 =F2 G2 | "F"G4 A4- | A2 C2 =F2 G2 | "Fm7"_A8- | $
 "Bb7"A2 D2 _E2 =F2 || "Eb"G2 G2 G2 G2 | "Am7"G2 GA- "D7"AG A2 | "Gm7"_B8- | $
@@ -12808,7 +14181,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id how-insensitive-2
 K:C
+I:linebreak $
 "Dm9""^(Bossa)""^Straight"A8- | A _B2 A-A B2 A- | "C#dim7"A8- | A _B2 A-A B2 A- | $
 "Cm6"A4- (3A2^G2A2 | c B2 _B-B A3 | "G7/B"A3 G- G4- | G8 || $
 "Bb"G8- | G A2 G-G A2 G- | "Eb"G8- | G A2 G-G A2 G- | $
@@ -12825,7 +14200,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id how-long-has-this-been-going-on
 K:G
+I:linebreak $
 |: "Am7""^(Ballade)"d e2 e- e4 | "Abdim7"e d2 d- d4 | "G9sus4"d2 e2 "G7b9"e2 d2 | "C"A G2 "F7"G- G4 | $
 "G/B"G A2 A- "Bbother"A4 | "Am7"E D2 D- "Abother"D3 D |1 "Am7"EG AG "Eb9"_B "D9"=B2 d- | "Bm7""E7b9"d8 :| $
 "Am7"EG AG "Eb9"_B "D9"A2 G- | "G""G7#5"G8 || "C"B4 "F7"A c2 A | "C"B2 G"F7"A- A4 | $
@@ -12841,7 +14218,10 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=114
+%%id how-my-heart-sings
+%%tags needs-repair
 K:C
+I:linebreak $
 "^(Jazz Waltz)""^Swing"^fa |: "Em7"g4 B2 | "Am7"c4 de | "Dm7"f4 A2 | $
 "G7"B4 cd | "C"e4 c2 | "F"(4A2B2c2e2 | "Bm7b5"d4 B2 | $
 "E7"^G4 E2 || "Am7"A2 B2 c2 | "Abother"d2 B3 ^G | "Am7/G"A3 Bc A | $
@@ -12860,7 +14240,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id humpty-dumpty
 K:C
+I:linebreak $
 "Eb69""^Straight""^(Up)"z2 z _ed e2 d | "D"{/c}^c3 A- A4 | "Gb"z4 _a f2 a | "F"e3 c- c2 AF- | $
 "A7#5"F8 | "Bb"z3 F A2 c_e- | "Bbm7"e3 _d_e dc F | _dc Fd c4- | $
 c8 | z _B,_D _EF G_A F || "Dm7"G3 FE Gc d | "Bm7"e3 ^c- c3 E | $
@@ -12882,7 +14264,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=270
+%%id hungaria
 K:G
+I:linebreak $
 "^(Fast""^Swing)"G,2 z2 A,2 z2 | B,2 z2 C2 z2 | B,2 z2 A,2 z2 | G,3 D- D4 | $
 "G"D3 E- E4 | z4 ^C2 D2 | "Ab"_E3 F- F4 | z4 z2 _E2 | $
 "G"D4 E4 | G4 B4 | "E7"d3 B- B4 | z2 DE z D E2 | $
@@ -12899,7 +14283,9 @@ C:Jimmy Mc Hugh
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id i-can-t-believe-that-you-are-in-love-with-me
 K:C
+I:linebreak $
 ee || "F"d c2 A- A3 e | "Fm"d c2 _A- A3 e | "C"d c2 G- G3 e | $
 "D7"d c2 A- A3 E |: "G7"G3 E "F/A""F#/A#"D3 E | "G7/B"G3 E D3 E | "C""Dother""Fother"G7- G | $
 "C7/E"z4 z2 e2 |1 "G7"G3 E "F/A""F#/A#"D3 E | "G/B""Bdim"G3 E "Ddim"D3 "Fdim"E | "C/E""G7"C7- C | $
@@ -12916,7 +14302,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id i-can-t-get-started
 K:C
+I:linebreak $
 "^Swing""^(Ballade)"z EG |: "C"B3 c "Am7"A3 E/F/ | "Dm7"G4- "G7"GE GB | "Bm7""E7""E7"d3 e "Bbm7""Am7b5""Eb7"c3 G/A/ | $
 "Am7""D7b9#11""D7"B4 "Abm7""G7sus4"z C"Db7"E G | "C"B3 c "Am7"A3 E/F/ | "Dm7"G2 G_A- "G7b9"A3 C/D/ |1 "E7""A7"E8- | $
 "D7"E4 "G7sus4"z CE G :|2 "C6""Bb7#11"C8 || "C"z2 C2 E2 G2 || "Em7""A7"A8 | $
@@ -12932,7 +14320,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id i-can-t-give-you-anything-but-love
 K:G
+I:linebreak $
 "G""^Swing""^(Dreamly)"G2 F2 "Am7"E2 G2 | "G/B"F2 E2 "Bbother"G2 E2 | "Am7"A8 | "D7"A^A B6 | $
 "G"G2 "Am7"F2 E2 G2 | "Bm7"F2 E2 "Em7"G2 B2 | "Am7"d8 | "D7"B_B A6 | $
 "G7"G^G A6 | A^A B6 | "C"d2 c2 B2 A2- | "C7""B7""Bb7"A8 | $
@@ -12949,7 +14339,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-can-t-help-it
 K:Ab
+I:linebreak $
 |: "A13#11""^(Med. Pop Ballade)""^Straight"_e8- | "Abmaj9"e8- | "A13#11"e8- | "Abmaj9"e8 "A13#11"z2 z3/2 ^f/-f/=e =B/-B/^c _e/- | $
 "Abmaj9"ee- e4 z2 | "A13#11"z2 z3/2 ^f/-f/=e (=B/B/)^c _e/- | "Abmaj9"e/_f/e- e6 | "Fm9"z2 z3/2 f/-f/e c/-c/c B/- | $
 "Bb13"BA- A4 z2 |1 "Dbm9"z2 _G/Ae/- "Eb7#9#5"e/dd/- d/e_g/4d/4 | "Em9"e"F#m7"=e e/"G#m7"^f"A"^g/- g3/2=a/4g/4 f2 :|2 "Dbm9"z2 _G/A(e/ "Eb7#9#5"e/)d(d/ d/)_cB/- || $
@@ -12967,7 +14359,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=50
+%%id i-could-write-a-book
 K:Ab
+I:linebreak $
 "^(Ballade)""^Swing"=E2 F2 |: "C"G4 "Am7"=B4 | "Dm7"=A2 G2 "G7"=E2 =D2 | "C"=E8 | $
 =E2 G2 "G7"E2 =D2 | "C"=E2 G2 "G7"E2 =D2 | "C"=E2 "C#other"=B4 E2 | "Dm7"G8- | $
 "G7"G4 =A2 =B2 || "C"c4 "Ab7"c4 | "Dm7"c2 =d4 =B2 | "Am7"=A4 "D7b9"A4 | $
@@ -12983,7 +14377,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id i-cover-the-waterfront
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "Em7""^Swing)""^(Med. Up"z2 "A7"B2 (3A2G2A2 | "Am7"B2 BB- "D7"B4 | "G"z2 d2 "Am7"(3d2B2G2 | "Bm7""Bbother"F6 EF | $
 "Am7"G G2 G- G3 A | B B2 B- "D7"B2 A2 |1 "G""F#7"d8- | "F7""E7"d8 :|2 $
 "G""C7"G8- || "G6"G2 z2 "Em7"z4 || "Am7"d2 dd- "D7"d4 | "Bm7"(3D2D2^D2 "Em7"EE- E2 | $
@@ -12999,7 +14396,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id i-cried-for-you
 K:F
+I:linebreak $
 "F""^(Med.""^Swing)"A4 e4- | "Am"e4 "D7"d4 | "G7"D8- | "Dm7"D4 "G7"E2 F2 | $
 "Gm7"c4 "C7"A2 G2 | "Gm7"c2 "C9"A4 G2 | "F6""C7#5"D8- | "F6"D8 | $
 "F"E4 F4 | "Am7"G4 "D7"A2 B2 | "Gm7"c8 | "C7"E8 | $
@@ -13017,7 +14416,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-didn-t-know-about-you
 K:Bb
+I:linebreak $
 "^(Ballade)""^Swing""Cm7"dd dA- "F9"A2 B=B | "Bbmaj7"cc cG- "Bb6"G3 G | "Eb7"BB BA- "D7"A3 A | "Fm6"cc c=B- "G7"Bd ef | $
 "C9"^fa gG- G4- | "Cm7"GG Bd "F7"f=e _e2 | "Bb""Bb6"d8- | d4 "D7b5"^f2 "G7"g2 | $
 "Cm7"dd dA- "F9"A2 B=B | "Bb"cc cG- "Bb6"G3 G | "Eb7"BB BA- "D7"A3 A | "Fm6"cc c=B- "G7"Bd ef | $
@@ -13034,7 +14435,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-didn-t-know-what-time-it-was
 K:G
+I:linebreak $
 |: "F#m7""^(Med.""^Swing)"B4- "B7"B F2 G | "Em7"A2 A2 "C#m7b5"AB G2 | "F#m7"B4- "B7"B F2 G | "Em7""A7"A8 | $
 "Am7"A4- "D7"A E2 F | "Em"G2 G2 "Em7/D"GA F2 | "C"E2 E2 "Bm7"EF D2 |1 "Am7""Gm7"c8 :|2 $
 "Am7""D7"d8 || "G6"e4- "Em7"ed cB | "F#m7b5"A2 AF A2 AF | "B7"A2 AF A2 _A2 | $
@@ -13051,7 +14454,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-don-t-know-why
 K:Bb
+I:linebreak $
 "Bb""^(Med.""^Swing)"BA GA BA G2 | "Eb7"BA GA B4 | "Bb"dc Bc dc Bc | "Gm7"dc Bc "C7"d4 | $
 "Cm7"cc cc "F7"d2 d2 | "Bb"G8 | "F"AB =Bc "F#dim7"dc _BA | "Gm7"cB "C7"AG "F7"c4 |: $
 "Bb"FF F(F F3) F | "Bb6"GG (3GG(G G4) | "Dm7"AA A(A "Dbdim7"A)G A2 | "Cm7""F7"G8 | $
@@ -13067,7 +14472,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-fall-in-love-too-easily
 K:Eb
+I:linebreak $
 "Fm7""^(Medium Ballade)""^Swing"z c=B c "Bb13b9"_B3 A | "Eb"GA "Ab"G6 | "Dm7b5"z AG A "G7b5#5b9#9"G3 F | "Cm7""A7b5"E8 | $
 "Dm7b5"z F=E F "G7b5#5b9#9"_E3 D | "Cm7"CD EG- "Cm7/Bb"G4 | "Am7b5"z ^FG =A "Ab13#11"d2 d2 | "Dm7b5""G7"d8 | $
 "Am7b5"z ed e "D7b5#5b9#9"d2 c2 | "G13"=B4- B"Db7#9"G AG | "C9sus4""C7b9"c6 _dc | "Fm7"A4- "C7b9"AG AG | $
@@ -13080,7 +14487,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-got-it-bad
 K:G
+I:linebreak $
 "G6""^(Freely)"^C2 D2 e2 d2 | "B7"F2 G2 "Em7"A2 G2 | "A13"z2 B2 "Em9"G2 A2 | "A13"B8 | $
 "Am7"z2 B2 G2 A2 | "B7#5"B2 "E7"d2 "A7"G2 "D13"B2 | "G6""Em7"G8 | "Am7""D7"z8 || $
 "G6"^C2 D2 e2 d2 | "B7"F2 G2 "Em7"A2 G2 | "A9"z2 B2 "Em7"G2 A2 | "A13"B8 | $
@@ -13097,7 +14506,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-got-rythm
 K:Bb
+I:linebreak $
 |: "^(Med.""^Swing)"z2 "Bb"F3 G- "Gm7"G2 | "Cm7"B3 c- "F7"c4 | "Dm"z2 "G7"c3 B- B2 | "Cm7"G3 F- "F7"F4 | $
 "Fm"z2 "Bb7"F3 G- G2 | "Eb"B3 "Ab7"c2 e2 c | "Cm/F"d2 d2 "F7"cd c2 | "Bb""F9#5"B6 z2 :| $
 "D7"z2 d3 d- d2 | d3 =e- e4 | "G7"z2 d3 d- d2 | d3 G- G4 | $
@@ -13112,7 +14523,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id i-hear-a-rapsody
 K:Eb
+I:linebreak $
 "^Swing)""^(Ballade ore Med."z2 G2 "G7"=A2 =B2 |: "Cm9""^A"d3 c "Gb13#11"e4- | "Fm7"e4 "Bb7b9"d4 | "Eb"(3B2G2A2 "Ab9"B4- | $
 "Gm7b5"B2 G2 "C7b9"(3G2A2B2 | "Fm7"B3 A "Abm7"_c4- | "Bm7"c2 D2 "Bb7#5"D2 D2 | "Eb"F3 E "A7#11"E4- | $
 "Dm7b5"E2 G2 "G9"=A2 =B2 :| "Eb"F3 E "Bbm11"E4- | "Am7b5""D7b9"E8 || "Gm7""^B"z2 D2 (3D2D2D2 | $
@@ -13128,7 +14541,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id i-left-my-heart-in-san-francisco
 K:Bb
+I:linebreak $
 "^(Ballade)""^Swing"D2 E2 G2 || "Bb""Eb7"F8 | "Dm7"z2 G2 "Dbdim7"A2 B2 | "Cm7"G2 C2- C4 | $
 "F7"z2 C2 =B,2 C2 | "Cm7"G8 | z2 B2 "F7#5"A3 F | "Bb""G7"D8- | $
 "Cm7"D2 D2 "F7"E2 =E2 || "Bb"F E2 D/E/ F4- | F2 z2 "A7"z2 G2 | "Dm7"A G2 F/G/ "Eb7#11"A4- | $
@@ -13146,7 +14561,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-let-a-song-go-out-of-my-head
 K:Eb
+I:linebreak $
 |: "Eb""^Swing)""^(Med."EF Ee- "Ab7"e3 c | "Eb"(3BcB "Cm7"E6 | "Gm7"z d3 "C7"cB GD | "Gm7"d2 Gc- "C7"c4 | $
 "Fm/Ab"F "Gm"G2 A-"Fm7"A "F#other"=A2 B- | "Eb/G"B e3- "Ab7"e3 c |1 "Eb"(3BcB "Cm7"E6- | "Fm7b5"E4 "Bb7"z4 :|2 $
 "Eb"(3BcB "Cm7"E6- || "Fm7b5"E2 B2 "Bb7"B2 =A2 || "Fm7"A8- | "Bb7"A2 c2 c2 _c2 | $
@@ -13162,7 +14579,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=260
+%%id i-love-lucy
 K:F
+I:linebreak $
 |: "F""^(Samba)"E4 F3 G- | "Dm7"G4 E2 F2 | "Gm7".c2 z2 c2 A2- | "C7"A8 | $
 "F"E4 F3 G- | "Dm7"G4 E2 F2 | "Gm7".e2 z2 e3 ^c- | "G#dim7"c6 d2 |1 $
 "Am7"e4- e d3 | "Dm7"c3 E- E2 F2 | "Em7".A2 z2 A4- | "A7"A4 .A.B .=B.c | $
@@ -13180,7 +14599,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-remember-clifford
 K:Eb
+I:linebreak $
 "^(Med. Ballade)""^Swing"z "Ab"CE GB AE F | "G7#5"G G3- "Bb7b9"G4 | "G7b9"z G=B d "G7/B"f3 d | "Cm7""Bbm7""Abm7""Gbm7"e8 | $
 "Fm7"z CE F G2 EC | "Bb7sus4"E E3 z2 "Bb7b9"B2 |: "Eb"G4- "G7"(3G2F2D2 | "Ab"E4- "Aother"EF GA | $
 "Bb7"B3 B"Bother"=B Ad _B | "Cm7"c4 "Cm7/Bb"z Gc d |1 "A"e4- "D7b9"(3e2d2c2 | "Gm7"(3Bcd- d2 "Gm7/F"z DG =A | $
@@ -13197,7 +14618,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=170
+%%id i-remember-you
 K:F
+I:linebreak $
 |: "F""^(Med.""^Swing)"E2 F2 C2 D2 | "Bm7""E7"E8 | "F"E2 F2 C2 D2 | "Cm7"_E2 F2 "F7"B,2 C2 | $
 "Bb"D6 F2 | "Bbm7"_D4 "Eb7"(3D2_E2D2 |1 "F"C8- | "Gm7""C7"C8 :|2 $
 "F"C8- || "Cm7""F7"C8 || "Bb"A2 B2 F2 G2 | "Em7"A3 A "A7"A2 G2 | $
@@ -13214,7 +14637,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-should-care
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "Dm7""^(Med.""^Swing)""G9sus4"c6 B2 | "Em7""A7"B8 | "Dm7"z2 AB "G9sus4"(3c2B2A2 | "C"B2 B6 | $
 "Em7b5"_B6 A2 | "A7sus4""A7"A8 | "Dm7"z2 EF (3G2D2E2 | "Fm7"F2 "Bb9"F6 |1 $
 "C"(3E2F2E2 F2 E2 | "Bm7b5"E2 "E7"E6 | "Gm7"(3E2F2E2 "C7"G2 F2 | "F"E8 | $
@@ -13229,7 +14655,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-thought-about-you
 K:F
+I:linebreak $
 |: "Bm7b5""^(Med Ballade)""^Swing"z FA c"Bb9#11"e _ed A- | "A7"A4 "D7#5"B2 A2 | "G9"AF FF- "Ab13"F4- | "G9"F8 | $
 "Gm7"z DF Ac =B_B A- | "Em7b5"A4 "A7"G2 A2 | "Dm7"GF FF- "Db7"F4- | "Cm7""F7"F8 | $
 "Bb"dc dc- c2 B2 | "Bbm7"_dc dc- "Eb13"c2 B2 |1 "F"A2 cc- "C7"c4- | "F"c8 | $
@@ -13244,7 +14672,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-will-wait-for-you
 K:F
+I:linebreak $
 "^(Ballade)""^Swing"^G2 A2 |: "Dm7"G4 F4 | E2 D2 "D7"^c2 d2 | "Gm7"c4 B4 | $
 B4 "D7"^F2 G2 | "Gm7/C"F4 E4 | "C7"D2 C2 =B2 c2 | "F"B4 A4 | $
 "Em7b5"A4 "A7"^G2 A2 || "Dm7"G4 F4 | E2 D2 "D7"^c2 d2 | "Gm7"c4 B4 | $
@@ -13258,7 +14688,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-wish-you-love
+%%tags needs-repair
 K:F
+I:linebreak $
 "^(Bossa)"B,2 |: "Ebm""Ebmaj"B8- | B2 "Ebm7"_cB "Ebm6"_A_G FG | "Fm7b5"_A8 | $
 "Bb7b13"z2 B_A _GF _EF |1 "Ebm""Ebmaj"_G8 | z2 "Ebm7"_A_G "Ebm6"F_E DE | "Fm7b5"F8- | $
 "Bb7b9"F4 z2 B,2 :|2 "Ebm""Ebmaj"=G8 || "Ebm7"z2 B_G "Ebm6"F_E DE | "Fm7"B8- | $
@@ -13279,7 +14712,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id i-won-t-dance
 K:C
+I:linebreak $
 |: "Cmaj9""^Swing)""^(Med."z G G2 "Eb7"G4 | "Dm7"z2 A2 "G7"C2 D2 | "C"z G G2 "C#dim7"G4 | "Dm7"z2 A2 "G7"C2 D2 | $
 "Bb13"z G G2 "A7"G4 | "Dm7"z2 A2 "G7"C2 D2 | "C""C"E8- | "C7"E2 z E G2 F2 | $
 "F"E2 C2 D2 C2 |1 "Fm"E2 C2 "G7b9"D2 C2- | "C6""Eb7"C8- | "Dm7"C6 "Db13"z2 :|2 $
@@ -13298,7 +14733,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-ll-be-seeing-you
 K:Eb
+I:linebreak $
 "Eb""^(Ballade)""^Swing"G6 F2 | "G7#5"F E2 D- D2 E2 | "F7"A3 G "C7b9"G3 F | "Fm7"F3 =E "C7"E2 F2 | $
 "Fm7/Bb"A3 G "C7"G3 F | "Bb7""Fm7"F3 =E "Bb7"E2 F2 | "Eb"^F2 G2 "Fm7"c4- | "F#other""Dm7b5""Gm7""G7"c6 z2 || $
 "Cm"e6 d2 | "Cmaj"d2 c=B- B2 c2 | "Fm7"e6 d2 | "Bb7"d2 c=B- B2 c2 | $
@@ -13315,7 +14752,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-ll-close-my-eyes
 K:F
+I:linebreak $
 "^(Med.""^Swing)"z2 .C2 B2 .A2 || "Fother"A8 | z2 z C B2 A2 | "Em7"A2 GE- E4 | $
 "A7b9"z2 z A, G2 .F2 | "Dm7"F8- | "G7"F2 E2 A2 F_E- | "Cm7"E8- | $
 "F7"E4 z2 D2 || "Bbother"^C2 D2 c4- | "Eb7"c2 B2 F2 G2 | "Fother"A3 AA A2 A- | $
@@ -13333,7 +14772,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id i-ll-never-smile-again
 K:Eb
+I:linebreak $
 "^Swing""^(Ballade)"B2 d2 c2 |: "Fm7"e3 F F4 | "Bb7"z FF G F2 EG- | "Eb""Fm7"G8 | $
 "Gm7"z2 B2 "Gbother"d2 c2 | "Fm7"e3 F F4 | "Bb7"z2 G2 (3F2E2D2 | "Eb6"C8- | $
 C6 C2 | "B7#5"G2 G2 "Bb7"G2 G2 | "Eb6"E6 G2 | "Fm7b5"B2 B2 "Bb7#5"B2 B2 | $
@@ -13351,7 +14792,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-ll-remember-april
 K:G
+I:linebreak $
 "G""^Swing)""^(Med."z2 B2 c2 d2 | "G6"c2 B2 A2 G2 | "G"A6 G2 | "G6"F2 E6 | $
 "Gm7"z2 A2 _B2 c2 | "Gm6"_B2 A2 G2 =F2 | "Gm7"GA G6- | "Gm6"G4 z2 G2 | $
 "Am7b5"A6 A2 | "D7"A2 A2 B2 c2 | "Bm7b5"d2 d6- | "E7b9"d2 z2 e3 d | $
@@ -13371,7 +14814,9 @@ C:Johns & Kahn
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id i-ll-see-you-in-my-dreams
 K:F
+I:linebreak $
 F2 E2 _E2 | "Bb6"D4 F4 | G4 A4 | "Bbm6"G8- | $
 G6 ^G2 | "F6"A4 c4 | "E7"d4 "E6"e4 | "F6"d8- | $
 "C7""C#7"d8 | "D7"d4 D4 | E4 ^F4 | c2 A2 c2 A2- | $
@@ -13389,7 +14834,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id i-m-a-fool-to-want-you
 K:F
+I:linebreak $
 "^Swing""^(Ballade)"z2 "B7b9#5"B,=B, G3 ^D |: "Em6"^FE- E6 | "Em"z2 ^DE "E7b9"c3 ^G | "Am6"=BA- A6 | $
 z2 "F#m7b5"A2 "B7b9#5"=B2 c2 | "Em"c2 =B2 ^F2 G2 | "C7"A3 E ^F2 G2 |1 "C7#11"A3 G^F E2 F- | $
 "B7"F2 B,=B, "B9#5"G3 ^D :|2 "Em"=B3 B"B9#5"B ^F2 G || "Em6"E8 || "Am"e3 e e3 e | $
@@ -13408,7 +14855,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-m-always-chasing-rainbows
 K:F
+I:linebreak $
 "G""^Swing""^(Ballade)"D8 | E2 D2 "Cm"G2 A2 | "G"=B8 | d8 | $
 "F#other"c4 "G"=B4 | "Cm6"A4 "G"=B2 G2 | "D7"D8- | D8 | $
 "E7"E8 | "Dm6"F2 "E7"E2 "Bm6"A2 "G7"=B2 | "Am"c4 "E7"=B4 | "Am"A8 | $
@@ -13425,7 +14874,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=71
+%%id i-m-confessing-that-i-love-you
 K:G
+I:linebreak $
 |: "G""^(Ballade)""^Swing"DE FG F2 D2 | "F#7"F2 F6 | "F7"DE FG F2 D2 | "E7"F8 | $
 "A7"EF GB A2 G2 | "D7"A2 A2 (3A2G2F2 |1 "G""Bb7"E8 | "Am7"EG EG "D7"B B3 :|2 $
 "G""Cm"E8- || "G"E8 || "G7"=FG Ac B2 F2 | A2 A6 | $
@@ -13441,8 +14892,13 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id i-m-getting-sentimental-over-you
+%%tags needs-repair
 K:F
-"F""^Swing)\n\n""^(Med."E2 F2 A2 c2 | "Bm7""E7"e6 d2 | "Am7b5"c2 G2 _E2 C2 | "D7"D6 C2 | $
+I:linebreak $
+"F""^Swing)
+
+""^(Med."E2 F2 A2 c2 | "Bm7""E7"e6 d2 | "Am7b5"c2 G2 _E2 C2 | "D7"D6 C2 | $
 "G9"=B,2 A2 F2 D2 |1 "C7"_B,2 G2 E2 C2 | "F6""D7"(D8 | "Gm7""C7"C6) z2 :|2 $
 "C7#5"_B,2 _A2 A2 G2 || "F6""Eb6""E6"F8- | "Bm7""F6"F4 "E7b9"z4 || "Am"E2 A2 =B2 c2 | $
 "F7"=B2 A2 B2 c2 | "B7"^d2 d4 =B2 | "Dm7"=d8 | "E7"E2 ^F2 ^G2 =B2 | $
@@ -13459,7 +14915,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id i-m-glad-there-is-you
 K:F
+I:linebreak $
 "F""^(Med Ballade)""^Swing"E E2 E- E4- | E2 E2 AA EE | "Fm7"_EE- E6- | "Bb13"E2 _E2 _AA EE | $
 "Gm7"DD- D6- | "C7"D2 D2 (3E2F2G2 | "Am7""D7b9"c8- | "Gm7""C7"c8 || $
 "F"c c2 c- "Gm7"c4- | "Am7"c2 c2 "Abdim7"ee dd | "Gm7"BB- B6- | "C9"B2 B2 dd cc | $
@@ -13477,7 +14935,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-m-in-the-mood-for-love
 K:C
+I:linebreak $
 |: "C""^Swing""^(Ballade)"(3E2F2E2 D2 C2 | "Dm7""G7"D8 | "Dm7"(3D2E2F2 "G7"G2 A2 | "C"B2 c6 | $
 "Em"d B2 d "Ebdim7"B2 _B2 | "Dm7"A2 c6 | "G7"A G2 A G2 B,2 |1 "C""G7"G8 :|2 $
 "C"C8 || "Dm7"D E2 F "G7"E2 D2 | "C"G2 "C#other"G6 | "Dm7"D E2 F "G7"E2 D2 | $
@@ -13493,7 +14953,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id i-m-old-fashioned
 K:F
+I:linebreak $
 "F6""^(Med.""^Swing)""Dm7"F6 C2 | "Gm7"C2 "C7"C4 C2 | "F""Dm7"A6 C2 | "Gm7"C2 "C7"C4 C2 | $
 "Bb6/F"B6 A2 | "F"C2 C4 A2 | "Em7b5"G8- | "A7"G6 E2 | $
 "Dm7"G6 F2 | "G13"E6 D2 | "Dm7"G2 A2 G2 F2 | "G13"E6 D2 | $
@@ -13511,7 +14973,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id i-m-sitting-on-top-of-the-world
 K:F
+I:linebreak $
 "^(Med.""^Swing)"c2 |: "F"c2 A2 "F"z2 "F7"c2 | "Bb"d2 B2 z2 d2 | "F"c8- | $
 c2 C2 CD F2 | "G7"G8- | "C7"G2 G2 GA G2 |1 "F6""Gm""F/A"F8- | $
 "Gm7""C7#5"F6 c2 :|2 "F"F8- || "F7"F2 FG AB c^c || "Bb"d2 B2 d3 B | $
@@ -13527,7 +14991,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id i-ve-found-a-new-baby
 K:F
+I:linebreak $
 "^(Dixie)""^Swing"^G A2 G A2 |: "Dm"F3 D- D4 | "A7"z2 ^G A2 G A2 | "Dm"F8 | $
 "D7"z2 ^c d2 c d2 | "G7"A2 A2 A4 | "C7"z2 A c2 A G2 | "F"F8 |1 $
 "A7"z2 ^G A2 G A2 :|2 z8 || "A7"z2 ^c=c ^c2 =Bc | "A7"=B2 AB A2 AG | $
@@ -13543,7 +15009,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-ve-got-the-world-on-a-string
 K:F
+I:linebreak $
 "^(Med. Slow""^Swing)"CF A |: "F6"dc "Eb7"_e"D7"d- d4 | "Gm7"cB fB "C7"A G3 | "F"GF cF "Bb7"E F2 E- | $
 "Am7"E4 "Abm7"_E4 | "Gm7"D2 D2 "C7"C2 DD- | "Gm7"DC- C2 "C7"A2 A2 |1 "F6""Dm7"F8 | $
 "Gm7"z4 "C13"z CF A :|2 "F""Bb6""Bother"F8- || "F6"FA AA AA A=B- || "Em7"B8 | $
@@ -13559,7 +15027,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-ve-got-your-number
 K:F
+I:linebreak $
 "G6""^(Med.""^Swing)"z G3 "Dm7"A2 D2 | "G6"G3 "Dm7"A- A4 | "G6"z G3 "Dm7"A2 D2 | "G6"G3 "Gdim"E- E2 "G7"F2 | $
 "C6"z c3 "Gm7"d2 G2 | "C6"c3 "Cdim"A- A2 "C7"B2 | "C6"z c3 "Gm7"d2 G2 | "C7"c8 | $
 "Ab7"z c3 c2 _e2 | "Dbmaj7"c2 _AA- "Ab6"A4 | "Bbm7"c2 _AA- A4 | "Ab"c2 _AA- A4 | $
@@ -13577,7 +15047,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-ve-grown-accustomed-to-her-face
 K:Eb
+I:linebreak $
 "^(Ballade)""^Swing"EF G |: "Eb"BB BB "Ab7#11"F4- | "Gm7"F2 z2 "Cm7"z EF G | "Fm7"BB BB "B9"A4- | $
 "Bb7sus4"A2 z2 "Bb7"z GA B | "Am7"dd dd "D7b9"c3 =A | "Gm7"cc cc "C7b9"B3 =B | "Fm7"c3 =A "Gm7"B3 G | $
 "Fm7"A z z =E"Bb7"F FG A | "Eb"BB BB "Ab7#11"F4- | "Gm7"F2 z2 "Cm7"z EF G | "Fm7"BB BB "B9"A4- | $
@@ -13592,7 +15064,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=112
+%%id i-ve-heard-that-song-before
 K:Bb
+I:linebreak $
 "Bb""^(Med.""^Swing)"z D E2 =EF z ^C | D2 E=E F2 z2 | z D E2 =EF z ^C | D2 E=E F z F2 || $
 "Bb""^A"D4- D^C DC | D2 B2 A G2 D- | "D7"D4- D^C DC | D2 c2 B A2 G- | $
 "G7"G4- G^F GF | G2 F2 E D2 G- | "Cm7"G8- | G6 z2 | $
@@ -13610,7 +15084,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-ve-never-been-in-love-before
 K:Bb
+I:linebreak $
 "^(Med.""^Swing)"F2 |: "Bb6""Gm7"B6 D2 | "Cm7"E2 B2 "F7"A3 G | "Bb""Eb7#11"A6 C2 | $
 "Dm7"D2 A2 "G7#5"G3 F | "Cm7"G6 B,2 | "F7"C2 G2 F3 =E |1 "Bb"F8- | $
 "Cm7""F7"F6 F2 :|2 "Bb"F8- || "Fm7"F2 B2 "Bb7#5"B2 B2 || "Eb""Eb/D"d6 D2 | $
@@ -13626,7 +15102,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=114
+%%id if-ever-i-would-leave-you
 K:Bb
+I:linebreak $
 "^(Med.""^Swing)"B,2 CD A,B, |: "Cm7"C2 D6- | "F7"D2 z =B,C DE F | "Bbmaj9"D2 F6- | $
 "Gm"F4 CD EF | "Cm7"E2 F4 G2 | "F7"A2 B4 c2 | "Bbmaj9"d8- | $
 d2 d2 "Bb7"(3d2B2G2 | "Eb"B4 B4- | "Cm7"B2 c2 "F7"(3c2A2F2 | "Bbmaj9"A8- | $
@@ -13645,7 +15123,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=104
+%%id if-i-loved-you
 K:C
+I:linebreak $
 "C6""^(Swing Ballade)"C4 E4 | "Cdim7"A2 A6 | "C6"c2- (3cBA G2- (3GFD | "Bm7"D2 C2 "E7"E4 | $
 "F6"D4 F4 | "G7"B2 B4 c2 | "Em7""A7"G8- | "Dm7""G7"G8 | $
 "C6"c8- | "Bm7b5"c4 "E7"z4 | "Am7"c4 B2 A2 | "Dm7"G2 F2 G2 A2 | $
@@ -13662,7 +15142,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id if-i-should-lose-you
 K:Bb
+I:linebreak $
 "Am7b5""^(Med. Swing)"z2 D2 "D7b9"d3 c || "Gm7"A4 B4 | "Am7b5"z2 D2 "D7b9"d3 c | "Gm7"(3A2A2c2 "Gb7"B4 | $
 "Fm7"z2 B,2 "Bb7"B2 _A2 | "Eb"^F4 G4 | "Fm7"z2 B,2 "Bb7"B2 _A2 | "Eb"(3^F2F2_A2 G4 | $
 z2 G2 A2 B2 | "Cm7"D4 D4 | "F7"z2 C2 D2 E2 | "Bb"=E G2 F F4 | $
@@ -13680,7 +15162,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id if-i-where-a-bell
 K:Bb
+I:linebreak $
 "^(Med. Swing)"A2 A2 |: "G7"AF FF- F A2 A | "Gm7"AF F2 "C7"AF F2 | "F"A3 C- C4- | $
 C2 z2 c2 c2 | "Am7b5"cA AA Ac cc- | "D7"cA Ac- cA A2 | "G7"d3 G- G4 | $
 "Gm7"z4 "C7"z A2 G | "F"FF F2 "F7"F2 "Cm"FB- | "Bb"B4 "C7"z A2 G | "F"FF F2 FF Fc- | $
@@ -13698,8 +15182,11 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id if-you-never-come-to-me
+%%tags needs-repair
 K:C
-|: "C""^\n""^(Bossa)"G8 | "B13"^G8 | "Bbb5"A8- | "A7b9#5"A4 (3AGF (3EFG | $
+I:linebreak $
+|: "C""^""^(Bossa)"G8 | "B13"^G8 | "Bbb5"A8- | "A7b9#5"A4 (3AGF (3EFG | $
 "Dm11"G8- | G4 (3zFE DE | "Fm7"F G2 F- "Fm6"F4- | "Fmaj""Fm7"F6 "Fm6"(3zCD | $
 "E13"(3E2E2E2 "E7#5"(3E2E2E2 | "A9"E3 ^D/E/ "A7b9"(3G2F2E2 | "D13#9"F D3- D4- | "G13#9"D4 (3F2E2D2 | $
 "C13"E C3- C3 D | "F7#9"_E C3- C3 C | "C"B, G,3- G,4- | "Db9#11"G,6 z2 :|
@@ -13711,7 +15198,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id imagination
 K:Eb
+I:linebreak $
 "^(Straight Ballade)"DE F |: "Eb""^A"G2 "Edim7"G4 B2 | "Fm7"A2 "Bb7"A4 c2 | "Eb"B2 B2 "Abmaj9"(3B2c2_d2 | $
 "Gm7b5"B2 "C7b9"B6 | "Fm"A2 A2 "C7#5"(3A2B2c2 |1 "Fm7"A2 A2 "Bb7"c2 BG- | "G7"G4 "C7"B2 AF- | $
 "Fm7"F4 "Bb7"z DE F :|2 "Fm"A2 A2 c2 BG- || "Eb"G4 B2 GF- | "Bbm7""Eb7"F6 z2 || $
@@ -13728,7 +15217,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id impressions
 K:C
+I:linebreak $
 |: "Dm7""^(Straight up)"d8- | d4 eg ed- | d8- | d3 e f2 g2 | $
 a2 c'2- c' e2 d- | d4 B2 dA- | A8- | A8 :| $
 "Ebm7"_e8- | e3 _d _g2 f_e- | e8- | e3 f _g2 _a2 | $
@@ -13743,7 +15234,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=140
+%%id in-a-little-spanish-town
 K:G
+I:linebreak $
 "G""^(Straight)"BD GB AG | BD GB AG | "Am7"A6- | "D7"A6 | $
 AD FA GF | AD FA GF | "G"G6- | G6 | $
 D2 E2 G2 | "Ebother"F2 E2 D2 | "Am7"c4- c2 | "D7"c2 B2 A2 | $
@@ -13761,7 +15254,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id in-a-mellow-tone
 K:G
+I:linebreak $
 "^(Med. Swing)"G_E =F G2 _A- |: "Bb7"A8 | "Eb7"z2 G_E =F G2 _A- | "Ab6"A8 | $
 z2 G_E =F G2 _A- | "Ebm7"A8 | "Ab7"z2 _B=F _A B2 c- | "Db"c8 |1 $
 z2 _B=F _A B2 F- || "Db6"F8 | "Gb7"z2 _A_B- B2 Ac- | "Ab6"c8 | $
@@ -13777,7 +15272,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id in-a-sentimental-mood
 K:F
+I:linebreak $
 "Eb9#11""^(Swing Ballade)"z2 FG Ac df |: "Dm""Dmaj"g8- | "Dm7"g2 fg "Dm6"fe dc | "Gm"A2 dA- "Gmaj"A4- | $
 "Gm7"A2 Ac "Gm6"d_A "A7"GF | "Dm"D4- DF Ac | "D7"e6 d2 | "Gm"B4 "Gb7"E4 |1 $
 "F"G2 FG Ac df :|2 "F""Ab7"F6 z2 || "Db"c2 Bc "Bbm7"_e_d cB | "Ebm7"F2 _EF "Ab7"_G_A FE | $
@@ -13793,7 +15290,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=160
+%%id in-a-shanti-in-a-hold-shanti-town
 K:F
+I:linebreak $
 "^(Med. Swing Waltz)"C |: "F"c2 c2 c2 | "A7"^c2 c2 z c | "D7"d2 c2 A2 | $
 "D7"^F4- FD | "G7"G2 G2 G2 | "F#9"^G2 G2 z G | "G7"A2 G2 F2 | $
 D4 D^D | "C7"E2 "Am7"c2 "Abdim7"=B2 | "C7/G"_B4 "C7"DE | "F"F2 "Bb6"d2 "Db7"_d2 | $
@@ -13811,7 +15310,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id in-the-wee-small-hours-of-the-morning
 K:F
+I:linebreak $
 "^(Swing Ballade)"EF || "C7#5"G2 C2 "Dm7"D2 "G7"EF | "C"GA G2 "Dm7"D2 "G"EF | "C"GC =B,2 "Dm7"CD C2 | $
 "C"E6 "C7"G"C"A | "Em6"=B2 E2 "B7"^F2 GA | "Em7"=B2 E2 "F#m7"^F4 | "Em7"z2 GG "A7"(3G2E2F2 | $
 "G7"D6 CD | "C"E2 E2 "C7"CD EF | "C6"EC- C4 "C7#5"CD | "C"E2 E2 "C7#5"CD EF | $
@@ -13827,7 +15328,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id in-walked-bud
 K:Ab
+I:linebreak $
 |: "Fm""^(Slow Swing)"Fc- c4 .F2 | "Fmaj"=Ec- c4 .E2 | "Fm"_Ec- c4 .E2 | "Bb7"=D B3 "Eb7"_D3 =B, | $
 "Ab6"CA- "F7"A4 =B,=A, | "Bbm7"B, G3 "Eb7"D3 =B, | "Ab6"CE FE A2 FE |1 "Gm7b5"z A,3 "C7"z4 :|2 $
 "Gm7b5"z A,3 "C7"z4 || "Fm7"FG A2 (3B_cB AB | A2 (3B_cB AB AF | "Db7"_c8- | $
@@ -13849,7 +15352,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id in-your-own-sweet-way
 K:Eb
+I:linebreak $
 "Eb6""^(Med. Swing)"(3z2e2B2 |: "Am7b5"d4 "D7"c4 | "Gm""C7b9"B8 | "Cm7"z de f "F7"e2 d2 | $
 "Bb7/D"B2 cd- "Eb"d4 | "Abm7"z =B_d e "Db7"d2 _B2 | "Gb"B2 _d_G- "Cb"G2 B2 | "F7#5"A4 "B7"_G4 | $
 "Bb7"F4 "Eb6"(3z2e2B2 :| "Bb6"F3 FG =AB c || "Em7"=A4 "A7"=B3 ^c- | "D"c8 | $
@@ -13867,7 +15372,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=70
+%%id indian-summer
+%%tags needs-repair
 K:G
+I:linebreak $
 "G""^(Swing Ballade)"B, D3- D4 | "Am7"z4 "D7"z E (3FEF | "G"B, D3- D4 | "C7#11"z4 (3zDE (3FEF | $
 "Bm7"B F3- F4 | "Bbdim7"A E3- E4 | "Am7"G C3- C4 | "D7"z4 (3zCD (3Edc | $
 "F#m7b5"B d3- d4 | "B7#9"A B3- B4 | "Em7"G E3- E4 | "A7"z4 (3zEF (3GFG | $
@@ -13884,7 +15392,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id indiana
 K:G
+I:linebreak $
 "^(Dixie Swing)"DE B"G"d- || d3- de "E7"dB "A7"A- | A E4 FG "D7"B- | B2 F B3 A"G"G- | $
 G3- GG "G7"F=F "C"E | G c4 "C#dim7"E2 "G"D | G B4 Bc "A7"^c | B F4 E2 "D7"A- | $
 A3 z DE B"G"d- | d3- de "E7"dB "A7"A- | A E4 FG "D7"B- | B2 F B3 A"Em"G- | $
@@ -13898,7 +15408,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=50
+%%id infant-eyes
 K:C
+I:linebreak $
 "^(Slow Swing)"C2 || "Gm"F4- FD FG | "Fm"_A6 G2 | "Eb"F4- FD C_B, | $
 "A7b9"_B6 F2 | _A4- "Gb#11"A_B, _EA | "Cm/F"F6 _B,2 | "Ebm"_D4- D_E, _G,D | $
 "Fm/Bb"_B,8- | "Bb7"B,6 _G_A | "E"_B4- BG F_E | "E#11/D#"^c6 ^A2 | $
@@ -13914,7 +15426,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=218
+%%id inner-urge
 K:C
+I:linebreak $
 |: "F#m7b511""^(Med. Up Swing)"z3 ^FB cF B | c3 ^FB c z2 | z3 ^FB cF B | c^F Bc z4 | $
 "Fb5"z3 =FB cE B | c3 FB c z2 | z3 FB cF B | cF Bc z4 | $
 "Ebb5"z3 _BA _EA, D | _E3 A,"Db5"^C "Eb5"D3 | z3 _BA _EA, D | _EA, "Db5"^C"Ebb5"D- D "Bb5"F2 "Db5"G- | $
@@ -13936,7 +15450,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id introspection
 K:C
+I:linebreak $
 "^(Med. Swing)"^CD E |: "Cm7"F_E F"Db7b5"G- G3 "C7b5"^F- | (3F^G2G ^F z "B7"G2 =G | "Bbm7"_AG A_B "Eb7"=A B3 | $
 _BA Bc- "Ab"c4 | "Bb7"Bc z "B7b5"F- F4 | "G7#5"Bc "B7b5".F2 z "A7#5"F3 | "D"^FA, ^CB,- B,3 F- |1 $
 FA, "D6"B,2 z ^CD E :|2 ^FA, B,4 z F- || "Db6"F _A,2 _B,2 C (3_D_E=F | "D"^F2 F4 z2 | $
@@ -13953,7 +15469,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id invitation
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Cm9""^(Latin Ballade)"(3D2E2d2 =A4- | A2 GB (3=A2G2C2 | D4 D4- | D4 (3D2C2G2 | $
 D4 (3D2C2G2 | "F13""F13b9b5"D6 C2 | "Bb13""Bb13b9b5"G8- | G8 || $
 "Ebm9"(3F2_G2f2 c4- | c2 B_d (3c2B2E2 | F4 F4- | F4 (3F2E2B2 | $
@@ -13974,7 +15493,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id isfahan
+%%tags needs-repair
 K:Db
+I:linebreak $
 "^(Swing Ballade)"z c (3AFD |: "Db""^A"C6 D2 | "Bb"=A4 "Bb7#5"B4 | "Eb9"(3BcF- F6 | $
 z4 z A (3FD=A, | "A"^G,6 =A,2 | "Dbm6/Ab"=E4 "Ab13b9"(3F2G2=G A | "Dbmaj9"E8 | $
 z2 D2 F2 A2 | "Gm7b5"B2 (3zcB "C7b9"_B=G- (3GBc | "Fm6"A8 | "Am7b5"c2- (3cd_d "D7b9"c=A (3Ac=B | $
@@ -13993,7 +15515,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id isn-t-it-romantic
 K:Eb
+I:linebreak $
 "Bb7""^(Swing Ballade)"DE CD |: "Eb6"E2 E6 | "Bb7"DE CD E2 F2 | "Eb"G3 G "Bb7"B3 B | $
 "Eb"G4 "Bb7"DE CD | "Eb6"E2 E6 | "Bb7"DE CD "Ab7"E2 "Bb7"F2 | "Eb"G3 G B3 B | $
 "Bbm7""Eb7"_d8 || "Ab"c8 | "Bb7"dc BA "G7"G2 F2 | "Cm"E3 E "G7"G3 G | $
@@ -14009,7 +15533,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id it-could-happen-to-you
 K:Eb
+I:linebreak $
 "Eb""^(Up Swing)"B,6 C2 | "Gm7b5"_D2 C2 "C7b9"G4 | "Fm7"C6 D2 | "Am7b5"E2 D2 "B7b9"=A4 | $
 "Eb"B4 B4 | "Ab"B2 A4 E2 | "Gm7b5"G8- | "C7"G8 | $
 "Fm7"G4 G4 | "Db7"G2 A2 E2 F2 | "Eb"G4 G4- | "Dm7b5""G7"G8 | $
@@ -14026,7 +15552,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id it-don-t-mean-a-thing
 K:Bb
+I:linebreak $
 "^(Med. Swing)"d2 |: "Gm""^A"G4 "Gm/F#"G2 B2 | "Gm/F"d4 "Gm/E"G2 B2 | "Eb7"_d4 c "D7"B2 G- | $
 "Gm"G4 z4 | "C7"z2 BB z BB z | "F7"BB z BB z BB | "Bb"z BB z BB z B |1 $
 B2 z2 z "D7#5"d3 :|2 B2 z2 z3 d || "Fm7""^B"c2 c2 c B2 c- | "Bb7"c2 B2 c B3 | $
@@ -14042,7 +15570,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id it-had-to-be-you
 K:G
+I:linebreak $
 "^(Med. Swing)"z2 D2 ED EF- || "G"F8 | z2 F2 GF G^G- | "E7"G8 | $
 z2 ^G2 AG AB- | "A7"B3 GA ^GA B- | B3 GA ^GA B- | B8 | $
 z2 A2 BA Bd- | "D7"d8 | z2 B2 "B7"AB AG- | "Em"G8 | $
@@ -14060,7 +15590,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id it-might-as-well-be-spring
 K:C
+I:linebreak $
 "^(Med. Swing)"GG |: "C"AG GG "Dm7"AG Gc | "Em7"A "A7""Dm7"G4 z "G7"GG | "C"Ge gc "C6"eG cG | $
 "Gm7""C7"_B6 B2 | "F#m7b5"A2 ^GA "F7"B3 c | "Em7"c2 "A7"G4 GG | "Dm7"f2 f2 "G7"f2 B2 |1 $
 "Em7""A7""Dm7"e6 "G7"GG :|2 "C""Gm7""C7"c8 || "F"f2 f2 "Dm7"fg fe | "Gm7"d2 _B2 "C7"B4 | $
@@ -14078,7 +15610,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id it-never-entered-my-mind
 K:F
+I:linebreak $
 |: "F""^(Straight Ballade)"A2 A2 "F#5"A2 A2 | "F6"z3/2 AG F/ "F#5"E2 E2 | "F"z3/2 FE D/ "Am7"C2 "Ab7"C2 | "Gm7"F2 EC- "C7"C4 | $
 "F"z3/2 FE D/ "Bb"C2 C2 | "F/A"F2 EC- "D7"C4 | "G7sus4"z3/2 DF G/"G7"A FA G- | "Gm7"G6 "C7"z2 :| $
 "G7sus4"z3/2 DF G/"G7"A FA c- | "Gm7""C7"c6 z2 || "F"d4 "Dm7"F2 F2- | "Gm7""C7"F6 E2 | $
@@ -14094,7 +15628,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=90
+%%id it-s-magic
 K:Bb
+I:linebreak $
 "Bb""^(Slow Swing)"z ee dd cc B | Bc cB "Bb/D"BA "Dbdim7"AG | "Cm7"F4 C4- | "F7"C8 | $
 "Cm7"z cc BB AA G | "F7"GA AG GF FE | "Bb"F4 D4- | D2 B,2 D2 F2 || $
 G3 B G4- | G2 B2 A2 F2 | "F7"G8- | G2 C2 E2 G2 | $
@@ -14111,7 +15647,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=168
+%%id it-s-only-a-paper-moon
 K:C
+I:linebreak $
 |: "C6""^(Med. Swing)"z G2 G"C#dim7"g g2 g | "Dm7"f2 ed- "G7"d4 | "Dm7"z G2 G"G9"f f2 f | "C"e2 dc- c4 | $
 z G2 G"Em7b5"g g2 ^g | "F6"a2 fd- "F#dim7"d2 cB- | "G7"B2 "Dm"a"G7"g- g2 Bc- |1 "C"c4 "G7"z4 :|2 $
 "C"c4 "C7"z2 c2 || "F6"d4 "F#dim7"^d4 | "C/G"e4 z2 "A7#5"fa | "Dm7"g3 g "G13"e3 e | $
@@ -14127,7 +15665,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id it-s-the-talk-of-the-town
 K:C
+I:linebreak $
 "F""^(Swing Ballade)"cc cc "Bdim7"B B3 | "Gm7"_BB dB "C7"A2 G2 | "F"FF FF "G7"D2 F2 | "Bb""C7"c8 | $
 "F"cc cc "Bdim7"B B3 | "Gm7"_BB dB "C7"A2 "C#dim7"G2 | "F"AA AA "G7"F F3 | dd AA "C7"G4 |: $
 "F"EE EE D4 | "Gm7"FF FF "C7"E4 | "F"GG GG "A7"F4 | "Bb"AA AA "Bbm"G4 | $
@@ -14143,7 +15683,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id ja-da
 K:F
+I:linebreak $
 "F""^(Med. Swing)"Ac- "E7"c4 "Eb7"z2 | "D7"dA- A4 z2 | "G7"AG AG "C7"cA- A2 | "F"F4 "C7"z4 | $
 "F"Ac- "E7"c4 "Eb7"z2 | "D7"dA- A4 z2 | "G7"AG AG c_A- A2 | "C7"G4 z4 || $
 "F"cc cc "G#other"=BB BB | "Gm7"_BA BG- "C7"G4 | "F"c2 c2 "G#other"=BB BB | "Gm7"_BA BG- "C7"G2 FG || $
@@ -14157,7 +15699,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id jazz-n-samba
 K:C
+I:linebreak $
 "G7""^(Bossa)"G |: "C69"A2 GA- A A2 G | A2 GA- A A3 | "D7"(3z2e2_e2 (3d2B2A2- | $
 A4 z2 z G | "Dm7"A2 GA- A A2 G | "G7"A2 GA- A A3 |1 "C69"z2 c6 | $
 z4 z2 z G :|2 "C69"z2 c6 || z8 || "Gm7"d d2 d2 d2 a- | $
@@ -14173,7 +15717,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id jazz-me-blues
 K:Eb
+I:linebreak $
 |: "Eb""^(Dixie Swing)"G^F GB cB GE | G A2 B- B2 B,2 | G^F GA B=A B=B | "F7"c F2 F- "Bb7"F2 B,B, | $
 "Eb"G^F GB cB GE | G A2 B3 cd | "Eb"e=B cB _BG FE |1 "Bb7"F G2 E- "Eb"E2 B,2 :|2 $
 "Bb7"F G2 "Eb"E3 z2 || "Bb7"B B2 B-B F B2 | "Bbdim7"B B2 B-B G B2 | "Bb7"d2 _d2 "F7"c2 B2 | $
@@ -14190,7 +15736,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id jersey-bounce
 K:F
+I:linebreak $
 "^(Med. Bounce Swing)"^G | "F69"Ac e2 g2 fA- | A6 z B | "G7"=Bd f2 a2 gd- | $
 d6 z A | "Gm7"Bd e2 a2 gd- | "C7"d6 z ^G | "Fmaj7"Ac e2 "Abdim7"gf d=B | $
 "Gm7"_Bd ea- "C7"a2 z ^G | "F69"Ac e2 g2 fA- | A6 z B | "G7"=Bd f2 a2 gd- | $
@@ -14208,7 +15756,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=120
+%%id jitterberg-waltz
 K:Eb
+I:linebreak $
 "Eb""^(Swing Waltz)"z eg df c | eB dA cG | BF AE GD | FC EB, DB, | $
 "Ab7"C C3- C2 | C2- C2 (3B,C=E | B4- Bc | "Bb7"_G6 | $
 "Eb7"z eg df c | eB dA cG | BF AE GD | FC EB, DB, | $
@@ -14227,7 +15777,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=170
+%%id jive-at-five
 K:Eb
+I:linebreak $
 |: "Eb""^(Swing)"GB z2 "Cm7"B2 _dc- | "Fm7"c !>!c2 _G"Bb7"F !>!EC B, | "Eb"GB z2 "Cm7"B2 _dc- | "Fm7"c !>!c2 _G"Bb7"F !>!EC B, | $
 "Eb7"z B B2 "D7"=A A2 "Db"_A | A2 "C7"GG- G2 z2 | "B7"_G2 G2 "Bb7"FE FG | "Eb"F E2 E- E2 z2 :| $
 "Eb"B e2 B"Ebdim7"=A e2 A | "Fm7"A2 "Bb7"GE- "Eb"E2 z2 | "Eb"B e2 B"Ebdim7"=A e2 A | "Fm7"A2 "Bb7"GE- "Eb"E2 z2 | $
@@ -14242,7 +15794,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id jody-grind
 K:Ab
+I:linebreak $
 "^(Straight)""^Intro""Bbm"B,,3 F,2 A,2 B,- | B,2 "Bbm"A,B, A,2 F,2 | "Bbm"B,,3 F,2 A,2 B,- | B,2 "Bbm"A,B, A,2 F,2 | $
 "Eb"E,3 B,2 D2 E- | E2 "Eb"DE D2 B,2 | "Bbm"B,,3 F,2 A,2 B,- | B,2 "Bbm"A,B, A,2 F,2 | $
 "A7#11"=A,,3 =E,2 =A,E, A,, | "B7#11"=B,,3 ^F,2 =B,F, B,, | "Bbm"B,,3 F,2 A,2 B,- | B,2 "Bbm"A,B, A,2 F, [K:treble]{^F}G- || $
@@ -14257,7 +15811,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id johnny-s-theme
 K:C
+I:linebreak $
 |: "C""^(Bright Swing)"z e3 d2 c2 | "Ebdim7"B3 A- A4 | "Dm7"z ^G A2 c2 ed- | "G7b9"d6 z e | $
 "C"z e3 d_d c2 | "Ebdim7"BE BA- A4 | "Dm7"z F3 Ac ed- | "G7b9"d8 | $
 "C"z ^de g (3=ded c2 | "Ebdim7"BG A_B- B3 A | "Dm7"z F z ^GA ce d- | "G7b9"d4 z d3 | $
@@ -14272,7 +15828,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id jordu
 K:Eb
+I:linebreak $
 "^(Med. Swing)""CN.C."z G,C DE FG E |: "D7"^F4 "G7"=F3 "Cm"E | "CN.C."z G,C DE FG B | =A4 "Bb7"_A3 "Eb"G | $
 "CN.C."z G,C DE FG E | "D7"^F4 "G7"=F3 "Cm"E | "CN.C."z4 (3E/F/E/C EC- |1 "Ab7"C8 | $
 "G7"z "^N.C."G,C DE FG E :|2 "Ab7"C7 "G7sus4"C || z4 "G7"z g2 g- || "G7"g2 (3=B/c/B/=A "C7"_B2 g=e | $
@@ -14295,7 +15853,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id joy-spring
+%%tags needs-repair
 K:F
+I:linebreak $
 "^(Med. Swing)"CF c- || "F"c4- cA (3G/A/G/F | "Gm7"G3 A "C7"z4 | "F"z CF dc A(3G/A/G/ F | $
 "Bbm7"_AF/_D/ B,G "Eb7"G2 (3FGF | "Am7"c F3 "Ab7"F3 F- | "Gm7"FD FB "C7"(3A/B/A/F DC | "F"FC GF z4 | $
 "Abm7"z B_A _G"Db7"F _DG _d || "Gb"_d4- dB (3_A/B/A/_G | "Abm7"_A3 B "Db7"z4 | "Gb"z _D_G _e_d B(3_A/B/A/ G | $
@@ -14313,7 +15874,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id june-night
 K:Bb
+I:linebreak $
 "Gm""^(fast Swing)"z2 d2 B2 d2 | "A7"^c8 | "F#dim7"z2 c2 A2 c2 | "Gm"B8 | $
 "C7"z2 G2 A2 B2 | "Cm"G4 "F7"F2 "F7#5"G2 | "Bb"B8 | "D7"A8 | $
 "Gm"z2 d2 B2 d2 | "A7"_d8 | "F#dim7"z2 c2 A2 c2 | "Gm"B8 | $
@@ -14334,7 +15897,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id just-a-sitting-and-a-rocking
 K:F
+I:linebreak $
 "^(Slow Marching Swing)"=B,2 || "F"CF G2 "F7"A C3- | "Bb"C4 "F"z2 "F7b5"z ^C | "Bb"DF G2 "F"A C3- | $
 "Bb""F"C6 "F7#5"z ^C | "Bb"DF G2 "F"A c3- | "Bb"c4 "Ddim7"z _A2 F | "F"GF D_D "Dm7"C F3- | $
 "Bbm6""Gm7""F6"F6- "F7"F^C | "Bb"DF G2 "F"A C3- | "Bb"C4 "F"z2 "F7#5"z ^C | "Bb"DF G2 "F"A C3- | $
@@ -14352,7 +15917,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id just-friends
 K:G
+I:linebreak $
 "G7""^(Swing Up)"B4 |: "C"B8- | B4 (3A2B2A2 | "Cm7"_E8- | $
 "F7"E4 A4 | "G"A8- | A2 A2 (3G2A2G2 | "Bbm7"_D8- | $
 "Eb7"D6 G2 | "Am7"G3 E G3 E | "D7"F6 F2 | "Bm7"F3 D F3 D | $
@@ -14370,7 +15937,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id just-squeeze-me
 K:F
+I:linebreak $
 |: "F""^A""^(Medium slow Swing)"A2 A2 "Gm7"A B2 c- | "Am7"c3 c- "Gm"c4 | "F"A2 A2 "Gm"A B2 c- | "Am7"c3 c- "D7b9"c3 c- | $
 "Gm7"c3 B- B4 | "C7"z c3 c2 c2 |1 "F"c3 A- "D7"A4 | "Gm7""C7"z8 :|2 $
 "F"c3 A- A4 || z8 || "F7""^B"(3AB=B cc cd c2 | "Cm"(3AB=B cc "F7"cd c2 | $
@@ -14386,7 +15955,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id just-the-way-you-are
 K:D
+I:linebreak $
 "D""^(Med Rock)"z A,D G- "Gm6/D"G4 | "D"z A,D B-"G/D"B "D"A3 | z A,D G- "Gm6/D"G2 FG | "D"AB A"D7"F E2 D2 |: $
 "D"D4 d f3 | "Bm7"d B3- B4 | "G"z2 z FB d3 | "Bm7"B F3- "D7"F4 | $
 "G"z2 z FG A3 | "Gm6"F2 DD- D2 _B,F- | "F#m7"F8 | "Am7"G2 AF- "D7"F2 EF- | $
@@ -14408,7 +15979,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id just-you-just-me
 K:C
+I:linebreak $
 |: "C69""^A""^(Bright Swing)"z4 G4 | "A7"A8 | "Dm"z4 F4 | "G7"G8 | $
 "C"z2 E2 "C7/Bb"E2 E2 | "F/A"E2 G2 "Fm6/Ab"F4 | "C6/G"z2 E2 "G7"DC D2 | "C6"C8 :| $
 "Gm7""^B"z4 c4 | "C9"d8 | "F6"z2 c2 A2 F2 | "Bb9#11"E4 "Bb7"D4 | $
@@ -14423,17 +15996,19 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id after-you-ve-gone-3
 K:G
-"^Swing""C"!4!E,2 !3!G,2 !3!A,2 !2!B,2- | !2!B,8 | "Cm"x2 !3!A,2 !2!B,2 !3!A,2 | !2!B,2 !3!A,6 | $
-"G"!5!B,,2 !4!D,2 !4!E,2 !4!F,2- | !4!F,8 | "E7"x2 !4!E,2 !4!F,2 !4!E,2 | !4!F,2 !4!E,6 || $
-"A7"!4!E,2 !2!B,4 !2!B,2- | !2!B,8 | "D7"!4!E,2 !3!A,4 !3!A,2- | !3!A,8 | $
-"G"x2 !4!D,2 !4!E,2 !4!D,2 | !4!F,2 !4!D,2 !4!E,2 !4!D,2 | "G7"!3!G,2 !5!B,,4 !4!D,2- | !4!D,8 || $
-"C"!4!E,2 !3!G,2 !3!A,2 !2!B,2- | !2!B,8 | "Cm"x2 !3!A,2 !2!B,2 !3!A,2 | !2!B,2 !3!A,6 | $
-"G"!5!B,,2 !4!D,2 !4!E,2 !4!F,2- | !4!F,8 | "E7"x2 !4!E,2 !4!F,2 !4!E,2 | !4!F,2 !4!E,6 || $
-"Am"!2!C8 | "E7"!2!B,8 | "Am"!3!A,2 !4!^D,2 !4!E,2 !2!B,2- | "Cm6"!2!B,4 !3!A,4 | $
-"G"x2 !3!^A,2 !2!B,2 !3!G,2 | "B7"!3!A,2 !3!^G,2 !3!A,2 !4!F,2 | "Em7"!3!G,2 !5!^A,,2 !5!B,,2 !4!F,2- | "A7"!4!F,4 !4!E,4 | $
-"G"!4!D,2 !4!E,2 !3!G,2 !2!B,2- | "E7"!2!B,8 | "Am7"x2 !5!C,2 !4!D,2 !4!E,2 | "D7"!3!A,4 !2!B,4 | $
-"G"!2!B,2 !3!G,6- | !3!G,8- | "G7"!3!G,8- | !3!G,8 |]
+I:linebreak $
+"^Swing""C"!4!E2 !3!G2 !3!A2 !2!B2- | !2!B8 | "Cm"x2 !3!A2 !2!B2 !3!A2 | !2!B2 !3!A6 | $
+"G"!5!B,2 !4!D2 !4!E2 !4!F2- | !4!F8 | "E7"x2 !4!E2 !4!F2 !4!E2 | !4!F2 !4!E6 || $
+"A7"!4!E2 !2!B4 !2!B2- | !2!B8 | "D7"!4!E2 !3!A4 !3!A2- | !3!A8 | $
+"G"x2 !4!D2 !4!E2 !4!D2 | !4!F2 !4!D2 !4!E2 !4!D2 | "G7"!3!G2 !5!B,4 !4!D2- | !4!D8 || $
+"C"!4!E2 !3!G2 !3!A2 !2!B2- | !2!B8 | "Cm"x2 !3!A2 !2!B2 !3!A2 | !2!B2 !3!A6 | $
+"G"!5!B,2 !4!D2 !4!E2 !4!F2- | !4!F8 | "E7"x2 !4!E2 !4!F2 !4!E2 | !4!F2 !4!E6 || $
+"Am"!2!c8 | "E7"!2!B8 | "Am"!3!A2 !4!^D2 !4!E2 !2!B2- | "Cm6"!2!B4 !3!A4 | $
+"G"x2 !3!^A2 !2!B2 !3!G2 | "B7"!3!A2 !3!^G2 !3!A2 !4!F2 | "Em7"!3!G2 !5!^A,2 !5!B,2 !4!F2- | "A7"!4!F4 !4!E4 | $
+"G"!4!D2 !4!E2 !3!G2 !2!B2- | "E7"!2!B8 | "Am7"x2 !5!C2 !4!D2 !4!E2 | "D7"!3!A4 !2!B4 | $
+"G"!2!B2 !3!G6- | !3!G8- | "G7"!3!G8- | !3!G8 |]
 
 X:439
 T:Ain't mishehavin'
@@ -14442,14 +16017,16 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=172
+%%id ain-t-mishehavin
 K:D
-|: "^Swing""D"x !5!D,!5!E, !5!D,"D#other"!4!A, !4!A,3 | "Em7"x !5!E,!5!F, !5!E,"A7"!4!B, !4!B,3 | "D"x !4!A,!4!B, !4!A,"D7"!3!D !3!D2 !3!C | "G"!3!E!3!D !4!B,!5!F,- "Gm"!5!F,!5!=F, !5!E,2 | $
-"D/F#"x !5!D,!5!E, !5!D,"B7"!4!A, !4!A,3 | "Em7"x !5!E,!5!F, !5!E,"A7"!4!B, !4!B,2 !4!A, |1 "F#7""B7"!5!F,8 | "E7""A7"x8 :|2 $
-"D""G"!6!D,8 || "D""F#7"x8 || "Bm"x2 !3!D!4!B, !3!D !4!B,3 | "G7"x2 !3!D!4!B, !3!D !4!B,3 | $
-"E7"x2 !3!D!4!B, !3!D !4!B,3 | "B7"x2 !3!^D!4!B, !3!D !4!B,3 | "A"x2 !3!E2 "A#other"!3!E2 !3!E2 | "Bm7"!3!E2 !3!D2 "E7"!3!C2 !4!B,2 | $
-"A7"!4!A,4 "B7"!4!B,4 | "E7"!5!F,4 "A7"!5!E,4 || "D"x !5!D,!5!E, !5!D,"D#other"!4!A, !4!A,3 | "Em7"x !5!E,!5!F, !5!E, "A7"!4!B,4 | $
-"D"x !4!A,!4!B, !4!A,"D7"!3!D !3!D2 !3!C | "G"!3!E!3!D !4!B,!5!F,- "Gm"!5!F,!5!=F, !5!E,2 | "D/F#"x !5!D,!5!E, !5!D,"B7"!4!A, !4!A,3 | "Em7"x !5!E,!5!F, !5!E,"A7"!4!B, !4!B,2 !4!A, | $
-"D""Fother"!3!D8 | "Em7""A7"x8 |]
+I:linebreak $
+|: "^Swing""D"x !5!D!5!E !5!D"D#other"!4!A !4!A3 | "Em7"x !5!E!5!F !5!E"A7"!4!B !4!B3 | "D"x !4!A!4!B !4!A"D7"!3!d !3!d2 !3!c | "G"!3!e!3!d !4!B!5!F- "Gm"!5!F!5!=F !5!E2 | $
+"D/F#"x !5!D!5!E !5!D"B7"!4!A !4!A3 | "Em7"x !5!E!5!F !5!E"A7"!4!B !4!B2 !4!A |1 "F#7""B7"!5!F8 | "E7""A7"x8 :|2 $
+"D""G"!6!D8 || "D""F#7"x8 || "Bm"x2 !3!d!4!B !3!d !4!B3 | "G7"x2 !3!d!4!B !3!d !4!B3 | $
+"E7"x2 !3!d!4!B !3!d !4!B3 | "B7"x2 !3!^d!4!B !3!d !4!B3 | "A"x2 !3!e2 "A#other"!3!e2 !3!e2 | "Bm7"!3!e2 !3!d2 "E7"!3!c2 !4!B2 | $
+"A7"!4!A4 "B7"!4!B4 | "E7"!5!F4 "A7"!5!E4 || "D"x !5!D!5!E !5!D"D#other"!4!A !4!A3 | "Em7"x !5!E!5!F !5!E "A7"!4!B4 | $
+"D"x !4!A!4!B !4!A"D7"!3!d !3!d2 !3!c | "G"!3!e!3!d !4!B!5!F- "Gm"!5!F!5!=F !5!E2 | "D/F#"x !5!D!5!E !5!D"B7"!4!A !4!A3 | "Em7"x !5!E!5!F !5!E"A7"!4!B !4!B2 !4!A | $
+"D""Fother"!3!d8 | "Em7""A7"x8 |]
 
 X:440
 T:Alembert's
@@ -14458,7 +16035,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id alembert-s
 K:C
+I:linebreak $
 "^A""^Swing""Dm7"x !2!G .!2!F2 "G7".!2!E2 !3!D!3!D | "Dm7"!2!E!2!G !2!F!2!E- "G7"!2!E4 | "C"x !3!D .!3!C2 "F7".!3!B,2 !4!A,!4!^A, | "Em7".!3!B,2 !3!B,2 "Ebother"!3!C2 !4!A,!4!G, | $
 "Dm7"x !4!G,3- !4!G,4 | "G7"x !4!_A, x !4!_B,!3!C !3!_E!2!F !2!_A | "C"!2!G8 | "C#other"x8 || $
 "^B""Dm7"x !2!G .!2!F2 "G7".!2!E2 !3!D!3!D | "Dm7"!2!E!2!G !2!F!2!E- "G7"!2!E4 | "C"x !3!D .!3!C2 "F".!3!B,2 !4!A,!4!^A, | "Am7"!3!B,!3!B, !3!B,2 "B7"!3!C!3!D x !3!B,- | $
@@ -14475,15 +16054,17 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id all-of-me-3
 K:C
-"^Swing""C6"!3!C2 !4!G,!5!E,- !5!E,4- | !5!E,4 (3!3!C2!3!D2!3!C2 | "E7"!3!B,2 !4!^G,!5!E,- !5!E,4- | !5!E,8 | $
-"A7"!4!A,3 !4!G, !5!E,4- | !5!E,2 !5!^D,2 (3!5!E,2!4!_B,2!4!A,2 | "Dm6"!4!G,4 !5!F,4- | !5!F,8 | $
-"E7"!5!E,3 !5!_E, !5!D,4- | !5!D,4 (3!5!E,2!4!^G,2!3!B,2 | "Am6"!3!D4 !3!C4- | !3!C8 | $
-"D7"!3!B,2 !4!_B,!4!A,- !4!A,4- | !4!A,4 (3!4!A,2!3!D2!3!B,2 | "Dm7"!4!A,8 | "G7"!3!B,8 | $
-"C6"!3!C2 !4!G,!5!E,- !5!E,4- | !5!E,4 (3!3!C2!3!D2!3!C2 | "E7"!3!B,2 !4!^G,!5!E,- !5!E,4- | !5!E,8 | $
-"A7"!4!A,3 !4!G, !5!E,4- | !5!E,2 !5!^D,2 (3!5!E,2!4!_B,2!4!A,2 | "Dm6"!4!G,4 !5!F,4- | !5!F,8 | $
-"F6"!3!D4 !3!C2 !3!B,2 | "Fm6"!3!D6 !3!C2 | "C6"!3!B,4 !5!E,2 !4!G,2 | "A7"!3!B,6 !4!A,2 | $
-"Dm7"!3!C4 !4!A,2 !3!C2 | "G7"!2!E4 !2!E4 | "C6""Ebother"!3!C8- | "Dm7""G7"!3!C8 |]
+I:linebreak $
+"^Swing""C6"!3!c2 !4!G!5!E- !5!E4- | !5!E4 (3!3!c2!3!d2!3!c2 | "E7"!3!B2 !4!^G!5!E- !5!E4- | !5!E8 | $
+"A7"!4!A3 !4!G !5!E4- | !5!E2 !5!^D2 (3!5!E2!4!_B2!4!A2 | "Dm6"!4!G4 !5!F4- | !5!F8 | $
+"E7"!5!E3 !5!_E !5!D4- | !5!D4 (3!5!E2!4!^G2!3!B2 | "Am6"!3!d4 !3!c4- | !3!c8 | $
+"D7"!3!B2 !4!_B!4!A- !4!A4- | !4!A4 (3!4!A2!3!d2!3!B2 | "Dm7"!4!A8 | "G7"!3!B8 | $
+"C6"!3!c2 !4!G!5!E- !5!E4- | !5!E4 (3!3!c2!3!d2!3!c2 | "E7"!3!B2 !4!^G!5!E- !5!E4- | !5!E8 | $
+"A7"!4!A3 !4!G !5!E4- | !5!E2 !5!^D2 (3!5!E2!4!_B2!4!A2 | "Dm6"!4!G4 !5!F4- | !5!F8 | $
+"F6"!3!d4 !3!c2 !3!B2 | "Fm6"!3!d6 !3!c2 | "C6"!3!B4 !5!E2 !4!G2 | "A7"!3!B6 !4!A2 | $
+"Dm7"!3!c4 !4!A2 !3!c2 | "G7"!2!e4 !2!e4 | "C6""Ebother"!3!c8- | "Dm7""G7"!3!c8 |]
 
 X:442
 T:All the things you are
@@ -14492,16 +16073,18 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id all-the-things-you-are-2
 K:Ab
-"^Swing""Fm7"!4!A,8 | "Bbm7"!3!D6 !4!A,2 | "Eb7"!4!G,2 !4!G,2 !4!G,2 !4!G,2 | "Ab"!4!G,2 !3!C4 !4!G,2 | $
-"Db"!5!F,2 !5!F,2 !5!F,2 !5!F,2 | "G7"!5!F,2 !3!=B,4 !5!F,2 | "C"!5!=E,8- | !5!E,8 | $
-"Cm7"!5!E,8 | "Fm7"!4!A,6 !5!E,2 | "Bb7"!5!=D,2 !5!D,2 !5!D,2 !5!D,2 | "Eb"!5!=D,2 !4!G,4 !5!D,2 | $
-"Ab"!6!C,2 !6!C,2 !6!C,2 !6!C,2 | "D7"(3!6!C,2!5!=D,2!5!E,2 !5!D,2 !6!C,2 | "G"!6!=B,,8- | !6!B,,2 !5!=D,2 !4!G,2 !3!=D2 | $
-"Am7"!3!=D4 !3!C4- | "D7"!3!C2 !5!E,2 !5!=E,2 !3!C2 | "G"!3!=B,8- | !3!B,2 !5!=D,2 !4!G,2 !3!=B,2 | $
-"F#m7"!3!=B,4 !4!=A,4- | "B7"!4!A,2 !6!B,,2 !6!=B,,2 !4!=A,2 | "E"!4!A,8- | "C7#5"!4!A,8 | $
-"Fm7"!4!A,8 | "Bbm7"!3!D6 !4!A,2 | "Eb7"!4!G,2 !4!G,2 !4!G,2 !4!G,2 | "Ab"!4!G,2 !3!C4 !4!G,2 | $
-"Db"!5!F,8 | "Dbm7"!3!E4 !3!D4 | "Cm7"!5!E,2 !5!E,2 (3!5!E,2!5!E,2!5!E,2 | "Bother"!4!G,6 !5!F,2 | $
-"Bbm7"!6!D,2 !5!F,2 !4!A,2 !3!D2 | "Eb7"!2!F4 !2!G4 | "Ab"!2!A8- | "G7""C7"!2!A8 |]
+I:linebreak $
+"^Swing""Fm7"!4!A8 | "Bbm7"!3!d6 !4!A2 | "Eb7"!4!G2 !4!G2 !4!G2 !4!G2 | "Ab"!4!G2 !3!c4 !4!G2 | $
+"Db"!5!F2 !5!F2 !5!F2 !5!F2 | "G7"!5!F2 !3!=B4 !5!F2 | "C"!5!=E8- | !5!E8 | $
+"Cm7"!5!E8 | "Fm7"!4!A6 !5!E2 | "Bb7"!5!=D2 !5!D2 !5!D2 !5!D2 | "Eb"!5!=D2 !4!G4 !5!D2 | $
+"Ab"!6!C2 !6!C2 !6!C2 !6!C2 | "D7"(3!6!C2!5!=D2!5!E2 !5!D2 !6!C2 | "G"!6!=B,8- | !6!B,2 !5!=D2 !4!G2 !3!=d2 | $
+"Am7"!3!=d4 !3!c4- | "D7"!3!c2 !5!E2 !5!=E2 !3!c2 | "G"!3!=B8- | !3!B2 !5!=D2 !4!G2 !3!=B2 | $
+"F#m7"!3!=B4 !4!=A4- | "B7"!4!A2 !6!B,2 !6!=B,2 !4!=A2 | "E"!4!A8- | "C7#5"!4!A8 | $
+"Fm7"!4!A8 | "Bbm7"!3!d6 !4!A2 | "Eb7"!4!G2 !4!G2 !4!G2 !4!G2 | "Ab"!4!G2 !3!c4 !4!G2 | $
+"Db"!5!F8 | "Dbm7"!3!e4 !3!d4 | "Cm7"!5!E2 !5!E2 (3!5!E2!5!E2!5!E2 | "Bother"!4!G6 !5!F2 | $
+"Bbm7"!6!D2 !5!F2 !4!A2 !3!d2 | "Eb7"!2!f4 !2!g4 | "Ab"!2!a8- | "G7""C7"!2!a8 |]
 
 X:443
 T:Alors ? ... voilà !
@@ -14510,7 +16093,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id alors-voil
+%%tags needs-repair
 K:G
+I:linebreak $
 "^Swing"!3!^C (3!3!D2!1!d2!1!B2 || "G"!2!A3 !2!G- !2!G2 x !2!G | !2!F3 x (3!3!E2!1!B2!2!F2 | !3!E!3!E x !3!E- !3!E4 | $
 x3 (3!3!D/!3!E/!3!D/!3!^C !3!D!1!d !1!B | "G/B"!2!A4 (3!2!G2!1!d2!2!G2 | "Bbother"!2!F4 (3!3!E2!1!B2!2!F2 | "Am7"!3!E!3!E x !3!E- !3!E4 | $
 "D7"x3 !3!^D (3!3!E2!1!e2!1!c2 | "Am7"!1!B2 x !2!A- !2!A4 | "F#m7b5"x (3!2!A/!2!B/!2!A/!2!^G !2!A "B7".!1!d2 x !2!B | "Em"!2!A3 !3!G x !3!G3- | $
@@ -14528,7 +16114,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=170
+%%id anniversary-song
 K:C
+I:linebreak $
 |: "^Swing""E7"!5!E,8- | !5!E,4 !4!^G,2 !4!A,2 | !3!B,8- | !3!B,4 !4!^G,2 !5!E,2 | $
 "Am"!3!C8- | !3!C4 !3!B,2 !4!A,2 | !2!E8- | !2!E4 x2 !2!E2 | $
 "Dm"!2!F8- | !2!F4 !2!E2 !3!D2 | "Am"!2!E8- | !2!E4 !3!D2 !3!C2 | $
@@ -14545,7 +16133,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=60
+%%id anouman
 K:F
+I:linebreak $
 |: "^A""^Ballade""Dm7"!4!A,4- !4!A,!3!=B,/!3!^C/ !3!D/!2!E/!2!F/!2!G/ | "Gm6"!1!A/!1!c/!1!A/!1!E/ "A7"!1!c4 !1!B2 | "Dm"!1!A4- !1!A/!3!^C/!3!D/!2!E/ !2!F/!2!G/!1!A/!1!B/ | "Cm7"!1!d/!2!B/!3!G/!4!_E/ "F7"!1!d4 !1!_d2 | $
 "Bb"!1!c/!2!A/!3!F/!3!D/ !1!c4 !1!B2 | "Em7"!1!=B2- !1!B/!2!G/!3!E/!3!D/ "A7#5"!3!^C2 !1!_B2 |1 "Dm"!1!A4 !4!A,!3!=B, !3!^C/!3!D/!2!E/!2!F/ | "Gm6"!2!G!2!G !2!G!2!F "A7#5"!2!^G2 !4!B,2 :|2 $
 "Dm""Gm"!2!A8- || "Dm"!2!A8 || "^B""Am""D7"x8 | "Am7""D7"x8 | $
@@ -14561,7 +16151,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id appel-indirect
 K:C
+I:linebreak $
 |: "^Straight""B"!3!B,2 x "C"!3!C x4 | "B"!3!B,2 x "C"!3!C x4 | "B"!3!B,2 x "C"!3!C x4 | "B"!3!B,2 x "C"!3!C x4 :| $
 "C"!4!^F,!4!G, !3!B,!3!C !2!^D!2!E !1!^G!1!A | !2!^D!2!E !3!B,!3!C .!4!^F,2 x2 | !4!^F,!4!G, !3!B,!3!C !2!^D!2!E !1!^G!1!A | !2!^D!2!E !3!B,!3!C .!4!^F,2 x2 | $
 !4!^F,!4!G, !3!B,!3!C !2!^D!2!E !1!^G!1!A | !2!^D!2!E !3!B,!3!C .!4!^F,2 x2 | "Bother"!4!^F,!4!A, !3!C!3!^D !2!^F!2!A !1!c!1!d | .!1!_e2 !1!c!1!g x4 | $
@@ -14579,7 +16171,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=105
+%%id are-you-in-the-mood
 K:G
+I:linebreak $
 "^Swing""A9"!2!F!2!F !2!F!2!=F "D7#5"!2!E !2!E3 | "A9"!2!F!2!F !2!F!2!=F "D7#5"!2!E !2!E3 | "G69"!3!D!3!D !3!D!3!D "D7sus4"!3!C2 "D7"!3!B,!3!D- | "G69"!3!D4 x4 | $
 "A9"!2!F!2!F !2!F!2!=F "D7#5"!2!E !2!E3 | "A9"!2!F!2!F !2!F!2!=F "D7#5"!2!E !2!E3 | "G69"!3!D!3!D !3!D!3!D "D7"!3!C2 "C7"!3!D!3!B,- | "B7"!3!B,4 x3 !3!B, || $
 "C"!1!B!1!B !1!B!1!_B "Cm"!1!A !1!A3 | "C"!1!B!1!B !1!B!1!_B "Cm"!1!A !1!A3 | "G/D"!1!A!1!A !1!A!1!_A "C#other"!1!G3 !2!D | "Cother"!1!F4 "E7/B"!2!E4 || $
@@ -14592,7 +16186,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id artillerie-lourde
 K:G
+I:linebreak $
 "^Swing"!4!G, .!3!B,2 |: "C".!3!C2 x2 "Am7"x2 !3!C!2!_E- | "F"!2!E2 !3!C!4!G, "G7"x !4!G, .!3!B,2 | "C".!3!C2 x2 "Am7"x2 !3!C!2!_E- | $
 "F"!2!E2 !3!C!4!G, "G7"x !4!G, !3!B,2 | "C"!3!C2 x2 "Am7"x2 !3!C!2!_E- | "F"!2!E2 !3!C!4!G, "G7"x !4!G, !3!B,2 | "C"!3!C2 x2 "G7"x2 !4!G,!4!G, |1 $
 "C"!3!B,!3!C x2 "Db7"x !4!G, .!3!B,2 :|2 "C"!3!B,!3!C x2 x4 || "C7"x8 | x8 | $
@@ -14608,14 +16204,16 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id autumn-leaves-3
 K:Bb
-"^Swing"!4!G,2 !4!A,2 !4!B,2 |: "Cm7"!3!E8- | "F7"!3!E2 !5!F,2 !4!G,2 !4!A,2 | "Bb"!3!D4 !3!D4- | $
-"Eb"!3!D2 !5!E,2 !5!F,2 !4!G,2 | "Am7b5"!3!C8- |1 "D7"!3!C2 !5!D,2 !5!=E,2 !5!^F,2 | "Gm"!4!B,8 | $
-x2 !4!G,2 !4!A,2 !4!B,2 :|2 "D7"!3!C2 !4!A,2 !3!C2 !4!B,2 || "Gm"!4!G,8- | !4!G,2 x2 !5!^F,2 !4!G,2 || $
-"Am7b5"!4!A,2 !5!D,2 !4!A,4- | "D7b9"!4!A,2 !4!A,2 !4!G,2 !4!A,2 | "Gm"!4!B,8- | !4!B,2 !4!B,2 !4!A,2 !4!B,2 | $
-"Cm7"!3!C8- | "F7"!3!C2 !5!F,2 !2!F2 !3!E2 | "Bb"!3!D8- | !3!D2 x2 !3!^C2 !3!D2 | $
-"Am7b5"!3!E2 !3!E2 !3!C2 !3!C2 | "D7b9"!4!A,6 !3!E2 | "Gm7"!3!D4 "C9"!3!D4- | "Fm7""Bb7"!3!D6 !4!G,2 | $
-"Eb"!3!C6 !4!B,2 | "Am7b5"!4!A,4 "D7#5"!4!B,2 !5!D,2 | "Gm"!4!G,8 | "G7"x8 |]
+I:linebreak $
+"^Swing"!4!G2 !4!A2 !4!B2 |: "Cm7"!3!e8- | "F7"!3!e2 !5!F2 !4!G2 !4!A2 | "Bb"!3!d4 !3!d4- | $
+"Eb"!3!d2 !5!E2 !5!F2 !4!G2 | "Am7b5"!3!c8- |1 "D7"!3!c2 !5!D2 !5!=E2 !5!^F2 | "Gm"!4!B8 | $
+x2 !4!G2 !4!A2 !4!B2 :|2 "D7"!3!c2 !4!A2 !3!c2 !4!B2 || "Gm"!4!G8- | !4!G2 x2 !5!^F2 !4!G2 || $
+"Am7b5"!4!A2 !5!D2 !4!A4- | "D7b9"!4!A2 !4!A2 !4!G2 !4!A2 | "Gm"!4!B8- | !4!B2 !4!B2 !4!A2 !4!B2 | $
+"Cm7"!3!c8- | "F7"!3!c2 !5!F2 !2!f2 !3!e2 | "Bb"!3!d8- | !3!d2 x2 !3!^c2 !3!d2 | $
+"Am7b5"!3!e2 !3!e2 !3!c2 !3!c2 | "D7b9"!4!A6 !3!e2 | "Gm7"!3!d4 "C9"!3!d4- | "Fm7""Bb7"!3!d6 !4!G2 | $
+"Eb"!3!c6 !4!B2 | "Am7b5"!4!A4 "D7#5"!4!B2 !5!D2 | "Gm"!4!G8 | "G7"x8 |]
 
 X:450
 T:Avalon
@@ -14624,16 +16222,18 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id avalon-2
 K:F
-"^Swing"!6!C,4 || "C7"!4!G,4 !4!A,4 | !4!B,4 !3!C4 | !4!B,2 !4!A,2 !4!G,4- | $
-!4!G,4 x2 !6!C,2 | "F"!5!F,8- | !5!F,4 !4!G,4 | !4!A,8- | $
-!4!A,4 x2 !6!C,2 | "C7"!4!G,4 !4!A,4 | !4!B,4 !3!C4 | !4!B,2 !4!A,2 !4!G,4- | $
-!4!G,4 x2 !6!C,2 | "F"!4!A,8- | !4!A,4 !5!D,4 | !4!A,8- | $
-!4!A,4 x2 !5!D,2 || "D7"!4!A,4 !4!B,4 | !3!C4 !3!D4 | !3!C2 !4!B,2 !4!A,4- | $
-!4!A,4 x2 !5!D,2 | "Gm"!4!G,8- | !4!G,4 !4!A,4 | "Bbm6"!4!B,8- | $
-!4!B,4 x2 !5!D,2 || "F"!6!C,4 !5!F,4 | !4!A,4 !3!C4 | "D7"!2!E2 !3!D2 !2!E4- | $
-!2!E4 x2 !3!D2 | "Gm7"!4!B,8 | "C7"!4!A,8 | "F"!5!F,8- | $
-!5!F,4 x4 |]
+I:linebreak $
+"^Swing"!6!C4 || "C7"!4!G4 !4!A4 | !4!B4 !3!c4 | !4!B2 !4!A2 !4!G4- | $
+!4!G4 x2 !6!C2 | "F"!5!F8- | !5!F4 !4!G4 | !4!A8- | $
+!4!A4 x2 !6!C2 | "C7"!4!G4 !4!A4 | !4!B4 !3!c4 | !4!B2 !4!A2 !4!G4- | $
+!4!G4 x2 !6!C2 | "F"!4!A8- | !4!A4 !5!D4 | !4!A8- | $
+!4!A4 x2 !5!D2 || "D7"!4!A4 !4!B4 | !3!c4 !3!d4 | !3!c2 !4!B2 !4!A4- | $
+!4!A4 x2 !5!D2 | "Gm"!4!G8- | !4!G4 !4!A4 | "Bbm6"!4!B8- | $
+!4!B4 x2 !5!D2 || "F"!6!C4 !5!F4 | !4!A4 !3!c4 | "D7"!2!e2 !3!d2 !2!e4- | $
+!2!e4 x2 !3!d2 | "Gm7"!4!B8 | "C7"!4!A8 | "F"!5!F8- | $
+!5!F4 x4 |]
 
 X:451
 T:Babik
@@ -14642,15 +16242,17 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=280
+%%id babik
 K:F
-"^Straight""F"x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!4!F, x2 "F"!>!!5!C,2 | x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!2!C x2 "F"!5!C,2 | $
-x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!4!F, x2 !4!F,2 | "^Bass walk --------------------------------------/""F"!1!F2 !2!_E2 !2!C2 !3!B,2 | "C7"!3!_A, !3!G,2 !4!_G,- !4!G,4 | $
-"F"x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!4!F, x2 "F"!>!!5!C,2 | x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!2!C x2 "F"!5!C,2 | $
-x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!4!F, x2 !4!F,2 | "^Bass walk --------------------------------------/""F"!1!F2 !2!_E2 !2!C2 !3!B,2 | "C7"!3!^G, !3!A,2 !4!F,- "F"!4!F,4 || $
-"A7"x2 !4!A,2 !2!^F!3!^D x2 | !4!A,2 !2!^F!3!^D x4 | "D7"x2 !3!D2 !1!=B!2!^G x2 | !3!D2 !1!=B!2!^G x4 | $
-"G7"x2 !4!G,2 !2!F!3!^C x2 | !4!G,2 !2!F!3!^C x4 | "C7"x2 !3!C2 !1!A!2!^F x2 | !3!C2 !1!A!2!^F x4 | $
-"F"x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!4!F, x2 "F"!>!!5!C,2 | x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!2!C x2 "F"!5!C,2 | $
-x !5!C,!4!D, !4!E,"F/A"!4!F, !3!G,!3!^G, !3!A, | "Bb"!3!B,!3!^G, !3!A,"C7"!4!F, x2 !4!F,2 | "^Bass walk --------------------------------------/""F"!1!F2 !2!_E2 !2!C2 !3!B,2 | "C7"!3!^G, !3!A,2 !4!F,- "F"!4!F,4 |]
+I:linebreak $
+"^Straight""F"x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!4!F x2 "F"!>!!5!C2 | x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!2!c x2 "F"!5!C2 | $
+x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!4!F x2 !4!F2 | "^Bass walk --------------------------------------/""F"!1!f2 !2!_e2 !2!c2 !3!B2 | "C7"!3!_A !3!G2 !4!_G- !4!G4 | $
+"F"x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!4!F x2 "F"!>!!5!C2 | x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!2!c x2 "F"!5!C2 | $
+x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!4!F x2 !4!F2 | "^Bass walk --------------------------------------/""F"!1!f2 !2!_e2 !2!c2 !3!B2 | "C7"!3!^G !3!A2 !4!F- "F"!4!F4 || $
+"A7"x2 !4!A2 !2!^f!3!^d x2 | !4!A2 !2!^f!3!^d x4 | "D7"x2 !3!d2 !1!=b!2!^g x2 | !3!d2 !1!=b!2!^g x4 | $
+"G7"x2 !4!G2 !2!f!3!^c x2 | !4!G2 !2!f!3!^c x4 | "C7"x2 !3!c2 !1!a!2!^f x2 | !3!c2 !1!a!2!^f x4 | $
+"F"x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!4!F x2 "F"!>!!5!C2 | x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!2!c x2 "F"!5!C2 | $
+x !5!C!4!D !4!E"F/A"!4!F !3!G!3!^G !3!A | "Bb"!3!B!3!^G !3!A"C7"!4!F x2 !4!F2 | "^Bass walk --------------------------------------/""F"!1!f2 !2!_e2 !2!c2 !3!B2 | "C7"!3!^G !3!A2 !4!F- "F"!4!F4 |]
 
 X:452
 T:Bei dir war immer so schön
@@ -14659,7 +16261,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id bei-dir-war-immer-so-sch-n
+%%tags needs-repair
 K:G
+I:linebreak $
 "^Swing"!3!B,4 || "C"!1!B8- | "Cm"(3!1!B2!1!A2!2!G2 (3!2!F2!2!G2!1!A2 | "G"!1!A8- | $
 "G/B"(3!1!A2!2!G2!2!F2 "Bbother"(3!2!E2!2!F2!2!G2 | "Am7"!2!G3 !3!C !2!E4- | "D7"!2!E4 !3!D4 | "G"!2!F8 | $
 "G7"x2 !2!E2 !3!D2 !3!B,2 | "C"!1!B8- | "Cm"(3!1!B2!1!A2!2!G2 (3!2!F2!2!G2!1!A2 | "G"!1!A8- | $
@@ -14677,17 +16282,19 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id bei-mir-bist-du-sch-n
 K:C
-"^Swing"!4!E,!3!A, !3!B, |: "Am"!3!C .!tenuto!!3!C2 .!tenuto!!3!C2 .!tenuto!!3!B,2 !3!A, | "Bm7b5"(!2!D2 !3!B,2) "E7"x !4!E,(!3!A, !3!B,) | "Am"!3!C .!tenuto!!3!C2 .!tenuto!!3!C2 .!tenuto!!3!B,2 !3!A, | $
-"Bm7b5"(!2!D2 !3!B,2) "E7"x !4!E,(!3!A, !3!B,) | "Am"!3!C .!tenuto!!3!C2 (!3!C2 !2!D/!3!C/!3!B, !3!A, | "Dm"!2!D) .!tenuto!!2!D2 !2!D x .!3!C2 !3!B, |1 "F7"!3!C .!tenuto!!3!C2 (!3!C2 !3!B,2 !3!A, | $
-"E7"!3!B,4) x !4!E,(!3!A, !3!B,) :|2 "F7"!2!_E .!tenuto!!2!E2 .!tenuto!!2!E2 .!tenuto!!2!E2 !3!C || "E7"!>!!2!E2 x2 x !>!!4!E,3 |: "Am"!3!C4 !3!B, .!3!A,2 !3!C- | $
-!3!C4 x (!4!E,3 | !3!C4) !3!B, .!3!A,2 !3!C- | !3!C4 x !3!C3 | "E7"!3!B,4 !3!^G, .!4!E,2 !3!B,- | $
-!3!B, !3!B,2 !3!C2 !3!B,2 !3!A,- |1 "Am""G7"!3!A,8 | "F7"x4 "E7"x !4!E,3 :|2 "Am""E7"!3!A,8 || $
-"Am"x2 x !3!A, !3!B,2 .!3!C2 || "Dm"!2!D4 .!3!A,2 !2!D2- | !2!D !3!C3 .!tenuto!!3!B,2 .!tenuto!!3!A,2 | "Am"!3!C4 !3!C .!3!A,2 !3!C | $
-x2 x !3!A, .!tenuto!!3!B,2 .!tenuto!!3!C2 | "Dm"!2!D4 .!3!A,2 !2!D2- | !2!D3 !3!C .!tenuto!!3!B,2 .!tenuto!!3!A,2 | "E7"!2!E4 !2!E .!2!E2 !2!E- | $
-!2!E4 x !4!E,3 || "Am"!3!C4 !3!B, .!3!A,2 !3!C- | !3!C4 x !4!E,3 | !3!C4 !3!B, .!3!A,2 !3!C- | $
-!3!C4 x !slide!!3!C3 | "E7"!3!B,4 !3!^G, .!4!E,2 !3!B, | x !3!B,3 .!tenuto!!3!C2 .!tenuto!!3!B,2 | "Am""G7"!3!A,8- | $
-"F7"!3!A,4 "E7"x4 |]
+I:linebreak $
+"^Swing"!4!E!3!A !3!B |: "Am"!3!c .!tenuto!!3!c2 .!tenuto!!3!c2 .!tenuto!!3!B2 !3!A | "Bm7b5"(!2!d2 !3!B2) "E7"x !4!E(!3!A !3!B) | "Am"!3!c .!tenuto!!3!c2 .!tenuto!!3!c2 .!tenuto!!3!B2 !3!A | $
+"Bm7b5"(!2!d2 !3!B2) "E7"x !4!E(!3!A !3!B) | "Am"!3!c .!tenuto!!3!c2 (!3!c2 !2!d/!3!c/!3!B !3!A | "Dm"!2!d) .!tenuto!!2!d2 !2!d x .!3!c2 !3!B |1 "F7"!3!c .!tenuto!!3!c2 (!3!c2 !3!B2 !3!A | $
+"E7"!3!B4) x !4!E(!3!A !3!B) :|2 "F7"!2!_e .!tenuto!!2!e2 .!tenuto!!2!e2 .!tenuto!!2!e2 !3!c || "E7"!>!!2!e2 x2 x !>!!4!E3 |: "Am"!3!c4 !3!B .!3!A2 !3!c- | $
+!3!c4 x (!4!E3 | !3!c4) !3!B .!3!A2 !3!c- | !3!c4 x !3!c3 | "E7"!3!B4 !3!^G .!4!E2 !3!B- | $
+!3!B !3!B2 !3!c2 !3!B2 !3!A- |1 "Am""G7"!3!A8 | "F7"x4 "E7"x !4!E3 :|2 "Am""E7"!3!A8 || $
+"Am"x2 x !3!A !3!B2 .!3!c2 || "Dm"!2!d4 .!3!A2 !2!d2- | !2!d !3!c3 .!tenuto!!3!B2 .!tenuto!!3!A2 | "Am"!3!c4 !3!c .!3!A2 !3!c | $
+x2 x !3!A .!tenuto!!3!B2 .!tenuto!!3!c2 | "Dm"!2!d4 .!3!A2 !2!d2- | !2!d3 !3!c .!tenuto!!3!B2 .!tenuto!!3!A2 | "E7"!2!e4 !2!e .!2!e2 !2!e- | $
+!2!e4 x !4!E3 || "Am"!3!c4 !3!B .!3!A2 !3!c- | !3!c4 x !4!E3 | !3!c4 !3!B .!3!A2 !3!c- | $
+!3!c4 x !slide!!3!c3 | "E7"!3!B4 !3!^G .!4!E2 !3!B | x !3!B3 .!tenuto!!3!c2 .!tenuto!!3!B2 | "Am""G7"!3!A8- | $
+"F7"!3!A4 "E7"x4 |]
 
 X:454
 T:Belleville
@@ -14696,13 +16303,15 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=190
+%%id belleville
 K:D
-|: "^Swing""D"x !3!D !3!C2 "Fother"!3!=C2 !3!B,2 | "Em7"!3!_B,2 !4!^G,!4!A,- "A7"!4!A,2 x2 | "D"x !3!D !3!C2 "Fother"!3!=C2 !3!B,2 | "Em7"!3!_B,2 !4!^G,!4!A,- "A7"!4!A,2 x2 | $
-"D"x !3!D !3!C2 "Fother"!3!=C2 !3!B,2 | "Em7"!3!_B,2 !4!^G,!4!A,- "A7"!4!A,2 x2 | "D"!5!D,!5!D, x !5!D, .!4!F,2 .!4!A,2 | .!5!D,2 x !5!D, x4 :| $
-"Gm6"x !4!G,3 !4!_B,2 !3!D2 | !2!E3 !3!D- !3!D2 x2 | "D"x2 x !5!=F, !5!^F,2 !4!A,!3!C- | !3!C4 x4 | $
-"F#"!3!C!3!C !3!C!3!C- !3!C2 x2 | "Gother"!3!C!3!C !3!C!3!C- !3!C2 x2 | "G#m7"x !3!C2 !3!C "C#7"!3!B,2 !4!^A,2 | "F#"!5!F,4 "A7"!4!A,4 || $
-"D"x !3!D !3!C2 "Fother"!3!=C2 !3!B,2 | "Em7"!4!_B,2 !4!^G,!4!A,- "A7"!4!A,2 x2 | "D"x !3!D !3!C2 "Fother"!3!=C2 !3!B,2 | "Em7"!4!_B,2 !4!^G,!4!A,- "A7"!4!A,2 x2 | $
-"D"x !3!D !3!C2 "Fother"!3!=C2 !3!B,2 | "Em7"!4!_B,2 !4!^G,!4!A,- "A7"!4!A,2 x2 | "D"!5!D,!5!D, x !5!D, .!5!F,2 .!4!A,2 | .!5!D,2 x !5!D, x4 |]
+I:linebreak $
+|: "^Swing""D"x !3!d !3!c2 "Fother"!3!=c2 !3!B2 | "Em7"!3!_B2 !4!^G!4!A- "A7"!4!A2 x2 | "D"x !3!d !3!c2 "Fother"!3!=c2 !3!B2 | "Em7"!3!_B2 !4!^G!4!A- "A7"!4!A2 x2 | $
+"D"x !3!d !3!c2 "Fother"!3!=c2 !3!B2 | "Em7"!3!_B2 !4!^G!4!A- "A7"!4!A2 x2 | "D"!5!D!5!D x !5!D .!4!F2 .!4!A2 | .!5!D2 x !5!D x4 :| $
+"Gm6"x !4!G3 !4!_B2 !3!d2 | !2!e3 !3!d- !3!d2 x2 | "D"x2 x !5!=F !5!^F2 !4!A!3!c- | !3!c4 x4 | $
+"F#"!3!c!3!c !3!c!3!c- !3!c2 x2 | "Gother"!3!c!3!c !3!c!3!c- !3!c2 x2 | "G#m7"x !3!c2 !3!c "C#7"!3!B2 !4!^A2 | "F#"!5!F4 "A7"!4!A4 || $
+"D"x !3!d !3!c2 "Fother"!3!=c2 !3!B2 | "Em7"!4!_B2 !4!^G!4!A- "A7"!4!A2 x2 | "D"x !3!d !3!c2 "Fother"!3!=c2 !3!B2 | "Em7"!4!_B2 !4!^G!4!A- "A7"!4!A2 x2 | $
+"D"x !3!d !3!c2 "Fother"!3!=c2 !3!B2 | "Em7"!4!_B2 !4!^G!4!A- "A7"!4!A2 x2 | "D"!5!D!5!D x !5!D .!5!F2 .!4!A2 | .!5!D2 x !5!D x4 |]
 
 X:455
 T:Belleville rendez-vous
@@ -14711,16 +16320,18 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id belleville-rendez-vous
 K:C
-|: "^Straight""Am6"!2!C2 !2!C2 "E7/B"!2!C!3!A, !4!^F,!4!E, | "Am7/C"!5!C,3 !2!B, "E7/B"x3 !2!B, | "Am6"!2!C2 !2!C2 "E7/B"!2!C!3!A, !4!^F,!4!E, | "Am7/C"!5!C,!5!B,, !2!B,!3!A, "E7/B"x3 !2!B, "Am6"!2!E2 !2!E2 "E7/B"!2!E2 !2!E2 | $
-"Am/C"!3!D2 !3!C2 "E7/B"!4!A,2 !3!C2 | "Am6""E7/B"!slide!!2!E8 | "Am/C""E7/B"x8 | "Am6"!2!E2 !2!E2 "E7/B"!2!E2 !2!E2 | $
-"G7"!3!D2 !3!C2 "Db7"!4!A,!3!C x !3!C- | "C"!3!C4 x4 | "B7"x4 "Bb7"x3 !4!A, | "Am6"!3!C2 !3!C2 !3!C2 !3!C2 | $
-"Bm7b5"!4!_B,4 x4 | "Am6"!3!C2 !3!C2 !3!C2 !3!C2 | "Bb7b5"!4!_B,4 x4 | "Am6"!3!C2 !3!C2 !3!C2 !3!C2 | $
-"F7"!3!B,2 !4!A,2 "E7"!5!E,2 !4!^G,2 | "Am6"!4!A,4 "E7/B"x4 | "Am/C""E7/B"x8 :| "Am6"!4!A,2 !4!A,2 !4!A,2 !5!E,2 | $
-!4!A,2 !4!A,2 !slide!!3!C4- | !3!C8 | x8 | !4!A,2 !4!A,2 !4!A,2 !5!E,2 | $
-!4!A,2 !4!A,!4!A,- !4!A,4 | x8 | x8 | !4!A,2 !4!A,2 !4!A,2 !5!E,2 | $
-!4!A,2 !4!A,2 !slide!!3!C4- | !3!C8 | x8 | !4!A,2 !4!A,2 !4!A,2 !5!E,2 | $
-!4!A,6 !4!A,2- | !4!A,6 !4!A,2- | !4!A,8 |]
+I:linebreak $
+|: "^Straight""Am6"!2!c2 !2!c2 "E7/B"!2!c!3!A !4!^F!4!E | "Am7/C"!5!C3 !2!B "E7/B"x3 !2!B | "Am6"!2!c2 !2!c2 "E7/B"!2!c!3!A !4!^F!4!E | "Am7/C"!5!C!5!B, !2!B!3!A "E7/B"x3 !2!B "Am6"!2!e2 !2!e2 "E7/B"!2!e2 !2!e2 | $
+"Am/C"!3!d2 !3!c2 "E7/B"!4!A2 !3!c2 | "Am6""E7/B"!slide!!2!e8 | "Am/C""E7/B"x8 | "Am6"!2!e2 !2!e2 "E7/B"!2!e2 !2!e2 | $
+"G7"!3!d2 !3!c2 "Db7"!4!A!3!c x !3!c- | "C"!3!c4 x4 | "B7"x4 "Bb7"x3 !4!A | "Am6"!3!c2 !3!c2 !3!c2 !3!c2 | $
+"Bm7b5"!4!_B4 x4 | "Am6"!3!c2 !3!c2 !3!c2 !3!c2 | "Bb7b5"!4!_B4 x4 | "Am6"!3!c2 !3!c2 !3!c2 !3!c2 | $
+"F7"!3!B2 !4!A2 "E7"!5!E2 !4!^G2 | "Am6"!4!A4 "E7/B"x4 | "Am/C""E7/B"x8 :| "Am6"!4!A2 !4!A2 !4!A2 !5!E2 | $
+!4!A2 !4!A2 !slide!!3!c4- | !3!c8 | x8 | !4!A2 !4!A2 !4!A2 !5!E2 | $
+!4!A2 !4!A!4!A- !4!A4 | x8 | x8 | !4!A2 !4!A2 !4!A2 !5!E2 | $
+!4!A2 !4!A2 !slide!!3!c4- | !3!c8 | x8 | !4!A2 !4!A2 !4!A2 !5!E2 | $
+!4!A6 !4!A2- | !4!A6 !4!A2- | !4!A8 |]
 
 X:456
 T:Black and white
@@ -14729,7 +16340,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id black-and-white
 K:C
+I:linebreak $
 "^Swing""E7/B"x !2!E2 x .!2!E2 .!2!E2 | !slide!!2!F3 !2!E- !2!E2 x2 | "Bbother"x !2!E2 x .!2!E2 .!2!E2 | !slide!!2!F3 !2!E- !2!E2 x2 | $
 "D7/A"x !3!D2 x .!3!D2 .!3!D2 | !slide!!2!E3 !3!D- !3!D2 x2 | "Fm6/Ab"x !3!D2 x .!3!D2 .!3!D2 | !slide!!2!E3 !3!D- !3!D2 x2 | $
 "C/G"x2 (3!3!C!3!D!3!C (3!3!B,!3!C!3!B, !4!A,!3!B, | !3!C!2!E !1!A2 !1!A2 !1!G2 | "Ab7"!1!A4 x2 !1!_A!2!_E | !3!C4 x4 | $
@@ -14748,12 +16361,14 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=150
+%%id blue-bossa-2
 K:Eb
-"^Bossa".!4!G,2 || "Cm6"!slide!!2!G3 !2!F!3!E !3!D2 !3!C- | !3!C6 !4!B,2 | "Fm9"!4!A,4 !2!G3 !2!F- | $
-!2!F8 | "Dm7b5"!2!F3 !3!E!3!D !3!C2 !4!B,- | "G7#5#9"!4!B,6 !4!A,2 | "Cm6"!4!G,4 !2!F3 !3!E- | $
-!3!E8 | "Ebm9"!3!E3 !3!_D!3!C !4!B,2 !4!A,- | "Ab13"!4!A,6 !5!_G,2 | "Db"!5!_G,2 !5!F, !4!B,2 !5!F, !4!A,2- | $
-!4!A,8 | "Dm7b5"!4!A,2 !4!G,!4!B,- !4!B,4 | "G7#5#9"!4!A,2 !4!G,!4!B,- !4!B,3 !4!A, | "Cm6"!4!G,8- | $
-"Dm7b5""G7"!4!G,6 !4!G,2 |]
+I:linebreak $
+"^Bossa".!4!G2 || "Cm6"!slide!!2!g3 !2!f!3!e !3!d2 !3!c- | !3!c6 !4!B2 | "Fm9"!4!A4 !2!g3 !2!f- | $
+!2!f8 | "Dm7b5"!2!f3 !3!e!3!d !3!c2 !4!B- | "G7#5#9"!4!B6 !4!A2 | "Cm6"!4!G4 !2!f3 !3!e- | $
+!3!e8 | "Ebm9"!3!e3 !3!_d!3!c !4!B2 !4!A- | "Ab13"!4!A6 !5!_G2 | "Db"!5!_G2 !5!F !4!B2 !5!F !4!A2- | $
+!4!A8 | "Dm7b5"!4!A2 !4!G!4!B- !4!B4 | "G7#5#9"!4!A2 !4!G!4!B- !4!B3 !4!A | "Cm6"!4!G8- | $
+"Dm7b5""G7"!4!G6 !4!G2 |]
 
 X:458
 T:Blue drag
@@ -14762,7 +16377,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=110
+%%id blue-drag
 K:F
+I:linebreak $
 |: "^Swing""Dm"!2!F!1!A x !2!F "Dm/C"!1!A2 !1!A2 | "Bm7b5"!2!F4 "Bb7"!3!D2 x2 | "Dm"!2!F!1!A x !2!F "Dm/C"!1!A2 !1!A2 | "Bm7b5"!2!F4 "Bb7"x4 | $
 "Dm"!2!F!1!A x !2!F "Dm/C"!1!A2 !1!A2 | "Em7b5"!2!G4 x2 !3!D!3!D |1 "Bb7"!1!A!1!_A- !1!A2 "A7"!1!G!2!F !2!D!2!D- | "Dm""A7"!2!D8 :|2 $
 "Bb7"!1!A!1!_A- !1!A2 "A7"!1!G!2!F !2!D!2!D- || !2!D4 x2 !1!B!1!A || "Gm"!2!G !2!G2 !1!A!2!F !2!F2 !2!G | !2!E !2!E2 !2!F!3!D !2!E!2!F !2!G | $
@@ -14778,7 +16395,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id blues-clair
 K:C
+I:linebreak $
 "^Swing""C69"!3!E2 x2 x4 | !3!E!2!G !1!c x .!1!e2 !1!d!3!E | x4 x2 x !3!E | "C7"!2!G!2!_B (3(!1!d!1!_e!1!d) !1!c!2!A !2!G!3!_E | $
 "F9".!4!C2 x2 x2 x (!3!D | !3!_E)!1!d !1!c!2!A !2!G!3!E !4!C x | "C69".!4!A,2 x2 x2 x !4!B, | "C/E"!4!C!3!D !3!E!3!F "A7b9"!2!G!2!A !1!B!1!c | $
 "Dm7"!1!d2 x (!1!d/!1!c/)!1!B !1!c!2!A !2!F | "G7"!3!D.!2!G x2 !2!G!3!G, !3!_E!3!=E | "C"x !4!C .!5!A,2 "G7".!4!C2 .!4!C2 | "C".!4!C2 !4!C!4!C "G7"!3!E{/!3!F}!3!G x2 | $
@@ -14793,7 +16412,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id blues-d-autrefois
+%%tags needs-repair
 K:Bb
+I:linebreak $
 "^Swing"!6!G,,!3!G, !6!G,,!3!G, | !3!G,!1!G "Gm7"!5!G,!4!D !3!F!2!B !1!f | !6!G,,!3!G, !6!G,,!3!G, | !3!G,!1!G "C#other"!4!_D!3!G !2!B!1!=e | $
 !6!G,,!3!G, !6!G,,!3!G, | !3!G,!1!G "Gm7"!5!G,!4!D !3!F!2!B !1!f | !6!G,,!3!G, !6!G,,!3!G, | "Eb7b5"!4!A,!3!E !2!G!1!^c "D7"!4!A,!3!D !2!^F!1!=c x !5!C,!3!C !5!B,,!3!B, !5!A,,!3!A, || $
 "Gm6"!4!=E,!3!B, !2!D!1!G !4!G,!3!D !2!=E!1!B | "Am7b5"!4!A,!3!E !2!G!1!c "Gm6"!4!B,!3!=E !2!G!1!d x2 x !2!D!1!G | "Gm11".!4!B,!3!D !2!G!1!c .!4!B,!3!D !2!G!1!c .!4!B,!3!D !2!G!1!c .!4!B,!3!D !2!G!1!c | .!4!B,!3!D !2!G!1!c "Gm6"!4!G,!2!=E !1!B!4!=E, !3!B,!2!D !1!G!4!E, !3!B,!2!D !1!G x !4!E,!3!B, !2!D!1!G | $
@@ -14808,7 +16430,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id blues-en-mineur
+%%tags needs-repair
 K:C
+I:linebreak $
 "^Swing""Am"!5!A,,2 x2 x !5!C,!4!E, !3!A, | !3!B,4 !3!A,2 !6!^G,,!5!A,, | x4 x !5!C,!4!E, !3!A, | !2!B,4 !3!A,2 !6!^G,,!5!A,, | $
 "Dm6"x2 x !1!A (3!2!F!3!D!3!B, (3!4!A,!5!F,!5!D, | (3!6!B,,!6!A,,!6!B,, (3!5!D,!5!F,!4!A, (3!3!B,!3!D!2!F (3!1!A!1!^A!1!B | !1!c2 x2 (3!1!^G!1!B!1!A (3!2!F!2!E!3!C | !4!A,2 !2!F(3!2!E/!2!F/!2!E/- !2!E!3!C !4!A,!5!E, | $
 "E7"!3!D2 (3!3!C!3!D!3!C !3!B,!5!E, x !5!E, | !3!D2 (3!3!C!3!D!3!C !5!A,,!4!A, !5!A,,!4!A, | "Am"!5!A,,!4!A, !5!A,,!4!A, | "E7"x4 x !4!A,!3!C !3!_E | $
@@ -14823,7 +16448,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=144
+%%id blues-for-ike
 K:A
+I:linebreak $
 "^Swing""A7"!4!E,!3!A, !2!C!2!D- !2!D3 !2!C | !2!D!2!C !2!D!2!C !2!D!2!C !3!A,!4!E,- | !4!E,8 | x8 | $
 "D7"!4!E,!3!A, !2!=C!2!D- !2!D3 !2!C | !2!D!2!=C !2!D!2!C !2!D!2!C !3!A,!4!E,- | "A7"!4!E,8 | "C#m7""F#7"x8 | $
 "Bm7"!4!E,!3!A, !2!C!2!D- !2!D3 !2!C | "E7"!2!D!2!C !3!A,!4!E, !4!_E,!2!=C !2!B,!4!D, | "A7"!5!C,!3!A,- !3!A,6 | "Bm7""E7"x8 |] $
@@ -14840,14 +16467,16 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id blues-primitif
 K:D
-"^Swing"!6!A,, || "D69"!5!E,!5!C, !5!D,!5!E, !4!F,2 x2 | x3 !5!D,!4!F, !4!G,!4!A, !4!F, | !4!G,!4!F,- !4!F,2 !4!D,!5!A,, !6!F,, x | $
-"D9"!4!F, x !4!D,!5!=C,- !5!C,2 x2 | "G9"x4 !6!E,,!6!=F,, !4!=F,!5!B,, | !4!E,2 x2 !4!D,2 !4!E,!4!=F, | "D69"!4!E,3 (3!4!D,/!4!^D,/!4!=D,/-"Em7"!4!D, !5!B,,!5!_B,, !5!A,, | $
-"F#m7"!4!D,2 x !4!D,"B7"!4!E, !4!F,!3!A, !2!D | "Em7"!1!E2 x2 !3!G,!2!B, !2!D!1!F | "A7"!1!A!1!E !2!D!2!B, !3!A,!3!G, !4!F,!1!E | "D69"!2!D!1!E !2!D!2!B, "Bbm6"!3!A,- !3!A,2 x | $
-"D69""A7"x6 !4!E,!4!=F, || "D69"!2!D6 !4!E,!4!^D, | (3!1!=F/!1!G/!1!F/!1!E !2!B,/!3!A,/!3!G,/!4!E,/ !5!=C,/!5!_B,,/!5!A,,/!6!G,,/ !6!G,,!6!F,, | !1!E!2!D !3!A,!4!F, x2 !4!F,!4!A, | $
-!3!=C!3!D !2!E!2!=F !2!^F!1!A !2!=F!3!D | "D9"!2!G!2!=F !3!D!4!A, !5!=F,2 x2 | "G9"!2!E2 x !2!E !3!D2 x !3!D | "D69"!3!C!3!C !3!B,!3!B, "Em7"!4!F,!4!F, !4!F,2 | $
-"F#m7"x3 !4!=F,"B7"!3!^A, !2!D!1!=F !2!D | "Em7"!1!E2 x2 !3!G,!2!B, !2!D!1!G | "A7"!1!F!1!=F !2!D!2!B, !3!G,(3!5!C,/!5!A,,/!6!G,,/ !4!E,!4!=F, | "D69"!4!F,!3!A, !4!D, x "Bbm6"!4!F,2 !4!D,!4!E, | $
-"D69"!4!=F, x !4!E, "A7"x !4!E,2 !4!D, x |]
+I:linebreak $
+"^Swing"!6!A, || "D69"!5!E!5!C !5!D!5!E !4!F2 x2 | x3 !5!D!4!F !4!G!4!A !4!F | !4!G!4!F- !4!F2 !4!D!5!A, !6!F, x | $
+"D9"!4!F x !4!D!5!=C- !5!C2 x2 | "G9"x4 !6!E,!6!=F, !4!=F!5!B, | !4!E2 x2 !4!D2 !4!E!4!=F | "D69"!4!E3 (3!4!D/!4!^D/!4!=D/-"Em7"!4!D !5!B,!5!_B, !5!A, | $
+"F#m7"!4!D2 x !4!D"B7"!4!E !4!F!3!A !2!d | "Em7"!1!e2 x2 !3!G!2!B !2!d!1!f | "A7"!1!a!1!e !2!d!2!B !3!A!3!G !4!F!1!e | "D69"!2!d!1!e !2!d!2!B "Bbm6"!3!A- !3!A2 x | $
+"D69""A7"x6 !4!E!4!=F || "D69"!2!d6 !4!E!4!^D | (3!1!=f/!1!g/!1!f/!1!e !2!B/!3!A/!3!G/!4!E/ !5!=C/!5!_B,/!5!A,/!6!G,/ !6!G,!6!F, | !1!e!2!d !3!A!4!F x2 !4!F!4!A | $
+!3!=c!3!d !2!e!2!=f !2!^f!1!a !2!=f!3!d | "D9"!2!g!2!=f !3!d!4!A !5!=F2 x2 | "G9"!2!e2 x !2!e !3!d2 x !3!d | "D69"!3!c!3!c !3!B!3!B "Em7"!4!F!4!F !4!F2 | $
+"F#m7"x3 !4!=F"B7"!3!^A !2!d!1!=f !2!d | "Em7"!1!e2 x2 !3!G!2!B !2!d!1!g | "A7"!1!f!1!=f !2!d!2!B !3!G(3!5!C/!5!A,/!6!G,/ !4!E!4!=F | "D69"!4!F!3!A !4!D x "Bbm6"!4!F2 !4!D!4!E | $
+"D69"!4!=F x !4!E "A7"x !4!E2 !4!D x |]
 
 X:464
 T:Blue skies
@@ -14856,7 +16485,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id blue-skies
 K:C
+I:linebreak $
 "^Swing""Am"!4!A,4 !2!E4- | "Am/G#"!2!E4 !3!D!3!C !3!D2 | "Am/G"!2!E8- | "Am/F#"!2!E4 !3!D!3!C !3!D2 | $
 "C"!2!E4 "A7"!4!G,4- | "Dm7"!4!G,4 "G7"!4!G,2 !4!A,2 | "C"!3!C8- | "Bm7b5""E7"!3!C8 || $
 "Am"!4!A,4 !2!E4- | "Am/G#"!2!E4 !3!D!3!C !3!D2 | "Am/G"!2!E8- | "Am/F#"!2!E4 !3!D!3!C !3!D2 | $
@@ -14873,14 +16504,16 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=92
+%%id body-and-soul-2
 K:Db
-|: "^Swing""Ebm7"x !5!E,!5!F, !5!E, "Bb7"!5!F,2 !5!E,2 | "Ebm7"!4!B,2 "D7"!4!B,6 | "Db"x !4!A,!4!B, !4!A, "Gb7"!4!B,2 !4!A,2 | "Fm7"!3!E2 !3!D2 "Edim7"!3!C2 !4!B,2 | $
-"Ebm7"x2 !3!D2 "Ebm7/Db"!4!B, !5!G,2 !6!B,, | "Cm7b5"!5!F,4 "F7b9"!5!E,4 | "Bbm7"x !6!D,"Eb7"!5!E, "Ebm7"!5!F, !4!A,2 "Ab7"(3!4!A,!4!B,!5!=E, |1 "Db6"!6!D,4 "Fm7b5""Bb7"x4 :|2 $
-"Db6"!6!D,4 "Em7""A7"x4 || "D"x !4!=D,!4!=E, !4!^F,"Em7"!3!=A, !3!A,2 !3!A, | "D/F#"!2!^D !2!D2 !4!^F,"Gm6"!3!=A, !3!A,2 !3!=G, | "F#m"!4!^F, "Bm"!4!F,2 !4!=D, "Em"!4!=E,2 "A7"!5!^C,!5!=A,,- | $
-"D""Eb7"!5!A,,8 | "Dm7"x !4!=D,!4!=E, !4!F,"G7"!3!=A, !3!A,2 !3!=G, | "C"!1!=E !1!E2 !2!=B,"Ebdim7"!2!=D !2!D2 !3!=A, | "Dm7"!2!C !2!C2 !3!=A,"G7"!2!=B, !2!B,2 !3!=G, | $
-"C7"!4!=E,2 "B7"!4!_E,2 "Bb7"!4!=D,2 !3!B,2 | "Ebm7"x !5!E,!5!F, !5!E, "Bb7"!5!F,2 !5!E,2 | "Ebm7"!4!B,2 "D7"!4!B,6 | "Db"x !4!A,!4!B, !4!A, "Gb7"!4!B,2 !4!A,2 | $
-"Fm7"!3!E2 !3!D2 "Edim7"!3!C2 !4!B,2 | "Ebm7"x2 !3!D2 "Ebm7/Db"!4!B, !5!G,2 !6!B,, | "Cm7b5"!5!F,2- !5!F,2 "F7"!5!E,4 | "Bbm7"x !6!D,"Eb7"!5!E, !5!F, "Ebm7"!4!A,2 "Ab7"(3!4!A,!4!B,!5!=E, | $
-"Db6"!6!D,4 "Bb7"x4 |]
+I:linebreak $
+|: "^Swing""Ebm7"x !5!E!5!F !5!E "Bb7"!5!F2 !5!E2 | "Ebm7"!4!B2 "D7"!4!B6 | "Db"x !4!A!4!B !4!A "Gb7"!4!B2 !4!A2 | "Fm7"!3!e2 !3!d2 "Edim7"!3!c2 !4!B2 | $
+"Ebm7"x2 !3!d2 "Ebm7/Db"!4!B !5!G2 !6!B, | "Cm7b5"!5!F4 "F7b9"!5!E4 | "Bbm7"x !6!D"Eb7"!5!E "Ebm7"!5!F !4!A2 "Ab7"(3!4!A!4!B!5!=E |1 "Db6"!6!D4 "Fm7b5""Bb7"x4 :|2 $
+"Db6"!6!D4 "Em7""A7"x4 || "D"x !4!=D!4!=E !4!^F"Em7"!3!=A !3!A2 !3!A | "D/F#"!2!^d !2!d2 !4!^F"Gm6"!3!=A !3!A2 !3!=G | "F#m"!4!^F "Bm"!4!F2 !4!=D "Em"!4!=E2 "A7"!5!^C!5!=A,- | $
+"D""Eb7"!5!A,8 | "Dm7"x !4!=D!4!=E !4!F"G7"!3!=A !3!A2 !3!=G | "C"!1!=e !1!e2 !2!=B"Ebdim7"!2!=d !2!d2 !3!=A | "Dm7"!2!c !2!c2 !3!=A"G7"!2!=B !2!B2 !3!=G | $
+"C7"!4!=E2 "B7"!4!_E2 "Bb7"!4!=D2 !3!B2 | "Ebm7"x !5!E!5!F !5!E "Bb7"!5!F2 !5!E2 | "Ebm7"!4!B2 "D7"!4!B6 | "Db"x !4!A!4!B !4!A "Gb7"!4!B2 !4!A2 | $
+"Fm7"!3!e2 !3!d2 "Edim7"!3!c2 !4!B2 | "Ebm7"x2 !3!d2 "Ebm7/Db"!4!B !5!G2 !6!B, | "Cm7b5"!5!F2- !5!F2 "F7"!5!E4 | "Bbm7"x !6!D"Eb7"!5!E !5!F "Ebm7"!4!A2 "Ab7"(3!4!A!4!B!5!=E | $
+"Db6"!6!D4 "Bb7"x4 |]
 
 X:466
 T:Bolero
@@ -14889,7 +16522,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id bolero
 K:C
+I:linebreak $
 |: "^Bolero"!5!C,2 (3!3!G,!3!G,!3!G, (3!3!G,!3!G,!3!G, (3!3!G,!3!G,!3!G, | !3!G,2 (3!3!G,!3!G,!3!G, !3!G,2 !3!G,2 | !5!C,2 (3!3!G,!3!G,!3!G, (3!3!G,!3!G,!3!G, (3!3!G,!3!G,!3!G, |1 !3!G,2 (3!3!G,!3!G,!3!G, !3!G,2 !3!G,2 :|2 $
 !3!G, x x2 !1!_G4 || "F7/A"!2!_E8- | !2!E2 x2 !1!_G4 | !2!_E8- | $
 !2!E2 x2 !1!_G4 | !2!_E8- | !2!E2 x2 (3!1!_G2!1!_A2!1!G2 | !2!_E8- | $
@@ -14936,7 +16571,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id bossa-dorado-2
 K:F
+I:linebreak $
 "^Bossa""Dm7"!4!A,2 !3!F2 !4!A,!3!F !4!A,!4!B,- | "Dmb6"!4!B, !3!F2 !4!B,2 !3!F!4!B, !3!F | "Dm6"!4!=B,2 !3!F2 !4!B,!3!F !4!B,!4!_B,- | "Dmb6"!4!B, !3!F2 !4!B,2 !3!F!4!B, !3!F | $
 "Dm7"!4!A,2 !3!F2 !4!A,!3!F !4!A,!4!B,- | "Dmb6"!4!B, !3!F2 !4!B,2 !3!F!4!B, !3!F | "Dm6"!4!=B,2 !3!F2 !4!B,!3!F !4!B,!4!_B, | "Em7b5"x !4!G,!4!^G, !4!A,- "A7"!4!A,4 |: $
 "Dm7"!4!A,!2!F !4!A,!2!F- !2!F4 | x !4!A,!1!A !1!B!1!A !2!F!3!D !4!A, | "E7"!4!^G,!2!F !4!G,!2!E- !2!E4 | x !4!^G,!2!F !4!G,!2!F !4!G,!2!F !4!G, |1 $
@@ -14954,7 +16591,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id boum
 K:D
+I:linebreak $
 "^Swing"!1!A4 "D"!5!D,4 | !1!B2 !1!A!2!G !2!F2 !2!E2 | !4!A,4 "D"!5!D,4 | (3!3!B,2!3!C2!3!D2 (3!2!E2!2!F2!2!G2 | $
 "D/F#"!1!A4 "Bb/F"!1!_B4 | "Em7"!1!B4 "A7"!1!c4 || "^A""D"!3!D!2!E !2!F!2!E "Bm7"!3!D2 !2!F2 | "Em7"!2!E2 !1!A2 "A7"!1!A2 x2 | $
 "D"!3!D!2!E !2!F!2!E "Bm7"!3!D2 !2!F2 | "Em7"!2!E2 !1!A2 "A7"!1!A2 x2 | "D7"!1!B2 !1!A2 !1!B2 !1!A2 | "G"!1!A2 !1!_A2 !1!G2 x2 | $
@@ -14973,19 +16612,21 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id brazil
 K:G
-"^Swing"!5!D,4 || "G"!3!B,8- | !3!B,8 | x2 !3!D2 !3!D2 !3!B,2 | $
-!3!B,2 !4!A,2 !4!A,2 !4!G,2 | "Am7"!4!A,8- | !4!A,8 | "D7"x2 !3!D2 !3!D2 !3!B,2 | $
-!3!B,2 !4!A,2 !4!A,2 !4!G,2 | "Cm"!4!A,8- | !4!A,8 | "D7"x2 !3!D2 !3!D2 !3!B,2 | $
-!3!B,2 !4!A,2 !4!A,2 !4!G,2 | "G"!3!B,8- | !3!B,4 !5!F,4 | "Am7"!5!E,8- | $
-"D7"!5!E,4 !5!F,4 | "G"!3!B,4 "G7"!3!B,4 | "Gb7"!4!_B,4 "F7"!4!A,4 |: "E7"!3!D8- | $
-"F7"!3!D8 | "E7"x2 !3!D2 !3!D2 !3!_D2 | !3!C2 !3!B,2 !4!^A,2 !3!B,2 :| "E7"!3!D8- | $
-"F7"!3!D8 | "E7"x2 !3!D2 !3!D2 !3!_D2 | !3!C2 !3!B,2 !4!^A,2 !3!B,2 | "Am"!3!C8- | $
-"F/A"!3!C8- | "Am6"!3!C8- | "F/A""Am"!3!C8 || "Cm"!3!C8- | $
-!3!C8 | x2 !3!C2 !3!C2 !3!B,2 | !3!B,2 !4!A,2 !4!G,2 !5!F,2 | "G"!4!A,8- | $
-!4!A,8 | x2 !4!G,2 !4!A,2 !3!B,2 | !3!D4 !3!B,2 !4!G,2 | "Am7"!4!G,8- | $
-!4!G,8 | "D7"!4!A,4 !4!A,2 !4!A,2 | !4!A,4 !4!A,2 !4!G,2 |: "G"!3!B,8- | $
-!3!B,4 !4!F,4 | "Am7"!5!E,8- | "D7"!5!E,4 !5!D,4 :|
+I:linebreak $
+"^Swing"!5!D4 || "G"!3!B8- | !3!B8 | x2 !3!d2 !3!d2 !3!B2 | $
+!3!B2 !4!A2 !4!A2 !4!G2 | "Am7"!4!A8- | !4!A8 | "D7"x2 !3!d2 !3!d2 !3!B2 | $
+!3!B2 !4!A2 !4!A2 !4!G2 | "Cm"!4!A8- | !4!A8 | "D7"x2 !3!d2 !3!d2 !3!B2 | $
+!3!B2 !4!A2 !4!A2 !4!G2 | "G"!3!B8- | !3!B4 !5!F4 | "Am7"!5!E8- | $
+"D7"!5!E4 !5!F4 | "G"!3!B4 "G7"!3!B4 | "Gb7"!4!_B4 "F7"!4!A4 |: "E7"!3!d8- | $
+"F7"!3!d8 | "E7"x2 !3!d2 !3!d2 !3!_d2 | !3!c2 !3!B2 !4!^A2 !3!B2 :| "E7"!3!d8- | $
+"F7"!3!d8 | "E7"x2 !3!d2 !3!d2 !3!_d2 | !3!c2 !3!B2 !4!^A2 !3!B2 | "Am"!3!c8- | $
+"F/A"!3!c8- | "Am6"!3!c8- | "F/A""Am"!3!c8 || "Cm"!3!c8- | $
+!3!c8 | x2 !3!c2 !3!c2 !3!B2 | !3!B2 !4!A2 !4!G2 !5!F2 | "G"!4!A8- | $
+!4!A8 | x2 !4!G2 !4!A2 !3!B2 | !3!d4 !3!B2 !4!G2 | "Am7"!4!G8- | $
+!4!G8 | "D7"!4!A4 !4!A2 !4!A2 | !4!A4 !4!A2 !4!G2 |: "G"!3!B8- | $
+!3!B4 !4!F4 | "Am7"!5!E8- | "D7"!5!E4 !5!D4 :|
 
 X:470
 T:Brick top
@@ -14994,7 +16635,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id brick-top
 K:G
+I:linebreak $
 "^Swing""A/C#"!5!^C,!3!A, !2!E!1!A x2 "Cother"!5!=C,!3!A, !2!_E!1!F x2 | "G/B"!5!B,,!3!G, !2!D!1!G x2 | "A/C#"!5!^C,!3!A, !2!E!1!A x2 "Cother"!5!=C,!3!A, !2!_E!1!F x2 | "G/B"!5!B,,!3!G, !2!D!1!G x2 | $
 "A/C#"!5!^C,!3!A, !2!E!1!A x2 "Cother"!5!=C,!3!A, !2!_E!1!F x2 | "G/B"!5!B,,!3!G, !2!D!1!G x2 "Bbother"!5!_B,,!3!G, !2!^C!1!E x2 | "F/A"!5!A,,!4!=F, !2!C!1!=F x2 "Ab7"!6!_A,,!5!_E, !4!^F,!3!C !2!_E x2 | "G69"!6!G,,!4!D, !3!G,!2!B, !1!E x2 |: $
 "A7/C#"!1!^c2 x2 "Cother"!1!=c2 x !1!d/!1!c/ | "G/B"!1!B2 x2 x4 | "A7/C#"!1!^c2 x2 "Cother"!1!=c2 x !1!d/!1!c/ | "G/B"!1!B2 x2 x4 | $
@@ -15018,7 +16661,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=192
+%%id caravan-2
 K:C
+I:linebreak $
 |: "A7""^Latin"a8- | "Bb7"a8- | "A7"a2 _b2 a2 e2 | g2 a2 ^c'2 e2 | $
 "A7"g8- | "Bb7"g8- | "A7"g2 a2 _b2 a2 | _b2 a2 ^g2 e2 | $
 "A7"g8- | "Bb7"g8- | "A7"g2 a2 ^g2 =g2 | ^f2 =f2 e2 ^c2 | $
@@ -15043,7 +16688,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id cavalerie
 K:C
+I:linebreak $
 "Db9""^Swing"_e4 || "C9"d8- | d4 "Db9"_e4 | "C9"d8- | $
 d4 "Db9"_e4 | "C9"d8- | d4 "Db7"_d4 | "C"c8- | $
 c4 "Db9"_e4 || "C9"d8- | d4 "Db9"_e4 | "C9"d8- | $
@@ -15069,7 +16716,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id c-est-si-bon
 K:G
+I:linebreak $
 "^Swing"d2 _dc- |: "Am7"c8 | z "D7"de f-f ed B- | "G"B8 | $
 "Bm7b5"z de f-"E7"f ed c- | "Am7"c8 | z "D7"de f b2 fe- | "G"e8 |1 $
 "Bm7b5"z4 "E7"d2 _dc :|2 "Fm7"z4 "Bb7"g2 _a_b || "Eb"_b4 g2 =f_e- | "Fm7"e4 "Bb7"d2 c2 | $
@@ -15095,7 +16744,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id charleston
 K:Bb
+I:linebreak $
 "Bb""^A""^Swing"F2 z F- F4 | "D7"^F2 z F- F4 | "G7"G2 z G-G ^F G2 | d2 z G- G4 | $
 "C7"G2 z d- d4 | "F7"G2 z d- d4 | "Bb/D"G2 z B- "Dbother"B4 | "Cm7"Ac AG- "F7"GA G_G || $
 "Bb""^B"F2 z F- F4 | "D7"^F2 z F- F4 | "G7"G2 z GG ^F G2 | d2 z G- G4 | $
@@ -15120,7 +16771,10 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=210
+%%id chez-jacquet
+%%tags needs-repair
 K:D
+I:linebreak $
 "^Waltz"(3ABA || "D69"F4 (3DED | "C#9"B,4 _B,2 | "D69"A,6- | $
 A,4 (3ABA | "D/F#"F4 (3DED | "Fother"B,4 =C2 | "Em7"C6- | $
 "A7"C3 ^ef g | "F#7"f3 ec ^A | F=F E^F ^Ac | "Bm"e/e/ e3 _e2 | $
@@ -15162,7 +16816,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id chicago
 K:C
+I:linebreak $
 "^Swing"c2 || "C"B3 A- "Dm7"A2 c2 | "C/E"B3 A- "Ebdim7"A2 E2 | "Dm7"FE DG- "G7"G2 z2 | $
 "Dm7"FE DG- "G7"G2 F2 | "Dm7"E3 D- "G7"D2 F2 | "Dm7"E3 D- "G7"D2 B,2 | "C"CB, A,C- "Ebother"C4 | $
 "Dm7"z E3 "G7"E D3 | "C"CD EF G A2 G | B2 GA- "A7"A G2 B | "D7"E3 D- D2 A2 | $
@@ -15188,7 +16844,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id china-boy
 K:C
+I:linebreak $
 "^Swing".c2 || "F"A6 c2 | A6 c2 | A8- | $
 A6 c2 | "F"A6 c2 | "E7"A6 "Eb7"c2 | "D7"A8- | $
 A6 A2 || "G7"F6 A2 | F4 _A2 G2 | F8- | $
@@ -15214,7 +16872,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=260
+%%id chinatown-my-chinatown
 K:C
+I:linebreak $
 "C""^Swing"c4 d4 | "G7"B4 G4 | "C"A2 B2 G4- | G8 | $
 "C"A4 B4 | G4 A4 | "G7"F8 | z8 | $
 "G7"E4 D4 | "E7"G4 E4 | "Am7"D2 E2 C4- | C8 | $
@@ -15239,7 +16899,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id clair-de-lune
 K:F
+I:linebreak $
 "^Swing"A2 |: "Dm"d3 d/d/ "D7"D3 D/D/ | "Gm6"G6 G2 | "Gm7"c3 c/c/ "C7"C3 C/C/ | $
 "F"F4 "F#other"z3 A | "Gm6"B3 B/B/"A7"E E2 E |1 "Dm"A A2 A/A/ D4 | "A"z2 ^CC "Bb7"B,3 B, | $
 "A7"A,6 A2 :|2 "Dm"A A2 A/A/ "Bm7b5"d4 || "Bb7"z2 ^CD "A7"F2 E2 | "Dm"D4 "A7"z4 |] $
@@ -15254,7 +16916,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id comme-un-manouche-sans-guitare
 K:F
+I:linebreak $
 "F""^Swing"z8 | "D7"z8 | "G7""C7"z8 | "F"z4 z ^G A2 |: $
 "F"c2 A2 G2 FD- | "Fother"D4 z ^G A2 | "F"c2 A2 G2 FD- | "D7"D4 z2 A2 | $
 "G7"G2 G2 G4- |1 "F"G2 z4 G2 | "C7#5"^G2 G2 G4 | "C7"z4 z ^G A2 :|2 $
@@ -15284,7 +16948,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id confessin
 K:G
+I:linebreak $
 |: "G""^Swing"de fg f2 d2 | "F#7"f2 f6 | "F7"de fg f2 d2 | "E7"f8 | $
 "A7"ef gb a2 g2 | "D7"a2 a2 (3a2g2f2 | "G""Bb7"e8 | "Am7"eg eg "D7"b b3 :| $
 "G""Cm"e8- | "G"e8 || "G7"=fg ac' b2 f2 | a2 a6 | $
@@ -15306,7 +16972,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id continental
 K:Eb
+I:linebreak $
 |: "Eb""^Swing"d4 "Eb7"_d4 | "Fm7"c4 "Bbm7"_d4 :| "Eb"d4 "Eb"_d4 | "Fm7"z4 "Bb7"z ba g |: $
 "Fm7""^A"ff z2 "Bb7"z fe d | "Eb"cc z2 "C7"z ca g | "Fm7"f2 fB "Bb7"ff ef | "Eb"g4 "C7"z ba g | $
 "Fm7"ff z2 z "Bb7"fe d | "Eb"cc z2 "C7"z ef g | "Fm7"(3c'2c'2c'2 "Bb7"dd z d |1 "Eb"e4 "C7"z ba g :|2 $
@@ -15344,7 +17012,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id coquette-2
 K:D
+I:linebreak $
 |: "D""^Swing"d'3 b- b4 | d'b d'b- "Fother"b2 f2 | "Em7"a2 af- f4 | "A7"z8 | $
 "Em7"a3 f- f4 | "A7"af af- f2 A2 |1 "D""Fother"B8 | "Em7""A7"z8 :|2 $
 "D"d8 || z8 || "D7"d4 e4 | ef a2 d'2 b2 | $
@@ -15366,7 +17036,9 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/2=105
+%%id couleur-chaude
 K:C
+I:linebreak $
 |: "^Straight"ac' d'g b z d'2 ^fa | z d'2 ag b d'2 | ac' d'g b z d'2 ^fa | "^x4"z8 "Dm7""^A"F2 Ae- e4 | $
 "G7"z2 dc Bc dE- | "C"E8- | "A7"E8 | "Dm7"F2 Ae- e4 | $
 "G7"z2 d^c de f^f- | "C"f2 gB ce g^g- | "A7"g2 a z4 z | "Dm7"F2 Ae- e4 | $
@@ -15401,7 +17073,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id crazy-rythm
 K:F
+I:linebreak $
 |: "^Swing""F"z g2 g f2 f2 | e2 ef z f3 | z g2 g f2 f2 | "F/A"e2 ef "Abother"z f3 | $
 "Gm7"z g2 g f2 f2 | "C7"e2 ef z g3 |1 "F""D7"f8 | "Gm7""C7"z8 :|2 $
 "F"f8 || z g3 a2 b2 || "Cm7"z c'2 c' b2 b2 | "F7"a2 ab z c'3 | $
@@ -15423,7 +17097,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id cr-puscule
+%%tags needs-repair
 K:F
+I:linebreak $
 "^Swing"c2 _g2 || "F""^A""C7"f8 | "F"z4 "C7"c2 a2 | "F"a8 | $
 "F7"z =b z2 b2 ag | "Bb"z g- g4 (3_agf | "Bbm"gg- g4 (3_a=ac | "F"(3fgf- f6 | $
 "C7"z g2 f =b2 ff- || "F""C7"f8 | "F"z g2 f "C7"=b2 f_e- | "F"e8 | $
@@ -15449,7 +17126,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id danse-norvegienne
 K:D
+I:linebreak $
 "^Ballade"AB c || "D"d2 f2 "Gm"A3 c | "D"d2 f2 "Gm"A3 g | "D"fe fd "Bm7"fe fd | $
 "Em7"e4 "A7"A4 | "Ebother"ab ag fg a2 | "Em7"b2 g2 "A7"a4 | "Ebother"ab ag fg a2 | $
 "Em7"b2 g2 "A7"a4 | "Am7"ab ag "D7"f2 d2 | "G"fd ec "Gm"de fg | "D/A"ab ag "Bm7"f2 d2 | $
@@ -15465,7 +17144,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id danse-nuptiale
 K:Bb
+I:linebreak $
 |: "Bb""^Swing"F2 z2 "G7"B2 z A | "Cm7"B2 "F7"G4 z2 | "Bb"F2 z2 "G7"e2 z ^c | "Cm7"d2 "F7"B4 z2 | $
 "Bb7"z3 B (3F2B2d2 | "Eb"e4 (3ded BF | "C7""F7"=E6 _E^C |1 "Bb"DB, z2 "F7"z4 :|2 $
 "Bb"DB, z2 z4 || "D7"(3DED ^CC ^FA ce | f^f ac' e'_a- a2 | "G7"g2 =e'_d' z4 | $
@@ -15487,7 +17168,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id daphn
 K:D
+I:linebreak $
 |: "D6""^A""^Swing"A3 d- "Bm7"d2 z2 | "Em7"E3 A- "A7"A2 z2 | "D6"A3 d- "Bm7"d2 z2 | "Em7"E3 A- "A7"A2 z2 | $
 "D6"D2 z2 "D/C"F2 z2 | "G/B"G3 _A- "Bb7"A2 z2 | "D6"z A _A2 "A7"G2 =F^F | "D6"z D B,2 D2 z2 :| $
 "Eb6""^B"_B3 _e- "Cm7"e2 z2 | "Fm7"=F3 _B- "A7"B2 z2 | "Eb6"_B3 _e- "Cm7"e2 z2 | "Fm7"=F3 _B- "A7"B2 z2 | $
@@ -15508,7 +17191,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id days-of-wine-and-roses
 K:F
+I:linebreak $
 "^Swing"C2 || "F"A8 | "Eb7#11"z2 G2 A2 c2 | "Am7"d4 c4- | $
 "D7#9"c4 c2 A2 | "Gm"A2 D2 D4- | D4 c2 A2 | "Ebm7#11"A2 _D2 D4- | $
 D4 A2 G2 | "Am7"G2 C2 D2 E2 | "Dm"G2 F2 A2 d2 | "Gm"c6 B2 | $
@@ -15534,7 +17219,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=264
+%%id deccaphonie
 K:Bb
+I:linebreak $
 "^Swing""Bb7"z4 g4- | "Eb9"g8 | "Bb7"z2 (3fgf =e2 .f2 | z8 | $
 "Eb9"z2 g6 | .f2 ._d2 .B2 .d2 | "Bb".f2 ._a2 "Cm7"f4 | "Dm7""Dbother"z8 | $
 "Cm7"ff _a2 c'_d' c'2 | "F9"z4 f_a bc' | "Bb"b_a .f2 f4 | "F9"z8 || $
@@ -15568,7 +17255,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=220
+%%id destin-e
 K:C
+I:linebreak $
 |: "^Straight""Am"AB ce/f/ ee cB | AB ce/f/ ee cB | "Gm"_B2 z2 ea | z8 | $
 "Bb7"(3efe (3_Bef e z (3efe | (3_Bef e z (3efe BA | "Am"z8 |1 "E7"z8 :|2 $
 "Am"z8 |: "Dm"DE FB/c/ BB FE | DE FB/c/ BB FE | "Fm"FG _Ad/_e/ dd AG | $
@@ -15592,7 +17281,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=192
+%%id desvairada
 K:F
+I:linebreak $
 "^Waltz"A2 |: "Dm""^A"af dA FD | A,D FA df | "A7"fe ^cA GE | $
 ^CE GA ^ce | "A7"ba ge ^cA | BA ^GA f^c | "Dm"e4 d2- | $
 d2 B2 A2 | "Dm"af dA FD | A,D FA df | "Am"fe cA EC | $
@@ -15651,7 +17342,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id diminishing
+%%tags needs-repair
 K:C
+I:linebreak $
 "^Swing"F |: "D9#5""^A"^F^A .=F2 E3 F | ^F^A .=F2 E3 F | ^F^A .=F2 E3 F | $
 ^F^A .=F2 E3 E | "Db9#5"FA .E2 ^D3 E | FA .E2 ^D3 E | "C"EG .A2 .B2 z2 |1 $
 !>!.B2 z2 z3 F :|2 !>!.B2 z2 z4 |: "Gb""^B"_DD ._G2 _A4 | "Abm7"_DD ._G2 "Db7"_A4 | $
@@ -15672,7 +17366,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id dinah-2
 K:Ab
+I:linebreak $
 |: "Ab""^Swing"E4 F4- | F2 EF AB c2 | e4 c4- | "Ab/C"c2 AB "Bother"cA Bc |1 $
 "Bbm7"e4 c4- | "Eb7"c2 Bc ec B2 | "Ab"A4 "Bother"F4 | "Bbm7"FE EE- "Eb7"E4 :|2 $
 "Bbm7"e4 c4- || "Eb7"c2 Bc ec Bc | "Ab"A8 | "C7"z4 z4 || $
@@ -15695,7 +17391,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id dinette
 K:Ab
+I:linebreak $
 "^Swing"=B |: "Ab"cg z2 g3 c | "Db9"=Bf z2 f3 B | "Ab"cg z2 g3 c | $
 "E7"=B^f z2 f4 |1 "Bbm7"Bf z2 f4 | "Eb7b9"B=e z2 e2 _ed | "Ab"cd "Fm7"e4 dc | $
 "Bbm7"Bc "Eb7"d4 z =B :|2 "Bbm7"Bf z2 f4 || "Eb7b9"B=e z2 e2 _ed | "Ab"cB "Db"A6 | $
@@ -15719,7 +17417,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id djangology
 K:G
+I:linebreak $
 |: "A7""C#m7b5""^Swing"^ce gb z b z2 | "D7""Cm6"c_e fb z b z2 | "G""G/B"Bd fa z a z2 | "Bbother"_B_d ea z g3 | $
 "Am7"c2 e4 c2 | "D7"B2 d4 B2 | "G"F3 E- E4 | z8 :| $
 "G"A3 G- G4 | z8 || "Ab"_A_B c_d "Eb7"_e2 ee- | "Ab"e4 z4 | $
@@ -15739,7 +17439,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=170
+%%id django-s-tiger
 K:A
+I:linebreak $
 "A""^Swing".A2 z2 z2 .G2 | .B2 z2 z2 .A2 | .A2 .G2 .G2 .F2 | .F2 .=C2 .C2 .G2 | $
 "A/C#"FC z E- E4 | "Cother"z3 _E G2 F2 | "E7/B"FD z D- D4 | "E7"z4 z F,=G, ^G, | $
 "E7"B,D FG Bd fd | BF (D2 D)=G, ^G,A, | "F7"=C^D =GA =c^d =gd | =c=G _EC A,G, =G,2 | $
@@ -15764,7 +17466,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id don-t-worry-about-me
+%%tags needs-repair
 K:D
+I:linebreak $
 "^Swing"A2 || "Em7b5"(3a2a2a2 a4- | "A7"a4 "A7b9"g4 | "D"f3 f f4- | $
 "Bm6"f6 A2 | "Em7"(3f2f2f2 f4- | "A7b9"f2 ^e2 (3=e2d2c2 | "A6"B8- | $
 "F#m"B2 B2 "E#other"d2 c2 | "Em7"(3B2c2A2 B2 d2 | "Gm6"(3e2f2d2 e2 f2 | "C9"g3 _B B4- | $
@@ -15790,7 +17495,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id double-scotch
 K:F
+I:linebreak $
 "^Swing"c2 |: "C"{/^d}e2 z2 "Am"c2 z2 | "Dm"{/^d}e2 "G7"c4 c2 | "C"{/^d}e2 z2 "Am"c2 z2 | $
 "Dm"_ge "G7"f4 c2 | "C"{/^d}e2 z2 c2 "C7"z2 | "F"{/^d}e2 "Fm"c4 z2 | "C"z G =B2 c4 |1 $
 "D7b9"g/f/e/d/ _d4 c2 :|2 "G7"g/f/e/d/ c2 "C"z4 || "E7"(3=bc'b =B^c d^f a=c'- | (3c'2d'/c'/ =bf- f2 ed | $
@@ -15813,8 +17520,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=170
+%%id douce-ambiance-2
 K:Bb
-"D7""^In/Out\n""^Swing"dd dd- d4 | "Eb"dd dd- d4 | "E7"dd dd- d4 | "F6"dd dd- d4 | $
+I:linebreak $
+"D7""^In/Out""^Swing"dd dd- d4 | "Eb"dd dd- d4 | "E7"dd dd- d4 | "F6"dd dd- d4 | $
 "Bb6"dd dd- d4 | "Eb"dd dd- d4 | "D7sus4"dd dd- d4 | "D7"d2 z2 z4 |: $
 "Gm"dd dd- d4 | "D7"dd dd- d4 | "Gm"(3ded ^cd "F7"fe B=c | "Bb"d4 "Bother"z4 |1 $
 "Cm"c c2 cc ^c d2 | "Gm"B3 G- G4 | "Ab7"(3_A2A2A2 e2 ed- | "D7"d4 z4 :|2 $
@@ -15842,7 +17551,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id duke-and-dukie
 K:C
+I:linebreak $
 "D/G""^Swing"Cc z2 z4 | Cc z2 Cc z A_e ^fc' | "F#other"Ae fc' z2 z4 | z4 Cc Cc z Cc | $
 "Dm7b5/Ab"Cc z z2 _Ad fc' z2 | _Ad fc' z "F#other"=A_e ^fc' z2 E_B dg c' | "C/G"EB dg c' z z2 z4 | z2 z .Cc "F#other"._E_e .Dd | $
 "C/G"Cc z2 z4 | .E_B dg c' z2 .EB dg c' z A_e ^fc' | "F#other"Ae fc' z2 z4 | z4 Cc _E_e Dd | $
@@ -15898,7 +17609,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=130
+%%id embraceable-you
 K:G
+I:linebreak $
 |: "G""^Swing"z2 E2 F2 G2 | "Bbm7b5"z2 E2 F2 G2 | "Am7"A4 D2 DD- | "D7"D8 | $
 "Am7"z2 A2 B2 c2 | "Cm6"z2 A2 B2 c2 | "G"d4 G2 GG- | "B7"G8 |1 $
 "Em"B2 G2 A2 G2 | "C#m7b5"B2 G2 "F#7"A2 G2 | "Bm"B4 "F#7"F2 FF- | "Bm""A7"F8 | $
@@ -15919,7 +17632,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id exactly-like-you-2
 K:C
+I:linebreak $
 "C6""^Swing""^A"e2 B2 d2 A2 | c2 c6 | "D9"e2 B2 d2 A2 | c8 | $
 "G7"B2 F2 "C#dim7"A2 E2 | "Dm7"G2 "G7"G4 G2 | "C6"c2 C2 C2 C2- | "Dm7"C4 "G7"z4 || $
 "C6""^B"e2 B2 d2 A2 | c2 c6 | "D9"dd d2 e2 eB- | B B3 z4 | $
@@ -15944,7 +17659,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=280
+%%id f-erie
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "C69""^Swing""^A"Ad gc' Ad gc' z2 Ad gc' z Ad gc' Ad gc' | z2 Ad gc' z Ad gc' Ad gc' z2 | Ad gc' x x2 x4 | x8 | $
 "C9"_Bd gc' Bd gc' z2 Bd gc' z Bd gc' Bd gc' | z2 _Bd gc' z Bd gc' Bd gc' z2 | "F69"Ad fc' x x2 x4 | x8 | $
 "D9"ce ^fd' ce fd' z2 ce fd' z ce fd' ce fd' | z2 ce ^fd' z ce fd' ce fd' z2 | ce ^fd' x x2 x4 | x8 | $
@@ -15985,7 +17703,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=260
+%%id festival-48
 K:C
+I:linebreak $
 |: "C""^Swing""^A"c2 z2 "C/E"!slide!c'2 z a- | "F"a2 z2 "F#other"z4 | "C/G"(3gag .f2 "A7"._e2 z _d- | "D7"d2 z2 "G7"z4 | $
 "C"c2 z2 "C7/E"!slide!c'2 z a- | "F"a2 z2 "Fother"z4 | "C/G"(3gag .f2 "G7"._e2 z2 |1 "C"!slide!e2 z2 !>!c2 !>!c2 :|2 $
 "C"!slide!e2 z2 c2 z2 || "E7""^B"EE ^FA GG ^GB | ^AA Bd cc ^ce | "A7b5"g4 ._e2 e2- | $
@@ -16007,7 +17727,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id fl-che-d-or
+%%tags needs-repair
 K:D
+I:linebreak $
 "^Swing"_B- |: "Bm7""^A"^A3 e"Bm6"f g^g a | "F#9"^ac' z2 z2 z ^A | "Bm7"Bc de "Bm6"f^g ^ab | $
 "F#9"e'2 (3d'/e'/d' ^a ^g2 z ^A | "Bm7"Bc de "Bm6"fg ^ga | "F#9"^ac' z2 z =a (3=c'd'c' |1 "Bm7"(3^g2b(3c' ba "Bm6"(3=c'd'c' (3^a2^c' | $
 "Bm7"(3d'c'a (3=c'd'c' ^gb "C7b5"z ^A :|2 "Bm7"(3^g2b(3c' ba "Bm6"(3=c'd'c' (3^a2^c' || "C7b5"(3^d'c'b (3=d'e'd' "Bm6"b4 |: "E9#11""^B"be' be' =fb ^ad' ea | $
@@ -16031,7 +17754,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id fleur-d-ennui
 K:F
+I:linebreak $
 "^Bolero (Straight)"z2 c_e fg fe |: "F""^A"c3 c- c4 | z2 c_e fg fe | c c2 c- c4- | $
 c4 c'2 a2 | "Db9"_a8- | a4 "C13"=a2 ec | "F"d8 | $
 "C7"z "C/break"c2 _ef gf e :| "Db9"_a8- | a4 "C13"=a2 cf- | "F""Bb"f8 | $
@@ -16055,7 +17780,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id fly-me-to-the-moon-2
 K:C
+I:linebreak $
 |: "Am""^Swing"c3 B A2 GF- | "Dm"F G3 A2 c2 | "G7"B3 A G2 FE- | "C"E4 z4 | $
 "F"A3 G F2 ED- | "Bm7b5"D E3 F2 A2 | "E7"^G3 F E2 DC- | "Am""A7"C6 ^C2 | $
 "Dm"D A2 A- A4- | "G7"A4 c2 B2 |1 "C"G8- | "A7"G6 B,2 | $
@@ -16078,7 +17805,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id folie-amphion
 K:G
+I:linebreak $
 "Am7""^A""^Swing"e4 fg ab | "Cm6"z b- b6 | "G/B"d2 z2 ef ga | "Bbother"z a- a4 z g | $
 "Am".e2 .e2 ee z d | "E7"ee z e- e3 d | "A7".B2 .B2 B_B Ad- | "D9"d4 "G#other"z Bd ^d || $
 "Am7""^B"e4 z fg a | "Cm6"b2 .b2 ba z d- | "G/B"d4 z ef g | "Bbother"a6 z g | $
@@ -16105,7 +17834,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id for-sephora
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "^Bossa""Em".GB fG Bf E,.G Bf "Emaj"GB ^d | GB dG B^d E,.G Bd GB dE, "Em7"E, | .GB eG Be E,.G Be "A7"GB ^c |1 GB cG B^c E,G Ba .GB aE, :|2 $
 "A7"z GB ^cE, z z Be g |: "Em""^A"f4- fe BG | !slide!F4- FE ^DE | "Am"!slide!B4- BA A^G | $
 A3 AB ce f | "B7"^d3 Ad fc' Ad fc' | A^d fc' z df ac' d' | "Em"b4 z2 c'/b/a |1 $
@@ -16129,7 +17861,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=170
+%%id gaiement
 K:F
+I:linebreak $
 "C9""^Swing"z c3 f2 c'2 |: "F69""^A"c'4 ac' z a- | "F9"a8 | "Bb/F"c'^c dc' z b3- | $
 "Bbm/F"b6 z2 | "F69".c2 .f2 "F#other".a2 .d'2 |1 "Gm7"bb a2 "C9"g f2 a- | "F69""F#other"a8 | $
 "Gm7"z c3 "C9"f2 c'2 :|2 "Gm7"bb a2 "C9"g f2 f- || "F69""C9"f8 | "F69"z2 f2 "F9"g2 f2 || $
@@ -16154,7 +17888,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=80
+%%id gypsy-dreams
 K:G
+I:linebreak $
 "G""^A""^Straight"D2 G2 B2 | "C/D"e2- e(3d/e/d/ cB | "E/F#"^G4- GG | "B7b13"G4- GA/B/ | $
 "Em7"G6- | "Em7/D"G4 AB | "C#m7b5"G6 | "F13"d4 cd | $
 "Bb"=F6- | "A7b13"F2 G3 A | "Ab"=F6 | "D7"_E4 =F2 || $
@@ -16185,7 +17921,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id gypsy-fire
 K:F
+I:linebreak $
 "D#5/E""^Straight"^fB df g"D##5"=B ^dg | "E#5/D"^gc eg "F#5/Db"a^c fa | "F##5/C"^ad ^fa "G#5/B"=b^d gb | "Ab#5/Bb"c'e _ac' "A#5".^c'2 z2 |: $
 "Dm""^Swing""^A"z Ad f (3efe da | z Ad f (3efe .d2 | "E7".^G2 z G- G4 | z ^Gd f (3efe .d2 | $
 "Gm"G2 z G- G4 | "A7"z G (3GB^c (3fgf ce- |1 "Dm"e/f/e/d/ AF (3BcB ^GA | "A7"z A3 z4 :|2 $
@@ -16224,7 +17962,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=190
+%%id h-c-q-strut
 K:G
+I:linebreak $
 "A9""^Swing"G^c eb "D9"F=c ea "D913"Fc eb | "G6"GB eg be' gb e' z2 | "A9"G^c eb "D9"F=c ea "D913"Fc eb | "G6"GB eg be' gb e' z2 | $
 "A9"G^c eb "D9"F=c ea "D913"Fc eb | "G9"B=f ad' "Eb9#5"^Gd ^fc' Gd fc' z2 | "Bother"_B,^C EG _B^c fe | "D7"d2 z2 A,D Fc ea z2 |: $
 "A7""^A"b4 "D7"a2 b2 | "G"e3 e- e2 z2 | "A7"b4 "D7"a2 b2 | "G"e3 e- e2 z2 | $
@@ -16251,7 +17991,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=190
+%%id honeysuckle-rose-2
 K:F
+I:linebreak $
 "^Swing"bd' bd' || z "CN.C."=bd' bd' ._b_d' .bd' | ac' ac' ac' z2 =bd' bd' | z =bd' bd' ._b_d' .bd' | $
 ac' fa ac' z2 dd | z d2 d ._d2 .d2 | c2 Ac z2 dd | z d2 d ._d2 .d2 | $
 c2 Ac z ab =b |: "Gm7"c'b df "C7"a4 | "Gm7"c'b df "C7"a4 | "Gm7"c'b df "C9"a2 a2 | $
@@ -16304,7 +18046,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=260
+%%id hungaria-2
 K:G
+I:linebreak $
 "G""^Swing"G,2 .G z "D7/A"A,2 .A z | "G/B"B,2 .B z "Cm6"C2 .c z | "G/B"B,2 .B z A,2 "D7/A".A z | "G"G,3 D- D4 || $
 "G"G3 e- e4 | z4 ^c2 d2 | "Ab"_e3 =f- f4 | z4 z2 _e2 | $
 "G"d4 e4 | g4 b4 | "E7"d'3 b- b4 | z2 de z d e2 || $
@@ -16331,7 +18075,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-can-t-believe-that-you-are-in-love-with-me-2
 K:D
+I:linebreak $
 "^Swing"z e' |: "F"d' =c'2 a- a3 e' | "Fm"d' =c'2 _a- a3 e' | "C"d' =c'2 g- g3 e' | $
 "D7"d' =c'2 a- a3 e |1 "G7"g3 e "F/A""F#/A#"d3 e | "G7/B"g3 e d3 e | "C""Dother""Fother"g8 | $
 "C7/E"z4 z2 e'2 :|2 "G7"g3 e "F/A""F#/A#"d3 e || "G/B""Bdim"g3 e "Ddim"d3 "Fdim"e | "C/E""G7"=c8 || $
@@ -16354,7 +18100,9 @@ C:D.Fields
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id i-can-t-give-you-anything-but-love-2
 K:G
+I:linebreak $
 "G"g2 f2 "Am7"e2 g2 | "G/B"f2 e2 "Bbother"g2 e2 | "Am7"a8 | "D7"a^a b6 | $
 "G"g2 "Am7"f2 e2 g2 | "Bm7"f2 e2 "Em7"g2 b2 | "Am7"d'8 | "D7"b_b a6 | $
 "G7"g^g a6 | a^a b6 | "C"d'2 c'2 b2 a2- | "C7""B7""Bb7"a8 | $
@@ -16379,7 +18127,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=160
+%%id i-cover-the-waterfront-2
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "Em7""^A""^Swing"z2 "A7"B2 (3A2G2A2 | "Am7"B2 BB- "D7"B4 | "G"z2 d2 "Am7"(3d2B2G2 | "Bm7""Bbother"F6 EF | $
 "Am7"G G2 G- G3 A | B B2 B- "D7"B2 A2 |1 "G""F#7"d8- | "F7""E7"d8 :|2 $
 "G""C7"G8- || "G6"G2 z2 "Em7"z4 || "Am7""^B"d2 dd- "D7"d4 | "Bm7"(3D2D2^D2 "Em7"EE- E2 | $
@@ -16401,7 +18152,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id if-i-had-you
 K:C
+I:linebreak $
 |: "C""^A""^Swing"EF ^FG ee _ed- | "Gm7"d2 z2 "C7"ee _ed- | "F"d4 ee _ed- | "Bb7"d6 z2 |1 $
 "C/E"EF ^FG "Ebdim7"BB _BA- | "Dm7"A2 z2 "G7"BB _BA- | "Em7""Ebother"A8- | "Dm7"A4 "G7"z4 :|2 $
 "C/E"EF ^FG "Ebdim7"BB _BA- || "Dm7"A2 z2 "G7"AG Ac- | "C"c4 z4 | "B7"z8 || $
@@ -16424,7 +18177,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id if-i-only-had-a-brain
 K:Eb
+I:linebreak $
 "^Swing"GA |: "Eb6""^A"BG EF "Cm7"G E2 F | "Fm7"GE CD "Bb7"E C2 C | "Eb"B,B, B,B, B,3 c | $
 BA (3GEC "Eb7"B,2 z B, | "Ab"C2 cB "Fm7"AG FE | "Bb7"DD dc BA GF | "Eb"EE "Ab/Eb"(3EEE- "Eb"E4 |1 $
 "Bb7"z4 z2 GA :|2 "Bbm7"z4 "Eb7"z2 E2 || "Ab""^B"c4 z Bc d | "Gm7""C7"B6 z G | $
@@ -16446,7 +18201,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-ll-never-be-the-same
 K:F
+I:linebreak $
 "^Swing"C |: "Db7"_D_E FG "C7"C4 | "Db7"_D_E FG "C7"Bd Ac- | "F"c8 |1 $
 z4 z3 C :|2 z4 z FE F || "Cm7"d2 cd "F7"c4 | "Cm7"c2 Bc "F7"B4 | $
 "Bb"B2 AB A2 G2 | D8 | "G7"A2 GA G4- | G2 F2 (3D2F2A2 | $
@@ -16470,7 +18227,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id i-ll-never-smile-again-2
 K:Eb
+I:linebreak $
 "^Swing"B2 d2 c2 |: "Fm7"e3 F F4 | "Bb7"z FF G F2 EG- | "Eb""Fm7"G8 | $
 "Gm7"z2 B2 "Gbother"d2 c2 | "Fm7"e3 F F4 | "Bb7"z2 G2 (3F2E2D2 | "Eb6"C8- | $
 C6 C2 | "B7#5"G2 G2 "Bb7"G2 G2 | "Eb6"E6 G2 | "Fm7b5"B2 B2 "Bb7#5"B2 B2 | $
@@ -16497,7 +18256,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id i-ll-see-you-in-my-dreams-2
 K:F
+I:linebreak $
 "^Swing"F2 E2 _E2 || "Bb6"D4 F4 | G4 A4 | "Bbm6"G8- | $
 G6 ^G2 | "F6"A4 c4 | "E7"d4 "E6"e4 | "F6"d8- | $
 "C7""C#7"d8 | "D7"d4 D4 | E4 ^F4 | c2 A2 c2 A2- | $
@@ -16523,7 +18284,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-m-forever-blowing-bubbles
 K:C
+I:linebreak $
 "C""^Straight"G4- GA G_G | "Dm"F4 "G7"A4 | "C"Gc- c6 | "C7"z8 | $
 "F"c4- cd cB | "F#other"c6 AG- | "C/G"G8 | "C7"z8 | $
 "F"A2 "F#other"c4 AG- | "C7"G8 | "F"AB "F#other"c4 AG- | "C7"G8 | $
@@ -16548,7 +18311,10 @@ N:Source: Ultime Jazz Real Book
 M:2/2
 L:1/8
 Q:1/2=160
+%%id impromptu
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "Dm""^Straight"(3a_ba ^ga ba gb | "Em7b5"a2 "A7"a4 z2 | "Dm"(3a_ba ^ga ba gb | "Em7b5"a2 "A7"a4 z2 | $
 "Dm"z2 d'2 (3g'4e'2 | "Gm"(3f'2d'2a2 (3_b4g2 | "Dm"(3a2f2d2 "A7"(3g4e2 |1 f2 "Dm"d2 "A7"z4 :|2 $
 f2 "Dm"d2 z2 z B || "C7"c2 _d'c' _b_a gf | ed _dc _BA _AG | "Gb9"_G2 d4- dE | $
@@ -16570,7 +18336,9 @@ N:Source: Ultime Jazz Real Book
 M:3/4
 L:1/8
 Q:1/4=160
+%%id indiff-rence
 K:G
+I:linebreak $
 "^ABBACA""^Straight Waltz"z B,E GB d || "Em""^A"(3cdc B4- | BB eg bd' | (3c'd'c' b4 | $
 z B,E GB d | "Em"cB e^d fe | gf ag fe | "B7"(3efe ^d4 | $
 z2 ag fe | "B7"f3 e^d e | ^d3 cB c | B6 | $
@@ -16621,7 +18389,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=100
+%%id insensiblement
 K:C
+I:linebreak $
 "C""^Swing"c2 d2 B2 c2 | "Fm6"e6 _ee | "C"d d2 _d "Am7"(3c2=d2e2 | "Dm7"a2 "Db7"a4 z2 | $
 "C"g2 a2 ^f2 g2 | "Ebother"b6 _bb | "Dm7"a a2 a (3c'2a2c'2 | "G7"d6 ef | $
 "C"g2 a2 b2 c'2 | "Dm7"f2 g2 "G7"a2 b2 | "C"z2 e2 "Bb7"e2 e2 | "A7"e4 z4 | $
@@ -16647,7 +18417,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id i-saw-stars
 K:C
+I:linebreak $
 |: "C""^A""^Swing"E4 "C#other"A4 | "Dm7"G4 "G7"z4 | "C"z2 E2 "C#other"A3 A | "Dm7"A3 G "G7"G2 e2 | $
 "Gm7"c4 "C7"z2 G2 | "F"F4 "Fm"z3 F | "C"E G2 E "G7"G2 G2 | "C"E4 "G7"z4 :| $
 "C"c4 "B7"z3 c || "Em""^B"B2 c2 B c2 B | "B7"B2 c2 B c2 c | "Em"Bc BA- "B7"AG ^FE- | $
@@ -16669,7 +18441,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=80
+%%id i-surrender-dear
 K:C
+I:linebreak $
 |: "Dm""^Swing"z FF F A4 | "C#other"z GG G _B4 | "Dm"z AA A "E7"B4 | "Am"z cc c "D7"e4 | $
 "C"z ee cc AA E | "D7"F8 | "Dm7"z2 DE "G7"G2 G2 | "C""A7"G8 :| $
 "E7"B B2 BB c2 d | "Am"cc- c6 | "E7"B B2 BB c2 d | "Am"c4 z4 | $
@@ -16689,7 +18463,9 @@ C:Duke Ellington
 N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
+%%id it-don-t-mean-a-thing-2
 K:Bb
+I:linebreak $
 d2 |: "Gm"G4 "Gm/F#"G2 B2 | "Gm/F"d4 "Gm/E"G2 B2 | "Eb7"_d4 c "D7"B2 G- | $
 "Gm"G4 z4 | "C7"z2 BB z BB z | "F7"BB z BB z BB | "Bb"z BB z BB z B |1 $
 B2 z2 z "D7#5"d3 :|2 B2 z2 z3 d || "Fm7"c2 c2 c B2 c- | "Bb7"c2 B2 c B3 | $
@@ -16711,7 +18487,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=180
+%%id it-had-to-be-you-2
 K:G
+I:linebreak $
 "^Swing"z2 D2 ED EF- || "G""^A"F8 | z2 F2 GF G^G- | "E7"G8 | $
 z2 ^G2 AG AB- | "A7"B3 GA ^GA B- | B3 GA ^GA B- | B8 | $
 z2 A2 BA Bd- | "D7"d8 | z2 B2 "B7"AB AG- | "Em"G8 | $
@@ -16737,8 +18515,10 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=210
+%%id it-s-only-a-paper-moon-2
 K:C
-|: "C""^\n""^Swing"z G2 G"C#other"g g2 g | "Dm7"f2 gd- "G7"d4 | "Dm7"z G G2 "G7"f f2 f | "C"e2 dc- c4 | $
+I:linebreak $
+|: "C""^""^Swing"z G2 G"C#other"g g2 g | "Dm7"f2 gd- "G7"d4 | "Dm7"z G G2 "G7"f f2 f | "C"e2 dc- c4 | $
 "C7"z G2 Gg g2 ^g | "F"a2 fd- "Fm"d2 cB- | "G7"B2 ag- g2 Bc- |1 "C"c4 "G7"z4 :|2 $
 "C"{c-}c4 "C7"z2 c2 || "F"d4 "F#other"_e4 | "C/G"e4 "A7"z2 fa | "Dm7"g3 g "G7"e3 e | $
 "C"c4 "C7"z2 c2 | "F"d4 "F#other"_e4 | "C"e4 z2 ^de | "Em7b5"gg g2 "A7"g2 ^de | $
@@ -16759,7 +18539,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=200
+%%id i-ve-found-a-new-baby-2
 K:F
+I:linebreak $
 "^Swing"z2 ^GA z G A2 |: "^A"F3 D- D4 | z2 ^GA z G A2 | F8 | $
 z2 ^cd z c d2 | A2 A2 A4 | z2 Ac z A G2 | F8 | $
 z2 ^GA z G A2 :| F8- | F8 || "^B"z2 ^c=c ^c2 =Bc | $
@@ -16782,7 +18564,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=140
+%%id i-ve-got-my-love-to-keep-me-warm
 K:F
+I:linebreak $
 "^Swing"D2 |: "F"F4 F4 | "Am7b5"E2 "D7"_E4 D2 | "Gm7"G4 G4 | $
 "Bbm6"_G2 "C7"F4 E2 | "F/A"A4 A4 | "Bother"^G2 =B2 d2 f2- | f8- | $
 f4 ef d2 | "C/G"c4 c4 | "F#other"=B2 c2 A2 G2- | "Gm7"G8- | $
@@ -16812,7 +18596,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=120
+%%id i-wanna-be-loved-by-you
 K:C
+I:linebreak $
 |: "C""^Swing"z2 G2 A_A G2 | d2 _dc- c2 A2 | "Am7"_AG- G2 =A_A G2 | "D7"C2 CC- C4 |1 $
 "G7"z2 G2 "C#other"A_A G2 | "Dm7"B2 BB- "G7"B3 G | "C"cd z c- "Am7"c4 | "D7"AA z ^A B2 z2 :|2 $
 "G7"z2 G2 "C#other"A_A G2 || "Dm7"d2 dd- "G7"d2 Gc | "C"z8 | "Gm7"z2 c2 "C7"d_d c2 || $
@@ -16853,7 +18639,9 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=240
+%%id i-wonder-where-my-baby-is-tonight
 K:G
+I:linebreak $
 |: "G""^Swing""^A"G2 G2 B4 | "B7"F2 F2 A4 | "C"E3 E- E4 | "E7"z8 | $
 "Am7"A2 A2 c4 | "E7"G2 G2 B4 | "Am7"F8- | "D7"F8 | $
 "G/B"d4 "Bbother"F3 E- | "Am7"E4 "D7"z d3 | "G/B"d4 "Bbother"F3 E- | "Am7"E4 "D7"z4 | $
@@ -16894,28 +18682,30 @@ N:Source: Ultime Jazz Real Book
 M:4/4
 L:1/8
 Q:1/4=280
+%%id i-won-t-dance-2
 K:C
-"C""^Swing"z G G2 "Am7"G4 | "Dm7"z2 A2 "G7"C2 D2 | "C"z G G2 "Am7"G4 | "Dm7"z2 A2 "G7"C2 D2 | $
-"C"z G G2 "Am7"G4 | "Dm7"z2 A2 "G7"C2 D2 | "C"E8- | "C7"E2 E2 G2 F2 | $
-"F"E2 C2 D2 C2 | "Fm"E4 C2 DC- | "C"C8 |1 "Dm7""G7"z8 :|2 $
-"Eb7"z8 || "Ab"C2 _E2 F2 c2 | _B2 _A2 _E2 F2 | "Ab7"_G3 G- G4- | $
-G4 z4 | "Db"_A,2 _B,2 _D2 F2 | _E2 _D2 _A,2 _B,2 | "Db7"B,3 B,- B,4- | $
-B,8 | "B7"B,2 ^D2 ^F2 B2 | A2 ^F2 ^C2 ^D2 | "C"E3 E- E4- | $
-E2 E2 G2 F2 | "E7"E3 E- E4- | "Am7"E2 E2 B2 A2 | "Dm7"E3 E- E4- | $
-"G7"E2 D2 E2 F2 | "C"z G G2 "Am7"G4 | "Dm7"z2 A2 "G7"C2 D2 | "C"z G G2 "Am7"G4 | $
-"Dm7"z2 A2 "G7"C2 D2 || "C"z G G2 "Am7"G4 | "Dm7"z2 A2 "G7"C2 D2 | "C"E8- | $
-"C7"E2 E2 G2 F2 | "F"E2 G2 A2 c2 | "Fm"e4 c d2 c- | "C""C#other"c8 | $
-"Dm7""G7"z8 |] z G, G,2 G,4 | z2 A,2 C,2 D,2 | z G, G,2 G,4 | $
-z2 A,2 C,2 D,2 | z G, G,2 G,4 | z2 A,2 C,2 D,2 | E,8- | $
-E,2 E,2 G,2 F,2 | E,2 C,2 D,2 C,2 | E,4 C,2 D,C,- | C,8 |1 $
-z8 :|2 z8 || C,2 _E,2 F,2 C2 | _B,2 _A,2 _E,2 F,2 | $
-_G,3 G,- G,4- | G,4 z4 | _A,,2 _B,,2 _D,2 F,2 | _E,2 _D,2 _A,,2 _B,,2 | $
-B,,3 B,,- B,,4- | B,,8 | B,,2 ^D,2 ^F,2 B,2 | A,2 ^F,2 ^C,2 ^D,2 | $
-E,3 E,- E,4- | E,2 E,2 G,2 F,2 | E,3 E,- E,4- | E,2 E,2 B,2 A,2 | $
-E,3 E,- E,4- | E,2 D,2 E,2 F,2 | z G, G,2 G,4 | z2 A,2 C,2 D,2 | $
-z G, G,2 G,4 | z2 A,2 C,2 D,2 || z G, G,2 G,4 | z2 A,2 C,2 D,2 | $
-E,8- | E,2 E,2 G,2 F,2 | E,2 G,2 A,2 C2 | E4 C D2 C- | $
-C8 | z8 |]
+I:linebreak $
+"C""^Swing"z g g2 "Am7"g4 | "Dm7"z2 a2 "G7"c2 d2 | "C"z g g2 "Am7"g4 | "Dm7"z2 a2 "G7"c2 d2 | $
+"C"z g g2 "Am7"g4 | "Dm7"z2 a2 "G7"c2 d2 | "C"e8- | "C7"e2 e2 g2 f2 | $
+"F"e2 c2 d2 c2 | "Fm"e4 c2 dc- | "C"c8 |1 "Dm7""G7"z8 :|2 $
+"Eb7"z8 || "Ab"c2 _e2 f2 c'2 | _b2 _a2 _e2 f2 | "Ab7"_g3 g- g4- | $
+g4 z4 | "Db"_A2 _B2 _d2 f2 | _e2 _d2 _A2 _B2 | "Db7"B3 B- B4- | $
+B8 | "B7"B2 ^d2 ^f2 b2 | a2 ^f2 ^c2 ^d2 | "C"e3 e- e4- | $
+e2 e2 g2 f2 | "E7"e3 e- e4- | "Am7"e2 e2 b2 a2 | "Dm7"e3 e- e4- | $
+"G7"e2 d2 e2 f2 | "C"z g g2 "Am7"g4 | "Dm7"z2 a2 "G7"c2 d2 | "C"z g g2 "Am7"g4 | $
+"Dm7"z2 a2 "G7"c2 d2 || "C"z g g2 "Am7"g4 | "Dm7"z2 a2 "G7"c2 d2 | "C"e8- | $
+"C7"e2 e2 g2 f2 | "F"e2 g2 a2 c'2 | "Fm"e'4 c' d'2 c'- | "C""C#other"c'8 | $
+"Dm7""G7"z8 |] z G G2 G4 | z2 A2 C2 D2 | z G G2 G4 | $
+z2 A2 C2 D2 | z G G2 G4 | z2 A2 C2 D2 | E8- | $
+E2 E2 G2 F2 | E2 C2 D2 C2 | E4 C2 DC- | C8 |1 $
+z8 :|2 z8 || C2 _E2 F2 c2 | _B2 _A2 _E2 F2 | $
+_G3 G- G4- | G4 z4 | _A,2 _B,2 _D2 F2 | _E2 _D2 _A,2 _B,2 | $
+B,3 B,- B,4- | B,8 | B,2 ^D2 ^F2 B2 | A2 ^F2 ^C2 ^D2 | $
+E3 E- E4- | E2 E2 G2 F2 | E3 E- E4- | E2 E2 B2 A2 | $
+E3 E- E4- | E2 D2 E2 F2 | z G G2 G4 | z2 A2 C2 D2 | $
+z G G2 G4 | z2 A2 C2 D2 || z G G2 G4 | z2 A2 C2 D2 | $
+E8- | E2 E2 G2 F2 | E2 G2 A2 c2 | e4 c d2 c- | $
+c8 | z8 |]
 
 X:540
 T:Blackwidow Blues
@@ -16925,7 +18715,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id blackwidow-blues
+%%tags needs-repair
 K:Bmin
+I:linebreak $
 |: "Bm7""_Bass does something here, before getting into the Groove""Cmaj7"z8 "Bm7""_Bass Line (or Something Like This"A,C DE B,"Cmaj7#11"D EF | "Bm7""Cmaj7"z8 | "Bm7""Cmaj7"z8 | "Bm7""Cmaj7"z8 :| $
 "^Head"z3/2 d/e/d/B/ F/E/F/A/ F/-F E | D/B,E/ z/ FG/-G/ _E/=F/_B/G/ c/_e/g/ | z3/2 A-a A^g Ee Aa de Be B-e | Bd z2 | $
 z a/ z/ a_a/ z/ gf/ z/ fe/ z/ | ed/ z/ d/B/A- AF/A/4B/4 A/4F/4E3/2 | DB dB- dB- e | Bd z2 |: $
@@ -16940,7 +18733,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id blessed-blackness
 K:C
+I:linebreak $
 "Cm7"z8 | "Db"z8 | "Cm7"z8 | "F7"z8 | $
 "Cm7"z8 | "Db"z8 | "Cm7"z8 | z3 "Bb"A c2 de- |: $
 "Cm7"e8- | "Db"e4 dc dc- | "Cm7"c8 | "F7"z g z e2 ga b- | $
@@ -16959,12 +18754,14 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id blue-juice
 K:Eb
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z2 z2 z GB c |: "C9"e2 c2 G/B c2 z/ | "C9"z c/e cB GF/E/ C/B,/C/ | "C9"z2 z2 z GF/E/ C/B,/ | $
 "C9"C/ z/ z z2 z GB c | "F9"e2 c2 G/B c2 z/ | "F9"z c/e cB GF/E/ C/B,/C/ | "C9"z2 z2 z GF/E/ C/B,/ | $
-"C9"C/ z/ z z2 z GG G | "G9"d2 d2- d3 _d | "F9"c "Eb"z c/ec/- c/BG/- G/F/E/C/ | "C9""_Solos Over C Blues\n"B,/C/ z z2 z gf/e/ c/B/ |1 $
+"C9"C/ z/ z z2 z GG G | "G9"d2 d2- d3 _d | "F9"c "Eb"z c/ec/- c/BG/- G/F/E/C/ | "C9""_Solos Over C Blues"B,/C/ z z2 z gf/e/ c/B/ |1 $
 c/ z/ z z2 z GB c :|2 c/ z/ z z2 "C9"z4 |] x8 | x8 | $
 x8 | x8 | x8 | x8 | $
 x8 | x8 | x8 |: x8 | $
@@ -16980,7 +18777,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id blues-a-la-mode
 K:Bb
+I:linebreak $
 z F_A B- |: "Bb7"B4 BB _de- | "Eb7"e4- eF _AB- | "Bb7"B4 BB _de- | $
 "Gm7"e2 _d"Fm7"B z "Em7"Bd e- | "Eb7"e4- ee _g_a- | "Ab7"a4- aF _AB- | "Bb7"B4- BB _de- | $
 "Cm7"e2 _d"Fm7"B z _D"G7"_F _G- | "Dbm7"G4 "Gb7"G_G _A=B- | "Gbm7"B4- "B7"BF "Bb7"_A_B | "G7"z F_A B "Gb7"z FA B | $
@@ -16994,7 +18793,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id pyramid
 K:G
+I:linebreak $
 z4 z2 z E/G/ |: d"G7"B G2 z2 z E/G/ | "C7"e_B GC z2 z E/G/ | "G7"d B3 GG _G=F- | $
 "G7"F4 z2 z E/G/ | "C7"e_B GC z4 | "C7"(3z2d2B2 G2 ED- | "G7"D8 | $
 "G7"z4 z2 z3/2 B/ | "Am7"B/c/ z cB B/c/ z cB | "D7"G/D/C- C2 z2 z (3f/e/_e/ | "G7"d_d cB GD GG- |1 $
@@ -17009,7 +18810,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=170
+%%id blues-after-dark
+%%tags needs-repair
 K:F
+I:linebreak $
 "_Intro"z4 z cd z | "F7"f z z2 _e z z2 | "F7"d z2 =B2 c/B/F A || "F7"z8 |: $
 "F7""^Head"z2 =B/ z/ B_B/ z/ B_A/ z/ A | "F7"F8 | "F7"z2 (3zF_A (3BcB (3ACE | "F7"F8 | $
 "F7"z2 =B/ z/ B_B/ z/ B_A/ z/ A | "F7"F8 | "F7"z2 (3zF_A (3BcB (3ACE | "F7"F8 | $
@@ -17026,7 +18830,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id blues-for-p-k
 K:Bb
+I:linebreak $
 z8 |: "Bb7"BF B=E _E2 z2 | Be B_d z4 | BF B=E B _E2 D | $
 _A z z2 z4 | "Eb9"B e2 _d2 B z z | F B2 _A2 =E z z | "Bb7"F2 =E2 _E2 D2 | $
 _A z z2 F B2 A- | "F9"A E2 z G B2 E- | "Eb9"E C2 z FB =EB | "Bb7"EC B, z z4 |1 $
@@ -17043,7 +18849,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id blues-on-sunday
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Eb7"g2 eB A_g z2 | "Ab7"A2 fe z4 | "Eb7""^Bass Fill"z8 | z2 e4- eE | $
 "Ab7"ce z2 z4 | z ce _g2 ec B | "Eb7"e4 e2 e2 | (3z2G2=B2 (3c2_G2F2 | $
 "Fm7"z4 (3zzA (3Bf^f | "Bb7"ge cB A_g (3Afe | "Eb7"z2 z ^fg c z2 | z4 z3 g- || $
@@ -17059,7 +18868,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id blues-on-the-corner
+%%tags needs-repair
 K:Bb
+I:linebreak $
 F |: "Bb7"(3^cdF (3cdF =c2 z E | "Eb7"(3BcE (3B"Edim7"cE _d G2 F | "Bb7"(3^cdF (3cdF B"Bb7"e- "Ab7"(3e_A_d | $
 "Gb7"_c_G- "E7"(3G=E"D7"A G D2 G | "Eb7"(3c_dG (3cdG (3BGE B2- | B2 z2 "Bb7"(3zFC _DB, | "Bb7"(3_DEB, D2 (3z"Eb7"B,D (3EF_A | $
 "D7"B6 "G7"z B | "Cm7"(3e/_f/e/B (3_d/e/d/_A B2 z F | "F7"(3B/_c/B/F _AB E2 F2 | "Bb7"B2 (3z_A"G7#9"F B2 (3zAF | $
@@ -17074,7 +18886,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id blues-in-h
+%%tags needs-repair
 K:D
+I:linebreak $
 "^Start With 'Cool' Vibes Intro"z F (3ABz |: "B13"B2 AF z B, (3DEz | "E7"E2 DB, z F (3ABz | "B13"B2 A F2 G/F/E F- | $
 "B13"F2- F-F- FB, (3DEz | "E9"E2 DF z B, (3DEz | "E7"E2 DB, z F (3ABz | "B13"B2 A F2 G/F/E F- | $
 "B13"F2- F- F2 B, (3DEz | "E9"E2 DF- F4 | "C#m7"z F2 E/"F#7sus4"D/ B,2 DB,- | "B7"B,2 (3z"E7"FA (3B"Fdim"cB- B2- | $
@@ -17089,7 +18904,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id blues-march
+%%tags needs-repair
 K:Bb
+I:linebreak $
 F |: "Bb7"B4 (3dBz z B | "Eb7"_d4 (3edz z F | "Bb7"B6 dd | $
 B4 _A2 z F | "Eb7"BB _d"Ab7"d (3e_fe (3dBd | "Db7"BB _AA "Gb7"_GG _DE | "Gm7"F4- "Ab7"FF (3_AFA | $
 "A7"_G4 "Bb7"z G"G7"=B _d | "Cm7"B2- (3B_A_G B2- (3BAG | "F7"A2 "Bb"ff (3ecA FE | "Bb7"D B3- "Db7"B4- |1 $
@@ -17104,7 +18922,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id blues-in-the-basement
+%%tags needs-repair
 K:Bb
+I:linebreak $
 C2 "C7"z C z CE F | "F7"G2 G2 (3FG/F/ EC B, | "C7"C2 z C z CE F | "C7"G2 G2 (3FG/F/ EC B, | $
 "F7"C2 z C z CE F | "F7"G2 G2 (3FG/F/ EC B, | "C7"C2 z C z CE F | "Em7"G2 G2 "A7"(3FG/F/ EC B, | $
 "Dm7"C2 z C z CE F | "G7"G2 G2 (3FG/F/ EC B, | "C7"(3zCC (3CB,C (3zCC (3CB,C | "C7"(3zCC (3CB,C (3CB,C (3CB,C |]
@@ -17117,7 +18938,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id bold-and-black
 K:D
+I:linebreak $
 "Gmaj7"f8 | "F#m7"f "B7"a7 | "E7"fe dB d e2 B- | "E7"B8 | $
 "Gmaj7"f8 | "F#m7"f "B7"a7 | "E7"fe dB d e2 f- | "F#7"f4 z d (3dBA | $
 "G7"B4 Bc- c2- | "A7"c8 | "C/D"e3 f- "D7"f2 g2- | "C9"ga- a2- "D9"a4 | $
@@ -17132,7 +18955,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id boogie-stop-shuffle
+%%tags needs-repair
 K:Bbmin
+I:linebreak $
 "Bbm7"B,B, DD =E2 z2 | "Bbm7"B,B, DD =E2 z2 | "Bbm7"B,B, DD EE =EE | "Bbm7"EE DD B,2 z2 | $
 "Ebm7"EE GG =A2 z2 | "Ebm7"EE GG =A2 z2 | "Bbm7"B,B, DD EE =EE | "Bm7"EE DD B,2 z2 | $
 "Fm7"FF GG FF =EE | "Ebm7"EE =EE _EE DD | "Bbm7"B,B, DD EE DD | "Bbm7"B,B, A,A, B,2 z2 | $
@@ -17157,7 +18983,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id boogie-woogie-bossa-nova
 K:C
+I:linebreak $
 "Ab7"_A8- | "Gb7"A _B2 _A2 _G2 _E- | "Emaj7"E8- | "A7"E4 z2 z _A | $
 "Db7"B _d2 _e2 d2 B- | "Eb7"B _A2 _GA B2 A- | "Ebm7"A4 z _G2 _B- | "Ab7"B4 z _G2 _A- | $
 "Abm7/Db"A8 | "C#m7"z B2 _B2 "F#7"_G2 _E- | "Bmaj7"E8- | "Emaj13"E4 z2 z D | $
@@ -17171,7 +18999,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id brain-damage
 K:Bmin
+I:linebreak $
 |: "Bm""^INTRO"z8 "Bm"z8 | "E"z8 "Bm""^Solos""_A"z8 | "E7"z8 | "Bm7"z8 | $
 "E7"z8 | "Bm7"z8 | "E7"z8 | "Bm7"z8 | $
 "E7"z8 || "G7""_B"z8 | "G7"z8 | "G7"z8 | $
@@ -17189,14 +19019,16 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id brazos-river-breakdown
 K:Ab
+I:linebreak $
 |: "Fm7"z8 :| z4 z2 EF/-F/ |: "Fm7"c2 BA B z AF | E2 FF z2 E/C/E/F/ | $
 A3/2 F z z/ z2 z z/ z/ | z4 z2 EF/-F/ | c2 BA B z AF | E2 FF z2 E/C/E/F/ | $
 A3/2 F z z/ z2 z z/ z/ | z8 | "Bb7"A2 Bc A2 z F | A3/2 B,2 z2 z3/2 E | $
 "Fm7"EF A2 z4 | z4 z2 EF/-F/ | c2 BA B z AF | E2 FF z2 E/C/E/F/ | $
 A3/2 F z z/ z2 z z/ z/ | z8 || "Bb7"AA Bc A2 z2 | "B"AA Bc A3/2 EF z/ | $
 "Fm7"AA Bc "Fm7"(3B2"Em7"c2"Ebm7"e2 | "Dm7"f4 z4 | AA B"Dm7"c (3A2"Dbm7"F2"Cm7"E2 | "Gm7"F4 z4 | $
-"Ab"z C/E/"^Unison\n"F AC/E/ FA C/E/ | FA C/E/F/ A2 z/ z2 :|
+"Ab"z C/E/"^Unison"F AC/E/ FA C/E/ | FA C/E/F/ A2 z/ z2 :|
 
 X:557
 T:Bring it on Home to Me
@@ -17206,7 +19038,9 @@ N:Source: jazzXML
 M:12/8
 L:1/8
 Q:1/4=150
+%%id bring-it-on-home-to-me
 K:Bb
+I:linebreak $
 "^Schmaltzy Soulful Piano Intro"z12 | z12 | z12 | z12 | $
 z3 z3 z3 dcB |: d2d z2 z z2 z dcB | d2c- c3 z3 df2 | g2g z3 g2g g2f | $
 f2e- e z z b6 | dBc B3 d2d c2c | cB2 z2 d/f/g2 d/c/BG F | B2 z B/F/G/ z3/2 z3 B/F/G/ z3/2 |1 $
@@ -17224,7 +19058,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=190
+%%id broski
 K:F
+I:linebreak $
 |: "^Head"z "F7"FA ^ce cA F | ^D z7 | z FA ^ce cA F | ^G z3 =BA z2 | $
 z ^f_e c _A2 ^d^g | "Bbm11"^f^d ^c^G ^F z3 | "F"z FA ^ce cA F | "B13"^D z3 FD z ^F- | $
 F2 _ec _A2 e^f | "B/D"^f^d ^c^G ^F z z2 | "F"z8 | z8 "F7""^Solos"z8 | $
@@ -17241,7 +19077,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=96
+%%id brother-ray
 K:Eb
+I:linebreak $
 z6 || "G"z D=B B- (3BAG | "F7"A=B G4 | "Bb7"z E c3 B | $
 "C7"G z C3/2 B,3/2 G,- | "G"G,4 z/ (3=E/4D/4C/4B,/ z/ | "F"CB,/G,/ z2 z2 | "Bb7"z6 | $
 "C7"z6 | "G"z2 =BB- (3BAG | "F7"A=B G4 | "Bb7"z F d3 B | $
@@ -17268,14 +19106,18 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id brother-hubbard
+%%tags needs-repair
 K:F
+I:linebreak $
 |: "^several bars of drum intro""_Bass Intro, vamp"D/A/c/d/ z2 z4 :| z2 z2 z/ D/A/d/A/ G/F/G/- |: "_A""^Head"G8- | G3 z3/2 D/A/d/A/ G/F/G/- | $
 GF/D/- D6- | D3 z3/2 D/A/d/A/ G/F/G/- | G2- G3/2F/4G/4 F3- (3F/_E/F/ | G4 F2 F2 | $
 D8- |1 D3 z3/2 D/A/d/A/ G/F/G/- :|2 D4 z2 z/ D/F/A/ |: "^B"G/F/G/A/ FC DC/D/ z/ D/F/A/ | $
 G/F/G/A/ FC/D/- D2 z/ D/F/A/ | G/F/G/A/ FC DC/D/ z/ D/F/A/ | G/F/G/A/ FD/ z/ G2 FD- |1 D2 z2 G2 F2 | $
 D8- | D8- | D8- | D4 z4 |: $
 "_Solos: AAB"z8 :|2 "^C"D2 z2 G2 F2 || DD- D2 C/ z/ C- C2 | DD- D2 C/ z/ C- C2 | $
-DD- D2 C/ z/ C- C2 | DD- D2 C/ z/ C z/ D/F/A/ :|3 "^D"D3 z z4 |: "^Further Solos \nover these chords"z8 :| $
+DD- D2 C/ z/ C- C2 | DD- D2 C/ z/ C z/ D/F/A/ :|3 "^D"D3 z z4 |: "^Further Solos 
+over these chords"z8 :| $
 "^ritard and end..."z8 |] |: D,,/A,,/C,/D,/ z2 z4 :| D,,/A,,/C,/D,/ z2 z4 |: B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 | $
 B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 | B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 | B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 | "Abmaj13"z8 | $
 "Abmaj7"z8 | B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 |1 B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 :|2 B,,"Dm7"C,- C,2 C,/ "Gm7/Bb"z/ C,- C,2 |: $
@@ -17293,7 +19135,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id bye-ya
 K:Ab
+I:linebreak $
 z2 |: z2 z A,=B, E G2 | F2 z F z4 | z2 z A,=B, E G2 | $
 F2 z F z4 | z3 =EA =Be _B | z B4- B z ^F | z ^F3 =FE C2 |1 $
 E6 z2 :|2 E6 z2 || "A6"=E ^F2 E F4- | F3 =E2 ^F2 E | $
@@ -17316,7 +19160,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id cape-verdean-blues
 K:Eb
+I:linebreak $
 z2 "Eb"z G, C2 E2 | G2 B2 G2 BE |: "Cm7""^A"z C3- C4- | "Cmaj"C8 | $
 "Cm7"z4 c2 c2 | c2 c2 c2 =Bd | "G7"z =B3- B4- | "Ab7"B8 | $
 "G7"z4 d2 d2 | d2 =B G3 _GF- | F F3- F4- | "Ab7"F8 | $
@@ -17330,7 +19176,7 @@ z2 "Eb"z G, C2 E2 | G2 B2 G2 BE |: "Cm7""^A"z C3- C4- | "Cmaj"C8 | $
 "Cm7"z4 c2 c2 | c2 c2 c2 =Bd | "G7"z =B3- B4- | "Ab7"B8 | $
 "G7"z4 d2 d2 | d2 =B G3 _GF- | "G7"F F3- F4- | "Ab7"F8 | $
 "G7"z4 e2 c2 | "Db7"_GF E2 F2 CE- | "Cm7"E C3- C4- | "Cmaj"C8 | $
-"Cm7"C2 z2 z4 | "^Solo Break\n"z8 |: "^To End: At \"Be a " Go Here and vamp"z2 z2 e2 c2 | _GF E2 F2 CE- | $
+"Cm7"C2 z2 z4 | "^Solo Break"z8 |: "^To End: At "Be a " Go Here and vamp"z2 z2 e2 c2 | _GF E2 F2 CE- | $
 E C3- C4- | "^Solos AABBA"C8 :| "Cm7"C2 z2 z4 |]
 
 X:563
@@ -17341,7 +19187,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id the-cat
 K:F
+I:linebreak $
 z2 Gc _A_e =A=e z "F9"Bf | z8 | z8 | z8 | $
 z8 |: "F9"z2 FC _E =E2 F- | F_A BF AB z2 | z2 f4 _ef | $
 _e2 ce =B_B/_A/ F_E | "Bb7"z2 BF _A =A2 B- | B_e fB ef z2 | "F9"z2 f4 _ef | $
@@ -17356,7 +19204,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id centerpiece
+%%tags needs-repair
 K:Ab
+I:linebreak $
 z4 z2 z F || "Ab7"AB _cB A2 F2 | A3 "Db7"B z2 z F | "Ab7"AB _cB A2 _GE | $
 "Ab7"z4 z2 z F | "Db7"AB _cB A2 F2 | A3 B z2 z F | "Ab7"AB _cB A2 _GE | $
 "Ab7"z4 z2 z F | "Bbm7"AB _cB A2 F2 | "Eb7"A3 B z2 z F | "Ab7"AB _cB A2 _GE | $
@@ -17373,7 +19224,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id chain-reaction
 K:Db
+I:linebreak $
 |: "Bbm7""_Intro"d z B z/ "Db/Ab"F/A B z2 | "Ebm7"E/F/E D z/ "Fm7"F,/A, B, z2 | "Bbm7"d z B z/ "Db/Ab"F/A B z2 | "Ebm7"E/F/E D z/ "Fm7"F,/A, B, z2 "_Head"z/ "Bbm7"F,/B,/F/A/ B/F/A/"Db/Ab"E/ F/D/B,/E/ B,/D | $
 "Ebm7"B,2 z/ F,/B,/D/E/4"Fm7"_F/4 E/4D/4E/D/- DE || "Bbm7"a/b/d'/b/- "Db/Ab"b4 a/f/e/d/- | "Ebm7"dB- "Fm"B6 || "Bbm7"z/ A,/B,/D/- DE "Db/Ab"z/ A,/B,/D/- DE | $
 "Ebm7"z/ A,/B, DE E/4"Fm7"=E/4_E/4D/4E/D/- DB, | "Bbm7"z/ A,/B,/D/- DE "Db/Ab"z/ A,/B,/D/- DE |1 "Ebm7"z/ A,/B, DE E/4"Fm7"=E/4_E/4D/4E/D/- DB, :|2 "Ebm7"z/ A,/B, DE "Fm7"E/4=E/4_E/4D/4E/ z/ A,B, || $
@@ -17393,7 +19246,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id chicago-seranade
 K:C
+I:linebreak $
 z G,3 D F2 A- | "Dm7"A4 z GF G- | "G7"G4 z2 GG- | "C7"G4 z FD F- | $
 "F7"F4 z2 FF- | "Bbmaj7"F4 z ED E- | "A7#9"E4 z DC D- | "Dm7"D8 | $
 "Dmaj9"z G,3 D F2 A- | "G7"A4 z GF G- | "C7"G3 z F A2 c- | "F7"c4 z AG A- | $
@@ -17412,7 +19267,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id chill
 K:Gb
+I:linebreak $
 |: "Ebm7"e3 "Bb"e- e4 | "A"e3 "Ab"e4- e | "Ebm7"e3 e- "Bb7"e4 | "A"e3 "Abm"e3 ee "Ebm7"z2 G2 A3 "Bb"G | $
 "A"E2 GE- "Ab"E4 | "Ebm7"z B (3zA"Bb"G A3 G | "A"E2 AE- "Ab"E3 B, | "Ebm"E2 G2 "Bb"A3 G | $
 "A7#11"E2 G"Ab7"E- E4 | "G7#5"E2 G"Gb7"E- E4 |1 "F7"E2 GE- "Emaj7"E4 :|2 "F7"E2 G"Emaj7"E (3zGB (3=cef || $
@@ -17432,7 +19289,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=104
+%%id cinnamon-and-clove
 K:Bb
+I:linebreak $
 "Gm7""^Intro"z8 | "Gm/Gb"z8 | "Gm/F"z8 | "Gm/E"z8 | $
 "Gm"z8 | "Gm/Gb"z8 | "Gm/F"z8 | "Gm/E"z8 | $
 z2 z DG z A z | BG z B z G z c- || "Fm7""^A"c8- | "Bb9"c8- | $
@@ -17462,7 +19321,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=100
+%%id cissy-strut
 K:C
+I:linebreak $
 z8 |: "C"c/_B/G/_E/- =EC z/ G,/G,/A,/C/ z/ A, | C2 z2 "Bb"df _bd fb z/ "F"cf a z/ cf a z "C"c z/ G/c/_B/ z/ c/ z/ B/ z z2 | c z/ G/c/_B/G/ C/-C/ z/ z z2 :| $
 "C9""_Solos over open C9 Chord"z8 | "^Fill"G/_B/ z z/ c/Bc/ _e z/ z/ z z/ | G/_B/ z z/ c/Bc/ B z/ z/ z z/ | G/_B/ z z/ c/Bc/ _e z/ z/ z z/ | $
 "^4x"G/_B/ z/ c/B/_E/C/ z/ z4 | z8 |]
@@ -17475,12 +19336,14 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id clockwise
 K:G
+I:linebreak $
 |: "Gm"G,2 G2 G,2 G2 | z2 _d=d c_B G z | G,2 G2 G,2 G2 |1 z2 "Db13"_D6 :|2 $
 z8 :|3 z2 "D7#9"D4 z G, |: "G7"C2 _B,=B, G, z E, z | "G7"C2 B,2 C_D z =D- | $
 "G7"D2 z2 z4 | "G7"z2 z2 z2 z E- | "C7"E2 _ED _D2 z D- | "C#dim7"D2 CB, _B,2 z B,- | $
 B,2 A,_A, G,2 z G,- | "Edim7"G,2 F,=F, E,2 z G, | "Am7"C2 _B,=B, G,E, z G, | "D7"C2 _B,=B, G,A, z G,- | $
-"G7"G,4 z2 z =F | "Ab13"z =F F4 z2 | "G7"G,2 G2 G,2 G2 | "^1st solo\n"z2 "G7"_d=d c_B G z | $
+"G7"G,4 z2 z =F | "Ab13"z =F F4 z2 | "G7"G,2 G2 G,2 G2 | "^1st solo"z2 "G7"_d=d c_B G z | $
 "G7"G,2 G2 G,2 G2 | z2 "Db13"_D6 || "C7"z8 | "C7"z8 | $
 "G7"z8 | "G7"z8 | "Am7"z8 | "D7"z8 | $
 "G7"z8 | "D7""^Solos"z8 | "G7"z8 | "G7"z8 | $
@@ -17497,9 +19360,12 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id clouds
+%%tags needs-repair
 K:Bb
-"^Slovenly!\nFreely"F,6 f_g | "Ebm7"F_G Be df | "Dbmaj7/F"CD Fc Bc | "Bmaj7/F"_CE _A_G A | $
-"Gbm7"z _F,G, DG, A,D G,A, _DG, A,D | "F7#9"_G,A, DG, A,D A,,_D, E,G, _DG,, D,E, F,D || "Bbmaj7"D8- | D C2 B,2 C2 D- | $
+I:linebreak $
+"^Slovenly!
+Freely"F,6 f_g | "Ebm7"F_G Be df | "Dbmaj7/F"CD Fc Bc | "Bmaj7/F"_CE _A_G A | $"Gbm7"z _F,G, DG, A,D G,A, _DG, A,D | "F7#9"_G,A, DG, A,D A,,_D, E,G, _DG,, D,E, F,D || "Bbmaj7"D8- | D C2 B,2 C2 D- | $
 "Gm7"D8 | z B2 c/B/ A2 FE- | "Cm7"E8- | "G7"E2 D2- (3D2C2D2 | $
 "Cm7"E8- | E4 (3z2^F,2G,2 | "Cm7"E8- | (3E2-E2D2- (3D2=B,2C2 | $
 "Abmaj7"E8 | z2 z D=B, C2 E- | "Am7"E8- | "F7"E3 D- (3D_D/C/ =B,2 C2 | $
@@ -17519,14 +19385,16 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id cold-duck-time
 K:F
-|: "F7"z8 | "Bb7"z8 | "F7"z8 | """Bb7"z2 z2 _EF F_A "F7"z2 z "_(""_)"z _EF F_A, | $
-"Bb7"z2 z z _EF F_A | "F7"z B z c _A2 F_E | "Bb7"F2 z2 _EF F_A | "F7"z2 z "_(""_)"z _EF F_A, | $
-"Bb7"z2 z z _EF F_A | "F7"z B z c _A2 F_E | "Bb7"F2 z2 _EF F_A- | "Dbmaj13#11"A7 F- | $
-"Ebmaj13#11"F7 "F7"F | "^Fill/Solo Break"z8 | z2 z "_(""_)"F,_E FF _A :| |: F,,C, _E,C, D, F,3 | $
-B,,2 C,_A,, z4 | F,,C, _E,C, D, F,3 | ""B,,2 C,_A,, z4 F,,C, _E,C, D, F,3 | B,,2 C,_A,, z4 | $
-F,,C, _E,C, D, F,3 | B,,2 C,_A,, z4 | F,,C, _E,C, D, F,3 | B,,2 C,_A,, z4 | $
-F,,C, _E,C, D, F,3 | "_on Cue"B,,2 C,_A,, z2 z _D,- | D,7 _E,- | E,7 F, | $
+I:linebreak $
+|: "F7"z8 | "Bb7"z8 | "F7"z8 | """Bb7"z2 z2 _ef f_a "F7"z2 z "_(""_)"z _ef f_A | $
+"Bb7"z2 z z _ef f_a | "F7"z b z c' _a2 f_e | "Bb7"f2 z2 _ef f_a | "F7"z2 z "_(""_)"z _ef f_A | $
+"Bb7"z2 z z _ef f_a | "F7"z b z c' _a2 f_e | "Bb7"f2 z2 _ef f_a- | "Dbmaj13#11"a7 f- | $
+"Ebmaj13#11"f7 "F7"f | "^Fill/Solo Break"z8 | z2 z "_(""_)"F_e ff _a :| |: F,C _EC D F3 | $
+B,2 C_A, z4 | F,C _EC D F3 | ""B,2 C_A, z4 F,C _EC D F3 | B,2 C_A, z4 | $
+F,C _EC D F3 | B,2 C_A, z4 | F,C _EC D F3 | B,2 C_A, z4 | $
+F,C _EC D F3 | "_on Cue"B,2 C_A, z2 z _D- | D7 _E- | E7 F | $
 z8 | z8 :|
 
 X:573
@@ -17538,7 +19406,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id cold-duck-time-ii
 K:Eb
+I:linebreak $
 FA =A |: B3 _d2 A2 B- |1 B _d2 ed FA =A :|2 B3 _d2 A2 B || $
 z8 || z2 Ac f z Be g z2 | z Be a z2 ce g z z2 | z2 Ac f z Be g z2 | $
 z Be a z2 ce g z z2 || z4 AB B_d || "Bb7"z4 z AB _D | z4 AB B_d | $
@@ -17581,7 +19451,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id come-on-home
 K:Gb
+I:linebreak $
 (3z=CE | "Ebm7"E2 z2 "C7#9"z4 | "B7"z4 (3z"Bb7"EG (3AGE | "Ebm7"E2 "C7#9"z6 | $
 "B7"z4 B"Bb7"d A/4=A/4_A/4G/4E/D/ | "Ebm7"E2 z2 "C7#9"z4 | "B7"z2 (3GFE "Bb7"DB, F=C- | "Gb7"C8 | $
 "Bmaj7"z B (3dBd (3BGB (3GEC | "Bmaj7"B,8- | "Emaj7"B,4 z2 (3EGA |: (3A"Gbm"GB z4 (3EGA | $
@@ -17609,7 +19481,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id cool-struttin
+%%tags needs-repair
 K:F
+I:linebreak $
 z4 z c_e f |: "F7"z4 z f_a b | "Bb7"z4 c'_e'- e'2 | "F7"(3=b_b_a f2- fc _ef | $
 "F7"z4 z f_a b | "Bb7"z4 z df f_a a_c' | "Bb7"z gb (3=b_b_a ff | "F7"z4 z c_e f | $
 "D7"z8 | "G7"_Ac c_e ce A_c GB | "C7"GB z2 F_A DF | "F7"DF z "D7"B_e B=e |1 $
@@ -17623,7 +19498,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id some-cow-fonque
 K:Eb
+I:linebreak $
 "^Insert Free Jazz Here""^Something Harmonically Complex"z8 | z8 | z8 | z8 | $
 "^Insert Turntable Scratching Here"z8 | z8 | z8 | z8 |: $
 "Ab7""Eb7"z8 | "Ab7""Eb7"z8 :| z3 "_Chords Same Throughout"f2 aa c' | c'2 z ef ab/a/ a- | $
@@ -17644,7 +19521,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id crisis
+%%tags needs-repair
 K:C
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 |: $
 z2 "C"z DA z DA CG | DA DA CG DA CG DA | z2 z DA z DA CG | "^2x Only"DA z2 E2 F2 "Cmaj7""^Latin"EG | $
@@ -17669,8 +19549,11 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id cross-river
+%%tags needs-repair
 K:C#min
-|: "C#m11""^Intro\n"F3 G G4 | "F#m9"G3 G G4 | "C#m11"F3 G G4 | "F#m9"G3 G G4 "C#m11""^Head"z CE GF EC F- | $
+I:linebreak $
+|: "C#m11""^Intro"F3 G G4 | "F#m9"G3 G G4 | "C#m11"F3 G G4 | "F#m9"G3 G G4 "C#m11""^Head"z CE GF EC F- | $
 "F#m9"FG- G2- G4 | "C#m11"z CE GF EC F- | "Bsus4"FG- G2- G4 | "Amaj7"z4 GF EC | $
 "Emaj7"D2 C G,4- G, | "Amaj7"z4 GF EC | "Emaj7"D2 C G,3 Fd Bf | "F#m9"ce g | $
 "A#m9"=c=f Fd Bf | "F#m9"ce g | "A#m9"=c=f :|
@@ -17682,7 +19565,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=175
+%%id cryin-blues
+%%tags needs-repair
 K:C
+I:linebreak $
 z4 z2 z _e- | "F7"e2- e(3_c/_B/_A/ F2- F_E | "Bb7"F_E F2 _A2 z _e- | "F7"e2- e(3_c/_B/_A/ F_E F2 | $
 "F7"_A2 z2 z2 z _a- | "Bb7"a2- a(3_c/_B/_A/ F2- F_E | "Eb7"F_E F2 _A2 z _e- | "F7"e2- e(3_c/_B/_A/ F_E F2 | $
 "F7"_A2 z2 z2 A_E | "Db7"_d_A _E_B FC AE | "Gm7"_B,F CF "C7"_Bd ff- | "F7"f2- f(3_c/_B/_A/ F_E F2 | $
@@ -17696,7 +19582,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id dangerous-curves
 K:G
+I:linebreak $
 EG GE A/4_B/4A/4G/E/ GG z/4 || "G13"z8 | "C7"z8 | "G13"z8 | $
 "C7"z8 | "G13"z8 | "C7"z8 | "G13"z8 | $
 "C7"z8 |: "G13"z2 z =f z d2 c- | "C7"c3 _Bc Bc d | "G13"_B2 B2 z4 | $
@@ -17711,8 +19599,8 @@ z8 | "A9"z2 EG G "Bb9"z "B9"z2 | "C9"EG GE (3_B/A/G/E "G13"GG | "G13"z8 | $
 "Bbm9"G3 "Eb9"=G- G4 | "A9"z2 EG G z z2 | "A9"EG GE (3_B/A/G/E G"G13"G | "C7"z2 z Gc _Bc d | $
 "G13"_B2 B2 z4 | "C7"z2 z Gc _Bc d | "G13"_B2 B2 z4 | "C7"z2 z Gc _Bc d | $
 "G13"_B2 G2 z4 | z dg _bc' bc' d' | _b2 g2 z z gg | "^solo break"z8 | $
-z8 |: "G13""^open solos\n"z8 | "C9""^ad naseaum"z8 :| """^After solo"z dg _bc' bc' d' || $
-_b2 g2 z z gg || "G13"z2 z =F z D2 C- | "C7""^Bass Break\n"C3 _B,C B,C D | "G13"_B,2 B,2 z4 | $
+z8 |: "G13""^open solos"z8 | "C9""^ad naseaum"z8 :| """^After solo"z dg _bc' bc' d' || $
+_b2 g2 z z gg || "G13"z2 z =F z D2 C- | "C7""^Bass Break"C3 _B,C B,C D | "G13"_B,2 B,2 z4 | $
 "C7"z2 z G,C _B,C D | "G13"_B,2 B,2 z4 | "C7"z2 z G,C _B,C D | "G13"_B,2 G,2 z4 || $
 "G13"z2 z =f z d2 c- | "C7""^whole band"c3 _Bc Bc d | "G13"_B2 B2 z4 | "C7"z2 z Gc _Bc d | $
 "G13"_B2 B2 z4 | "C7"z2 z Gc _Bc d | "G13"_B2 G2 z4 | z4 z2 "G13"GG |]
@@ -17725,8 +19613,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id dig-dis
 K:Bb
-"Bbm7""^Cool Piano Intro/Solo\n"z8 | "Gb7""F7"z8 | "Bbm7"z8 | "Bbm7"z8 | $
+I:linebreak $
+"Bbm7""^Cool Piano Intro/Solo"z8 | "Gb7""F7"z8 | "Bbm7"z8 | "Bbm7"z8 | $
 "Gb7"z8 | z8 | "Bbm7"z8 | z8 | $
 "Gb7"z8 | "F7"z8 | "Bbm7"z8 | "Cm7""F7"z8 | $
 "Bbm7"z8 | "Cm7""F7"z8 | "Bbm7"z8 | z8 | $
@@ -17750,7 +19640,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id diverse
 K:Db
+I:linebreak $
 |: z "Bbm7"f2 dB F z F | "Cm7"e=G B=A "F7"z2 z F | "Bbm7"=Gd cB ec dG- | "Cm7"G D2 DG "F7"=B,=A, _B, | $
 "Bbm7"z f2 dB F z F | "Cm7"GB cB "F7"dB cB |1 "Bbm7"z7 F | "F7"A/G/ A2 GA/G/ A2- A :|2 $
 "Cm7"GF DC =B,=A, _B, z || "F7"z2 F,/=G,/=A,/B,/ CB, (3A,B,C | "Bbm7"DF- F2 z4 | "Fm7"z _F (3=FAc e4- | $
@@ -17767,8 +19659,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=174
+%%id do-you-remember-when
 K:A
-"_Bass\n""^Guitar/Piano\n"z2 (3ABA (3dBA (3FED |: "^Horns In"z4 B2 d z | e2 d f4- f | z4 B2 d z | $
+I:linebreak $
+"_Bass""^Guitar/Piano"z2 (3ABA (3dBA (3FED |: "^Horns In"z4 B2 d z | e2 d f4- f | z4 B2 d z | $
 e2 d f2 e2 d | z4 B2 d z | e2 d f4- f | z8 | $
 z8 || z b3 a2 f2 | z B d2 e2 e2 | d2 f2 e2 z2 | $
 z8 | z b3 a2 f2 | z e d2 B2 e2 | e2 f2 e2 z2 | $
@@ -17776,7 +19670,7 @@ z8 || z2 b2 a2 =g2 | f2 e4 f2 | =g8 | $
 a8 | z2 a2 =g2 f2 | e2 A6 | d8 | $
 e8 || z4 B2 d z | e2 d f4- f | z4 B2 d z | $
 e2 d f2 e2 d | z8 | z8 | z8 | $
-"^(Guitar/Piano)\n"z2 (3ABA (3dBA (3FED :| z2 (3A,,B,,A,, (3D,B,,A,, (3F,,E,,D,, |: "Bm7"B,,4 F,,3 B,, | z B,, F,,2 B,,2 D,^D, | $
+"^(Guitar/Piano)"z2 (3ABA (3dBA (3FED :| z2 (3A,,B,,A,, (3D,B,,A,, (3F,,E,,D,, |: "Bm7"B,,4 F,,3 B,, | z B,, F,,2 B,,2 D,^D, | $
 "E7"E,3 E, B,,3 E, | z E, B,,2 E,2 B,,2 | "Em7"E,3 E, B,,3 E, | z E, B,,2 E,2 B,,_B,, | $
 "A7"A,,3 A,, E,2 z2 | z8 || "Bm7"B,,4 F,,3 B,, | z B,, F,,2 B,,2 D,^D, | $
 "E7"E,3 E, B,,3 E, | z E, B,,2 E,2 B,,2 | "Em7"E,3 E, B,,3 E, | z E, B,,2 E,2 B,,_B,, | $
@@ -17795,7 +19689,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=161
+%%id don-tojo
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "G""^Bass Intro"G z c z3 G z | _B z2 GB z G=F :|1 z6 G_B |: "C7""^A"cc _Bc z4 | $
 "Bb7"z6 G_B | "C7"cc _Bc z B z G | "Bb7"z3 G3 _B2 | "C7"cc _Bc z4 | $
 "Bb7"z2 z _Bc cB c | "C7"_B z G6 | "Bb7"z6 G_B || "C7""_B"cc _Bc z4 | $
@@ -17804,7 +19701,9 @@ K:G
 G_B c2 BG =F"Gm7"G- | G8- | G4 G2 _B2 | "Bbdim7"G8 | $
 G_B c2 BG B"D7"d- | d8 | z2 z gg z g z || "C7""^D"cc _Bc z4 | $
 "Bb7"z6 G_B | "C7"cc _Bc z B z G | "Bb7"z3 G3 _B2 | "C7"cc _Bc z4 | $
-"Bb7"z2 z _Bc cB c | "C7"_B z G6 | "Bb7"z8 "^Solos ABCD"z8 "_Cool Sax Break \n(Play top Line After \nBari Takes a few)"ee =f g2 f z d | z8 | $
+"Bb7"z2 z _Bc cB c | "C7"_B z G6 | "Bb7"z8 "^Solos ABCD"z8 "_Cool Sax Break 
+(Play top Line After 
+Bari Takes a few)"ee =f g2 f z d | z8 | $
 ee =f g2 f z z | z8 "_Solos ABCD"z8 :| |: z8 | z8 :|1 $
 z8 |: z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
@@ -17823,7 +19722,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=151
+%%id driftin
 K:Eb
+I:linebreak $
 "_A"z2 z2 z2 "Eb7"dd |: z2 "Eb7"B2 E3 "G7"_G | "Ab7"A/=A/_A/_G/ E_D "G7"E2 z B | "Cm7"d2 d2 "Bbm7"B2 z e- | $
 "A7"e3 _G/E/ G2 "Ab7"A2 | z2 "Gm7"B2 E3 _G | "C7"A/=A/_A/_G/ E_D E4 |1 "Fm7"z8 | $
 z4 z2 "Bb7"ee :|2 "Fm7""_B"_d2 cE B"Bb7"E AG- || "Eb7"G2 z2 "A7"E_G BG | "Ab7"AA z2 z4 | $
@@ -17840,7 +19741,10 @@ N:Source: jazzXML
 M:12/8
 L:1/8
 Q:1/4=96
+%%id duke-s-theme
+%%tags needs-repair
 K:Db
+I:linebreak $
 z z z F2F A2A =A2A |: "^A"B6- B3 z z z | z3 B2B d2d e-ed- | d6- d3 z z z | $
 z3 B2B d2d edf- | f3 z6 z3 | z3 F2F A2=A B2=B | c2 z8 z2 | $
 z4 z4 z eBd- | d6- d3 z3 | z2 BeB d3 FBF A- | "_Piano Fill"A2 z8 z2 | $
@@ -17870,7 +19774,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id dumaine-st
 K:Ebmin
+I:linebreak $
 |: "Ebm"E2 z ee z d z | GA BE z AG F | E2 z ee z d z | GA BE z AG F | $
 E2 z ee z d z | GA BE z AG F | E2 z ee z d z | GA BE z AG F | $
 "Ebm"E2 z e z2 "Ab"b/a/g/a/- | "Gb"a4 aa/=a/ "E"_a/g/e | "Ebm"E2 z e z2 "Ab"b/a/g/a/- | "Gb"a4 aa/=a/ "E"_a/g/e | $
@@ -17889,7 +19795,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id ease-back
 K:C
+I:linebreak $
 z "C"eg ab bb b | "A7"a"G7"g "Gb7"z2 "F7"z4 | "C"de ed ed G2 | "A7"E2 "G7"z2 "Gb7""F7"z4 | $
 z2 "C"dB ed G2 |: "E7#9"E2 z2 z4 | z2 "A7"dB ed G2 | "E7#9"E2 z2 z4 | $
 z2 "A7"dB ed G2 | "E7#9"E2 z2 z4 | z2 "A7"dB ed G2 | "E7#9"E2 z2 z4 | $
@@ -17905,6 +19813,7 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id eddie-who
 K:Bb
 |: "Bb""E7b5"z8 | "Eb7""C7"z8 | "Bb"e2 z2 "E7b5"B2 z2 | "Eb7"B2 z2 "C7"B2 "F"B2 :|
 
@@ -17915,7 +19824,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id f-w-s
 K:Bb
+I:linebreak $
 |: "^A"z8 | z8 | z8 | "^4x"z2 _c=c e2 f2 :| $
 _a8- | a2 ef fe _c=c | z2 B/_c/B/_A/ FF AB | "^Bari Continue Vamp"B2 _A/B/F =AB AB || $
 z2 _A/B/F =AB AB | _A/=A/F AB AB _A/B/F | AB _c=c _c_A- A2 | z2 _c=c e4- || $
@@ -17944,7 +19855,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id for-mods-only
 K:E
+I:linebreak $
 G B2 c |: "C#7"z2 c z2 c z c |1 z2 c z z4 :| "C#7"z2 c z c e2 g- |: $
 g8- | "C#7"g2 c'g fe cB | c8- | c4 c e2 f- | $
 "F#7"f8- | f2 c'g fe cB | "C#7"c8- | c4 c e2 g- | $
@@ -17963,7 +19876,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id four-by-five
 K:C
+I:linebreak $
 "E7"^c z ^G^F D z c z | "E7"^GA ^F z ^c z GF | "E7"D z ^c z "F#7"^d4 | z8 | $
 "E7"^c z ^G^F D z c z | "E7"^GA ^F z ^c z GF | "E7"D z ^c z "F#7"^d4 | z8 | $
 "G7"F,6 "A7"A,2- | A,2 "B7"B,6 | "C#7"^C2- C2 "Eb7"^D2- D2- | D2 "F7"F2- F2 "G7"G2- | $
@@ -17990,7 +19905,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id freedom-sound
 K:C
+I:linebreak $
 "Abmaj7"CG | CG | "Gm7"_B,F | B,F |: $
 "Abmaj7""^A""^Piano with horns on whole notes"z2 G2 _B2 _b2 | g2 (3f_ec f2 g2 | "Gm7"z2 G2 _B2 f2 | _e_B FG AB | $
 "Abmaj7"z2 G2 _B2 _b2 | g2 (3f_ec f2 g2 | "Gm7"z2 G2 _B2 f2 | _e_B FG A4 | $
@@ -18014,7 +19931,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id full-deep-and-mellow
 K:none
+I:linebreak $
 [K:A]z8 | B8 | B8 | =c8 | $
 =c8 | B8 | ^A8 | =c8 | $
 =G8 | B8 | B8 | =c8 | $
@@ -18070,7 +19989,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=200
+%%id full-house
 K:Ab
+I:linebreak $
 "^Intro"z2 z c z e |: "Fm7"fc ef z2 | z g3- gc | ee ce z2 | $
 z c z e z c | fc ef z g | z f z ec B | cB AF z2 |1 $
 z c z e z c :|2 z4 z C |: "Fm7""^A"FA z4 | "Bb13"FB z3 F | $
@@ -18093,7 +20014,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id fusion-jazz-dance
 K:Ab
+I:linebreak $
 e=A |: "Cm7"g3 c2 z cA | "Dbmaj7"e3 F2 z3 | "Cm7"z Gc Gd _gb g | $
 "Dbmaj7"ae Bc z4 | "Cm7"z8 | "Dbmaj7"z4 z2 e=A | "Cm7"g3 c2 z cA | $
 "Dbmaj7"e3 F2 z3 | "Cm7"z Ad Ad A_g b | "Dbmaj7"ae Bc z4 | "Cm7"z8 | $
@@ -18109,7 +20032,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id gibraltar
+%%tags needs-repair
 K:F
+I:linebreak $
 "Gm9""^Bass Intro: Latin"G,,2 G,,2 D,2 G,,E, | "C13"z D,2 E,F, E,2 D, | "Gm7"G,,2 G,,2 D,2 G,,E, | "C13"z D,2 E, F,2 E,D, | $
 "Gm7"G,,2 G,,2 D,2 G,,E, | "C13"z D,2 E,F, E,2 D, | "Gm7"G,,2 G,,2 D,2 G,,E, | [K:treble]"C13"z DG z Bd z "^Latin"c- |: $
 "Gm7""^A"c8- | "C13"c8- | "Gm7"c4 z4 | "C13"z DG AB cd B | $
@@ -18134,7 +20060,9 @@ N:Source: jazzXML
 M:2/2
 L:1/8
 Q:1/4=300
+%%id gillette-look-sharp-march
 K:Bb
+I:linebreak $
 |: "Bb"d2 z2 B4- | B4 F2 ^F2 | G4 _G2 F2- | F4 F4 | $
 "F7"e2 z2 c4- | c4 F2 ^F2 | G4 _G2 F2- | F4 F4 | $
 "Bb"f4 d4- | d4 A2 B2 | "Eb"c4 B4 | A4 G2 _G2 | $
@@ -18149,7 +20077,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id girl-of-my-dreams
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "Bb""^200""_A"B,2 z Bf dB A | "Bb7"_A f4 z (3ABA | G2 z "Eb7"Bf dB G | "Ab7"_G f4 z e_d | $
 "Db"d B3 B2 F2 | "Db"B2 F2 z4 | "Eb7"z FB d_a "Bb7"_gf e | f8 :|1 $
 "_100""^Rit.""_B""D7"f4 fe dA | "Gm7"B7 G/A/ | "Em7"B6 "D7"B/c/B/c/ | "Ab7"A3 G A3 G | $
@@ -18192,7 +20123,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id grand-slam
 K:F
+I:linebreak $
 c2 z6 | z4 B_A FA- | A2 z6 | z6 f2 | $
 z8 | z2 C2 B_A FA- | A2 z2 z4 | z8 | $
 z2 _E2 B2 f2 | _a2 =B,2 _A2 B2 | _e2 B,2 _AF _EF- | F2 z2 z4 | $
@@ -18210,7 +20143,9 @@ N:Source: jazzXML
 M:6/8
 L:1/8
 Q:1/4=200
+%%id the-grand-strut
 K:C
+I:linebreak $
 z z z z Ac |: "Am7"ddc e2 z | z2 z2 Ac | d2c A2 z | $
 z z z z Ac"F7"d dc e2 z | z2 z2 Ac | d2c A2 z | z z z z Ac "D7"e2-e d2-d | $
 c2A/G/ A z A | "C"c2A/G/ AGA | "Bb"c2A/G/ AAc :| "Am7"ddc e2 z | $
@@ -18225,7 +20160,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id grazin-in-the-grass
 K:C
+I:linebreak $
 |: "F""^Intro""Dm7"z8 | "Gm7""C7"z8 :| "F""^Head"z2 e2 "Dm7"g4 | "Gm7"_e/d/c A2 "C7"_E2 D2 | $
 "F"C2 z2 "Dm7"z4 | "Gm7""C7"z8 | "F"z2 e2 "Dm7"g4 | "Gm7"_e/d/c A2 "C7"_E2 D2 | $
 "F"C2 z2 "Dm7"z4 | "Gm7""C7"z8 | "F"^fg c'f "Dm7"gc' f/g/c' | "Gm7"^f/=f/_e d2 "C7"c2 A2 | $
@@ -18235,7 +20172,7 @@ K:C
 "F"C2 z2 "Dm7"z4 | "Gm7""C7"z8 | "F"z2 c'/c'/c'/c'/ "Dm7"c'g _ba- | "Gm7"a2 fd "C7"g2 f2 | $
 "F"z2 c'/c'/c'/c'/ "Dm7"c'g _ba- | "Gm7"a2 f/d/g- "C7"g2 f2 | "F"z e "Dm7"c'6- | "Gm7"c'2 _bb- "C7"b2 gg- | $
 "F"g2 f "Dm7"f3 _ee- | "Gm7"e2 cA "C7"c2 cA | "F"c2 A2 "Dm7"z4 | "Gm7""C7"z8 |: $
-"F""_Solos\n""Dm7"z8 | "Gm7""C7"z8 :|
+"F""_Solos""Dm7"z8 | "Gm7""C7"z8 :|
 
 X:603
 T:Greasy G
@@ -18245,7 +20182,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id greasy-g
+%%tags needs-repair
 K:C
+I:linebreak $
 _BG d | z8 | z8 | z _B2 G d2 d_d- | $
 d2 cG B2 B_B | z G3 z4 | z8 | z8 | $
 z4 z _B/G/c/f/ d | z8 | z8 | z _B2 G f2 e_e- | $
@@ -18287,49 +20227,52 @@ z8 | z8 | z8 | z8 :|
 
 X:604
 T:Greasy G
-Bass
+ba'ss
 C:Joshua Redman
-Arr. 6EQUJ5
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id greasy-g-2
+%%tags needs-repair
 K:C
-z z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z4 z2 z G,, | $
-z2 z _B,, z2 z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z F,, z2 z2 z _B,, | $
-z C, z z z F,, z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z4 z2 z G,, | $
-z2 z _B,, z3 G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z F,, z2 z2 z _D, | $
-z C, z3 F,, z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z4 z2 z G,, | $
-z2 z __B,, z2 z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z F,, z2 z2 z _B,, | $
-z C, z z2 F,, z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z4 z2 z G,, | $
-z2 z _B,, z2 z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z F,, z2 z2 z _B,, | $
-z C, z2 z _G,, z F,, | z8 | z8 | z8 | $
+I:linebreak $
+z z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z4 z2 z G, | $
+z2 z _B, z2 z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z F, z2 z2 z _B, | $
+z C z z z F, z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z4 z2 z G, | $
+z2 z _B, z3 G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z F, z2 z2 z _D | $
+z C z3 F, z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z4 z2 z G, | $
+z2 z __B, z2 z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z F, z2 z2 z _B, | $
+z C z z2 F, z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z4 z2 z G, | $
+z2 z _B, z2 z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z F, z2 z2 z _B, | $
+z C z2 z _G, z F, | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
-z8 | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z4 z2 z G,, | $
-z2 z _B,, z2 z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z F,, z2 z2 z _B,, | $
-z C, z z2 F,, z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z4 z2 z G,, | $
-z2 z _B,, z2 z G,, | z2 F,,2 z2 z B,,- | B,,2 C,C, B,,2 G,,F,, | z F,, z2 z2 z __B,, | $
-z C, z z2 F,, z G,, |: "Gm7""^To CODA"z8 | "Gm"z8 | "C7"z8 | $
-"C7"z8 "^CODA""^Drum Solo"z8 | z4 z2 z F,, | z2 z2 z z z _B,, | z2 z C, z2 z G,, | $
-z8 | z4 z2 z F,, | z F,, z2 z2 z _B,, | "^DC Al Coda"z C, z2 z ^F,, z G,, :| $
-z2 "G7"B | z8 | z6 z "F7sus4"B | z7 "Bbm7/G"B | $
-z3 "Abm7/Bb"B z3 "G7"B | z8 | z7 "F7"B | z B z4 z "Ab7sus4"B | $
-z "Bb7/C"B z3 "F7"B z "G7"B | z8 | z7 "F7"B | z7 "Bbm7/G"B | $
-z3 "Abm7/Bb"B z3 "G7"B | z8 | z7 "F7"B | z B z4 z "Ab7sus4"B | $
-z "Bb7/C"B z3 "F7"B z "G7"B | z8 | z6 z "F7sus4"B | z7 "Bbm7/G"B | $
-z3 "Abm7/Bb"B z3 "G7"B | z8 | z7 "F7sus4"f | E z6 "Ab7sus4/Bb"E | $
-z E "Bb7sus4/C"z2 z "F7sus4"E z "G7"E | z8 | z7 "F7"E | z7 "Bbm7/G"E | $
-z3 "Abm7/Bb"E z3 "G7"E | z8 | z7 "F7sus4"E | z D z z z z E "Ab7"z | $
-z "Bb7sus4/C"E z3 "Abm7"E z E- | "Gm7/F"E8- | E7 "Gm7/F"E- | E8- | $
-E7 E- | "Bbm7/F"E8- | E7 "F#m7"E- | E8- | $
-E4 z "C#m"c2 "Cm/Bb"E- | B8- | E7 "C#dim/Bb"E- | G7 "Bbm7/Eb"G- | $
-E3 "Am7/D"E- E3 "Abm7/Db"E- | E8- | E7 "Gm7/C"E- | E4 "Gm/Bb"E4 | $
-"C/A"E4 "C/Ab"E3 "G6"E | z8 | z7 "F7sus4"f | z4 z z2 "Bbm7"G | $
-z2 z "Abm7/Bb"B z z2 "G7"B | z8 | z7 "F7"G | z "F7"G z2 z2 z "Ab7sus4/Bb"G | $
-z G "Bbsus4"z2 z "F7sus4"G z "G7"G | z8 | z7 "F7"B | z7 "Bbm7/G"G | $
-z3 "Abm/Bb"G z3 "G7"G | z4 z2 | z7 "F7sus4"G | z G z2 z2 z "Ab7sus4"G | $
+z8 | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z4 z2 z G, | $
+z2 z _B, z2 z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z F, z2 z2 z _B, | $
+z C z z2 F, z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z4 z2 z G, | $
+z2 z _B, z2 z G, | z2 F,2 z2 z B,- | B,2 CC B,2 G,F, | z F, z2 z2 z __B, | $
+z C z z2 F, z G, |: "Gm7""^To CODA"z8 | "Gm"z8 | "C7"z8 | $
+"C7"z8 "^CODA""^Drum Solo"z8 | z4 z2 z F, | z2 z2 z z z _B, | z2 z C z2 z G, | $
+z8 | z4 z2 z F, | z F, z2 z2 z _B, | "^DC Al Coda"z C z2 z ^F, z G, :| $
+z2 "G7"b | z8 | z6 z "F7sus4"b | z7 "Bbm7/G"b | $
+z3 "Abm7/Bb"b z3 "G7"b | z8 | z7 "F7"b | z b z4 z "Ab7sus4"b | $
+z "Bb7/C"b z3 "F7"b z "G7"b | z8 | z7 "F7"b | z7 "Bbm7/G"b | $
+z3 "Abm7/Bb"b z3 "G7"b | z8 | z7 "F7"b | z b z4 z "Ab7sus4"b | $
+z "Bb7/C"b z3 "F7"b z "G7"b | z8 | z6 z "F7sus4"b | z7 "Bbm7/G"b | $
+z3 "Abm7/Bb"b z3 "G7"b | z8 | z7 "F7sus4"f' | e z6 "Ab7sus4/Bb"e | $
+z e "Bb7sus4/C"z2 z "F7sus4"e z "G7"e | z8 | z7 "F7"e | z7 "Bbm7/G"e | $
+z3 "Abm7/Bb"e z3 "G7"e | z8 | z7 "F7sus4"e | z d z z z z e "Ab7"z | $
+z "Bb7sus4/C"e z3 "Abm7"e z e- | "Gm7/F"e8- | e7 "Gm7/F"e- | e8- | $
+e7 e- | "Bbm7/F"e8- | e7 "F#m7"e- | e8- | $
+e4 z "C#m"c'2 "Cm/Bb"e- | b8- | e7 "C#dim/Bb"e- | g7 "Bbm7/Eb"g- | $
+e3 "Am7/D"e- e3 "Abm7/Db"e- | e8- | e7 "Gm7/C"e- | e4 "Gm/Bb"e4 | $
+"C/A"e4 "C/Ab"e3 "G6"e | z8 | z7 "F7sus4"f' | z4 z z2 "Bbm7"g | $
+z2 z "Abm7/Bb"b z z2 "G7"b | z8 | z7 "F7"g | z "F7"g z2 z2 z "Ab7sus4/Bb"g | $
+z g "Bbsus4"z2 z "F7sus4"g z "G7"g | z8 | z7 "F7"b | z7 "Bbm7/G"g | $
+z3 "Abm/Bb"g z3 "G7"g | z4 z2 | z7 "F7sus4"g | z g z2 z2 z "Ab7sus4"g | $
 z8 |: z8 | z8 | z8 | $
 z8 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 :|
@@ -18342,7 +20285,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id green-onions
 K:Ab
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
@@ -18362,7 +20307,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=123
+%%id the-groove-merchant
 K:Ab
+I:linebreak $
 z2 Fe a z2 Ae a | z B_f aA ac' z z2 | z2 _Ge a z2 Ff a | z Ee _G_f a_c =ae' | $
 ca e' z2 z4 | z8 | z8 | z4 FA AF | $
 c2 z2 z4 | z2 E=E FA AF | A2 z2 z4 | z4 FA AF | $
@@ -18421,7 +20368,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id groovy-samba
 K:Bb
+I:linebreak $
 z2 z DG G B2 |: "Gm7"d8 | "Ab7"z2 f/_f/e/d/ cB ^FD | "Gm7"=E8 | $
 "Gm7"z2 z DG Bd g | "Adim7"c/_d/c/B/ B6 | "D+7"z2 c/_d/c/B/ cB GF | "Gm7"G8 |1 $
 "Am7"z2 z "D7"DG G B2 :|2 "Gm7"z6 G,2 || "Cm"G8 | "F7"z FG A B2 AG | $
@@ -18438,7 +20387,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=165
+%%id grown-folks
 K:F
+I:linebreak $
 "_A""^Drum Intro"z8 | z8 | z8 || z8 || $
 "^B"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
@@ -18511,7 +20462,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id haitian-fight-song
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "_Sick Bass Solo"z8 z8 | z8 | z8 | z8 :| $
 z8 | z8 | "Bb"G6 B^c | dg ^c/d/c/=c/ (3BGB Gc- | $
 c4 (3c_dc Bd | d3 z z4 |: (3FGG (3GGG (3BGG (3GGG | (3FGG (3GGG (3BGG (3GGG | $
@@ -18536,8 +20490,11 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id hang-up-your-hang-ups
+%%tags needs-repair
 K:G
-|: "Em7""^Intro\n"AG E,/E,/E,/E,/ E,/E,/E,/E,/ E,/E,/E,/E,/ :| "Em7"^c/c/c/B/ z z z2 z z | e/e/e/d/ z2 z4 | ^c/c/c/B/ z z z2 z z | $
+I:linebreak $
+|: "Em7""^Intro"AG E,/E,/E,/E,/ E,/E,/E,/E,/ E,/E,/E,/E,/ :| "Em7"^c/c/c/B/ z z z2 z z | e/e/e/d/ z2 z4 | ^c/c/c/B/ z z z2 z z | $
 e/e/e/d/ z2 z4 | ^c/c/c/B/ z z z2 z z | e/e/e/d/ z2 z4 | ^c/c/c/B/ z e/e/e/d/ z z2 | $
 g/e/ z d/B/ z z4 | fe- e6 | z3 d z/ e/ z g2 | ^c f2 c e2 d/e/ z | $
 z/ z/ ^c B2- B2 ce | g/fe/- e6 | z3 d z/ e/ z g2 | ^c f2 c e2 A/G/ z | $
@@ -18545,13 +20502,13 @@ z G E2- E2 z2 | "B/C#"^DF ^c"C/D"E Gd "A7"=F_B _e"Gmaj7"F B=e "Em7"Ad g | Ad ge 
 Ad ge z2 z4 | "Db9"^DF ^c"D9"E Gd "Eb9"=F_B _e"Em7"F B=e "G9"Ad g | Ad ge z2 z4 | "Em7"c2 d2 ^d2 eg- | $
 ge z2 z4 | fe- e6 | z3 d z/ e/ z g2 | ^c f2 c e2 d/e/ z | $
 z/ z/ ^c B2- B2 ce | g/fe/- e6 | z3 d z/ e/ z g2 | ^c f2 c e2 A/G/ z | $
-z G E2- E2 z2 |: "Em7""^Intro\n"z8 | z8 | z8 | $
+z G E2- E2 z2 |: "Em7""^Intro"z8 | z8 | z8 | $
 z8 "Em7""^Solos"z8 :| "B/C#"^DF ^c"C/D"E Gd "A7"=F_B _e"Gmaj7"F B=e "Em7"Ad g | Ad ge z2 z4 | "B/C#"^DF ^c"C/D"E Gd "A7"=F_B _e"Gmaj7"F B=e "Em7"Ad g | $
 Ad ge z2 z4 | "B/C#"^DF ^c"C/D"E Gd "A7"=F_B _e"Gmaj7"F B=e "Em7"Ad g | Ad ge z2 z4 | z8 | $
 "B/C#"^DF ^c"C/D"E Gd "A7"=F_B _e"Gmaj7"F B=e "Em7"Ad g | Ad ge z2 z4 |: "Em7"^c/c/c/B/ z z z2 z z | e/e/e/d/ z2 z4 | $
 ^c/c/c/B/ z z z2 z z | e/e/e/d/ z2 z4 | ^c/c/c/B/ z z z2 z z | e/e/e/d/ z2 z4 | $
 ^c/c/c/B/ z z z2 z z | e/e/e/"^D.S. Al Coda"d/ z2 z4 :| Gc ^G^c Ad z2 z4 | dg ^cf =c=f z2 z4 | $
-Gc Gc ^G^c Ad z =G=c Gc ^G^c Ad z z2 | Gc Gc ^G^c Ad z =G=c Gc ^G^c Ad z z2 |: "^Piano Solo\n""G9"z8 | "F9"z8 | $
+Gc Gc ^G^c Ad z =G=c Gc ^G^c Ad z z2 | Gc Gc ^G^c Ad z =G=c Gc ^G^c Ad z z2 |: "^Piano Solo""G9"z8 | "F9"z8 | $
 "G9"z8 | "F9"z8 :| Gc Gc ^G^c Ad z =G=c Gc ^G^c Ad z z2 | Gc Gc ^G^c Ad z =G=c Gc ^G^c "^Fine"Ad z z2 |]
 
 X:611
@@ -18562,7 +20519,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id happy-people
 K:C
+I:linebreak $
 |: "Am7""^Bass Intro"A,,E, F,/E, A,,E, G,3/2 E, | A,,E, F,/E, A,,E, G,3/2 E, [K:treble]"Am7""^Head"ee/e/ d/dB/ z/ B/ z/ d/- d2- | d4 z4 | dd/d/ c/cA/ z/ A/ z/ c/- c2- | $
 c4 z4 | "Fmaj7"cc/c/ B/BF/- F3 c- | "Dm7"c2 B/BF/- F2 z2 | "Am"BB/B/ A/AA/- A4- |1 $
 A4 z4 :|2 A4 z2 z A || "A7"^c2 ea z3 A | "D7"d2 ^fa z2 d/A/c- | $
@@ -18577,7 +20536,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id hattie-wall
 K:none
+I:linebreak $
 [K:D]z8 | z8 | z8 | z8 || $
 B2 de- ed- dB | B2 de- ed- d2 | z8 | z8 | $
 B2 de- ed- dB | B2 de- ed- d2 | z8 | z4 z2 z/ c/f/a/ || $
@@ -18598,7 +20559,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id he-had-a-hat
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Fm11"A3/2 "Bbm11"B3/2 "Ebm11"B "Abm11"B3/2 "Dbm11"B3/2 "Gbm11"B | "Bm11"B3/2 "Ebm11"B3/2 B "Abm11"B3/2 "Dm11"B3/2 "Gbm11"B | "Fm11"A3/2 "Bbm11"B3/2 "Ebm11"B "Abm11"B3/2 "Dbm11"B3/2 "Gbm11"B | "Bm11"B3/2 "Ebm11"B3/2 B "Abm11"B3/2 "Dm11"B3/2 "Gbm11"B | $
 "F7#11"z8 | "Eb7#11"z8 | "Bbm11"z8 | "C7#9b13"z8 | $
 "F7#11"z8 | "Eb7#11"z8 | "Dm11"z8 | "Dbmaj9"z8 |: $
@@ -18620,7 +20584,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id headin-home
+%%tags needs-repair
 K:D
+I:linebreak $
 "A7#9"A z z/ A/A/ z/ z/ z A/ z2 | z/ A/ z [K:bass]z2 z/ A,,A,,/ C,=C, |: "Dm7""^Bass"D,,2 D, z z C,/D,/-D,/A,,/ =F,, | D,,D,, D, z z/ D,,/=F,,/D,,/G,,/ D,,/F,, :| $
 [K:treble]z4 z2 z/ "^Head"A,/=C |: "Dm7"D2 =F2 (3^G/A/G/F =G z G | G=F z2 z A,B, F | D2 z2 z/ A,/=C/D/ z/ C/=F, | $
 D,2 z2 z2 z/ A,/B, | "B7#9"D2 F2 B/=c/B/F/ A/ z {/=F}^F/ | ^E^D z2 z/ =F/=D FF | "Dm7"D2 z2 z/ A,/=C/D/ z/ C/=F, |1 $
@@ -18641,7 +20608,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id herbs-and-roots
 K:Bb
+I:linebreak $
 z4 z gb g |: "Cm7"c'2 bc' ac' z g | z gc' gf c' z f | =e2 c_e z2 c2- | $
 c2 BG (3_GFE CB, | E2 FC- C4 | z8 | z8 | $
 z gb g c'2 bc' | "Ab7"_ac' z _g z2 c'2 | f2 c'e z2 "Bb/A"f2- | f2 ec "Bb/Bb"c'c z2 | $
@@ -18668,7 +20637,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id hero-town
 K:C
+I:linebreak $
 |: "G"GG GG "E"EE EE | "F"FF FF FF FF | "Gpower""Epower"z8 | "Fpower"z8 | $
 "G""E"z8 | "F"z8 | "D7"DD DD "G"GG G"C"C | z "Dm"D"Cdim"^D "Em"EC "C"CC C | $
 "D7"DD DD "G"GG G"C"C | z6 "F#"^F2 || "G"z2 d/d/d/d/ "E"de AG | "F"z8 | $
@@ -18688,7 +20659,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id hi-heel-sneakers
 K:C
+I:linebreak $
 z _B2 =B2 c3 |: _e4 c4 | A_B c6 | z2 z c _e2 c2 | $
 _B2 G2 (3^F/=F/E/E C_B, | C2 z2 z4 | z2 {/^F}G2 (3F/=F/E/E C_B, | C2 z2 z4 | $
 z _B2 =B2 c3 | _e4 c4 | _B2 c6 | z2 z c _e2 c2 | $
@@ -18711,7 +20684,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id hide-and-amp-seek
 K:Bb
+I:linebreak $
 |: "B7#9"^f2 z2 z4 | z8 | z2 z ^f =f2 ^fg | z ^f z g z =f z2 | $
 ^f2 =f^f z4 | z8 | z ^f z2 =f2 z ^f | z c'2 =b a3 ^f | $
 "E7#9"f2 d=e z4 | z8 | z ^f2 d =f2 ^c2 | =e2 c2 ^d2 =B2 | $
@@ -18729,7 +20704,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id high-seas
+%%tags needs-repair
 K:Gb
+I:linebreak $
 z z E/G/ z/ A/A G (3zED |: E8 | z2 E/G/ z/ A/=A/_A/ G (3zED | E8 | $
 z2 E/G/ z/ A/A G (3zED | E8 | z EG EG ED B,E |1 B,E CG CG =CE DE | $
 z2 E/G/ z/ A/A (3zED z :|2 B,G || z2 z2 z2 z E | B3 E A3 E | $
@@ -18753,7 +20731,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id hippies-on-a-corner
 K:G
+I:linebreak $
 |: "Em""^Intro"E2 z2 GG AA | "A"z2 z2 AA BE | "Em"E2 z2 GG AA | "A"z4 AA B2 "Em7""^Head""^Same Notes, emphasis on Chords"z2 =F2 z F z F | $
 "A7"z =F z2 F2 F2 | "Em7"z2 =F2 z F z F | "A7"z4 AA B2 "Em"E2 z2 GG AA | "A"z2 z2 AA BE | $
 "Em"E2 z2 GG AA | "A"z4 AA B2 :| "Em7"z BB DB ^CB e2 B | "F#7"Ad AG- "E7"G4 | $
@@ -18769,7 +20749,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id home-fries
 K:Eb
+I:linebreak $
 z B,C z || E z z2 z4 | z B,C z E_G z E | z8 | $
 z4 z _DE _G | z8 | z _G z2 GE GF | z8 | $
 z B, z CE _G z E | z8 | z E =B2 GF EE | z4 z E z E | $
@@ -18778,11 +20760,11 @@ z8 | z _G=G/A/ B/c/_d/c/ B/cf/ e | z8 | z _D-D E/F/G GG A | $
 (3Bc_d- d2 z2 z2 | z A (3FEC (3A,B,E (3FE_G | z8 | z A2 (3G/F/E/B, _D z =D | $
 z8 | z E, z _G,/A,/=A, E, (3=G,B,E | z8 | z (3czA FE z z2 | $
 z c (3z=AF EC/E/ ^FG- | G3 A/B/G E z A | z _G (3E_DB, A,F, _G,E | "^TO CODA"z B, (3CEF _GE FE | $
-z8 |: "Eb7""_SOLOS\n"z8 | z8 | z8 | $
+z8 |: "Eb7""_SOLOS"z8 | z8 | z8 | $
 z8 | "G7"z8 | "Gb7"z8 | "F7"z8 | $
 "Bb7"z8 | "Eb7"z8 | z8 | "Ab7"z8 | $
 "Adim"z8 | "Gm7""C7"z8 | "Fm7""Bb7"z8 | "Eb7"z8 | $
-z8 :| "_CODA\n"z B, "Eb7"(3CEF _GE FG | "B7"z E/=B,/A, F "Bb7"z EF G- | "Gm7"G3 A/B/"C7"G E z A | $
+z8 :| "_CODA"z B, "Eb7"(3CEF _GE FG | "B7"z E/=B,/A, F "Bb7"z EF G- | "Gm7"G3 A/B/"C7"G E z A | $
 "F7"z _G (3E_DB, "Bb7"A,F, _G,E | "Eb7"z B, (3CE"Bb7"F _GE FE | "Eb7"z2 z E z4 |] z4 || $
 "Eb7"z8 | z8 | "Ab7"z8 | z8 | $
 z8 | "Gb7"z8 | "Fm7"z8 | "Bb7"z8 | $
@@ -18807,7 +20789,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=107
+%%id horace
 K:C
+I:linebreak $
 |: z F/^F/G/^G/ A/G/=G/=F/ D/FC/ "Dm7"D/ z/ | z2 FG/ FC D/ z z/ "Dm7"z/ | z F/^F/G/^G/ A/G/=G/=F/ D/FC/ "Dm7"D/ z/ | z2 FG/ FC D/ z z/ "G9"z/ | $
 z F/^F/G/^G/ A/G/=G/=F/ D/FC/ "G9"D/ z/ | z2 FG/ FC D/ z z/ "Dm7"z/ | z F/^F/G/^G/ A/G/=G/=F/ D/FC/ D/ "Dm7"z/ | z2 FG/ FC D/ z z/ z/ |1 $
 "G9"fd cd "F9"cA GA | "Em7"^G=G F/ G7/4 "Dm7"F/GF/ D/C/D/ | "C"z2 FG F z z/ A,/C/D/ | z2 G/F/D/ FD/C/ D/ z/ z z/ | $
@@ -18827,7 +20811,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id hudson
 K:F
+I:linebreak $
 z4 "Eb"GA F"Db"G |: "Em7""^2x Piano Fill"G z2 z/ "A7#9"G/ z4 | "Dm7"G z2 z/ "G7"G/ z4 | "Em11"G z z3/2 "A7#9"G/- G4 | $
 z4 "Eb"GA F"Db"G :| "Em11""^A"z2 dc- "A7"c2 G/A/c/e/- | "Dm7"e/cA/ c2 "G7"z2 C/D/F/A/- | "Em11"A/GF/ G2 c"A7#9"B/c/ (3_A/G/F/D/D/ | $
 "Dm7"z4 z4 | "Em7"z2 dA/c/- c2 "A7"G/A/c/e/- | "Dm9"e/cA/ cd/A/- A2 "G7#11"z/ D/F/A _c | "Em11"Ac G=c Fc Gc Gc "A7#9"F(3_A/G/F/ D/D/ | $
@@ -18852,7 +20838,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id humanism
 K:Cb
+I:linebreak $
 "^Guitar Intro"z8 | z8 | z8 | z2 z2 z2 z G/A/ |: $
 "Abm""Abm"cA cA cA c/d/e/e/ | "Db""Ab"z2 z2 z2 z G/A/ | "E""Dbm"cA cA cA c/d/e/d/ | "F#""F#"z2 z2 z2 z G/A/ | $
 "Abm""Abm"cA cA cA c/d/g/e/ | "Db""Ab"z2 z2 z2 z G/A/ | "E"cA cA cA c/d/e/d/- | "F#"d2- dc/B/- B2 z G/A/ """Abm""^Solos"z8 || $
@@ -18869,7 +20857,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=103
+%%id the-hustler
 K:F
+I:linebreak $
 |: "Dm7"z8 | "C#m7"z8 | "Cm7"z8 | "Bm7"z8 :| $
 "Dm7"AB (3A/B/A/G A z z2 | DF GF- F z z2 | C/C/D F/ z/ FD z z2 | z8 | $
 AB (3A/B/A/G A z z2 | DF GF- F z z2 | C/C/D F/ z/ FD z z2 | z8 | $
@@ -18904,7 +20894,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id i-wish
 K:Ebmin
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 g"Ebm7"a gf "Ab7"e2- ed | "Ebm7"ga/g/- gf/"Ab7"e/- e/=ce/- e/ee/- | "Ebm7"e2 z2 "Ab7"z4 | "Ebm7""Ab7"z8 | $
@@ -18932,7 +20924,10 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=150
+%%id i-don-t-want-no-one-but-you
+%%tags needs-repair
 K:C
+I:linebreak $
 z2 z z (3B,DE |: "Em7"D2 z2 (3B,DE | "A7"G,2 z2 (3B,DE | "Em7"D2 z2 (3B,DE | $
 "A7"G,2 z2 (3B,DE | "Em7"D2 z2 (3B,DE | "A7"G,2 z2 (3B,DE [K:treble]"^Head"z4 z e | "Em7"g3 a2 b | $
 "A7""^Bass Sim"(3g^fe- e3 d | "Em7"eg z2 z2 | "A7""_Bass Walk"z4 z e | "Em7"g3 a2 b | $
@@ -18952,7 +20947,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id idle-moments
 K:Cmin
+I:linebreak $
 |: "Cm"z g2 g g2 "Cmaj"g2 | "Cm7"g2 gg- "Cm6"g4 :| z "Cm"g2 g g2 "Cmaj"g2 | "Cm7"g2 g2 "Cm6"ga ef- | $
 "Dm7"f8 | "G7#9"z8 | z "Cm"g2 g g2 "Cmaj"g2 | "Cm7"g2 g2 "Cm6"ga ef- | $
 "Dm7"f8 | "G7#9"z8 | "Cm7"z g_g =gd' c'g e | "Fm7"b2 =a_a- a4 | $
@@ -18962,26 +20959,28 @@ K:Cmin
 X:629
 T:I'm Not So Sure
 C:Roy Hargrove
-Arr. 6EQUJ5
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=190
+%%id i-m-not-so-sure
 K:Eb
-z "G7"G z "Ab7"A z "A7"=A z "Bb7"B | "Eb7"E z z _D(3E/=D/_D/ B,E z | z8 | z8 | $
-z "G7"G z "Ab7"A z "A7"=A z "Bb7"B | "Eb7"E z z _D(3E/=D/_D/ B,E z | z8 | z8 | $
-z "G7"G z "Ab7"A z "A7"=A z "Bb7"B | "Eb7"E z z _D(3E/=D/_D/ B,E z | z8 | z8 | $
-z "G7"G z "Ab7"A z "A7"=A z "Bb7"B |: "Eb7"E z z _D(3E/=D/_D/ B,E z | z8 | z8 | $
-z "G7"G z "Ab7"A z "A7"=A z "Bb7"B | "Eb7"E z z _D(3E/=D/_D/ B,E z | z8 | z8 | $
-z "G7"G z "Ab7"A z "A7"=A z "Bb7"G || "Eb7"E z4 z "Gb7"E2- | E6 z z | "F7"E4 "Bb7"E3 "Eb7"E | $
-z8 | "Eb7"E z6 "Dbm7"E- | E3 "Gb7"E4 z | "F7""Bb7"z8 | $
-"Db7#9"E8- | E8 | "D7#9"E8- | E8 | $
-"Eb7#9"E8- | E8 | "E7#9"E8 | z "G7"G z "Ab7"A z "A7"=A z "Bb7"B :| $
-z G,,,A,,, A,,=A,,, =A,,B,,, B,, | E,, z z _D,E, B,,E, z | z4 B,,A,, _D,,2 | E,, z z2 z4 | $
-z G,,,A,,, A,,=A,,, =A,,B,,, B,, | E,, z z _D,E, B,,E, z | z3 A,,B,, A,, _D,,2 | E,, z z2 z4 | $
-z G,,,A,,, A,,=A,,, =A,,B,,, B,, | E,, z z _D,E, B,,E, z | z3 A,,B,, A,, _D,,2 | E,, z z2 z4 | $
-z G,,,A,,, A,,=A,,, =A,,B,,, B,, |: E,, z z _D,E, B,,E, z | z4 B,,A,, _D,,2 | E,, z z2 z4 | $
-z G,,,A,,, A,,=A,,, =A,,B,,, B,, | E,, z z _D,E, B,,E, z | z3 A,,B,, A,, _D,,2 | E,, z z2 z4 | $
+I:linebreak $
+z "G7"g z "Ab7"a z "A7"=a z "Bb7"b | "Eb7"e z z _d(3e/=d/_d/ Be z | z8 | z8 | $
+z "G7"g z "Ab7"a z "A7"=a z "Bb7"b | "Eb7"e z z _d(3e/=d/_d/ Be z | z8 | z8 | $
+z "G7"g z "Ab7"a z "A7"=a z "Bb7"b | "Eb7"e z z _d(3e/=d/_d/ Be z | z8 | z8 | $
+z "G7"g z "Ab7"a z "A7"=a z "Bb7"b |: "Eb7"e z z _d(3e/=d/_d/ Be z | z8 | z8 | $
+z "G7"g z "Ab7"a z "A7"=a z "Bb7"b | "Eb7"e z z _d(3e/=d/_d/ Be z | z8 | z8 | $
+z "G7"g z "Ab7"a z "A7"=a z "Bb7"g || "Eb7"e z4 z "Gb7"e2- | e6 z z | "F7"e4 "Bb7"e3 "Eb7"e | $
+z8 | "Eb7"e z6 "Dbm7"e- | e3 "Gb7"e4 z | "F7""Bb7"z8 | $
+"Db7#9"e8- | e8 | "D7#9"e8- | e8 | $
+"Eb7#9"e8- | e8 | "E7#9"e8 | z "G7"g z "Ab7"a z "A7"=a z "Bb7"b :| $
+z G,,A,, A,=A,, =A,B,, B, | E, z z _DE B,E z | z4 B,A, _D,2 | E, z z2 z4 | $
+z G,,A,, A,=A,, =A,B,, B, | E, z z _DE B,E z | z3 A,B, A, _D,2 | E, z z2 z4 | $
+z G,,A,, A,=A,, =A,B,, B, | E, z z _DE B,E z | z3 A,B, A, _D,2 | E, z z2 z4 | $
+z G,,A,, A,=A,, =A,B,, B, |: E, z z _DE B,E z | z4 B,A, _D,2 | E, z z2 z4 | $
+z G,,A,, A,=A,, =A,B,, B, | E, z z _DE B,E z | z3 A,B, A, _D,2 | E, z z2 z4 | $
 z8 || z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
@@ -18995,7 +20994,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id in-all-my-wildest-dreams
 K:E
+I:linebreak $
 |: "G#m7""^Rhodes"DE FG/E/- "A"E2 A,B,/C/ | "F#m7"EF/E/ z/ F/"C#m7"E- E4 | "G#7"DE/F/ z/ G/F/E/- E2 "A"A,(3B,/C/E/ |1 "E/G#"GF/F/ z/ "F#m/A"E/E "E"E4 :|2 $
 "_Bass (or something similar)"G"E/G#"F/F/ z/ E/"F#m"E E4 || "E"z8 | "D/E"z8 | "E"z8 | $
 "D/E"z8 |: "G#m7"DE FG/E/- "A"E2 A,B,/C/ | "F#m7"EF/E/ z/ F/"C#m7"E- E4 | "G#7"DE/F/ z/ G/F/E/- "A"E2 A,(3B,/C/E/ | $
@@ -19021,7 +21022,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id inner-city-blues
 K:Gb
+I:linebreak $
 z/ F,/A, B,D/B,/ |: EB, D/E/E, GB, DE | EB, D/E/E,/E,/- E,2- E,B, :| [K:treble]z15/2 B/- || $
 "Ebm7"B/A/ z z2 z2 z/ AG/- | GE/ z4 z2 B/- | (3BAG- GA z3 E | G/D/E- E2 z2 z3/2 d/- | $
 d-(3d/B/A/ G/ z2 z2 AG/- | GE/ z4 z2 B/- | B/A G A3/2 z2 z/ AG/- | GE/ z4 GE/ G | $
@@ -19041,7 +21044,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=225
+%%id instant-death
 K:C
+I:linebreak $
 |: z4 "C"E/E/F/F/ ^F/F/G | "C"z2 c2 z G_B c | "C"z4 E/E/F/F/ ^F/F/G | "C"z2 c2 z G_B c "C"z2 _B2 z A z2 | $
 "C"G2 z2 F2 GE- | "C"E2 z2 z2 _Bc- |1 "C"c c2 _B c2 B2 :|2 "C"c c2 c_e cF C || $
 "C"E z c2 z _B2 z | "C"G2 z _G- (3GF_E C2 | "C"E2 z2 z4 | "C"C2 z2 C2 z2 | $
@@ -19056,7 +21061,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id is-you-is-or-is-you-ain-t-my-baby
 K:Emin
+I:linebreak $
 G |: cd- d6- | d4 ed cA | G3 c ^A4 | z7 G :| $
 "Em7""^A"^A2 =AG "Em/D"A2 G2 | "C7"A G2 "B7"^A3 z2 |
 w: |||||I got a gal that's|al- ways late|
@@ -19118,7 +21125,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id isn-t-she-lovely
+%%tags needs-repair
 K:C
+I:linebreak $
 z2 (3e2f2e2 |: "Am7"d4 c4 | "D7"z2 z2 (3e2f2e2 | "Dm7"d4 "G7"c2 A-A | $
 "C"G2 z2 (3e2f2e2 | "Am7"d4 c4 | "D9"z2 z2 (3e2f2e2 | "Dm7"d4 c2 (A2 | $
 "C"G2) z2 ef "C7"g2 | "Fmaj7"g3 e f2 gf- | "E13"f4 e2 e2 | "Am7"dc de- e2 B2 | $
@@ -19133,7 +21143,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=170
+%%id israel
 K:Eb
+I:linebreak $
 "^Intro"de fc' bg f2- | "C"f8 | "F"z4 g_g e_c- | c2 g_g e _c3 | $
 "C"de fc' bg fc' | bg fc' bg fg | z g- g6 | "^Fill"g2 z g- g4 |: $
 "^Head"z2 "Cm7"fg d c2 g- | "Cm"gg (3fed c2 BG- | "Cm6"G4 B2 dG- | "C7"G4- GG ce- | $
@@ -19149,7 +21161,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id it-s-all-right-now
 K:Eb
+I:linebreak $
 |: z A2 A-A A2 G | z2 EB, _D z B,2 | z A2 A-A A2 G | $
 z2 EB, _D z B,2 :|
 |: "Bb7"z8 | "Eb7"z8 | "Bb7"=e2 z2 _e2 z =e- | $
@@ -19172,12 +21186,15 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id it-aint-necessarily-so
+%%tags needs-repair
 K:Gb
+I:linebreak $
 "Ebm7""Db"z8 | "B""Bb7"z8 | "Ebm7"z8 | "B"z4 "Bb7"z B (3def |: $
 {/=b}"Ebm7""^Head"_b2 {/=a}_ag (3a"Db"=a/_a/ ga g | "B"ab z2 z "Bb7"B (3def | "Ebm"b2 ag ag "Db"ag | "B"(3age- e "Gb7"z2 B "A7"(3ceg | $
 "Am7"(3be'a (3e'gd' (3f"Db7"z^G (3=A^c=e | "Gbm7"(3^g^c'^f (3c'=e"B7"=b (3^dz=G (3A=c_e | "Ab/Bb"ba (3e=c"Bb7"A d'2 bf- | "Ab7#11"f4 z B (3def || $
 "Ebm7"b2 ag ag "Db"ag | "B"ab z2 "Bb7"z B (3def | "Ebm"b2 ag a"Db"g ag | "B"(3age- e "Bb"z2 "A7"B (3ceg | $
-"Abm7"(3be'a (3e'gd' "Db7"(3fz^G (3=A^c=e | "Gbm"(3^g^c'^f (3c'=e=b "B7"(3^dz=G (3=A=c_e | "Ab/Bb"ba (3e=cA "Bb7#9"d'2 bf- | "Ab7#11""_Solos Over Form\n"f4 z4 :|
+"Abm7"(3be'a (3e'gd' "Db7"(3fz^G (3=A^c=e | "Gbm"(3^g^c'^f (3c'=e=b "B7"(3^dz=G (3=A=c_e | "Ab/Bb"ba (3e=cA "Bb7#9"d'2 bf- | "Ab7#11""_Solos Over Form"f4 z4 :|
 
 X:638
 T:It's Your Thing
@@ -19187,7 +21204,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id it-s-your-thing
 K:F
+I:linebreak $
 |: "F7#9"F2 _A2 G2 z2 | "Bb7"F/FF/ z/ F/_A G2 z2 | "F7#9"F2 _A2 G2 z2 | "Bb7"F/FF/ z/ F/_A G2 z2 :| $
 z4 z z/ F/c/_A =A/ | F2 z2 _E/E/E/E/ z F | _A,2 z2 z4 | cB Ac z z/ C/D F | $
 _AG F_E/F/ z z/ F/c/A =A/ | F2 z2 _E/E/E/E/ z F | _A,2 z2 z4 | cB Ac z z/ C/D F | $
@@ -19205,7 +21224,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id it-s-on
 K:Ab
+I:linebreak $
 "Fm7""^A"z8 | z8 | z8 | z8 |: $
 "Fm7""^B""^After 1x, imrpov"z4 Cc B/A/F/A/ | "C/E"Bc c2 z2 cB/A/ | "Fm7/Eb"Bc c4 BA |1 "Bb/D"BF "Eb"z B "C/E"A2 z2 :| $
 "Bb/D"z4 "Eb"z CF "C"EA FB || "Fm7""_C"cc z4 BA | "Bb9"BF- F4 AB | "Eb9"cd cB A2 FB | $
@@ -19221,7 +21242,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id james-bond-theme
 K:G
+I:linebreak $
 "Em"B,4 "C"C4 | "Em"^C4 "C"=C4 | "Em"B,4 "C"C4 | "Em"^C4 "C"=C4 |: $
 "Em"EF/F/ F"C"F- FE EE | "Em"EG/G/ GG- "C"GF FF | E"Em"F/F/ F"C"F- FE EE | "Em"EG/G/ GG- "C"GF FF | $
 "Em"EF/F/ FF- "C"FE EE | "Em"EG/G/ GG- "C"GF FE | "Em"^d=d- d4 BA | "Em9"B8 :| $
@@ -19242,7 +21265,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=110
+%%id jazz-crimes
 K:A
+I:linebreak $
 |: z "F#7"B z2 "A13"B2 z "Bb7"B | z2 "Eb7#9"B2 z "D"B "C#"B2 | z "F#13"B z2 "B7"B2 z "D7"B- | B"Gmaj7"B z/ z2 "Bmaj7"B3/2 z/ "A9"B3/2 "F#7"z F/E/F C"A13"E/A/ F "Bb7"z F/D/- | $
 "Eb7#9"D/F/C/F/ "D"=G=C- "C#"C/^C/D/^A/ D=C/A,/ | "F#13"B,/D/F- F/=F"B7#9"E/- E/=G/^G/F/ ^D"D7"=D/=C/ | "D7"=G/F/B, "Gmaj7"A,B, ^A,/"Bmaj7"D/C/E/ "A9"^D/^G/A/E/ | "F#7"z F/E/^A G"A13"=G/=c/ ^c2 =c/"Bb7"^G/- | $
 "Eb7#9"G/=G/d/B/ ^d3/2 ec/f/ "D"B/A"C#"^G/ F/ | "F#13"B/c/d- d/"B7"e =f^f/=g/ c/B"D7"A/ =G/ | "Gmaj7"d/c/F ED/F/ =F/"Bmaj7"A/G/=c/ "A"B/d/^d/=G/ :|3 "Gmaj7"f4- f"A13"f fe/f/- | $
@@ -19263,7 +21288,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id jean-de-fleur
+%%tags needs-repair
 K:C
+I:linebreak $
 "G#m7"z G,^D G,D G,D G,D z F,^C | "F#m7"F,C | "G#m7"z ^G,^D G,D G,D G,D z G,E | "Amaj7"G,E | $
 z "G#m7"^D^G DG DG DG z ^CG | "F#m9"CG | "G#m7"z ^D^G DG DG DG z EG | "Amaj7"EG EG B,C "Bb13"G- | $
 "Bb13"G4- GB, CG || "Bb13"z B,C G z ^F z "A13"=F- | "Ab13"F4- FA, _B,F | "Ab13"z A,_B, F z ^F z "A13"G- | $
@@ -19290,7 +21318,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id jig-a-jug
 K:Db
+I:linebreak $
 |: d2 z2 F2 z2 | G2 z A z Bd B | d2 z F z2 G2 | z3 =GA Bd B :| $
 z8 |: z4 a _c'2 g || "Ab7"z2 _fd =g_g/f/ d_c || {B_c}"Db7"=c2 d2 {B_c}=c2 _d2 | $
 z _f z3 AB A | c2 d2 c2 d2 | z =g_g =g_g _f/d/_c A | c2 d2 c2 d2 | $
@@ -19313,7 +21343,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id jive-samba
 K:F
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 || $
 "F7#9"_A2 z F "F"F2 z2 | "F7#9"_A2 z F "F"F2 z2 | "F7#9"_A2 z F "F"F2 z2 | "F7#9"_A2 z F "F"F2 z F |: $
@@ -19338,7 +21370,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id joe-avery-s-blues-second-line
 K:Bb
+I:linebreak $
 |: "^Trumpet Intro"z4 z2 fg | _a6- af | "^Hey!""_repeat Ad Nauseum"z8 "Bb7""^Head"B,2 D2 F2 z2 | B,2 DF z F z F | $
 B,2 D2 F2 z2 | B,2 DF z F z F | "Eb7"E2 G2 B2 z2 | E2 GB z B z B | $
 "Bb7"B,2 D2 F2 z2 | B,2 DF z z FF | "F7"F2 FF F2 FF | F E3 D2 C2 | $
@@ -19355,7 +21389,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id jumpin-with-symphony-sid
 K:C
+I:linebreak $
 G"C7"A ce z e2 e- | e2 dc de z2 | "F7"GA ce z e2 e- | "C7"e2 dc de z2 | $
 "C7"GA c_e z e2 e- | e2 dc d_e z2 | "F7"GA ce z e2 e- | e2 dc de z2 | $
 "G7"GA c_e z e2 e- | "F7"e2 dc d_e z2 | "C7"GA ce z e2 e- | e2 z2 z4 |]
@@ -19368,7 +21404,9 @@ N:Source: jazzXML
 M:5/4
 L:1/8
 Q:1/4=200
+%%id jungle-juice
 K:G
+I:linebreak $
 |: "Em7"E2 z A2 d B2 e2 | E2 z A2 d B2 e2 "Em7"e d2 _B2 G A2 G2 | z10 | E G2 G2 E A2 z2 | $
 z10 | e d2 _B2 G A2 G2 | z10 | E "C7"G2 G2 E G4- | $
 G8- G2 | "Em7"E G2 G2 E G4- | G4- G6 | "Em7"z10 | $
@@ -19389,7 +21427,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id just-the-two-of-us
+%%tags needs-repair
 K:Ab
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 z8 | z8 |: "Dbmaj7"z AA AG "C7"GA B | "Fm7"c2 de "Ebm7"fe "Ab7"cB | $
@@ -19406,7 +21447,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id kd-s-motion
 K:Ab
+I:linebreak $
 z4 z E (3GBc | "Eb7"e2 e2 ee z2 | "Ab7"e2 ee e2 e2- | "Dbm7"e4 ee z z | $
 "B7"a_g ed B"Bb7"d ee | "Bb7"z3 e/d/B de e | "Bb7"z4 z E (3GBc | "Eb7"e2 e2 ee z2 | $
 "Ab7"e2 ee z2 e2 | "Db7"e4 "Gb7"ee z2 | "Bb7"a_g ed "Ab7"Bd ee | "Bb7"z3 e/d/B de e | $
@@ -19427,9 +21470,11 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id kedem
 K:C
-|: "^Bass Intro\n"!courtesy!=c3 c3 z2 | x8 | !courtesy!=c3 c3 z2 | x8 :| $
-"_Head\n"(3_edc d6- | d4 dc _BA | G8- | G6 (3_edc | $
+I:linebreak $
+|: "^Bass Intro"!courtesy!=c3 c3 z2 | x8 | !courtesy!=c3 c3 z2 | x8 :| $
+"_Head"(3_edc d6- | d4 dc _BA | G8- | G6 (3_edc | $
 d8- | d4 dc _BA | G8- | G6 (3G_AB | $
 c8- | c6 (3G_AB | c8- | c6 (3G_AB | $
 c8- | c6 (3G_AB | c8- | c8 |] $
@@ -19456,7 +21501,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=170
+%%id let-it-flow
 K:F
+I:linebreak $
 |: D,3/2 A,A, =B,/ C2 z2 | D,3/2 A,A, =B,/C B,A, F, [K:treble]z4 "Em7"d2 "Dm7"d2 | "Dm7"z z z2 z4 :| z4 z DE F |: $
 A"Gm7"B AG FD G"Am7"E- | E2 "A7"C A,2 F2 ^C | E4- "Em7"E3 "Dm7"D- | "Dm7"D8 | $
 "Em7"z8 | "Dm7"z4 z DE F | "Gm7"AB AG FD "Am7"GE- | "A7"E-E C A,2 F2 ^C |1 $
@@ -19479,7 +21526,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id liberia
 K:Eb
+I:linebreak $
 "Fm"e8 | "Cm"c8 | "Fm"z4 e4- | "Cm"e4 c4 | $
 "Fm"e6 ec- | "Cm"c8 | "Dm7"Gc ^FC "G7"=F2 CE- | "Cm7"E8 | $
 "D7"_c7 B | "D7"_c3 B c3 B | "D7"_c4 A4- | "D7"A6 z2 | $
@@ -19503,7 +21552,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id like-young
+%%tags needs-repair
 K:Ab
+I:linebreak $
 |: "Ab7"z A _c2 dc A2 | d_c Ad z c3 | z A _c2 dc A2 | z (3=d/_d/_c/A A z4 | $
 "Db7"z A _c2 dc A2 | d_c Ad z c3 | "Ab7"z A _c2 dc A2 | z (3=d/_d/_c/A A z4 | $
 "Bbm7"z A _c2 dc A2 | d_c Ad "Eb7"z c3 | "Ab7"z A _c2 dc A2 | z (3=d/_d/_c/A A z4 :| $
@@ -19520,7 +21572,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id listen-here
 K:Eb
+I:linebreak $
 |: "Bb7"B,A, B, z2 A,B, A, | "Eb7"E-E B,_D B,E B,D :| "Bb7"z8 | "Eb7"z4 z2 B,A, | $
 "Bb7"B,4 z4 | "Eb7"z2 z B,E GF E | "Bb7"D2 B,4 z2 | "Eb7"z4 EG FE | $
 "Bb7"D2 B,4 z2 | "Eb7"z2 z B,E GF E | "Bb7"D2 B,4 z2 | "Eb7"z4 z2 BA | $
@@ -19535,7 +21589,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id lotus-blossom
 K:C
+I:linebreak $
 |: "Dm7"d2- d "C7"c3 "Dm7"d z | "Dm7"z cd fd cA G | "Cm7"A3 "F7"G3 "Bbmaj7"A z | "Bbmaj7"z GA cA GF D | $
 "Bm"FD z "B7"GD z "A7"_AD- | D2 F2 GF DD |1 "Dm7"z ^G,A, E z "C7"B,C G | z "Em7"EF c- "A7"c2 z2 :|2 $
 z8 || z B,C D_E FG A | "Am7"d4- d2 c_B- | "D7"B4- B2 A_B- | $
@@ -19552,7 +21608,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id love-for-sale
 K:Bb
+I:linebreak $
 "Ebmaj7"B8- | "Ebmaj7"B2 z2 G4 | "Bbm7"F8- | "Bbmaj"F6 z2 | $
 "Ebmaj7"z2 BB B2 B2 | "Ebmaj7"B2 B4 G2 | "Bbm"F8- | "Bbm"F8 | $
 "Ebmaj7"z B3 B2 B2 | "Ebm7"B c2 c- "D7"c4 | "Db7"z _A3 A2 A2 | "Dbm7"_A _G2 "Gb7"G- G4 | $
@@ -19578,11 +21636,15 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id lovely-is-today
+%%tags needs-repair
 K:C
+I:linebreak $
 "Em7"B4- B E2 G- | "Em7"G4 z4 | "Eb7"z4 B A2 G- | "Eb7"G _E2 G2 A2 G | $
 "Em7/D"B4- B D2 G- | "Em7/D"G4 z4 | "Dbm7"z4 B A2 G- | "Dbm7"G _D2 G2 A2 G | $
 "Cm7"B4- B C2 G- | "Cm7"G4 z4 | "D7"z4 B A2 G- | "D7"G E2 G2 A2 E | $
-"Ebm7"G4- G3 F- | "F7""_Intro-Vamp form no melody\nSolos-over form"F4 (3z2D2F2 | "G7"D8 | "G7"z2 EG- G A2 E |]
+"Ebm7"G4- G3 F- | "F7""_Intro-Vamp form no melody
+Solos-over form"F4 (3z2D2F2 | "G7"D8 | "G7"z2 EG- G A2 E |]
 
 X:658
 T:Lulu Swing (Lulu's Swing)
@@ -19592,7 +21654,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id lulu-swing-lulu-s-swing
 K:D
+I:linebreak $
 |: "D69""_Repeat ad infinitum"z8 | "A+"z8 :| "D"z4 z AB d || "D69""^A"ff fA- A4 | $
 z AB df AB d | "E9/B"ff f^G- G4 | z ^GB df GB d | "Em7"ff fG- G4 | $
 "A7"z =f^f a =f4 | "D"z2 fb =f_b ea "Bm7"ea _e_a | "Em7"dg dg _d_g "A7"=c=f B=d | "D"ff fA- A4 | $
@@ -19611,7 +21675,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id mk
+%%tags needs-repair
 K:D
+I:linebreak $
 |: "^Contemporary Schmaltz"z8 | z8 :| z8 | z4 z2 z B/F/ |: $
 AB z2 z4 | z4 (3=F/E/D/E- E^F/D/- | DB, z2 z4 | z4 =f/d/e/d/ d/A/B/F/ | $
 AB z2 z4 | z4 (3=F/E/D/E/D/- DB,/A/- | A8- | A4 z2 z B/F/ | $
@@ -19632,7 +21699,9 @@ z2 z "Dmaj7"F/F/ z2 z/ F/ z | "Gm7"A7/2 "C7"F/ z4 | z2 z "Dmaj7"F/F/ z2 z/ F/ z 
 z2 z "Dmaj7"F/F/ z2 z/ F/ z | "Gm7"F3 "C7"F4- F | "Bm7"z8 | "Em7"z8 | $
 "D7sus4"z c z/ "Ab7"c3/2 "G7"A2 z/ A/ z | "Bb7"AA z2 "C7"A2 "C#7"A2 | z "D7sus4"A z/ "Ab7"A3/2 "G7"A2 z/ A/ z |1 "Bb7"AA z2 "C7"A2 "C#7sus4"A2 | $
 z "D7sus4"A z/ "Ab7"A3/2 "G7"A2 z/ A/ z | "Bb7"AA z2 "C7sus4"A2 "C#7sus4"A2 | z "D7sus4"A z/ "Ab7"A3/2 "G7"A4 | "Bb7"AA "^Break"z2 "C7sus4"A2 "C#7sus4"A2 :|2 $
-"Bb7"AA "^Break\n\n"z2 "C7sus4"A2 "C#7sus4"A2 || [M:5/8]"Eb9"z5 | "Eb9"z5 | "F9sus4"z5 | $
+"Bb7"AA "^Break
+
+"z2 "C7sus4"A2 "C#7sus4"A2 || [M:5/8]"Eb9"z5 | "Eb9"z5 | "F9sus4"z5 | $
 "F9"z5 | "Ab9"z5 | "Ab9"z5 | [M:4/4]"A9"D,2 z2 z4 |: $
 "Dmaj7"z8 | "Gm7""C7"z8 :| "Fmaj7""Bbmaj7"z8 | "Em7""A7"z8 |: $
 "Dmaj7"z8 | "Gm7""C7"z8 :| "Bbmaj7"BA z "Am7"A3 z/ A/ z | "Gm7"BB z "Eb7"B- B4 | $
@@ -19648,9 +21717,12 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id bass-for-mk
+%%tags needs-repair
 K:D
+I:linebreak $
 |: D,3 D,4- D, | _B,3 C,4- C, :| D,3 D,4- D, | _B,3 C,4- C, |: $
-"^Sign\n"D,2 z A,,/B,,/D, E,/=F,/^F,/ z D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | D,2 z A,,/B,,/D, E,/=F,/^F,/ z D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | $
+"^Sign"D,2 z A,,/B,,/D, E,/=F,/^F,/ z D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | D,2 z A,,/B,,/D, E,/=F,/^F,/ z D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | $
 D,2 z A,,/B,,/D, E,/=F,/^F,/ z D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | _B,,B,, z A,,4- A,, | G,=F, z _E,4- E, | $
 D,2 z A,,/B,,/D, E,/=F,/^F, z/ D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | D,2 z A,,/B,,/D, E,/=F,/^F, z/ D,/ | G,D,/D,/ z/ =C,/C,- C,3 A,,/B,,/ | $
 B,,7/2 B,,/ =F,7/2 B,,/ | E, E,,3 =C,2 ^C, z/ C,/ | B,,/D/=C z/ _A,,3/2 G,,A, B,/D,/=C, | _B,,B,, z3/2 =C,/ C,2 ^C,C, | $
@@ -19669,7 +21741,9 @@ z2 z "Dmaj7"F/F/ z2 z/ F/ z | "Gm7"A7/2 "C7"F/ z4 | z2 z "Dmaj7"F/F/ z2 z/ F/ z 
 z2 z "Dmaj7"F/F/ z2 z/ F/ z | "Gm7"F3 "C7"F4- F | "Bm7"z8 | "Em7"z8 | $
 "D7sus4"z c z/ "Ab7"c3/2 "G7"A2 z/ A/ z | "Bb7"AA z2 "C7"A2 "C#7"A2 | z "D7sus4"A z/ "Ab7"A3/2 "G7"A2 z/ A/ z |1 "Bb7"AA z2 "C7"A2 "C#7sus4"A2 | $
 z "D7sus4"A z/ "Ab7"A3/2 "G7"A2 z/ A/ z | "Bb7"AA z2 "C7sus4"A2 "C#7sus4"A2 | z "D7sus4"A z/ "Ab7"A3/2 "G7"A4 | "Bb7"AA "^Break"z2 "C7sus4"A2 "C#7sus4"A2 :|2 $
-"Bb7"AA "^Break\n\n"z2 "C7sus4"A2 "C#7sus4"A2 || [M:5/8]"Eb9"z5 | "Eb9"z5 | "F9sus4"z5 | $
+"Bb7"AA "^Break
+
+"z2 "C7sus4"A2 "C#7sus4"A2 || [M:5/8]"Eb9"z5 | "Eb9"z5 | "F9sus4"z5 | $
 "F9"z5 | "Ab9"z5 | "Ab9"z5 | [M:4/4]"A9"D,2 z2 z4 |: $
 "Dmaj7"z8 | "Gm7""C7""_Cue"z8 :| "Fmaj7""Bbmaj7"z8 | "Em7""A7"z8 |: $
 "Dmaj7"z8 | "Gm7""C7"z8 :| "Bbmaj7"BA z "Am7"A3 z/ A/ z | "Gm7"BB z "Eb7"B- B4 | $
@@ -19685,7 +21759,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id mamblues
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "Bb7""_A"G2 B2 _d e2 =e- | e f2 _f_e _d B2 | Ge _d B2 Ge |1 Ge _d7 :| $
 "Bb13""_B"fb fb fb | fb f2 g2 | fb fb fb | fb f2 g2 | $
 "Eb9"fb fb fb | fb f2 g2 | fb fb fb | fb "D9"=ea | $
@@ -19695,7 +21772,9 @@ K:Bb
 Ge _d3 z F G2 || "^D"DB "Bb"DB C_A CA DB | DB DB C_A CA CA | DB DB C_A CA DB | $
 DB DB ^F D2 B,2 |: "Bb7""^E"z8 | z8 | z8 | $
 z8 | "Eb7"z8 | z8 | "Bb7"z8 | $
-z8 | "Cm7"z8 | "F7"z8 | "Dm7""_A Section: 1-2, vibes only\n			  3-4,Vibes and Piano\n			  4-6,All""G7"z8 | $
+z8 | "Cm7"z8 | "F7"z8 | "Dm7""_A Section: 1-2, vibes only
+			  3-4,Vibes and Piano
+			  4-6,All""G7"z8 | $
 "Cm7""F7"z8 :| |: x8 | x8 | x8 |1 $
 z2 z F,G B,,B, :| x8 | x8 | x8 | $
 x8 | x8 | x8 | x8 | $
@@ -19717,7 +21796,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id mamacita
 K:F
+I:linebreak $
 "_Intro"z4 z2 z F |: "F7"C3 F-F F2 F | "F7"C3 F-F- F-F F | "F7"C3 F-F F2 F | $
 "F7"CF- F3 F z G "F7""^A""^Tag"F2 C_E- E4- | "F7"E6 z G || "F7"F2 CC _EC EC- | "F7"C3 G F3 c | $
 "Bb9"B2 FF _AF AF- | "Bb9"F3 G z2 z G | "F7"F_E CB, EC EC | z2 z "D7#9"F z4 | $
@@ -19738,7 +21819,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id mambo-inn
 K:C
+I:linebreak $
 |: "Dm7"A2 c2 d3 "G7"B- | "Cmaj7"B- B2 "Am7"c z e2 a | "Dm7"g4 e3 "G7"c- | "Cmaj7"c4 z4 | $
 "Dm7"A2 c2 d3 "G7"B- | "Cmaj7"B- B2 "Am7"c z e2 a | "Dm7"g4 e3 "G7"c- | "Cmaj7"c4 z4 :| $
 "Fm7"c3 g3 f2 | "Bbm7"g3 f3 g2 | "Ebmaj7"_B3 f3 _e2 | f4 z4 | $
@@ -19754,7 +21837,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id manteca
 K:Bb
+I:linebreak $
 |: z2 z _AB BA B- | B A2 B2 B,2 z B2 b2 z B2 b- | b z2 B2 b3 B2 z fb b z f | B2 z _A2 B2 z | $
 z8 | z8 "Bb7"z8 | z8 | z8 | $
 z8 "Bb7"F2 _A2 A B2 B- | B_A F B2 A3 | F2 _A2 A B2 B- | "Bb7"B_A F B2 A3 | $
@@ -19773,7 +21858,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id maritza
 K:Bb
+I:linebreak $
 |: "^A"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z7 c"^Bari Continue Motif""_B"e/f/ cc cc cB _A | $
 c2 _dc- c2 z c | ef- fb/_a/- a2- (3aba | g_a ga g4- | g_c =c_d cd cc | $
@@ -19799,7 +21886,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mating-call
 K:F
+I:linebreak $
 "F"C2 cG z _D2 G | C2 cG z _D2 G | z8 || z4 z2 C2 |: $
 "F"c8- | c3 B z G z F | G2 BG- G4 |1 z4 z2 C2 :|2 $
 G8 || z4 z2 C2 |: "Cm7"c8- | "Cm7"c3 B z "Db9"G z F | $
@@ -19820,7 +21909,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mean-greens
 K:F
+I:linebreak $
 z8 |: "F7"z FB eA cf z | "Eb7"z _E_A _d_G B_e z | "Db7"z _D_G _cF _A_d z |1 $
 "C7"B,F AD Gc z2 :|2 "Db7"z _D_G _cF _A_d z || "C7"z eA EB, ^FA z || "F7"z8 | $
 z8 | z8 | z8 | z8 | $
@@ -19844,11 +21935,26 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mean-old-world
+%%tags needs-repair
 K:G
+I:linebreak $
 "G9"B"G13"B "G9"B2 "F9"B"F13"B "F9"B2 | "Eb9"B"Eb13"B "Eb9"B2 "D9"B4 | "G9"B"G13"B "G9"B2 "F9"B"F13"B "F9"B2 | "Eb9"B"Eb13"B "Eb9"B2 "D9"(3z2g2g2 |: $
 "G7"gg =fd- d4 | "C9"z g (3g=fd fd (3c_BG- | "G7"G2 z2 "D7"z4 | "G7"z4 (3z2g2g2 | $
 "C9"(3g2g2d2 c3 z | "C9"=f2 gf fd c_B | "G7"(3GD2-"D7"D2 z4 | "G7"z4 "Bbm7"z =fg g- | $
-"Am7"(3ggg (3=ffe d c3 | "D7""_This is a mean old world,\nBaby to live in by yourself.\nThis is a mean old world,\nBaby to live in by yourself.\nCan't get the woman you love,\nCause you know she's lovin someone else.\n\nWell I drink to keep from worryin\nBaby and I smile to keep from cryin'.\nYes I drink to keep from worryin\nAnd you know I smile to keep from cryin.\nThat's to keep the public from knowin\nJust what I have on my mind."z =f/g/g BG D (3FG_B |1 "G7"G2 z2 "C9"z4 | "G7"z4 "D7"(3z2g2g2 :|3 $
+"Am7"(3ggg (3=ffe d c3 | "D7""_This is a mean old world,
+Baby to live in by yourself.
+This is a mean old world,
+Baby to live in by yourself.
+Can't get the woman you love,
+Cause you know she's lovin someone else.
+
+Well I drink to keep from worryin
+Baby and I smile to keep from cryin'.
+Yes I drink to keep from worryin
+And you know I smile to keep from cryin.
+That's to keep the public from knowin
+Just what I have on my mind."z =f/g/g BG D (3FG_B |1 "G7"G2 z2 "C9"z4 | "G7"z4 "D7"(3z2g2g2 :|3 $
 "G7"G2 z2 z4 || z2 "Ab13"BB- "G13"B4 |]
 
 X:669
@@ -19859,7 +21965,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id melody-for-c
 K:C
+I:linebreak $
 |: "Cmaj7"B4- BG ED- | "Bbmaj7"D3 EF GA c | "Cmaj7"B2 Bd BG ED- | "Bbmaj7"D2 z EF GA c | $
 "Cmaj7"B e3 d2 "Dm7"z B | "Em7"A c3 "Dm7"B2 GD- | "Cmaj7"D8 |1 z3 E"G7"F GA c :|2 $
 z4 z2 "C7"c2 || "Fmaj7"e4- ec AG- | "Ebmaj7"G3 A_B cd f | "Fmaj7"e2 eg ec AG- | $
@@ -19877,7 +21985,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=140
+%%id mess-around
 K:Eb
+I:linebreak $
 "^Piano Intro; Bass Walk"E,E _D,_D C,C B,,B, ^F,,^F, G,,G, F,,F, G,,G, | E,E _D,_D C,C B,,B, ^F,,^F, G,,G, F,,F, G,,G, | E,E _D,_D C,C B,,B, ^F,,^F, G,,G, F,,F, G,,G, | E,,E, _D,,_D, C,,C, B,,,B,, ^F,,,^F,, G,,,G,, F,,,F,, G,,,G,, | $
 [K:treble]"Ab7"A2 z A4- A | "^fill"z8 | "Eb7"A2 z A4- A | "^fill"z8 | $
 "Bb7"A2 z A4- A | "Ab7""^fill"z8 | "Eb7"z8 | "Eb7"z8 |: $
@@ -19894,13 +22004,16 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id midnight-blue
+%%tags needs-repair
 K:Ab
+I:linebreak $
 "Fm7"A4 "Gm7"B4 | "Abmaj7"c3 B-"Gm7"B G E2 | "Fm7"A4 "Gm7"B4 | "Abmaj7"c3 B-"Gm7"B G E2 |: $
 "Fm7"F2 AF (3=B/"Fm7"c/B/A FE | "Abmaj7"F3 "C7#9"=EB e z FA c- | "Fm7"c2 ef (3B/"Gm7"_c/B/A FE | "Ab"F3 =EB e "C7#9"z2 z E | $
 "Fm7"F2 AF (3=B/"Fm7"c/B/A FE | "Abmaj7"F3 "C7#9"=EB e z FA c- | "Fm7"c2 ef (3B/"C7#9"_c/B/A FE | "Fm7"F4 z Fd e- | $
 "Fm7"e4- ed ed- | "C7"d4- dc dc- | "Fm7"c4- cF z A | "Bb9"z4 z CF c- | $
 "Bbm7"c4- cB cB- | "Abm7"B4 BA BA- | "C7"A2 FE CE FF |1 "Fm7"z C-=E- "C7#9"Be CE Be :|2 $
-"C7#9""^solos\n"z8 || "Fm7""G7"z8 | "Abmaj7"z8 | ee a z8 | $
+"C7#9""^solos"z8 || "Fm7""G7"z8 | "Abmaj7"z8 | ee a z8 | $
 z8 | "Fm7""G7"z8 | "Abmaj7"z8 | "Fm7""G7"z8 | $
 "Abmaj7"z8 || "Gm7"z8 | "C7"z8 | "Fm7"z8 | $
 "Fm7"z8 | "Bbm7"z8 | "Bbm7"z8 | "Db9"z8 | $
@@ -19913,7 +22026,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id midnight-rendevous
 K:G
+I:linebreak $
 z15/2 E,/- |: "Em7"E,2 B,2 G z/ G/ z/ E,/=F,/^F,/- | "F#7"F,2 z/ A,/_B,/"B7"=B,/- B,2 z/ D/E/E,/- | "Em7"E,2 B,2 G z/ G/ z/ E,/=F,/^F,/- | $
 "F#7"F,2 z/ A,/_B,/=B,/- "B7"B,2 z/ D/E/E,/ :| z8 | z6 G/A/ z/ B/- |: "Em7"B6 z3/2 ^A/- | $
 "F#7"A/e/f/ gf/e/ =A/- "B7"A2 G/A/ z/ B/- | "Em7"B6 z3/2 ^A/- | "F#7"A/d/e/f/ z/ g/ z/ "B7"a2 f/gf/ B/- | "Em7"B6 z3/2 ^A/- | $
@@ -19944,7 +22059,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mo-better-blues
 K:F
+I:linebreak $
 "Bb7"z8 | "F7"z8 | "F7"z8 | "Bb7""Am7"z8 | $
 "Gm7"z4 CD FG |: "F"A8- | "F7"A4 "F7/A"GA GF | "Bb7"D8- | $
 "Gm13"D4 GA GF | "G7"D8- | "C7"D4 GA GD | "F7"F8- |1 $
@@ -19960,7 +22077,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id moanin
 K:Ab
+I:linebreak $
 "^Horns Play Head 2x"z F z FA AF C |: E2 "Bb/F"F6 | z F z F A2 BB/_c/ | B/A/F "Bb/F"F6 | $
 z F z F c2 ec/_c/ | B/A/F- "Bb/F"F6 | z F z FA AF C | E2 "Bb/F"F6 |1 $
 z F z FA AF C :|2 z4 F2 F2 || "Bbm7"c4 (3_cB"Ab7"F BF | "G7"A3 FE "C7"CE F- | $
@@ -19982,7 +22101,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id moldovan-pop-jazz
+%%tags needs-repair
 K:D
+I:linebreak $
 |: "_C"A2 z2 AA/A/ G/A/ z | A2 z2 AA/A/ G/A/ z | A2 z =c2 A z G | G=F z DD E^F D [K:Db]B/B/d e z/ d/B/B/ de z/ d/ | $
 B/B/d e z/ B/d/ z/ B/ z/ B/A/B | B/B/d e z/ d/B/B/ de z/ d/ | B/B/d e z/ B/d/ z/ B/ z/ B/A/F [K:E]"_Bb"B2 z2 BB/B/ A/B/ z | B2 z2 BB/B/ A/B/ z | $
 B2 z =d2 B z A | A=G z EE F^G E [K:Eb]c/c/e f z/ e/c/c/ ef z/ e/ | c/c/e f z/ c/e/ z/ c/ z/ c/B/c | c/c/e f z/ e/c/c/ ef z/ e/ | $
@@ -19997,7 +22119,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id montara
 K:G
+I:linebreak $
 "Fmaj7"e2 ga- "Em11"a4 | "C13"a2 ge- "G6"e4 | "Fmaj7"g2 fd- "Em7"d4 | "C7"_b2 af- "Gmaj7"f4 | $
 "Fmaj7"e2 ga- "Em11"a4 | "C13"a2 ge- "G6"e4 | "Fmaj7"g2 fd- "Em7"d4 | "C7"_b2 af- "Gmaj7"f4 | $
 "Fmaj7"e2 gf- "Em11"f4 | "C13"g2 _ba- "G6"a4 | "Fmaj7"b2 d'f'- "Em7"f'4 | "C7"d'2 _ba- "Gmaj7"a4 | $
@@ -20014,7 +22138,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=96
+%%id moon-river
 K:C
+I:linebreak $
 |: "Cmaj7"G6 | "Am7"d2 c4 | "F7#11"B3 AG F | "Cmaj7"G4 C2 | $
 "F7"B3 AG F | "Cmaj7"G4 C2 | "Bm7b5"D6- | "E7"D4 E2 |1 $
 "Am7"C6 | "C7/G"G2 E3 D | "Fmaj7"C6 | "Bb7"G2 E3 D | $
@@ -20032,7 +22158,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id moonglow
 K:Eb
+I:linebreak $
 |: z2 "Abmaj7"z CE C E2 | "Db9"G2 G6 | "Ebmaj7"z2 z C"Cm7"E CE- E | "F9"G8 | $
 "Fm7"z2 z CE C E2 | "Bb13"G2 G6 | "Ebmaj7"z E- E2 "Ebdim7"E2 E2 | "Fm7"E2 EE- "Ebmaj7"E4 :| $
 "Eb7"B8- | B2 BB "D7"=AA "Db7"_AA | "C7"G8- | G4 z4 | $
@@ -20048,7 +22176,9 @@ N:Source: jazzXML
 M:12/8
 L:1/8
 Q:1/4=96
+%%id more-soul-than-soulful
 K:C
+I:linebreak $
 |: "G7"z12 | "C7"z12 | "G7"z12 | "C7"z12 :| $
 "G7"d2G c2G BG2 z2 G | "C7"d2G c2G B3 z2 G | "G7"d2G c2G BG2 z2 G | "C7"d2G c2G BG2 z2 G |: $
 [K:D]"A7""_Bb"z12 | "D7"z12 | "A7"z12 | "D7"z12 :| $
@@ -20064,7 +22194,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id movin-on-out
 K:C
+I:linebreak $
 z8 |: "Abm7"_A,,2 _C,_E, "Bbm7"_D,2 A,,=C, | z2 z2 "Abm7"(3_G,,G,,G,, _A,,G,, | "Abm7""_Vamp Chords Throughout Form"_A,,2 _C,_E, "Bbm7"_D,2 A,,=C, | $
 z2 z2 (3_G,,G,,"Abm7"G,, _A,,G,, [K:treble]"Abm7""^Bass Sim"z _c'_b _a "Bbm7"z a2 f | _a2 _b2 "Abm7"z4 | _c'_a _bf a a2 _A- | A2 z2 _GG _AG | $
 z _c'_b _a z a2 f | _a2 _b2 z4 | _c'_a _bf a a2 _c- | c2 z2 _GG _AG | $
@@ -20083,7 +22215,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=208
+%%id mox-nix
 K:F
+I:linebreak $
 |: "Dm7""^Cool 40s Gangster Stroll Tremolo"z8 | z8 | z8 | z8 :| $
 "Dm7"z6 dd || "^A"dd dd dd DF | GF _AF GF DF | GF z F_A F z2 | $
 z6 ed | "Gm11"ff- f4- fd | z DF G- G2 FD | "Dm7"_A2 FD GD z2 | $
@@ -20104,7 +22238,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mr-syms
 K:Eb
+I:linebreak $
 "Cmaj7"z4 C2 "C7"EC | "Bmaj7"B3 G "Gdim"z4 | z2 z C "C"c2 "Db"c2 | "Bb"B3 "Gdim"G z4 | $
 "Fm7"z2 z G C2 D2 | "Fm7"E2 D/E/D/B,/ C2 C2 | C2 z2 "Cmaj7"C2 E"C7"C | B3 "Bmaj7"G z4 | $
 "G7"=B4 "Db"c4 | "A6"A4 "B7"A4 | "Emaj7"E4 "G7"D4 | "Cm7"C2 B,"Gm"C z4 "Cm""Cm"z8 | $
@@ -20120,7 +22256,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=250
+%%id theme-from-mr-broadway
 K:Eb
+I:linebreak $
 |: "Eb7"=AB eB A_A | "Ab7"_GE AE =AE | "Eb7"BE z2 z2 | "Bb7"z6 | $
 "Eb7"=AB eB A_A | "Ab7"_GE AE =AE | "Eb7"B4 z2 | z6 | $
 "Ab7"_ge ge ge | "Ebm7"_dB dB dB | "Ab7"AB z2 z2 | z6 | $
@@ -20138,7 +22276,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id mr-clean
 K:F
+I:linebreak $
 _e | "Fm7"ff _ef z4 | z4 cB _AF | B_A F_E- E4- | $
 E4 z3 _e | "Fm7"ff _ef z2 _a2- | "F7"a2 _g_f g2 f_d | _e_d _c_A- A4 | $
 B_c B_A FA Bc | "Fm7"ff _ef z4 | z4 cB _AF | B_A F_E- E4- | $
@@ -20154,9 +22294,13 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mr-magic
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Cm7""_Piano Intro""F7"z8 | z8 | z8 | z8 || $
-"Cm7""_Guitar In \nW/Lick""F7"z8 | z8 | z8 | z8 | $
+"Cm7""_Guitar In 
+W/Lick""F7"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | "F7""_Head"z4 z c/c/-c c |: $
 "Cm7"ec/ z/ c2 z2 z/ c/(3z/c/c/ | "F7"z/ e/c/ z/ c2 z3 c/e/- | "Bb7"ea g e2 GB/c/ z/ c/- | "Cm7"c2 z3 ce g/ z/ | $
 "Bbm7"a2 b "Eb7"g3- ge | "Ab"z/ ge/f/ c/e- "G7"e4 | z2 "Cm7"cB/ z/ cB/ z/ cB/c/- | "F7"cB G z2 c/ z/ ef || $
@@ -20172,7 +22316,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id mr-magic-ii
 K:Eb
+I:linebreak $
 "Cm7""_Piano In""F7"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 |: $
 "Cm7""^Guitar In"z f/e/ z2 e/c/ z z3/2 B/ | "F7"=A2 A/A/ z z/ F/d e z | "Cm7"z f/e/ z2 e/c/ z z3/2 B/ | "F7"=A2 A/A/ z2 c/c/c c"Cm7""^Head""^2x Only"e c c2 z2 z/ c/c/c/ | $
@@ -20200,7 +22346,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id mr-p-c
 K:Eb
+I:linebreak $
 "Cm7"CC DD EE FF | G3 FE C2 B, | C4 B,3 C- | C2 z2 z4 | $
 "Fm7"FF GG AA BB | c3 BG F2 E | "Cm7"C4 B,3 C- | C2 z2 EC E_G- | $
 "Ab7"G F6 _G- | "G7"G F2 E F2 E2 | "Cm7"C4 B,3 C- | C2 z2 z4 |]
@@ -20213,7 +22361,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mud-sauce
 K:C
+I:linebreak $
 "^Drum Intro"z8 | z8 | z8 | z8 |: $
 "Fm7""^Bass In""^Chords: 2x Only"z8 | z8 | z8 | "Eb"z4 "Bb"z2 z3/2 _E/ || $
 "Fm7""^A"z/ F_E/ FE/_A/ z7/2 _B/ | "Ab"z/ _B_A/ Bc/"Bb7"A/ z7/2 _E/ | "Fm7"z/ F_E/ FE/_A/ z/ F3/2 EF/A/ | "Ab"z/ F7/2 z7/2 "Bb7"_E/ | $
@@ -20231,7 +22381,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id mustang
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "C7"z8 :| "C7"_B,D A,C B,D A,C B,D | B,D A,C z _B,D z z2 | _B,D A,C B,D A,C B,D | $
 B,D A,C z _B,D z z G/A/ |: "C7"c2 A c2 A c2- | c2 A z _E4 | _B,C A,B, CA, B,C | $
 B,C A, z _E4 | _B,D A,C B,D A,C B,D | B,D z _B,D z z2 | _B,D A,C B,D A,C B,D | $
@@ -20239,7 +22392,7 @@ B,D A,C z _B,D z2 A | "F7"c2 A c2 A c2- | c2 A z _e4 | c2 A c2 A c2- | $
 c2 A z _E4 | "C7"_B,D A,C B,D A,C B,D | B,D A,C z _B,D z3 | _B,D A,C B,D A,C B,D | $
 B,D A,C z _B,D z3 | "G7"B3 d3 B2- | B2 GF D2 F z | "F7"A3 c3 A2- | $
 A2 F_E C2 E2 | "C7"_B,D A,C B,D A,C B,D | B,D A,C z _B,D z3 | _B,D A,C B,D A,C B,D | $
-B,D A,C z _B,D z2 A "^Solos over Form\n"z8 :| "^Solo Fills"z3 C"C7"E F z G- | G2 F z E2 C z | z3 CE F z G- | $
+B,D A,C z _B,D z2 A "^Solos over Form"z8 :| "^Solo Fills"z3 C"C7"E F z G- | G2 F z E2 C z | z3 CE F z G- | $
 G2 FC E z z2 | z3 CE F z G- | G2 F z E2 C z | z3 CE F z G- | $
 G2 FC E z z2 || "F7"z3 FA _B z c- | c2 _BF A2 F z | z3 FA _B z c- | $
 c2 _BF A z z2 || "C7"z3 CE F z G- | G2 F z E2 C z | z3 CE F z G- | $
@@ -20254,7 +22407,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id my-groove-your-move
 K:Gmin
+I:linebreak $
 z2 z2 z DG B |: "Gm9"cB cB c2 GB | z c z2 z DG B | cB cB c2 BG | $
 "G7"z4 z DG B | "Cm7"cB cB c2 GB | z c z2 z GB c | {/^d}"D7"=d2 {/^d}"A7"=d2 cA ^c"D7"d | $
 "G"z2 gf _dc B/G/c- | "Cm7"c7 "Bbm7"z | "Am7b5"z2 BG c"D7"d/c/ BG |1 "Gm7"z8 | $
@@ -20275,7 +22430,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=175
+%%id my-favorite-things-coltrane
 K:Emin
+I:linebreak $
 |: "^Piano Intro"B,B Ee B,B Ee | B,B A,A A,A | G,G Cc G,G Cc | G,G F,F B,,B, F,F [K:treble-8]"Em711"EG BE GB df aE GB EG Bd fa | $
 "F#m711"FA ^cF Ac e^g b z | "Em9"EG BE GB df aE GB EG Bd fa | "F#m711"FA ^cF Ac e^g b "^Vamp Sim"z :| [K:treble]E "Em711""^Sop."z B z B z | $
 "F#m711"F2- F2 E2 | "Em711"B, E3- E^C | F"F#m711"E F2 E2 | z "Cmaj7"E B2 B2 | $
@@ -20308,7 +22465,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id yo-mama
 K:Ab
+I:linebreak $
 |: "^Bass Intro"z8 :| z4 z z/ G/-G B |: "Bb7""^A"=d2 z2 z _dc B/B/- | B2 z2 z3/2 G/-G B | $
 =df- fg (3_d/c/B/G B/-B/c B/- | B2 z2 z d-d d | "Ab7"c2 z3/2 B/d dc B/B/- | "Eb7"B2 z2 z3/2 G/-G B | $
 "Bb7"gd BG "Eb7"ed- "Eb9"dB- |1 "Bb7"B2 z2 z/ z G/-G B :|2 "Bb7"gd BG "Eb7"ed- "Eb9"dB- || "Bb7"B2 z2 z4 | $
@@ -20325,7 +22484,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id mystic-brew
 K:C
+I:linebreak $
 |: "Dbmaj7"_D2 _AC- "Csus4"C2 GC | "F7"F2 C"Bb7"_B- B2 _EG | "Ab"_A2 _E"Gbmaj7"_G- G2 "^Bass Line Continues"_BC [K:Ab]"Dbmaj7"f8- | "F7"f6 "Bb7"af | $
 "Ab"a2 fe "Gbmaj7"f2 ec | "Dbmaj7"e2 c"C7sus4"B c2 BA | "Ab"BA "Gbmaj7"F6 | z8 "^3x""Dbmaj7""_Solos""C7sus4"z8 | $
 "F7""Bb7"z8 | "Ab""Gbmaj7"z8 :| |: _D,2 _A,C,- C,2 G,C, | F,2 C,_B,- B,2 _E,G, | $
@@ -20340,7 +22501,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id new-deal
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "G9"G3 G4- G | z8 | "G9"G3 G4- G |1 z8 :| $
 z4 z3 d- |: "G9"d2- (3dBA GA Bd | "Ebmaj7"_B2- (3BGF _EF GB |1 "Fmaj7"G3 G4- G | $
 "G7"z4 z3 d- | "G9"d2- (3dBA GA Bd | "Ebmaj7"_B2- (3BGF _EF GB | "Fmaj7"G3 G4- G | $
@@ -20355,7 +22519,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id news-for-lulu
 K:Fmin
+I:linebreak $
 z7 C |: F,C "^Piano Intro"AE z =D z C | F,C AE z =D z C | F,C AE z =D z C | $
 F,C AE z =D z C "Fm7""^A"c8- | c4 z FA B | _cB AF A B3- | B6 z A | $
 "Gm7"B8- | "C7#9"B2 z _cB AF E |1 "Fm7"F6- FE | "C7#9""^Piano Fill"z7 C :|2 $
@@ -20375,7 +22541,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id night-and-day
 K:C
+I:linebreak $
 z4 G2 GG- |: "Dm7"G8- | "G7"G4 (3F2E2^D2 | "Cmaj7"E8- | $
 "Cmaj7"E4 G2 GG- | "Dm7"G2 G2 G2 G2 | "G7"G2 F2 (3F2E2^D2 | "Cmaj7"E8- | $
 "Cmaj7"E4 E3 E | "F#m7"E2 E2 E2 E2 | "Fm7"_E4- E E2 E | "Em7"D2 D2 D2 D2 | $
@@ -20393,7 +22561,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id night-train
+%%tags needs-repair
 K:G
+I:linebreak $
 (3zG_B (3=Bc^c (3d=cd B z | (3zG_B (3=Bc^c (3dgd =c z | (3zG_B (3=Bc^c (3d=cd (3cdc43/64 z7/32 z5/64 | (3ga_b (3ag=f (3dc_B (3_AGE43/64 z7/32 | $
 GG _BB GG ED | GG _BB GG ED | GG z2 G, z z2 | G, z z G, z2 z z | $
 GG _BB GG ED | GG _BB GG ED | GG z2 G, z z2 | G, z z G, z _E z (3E/=F/E/ | $
@@ -20416,7 +22587,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id no-problem
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "^Lively Latin Lullaby""_Bass Intro"(3C2E2G2 |: "Cm7""^A"(3c2d2c2 G4- | "Cmaj"G4 (3B2G2F2 | "Cm"G8- | $
 "Am7b5"G4 (3C2E2G2 | "Fm7"(3c2d2c2 G4- | "Bb7"G4 (3B2G2F2 | "Eb7"G8- | $
 "Eb7"G4 (3G2E2C2 | "D7"F8- | "G7"F4 (3E2C2B,2 | "Cm7"C8- | $
@@ -20437,7 +22611,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id no-room-for-squares
 K:Eb
+I:linebreak $
 |: "Cm7""_Intro/Outro"GB =Ac | "Fmaj7"F=A DF | "Cm7"EG | "Fmaj7"F=A z2 | $
 "Cm"GB Bd | "F6/C"F=A GB EG | "Cm7"EG | EG z2 z4 "Cm7""^A"z G C2 D2 E2 | $
 F2 ^F2 G2 BG | z8 | z8 | z G C2 D2 E2 | $
@@ -20464,7 +22640,10 @@ N:Source: jazzXML
 M:9/4
 L:1/8
 Q:1/4=250
+%%id nomad
+%%tags needs-repair
 K:C
+I:linebreak $
 z16 c z | F_A c_B _G z AE _D^F DC B,A, ^G,E z e | z Ac ed _B z c_A FB _G_E _DC A z E=G c | [M:4/4]z B,E _AC _EB DF BE Gc F=A dG Be FA _d | $
 z A,^F _B,G CA DB Ec =F_d EB | z G,_A, _B,=B, DE D- | DE d^G- G2 ^Fc | [M:9/4]F_A c_B _G z AE _D^F DC B,A, ^G,E z e | $
 z Ac ed _B z c_A FB _G_E _DC A z E=G c | [M:4/4]z CE ^F2 G2 F2 | G2 ^F2 G2 A2 | G2 ^FE- E4 | $
@@ -20482,7 +22661,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id nothing-else-to-do
+%%tags needs-repair
 K:C
+I:linebreak $
 z6 C2 |: "Cmaj7"B,4 C4 | "Cmaj7"E4 G3 B- | "F#m7"B8 | $
 "B7"z8 | "Fm7"_B4 z2 F2 | "Bb7"D4 _B,3 D- | "Em7"D6 G^C- | $
 "A7"C8 |1 "Ebm7"_D8 | "Ab7"_B,4 _A3 F- | "Dm7"F8 | $
@@ -20508,7 +22690,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id number-9
 K:C
+I:linebreak $
 |: "^A"_E z _B z ^FB z B | F z _B2 z4 | _E z _B z ^FB z B | B,B, z _D z D z D "^B"_E2 _B2 ^FB z B | $
 F2 _B2 z4 | _E2 _B2 ^FB z B | B,B, z _D z D z D"^C"_E z _B z ^FB z B | F z _B z _EB z B | $
 _E z _B z ^FB z B | B,B, z _D z D z D"^D"_E _B^F B=F B^F B | _E_B ^FB =FB ^FB | _E_B ^FB =FB ^FB | $
@@ -20531,7 +22715,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id ode-to-billie-joe
 K:D
+I:linebreak $
 z4 z AB "D9"d || d2 B d2 Bd B | dB dB d2 eB- | BA Bd- d2 z2 | $
 z4 z AB d | d2 B d2 Bd B | dB dB d2 eB- | BA Bd- d2 z2 | $
 z4 z2 eg | "G9"g=f gf (3g2g2f2 | (3g2g2=f2 g2 af- | fB d6 | $
@@ -20549,7 +22735,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id on-green-dolphin-street
 K:Eb
+I:linebreak $
 |: "Ebmaj7""^Intro"E3 Be e z2 | e2 z e3 E2- | "Gbmaj7/Eb"E3 Be e z2 | e2 z e3 E2- | $
 "Fmaj7/Eb"E3 Be e z2 | "Emaj7/Eb"e2 z e3 E2- | "Ebmaj7"E3 Be e z2 | e2 z e3 E2 "Ebmaj7""^Head"e4 e4- | $
 e4 (3d2B2G2 | "Ebm7"_d8- | d8 | "Fmaj7/Eb"c4 c4- | $
@@ -20575,7 +22763,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id on-the-sunny-side-of-the-street
 K:C
+I:linebreak $
 E2 D |: "Cmaj7"C2 z DE G2 e- | "E7"e4 z e2 _e | "F6"d c3 A2 F2 | $
 "G7"E3 "G#dim7"D- D4 | "Am7"z C2 DE c2 B- | "D7"B6 ^GA |1 "Dm7"c A2 "G7"F2 ED G- | $
 "Cmaj7"G4 "G7"z E2 D :|2 "Dm7"c A2 "G7"F2 ED "Cmaj7"C || "Bb9"z c3 "Am7"c2 "Ab7"c2 || "Gm7"c4 D F2 E- | $
@@ -20592,7 +22782,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id one-man-section
 K:C
+I:linebreak $
 "Dm7"z A3 d2 f2 | "G7"g2 fd c2 dA- | "Dm7"A6 z c- | "Dm7"c z z2 z4 | $
 "Gm7"z B3 f2 g2 | "Gm7"_ag fd c2 dA- | "Dm7"A6 z c- | "Dm7"c z z2 z4 | $
 "Em7"z a3 g2 "A7"z2 | "Fm7"z g3 "Bb9"f2 z2 | "Ebm"z f3 "Ab7"_e2 z2 | "Em7"z e3 d"A7"e e z | $
@@ -20623,7 +22815,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id one-mint-julep
 K:Eb
+I:linebreak $
 "Eb"z Be B _d2 e2 | "Ab7"z EB E A2 _G2 | "Eb7"z Be B _d2 e2 | "Ab7"z EB E A2 _G2 | $
 "Eb7"z Be B _d2 B2 | "Ab7"B2 BE A2 _G2 | "Eb7"z Be B _d2 e2 | "Ab7"z E B2 A2 _G2 | $
 "Bb7"e2 _d2 B2 c2 | "Abmaj7"z G2 BG EC E- | "Eb7"E8- | "Eb"E8 | $
@@ -20644,7 +22838,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id one-shining-soul
+%%tags needs-repair
 K:E
+I:linebreak $
 "Db/Gb"B3 B4- "Fm7"B | "Emaj7"B3 "D#7"B4- B | "E/D"B3 "Db"B3 "B9"B2 | "D#7"B B2 "G#sus4"B- B4- | $
 B4- B4- | "^A"B4 "F#m7"e2 "B7"d2 |: "Emaj7"GB GF/E/ "Dmaj13"FE F/G/"C#m7"E- | E3 "Fmaj7"E z2 "Cmaj7"E2- | $
 E2 "F#m7"=GE A2 F"Cmaj7"B- | "Cmaj9"B6 "B9"d/B/A/B/ | "E9"GB GF/E/ "Cmaj9"FE F/=G/"Am7"E- | E3 "Gmaj7"E z2 "F#7"E2- | $
@@ -20661,7 +22858,8 @@ A "Bbm7"A2 "G#7"A- A4 | [M:2/4]"F#m7"d2 "B7"c2 | [M:4/4]"Emaj7""_C"GB/c/ B/G/F/E
 "Fmaj7""F#m7"z8 | "Cmaj9""B9"z8 | "Emaj7""Cmaj9"z8 | "Am7""Gmaj7"z8 | $
 "F#7""B9"z8 | "Emaj9""B9"z8 :| """Emaj7""_F"E3 F G2 B2 || "Gb"c3 "Db7"B3 z =F | $
 "D#9"G3 "G#7"G3 D/=F/G/B/ | "Gbmaj7"c2 B/c/B- "Db7"B2 z =F | "D#9"G3 G3 "G#7"D/=F/G/B/ | "Gbmaj7"c2 c/d/=c- "Fm7"c4 | $
-g2 "Emaj7"d/c/B- "D#7"B2 z G | "Dmaj7"c2 B/c/ "Db7"B3 =F2 | "Bbm7""^Everyone Out: Bass and Drum interlude\n into Next Solos"G G2 "D#9"G- "G#7"G4 |: "Gb""^NExt Solos""_G""Db7"z8 | $
+g2 "Emaj7"d/c/B- "D#7"B2 z G | "Dmaj7"c2 B/c/ "Db7"B3 =F2 | "Bbm7""^Everyone Out: Bass and Drum interlude
+ into Next Solos"G G2 "D#9"G- "G#7"G4 |: "Gb""^NExt Solos""_G""Db7"z8 | $
 "D#9""G#7"z8 | "Gb""Db7"z8 | "D#9""G#7"z8 "^Play this during Endings of Solos""_H"c/c/c/c/ z B/B/B/B/ z =F/G/G/G/ | z4 z2 D/=F/G/B/ | $
 c/c/c/c/ z B/B/B/B/ z F/G/G/G/ | z4 z2 D/=F/G/B/ :| c/c/c/c/ z B/B/B/B/ z F/G/G/G/- | G/G GG G/-G/G (3g/4=g/4=f/4d/f/^g/ b/ | $
 c'2 c'/d'/=c'- c'4 | g2 d/c/B- B2 z G | c2 B/c/ B3 =F2 | G G2 G |]
@@ -20674,7 +22872,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id ornithology
 K:G
+I:linebreak $
 z4 z2 z D |: "Gmaj7"GA Bc dB cd | "Gmaj7"BG z2 z2 z D | "Gm7"GA _B"C7"c d e2 =f- | $
 "Gm7"fG A"C7"_B- B3 d | "Fmaj7"c A2 =F_B ^GA F | "F"z2 z2 z2 z _A- | "Fm7"A2 G=F EG FC | $
 "Bb7"=F2 _ED z2 z _d- | "Eb7"d2 c_B Ac BG | "Am7"A2 GF "D7"z2 z D |1 "Gm7"AG D_B, =FD _ED | $
@@ -20691,7 +22891,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id out-of-nowhere
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "Gmaj7""^A"(3D2E2F2 A4- | A G3 D2 E=F- | "Bbm7"F3 =F- F4- | "Eb7"F6 _E2 | $
 "Gmaj7"(3D2E2F2 A4- | A2 G2 D2 EF- | "Bm7"F8 | "E7"=F8 |1 $
 "Am7""^B"E=F Ec z4 | "E7"E=F EB z2 B2 | "Am7"B7 A- | A8 | $
@@ -20702,19 +22905,21 @@ K:G
 X:711
 T:Outro
 C:Jack Stratton (Vulfpeck)
-Arr. Cal Treadway
-Arr. 6EQUJ5
+arr. ca'l Tre'a'd'wa'y
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id outro
 K:C
-"C"E2 B"C#"^B B/ "D"z3/2 B"E"B | "F"B2 "F"B"E"B/ "Eb"B"D"B "Db"B2 z/ | "C"z8 | "F"z8 | $
+I:linebreak $
+"C"e2 b"C#"^b b/ "D"z3/2 b"E"b | "F"b2 "F"b"E"b/ "Eb"b"D"b "Db"b2 z/ | "C"z8 | "F"z8 | $
 "C"z8 | "F"z8 | "C"z8 | "A"z8 | $
 "D"z8 | "F"z8 | "G"z8 | "G"z8 |] $
-C,2 C,^C,/ D, z3/2 D,E, | F,2 F,E, _E,D,/_D,/ C,2 | C,2 C,^C, D,-D, F,2- | F,8 | $
-C,2 C,^C,/ D, z3/2 D,E, | F,2 F,E, _E,D, _D,-D, | C,2 C,C, _B,,B,, A,,/-A,,/-A,,- | A,,4- A,,"^¡Importante!"E, A,/G,/F,/E,/ | $
-D,-D, ^D,D,/ E,2 F,2- F,/- | F,4 ^F,A, C-C | G,2 G,2 G,2 G,2 | G,,/"^¡Importante!"G,,/G,,/G,,/ G,,/G,,/G,,/G,,/ G,,/G,,/G,,/G,,/ G,,/G,,/G,,/G,,/ |]
+C2 C^C/ D z3/2 DE | F2 FE _ED/_D/ C2 | C2 C^C D-D F2- | F8 | $
+C2 C^C/ D z3/2 DE | F2 FE _ED _D-D | C2 CC _B,B, A,/-A,/-A,- | A,4- A,"^¡Importante!"E A/G/F/E/ | $
+D-D ^DD/ E2 F2- F/- | F4 ^FA c-c | G2 G2 G2 G2 | G,/"^¡Importante!"G,/G,/G,/ G,/G,/G,/G,/ G,/G,/G,/G,/ G,/G,/G,/G,/ |]
 
 X:712
 T:Pacific Coast Highway
@@ -20724,8 +22929,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id pacific-coast-highway
 K:Bb
-|: "^Bass Intro\n"C"Cm9"G B=B c/F/G/C/ z3/2 G/ | B=B cF/^F/ G/D/G,/G/ z/ G,/ z/ C/- | CG B/G/=B/G/ c/F/G/C/ z3/2 G/ | B=B cF G/D/G,/G/ z/ G,/ z/ C/ :| $
+I:linebreak $
+|: "^Bass Intro"C"Cm9"G B=B c/F/G/C/ z3/2 G/ | B=B cF/^F/ G/D/G,/G/ z/ G,/ z/ C/- | CG B/G/=B/G/ c/F/G/C/ z3/2 G/ | B=B cF G/D/G,/G/ z/ G,/ z/ C/ :| $
 z2 "Cm7"z3/2 g/f d z z | z3/2 g/ f2 G/B/F/E/ DC/F/- | F2 z3/2 g/f d z2 | z3/2 g/ f2 G/B/F/E/ DC/F/- | $
 F2 z3/2 g/f d z2 | z3/2 g/ f2 G/B/F/E/ DC/F/- | F2 z3/2 g/f d z2 | "Fm7"z/ _A/c/e/g/ b/_a/g/f/ e/d/"G7"c/ =B"Cm7"a/g/ | $
 "Cm11"z/ F/G cB gB/c/ z3/2 G/ | FB/G/- G2 z/ F/"G7"G/B/c/ "C13"d/e/f/ | "Cm7"g3/2_a/4g/4 fe de/d/- d/cB/- | B2- B/F/G/B/ "Gb13"cd e/"Fm9"f/g/b/- | $
@@ -20740,13 +22947,14 @@ F2 z3/2 g/f d z2 | z3/2 g/ f2 G/B/F/E/ DC/F/- | F2 z3/2 g/f d z2 | "Fm7"z/ _A/c/
 X:713
 T:Put It Where You Want It Piano Thing
 C:Joe Sample
-Arr. 6EQUJ5
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id put-it-where-you-want-it-piano-thing
 K:C
-z2 G,_B, CE _G,_E F,_A, CD, F,A, B,^D, ^F,=A, =B,"C7"E, =G,^B, C |: E,G, B,C F,_A, D^F, =A,^D G,_B, CE | G,B, CE z G,_B, CE _G,_E F,_A, CD, F,A, B,^D, ^F,=A, =B,"C7"E, =G,^B, C | E,G, B,C F,_A, D^F, =A,^D G,_B, CE :|
+z2 G_B ce _G_e F_A cD FA B^D ^F=A =B"C7"E =G^B c |: EG Bc F_A d^F =A^d G_B ce | GB ce z G_B ce _G_e F_A cD FA B^D ^F=A =B"C7"E =G^B c | EG Bc F_A d^F =A^d G_B ce :|
 
 X:714
 T:Pass the Peas
@@ -20756,13 +22964,19 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id pass-the-peas
+%%tags needs-repair
 K:D
+I:linebreak $
 d z z2 z4 || "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | $
 D/"D9"=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "G7"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "G7"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | $
 "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "A7"a3/2 a3/2 a3/2 a3/2 a^g | "G7"g3/2 g3/2 g3/2 g3/2 g=f | "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | $
-"D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "^Drum\nBreak"z4 g4 || "A7""^Vamp Until Cue\nPossible Solo"z8 | z8 | $
+"D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "^Drum
+Break"z4 g4 || "A7""^Vamp Until Cue
+Possible Solo"z8 | z8 | $
 z8 :| "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | "D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z | $
-"D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z || d' z z2 z4 || "^Solos vamp on D9\nCue G7"z8 |]
+"D9"D/=F/ z/ F/-FG/ A/ z/ A3/2=c/ d/ z || d' z z2 z4 || "^Solos vamp on D9
+Cue G7"z8 |]
 
 X:715
 T:Pastor T
@@ -20772,7 +22986,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id pastor-t
 K:C
+I:linebreak $
 "^A"z EG Ac/ z c/ z2 | z4 G/A/G/E/ D/C/ z | z EG A z/ c z c/ z | z2 z EA EG A | $
 z7/2 dc A/B/c/ A- | A3 z G/A/G/E/ DC | EE E2 z2 EA | DD D2 z2 GF | $
 EE E2 z2 EA | cc c2 z A/c/d/e/ c | z8 | _A_d/e/ f/d/e/_a/ z4 | $
@@ -20793,7 +23009,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=240
+%%id ping-pong
 K:Bb
+I:linebreak $
 |: "Bb13""_Intro"G2 z G z4 | "B13"_A2 z A z4 | "Bb13"G2 z G z4 | "B13"_A2 z A z4 "Bb13""_Straight"(3=EF^F (3G_AB (3cBA (3=FGA | $
 "B13"FF z G3 D2 | "Bb13"C=E CE B,D z2 | "B13"z4 z D F2 | "Bb13"C=E GC EG B,D F z2 | $
 "B13"z2 z2 z D F2 | "Bb13"DF _AD FA C=E G z2 | "B13"z4 z FG B- | "Dbmaj7""^Swing"B8- | $
@@ -20813,7 +23031,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id pink-panther
 K:G
+I:linebreak $
 z z4 ^CD ^D | "Em7"E8- | E4 z ^CD ^D | "Em7"E8- | $
 E4 z2 z2 |: "Em7"^DE z2 FG z2 | ^DE FG cB EG | "C7#9"B^A- A4 =A/G/E/D/ | $
 E2 z2 z4 | "Em7"^DE z2 FG z2 | ^DE FG cB EG | "F7#9"e^d =d6- | $
@@ -20833,7 +23053,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id play-it-back
 K:F
+I:linebreak $
 |: F,2 z2 C2 z2 | _E3 z F3 "F7#9"z :| z4 z4 | z4 z _ef e |: $
 "F7#9"f2 z2 z4 | z8 | z4 z3 _e | f_e fe cB _A-A | $
 F2 z2 z4 | z8 | z8 |1 z4 z _ef e :|2 $
@@ -20849,7 +23071,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id put-it-in-yo-your-pocket
 K:C
+I:linebreak $
 z4 |: z8 | z8 | z8 |1 $
 z8 :|2 "_A"z4 z2 z/ d^f/ || z2 z2 z B/d/^f e/e/- | ed z2 z/ B/de/ ^f/e/e/- | $
 e/d/ z z2 z B/d/e/d/ B | d2 z/ G/_B/=B/ z2 z/ d^f/ | z2 z2 z B/d/^f e/e/- | ed z2 z/ B/d (3^fa=f | $
@@ -20875,7 +23099,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id put-it-where-you-want-it
 K:C
+I:linebreak $
 |: "C7"_B c2 c2 B2 _e- | e c3- c4 | _EF- FF- FE- Ec- | c8 | $
 _B/-B/ c2 c2 B2 _e- | e c3- c2- c2 | _E F2 F2 E2 C- | C8 | $
 _B c2 c2 B2 _e- | e c3- c4 | _E F2 F2 E2 c- | c4- c4 | $
@@ -20901,7 +23127,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=122
+%%id quater-master
 K:F
+I:linebreak $
 "^Drum Intro"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 || $
 "_Bass Line"z8 | z8 | z8 | z8 | $
@@ -20942,7 +23170,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id rain-dance
 K:Bb
+I:linebreak $
 "Gm7"z8 | "Fm11"z8 | "Ebmaj9"z8 | "Am7""D7"z8 | $
 "Gm7"z8 | "Eb9""D7"z8 | "Gm7"z8 | "Am7""D7"z8 |: $
 "Gm7"(3c=B_B Ad G4- | "Fm11"G3 F D2 "Bb13"FB,- | "Ebmaj7"B,4 z4 | "Am7"z2 z c "D7"d2 ed- | $
@@ -20960,7 +23190,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id rainbow-seeker
 K:Eb
+I:linebreak $
 |: "_Intro"C,G, C/G,/ z/ ^C,^G,/ z/ G,/^C G, | C,G, C/G,/ z/ =B,,^F,/ z/ F,/=B, F, [K:treble]"Cm7""_A""C#m7"z8 | "Cm7""Bm7"z8 | "Cm7""C#m7"z8 | $
 "Cm7""Bm7"z8 :| "Cm7""_B"c4 Bc e/f/g/f/- | "Cm7"f/ec/- c4 Bc | "Abmaj7"c2- c/B/c/- "Cm7"c2 B/c/e c/- | $
 "Fm7"c4 z "Fm9"c z/ "F#m9"c3/2 | "Gm9"A4 b/c'/d'/ c'b g/4a/4 | "Fm9"g/f/g- g4- g/d/e/f/ | "Ebmaj7"g2- g/d/e/f/ "Am7"g2- g/e/^f/g/ | $
@@ -20978,7 +23210,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=78
+%%id rainbow-visions
 K:Ab
+I:linebreak $
 |: "Abmaj7""^Intro"CE/B/ z/ A/ z/ E/E/F/E/ F/ | A,E/B/ z/ A/ z/ E/E F | "Dbmaj7"DA/e/ z/ d/ z/ A/A/B/A/ B/ | DA/e/ z/ d/ z/ A/A B :| $
 "Abmaj7""^Head"c4- cA | B B3 E/G/B | "Dbmaj7"A6- | A4 z2 || $
 "Abmaj7"c4- cA | B B3 E/G/B | "Dbmaj7"A6- | A4 z2 || $
@@ -21009,7 +23243,10 @@ N:Source: jazzXML
 M:7/4
 L:1/8
 Q:1/4=200
+%%id ravayah
+%%tags needs-repair
 K:Bb
+I:linebreak $
 D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | $
 D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | $
 D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | D2 GA B2 AG ^F2 AG z2 | $
@@ -21047,7 +23284,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id recado-bossa-nova
 K:Bb
+I:linebreak $
 "Gm7"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 "Gm7"G2 z2 z2 ed | "Gm7"z2 z d z B z G | "D7"^F2 z4 ed | "D7#9"z8 | $
@@ -21073,7 +23312,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=210
+%%id recordame
 K:C
+I:linebreak $
 "Cmaj7""_Intro"B,C E z2 | z2 "Dmaj7"A,D ^F | "Cmaj7"B,C E z2 | z2 "Dmaj7"A,D ^F | $
 "Cmaj7"B,C E z2 | z2 "D"_B,D E | "Fmaj7"A,C E z2 | z2 "Dm7"CD F | $
 "Fmaj7"CE A"Dm7"B, DG z B,D G z "Fmaj7"CE A | z2 z EB cE "_Head"C |: "Am7"^F4 z GA B | B2 A B2 cE C | $
@@ -21106,7 +23347,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id red-clay
+%%tags needs-repair
 K:C#min
+I:linebreak $
 "C#m7""^Free Jazz"!fermata!G8 | "A7"!fermata!A8 | "G#7"!fermata!B8 | "C#m7"!fermata!A8 | $
 z8 | z8 | z8 | z8 |: $
 "C#m7""^BassLine"!8va(!cg c'g c'3 f | "Bm7"!8va(!Bf b2 b3 a | "D7"=da =d'2 "E7"eb e'2 | "F#7"fc' f'"G#7"g d' g'2 z :| $
@@ -21127,7 +23371,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id red-baron
 K:F
+I:linebreak $
 |: "Gm7"z8 |1 "Gm7""C7"z8 :|2 "Gm7"z7 "C7"g/G/ |: "Gm7"z7/2 D/"C7"F/G G/ z/ GG/ | $
 "Gm7"BA/G/ G/"C7"B/G- G2 z g/G/ | "Gm7"z7/2 D/F/"C7"G G/ z/ GG/ | "Gm7"(3^cdB/ A/ (3Gcd "C7"(3B/G/G c (3dB/A/ G | g/"Gm7"G/ z2 z/ D/"C7"F/G G/ z/ GG/ | $
 "Gm7"BA/G/ A/B/G- G2 "C7"G/Bc/ | "F"^c/dg/ z/ dG/ B(3G/F/D/ C/B/A/G/ | A/G/F/A/- "Eb7b5"A6 | "Db7"G6 z g/G/ "Gm7""^Solos""C9"z8 | $
@@ -21142,7 +23388,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id remember
 K:Db
+I:linebreak $
 A | "Dbmaj7"FA z4 Fc | "C7"z4 z B3 | "B7"A2 z2 A2 Ac | $
 "Bb7"z4 z A3 | "Bbm7"F2 z4 z A | "Eb7"=E2 z6 | "Abmaj7"ce z6 | $
 "Ebm7"z7 "Ab7"A | "Dbmaj7"F4 A2 FA | "C7"z4 z B3 | "B7"A2 z2 A2 Ac | $
@@ -21160,7 +23408,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id reverend-green
+%%tags needs-repair
 K:Bb
+I:linebreak $
 "G7"G z z B "G9"z z z "C7"G | z8 | "G7"G z z B "G9"z z z "C7"G | z8 |: $
 "G7"z4 "G9"FG Bc | "C9"d2 cc- cB F/G Bd | "G7"Bd G/F/ "G9"z2 z4 | z8 | $
 "G7"z4 F"G9"G Bc | "C9"df cB/c/- cB G/F/G/B/- | "G7"BG/F/ "G9"D/ z/ z z4 | z8 | $
@@ -21179,7 +23430,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=113
+%%id rey-jorge
 K:Bb
+I:linebreak $
 |: "Bbm7"z8 | """Eb7"z8 :| """Eb7"e/_d/e/d/ z e/d/e/d/ z B z || "Bbm7"z B/ z/ _A/B _d3/2 B z/ A/B | $
 "Eb7"E8 | "Bbm7"z B_A/ B _d3/2 BA B | "Eb7"e8 | "Bbm7"z B/ z/ _A/B _d3/2 B z/ AB/ | $
 "Eb7"E8 | "Bbm7"z B/ z/ _A/B _d3/2 B z/ A/B | "Eb7"e/_d/e/d/ z e/d/e/d/ z B z |: "Bbm7""_Solos"z8 | $
@@ -21194,7 +23447,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id rio-funk
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "^Free Blowing Intro"z8 :| z4 z =E,F, _G, |: z "Bb"FG FB B z/ Gc =eF Bd | z FG FB G z F/F/ | $
 GF GF BB z/ dc/ | cB G2 F,F/F,/ ^F,/^F/A,/ B,G | z FG FB B z/ Gc =eF Bd | z FG FB G z F/F/ |1 $
 GF GF BB z/ dc/ | cB G2 F,F/F,/ ^F,/^F/A,/ B,G :|2 GF GF BB z/ FG/ || z4 z/ d/d fg | $
@@ -21218,7 +23474,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id room-335
 K:A
+I:linebreak $
 |: "Dmaj7"cc z "C#m13"c- c4 | "Bm7"cc z "C#m7"c- c4 | "Dmaj7"cc z "C#m7"c- c4 |1 "Bm7"cc z "Amaj7"c z "Eb7"c3 :|2 $
 "Bm7"z4 z/ "Amaj7"E/F/E/ "Eb7"AB/A/ || c"D"e- "C#m7"e6- | "Bm7"e4 "C#m7"z/ c/B/A/B/ F/A/B/ | "Dmaj7"A3/2 FE/- "C#m7"E2 A,3- | $
 "Bm7"A,4 "Amaj7"z/ E/F/E/ "Eb7"AB/A/ | "Dmaj7"ce- "C#m7"e6- | "Bm7"e4 "C#m7"z/ c/B/A/B/ F/A/B/ | "Dmaj7"A3/2 FD/ "C#m7"E2 A3- | $
@@ -21239,7 +23497,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id root-down
 K:G
+I:linebreak $
 |: =F,/G,G,/ z/ G,3/2F,/ _G,/F, _B,G, | =F,/G,G,/ z/ G,F,/ G,_B, CB, (3b"G7"f/=f/ d_B/=B/ G z2 z2 | z3/2 D/=F/G F/GF/ G/-G/G/ G | BG/=F/ GF/G/- G/F/_B _d=B =d z z | $
 "C7"(3bf/=f/ d_B/=B/ G z2 z2 | z3/2 D/=F/G F/GF/ G/-G/G/ G | "G7"z8 | z6 D/=F/G | $
 "Bb7#9"G3 "B7#9"G3 "C7#9"G2- | G"C#7#9"G- G2 "D7#9"GG/=F/ GF | "Eb7#9"F3 "E7#9"F3 "F7#9"F2- | F"F#7#9"F- F2 "G7#9"F2 z2 | $
@@ -21253,7 +23513,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id round-midnight
 K:Eb
+I:linebreak $
 |: "Ebm7"z2 B,/E/F/"Cm7b5"B/ _G3 B, | "Fm7b5"E E2 D/E/"Bb7"B A z2 | "Ebm7"z2 E/_G/"Ab7"B/_d/ c3 E | "Bm7"=A2 "E7"_A2 "Bbm7"A2 "Eb7"G2 | $
 "Abm7"z2 A/_c/"Db7"e/_g/ f3 c | "Ebm7"B2 (3ED"Ab7"_D C z2 E/F/ | "B7"(3^F=F^F (3=FED- D2 B2- |1 "Bb7"B2 z2 z4 :|2 $
 "B7"^F2 "Bb7"=F E2 E E2- || "Ebm7"E6 EF || "Cm7b5"_GF G "F7"F4 E | "Bb7"D4 z2 EF | $
@@ -21270,7 +23532,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id s-k-j
+%%tags needs-repair
 K:Db
+I:linebreak $
 "Db7"(3zd=B (3AGD (3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- DA, | "Abm7"=B,3 "Db7"D- D4 | $
 "Gb7"(3zd=B (3AGD (3=EGD- D2 | "Gb7"(3zd=B (3AGD (3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- DA, | "Fm7"=B,3 "Bb7"D- D4 | $
 "Ebm7"(3zd=B (3AGD "Ab7"(3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- DA, | "Ebm7"=B,3 "Ab7"D- D4 |]
@@ -21284,7 +23549,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id saint-james-infirmary
 K:F
+I:linebreak $
 DF |: "Dm7"A2 AA "Gm7"G2- GA | "Dm7"FD- D2 z2 A2 | "Dm7"A2- AA "Gm7"B2 BA- | $
 "Dm7"A4 z2 DF | "Dm7"A2 AA "Gm7"G2- GA | "Dm7"FD- D2 z2 z E | "Bb7"F2- FD F2 "A7"ED- |1 $
 "Dm7"D4 z2 "A7"DF :|2 "Dm7"D4 z2 "A7"DF |: "Dm7"A2 AA "A7"G4 | "Dm7"AF "A7"D4 DF | $
@@ -21299,7 +23566,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id sandu
 K:Eb
+I:linebreak $
 z3 EG B (3cBe |: "Eb7"z2 z E G2 BA | "Ab7"z2 z "A7"!~(!e3 !~)!_GE | "Eb7"e2 z E G2 Be | $
 "Eb7"z2 z _d-d BA E | "Ab7"_G/E/A- A2- A2 E2 | "Adim"z _d2 B=A _A_G E | "Eb7"A/E/G- G4 E2 | $
 "Gm"z _d2 B"C7"=A _A_G E | "Fm7"_G=A GA F_A FA EG CE | "Bb7"_D2 B,2 (3D/E/D/B, =DE |1 "Gm7"z G_G F "C7"z GA B | $
@@ -21313,7 +23582,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=111
+%%id sanma-samba
 K:F
+I:linebreak $
 z2 z2 z3/2 A/c/d/f/ g/ || "Dm7"af/ gd fc/d/ g/f/d/c/ _A/ | "Bb7"G4- G z c/d/f/g/ | "Dm7"af/ gd fc/d/ g/f/d/c/ G/- | $
 "Bb7"Gd/c/- c4 z/ G/c/d/ | "Am7"ed/ ef e c3/2A/ c/d- | "D7"d6 z d/f/ | "Bb7"ge/ cA/ d3 c'/c'/^g- | $
 "Dbmaj7"g3 a z/ "Ebmaj7"D/F/A/c/ d/f/=g/ | "Dm7"af/ gd fc/d/ g/f/d/c/ _A/ | "Bb7"G4- G z c/d/f/g/ | "Dm7"af/ gd fc/d/ g/f/d/c/ G/- | $
@@ -21328,7 +23599,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id satin-doll
 K:C
+I:linebreak $
 |: "Dm7"AG A "G7"G2 A3 | "Dm7"z A3 "G7"G A3 | "Em7"BA B "A7"A2 B3 | "Em7"z B3 "A7"A B3 | $
 "Am7"z d3 c "D7"d3 | "Abm7"z _B3 _A2 "Db7"AG- |1 "Cmaj7"G8- || "Em7"G8 :| $
 "Cmaj7"G8 | z8 || "Gm7"c_B A "C7"G2 AB c- | "Gm7"c_B A "C7"G2 AB c- | $
@@ -21345,7 +23618,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=305
+%%id scrapple-from-the-apple
 K:F
+I:linebreak $
 z3 G2 G2 G | B3 G3- GG- | G G2 G B4- | B6 z2 | $
 z3 G2 G2 G | B3 G- G3 G- | G G2 G d2 z2 | z8 |: $
 "Gm7"z ^FG BA G=F D | "C7"Ec z2 z B2 A | "Gm7"Bf (3dcB AF G_D- | "C7"D2 z A-A B2 A | $
@@ -21364,7 +23639,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=160
+%%id the-selma-march
 K:C
+I:linebreak $
 z4 z2 G2 |: "G7"d4 d4 | "C9"d2 c2 _Bc z2 | "D7#9"z2 D2 F G2 G- | $
 "G7"GG _BG cB G z | "D7#9"z2 D2 F G2 G- | "G7"G4 z2 d2 | "G7"fe fe d4 | $
 "Fmaj7"c_B cd "E7#9"B2 "A7"G2 | "D7#9"z2 D2 F G2 G- | "G7"GG _BG cB G z | "D7#9"z2 D2 F G2 G- | $
@@ -21381,7 +23658,10 @@ N:Source: jazzXML
 M:6/8
 L:1/8
 Q:1/4=225
+%%id senor-blues
+%%tags needs-repair
 K:Ebmin
+I:linebreak $
 z z z z z B, |: E,2"Ebm7"B, EED | E2D EFB, | E,B,D EED | $
 E2D EDB, :| E,2"Ebm7"B, EED | E2D EFB, | "^Break"G, z z "Eb"F=AG B | $
 (3F=AGB FAD G z z B,EA, D || "Ebm7""^A"B,EB, EDG | z6 | "Ebm7"z3 F=AG B | $
@@ -21417,7 +23697,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id the-sequel
 K:C
+I:linebreak $
 |: "Fm7"_d3 c _B2 "Bb7#9"_AB- | "Ebmaj7"B6 z2 | "Dm7b5"_B3 _A G2 "G7"FG- | "Cmaj7"G6 z2 | $
 "Bm7b5"G3 F "E7#9"E2 DE- | "Amaj7"EE ^F^G AB ^cd | "Abm7"e3 d _d2 "Db7"_cd- | "Gbmaj7"d6 z2 "C7"z8 | $
 "Eb7"z8 | "C7"z8 | "Eb7"z8 :|
@@ -21431,7 +23713,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=225
+%%id set-us-free
 K:C
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 || "F"A6 C2 | "Eb"G8 | $
 "F"(3z2A2A2 A3 C | "Eb"G8 | "F"z4 (3A2_B2c2 | "Eb"G4 (3z2A2_B2 | $
@@ -21449,7 +23733,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id seventeen-west-17-west
 K:C
+I:linebreak $
 |: z2 "Bb7"gd c_A _ED | "B7"_A2 z2 "Db7"G2 _BG | "D7"_B2 G_A "B7"c2 gd | "Ab7"c_A _E"A7#9"D _B2 z2 | $
 "Db7#11"G2 _BG BG _A_E | "C7#11"z2 z D"B7"F D_E _A | "F7#9"c_e _a"C7"_g- g4- | "C7"g2 _ad- "Ab7"d4 | $
 "Ab7"d3 "B7"d(3f/a/f/ _ed c | "Bb7"B8- | "Bb7"B8- | "Bb7"B8 :|
@@ -21461,7 +23747,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=210
+%%id sham-time
 K:F
+I:linebreak $
 "F7""Bb7"z8 | z8 | z8 | z8 | $
 z8 | z8 |: "F7"_e'f bc' a2 dc | "Bb7"ff g2 z4 | $
 "F7"z2 df- ff gd | "Bb7"ff g2 z2 z _e'- | "F7"e'f bc' a2 dc | "Bb7"ff g2 z4 | $
@@ -21477,7 +23765,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id shut-your-mouth
 K:Bb
+I:linebreak $
 |: "Gm7""^A"d"C/Bb"=e z f- "Bb/C"f4- | f8 | "Gm9"fa "Bbmaj7"z =e- "C9"^e4- | =e8 :| $
 "Gm7""^B"z3/2 G2 "C/Bb"^F/ z/ B/ "Bbmaj7/C"z/ =F/-F =E | cE- E2 ^C/D/G/C/ =C/B,/G,/B,/- | "Gm7"B,C- "Bbmaj7"C6- | C4 z4 | $
 "Gm7"G^F "C/Bb"z/ B/ z/ "Bbmaj7/C"=F/-F =Ec _E- | E3 z/ ^C/D/G/C/ =C/B,/G,/B,/ C/- | C4- C4 |1 z2 z GB GB B :|2 $
@@ -21488,17 +23778,19 @@ CF =B,E B,E z3/2 E/ | GA BG AB GA B z/ EG AB GA B z/ GA B z/ E/G AB GA BG AB | z
 X:750
 T:Shut Your Mouth Bass
 C:Joshua Redman
-Arr. 6EQUJ5
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id shut-your-mouth-bass
 K:Bb
-|: G,,B,, z C,-C,/C,/ D,F, G, | G,,B,, z C,-C, B,,/C,/D,/F,,/ z | G,,B,, z C,-C,/C,/ D,F, G, | G,,/-G,,B,,/ z C,-C, B,,/C,/D,/F,,/ z :| $
-G,,B,, z C,-C,/C,/ D,F, G, | G,,B,, z C,-C, B,,/C,/D,/F,,/ z | G,,B,, z C,-C,/C,/ D,F, G, | G,,B,, z C,-C, B,,/C,/D,/F,,/ z | $
-G,,B,, z C,-C,/C,/ D,F, G, | G,,B,, z C,-C, B,,/C,/D,/F,,/ z | G,,B,, z C,-C,/C,/ D,F, G, |1 z8 :|2 $
-z8 || B,,2 B,,2 B,,D,, z E,,- | E,,4 _A,,2 =A,,2 | B,,2 B,,2 B,,D,, z E,,- | $
-E,,4 _A,,2 =A,,2 | B,,2 B,,2 B,,D,, z E,,- | E,,8 | z4 z4 | $
+I:linebreak $
+|: G,B, z C-C/C/ DF G | G,B, z C-C B,/C/D/F,/ z | G,B, z C-C/C/ DF G | G,/-G,B,/ z C-C B,/C/D/F,/ z :| $
+G,B, z C-C/C/ DF G | G,B, z C-C B,/C/D/F,/ z | G,B, z C-C/C/ DF G | G,B, z C-C B,/C/D/F,/ z | $
+G,B, z C-C/C/ DF G | G,B, z C-C B,/C/D/F,/ z | G,B, z C-C/C/ DF G |1 z8 :|2 $
+z8 || B,2 B,2 B,D, z E,- | E,4 _A,2 =A,2 | B,2 B,2 B,D, z E,- | $
+E,4 _A,2 =A,2 | B,2 B,2 B,D, z E,- | E,8 | z4 z4 | $
 z4 z4 | z4 z4 | z8 |]
 
 X:751
@@ -21509,7 +23801,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=208
+%%id sing-a-song-of-song
 K:C
+I:linebreak $
 |: "E""^Intro"E,,3 B,,3 ^G,2- | G,8 | "Cmaj7"C,3 G,3 E2- | E8 | $
 "D7"D,3 A,3 ^F2- | F8 | "E"E,,3 B,,3 ^G,2- | G,8 [K:treble]"E""_A"^g2 ^fg a2 gf | $
 z e3 Bd e2- | "Cmaj7"e8- | e8 | "D7"^f2 ef g2 fe | $
@@ -21536,7 +23830,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id sir-duke
 K:B
+I:linebreak $
 |: "B""^Intro"B,2 D2 FB z2 | G,G, B,/A,/B, D/=D/^D/G/ z2 | =G,G, B,B, =D/C/D =GF | z8 :| $
 "Bmaj7""^A"z2 DF GF DC | "G#m7"B, C2 G,3 G,B, | "G7"=DC B,=G, B, D2 "F#sus4"C- | C4 "F#7"z4 | $
 "Bmaj7"z2 DF GF DC | "G#m7"B, C2 G,2 F,G, B, | "G7"=DC B,=G, B, D2 C- | "F#7"C3 C- "F7"C2 z/ B,/B,/B,/ | $
@@ -21553,7 +23849,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id sister-sadie
 K:G
+I:linebreak $
 z3 |: "^A"z G,2 ^A,B, DE D | G3 B z4 | z G,2 ^A,B, DE D | $
 G3 E z4 | z G,2 ^A,B, DE D | e _B3 G z2 G | ^AB AB (3AG=F DC | $
 (3DC_B, G,=F, G,2 z2 :|1 "C7""^B"z4 z G2 _B | (3dc_B G=F G4 | "G7"z4 z D2 =F | $
@@ -21585,7 +23883,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=88
+%%id skate-u
 K:A
+I:linebreak $
 z8 | z8 | z8 | z8 || $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
@@ -21664,7 +23964,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id smokin
 K:Bb
+I:linebreak $
 "Em7"d2 z2 z2 "A7"B2- | B8 | "Dm7"B2 z2 z2 "G7"B2- | B8 | $
 "C9"B2 z2 z2 "F7"B2- | B8 | "Bbmaj7"B2 z2 z4 | z8 |: $
 "A7"_A3 B2- B B2 | "Eb7"_d3 e- e2 B2 | "Bb7"f4 (3=e_e_d BB | "Fm7"z2 z2 "Bb7"z2 B2 | $
@@ -21679,7 +23981,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id so-tired
 K:Ab
+I:linebreak $
 |: "Fm7"z8 | "Gb9"z8 | "Fm7"z8 | "Gb9"z8 "Fm7""^A"F F2 A2 FA B | $
 "Gb9"=Bc e_B- B/=B/_B/A/ F2 | "Fm7"F F2 A2 FA B | "C7"B2 Ac z4 | "Fm7"F F2 A2 FA B | $
 "Gb9"=Bc e_B =B_B/A/ F2 | "Fm7"F F2 A2 FA B |1 "Gm7"B=B _B"C7"A F "Fm7"z z2 :|2 "Gm7"B=B _B"C7"A F "Fm7"z2 A || $
@@ -21696,7 +24000,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id soft-impressions
+%%tags needs-repair
 K:C
+I:linebreak $
 "Am7""^Drunkish Piano Intro""C/G"z8 | "F7""E7"z8 | "Am7""C/G"z8 | "F7""E7"z8 | $
 "Am7""C/G"z8 | "F7""E7"z8 | "Am7"z8 | "F7"z4 "E7"z c^G A- |: $
 "Am7"AB c2 "C/G"z2 Bc- | "C/F#"cd e2 z "F7"_e (3dcA | "Am7"A2 (3zc"D7"A d2 ce- | "A7"e4 "Bb7"z2 (3A"A7"cA | $
@@ -21718,7 +24025,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id solid
 K:Bb
+I:linebreak $
 z4 z2 z B |: "Bb7"dg fB- B2 z e | "Eb7"z dB G B2 z d | "Bb7"z B z F _A2 B2- | $
 B4 z2 z B | "Eb7"_dg fB- B2 z e | "Eb7"z _dB G B2 z =d | "Bb7"z B z F _A2 B2- | $
 "Bb7"B2 z d z G z B | "F7"dB cB f3 B | "Eb7"z _G z B d2 BF | "Bb7"_A2 B6 | $
@@ -21733,7 +24042,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=175
+%%id somethin-else
+%%tags needs-repair
 K:F
+I:linebreak $
 "_Sax/2nd"z4 z4 | "F7#9"z4 z C_E G | G2 z2 z4 | z4 C2 _EC | $
 G G2 z z4 | "Bb7"z2 C _E2 C E2 | G G2 z z4 | "F7#9"z2 z _E2 G_A G- | $
 G2 z2 z4 | "C7"z2 _AG A2 GG- | "D7"G4 z4 | "G7"z2 C _E2 "C7#9"E2 C | $
@@ -21762,7 +24074,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=155
+%%id somethin-special
 K:Bb
+I:linebreak $
 z2 z ^CD ^FG A | BG z2 "Gsus4"z4 | z2 z ^CD ^FG A | BG "Gsus4"z2 z4 | $
 z3 ^FG =Bc d | ec "Csus4"z2 z4 | z3 ^CD ^FG A | BG "Gsus4"z2 z4 | $
 z4 d2 B2 | "A7"c3 c- c2 c2- | cG B^c =cB FG | "D7"F3 F3 F2- | $
@@ -21776,7 +24090,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id something-else
 K:Eb
+I:linebreak $
 |: "_(""_)"E_D ED ED ED | B,=A, EC B,A, EC | E_D ED ED ED | EC B,=A, EC B,A, z B,B, B,B, B,B, B, | $
 B,B, B,B, B,B, B,B, |1 B,B, B,B, B,B, B,B, | z B,B, B,B, B,B, B, :|2 _D/C/=A, D/C/A, D/C/A, D/C/A, || $
 _D/C/=A, D/C/A, D2 "^Go To Measure 0"z2 |: (3F2Fz G/A/c GE E | _D/_dd/ c/AE/ D2 D2 | z B,B, C/_D/F DA, A, | $
@@ -21798,7 +24114,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id song-for-m
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: z "Dm7b5"F2 G A2 GB- | "G7#9"B A2 G2 F2 G- | "Cm7"G7 "Bm7"G | c2 "Bbm7"B2 "A7"G2 EC- | $
 "Abmaj7"C4- C F2 G | "G7#9"B2 A2 G2 ED- | "Cm7"D8- | "F13"D8 | $
 "Dm7b5"z F2 G A2 GB- | "G7#9"B A2 G2 F2 G- | "Cm7"G7 "Bm7"G | c2 "Bbm7"B2 "A7"G2 FE- | $
@@ -21819,7 +24138,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=96
+%%id song-for-my-lady
 K:F
+I:linebreak $
 A |: "Dm7"D2 E2 F2 | "Cmaj7"G2 A2 B2 | "Bbmaj7"A2 B2 d2 |1 $
 "A7"z2 ^c2- cA :|2 "A7"z2 ^c2- cD |: "Dm7"A6- | "Cmaj7"A6- | $
 "Bbmaj7"A6 | "A7"B z A2 ^c2 | "Dm7"d6- | "Cmaj7"d6- | $
@@ -21835,7 +24156,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id sonny-s-crib
 K:Bb
+I:linebreak $
 z "Bb""^Slovenly!"B_d =e_e dB _A |: B8 | z "Bb"B_d =e_e dB _A | B8 | $
 z "Bb"B_d =e_e dB _A | B8 | z "Bb"B_d =e_e dB _A | B8 | $
 z "Bb"B_d =e_e dB d | e8 | z2 "Bb"_a=e _e_d B_A | "Bb7""Eb7"B8 |1 $
@@ -21854,7 +24177,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id sonnymoon-for-two
 K:Bb
+I:linebreak $
 z "Bb7"B3 _A2 F2 | "Eb7"E2 _D2 B,B, z B, | "Bb7"z z2 E- E2 _DB, | z B,_D E- E2 DB, | $
 "Eb7"z B3 _A2 F2 | E2 _D2 B,B, z B, | "Bb7"z z2 E- E2 _DB, | z B,_D E- E2 DB, | $
 "Cm"z B3 _A2 F2 | "F7"E2 _D2 B,B, z B, | "Bb7"z z2 E- "G7"E2 _DB, | "Cm7"z B,_D E- "G7"E2 DB, || $
@@ -21870,7 +24195,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id sookie-sookie
 K:Eb
+I:linebreak $
 "Db""B"z8 | "Ab"z8 | [K:bass]"Eb7#9"E,2 z B,,_D, B,,D, E, | [K:treble]z8 | $
 z8 | z8 | z8 | z8 | $
 z8 |: "Eb7#9"z2 AG ee cc | z8 | z2 AG ee cc | $
@@ -21889,7 +24216,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id soon
 K:Eb
+I:linebreak $
 "Ebmaj7"B8- | B G3 B2 c2 | "Gm7"_d4 B2 dA- | "C7"A4 G4 | $
 "Fm7"A8- | A F3 A2 B2 | "Abm7"=B4 A2 B^F- | "Bb7"F4 ^F4 | $
 "Ebmaj7"z G3 A2 B2 | "Bbm7"e2 e2 e2 "Eb7"ee- | "Abmaj7"e2 z F F4- | "Gm7"F4 "C7"z2 z2 | $
@@ -21907,7 +24236,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id soul-power-74
 K:C
+I:linebreak $
 z8 | z8 | z8 | z8 || $
 "Dm7"z2 DA/c/- cA z2 | A/_A/G A/G/F/G/- GD F2 | z DF G z DF G | A2 A2 AD/F/- FG | $
 z2 DA/c/- cA z2 | A/_A/G A/G/F/G/- GD F2 | z DF G z DF G | A2 A2 AD/F/- FG || $
@@ -21929,7 +24260,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id soul-station
+%%tags needs-repair
 K:Eb
+I:linebreak $
 z _G (3=GBc |: "Eb7"e2 _d2 BA z _G | "Bb7"z2 z2 z _G (3=GBc | "Eb7"e2 _d2 BA z _G | $
 "Bbm7"z2 z2 "Eb7"z _c (3=cef | "Ab7"a2 f2 e_d z _c | "Ab7"z4 z B (3dfg | "Bb7"ba (3z"Ab7"fe d2 BB | $
 "Bb7"z2 z2 z2 ce | "Eb7"ee z2 z2 (3_geg | "Eb7"ee z2 z2 (3=a_ag | "Ab7"ee z2 z2 (3ae_g | $
@@ -21948,7 +24282,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id soul-street
 K:Bb
+I:linebreak $
 "_The Soberest"z4 z B,_D B, | "Bbm7"EE z3 B,E B, | _DD z3 B,D B, | EE z3 B,E B, | $
 _DD z3 E_G E | "Ebm7"_AA z3 EA E | "Ab7"_GG z2 z B,_D B, | "Bbm7"EE z2 z B,E B, | $
 _DD z3 F_A B- | "C7#9"B4- BB _de- | "F7#9"e4- e_d BB- | "Gm7"B4 BB BB- | $
@@ -21977,7 +24313,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id soul-village
 K:Eb
+I:linebreak $
 "Fm7"z8 | "Gm7"z8 | "Cm7"z8 | z8 | $
 "Fm7"z8 | "Gm7"z8 | "Cm7"z8 | z8 | $
 "Fm7"z8 | "Gm7"z8 | "Gm7""Gbdim7"z8 | "Fm7""Cm7"z8 | $
@@ -22003,7 +24341,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=225
+%%id soulful-strut
+%%tags needs-repair
 K:Ab
+I:linebreak $
 z4 z EF ^F || "Abmaj7"GG z2 z4 | "Bbm7"GG z GG EF G | "Abmaj7"AA z2 z4 | $
 "Bbm7"AA z A2 EF _G | "Abmaj7"GG z6 | "Bbm7"GG z G2 EF G | "Abmaj7"AA z2 z2 z2 | $
 "Bbm7"AA z A2 | "Ab"E,3 F,3 A,2- | A,/ B,3 C2 B,2 | E,3 F,3 A,2- | $
@@ -22045,7 +24386,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=90
+%%id soulville
+%%tags needs-repair
 K:Bb
+I:linebreak $
 |: "Bb""_A"B,2 z2 z2 (3E/F/E/_D | E4 _D3 B,- | B,2 z6 | z F, z F, _A,2 B,2 | $
 z B,_D/B,/ E3 DB, | F d3 (3E/F/E/_D B,2 | z B,_D E3 DB, | F _A3 (3E/F/E/_D B,2 | $
 E_D B,_A,- A,4- | A,2 z2 _A,F, CG,- | G,4 z4 |1 =E2 _E_D ED B,_A, :|2 $
@@ -22070,7 +24414,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id the-source
 K:C
+I:linebreak $
 |: "B13"z8 :| "B13""^A"B4 ^d2 z ^f- | f8 | ^f4 ^d2 z B- | $
 B4 z3 ^F | B4 ^d2 z ^g- | g3 ^f ^g2 f2 | ^f4 ^d3 B- | $
 B2 z4 z ^F | "Bm13"B4 d2 z ^f- | "C#m13"f4 z4 | "Dm13"^f4 d2 z B- | $
@@ -22102,7 +24448,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=280
+%%id spain
 K:D
+I:linebreak $
 |: z8 "^A"d2 fd ed Bd | z cA c z B G2 | A3 A z2 A2- | A4 F3 F | $
 z2 F6- | F4 z2 F2 | G3 A3 B2 | c3 d3 e2 | $
 d3 c- c4- | c4 z2 F2 | G3 A3 B2 | c3 d3 e2 | $
@@ -22140,8 +24488,11 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=97
+%%id spiral
+%%tags needs-repair
 K:C
-"Emaj7/F#"g2 "_\"Fe ea z z " Style Intro"g/^d'b/ ge bd' | "Dmaj7/E"d'2 z/ c'/a/f/- fd c'2 | "Dbmaj7/Eb"z _d/f c'f c' "Ebmaj7/F"z _e/g d'g d' | z fc' ec' g'f a z _g_d' f_b f'f bf' | $
+I:linebreak $
+"Emaj7/F#"g2 "_"Fe ea z z " Style Intro"g/^d'b/ ge bd' | "Dmaj7/E"d'2 z/ c'/a/f/- fd c'2 | "Dbmaj7/Eb"z _d/f c'f c' "Ebmaj7/F"z _e/g d'g d' | z fc' ec' g'f a z _g_d' f_b f'f bf' | $
 ^d2 "Emaj7/F#"z/ d'/b/g/ de bd' | ^c2 "Dmaj7/E"z/ c'/a/f/- fd c'2 | "Dbmaj7/Eb"z d'2- c'/ z z/ "Ebmaj7/F"c'3 | z z/ "Fmaj7/G"d'2- c'/ !fermata!c'4 | $
 [K:Db]z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 |: $
@@ -22223,7 +24574,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=143
+%%id spontaneous-combustion
+%%tags needs-repair
 K:Bb
+I:linebreak $
 z B2 _A-A/B/ A/F/E _FB, _D |: "Bb7"^C=E DF B,D CE DF z z2 | "Bb7"z B2 _A-A/B/ A/F/E _FB, _D | "Bb7"^C=E DF B,D CE DF z z2 | $
 "Bb7"z B2 _A-A/B/ A/F/E _FB, _D | "Eb7"^C=E DF B,D CE DF z z2 | "Eb7"z B2 _A-A/B/ A/F/E _FB, _D | "Eb7"^C=E DF B,D CE DF z z2 | $
 "Eb7"z B2 _A-A/B/ A/F/E _FB, _D | "Cm7"^C=E DF B,D CE DF z z2 | z B2 "F7"_A-A/B/ A/F/E _FB, _D | "F7""_To Solos, Over Form/Blues"^C=E DF B,D CE DF z z2 |1 $
@@ -22237,7 +24591,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id sticky-july
 K:D
+I:linebreak $
 "F#m7""^A""Bm7"z8 | "A7""Dmaj7"z8 | "A69""Dmaj7"z8 | "A9""Dmaj7"z8 |: $
 "F#m7""^B""_Freely"cB A "Bm7"F3 ED | "A7"E2 A2 "Dmaj7"F2 F2 | "A69"E2 A2 "Dmaj7"F2 F2 |1 "A9"E2 A2 "Dmaj7"F4 :| $
 "Bmaj7""^C"B8 | "Em7"e8 | "G#m7"^g8 | "A7"a8 | $
@@ -22253,7 +24609,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id stolen-moments
 K:Eb
+I:linebreak $
 |: "Cm7"z G3- G4 | "Dm7"z =A3- A4 | "Ebmaj7"z B3- B4 | "Dm7"z =A3- A4 :| $
 z "Cm7"GB d z c2 B | "Cm6"c =A2 F/C/E G3 | "Cm7"z GB d z c2 B | "Cm6"c =A3 G4 | $
 "Fm7"z Ac e z d2 c | d B3 F A3 | "Cm7"z EG B z =A2 G | =A F3 E2 GB | $
@@ -22273,7 +24631,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id storm
 K:Eb
+I:linebreak $
 "Cm7""_Intro"z8 | "F13"z8 | "Cm7"z8 | "F13"z8 | $
 "Cm7"z8 | "F13"z8 | "Cm7"z8 | "F13"z2 z2 z CE G- |: $
 "Cm7"G3 FG FE G- | "F7sus4"G-G z2 "F7"z CE F- | "Dm7b5"F3 E"G7#9"_G F/E/B, C- | "Cm7"C2 z2 z "F13"CE F- | $
@@ -22291,11 +24651,24 @@ N:Source: jazzXML
 M:12/8
 L:1/8
 Q:1/4=96
+%%id stormy-monday
+%%tags needs-repair
 K:G
+I:linebreak $
 |: "G9"ddd ddd "Ab9"ddd ddd |1 "G9"d z "G"z DF^A d3 z3 :|2 "D"d z z DF^A d3 z ^G_B |: "G9"GAE GG2- G z z z3 | $
 "C9"z3 z2 G3 _BGA E | "G9"E6 "Ab9"z6 | "G9"z12 | "C9"z4 Gd_B cdB G2 | $
 z6 z G "C#dim7"c3 c | "G9"_BGG D3 "Am7"z6 | "Bm7""Bbm7"z12 | "D9"z3 z cc d3 z3 | $
-"Eb9""^To Coda"z4 z "D9"E2_B Gcc B | "G7"G6 "C9"z6 | "G9""D+"z12 :| "^CODA""_They call it stormy Monday but Tuesday's just as bad\nThey call it stormy Monday but Tuesday's just as bad\nWednesday's worse and Thursday's also sad\n\nYes, the eagle flies on Friday and Saturday I go out to play\nEagle flies on Friday and Saturday I go out to play\nSunday I go to church, then I kneel down and pray\n\nLord have mercy, Lord have mercy on me\nLord have mercy, my heart's in misery\nCrazy about my baby, yes, send her back to me"z "C9"d2- "G"d3 z D/D/E-E G_B | $
+"Eb9""^To Coda"z4 z "D9"E2_B Gcc B | "G7"G6 "C9"z6 | "G9""D+"z12 :| "^CODA""_They call it stormy Monday but Tuesday's just as bad
+They call it stormy Monday but Tuesday's just as bad
+Wednesday's worse and Thursday's also sad
+
+Yes, the eagle flies on Friday and Saturday I go out to play
+Eagle flies on Friday and Saturday I go out to play
+Sunday I go to church, then I kneel down and pray
+
+Lord have mercy, Lord have mercy on me
+Lord have mercy, my heart's in misery
+Crazy about my baby, yes, send her back to me"z "C9"d2- "G"d3 z D/D/E-E G_B | $
 "G7"G6 "C9"z6 | "G7"G3 "Ab7"G3 "G9"G6 |]
 
 X:782
@@ -22306,16 +24679,21 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id straight-street
+%%tags needs-repair
 K:C
+I:linebreak $
 z4 z2 "Bbm7"B"Bm7"A |: "^A"z2 "Bm7"z ^cB "E7"ec A | "Am7"B3 "D7"A- A4 | "Gm7"z2 z A"C7"G cA F | $
 "Fm7"G2 FG "Bb7"_B,F _B_A | "Ebm7"_G4- __G_D _G=G- | "E7"G4- G^F ^G^c- | "F#maj7"c4- c^F ^GF | $
 "D7"z2 E^F DE F^G | "Fm7"_B8- | "Bb7"B2 _A_B EF BA | "Ebm9"_G8- |1 $
-G6 "Bbm7"d"Bm7"B :|2 "^B""_Latin\n""Ebm9"G4 z _d_c _A || "Dbm7"_G8- | "Gb7"G4- G_d _B^G | $
+G6 "Bbm7"d"Bm7"B :|2 "^B""_Latin""Ebm9"G4 z _d_c _A || "Dbm7"_G8- | "Gb7"G4- G_d _B^G | $
 "Ebm7"G8- | "Ab7"_G4- Gd _dG | "Em9"^F8- | "A13"F4- Fc BA | $
 "Dmaj7"^F8- | "C13"F4 z ^cB ^G | "Bm"^F7 ^G/F/ | "C#7"F2 ^F2 G2 ^G2 | $
-"F#7"B4 "B7"A4 | "G7"c4 "C7"_B4 || "^A\n"z2 "Bm7"z ^cB "E7"ec A | "Am7"B3 "D7"A- A4 | $
+"F#7"B4 "B7"A4 | "G7"c4 "C7"_B4 || "^A"z2 "Bm7"z ^cB "E7"ec A | "Am7"B3 "D7"A- A4 | $
 "Gm7"z2 z A"C7"G cA F | "Fm7"G2 FG "Bb7"_B,F _B_A | "Ebm7"_G4- __G_D G_G- | "E7"G4- G^F ^G^c- | $
-"F#maj7""_Solos over Form\nAABA\nNo style change at B on solos"c4- c^F ^GF | "D7"z2 E^F DE F^G | "Fm7"_B8- | "Bb7"B2 _A_B EF BA | $
+"F#maj7""_Solos over Form
+AABA
+No style change at B on solos"c4- c^F ^GF | "D7"z2 E^F DE F^G | "Fm7"_B8- | "Bb7"B2 _A_B EF BA | $
 "Ebm9"_G8 |]
 
 X:783
@@ -22325,8 +24703,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id strasbourg-st-denis
 K:Eb
-|: "Bbm7""^Bass/Piano Intro\n"B2 B2 cc "Cm7"z _d- | "Dbmaj7"d4- dc Fc | "Bbm7"B2 B2 cc "Cm7"z _d- | "Dbmaj13"d3 e/=e/f/d/ F3 | $
+I:linebreak $
+|: "Bbm7""^Bass/Piano Intro"B2 B2 cc "Cm7"z _d- | "Dbmaj7"d4- dc Fc | "Bbm7"B2 B2 cc "Cm7"z _d- | "Dbmaj13"d3 e/=e/f/d/ F3 | $
 "Bbm7"B2 B2 cc "Cm7"z _d- | "Dbmaj7"d_d de- "Eb7"e2 gb | a"Abmaj9"e A2 AG _GF- | "F7#9"F8 "Bbm7""_Head"a/f/e/f/ c/B/A/c/ E"Cm7"B A2- | $
 "Dbmaj7"A8 | "Bbm7"a/f/e/f/ c/B/A/c/ "Cm7"EB A2- | "Dbmaj13"A8 | "Bbm7"a/f/e/f/ c/B/A/c/ "Cm7"EB A2- | $
 "Dbmaj13#11"A3 F/A/ "Eb7"c2 BA |1 "Abmaj9"GF E2 CE F_G- | "F7#9"G A2 F4 z :|2 F"Abmaj9"F E2 DE F_G- || $
@@ -22350,7 +24730,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id stutter
+%%tags needs-repair
 K:Ab
+I:linebreak $
 Af Gb | _Ge Fa | d_c e6- | E4 A4 | $
 [M:3/4]z Ae Ae z Ae | z Ae Ae z Ae | z Ae Ae z Ae | z Ae Ae z Ae | $
 EA EB Fc | Ae A-A z f2 | Fe z2 Fd | [M:4/4]d4 c4 |: $
@@ -22463,7 +24846,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id summer-samba
 K:C
+I:linebreak $
 |: E"Cmaj7"G A2 B_B A2 | EG A B2 _B A2 | "F#m7"EG A2 B_B A2 | "B7"^DG A B2 _B A2 | $
 "Fmaj7"Ac d2 e_e d2 | Ac d e2 _e d2 | "Bb7"_Ac d2 e_e d2 | Ac d e2 _e d2 | $
 "Em7"z2 g2 G4- | "A7"G4 _ba gf |1 "Dm7"e8- | "Bm7b5"e4 "E7"g^f =fe | $
@@ -22479,7 +24864,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id summertime
 K:C
+I:linebreak $
 z4 e2 c2 |: "Am7"ee- e6- | "Bb7"e2 dc de c2 | "Am7"A4 "E7"E4- | $
 "Am7"E4 "A7"e2 c2 | "Dm7"dd- d6- | "F7"d2 cA cA c2 | "F#m7"B8- | $
 "E7"B4 z e2 c | "Am7"e e2- e- e4- | "Bb7"e2 dc de c2 | "Am7"A4 E4- | $
@@ -22494,7 +24881,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id sunny
 K:C
+I:linebreak $
 "Am7"E3 E- E4- | "Gm7"E4 {/A}"C7"GE D z | "Fmaj7"C2 CA, CD CE- | "F""Bm7"E6 "E7"z/ A,/C/D/ | $
 "Am7"E3 E- E4- | "Gm7"E4 "C7"AG ED | "Fmaj7"C2 CA, CD CE | "F""Bm7"E6 "E7"A,C | $
 "Am7"DE CD C2- CD | "C7"EC DC- C3 D | "Fmaj7"E D2 C- C2 DE | "Bb7"G2 DC D- D3 | $
@@ -22508,7 +24897,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id superstition
 K:Ebmin
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 "Ebm7"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z4 de eB/g/- |: $
@@ -22533,7 +24924,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id surreptitious
 K:C
+I:linebreak $
 z4 z2 BG- | G6- GD | F/G/ z z2 z2 AF- | F4 D/_E/B,/D/ C/D,/ z | $
 z4 z2 BG- | G6- GD | F/G/ z z2 z2 AF- | F6 _E/F/_A/_B/- | $
 B6 d_B- | B4 f_B- B2- | B2 g2 f2 dB- | B8 | $
@@ -22551,7 +24944,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id sweet-emma
 K:C
+I:linebreak $
 z6 Ac |: "C7"c2 z6 | z GA Ge _e2 d- | "G7"d4 z4 | $
 z4 f e2 d- | d4 z4 | z GA Gc c2 c- | "C7"c4 z4 | $
 z4 z GA G | "C7"e4- e_e =ed- | "E7"d8 | "Am7"cc z cc "C7"c z c | $
@@ -22566,7 +24961,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id t-bone-shuffle
 K:G
+I:linebreak $
 "G7"G,,2 B,,2 D,2 E,2 | G,2 E,2 D,2 B,,2 | G,,2 B,,2 D,2 E,2 | [K:treble]z2 z2 z G_B z | $
 "G7"B z4 G_B z | Bd c z BG _B z | B z z z z G_B z | Bd c z BG _B z | $
 "C7"_B z4 GB z | _Bd c z BG B z | "G7"B z4 G_B z | Bd c z BG _B z | $
@@ -22587,7 +24984,9 @@ N:Source: jazzXML
 M:5/4
 L:1/8
 Q:1/4=250
+%%id take-ten
 K:C
+I:linebreak $
 "Dm7"z2 z DF A "G13"B2 B2 | "Dm7"AB/A/ FD- D2- "G13"D2- D2 | "Dm7"z2 z c-c A "G13"B3 A/G/ | "Dm7"A6- "G13"A2 z2 | $
 "Dm7"z2 z DF A "G13"B2 B2 | "Dm7"AB/A/ FD- D2- "G13"D4 | "Dm7"z2 z F-F D "G13"E3 D/C/ |1 D6- "Dm7"D2 "G13"z2 :|2 $
 "Dm7"D6 A_A "G13"G_G || "Bbm7"FG z FG _A/G/F "Eb9"G z F | "Abm7"_EF z E F2 E"F7"F z E | "Bbm7"_D_E z DE F/"Eb9"E/D E z D | $
@@ -22605,7 +25004,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id take-me-there
 K:C
+I:linebreak $
 |: "Cm9"z8 | "Dm7"z8 | "Ebmaj9"z8 |1 "Dm7""G7"z8 :|2 $
 z7 D |: "Cm7"_E G2 _B2 d2 f- | "Dm7"f d2 A2 F2 G- | "Ebmaj7"G8- | $
 "Dm7"G6 "G9"z D | "Cm7"_E G2 _B2 d2 f- | "Dm7"f3 d A2 FG- | "G9"G8 | $
@@ -22624,7 +25025,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id take-the-a-train
 K:C
+I:linebreak $
 |: "C6"G8- | "Cmaj7"G e3 G2 c2 | "D7b5"e ^G4- G3- | G8 | $
 "Dm7"A8 | "G7"A^A Be G_G F_d | "Cmaj7"c E4- E3- |1 "Dm7"E8 :|2 $
 "Gm7"E8 || "Fmaj7"A c4- c3 | e F3 A2 c2 | e A3- A4- | $
@@ -22641,7 +25044,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id that-is-why-you-are-overweight
 K:C
+I:linebreak $
 |: z2 "Gm7"B2 "_Extended Solos"z2 "F"B2 | "C7"B8 z2 "Gm7"B2 z2 "F"B2 | "C7"B8 | z2 "Gm7"B2 z2 "F"B2 | $
 "C7"B8 | z2 "Gm7"B2 z2 "F"B2 | "C7"B8 | z2 "Gm7"B2 z2 "F"B2 | $
 "C7"B8 | z2 "Gm7"B2 z2 "F"B2 | "C7"B8 | z2 "Gm7"B2 z2 "F"B2 | $
@@ -22659,7 +25064,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id the-in-crowd
+%%tags needs-repair
 K:C
+I:linebreak $
 |: "D"z8 | z8 | z8 | z8 "D""^Piano In"z2 {/_A}=Ad GF DF | $
 z G3- G4 | z2 {/_A}=Ad GF DF | z D3- D4 | z2 {/_A}=Ad GF DF | $
 z G3- G4 | z GA c- c2 GB F | GB FA DF | "G7"z4 z "^Approx (use simpson's Three Point Rule)"FB EB DB | $
@@ -22677,7 +25085,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id the-odd-couple
 K:F
+I:linebreak $
 |: "Dm7"FA dF Ad G=B dG Bd "G7"Ac dA cd GB dG Bd | "Dm7"FA dF Ad G=B dG Bd "G7"Ac dA cd GB dG Bd :| "Dm7"FA dF Ad G=B dG Bd "G7"Ac dA cd GB dA, |: "Dm7"DA AG "G7"A4- | $
 "Dm7"A2 GF "G7"G2 FE | "Dm7"F3 "G7"D4- D | "Dm7"z7 "G7"D | "Gm7"Gd dc "C7"d4- | $
 "Gm7"d2 cB "C7"c2 AG | "Gm7"B3 G- "C6"G4 | "Gm7"z8 |1 "F7"z2 A2- A"B7"F GD | $
@@ -22695,7 +25105,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id the-zone
 K:C
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 "A7"z8 | z8 | z8 | z8 |: $
 "A7"G/AA/ c/^cc/ e ^f2 g- | "G/A"ga ^f2 "D/A"ed- d2 | "A7"G/AA/ c/^cc/ ga ^fg | "G/A"z8 :| $
@@ -22719,10 +25131,13 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id the-theme
+%%tags needs-repair
 K:C
+I:linebreak $
 "Bb"z _B (3ABA | B D3 _E2 z2 | z E3 F_B (3ABA | _B D3 _E2 z2 | $
 z E3 F_B (3ABA | _B D3 _E2 z2 | z E3 F_B (3ABA | _B D3 _E2 z2 | $
-(3^c/d/c/_B =c z z z z d/d/ | "Bb"_B2 F6- | F2 z2 z4 || "^First Solo\n"z8 || $
+(3^c/d/c/_B =c z z z z d/d/ | "Bb"_B2 F6- | F2 z2 z4 || "^First Solo"z8 || $
 "Bbmaj7"_AF AF- "Gm7"F4- | "Cm7"F4- F3 "F7"d | "Bbmaj7"z2 "Gm7"_B6- | "Cm7"B8- | $
 "Fm7"B4 _A"Bb7"F AF- | "Ebmaj7"F8 | "Dm7"z4 d2 "G7"f2- | "Cm7"f8- | $
 "Bbmaj7"f8- | "Cm7"f4 d "F7"_B3 | "Bbmaj7"_A2 "Gm7"F6- | "Cm7"F8- | $
@@ -22739,7 +25154,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id there-will-never-be-another-you
 K:Eb
+I:linebreak $
 B,2 || "Ebmaj7"C2 D2 E2 F2 | G2 B2 F3 E | "Dm7b5"F8- | $
 "G7"F6 G2 | "Cm7"E2 F2 G2 B2 | c2 e2 c3 B | "Bbm7"c8- | $
 "Eb7"c6 B2 | "Abmaj7"e2 c2 B2 A2 | "Db9"G2 F2 G2 A2 | "Ebmaj7"B2 G2 F2 E2 | $
@@ -22759,7 +25176,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id things-are-getting-better
 K:F
+I:linebreak $
 B,=B, | "^Piano"C2 d2 c2 A2 | F F2 A3 GF | z2 C2 (3B,2C2B,2 | $
 A,2 z2 CD F2 |: "F7"AA- "A7"A4 z2 | "D7"AA- A4 z2 | "G7"(3A/B/A/G FD F "C7"G2 F- | $
 "F7"F2 z2 C"C7"D FD | "F7"AA- "A7"A4 z2 | "D7"A A3 z4 | "G7"(3A/B/A/G FD F A2 G- | $
@@ -22776,7 +25195,9 @@ N:Source: jazzXML
 M:3/4
 L:1/8
 Q:1/4=96
+%%id this-here
 K:F
+I:linebreak $
 z2 z "F7"CF C | "F7"F2 Ac Bd | "F7"Fc _eC FC FC | "F7"F2 Ac Bd | $
 "F7"c_e z CF C | "F7"F2 Ac Bd | "F7"Fc _eC FC FC | "F7"F2 Ac Bd | $
 "F7"c_e z FB F | "Bb7"B2 Ac Bd | "Bb7"Bc _eF BF BF | "Bb7"B2 Ac Bd | $
@@ -22802,7 +25223,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=180
+%%id to-the-top
 K:D
+I:linebreak $
 |: a/a/a/a/ z2 z4 | z8 :| a/a/a/a/ z2 a/a/a/a/ z2 | a/a/a/a/ z2 a/a/a/a/ z2 | $
 a/a/a a/a/a a/a/a a/a/a | a/a/a/a/ a/a/a/a/ a2 z2 |: a/a/a/a/ a/a/a/a/ b=c' a/a/a/a/ a/a/a/ | a/a/a/a/ a/a/a/a/ b=c' a/a/a/a/ a/a/a/ | $
 a/a/a/a/ a/a/a/a/ b=c' a/a/a/a/ a/a/a/ | g/g/g/g/ g/g/g/g/ a2 z2 z g/g/a g/g/a g/g/a g/g/ | ag/g/ ag/g/ ag/g/ ag/g/ | a_b c'd' c'b aa | $
@@ -22830,7 +25253,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id toad-s-place
 K:C
+I:linebreak $
 |: "F9""^Bass/Piano"F3/2 F"Bb7"_A "E9"=A _B3/2 F_A z/ "Eb9"EB | EB _E/_D/_B,/_A,/ E"E9"=E "^4x"z2 "F9"(3_b/=b/_b/_a "Bb7"c'/ z "E9"a/ z "Eb9"f- | f2 f_e g2 ec- | "F9"c8 | $
 "Eb9"z8 | z2 "F9"(3_b/=b/_b/_a "Bb7"c'/ z "E9"a/ z "Eb9"f- | f2 f_e g2 ec- | "F9"c8 | $
 "Eb9"z8 | z2 "F9"(3_b/=b/_b/_a "Bb7"c'/ z "E9"a/ z "Eb9"f- | f2 f_e g2 ec- | "F9"c8 | $
@@ -22854,7 +25279,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id tom-thumb
+%%tags needs-repair
 K:C
+I:linebreak $
 "C""_Bass Intro"A,3 E E4 | C3 G G4 | A,3 E E4 | C3 G G4 || $
 "^Sax In""_A""^Latin Funk"eA d^c z3 c- | "^Vamp continues until C..."cE B_B z3 e- | eA d^c z3 c- | cE B_B z3 e- |: $
 "A7""_B""^Head"E2 EG z G A2- | "C7"A2 z GA GE D- | "A7"D2 ^C2 z3 =C- | "D7"C2 B,2 z4 | $
@@ -22872,7 +25300,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id too-many-rivers-to-cross
 K:F
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 || "F"aa a/aa/ "Am"ag/f/- f2 | "Bb"z2 z f/g/ "A"a3/2 g-g/f/ d/- | $
 "Bbmaj7"d2 z2 z "C"c2 B/G/ | "F"F A3 z4 | "F"aa a/a/a "Am"ag/f/- f2 | "Bb"z2 z f/g/ "A"a2- a/g/f/d/ | $
@@ -22887,10 +25317,12 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id tricotism
 K:Bbmin
+I:linebreak $
 "Bb""^Intro"FG =G A2 G_G F | =g_g =ed =B A2 z | Fc Gd =G=d Ae Gd _G_d FB | z de/=e/ _e/d/e B z2 | $
 Fc Gd =G=d Ae Gd _G_d FB | !8vb(!z F,G, =G,^G, =G,_G, F, | z "Eb7"=g3 g4 | "D7"g2 g4 g"Db"f | $
-"Bb"z2 ga d'=g (3_g=g_g | =ed A=G _G2 z A || "^Head\n"B"Dbmaj7"c BA z2 z F | EF ED z z z F | $
+"Bb"z2 ga d'=g (3_g=g_g | =ed A=G _G2 z A || "^Head"B"Dbmaj7"c BA z2 z F | EF ED z z z F | $
 c"Eb7"B =GF =DE Gc | B"Eb7"=G ef z2 z D | G"Gbmaj7"G DG =G"Gdim"G DG | "Dbmaj7"A2 (3A=G_G F"Bb7"_c B=A, | $
 B,"A7"D =E=G ^FE =B=A | A2 "Ebm7"z z z "Ab7"z A z | B"Dbmaj7"c BA z z z F | EF ED z z z F | $
 c"Eb7"B =GF =DE Gc | B=G ef z2 z (3B=A/ | G"Gbmaj7"G DG =G"Gdim"G DG | "Dbmaj7"A2 (3A=G_G F"Bb7"_c B=D | $
@@ -22908,7 +25340,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id tricrotism
+%%tags needs-repair
 K:Cmin
+I:linebreak $
 B |: "Ebmaj7"cd cB z2 z G | FG FE z2 z G | "F7"dc =AG =EF Ad | $
 "F7"c=A fg z2 (3c=B_B | "Abmaj7"AA EA "Adim"=AA EA | "Ebmaj7"B2 (3B=A_A "C7"G_d cB, | "B7"=B,^D ^F=A ^GF _d_c | $
 "Bb7"B2 z2 z2 z B | "Ebmaj7"cd cB z2 z G | FG FE z2 z G | "F7"dc =AG =EF Ad | $
@@ -22925,7 +25360,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id tune-88
 K:G
+I:linebreak $
 |: "G13"_BA GE AG- G2- | G4 =FG/F/ G/G/F/G/ | "G13"z8 | z8 | $
 "C13"_BA GE AG- G2 | z/ C/F/_B/A/ F/D/G/- GF/^D/ E/G/A/=B/ | "G13"z8 | z8 | $
 "Eb13"G/=F/_E/B/- B4 z/ G,/_B,/C/ | ^C/D/G/C/ D/G/C/D/ G/C/D/G/ C/=C/_B,/G,/ | G2 z2 z4 | z8 :| $
@@ -22947,7 +25384,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id twistin-the-night-away
 K:A
+I:linebreak $
 z2 ce ae Bd =ga z ce | ce Ad fA ce Ad f | z2 ce ae =gB da z ce a | ce a z2 z4 |: $
 "A"z2 z f-f ee c | e2 cf- f2 z2 | "F#m7"z2 z B-B AA F | A c3 BA- A2 | $
 "D7"z2 z B-B AA F | A2 AA- A-A z c- | "E7"c B2 A B2 cf- | f3 e-e f3 | $
@@ -22970,7 +25409,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=216
+%%id ugetsu
+%%tags needs-repair
 K:D
+I:linebreak $
 |: "^Intro"z8 | z8 :| z6 A2 |: "^Head"c4 z2 AB- | $
 B4 z Be B | c4 z Ac A | B4 z cB F- | F4 z BA _G- | $
 G4 z DE F- | F4 z DG B | A2 G2 =C2 E^C- | C4 z B,C D- | $
@@ -22981,7 +25423,9 @@ z8 | z8 | z8 :| |: z "Dmaj7"d3 d3 d- | $
 "Dmaj7"z3 A,F A,F | "Cmaj7"z3 EG EG | "Dmaj7"z3 A,=C A,C | "Ab7"z3 _B,_E B,E | $
 "Gmaj7"z3 A,D A,D | "C#m7b5"B,E "F#7"A,4 | "Bmaj"C4 z B,C D- | "Cmaj7"D4 z CD E- | $
 "Bm7"E6 "E7""Gmaj7"B,D F | "F#7"CE G"Fmaj7"C =FA "E7"DG _B"Eb7"_D A=c :| z "Dmaj7"d3 d3 d- | "A13"d8 | $
-"_Solos over form\nAll of the A13s may be\nEmin7/A"z "Dmaj7"d3 d3 d- | "A13"d8 | z "Dmaj7"d3 d3 d- | "A13"d8 | $
+"_Solos over form
+All of the A13s may be
+Emin7/A"z "Dmaj7"d3 d3 d- | "A13"d8 | z "Dmaj7"d3 d3 d- | "A13"d8 | $
 z "Dmaj7"d3 d3 d- | "A13"d8 :|
 
 X:812
@@ -22992,7 +25436,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id uh-huh
 K:Bb
+I:linebreak $
 |: "Bb7"B2 z2 z2 _de | "Eb7"z4 z =e (3_eB_d | "Bb7"B2 z2 z2 _de | "Eb7"z4 z =e (3_eB_d | $
 "Bb7"B2 z2 z2 _de | "Eb7"z4 z =e (3_eB_d |1 "Bb7"B2 z2 "Ab9"z4 | "Gb9""F7"z8 :|2 $
 "Bb7"B2 z2 z4 || "Ebm7"z B_d e- e2 de- | e2 z2 z4 | "Bbm7"z B_d e- e2 dB- | $
@@ -23010,7 +25456,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id ummmh
 K:Fmin
+I:linebreak $
 C,2 E,F, A, F,2 z | C,2 E,F, B,,4 |: [K:treble]"Fm7"(cF- F) z z (F (3ABA- | "Bb7"A2- A)(F EF/F/ EF/F/ | $
 "Fm7"CF- F) z z (FE F | "Bb7"B,F- F) z z4 | "Fm7"(cF- F) z z (F (3ABA- | "Bb7"A2- A)(F EF/F/ EF/F/ | $
 "Fm7"CF- F) z z (FE F | "Bb7"B,F- F) z z4 :| "Fm7"z2 A z A z (AG-) | "Bb7"G8 | $
@@ -23025,7 +25473,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=275
+%%id velocity
 K:C
+I:linebreak $
 z4 z c_e f- |: "Fm7"f3 _ef ec _B | "Fm7"c3 c z c_e f- | f3 _ef ec _B | $
 "Fm7"c3 c z F_A _B- | "Bbm7"B3 _A_B AF _E | "Bbm"F3 F z F_A _B- | "Bbm7"B3 _A_B AF ^D | $
 "Em7"E3 E z "A7"GF D- | "Dm7"D8 | "C7"z GF D_A G_E C- | "Cm7"C8- | $
@@ -23045,7 +25495,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id trane-s-blues
 K:Bb
+I:linebreak $
 z4 z E=E F- || "Bb7"F_A =AB z2 z _d/e/ | "Eb7"B3 B z E=E F- | "Bb7"F_A =AB z z z _d/B/ | $
 "Bb7"f/e/4_d/4B B/_A/B z2 =AB- | "Eb7"B_d =de z2 z _g/_a/ | "Eb7"e3 e z E=E F- | "Bb7"F_A =AB z z z _d/e/ | $
 "G7"B3 BB z (3_DB,D | "Cm7"(3EFB (3E^C^D (3_D_A,E- E2- | "F7#9"E=E (3_D_A,D z _E=E F- | "Bb7"F_A =AB z z z _d/B/ | $
@@ -23059,7 +25511,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id viva-de-funk
 K:C
+I:linebreak $
 |: "Am7""_Intro"z8 | "D7"z8 | "Am7"z8 |1 "D7"z8 :| $
 "D7"z4 e2 c2 |: "Am7""_A"d4- de Ad | "D7"z c z2 e2 c2 | "Am7"d3 B/c/ B2 GA- | $
 "D7"A3 z e2 c2 | "Am7"d4- de Ad | "D7"z c z2 A2 c2 | "Am7"B3 A/G/ E2 GA- | $
@@ -23078,7 +25532,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id voodoo
 K:F
+I:linebreak $
 z7 A |: "Dm7"e2 d2 "C/D"_E2 z A | "Bb7"e2 d2 "A7"_E2 z A | "Dm7"e2 d2 "F/C"_EA df | $
 "Bb7"(3efe d2 _E2 "A7"z A | "Dm7"e2 d2 "C/D"_E2 z A | "Bb7"e2 d2 "A7"_E2 z A | "Dm7"e2 d2 "F/C"_EA df | $
 "Bb7"e2 d2 "A7"_E2 z A :| "Bb7"z4 "A7"z2 A2 | "Dm7"d3 dd d z d- | "Cmaj7"d2 d2 d2 d2 | $
@@ -23096,7 +25552,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id walkin
 K:F
+I:linebreak $
 z4 z2 f2 | _a f3 _e2 c2 | _e c3 B2 F2 | _A F3 _E4- | $
 E6 cf | _e_a cf Be Gc | B_e Gc FB CF | _E_A CF B,E | $
 z2 FC E F2 =B- |: "F7"B7 c | "F7"z2 z FE F2 B- | "Bb7"B6 AF | $
@@ -23112,7 +25570,10 @@ N:Source: jazzXML
 M:12/8
 L:1/8
 Q:1/4=96
+%%id a-waltz-in-a
+%%tags needs-repair
 K:A
+I:linebreak $
 "E7""D7"z8 "A""E7"z/ E,,F,, z/ G,, |: [K:treble]"A"z12 | "E7"z12 | "D"cEE EEE EEE EEE | $
 "A""E7"z12 | "A"z12 | "C#"z12 | "F#m""A/E"z12 | $
 "D""D/E"z12 | "A""C#"z12 | "D"BEE EEE "E"EEE "B7"EEE | "A"EEE EEE "D"EEE EEE | $
@@ -23127,8 +25588,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id water-sign
 K:F
-|: dg fb gc' ad' gc' fb dg gc' z/ gc' fb fb | dg fb gc' ad' gc' fb gc' c'f' z/ c'f' ad' (3_a_d'g c'f bd g | dg fb gc' ad' gc' fb dg gc' z/ gc' fb fb | gc' fb dg cf fb cf ^c^f dg dg [K:bass]"Dbmaj7/C"C/B,/G,/B,/ z "^Bass Thing\n"z/ C,/_E, F,_G,/=G,/ z | $
+I:linebreak $
+|: dg fb gc' ad' gc' fb dg gc' z/ gc' fb fb | dg fb gc' ad' gc' fb gc' c'f' z/ c'f' ad' (3_a_d'g c'f bd g | dg fb gc' ad' gc' fb dg gc' z/ gc' fb fb | gc' fb dg cf fb cf ^c^f dg dg [K:bass]"Dbmaj7/C"C/B,/G,/B,/ z "^Bass Thing"z/ C,/_E, F,_G,/=G,/ z | $
 C/B,/G,/B,/ z3/2 C,/F,/G,/_E,/ F,/ C,2 :| C/B,/G,/B,/ z z/ C,/_E, F,_G,/=G,/ z | [K:treble]C/_E/F/G/ E/F/G/B/ F/G/B/c/ _e/f/g/f/ |: "F13"z8 | $
 "F9"z8 | "F13"z8 | z4 z/ "Eb13"dd "E9"d/ "F13"z/ b/- | "F9"bc'/a/ z3/2 c/ga/ f/-f c | $
 _e/f/g/e/ f/e/c/B/ z/ e3/2 (3c/B/G/_E | G/^G/A/F/- F6- | F4 z/ "Eb13"dd "E9"d/ "F13"z/ b/- | "F9"bc'/a/ z3/2 c/ga/ f/-f c | $
@@ -23148,7 +25611,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id watermelon-man
 K:F
+I:linebreak $
 "F7"_e8- | "F7"e2 FF c d2 F- | "F7"F8- | "F7"F8 | $
 "Bb7"f8- | "Bb7"f2 FF c d2 F- | "F7"F8- | "F7"F8 | $
 "C7"z2 cc g2 a2 | "Bb7"_ag fd f2 g2 | "C7"z2 cc g2 a2 | "Bb7"_ag fd f2 d2 | $
@@ -23157,19 +25622,22 @@ K:F
 X:822
 T:Way Back Home
 C:Wilton Felder
-Joe Sample
-Arr. 6EQUJ5
+Joe' Sa'mple'
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id way-back-home
+%%tags needs-repair
 K:Db
-|: "Ebm7/Db"G,B, DE D z "Db"F,A, DF, A,D A,/B,/D | "Ebm7/Db"G,B, DE D z "Db"F,A, DF, A,D F,A, G,B, A,D | "Ebm7/Db"G,B, DE D z/ B,/"Db"F, A,D F,A, DA,/B,/ D | "Ebm7/Db"G,B, DE D z "Db"F,A, D z F,A, DG, B,E F,A, D | $
-"Gbmaj7"G,B, DE G,B, D z G,B, DG, B,D F,A, G,B, A,D | "Ebm7"B,D EG G,A, DF z "Ab/Gb"G,B, DE A,D B,E D/B,/A,/ | "Ebm7/Db"G,B, DE D z "Db"F,A, DF, A,D F,A, G,B, A,D | "Ebm7/Db"G,B, DE D z "Db"F,A, DF, A,G, B,A, D :| $
-"Ebm7/Db"ED z "Db"F- F4- | "Ebm7/Db""Db"F6 z2 | "Ebm7/Db"ED z "Db"F- F4- | "Ebm7/Db""Db"F6 B,D | $
-"Gbmaj7"EB, z D3 B,D | "Ebm7"GF z "Ab/Gb"E3 E/D/B,/A,/ | "Ebm7/Db"ED z "Db"F3 B,D/B,/ | "Ebm7/Db"ED z "Db"D4- D || $
-"Ebm7/Db"B,E G,D z "Db"A,F A,F | "Ebm7/Db""Db"A,F z2 | "Ebm7/Db"B,E A,D z "Db"A,F A,F | "Ebm7/Db""Db"A,F G,B, B,D | $
-"Gbmaj7"DE G,B, z G,D B,D | "Ebm7"EG DF z "Ab/Gb"B,E B,E A,D G,B, | "Ebm7/Db"B,E G,D z "Db"A,F F,B, B,D | "Ebm7/Db"DE B,D z "Db"F,D F,D |]
+I:linebreak $
+|: "Ebm7/Db"GB de d z "Db"FA dF Ad A/B/d | "Ebm7/Db"GB de d z "Db"FA dF Ad FA GB Ad | "Ebm7/Db"GB de d z/ B/"Db"F Ad FA dA/B/ d | "Ebm7/Db"GB de d z "Db"FA d z FA dG Be FA d | $
+"Gbmaj7"GB de GB d z GB dG Bd FA GB Ad | "Ebm7"Bd eg GA df z "Ab/Gb"GB de Ad Be d/B/A/ | "Ebm7/Db"GB de d z "Db"FA dF Ad FA GB Ad | "Ebm7/Db"GB de d z "Db"FA dF AG BA d :| $
+"Ebm7/Db"ed z "Db"f- f4- | "Ebm7/Db""Db"f6 z2 | "Ebm7/Db"ed z "Db"f- f4- | "Ebm7/Db""Db"f6 Bd | $
+"Gbmaj7"eB z d3 Bd | "Ebm7"gf z "Ab/Gb"e3 e/d/B/A/ | "Ebm7/Db"ed z "Db"f3 Bd/B/ | "Ebm7/Db"ed z "Db"d4- d || $
+"Ebm7/Db"Be Gd z "Db"Af Af | "Ebm7/Db""Db"Af z2 | "Ebm7/Db"Be Ad z "Db"Af Af | "Ebm7/Db""Db"Af GB Bd | $
+"Gbmaj7"de GB z Gd Bd | "Ebm7"eg df z "Ab/Gb"Be Be Ad GB | "Ebm7/Db"Be Gd z "Db"Af FB Bd | "Ebm7/Db"de Bd z "Db"Fd Fd |]
 
 X:823
 T:Wayne's Thang
@@ -23179,7 +25647,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id wayne-s-thang
 K:C
+I:linebreak $
 "Em7"g3 f/e/ d2 z2 | z8 | de z2 z4 | z8 | $
 "Cmaj7"d3 e/^f/ g2 z2 | z8 | ^fe z2 z4 | z8 | $
 "B7"g3 f/e/ _e2 z2 | z8 | e_e z2 z4 | z6 e2 | $
@@ -23198,7 +25668,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id the-weasil
 K:C
+I:linebreak $
 z4 z F,/F,/_B,/C/ C/B,/ |: "C7#9""^Groove"C8 | C2 C2 CF,/F,/ _B,/C/C/B,/ | "C7#9"C8 | $
 z4 z _B,/B,/^C/_E/ E/C/ | "Eb7#9"C8 | C2 C2 CF,/F,/ _B,/C/C/B,/ | "C7#9"C8 | $
 z4 z C/C/E/E/ F/G/ | "D7#9"z4 z D/D/^F/F/ G/A/ | "E7#9"C2 C2 CF,/F,/ _B,/C/C/B,/ | "C7#9"C8 | $
@@ -23215,13 +25687,15 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id wes-side-stroll
 K:C
+I:linebreak $
 DF GF |: "Dm7"A4 z "G7"d_A G- | "Dm7"G4 F"G7"G AF | "Dm7"D8 | $
 "Dm7"z4 D"G7"F GA- | "Dm7"A4 z "G7"c_A G | "Dm7"G4 B,"G7"D FB, | "Dm7"D8 |1 $
 "Dm7"z4 "G7"DF GF :|2 "D"z4 DF GA || "G""F#7"z4 "F7"z _AD F | "Bb7""A7"z4 "Ab7"z ^CD G- | $
 "E7""Bb7"G8 | z c_A GF DC F | "D7""Ab7"z8 | "G7"z2 B,D FD B,D | $
 "Fm7""Bb7"z8 | "Fm7""Bb7"z8 | "Fm7""Bb7"z8 | "Fm7""Bb7"z8 | $
-"Em7"z8 | z2 _AG FD C2 | z4 "Dm7"z2 D2 || "Dm7""^\"BC ag e """G7"z8 | $
+"Em7"z8 | z2 _AG FD C2 | z4 "Dm7"z2 D2 || "Dm7""^"BC ag e """G7"z8 | $
 "Dm7""G7"z8 | "Dm7""G7"z8 | "Dm7""G7"z8 | "Dm7""G7"z8 | $
 "Dm7""G7"z8 | "Dm7""G7"z8 | "Dm7""G7"z8 | "Cm7""F7"z8 | $
 "Cm7""F7"z8 | "Cm7""F7"z8 | "Cm7""F7"z8 | "Dm7""G7"z8 | $
@@ -23236,7 +25710,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id when-the-sun-comes-down
+%%tags needs-repair
 K:Bb
+I:linebreak $
 "Cmaj7"A2 (3z=e"Gb7"c c2- (3c2c | "Fmaj7"c2- (3c-c"Fm7"c/ A/c/4d/4 z3/2 "Bb7"(3e-e=e- | "Em7"e2- (3e-eg "Am7"(3=bc'2-(3c'- c'a | "D7"(3e/A/c2- "G7"c2 z "Gb7"z4 | $
 "Fmaj7"z2 (3z=ec "E7"d2- (3d-de | "Am7"c2- (3ccA c/4d/4 "D7"z3/2 (3e-ed- | "Dm7"d2 (3z=ec "G7"d2- (3dea/ e/ | "Em7"(3g=ed/ A/"A7"^c/=E/ (3G/A/=c/(3e/"Dm7"g/f/ e/c/G/ (3_G/F/"G7"_E/=E/=G/ A/ | $
 "Cmaj7"C2 (3z=e"Gb7"c c2- (3ccc | "Fmaj7"c2 (3zcA c/4"Fm7"d/4 z3/2 (3e-"Bb7"e=e- | "Em7"e2- (3ezg (3=b"Am7"c'2(3c'- c'a | "D7"(3e/A/c2- c2 "G7"z4 | $
@@ -23255,7 +25732,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id while-my-lady-sleeps
+%%tags needs-repair
 K:C
+I:linebreak $
 z2 z2 z2 z G | "C7"CG z _B- B3 G | CG z _B- B3 G | CG z _B- B3 G | $
 CG z _B3- BG | CG z d- d4- | d3 e- e4- | e/g/a/g/ e/c/B/ e d3/2- de- | $
 e8 | z4 z2 z G |: "C7""^Ostinato"c3 B"Dbmaj7"_B G-G/_E/ F/G/- | "C7"G3 _G"Dbmaj7"F _D2 _A,/_B,/ | $
@@ -23281,7 +25761,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id why-was-i-born
 K:D
+I:linebreak $
 "Dmaj7"z2 d2 d2 d2 | "Fm7"d8- | "Em7"d2 A2 A2 A2 | "A7"A2 B6- | $
 "Dmaj7"B2 F2 F2 F2 | "Am7"F8- | "Gmaj7"F2 E2 E2 E2 | "C9"E2 F6 | $
 "Dmaj7"A,B, D2 F2 B2 | "Bm7"B2 d2 A2 B2 | "E9"F2 z2 F4- | "A7"F2 A2 E2 F2 | $
@@ -23299,7 +25781,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id why-am-i-treated-so-bad
+%%tags needs-repair
 K:E
+I:linebreak $
 |: "E7#9"=de- | =de | z2 a=g ag be- | e8- | $
 e2 z2 e2 f2 | "A7"=g4- g4- | g8 | z2 a=g ag be- | $
 "E7#9"e8- | e2- e2 z4 | "B7"f3 f z2 z "Bb7"^e | "A7"e3 e z2 z "Bb7"^e | $
@@ -23318,7 +25803,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id winelight
+%%tags needs-repair
 K:Eb
+I:linebreak $
 |: "^extended Intro"z8 :| "Cm7"z6 GB |: "^Head""_A"cc- c4 z2 | z4 cB cB | $
 cB/G/- G4 z2 | z7 _G- | "Fm7"G2- G/FF/- F=G E2 | z4 FE FE/G/ | $
 "Cm7"z/ E/ z/ C/-C B,C/B,/ C- C2 | z6 z3/2 G,/ | "Abm7"A,/_C/E/B/ z/ A3/2- A2 z2 | z6 AB |1 $
@@ -23328,7 +25816,8 @@ cB/G/- G4 z2 | z7 _G- | "Fm7"G2- G/FF/- F=G E2 | z4 FE FE/G/ | $
 "Eb/Bb"E/E/ z/ E/ z/ E/ z/ E/ z/ E/ z/ G/ z B,/C/ | "Cdim7/Bb"E/E/ z/ E/ z/ E/ z/ E/ z/ E/ z/ F/ z B,/C/ | "Abmaj7/Bb"E/E/ z/ E/ z/ E/ z/ E/ z/ C/ z/ _G/F/E/C/ =G/- | "G7"G2 z2 z/ F/ z/ F/4_G/4F/E/C/ G/- | $
 G4 z/ B3/2 (3_G/F/E/C/=G/- | G4 z/ Bc/ (3_G/F/E/C | GG GG/G/ z2 GB || "Cm7""_C"cc- c4 z2 | $
 z4 cB cB | cB/G/- G4 z2 | z7 _G- | "Fm7"G2- G/FF/- F=G E2 | $
-z4 FE FE/G/ | "Cm7"z/ E/ z/ C/-C B,C/B,/ C- C2 | z6 z3/2 G,/ | "Abm7""_After solos,\nCome back in @ B, play head out"A,/_C/E/B/ z/ A3/2- A2 z2 | $
+z4 FE FE/G/ | "Cm7"z/ E/ z/ C/-C B,C/B,/ C- C2 | z6 z3/2 G,/ | "Abm7""_After solos,
+Come back in @ B, play head out"A,/_C/E/B/ z/ A3/2- A2 z2 | $
 z6 AB | "Cm7"GE- E C2 B,/C/ E2 | z8 |: "Cm7"z8 :|
 
 X:831
@@ -23339,7 +25828,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id without-you
 K:C
+I:linebreak $
 z4 z2 Gd | "Cm7"B8 | "F7#9"BG G6 | "Bbm7"AF F4 A2 | $
 "Cmaj7"G6 z2 | "Dm7"F4 G"G7"F ED | "Em7"E4 FE "A7"DA, | "Dm7"D4 E"G7"D CB, | $
 "Cmaj9"C6 z2 | "Abmaj13"C2 C2 z _E_A c | "Bm9"c_B B6 | "Ebmaj7"c_B B6 | $
@@ -23357,7 +25848,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id woody-n-you
 K:Db
+I:linebreak $
 |: "Gm7b5"z2 f2 =g3 f | "C7#9"ec z6 | "Fm7b5"z2 e2 f3 e | "Bb7#9"dB z2 z4 | $
 "Ebm7b5"z2 d2 e3 d | "Ab7"_cA z4 G=E | "Dbmaj7"FA ce- "Ab7"e2 =dc | "Db6"dB z6 :| $
 "Abm7"B2 AG "Db7"F2 GA | "Abm7"B2 AG "Db7"F2 GA | "Abm7"BG E"Db7"_C =D=A z D | "Gbmaj7"B8 | $
@@ -23372,7 +25865,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id work-song
 K:Fmin
+I:linebreak $
 "Fm7"z2 FF A B2 c- | "Fm7"c2 cB c2 e2 | "Fm7"z2 FF A B2 F- | "Fm7"F2 FE F2 z2 | $
 "Fm7"z2 FF A B2 c- | "Fm7"c2 cB c2 e2 | "C7"z2 cc e c2 e- | "C7"e2 cB c2 z2 | $
 "Fm7"z2 fe (3B/_c/B/A BA- | "Fm7"A2 AF A2 B2 | "Fm7"z2 FF A B2 F- | "Fm7"F2 FE FE F2 | $
@@ -23386,7 +25881,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id work-song-mingus
 K:Ab
+I:linebreak $
 (3z2F2A2 |: c8 | z f z cB AF A | B8- | $
 B4 (3z2F2A2 | B8- | (3B2_c2B2 (3A2F2E2 |1 F8- | $
 F4 (3z2F2A2 :|2 F8- || F4 z4 |: "_Solos Over Form"z8 :| $
@@ -23405,7 +25902,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id yardbird-suite
 K:C
+I:linebreak $
 "^Intro w/Chunky Bass"eb (3b/a/g/e c' z (3c'/_b/_a/f e=b | z (3eba/ g/e ec' z (3c'/_b/_a/f =b | z8 || g/a/g/e/ fg z z4 | $
 CE Gc GA _DG _B z3/2 G/A CE Gc | z3/2 G/A _DF _B z3/2 G/A CE Gc | z z/ c/ _B2 z4 | z z/ G/_B/c G/ B2 z2 |: $
 "_Head"z "Cmaj7"c3 G2 A2 | "Fm7"_B3 _A2 "Bb7"_EF G- | "Cmaj7"G4 G3 "Bb7"E- | "A7"E3 EF EF G | $
@@ -23424,7 +25923,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id yeah-you-right
 K:C
+I:linebreak $
 C, "C7"z z G,E- E z F,- | F,F, _B,C _E2 C z | C, z z G,E- E z F,- | F,F, _B,C _E2 C z | $
 [K:treble]C z z Ge- e z F- | "^Bass Groove"FF _Bc _e2 c z || _B2 (3z_GF (3_EFC- C2 | z4 z _B,C _E- | $
 E2 CG, _B,3 C | z8 | _B2 (3z_GF (3_EFC- C2 | z4 z A,C _E- | $
@@ -23446,7 +25947,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=300
+%%id the-young-rabbits
 K:Bb
+I:linebreak $
 "^Bass Intro"z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 || $
 "Gm7""^A"z2 A2 GF D2 | A2 GF D D3 | z2 A2 GF D2 | A2 GF D D3 | $
@@ -23466,7 +25969,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id are-you-real
 K:Eb
+I:linebreak $
 z4 "Dm7"c2 "G7"d2 |: "Cm7"e8- | "F7"e4 d2 cd- | "Bbmaj7"d8- | $
 "Ebmaj7"d6 B2 | "Am7"c2 c2 c2 c2 | "D7#9"c2 d2 c2 AB- | "Gm7"B8- | $
 "C7"B4 F2 G2 | "F#m7"A4 "B7"A4- | "Fm7"A4 "Bb7"E2 FG- | "Dm7"G8- | $
@@ -23496,7 +26001,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=200
+%%id batida-diferente
 K:G
+I:linebreak $
 z "D"D3 F G2 A- | A2 Bc z4 | z D3 FG FD | EC (3B,A,D- D4 | $
 z !trill(!d3 c2 B2 | cB z A z G F2 | z A,C EB, A, D2 | z7 D |: $
 "Gmaj7"^CD cB AG F=F- | "G7"F4- FG =FE- | "Cmaj7"E7 =F- | "F7"F2 _ED C_B, CD- | $
@@ -23515,7 +26022,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id charcoal-blues
 K:F
+I:linebreak $
 "^Somewhat Slovenly""^Con Fuego"z4 z2 z F |: "F7"AB cd cB AF | "Bb7"_AB cd ed cB | "F7"AB cf cB AF | $
 "B7"BA- A4 z F | "Bb7"AB cd cB AF | "Bb7"_AB cd ed cB | "F7"AB cf cB AF | $
 "Eb7"BA- "D7"A4 z c | "C7"ef ga ba ba | "Bb7"a3/4 g3/2 f_e dc BF3/4 | "F7"AB cf cB _AF | $
@@ -23529,7 +26038,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id the-chicken
 K:Bb
+I:linebreak $
 |: "Bb7"B,,3 B,,D, "Eb7"D, z E, | "Bb7"z E, F,2 G,2 "Eb7"B,2 | [K:treble]"Bb7"z2 _A/AG/- "Eb7"G4 | "Bb7"z2 _A/AG/- "Eb7"G4 :| $
 z4 z2 z/ G/B || "Bb7"d2 z2 z4 | "Bb7"z2 F/F/B/_d/- dB/G/ B/G/e | "Bb7"d2 z2 z4 | $
 "Bb7"z2 d2 gf _dc- | "Eb7"c3 B- B4 | "Eb7"z4 z2 b2 | "D7"AA z2 z2 A/G/F/G/- | $
@@ -23545,7 +26056,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id dorado
+%%tags needs-repair
 K:C
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 z8 | z8 | z8 | z8 | $
 "Dm7"z2 a3 e/f/e g- | "Am7"g5/2 z4 B/c/d/ | "G7"f2 d4 z2 | "G7"z8 | $
@@ -23563,7 +26077,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id feel-like-makin-love
 K:Eb
+I:linebreak $
 |: "Fm7"z2 EE/G/- G/G/E- E2 | z2 EF/G/- G/"Bb7"G/E- EF | "Ebmaj7"G8- | "Db7"G8 | $
 "Fm7"z2 EE/G/- G/G/E- E2 | z2 EF/G/- G/"Bb7"G/E- EF | "Ebmaj7"G8- | "Bbm7"G8 | $
 "Abmaj7"z2 GC/E/- E4- | "Gm7"E2 z EB BG/F/ E/F/- | "Db7"F6- FG- | "Cm7"G8 | $
@@ -23578,7 +26094,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id ghana
 K:Gb
+I:linebreak $
 |: "Ebm7"E3 B2 B,2 B | E2 B2 B2 B,2 :| "Ebm7"B,8 | =C4 D4 | $
 F D2 F D4- | D4 =C4 | B,8- | B,6 z2 | $
 z4 z2 z B, |: "Ebm7"E2 EE D F2 E- | EE B,6 | z2 EE D F2 E- | $
@@ -23601,7 +26119,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id gone-home
+%%tags needs-repair
 K:C
+I:linebreak $
 z c'2 z _b2 z ^f- | f z =f2 z2 _e2 | z2 ^f2 z =f2 z | _e2 z2 z2 c2 | $
 c'2 z _b z2 ^f2 | z2 f2 z _e2 z || c2 z2 z4 || "C#7""C7"z4 z c (3_ezf | $
 g2 (3fzc _e2 "C#7"z2 | "C7"z _e_b/c'/ z/ ^f/- f2 z2 | z c (3fc_e c2 "C#7"z2 | "C7"z4 z c (3_ezf | $
@@ -23616,7 +26137,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=250
+%%id herzog
 K:Bb
+I:linebreak $
 z2 z2 d f3- | "F7"f2 eg ba fc | B8 | Ac FG- G3 A/B/ | $
 AF DC- C4- | C4 FA ce- | e4 df Bc- | c3 d e2 f^f- | $
 "Bm7"f8 | z2 z a^g =e^c =B- | B8 | z2 z d^c A ^F2 | $
@@ -23649,7 +26172,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id is-there-a-place
+%%tags needs-repair
 K:Eb
+I:linebreak $
 "Ebmaj7"d4 z cB G | "Am7"D6 "D7"z C | "Fm7"FF- F4 z C | "Eb13"G4 (3zGA (3Bc^c | $
 "Ebmaj7"d4 z cB G | "Am7"D6 "D7"z C | "Fm7"FF- F4 z C | "Bb13"G6 "Abm7"E2 | $
 "Eb7"B6- Bc | "Bbm7"(3_d2e2c2 "Eb7"(3d2-d2c2 | "Ab7"E6 z F | "Ebm7"(3_G2A2F2 (3G2-"Ab7"G2F2 | $
@@ -23663,28 +26189,31 @@ K:Eb
 X:848
 T:People Make the World Go 'Round
 C:Thom Bell Linda Creed
-Milt Jackson
-Arr. 6EQUJ5
+Milt Ja'c'kson
+arr. 6eQUJ5
 N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id people-make-the-world-go-round
+%%tags needs-repair
 K:C
-|: "Fm7""^bass intro"_E_B Fc z EB Fc z2 | [K:bass-8]_E,_B, F,C z E,B, F,C z2 [K:treble]"_A"_EE E/E/E/F/ D_B,/C/- C2- | C4 z3 C | [M:3/4]_B,B, _DD F_A | $
-[M:4/4]G8 | z8 | _EE E/E/E/F/ D_B,/C/- C2- | C4 z3 C | $
-[M:3/4]_B,B, _DD F_A | [M:4/4]G8 | z7 _A || "^B"_B2 _A F2 cB A | $
-F2 c _B2 _AF A | _B2 c F4 z | [M:2/4]z4 | [M:4/4]_B2 _A F2 cB A | $
-F2 c _B2 _AF A | _B8 | z2 c_B z _A G2 |1 [M:2/4]"^C"F2 _D2 | $
-[M:4/4]C8 | z8 | z8 | z8 :|2 $
-[M:5/4]z c _B2 _A G2 F2 _D |: [M:4/4]"^D"C8 | [M:5/4]z c _B2 _A G2 F2 _D [M:4/4]"Fm7""^E"z8 | "Bb7"z8 | $
-"Fm7"z8 | "Bb7"z8 :| |: z8 | z8 _E,_B, "Fm7"F,C z E,B, F,C z2 | $
-_E,_B, F,C z E,B, F,C z2 | [M:3/4]"Ebm7"E,4 "Bbm7"F,F, | [M:4/4]"Fm7"_E,_B, F,C z E,B, F,C z2 | "Fm7"_E,_B, F,C z E,B, F,C z2 | $
-_E,_B, F,C z E,B, F,C z2 | _E,_B, F,C z E,B, F,C z2 | [M:3/4]"Ebm7"E,4 "Bbm7"F,F, | [M:4/4]"Fm7"_E,_B, F,C z E,B, F,C z2 | $
-_E,_B, F,C z E,B, F,C z2 || "Bbm7"_B,,3 B,,4 "Cm7"C, | B,,3 "Bbm7"B,,4 "Ab7"_A,, | "Gbmaj7"_G,,3 G,,4 G,, | $
-[M:2/4]"Gbmaj7"_G,,2 "Ab/Gb"G,,2 | [M:4/4]"Bbm7"_B,,3 B,,4 "Cm7"C, | "Bbm7"B,,3 B,,4 "Ab"_A,, | "Gdim7"G,,G,, G,,G,, G,,G,, _D,D, | $
-"C7#9"C,2 z2 z4 |1 [M:2/4]"Bbm7"_B,, B,,3 | [M:4/4]"Fm7"_E,_B, F,C z E,B, F,C z2 | _E,_B, F,C z E,B, F,C z2 | $
-_E,_B, F,C z E,B, F,C z2 | "Fm7"_E,_B, F,C z E,B, F,C z2 :|2 [M:5/4]"Bb9"B,_B, B,2 B, B,2 B,2 B, |: [M:4/4]"Fm7"_E,_B, F,C z E,F, G,_A, "Bb9"B,- | $
-[M:5/4]B,_B, B,2 B, B,2 B,2 B, [M:4/4]z8 | z8 | z8 | z8 :|
+I:linebreak $
+|: "Fm7""^bass intro"_e_b fc' z eb fc' z2 | [K:bass-8]_E_B Fc z EB Fc z2 [K:treble]"_A"_ee e/e/e/f/ d_B/c/- c2- | c4 z3 c | [M:3/4]_BB _dd f_a | $
+[M:4/4]g8 | z8 | _ee e/e/e/f/ d_B/c/- c2- | c4 z3 c | $
+[M:3/4]_BB _dd f_a | [M:4/4]g8 | z7 _a || "^B"_b2 _a f2 c'b a | $
+f2 c' _b2 _af a | _b2 c' f4 z | [M:2/4]z4 | [M:4/4]_b2 _a f2 c'b a | $
+f2 c' _b2 _af a | _b8 | z2 c'_b z _a g2 |1 [M:2/4]"^C"f2 _d2 | $
+[M:4/4]c8 | z8 | z8 | z8 :|2 $
+[M:5/4]z c' _b2 _a g2 f2 _d |: [M:4/4]"^D"c8 | [M:5/4]z c' _b2 _a g2 f2 _d [M:4/4]"Fm7""^E"z8 | "Bb7"z8 | $
+"Fm7"z8 | "Bb7"z8 :| |: z8 | z8 _E_B "Fm7"Fc z EB Fc z2 | $
+_E_B Fc z EB Fc z2 | [M:3/4]"Ebm7"E4 "Bbm7"FF | [M:4/4]"Fm7"_E_B Fc z EB Fc z2 | "Fm7"_E_B Fc z EB Fc z2 | $
+_E_B Fc z EB Fc z2 | _E_B Fc z EB Fc z2 | [M:3/4]"Ebm7"E4 "Bbm7"FF | [M:4/4]"Fm7"_E_B Fc z EB Fc z2 | $
+_E_B Fc z EB Fc z2 || "Bbm7"_B,3 B,4 "Cm7"C | B,3 "Bbm7"B,4 "Ab7"_A, | "Gbmaj7"_G,3 G,4 G, | $
+[M:2/4]"Gbmaj7"_G,2 "Ab/Gb"G,2 | [M:4/4]"Bbm7"_B,3 B,4 "Cm7"C | "Bbm7"B,3 B,4 "Ab"_A, | "Gdim7"G,G, G,G, G,G, _DD | $
+"C7#9"C2 z2 z4 |1 [M:2/4]"Bbm7"_B, B,3 | [M:4/4]"Fm7"_E_B Fc z EB Fc z2 | _E_B Fc z EB Fc z2 | $
+_E_B Fc z EB Fc z2 | "Fm7"_E_B Fc z EB Fc z2 :|2 [M:5/4]"Bb9"B_B B2 B B2 B2 B |: [M:4/4]"Fm7"_E_B Fc z EF G_A "Bb9"B- | $
+[M:5/4]B_B B2 B B2 B2 B [M:4/4]z8 | z8 | z8 | z8 :|
 
 X:849
 T:Psychedelic Sally
@@ -23694,13 +26223,19 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=120
+%%id psychedelic-sally
+%%tags needs-repair
 K:C
+I:linebreak $
 |: G,,"Cm7"_B,, =B,,C, z/ G,, z/ C,C, | "F7"_E,=E, F, z/ C, z/ F,F,/ F, z/ | "Cm6"_B,,=B,, C, z/ G,, z/ C,C,/ C, z/ | "F7"_E,=E, F, z/ C, z/ F,F,/ F, z/ | $
-"Cm7"_B,,=B,, C, z/ G,, z/ C,C,/ C, z/ | "F7"_E,=E, F, z/ C, z/ F,F,/ F, z/ [K:treble]"Cm7""^Bass Sim""_A""^Med\n Groove\n"z gg gc _ec z | "F7"z gg gc _e3/2 z/ z | "Cm7"z gg gc _ec z | $
+"Cm7"_B,,=B,, C, z/ G,, z/ C,C,/ C, z/ | "F7"_E,=E, F, z/ C, z/ F,F,/ F, z/ [K:treble]"Cm7""^Bass Sim""_A""^Med
+ Groove
+"z gg gc _ec z | "F7"z gg gc _e3/2 z/ z | "Cm7"z gg gc _ec z | $
 "F7"z gg gc _e3/2 z/ z | "Cm7"z gg gc _ec z | "F7"z gg gc _e3/2 "C"z/ z | "Cm7""C"c7 z | $
 "C"gg gc _e_B c z :| "_B""^Fast Swing"z _e"Ab7"f ^f=f e^c e | "Ab7"z _ef ^f=f e^c =c | "Ab7"z _ef ^f=f e^c e | $
 "Ab7"f _e6 z | "Ab7"z _ef ^f=f e^c e | "Ab7"z _ef ^f=f e^c =c | "Ab7"z _ef ^f=f e^c e | $
-"Ab7"f _e6 z | "Cm7""_A""^Med\n Groove"z gg gc _ec z | "F7"z gg gc _e3/2 z/ z | "Cm7"z gg gc _ec z | $
+"Ab7"f _e6 z | "Cm7""_A""^Med
+ Groove"z gg gc _ec z | "F7"z gg gc _e3/2 z/ z | "Cm7"z gg gc _ec z | $
 "F7"z gg gc _e3/2 z/ z | "Cm7"z gg gc _ec z | "F7"z gg gc _e3/2 "C"z/ z | "Cm7""C"c7 z | $
 gg gc _e_B c z |]
 
@@ -23713,7 +26248,10 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id sambop
+%%tags needs-repair
 K:F
+I:linebreak $
 z CF _A=A cd c | "Dm7"DA f"G7"_D _Af z2 "Cm"CG f | CG f"F/B"_E _Gf z EG fE Gf | "Bb7"G_c f"A7"_G Bf z2 "Abmaj7"DA f | $
 z4 z c d2 | "Dm7"DA f"G7"_D _Af z2 "Cm7"C-G- f | CG f"F"_E _Gf z EG fE Gf | "Bb7"G_c f"A7"_G Bf z2 "Abmaj7"DA f | $
 z2 z C =B,2 C2 | "Bbm7"c2 z "Eb7"B G2 z A | "Bbm7"Bc A"Eb7"B G C2 z | "Bbm7"z CG A"Eb7"B cA B | $
@@ -23733,7 +26271,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=150
+%%id sticks
 K:Bb
+I:linebreak $
 B_A |: "Bb7"B2 z2 z2 z B | z8 | z2 BB _dB eB | $
 f_a- a2 _fe/_d/ B_A | "Eb7"B2 z2 z2 z (B) | z8 | "Bb7"z2 BB _de- e2 | $
 f_a- a2 _fe/_d/ B_A | "Eb7"e2 z "E7""E7"=e2 z "F7""F7"f2 | "^drum fill"z8 | "Eb7"e2 z "E7""E7"=e2 z "F7""F7"f2 | $
@@ -23747,7 +26287,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=225
+%%id st-louis-blues
 K:G
+I:linebreak $
 |: "G7"Bd BG- G4 | "C7"z ^DE G _B2 AG- | "G7"G8- | "G7"G6 z2 | $
 "C7"E G2 A- A4 | "C7"z EG A _B2 A2 | "G7"G8- | "G7"G6 z2 | $
 "D7"FA FD- D4 | "C7"z EG A _B2 A2 | "G7"G4- G4- |1 "Am7"G6 "D7"z2 :|2 $
@@ -23766,7 +26308,9 @@ N:Source: jazzXML
 M:4/4
 L:1/8
 Q:1/4=96
+%%id the-worm
 K:Bb
+I:linebreak $
 z8 | z8 | z8 | z8 | $
 "Bb7"z8 | "Eb7"z8 | "Bb7"z8 | "Eb7"z4 z F_A B |: $
 _de z z/ ed z/ ed | e_d z/ fB z/ _AB z | _de z z/ ed z/ ed |1 _A/B BE z/ z/ AB z/ z :| $
@@ -23780,18 +26324,20 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id 500-miles-high-2
+%%tags needs-repair
 K:C
-d2 |: "Em" B,8- | "Gm" B,2 B,,2 D,2 A2 ^F,2 D,2 :| "Bbmaj7" E,8- |
+d'2 |: "Em" B8- | "Gm" B2 B,2 D2 a2 ^F2 D2 :| "Bbmaj7" E8- |
 w: Some |  day | you'll look in to her eyes _ |
-"Bm7b5" E,2 C,2 A,2 F,2 D,2 | "E7#9" G,8 | "Am11" F,6 F,2 | "F#m7b5" F, E,2 G,- G,4- |
+"Bm7b5" E2 C2 A2 F2 D2 | "E7#9" G8 | "Am11" F6 F2 | "F#m7b5" F E2 G- G4- |
 w: Then there'll be no good- | byes | And yes- | ter- day _ will |
-"Fm7" G,4- G,2 F,2 E,2 | "Cm11" D8- | "B7b3b5b9b11b13" D,6 C,2 | C,2 B, D,- D,4- |
+"Fm7" G4- G2 F2 E2 | "Cm11" d8- | "B7b3b5b9b11b13" D6 C2 | C2 B D- D4- |
 w: have gone _ And | you'll | find yourself | _ in a- no- |
-D,4- D,2 C,2 B,2 | "B7b3b5b9b11b13" _B,2 _A, C,- C,4- | "Cm11" C,2 z G, D _E, _A,, D, | "B7b3b5b9b11b13" C,8- |
+D4- D2 C2 B2 | "B7b3b5b9b11b13" _B2 _A C- C4- | "Cm11" C2 z G d _E _A, D | "B7b3b5b9b11b13" C8- |
 w: ther space _ "500" | _ _ mi- les | high * _ _ "500" _ _ | mi- |
-C,8 | z8 | z6 D2 |: z2 z G,,, D _E, _A,, D, |
+C8 | z8 | z6 d2 |: z2 z G,, d _E _A, D |
 w: les | * | * high |  * * _ * * * * |
-C,8- | C,8 | z8 | :|
+C8- | C8 | z8 | :|
 w: * | * | * |]
 
 X:855
@@ -23802,24 +26348,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id a-cup-of-coffee-a-sandwich-and-you
 K:Bb
-"F5+" F,2 G,2 F,2 |: "Bb" D2 _B,2 z2 D,2 | "Ebm" C,2 _B,2 z2 D,2 | "Bb" D,2 _B,6- |
+"F5+" F2 G2 F2 |: "Bb" d2 _B2 z2 D2 | "Ebm" C2 _B2 z2 D2 | "Bb" D2 _B6- |
 w: A Cup of |  Cof- fee * a | sand- wich * and | you, _ |
-"Bb" _B,2 D,,2 _E,2 D,2 | "Cm7" G,2 F,2 z2 A,2 | "F5+" G,2 F,2 z2 A,2 | "Bb" A,2 F,6- |
+"Bb" _B2 D,2 _E2 D2 | "Cm7" G2 F2 z2 A2 | "F5+" G2 F2 z2 A2 | "Bb" A2 F6- |
 w: A co- zy cor- | ner, a * ta- | ble for * two, | _ A |
-"F7" F,2 F,2 G,2 F,2 | "Bb" D2 _B,2 z2 D,2 | "Ebm" C,2 _B,2 z2 D,2 | "Bb" D,2 _B,6- |
+"F7" F2 F2 G2 F2 | "Bb" d2 _B2 z2 D2 | "Ebm" C2 _B2 z2 D2 | "Bb" D2 _B6- |
 w: chance to whis- per | and cud- * dle | and coo * _ | With lots |
-"Bb" _B,2 D,,2 _E,2 D,2 | "Cm7" G,2 F,2 z2 A,2 | "F5+" G,2 F,2 z2 G,2 | "Bb" _B,8- |
+"Bb" _B2 D,2 _E2 D2 | "Cm7" G2 F2 z2 A2 | "F5+" G2 F2 z2 G2 | "Bb" _B8- |
 w: of hug- gin' and | kiss- in' * in | view _ * I | don't |
-"Bb" _B,2 _B,2 A,2 _A,2 | "Eb7" G,2 _B,6 | "Am" _E,2 _B,4 C,2 | "D7" D,8- |
+"Bb" _B2 _B2 A2 _A2 | "Eb7" G2 _B6 | "Am" _E2 _B4 C2 | "D7" D8- |
 w: need mus- ic lob- | ster or | wine. _ When- | ev- |
-"C7" D,2 G,,2 ^F,2 F,2 | "C7" E,2 G,6 | "Cm7" D2 _B,4 D,2 | "F7" C,8- |
+"C7" D2 G,2 ^F2 F2 | "C7" E2 G6 | "Cm7" d2 _B4 D2 | "F7" C8- |
 w: er your eyes look | in- to | mine _ The | things |
-"Bb" C,2 F,,2 G,2 F,2 | "Ebm6" D2 _B,2 z2 D,2 | "Bb" C,2 _B,2 z2 D,2 | "Bb" D,2 _B,6- |
+"Bb" C2 F,2 G2 F2 | "Ebm6" d2 _B2 z2 D2 | "Bb" C2 _B2 z2 D2 | "Bb" D2 _B6- |
 w: I long for are | sim- ple * and | few; _ * A | cup of |
-"Cm7" _B,2 D,,2 _E,2 D,2 | "Cm7" G,2 F,2 z2 A,2 | G,2 F,2 z2 D2 | "Bb" :|1 "F7" D,2 _B,6 |
+"Cm7" _B2 D,2 _E2 D2 | "Cm7" G2 F2 z2 A2 | G2 F2 z2 d2 | "Bb" :|1 "F7" D2 _B6 |
 w: cof- fee, a sand | _ wich * and | you! A * cup |  of you! |
-z2 F,2 G,2 F,2 | "Bb" :|2 "Bb" D2 _B,6- | _B,2 z2 z4 |
+z2 F2 G2 F2 | "Bb" :|2 "Bb" d2 _B6- | _B2 z2 z4 |
 w: * _ * * |  * * | * * * |]
 
 X:856
@@ -23830,26 +26377,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id a-day-in-the-life-of-a-fool
+%%tags needs-repair
 K:C
-E,2 | "Am" C4- C,2 B,2 A,2 | "Bm7b5" A,4- A,2 ^G,2 B,2 | "Am" E,,8- |
+E2 | "Am" c4- C2 B2 A2 | "Bm7b5" A4- A2 ^G2 B2 | "Am" E,8- |
 w: A | Day _ In The | Life _ Of A | Fool, |
-"Bm7b5" E,4 z2 E,2 | "Am" C4- C,2 B,2 A,2 | "Dm7" A,4- A,2 G,2 B,2 | "Cmaj7" E,,8- |
+"Bm7b5" E4 z2 E2 | "Am" c4- C2 B2 A2 | "Dm7" A4- A2 G2 B2 | "Cmaj7" E,8- |
 w: _ * a | sad _ and a | long, _ lone- ly | day, |
-"Em7b5" E,4 z E, F, G, | "Dm7" A,3 D,, D,4- | "G7" D,4 z D, E, F, | "Cmaj7" G,3 C,, C,4- |
+"Em7b5" E4 z E F G | "Dm7" A3 D, D4- | "G7" D4 z D E F | "Cmaj7" G3 C, C4- |
 w: _ * I walk the | av- e- nue | _ * and hope I'll | run in- to |
-"Fmaj7" C,4 z C, D, E, | "Bm7b5" F,3 B,, B,4- | "E7b9" B,4 B,2 C,2 D,2 | "Am" E,8- |
+"Fmaj7" C4 z C D E | "Bm7b5" F3 B, B4- | "E7b9" B4 B2 C2 D2 | "Am" E8- |
 w: _ * the wel- come | sight of you | _ com- ing my | way. |
-"Bm7b5" E,4 z2 E,2 | "Am" C4- C,2 B,2 A,2 | "Bm7b5" A,4- A,2 ^G,2 B,2 | "Am" E,,8- |
+"Bm7b5" E4 z2 E2 | "Am" c4- C2 B2 A2 | "Bm7b5" A4- A2 ^G2 B2 | "Am" E,8- |
 w: _ * I | stop _ just a- | cross _ from your | door |
-"Bm7b5" E,4 z2 E,2 | "Em7b5" _B4- _B,2 A,2 G,2 | "A7b9" G,4- G,2 F,2 E,2 | "Dm" A,8- |
+"Bm7b5" E4 z2 E2 | "Em7b5" _b4- _B2 A2 G2 | "A7b9" G4- G2 F2 E2 | "Dm" A8- |
 w: _ * but | you're _ nev- er | home _ an- y- | more. |
-"Dm" A,8 | "Bm7b5" z2 D,,2 D,2 E,2 F,2 | "Am" B,8 | "Fmaj7" z2 C,,2 C,2 D,2 E,2 |
+"Dm" A8 | "Bm7b5" z2 D,2 D2 E2 F2 | "Am" B8 | "Fmaj7" z2 C,2 C2 D2 E2 |
 w: _ | * So back to my | room | * and there in the |
-"Bm7b5" A,6 G,2 | "E7" E,8- | "Am" E,4 E,2 ^G,2 B,2 | "Am" A,8- |
+"Bm7b5" A6 G2 | "E7" E8- | "Am" E4 E2 ^G2 B2 | "Am" A8- |
 w: gloom I | cry | _ tears of good- | bye. |
-"Dm7" A,4 z2 A,2 B,2 | "Dm7" C,2 D,2 C,2 B,2 A,2 B,2 | "Dm7" C,2 D,2 C,2 B,2 A,2 B,2 | "Am6" C,2 D,2 C,2 B,2 A,2 G,2 |
+"Dm7" A4 z2 A2 B2 | "Dm7" C2 D2 C2 B2 A2 B2 | "Dm7" C2 D2 C2 B2 A2 B2 | "Am6" C2 D2 C2 B2 A2 G2 |
 w: _ * 'Til you | come back to me, that's the | way it will be ev- 'ry | day in the life of a |
-A,8- | A,6 z2 |
+A8- | A6 z2 |
 w: fool. | _ * |]
 
 X:857
@@ -23860,24 +26409,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id a-fine-romance-2
+%%tags needs-repair
 K:C
-E,2 |: "C6" C,8 | "C#dim7" A2 G,4 A,2 | "G7" B,,8 |
+E2 |: "C6" C8 | "C#dim7" a2 G4 A2 | "G7" B,8 |
 w: A |  Fine | Ro- mance with | no |
-"D#dim7" B2 A,4 B,2 | "Em7" E,,8 | "Am7" D2 C,4 E,,2 | "Dm7" G,8 |
+"D#dim7" b2 A4 B2 | "Em7" E,8 | "Am7" d2 C4 E,2 | "Dm7" G8 |
 w: kis- es! A | Fine | Ro- mance, my | friend, |
-"G7" E2 D,4 G,,2 | "Cmaj7" C,2 B,2 C,2 D,2 | "C7" C,2 B,2 _B,2 A,2 _A,2 | "G13" G,4 G,4- |
+"G7" e2 D4 G,2 | "Cmaj7" C2 B2 C2 D2 | "C7" C2 B2 _B2 A2 _A2 | "G13" G4 G4- |
 w: this is! We | should be like a | cou- ple of hot to- | ma- toes, |
-"Gdim7" G,6 G,2 | "C6" A,2 ^G,2 A,2 B,2 | "A7" A,2 _A,2 G,2 ^F,2 F,2 | "E7" E,4 E,4- |
+"Gdim7" G6 G2 | "C6" A2 ^G2 A2 B2 | "A7" A2 _A2 G2 ^F2 F2 | "E7" E4 E4- |
 w: _ but | you're as cold as | yes- ter- day's mashed po- | ta- toes. |
-"D7" E,6 E,2 | "C6" C,8 | "C#dim7" A2 G,4 A,2 | "G7" B,,8 |
+"D7" E6 E2 | "C6" C8 | "C#dim7" a2 G4 A2 | "G7" B,8 |
 w: _ A | Fine | Ro- mance you | won't |
-"D#dim7" B2 A,4 B,2 | "Em7" E,,8 | "Am7" D2 C,4 E,,2 | "Dm7" G,8 |
+"D#dim7" b2 A4 B2 | "Em7" E,8 | "Am7" d2 C4 E,2 | "Dm7" G8 |
 w: nest- le. A | Fine | Ro- mance, you | won't |
-"G7" E2 D,4 G,,2 | "C6" C,2 B,2 C,2 D,2 | "C7" E,2 D,2 C,2 B,2 _B,2 | "Dm7" A,8 |
+"G7" e2 D4 G,2 | "C6" C2 B2 C2 D2 | "C7" E2 D2 C2 B2 _B2 | "Dm7" A8 |
 w: wrest- le! I | might as well play | bridge with my old maid | aunts! |
-"Dm7" C,2 B,2 _B,2 A,2 _A,2 | "Em7" G,8 | "Dm7" B,2 A,2 _A,2 G,2 D2 | :|1 "C6" C,8 |
+"Dm7" C2 B2 _B2 A2 _A2 | "Em7" G8 | "Dm7" B2 A2 _A2 G2 d2 | :|1 "C6" C8 |
 w: I have- n't got a | chance. | This is A Fine Ro- |  mance. |
-"Dm7" z4 z2 E,,2 | :|2 "C6" C8- | "C69" C,6 z2 |
+"Dm7" z4 z2 E,2 | :|2 "C6" c8- | "C69" C6 z2 |
 w: * * A |  * | * * |]
 
 X:858
@@ -23888,26 +26439,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id a-foggy-day
+%%tags needs-repair
 K:F
-C,2 |: "Fmaj7" C,2 C,4 _E,2- | "Am7b5" _E,6 _E,2 | "Gm7" D,2 D,4 A2- |
+C2 |: "Fmaj7" C2 C4 _E2- | "Am7b5" _E6 _E2 | "Gm7" D2 D4 a2- |
 w: A |  Fog- gy Day | _ in | Lon- don town |
-"C7" A,8 | "F" F,4 F,2 _A,2- | "Dm7b5" _A,6 _A,2 | "G7" G,4 G,2 D2- |
+"C7" A8 | "F" F4 F2 _A2- | "Dm7b5" _A6 _A2 | "G7" G4 G2 d2- |
 w: _ | had me low | _ and | had me down. |
-"Gm7" D,8 | "Fmaj7" z2 E,2 E,2 E,2 | "Cm7" C,2 C,6 | "Bbmaj7" A,4 A,2 F,2- |
+"Gm7" D8 | "Fmaj7" z2 E2 E2 E2 | "Cm7" C2 C6 | "Bbmaj7" A4 A2 F2- |
 w: _ | * I viewed the | morn- ing | with a- larm, |
-"Bbm6" F,6 F,2 | "Fmaj7" A,2 A,2 A,2 C,2- | "Am7" C,2 C,4 C,2 | "G79" A,4 A,2 D,,2- |
+"Bbm6" F6 F2 | "Fmaj7" A2 A2 A2 C2- | "Am7" C2 C4 C2 | "G79" A4 A2 D,2- |
 w: _ the | Brit- ish Mu- se- | um had lost | its charm. _ |
-"Gm7" D,6 C,2 | "Fmaj7" C,4 C,2 _E,2- | "Am7b5" _E,2 _E,4 _E,2 | "Gm7" D,4 D,2 A2- |
+"Gm7" D6 C2 | "Fmaj7" C4 C2 _E2- | "Am7b5" _E2 _E4 _E2 | "Gm7" D4 D2 a2- |
 w: How long | I won- dered | could this thing | last? _ But |
-"C7" A,4 A,2 A,2 | "F" F,4 F,2 _A,2- | "Dm7b5" _A,2 _B,2 _A,4 | "G7" G,4 G,2 D2- |
+"C7" A4 A2 A2 | "F" F4 F2 _A2- | "Dm7b5" _A2 _B2 _A4 | "G7" G4 G2 d2- |
 w: the age of | mir- a- cles | had- n't passed, | _ for sud- |
-"Gm7" D,6 D,2 | "Cm7" F,4 F,2 D,2- | "F7" D,6 D,2 | "Bbmaj7" C,4 C,2 A,2- |
+"Gm7" D6 D2 | "Cm7" F4 F2 D2- | "F7" D6 D2 | "Bbmaj7" C4 C2 A2- |
 w: den- ly, | _ I saw | you there | _ and through |
-"Eb7" A,4 A,2 _B,2 | "F" C,2 F,,2 G,2 _B,2 | "Am7" A,2 F,2 G,2 _B,2 | "Am7" A,4 F4 |
+"Eb7" A4 A2 _B2 | "F" C2 F,2 G2 _B2 | "Am7" A2 F2 G2 _B2 | "Am7" A4 f4 |
 w: fog- gy Lon- | don town the sun | was shin- ing ev- | 'ry where. |
-"Gm7" F,,4 G,4 | :|1 "F" F,8 | "Gm7" z4 z2 C,2 | :|2 "F" F,8- |
+"Gm7" F,4 G4 | :|1 "F" F8 | "Gm7" z4 z2 C2 | :|2 "F" F8- |
 w: A where. |  _ | * * * |  * |
-"Bb7" F,8- | "Fmaj7" F,8 |
+"Bb7" F8- | "Fmaj7" F8 |
 w: * | * |]
 
 X:859
@@ -23916,10 +26469,12 @@ C:John 'Dizzy' Gillespie, Frank Paparelli
 N:Source: openbook
 M:4/4
 L:1/8
+%%id a-night-in-tunisia
+%%tags needs-repair
 K:F
-A, |: "Eb7" _B, _D, F, C4 _B, F, | "Dm6" ^G, A,3 z2 z A,, | "Eb7" _B, _D, F, C C,- C,2 _B, F, |
-"Dm6" A,6 z A,, | "Eb7" _B, _D, F, C4 _B, F, | "Dm6" ^G, A,3 z4 | "Ebm7b5" A, _B, A,/ _B,/ A,/ G, _E,2 ^C, D,- |
-:|1 "Dm6" D,2 z2 z2 z A, | :|2 "Dm6" D,2 z2 z2 z A |]
+A |: "Eb7" _B _D F c4 _B F | "Dm6" ^G A3 z2 z A, | "Eb7" _B _D F c C- C2 _B F |
+"Dm6" A6 z A, | "Eb7" _B _D F c4 _B F | "Dm6" ^G A3 z4 | "Ebm7b5" A _B A/ _B/ A/ G _E2 ^C D- |
+:|1 "Dm6" D2 z2 z2 z A | :|2 "Dm6" D2 z2 z2 z a |]
 
 X:860
 T:A Nightingale Sang in Berkeley Square
@@ -23929,28 +26484,29 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id a-nightingale-sang-in-berkeley-square
 K:Eb
-_B, |: "Ebmaj7" G2 G,2 _E,3 _E, | "Gm7" _B2 _B,2 G,2 _E, _E, | "Ab" C2 C,2 C,2 D,2 D,2 D,2 |
+_B |: "Ebmaj7" g2 G2 _E3 _E | "Gm7" _b2 _B2 G2 _E _E | "Ab" c2 C2 C2 D2 D2 D2 |
 w: That |  cer- tain night, the | night we met there was | ma- gic a- broad in the |
-"Cm7" _E,6 _E, _E, | "Ebmaj7" D,2 _B,2 C,3 _A, | "Eb7" _B,2 _E,,2 _B2 _A, _A, | "Ebmaj7" G, _A, _B,2 _E,,2 _E,2 |
+"Cm7" _E6 _E _E | "Ebmaj7" D2 _B2 C3 _A | "Eb7" _B2 _E,2 _b2 _A _A | "Ebmaj7" G _A _B2 _E,2 _E2 |
 w: air, there were | an- gels din- in | at the Ritz, and A | Nigh- in- gale Sang In |
-"Fm7" _E,4 F,4 | "Eb6" _E,8 | "Fm7" z4 z2 z _B, | "Ebmaj7" G2 G,2 _E,3 _E, |
+"Fm7" _E4 F4 | "Eb6" _E8 | "Fm7" z4 z2 z _B | "Ebmaj7" g2 G2 _E3 _E |
 w: Ber- k'ley | Square. | * * * I | may be right, I |
-"Gm7" _B2 _B,2 G,2 _E, _E, | "Abmaj7" C2 C,2 C,2 D,2 D,2 D,2 | "Cm7" _E,6 _E,2 | "Ebmaj7" D,2 _B,2 C,3 _A, |
+"Gm7" _b2 _B2 G2 _E _E | "Abmaj7" c2 C2 C2 D2 D2 D2 | "Cm7" _E6 _E2 | "Ebmaj7" D2 _B2 C3 _A |
 w: may be wrong, but I'm | per- fect- ly will- ing to | swear that | when you turn'd and |
-"Eb7" _B,2 _E,,2 _B3 _A, | "Ebmaj7" G, _A, _B,2 _E,,2 _E,2 | "Fm7" _E,4 F,4 | "Eb6" _E,8 |
+"Eb7" _B2 _E,2 _b3 _A | "Ebmaj7" G _A _B2 _E,2 _E2 | "Fm7" _E4 F4 | "Eb6" _E8 |
 w: smiled at me A | Night- in gale Sang In | Ber- k'ley | Square. |
-"Am7b5" z8 | "G" z3/2 D,/ E,3/2 ^F,/ G,3/2 A,/ B,3/2 C,/ | "Am7" D, D,2 B,- B,3 B, | "Bm7" A,2 A,2 ^F,3 ^F, |
+"Am7b5" z8 | "G" z3/2 D/ E3/2 ^F/ G3/2 A/ B3/2 C/ | "Am7" D D2 B- B3 B | "Bm7" A2 A2 ^F3 ^F |
 w: * | * The moon that lin- gered o- ver | Lon- don town, _ poor | Puz- zled moon, he |
-"Am7" E,2 E,2 D,4 | "G" z3/2 D,/ E,3/2 ^F,/ G,3/2 A,/ B,3/2 C,/ | "Am7" D, D,2 B,- B,3 B, | "Bm7" A,2 A,2 G,3 G, |
+"Am7" E2 E2 D4 | "G" z3/2 D/ E3/2 ^F/ G3/2 A/ B3/2 C/ | "Am7" D D2 B- B3 B | "Bm7" A2 A2 G3 G |
 w: wore a frown. | * How could he know we two were | so in love. _ The | whole darn world seemed |
-"Fm7" C,2 C,2 _B,3 _B,, | "Ebmaj7" G2 G,2 _E,3 _E, | "Gm7" _B2 _B,2 G,2 _E, _E, | "Ab" C2 C,2 C,2 D,2 D,2 D,2 |
+"Fm7" C2 C2 _B3 _B, | "Ebmaj7" g2 G2 _E3 _E | "Gm7" _b2 _B2 G2 _E _E | "Ab" c2 C2 C2 D2 D2 D2 |
 w: up- side down, the | streets of town were | paved with stars. It was | such a ro- man- tic af- |
-"Cm7" _E,6 _E,2 | "Eb" D,2 _B,2 C,3 _A, | "Eb7" _B,2 _E,,2 _B3 _A, | "Eb" G, _A, _B,2 _E,,2 _E,2 |
-w: fair, and | as we kiss'd and | said "\"good"- "night\"" A | Night- in gale Sang In |
-"Fm7" _E,4 F,4 | :|1 "Eb" _E,8- | "Fm7" _E,2 z2 z2 z _B, | :|2 "Eb" _E,8 |
+"Cm7" _E6 _E2 | "Eb" D2 _B2 C3 _A | "Eb7" _B2 _E,2 _b3 _A | "Eb" G _A _B2 _E,2 _E2 |
+w: fair, and | as we kiss'd and | said ""good"- "night"" A | Night- in gale Sang In |
+"Fm7" _E4 F4 | :|1 "Eb" _E8- | "Fm7" _E2 z2 z2 z _B | :|2 "Eb" _E8 |
 w: Ber- k'ley |  Square. | _ * * * How |  Square. |
-"Fm7" z C _B, _A, G,2 F,2 | "Gm7b5" G,8 | "Fm7b5" z _A, G, F, _E,2 D,2 | "Eb" _E,8- _E,6 z2 |
+"Fm7" z c _B _A G2 F2 | "Gm7b5" G8 | "Fm7b5" z _A G F _E2 D2 | "Eb" _E8- _E6 z2 |
 w: * I know, 'cause I was | there | * that night in Ber- k'ly | Square. _ * |]
 
 X:861
@@ -23959,16 +26515,17 @@ C:John Lewis
 N:Source: openbook
 M:4/4
 L:1/8
+%%id afternoon-in-paris-2
 K:C
-E2 | "C6" G, D, z C, B, C, D, E, | "Cm7" _E, G,, _B, D, C,2 D,2 | "Bb6" F, C, z _B, A, _B, C, D, |
-"Bbm7" _D, F,, _A, C, _B,2 C,2 | "Abmaj7" _E, C, _A, _E, G, _B, _A,2 | "Dm7b5" F,4 G,2 F,2 G,2 | "Cmaj7" E, G, B, D, A, B, C, E, |
-"Dm7" F, A,, C, E, D,2 E,2 | "C6" G, D, z C, B, C, D, E, | "Cm7" _E, G,, _B, D, C,2 D,2 | "Bb6" F, C, z _B, A, _B, C, D, |
-"Bbm7" _D, F,, _A, C, _B,2 C,2 | "Abmaj7" _E, C, _A, _E, G, _B, _A,2 | "Dm7b5" _A,4 G,2 F,2 G,2 | "C" E,8- |
-"Am7" E,4 A,2 B,2 | "Dm7" C,6 D,2 | "G7b9" E,6 D,2 | "C6" C,6 E,2 |
-"Am7" A,,6 B,2 | "Dm7" C,6 D,2 | "G7b9" E,6 D,2 | "C#m7b5" E,8 |
-"Dm7" F,6 E,2 | "C6" G, D, z C, B, C, D, E, | "Cm7" _E, G,, _B, D, C,2 D,2 | "Bb6" F, C, z _B, A, _B, C, D, |
-"Bbm7" _D, F,, _A, C, _B,2 C,2 | "Ab" _E, C, _A, _E, G, _B, _A,2 | "Dm7b5" F,4 G,2 F,2 G,2 | "C" E,8- |
-E,6 z2 |]
+e2 | "C6" G D z C B C D E | "Cm7" _E G, _B D C2 D2 | "Bb6" F C z _B A _B C D |
+"Bbm7" _D F, _A C _B2 C2 | "Abmaj7" _E C _A _E G _B _A2 | "Dm7b5" F4 G2 F2 G2 | "Cmaj7" E G B D A B C E |
+"Dm7" F A, C E D2 E2 | "C6" G D z C B C D E | "Cm7" _E G, _B D C2 D2 | "Bb6" F C z _B A _B C D |
+"Bbm7" _D F, _A C _B2 C2 | "Abmaj7" _E C _A _E G _B _A2 | "Dm7b5" _A4 G2 F2 G2 | "C" E8- |
+"Am7" E4 A2 B2 | "Dm7" C6 D2 | "G7b9" E6 D2 | "C6" C6 E2 |
+"Am7" A,6 B2 | "Dm7" C6 D2 | "G7b9" E6 D2 | "C#m7b5" E8 |
+"Dm7" F6 E2 | "C6" G D z C B C D E | "Cm7" _E G, _B D C2 D2 | "Bb6" F C z _B A _B C D |
+"Bbm7" _D F, _A C _B2 C2 | "Ab" _E C _A _E G _B _A2 | "Dm7b5" F4 G2 F2 G2 | "C" E8- |
+E6 z2 |]
 
 X:862
 T:Alice In Wonderland
@@ -23978,16 +26535,18 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id alice-in-wonderland-2
+%%tags needs-repair
 K:C
-|: "D" G6 | "G7" G4 F,2 | "Cmaj7" E,4 C,2 | "Fmaj7" G,6 |
+|: "D" g6 | "G7" g4 F2 | "Cmaj7" E4 C2 | "Fmaj7" G6 |
 w:  A- | lice In | Won- der- | land |
-"Bm7b5" D2 E,2 F,2 | "E7" E,4 D,2 | "Am7" E,4 C,2 | "Eb7" G,6 |
+"Bm7b5" d2 E2 F2 | "E7" E4 D2 | "Am7" E4 C2 | "Eb7" G6 |
 w: How do you | get to | won- der- | land |
-"Dm7" D2 E,2 F,2 | "G7" E,4 D,2 | "Em7" E,4 G,2 | "Am7" C,4 A,2 |
+"Dm7" d2 E2 F2 | "G7" E4 D2 | "Em7" E4 G2 | "Am7" C4 A2 |
 w: O- ver the | hill or | un- der- | land or |
-"Dm7" G,4 F,2 | "G7" E,4 D,2 | :|1 "E" G,6- | "Dm7" G,6 |
+"Dm7" G4 F2 | "G7" E4 D2 | :|1 "E" G6- | "Dm7" G6 |
 w: just be- | hind the |  tree | _ |
-:|2 "C" C,,6- | "Am7" C,4 ^C,2 |
+:|2 "C" C,6- | "Am7" C4 ^C2 |
 w:  * | * * |]
 
 X:863
@@ -23998,22 +26557,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id all-of-me-4
 K:C
-"Cmaj7" C2 G, E,- E,4- | "E7" E,4 C2 D,2 C,2 | "A7" B,2 ^G, E,- E,4- | "Dm" E,8 |
+"Cmaj7" c2 G E- E4- | "E7" E4 c2 D2 C2 | "A7" B2 ^G E- E4- | "Dm" E8 |
 w: All of me _ | why not take all | of me _ Can't | you |
-"E7" A,3 G, E,4- | "Am" E,2 ^D,2 E,2 _B2 A,2 | "D7" G,4 F,4- | "Dm7" F,8 |
+"E7" A3 G E4- | "Am" E2 ^D2 E2 _b2 A2 | "D7" G4 F4- | "Dm7" F8 |
 w: see _ I'm | no good with- out you | _ Take | my |
-"G7" E,3 _E, D,4- | "Cmaj7" D,4 E,2 ^G,2 B,2 | "E7" D,4 C,4- | "A7" C,8 |
+"G7" E3 _E D4- | "Cmaj7" D4 E2 ^G2 B2 | "E7" D4 C4- | "A7" C8 |
 w: lips _ I | want to lose them | _ Take | my |
-"Dm" B,3 _B, A,4- | "F" A,4 A,2 D,2 B,2 | "Fm" A,8 | "Cmaj7" B,8 |
+"Dm" B3 _B A4- | "F" A4 A2 D2 B2 | "Fm" A8 | "Cmaj7" B8 |
 w: arms _ I'll | ne- ver use them | _ | Your |
-"A7" C,2 G, E,- E,4- | "Dm7" E,4 C2 D,2 C,2 | "G7" B,2 ^G, E,- E,4- | "C6" E,8 |
+"A7" C2 G E- E4- | "Dm7" E4 c2 D2 C2 | "G7" B2 ^G E- E4- | "C6" E8 |
 w: good- bye _ left | me with eyes that | cry _ How can | I |
-"Dm7" A,3 G, E,4- | E,2 ^D,2 E,2 _B2 A,2 | G,4 F,4- | F,8 |
+"Dm7" A3 G E4- | E2 ^D2 E2 _b2 A2 | G4 F4- | F8 |
 w: _ get a- | long with- out you _ | You took | the |
-D4 C,2 B,2 | D,6 C,2 | B,4 E,,2 G,2 | B,6 A,2 |
+d4 C2 B2 | D6 C2 | B4 E,2 G2 | B6 A2 |
 w: part that once | was my | heart So why | not take |
-C,4 A,2 C,2 | E,4 E,4 | C,8- | C,8 |
+C4 A2 C2 | E4 E4 | C8- | C8 |
 w: all of me | _ * | * | * |]
 
 X:864
@@ -24024,38 +26584,39 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id all-or-nothing-at-all-2
 K:C
-"Am" E,8- | "Am7" E,2 E,2 E,2 F,2 C,2 | "Am6" E,8- | "Am" E,6 z2 |
+"Am" E8- | "Am7" E2 E2 E2 F2 C2 | "Am6" E8- | "Am" E6 z2 |
 w: All, | _ Or Noth- ing At | All. | _ * |
-"Am" E,4 E,4 | "Bb9" E,4 E,2 G,2 C,,2 | "Bbaug" D,3 D, D,4- | "Gm" D,6 z2 |
+"Am" E4 E4 | "Bb9" E4 E2 G2 C,2 | "Bbaug" D3 D D4- | "Gm" D6 z2 |
 w: Half a | love nev- er ap- | pealed to me. | _ * |
-"Em7b5" D,4 D,4 | "Dm" D,4 E,2 ^C,2 D,2 | "G7" A3 A, A,4- | "G" A,4 B,2 A,2 |
+"Em7b5" D4 D4 | "Dm" D4 E2 ^C2 D2 | "G7" a3 A A4- | "G" A4 B2 A2 |
 w: If your | heart nev- er could | yield to me, | _ then I'd |
-"Cmaj7" G,2 G,4 G,2 | "Bm7b5" G,2 G,4 G,2 | "Am" G,8 | "Am7" z8 |
+"Cmaj7" G2 G4 G2 | "Bm7b5" G2 G4 G2 | "Am" G8 | "Am7" z8 |
 w: rath- er have | noth- ing at | all! | * |
-"Am6" E,8- | "Am" E,2 E,2 E,2 F,2 C,2 | "Am" E,8- | "Bb9" E,6 z2 |
+"Am6" E8- | "Am" E2 E2 E2 F2 C2 | "Am" E8- | "Bb9" E6 z2 |
 w: All | _ Or Noth- ing At | All! | _ * |
-"Bbaug" E,4 E,4 | "Gm" E,4 E,2 G,2 C,,2 | "Em7b5" D,3 D, D,4- | "Dm" D,6 z2 |
+"Bbaug" E4 E4 | "Gm" E4 E2 G2 C,2 | "Em7b5" D3 D D4- | "Dm" D6 z2 |
 w: If it's | love, there is no | in- be- tween. | _ * |
-"G7" D,3 D, D,3 D, | "G" D,3 D, E,2 ^C,2 D,2 | "Cmaj7" A3 A, A,4- | "Bbm7" A,4 B,2 A,2 |
+"G7" D3 D D3 D | "G" D3 D E2 ^C2 D2 | "Cmaj7" a3 A A4- | "Bbm7" A4 B2 A2 |
 w: Why be- gin, then | cry for some- thing that | might have been. | _ No, I'd |
-"Ab" G,2 G,4 G,2 | "Ab6" G,2 G,4 G,2 | "Ab" G,8- | "Ab6" G,2 z2 z2 _E,2 |
+"Ab" G2 G4 G2 | "Ab6" G2 G4 G2 | "Ab" G8- | "Ab6" G2 z2 z2 _E2 |
 w: rath- er have | noth- ing at | all. | _ * * But, |
-"Ab" C2 C,2 C,2 C,2 | "Db" C,3 C, C,2 _D,2 _A,2 | "Eb9" C,8- | "Ebaug" C,6 _E,,2 |
+"Ab" c2 C2 C2 C2 | "Db" C3 C C2 _D2 _A2 | "Eb9" C8- | "Ebaug" C6 _E,2 |
 w: please, don't bring your | lips so close to my | cheek. | _ Don't |
-"Bbm7" C3 C, C,3 C, | "Bbm7" _D,4 C,2 _B,2 _A,2 | "Bbm7" G,8- | "Gm7b5" G,6 _E,2 |
+"Bbm7" c3 C C3 C | "Bbm7" _D4 C2 _B2 _A2 | "Bbm7" G8- | "Gm7b5" G6 _E2 |
 w: smile or I'll be | lost be- yond re- | call. | _ The |
-"Fm" _B2 _B,2 _B,2 _B,3 _B, | "Db7" _B,2 _B,2 _B,2 _B,2 C,2 G,2 | "C7" _B,8- | "E7" _B,4 C,2 _B,2 |
+"Fm" _b2 _B2 _B2 _B3 _B | "Db7" _B2 _B2 _B2 _B2 C2 G2 | "C7" _B8- | "E7" _B4 C2 _B2 |
 w: kiss in your eyes, the | touch of your hand makes me | weak, | _ And my |
-"Am" _A,4 _A,2 _A,2 | "Am7" _A,2 _A,4 _A,2 | "Am6" G,8 | "Am" z2 D,2 C,2 B,2 |
+"Am" _A4 _A2 _A2 | "Am7" _A2 _A4 _A2 | "Am6" G8 | "Am" z2 D2 C2 B2 |
 w: heart may grow | diz- zy and | fall. | * And if I |
-"Bb9" E,8 | "Bbaug" E,2 F,2 C,2 E,2 F,2 C,2 | "Gm" E,8- | "Em7b5" E,6 z2 |
+"Bb9" E8 | "Bbaug" E2 F2 C2 E2 F2 C2 | "Gm" E8- | "Em7b5" E6 z2 |
 w: fell | un- der the spell of your | call. | _ * |
-"Dm" E,4 E,4 | "Bm7b5" E,4 E,2 G,2 C,,2 | "Am" D,3 D, D,4- | "Dm7b5" D,6 z2 |
+"Dm" E4 E4 | "Bm7b5" E4 E2 G2 C,2 | "Am" D3 D D4- | "Dm7b5" D6 z2 |
 w: I would | be caught in the | un- der- tow. | _ * |
-"C" D,4 D,4 | "C6" D,3 D, E,2 ^C,2 D,2 | A8 | B,8 |
+"C" D4 D4 | "C6" D3 D E2 ^C2 D2 | a8 | B8 |
 w: So, you | see, I've got to say: | No! | No! |
-C,8- | C,2 C,2 C,2 C,2 C,2 | C,8- | C,6 z2 |
+C8- | C2 C2 C2 C2 C2 | C8- | C6 z2 |
 w: All | _ Or Noth- ing At | All! | _ * |]
 
 X:865
@@ -24066,24 +26627,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id all-the-things-you-are-3
 K:Ab
-"Fm7" _A8 | "Bbm7" _D,6 _A,2 | "Eb7" G,2 G,2 G,2 G,2 | "Abmaj7" G,2 C,4 G,2 |
+"Fm7" _a8 | "Bbm7" _D6 _A2 | "Eb7" G2 G2 G2 G2 | "Abmaj7" G2 C4 G2 |
 w: You | are the | prom- ised kiss of | spring- time That |
-"Dbmaj7" F,2 F,2 F,2 F,2 | "G7" F,2 B,4 F,2 | "Cmaj7" E,8- | "Cm7" E,8 |
+"Dbmaj7" F2 F2 F2 F2 | "G7" F2 B4 F2 | "Cmaj7" E8- | "Cm7" E8 |
 w: makes the lone- ly | win- ter seem | long. | _ |
-"Fm7" _E,8 | "Bb7" _A,6 _E,2 | "Ebmaj7" D,2 D,2 D,2 D,2 | "Abmaj7" D,2 G,4 D,2 |
+"Fm7" _E8 | "Bb7" _A6 _E2 | "Ebmaj7" D2 D2 D2 D2 | "Abmaj7" D2 G4 D2 |
 w: You | are the | breath- less hush of | eve- ning That |
-"Am7b5" C,2 C,2 C,2 C,2 | "Gmaj7" C,2 D, _E, D,2 C,2 | "Gmaj7" B,8- | "Am7" B,2 D,2 G,2 D2 |
+"Am7b5" C2 C2 C2 C2 | "Gmaj7" C2 D _E D2 C2 | "Gmaj7" B8- | "Am7" B2 D2 G2 d2 |
 w: trem- bles on the | brink of a love- ly | song. | _ You are the |
-"D7" D,3 C, C,4- | "Gmaj7" C,2 ^D,,2 E,2 C2 | "Cmaj7" B,8- | "F#m7b5" B,2 D,,2 G,2 B,2 |
+"D7" D3 C C4- | "Gmaj7" C2 ^D,2 E2 c2 | "Cmaj7" B8- | "F#m7b5" B2 D,2 G2 B2 |
 w: an- gel glow | _ that lights a | star. | _ The dear- est |
-"B7" B,3 A, A,4- | "Emaj7" A,2 _B,,2 B,2 A2 | "C7#5" ^G,8 | "Fm7" z8 |
+"B7" B3 A A4- | "Emaj7" A2 _B,2 B2 a2 | "C7#5" ^G8 | "Fm7" z8 |
 w: things I know | _ are what you | are. | * |
-"Bbm7" _A,8 | "Eb7" _D,6 _A,2 | "Abmaj7" G,2 G,2 G,2 G,2 | "Dbmaj7" G,2 C,4 G,2 |
+"Bbm7" _A8 | "Eb7" _D6 _A2 | "Abmaj7" G2 G2 G2 G2 | "Dbmaj7" G2 C4 G2 |
 w: Some | day my | hap- py arms will | hold you, And |
-"Dbm7" F,8 | "Abmaj7" _E6 _D,2 | "Bdim7" _E,,2 _E,2 _E,2 _E,2 _E,2 | "Bbm7" G,6 F,2 |
+"Dbm7" F8 | "Abmaj7" _e6 _D2 | "Bdim7" _E,2 _E2 _E2 _E2 _E2 | "Bbm7" G6 F2 |
 w: some | day I'll | know that mo- ment di- | vine, When |
-"Eb79" _D,2 _D,2 F,2 _A,2 | "Abmaj7" F4 G,,4 | _A,8- | _A,6 z2 |
+"Eb79" _D2 _D2 F2 _A2 | "Abmaj7" f4 G,4 | _A8- | _A6 z2 |
 w: All The Things You | Are, are | mine. | _ * |]
 
 X:866
@@ -24094,16 +26656,17 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id alone-together-2
 K:Dmin
-D, |: "Dm" F,7 D, | "Em7b5" E, E,3- E,4- | "Dm" E,2 z D, E,3 F, |
+D |: "Dm" F7 D | "Em7b5" E E3- E4- | "Dm" E2 z D E3 F |
 w: A- |  lone To- | geth- er; _ | be- * yond the crowd. |
-"Em7b5" A,8- | "Dm" A,2 z D,, E,3 F, | "Am7b5" A,8- | "Gm" A,2 z G, A,3 _B, |
+"Em7b5" A8- | "Dm" A2 z D, E3 F | "Am7b5" A8- | "Gm" A2 z G A3 _B |
 w: _ | a- * bove the world, | _ | we're * not too proud |
-"Gm7" D,7 D, | "Bm7" E,7 D, | "Gm7" C, C,3- C,3 _B, | "F" A,3 G, A,3 G, |
+"Gm7" D7 D | "Bm7" E7 D | "Gm7" C C3- C3 _B | "F" A3 G A3 G |
 w: to cling | to- geth- | er. _ Were strong | As long as we're |
-"Em7b5" A,7 G, | :|1 "Dmaj7" ^F, ^F,3- ^F,4- | "Em7b5" ^F,6 z D, | :|2 "Dmaj7" ^F, ^F,3- ^F,4- |
+"Em7b5" A7 G | :|1 "Dmaj7" ^F ^F3- ^F4- | "Em7b5" ^F6 z D | :|2 "Dmaj7" ^F ^F3- ^F4- |
 w: to- geth- |  er _ A | * * * |  * * * |
-^F,6 D,2 |
+^F6 D2 |
 w: * * |]
 
 X:867
@@ -24114,24 +26677,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id always
 K:F
-|: "F" C,3 D, F, G, | "C" A,6 | "F" C,2 A,4- | "F" A,6 |
+|: "F" C3 D F G | "C" A6 | "F" C2 A4- | "F" A6 |
 w:  I'll be lov- ing | you, | Al- ways | _ |
-"F" C,,3 D, E, F, | "A" G,6 | "E7" A,2 F,4- | "A" F,6 |
+"F" C,3 D E F | "A" G6 | "E7" A2 F4- | "A" F6 |
 w: With a love that's | true, | Al- ways | _ |
-"C" C,3 D, F, G, | "F" A,6 | "F" E,3 ^F, A, B, | "F7" ^C,6 |
+"C" C3 D F G | "F" A6 | "F" E3 ^F A B | "F7" ^C6 |
 w: When the things you've | planned | Need a help- ing | hand, |
-"D" E,,3 ^F, ^G, B, | "Cm" D,6 | "G" ^C,2 A,4 | "Gm" A,2 G,4 |
+"D" E,3 ^F ^G B | "Cm" D6 | "G" ^C2 A4 | "Gm" A2 G4 |
 w: I will un- der- | stand, | Al- ways, | Al- ways. |
-"Bbm" C,,3 D, F, G, | "F" A,6 | "G9" C,2 A,4- | "C" A,6 |
+"Bbm" C,3 D F G | "F" A6 | "G9" C2 A4- | "C" A6 |
 w: Days may not be | fair, | Al- ways | _ |
-D,,3 E, ^F, A, | "F" D,6 | "C7" E,6 D,4- | D,6 |
+D,3 E ^F A | "F" D6 | "C7" E6 D4- | D6 |
 w: That's when I'll be | there, | Al- ways. | _ |
-"F" _B,3 A, G, A, | _B,6 | A,3 G, F, G, | A,6 |
+"F" _B3 A G A | _B6 | A3 G F G | A6 |
 w: Not for just and | hour, | Not for just a | day, |
-G,3 F, E, F, | G,4 C,,2 | :|1 A2 F,4- | F,2 z2 z2 |
+G3 F E F | G4 C,2 | :|1 a2 F4- | F2 z2 z2 |
 w: Not for just a | year, But |  Al- ways. | _ * * |
-:|2 A,2 F,4- | F,4 z2 |
+:|2 A2 F4- | F4 z2 |
 w:  Al- ways. | _ * |]
 
 X:868
@@ -24142,24 +26706,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id among-my-souvenirs
 K:Eb
-|: "Eb" z2 G2 G,2 _B,2 | "Fm7" _B,2 _A,2 _A,4- | "Bb" _A,2 _A,2 _A,2 C,2 | "Eb" C,2 _B,2 _B,4- |
+|: "Eb" z2 g2 G2 _B2 | "Fm7" _B2 _A2 _A4- | "Bb" _A2 _A2 _A2 C2 | "Eb" C2 _B2 _B4- |
 w:  * There's no- thing | left for me; | _ of days that | used to be |
-"Eb" _B,2 _B,2 _B,2 _E,2 | "Fm7" _E,2 D,2 D,2 C,2 | "Bb7" C,2 _B,2 _B,2 _A,2 | "Eb" G,8- |
+"Eb" _B2 _B2 _B2 _E2 | "Fm7" _E2 D2 D2 C2 | "Bb7" C2 _B2 _B2 _A2 | "Eb" G8- |
 w: _ I live in | mem- o- ry A- | mong My Sou- ve- | nirs. |
-"Eb" G,2 G,2 G,2 _B,2 | "Fm7" _B,2 _A,2 _A,4- | "Bb" _A,2 _A,2 _A,2 C,2 | "Eb" C,2 _B,2 _B,4- |
+"Eb" G2 G2 G2 _B2 | "Fm7" _B2 _A2 _A4- | "Bb" _A2 _A2 _A2 C2 | "Eb" C2 _B2 _B4- |
 w: _ Some let- ters | tied to blue, | _ a pho- to- | graph or two, |
-"Eb" _B,2 _B,2 _B,2 _E,2 | "Fm7" _E,2 D,2 D,2 C,2 | "Bb9" C,2 _B,2 _B,2 _A,2 | "Eb" G,8- |
+"Eb" _B2 _B2 _B2 _E2 | "Fm7" _E2 D2 D2 C2 | "Bb9" C2 _B2 _B2 _A2 | "Eb" G8- |
 w: _ I see a | rose from you A- | mong My Sou- ve- | nirs. |
-"Eb7" G,2 G,2 _A,2 _B,2 | "Ab6" C,2 F,2 F,4- | "Fm7" F,2 _E,2 D,2 C,2 | "Eb" _E,2 G,,2 _B,4- |
+"Eb7" G2 G2 _A2 _B2 | "Ab6" C2 F2 F4- | "Fm7" F2 _E2 D2 C2 | "Eb" _E2 G,2 _B4- |
 w: _ A few more | to- kens rest | _ with- in my | trea- sure chest, |
-"Eb" _B,2 _E,,2 F,2 G,2 | "Bb7" _A,2 D,2 D,4- | "Bb7" D,2 C,2 _B,2 _A,2 | "G7" G,4 _E,4 |
+"Eb" _B2 _E,2 F2 G2 | "Bb7" _A2 D2 D4- | "Bb7" D2 C2 _B2 _A2 | "G7" G4 _E4 |
 w: _ and tho' they | do their best | _ to give me | con- so- |
-"F9" G,4 ^F,4 | "Eb" z2 G,2 G,2 _B,2 | "Fm7" _B,2 _A,2 _A,4- | "Bb" _A,2 _A,2 _A,2 C,2 |
+"F9" G4 ^F4 | "Eb" z2 G2 G2 _B2 | "Fm7" _B2 _A2 _A4- | "Bb" _A2 _A2 _A2 C2 |
 w: la- tion. | * I count them | all a- part, | _ And as the |
-"Eb" C,2 _B,2 _B,4- | "Eb" _B,2 _B,2 _B,2 _E,2 | "Fm7" _E,2 D,2 D,2 C,2 | "Bb9" C,2 D,2 C,2 _B,2 |
+"Eb" C2 _B2 _B4- | "Eb" _B2 _B2 _B2 _E2 | "Fm7" _E2 D2 D2 C2 | "Bb9" C2 D2 C2 _B2 |
 w: tear drops start, | _ I find a | bro- ken heart A- | mong My Sou- ve- |
-:|1 "Eb" _E,8- | "Fm" _E,2 z2 z4 | :|2 "Eb" _E,8- | "Eb" _E,2 z2 z4 |
+:|1 "Eb" _E8- | "Fm" _E2 z2 z4 | :|2 "Eb" _E8- | "Eb" _E2 z2 z4 |
 w:  nirs. | * * * |  * | * * * |]
 
 X:869
@@ -24170,12 +26735,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id angel-eyes-2
 K:Cmin
-|: "Cm7" z3/2 C,/ G _G,- _G,3 F, | "Cm6" _E,2 _E, C, _E,- _E,4 | "Cm9" z3/2 C,/ _E, G, D3/2 D,/ C, G,- | "Eb13" G,8 |
+|: "Cm7" z3/2 C/ g _G- _G3 F | "Cm6" _E2 _E C _E- _E4 | "Cm9" z3/2 C/ _E G d3/2 D/ C G- | "Eb13" G8 |
 w:  * Try to think _ that | love's not a- round _ | * still it's un- com- fort- 'bly near. | _ |
-"Cm9" z3/2 C,,/ G _G,- _G,3 F, | "Cm6" _E,3/2 _E,/ C, _E,- _E,3 C, | "D7b9" _E,3/2 C,/ _E,3/2 C,/ _E,2 _E, C,- | :|1 "Cm7" C,4 z4 |
+"Cm9" z3/2 C,/ g _G- _G3 F | "Cm6" _E3/2 _E/ C _E- _E3 C | "D7b9" _E3/2 C/ _E3/2 C/ _E2 _E C- | :|1 "Cm7" C4 z4 |
 w: * My old heart _ ain't | gain- in' no ground _ be- | cause my An- gel Eyes ain't here. |  _ * |
-:|2 "Cm" C,6 C2 |
+:|2 "Cm" C6 c2 |
 w:  _ So |]
 
 X:870
@@ -24186,12 +26752,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id as-time-goes-by-2
 K:Eb
-G |: "Fm7" _A, G, F, _E, F,3 G, | "Bbm6" _B, _A, G, F, _A,3 _B, | "Eb6" _E, D, C, _B, C,4 |
+g |: "Fm7" _A G F _E F3 G | "Bbm6" _B _A G F _A3 _B | "Eb6" _E D C _B C4 |
 w: You |  must re- mem- ber this A | kiss is still a kiss A | sigh is still a sigh |
-"F#dim7" z4 z2 D,2 | "F7" F, _E, D, C, D,2 _E,2 | "Fm7" _B,2 _B,2 _E,,2 F,2 | :|1 "Ebmaj7" G,8- |
+"F#dim7" z4 z2 D2 | "F7" F _E D C D2 _E2 | "Fm7" _B2 _B2 _E,2 F2 | :|1 "Ebmaj7" G8- |
 w: * * The | fun- da- men- tal things app- | ly As Time Goes |  By |
-"Fm7" G,4 z2 z G, | :|2 "Eb6" _E,8- | "Bbm7" _E,4 z4 |
+"Fm7" G4 z2 z G | :|2 "Eb6" _E8- | "Bbm7" _E4 z4 |
 w: _ * * And |  _ | Moon- * |]
 
 X:871
@@ -24200,11 +26767,13 @@ C:Charlie Parker
 N:Source: openbook
 M:4/4
 L:1/8
+%%id au-privave-2
+%%tags needs-repair
 K:F
-|: "F7" F, E, F, C, z2 A _A, | "Gm" A, C,, z E,- E, G, F, E, | "F7" G, F, A, _B, A, F, G, _E, | "Cm" z D z2 z _D,- _D, _B, |
-"Bb7" B,3 F z B,, _B,2- | "F7" _B,4 _A, F, G, F, | "Am" C2 z A, _B,2 z G, | "Gm" C,2 C,2- C, A, _B, C, |
-"C7" A, G, F, E, F,2 z C | "F7" _B,2 z F- F, C, E, F, | z2 z C,- C,3 A, | "Gm" :|1 _B, A, F, D, A A,- A,2 :|2
-"G7" _B, A, F, D, A G,- G,2 |]
+|: "F7" F E F C z2 a _A | "Gm" A C, z E- E G F E | "F7" G F A _B A F G _E | "Cm" z d z2 z _D- _D _B |
+"Bb7" B3 f z B, _B2- | "F7" _B4 _A F G F | "Am" c2 z A _B2 z G | "Gm" C2 C2- C A _B C |
+"C7" A G F E F2 z c | "F7" _B2 z f- F C E F | z2 z C- C3 A | "Gm" :|1 _B A F D a A- A2 :|2
+"G7" _B A F D a G- G2 |]
 
 X:872
 T:Autumn In New York
@@ -24214,22 +26783,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id autumn-in-new-york-2
 K:F
-"Gm7" A G, F, D, C,4 | "Bb6" z D, F, _B, D, D,2 C, | "Fmaj7" D,4 A,4 | "Am7" z8 |
+"Gm7" a G F D C4 | "Bb6" z D F _B D D2 C | "Fmaj7" D4 A4 | "Am7" z8 |
 w: Au- tumn In New York, | * why does it seem so in- | vit- ing? | * |
-"Gm7" A, G, F, D, C,4 | "Bb6" z D, F, _B, D, D,2 C, | "Am7b5" D,4 A,4 | "D7" z8 |
+"Gm7" A G F D C4 | "Bb6" z D F _B D D2 C | "Am7b5" D4 A4 | "D7" z8 |
 w: Au- tumn In New York, | * it spells the thrill of first | night- ing. | * |
-"Gm7" C, C,2 A, A,3 F, | "Bbm7" _A, _A,2 F, _E,3 _D, | "Ab" _E, B,2 C, _E,4- | "Cm7" _E,4 F,4 |
+"Gm7" C C2 A A3 F | "Bbm7" _A _A2 F _E3 _D | "Ab" _E B2 C _E4- | "Cm7" _E4 F4 |
 w: Glit- ter- ing crowds and | shim- mer- ing clouds in | can- yons of steel, | _ they're |
-"Dm7" G, D,2 _E, G,4- | "Cmaj7" G,4 B,4 | "C" G,8- | "Gm7" G,6 ^G,2 |
+"Dm7" G D2 _E G4- | "Cmaj7" G4 B4 | "C" G8- | "Gm7" G6 ^G2 |
 w: mak- ing me feel | _ I'm | home. | _ It's |
-"Bb6" A, G, F, D, C,4 | "Fmaj7" z D, F, _B, D, D,2 C, | "Am7" D,4 A,4 | "Cm7" z8 |
+"Bb6" A G F D C4 | "Fmaj7" z D F _B D D2 C | "Am7" D4 A4 | "Cm7" z8 |
 w: Au- tumn In New York, | * that brings the pro- mise of | new love; | * |
-"Ebm6" D, C, _B, G, F,4- | "Bbm6" F, _G, _B, C, _D, _E,2 C, | "Gb7" _D,8- | "Fm7" _D,6 z2 |
+"Ebm6" D C _B G F4- | "Bbm6" F _G _B C _D _E2 C | "Gb7" _D8- | "Fm7" _D6 z2 |
 w: Au- tumn In New York | _ is of- ten min- gled with | pain. | _ * |
-"Fm" C, _A,2 C, E,2 E,2 | "Dbmaj7" C,6 _B,2 | "Db" _A, F,2 _A, C,2 C,2 | "Gm7" _A,6 _A,2 |
+"Fm" C _A2 C E2 E2 | "Dbmaj7" C6 _B2 | "Db" _A F2 _A C2 C2 | "Gm7" _A6 _A2 |
 w: Dream- ers with emp- ty | hands may | sigh for ex- ot- ic | lands; It's |
-"Bbm6" A,2 G,2 F,2 D,2 C,4- | "Fm" C, _B, _D, F, _A, _B,2 G, | F,8 | z8 |
+"Bbm6" A2 G2 F2 D2 C4- | "Fm" C _B _D F _A _B2 G | F8 | z8 |
 w: Au- tumn In New York, | _ it's good to live it a- | gain. | * |]
 
 X:873
@@ -24240,24 +26810,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id autumn-leaves-4
+%%tags needs-repair
 K:Emin
-E,2 ^F,2 G,2 | "Am7" C,8- | "D7" C,2 D,,2 E,2 ^F,2 | "Gmaj7" B,4 B,4- |
+E2 ^F2 G2 | "Am7" C8- | "D7" C2 D,2 E2 ^F2 | "Gmaj7" B4 B4- |
 w: The fall- ing | leaves | _ drift by the | win- dow, |
-"Cmaj7" B,2 C,,2 D,2 E,2 | "F#m7b5" A,8- | "B7" A,2 B,,2 ^C,2 ^D,2 | "Em" G,8 |
+"Cmaj7" B2 C,2 D2 E2 | "F#m7b5" A8- | "B7" A2 B,2 ^C2 ^D2 | "Em" G8 |
 w: _ The Au- tumn | Leaves, | _ of red and | gold. |
-"Am7" z2 E,2 ^F,2 G,2 | "D7" C,8- | "Gmaj7" C,2 D,,2 E,2 ^F,2 | "Cmaj7" B,4 B,4- |
+"Am7" z2 E2 ^F2 G2 | "D7" C8- | "Gmaj7" C2 D,2 E2 ^F2 | "Cmaj7" B4 B4- |
 w: * I see your | lips, | _ the sum- mer | kiss- es, |
-"F#m7b5" B,2 C,,2 D,2 E,2 | "B7" A,8- | "Em" A,2 ^F,2 A,2 G,2 | "Em" E,8- |
+"F#m7b5" B2 C,2 D2 E2 | "B7" A8- | "Em" A2 ^F2 A2 G2 | "Em" E8- |
 w: The sun- burned hands | _ | I used to hold. | Since |
-"F#m7b5" E,2 z2 ^D,2 E,2 | "B7" ^F,2 B,,2 ^F4- | "Em" ^F,2 ^F,2 E,2 ^F,2 | "Am7" G,8- |
+"F#m7b5" E2 z2 ^D2 E2 | "B7" ^F2 B,2 ^f4- | "Em" ^F2 ^F2 E2 ^F2 | "Am7" G8- |
 w: you * went a- | way _ the | days grow long, _ | And |
-"D7" G,2 G,2 ^F,2 G,2 | "Gmaj7" A,8- | "E7b9" A,2 D,,2 D3 C, | "F#m7b5" B,8- |
+"D7" G2 G2 ^F2 G2 | "Gmaj7" A8- | "E7b9" A2 D,2 d3 C | "F#m7b5" B8- |
 w: soon I'll hear _ | old | win- ter's song. _ | But |
-"B7b9" B,2 z2 ^A,2 B,2 | "Em" C,2 C,2 A,2 A,2 | "C#m7b5" ^F,6 C2 | "F#m7b5" B,4 B,4- |
+"B7b9" B2 z2 ^A2 B2 | "Em" C2 C2 A2 A2 | "C#m7b5" ^F6 c2 | "F#m7b5" B4 B4- |
 w: I * miss you | most of all my | dar- ling, | _ When |
-"B7b9" B,4 E,,4 | "Em" A,6 G,2 | "Em" ^F,4 G,2 B,,2 | E,8- |
+"B7b9" B4 E,4 | "Em" A6 G2 | "Em" ^F4 G2 B,2 | E8- |
 w: Au- tumn | Leaves start | to fall. _ | * |
-E,2 z2 z4 |
+E2 z2 z4 |
 w: * * * |]
 
 X:874
@@ -24267,16 +26839,17 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id beautiful-love-3
 K:F
-C, z2 D,2 E,2 F,2 |: "E" A,6 G,2 | "A" F,3 E, D,2 E, F, | "Dm5" F,8 |
+C z2 D2 E2 F2 |: "E" A6 G2 | "A" F3 E D2 E F | "Dm5" F8 |
 w: Beau * ti ful love, |  you're all | a my stery - Beau | ti |
-"Dm5" z2 F,2 G,2 A,2 | "G" C,6 _B,2 | "C" A,3 G, F,2 G, A, | "Fmaj7" A,8 |
+"Dm5" z2 F2 G2 A2 | "G" C6 _B2 | "C" A3 G F2 G A | "Fmaj7" A8 |
 w: * ful love, what | have you | done to me? I was | con |
-"Edim5m7" z2 A,2 B,2 ^C,2 | "D" E,3 D, D,2 A,2 | "G" C,3 _B, _B,2 D,,2 | "Bb7#11" E,8 |
+"Edim5m7" z2 A2 B2 ^C2 | "D" E3 D D2 A2 | "G" C3 _B _B2 D,2 | "Bb7#11" E8 |
 w: * t ent un | til you came along | Thril ling my soul | with |
-"A7" z2 E,2 F,2 G,2 :|1 A,6 D,,2 | "D" ^C,6 D,2 | "G" E,8 |
+"A7" z2 E2 F2 G2 :|1 A6 D,2 | "D" ^C6 D2 | "G" E8 |
 w: * you r song Beau ti | ful love, | will |
-"Edim5m7" z2 D,2 E,2 F,2 | "A7" :|2 A,4 ^C,,2 D,2 |
+"Edim5m7" z2 D2 E2 F2 | "A7" :|2 A4 ^C,2 D2 |
 w: * my dreams come |  true? * * |]
 
 X:875
@@ -24285,10 +26858,11 @@ C:John Coltrane
 N:Source: openbook
 M:4/4
 L:1/8
+%%id bessies-s-blues
 K:C
-"Eb7" G2 _E, _D,- _D,4 | "Ab7" C2 _A, _G,- _G,3 _E, | "Eb7" G, _E, G,2 G, _E, G,- | "Ab7" G, _E, D, _D,- _D,4 |
-"Eb7" z C2 _B, C, _A, z2 | "Bb7" C,3 _A, z _G,2 _E, | "Ab7" G, _E, G,2 G, G,2 G,- | "Eb7" G, _E, D, _D, z G,2 _G, |
-"Bb7" F,2 D,2 _B,2 D, F, | _E, C, _A,2 C, _E, | z F, _E, C, z4 | z4 F, G, _A, _B, |]
+"Eb7" g2 _E _D- _D4 | "Ab7" c2 _A _G- _G3 _E | "Eb7" G _E G2 G _E G- | "Ab7" G _E D _D- _D4 |
+"Eb7" z c2 _B C _A z2 | "Bb7" C3 _A z _G2 _E | "Ab7" G _E G2 G G2 G- | "Eb7" G _E D _D z G2 _G |
+"Bb7" F2 D2 _B2 D F | _E C _A2 C _E | z F _E C z4 | z4 F G _A _B |]
 
 X:876
 T:Bewitched
@@ -24298,24 +26872,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id bewitched-2
 K:C
-G2 |: "C" "Dm7" E, B C,4 E,,2 | "C" F, B, C,4 F,,2 | "Fmaj7" G, B, C,2 ^G, B, C,2 |
+g2 |: "C" "Dm7" E b C4 E,2 | "C" F B C4 F,2 | "Fmaj7" G B C2 ^G B C2 |
 w: I'm |  wild a- gain, be- | guiled a- gain, a | sim- per- ing, whim- per- ing |
-"C" A, B, C,4 B,2 | "G7" C,2 z2 B, A, G, ^F, | "Dm7" G,2 D,4 E,2 | "G7" F,8- |
+"C" A B C4 B2 | "G7" C2 z2 B A G ^F | "Dm7" G2 D4 E2 | "G7" F8- |
 w: child a- gain, Be- | witched, * both- ered and be- | wild- ered am | I. |
-"C" F,4 z4 | "Dm" E, B C,4 E,,2 | "C" F, B, C,4 F,,2 | "Fmaj7" G, B, C,2 ^G, B, C,2 |
+"C" F4 z4 | "Dm" E b C4 E,2 | "C" F B C4 F,2 | "Fmaj7" G B C2 ^G B C2 |
 w: _ * | Could- n't sleep, and | would- n't sleep, when | love came and told me I |
-"C" A, B, C,4 B,2 | "G7" C,2 z2 B, A, G, ^F, | "Fmaj7" G,2 D,4 E,2 | "A7" A,8- |
+"C" A B C4 B2 | "G7" C2 z2 B A G ^F | "Fmaj7" G2 D4 E2 | "A7" A8- |
 w: should- n't sleep, Be- | witched, * both- ered and be- | wild- ered am | I. |
-"Dm" A,6 z2 | "Am" B, A, F,4 B, A, | "Dm" F,2 F,6 | "G7" B, A, E,4 B A, |
+"Dm" A6 z2 | "Am" B A F4 B A | "Dm" F2 F6 | "G7" B A E4 b A |
 w: _ * | Lost my heart, but what | of it? | He is cold I a- |
-"Em7" E,8 | "Dm7" C B, G,4 C, B, | "C" G,2 G,2- G, A, B, C, | "Dm" D,4 C,4 F,,6 G,2 |
+"Em7" E8 | "Dm7" c B G4 C B | "C" G2 G2- G A B C | "Dm" D4 C4 F,6 G2 |
 w: gree, | he can laugh, but I | love it, _ al- though the | laugh's on me. I'll |
-"C" E, B C,4 E,,2 | "Fmaj7" F, B, C,4 F,,2 | "C" G, B, C,2 ^G, B, C,2 | "Dm" A, B, C,4 B,2 |
+"C" E b C4 E,2 | "Fmaj7" F B C4 F,2 | "C" G B C2 ^G B C2 | "Dm" A B C4 B2 |
 w: sing to him, each | spring to him, and | long for the day when I'll | cling to him, Be- |
-C,2 z2 B, A, G, ^F, | "C" G,2 D4 G,,2 | "Dm7" :|1 C,8 | "C" z4 z2 G,2 |
+C2 z2 B A G ^F | "C" G2 d4 G,2 | "Dm7" :|1 C8 | "C" z4 z2 G2 |
 w: witched, * both- ered and be- | wild- ered am |  I. | * * I'm |
-"C" :|2 C,8- | C,2 z2 z4 |
+"C" :|2 C8- | C2 z2 z4 |
 w:  I. | _ * * |]
 
 X:877
@@ -24324,13 +26899,15 @@ C:Charlie Parker
 N:Source: openbook
 M:4/4
 L:1/8
+%%id billie-s-bounce-2
+%%tags needs-repair
 K:C
-"C7" C, |: "F7" "Bb7" B, C, F, ^G, A, F, D, F,- D, F, z z F,2 D, | "F7" F, z z F,- F, D, F, D, | "Bb7" A, A, F,/ G,/ F,/ :|
-"Bb7" D, F, G, F, F, | "F7" z2 z A, _B, F, z A, | "Am" A, _B,- E, C, F, E, | "Gm" z F, C,2 z2 z E,- |
-"C7" E,2 G,, E, ^F, E, C, ^C, | "F7" D,2 z G, ^F,/ G,/ ^F,/ D, _B, F, | "Gm" F2 z F, E, E, D, D, | "F7" C,2 z F,,- D, F,2 z F,2- D, F,2 C, F,2 G, ^G, z2 ^A, B, |
-"F7" C, A, _B, C, _B, A, F, D, C, | "F7" G/ A,/ G,/ F, E, F,- F,2 z2 | "Cm" z4 z2 z F- | "Bb7" F, C,/ _B,/ A,/ F, G, F, E, D, |
-"Bb7" C,2 _B, F, ^G, A, _B, B, | "F7" C, D,/ C,/ A, C, E, D,- | "Am" z8 | "Gm" z2 z G,/ _B,/ D,/ F, E, D, _D, |
-"C7" C, A, _B, C,/ _B,/ A, F, D, C, | "F7" G F, G, A, z2 | z8 A,8 F,8 |]
+"C7" C |: "F7" "Bb7" B C F ^G A F D F- D F z z F2 D | "F7" F z z F- F D F D | "Bb7" A A F/ G/ F/ :|
+"Bb7" D F G F F | "F7" z2 z A _B F z A | "Am" A _B- E C F E | "Gm" z F C2 z2 z E- |
+"C7" E2 G, E ^F E C ^C | "F7" D2 z G ^F/ G/ ^F/ D _B F | "Gm" f2 z F E E D D | "F7" C2 z F,- D F2 z F2- D F2 C F2 G ^G z2 ^A B |
+"F7" C A _B C _B A F D C | "F7" g/ A/ G/ F E F- F2 z2 | "Cm" z4 z2 z f- | "Bb7" F C/ _B/ A/ F G F E D |
+"Bb7" C2 _B F ^G A _B B | "F7" C D/ C/ A C E D- | "Am" z8 | "Gm" z2 z G/ _B/ D/ F E D _D |
+"C7" C A _B C/ _B/ A F D C | "F7" g F G A z2 | z8 A8 F8 |]
 
 X:878
 T:Blue Bossa
@@ -24340,16 +26917,17 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id blue-bossa-3
 K:Cmin
-G2 |: "Cm7" G3 F, _E, D,2 C,- | "Fm7" C,6 _B,2 | "Dm7b5" _A,4 G3 F,- |
+g2 |: "Cm7" g3 F _E D2 C- | "Fm7" C6 _B2 | "Dm7b5" _A4 g3 F- |
 w: A |  place in- side my heart | _ Is | where you live |
-"G7" F,8 | "Cm7" F,3 _E, D, C,2 _B,- | "Ebm7" _B,6 _A,2 | "Ab7" G,4 F3 _E,- |
+"G7" F8 | "Cm7" F3 _E D C2 _B- | "Ebm7" _B6 _A2 | "Ab7" G4 f3 _E- |
 w: _ | Mem- ories of our start | _ The | love you give |
-"Dbmaj" _E,8 | "Dm7b5" _E,3 _D, C, _B,2 _A,- | "G7" _A,6 _G,2 | _G,2 F, _B,- _B, F, _A,2- |
+"Dbmaj" _E8 | "Dm7b5" _E3 _D C _B2 _A- | "G7" _A6 _G2 | _G2 F _B- _B F _A2- |
 w: _ | Days when we're a- lone | _ And | you are in my arms _ |
-"Cm7" _A,8 | "Dm7b5" _A,2 G, _B,- _B,4 | _A,2 G, _B,- _B,3 _A, | "Cm7" :|1 "Cm7" G,8- |
+"Cm7" _A8 | "Dm7b5" _A2 G _B- _B4 | _A2 G _B- _B3 _A | "Cm7" :|1 "Cm7" G8- |
 w: Theblue- | ness of thetrue- ness | of our love _ * |  * |
-G,6 G,2 | :|2 G,8- | G,6 z2 |
+G6 G2 | :|2 G8- | G6 z2 |
 w: * * |  * | * * |]
 
 X:879
@@ -24358,11 +26936,12 @@ C:Miles Davis, Bill Evans
 N:Source: openbook
 M:4/4
 L:1/8
+%%id blue-in-green-2
 K:C
-"Bbmaj7#11" E6 D,2 | "A7#9" C,6 _B,2 | "D" A,6 G,2 | "Cm9" F,2 D6 |
-"Bbmaj7" E,,3 D, ^C, D, F, A, | "A7#5#9" C,6 A,2 | "Dm69" G,6 F,2 | "E7#5#9" C6 ^G,2 |
-"Am9" B,6 A,2 | "Dm9" F6 ^C,2 | "Bbmaj7#11" E,6 D,2 | "A" C,6 _B,2 |
-"Dm69" A,8 |]
+"Bbmaj7#11" e6 D2 | "A7#9" C6 _B2 | "D" A6 G2 | "Cm9" F2 d6 |
+"Bbmaj7" E,3 D ^C D F A | "A7#5#9" C6 A2 | "Dm69" G6 F2 | "E7#5#9" c6 ^G2 |
+"Am9" B6 A2 | "Dm9" f6 ^C2 | "Bbmaj7#11" E6 D2 | "A" C6 _B2 |
+"Dm69" A8 |]
 
 X:880
 T:Blue Monk
@@ -24370,10 +26949,12 @@ C:Thelonius Monk
 N:Source: openbook
 M:4/4
 L:1/8
+%%id blue-monk-2
+%%tags needs-repair
 K:Bb
-"Bb" D, _E, E, F,- F,4 | "Eb7" G, ^G, A, _B,- _B,4 | "Bb" F, G, F, E, _E, F,, ^C D,- | "Bb" D, _D,2 C,- C,4 |
-"Eb" G ^G, A, _B,- _B,4 | "Edim7" _B, B, C, _D,- _D,4 | "Bb" F,, G, F, E, _E, F,, ^C D,- | "Bb" D,6 F, F, F, |
-"F7" F, F,,3- F,4 | "Bb" F G, F, E, _E, F,, ^C D,- | D,2 F, G, F, E, _E, F,, | ^C D,3- D,4 |]
+"Bb" D _E E F- F4 | "Eb7" G ^G A _B- _B4 | "Bb" F G F E _E F, ^c D- | "Bb" D _D2 C- C4 |
+"Eb" g ^G A _B- _B4 | "Edim7" _B B C _D- _D4 | "Bb" F, G F E _E F, ^c D- | "Bb" D6 F F F |
+"F7" F F,3- F4 | "Bb" f G F E _E F, ^c D- | D2 F G F E _E F, | ^c D3- D4 |]
 
 X:881
 T:Blue Room
@@ -24383,12 +26964,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id blue-room-2
 K:F
-|: "F6" C,2 F,4 D,2 | "Gm7" C,2 G4 D,2 | "Fmaj7" C,2 A4 D,,2 | "Gm7" C,2 _B4 D,,2 |
+|: "F6" C2 F4 D2 | "Gm7" C2 g4 D2 | "Fmaj7" C2 a4 D,2 | "Gm7" C2 _b4 D,2 |
 w:  We'll have a | blue room, A | new room, For | two room, Where |
-"F" C,2 C2 C,2 C,2 | "Bbmaj7" C, D, _B,4 G,2 | :|1 "F6" F,2 F,2 F, G, A,2 | "Gm7" C,,6 z2 |
+"F" C2 c2 C2 C2 | "Bbmaj7" C D _B4 G2 | :|1 "F6" F2 F2 F G A2 | "Gm7" C,6 z2 |
 w: ev'- ry day's a | ho- li- day Be- |  cause you're mar- ried to | me. * |
-:|2 "F" F,2 F,2 F, G, A, G, | "F" F,6 z2 |
+:|2 "F" F2 F2 F G A G | "F" F6 z2 |
 w:  _ _ _ _ _ _ | _ * |]
 
 X:882
@@ -24399,22 +26981,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id blue-skies-2
 K:Amin
-"Am" A,4 E4 | "E5+" z4 D, C, D,2 | "C" E,8 | "D" z4 D, C, D,2 |
+"Am" A4 e4 | "E5+" z4 D C D2 | "C" E8 | "D" z4 D C D2 |
 w: Blue Skies | * smil- ing at | me, | * noth- ing but |
-"C" E,4 G,,4 | "F9" z4 G, A,3 | "C" C,8- | "C" C,8 |
+"C" E4 G,4 | "F9" z4 G A3 | "C" C8- | "C" C8 |
 w: blue skies | * do I | see. | Blue- |
-"Am" A,4 E4 | "E5+" z4 D, C, D,2 | "C" E,8 | "D" z4 D, C, D,2 |
+"Am" A4 e4 | "E5+" z4 D C D2 | "C" E8 | "D" z4 D C D2 |
 w: birds sing- | * ing a song, | noth- | * ing but blue- |
-"C" E,4 G,,4 | "F9" z4 G, A,3 | "C" C,8- | "C" C,8 |
+"C" E4 G,4 | "F9" z4 G A3 | "C" C8- | "C" C8 |
 w: birds all | * day long. | Nev- | er |
-"C" C, D, E, F, G,4 | "Fm" _A, G, F,2 G,4 | "Fm" F, E, D,2 E,4 | "Fm" D, C, B,2 C,4 |
+"C" C D E F G4 | "Fm" _A G F2 G4 | "Fm" F E D2 E4 | "Fm" D C B2 C4 |
 w: saw the sun shin- ing | so bright, nev- er | saw things go- ing | so right. Not- ic- |
-"C" C, D, E, F, G,4 | "Fm" _A, G, F,2 G,4 | "Fm" F, E, D,2 E,4 | "G7" D,2 C,2 B,2 C,2 B,2 |
+"C" C D E F G4 | "Fm" _A G F2 G4 | "Fm" F E D2 E4 | "G7" D2 C2 B2 C2 B2 |
 w: ing the days hur- ry- | ing by, when you're | in love, my how | they fly by. Blue days |
-"Am" A,4 E4 | "E5+" z4 D, C, D,2 | "C" E,8 | "D" z4 D, C, D,2 |
+"Am" A4 e4 | "E5+" z4 D C D2 | "C" E8 | "D" z4 D C D2 |
 w: all of | * them gone, noth- | ing | * but blue skies |
-"C" E,4 G,,4 | "F9" z4 G,2 A,2 | "C" C,8- | "C" C,8 |
+"C" E4 G,4 | "F9" z4 G2 A2 | "C" C8- | "C" C8 |
 w: from now | * on. * | * | * |]
 
 X:883
@@ -24423,11 +27006,12 @@ C:John Coltrane
 N:Source: openbook
 M:4/4
 L:1/8
+%%id blue-trane-2
 K:Cmin
-"Bb7" G _B, D, _B, C,- |: "Cm" C,8- | "Fm7" C,2 z G, _B, D, _B, C,- | "Cm" C,8- |
-"Bbm7" C,2 z C, _E, G, _E, F,- | "Fm" F,8- | "Fm7" F,2 z G,, _B, D, _B, C,- | "Cm" C,8- |
-"Am7" C,2 z G, C, D, C, _B,- | "Gm" _B,8- | "Fm7" _B,2 z G, _B, D, _B, C,- | :|1 "Cm" C,8- |
-"Fm7" C,2 z G, _B, D, _B, C,- | :|2 "Cm7b5" C,8- | "Cm" C,2 |]
+"Bb7" g _B D _B C- |: "Cm" C8- | "Fm7" C2 z G _B D _B C- | "Cm" C8- |
+"Bbm7" C2 z C _E G _E F- | "Fm" F8- | "Fm7" F2 z G, _B D _B C- | "Cm" C8- |
+"Am7" C2 z G C D C _B- | "Gm" _B8- | "Fm7" _B2 z G _B D _B C- | :|1 "Cm" C8- |
+"Fm7" C2 z G _B D _B C- | :|2 "Cm7b5" C8- | "Cm" C2 |]
 
 X:884
 T:Blues For Alice
@@ -24435,10 +27019,12 @@ C:Charlie Parker
 N:Source: openbook
 M:4/4
 L:1/8
+%%id blues-for-alice-2
+%%tags needs-repair
 K:F
-"Fmaj7" F2 C, A, E2 C, A, | "Em7b5" D, E, B, C, ^C, _B, G, ^G, | "Dm7" A,2 F, D, G, A, F, E, | "Cm7" _E, G, _B, D, _D, z F,, F, G, F, |
-"Bb7" C2 _B, F, _A, _B,, z G | "Bbm7" _E _D, _A, F, C F,, G, A,- | "Am7" A,2 E, C, D,2 z _D- | "Abm7" _D,2 _C, _G, _B,2 z _A, |
-"Gm7" G,2 F2 F,2 F, D, _B, G, | "C7" A, G, C, _B, _E,2 z C,- | "F" C,2 A, F, G,2 z D- | "Gm7" D,2 _B, F, A,2 z2 |]
+"Fmaj7" f2 C A e2 C A | "Em7b5" D E B C ^C _B G ^G | "Dm7" A2 F D G A F E | "Cm7" _E G _B D _D z F, F G F |
+"Bb7" c2 _B F _A _B, z g | "Bbm7" _e _D _A F c F, G A- | "Am7" A2 E C D2 z _d- | "Abm7" _D2 _C _G _B2 z _A |
+"Gm7" G2 f2 F2 F D _B G | "C7" A G C _B _E2 z C- | "F" C2 A F G2 z d- | "Gm7" D2 _B F A2 z2 |]
 
 X:885
 T:Bluesette
@@ -24448,58 +27034,60 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id bluesette-2
+%%tags needs-repair
 K:G
-|: "G" D,2 E,2 ^F,2 | "F#" G,2 A,2 B,2 | "B7b9" C,4 E,,2 | "Em7" ^D,6 |
+|: "G" D2 E2 ^F2 | "F#" G2 A2 B2 | "B7b9" C4 E,2 | "Em7" ^D6 |
 w:  Poor lit- tle, | sad lit- tle | blue Blues- | ette, |
-"A7b9" B4 D,,4 | "Dm7" ^C,6 | "G7" A4 C,,4 | "Cmaj7" B,6 |
+"A7b9" b4 D,4 | "Dm7" ^C6 | "G7" a4 C,4 | "Cmaj7" B6 |
 w: don't you | cry, | don't you | fret. |
-"C6" G4 B,,2 | "Cm7" C,3 D, _E, F, | "F9" G,4 _E2 | "Bb" D,4 C,2 |
+"C6" g4 B,2 | "Cm7" C3 D _E F | "F9" G4 _e2 | "Bb" D4 C2 |
 w: You can | bet one luck- y | day you'll | wak- en |
-"Bb" F,,4 D2 | "Eb9" C,4 _B,2 | "Abmaj7" F,4 _D2 | "Ab" C,4 _B,2 |
+"Bb" F,4 d2 | "Eb9" C4 _B2 | "Abmaj7" F4 _d2 | "Ab" C4 _B2 |
 w: and your | blues will | be for- | sak- en. |
-"Am7b5" _E,,2 F,2 G,2 | "D7b9" _A,2 _B,2 C,2 | "Bm7" D,4 C,2 | "Bb7" B,4 A,2 |
+"Am7b5" _E,2 F2 G2 | "D7b9" _A2 _B2 C2 | "Bm7" D4 C2 | "Bb7" B4 A2 |
 w: One luck- y | day love- ly | love will | come your |
-"Am7" D,,6- | "D7" D,6- | D,6- | "G" D,2 z2 z2 |
+"Am7" D,6- | "D7" D6- | D6- | "G" D2 z2 z2 |
 w: way. | _ | Get | set, * * |
-"F#" :| "B7" G,2 A,2 B,2 | "Em7" D,2 z2 z2 | "A7" C,2 B,2 A,2 | "Dm7" G,4 ^F,2 |
+"F#" :| "B7" G2 A2 B2 | "Em7" D2 z2 z2 | "A7" C2 B2 A2 | "Dm7" G4 ^F2 |
 w:  Blues- ette, true | love * * | is com- ing. | Your trou- |
-"G7" E,2 ^F,2 G,2 | "Cmaj7" B,6 | "C6" A,2 G,2 F,2 | "Cm7" E,4 D,2 |
-w: bled heart soon | will | be hum- ming. | \markup \italic |
-"F7" G,4 B,,2 | "Bbmaj7" C,3 B, C, D, | "Bb6" _E,3 F, G, _B, | "Bbm7" A,2 _B,2 C,2 |
+"G7" E2 ^F2 G2 | "Cmaj7" B6 | "C6" A2 G2 F2 | "Cm7" E4 D2 |
+w: bled heart soon | will | be hum- ming. | markup italic |
+"F7" G4 B,2 | "Bbmaj7" C3 B C D | "Bb6" _E3 F G _B | "Bbm7" A2 _B2 C2 |
 w: Hum _ | _ _ _ _ | _ _ _ _ | _ _ _ |
-"Eb9" F,,4 A,,2 | "Ab" _B,3 C, _D, _E, | "A" F,4 _D2 | "D7b9" C,4 _B,2 |
+"Eb9" F,4 A,2 | "Ab" _B3 C _D _E | "A" F4 _d2 | "D7b9" C4 _B2 |
 w: _ _ | _ _ _ _ | _ _ | _ _ |
-"Bm7" _E,, _E, F, F, G, G, | "Bb7" _A, _A, _B, _B, C, C, | "Am7" D,4 C, D, C, | "D7" B,4 A,2 |
+"Bm7" _E, _E F F G G | "Bb7" _A _A _B _B C C | "Am7" D4 C D C | "D7" B4 A2 |
 w: _ Doo- ya, doo- ya, doo- | ya, doo- ya, doo- ya, doo- | ya, Doo- oo- _ | _ oo |
-"G" D,,6- | "F#" D,6- | "B7" D,6 | "Em7" z6 |
+"G" D,6- | "F#" D6- | "B7" D6 | "Em7" z6 |
 w: Blues- | ette. | _ | * |
-"A7" z2 D D, D, D, | "Dm7" C,2 B,4 | "G7" z2 C, C, C, C, | "Cmaj7" B,2 A,4 |
+"A7" z2 d D D D | "Dm7" C2 B4 | "G7" z2 C C C C | "Cmaj7" B2 A4 |
 w: * Pret- ty lit- tle | Blues- ette | * must- n't be a | mourn- er. |
-"C6" z2 B, B, B, B, | "Cm7" A,2 G,4 | "F7" z2 A, A, A, A, | "Bbmaj7" G,2 F,4 |
+"C6" z2 B B B B | "Cm7" A2 G4 | "F7" z2 A A A A | "Bbmaj7" G2 F4 |
 w: * Have you heard the | news yet? | * Love is 'round the | cor- ner. |
-"Bb6" E,2 F,2 ^F,2 | "Bb7" G,2 A,2 B,2 | "Eb7" C,2 ^C,2 D,2 | "Ab" _E,2 D,2 C,2 |
+"Bb6" E2 F2 ^F2 | "Bb7" G2 A2 B2 | "Eb7" C2 ^C2 D2 | "Ab" _E2 D2 C2 |
 w: Love wrapped in | rain- bows and | tied with pink | rib- bon to |
-"A" F,,2 G,2 A,2 | "D7" _B,2 B,2 C,2 | "Bm7" ^C,2 D,2 ^D,2 | "Bb7" E,2 _E,2 _D,2 |
+"A" F,2 G2 A2 | "D7" _B2 B2 C2 | "Bm7" ^C2 D2 ^D2 | "Bb7" E2 _E2 _D2 |
 w: make your next | spring- time your | gold wed- ding | ring time. So, |
-"Am7" C,2 z _B,3 | "D7" _A,2 z _B,2 C, | "G" D,2 z C,2 B, | "F#" _A,2 z2 ^F, E, |
+"Am7" C2 z _B3 | "D7" _A2 z _B2 C | "G" D2 z C2 B | "F#" _A2 z2 ^F E |
 w: dry * your | eyes. * Don't- cha | pout, * don't- cha | fret, * good- y |
-"B7b9" D,2 D,2 D,2 | "Em7" F,2 D,3 C, | "A7b9" D,6- | "Dm7" D,4 z2 |
+"B7b9" D2 D2 D2 | "Em7" F2 D3 C | "A7b9" D6- | "Dm7" D4 z2 |
 w: good times are | com- ing, Blues- | ette. | _ * |
-"G7" D,2 E,2 ^F,2 | "Cmaj7" G,2 A,2 B,2 | "C6" C,4 E,,2 | "Cm7" ^D,6 |
+"G7" D2 E2 ^F2 | "Cmaj7" G2 A2 B2 | "C6" C4 E,2 | "Cm7" ^D6 |
 w: Long as there's | love in your | heart to | share, |
-"F9" B4 D,,4 | "Bb" ^C,6 | "Bb" A4 C,,4 | "Eb9" B,6 |
+"F9" b4 D,4 | "Bb" ^C6 | "Bb" a4 C,4 | "Eb9" B6 |
 w: dear Blues- | ette, | don't des- | pair. |
-"Ab" G4 B,,2 | "A" C,3 D, _E, F, | "D9" G,4 _E2 | "B" D,4 C,2 |
+"Ab" g4 B,2 | "A" C3 D _E F | "D9" G4 _e2 | "B" D4 C2 |
 w: Some blue | boy is long- ing, | just like | you, to |
-"E" F,,2 D2 | "E7#5" C,4 _B,2 | "A" F,4 _D2 | "D7" C,4 _B,2 |
+"E" F,2 d2 | "E7#5" C4 _B2 | "A" F4 _d2 | "D7" C4 _B2 |
 w: find a | some- one | to be | true to. |
-"G" _E,,2 F,2 G,2 | "D7#9" _A,2 _B,2 C,2 | "Bm7" D,4 C,2 | "G" B,4 A,2 |
+"G" _E,2 F2 G2 | "D7#9" _A2 _B2 C2 | "Bm7" D4 C2 | "G" B4 A2 |
 w: One luck- y | day love- ly | love will | come your |
-E6- | E,6- | E,4 D,2 | C,4 B,2 |
+e6- | E6- | E4 D2 | C4 B2 |
 w: way. | _ | That mag- | ic day |
-D,6- | D,6- | D,4 C,2 | B,2 G,3 E, |
+D6- | D6- | D4 C2 | B2 G3 E |
 w: _ | may | just be | to- day. _ |
-G,6- | G,6- | G,6- | G,2 z2 z2 |
+G6- | G6- | G6- | G2 z2 z2 |
 w: * | * | * | * * * |]
 
 X:886
@@ -24510,12 +27098,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id body-and-soul-3
 K:Db
-|: "Ebm7" z3/2 _E,/ F,3/2 _E,/ F,2 _E,2 | "Ebm7" _B2 _B,6 | "Dbmaj7" z3/2 _A,/ _B,3/2 _A,/ _B,2 _A,2 | "Fm7" _E2 _D,2 C,2 _B,2 |
+|: "Ebm7" z3/2 _E/ F3/2 _E/ F2 _E2 | "Ebm7" _b2 _B6 | "Dbmaj7" z3/2 _A/ _B3/2 _A/ _B2 _A2 | "Fm7" _e2 _D2 C2 _B2 |
 w:  * My heart is sad and | lone- ly, | * for you I sigh, for | you, dear, on- ly. |
-"Ebm7" z2 _D,2 _B, _G,2 _B,, | "Cm7b5" F4 _E,4 | "Bbm7" z3/2 _D,/ _E,3/2 F,/ _A,2 _A, _B, _F, | :|1 "Db6" _D,8 |
+"Ebm7" z2 _D2 _B _G2 _B, | "Cm7b5" f4 _E4 | "Bbm7" z3/2 _D/ _E3/2 F/ _A2 _A _B _F | :|1 "Db6" _D8 |
 w: * Why have- n't you | seen it? | * I'm all for you, Bod- y And |  Soul! |
-:|2 "Db6" _D,6 z2 |
+:|2 "Db6" _D6 z2 |
 w:  _ * |]
 
 X:887
@@ -24526,24 +27115,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id but-beautiful
 K:G
-^C, D, |: "Gmaj9" A2 A,4 G, ^F, | "Bm7b5" F, ^D, E, | "Am9" B2 B,4 A, _A, |
+^C D |: "Gmaj9" a2 A4 G ^F | "Bm7b5" F ^D E | "Am9" b2 B4 A _A |
 w: Love is |  fun- ny or it's | sad or it's | qui- et or it's |
-"C#m7b5" G,6 ^F, G, | "Gmaj9" D2 D,4 B, _B, | "Bm7b5" A,6 ^G,2 | "A9" B, B, B,6- |
+"C#m7b5" G6 ^F G | "Gmaj9" d2 D4 B _B | "Bm7b5" A6 ^G2 | "A9" B B B6- |
 w: mad; it's a | good thing or it's | bad, But | Beau- ti- ful! |
-"D" B,8 | "Bm7" B, B, B,4 A,2 | "Am7" D,2 B,2 A,3 G, | "G" C,2 A,2 G,2 ^F,2 |
+"D" B8 | "Bm7" B B B4 A2 | "Am7" D2 B2 A3 G | "G" C2 A2 G2 ^F2 |
 w: _ | Beau- ti- ful to | take a chance and | if you fall, you |
-"Em6" B,6 D,, ^D, | "A9" E,2 E,4 G,2 | "Am7" B,2 G,2 ^F,2 E,2 | "D7" A,8- |
+"Em6" B6 D, ^D | "A9" E2 E4 G2 | "Am7" B2 G2 ^F2 E2 | "D7" A8- |
 w: fall, and I'm | think- ing I | would- n't mind at | all. |
-"Gmaj9" A,6 ^C,, D, | "Bm7b5" A2 A,4 G, ^F, | "Am9" F, ^D, E, | "C#m7b5" B2 B,4 A, _A, |
+"Gmaj9" A6 ^C, D | "Bm7b5" a2 A4 G ^F | "Am9" F ^D E | "C#m7b5" b2 B4 A _A |
 w: _ Love is | tear- ful or it's | gay; it's a | prob- lem or it's |
-"Gmaj9" G,6 ^F, G, | "Bm7b5" D2 D,4 B, _B, | "A9" A,6 ^G,2 | "D" B, B, B,6- |
+"Gmaj9" G6 ^F G | "Bm7b5" d2 D4 B _B | "A9" A6 ^G2 | "D" B B B6- |
 w: play; it's a | heart- ache eith- er | way, But | Beau- ti- ful! |
-"Bm7" B,6 E,, ^E, | "Am7" ^F,2 ^F,4 A,2 | "Em7" D,2 B,2 A,3 G, | "G" E2 C,2 B,2 A,2 |
+"Bm7" B6 E, ^E | "Am7" ^F2 ^F4 A2 | "Em7" D2 B2 A3 G | "G" e2 C2 B2 A2 |
 w: _ And I'm | think- ing if | you were mine I'd | nev- er let you |
-"Am7" G,6 G,2 | D D, D,4 G,,2 | "G" C, C, C,4 ^F,,2 | "Am7" :|1 G,8- |
+"Am7" G6 G2 | d D D4 G,2 | "G" C C C4 ^F,2 | "Am7" :|1 G8- |
 w: go, and | that would be But | Beau- ti- ful I |  know. |
-"G" G,6 ^C,, D, | :|2 G,8- | G,6 z2 |
+"G" G6 ^C, D | :|2 G8- | G6 z2 |
 w: _ Love is |  know. | _ * |]
 
 X:888
@@ -24554,20 +27144,21 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id but-not-for-me
 K:F
-G2 A,2 G,2 |: "G7" A,4 G,2 F,2- | "Gm7" F,2 G,2 A,2 G,2 | "Fmaj7" A,8 |
+g2 A2 G2 |: "G7" A4 G2 F2- | "Gm7" F2 G2 A2 G2 | "Fmaj7" A8 |
 w: They're wri- ting |  songs of love, | _ But not for | me |
-"Dm7" z2 G,2 A,2 G,2 | "G7" A,4 G,2 F,2- | "Gm7" F,2 G,2 A,2 G,2 | "Fmaj7" A,8 |
+"Dm7" z2 G2 A2 G2 | "G7" A4 G2 F2- | "Gm7" F2 G2 A2 G2 | "Fmaj7" A8 |
 w: * A luc- ky | stars a- bove, | _ But not for | me! |
-"Cm7" z2 A,2 _B,2 C,2 | :|1 "Bbmaj7" ^C,4 D,2 F,2 | "Bbm7" z2 G,,2 A,2 _B,2 | "Fmaj7" B,2 C,2 F,2 |
+"Cm7" z2 A2 _B2 C2 | :|1 "Bbmaj7" ^C4 D2 F2 | "Bbm7" z2 G,2 A2 _B2 | "Fmaj7" B2 C2 F2 |
 w: * With love to |  lead the way, | * I've found more | clouds of gray |
-"Dm7" z2 F,,2 G,2 A,2 | "G7" A,4 _B,2 F2 | "Gm7" z2 F,2 D,2 _B,2 | "C7" G,8 |
+"Dm7" z2 F,2 G2 A2 | "G7" A4 _B2 f2 | "Gm7" z2 F2 D2 _B2 | "C7" G8 |
 w: * Than a- ny | Rus- sian play | * Could gua- ran- | tee |
-z2 G,2 A,2 G,2 | "Bbmaj7" :|2 "Bbm7" ^C,4 D,2 F,2 | "Fmaj7" z2 G,,2 A,2 _B,2 | "Dm7" B,2 C,2 G2 |
+z2 G2 A2 G2 | "Bbmaj7" :|2 "Bbm7" ^C4 D2 F2 | "Fmaj7" z2 G,2 A2 _B2 | "Dm7" B2 C2 g2 |
 w: * I was a |  can't dis- miss | * the me- mory | of his kiss, |
-"Gm7" z2 F,2 D,2 _B,2 | "C7" A,8 | "Fmaj7" G,8 | F,8- |
+"Gm7" z2 F2 D2 _B2 | "C7" A8 | "Fmaj7" G8 | F8- |
 w: * I guess he's | not | for | me |
-F,6 z2 |
+F6 z2 |
 w: _ * |]
 
 X:889
@@ -24578,24 +27169,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id bye-bye-blackbird-2
 K:F
-|: "F" A2 A,2 A,2 A,2 | "Gm7" _B,2 A,2 A,4 | "F" A,2 G,2 G,4 | "F" G,2 F,2 F,4 |
+|: "F" a2 A2 A2 A2 | "Gm7" _B2 A2 A4 | "F" A2 G2 G4 | "F" G2 F2 F4 |
 w:  Pack up all my | care and woe, | here I go, | Sing- ing low, |
-"Abdim7" F,8 | "Gm7" G,8 | "Gm" F,4 E,4- | "Gm6" E,8 |
+"Abdim7" F8 | "Gm7" G8 | "Gm" F4 E4- | "Gm6" E8 |
 w: Bye | Bye | Black- bird, | _ |
-"Gm7" _B2 _B,2 _B,2 _B,2 | "C7" C,2 _B,2 _B,4 | "Gm7" _B,2 A,2 A,4 | "C7" A,2 G,2 G,4 |
+"Gm7" _b2 _B2 _B2 _B2 | "C7" C2 _B2 _B4 | "Gm7" _B2 A2 A4 | "C7" A2 G2 G4 |
 w: Where some- bod- y | waits for me, | sug- ar's sweet, | so is she, |
-"Fmaj7" G,8 | "F7" A,8 | "Am7b5" G,4 F,4- | "D7" F,8 |
+"Fmaj7" G8 | "F7" A8 | "Am7b5" G4 F4- | "D7" F8 |
 w: Bye | Bye | Black- bird. | _ |
-"Gm" F,2 C2 C,2 C,2 | "Gm7b5" C,2 _B,2 A,2 G,2 | "C7" G,8 | "F" ^F,8 |
+"Gm" F2 c2 C2 C2 | "Gm7b5" C2 _B2 A2 G2 | "C7" G8 | "F" ^F8 |
 w: No one here can | love or un- der- | stand | me, |
-"Eb7" D,2 _B2 _B,2 _B,2 | "D7" _B,2 A,2 G,2 F,2 | "G" F,8 | E,8 |
+"Eb7" D2 _b2 _B2 _B2 | "D7" _B2 A2 G2 F2 | "G" F8 | E8 |
 w: oh, what hard luck | sto- ries they all | hand | me. |
-"F" A,2 A,2 A,2 A,2 | "Gm7" _B,2 A,2 A,4 | A,2 G,2 G,4 | "F" G,2 ^F,2 ^F,4 |
+"F" A2 A2 A2 A2 | "Gm7" _B2 A2 A4 | A2 G2 G4 | "F" G2 ^F2 ^F4 |
 w: Make my bed and | light the light, | I'll ar- rive | late to- night, |
-"Bbm6" G,4 _B,4- | _B,4 E,,4 | :|1 F,4 z4 | z8 |
+"Bbm6" G4 _B4- | _B4 E,4 | :|1 F4 z4 | z8 |
 w: black- bird | _ bye |  bye. * | * |
-:|2 F,8- | F,8 |
+:|2 F8- | F8 |
 w:  bye. | _ |]
 
 X:890
@@ -24606,22 +27198,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id can-t-help-lovin-dat-man
 K:C
-"Cmaj7" G G, G, C,- C,2 C,2 | "Dm7" C, G, G, G,- G,4 | "Cmaj7" E, E, E, A,- A,2 A,2 | "F6" A, D,, D, D,- D,4 |
+"Cmaj7" g G G C- C2 C2 | "Dm7" C G G G- G4 | "Cmaj7" E E E A- A2 A2 | "F6" A D, D D- D4 |
 w: Fish got to swim _ and | birds got to fly _ | I got to love _ one | man 'til I die, _ |
-"Em7" G,4 C,,4 | "Ab7" _A, C, C, _E,- _E,2 D,2 | "Cmaj7" C,8 | "Dm7" G G, G, C,- C,2 C,2 |
+"Em7" G4 C,4 | "Ab7" _A C C _E- _E2 D2 | "Cmaj7" C8 | "Dm7" g G G C- C2 C2 |
 w: Can't Help | Lov- in' Dat Man of mine. | Tell | me he's la- zy tell me |
-"Cmaj7" C, G, G, G,- G,4 | "Dm7" E, E, E, A,- A,2 A,2 | "Cmaj7" A, D,, D, D,- D,4 | "F6" G,4 C,,4 |
+"Cmaj7" C G G G- G4 | "Dm7" E E E A- A2 A2 | "Cmaj7" A D, D D- D4 | "F6" G4 C,4 |
 w: he's slow, _ tell me | I'm cra- zy may- be I | know, _ Can't Help Lov- | in' Dat |
-"Em7" _A, C, C, _E,- _E,2 D,2 | "Ab7" C,8 | "Cmaj7" D,2 D,2 D,2 D, _E,- | "Gm7" _E,8 |
+"Em7" _A C C _E- _E2 D2 | "Ab7" C8 | "Cmaj7" D2 D2 D2 D _E- | "Gm7" _E8 |
 w: Man of mine. When he goes | a- | way _ dat's a rain- | y |
-"F6" E,8 E,8 E,8 E, ^F,- | "F#dim7" ^F,8 | "Cmaj7" G,2 G,2 G,2 G,2 | "D7" A,2 A,2 A,2 A,2 |
+"F6" E8 E8 E8 E ^F- | "F#dim7" ^F8 | "Cmaj7" G2 G2 G2 G2 | "D7" A2 A2 A2 A2 |
 w: day, _ and when he | comes | back dat day is | fine, _ the sun |
-"Em7" D,4- D, C, B, A, | "Dm7" G,8 | "Dm7" G, G, G, C,- C,2 C,2 | "G7" C, G, G, G,- G,4 |
+"Em7" D4- D C B A | "Dm7" G8 | "Dm7" G G G C- C2 C2 | "G7" C G G G- G4 |
 w: will shine. He can come | home | as late as can be, _ | home with- out him _ |
-"Cmaj7" E, E, E, A,- A,2 A,2 | "Dm7" A, D,, D, D,- D,4 | "Cmaj7" G,4 C,4 | "F6" _E, C, D, _E,- _E,2 D,2 |
+"Cmaj7" E E E A- A2 A2 | "Dm7" A D, D D- D4 | "Cmaj7" G4 C4 | "F6" _E C D _E- _E2 D2 |
 w: ain't no home to me, _ | Can't Help Lov- in' Dat | Man of | mine. _ * * * * |
-"Em7" C,8- | "Ab7" C,6 z2 |
+"Em7" C8- | "Ab7" C6 z2 |
 w: * | * * |]
 
 X:891
@@ -24632,30 +27225,32 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id caravan-3
+%%tags needs-repair
 K:Fmin
-|: "C7" C8- | "C7" C,8- | "C7" C,2 _D,2 C,2 G,2 | "Fm6" _B,2 C,2 E,2 G,,2 |
+|: "C7" c8- | "C7" C8- | "C7" C2 _D2 C2 G2 | "Fm6" _B2 C2 E2 G,2 |
 w:  Night | _ | and stars that shine | ab- ove so bright |
-_B,8- | "F9" _B,8- | "Bb9" _B,2 C,2 _D,2 C,2 | "Eb7" _D,2 C,2 B,2 G,2 |
+_B8- | "F9" _B8- | "Bb9" _B2 C2 _D2 C2 | "Eb7" _D2 C2 B2 G2 |
 w: _ | The | ma- gic of their | fa- ding light _ |
-"Ab6" _B,2 | "C7" _B,2- | "C7" _B,2 C,2 B,2 _B,2 | "C7" A,2 _A,2 G,2 _G,2 |
+"Ab6" _B2 | "C7" _B2- | "C7" _B2 C2 B2 _B2 | "C7" A2 _A2 G2 _G2 |
 w: That | shines | u- pon our Ca- | ra- van _ You |
-"C7" F,8- | "Fm6" F,8- | F,8 | z8 |
+"C7" F8- | "Fm6" F8- | F8 | z8 |
 w: are | so | exciting, | * |
-:| F8 | D,4 C,3 G,- | G,8- | G,3 F, E,2 F,2 |
+:| f8 | D4 C3 G- | G8- | G3 F E2 F2 |
 w:  _ | _ _ _ | This | is so inviting _ |
-C8 | G,4 F,3 C,- | C,8 | z4 _B C, _D, D, |
+c8 | G4 F3 C- | C8 | z4 _b C _D D |
 w: _ | _ _ _ | Res- | * ting in myarms _ |
-_E,8 | C,4 _B,3 F,- | F,8- | F,4 G,2 _E,2 |
+_E8 | C4 _B3 F- | F8- | F4 G2 _E2 |
 w: As | I thrill to | the | magic charms _ |
-C3 _A,- _A,4- | _A,4 _B,2 _A,2 | G,4 G,3 G,- | G,4 z4 |
+c3 _A- _A4- | _A4 _B2 _A2 | G4 G3 G- | G4 z4 |
 w: _ _ Ofyou | be- side me | here, be- neath | the * |
-C,8- | C,8- | C,2 _D,2 C,2 G,2 | _B,2 C,2 E,2 G,,2 |
+C8- | C8- | C2 _D2 C2 G2 | _B2 C2 E2 G,2 |
 w: blue | _ | My dream of love | is com- ing true |
-_B,8- | _B,8- | _B,2 C,2 _D,2 C,2 | _D,2 C,2 B,2 G,2 |
+_B8- | _B8- | _B2 C2 _D2 C2 | _D2 C2 B2 G2 |
 w: _ | With- | in our de- sert | Ca- ra- van _ |
-_B,2 | _B,2- | _B,2 C,2 B,2 _B,2 | A,2 _A,2 G,2 _G,2 |
+_B2 | _B2- | _B2 C2 B2 _B2 | A2 _A2 G2 _G2 |
 w: * | * | * * * * | * * * * |
-F,8- | F,8- | F,8 | z8 |
+F8- | F8- | F8 | z8 |
 w: * | * | * | * |]
 
 X:892
@@ -24665,26 +27260,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id cheek-to-cheek-2
+%%tags needs-repair
 K:F
-C,2 |: "Fmaj7" C,2 C,4 _E,2- | "Am7b5" _E,6 _E,2 | "Gm7" D,2 D,4 A2- |
+C2 |: "Fmaj7" C2 C4 _E2- | "Am7b5" _E6 _E2 | "Gm7" D2 D4 a2- |
 w: A |  Fog- gy Day | _ in | Lon- don town |
-"C7" A,8 | "F" F,4 F,2 _A,2- | "Dm7b5" _A,6 _A,2 | "G7" G,4 G,2 D2- |
+"C7" A8 | "F" F4 F2 _A2- | "Dm7b5" _A6 _A2 | "G7" G4 G2 d2- |
 w: _ | had me low | _ and | had me down. |
-"Gm7" D,8 | "Fmaj7" z2 E,2 E,2 E,2 | "Cm7" C,2 C,6 | "Bbmaj7" A,4 A,2 F,2- |
+"Gm7" D8 | "Fmaj7" z2 E2 E2 E2 | "Cm7" C2 C6 | "Bbmaj7" A4 A2 F2- |
 w: _ | * I viewed the | morn- ing | with a- larm, |
-"Bbm6" F,6 F,2 | "Fmaj7" A,2 A,2 A,2 C,2- | "Am7" C,2 C,4 C,2 | "G79" A,4 A,2 D,,2- |
+"Bbm6" F6 F2 | "Fmaj7" A2 A2 A2 C2- | "Am7" C2 C4 C2 | "G79" A4 A2 D,2- |
 w: _ the | Brit- ish Mu- se- | um had lost | its charm. _ |
-"Gm7" D,6 C,2 | "Fmaj7" C,4 C,2 _E,2- | "Am7b5" _E,2 _E,4 _E,2 | "Gm7" D,4 D,2 A2- |
+"Gm7" D6 C2 | "Fmaj7" C4 C2 _E2- | "Am7b5" _E2 _E4 _E2 | "Gm7" D4 D2 a2- |
 w: How long | I won- dered | could this thing | last? _ But |
-"C7" A,4 A,2 A,2 | "F" F,4 F,2 _A,2- | "Dm7b5" _A,2 _B,2 _A,4 | "G7" G,4 G,2 D2- |
+"C7" A4 A2 A2 | "F" F4 F2 _A2- | "Dm7b5" _A2 _B2 _A4 | "G7" G4 G2 d2- |
 w: the age of | mir- a- cles | had- n't passed, | _ for sud- |
-"Gm7" D,6 D,2 | "Cm7" F,4 F,2 D,2- | "F7" D,6 D,2 | "Bbmaj7" C,4 C,2 A,2- |
+"Gm7" D6 D2 | "Cm7" F4 F2 D2- | "F7" D6 D2 | "Bbmaj7" C4 C2 A2- |
 w: den- ly, | _ I saw | you there | _ and through |
-"Eb7" A,4 A,2 _B,2 | "F" C,2 F,,2 G,2 _B,2 | "Am7" A,2 F,2 G,2 _B,2 | "Am7" A,4 F4 |
+"Eb7" A4 A2 _B2 | "F" C2 F,2 G2 _B2 | "Am7" A2 F2 G2 _B2 | "Am7" A4 f4 |
 w: fog- gy Lon- | don town the sun | was shin- ing ev- | 'ry where. |
-"Gm7" F,,4 G,4 | :|1 "F" F,8 | "Gm7" z4 z2 C,2 | :|2 "F" F,8- |
+"Gm7" F,4 G4 | :|1 "F" F8 | "Gm7" z4 z2 C2 | :|2 "F" F8- |
 w: A where. |  _ | * * * |  * |
-"Bb7" F,8- | "Fmaj7" F,8 |
+"Bb7" F8- | "Fmaj7" F8 |
 w: * | * |]
 
 X:893
@@ -24695,40 +27292,42 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id chega-de-saudade-2
+%%tags needs-repair
 K:F
-"Dm7" F4 A,,4 | "D" D,6 F,2 | "Bm7b5" E,4 B,4 | "E7b9" D,6 E,2 |
+"Dm7" f4 A,4 | "D" D6 F2 | "Bm7b5" E4 B4 | "E7b9" D6 E2 |
 w: No More | Blues, I'm | goin' back | home. No, |
-"Em7b5" F,4 _B,,4 | "A7b9" ^C,4 F,2 E,2- | "Dm" E, D,2 F,- F, E, D,2 | "Em7b5" A,8 |
+"Em7b5" F4 _B,4 | "A7b9" ^C4 F2 E2- | "Dm" E D2 F- F E D2 | "Em7b5" A8 |
 w: No More | Blues, I prom- | ise no _ more to roam. | Home |
-"Dm" F4 A,,4 | "Bm7b5" B,4 D,2 | "Am" C,4 E,4- | "Bbmaj7" E,2 E,2 D,2 C,2 |
+"Dm" f4 A,4 | "Bm7b5" B4 D2 | "Am" C4 E4- | "Bbmaj7" E2 E2 D2 C2 |
 w: is where | the heart | is, _ | the fun- ny part |
-"Em7b5" C,4 _B,4- | "A7b9" _B,2 F2 E,2 D,2 | "Dm7" D,2 ^C,2 E, ^C,2 _B,- | "D" _B,6 z2 |
+"Em7b5" C4 _B4- | "A7b9" _B2 f2 E2 D2 | "Dm7" D2 ^C2 E ^C2 _B- | "D" _B6 z2 |
 w: is _ | my heart's been right | there all a- long. _ | No * |
-"Bm7b5" F4 A,,4 | "E7b9" D,6 F,2 | "Em7b5" E,4 B,4 | "A7b9" D,6 E,2 |
+"Bm7b5" f4 A,4 | "E7b9" D6 F2 | "Em7b5" E4 B4 | "A7b9" D6 E2 |
 w: more tears | and no | more sighs, | and no |
-"Dm" F,4 _B,,4 | "D7" ^C,4 F,2 E,2- | "Gm" E, D,2 ^C,- ^C, D, _E,2- | "A7" _E,2 D,2 ^F,2 A,2 |
+"Dm" F4 _B,4 | "D7" ^C4 F2 E2- | "Gm" E D2 ^C- ^C D _E2- | "A7" _E2 D2 ^F2 A2 |
 w: more fears, | I'll say _ | no more _ good- byes. _ | If tra- vel beck- |
-"Dm" G,4 _B,4 | "Dm" ^C,,4- ^C, A2 G,- | "Bm7b5" G, F,2 A,- A, G, F,2 | "A7b9" E,3 D, ^C,2 D,2 |
+"Dm" G4 _B4 | "Dm" ^C,4- ^C a2 G- | "Bm7b5" G F2 A- A G F2 | "A7b9" E3 D ^C2 D2 |
 w: ons me | _ I swear _ | I'm gon- _ na re- fuse, | I'm gon- na set- |
-"Dm" F, D,2 B,2 B,2 D,2 F,- | "Em7" F, ^C,2 _B,- _B, F2 D,- | "Dmaj7" D,8 | "D#dim7" z8 |
+"Dm" F D2 B2 B2 D2 F- | "Em7" F ^C2 _B- _B f2 D- | "Dmaj7" D8 | "D#dim7" z8 |
 w: tle down _ and there'll _ | be No _ More Blues. _ | Ev- | * |
-"Em7" ^F,6 A,2 | "A7" G,6 ^D,2 | "Ddim7" ^F,2 E,2 ^D, E,2 B- | "Dmaj7" B,2 G,2 E,2 B,2 |
+"Em7" ^F6 A2 | "A7" G6 ^D2 | "Ddim7" ^F2 E2 ^D E2 b- | "Dmaj7" B2 G2 E2 B2 |
 w: 'ry day | while I | am far a- way _ | my thoughts turn home- |
-"F#m7" D,3 ^C,- ^C,4- | "Fdim7" ^C,2 E,2 ^C, A,2 B,- | "Em7" B,8 | "E7" A,6 ^C,2 |
+"F#m7" D3 ^C- ^C4- | "Fdim7" ^C2 E2 ^C A2 B- | "Em7" B8 | "E7" A6 ^C2 |
 w: ward, _ for- | ev- er home- _ ward. | I | trav- elled |
-"Em7b5" E,2 D,2 ^C, D,2 F,- | "A7b9" F,2 ^G,2 ^C, B,2 A,- | "Dmaj7" A, G,2 B,,- B,4- | "Bm7" B,2 B,2 ^C, D,2 ^F,- |
+"Em7b5" E2 D2 ^C D2 F- | "A7b9" F2 ^G2 ^C B2 A- | "Dmaj7" A G2 B,- B4- | "Bm7" B2 B2 ^C D2 ^F- |
 w: 'round the world _ in | search of hap- pi- ness, | _ but all my | hap- pi- ness I found |
-"E7" ^F,2 E,2 D, B,2 ^G,- | "F#" ^G,2 B,2 ^C, E,2 D,- | "F#7" D,4- D,3 ^C,- | "Bm7" ^C,8 |
+"E7" ^F2 E2 D B2 ^G- | "F#" ^G2 B2 ^C E2 D- | "F#7" D4- D3 ^C- | "Bm7" ^C8 |
 w: _ was in my home- | _ town. _ No More | Blues, I'm goin' | back |
-"Am7" ^F,4 A,,4 | "Gmaj7" B,6 ^F2 | "C9" E,4 B,4 | "F#m7" D,6 E,2 |
+"Am7" ^F4 A,4 | "Gmaj7" B6 ^f2 | "C9" E4 B4 | "F#m7" D6 E2 |
 w: home. No, | no more | dues, I'm | through with |
-"B7" ^F,4 ^A,,4 | "E7" ^C,6 ^F,2 | "E" E, D,2 ^C,- ^C, D,2 E,- | "F#m7" E, D,2 ^F,- ^F,2 B,2 |
+"B7" ^F4 ^A,4 | "E7" ^C6 ^F2 | "E" E D2 ^C- ^C D2 E- | "F#m7" E D2 ^F- ^F2 B2 |
 w: all _ | my wan- | _ drin', now _ I'll set- | tle down _ and live |
-"B7b9" A, ^F,2 D,- D,3 B, | "E7" A F, D,- D,2 _B,2 | "Em7" A E,2 ^C,- ^C,2 A,2 | "D" ^G2 B,2 G,2 B,2 |
+"B7b9" A ^F2 D- D3 B | "E7" a F D- D2 _B2 | "Em7" a E2 ^C- ^C2 A2 | "D" ^g2 B2 G2 B2 |
 w: my life _ and build | a home _ and find | a wife, when we set- | tle down there'll _ |
-^F, D,2 B, D,2 ^F,2- | ^F,2 D,2 B, D,2 ^F,- | ^F,4- ^F, ^F, G, A, | B,2 A,2 G,2 ^F,2 |
+^F D2 B D2 ^F2- | ^F2 D2 B D2 ^F- | ^F4- ^F ^F G A | B2 A2 G2 ^F2 |
 w: be No More Blues _ | noth- in' but hap- pi- | ness. When we set- tle | down there'll _ be |
-D, B,2 D, ^F,2 D,2- | D,2 B,2 D, ^F,2 D,- | D,8- | D,6 z2 |
+D B2 D ^F2 D2- | D2 B2 D ^F2 D- | D8- | D6 z2 |
 w: No More Blues. _ * | * * * * * | * | * * |]
 
 X:894
@@ -24739,12 +27338,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id cocktails-for-two
 K:C
-C, E, G, ^G, B, A,3/2 E,/ |: "C" "C" A,8- | "G7" A, C,, E, G, ^G, B, A,3/2 E,/ | "G7" G,8- G, D, F, A, C, E, D,3/2 C,/ |
+C E G ^G B A3/2 E/ |: "C" "C" A8- | "G7" A C, E G ^G B A3/2 E/ | "G7" G8- G D F A C E D3/2 C/ |
 w: In some se- clud- ed ren- dez- |  vous | _ that o- ver looks the av- e | --neu _ with some one shar- ing a de- |
-"Dm7" A,3 C, B,3 F, | "Dm7" A,3 C, B,3 G, | :|1 "C" B, G, G, G,- G,4 | "G7" z C,, E, G, ^G, B, A,3/2 E,/ |
+"Dm7" A3 C B3 F | "Dm7" A3 C B3 G | :|1 "C" B G G G- G4 | "G7" z C, E G ^G B A3/2 E/ |
 w: light- ful chat, of | this and that and |  Cock- tails For Two. _ | * As we en- joy a cig- a- |
-:|2 "Gm7" D G,, G, G,- G,4 |
+:|2 "Gm7" d G, G G- G4 |
 w:  Cock- tails For Two. _ |]
 
 X:895
@@ -24755,22 +27355,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id come-rain-or-come-shine-2
 K:F
-"Fmaj7" A2 A, A, A, A,2 A, | "Em7b5" A,2 A, A, A, A,2 A, | "Dm7" A, F, F, F,- F,4- | "G79" F,8 |
+"Fmaj7" a2 A A A A2 A | "Em7b5" A2 A A A A2 A | "Dm7" A F F F- F4- | "G79" F8 |
 w: I'm gon- na love you like | no- bod- y's loved you, Come | Rain Or Come Shine. High | as |
-"G79" A,2 A, A, A, A,2 A, | "Gm7" C,2 A, A, A, A,2 A, | "F7" A, F, F, F,- F,4- | "Cm7" F,8 |
+"G79" A2 A A A A2 A | "Gm7" C2 A A A A2 A | "F7" A F F F- F4- | "Cm7" F8 |
 w: a moun- tain and deep as | a riv- er, Come Rain Or | Come Shine. I guess when | you |
-"Bbm7" _B,4 _B,2 _A, _B, | "Fm" C,2 F,,4 F, F, | "Bbm" _B,4 _B,2 _A, _B, | "C7b5" C,8 |
+"Bbm7" _B4 _B2 _A _B | "Fm" C2 F,4 F F | "Bbm" _B4 _B2 _A _B | "C7b5" C8 |
 w: met me It was | just one of those | things. But don't ev- | er |
-"Dm7b5" D,4 D,2 C, D, | "Cm" _E,2 C,4 C, D, | "Cm7" _E, C, D,2 C,2 _B, G, | "Am7" A,2 G,6 |
+"Dm7b5" D4 D2 C D | "Cm" _E2 C4 C D | "Cm7" _E C D2 C2 _B G | "Am7" A2 G6 |
 w: bet me, 'Cause I'm | gon- na be true | if you let me. You're gon- | na love |
-"Fmaj7" A,2 A, A, A, A,2 A, | "Em7b5" A,2 A, A, A, A,2 A, | "Dm7" A, F, F, F,- F,4- | "G79" F,8 |
+"Fmaj7" A2 A A A A2 A | "Em7b5" A2 A A A A2 A | "Dm7" A F F F- F4- | "G79" F8 |
 w: me like no- bod- y's loved | me, Come Rain Or Come Shine. | Hap- py to- geth- er, | un- |
-"C#m7b5" B,2 B, B, B, B,2 B, | "F#m7" B,2 B, B, B, B,2 B, | "A7" ^C, A, A, A,- A,4- | "Bb7" A,8 |
+"C#m7b5" B2 B B B B2 B | "F#m7" B2 B B B B2 B | "A7" ^C A A A- A4- | "Bb7" A8 |
 w: hap- py to- geth- er And | won't it be fine. Days may | be cloud- y or sun- | ny, |
-"D7" D,2 D, D, D, D,2 D, | "D7" D,2 D,,4 D,2 | "G7" D2 D, D, D, D,2 D, | "G" D,2 D,,4 E,2 |
+"D7" D2 D D D D2 D | "D7" D2 D,4 D2 | "G7" d2 D D D D2 D | "G" D2 D,4 E2 |
 w: We're in or we're out of | the mon- ey. | But I'm with you al- ways, | I'm with you |
-"Dm7" A,2 A, _B, B, D,3 | "Em7b5" E,2 E, D, E, D, E,2 | "Dm7" D,8- | "Gm7" D,4 z4 |
+"Dm7" A2 A _B B D3 | "Em7b5" E2 E D E D E2 | "Dm7" D8- | "Gm7" D4 z4 |
 w: rain _ or shine! * | * * * * * * | * | * * |]
 
 X:896
@@ -24779,13 +27380,14 @@ C:Cole Porter
 N:Source: openbook
 M:4/4
 L:1/8
+%%id could-it-be-you
 K:Bb
-|: "Bbmaj7" z2 D,2 F,2 D,2 | "Cm7" G,8 | "Bbmaj7" z2 D,2 F,2 D,2 | "Gm7" G,2 _G, F,- F,4 |
-"Ebmaj7" z2 G,2 _B,2 G,2 | "Fm7" C,8 | "Ebmaj7" z2 G,2 _B,2 G,2 | "Gm7" C,2 _C, _B,- _B,4 |
-:|1 "Fmaj7" z2 A,2 C,2 A, | "A7b9" G, ^F, G, _B,- _B,3 G, | "Dm7" F, E, F, A,- A, F, E,2 | "Am7b5" _E,2 z2 |
-"Gm" z2 D, D,- D, ^C, D,2 | "C7" A4 G,4 | "F7" z2 F, F,- F, E, F,2 | "C9" D4 C,4 |
-:|2 "Bbmaj7" z2 _B,2 D,3 _B, | "D7" A, ^G, A, C,- C,3 A, | "Ebmaj7" G, ^F, G, _B,- _B, F, G,2 | "Ebm7" _E,8 |
-"Bbmaj7" z2 F,2 G,2 D2 | "C9" D,4 C, _B, C,2 | "Bb6" _B,8 |]
+|: "Bbmaj7" z2 D2 F2 D2 | "Cm7" G8 | "Bbmaj7" z2 D2 F2 D2 | "Gm7" G2 _G F- F4 |
+"Ebmaj7" z2 G2 _B2 G2 | "Fm7" C8 | "Ebmaj7" z2 G2 _B2 G2 | "Gm7" C2 _C _B- _B4 |
+:|1 "Fmaj7" z2 A2 C2 A | "A7b9" G ^F G _B- _B3 G | "Dm7" F E F A- A F E2 | "Am7b5" _E2 z2 |
+"Gm" z2 D D- D ^C D2 | "C7" a4 G4 | "F7" z2 F F- F E F2 | "C9" d4 C4 |
+:|2 "Bbmaj7" z2 _B2 D3 _B | "D7" A ^G A C- C3 A | "Ebmaj7" G ^F G _B- _B F G2 | "Ebm7" _E8 |
+"Bbmaj7" z2 F2 G2 d2 | "C9" D4 C _B C2 | "Bb6" _B8 |]
 
 X:897
 T:Cry Me A River
@@ -24795,24 +27397,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id cry-me-a-river-2
+%%tags needs-repair
 K:Eb
-|: "Cm" D4- D, C, G, _E, | "Cm6" D, C,3- C,4 | "Fm7" z C, _E, C _B,2 _B,2 | "Ebmaj7" G,4- G,3/2 G,/ ^F,3/2 G,/ |
+|: "Cm" d4- D C G _E | "Cm6" D C3- C4 | "Fm7" z C _E c _B2 _B2 | "Ebmaj7" G4- G3/2 G/ ^F3/2 G/ |
 w:  Now _ you say you're | lone- ly, _ | * you cry the long night | thru; _ well, you can |
-"Gm7" C,2- C, _D, C, _D, C,3 | "F9" z G,- G, F, _E, F, G,3 | "Fm7" z _G, F, _E, F, _E, C, _E, | "Eb6" _E,4- _E,3 z |
+"Gm7" C2- C _D C _D C3 | "F9" z G- G F _E F G3 | "Fm7" z _G F _E F _E C _E | "Eb6" _E4- _E3 z |
 w: Cry _ Me A Riv --er, | * Cry _ Me A Riv- er, | * I cried a riv- er o- ver | you. _ * |
-"Cm" D4- D, C, G, _E, | "Cm6" D, C,3- C,4 | "Fm7" z C, _E, C _B,2 _B,2 | "Ebmaj7" G,4- G,3/2 G,/ ^F,3/2 G,/ |
+"Cm" d4- D C G _E | "Cm6" D C3- C4 | "Fm7" z C _E c _B2 _B2 | "Ebmaj7" G4- G3/2 G/ ^F3/2 G/ |
 w: Now _ you say you're | sor- ry _ | * for be- in' so un- | true; _ well, you can |
-"Gm7" C,2- C, _D, C, _D, C,3 | "F9" z G,- G, F, _E, F, G,3 | "Fm7" z _G, F, _E, F, _E, C, _E, | "Eb6" _E,8 |
+"Gm7" C2- C _D C _D C3 | "F9" z G- G F _E F G3 | "Fm7" z _G F _E F _E C _E | "Eb6" _E8 |
 w: Cry _ Me A Riv- er, | * Cry _ My A Riv- er, | * I cried a riv- er o- ver | you. |
-"Gm" z3/2 G,/ A,/ _B,3/2- _B, D,, E, ^F, G, | "Cm6" A,3/2 G,/ _B, A,- A,3 G, | "Gm" _B,2- _B, G, D C,2 _B, C,- | "Cm6" C,8 |
+"Gm" z3/2 G/ A/ _B3/2- _B D, E ^F G | "Cm6" A3/2 G/ _B A- A3 G | "Gm" _B2- _B G d C2 _B C- | "Cm6" C8 |
 w: * You drove me, _ near- ly drove me, | out of my head, _ while | you _ nev- er shed a tear. | _ |
-"Gm" z3/2 G,/ A,/ _B,3/2- _B, D,, E, ^F, G, | "Cm6" A,3/2 G,/ _B, A,- A,4 | "G" z A,/ G,/ A,3/2 G,/ A,3/2 G,/ B,/ G,3/2 | "Dm7" z A,/ G,/ A,3/2 G,/ A,3/2 G,/ B,/ G,3/2 |
+"Gm" z3/2 G/ A/ _B3/2- _B D, E ^F G | "Cm6" A3/2 G/ _B A- A4 | "G" z A/ G/ A3/2 G/ A3/2 G/ B/ G3/2 | "Dm7" z A/ G/ A3/2 G/ A3/2 G/ B/ G3/2 |
 w: * Re- mem- ber? _ I re- mem- ber, | all that you said; _ | * told me love was too ple- be- ian, | * told me you were thru with me, an' |
-"Cm" D4- D, C, G, _E, | "Cm6" D, C,3- C,4 | "Fm7" z C, _E, C _B,2 _B,2 | "Ebmaj7" G,4- G,3/2 G,/ ^F,3/2 G,/ |
+"Cm" d4- D C G _E | "Cm6" D C3- C4 | "Fm7" z C _E c _B2 _B2 | "Ebmaj7" G4- G3/2 G/ ^F3/2 G/ |
 w: Now _ you say you | love me, _ | * well, just to prove you | do, _ Come on, an' |
-"Gm7" C,2- C, _D, C, _D, C,3 | "F9" z G,- G, F, _E, F, G,3 | "Fm7" z C, _G, _E, F, _E, C, _E, | :|1 "Eb6" _E,4- _E, z z2 |
+"Gm7" C2- C _D C _D C3 | "F9" z G- G F _E F G3 | "Fm7" z C _G _E F _E C _E | :|1 "Eb6" _E4- _E z z2 |
 w: Cry Me A Riv- er, Cry | * Me A Riv- er, I cried | * a riv- er o- ver you. _ |  you. _ * * |
-:|2 "Eb6" _E,8 |
+:|2 "Eb6" _E8 |
 w:  * |]
 
 X:898
@@ -24823,18 +27427,19 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id dancing-on-the-ceiling-2
 K:F
-|: "Fmaj7" z2 C,2 D,2 E,2 | "F7#5" F,2 G,2 A,4 | "Bbmaj7" G,3 F, E,2 D,2 | "Am7" C2 C,2 B,2 |
+|: "Fmaj7" z2 C2 D2 E2 | "F7#5" F2 G2 A4 | "Bbmaj7" G3 F E2 D2 | "Am7" c2 C2 B2 |
 w:  * He dan- ces | o- ver- head | on the ceil- ing | near my bed |
-"Gm7" _B,2 C,2 | "Am7b5" A,8 | "Gm7" G,6 A,2 | "F6" F,8 |
+"Gm7" _B2 C2 | "Am7b5" A8 | "Gm7" G6 A2 | "F6" F8 |
 w: in my | sight | through the | night |
-:| "Gm7" z2 G,2 G,2 G,2 | "C7" G, G, G, A, F,2 G,2 | "Fmaj7" A,2 z2 C,2 C,2- | "Am7b5" C,8 |
-w:  * I whis- per | "\"go" a- way my lo- ver | it's * not "fair\"" | _ |
-"Gm7" z2 G,2 G,2 G,2 | "C7" G, G, A, A, F,2 G,2 | "Am7b5" A,2 z2 C,2 C,2- | "Gm7" C,8 |
+:| "Gm7" z2 G2 G2 G2 | "C7" G G G A F2 G2 | "Fmaj7" A2 z2 C2 C2- | "Am7b5" C8 |
+w:  * I whis- per | ""go" a- way my lo- ver | it's * not "fair"" | _ |
+"Gm7" z2 G2 G2 G2 | "C7" G G A A F2 G2 | "Am7b5" A2 z2 C2 C2- | "Gm7" C8 |
 w: * but I'm so | grate- ful to dis- co- ver | he's * till there | _ |
-"Fmaj7" z2 C,,2 D,2 E,2 | "F7#5" F,2 G,2 A,4 | "Bbmaj7" G,3 F, E,2 D,2 | "Am7" C2 C,2 B,2 |
+"Fmaj7" z2 C,2 D2 E2 | "F7#5" F2 G2 A4 | "Bbmaj7" G3 F E2 D2 | "Am7" c2 C2 B2 |
 w: * lo- ve my | ceil- ing more | since it is a | dan- cing floor |
-"Gm7" _B,2 D,2- | "C7" D,2 E,,2 | "F" F,8- | "Gm7" F,2 z2 z4 |
+"Gm7" _B2 D2- | "C7" D2 E,2 | "F" F8- | "Gm7" F2 z2 z4 |
 w: just for | _ my | love | _ * * |]
 
 X:899
@@ -24845,22 +27450,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id darn-that-dream-2
 K:G
-"G" D,2 G,2 _E,3 _E, | "Am7" E,2 A,2 F,3 ^F, | "Em7" G,2 B,2 ^G, A, B, C, | "Bm7b5" D,2 E,2 B,4 |
+"G" D2 G2 _E3 _E | "Am7" E2 A2 F3 ^F | "Em7" G2 B2 ^G A B C | "Bm7b5" D2 E2 B4 |
 w: Darn That Dream I | dream each night, You | say you love me and you | hold me tight, |
-"Am7" B,2 D,2 C, B, A, G, | "Bm7" ^F,2 A,2 E,2 _E,2 | "Am7" D,4 ^F,4 | "Bm7" D,4 z4 |
+"Am7" B2 D2 C B A G | "Bm7" ^F2 A2 E2 _E2 | "Am7" D4 ^F4 | "Bm7" D4 z4 |
 w: but when I a- wake you're | out of sight. Oh, | Darn That | Dream. * |
-"G" D,2 G,2 _E,3 _E, | "Am7" E,2 A,2 F,3 ^F, | "Em7" G,2 B,2 ^G, A, B, C, | "Bm7b5" D,2 E,2 B,4 |
+"G" D2 G2 _E3 _E | "Am7" E2 A2 F3 ^F | "Em7" G2 B2 ^G A B C | "Bm7b5" D2 E2 B4 |
 w: Darn your lips and | darn your eyes, they | lift me high a- bove the | moon- lit skies, |
-"Am7" B,2 D,2 C, B, A, G, | "Bm7" ^F,2 A,2 E,2 _E,2 | "Am7" D,4 B4 | "G" G,6 z2 |
+"Am7" B2 D2 C B A G | "Bm7" ^F2 A2 E2 _E2 | "Am7" D4 b4 | "G" G6 z2 |
 w: then I tum- ble out of | Par- a- dise. Oh, | Darn That | Dream. * |
-"Eb6" z G,2 G, F,2 _E,2 | "Fm7" C2 C, _B,- _B,3 C, | "Ebmaj7" D, _E, D, _D,- _D,2 _C,2 | "Fm7" _B,2 _A, F,- F,4 |
+"Eb6" z G2 G F2 _E2 | "Fm7" c2 C _B- _B3 C | "Ebmaj7" D _E D _D- _D2 _C2 | "Fm7" _B2 _A F- F4 |
 w: * Darn that one- track | mind of mine, _ it | can't un- der- stand _ that | you don't care. _ |
-"Eb6" z G,2 G, F,2 _E,2 | "Gm7" G,2 A, _B,- _B,3 C, | "Am7" D, D, D, D,- D,2 D,,2 | "Eb79" _B4 B,4 |
+"Eb6" z G2 G F2 _E2 | "Gm7" G2 A _B- _B3 C | "Am7" D D D D- D2 D,2 | "Eb79" _b4 B4 |
 w: * Just to change the | mood I'm in, _ I'd | wel- come a nice _ old | night- mare. |
-"G" D,,2 G,2 _E,3 _E, | "Am7" E,2 A,2 F,3 ^F, | "Em7" G,2 B,2 ^G, A, B, C, | "Bm7b5" D,2 E,2 B,4 |
+"G" D,2 G2 _E3 _E | "Am7" E2 A2 F3 ^F | "Em7" G2 B2 ^G A B C | "Bm7b5" D2 E2 B4 |
 w: Darn That Dream and | bless it too, with- | out that dream I nev- er | would have you. |
-"Am7" B,2 D,2 C, B, A, G, | "Bm7" ^F,2 A,2 E,2 _E,2 | "Am7" D,4 B4 | "G" G,6 z2 |
+"Am7" B2 D2 C B A G | "Bm7" ^F2 A2 E2 _E2 | "Am7" D4 b4 | "G" G6 z2 |
 w: But it haunts me and it | won't come true, Oh, | Darn That | Dream. * |]
 
 X:900
@@ -24871,40 +27477,41 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id desafinado-2
 K:F
-"Fmaj7" z C,2 D, E,2 F,2 | "G7b5" E,3 D, ^C,2 D,2 | "Gm7" F,3 _D, _D,4- | "C" _D,8 |
+"Fmaj7" z C2 D E2 F2 | "G7b5" E3 D ^C2 D2 | "Gm7" F3 _D _D4- | "C" _D8 |
 w: * Love is like a | nev- er end- ing | mel- o- dy; | _ |
-"Am7b5" z D, E, F,2 G,2 | "D7b9" F,3 E, ^D,2 E,2 | "Gm7" C3 _E,, _E,4- | "A7b9" _E,8 |
+"Am7b5" z D E F2 G2 | "D7b9" F3 E ^D2 E2 | "Gm7" c3 _E, _E4- | "A7b9" _E8 |
 w: * po- ets have com- | pared it to a | sym- pho- ny, | _ |
-"D7" z D, C _B, A, G,2 _B,- | "D7b9" _B,3 A, ^D,,2 E,2 | "G7b9" ^F, A, ^F,4 D,2 | "Gbmaj7" _E,8 |
+"D7" z D c _B A G2 _B- | "D7b9" _B3 A ^D,2 E2 | "G7b9" ^F A ^F4 D2 | "Gbmaj7" _E8 |
 w: * a sym- pho- ny con- duc- | ted by the light- | ing of the moon, | but |
-"Fmaj7" z _A,2 G, F,2 D,2 | "G7b5" _A3 G, F,2 D,2 | "Gm7" F,3 _D, _D,4- | "C" _D,4 z4 |
+"Fmaj7" z _A2 G F2 D2 | "G7b5" _a3 G F2 D2 | "Gm7" F3 _D _D4- | "C" _D4 z4 |
 w: * our song of love | is Slight- ly Out | Of Tune. _ | Once * |
-"Am7b5" z C,2 D, E,2 F,2 | "D7b9" E,3 D, ^C,2 D,2 | "Gm7" F,3 _D, _D,4- | "Bbm7" _D,8 |
+"Am7b5" z C2 D E2 F2 | "D7b9" E3 D ^C2 D2 | "Gm7" F3 _D _D4- | "Bbm7" _D8 |
 w: * your kiss- es raised | me to a fev- | er pitch, _ | now |
-"Fmaj7" z D, E, F,2 G,2 | "Bm7b5" F,3 E, ^D,2 E,2 | "Amaj7" C3 _E,, _E,4- | "Bbdim7" _E,8 |
+"Fmaj7" z D E F2 G2 | "Bm7b5" F3 E ^D2 E2 | "Amaj7" c3 _E, _E4- | "Bbdim7" _E8 |
 w: * the orch- es- tra- | tion does- n't seem | so rich. _ | Seems |
-"Bm7" z C2 _B, A, G,2 _B,- | "E7" _B,3 A, G,2 F,2 | "A" G, F, G,6- | "Bbdim7" G,4 z4 |
+"Bm7" z c2 _B A G2 _B- | "E7" _B3 A G2 F2 | "A" G F G6- | "Bbdim7" G4 z4 |
 w: * to me you've changed _ | the tune we used | to sing; _ | like * |
-"Bm7" E,2 ^F,2 E, ^F,2 E,- | "E7" E,3 D, ^C,2 D,2 | "A" E,8- | "F#m7" E,4 z2 ^C,2 |
+"Bm7" E2 ^F2 E ^F2 E- | "E7" E3 D ^C2 D2 | "A" E8- | "F#m7" E4 z2 ^C2 |
 w: the Bos- sa No- va, | love should swing. _ | We | used * to |
-"Bm7" E,2 ^F,2 E, ^F,2 E,- | "E7" E,3 D, ^C,2 D,2 | "Cmaj7" E,3 B, E,4- | "C#dim7" E,8 |
+"Bm7" E2 ^F2 E ^F2 E- | "E7" E3 D ^C2 D2 | "Cmaj7" E3 B E4- | "C#dim7" E8 |
 w: har- mo- nize _ two | souls in per- fect | time. _ Now | the |
-"Dm7" z E,2 ^F, ^G,2 A,2 | "G7" B,3 A, ^C,,2 D,2 | "Gm7" E, ^F, E, ^F, E,4- | "F#dim" E,4 z2 E,2 |
+"Dm7" z E2 ^F ^G2 A2 | "G7" B3 A ^C,2 D2 | "Gm7" E ^F E ^F E4- | "F#dim" E4 z2 E2 |
 w: * song is dif- f'rent | and the words don't | e- ven rhyme, _ 'cause | you * for- |
-"G7" G,2 A,2 G,2 A,2 | "C7" G,2 F,2 E,2 F,2 | "Fmaj7" G,2 D, G,- G, D, G,2- | "G7b5" G,2 z2 z D, G, A, |
+"G7" G2 A2 G2 A2 | "C7" G2 F2 E2 F2 | "Fmaj7" G2 D G- G D G2- | "G7b5" G2 z2 z D G A |
 w: got the mel- o- | dy our hearts would | al- ways croon, _ and so | what * * good's a heart |
-"Gm7" _B,2 A,2 _B,2 A,2 | "C" C,2 _B,2 A,2 _B,2 | "Am7b5" G,8- | "D7b9" G,2 z2 z4 |
+"Gm7" _B2 A2 _B2 A2 | "C" C2 _B2 A2 _B2 | "Am7b5" G8- | "D7b9" G2 z2 z4 |
 w: that's Slight- ly Out | Of Tune. _ Tune | your | heart * * |
-"Gm7" z C,,2 D, E,2 F,2 | "Bbm" E,3 D, ^C,2 D,2 | "Fmaj7" F,3 _D, _D,4- | "Dm7" _D,8 |
+"Gm7" z C,2 D E2 F2 | "Bbm" E3 D ^C2 D2 | "Fmaj7" F3 _D _D4- | "Dm7" _D8 |
 w: * to mine the way | it uysed to be; | _ join with | me |
-"G7" z D, E, F,2 G,2 | "Bbm7" F,3 E, ^D,2 E,2 | "Eb79" D2 _D,2 C,2 B,2 | "G7" _B,2 D,2 z2 A,2 |
+"G7" z D E F2 G2 | "Bbm7" F3 E ^D2 E2 | "Eb79" d2 _D2 C2 B2 | "G7" _B2 D2 z2 A2 |
 w: * in har- mo- ny | and sing a song | of lov- ing. We're | bound to * get |
-"Gm7" C,3 B, _B,2 A,2 | "F6" _B,2 A,2 G,2 F,2 | A,6 E,2 | G,6 D, E, |
+"Gm7" C3 B _B2 A2 | "F6" _B2 A2 G2 F2 | A6 E2 | G6 D E |
 w: in tune a- gain | be- fore too long. | There'll be | no De- sa- |
-F, F, F, F, F,2 F,2 | z D,2 E, F,2 F,2 | F, F, F, F, C2 _B,2- | _B,6 D,, E, |
+F F F F F2 F2 | z D2 E F2 F2 | F F F F c2 _B2- | _B6 D, E |
 w: fi- na- do when your heart | * be- longs to me | com- plete- ly. _ Then you | won't be Slight- |
-F, F, F, F, F,2 E, F,- | F,2 z E, ^D,2 E,2 | G,3 F, F,4- | F,8 |
+F F F F F2 E F- | F2 z E ^D2 E2 | G3 F F4- | F8 |
 w: ly Out Of Tune, _ you'll sing | a- * long with me. | _ * * | * |]
 
 X:901
@@ -24913,15 +27520,17 @@ C:Charlie Parker
 N:Source: openbook
 M:4/4
 L:1/8
+%%id donna-lee-2
+%%tags needs-repair
 K:Ab
-"Ab" z4 g _A, G, F, E, | "F7" _E, _D, C, _B, A, C,, _E, F, | "Bb7" _G, _A, _G, F, _E, D, F, _A, C, | "Bbm7" G, F, z2 z2 E,2 D,2 |
-"Eb7" _E,2 A,,2 _B,2 _D,2 F,2 _A,2 C,2 _E,2 | "Ab" _D,2 E,,2 F,2 C2 B,2 G,2 _E,2 _D,2 | "Ebm7" C,2 _E,2 G,2 _B,2 _A,2 _E, F, | "Db" _G, _B, _D, F, E, C, z2 |
-"Dbm7" _E,4- _E, _D, C, _B, | "Ab" _E, _D, z2 _G, _F, _E, _D, | "F7" C, C, _D, D, _E, _D, C, _B, | "Bb7" A, C, _E, F, _G, _A, _G, F, _E, |
-"Bbm7" D, C, B, A, _B, _A, z D,,/ F,/ | "Eb7" G, _G, F, E,2 z4 | "Ab" _E4 _D,4 F,,4 _A,4 C,4 _B,4 _A,4 F,4 | "F7" G,4 _B,4 _D,4 _E,4 E,4 ^F,4 E,4 _E,4 _D,4 |
-"Bb7" C,2 z2 G _A, G, F, E, | "C7" _E, _D, C, _B, A, C,, _E, F, | "Fm" _G, _A, _G, F, _E, D, F, _A, C, | "C7#9" G, F, z2 z2 G, F, |
-"Fm" E, F, G, _A, _B, _A, G, F, | "C7" _D _E, _D, C, _B, _A, _B, _A, G, E, | "Fm" F,2 z2 z4 | "Abdim" z4 z2 z B, |
-"Ab" C, B, C, _D, D, ^C, D, _E, | "Bbm7" E, ^D, E, ^D, D, _D, C, _B, | "Ab" _A, _B, _A, G, _A, _B, _A, G, F, | "Bbm7" B,, D, F, _A, B, G F, E, |
-_E, _D, C, _B, A, _G, F, _E, | _D, F, _A, C, _B, _A, G, _E, | _A,2 z2 z4 | z8 |]
+"Ab" z4 g' _A G F E | "F7" _E _D C _B A C, _E F | "Bb7" _G _A _G F _E D F _A C | "Bbm7" G F z2 z2 E2 D2 |
+"Eb7" _E2 A,2 _B2 _D2 F2 _A2 C2 _E2 | "Ab" _D2 E,2 F2 c2 B2 G2 _E2 _D2 | "Ebm7" C2 _E2 G2 _B2 _A2 _E F | "Db" _G _B _D F E C z2 |
+"Dbm7" _E4- _E _D C _B | "Ab" _E _D z2 _G _F _E _D | "F7" C C _D D _E _D C _B | "Bb7" A C _E F _G _A _G F _E |
+"Bbm7" D C B A _B _A z D,/ F/ | "Eb7" G _G F E2 z4 | "Ab" _e4 _D4 F,4 _A4 C4 _B4 _A4 F4 | "F7" G4 _B4 _D4 _E4 E4 ^F4 E4 _E4 _D4 |
+"Bb7" C2 z2 g _A G F E | "C7" _E _D C _B A C, _E F | "Fm" _G _A _G F _E D F _A C | "C7#9" G F z2 z2 G F |
+"Fm" E F G _A _B _A G F | "C7" _d _E _D C _B _A _B _A G E | "Fm" F2 z2 z4 | "Abdim" z4 z2 z B |
+"Ab" C B C _D D ^C D _E | "Bbm7" E ^D E ^D D _D C _B | "Ab" _A _B _A G _A _B _A G F | "Bbm7" B, D F _A B g F E |
+_E _D C _B A _G F _E | _D F _A C _B _A G _E | _A2 z2 z4 | z8 |]
 
 X:902
 T:Don't Blame Me
@@ -24931,12 +27540,14 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id don-t-blame-me-2
+%%tags needs-repair
 K:C
-|: "C6" G4 _B,4 | "Em7" A,6 G,2 | "Dm7" F,2 F,2 F,2 E,2 E,2 | "Cmaj7" D,6 C,2 |
+|: "C6" g4 _B4 | "Em7" A6 G2 | "Dm7" F2 F2 F2 E2 E2 | "Cmaj7" D6 C2 |
 w:  Don't Blame | Me For | fal- ling in love with | you. I'm |
-"Dm7" F,2 F,2 F,2 E,2 D,2 | "Em7b5" G,2 G,2 G,2 F,2 E,2 | :|1 "Dm7" A,4 B,4 | "C6" G,8 |
+"Dm7" F2 F2 F2 E2 D2 | "Em7b5" G2 G2 G2 F2 E2 | :|1 "Dm7" A4 B4 | "C6" G8 |
 w: un- der your spell But | how can I help it? |  Don't Blame | Me. |
-:|2 "Dm7" A,4 A,4 | "C6" C,8 |
+:|2 "Dm7" A4 A4 | "C6" C8 |
 w:  _ _ | _ |]
 
 X:903
@@ -24947,22 +27558,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id don-t-explain
 K:F
-"Dm" D,2 F,4 A, D,, | "Gm6" E,8 | "Dm" D,2 F,4 E, F, | "E7" E,8 |
+"Dm" D2 F4 A D, | "Gm6" E8 | "Dm" D2 F4 E F | "E7" E8 |
 w: Hush now, Don't Ex- | plain! | Just say youl'll re- | main, |
-"Eb9" C2 _B,6 | "Db9" _B,2 A,4 A, D,, | "Fmaj7" E,8- | "Bbm6" E,2 z2 z4 |
+"Eb9" c2 _B6 | "Db9" _B2 A4 A D, | "Fmaj7" E8- | "Bbm6" E2 z2 z4 |
 w: I'm glad | you're back, Don't Ex- | plain! | _ * * |
-"Dm" D,2 F,4 A, D,, | "Gm6" E,8 | "Dm" D,2 F,4 E, F, | "E7" E,8 |
+"Dm" D2 F4 A D, | "Gm6" E8 | "Dm" D2 F4 E F | "E7" E8 |
 w: Qui- et, Don't Ex- | plain! | What is there to | gain? |
-"Eb9" C2 _B,6 | "Db9" _B,2 A,4 A, D,, | "F" F,8- | "E7b9" F,8 |
+"Eb9" c2 _B6 | "Db9" _B2 A4 A D, | "F" F8- | "E7b9" F8 |
 w: Skip that | lip- stick, Don't Ex- | plain! | _ |
-"Dm7" A, A, C, A, _B, _B,3 | "C7" G, G, _B, G, A,4 | "Bbmaj7" F, F, A, F, G, G,3 | "Bb7" E, F, G, G, G, F, E,2 |
+"Dm7" A A C A _B _B3 | "C7" G G _B G A4 | "Bbmaj7" F F A F G G3 | "Bb7" E F G G G F E2 |
 w: You know that I love you | and what love en- dures. | All my thoughts are of you | for I'm so com- plete- ly yours. |
-"Dm7" A, A, C, A, _B, _B,3 | "C7" G, G, _B, G, A,4 | "Bbmaj7" F, F, A, F, G, G,3 | "Bb7" E, F, G, F, E,4 |
+"Dm7" A A C A _B _B3 | "C7" G G _B G A4 | "Bbmaj7" F F A F G G3 | "Bb7" E F G F E4 |
 w: Cry to hear folks chat- ter, | and I know you cheat. | Right or wrong don't mat- ter | when you're with me, sweet. |
-"Dm" D,2 F,4 A, D,, | "Gm6" E,8 | "Dm" D,2 F,4 E, F, | "E7" E,8 |
+"Dm" D2 F4 A D, | "Gm6" E8 | "Dm" D2 F4 E F | "E7" E8 |
 w: Hush now, Don't Ex- | plain! | You're my joy and | pain. |
-"Eb9" C2 _B,6 | "Db9" _B,2 A,4 A, D,, | "F" F,8- | "F" F,8 |
+"Eb9" c2 _B6 | "Db9" _B2 A4 A D, | "F" F8- | "F" F8 |
 w: My life's | yours love, Don't Ex- | plain! | _ |]
 
 X:904
@@ -24973,24 +27585,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id don-t-get-around-much-anymore-2
+%%tags needs-repair
 K:C
-|: z E2 D, C, G, F,2 | "C" E,8 | "C" z E2 D, C, G, F,2 | "C" E,8 |
+|: z e2 D C G F2 | "C" E8 | "C" z e2 D C G F2 | "C" E8 |
 w:  * Missed the Sat- ur- day | dance, | * heard they crowd- ed the | floor; |
-"A7" z G,2 F, E, D, C, C- | "D7" C,3 A,- A,4 | "G7" z E, F, ^F, G, C,, ^D, E, | "C" C,8 |
+"A7" z G2 F E D C c- | "D7" C3 A- A4 | "G7" z E F ^F G C, ^D E | "C" C8 |
 w: * cound- n't bear it with- out | you, _ Don't | * Get A- round Much An- y- more. | Thougt |
-"C" z E2 D, C, G, F,2 | "C" E,8 | "C" z E2 D, C, G, F,2 | "C" E,8 |
+"C" z e2 D C G F2 | "C" E8 | "C" z e2 D C G F2 | "C" E8 |
 w: * I'd vis- it the club, | got | * as far as the door; | they'd |
-"A7" z G,2 F, E, D, C, C- | "D7" C,3 A,- A,4 | "G7" z E, F, ^F, G, C,, ^D, E, | "C" C,8 |
+"A7" z G2 F E D C c- | "D7" C3 A- A4 | "G7" z E F ^F G C, ^D E | "C" C8 |
 w: * have ask'd me a- bout _ | you, _ Don't | * Get A- round Much An- y more. | Dar- |
-"Gm7" D4 C,2 A, C,- | "F" C,6 C, D,- | "Bb9" D,4 C,2 G, E,- | "Cmaj7" E,6 C2 |
+"Gm7" d4 C2 A C- | "F" C6 C D- | "Bb9" D4 C2 G E- | "Cmaj7" E6 c2 |
 w: ling, I guess _ | my mind's _ | more at ease, _ | but nev- |
-"C" D,4 C, A,2 C,- | "D7" C,8 | "F#7b5" z3/2 B,/ B,3/2 B,/ B, A,2 G,- | "Em7" G, E2 D, C, G, F,2 |
+"C" D4 C A2 C- | "D7" C8 | "F#7b5" z3/2 B/ B3/2 B/ B A2 G- | "Em7" G e2 D C G F2 |
 w: er- the- less _ | why | * stir up mem- o- ris? _ | Been in- vi- ed on dates, |
-"G7" E,8 | "G7" z E2 D, C, G, F,2 | "C" E,8 | "C" z G,2 F, E, D, C, C- |
+"G7" E8 | "G7" z e2 D C G F2 | "C" E8 | "C" z G2 F E D C c- |
 w: might | * have gone but what four? | Aw- | * f'lly dif- f'rent with- out _ |
-"A7" C,3 A,- A,4 | "D7" z E, F, ^F, G, C,, ^D, E, | "G7" :|1 C,8 | "C" z E2 D, C, G, F,2 |
+"A7" C3 A- A4 | "D7" z E F ^F G C, ^D E | "G7" :|1 C8 | "C" z e2 D C G F2 |
 w: you, _ Don't | * Get A- round Much An- y- more. |  Missed | * the Sat- ur- day more. |
-"C" :|2 C,8 |
+"C" :|2 C8 |
 w:  * |]
 
 X:905
@@ -24999,9 +27613,10 @@ C:Sonny Rollins
 N:Source: openbook
 M:4/4
 L:1/8
+%%id doxy-2
 K:Bb
-F, |: "Bb7" _B, D, _B, F, _B,2 z F, | "Ab7" _B, F, _B, _D, z G,,2 F, | :|1 "C7" E, G, _B, _D, C, _D, C, :|2
-"Bb7" E, G, _B, _D, C, _D, C, |]
+F |: "Bb7" _B D _B F _B2 z F | "Ab7" _B F _B _D z G,2 F | :|1 "C7" E G _B _D C _D C :|2
+"Bb7" E G _B _D C _D C |]
 
 X:906
 T:Easy Living
@@ -25011,12 +27626,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id easy-living-2
 K:F
-|: "Fmaj7" A2 D,2 C,2 _E,,4 | "Gm7" z D, G, _B, D, F,2 E, | "Fmaj7" B,2 D,2 C,2 F,,4 | "Bbmaj7" z D, F, A, C,3 _B, |
+|: "Fmaj7" a2 D2 C2 _E,4 | "Gm7" z D G _B D F2 E | "Fmaj7" B2 D2 C2 F,4 | "Bbmaj7" z D F A C3 _B |
 w:  Li- ving for you | * is ea- sy li- ving It's | ea- sy to live | * when you're in love And |
-"Fmaj7" A,2 G2 F,2 A,,3 E | :|1 "Gm7" D,2 _B, D,, A2 G,2 | "A7#5" A,8- | "G7#5" A,8 |
+"Fmaj7" A2 g2 F2 A,3 e | :|1 "Gm7" D2 _B D, a2 G2 | "A7#5" A8- | "G7#5" A8 |
 w: I'm so in love There |  is nothing in life but | you | _ |
-:|2 "Gm7" D,2 _B, D,, A2 A, F,- | "F" F,8- | "Ebm7" F,6 F,2 |
+:|2 "Gm7" D2 _B D, a2 A F- | "F" F8- | "Ebm7" F6 F2 |
 w:  _ _ _ _ _ _ | For | you may- |]
 
 X:907
@@ -25027,18 +27643,19 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id easy-to-love-2
 K:C
-|: "Dm7" A8 | "Gm7" D,,6 E,2 | "Dm7" F,4 E,3 F, | "G7" B,6 A,2 |
+|: "Dm7" a8 | "Gm7" D,6 E2 | "Dm7" F4 E3 F | "G7" B6 A2 |
 w:  You'd | be so | Eas- y To | Love, So |
-"Cmaj7" G,4 ^F,2 G,2 | "Fmaj7" D2 _D,2 C,2 B,2 | "Em7" A,4 ^G,3 A, | :|1 "F7" G |
+"Cmaj7" G4 ^F2 G2 | "Fmaj7" d2 _D2 C2 B2 | "Em7" A4 ^G3 A | :|1 "F7" g |
 w: eas- y to | i- dol- ize, All | oth- ers a- |  bove |
-"Dm7" G, | "G7" A,,6 B,2 | "Cmaj7" E,2 E,2 E,4- | "Am7" E,2 z2 z4 |
+"Dm7" G | "G7" A,6 B2 | "Cmaj7" E2 E2 E4- | "Am7" E2 z2 z4 |
 w: So | worth the | yearn- ing for, | _ * * |
-"Dm7" z2 G,2 G,,3 G, | "G7" _A, _A,2 _A, A,2 A, B,- | "Em7" B,2 B,2 B,4- | "A7" B,2 z2 z4 |
+"Dm7" z2 G2 G,3 G | "G7" _A _A2 _A A2 A B- | "Em7" B2 B2 B4- | "A7" B2 z2 z4 |
 w: * So swell to | keep ev- 'ry home- fire burn- | ing for _ | shame * * |
-:|2 "A7" A6 E,2 | "Dm7" G,6 D,2 | "Fm6" F,6 C,2 | "Cmaj7" E,4 B,2 C,2 |
+:|2 "A7" a6 E2 | "Dm7" G6 D2 | "Fm6" F6 C2 | "Cmaj7" E4 B2 C2 |
 w:  that you | can't see | your fu- | ture with me, |
-"E7" D,2 _D,2 C,2 B,2 | "Dm7" A,4 E4 | "G7" E,4 _E,2 D,2 | "C6" C,8- |
+"E7" D2 _D2 C2 B2 | "Dm7" A4 e4 | "G7" E4 _E2 D2 | "C6" C8- |
 w: 'cause you'd be oh, | so Eas- | y To Love! | _ |]
 
 X:908
@@ -25047,16 +27664,18 @@ C:Thelonius Monk
 N:Source: openbook
 M:4/4
 L:1/8
+%%id epistrophy-2
+%%tags needs-repair
 K:C
-"C#7" z2 ^C, D, ^A B,3 | "C#7" ^C,, D, ^A B,- B,2 z2 | "C#7" z2 ^C,, D, _B E,,3 | "C#7" ^C, D, _B E,,- E,2 z2 |
-"D#7" z2 ^D, E, C ^C,3 | "D#7" ^D,, E, C ^C,- ^C,2 z2 | "D#7" z2 ^D,, E, C ^F,, | "D#7" ^D, E, C ^F,,- ^F,2 z2 |
-"D#7" z2 ^D, E, C ^C,3 | "D#7" ^D,, E, C ^C,- ^C,2 z2 | "D#7" z2 ^D,, E, C ^F,, | "D#7" ^D, E, C ^F,,- ^F,2 z2 |
-"C#7" z2 ^C, D, ^A B,3 | "C#7" ^C,, D, ^A B,- B,2 z2 | "C#7" z2 ^C,, D, _B E,,3 | "C#7" ^C, D, _B E,,- E,2 z2 |
-"F#m" ^F,,2 ^F,2 ^C ^D, ^F, ^G, | "B7" A,2 ^G, A, ^F,2 ^D,2 | "Db7" ^F,,2 ^F,2 ^C ^D, ^F, A, | "D7" z A,2 ^G, ^F,2 ^D,2 |
-"D#7" B,2 B,2 ^C, ^D, ^F, ^G, | "D#7" B,2 A, B, A,2 ^F,2 | "D#7" F,2 _A,2 _C,2 _E,2- _E,2 _C,3 | "D#7" ^F,, A, C, E,- E, C,3 |
-"C#7" z2 ^D,, E, C ^C,3 | "C#7" ^D,, E, C ^C,- ^C,2 z2 | "C#7" z2 ^D,, E, C ^F,, | "C#7" ^D, E, C ^F,,- ^F,2 z2 |
-"C#7" z2 ^C, D, ^A B,3 | "Gb7#11" ^C,, D, ^A B,- B,2 z2 | z2 ^C,, D, _B E,,3 | ^C, D, _B E,,- E,2 z2 |
-^C, D, ^A B,- B,2 A,2 C,2- | C,8 |]
+"C#7" z2 ^C D ^a B3 | "C#7" ^C, D ^a B- B2 z2 | "C#7" z2 ^C, D _b E,3 | "C#7" ^C D _b E,- E2 z2 |
+"D#7" z2 ^D E c ^C3 | "D#7" ^D, E c ^C- ^C2 z2 | "D#7" z2 ^D, E c ^F, | "D#7" ^D E c ^F,- ^F2 z2 |
+"D#7" z2 ^D E c ^C3 | "D#7" ^D, E c ^C- ^C2 z2 | "D#7" z2 ^D, E c ^F, | "D#7" ^D E c ^F,- ^F2 z2 |
+"C#7" z2 ^C D ^a B3 | "C#7" ^C, D ^a B- B2 z2 | "C#7" z2 ^C, D _b E,3 | "C#7" ^C D _b E,- E2 z2 |
+"F#m" ^F,2 ^F2 ^c ^D ^F ^G | "B7" A2 ^G A ^F2 ^D2 | "Db7" ^F,2 ^F2 ^c ^D ^F A | "D7" z A2 ^G ^F2 ^D2 |
+"D#7" B2 B2 ^C ^D ^F ^G | "D#7" B2 A B A2 ^F2 | "D#7" F2 _A2 _C2 _E2- _E2 _C3 | "D#7" ^F, A C E- E C3 |
+"C#7" z2 ^D, E c ^C3 | "C#7" ^D, E c ^C- ^C2 z2 | "C#7" z2 ^D, E c ^F, | "C#7" ^D E c ^F,- ^F2 z2 |
+"C#7" z2 ^C D ^a B3 | "Gb7#11" ^C, D ^a B- B2 z2 | z2 ^C, D _b E,3 | ^C D _b E,- E2 z2 |
+^C D ^a B- B2 A2 C2- | C8 |]
 
 X:909
 T:Flamingo
@@ -25066,12 +27685,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id flamingo-2
 K:F
-C,2 |: "Fmaj7" "Gm7" C3 A,- A,4 | "Fm7" z2 _B, C, E,2 D, C, | "Bb7" _A,8 |
+C2 |: "Fmaj7" "Gm7" c3 A- A4 | "Fm7" z2 _B C E2 D C | "Bb7" _A8 |
 w: Fla- |  min- go, _ | * like a flame in the | sky, |
-"Db79" z2 G, _A, C,2 _B, _A, | "Gm7" F,2 F,6 | z2 F, F, G,2 F, G, | "Am7" :|1 "Gm7" A,8- |
+"Db79" z2 G _A C2 _B _A | "Gm7" F2 F6 | z2 F F G2 F G | "Am7" :|1 "Gm7" A8- |
 w: * fly- ing o- ver the | is- land | * to my lov- er near |  by. |
-A,4 z2 C,,2 | "F" :|2 "F" F,8- | F,2 z2 z2 F,2 |
+A4 z2 C,2 | "F" :|2 "F" F8- | F2 z2 z2 F2 |
 w: _ * Fla |  * | * * * * |]
 
 X:910
@@ -25082,26 +27702,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id fly-me-to-the-moon-3
+%%tags needs-repair
 K:C
-|: "Am7" C2 B,2 A, G,3 | "Dm7" F,3 G, A,2 C,2 | "G7" B,2 A,2 G, F,3 | "Cmaj7" E,8 |
+|: "Am7" c2 B2 A G3 | "Dm7" F3 G A2 C2 | "G7" B2 A2 G F3 | "Cmaj7" E8 |
 w:  Fly Me To The | Moon, and let me | play a- mong the | stars; |
-"Fmaj7" A,2 G,2 F, E,3 | "Bm7b5" D,3 E, F,2 A,2 | "E7b9" ^G,2 F,2 E, D,3 | "A" C,6 ^C,2 |
+"Fmaj7" A2 G2 F E3 | "Bm7b5" D3 E F2 A2 | "E7b9" ^G2 F2 E D3 | "A" C6 ^C2 |
 w: let me see what | spring is like on | Ju- pi- ter and | Mars. In |
-"Dm7" D, A2 A,- A,4- | "G" A,2 C,4 B,2 | "Cmaj79" G,8- | "A" G,6 B,,2 |
+"Dm7" D a2 A- A4- | "G" A2 C4 B2 | "Cmaj79" G8- | "A" G6 B,2 |
 w: oth- er words, _ | hold my hand! | _ | In oth- |
-"Dm7" C, F,2 F,- F,4- | "G7" F,2 A,4 G,2 | "Fdim7" F,4 E,4- | "Bm7" E,8 |
+"Dm7" C F2 F- F4- | "G7" F2 A4 G2 | "Fdim7" F4 E4- | "Bm7" E8 |
 w: er words, _ dar- | ling kiss me! | _ Fill | my |
-"Am7" C2 B,2 A, G,3 | "Dm7" F,3 G, A,2 C,2 | "G7" B,2 A,2 G, F,3 | "Cmaj7" E,8 |
+"Am7" c2 B2 A G3 | "Dm7" F3 G A2 C2 | "G7" B2 A2 G F3 | "Cmaj7" E8 |
 w: heart with song, and | let me sing for- | ev- er- more; you | are |
-"Fmaj7" A,2 G,2 F, E,3 | "Bm7b5" D,2 E,2 F,2 A,2 | "E7b9" ^G,2 F,2 E, D,3 | "A" C,6 ^C,2 |
+"Fmaj7" A2 G2 F E3 | "Bm7b5" D2 E2 F2 A2 | "E7b9" ^G2 F2 E D3 | "A" C6 ^C2 |
 w: all I long for | all I wor- ship | and a- dore. In | oth- er |
-"Dm7" D, A2 A,- A,4- | "G" A,2 C,4 B,2 | :|1 "Em7b5" G,8- | "A7b9" G,6 ^G,2 |
+"Dm7" D a2 A- A4- | "G" A2 C4 B2 | :|1 "Em7b5" G8- | "A7b9" G6 ^G2 |
 w: words, _ please be | true! _ In |  oth- | er words, |
-"Dm7" A, C,,2 C,- C,4- | "D" C,2 C,4 D,2 | "C6" C,8 | "Bm7" z8 |
+"Dm7" A C,2 C- C4- | "D" C2 C4 D2 | "C6" C8 | "Bm7" z8 |
 w: _ I love you! | true! _ In | oth- | * |
-:|2 "Em7b5" E8- | "A7b9" E,6 C,2 | "Dm7" D, A,2 A,- A,4- | "G" A,2 B,4 D,2 |
+:|2 "Em7b5" e8- | "A7b9" E6 C2 | "Dm7" D A2 A- A4- | "G" A2 B4 D2 |
 w:  er | words, _ | I love you! _ | * * * |
-"C6" C,8- | "C69" C,6 z2 |
+"C6" C8- | "C69" C6 z2 |
 w: * | * * |]
 
 X:911
@@ -25112,18 +27734,19 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id gentle-rain-2
 K:Amin
-|: "Am6" E,6 D, C, | "Bm7b5" C,6 D, E, | "E7" E,6 D, C, | "Am7" B,6 C, D, |
+|: "Am6" E6 D C | "Bm7b5" C6 D E | "E7" E6 D C | "Am7" B6 C D |
 w:  We both are | lost and a- | lone in the | world, Walk with |
-"Gm7" E,8- | "F6" E,4 E, G, E, C, | "F#m7b5" D,8- | "B7b9" D,6 z2 |
+"Gm7" E8- | "F6" E4 E G E C | "F#m7b5" D8- | "B7b9" D6 z2 |
 w: me | _ in the Gen- tle | Rain. | _ * |
-"Em7b5" C6 B, A, | "A7b9" A,6 G, ^F, | "Dm7b5" _B,6 A, G, | "Bm7b5" G,6 F, E, |
+"Em7b5" c6 B A | "A7b9" A6 G ^F | "Dm7b5" _B6 A G | "Bm7b5" G6 F E |
 w: Don't be af- | raid; I've a | hand for your | hand, And I |
-_A,6 G, F, | "Am6" F,6 E, D, | "Bb7" :|1 E,8- | "Am7" E,6 z2 |
+_A6 G F | "Am6" F6 E D | "Bb7" :|1 E8- | "Am7" E6 z2 |
 w: will be your | love for a |  while. | _ * |
-"Gm7" :|2 "F6" E,8- | "C7" E,4 E, G, E, C, | "F6" D,8- | "Em7" D,4 E, G, E, C, |
+"Gm7" :|2 "F6" E8- | "C7" E4 E G E C | "F6" D8- | "Em7" D4 E G E C |
 w:  sad, | _ like the Gen- tle | Rain, | _ like the Gen- tle |
-"Am" D,8- | "E7" D,4 B D, B, G, | A,8- | A,8 |
+"Am" D8- | "E7" D4 b D B G | A8- | A8 |
 w: Rain, | _ like the Gen- tle | Rain, | _ |]
 
 X:912
@@ -25133,14 +27756,15 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id giant-steps-2
 K:C
-"B" ^F4 D,4 | "G" B,4 G,3 _B,- | "Eb" _B,8 | "Am7" B,3 A,- A,4 |
+"B" ^f4 D4 | "G" B4 G3 _B- | "Eb" _B8 | "Am7" B3 A- A4 |
 w: Life when | we were kids | _ | Was like _ |
-"G" D,4 _B,4 | "Eb" G,4 ^D,3 ^F,- | "B" ^F,8 | "Fm7" G,4 F,3 _B,- |
+"G" D4 _B4 | "Eb" G4 ^D3 ^F- | "B" ^F8 | "Fm7" G4 F3 _B- |
 w: play- ing | gi- ant steps | _ | We were told |
-"Eb" _B,8 | "Am7" B,4 A,3 D,- | "G" D,8 | "C#m7" ^D,4 ^C,3 ^F,- |
+"Eb" _B8 | "Am7" B4 A3 D- | "G" D8 | "C#m7" ^D4 ^C3 ^F- |
 w: _ | to ad- vance | _ | We o- beyed, |
-"B" ^F,4 ^F,4 | "Fm7" G,4 F,3 _B,- | "Eb" _B,8 | "C#m7" ^F,3 ^F,- ^F,4 |
+"B" ^F4 ^F4 | "Fm7" G4 F3 _B- | "Eb" _B8 | "C#m7" ^F3 ^F- ^F4 |
 w: _ _ | took the chance | _ | You're it _ |]
 
 X:913
@@ -25149,13 +27773,15 @@ C:Scott LaFaro
 N:Source: openbook
 M:4/4
 L:1/8
+%%id gloria-s-step
+%%tags needs-repair
 K:C
-|: "Fmaj7" z G2 C, B, C, A, :| "Ebmaj7" z A, E, | "Dbmaj7" G,8 | "C7#9" z F, G, F,- F, _E, C, _E,- |
-"Fm7" _E,4 z C, _B, C,- | C,8 | "Em7" G2 A, B,- B,4 | "Fmaj1" z A,3 B,2 C, D,- |
-"Am7b5" D,4 z C, G, _B,- | "Em7b5" _B,6 A,2 | "Gm7b5" C,4 z _B, F, _A,- | "Dm7b5" _A,6 G,2 |
-"G7#9" _B,4 z _A,/ _B,/ _A, _D,, | "C7#9" _E4 z _D,/ _E,/ _D, _A, | "Eb7#9" _G8- | "Fmaj7" _G,8 |
-"Ebmaj7" z G,,2 C, B, C, A, z A, E, | "Dbmaj7" G,8 | "C7#9" z F, G, F,- F, _E, C, _E,- | "Fm7" _E,4 z C, _B, C,- |
-C,8 |]
+|: "Fmaj7" z g2 C B C A :| "Ebmaj7" z A E | "Dbmaj7" G8 | "C7#9" z F G F- F _E C _E- |
+"Fm7" _E4 z C _B C- | C8 | "Em7" g2 A B- B4 | "Fmaj1" z A3 B2 C D- |
+"Am7b5" D4 z C G _B- | "Em7b5" _B6 A2 | "Gm7b5" C4 z _B F _A- | "Dm7b5" _A6 G2 |
+"G7#9" _B4 z _A/ _B/ _A _D, | "C7#9" _e4 z _D/ _E/ _D _A | "Eb7#9" _g8- | "Fmaj7" _G8 |
+"Ebmaj7" z G,2 C B C A z A E | "Dbmaj7" G8 | "C7#9" z F G F- F _E C _E- | "Fm7" _E4 z C _B C- |
+C8 |]
 
 X:914
 T:Green Dolphin Street
@@ -25165,18 +27791,20 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id green-dolphin-street-2
+%%tags needs-repair
 K:C
-|: "Cmaj7" C4 C,4- | "Cm7" C,4 B,2 G,2 E,2 | "D7" _B8- | "D7" _B,8 |
+|: "Cmaj7" c4 C4- | "Cm7" C4 B2 G2 E2 | "D7" _b8- | "D7" _B8 |
 w:  Lo- ver, | _ one love- ly | day | _ |
-"Cmaj7" A,4 A,4- | A,4 _A,2 F,2 _D,2 | "Dm7" G,8- | "G7" G,8 |
+"Cmaj7" A4 A4- | A4 _A2 F2 _D2 | "Dm7" G8- | "G7" G8 |
 w: Alove came | _ plan- ning to | stay | _ |
-"Cmaj7" :|1 "Fm7" z G,3 D,2 E,2 | "Bb7" F,2 G,2 _A,2 _B,2 | "Eb" G,8- | G,8 |
+"Cmaj7" :|1 "Fm7" z G3 D2 E2 | "Bb7" F2 G2 _A2 _B2 | "Eb" G8- | G8 |
 w:  * Green Dol- phin | Street sup- plied the | setting | _ |
-"Dm7" z _B,3 F,2 G,2 | "Bm7b5" _A,2 _B,2 _C,2 _D,2 | "Am7" _B,8- | "F#m7b5" _B,4 B,4 |
+"Dm7" z _B3 F2 G2 | "Bm7b5" _A2 _B2 _C2 _D2 | "Am7" _B8- | "F#m7b5" _B4 B4 |
 w: * Theset- ting for | nights be- yond for- | getting | _ And |
-"Em7" :|2 "Dm7" z G,3 D,2 E,2 | "Cmaj7" F,2 G,2 ^G,2 E2 | "Dm7" D,3 C,- C,4 | C,,2 D,2 ^D,2 B2 |
+"Em7" :|2 "Dm7" z G3 D2 E2 | "Cmaj7" F2 G2 ^G2 e2 | "Dm7" D3 C- C4 | C,2 D2 ^D2 b2 |
 w:  * When I re- | call the love I | found on I'mgonna | kissthe ground I found |
-A,3 G,- G,4 | z G,3 G,2 G,2 | G,8- | G,8 |
+A3 G- G4 | z G3 G2 G2 | G8- | G8 |
 w: on Green Dol- | * phin Street _ | * | * |]
 
 X:915
@@ -25186,10 +27814,11 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:6/8
 L:1/8
+%%id greensleeves
 K:Emin
-E, |: "E" G,2 A, B,3/2 C,/ B, | "D" A,2 ^F, D,3/2 E,/ ^F, | :|1 "E" G,2 E, E,3/2 ^D,/ E, |
+E |: "E" G2 A B3/2 C/ B | "D" A2 ^F D3/2 E/ ^F | :|1 "E" G2 E E3/2 ^D/ E |
 w: A- |  las, my love, _ _ | you do me wrong _ |  _ to cast me off |
-"B" ^F,2 ^D, B,2 E, | :|2 "E" G, ^F, E, ^D,3/2 ^C,/ ^D, | "Em" E,2 E, E,2 z |
+"B" ^F2 ^D B2 E | :|2 "E" G ^F E ^D3/2 ^C/ ^D | "Em" E2 E E2 z |
 w: _ _ dis- cour- |  teous- ly. And _ _ _ | _ _ _ * |]
 
 X:916
@@ -25200,12 +27829,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id guilty
 K:Bb
-|: "Bb" F, G, F, G,- G,4 | "Cm" G, A, G, A,- A,4 | "Bbmaj7" A, _B, A, _B,- _B, A, _B,2 | "Ebmaj7" D,4 C,4 |
+|: "Bb" F G F G- G4 | "Cm" G A G A- A4 | "Bbmaj7" A _B A _B- _B A _B2 | "Ebmaj7" D4 C4 |
 w:  Is it a sin, _ | is it a crime, _ | lov- ing you dar, _ like i | do? _ |
-"Bb" C, _B, A, G,- G, A, _B,2 | "Cm7" F,2 F,6 | :|1 "Cm7" F,2 C,2 F,2 :|2 "Bb" G, _E, G,2 A, _B, C, _B,- |
+"Bb" C _B A G- G A _B2 | "Cm7" F2 F6 | :|1 "Cm7" F2 C2 F2 :|2 "Bb" G _E G2 A _B C _B- |
 w: _ If it's a crime _ then | I'm Guilt- |  y, Guilt- y of lov- ing you. _ Guit- y |
-_B,6 z2 |
+_B6 z2 |
 w: of * |]
 
 X:917
@@ -25216,24 +27846,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id hallelujah-i-love-him-her-so
 K:F
-"F" z3/2 C/ D,3/2 C,/ _A,3/2 G,/ F,3/2 D,/ | "Bb" F,2 F, _A,- _A, z z2 | "F" z3/2 C,/ D,3/2 C,/ _A,3/2 G,/ F,3/2 D,/ | "Bb" F,2 F, D,- D,3/2 C,/ z2 |
+"F" z3/2 c/ D3/2 C/ _A3/2 G/ F3/2 D/ | "Bb" F2 F _A- _A z z2 | "F" z3/2 C/ D3/2 C/ _A3/2 G/ F3/2 D/ | "Bb" F2 F D- D3/2 C/ z2 |
 w: * _ Let me tell you 'bout a | boy I know. _ * * | * He is my ba- by and he | lives next door _ _ * |
-"F" z2 D3/2 C,/ _A,3/2 G,/ F,3/2 D,/ | "F" F,2 F, F,- F, z z2 | "Bb" z3/2 D,/ F,3/2 D,/ F,3/2 D,/ F,3/2 D,/ | "Bdim7" F,2 F, F,- F,3/2 C,/ D,3/2 F,/ |
+"F" z2 d3/2 C/ _A3/2 G/ F3/2 D/ | "F" F2 F F- F z z2 | "Bb" z3/2 D/ F3/2 D/ F3/2 D/ F3/2 D/ | "Bdim7" F2 F F- F3/2 C/ D3/2 F/ |
 w: * Ev- 'ry morn- ing 'fore the | sun comes up _ * * | * he brings my cof- fee in my | fav- 'rite cup _ That's why I |
-"F" A, C,3 z2 A,3/2 A,/ | "Dm" G, F,3 z2 _A,3/2 G,/ | "G7" _A,3/2 G,/ F,3/2 D,/ F,2 F, F,- | "F" F, z z2 z4 |
+"F" A C3 z2 A3/2 A/ | "Dm" G F3 z2 _A3/2 G/ | "G7" _A3/2 G/ F3/2 D/ F2 F F- | "F" F z z2 z4 |
 w: know, _ * _ yes, | I know, * _ _ | Hal- le- lu- jah, I just love | him * * * |
-"Bb6" z3/2 D,/ F,3/2 D,/ F,3/2 D,/ F,3/2 D,/ | "Bdim7" F,3/2 F,/ F,2 z4 | "F" z2 A,2 D,3/2 C,/ A,3/2 F,/ | "F7" A,2 F, G,- G,2 z2 |
+"Bb6" z3/2 D/ F3/2 D/ F3/2 D/ F3/2 D/ | "Bdim7" F3/2 F/ F2 z4 | "F" z2 A2 D3/2 C/ A3/2 F/ | "F7" A2 F G- G2 z2 |
 w: * so. _ Now if I call him | on the tel- * | * e- phone, and tell him | that I'm all a- * |
-"Bb79" z2 F,3/2 D,/ F,3/2 D,/ F,3/2 D,/ | "Ab9" F,2 F, F,- F, z z2 | "G7" z3/2 D,/ G,3/2 D,/ z4 | "C7" G, A,2 D,- D,2 C,2 |
+"Bb79" z2 F3/2 D/ F3/2 D/ F3/2 D/ | "Ab9" F2 F F- F z z2 | "G7" z3/2 D/ G3/2 D/ z4 | "C7" G A2 D- D2 C2 |
 w: * lone, _ by the time I | count from one to * * | * four, _ I * | hear him on my door. |
-"F" z2 D,3/2 C,/ _A,3/2 G,/ F,3/2 D,/ | "Bb" F,2 F, _A,- _A, z z2 | "F" z2 D,3/2 C,/ _A,3/2 G,/ F,3/2 D,/ | "Bb" F,2 F, D,- D,3/2 C,/ z2 |
+"F" z2 D3/2 C/ _A3/2 G/ F3/2 D/ | "Bb" F2 F _A- _A z z2 | "F" z2 D3/2 C/ _A3/2 G/ F3/2 D/ | "Bb" F2 F D- D3/2 C/ z2 |
 w: * _ _ In the eve- ning | when the sun goes * * | * down, _ when there is no- | bod- y else a- round * |
-"F" z3/2 C/ D,3/2 C,/ _A,3/2 G,/ F,3/2 D,/ | "F" F,2 F, F,- F, z z2 | "Bb" z3/2 D,/ F,3/2 D,/ F,3/2 D,/ F,3/2 D,/ | "Bdim7" F,2 F, F,- F,3/2 C,/ D,3/2 F,/ |
-w: * _ _ he kiss- es me _ | _ and he holds * * | * me tight. _ He tells me "\"Ba"- | by ev- 'ry- thing's all "right.\"" That's |
-"F" A, C,3 z2 A,3/2 A,/ | "Dm" G, F,3 z2 _A,3/2 G,/ | "G7" _A,3/2 G,/ F,3/2 D,/ F,2 F, F,- | "F" F,8- |
+"F" z3/2 c/ D3/2 C/ _A3/2 G/ F3/2 D/ | "F" F2 F F- F z z2 | "Bb" z3/2 D/ F3/2 D/ F3/2 D/ F3/2 D/ | "Bdim7" F2 F F- F3/2 C/ D3/2 F/ |
+w: * _ _ he kiss- es me _ | _ and he holds * * | * me tight. _ He tells me ""Ba"- | by ev- 'ry- thing's all "right."" That's |
+"F" A C3 z2 A3/2 A/ | "Dm" G F3 z2 _A3/2 G/ | "G7" _A3/2 G/ F3/2 D/ F2 F F- | "F" F8- |
 w: why I * know, _ | _ yes, * I know. | _ _ Hal- le- lu- jah, I | just |
-"F" F,4 z4 |
+"F" F4 z4 |
 w: love * |]
 
 X:918
@@ -25244,20 +27875,21 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id have-you-met-miss-jones-2
 K:F
-"Fmaj7" A2 D,,2 C,2 D,2 | "F#dim7" C,6 z2 | "Gm7" D,2 E,2 F,2 G,2 | "C7" A,2 _B,2 C,4 |
-w: "\"Have" You Met Miss | "Jones?\"" * | Some one said as | we shook hands. |
-"Am7" D,2 G,,2 F,2 G,2 | "Dm7" F,6 A,2 | "Gm7" _B,8- | "C7" _B,6 z2 |
+"Fmaj7" a2 D,2 C2 D2 | "F#dim7" C6 z2 | "Gm7" D2 E2 F2 G2 | "C7" A2 _B2 C4 |
+w: ""Have" You Met Miss | "Jones?"" * | Some one said as | we shook hands. |
+"Am7" D2 G,2 F2 G2 | "Dm7" F6 A2 | "Gm7" _B8- | "C7" _B6 z2 |
 w: She was just Miss | Jones to | me. | _ * |
-"Fmaj7" C,8- | "F#dim7" C,2 D,2 D,2 D,2 | "Gm7" C,2 _B,2 F,2 G,2 | "C7" _A,2 _A,2 _A,2 _A,2 |
-w: Then | I said "\"Miss" Jones, | You're a girl who | un- der- stands, I'm |
-"Am7" _A,2 _G,2 _D,2 _E,2 | "Dm7" E,2 E,2 E,2 E,2 | "Cm7" E,2 D,2 ^F,2 A,2 | "F7" _D,4 _D,4 |
-w: a man who must | be "free.\"" _ And | all at once I | lost my |
-"Bbmaj7" _B,8- | "Abm7" _B,6 z2 |: "Gbmaj7" "Em7" A,2 D,,2 C,2 D,2 | "Dmaj7" C,6 z2 |
+"Fmaj7" C8- | "F#dim7" C2 D2 D2 D2 | "Gm7" C2 _B2 F2 G2 | "C7" _A2 _A2 _A2 _A2 |
+w: Then | I said ""Miss" Jones, | You're a girl who | un- der- stands, I'm |
+"Am7" _A2 _G2 _D2 _E2 | "Dm7" E2 E2 E2 E2 | "Cm7" E2 D2 ^F2 A2 | "F7" _D4 _D4 |
+w: a man who must | be "free."" _ And | all at once I | lost my |
+"Bbmaj7" _B8- | "Abm7" _B6 z2 |: "Gbmaj7" "Em7" A2 D,2 C2 D2 | "Dmaj7" C6 z2 |
 w: breath, | and * |  all at once was | scared * |
-"Abm7" D,2 E,2 F,2 G,2 | "Gbmaj7" A,2 _B,2 C,2 D,2 | "Gm7" E,8- | E,2 D,2 A,2 G,2 |
+"Abm7" D2 E2 F2 G2 | "Gbmaj7" A2 _B2 C2 D2 | "Gm7" E8- | E2 D2 A2 G2 |
 w: to death, and all | at once I owned | the | earth and sky! _ |
-"Fmaj7" :|1 "F#dim7" F,8 | "Gm7" z8 | "C7" :|2 "Am7" F,8- | "Gm7" F,6 z2 |
+"Fmaj7" :|1 "F#dim7" F8 | "Gm7" z8 | "C7" :|2 "Am7" F8- | "Gm7" F6 z2 |
 w:  Now | * |  I've | met * |]
 
 X:919
@@ -25268,24 +27900,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id heart-and-soul
 K:F
-"F" F,2 F,2 F,4- | "Gm7" F, F, E, D, E, F, G,2 | "F" A,2 A,2 A,4- | "Gm7" A, A, G, F, G, A, _B,2 |
+"F" F2 F2 F4- | "Gm7" F F E D E F G2 | "F" A2 A2 A4- | "Gm7" A A G F G A _B2 |
 w: Heart and soul, | _ I fell in love with you | Heart and Soul, | _ the way a fool would do, |
-"F" C,4 F,,4 | "Gm7" z D C, _B, A,2 G,2 | "F" F,4- F, G, A, _B, | "Gm7" C,2 _B, A, G,4 |
+"F" C4 F,4 | "Gm7" z d C _B A2 G2 | "F" F4- F G A _B | "Gm7" C2 _B A G4 |
 w: Mad- ly, | * be- case you held me | tight _ and stole a | kiss in the night. |
-"F" F,2 F,2 F,4- | "Gm7" F, F, E, D, E, F, G,2 | "F" A,2 A,2 A,4- | "Gm7" A, A, G, F, G, A, _B,2 |
+"F" F2 F2 F4- | "Gm7" F F E D E F G2 | "F" A2 A2 A4- | "Gm7" A A G F G A _B2 |
 w: Heart and soul, | _ I begged to be a- dored; | Lost con- trol, | _ and tum- bled o- ver- board |
-"F" C,4 F,,4 | "Gm7" z D C, _B, A,2 G,2 | "F" F,4- F, G, A, _B, | "F" C,2 F,,6 |
+"F" C4 F,4 | "Gm7" z d C _B A2 G2 | "F" F4- F G A _B | "F" C2 F,6 |
 w: Glad- ly, | * that mag- ic night we | kissed. _ there in the | moon- mist. |
-"Bb" z D C, _B, A,3 G, | "D7" ^F,4 G,4 | "C7" E,4 F,4 | "E7" D,4 E,4 |
+"Bb" z d C _B A3 G | "D7" ^F4 G4 | "C7" E4 F4 | "E7" D4 E4 |
 w: * Oh! but your lips were | thrill- ing, | much too | thirll- ing. |
-"Bb" z D C, _B, A,3 G, | "D7" ^F,4 G,4 | "C9" E,4 F,4 | "E7" D,4 E,3 C, |
+"Bb" z d C _B A3 G | "D7" ^F4 G4 | "C9" E4 F4 | "E7" D4 E3 C |
 w: * Nev- er be- fore were | mine so | strange- ly | will- ing. But |
-"F" F,2 F,2 F,4- | "Gm7" F, F, E, D, E, F, G,2 | "F" A,2 A,2 A,4- | "Gm7" A, A, G, F, G, A, _B,2 |
+"F" F2 F2 F4- | "Gm7" F F E D E F G2 | "F" A2 A2 A4- | "Gm7" A A G F G A _B2 |
 w: now I see | _ what one em- brace can do. | Look at me, | _ it's got me love- ing you, |
-"F" C,4 F,,4 | "Gm7" z D C, _B, A,2 G,2 | "A7" A,8 | "Gm7" z _B, A, G, F,2 E,2 |
+"F" C4 F,4 | "Gm7" z d C _B A2 G2 | "A7" A8 | "Gm7" z _B A G F2 E2 |
 w: Mad- ly | * that lit- tle kiss your | stole | * Heald all my heart and |
-"F" F,8- | "F" F,6 z2 |
+"F" F8- | "F" F6 z2 |
 w: soul. | _ * |]
 
 X:920
@@ -25296,24 +27929,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id here-s-that-rainy-day-2
 K:G
-|: "G" D,2 D,4 D,2 | "Bb7" D,2 F,2 _B,2 D,2 | "Ebmaj7" D,4 C,3 B,3 | "Eb6" C,8 |
+|: "G" D2 D4 D2 | "Bb7" D2 F2 _B2 D2 | "Ebmaj7" D4 C3 B3 | "Eb6" C8 |
 w:  May- be I | should have saved those | left- ov- er | dreams; |
-"Am7" D,,2 D,4 D,2 | "D" D,2 ^F,2 A,2 C,2 | "Gmaj7" B,8- | "Dm7" B,6 z2 |
+"Am7" D,2 D4 D2 | "D" D2 ^F2 A2 C2 | "Gmaj7" B8- | "Dm7" B6 z2 |
 w: fun- ny, but | Here's That Rain- y | Day. | _ * |
-"Cm7" _E,4 _E,4 | "F9" _E,2 G,,2 _A,2 A,2 | "Bb" D,4 F,,2 ^F,2 | "Ebmaj7" G,4 F,2 G,2 |
+"Cm7" _E4 _E4 | "F9" _E2 G,2 _A2 A2 | "Bb" D4 F,2 ^F2 | "Ebmaj7" G4 F2 G2 |
 w: Here's That | Rain- y Day they | told me a- | bout, and I |
-"Am7" C,2 C, C, C,2 C, C, | "D" C,2 E,,2 ^E,2 ^F,2 | "Gmaj7" B,8- | "Am7" B,6 z2 |
+"Am7" C2 C C C2 C C | "D" C2 E,2 ^E2 ^F2 | "Gmaj7" B8- | "Am7" B6 z2 |
 w: laughed at the thought that it | might turn out this | way. | _ * |
-"G" D,,2 D,4 D,2 | "Bb7" D,2 F,2 _B,2 D,2 | "Ebmaj7" D,4 C,3 B,3 | "Eb6" C,8 |
+"G" D,2 D4 D2 | "Bb7" D2 F2 _B2 D2 | "Ebmaj7" D4 C3 B3 | "Eb6" C8 |
 w: Where is that | worn out wish that | I threw a- | side, |
-"Am7" D,,2 D,4 D,2 | "D" D,2 ^F,2 A,2 C,2 | "Gmaj9" B,8- | "Dm7" B,6 z2 |
+"Am7" D,2 D4 D2 | "D" D2 ^F2 A2 C2 | "Gmaj9" B8- | "Dm7" B6 z2 |
 w: Af- ter it | brought my lov- er | near? | _ * |
-"Cmaj7" E,2 E,4 E,2 | "Am7" E,2 A,,2 B,2 C,2 | "Bm7" D,4 ^F,,2 G,2 | "A7b5" A,8 |
+"Cmaj7" E2 E4 E2 | "Am7" E2 A,2 B2 C2 | "Bm7" D4 ^F,2 G2 | "A7b5" A8 |
 w: Fun- ny how | love be- comes a | cold rain- y | day. |
-"Am7" D,,2 D,4 D,2 | "D7" D,2 ^F,2 A,2 B,2 | :|1 "G" G,8- | "Am7" G,2 z2 z4 |
+"Am7" D,2 D4 D2 | "D7" D2 ^F2 A2 B2 | :|1 "G" G8- | "Am7" G2 z2 z4 |
 w: Fun- ny that | rain- y day is |  here. | _ * * |
-:|2 "G" G,8- | "Bb6" G,8- | "Ebmaj7" G,8- | "G6" G,6 z2 |
+:|2 "G" G8- | "Bb6" G8- | "Ebmaj7" G8- | "G6" G6 z2 |
 w:  here. | _ | * | * * |]
 
 X:921
@@ -25324,24 +27958,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id honeysuckle-rose-3
 K:F
-|: "Gm7" C _B, D,, F, A,4 | "Gm7" C, _B, D,, F, A,4 | "Gm7" C, _B, D,, F, A,2 A,2 | "Gm7" A,4 A, G, F, D, |
+|: "Gm7" c _B D, F A4 | "Gm7" C _B D, F A4 | "Gm7" C _B D, F A2 A2 | "Gm7" A4 A G F D |
 w:  Ev- 're hon- ey bee | fills with jeal- ous- y | when they see you out with | me, I don't blame them, |
-"F" F,2 F,2 F,4- | "Gm7" F,4 A, G, F, D, | "F" F,8- | "Am7b5" F,2 z2 z4 |
+"F" F2 F2 F4- | "Gm7" F4 A G F D | "F" F8- | "Am7b5" F2 z2 z4 |
 w: good- ness knows, | _ Hon- ey- sucke- le | Rose. | _ * * |
-"Gm7" C _B, D,, F, A,4 | "Gm7" C, _B, D,, F, A,4 | "Gm7" C, _B, D,, F, A,2 A,2 | "Gm9" A,4 A, G, F, D, |
+"Gm7" c _B D, F A4 | "Gm7" C _B D, F A4 | "Gm7" C _B D, F A2 A2 | "Gm9" A4 A G F D |
 w: When you're pass -in' by, | flow- ers droop and sigh, | and I know the rea- son | why; You're much sweet- er |
-"F" F,2 F,2 F,4- | "Gm7" F,4 A, G, F, D, | "F" F,8- | "Gm7" F,2 z2 z4 |
+"F" F2 F2 F4- | "Gm7" F4 A G F D | "F" F8- | "Gm7" F2 z2 z4 |
 w: good- ness knows, | _ Hon- ey- suck- le | Rose. | _ * * |
-"F7" F,4 G,4 | "Fdim" ^G,4 A,4 | "Bb" z2 _B, C,- C, _B, C,2 | "Gb9" _D,2 C, _B,- _B,4 |
+"F7" F4 G4 | "Fdim" ^G4 A4 | "Bb" z2 _B C- C _B C2 | "Gb9" _D2 C _B- _B4 |
 w: Don't buy | sug- ar, | * you just have to touch | my cup. _ You're |
-"G7" G,4 A,4 | "Gdim" ^A,4 B,4 | "C7" z2 C, D,- D, C, D,2 | "Ab9" _E,2 D, C,- C,4 |
+"G7" G4 A4 | "Gdim" ^A4 B4 | "C7" z2 C D- D C D2 | "Ab9" _E2 D C- C4 |
 w: my sug- | ar, it's | * sweet when you stir it | up. _ When I'm |
-"Gm7" C, _B, D,, F, A,4 | "Gm7" C, _B, D,, F, A,4 | "Gm7" C, _B, D,, F, A,2 A,2 | "Gm9" A,4 A, G, F, D, |
+"Gm7" C _B D, F A4 | "Gm7" C _B D, F A4 | "Gm7" C _B D, F A2 A2 | "Gm9" A4 A G F D |
 w: tak- in' sips from your | tas- ty lips, seems the | hon- ey fair- ly drips. You're | con- fec- tion, good- ness |
-"F" F,2 F,2 F,4- | "Gm7" F,4 A, G, F, D, | :|1 "F" F,8- | "Am7b5" F,2 z2 z4 |
+"F" F2 F2 F4- | "Gm7" F4 A G F D | :|1 "F" F8- | "Am7b5" F2 z2 z4 |
 w: knows, _ Hon- | ey- suck- le rose. _ |  Rose. | _ * * |
-:|2 "F" F,8- | "Gm7" F,4- F, z z2 |
+:|2 "F" F8- | "Gm7" F4- F z z2 |
 w:  * | * * * * |]
 
 X:922
@@ -25352,22 +27987,24 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id how-deep-is-the-ocean-2
+%%tags needs-repair
 K:Eb
-"Cm7" z2 _E,2 _E,2 D,2 _E,2 | "Dm7b5" G,2 G,6 | "Cm7" z2 _E,2 _E,2 D,2 _E,2 | "Am7b5" G,6 z2 |
+"Cm7" z2 _E2 _E2 D2 _E2 | "Dm7b5" G2 G6 | "Cm7" z2 _E2 _E2 D2 _E2 | "Am7b5" G6 z2 |
 w: * How much do I | love you? | * I'll tell you no | lie. * |
-"Gm7" z2 _B,2 _B,2 A,2 _B,2 | "Am7b5" C,2 C,6 | "Gm7" z2 _B,2 _B,2 A,2 _B,2 | "Fm7" C,8 |
+"Gm7" z2 _B2 _B2 A2 _B2 | "Am7b5" C2 C6 | "Gm7" z2 _B2 _B2 A2 _B2 | "Fm7" C8 |
 w: * How Deep Is The | O- cean, | * how high is the | sky? |
-"Ebmaj7" z2 _E,2 _E,2 _E,2 | "Bbm7" _E, _B,2 _B,- _B,2 _B,2 | "Ab7" _B,2 _G,2 _G,2 _G,2- | "Ab7" _G,8 |
+"Ebmaj7" z2 _E2 _E2 _E2 | "Bbm7" _E _B2 _B- _B2 _B2 | "Ab7" _B2 _G2 _G2 _G2- | "Ab7" _G8 |
 w: * How man- y | times a day _ do | I think of you? | _ |
-"Cm7b5" _G,2 _E,2 _E,2 _E,2- | "F7" _E,2 D,4 _E,2 | "Bb7" _G,2 F,2 F,2 F,2- | "Dm7b5" F,4 z4 |
+"Cm7b5" _G2 _E2 _E2 _E2- | "F7" _E2 D4 _E2 | "Bb7" _G2 F2 F2 F2- | "Dm7b5" F4 z4 |
 w: How man- y ros- | es are sprink- | led with dew? _ | How * |
-"Cm7" z2 _E,2 _E,2 D,2 _E,2 | "Dm7b5" G,2 G,6 | "Cm7" z2 _E,2 _E,2 D,2 _E,2 | "Am7b5" G,6 z2 |
+"Cm7" z2 _E2 _E2 D2 _E2 | "Dm7b5" G2 G6 | "Cm7" z2 _E2 _E2 D2 _E2 | "Am7b5" G6 z2 |
 w: * far would I trav- | el to | * be whre you are? | How * |
-"Gm7" z2 _B,2 _B,2 A,2 _B,2 | "Am7b5" C,2 C,6 | "Gm7" z2 _B,2 _B,2 A,2 _B,2 | "Fm7" C,8 |
+"Gm7" z2 _B2 _B2 A2 _B2 | "Am7b5" C2 C6 | "Gm7" z2 _B2 _B2 A2 _B2 | "Fm7" C8 |
 w: * far is the jour- | ney for | * here to a star? | And |
-"Eb7" z2 _E,2 _E,2 _D,2 | "Gm7b5" _D,2 C,2 C,2 _B,2 | "Fm7" z2 _A,2 _A,2 G,2 F,2 | "Abm7" _A,8 |
+"Eb7" z2 _E2 _E2 _D2 | "Gm7b5" _D2 C2 C2 _B2 | "Fm7" z2 _A2 _A2 G2 F2 | "Abm7" _A8 |
 w: * if I ev- | er lost you, how | * much would I cry? | How |
-"Ebmaj7" z2 G,2 G,2 F,2 _E,2 | "F7" G,2 G,6 | "Fm7" z2 F,2 F,2 _E,2 D,2 | "Ebmaj7" _E,6 z2 |
+"Ebmaj7" z2 G2 G2 F2 _E2 | "F7" G2 G6 | "Fm7" z2 F2 F2 _E2 D2 | "Ebmaj7" _E6 z2 |
 w: * Deep Is The O- | cean, how | * high is the sky? | * * |]
 
 X:923
@@ -25378,24 +28015,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id how-high-the-moon-2
 K:G
-D,2 G,2 A,2 |: "Gmaj7" A,4 B,4- | "Gm7" B,2 D,,2 G,2 A,2 | "C7" _B,8- |
+D2 G2 A2 |: "Gmaj7" A4 B4- | "Gm7" B2 D,2 G2 A2 | "C7" _B8- |
 w: Some- where there's |  mu- sic, | _ how faint the | tune! |
-"Fmaj7" _B,2 C,,2 F,2 G,2 | "Fm7" G,4 A,4- | "Bb7" A,2 C,,2 F,2 G,2 | "Ebmaj7" _A,8- |
+"Fmaj7" _B2 C,2 F2 G2 | "Fm7" G4 A4- | "Bb7" A2 C,2 F2 G2 | "Ebmaj7" _A8- |
 w: _ Some- where there's | heav- en, | _ How High The | Moon! |
-"Am7b5" _A,2 D,,2 _E,2 F,2 | "Gm7" G,2 G,2 G,2 G,2 | "Am7b5" G,2 G, A,- A, G, A,2 | "Gmaj79" _B,8- |
+"Am7b5" _A2 D,2 _E2 F2 | "Gm7" G2 G2 G2 G2 | "Am7b5" G2 G A- A G A2 | "Gmaj79" _B8- |
 w: _ There is no | moon a- bove when | love is far _ a- way | too, |
-"Am" _B,3 A,- A, G, A,2 | "Bm7" B,2 | "Am7" B,2 A,2 B,2 C,2 | "Gmaj7" D,2 D,2 D,2 D,2 |
+"Am" _B3 A- A G A2 | "Bm7" B2 | "Am7" B2 A2 B2 C2 | "Gmaj7" D2 D2 D2 D2 |
 w: _ 'till _ it comes | true | _ that you love | me as I love |
-"Gm7" D,2 D,,2 G,2 A,2 | "C7" A,4 B,4- | "Fmaj7" B,2 D,,2 G,2 A,2 | "Fm7" _B,8- |
+"Gm7" D2 D,2 G2 A2 | "C7" A4 B4- | "Fmaj7" B2 D,2 G2 A2 | "Fm7" _B8- |
 w: you. Some- where there's | mu- sic, | _ it's where you | are. |
-"Bb7" _B,2 C,,2 F,2 G,2 | "Ebmaj7" G,4 A,4- | "Am7b5" A,2 C,,2 F,2 G,2 | "Gmaj7" _A,8- |
+"Bb7" _B2 C,2 F2 G2 | "Ebmaj7" G4 A4- | "Am7b5" A2 C,2 F2 G2 | "Gmaj7" _A8- |
 w: _ Some- where there's | heav- en, | _ how near, how | far! |
-"Am7" _A,2 D,,2 _E,2 F,2 | "Bm7" G,2 G,2 G,2 G,2 | "Am7" G,2 G, A,- A, G, A,2 | B,8- |
+"Am7" _A2 D,2 _E2 F2 | "Bm7" G2 G2 G2 G2 | "Am7" G2 G A- A G A2 | B8- |
 w: _ The dark- est | night would shine if | you would come _ to me | soon. |
-"G6" B,2 A,2 B,2 C,2 | "D7" D,2 D,2 D,2 D,2 | D,2 D,,2 G,2 A,2 | "G" :|1 G,8 |
+"G6" B2 A2 B2 C2 | "D7" D2 D2 D2 D2 | D2 D,2 G2 A2 | "G" :|1 G8 |
 w: _ Un- til you | will, how still my | heart, How High The |  Moon! |
-z2 D,2 G,2 A,2 | :|2 G,8- | G,6 z2 |
+z2 D2 G2 A2 | :|2 G8- | G6 z2 |
 w: * Some- where there's |  Moon! | _ * |]
 
 X:924
@@ -25406,24 +28044,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id how-insensitive-3
+%%tags needs-repair
 K:Dmin
-|: "Dm7" A8- | "Dbdim7" A,2 _B, A,- A, _B,2 A,- | "Cm6" A,8- | "G7" A,2 _B, A,- A, _B,2 A,- |
+|: "Dm7" a8- | "Dbdim7" A2 _B A- A _B2 A- | "Cm6" A8- | "G7" A2 _B A- A _B2 A- |
 w:  How | _ In- sen- _ si- tive | _ | I must _ have seemed _ |
-"Bbmaj7" A,4- A, ^G,2 A, | "Ebmaj7" C, B,2 _B,- _B, A,2 A,- | "Em7b5" A,3 G,- G,4- | "A7b9" G,4- G,3 G,- |
+"Bbmaj7" A4- A ^G2 A | "Ebmaj7" C B2 _B- _B A2 A- | "Em7b5" A3 G- G4- | "A7b9" G4- G3 G- |
 w: when she told me | that _ she loved _ me. | _ How _ | un- moved _ |
-"Dm7" G,8- | "Db7" G,2 A, G,- G, A,2 G,- | "Cm7" G,8- | "Bdim7" G,2 A, G,- G, A,2 G,- |
+"Dm7" G8- | "Db7" G2 A G- G A2 G- | "Cm7" G8- | "Bdim7" G2 A G- G A2 G- |
 w: and | cold _ I must _ have | seemed | _ when she told me so |
-"Bbmaj7" G,4 z ^F,2 G, | "Em7b5" _B, A,2 ^G,- ^G, G,2 G,- | "D" G,3 F,- F,4- | "Cm7" F,4- F,3 F,- |
+"Bbmaj7" G4 z ^F2 G | "Em7b5" _B A2 ^G- ^G G2 G- | "D" G3 F- F4- | "Cm7" F4- F3 F- |
 w: _ * sin- cere- | _ ly. _ Why, _ she | must _ have | asked, _ did |
-"F7" F,8- | "Bm7" F,2 G, F,- F, G,2 F,- | "E7b9" F,8- | "Gm6" F,2 G, F,- F, G,2 A,- |
+"F7" F8- | "Bm7" F2 G F- F G2 F- | "E7b9" F8- | "Gm6" F2 G F- F G2 A- |
 w: I | _ just turn _ and stare | in | i- _ cy si- lence? _ |
-A,6 F,2 | "A7" D,2 E, D,- D, E,2 F,- | "Dm7" F,4 F,4- | "Em7b5" F,4- F,3 F,- |
+A6 F2 | "A7" D2 E D- D E2 F- | "Dm7" F4 F4- | "Em7b5" F4- F3 F- |
 w: What _ | was I _ to say? _ | What can | _ you say |
-F,8- | "A7" F,2 G, F,- F, G,2 E,- | "Dm" E,8- | "Dm6" E,2 F, E,- E, F,2 E,- |
+F8- | "A7" F2 G F- F G2 E- | "Dm" E8- | "Dm6" E2 F E- E F2 E- |
 w: _ | when a love _ af- fair | _ | is o- _ ver? _ _ |
-E,4 z ^D, E, G,- | :|1 G, ^F,2 F,- F, E,2 E,- | E,3 D,- D,4- | D,2 z2 z4 |
+E4 z ^D E G- | :|1 G ^F2 F- F E2 E- | E3 D- D4- | D2 z2 z4 |
 w: af- * fair _ is |  o- _ ver? _ * * | * * * | * * * |
-:|2 G, ^F,2 F,- F, E,2 E,- | E,3 D,- D,4- | D,6 z2 |
+:|2 G ^F2 F- F E2 E- | E3 D- D4- | D6 z2 |
 w:  * * * * * * | * * * | * * |]
 
 X:925
@@ -25434,22 +28074,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-can-t-give-you-anything-but-love-3
 K:G
-"G" G2 ^F,2 E,2 G,2 | "G" ^F,2 E,2 G,2 E,2 | "Am7" A,8 | "D7" A, ^A, B,6 |
+"G" g2 ^F2 E2 G2 | "G" ^F2 E2 G2 E2 | "Am7" A8 | "D7" A ^A B6 |
 w: I can't give you | an- y thing but | love | Ba- _ by; |
-"G" G,2 ^F,2 E,2 G,2 | "G" ^F,2 E,2 G,2 B,2 | "Am7" D,8 | "D7" B, _B, A,6 |
+"G" G2 ^F2 E2 G2 | "G" ^F2 E2 G2 B2 | "Am7" D8 | "D7" B _B A6 |
 w: that's the on- ly | thing I've plen- ty | of, | Ba- _ by. |
-"G7" G, ^G, A,6 | "G7" A, ^A, B,6 | "Cmaj7" D,2 C,2 B,2 A,2- | "Cmaj7" A,8 |
+"G7" G ^G A6 | "G7" A ^A B6 | "Cmaj7" D2 C2 B2 A2- | "Cmaj7" A8 |
 w: Dream a- while, | scheme a- while | we're sure to find | _ |
-"A7" A, ^A, B,6 | "A7" B, C, ^C,6 | "D7" E,2 D,2 C,2 B,2 | "D7" D,2 C,2 E,,2 ^F,2 |
+"A7" A ^A B6 | "A7" B C ^C6 | "D7" E2 D2 C2 B2 | "D7" D2 C2 E,2 ^F2 |
 w: hap- pi- ness | and, I guess, | all those things you've | al- ways pined for. |
-"G" G,2 ^F,2 E,2 G,2 | "G" ^F,2 E,2 G,2 E,2 | "Am7" A,8 | "D7" A, ^A, B,6 |
+"G" G2 ^F2 E2 G2 | "G" ^F2 E2 G2 E2 | "Am7" A8 | "D7" A ^A B6 |
 w: Gee, I'd love to | see you look- ing | swell, | Ba- _ by; |
-"Dm7" D,2 C,2 B,2 D,2 | "G7" C,2 B,2 D,2 C,2 | "Cmaj7" B,8 | "Cmaj7" A,2 G,6 |
+"Dm7" D2 C2 B2 D2 | "G7" C2 B2 D2 C2 | "Cmaj7" B8 | "Cmaj7" A2 G6 |
 w: Dia- mond brace- lets | Wool- worth does- n't | sell, | Ba- by. |
-"Cmaj7" E,2 ^F,2 G,2 ^F,2 | "C#dim7" A,2 G,2 ^F,2 G,2 | "Gmaj9" D8 | "E7" ^F,,2 E,6 |
+"Cmaj7" E2 ^F2 G2 ^F2 | "C#dim7" A2 G2 ^F2 G2 | "Gmaj9" d8 | "E7" ^F,2 E6 |
 w: 'till that luck- y | day, you know damed | well, | Ba- by |
-"Am7" ^D,2 E,2 D2 C,2 | "A7" E,2 E,2 B,2 B,2 | "G" G,8- | "G" G,6 z2 |
+"Am7" ^D2 E2 d2 C2 | "A7" E2 E2 B2 B2 | "G" G8- | "G" G6 z2 |
 w: I can't give you | an- y- thing but | love. | _ * |]
 
 X:926
@@ -25460,44 +28101,45 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-concentrate-on-you
 K:Eb
-|: "Eb6" z2 _B,2 C,2 _E,2 | "Ebmaj7" D,6 C,2 | "Bb7" D,3 D, D,4- | "Ebm7" D,6 z2 |
+|: "Eb6" z2 _B2 C2 _E2 | "Ebmaj7" D6 C2 | "Bb7" D3 D D4- | "Ebm7" D6 z2 |
 w:  * When- ev- er | skies look | grey to me | _ * |
-"Dbm7" z2 _E,2 _G,2 _A,2 _B,2 | "Cb6" _A,6 _G,2 | "Abm7" _A,8- | "Fm7b5" _A,6 z2 |
+"Dbm7" z2 _E2 _G2 _A2 _B2 | "Cb6" _A6 _G2 | "Abm7" _A8- | "Fm7b5" _A6 z2 |
 w: * and trou- ble be- | gins to | brew, | _ * |
-"Bb7" z2 _A,2 _A,2 _B,2 _C,2 | "Ebm6" _B,2 A,2 _A,4 | "Cm7b5" z2 _A,2 _G,2 F,2 | "F7" _G,8 |
+"Bb7" z2 _A2 _A2 _B2 _C2 | "Ebm6" _B2 A2 _A4 | "Cm7b5" z2 _A2 _G2 F2 | "F7" _G8 |
 w: * when- ev- er the | win- ter winds | * be- come too | strong, |
-"Bb7" z2 F,2 _A,2 G,2 | "Eb6" _G,2 F,4 _E,2- | "Fm7" _E,8- | "Eb6" _E,6 z2 |
+"Bb7" z2 F2 _A2 G2 | "Eb6" _G2 F4 _E2- | "Fm7" _E8- | "Eb6" _E6 z2 |
 w: * I Con- cen- | trate On You. | _ | When * |
-"Ebmaj7" z2 _B,2 C,2 _E,2 | "Bb7" D,6 C,2 | "Ebm7" D,3 D, D,4- | "Dbm7" D,6 z2 |
-w: * for- tune cries | "\"nay," "nay!\"" | to me _ | and * |
-"Cb6" z2 _E,2 _G,2 _A,2 _B,2 | "Cb6" _A,6 _G,2 | "Abm7" _A,8- | "Db7" _A,6 z2 |
-w: * peo- ple de- clare | "\"You're" "through,\"" | _ | when- * |
-"Gbmaj7" z2 _A,2 _C,2 _D,2 _E,2 | "Bmaj7" _D,2 C,2 _C,4 | "F7" z2 B,2 _B,2 A,2 | "Bb7" _B,8 |
+"Ebmaj7" z2 _B2 C2 _E2 | "Bb7" D6 C2 | "Ebm7" D3 D D4- | "Dbm7" D6 z2 |
+w: * for- tune cries | ""nay," "nay!"" | to me _ | and * |
+"Cb6" z2 _E2 _G2 _A2 _B2 | "Cb6" _A6 _G2 | "Abm7" _A8- | "Db7" _A6 z2 |
+w: * peo- ple de- clare | ""You're" "through,"" | _ | when- * |
+"Gbmaj7" z2 _A2 _C2 _D2 _E2 | "Bmaj7" _D2 C2 _C4 | "F7" z2 B2 _B2 A2 | "Bb7" _B8 |
 w: * ev- er the blues | be- come my | * on- ly song, | I |
-"Eb6" z2 F,2 _A,2 G,2 | "Eb" _G,2 F,4 _E,2- | "Abmaj7" _E,8- | "Abm7" _E,2 z2 _E,2 _E,2 |
+"Eb6" z2 F2 _A2 G2 | "Eb" _G2 F4 _E2- | "Abmaj7" _E8- | "Abm7" _E2 z2 _E2 _E2 |
 w: * Con- cen- trate | On You. _ | On | your * smile so |
-"Eb" C6 C,2 | "Gm7" B,6 B,2 | "Fm7" B,4 _B,4- | "Bb7" _B,4 _B,,3 _B, |
+"Eb" c6 C2 | "Gm7" B6 B2 | "Fm7" B4 _B4- | "Bb7" _B4 _B,3 _B |
 w: sweet, so | ten- der, | _ when | at first my |
-"Ebmaj7" _A6 _A,2 | "Eb7" _A,4 G,3 ^F, | "Abmaj7" G,8- | "Db7" G,4 _E,3 _E, |
+"Ebmaj7" _a6 _A2 | "Eb7" _A4 G3 ^F | "Abmaj7" G8- | "Db7" G4 _E3 _E |
 w: kiss you | de- cline. _ | On | the light in |
-"Gbmaj7" C4 C,2 C,2 | "Ebm7" _C,4 _C,2 _D,2 _C,2 | "Cm7b5" _C,4 _B,4- | "F7" _B,2 _B,2 _B,2 _B,2 |
+"Gbmaj7" c4 C2 C2 | "Ebm7" _C4 _C2 _D2 _C2 | "Cm7b5" _C4 _B4- | "F7" _B2 _B2 _B2 _B2 |
 w: your eyes, when | you sur- ren- der | _ and | once a- gain our |
-"Bb" _B,6 _B,2 | "Bb7" C,6 _B, C, | "Eb" D,8- | "Ebmaj7" D,6 z2 |
+"Bb" _B6 _B2 | "Bb7" C6 _B C | "Eb" D8- | "Ebmaj7" D6 z2 |
 w: arms in- | ter- twine. _ | And | so * |
-"Am7b5" z2 _E,2 _E,2 _E,2 | "D7" D,6 _B,2 | "Bbm7" C,3 C, C,4- | "Eb7" C,6 z2 |
+"Am7b5" z2 _E2 _E2 _E2 | "D7" D6 _B2 | "Bbm7" C3 C C4- | "Eb7" C6 z2 |
 w: * when wise- men | say to | me _ that | love's * |
-"Dm7b5" z2 C,2 B,2 C,2 | "G7" _B,2 _B,,2 C,2 _E,2 | "Gm7b5" G,8- | "C7#5" G,6 z2 |
+"Dm7b5" z2 C2 B2 C2 | "G7" _B2 _B,2 C2 _E2 | "Gm7b5" G8- | "C7#5" G6 z2 |
 w: * young dream nev- | er comes true. _ | To | prove * |
-"Fm" z2 G,2 _B,2 A,2 | "F#dim7" _A,2 G,2 | "F7b5" G,2 F,2 E,3 F, | "Bb7" C8 |
+"Fm" z2 G2 _B2 A2 | "F#dim7" _A2 G2 | "F7b5" G2 F2 E3 F | "Bb7" c8 |
 w: * that e- ven | wise- men | can be wrong, I | Con- |
-z2 F,,2 _A,2 G,2 | "Eb" _G,2 F,4 _E,2- | "Fm7" :|1 _E,8- | "Eb6" _E,6 z2 |
+z2 F,2 _A2 G2 | "Eb" _G2 F4 _E2- | "Fm7" :|1 _E8- | "Eb6" _E6 z2 |
 w: * cen- trate On | You. _ _ |  I | con- * |
-"Eb6" :|2 "Fm7" _E,8- | "Bb7b9" _E,4 _E,4 | "Bb7b9" F,3 F, F,4- | "Eb69" F,4 F,4 |
+"Eb6" :|2 "Fm7" _E8- | "Bb7b9" _E4 _E4 | "Bb7b9" F3 F F4- | "Eb69" F4 F4 |
 w:  cen- | trate, _ | and con- cen- | trate _ |
-G,3 G, G,4- | G,4 _B,4 | _B,8- | _B,8- |
+G3 G G4- | G4 _B4 | _B8- | _B8- |
 w: on you. _ | * * | * | * |
-_B,2 z2 z4 | z8 |
+_B2 z2 z4 | z8 |
 w: * * * | * |]
 
 X:927
@@ -25508,40 +28150,42 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-could-have-danced-all-night
+%%tags needs-repair
 K:C
-C,2 E,2 G,2 | "C" C,8- | "Cmaj7" C,4 B,4 | "Cmaj7" B,8- |
+C2 E2 G2 | "C" C8- | "Cmaj7" C4 B4 | "Cmaj7" B8- |
 w: I Could Have | Danced | _ All | Night |
-"C6" B,2 B,,2 E,2 G,2 | "Cmaj7" B,8- | "Dm7" B,4 A,4 | "G7" A,8- |
+"C6" B2 B,2 E2 G2 | "Cmaj7" B8- | "Dm7" B4 A4 | "G7" A8- |
 w: _ I Could Have | Danced | _ All | Night! |
-"Dm" A,4 G,4 | "Dm7+" E,8- | "Dm7" E,4 F,4 | "Dm7" G,8- |
+"Dm" A4 G4 | "Dm7+" E8- | "Dm7" E4 F4 | "Dm7" G8- |
 w: _ and | still | _ have | begged |
-"G7" G,4 A,4 | "Dm7" D,,8- | "Dm7" D,8- | "G7" D,8 |
+"G7" G4 A4 | "Dm7" D,8- | "Dm7" D8- | "G7" D8 |
 w: _ for | more. | _ | I |
-"Cmaj7" z2 D,2 F,2 A,2 | "C6" D,8- | "E" D,4 ^C,4 | "F#m7" ^C,8- |
+"Cmaj7" z2 D2 F2 A2 | "C6" D8- | "E" D4 ^C4 | "F#m7" ^C8- |
 w: * could have spread | _ | my wings | _ |
-"B7" ^C,2 C,,2 F,2 A,2 | "Emaj7" C,8- | "E6" C,4 B,4 | "Gmaj7" B,8- |
+"B7" ^C2 C,2 F2 A2 | "Emaj7" C8- | "E6" C4 B4 | "Gmaj7" B8- |
 w: and done a thou- | sand | things _ | I've |
-"Am7" B,4 A,4 | "D7b9" F,8- | "G9" F,4 G,4 | "G9" A,8- |
+"Am7" B4 A4 | "D7b9" F8- | "G9" F4 G4 | "G9" A8- |
 w: nev- er | done | _ be- | fore. |
-"C" A,4 A,4 | "C" E,8- | "Cmaj7" E,8- | "F6" E,8 |
+"C" A4 A4 | "C" E8- | "Cmaj7" E8- | "F6" E8 |
 w: _ I'll | nev- | er | know |
-"Dm7" z2 E,2 ^F,2 ^G,2 | "Dm7" B,8- | "Dm7" B,2 E,,2 ^F,2 ^G,2 | "G7" A,8- |
+"Dm7" z2 E2 ^F2 ^G2 | "Dm7" B8- | "Dm7" B2 E,2 ^F2 ^G2 | "G7" A8- |
 w: * _ what made | it | so _ ex- cit- | ing, |
-"C" A,4 B,4 | ^G,8 | ^G,8- | ^G,8- |
+"C" A4 B4 | ^G8 | ^G8- | ^G8- |
 w: _ why | all | at | once |
-^G,2 G,2 A,2 B,2 | D,8- | D,4 G,,4 | A,8 |
+^G2 G2 A2 B2 | D8- | D4 G,4 | A8 |
 w: _ my heart took | flight. | _ I | on- |
-C,8 | B,8- | B,8- | B,2 z2 C,4 |
+C8 | B8- | B8- | B2 z2 C4 |
 w: ly | know | _ | when * he |
-C,4 C,4 | C,8- | C,4 B,4 | B,8- |
+C4 C4 | C8- | C4 B4 | B8- |
 w: _ be- | gan | to dance | _ |
-B,2 E,,2 G,2 B,2 | D,8- | D,4 C,4 | C,8- |
+B2 E,2 G2 B2 | D8- | D4 C4 | C8- |
 w: with me. _ I | could | have danced, | danced, |
-C,2 F,,2 A,2 C,2 | E,8 | D,8 | F,8- |
+C2 F,2 A2 C2 | E8 | D8 | F8- |
 w: danced, _ all night. | _ | * | * |
-F,2 z2 z4 | z8 | B,,8 | C,8- |
+F2 z2 z4 | z8 | B,8 | C8- |
 w: * * * | * | * | * |
-C,2 z2 z4 |
+C2 z2 z4 |
 w: * * * |]
 
 X:928
@@ -25552,20 +28196,21 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-could-write-a-book-2
 K:C
-E,2 F,2 |: "Cmaj7" G,4 B,4 | "Dm7" A,2 G,2 E,2 D,2 | "Cmaj7" E,8- |
+E2 F2 |: "Cmaj7" G4 B4 | "Dm7" A2 G2 E2 D2 | "Cmaj7" E8- |
 w: If they |  asked me | I Could Write A | Book, |
-"Cmaj7" E,2 G,2 E,2 D,2 | "Cmaj7" E,2 G,2 E,2 D,2 | "Cmaj7" E,2 C4 E,,2 | "Dm7" G,8- |
+"Cmaj7" E2 G2 E2 D2 | "Cmaj7" E2 G2 E2 D2 | "Cmaj7" E2 c4 E,2 | "Dm7" G8- |
 w: _ a- bout the | way you walk and | whis- per and | look, |
-"G7" G,4 A,2 B,2 | :|1 "C" C,4 C,4 | "Dm7" C,2 D,4 B,2 | "Am7" A,4 A,4 |
+"G7" G4 A2 B2 | :|1 "C" C4 C4 | "Dm7" C2 D4 B2 | "Am7" A4 A4 |
 w: _ I could |  write a | pre- face on | how we |
-"G" G,4 E,2 ^F,2 | "Em" G,4 G,4 | "Am7" G,2 A,4 ^F,2 | "Dm7" G,8- |
+"G" G4 E2 ^F2 | "Em" G4 G4 | "Am7" G2 A4 ^F2 | "Dm7" G8- |
 w: met, so the | world would | nev- er for- | get, |
-"G7" G,2 z2 E,2 F,2 | :|2 "Am" C4 C,4 | "Am7" C,2 D,4 B,2 | "Gm7" _B,4 _B,4 |
+"G7" G2 z2 E2 F2 | :|2 "Am" c4 C4 | "Am7" C2 D4 B2 | "Gm7" _B4 _B4 |
 w: _ * and the |  * * | * * * | * * |
-"Fmaj7" A,4 G,2 F,2 | "Cmaj7" E,4 E,4 | "Dm7" D,2 C4 B,2 | "C6" C,8 |
+"Fmaj7" A4 G2 F2 | "Cmaj7" E4 E4 | "Dm7" D2 c4 B2 | "C6" C8 |
 w: * * * | * * | * * * | * |
-"Dm7" z4 E,,2 F,2 |
+"Dm7" z4 E,2 F2 |
 w: * * * |]
 
 X:929
@@ -25576,24 +28221,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-don-t-want-to-set-the-world-on-fire
+%%tags needs-repair
 K:F
-|: "F" A2 C,2 C,,3/2 D,/ F,3/2 A,/ | "F" C,4 _C,4 | "Gm" _B,2 D,6- | "Gm" D,4 _B,4 |
+|: "F" a2 C2 C,3/2 D/ F3/2 A/ | "F" C4 _C4 | "Gm" _B2 D6- | "Gm" D4 _B4 |
 w:  I Don't Want To Set The | World On | Fire _ | _ I |
-"C7" A,3/2 C,/ A, C,- C,4 | "Gm9" z2 A,2 C,3/2 ^C,/ D, A,- | "A7" A,8- | "G7" A,8 |
+"C7" A3/2 C/ A C- C4 | "Gm9" z2 A2 C3/2 ^C/ D A- | "A7" A8- | "G7" A8 |
 w: just want to start _ | * a flame in your heart | _ | In |
-"F" A,2 C,2 C,,3/2 D,/ F,3/2 A,/ | "F" C,4 _C,4 | "Gm" _B,2 D,6- | "Gm" D,4 _B,4 |
+"F" A2 C2 C,3/2 D/ F3/2 A/ | "F" C4 _C4 | "Gm" _B2 D6- | "Gm" D4 _B4 |
 w: my heart I have but one | de- sire | _ _ | and that |
-"C7" A,3/2 C,/ A, C,- C,4 | "Gm9" z2 A,2 C,3/2 ^C,/ D, F,,- | "F" F,8- | "F6" F,6 F,2 |
+"C7" A3/2 C/ A C- C4 | "Gm9" z2 A2 C3/2 ^C/ D F,- | "F" F8- | "F6" F6 F2 |
 w: one is you _ no | * oth- er will do. _ | I've | lost all |
-"Cm7" G,3/2 G,/ G, D- D, D,2 F,, | "Cm7" G,3/2 G,/ G, D- D,4 | "Bbmaj7" C,3/2 C,/ _B,3/2 _B,/ A,3/2 A,/ D,3/2 D,/ | "Dm" A,6 G,2 |
+"Cm7" G3/2 G/ G d- D D2 F, | "Cm7" G3/2 G/ G d- D4 | "Bbmaj7" C3/2 C/ _B3/2 _B/ A3/2 A/ D3/2 D/ | "Dm" A6 G2 |
 w: am- bi- tion for world- ly ac- | claim I just want to | be the one you love and with your | ad- mis- |
-"Dm" A,3/2 A,/ A, E- E, E,2 G,, | "Dm" A,3/2 A,/ A, E- E,4 | "C7" D,3/2 ^C,/ D,3/2 ^C,/ D,3/2 ^C,/ D, ^D, E,- | "F" E,2 D, A,- A, _A,3 |
+"Dm" A3/2 A/ A e- E E2 G, | "Dm" A3/2 A/ A e- E4 | "C7" D3/2 ^C/ D3/2 ^C/ D3/2 ^C/ D ^D E- | "F" E2 D A- A _A3 |
 w: sion that you feel the same. _ | I'll have reached the goal | I'm dream- ing of _ be- lieve _ me! | I Don't Want To Set |
-"F" A,2 C,2 C,,3/2 D,/ F,3/2 A,/ | "Gm" C,4 _C,4 | "Gm" _B,2 D,6- | "C7" D,4 _B,4 |
+"F" A2 C2 C,3/2 D/ F3/2 A/ | "Gm" C4 _C4 | "Gm" _B2 D6- | "C7" D4 _B4 |
 w: The World On Fire _ _ | I just | want to | start _ |
-"Gm9" A,3/2 C,/ A, C,- C,4 | z2 A,2 C,3/2 ^C,/ D, F,,- | "F" :|1 "Gm" F,8 | z8 |
+"Gm9" A3/2 C/ A C- C4 | z2 A2 C3/2 ^C/ D F,- | "F" :|1 "Gm" F8 | z8 |
 w: a flame in your heart | * _ * * * * |  * | * |
-"F" :|2 F,8- | F,6 z2 |
+"F" :|2 F8- | F6 z2 |
 w:  * | * * |]
 
 X:930
@@ -25604,32 +28251,33 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-got-plenty-o-nuttin
 K:G
-D,2 |: "G" G,2 G,2 A,2 G, A, | "Bm" B, D,3- D,2 z D,, | "G" B2 B, A,- A, B, A,2 |
+D2 |: "G" G2 G2 A2 G A | "Bm" B D3- D2 z D, | "G" b2 B A- A B A2 |
 w: Oh, |  I Got Plen- ty O' | Nut- tin', _ * an' | nut- tin's plen- ty fo' me. |
-"G" G,4 ^F,4 | "E" E,2 E,2 ^C,3 z | "E" E,2 E,2 ^C,3 ^C, | "E" E,2 E,2 ^C,2 E,2 |
+"G" G4 ^F4 | "E" E2 E2 ^C3 z | "E" E2 E2 ^C3 ^C | "E" E2 E2 ^C2 E2 |
 w: I got | no car, got * | no mule, I got | no mis- er- y. |
-"C#" ^E,8- | "C#" ^E,4 ^F,4 | "G" G,2 G,2 A,2 G, A, | "Bm" B, D,3- D,2 z2 |
+"C#" ^E8- | "C#" ^E4 ^F4 | "G" G2 G2 A2 G A | "Bm" B D3- D2 z2 |
 w: _ | De folks | wid plen- ty o' plen- | ty _ got * |
-"G" B,2 B, A,- A, B, A,2 | "G" G,4 ^F,4 | "E" E,2 E,2 ^C, ^C,2 ^C, | "E" E, E,2 E, ^C, ^C, ^C, ^C, |
+"G" B2 B A- A B A2 | "G" G4 ^F4 | "E" E2 E2 ^C ^C2 ^C | "E" E E2 E ^C ^C ^C ^C |
 w: a lock _ on de door, | _ faid | some- bod- y's a go- | in' to rob 'em while dey's out |
-"E" E,2 E,2 ^C,2 E,2 | "C#" ^E,8- | "C#" ^E,4 ^F,4 | "G" G,8- |
+"E" E2 E2 ^C2 E2 | "C#" ^E8- | "C#" ^E4 ^F4 | "G" G8- |
 w: a mak- in' more. | _ | What for? | _ |
-"Bm" G,4 z4 | "Bm" ^F,2 D, B, D,2 B, D, | "Bm6" ^F,4 E, ^F, E, B, | "Bm" D,8- |
+"Bm" G4 z4 | "Bm" ^F2 D B D2 B D | "Bm6" ^F4 E ^F E B | "Bm" D8- |
 w: I * | got no lock on de door, | (dat's no way to be.) | _ |
-"Bm6" D,2 z2 E, ^F, E, B, | "Bm" D,2 B, D, ^F,4- | "Bm6" ^F,4 E, ^F, E, B, | "Bm" D,2 B, D, E,2 C, E, |
+"Bm6" D2 z2 E ^F E B | "Bm" D2 B D ^F4- | "Bm6" ^F4 E ^F E B | "Bm" D2 B D E2 C E |
 w: Day * kin steal de rug | from de floor, _ | dat's o- keh wid me, | 'cause de things dat I prize, |
-"D" ^F,2 D, ^F, G,2 E, G, | "D7" A,2 ^F, A, C,4- | "D7" C,4 z2 D,,2 | "G" G,2 G,2 A,2 G, A, |
+"D" ^F2 D ^F G2 E G | "D7" A2 ^F A C4- | "D7" C4 z2 D,2 | "G" G2 G2 A2 G A |
 w: like de stars in de skies, | all are free. _ | Oh, * I | Got Plen- ty O' Nut- |
-"Bm" B, D,3- D,2 z D,, | "G" B2 B, A,- A, B, A,2 | "G" G,4 ^F,4 | "E" E,2 E,2 ^C,3 z |
+"Bm" B D3- D2 z D, | "G" b2 B A- A B A2 | "G" G4 ^F4 | "E" E2 E2 ^C3 z |
 w: tin; _ an' * nut- | tin's plen- ty fo' me. I | got a | gal, got my * |
-"E" E,2 E,2 ^C,3 ^C, | "E" E, E,2 E, ^C,2 E,2 | "C#" ^E,8 | "C#" B2 B,2 B,2 G,2 E,2 |
+"E" E2 E2 ^C3 ^C | "E" E E2 E ^C2 E2 | "C#" ^E8 | "C#" b2 B2 B2 G2 E2 |
 w: song, got heb ben | the whole day long. No | use | com- plain- in'! Got my |
-"C#" z4 ^F,2 ^F,2 | "G" G,8- | "G" G,2 z2 F,2 F,2 | "G" G,8- |
+"C#" z4 ^F2 ^F2 | "G" G8- | "G" G2 z2 F2 F2 | "G" G8- |
 w: * gal, _ | got | my * Lawd, _ | go |
-"G" G,2 z2 E,2 E,2 | :|1 "G" G,8- | "G" G,4 z4 | "Bm" z8 |
+"G" G2 z2 E2 E2 | :|1 "G" G8- | "G" G4 z4 | "Bm" z8 |
 w: my * song. _ |  song. | _ * | * |
-:|2 "G" G,8- | "G" G,2 z2 z4 |
+:|2 "G" G8- | "G" G2 z2 z4 |
 w:  * | * * * |]
 
 X:931
@@ -25640,24 +28288,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-left-my-heart-in-san-francisco-2
+%%tags needs-repair
 K:Bb
-D,2 _E,2 G,2 | "Bb" F,8 | "Dm7" z2 G,2 A,3 _B, | "Cm7" G, C,,3- C,2 z2 |
+D2 _E2 G2 | "Bb" F8 | "Dm7" z2 G2 A3 _B | "Cm7" G C,3- C2 z2 |
 w: I Left My | Heart | * In San Fran- | cis- co, _ * |
-"Cm7" z2 C,2 B,2 C,2 | "Cm7" G8 | "Cm7" z2 _B,2 A,3 F, | "Bb" D,4 z4 |
+"Cm7" z2 C2 B2 C2 | "Cm7" g8 | "Cm7" z2 _B2 A3 F | "Bb" D4 z4 |
 w: * high on a | hill, | * it calls to | me. * |
-"Bb" z2 D,2 _E,2 E,2 | "Bb" F, _E,2 D,/ _E,/ F,4- | "Dm7" F,2 z2 z2 G,2 | "Dm7" A, G,2 F,/ G,/ A,4- |
+"Bb" z2 D2 _E2 E2 | "Bb" F _E2 D/ _E/ F4- | "Dm7" F2 z2 z2 G2 | "Dm7" A G2 F/ G/ A4- |
 w: * To be where | lit- tle ca- ble cars | _ * * climb | half- way to the stars! |
-"Dm7" A,2 A,2 ^G,3 A, | "Gm7" _B,8- | "C9" _B,2 C,2 A,3 C,, | "F9" F,4 z2 G, F, |
+"Dm7" A2 A2 ^G3 A | "Gm7" _B8- | "C9" _B2 C2 A3 C, | "F9" F4 z2 G F |
 w: _ to morn- ing | fog | _ may chill the | air * I don't |
-"Cm7" _E,2 z D, _E,2 G,2 | "Bb" F,8 | "Dm7" z2 G,2 A,2 _B,2 | "Cm7" G, C,,3- C,2 z2 |
+"Cm7" _E2 z D _E2 G2 | "Bb" F8 | "Dm7" z2 G2 A2 _B2 | "Cm7" G C,3- C2 z2 |
 w: care! * My love waits | there | * in San Fran- | cis- co, _ * |
-"Cm7" z2 C,2 B,2 C,2 | "F9" A8- | "F9" A,2 A,2 _B,2 C,2 | "D7" D,8 |
+"Cm7" z2 C2 B2 C2 | "F9" a8- | "F9" A2 A2 _B2 C2 | "D7" D8 |
 w: * a- bove the | blue | _ and wind- y | sea. |
-"D7" z2 D,2 ^C,3 D, | "G" _E,6 D,2 | "G9" B,4 C,2 D,2 | "C" C,2 G,6 |
+"D7" z2 D2 ^C3 D | "G" _E6 D2 | "G9" B4 C2 D2 | "C" C2 G6 |
 w: * When I come | home to | you San Fran- | cis-- co |
-"C9" z2 G,2 ^F,2 G,2 | "Cm7" _E6 G,,2 | "Cm7" D4 D,4 | "Bb6" _B,8- |
+"C9" z2 G2 ^F2 G2 | "Cm7" _e6 G,2 | "Cm7" d4 D4 | "Bb6" _B8- |
 w: * your gold- en | sun will | sine for | me. |
-"Bb69" _B,2 z2 z4 |
+"Bb69" _B2 z2 z4 |
 w: _ * * |]
 
 X:932
@@ -25668,22 +28318,24 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-love-you
+%%tags needs-repair
 K:F
-C2 | "Gm7b5" C,4 _D,,4- | "C7b9" _D,4 _B3 A, | "Fmaj7" ^G,3 A, A,4- |
+c2 | "Gm7b5" C4 _D,4- | "C7b9" _D4 _b3 A | "Fmaj7" ^G3 A A4- |
 w: I | love you | _ Hums the | Ap- ril breeze. |
-"Gm7" A,4 z2 A,2 | "C7" A,4 _B,,4- | "Fmaj7" _B,4 G2 F,2 E,2 | "Gm7b5" D,8- |
+"Gm7" A4 z2 A2 | "C7" A4 _B,4- | "Fmaj7" _B4 g2 F2 E2 | "Gm7b5" D8- |
 w: _ * I | love you | _ E- cho the | hills. |
-"C7b9" D,4 z2 C2 | "Fmaj7" C,4 _D,,4- | "Bm7" _D,3 _B _B,3 A, | "Amaj7" ^G,3 A, A,4- |
+"C7b9" D4 z2 c2 | "Fmaj7" C4 _D,4- | "Bm7" _D3 _b _B3 A | "Amaj7" ^G3 A A4- |
 w: _ * I | love you | _ The gol- den | dawn ag- rees |
-"Bm7" A,4 A,2 A,2 | "Amaj7" B,3 ^C, ^C,4 | "Gm7" D,6 E,2 | "C7" E,8- |
+"Bm7" A4 A2 A2 | "Amaj7" B3 ^C ^C4 | "Gm7" D6 E2 | "C7" E8- |
 w: _ As once | more she sees | Daf- fo- | dils. |
-"Fmaj7" E,4 z2 E,2 | "Am7b5" F,3 F, F,4- | "D7b9" F,2 E,2 E,2 D,2 C,2 | "G7" E,3 E, E,4- |
+"Fmaj7" E4 z2 E2 | "Am7b5" F3 F F4- | "D7b9" F2 E2 E2 D2 C2 | "G7" E3 E E4- |
 w: _ * It's | spring a- gain | _ And birds on the | wing a- gain |
-"C7" E,2 z2 C,2 D,2 | "Gm7b5" _E,3 _E, _E,4- | "C7b9" _E,3 D, C,2 _B, A, | "Fmaj7" G,8- |
+"C7" E2 z2 C2 D2 | "Gm7b5" _E3 _E _E4- | "C7b9" _E3 D C2 _B A | "Fmaj7" G8- |
 w: _ * Start to | sing a- gain | _ The old me- lo- | dy. |
-"Am7b5" G,4 z2 C,2 | "G7" C,4 _D,,4- | "Gm7" _D,4 _B3 A, | "F6" ^G,3 A, A,4- |
+"Am7b5" G4 z2 C2 | "G7" C4 _D,4- | "Gm7" _D4 _b3 A | "F6" ^G3 A A4- |
 w: _ * I | love you, | _ That's the | song of songs |
-A,4 _B,2 C,2 | ^C,3 D, D,2 D,,2 | A4 A,4 | F,8 |
+A4 _B2 C2 | ^C3 D D2 D,2 | a4 A4 | F8 |
 w: _ And it | all be- longs To | you and | me. |
 z8 |
 w: * |]
@@ -25696,12 +28348,14 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id if-you-could-see-me-now
+%%tags needs-repair
 K:Eb
-|: "Ebmaj7" D, _E, G, _B, D, C, _B, G, | "Ab7" _B, A, _A, _B, F,4 | "Ebmaj7" D, _E, G, _B, D, C, _B, G, | "Ab7" _B, A, _A, _B, F,3 G, |
+|: "Ebmaj7" D _E G _B D C _B G | "Ab7" _B A _A _B F4 | "Ebmaj7" D _E G _B D C _B G | "Ab7" _B A _A _B F3 G |
 w:  _ If you could see me now you'd | know how blue I've been. | _ One look is all you'd need to | see the mood I'm in. Per- |
-"Gm7" _B,2 G, _B, B, E,, _E,2 | "Fm7" C2 _A, F, D3 _B, | :|1 "G7#5" G,8- | "Fm7" G,6 z2 |
+"Gm7" _B2 G _B B E, _E2 | "Fm7" c2 _A F d3 _B | :|1 "G7#5" G8- | "Fm7" G6 z2 |
 w: haps then you'd re- al- ize | I'm still in love with |  you. | _ * |
-:|2 "Am7b5" _E8- | "Gm7" _E,8 |
+:|2 "Am7b5" _e8- | "Gm7" _E8 |
 w:  _ | You'll |]
 
 X:934
@@ -25712,24 +28366,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-ll-be-seeing-you-2
 K:Eb
-|: "Eb" G6 F,2 | "G7" F, _E,2 D,- D,2 _E,2 | "Fm" _A,3 G, G,3 F, | "Fm" F,3 E, E,2 F,2 |
+|: "Eb" g6 F2 | "G7" F _E2 D- D2 _E2 | "Fm" _A3 G G3 F | "Fm" F3 E E2 F2 |
 w:  I'll Be | See- ing You _ in | all the old fa- | mil- iar plac- es |
-"Fm" A,2 G, G,3 F, | "Fm" F,3 E, E,2 F,2 | "Eb" ^F, G,2 C,- C,4- | "F#dim7" C,6 z2 |
+"Fm" A2 G G3 F | "Fm" F3 E E2 F2 | "Eb" ^F G2 C- C4- | "F#dim7" C6 z2 |
 w: that this heart of | mine em- brac- es | all day thru. _ | In * |
-"Cm7" _E,6 D,2 | "Fm7" D, C,2 B,- B,2 C,2 | "Bb7" _E,6 D,2 | "Bb7#5" D, C,2 B,- B,2 C,2 |
+"Cm7" _E6 D2 | "Fm7" D C2 B- B2 C2 | "Bb7" _E6 D2 | "Bb7#5" D C2 B- B2 C2 |
 w: that samll | ca- fe; _ the park | a- cross | the way, _ the chil- |
-"Eb6" C,6 _B,2 | "Bb9#5" _B, ^F,2 ^F,- ^F,2 D2 | "Eb" C, G,2 G,- G,2 C,2 | "G7" ^F,, C,2 C,- C,4 |
+"Eb6" C6 _B2 | "Bb9#5" _B ^F2 ^F- ^F2 d2 | "Eb" C G2 G- G2 C2 | "G7" ^F, C2 C- C4 |
 w: dren's ca- | rou- sel, _ the chet- | nut- trees, _ the wish- | ing well. _ I'll |
-"Fm" G6 F,2 | "Fm" F, _E,2 D,- D,2 _E,2 | "Fm" _A,3 G, G,3 F, | "Fm" F,3 E, E,2 F,2 |
+"Fm" g6 F2 | "Fm" F _E2 D- D2 _E2 | "Fm" _A3 G G3 F | "Fm" F3 E E2 F2 |
 w: Be See- | ing You _ in ev- | 'ry love- ly sum- | mer's day, in ev- |
-"Gm7b5" _A,3 G, G,3 F, | "C7" F,3 E, E,2 F,2 | "Fm" _B,3 _A, _A,3 G, | "G7" G,3 ^F, ^F,2 G,2 |
+"Gm7b5" _A3 G G3 F | "C7" F3 E E2 F2 | "Fm" _B3 _A _A3 G | "G7" G3 ^F ^F2 G2 |
 w: 'ry- thing that's light | and gay, I'll al- | ways think of you | that way. I'll find |
-"Cm7" C,3 C, _B,2 _A,2 | "F9" D,3 D, C,2 B,2 | "Fm7" _E,2 _E,2 D,2 C,2 | "Abm6" G,6 F, G, |
+"Cm7" C3 C _B2 _A2 | "F9" D3 D C2 B2 | "Fm7" _E2 _E2 D2 C2 | "Abm6" G6 F G |
 w: you in the morn- | ing sun and when | the night is new. | I'll be look- |
-_A, _A, _A, _A, _A,4- | "Eb" _A, _A, _B, _C, _B,2 _A,2 | "Fm7" :|1 _E6 z2 | "Eb" z8 |
+_A _A _A _A _A4- | "Eb" _A _A _B _C _B2 _A2 | "Fm7" :|1 _e6 z2 | "Eb" z8 |
 w: ing at the moon, _ | but I'll Be See- ing You! |  You! * | * |
-"Eb6" :|2 _E,8- | E,8 z2 |
+"Eb6" :|2 _E8- | E8 z2 |
 w:  _ | * * |]
 
 X:935
@@ -25740,24 +28395,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-ll-close-my-eyes-2
+%%tags needs-repair
 K:F
-C,2 _B2 C, A,- | "Fmaj7" A,8- | "Em7" A,2 C,,2 _B2 A,2 | "A7" A,2 G, E,- E,4- |
+C2 _b2 C A- | "Fmaj7" A8- | "Em7" A2 C,2 _b2 A2 | "A7" A2 G E- E4- |
 w: I'll Close My Eyes | _ | _ To eve- ry- | one but you _ |
-"Dm7" E,2 A,,2 G2 A, F,- | "G7" F,8- | "Cm7" F,2 F,2 A,2 F, _E,- | "F7" _E,8- |
+"Dm7" E2 A,2 g2 A F- | "G7" F8- | "Cm7" F2 F2 A2 F _E- | "F7" _E8- |
 w: _ And when I do | _ | _ I'llseeyou stand- ing there | _ |
-"Bbmaj7" _E,4 z2 D,2 | "Eb7" ^C,2 D,2 C4- | "Fmaj7" C,2 _B,2 F,2 G,2 | "Bm7b5" A,3 A, A, A,2 A,- |
+"Bbmaj7" _E4 z2 D2 | "Eb7" ^C2 D2 c4- | "Fmaj7" C2 _B2 F2 G2 | "Bm7b5" A3 A A A2 A- |
 w: _ * I'll | lock my heart | _ To anyother ca- | ress _ _ _ _ |
-"E7b9" A,2 z2 A,2 A,2 A,2 | "Am7" A,3 ^G, ^G,4- | "Gm7" ^G,2 E,2 ^D,2 E,2 | "Fmaj7" G,8- |
+"E7b9" A2 z2 A2 A2 A2 | "Am7" A3 ^G ^G4- | "Gm7" ^G2 E2 ^D2 E2 | "Fmaj7" G8- |
 w: _ * I'll nev- er | say yes _ | _ Toanew love af- | fair |
-"Em7" G,2 C,,2 _B2 C, A,- | "A7" A,8- | "Dm7" A,2 C,,2 _B2 A,2 | "G7" A,2 G, E,- E,4- |
+"Em7" G2 C,2 _b2 C A- | "A7" A8- | "Dm7" A2 C,2 _b2 A2 | "G7" A2 G E- E4- |
 w: ThenI'll Close My Eyes _ | _ | To eve- ry- thing | that's gay _ _ |
-"Cm7" E,2 A,,2 G2 A, F,- | "F7" F,8- | "Bbmaj7" F,2 F,2 A,2 F, _E,- | "Eb7" _E,8- |
+"Cm7" E2 A,2 g2 A F- | "F7" F8- | "Bbmaj7" F2 F2 A2 F _E- | "Eb7" _E8- |
 w: If youare not there _ | _ | Oh,toshareeach love- ly day _ | _ |
-"Am7b5" _E,4 z2 D,2 | "D7b9" ^C,2 D,2 C4- | "G7" C,2 _B,2 F,2 G,2 | "Gm7" A,3 A, A, A,2 A,- |
+"Am7b5" _E4 z2 D2 | "D7b9" ^C2 D2 c4- | "G7" C2 _B2 F2 G2 | "Gm7" A3 A A A2 A- |
 w: And * through | the years _ | Inthose moments Whenwe'refar apart | Do- n't you know I'll |
-"F69" A,2 A,2 C,2 _B,2 | A,3 D,, E, F,2 G,- | G,4 A,4 | F,8- |
+"F69" A2 A2 C2 _B2 | A3 D, E F2 G- | G4 A4 | F8- |
 w: Close My Eyes And | I'll see youwith _ my | heart _ | * |
-F,2 z2 z4 |
+F2 z2 z4 |
 w: * * * |]
 
 X:936
@@ -25768,24 +28425,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-ll-never-smile-again-3
 K:Eb
-_B2 D,2 C,2 |: "Fm7" _E,3 F,, F,4 | "Bb7" z F, F, G, F,2 _E,2 | "Ebmaj7" G,8- |
+_b2 D2 C2 |: "Fm7" _E3 F, F4 | "Bb7" z F F G F2 _E2 | "Ebmaj7" G8- |
 w: I'll Nev- er |  Smile A- gain, | * un- til I smile at | you. |
-"Gm7" G,2 _B,2 D,2 C,2 | "Fm7" _E,3 F,, F,4- | "Bb7" F,2 G,2 F,2 _E,2 D,2 | "Eb" C,8- |
+"Gm7" G2 _B2 D2 C2 | "Fm7" _E3 F, F4- | "Bb7" F2 G2 F2 _E2 D2 | "Eb" C8- |
 w: _ I'll nev- er | laugh a- gain, | _ what good would it | do? |
-"Eb" C,6 C,2 | "B7#5" G2 G,2 G,2 G,2 | "Eb" _E,6 G,2 | "Fm7b5" _B,2 _B,2 _B,2 _B,2 |
+"Eb" C6 C2 | "B7#5" g2 G2 G2 G2 | "Eb" _E6 G2 | "Fm7b5" _B2 _B2 _B2 _B2 |
 w: _ For | tears would fill my | eyes my | heart would re- a- |
-"Eb" G,6 B,2 | "G" D,2 D,2 D,4- | "G" D,4 D,4 | "Fm7" _B,8- |
+"Eb" G6 B2 | "G" D2 D2 D4- | "G" D4 D4 | "Fm7" _B8- |
 w: lize that | our ro- mance | _ is | trough, |
-"Bb7" _B,2 _B,2 D,2 C,2 | "Fm7" _E,3 F,, F,4 | "Bb7" z F, F, G, F,2 _E,2 | "Ebmaj7" G,8- |
+"Bb7" _B2 _B2 D2 C2 | "Fm7" _E3 F, F4 | "Bb7" z F F G F2 _E2 | "Ebmaj7" G8- |
 w: _ I'll nev- er | love a- gain, | * I'm so in love with | you. |
-"Gm7" G,2 _B,2 D,2 C,2 | "Fm7" _E,3 F,, F,4- | "Bb7" F,2 G,2 F,2 _E,2 D,2 | "Eb7" G,8- |
+"Gm7" G2 _B2 D2 C2 | "Fm7" _E3 F, F4- | "Bb7" F2 G2 F2 _E2 D2 | "Eb7" G8- |
 w: _ I'll nev- er | thrill a- gain | _ to some- bod- y | new. |
-"Eb7" G,4 z2 _E,2 | "Ab" G,6 F,2 | "Db9" _A,6 G,2 | "Eb" D,2 _E,2 G,2 _B,2 C,2 |
+"Eb7" G4 z2 _E2 | "Ab" G6 F2 | "Db9" _A6 G2 | "Eb" D2 _E2 G2 _B2 C2 |
 w: _ * With- | in my | heart I | know I will nev- er |
-"Gm7" D,6 C,2 | "Fm7" _E,3 F,, F,4 | "Fm7" z C, D, _E, G,2 G,2 | :|1 "Eb" _E,8 |
+"Gm7" D6 C2 | "Fm7" _E3 F, F4 | "Fm7" z C D _E G2 G2 | :|1 "Eb" _E8 |
 w: start to | smile a- gain | * un- til I smil at |  you |
-"Bb7" z2 _B2 D,2 C,2 | :|2 "Eb" _E,8- | "Eb" _E,6 z2 |
+"Bb7" z2 _b2 D2 C2 | :|2 "Eb" _E8- | "Eb" _E6 z2 |
 w: * I'll ne- ver |  you | * * |]
 
 X:937
@@ -25796,26 +28454,27 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-ll-remember-april-2
 K:G
-"G" z2 B2 C,2 D,2 | "G6" C,2 B,2 A,2 G,2 | "C9" A,6 G,2 | "Fmaj7" ^F,2 E,6 |
+"G" z2 b2 C2 D2 | "G6" C2 B2 A2 G2 | "C9" A6 G2 | "Fmaj7" ^F2 E6 |
 w: * This love- ly | day will leng- then | in- to | ev- 'ning, |
-"Em7" z2 A,2 _B,2 C,2 | "A7" _B,2 A,2 G,2 F,2 | "Am7b5" G, A, G,6- | "D7" G,4 z2 G,2 |
+"Em7" z2 A2 _B2 C2 | "A7" _B2 A2 G2 F2 | "Am7b5" G A G6- | "D7" G4 z2 G2 |
 w: * we'll sign good- | bye to all we've | ev- er had. | _ * A- |
-"Bm7" A,6 A,2 | "E9" A,2 A,2 B,3 C, | "Am7" D,2 D,6- | "D7b9" D,2 z2 E,3 D, |
+"Bm7" A6 A2 | "E9" A2 A2 B3 C | "Am7" D2 D6- | "D7b9" D2 z2 E3 D |
 w: lone, where | we have walked to- | geth- er, | _ * I'll Re- |
-"Gmaj7" B,2 C,2 D,2 C,2- | "G6" C,4 B,2 ^A,2 | "Cm7" B,8- | "F7" B,4 z2 B,2 |
+"Gmaj7" B2 C2 D2 C2- | "G6" C4 B2 ^A2 | "Cm7" B8- | "F7" B4 z2 B2 |
 w: mem- ber A- pril | _ and be | glad. | _ * I'll |
-"Bbmaj7" G,2 G,2 G,4- | "Gm7" G,2 A,2 _B,2 C,2 | "Cm7" D,6 C,2 | "F7" _B,2 G,4 F,4 |
+"Bbmaj7" G2 G2 G4- | "Gm7" G2 A2 _B2 C2 | "Cm7" D6 C2 | "F7" _B2 G4 F4 |
 w: be con- tent | _ you loved me | once in | A- pril. your |
-"Bbmaj7" G,4 G,4 G,4- | "Bb6" G,2 A,2 _B,2 C,2 | "Am11" D,2 D,2 D,4- | "D7" D,2 D,2 D,2 D,2 D,2 |
+"Bbmaj7" G4 G4 G4- | "Bb6" G2 A2 _B2 C2 | "Am11" D2 D2 D4- | "D7" D2 D2 D2 D2 D2 |
 w: lips were warm | _ and love and | Spring were new. | _ But I'm not a- |
-"Gmaj7" D,6 D,2 | "G6" E,2 C,2 D,3 B, | "F#m11" A,2 B,6- | "B9" B,2 B,2 D,2 C,2 |
+"Gmaj7" D6 D2 | "G6" E2 C2 D3 B | "F#m11" A2 B6- | "B9" B2 B2 D2 C2 |
 w: fraid of | Au- tumn and her | sor- row, | _ for I'll Re- |
-"Emaj7" B,2 B,6- | "Am7" B,2 z2 B,2 A,2 ^G,2 | "Am7b5" B,8- | "D7" B,8 A,8 |
+"Emaj7" B2 B6- | "Am7" B2 z2 B2 A2 ^G2 | "Am7b5" B8- | "D7" B8 A8 |
 w: mem- ber | _ * A- pril and | you. | _ won't |
-"Bm7" A,3 A, A,4- | "E9" A,2 A,2 A,2 B,2 C,2 | "Am7" D,2 D,6- | "D7b9" D,2 z2 E,3 D, |
+"Bm7" A3 A A4- | "E9" A2 A2 A2 B2 C2 | "Am7" D2 D6- | "D7b9" D2 z2 E3 D |
 w: for- get, _ | but I won't be lone- | ly, _ | I'll * Re- mem- |
-"G" B,2 C,2 D,2 C,2- | "Abmaj7" C,4 B,2 B,2 | G,8- | G,4 z4 |
+"G" B2 C2 D2 C2- | "Abmaj7" C4 B2 B2 | G8- | G4 z4 |
 w: ber A- pril, _ | and I'll smile. | _ | * * |]
 
 X:938
@@ -25826,24 +28485,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-m-beginning-to-see-the-light
 K:G
-^D, |: "G6" E, G, E,2 G,2 A,2 | "G6" B, E,,2 E,- E,3 ^D, | "G6" E, G, E,2 G,2 A,2 |
+^D |: "G6" E G E2 G2 A2 | "G6" B E,2 E- E3 ^D | "G6" E G E2 G2 A2 |
 w: I |  nev- er cared much for | moon- lit skies, _ I | nev- er wink back at |
-"Bbm7" _B, _E,,2 _E,- _E,3 _E, | "G6" E, G, E,2 G,2 A,2 | "Bm7" B, D,2 D,- D,2 D, C, | "A9" B, G, E,2 G, A,2 G,- |
+"Bbm7" _B _E,2 _E- _E3 _E | "G6" E G E2 G2 A2 | "Bm7" B D2 D- D2 D C | "A9" B G E2 G A2 G- |
 w: fi- re- flies; _ but | now that the stars are | in your eyes, _ I'm Be- | gin- ning To See The Light. |
-"G" G,4 z2 z ^D, | "G6" E, G, E,2 G,2 A,2 | "G6" B, E,,2 E,- E,3 ^D, | "G6" E, G, E,2 G,2 A,2 |
+"G" G4 z2 z ^D | "G6" E G E2 G2 A2 | "G6" B E,2 E- E3 ^D | "G6" E G E2 G2 A2 |
 w: _ * * I | nev- er went in for | af- ter- glow, _ or | can- dle- light on the |
-"Bbm7" _B, _E,,2 _E,- _E,3 _E, | "G6" E, G, E,2 G,2 A,2 | "Bm7" B, D,2 D,- D,2 D, C, | "A9" B, G, E,2 G, A,2 G,- |
+"Bbm7" _B _E,2 _E- _E3 _E | "G6" E G E2 G2 A2 | "Bm7" B D2 D- D2 D C | "A9" B G E2 G A2 G- |
 w: mis- tle- toe; _ but | now when you turn the | lamp down low _ I'm Be- | gin- ning To See The Light. |
-"G" G,6 z2 | "B9" z B,2 ^F, B,2 ^F,2 | "B9" ^D, ^F,2 B,- B,4 | "Bb9" z _B,2 F, _B,2 F,2 |
+"G" G6 z2 | "B9" z B2 ^F B2 ^F2 | "B9" ^D ^F2 B- B4 | "Bb9" z _B2 F _B2 F2 |
 w: _ * | * Used to ram- ble | thu the park, _ | * shad- ow- box- ing |
-"Bb9" D, F,2 _B,- _B,4 | "A9" z A,2 E, A,2 E,2 | "A9" ^C, E,2 A,- A,2 A, A, | "Bbm7" _B, _B, _B,2 _B, G,2 A,- |
+"Bb9" D F2 _B- _B4 | "A9" z A2 E A2 E2 | "A9" ^C E2 A- A2 A A | "Bbm7" _B _B _B2 _B G2 A- |
 w: in the dark. _ | * Then you came and | caused a spark, _ that's a | four- a- larm fi- re now. |
-"Am7" A,6 z ^D,, | "G6" E, G, E,2 G,2 A,2 | "Bm7" B, E,,2 E,- E,3 ^D, | "C#m7b5" E, G, E,2 G,2 A,2 |
+"Am7" A6 z ^D, | "G6" E G E2 G2 A2 | "Bm7" B E,2 E- E3 ^D | "C#m7b5" E G E2 G2 A2 |
 w: _ * I | nev- er made love by | lan- tern shine, _ I | nev- er saw rain- bows |
-"Bbm7" _B, _E,,2 _E,- _E,3 _E, | "C#m7b5" E, G, E,2 G,2 A,2 | "Bm7" B, D,2 D,- D,2 D, C, | "A9" B, G, E,2 G, A,2 G,- |
+"Bbm7" _B _E,2 _E- _E3 _E | "C#m7b5" E G E2 G2 A2 | "Bm7" B D2 D- D2 D C | "A9" B G E2 G A2 G- |
 w: in my wine; _ but | now that your lips are | burn- ing mine, _ I'm Be- | gin- ning To See The Light. |
-:|1 "G" G,4 z2 z ^D, | :|2 "G" G,6 z2 |
+:|1 "G" G4 z2 z ^D | :|2 "G" G6 z2 |
 w:  _ * * I |  _ * |]
 
 X:939
@@ -25854,24 +28514,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id i-m-sitting-on-top-of-the-world-2
+%%tags needs-repair
 K:F
-C2 |: "F" C,2 A,2 z2 C,2 | "Bb" D,2 _B,2 z2 D,2 | "F" C,8- |
+c2 |: "F" C2 A2 z2 C2 | "Bb" D2 _B2 z2 D2 | "F" C8- |
 w: I'm |  Sit- ting * On | Top Of * The | World, |
-"F" C,2 C,, C,- C, D, F,2 | "G7" G,8- | "C7" G,2 G, G,- G, A, G,2 | "F" F,8- |
+"F" C2 C, C- C D F2 | "G7" G8- | "C7" G2 G G- G A G2 | "F" F8- |
 w: _ just roll- ing a- long, | _ | just roll- ing a- long. _ | I'm |
-"Gm7" F,6 C2 | "F" C,2 A,2 z2 C,2 | "Bb" D,2 _B,2 z2 D,2 | "F" C,8- |
+"Gm7" F6 c2 | "F" C2 A2 z2 C2 | "Bb" D2 _B2 z2 D2 | "F" C8- |
 w: quit- ing | the blues * of | the world, * _ | just |
-"F" C,2 C,, C,- C, D, F,2 | "G7" G,8- | "C7" G,2 G, G,- G, A, G,2 | "F" F,8- |
-w: sing- ing a song, _ just | sing- | ing a song. _ "\"Glor"- y | Hal- |
-"F7" F,2 F, G, A, _B, C, ^C, | "Bb" D,2 _B,2 D,3 _B, | "E7" D,2 E,4 D,2 | "F" C,2 C, C,- C, B, C,2 |
-w: el- lu- "jah,\"" I just phoned the | Par- son, "\"Hey," Par | get read- y | to "call.\"" Just like Hump- ty |
-"F" A,8 | "Dm" A,2 F,2 A,2 F,2 | "Dm7" A,2 D,6 | "G7" z2 A, A,- A, D, A,2 |
+"F" C2 C, C- C D F2 | "G7" G8- | "C7" G2 G G- G A G2 | "F" F8- |
+w: sing- ing a song, _ just | sing- | ing a song. _ ""Glor"- y | Hal- |
+"F7" F2 F G A _B C ^C | "Bb" D2 _B2 D3 _B | "E7" D2 E4 D2 | "F" C2 C C- C B C2 |
+w: el- lu- "jah,"" I just phoned the | Par- son, ""Hey," Par | get read- y | to "call."" Just like Hump- ty |
+"F" A8 | "Dm" A2 F2 A2 F2 | "Dm7" A2 D6 | "G7" z2 A A- A D A2 |
 w: Dump- | ty, I'm go- ing | to fall, | * I'm Sit- ting On Top |
-"C" G,6 C,2 | "F" C,2 A,2 z2 C,2 | "Bb" D,2 _B,2 z2 D,2 | "F" C,8- |
+"C" G6 C2 | "F" C2 A2 z2 C2 | "Bb" D2 _B2 z2 D2 | "F" C8- |
 w: Of The | World, _ * just | roll- ing * a | long, |
-"F" C,2 C,, C,- C, D, F,2 | "G7" G,8- | "C7" G,2 C, C,- C, G, A,2 | :|1 "F" F,8- |
+"F" C2 C, C- C D F2 | "G7" G8- | "C7" G2 C C- C G A2 | :|1 "F" F8- |
 w: _ just roll- ing a long. | _ | I'm long. _ * * * |  * |
-"G7" F,6 C2 | :|2 "F" F,,8- | "F" F,6 z2 |
+"G7" F6 c2 | :|2 "F" F,8- | "F" F6 z2 |
 w: * * |  * | * * |]
 
 X:940
@@ -25882,20 +28544,21 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id isn-t-it-romantic-2
 K:Eb
-"Bb7" D, _E, C, D, |: "Eb6" _E,2 _E,6 | "Fm7" D, _E, C, D, _E,2 F,2 | "Ebmaj7" G,3 G, _B,3 _B, |
+"Bb7" D _E C D |: "Eb6" _E2 _E6 | "Fm7" D _E C D _E2 F2 | "Ebmaj7" G3 G _B3 _B |
 w: Is- n't It Ro- |  man- tic? | Mu- sic in the night, a | dream that can be |
-"Fm7" G,4 D, _E, C, D, | "Eb6" _E,2 _E,6 | "Fm7" D, _E, C, D, _E,2 F,2 | "Ebmaj7" G,3 G, _B,3 _B, |
+"Fm7" G4 D _E C D | "Eb6" _E2 _E6 | "Fm7" D _E C D _E2 F2 | "Ebmaj7" G3 G _B3 _B |
 w: heard. Is- n't It Ro- | man- tic? | Mov- ing shad- ows write the | old- est mag- ic |
-"Bbm7" _D,8 | :|1 "Abmaj7" C,8 | "Bb7" D, C, _B, _A, G,2 F,2 | "Cm" _E,3 _E, G,3 G, |
+"Bbm7" _D8 | :|1 "Abmaj7" C8 | "Bb7" D C _B _A G2 F2 | "Cm" _E3 _E G3 G |
 w: word. |  I | hear the breez- es play- ing | in the trees a- |
-"Bbm7" _E,8 | "Abmaj7" C8 | "Fm" D, C, _B, _A, G,2 F,2 | "Cm" _E,3 _E, C3 C, |
+"Bbm7" _E8 | "Abmaj7" c8 | "Fm" D C _B _A G2 F2 | "Cm" _E3 _E c3 C |
 w: bove. | While | all the world is say- ing | you were meant for |
-"Bb7b3b5b9b11b13" _D,,4 D, _E, C, D, | :|2 "Fm" C8 | "Dm7b5" D, C, _B, _A, G,2 F,2 | "Cm" _E,3 _E, G,3 G, |
+"Bb7b3b5b9b11b13" _D,4 D _E C D | :|2 "Fm" c8 | "Dm7b5" D C _B _A G2 F2 | "Cm" _E3 _E G3 G |
 w: love. Is- n't It Ro- |  Sweet | sym- bols in the moon- light | Do you mean that |
-"Cm" C,3 C, _E,3 _E, | "Gm7" F,2 _E,2 _B,4- | "Fm7" _B,4 D, _E, C, D, | "Eb" _E,8- |
+"Cm" C3 C _E3 _E | "Gm7" F2 _E2 _B4- | "Fm7" _B4 D _E C D | "Eb" _E8- |
 w: I will fall in | love per- chance? | _ Is- n't it ro- | mance? |
-"Eb" _E,4 |
+"Eb" _E4 |
 w: _ |]
 
 X:941
@@ -25906,28 +28569,29 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id it-might-as-well-be-spring-2
 K:G
-D, D, | "G6" E, D, D, D, E, D, D, G, | "Bm7" E,2 D,4 D, D, | "G" D,3/2 B/ D,3/2 G,,/ B,3/2 D,,/ G,3/2 D,/ |
+D D | "G6" E D D D E D D G | "Bm7" E2 D4 D D | "G" D3/2 b/ D3/2 G,/ B3/2 D,/ G3/2 D/ |
 w: I'm as | rest- less as a wil- low in a | wind- storm, I'm as | jump- y as a pup- pet on a |
-"Dm7" F,6 F,2 | "C" E,2 ^D, E, ^F, G, | "Bm7" G,2 D,4 D, D, | "Am7" C2 C,2 C,2 ^F,,2 |
+"Dm7" F6 F2 | "C" E2 ^D E ^F G | "Bm7" G2 D4 D D | "Am7" c2 C2 C2 ^F,2 |
 w: string. I'd | say that I had spring | fev- er, but I | know it is- n't |
-"Bm7" B,6 D,, D, | "G6" E, D, D, D, E, D, D, G, | "Bm7" E,2 D,4 D, D, | "G" D,3/2 B/ D,3/2 G,,/ B,3/2 D,,/ G,3/2 D,/ |
+"Bm7" B6 D, D | "G6" E D D D E D D G | "Bm7" E2 D4 D D | "G" D3/2 b/ D3/2 G,/ B3/2 D,/ G3/2 D/ |
 w: spring. I am | star- ry eyed and vague- ly dis- con- | tent- ed, like a | night- in- gale with- out a song to |
-"Dm7" F,6 F,2 | "C" E,2 ^D, E, ^F, G, | "Bm7" G,2 D,4 D, D, | "Am7" D2 D,2 D,2 ^F,,2 |
+"Dm7" F6 F2 | "C" E2 ^D E ^F G | "Bm7" G2 D4 D D | "Am7" d2 D2 D2 ^F,2 |
 w: sing. Oh, | why should I have spring | fev- er when it | is- n't e- ven |
-"G" G,8 | "C" C,2 C,2 C, D, C, B, | "Dm7" A,2 F,2 F,4 | "Dm7" A, F, F, F, F,2 E,2 |
+"G" G8 | "C" C2 C2 C D C B | "Dm7" A2 F2 F4 | "Dm7" A F F F F2 E2 |
 w: spring? | I keep wish- ing I were | some- where else | walk- ing down a strange new |
-"C" G,8 | "Am7" C,2 C,2 C, D, C, B, | "F#7b5" A,2 ^F,2 ^F,2 G, A, | "Em7" B,2 B,2 ^C,2 ^C,2 |
+"C" G8 | "Am7" C2 C2 C D C B | "F#7b5" A2 ^F2 ^F2 G A | "Em7" B2 B2 ^C2 ^C2 |
 w: street; | hear- ing words that I have | nev- er heard from a | man I've yet to |
-"Am7" D,6 D,, D, | "G6" E, D, D, D, E, D, D, G, | "Bm7" E,2 D,4 D, D, | "G" D,3/2 B/ D,3/2 G,,/ B,3/2 D,,/ G,3/2 D,/ |
+"Am7" D6 D, D | "G6" E D D D E D D G | "Bm7" E2 D4 D D | "G" D3/2 b/ D3/2 G,/ B3/2 D,/ G3/2 D/ |
 w: meet, I'm as | bu- sy as a spi- der spinn- ing | day- dreams I'm as | gid- dy as a ba- by on a |
-"Dm7" F,6 F,2 | "C" E, E, ^D, E, ^F, ^F, ^E, ^F, | "G69" G,2 G,4 ^F, G, | "Am7" A,2 A,2 A,2 ^F,2 |
+"Dm7" F6 F2 | "C" E E ^D E ^F ^F ^E ^F | "G69" G2 G4 ^F G | "Am7" A2 A2 A2 ^F2 |
 w: swing. I | have- n't seen a cro- cus or a | rose- bud, or a | rob- in on the |
-"B7" B,6 B, ^B, | "A7" ^C,2 A,2 A,2 A, B, | "Cm7" C, A, A, A, A,2 A, ^A, | "Bm7" B,2 G,2 G,2 B,2 |
+"B7" B6 B ^B | "A7" ^C2 A2 A2 A B | "Cm7" C A A A A2 A ^A | "Bm7" B2 G2 G2 B2 |
 w: wing. But I | feel so gay in a | mel- an- cho- ly way that It | Might As Well Be |
-"A7" A,6 G,2 | "Bm7" D,2- D,3/2 B/ G,4 | "Am7" D,2- D,3/2 C/ A,4 | "G" G,8- |
+"A7" A6 G2 | "Bm7" D2- D3/2 b/ G4 | "Am7" D2- D3/2 c/ A4 | "G" G8- |
 w: Spring. It | Might _ _ As | Well _ _ Be | Spring! |
-"G" G,2 z2 z4 |
+"G" G2 z2 z4 |
 w: _ * * |]
 
 X:942
@@ -25938,24 +28602,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id it-never-entered-my-mind-2
 K:F
-|: "F" A2 A,2 A,2 A,2 | "F" z3/2 A,/ G,3/2 F,/ E,2 E,2 | "F" z3/2 F,/ E,3/2 D,/ C,2 C,2 | "F" F,2 E, C,- C,4 |
+|: "F" a2 A2 A2 A2 | "F" z3/2 A/ G3/2 F/ E2 E2 | "F" z3/2 F/ E3/2 D/ C2 C2 | "F" F2 E C- C4 |
 w:  Once I laughed when | * I heard you say- ing | * that I'd be play- ing | sol- i- taire, _ |
-"F" z3/2 F,/ E,3/2 D,/ C,2 C,2 | "F" F,2 E, C,- C,4 | "Gm7" z3/2 D,/ F,3/2 G,/ A, F, A, G,- | "Gm" G,6 z2 |
+"F" z3/2 F/ E3/2 D/ C2 C2 | "F" F2 E C- C4 | "Gm7" z3/2 D/ F3/2 G/ A F A G- | "Gm" G6 z2 |
 w: * un- eas- y in my | eas- y chair, _ | * It Nev- er En- tered My Mind. | _ * |
-"F" A,2 A,2 A,2 A,2 | "F" z3/2 A,/ G,3/2 F,/ E,2 E,2 | "F" z3/2 F,/ E,3/2 D,/ C,2 C,2 | "F" F,2 E, C,- C,4 |
+"F" A2 A2 A2 A2 | "F" z3/2 A/ G3/2 F/ E2 E2 | "F" z3/2 F/ E3/2 D/ C2 C2 | "F" F2 E C- C4 |
 w: Once you told me | * I was mis- tak- en | * that I'd a- wak- en | with the sun _ |
-"F" z3/2 F,/ E,3/2 D,/ C,2 C,2 | "F" F,2 E, C,- C,4 | "Gm7" z3/2 D,/ F,3/2 G,/ A, F, A, C,- | "Am" C,6 z2 |
+"F" z3/2 F/ E3/2 D/ C2 C2 | "F" F2 E C- C4 | "Gm7" z3/2 D/ F3/2 G/ A F A C- | "Am" C6 z2 |
 w: * and or- der or- ange | juice for one, _ | * It Nev- er En- tered My Mind. | _ * |
-"F" D,4 F,,2 F,2- | "G" F,6 E,2 | "Fmaj7" G,4 F,2 F,2- | "G" F,4 z2 E,2 |
+"F" D4 F,2 F2- | "G" F6 E2 | "Fmaj7" G4 F2 F2- | "G" F4 z2 E2 |
 w: You have what | _ I | lack my- self, | _ * and |
-"F6" A, A,3 _B, _B,3 | "F" C, C,3 D, D,3 | "C7" E,4 C,2 C,2- | "Bb" C,6 z2 |
+"F6" A A3 _B _B3 | "F" C C3 D D3 | "C7" E4 C2 C2- | "Bb" C6 z2 |
 w: now I e- ven | have to scratch my | back my- self. | _ * |
-"F" A,2 A,2 A,2 A,2 | "F" z3/2 A,/ G,3/2 F,/ E,2 E,2 | "F" z3/2 F,/ E,3/2 D,/ C,2 C,2 | "F" F,2 E, C,- C,4 |
+"F" A2 A2 A2 A2 | "F" z3/2 A/ G3/2 F/ E2 E2 | "F" z3/2 F/ E3/2 D/ C2 C2 | "F" F2 E C- C4 |
 w: Once you warned me | * that if you scorned me | * I'd sing the maid- en's | pray'r a- gain, _ |
-"F" z3/2 F,/ E,3/2 D,/ C,2 C,2 | "Am7b5" C2 _B, A,- A,4 | "Gm7" z3/2 _B,/ A,3/2 G,/ F,2 E,2 | "F" A,2 E, E,- E,4 |
+"F" z3/2 F/ E3/2 D/ C2 C2 | "Am7b5" c2 _B A- A4 | "Gm7" z3/2 _B/ A3/2 G/ F2 E2 | "F" A2 E E- E4 |
 w: * and with that you were | there a- gain _ | * to get in- to my | hair a- gain _ |
-"G" z3/2 D,/ F,3/2 G,/ A, F, G, F,- | :|1 "F6" F,4 z4 | :|2 "F6" F,6 z2 |
+"G" z3/2 D/ F3/2 G/ A F G F- | :|1 "F6" F4 z4 | :|2 "F6" F6 z2 |
 w: * It Nev- er En- tered My Mind. |  _ * |  * * |]
 
 X:943
@@ -25966,24 +28631,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id just-friends-2
 K:G
-"G7" B2 | "Cmaj7" B,8- | "Cm7" B,4 A,2 B,2 A,2 | "F7" _E,8- |
+"G7" b2 | "Cmaj7" B8- | "Cm7" B4 A2 B2 A2 | "F7" _E8- |
 w: Just | friends, | _ lov- ers no | more |
-"Gmaj7" _E,4 A,4 | "Bbm7" A,8- | "Eb7" A,2 A,2 G,2 A,2 G,2 | "Am7" _D,8- |
+"Gmaj7" _E4 A4 | "Bbm7" A8- | "Eb7" A2 A2 G2 A2 G2 | "Am7" _D8- |
 w: _ Just | friends, | _ but not like be- | fore. |
-"D7" _D,6 G,2 | "Bm7" G,3 E, G,3 E, | "Em7" ^F,6 ^F,2 | "A7" ^F,3 D, ^F,3 D, |
+"D7" _D6 G2 | "Bm7" G3 E G3 E | "Em7" ^F6 ^F2 | "A7" ^F3 D ^F3 D |
 w: _ To | think of what we've | been and | not to kiss a- |
-"Am7" E,2 ^F,2 G,2 B,2 | "D7" E,4 B,4- | "Cmaj7" B,2 E,,2 E,2 ^F,2 G,2 | "Cm7" B,4 A,4- |
+"Am7" E2 ^F2 G2 B2 | "D7" E4 B4- | "Cmaj7" B2 E,2 E2 ^F2 G2 | "Cm7" B4 A4- |
 w: gain seems like pre- | tend- ing | _ it is- n't the | end- ing. |
-"F7" A,4 B,4 | "Gmaj7" B,8- | "Bbm7" B,4 A,2 B,2 A,2 | "Eb7" _E,8- |
+"F7" A4 B4 | "Gmaj7" B8- | "Bbm7" B4 A2 B2 A2 | "Eb7" _E8- |
 w: _ Two | friends | _ drift- ing a- | part, |
-"Am7" _E,4 A,4 | "D7" A,8- | "Bm7" A,2 A,2 G,2 A,2 G,2 | "Em7" _D,8- |
+"Am7" _E4 A4 | "D7" A8- | "Bm7" A2 A2 G2 A2 G2 | "Em7" _D8- |
 w: _ Two | friends | _ but one brok- en | heart. |
-"A7" _D,6 G,2 | "Am7" G,3 E, G,3 E, | "G6" ^F,6 A,2 | "Dm7" A,3 ^F, A,3 ^F, |
+"A7" _D6 G2 | "Am7" G3 E G3 E | "G6" ^F6 A2 | "Dm7" A3 ^F A3 ^F |
 w: _ We | loved, we laughed, we | cried and | sud- den- ly love |
-G,2 A,2 B,2 D,2 | E,4 E,,4 | D4 B,4 | G,8 |
+G2 A2 B2 D2 | E4 E,4 | d4 B4 | G8 |
 w: died. The sto- ry | ends and | we're just | friends. |
-z4 B,4 |
+z4 B4 |
 w: * * |]
 
 X:944
@@ -25994,24 +28660,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id let-s-call-the-whole-thing-off
 K:G
-|: "G" G2 E, ^F,- ^F, ^F,2 E, | "Am7" G,2 A, B,- B, B,3 | "G" G,2 E, ^F,- ^F, ^F,2 E, | "Am7" G,2 A, B,- B, B,3 |
+|: "G" g2 E ^F- ^F ^F2 E | "Am7" G2 A B- B B3 | "G" G2 E ^F- ^F ^F2 E | "Am7" G2 A B- B B3 |
 w:  You say ee- _ ther and | I say eye- _ ther, | you say nee- _ ther and | I say ny- _ ther; |
-"G" D, G,, z2 D G,, z2 | "C" D G,, z2 D G,, z2 | "G" D2 C,3/2 B,/ A,2 G,2 | "A7" A,6 z2 |
+"G" D G, z2 d G, z2 | "C" d G, z2 d G, z2 | "G" d2 C3/2 B/ A2 G2 | "A7" A6 z2 |
 w: ee- ther, * eye- ther, * | nee- ther, * ny- ther, * | Let's Call The Whole Thing | Off! * |
-"G" G, G,2 E, ^F, ^F,2 E, | "Am7" G, G,2 A, B, B,3 | "G" G, G,2 E, ^F, ^F,2 E, | "Am7" G, G,2 A, B, B,2 B, |
+"G" G G2 E ^F ^F2 E | "Am7" G G2 A B B3 | "G" G G2 E ^F ^F2 E | "Am7" G G2 A B B2 B |
 w: You like po- ta- to and | I like po- tah- to, | you like to- ma- to and | I like to - mah- to; |
-"G" D, G,, z G, D G,, z G, | "C" D G,, z G, D G,, z G, | "G" D2 C,3/2 B,/ A,2 G,2 | "G" G,4 z2 G,2 |
+"G" D G, z G d G, z G | "C" d G, z G d G, z G | "G" d2 C3/2 B/ A2 G2 | "G" G4 z2 G2 |
 w: po- ta- * to, po- tah- * to, | to- ma- * to, to- mah- * to! | Let's Call The Whole Thing | Off! * But |
-"C#m7b5" E8 | "F#7" D,3/2 ^C,/ B,3/2 ^C,/ D,2 D,2 | "E7" B,2 B,2 C,2 C,2 | "D7" A,6 E,2 |
+"C#m7b5" e8 | "F#7" D3/2 ^C/ B3/2 ^C/ D2 D2 | "E7" B2 B2 C2 C2 | "D7" A6 E2 |
 w: oh! | If we call the whole thing | off, then we must | part. And |
-"C#m7b5" E8 | "F#7" D,3/2 ^C,/ B,3/2 ^C,/ D,2 D,2 | "E7" B,2 B,2 C,2 C,2 | "D7" A,6 D,,3/2 D,/ |
+"C#m7b5" e8 | "F#7" D3/2 ^C/ B3/2 ^C/ D2 D2 | "E7" B2 B2 C2 C2 | "D7" A6 D,3/2 D/ |
 w: oh! | If we ev- er part, then | that might break my | heart! * * |
-"G" G, G,2 E, ^F, ^F,2 E, | "Am7" G, G,2 A, B, B,3 | "G" G, G,2 E, ^F, ^F,2 E, | "Am7" G, G,2 A, B, B,2 B, |
+"G" G G2 E ^F ^F2 E | "Am7" G G2 A B B3 | "G" G G2 E ^F ^F2 E | "Am7" G G2 A B B2 B |
 w: * * * * * * | * * * * * | * * * * * * | * * * * * * |
-"G" D, G,, z2 D G,, z2 | "C" D3/2 D,/ G,,3/2 G,/ D G,,3 | "G" D3/2 D,/ C,3/2 B,/ C,3/2 B,/ A,2 | "B7" B,6 z2 |
+"G" D G, z2 d G, z2 | "C" d3/2 D/ G,3/2 G/ d G,3 | "G" d3/2 D/ C3/2 B/ C3/2 B/ A2 | "B7" B6 z2 |
 w: * * * * * * | * * * * * * | * * * * * * * | * * |
-"Am7" E,2 B,3/2 C,/ B,2 A,2 | :|1 "G" G,6 z2 | :|2 "G" G,6 z2 |
+"Am7" E2 B3/2 C/ B2 A2 | :|1 "G" G6 z2 | :|2 "G" G6 z2 |
 w: * * * * * |  * * |  * * |]
 
 X:945
@@ -26022,24 +28689,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id like-someone-in-love-2
 K:C
-|: "Cmaj7" E,2 E,4 E,2 | "C6" E,2 A,2 G,2 E,2 | "D7" D,2 D,4 B2 | "Em7" G,8 |
+|: "Cmaj7" E2 E4 E2 | "C6" E2 A2 G2 E2 | "D7" D2 D4 b2 | "Em7" G8 |
 w:  Late- ly I | find my- self out | gaz- ing at | stars, |
-"Dm7" F,2 F,4 C2 | "G" B,6 A,2 | "Cmaj7" G,2 G,4 E2 | "Gm7" D,8 |
+"Dm7" F2 F4 c2 | "G" B6 A2 | "Cmaj7" G2 G4 e2 | "Gm7" D8 |
 w: hear- ing gui- | tars Like | Some- one In | Love. |
-"F" D,2 D,4 ^C,2 | "Bm7" E,2 D,2 ^C,2 B,2 | "Amaj7" E,,4 E,4- | "A6" E,8 |
+"F" D2 D4 ^C2 | "Bm7" E2 D2 ^C2 B2 | "Amaj7" E,4 E4- | "A6" E8 |
 w: Some- times the | things I do a- | stound me, | _ |
-"Am7" C2 C,4 B,2 | "D7" D,2 C,2 B,2 A,2 | "D7" D,,8 | "G7#5" ^D,8 |
+"Am7" c2 C4 B2 | "D7" D2 C2 B2 A2 | "D7" D,8 | "G7#5" ^D8 |
 w: most- ly when- | ev- er you're a- | round | me. |
-"Cmaj7" E,2 E,4 E,2 | "C6" E,2 A,2 G,2 E,2 | "D7" D,2 D,4 B2 | "Em7" G,8 |
+"Cmaj7" E2 E4 E2 | "C6" E2 A2 G2 E2 | "D7" D2 D4 b2 | "Em7" G8 |
 w: Late- ly I | seem to walk as | though I had | wings, |
-"Dm7" F,2 F,4 C2 | "G" B,6 A,2 | "Cmaj7" G,2 G,4 E2 | "Gm7" D,8 |
+"Dm7" F2 F4 c2 | "G" B6 A2 | "Cmaj7" G2 G4 e2 | "Gm7" D8 |
 w: bump in- to | things Like | Some- one In | Love. |
-"F" D,2 D,4 ^C,2 | "Bm7" E,2 D,2 ^C,2 B,2 | "Amaj7" E,,2 E,4 E,2 | "D" ^F,6 ^F,2 |
+"F" D2 D4 ^C2 | "Bm7" E2 D2 ^C2 B2 | "Amaj7" E,2 E4 E2 | "D" ^F6 ^F2 |
 w: Each time I | look at you I'm | linmp as a | glove and |
-"Em7" G,2 G,4 G,2 | "Dm7" F,2 D4 B,2 | :|1 "C" C,8 | "D9" :|2 C,8- |
+"Em7" G2 G4 G2 | "Dm7" F2 d4 B2 | :|1 "C" C8 | "D9" :|2 C8- |
 w: feel- ing Like | Some- one In |  Love. |  Love. |
-"C" C,8 |
+"C" C8 |
 w: _ |]
 
 X:946
@@ -26050,28 +28718,29 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id lost-in-the-stars
 K:G
-^C, | "G" E,2 D,2 G,2 ^C,, ^C, | "D7" E,2 D, D, A2 z ^C,, | "G" E,2 D, D, C2 B, C, |
+^C | "G" E2 D2 G2 ^C, ^C | "D7" E2 D D a2 z ^C, | "G" E2 D D c2 B C |
 w: Be- | fore Lord God made the | sea and the land, * He | held all the stars in the |
-"Am7" B,2 A, ^G, A,2 B, C, | "G" D,2 B, G, E, D2 C, | "G" C,2 B,2 B,2 z D,, | "G" E,2 E, E, E,2 ^F, G, |
+"Am7" B2 A ^G A2 B C | "G" D2 B G E d2 C | "G" C2 B2 B2 z D, | "G" E2 E E E2 ^F G |
 w: palm of His hand, and they | ran through His fin- gers like | grains of sand, * and | one lit- tle star fell a- |
-"Am7" A,6 ^C,, ^C, | "G" E,2 D,2 G, G, ^C,, ^C, | "D7" E,2 D,2 A2 z ^C,,/ ^C,/ | "G" E, E, D,2 C2 B, C, |
+"Am7" A6 ^C, ^C | "G" E2 D2 G G ^C, ^C | "D7" E2 D2 a2 z ^C,/ ^C/ | "G" E E D2 c2 B C |
 w: lone. Then the | Lord God hunt- ed through the | wide night air * for the | lit- tle dark star on the |
-"Am7" B,2 A, ^G, A,2 B, C, | "G" D,2 B, G, E, D2 C, | "G" C,2 B,3/2 ^A,/ B,2 z D,,/ D,/ | "A7" E, E, E,2 A,3 G, |
+"Am7" B2 A ^G A2 B C | "G" D2 B G E d2 C | "G" C2 B3/2 ^A/ B2 z D,/ D/ | "A7" E E E2 A3 G |
 w: wind down _ there. And he | stat- ed and prom- ised He'd | take spec- ial care * so it | would- n't get lost a- |
-"G" G,6 G, G, | "Cm7" _B,2 _B,2 _B,2 A, G, | "Bb" F,3 D, _B,2 C, D, | "Cm7b5" _E,2 _E,2 _E,2 _B, C, |
+"G" G6 G G | "Cm7" _B2 _B2 _B2 A G | "Bb" F3 D _B2 C D | "Cm7b5" _E2 _E2 _E2 _B C |
 w: gain. Now a | man don't mind if the | stars grow dim and the | clouds blow o- ver and |
-"Bb" D,3 D, D,2 z G, | "Cm7" _B,2 _B, _B, A,2 G,2 | "Bb" F,3/2 F,/ F, D, _B,2 C, D, | "Cm7b5" _E,2 _E, _E, D,2 ^C,2 |
+"Bb" D3 D D2 z G | "Cm7" _B2 _B _B A2 G2 | "Bb" F3/2 F/ F D _B2 C D | "Cm7b5" _E2 _E _E D2 ^C2 |
 w: dark- en him. * So | long as the Lord God's | watch- ing o- ver them keep- ing | track how it all goes |
-"E7" D,6 z ^C, | "G" E,2 D,2 G,3/2 G,/ ^C,, ^C, | "D7" E,2 D,3/2 D,/ A2 z ^C,,/ ^C,/ | "G" E,2 D,2 C C, B, C, |
+"E7" D6 z ^C | "G" E2 D2 G3/2 G/ ^C, ^C | "D7" E2 D3/2 D/ a2 z ^C,/ ^C/ | "G" E2 D2 c C B C |
 w: on. * But | I've been walk- ing through the | night, and the day, * 'till my | eyes get wear- y and my |
-"Am" B,2 A, ^G, A,2 z B,/ C,/ | "G" D,2 D, D, D,2 C, B, | "Cm6" A,2 A, A, A,3 A, | "G" D,2 ^C, D, E, D, C, B, |
+"Am" B2 A ^G A2 z B/ C/ | "G" D2 D D D2 C B | "Cm6" A2 A A A3 A | "G" D2 ^C D E D C B |
 w: head turn _ grey, * And _ | some- times it seems may- be | God's gone a- way, for- | get- ting the prom- ise that we |
-"Cm6" A,3 A, A,4 | "D7" z2 ^C,, D, C2 C,2 | "G" C, B, ^A, B,6 | "Em7" B,/ A,/ G,- G,2 _B, G,3 |
+"Cm6" A3 A A4 | "D7" z2 ^C, D c2 C2 | "G" C B ^A B6 | "Em7" B/ A/ G- G2 _B G3 |
 w: heard Him say, | * And we're lost out | here in the stars, | lit- tle stars, big stars, blow- |
-"G" B,3/2 B,/ A, G, E,4 | "D7" z2 ^C, D, C2 C,2 | "G" C, B, ^A, B,6 | "Em7" B,/ A,/ G,- G,2 _B, G,3 |
+"G" B3/2 B/ A G E4 | "D7" z2 ^C D c2 C2 | "G" C B ^A B6 | "Em7" B/ A/ G- G2 _B G3 |
 w: ing through the night. And | * we're lost out here | in the stars, lit- | tle stars, big stars, blow- ing |
-"G" B,3/2 B,/ C, D, E,4 | "D7" z2 ^C,, D, A2 A,2 | "G" A, G, ^F, G,6- | "G6" G,8 |
+"G" B3/2 B/ C D E4 | "D7" z2 ^C, D a2 A2 | "G" A G ^F G6- | "G6" G8 |
 w: through the night. And we're | * lost out here in | the stars. _ * | * |]
 
 X:947
@@ -26082,44 +28751,46 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id love-for-sale-2
+%%tags needs-repair
 K:Bb
-|: "Eb7" _B8- | "Eb7" _B,6 G,2 | "Bbm" F,8- | "Bbm" F,8 |
+|: "Eb7" _b8- | "Eb7" _B6 G2 | "Bbm" F8- | "Bbm" F8 |
 w:  Love | _ For | Sale, | Ap- |
-"Eb7" z2 _B, _B, _B,2 _B,2 | "Eb7" _B,2 _B,4 G,2 | "Bbm" F,8- | "Bbm" F,6 z2 |
+"Eb7" z2 _B _B _B2 _B2 | "Eb7" _B2 _B4 G2 | "Bbm" F8- | "Bbm" F6 z2 |
 w: * pe- tiz- ing young | Love For Sale | Love | that's * |
-"Ebm7" z2 _B, _B, _B,2 _B,2 | "Ab7" _B,2 C,2 C,4 | "Db7" z2 _A, _A, _A,2 _A,2 | "Gb7" _A,2 _G,2 _G,4 |
+"Ebm7" z2 _B _B _B2 _B2 | "Ab7" _B2 C2 C4 | "Db7" z2 _A _A _A2 _A2 | "Gb7" _A2 _G2 _G4 |
 w: * fresh and still un- | spoiled, love that's | * on- ly slight- ly | soiled, Love _ |
-"Cm7b5" F,8- | "F7#5" F,6 _D,2 | "Bbm" _B,8- | "Bbm" _B,6 z2 |
+"Cm7b5" F8- | "F7#5" F6 _D2 | "Bbm" _B8- | "Bbm" _B6 z2 |
 w: For | Sale. _ | Who | _ * |
-"Eb7" _B8- | "Eb7" _B,6 G,2 | "Bbm" F,8- | "Bbm" F,8 |
+"Eb7" _b8- | "Eb7" _B6 G2 | "Bbm" F8- | "Bbm" F8 |
 w: will | buy? _ | Who | would |
-"Eb7" z2 _B, _B, _B,2 _B,2 | "Eb7" _E,2 C,2 _B,2 G,2 | "Bbm" F,8- | "Bbm" F,6 z2 |
+"Eb7" z2 _B _B _B2 _B2 | "Eb7" _E2 C2 _B2 G2 | "Bbm" F8- | "Bbm" F6 z2 |
 w: * like to sam- ple | my sup- ply? _ | Who's | pre- * |
-"Ebm7" z2 _B, _B, _B,2 _B,2 | "Ab7" _B,2 C,2 C,4 | "Db7" z2 _D, _D, _D,2 _D,2 | "Gb7" _D,2 _G,,2 _G,4 |
+"Ebm7" z2 _B _B _B2 _B2 | "Ab7" _B2 C2 C4 | "Db7" z2 _D _D _D2 _D2 | "Gb7" _D2 _G,2 _G4 |
 w: * pared to pay the | price, for a | * trip to par- a- | dise? Love _ |
-"Cm7b5" F,8- | "F7#5" F,6 _D,2 | "Bbm" _B,8- | "Bbm7" _B,6 z2 |
+"Cm7b5" F8- | "F7#5" F6 _D2 | "Bbm" _B8- | "Bbm7" _B6 z2 |
 w: For | Sale. _ | Let | the * |
-"Ebm7" z2 _B, C, _D,2 _E,2 | "Ab7" F,2 _E,2 _E,4 | "Dbmaj7" z2 C, _D, _E,2 F,2 | "Fm7b5" _A,8 |
+"Ebm7" z2 _B C _D2 _E2 | "Ab7" F2 _E2 _E4 | "Dbmaj7" z2 C _D _E2 F2 | "Fm7b5" _A8 |
 w: * po- ets pipe of | love in their | * child- ish way. I | know |
-"Ebm7" z2 _B,, C, _D,2 _E,2 | "Ab7" F,2 _E,2 _E,4 | "Dbmaj7" z2 C, _D, _E,2 F,2 | "Bbm7" _B,8 |
+"Ebm7" z2 _B, C _D2 _E2 | "Ab7" F2 _E2 _E4 | "Dbmaj7" z2 C _D _E2 F2 | "Bbm7" _B8 |
 w: * ev- ery type of | love bet- ter | * far than they. If | you |
-"Bb7" z2 _B,, C, D,2 F,2 | "Bb7" _G,2 F,2 F,4 | "Ebm" z2 D,2 _E,2 F,2 _G,2 | "Ebm" C,2 _B,2 _B,4 |
+"Bb7" z2 _B, C D2 F2 | "Bb7" _G2 F2 F4 | "Ebm" z2 D2 _E2 F2 _G2 | "Ebm" C2 _B2 _B4 |
 w: * want the thrill of | love, I've been | * thru the mill of | love; Old love, |
-"Gm7b5" _D,4 C,4 | "C7" _D,4 C,4 | "Fm7b5" z2 B, B, B,2 B,2 | "Bb7b9" B,4 _B,4 |
+"Gm7b5" _D4 C4 | "C7" _D4 C4 | "Fm7b5" z2 B B B2 B2 | "Bb7b9" B4 _B4 |
 w: new love, | Ev- 'ry | * love but true love. | Love _ |
-"Eb7" _B,8- | "Eb7" _B,6 G,2 | "Bbm" F,8- | "Bbm" F,6 z2 |
+"Eb7" _B8- | "Eb7" _B6 G2 | "Bbm" F8- | "Bbm" F6 z2 |
 w: For | Sale, _ | Ap- | pe- * |
-"Eb7" z2 _B, _B, _B,2 _B,2 | "Eb7" _B,2 _B,4 G,2 | "Bbm" F,8- | "Bbm" F,6 z2 |
+"Eb7" z2 _B _B _B2 _B2 | "Eb7" _B2 _B4 G2 | "Bbm" F8- | "Bbm" F6 z2 |
 w: * tiz- ing young Love | For Sale. _ | If | you * |
-"Ebm7" z2 _B, _B, _B,2 _B,2 | "Ab7" _B,2 C,2 C,4 | "Db7" z2 _D, _D, _D,2 _D,2 | "Gb7" _D,2 _E,2 _E,4 |
+"Ebm7" z2 _B _B _B2 _B2 | "Ab7" _B2 C2 C4 | "Db7" z2 _D _D _D2 _D2 | "Gb7" _D2 _E2 _E4 |
 w: * want to buy my | wares, Fol- low | * me and climb the | stairs, Love _ |
-"Cm7b5" F,8- | "F7#5" F,6 _D,2 | "Bbm" _B,8- | "Bbm7" _B,6 z2 |
+"Cm7b5" F8- | "F7#5" F6 _D2 | "Bbm" _B8- | "Bbm7" _B6 z2 |
 w: For | Sale. _ | Love | _ * |
-"Gm7b5" F8- | "Eb7" F,4 F, _D, _B, G, | "Ebm7" _B, C, _D, _E, F,2 F,2 | "Cm7b5" F,6 _D,2 |
+"Gm7b5" f8- | "Eb7" F4 F _D _B G | "Ebm7" _B C _D _E F2 F2 | "Cm7b5" F6 _D2 |
 w: _ | _ _ _ _ _ | _ _ _ _ _ For | Sale. * |
-"Bbm" _B,8- | "Eb7" _B,8- | :|1 "Bb" _B,8- | "Bb" _B,2 z2 z4 |
+"Bbm" _B8- | "Eb7" _B8- | :|1 "Bb" _B8- | "Bb" _B2 z2 z4 |
 w: * | * |  * | * * * |
-:|2 "Bb" _B,8- | "Bb" _B,2 z2 z4 |
+:|2 "Bb" _B8- | "Bb" _B2 z2 z4 |
 w:  * | * * * |]
 
 X:948
@@ -26130,24 +28801,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id lullaby-of-birdland-2
+%%tags needs-repair
 K:Fmin
-"Fm6" C C, _B, _A, G, F,3 | "G7b9" D,2 F, E,- E,4 | "Fm7" C,2 G F,- F,4 | "Bbm7" _D,2 C _B,- _B,4 |
+"Fm6" c C _B _A G F3 | "G7b9" D2 F E- E4 | "Fm7" C2 g F- F4 | "Bbm7" _D2 c _B- _B4 |
 w: Lul- la- by Of Bird- land | that's what I _ | al- ways hear _ | when you sigh. _ |
-"Cm7" _E, _E, _D, C, _B, _A,3 | "Bbm7" F, C _B, E,,- E, C _B, _E,,- | "Abmaj7" _E,4- _E, _B _A, _D,,- | "Gm7b5" _D, _A G, C,,- C,4 |
+"Cm7" _E _E _D C _B _A3 | "Bbm7" F c _B E,- E c _B _E,- | "Abmaj7" _E4- _E _b _A _D,- | "Gm7b5" _D _a G C,- C4 |
 w: Nev- er in my word- land | could there be ways _ to re- veal | _ _ in a phrase | _ how I feel! _ |
-"Fm6" C C, _B, _A, G, F,3 | "G7b9" D,2 F, E,- E,4 | "Fm7" C,2 G F,- F,4 | "Bbm7" _D,2 C _B,- _B,4 |
+"Fm6" c C _B _A G F3 | "G7b9" D2 F E- E4 | "Fm7" C2 g F- F4 | "Bbm7" _D2 c _B- _B4 |
 w: Have you ev- er heard two | tur- tle doves _ | bill and coo _ | when they love? _ |
-"Cm7" _E, _E, _D, C, _B, _A,3 | "Bbm7" F, C _B, E,,- E, C _B, _E,,- | "Abmaj7" _E,4- _E, _E, G, _A,- | "Ab" _A,8 |
+"Cm7" _E _E _D C _B _A3 | "Bbm7" F c _B E,- E c _B _E,- | "Abmaj7" _E4- _E _E G _A- | "Ab" _A8 |
 w: That's the kind of mag- ic | mu- sic we make _ with our lips | _ _ when we kiss! | _ |
-"Cm7b5" C,2 _D, D, _E, C, _E, _D,- | "Bbm7" _D, _B,3- _B,4 | "Bbm7" _B,2 B, C, _D, _B, _D, C,- | "Abmaj7" C,8 |
+"Cm7b5" C2 _D D _E C _E _D- | "Bbm7" _D _B3- _B4 | "Bbm7" _B2 B C _D _B _D C- | "Abmaj7" C8 |
 w: And tere's a weep- y old wil- | low; _ he | real- ly knows how to cry! _ | That's |
-"Cm7b5" C,2 _D, D, _E, C, _E, _D,- | "Bbm7" _D, _B,3- _B,4 | "Eb7b9" _B,2 B, C, _D, _B, _D, C,- | "Abmaj7" C, _D, C, _B,- _B,4 |
+"Cm7b5" C2 _D D _E C _E _D- | "Bbm7" _D _B3- _B4 | "Eb7b9" _B2 B C _D _B _D C- | "Abmaj7" C _D C _B- _B4 |
 w: how I'd cry in my pil- low | _ if you | should tell me fare- well _ and | good- bye! _ Lul- la- |
-|: "Fm6" C, C, _B, _A, G, F,3 | "G7b9" D,2 F, E,- E,4 | "Fm7" C,2 G F,- F,4 | "Bbm7" _D,2 C _B,- _B,4 |
+|: "Fm6" C C _B _A G F3 | "G7b9" D2 F E- E4 | "Fm7" C2 g F- F4 | "Bbm7" _D2 c _B- _B4 |
 w:  by Of Bird- land whis- per | low, _ kiss me | sweet _ and we'll | go _ fly- in' |
-"Cm7" _E, _E, _D, C, _B, _A,3 | "Bbm7" F, C _B, E,,- E, C _B, _E,,- | :|1 "Abmaj7" _E,4- _E, _B _A, _D,,- | "Gm7b5" _D, _A G, C,,- C, z z2 |
+"Cm7" _E _E _D C _B _A3 | "Bbm7" F c _B E,- E c _B _E,- | :|1 "Abmaj7" _E4- _E _b _A _D,- | "Gm7b5" _D _a G C,- C z z2 |
 w: high in Bird- land, high in | the sky _ up a- bove _ _ |  all be- cause _ we're | in love! _ _ all * * |
-:|2 "Abmaj7" _E,4- _E, E, F, _D- | "Bbm7" _D,4 C,2 C, _A,- | "Abmaj7" _A,8- | "Bbm7" _A,6 z2 |
+:|2 "Abmaj7" _E4- _E E F _d- | "Bbm7" _D4 C2 C _A- | "Abmaj7" _A8- | "Bbm7" _A6 z2 |
 w:  be- cause _ we're in | love. _ _ * | * | * * |]
 
 X:949
@@ -26158,16 +28831,17 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id mercy-mercy-mercy
 K:Bb
-"Bb7" z2 G F,- F,2 D, _B, | "Es1" C, _B, _B, G, _B, _B, C, _B, | "Bb7" z2 G F,- F,2 D, _B, | "Es1" C, _B, _B, G, _B, _B, C, _B, |
+"Bb7" z2 g F- F2 D _B | "Es1" C _B _B G _B _B C _B | "Bb7" z2 g F- F2 D _B | "Es1" C _B _B G _B _B C _B |
 w: * It seems life has played | a game on me _ _ _ I'm | * lost in a sea of | misery _ _ _ _ _ My love |
-"Es1" z2 G F,- F,2 D, _B, | "Bb7" C, _B, _B, G, _B, _B, C, _B, | "Es1" z2 G F,- F,2 D, _B, | "Bb7" C, _B, _B, G, _B, _B, C, _B, |
+"Es1" z2 g F- F2 D _B | "Bb7" C _B _B G _B _B C _B | "Es1" z2 g F- F2 D _B | "Bb7" C _B _B G _B _B C _B |
 w: * _ has turned her back | on me _ _ _ Heartaches why won't | * you _ _ let me | be I said now Ba- by have some |
-"Bb" F2 F,2 G, G,2 _A,- | "Bb7" _A,2 _A,2 G, G,2 F,- | "Fsus7" F,2 F,2 G, G,2 A,2 | "Bb" A,2 A,2 G, G,2 F, F,2 _B,, _B, D, D, E, E, F, z E, E, E, E, D,- |
+"Bb" f2 F2 G G2 _A- | "Bb7" _A2 _A2 G G2 F- | "Fsus7" F2 F2 G G2 A2 | "Bb" A2 A2 G G2 F F2 _B, _B D D E E F z E E E E D- |
 w: mer- cy please Dont leave | me baby on bended knee | _ Oh please mer- cy | mer- cy mer- cy please Have mer- cy on me Mer- cy mer- * cy mer- cy please How |
-"Fsus7" D, z _B, _B, D, D, E, E, F, z z2 z F,, G, _B, | "Dm7" C,3 C,- C,2 _B, C, | "Gm" D,3 D,- D, C, D, F, | "Gm" G,3 F, G,3 F, |
+"Fsus7" D z _B _B D D E E F z z2 z F, G _B | "Dm7" C3 C- C2 _B C | "Gm" D3 D- D C D F | "Gm" G3 F G3 F |
 w: can * I face life _ with out you * * * What would I | do if we were through | * * * * * * | * * * * |
-G,/ F,/ G, z2 z4 |
+G/ F/ G z2 z4 |
 w: * * * * * |]
 
 X:950
@@ -26178,12 +28852,14 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id misty
+%%tags needs-repair
 K:Eb
-_B G, |: "Ebmaj7" D,6 _B, C, | "Bbm7" _D, C C, C, C, _B, G, _E, | "Abmaj7" C,4 z G, _A, C, _E, G, |
+_b G |: "Ebmaj7" D6 _B C | "Bbm7" _D c C C C _B G _E | "Abmaj7" C4 z G _A C _E G |
 w: Look at |  me, I'm as | help- les as a kit- ten up a | tree * and I feel like I'm |
-"Abm7" _B, _B, _B, _A, _B,3 _A, | "Ebmaj7" G,2- G, _A, _B, _E,,2- _E, F, G, | "Fm7" _A, C,,2 C, D,2 _E,2 F,2 | :|1 "G7" G,8- |
+"Abm7" _B _B _B _A _B3 _A | "Ebmaj7" G2- G _A _B _E,2- _E F G | "Fm7" _A C,2 C D2 _E2 F2 | :|1 "G7" G8- |
 w: cling- ing to a cloud, I | can't _ un- der- stand, _ I get | Mist- y just hold- ing your |  hand. |
-"F7" G,4 z2 _B, G, | :|2 "Eb" _E,8 | "Eb" z2 _E,2 F,2 |
+"F7" G4 z2 _B G | :|2 "Eb" _E8 | "Eb" z2 _E2 F2 |
 w: _ * Walk my |  * | * * * |]
 
 X:951
@@ -26194,20 +28870,22 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id moonlight-in-vermont
+%%tags needs-repair
 K:Eb
-"Eb6" C2 _B,2 G,2 F,2 | "Fm7" G,8 | "Eb6" C,2 _B,2 G,3 _E, | "Db9" F, G, _C,,6 |
+"Eb6" c2 _B2 G2 F2 | "Fm7" G8 | "Eb6" C2 _B2 G3 _E | "Db9" F G _C,6 |
 w: Pen- nies in a | stream, | fall- ing leaves, a | sy- ca- more, |
-"Fm7" G2 F,2 _E,2 C,2 | "Eb" _E,8 | "Eb6" C2 _B,2 G,2 F,2 | "Fm7" G,8 |
+"Fm7" g2 F2 _E2 C2 | "Eb" _E8 | "Eb6" c2 _B2 G2 F2 | "Fm7" G8 |
 w: Moon- light In Ver- | mont. | I- cy fin- ger- | waves, |
-"Eb6" C,2 _B,2 G,3 _E, | "Db9" F, G, _C,,6 | "Fm7" G2 F,2 _E,2 C,2 | "Eb" _E,8 |
+"Eb6" C2 _B2 G3 _E | "Db9" F G _C,6 | "Fm7" g2 F2 _E2 C2 | "Eb" _E8 |
 w: ski trails on a | moun- tain- side, | snow- light in Ver- | mont. |
-"Am11" D, D, D, D,- D, D,2 D, | "Gmaj7" D, D,2 D, D, D,2 D, | "Am11" D, D, D, D- D,2 C, D, | "Gmaj7" B, |
+"Am11" D D D D- D D2 D | "Gmaj7" D D2 D D D2 D | "Am11" D D D d- D2 C D | "Gmaj7" B |
 w: Tel- e- graph ca- _ bles, they | sing down the high- way and | tra- vel each bend _ in the | road, |
-"Bbm11" _E,, _E, _E, _E,- _E, _E,2 _E, | "Abmaj7" _E, _E,2 _E, _E, _E,2 _E, | "Bbm11" _E, _E, _E, _E- _E,2 _D, _E, | "Ab" C,4 _C,4 |
+"Bbm11" _E, _E _E _E- _E _E2 _E | "Abmaj7" _E _E2 _E _E _E2 _E | "Bbm11" _E _E _E _e- _E2 _D _E | "Ab" C4 _C4 |
 w: peo- ple who meet _ in this | ro- man- tic set- ting are | so hyp- no- tized _ by the | love- ly |
-"Eb6" C,4 _B,4 G,4 F,4 | "Fm7" G,8 | "Eb6" C,2 _B,2 G,3 _E, | "Db9" F, G, _C,,6 |
+"Eb6" C4 _B4 G4 F4 | "Fm7" G8 | "Eb6" C2 _B2 G3 _E | "Db9" F G _C,6 |
 w: ev'- ning sum- mer | breeze, | warb- ling of a | mea- dow- lark, |
-"Fm7" G2 F,2 _E,2 C,2 | "Eb" _E,8 | "Cm7" B,8 C,8 _E,8 G,8 C,8 D,8 B,8 ^C,8 | "Ebmaj9" _B,8 |
+"Fm7" g2 F2 _E2 C2 | "Eb" _E8 | "Cm7" B8 C8 _E8 G8 C8 D8 B8 ^C8 | "Ebmaj9" _B8 |
 w: Moon- light In Ver- | mont, | you and I and Moon- light In Ver- | mont. |]
 
 X:952
@@ -26218,28 +28896,29 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id my-favorite-things
 K:G
-|: "E" E,2 B2 B,2 | "F#m7" ^F,2 E,2 E,2 | "Em7" B,2 E,2 E,2 | "F#m7" ^F,2 E,4 |
+|: "E" E2 b2 B2 | "F#m7" ^F2 E2 E2 | "Em7" B2 E2 E2 | "F#m7" ^F2 E4 |
 w:  Rain- drops on | ros- es and | whisk- ers on | kit- tens, |
-"C" :| "A" E,2 B2 A,2 | "D7" E,2 ^F,2 D,2 | "Gmaj7" D,2 A2 G,2 | "Cmaj7" C,,6 |
+"C" :| "A" E2 b2 A2 | "D7" E2 ^F2 D2 | "Gmaj7" D2 a2 G2 | "Cmaj7" C,6 |
 w:  bright cop- per | ket- tles and | warm wool- en | mit- |
-"Gmaj7" B,2 C,2 D,2 | "Cmaj7" E,2 ^F,2 G,2 | "F#m7b5" A,2 B,2 A,2 | "B7" ^D,,6 |
+"Gmaj7" B2 C2 D2 | "Cmaj7" E2 ^F2 G2 | "F#m7b5" A2 B2 A2 | "B7" ^D,6 |
 w: tens; brown pa- | per pack- ag- | es tied up | with |
-E,2 B2 B,2 | "E" ^F,2 E,2 E,2 | "F#m7" B,2 E,2 E,2 | "Emaj7" ^F,2 E,4 |
+E2 b2 B2 | "E" ^F2 E2 E2 | "F#m7" B2 E2 E2 | "Emaj7" ^F2 E4 |
 w: string, these are | a few of | My Fa- vor- | ite Things. |
-"F#m7" E,2 B2 A,2 | "A" E,2 ^F,2 D,2 | "A" D,2 A2 G,2 | "D7" C,,6 |
+"F#m7" E2 b2 A2 | "A" E2 ^F2 D2 | "A" D2 a2 G2 | "D7" C,6 |
 w: Girls in white | dress- es with | blue sat- in | sash- |
-"Gmaj7" B,2 C,2 D,2 | "Cmaj7" E,2 ^F,2 G,2 | "Gmaj7" A,2 ^A,2 B,2 | "Cmaj7" C,6 |
+"Gmaj7" B2 C2 D2 | "Cmaj7" E2 ^F2 G2 | "Gmaj7" A2 ^A2 B2 | "Cmaj7" C6 |
 w: es, snow- flakes | that stay on | my nose and | eye- |
-"F#m7b5" z2 B,2 B,2 | "B7b9" B,4 E,,2 | "E" z2 A,2 A,2 | "F#" A,4 ^D,,2 |
+"F#m7b5" z2 B2 B2 | "B7b9" B4 E,2 | "E" z2 A2 A2 | "F#" A4 ^D,2 |
 w: * lash- es, | sil- ver | * white win- | ters that |
-"B7" z2 G,2 G,2 | "E" G,4 B,,2 | "Cmaj7" E,6- | "Cmaj7" E,4 E,2 |
+"B7" z2 G2 G2 | "E" G4 B,2 | "Cmaj7" E6- | "Cmaj7" E4 E2 |
 w: * melt in | to spring. | These | are a |
-"A7" E,2 ^F,2 E,2 | "G" ^F,2 E,2 ^F,2 | "C" G,2 A,2 G,2 | "D" A,4 G,2 |
+"A7" E2 ^F2 E2 | "G" ^F2 E2 ^F2 | "C" G2 A2 G2 | "D" A4 G2 |
 w: few of My | Fa- vor- ite | Things. When the | dog bites, |
-"G6" B,2 C,2 B,2 | "Cmaj7" C,6- | "G6" C,6 | "Cmaj7" B,6 |
+"G6" B2 C2 B2 | "Cmaj7" C6- | "G6" C6 | "Cmaj7" B6 |
 w: when the bee | stings, | when | I'm |
-"Gmaj7" G,6- | "Cmaj7" G,6- | "F#m7b5" G,6- | "B7" G,6 |
+"Gmaj7" G6- | "Cmaj7" G6- | "F#m7b5" G6- | "B7" G6 |
 w: feel- | ing | sad, | _ |
 z6 | z6 | z6 | z6 |
 w: * | * | * | * |]
@@ -26252,24 +28931,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id my-foolish-heart
 K:Bb
-F,2 |: "Bbmaj7" F,4- F, _B,, D, F, | "Dm7" G, A, G,4 G,2 | "Cm7" G,4- G, C,, _E, G, |
+F2 |: "Bbmaj7" F4- F _B, D F | "Dm7" G A G4 G2 | "Cm7" G4- G C, _E G |
 w: The |  night _ is like a | love- ly tune, be- | ware _ My Fool- ish |
-"F7b9" A,6 A,2 | "Bbmaj7" A,4- A, D,, F, A, | "Gm7" _B, C, _B,4 _B,2 | "Cm7" _B,4- _B, _E,, G, _B, |
+"F7b9" A6 A2 | "Bbmaj7" A4- A D, F A | "Gm7" _B C _B4 _B2 | "Cm7" _B4- _B _E, G _B |
 w: Heart! How | white _ the ev- er | con- stant moon; take | care _ My Fool- ish |
-"F7" C,6 _B, C, | "Bbmaj7" D,3 D,/ D,/ D, D, D, D, | "Bb7" D,2 D,2- D, D, C, _B, | "Eb6" C,2 C, C, C, D, C, _B, |
+"F7" C6 _B C | "Bbmaj7" D3 D/ D/ D D D D | "Bb7" D2 D2- D D C _B | "Eb6" C2 C C C D C _B |
 w: Heart! There's a | line be- tween love and fas- ci- | na- tion _ that's hard to | see on an eve- ning such as |
-"Am7b5" C,6 _B, A, | "Gm7" _B, _B,2 _B, _B, C, A, G, | "Gm7" _B,2 _B,4 G, ^G, | "Fmaj7" A,2 A, A, A, A, G, F, |
+"Am7b5" C6 _B A | "Gm7" _B _B2 _B _B C A G | "Gm7" _B2 _B4 G ^G | "Fmaj7" A2 A A A A G F |
 w: this, for they | both give the ver- y same sen- | sa- tion when you're | lost in the mag- ic of a |
-"F7" A,6 G,2 | "Bbmaj7" F,4- F, _B,, D, F, | "Dm7" G, A, G,4 G,2 | "Cm7" G,4- G, C,, _E, G, |
+"F7" A6 G2 | "Bbmaj7" F4- F _B, D F | "Dm7" G A G4 G2 | "Cm7" G4- G C, _E G |
 w: kiss. His | lips _ are much to | close to mine, be- | ware _ My Fool- ish |
-"F7b9" A,6 A,2 | "Bbmaj7" A,4- A, D,, F, A, | "Gm7" _B, C, _B,4 _B,2 | "Cm7" _B,4- _B, _E,, G, _B, |
+"F7b9" A6 A2 | "Bbmaj7" A4- A D, F A | "Gm7" _B C _B4 _B2 | "Cm7" _B4- _B _E, G _B |
 w: Heart but | should _ our ea- ger | lips com- bine then | let _ the fire _ |
-"Am7b5" D,6 C,2 | "Gm7" _B,2 _B, _B, _B, A, G, A, | "Gb7" _B,2 _B,4 _B, C, | "Bbmaj7" D,2 D, D, D, D, C, _B, |
+"Am7b5" D6 C2 | "Gm7" _B2 _B _B _B A G A | "Gb7" _B2 _B4 _B C | "Bbmaj7" D2 D D D D C _B |
 w: start for | this time it is- n't fas- ci- | na- tion, or a | dream that will fade and fall a- |
-"Dm7b5" D,,6 G,2 | "Cm7" _B,4- _B, _E,, G, _B, | "Cm7" C,2 D,2 _B,2 C,2 | :|1 "Bb" _B,8- |
+"Dm7b5" D,6 G2 | "Cm7" _B4- _B _E, G _B | "Cm7" C2 D2 _B2 C2 | :|1 "Bb" _B8- |
 w: part, it's | love _ this time, it's | love, My Fool- ish |  Heart. |
-"Cm7" _B,2 z2 z2 F,2 | :|2 "Bb" _B,8- | _B,8 |
+"Cm7" _B2 z2 z2 F2 | :|2 "Bb" _B8- | _B8 |
 w: _ * * The |  Heart. | _ |]
 
 X:954
@@ -26280,24 +28960,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id my-funny-valentine
 K:Cmin
-"Cm" C,4 D,2 _E,2 | "G7" D,3 _E, D,4 | "Cm7" C,4 D,2 _E,2 | "Am7b5" D,3 _E, D,4 |
+"Cm" C4 D2 _E2 | "G7" D3 _E D4 | "Cm7" C4 D2 _E2 | "Am7b5" D3 _E D4 |
 w: My Fun- ny | Val- en- tine, | sweet com- ic | val- en- tine, |
-"Abmaj7" C,4 D,2 _E,2 | "Fm79" _B4 _A,2 G,2 | "Dm7b5" F,8- | "G7b9" F,8 |
+"Abmaj7" C4 D2 _E2 | "Fm79" _b4 _A2 G2 | "Dm7b5" F8- | "G7b9" F8 |
 w: you make me | smile with my | heart. | _ |
-"Cm" _E,4 F,2 G,2 | "G7" F,3 G, F,4 | "Cm7" _E,4 F,2 G,2 | "F" F,3 G, F,4 |
+"Cm" _E4 F2 G2 | "G7" F3 G F4 | "Cm7" _E4 F2 G2 | "F" F3 G F4 |
 w: Your looks are | laugh- a- ble, | un- pho- to- | graph- a- ble, |
-"Abmaj7" _E,4 F,2 G,2 | "Am7b5" D3 C, _B,3 A, | "Fm7b5" _A,8- | "Bb7b9" _A,4 G,2 F,2 |
+"Abmaj7" _E4 F2 G2 | "Am7b5" d3 C _B3 A | "Fm7b5" _A8- | "Bb7b9" _A4 G2 F2 |
 w: yet, you're my | fav- 'rite work of | art. | _ Is your |
-"Ebmaj7" _B,2 z _E,, _E,2 D,2 | "Gm7" _E,4 _E,2 D,2 | "Eb" C2 z _E,, _E,2 D,2 | "Gm7" _E,4 _E,2 D,2 |
+"Ebmaj7" _B2 z _E, _E2 D2 | "Gm7" _E4 _E2 D2 | "Eb" c2 z _E, _E2 D2 | "Gm7" _E4 _E2 D2 |
 w: fig- * ure less than | Greek; is your | mouth * a lit- tle | weak when you |
-"Ebmaj7" _B2 z _E,, _E,2 D,2 | "Cm7" _E,4 F,2 G,2 | "Abmaj7" C,8- | "Dm7b5" C,4 D,,4 |
+"Ebmaj7" _b2 z _E, _E2 D2 | "Cm7" _E4 F2 G2 | "Abmaj7" C8- | "Dm7b5" C4 D,4 |
 w: o- * pen it to | speak, are you | smart? | _ But |
-"Cm" C,4 D,2 _E,2 | "G7" D,3 _E, D,4 | "Cm7" _E,4 F,2 G,2 | "F" F,3 G, F,4 |
+"Cm" C4 D2 _E2 | "G7" D3 _E D4 | "Cm7" _E4 F2 G2 | "F" F3 G F4 |
 w: don't change a | hair for me, | not if you | care for me, |
-"Abmaj7" C4 D,2 _E,2 | "Dm7b5" D,3 _E, D,4 | "Cm7" _E,8- | "Bbm79" _E,8 |
+"Abmaj7" c4 D2 _E2 | "Dm7b5" D3 _E D4 | "Cm7" _E8- | "Bbm79" _E8 |
 w: stay lit- tle | val- en- tine, | stay! | _ |
-"Abmaj7" _E,,4 F,2 G,2 | "Fm7" F,3 G, F,4 | "Eb" _E,8- | _E,6 z2 |
+"Abmaj7" _E,4 F2 G2 | "Fm7" F3 G F4 | "Eb" _E8- | _E6 z2 |
 w: Each day is | Val- en- tine's | day. | _ * |]
 
 X:955
@@ -26308,24 +28989,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id my-one-and-only-love
+%%tags needs-repair
 K:C
-|: "C" z G, A,3/2 C,/ D, E, B G, | "Dm7" A,2 D,2 B,2- B, G, F, | "Am" E,2 C2 A,2- A, F, E, | "Bm7b5" D,2 B2 G,4 |
+|: "C" z G A3/2 C/ D E b G | "Dm7" A2 D2 B2- B G F | "Am" E2 c2 A2- A F E | "Bm7b5" D2 b2 G4 |
 w:  * The ver- y thought of you makes | my heart sing _ like an | A- pril breeze _ on the | wings of spring. |
-"Dm7" z A, G, F, E,3/2 D,/ G,3/2 E,/ | "Am7" C, A,3- A,4 | "Dm7" z F G, A, G,2 D,2 | "Em" G,8 |
+"Dm7" z A G F E3/2 D/ G3/2 E/ | "Am7" C A3- A4 | "Dm7" z f G A G2 D2 | "Em" G8 |
 w: * And you ap- pear in all your | splen- dor, _ | * My One And On- ly | Love. |
-"C" z G,, A,3/2 C,/ D, E, B G, | "Dm7" A,2 D,2 B,2- B, G, F, | "Am" E,2 C2 A,2- A, F, E, | "Bm7b5" D,2 B2 G,4 |
+"C" z G, A3/2 C/ D E b G | "Dm7" A2 D2 B2- B G F | "Am" E2 c2 A2- A F E | "Bm7b5" D2 b2 G4 |
 w: * The shad- own fall and spread their | mys- tic charms _ in the | hush of night _ while you're | in my arms. |
-"Dm7" z A, G, F, E,3/2 D,/ G,3/2 E,/ | "Am7" C, A,3- A,4 | "Dm7" z F G, A, G,2 E,2 | "C" C,6 z B, |
+"Dm7" z A G F E3/2 D/ G3/2 E/ | "Am7" C A3- A4 | "Dm7" z f G A G2 E2 | "C" C6 z B |
 w: * I feel your lips so warm and | ten- der, _ | * My One And On- ly | Love. * The |
-"Em6" B2- B, A, G, B,2- B, A, G, | "F#m7" B,, B,3- B,2 z B, | "Em6" B2- B, A, G, B,2- B, A, G, | "F#m7" B,,6 z B, |
+"Em6" b2- B A G B2- B A G | "F#m7" B, B3- B2 z B | "Em6" b2- B A G B2- B A G | "F#m7" B,6 z B |
 w: touch _ of your hand _ is like | heav- en, _ * a | heav- _ en that I've _ nev- er | known. * The |
-"Em" E,2- E, ^F, G, E,3 B, | "Em" E,2- E, ^F, G, E,4 | "Dm7" D,2 D,2 D,2 F,2 D,2 F,2 | "Dm7" D,8 |
+"Em" E2- E ^F G E3 B | "Em" E2- E ^F G E4 | "Dm7" D2 D2 D2 F2 D2 F2 | "Dm7" D8 |
 w: blush _ on your cheek when- | ev- _ er I speak | tell me that you are my | own. |
-"C" z G,, A,3/2 C,/ D, E, B G, | "Dm7" A,2 D,2 B,2- B, G, F, | "Am" E,2 C2 A,2- A, F, E, | "Bm7b5" D,2 B2 G,4 |
+"C" z G, A3/2 C/ D E b G | "Dm7" A2 D2 B2- B G F | "Am" E2 c2 A2- A F E | "Bm7b5" D2 b2 G4 |
 w: * You fill my ea- ger heart with | such de- sire. _ Ev- r'y | kiss you give _ sets my | soul on fire. |
-"Dm7" z A, G, F, E,3/2 D,/ G,3/2 E,/ | "Am7" C, A,3- A,4 | "Am7" z F G, F, _A,2 B,2 | :|1 "C" C,6 z2 |
+"Dm7" z A G F E3/2 D/ G3/2 E/ | "Am7" C A3- A4 | "Am7" z f G F _A2 B2 | :|1 "C" C6 z2 |
 w: * I give my- self in sweet sur- | ren- der, _ | * My One And On- ly |  Love. * |
-:|2 "Abmaj7" C,8 |
+:|2 "Abmaj7" C8 |
 w:  Love. |]
 
 X:956
@@ -26336,24 +29019,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id my-romance
+%%tags needs-repair
 K:C
-E, F, | "Cmaj7" G,6 E, F, | "Em7" G,2 A,2 B,2 C,2 | "Dm7" C,6 B, A, |
+E F | "Cmaj7" G6 E F | "Em7" G2 A2 B2 C2 | "Dm7" C6 B A |
 w: My Ro- | mance does- n't | have to have a | moon in the |
-"Cmaj7" G,6 C,, D, | "Am" E,6 C, D, | "Am7" E,2 F,2 G,2 A,2 | "Dm7" A,6 G, F, |
+"Cmaj7" G6 C, D | "Am" E6 C D | "Am7" E2 F2 G2 A2 | "Dm7" A6 G F |
 w: sky, My Ro- | mance does- n't | need a blue la- | goon stand- ing |
-"Cmaj7" E,6 G,2 | "Fmaj7" C,,6 C2 | "Cmaj7" G,6 G,2 | "Fmaj7" C,,6 C2 |
+"Cmaj7" E6 G2 | "Fmaj7" C,6 c2 | "Cmaj7" G6 G2 | "Fmaj7" C,6 c2 |
 w: by; no | month of | May, no | twin- kling |
-"Cmaj7" G,6 C,2 | "F#m7" B,6 A,2 | "Em7" G,6 C,2 | "Am79" B,6 A,2 |
+"Cmaj7" G6 C2 | "F#m7" B6 A2 | "Em7" G6 C2 | "Am79" B6 A2 |
 w: stars, no | hide a- | way, no | soft gui- |
-"Dm7" G,6 E, F, | "Cmaj7" G,6 E, F, | "Em7" G,2 A,2 B,2 C,2 | "Dm7" C,6 B, A, |
+"Dm7" G6 E F | "Cmaj7" G6 E F | "Em7" G2 A2 B2 C2 | "Dm7" C6 B A |
 w: tars. My Ro- | mance does- n't | need a cas- tle | ris- ing in |
-"Cmaj7" G,6 C,, D, | "Am" E,6 C, D, | "Am7" E,2 F,2 G,2 A,2 | "Dm7" A,6 G, F, |
+"Cmaj7" G6 C, D | "Am" E6 C D | "Am7" E2 F2 G2 A2 | "Dm7" A6 G F |
 w: Spain, nor a | dance to a | con- stant- ly sur- | pris- ing re- |
-"Cmaj7" E,6 F, G, | "Fmaj7" A,6 F, G, | "Dm7" A,2 B,2 C,2 D,2 | "Bm7" E,2 E,2 E,2 E,2 |
+"Cmaj7" E6 F G | "Fmaj7" A6 F G | "Dm7" A2 B2 C2 D2 | "Bm7" E2 E2 E2 E2 |
 w: frain. Wide a- | wake I can | make my most fan- | tas- tic dreams come |
-"Am7" C,6 C, D, | "Cmaj7" E,6 C, D, | "Dm7" E,2 C,2 A,2 F,2 | "C6" C8- |
+"Am7" C6 C D | "Cmaj7" E6 C D | "Dm7" E2 C2 A2 F2 | "C6" c8- |
 w: true; My Ro- | mance does- n't | need a thing but | you. |
-C,6 z2 |
+C6 z2 |
 w: _ * |]
 
 X:957
@@ -26364,28 +29049,29 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id my-ship
 K:F
-C,2 |: "F" "Gm7" D,2 F,2 C2 A, C, | "F" A,2 D,,2 D,2 z C, | "Gm7" D,2 F,2 C2 C,2 |
+C2 |: "F" "Gm7" D2 F2 c2 A C | "F" A2 D,2 D2 z C | "Gm7" D2 F2 c2 C2 |
 w: My |  Ship has sails that are | made of silk, * the | decks are trimmed with |
-"F" D,,6 C, ^C, | "Gm" D,2 F,2 D2 C, D, | "Dm7" C,2 _B,2 A,2 E, F, | "Gm7" G,8- |
+"F" D,6 C ^C | "Gm" D2 F2 d2 C D | "Dm7" C2 _B2 A2 E F | "Gm7" G8- |
 w: gold. And of | jam and spice there's a | par- a- dise in the | hold. |
-"F" G,6 C,,2 | "Gm7" D,2 F,2 C2 A, C, | "F" A,2 D,,2 D,3 C, | "Gm7" D,2 F,2 C2 C,2 |
+"F" G6 C,2 | "Gm7" D2 F2 c2 A C | "F" A2 D,2 D3 C | "Gm7" D2 F2 c2 C2 |
 w: _ My | Ship's a- glow with a | mil- lion pearls and | ru- bies fill each |
-"F" D,,6 z C, | "Gm" D,2 F,2 D2 C, D, | "Dm" C,2 _B,2 A,2 E, F, | "F" G,4 G,4 |
+"F" D,6 z C | "Gm" D2 F2 d2 C D | "Dm" C2 _B2 A2 E F | "F" G4 G4 |
 w: bin; * the | sun sits high in a | sap- phire sky when my | ship comes |
-"Gm7" F,4 z2 A, C, | "Gm7" _B,2 A,2 G,3 C, | "Gm7" _B,2 A,2 G,4 | "F" D2 _B,2 G,2 F,2 |
+"Gm7" F4 z2 A C | "Gm7" _B2 A2 G3 C | "Gm7" _B2 A2 G4 | "F" d2 _B2 G2 F2 |
 w: in. * I can | wait the years 'til | it ap- pears | one fine day one |
-"Am" A,6 B,6 D,6 | "Am" C,2 B,2 A,2 z D, | "G7" C,2 B,2 A,2 B, C, | "G7" D,2 B,2 G,2 E,2 |
+"Am" A6 B6 D6 | "Am" C2 B2 A2 z D | "G7" C2 B2 A2 B C | "G7" D2 B2 G2 E2 |
 w: spring, but the | pearls and such * the | won't mean much if there's | miss- ing just one |
-"F" D,6 C,2 | "Gm7" D,2 F,2 C2 A, C, | "F" A,2 D,,2 D,3 C, | "Gm7" D,2 F,2 C2 C,2 |
+"F" D6 C2 | "Gm7" D2 F2 c2 A C | "F" A2 D,2 D3 C | "Gm7" D2 F2 c2 C2 |
 w: thing. I | do not care if that | day ar- rives, that | dream need nev- er |
-"F" D,,6 C, ^C, | "Gm" D,2 F,2 D2 C, D, | C,2 _B,2 A,3 G, | "Dm" :|1 "F" F,3 F, D3 E,, |
+"F" D,6 C ^C | "Gm" D2 F2 d2 C D | C2 _B2 A3 G | "Dm" :|1 "F" F3 F d3 E, |
 w: be, if the | ship I sing does- n't | al- so bring my |  own true love to |
-F,4 z2 C,2 | "Dm" :|2 "F" F,3 F, G,3 G, | "F" A,6 C, C, | "Bb" B, C, F, E, F, |
+F4 z2 C2 | "Dm" :|2 "F" F3 F G3 G | "F" A6 C C | "Bb" B C F E F |
 w: me. * My |  own true love to | me, if the | ship I sing does- n't |
-"F" E,2 D,2 C,2 _B,2 | "Gm7b5" C,4 F,4 | "F" F,,4 G,4 | "F" F,8- |
+"F" E2 D2 C2 _B2 | "Gm7b5" C4 F4 | "F" F,4 G4 | "F" F8- |
 w: al- so bring my | own true | love to | me. |
-F,2 z2 z4 |
+F2 z2 z4 |
 w: _ * * |]
 
 X:958
@@ -26396,22 +29082,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id nature-boy
 K:Dmin
-A, | "Dm" A F, D,6 | "Em7b5" z2 z A, E F, G, _B, | "Dm" A, F, D,6 |
+A | "Dm" a F D6 | "Em7b5" z2 z A e F G _B | "Dm" A F D6 |
 w: There | was a boy, | * * A ver- y strange en- | chant- ed boy |
-"Em7b5" z2 z A, E F, G, _B, | "Dm" A,3 D, ^C,4 | "Dm7" A,3 C,3 B,4 | "Gm6" G,3 _B,3 A,3 D,, |
+"Em7b5" z2 z A e F G _B | "Dm" A3 D ^C4 | "Dm7" A3 C3 B4 | "Gm6" G3 _B3 A3 D, |
 w: * * They say he wan- dered | ver- y far, | ver- y far, | o- ver land and |
-"Em7b5" E,6 z A,, | "A7" A6 G,2 | "Dm" E,6 A,,2 | "E7b9" G6 F,2 |
+"Em7b5" E6 z A, | "A7" a6 G2 | "Dm" E6 A,2 | "E7b9" g6 F2 |
 w: sea; * A | lit- tle | shy and | sad of |
-"A7" D,6 A,2 | "Dm" F6 E,2 | "Em7b5" B,6 C,2 | "Dm" ^C,8 |
+"A7" D6 A2 | "Dm" f6 E2 | "Em7b5" B6 C2 | "Dm" ^C8 |
 w: eye, But | ver- y | wise was | he |
-"Em7b5" z4 z2 z A, | "Dm" A F, D,6 | "Dm7" z2 z A, E F, G, _B, | "Gm6" A, F, D,6 |
+"Em7b5" z4 z2 z A | "Dm" a F D6 | "Dm7" z2 z A e F G _B | "Gm6" A F D6 |
 w: * * * And | then one day, | * * One mag- ic day he | came my way, |
-"Em7b5" z2 z A, E F, G, _B, | "A7" A,3 D, ^C,4 | "Dm" A,3 C,3 B,4 | "Bm7b5" G,3 _B,3 A,3 D,, |
+"Em7b5" z2 z A e F G _B | "A7" A3 D ^C4 | "Dm" A3 C3 B4 | "Bm7b5" G3 _B3 A3 D, |
 w: * * And as we spoke of | man- y things, | fools and kings, | this he said to |
-"E7b9" E,6 z A,, | "A7#5" A6 G,2 | "Dm" E,6 A,,2 | "Em7b5" G6 F,2 |
+"E7b9" E6 z A, | "A7#5" a6 G2 | "Dm" E6 A,2 | "Em7b5" g6 F2 |
 w: me: * The | great- est | thing you'll | ev- er |
-D,6 A,2 | F3 E, B,3 A, | G2 F,4 A,, E | D,8 |
+D6 A2 | f3 E B3 A | g2 F4 A, e | D8 |
 w: learn is | just to love and | be loved in re- | turn. |
 z8 |
 w: * |]
@@ -26424,24 +29111,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id nice-work-if-you-can-get-it
 K:G
-"B7" B2 C,2 C,2 B,2 | "A7" A,2 B,6 | "G7" G,2 A,2 A,2 G,2 | "A7" ^F,8 |
+"B7" b2 C2 C2 B2 | "A7" A2 B6 | "G7" G2 A2 A2 G2 | "A7" ^F8 |
 w: Hold- ing hands at | mid- night | 'neath a star- y | sky. |
-"G" D,3 E,- E,3/2 D,/ E,3/2 G,/ | "Am" A, B,3 z3/2 D,,/ E,3/2 G,/ | "C6" A, B,3 G,2 G, G,- | "G" G,6 z2 |
+"G" D3 E- E3/2 D/ E3/2 G/ | "Am" A B3 z3/2 D,/ E3/2 G/ | "C6" A B3 G2 G G- | "G" G6 z2 |
 w: Nice Work _ If You Can | Get it, * and you can | get it if you try. | _ * |
-"B7" B,2 C,2 C,2 B,2 | "A7" A,2 B,6 | "G7" G,2 A,2 A,2 ^G,2 G,2 | "A7" ^F,8 |
+"B7" B2 C2 C2 B2 | "A7" A2 B6 | "G7" G2 A2 A2 ^G2 G2 | "A7" ^F8 |
 w: Stroll- ing with the | one girl, | sigh- ing sigh aft- er | sign, |
-"G" D,3 E,- E,3/2 D,/ E,3/2 G,/ | "Am" A, B,3 z3/2 D,,/ E,3/2 G,/ | "C6" A, B,3 G,2 G, G,- | "G" G,8 |
+"G" D3 E- E3/2 D/ E3/2 G/ | "Am" A B3 z3/2 D,/ E3/2 G/ | "C6" A B3 G2 G G- | "G" G8 |
 w: Nice Work _ If You Can | Get It, * and you can | ge tit if you try. | _ |
-"Em" z B,2 G, B,2 G,2 | "C9" ^A,3 G,- G,4 | "Em7" B,3/2 B,/ B,,3/2 B,/ E, G,3 | "A7" ^F,8 |
+"Em" z B2 G B2 G2 | "C9" ^A3 G- G4 | "Em7" B3/2 B/ B,3/2 B/ E G3 | "A7" ^F8 |
 w: * Just im- ag- ine | some- one _ | wait- ing at the cot- tage | door, |
-"Dm" z A,2 ^F, A,2 ^F,2 | "A7" A,3 A,- A,2 A,3/2 B,/ | "Am7" D,2 D,2 D,3/2 E,/ B,2 | "D7#5" ^A,8 |
+"Dm" z A2 ^F A2 ^F2 | "A7" A3 A- A2 A3/2 B/ | "Am7" D2 D2 D3/2 E/ B2 | "D7#5" ^A8 |
 w: * where two hearts be- | come one. _ Who could | ask for an- y thing | more? |
-"B7" B,2 C,2 C,2 B,2 | "A7" A,2 B,6 | "G7" G,2 A,2 A,2 ^G,2 G,2 | "A7" ^F,8 |
+"B7" B2 C2 C2 B2 | "A7" A2 B6 | "G7" G2 A2 A2 ^G2 G2 | "A7" ^F8 |
 w: Lov- ing one who | loves you, | and then tak- ing that | vow, |
-"G" D,3 E,- E,3/2 D,/ E,3/2 G,/ | "Am" A, B,3 z3/2 D,,/ E,3/2 G,/ | "F7" A, B,3- B,4 | "Am7" D,2 B,2 G,2 E,2 |
+"G" D3 E- E3/2 D/ E3/2 G/ | "Am" A B3 z3/2 D,/ E3/2 G/ | "F7" A B3- B4 | "Am7" D2 B2 G2 E2 |
 w: Nice Work _ If You Can | Get It, * and if you | get it, _ | won't you tell me |
-"G" G,8- | "G6" G,6 z2 |
+"G" G8- | "G6" G6 z2 |
 w: how? | _ * |]
 
 X:960
@@ -26452,16 +29140,17 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id night-and-day-2
 K:C
-G2 G, G,- |: "Dm7b5" G,8- | "G7" G,4 F,2 E,2 ^D,2 | "Cmaj7" E,8- |
+g2 G G- |: "Dm7b5" G8- | "G7" G4 F2 E2 ^D2 | "Cmaj7" E8- |
 w: Night And Day |  _ | You are the one | _ |
-"Dm7b5" E,4 G,2 G, G,- | "G7" G,2 G,2 G,2 G,2 | "Cmaj7" G,2 F,2 F,2 E,2 ^D,2 | "F#m7b5" E,8- |
+"Dm7b5" E4 G2 G G- | "G7" G2 G2 G2 G2 | "Cmaj7" G2 F2 F2 E2 ^D2 | "F#m7b5" E8- |
 w: On- ly you _ | be- nea- th the | moon And under the sun | _ |
-"Fm7" E,4 E,3 E, | "Em7" E,2 E,2 E,2 E,2 | "Ebdim7" _E,4- _E, _E,2 _E, | "Dm7" D,2 D,2 D,2 D,2 |
+"Fm7" E4 E3 E | "Em7" E2 E2 E2 E2 | "Ebdim7" _E4- _E _E2 _E | "Dm7" D2 D2 D2 D2 |
 w: Whe- ther near | to me or far | _ _ No mat- | ter, dar- ling Where |
-"G7" D,2 _D, C,- C,2 B,2 | "Cmaj7" A,2 _A, G,- G,4 | G,4 G2 G, G,- | "Cmaj7" G,8- |
+"G7" D2 _D C- C2 B2 | "Cmaj7" A2 _A G- G4 | G4 g2 G G- | "Cmaj7" G8- |
 w: you are _ _ I | think of _ you | Night And Day _ | Day |
-:|1 "Bb7" G,4 G,2 G, G, | :|2 G,4 G,2 G,2 |
+:|1 "Bb7" G4 G2 G G | :|2 G4 G2 G2 |
 w:  and night _ _ |  Night And Day |]
 
 X:961
@@ -26470,11 +29159,12 @@ C:Charlie Parker
 N:Source: openbook
 M:4/4
 L:1/8
+%%id now-s-the-time
 K:F
-C, |: "F7" F, F, G, C,, F,2 z C, | "Bb7" F, F, G, C,, F,2 z C, | "Bb7" F, F, G, C,, F, F, G, C,, |
-"F7" F, F, G, C,, F,2 z C, | "Gm7" F, F, G, C,, F, _B,,3 | "C7" F F, G, C,, F, B,, | "F7" F F, G, C,, F, F, G, C,, |
-"Gm7" F, F, G, C,, F,2 z _A,- | _A,/ _B,/ _A,/ :| F, D, B, D,2 z2 | z G,3 F, G, F, _E, |
-z C, z C,2 z z2 | z8 |]
+C |: "F7" F F G C, F2 z C | "Bb7" F F G C, F2 z C | "Bb7" F F G C, F F G C, |
+"F7" F F G C, F2 z C | "Gm7" F F G C, F _B,3 | "C7" f F G C, F B, | "F7" f F G C, F F G C, |
+"Gm7" F F G C, F2 z _A- | _A/ _B/ _A/ :| F D B D2 z2 | z G3 F G F _E |
+z C z C2 z z2 | z8 |]
 
 X:962
 T:Ol' Man River
@@ -26484,24 +29174,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id ol-man-river
 K:Eb
-|: "Eb" _B,2 _B,2 C, _E,2 C, | "Eb" _B,2 _B,2 C, _E,2 F, | "Eb" G,2 G,2 F, _E,2 F, | "Eb" G,2 _B,2 C, _B,2 C, |
+|: "Eb" _B2 _B2 C _E2 C | "Eb" _B2 _B2 C _E2 F | "Eb" G2 G2 F _E2 F | "Eb" G2 _B2 C _B2 C |
 w:  Ol' Man Riv- er, dat | Ol' Man Riv --er, he | must know sump- in', but | don't say noth- in' he |
-"Fm7" _B,2 _B,2 G, F,2 G, | "Fm7" _B,2 _B,2 G, F,2 G, | "Eb" _E,8- | "Eb" _E,6 z _B, |
+"Fm7" _B2 _B2 G F2 G | "Fm7" _B2 _B2 G F2 G | "Eb" _E8- | "Eb" _E6 z _B |
 w: jus' keeps roll- in', he | keeps on roll- in' a- | long. | _ * He |
-"Eb" _B,2 _B,2 C, _E,2 C, | "Eb" _B,2 _B,2 C, _E,2 F, | "Eb" G,2 _B,2 C, _B,2 C, | "Eb" _E,2 _E,2 D, C,2 D, |
+"Eb" _B2 _B2 C _E2 C | "Eb" _B2 _B2 C _E2 F | "Eb" G2 _B2 C _B2 C | "Eb" _E2 _E2 D C2 D |
 w: don't plant 'ta- ters, he | don't plant cot- ton, an' | dem dat plants 'em is | soon for- got- ten; but |
-"Fm7" _B,2 _B,2 G, F,2 G, | "Fm7" _B,2 _B,2 G, F,2 G, | "Eb" _E,8- | "Eb" _E,2 z2 z4 |
+"Fm7" _B2 _B2 G F2 G | "Fm7" _B2 _B2 G F2 G | "Eb" _E8- | "Eb" _E2 z2 z4 |
 w: Ol' Man Riv --er, he | jus' keeps roll- in' a- | long. | _ * * |
-"Gm" D2 _B,2 C,3 _E, | "Gm" D,2 _B,2 C,4 | "Gm" D,3/2 D,/ _B,2 C,3/2 C,/ _E,2 | "Gm" D,2 _B,2 C,4 |
+"Gm" d2 _B2 C3 _E | "Gm" D2 _B2 C4 | "Gm" D3/2 D/ _B2 C3/2 C/ _E2 | "Gm" D2 _B2 C4 |
 w: You an' me, we | sweat an' strain, | bo- dy all ach- in' an' | racked wid pain. |
-"Gm" _B, z G,2 A,4 | "Gm" _B,2 G,2 A,4 | "Gm" _B,3/2 _B,/ G,3/2 G,/ A,2 C,3/2 C,/ | "Gm" _B,2 G,2 F,4 |
-w: "\"Tote" * dat "barge!\"" | "\"Lift" dat "bale,\"" | git a lit- tle drunk an' you | land in jail. |
-"Eb" _B,,2 _B,2 C, _E,2 C, | "Eb" _B,2 _B,2 C, _E,2 F, | "Eb" G,2 _B,2 C, _B,2 C, | "Cm7" _E,2 _E,2 F, _E,2 F, |
+"Gm" _B z G2 A4 | "Gm" _B2 G2 A4 | "Gm" _B3/2 _B/ G3/2 G/ A2 C3/2 C/ | "Gm" _B2 G2 F4 |
+w: ""Tote" * dat "barge!"" | ""Lift" dat "bale,"" | git a lit- tle drunk an' you | land in jail. |
+"Eb" _B,2 _B2 C _E2 C | "Eb" _B2 _B2 C _E2 F | "Eb" G2 _B2 C _B2 C | "Cm7" _E2 _E2 F _E2 F |
 w: Ah gits wea- ry an' | sick of try- in', Ah'm | tired of liv- in' an' | skeered of dy- in'. But |
-"Eb" G,2 G,2 F, _E,2 F, | "Fm9" G,2 G,2 F, _E, F,2 | :|1 "Eb" _E,2 z2 z4 | "Eb" :|2 _E,8- |
+"Eb" G2 G2 F _E2 F | "Fm9" G2 G2 F _E F2 | :|1 "Eb" _E2 z2 z4 | "Eb" :|2 _E8- |
 w: Ol' Man Riv- er, he | jus' keeps roll- in' a- |  long. * * |  long. |
-"Eb" _E,2 z2 z4 |
+"Eb" _E2 z2 z4 |
 w: _ * * |]
 
 X:963
@@ -26512,16 +29203,18 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id once-i-loved
+%%tags needs-repair
 K:F
-|: "Gm7" D8- | "C7#5" D,4- D, C,2 A,- | "Fmaj7" A,8- | "F#dim7" A,4 z2 _B,2 C,2 |
+|: "Gm7" d8- | "C7#5" D4- D C2 A- | "Fmaj7" A8- | "F#dim7" A4 z2 _B2 C2 |
 w:  Once | _ _ I loved, | _ | _ * And I |
-"Gm7" D,2 D,2 D,2 D,2 D,2 D,2 | "G#dim7" D,4 F,2 E,2 D,2 | "Am7" E,2 C,2 A,2- A,4- A,6 z2 | "Am7" C,8- |
+"Gm7" D2 D2 D2 D2 D2 D2 | "G#dim7" D4 F2 E2 D2 | "Am7" E2 C2 A2- A4- A6 z2 | "Am7" C8- |
 w: gave so much love to this | love, You were the | world to me; _ _ * | Once |
-"Fm7" C,4- C, _B,2 G,- | "Bb7#5" G,8- | "Ebmaj7" G,4 z2 G,2 A,2 | "Em7b5" _B,2 _B,2 A,2 C,2 C,2 _B,2 |
+"Fm7" C4- C _B2 G- | "Bb7#5" G8- | "Ebmaj7" G4 z2 G2 A2 | "Em7b5" _B2 _B2 A2 C2 C2 _B2 |
 w: _ _ I cried | _ | _ * at the | thought I was fool- ish and |
-"A7b9" A,4 G,2 _B,2 A,2 | :|1 "Dmaj7" G, ^F,2 ^F,- ^F,4- | "D7b9" ^F,4 z4 :|2 G, ^F,2 A,- A,4 |
+"A7b9" A4 G2 _B2 A2 | :|1 "Dmaj7" G ^F2 ^F- ^F4- | "D7b9" ^F4 z4 :|2 G ^F2 A- A4 |
 w: proud and let you |  say good- bye. _ | _ * * * * * |
-"Dmaj7" G, F, A,- A, G,2 E,- |
+"Dmaj7" G F A- A G2 E- |
 w: * * * * * * |]
 
 X:964
@@ -26530,13 +29223,14 @@ C:Wayne Shorter
 N:Source: openbook
 M:4/4
 L:1/8
+%%id one-by-one
 K:Gmin
-|: "Am7b5" D,2 F,2 z D,2 _B,- | "Gm7" _B,4 D,2 F,2 | "Ebmaj79" A,2 F,2 z D, C, D,- | "Bbmaj79" D,8 |
-"Am7b5" z _D C, G, _B, _B, C, F,, | "Gm7" G,2 _B, G, _B, _B, C, _B, | "Em7b5" D,2 C, G, _B, _B, C, G,- | "Gm11" G,8 |
-:| "E7#9" z _A G, D, F, F, G, D,- | "Dm7" D,8- | "Em7b5" D,8- | "Dm7" D,6 F,2 |
-"Am7b5" z _D, C, G, _B, _B, C, F,, | "Gm7" G,2 _B, G, _B, _B, C, _B, | "Em7b5" D,2 C, G, _B, _B, C, G,- | "Gm11" G,8 |
-"Am7b5" D,2 F,2 z D,2 _B,- | "Gm7" _B,4 D,2 F,2 | "Ebmaj79" A,2 F,2 z D, C, D,- | "Bbmaj79" D,8 |
-"Am7b5" z _D C, G, _B, _B, C, F,, | "Gm7" G,2 _B, G, _B, _B, C, _B, | "Em7b5" D,2 C, G, _B, _B, C, G,- | "Gm11" G,8 |]
+|: "Am7b5" D2 F2 z D2 _B- | "Gm7" _B4 D2 F2 | "Ebmaj79" A2 F2 z D C D- | "Bbmaj79" D8 |
+"Am7b5" z _d C G _B _B C F, | "Gm7" G2 _B G _B _B C _B | "Em7b5" D2 C G _B _B C G- | "Gm11" G8 |
+:| "E7#9" z _a G D F F G D- | "Dm7" D8- | "Em7b5" D8- | "Dm7" D6 F2 |
+"Am7b5" z _D C G _B _B C F, | "Gm7" G2 _B G _B _B C _B | "Em7b5" D2 C G _B _B C G- | "Gm11" G8 |
+"Am7b5" D2 F2 z D2 _B- | "Gm7" _B4 D2 F2 | "Ebmaj79" A2 F2 z D C D- | "Bbmaj79" D8 |
+"Am7b5" z _d C G _B _B C F, | "Gm7" G2 _B G _B _B C _B | "Em7b5" D2 C G _B _B C G- | "Gm11" G8 |]
 
 X:965
 T:One Note Samba
@@ -26546,28 +29240,29 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id one-note-samba
 K:Bb
-z F,2 F, | "Dm7" F,2 F, F,- F, F,2 F,- | "Db7" F, F,3 z F,2 F, | "Cm7" F,2 F, F,- F, F,2 F,- |
+z F2 F | "Dm7" F2 F F- F F2 F- | "Db7" F F3 z F2 F | "Cm7" F2 F F- F F2 F- |
 w: * This is | just a lit- _ tle sam- | _ ba * built up- | on a sin- _ gle note. |
-"B7b5" F,4 z F,2 F, | "Dm7" F,2 F, F,- F, F,2 F,- | "Db7" F, F,3 z F,2 F, | "Cm7" F,2 F, F,- F, F,2 F,- |
+"B7b5" F4 z F2 F | "Dm7" F2 F F- F F2 F- | "Db7" F F3 z F2 F | "Cm7" F2 F F- F F2 F- |
 w: _ * Oth- er | notes are bound _ to fol- | _ low * but the | root is still _ that note. |
-"B7b5" F,4 z _B,2 _B, | "Fm7" _B,2 _B, _B,- _B, _B,2 _B,- | "Bb7" _B, _B,3 z _B,2 _B, | "Ebmaj7" _B,2 _B, _B,- _B, _B,2 _B,- |
+"B7b5" F4 z _B2 _B | "Fm7" _B2 _B _B- _B _B2 _B- | "Bb7" _B _B3 z _B2 _B | "Ebmaj7" _B2 _B _B- _B _B2 _B- |
 w: _ * Now the | new one is _ the con- | _ sequence * _ of | the one we've just _ been |
-"Ab7" _B,3 z z F,2 F, | "Dm7" F,2 F, F,- F, F,2 F,- | "Db7" F, F,2 F,- F, F, F,2 | "Cm7" F,2 F, F,- F, F,2 _B, |
+"Ab7" _B3 z z F2 F | "Dm7" F2 F F- F F2 F- | "Db7" F F2 F- F F F2 | "Cm7" F2 F F- F F2 _B |
 w: through * * _ as | I'm bound to be _ the | un- _ a- void- _ a- | ble con- se- quence _ of |
-"Bb6" z8 | "Ebm7" _B, C, _D, _E, _D, C, _B, _A, | "Ab7" _G, F, _E, _D, C, _D, _E, F, | "Dbmaj7" C,3 _B, z C, _D, F, |
+"Bb6" z8 | "Ebm7" _B C _D _E _D C _B _A | "Ab7" _G F _E _D C _D _E F | "Dbmaj7" C3 _B z C _D F |
 w: * | you. _ There's so man- y peo- ple | who can talk and talk and talk and | just say * no- thing or |
-"Dbm7" C,3 _B, z4 | "Gb7" _A _B, _C, _D, _C, _B, _A, _G, | "Cbmaj7" _F, _E, _D, _C, _B, _C, _D, _E, | "Cm7b5" _B,3 _A, z _B, _C, _E, |
+"Dbm7" C3 _B z4 | "Gb7" _a _B _C _D _C _B _A _G | "Cbmaj7" _F _E _D _C _B _C _D _E | "Cm7b5" _B3 _A z _B _C _E |
 w: near- ly * | no- thing I have used up all the | scale I know and at the end I've | come to * no- thing or |
-"Dm7" _G,3 F, z F,2 F, | "Db7" F,2 F, F, F,- F,2 F,- | "Cm7" F, F,3 z F,2 F, | "B7b5" F,2 F, F,- F, F,2 F,- |
+"Dm7" _G3 F z F2 F | "Db7" F2 F F F- F2 F- | "Cm7" F F3 z F2 F | "B7b5" F2 F F- F F2 F- |
 w: near- ly * no- thing | So I come back to my | first _ * note as | I must come back _ to |
-"Dm7" F,4 z F,2 F, | "Db7" F,2 F, F,- F, F,2 F,- | "Cm7" F, F,3 z F,2 F, | "B7b5" F,2 F, F,- F, F,2 F,- |
+"Dm7" F4 z F2 F | "Db7" F2 F F- F F2 F- | "Cm7" F F3 z F2 F | "B7b5" F2 F F- F F2 F- |
 w: you. * _ I | will pour in- to _ that | one _ * note all | the love I feel _ for |
-"Fm7" F,4 z _B,2 _B, | "Bb7" _B,2 _B, _B,- _B, _B,2 _B,- | "Ebmaj7" _B, _B,3 z _B,2 _B, | "Ab7" _B,2 _B, _B,- _B, _B,2 _B,- |
+"Fm7" F4 z _B2 _B | "Bb7" _B2 _B _B- _B _B2 _B- | "Ebmaj7" _B _B3 z _B2 _B | "Ab7" _B2 _B _B- _B _B2 _B- |
 w: you * _ A- | ny- one who wants _ the | whole _ * show, Re, | Mi, Fa, Sol, La, _ Te, |
-"Db6" _B,4 z _B,2 _B, | "C7" _B,2 _B, _B,- _B, _B,2 _B,- | "Bmaj7" _B, _B,2 _B, _B,2 _B,2- | "Bb6" _B,2 _B, _B,- _B, _B,2 _B, |
+"Db6" _B4 z _B2 _B | "C7" _B2 _B _B- _B _B2 _B- | "Bmaj7" _B _B2 _B _B2 _B2- | "Bb6" _B2 _B _B- _B _B2 _B |
 w: Doh. * _ he | will find him- self _ with | no _ show. Bet- ter | play _ the note _ you |
-z4 z F,2 F, |
+z4 z F2 F |
 w: * * know. * |]
 
 X:966
@@ -26578,24 +29273,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id opus-one
 K:G
-D, | "G" E, G, ^F,2 E,3 D, | "C9" E, G, ^F, E,- E,3 D, | "A9" E, G, ^F,2 E,3 D, |
+D | "G" E G ^F2 E3 D | "C9" E G ^F E- E3 D | "A9" E G ^F2 E3 D |
 w: I'm | wrack- in' my brain, to | think of a name, _ to | give to this tune, so |
-"Am7" E, G, ^F, E,- E,3 D, | "G" E, G, ^F,2 E,3 D, | "Am7" E, G, ^F, E,- E,3 D, | "G" E, G, ^F,2 E, G, ^F,2 |
+"Am7" E G ^F E- E3 D | "G" E G ^F2 E3 D | "Am7" E G ^F E- E3 D | "G" E G ^F2 E G ^F2 |
 w: Per- ry can croon, _ and | may- be ol' Bing will | give it a fling. _ And | that- 'll start ev- 'ry- one |
-"C9" E, G, ^F, E,- E,3 D, | "A9" E, G, ^F,2 E,3 D, | "Am7" E, G, ^F, E,- E,3 D, | "G" E, G, ^F,2 E,3 D, |
+"C9" E G ^F E- E3 D | "A9" E G ^F2 E3 D | "Am7" E G ^F E- E3 D | "G" E G ^F2 E3 D |
 w: hum- min' the thing. _ The | mel- o- dy's dumb, re- | peat an' re- peat. _ But | if you can swing, it's |
-"G" E, G, ^F, E,- E,3 D, | "Bb" E, G, ^F,2 E,3 D, | "Cm7" E, G, ^F, E,- E,3 D, | "Bb6" E, G, E, D, E, G, E, G,- |
+"G" E G ^F E- E3 D | "Bb" E G ^F2 E3 D | "Cm7" E G ^F E- E3 D | "Bb6" E G E D E G E G- |
 w: got a good beat. _ And | that's the main thing, to | make with the feet. _ 'Cause | ev- 'ry- one is swing- in' to day. |
-"C9" G,3 B,- B, D, B, G, | "Db" F, _B,2 z _B,3 G, | "Ebm7" C,2 C,2 C, D,2 _B,- | "Db" _B,3 G,- G,3 G,- |
+"C9" G3 B- B D B G | "Db" F _B2 z _B3 G | "Ebm7" C2 C2 C D2 _B- | "Db" _B3 G- G3 G- |
 w: _ So, _ I'll call it | O- pus * One! It's | not for Sam- my Kaye. | _ Hey! _ hey! |
-"Db" G,3 G,- G,3 G, | "G" _A, _D,2 z _D,3 _B, | "C9" _E,2 _E,2 _E, F,2 _D,- | "A9" _D,4- _D,3 _D,- |
+"Db" G3 G- G3 G | "G" _A _D2 z _D3 _B | "C9" _E2 _E2 _E F2 _D- | "A9" _D4- _D3 _D- |
 w: _ hey! _ It's | O- pus * One! It's | got to swing, not sway. | _ May- be, |
-"Am7" _D, D,3- D,3 D,, | "G" E, G, ^F,2 E,3 D, | "G" E, G, ^F, E,- E,3 D, | E, G, ^F,2 E,3 D, |
+"Am7" _D D3- D3 D, | "G" E G ^F2 E3 D | "G" E G ^F E- E3 D | E G ^F2 E3 D |
 w: _ if Mis- ter | Les Brown could make it | re- nown, _ and Ray An- | tho- ny could swing it |
-E, G, ^F, E,- E,3 D, | E, G, ^F,2 E,3 D, | E, G, ^F, E,- E,3 D, | E, G, E, D, E, G, E, G,- |
+E G ^F E- E3 D | E G ^F2 E3 D | E G ^F E- E3 D | E G E D E G E G- |
 w: for me. _ There's nev- er | a doubt you'll knock your- | self out. _ When- ev- er | you can hear O- pus One. _ * |
-G,4- G, z z2 |
+G4- G z z2 |
 w: * * * * |]
 
 X:967
@@ -26606,22 +29302,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id orchids-in-the-moonlight
 K:Fmin
-"Fm" z F, F, G, _A,2 G, F, | "Db" _D4 C,4- | "C7" C, C, C, _D, _E,2 _D, C, | "C7" E, |
+"Fm" z F F G _A2 G F | "Db" _d4 C4- | "C7" C C C _D _E2 _D C | "C7" E |
 w: * When or- chids bloom in the | moon- light | _ and lov- ers vow to be | true; |
-"Gm7b5" z _B, _B, C, _D,2 C, _B, | "Fm" F4 E,4 | "Fm" E, C, C, _D, _E, _D, C, | "Db" F,8 |
+"Gm7b5" z _B _B C _D2 C _B | "Fm" f4 E4 | "Fm" E C C _D _E _D C | "Db" F8 |
 w: * I still can dream in the | moon- light, | _ of one dear night that we | knew. |
-"F7" z F,, F, G, _A,2 G, F, | "Bbm" _D4 C,4- | "Bbm" C, C, C, _D, _E,2 _D, C, | "Fm" F,8 |
-w: * When or- chids fade in the | dawn- ing, | _ they speak of tears and "\"Good"- | "bye!\"" |
-"C7" z _D, _E, F,- F, _E, _D, _B, | "Fm" z C, _D, _E,- _E, _D, C, _A, | "F" z _B, C, _D,- _D, _B, G, E, | "F" F,2 z2 z4 |
+"F7" z F, F G _A2 G F | "Bbm" _d4 C4- | "Bbm" C C C _D _E2 _D C | "Fm" F8 |
+w: * When or- chids fade in the | dawn- ing, | _ they speak of tears and ""Good"- | "bye!"" |
+"C7" z _D _E F- F _E _D _B | "Fm" z C _D _E- _E _D C _A | "F" z _B C _D- _D _B G E | "F" F2 z2 z4 |
 w: * Tho' my dreams _ are shat- tered, | * like the pet- als scat- tered, still | * my love _ can nev- er die. | There * * |
-"C7" z2 C, A _A,2 _B,, G | "C7" F,4 C,4- | "F" C,2 F, A, C,3 C, | "C7" C,8 |
+"C7" z2 C a _A2 _B, g | "C7" F4 C4- | "F" C2 F A C3 C | "C7" C8 |
 w: * is peace in the twi- | light, _ | when the day is thru, | but |
-"F" z2 _B, A, _B, C,2 _B, | "Bb" A,2 ^G, G, ^G, A,2 ^G, | "Bb" G, ^F, F, ^F, G,2 E, | "Db7" C,6 z2 |
+"F" z2 _B A _B C2 _B | "Bb" A2 ^G G ^G A2 ^G | "Bb" G ^F F ^F G2 E | "Db7" C6 z2 |
 w: * the shad- own that fall | on- ly seem to re- call | all my long- ing for you. | There's * |
-"F" z2 C, A _A,2 _B,, G | "F" F,4 C,4- | C, F, A, C, F,3 F, | F,8 |
+"F" z2 C a _A2 _B, g | "F" F4 C4- | C F A C F3 F | F8 |
 w: * a dream in the moon- | beams, _ | up on the sea of blue; | but |
-z2 D, ^C, D, E,2 D, | _D,2 _D, C, _D, _E,2 _D, | C,2 C,, A _A,2 _B,, G | F,6 z2 A,2 |
+z2 D ^C D E2 D | _D2 _D C _D _E2 _D | C2 C, a _A2 _B, g | F6 z2 A2 |
 w: * the moon- beams that fall, | on- ly seem to re- call, | love is all, love is you. | * * * |]
 
 X:968
@@ -26630,11 +29327,13 @@ C:Charlie Parker, Benny Harris
 N:Source: openbook
 M:4/4
 L:1/8
+%%id ornithology-2
+%%tags needs-repair
 K:G
-D, |: "Gmaj7" G, A, B, C, D, B, C, D, | "Gm7" B, G, z2 z2 z D, | "Gm7" G, A, _B, C, D, E,2 F,2 |
-"Fmaj7" F,2 G,,2 A,2 _B,2- _B,3 D, | "Fm7" C, A,2 F,2 _B,2 ^G,2 A,2 F,2- | "Bb7" F,2 z2 z2 z2 z _A,- | "Eb7" _A,2 G, F, E, G, F, C, |
-"D7" F, _E, D, z2 z _D- | _D,2 C, _B, A, C, _B, G, | "Gm" A,2 G, ^F, z2 z D, | "Cm7b5" :|1 "Bm7" A G, D, _B, F D, _E, D,- |
-"E7" D, A ^F, G, A, ^F, G, A, ^F, G, A, :|2 "Am7" ^F, G, A, |]
+D |: "Gmaj7" G A B C D B C D | "Gm7" B G z2 z2 z D | "Gm7" G A _B C D E2 F2 |
+"Fmaj7" F2 G,2 A2 _B2- _B3 D | "Fm7" C A2 F2 _B2 ^G2 A2 F2- | "Bb7" F2 z2 z2 z2 z _A- | "Eb7" _A2 G F E G F C |
+"D7" F _E D z2 z _d- | _D2 C _B A C _B G | "Gm" A2 G ^F z2 z D | "Cm7b5" :|1 "Bm7" a G D _B f D _E D- |
+"E7" D a ^F G A ^F G A ^F G A :|2 "Am7" ^F G A |]
 
 X:969
 T:Polka Dots And Moonbeams
@@ -26644,22 +29343,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id polka-dots-and-moonbeams
 K:F
-"F" z C, D, E, F, G, A, C, | "Gm7" A,2 G, F, E, D,3 | "Am7" z C, D, E, F, G, A, C, | "Gm7" D,2 C, _B, A, G,3 |
-w: * A coun- try dance was be- ing | held in a gar- den, | * I felt a bump and heard an | "\"Oh," beg your par- "don,\"" |
-"Dm" F, G, F, G, F,4 | "Dm7" A, A, G, F, E, _E,3 | "Gm7" D, _B G, F, E, D2 C,- | "Am7" C,8 |
+"F" z C D E F G A C | "Gm7" A2 G F E D3 | "Am7" z C D E F G A C | "Gm7" D2 C _B A G3 |
+w: * A coun- try dance was be- ing | held in a gar- den, | * I felt a bump and heard an | ""Oh," beg your par- "don,"" |
+"Dm" F G F G F4 | "Dm7" A A G F E _E3 | "Gm7" D _b G F E d2 C- | "Am7" C8 |
 w: sud- den- ly I saw | Pol- ka Dots And Moon- beams | all a- round a pug- nosed dream. | _ |
-"F" z C,, D, E, F, G, A, C, | "Gm9" A,2 G, F, E, D,3 | "Am7" z C, D, E, F, G, A, C, | "Gm7" D,2 C, _B, A, G,3 |
-w: * The mus- ic start- ed and was | I the per- plexed one, | * I held my breath and said "\"may" | I have the next "one.\"" |
-"Dm" F, G, F, G, F,4 | "Dm7" A, A, G, F, E, _E,3 | "Gm7" D, _B G, F, E, A,2 F,- | "F6" F,6 E, ^F, |
+"F" z C, D E F G A C | "Gm9" A2 G F E D3 | "Am7" z C D E F G A C | "Gm7" D2 C _B A G3 |
+w: * The mus- ic start- ed and was | I the per- plexed one, | * I held my breath and said ""may" | I have the next "one."" |
+"Dm" F G F G F4 | "Dm7" A A G F E _E3 | "Gm7" D _b G F E A2 F- | "F6" F6 E ^F |
 w: In my fright- ened arms | Pol- ka Dots And Moon- beams | spark- led on a pug- nosed dream. | _ There were |
-"A" E,2 ^C4 E, _E, | "Bm7" D, ^C, B, A, ^G, E,3 | "C#m7" E, ^F, ^F, ^G, ^G,2 A,2 ^C,2 | "Bm7" E,6 E,, ^F, |
+"A" E2 ^c4 E _E | "Bm7" D ^C B A ^G E3 | "C#m7" E ^F ^F ^G ^G2 A2 ^C2 | "Bm7" E6 E, ^F |
 w: ques- tions in the | eyes of oth- er danc- ers | as we float- ed o- ver the | floor. There were |
-"A" E,2 ^C4 E, _E, | "Bm7" D, ^C, B, A, ^G, E,3 | "A7" z A,2 B, A,2 _B,2 | "Gm7" C,2 _B, G,- G, z z2 |
+"A" E2 ^c4 E _E | "Bm7" D ^C B A ^G E3 | "A7" z A2 B A2 _B2 | "Gm7" C2 _B G- G z z2 |
 w: ques- tions but my | heart knew all the an- swers, | * and per- haps a | few things more. _ * * |
-"F" z C,, D, E, F, G, A, C, | "Gm9" A,2 G, F, E, D,3 | "Am7" z C, D, E, F, G, A, C, | "Gm7" D,2 C, _B, A, G,3 |
-w: * Now in a cot- tage built of | li- lacs and laugh- ter | * I know the mean- ing of the | words "\"ev"- er af- "ter.\"" |
-"Dm" F, G, F, G, F,4 | "Dm7" A, A, G, F, E, _E,3 | "Gm7" D, _B G, F, E, A,2 F,- | "F6" F,6 z2 |
+"F" z C, D E F G A C | "Gm9" A2 G F E D3 | "Am7" z C D E F G A C | "Gm7" D2 C _B A G3 |
+w: * Now in a cot- tage built of | li- lacs and laugh- ter | * I know the mean- ing of the | words ""ev"- er af- "ter."" |
+"Dm" F G F G F4 | "Dm7" A A G F E _E3 | "Gm7" D _b G F E A2 F- | "F6" F6 z2 |
 w: And I'll al- ways see | Pol- ka Dots And Moon- beams | when I kiss the pug- nosed dream. | _ * |]
 
 X:970
@@ -26670,24 +29370,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id poor-butterfly
+%%tags needs-repair
 K:Ab
-_E,2 E,2 F,2 | "Bbm7" _D8- | "Eb7" _D,2 C, _B, _D,2 C,2 | "Abmaj7" _B,4 _B,4- |
+_E2 E2 F2 | "Bbm7" _d8- | "Eb7" _D2 C _B _D2 C2 | "Abmaj7" _B4 _B4- |
 w: Poor But- ter- | fly, | _ 'neath the blos- soms | wait- int, |
-"C7#5" _B,2 _A,2 B,,2 C,2 | "F7" _A8- | "Bbm7" _A,2 B,, C, _A2 G,2 | "Eb7" G,8- |
+"C7#5" _B2 _A2 B,2 C2 | "F7" _a8- | "Bbm7" _A2 B, C _a2 G2 | "Eb7" G8- |
 w: _ Poor But- ter- | fly | _ for she loved him | so. |
-"Gm7b5" G,2 F,2 B,,2 C,2 | "Fm7" G2 F, G, F,4- | "Bb7" F,2 _E,2 D,2 _E,2 | "Bbm7" _B2 _A, _B, _A,4- |
+"Gm7b5" G2 F2 B,2 C2 | "Fm7" g2 F G F4- | "Bb7" F2 _E2 D2 _E2 | "Bbm7" _b2 _A _B _A4- |
 w: _ The mo- ments | pass in- to hour, | _ the hours _ | pass in- to years, |
-"Eb7" _A,2 F,2 G,2 _A,2 | "Bbm7" C,2 _B, C, _B,4- | "Eb7" _B,2 _A,2 E,2 F,2 | "Abmaj7" _B,8- |
+"Eb7" _A2 F2 G2 _A2 | "Bbm7" C2 _B C _B4- | "Eb7" _B2 _A2 E2 F2 | "Abmaj7" _B8- |
 w: _ and as she | smiles through her tears, | _ she mur- murs | low, |
-"C7#5" _B,2 _E,,2 E,2 F,2 | "F7" _D8- | "Bbm7" _D,2 C, _B, _D,2 C,2 | "Dbm7" _B,4 _B,4- |
-w: _ "\"The" moon and | I | _ know that he'll be | faith- ful. |
-"Abmaj7" _B,2 _A,2 B,,2 C,2 | "Cm7" _A8- | "Bbm7" _A,2 B,, C, _A2 G,2 | "Eb7" G,8- |
+"C7#5" _B2 _E,2 E2 F2 | "F7" _d8- | "Bbm7" _D2 C _B _D2 C2 | "Dbm7" _B4 _B4- |
+w: _ ""The" moon and | I | _ know that he'll be | faith- ful. |
+"Abmaj7" _B2 _A2 B,2 C2 | "Cm7" _a8- | "Bbm7" _A2 B, C _a2 G2 | "Eb7" G8- |
 w: _ I'm sure he'll | come | _ to me by and | bye. |
-"Ab" G,4 F,2 C,2 | _D,2 _E, F, _E4- | _E,2 _D, C, _E,2 _D,2 | _D,2 B, C, G,4- |
+"Ab" G4 F2 C2 | _D2 _E F _e4- | _E2 _D C _E2 _D2 | _D2 B C G4- |
 w: _ But if | he don't come back, | _ then I'll nev- er | sigh or _ cry, |
-G,2 _A,2 C,,2 G2 | F,8- | F,2 D, _E, _D C, | _A,8- |
-w: _ I just mus' | "die.\"" | Poor _ But- ter- fly. | _ |
-_A,2 z2 z4 |
+G2 _A2 C,2 g2 | F8- | F2 D _E _d C | _A8- |
+w: _ I just mus' | "die."" | Poor _ But- ter- fly. | _ |
+_A2 z2 z4 |
 w: * * * |]
 
 X:971
@@ -26698,22 +29400,24 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id prelude-to-a-kiss
+%%tags needs-repair
 K:C
-"D9" B2 _B,2 A,2 ^G,2 | "C9" G,2 A, E,- E,2 F,2 G,2 | "B7" ^G,2 G,2 ^F,2 F,2 | "A7" E,2 F, D,- D,4 |
+"D9" b2 _B2 A2 ^G2 | "C9" G2 A E- E2 F2 G2 | "B7" ^G2 G2 ^F2 F2 | "A7" E2 F D- D4 |
 w: If you hear a | song in blue _ like a | flow- er cry- ing | for the dew _ |
-"Dm7" G,2 G,2 G,2 G,2 ^G,2 A,2 | "C" C,,2 D B,- B,4 | "C" D,, E, F, ^G,- ^G,2 ^G, A,- | "D9" A,6 z2 |
+"Dm7" G2 G2 G2 G2 ^G2 A2 | "C" C,2 d B- B4 | "C" D, E F ^G- ^G2 ^G A- | "D9" A6 z2 |
 w: that was my heart ser- e- | nad- ing you _ | my Pre- lude To A Kiss. _ | If * |
-"C9" B,2 _B,2 A,2 ^G,2 | "B7" G,2 A, E,- E,2 F,2 G,2 | "A7" ^G,2 G,2 ^F,2 F,2 | "Dm7" E,2 F, D,- D,4 |
+"C9" B2 _B2 A2 ^G2 | "B7" G2 A E- E2 F2 G2 | "A7" ^G2 G2 ^F2 F2 | "Dm7" E2 F D- D4 |
 w: you hear a song | that grows from my ten- der | sen- ti- men- tal | woes _ That was |
-"C" G,2 G,2 G,2 G,2 ^G,2 A,2 | "C" C,,2 D B,- B,4 | "E" D,, E, F, ^G,- ^G,2 A, C,,- | "F#m7" C,6 z2 |
+"C" G2 G2 G2 G2 ^G2 A2 | "C" C,2 d B- B4 | "E" D, E F ^G- ^G2 A C,- | "F#m7" C6 z2 |
 w: my heart try- ing to com- | pose _ a Pre- | lude To A Kiss. _ Though it's | just * |
-"E" z2 ^A B, ^D,, E, ^D ^C, | "F#m7" B, A, C,,4 ^C,2 | "E" z2 ^F, ^F, ^F,2 E,2 | "F#m7" z2 A, A, A,4 |
+"E" z2 ^a B ^D, E ^d ^C | "F#m7" B A C,4 ^C2 | "E" z2 ^F ^F ^F2 E2 | "F#m7" z2 A A A4 |
 w: * a sim- ple mel- o- dy | with noth- ing fan- | * cy, noth- ing much | * you could turn |
-"E" z2 ^A, B, ^D,, E, ^D ^C, | "Dm7" B, A, C,,4 ^C,2 | "D9" E, E,2 E,- E,2 E, E, | "C9" G,2 ^G,2 A,2 ^A,2 |
+"E" z2 ^A B ^D, E ^d ^C | "Dm7" B A C,4 ^C2 | "D9" E E2 E- E2 E E | "C9" G2 ^G2 A2 ^A2 |
 w: * it to a sym- pho- ny | a Schu- bert tune | _ with a Gersh- win touch. | Oh! How my love |
-"B7" B,2 _B,2 A,2 ^G,2 | "A7" G,2 A, E,- E,2 F,2 G,2 | "Dm7" ^G,2 G,2 ^F,2 F,2 | "C" E,2 F, D,- D,2 D,2 |
+"B7" B2 _B2 A2 ^G2 | "A7" G2 A E- E2 F2 G2 | "Dm7" ^G2 G2 ^F2 F2 | "C" E2 F D- D2 D2 |
 w: song gen- tly cries | _ for the ten- der- ness | with- in your eyes | _ my love is a |
-"C" G,2 G,2 G,2 G,2 ^G,2 A,2 | C,,2 D B,- B,4 | D,, E, F, ^G,- ^G,2 A, C,,- | C,8 |
+"C" G2 G2 G2 G2 ^G2 A2 | C,2 d B- B4 | D, E F ^G- ^G2 A C,- | C8 |
 w: pre- lude that nev- er dies | _ a Pre- lude | To A Kiss. _ * * * | * |]
 
 X:972
@@ -26724,24 +29428,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id quiet-nights-of-quiet-stars
 K:C
-"D9" z E,2 D, E, D,2 E,- | "Abdim7" E, D, E,6 | "Gm7" z E,2 D, E, D,2 E,- | "C7" E, D, E,6 |
+"D9" z E2 D E D2 E- | "Abdim7" E D E6 | "Gm7" z E2 D E D2 E- | "C7" E D E6 |
 w: * Qui- et Nights Of Qui- | et Stars, qui- | * et chords from my _ | gui- tar float- |
-"Fdim7" z D,2 C, D, C,2 D,- | "Fmaj7" D, C,2 F,- F, E,2 E,- | "Fm7" E,3 D,- D,4- | "Bb13" D,6 z2 |
+"Fdim7" z D2 C D C2 D- | "Fmaj7" D C2 F- F E2 E- | "Fm7" E3 D- D4- | "Bb13" D6 z2 |
 w: * ing on the si- lence | that _ sur- rounds _ us. | _ Qui- et | thoughts * |
-"Em7" z G,2 F, G, F,2 G,- | "A7#5" G, F,2 G,- G,4 | "D9" z F,2 E, F, E,2 F,- | "D" F, E, F,6 |
+"Em7" z G2 F G F2 G- | "A7#5" G F2 G- G4 | "D9" z F2 E F E2 F- | "D" F E F6 |
 w: * and qui- et dreas, _ | qui- et walks by | * qui- et streams, and a | win- dow look- |
-"D" z E,2 D, E, D,2 E,- | "Abdim7" E, D,2 E,- E, D, F,2- | "D9" F, E,2 F, E,2 F,2- F, E,2 D,- D, C,3 | "Abdim7" z E,2 D, E, D,2 E,- |
+"D" z E2 D E D2 E- | "Abdim7" E D2 E- E D F2- | "D9" F E2 F E2 F2- F E2 D- D C3 | "Abdim7" z E2 D E D2 E- |
 w: * ing on _ the moun- | tains and the sea. _ How | love- ly! This is where I want _ to be. | * _ Here, with you so |
-"Gm7" E, D,2 E,- E,4 | "C7" z E,2 D, E, D,2 E,- | "Fdim7" E, D, E,2- E, G,2 D,- | "Fmaj7" D,4 C,2 D,2 C,2 |
+"Gm7" E D2 E- E4 | "C7" z E2 D E D2 E- | "Fdim7" E D E2- E G2 D- | "Fmaj7" D4 C2 D2 C2 |
 w: close _ to me | * _ un- til _ the | fin- al flick- er of _ | life's em- ber. _ |
-"Fm7" D, C,2 F,- F, E,2 E,- | "Bb7b5" E,3 D,- D,4- | "Em7" D,6 z2 | "Am7" z C2 _B,- _B, _A, G, F, |
+"Fm7" D C2 F- F E2 E- | "Bb7b5" E3 D- D4- | "Em7" D6 z2 | "Am7" z c2 _B- _B _A G F |
 w: I, who _ was lost and | lone- ly, _ | be- * | * liev- ing life was on- ly |
-"Dm7" E,3 D,- D,4 | "G7b9" z2 z B A, G, F, E, | "Em7" D,3 C,- C,4 | "A7#5" z2 z A G, F, E, D, |
+"Dm7" E3 D- D4 | "G7b9" z2 z b A G F E | "Em7" D3 C- C4 | "A7#5" z2 z a G F E D |
 w: _ a bit- | * * ter tra- gic joke, have | found _ with | * * you, _ the mean- ing |
-"Dm7" C, B,2 C,- C, D,2 G,- | "G9" G,8- | "C6" G,4 z4 | z2 z A, G, F, E, D, |
+"Dm7" C B2 C- C D2 G- | "G9" G8- | "C6" G4 z4 | z2 z A G F E D |
 w: of ex- ist- ence. Oh, _ | my | love. * | * * _ * * * * |
-C, B,2 C,- C, D,2 C,- | C,8- | C,6 z2 |
+C B2 C- C D2 C- | C8- | C6 z2 |
 w: * * * * * * | * | * * |]
 
 X:973
@@ -26752,24 +29457,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id red-sails-in-the-sunset
+%%tags needs-repair
 K:G
-|: "G" z2 B2 B,2 C,2 B,2 | "C" D,2 D,6 | "G" z2 G,,2 G,2 A,2 G,2 | "G" B,8 |
+|: "G" z2 b2 B2 C2 B2 | "C" D2 D6 | "G" z2 G,2 G2 A2 G2 | "G" B8 |
 w:  * Red Sails In The | Sun- set | * way out on the | sea, |
-"Am7" z2 D,,2 D,2 E,2 D,2 | "Am7" A2 A,6 | "G" z2 A,2 A,2 G,2 ^F,2 | "G" G,8 |
+"Am7" z2 D,2 D2 E2 D2 | "Am7" a2 A6 | "G" z2 A2 A2 G2 ^F2 | "G" G8 |
 w: * oh! car- ry my | loved one | * home safe- ly to | me. |
-"C" z2 B,2 B,2 C,2 B,2 | "G" D,2 D,6 | "G" z2 G,,2 G,2 A,2 G,2 | "Am7" B,8 |
+"C" z2 B2 B2 C2 B2 | "G" D2 D6 | "G" z2 G,2 G2 A2 G2 | "Am7" B8 |
 w: * He sailed at the | dawn- ing, | * all day I've been | blue. |
-"Am7" z2 D,,2 D,2 E,2 D,2 | "G" A2 A,6 | "C" z2 A,2 A,2 G,2 ^F,2 | "G" G,8 |
+"Am7" z2 D,2 D2 E2 D2 | "G" a2 A6 | "C" z2 A2 A2 G2 ^F2 | "G" G8 |
 w: * Red Sails In The | Sun- set | * I'm trust- ing in | you. |
-"D7" A,4 G,2 A,2 G,2 | "G" E,2 D,6 | "C" z2 A2 A,2 G,2 E,2 | "G" G,8 |
+"D7" A4 G2 A2 G2 | "G" E2 D6 | "C" z2 a2 A2 G2 E2 | "G" G8 |
 w: Swift wings you must | bor- row, | * make stright for the | shore. |
-"A7" A,4 G,2 A,2 G,2 | "Am7" E,2 D,6 | "G" z B B, B, B, A,2 G, | "C" A,8 |
+"A7" A4 G2 A2 G2 | "Am7" E2 D6 | "G" z b B B B A2 G | "C" A8 |
 w: We mar- ry to- | mor- row | * and he goes sail- ing no | more. |
-"G" z2 B,2 B,2 C,2 B,2 | "G" D,2 D,6 | "Am7" z2 G,,2 G,2 A,2 G,2 | "Am7" B,8 |
+"G" z2 B2 B2 C2 B2 | "G" D2 D6 | "Am7" z2 G,2 G2 A2 G2 | "Am7" B8 |
 w: * Red Sails In The | Sun- set | * way out on the | sea, |
-z2 D,,2 D,2 E,2 D,2 | "G" A2 A,6 | z2 A,2 A,2 G,2 ^F,2 | "G" :|1 G,4 z4 |
+z2 D,2 D2 E2 D2 | "G" a2 A6 | z2 A2 A2 G2 ^F2 | "G" :|1 G4 z4 |
 w: * oh! car- ry my | loved one | * home safe- ly to |  me. * |
-:|2 G,8 |
+:|2 G8 |
 w:  me. |]
 
 X:974
@@ -26778,10 +29485,12 @@ C:Sir Charles Thompson, Jean-Baptiste \\"Illinois\\" Jacquet
 N:Source: openbook
 M:4/4
 L:1/8
+%%id robbin-s-nest
+%%tags needs-repair
 K:C
-z ^D, E, G, B, |: "C6" D, C, G, E, D C,3- | "Ab7" C,4 z B,, C, E, G, | "Em7" _B, _A, _E, C, _B _A,3- |
-"Dm7" _A,6 z G,- | G,2 E, G, _G, _E, C, F,- | "C6" F,2 D, F, E,3/2 E,/ E, C,- | "Dm7" :|1 C,4- C,4- |
-"C6" C,4 z ^D, E, G, B, :|2 C,,6- C,2 | z6 E,2 |]
+z ^D E G B |: "C6" D C G E d C3- | "Ab7" C4 z B, C E G | "Em7" _B _A _E C _b _A3- |
+"Dm7" _A6 z G- | G2 E G _G _E C F- | "C6" F2 D F E3/2 E/ E C- | "Dm7" :|1 C4- C4- |
+"C6" C4 z ^D E G B :|2 C,6- C2 | z6 E2 |]
 
 X:975
 T:'Round Midnight
@@ -26791,12 +29500,14 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id round-midnight-2
+%%tags needs-repair
 K:Ebmin
-|: "Ebm" z2 _B,/ _E,/ F,/ _B,/ _G,3 _B,, | "Fm7b5" _E,3 D,/ _E,/ _B _A, z2 | "Ebm7" z2 _E,/ _G,/ _B,/ _D,/ C,3 _E,, | "Bm7" A, ^F,/ D,/ ^G,2 _A, F,/ _D,/ G,2 |
+|: "Ebm" z2 _B/ _E/ F/ _B/ _G3 _B, | "Fm7b5" _E3 D/ _E/ _b _A z2 | "Ebm7" z2 _E/ _G/ _B/ _D/ C3 _E, | "Bm7" A ^F/ D/ ^G2 _A F/ _D/ G2 |
 w:  * It be- gins to tell, 'round | midnight, mid- _ _ night. * | * I do pre- tty well, till | af- _ _ ter sun- _ _ down, |
-"Abm7" z2 _A,/ _C,/ _E,/ _G,/ F,3 _C, | "Ebm7" _B,2 _E,, D, _D, C, _A2 _E,/ F,/ | :|1 "B7" ^F, ^F, ^F, ^F, F, ^D, :|2 "Bb7" ^F2 F, ^D, F,2 _E, _D, |
+"Abm7" z2 _A/ _C/ _E/ _G/ F3 _C | "Ebm7" _B2 _E, D _D C _a2 _E/ F/ | :|1 "B7" ^F ^F ^F ^F F ^D :|2 "Bb7" ^f2 F ^D F2 _E _D |
 w: * Sup- per- time I'm fee- lin' | sad; _ _ _ _ _ But it |  real- ly gets _ _ _ bad, 'round mid- night. mid- _ |
-_E,6 _E, F, |
+_E6 _E F |
 w: _ night knows |]
 
 X:976
@@ -26807,12 +29518,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id satin-doll-2
 K:C
-|: "Dm7" A3/2 G,/ A, G,- G, A,3 | "Dm7" z A,3 G, A,3 | "Em7" B,3/2 A,/ B, A,- A, B,3 | "Em7" z B,3 A, B,3 |
+|: "Dm7" a3/2 G/ A G- G A3 | "Dm7" z A3 G A3 | "Em7" B3/2 A/ B A- A B3 | "Em7" z B3 A B3 |
 w:  Cig- a- rette hold- er which | * wigs me, o- | ver her shoul- der, she digs | * me. Out cat- |
-"Am9" z D,3 C, D,3 | "Abm9" z _B,3 _A,2 _B, G,- | :|1 "C" G,8- | "Em7" G,8 |
+"Am9" z D3 C D3 | "Abm9" z _B3 _A2 _B G- | :|1 "C" G8- | "Em7" G8 |
 w: * tin' that Sat- | * in Doll. _ _ |  She's | no- |
-:|2 "C" G,8 | "C" z4 z2 z G, |
+:|2 "C" G8 | "C" z4 z2 z G |
 w:  bod- | * * * y's |]
 
 X:977
@@ -26821,12 +29533,13 @@ C:Roland Kirk
 N:Source: openbook
 M:4/4
 L:1/8
+%%id serenade-to-a-cuckoo
 K:Fmin
-|: "Fm" z C2 F,, C3 F,, | "Fm" C C, _B, _B, _A, F,2 _E, | "Fm" F,2 F, F, _A, _A,2 C,- | "Fm" C,8 |
-"Fm" z C,2 F,, C3 F,, | "Fm" C C, _B, _B, _A, F,2 _E, | "Fm" F,2 F, F, _A, F, _E, F,- | "Fm" F,8 |
-"Bbm7" z F2 z _B,,4 | "Abmaj7" z _E,2 z _A,,4 | "Gm7b5" z _D,2 z G,,4 | "Fm" G, _A, _B, C,- C,4 |
-"Bbm7" z F,2 z _B,,4 | "Abmaj7" z _E,2 z _A,,4 | "Gm7b5" z _D,2 z G,,4 | "Fm" G, _A, G, F,- F,4 |
-:| "Gm7b5" C C, C, _E, z _D,3 | "Fm" C,2 z2 z4 |]
+|: "Fm" z c2 F, c3 F, | "Fm" c C _B _B _A F2 _E | "Fm" F2 F F _A _A2 C- | "Fm" C8 |
+"Fm" z C2 F, c3 F, | "Fm" c C _B _B _A F2 _E | "Fm" F2 F F _A F _E F- | "Fm" F8 |
+"Bbm7" z f2 z _B,4 | "Abmaj7" z _E2 z _A,4 | "Gm7b5" z _D2 z G,4 | "Fm" G _A _B C- C4 |
+"Bbm7" z F2 z _B,4 | "Abmaj7" z _E2 z _A,4 | "Gm7b5" z _D2 z G,4 | "Fm" G _A G F- F4 |
+:| "Gm7b5" c C C _E z _D3 | "Fm" C2 z2 z4 |]
 
 X:978
 T:Solar
@@ -26834,10 +29547,12 @@ C:Miles Davis
 N:Source: openbook
 M:4/4
 L:1/8
+%%id solar
+%%tags needs-repair
 K:C
-|: "Cm" z C3 B,2 D, C, | "Gm7" z G,3- G,3 A, | "C7" _B,2 _B, _B, A,2 C, _B,- | "Fmaj7" _B,8 |
-"Fm7" z A,3 ^G,2 _B, A, | "Bb7" z C,,3- C,2 F, G, | "Ebmaj7" _A,2 _A, _A, G,2 _B, _A,- | "Ebm7" _A,6 z G,- |
-"Dbmaj7" G,2 F, _E, D, C,2 _G- | "Dm7b5" _G,2 F, _E, _D, C,2 F,- | F,8 | z D, _E, F, G, _A, B, |
+|: "Cm" z c3 B2 D C | "Gm7" z G3- G3 A | "C7" _B2 _B _B A2 C _B- | "Fmaj7" _B8 |
+"Fm7" z A3 ^G2 _B A | "Bb7" z C,3- C2 F G | "Ebmaj7" _A2 _A _A G2 _B _A- | "Ebm7" _A6 z G- |
+"Dbmaj7" G2 F _E D C2 _g- | "Dm7b5" _G2 F _E _D C2 F- | F8 | z D _E F G _A B |
 :|]
 
 X:979
@@ -26848,18 +29563,19 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id someday-my-prince-will-come
 K:Bb
-|: "Bb" F,6 | "D7#5" _B,4 ^F,2 | "Ebmaj7" A,4 G,2 | "G7#5" G,6 |
+|: "Bb" F6 | "D7#5" _B4 ^F2 | "Ebmaj7" A4 G2 | "G7#5" G6 |
 w:  Some- | day my | prince will | come |
-"Cm7" G,6 | "G7#5" _E4 B,2 | "C7" D,4 C,2 | "F7" C,2 D,2 _E,2 |
+"Cm7" G6 | "G7#5" _e4 B2 | "C7" D4 C2 | "F7" C2 D2 _E2 |
 w: Some- | day I'll | find my | love And how |
-:|1 "Dm7" F,4 F,2 | "Dbdim" A,4 A,2 | "Cm7" F,6 | "F7" C,2 D,2 _E,2 |
+:|1 "Dm7" F4 F2 | "Dbdim" A4 A2 | "Cm7" F6 | "F7" C2 D2 _E2 |
 w:  thrilling that | moment will | be | When the prince |
-"Dm7" F,4 F,2 | "Dbdim" A,4 A,2 | "Cm7" F,6- | "F7" F,6 |
+"Dm7" F4 F2 | "Dbdim" A4 A2 | "Cm7" F6- | "F7" F6 |
 w: of my | dreamscomes to | me | * |
-:|2 "Fm7" F,3 E, F,2 | "Bb7" C4 _B,2 | "Eb" C,,2 _B,2 C,2 | "Edim" A4 G,2 |
+:|2 "Fm7" F3 E F2 | "Bb7" c4 _B2 | "Eb" C,2 _B2 C2 | "Edim" a4 G2 |
 w:  * * * | * * | * * * | * * |
-"Bb" F,4 _E,2 | "Cm7" D,4 C,2 | "Bb" _B,6- | _B,6 |
+"Bb" F4 _E2 | "Cm7" D4 C2 | "Bb" _B6- | _B6 |
 w: * * | * * | * | * |]
 
 X:980
@@ -26870,12 +29586,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id someone-to-watch-over-me
 K:Ab
-|: "Abmaj7" z2 _A, _B, C, _E, F, _A, | "Dm7b5" _B, _B,2 _A, G,4 | "Cm7" _A, _A,2 G, F,4 | "Bbm6" G, G,2 F, _E,4 |
+|: "Abmaj7" z2 _A _B C _E F _A | "Dm7b5" _B _B2 _A G4 | "Cm7" _A _A2 G F4 | "Bbm6" G G2 F _E4 |
 w:  * There's a some- bo- dy I'm | lon- gin' to see | I hope that he, | turns out to be |
-"Bbm7" z2 F,2 _E,2 _D,2 | "Ddim7" _A4 _A,, _B,3 | :|1 "Cm7" C,8- | "Bbm7" C,4 z4 |
+"Bbm7" z2 F2 _E2 _D2 | "Ddim7" _a4 _A, _B3 | :|1 "Cm7" C8- | "Bbm7" C4 z4 |
 w: * Some- one who'll | watch o- ver |  me | me * |
-:|2 "Abmaj7" _A,8 | "Ebm7" z2 _B,2 C,2 _E,2 |
+:|2 "Abmaj7" _A8 | "Ebm7" z2 _B2 C2 _E2 |
 w:  Al- | * though he may |]
 
 X:981
@@ -26886,12 +29603,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id somewhere-over-the-rainbow
 K:Eb
-|: "Ebmaj7" _E,4 _E4 | "G" D,2 _B, C, D,2 _E,2 | "Abmaj7" _E,,4 C4 | "Gm7" _B,8 |
+|: "Ebmaj7" _E4 _e4 | "G" D2 _B C D2 _E2 | "Abmaj7" _E,4 c4 | "Gm7" _B8 |
 w:  Some- where | O- ver The Rain- bow, | way up | high, |
-"Fm7" C,,4 _A4 | "Ebmaj7" G,2 _E, F, G,2 _A,2 | "Fm7" F,2 D, _E, F,2 G,2 | :|1 "Ebmaj7" _E,8 |
+"Fm7" C,4 _a4 | "Ebmaj7" G2 _E F G2 _A2 | "Fm7" F2 D _E F2 G2 | :|1 "Ebmaj7" _E8 |
 w: there's a | land that I heard of | once in a lull- a- |  by |
-:|2 "Ebmaj7" _E,6 z _B |
+:|2 "Ebmaj7" _E6 z _b |
 w:  true * Some |]
 
 X:982
@@ -26900,11 +29618,12 @@ C:Sonny Rollins
 N:Source: openbook
 M:4/4
 L:1/8
+%%id st-thomas
 K:C
-|: "C" z2 G C, z B, z A, | "A7" G,2 A,2 E,2 F,2 | "Dm7" G,2 C,2 B,2 C,2 | "C" z8 |
-"C" z2 G, C, z B, z A, | "A7" G,2 A,2 E,2 F,2 | "Dm7" G,2 C,2 B,2 C,2 | "C" z8 |
-"Em7b5" E,4 F,3 G, | "A7" z8 | "Dm7" F,4 E,3 D, | "G7" z8 |
-"C7" E,4 D,4 | "F" C,4 A,4 | "C" G,2 C,2 B,2 C,2 | "C" z8 |
+|: "C" z2 g C z B z A | "A7" G2 A2 E2 F2 | "Dm7" G2 C2 B2 C2 | "C" z8 |
+"C" z2 G C z B z A | "A7" G2 A2 E2 F2 | "Dm7" G2 C2 B2 C2 | "C" z8 |
+"Em7b5" E4 F3 G | "A7" z8 | "Dm7" F4 E3 D | "G7" z8 |
+"C7" E4 D4 | "F" C4 A4 | "C" G2 C2 B2 C2 | "C" z8 |
 :|]
 
 X:983
@@ -26915,24 +29634,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id stella-by-starlight
+%%tags needs-repair
 K:Bb
-_B2 | "Em7b5" A,8- | "A7b9" A,2 G,2 A,2 _B,2 | "Cm7" F,8- |
+_b2 | "Em7b5" A8- | "A7b9" A2 G2 A2 _B2 | "Cm7" F8- |
 w: The | song | a rob- in sings, | Through |
-"F7" F,6 F,2 | "Fm7" G,8- | "Bb7" G,2 F,2 F,2 G,2 | "Ebmaj7" _B,,8- |
+"F7" F6 F2 | "Fm7" G8- | "Bb7" G2 F2 F2 G2 | "Ebmaj7" _B,8- |
 w: years of | end- | less springs, The mur- | mur |
-"Ab7" _B,6 C,2 | "Bbmaj7" _E,2 D,2 C,2 _B,2 | "Em7b5" D,6 E,2 | "Dm7" G,3 F, F,4- |
+"Ab7" _B6 C2 | "Bbmaj7" _E2 D2 C2 _B2 | "Em7b5" D6 E2 | "Dm7" G3 F F4- |
 w: of a | brook at even- ing | tides. That | rip- ples through |
-"Bbm7" F,6 G,2 | "Fmaj7" _B,2 A,2 G,2 F,2 | "Em7b5" G,4 A,2 _B,2 | "Am7b5" D,3 C, C,4- |
+"Bbm7" F6 G2 | "Fmaj7" _B2 A2 G2 F2 | "Em7b5" G4 A2 _B2 | "Am7b5" D3 C C4- |
 w: a nook | where two lov- ers | hide. That great | sym- pho- nic |
-"D7b9" C,4 D,4 | "G7#5" _E,8- | "Cm7" _E,2 _E,2 _E,2 D,2 | "Ab7" F,8- |
+"D7b9" C4 D4 | "G7#5" _E8- | "Cm7" _E2 _E2 _E2 D2 | "Ab7" F8- |
 w: theme, That's | Stel- | la by star- light, | And |
-"Bbmaj7" F,2 _E,2 D,2 C,2 _B,2 | "Em7b5" D,4 D,4- | "A7b9" D,2 C,2 _B,2 A,2 | "Dm7b5" C,8- |
+"Bbmaj7" F2 _E2 D2 C2 _B2 | "Em7b5" D4 D4- | "A7b9" D2 C2 _B2 A2 | "Dm7b5" C8- |
 w: not a dream, My heart | and I | ag- ree, She's eve- | ry- |
-"G7b9" C,6 _B,2 | "Cm7b5" A,8- | "F7b9" A,2 G,2 A,2 _B,2 | "Bbmaj7" F,8- |
+"G7b9" C6 _B2 | "Cm7b5" A8- | "F7b9" A2 G2 A2 _B2 | "Bbmaj7" F8- |
 w: thing onthis | earth | to me. * * | * |
-F,2 F,2 F,2 _E,2 | _G,8- | _G,2 _G,2 _G,2 F,2 | F,8- |
+F2 F2 F2 _E2 | _G8- | _G2 _G2 _G2 F2 | F8- |
 w: * * * * | * | * * * * | * |
-F,8 |
+F8 |
 w: * |]
 
 X:984
@@ -26943,14 +29664,16 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id stormy-weather
+%%tags needs-repair
 K:G
-^A B, |: "G" D,6- D, ^A,/ B,/ | "Am7" D, B, D, ^C, C,2 ^A, B, | "G" D, D,,3- D,4 |
+^a B |: "G" D6- D ^A/ B/ | "Am7" D B D ^C C2 ^A B | "G" D D,3- D4 |
 w: Don't know |  why _ there's no | sun up in the sky, Storm- y | Weath- er, _ |
-"Am7" A3/2 A,/ A,3/2 A,/ A,2- A, G,/ E,/ | "G" G, D,3- D,4 | "Am7" C, E, G, ^A,- ^A,3 ^A, | :|1 "G" B, G,3- G,4 |
+"Am7" a3/2 A/ A3/2 A/ A2- A G/ E/ | "G" G D3- D4 | "Am7" C E G ^A- ^A3 ^A | :|1 "G" B G3- G4 |
 w: since my man and I _ ain't to- | geth- er, _ | keeps rain- in' all _ the |  time. _ _ |
-"Am7" z4 z2 ^A, B, | :|2 "G" B, G,3- G,2 G,2 | "G" E, D,3- D,4 | "Am7" C, E, G, ^A,- ^A,3 ^A, |
+"Am7" z4 z2 ^A B | :|2 "G" B G3- G2 G2 | "G" E D3- D4 | "Am7" C E G ^A- ^A3 ^A |
 w: * * Life is |  time, _ _ the | time. _ _ | So wear- y all _ the |
-"G" B, G,3- G,4 |
+"G" B G3- G4 |
 w: time. _ _ |]
 
 X:985
@@ -26961,22 +29684,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id strang-fruit
 K:Cmin
-"Cm" C,2 C,2 C,2 C, C, | "G7#5" _E,4 D,4 | "Cm" C,2 C,2 C,2 C,2 C,2 | "G7" D,2 D,2 D,2 D,4 |
+"Cm" C2 C2 C2 C C | "G7#5" _E4 D4 | "Cm" C2 C2 C2 C2 C2 | "G7" D2 D2 D2 D4 |
 w: South- ern trees bear a | strange fruit, | blood on the leaves and | blood at the root, |
-"Dm7b5" D,2 D, D, F, F, F, F, | "Dm7b9" _A, F, _A, G,6 | "Cm" C,,2 C,2 B, B, B, B, | "Cm" C, C,2 C,- C,4 |
-w: black bod- y swing- ing in the | south- ern breeze; Strange | Fruit hang- ing from the pop- | lar trees. _ \markup |
-"Cm" _E,2 C,2 D,2 B,2 | "Cm" C,2 G,2 G,4 | "Cm" _E4 D,4 | "Cm" _E2 C,2 _E,2 D,2 B,2 D,2 |
-w: \italic (Humming) _ _ | _ _ _ | _ _ | _ _ Pas- tor- al scene |
-"Cm" C,3 G, G,3 B,, | "Cm" C,3 C, C,2 C, C, | "G7b9" D,3 D, D,4 | "Cm" _E2 C,2 _E,2 D,2 B,2 D,2 |
+"Dm7b5" D2 D D F F F F | "Dm7b9" _A F _A G6 | "Cm" C,2 C2 B B B B | "Cm" C C2 C- C4 |
+w: black bod- y swing- ing in the | south- ern breeze; Strange | Fruit hang- ing from the pop- | lar trees. _ markup |
+"Cm" _E2 C2 D2 B2 | "Cm" C2 G2 G4 | "Cm" _e4 D4 | "Cm" _e2 C2 _E2 D2 B2 D2 |
+w: italic (Humming) _ _ | _ _ _ | _ _ | _ _ Pas- tor- al scene |
+"Cm" C3 G G3 B, | "Cm" C3 C C2 C C | "G7b9" D3 D D4 | "Cm" _e2 C2 _E2 D2 B2 D2 |
 w: of the gal- lant | South, the bulg- ing eyes | and the twist- | ed mouth; scent of mag- no- |
-"Cm" C,2 _B,2 _A,2 G,2 D, D, | "G7b9" D,2 D,2 F,2 F,2 | "G7b9" _A,2 _A,2 B,2 z2 | "G7b9" z8 |
+"Cm" C2 _B2 _A2 G2 D D | "G7b9" D2 D2 F2 F2 | "G7b9" _A2 _A2 B2 z2 | "G7b9" z8 |
 w: _ lia sweet _ _ and | fresh, and the sud- | den smell of * | * |
-"Cm" C,,2 C, C, C,2 C, C, | "Abmaj7" _E,2 _E,2 D,2 D, D, | "Dm7b5" D,2 D,2 F, F, F, F, | "Dm7b5" _A,2 _A,2 G,2 G, G, |
+"Cm" C,2 C C C2 C C | "Abmaj7" _E2 _E2 D2 D D | "Dm7b5" D2 D2 F F F F | "Dm7b5" _A2 _A2 G2 G G |
 w: burn- ing flesh! Here is the | fruit for the crows to | pluck, for the rain to gath- | er, for the wind to |
-"Cm" G,2 G,2 G,2 G, G, | "Dm7b5" _B,2 _B,2 _A,2 z2 | "Cm" _E,4 D,4 | "Cm" C,2 C, C, C,2 C,2 |
-w: suck, for the sun to | rot, for the * | tree to | drop. \markup \italic (Hum) _ |
-"G7" _E, D,3 G,4 | "Cm" _E,2 C,2 D,2 B,2 | "Cm" C,8 |
+"Cm" G2 G2 G2 G G | "Dm7b5" _B2 _B2 _A2 z2 | "Cm" _E4 D4 | "Cm" C2 C C C2 C2 |
+w: suck, for the sun to | rot, for the * | tree to | drop. markup italic (Hum) _ |
+"G7" _E D3 G4 | "Cm" _E2 C2 D2 B2 | "Cm" C8 |
 w: _ Here is | a strange and bit- | ter |]
 
 X:986
@@ -26987,22 +29711,24 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id strangers-in-the-night
+%%tags needs-repair
 K:F
-"Fmaj7" F, G, G, F, G,4- | "Fmaj7" G, F, G, A, G,2 F,2 | "F" E, F, F, E, F,4- | "Gm7" F, E, F, G, F,2 E,2 |
+"Fmaj7" F G G F G4- | "Fmaj7" G F G A G2 F2 | "F" E F F E F4- | "Gm7" F E F G F2 E2 |
 w: Stran- gers In The Night | _ ex- chang- ing glanc- es | won- d'ring in the night | _ what were the chanc- es |
-"Gm6" D, E, E, D, E,4- | "Gm7" E, D, E, F, E,2 D,2 | "G" _B8- | "Fmaj7" _B,6 z2 |
+"Gm6" D E E D E4- | "Gm7" E D E F E2 D2 | "G" _b8- | "Fmaj7" _B6 z2 |
 w: we'd be shar- ing love | _ be- fore the night was | through. | _ * |
-"Am7b5" G, A, A, G, A,4- | "D7b9" A, G, A, _B, A,2 G,2 | "Gm7" F, G, G, F, G,4- | "Bbm6" G, F, G, A, G,2 F,2 |
+"Am7b5" G A A G A4- | "D7b9" A G A _B A2 G2 | "Gm7" F G G F G4- | "Bbm6" G F G A G2 F2 |
 w: Some- thing in your eyes | _ was so in- vit- ing, | some- thing in your smile | _ was so ex- cit- ing, |
-"F" E, F, F, E, F,4- | "Gm7" F, E, F, G, F,2 E,2 | "Fmaj7" C8- | "Fmaj7" C,8 |
+"F" E F F E F4- | "Gm7" F E F G F2 E2 | "Fmaj7" c8- | "Fmaj7" C8 |
 w: some- thing in my heart | _ told me I must have | you. | _ |
-"Gm" C, _B, _B, A, A,4- | "C7b9" A, _B, _B, C, C, _B, _B, A, | "F6" C, _B, _B, A, A,4- | A, _B, _B, C, C, _B, _B, A, |
+"Gm" C _B _B A A4- | "C7b9" A _B _B C C _B _B A | "F6" C _B _B A A4- | A _B _B C C _B _B A |
 w: Stran- gers In The Night, | _ two lone- ly peo- ple we were | Stran- gers In The Night | _ up tp the mo- ment when we |
-_B, A, A, G, G,4 | _B, A, A, G, G,4 | _B, A, A, G, G, F, E, F, | A, G, G, F, F, E, D, E, |
+_B A A G G4 | _B A A G G4 | _B A A G G F E F | A G G F F E D E |
 w: said our first hel- lo. | Lit- tle did we know | love was just a glance a- way, a | warm em- brac- ing dance a- way and |
-F, G, G, F, G,4- | G, F, G, A, G,2 F,2 | E, F, F, E, F,4- | F, E, F, G, F,2 E,2 |
+F G G F G4- | G F G A G2 F2 | E F F E F4- | F E F G F2 E2 |
 w: ev- er since that night | _ we've been to- geth- er. | Lov- ers at first sight, | _ in love for- ev- er. |
-D, E, E, D, E,4- | E, E, F, G, F,2 E,2 | F,8- | F,6 z2 |
+D E E D E4- | E E F G F2 E2 | F8- | F6 z2 |
 w: It turned out so right | _ for Strang- ers In The | Night. | _ * |]
 
 X:987
@@ -27013,26 +29739,27 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id summertime-2
 K:Amin
-E2 C,2 | "Am6" E,8- | "Am6" E, z D,3/2 C,/ D,3/2 E,/ C,2 | "Am6" A,4 E,4- |
+e2 C2 | "Am6" E8- | "Am6" E z D3/2 C/ D3/2 E/ C2 | "Am6" A4 E4- |
 w: Sum- mer- | time | _ * an' the liv- in' is | eas- y, |
-"Am6" E,2 z2 E2 C,2 | "Dm" D, D,3- D,4 | "F" z2 C,3/2 A,/ C,3/2 A,/ C,2 | "E" B,8- |
+"Am6" E2 z2 e2 C2 | "Dm" D D3- D4 | "F" z2 C3/2 A/ C3/2 A/ C2 | "E" B8- |
 w: _ * fish are | jump- in'; _ | * an' the cot- ton is | high. |
-"E" B,4 z E,2 C, | "Am6" E, E,2 E,- E,4 | "Am6" z2 D,3/2 C,/ D,3/2 E,/ C,2 | "Am6" A,4 E,4- |
+"E" B4 z E2 C | "Am6" E E2 E- E4 | "Am6" z2 D3/2 C/ D3/2 E/ C2 | "Am6" A4 E4- |
 w: _ * Oh, yo' | dad- dy's rich, _ | * an' yo' ma is good | look- in', |
-"Am" E,4 z2 E,2 | "C" G,2 E, G, A,2 C,2 | "D" E, D,3 C,4 | "Am" A,8- |
+"Am" E4 z2 E2 | "C" G2 E G A2 C2 | "D" E D3 C4 | "Am" A8- |
 w: _ * so | hush, lit- tle ba- by, | _ don' _ | _ |
-"Am" A,8- | "Am6" A,2 z2 z4 | "D9" z4 E2 E,2 C,2 | "A" E,2 E,6 |
+"Am" A8- | "Am6" A2 z2 z4 | "D9" z4 e2 E2 C2 | "A" E2 E6 |
 w: yo' | cry. * * | * _ One of | these morn- |
-"Am6" z3/2 E,/ D,3/2 C,/ D,3/2 E,/ C,2 | "Am6" A,4 E,4- | "Am6" E,4 E2 C,2 | "Dm" D, D,2 D,- D,4 |
+"Am6" z3/2 E/ D3/2 C/ D3/2 E/ C2 | "Am6" A4 E4- | "Am6" E4 e2 C2 | "Dm" D D2 D- D4 |
 w: * in's _ you goin' to rise | _ _ | up sing- in', | _ then you'll spread |
-"F" z2 C,3/2 A,/ C,3/2 A,/ C,2 | "E" B,8- | "E" B,4 z E, E, C, | "Am6" E, E,3- E,4 |
+"F" z2 C3/2 A/ C3/2 A/ C2 | "E" B8- | "E" B4 z E E C | "Am6" E E3- E4 |
 w: * yo' wings _ an' you'll | take | _ * _ the sky. | _ But 'til |
-"Am6" z2 D,3/2 C,/ D,3/2 E,/ C,2 | "Am6" A,4 E,4- | "Am" E,4 z2 E,2 | "C" G,2 E, G, A,2 C,2 |
+"Am6" z2 D3/2 C/ D3/2 E/ C2 | "Am6" A4 E4- | "Am" E4 z2 E2 | "C" G2 E G A2 C2 |
 w: * that morn- in' _ there's | a- noth- | in' * can | harm you _ with dad- |
-"D" E, D,3 C,4 | "Am" A,8- | "D" A,8- | "C" A,8- |
+"D" E D3 C4 | "Am" A8- | "D" A8- | "C" A8- |
 w: dy an' mam- | my | stand- | _ |
-"Bb" A,8- | "Am" A,6 z2 |
+"Bb" A8- | "Am" A6 z2 |
 w: in' | by. * |]
 
 X:988
@@ -27041,14 +29768,16 @@ C:Paul Desmond
 N:Source: openbook
 M:5/4
 L:1/8
+%%id take-five
+%%tags needs-repair
 K:Dmin
-A, D, F, G, | "D" ^G, A, ^G, G, F,2 A,,2 C,2 | "D" D,6 E,/ F,/ E,/ D, C,2 | "D" D,6 C,/ D,/ C,/ A, G,2 |
-"D" A,6- A, D, F, G, | "D" ^G, A, ^G, G, F,2 A,,2 C,2 | "D" D,6 E,/ F,/ E,/ D, C,2 | "D" D,6 C,/ D,/ C,/ A, G,2 |
-"D" A,6- A,4 | "Bb" D F,2 D, _B,2 G, A, _B, B, | "A" C, E,2 C, A,2 F, G, ^G, A, | "G" _B, D,2 _B, G,2 E, F, G, ^G, |
-"F" A, ^G, A, _B, C,2 C, B, C, ^C, | "Bb" D, F,2 D, _B,2 G, A, _B, B, | "A" C, E,2 C, A,2 F, G, ^G, A, | "G" _B, D,2 _B, G,2 E, G, C, _B, |
-"E" A,6 A,, D, F, G, | "D" ^G, A, ^G, G, F,2 A,,2 C,2 | "D" D,6 E,/ F,/ E,/ D, C,2 | "D" D,6 C,/ D,/ C,/ A, G,2 |
-"D" A,6- A, D, F, G, | "D" ^G, A, ^G, G, F,2 A,,2 C,2 | "D" D,6 C,/ D,/ C,/ A, G,2 | "D" A,6 E/ F,/ E,/ D, C,2 |
-"D" D,6- D,4 |]
+A D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 E/ F/ E/ D C2 | "D" D6 C/ D/ C/ A G2 |
+"D" A6- A D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 E/ F/ E/ D C2 | "D" D6 C/ D/ C/ A G2 |
+"D" A6- A4 | "Bb" d F2 D _B2 G A _B B | "A" C E2 C A2 F G ^G A | "G" _B D2 _B G2 E F G ^G |
+"F" A ^G A _B C2 C B C ^C | "Bb" D F2 D _B2 G A _B B | "A" C E2 C A2 F G ^G A | "G" _B D2 _B G2 E G C _B |
+"E" A6 A, D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 E/ F/ E/ D C2 | "D" D6 C/ D/ C/ A G2 |
+"D" A6- A D F G | "D" ^G A ^G G F2 A,2 C2 | "D" D6 C/ D/ C/ A G2 | "D" A6 e/ F/ E/ D C2 |
+"D" D6- D4 |]
 
 X:989
 T:Take the 'A' Train
@@ -27058,12 +29787,14 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id take-the-a-train-2
+%%tags needs-repair
 K:C
-|: "C6" G8- | "D7b5" G, E3 G,,2 C,2 | "Dm7" E, _A,,- _A,6- | "G7" _A,8 |
-w:  You | _ must take the | "\"A\"" Train _ | To |
-"C" A,8 | A, _B, B, E, G,, ^F, F, ^C | "C" C, E,,- E,6- | :|1 "C" E,8 |
+|: "C6" g8- | "D7b5" G e3 G,2 C2 | "Dm7" E _A,- _A6- | "G7" _A8 |
+w:  You | _ must take the | ""A"" Train _ | To |
+"C" A8 | A _B B E G, ^F F ^c | "C" C E,- E6- | :|1 "C" E8 |
 w: go | to Sug- ar Hill way up in Har- | lem. _ _ |  Hur- |
-:|2 E,4 z4 |
+:|2 E4 z4 |
 w:  ry, * |]
 
 X:990
@@ -27074,24 +29805,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id tenderly
 K:Eb
-_B C, _E, | "Eb" D,3 _B, C, _E, | "Ab9" D,4 _B, _G, | "Ebm7" F,6- |
+_b C _E | "Eb" D3 _B C _E | "Ab9" D4 _B _G | "Ebm7" F6- |
 w: The eve- ning | breeze ca- ressed the | trees Ten- der- | ly, |
-"Ab9" F,2 z _E, F, _A, | "Fm7" G,3 _E, F, _A, | "Db9" G,4 _E, _C, | "Eb" _B,6- |
+"Ab9" F2 z _E F _A | "Fm7" G3 _E F _A | "Db9" G4 _E _C | "Eb" _B6- |
 w: _ * The termb- ling | trees em- braced the | breeze Ten- der- | ly. |
-"Eb" _B,2 z2 _B,2 | "F" _C,4 _B2 | "Bb7" G,4 _B,,2 | "Fm7b5" _C,2 _E,2 _B2 |
+"Eb" _B2 z2 _B2 | "F" _C4 _b2 | "Bb7" G4 _B,2 | "Fm7b5" _C2 _E2 _b2 |
 w: _ * Then | you and | I came | wand- er- ing |
-"Bb7" G,4 F,2 | "C" _E,2 G,2 F2 | "F7" D,4 F,,2 | "Fm9" _B,6- |
+"Bb7" G4 F2 | "C" _E2 G2 f2 | "F7" D4 F,2 | "Fm9" _B6- |
 w: by and | lost in a | sigh were | we. |
-"Bb7" _B,2 z _B, C, _E, | "Eb" D,3 _B, C, _E, | "Ab9" D,4 _B, _G, | "Ebm7" F,6- |
+"Bb7" _B2 z _B C _E | "Eb" D3 _B C _E | "Ab9" D4 _B _G | "Ebm7" F6- |
 w: _ * The shore was | kissed by sea and | mist Ten- der- | ly. |
-"Ab9" F,2 z _E, F, _A, | "Fm7" G,3 _E, F, _A, | "Db9" G,4 _E, _C, | "Eb" _B,6- |
+"Ab9" F2 z _E F _A | "Fm7" G3 _E F _A | "Db9" G4 _E _C | "Eb" _B6- |
 w: _ * I can't for- | get how two hearts | met breath- less- | ly. |
-"Eb" _B,2 z2 _B,2 | "F" _C,2 _E,2 _B2 | "Bb7" G,4 F,2 | "C" _E,2 G,2 F2 |
+"Eb" _B2 z2 _B2 | "F" _C2 _E2 _b2 | "Bb7" G4 F2 | "C" _E2 G2 f2 |
 w: _ * Your | arms op- ened | wide and | closed me in- |
-"F9" D,3 _E, C, D, | "G" _B,3 C, _A, _B, | "Fm7" G,3 F, _A, D,, | "Eb" _E,6- |
+"F9" D3 _E C D | "G" _B3 C _A _B | "Fm7" G3 F _A D, | "Eb" _E6- |
 w: side; you took my | lips, you took my | love so Ten- der- | ly. |
-_E,3 z z2 |
+_E3 z z2 |
 w: _ * * |]
 
 X:991
@@ -27102,12 +29834,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id that-s-all
 K:C
-E, F, |: "C" G, B, G, E, G, B, G, E, | "Em7" G, G,- G,4 E, F, | "Em7" G, B, G, E, G, B, G, E, |
+E F |: "C" G B G E G B G E | "Em7" G G- G4 E F | "Em7" G B G E G B G E |
 w: I can |  on- ly give you love that lasts for- | ev- er, _ and the | prom- ise to be near each time you |
-"Dm7" G,6 A, B, | "F#m7b5" C, E, C, A, C,3 A, | "Em7" C, E, C, A, C,3 A, | :|1 "Em7" G,6 E,2 |
+"Dm7" G6 A B | "F#m7b5" C E C A C3 A | "Em7" C E C A C3 A | :|1 "Em7" G6 E2 |
 w: call; and the | on- ly heart I own, for | you and you a- lone, That's |  All, That's |
-"D7b5" D,6 E, F, | :|2 "Em7" G,6 E,2 | "C" C,6 C, C |
+"D7b5" D6 E F | :|2 "Em7" G6 E2 | "C" C6 C c |
 w: All. I can |  _ _ | _ _ _ |]
 
 X:992
@@ -27118,12 +29851,13 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id the-girl-from-ipanema
 K:F
-|: "Fmaj7" G3 E, E,2 D, G,- | "G7" G,2 E, E,- E, E, D, G,- | "Gm7" G,2 E,2 E,2 D, G,- | "Gb7" G, G, E, E,- E, E, D, F,- |
+|: "Fmaj7" g3 E E2 D G- | "G7" G2 E E- E E D G- | "Gm7" G2 E2 E2 D G- | "Gb7" G G E E- E E D F- |
 w:  Tall and tan and young | _ and love- _ ly, the Girl | _ From I- pa- ne- | _ ma goes walk- _ ing, and when |
-F, D,2 D,- D, D, C, E,- | "Fmaj7" E, C,2 C,- C, C, _B,2 | "Gb7b5" :|1 z2 C,6- | "Fmaj7" C,4 z4 |
-w: _ she pass- _ es, each one | _ she pass- _ es goes |  * "\"ah!\"" | _ * |
-:|2 z2 C,6- | C,4 z4 |
+F D2 D- D D C E- | "Fmaj7" E C2 C- C C _B2 | "Gb7b5" :|1 z2 C6- | "Fmaj7" C4 z4 |
+w: _ she pass- _ es, each one | _ she pass- _ es goes |  * ""ah!"" | _ * |
+:|2 z2 C6- | C4 z4 |
 w:  * _ | Oh, * |]
 
 X:993
@@ -27134,24 +29868,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id the-man-i-love
 K:Eb
-"Eb6" z3/2 _B/ C,3/2 _B,/ C,3/2 _B,/ _E,,3/2 F,/ | "B7" _G, _G, _G, _G, _G, F,- F,2 |: "Eb" z _B, C, _B, C, _B, _D,2 | "Ebm7" z _B, C, _B, _D,4 |
+"Eb6" z3/2 _b/ C3/2 _B/ C3/2 _B/ _E,3/2 F/ | "B7" _G _G _G _G _G F- F2 |: "Eb" z _B C _B C _B _D2 | "Ebm7" z _B C _B _D4 |
 w: * _ _ _ _ _ _ _ | _ _ _ _ _ _ Some- |  * day he'll come a- long, the | * man I love And |
-"Bbm" z _B, C, _B, C, _B, _D,2 | "C7#5" z _A, _B, _A, C,4 | "Abm6" z _A, _B, _A, _B, _A, _C,2 | "Bb7" z G, _A, G, _B,2 _A,2 |
+"Bbm" z _B C _B C _B _D2 | "C7#5" z _A _B _A C4 | "Abm6" z _A _B _A _B _A _C2 | "Bb7" z G _A G _B2 _A2 |
 w: * he'll be big and strong, the | * man I love And | * when he comes my way I'll | * do my best to make |
-"Eb" G,4 G,4 | "Gm" G,8 | "Eb" z _B, C, _B, C, _B, _D,2 | "Ebm7" z _B, C, _B, _D,4 |
+"Eb" G4 G4 | "Gm" G8 | "Eb" z _B C _B C _B _D2 | "Ebm7" z _B C _B _D4 |
 w: him stay | He'll | * look at me and smile, I'll | * un- der- stand And |
-"Bbm" z _B, C, _B, C, _B, _D,2 | "C7#5" z _A, _B, _A, C,4 | "Abm6" z _A, _B, _A, _B, _A, _C,2 | "Bb7" z G, _A, G, _B,2 G,2 |
+"Bbm" z _B C _B C _B _D2 | "C7#5" z _A _B _A C4 | "Abm6" z _A _B _A _B _A _C2 | "Bb7" z G _A G _B2 G2 |
 w: * in a lit- tle while he'll | * take my hand And | * though it seems ab- surd I | * know we both won't say |
-"Eb" _E,4 _E,4 | "Eb" _E,8 | "Cm7" _E, F, G, ^F, G,2 _E2 | "D7" _E,2 D,2 _B,2 B,2 |
+"Eb" _E4 _E4 | "Eb" _E8 | "Cm7" _E F G ^F G2 _e2 | "D7" _E2 D2 _B2 B2 |
 w: a word | May- | be I shall meet him Sun- | day May- be Mon- |
-"Cm" D,2 C,2 G,2 A,2 | "G7" B,8 | "Cm7" _E,, F, G, ^F, G,2 _E2 | "D7" _E,2 D,2 _B,2 B,2 |
+"Cm" D2 C2 G2 A2 | "G7" B8 | "Cm7" _E, F G ^F G2 _e2 | "D7" _E2 D2 _B2 B2 |
 w: day, may- be not | Still | I'm sure to meet him one | day May- be Tues- |
-"Cm" D,2 C,2 _B,2 _A,2 | "Ab" G,2 F,2 G,2 _A,2 | "Eb" z _B, C, _B, C, _B, _D,2 | "Ebm7" z _B, C, _B, _D,4 |
+"Cm" D2 C2 _B2 _A2 | "Ab" G2 F2 G2 _A2 | "Eb" z _B C _B C _B _D2 | "Ebm7" z _B C _B _D4 |
 w: day will be my | good news day He'll | * build a lit- tle home, just | * meant for two From |
-"Bbm" z _B, C, _B, C, _B, _D,2 | "C7#5" z _A, _B, _A, C,4 | "Abm" z _A, _B, _A, _B, _A, _C,2 | "Bb7" z G, _A, G, _B,2 G,2 |
+"Bbm" z _B C _B C _B _D2 | "C7#5" z _A _B _A C4 | "Abm" z _A _B _A _B _A _C2 | "Bb7" z G _A G _B2 G2 |
 w: * which we'll ne- ver roam; Who | * would, would you? And | * so all else a- bove I'm | * wait- ing for the man |
-"Eb" _E,4 _E,4 | :|1 "Eb" _E,4 F,4 | :|2 "Eb" _E,8 |
+"Eb" _E4 _E4 | :|1 "Eb" _E4 F4 | :|2 "Eb" _E8 |
 w: I love |  _ love |  * |]
 
 X:994
@@ -27162,18 +29897,20 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id i-m-afraid-the-masquerade-is-over
+%%tags needs-repair
 K:Eb
-_B,2 |: "Eb" G6 G,2 | "G7" G,4- G,2 _B,2 _A,2 | "C" G,6 G,2 |
+_B2 |: "Eb" g6 G2 | "G7" G4- G2 _B2 _A2 | "C" G6 G2 |
 w: Your |  eyes don't | shine _ like they | used to |
-"Bbm7" F,4 z2 D, _E, | "Ab" C6 C,2 | "C7" _B,4- _B,2 C,2 _B,2 | "F7" A,6 F,2 |
+"Bbm7" F4 z2 D _E | "Ab" c6 C2 | "C7" _B4- _B2 C2 _B2 | "F7" A6 F2 |
 w: shine. * And the | thrill is | gone _ when your | lips meet |
-"Fm7b5" _A,4 z2 G, _A, | "Eb" _B,4- _B, G, F, _E, | "Eb7" _E6 C,2 | "Ab" _B,4 _A,4 |
+"Fm7b5" _A4 z2 G _A | "Eb" _B4- _B G F _E | "Eb7" _e6 C2 | "Ab" _B4 _A4 |
 w: mine. * I'm A- | fraid _ The Mas- que- | rade Is | O- ver |
-"Abm6" z2 _E,2 F,2 _E,2 | :|1 "Ebmaj7" _B8- | "C7b9" _B,2 G,2 C,3 G, | "Fm7" _B,8- |
+"Abm6" z2 _E2 F2 _E2 | :|1 "Ebmaj7" _b8- | "C7b9" _B2 G2 C3 G | "Fm7" _B8- |
 w: * And so is |  love, | _ and so is | love. |
-"Bb7" _B,4 z2 _A,2 | :|2 "Eb" _B,8- | "Fm7" _B,2 _E,,2 G,2 G,2 | "Eb" _E,8- |
+"Bb7" _B4 z2 _A2 | :|2 "Eb" _B8- | "Fm7" _B2 _E,2 G2 G2 | "Eb" _E8- |
 w: _ * Your |  love, | _ and so is | love. |
-"Eb" _E,4 z2 _E,2 |
+"Eb" _E4 z2 _E2 |
 w: _ * I |]
 
 X:995
@@ -27184,26 +29921,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id the-nearness-of-you
+%%tags needs-repair
 K:Eb
-_B, _E, F, | "Ebmaj7" G,4 _B,2 _A, G, | "Bbm7" F,2 _A,4 G,2 | "Abmaj7" _E,4 G,2 F,2 |
+_B _E F | "Ebmaj7" G4 _B2 _A G | "Bbm7" F2 _A4 G2 | "Abmaj7" _E4 G2 F2 |
 w: It's not the | pale moon that ex- | cites me, that | thrills and de- |
-"Abdim7" D,2 F,4 _E,2 | "Gm7" _B,8- | "Fm7" _B, C, D, _E, F,2 _E,2 D,2 | "Gm7" _B8- |
+"Abdim7" D2 F4 _E2 | "Gm7" _B8- | "Fm7" _B C D _E F2 _E2 D2 | "Gm7" _b8- |
 w: lights me. Oh, | no, | _ it's just The Near- ness Of | You. |
-"Fm7" _B,4- _B, _B,, _E, F, | "Ebmaj7" G,4 _B,2 _A, G, | "Bbm7" F,2 _A,4 G,2 | "Abmaj7" _E,4 G,2 F,2 |
+"Fm7" _B4- _B _B, _E F | "Ebmaj7" G4 _B2 _A G | "Bbm7" F2 _A4 G2 | "Abmaj7" _E4 G2 F2 |
 w: _ It is- n't your | sweet con- ver- sa- | tion that brings | this sen- sa- |
-"Abdim7" D,2 F,4 _E,2 | "Gm7" _B,8- | "Fm7" _B, C, D, _E, F,2 _E,2 D,2 | "Ebmaj7" _E,8- |
+"Abdim7" D2 F4 _E2 | "Gm7" _B8- | "Fm7" _B C D _E F2 _E2 D2 | "Ebmaj7" _E8- |
 w: tion. Oh, no, | _ | It's just the Near- ness Of You. | _ |
-"Ebmaj7" _E,4 _B, C, D, _E, | "Fm7" F,8- | "Bb7" F,2 D, _E, F, _E,2 D, | "Ebmaj7" G,3 D, _D,4- |
+"Ebmaj7" _E4 _B C D _E | "Fm7" F8- | "Bb7" F2 D _E F _E2 D | "Ebmaj7" G3 D _D4- |
 w: When you're in my arms | _ | and I feel you so close | to me _ |
-"Bbm7" _D,4- _D, _E,2 _E, | "Abmaj7" C6 C,2 | "Gm7" _B,6 _A,2 | "F7" F,8- |
+"Bbm7" _D4- _D _E2 _E | "Abmaj7" c6 C2 | "Gm7" _B6 _A2 | "F7" F8- |
 w: all my wild- est | dreams com | true. _ | I |
-"Fm7" F,4- F, _B,, _E, F, | "Ebmaj7" G,4 _B,2 _A, G, | "Bbm7" F,2 _A,4 G,2 | "Abmaj7" _E,4 G,2 F,2 |
+"Fm7" F4- F _B, _E F | "Ebmaj7" G4 _B2 _A G | "Bbm7" F2 _A4 G2 | "Abmaj7" _E4 G2 F2 |
 w: need no soft lights to | en- change me if | you'll on- ly | grant me the |
-"Abdim7" D,2 F,4 _E,2 | "Gm7" _B,8- | "Fm7" _B, C, D, _E, F,2 _E,2 D,2 | "Gm7b5" _B8- |
+"Abdim7" D2 F4 _E2 | "Gm7" _B8- | "Fm7" _B C D _E F2 _E2 D2 | "Gm7b5" _b8- |
 w: right _ to | hold | you ev- er so tight _ and | to |
-"C7" _B,2 G, _A, _B,2 _A,2 G,2 | "Fm7" C,6 C,,2 | "Bb7" D,2 _E,4 F,2 | "Ebmaj7" _E,8- |
+"C7" _B2 G _A _B2 _A2 G2 | "Fm7" C6 C,2 | "Bb7" D2 _E4 F2 | "Ebmaj7" _E8- |
 w: feel in the night The Near- | ness Of | You. _ * | * |
-_E,4 z4 |
+_E4 z4 |
 w: * * |]
 
 X:996
@@ -27214,24 +29953,26 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id the-shadow-of-your-smile
+%%tags needs-repair
 K:G
-B, E, ^F, G, B, | "F#m7" ^C,,6 ^F,2 | "B79" ^D,6 C,6 | "Em7" B,8- |
+B E ^F G B | "F#m7" ^C,6 ^F2 | "B79" ^D6 C6 | "Em7" B8- |
 w: The sha- dow of your | smile, when | you are | gone. |
-"A7" B,3 B, E, ^F, G, B, | "Am7" E,,6 A,2 | "D7" ^F,6 D,2 | "Gmaj7" B8- |
+"A7" B3 B E ^F G B | "Am7" E,6 A2 | "D7" ^F6 D2 | "Gmaj7" b8- |
 w: _ Will co- lor all my | dreams, and | light the | dawn. |
-"F#m7b5" B,4 C, B, A, G, | "B7" A,6 C,,2 | "E" B,6 A2 | "C#m7b5" G,8- |
+"F#m7b5" B4 C B A G | "B7" A6 C,2 | "E" B6 a2 | "C#m7b5" G8- |
 w: _ Look in- to my | eyes, my | love, and | see. |
-"F#7" G,4 B, A, G, ^F, | "F#m7" G,6 B,,2 | "B7" ^A,6 G2 | "F#m7" ^F,8- |
+"F#7" G4 B A G ^F | "F#m7" G6 B,2 | "B7" ^A6 g2 | "F#m7" ^F8- |
 w: _ All the love- ly | things you | are to | me. |
-"B79" ^F,2 z B,, E, ^F, G, B, | "Em7" ^C,,6 ^F,2 | "A7" ^D,6 C,6 | "Am7" B,8- |
+"B79" ^F2 z B, E ^F G B | "Em7" ^C,6 ^F2 | "A7" ^D6 C6 | "Am7" B8- |
 w: _ * A wist- ful lit- tle | star, was | far too | high. |
-"D7" B,3 B, E, ^F, G, B, | "Bm7b5" E,,6 C2 | "E7b3b5b9b11b13" A,6 ^F,2 | "Am7" D8- |
+"D7" B3 B E ^F G B | "Bm7b5" E,6 c2 | "E7b3b5b9b11b13" A6 ^F2 | "Am7" d8- |
 w: _ A tear drop kissed your | lips, and | so did | I. |
-"Cm7" D,4 E, D, C, B, | "Bm7" C,3 E,, C4- | "E7b9" C,4 D, C, B, A, | "A7" B,3 D,, B4- |
+"Cm7" D4 E D C B | "Bm7" C3 E, c4- | "E7b9" C4 D C B A | "A7" B3 D, b4- |
 w: _ Now when I re- | mem- ber spring. | _ All the joy that | love can bring. |
-"Am7" B,4 C, B, A, ^G, | "G" A,3 ^C,, A4- | A,3 C,,3 B3 A,3 G,3 ^F,3 | G,8 |
+"Am7" B4 C B A ^G | "G" A3 ^C, a4- | A3 C,3 b3 A3 G3 ^F3 | G8 |
 w: _ I will be re- | mem- be- ring | _ The sha- dow of your | smile. |
-z2 z B,, E, ^F, G, B, |
+z2 z B, E ^F G B |
 w: * * The sha- dow of your |]
 
 X:997
@@ -27242,24 +29983,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id the-things-we-did-last-summer
 K:G
-B, | "G" D,3/2 E,/ B,3/2 C,/ D,3 B | "Am7" B,3/2 C,/ E,,3/2 G,/ A,3 B, | "G" A,3/2 G,/ D3/2 B,/ A,3/2 G,/ ^F,3/2 D,/ |
+B | "G" D3/2 E/ B3/2 C/ D3 b | "Am7" B3/2 C/ E,3/2 G/ A3 B | "G" A3/2 G/ d3/2 B/ A3/2 G/ ^F3/2 D/ |
 w: The | boat rides we would take, the | moon- light on the lake, the | way we danced and hummed our fav- 'rite |
-"Bm7b5" F,/ z E, | "Am7" C,2 B2 B,2 A,2 | "G" D,,2 D,4 A3/2 G,/ | "Am7" D,2 D,2- D,3/2 A/ G,3/2 ^F,/ |
+"Bm7b5" F/ z E | "Am7" C2 b2 B2 A2 | "G" D,2 D4 a3/2 G/ | "Am7" D2 D2- D3/2 a/ G3/2 ^F/ |
 w: song. * The | Things We Did Last | Sum- mer I'll re- | mem- ber _ all win- ter |
-"G" E,6 z B, | "G" D,3/2 E,/ B,3/2 C,/ D,3 B | "Am7" B,3/2 C,/ E,,3/2 G,/ A,3 B, | "G" A,3/2 G,/ D3/2 B,/ A,3/2 G,/ ^F,3/2 D,/ |
+"G" E6 z B | "G" D3/2 E/ B3/2 C/ D3 b | "Am7" B3/2 C/ E,3/2 G/ A3 B | "G" A3/2 G/ d3/2 B/ A3/2 G/ ^F3/2 D/ |
 w: long. * The | mid- way and the fun, the | kew- pie dolls we won, the | bell I/you rang to prove that I/you was/were |
-"Bm7b5" F,/ z E, | "Am7" C,2 B2 B,2 A,2 | "G" D,,2 D,4 A3/2 G,/ | "Am7" D,2 D,2- D,3/2 A/ G,3/2 ^F,/ |
+"Bm7b5" F/ z E | "Am7" C2 b2 B2 A2 | "G" D,2 D4 a3/2 G/ | "Am7" D2 D2- D3/2 a/ G3/2 ^F/ |
 w: strong; * The | Things We Did Last | Sum- mer I'll re- | mem- ber _ all win- ter |
-"G" G,6 z ^G, | "Dm7" A,3/2 D,,/ E,3/2 F,3/2 G,3 ^G, | "Dm7" A,3/2 D,,/ E,3/2 F,3/2 G,3 ^D, | "C" E,3/2 G,/ A,3/2 C,/ B,2 G, E,- |
+"G" G6 z ^G | "Dm7" A3/2 D,/ E3/2 F3/2 G3 ^G | "Dm7" A3/2 D,/ E3/2 F3/2 G3 ^D | "C" E3/2 G/ A3/2 C/ B2 G E- |
 w: long. * The | ear- ly morn- ing hike. The | rent- ed tan- dem bike. The | lunch- es that we used to pack: |
-"C" E,6 z ^A, | "Em7" B,3/2 E,,/ ^F,3/2 G,/ A,3 ^A, | "Em7" B,3/2 E,,/ ^F,3/2 G,/ A,3 G, | "D" ^F, D, D, D, G,2 E, A,- |
+"C" E6 z ^A | "Em7" B3/2 E,/ ^F3/2 G/ A3 ^A | "Em7" B3/2 E,/ ^F3/2 G/ A3 G | "D" ^F D D D G2 E A- |
 w: _ * We | nev- er could ex- plain that | sud- den sum- mer rain. The | looks we got when we got back. |
-"D7" A,6 z B,, | "G" D,3/2 E,/ B,3/2 C,/ D,3 B | "Am7" B,3/2 C,/ E,,3/2 G,/ A,3 B, | "G" A,3/2 G,/ D3/2 B,/ A,3/2 G,/ ^F,3/2 D,/ |
+"D7" A6 z B, | "G" D3/2 E/ B3/2 C/ D3 b | "Am7" B3/2 C/ E,3/2 G/ A3 B | "G" A3/2 G/ d3/2 B/ A3/2 G/ ^F3/2 D/ |
 w: _ * The | leaves be- gan to fade like | prom- is- es we made. How | could a love that seemed so right go |
-"Bm7b5" F,/ z E, | "Am7" C,2 B2 B,2 A,2 | "Bm7" D,,2 D,4 B3/2 B,/ | "Am7" B,2 C,2- C,3/2 A,/ G,3/2 ^F,/ |
+"Bm7b5" F/ z E | "Am7" C2 b2 B2 A2 | "Bm7" D,2 D4 b3/2 B/ | "Am7" B2 C2- C3/2 A/ G3/2 ^F/ |
 w: wrong? * The | Things We Did Last | Sum- mer I'll re- | mem- ber _ all win- ter |
-"G" G,6 z2 |
+"G" G6 z2 |
 w: long. * |]
 
 X:998
@@ -27270,16 +30012,17 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id the-way-you-look-tonight
 K:F
-|: "F6" z2 C2 D,4 | "Gm9" z2 A2 G,4 | "Fmaj7" z2 E,2 D,4 | "Gm9" z2 A,2 G,4 |
+|: "F6" z2 c2 D4 | "Gm9" z2 a2 G4 | "Fmaj7" z2 E2 D4 | "Gm9" z2 A2 G4 |
 w:  * _ _ | * _ _ | * _ _ | * _ _ |
-"Fmaj7" C,8 | "Dm7" F,,8 | "Gm7" G,2 A,2 _B,2 A,2 | "C7" G,8 |
+"Fmaj7" C8 | "Dm7" F,8 | "Gm7" G2 A2 _B2 A2 | "C7" G8 |
 w: Some- | day | when I'm aw- fly | low, |
-"Fmaj7" A,2 _B,2 C,2 _B,2 | "D7" A,8 | "Gm7" _B,2 C,2 D,2 C,2 | "C7" _B,2 C,2 D,2 E,2 |
+"Fmaj7" A2 _B2 C2 _B2 | "D7" A8 | "Gm7" _B2 C2 D2 C2 | "C7" _B2 C2 D2 E2 |
 w: When the world is | cold, | I will feel a | glow just think- ing |
-"Cm711" F,8 | "F7" F,,8 | "Bbmaj7" G,2 A,2 C,2 _B,2 | "Gm7" A,4 G,4 |
+"Cm711" F8 | "F7" F,8 | "Bbmaj7" G2 A2 C2 _B2 | "Gm7" A4 G4 |
 w: of | you, | And the way you | look to- |
-"F6" F,8 | "Gm9" z8 | "Fmaj7" z8 | :|1 "Gm9" z2 D,2 E,2 G,2 |
+"F6" F8 | "Gm9" z8 | "Fmaj7" z8 | :|1 "Gm9" z2 D2 E2 G2 |
 w: night. | * | * |  * Oh, but you're |
 :|2 "Bbm7" z8 |
 w:  * |]
@@ -27292,24 +30035,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id there-will-never-be-another-you-2
 K:Eb
-_B,2 | "Ebmaj7" C,2 D,2 _E,2 F,2 | "Abmaj7" G,2 _B,2 F,3 _E, | "Dm7b5" F,8- |
+_B2 | "Ebmaj7" C2 D2 _E2 F2 | "Abmaj7" G2 _B2 F3 _E | "Dm7b5" F8- |
 w: There | will be man- y | oth- er nights like | this, |
-"G7b9" F,6 G,2 | "Cm7" _E,2 F,2 G,2 _B,2 | "Bbm7" C,2 _E,2 C,3 _B, | "Eb7" C,8- |
+"G7b9" F6 G2 | "Cm7" _E2 F2 G2 _B2 | "Bbm7" C2 _E2 C3 _B | "Eb7" C8- |
 w: _ and | I'll be stand- ing | here with some- one | new, |
-"Abmaj7" C,6 _B,2 | "Db79" _E,2 C,2 _B,2 _A,2 | "Eb6" G,2 F,2 G,3 _A, | "Cm7" _B,2 G,2 F,2 _E,2 |
+"Abmaj7" C6 _B2 | "Db79" _E2 C2 _B2 _A2 | "Eb6" G2 F2 G3 _A | "Cm7" _B2 G2 F2 _E2 |
 w: _ There | will be oth- er | songs to sing, an- | oth- er fall, an- |
-"F7" F,2 _E,2 F,3 _E, | "Fm7" D2 C,2 _B,2 A,2 | "Bb7" G,2 F,2 G,2 F,2 | "Ebmaj7" _A,8- |
+"F7" F2 _E2 F3 _E | "Fm7" d2 C2 _B2 A2 | "Bb7" G2 F2 G2 F2 | "Ebmaj7" _A8- |
 w: oth- er spring, but | There Will Nev- er | Be An- oth- er | You. |
-"Abmaj7" _A,6 _B,,2 | "Dm7b5" C,2 D,2 _E,2 F,2 | "G7b9" G,2 _B,2 F,3 _E, | "Cm7" F,8- |
+"Abmaj7" _A6 _B,2 | "Dm7b5" C2 D2 _E2 F2 | "G7b9" G2 _B2 F3 _E | "Cm7" F8- |
 w: _ There | will be oth- er | lips that I may | kiss, |
-"Bbm7" F,6 G,2 | "Eb7" _E,2 F,2 G,2 _B,2 | "Abmaj7" C,2 _E,2 C,3 _B, | "Db79" C,8- |
+"Bbm7" F6 G2 | "Eb7" _E2 F2 G2 _B2 | "Abmaj7" C2 _E2 C3 _B | "Db79" C8- |
 w: _ but | they won't thrill me | like yours used to | do. |
-"Gm7" C,6 _B,2 | "F#dim7" _E,2 C,2 _B,2 _A,2 | "Eb6" G,2 F,2 G,3 _A, | "G7#5" _B,2 G,2 F,2 _E,2 |
+"Gm7" C6 _B2 | "F#dim7" _E2 C2 _B2 _A2 | "Eb6" G2 F2 G3 _A | "G7#5" _B2 G2 F2 _E2 |
 w: _ Yes, | I may dream a | mil- lion dreams, but | how can they come |
-"Fm7" D6 C,2 | "Eb6" _B,2 _E,2 D,2 C,2 | _B,2 _E,,2 _B2 _A,2 | F,4 G,4 |
+"Fm7" d6 C2 | "Eb6" _B2 _E2 D2 C2 | _B2 _E,2 _b2 _A2 | F4 G4 |
 w: true, if | there will nev- er | ev- er be an- | oth- er |
-_E,6 z2 |
+_E6 z2 |
 w: you? * |]
 
 X:1000
@@ -27320,26 +30064,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id they-all-laughed
+%%tags needs-repair
 K:G
-|: "G" z D, E,2 G,2 A,2 | "Am7" B,3/2 B,/ A,3/2 G,/ A, B,3 | "Am7" B,3/2 B,/ A,3/2 G,/ A, B,2 D,,- | "G" D,8 |
+|: "G" z D E2 G2 A2 | "Am7" B3/2 B/ A3/2 G/ A B3 | "Am7" B3/2 B/ A3/2 G/ A B2 D,- | "G" D8 |
 w:  * They All Laughed at | Chris- to- pher Co- lum- bus | when he said the world was round. | _ |
-"G" z D, E,2 G,2 A,2 | "Am7" B,3/2 B,/ A,3/2 G,/ A, B,2 G,- | "G6" G,8- | "Am7" G,6 z2 |
+"G" z D E2 G2 A2 | "Am7" B3/2 B/ A3/2 G/ A B2 G- | "G6" G8- | "Am7" G6 z2 |
 w: * They All Laughed when | Ed- i- son re- cord- ed sound. | _ | They * |
-"G" z D, E,2 G,2 A,2 | "Am7" B,3/2 B,/ A,3/2 G,/ A, B,3 | "C#7b9" D,3/2 D,/ ^C,3/2 B,/ ^C, D,2 ^F,,- | "Bm7" ^F,8 |
+"G" z D E2 G2 A2 | "Am7" B3/2 B/ A3/2 G/ A B3 | "C#7b9" D3/2 D/ ^C3/2 B/ ^C D2 ^F,- | "Bm7" ^F8 |
 w: * All Laughed at Wil- | bur and his broth- er, when | they said that man could fly. _ | They |
-"D6" B,2 A,3/2 ^G,/ A, B,3 | "A7" B,3/2 C,/ A,3/2 ^G,/ A, B,3 | "D7" A,2 B,2 C,2 B,2 | "G7" A,2 D,2 D,2 D,2 |
+"D6" B2 A3/2 ^G/ A B3 | "A7" B3/2 C/ A3/2 ^G/ A B3 | "D7" A2 B2 C2 B2 | "G7" A2 D2 D2 D2 |
 w: told Mar- co- ni wire- | less was a pho- ney; it's | the same old cry. | They laughed at me |
-"E7#5" D,4- D, B,2 G, | "A7" A,4- A,3/2 B,/ C,3/2 ^C,/ | "Am7" D,2 E,2 D,2 B,2 | "Eb7" C,6 B,2 |
+"E7#5" D4- D B2 G | "A7" A4- A3/2 B/ C3/2 ^C/ | "Am7" D2 E2 D2 B2 | "Eb7" C6 B2 |
 w: _ want- ing you, | _ said I was reach- | ing for the moon. | But oh, |
-"G" E,4- E, ^C,2 A, | "Am7" B,4- B, A,2 B, | "B7" C,2 E,2 E,,2 G,2 | "A7" A,8 |
+"G" E4- E ^C2 A | "Am7" B4- B A2 B | "B7" C2 E2 E,2 G2 | "A7" A8 |
 w: _ you came through | _ now they'll have | to change their tune. | They |
-"G" z D,, E,2 G,2 A,2 | "Am7" B,3/2 B,/ A,3/2 G,/ A, B,3 | C, B,2 A, B,2 C,2 | "G" B,6 A,2 |
+"G" z D, E2 G2 A2 | "Am7" B3/2 B/ A3/2 G/ A B3 | C B2 A B2 C2 | "G" B6 A2 |
 w: * all said we nev- | er could be hap- py, they | laughed at us and how! | But ho, |
-"A7b9" D,2 D,2 D,4 | E, E,2 E, B,2 B,2 | "Eb" :|1 "Bb" G,8- | "G" G,4 z4 |
+"A7b9" D2 D2 D4 | E E2 E B2 B2 | "Eb" :|1 "Bb" G8- | "G" G4 z4 |
 w: ho, ho! Who's | got the last laugh now? |  _ | He, * |
-"Am7" :|2 "G" G,2 G,2 G,4 | _B, _B,2 _B, ^F,2 ^F,2 | D2 D,2 D,4 | E, E,2 E, B,2 B,2 |
+"Am7" :|2 "G" G2 G2 G4 | _B _B2 _B ^F2 ^F2 | d2 D2 D4 | E E2 E B2 B2 |
 w:  he, he! Let's | at the past laugh, Ha, | ha, ha! Who's | got the last laugh now? |
-G,8- | G,2 z2 z4 |
+G8- | G2 z2 z4 |
 w: _ | * * * |]
 
 X:1001
@@ -27350,26 +30096,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id they-can-t-take-that-away-from-me
+%%tags needs-repair
 K:Eb
-_E, _E, _E, _E,2 _E, G,- | "Eb6" G,8 | "Eb" z _E, _E, _E, _E,2 _E, _B,- | "Fm7" _B,8 |
+_E _E _E _E2 _E G- | "Eb6" G8 | "Eb" z _E _E _E _E2 _E _B- | "Fm7" _B8 |
 w: The way you wear your hat, | _ | * the way you sip your tea, | _ |
-"Fm7" z _E, _E, _E, _E,2 _E, _B- | "Eb" _B,8- | "Bbm7" _B, z C,2 C,2 C,2 | "Ab" _E,3/2 C,/ _B,3/2 _A,/ _B,2 G, F, |
+"Fm7" z _E _E _E _E2 _E _b- | "Eb" _B8- | "Bbm7" _B z C2 C2 C2 | "Ab" _E3/2 C/ _B3/2 _A/ _B2 G F |
 w: * the mem- 'ry of all that | _ | no, * no! They Can't | Take That A- way From Me! The |
-"Fm7" z _E, _E, _E, _E,2 _E, G,- | "Eb6" G,8 | "Eb" z _E, _E, _E, _E,2 _E, _B,- | "Fm7" _B,8 |
+"Fm7" z _E _E _E _E2 _E G- | "Eb6" G8 | "Eb" z _E _E _E _E2 _E _B- | "Fm7" _B8 |
 w: * way your smile just beams, _ | the | * way you sing off key, _ | the |
-"Fm7" z _E, _E, _E, _E,2 _E, _B- | "Eb" _B,8- | "Bbm7" _B,2 C,2 C,2 C,2 | "Ab" _E,3/2 C,/ _B,3/2 _A,/ _B,2 G, _E,- |
+"Fm7" z _E _E _E _E2 _E _b- | "Eb" _B8- | "Bbm7" _B2 C2 C2 C2 | "Ab" _E3/2 C/ _B3/2 _A/ _B2 G _E- |
 w: * way you haunt my dreams, _ | no, | no! They Can't Take | That A- way From Me! _ We |
-"Eb6" _E,6 G, A, | "Gm" _B,2 G,2 D2 C,2 | "Gm" _B,2 G,2 D2 C, _B, | "Gm" G, G, G,4 F,2 |
+"Eb6" _E6 G A | "Gm" _B2 G2 d2 C2 | "Gm" _B2 G2 d2 C _B | "Gm" G G G4 F2 |
 w: may nev- er, | nev- er meet a- | gain on the bump- y | road to love, still |
-"Am7" D,6 G, A, | "Gm" _B,2 A,2 D,2 C,2 | "Gm" _B,2 G,2 C,2 C,2 | "F7" F,,8 |
+"Am7" D6 G A | "Gm" _B2 A2 D2 C2 | "Gm" _B2 G2 C2 C2 | "F7" F,8 |
 w: I'll al- ways, | al- ways keep the | mem- 'ry of the | way |
-"Fm7" z _E, _E, _E, _E,2 _E, G,- | "Eb6" G,8 | "Eb" z _E, _E, _E, _E,2 _E, _B,- | "Fm7" _B,8 |
+"Fm7" z _E _E _E _E2 _E G- | "Eb6" G8 | "Eb" z _E _E _E _E2 _E _B- | "Fm7" _B8 |
 w: * you hold your knife, _ the | way | * we danced till three, _ the | way |
-"Fm7" z _E, _E, _E, _E,2 _E, C- | "Eb7" C,8- | "Bbm7" C,2 _E,2 _E,2 _E,2 | "Ab" _E,3/2 C,/ _B,3/2 _A,/ _B,2 G, _E,- |
+"Fm7" z _E _E _E _E2 _E c- | "Eb7" C8- | "Bbm7" C2 _E2 _E2 _E2 | "Ab" _E3/2 C/ _B3/2 _A/ _B2 G _E- |
 w: * you changed my life, _ no, | no! | They Can't Take That | A- way From Me! _ No! They |
-"Cm" _E, z _B4 _A,2 | "Eb" G,2 _A,2 G,2 _B,2 | "Fm7" F,4 G,4 | "Eb" _E,8- |
+"Cm" _E z _b4 _A2 | "Eb" G2 _A2 G2 _B2 | "Fm7" F4 G4 | "Eb" _E8- |
 w: Can't * Take That | A- way From Me! | _ * | * |
-_E,6 z2 |
+_E6 z2 |
 w: * * |]
 
 X:1002
@@ -27380,22 +30128,23 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id this-can-t-be-love
 K:G
-"G6" G4 ^F,2 G,2 | "C7" D,2 G,2 ^F,2 G,2 | "G" E,4 G,2 A,2- | "Am7" A,6 G,2 |
+"G6" g4 ^F2 G2 | "C7" D2 G2 ^F2 G2 | "G" E4 G2 A2- | "Am7" A6 G2 |
 w: This Can't Be | Love be- cause I | feel so well, | _ no |
-"Am7" B,2 z2 D,,2 D,2- | "G6" D,2 E,2 G,4 | "C7" A,8- | "G" A,6 z2 |
+"Am7" B2 z2 D,2 D2- | "G6" D2 E2 G4 | "C7" A8- | "G" A6 z2 |
 w: sobs, * no sor- | rows, no sighs; | _ | This * |
-"Am7" G,4 ^F,2 G,2 | "G" D,2 G,2 ^F,2 G,2 | "G" E,4 G,2 A,2- | "F#m7" A,6 G,2 |
+"Am7" G4 ^F2 G2 | "G" D2 G2 ^F2 G2 | "G" E4 G2 A2- | "F#m7" A6 G2 |
 w: Can't Be Love, | I get no diz- | zy spell. _ | My head |
-"B7" D2 z2 G,,2 G,2- | "Em7" G,2 B,2 A,4 | "F13" G,8- | "E7#5" G,2 B,2 B,2 B,2 |
+"B7" d2 z2 G,2 G2- | "Em7" G2 B2 A4 | "F13" G8- | "E7#5" G2 B2 B2 B2 |
 w: is * not _ | in the skies, | _ | my heart does not |
-"A9" ^C,,2 z2 E,2 ^D,2- | "D7b9" ^D,2 B2 B, B,3 | "G" D,8 | "C7" z2 B,2 B,2 B,2 |
+"A9" ^C,2 z2 E2 ^D2- | "D7b9" ^D2 b2 B B3 | "G" D8 | "C7" z2 B2 B2 B2 |
 w: stand * still, _ | just hear it beat! | This | * is too sweet |
-"G6" D,8 | "Am7" C,8 | "G" B,8 | "G" A,8 |
+"G6" D8 | "Am7" C8 | "G" B8 | "G" A8 |
 w: to | be | love. | This |
-G,4 ^F,2 G,2 | D,2 G,2 ^F,2 G,2 | E,4 G,2 A,2- | A,2 G,2 A,2 G,2 |
+G4 ^F2 G2 | D2 G2 ^F2 G2 | E4 G2 A2- | A2 G2 A2 G2 |
 w: Can't Be Love | be- cause I feel | so well; _ | but still I love |
-E2 z2 G,,2 G,2- | G,2 B,2 A,4 | G,8- | G,6 z2 |
+e2 z2 G,2 G2- | G2 B2 A4 | G8- | G6 z2 |
 w: to * look _ | in your eyes. | _ | * * |]
 
 X:1003
@@ -27406,16 +30155,18 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id unforgettable
+%%tags needs-repair
 K:G
-"G" D,2 E,2 E, ^F,2 ^F,- | "Gmaj7" ^F,4 D,2 E,2 G,2 | "Gdim7" ^F,8- | "C" ^F,6 z2 |
+"G" D2 E2 E ^F2 ^F- | "Gmaj7" ^F4 D2 E2 G2 | "Gdim7" ^F8- | "C" ^F6 z2 |
 w: Un- for- get- ta- ble, | _ that's what you | are, | _ * |
-"Cmaj7" G,2 A,2 A, B,2 B,- | "A79" B,4 G,2 A,2 C,2 | "A79" B,8- | "F6" B,6 z2 |
+"Cmaj7" G2 A2 A B2 B- | "A79" B4 G2 A2 C2 | "A79" B8- | "F6" B6 z2 |
 w: Un- for- get- ta- ble, | _ tho' near or | far. | _ * |
-"Fm7" C,2 D,2 D,2 C,2 | "C" C,2 D, _E,- _E, D, C,2 | "A7" G,2 A,2 A,2 G,2 | "D79" G,2 A, B,- B, A, G,2 |
+"Fm7" C2 D2 D2 C2 | "C" C2 D _E- _E D C2 | "A7" G2 A2 A2 G2 | "D79" G2 A B- B A G2 |
 w: Like a song of | love that clings _ to me, | how the thought of | you does things _ to me, |
-"D" E,2 E,2 A,2 E,2- | "D7" E,6 F,2 | "G" ^F,2 ^F,2 C2 ^F,,2- | "Gmaj7" ^F,6 z2 |
+"D" E2 E2 A2 E2- | "D7" E6 F2 | "G" ^F2 ^F2 c2 ^F,2- | "Gmaj7" ^F6 z2 |
 w: nev- er be- fore | _ has | some- one been more | _ * |
-"Gdim7" D,2 E,2 E,2 D,2 | "C" D,2 E, G,- G, E, D,2 | "Cmaj7" C,8- | "A79" C,6 z2 |
+"Gdim7" D2 E2 E2 D2 | "C" D2 E G- G E D2 | "Cmaj7" C8- | "A79" C6 z2 |
 w: Un- for- get- ta- | ble, _ in ev- 'ry way, | _ | and * |]
 
 X:1004
@@ -27426,34 +30177,35 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:3/4
 L:1/8
+%%id waltz-for-debby
 K:Eb
-_B6 | "G" _E,,6 | "Cm7" _A,6 | "Fm7" D,,6 |
+_b6 | "G" _E,6 | "Cm7" _A6 | "Fm7" D,6 |
 w: In | her | own | sweet |
-"Bb7" G,6- | "G7" G,6 | "Gm7b5" z2 F,2 _E,2 | "F" D,2 _E,2 F,2 |
+"Bb7" G6- | "G7" G6 | "Gm7b5" z2 F2 _E2 | "F" D2 _E2 F2 |
 w: world, | _ | * pop- u- | lat- ed by |
-"Bb7" G,4 F,2 | "Eb7" _E,2 F,2 G,2 | "Abmaj7" E,2 _A,2 _A,2 G,2 | F,2 G,2 _A,2 |
+"Bb7" G4 F2 | "Eb7" _E2 F2 G2 | "Abmaj7" E2 _A2 _A2 G2 | F2 G2 _A2 |
 w: dolls and | clowns and a | prince and a big | pur- ple bear, |
-"Fm7b5" _B,6- | "Bb7" _B,6- | "G" _B,6- | "C7" _B,6 |
+"Fm7b5" _B6- | "Bb7" _B6- | "G" _B6- | "C7" _B6 |
 w: _ | wear- | y | grown- |
-"Fm7" E,6 A,6 G,2 | "Bb7" ^F,2 G,2 A,2 | B,2 | "Am7" B,2- |
+"Fm7" E6 A6 G2 | "Bb7" ^F2 G2 A2 | B2 | "Am7" B2- |
 w: ups all wear. | _ In _ | the | sun, |
-"D7" B,2- | "B" B,2 | "Am7" C,6- | "Gmaj7" C,4 _B,2 |
+"D7" B2- | "B" B2 | "Am7" C6- | "Gmaj7" C4 _B2 |
 w: _ | she | danc- | es to |
-"F#m7" C,6- | C,4 _B,2 | C,2 _B,2 _A,2 | G,4 D,2 |
+"F#m7" C6- | C4 _B2 | C2 _B2 _A2 | G4 D2 |
 w: si- | lent mu- | sic, songs that | are spun |
-F,4 _E,2 | C2 _B,2 _A,2 | G,4 _A,2 | G,4 D,2 |
+F4 _E2 | c2 _B2 _A2 | G4 _A2 | G4 D2 |
 w: of gold | some- where in | her own | lit- tle |
-_E,2 G,2 _B,2 | D,2 _E,2 C,2 | _B,6- | _B,6- |
+_E2 G2 _B2 | D2 _E2 C2 | _B6- | _B6- |
 w: head. _ bear. | _ When she | goes | they |
-_B,6- | _B,6 A,6 | C,6- | C,6 |
+_B6- | _B6 A6 | C6- | C6 |
 w: will | cry _ | as | they |
-z2 D,2 C,2 | D,2 C,2 D,2 | _B,6- | _B,6 |
-w: * whis- per | "\"good"- "bye.\"" _ | They | will |
-z2 _B,2 _A,2 | _B,2 _A,2 _B,2 | G,6- | G,6- |
+z2 D2 C2 | D2 C2 D2 | _B6- | _B6 |
+w: * whis- per | ""good"- "bye."" _ | They | will |
+z2 _B2 _A2 | _B2 _A2 _B2 | G6- | G6- |
 w: * miss her, | I fear, but | then, | so |
-G,6 | z2 F,2 _E,2 | F,2 _E,2 F,2 | _E,2 F,2 _E,2 |
+G6 | z2 F2 _E2 | F2 _E2 F2 | _E2 F2 _E2 |
 w: will | * I. _ | * * * | * * * |
-C6 | D,,6 | _E,6 | _B6 |
+c6 | D,6 | _E6 | _b6 |
 w: * | * | * | * |]
 
 X:1005
@@ -27462,11 +30214,12 @@ C:Herbie Hancock
 N:Source: openbook
 M:4/4
 L:1/8
+%%id watermelon-man-2
 K:C
-"F7" _E8 F,- | "Bb7" F,8- | "F7" F,4 z4 | "C7" F8 F,- |
-"Bb7" F,8- | "C7" F,4 z4 | "Bb7" z2 C C, G2 A,2 | "C7" _A, G, F, D, F,2 G,2 |
-"Bb7" z2 C,, C, G2 A,2 | "F7" _A, G, F, D, C,2 D,2 | z2 C, C, G2 _A,2 | B,2 F,2 F,, F, F,- |
-F,8 | z8 |]
+"F7" _e8 F- | "Bb7" F8- | "F7" F4 z4 | "C7" f8 F- |
+"Bb7" F8- | "C7" F4 z4 | "Bb7" z2 c C g2 A2 | "C7" _A G F D F2 G2 |
+"Bb7" z2 C, C g2 A2 | "F7" _A G F D C2 D2 | z2 C C g2 _A2 | B2 F2 F, F F- |
+F8 | z8 |]
 
 X:1006
 T:What A Diff'rence A Day Made
@@ -27476,20 +30229,21 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:2/2
 L:1/8
+%%id what-a-diff-rence-a-day-made
 K:F
-C, D, F,2 D,2 F,2 | "Gm7" G,4 G,4- | "C7" G,2 F,2 G,2 F,2 E,2 F,2 | "F" E,4 D,4- |
+C D F2 D2 F2 | "Gm7" G4 G4- | "C7" G2 F2 G2 F2 E2 F2 | "F" E4 D4- |
 w: What A Diff- 'rence A | Day Made, | _ twen- ty- four lit- tle | ho- urs, |
-"F" D,2 D, E, F,2 D,2 F,2 | "Gm7" _B,4 _B,4- | "C7" _B,2 C, C, C,2 C,2 C,2 | "F" C,8- |
+"F" D2 D E F2 D2 F2 | "Gm7" _B4 _B4- | "C7" _B2 C C C2 C2 C2 | "F" C8- |
 w: _ brought the sun and the | flow- ers | _ where there used to be | rain. |
-"Em7" C,2 z A, A, A, A, A, | "A7" A,4 A,4- | "Dm7" A,3 A, A, A, A, A, | "G7" A,4 A,4- |
+"Em7" C2 z A A A A A | "A7" A4 A4- | "Dm7" A3 A A A A A | "G7" A4 A4- |
 w: _ * My yes- ter day was | blue dear, | _ to- day I'm part of | you dear, |
-"Gm7" A,3 A, A, A, A, _A, | "C7" G,4 G,4- | "Cm7" G,2 D, E, F, E, F,2 | "F7" G,8- |
+"Gm7" A3 A A A A _A | "C7" G4 G4- | "Cm7" G2 D E F E F2 | "F7" G8- |
 w: _ my lone- ly nights are | thru dear, | _ since you said you were | mine, |
-"Bbmaj7" G,2 C,, D, F,2 D,2 F,2 A,2 | "Bbm6" C4 A,2 C,2 A,2 | "F" G,4 z A, C, _B, | "Abdim7" A,4 A,4- |
+"Bbmaj7" G2 C, D F2 D2 F2 A2 | "Bbm6" c4 A2 C2 A2 | "F" G4 z A C _B | "Abdim7" A4 A4- |
 w: _ What A Diff- 'rence A bliss; | that thrill- ing kiss. | It's * heav- en when | you _ |
-"Gm7" A,2 G,2 A, G, F, E, | "C7" G,4 G,4- | "F" G,2 F, G, F, E,2 D, | F,4 F,4 |
+"Gm7" A2 G2 A G F E | "C7" G4 G4- | "F" G2 F G F E2 D | F4 F4 |
 w: find ro- mance on your men- | u. _ | What A Diff- 'rence A Day | Made, and |
-z2 E, E, E, F, G,2 | F,8- | F,2 z2 z4 |
+z2 E E E F G2 | F8- | F2 z2 z4 |
 w: * the diff- 'rence is you. | _ | * * * |]
 
 X:1007
@@ -27500,26 +30254,28 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id what-a-wonderful-world
+%%tags needs-repair
 K:F
-C, E, | "F" F,3 A, C,4 | "Bb" z D, D, D, C,4 | "Gm7" z _B, _B, _B, A,4 |
+C E | "F" F3 A C4 | "Bb" z D D D C4 | "Gm7" z _B _B _B A4 |
 w: I see | trees of green, | * red ros- es too, | * I see the bloom |
-"A7" z G, G, G, F,2- F, F, F, | "Db" F,2- F, F, F, F,4 | "Gm7" z2 F, F, E,2 F,2 G,2 | "F" A,8- |
+"A7" z G G G F2- F F F | "Db" F2- F F F F4 | "Gm7" z2 F F E2 F2 G2 | "F" A8- |
 w: * for me and you, _ and I | think _ to my- self | * What A Won- der- ful | World. |
-"Bbmaj7" A,4 z2 C,, E, | "F" F,3 A, C,3 C, | "Bb" D,3 D, C,3 C, | "Gm7" _B,2- _B, _B, _B, A,3 A, |
+"Bbmaj7" A4 z2 C, E | "F" F3 A C3 C | "Bb" D3 D C3 C | "Gm7" _B2- _B _B _B A3 A |
 w: _ * I see | skies of blue and | clouds of white, the | bright _ bless- ed day, the |
-"A7" G,2- G, G, G, F,2- F, F, F, | "Db" F,2- F, F, F, F,4 | "Gm7" z2 F, F, E,2 F,2 G,2 | "F" F,8- |
+"A7" G2- G G G F2- F F F | "Db" F2- F F F F4 | "Gm7" z2 F F E2 F2 G2 | "F" F8- |
 w: dark _ sac- red night, _ and I | think _ to my- self | * What A Won- der- ful | World. |
-"Bb" F,4 z2 F,2 | "C7" G, G, G, G, G, C,,2 C, | "F" _B A, A, ^G, A,3 F, | "C7" G, G, G, G, G, C,,2 G |
+"Bb" F4 z2 F2 | "C7" G G G G G C,2 C | "F" _b A A ^G A3 F | "C7" G G G G G C,2 g |
 w: _ * The | col- ors of the rain- bow, so | pret- ty in the sky are | al- so on the fa- ces of |
-"F" _B, A, A, ^G, A,2 A, C, | "Dm" D,2 D, D, C,2- C, A, C, | "Dm" D,2 D, D, C,4 | "Dm" z D, D, D, C, C,3 |
-w: peo- ple go- in' by, I see | friends shak- in' hands, _ say- in' | "\"How" do you "do!\"" | * They're real- ly say- in' |
-"Gm7" _B,2 A,2 G,2 C,, E, | "F" F,3 A, C,3 C, | "Bb" D,3 D, C,4 | "Gm7" z _B, _B, _B, A,3 A, |
-w: "\"I" love "you,\"" I hear | ba- bies cry, I | watch them grow. | * They'll learn much more than |
-"A7" G,2- G, G, G, F,2- F, F, F, | "Db" F,2- F, F, F, F,4 | "Gm7" z2 F, F, E,2 F,2 G,2 | "F" A,8- |
+"F" _B A A ^G A2 A C | "Dm" D2 D D C2- C A C | "Dm" D2 D D C4 | "Dm" z D D D C C3 |
+w: peo- ple go- in' by, I see | friends shak- in' hands, _ say- in' | ""How" do you "do!"" | * They're real- ly say- in' |
+"Gm7" _B2 A2 G2 C, E | "F" F3 A C3 C | "Bb" D3 D C4 | "Gm7" z _B _B _B A3 A |
+w: ""I" love "you,"" I hear | ba- bies cry, I | watch them grow. | * They'll learn much more than |
+"A7" G2- G G G F2- F F F | "Db" F2- F F F F4 | "Gm7" z2 F F E2 F2 G2 | "F" A8- |
 w: I'll _ ev- er know, _ and I | think _ to my- self | * What A Won- der- ful | World. |
-"D7" A,2 z2 A,2 A,2 | "Gm7" A,2 F,2 G,2 F,4 | "Gm7" z2 F, F, E,2 F,2 G,2 | "F" F,8- |
+"D7" A2 z2 A2 A2 | "Gm7" A2 F2 G2 F4 | "Gm7" z2 F F E2 F2 G2 | "F" F8- |
 w: _ * Yes, I | think to my- self | * What A Won- der- ful | World. |
-"Bb6" F,8 |
+"Bb6" F8 |
 w: _ |]
 
 X:1008
@@ -27530,24 +30286,25 @@ N:Source: openbook
 N:Lyric/note alignment mechanically derived from source lyric markup (--/__ tokens) -- not manually verified against a recording.
 M:4/4
 L:1/8
+%%id when-i-fall-in-love
 K:Eb
-|: "Eb" _B,2 _E,2 _A,2 G,2 | "Fm7" _E,8 | "Eb" _B,2 _E,2 _A,2 G,2 | "Fm7" _E,2 F,6 |
+|: "Eb" _B2 _E2 _A2 G2 | "Fm7" _E8 | "Eb" _B2 _E2 _A2 G2 | "Fm7" _E2 F6 |
 w:  When I Fall In | Love | it will be for- | ev- er, |
-"Eb" _B,,2 _E,2 C2 _B,2 | "Db9" _A,6 G,2 | "Fm7" F,8- | "Bb7b9" F,6 G, _A, |
+"Eb" _B,2 _E2 c2 _B2 | "Db9" _A6 G2 | "Fm7" F8- | "Bb7b9" F6 G _A |
 w: or I'll nev- er | fall in | love. | _ in a |
-"Eb" _B,3 _E,, _E,2 _E,2 | "Fm7" G,2 F,4 G, _A, | "Gm7" _B,2 G,2 _A,2 _B,2 G,2 _A,2 | "C7" _B,6 _A, _B, |
+"Eb" _B3 _E, _E2 _E2 | "Fm7" G2 F4 G _A | "Gm7" _B2 G2 _A2 _B2 G2 _A2 | "C7" _B6 _A _B |
 w: rest- less world like | this is, love is | end- ed be- fore it's be- | gun, and too |
-"Fm" C,3 F,, F,2 F,2 | "C7b9" _A,2 G,4 _A, _B, | "Fm7" C,2 _A,2 _B,2 C,2 _A,2 C,2 | "Bb7" _B,8 |
+"Fm" C3 F, F2 F2 | "C7b9" _A2 G4 _A _B | "Fm7" C2 _A2 _B2 C2 _A2 C2 | "Bb7" _B8 |
 w: man- y moon- light | kiss- es seem to | cool in the warmth of the | sun. |
-"Eb" _B,,2 _E,2 _A,2 G,2 | "Fm7" _E,8 | "Eb" _B,2 _E,2 _A,2 G,2 | "Fm7" _E,2 F,6 |
+"Eb" _B,2 _E2 _A2 G2 | "Fm7" _E8 | "Eb" _B2 _E2 _A2 G2 | "Fm7" _E2 F6 |
 w: When I give my | heart | it will be com- | plete- ly |
-"Eb" _B,,2 _E,2 C2 _B,2 | "Db9" _A,6 G,2 | "Fm7" F,8- | "Bb7" F,6 G, _A, |
+"Eb" _B,2 _E2 c2 _B2 | "Db9" _A6 G2 | "Fm7" F8- | "Bb7" F6 G _A |
 w: or I'll nev- er | give my | heart. | _ And the |
-"Eb" _B,3 _E,, _E,2 _E,2 | "Ab" D2 C,4 C,,2 | "Gm7" C2 _B,4 C,2 | "Fm7" _A,6 F,2 |
+"Eb" _B3 _E, _E2 _E2 | "Ab" d2 C4 C,2 | "Gm7" c2 _B4 C2 | "Fm7" _A6 F2 |
 w: mo- ment I can | feel that you | feel that way | too, is |
-"Eb" _B,,2 _E,2 _A,2 G,2 | "Fm7" _E,4 F,4 | :|1 "Eb" _E,8- | "Fm7" _E,2 z2 z4 |
+"Eb" _B,2 _E2 _A2 G2 | "Fm7" _E4 F4 | :|1 "Eb" _E8- | "Fm7" _E2 z2 z4 |
 w: When I Fall In | Love with |  you. | _ * * |
-:|2 "Eb" _E,8- | _E,6 z2 |
+:|2 "Eb" _E8- | _E6 z2 |
 w:  you. | _ * |]
 
 X:1009
@@ -27556,6 +30313,7 @@ C:Oscar Pettiford
 M:4/4
 L:1/4
 Q:1/4=132
+%%id blues-in-the-closet
 K:F
 F/-| "F7"F A/F/ B A/F/ | "F7"B A/F/- F/ C F/- | "F7"F A/F/ B A/F/- | "F7" F/ C3/2-C z/ F/-|
 "Bb7"F _A/F/ B A/F/ | "Bb7"B _A/F/- F/ C F/- | "F7"F =A/F/ B A/F/- | "F7" F/ C3/2-C z/ F/-|
@@ -27570,7 +30328,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id a-saunter
 K:G
+I:linebreak $
 |: "^With a lilt""^D"A4 F4 | "^C"ED C2 "^D""^Part 1: Mixolydian"D4 | AB cB AG FD |
 w: I *|VII * * I||
 "^C"E2 C2 "^D"D4 :| $
@@ -27587,7 +30347,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:3/4
 L:1/8
+%%id aeolian-acculturation
 K:G
+I:linebreak $
 "^Em""^i"E2 G2 B2 | B4 G2 | "^VII""^D"A4 F2 | "^Em""^i"E6 | $
 "^VI""^C"G3 F E2 | "^VII""^D"F2 E2 D2 | "^Em""^i"E6- | E6 | $
 "^Em""^i"B3 c B2 | E2 G2 B2 | "^VII""^D"A2 G2 F2 | "^Em""^i"G6 | $
@@ -27600,7 +30362,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/2
 L:1/8
+%%id ah-poor-snail
 K:C
+I:linebreak $
 "^Bº""^i˚"B,4 D4 | "^Am""^vii"C2 A,2 "^Bº""^i˚"B,4 | "^Bº""^i˚""_*"D2 FF B,2 FF |
 w: Snail, snail,|oh, so slow.|What do you do when you|
 "^Am""^vii"E2 C2 "^Bº""^i˚"D4 | $
@@ -27616,7 +30380,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id by-the-break-of-day
 K:Eb
+I:linebreak $
 "^Eb""^I"B4 "^Ab""^IV"E4 | "^Eb""^I"B4 "^Bb""^V"d4 | "^Eb""^I""_*"e2 E2 "^Ab""^IV"c2 B2 |
 w: Two ships|sail- ing,|car- ried by a|
 "^Eb""^I"G2 E2 "^Bb""^V"F4 | $
@@ -27632,7 +30398,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/2
 L:1/8
+%%id can-you-tell-me-the-meter
 K:C
+I:linebreak $
 "^C""^I"c4 G4 | "^IV""^F"F2 AA "^C""^I"GE EE | "^C""^I"c2 c2 c2 G2 |
 w: Can you|tell me the me- ter? Do ya|know your "Du De"s|
 "^IV""^F"F2 A2 "^G7""^V"(3G2E2D2 | $
@@ -27648,7 +30416,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id chew-chew-chew
 K:C
+I:linebreak $
 "^C""^I"CE G/G/G | "^G7""^V"DE F2 | "^C""^I"CE G/G/G | "^G7""^V"FE D2 | $
 "^C""^I"CE G/G/G |
 w: I like bub- ble gum,|chew, chew, chew!|I like bub- ble gum,|chew, chew, chew.|I like bub- ble gum,|
@@ -27661,7 +30431,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:5/8
 L:1/8
+%%id crooked-creek
 K:G
+I:linebreak $
 |: "^D""^I"d2 d A/ G/ F | "^IV""^G"G2 B "^D""^I"A/ G/ F | d2 d A/ G/ F | "^VII""^C"E2 C "^D""^I"D/ E/ D "^D""^I"F2 F F/ E/ D | $
 F2 F A/ B/ A/ G/ | F2 F F/ E/ D | "^VII""^C"C/ D/ E/ D/ C/ E/ "^D""^I"D D :|
 
@@ -27671,7 +30443,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id dorian-acculturation
 K:C
+I:linebreak $
 "^Dm""^i"A2D A2D | "^VII""^C"EDC "^Dm""^i"D3 | "^Dm""^i"A2D ABc | "^G""^IV"B2G "^Dm""^i"A3 | $
 "^Dm""^i"F2D A2F | "^VII""^C"GFE "^Dm""^i"F2A | "^G""^IV"BAG "^Dm""^i"AGF | "^VII""^C"EDC "^Dm""^i"D3 |]
 
@@ -27681,7 +30455,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id duple-acculturation
 K:C
+I:linebreak $
 GG/G/ GG | GG G/G/G | GG GG | G/G/G/G/ G2 | $
 G/GG/ GG | G G3 | G/GG/ GG | z GG G | $
 GG/G/ GG | GG G/G/G | GG GG | G/G/G/G/ G2 |]
@@ -27693,7 +30469,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:3/4
 L:1/8
+%%id flamingo-3
 K:D
+I:linebreak $
 x4 D2 | "^D""^I"F2 A2 F2 | "^IV""^G"G2 B2 _B2 | "^D""^I"A=B A2 F2 | "^A""^V"E4 D2 | $
 w: Fla-|min- go, fla-|min- go, why|are your legs so|long? "Well,|
 "^D""^I"F2 A2 F2 | "^IV""^G"G2 B2 _B2 | "^A""^V"A=B A2 C2 | "^D""^I"D4 x2 || $
@@ -27721,7 +30499,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:6/8
 L:1/8
+%%id flow-the-rattlesnake
 K:Ab
+I:linebreak $
 "^C""^I"C=EG "^Bbm""^vii"FDB, | "^C""^I"C/D/CB, C2C | "^Db""^II"DFD "^C""^I"C/=E/GG | $
 w: Deep in the des- ert, where|most of us won't go, there|lived a big rat- tle- snake whose|
 "^Db""^II"AFA "^C""^I"G2G | "^C""^I"cGG "^Db""^II"A/G/FF | $
@@ -27745,7 +30525,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id fur-edwin
 K:G
+I:linebreak $
 "^In a hurry"G |: "^C""^I"FG FG !>!cG FG | [M:3/4]FG FG !>!EG | $
 [M:4/4]FG FG !>!cG FG |1
 w: A|lam- ma lam- ma ding- a- lam- ma|ding- a ding- a dong. A|lam- ma lam- ma ding- a- lam- ma|
@@ -27765,7 +30547,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id hamburgers-hot-dogs
 K:D
+I:linebreak $
 !fermata!A2 !fermata!A2 || "^D""^I"DD/D/ DD | DD/D/ FA | $
 "^A7""^V"A/A/A GE/E/ | A/A/A/A/ GE | $
 w: I like|ham- burg- ers, hot dogs,|piz- za and ice cream,|gum- my bears, meat- balls, and|chick- en fin- gers. Why can't|
@@ -27791,7 +30575,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id hello-mr-candyman
 K:C
+I:linebreak $
 F/F/F/F/ F/F/F | FF/F/ F/F/F | $
 FF FF/F/ | F/F/F F2 | $
 FF/F/ F/F/F | FF/F/ F/F/F | $
@@ -27806,7 +30592,10 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id i-am-a-brontosaurus
+%%tags needs-repair
 K:G
+I:linebreak $
 x6 !fermata!A2 | "^D""^I"DD "^VII""^C"EG "^D""^I"FD z A | [M:6/8]"^IV""^G"BAG "^D""^I"AGF | $
 w: I|am a Bron- to- saur- us. My|bod- y is huge, but my|
 [M:2/4]"^VII""^C"G2 E2 | [M:6/8]"^D""^I"D3 "^VII""^C"C3 | "^D""^I"!fermata!D3 !fermata!A3 || $
@@ -27844,7 +30633,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id i-know-a-song
 K:C
+I:linebreak $
 "^G""^V"GF/F/ E/E/D | "^C""^I"CE G z/ G/ | "^G""^V"F/F/D/D/ B,/B,/D | "^C""^I"EG C z/ G/ || $
 w: I know a song, it goes|"Bum Bum Bum." I|bet you know a song, it goes|" _ " I|
 [K:Eb]"^G""^V"G/G/F/F/ E/E/D | "^Cm""^i"GE C z/ G/ | "^G""^V"F/F/D/D/ =B,/B,/D |
@@ -27865,7 +30656,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id in-the-shade
 K:G
+I:linebreak $
 "^D""^I"FF FF AD F2 | "^VII""^C"ED CD- "^D""^I"D4 | "^D""^I""^*"AA AA c2 A2 |
 w: Sit- tin' on the dock of the|lake in the shade. _|Pitch- er full of sweet tea,|
 "^VII""^C"GF EF- "^D""^I"F4 | $
@@ -27881,7 +30674,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
+%%id johnny-clean-up-before
 K:F
+I:linebreak $
 "^C""^I""^Cautiously"(C2 G2 E2 c2 | B2 A2 !fermata!G4) | "^VII""^Bb"!>!B/"^Quickly"A/G/F/ !>!A/G/F/E/ !>!G/F/E/D/ "^C""^I".C2 :| "^C""^I"C"^Spirited"C/D/ EG BA G2 | $
 (B/A/G) (B/A/G) "^C""^I"E"^VII""^Bb"F "^C""^I"G2 | "^C""^I"CC/D/ EG BA G2 | (B/A/G) (B/A/G) "^C""^I"E"^VII""^Bb"F "^C""^I".G2 || "^C""^I"(C2 "^Cautiously"G2 E2 c2 | $
 B2 A2 !fermata!G4) | "^VII""^Bb"!>!B/"^Quickly"A/G/F/ !>!A/G/F/E/ !>!G/F/E/D/ "^C""^I".C2 |]
@@ -27893,7 +30688,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id karl-the-owl
 K:D
+I:linebreak $
 A2 | "^D"D2 "^Em7"E"^D/F#"E | F2 D2 | "^Em7"E2 "^D/F#"FF | "^G"G2 z2 | $
 "^D"AA AB | "^B7"AG FE |
 w: There|once was an|owl, his|name, it was|Karl.|He was not the|fi- nest sing- er|
@@ -27921,7 +30718,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id listen-people-to-my-chant
 K:C
+I:linebreak $
 GG G/GG/ | GG GG/G/ | GG GG/G/ | GG G2 | $
 GG GG | GG G2 | GG G/G/G | GG G2 |]
 w: Lis- ten, peo- ple, to|what I chant. If you|think you can, or you|think you can't:|don't just ech- o|what I do,|you make up your own|"Du De Du."|
@@ -27933,7 +30732,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:6/8
 L:1/8
+%%id listen-people-to-my-chant-triple
 K:C
+I:linebreak $
 G2G GGG | G2G GGG | G2G GGG | G2G G3 | $
 G2G GG2 | G2G G3 | G2G GGG | GGG G3 |]
 w: Lis- ten, peo- ple, to|what I chant. If you|think you can, or you|think you can't:|don't just ech- o|what I do.|You make up your own|"Du Da Di Du."|
@@ -27945,7 +30746,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id listen-people-to-my-song
 K:C
+I:linebreak $
 U:s=!stemless!
 "^C""^I"EE GG | EE G2 | "^G""^V"FF D2 | "^C""^I"EE G2 | $
 "^IV""^F"FF AA | "^I""^C"EE G2 |
@@ -27999,7 +30802,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
+%%id locrian-acculturation
 K:Eb
+I:linebreak $
 "^Dº""^iº"DE FG AG FE | "^Dº""^iº"D2 DE "^Cm""^vii"z C z D- | "^Dº""^iº"DE FG AG FE | "^Dº""^iº"D2 DE "^Cm""^vii"z G z D- | $
 "^Dº""^iº"DE FG AG FE | "^Dº""^iº"D2 DE "^Cm""^vii"z C z D- | "^Dº""^iº"DD DE "^Cm""^vii"z G z D | "^Dº""^iº"z8 |]
 
@@ -28009,7 +30814,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:7/8
 L:1/8
+%%id look-at-all-the-happy-faces
 K:Eb
+I:linebreak $
 |: "^Cm"G "^i"A G A "^VII""^Bb"B/ A/ G F | F G F G "^VI""^Ab"A/ G/ F "^Cm"E | "^i"E F E F "^VI""^Ab"G/ F/ E "^Gm"D | "^v"D G D "^Cm"G "^i"C (C/ D/ E/ F/) "^III""^Eb"G A G A B/ A/ G F | $
 "^VII""^Bb"F G F G "^G7b9""^V"A/ G/ F E | "^Cm""^i"E F E F "^IV""^F9"G/ F/ E D |1 "^VII""^Bb13"D G D "^Cm"G "^i"C (C/ D/ E/ F/) :|2 "^VII""^Bb13"D G D G "^Cm""^i"C3 |]
 
@@ -28019,7 +30826,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
+%%id lydian-acculturation
 K:G
+I:linebreak $
 G | "^C""^I"FG cG FG EG | "^II""^D"FA FA "^C""^I"G2 EG | "^C""^I"FG cG FG EG | $
 "^D""^II"FE DB, "^C""^I"C4 |]
 
@@ -28029,7 +30838,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id major-acculturation
 K:C
+I:linebreak $
 "^C""^I"CE GC | "^IV""^F"FA "^C""^I"GE | "^G7""^V"GF DB, | "^C""^I"C4 | $
 "^C""^I"CE GC | "^IV""^F"FA "^C""^I"GE | "^G7""^V"GF DB, | "^C""^I"C4 | $
 "^IV""^F"AA "^C""^I"GC | "^G7""^V"FF "^C""^I"EC | "^G7""^V"B,B, DF | G2 G2 | $
@@ -28042,7 +30853,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id middle-child
 K:A
+I:linebreak $
 "^D""^I"D2 D"^V""^A"E "^D""^I"F2 D2 | "^II""^E"E2 E2 E2 "^D""^I"D2 | "^D""^I""_*"F2 AA AG A2 |
 w: My li- tle bro- ther's|two years young- er.|My old- er bro- ther is|
 "^II""^E"G2 G2 B2 "^D""^I"A2 | $
@@ -28057,6 +30870,7 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
+%%id minor-acculturation
 K:Dmin
 "^Dm""^i"DE FG A2 d2 | "^V""^A"^c2 e2 "^Dm""^i"A4 | "^Gm""^iv"BA G2 "^Dm""^i"A2 D2 | "^V""^A"A2 A2 "^Dm""^i"D4 |]
 
@@ -28066,7 +30880,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:3/4
 L:1/8
+%%id minor-triple-dance
 K:F
+I:linebreak $
 "^Dm""^i"D3 DE F | "^Gm""^iv"G3 GF E | "^Dm""^i"F3 ED F | "^A""^V"E4 A2 | $
 "^Gm""^iv"B3 AG B | "^Dm""^i"A3 GF E | D3 DE F | "^A""^V"E4 A,2 || $
 "^Dm""^i"D3 DE F | "^Gm""^iv"G3 GF E | "^Dm""^i"F3 ED F | "^A""^V"E4 A2 | $
@@ -28084,7 +30900,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
+%%id mixolydian-acculturation
 K:G
+I:linebreak $
 "^D""^I"A2 F2 A2 F2 | "^C""^VII"ED C2 "^D""^I"D4 | "^D""^I"A2 F2 AB c2 | "^IV""^G"BA G2 "^D""^I"A4 | $
 "^D""^I"A2 F2 A2 F2 | "^C""^VII"GF E2 "^D""^I"F2 A2 | "^G""^IV"BA G2 "^D""^I"FE D2 | "^C""^VII"ED C2 "^D""^I"D4 |]
 
@@ -28095,7 +30913,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:5/8
 L:1/8
+%%id moe-the-crow
 K:C
+I:linebreak $
 G2 | "^C""^I"c c B c G | E E F G2 | c c B c G/ G/ | $
 "^G""^V"F E D "^C""^I"C G, |
 w: There|once was a crow, his|name it was Moe.|He loved to sing, but he|did- n't know "Do." Or|
@@ -28111,7 +30931,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:5/8
 L:1/8
+%%id mr-and-amp-mrs-mackenzie
 K:F
+I:linebreak $
 |: "^C""^I"C E G "^VII""^Bb"B/ A/ G | "^C""^I"F E2- E2 | "^C""^I"C E G "^VII""^Bb"F/ E/ D | "^C""^I"D C2- C2 "^C""^I"c B G "^IV""^F"A2 | $
 "^C""^I"G E C "^IV""^F"F2 | "^C""^I"C E G "^VII""^Bb"F/ E/ D | "^C""^I"D C2- C2 |]
 
@@ -28122,7 +30944,10 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:12/8
 L:1/8
+%%id my-favorite-food
+%%tags needs-repair
 K:D
+I:linebreak $
 x11 A | "^V""^A"A2A E2E C3 z2 C | C2C E2E A3 z2 A | $
 A2A G2G E2E C2C |
 w: I'd|eat it with a fork, I'd|eat it with a spoon. I'd|eat it in the morn- ing, eve- ning,|
@@ -28162,7 +30987,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:3/4
 L:1/8
+%%id myrtle-the-turtle
 K:Bb
+I:linebreak $
 "^Cm""^i"C E3 G2 | "^IV""^F"F A3 c2 | "^Cm""^i"c2 G2 C2 | "^IV""^F"F6 | $
 "^Cm""^i"C2 E2 G2 |
 w: Myr- tle the|tur- tle would|swim through the|sea.|Then she'd come|
@@ -28176,7 +31003,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id not-the-man-in-brown
 K:G
+I:linebreak $
 "^D""^I"AG cB | "^G""^IV"BA GD | "^VII""^C"EE GG | "^D""^I"F4 | $
 "^D""^I""_*"F2 dF |
 w: Once there was a|man in brown, he'd|rule o'er ev- ry|town.|Un- til the|
@@ -28196,7 +31025,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:7/8
 L:1/8
+%%id old-moe-clark
 K:Bb
+I:linebreak $
 |: "^Dm"A B "^Cm"c B "^Dm"A F D | "^Dm"A B "^Cm"c B "^Dm"A3 | "^Dm"A B "^Cm"c B "^Dm"A F D |
 w: |||
 w: |||
@@ -28226,7 +31057,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id phrygian-acculturation
 K:Ab
+I:linebreak $
 "^Cm"G | "^i"E2G c2"^Cm"G | "^i"E2G C2G | "^Bbm""^vii"FED B,2D | $
 "^Cm""^i"C3 z2 G | "^Cm""^i"E2G c2G | "^Cm""^i"E2G C2G | "^Db""^II"FED F2D | $
 "^Cm""^i"C6 |: "^Db""^II"!>!D3 !>!F3 | !>!A3 z3 | "^Cm""^i"(GAG FED | $
@@ -28239,7 +31072,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id pizza-pie
 K:C
+I:linebreak $
 "^C""^I"C2 GG | C2 G2 | E2 C2 | G4 | $
 "^C""^I"GE CE | GE CE | G4 | c4 |]
 w: I like- a|piz- za,|piz- za|pie.|Pep- per- o- ni,|pep- per- o- ni,|cheese,|cheese!|
@@ -28251,7 +31086,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id shoo-fly-shoo
 K:Cmin
+I:linebreak $
 "^Cm""^i"CC/C/ E/E/E | "^G""^V"DD/D/ =B,"^Cm"G, | "^i"C2 E2 | G2 z2 | $
 w: Flies in the but- ter milk,|flies in the gra- vy.|Shoo, fly,|shoo!|
 "^Additional Lyrics2. Flies on the peppercorns, flies in the salt cellar. Flies on the Gummy Bears, flies on the marshmellers.3. Flies on the pancakes, flies on the waffles. Flies on the syrup, isn't that awful?!4. Flies on the ketchup and flies on the mustard. Flies on the berries on the cream on the custard.5. Flies on the fries on the flies on the fries. On the flies on the fries on the flies on the fries.""^Cm""^i"cc/c/ cG |
@@ -28266,7 +31103,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id shoo-fly-shoo-major
 K:C
+I:linebreak $
 "^C"CC/C/ E/E/E | "^G"DD/D/ B,G, | "^C"C2 E2 | G2 z2 | $
 w: Flies in the but- ter milk,|flies in the gra- vy.|SHOO FLY,|SHOO!|
 "^Additional Lyrics2. Flies on the peppercorns, flies in the salt cellar. Flies on the Gummy Bears, flies on the marshmellers.3. Flies on the pancakes, flies on the waffles. Flies on the syrup, isn't that awful?!4. Flies on the ketchup and flies on the mustard. Flies on the berries on the cream on the custard.5. Flies on the fries on the flies on the fries. On the flies on the fries on the flies on the fries.""^C"cc/c/ cG |
@@ -28280,7 +31119,10 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
+%%id the-doll
+%%tags needs-repair
 K:C
+I:linebreak $
 "^Broadly, with a lilt"x6 (3G,A,B, |: "^C""^I"z2 c2 AG Ac | E E2 E- E2 (3G,A,B, | z2 c2 AG Ac | $
 "^G""^V"D D2 D- D2 (3G,A,B, | "^C""^I"z2 c2 AG Ac | E E2 E- E4 | "^F""^IV"A^G AB cB c^c |1 $
 "^G""^V"d=c BA =G2 (3=G,A,B, :|2 "^G""^V"dc BA GF ED || "^F""^IV"z2 (F2 A2 F2) | "^C""^I"z2 (E2 G2 E2) | $
@@ -28296,7 +31138,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:4/4
 L:1/8
+%%id the-pattern-factory
 K:D
+I:linebreak $
 A,A, | "^D""^I"DD "^IV""^G"DD "^D""^I"D2 DE | "^D""^I"FF "^IV""^G"GG "^D""^I"F2 z2 | $
 w: In the|pat- tern fac- to- ry, in the|pat- tern fac- to- ry.|
 "^D""^I"AA AB AF DE | "^D""^I"FF "^A""^V"EE "^D""^I"D2 z2 |]
@@ -28308,7 +31152,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id triple-acculturation
 K:C
+I:linebreak $
 GGG GGG | G/G/G/G/G/G/ G3 | G/G/GG GGG/G/ | G/GGG/ G3 | $
 G2G GG2 | z GGG G/G/G/G/ | GG/G/G/G/ GG/G/G/G/ | z GG G3 |]
 
@@ -28318,7 +31164,10 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id turn-of-a-phrase
+%%tags needs-repair
 K:D
+I:linebreak $
 |: "^D"(DEF "^A7"GFE | "^D"FED "^A7"EC2) | "^D"(DEF "^G"GAB | "^A7"A/B/A/G/F/E/ "^D"D3) :| $
 [M:2/4]"^Bm".B,.C .D.B, | "^F#7""_sim"CB, ^A,C | "^Bm"B,C D"^F#7b9"B, | (G2 "^F#7"F2) | $
 "^D".D.E .FD | "^A7"ED CE | "^D"DE F"^A7b9"D | (!fermata!_B2 "^A7"!fermata!A2) | $
@@ -28331,7 +31180,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id two-chatty-sheep
 K:C
+I:linebreak $
 G/G/G/G/ GG | GG GG | G/G/G/G/ GG | G2 z2 | $
 G/G/G/G/ GG | GG G/G/G | GG GG | G2 z2 |] $
 w: Once u- pon a time, there|were two sheep, and|might- y chat- ty sheep were|they!|Ev- 'ry af- ter noon, they'd|have a "Bah bah bah."|This is what they'd|say:|
@@ -28349,7 +31200,9 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 N:Contains lyrics -- line breaks NOT reflowed to 4-bars-per-line (would break lyric alignment); left at original layout.
 M:2/4
 L:1/8
+%%id watermelon
 K:D
+I:linebreak $
 "^D""^I"D2 "^IV""^G"G2 | "^D""^I"D2 "^V""^A"A2 | "^D""^I"D2 "^IV""^G"G2 | "^D""^I"D2 "^V""^A"A2 | $
 w: Wat- er-|mel- on,|Wat- er-|mel- on,|
 "^D""^I"DF "^IV""^G"GB | "^D""^I"AF "^V""^A"EC | "^D""^I"DF "^IV""^G"GB | "^D""^I"AF "^V""^A"EC | $
@@ -28365,7 +31218,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id admiral-anderson-2
 K:Dmin
+I:linebreak $
 "^i"DDD "^V"EEE | "^i"F3 F3 | "^i"FFF "^V"GGG | "^i"A3 A3 | $
 "^i"FFF "^V"EEE | "^i"D3 D3 | DDD "^V"^CCC | "^i"D3 D3 |]
 
@@ -28375,7 +31230,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id little-johnny-johnson-2
 K:D
+I:linebreak $
 "^I"DD "^V"EE | "^I"F2 F2 | "^I"FF "^V"GG | "^I"A2 A2 | $
 "^I"FF "^V"EE | "^I"D2 D2 | "^I"DD "^V"CC | "^I"D2 D2 |]
 
@@ -28385,7 +31242,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id principal-pinkerton-2
 K:D
+I:linebreak $
 "^I"DDD "^V"EEE | "^I"F3 F3 | "^I"FFF "^V"GGG | "^I"A3 A3 | $
 "^I"FFF "^V"EEE | "^I"D3 D3 | "^I"DDD "^V"CCC | "^I"D3 D3 |]
 
@@ -28395,7 +31254,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id sister-mary-margaret-2
 K:Dmin
+I:linebreak $
 "^i"DD "^V"EE | "^i"F2 F2 | "^i"FF "^V"GG | "^i"A2 A2 | $
 "^i"FF "^V"EE | "^i"D2 D2 | "^i"DD "^V"^CC | "^i"D2 D2 |]
 
@@ -28405,7 +31266,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id unfinished-song-1
 K:D
+I:linebreak $
 "^D""^I"DE FG | AF D2 | "^A""^V"CD EA | "^D""^I"F2 D2 | $
 "^D""^I"DE FG | "^A""^V"AB A2 | "^(V)"x4 | "^(I)"x4 |]
 
@@ -28415,7 +31278,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id unfinished-song-2
 K:F
+I:linebreak $
 "^Dm""^i"A2B A2G | F2E D3 | "^A""^V"^C2D E2A | "^Dm""^i"F3 D3 | $
 "^Dm""^i"A2B A2G | F2G A3 | "^(V)"x6 | "^(i)"x6 ||
 
@@ -28425,7 +31290,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id unfinished-song-3
 K:D
+I:linebreak $
 "^D""^I"D/D/D/D/ FF | AF d2 | "^A""^V"c2 A2 | G2 E2 | $
 "^D""^I"D/D/D/D/ FF | AF d2 | "^(V)"x4 | "^(I)"x4 |]
 
@@ -28435,7 +31302,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
+%%id unfinished-song-4
 K:F
+I:linebreak $
 "^Dm""^i"DDE FED | FFG AFD | "^A""^V"A2B A2B | "^Dm""^i"A2G FED | $
 "^Dm""^i"DDE FED | FFG "^A""^V"A3 | "^(V)"x6 | "^(i)"x6 |]
 
@@ -28445,7 +31314,9 @@ C:Andy Mullen
 N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:2/4
 L:1/8
+%%id unfinished-song-5
 K:D
+I:linebreak $
 "^D""^I"A2 FE | DE F2 | "^A""^V"GE CE | A,2 A2 | $
 "^D""^I"A2 FD | "^G""^IV"GA B2 | "^(V)"x4 | "^(I)"x4 |]
 `,
@@ -28459,6 +31330,7 @@ N:Raw output from homr OMR + xml2abc, K: line is OMR's own concert-key guess (un
 M:2/4
 L:1/8
 Q:1/4=88
+%%id my-pony-john-omr-pilot
 K:D
 I:linebreak $
 EE/F/ G/B/A | DF E2 | EE/F/ G/d/c | Ac B2 |
@@ -28474,6 +31346,8 @@ N:Raw output from homr OMR + xml2abc. Known issue: OMR mislabeled the final sect
 M:2/4
 L:1/8
 Q:1/4=72
+%%id vytas-omr-pilot
+%%tags needs-repair
 K:none
 I:linebreak $
 Dc z A/c/ | BG z A/B/ | AF z G/A/ | G3/2E/ F/D/E/C/ |
@@ -28491,6 +31365,7 @@ N:Raw output from homr OMR + xml2abc, K: line is OMR's own concert-key guess (un
 M:9/8
 L:1/8
 Q:3/8=64
+%%id assisi-omr-pilot
 K:E
 I:linebreak $
 FGF | B3 B3 AFE | F6 FGF | B3 B3 AFE | F6 B,CB, |
@@ -28508,13 +31383,16 @@ N:Raw output from homr OMR + xml2abc, K: line is OMR's own concert-key guess (un
 M:4/4
 L:1/8
 Q:1/4=120
+%%id wydleeump-omr-pilot
+%%tags needs-repair
 K:G
 I:linebreak $
 D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D2 A,2 | D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D4 |
 $
 A3/2B/ cB AG FE | DF EC D2 A,2 | A3/2B/ cB AG FE | DF EC D4 |
 $
-D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D2 A,2 | D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D4 |]`,
+D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D2 A,2 | D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D4 |]
+`,
 
 "ExperimentalSongsChants":
 `X:1
@@ -28525,7 +31403,9 @@ N:Item #1
 M:6/8
 L:1/8
 Q:"Moderate"
+%%id hopscotch
 K:D
+I:linebreak $
 F2 A G2 A | F A d c A G | F2 A E2 F | D z2 A G E |$ F2 A G2 A | F A d c A G | F2 A E2 F | D F E D3 |]
 
 X:2
@@ -28536,7 +31416,9 @@ N:Item #2
 M:2/4
 L:1/8
 Q:"Moderate"
+%%id jacks
 K:D
+I:linebreak $
 F A D2 | C/D/E/F/ G2 | (F A) D2 | A/G/F/E/ D2 |$ B/A/G/F/ E/F/G | A/G/F/E/ D/E/F | G/F/E/D/ C/D/E | A/G/F/E/ D2 |]
 
 X:3
@@ -28547,7 +31429,9 @@ N:Item #3
 M:3/4
 L:1/8
 Q:"Fast"
+%%id clouds-2
 K:Dmin
+I:linebreak $
 D4 F2 | A6 | B A G2 B2 | A6 |$ B4 ^c2 | d4 B2 | A6-|A6 |$ D4 F2 | A6 | G F E2 F2 | D6 |$ ^C2 A4-|A6 | D6-|D6 |]
 
 X:4
@@ -28558,7 +31442,9 @@ N:Item #4
 M:2/4
 L:1/8
 Q:"Moderate"
+%%id hide-and-seek
 K:Emin
+I:linebreak $
 B G E2 | ^D/E/F/G/ A2 | B G E2 | c A c A |$ B/A/G/A/ B2 | A F A F | G/F/E/G/ !fermata!F2 | B G E2 |$ ^D/E/F/G/ A2 | B2 B2 | B/A/G/F/ !fermata!E2 |]
 
 X:5
@@ -28569,7 +31455,9 @@ N:Item #5
 M:2/4
 L:1/8
 Q:"Fast"
+%%id dr-kate
 K:D
+I:linebreak $
 F A D2 | F A D2 | E F2 G | A4 |$ F A D2 | F A D2 | G F2 E | D4 |]
 
 X:6
@@ -28580,7 +31468,9 @@ N:Item #6
 M:2/4
 L:1/8
 Q:"Fast"
+%%id pancakes
 K:D
+I:linebreak $
 z d d d | B A3 | z F F F | E D3 | z d d d |$ B A3 | z F F F | E D3 | F D E D | !fermata!A4 |]
 
 X:7
@@ -28590,7 +31480,9 @@ N:Source: The Early Childhood Music Curriculum: Experimental Songs and Chants Wi
 N:Item #7
 M:2/4
 L:1/8
+%%id dancing
 K:Edor
+I:linebreak $
 B2 E2 | D F E2 | G F !breath!E2 | B2 E2 | D F E2 |$ G F !breath!E2 | B2 c A | B4 | d c B A | !breath!B4 |$ d c B A | B G E2 | D2 F2 | E4 |]
 
 X:8
@@ -28601,7 +31493,9 @@ N:Item #8
 M:6/8
 L:1/8
 Q:"Fast"
+%%id pickles
 K:Dmix
+I:linebreak $
 A | c B A G F E | D6 | C3 E2 C |$ D6 | C3 E2 C | D2 E D2 A | c B A G F E | F D2-D3 |]
 
 X:9
@@ -28612,7 +31506,9 @@ N:Item #9
 M:6/8
 L:1/8
 Q:"Moderate"
+%%id the-little-yellow-cub
 K:Gmix
+I:linebreak $
 B G B A F/ A3/2 | G/ B3/2-B-B3 | B G B A F/ A3/2 | G6 |$ B G B A F/ A3/2 | G/ B3/2-B-B3 | d/4 B/4 G/ F/ A3/2-A3 | G6 |]
 
 X:10
@@ -28623,7 +31519,9 @@ N:Item #10
 M:2/4
 L:1/8
 Q:"Fast"
+%%id elisabeth-s-song
 K:G
+I:linebreak $
 D | B B A A | G G D D | B B A A | G3 D |$ B B A A | G G D D | E E F F | z D G z |]
 
 X:11
@@ -28634,7 +31532,9 @@ N:Item #11
 M:6/8
 L:1/8
 Q:"Fast"
+%%id spinning-2
 K:D
+I:linebreak $
 A B ^G A B G | A3 d3 | D3 E3 | F6 |$ A B ^G A B G | A3 d3 | F3 E3 | D6 |$ D3 A3 | d3 A3 | D3 A3 | d6 |$ A B ^G A B G | A3 d3 | F3 E3 | D6 |]
 
 X:12
@@ -28645,7 +31545,9 @@ N:Item #13
 M:5/8
 L:1/8
 Q:1/4=108
+%%id winter-day
 K:Dmin
+I:linebreak $
 A F D E F/E/ | D3-D2 | A F D E F/E/ | D3-D2 |$ E F G A2 | B A G A2 | F E D E D/^C/ | D3-D2 |]
 
 X:13
@@ -28656,7 +31558,9 @@ N:Item #14
 M:3/4
 L:1/8
 Q:1/4=100
+%%id goodbye
 K:Ephr
+I:linebreak $
 B2 | E4 E2 | c B A2 c2 | B6-|B6 |$ B3 A G2 | A2 G4 | F6-|F4 B2 | E4 E2 |$ c B A2 c2 | B6-|B6 | B3 A G2 |$ F2 D4 | E6-|E4 |]
 
 X:14
@@ -28667,7 +31571,9 @@ N:Item #15
 M:3/4
 L:1/8
 Q:1/4=108
+%%id taking-a-nap
 K:Gmin
+I:linebreak $
 G2 | B4 A2 | c4 B2 | G6-|$G4 G2 | E4 D2 | F4 E2 | G6-|$G6 | B2 A2 c2 | B6 | B2 A2 c2 |$B6 | B4 A2 | G4 F2 | E6-|E4 |]
 
 X:15
@@ -28678,7 +31584,10 @@ N:Item #16
 M:7/8
 L:1/8
 Q:1/4=144
+%%id stephan
+%%tags needs-repair
 K:D
+I:linebreak $
 z E F G E A F | B A G F2 E2 | z E F G E A F | B A G F2 E2 |$[M:6/8] z d c B c B | [M:7/8] A G F E2 D2 | [M:6/8] z d c B c B | [M:7/8] A G F E2 D2 |]
 
 X:16
@@ -28689,7 +31598,9 @@ N:Item #17
 M:2/4
 L:1/8
 Q:1/4=66
+%%id daydreams
 K:Dphr
+I:linebreak $
 D E F2 | F G A2 | A G F E | D4 |$ A2 C2 | D4 | D D E C | D4 |]
 
 X:17
@@ -28700,7 +31611,9 @@ N:Item #18
 M:2/4
 L:1/8
 Q:1/4=108
+%%id fingers-and-toes
 K:Dmin
+I:linebreak $
 D E F/A3/2 | F/A3/2 F/A3/2 | D ^C D/A3/2 |$ B/B/B/B/B2 | A A/A/D2 |]
 
 X:18
@@ -28711,7 +31624,9 @@ N:Item #19
 M:2/4
 L:1/8
 Q:1/4=144
+%%id the-clown
 K:D
+I:linebreak $
 d | c A G E | D3 d | c A G E | D4 |$ D F E G | F A !fermata!d d | c A G E | D3 |]
 
 X:19
@@ -28722,7 +31637,10 @@ N:Item #20
 M:2/4
 L:1/8
 Q:1/4=108
+%%id merry-go-round
+%%tags needs-repair
 K:F
+I:linebreak $
 c A F2 | D G C2 | D F E G | F G A2 |$ c A F2 | D G C2 | D F E G | A G F2 ||$[M:5/8] A c A F F | A c A3 | A c A F F | G E F3 |$ A c A F F | A c A3 | A c A F F | G E F3 |]
 
 X:20
@@ -28733,7 +31651,9 @@ N:Item #21
 M:5/8
 L:1/8
 Q:1/4=108
+%%id icicles
 K:Dmin
+I:linebreak $
 A D A F D | E F E D2 | E F G A2 |$ B A G A2 | A D A F D | E D ^C D2 |]
 
 X:21
@@ -28744,7 +31664,9 @@ N:Item #22
 M:6/8
 L:1/8
 Q:1/4=108
+%%id to-market
 K:Dmin
+I:linebreak $
 D3 A3 | B B B A3 | A2 B A2 B | A2 F D3 |$ D3 A3 | B B B A3 | A2 G F2 ^C | D6 |]
 
 X:22
@@ -28755,7 +31677,9 @@ N:Item #23
 M:4/4
 L:1/8
 Q:1/4=108
+%%id the-cowboy
 K:Ddor
+I:linebreak $
 D | G3 B-B3 G | A3 F-F2 A2 |$ G3 E-E2 C2 | D2 z2 z2 z D | G3 B-B2 G2 |$ A3 F-F2 A2 | C D2 E-E G C2 | D2 z2 z2 z |]
 
 X:23
@@ -28766,7 +31690,9 @@ N:Item #110
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:2/4
 L:1/8
+%%id go-to-sleep
 K:C
+I:linebreak $
 BBBB | BBB2 | BBB2 | B/B/B/B/BB $
 BBB2 | BBB2 | B/B/BB/B/B | BBB2 | BBB2 |]
 
@@ -28779,7 +31705,9 @@ N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningf
 N:Printed accent (>) marks and breath (') marks preserved as !>! and !breath! decorations.
 M:2/4
 L:1/8
+%%id no-sir
 K:C
+I:linebreak $
 B/B/B/B/B/B3/2 | B/B/B/B/B/B3/2 | !>!B2!>!B2 | !breath!BBBB $
 BBB2 | !breath!B/B/B/B/B/B3/2 | B/B/B/B/B/B3/2 | !>!B2!>!B2 |]
 
@@ -28791,7 +31719,9 @@ N:Item #112
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:6/8
 L:1/8
+%%id going-to-the-fair
 K:C
+I:linebreak $
 B | BBB BBB | B3-B2 B | BBB BBB | B6 $
 BBB B3 | BBB B2 B | BBB B3/2B/2B | B3-B3 |]
 
@@ -28804,7 +31734,9 @@ N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningf
 N:Printed accent (>) marks preserved as !>! decorations.
 M:6/8
 L:1/8
+%%id mud-pies
 K:C
+I:linebreak $
 !>!B BB BBB | BBB B3 | !>!B BB BBB | B6 $
 !>!B BB BBB | BBB B3 | B6- | !>!B z z3 |]
 
@@ -28817,6 +31749,7 @@ N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningf
 N:Printed accent (>) marks preserved as !>! decorations. This chant changes meter mid-piece (6/8 -> 2/4 -> 6/8), all printed on a single staff line (no second line).
 M:6/8
 L:1/8
+%%id buffalo
 K:C
 !>!BBB BBB | [M:2/4] !>!BB BB | [M:6/8] !>!BBB BBB | !>!B BB BB B | !>!B BB BB B |]
 
@@ -28828,6 +31761,7 @@ N:Item #115
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:7/8
 L:1/8
+%%id sweet-potato
 K:C
 B/B/B/B/BBB BB | B/B/B/B/BBB B2 | B/B/B/B/BBB B/B/B/B/ | B/B/B/B/BBB B2 |]
 
@@ -28839,6 +31773,7 @@ N:Item #116
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:5/8
 L:1/8
+%%id rain
 K:C
 B3/2B/2B BB | B3/2B/2B B2 | B3/2B/2B BB | B/B/B/B/B/B/ B2 |]
 
@@ -28851,7 +31786,9 @@ N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningf
 N:Printed accent (>) marks preserved as !>! decorations.
 M:2/4
 L:1/8
+%%id walking-with-my-mom
 K:C
+I:linebreak $
 BB BB | B/B/B/B/B2 | B/BB/BB | B4 $
 BBBB | B/B/B/B/B2 | !>!B2!>!B2 | !>!B4 |]
 
@@ -28863,7 +31800,9 @@ N:Item #118
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:2/4
 L:1/8
+%%id walking-with-my-dad
 K:C
+I:linebreak $
 BB BB | B/B/B B2 | B/BB/BB | B4 $
 BB BB | B/B/B B2 | B/B/B/B/B/B/B/B/ | B4 |]
 
@@ -28875,7 +31814,9 @@ N:Item #119
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:2/4
 L:1/8
+%%id strong
 K:C
+I:linebreak $
 BB BB/B/ | BB B2 | BB BB | B4 $
 BB BB/B/ | BB B2 | B/BB/BB | B4 |]
 
@@ -28887,7 +31828,9 @@ N:Item #120
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:6/8
 L:1/8
+%%id giants-and-elves
 K:C
+I:linebreak $
 B2 B B2 B | B3/2B/2B B3 | BBB BBB | B6 $
 BBB BBB | B3/2B/2B B3 | B2 B B2 B | B6 |]
 
@@ -28900,6 +31843,7 @@ N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningf
 N:Printed accent (>) marks preserved as !>! decorations. Tune opens with a 2-sixteenth-note pickup (anacrusis); the final measure is correspondingly short (3 units) so that pickup+final = one full 2/4 bar, matching the precedent already established for pickup measures in item 112.
 M:2/4
 L:1/8
+%%id follow-me
 K:C
 B/B/ | BB/B/BB/B/ | B/B/B/B/B/B/B | BB/B/BB/B/ | !>!B!>!B!>!B |]
 
@@ -28911,11 +31855,10 @@ N:Item #122
 N:Rhythm-only chant -- all pitches encoded as B; only rhythm values are meaningful.
 M:2/4
 L:1/8
+%%id sun-chant
 K:C
+I:linebreak $
 B/B/B/B/BB | BB B2- | BB B/B/B | B4 | BB B/B/B $
 BB B2- | B/B/B/B/BB | B2- B/B/B/B/ | B/B/BBB | B4 |]
 `
-
-
-
-}
+};

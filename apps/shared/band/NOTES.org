@@ -1158,5 +1158,90 @@ Added =lessons/hihat-grooves.qmd= ("Hi-Hat Grooves: From Quarter Notes to Sixtee
   sections with the notes written in. The ABC box is never rewritten. The melody follows bar numbers, moves with the Key menu, and is dropped when the
   bar count changes. It is not saved with setups and is lost on reload.
 ** TODO Save the melody with a setup / in the ABC box (needs bar text spans from TuneChart.parse, =bar.at= is only a start offset).
-** TODO Anacrusis (pickup) bars and meter changes inside a tune are not handled by the recording.
+** TODO Anacrusis (pickup) bars are not handled by the recording.
+- Meter changes already in the changes ([M:] fields) are followed: =ChordEntry.quantizeLine= takes a list of per-bar geometry, =melodyAbc= writes the [M:] marks, =playable= takes per-bar beat units. A change that is NOT in the changes (played on the fly) is not possible yet.
 
+* Chord Entry: meter changes while you play (CC 80) -- 2026-10-13
+- A take "on a click" (live chords with "A click", or a melody with "Play along with: A click") now keeps its own time instead of using the band
+  player: =BandPlayer.clickLoad/clickAt= put sticks on the AudioContext clock, the page counts beats from the first downbeat after the count-in.
+  The beat never moves; only where bars begin does. Hold the pedal (MIDI CC 80) across two downbeats and the bars from the first on are as long as the
+  gap (whole beats; notes within 0.15 beat are one strike). A change inside a bar cuts it short; less than a beat after a bar line moves back to it.
+  =ChordEntry.layout= / =meterPedal=; the grid has bars of their own meters (=setLayout=, =geo(k)=, =[M:]= marks in =toAbc=; =load= reads them).
+  In compound meters beats are dotted quarters (3 beats = 9/8). Melody takes over chords already entered use those bars and ignore the pedal.
+- Backing Track melody: follows [M:] changes already in the changes, but there is no pedal there (the changes' bars are fixed).
+** TODO Chords and melody in one take, split at a key (below: chords, above: melody). The take engine has both streams already.
+** TODO A change on the fly while the band plays (the band cannot re-bar mid-take); the two downbeats are rounded to the click's beats, so a rubato gap is rounded.
+** VERIFY BY EAR / with a real pedal: the click's latency (outputLatency is subtracted; the Nudge fields are in ms), whether CC 80 on that pedal sends >= 64 when down.
+
+* Entry rules page, chords as chords, the split, take logs -- 2026-10-13
+- =ChordEntry.take(cfg)= is the one engine for every take (Chord Entry's click, drums and band; the Backing Track's Melody tab): it sorts the keys
+  into chords and melody (kind "chords" / "melody" / "both" with a split key), reads the pedal, places chords, quantizes the melody. It has no page or
+  clock in it; the page feeds it times in ms from the first downbeat. =take.log()= is the events + settings (JSON); =ChordEntry.replay(log)= runs
+  them again anywhere. =take.trace= says what each rule did (notes, chords with their five best readings, pedal, bars).
+- =ChordEntry.RULES= holds the numbers (0.75 gap, 0.5 early, 70 ms settle, 45 ms together, ...); the Notation Rules page (=tools/notation-rules.qmd=)
+  prints them, runs presets or a pasted log, and shows the roll, the ABC and a table per kind of decision. =ChordEntry.swingFor= equals
+  =BandPlayer.swingFor= (tested).
+- Several notes struck together in a melody: top note only (default) or an ABC chord =[CEG]= (the "written as a chord" option; window = "together within" ms).
+  A roll slower than the window is separate notes that can land on the same grid point (the later one stays): see "dropped" in the notes table.
+- Split: keys below the split key (default middle C, set by menu or by pressing a key) are chords, the rest melody; click only, the pedal works.
+** VERIFY: a real take on a keyboard: the "together" window (45 ms) against how you actually play chords and double stops, and the settle time (70 ms).
+** VERIFY: how a held melody note over a left-hand chord reads (the melody side is a separate line, the chord side its own cluster; nothing is shared).
+** TODO The Backing Track page has no pedal (its bars are the changes' own).
+
+* How the melody is written: beams, ties, staccato, graces, triplets, "what did I mean?" -- 2026-10-13
+- *Bug found and fixed:* the melody was written with a space between notes, which in ABC breaks every beam; nothing was beamed. =tuneBar= now joins eighths
+  (and shorter) within a beat (default), within half a bar, or not at all (=beam=); a rest or a longer note ends a beam.
+- Writing options (ABC only, the notes are unchanged): =beam= "beat" | "half" | "none"; =tie= "none" | "mid" | "beat" (a note that starts off the beat and
+  crosses the middle of the bar / any beat is written as two tied notes). Take options (change what is quantized; in the log): =detached= "rest" | "staccato"
+  (a note and an equal rest -> one staccato note, played at half length), =triplets= "off" | "auto" (a beat of two units whose onsets fit thirds better by
+  =RULES.tripletMargin=; written =(3CDE= or =(3:2:2C2D=; =TuneChart= now reads =(p:q:r=), =graceMs= (a note whose next note starts within this is a grace note
+  =\{/D\}E=; the band does not play them), =poly= (stacked notes =[CE]= for parallel thirds; above the split they are never named as a chord).
+- =ChordEntry.alternatives(log, from, to)= re-runs the take's own events under each other reading (staccato, triplets, straight / swung, sixteenths, grace notes,
+  chords / top note), keeps those that write the bars differently and scores them: a played note left out (3 each), how far notes were moved to the grid (3 per
+  unit), then notes, rests, ties, tuplets. The cheapest is "suggested" only if cheaper than the current reading. =apps/shared/melody-dwim.js= is the panel (Chord Entry,
+  Backing Track Melody tab, Notation Rules); it works only on the take just made (the melody must still be that take's), and applies a variant to the picked bars only.
+** TODO Quarter-note triplets (over two beats), sixteenth sextuplets, triplets in compound meters. Grace notes are not played back. Not all of the DWIM options can be set
+   per range (beam and tie are global settings; the panel does not offer them).
+** VERIFY BY EAR / eye: the grace window (80 ms, never more than a 32nd), the triplet margin (0.05 beat), staccato at half length, beams in half-bar groups for jazz.
+
+* Pickups, and one section at a time -- 2026-10-13
+- *Bugs fixed:* a Backing Track melody take that started at a later bar ("Start at bar", a cycle) timed its count-in notes from the top of the form, so they landed
+  in bar 1; it now counts from the bar it starts at. =grid.load= put the chart's pickup bar into the take's bars, so a tune with a pickup was one bar out against the band's
+  form (the band's form has no pickup bar); the take now loads with =dropPickup=.
+- Pickups: =take= option =pickup= "auto" (default "off" on the Rules page; "auto" on Chord Entry and the Backing Track): notes struck before -0.5 beat make a short bar in
+  front of bar 1 (=grid.insertPickup=, a geometry flagged =pickup=, no [M:] mark; =TuneChart= reads it as an anacrusis). =grid.load= turns a chart's own pickup bar into one.
+  On the Backing Track, a take that starts at bar a>1 puts count-in notes at the end of bar a-1 (the interlude before a verse); at bar 1 they are the pickup:
+  the chart's own pickup bar (=mel[0]=) or, if the chart has none, =melPickup= (written as a short first bar by =melodyAbc({ pickup })=; not played back).
+- Recording a section: the Melody tab's Record menu (the Start-at-bar default, each section from the P: lines, or bars from..to) starts the band at that bar, takes the
+  first chorus, ends the take itself after the last bar and stops the band; only those bars (and the bar before, if it got notes) are replaced.
+** TODO Pickups before the tune start are not played by the band. The Chord Entry page has no section menu (its chords carry no sections).
+** VERIFY: a count-in of two bars (only the last bar is listened to); a pickup longer than a bar.
+
+
+* The tune's own notation on the Backing Track page -- 2026-10-13
+Nothing here has been heard. Seen and driven in headless Chrome (tests/band/tune/tune.cdp.js "TUNE UI OK"), and every tune of the library
+goes through the melody reader (tests/band/tune/t_score.js "SCORE OK").
+- apps/shared/band/tune-score.js (BandTuneScore): =melody(abc, parsed, geoOf)= reads the notes of the ABC bar by bar (each chart bar knows
+  where it was written: bar.at) with AbcTune.melodyNotes, into the page's =mel= shape (units of an eighth, at the ABC's own pitch);
+  ties across a barline are joined, a pickup's notes sit at the end of its full slot. =fragment()= is the header and the written lines
+  of a run of bars (with their words); =shift= maps a position in the ABC to the fragment.
+- Page: a Show bar above the chart (Chord grid / Tune notation / Both, remembered), "Load a tune from the collection..." (the library's
+  picker; tunes-object.js and abcjs load on first use), Notation options: whole tune or "this section, and what comes next", Size
+  (abcjs staffwidth: a smaller size fits more bars), Bars per line, chord symbols on or off. The notation is the ABC drawn by abcjs in the
+  chart's key (the "Chart for" menu); the band's live bar is lit by mapping each rendered element's startChar to the chart's bars.
+  In section mode the view turns to the next section with the band, like the grid's tabs; the preview is the next section's first four bars.
+- Loading a tune sets the changes (applyAbc), clears pins, and puts the notes in =mel= so the band plays them on the comping instrument
+  (the Play the melody with the band box in the Melody panel switches them off; the level is still the unheard 0.8).
+** DONE (2026-10-13, later) Pickups, tuplets, inline and mid-tune K:/M:/L:, words in the preview
+- The reader in tune-score.js is its own (not AbcTune.melodyNotes any more): tuplets (=(3= .. =(9=, =(p:q:r=), broken rhythm, chords (top note), grace notes (skipped),
+  decorations, inline =[K:] [M:] [L:]= and mid-tune field lines, =octave=N= in K:, first voice only, a blank line ends the tune, ties over barlines.
+  Checked against abcjs's own sequencer on the whole library (tests/band/tune/t_oracle.js: 46 of 1043 tunes differ, all abcjs quirks: it shortens the note
+  after a grace note, reads a stray header line as music, ties across different pitches).
+- Pickup: BandHarmony.buildForm now plays the tune's LAST bar whole when the pickup completes it (it used to play it short, so every chorus was a beat too
+  short and bar 1 came a beat early), with the pickup's notes at the end of that bar (note.pickup); the first form bar carries =pickup= for the count-in.
+  BandPlayer sounds it at the end of the last count-in bar (not with an intro, not when starting part-way, not with count-in 0, not after the ending).
+  Tests: tests/band/tune/t_pickup.js.
+- The next section's words were already shown (the fragment keeps the =w:= lines under its music); the Next section menu now offers all of it, not just four bars.
+** TODO With an intro or count-in "None" the pickup is not played before the first chorus.
+** TODO Tuplets under a chord symbol: abcjs leaves the third note unscaled; the reader follows the ABC standard.
+** VERIFY BY EAR: melody against the band, in a few tunes with repeats and endings.

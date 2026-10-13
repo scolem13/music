@@ -78,11 +78,12 @@
 <script src="/apps/tune-assessment/abc-tune.js"></script>
 <script src="/apps/shared/session-log.js"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>
-<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/tonality.js?v=9"></script>
 <script src="/apps/shared/abc-transpose.js?v=1"></script>
+<script src="/apps/shared/abc-octave.js?v=1"></script>
 <script>window.TUNE_APP_CONFIG = { source:"readingBenchmarks", playback:false, storeKey:"readingBenchLast" };</script>
 <script src="/apps/tune-assessment/app.js?v=21"></script>
 </div>
-<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/audio.js?v=9"></script>
 <script src="/apps/shared/establish-button.js"></script>
 ```

@@ -1404,7 +1404,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 		}
 
 		const body = outputWords.join(" ");
-		const abcString = "X:1\n%%MIDI program 4 \nM:" + timeSignature + "\nL:" + unitL +
+		const abcString = "X:1\n%%MIDI program 0 \nM:" + timeSignature + "\nL:" + unitL +
 			"\nQ:" + tempoField_s(meter) + "\nK:" + tonalKey + "\n" + body;
 		document.getElementById("full-notation").value = body ? abcString : "";
 		renderFullPaper_s(body ? abcString : "X:1\nM:" + timeSignature + "\nK:" + tonalKey + "\n");
@@ -1652,7 +1652,7 @@ body:has(#quarto-header.headroom--unpinned) #songs-root .sq-sticky { top:var(--s
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
 <script src="/apps/patterns/pattern-set.js"></script>
-<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/tonality.js?v=9"></script>
 <script src="/apps/shared/abc-transpose.js"></script>
 <script>
 	load_s();

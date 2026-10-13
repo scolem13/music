@@ -40,6 +40,16 @@ toc: false
     <a href="blues-changes.html">Changing the Changes in a 12-Bar Blues</a>
     <p>What the chords of a blues are and how players vary them, from three chords to a jazz blues, with a chorus you can build yourself and an ear test. For every instrument: start here.</p>
   </li>
+  <li data-for="all bass guitar piano drums violin sax other">
+    <span class="ll-step"></span>
+    <a href="pop-changes.html">Changing the Changes in C, Am, F, G</a>
+    <p>The four chords under most pop songs, made richer one move at a time: extensions, passing chords, secondary dominants and ii-V-Is. With a chorus you can build yourself and an ear test.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other">
+    <span class="ll-step"></span>
+    <a href="four-chord-loops.html">Four-Chord Loops</a>
+    <p>The loops under a great many songs (I V vi IV, vi IV I V, the fifties loop, the turnaround, a borrowed chord, two minor loops) one at a time, each on a chart and a staff, with a loop builder and an ear test.</p>
+  </li>
   <li data-for="all bass">
     <span class="ll-step"></span>
     <a href="blues-bass.html">Blues for Bass: From Roots to a Walking Line</a>

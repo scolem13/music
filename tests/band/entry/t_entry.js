@@ -135,9 +135,9 @@ console.log("VOICING NAMES OK");
   // ABC: spelled from the key, accidentals once per bar, chords above the notes, ties where a chord changes
   var G = CE.grid({ n: 4, d: 4 }); G.put("Cmaj7", "half"); G.put("G7", "half"); G.setLength(1);
   G.setMelody([M.map(function (m, i){ return { pos: i, dur: 1, midi: m }; })]);
-  assert.strictEqual(G.toAbc({ key: "C" }).split("\n").slice(3).join("|"), 'L:1/8|K:C|"Cmaj7"C D E F "G7"G A _B c |]');
+  assert.strictEqual(G.toAbc({ key: "C" }).split("\n").slice(3).join("|"), 'L:1/8|K:C|"Cmaj7"CD EF "G7"GA _Bc |]');
   G = CE.grid({ n: 4, d: 4 }); G.put("Bbm7", "bar"); G.setMelody([[{ pos: 0, dur: 1, midi: 70 }, { pos: 1, dur: 1, midi: 71 }, { pos: 2, dur: 1.5, midi: 63 }, { pos: 3.5, dur: 0.5, midi: 61 }, { pos: 4, dur: 4, midi: 46, tie: true }]]);
-  assert.strictEqual(G.toAbc({ key: "Db" }).split("\n").slice(3).join("|"), 'L:1/16|K:Db|"Bbm7"B2 _c2 E3 D B,,8- |]');
+  assert.strictEqual(G.toAbc({ key: "Db" }).split("\n").slice(3).join("|"), 'L:1/16|K:Db|"Bbm7"B2_c2 E3 D B,,8- |]');
   G = CE.grid({ n: 4, d: 4 }); G.put("C", "half"); G.put("F", "half"); G.setMelody([[{ pos: 2, dur: 4, midi: 64 }, { pos: 7, dur: 1, midi: 66 }, { pos: 7, dur: 0, midi: 66 }].slice(0, 2)]);
   assert.strictEqual(G.toAbc({ key: "F" }).split("\n").slice(5).join("|"), '"C"z2 E2- "F"E2 z _G |]', "a note held over a chord change is tied; the chromatic note nearest a key tie is flat (Gb in F)");
   // accidentals persist for the bar
@@ -148,5 +148,214 @@ console.log("VOICING NAMES OK");
   // undo takes the melody back; a new grid has none
   G.setMelody([[{ pos: 0, dur: 8, midi: 60 }]]); assert(G.hasMelody()); assert(G.back()); assert.strictEqual(G.melody()[0][0].midi, 63);
   G.clearMelody(); assert(!G.hasMelody()); G.back(); assert(G.hasMelody());
+  // meter changes: bars of different lengths in one line (4/4, 3/4, then 6/8 counted in dotted quarters)
+  var geo = [{ per: 8, beat: 2 }, { per: 6, beat: 2 }, { per: 6, beat: 3, compound: true }];
+  q = CE.quantizeLine(played([[60, 0, 1], [62, 1, 2], [64, 2, 3], [65, 3, 4], [67, 4, 5], [69, 5, 6], [71, 6, 7], [72, 7, 8], [74, 8, 9]]), { bars: geo, swing: s });
+  assert.deepStrictEqual(q.map(function (b){ return b.map(function (n){ return n.pos + ":" + n.dur; }).join(" "); }), ["0:2 2:2 4:2 6:2", "0:2 2:2 4:2", "0:3 3:3"]);
+  assert.strictEqual(q[0].length, 4); assert.strictEqual(q[1].length, 3, "the 3/4 bar takes three quarters, not four");
+  assert.deepStrictEqual(q[2].map(function (n){ return n.midi; }), [72, 74]);
+  var P3 = TuneChart.parse('X:1\nT:m\nM:4/4\nL:1/8\nK:C\n"C"z8 | [M:3/4] "F"z6 | [M:6/8] "G"z6 |]');
+  var ml = [[{ pos: 0, dur: 8, midi: 60 }], [{ pos: 0, dur: 2, midi: 65 }, { pos: 2, dur: 4, midi: 69 }], [{ pos: 0, dur: 3, midi: 67 }, { pos: 3, dur: 3, midi: 71 }]];
+  var out3 = CE.melodyAbc(P3, ml, {});
+  assert.strictEqual(out3.split("\n").slice(5).join(" ").trim(), '"C"C8 | [M:3/4] "F"F2 A4 | [M:6/8] "G"G3 B3 |]', out3);
+  var P4 = TuneChart.parse(out3); assert.deepStrictEqual(P4.bars.map(function (b){ return b.meter.n + "/" + b.meter.d; }), ["4/4", "3/4", "6/8"]);
+  assert.deepStrictEqual(CE.playable(ml, [2, 2, 3]).map(function (b){ return b.map(function (n){ return n.pos + ":" + n.dur; }).join(" "); }), ["0:4", "0:1 1:2", "0:1 1:1"]);
   console.log("MELODY OK");
+})();
+
+// ---- meters that change while you play: the layout, the pedal, a grid with bars of their own ----
+(function (){
+  function lay(o){ return CE.layout(o).map(function (b){ return b.n + "/" + b.d + "@" + b.start; }).join(" "); }
+  assert.strictEqual(lay({ n: 4, d: 4, bars: 3 }), "4/4@0 4/4@4 4/4@8");
+  assert.strictEqual(lay({ n: 4, d: 4, bars: 4, changes: [{ at: 8, len: 3 }] }), "4/4@0 4/4@4 3/4@8 3/4@11", "a change on a bar line");
+  assert.strictEqual(lay({ n: 4, d: 4, bars: 4, changes: [{ at: 6, len: 3 }] }), "4/4@0 2/4@4 3/4@6 3/4@9", "a change inside a bar cuts it short");
+  assert.strictEqual(lay({ n: 4, d: 4, bars: 3, changes: [{ at: 4.5, len: 3 }] }), "4/4@0 3/4@4 3/4@7", "less than a beat after the bar line goes back to it");
+  assert.strictEqual(lay({ n: 6, d: 8, bars: 3, changes: [{ at: 2, len: 3 }] }), "6/8@0 9/8@2 9/8@5", "in compound meters beats are dotted quarters");
+  assert.strictEqual(lay({ n: 4, d: 4, bars: 4, changes: [{ at: 4, len: 3 }, { at: 10, len: 5 }] }), "4/4@0 3/4@4 3/4@7 5/4@10");
+  // the pedal: held across two downbeats
+  var P = CE.meterPedal();
+  P.strike(0.2); assert.strictEqual(P.up(), null, "notes with no pedal are not downbeats");
+  P.down(); P.strike(8.05); P.strike(8.1); P.strike(10.9); assert.deepStrictEqual(P.up(), { at: 8, len: 3 }, "two downbeats three beats apart; a chord is one strike");
+  P.down(); P.strike(3); assert.deepStrictEqual(P.up(), { error: "one downbeat" });
+  P.down(); P.strike(3); P.strike(3.2); assert.deepStrictEqual(P.up(), { error: "the same beat" });
+  P.down(); assert.deepStrictEqual(P.up(), { error: "no downbeats" });
+  // a grid whose bars have their own meters
+  var G = CE.grid({ n: 4, d: 4 }); G.setLayout(CE.layout({ n: 4, d: 4, bars: 3, changes: [{ at: 4, len: 3 }] }));
+  assert.strictEqual(G.length(), 3); assert.strictEqual(G.geo(1).per, 6); assert.strictEqual(G.geo(0).per, 8);
+  assert.deepStrictEqual(G.place("C", 0, 0, "half"), { bar: 0, pos: 0 }); assert.deepStrictEqual(G.place("F", 1, 1.6, "beat"), { bar: 1, pos: 4 });
+  assert.deepStrictEqual(G.place("G", 0, 3.9, "beat"), { bar: 1, pos: 0 }, "rounds into the next bar, whatever its length");
+  assert.deepStrictEqual(G.place("D", -1, 3.9, "beat"), { bar: 0, pos: 0 }, "just before the first bar");
+  assert.strictEqual(G.place("D", -1, 2, "beat"), null);
+  var abcM = G.toAbc({ key: "C" }); assert.strictEqual(abcM.split("\n").slice(3).join("|"), 'L:1/8|K:C|"D"z8 | [M:3/4] "G"z4 "F"z2 | z6 |]', abcM);
+  var Q = TuneChart.parse(abcM); assert.deepStrictEqual(Q.bars.map(function (b){ return b.meter.n + "/" + b.meter.d; }), ["4/4", "3/4", "3/4"]);
+  // step entry across bars of different lengths
+  G = CE.grid({ n: 4, d: 4 }); G.setLayout(CE.layout({ n: 4, d: 4, bars: 2, changes: [{ at: 4, len: 3 }] })); G.setCursor(0, 0);
+  G.put("C", "bar"); assert.deepStrictEqual(G.cursor(), { bar: 1, pos: 0 }); G.put("F", "bar"); assert.deepStrictEqual(G.cursor(), { bar: 2, pos: 0 }); assert.strictEqual(G.length(), 2);
+  G.back(); G.back(); assert.strictEqual(G.geo(1).per, 6, "undo keeps the meters");
+  // a melody over bars of different lengths, written and read back
+  G = CE.grid({ n: 4, d: 4 }); G.setLayout(CE.layout({ n: 4, d: 4, bars: 2, changes: [{ at: 4, len: 3 }] }));
+  var qq = CE.quantizeLine([{ midi: 60, on: 0, off: 1 }, { midi: 62, on: 4, off: 5 }, { midi: 64, on: 5, off: 6 }, { midi: 65, on: 6, off: 7 }], { bars: G.geoList(), swing: 0 });
+  G.setMelody(qq); var am = G.toAbc({ key: "C" }); assert.strictEqual(am.split("\n").slice(5).join(" "), 'C2 z6 | [M:3/4] D2 E2 F2 |]', am);
+  console.log("TAKE MODEL OK");
+})();
+
+
+// ---- the take object: routing, chords with swing, the pedal, the split, replay ----
+(function (){
+  var bs = 0.5, ms = function (beat){ return beat * bs * 1000; };                   // 120 bpm: a beat is 500 ms
+  function feed(t, evs){ evs.forEach(function (e){ if (e[1] === "on") t.on(e[2], 0.7, ms(e[0])); else if (e[1] === "off") t.off(e[2], ms(e[0])); else t.cc(80, e[2], ms(e[0])); }); return t.finish(); }
+  function nt(beat, m, len){ return [[beat, "on", m], [beat + (len || 0.8), "off", m]]; }
+  function ch(beat, list){ return list.map(function (m, i){ return [beat + i * 0.01, "on", m]; }).concat(list.map(function (m){ return [beat + 0.4, "off", m]; })); }
+  function body(t, from){ return t.abc().split("\n").slice(from || 3).join("|"); }
+  // chords on a swung click: the second one, a half bar later, is a chord at the half bar
+  var t = CE.take({ kind: "chords", n: 4, d: 4, bars: 2, beatSec: bs, key: "F", swing: 0.67, snap: "half" });
+  feed(t, [].concat(ch(0.02, [53, 57, 60, 63]), ch(2.0, [46, 50, 53, 56]), ch(4, [48, 51, 55, 58])));
+  assert.strictEqual(body(t), 'L:1/4|K:F|"F7"z2 "Bb7"z2 | "Cm7"z4 |]');
+  assert.strictEqual(t.trace.chords[0].reading, "F7"); assert(t.trace.chords[0].candidates.length >= 2 && /placed in bar 1/.test(t.trace.chords[0].out));
+  // the pedal held across two downbeats three beats apart: bars of three from beat 4
+  t = CE.take({ kind: "chords", n: 4, d: 4, bars: 4, beatSec: bs, key: "F", snap: "half" });
+  feed(t, [].concat(ch(0, [53, 57, 60, 63]), [[3.1, "cc", 127]], ch(4, [46, 50, 53, 56]), ch(7, [48, 51, 55, 58]), [[7.3, "cc", 0]], ch(10, [53, 57, 60, 63])));
+  assert.deepStrictEqual(t.changes(), [{ at: 4, len: 3 }]); assert.strictEqual(t.trace.pedal[0].out, "bars of 3 beats from beat 4"); assert.deepStrictEqual(t.trace.pedal[0].strikes, [4, 7]);
+  assert.strictEqual(body(t), 'L:1/8|K:F|"F7"z8 | [M:3/4] "Bb7"z6 | "Cm7"z6 | "F7"z6 |]');
+  var again = CE.replay(JSON.parse(JSON.stringify(t.log()))); assert.strictEqual(again.abc(), t.abc(), "the log gives the same bars");
+  // a melody, one note at a time: swung eighths written straight, and the trace says what each rule did
+  t = CE.take({ kind: "melody", n: 4, d: 4, bars: 1, beatSec: bs, key: "F", swing: 0.67 });
+  feed(t, [].concat(nt(0, 65, 0.5), nt(0.67, 67, 0.3), nt(1, 69, 0.5), nt(1.67, 70, 0.3), nt(2, 72, 1.9)));
+  assert.strictEqual(body(t), 'L:1/8|K:F|FG AB c4 |]');
+  assert.strictEqual(t.trace.notes.length, 5); assert(/legato/.test(t.trace.notes[0].endRule)); assert(/swung/.test(t.trace.notes[1].swing)); assert.strictEqual(t.trace.notes[1].snapped, 1);
+  // notes struck together: the top one, or all of them as a chord
+  var cl = [].concat(ch(0, [60, 64, 67]), nt(1, 62, 0.9));
+  t = feed(CE.take({ kind: "melody", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", poly: false }), cl);
+  assert.strictEqual(body(t), 'L:1/8|K:C|G z D2 z4 |]'); assert.deepStrictEqual(t.trace.notes[0].leftOut, [60, 64]);
+  t = feed(CE.take({ kind: "melody", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", poly: true }), cl);
+  assert.strictEqual(body(t), 'L:1/8|K:C|[CEG] z D2 z4 |]');
+  assert.deepStrictEqual(CE.playable(t.grid.melody(), 2)[0].map(function (n){ return n.midi + "@" + n.pos; }), ["60@0", "64@0", "67@0", "62@1"]);
+  // accidentals inside a chord are written once per bar, like single notes
+  var G0 = CE.grid({ n: 4, d: 4 }); G0.setLength(1); G0.setMelody([[{ pos: 0, dur: 4, midi: 63, midis: [60, 63, 67] }, { pos: 4, dur: 4, midi: 63 }]]);
+  assert.strictEqual(G0.toAbc({ key: "C" }).split("\n").slice(5).join(" "), '[C_EG]4 E4 |]');
+  // chords and melody together, split at middle C: the left hand a chord, the right a line
+  t = CE.take({ kind: "both", n: 4, d: 4, bars: 2, beatSec: bs, key: "C", split: 60, snap: "half" });
+  feed(t, [].concat(ch(0, [48, 52, 55, 58]), nt(0.1, 72, 0.9), nt(1, 74, 0.9), nt(2, 76, 1.9), ch(4, [41, 45, 48, 51]), nt(4.1, 77, 3.9)));
+  assert.strictEqual(body(t), 'L:1/8|K:C|"C7"c2 d2 e4 | "F7"f8 |]'); assert.strictEqual(t.trace.chords.length, 2); assert.strictEqual(t.trace.notes.length, 4);
+  // the pedal is ignored over bars already entered
+  var G = CE.grid({ n: 4, d: 4 }); G.put("C", "bar"); G.put("F", "bar");
+  t = CE.take({ kind: "melody", n: 4, d: 4, bars: 2, beatSec: bs, key: "C", free: false, grid: G });
+  feed(t, [[1, "cc", 127], [1.1, "on", 60], [1.5, "off", 60], [3, "on", 62], [3.5, "off", 62], [3.6, "cc", 0]]);
+  assert.deepStrictEqual(t.changes(), []); assert(/ignored/.test(t.trace.pedal[0].out));
+  console.log("TAKE OBJECT OK");
+})();
+
+// ---- the swing the page and the player agree on ----
+(function (){
+  require(path.join(R, "apps/shared/band/player.js"));
+  for (var bpm = 40; bpm <= 300; bpm += 7) assert.strictEqual(CE.swingFor(bpm), BandPlayer.swingFor(bpm), "swing at " + bpm);
+  assert.strictEqual(CE.RULES.gap, 0.75); assert.deepStrictEqual(CE.RULES.ticks, [16, 12, 8, 6, 4, 3, 2, 1]);
+  console.log("RULES OK");
+})();
+
+// ---- how the melody is written: beams, syncopation ties, staccato, grace notes, triplets, parallel thirds ----
+(function (){
+  var bs = 0.5, ms = function (beat){ return beat * bs * 1000; };
+  function feed(t, evs){ evs.forEach(function (e){ if (e[1] === "on") t.on(e[2], 0.7, ms(e[0])); else if (e[1] === "off") t.off(e[2], ms(e[0])); }); return t.finish(); }
+  function nt(beat, m, len){ return [[beat, "on", m], [beat + (len || 0.8), "off", m]]; }
+  function mk(cfg, evs){ return feed(CE.take(Object.assign({ kind: "melody", n: 4, d: 4, bars: 1, beatSec: bs, key: "C" }, cfg)), evs); }
+  function mus(t, o){ return t.abc(o).split("\n").slice(5).join(" "); }
+  var eighths = [].concat(nt(0, 60, 0.45), nt(0.5, 62, 0.45), nt(1, 64, 0.45), nt(1.5, 65, 0.45), nt(2, 67, 0.45), nt(2.5, 69, 0.45), nt(3, 71, 0.45), nt(3.5, 72, 0.45));
+  // beams: within a beat by default; four eighths to the half bar when asked; none when not; rests and quarters end a beam
+  assert.strictEqual(mus(mk({}, eighths)), 'CD EF GA Bc |]');
+  assert.strictEqual(mus(mk({ beam: "half" }, eighths)), 'CDEF GABc |]');
+  assert.strictEqual(mus(mk({ beam: "none" }, eighths)), 'C D E F G A B c |]');
+  assert.strictEqual(mus(mk({}, [].concat(nt(0, 60, 0.45), nt(0.5, 62, 0.9), nt(1.5, 64, 0.45), nt(2, 65, 1.9)))), 'C D2 E F4 |]', 'a longer note is not in the beam');
+  assert.strictEqual(mus(mk({ n: 6, d: 8, beatSec: bs }, [].concat(nt(0, 60, 0.3), nt(0.33, 62, 0.3), nt(0.67, 64, 0.3), nt(1, 65, 0.3), nt(1.33, 67, 0.3), nt(1.67, 69, 0.3)))), 'CDE FGA |]', '6/8 beams in threes');
+  // syncopation: a quarter on the "and" of 2 crosses beat 3. Kept as played, or tied across the middle of the bar, or across every beat
+  var sync = [].concat(nt(0, 60, 0.9), nt(1, 62, 0.45), nt(1.5, 64, 0.95), nt(2.5, 65, 0.45), nt(3, 67, 0.9));
+  assert.strictEqual(mus(mk({}, sync)), 'C2 D E2 F G2 |]');
+  assert.strictEqual(mus(mk({ tie: "mid" }, sync)), 'C2 DE- EF G2 |]'); assert.strictEqual(mus(mk({ tie: "beat" }, sync)), 'C2 DE- EF G2 |]');
+  // a half note on beat 2 crosses the middle: tied across with "mid", kept otherwise
+  var half = [].concat(nt(0, 60, 0.9), nt(1, 62, 1.9), nt(3, 64, 0.9));
+  assert.strictEqual(mus(mk({}, half)), 'C2 D4 E2 |]'); assert.strictEqual(mus(mk({ tie: "mid" }, half)), 'C2 D2- D2 E2 |]');
+  assert.strictEqual(mus(mk({ tie: "mid" }, nt(0, 60, 3.9))), 'C8 |]', "a note from the first beat keeps its length");
+  // detached notes: a note and an equal rest, as a rest or as a staccato note of both
+  var det = [].concat(nt(0, 60, 0.45), nt(1, 62, 0.45), nt(2, 64, 0.45), nt(3, 65, 0.45));
+  assert.strictEqual(mus(mk({}, det)), 'C z D z E z F z |]');
+  assert.strictEqual(mus(mk({ detached: "staccato" }, det)), '.C2 .D2 .E2 .F2 |]');
+  assert.strictEqual(CE.playable(mk({ detached: "staccato" }, det).grid.melody(), 2)[0][0].dur, 0.5, "a staccato quarter sounds half its length");
+  // grace notes: a very short note just before another
+  var gr = [].concat(nt(0, 62, 0.05), nt(0.06, 63, 0.9), nt(2, 65, 0.9));
+  var t = mk({ graceMs: 80 }, gr); assert.strictEqual(mus(t), '{/D}_E2 z2 F2 z2 |]'); assert.deepStrictEqual(t.trace.notes[0].graces, [62]);
+  assert(!/\{/.test(mus(mk({ graceMs: 0 }, gr))), "no grace notes unless asked");
+  // triplets in 2/4 (and 4/4): three notes in a beat, at thirds; a swung pair stays eighths
+  var tri = [].concat(nt(0, 60, 0.3), nt(0.33, 62, 0.3), nt(0.67, 64, 0.3), nt(1, 65, 0.9));
+  var t2 = mk({ n: 2, d: 4, triplets: "auto" }, tri); assert.strictEqual(mus(t2), '(3CDE F2 |]');
+  assert(!/\(3/.test(mus(mk({ n: 2, d: 4, triplets: "off" }, tri))), "triplets only when asked");
+  var swungPair = [].concat(nt(0, 60, 0.5), nt(0.67, 62, 0.3), nt(1, 64, 0.9));
+  assert(!/\(3/.test(mus(mk({ n: 2, d: 4, triplets: "auto", swing: 0.67 }, swungPair))), "a swung pair is not a triplet when read as swung");
+  assert.strictEqual(mus(mk({ n: 2, d: 4, triplets: "auto", swing: 0 }, swungPair)), '(3:2:2C2D E2 |]', "the same pair read as straight is a quarter and an eighth triplet");
+  // parallel thirds above the split: one line, each pair written as a stacked chord and not named as a chord
+  var thirds = [].concat([[0, "on", 60], [0.01, "on", 64], [0.45, "off", 60], [0.45, "off", 64]], [[1, "on", 62], [1.01, "on", 65], [1.45, "off", 62], [1.45, "off", 65]], [[2, "on", 64], [2.01, "on", 67], [2.9, "off", 64], [2.9, "off", 67]]);
+  var tt = CE.take({ kind: "both", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", split: 48, poly: true }); feed(tt, thirds.concat([[0, "on", 36], [0.02, "on", 43], [0.03, "on", 47], [0.4, "off", 36], [0.4, "off", 43], [0.4, "off", 47]]));
+  assert(/\[CE\]/.test(mus(tt)) && /\[DF\]/.test(mus(tt)) && /\[EG\]/.test(mus(tt)), "thirds written as stacked notes: " + mus(tt)); assert.strictEqual(tt.trace.chords.length, 1, "only the left hand is a chord");
+  var one = CE.take({ kind: "both", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", split: 48, poly: false }); feed(one, thirds);
+  assert(!/\[/.test(mus(one)), "with the setting off only the top note of each pair is written: " + mus(one));
+  console.log("WRITING OK");
+})();
+
+// ---- "do what I mean": the other readings of the same playing ----
+(function (){
+  var bs = 0.5, ms = function (beat){ return beat * bs * 1000; };
+  function feed(t, evs){ evs.forEach(function (e){ if (e[1] === "on") t.on(e[2], 0.7, ms(e[0])); else t.off(e[2], ms(e[0])); }); return t.finish(); }
+  function nt(beat, m, len){ return [[beat, "on", m], [beat + (len || 0.8), "off", m]]; }
+  // eighth notes with eighth rests: the staccato reading is offered, and is the suggestion (fewer notes and rests)
+  var det = [].concat(nt(0, 60, 0.45), nt(1, 62, 0.45), nt(2, 64, 0.45), nt(3, 65, 0.45), nt(4, 67, 0.45), nt(5, 69, 0.45), nt(6, 71, 0.45), nt(7, 72, 0.45));
+  var t = feed(CE.take({ kind: "melody", n: 4, d: 4, bars: 2, beatSec: bs, key: "C" }), det), log = t.log();
+  var alt = CE.alternatives(JSON.parse(JSON.stringify(log)), 0, 1);
+  var st = alt.variants.filter(function (v){ return v.id === "staccato"; })[0];
+  assert(st, "staccato offered: " + alt.variants.map(function (v){ return v.id; })); assert(st.suggested, "and suggested"); assert.strictEqual(st.abc.split("\n").slice(5).join(" "), '.C2 .D2 .E2 .F2 | .G2 .A2 .B2 .c2 |]');
+  assert.strictEqual(alt.current.abc.split("\n").slice(5).join(" "), 'C z D z E z F z | G z A z B z c z |]');
+  // it applies to a range only, and what it hands back puts straight into the grid
+  var one = CE.alternatives(JSON.parse(JSON.stringify(log)), 1, 1); assert.strictEqual(one.variants.filter(function (v){ return v.id === "staccato"; })[0].melody.length, 1);
+  var g2 = CE.grid({ n: 4, d: 4 }); g2.setLayout(CE.layout({ n: 4, d: 4, bars: 2 })); var m = JSON.parse(JSON.stringify(t.grid.melody())); m[1] = one.variants.filter(function (v){ return v.id === "staccato"; })[0].melody[0]; g2.setMelody(m);
+  assert.strictEqual(g2.toAbc({ key: "C" }).split("\n").slice(5).join(" "), 'C z D z E z F z | .G2 .A2 .B2 .c2 |]', "only the chosen bar changed");
+  // triplets are offered where the beat fits thirds, never where it does not
+  var tri = [].concat(nt(0, 60, 0.3), nt(0.33, 62, 0.3), nt(0.67, 64, 0.3), nt(1, 65, 0.9));
+  var a2 = CE.alternatives(feed(CE.take({ kind: "melody", n: 2, d: 4, bars: 1, beatSec: bs, key: "C" }), tri).log(), 0, 0);
+  var tv = a2.variants.filter(function (v){ return v.id === "triplets"; })[0]; assert(tv && tv.suggested, "triplets suggested: it keeps the middle note the grid loses"); assert.strictEqual(tv.lost, 0); assert.strictEqual(a2.current.lost, 1);
+  assert(!CE.alternatives(log, 0, 1).variants.some(function (v){ return v.id === "triplets" && v.suggested; }), "no triplets suggested for eighths on the beat");
+  // a chord-only take has nothing to reinterpret
+  assert.strictEqual(CE.alternatives(feed(CE.take({ kind: "chords", n: 4, d: 4, bars: 1, beatSec: bs, key: "C" }), []).log(), 0, 0).variants.length, 0);
+  console.log("DWIM OK");
+})();
+
+// ---- pickups: notes before the first downbeat ----
+(function (){
+  var bs = 0.5, ms = function (beat){ return beat * bs * 1000; };
+  function feed(t, evs){ evs.forEach(function (e){ if (e[1] === "on") t.on(e[2], 0.7, ms(e[0])); else t.off(e[2], ms(e[0])); }); return t.finish(); }
+  function nt(beat, m, len){ return [[beat, "on", m], [beat + (len || 0.8), "off", m]]; }
+  function mus(t){ return t.abc().split("\n").slice(3).join("|"); }
+  // three notes in the last beat and a half of the count-in, then the tune
+  var evs = [].concat(nt(-1.5, 60, 0.45), nt(-1, 62, 0.45), nt(-0.5, 64, 0.45), nt(0, 65, 0.95), nt(1, 67, 0.95), nt(2, 69, 1.9));
+  var t = feed(CE.take({ kind: "melody", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", pickup: "auto" }), evs);
+  assert.strictEqual(t.pickup(), 2, "two beats of pickup"); assert.strictEqual(mus(t), 'L:1/8|K:C|z C DE | F2 G2 A4 |]', "a rest, then the three notes, in a two-beat bar");
+  var abc = t.abc(); assert(!/\[M:/.test(abc), "a pickup carries no meter mark: " + abc);
+  var P = TuneChart.parse(abc); assert.strictEqual(P.anacrusis, true, "the chart reads it as a pickup"); assert.strictEqual(P.bars.length, 2);
+  // off: the early notes are dropped (as before)
+  var off = feed(CE.take({ kind: "melody", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", pickup: "off" }), evs); assert.strictEqual(off.pickup(), 0); assert(!/pickup|anacrusis/.test(off.abc()));
+  assert.strictEqual(TuneChart.parse(off.abc()).anacrusis, false);
+  // a chart that already has a pickup bar loads as one, or without it for the band's form
+  var C = TuneChart.parse('X:1\nT:p\nM:4/4\nL:1/8\nK:C\n"C"z2 | "C"z8 | "F"z8 |]'); assert(C.anacrusis);
+  var g = CE.grid({ n: 4, d: 4 }); g.load(C); assert.strictEqual(g.length(), 3); assert.strictEqual(g.geo(0).per, 2); assert.strictEqual(g.geo(0).pickup, true); assert.strictEqual(g.geo(1).per, 8);
+  var g2 = CE.grid({ n: 4, d: 4 }); g2.load(C, { dropPickup: true }); assert.strictEqual(g2.length(), 2);
+  assert.strictEqual(g.toAbc({ key: "C" }).split("\n").slice(3).join("|"), 'L:1/8|K:C|"C"z2 | "C"z8 | "F"z8 |]');
+  console.log("PICKUP OK");
+})();
+
+(function (){
+  // the melody over a chart with its own pickup bar, and over one with none (a pickup of the melody's own)
+  var P = TuneChart.parse('X:1\nT:p\nM:4/4\nL:1/8\nK:C\n"C"z2 | "C"z8 | "F"z8 |]');
+  var mel = [[{ pos: 0, dur: 2, midi: 67 }], [{ pos: 0, dur: 8, midi: 72 }], []];
+  assert.strictEqual(CE.melodyAbc(P, mel, {}).split("\n").slice(5).join(" ").trim(), '"C"G2 | "C"c8 | "F"z8 |]');
+  var Q = TuneChart.parse('X:1\nT:q\nM:4/4\nL:1/8\nK:C\n"C"z8 | "F"z8 |]');
+  var out = CE.melodyAbc(Q, [[{ pos: 0, dur: 8, midi: 72 }], []], { pickup: { beats: 1, notes: [{ pos: 0, dur: 1, midi: 62 }, { pos: 1, dur: 1, midi: 64 }] } });
+  assert.strictEqual(out.split("\n").slice(5).join(" ").trim(), 'DE | "C"c8 | "F"z8 |]', out); assert.strictEqual(TuneChart.parse(out).anacrusis, true);
+  console.log("PICKUP ABC OK");
 })();

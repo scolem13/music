@@ -143,6 +143,14 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/blues-bass.html">
  <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
   </li>  
@@ -260,20 +268,12 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Scales</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tools/fretboard.html">
- <span class="dropdown-text">Fretboard</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../tools/circle-of-fifths.html">
  <span class="dropdown-text">Circle of Fifths</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tools/keyboard.html">
- <span class="dropdown-text">Keyboard</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/director.html">
- <span class="dropdown-text">Director</span></a>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tools/chord-sheet.html">
@@ -288,10 +288,6 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Drumset</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../tools/solfege-keyboard.html">
- <span class="dropdown-text">Solfège Keyboard</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../tools/accomp-styles.html">
  <span class="dropdown-text">Accompaniment Styles</span></a>
   </li>  
@@ -302,6 +298,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../tools/chord-entry.html">
  <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
   </li>  
     </ul>
   </li>
@@ -528,12 +528,37 @@ document.addEventListener('DOMContentLoaded', async function () {
 #bt-root .bt-eq .bt-eq-band output{font-variant-numeric:tabular-nums;float:right}
 #bt-root [hidden]{display:none!important}
 /* the Meter menu when the chart's meter cannot be changed from here: the meter as text and a link to the M: line */
+#bt-root .bt-pace{display:inline-flex;gap:.3rem;flex-wrap:nowrap}
+#bt-root .bt-pace .bt-btn{white-space:nowrap}
 #bt-root .bt-meter-fixed{display:inline-flex;align-items:center;gap:.5rem;height:2.2rem;white-space:nowrap;font-size:.9rem}
 #bt-root .bt-meter-edit{padding:0;border:0;background:none;font:inherit;font-size:.78rem;color:var(--site-accent-dk,#2b9c90);text-decoration:underline;cursor:pointer}
 
+
+/* what the chart area shows: the chord grid, the tune's notation, or both; the tune's notation follows the band like the grid */
+#bt-root .bt-viewbar{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin:0 0 .6rem}
+#bt-root .bt-seg{display:inline-flex}
+#bt-root .bt-seg .bt-btn{border-radius:0;margin-left:-1px}
+#bt-root .bt-seg .bt-btn:first-child{border-radius:7px 0 0 7px;margin-left:0}
+#bt-root .bt-seg .bt-btn:last-child{border-radius:0 7px 7px 0}
+#bt-root .bt-seg .bt-btn[aria-pressed="true"]{background:var(--site-accent-dk,#2b9c90);color:#fff}
+#bt-root .bt-viewbar .bt-sideopts{flex:1 1 100%}
+#bt-root .bt-tunepick{margin:0 0 .8rem;padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;max-height:26rem;overflow:auto}
+#bt-root .bt-tunepick[hidden],#bt-root #bt-tune[hidden],#bt-root .bt-chartcol [hidden]{display:none!important}
+#bt-root #bt-tune{margin:0 0 1rem}
+#bt-root .bt-tune-head{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem;margin:0 0 .35rem}
+#bt-root .bt-tune-head .bt-tune-title{font-family:var(--font-display,'Oswald',system-ui,sans-serif);font-size:1.15rem;font-weight:600;margin:0}
+#bt-root .bt-tune-head select{height:1.9rem;font-size:.85rem}
+#bt-root .bt-tune-page{background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.4rem .7rem;overflow-x:auto}
+#bt-root .bt-tune-page svg{display:block;max-width:100%}
+#bt-root .bt-tune-next{margin-top:.5rem;opacity:.8}
+#bt-root .bt-tune-next b{display:block;font-size:.8rem;margin:0 0 .15rem}
+#bt-root .bt-tl,#bt-root .bt-tl *{fill:#0e8f80!important}
+#bt-root .bt-tl-bar{fill:rgba(63,194,180,.22)!important;stroke:none!important}
+#bt-root #bt-tune-note:empty{display:none}
+
 /* the chart with the chord diagram beside it (above it on a narrow screen) */
 #bt-root .bt-chartrow{display:flex;gap:1rem;align-items:flex-start}
-#bt-root .bt-chartrow #bt-chart{flex:1 1 0;min-width:0}
+#bt-root .bt-chartrow .bt-chartcol{flex:1 1 0;min-width:0}
 #bt-root .bt-sidecol{flex:0 0 clamp(18rem,36vw,34rem);min-width:0;position:sticky;top:4.5rem}
 #bt-root .bt-side{padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;background:var(--site-surface,#fff);
   --bt-now:#1f8f83;--bt-next:#e08a1e}
@@ -548,7 +573,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 #bt-root .bt-sideopts select{height:1.7rem;padding:0 .3rem;font-size:.8rem;flex:0 1 auto;min-width:0;max-width:min(14rem,100%)}
 /* below the chart, or switched off (then only the switch is left, under the chart) */
 #bt-root .bt-chartrow.bt-below,#bt-root .bt-chartrow.bt-side-off{flex-direction:column}
-#bt-root .bt-chartrow.bt-below #bt-chart,#bt-root .bt-chartrow.bt-side-off #bt-chart{flex:none;width:100%}
+#bt-root .bt-chartrow.bt-below .bt-chartcol,#bt-root .bt-chartrow.bt-side-off .bt-chartcol{flex:none;width:100%}
 #bt-root .bt-chartrow.bt-below .bt-sidecol,#bt-root .bt-chartrow.bt-side-off .bt-sidecol{position:static;flex:none;width:100%}
 #bt-root .bt-chartrow.bt-below .bt-side{max-width:46rem}
 #bt-root .bt-chartrow.bt-side-off .bt-sidecol{order:0;margin-top:-.5rem}
@@ -563,7 +588,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 #bt-root .bt-side .bt-side-tag{display:inline-block;min-width:2.7rem;font:600 .68rem/1 var(--font-mono,monospace);letter-spacing:.06em;text-transform:uppercase;color:var(--site-ink-2,#5c5246)}
 @media (max-width:900px){
   #bt-root .bt-chartrow{flex-direction:column}
-  #bt-root .bt-chartrow #bt-chart{flex:none;width:100%}
+  #bt-root .bt-chartrow .bt-chartcol{flex:none;width:100%}
   #bt-root .bt-sidecol{order:-1;position:static;flex:none;width:100%;box-sizing:border-box}
 }
 /* bars that do not add up to their meter */
@@ -688,6 +713,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       <div class="bt-field"><label for="bt-changes">Changes</label><select id="bt-changes"></select></div>
       <div class="bt-field"><label for="bt-meter">Meter</label><select id="bt-meter"></select>
         <span class="bt-meter-fixed" id="bt-meter-fixed" hidden=""><span id="bt-meter-text"></span><button type="button" class="bt-meter-edit" id="bt-meter-edit">edit M:</button></span></div>
+      <div class="bt-field" id="bt-pace-f"><span class="bt-group-label" id="bt-pace-l">Chords pass</span>
+        <span class="bt-inline bt-pace" role="group" aria-labelledby="bt-pace-l"><button type="button" class="bt-btn" id="bt-pace-fast" title="Every chord lasts half as long, so two bars of the chart become one. The meter, the tempo and the band's rhythm stay as they are.">2× faster</button><button type="button" class="bt-btn" id="bt-pace-slow" title="Every chord lasts twice as long, so each bar of the chart becomes two. The meter, the tempo and the band's rhythm stay as they are.">2× slower</button></span></div>
       <div class="bt-field"><label for="bt-style" title="A genre and its defaults: feel, bass line, comping rhythm, drum groove, voicings and sounds that belong together. The Band panel below shows what it chose.">Style</label>
         <select id="bt-style"></select></div>
     </div>
@@ -701,9 +728,10 @@ document.addEventListener('DOMContentLoaded', async function () {
       <div class="bt-field"><label for="bt-countin">Count-in</label>
         <select id="bt-countin"><option value="1">1 bar</option><option value="2">2 bars</option><option value="0">None</option></select></div>
       <div class="bt-field"><label for="bt-intro" title="Bars the band plays once, after the count-in and before the first chorus. Only when playing starts from bar 1.">Intro</label>
-        <select id="bt-intro"><option value="none" selected="">None</option><option value="vamp">Vamp on the first chord</option><option value="last">Last bars of the form</option></select></div>
-      <div class="bt-field" id="bt-intro-more" hidden=""><label for="bt-intro-bars">Intro length</label>
+        <select id="bt-intro"><option value="none" selected="">None</option><option value="vamp">Vamp on the first chord</option><option value="last">Last bars of the form</option><option value="bars">These bars of the form</option></select></div>
+      <div class="bt-field" id="bt-intro-more" hidden=""><label for="bt-intro-bars" id="bt-intro-label">Intro length</label>
         <select id="bt-intro-bars"><option value="2">2 bars</option><option value="4" selected="">4 bars</option><option value="8">8 bars</option></select>
+        <input type="text" id="bt-intro-range" placeholder="1-4" hidden="" title="The bars of the form the band plays as the intro, in the order written: 1-4, or 13-16, or 1-2, 7-8.">
         <label class="bt-check" title="The bass and the chords play the intro alone; the drums come in at the top of the form."><input type="checkbox" id="bt-intro-nodrums"> Drums wait for bar 1</label></div>
       <div class="bt-field"><label for="bt-choruses" title="How many times through the changes before the band ends. Repeat keeps going until you stop it.">Choruses</label>
         <select id="bt-choruses"><option value="0">Repeat</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select></div>
@@ -713,6 +741,11 @@ document.addEventListener('DOMContentLoaded', async function () {
           <input type="number" id="bt-cyc-from" min="1" value="1" aria-label="Loop from bar"><span class="bt-unit">to</span>
           <input type="number" id="bt-cyc-to" min="1" value="4" aria-label="Loop to bar">
         </div></div>
+      <div class="bt-field"><label for="bt-gap" title="What is played between one time through and the next: of the loop when bars are looped, otherwise of the whole form. Never after the last time. A tempo change at each repeat is made first, so a click here counts you in at the new tempo.">Between repeats</label>
+        <select id="bt-gap"><option value="none" selected="">Nothing</option><option value="click">Metronome click</option><option value="vamp">Vamp on the first chord</option><option value="last">Last bars of the loop</option><option value="bars">These bars of the form</option></select></div>
+      <div class="bt-field" id="bt-gap-more" hidden=""><label for="bt-gap-bars" id="bt-gap-label">Length</label>
+        <select id="bt-gap-bars"><option value="1">1 bar</option><option value="2" selected="">2 bars</option><option value="4">4 bars</option><option value="8">8 bars</option></select>
+        <input type="text" id="bt-gap-range" placeholder="1-4" hidden="" title="The bars of the form the band plays between repeats, in the order written: 1-4, or 13-16."></div>
     </div>
     <div class="bt-row bt-row2" id="bt-live-row">
       <div class="bt-field"><span class="bt-group-label" title="The drummer plays a fill at the end of the bar that is sounding (or of the next bar, when this one is nearly over). F is the shortcut.">Drums (F)</span>
@@ -743,13 +776,37 @@ document.addEventListener('DOMContentLoaded', async function () {
     <button type="button" class="bt-btn bt-x" id="bt-pin-dismiss" aria-label="Dismiss this note">×</button>
   </div>
 
+  <div class="bt-viewbar" id="bt-viewbar">
+    <span class="bt-group-label" id="bt-view-l">Show</span>
+    <span class="bt-seg" role="group" aria-labelledby="bt-view-l">
+      <button type="button" class="bt-btn" data-view="grid" aria-pressed="true" title="The chord grid">Chord grid</button><button type="button" class="bt-btn" data-view="tune" aria-pressed="false" title="The tune's notation, where the grid was">Tune notation</button><button type="button" class="bt-btn" data-view="both" aria-pressed="false" title="The notation above the chord grid">Both</button>
+    </span>
+    <button type="button" class="bt-btn" id="bt-tune-load" aria-expanded="false" aria-controls="bt-tunepick" title="Pick a tune from the tune collection: its chords go to the band and its melody is played along with them.">Load a tune from the collection…</button>
+    <details class="bt-sideopts" id="bt-tune-opts"><summary>Notation options</summary>
+      <label>Show <select id="bt-tune-scope" title="Whole tune: every bar at once. This section: only the section being played (it turns to the next one as the band does), with the start of the one after it underneath."><option value="whole" selected="">The whole tune</option><option value="section">This section, and what comes next</option></select></label>
+      <label>Next section <select id="bt-tune-prev" title="How much of the next section is shown under this one, with its words."><option value="4" selected="">Its first four bars</option><option value="all">All of it</option></select></label>
+      <label>Size <select id="bt-tune-size" title="A smaller size fits more bars on a line and more lines on the screen."><option value="560">Large</option><option value="760" selected="">Standard</option><option value="1000">Small</option><option value="1300">Smallest</option></select></label>
+      <label>Bars per line <select id="bt-tune-bpl" title="As written: the lines of the ABC. Or a fixed number of bars on every line."><option value="0" selected="">As written</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="6">6</option><option value="8">8</option></select></label>
+      <label class="bt-check"><input type="checkbox" id="bt-tune-chords" checked=""> Chord symbols</label>
+    </details>
+    <p class="bt-hint" id="bt-tune-note" role="status" style="flex:1 1 100%;margin:0"></p>
+  </div>
+  <div class="bt-tunepick" id="bt-tunepick" hidden=""><div id="bt-tunepick-body"><p class="bt-hint">Loading the tune collection…</p></div></div>
   <div class="bt-tabstrip" id="bt-tabstrip" hidden="">
     <span class="bt-group-label">Sections of the chart</span>
     <select id="bt-tabview" aria-label="How the chart's sections are shown" title="One tab per section: a section that comes round again shares its tab. Tabs in playing order: a tab for every section as it is played. Whole chart: everything at once.">
       <option value="unique" selected="">One tab per section</option><option value="order">Tabs in playing order</option><option value="all">Whole chart</option></select>
   </div>
   <div class="bt-chartrow" id="bt-chartrow">
-    <div id="bt-chart"></div>
+    <div class="bt-chartcol">
+      <div id="bt-tune" hidden="">
+        <div class="bt-tune-head"><h3 class="bt-tune-title anchored" id="bt-tune-title"></h3>
+          <label class="bt-tune-secl" id="bt-tune-secl" hidden="">Section <select id="bt-tune-sec" aria-label="Which section of the tune is shown"></select></label></div>
+        <div class="bt-tune-page" id="bt-tune-cur" aria-label="The tune as notation"></div>
+        <div class="bt-tune-next" id="bt-tune-next" hidden=""><b id="bt-tune-nextl"></b><div class="bt-tune-page" id="bt-tune-nx" aria-label="The start of the next section"></div></div>
+      </div>
+      <div id="bt-chart"></div>
+    </div>
     <div class="bt-sidecol" id="bt-sidecol">
       <div class="bt-sidebar">
         <label class="bt-check" title="A fingering chart for the chords of these changes on one keyboard or fingerboard, with the chord sounding now and the one that follows picked out in two colours."><input type="checkbox" id="bt-side-on" checked=""> Chord diagram</label>
@@ -1006,7 +1063,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       <button type="button" class="bt-btn" id="bt-mel-connect">Connect a MIDI keyboard</button>
       <div class="bt-field"><label for="bt-mel-midi">MIDI keyboard</label><select id="bt-mel-midi" disabled=""><option value="">Not connected</option></select></div>
       <label class="bt-check"><input type="checkbox" id="bt-mel-sound" checked=""> Sound the notes I play</label>
+      <label class="bt-check" title="The two rows of letter keys are two rows of piano keys (Z row and Q row). Arrow Up and Arrow Down move the octave. While this is on and the Melody panel is open, the letter shortcuts (L loop, N next section) are switched off."><input type="checkbox" id="bt-mel-type"> Play with the computer keyboard</label>
     </div>
+    <p class="bt-hint" id="bt-mel-type-note" style="margin-top:.4rem"></p>
     <div class="bt-row">
       <div class="bt-field"><label for="bt-mel-feel" title="Swung: the long-short eighths you play are written as plain eighth notes, the way a lead sheet shows them, and the band swings them back.">You play</label>
         <select id="bt-mel-feel"><option value="auto">Like the band's feel</option><option value="swing">Swung eighths (written straight)</option><option value="straight">Straight</option></select></div>
@@ -1018,9 +1077,37 @@ document.addEventListener('DOMContentLoaded', async function () {
       <button type="button" class="bt-btn" id="bt-mel-undo">Undo the take</button>
       <button type="button" class="bt-btn" id="bt-mel-clear">Remove the melody</button>
       <label class="bt-check" title="Off: the band plays the changes alone."><input type="checkbox" id="bt-mel-hear" checked=""> Play the melody with the band</label>
+      <label class="bt-check" title="Off: when several notes are struck together only the top one is written. On: they are written as a chord."><input type="checkbox" id="bt-mel-poly"> Notes struck together are written as a chord</label>
+      <div class="bt-field"><label for="bt-mel-ms" title="Notes struck within this many milliseconds of each other count as struck together.">Together within (ms)</label>
+        <input type="number" id="bt-mel-ms" min="10" max="200" step="5" value="45" style="width:5.2rem"></div>
+    </div>
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-mel-range" title="Which bars to record. A section starts at its first bar (with the count-in), and the take ends by itself at its last bar. Only those bars are replaced.">Record</label>
+        <select id="bt-mel-range"><option value="all">From the Start at bar to the end</option></select></div>
+      <div class="bt-field" id="bt-mel-from-f" hidden=""><label for="bt-mel-from">From bar</label><input type="number" id="bt-mel-from" min="1" value="1" style="width:5rem"></div>
+      <div class="bt-field" id="bt-mel-to-f" hidden=""><label for="bt-mel-to">To bar</label><input type="number" id="bt-mel-to" min="1" value="1" style="width:5rem"></div>
+      <div class="bt-field"><label for="bt-mel-pickup" title="Notes you play before the first bar of what you record. In the middle of a tune they go at the end of the bar before; at the very start they are written as a short pickup bar.">Notes before the first bar</label>
+        <select id="bt-mel-pickup"><option value="auto">Write them (a pickup)</option><option value="off">Leave them out</option></select></div>
+    </div>
+    <div class="bt-row">
+      <div class="bt-field"><label for="bt-mel-beam" title="Eighth notes are joined by a beam within a beat, or within half a bar (four eighths in 4/4). Rests and longer notes end a beam.">Beams</label>
+        <select id="bt-mel-beam"><option value="beat">Within a beat</option><option value="half">Within half a bar</option><option value="none">None</option></select></div>
+      <div class="bt-field"><label for="bt-mel-tie" title="A note that starts off the beat and runs over the middle of the bar (or over a beat) can be written as two tied notes, as classical notation does.">Syncopation</label>
+        <select id="bt-mel-tie"><option value="none">As played</option><option value="mid">Tied across the middle of the bar</option><option value="beat">Tied across every beat</option></select></div>
+      <div class="bt-field"><label for="bt-mel-det" title="A short note followed by a rest as long as itself: written as the two, or as one staccato note of both.">Short detached notes</label>
+        <select id="bt-mel-det"><option value="rest">Note and rest</option><option value="staccato">Staccato note</option></select></div>
+      <div class="bt-field"><label for="bt-mel-trip" title="Where the notes of a beat fit thirds better than the eighth-note grid they are written as triplets (simple meters).">Triplets</label>
+        <select id="bt-mel-trip"><option value="off">Never</option><option value="auto">Where the playing fits</option></select></div>
+      <label class="bt-check" title="A very short note struck just before another (under 80 ms, and never longer than a thirty-second note) is written as a grace note of it."><input type="checkbox" id="bt-mel-grace"> Very short notes before a note are grace notes</label>
+    </div>
+    <div class="bt-row" id="bt-mel-log" hidden="">
+      <button type="button" class="bt-btn" id="bt-mel-log-copy" title="Every key played in the last take with its time, and the settings. Paste it into the Notation Rules page, or send it, to see why each note was written as it was.">Copy the take log</button>
+      <button type="button" class="bt-btn" id="bt-mel-log-open" title="Opens the Notation Rules page with the last take loaded.">Show how it was written</button>
+      <span class="bt-hint" id="bt-mel-log-note" style="margin:0"></span>
     </div>
     <p class="bt-hint" id="bt-mel-note" role="status"></p>
     <div id="bt-mel-score" aria-label="The melody as notation"></div>
+    <div id="bt-mel-dwim" hidden=""></div>
     <div class="bt-row" id="bt-mel-out" hidden="">
       <button type="button" class="bt-btn" id="bt-mel-copy">Copy the ABC with the melody</button>
       <button type="button" class="bt-btn" id="bt-mel-dl">Download .abc</button>
@@ -1057,9 +1144,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 
 <script src="../apps/shared/soundfont.js"></script>
 <script src="../apps/shared/abc-transpose.js?v=4"></script>
-<script src="../apps/shared/tune-chart.js?v=30"></script>
-<script src="../apps/shared/chord-entry.js?v=4"></script>
-<script src="../apps/shared/tune-library.js?v=3"></script>
+<script src="../apps/shared/tune-chart.js?v=31"></script>
+<script src="../apps/shared/chord-entry.js?v=7"></script>
+<script src="../apps/shared/musical-typing.js"></script>
+<script src="../apps/shared/melody-dwim.js?v=1"></script>
+<script src="../apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="../apps/shared/band/tune-score.js?v=1"></script>
+<script src="../apps/shared/tune-library.js?v=16"></script>
 <script src="../apps/shared/voicings.js?v=5"></script>
 <script src="../apps/shared/lessons/diagrams.js?v=1"></script>
 <script src="../apps/shared/band/harmony.js?v=31"></script>
@@ -1070,10 +1161,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/band/drums.js?v=14"></script>
 <script src="../apps/shared/band/congas.js?v=2"></script>
 <script src="../apps/shared/band/sounds.js?v=14"></script>
-<script src="../apps/shared/band/player.js?v=119"></script>
+<script src="../apps/shared/band/player.js?v=120"></script>
 <script src="../apps/shared/band/midi.js?v=19"></script>
 <script src="../apps/shared/band/notation.js?v=11"></script>
-<script src="../apps/shared/band/rebar.js?v=1"></script>
+<script src="../apps/shared/band/rebar.js?v=2"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -1157,7 +1248,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   // `chart` shows them (maybe re-written for a transposing instrument); its bars line up with parsedC's.
   var abc = "", parsedC = null, chart = null, player = null, state = "idle", liveSrc = -1, editTimer = null, beatEls = [], baseBeats = 4;
   var remote = { on: /[?&]remote=1/.test(location.search) && !!window.opener, origin: null, melody: null, mute: false };   // driven by the page that opened this one (see "remote" below)
-  var mel = [], melLine = (window.ChordEntry && ChordEntry.line()), melRec = null, melSaved = null, melMidi = null, melInput = null;   // the melody: per source bar [{ pos, dur, midi, tie }] in units (see "melody" below)
+  var mel = [], melRec = null, melLog = null, melDwim = null, melSigs = {}, melPkShift = 0, melSaved = null, melPickup = null, melSavedPickup = null, melMidi = null, melInput = null;   // the melody: per source bar [{ pos, dur, midi, tie }] in units (see "melody" below)
   var pins = null;                       // pinned voicings handed over by Chord Sheet: { map:{"idx:pos":midis}, count }
 
   function hasChords(parsed){ return parsed.bars.some(function(b){ return b.chords.some(function(c){ return !c.nc; }); }); }
@@ -1167,7 +1258,103 @@ document.addEventListener('DOMContentLoaded', async function () {
     for (var i = 0; i < n; i++){ var d = document.createElement("i"); box.appendChild(d); beatEls.push(d); }
   }
   function showBeat(b){ beatEls.forEach(function(el, i){ el.classList.toggle("on", i === b); }); }
-  function showLive(src){ liveSrc = src; var shown = tabFollow(src); if (chart) chart.setLive(shown); }
+  function showLive(src){ liveSrc = src; var shown = tabFollow(src); if (chart) chart.setLive(shown); tuneFollow(src); }
+
+
+  // ---- the tune's notation: where the chord grid is (or above it), following the band ----
+  // The ABC the page holds is drawn as it is written (abcjs), in the chart's key (the "Chart for" menu). The bars are the chart's
+  // own, so the bar sounding now is lit here as in the grid. "This section" draws only the section's own lines and, under it, the
+  // start of the next one, turning with the band. The melody the band plays comes from the same ABC (BandTuneScore.melody) when a
+  // tune is loaded from the collection.
+  var tuneMode = "grid", tuneSrc = null, tuneSec = 0, tuneKey = "", tuneSeq = 0, tuneMap = [], tuneLit = [], tuneBase = 0;
+  try { var vm0 = localStorage.getItem("btView"); if (vm0 === "tune" || vm0 === "both") tuneMode = vm0; } catch (e) {}
+  function tuneScopeSection(){ return $("bt-tune-scope").value === "section" && tabSections().length > 1; }
+  function tuneRender(el, text, from, to, shift){
+    return loadAbcjs().then(function(){
+      var o = { responsive: "resize", add_classes: true, paddingtop: 4, paddingbottom: 4, staffwidth: +$("bt-tune-size").value || 760, chordsOff: !$("bt-tune-chords").checked }, bpl = +$("bt-tune-bpl").value;
+      if (bpl) o.wrap = { minSpacing: 1.4, maxSpacing: 2.8, preferredMeasuresPerLine: bpl };
+      var t = ABCJS.renderAbc(el, text, o); t = t && t[0]; var map = [], src = tuneSrc.parsed.bars, i;
+      for (i = from; i < to; i++) map[i] = [];
+      if (t) (t.lines || []).forEach(function(ln){ (ln.staff || [])[0] && ((ln.staff[0].voices || [])[0] || []).forEach(function(e){
+        var es = e.abselem && e.abselem.elemset; if (!es || !(e.startChar >= 0)) return;
+        var sc = (e.endChar > e.startChar ? e.endChar : e.startChar + 1) - 1; while (sc > e.startChar && /\s/.test(text[sc])) sc--;       // (an element runs from the space before it, and takes in what is written ahead of the note: its end is in the note)
+        var b = from; for (i = from; i < to; i++){ var a = src[i].at; if (a == null || a < 0) continue; if (a + shift <= sc) b = i; else break; }
+        es.forEach(function(x){ if (x) map[b].push(x); }); }); });
+      return map;
+    });
+  }
+  function tuneDraw(){
+    if (tuneMode === "grid" || !parsedC || !tuneSrc) return;
+    var abcT = tuneSrc.abc, pr = tuneSrc.parsed, secs = tabSections(), scope = tuneScopeSection(), from = 0, to = pr.bars.length, k = 0;
+    $("bt-tune-title").textContent = tuneScopeSection() ? parsedC.title || "" : "";
+    $("bt-tune-secl").hidden = !scope;
+    var names = secs.map(function(sc){ return sc.name; }).join("|");
+    if (scope){
+      var sel = $("bt-tune-sec"); if (sel.getAttribute("data-names") !== names){ sel.setAttribute("data-names", names); sel.innerHTML = "";
+        secs.forEach(function(sc, i){ var o = document.createElement("option"); o.value = i; o.textContent = (i + 1) + ". " + sc.name; sel.appendChild(o); }); }
+      if (tuneSec >= secs.length) tuneSec = 0; k = tuneSec; sel.value = String(k); from = secs[k].bar; to = Math.min(secs[k].end, pr.bars.length);
+    }
+    var cur = abcT, shift = 0, nxText = null, nx = scope ? secs[k + 1] : null, nxTo = 0;
+    if (scope){ var f = BandTuneScore.fragment(abcT, pr, from, to);
+      if (f){ cur = f.text; shift = f.shift; } else { scope = false; from = 0; to = pr.bars.length; $("bt-tune-secl").hidden = true; } }
+    if (scope && nx){ nxTo = Math.min(nx.end, $("bt-tune-prev").value === "all" ? nx.end : nx.bar + 4, pr.bars.length); var g = BandTuneScore.fragment(abcT, pr, nx.bar, nxTo); nxText = g && g.text; }
+    $("bt-tune-note").textContent = BandTuneScore.hasNotes(abc) ? "" : "These changes have chord symbols but no melody notes, so there is no tune to show. Load one from the collection.";
+    var key = [tuneMode, scope, k, $("bt-tune-prev").value, $("bt-tune-size").value, $("bt-tune-bpl").value, $("bt-tune-chords").checked, cur, nxText].join("\u0001");
+    if (key === tuneKey) return; tuneKey = key; var seq = ++tuneSeq;
+    $("bt-tune-next").hidden = !(scope && (nxText || !nx)); $("bt-tune-nextl").textContent = scope ? "Next: " + (nx ? nx.name : "End") : "";
+    $("bt-tune-nx").hidden = !nxText;
+    tuneRender($("bt-tune-cur"), cur, from, to, shift).then(function(map){
+      if (seq !== tuneSeq) return; tuneMap = map; tuneLit = []; tuneBase = from; tuneLight(liveSrc);
+      if (nxText) return tuneRender($("bt-tune-nx"), nxText, nx.bar, nxTo, 0).then(function(){ /* (the preview is not followed) */ });
+      $("bt-tune-nx").innerHTML = "";
+    }, function(){ $("bt-tune-cur").textContent = "The notation could not be loaded."; });
+  }
+  function tuneLight(src){
+    tuneLit.forEach(function(x){ x.classList.remove("bt-tl"); }); tuneLit = [];
+    var els = src >= 0 ? tuneMap[src] : null; if (!els) return;
+    els.forEach(function(x){ x.classList.add("bt-tl"); tuneLit.push(x); });
+  }
+  function tuneFollow(src){
+    if (tuneMode === "grid") return;
+    if (src >= 0 && tuneScopeSection()){ var k = tabOf(tabSections(), src); if (k !== tuneSec){ tuneSec = k; tuneDraw(); return; } }
+    tuneLight(src);
+  }
+  function tuneModeSet(m){
+    tuneMode = m; try { localStorage.setItem("btView", m); } catch (e) {}
+    Array.prototype.forEach.call(document.querySelectorAll("#bt-viewbar [data-view]"), function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === m)); });
+    $("bt-tune").hidden = m === "grid"; $("bt-chart").hidden = m === "tune"; tuneKey = "";
+    if (m === "tune") $("bt-tabstrip").hidden = true; else chartTabs();
+    tuneDraw();
+  }
+  Array.prototype.forEach.call(document.querySelectorAll("#bt-viewbar [data-view]"), function(b){ b.addEventListener("click", function(){ tuneModeSet(b.getAttribute("data-view")); }); });
+  ["bt-tune-scope", "bt-tune-prev", "bt-tune-size", "bt-tune-bpl", "bt-tune-chords"].forEach(function(id){ var k = "bt-" + id;
+    try { var v = localStorage.getItem(k); if (v != null && $(id).type !== "checkbox") $(id).value = v; else if (v != null) $(id).checked = v === "1"; } catch (e) {}
+    $(id).addEventListener("change", function(){ try { localStorage.setItem(k, $(id).type === "checkbox" ? ($(id).checked ? "1" : "0") : $(id).value); } catch (e) {} tuneDraw(); }); });
+  $("bt-tune-sec").addEventListener("change", function(){ tuneSec = +$("bt-tune-sec").value || 0; tuneDraw(); });
+
+  // A tune from the collection: its ABC becomes the changes, its notes the melody the band plays along.
+  var tuneLibReady = null;
+  function loadScript(src){ return new Promise(function(res, rej){ var sc = document.createElement("script"); sc.src = src; sc.onload = res; sc.onerror = function(){ rej(); }; document.head.appendChild(sc); }); }
+  function tunePicker(){
+    var box = $("bt-tunepick"), open = box.hidden; box.hidden = !open; $("bt-tune-load").setAttribute("aria-expanded", String(open)); if (!open) return;
+    if (!tuneLibReady) tuneLibReady = loadAbcjs().then(function(){ return window.tunesObject ? 0 : loadScript("/apps/tunes/tunes-object.js"); }).then(function(){
+      TuneLibrary.build(window.tunesObject || tunesObject); $("bt-tunepick-body").innerHTML = "";
+      TuneLibrary.renderPicker($("bt-tunepick-body"), { onSelect: tuneLoad, facets: ["tags", "tonality", "meter", "key", "chords"] }); });
+    tuneLibReady.catch(function(){ tuneLibReady = null; $("bt-tunepick-body").textContent = "The tune collection could not be loaded."; });
+  }
+  function tuneLoad(rec){
+    if (!rec || !rec.abc) return;
+    if (state !== "idle") player.stop();
+    if (!applyAbc(rec.abc, false)){ $("bt-tune-note").textContent = "That tune has no chord symbols, so the band has nothing to play."; return; }
+    $("bt-changes").value = "custom"; clearPins("you chose another tune"); tuneSec = 0; tuneKey = "";
+    var m = BandTuneScore.melody(rec.abc, parsedC, function(b){ return melGeo(melMeter(b)); }), n = 0; m.forEach(function(b){ n += b.length; });
+    melSaved = null; mel = n ? m : []; melAttach(); melShow();
+    if (player){ player.setChart(parsedC); player.setOpts(bandOpts()); }
+    $("bt-tunepick").hidden = true; $("bt-tune-load").setAttribute("aria-expanded", "false");
+    if (n && tuneMode === "grid") tuneModeSet("tune"); else tuneDraw();
+    $("bt-tune-note").textContent = n ? "" : "That tune has chords but no melody notes.";
+  }
+  $("bt-tune-load").addEventListener("click", tunePicker);
 
   // Parse + show a new set of changes; hand them to the band (takes effect from its next bar).
   function applyAbc(text, fromEditor, allowEmpty){
@@ -1257,11 +1444,12 @@ document.addEventListener('DOMContentLoaded', async function () {
   function showChart(){
     var view = chartView(abc, parsedC, $("bt-chartfor").value), vp = null;
     try { vp = TuneChart.parse(view.abc); } catch (e) {}
-    if (!vp || vp.bars.length !== parsedC.bars.length){ vp = parsedC; view.note = ""; }
+    if (!vp || vp.bars.length !== parsedC.bars.length){ vp = parsedC; view.note = ""; view.abc = abc; }
+    tuneSrc = { abc: view.abc, parsed: vp };
     if (chart){ chart.setKeyNote(view.note); chart.setRoman($("bt-roman").value); chart.setTune(vp); chart.setLive(liveSrc); }
     else chart = TuneChart.render($("bt-chart"), vp, { header:true, preferFlats:true, roman:$("bt-roman").value, romanFn:BandHarmony.roman, keyNote:view.note });
     $("bt-chartfor-hint").hidden = !view.note;
-    chartTabs();
+    chartTabs(); tuneDraw();
   }
   // A chart with sections (P: lines) is shown on tabs, like a tabset. Three views (the menu at the end of the strip, remembered):
   //   "unique"  one tab for each DIFFERENT section: a section that comes round again with the same bars shares the tab of its first time,
@@ -1318,7 +1506,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     try {
       var root = $("bt-chart"), sys = root.querySelector(".tc-systems:not(.bt-pane-rows)"); if (!sys) return;
       var secs = tabSections(), on = secs.length > 1, all = tabView() === "all";
-      $("bt-tabstrip").hidden = !on;
+      $("bt-tabstrip").hidden = !on || tuneMode === "tune";
       var tabs = on && !all ? tabList(secs) : []; if (tabSel >= tabs.length) tabSel = 0;
       // every row back in the chart's own list, in its order
       var rows = Array.prototype.slice.call(root.querySelectorAll(".tc-system"));
@@ -1385,6 +1573,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var sel = $("bt-meter"), fx = $("bt-meter-fixed"), tx = $("bt-meter-text");
     if (sel.hidden !== no) sel.hidden = no;
     if (fx.hidden !== !no) fx.hidden = !no;
+    ["bt-pace-fast", "bt-pace-slow"].forEach(function(b){ if ($(b).disabled !== no) $(b).disabled = no; });   // (the same charts cannot change pace)
     if (no){ tx.textContent = "Meter " + id; fx.title = rb.reason; $("bt-meter-edit").title = rb.reason; $("bt-meter-edit").setAttribute("aria-label", "Edit the M: line in the ABC. " + rb.reason); }
   }
   // the link: open the ABC panel (and the tab holding it) and put the cursor on the M: line
@@ -1634,8 +1823,16 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("bt-boom-field").hidden = !($("bt-bass").value === "alt" || $("bt-groove").value === "boomchick" || ids.indexOf("oompah") >= 0);
   }
   // the intro: null, or how long, what it is made of and who sits out
-  function introChoice(){ var k = $("bt-intro").value; return k === "none" ? null : { bars: parseInt($("bt-intro-bars").value, 10) || 4, kind: k, tacet: $("bt-intro-nodrums").checked ? "drums" : "" }; }
-  function introSync(){ $("bt-intro-more").hidden = $("bt-intro").value === "none"; }
+  // an intro, and the bars between repeats: a number of bars (a vamp, the last bars), or the form bars written out ("These bars")
+  function leadChoice(id, tacet){ var k = $(id).value; if (k === "none") return null;
+    if (k === "bars"){ var list = liftBars(id + "-range").filter(function(i){ return i < (formSrc.length || 1); }); return list.length ? { kind: k, list: list, tacet: tacet } : null; }
+    return { bars: parseInt($(id + "-bars").value, 10) || 4, kind: k, tacet: tacet }; }
+  function leadSync(id, name){ var k = $(id).value; $(id + "-more").hidden = k === "none"; $(id + "-bars").hidden = k === "bars"; $(id + "-range").hidden = k !== "bars";
+    $(id + "-label").textContent = k === "bars" ? name + " bars" : name + " length"; $(id + "-label").htmlFor = k === "bars" ? id + "-range" : id + "-bars"; }
+  function introChoice(){ return leadChoice("bt-intro", $("bt-intro-nodrums").checked ? "drums" : ""); }
+  function introSync(){ leadSync("bt-intro", "Intro"); }
+  function gapChoice(){ return leadChoice("bt-gap", ""); }
+  function gapSync(){ leadSync("bt-gap", "Break"); }
   function setStyle(id){ if (STYLES.some(function(x){ return x.id === id; })) $("bt-style").value = id; rebuild(true); }
   function syncVoicings(want){ setVoicing(want); }
   $("bt-comp").parentNode.hidden = COMPING.length < 2;        // nothing to choose until a second instrument exists
@@ -2146,14 +2343,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     onState: onState,
     onLoadProgress: function(done, total){ if (state === "loading") setStatus("Loading sounds " + done + " of " + total); },
     onBar: function(info){
-      remoteSay({ type: "bt-bar", info: { index: info.index, section: info.section, sectionBar: info.sectionBar, countIn: !!info.countIn, ending: !!info.ending, intro: !!info.intro } });
+      remoteSay({ type: "bt-bar", info: { index: info.index, section: info.section, sectionBar: info.sectionBar, countIn: !!info.countIn, ending: !!info.ending, intro: !!info.intro, between: !!info.between } });
       if (info.beats > 0) buildBeats(info.beats);            // one dot for each beat of THIS bar (the meter may change inside a tune)
       if (!info.countIn && !info.intro && !info.ending && info.bar >= 0){ nowBar = Math.max(nowBar, info.bar);
         if ($("bt-notation").open){ upcoming(); if (sectionOnly()){ var scs = chartSections(), sk = info.section; if (sk !== drawnSection || (scs[sk] && (info.index === scs[sk].to || info.index === scs[sk].from))) drawSoon(); }
           else if (shownChorus !== drawnChorus) drawSoon(); else if (drawnChorus != null) whichSync(); } }       // the last bar of a chorus: turn to the next one
       sideInfo = info;
       showLive(info.countIn ? -1 : info.src);
-      setStatus(info.countIn ? "Count-in" : info.intro ? "Intro · bar " + (info.introBar + 1) + " of " + info.introBars : "Chorus " + (info.chorus + 1) + " · bar " + (info.index + 1));
+      setStatus(info.countIn ? (info.between ? "Between repeats · click" : "Count-in") : info.intro ? (info.between ? "Between repeats" : "Intro") + " · bar " + (info.introBar + 1) + " of " + info.introBars : "Chorus " + (info.chorus + 1) + " · bar " + (info.index + 1));
     },
     onBeat: function(info){ showBeat(info.beat); sideBeat(info.beat); remoteSay({ type: "bt-beat", beat: info.beat }); },
     onTempo: function(bpm){ $("bt-tempo").value = bpm; $("bt-tempo-n").value = bpm; },
@@ -2209,6 +2406,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     player.setCycle(p.cyc ? p.from - 1 : null, p.to - 1);
     var sa = parseInt($("bt-step-a").value, 10), sb = parseInt($("bt-step-b").value, 10);
     player.setTempoSteps($("bt-step-on").checked && !isNaN(sa) ? (isNaN(sb) ? [sa] : [sa, sb]) : null);
+    // A song sent by the lyrics page is played once through and ended. Looping bars, or changing the tempo at each
+    // repeat, asks for repeats: Choruses goes to Repeat while either is on, and back to 1 when both are off again.
+    if (remote && remote.on && remote.loaded){
+      var again = p.cyc || $("bt-step-on").checked;
+      if (again && $("bt-choruses").value === "1"){ $("bt-choruses").value = "0"; player.setChoruses(0); remote.repeats = true; }
+      else if (!again && remote.repeats){ remote.repeats = false; if ($("bt-choruses").value === "0"){ $("bt-choruses").value = "1"; player.setChoruses(1); } }
+    }
     markChart();
   }
   ["bt-start", "bt-cyc-on", "bt-cyc-from", "bt-cyc-to", "bt-step-on", "bt-step-a", "bt-step-b"].forEach(function(id){
@@ -2229,6 +2433,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
   document.addEventListener("keydown", function(e){
     if ((e.key !== "l" && e.key !== "L") || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    if (melTyping()) return;                                          // (L is a piano key just now)
     var t = e.target, tag = t && t.tagName;
     if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
     e.preventDefault(); toggleLoop();
@@ -2260,7 +2465,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var text = abc; try { text = AbcTranspose.transpose(abc, $("bt-key").value); } catch (e) {}
     var melFrom = from;
     applyAbc(text, false);
-    if (mel.length){ var dm = (((parsedC.keyPc - melFrom) % 12) + 12) % 12; if (dm > 6) dm -= 12; mel.forEach(function(b){ (b || []).forEach(function(n){ n.midi += dm; }); }); melAttach(); melShow(); }
+    if (mel.length || melPickup){ var dm = (((parsedC.keyPc - melFrom) % 12) + 12) % 12; if (dm > 6) dm -= 12; mel.concat(melPickup ? [melPickup.notes] : []).forEach(function(b){ (b || []).forEach(function(n){ n.midi += dm; if (n.midis) n.midis = n.midis.map(function(x){ return x + dm; }); }); }); melAttach(); melShow(); }
     if (was){
       var d = (((parsedC.keyPc - from) % 12) + 12) % 12; if (d > 6) d -= 12;
       var map = {}; Object.keys(was.map).forEach(function(k){ map[k] = was.map[k].map(function(m){ return m + d; }); });
@@ -2291,6 +2496,17 @@ document.addEventListener('DOMContentLoaded', async function () {
     loadPreset(ch);
     $("bt-tempo").value = m.tempo; $("bt-tempo-n").value = m.tempo; player.setTempo(tempo());
   });
+  // "Chords pass 2x faster / 2x slower": the chart is re-written in the same meter (BandRebar.pace) with every chord half or twice as
+  // long, and applied the way an edit by hand is. The tempo and the band's rhythm are not touched; it works while the band plays.
+  function pace(factor){
+    if (!window.BandRebar) return;
+    var r = BandRebar.pace(abc, factor);
+    if (!r.ok){ $("bt-abc-note").textContent = r.reason; pinNote(r.reason, false, true); return; }
+    clearPins("you changed how fast the chords pass");
+    if (applyAbc(r.abc, true)){ $("bt-abc").value = r.abc; $("bt-changes").value = "custom"; $("bt-abc-note").textContent = ""; }
+  }
+  $("bt-pace-fast").addEventListener("click", function(){ pace(2); });
+  $("bt-pace-slow").addEventListener("click", function(){ pace(0.5); });
   $("bt-bass").addEventListener("change", function(){ blendNote("bass"); figsSync(); walkSync(true); player.setOpts(bandOpts()); });
   $("bt-walk").addEventListener("input", function(){ player.setOpts(bandOpts()); });
   (function(){ var sel = $("bt-genre"), seen = {}; [["", "All genres"]].concat(STYLES.map(function(x){ return [x.group || "", x.group || ""]; })).forEach(function(g){
@@ -2339,6 +2555,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("bt-fill").addEventListener("click", fillNow); $("bt-next").addEventListener("click", nextSection);
   document.addEventListener("keydown", function(e){                 // F = fill now, N = next section
     var k = (e.key || "").toLowerCase(); if ((k !== "f" && k !== "n") || e.ctrlKey || e.metaKey || e.altKey || e.repeat) return;
+    if (k === "n" && melTyping()) return;                             // (N is a piano key just now)
     var t = e.target, tag = t && t.tagName; if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT" || (t && t.isContentEditable)) return;
     e.preventDefault(); if (k === "f") fillNow(); else nextSection();
   });
@@ -2353,7 +2570,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("bt-voicing").addEventListener("change", function(){ extraNote(); player.setOpts(bandOpts()); sideIdle(); });
   $("bt-comp").addEventListener("change", sideIdle);
   $("bt-countin").addEventListener("change", function(){ player.setCountIn(parseInt($("bt-countin").value, 10)); });
-  ["bt-intro", "bt-intro-bars", "bt-intro-nodrums"].forEach(function(id){ $(id).addEventListener("change", function(){ introSync(); player.setIntro(introChoice()); }); });
+  ["bt-intro", "bt-intro-bars", "bt-intro-range", "bt-intro-nodrums"].forEach(function(id){ $(id).addEventListener("change", function(){ introSync(); player.setIntro(introChoice()); }); });
+  ["bt-gap", "bt-gap-bars", "bt-gap-range"].forEach(function(id){ $(id).addEventListener("change", function(){ gapSync(); player.setBetween(gapChoice()); }); });
   $("bt-choruses").addEventListener("change", function(){ player.setChoruses(parseInt($("bt-choruses").value, 10)); });
   ["bass","comp","comp2","drums","congas"].forEach(function(part){
     $("bt-vol-" + part).addEventListener("input", function(){ player.setVolume(part, vol(part)); }); });
@@ -2385,7 +2603,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   // Saved setups live in localStorage.btSetups; built-in ones come from BandPresets (presets.js). Both
   // are listed at the bottom of the Changes menu as "setup:b:<n>" (built-in) / "setup:u:<n>" (saved here).
   var SETUP_KEY = "btSetups", BUILTIN = (window.BandPresets || []).filter(function(x){ return x && x.abc && x.name; });
-  var FIELDS = ["bt-tabview", "bt-fills", "bt-hold", "bt-bass-sound", "bt-walk", "bt-comp", "bt-vmove", "bt-ext", "bt-variation", "bt-boom", "bt-stops", "bt-lift", "bt-half", "bt-figs", "bt-timefeel", "bt-timeparts", "bt-intro", "bt-intro-bars", "bt-countin", "bt-choruses", "bt-ride", "bt-ride-sound", "bt-roman", "bt-chartfor",
+  var FIELDS = ["bt-tabview", "bt-fills", "bt-hold", "bt-bass-sound", "bt-walk", "bt-comp", "bt-vmove", "bt-ext", "bt-variation", "bt-boom", "bt-stops", "bt-lift", "bt-half", "bt-figs", "bt-timefeel", "bt-timeparts", "bt-intro", "bt-intro-bars", "bt-intro-range", "bt-gap", "bt-gap-bars", "bt-gap-range", "bt-countin", "bt-choruses", "bt-ride", "bt-ride-sound", "bt-roman", "bt-chartfor",
                 "bt-start", "bt-cyc-from", "bt-cyc-to", "bt-step-a", "bt-step-b", "bt-vol-bass", "bt-vol-comp", "bt-vol-drums", "bt-vol-congas", "bt-second", "bt-second-rhythm", "bt-second-voicing", "bt-vol-comp2", "bt-leslie", "bt-swell", "bt-swell-pos", "bt-oct-bass", "bt-oct-comp", "bt-oct-comp2"].concat(KIT.map(function(k){ return "bt-kit-" + k.id; }));
   var CHECKS = ["bt-push", "bt-endchoke", "bt-intro-nodrums", "bt-ext-six", "bt-ext-nine", "bt-ext-thirteen", "bt-cyc-on", "bt-step-on"];
   function savedSetups(){ var l = []; try { l = JSON.parse(localStorage.getItem(SETUP_KEY) || "[]") || []; } catch (e) { l = []; } return Array.isArray(l) ? l.filter(function(x){ return x && x.abc && x.name; }) : []; }
@@ -2427,8 +2645,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (s.voicing) setVoicing(s.voicing);
     if (has("bt-feel", s.feel) && (unlocked() || styleDef().feel === s.feel)) $("bt-feel").value = s.feel;
     // what belongs to the tune goes back to its plain setting when the setup does not mention it
-    ["bt-intro", "bt-intro-bars", "bt-timefeel", "bt-timeparts", "bt-figs", "bt-oct-bass", "bt-oct-comp", "bt-oct-comp2"].forEach(function(id){ if (f[id] == null){ var el = $(id), d = Array.prototype.filter.call(el.options, function(o){ return o.defaultSelected; })[0]; el.value = d ? d.value : el.options[0].value; } });
-    if (f["bt-stops"] == null) $("bt-stops").value = ""; if (f["bt-lift"] == null) $("bt-lift").value = ""; if (f["bt-half"] == null) $("bt-half").value = ""; if (c["bt-intro-nodrums"] == null) $("bt-intro-nodrums").checked = false;
+    ["bt-intro", "bt-intro-bars", "bt-gap", "bt-gap-bars", "bt-timefeel", "bt-timeparts", "bt-figs", "bt-oct-bass", "bt-oct-comp", "bt-oct-comp2"].forEach(function(id){ if (f[id] == null){ var el = $(id), d = Array.prototype.filter.call(el.options, function(o){ return o.defaultSelected; })[0]; el.value = d ? d.value : el.options[0].value; } });
+    if (f["bt-stops"] == null) $("bt-stops").value = ""; if (f["bt-lift"] == null) $("bt-lift").value = ""; if (f["bt-half"] == null) $("bt-half").value = ""; if (f["bt-intro-range"] == null) $("bt-intro-range").value = ""; if (f["bt-gap-range"] == null) $("bt-gap-range").value = ""; if (c["bt-intro-nodrums"] == null) $("bt-intro-nodrums").checked = false;
     FIELDS.forEach(function(id){ if (id === "bt-comp" || f[id] == null) return; var el = $(id); if (el.tagName !== "SELECT" || has(id, f[id])) el.value = f[id]; });
     if (f["bt-second"] == null) $("bt-second").value = "";              // (a setup that does not mention a second instrument has none)
     secondSync(false); if (f["bt-second-voicing"] != null && has("bt-second-voicing", f["bt-second-voicing"])) $("bt-second-voicing").value = f["bt-second-voicing"];
@@ -2437,14 +2655,14 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (s.tempo){ $("bt-tempo").value = s.tempo; $("bt-tempo-n").value = s.tempo; }
     if (f["bt-stops"] == null || !f["bt-stops"]) marksToFields(); else fieldsToAbc();          // (an older setup kept its stops beside the ABC, not in it)
     sectionsSync();
-    extSync(); figsSync(); timeSync(); introSync(); cycEndSet = $("bt-cyc-on").checked; cycAwaitEnd = false;
+    extSync(); figsSync(); timeSync(); introSync(); gapSync(); cycEndSet = $("bt-cyc-on").checked; cycAwaitEnd = false;
     // what the setup keeps for single sections, put on the sections of this chart that have those names
     if (Array.isArray(s.sections)){ var put = BandCatalog.placeSections(s.sections.filter(function(e){ return e && e.opts && e.state; }), chartSections().map(function(x){ return x.name; }));
       Object.keys(put).forEach(function(k){ secOv[k] = { opts: put[k].opts, state: put[k].state, sounds: put[k].sounds || [] }; }); }
     secNote();
     // hand everything to the band
     player.setInstruments(neededSounds()); player.setOpts(bandOpts()); player.setTempo(tempo());
-    player.setIntro(introChoice()); player.setCountIn(parseInt($("bt-countin").value, 10)); player.setChoruses(parseInt($("bt-choruses").value, 10));
+    player.setIntro(introChoice()); player.setBetween(gapChoice()); player.setCountIn(parseInt($("bt-countin").value, 10)); player.setChoruses(parseInt($("bt-choruses").value, 10));
     ["bass", "comp", "comp2", "drums", "congas"].forEach(function(part){ player.setVolume(part, vol(part)); }); eqInstSync();
     var m = kitMix(); Object.keys(m).forEach(function(p){ player.setKitVolume(p, m[p]); });
     showChart(); practiceSync(); loopNote();
@@ -2540,6 +2758,11 @@ document.addEventListener('DOMContentLoaded', async function () {
     remote.origin = e.origin;
     if (m.type === "bt-load" && typeof m.abc === "string"){
       if (state !== "idle") player.stop();
+      // What is being practised outlives a reload of the lyrics page: the same song sent again keeps its loop, its tempo steps
+      // and its number of choruses. Another song keeps only what does not name bars (the steps, and a click or vamp between repeats).
+      var sameSong = remote.abc === m.abc, kept = {}; remote.abc = m.abc;
+      ["bt-gap", "bt-gap-bars", "bt-gap-range", "bt-cyc-from", "bt-cyc-to", "bt-choruses"].forEach(function(id){ kept[id] = $(id).value; });
+      kept.cyc = $("bt-cyc-on").checked; kept.again = !!remote.repeats;
       remote.loaded = true; remote.melody = m.melody || null; remote.version = typeof m.version === "string" ? m.version : "";
       remoteVersions(m); remoteVersionShow();
       // the song's own saved setup (kept beside it on the lyrics site) sets everything, on the chart that was sent; otherwise style and tempo
@@ -2550,7 +2773,12 @@ document.addEventListener('DOMContentLoaded', async function () {
         $("bt-intro").value = "none"; introSync(); player.setIntro(null); }
       if (!(su ? applySetup(su) : applyAbc(m.abc, false))){ remoteSay({ type: "bt-loaded", bars: 0 }); return; }
       if (su && !(su.tempo > 0) && m.tempo > 0){ $("bt-tempo").value = m.tempo; $("bt-tempo-n").value = m.tempo; }   // (a setup shared between songs carries no tempo)
-      $("bt-choruses").value = "1"; player.setChoruses(1); $("bt-cyc-on").checked = false; $("bt-start").value = 1;
+      $("bt-choruses").value = "1"; player.setChoruses(1); $("bt-cyc-on").checked = false; $("bt-start").value = 1; remote.repeats = false;
+      if (sameSong){ ["bt-cyc-from", "bt-cyc-to", "bt-choruses"].forEach(function(id){ $(id).value = kept[id]; });
+        $("bt-cyc-on").checked = kept.cyc; cycEndSet = kept.cyc; remote.repeats = kept.again; player.setChoruses(parseInt($("bt-choruses").value, 10)); }
+      if (sameSong || kept["bt-gap"] !== "bars") ["bt-gap", "bt-gap-bars", "bt-gap-range"].forEach(function(id){ $(id).value = kept[id]; });
+      else $("bt-gap").value = "none";
+      gapSync(); player.setBetween(gapChoice());
       if (m.countIn != null){ $("bt-countin").value = String(m.countIn); player.setCountIn(parseInt($("bt-countin").value, 10)); }
       if (m.fills && !su) $("bt-fills").value = m.fills;
       $("bt-hold").value = m.hold ? "hold" : "through";
@@ -2720,29 +2948,54 @@ document.addEventListener('DOMContentLoaded', async function () {
   // mel[src] = the notes of source bar src, [{ pos, dur, midi, tie }] in units (an eighth; half of one for sixteenths), at the pitch of the ABC's key.
   // The band plays them as bar.melody (through ChordEntry.playable); the notation is the changes' own bars, repeats and sections with the notes written in.
   function melHear(){ return $("bt-mel-hear").checked; }
-  function melGeo(){
-    var n = parsedC.meterN || 4, d = parsedC.meterD || 4, den = Math.max(8, d), per = n * den / d, compound = d === 8 && n >= 6 && n % 3 === 0, beat = compound ? 3 : den / d;
+  function melTyping(){ var b = $("bt-mel-type"); return !!b && b.checked && $("bt-melody").open; }
+  // a bar's own meter: units (eighths) in the bar and in a beat, as the band counts beats (a dotted quarter in 6/8, 9/8, 12/8)
+  function melGeo(m){
+    var n = m.n, d = m.d, den = Math.max(8, d), per = n * den / d, compound = d === 8 && n >= 6 && n % 3 === 0, beat = compound ? 3 : den / d;
     return { per: per, beat: beat, bpb: per / beat, compound: compound };
   }
+  function melMeter(b){ return b && b.meter ? b.meter : { n: parsedC.meterN || 4, d: parsedC.meterD || 4 }; }
+  // the form as it is played: [{ per, beat, bpb, compound, start (beats from the top of the form) }], one per bar, each in its own meter
+  function melForm(){ var at = 0; return formOf().map(function(fb){ var g = melGeo(fb.meter || melMeter(null)); g.start = at; at += g.bpb; return g; }); }
   function melNote(t){ $("bt-mel-note").textContent = t || ""; }
+  // the Record menu: the whole tune from the Start at bar, each section, or bars of your choosing
+  function melRangeSync(){
+    var sel = $("bt-mel-range"), want = sel.value; if (!parsedC) return;
+    var secs = chartSections(), html = '<option value="all">From the Start at bar to the end</option>';
+    secs.forEach(function(sc, i){ html += '<option value="s:' + i + '">' + (sc.name || "Section " + (i + 1)).replace(/</g, "&lt;") + ' (bars ' + (sc.from + 1) + (sc.to > sc.from ? '\u2013' + (sc.to + 1) : '') + ')</option>'; });
+    html += '<option value="bars">Bars\u2026</option>';
+    if (sel.getAttribute("data-html") !== html){ sel.innerHTML = html; sel.setAttribute("data-html", html); if (Array.prototype.some.call(sel.options, function(o){ return o.value === want; })) sel.value = want; }
+    var n = formOf().length || 1; $("bt-mel-from").max = $("bt-mel-to").max = n;
+    $("bt-mel-from-f").hidden = $("bt-mel-to-f").hidden = sel.value !== "bars";
+  }
+  function melRange(){                                    // the form bars (0-based, inclusive) a take covers
+    var form = formOf(), n = form.length, v = $("bt-mel-range").value, secs = chartSections(), m = /^s:(\d+)$/.exec(v), p = practice();
+    if (m && secs[+m[1]]) return { a: secs[+m[1]].from, b: secs[+m[1]].to, what: secs[+m[1]].name || "the section" };
+    if (v === "bars"){ var a = Math.max(1, Math.min(n, parseInt($("bt-mel-from").value, 10) || 1)), b = Math.max(a, Math.min(n, parseInt($("bt-mel-to").value, 10) || a)); return { a: a - 1, b: b - 1, what: "bars " + a + "\u2013" + b }; }
+    return { a: Math.max(0, (p.cyc ? p.from : p.start) - 1), b: n - 1, what: null };
+  }
+  function melSig(){ return JSON.stringify({ m: mel, p: melPickup }); }
   function melAttach(){
     if (!parsedC || !window.ChordEntry) return;
+    melRangeSync();
     if (mel.length && mel.length !== parsedC.bars.length){ mel = []; melShow(); melNote("The changes now have a different number of bars, so the melody was removed."); return; }
     if (remote && remote.melody) return;
-    var pl = ChordEntry.playable(mel, melGeo().beat);
+    var pl = ChordEntry.playable(mel, parsedC.bars.map(function(b){ return melGeo(melMeter(b)).beat; }));
     parsedC.bars.forEach(function(b, i){ if (pl[i] && pl[i].length) b.melody = pl[i]; else if (b.melody && !(remote && remote.melody)) delete b.melody; });
   }
-  function melCount(){ var k = 0; mel.forEach(function(b){ k += b ? b.length : 0; }); return k; }
+  function melCount(){ var k = melPickup ? melPickup.notes.length : 0; mel.forEach(function(b){ k += b ? b.length : 0; }); return k; }
   var melDrawn = "";
   function melShow(){
     var box = $("bt-mel-score"), has = melCount() > 0 && parsedC;
     $("bt-mel-out").hidden = !has; $("bt-mel-undo").disabled = !melSaved; $("bt-mel-clear").disabled = !has;
+    $("bt-mel-dwim").hidden = !has;
     if (!has){ box.innerHTML = ""; melDrawn = ""; return; }
     var secs = []; formOf().forEach(function(fb){ if (fb.section != null && secs[fb.src] == null) secs[fb.src] = fb.section; });
-    var text = ChordEntry.melodyAbc(parsedC, mel, { title: parsedC.title || "Melody", sections: secs });
+    var text = ChordEntry.melodyAbc(parsedC, mel, { title: parsedC.title || "Melody", sections: secs, pickup: melPickup, beam: $("bt-mel-beam").value, tie: $("bt-mel-tie").value });
     $("bt-mel-score").setAttribute("data-abc", text);
-    if (melDrawn === text) return; melDrawn = text;
-    loadAbcjs().then(function(){ try { ABCJS.renderAbc("bt-mel-score", text, { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6, staffwidth: 760 }); } catch (e) { box.textContent = "The notation could not be drawn."; } },
+    if (melDrawn === text){ if (melDwim) melDwim.markScore(box); return; } melDrawn = text;
+    loadAbcjs().then(function(){ try { ABCJS.renderAbc("bt-mel-score", text, { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6, staffwidth: 760,
+        clickListener: function(a, tn, cls, an, drag, ev){ if (melDwim) melDwim.pick(cls, !!(ev && ev.shiftKey)); } }); if (melDwim) melDwim.markScore(box); } catch (e) { box.textContent = "The notation could not be drawn."; } },
       function(){ box.textContent = "The notation could not be loaded. Copy the ABC instead."; });
   }
   // where a key was struck, in beats from the start of the form: null outside the chorus being recorded
@@ -2751,50 +3004,67 @@ document.addEventListener('DOMContentLoaded', async function () {
     var off = parseFloat($("bt-mel-off").value) || 0;
     var w = player.where(ctx.currentTime - (performance.now() - tMs) / 1000 - off / 1000); if (!w) return null;
     var info = w.info; if (info.ending || info.intro) return null;
-    if (info.countIn) return info.bar === -1 ? -melRec.g.bpb + w.pos : null;          // the last bar of the count-in: an early first note
-    if (info.chorus !== 0 || info.index < melRec.hi - 1) return null;
-    melSeen(info); return info.index * melRec.g.bpb + w.pos;
+    if (info.countIn) return info.bar === -1 ? melRec.base - w.beats + w.pos : null;          // the last bar of the count-in: the pickup, which lands in the bar before the one recorded from
+    if (info.chorus !== 0 || info.index < melRec.hi - 1 || info.index > melRec.b) return null;
+    melSeen(info); return (melRec.g[info.index] ? melRec.g[info.index].start : 0) + w.pos;
   }
   // which bars of the form the recording covers, from what is being heard (not what is written ahead); the chorus coming to its end ends it
   function melSeen(info){ if (info.index >= melRec.hi) melRec.hi = info.index; if (melRec.lo == null) melRec.lo = info.index; }
   function melPoll(){
     if (!melRec) return;
     var w = player.where(); if (!w || w.info.countIn || w.info.intro || w.info.ending) return;
-    if (w.info.chorus !== 0 || w.info.index < melRec.hi - 1){ if (melRec.lo != null) melFinish(); } else melSeen(w.info);
+    if (w.info.index > melRec.b && w.info.chorus === 0){ if (melRec.lo != null){ melFinish(); player.stop(); } }
+    else if (w.info.chorus !== 0 || w.info.index < melRec.hi - 1){ if (melRec.lo != null) melFinish(); } else melSeen(w.info);
   }
   function melRecord(){
     if (melRec){ player.stop(); return; }
     if (!parsedC){ melNote("There are no changes to play along with."); return; }
-    var g = melGeo(), pk = parsedC.anacrusis; if (state !== "idle") player.stop();
-    melRec = { g: g, lo: null, hi: 0, holdWas: $("bt-hold").value }; melLine.reset();
-    player.setHold(false); player.setOpts(bandOpts());
+    var g = melForm(), rg = melRange(); if (state !== "idle") player.stop();
+    // the take works on the form as it is played (repeats unrolled) with the changes' own chords and meters, so its log can be run again anywhere
+    var fg = ChordEntry.grid({ n: parsedC.meterN || 4, d: parsedC.meterD || 4 }); fg.load(parsedC, { dropPickup: true });
+    var fv0 = $("bt-mel-feel").value, sw0 = fv0 === "swing" || (fv0 === "auto" && $("bt-feel").value === "swing");
+    var tk = ChordEntry.take({ kind: "melody", n: parsedC.meterN || 4, d: parsedC.meterD || 4, bars: fg.length(), beatSec: 60 / tempo(), count: g.length ? g[0].bpb : 4, key: keyField(), slash: false,
+      chordMs: Math.min(200, Math.max(10, parseInt($("bt-mel-ms").value, 10) || 45)), poly: $("bt-mel-poly").checked, res: parseFloat($("bt-mel-res").value) || 1, swing: sw0 ? BandPlayer.swingFor(tempo()) : 0,
+      free: false, grid: fg, baseAbc: abc, beam: $("bt-mel-beam").value, tie: $("bt-mel-tie").value, detached: $("bt-mel-det").value, triplets: $("bt-mel-trip").value, graceMs: $("bt-mel-grace").checked ? 80 : 0,
+      pickup: rg.a === 0 ? $("bt-mel-pickup").value : "off", pickupBeats: parsedC.anacrusis ? parsedC.anacrusisUnits / (parsedC.unitsPerBeat || 1) : null });
+    melRec = { g: g, tk: tk, swung: sw0, lo: null, hi: rg.a, a: rg.a, b: rg.b, base: g[rg.a] ? g[rg.a].start : 0, what: rg.what, holdWas: $("bt-hold").value };
+    player.setHold(false); player.setCycle(null); player.setStartBar(rg.a); player.setOpts(bandOpts());
     $("bt-mel-rec").innerHTML = "&#9632; Stop"; $("bt-mel-rec").classList.add("is-rec");
-    melNote("Recording. Play one note at a time after the count-in." + (parseInt($("bt-countin").value, 10) ? "" : " (There is no count-in: set one in the options.)"));
+    melNote("Recording " + (rg.what ? rg.what : "from bar " + (rg.a + 1)) + ". Play one note at a time after the count-in" + (rg.a > 0 ? "; notes in the count-in go at the end of bar " + rg.a : "") + "." + (parseInt($("bt-countin").value, 10) ? "" : " (There is no count-in: set one in the options.)"));
     melRec.timer = setInterval(melPoll, 60); toggle();
   }
   function melFinish(){
     var r = melRec; if (!r) return; clearInterval(r.timer); melRec = null;
     $("bt-mel-rec").innerHTML = "&#9679; Record melody"; $("bt-mel-rec").classList.remove("is-rec");
-    sectionsSync(); if (player) player.setOpts(bandOpts());
+    sectionsSync(); practiceSync(); if (player) player.setOpts(bandOpts());
     if (r.lo == null){ melNote("Nothing was recorded: the band did not get past the count-in."); return; }
-    var form = formOf(), g = r.g, res = parseFloat($("bt-mel-res").value) || 1, fv = $("bt-mel-feel").value;
-    var swung = !g.compound && (fv === "swing" || (fv === "auto" && $("bt-feel").value === "swing"));
-    var q = ChordEntry.quantizeLine(melLine.notes(form.length * g.bpb), { beat: g.beat, per: g.per, bars: form.length, res: res, swing: swung ? BandPlayer.swingFor(tempo()) : 0 });
-    var next = mel.map(function(b){ return b ? b.map(function(n){ return Object.assign({}, n); }) : b; }), got = 0, seen = {}, i;
+    var form = formOf(), swung = r.swung;                                  // (compound bars are read straight)
+    r.tk.finish(); var q = r.tk.grid.melody().map(function(x){ return x; }), pk = r.tk.pickup(), pickBar = null;
+    if (pk){ pickBar = q.shift(); r.pk = 1; }                                // a short bar in front: the notes played before the first downbeat
+    while (q.length < form.length) q.push([]);
+    melLog = r.tk.log(); window.__ceLastTake = melLog; window.__ceLastTrace = r.tk.trace; $("bt-mel-log").hidden = false; melPkShift = pk ? 1 : 0;
+    var next = mel.map(function(b){ return b ? b.map(function(n){ return Object.assign({}, n); }) : b; }), got = 0, seen = {}, i, hiBar = Math.min(r.hi, r.b, form.length - 1), loBar = r.lo;
     while (next.length < parsedC.bars.length) next.push(undefined);
-    for (i = r.lo; i <= r.hi && i < form.length; i++){
+    if (loBar > 0 && q[loBar - 1] && q[loBar - 1].length) loBar--;            // notes played in the count-in belong to the bar before
+    for (i = loBar; i <= hiBar; i++){
       var src = form[i].src; if (seen[src]) continue; seen[src] = 1;
-      next[src] = q[i].map(function(n){ return { pos: n.pos, dur: n.dur, midi: n.midi, tie: n.tie && !!form[i + 1] && form[i + 1].src === src + 1 && i < r.hi }; });
+      next[src] = q[i].map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: n.tie && !!form[i + 1] && form[i + 1].src === src + 1 && i < hiBar }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces) o.graces = n.graces.slice(); return o; });
       got += q[i].length;
     }
+    var newPickup = melPickup;
+    if (r.a === 0 && $("bt-mel-pickup").value === "auto"){
+      var pn = pickBar ? pickBar.map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: false }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces) o.graces = n.graces.slice(); return o; }) : [];
+      if (parsedC.anacrusis){ next[0] = pn; got += pn.length; newPickup = null; }          // the chart's own pickup bar holds them
+      else { newPickup = pn.length ? { beats: pk, notes: pn } : null; got += pn.length; }
+    }
     if (!got){ melNote("No notes were recorded. Check the MIDI keyboard is connected, then press Record melody again. The melody is unchanged."); return; }
-    melSaved = mel; mel = next.map(function(b){ return b || []; });
+    melSaved = mel; melSavedPickup = melPickup; mel = next.map(function(b){ return b || []; }); melPickup = newPickup; melSigs = {}; melSigs[melSig()] = 1;
     melAttach(); if (player) player.setChart(parsedC); melShow();
-    melNote("Wrote " + got + " note" + (got === 1 ? "" : "s") + (swung ? ", swung eighths as plain eighth notes" : "") + ". Press Play to hear it with the band, or record again to replace those bars.");
+    melNote("Wrote " + got + " note" + (got === 1 ? "" : "s") + (swung ? ", swung eighths as plain eighth notes" : "") + (r.what ? " in " + r.what : "") + (r.lo > 0 && loBar < r.lo ? ", the pickup in bar " + (loBar + 1) : "") + (pk ? ", with a pickup bar of " + pk + " beat" + (pk === 1 ? "" : "s") : "") + ". Press Play to hear it with the band, or record again to replace those bars.");
   }
   function melSound(m, vel){ if ($("bt-mel-sound").checked && window.BandPlayer) BandPlayer.chord([m], { inst: "piano", dur: 1.4, vel: Math.max(0.2, Math.min(1, vel)) }).catch(function(){}); }
-  function melOn(m, vel, t){ melSound(m, vel); if (melRec){ var b = melAt(t); if (b != null) melLine.on(m, b); } }
-  function melOff(m, t){ if (melRec){ var b = melAt(t); if (b != null) melLine.off(m, b); } }
+  function melOn(m, vel, t){ melSound(m, vel); if (melRec){ var b = melAt(t); if (b != null) melRec.tk.on(m, vel, b * melRec.tk.cfg.beatSec * 1000); } }
+  function melOff(m, t){ if (melRec){ var b = melAt(t); if (b != null) melRec.tk.off(m, b * melRec.tk.cfg.beatSec * 1000); } }
   function melMsg(e){ var d = e.data, cmd = d[0] & 0xf0, t = e.timeStamp || performance.now();
     if (cmd === 0x90 && d[2] > 0) melOn(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) melOff(d[1], t); }
   function melInputs(){
@@ -2812,10 +3082,24 @@ document.addEventListener('DOMContentLoaded', async function () {
     navigator.requestMIDIAccess().then(function(a){ melMidi = a; a.onstatechange = melInputs; melInputs(); }, function(){ melNote("The browser did not allow MIDI. Allow it for this site."); });
   });
   $("bt-mel-midi").addEventListener("change", function(){ if (melMidi) melInputs(); });
+  // the computer keyboard as a piano, as on the Chord Entry page: lower row Z..M, upper row Q..P; Arrow Up / Down for the octave.
+  // Only while the box is ticked and the Melody panel is open, so the page's own letter keys work the rest of the time.
+  var melTypingKeys = window.MusicalTyping ? MusicalTyping.attach({ onOn: melOn, onOff: melOff, onOctave: melTypeNote, enabled: melTyping, octave: 4 }) : null;
+  function melTypeNote(){ var o = melTypingKeys ? melTypingKeys.octave() : 4;
+    $("bt-mel-type-note").textContent = melTyping() ? "Computer keyboard: the Z row starts on C" + o + " and the Q row on C" + (o + 1) + ". Arrow Up and Arrow Down change the octave. Press Record melody, then play." : ""; }
+  try { $("bt-mel-type").checked = localStorage.getItem("bt-mel-type") === "1"; } catch (e) {}
+  $("bt-mel-type").addEventListener("change", function(){ try { localStorage.setItem("bt-mel-type", $("bt-mel-type").checked ? "1" : "0"); } catch (e) {} if (melTypingKeys) melTypingKeys.releaseAll(); melTypeNote(); $("bt-mel-type").blur(); });
+  $("bt-melody").addEventListener("toggle", function(){ if (melTypingKeys) melTypingKeys.releaseAll(); melTypeNote(); });
+  melTypeNote();
   $("bt-mel-rec").addEventListener("click", melRecord);
-  $("bt-mel-undo").addEventListener("click", function(){ if (!melSaved) return; var was = mel; mel = melSaved; melSaved = was.length ? was : null; melAttach(); if (player) player.setChart(parsedC); melShow(); melNote("Undone (press again to redo)."); });
-  $("bt-mel-clear").addEventListener("click", function(){ if (!melCount()) return; melSaved = mel; mel = []; melAttach(); parsedC.bars.forEach(function(b){ if (!(remote && remote.melody)) delete b.melody; }); if (player) player.setChart(parsedC); melShow(); melNote("The melody is removed."); });
+  $("bt-mel-range").addEventListener("change", melRangeSync);
+  $("bt-mel-undo").addEventListener("click", function(){ if (!melSaved) return; var was = mel, wasP = melPickup; mel = melSaved; melPickup = melSavedPickup; melSaved = was.length || wasP ? was : null; melSavedPickup = wasP; melAttach(); if (player) player.setChart(parsedC); melShow(); melNote("Undone (press again to redo)."); });
+  $("bt-mel-clear").addEventListener("click", function(){ if (!melCount()) return; melSaved = mel; melSavedPickup = melPickup; mel = []; melPickup = null; melAttach(); parsedC.bars.forEach(function(b){ if (!(remote && remote.melody)) delete b.melody; }); if (player) player.setChart(parsedC); melShow(); melNote("The melody is removed."); });
   $("bt-mel-hear").addEventListener("change", function(){ if (player) player.setOpts(bandOpts()); });
+  ["bt-mel-beam", "bt-mel-tie"].forEach(function(id){
+    try { var was = localStorage.getItem(id); if (was && Array.prototype.some.call($(id).options, function(o){ return o.value === was; })) $(id).value = was; } catch (e) {}
+    $(id).addEventListener("change", function(){ try { localStorage.setItem(id, $(id).value); } catch (e) {} melShow(); });
+  });
   $("bt-mel-copy").addEventListener("click", function(){ var t = $("bt-mel-score").getAttribute("data-abc") || "";
     if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function(){ melNote("The ABC is on the clipboard."); }, function(){ melNote("The browser would not copy it. Use Download .abc."); });
     else melNote("The browser would not copy it. Use Download .abc."); });
@@ -2823,7 +3107,39 @@ document.addEventListener('DOMContentLoaded', async function () {
     var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([t + "\n"], { type: "text/vnd.abc" }));
     a.download = ((parsedC && parsedC.title || "melody").replace(/[^\w\- ]+/g, "").trim().replace(/\s+/g, "-").toLowerCase() || "melody") + ".abc";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000); melNote("Downloaded " + a.download + "."); });
-  window.__btMel = { line: melLine, on: melOn, off: melOff, mel: function(){ return mel; }, where: function(){ var w = player && player.context() && player.where(); return w && !w.info.countIn && !w.info.intro && !w.info.ending && w.info.chorus === 0 ? w.info.index * melGeo().bpb + w.pos : null; }, recording: function(){ return !!melRec; } };   // for tests
+  // "what did I mean?": the take just made, re-read for some bars (the page's bars are the changes' own; the take ran over the form with repeats unrolled)
+  melDwim = MelodyDwim.attach({
+    mmOffset: function(){ return melPickup ? 1 : 0; },
+    host: $("bt-mel-dwim"), bars: function(){ return parsedC ? parsedC.bars.length : 0; },
+    log: function(){ return melLog && melCount() > 0 && melSigs[melSig()] ? melLog : null; },
+    none: function(){ return "These notes are not from the take on this page any more (the melody was changed, undone or the page reloaded), so there is nothing to re-read. Record the melody again."; },
+    options: function(){ return { beam: $("bt-mel-beam").value, tie: $("bt-mel-tie").value }; },
+    toLog: function(a, b){ var f = [], form = formOf(); form.forEach(function(fb, i){ if (fb.src >= a && fb.src <= b) f.push(i); }); return f.length ? { from: Math.min.apply(null, f) + melPkShift, to: Math.max.apply(null, f) + melPkShift } : { from: 0, to: 0 }; },
+    draw: function(el, text){ loadAbcjs().then(function(){ ABCJS.renderAbc(el, text, { responsive: "resize", paddingtop: 2, paddingbottom: 2, staffwidth: 420 }); }); },
+    mark: function(){ melDwim.markScore($("bt-mel-score")); },
+    apply: function(v, from, to){
+      var form = formOf(), r = melDwim.range(), next = mel.map(function(b){ return b ? b.map(function(n){ return Object.assign({}, n); }) : b; }), seen = {}, k;
+      while (next.length < parsedC.bars.length) next.push([]);
+      for (k = 0; k < v.melody.length; k++){
+        var f = from + k - melPkShift;
+        if (f < 0){ var pn = v.melody[k].map(function(n){ return Object.assign({}, n, { tie: false }); }); if (parsedC.anacrusis) next[0] = pn; else melPickup = pn.length ? { beats: melPickup ? melPickup.beats : 1, notes: pn } : null; continue; }
+        var src = form[f] ? form[f].src : null; if (src == null || src < r.from || src > r.to || seen[src]) continue; seen[src] = 1;
+        next[src] = v.melody[k].map(function(n){ var o = Object.assign({}, n); o.tie = !!(n.tie && form[f + 1] && form[f + 1].src === src + 1); return o; });
+      }
+      melSaved = mel; melSavedPickup = melPickup; mel = next; melSigs[melSig()] = 1; melAttach(); if (player) player.setChart(parsedC); melShow();
+      return "Bar" + (r.from === r.to ? " " + (r.from + 1) : "s " + (r.from + 1) + "\u2013" + (r.to + 1)) + " now written as: " + v.label.toLowerCase() + ". Undo the take puts them back.";
+    } });
+  $("bt-mel-log-copy").addEventListener("click", function(){
+    if (!melLog) return; var t = JSON.stringify(melLog), say = function(x){ $("bt-mel-log-note").textContent = x; };
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(t).then(function(){ say("Copied (" + melLog.events.length + " events)."); }, function(){ say("The browser would not copy it."); });
+    else say("The browser would not copy it.");
+  });
+  $("bt-mel-log-open").addEventListener("click", function(){
+    if (!melLog) return;
+    try { localStorage.setItem("notationLog", JSON.stringify(melLog)); } catch (e) { $("bt-mel-log-note").textContent = "The browser is blocking storage; copy the log instead."; return; }
+    if (!window.open("/tools/notation-rules.html?from=chord-entry", "_blank")) location.href = "/tools/notation-rules.html?from=chord-entry";
+  });
+  window.__btMel = { dwim: function(){ return melDwim; }, beat: function(){ if (!melRec || !player) return null; var w = player.where(); if (!w || w.info.ending || w.info.intro) return null; if (w.info.countIn) return w.info.bar === -1 ? melRec.base - w.beats + w.pos : null; return (melRec.g[w.info.index] || { start: 0 }).start + w.pos; }, pickup: function(){ return melPickup; }, lastTake: function(){ return melLog; }, on: melOn, off: melOff, mel: function(){ return mel; }, where: function(){ var w = player && player.context() && player.where(); return w && !w.info.countIn && !w.info.intro && !w.info.ending && w.info.chorus === 0 ? (melForm()[w.info.index] || { start: 0 }).start + w.pos : null; }, recording: function(){ return !!melRec; } };   // for tests
   melShow();
 
   // over to the Chord Entry page with what is here: localStorage.entryHandoff { v, from, at, abc, tempo, pinMap }
@@ -2834,6 +3150,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   sideIdle();
   $("bt-aswritten").addEventListener("change", function(){ parsedC.asWritten = $("bt-aswritten").checked; barCheck(); if (player) player.setChart(parsedC); });
   booted = true; if (parsedC) abcSettings(abc, parsedC);
+  tuneModeSet(tuneMode);
   // the list of sections: a link to each panel; a click opens the panel and brings it into view
   (function(){ var root = $("bt-root"), nav = document.createElement("nav"); nav.className = "bt-nav"; nav.id = "bt-nav"; nav.setAttribute("aria-label", "Sections of this page");
     var items = [{ el: root.querySelector(".bt-panel"), label: "Play" }, { el: root.querySelector(".bt-chartrow"), label: "Chart" }];
@@ -2859,6 +3176,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 </main> <!-- /main -->
 <!-- Injected before </body> on every page. Loads the tracker. -->
 <script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=1"></script>
+<script src="../apps/shared/practice-widgets.js?v=3"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

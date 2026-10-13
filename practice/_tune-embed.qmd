@@ -91,6 +91,12 @@
           <option value="9">A</option><option value="10">B♭</option><option value="11">B</option>
         </select></div>
       <button id="enharmBtn" type="button" style="align-self:end">⇄ Enharmonic</button>
+      <div><label for="octDown">Octave</label>
+        <div class="ta-oct" style="display:flex;align-items:center;gap:.3rem">
+          <button id="octDown" type="button" title="Move the whole tune down an octave" aria-label="Down an octave">−8va</button>
+          <span id="octVal" style="min-width:2.2rem;text-align:center;font-variant-numeric:tabular-nums">0</span>
+          <button id="octUp" type="button" title="Move the whole tune up an octave" aria-label="Up an octave">+8va</button>
+        </div></div>
     </div>
     <div class="row" style="margin-top:.5rem; align-items:center">
       <div><label for="metroVol">Metronome volume: <span id="metroVolV">70</span></label>
@@ -264,17 +270,18 @@
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/session-log.js"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>
-<script src="/apps/shared/tonality.js?v=4"></script>
+<script src="/apps/shared/tonality.js?v=9"></script>
 <script src="/apps/shared/abc-transpose.js?v=1"></script>
+<script src="/apps/shared/abc-octave.js?v=1"></script>
 <script src="/apps/shared/tune-chart.js?v=11"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
 <script src="/apps/shared/rhythm-cells.js?v=1"></script>
-<script src="/apps/shared/tune-library.js?v=7"></script>
+<script src="/apps/shared/tune-library.js?v=17"></script>
 <script src="/apps/shared/satb.js?v=1"></script>
 <script src="/apps/shared/arranger.js?v=16"></script>
-<script src="/apps/tune-assessment/app.js?v=37"></script>
+<script src="/apps/tune-assessment/app.js?v=38"></script>
 </div>
-<script src="/apps/shared/audio.js?v=3"></script>
+<script src="/apps/shared/audio.js?v=9"></script>
 <script src="/apps/shared/establish-button.js"></script>
 <script>
 (function(){
