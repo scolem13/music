@@ -6,7 +6,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   const set = (id, val) => ev(`(function(){ var e = document.getElementById("${id}"); e.value = "${val}"; e.dispatchEvent(new Event("change", { bubbles:true })); })()`);
   const waitFor = async (expr, ms, what) => { const t = Date.now(); for (;;) { try { if (await ev(expr)) return; } catch (e) {} if (Date.now() - t > ms) throw new Error("timeout " + what); await b.sleep(100); } };
   try {
-    await b.goto(B + "/tools/backing-track.html"); await b.sleep(1000);
+    await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(1000);
     const lay = JSON.parse(await ev(`JSON.stringify({ first: document.querySelector("#bt-root > *:not(.bt-nav)").querySelector("#bt-play") ? "play" : "other",
       playCollapsible: !!document.getElementById("bt-play").closest("details"),
       sections: Array.from(document.querySelectorAll("#bt-root > details")).map(function(d){ return d.querySelector("summary").textContent.trim() + (d.open ? "+" : "-"); }),
@@ -60,9 +60,9 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`document.getElementById("btn-notation").click()`); await b.sleep(500);
     assert.strictEqual(await ev(`document.querySelectorAll(".diagram-card .notation-wrap").length`), 0, "notation hidden"); assert.strictEqual(await ev(`document.querySelectorAll(".notation-cap").length`), 0);
     assert.strictEqual(await ev(`document.getElementById("btn-notation").textContent`), "Show notation");
-    await b.goto(B + "/tools/backing-track.html"); await b.sleep(900);
+    await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(900);
     assert.strictEqual(await ev(`document.getElementById("bt-sec-band").open`), false, "the section stayed collapsed"); 
-    await ev(`localStorage.removeItem("btSections")`); await b.goto(B + "/tools/backing-track.html"); await b.sleep(900); await b.shot("layout.png"); await b.resize(390, 800); await b.sleep(300); await b.shot("layout-phone.png");
+    await ev(`localStorage.removeItem("btSections")`); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(900); await b.shot("layout.png"); await b.resize(390, 800); await b.sleep(300); await b.shot("layout-phone.png");
     assert.strictEqual(await ev(`document.documentElement.scrollWidth <= 392`), true, "no sideways scroll on a phone");
     const errs = b.errors.filter(e => !/supabaseUrl|createClient/.test(e)); assert.strictEqual(errs.length, 0, JSON.stringify(errs)); console.log("LAYOUT OK");
   } finally { await b.close(); } })().catch(e => { console.error("FAILED:", e.message); process.exit(1); });

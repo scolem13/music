@@ -128,7 +128,12 @@
         var fm = /^[\^_<>@]\s*(small|short|big|long)?\s*fill$/i.exec(s);                    // an annotation: "^fill", "^small fill", "^big fill"
         if (fm || /^[\^_<>@]\s*stop$/i.test(s)) (cur.marks = cur.marks || []).push({ kind: fm ? "fill" : "stop", from: srcOff(i), to: srcOff(e) + 1 });
         if (fm) cur.fill = !fm[1] ? "medium" : /^(small|short)$/i.test(fm[1]) ? "small" : "large";   // the drummer fills at the end of this bar
-        else if (/^[\^_<>@]\s*half(\s*time)?$/i.test(s)) cur.feel = "half";   // "^half time": this bar is felt in half time (in pairs: bars 1+2, 3+4, ...)
+        else if (/^[\^_<>@]\s*choke$/i.test(s)) cur.choke = true;                           // "^choke": a crash on beat 1 of this bar, grabbed with the hand
+        else if (/^[\^_<>@]\s*half(\s*time)?(\s+ballad)?$/i.test(s)){ cur.feel = "half";   // "^half time": this bar is felt in half time (in pairs: bars 1+2, 3+4, ...)
+          if (/ballad$/i.test(s)) cur.halfComp = "ballad"; }                               // "^half time ballad": and the chords go over to the ballad patterns
+        else if (/^[\^_<>@]\s*rit(\.|ard\.?|ardando)?$/i.test(s)) cur.rit = true;           // "^rit.": the last time through, slow down from this bar into the ending
+        else if (/^[\^_<>@]\s*phrase(\s*end)?$/i.test(s)) cur.phraseEnd = true;             // "^phrase": a phrase ends with this bar (calm bars, opts.calm)
+        else if (/^[\^_<>@]\s*plain$/i.test(s)) cur.plain = true;                           // "^plain": the chords are only struck and held in this bar (opts.calm)
         else if (/^[\^_<>@]\s*style\b/i.test(s)) cur.style = s.replace(/^[\^_<>@]\s*style\s*:?\s*/i, "").trim() || "none";   // "^style bossa": this bar and the rest of its section in that style
         else if (/^[\^_<>@]\s*stop$/i.test(s)) cur.stop = true;                               // "^stop": stop time on this bar
         else if (/^[A-G]/.test(s)) { cur.chords.push({ sym:s, onset:pos }); content = true; }
@@ -587,6 +592,8 @@
             if (bar.section){ var sc = document.createElement("span"); sc.className = "tc-section"; sc.textContent = bar.section; if (bar.ending) sc.style.left = "4.2rem"; cell.appendChild(sc); }                // (an ending bracket pushes the time signature along too)
             if (bar.fill){ var fl = document.createElement("span"); fl.className = "tc-fillmark"; fl.textContent = bar.fill === "small" ? "small fill" : bar.fill === "large" ? "big fill" : "fill";
               fl.setAttribute("title", "The drummer fills at the end of this bar"); cell.appendChild(fl); }
+            if (bar.choke && !bar.fill){ var ck = document.createElement("span"); ck.className = "tc-fillmark"; ck.textContent = "choke";
+              ck.setAttribute("title", "A crash on beat 1, grabbed with the hand"); cell.appendChild(ck); }
             var bm = bar.meter || { n:p.meterN, d:p.meterD };
             if (bm.n !== lastMeter.n || bm.d !== lastMeter.d){
               var sigHtml = '<span class="tc-mn">'+bm.n+'</span><span class="tc-md">'+bm.d+'</span>';

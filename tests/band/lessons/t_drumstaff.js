@@ -8,8 +8,8 @@ function gen(opts, meter, seed){ return BandMidi.generate(chart(meter || "4/4"),
 function at(r, piece){ return r.parts.drums.filter(function (e){ return e.piece === piece; }).map(function (e){ return Math.round(e.pos * 100) / 100; }).join(" "); }
 function drumAbc(recs){ return BandNotation.toAbc(recs, { key: "F", show: { comp: false, bass: false, drums: true } }); }
 function voice(abc, id){ return abc.split("\n").filter(function (l, i, a){ return l.indexOf("[V:" + id + "]") === 0 || (a[i - 2] === "V:" + id && /\|/.test(l)); }).join(" ").replace(/\[V:\w\]/g, ""); }
-function barLen(tok){ var t = tok.replace(/"[^"]*"/g, "").replace(/![^!]*!/g, ""), sum = 0, trip = 0, mm, re = /\(3|\[[^\]]*\](\d*)|[_=^]*[A-Ga-gxz][,']*(\d*)/g;
-  while ((mm = re.exec(t))){ if (mm[0] === "(3"){ trip = 3; continue; } var n = parseInt(mm[1] || mm[2] || "1", 10); if (trip > 0){ sum += n * 2 / 3; trip--; } else sum += n; } return sum; }
+function barLen(tok){ var t = tok.replace(/"[^"]*"/g, "").replace(/![^!]*!/g, ""), sum = 0, trip = 0, mm, re = /\(3|\[[^\]]*\](\d*(?:\/\d*)?)|[_=^]*[A-Ga-gxz][,']*(\d*(?:\/\d*)?)/g;
+  while ((mm = re.exec(t))){ if (mm[0] === "(3"){ trip = 3; continue; } var ln = mm[1] || mm[2] || "1", n = /\//.test(ln) ? parseInt(ln.split("/")[0] || "1", 10) / parseInt(ln.split("/")[1] || "2", 10) : parseInt(ln, 10); if (trip > 0){ sum += n * 2 / 3; trip--; } else sum += n; } return sum; }
 
 // the grooves: what is played
 var C = BandCatalog, S = function (id){ return C.styleOpts(id).opts; };
@@ -60,3 +60,65 @@ var nb = 0;
     l.replace(/^\[V:\w\]/, "").replace(/\[M:[^\]]*\]/g, "").replace(/\|\]/, "|").split("|").map(function (x){ return x.trim(); }).filter(Boolean).forEach(function (b){ nb++;
       assert(Math.abs(barLen(b) - m[1]) < 1e-6, st.id + " " + m[0] + " bar length " + barLen(b) + " in: " + b); }); }); }); });
 console.log("DRUM STAFF OK " + nb + " bars");
+
+// the names of the pieces: one table with the placement (hover text on the lesson's drum staves)
+(function (){
+  var N = BandNotation, seen = {};
+  N.drumOrder.forEach(function (p){ var w = N.drumWritten(p); assert(w && N.drumNames[p], p + " has a place and a name");
+    assert.strictEqual(N.drumPiece(w.letter, w.style, w.open), p, p + ": the place it is written finds it again"); assert.strictEqual(N.drumName(w.letter, w.style, w.open), N.drumNames[p]);
+    var k = w.letter + w.style + w.open; assert(!seen[k], p + " shares a place with " + seen[k]); seen[k] = p; });
+  assert.strictEqual(N.drumName("c", "x", false), N.drumNames.sticks); assert.strictEqual(N.drumName("g", "x", true), "Hi-hat, open"); assert.strictEqual(N.drumName("z", "", false), null);
+  // every piece the notation can write answers to a name, rim and clap included (they sit on the cross-stick's place)
+  ["ride", "rideBell", "crash", "hatClosed", "hatOpen", "sticks", "rim", "snare", "tomHi", "tomMid", "tomLo", "kick", "hatFoot"].forEach(function (p){ var w = N.drumWritten(p); assert(N.drumName(w.letter, w.style, w.open), p + " is named"); });
+  console.log("DRUM NAMES OK");
+})();
+
+// ---- the hi-hat lesson grooves (lessons/hihat-grooves.qmd): what is played, how it is written, sixteenths and accents
+(function (){
+  var HH = ["hhquarters", "hheighths", "hhaccents", "hhoffbeats", "hhopen", "hhdance", "hhsix", "hhsix2", "hhfoot4", "hhswing"];
+  function chart2(meter){ var b = +meter.split("/")[0]; return TuneChart.parse("X:1\nM:" + meter + "\nL:1/" + meter.split("/")[1] + "\nK:F\n" + ('"F7"z' + b + "|").repeat(4) + "]"); }
+  function run(g, meter, style, ride){ return BandMidi.generate(chart2(meter || "4/4"), { bars: 4, tempo: 100, opts: Object.assign(S(style || "rock"), { groove: g, fills: "none" }, ride ? { ride: ride } : {}), rng: mb(2) }); }
+  function pos(r, piece){ return r.parts.drums.filter(function (e){ return e.piece === piece; }).map(function (e){ return e.pos; }); }
+  var show = { comp: false, bass: false, drums: true };
+  // catalog and fit lists: a set, each described, in the menus of its styles
+  HH.forEach(function (id){ var e = C.byId(C.drums, id); assert(e && e.desc && /^Hi-hat: /.test(e.label) && BandDrums.GROOVES[id], id + " in the catalog");
+    assert(e.fits.length, id + " fits a style (a part missing from FITS cannot be chosen with the lock on)"); assert.strictEqual(e.fits.indexOf("swing") >= 0, id === "hhswing", id + " swing only for the swing hi-hat"); });
+  ["rock", "strum", "pop", "dance", "boogaloo"].forEach(function (st){ assert(C.byId(C.drums, "hheighths").fits.indexOf(st) >= 0, "eighths fit " + st); });
+  // nothing existing changed: no event of another groove carries the sixteenth mark, and the dance still has its clap
+  Object.keys(BandDrums.GROOVES).filter(function (id){ return HH.indexOf(id) < 0; }).forEach(function (id){
+    gen(Object.assign(S("rock"), { groove: id, fills: "none" })).forEach(function (r){ r.parts.drums.forEach(function (e){ assert(!("six" in e), id + " has no six mark"); }); }); });
+  assert(pos(run("dance")[0], "clap").length === 2 && !pos(run("hhdance")[0], "clap").length, "the lesson's four on the floor has no clap");
+  // beat grids
+  var g = { q: run("hhquarters")[0], e: run("hheighths")[0], o: run("hhoffbeats")[0], op: run("hhopen")[0], d: run("hhdance")[0], s1: run("hhsix")[0], s2: run("hhsix2")[0], f: run("hhfoot4")[0], w: run("hhswing", "4/4", "swing")[0] };
+  assert.deepStrictEqual(pos(g.q, "hatClosed"), [0, 1, 2, 3]); assert.deepStrictEqual(pos(g.q, "kick"), [0, 2]); assert.deepStrictEqual(pos(g.q, "snare"), [1, 3]);
+  assert.strictEqual(pos(g.e, "hatClosed").length, 8); assert.deepStrictEqual(pos(g.e, "snare"), [1, 3]); assert.deepStrictEqual(pos(g.e, "kick"), [0, 2]);
+  assert.deepStrictEqual(pos(g.o, "hatClosed"), [0.5, 1.5, 2.5, 3.5]); assert.deepStrictEqual(pos(g.o, "kick"), [0, 1, 2, 3]); assert.deepStrictEqual(pos(g.o, "snare"), [1, 3]);
+  assert.deepStrictEqual(pos(g.op, "hatOpen"), [3.5]); assert.strictEqual(pos(g.op, "hatClosed").length, 7); assert.deepStrictEqual(pos(g.op, "hatFoot"), [0], "the foot closes it on 1");
+  assert.deepStrictEqual(pos(g.d, "hatOpen"), [0.5, 1.5, 2.5, 3.5]); assert.deepStrictEqual(pos(g.d, "hatClosed"), [0, 1, 2, 3]); assert.deepStrictEqual(pos(g.d, "kick"), [0, 1, 2, 3]);
+  assert.strictEqual(pos(g.s1, "hatClosed").length, 16); assert.deepStrictEqual(pos(g.s1, "hatClosed").slice(0, 5), [0, 0.25, 0.5, 0.75, 1]);
+  assert.strictEqual(pos(g.s2, "hatClosed").length, 14); assert(pos(g.s2, "hatClosed").indexOf(1) < 0 && pos(g.s2, "hatClosed").indexOf(3) < 0 && pos(g.s2, "snare").join() === "1,3", "no hat on the snare's notes");
+  assert.deepStrictEqual(pos(g.f, "hatFoot"), [0, 1, 2, 3]); assert.strictEqual(pos(g.f, "ride").length, 8); assert.strictEqual(pos(g.f, "hatClosed").length, 0);
+  assert.deepStrictEqual(pos(g.w, "hatOpen"), [0, 2]); assert.deepStrictEqual(pos(g.w, "hatClosed"), [1, 1.5, 3, 3.5]); assert.deepStrictEqual(pos(g.w, "hatFoot"), [1, 3]);
+  // sixteenths are straight and marked, the rest is not
+  g.s1.parts.drums.forEach(function (e){ var odd = Math.abs(e.pos * 2 - Math.round(e.pos * 2)) > 1e-6; assert.strictEqual(!!e.six, odd, "six on the sixteenths only: " + e.pos); assert.strictEqual(!!e.straight, odd); });
+  // whatever the Cymbal menu says, these are hi-hat grooves (the foot is kept, the ride is not turned into the hat)
+  ["ride", "hat", "bell"].forEach(function (c){ assert.deepStrictEqual(pos(run("hhfoot4", "4/4", "rock", c)[0], "hatFoot"), [0, 1, 2, 3], c); assert.strictEqual(pos(run("hheighths", "4/4", "rock", c)[0], "hatClosed").length, 8, c);
+    assert.deepStrictEqual(pos(run("hhswing", "4/4", "swing", c)[0], "hatFoot"), [1, 3], c); assert.strictEqual(pos(run("hhswing", "4/4", "swing", c)[0], "ride").length, 0, c); });
+  // 3/4: a bar of three, the same pieces
+  HH.forEach(function (id){ var r3 = run(id, "3/4", id === "hhswing" ? "swing" : "rock")[0].parts.drums; assert(r3.length && r3.every(function (e){ return e.pos < 3; }), id + " has a bar of three"); });
+  assert.strictEqual(pos(run("hhsix", "3/4")[0], "hatClosed").length, 12); assert.strictEqual(pos(run("hhsix2", "3/4")[0], "hatClosed").length, 11);
+  // the staff: bar lengths in 4/4 and 3/4 (with and without accents), sixteenths written as sixteenths, accents opt-in
+  var nb2 = 0;
+  [["4/4", 8], ["3/4", 6]].forEach(function (m){ HH.forEach(function (id){ [false, true].forEach(function (acc){
+    var abc = BandNotation.toAbc(run(id, m[0], id === "hhswing" ? "swing" : "rock"), { key: "F", show: show, accents: acc });
+    ["U", "D"].forEach(function (vid){ voice(abc, vid).replace(/\]\s*$/, "").split("|").map(function (x){ return x.trim(); }).filter(Boolean).forEach(function (b){ nb2++; assert(Math.abs(barLen(b) - m[1]) < 1e-6, id + " " + m[0] + " " + vid + " bar length " + barLen(b) + " in: " + b); }); }); }); }); });
+  var six = voice(drumAbc(run("hhsix")), "U").split("|")[0], six2 = voice(drumAbc(run("hhsix2")), "U").split("|")[0];
+  assert.strictEqual((six.match(/style=x!g/g) || []).length, 16, "sixteen hat heads in a bar of sixteenths: " + six); assert.strictEqual((six.match(/\/2/g) || []).length, 16);
+  assert.strictEqual((six2.match(/style=x!g/g) || []).length, 14, "fourteen with two hands: " + six2); assert(/(^| )c\/2/.test(six2) && !/\[[^\]]*gc/.test(six2.replace(/!style=x!/g, "")), "the snare stands alone where the hat is silent");
+  assert(!/!>!/.test(drumAbc(run("hhaccents"))), "no accents unless asked");
+  var acc = BandNotation.toAbc(run("hhaccents"), { key: "F", accents: true, show: show }), accU = voice(acc, "U").split("|")[0];
+  assert.strictEqual((accU.match(/!>!/g) || []).length, 4, "an accent on each of the four beats and none on the ands: " + accU);
+  assert.strictEqual(voice(BandNotation.toAbc(run("hhaccents"), { key: "F", show: { accents: true, comp: false, bass: false, drums: true } }), "U"), voice(acc, "U"), "show.accents does the same");
+  assert(!/!>!/.test(BandNotation.toAbc(run("hheighths"), { key: "F", accents: true, show: show })), "equal eighths: nothing stands out, no accents");
+  console.log("HI-HAT GROOVES OK " + nb2 + " bars");
+})();

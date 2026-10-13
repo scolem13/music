@@ -40,7 +40,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await set("bt-meter", "4/4"); assert.strictEqual(await ev(`document.getElementById("bt-feel").disabled`), false); assert.strictEqual(await v("bt-tempo-n"), "120");
     await ev(`(function(){ var t = document.getElementById("bt-abc"); t.value = 'X:1\\nT:Five\\nM:5/4\\nL:1/4\\nK:C\\n"Cm7"z5 | "F7"z5 |]'; t.dispatchEvent(new Event("input", { bubbles:true })); })()`); await b.sleep(700);
     assert.strictEqual(await v("bt-meter"), "5/4"); assert.strictEqual(await ev(`document.querySelectorAll("#bt-beats i").length`), 5);
-    await set("bt-meter", "3/4"); assert.strictEqual(await v("bt-meter"), "5/4", "custom changes keep their meter");
+    await set("bt-meter", "3/4"); assert.strictEqual(await v("bt-meter"), "3/4", "a typed chord chart is re-barred"); assert(/M:3\/4/.test(await v("bt-abc")), "and its M: line follows");
     // guitar, voice-led triads
     await set("bt-changes", "jazz"); await set("bt-meter", "4/4"); await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`); await set("bt-comp", "guitar");
     const styles = await ev(`Array.from(document.getElementById("bt-voicing").options).map(function(o){ return o.value; }).join(",")`); console.log("guitar voicings:", styles);

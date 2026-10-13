@@ -19,7 +19,7 @@ toc: false
 .ll-note{color:var(--site-ink-2);margin:.2rem 0 1rem}
 </style>
 
-<p>These lessons are all built on the twelve-bar blues, and the site's backing band plays every example in them. Choose your instrument to see the lessons written for it, in the order to take them.</p>
+<p>These lessons are built on the blues, and the site's backing band plays every example in them. Choose your instrument to see the lessons written for it, in the order to take them.</p>
 
 <div class="ll-pick" id="ll-pick" role="group" aria-label="Instrument">
   <button type="button" data-inst="all">All</button>
@@ -27,6 +27,7 @@ toc: false
   <button type="button" data-inst="guitar">Guitar</button>
   <button type="button" data-inst="piano">Piano</button>
   <button type="button" data-inst="drums">Drums</button>
+  <button type="button" data-inst="congas">Congas</button>
   <button type="button" data-inst="violin">Violin</button>
   <button type="button" data-inst="sax">Saxophone</button>
   <button type="button" data-inst="other">Another instrument</button>
@@ -59,6 +60,21 @@ toc: false
     <a href="blues-drums.html">Blues for Drums: From Quarter Notes to the Shuffle</a>
     <p>How to read a drum part, then the beat, the ride pattern, swing time, fills that mark the form, the shuffle, the slow 12/8 and straight eighths.</p>
   </li>
+  <li data-for="all drums">
+    <span class="ll-step"></span>
+    <a href="hihat-grooves.html">Hi-Hat Grooves: From Quarter Notes to Sixteenths</a>
+    <p>For a drummer who can already play a basic beat. The three sounds of the hi-hat, then quarter notes, eighths, accents, off-beats, an open note, open off-beats, sixteenths with one hand and with two, the foot alone and the swing hi-hat.</p>
+  </li>
+  <li data-for="all congas">
+    <span class="ll-step"></span>
+    <a href="congas-basics.html">How to Play Congas: Five Strokes and the Tumbao</a>
+    <p>The drums, how to sit, the five strokes (bass, open, muted, slap, heel-toe) and how they are written, then the tumbao built in six steps with the band: open tones, right hand, left hand, both hands, a cha-cha band and two drums.</p>
+  </li>
+  <li data-for="all congas">
+    <span class="ll-step"></span>
+    <a href="watermelon-congas.html">Watermelon Man for Congas</a>
+    <p>The tumbao over a 16-bar blues: the form, the break on bar 14, the melody, and the same part in Mongo Santamar&iacute;a's cha-cha and in a boogaloo.</p>
+  </li>
   <li data-for="all violin sax other">
     <span class="ll-step"></span>
     <a href="blues-melody.html">Blues for Violin and Saxophone: Playing the Changes</a>
@@ -80,7 +96,8 @@ toc: false
     bass: 'Three lessons for bass, in this order.',
     guitar: 'Three lessons for guitar, in this order.',
     piano: 'Three lessons for piano, in this order.',
-    drums: 'Two lessons for drums. The first is worth reading even though there is nothing in it to play: a drummer who knows the chords hears the form.',
+    drums: 'Three lessons for drums, in this order. The first is worth reading even though there is nothing in it to play: a drummer who knows the chords hears the form. The last, on the hi-hat, is for a drummer who can already play a basic beat.',
+    congas: 'Two lessons for congas, in this order: the strokes and the tumbao, then the tumbao in a 16-bar blues.',
     violin: 'Three lessons for violin, in this order. Leave the Instrument menu on those pages at violin or concert pitch.',
     sax: 'Three lessons for saxophone, in this order. On the last two, choose your saxophone in the Instrument menu and everything is written in your key.',
     other: 'For any other instrument that plays one note at a time (flute, trumpet, clarinet, voice). Choose concert pitch or your transposition in the Instrument menu on the last two pages.'

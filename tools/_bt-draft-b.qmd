@@ -44,7 +44,7 @@
 (function(){
   var D = window.BTDraft, $ = D.$, el = D.el, F = D.field;
   if (!D || !D.player) return;                                          // (the band did not load: the page says so itself)
-  var root = D.init("dxb", "B (a card for each player)", [["backing-track.html", "The current page"], ["backing-track-a.html", "Draft A"]]);
+  var root = D.init("dxb", "B (a card for each player)", [["backing-track.html", "The current page"], ["backing-track-classic.html", "The earlier layout"]]);
   var old = root.querySelector(".bt-panel"), band = $("bt-sec-band"), subs = band.querySelectorAll(":scope > .bt-sub"), mix = $("bt-sec-mix");
   var grid = el("div", "dxb-grid"), rail = el("div", "dxb-rail"), main = el("div", "dxb-main");
   function wide(node){ if (node) node.classList.add("dxb-w"); return node; }
@@ -68,12 +68,13 @@
     var c = el("div", "bt-panel dxb-card" + (cls ? " " + cls : "")), body = el("div", "dxb-body"), h = D.head(title);
     c.appendChild(F("bt-vol-" + part)); c.appendChild(body); body.appendChild(h); players.appendChild(c); c.body = body; return c;
   }
-  var cBass = card("bass", "Bass"), cComp = card("comp", "Chords"), cSecond = card("comp2", "Second chords"), cDrums = card("drums", "Drums", "dxb-drums");
-  D.put(cBass.body, F("bt-bass"), F("bt-bass-sound"), F("bt-oct-bass"), $("bt-walk-field"));
+  var cBass = card("bass", "Bass"), cComp = card("comp", "Chords"), cSecond = card("comp2", "Second chords"), cDrums = card("drums", "Drums", "dxb-drums"), cCongas = card("congas", "Congas");
+  D.put(cBass.body, F("bt-bass"), $("bt-bass-more"), F("bt-bass-sound"), F("bt-oct-bass"), $("bt-walk-field"));
   D.put(cComp.body, F("bt-comp"), F("bt-oct-comp"), F("bt-rhythm"), $("bt-rhythm-more"), F("bt-voicing"), $("bt-voicing-more"), F("bt-vmove"), F("bt-ext"), $("bt-ext-more"), subs[2].querySelector(":scope > details.bt-info"));
   D.put(cSecond.body, F("bt-second"), $("bt-second-rhythm-f"), $("bt-second-voicing-f"), $("bt-oct-comp2-f"), $("bt-second-suggest"));
   var two = el("div", "dxb-two"); D.put(two, F("bt-groove"), F("bt-fills"));
-  D.put(cDrums.body, two, $("bt-kit"));
+  D.put(cDrums.body, two, $("bt-groove-more"), $("bt-kit"));
+  D.put(cCongas.body, F("bt-congas"));
   // the second chord player has no fader until an instrument is chosen: say so where the fader will be
   main.appendChild(players);
 
@@ -90,7 +91,7 @@
 
   D.partStrips(false); D.kitStrips(); D.eq(); D.amp();
   // each card's Tone button shows that player in the EQ and brings it into view
-  [[cBass, "bass"], [cComp, "comp"], [cSecond, "comp2"], [cDrums, "drums"]].forEach(function(p){ p[0].firstChild.appendChild(D.toneButton(p[1], "Tone")); });
+  [[cBass, "bass"], [cComp, "comp"], [cSecond, "comp2"], [cDrums, "drums"], [cCongas, "congas"]].forEach(function(p){ p[0].firstChild.appendChild(D.toneButton(p[1], "Tone")); });
   D.onTone = function(){ tone.style.scrollMarginTop = "5rem"; tone.scrollIntoView({ block: "nearest" }); };
 })();
 </script>

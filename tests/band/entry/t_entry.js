@@ -107,3 +107,46 @@ assert.strictEqual(idn("Cm7b5", [51, 54, 58, 60]), "standard:1:b3 b5 b7 R", "a r
     var r = ChordVoicings.identify(lc, c.midis); assert(r && r.style, sym + " " + st + " not named: " + c.midis); assert.deepStrictEqual(r.tones, ChordVoicings.piano(lc, r.style)[r.index].tones, sym + " " + st); }); });
 });
 console.log("VOICING NAMES OK");
+
+// ---- a melody: single notes into written rhythm ----
+(function (){
+  var s = 0.67, M = [60, 62, 64, 65, 67, 69, 70, 72];
+  function played(list, swung, mode){                                        // list: [midi, beat on, beat off]
+    var L = CE.line(); list.forEach(function (n){ L.on(n[0], n[1]); L.off(n[0], n[2]); }); return L.notes(8);
+  }
+  // swung eighths (long-short at 2/3) are written as even eighths
+  var sw = M.map(function (m, i){ var t = Math.floor(i / 2) + (i % 2 ? s : 0); return [m, t + 0.02, t + (i % 2 ? 0.3 : 0.55)]; });
+  var q = CE.quantizeLine(played(sw), { beat: 2, per: 8, bars: 1, swing: s });
+  assert.deepStrictEqual(q[0].map(function (n){ return n.pos + ":" + n.dur; }), ["0:1", "1:1", "2:1", "3:1", "4:1", "5:1", "6:1", "7:1"], "swung eighths come out even");
+  // a quarter, a clear gap (rest), a late off-beat, and a long note over the barline (tied)
+  var L = CE.line(); [[67, 0, 0.7], [66, 2 + s, 3.5], [60, 3.67, 4.4], [64, 4.5, 6.5]].forEach(function (n){ L.on(n[0], n[1]); L.off(n[0], n[2]); });
+  q = CE.quantizeLine(L.notes(8), { beat: 2, per: 8, bars: 2, swing: s });
+  assert.deepStrictEqual(q[0].map(function (n){ return n.midi + "@" + n.pos + "x" + n.dur + (n.tie ? "t" : ""); }), ["67@0x1", "66@5x2", "60@7x1t"], "short notes and a rest, note across the bar is tied");
+  assert.strictEqual(q[1][0].midi, 60); assert.strictEqual(q[1][0].pos, 0);
+  // two notes struck together leave the top one; a new note ends the one before
+  L = CE.line(); L.on(60, 0); L.on(64, 0.02); L.on(67, 1); L.off(60, 3); L.off(64, 3); L.off(67, 3);
+  var ns = L.notes(4); assert.deepStrictEqual(ns.map(function (n){ return n.midi + ":" + n.off; }), ["64:1", "67:3"]);
+  // sixteenths when asked
+  q = CE.quantizeLine([{ midi: 60, on: 0, off: 0.25 }, { midi: 62, on: 0.25, off: 0.5 }, { midi: 64, on: 0.5, off: 1 }], { beat: 2, per: 8, bars: 1, res: 0.5 });
+  assert.deepStrictEqual(q[0].map(function (n){ return n.pos + ":" + n.dur; }), ["0:0.5", "0.5:0.5", "1:1"]);
+  // a note struck before the count-in ends is the first note; one far too early is dropped
+  q = CE.quantizeLine([{ midi: 60, on: -0.2, off: 1 }, { midi: 62, on: -2, off: -1 }], { beat: 2, per: 8, bars: 1 }); assert.strictEqual(q[0].length, 1); assert.strictEqual(q[0][0].pos, 0);
+
+  // ABC: spelled from the key, accidentals once per bar, chords above the notes, ties where a chord changes
+  var G = CE.grid({ n: 4, d: 4 }); G.put("Cmaj7", "half"); G.put("G7", "half"); G.setLength(1);
+  G.setMelody([M.map(function (m, i){ return { pos: i, dur: 1, midi: m }; })]);
+  assert.strictEqual(G.toAbc({ key: "C" }).split("\n").slice(3).join("|"), 'L:1/8|K:C|"Cmaj7"C D E F "G7"G A _B c |]');
+  G = CE.grid({ n: 4, d: 4 }); G.put("Bbm7", "bar"); G.setMelody([[{ pos: 0, dur: 1, midi: 70 }, { pos: 1, dur: 1, midi: 71 }, { pos: 2, dur: 1.5, midi: 63 }, { pos: 3.5, dur: 0.5, midi: 61 }, { pos: 4, dur: 4, midi: 46, tie: true }]]);
+  assert.strictEqual(G.toAbc({ key: "Db" }).split("\n").slice(3).join("|"), 'L:1/16|K:Db|"Bbm7"B2 _c2 E3 D B,,8- |]');
+  G = CE.grid({ n: 4, d: 4 }); G.put("C", "half"); G.put("F", "half"); G.setMelody([[{ pos: 2, dur: 4, midi: 64 }, { pos: 7, dur: 1, midi: 66 }, { pos: 7, dur: 0, midi: 66 }].slice(0, 2)]);
+  assert.strictEqual(G.toAbc({ key: "F" }).split("\n").slice(5).join("|"), '"C"z2 E2- "F"E2 z _G |]', "a note held over a chord change is tied; the chromatic note nearest a key tie is flat (Gb in F)");
+  // accidentals persist for the bar
+  G = CE.grid({ n: 4, d: 4 }); G.put("C7", "bar"); G.setMelody([[63, 63, 64, 63].map(function (m, i){ return { pos: i * 2, dur: 2, midi: m }; })]);
+  assert.strictEqual(G.toAbc({ key: "C" }).split("\n")[5], '"C7"_E2 E2 =E2 _E2 |]', "the flat holds for the bar, the natural is shown, then the flat again");
+  // the chart still reads it: the same bars and chords, the melody gone from the chart
+  var P = TuneChart.parse(G.toAbc({ key: "C" })); assert.strictEqual(P.bars.length, 1); assert.strictEqual(P.bars[0].chords[0].sym, "C7");
+  // undo takes the melody back; a new grid has none
+  G.setMelody([[{ pos: 0, dur: 8, midi: 60 }]]); assert(G.hasMelody()); assert(G.back()); assert.strictEqual(G.melody()[0][0].midi, 63);
+  G.clearMelody(); assert(!G.hasMelody()); G.back(); assert(G.hasMelody());
+  console.log("MELODY OK");
+})();

@@ -2,8 +2,10 @@
 // Input is the per-bar records from the player's onBarEvents (the notes as generated).
 //
 //   BandNotation.toAbc(bars, { key:"F", drums:false, barsPerLine:4, title:"", show, names }) -> ABC string
+//   BandNotation.drumName(letter, style, open) -> what a drum note head is called ("Ride cymbal"); drumPiece(...) -> the band's piece name;
+//        drumWritten(piece) -> { letter, style, open, down }; drumNames = piece -> name. One table with the placement below.
 //        staves: comping · a second chord instrument, when the bars have one · bass (bass clef) · optional drums
-//        (percussion clef, two voices). show = { comp, comp2, bass, drums } picks the staves (a part left out of it
+//        (percussion clef, two voices) · optional congas ("Cga.": see below). show = { comp, comp2, bass, drums, congas } picks the staves (a part left out of it
 //        keeps its usual answer: comping, second instrument and bass shown, drums as `drums` says); with every part
 //        switched off the comping is shown. names = { comp, comp2 } are the staff names (else "Pno." / "Gtr.").
 //        The chord symbols are written over the top staff, whichever it is.
@@ -29,6 +31,15 @@
 //     A hit is written short: a quarter note on a beat with nothing after it, an eighth anywhere else, and a rest for
 //     what is left. It never takes the length of the gap to the next hit (a kick is not a half note).
 //     A feathered kick (the quiet four-to-the-bar under swing time, below FEATHER) is left out, as it is on a chart.
+//   • Accents (opt-in: toAbc(bars, { accents: true }) or show.accents): a > over each hi-hat note that is clearly louder than the others in its bar
+//     (the lesson's accented eighths). Sixteenths: a hit the groove marks six (hhsix, hhsix2 in drums.js) is written as a real sixteenth, four to the beat;
+//     every other off-beat position is written as before.
+//   • Congas (show.congas: true, and only when the bars have conga events; the default is off): one percussion-clef voice "Cga.", stems up.
+//     The conga (the higher drum) is written on the top space, the tumba (the lower) on the second space from the bottom. Heads: open tone and
+//     bass tone plain, slap x, muffled tone a diamond, heel and toe a triangle. Under the staff two lines of words, one syllable to each
+//     note: the stroke (H T S O M B) and the hand (L R). Rests carry no word.
+//     congaName(piece) -> "Open tone", "Slap", "Heel", "Toe (fingertips)", "Muffled tone", "Bass tone", with ", low drum" after a tumba's;
+//     congaWritten(piece, stroke) -> { letter, style, low } for the head (style "x" | "harmonic" | "triangle" | ""); congaNames = piece -> name.
 
 (function (global) {
   var G = 12;                                               // grid steps per beat: eighths (6) and triplets (4)
@@ -42,6 +53,34 @@
   var DRUM = { ride:["f",X], rideBell:["f","!style=harmonic!"], crash:["a",X], hatClosed:["g",X], hatOpen:["g","!open!" + X], sticks:["c",X], rim:["c",X], clap:["c",X], tamb:["g",X],
                snare:["c",""], tomHi:["e",""], tomMid:["d",""], tomLo:["A",""], kick:["F",""], hatFoot:["D",X] };
   var DOWN = { kick:1, hatFoot:1 };
+  // piece -> what it is called to a student. THE ONE PLACE a staff position is turned into a name (the hover text on every drum
+  // note head of the lessons, and the drum-kit picture): DRUM_ORDER is the order in which a written head is matched to a piece,
+  // so the pieces that share a place on the staff (the cross-stick, a clap, the tambourine) answer with the first of them.
+  var DRUM_NAME = { ride:"Ride cymbal", rideBell:"Ride cymbal, on the bell", crash:"Crash cymbal", hatClosed:"Hi-hat (closed), with the stick", hatOpen:"Hi-hat, open",
+                    hatFoot:"Hi-hat, with the foot", sticks:"Cross-stick (stick laid across the snare, tapping the rim)", snare:"Snare drum", tomHi:"High tom",
+                    tomMid:"Mid tom", tomLo:"Floor tom", kick:"Bass drum" };
+  var DRUM_ORDER = ["ride", "rideBell", "crash", "hatClosed", "hatOpen", "sticks", "snare", "tomHi", "tomMid", "tomLo", "kick", "hatFoot"];
+  // a note head as abcjs reports it (letter, style "x" | "harmonic" | "" and whether it carries the open-hi-hat circle) -> the piece
+  function drumPiece(letter, style, open){
+    var deco = style === "x" ? X : style === "harmonic" ? "!style=harmonic!" : "";
+    for (var i = 0; i < DRUM_ORDER.length; i++){ var p = DRUM_ORDER[i], d = DRUM[p];
+      if (d[0] === letter && d[1] === (open ? "!open!" + X : deco) && (!open || style === "x")) return p; }
+    return null;
+  }
+  function drumName(letter, style, open){ var p = drumPiece(letter, style, open); return p ? DRUM_NAME[p] : null; }
+  // a piece -> how it is written: { letter, style, open, down }
+  function drumWritten(piece){ var d = DRUM[piece]; if (!d) return null; return { letter: d[0], style: /harmonic/.test(d[1]) ? "harmonic" : /style=x/.test(d[1]) ? "x" : "", open: /open/.test(d[1]), down: !!DOWN[piece] }; }
+  // congas: the conga on the top space, the tumba on a lower one; the head says the stroke
+  var CONGA_HEAD = { H:"!style=triangle!", T:"!style=triangle!", S:X, O:"", M:"!style=harmonic!", B:"" };
+  var CONGA_NAME = { congaOpen:"Open tone", congaSlap:"Slap", congaHeel:"Heel", congaToe:"Toe (fingertips)", congaMute:"Muffled tone", congaBass:"Bass tone",
+                     tumbaOpen:"Open tone, low drum", tumbaMute:"Muffled tone, low drum", tumbaBass:"Bass tone, low drum" };
+  var CONGA_STROKE = { congaOpen:"O", congaSlap:"S", congaHeel:"H", congaToe:"T", congaMute:"M", congaBass:"B", tumbaOpen:"O", tumbaMute:"M", tumbaBass:"B" };
+  function congaName(piece){ return CONGA_NAME[piece] || null; }
+  function congaWritten(piece, stroke){
+    if (!CONGA_NAME[piece]) return null;
+    var st = stroke || CONGA_STROKE[piece], low = /^tumba/.test(piece), d = CONGA_HEAD[st] || "";
+    return { letter: low ? "A" : "e", style: /triangle/.test(d) ? "triangle" : /harmonic/.test(d) ? "harmonic" : /style=x/.test(d) ? "x" : "", low: low };
+  }
   var FEATHER = 0.3;                                        // a kick quieter than this is felt, not read
 
   function mod12(n){ return ((n % 12) + 12) % 12; }
@@ -80,12 +119,19 @@
     return g + s;
   }
   function chordAt(chords, pos){ var c = null; (chords || []).forEach(function (x){ if (x.pos <= pos + 1e-6) c = x.chord; }); return c; }
-  function snap(pos, cmp){                                  // beat position -> grid, on the eighth or triplet grid
+  function snap(pos, cmp, six){                             // beat position -> grid, on the eighth or triplet grid (six: the sixteenth grid, for an event marked six)
     var b = Math.floor(pos + 1e-6), f = pos - b;
     if (cmp) return b * 3 + (Math.abs(f - 0.5) < 0.02 ? 2 : Math.min(2, Math.round(f * 3)));   // compound: x.5 is the third eighth
-    var  opts = [0, 4, 6, 8, 12], best = 0, bd = 9;
+    var  opts = six ? [0, 3, 6, 9, 12] : [0, 4, 6, 8, 12], best = 0, bd = 9;
     opts.forEach(function (o){ var d = Math.abs(f * G - o); if (d < bd - 1e-9){ bd = d; best = o; } });
     return b * G + best;
+  }
+  // The hi-hat notes of a bar that are clearly louder than the rest (a spread of at least 0.12 in loudness, the top 40% of it): the ones an accent is written over
+  function accented(evs){
+    var hs = evs.filter(function (e){ return (e.piece === "hatClosed" || e.piece === "hatOpen") && e.vel != null; }); if (hs.length < 2) return [];
+    var lo = Math.min.apply(null, hs.map(function (e){ return e.vel; })), hi = Math.max.apply(null, hs.map(function (e){ return e.vel; }));
+    if (hi - lo < 0.12) return [];
+    return hs.filter(function (e){ return e.vel >= lo + 0.6 * (hi - lo) - 1e-9; });
   }
   function len(n){ return n === 1 ? "" : String(n); }
 
@@ -101,6 +147,9 @@
     var onsets = Object.keys(items).map(Number).filter(function (g){ return g < total; }).sort(function (a, b){ return a - b; });
     if (!onsets.length && !carry && !markKeys.length) return { abc: rest + beats * G / U, carry: null };
     function trip(b){ return !cmp && onsets.some(function (g){ return Math.floor(g / G) === b && (g % G === 4 || g % G === 8); }); }
+    // a beat of sixteenths (an item on the second or fourth sixteenth, which only an event marked six puts there): four slots, notes of
+    // a sixteenth and rests joined, written as /2 lengths so abcjs beams the four together
+    function six(b){ return !cmp && !trip(b) && onsets.some(function (g){ return Math.floor(g / G) === b && (g % G === 3 || g % G === 9); }); }
     function put(g, s){
       var pre = ""; while (markKeys.length && markKeys[0] <= g) pre += '"' + marks[markKeys.shift()] + '"';
       out += (g % G === 0 && out ? " " : "") + pre + s;
@@ -108,13 +157,22 @@
     function free(g){ return g >= total ? !!nextFree : (!trip(Math.floor(g / G)) && items[g] === undefined); }
     var b = 0;
     while (b < beats){
+      if (six(b)){
+        carry = null; var gap = 0, gapAt = 0;
+        var rs = function (n){ return rest + (n === 1 ? "/2" : n === 2 ? "" : n === 4 ? "2" : n + "/2"); };
+        [0, 3, 6, 9].forEach(function (o){ var g = b * G + o, it = items[g];
+          if (it){ if (gap){ put(gapAt, rs(gap)); gap = 0; } put(g, it.tok(ms) + "/2"); }
+          else { if (!gap) gapAt = g; gap++; } });
+        if (gap) put(gapAt, rs(gap));
+        b++; continue;
+      }
       if (trip(b)){
         carry = null;
         [0, 4, 8].forEach(function (o, k){ var g = b * G + o, it = items[g] || (o === 8 ? items[b * G + 6] : null);
           put(g, (k === 0 ? "(3" : "") + (it ? it.tok(ms) : rest)); });
         b++; continue;
       }
-      var b1 = b + 1; if (b % 2 === 0 && b1 < beats && !trip(b1)) b1++;        // a run of one or two plain beats
+      var b1 = b + 1; if (b % 2 === 0 && b1 < beats && !trip(b1) && !six(b1)) b1++;        // a run of one or two plain beats
       // compound: one beat at a time, unless nothing starts inside the pair (a dotted half, or a rest)
       if (cmp && b1 === b + 2 && onsets.some(function (x){ return x > b * G && x < b1 * G; })) b1 = b + 1;
       var g0 = b * G, g1 = b1 * G, g = g0;
@@ -176,8 +234,10 @@
     function isGuitar(part){ return bars.some(function (b){ return ((b.parts || {})[part] || []).some(function (e){ return e.inst === "guitar"; }); }); }
     var M = global.BandMidi, straight = M ? bars.every(function (b){ return M.swingOf(b) <= 0.5; }) : !!o.straight;
     var sh = o.show || {}, names = o.names || {}, has2 = bars.some(function (b){ return ((b.parts || {}).comp2 || []).length; });
-    var want = { comp: sh.comp !== false, comp2: has2 && sh.comp2 !== false, bass: sh.bass !== false, drums: sh.drums == null ? !!o.drums : !!sh.drums };
-    if (!want.comp && !want.comp2 && !want.bass && !want.drums) want.comp = true;
+    var hasC = bars.some(function (b){ return ((b.parts || {}).congas || []).length; });
+    var accents = !!(o.accents || sh.accents);             // opt-in: an accent (>) over the hi-hat notes clearly louder than the others in their bar
+    var want = { comp: sh.comp !== false, comp2: has2 && sh.comp2 !== false, bass: sh.bass !== false, drums: sh.drums == null ? !!o.drums : !!sh.drums, congas: hasC && !!sh.congas };
+    if (!want.comp && !want.comp2 && !want.bass && !want.drums && !want.congas) want.comp = true;
     // voices: { id, def, kind: "comp" | "bass" | "drums", part (whose events), hand ("L" = a piano's left-hand staff) }
     var voices = [], score = [];
     [["comp", "K", "L", ""], ["comp2", "K2", "L2", " 2"]].forEach(function (x){
@@ -188,6 +248,7 @@
     });
     if (want.bass){ voices.push({ id:"B", kind: "bass", def:'V:B clef=bass name="Bass"' }); score.push("B"); }
     if (want.drums){ voices.push({ id:"U", kind: "drums", def:'V:U clef=perc stem=up name="Dr."' }); voices.push({ id:"D", kind: "drums", down: true, def:"V:D clef=perc stem=down" }); score.push("(U D)"); }
+    if (want.congas){ voices.push({ id:"G", kind: "congas", def:'V:G clef=perc stem=up name="Cga."' }); score.push("G"); }
 
     // per voice, per bar: the grid of items
     function grids(v){
@@ -208,25 +269,39 @@
             var t = it.list.map(function (m){ return pitchTok(m, it.ch, K, ms); }); return t.length > 1 ? "[" + t.join("") + "]" : t[0] || "z"; }; })(it); }
           else it.want = Math.max(it.want, want);                              // two events of one hand at one moment: one chord
           mine.forEach(function (m){ if (it.list.indexOf(m) < 0) it.list.push(m); }); it.list.sort(function (a, b){ return a - b; }); }); }
-        else (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || !!v.down !== !!DOWN[e.piece]) return;
+        else if (v.kind === "congas") (P.congas || []).forEach(function (e){ var w = congaWritten(e.piece, e.stroke); if (!w) return;
+          var g = snap(e.pos, cmp), st = e.stroke || CONGA_STROKE[e.piece];
+          if (items[g]) return;                                                  // (two strokes at one moment: the first)
+          items[g] = { short: true, want: 1, stroke: st, hand: e.hand === "L" ? "L" : "R", tok: function (){ return (CONGA_HEAD[st] || "") + w.letter; } }; });
+        else { var loud = accents ? accented(P.drums || []) : [];
+          (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || !!v.down !== !!DOWN[e.piece]) return;
           if (e.piece === "kick" && e.vel != null && e.vel < FEATHER) return;
-          var g = snap(e.pos, cmp), it = items[g] || (items[g] = { short: true, want: 1, hits: [], tok: function (){
+          var g = snap(e.pos, cmp, e.six), it = items[g] || (items[g] = { short: true, want: 1, hits: [], tok: function (){
             var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0]]) return; seen[h[0]] = 1; t.push(h[1] + h[0]); });      // (two pieces on one line: the first)
-            return t.length > 1 ? "[" + t.join("") + "]" : t[0]; } });
-          it.hits.push(d); });
+            return (this.acc ? "!>!" : "") + (t.length > 1 ? "[" + t.join("") + "]" : t[0]); } });
+          if (loud.indexOf(e) >= 0) it.acc = true;
+          it.hits.push(d); }); }
         return items;
       });
     }
     bars.forEach(function (bar, i){ var nb = bars[i + 1]; bar.nextChord = nb ? chordAt(nb.chords, 0) : null; });
 
+    // the words under the conga staff, one to each note emitBar writes: the items in time order (in a triplet beat emitBar keeps the
+    // note on the third step and drops one on the sixth step beside it)
+    function wordsOf(items, total, per){
+      var gs = Object.keys(items).map(Number).filter(function (g){ return g < total; }).sort(function (a, b){ return a - b; }), out = [];
+      gs.forEach(function (g){ var b = Math.floor(g / per), drop = per === G && g % G === 6 && items[b * G + 8] !== undefined; if (!drop) out.push(items[g]); });
+      return out;
+    }
     var body = {}; voices.forEach(function (v){
       var gs = grids(v), carry = null;
       body[v.id] = bars.map(function (bar, i){
         var marks = {}, cmp = !!bar.compound, nb = bars[i + 1], sig = sigOf(bar);
         if (v === voices[0]) (bar.chords || []).forEach(function (c){ marks[Math.round(c.pos * (cmp ? 3 : G))] = chordName(c.chord); });
         var ng = gs[i + 1], nextFree = !!ng && ng[0] === undefined && (!!(nb && nb.compound) || !Object.keys(ng).some(function (g){ return g < G && (g % G === 4 || g % G === 8); }));
-        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.kind !== "drums", cmp, v.down ? "x" : "z");
+        var r = emitBar(gs[i], bar.beats || 4, marks, carry, nextFree, v.kind !== "drums" && v.kind !== "congas", cmp, v.down ? "x" : "z");
         carry = r.carry;
+        if (v.kind === "congas") (v.words = v.words || [])[i] = wordsOf(gs[i], (bar.beats || 4) * (cmp ? 3 : G), cmp ? 3 : G);
         return (i > 0 && sig !== sigOf(bars[i - 1]) ? "[M:" + sig + "]" : "") + r.abc;
       });
     });
@@ -245,11 +320,18 @@
       // a line abcjs forgets the staff's clef, and with the drum staff it fails altogether
       var mm = s > 0 ? /^\[M:[^\]]*\]/.exec(seg[0]) : null;
       if (mm && lastLine[v.id] != null){ seg[0] = seg[0].slice(mm[0].length); lines[lastLine[v.id]] += " " + mm[0]; }
-      if (s === 0 && (v.id === "U" || v.id === "D")){ lines.push("V:" + v.id, "K:C clef=perc", seg.join(" | ") + end); lastLine[v.id] = lines.length - 1; return; }   // no key signature on the drum staff
-      lines.push("[V:" + v.id + "] " + seg.join(" | ") + end); lastLine[v.id] = lines.length - 1;
+      if (s === 0 && (v.id === "U" || v.id === "D" || v.id === "G")) lines.push("V:" + v.id, "K:C clef=perc", seg.join(" | ") + end);   // no key signature on the drum staff
+      else lines.push("[V:" + v.id + "] " + seg.join(" | ") + end);
+      lastLine[v.id] = lines.length - 1;
+      if (v.kind === "congas"){                                  // a word to each note, "|" to the next bar
+        var ws = v.words.slice(s, s + perLine);
+        lines.push("w: " + ws.map(function (b){ return b.map(function (it){ return it.stroke; }).join(" "); }).join(" | "));
+        lines.push("w: " + ws.map(function (b){ return b.map(function (it){ return it.hand; }).join(" "); }).join(" | "));
+      }
     });
     return head.concat(lines).join("\n");
   }
 
-  global.BandNotation = { toAbc: toAbc, spell: spell, keyInfo: keyInfo };
+  global.BandNotation = { toAbc: toAbc, spell: spell, keyInfo: keyInfo, drumPiece: drumPiece, drumName: drumName, drumWritten: drumWritten, drumNames: DRUM_NAME, drumOrder: DRUM_ORDER,
+                           congaName: congaName, congaWritten: congaWritten, congaNames: CONGA_NAME };
 })(typeof window !== "undefined" ? window : globalThis);

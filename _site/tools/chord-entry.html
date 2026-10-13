@@ -159,6 +159,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/blues-melody.html">
  <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
   </li>  
@@ -486,10 +498,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 #ce-root textarea{display:block;width:100%;min-height:9rem;margin-top:.8rem;padding:.7rem .8rem;resize:vertical;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;
   background:var(--site-surface-2,#f2ede5);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.84rem;line-height:1.55}
 #ce-chart{margin:0 0 1rem}
+#ce-score{margin:0 0 1rem;background:#fff;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:.5rem .8rem;overflow-x:auto}
+#ce-score:empty{display:none}
 #ce-chart:empty::before{content:"No chords yet. Play one.";display:block;padding:1.2rem;border:1px dashed var(--site-border,#e0d8ce);border-radius:10px;color:var(--site-ink-2,#5c5246)}
 </style>
 <div id="ce-root">
-  <p class="ce-intro">Play the chords of a tune on a MIDI keyboard (or click them on the keys below) and they are written out as a chart. Check it, then send it to the Backing Track page, where the band plays it.</p>
+  <p class="ce-intro">Play the chords of a tune on a MIDI keyboard (or click them on the keys below) and they are written out as a chart. Check it, then send it to the Backing Track page, where the band plays it. With the chords in, you can also play the melody along with the band and have it written as notes.</p>
   <div class="ce-panel">
     <h2 class="anchored">1. Set up</h2>
     <div class="ce-row">
@@ -508,7 +522,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <h2 class="anchored">2. Enter</h2>
     <div class="ce-row">
       <div class="ce-field"><label for="ce-mode">How</label>
-        <select id="ce-mode"><option value="step" selected="">Chords, one at a time</option><option value="live">Chords, in time with a click or drums</option><option value="voice">Voicings for the chords, one at a time</option></select></div>
+        <select id="ce-mode"><option value="step" selected="">Chords, one at a time</option><option value="live">Chords, in time with a click or drums</option><option value="voice">Voicings for the chords, one at a time</option><option value="melody">Melody, played along with the band</option></select></div>
       <label class="ce-check" id="ce-slash-wrap" title="Off: C with E at the bottom is written C. On: it is written C/E."><input type="checkbox" id="ce-slash"> Write inversions as slash chords</label>
     </div>
     <div class="ce-row" id="ce-step">
@@ -526,6 +540,18 @@ document.addEventListener('DOMContentLoaded', async function () {
         <input type="number" id="ce-offset" min="-300" max="300" step="5" value="0"></div><span class="ce-unit">ms</span>
       <button type="button" class="ce-btn" id="ce-rec">● Record</button>
     </div>
+    <div class="ce-row" id="ce-melody" hidden="">
+      <div class="ce-field"><label for="ce-mfeel" title="Swung: the long-short eighths you play are written as plain eighth notes, the way a lead sheet shows them, and the band swings them back.">You play</label>
+        <select id="ce-mfeel"><option value="swing">Swung eighths (written straight)</option><option value="straight">Straight</option></select></div>
+      <div class="ce-field"><label for="ce-mres" title="The shortest note written.">Shortest note</label>
+        <select id="ce-mres"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
+      <div class="ce-field"><label for="ce-moffset" title="If the notes land a little early or late against the band, shift them. A positive number moves them earlier.">Nudge</label>
+        <input type="number" id="ce-moffset" min="-300" max="300" step="5" value="0"></div><span class="ce-unit">ms</span>
+      <button type="button" class="ce-btn" id="ce-mrec">● Record melody</button>
+      <button type="button" class="ce-btn" id="ce-mundo">Undo the take</button>
+      <button type="button" class="ce-btn" id="ce-mclear">Remove the melody</button>
+      <label class="ce-check" title="Off: Hear it plays the band alone."><input type="checkbox" id="ce-mhear" checked=""> Play the melody in Hear it</label>
+    </div>
     <div class="ce-row" id="ce-voice" hidden="">
       <button type="button" class="ce-btn" id="ce-vprev">◀ Previous chord</button>
       <button type="button" class="ce-btn" id="ce-vnext">Next chord ▶</button>
@@ -534,7 +560,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     </div>
     <p class="ce-heard" id="ce-vnow" hidden=""></p>
     <div class="ce-keys" id="ce-keys" role="group" aria-label="On-screen keys: pick the notes of a chord"></div>
-    <div class="ce-row"><button type="button" class="ce-btn" id="ce-enter">Enter these notes</button></div>
+    <div class="ce-row" id="ce-enter-row"><button type="button" class="ce-btn" id="ce-enter">Enter these notes</button></div>
     <p class="ce-heard" id="ce-heard" role="status"></p>
     <p class="ce-hint" id="ce-note" role="status"></p>
   </div>
@@ -547,6 +573,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     <p class="ce-status" id="ce-status"></p>
   </div>
   <div id="ce-chart"></div>
+  <div id="ce-score" aria-label="The melody as notation"></div>
   <div class="ce-panel">
     <h2 class="anchored">4. Send it on</h2>
     <div class="ce-row">
@@ -562,16 +589,18 @@ document.addEventListener('DOMContentLoaded', async function () {
   </div>
 </div>
 <script src="../apps/shared/soundfont.js"></script>
-<script src="../apps/shared/tune-chart.js?v=22"></script>
+<script src="../apps/shared/tune-chart.js?v=23"></script>
 <script src="../apps/shared/voicings.js?v=5"></script>
-<script src="../apps/shared/chord-entry.js?v=2"></script>
-<script src="../apps/shared/band/harmony.js?v=23"></script>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/chord-entry.js?v=3"></script>
+<script src="../apps/shared/band/harmony.js?v=24"></script>
 <script src="../apps/shared/band/bass.js?v=11"></script>
 <script src="../apps/shared/band/comp.js?v=25"></script>
-<script src="../apps/shared/band/catalog.js?v=23"></script>
-<script src="../apps/shared/band/drums.js?v=9"></script>
-<script src="../apps/shared/band/sounds.js?v=11"></script>
-<script src="../apps/shared/band/player.js?v=108"></script>
+<script src="../apps/shared/band/catalog.js?v=33"></script>
+<script src="../apps/shared/band/drums.js?v=14"></script>
+<script src="../apps/shared/band/congas.js?v=2"></script>
+<script src="../apps/shared/band/sounds.js?v=14"></script>
+<script src="../apps/shared/band/player.js?v=110"></script>
 <script>
 (function(){
   var $ = function(id){ return document.getElementById(id); };
@@ -580,7 +609,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   var KEYS = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
   var SIZE = { bar: "One bar", two: "Two bars", half: "Half a bar", beat: "One beat" }, SNAP = { bar: "Bar", half: "Half bar", beat: "Beat", eighth: "Eighth note" };
   // grid = the bars entered; abc / parsed = the same as a chart; pins = "form bar:beat" -> { midis, ckey (the chord it was played for), auto }
-  var grid = null, abc = "", parsed = null, chart = null, player = null, state = "idle", rec = null, pins = {}, vAt = 0;
+  var line = ChordEntry.line(), grid = null, abc = "", parsed = null, chart = null, player = null, state = "idle", rec = null, pins = {}, vAt = 0;
   var lis = ChordEntry.listener({ mode: "step" }), timer = null, picked = {}, midiAccess = null, input = null;
 
   function fill(sel, items){ sel.innerHTML = ""; items.forEach(function(it){ var o = document.createElement("option"); o.value = it.id; o.textContent = it.label; sel.appendChild(o); }); }
@@ -613,6 +642,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (!grid) grid = newGrid();
     abc = grid.toAbc({ key: $("ce-key").value, title: title() });
     parsed = null; try { parsed = TuneChart.parse(abc); } catch (e) {}
+    attachMelody(); drawScore();
     $("ce-abc").value = grid.length() ? abc : "";
     var have = parsed && parsed.bars.length > 0;
     if (!have){ $("ce-chart").innerHTML = ""; chart = null; }
@@ -628,6 +658,27 @@ document.addEventListener('DOMContentLoaded', async function () {
     var nb = grid.length(), nc = grid.count(), nv = Object.keys(pins).length;
     $("ce-count").textContent = nb ? nb + " bar" + (nb === 1 ? "" : "s") + ", " + nc + " chord" + (nc === 1 ? "" : "s") + (nv ? ", " + nv + " with a voicing" : "") : "";
     voiceShow();
+  }
+  // the entered melody on the parsed bars, in beats, for the band to play (a tie into the next bar becomes one long note)
+  function attachMelody(){
+    if (!parsed || !grid) return;
+    var mel = grid.melody(), u = grid.unitsPerBeat, skip = {};
+    parsed.bars.forEach(function(b, i){
+      var l = (mel[i] || []).map(function(n){ return { pos: n.pos / u, dur: n.dur / u, midi: n.midi, tie: n.tie }; }), out = [];
+      l.forEach(function(n, k){ if (skip[i + ":" + k]) return;
+        var at = n, bi = i, ki = k;
+        while (at.tie && mel[bi + 1] && mel[bi + 1][0] && mel[bi + 1][0].midi === n.midi){ n.dur += mel[bi + 1][0].dur / u; skip[(bi + 1) + ":0"] = 1; at = mel[bi + 1][0]; bi++; }
+        out.push({ pos: n.pos, dur: n.dur, midi: n.midi }); });
+      if (out.length) b.melody = out; else delete b.melody;
+    });
+  }
+  var scoreAbc = "";
+  function drawScore(){
+    var box = $("ce-score"), has = grid && grid.hasMelody();
+    if (!has){ box.innerHTML = ""; scoreAbc = ""; return; }
+    if (scoreAbc === abc || typeof ABCJS === "undefined") return;
+    scoreAbc = abc;
+    try { ABCJS.renderAbc("ce-score", abc, { responsive: "resize", add_classes: true, paddingtop: 6, paddingbottom: 6, staffwidth: 760 }); } catch (e) { box.textContent = "The notation could not be drawn."; }
   }
   function meterSync(){
     var sizes = newGrid().sizes();
@@ -693,7 +744,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     var p = makePlayer();
     p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(0); p.setCountIn(1);
     p.setVolume("bass", 1); p.setVolume("comp", 1);
-    var o = styleOpts(); o.pins = pinMap(); p.setInstruments(styleSounds()); p.setOpts(o);
+    var o = styleOpts(); o.pins = pinMap(); o.melody = $("ce-mhear").checked && grid.hasMelody(); p.setInstruments(styleSounds()); p.setOpts(o);
     p.play().catch(failed);
   }
   function record(){
@@ -709,7 +760,34 @@ document.addEventListener('DOMContentLoaded', async function () {
     lis.reset(); note("Recording " + n + " bar" + (n === 1 ? "" : "s") + ". Play after the count-in.");
     p.play().catch(function(){ failed(); if (rec) finish(); });
   }
+  // ---- a melody: played along with the band over the chords already entered ----
+  function recordMelody(){
+    if (rec){ player.stop(); return; }
+    if (!grid || !grid.count()){ note("Enter the chords first; the band plays them while you play the melody."); return; }
+    if (state !== "idle") player.stop();
+    var n = grid.length();
+    rec = { bars: n, melody: true }; line.reset();
+    var p = makePlayer();
+    p.setChart(parsed); p.setTempo(tempo()); p.setChoruses(1); p.setCountIn(1);
+    p.setVolume("bass", 1); p.setVolume("comp", 1);
+    var o = styleOpts(); o.pins = pinMap(); o.melody = false; p.setInstruments(styleSounds()); p.setOpts(o);
+    $("ce-mrec").innerHTML = "&#9632; Stop"; $("ce-mrec").classList.add("is-rec");
+    note("Recording " + n + " bar" + (n === 1 ? "" : "s") + " of melody. Play after the count-in; one note at a time.");
+    p.play().catch(function(){ failed(); if (rec) finish(); });
+  }
+  function swingOn(){ return $("ce-mfeel").value === "swing" && !grid.compound; }
+  function finishMelody(){
+    var n = rec.bars, beats = grid.beats * n; rec = null;
+    $("ce-mrec").innerHTML = "&#9679; Record melody"; $("ce-mrec").classList.remove("is-rec");
+    var res = parseFloat($("ce-mres").value) || 1;
+    var q = ChordEntry.quantizeLine(line.notes(beats), { beat: grid.unitsPerBeat, per: grid.unitsPerBar, bars: n, res: res, swing: swingOn() ? BandPlayer.swingFor(tempo()) : 0 });
+    var k = 0; q.forEach(function(b){ k += b.length; });
+    if (!k){ note("No notes were recorded. Check the MIDI keyboard is connected, then press Record melody again. The chords are unchanged."); heard(""); return; }
+    grid.setMelody(q); refresh();
+    note("Wrote " + k + " note" + (k === 1 ? "" : "s") + (swingOn() ? ", swung eighths as plain eighth notes" : "") + ". Hear it, or record again to replace the melody.");
+  }
   function finish(){
+    if (rec && rec.melody){ finishMelody(); return; }
     var n = rec.bars; rec = null;
     $("ce-rec").innerHTML = "&#9679; Record"; $("ce-rec").classList.remove("is-rec");
     refresh();
@@ -718,14 +796,19 @@ document.addEventListener('DOMContentLoaded', async function () {
            : "No chords were recorded. Check the MIDI keyboard is connected, then press Record again.");
   }
   // in time: where the chord was played against what was being heard, snapped to the grid
-  function place(sym, tMs){
+  // where in the form a key was struck: { bar, pos (beats; bar -1 is the last bar of the count-in) } or null
+  function whereAt(tMs, offId){
     var ctx = player && player.context(); if (!ctx || !grid) return null;
-    var off = parseFloat($("ce-offset").value) || 0;
+    var off = parseFloat($(offId).value) || 0;
     var w = player.where(ctx.currentTime - (performance.now() - tMs) / 1000 - off / 1000); if (!w) return null;
     var info = w.info, bar = info.index;
     if (info.ending || info.intro) return null;
-    if (info.countIn){ if (info.bar !== -1) return null; bar = -1; }              // just ahead of bar 1: an early first chord
-    var pos = w.pos;
+    if (info.countIn){ if (info.bar !== -1) return null; bar = -1; }              // just ahead of bar 1: an early first note
+    return { bar: bar, pos: w.pos };
+  }
+  function place(sym, tMs){
+    var at0 = whereAt(tMs, "ce-offset"); if (!at0) return null;
+    var bar = at0.bar, pos = at0.pos;
     if (style().feel === "swing" && !grid.compound) pos = ChordEntry.unswing(pos, BandPlayer.swingFor(tempo()));   // a swung off-beat sits late
     var at = grid.place(sym, bar, pos, $("ce-quant").value);
     if (at) refresh();                                                            // the chart fills in as you play
@@ -758,8 +841,15 @@ document.addEventListener('DOMContentLoaded', async function () {
     var due = lis.due(); if (timer){ clearTimeout(timer); timer = null; }
     if (due != null) timer = setTimeout(function(){ timer = null; lis.poll(performance.now() + 1).forEach(onChord); }, Math.max(0, due - performance.now()) + 2);
   }
-  function noteOn(m, vel, t){ sound(m, vel); var done = lis.noteOn(m, t), h = lis.sounding(); if (h.length) heard(describe(h)); done.forEach(onChord); arm(); }
-  function noteOff(m, t){ lis.noteOff(m, t).forEach(onChord); arm(); }
+  function melodyKey(m, t, down){
+    if (!rec || !rec.melody) return;
+    var at = whereAt(t, "ce-moffset"); if (!at){ return; }
+    var b = at.bar * grid.beats + at.pos;
+    if (down) line.on(m, b); else line.off(m, b);
+  }
+  function noteOn(m, vel, t){ sound(m, vel);
+    if (mode() === "melody"){ heard(names([m]) + (rec ? "" : "  \u00b7  press Record melody, then play after the count-in")); melodyKey(m, t, true); return; } var done = lis.noteOn(m, t), h = lis.sounding(); if (h.length) heard(describe(h)); done.forEach(onChord); arm(); }
+  function noteOff(m, t){ if (mode() === "melody"){ melodyKey(m, t, false); return; } lis.noteOff(m, t).forEach(onChord); arm(); }
   function onMidi(e){ var d = e.data, cmd = d[0] & 0xf0, t = e.timeStamp || performance.now();
     if (cmd === 0x90 && d[2] > 0) noteOn(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) noteOff(d[1], t); }
   function inputs(){
@@ -881,9 +971,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   // ---- wire ----
   function modeSync(){
     var m = mode(); if (rec) player.stop();
-    $("ce-step").hidden = m !== "step"; $("ce-live").hidden = m !== "live"; $("ce-voice").hidden = $("ce-vnow").hidden = m !== "voice"; $("ce-slash-wrap").hidden = m === "voice";
+    $("ce-step").hidden = m !== "step"; $("ce-live").hidden = m !== "live"; $("ce-voice").hidden = $("ce-vnow").hidden = m !== "voice"; $("ce-slash-wrap").hidden = m === "voice" || m === "melody";
+    $("ce-melody").hidden = m !== "melody"; $("ce-keys").hidden = $("ce-enter-row").hidden = m === "melody";
     lis.setMode(m === "live" ? "live" : "step");
-    note(m === "live" ? "Record replaces what is there with a new take." : m === "voice" ? "Play the notes you want for the chord shown. The band will play exactly those." : "");
+    note(m === "melody" ? "Play one note at a time with the band; Record melody replaces the melody there." : m === "live" ? "Record replaces what is there with a new take." : m === "voice" ? "Play the notes you want for the chord shown. The band will play exactly those." : "");
     heard(""); if (m !== "voice" && state === "idle" && chart) chart.setLive(-1);
     voiceShow();
   }
@@ -891,8 +982,13 @@ document.addEventListener('DOMContentLoaded', async function () {
     STYLES.forEach(function(st){ var g = st.group || "Styles"; if (!groups[g]){ groups[g] = document.createElement("optgroup"); groups[g].label = g; sel.appendChild(groups[g]); }
       var o = document.createElement("option"); o.value = st.id; o.textContent = st.label; groups[g].appendChild(o); });
     try { var was = localStorage.getItem("ceStyle"); if (was && STYLES.some(function(x){ return x.id === was; })) sel.value = was; } catch (e) {}
-    sel.addEventListener("change", function(){ try { localStorage.setItem("ceStyle", sel.value); } catch (e) {} if (state !== "idle" && !rec){ player.setInstruments(styleSounds()); player.setOpts(styleOpts()); } });
+    sel.addEventListener("change", function(){ feelSync(); try { localStorage.setItem("ceStyle", sel.value); } catch (e) {} if (state !== "idle" && !rec){ player.setInstruments(styleSounds()); player.setOpts(styleOpts()); } });
   })();
+  function feelSync(){ $("ce-mfeel").value = style().feel === "swing" ? "swing" : "straight"; }
+  feelSync();
+  $("ce-mrec").addEventListener("click", recordMelody);
+  $("ce-mundo").addEventListener("click", function(){ if (!grid || !grid.back()){ note("Nothing to undo."); return; } refresh(); note("Undone."); });
+  $("ce-mclear").addEventListener("click", function(){ if (!grid || !grid.hasMelody()){ note("There is no melody."); return; } grid.clearMelody(); refresh(); note("The melody is removed. The chords are unchanged."); });
   fill($("ce-key"), KEYS.map(function(k){ return { id: k, label: k.replace("b", "\u266d") }; }));
   $("ce-connect").addEventListener("click", connect);
   $("ce-midi").addEventListener("change", function(){ if (midiAccess) inputs(); });
@@ -912,7 +1008,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("ce-vclear").addEventListener("click", function(){ var o = slot(); if (o && pins[o.key]){ delete pins[o.key]; refresh(); } });
   window.addEventListener("pagehide", function(){ if (player && state !== "idle") player.stop(); });
   meterSync(); refresh(); modeSync(); loadHandoff();
-  window.__entry = { opts: styleOpts, on: noteOn, off: noteOff, grid: function(){ return grid; }, recording: function(){ return !!rec; }, pins: pinMap, state: function(){ return state; } };   // for tests
+  window.__entry = { opts: styleOpts, line: line, on: noteOn, off: noteOff, grid: function(){ return grid; }, recording: function(){ return !!rec; }, pins: pinMap, state: function(){ return state; },
+    where: function(){ var c = player && player.context(), w = c && player.where(c.currentTime); return w && !w.info.countIn && !w.info.ending ? w.info.index * grid.beats + w.pos : null; } };   // for tests
 })();
 </script>
 </div>

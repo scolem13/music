@@ -81,10 +81,10 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
       // the two views of a fretboard
       if (inst !== "piano") {
         assert.strictEqual(await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".bl-card").length`), 3);
-        await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".bl-tools .btn")[2].click(); 0`);
+        await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".bl-tools .btn")[1].click(); 0`);
         assert.strictEqual(await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".bl-boards svg").length`), 1);
         assert.strictEqual(await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".ld-label").length`), 3);
-        await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".bl-tools .btn")[1].click(); 0`);
+        await ev(`document.querySelectorAll(".bl-step")[0].querySelectorAll(".bl-tools .btn")[0].click(); 0`);
       }
       // a click on a chord name sounds it (the sample set loads; no error)
       await ev(`document.querySelector(".bl-step .ld-label").dispatchEvent(new MouseEvent("click", { bubbles: true })); 0`); await b.sleep(600);
@@ -106,6 +106,18 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
       // the pins the band is given are the notes of the diagrams
       if (inst !== "bass") { const pins = JSON.parse(await ev(`JSON.stringify(${H}.__bl.pins())`)), st = (await steps())[idx];
         assert.strictEqual(Object.keys(pins).length, 12); assert.deepStrictEqual(pins["0:0"], st.chords[0].pin); assert.deepStrictEqual(pins["8:0"], st.chords[2].pin); }
+      // the flat-7 panel holds this instrument's own chart for the major scale and for Mixolydian, in several keys
+      for (const key of [5, 0, 10, 7, 3]) { await setKey(key);
+        const pc = JSON.parse(await ev(`JSON.stringify((function(){ var h = document.querySelector(".bl-scale"), boxes = h.querySelectorAll(".bl-boards"); return { boxes: boxes.length, svgs: h.querySelectorAll(".bl-boards svg").length, text: Array.prototype.map.call(boxes, function (x){ return x.textContent; }).join("|"), notes: h.querySelectorAll(".bl-boards .ld-key, .bl-boards .ld-white, .bl-boards .ld-black").length }; })())`));
+        assert.strictEqual(pc.boxes, 2, inst + " key " + key + ": two charts in the panel"); assert(pc.svgs >= (inst === "piano" ? 2 : 4), inst + " key " + key + ": svgs " + pc.svgs);
+        if (inst === "piano") { assert(/R\.H\./.test(pc.text) && /L\.H\./.test(pc.text), "piano fingering shown"); }
+        else assert(/One position/.test(pc.text), inst + ": fretboard position and tablature"); }
+      await setKey(0);
+      if (inst === "piano") { const fg = key => ev(`(function(){ return JSON.stringify(document.querySelector(".bl-scale").__bl.charts.map(function (c){ return c.fingers; })); })()`).then(JSON.parse);
+        let f = await fg(); assert.deepStrictEqual(f[0], { R: [1, 2, 3, 1, 2, 3, 4, 5], L: [5, 4, 3, 2, 1, 3, 2, 1] }, "C major fingering"); await setKey(5);
+        f = await fg(); assert.deepStrictEqual(f[0], { R: [1, 2, 3, 4, 1, 2, 3, 4], L: [5, 4, 3, 2, 1, 3, 2, 1] }, "F major fingering"); }
+      // the band's play button is in the row directly above the chord grid; nothing that is not about playing stays with the diagrams
+      assert.strictEqual(await ev(`Array.prototype.every.call(document.querySelectorAll(".bl-step"), function (h){ var g = h.querySelector(".btn-primary"); if (!g) return false; var r = g.parentElement; return r.nextElementSibling.querySelector(".tc-bar") !== null && h.firstElementChild !== r && !h.firstElementChild.querySelector(".btn-primary"); })`), true, inst + ": play row by the chord grid");
       assert.deepStrictEqual(await ev(`window.__err`), []); assert.deepStrictEqual(b.errors.filter(e => !/supabase|Didn't load note/i.test(e)), []);   // (the test site has no Supabase address)
       if (process.env.SHOT) await b.shot(process.env.SHOT + "-" + inst + ".png");
       console.log(inst + " ok");

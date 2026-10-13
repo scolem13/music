@@ -11,7 +11,7 @@ range. For what the chords are and how the form gets varied, see
 [Changing the Changes in a 12-Bar Blues](blues-changes.qmd).
 
 **Choose your instrument first.** The **Instrument** menu in the strip at the bottom
-transposes the page. Violinists leave it on concert pitch. Alto and tenor players choose
+transposes the page. Violinists choose Violin, and the scale under *Where the flat 7 comes from* then also shows the finger for every note. Flutes stay on concert pitch. Alto and tenor players choose
 their saxophone, and every chart and line of notation is then written in *their* key, while
 the band plays in the concert key shown beside it. A B♭ tenor and an E♭ alto reading this
 page at the same time see different notes and sound the same ones.
@@ -170,5 +170,5 @@ this melody as its starting point.
 {{< include _blues-kit.qmd >}}
 
 ```{=html}
-<script>BluesLesson.init({ instrument: "melody", key: 5 });</script>
+<script>BluesLesson.init({ instrument: "melody", key: 5, horns: ["violin", "concert", "alto", "tenor", "bb", "bari"] });</script>
 ```

@@ -1,0 +1,167 @@
+---
+title: "How to Play Congas: Five Strokes and the Tumbao"
+toc: true
+toc-depth: 2
+---
+
+This is a first lesson for someone who has never played congas. You will learn five ways
+to strike the drum, how they are written, and the most common conga part there is, the
+**tumbao**. You need one drum. If you have no drum yet you can still follow the notation and
+listen to the band play each step.
+
+**How to use the page.** Every step has two bars of the part written large, a chord chart,
+and the whole chorus written on a conga staff. The note that is sounding lights up in the
+notation as the band plays. Press ▶ and the band plays it; the bar that is sounding lights up
+on the chart. Tick **Congas alone** to hear the congas without the bass and piano, and
+**Leave out the congas** to play them yourself. Each step starts in its own style and tempo;
+the strip at the bottom changes both.
+
+**About the sounds.** The sounds on this page are General MIDI stand-ins. The computer has only
+an open tone, a muted tone and a low drum, so the heel, toe, slap and bass tones you hear here
+are approximations. Listen to a real player for the sound.
+
+## The drums
+
+The **conga** is the higher drum of a pair, and the one this lesson uses. The **tumba** is the
+lower drum. A conga player often has both, and step 6 uses the tumba for a moment; everything
+else on this page is played on one drum.
+
+## Sitting and hands
+
+This is ordinary advice, not a method. Sit upright, near the front of the chair, with the drum
+between your knees. Tilt it slightly away from you, or put it on a stand, so the bottom is open
+and the sound can come out. Keep your wrists and hands loose: a tight hand makes a dead sound
+and tires quickly. Take rings off. If anything hurts, stop and rest; a drum head is hard, and
+a beginner's hands need time.
+
+## The five strokes
+
+The names and the first description of each stroke are from the teacher's handout. Each button
+plays the stroke.
+
+**Bass tone** <button type="button" class="btn btn-sm btn-outline-secondary" data-conga-hit="congaBass">▶ Hear it</button><br>
+Strike the center of the head with the palm of the hand. It is the lowest sound the drum makes.
+
+**Open tone** <button type="button" class="btn btn-sm btn-outline-secondary" data-conga-hit="congaOpen">▶ Hear it</button><br>
+Strike near the edge of the head with the base of your fingers. Use the first four fingers at
+the edge and let them bounce off, so that the drum rings.
+
+**Muted tone** <button type="button" class="btn btn-sm btn-outline-secondary" data-conga-hit="congaMute">▶ Hear it</button><br>
+Strike the center of the head with the palm of the hand, creating a deep tone. Teachers differ on
+this name. Some say "muffled", and some mean a tone where the fingers stay on the head after the
+strike. The handout's description is the one used on this page.
+
+**Slap tone** <button type="button" class="btn btn-sm btn-outline-secondary" data-conga-hit="congaSlap">▶ Hear it</button><br>
+Strike the edge of the head with flat fingertips to create a high, pinging sound. The slap is
+the hardest stroke to learn and takes time. Do not expect it to ring on the first day.
+
+**Heel-toe** <button type="button" class="btn btn-sm btn-outline-secondary" data-conga-hit="congaHeel">▶ Hear it</button><br>
+Strike the center of the head with the heel of the palm, then rock forward to slap with the
+fingers. It is a rocking motion of the hand: first the heel, then the fingertips. It is a quiet
+stroke, used as filler between the louder ones. On this page the two halves are written as two
+notes, **heel** and **toe**.
+
+## Reading a conga part
+
+Click a note head to hear that stroke. The conga is written on the top space of the staff. The
+head says how it is struck: a plain head for the open tone and the bass tone, an ✕ for the slap,
+a triangle for the heel and the toe, and a diamond for the muted tone. The open tone and the
+bass tone look the same, so read the letter.
+
+<div class="bl-congakey"></div>
+
+In a part, two lines of words sit under the notes. The first line is the stroke: **H** heel,
+**T** toe, **S** slap, **O** open, **M** muted, **B** bass. The second line is the hand: **L**
+left and **R** right. A left-handed player can reverse the hands. A low drum, when there is one,
+is written on a lower space.
+
+## 1. The two notes everyone hears
+
+The tumbao is built up from the end of the bar. Start with the two open tones, on **4** and the
+**and of 4**. Count "1 and 2 and 3 and 4 and" and play only on the last two. Use the right hand
+for both, one after the other.
+
+<div class="bl-step" data-part="opens" data-chart="vamp"></div>
+
+These are the two notes a listener notices. When they come in the right place, the rest of
+the part has somewhere to go.
+
+## 2. The right hand
+
+Now add the **slap on 2**. The right hand plays all of it: the slap on 2, then the two open
+tones on 4 and the and of 4. Between them the right hand rests, and you keep counting.
+
+<div class="bl-step" data-part="righthand" data-chart="vamp"></div>
+
+If the slap will not come, play it as an open tone for now and come back to it. Take it slowly.
+
+## 3. The left hand
+
+Put the right hand away and play the other half. The left hand plays **heel** on 1, **toe** on
+the and of 1, **toe** on the and of 2, **heel** on 3 and **toe** on the and of 3. It is the
+rocking heel-toe stroke, quiet. The gaps left in the bar are where the right hand will go.
+
+<div class="bl-step" data-part="lefthand" data-chart="vamp"></div>
+
+## 4. Both hands, slowly
+
+Put the two hands together. The strokes in order are **Heel Toe Slap Toe Heel Toe Open Open**,
+and the hands are **L L R L L L R R**. The left hand plays every quiet heel and toe; the right hand plays
+the slap and the two open tones. This is the tumbao, as the handout writes it: a pattern of
+heel-toe-slap-toe figures and a pair of open tones. The sticking is the one given for the tumbao
+by Rebeca Mauleón in *Salsa Guidebook*, as quoted in the Wikipedia article on the tumbao.
+
+<div class="bl-step" data-part="tumbao" data-chart="vamp"></div>
+
+This step is slow, and the band has no drummer, so the congas are easy to hear. Loop it and
+play along until your hands do not argue.
+
+## 5. With a band
+
+The same part in the Cha-cha, at a moderate tempo, with the drummer in. The tumbao is the most
+common pattern on congas and bongos, and it fits cha-cha, son and boogaloo. The Feel menu at the
+bottom plays it in the other two.
+
+<div class="bl-step" data-part="chacha" data-chart="vamp"></div>
+
+Listen for the **clave** in the other instruments: a rhythm of five notes over two bars,
+three in one bar and two in the other, that the whole band is built around. You do not need to
+play it to play the tumbao, but it explains the next step.
+
+## 6. Two drums
+
+Players who have two drums use the second one in the tumbao. Here, in Son montuno, every second
+bar the right hand plays two open tones on the **low drum**, on the **and of 2** and on **3**,
+in place of the toe and the heel. It is the bar with three clave notes (the second bar of a 2-3
+clave, as Mauleón's book has it, again via the Wikipedia article). Look at the two bars written
+large: the second has the notes on a lower space.
+
+<div class="bl-step" data-part="twodrums" data-chart="vamp"></div>
+
+Stay on one drum until step 5 is easy. The two-drum bar is an extra, not a part of the basic
+tumbao.
+
+## Where to go next
+
+- Play step 5 with **Leave out the congas** ticked for ten choruses without losing the beat.
+- Take the tumbao to a tune: [Watermelon Man for Congas](watermelon-congas.qmd) plays it in a
+  16-bar blues.
+- **Tools → Backing Track** has a Congas menu that works in any style: put a tumbao under a tune
+  you know.
+- Listen to a real conga player and copy what you hear. A page cannot give you the sound of the
+  hands.
+
+## Sources
+
+- The teacher's handout: stroke types and tumbao pattern.
+- [Tumbao](https://en.wikipedia.org/wiki/Tumbao), Wikipedia: the heel-toe-slap-toe, open-open
+  figure and its sticking (citing Rebeca Mauleón, *Salsa Guidebook*).
+- [Conga](https://en.wikipedia.org/wiki/Conga), Wikipedia.
+- [Congas: first steps](https://www.thomannmusic.com/onlineexpert_page_congas_first_steps.html),
+  Thomann.
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "congas", key: 5 });</script>
+```

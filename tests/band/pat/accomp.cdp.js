@@ -8,7 +8,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`0`).catch(() => {}); await b.goto(B + "/tools/accomp-styles.html"); await b.sleep(1500);
     await ev(`window.__err = []; window.addEventListener("error", function(e){ __err.push(e.message); }); document.getElementById("as-band-tab").click(); 0`);
     const r = JSON.parse(await ev(`(function(){ var C = BandCatalog, out = { cards: 0, btns: document.querySelectorAll("#as-band .as-card .as-play").length, bad: [], uniq: {} };
-      [["bass", C.bass], ["comp", C.comp], ["drums", C.drums]].forEach(function(g){ g[1].forEach(function(e){ out.cards++;
+      [["bass", C.bass], ["comp", C.comp], ["drums", C.drums], ["congas", C.congas.filter(function(e){ return e.id !== "none"; })]].forEach(function(g){ g[1].forEach(function(e){ out.cards++;
         var p = asBandPlan(e, g[0]), bars = p.chords.split("|"), syms = p.chords.split(/[| ]/);
         var okIds = C.byId(C.bass, p.opts.bassFeel) && C.byId(C.drums, p.opts.groove) && String(p.opts.compRhythm).split("+").every(function(x){ return C.byId(C.comp, x); });
         var okCh = syms.every(function(s){ var c = BandHarmony.parseChord(s, 0); return c && !c.nc && c.quality; });

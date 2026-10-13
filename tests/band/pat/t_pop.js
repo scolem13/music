@@ -14,7 +14,7 @@ function bass(b){ return b.parts.bass.map(function (e){ return r2(e.pos) + ":" +
 
 // each style names real things and brings its sounds
 var POP = C.styles.filter(function (s){ return s.group === "Folk, rock and pop"; });
-assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "dance", "motown", "doowop", "train", "folk", "prine"]);
+assert.deepStrictEqual(POP.map(function (s){ return s.id; }), ["rock", "emo", "strum", "pop", "dance", "motown", "doowop", "train", "folk", "freylekhs", "prine"]);
 assert.deepStrictEqual(C.styleOpts("rock").instruments, ["ebass", "piano", "kit"]); assert.deepStrictEqual(C.styleOpts("rock", "guitar").instruments, ["ebass", "clguitar", "kit"]);
 assert.deepStrictEqual(C.styleOpts("strum").instruments, ["ebass", "aguitar", "kit"]); assert.strictEqual(C.styleOpts("strum").opts.comp, "guitar");
 assert.deepStrictEqual(C.styleOpts("swing").instruments, ["bass", "piano", "kit"]); assert.strictEqual(C.styleOpts("swing").opts.ride, "ride"); assert.strictEqual(C.styleOpts("rock").opts.ride, "hat");
@@ -245,4 +245,27 @@ require(path.join(R, "apps/shared/band/notation.js"));
   var tri = BandNotation.toAbc(gen("folk", { voicing: "standard" }, ["G"], 1, null, "piano"), { key: "G" }); assert(/\[V:L\] z8/.test(tri) && /\[V:K\] "G"z2 \[B,DG\]/.test(tri), tri);
   // a guitar keeps its single staff
   var gtr = BandNotation.toAbc(gen("strum", {}, ["G"], 1), { key: "G" }); assert(/%%score K B/.test(gtr) && !/V:L/.test(gtr)); })();
+// the freylekhs: root and fifth on every beat, a 5-6-7 run into the next bar at the end of a four-bar phrase, the whole chord on every off-beat
+(function (){
+  var fr = gen("freylekhs", {}, ["Am", "Am", "Am", "Am", "Am", "Am", "E7", "Am"]);
+  assert.strictEqual(bass(fr[0]), "0:" + N(33) + " 1:" + N(40) + " 2:" + N(33) + " 3:" + N(40), bass(fr[0]));
+  assert.strictEqual(bass(fr[3]), "0:" + N(33) + " 1:" + N(40) + " 2:" + N(33) + " 2.5:" + N(28) + " 3:" + N(30) + " 3.5:" + N(32), bass(fr[3]));
+  assert.strictEqual(fr[4].parts.bass[0].midi, 33);
+  fr.forEach(function (b){ assert.strictEqual(at(b, "comp"), "0.5 1.5 2.5 3.5"); });
+  // with variation the piano still plays all of every triad; the calypso's piano is left as it was
+  var so = C.styleOpts("freylekhs"); assert.strictEqual(so.opts.full, true); assert.strictEqual(C.styleOpts("calypso").opts.full, false);
+  gen("freylekhs", { variation: 1 }, ["Am", "Dm", "G", "C"], 16).forEach(function (b){ b.parts.comp.forEach(function (e){ assert.strictEqual(e.midis.length, 3, JSON.stringify(e)); }); });
+  // in 2/4: root and fifth, and the run takes the bar after its root
+  var f2 = gen("freylekhs", {}, ["Am", "Am", "Am", "Am", "Am", "Am", "E7", "Am"], 8, "2/4"); assert.strictEqual(bass(f2[0]), "0:" + N(33) + " 1:" + N(40)); assert.strictEqual(bass(f2[3]), "0:" + N(33) + " 0.5:" + N(28) + " 1:" + N(30) + " 1.5:" + N(32), bass(f2[3]));
+  f2.forEach(function (b){ assert.strictEqual(at(b, "comp"), "0.5 1.5"); });
+  // bars of half time: the ballad piano instead of the off-beats (on the beat, held, with a left hand), and the off-beats again after them;
+  // in 2/4 a pair of bars is one bar of the pattern. Styles that ask for nothing of the kind are as they were.
+  ["4/4", "2/4"].forEach(function (m){
+    var hf = gen("freylekhs", { halfBars: [0, 1, 2, 3] }, ["Am", "Am", "Dm", "Am", "Am", "Am", "E7", "Am"], 8, m), ups = m === "4/4" ? "0.5 1.5 2.5 3.5" : "0.5 1.5";
+    hf.slice(0, 4).forEach(function (b){ assert(b.parts.comp.length && b.parts.comp.some(function (e){ return e.pos === 0; }) && at(b, "comp") !== ups, m + " half " + at(b, "comp")); });
+    assert(hf[2].parts.comp.every(function (e){ return e.midis.every(function (x){ return [2, 5, 9].indexOf(x % 12) >= 0; }); }), m + " the pair's second chord");
+    hf.slice(4).forEach(function (b){ assert.strictEqual(at(b, "comp"), ups); }); });
+  assert.strictEqual(C.styleOpts("freylekhs").opts.halfRhythm, "ballRock+ballBroken+ballSync"); assert.strictEqual(C.styleOpts("calypso").opts.halfRhythm, null);
+  // in three: root, fifth, fifth and no run
+  assert.deepStrictEqual(gen("freylekhs", {}, ["Am"], 4, "3/4").map(function (b){ return at(b, "bass"); }), ["0 1 2", "0 1 2", "0 1 2", "0 1 2"]); })();
 console.log("POP OK");

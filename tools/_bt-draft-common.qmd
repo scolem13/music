@@ -1,5 +1,6 @@
 ```{=html}
-<!-- Shared by the two DRAFT layouts of the Backing Track (backing-track-a.qmd, backing-track-b.qmd).
+<!-- Shared by the two re-arranged layouts of the Backing Track: A, which is now the page itself (backing-track.qmd), and draft B
+     (backing-track-b.qmd). The earlier layout is backing-track-classic.qmd, which includes _backing-track.qmd alone.
      Each draft includes this file, then _backing-track.qmd UNCHANGED (its markup and its script), then its own
      layout file, which moves the page's existing controls into a new arrangement. Every control keeps its id,
      so the page's script, saved setups and the remote link go on working. This file must come BEFORE the include:
@@ -49,7 +50,7 @@
 #bt-root.dx #bt-amp-stages .dx-num input{width:4.6rem;height:1.7rem;padding:0 .3rem;font-size:.78rem}
 #bt-root.dx #bt-amp-stages .dx-num small{min-width:1.6rem;color:var(--site-ink-3,#9a8d7e)}
 /* tonebars: pulled down is louder, as on the instrument */
-#bt-root.dx .bt-tonebars{grid-template-columns:repeat(9,2.5rem);gap:.25rem;max-width:none}
+#bt-root.dx .bt-tonebars{grid-template-columns:repeat(9,minmax(0,2.5rem));gap:.25rem;max-width:100%}
 #bt-root.dx .bt-tonebars input[type=range]{writing-mode:vertical-lr;width:1.6rem;height:7rem}
 /* the parts of the mixer are always open here */
 #bt-root.dx details.bt-kit>summary{display:none}
@@ -74,8 +75,8 @@
   // The page hands each fader's value to the player (setVolume for the four parts, setKitVolume for the kit pieces). Here the
   // player is wrapped as it is created: the fader's value is remembered and what reaches the player is 0 while the strip
   // is muted, or while another strip of its group is soloed. The faders, and so saved setups, never move.
-  // Keys: "bass" "comp" "comp2" "drums", and "kit:<fader id>" for the kit, which solos among itself.
-  var PARTS = ["bass", "comp", "comp2", "drums"], real = null, rawVol = null, rawKit = null;
+  // Keys: "bass" "comp" "comp2" "drums" "congas", and "kit:<fader id>" for the kit, which solos among itself.
+  var PARTS = ["bass", "comp", "comp2", "drums", "congas"], real = null, rawVol = null, rawKit = null;
   var fader = {}, kitv = {}, pieceGroup = {}, curGroup = null, mute = {}, solo = {}, strips = {};
   function isKit(key){ return key.indexOf("kit:") === 0; }
   function off(key){
@@ -125,7 +126,7 @@
     range.addEventListener("input", paint);
     strips[key] = s; return field;
   };
-  // the four parts; with `tone` each strip also gets a button that shows that instrument in the EQ
+  // the parts; with `tone` each strip also gets a button that shows that instrument in the EQ
   D.partStrips = function(tone){
     PARTS.forEach(function(p){ var f = D.strip(D.field("bt-vol-" + p), p); if (tone) f.appendChild(D.toneButton(p, "EQ")); });
     paint();
@@ -140,7 +141,7 @@
   D.toneButton = function(part, text){ var b = el("button", "dx-tone", text); b.type = "button"; b.title = "Show this instrument in the EQ";
     b.addEventListener("click", function(){ D.tone(part); }); return b; };
   D.tone = function(part){
-    var sel = $("bt-eq-inst"), o = sel.options, v = part === "bass" ? o[0].value : part === "drums" ? "kit" : o[1].value;
+    var sel = $("bt-eq-inst"), o = sel.options, v = part === "bass" ? o[0].value : part === "drums" ? "kit" : part === "congas" ? "congas" : o[1].value;
     if (part === "comp2") for (var i = 0; i < o.length; i++) if (/\(second\)$/.test(o[i].textContent)) v = o[i].value;
     sel.value = v; sel.dispatchEvent(new Event("change", { bubbles: true }));
     if (D.onTone) D.onTone(part);
@@ -201,7 +202,7 @@
   D.init = function(cls, name, others){
     var root = $("bt-root"), nav = $("bt-nav"); if (nav) nav.remove();
     root.classList.remove("bt-has-nav"); root.classList.add("dx", cls);
-    var note = el("p", "dx-note"); note.appendChild(document.createTextNode("Draft layout " + name + ". "));
+    var note = el("p", "dx-note"); note.appendChild(document.createTextNode(name ? "Draft layout " + name + ". " : "Other layouts: "));
     others.forEach(function(o, i){ var a = el("a", "", o[1]); a.href = o[0]; if (i) note.appendChild(document.createTextNode(" · ")); note.appendChild(a); });
     root.insertBefore(note, root.firstChild);
     ["bt-eq", "bt-kit", "bt-organ"].forEach(function(id){ $(id).open = true; });

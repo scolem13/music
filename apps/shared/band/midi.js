@@ -3,10 +3,10 @@
 // exactly as the parts generated them — so the file matches what was heard, minus the
 // random humanising. Swing is written into the timing (the same warp the player uses).
 //
-//   bar record: { bar, index, chorus, length, beats, tempo, opts, meter, compound, parts: { bass:[..], comp:[..], drums:[..] } }
+//   bar record: { bar, index, chorus, length, beats, tempo, opts, meter, compound, parts: { bass:[..], comp:[..], drums:[..], congas:[..] } }
 //        (compound: 6/8, 9/8, 12/8 — a beat is a dotted quarter and x.5 is its third eighth)
 //   BandMidi.build(bars, { parts:["bass","comp","drums"], ppq:480 }) -> Uint8Array (format 1:
-//        a tempo track + one track per part; drums on channel 10 with GM notes)
+//        a tempo track + one track per part; drums on channel 10 with GM notes; the congas, when they play, a track of their own on channel 10 too)
 //   BandMidi.swingOf(bar)      -> where the off-beat eighth lands for that bar (0.5 = straight)
 //   BandMidi.generate(parsed, { bars, tempo, transpose, opts }) -> bar records generated
 //        silently from the parts (for exporting before anything has been played)
@@ -14,10 +14,11 @@
 
 (function (global) {
   var GM = { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46, crash:49, ride:51, rideBell:53,
-             tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54 };
+             tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54,
+             congaOpen:63, congaSlap:62, congaMute:62, congaHeel:62, congaToe:62, congaBass:64, tumbaOpen:64, tumbaMute:64, tumbaBass:64 };   // GM has three conga sounds: 62 mute high, 63 open high, 64 low
   var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, rhodes:4, wurli:4, organ:19, hammond:16, guitar:26, aguitar:25, nguitar:24, cguitar:27, clguitar:27, dguitar:30, odguitar:30 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
-  var CHANNEL = { bass:0, comp:1, comp2:2, drums:9 };
-  var NAME = { bass:"Bass", comp:"Comping", comp2:"Second chord instrument", drums:"Drums" };
+  var CHANNEL = { bass:0, comp:1, comp2:2, drums:9, congas:9 };      // the congas share the drum channel (10), a track of their own
+  var NAME = { bass:"Bass", comp:"Comping", comp2:"Second chord instrument", drums:"Drums", congas:"Congas" };
 
   function swingOf(bar){
     if (bar.swing != null) return bar.swing;
@@ -46,6 +47,7 @@
     o = o || {};
     var ppq = o.ppq || 480, want = o.parts || ["bass", "comp", "drums"];
     if (!o.parts && (bars || []).some(function (b){ return b.parts && b.parts.comp2 && b.parts.comp2.length; })) want = ["bass", "comp", "comp2", "drums"];     // a second chord player gets a track of its own
+    if (!o.parts && (bars || []).some(function (b){ return b.parts && b.parts.congas && b.parts.congas.length; })) want = want.concat("congas");     // so do the congas
     var tempoTrack = [{ tick:0, order:0, bytes: meta(0x03, str("Backing track")) }];
     var tracks = {}, starts = [], tick = 0, lastTempo = null, lastBeats = null;
     want.forEach(function (p){ tracks[p] = []; });
@@ -63,7 +65,7 @@
           var on = tick + Math.round((ev.straight ? ev.pos : warp(ev.pos, s)) * bq);
           var vel = Math.max(1, Math.min(127, Math.round((ev.vel == null ? 0.7 : ev.vel) * 127)));
           var ch = CHANNEL[p], notes, len;
-          if (p === "drums"){ if (GM[ev.piece] == null) return; notes = [GM[ev.piece]]; len = Math.round(ppq / 8); }
+          if (p === "drums" || p === "congas"){ if (GM[ev.piece] == null) return; notes = [GM[ev.piece]]; len = Math.round(ppq / 8); }
           else { notes = p === "bass" ? [ev.midi] : (ev.midis || []); len = Math.max(1, Math.round((ev.dur || 0.5) * bq)); }
           if (p === "comp" && tracks[p].inst == null) tracks[p].inst = (ev.inst || "piano") === "piano" && PROGRAM[(bar.opts || {}).compSound] != null && !/guitar|bass/.test(bar.opts.compSound) ? bar.opts.compSound : ev.inst === "guitar" && PROGRAM[(bar.opts || {}).compSound] != null && /guitar$/.test(bar.opts.compSound) ? bar.opts.compSound : ev.inst || "piano";
           if (p === "comp2" && tracks[p].inst == null){ var s2 = ((bar.opts || {}).second || {}).compSound; tracks[p].inst = PROGRAM[s2] != null ? s2 : ev.inst || "piano"; }
@@ -82,7 +84,7 @@
       var prog = PROGRAM[evs.inst || (p === "bass" ? "bass" : "piano")];
       var name = p === "comp2" ? NAME[p] : p === "comp" ? (evs.inst === "guitar" ? "Guitar" : PROGRAM[evs.inst] === 4 ? "Electric piano" : evs.inst === "organ" || evs.inst === "hammond" ? "Organ" : "Piano") : p === "bass" && evs.inst === "ebass" ? "Electric bass" : NAME[p];
       var headEv = [{ tick:0, order:-2, bytes: meta(0x03, str(name)) }];
-      if (p !== "drums") headEv.push({ tick:0, order:-1, bytes:[0xc0 | ch, prog] });
+      if (p !== "drums" && p !== "congas") headEv.push({ tick:0, order:-1, bytes:[0xc0 | ch, prog] });
       chunks.push(chunk(headEv.concat(evs)));
     });
     var head = str("MThd").concat(u32(6), [0, 1, 0, chunks.length, (ppq >> 8) & 255, ppq & 255]);
@@ -103,10 +105,14 @@
     var form = H.buildForm(parsed, o.transpose || 0); if (!form.length) return [];
     var G = { bass: global.BandBass, comp: global.BandComp, drums: global.BandDrums }, parts = {}, out = [];
     if (global.BandComp && global.BandComp.createSecond) G.comp2 = { create: global.BandComp.createSecond };       // the second chord player (opts.second)
+    if (global.BandCongas) G.congas = global.BandCongas;                                                          // the congas (opts.congas)
     var wrap = H.feelPart || function (x){ return x; };
     // the second player has random numbers of its own, so the other parts play the same notes with or without it
     var s2 = 257, rng2 = !o.rng ? Math.random : function (){ s2 = (s2 + 0x6D2B79F5) | 0; var t = Math.imul(s2 ^ (s2 >>> 15), 1 | s2); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-    Object.keys(G).forEach(function (p){ if (G[p] && G[p].create) parts[p] = wrap(G[p].create({ rng: p === "comp2" ? rng2 : o.rng || Math.random }), p === "comp2" ? "comp" : p); });
+    var s3 = 353, rng3 = !o.rng ? Math.random : function (){ s3 = (s3 + 0x6D2B79F5) | 0; var t = Math.imul(s3 ^ (s3 >>> 15), 1 | s3); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };   // and so have the congas
+    Object.keys(G).forEach(function (p){ if (G[p] && G[p].create) parts[p] = wrap(G[p].create({ rng: p === "comp2" ? rng2 : p === "congas" ? rng3 : o.rng || Math.random }), p === "comp2" ? "comp" : p === "congas" ? "drums" : p); });
+    var s4 = 977, rng4 = !o.rng ? Math.random : function (){ s4 = (s4 + 0x6D2B79F5) | 0; var t = Math.imul(s4 ^ (s4 >>> 15), 1 | s4); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };   // and so has a blend of bass lines or grooves
+    var blend = {};
     var n = o.bars || form.length, tempo = o.tempo || 120, opts = o.opts || {};
     var C = global.BandCatalog, own = {};                     // a section in a style of its own (see BandCatalog.sectionOpts)
     // a page's own settings for a section (opts.sectionOverrides: { section index: options }) come before the section's style
@@ -123,10 +129,12 @@
                   stop: !!(fb.stop || (opts.stops && opts.stops.indexOf(idx) >= 0)), nextStop: !!(form[(idx + 1) % form.length].stop || (opts.stops && opts.stops.indexOf((idx + 1) % form.length) >= 0)),
                   meter:fb.meter, compound:!!fb.compound, form:form, nextIndex:(idx + 1) % form.length,
                   phrase:{ bar: idx % 4, turnaround: form.length - 1 - idx < 2, top: idx === 0 } };
+      if (H.blendOpts) ctx.opts = H.blendOpts(blend, ctx.opts, ctx, rng4);
       var rec = { bar:i, index:idx, chorus:ctx.chorus, length:form.length, beats:fb.beats, tempo:tempo / (fb.unit || 1), ending:false,
                   meter:fb.meter, compound:!!fb.compound,
-                  chords:fb.chords, opts:Object.assign({}, optsOf(fb, idx)), parts:{} };
+                  chords:fb.chords, opts:Object.assign({}, ctx.opts), parts:{} };
       Object.keys(parts).forEach(function (p){ try { rec.parts[p] = octaves(p, parts[p].bar(ctx) || [], ctx.opts); } catch (e){ rec.parts[p] = []; } });
+      if (rec.parts.congas && !rec.parts.congas.length) delete rec.parts.congas;                         // (no congas part unless they play)
       out.push(rec);
     }
     return out;

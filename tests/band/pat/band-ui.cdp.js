@@ -11,7 +11,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   const hook = () => ev(`(function(){ var g = BandMidi.generate; BandMidi.generate = function(p, o){ window.__opts = o.opts; return g.apply(this, arguments); }; HTMLAnchorElement.prototype.click = function(){}; })()`);
   const opts = async () => { await ev(`document.getElementById("bt-mid-go").click()`); return JSON.parse(await ev(`JSON.stringify(window.__opts)`)); };
   try {
-    await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track.html"); await b.sleep(1000); await ev(`localStorage.removeItem("btSections")`); await hook();
+    await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(1000); await ev(`localStorage.removeItem("btSections")`); await hook();
     const lay = JSON.parse(await ev(`JSON.stringify({ inPlay: ["bt-style","bt-feel","bt-countin","bt-choruses","bt-cyc-on","bt-cyc-from","bt-cyc-to","bt-loop-note"].map(function(id){ var e = document.getElementById(id); return !!e && e.closest(".bt-panel") === document.querySelector("#bt-root > .bt-panel") && !e.closest("details"); }),
       groups: Array.from(document.querySelectorAll("#bt-sec-band h3")).map(function(h){ return h.textContent; }), inBand: ["bt-unlock","bt-groove","bt-variation","bt-stops","bt-bass","bt-bass-sound","bt-comp","bt-rhythm","bt-voicing","bt-vmove","bt-ext","bt-rhythm-extra","bt-voicing-extra"].every(function(id){ return !!document.getElementById(id).closest("#bt-sec-band"); }),
       practice: Array.from(document.querySelectorAll("#bt-practice input")).map(function(i){ return i.id; }).join(" "), pre: document.querySelectorAll("#bt-root pre, #bt-root code.sourceCode").length,
@@ -20,7 +20,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
       styles: Array.from(document.getElementById("bt-style").options).filter(function(o){ return !o.hidden; }).length, style: document.getElementById("bt-style").value, wide: document.documentElement.scrollWidth <= window.innerWidth })`));
     console.log(JSON.stringify(lay));
     assert(lay.inPlay.every(Boolean), "feel, count-in, choruses and loop are in the Play panel: " + lay.inPlay); assert(lay.inBand && lay.pre === 0 && lay.wide);
-    assert.deepStrictEqual(lay.groups, ["Whole band", "Bass", "Comping", "Drums"]); assert.strictEqual(lay.practice, "bt-start bt-step-on bt-step-a bt-step-b");
+    assert.deepStrictEqual(lay.groups, ["Whole band", "Bass", "Comping", "Drums", "Congas"]); assert.strictEqual(lay.practice, "bt-start bt-step-on bt-step-a bt-step-b");
     assert.strictEqual(lay.style, "swing"); assert.strictEqual(lay.styles, 21);
     const list = id => ev(`Array.from(document.getElementById("${id}").options).map(function(o){ return o.value; }).join(" ")`);
     const groups = id => ev(`Array.from(document.querySelectorAll("#${id} optgroup")).map(function(g){ return g.label + ":" + g.children.length; }).join(" | ")`);
@@ -90,7 +90,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     const cs = JSON.parse(await ev(`JSON.stringify(Array.from(document.querySelectorAll(".diagram-card")).map(function(c){ return c.querySelectorAll("circle.note-marker").length; }))`)); console.log("chord sheet dots:", cs.join(","));
     await b.shot("../pat/open-sheet.png"); assert(cs.every(n => n >= 5), "full shapes drawn");
     // save and load: a tune with every setting comes back exactly, survives a reload, and is in the Changes menu
-    await b.goto(B + "/tools/backing-track.html"); await b.sleep(900); await ev(`localStorage.removeItem("btSetups")`); await b.goto(B + "/tools/backing-track.html"); await b.sleep(900); await hook();
+    await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(900); await ev(`localStorage.removeItem("btSetups")`); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(900); await hook();
     assert.strictEqual(await ev(`document.getElementById("bt-setup-load").disabled`), true);
     await set("bt-changes", "watermelon"); await set("bt-key", "Bb"); await set("bt-bass", "riffwalk"); await set("bt-comp", "guitar"); await set("bt-voicing", "guide2"); await tick("bt-voicing-extra", "top3", true);
     await set("bt-ext", "0.7"); await set("bt-tempo-n", "108"); await set("bt-countin", "2"); await set("bt-bass-sound", "electric"); await set("bt-kit-ride", "20");
@@ -98,7 +98,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     const before = await opts(), abcBefore = await v("bt-abc");
     await ev(`document.getElementById("bt-setup-name").value = "WM in Bb"; document.getElementById("bt-setup-save").click()`);
     assert(/Saved/.test(await txt("bt-setup-note"))); assert.strictEqual(await ev(`document.getElementById("bt-changes").selectedOptions[0].textContent`), "WM in Bb");
-    await b.goto(B + "/tools/backing-track.html"); await b.sleep(900); await hook();
+    await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(900); await hook();
     assert.strictEqual(await v("bt-style"), "swing"); assert.strictEqual(await ev(`document.querySelector('#bt-changes optgroup[label="Saved on this device"] option').textContent`), "WM in Bb");
     await set("bt-changes", "setup:u:0");
     const after = await opts(); assert.deepStrictEqual(after, before, "every band setting is back"); assert.strictEqual(await v("bt-abc"), abcBefore);
@@ -110,11 +110,11 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`document.getElementById("bt-setup-del").click()`); assert.strictEqual(await ev(`document.querySelectorAll("#bt-setup-list option").length`), 1); assert.strictEqual(await v("bt-changes"), "custom");
     await ev(`localStorage.removeItem("btSetups")`);
     // ?style= and ?rhythm= links
-    await b.goto(B + "/tools/backing-track.html?style=chacha"); await b.sleep(900);
+    await b.goto(B + "/tools/backing-track-classic.html?style=chacha"); await b.sleep(900);
     assert.deepStrictEqual([await v("bt-style"), await v("bt-bass"), await v("bt-rhythm"), await v("bt-groove"), await v("bt-feel")], ["chacha", "chacha", "chacha", "chacha", "straight"]);
-    await b.goto(B + "/tools/backing-track.html?rhythm=upbeats&feel=straight"); await b.sleep(900); assert.deepStrictEqual([await v("bt-style"), await v("bt-rhythm"), await v("bt-feel")], ["calypso", "upbeats", "straight"]);
-    await b.goto(B + "/tools/backing-track.html?drums=onedrop"); await b.sleep(900); assert.deepStrictEqual([await v("bt-style"), await v("bt-groove")], ["reggae", "onedrop"]);
-    await b.goto(B + "/tools/backing-track.html?bass=riff"); await b.sleep(900); assert.deepStrictEqual([await v("bt-style"), await v("bt-bass"), await v("bt-feel")], ["boogaloo", "riff", "straight"]);
+    await b.goto(B + "/tools/backing-track-classic.html?rhythm=upbeats&feel=straight"); await b.sleep(900); assert.deepStrictEqual([await v("bt-style"), await v("bt-rhythm"), await v("bt-feel")], ["calypso", "upbeats", "straight"]);
+    await b.goto(B + "/tools/backing-track-classic.html?drums=onedrop"); await b.sleep(900); assert.deepStrictEqual([await v("bt-style"), await v("bt-groove")], ["reggae", "onedrop"]);
+    await b.goto(B + "/tools/backing-track-classic.html?bass=riff"); await b.sleep(900); assert.deepStrictEqual([await v("bt-style"), await v("bt-bass"), await v("bt-feel")], ["boogaloo", "riff", "straight"]);
     // the Accompaniment Styles page lists the new entries
     await b.goto(B + "/tools/accomp-styles.html"); await b.sleep(1200);
     const cards = JSON.parse(await ev(`JSON.stringify(Array.from(document.querySelectorAll("#as-band .as-id")).map(function(e){ return e.textContent; }))`));

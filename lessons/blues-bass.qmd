@@ -107,6 +107,13 @@ A recipe that always works:
 When the next bar is the same chord, beat 4 can be any chord tone. The diagram shows the
 chord tones of all three chords at once. A split dot is a note two chords share.
 
+Between the chord tones you can also step along the scale that goes with the chord. Over
+the I chord that is the scale from step 3, the major scale with its 7th lowered a half step
+(called Mixolydian). Here it is in one place on the neck, with the run written in tablature.
+Beats 2 and 3 can borrow its notes, so a bar can climb step by step instead of jumping.
+
+<div class="bl-notes" data-scale="mixolydian" data-on="I"></div>
+
 <div class="bl-step" data-part="walk" data-bass="walk" data-view="super"></div>
 
 Listen to the band's bass player for a chorus, then tick **Leave out the bass** and walk it

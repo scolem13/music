@@ -75,7 +75,11 @@ function run(sec){ const end = now + sec; while (now < end){ now += 0.02; timers
   assert.deepStrictEqual(bars.filter(b => !b.ending).map(b => b.index), [0, 1, 2, 3, 4, 5, 6, 7]);
   assert.deepStrictEqual(secs.map(s => s.name + (s.early ? "*" : "")), ["Intro", "Verse*", "Chorus*"]);
   assert(isFill(recs[1]) && isFill(recs[5]) && !isFill(recs[0]) && !isFill(recs[3]), "fills into Verse and Chorus");
-  assert(bars.some(b => b.ending), "ending played"); assert(!p.isPlaying());
+  // the ending: the last bar is where the last chord arrives, so the band lands there (no bar added) after a set-up bar with a fill
+  assert(!bars.some(b => b.ending) && bars[7].final && !bars[6].final, "landed in the last bar"); assert(!p.isPlaying());
+  assert(isFill(recs[6]), "the bar before the landing is the set-up"); assert.strictEqual(recs.length, 8); assert.strictEqual(recs[7].ending, false);
+  assert.deepStrictEqual(recs[7].parts.bass.map(e => e.pos + ":" + e.midi % 12), ["0:0"]); assert(recs[7].parts.bass[0].dur >= 4);
+  assert.strictEqual(recs[7].parts.comp.length, 1); assert.deepStrictEqual(recs[7].parts.drums.map(e => e.pos + e.piece).sort(), ["0crash", "0kick"]);
   // hold: the intro goes round until next(); then a fill, then the verse
   bars.length = secs.length = recs.length = 0; p = mk(true); await p.play();
   run(2 * 5 + 0.5);                                           // five bars of the two-bar intro, into the sixth
@@ -111,6 +115,52 @@ function run(sec){ const end = now + sec; while (now < end){ now += 0.02; timers
     await ps.play(); run(24 + 4); const lv = [0, 4, 8, 12, 16, 20].map(i => seen.filter(b => b.index === i)[0].intensity);
     assert(lv[0] < lv[1] && lv[1] < lv[2] && lv[2] < lv[3] && lv[3] < lv[4], "levels rise: " + lv.join(" ")); assert(lv[5] > lv[1]);
     assert(seen.filter(b => b.index === 7)[0].intensity > lv[1], "leans into the next verse"); }
+  // ---- endings ----
+  { const tune = (cs, x) => TuneChart.parse("X:1\nM:4/4\nL:1/4\nK:C\n" + cs.map((c, i) => (x && x[i] ? '"^' + x[i] + '"' : "") + c.split(" ").map(y => '"' + y + '"z' + 4 / c.split(" ").length).join("")).join(" | ") + " |]");
+    const go = async (parsed, opts, extra) => { const bs = [], rs = [], t0 = now; const q = BandPlayer.create(Object.assign({ parsed, tempo: 120, countIn: 0, choruses: 1, seed: 4, humanize: 0,
+        opts: Object.assign({ groove: "rock", feel: "straight", ride: "hat", fills: "sections" }, opts), onBar: i => bs.push(Object.assign({ t: now - t0 }, i)), onBarEvents: r => rs.push(r) }, extra));
+      await q.play(); run(40); assert(!q.isPlaying()); return { bs, rs }; };
+    // the plan itself
+    const F = cs => BandHarmony.buildForm(tune(cs), 0), plan = cs => BandHarmony.endingPlan(F(cs));
+    assert.deepStrictEqual(plan(["C", "F", "G", "C"]), { land: 3, setup: 2, ring: [], hold: 4 });
+    assert.deepStrictEqual(plan(["C", "F", "G", "C", "C"]), { land: 3, setup: 2, ring: [4], hold: 8 });
+    assert.deepStrictEqual(plan(["C", "C", "C"]), { land: 1, setup: 0, ring: [2], hold: 8 }, "never more than two bars of ringing");
+    assert.strictEqual(plan(["C", "Am", "Dm7", "G7"]), null, "a turnaround"); assert.strictEqual(plan(["C", "F", "C G7"]), null, "two chords in the last bar");
+    assert.deepStrictEqual(plan(["F7", "Bb7", "C7", "F7"]).land, 3, "a blues ends on its own seventh chord"); assert.deepStrictEqual(plan(["Dm7", "G7", "C"]).land, 2);
+    assert.deepStrictEqual(BandHarmony.endingPlan(F(["C", "F", "G", "C"]), [2, 3, 0, 1]), { land: 1, setup: 0, ring: [], hold: 4 }, "a loop over the end: its own last bars");
+    // the last chord held for two bars: the band lands on the first of them and the second is left to ring
+    let e = await go(tune(["C", "F", "G", "C", "C"]));
+    assert.deepStrictEqual(e.bs.map(b => b.index + (b.final ? "f" : "") + (b.ending ? "e" : "")), ["0", "1", "2", "3f", "4f"]);
+    assert(isFill(e.rs[2])); assert.strictEqual(e.rs[3].parts.bass[0].dur, 8); assert.strictEqual(e.rs[3].parts.comp[0].dur, 8); assert.deepStrictEqual(e.rs[4].parts, {});
+    // a turnaround: as before, the last bar played like any other and then a hit on the top chord
+    e = await go(tune(["C", "Am", "Dm7", "G7"]));
+    assert.deepStrictEqual(e.bs.map(b => b.index + (b.final ? "f" : "") + (b.ending ? "e" : "")), ["0", "1", "2", "3", "0e"]); assert(e.rs[3].parts.bass.length > 1);
+    // only the last time through
+    e = await go(tune(["C", "F", "G", "C"]), {}, { choruses: 2 });
+    assert.deepStrictEqual(e.bs.map(b => b.index + (b.final ? "f" : "")), ["0", "1", "2", "3", "0", "1", "2", "3f"]); assert(e.rs[3].parts.bass.length > 1 && e.rs[7].parts.bass.length === 1);
+    // no fills asked for: no set-up fill either
+    e = await go(tune(["C", "F", "G", "C"]), { fills: "none" }); assert(!isFill(e.rs[2]) && e.bs[3].final, JSON.stringify([e.bs.map(b => b.index + (b.final ? "f" : "")), e.rs[2].parts.drums.map(x => x.pos + x.piece)]));
+    // a ritard when it is asked for: the two bars before the landing take longer and longer, nothing before them moves
+    const plainT = (await go(tune(["C", "F", "G", "Am", "F", "C"]))).bs.map(b => b.t);
+    const ritT = (await go(tune(["C", "F", "G", "Am", "F", "C"]), { ritard: true })).bs.map(b => b.t), d = t => t.slice(1).map((x, i) => Math.round((x - t[i]) * 100) / 100);
+    assert.deepStrictEqual(d(plainT), [2, 2, 2, 2, 2]); assert.deepStrictEqual(d(ritT).slice(0, 3), [2, 2, 2]);
+    assert(Math.abs(d(ritT)[3] - 2.25) < 0.05 && Math.abs(d(ritT)[4] - 2.75) < 0.05, "ritard " + d(ritT));        // 8 beats growing to half as long again: 8 * 1.25 = 10 beats' worth
+    // ... or from the bar marked in the chart, and not before the last time through
+    const markT = (await go(tune(["C", "F", "G", "Am", "F", "C"], { 4: "rit." }), {}, { choruses: 2 })).bs.map(b => b.t);
+    assert.deepStrictEqual(d(markT).slice(0, 10), [2, 2, 2, 2, 2, 2, 2, 2, 2, 2]); assert(Math.abs(d(markT)[10] - 2.5) < 0.05, "marked ritard " + d(markT));
+    // "^half time ballad" is read, and asks for the ballad piano in those bars whatever the style
+    const hb = tune(["C", "C", "F", "F", "G", "G", "C", "C"], { 0: "half time ballad", 1: "half time ballad", 2: "half time", 3: "half time" });
+    assert.deepStrictEqual(hb.bars.slice(0, 5).map(b => (b.feel || "") + "/" + (b.halfComp || "")), ["half/ballad", "half/ballad", "half/", "half/", "/"]);
+    require(R + "band/catalog.js"); const so = BandCatalog.styleOpts("calypso").opts, hr = BandMidi.generate(hb, { bars: 8, tempo: 120, opts: so, rng: mb(2) }), cp = r => r.parts.comp.map(x => x.pos).join(" ");
+    assert(hr[0].parts.comp.some(x => x.pos === 0) && hr[1].parts.comp.some(x => x.pos === 0), "ballad piano: " + cp(hr[0])); assert.strictEqual(cp(hr[4]), "0.5 1.5 2.5 3.5");
+    assert(hr[2].parts.comp.some(x => x.pos === 0.5) && hr[2].parts.comp.some(x => x.pos === 2), "plain half time answers as before: " + cp(hr[2]));
+    // a blend of bass lines and of grooves through the player: each bar is one of them and both are heard
+    const bl = await go(tune(["C", "F", "G", "C", "Am", "F", "G", "C"]), { groove: "rock+brushes", bassFeel: "eighths+roots" }, { choruses: 2 });
+    const gs = bl.rs.map(r => r.opts.groove), bfs = bl.rs.map(r => r.opts.bassFeel);
+    assert(gs.length >= 16 && gs.every(g => g === "rock" || g === "brushes") && bfs.every(b => b === "eighths" || b === "roots"), gs.join(" "));
+    assert(gs.includes("rock") && gs.includes("brushes") && bfs.includes("eighths") && bfs.includes("roots"));
+    assert(bl.rs.slice(0, 14).every(r => r.parts.drums.length > 0 && r.parts.bass.length > 0), "every bar is played");
+    console.log("ENDINGS OK"); }
   console.log("HOLD AND FILL NOW OK", bars.length, "bars");
 })().catch(e => { console.error(e); process.exit(1); });
 

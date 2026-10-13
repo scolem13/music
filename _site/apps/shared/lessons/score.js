@@ -20,9 +20,21 @@
 
   function engrave(host, abc, o){
     o = o || {}; host.textContent = ""; var A = global.ABCJS; if (!A) return null;
-    var opt = { staffwidth: o.width || 600, scale: 0.95, paddingtop: 4, paddingbottom: 4, paddingleft: 4, paddingright: 4, add_classes: true };
-    if (o.fluid){ opt.responsive = "resize"; host.style.display = "block"; host.style.maxWidth = ((o.width || 600) + 90) + "px"; host.style.flex = "1 1 0"; host.style.minWidth = "0"; }
+    // abcjs reserves room at the left of the first system for a voice's full name ("Bass", "Dr.") and less for the
+    // abbreviation on later systems, so the first line starts further in. A lesson's staves are labelled by the text
+    // around them: drop the names and every line starts at the same left edge.
+    abc = abc.replace(/\s(?:name|nm|subname|sname|snm)=(?:"[^"]*"|\S+)/g, "");
+    // every score is fluid: drawn to its natural width, never wider than the box it is in (a narrow screen scales it down whole,
+    // so nothing is cut off); padding on the left is none so the staff starts at the text's edge
+    var opt = { staffwidth: o.width || 600, scale: 0.95, paddingtop: 4, paddingbottom: 4, paddingleft: 0, paddingright: 4, add_classes: true,
+      responsive: "resize" };
+    host.style.display = "block"; host.style.maxWidth = ((o.width || 600) + 90) + "px"; host.style.flex = "1 1 0"; host.style.minWidth = "0"; host.style.overflow = "visible";
     var out = A.renderAbc(host, abc, opt), visual = out && out[0]; if (!visual) return null;
+    // abcjs holds the height open with padding worked out from the width of the box AROUND the staff, which leaves a gap under
+    // a staff narrower than that box. Let the drawing set its own height instead, and never grow past the size it was drawn at.
+    var svg = host.querySelector("svg"), vb = svg && svg.viewBox && svg.viewBox.baseVal;
+    if (vb && vb.width){ svg.style.position = "static"; svg.style.display = "block"; svg.style.width = "100%"; svg.style.height = "auto";
+      host.style.paddingBottom = "0"; host.style.display = "block"; host.style.overflow = "visible"; host.style.maxWidth = Math.ceil(vb.width) + "px"; }
     var s = { host: host, visual: visual, lit: [], events: null, free: /^M:\s*none/m.test(abc) };           // free = no meter (a scale): never swung
     s.light = function (els){ if (els.length === s.lit.length && els.every(function (e, i){ return e === s.lit[i]; })) return;
       s.lit.forEach(function (e){ e.classList.remove("ls-on"); }); s.lit = els; els.forEach(function (e){ e.classList.add("ls-on"); }); };

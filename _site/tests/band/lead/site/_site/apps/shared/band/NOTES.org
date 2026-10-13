@@ -1,0 +1,1095 @@
+#+TITLE: Backing Track band — state and to-do for the next session
+#+TODO: TODO DECIDE | DONE
+
+Written 2026-10-06 at the end of the first build session; updated the same day after the
+second (guitar voice-led triads, and 3/4, 6/8, 12/8). Broader ideas live in
+apps/chord-library/PROJECT.org ("Backing Track <-> Chord Sheet integrations").
+
+* State
+- NOTHING IS COMMITTED. Everything below is in the working tree.
+- NOBODY HAS LISTENED to any of it. Every check so far is by rule, measurement or screenshot.
+- =_site/= was not re-rendered by the build session (someone else's render is in the tree).
+- Quarto appends =**/*.quarto_ipynb= to =.gitignore= on every render; decide whether to keep it.
+- =practice/_songs-embed.qmd= and =teacher/session-builder.qmd= have changes that are not from this work.
+
+* What exists
+| File | What it is |
+|------+------------|
+| tools/_backing-track.qmd | the page (chart, transport, band options, practice, notation, MIDI export, ABC editor) |
+| apps/shared/band/harmony.js | chord parser, voicings, form builder, plain Roman numerals, pins, as-played |
+| apps/shared/band/bass.js | walking, two-feel, boogaloo riff |
+| apps/shared/band/comp.js | comping: varied phrases, fixed figures, four to the bar, boogaloo stabs, pins |
+| apps/shared/band/drums.js | swing and straight time, cymbal choices, fills |
+| apps/shared/band/player.js | scheduler, swing, mixer, start bar, cycle, tempo steps, conductor (intensity) |
+| apps/shared/band/sounds.js | THE ONLY PLACE that knows where samples come from (soundfont zone lists) |
+| apps/shared/band/notation.js, midi.js | notation panel and MIDI export |
+| apps/shared/band/catalog.js | names + descriptions of bass lines / comping rhythms, read by two pages |
+| apps/shared/voicings.js | shared voicing library (also used by the Chord Sheet tool) |
+Also changed: tools/_chord-sheet.qmd, tools/_accomp-styles.qmd, apps/shared/tune-chart.js (additive),
+apps/shared/soundfont.js (probe filename fix), apps/shared/abc-transpose.js (N.C. passes through), _quarto.yml (nav).
+
+Tests and browser drivers are in tests/band/ (see its README.md).
+
+* Added in the second session
+** Guitar voice-led triads
+Two guitar voicing styles in voicings.js, both three notes on ONE string set, each chord taking the
+shape whose strings move least from the one before (ChordVoicings.lead):
+- =triadvl= root-3rd-5th of every chord (a 7th chord gives its plain triad).
+- =uppervl= the triad on the 3rd of a 7th chord (3-5-7), 6-R-3 for a 6th chord, b7-9-4 for a 7sus.
+The band plays them on strings 4-3-2 up to fret 12 (GUITAR_SETS in harmony.js). The Chord Sheet has a
+menu item per string set; a shape picked by hand is kept and the chords after it follow.
+Known: through a cycle of fourths (ii-V-I-VI) the nearest shape is always the next one UP, so the
+line climbs the neck until it hits fret 12 and jumps back down. That is true voice leading, but it
+may not be what is wanted; an alternative is to keep every chord inside one five-fret position.
+** Meters
+- A beat is the meter's lower note, except in 6/8, 9/8 and 12/8 (compound), where it is the dotted
+  quarter: 6/8 has 2 beats, 12/8 has 4, and the tempo counts dotted quarters. BandHarmony.meterInfo
+  decides; form bars, ctx and bar records carry =meter= and =compound=.
+- In a compound bar x.5 is the beat's THIRD eighth (the player warps it to 2/3); x.333 needs straight:true.
+- 3/4: jazz waltz (ride ding, ding-a, ding; hat foot on 2 and 3; kick on 1), bass walks three quarters.
+- 6/8, 12/8: every eighth on the cymbal, kick on 1 (and 3), backbeat on 2 (and 4), whatever Feel says
+  (the Feel menu is disabled). Bass walks one note per beat with pickup eighths; the riff is a shuffle.
+  Comping uses the same figures as 4/4, which land on the triplet grid.
+- The page has a Meter menu that re-writes the three blues presets; custom ABC keeps its own M: line.
+- Notation writes compound bars in eighths (M:12/8, Q:3/8=); MIDI writes the time signature and
+  converts the tempo to quarters.
+- NOT done: 5/4, 7/4 and other meters still get the generic four-beat patterns cut to length; 2/2 is
+  counted as two half-note beats; no 12/8-specific comping figure (repeated triplet chords); a tune
+  that changes between simple and compound meter keeps one tempo number for both kinds of beat.
+
+* Added in the third session (2026-10-07)
+- Drum kit mix: six faders (kick, snare + cross-stick, hi-hat, ride, crash, toms) on top of Drums volume.
+  player.setKitVolume(piece, v); the bank takes spec.gain.
+- Ride cymbal menu: Ride 1 / Ride 2 (the soundfont's second ride, kit piece "ride2", swapped in by the
+  player through opts.rideSound). The soundfont has no more rides; further ones need recorded samples.
+- Electric piano (Comping menu; piano voicings, instrument "epiano") and electric bass (Bass sound menu,
+  "ebass"). Gains set from raw sample levels, NOT by ear. Only the sample sets in use are loaded now.
+- Stop time: opts.stops = [form bar index]; page field "Stop on bar" (e.g. 14, or 6, 14). ctx.stop /
+  ctx.nextStop reach the parts; drums ask the player to damp ringing cymbals ({ choke:"cymbals" }).
+- Preset "Watermelon Man (16 bars)": sets straight eighths, riff bass, boogaloo stabs, tempo 132, stop on 14.
+  Picking another preset clears the stop but leaves the feel where it is.
+- "Show these voicings in Chord Sheet" now switches notation on there.
+Not done: stops are not saved in the ABC (they are a page setting); the stop bar is not marked in
+the notation panel; in a two-beat bar (6/8) the bass pickup necessarily falls in beat 2.
+
+* Guitar: led by the hand, and two-note chords (2026-10-07, later)
+- Guitar shapes used to follow each other by pitch only (ChordVoicings.nearest), which gave the right
+  notes on awkward fingerings and hopped string sets. Now ChordVoicings.easiest picks the smallest move
+  for the fretting hand: frets the hand shifts + half the fret change on each shared string + 0.75 per
+  string picked up or dropped (handMotion); pitch motion only breaks near-ties, with a mild pull to fret 5.
+  Used by the band for every guitar style and by the Chord Sheet's "Favor voice leading" on all fretted
+  instruments. The weights are first guesses.
+- The band remembers the grip it chose; the as-played hand-off carries it ({ strings }) so the Chord
+  Sheet draws that fingering instead of the first shape with the same notes.
+- =guide2=: two-note chords on string pairs 4-5, 3-4, 2-3 (3rd + 7th/6th; root + 3rd for a triad;
+  4th + b7 for 7sus; root + 5th for a power chord). Chord Sheet menu: all pairs, or one pair.
+Not done: a pinned voicing from the Chord Sheet has no grip on the band side, so the chord after a pin
+is still chosen by pitch; "Standard" guitar shapes on the Backing Track do not exist (Chord Sheet only).
+
+* Moving voicings, bass variation, loop shortcut (2026-10-07, last)
+- Voicing movement menu (opts.voiceMove): hold / move / passing. "move" leads comping by the TOP NOTE
+  (BandHarmony.toward): a held chord steps through inversions, a chord change continues the line by step,
+  turning at the edge of the register. "passing" adds passing diminished chords in the "bh" style.
+- Style "bh" (Drop 2, sixth-diminished): each chord read as a sixth chord (BandHarmony.sixthOf): maj -> 6,
+  m7 -> 6 a minor 3rd up, dom -> m6 on the 5th (altered: m6 a semitone up), m7b5 -> m6 a minor 3rd up.
+- Style "auto": per four-bar phrase from intensity / tempo / rhythm (comp.js autoStyle). With Variation on
+  Strict the intensity never moves, so Auto stays on rootless (piano) or shells (guitar).
+- "Major 7th chords: play as 6th chords" checkbox (opts.maj6, BandHarmony.asSixth).
+- Bass variation follows the Variation menu (opts.variation; 0 = exact): walking skip notes and held notes,
+  two-feel 3rds and dotted rhythm, riff relatives (climb, octave, sparse, approach), shuffle approach.
+- Loop: L toggles it; first time it starts at the Start bar and the next chart click sets the end. An end
+  before the start loops over the end of the form (player.setCycle(9, 1)). Click = end, Shift-click = start.
+- Chord Sheet diagrams: fret label 27px in a left gutter, position dots at 3 5 7 9 12 15 17.
+All probabilities and weights here are first guesses, unheard.
+
+* Page layout pass (2026-10-07)
+- Backing Track: Play panel first; Chart / Band / Mixer / Practice are collapsible sections that remember
+  their state (localStorage "btSections"); explanatory text sits in collapsed "Info" blocks.
+  NOTE: never leave a blank line followed by an indented line inside the page's HTML: Pandoc turns
+  the rest into a code block.
+- Cymbal and Ride cymbal menus live in Mixer > Drum kit mix. Ride and crash faders start at 53 of 150
+  (35% of travel; gain 0.28 with the square taper).
+- "Show these voicings in Chord Sheet" re-voices with the current menus when the comping instrument,
+  voicing style or maj6 changed since the last chorus (it used to send the piano that had been played).
+  Guitar comp events now carry their own fingering (e.strings), which is what the hand-off sends.
+- Chord Sheet: Show/Hide notation button beside Print; staff at 80% (144px); the "written an octave
+  above" note appears once under the Guitar heading; fretboard chord symbol is 27px like the fret label.
+- Script URLs carry ?v= numbers: bump them whenever a shared script changes, or browsers keep the old one.
+
+* Chord Sheet tidy-up and fingerings (2026-10-07)
+- Preview bar (Print, Play with the band, notation button) and banjo / mandolin / vihuela are hidden
+  by default; two quiet links at the bottom of the page bring them back (localStorage "chordSheetExtras").
+- Add by type: one small row, root typed in (C, f#, Bb); the 12 root buttons are gone.
+- Solfege, notation and chord-name options moved beside Show fingerings.
+- Guitar fingers: one finger per fret from the lowest fretted note, squeezed to fit four fingers;
+  barre = 1. Checked against the usual open chords, F and Bm barres, a drop 2 and a shell.
+- Piano fingers: scored by natural finger spans (FINGER_SPAN) instead of fixed 1-2-3-5; left hand mirrored.
+  Gives RH 135 / 125 / 135 for triad inversions and 1235 / 1245 / 1235 with the octave. LH root position
+  with the octave comes out 5-3-2-1 where method books usually print 5-4-2-1.
+- Two hands: root position or a low bass note = bass alone in the left hand; rootless or inverted
+  four-note chord = two and two.
+- Superimposed view (checkbox under the view options): up to four different chords on ONE keyboard
+  (a lane per chord, after the Music Will jam cards) and ONE guitar fretboard (a colour per chord, split
+  dots where chords share a note). Each chord is voice-led from the one before: nearest inversion on
+  the keyboard, easiest hand move on guitar, in whatever voicing style the instrument has selected; the
+  first chord is as its ordinary card shows it. Live menus: chord labels (names / Roman / numbers) and
+  note labels (fingers / note names / chord tones). More than four chords: a tick row, a fifth tick
+  replaces the earliest. A split dot carries one label per slice when the chords disagree (e.g. different
+  fingers, chord tones). Covers every keyboard and fretted instrument (guitar, bass, ukulele, ...). Note labels
+  also offer solfege (movable do from the key). A voicing picked by hand on a chord's own card (t.manual)
+  is kept exactly; chords after it are led from it. Not done: printing.
+- Two-hand piano fingering: a lone left-hand bass note is finger 5 and a three-note right hand spans 1 to 5
+  (the first version of the span-based fingering printed 1 for the lone note and 1-2-3 for the right hand).
+OPEN: bass still shows chord diagrams. Proposed replacement: a chord-tone map (root, 3rd, 5th, 7th as
+single notes in one four-fret hand position, fingered) with the arpeggio in bass clef. Needs its own
+drawing code because two tones can fall on one string.
+
+* Combined voicings (2026-10-07)
+- opts.voicing may be several styles joined with "+" ("guide2+top3"). BandHarmony.candidates pools the
+  shapes of all of them. With voicing movement on, the top-note line moves through the whole pool; with
+  "hold", each new chord takes one of the styles at random (comp.js oneOf), so all are heard.
+- Page: "Add more voicings" under the Chord voicings menu is a tick list of the other styles; the menu
+  is the first style. Not available with Auto.
+- Guitar band styles "top3" (strings 3-2-1) and "mid3" (4-3-2): the three-string shapes on one set.
+- Chord Sheet superimposed view keeps the separate cards unless "Hide the separate chord cards" is ticked.
+
+* Chord Sheet: superimposed sections (2026-10-07)
+- "Sections" box under the superimposed options (localStorage "chordSheetSections"): one line per section,
+  optional "Name:" first, up to four chords. Each line gets its own superimposed diagram per instrument,
+  voice-led from its own first chord. A slash chord sets the lowest note (C/E = first inversion); on a
+  fretboard it picks a shape with that note lowest when the style has one. Section chords are separate
+  token objects from the chord list (superSections), so the cards and the single diagram are untouched;
+  an empty box means the old behaviour.
+- NOTE: someone else is editing the print CSS in tools/_chord-sheet.qmd at the same time (a
+  .super-card print rule appeared that this work did not add). Keep edits to that file targeted.
+
+* PLAN (steps 1-2 partly built 2026-10-07, see the last round): 9ths, 13ths and alterations, as options
+Today: rootless voicings always add a 9th and 13th to a plain 7th chord; shells and guide tones ignore
+written extensions; drop 2 / drop 3 keep the four most characteristic tones (C9 -> R-3-7-9, C13 -> 3-7-9-13);
+"bh" ignores written 9/13 and only uses alterations to choose its reading; Standard keeps everything.
+1. One place for the decision: BandHarmony.colour(chord, policy, nextChord) returning the chord the comping
+   voices (as asSixth does now), so every style, the notation and the Chord Sheet agree.
+2. Menu "Extensions": As written / Plain (strip to the 7th) / Add 9ths / Add 9ths and 13ths.
+   "As written" must really mean it: rootless stops adding 9 and 13 to a bare C7 in that mode.
+3. Menu "Dominant alterations": As written / b9 on dominants that resolve to a minor chord / Altered on
+   dominants in turnarounds. Needs the next chord (already in ctx.nextChords).
+4. Per-style behaviour, written as a table first (C9 C13 C7b9 C7#9 C7#11 C7alt Cmaj9 Cm9 Cm11 C6/9 x style)
+   and printed by a test: shells and guide tones gain an optional third "colour" voice (3-7-9, 7-3-13);
+   drop 2 gets a choice of which tone gives way (root or 5th); guitar shells put the extension on top;
+   two-note chords stay 3rd and 7th.
+5. "bh" readings for extended chords are a musical decision to make together: G9 is already Dm6; G13 and
+   G7#11 have more than one accepted reading.
+6. With colour on, the top-note line prefers the extension. The bass scale must follow added alterations
+   (no natural 9th in the line under a b9).
+7. The same two menus on the Chord Sheet, so its diagrams match what the band plays.
+
+* First thing next session: LISTEN
+** TODO Listen to the swing trio (jazz blues, 120 and 200 bpm) and note what is wrong
+Mix was balanced by loudness measurement only. Suspects: ride level, feathered kick, reverb amount, piano register.
+** TODO Listen to straight eighths + boogaloo riff + stabs
+Kick 0.50 / rim 0.55 / bell levels are guesses.
+** TODO Listen to guitar comping
+Guitar gain was never measured. Four-to-the-bar shells are not always root position.
+** TODO Listen to 3/4, 6/8 and 12/8 (Meter menu), and to the two voice-led triad styles on guitar
+Compound drum levels (snare 0.60, kick 0.54, eighths 0.34/0.44) and the default tempos (3/4 132,
+6/8 72, 12/8 60) are guesses. The 6/8 bar is short (2 beats), so a figure every bar may be too busy.
+** TODO Listen to Variation: Strict vs Some vs Loose
+Arc is [0.30, 0.50, 0.65, 0.80] in player.js; it restarts every 4th chorus when looping (may feel abrupt).
+Bass lay -6 ms, comp +8 ms are starting values.
+
+* Decisions waiting
+** DECIDE Commit, and re-render _site, or keep iterating first
+** DECIDE Chord Sheet entry: add bar lines, or keep one chord per bar on hand-off
+** DECIDE Two linked pages, or fold diagrams into Backing Track (needs diagram code extracted)
+** DECIDE Should rootless m7b5 drop the root (it keeps it, like dim7/sus/aug)
+** DECIDE Name "Boogaloo riff" (one edit in catalog.js renames it on both pages)
+** DECIDE Voice-led triads: keep both styles (plain and upper), and let them climb the neck or hold one position
+
+* Variation: remaining steps (agreed plan, do one at a time and listen between)
+** TODO Step 3: embellishments on top of a pattern
+Bass skip notes, displaced or dropped comp hits, so a fixed rhythm becomes "Charleston, mostly".
+Probability rises with ctx.intensity and ctx.phrase. Strict must stay exact.
+** TODO Step 4: parts react to each other
+Generate comp first and hand its hits to the drums so a push on the and of 4 can be caught.
+** TODO Drums should follow what the bass actually plays
+In a Loose first chorus the bass is in two but the drums still feather all four beats.
+
+* Bass patterns to add (none exist yet)
+Roots in eighths, root-fifth, bossa, tresillo, shuffle, pedal, octaves. Suggested first: eighths, bossa, shuffle.
+Each needs an entry in bass.js and catalog.js.
+
+* Known defects and rough edges
+** TODO Chord Sheet auto-detects the wrong key for ii-V-I-VI (G for Dm7 G7 Cmaj7 A7); the key travels in the hand-off
+** TODO Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
+** TODO jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js
+** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
+** DONE Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size (2026-10-12, see the end)
+** TODO Count-in and the final ending hit are not notated or exported
+** TODO Meters other than 4/4, 3/4, 6/8, 9/8, 12/8 are untested in comp figures, notation and MIDI
+** TODO "Both" Roman mode is crowded at phone width in two-chord bars with a flat root
+** TODO "Start at bar" still shows its old number while a cycle is on
+** TODO Chord Sheet print preview with notation on has not been checked; staff is small (180px)
+** TODO pitch-spelling.js defines romanNumeral twice (second wins)
+** TODO Three chord parsers on the site (Chord Sheet, band, arranger.js) can disagree
+** TODO iOS Safari untested
+
+* Never started
+** TODO Audit of the old accompaniment patterns (arranger.js / Accompaniment Styles page)
+Known problems: bass is a piano left hand (one MIDI program), no swing, maj7 chords get a flat 7th,
+root-position triads in one octave, one drum per eighth, rock fills for every style.
+** TODO Recorded samples (structure is ready: replace zone lists in sounds.js)
+
+* Feature backlog (see PROJECT.org for the full list)
+Load any library tune; mute/solo and trading; live voicing display; remember settings and share links;
+more forms and feels (minor blues, rhythm changes, bossa, jazz waltz); audio export.
+
+* Round: Play panel, ticked rhythms, old-page patterns (2026-10-07)
+- Feel, Count-in, Choruses ("Loop" option renamed "Repeat") and Loop bars moved into the Play panel.
+- Band section grouped: Whole band (Style, Variation, Stop on bar) / Bass / Comping. Tick lists sit full width under the Comping row.
+- opts.compRhythm may be a set "a+b+c". One-bar swing figures are mixed bar by bar; "four", "stabs" and the GRID patterns are textures,
+  one per four-bar phrase (form bar index % 4). No push over a phrase line when a texture is in the set. "auto" + ticks = just the ticks.
+- Ported from arranger.js PATTERNS: comp GRID (oompah, eighths, upbeats, bossa, tango, montuno, chacha, arp, arp2) and bass LINES
+  (roots, alt, bossa, tango, tumbao, chacha). Rhythms are the standard ones, NOT the old page's slot strings (several of those were wrong:
+  viennese chords on the off-beats, bossa bass on the and of 3). folk / ska / calypso share one comping rhythm (upbeats).
+- BandCatalog.styles: bass + rhythm + feel together; Style menu shows Custom when the three do not match one. ?style=<id> works.
+- Arpeggio events carry arp:true (single notes); asPlayed ignores them.
+** TODO Old-page patterns not ported: jazz waltz figure (3/4 is already a jazz waltz), hand drums, drum fills
+** TODO Montuno is block chords, not broken octaves; two-bar patterns follow form-bar parity, not a clave direction setting
+** TODO Set bass lines ignore Variation (always exact)
+** NOTE Test renders: delete tests/band/lead/site/_site and site/apps after each render. The resources glob apps/** matches at any depth,
+   so the test site and _site copy each other (was 480 MB). _site/tests/ is still in the user's _site and partly committed.
+
+* Round: drum grooves, style lock, Unlock (2026-10-07)
+- drums.js GROOVES (opts.groove): bossa, clave (2-3 son), chacha, tango, calypso, onedrop, boomchick, rock, halftime, funk. Written fresh,
+  not from arranger.js strings (those were one-bar, eighth-resolution, one drum per eighth). 4/4 and 2/4 only (boomchick also 3/4); any other
+  meter falls back to the jazz time. Latin / Caribbean grooves play no fills.
+- NOT ported, on purpose: samba (same as bossa at eighth resolution), mambo (same as clave), second line (needs sixteenths and a swung roll),
+  brushes (no sample), hand drums (no samples).
+- Catalog: every bass / comp / drums entry and every voicing has fits = style ids; styles carry group, genres, desc and defaults incl. drums
+  and voicing per instrument. Page: locked = menus list only what fits the Style; Unlock = everything, fitting first.
+- Locked, changing Feel switches Style (swing -> Swing, straight -> Boogaloo). Chord Sheet hand-off unlocks itself if its voicing is outside the style.
+** TODO The fits table is one person's judgement and unheard; several locked menus have one entry (montuno rhythm, calypso bass)
+** TODO Two-bar patterns (bossa, clave, montuno) follow form-bar parity: an odd-length form or a loop of odd length flips the clave
+** TODO Grooves ignore Variation / intensity; cymbal choice is not set by the style (clave and cha-cha want the bell)
+** TODO Unlock and Style are not remembered between visits
+
+* Round: strums, open chords, unmarked extensions (2026-10-07)
+- comp GRID strum patterns (strumCamp, strumFolk, strumEights, strumQuarters, strum332, strum16): third entry of a hit = D / U. Down = whole
+  voicing, up = top three notes, lighter. Events carry strum:"down"|"up"; the player rolls them (28 ms max, reversed for up). Upstrokes carry
+  arp:true so the hand-off ignores them. strum16 uses x.25 / x.75 positions: only even in straight feel, and the notation rounds them to eighths.
+- Guitar style "open" (BandHarmony.openShape): open-position table, else E-shape or A-shape barre nearest the nut. One shape per chord.
+  Extensions dropped (C9 -> C7, C6 -> C, Cm6 -> Cm), slash bass ignored, dim -> dim7. Default guitar voicing for folk / rock / pop.
+- BandHarmony.colour(chord, add): tones gain WRITTEN natural 9/13 (this was silently missing: C9 and C7 were voiced the same in standard /
+  drop 2 / drop 3) plus unmarked six / nine / thirteen. opts.extend = { amount, six, nine, thirteen }; decided once per chord arrival in comp.js.
+  opts.maj6 still works (= amount 1, six). Page: "Unmarked extensions" menu + "Which extensions" ticks; off outside ext:true styles unless unlocked.
+** ASK the user once they have listened: do the strums need a strummed / acoustic guitar sound? (They asked to be asked later, not to add it yet.)
+   Today every guitar part uses the one jazz guitar sample set.
+** TODO Alterations (user: "later"): colour() returns altered chords unchanged; next is b9 / alt on dominants by context (plan step 3), and
+   the bass scale must follow. Rootless still adds 9 + 13 always (plan step 2 "as written must mean it" not done). Shell / guide colour voice not done.
+** TODO Chord Sheet does not know the "open" style by name: it draws the handed-over fingerings, but cannot generate open shapes itself
+** TODO Open shapes: no 7sus2, no m6 / 6 shapes, G as 320003 only; no capo
+
+* Round: saved setups, riff with walking, guitar register (2026-10-07)
+- Save and load section: localStorage.btSetups = [{ v:1, name, abc, tempo, style, unlock, feel, bass, groove, rhythm, voicing, fields:{id:value}, checks:{id:bool} }].
+  Listed at the bottom of the Changes menu ("setup:u:<n>"); built-ins come from apps/shared/band/presets.js ("setup:b:<n>", same format, empty today).
+  The older PRESETS (basic / quick / jazz / watermelon) stay as bar lists because the Meter menu rewrites them; a setup carries its own meter.
+- Bass "riffwalk": riff, with the last bar of about half the phrases walked (two bars about one phrase in ten). The riff starts on the note walked into.
+- Guitar register. The samples are at true pitch (measured: Ab2 = 104 Hz, F3 = 176 Hz, D4 = 298 Hz) and the fret/MIDI maths is right. What was
+  high was the choice of shape: the hand drifted to frets 9-12. Now BandHarmony GTR = { fret 4, pull 0.45, centre 52, pitch 0.3 } and comp.js keeps
+  guitar top notes in E3..G4 (was A3..D5). shell3 hold: top avg F#4 -> C4, median highest fret 10 -> 4. ChordVoicings.easiest took an optional 5th
+  argument for this; the Chord Sheet calls it without, so its diagrams are unchanged.
+** TODO triadvl / uppervl / top3 / mid3 are tied to upper string sets and still sit high (top avg E4-A4)
+** IDEA Organ pad (user asked; not built). Director's drawbar organ = 9 sine oscillators, no attack click, no Leslie, no envelope, one note: a
+   drone, not an instrument. Options: (a) GM soundfont drawbar_organ / rock_organ through the existing sample path (one line in sounds.js + a
+   COMPING entry, like the electric piano) or (b) an additive synth voice in sounds.js. Pad = comp rhythm "pad" with an organ sound; a true
+   second comping layer (pad under piano) needs a second comp part in player.js.
+
+* Figures from tunes (So What, Killer Joe, Song for My Father)
+- Each "need to know" figure is a catalog entry (group "From tunes", =tune:= and =after:= on the entry), so it
+  ports to any tune by picking it in the Bass / Rhythm menu. The three tunes are built-in setups in presets.js.
+  - bass =sowhat= (the call) + comp =sowhat= (the answer, GRID, =exact=, planes the voicing up a whole step)
+    + piano voicing =sowhat= (fourths: R 4 b7 b3 5 on minor chords; nearest fourth stacks elsewhere).
+  - bass =killerjoe= (R . 5 L | R . 6 L, L = semitone under the next root). The comping is just Charleston
+    with rootless voicings: nothing new was needed.
+  - bass =songfather= (R, 5 on the and of 2, octave on 3).
+- opts.figures = "always" | "head": with "head" the figure plays on chorus 0 only, then BandBass.AFTER / Varied.
+- TODO VERIFY BY EAR: all three were written from memory, web search gave no transcriptions. Least sure of:
+  the Killer Joe notes on beats 3-4, where the So What chords land (now beat 3 and the and of 4) and whether
+  the first bass note is a quarter on beat 1, and Song for My Father's third note (octave vs the fifth again).
+  The tables are at the top of bass.js (LINES) and comp.js (GRID.sowhat).
+- Not done: a guitar "sowhat" voicing (x5565 grip) -- guitar falls back to its default style; the figure only
+  on some sections (Killer Joe plays its vamp line through the bridge too); head out on the last chorus.
+- More candidates to ask about: Footprints bass (6/4), All Blues (6/8 vamp), Cantaloupe Island, Maiden Voyage
+  rhythm, Blue Bossa, Poinciana groove, Take Five vamp, Red Garland block chords, Chameleon bass.
+
+* More tunes (second batch) and where this is going
+- Built-in setups added: Footprints (3/4, 24 bars), All Blues (6/8), Maiden Voyage, Take Five (5/4), Chameleon,
+  Cantaloupe Island, Blue Bossa. New bass lines footprints / allblues / chameleon / maiden / takefive; comp
+  rhythms maiden / takefive (GRID entries marked tune:true). All from memory: VERIFY BY EAR.
+  - Cantaloupe Island and Blue Bossa carry no figure of their own (boogaloo / bossa defaults). Cantaloupe's
+    identity is the piano riff; Chameleon's bass here is only root + chromatic pickup. Both wait for RIFFS.
+  - Poinciana not added: unsure of the changes, and its identity is a drum groove (mallets on toms).
+  - 5/4 and 6/8 drums use the generic fallback time, not a groove written for the tune.
+- RIFFS (user wants these in later developments): a riff is a fixed melodic figure, not a rule applied to a
+  chord. Needs: notes as scale degrees with rhythm in sixteenths, who plays it (bass / comp / both in octaves),
+  whether it transposes with the chord or stays put, and a length in bars. LINES in bass.js is close but has
+  no sixteenths in swing, no rests-as-data and no doubled instrument.
+- Source for the next batch: Hutchinson, Music Theory for the 21st-Century Classroom, ch. 14 Accompanimental
+  Textures (musictheory.pugetsound.edu/mt21c). Sections and what we have:
+  - 14.3 arpeggios (have arp / arp2); Alberti bass (MISSING: low-high-middle-high).
+  - 14.4 block chords: "1 (2) &" (= our Charleston, straight); the "Barbara Ann" rhythm (MISSING);
+    repeated eighths (have); repeated quarters (have).
+  - 14.5 afterbeats / polka / reggae offbeats (have oompah, upbeats).
+  - 14.6 3-2 son clave (we only have 2-3: add 3-2 / Bo Diddley beat); 3+3+2 tresillo (strum332 only: add as
+    a plain comp + bass rhythm); habanera (have tango); reggaeton dembow (MISSING drum groove);
+    3+3+3+3+2+2 and other groupings (MISSING).
+  - 14.7 distinctive bass lines and 14.7.1 guitar riffs: all riffs, see above.
+
+* Hutchinson ch. 14 textures: added
+- comp: tresillo, clave32 (Bo Diddley), barbara, alberti (arp:"alberti"), g333322, g33433, g3x8 (sixteenths).
+- bass: tresillo. drums: clave32, bodiddley (toms), dembow. New style "reggaeton" (dembow + tresillo bass + pad).
+- Unheard. Guesses to check: the Bo Diddley tom voicing and levels; dembow snare level and whether it wants a
+  rim instead; tresillo bass (R, R, 5) vs all roots; Alberti on 4-note jazz voicings uses the middle-upper note.
+- g3x8 and dembow use sixteenths, so they are only right in straight feel (same rule as strum16).
+- Still open from that chapter: harmonic schemas (9.6-9.8: could not open those pages) and all riffs (14.7).
+
+* The band's audio on other pages
+- Accompaniment Styles, "Backing Track band" tab: every catalog card has a play button (BandPlayer, four bars
+  twice, no count-in) and its own four chords. The table of progressions is OWN / BY_STYLE in the last script
+  of tools/_accomp-styles.qmd; a card with no entry uses its first style's progression.
+- The keyboard-arranger cards on the other two tabs got their own four chords (CHORDS) but STILL play through
+  abcjs's synth: they are generated as ABC by arranger.js, a different engine. Porting them means either
+  playing Arranger's notes through BandSounds or re-expressing those styles in the band catalog (many overlap).
+- Chord Sheet: clicking a diagram title or a superposition label plays through BandPlayer.chord (sampled
+  piano / guitar / electric bass) with MusicAudio as the fallback. Ukulele, banjo, mandolin use the guitar sample.
+- BandPlayer.chord(midis, { inst, dur, vel, roll }) is the one-shot entry point for any other page.
+- Not converted (still MusicAudio synth, Tone.js or abcjs): scales, circle-of-fifths, director, drumset,
+  chord-sheet-deluxe, establish-tonality button.
+
+* Half time / double time (opts.timeFeel = "normal" | "half" | "double")
+- BandHarmony.feelPart(part) wraps each part; BandPlayer and BandMidi.generate wrap every part with it and pass
+  ctx.form / ctx.nextIndex. The chart, tempo, bar count, loop, stops and highlight are untouched: only what the
+  part is shown (chords re-placed on a beat half or twice as long, tempo scaled) and where its events land.
+  Events come back already swung at the part's own tempo, marked straight:true.
+- Half time pairs bars by form index (1+2, 3+4...). An odd last bar, or starting / looping from the second bar
+  of a pair, still works: the wrapper generates the whole pair and keeps the half it needs.
+- Who changes: opts.timeFeelParts ("bass drums" by default, "drums", or "bass comp drums"). User correction:
+  the comping does not double just because the rhythm section does, so it is left out unless asked for.
+- Pinned voicings are re-keyed onto the wrapped bar numbers (pinsFor), so they are used in every mode.
+- Limits: off in compound meters (6/8, 12/8); stop bars are played in normal time; wrapped comp events lose
+  their `of` key so the hand-off to Chord Sheet re-voices; written-out notation of pre-swung sixteenths may
+  look rough (unchecked).
+- Odd-length bars in half time (3/4, 5/8, 7/8): the bar line falls in the middle of a band beat, so the second
+  bar's chord is placed one chart beat EARLY (a push). Delaying it was the alternative.
+- PINNED (user: "put a pin in it"): grouped meters. 5/8 and 7/8 are still counted as five / seven equal beats.
+  Half time gets part of the way (two bars of 5/8 = one bar of five quarters, half as many notes), but a
+  single bar felt 3+2 needs beats of unequal length, the way 6/8 already has beats of three eighths. Also
+  pinned with it: force straight feel in x/8 meters, MIDI export writes 5/8 as 5/4.
+- Idea not built: per-part time feel (drums in half time under a normal bass), and a time feel per style
+  (the "Pop ballad" style's Half-time drum groove is really this).
+
+* Intros (player cfg.intro / player.setIntro)
+- { bars, kind: "vamp" | "last", tacet: "drums" }: bars played once after the count-in, only when play starts
+  from bar 1. The parts get ordinary bar contexts (index 0..n-1, chorus 0, intro:true), so a tune's bass line
+  or two-bar pattern runs through the intro. Stops and pins do not apply. Not in the bar log, so "export what
+  was played" and the written-out chorus leave it out; a fresh MIDI export has no intro either.
+- Page: Intro / Intro length / "Drums wait for bar 1" in the Play panel, saved with a setup. Loading plain
+  changes, or a setup that does not mention them, clears intro, time feel, figure and stops.
+- Song for My Father: four bars of Fm, bass figure + piano (its bossa pattern, NOT doubling the bass figure
+  as on the record), drums in at the top. Length from the user (2026-10-07).
+- Built with the anacrusis in mind: the intro is a play-once list of bars ahead of the form (Session.intro).
+  A pickup would be one more (short) bar at the end of that list; rule still to write: the intro's last bar
+  leaves room for it. The short LAST bar that balances a pickup is separate.
+- Not built: an intro with its own chords; other parts sitting out; a drum fill into the top.
+
+* Chord entry from a keyboard (apps/shared/chord-entry.js, "Enter the changes from a keyboard" on the Backing Track page)
+- ChordEntry.analyse / symbol: Director's chord table and key tie-break, tightened: every played note must belong to the chord, the
+  perfect fifth may be missing from four-note chords, the lowest note decides C6 / Am7 before the key does. Added sus, 9ths, 13, 6/9, add9, 5.
+  Director itself is unchanged and still has its own copy of the analysis (inline in tools/_director.qmd).
+- ChordEntry.listener: "step" = everything pressed until all keys are up; "live" = reported 70 ms after the first note, timed at that note.
+- ChordEntry.grid: bars of symbols in eighth-note units; put / hold / back (step), place (quantized), load (from a parsed chart), toAbc.
+- In time: the page's own player runs the bars once (choruses 1, bass and comp faders at 0, groove "click" for a metronome) and
+  player.where(t) gives the unrounded beat a chord was played on. Swung off-beats are un-swung before snapping.
+- Tests: tests/band/entry/t_entry.js ("ENTRY OK"), tests/band/entry/entry.cdp.js ("ENTRY UI OK").
+** VERIFY with a real MIDI keyboard: nothing here has been played by hand. Timing offset default is 0 ms; the 70 ms settle time is a guess.
+** TODO Rootless voicings are named as what their notes spell (E G Bb D = Em7b5, not C9). Needs either a bass note in the left hand or context.
+** TODO The played notes are thrown away once the chord is named. Keeping them would let the band play the voicings as entered (as pins).
+** TODO In-time takes always replace the changes: no overdub, no loop-until-right, no punch-in on a range of bars.
+** TODO No sustain pedal, no computer-keyboard notes; the on-screen keys are a plain row, not a piano layout.
+** TODO Undo covers one-at-a-time entry only, and cannot bring back the changes that were there before the first chord.
+** TODO The panel sits near the bottom of the page, far from the chart it fills in.
+** DONE (2026-10-07) Voicings by MIDI: a second pass on the Backing Track page, and "Enter voicings (MIDI)" on the Chord Sheet.
+- ChordVoicings.identify(chord, midis) names played notes for a KNOWN chord: style + form / inversion ("Rootless (A/B forms): A form
+  (3rd in bass)"), any octave, exact spacing. No match = "As played" with each note's degree. Order: standard, shell, guide, rootless,
+  drop 2, drop 3. BandHarmony.libChord(parsed chord) gives the { root, intervals } it wants, alterations included.
+- Backing Track, Entry = "Voicings, one chord at a time": the chord named above the keys takes the notes played; they are the band's
+  pins ("form bar:beat" -> midis, the same thing Chord Sheet hands over). Copies to the same chord elsewhere unless that place has its
+  own (enVAuto marks the copies). Pins now move with the key, and are saved in a setup (s.pins, s.pinsAuto).
+- Chord Sheet: t.entered = { midis, name } on a chord token wins over the Voicing menu for the keyboard card; the picker under the card
+  names it and offers "Back to the menu style". The outlined card is the one being voiced; clicking a card moves the outline.
+  "Play with the band" already sends what each card shows, so entered voicings reach the band as pins.
+- Tests: t_entry.js ("VOICING NAMES OK"), entry/voice.cdp.js ("VOICE PASS OK"), sheet/voice.cdp.js ("SHEET VOICE OK").
+** TODO What is stored is the NOTES, not "rootless A form": the name is worked out again each time it is shown. A voicing kept as
+   style + form could follow a chord that is edited (C7 -> C7b9) or be applied to a whole tune ("A forms throughout").
+** TODO Editing the changes (typing, entering more chords, a new take) clears every voicing. Only a key change keeps them.
+** TODO A voicing with a doubled note or a wider spread than the library's shape is "as played" (C7 as C Bb E A is not a known shape).
+** TODO Chord Sheet: keyboard cards only (no guitar), no on-screen way to enter without MIDI, entered voicings are lost when a chord's
+   text changes, and the superimposed view does not know about them. The MIDI path itself is untested (tests call voiceEnter directly).
+** TODO Backing Track voicing pass walks the form bar by bar, so a chord held over four bars is four stops (the copy option fills them).
+
+* Chord diagram beside the chart (Backing Track: #bt-side, "Chord diagram beside the chart" in the Chart panel)
+- It is the Chord Sheet's superimposed view, drawn by the Chord Sheet page itself in a frame (tools/chord-sheet.html?embed=super).
+  The Backing Track posts { type:"super-embed", chords (the first four DIFFERENT chords), comp, voicing, now, next }; the Chord Sheet
+  hides everything but the diagram and answers with its height. Lane colours come from superCol(): now teal, next amber, the rest grey
+  (on its own the Chord Sheet keeps its four colours). "Next" = the next different chord in the form.
+- The first version (one small keyboard / fretboard with only the two chords, drawn on the Backing Track page from the notes the band
+  played) is archived, not loaded: apps/shared/band/archive/side-now-next.js, with the steps to put it back.
+- Test: tests/band/entry/side.cdp.js ("SIDE OK").
+** TODO More than four chords: only the first four are shown (user: design the options later). Now / next outside them are named in
+   the two text lines with "(not one of the four shown)".
+** TODO The voicings are the Chord Sheet's (its style of the same name, voice-led chord to chord), not the notes the band plays: band-only
+   styles (So What fourths, block chords) and most guitar styles fall back to Standard; voicings you set (pins) are not shown.
+** TODO The frame loads the whole Chord Sheet page (its scripts and sounds) for one diagram, and redraws it at every chord change.
+** NOTE Quarto restyles <aside> into its margin layout: the box is a div.
+
+* Half / double time: the comping answers (BandHarmony.feelPart -> respond)
+- When the comping is not one of the parts that change time (the default, "bass drums", and "drums"): same rhythm, different weight.
+  double = each chord's first hit and the hits between the beats stay (straight, louder, short), other on-beat hits go; a bar with
+  nothing between the beats gets one stab on the "and" of 2. half = chords ring to the next hit, beat 3 accented or struck again.
+  "plain" in timeFeelParts ("bass drums plain", menu: "chords unchanged") switches it off. Skipped for arpeggio / passing-chord bars,
+  stop bars and compound meters. Tests: t_timefeel.js, timefeel-ui.cdp.js.
+** VERIFY BY EAR: accent size (x1.14), stab length (0.45 beat), and whether the added stab on the "and" of 2 is welcome.
+** TODO Not built from the ideas list: a rhythm per feel for each style, marking the change itself, register (lower / thicker in half time).
+** TODO Tune figures marked exact (So What answer) are thinned like any other rhythm.
+
+* Chord Entry page (tools/chord-entry.qmd, tools/_chord-entry.qmd) -- 2026-10-08
+- MIDI entry was taken OUT of the Backing Track page and is its own small page: set up (title, style, key, meter, tempo, MIDI), enter
+  (chords one at a time / in time with a click or the style's drums / voicings one chord at a time), check (chart + "Hear it"), send on.
+- Style menu = BandCatalog.styles: it sets the drums for recording, the feel (a swing style un-swings off-beats before snapping), the
+  trio for "Hear it", and the style the Backing Track opens in. Remembered in localStorage.ceStyle.
+- Out: "Open in the Backing Track" writes localStorage.bandHandoff { v:1, from:"chord-entry", at, abc, tempo, style, pinMap, pinsAuto }
+  and opens backing-track.html?from=chord-entry (loadHandoff there); also Copy the ABC and Download .abc (chords, key, meter, title only).
+- Back: the Backing Track's "Enter chords or voicings from a keyboard" (in its ABC panel) writes localStorage.entryHandoff
+  { v:1, from:"backing-track", at, abc, tempo, style, pinMap } and opens chord-entry.html?from=backing-track.
+- Voicings on this page are tied to the chord they were played for (ckey): change the chord in that slot and its voicing is dropped,
+  the others stay. On the Backing Track they are pins as before (pinsFromMap, chordSlots, pinAuto).
+- Key and meter lock once there are bars ("Start empty" unlocks). The ABC box is read-only: edit on the Backing Track.
+- Tests: tests/band/entry/entry.cdp.js ("ENTRY UI OK") covers the page and both hand-offs; t_entry.js the library.
+** VERIFY with a real MIDI keyboard (nothing here has been played by hand): timing offset, the 70 ms settle time.
+** TODO Not on the entry page: repeats / endings, pickup bars, editing a chord by typing, guitar, time feel, any band setting but Style.
+** TODO A round trip through the entry page unrolls repeats (the grid is the form as played) and drops the tune's other ABC fields.
+** TODO Chord Sheet still has its own "Enter voicings (MIDI)" button; it was not moved.
+
+* Rock and pop styles rewritten -- 2026-10-08 (user: "quite unhappy with the generic pop/rock styles"; then "Do all")
+Nothing here has been heard. Every level, rhythm and sample choice is a first guess.
+- Styles (catalog.js, group "Folk, rock and pop"): rock = Straight-eighth rock, strum = Acoustic strum, pop = Piano ballad, dance = Dance pop,
+  motown = Motown / soul, doowop = 12/8 doo-wop, train = Country train beat, folk = Boom-chick. Ids rock / pop / folk are kept from the three
+  generic styles (saved setups and links name them); their contents changed.
+- A style now carries sound: { bass, cymbal, piano, guitar, lead } and push. BandCatalog.styleOpts(id, family) -> { opts, instruments } is what
+  a page should use. Backing Track: styleSounds() in rebuild(reset). The comping instrument stays in its family (piano / guitar) and takes the
+  style's sound, unless the style has a lead (strum, train -> guitar; pop, doowop -> piano).
+- sounds.js: aguitar (acoustic_guitar_steel), cguitar (electric_guitar_clean); kit pieces clap (39) and tamb (54). Events still say
+  inst:"guitar"; the player swaps the sample set by opts.compSound, as it already did for epiano.
+- bass.js LINES: eighths, dotted, octaves, motown, twelve8. dotted and the strum / ballad grooves share one rhythm (1, and of 2, 3).
+- drums.js GROOVES: rock is four bars (kick 1 3 3& | 1 2& 3 | 1 3 3& | 1 3 3& 4&); strum, ballad, dance, motown, train; twelve8 = compoundBar
+  used in simple meters too (triplet:true). fills: "rock" (sixteenths, two beats at most) | "light" (a beat at most) | true (the jazz lists).
+  "back" in a pattern = cross-stick, snare in a chorus bar.
+- comp.js GRID: quarters, triplets (lh:true). On the piano, lh patterns and strums add the root (F2..E3) as a separate one-note event marked
+  arp so the Chord Sheet hand-off ignores it.
+- Pushes: BandHarmony.pushes(ctx), opts.push. Into the third bar of each four-bar phrase when the chord changes there; bass (set lines), comp
+  (grid patterns) and kick (grooves) each keep a "tied" flag for the bar after. Off in half / double time, compound meters, stops, last bar.
+- Chorus bars: opts.lift = form bar indexes (page: "Chorus bars", ranges like 9-16). Drums: fill going in, crash, hi-hat -> ride, snare and kick
+  x1.06; comp x1.09; bass +0.04.
+- Bug fixed: a set bass line gave a chord arriving in mid-bar the pattern's fifth (boom-chick: A under a new D). The first note a chord
+  gets is now its root in every set line except tumbao and the tune figures.
+** VERIFY BY EAR, first: gains of aguitar / cguitar (2.6), clap (0.70), tamb (0.90); open hi-hat level and ring in Dance pop (nothing chokes
+   it but the closed hat on the next beat); whether the piano left hand is muddy against the bass; the rock strum on a three-note piano triad.
+** VERIFY BY EAR: every groove and bass line above; the push (does the held bass note plus a late re-entry sound tied or dropped?).
+** TODO Pushes are one fixed place (phrase bar 2 -> 3). No per-bar choice, no pushes inside a bar (a chord on the and of 2).
+** TODO Chorus bars are typed by hand: the chart has no section labels. No verse thinning (palm mute, hat only), only the lift.
+** TODO Piano voicing for rock / pop is still the close triad ("standard"); no octave doubling or wider spread.
+** TODO Motown bass is root / fifth / octave only (a sixth would be out of key on minor chords); nothing like a real Jamerson line.
+** TODO Rock and the rest in 3/4 fall back to the jazz straight time except strum, ballad and boom-chick (they have a three-beat bar).
+** TODO Old saved setups with style rock / pop / folk load the new style's bass, rhythm and groove only if they did not save their own;
+   the bass sound and cymbal they saved are kept.
+** TODO Chord Sheet "hear" and the static cards on Accompaniment Styles do not use the new sounds (only the catalog cards do).
+** NOTE tests/band/bt/page2.cdp.js expected a key change to clear pins; pins have been transposed since the voicing pass. Test corrected.
+
+* Hymns and carols; boom-chick strength; Style in the top panel -- 2026-10-08
+Nothing here has been heard.
+- Style menu moved to the top row of the Backing Track page (after Meter). Unlock and the style's description stay in the Band panel.
+- New group "Hymns and carols": hymn = Hymn (four parts), carol = Folk carol (user's reference: Barenaked Ladies' God Rest Ye Merry Gentlemen).
+- hymn: comp GRID "hymn" (hold: each chord struck once, held to the next; lh root) + bass "held" + groove "none". Four parts = left-hand root
+  plus the "standard" close triad led by least motion. It is keyboard-style harmony, NOT real part-writing: no doubling rules, no check for
+  parallel fifths or octaves, no soprano line (the band has no melody), no inversions unless the chart writes a slash chord.
+- carol: strumFolk on the steel guitar, bass "halves" (roots on 1 and 3, upright), groove "brushes" (soft hi-hat eighths, cross-stick 2 and 4,
+  soft kick 1 and 3, no fills; there are no brush samples).
+- Groove "none" = no drummer (bar and ending both empty). Instrument "Church organ" (sounds.js organ = church_organ, the piano's voicings).
+- opts.boom (0..1, page slider "Boom-chick: subtle to polka power", default 35, shown only while bass alt, rhythm oompah or groove boomchick
+  is chosen; 0.5 = the patterns as written). Bass alt: length 1.7 -> 0.45 beats, level x0.78 -> x1.22. Comp oompah: level x0.72 -> x1.28, shorter
+  as it rises. Drums boomchick: below 0.3 only the hi-hat foot and a soft kick on 1, no fills; from 0.75 the cymbal on every beat and a kick
+  on the last eighth; levels x0.62 -> x1.38.
+** VERIFY BY EAR: organ level (1.3) and whether the samples loop or die away under a long chord (soundfont mp3s are a few seconds long);
+   the slider's two ends, and whether 35 is the right default; the brushes stand-in.
+** TODO Real four-part writing (SATB ranges, doubling, contrary motion against the bass, a top line taken from the tune's melody).
+** TODO Polka power adds nothing to the bass but level and length (no run-ups between chords, no accordion-style off-beat doubling).
+** TODO No sleigh bells in the kit (the tambourine sample is the nearest thing; unused in carol).
+** NOTE t_timefeel line 70 and one t_pop assertion depended on random fills / pushes and failed some runs; both made independent of them.
+
+* Piano ballad rewritten; blend sliders for comping rhythms -- 2026-10-08
+Nothing here has been heard. User's own practice, as given: left-hand octaves on the root, right hand the triad in first inversion,
+variation with 2 and 6, plus 4 and major 7 for gentle tension that resolves quickly; the three patterns "work best when combined".
+- comp.js balladBar (GRID ballRock, ballBroken, ballSync; ballad:true, mix:true). LH: octave on the root as each chord arrives, fifth on the
+  and of 2 after it, upper root on beat 3 (the "dotted" bass and the ballad kick). RH pieces: F whole chord, P top pair, T thumb, M, H.
+  Piano + "standard" voicing = first inversion built here (3 5 1; 3 5 7 on seventh chords; top note 62..77 near the last, drawn to 70).
+  Any other voicing style, a pin or a guitar is broken up as it stands (no left hand on guitar).
+- Neighbour notes: amount = opts.variation (Strict 0 = none). 2 for the top root / 6 for the 5th on one hit (24% x amount per hit); 4 for
+  the 3rd / major 7th under the root (10% x amount), only when a later hit of the same chord restores the chord tone. Only notes of the
+  key: buildForm now puts keyPcs on every form bar (K: field, minor = natural minor). Major-7th therefore only on I and IV.
+- Below 66 bpm the right-hand figure is played in sixteenths, twice a bar.
+- Blend: opts.rhythmMix = { rhythm id: 0..1 } (unlisted = 0.5). Textures are chosen by weight; patterns marked mix change every bar, others
+  every four bars; swing figures are weighted inside their group. Without rhythmMix the old behaviour (even, "mostly move on") is unchanged.
+- Page: every rhythm in use (the menu's and the ticked ones) has a slider in the "Blend in more rhythms" list, default 50; 0 leaves it out;
+  all at 0 = the menu's rhythm alone. Weights live in mixW (kept across rebuilds, saved in setups as mix). Unlock lists every rhythm there.
+- Piano ballad style: rhythm "ballRock+ballBroken+ballSync" (a style's rhythm may now be several joined by +).
+** VERIFY BY EAR: everything; first the left-hand octaves against the bass guitar (same roots, an octave apart), the level of single thumb
+   notes (0.48), whether bar-by-bar switching is too restless (alternative: every two bars), how often the neighbour notes come.
+** TODO Tension notes resolve on the next hit of that voice, which can be a beat away in the syncopated pattern ("pretty quickly"?).
+** TODO No blend sliders for voicings, bass lines or grooves; Chord Entry and Accompaniment Styles play the style's even blend.
+** TODO Quarter-note chords and the hymn still use the close root-position-led triad plus a single left-hand root, not this voicing.
+** FEEDBACK 2026-10-08 (user, after hearing the first version): "The piano rhythm is frenetic and tasteless." That version ran eighths in
+   every bar of all three patterns, changed pattern every bar, added a left-hand fifth and octave inside the bar, and doubled to sixteenths
+   under 66 bpm. Changed the same day: quarter-note pulse (at most five right-hand attacks a bar), two-bar patterns played whole, left hand
+   only the held octave, no sixteenths, neighbour notes half as often, softer thumb. My reading of the complaint, not confirmed by the user.
+
+* Piano "standard" voicing widened; grand staff in the notation -- 2026-10-08
+Nothing here has been heard, and the drawn score has not been looked at (the test counts staves and braces only).
+User: "I'm sometimes also playing the fifth in my left hand. There's variation of what I'm playing in the right -- exploring the range of
+the instrument, leaving notes out." Then: "The fifth can certainly be omitted from the right more often with standard voicings."
+All of it hangs on opts.variation (Strict = none of it: octaves, full triad, middle register).
+- Ballad left hand (balladBar): octave as a rule; root-fifth-octave 28% x variation, root and fifth 14%, root alone 6%. The fifth only from
+  G2 up and never under a slash chord's bass.
+- Other piano left hands (left(): quarter-note chords, hymn, strums on piano): single root; a lower octave added 25% x variation, root
+  and fifth 20%.
+- Right-hand register (ballad only): st.reg, re-chosen at a phrase start 55% x variation from low 64 / middle 70 / 76 / high 82 (a chorus
+  bar never picks the low one); the top note may run 60..88. Still first inversion everywhere.
+- Fifth left out of the right hand: 60% x variation of chords, settled once per chord. Ballad: the outer two notes. Other piano patterns on
+  the "standard" voicing with a three-note triad: the fifth removed (not the hymn, not strums, not pins). Those hits are marked arp, so
+  the Chord Sheet hand-off does not take the two-note version as the chord's voicing.
+- Comping events now carry hand:"L" for the left hand.
+- notation.js: piano = grand staff, %%score {K L} B. By hand, not by pitch: hand:"L" events go to the bass clef; if the bar has no
+  separate left hand the voicing is shared by leftCount() (ported from Chord Sheet's leftHandCount, plus: all below G3 = left; up to
+  three notes within an octave = right). Events of one hand at one moment are merged into one chord (before, the later one overwrote
+  the earlier). Guitar keeps one staff.
+** VERIFY BY EYE: the engraving (ledger lines for low right-hand thumbs, whole notes written as two tied halves, rests in an idle left hand).
+** VERIFY BY EAR: how often the fifth goes at "Some" (36% of chords) and "Loose" (60%); register changes at phrase starts.
+** TODO Right-hand inversions other than the first; register exploration outside the ballad; leaving out notes other than the fifth.
+** TODO Two notes of one hand with different lengths at one moment are written with the longer length (no second voice per staff).
+
+* Piano ballad hands, after the user's description -- 2026-10-08 (replaces the register and first-inversion rules in the section above)
+User: "my left hand jumps all over the place but my right focused on voice leading. If I go to IV, that's in root position in the right.
+I often omit or delay the octave in the right because of all the doubling already happening enough in the left."
+I read "the octave in the right" as the root, which the left hand is doubling; not confirmed.
+- Right hand (balladBar, piano + "standard"): opening() = first chord in first inversion; ledFrom() = every later chord in the close
+  inversion and octave that moves least (both directions summed, + 0.3 x distance of its middle from F#4), kept E3..A5. C first
+  inversion -> F root position is tested. st.balV holds the last voicing. The right hand no longer changes register by phrase (st.reg gone).
+- Right hand per chord, with variation a: no root 30% x a, root late 25% x a (left out of the first hit, arrives alone on the second
+  when that is a single note), no fifth 30% x a, else whole. Seventh chords (3 5 7): only "no fifth".
+- Neighbour notes now go by role (root / third / fifth wherever they sit in the inversion) and only when the hand keeps its order.
+- Left hand with variation: register chosen per chord from an octave lower (down to F1), the usual one, or an octave higher when it fits
+  under the right hand, mostly not where it just was; shapes as before; 30% x a of whole-bar chords strike again on beat 3 elsewhere.
+  Strict: the octave from C2..B2, as before.
+- Other piano patterns on "standard" (gridBar): root left out 30% x a, fifth 30% x a, per chord.
+** VERIFY BY EAR: the left hand below C2 against the bass guitar; whether the voice-led right hand drifts upward over a long form (the pull to
+   the middle is weak); how the late root sounds when the second hit is the top pair (then the root simply appears in the pair).
+** TODO Voice leading and the no-root / late-root habit are in the ballad patterns only. Quarter-note chords, the hymn and the rest still
+   take their voicing from the shared library's "standard" (its own least-motion triads, not seeded from first inversion).
+** TODO "Delay" is only one hit late; no control over how late, and no delayed fifth.
+** FEEDBACK 2026-10-08, same day, on the left hand above: "My left hand plays more interesting rhythms than what you've put in -- closer
+   to what a bassist would do. It's rare I play below A2." Replaces the left-hand rules above:
+   - Register: the root as high as its octave still fits under the right hand; if that is below A2 (45) it goes up an octave, plays single
+     notes and takes its fifth from below. With variation 22% an octave up, 8% an octave down (the only way below A2). No F1 any more.
+   - Rhythm (LH table in balladBar): Strict = octave on 1, fifth on the and of 2, upper root on 3 (so the earlier "held octave only" reading
+     of "frenetic" was wrong for the left hand). With variation also: octave bounce, fifth on 3 and root on 4, upper root on 3 with a
+     lead-in to the next root on the and of 4 (a key step), a held bar, root-fifth-octave-fifth in quarters.
+   - Right hand floor raised to A3, its centre to A4, to leave the left hand room.
+** VERIFY BY EAR: left hand and bass guitar now share rhythm AND register more than before; the lead-in note choice.
+
+* Notation ahead, pattern transitions, drums that listen, follow-my-playing -- 2026-10-08
+Nothing here has been heard; the microphone path has never run with a real microphone.
+- Notation shows the chorus about to be played. player.js: cfg.ahead / setAhead(on) makes pump() generate one pass of the form (or loop)
+  plus a bar beyond the scheduling horizon (Session.aheadBeats). Session.rewind() (via redo() on setOpts, setChoruses, setCycle, setChart,
+  setTranspose) drops every bar not yet scheduled and generates it again; cfg.onRewind(barNo) tells the page. Parts keep their state
+  across a rewind. Off while tempo steps are on or while following the microphone. The page turns it on only while the Notation panel
+  is open; nowBar / hearing() keep played() (MIDI export, hand-off, "last chorus") to bars actually heard. The score is redrawn when
+  the chorus on show changes (during the last bar of each pass) or when its bars are rewritten.
+- Pattern transitions (comp.js planSpan): a blend is planned four bars at a time, one pattern at home, with at most one visitor: callback
+  (bar 2 = the pattern just left, 35% after a change), foreshadowing (bar 4 = the next home, 40% before a change), or a break (bar 3 =
+  another, 30% otherwise). With sliders the home is chosen by weight and zero-weight patterns never visit. Replaces "every 2 / 4 bars".
+- Drums: more fills in all three sets; vary() drops a note or shifts weight so a fill does not repeat exactly; land() decides the bar
+  after a fill: crash by energy (small fill 4-24%, larger 12-72%, into a chorus 45-85%), a quarter of that within four bars of the last
+  crash, else an open hi-hat (30%) or just the kick. Jazz test: crashes fell from 2065 to 846 in 19200 bars.
+- energy: the player gives the drums ctx.energy = half the conductor's intensity, a quarter how many bass / right-hand events the bar has,
+  a quarter how loud they are (left-hand piano notes not counted).
+- Follow my playing (page checkbox, Band panel): getUserMedia -> AnalyserNode RMS every 100 ms -> followFeed(dB): slow floor and ceiling,
+  position between them smoothed (about 1 s up, 2.5 s down) -> player.setFollow(0..1); intensity = 0.3 arc + 0.7 level. Own
+  AudioContext, analyser only (no playback), echo cancellation / AGC / noise suppression requested off. Not saved in setups.
+- Piano ballad: hi-hat fader default 53 (35% of travel, the convention the ride and crash defaults use) via style.sound.kit; put back when
+  another style is chosen.
+- Piano ballad + Voicing movement "move": a chord held from the bar before, and 40% of later chord / top-pair hits on one chord, step to the
+  next inversion (turn()). Before this the ballad ignored the menu.
+- Cost, measured: generating a bar takes 0.01 ms (ballad, rock) to 0.08 ms (swing); writing 32 bars as ABC 0.4 ms. The only heavy step
+  is abcjs drawing the score (figure in the reply), once per chorus.
+** VERIFY with a real microphone and headphones: does it track playing, how much the band's sound leaks in from open-back headphones, are
+   the time constants right. Browsers may ignore the request to turn processing off.
+** TODO The user asked whether the page can tell headphones are in use: it cannot (no browser API); it is a label on the checkbox.
+** TODO Following uses loudness only (no note density or register); it lowers / raises the whole band, drums included.
+** TODO Transitions are whole-bar substitutions; no bar that is half one pattern and half another.
+** TODO 35% hi-hat: if the user meant 35 on the fader's 0-150 scale rather than 35% of its travel, change kit:{ hat:53 } in catalog.js.
+
+** Piano ballad defaults to half time (2026-10-09)
+- A style may carry =time:{feel, parts}=; =styleOpts= returns it as =timeFeel= / =timeFeelParts=. The ballad uses half time with "Bass and drums; chords unchanged", so the piano patterns are as written. The Backing Track page sets the Time menus from it and puts them back on the next style (=timeByStyle=). Chord Entry gets it through =styleOpts=; the Accompaniment Styles examples do not (they show each pattern in its own time).
+- Fixed: Chorus bars (=opts.lift=) were looked up by the part's halved or doubled bar number, so in half or double time the chorus landed on the wrong bars. =liftFor()= in =feelPart= renumbers them.
+- Unheard. The dotted bass at half speed is 1 and 4 of each first bar; that may be too sparse.
+
+** Emo / pop-punk style (2026-10-09)
+- Style =emo= (group "Folk, rock and pop"): bass =eighths=, comp =strumPunk=, drums =rock=, push on, guitar sound =dguitar=.
+- =dguitar=: the soundfont's =distortion_guitar= samples (MIDI program 30). Level is a guess. Samples of a distorted guitar played as chords are not the same as a chord through distortion: expect it to sound thinner and cleaner than a real amp.
+- =strumPunk= (comp.js, =punk:true=): on guitar every chord becomes a power chord on the low strings (root E2..D#3, fifth, octave), whatever the chord symbol and the Voicing menu say; a pinned voicing is played as pinned. Verse bars: eighth downstrokes, =mute:true=, 0.3 beats long, the full shape as a chord arrives and the low two strings after. Chorus bars (=opts.lift=): open down-up eighths. With no Chorus bars, the first half of the form is the verse and the second half is open (forms of four bars or more).
+- =mute:true= on a comp event: the player passes =cutoff: 1100= to the sample bank (a fixed low-pass; sounds.js =spec.cutoff=). Not in the MIDI export.
+- =opts.halfBars= (form bar indexes; the page's "Half-time bars" field): in =feelPart=, those bars go one step slower than the rest (normal to half, double to normal), bass and drums changing and the chords answering. Bars pair as 1+2, 3+4; a bar whose partner is not listed is left alone.
+- Not done: octave lead lines; a fill or crash going into a half-time section unless it is also a Chorus bar; quiet-loud beyond the Chorus bars' lift; the half-time section's chords use the general "answer" rule (ring on, accent beat 3), not something written for this style.
+- Unheard, like everything else.
+
+** Meter changes inside a tune (2026-10-09)
+- Already there: =TuneChart.parse= reads inline =[M:3/4]=, the chart draws the new signature, and every form bar has its own =beats= / =meter= / =compound=. All styles generate bars of the right length across changes (=tests/band/meter/t_change.js=).
+- Added: form bars carry =unit=, the bar's beat against the beat of the tune's header meter (the tempo's beat). 4/4 to 7/8 = 0.5, 4/4 to 6/8 = 1.5, 6/8 to 2/4 = 0.6667. The written eighth note keeps its length. The player places events at =pos * unit=, advances by =beats * unit=, and tells the parts =tempo / unit=; =where()= and =positionAt()= still answer in the bar's own beats. =BandMidi.generate= records =tempo / unit= per bar, so the MIDI file has the right tempo events.
+- Limits: the count-in, intro and ending use the first bar's meter. The Meter menu and the "half time is not available in 6/8" lock look at the header meter only. Half / double time pairs bars by form index, so a pair with different lengths is left in normal time. The band's notation writes 5/8 and 7/8 bars as 5/4 and 7/4 (as it already did for whole tunes in those meters). Tempo relations other than "the eighth stays the same" (e.g. quarter = dotted quarter) are not offered. There is no control on the page for adding a change: it is typed into the ABC as =[M:n/d]= at the start of the bar.
+
+** Chart rows follow the ABC's lines; courtesy time signatures (2026-10-09)
+- =TuneChart.parse= keeps each bar's =srcLine= and returns =srcBreaks= (bars per ABC line). The chart uses them as its rows unless the caller passes =barsPerRow= / =lineBreaks= or the ABC has =%%score-bars= / =%%score-breaks=. Every row is as wide as the longest line. A backslash at the end of a line joins it to the next. A tune on a single line of more than eight bars still gets four to a row (taken as unformatted).
+- A change of meter is drawn as a one-line tag (=6/8=, class =tc-courtesy=) in the top right corner of the bar BEFORE the change, inside its barline. Only the very first bar (when there is no header) carries its own stacked signature. Bars clip their contents (=overflow:hidden=), so the tag cannot hang outside the cell.
+- Tests: =tests/band/lead/lines.cdp.js= ("LINES OK"), =tests/band/meter/change.cdp.js=.
+- The beat dots beside Play are rebuilt in =onBar= from the bar's own =beats= (count-in and intro bars included) and go back to the header meter when the band stops.
+
+** ABC checks, tempo and style from the ABC, section list (2026-10-09)
+- =TuneChart.parse= no longer lets an inline =[M:]= change the tune's header meter (=meterN=, =unitsPerBar= ... were the LAST meter's, which turned bar 1 of a 4/4 tune ending in 5/4 into a pickup). Each bar has =fullUnits= (what its meter holds) and =misfit= when its contents differ; =TuneChart.check(parsed)= lists them. Not flagged: the pickup, a last bar that completes it, two halves of a bar split by a repeat or double barline.
+- =buildForm=: a misfit bar is a full bar of its meter, unless =parsed.asWritten= (the page's "Play these bars as written"), when it is as long as written, short or long. The chart underlines misfit bars in orange.
+- The page reads =Q:= (=Q:78=, =Q:1/4=78=, =Q:1/8=156=) and =%%style <id or menu name>= from the ABC when they appear or change; the Tempo box and Style menu override them until the ABC's value changes again. The tempo slider is gone (a hidden input keeps the id for code and tests).
+- Time signatures on the chart: one line (=6/8=, =tc-own=) in the top left of the bar's own cell; a grey stacked courtesy (=tc-courtesy=) at the far right of the previous bar only when the change starts a row.
+- Band notation: a change of meter at the start of a line is written at the end of the line before. At a line start abcjs dropped the staves' clefs, and with the drum staff it threw.
+- =#bt-nav=: links to the page's panels down the left (a row of links under 1000px). =#bt-root= is a two-column grid when it is there.
+- Tests: =tests/band/lead/abcset.cdp.js= ("ABC SETTINGS OK").
+
+* Fill control, sections, hold mode, marks in the ABC, band on the carols pages -- 2026-10-09
+Nothing here has been heard. Checked by rule and in headless Chrome only.
+- Chart marks (tune-chart.js): a =P:Name= line in the body (after K:) names the section starting at the next bar (bar.section);
+  ="^fill"= / ="^small fill"= / ="^big fill"= (bar.fill) and ="^stop"= (bar.stop) are annotations inside a bar. buildForm copies all three
+  onto the form bars. TuneChart.setMarks(abc, { stops:[bar], fills:{bar:size} }) rewrites them (each bar knows where it was written: bar.at).
+  The chart draws the section name (top right) and the fill mark (bottom right).
+- Drums: opts.fills = auto | busy | sections | none; opts.fillBars = { form index: size }; ctx.fill (the player's Fill now);
+  ctx.sectionEnd (the player, in hold mode). "none" still plays a fill that is asked for. Grooves with no fills of their own (Latin,
+  brushes) play a light one when asked. Phrase ends are counted from the start of the section when the chart has sections.
+  BandDrums.fillPlan(ctx, index, nextIndex) is what the half / double time wrapper uses to hand the request on as ctx.fillPlan.
+- Player: sections() / setHold(on) / next() / goSection(i) / fill(size); cfg.onSection, cfg.sectionLead (beats of warning), cfg.hold.
+  Hold: a section repeats (no fill) until next(); then a fill and on. next() during the section's last bar still works: that bar gets
+  the fill if a whole beat is left, and the following bar is redirected (the bass and chords had already aimed at the repeat).
+  Fill now rewrites the last beats of the sounding bar if they have not gone to the sample bank, else asks for it on the next bar.
+- Stops: opts.stops still works; form bars with stop:true are stops too (player and BandMidi.generate).
+- Backing Track page: Drum fills menu and Fill on bar box (Band panel); Fill now (F), Sections menu and Next section (N) by the Play
+  button (the last two only when the chart has sections). Stop on bar and Fill on bar now READ AND WRITE the ABC; the bar numbers are the
+  band's (a repeated bar is named by its first time round). A preset's or an old setup's stop is written into its ABC on load.
+  A section called Chorus or Refrain is played up like the Chorus bars.
+- Carols site (~/Projects/carols): site/band.html + site/libs/band (a COPY of these files, refreshed by its tools/build.sh).
+  The song page's sections become the chart's sections in the order j walks them; bars come from {start_of_grid} in the .cho.
+  Tests: tests/band/fills/ (t_fills.js, fills.cdp.js, carols.cdp.js).
+** VERIFY BY EAR, first: a Fill now patched into a bar (does the join sound right?); the late next() (bass aims at the wrong chord for a bar);
+   fills in "busy"; light fills on bossa / brushes when asked.
+** VERIFY the bars written for Deck the Halls and Feliz Navidad in the carols site (written from the chords over the words, not from a score).
+** TODO Fill now in half / double time bars only ever lands on the next bar; a fill mark on the first bar of a half-time pair moves to the second.
+** TODO Bass and comp patterns of more than one bar still count from the top of the form, not from the section.
+** TODO A patched fill is in the bar record (MIDI export) but notation already drawn for that bar is not redrawn.
+** TODO Hold mode ignores the Loop bars cycle inside a section; Choruses counts whole passes of the form.
+** TODO Carols: no transposition, no intro vamp, pickups rely on the count-in, the grid is not shown on the page.
+- Melody (same day): a page may put bar.melody = [{ pos, dur, midi }] on the parsed chart's bars; buildForm carries it and the player plays it
+  on the comping instrument through the comping fader (opts.melody false = off, opts.melodyLevel). Only the carols pages do this so far
+  (from abcjs's first voice); the Backing Track page itself does not read the notes of its ABC.
+** VERIFY BY EAR: the tune's level against the chords (0.8), and whether the chords should thin out under it.
+- Remote (same day): backing-track.html?remote=1, opened with window.open by a song page of the lyrics site, is driven from there by
+  postMessage (protocol in the comment above the "remote" block of tools/_backing-track.qmd; allowed origins: *.seancoleman.org and
+  localhost). The lyrics page sends the ABC, the tune per bar, tempo and style; this page reports state, bars, beats and sections.
+  _quarto.yml pins `quarto preview` to port 4455 so the local lyrics site can find the local page.
+** VERIFY in a real browser: the pop-up is allowed, and one click in the Backing Track window is enough for it to make sound.
+
+* John Prine fingerpicking -- 2026-10-10
+Nothing here has been heard. Written from the commonly taught version of the pattern, not from a transcription; the user plays this
+style and has not yet said how their own hand differs.
+- Style =prine= was a placeholder (guitar held block chords). Now: comp =prine= on the steel guitar, bass =alt= (upright), no drums.
+- comp.js =pickBar= (GRID entries marked =pick=): single notes, all marked arp. The thumb is not in the table; it plays every beat:
+  root, inner string (the 4th; the 3rd under a D shape), alternate bass, inner string. Alternate bass = the fifth below the root when the
+  guitar has it (C: low G, D: open A, A: open E, B7 / Bm: F# on the 6th string), else the 5th string under a 6th-string root (G, E, F:
+  6-4-5-4). The table is the fingers: M / H / T = the lowest, next and top string above the thumb's.
+  - =prine=: pinch on 2 and 4 with the string below on the and after (C: C . | E+C G | G . | E+C G).
+  - =travis=: pinch on 1, then the and of 2, the and of 3, the and of 4. Offered in the style's Rhythm menu and blend list; not its default.
+  - 3/4: thumb root, inner, inner; pinches on 2 and 3; a chord held into the next bar starts it on the alternate bass.
+  - 6/8, 12/8: thumb root / alternate bass on the beats, two finger notes after each.
+- The strings come from the grip of the "open" voicing style. Other guitar voicings and pins are picked by pitch (lowest, next, the rest).
+  On the piano the thumb is the left hand (root below the chord and its fifth).
+- Variation > 0: a pinch on the top string (25% x amount), a note between the beats left out (12%) or on the other string (18%), a pinch
+  on beat 1 (15%). Strict = the pattern exactly.
+** VERIFY BY EAR, first: thumb level against the fingers (0.60 / 0.56 / 0.49 against 0.53 / 0.46) and its length (0.9 of a beat, no
+   palm mute: =mute:true= exists and is not used); the upright bass doubling the thumb on 1 and 3; G as 6-4-5-4 rather than 6-4-6-4.
+** ASK the user: which fingers and strings they really use, whether beat 1 is pinched, hammer-ons (the C-shape's 4th string, the D-shape's
+   high string), bass runs between chords, and whether the style should have a bass player at all.
+** TODO No hammer-ons, pull-offs or bass runs; no capo (keys away from C, G, D, A, E get barre shapes, which no one fingerpicks);
+   the open-shape table has no C/G or G/B, and a slash bass is ignored; nothing shows the picking on the Chord Sheet (the notes are arp).
+** NOTE tests/band/pat/t_tunes.js fails on its preset count (expects 10, there are 12) and then on the pop style demo; both are from
+   the demo setups added earlier, not from this.
+** TODO COME BACK TO THIS (user, 2026-10-10: "I have to analyze my own playing in more detail" first). The report as given:
+- Rhythm was new, voicing was not: the existing open chords, read by string. The catch: the alternate bass is often a note outside
+  the chord shape (low G under C, open A under D, open E under A).
+- Default pattern "thumb, pinch-and", on C: C | E + high C pinched, G | low G | E + high C pinched, G. Thumb on every beat
+  (root, inner string, alternate bass, inner string); inner string = the 4th, or the 3rd under a D shape; 6th-string roots go 6-4-5-4.
+- Travis pattern (pinch on 1, then the ands of 2, 3 and 4) is in the Rhythm menu, not the default.
+- Band: steel-string guitar, upright bass on root and fifth (doubling the thumb on 1 and 3), no drums. No capo.
+- Waiting on the user's answers:
+  1. Is that your pattern? Which strings do your fingers take, and do you pinch on beat 1?
+  2. On G, does your thumb go 6-4-5-4 or 6-4-6-4?
+  3. Hammer-ons (4th string of C, high string of D) and bass runs between chords? Neither exists yet.
+  4. Should this style have a bass player at all, given the thumb already plays that part?
+  5. Should the thumb be palm-muted? It is just short now (0.9 of a beat).
+- Rendered and copied to the lyrics site; nothing committed.
+
+* Guitar sounds: amp chains, nylon, a sound list in one place -- 2026-10-10
+Nothing here has been heard. Levels were matched by measurement; every tone setting is a first guess.
+User: jazz and steel acoustic acceptable; the soundfont's clean "a bit too distorted and poorly synthesized"; its distorted "without body".
+- sounds.js: an instrument may carry =chain= (its amp): its notes are summed into ONE chain per instrument and destination (ampFor),
+  built from built-in nodes the first time it plays. Stages: hp, lp, peak, shelf, lowshelf, drive (tanh, 4x oversampled), level.
+  A filter-only chain is a per-instrument EQ.
+- Every def has =family= and =label=. BandSounds.family(id) / BandSounds.sounds(family) feed the player (any sound of the comping
+  instrument's family may be opts.compSound), the Backing Track's Comping menu, and MIDI export (PROGRAM in midi.js).
+- New: =nguitar= (soundfont nylon), =clguitar= and =odguitar= (the JAZZ guitar's samples through a clean amp and a distorted amp).
+  The soundfont's own clean and distorted stay as =cguitar= / =dguitar=, labelled "old samples", unchanged, for comparison.
+- All guitars but the two old ones now have =tone= (softer = darker), as the pianos do. This changes the jazz and steel guitars a little.
+- Styles: cguitar -> clguitar (rock, dance, motown, doo-wop), dguitar -> odguitar (emo); bossa's guitar is the nylon.
+- Measured (tests/band/pat/guitars.cdp.js, comp alone through the mix bus, eighth-note open-chord strum): steel -20.0 dB, nylon -20.2,
+  clean -19.6, distorted -20.9 (set a little under: it is dense), jazz -18.0. The old clean was -27.4 and the old distorted -24.3:
+  4 to 7 dB under the acoustic, which is part of why they sounded thin.
+- The jazz samples die away about 9 dB in the first second, so the distorted amp is driven hard (pre 5, drive 16) to hold the chord:
+  attack to sustain 2.1 dB (old distorted samples: 1.2).
+- Cost, measured offline in Chrome on this Mac: 52.6 s of full-band punk strum renders in 5.3 s with the distorted amp, 5.1 s with the
+  steel acoustic (no amp), 4.0 s with the old distorted samples. The amp is about 0.2 s of that; the rest is the per-note tone filter.
+** VERIFY BY EAR, first: the distorted amp (too fuzzy on full six-string chords? cabinet too dark at 5 kHz?); the clean amp, which can only
+   be as bright as the jazz samples allow (a +10 dB shelf from 1.6 kHz); the tone filter on the steel acoustic; nylon level and bossa on nylon.
+** DONE (same day, "Amp sliders") The chains can be changed from the page, stage by stage.
+** TODO A chain, once built, stays for the life of the audio context (it is silent and near free when unused, not removed).
+** TODO Palm mute (cutoff 1100) is before the amp, which is right; nothing else in the playing reacts to the amp (no feedback, no pick noise).
+** IDEA (user, 2026-10-10) Two comping instruments at once (guitar + keys, or two guitars). Assessed, not built:
+   - The player has three parts in PARTS; a second comping part is a fourth with its own BandComp, seed, fader, reverb send and options
+     (instrument, sound, rhythm, voicing). The first part's notes do not change (its random numbers are its own).
+   - Must change: the guitar's hand (lastGrip / grips in harmony.js is one shared hand: two guitars would fight over it); bar records
+     (parts.comp is read by notation, MIDI export, the Chord Sheet hand-off and the drums' energy); the page (a second instrument row, a
+     fader, saved setups); styles (an optional second instrument with its own rhythm and voicing).
+   - The musical part is the real work: two chord players must stay out of each other's way (register, rhythm), e.g. strum + pad,
+     strum + high triads, piano ballad + fingerpicked guitar.
+** NOTE tests/band/move/layout.cdp.js fails on the page's first panel ('other' !== 'play'): from the navigation column added earlier, not this.
+
+* Second chord instrument; five-band EQ for each sound -- 2026-10-10
+Nothing here has been heard.
+** Second chord instrument (opts.second = { comp, compSound, compRhythm, voicing }; the player's part "comp2")
+- BandComp.createSecond: another instance of the comping part with those options on top of the band's. Unset = no notes and no random
+  numbers. No pins, no blend sliders, no unmarked extensions; voicing movement "hold" unless opts.second says otherwise. Events carry second:true.
+- Nothing else changes when it is on: its own random numbers (SEED.comp2, and a stream of its own in BandMidi.generate), its own
+  humanizing stream (Session.human2), its own fretting hand (BandHarmony.withHand: lastGrip was one shared hand). Tested note for note
+  and as rendered audio (pat/t_second.js, pat/second.cdp.js).
+- Player: PARTS has comp2 (fader, reverb send as comp, sits 2 ms behind it); its sample set is loaded when opts.second names one;
+  renderOffline gives a comp2 stem only then. MIDI export: a track of its own on channel 3.
+- BandCatalog.secondFor(style, sound): the rhythm and voicing suggested for a second piano-family or guitar-family sound in each
+  style (table SECOND: swing = guitar four-to-the-bar shells beside the piano; bossa = guitar on the bossa pattern; piano ballad =
+  fingerpicked guitar; rock = quarter-note triads or an organ pad; ...). Anything unlisted holds long chords.
+- Page: Band > Comping > "Second chord instrument" (None by default), "Its rhythm", "Its voicings", "Suggest for this style"; a fader
+  in the Mixer (default 80). Saved in setups. Picking a sound takes the suggestion; changing Style afterwards keeps what is set.
+** VERIFY BY EAR: every pairing in SECOND; whether two chord players are too much without the first one thinning out.
+** TODO The first player does not know the second exists: it does not leave space, change register or simplify. Nor do the drums
+   count the second player when they listen (energy is still bass + first comp).
+** TODO Not shown in the notation; the Chord Sheet hand-off, the side diagram and "as played" are the first player's only.
+** TODO Styles do not switch a second instrument on by themselves, and a section in a style of its own keeps the page's second player
+   with the page's rhythm (not that style's suggestion). Chord Entry and Accompaniment Styles have no control for it.
+** TODO The second player's rhythm menu lists every rhythm, fitting the style or not; it has no blend, no Variation of its own.
+** Five-band EQ
+- BandSounds.setEQ(sound, bands | null) / getEQ: five bands for each sound id, each { type: peaking | lowshelf | highshelf | highpass |
+  lowpass, f, gain, q }, after the sound's amp chain in the same channel strip (ampFor). Static, so it reaches every bank, live and
+  offline; a live change is smoothed over about 15 ms. A sound with no amp and no EQ still plays straight to the mix, as before.
+- Page: Mixer > Tone (EQ): pick the sound (those in use, plus any with saved settings), then per band kind, frequency (20 Hz to
+  18 kHz), amount (+/-18 dB) and width (Q 0.3 to 12). Kept in localStorage.btEQ by sound id: it belongs to the sound, not to a tune or
+  a setup. "Flat" and "All instruments flat".
+- Defaults: low shelf 100 Hz, bells at 300 Hz, 1 kHz and 3 kHz, high shelf 8 kHz, all at 0 dB.
+** TODO The EQ is on the Backing Track page only (other pages play the sounds flat); not in saved setups or share links; no curve drawn;
+   the drum kit is one sound (no EQ per piece); cut slopes are 12 dB per octave (two bands on one frequency make 24).
+
+* Sections and the Band menus: the menus are supreme -- 2026-10-10
+User: with per-section styles "I can't make edits on the fly through the menus on the page. Those should always be supreme."
+Before this the menus did NOT follow a section's style (the user believed they did); the section's style silently won over them.
+- Player and BandMidi.generate: opts.sectionOverrides = { section index: options }. A section listed there is played with those options
+  laid over the page's, and its %%style from the chart is not consulted (bar opts carry sectionStyle "menus").
+- Page (tools/_backing-track.qmd, "Sections and the Band menus"): when a section starts to sound, the Band menus change to its settings:
+  what was last set for it here, else its %%style (styleState: the style plus any single parts named after it, unlocking the menus
+  when a part does not fit), else the tune's own. A change made while a section's settings show is kept for that section (secOv);
+  in a section with no style of its own it changes the tune's settings, as before. The tune's own settings are kept underneath (secBase).
+- Hold: going round one section does not touch the menus (same section index = nothing happens).
+- Under Next section: a line saying whose settings the menus show; 'Apply to every "Chorus" (n)' copies the menus to every section whose
+  name is the same once trailing numbers are dropped (Chorus, Chorus 2); "Back to the chart's settings" forgets the change to this section.
+- What counts as a section's settings (SEC_KEYS): instrument and sound, rhythm and blend, voicings and blend, voicing movement, extensions,
+  bass line, bass sound, walk amount, groove, cymbal, feel, push, time feel, boom-chick strength, second instrument. Everything else
+  (stops, fills, chorus bars, pins, variation, tempo, mixer) belongs to the tune.
+- A chart whose sections change (names, lengths or styles) drops every kept change. Tests: styles/t_override.js, styles/menus.cdp.js.
+- Also fixed: the page's MIDI export left the second chord instrument out (it named its three parts); it now goes with the first.
+** DONE (same day, see "Section settings saved in a setup") Kept changes are saved in a setup; saving while a section shows saves the tune's own.
+** TODO Not written back to the ABC or the song file as a %%style / {style:} line.
+** TODO The menus change when the section is heard; bars already handed to the sample bank (about 0.15 s) keep the old settings.
+** TODO While stopped there is no way to choose which section the menus show: they stay on the last one heard until Play.
+** TODO A repeated section is two sections with one name: a change to the first needs "Apply to every" to reach the repeat.
+** TODO A style's kit faders and time feel are set as its section starts, as when the style is picked by hand (the faders move).
+
+* Section settings saved in a setup, by section name -- 2026-10-10
+User: starting from a ChordPro song, opening it in the Backing Track and designing the band section by section, the result must be savable.
+- A saved setup gains =sections: [{ name, nth, opts, state, sounds }]=: one entry per section changed in the menus. name + nth (which of
+  the sections with that name, from 0) is the key, NOT the bar or section number. opts = what the player is given (sectionOverrides),
+  state = the menus, sounds = the sample sets it needs.
+- BandCatalog.nameSections / placeSections put them back on a chart by name. A section whose own nth was not saved takes that name's
+  settings only if every saved section of the name has the same ones (so a song that gains a fourth chorus gives it the choruses' settings).
+  A renamed section loses its settings; names are compared without case.
+- Saving while a section's settings show now saves the tune's own settings as the setup's (they are kept underneath), not the section's.
+- Lyrics site (~/Projects/carols): nothing new to do in the song file. Save the setup, "Download all", keep it beside the song as
+  <song>.band.json (tools/chordpro.py passes =sections= through untouched). The Backing Track window gets the whole setup and places it
+  on the song's sections; site/band.html (the band on the song page itself) does the same through sectionSetup(), while the setup's own
+  style is the one chosen there.
+- Tests: styles/keep.cdp.js ("SECTION SETTINGS KEPT OK": save, reload, and the same setup on a chart with the sections reordered).
+** VERIFY the lyrics page's own band with a real <song>.band.json that has sections: band.html's side was not run end to end (only its
+   existing test, fills/carols.cdp.js, which still passes; the placing itself is the shared, tested function).
+** TODO A shared setup ({setup: swing-trio} used by many songs) carries its sections to every song with those section names.
+** TODO Only what is in SEC_KEYS is kept for a section (the second chord instrument is; the mixer, EQ, stops and variation are the tune's).
+
+* Amp sliders -- 2026-10-10
+Unheard. User: "Is it implemented but not exposed? I'd like to be able to tweak the settings on the fly."
+- BandSounds.setAmp(sound, chain | null) / getAmp: the definition's stages in the definition's order with other numbers (a page cannot
+  add, remove or reorder stages). Applied to live banks at once (filters and levels glide over about 15 ms; a new drive curve is swapped
+  in) and to every bank made later. Each stage in sounds.js has a =name= for the page.
+- Page: Mixer > Tone (EQ). When the sound chosen there has an amp (the clean and distorted electrics), "Amp: <sound>" lists one block per
+  stage: frequency / amount / width for a filter, amount and asymmetry for the drive, level in dB for a gain. Kept in localStorage.btAmp
+  by sound id; "Amp as designed" goes back to sounds.js. Test: pat/guitars.cdp.js (Input gain -20 dB and Drive 1.3: attack-to-sustain
+  drop goes from 2.1 dB to 9.2 dB).
+** TODO Once the user has settled on numbers by ear, copy them into sounds.js (CLEAN, DRIVE and the chains) so they are the defaults
+   everywhere: the sliders' values live in this browser only, and the other pages play the amp as designed.
+** TODO No amp for the jazz, steel or nylon guitar (they have no chain); no way to add a stage or pick another amp from the page.
+** TODO Changing the drive changes the loudness: nothing compensates but the Output level slider.
+
+* Rhodes and Wurlitzer; tremolo stage; the tone panel follows the comping sound -- 2026-10-10
+Unheard. Levels by measurement.
+- User reported "the amp section does not appear to be rendering". Not reproduced in a browser (the user stopped that check). Found by
+  reading: the tone panel kept showing a sound whose EQ had been set earlier ("not in use") after the comping sound changed, and a sound
+  with no amp showed nothing at all. Now the panel moves to the comping sound whenever it changes (eqInstSync / eqComp), and a sound
+  with no amp says so and lists the ones that have one (#bt-amp-none). The "old samples" clean and distorted guitars have no amp.
+** ASK the user whether the amp block shows now; if not, which sound was chosen in Comping and in the tone panel's Instrument menu.
+- sounds.js: =rhodes= and =wurli=, both the soundfont's electric_piano_1 samples through an amp chain. The soundfont has NO Wurlitzer
+  (its second electric piano is an FM one), so the Wurlitzer is the tine-piano samples reshaped: lows cut at 130 Hz, +7 dB around 950 Hz
+  into a drive of 4, speaker roll-off at 4.2 kHz, tremolo 5.8 Hz at 38%. Rhodes: +3 dB low shelf, drive 1.6, bell at 1.9 kHz, tremolo
+  4.6 Hz at 22%. =epiano= is unchanged and stays in the menu as "Electric piano (plain samples)"; Motown still uses it.
+- New chain stage { trem: Hz, depth: 0..1 }: a gain moved by a slow oscillator (built-in nodes). Sliders: Speed, Depth; depth 0 = off.
+- Measured (pat/keys.cdp.js, quarter-note chords alone through the bus): plain -23.0 dB, Rhodes -23.2, Wurlitzer -23.2.
+- MIDI export: any piano-family sound with a program number is named on its track (rhodes and wurli = program 4, organ = 19).
+** VERIFY BY EAR: whether the Wurlitzer reads as one at all; both tremolos (mono: a real suitcase Rhodes pans left and right).
+** TODO A real Wurlitzer, and a Rhodes with velocity layers (the bark is in the samples, not the amp), need recorded samples.
+** TODO No stereo tremolo, no chorus or phaser stage.
+
+* Tonewheel organ (sound "hammond"): tonebars, C3, swell and Leslie worked by the band -- 2026-10-10
+Unheard. The research, every number's source and every guess are in ORGAN.md beside this file; read that first.
+- sounds.js: the first SYNTHESIZED instrument (def.synth "tonewheel", zones []): three oscillators a note, key click, no touch.
+  New chain stages scanner / swell / leslie (stages may now be several nodes: _in, _out, set, ctl). BandSounds.setTonebars / getTonebars,
+  setControl / getControl; bank.control(inst, name, value, when, glide) for a control at a time.
+- comp.js BandComp.organist(ctx, method, st): the pedal and the speed for one bar. player.js calls it for comp and comp2 when their sound
+  is a tonewheel organ and schedules the result (rec.parts.ctl; opts.organ = { swell: "auto" | 0..1, leslie: "auto" | "slow" | "fast" | "stop" }).
+- Page: Mixer > Organ panel; the organ's amp stages have sliders in Tone (EQ). opts.organ is a section setting (SEC_KEYS) and is saved in setups.
+- The Leslie's two filters: BiquadFilter low-pass / high-pass take Q in dB, not as a plain number. -6.02 is the flat crossover.
+  (The other chains' lp / hp stages were written with plain numbers such as 0.7: they are a fraction of a dB of resonance, and the levels
+  were measured with them, so they are left.)
+- Level: held chords alone come out 4 dB over the plain electric piano's (which die away). Test: pat/organ.cdp.js ("ORGAN OK").
+** VERIFY BY EAR, in this order: the bare tone and key click; C3; the speaker slow and fast and the change between; then the automation.
+** ASK the user the five questions at the end of ORGAN.md, and replace the guessed rules with the answers.
+** TODO No organ style in the catalog (it is a sound: pick it in Comping, or as the second instrument); the comping is piano voicings on "pad".
+** TODO MIDI export writes the notes on program 16 with no pedal (CC 11) or speed (CC 1) data.
+** TODO A chain's oscillators (scanner, rotors) run for the life of the audio context once the organ has played.
+
+* Minor blues and rhythm changes; notation staves and section view -- 2026-10-10
+- Changes menu: "Minor blues" (12 bars; i7 | iv7 | i7 | i7 | iv7 | iv7 | i7 | i7 | bVI7 | V7 | i7 | iiø V7; opens in C minor) and
+  "Rhythm changes (32 bars)" (AABA with P: lines for the four sections; opens in Bb at 184). Like the other built-in changes they are
+  written in F in PRESETS and transposed; new preset fields =mode= ("m"), =key= (the key the Key menu goes to) and =sections= ("A:8,A:8,B:8,A:8").
+  The Meter menu rewrites them like the blues.
+- notation.js toAbc: =show: { comp, comp2, bass, drums }= and =names: { comp, comp2 }=. The second chord instrument (parts.comp2) gets a
+  staff of its own (grand staff if it is a keyboard), voices K2 / L2. Chord symbols go over whichever staff is on top. With nothing
+  chosen the comping is shown. Called the old way (no =show=) the output is unchanged unless the bars hold a second instrument.
+- Notation panel: Show [comping] [second, when one is on] [Bass] [Drums], named after the sounds in use (Pno. / E.Pno. / Org. / Gtr., "2"
+  for the second). "Only the section being played" (when the chart has sections): the bars of one pass of the section heard, turning
+  to the next section during its last bar (the band is already writing a pass ahead while the panel is open); stopped, the section
+  last heard, else the first.
+- Test: pat/notation.cdp.js ("NOTATION OK"). lead/page.test.js had the built-in tunes' bar counts written in; rhythm changes added.
+** VERIFY BY EYE: three or four staves at phone width; the second instrument's staff name; a section of one or two bars on its own line.
+** TODO The rhythm changes are one common set (I VI7 ii V | iii VI7 ii V | v I7 | IV7 #iv dim | ...); no choice of variants, and the
+   second A's ending is the same as the last A's.
+** TODO Section view in Hold mode shows one pass of the section; it does not say which time round it is.
+** TODO MIDI export still has its own three tick boxes (the second instrument goes with the comping).
+
+* Drum staff rewritten; three teaching grooves; lessons on the blues -- 2026-10-12
+- notation.js, the drum staff. Pieces are placed as drum parts usually are: hi-hat above the staff (an open one with a circle), ride on
+  the top line (its bell a diamond), crash on a ledger line, kick in the bottom space, hi-hat foot under the staff. Before, the ride and
+  hi-hat were the other way round and the kick and foot a step low. A hit is now a quarter note on a beat with nothing after it and an
+  eighth anywhere else, with a rest for what is left (emitBar: =short= items); it used to take the whole gap to the next hit, so a rock
+  kick came out as half notes and dotted quarters. The foot voice's rests are not drawn. A kick quieter than FEATHER (0.3) is left out.
+- drums.js / catalog.js: grooves =quarters= (cymbal on the beats, foot on 2 and 4), =ridetime= (the ride pattern and the foot, nothing
+  else) and =shuffle= (swung cymbal eighths, kick on 1 and 3, snare on 2 and 4). The first two never fill. All three fit Swing; the
+  shuffle also 12/8 doo-wop.
+- Lessons (=lessons/blues-*.qmd=; code in =apps/shared/lessons/=, tests in =tests/band/lessons/=): the changes of a 12-bar blues, then one
+  page each for bass, guitar, piano, drums and single-line instruments (violin, saxophones; transposed by an Instrument menu). They use
+  BandPlayer, TuneChart, ChordVoicings and BandNotation as they are; =opts.pins= carries the diagrams' chords, =bar.melody= the written lines.
+- Tests: =tests/band/lessons/t_drumstaff.js= ("TEACHING GROOVES OK", "DRUM STAFF OK"); the two older notation tests count the undrawn
+  rest (=x=) as a rest.
+** VERIFY BY EAR: the three grooves; the shuffle's fills (the swing set); every lesson step.
+** VERIFY BY EYE: a 12/8 chorus written as triplets carries a 3 over every beat; two pieces on one line of the staff at once (hi-hat and
+   tambourine) are written as one.
+** TODO The Backing Track page has not been rendered since: =tools/_backing-track.qmd= names the new script versions, =_site= does not yet.
+** TODO =tests/band/pat/t_tunes.js= expects 10 built-in setups; there are 12 (it failed before these changes).
+
+* Lessons: the lit note, Blues in the Closet, an improvising lesson -- 2026-10-12
+- =apps/shared/lessons/score.js= (LessonScore): abcjs notation whose sounding note is lit, when abcjs plays it (TimingCallbacks) and
+  while the band plays (the page asks =player.where()= every frame and the score looks the beat up in abcjs's own timing).
+- =apps/shared/lessons/tunes.js= (BluesTunes): Blues in the Closet in F, with the chord-tone name of every note. Any key through
+  AbcTranspose; its notes for =bar.melody= through AbcTune. A step with =data-tune="closet"= writes it above its chart and the band's
+  piano plays it. The same ABC is X:1009 in the Standards group of =apps/tunes/tunes-object.js=.
+- =lessons/blues-improv.qmd=: the melody, the change at bar 5, the two blues scales, Mixolydian and Dorian (=.bl-notes= writes a scale).
+** VERIFY BY EAR: the melody over the band (it is the comping instrument's sound, so a guitar in the guitar lesson); the lit note runs
+   a little ahead of a swung off-beat eighth (the notation is timed straight).
+
+* A chord-tone bass line; scale charts in the improvising lesson; a Lessons landing page -- 2026-10-12
+- bass.js / catalog.js: line =arp= ("Chord tones"): root, 3rd, 5th, 7th on the four beats, rising, the same every bar; in a bar of two
+  chords each opens on its root (=def.arp= joins the "a chord's first note is its root" rule). A rising line may now name the degree "3".
+  Fits Swing, Jazz ballad and Boogaloo. The bass lesson's step 3 plays it.
+- =apps/shared/lessons/blues-kit.js=: the improvising lesson's Instrument menu also has violin, guitar, bass and piano. A scale
+  (=.bl-notes=) is then drawn on that instrument: one fretboard position with tablature (=LessonDiagrams.tab=), a first-position violin
+  fingerboard (finger names in place of fret numbers), or a keyboard with the fingering of the major scale that has the same notes
+  (=THUMBS=; five- and six-note scales are shown without fingering). Bass reads bass clef, moved down by whole octaves.
+- Notation played by abcjs is swung (its =swing= option, 66) unless the feel is straight eighths; never for notation with no meter.
+- A tune step has "Open in the Backing Track": it writes =localStorage.bandHandoff= as Chord Entry does and opens that page in a new tab.
+** VERIFY BY A PLAYER: the piano fingerings (a mode fingered as its parent major scale, so it may start on finger 2 or 3); the violin
+   finger names; the fretboard positions in keys where the root falls on the open string or past the 8th fret.
+
+* Lesson pages: scale charts everywhere, staff margins, drum tooltips and a kit picture -- 2026-10-12
+- =blues-kit.js=: the =.bl-scale= panel of the bass, guitar, piano and melody lessons shows the major scale and the Mixolydian on the
+  page's instrument (fretboard and tablature, keyboard with fingering, violin first position; nothing for saxophones yet).
+  =.bl-notes= works on the instrument pages (=viewHorn=). The band's play row sits just above the chord grid in every step.
+- =score.js=: every staff is drawn at its natural size and shrinks to its box; voice names are dropped (abcjs indented the first
+  line for them); the drawing sets its own height (abcjs's padding left a gap under any staff narrower than its box).
+  Under 600 px wide, twelve-bar lines are written two bars to a line (=perLine=, =BluesTunes.inKey= barsPerLine).
+- =notation.js=: =BandNotation.drumName / drumPiece / drumWritten=, one table beside the placement table.
+  =apps/shared/lessons/drumkit.js= (LessonDrumKit): a title on every drum note head, and a drawing of the kit with the staff
+  through it; a click plays the piece (=BandPlayer.hit=, new in =player.js=).
+- Not listened to: the kit picture's sounds (cross-stick uses the =rim= sample). Piano fingerings and the violin chart still
+  want a player's eye. The Backing Track pages still name =player.js= and =notation.js= by their old =?v== numbers (the
+  additions are used only by the lessons).
+
+* Congas: a fifth player -- 2026-10-12
+- =apps/shared/band/congas.js= (=BandCongas={create, PATTERNS, STROKES}=): a conga player of its own beside bass, comp, comp2 and
+  drums, wired as the second chord instrument is (own seed, own humanize rng, own fader, mute/solo, staff and MIDI track). Silent
+  unless =opts.congas= names a pattern, and then the other parts draw the same random numbers: =t_congas.js= compares the bars.
+  Patterns so far: =tumbao= (one bar, one drum), =tumbao2= (the second bar's and of 2 and beat 3 on the lower drum: the bombo, on the clave's three-side; Mauleón via Wikipedia "Tumbao"), =steady= (any music, with its own
+  3/4 and 12/8 bars; every other pattern falls back on it in a meter it has no bar for). Strokes H heel, T toe, S slap, O open, M muffled, B bass.
+- Styles: Son montuno =tumbao2=, Cha-cha and Boogaloo =tumbao=, all others none (=congas:= on a style row). A Style sets the pattern,
+  the Congas menu (Band panel, =bt-congas=) can change it in any style: locked it lists those that fit. =?congas=id= in the address.
+- Sounds: the =congas= sample set is built from the soundfont's three conga notes (62 mute high, 63 open high, 64 low). Heel, toe, slap
+  and the bass tone are stand-ins: the same files at other levels and (toe, bass) other pitches (=rate= on a piece in =sounds.js=).
+- Notation: =show.congas= (default off) draws one "Cga." percussion staff, conga above tumba, with two lines of words under it
+  (stroke letters, hand letters). MIDI: a "Congas" track on channel 10 when they play.
+- Pages: =tools/_backing-track.qmd= (and the three layouts), =tools/_accomp-styles.qmd= (a Conga patterns group), =lessons/_blues-kit.qmd=
+  only loads the script. EQ: the Congas appear in the Tone menu while they play.
+- NOBODY HAS LISTENED. The sample mapping, the levels of heel and toe against the slap, the fader default (90), and whether a stand-in
+  slap passes for a slap are all guesses. Open: what the other styles' congas should be (bossa, calypso, reggae, reggaeton and the pop
+  styles have none for now), fills into a chorus (=fill(ctx)= in congas.js returns null), and tumbao in 6/8 (it falls back on =steady=).
+- Tests: =tests/band/congas/t_congas.js= ("CONGAS OK"), =congas.cdp.js= ("CONGAS UI OK").
+
+
+* Two conga lessons -- 2026-10-12
+- =lessons/congas-basics.qmd= (five strokes from the teacher's handout, the staff key, the tumbao in six steps) and =lessons/watermelon-congas.qmd=
+  (16-bar form, the break on bar 14, the tune, Cha-cha and Boogaloo, two drums). Both on =BluesLesson.init({ instrument: "congas" })=.
+- =blues-kit.js=: =CONGASTEPS= beside =DRUMSTEPS= (style, pattern, tempo, drums, stops, at); the drum step's code path is shared (=isPerc=).
+  New charts =vamp= (4 bars of F7) and =watermelon=; the Feel menu lists Cha-cha / Boogaloo / Son montuno on these pages; =.bl-congakey= and
+  =[data-conga-hit]= play strokes through =BandPlayer.hit=. =chorusNow= and the example line now use the chart's own length (was 12).
+- Engine: three learning patterns in =congas.js= (=opens=, =slapopen=, =heeltoe=), true subsets of the tumbao; catalog entries "(learning the tumbao, 1-3)".
+  =BluesTunes.watermelon= from X:821 of the tune collection (bar 14 is Bb7 throughout; the collection's F7 on its last beat is dropped).
+- Honest gaps: no published transcription of Mongo's conga part was found, and the lessons say so. Steps 1 to 4 take the drummer out
+  (=drums: "none"), so the congas are heard bare: a choice, not a fact. The chart does not draw a STOP label on bar 14 (the notation shows it).
+  Conga staff heads have no hover names (the letters under the notes name them).
+- NOBODY HAS LISTENED. The General MIDI stand-in sounds, the tempos (80 to learn, 100 to 126 with the band) and the slap are all unheard.
+- Test: =tests/band/lessons/congas.cdp.js= ("CONGA LESSONS OK").
+
+* Plan: rebuild the Drumset tool on the band's stack -- 2026-10-12 (NOTHING BUILT)
+Compared with GrooveScribe (https://github.com/montulli/GrooveScribe, GPL v2; read, not run). Its editor is better than
+=tools/_drumset.qmd=; the band's drummer and sounds are better than its playback. So: its grid and URL format, our engine.
+What is wrong with the page now: one piece per row per step (no hi-hat with a crash, no snare with a tom); every hit at one
+level; setTimeout timing through =ABCJS.synth.playEvent=; presets of one bar, eighth resolution, one drum per eighth (two conga
+presets are the same string, the Fill menu is a placeholder); no triplet grid; swing only at eighths; one bar; no notation,
+no saving. It does not use BandSounds.
+** DECIDE Licence: re-implement GrooveScribe's format and ideas, copy none of its code or samples
+GPL v2, and this repo has no licence file: copied code would put the site under the GPL. No separate licence was seen for its
+drum samples (=soundfont/NewDrumSamples=), so the same for those. Everything below assumes this.
+** DECIDE Where the new page goes while it is built
+Suggested: a draft beside the old one (=tools/_drumset-b.qmd=, as the Backing Track drafts were), swapped in when it has been
+listened to. The old page's =localStorage= reads (=countingStyle=, =tuneMeter=, set by the tune page) must keep working.
+** TODO 1. A groove model and its text format (=apps/shared/band/groove.js=, pure, tested first)
+- A groove: meter, division (4 8 16 32; triplet 12 24 48 per 4/4 bar), tempo, swing, 1 to 10 bars, title, and lanes: cymbal /
+  hi-hat, snare, kick (with hat foot), toms 1-4, sticking, and our hand-percussion lane. A cell holds one articulation.
+- Text: GrooveScribe's query string, =?TimeSig=4/4&Div=16&Tempo=80&Measures=1&H=|x-x-|&S=|--O-|&K=|o---|= , read and written
+  so that its links import and ours open there. Work out the full letter table from its =urlSerialization.js= / =noteArrays.js=
+  behaviour before writing ours (seen so far: H x r, S O o g x, K o x X). Our additions (hand lane, counting style) go in
+  parameters it ignores.
+- =toEvents(groove)= -> the =[{ pos, piece, vel, straight? }]= bars drums.js already returns, so the player, notation and MIDI
+  take a written groove as they take a generated one. =fromEvents= for the other direction (see 7).
+- Tests: round trip of every groove in GrooveScribe's menu strings typed in by hand; triplet positions carry straight:true.
+** TODO 2. Articulations in the engine
+- Accent, normal and ghost are levels (GrooveScribe uses MIDI 120 / 85 / 50); =vel= already carries them.
+- Flam, drag and buzz have no samples: the kit is the soundfont, velocity only. First pass: stand-ins built in the player
+  (flam = a quiet grace hit about 30 ms early, drag = two, buzz = a short run of quiet hits), marked as stand-ins. New
+  recorded samples are a separate job, through =sounds.js= only.
+- Pieces the kit lacks that GrooveScribe's lanes have: cowbell, stacker, a fourth tom. Check =BandSounds.pieces= and the
+  soundfont's percussion notes before adding names.
+- notation.js writes none of these yet (no accent, ghost, flam, drag or buzz marks): add accent mark, parenthesised ghost,
+  grace notes, tremolo slashes to the drum staff, with =drumName= entries so the lesson tooltips name them.
+** TODO 3. The page: grid and staff together
+- Lanes down, steps across, several pieces at once; a click sets a cell, a second click or a small menu changes the
+  articulation; the staff (BandNotation's drum staff) redraws on every change and lights the sounding note (LessonScore).
+- Playback through BandSounds and a look-ahead scheduler on the audio clock (the player's, or the part of it that can be
+  shared: decide by reading =player.js=; do not write a second one if =BandPlayer.create= can play a fixed groove with the
+  other parts silent). Swing at eighths and sixteenths, tempo-aware as now (=BandPlayer.swingFor=), humanize as a switch.
+- Kept from the old page: counting labels (Standard / Eastman / Gordon, + or &, custom labels), the hand row, the big icon
+  grid and its PNG export for handouts, title and size controls, the ride menu if the sample ride cannot replace the synth one.
+- The address is the save file: every edit rewrites the query string; undo / redo is a stack of those strings.
+- Add and remove bars; copy a bar; per-lane mute.
+** TODO 4. Groove library, written at the resolution the groove needs
+Replace the eighth-note token strings. Sources: the band's own GROOVES through =fromEvents= (so the tool and the band agree),
+and standard patterns checked against a published source each (two-bar bossa, samba, songo, Purdie shuffle, train beat, the
+foot ostinatos). The hand-percussion presets from =congas.js= PATTERNS. Fills: a few from FILLS / FILLS_ROCK as one-bar grooves.
+** TODO 5. Practice features
+Count-in; metronome on quarters / eighths / sixteenths; offset click (the click on the e, the and or the a, or rotating);
+tempo that steps up every n repeats (the player has tempo steps already); sticking lane with R / L / count and a reverse
+button. Later, and only if wanted: the kick and snare permutation sheets (a generator of grooves, not a page feature).
+** TODO 6. Out and in
+MIDI (midi.js, channel 10), SVG and PNG of the staff, print; a read-only embed for lesson pages (=<div data-groove="...">=,
+drawn and played by the lesson kit) so =lessons/blues-drums.qmd= can show a written groove without the band.
+** TODO 7. Both directions with the band
+- "Hear it with the band": hand the groove to the Backing Track (=localStorage.bandHandoff=, as Chord Entry does) as a
+  custom drum groove: =opts.groove= would need to take a written groove as well as a GROOVES id.
+- From the Backing Track's drum menu: "Open this groove in the Drumset tool".
+** Order
+1, then 3 with levels only (accent / normal / ghost) so there is something to play, then 2, 4, 6, 5, 7. Tests in
+=tests/band/groove/= as each lands; the README there gets a line.
+** Not known yet
+Whether =BandPlayer= can loop a fixed groove without a form; GrooveScribe's complete letter table and how it writes a
+division change between bars; whether abcjs draws ghost parentheses and buzz slashes on a percussion staff as abc2svg does.

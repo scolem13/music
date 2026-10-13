@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Hi-Hat Grooves: From Quarter Notes to Sixteenths – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-01a82125dcc07191ca4a322ed0902c35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs-classic.html">
+ <span class="dropdown-text">Song Builder (Classic)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/fretboard.html">
+ <span class="dropdown-text">Fretboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/keyboard.html">
+ <span class="dropdown-text">Keyboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/director.html">
+ <span class="dropdown-text">Director</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/solfege-keyboard.html">
+ <span class="dropdown-text">Solfège Keyboard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-three-sounds-of-the-hi-hat" id="toc-the-three-sounds-of-the-hi-hat" class="nav-link active" data-scroll-target="#the-three-sounds-of-the-hi-hat">0. The three sounds of the hi-hat</a></li>
+  <li><a href="#quarter-notes-on-the-closed-hi-hat" id="toc-quarter-notes-on-the-closed-hi-hat" class="nav-link" data-scroll-target="#quarter-notes-on-the-closed-hi-hat">1. Quarter notes on the closed hi-hat</a></li>
+  <li><a href="#eighth-notes-the-basic-rock-beat" id="toc-eighth-notes-the-basic-rock-beat" class="nav-link" data-scroll-target="#eighth-notes-the-basic-rock-beat">2. Eighth notes: the basic rock beat</a></li>
+  <li><a href="#accents" id="toc-accents" class="nav-link" data-scroll-target="#accents">3. Accents</a></li>
+  <li><a href="#the-off-beats-alone" id="toc-the-off-beats-alone" class="nav-link" data-scroll-target="#the-off-beats-alone">4. The off-beats alone</a></li>
+  <li><a href="#opening-the-hi-hat" id="toc-opening-the-hi-hat" class="nav-link" data-scroll-target="#opening-the-hi-hat">5. Opening the hi-hat</a></li>
+  <li><a href="#open-on-every-off-beat-four-on-the-floor" id="toc-open-on-every-off-beat-four-on-the-floor" class="nav-link" data-scroll-target="#open-on-every-off-beat-four-on-the-floor">6. Open on every off-beat: four on the floor</a></li>
+  <li><a href="#sixteenth-notes-with-one-hand" id="toc-sixteenth-notes-with-one-hand" class="nav-link" data-scroll-target="#sixteenth-notes-with-one-hand">7. Sixteenth notes with one hand</a></li>
+  <li><a href="#sixteenth-notes-with-two-hands" id="toc-sixteenth-notes-with-two-hands" class="nav-link" data-scroll-target="#sixteenth-notes-with-two-hands">8. Sixteenth notes with two hands</a></li>
+  <li><a href="#the-foot-alone" id="toc-the-foot-alone" class="nav-link" data-scroll-target="#the-foot-alone">9. The foot alone</a></li>
+  <li><a href="#the-swing-hi-hat" id="toc-the-swing-hi-hat" class="nav-link" data-scroll-target="#the-swing-hi-hat">10. The swing hi-hat</a></li>
+  <li><a href="#where-to-go-next" id="toc-where-to-go-next" class="nav-link" data-scroll-target="#where-to-go-next">Where to go next</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Hi-Hat Grooves: From Quarter Notes to Sixteenths</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This lesson is for a drummer who can already play a basic beat: the bass drum on 1 and 3, the snare on 2 and 4, and something steady on top. It is about the “something on top”, and about everything the hi-hat can do besides keeping time. You need a hi-hat with a pedal, a snare and a bass drum. Each step is a little harder than the one before; stay on a step until you can play it through the whole chorus without watching your hands.</p>
+<p><strong>How to use the page.</strong> Every step has two bars of the groove written large and the whole chorus on a drum staff. Press ▶ and the band plays it; the note that is sounding lights up in the notation. Tick <strong>Drums alone</strong> to hear the drummer without the bass and piano, and <strong>Leave out the drums</strong> to take over. The straight steps are played over four bars of F7 by the Straight-eighth rock or Acoustic strum band, and the swing steps over the 12-bar blues by the Swing band. Each step starts at its own tempo; the strip at the bottom changes the tempo, and the Feel menu changes the band. If you cannot yet play a step at its tempo, slow it down until you can.</p>
+<section id="the-three-sounds-of-the-hi-hat" class="level2">
+<h2 class="anchored" data-anchor-id="the-three-sounds-of-the-hi-hat">0. The three sounds of the hi-hat</h2>
+<p>The hi-hat is two cymbals on a stand, one above the other, with a pedal that opens and closes them. That gives it three sounds you will use all through this lesson.</p>
+<ul>
+<li><strong>Closed, with the stick.</strong> The pedal is down, the cymbals are together, and you hit the top one. A short, tight “tick”. This is the hi-hat sound you hear in most rock.</li>
+<li><strong>Open, with the stick.</strong> You let the pedal up a little, so the cymbals are apart, and hit. The sound rings and hisses until something stops it.</li>
+<li><strong>Closed, with the foot.</strong> You press the pedal and the cymbals come together on their own, with no stick. A soft “chick”.</li>
+</ul>
+<p>Click a button to hear each one, and the last button to hear an open note being closed.</p>
+<p class="bl-tools">
+<button type="button" class="btn btn-sm btn-outline-secondary" data-drum-hit="hatClosed">
+Closed, stick
+</button>
+<button type="button" class="btn btn-sm btn-outline-secondary" data-drum-hit="hatOpen">
+Open, stick
+</button>
+<button type="button" class="btn btn-sm btn-outline-secondary" data-drum-hit="hatFoot">
+Closed, foot
+</button>
+<button type="button" class="btn btn-sm btn-outline-secondary" data-drum-hit="hatOpen,hatFoot">
+Open, then the foot
+</button>
+</p>
+<p>Here is how each is written. All three are an ✕, because they are cymbals. A closed note sits <strong>above the staff</strong>. An open note is the same ✕ with a <strong>small circle</strong> over it. A note played with the foot is an ✕ <strong>below the staff</strong>, and its stem points down like the bass drum’s. Click a head to hear it.</p>
+<div class="bl-hatkey">
+
+</div>
+<p><strong>The foot closes the cymbals, and that stops an open note.</strong> When the cymbals come together, whatever was ringing ends. So an open hi-hat rings until the next closed note or the next foot note cuts it off, whichever comes first. On this page the band’s drummer does the same: press “Open, then the foot” and listen to the open note stop dead. Hearing where an open note ends is as important as hearing where it starts.</p>
+</section>
+<section id="quarter-notes-on-the-closed-hi-hat" class="level2">
+<h2 class="anchored" data-anchor-id="quarter-notes-on-the-closed-hi-hat">1. Quarter notes on the closed hi-hat</h2>
+<p>The plainest rock beat. The closed hi-hat plays all four beats, the bass drum plays on <strong>1 and 3</strong>, and the snare plays on <strong>2 and 4</strong>. Count “1, 2, 3, 4” out loud and make the hi-hat as even as the clock.</p>
+<div class="bl-step" data-part="hhquarters" data-chart="vamp">
+
+</div>
+<p>Two things at once, then three. Start with the hi-hat and the snare alone; add the bass drum when the hands are steady. The hi-hat does not slow down when the snare lands.</p>
+</section>
+<section id="eighth-notes-the-basic-rock-beat" class="level2">
+<h2 class="anchored" data-anchor-id="eighth-notes-the-basic-rock-beat">2. Eighth notes: the basic rock beat</h2>
+<p>Now the hi-hat plays twice as often, eight notes to the bar. Count “1 and 2 and 3 and 4 and”. The notes on the numbers fall with the bass drum and the snare; the notes on the “ands” fall in between. The bass drum is still on 1 and 3 and the snare on 2 and 4.</p>
+<div class="bl-step" data-part="hheighths" data-chart="vamp">
+
+</div>
+<p>Keep the right hand moving in one smooth, even stroke, down on the beat and down on the “and”, and let the snare and the bass drum fit themselves around it.</p>
+</section>
+<section id="accents" class="level2">
+<h2 class="anchored" data-anchor-id="accents">3. Accents</h2>
+<p>The same eighth notes, but now they are not all the same. Lean on the notes that fall on the beats and play the “ands” lightly. The usual way to get this is to hit the beats with the shoulder of the stick, on the edge of the hi-hat, and the “ands” with the tip, on top of it; the beats come out louder and brighter, the “ands” softer. The groove starts to breathe.</p>
+<p>In the notation, an <strong>accent mark</strong> (&gt;) is written over each note that is meant to be louder than its neighbours. Look for the mark over the beats in the staff below; the “ands” have none.</p>
+<div class="bl-step" data-part="hhaccents" data-chart="vamp">
+
+</div>
+<p>Listen with <strong>Drums alone</strong>. Then play it on a practice pad and try making the difference between the two kinds of note smaller and larger.</p>
+</section>
+<section id="the-off-beats-alone" class="level2">
+<h2 class="anchored" data-anchor-id="the-off-beats-alone">4. The off-beats alone</h2>
+<p>Take the hi-hat off the beats and play it only on the “ands”: <strong>and</strong> of 1, <strong>and</strong> of 2, <strong>and</strong> of 3, <strong>and</strong> of 4. The bass drum plays on every beat, and the snare is still on 2 and 4. The beats are now played by the feet and the left hand, and the right hand plays in the gaps.</p>
+<div class="bl-step" data-part="hhoffbeats" data-chart="vamp">
+
+</div>
+<p>Say “1 and 2 and 3 and 4 and” out loud, and tap your foot on the numbers. The hi-hat sits on the words you say between the taps.</p>
+</section>
+<section id="opening-the-hi-hat" class="level2">
+<h2 class="anchored" data-anchor-id="opening-the-hi-hat">5. Opening the hi-hat</h2>
+<p>Go back to the eighth notes of step 2, and open the hi-hat once: on the <strong>and of 4</strong>, the last note of the bar. Open it as you hit, let it ring through the end of the bar, and close it on the <strong>1</strong> of the next bar, with the stick and the foot together. Because the cymbals come together, the open note stops right where beat 1 starts.</p>
+<div class="bl-step" data-part="hhopen" data-chart="vamp">
+
+</div>
+<p>The open note is written with the small circle. The foot note under the staff, on beat 1 of each bar, is the pedal closing the cymbals. Play it once with the stick alone and once with the foot as well, and listen for the difference.</p>
+</section>
+<section id="open-on-every-off-beat-four-on-the-floor" class="level2">
+<h2 class="anchored" data-anchor-id="open-on-every-off-beat-four-on-the-floor">6. Open on every off-beat: four on the floor</h2>
+<p>The groove of a dance floor. The bass drum plays on <strong>every beat</strong>, the snare on 2 and 4, and the hi-hat plays closed on the beats and <strong>open on every “and”</strong>. Each closed note on the next beat shuts the open one before it, so you hear a “tss-tick, tss-tick” pattern. Your foot has to lift the pedal for each “and” and press it down again for each beat.</p>
+<div class="bl-step" data-part="hhdance" data-chart="vamp">
+
+</div>
+<p>This is the same groove as “Four on the floor” in the Drums menu of the Backing Track, with the clap taken off so that you can hear the hi-hat by itself.</p>
+</section>
+<section id="sixteenth-notes-with-one-hand" class="level2">
+<h2 class="anchored" data-anchor-id="sixteenth-notes-with-one-hand">7. Sixteenth notes with one hand</h2>
+<p>At a slow tempo the hi-hat can play four notes to every beat: sixteenths. Count “1 e and a 2 e and a 3 e and a 4 e and a”. One hand plays them all, sixteen to the bar. Play the beats a little stronger than the rest. The bass drum is on 1 and 3, the snare on 2 and 4.</p>
+<div class="bl-step" data-part="hhsix" data-chart="vamp">
+
+</div>
+<p>Start very slowly. A slow tempo is the whole point of this step: you are learning to keep sixteen even notes going while the other hand and both feet do something else. Speed up by a few beats a minute at a time.</p>
+</section>
+<section id="sixteenth-notes-with-two-hands" class="level2">
+<h2 class="anchored" data-anchor-id="sixteenth-notes-with-two-hands">8. Sixteenth notes with two hands</h2>
+<p>Now use both hands on the hi-hat, <strong>right, left, right, left</strong> on the four notes of a beat. Both hands play on the hi-hat. On beats 2 and 4 the right hand has a different job: it comes off the hi-hat to play the snare. So the hi-hat is <strong>silent on those two notes</strong>, and you play fourteen hi-hat notes to the bar instead of sixteen.</p>
+<div class="bl-step" data-part="hhsix2" data-chart="vamp">
+
+</div>
+<p>The gap in the hi-hat on 2 and 4 is where the snare sits. Listen for it: the left hand keeps the sixteenths going without a break, and the snare lands in the space the right hand leaves.</p>
+</section>
+<section id="the-foot-alone" class="level2">
+<h2 class="anchored" data-anchor-id="the-foot-alone">9. The foot alone</h2>
+<p>Now the hi-hat’s foot, which keeps time in a different way. First the jazz setting: time is played on the <strong>ride cymbal</strong>, and the hi-hat foot closes the cymbals on <strong>2 and 4</strong>. The foot is the “chick” that goes with the ride pattern.</p>
+<div class="bl-step" data-part="hhfoot2" data-chart="basic">
+
+</div>
+<p>Next, a rock beat played on the ride cymbal, with eighth notes on the ride, the bass drum on 1 and 3 and the snare on 2 and 4, and the foot closing the hi-hat on <strong>all four beats</strong>. The right hand is on the ride cymbal, so the hi-hat is played by the foot alone. Count “1, 2, 3, 4” with your foot first, then add the rest.</p>
+<div class="bl-step" data-part="hhfoot4" data-chart="vamp">
+
+</div>
+</section>
+<section id="the-swing-hi-hat" class="level2">
+<h2 class="anchored" data-anchor-id="the-swing-hi-hat">10. The swing hi-hat</h2>
+<p>The ride pattern of swing time, played on the hi-hat itself. The pattern is the same as on the ride: a note on each beat, with a <strong>skip note</strong> after beats 2 and 4. The cymbals are <strong>open on 1 and 3</strong>, so they ring, and <strong>closed on 2 and 4</strong>, where the foot closes them with the stick. The skip notes after 2 and 4 are closed. The eighths are swung: the first is long and the second short.</p>
+<div class="bl-step" data-part="hhswing" data-chart="basic">
+
+</div>
+<p>The foot notes on 2 and 4 under the staff are what stop the open notes, and so make the “tss-chick” of swing time. Listen with <strong>Drums alone</strong>, and notice where the open notes end.</p>
+</section>
+<section id="where-to-go-next" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-go-next">Where to go next</h2>
+<ul>
+<li>Play step 2 or 3 with the drums left out and keep the form of the vamp for ten choruses.</li>
+<li>For the beat that goes with the 12-bar blues, the ride pattern and the shuffle, go to <a href="../lessons/blues-drums.html">Blues for Drums</a>.</li>
+<li><strong>Tools → Backing Track</strong> has every groove on this page in its <strong>Drums</strong> menu, under the names that start “Hi-hat”. The <strong>Cymbal</strong> menu has “Closed hi-hat”, which puts the hi-hat in place of the ride in the other grooves.</li>
+</ul>
+<style>
+.bl-widget{margin:1rem 0 1.6rem}
+.bl-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.bl-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.bl-tools .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.bl-check{font-size:.85rem;color:var(--site-ink-2);margin:0 .6rem 0 .2rem}
+.bl-legend{font-size:.8rem;color:var(--site-ink-2);margin:.35rem 0 .6rem}
+.bl-boards{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start;margin:.4rem 0}
+.bl-boards svg{border:1px solid var(--site-border);border-radius:6px}
+.bl-card{border-radius:8px;padding:2px;border:2px solid transparent;transition:border-color .12s}
+.bl-card.bl-live{border-color:var(--site-accent)}
+.bl-boards .ld-label.bl-live{text-decoration:underline;text-decoration-thickness:3px}
+.bl-each .bl-card svg{width:215px}
+.bl-abc{display:flex;flex-wrap:wrap;align-items:flex-start;gap:.5rem 1rem;margin:.3rem 0}
+.bl-abc .btn{font-family:var(--font-mono);font-size:.8rem;margin-top:.6rem}
+.bl-abc>div{min-width:0}
+@media (max-width:600px){.bl-abc{flex-direction:column;align-items:stretch;gap:.3rem}.bl-abc .btn{align-self:flex-start;margin-top:0}.bl-abc>div{max-width:none!important}}
+.bl-abc .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.bl-scale{border-left:3px solid var(--site-accent);padding-left:1rem}
+.bl-notes{margin:.2rem 0 1rem}
+.ls-on,.ls-on *{fill:#d6336c;stroke:#d6336c}
+/* the bar itself (fixed to the foot of the window, one row, what does not fit goes behind "Options") is PlayBar's: apps/shared/playbar.js */
+#bl-bar label,.playbar-pop label{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--parch-dim);margin-right:.3rem}
+#bl-bar select,#bl-bar input[type=number],.playbar-pop select,.playbar-pop input[type=number]{max-width:15rem;font-size:.85rem;padding:.15rem .3rem;border:1px solid var(--parch-edge);border-radius:4px;background:#fff}
+#bl-bar input[type=number],.playbar-pop input[type=number]{width:4.2rem}
+#bl-bar input[type=range],.playbar-pop input[type=range]{width:7rem;vertical-align:middle}
+#bl-status{font-family:var(--font-mono);font-size:.75rem;color:var(--parch-dim);width:11rem;overflow:hidden;text-overflow:ellipsis}
+</style>
+<div id="bl-bar">
+  <span data-pri="3" data-pri-live="6"><label for="bl-key">Key</label><select id="bl-key"></select></span>
+  <span data-pri="7" data-pri-live="8"><label for="bl-dots">Label notes with</label><select id="bl-dots"><option value="tone">Chord tones (R, 3, ♭7)</option><option value="name">Note names</option></select></span>
+  <span data-pri="4" data-pri-live="5"><label for="bl-feel">Feel</label><select id="bl-feel"></select></span>
+  <span data-pri="1" data-pri-live="2"><label for="bl-tempo">Tempo</label><input type="range" id="bl-tempo" min="40" max="220" step="2"> <input type="number" id="bl-tempo-n" min="40" max="220" step="2" aria-label="Tempo in beats per minute"></span>
+  <span data-pri="2" data-pri-live="3"><input type="checkbox" id="bl-loop"> <label for="bl-loop">Loop</label></span>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="bl-stop" disabled="">■ Stop</button>
+  <span id="bl-status" aria-live="polite" data-pri="6" data-pri-live="1"></span>
+</div>
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/playbar.js?v=1"></script>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="../apps/shared/abc-transpose.js?v=4"></script>
+<script src="../apps/shared/tune-chart.js?v=27"></script>
+<script src="../apps/shared/voicings.js?v=5"></script>
+<script src="../apps/shared/band/harmony.js?v=28"></script>
+<script src="../apps/shared/band/bass.js?v=13"></script>
+<script src="../apps/shared/band/comp.js?v=28"></script>
+<script src="../apps/shared/band/catalog.js?v=33"></script>
+<script src="../apps/shared/band/drums.js?v=14"></script>
+<script src="../apps/shared/band/congas.js?v=2"></script>
+<script src="../apps/shared/band/sounds.js?v=14"></script>
+<script src="../apps/shared/band/player.js?v=117"></script>
+<script src="../apps/shared/band/midi.js?v=17"></script>
+<script src="../apps/shared/band/notation.js?v=11"></script>
+<script src="../apps/shared/lessons/diagrams.js?v=2"></script>
+<script src="../apps/shared/lessons/score.js?v=4"></script>
+<script src="../apps/shared/lessons/tunes.js?v=4"></script>
+<script src="../apps/shared/lessons/drumkit.js?v=1"></script>
+<script src="../apps/shared/lessons/blues-kit.js?v=12"></script>
+<script>BluesLesson.init({ instrument: "drums", feels: "hihat", key: 5 });</script>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

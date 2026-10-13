@@ -1,5 +1,5 @@
 ```{=html}
-<!-- DRAFT A: by task. The transport is a bar fixed to the foot of the window, as on the lesson pages (PlayBar, apps/shared/playbar.js),
+<!-- LAYOUT A (the page at tools/backing-track.qmd): by task. The transport is a bar fixed to the foot of the window, as on the lesson pages (PlayBar, apps/shared/playbar.js),
      the chart is at the top, and everything else is on tabs, one at a time. The Mixer tab is a console: a strip for each part and each kit fader, with the EQ beside them. See _bt-draft-common.qmd. -->
 <style>
 /* in the bar (and in its Options panel) a control's name sits beside it, as on the lesson pages */
@@ -37,9 +37,9 @@
 #bt-root.dxa .dxa-console{display:flex;flex-wrap:wrap;gap:1rem 1.6rem;align-items:flex-start}
 #bt-root.dxa .dxa-console>*{min-width:0;max-width:100%;flex:0 0 auto}
 #bt-root.dxa .dxa-console .dx-ctl{display:flex;flex-wrap:nowrap;align-items:flex-end;gap:.4rem .6rem;height:3.5rem;margin:0 0 .6rem}
-#bt-root.dxa .dxa-console .dx-strips{overflow:visible}
-#bt-root.dxa .dxa-parts{width:calc(4 * 4.6rem + 3 * .3rem)}
-#bt-root.dxa .dxa-parts div.dx-strip{flex:0 0 4.6rem}
+#bt-root.dxa .dxa-console .dx-strips{overflow-x:auto;overflow-y:hidden;max-width:100%}
+#bt-root.dxa .dxa-parts{width:calc(5 * 3.75rem + 4 * .3rem)}
+#bt-root.dxa .dxa-parts div.dx-strip{flex:0 0 3.75rem}
 #bt-root.dxa #bt-eq-inst{width:14rem}
 /* under them, across the whole width: the amp of the instrument on show in the EQ, then the organ's panel */
 #bt-root.dxa .dxa-amp,#bt-root.dxa #bt-organ{margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--site-border-soft,#ece6dc)}
@@ -51,7 +51,7 @@
 (function(){
   var D = window.BTDraft, $ = D.$, el = D.el;
   if (!D || !D.player) return;                                          // (the band did not load: the page says so itself)
-  var root = D.init("dxa", "A (tabs and a mixing console)", [["backing-track.html", "The current page"], ["backing-track-b.html", "Draft B"]]);
+  var root = D.init("dxa", "", [["backing-track-classic.html", "the earlier layout"], ["backing-track-b.html", "draft B"]]);
   var top = root.querySelector(".bt-panel"), rows = top.querySelectorAll(":scope > .bt-row"), about = root.querySelector("details.bt-about"), abcBox = root.querySelector("details.bt-abc");
   // ---- the bar at the foot of the window: everything the Play panel held, in one row. [element, importance, importance while playing]:
   // the higher the number the sooner it leaves the bar for the Options panel when the window is narrow. Play never leaves.
@@ -89,11 +89,11 @@
     try { localStorage.setItem(KEY, id); } catch (e) {}
   }
 
-  // ---- the Band tab: bass over drums | chords | second chords, and what belongs to the whole band under them ----
+  // ---- the Band tab: bass over drums and congas | chords | second chords, and what belongs to the whole band under them ----
   (function(){
     var band = $("bt-sec-band"), subs = band.querySelectorAll(":scope > .bt-sub"), cols = el("div", "dxa-band"), a = el("div"), b = el("div"), c = el("div"), second = el("div", "bt-sub");
     second.appendChild(el("h3", "", "Second chords")); second.appendChild($("bt-second-row"));
-    D.put(a, subs[1], subs[3]); b.appendChild(subs[2]); c.appendChild(second); D.put(cols, a, b, c);
+    D.put(a, subs[1], subs[3], subs[4]); b.appendChild(subs[2]); c.appendChild(second); D.put(cols, a, b, c);
     band.insertBefore(cols, subs[0]); subs[0].classList.add("dxa-whole");
   })();
 

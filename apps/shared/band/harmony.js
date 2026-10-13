@@ -626,6 +626,77 @@
   // What a beat is in a meter. 6/8, 9/8 and 12/8 are COMPOUND: the band counts dotted quarters
   // (2, 3 or 4 beats to the bar) and each beat divides in three. Everything else counts the
   // meter's own lower note.
+  // ---- blends of bass lines and of grooves ----
+  // opts.bassFeel and opts.groove may each name several patterns joined by "+", as opts.compRhythm does. The
+  // player (and BandMidi.generate) asks blendOpts for each bar's options, in which each is one pattern again,
+  // so every part sees the same bass line and the same groove for the bar. They are planned four bars at a time,
+  // the way the comping plans its rhythms (comp.js, planSpan): one pattern is at home for the phrase, chosen by
+  // its share of the blend (opts.bassMix / opts.grooveMix: { id: 0..1 }, unlisted = 0.5; with no shares, mostly
+  // a different one from last time), and the phrase may hold visitors: its second bar goes back to the
+  // pattern just left (35% after a change); its last bar is already the next one (40% before a change), or
+  // else its third bar is some other pattern (30%). A pattern with no share takes no part.
+  // st = the caller's own state object ({}), rng = random numbers of its own. With no "+" in either, the
+  // options come back untouched and nothing is drawn from the rng.
+  var BLENDS = [["bassFeel", "bassMix"], ["groove", "grooveMix"]];
+  function blendIds(v){ var seen = {}; return String(v == null ? "" : v).split("+").filter(function (x){ if (!x || seen[x]) return false; seen[x] = 1; return true; }); }
+  function blendFirst(opts){
+    if (!opts || !BLENDS.some(function (b){ return String(opts[b[0]] || "").indexOf("+") >= 0; })) return opts;
+    var o = Object.assign({}, opts); BLENDS.forEach(function (b){ if (String(o[b[0]] || "").indexOf("+") >= 0) o[b[0]] = blendIds(o[b[0]])[0]; }); return o;
+  }
+  function blendSpan(s, ids, W, rng){
+    function w(id){ return !W || W[id] == null ? 0.5 : Math.max(0, +W[id] || 0); }
+    var live = W ? ids.filter(function (id){ return w(id) > 0; }) : ids; if (!live.length) live = ids;
+    function weighted(pool){ var sum = pool.reduce(function (a, id){ return a + w(id); }, 0), r = rng() * sum;
+      for (var i = 0; i < pool.length - 1; i++){ r -= w(pool[i]); if (r < 0) return pool[i]; } return pool[pool.length - 1]; }
+    function choose(not){ if (W) return weighted(live); var pool = live.length > 1 && not != null && rng() < 0.7 ? live.filter(function (id){ return id !== not; }) : live; return pool[Math.floor(rng() * pool.length)]; }
+    var prev = s.home, home = s.next && live.indexOf(s.next) >= 0 ? s.next : choose(prev), next = choose(home), span = [home, home, home, home];
+    if (live.length > 1){
+      var others = live.filter(function (id){ return id !== home; });
+      if (prev && prev !== home && live.indexOf(prev) >= 0 && rng() < 0.35) span[1] = prev;
+      if (next !== home && rng() < 0.4) span[3] = next;
+      else if (others.length && rng() < 0.3) span[2] = W ? weighted(others) : others[Math.floor(rng() * others.length)];
+    }
+    s.home = home; s.next = next; s.span = span;
+  }
+  function blendOpts(st, opts, ctx, rng){
+    if (!opts || !BLENDS.some(function (b){ return String(opts[b[0]] || "").indexOf("+") >= 0; })) return opts;
+    st = st || {}; rng = rng || Math.random;
+    var pos = (((ctx && ctx.phrase && ctx.phrase.bar) | 0) % 4 + 4) % 4, o = Object.assign({}, opts);
+    BLENDS.forEach(function (b){
+      var ids = blendIds(opts[b[0]]); if (ids.length < 2){ if (ids.length) o[b[0]] = ids[0]; return; }
+      var W = opts[b[1]] || null, sig = ids.join("+") + "|" + (W ? ids.map(function (id){ return W[id]; }).join(",") : ""), s = st[b[0]] || (st[b[0]] = {});
+      if (s.sig !== sig){ s.sig = sig; s.span = null; s.home = null; s.next = null; }
+      if (!s.span || (pos === 0 && s.at !== ctx.bar)) blendSpan(s, ids, W, rng);
+      s.at = ctx.bar; o[b[0]] = s.span[pos];
+    });
+    return o;
+  }
+
+  // ---- calm bars ----
+  // Where a patterned accompaniment gets in the way: around cadences and wherever the chords are already moving
+  // faster than usual. A style that asks for it (opts.calm) only strikes and holds its chords there (comp.js).
+  // calmAt(form, i) is true for
+  //   - a bar marked "^plain" in the chart;
+  //   - the last bar of a phrase (a bar marked "^phrase"; marks closer than three bars to the phrase's start are
+  //     passed over, so a chart written two bars to a row is not half calm);
+  //   - the bar before that when it holds two chords or more (the approach to the cadence);
+  //   - any bar with more chords than the tune's usual bar has (and at least two).
+  // A chart with no marks has only the last kind. Nothing here draws from the rng.
+  var calmMemo = typeof WeakMap === "function" ? new WeakMap() : null;
+  function calmBars(form){
+    var n = form.map(function (b){ return (b.chords || []).filter(function (c){ return c.chord && !c.chord.nc; }).length; });
+    var some = n.filter(function (x){ return x > 0; }).sort(function (a, b){ return a - b; });
+    var usual = some.length ? some[Math.floor((some.length - 1) / 2)] : 1, busy = Math.max(2, usual + 1), ends = [], start = 0, out = [];
+    form.forEach(function (b, i){ if (b.section != null && i > 0) start = i; ends[i] = !!b.phraseEnd && i - start + 1 >= 3; if (ends[i]) start = i + 1; });
+    form.forEach(function (b, i){ out[i] = !!b.plain || ends[i] || n[i] >= busy || (!!ends[i + 1] && n[i] >= 2 && form[i + 1].section == null); });
+    return out;
+  }
+  function calmAt(form, i){
+    if (!form || !form[i]) return false;
+    var m = calmMemo && calmMemo.get(form); if (!m){ m = calmBars(form); if (calmMemo) calmMemo.set(form, m); }
+    return !!m[i];
+  }
+
   // ---- half time / double time ----
   // feelPart(part) wraps a part (bass, comp or drums) so that ctx.opts.timeFeel can change the size of
   // its beat without the chart, the tempo or the bar count changing:
@@ -640,6 +711,10 @@
   // comping keeps its own rhythm, as a pianist or guitarist usually does when the rhythm section shifts,
   // but thins out / fills in and leans on the new backbeat (respond(), below). Add the word "plain"
   // ("bass drums plain") to leave the comping exactly as it is in normal time.
+  // ctx.opts.halfRhythm (comping rhythm ids, "a+b" for a blend): what the comping plays instead while the rhythm
+  // section is in half time and it is not, for a style whose own rhythm makes no sense over a slow backbeat (off-beat
+  // chords, say). Played as written, with no answering; in 2/4 two bars of the chart make one bar of the pattern.
+  // A bar marked "^half time ballad" in the chart asks for the ballad patterns (BALLAD) whatever the style.
   function feelPart(part, name){
     var carry = null;
     function swingOf(ctx, tempo){
@@ -726,6 +801,31 @@
       if (paired) carry = { bar: ctx.bar + 1, index: i + 1, evs: later };
       return now;
     }
+    // The comping in its half-time rhythm (opts.halfRhythm). In 2/4 a pattern written for four beats is given the two
+    // bars of a pair as one bar, and its second half is kept for the bar after.
+    function halfRhythm(ctx){ var fb = ctx.form && ctx.form[ctx.index]; return (fb && fb.halfComp === "ballad" ? BALLAD : null) || (ctx.opts && ctx.opts.halfRhythm) || null; }
+    function other(ctx){
+      var B = ctx.beats, i = ctx.index, form = ctx.form, ph = ctx.phrase || { bar: i % 4 }, hr = halfRhythm(ctx);
+      function opts(o){ return Object.assign({}, o, { compRhythm: hr, rhythmMix: null }); }
+      if (carry && carry.bar === ctx.bar && carry.index === i){ var kept = carry.evs; carry = null; return kept; }
+      carry = null;
+      var len = ctx.length || (form ? form.length : 0);
+      if (!(B === 2 && i % 2 === 0 && form && ctx.nextIndex === i + 1 && form[i + 1] && form[i + 1].beats === B && !ctx.last && !ctx.nextStop))
+        return part.bar(Object.assign({}, ctx, { opts: opts(ctx.opts) }));
+      var nx = len ? form[(i + 2) % len].chords : ctx.nextChords;
+      var c2 = Object.assign({}, ctx, { bar: Math.floor(ctx.bar / 2), index: i / 2, length: Math.ceil(len / 2), beats: 2 * B,
+        chords: place(form[i + 1].chords, 0, B, 1, B, place(ctx.chords, 0, B, 1, 0, [], i), i + 1), nextChords: place(nx, 0, B, 1, 0, [], len ? (i + 2) % len : null),
+        phrase: { bar: (i / 2) % 4, turnaround: !!ph.turnaround, top: !!ph.top } });
+      c2.opts = opts(pinsFor(ctx, c2, c2.length));
+      var now = [], later = [];
+      (part.bar(c2) || []).forEach(function (ev){
+        if (!ev || !(ev.pos >= 0)) return;
+        var e = Object.assign({}, ev); delete e.of;
+        if (e.pos < B - 1e-6) now.push(e); else if (e.pos < 2 * B - 1e-6){ e.pos = Math.round((e.pos - B) * 10000) / 10000; later.push(e); }
+      });
+      carry = { bar: ctx.bar + 1, index: i + 1, evs: later };
+      return now;
+    }
     // The comping when only the rhythm section changes time: same rhythm, different weight.
     //   double: thinner and shorter. Each chord's first hit and the hits between the beats stay (those
     //     are where the doubled backbeat falls, so they are played straight and a little louder); the
@@ -782,6 +882,7 @@
       bar: function (ctx){
         var fo = feelOf(ctx), f = fo.f, f0 = fo.f0, whoL = fo.whoL;
         if (fo.plain){
+          if (name === "comp" && f == null && f0 === "half" && halfRhythm(ctx) && !ctx.compound && !ctx.stop && ctx.chords && ctx.chords.length) return other(ctx);
           carry = null;
           // the comping keeps its own rhythm but answers the rhythm section (unless told "plain")
           if (name === "comp" && f == null && (f0 === "double" || f0 === "half") && whoL.indexOf("plain") < 0 && !ctx.compound && !ctx.stop) return respond(part.bar(ctx) || [], f0, ctx);
@@ -794,6 +895,24 @@
       ending: function (ctx){ carry = null; return part.ending ? part.ending(ctx) : []; },
       reset: function (){ carry = null; if (part.reset) part.reset(); }
     };
+  }
+
+  var BALLAD = "ballRock+ballBroken+ballSync";
+  // How a tune ends, for the player on its last pass. `order` = the form's bar indexes in the order they are played.
+  // The band lands on the tune's own last chord where it arrives and lets it ring: `land` is that bar (the last bar, or
+  // the bar before it when the two hold one chord), `setup` the bar before that, `ring` the bars after it and `hold`
+  // the beats from the landing to the end. null when the tune does not come to rest: its last bar has two chords, or
+  // a dominant seventh that is not the chord the tune starts on (a turnaround). Then the old ending stands, a hit on
+  // the top chord after the last bar.
+  function endingPlan(form, order){
+    if (!order){ order = []; for (var i = 0; i < form.length; i++) order.push(i); }
+    var n = order.length; if (n < 2) return null;
+    function one(k){ var b = form[order[k]]; return b && !b.stop && b.chords && b.chords.length === 1 && b.chords[0].pos === 0 && b.chords[0].chord && !b.chords[0].chord.nc ? b.chords[0].chord : null; }
+    var c = one(n - 1), top = form[order[0]], first = top && top.chords && top.chords[0] ? top.chords[0].chord : null;
+    if (!c || (c.quality === "dom" && !(first && first.root === c.root))) return null;
+    var land = n - 1, lb = form[order[n - 1]];
+    if (n >= 3 && sameChord(one(n - 2), c) && form[order[n - 2]].beats === lb.beats && (form[order[n - 2]].unit || 1) === (lb.unit || 1)) land = n - 2;
+    return { land: order[land], setup: order[land - 1], ring: order.slice(land + 1), hold: lb.beats * (n - land) };
   }
 
   function meterInfo(n, d){
@@ -869,8 +988,13 @@
       if (bar.melody && bar.melody.length) fbar.melody = bar.melody.map(function (n){ return { pos: n.pos, dur: n.dur, midi: n.midi + (transpose || 0) }; });
       if (styleAt[bi]) fbar.style = styleAt[bi];                                              // "^style bossa" / %%style under a P: line: this section's own style
       if (bar.feel) fbar.feel = bar.feel;                                                     // "^half time": felt in half time
+      if (bar.halfComp) fbar.halfComp = bar.halfComp;                                         // "^half time ballad": with the ballad piano
+      if (bar.rit) fbar.rit = true;                                                           // "^rit.": the ritard into the ending starts here
+      if (bar.phraseEnd) fbar.phraseEnd = true;                                               // "^phrase": a phrase ends with this bar
+      if (bar.plain) fbar.plain = true;                                                       // "^plain": a calm bar whatever else is true of it
       if (bar.stop) fbar.stop = true;                                                         // "^stop": stop time on this bar
       if (bar.fill) fbar.fill = bar.fill;                                                     // "^fill": the drummer fills at the end of it
+      if (bar.choke) fbar.choke = true;                                                       // "^choke": a crash on beat 1, grabbed with the hand
       out.push(fbar);
     });
     return out;
@@ -943,7 +1067,7 @@
   // Is this bar one of the chorus bars (opts.lift = form bar indexes), where the band plays up?
   function lifted(ctx, index){ var l = ctx && ctx.opts && ctx.opts.lift; return !!(l && l.indexOf && !ctx.intro && l.indexOf(index == null ? ctx.index : index) >= 0); }
 
-  global.BandHarmony = { pushes: pushes, lifted: lifted,
+  global.BandHarmony = { endingPlan: endingPlan, calmAt: calmAt, blendOpts: blendOpts, blendFirst: blendFirst, blendIds: blendIds, BALLAD: BALLAD, pushes: pushes, lifted: lifted,
     parseChord: parseChord, chordScale: chordScale, voicing: voicing, buildForm: buildForm,
     chordAt: chordAt, sameChord: sameChord, noteName: noteName, pcName: pcName, libChord: libChord,
     voicingClass: voicingClass, motion: motion, STYLES: STYLES,

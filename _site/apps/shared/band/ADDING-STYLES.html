@@ -114,6 +114,58 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../../../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Practice</span>
     </a>
@@ -290,6 +342,7 @@ ul.task-list li input[type="checkbox"] {
   <ul class="collapse">
   <li><a href="#what-a-style-is" id="toc-what-a-style-is" class="nav-link" data-scroll-target="#what-a-style-is">What a style is</a></li>
   <li><a href="#steps" id="toc-steps" class="nav-link" data-scroll-target="#steps">Steps</a></li>
+  <li><a href="#congas" id="toc-congas" class="nav-link" data-scroll-target="#congas">Congas</a></li>
   <li><a href="#where-a-style-can-be-asked-for" id="toc-where-a-style-can-be-asked-for" class="nav-link" data-scroll-target="#where-a-style-can-be-asked-for">Where a style can be asked for</a></li>
   <li><a href="#rules-of-the-house" id="toc-rules-of-the-house" class="nav-link" data-scroll-target="#rules-of-the-house">Rules of the house</a></li>
   </ul></li>
@@ -406,7 +459,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <ul>
 <li><code>bass</code>, <code>rhythm</code>, <code>drums</code> are ids of entries in the <code>bass</code>, <code>comp</code> and <code>drums</code> lists of the same file. <code>rhythm</code> may be several joined by <code>+</code> (a blend).</li>
 <li><code>voicing</code> is <code>{ piano, guitar }</code>: a voicing style id for each (<code>PLAINV</code>, <code>STRUMV</code>, <code>JAZZV</code> are ready-made).</li>
-<li>Optional: <code>sound</code> (<code>{ bass:"upright"|"electric", cymbal:"ride"|"hat"|"bell", piano, guitar, lead, kit }</code>), where <code>piano</code> and <code>guitar</code> are sound ids from <code>sounds.js</code> (<code>BandSounds.sounds("guitar")</code> lists them: jazz, steel, nylon, clean and distorted electric), <code>push</code> (chords anticipate), <code>time</code> (<code>{ feel:"half", parts }</code>), <code>ext:true</code> (unmarked extensions on offer). A style with no <code>sound</code> gets upright bass, ride, piano, jazz guitar.</li>
+<li>Optional: <code>sound</code> (<code>{ bass:"upright"|"electric", cymbal:"ride"|"hat"|"bell", piano, guitar, lead, kit }</code>), where <code>piano</code> and <code>guitar</code> are sound ids from <code>sounds.js</code> (<code>BandSounds.sounds("guitar")</code> lists them: jazz, steel, nylon, clean and distorted electric), <code>push</code> (chords anticipate), <code>full</code> (the piano’s triads keep all three notes), <code>bass</code> and <code>drums</code> may each name several patterns joined by <code>+</code> (a blend: one of them per bar, planned four bars at a time by <code>BandHarmony.blendOpts</code>; shares in <code>opts.bassMix</code> / <code>opts.grooveMix</code>), <code>calm</code> (strike and hold the chords around cadences and in bars with more chords than usual: <code>BandHarmony.calmAt</code>; a chart marks phrase ends with <code>"^phrase"</code> and single bars with <code>"^plain"</code>), <code>halfRhythm</code> (comping rhythm ids, <code>a+b</code>: what the comping plays in bars of half time instead of its own rhythm), <code>time</code> (<code>{ feel:"half", parts }</code>), <code>ext:true</code> (unmarked extensions on offer). A style with no <code>sound</code> gets upright bass, ride, piano, jazz guitar.</li>
 </ul>
 <p>A style made only of parts that already exist is one line in <code>styles</code> plus the fit lists (step 3). Most requests need at least one new part. Decide that first: listen in your head to what the bass, the chord instrument and the drums each play in that music, and check each against the existing entries before writing a new one.</p>
 </section>
@@ -418,6 +471,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li>Bass line: <code>LINES</code> in <code>bass.js</code> (a fixed figure over the chord’s root, fifth, octave).</li>
 <li>Comping rhythm: <code>GRID</code> in <code>comp.js</code> for a set pattern, <code>FIG</code> for a one-bar swing figure.</li>
 <li>Drum groove: <code>GROOVES</code> in <code>drums.js</code> (<code>bars</code> for 4/4, <code>threeBars</code> for 3/4, <code>triplet</code> for 12/8 feels).</li>
+<li>Congas: <code>PATTERNS</code> in <code>congas.js</code> (see Congas below).</li>
 <li>Positions are beats from 0; <code>x.5</code> is the off-beat eighth (swung by the player unless the event says <code>straight:true</code>). Velocities are 0..1 and the player scales them by the band’s intensity.</li>
 <li>Use <code>ctx.phrase.bar</code> (0..3) to shape four-bar phrases and <code>ctx.intensity</code> for how hard the band is playing. <code>phraseDyn</code>, <code>leanDyn</code> and <code>spread</code> in <code>comp.js</code> are the shared dynamic shaping: use them rather than fixed velocities.</li>
 <li>Every pattern must cope with 3/4 and with a bar holding two chords. The tests check both.</li>
@@ -435,12 +489,25 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li><strong>Say what was not verified.</strong> Nothing here can be listened to from a terminal. Report the pattern in beats, what the tests cover, and that it needs ears. Do not commit unless asked.</li>
 </ol>
 </section>
+<section id="congas" class="level2">
+<h2 class="anchored" data-anchor-id="congas">Congas</h2>
+<p>The conga player (<code>congas.js</code>) is a part of its own beside bass, comping and drums: it has its own fader, staff and MIDI track, and any style may have it. Adding a pattern:</p>
+<ol type="1">
+<li><code>PATTERNS</code> in <code>congas.js</code>: <code>id: { bars: [...], three: [...], triplet: [...] }</code>. <code>bars</code> is one or two 4/4 bars (a two-bar pattern follows the bar number); <code>three</code> is one bar of 3/4 and <code>triplet</code> one bar of 12/8, both optional. A bar is a list of rows <code>[pos, drum, stroke, hand, vel]</code>: <code>drum</code> is <code>"c"</code> (conga, the higher drum) or <code>"t"</code> (tumba); <code>stroke</code> is <code>H</code> heel, <code>T</code> toe, <code>S</code> slap, <code>O</code> open, <code>M</code> muffled, <code>B</code> bass; <code>hand</code> is <code>"L"</code> or <code>"R"</code>. Positions are beats; 12/8 positions are thirds of a beat (x.333). A pattern with no bar for the meter plays the <code>steady</code> one, so it can stay short.</li>
+<li><code>congas</code> in <code>catalog.js</code>: <code>{ id, label, feel, group, tags, desc }</code>; the <code>desc</code> says which stroke falls on which beat, with which hand.</li>
+<li><code>FITS.congas</code>: the style ids it belongs in (<code>steady</code> and <code>none</code> fit every style).</li>
+<li>A style that should have them says <code>congas:"id"</code> on its row in <code>styles</code>. Left out, the style has none.</li>
+<li><code>tests/band/congas/t_congas.js</code> checks every pattern in every meter, and that the other players play the same notes with or without them.</li>
+</ol>
+<p>Sounds: the congas are one sample set (<code>congas</code> in <code>sounds.js</code>) built from the soundfont’s three conga notes; a new stroke is a new piece name there, a trim, and its place in <code>BandNotation.congaName</code> and the <code>GM</code> table in <code>midi.js</code>.</p>
+</section>
 <section id="where-a-style-can-be-asked-for" class="level2">
 <h2 class="anchored" data-anchor-id="where-a-style-can-be-asked-for">Where a style can be asked for</h2>
 <ul>
 <li>The Style menu of the Backing Track page; <code>?style=id</code> in its address.</li>
 <li>A tune’s ABC: <code>%%style bossa nova</code> above the first <code>P:</code> line (the whole tune).</li>
 <li>One section: <code>%%style bossa nova</code> on the line under its <code>P:</code> line, or <code>"^style bossa nova"</code> in a bar (from that bar to the next section; <code>"^style none"</code> ends it early). The form bar carries <code>style</code>, and <code>BandCatalog.sectionOpts</code> turns it into the options for those bars. Single parts can follow the name: <code>%%style Swing; voicing drop2; rhythm charleston; bass two; drums funk; feel straight</code>. The comping moves to the instrument the style is built around (<code>sound.lead</code>), if it has one. The page’s blend sliders and walk amount do not apply inside such a section. On the Backing Track page the Band menus change to a section’s settings as it starts, and a change made there stays with that section (<code>opts.sectionOverrides</code>, which the player puts before the section’s style).</li>
+<li>A crash grabbed with the hand: <code>"^choke"</code> in a bar (the crash on its beat 1, stopped before beat 2), beside <code>"^fill"</code> and <code>"^stop"</code>.</li>
 <li>Two built-in setups in <code>presets.js</code> (“Style demo: …”) tour the jazz and the pop, rock and country styles a section at a time. Add a new style to the one it belongs in.</li>
 <li>A lyrics-site song file (<code>~/Projects/carols/site/extra/*.cho</code>): <code>{style: carol}</code> above the first heading for the song, or under a heading for that section. See the top of <code>tools/chordpro.py</code> there.</li>
 <li>A name matches an id, a menu label, or part of a label, ignoring case.</li>

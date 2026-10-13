@@ -8,7 +8,7 @@ const { launch } = require("./cdp.js"); const assert = require("assert"); const 
   const v = id => ev(`document.getElementById("${id}").value`);
   const H = "X:1\nT:Checks\nM:4/4\nL:1/4\nK:C\n", SONG = '"C"z4|"F"z4|[M:2/4]"G"z2|[M:4/4]"Em"z2|"A"z4|"D"z6|"G"z4|]';
   try {
-    await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track.html"); await b.sleep(1300);
+    await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track-classic.html"); await b.sleep(1300);
     // no tempo slider: one number box
     assert.strictEqual(await ev(`document.querySelectorAll("#bt-root input[type=range]#bt-tempo").length + "|" + document.getElementById("bt-tempo-n").type`), "0|number");
     assert.strictEqual(await ev(`document.getElementById("bt-barwarn").hidden`), true, "the blues is sound");

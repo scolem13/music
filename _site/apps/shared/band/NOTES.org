@@ -982,3 +982,173 @@ Unheard. The research, every number's source and every guess are in ORGAN.md bes
 ** VERIFY BY A PLAYER: the piano fingerings (a mode fingered as its parent major scale, so it may start on finger 2 or 3); the violin
    finger names; the fretboard positions in keys where the root falls on the open string or past the 8th fret.
 
+* Lesson pages: scale charts everywhere, staff margins, drum tooltips and a kit picture -- 2026-10-12
+- =blues-kit.js=: the =.bl-scale= panel of the bass, guitar, piano and melody lessons shows the major scale and the Mixolydian on the
+  page's instrument (fretboard and tablature, keyboard with fingering, violin first position; nothing for saxophones yet).
+  =.bl-notes= works on the instrument pages (=viewHorn=). The band's play row sits just above the chord grid in every step.
+- =score.js=: every staff is drawn at its natural size and shrinks to its box; voice names are dropped (abcjs indented the first
+  line for them); the drawing sets its own height (abcjs's padding left a gap under any staff narrower than its box).
+  Under 600 px wide, twelve-bar lines are written two bars to a line (=perLine=, =BluesTunes.inKey= barsPerLine).
+- =notation.js=: =BandNotation.drumName / drumPiece / drumWritten=, one table beside the placement table.
+  =apps/shared/lessons/drumkit.js= (LessonDrumKit): a title on every drum note head, and a drawing of the kit with the staff
+  through it; a click plays the piece (=BandPlayer.hit=, new in =player.js=).
+- Not listened to: the kit picture's sounds (cross-stick uses the =rim= sample). Piano fingerings and the violin chart still
+  want a player's eye. The Backing Track pages still name =player.js= and =notation.js= by their old =?v== numbers (the
+  additions are used only by the lessons).
+
+* Congas: a fifth player -- 2026-10-12
+- =apps/shared/band/congas.js= (=BandCongas={create, PATTERNS, STROKES}=): a conga player of its own beside bass, comp, comp2 and
+  drums, wired as the second chord instrument is (own seed, own humanize rng, own fader, mute/solo, staff and MIDI track). Silent
+  unless =opts.congas= names a pattern, and then the other parts draw the same random numbers: =t_congas.js= compares the bars.
+  Patterns so far: =tumbao= (one bar, one drum), =tumbao2= (the second bar's and of 2 and beat 3 on the lower drum: the bombo, on the clave's three-side; Mauleón via Wikipedia "Tumbao"), =steady= (any music, with its own
+  3/4 and 12/8 bars; every other pattern falls back on it in a meter it has no bar for). Strokes H heel, T toe, S slap, O open, M muffled, B bass.
+- Styles: Son montuno =tumbao2=, Cha-cha and Boogaloo =tumbao=, all others none (=congas:= on a style row). A Style sets the pattern,
+  the Congas menu (Band panel, =bt-congas=) can change it in any style: locked it lists those that fit. =?congas=id= in the address.
+- Sounds: the =congas= sample set is built from the soundfont's three conga notes (62 mute high, 63 open high, 64 low). Heel, toe, slap
+  and the bass tone are stand-ins: the same files at other levels and (toe, bass) other pitches (=rate= on a piece in =sounds.js=).
+- Notation: =show.congas= (default off) draws one "Cga." percussion staff, conga above tumba, with two lines of words under it
+  (stroke letters, hand letters). MIDI: a "Congas" track on channel 10 when they play.
+- Pages: =tools/_backing-track.qmd= (and the three layouts), =tools/_accomp-styles.qmd= (a Conga patterns group), =lessons/_blues-kit.qmd=
+  only loads the script. EQ: the Congas appear in the Tone menu while they play.
+- NOBODY HAS LISTENED. The sample mapping, the levels of heel and toe against the slap, the fader default (90), and whether a stand-in
+  slap passes for a slap are all guesses. Open: what the other styles' congas should be (bossa, calypso, reggae, reggaeton and the pop
+  styles have none for now), fills into a chorus (=fill(ctx)= in congas.js returns null), and tumbao in 6/8 (it falls back on =steady=).
+- Tests: =tests/band/congas/t_congas.js= ("CONGAS OK"), =congas.cdp.js= ("CONGAS UI OK").
+
+
+* Two conga lessons -- 2026-10-12
+- =lessons/congas-basics.qmd= (five strokes from the teacher's handout, the staff key, the tumbao in six steps) and =lessons/watermelon-congas.qmd=
+  (16-bar form, the break on bar 14, the tune, Cha-cha and Boogaloo, two drums). Both on =BluesLesson.init({ instrument: "congas" })=.
+- =blues-kit.js=: =CONGASTEPS= beside =DRUMSTEPS= (style, pattern, tempo, drums, stops, at); the drum step's code path is shared (=isPerc=).
+  New charts =vamp= (4 bars of F7) and =watermelon=; the Feel menu lists Cha-cha / Boogaloo / Son montuno on these pages; =.bl-congakey= and
+  =[data-conga-hit]= play strokes through =BandPlayer.hit=. =chorusNow= and the example line now use the chart's own length (was 12).
+- Engine: three learning patterns in =congas.js= (=opens=, =slapopen=, =heeltoe=), true subsets of the tumbao; catalog entries "(learning the tumbao, 1-3)".
+  =BluesTunes.watermelon= from X:821 of the tune collection (bar 14 is Bb7 throughout; the collection's F7 on its last beat is dropped).
+- Honest gaps: no published transcription of Mongo's conga part was found, and the lessons say so. Steps 1 to 4 take the drummer out
+  (=drums: "none"), so the congas are heard bare: a choice, not a fact. The chart does not draw a STOP label on bar 14 (the notation shows it).
+  Conga staff heads have no hover names (the letters under the notes name them).
+- NOBODY HAS LISTENED. The General MIDI stand-in sounds, the tempos (80 to learn, 100 to 126 with the band) and the slap are all unheard.
+- Test: =tests/band/lessons/congas.cdp.js= ("CONGA LESSONS OK").
+
+* Plan: rebuild the Drumset tool on the band's stack -- 2026-10-12 (a first draft is built: see "Drumset draft B" below)
+Compared with GrooveScribe (https://github.com/montulli/GrooveScribe, GPL v2; read, not run). Its editor is better than
+=tools/_drumset.qmd=; the band's drummer and sounds are better than its playback. So: its grid and URL format, our engine.
+What is wrong with the page now: one piece per row per step (no hi-hat with a crash, no snare with a tom); every hit at one
+level; setTimeout timing through =ABCJS.synth.playEvent=; presets of one bar, eighth resolution, one drum per eighth (two conga
+presets are the same string, the Fill menu is a placeholder); no triplet grid; swing only at eighths; one bar; no notation,
+no saving. It does not use BandSounds.
+** DONE Licence: re-implement GrooveScribe's format and ideas, copy none of its code or samples
+GPL v2, and this repo has no licence file: copied code would put the site under the GPL. No separate licence was seen for its
+drum samples (=soundfont/NewDrumSamples=), so the same for those. Everything below assumes this.
+** DONE Where the new page goes while it is built (=tools/drumset-b.qmd=; the old page is untouched)
+Suggested: a draft beside the old one (=tools/_drumset-b.qmd=, as the Backing Track drafts were), swapped in when it has been
+listened to. The old page's =localStorage= reads (=countingStyle=, =tuneMeter=, set by the tune page) must keep working.
+** DONE 1. A groove model and its text format (=apps/shared/band/groove.js=, pure, tested first)
+- A groove: meter, division (4 8 16 32; triplet 12 24 48 per 4/4 bar), tempo, swing, 1 to 10 bars, title, and lanes: cymbal /
+  hi-hat, snare, kick (with hat foot), toms 1-4, sticking, and our hand-percussion lane. A cell holds one articulation.
+- Text: GrooveScribe's query string, =?TimeSig=4/4&Div=16&Tempo=80&Measures=1&H=|x-x-|&S=|--O-|&K=|o---|= , read and written
+  so that its links import and ours open there. Work out the full letter table from its =urlSerialization.js= / =noteArrays.js=
+  behaviour before writing ours (seen so far: H x r, S O o g x, K o x X). Our additions (hand lane, counting style) go in
+  parameters it ignores.
+- =toEvents(groove)= -> the =[{ pos, piece, vel, straight? }]= bars drums.js already returns, so the player, notation and MIDI
+  take a written groove as they take a generated one. =fromEvents= for the other direction (see 7).
+- Tests: round trip of every groove in GrooveScribe's menu strings typed in by hand; triplet positions carry straight:true.
+** TODO 2. Articulations in the engine (written and levelled: done. Flam / drag / buzz still SOUND like one plain hit; no samples for tom3, cowbell, stacker, clicks)
+- Accent, normal and ghost are levels (GrooveScribe uses MIDI 120 / 85 / 50); =vel= already carries them.
+- Flam, drag and buzz have no samples: the kit is the soundfont, velocity only. First pass: stand-ins built in the player
+  (flam = a quiet grace hit about 30 ms early, drag = two, buzz = a short run of quiet hits), marked as stand-ins. New
+  recorded samples are a separate job, through =sounds.js= only.
+- Pieces the kit lacks that GrooveScribe's lanes have: cowbell, stacker, a fourth tom. Check =BandSounds.pieces= and the
+  soundfont's percussion notes before adding names.
+- notation.js writes none of these yet (no accent, ghost, flam, drag or buzz marks): add accent mark, parenthesised ghost,
+  grace notes, tremolo slashes to the drum staff, with =drumName= entries so the lesson tooltips name them.
+** TODO 3. The page: grid and staff together (draft built; not carried over yet: the big icon grid and its PNG export, custom labels, bongos, the ride menu and its synth, label / title / diagram size sliders)
+- Lanes down, steps across, several pieces at once; a click sets a cell, a second click or a small menu changes the
+  articulation; the staff (BandNotation's drum staff) redraws on every change and lights the sounding note (LessonScore).
+- Playback through BandSounds and a look-ahead scheduler on the audio clock (the player's, or the part of it that can be
+  shared: decide by reading =player.js=; do not write a second one if =BandPlayer.create= can play a fixed groove with the
+  other parts silent). Swing at eighths and sixteenths, tempo-aware as now (=BandPlayer.swingFor=), humanize as a switch.
+- Kept from the old page: counting labels (Standard / Eastman / Gordon, + or &, custom labels), the hand row, the big icon
+  grid and its PNG export for handouts, title and size controls, the ride menu if the sample ride cannot replace the synth one.
+- The address is the save file: every edit rewrites the query string; undo / redo is a stack of those strings.
+- Add and remove bars; copy a bar; per-lane mute.
+** TODO 4. Groove library, written at the resolution the groove needs (the band's own grooves are in the menu; the standard patterns and the fills are not)
+Replace the eighth-note token strings. Sources: the band's own GROOVES through =fromEvents= (so the tool and the band agree),
+and standard patterns checked against a published source each (two-bar bossa, samba, songo, Purdie shuffle, train beat, the
+foot ostinatos). The hand-percussion presets from =congas.js= PATTERNS. Fills: a few from FILLS / FILLS_ROCK as one-bar grooves.
+** TODO 5. Practice features (count-in and a click on quarters / eighths / sixteenths are in; the rest is not)
+Count-in; metronome on quarters / eighths / sixteenths; offset click (the click on the e, the and or the a, or rotating);
+tempo that steps up every n repeats (the player has tempo steps already); sticking lane with R / L / count and a reverse
+button. Later, and only if wanted: the kick and snare permutation sheets (a generator of grooves, not a page feature).
+** TODO 6. Out and in
+MIDI (midi.js, channel 10), SVG and PNG of the staff, print; a read-only embed for lesson pages (=<div data-groove="...">=,
+drawn and played by the lesson kit) so =lessons/blues-drums.qmd= can show a written groove without the band.
+** TODO 7. Both directions with the band (the drummer and the conga player take a written groove: =opts.written=; neither button exists yet)
+- "Hear it with the band": hand the groove to the Backing Track (=localStorage.bandHandoff=, as Chord Entry does) as a
+  custom drum groove: =opts.groove= would need to take a written groove as well as a GROOVES id.
+- From the Backing Track's drum menu: "Open this groove in the Drumset tool".
+** Order
+1, then 3 with levels only (accent / normal / ghost) so there is something to play, then 2, 4, 6, 5, 7. Tests in
+=tests/band/groove/= as each lands; the README there gets a line.
+** Was not known, now is
+- =BandPlayer= loops a written groove as it is: a chart of empty bars in the groove's meter (no chords: bass and comping play nothing)
+  and =opts.written=. No second scheduler. A change made while it plays is heard from the next bar not yet handed to the bank.
+- GrooveScribe's letter table is complete in the head of =groove.js=. It has ONE division for the whole groove (no change between bars).
+  Its Tempo counts quarter notes in every meter. A lane its address leaves out is not empty there (H every cell, S the backbeat, K the others).
+- abcjs draws accents, grace notes (flam, drag), =!///!= (buzz), =!open!= / =!plus!= and ="<("">)"= for a ghost note (no space between the
+  two, or the beam breaks). In a chord the parentheses go round the whole chord, not the snare head alone. It THROWS when a triplet holds an
+  unseen rest (=x=), and only when drawing, not when reading: rests inside a triplet are written =z=.
+- The band's own drum staff (=notation.js=) cannot write sixteenths: it snaps to eighths and triplets, so a ghost on the "a" came out as a
+  triplet. Written grooves have their own writer (=BandGroove.toAbc=), with every piece where =BandNotation.drumWritten= puts it.
+
+* Drumset draft B: a written groove, its text, its staff, and the drummer playing it -- 2026-10-12
+- =apps/shared/band/groove.js= (BandGroove): parse / stringify (GrooveScribe's query string, plus =Cg= and =Tb= for the hand drums),
+  create / set / resize, toEvents / congaEvents / fromEvents, toAbc, divsFor, bpm. The band's three toms are T1, T2 and T4 (staff places
+  as GrooveScribe's); T3 is a fourth drum with no sample (piece =tom3=).
+- =drums.js=: =opts.written= (a groove or its text) makes the drummer play exactly that: no fills, no stop time, no ending hit, no random
+  numbers drawn. =opts.writtenSwing=, =opts.writtenPieces=, =opts.writtenClick= (4 / 8 / 16: sticks). =congas.js=: the same for the hand lanes.
+- =apps/shared/band/groove-editor.js= (GrooveEditor) and =tools/drumset-b.qmd= / =_drumset-b.qmd=: the grid (click, drag, right-click or
+  long press for a row's marks, letter keys), the staff with the sounding note lit, the address as the save file, undo / redo, meter, grid,
+  bars, tempo, swing, click, count-in, human feel, counting words (=localStorage.countingStyle=), row mute (shift-click a row's name),
+  toms / sticking / congas rows, the band's grooves as a menu (=fromEvents= of four bars of each), Copy link, Open in GrooveScribe.
+  Not in the navigation; =tools/_drumset.qmd= is as it was.
+- Tests: =tests/band/groove/t_groove.js= (six OK lines) and =editor.cdp.js= ("DRUMSET EDITOR OK"); =print.js= and =abc.js= there print
+  the band's grooves as text and a groove's ABC, for reading.
+** VERIFY BY EAR: everything. The levels of every letter (=CELLS= in groove.js: accent 0.85, snare 0.62, ghost 0.24, hi-hat 0.42 / 0.64 ...)
+   are guesses; so is the click's level. The player eases the first bar in by about 3%.
+** VERIFY BY EYE: ghost parentheses round a chord; beaming in 5/8 and 7/8 (cells are beamed in quarters, so 7/8 reads 2+2+2+1);
+   thirty-second grids on a phone (the cells are about 8 px); the staff is not the same width as the grid under it.
+** TODO The old page's =localStorage.tuneMeter= (the tune page's meter) is not read by the draft.
+** TODO =_site= has not been rendered with the draft; =tools/_backing-track.qmd= and the lesson kit still name =drums.js?v=12= and
+   =congas.js?v=2= (the additions are only used when =opts.written= is set, so nothing there changes).
+
+* Hi-hat grooves lesson -- 2026-10-12
+Added =lessons/hihat-grooves.qmd= ("Hi-Hat Grooves: From Quarter Notes to Sixteenths"), eleven sections (0 to 10, 0 is the three sounds with buttons and a key).
+- drums.js: ten opt-in grooves =hhquarters hheighths hhaccents hhoffbeats hhopen hhdance hhsix hhsix2 hhfoot4 hhswing=, hi-hat pieces written out (flag =hat:true= keeps the foot when the Cymbal menu says hi-hat). Sixteenth grooves (=sixteenths:true=) mark x.25 / x.75 events =straight= and =six=. No existing groove's events changed (t_drumstaff checks no other event carries =six=).
+- notation.js: =six= events are written as real sixteenths (beat of four /2 notes, rests joined); =toAbc(..., { accents: true })= (or =show.accents=) draws > over hi-hat notes in the top 40% of a loudness spread of at least 0.12 in the bar. Off by default. Other off-beat sixteenths (dembow, rock fills) are still written as triplets, as before.
+- catalog.js: ten "Hi-hat: ..." entries, FITS for rock pop strum dance boogaloo (swing for the swing hi-hat). blues-kit.js: DRUMSTEPS rows with =tempo chart at accents six=, =feels: "hihat"= (Feel menu rock / strum / swing), =data-drum-hit= buttons, =.bl-hatkey=.
+- Tests: t_choke.js (sound bank damping, fake AudioContext), t_drumstaff.js "HI-HAT GROOVES OK", hihat.cdp.js.
+** NOBODY HAS LISTENED: the open-hat choke on 1 of the next bar in hhopen; hhdance without the clap; the swing hi-hat (open on 1 and 3, closed 2 and 4 with the foot) and its swing ratio; the sixteenth tempos (66); the accent step's loudness gap (0.62 / 0.30); the 3/4 bars of every hh groove.
+** VERIFY BY EYE: accents sit under the note heads between hat and staff in the screenshot (abcjs' placement), close to the snare on 2 and 4; the open circle touches the beam end on the and of 4.
+
+* Damping and grabbed cymbals -- 2026-10-12
+- sounds.js: a piece's =chokes= may carry =damp= (time constant, seconds). Congas: every stroke of a drum stops what was ringing on that
+  drum (group "conga" / "tumba"); an open tone struck again takes over (damp 0.03). Kit: kick, snare and each tom let go of their last
+  note when struck again (0.02 / 0.03 / 0.04); a cross-stick stops the snare. Cymbals ring on. =bank.choke(group, when, damp)=.
+- drums.js: ="^choke"= on a bar of the chart (tune-chart.js -> form bar =choke=) = crash and kick on beat 1, ={ choke:"cymbals", damp:0.05 }=
+  at 0.7 of a beat. =opts.endChoke= grabs the last hit (Backing Track: "Short ending"). No rng drawn. Test: fills/t_grab.js.
+** NOBODY HAS LISTENED: every damp time above, where the hand lands (0.7 of a beat; 0.6 on the ending), whether the re-struck snare and kick sound better or thinner.
+** TODO The grab is not written in the notation (a staccato dot or "choke" over the crash) and has no lesson step yet.
+
+* Chord Entry: melody from a keyboard -- 2026-10-13
+- Chord Entry's "Melody, played along with the band" mode: the band plays the entered chords (count-in, then the form once) while single notes are
+  played; =ChordEntry.line= collects them (the top of a chord, a new note ends the last), =ChordEntry.quantizeLine= writes them on the eighth
+  (or sixteenth) grid. A swung line is un-swung with the same =unswing= as chord timing, so swung eighths are written as plain eighths and the
+  band swings them back. A note lasts to the next one unless the gap is three quarters of an eighth or more (then a rest); ties over barlines and chords.
+- The grid keeps the line in =grid.melody()= (per bar, in units); =toAbc= writes notes with the chords above them (spelled from the key; a note
+  between two spellings takes the flat). The ABC then carries the melody everywhere the changes go (Copy, .abc, .cho, hand-off); the Backing
+  Track still ignores the notes. "Hear it" plays the melody on the comping piano (=bar.melody=); the notation is abcjs.
+** TODO Triplets, grace notes and pickup notes before bar 1 are not written; a note struck more than half a beat before bar 1 is dropped.
+** TODO The Backing Track page does not play or show the melody it is handed.
+** VERIFY BY EAR: the Nudge (ms) default of 0 against the real latency of a MIDI keyboard; the legato rule on short detached notes.
+

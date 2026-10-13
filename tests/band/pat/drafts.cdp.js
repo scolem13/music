@@ -1,4 +1,4 @@
-// The two draft layouts of the Backing Track (tools/backing-track-a.qmd, -b.qmd): each is the current page's markup and script with
+// The two draft layouts of the Backing Track (A is now the page itself, tools/backing-track.qmd; B is tools/backing-track-b.qmd; the earlier layout is tools/backing-track-classic.qmd): each is the current page's markup and script with
 // its controls moved. Checks that every control of the current page is still there once, that the faders stand upright, that mute
 // and solo reach the player without moving a fader, that the EQ columns write what the page's own EQ reads, and that it plays.
 // Needs the test server (see ../README.md) and the three pages rendered into lead/site. Prints "DRAFTS OK".
@@ -7,7 +7,7 @@ const URL = "http://127.0.0.1:8500/tools/", IDS = `Array.prototype.map.call(docu
 (async () => {
   const b = await launch({ width: 1440, height: 1000 });
   try {
-    await b.goto(URL + "backing-track.html");
+    await b.goto(URL + "backing-track-classic.html");
     const ids = await b.eval(IDS);
     const own = await b.eval(`(function(){ var v = document.getElementById("bt-voice-bass"); v.value = "electric"; v.dispatchEvent(new Event("change", { bubbles: true })); var r = v.getBoundingClientRect(), l = v.previousElementSibling.getBoundingClientRect();
       return [document.getElementById("bt-bass-sound").value, [].some.call(document.getElementById("bt-eq-inst").options, function(o){ return o.value === "ebass"; }), Math.abs(r.width - l.width) < 2 && r.height > 8]; })()`);
@@ -15,7 +15,7 @@ const URL = "http://127.0.0.1:8500/tools/", IDS = `Array.prototype.map.call(docu
     const remembered = await b.eval(`new Promise(function(r){ setTimeout(function(){ r(window.localStorage.getItem("btSections")); }, 300); })`);
     for (const x of ["a", "b"]) {
       await b.resize(1440, 1000);
-      await b.goto(URL + "backing-track-" + x + ".html");
+      await b.goto(URL + (x === "a" ? "backing-track.html" : "backing-track-b.html"));
       const got = await b.eval(IDS);
       assert.deepStrictEqual(got, ids, "draft " + x + ": the same controls as the current page");
       const r = await b.eval(`(async function(){
@@ -86,13 +86,43 @@ const URL = "http://127.0.0.1:8500/tools/", IDS = `Array.prototype.map.call(docu
       const over = await b.eval(`document.documentElement.scrollWidth - window.innerWidth`); assert.ok(over <= 0, "draft " + x + ": no sideways scroll on a phone: " + over);
       await b.shot(path.join(__dirname, "draft-" + x + "-phone.png"));
     }
+    // ---- containment: every visible slider lies inside its strip / card / panel, clear of its neighbours (and of the window unless its strip scrolls),
+    // on all three pages, in each state that changes what is shown, at every width. (A firefox-only look was also checked by hand with Marionette.)
+    const MEASURE = (W) => `(function(){ var out = [], W = ${W};
+      function vis(e){ var r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && !e.closest("[hidden]"); }
+      var rs = [].filter.call(document.querySelectorAll("#bt-root input[type=range]"), function(r){ return vis(r) && !r.closest("details:not([open])"); });
+      var SEL = ".dx-strip,.dx-eqband,.bt-sub,.bt-eq-band,.bt-field,.bt-tonebars>*,label";
+      rs.forEach(function(r){ var b = r.getBoundingClientRect(), name = r.id || r.getAttribute("aria-label") || "?", c = r.closest(SEL);
+        if (c){ var cb = c.getBoundingClientRect(); if (b.left < cb.left - .6 || b.right > cb.right + .6 || b.top < cb.top - .6 || b.bottom > cb.bottom + .6) out.push(name + " outside " + (c.id || c.className)); }
+        var sc = r.closest(".dx-strips,.dx-eq"); if (!sc && (b.right > W + 1 || b.left < -1)) out.push(name + " beyond the window " + Math.round(b.right));
+        if (c) [].forEach.call(c.querySelectorAll("output,button,select,input,small"), function(o){ if (o === r || !vis(o)) return; var q = o.getBoundingClientRect();
+          if (Math.min(b.right, q.right) - Math.max(b.left, q.left) > 1 && Math.min(b.bottom, q.bottom) - Math.max(b.top, q.top) > 1) out.push(name + " overlaps " + o.tagName + "." + (o.id || o.className)); });
+        rs.forEach(function(o){ if (o === r || (o.id || "~") + o.className < (r.id || "~") + r.className) return; var q = o.getBoundingClientRect();
+          if (Math.min(b.right, q.right) - Math.max(b.left, q.left) > 1 && Math.min(b.bottom, q.bottom) - Math.max(b.top, q.top) > 1) out.push(name + " overlaps slider " + (o.id || o.className)); }); });
+      return { n: rs.length, issues: out }; })()`;
+    const STATES = [["piano", "", "upright"], ["hammond", "guitar", "electric"], ["guitar", "wurli", "upright"], ["odguitar", "", "upright"]];
+    for (const [page, tabs] of [["backing-track.html", ["mix", "band"]], ["backing-track-b.html", [null]], ["backing-track-classic.html", [null]]]) {
+      for (const width of [1600, 1200, 1000, 800, 600, 390]) {
+        await b.resize(width, 900);
+        for (const tab of tabs) {
+          await b.goto(URL + page); if (tab) { await b.eval(`localStorage.setItem("btDraftATab", "${tab}")`); await b.goto(URL + page); } await b.sleep(500);
+          for (const [comp, second, bass] of (tab === "band" ? [STATES[1]] : STATES)) {
+            const m = await b.eval(`(function(){ function set(id, v){ var e = document.getElementById(id); e.value = v; e.dispatchEvent(new Event("change", { bubbles: true })); }
+              [].forEach.call(document.querySelectorAll("#bt-root details"), function(d){ d.open = true; });
+              set("bt-comp", ${JSON.stringify(comp)}); set("bt-second", ${JSON.stringify(second)}); set("bt-bass-sound", ${JSON.stringify(bass)});
+              return new Promise(function(r){ setTimeout(function(){ r(${MEASURE(width)}); }, 250); }); })()`);
+            assert.ok(m.n > 0 && m.issues.length === 0, `sliders on ${page} ${tab || ""} at ${width} (${comp}/${second || "-"}/${bass}): ${m.issues.join("; ")}`);
+          }
+        }
+      }
+    }
     // ---- the bar at the foot of the window (PlayBar): draft A and a lesson page. One row, the same height at every width; what does not
     // fit leaves by importance (Changes first, Play and Stop never) and is reached through Options.
     const bar = (id) => b.eval(`(function(){ var bar = document.getElementById("${id}"), r = bar.getBoundingClientRect(), pop = bar.nextElementSibling, more = bar.querySelector(".playbar-more");
       function ids(box){ return Array.prototype.map.call(box.querySelectorAll("[id]"), function(e){ return e.id; }); }
       return { h: Math.round(r.height), foot: Math.round(window.innerHeight - r.bottom), inBar: ids(bar), inPop: ids(pop), more: !more.hidden, popOpen: !pop.hidden, fits: Array.prototype.every.call(bar.children, function(c){ var q = c.getBoundingClientRect(); return q.width === 0 || (q.left >= -1 && q.right <= window.innerWidth + 1); }) }; })()`);
     const heights = [];
-    for (const [url, id, keep, first] of [["backing-track-a.html", "dxa-bar", "bt-play", "bt-changes"], ["../lessons/blues-melody.html", "bl-bar", "bl-stop", "bl-dots"]]) {
+    for (const [url, id, keep, first] of [["backing-track.html", "dxa-bar", "bt-play", "bt-changes"], ["../lessons/blues-melody.html", "bl-bar", "bl-stop", "bl-dots"]]) {
       await b.resize(1700, 900); await b.goto(URL + url); await b.sleep(900);
       let w = await bar(id); heights.push(w.h); assert.ok(w.foot === 0 && w.fits && !w.more && w.inPop.length === 0, url + " wide: everything in the bar " + JSON.stringify(w));
       for (const width of [1000, 700, 390]) { await b.resize(width, 800); await b.sleep(400); const n = await bar(id); heights.push(n.h);

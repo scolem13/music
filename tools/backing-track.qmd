@@ -3,5 +3,10 @@ title: "Backing Track"
 ---
 
 ::: {.column-screen}
+```{=html}
+<script src="/apps/shared/playbar.js?v=1"></script>
+```
+{{< include _bt-draft-common.qmd >}}
 {{< include _backing-track.qmd >}}
+{{< include _bt-draft-a.qmd >}}
 :::

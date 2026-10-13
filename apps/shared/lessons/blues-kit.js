@@ -2,10 +2,22 @@
 // numbered step on the page is a <div class="bl-step"> that this file fills with fingering charts
 // (LessonDiagrams), a chord chart (TuneChart) and a play button for the Backing Track band (BandPlayer).
 //
-//   BluesLesson.init({ instrument: "bass" | "guitar" | "piano" | "drums" | "melody", key: <pitch class, default 5 = F> })
+//   BluesLesson.init({ instrument: "bass" | "guitar" | "piano" | "drums" | "congas" | "melody", key: <pitch class, default 5 = F> })
 //
 // Drums (data-part = a name from DRUMSTEPS): no diagrams. A step shows two bars of its beat and the whole chorus on a drum
 // staff (BandNotation), and the band's drummer plays that groove in that step's style.
+// Congas (data-part = a name from CONGASTEPS): the drum step's path with the conga player instead of the drummer. A step is declared
+//   CONGASTEPS.name = { style, pattern, tempo, drums?, stops?, at? }: the band style it is played in (chacha | boogaloo | montuno, the Feel menu),
+//   the conga pattern (a PATTERNS id of congas.js), its tempo, "none" in `drums` takes the drummer out (so the congas are heard bare),
+//   `stops` = bar numbers (1 counts the first) that are stop time, `at` = the first of the two bars written large. data-chart takes
+//   "vamp" (four bars of F7) or "watermelon" (the 16-bar form) as well as the 12-bar charts. The staff is the "Cga." staff of BandNotation.
+// A drum step may also say (the hi-hat lesson, BluesLesson.init({ instrument: "drums", feels: "hihat" })):
+//   DRUMSTEPS.name = { style, groove, tempo?, chart?, at?, accents?, six?, fillBars? }: `style` is a Feel-menu id (rock | strum | swing there), `groove` a
+//   GROOVES id of drums.js, `tempo` where the step starts (the first time), `chart` "vamp" (four bars of F7) or a 12-bar chart (data-chart wins), `at` the
+//   first of the two bars written large (default 2), `accents: true` draws a > over the louder hi-hat notes (BandNotation accents), `six: true` is a
+//   step of sixteenths (wider staves, two bars to a line). These go through the same path as the conga steps: nothing changes for a step that leaves them out.
+//   <button data-drum-hit="hatOpen">  plays a piece of the kit ("hatOpen,hatFoot" plays them one after the other);  <div class="bl-hatkey"></div> the three hi-hat sounds engraved.
+//   <div class="bl-congakey"></div>   the five strokes engraved, each head a button;  <button data-conga-hit="congaSlap">  plays one stroke.
 // Melody instruments (data-part = a name from LINES; violin, saxophones, anything that plays one note at a time): a step is a
 // twelve-bar line, written out with the name of each note's place in its chord underneath, which the band plays on the
 // piano (bar.melody). The Instrument menu transposes: everything on the page is then in the player's WRITTEN key (chart,
@@ -44,16 +56,23 @@
     basic: 'F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|F7',
     quick: 'F7|Bb7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7',
     jazz:  'F7|Bb7|F7|F7|Bb7|Bb7|F7|D7|Gm7|C7|F7 D7|Gm7 C7',
-    closet: 'F7|F7|F7|F7|Bb7|Bb7|F7|F7|Gm7|C7|F7|C7'           // Blues in the Closet (BluesTunes.closet.chart)
+    closet: 'F7|F7|F7|F7|Bb7|Bb7|F7|F7|Gm7|C7|F7|C7',          // Blues in the Closet (BluesTunes.closet.chart)
+    watermelon: 'F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|C7|Bb7|C7|Bb7|F7|F7',     // Watermelon Man: a 16-bar blues (BluesTunes.watermelon.chart)
+    vamp: 'F7|F7|F7|F7'                                         // four bars on one chord, for learning a figure (congas)
   };
   var FEELS = [{ id: 'swing', label: 'Medium swing', tempo: 108 }, { id: 'doowop', label: 'Slow blues in 12/8', tempo: 60 }, { id: 'boogaloo', label: 'Straight-eighth boogaloo', tempo: 108 }];
   var FLAT = ['C', 'D♭', 'D', 'E♭', 'E', 'F', 'G♭', 'G', 'A♭', 'A', 'B♭', 'B'], SHARPN = ['C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯', 'A', 'A♯', 'B'], SHARP = { 2: 1, 4: 1, 7: 1, 9: 1, 11: 1 };
   var EXT = { 1: '♭9', 2: '9', 3: '♯9', 5: '11', 6: '♯11', 8: '♭13', 9: '13' };
+  // the Feel menu of the conga lessons: the styles that play congas by default
+  var CFEELS = [{ id: 'chacha', label: 'Cha-cha', tempo: 104 }, { id: 'boogaloo', label: 'Boogaloo (straight eighths)', tempo: 126 }, { id: 'montuno', label: 'Son montuno', tempo: 108 }];
+  // the Feel menu of the hi-hat lesson: the two straight styles its steps are played in, and swing
+  var HFEELS = [{ id: 'rock', label: 'Straight-eighth rock', tempo: 96 }, { id: 'strum', label: 'Acoustic strum', tempo: 96 }, { id: 'swing', label: 'Medium swing', tempo: 108 }];
   var INST = {
     bass:   { name: 'bass', sound: 'bass', tuning: [28, 33, 38, 43], strings: ['E', 'A', 'D', 'G'] },
     guitar: { name: 'guitar', sound: 'guitar', tuning: [40, 45, 50, 55, 59, 64], strings: ['E', 'A', 'D', 'G', 'B', 'E'] },
     piano:  { name: 'piano', sound: 'piano' },
     drums:  { name: 'drums' },
+    congas: { name: 'congas' },
     melody: { name: 'melody', sound: 'piano' }
   };
   // The Instrument menu of the melody and improvising pages. written pitch = sounding pitch + t semitones; clef "bass" = read in
@@ -74,26 +93,62 @@
     fills:    { style: 'swing', groove: 'auto', fillBars: { 3: 'small', 7: 'small', 11: 'large' } },
     shuffle:  { style: 'swing', groove: 'shuffle', fillBars: { 11: 'medium' } },
     slow:     { style: 'doowop', groove: 'twelve8', fillBars: { 11: 'medium' } },
-    straight: { style: 'boogaloo', groove: 'auto', fillBars: { 11: 'medium' } }
+    straight: { style: 'boogaloo', groove: 'auto', fillBars: { 11: 'medium' } },
+    // the hi-hat lesson (lessons/hihat-grooves.qmd): the straight steps on four bars of F7 in the rock or strum style, the swing ones on the 12-bar blues
+    hhquarters: { style: 'rock',  groove: 'hhquarters', tempo: 80,  chart: 'vamp', at: 0 },
+    hheighths:  { style: 'rock',  groove: 'hheighths',  tempo: 90,  chart: 'vamp', at: 0 },
+    hhaccents:  { style: 'strum', groove: 'hhaccents',  tempo: 90,  chart: 'vamp', at: 0, accents: true },
+    hhoffbeats: { style: 'strum', groove: 'hhoffbeats', tempo: 96,  chart: 'vamp', at: 0 },
+    hhopen:     { style: 'rock',  groove: 'hhopen',     tempo: 90,  chart: 'vamp', at: 0 },
+    hhdance:    { style: 'rock',  groove: 'hhdance',    tempo: 112, chart: 'vamp', at: 0 },
+    hhsix:      { style: 'rock',  groove: 'hhsix',      tempo: 66,  chart: 'vamp', at: 0, six: true },
+    hhsix2:     { style: 'rock',  groove: 'hhsix2',     tempo: 66,  chart: 'vamp', at: 0, six: true },
+    hhfoot2:    { style: 'swing', groove: 'ridetime',   tempo: 100, chart: 'basic', at: 0 },
+    hhfoot4:    { style: 'rock',  groove: 'hhfoot4',    tempo: 90,  chart: 'vamp', at: 0 },
+    hhswing:    { style: 'swing', groove: 'hhswing',    tempo: 100, chart: 'basic', at: 0 }
+  };
+  // conga steps: see the header. (The tumbao is built up: the two open tones, the right hand, the left hand, both, then with a band.)
+  var CONGASTEPS = {
+    opens:    { style: 'chacha',   pattern: 'opens',    tempo: 80,  drums: 'none', chart: 'vamp' },
+    righthand: { style: 'chacha',  pattern: 'slapopen', tempo: 80,  drums: 'none', chart: 'vamp' },
+    lefthand: { style: 'chacha',   pattern: 'heeltoe',  tempo: 80,  drums: 'none', chart: 'vamp' },
+    tumbao:   { style: 'chacha',   pattern: 'tumbao',   tempo: 80,  drums: 'none', chart: 'vamp' },
+    chacha:   { style: 'chacha',   pattern: 'tumbao',   tempo: 104, chart: 'vamp' },
+    twodrums: { style: 'montuno',  pattern: 'tumbao2',  tempo: 100, chart: 'vamp' },
+    // Watermelon Man (the 16-bar form)
+    wopens:   { style: 'chacha',   pattern: 'opens',    tempo: 100, drums: 'none', chart: 'watermelon' },
+    wright:   { style: 'chacha',   pattern: 'slapopen', tempo: 100, drums: 'none', chart: 'watermelon' },
+    wtumbao:  { style: 'chacha',   pattern: 'tumbao',   tempo: 100, drums: 'none', chart: 'watermelon' },
+    wbreak:   { style: 'chacha',   pattern: 'tumbao',   tempo: 100, chart: 'watermelon', stops: [14], at: 12 },
+    wtune:    { style: 'chacha',   pattern: 'tumbao',   tempo: 104, chart: 'watermelon' },
+    wmongo:   { style: 'chacha',   pattern: 'tumbao',   tempo: 108, chart: 'watermelon', stops: [14], at: 12 },
+    wherbie:  { style: 'boogaloo', pattern: 'tumbao',   tempo: 126, chart: 'watermelon', stops: [14], at: 12 },
+    wtwo:     { style: 'montuno',  pattern: 'tumbao2',  tempo: 104, chart: 'watermelon', at: 0 }
   };
   function mod12(n) { return ((n % 12) + 12) % 12; }
   function $(id) { return document.getElementById(id); }
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
   function split(s) { return s.split('|'); }
+  function narrow() { return (global.innerWidth || 1000) < 600; }
+  function perLine() { return narrow() ? 2 : 4; }                 // bars of notation to a line: four shrink too far on a phone
 
   function init(cfg) {
     var cat = global.BandCatalog, H = global.BandHarmony, V = global.ChordVoicings, D = global.LessonDiagrams;
     if (!cat || !H || !V || !D || !global.BandPlayer || !global.TuneChart) return;
     var me = INST[cfg.instrument] || INST.piano, fretted = !!me.tuning;
-    var state = { key: cfg.key == null ? 5 : cfg.key, feel: 'swing', tempo: 108, dots: 'tone', loop: false };
-    var isDrums = cfg.instrument === 'drums', isMelody = cfg.instrument === 'melody';
+    var isDrums = cfg.instrument === 'drums', isMelody = cfg.instrument === 'melody', isCongas = cfg.instrument === 'congas', isPerc = isDrums || isCongas;
+    var hihat = isDrums && cfg.feels === 'hihat';
+    var feels = isCongas ? CFEELS : hihat ? HFEELS : FEELS;
+    var state = { key: cfg.key == null ? 5 : cfg.key, feel: isCongas ? 'chacha' : hihat ? 'rock' : 'swing', tempo: isCongas ? 104 : hihat ? 96 : 108, dots: 'tone', loop: false };
     // cfg.horns = the ids the page's Instrument menu offers, in order (the first is where it starts)
     var horns = (cfg.horns || ['c', 'alto', 'tenor', 'bb', 'bari']).map(function (id) { return HORNS.filter(function (h) { return h.id === id; })[0]; }).filter(Boolean), horn = horns[0] || HORNS[0];
     if (isMelody) { try { var saved = global.localStorage.getItem('blHorn'); horns.forEach(function (h) { if (h.id === saved) horn = h; }); } catch (e) {} }
     function written() { return horn.note || (horn.t ? 'Written for ' + horn.label.toLowerCase().replace(/e♭/, 'E♭').replace(/b♭/, 'B♭') + ': it sounds ' + horn.says + ', in concert ' + FLAT[state.key] + '. ' : ''); }
     // a bass reads bass clef: how many semitones (whole octaves) a line is moved down to sit on that staff, by its lowest note
-    function regShift(midis) { if (horn.clef !== 'bass' || !midis.length) return 0; return Math.min.apply(null, midis) - 24 >= 40 ? -24 : -12; }
-    function clefAbc() { return horn.clef ? ' clef=' + horn.clef : ''; }
+    function regShift(midis, h) { if ((h || horn).clef !== 'bass' || !midis.length) return 0; return Math.min.apply(null, midis) - 24 >= 40 ? -24 : -12; }
+    function clefAbc(h) { h = h || horn; return h.clef ? ' clef=' + h.clef : ''; }
+    // what the scale panels are written for: the Instrument menu on melody pages, the page's own instrument on bass, guitar and piano
+    function viewHorn() { return isMelody ? horn : (HORNS.filter(function (h) { return h.id === cfg.instrument; })[0] || horn); }
 
     // The band plays in the concert key (state.key). What the page SHOWS is in the key the player reads: the same, except for a
     // transposing instrument.
@@ -233,11 +288,11 @@
     function abcStop() { if (global.LessonScore) global.LessonScore.stop(); }
     // abcjs plays a score by itself. Written notation sounds at the instrument's pitch: horn.t lower.
     // (and a line moved down onto the bass staff is played where it was; swung unless the feel is straight eighths)
-    function abcPlay(btn, score) { if (global.LessonScore) global.LessonScore.play(btn, score, { transpose: -horn.t - ((score && score.shift) || 0), swing: state.feel === 'boogaloo' ? 0 : 66, onStart: stop }); }
+    function abcPlay(btn, score) { if (global.LessonScore) global.LessonScore.play(btn, score, { transpose: -((score && score.t != null) ? score.t : horn.t) - ((score && score.shift) || 0), swing: state.feel === 'boogaloo' ? 0 : 66, onStart: stop }); }
 
     // ---- where flat 7 comes from: the home chord's own major scale, and the scale it is the V chord of ----
     function scaleBlock(host) {
-      var b = { host: host };
+      var b = { host: host }; host.__bl = b;
       b.draw = function () {
         abcStop(); host.textContent = '';
         var r = dkey(), base = 60 + r, R = pcName(r), PL = (letterOf(r) + 3) % 7;                             // the parent key is a fourth up: three letters on
@@ -255,26 +310,34 @@
           row.appendChild(btn); row.appendChild(paper); host.appendChild(row);
           var visual = engrave(paper, abc, width); btn.addEventListener('click', function () { abcPlay(btn, visual); });
         }
+        var hh = viewHorn(); b.charts = [];
+        function chart(key, lead) {                                                         // the scale on the player's instrument, where it has a chart
+          if (!hh.chart) return; var box = el('div', 'bl-boards'); host.appendChild(el('p', null, lead)); host.appendChild(box);
+          b.charts.push(chartFor(box, hh, SCALES[key], r, R + ' ' + SCALES[key].name, base));
+        }
         add('Chord tones are numbered from the <strong>major scale that starts on the chord\u2019s own root</strong>. Here is the ' + R + ' major scale with its notes numbered 1 to 8. Take notes 1, 3, 5 and 7 and you have a seventh chord, ' + R + 'maj7. Its 7th is ' + name(seven.sp) + '.',
           head + '"^' + R + ' major scale"' + scale.join(' ') + ' | "^1, 3, 5, 7"' + maj7.map(function (n) { return T(n); }).join(' ') + ' | "^' + R + 'maj7"[' + maj7.map(function (n) { return T(n); }).join('') + ']4 |]\nw: 1 2 3 4 5 6 7 8 1 3 5 7', 560);
+        chart('major', 'The ' + R + ' major scale on your instrument:');
         add('But ' + R + '7 is not built from the ' + R + ' major scale. It comes from the <strong>' + parent + ' major scale</strong>, where ' + R + ' is note 5. Start on ' + R + ' and take every other note of the ' + parent + ' scale: ' + [own(0), third, fifth, flat].map(function (n) { return name(n.sp); }).join(', ')
           + '. This is the chord a major key builds on its fifth note. It is called the <strong>dominant seventh</strong>, written V7, and it is the chord that pulls home to ' + parent + '.',
           head + '"^' + parent + ' major scale"' + pScale.join(' ') + ' | "^from note 5"' + dom.map(function (n) { return T(n); }).join(' ') + ' | "^' + R + '7"[' + dom.map(function (n) { return T(n); }).join('') + ']4 |]\nw: 1 2 3 4 5 6 7 8 5 7 2 4', 560);
         add('Now compare the two chords. Three notes are the same. The top note of ' + R + '7 is ' + name(flat.sp) + ', a half step lower than the ' + name(seven.sp) + ' of the ' + R + ' major scale. Measured against the scale of its own root, the chord has a lowered 7th, and that is all <strong>\u266d7</strong> means: a half step below the major scale\u2019s 7th.'
           + (natural ? ' The \u266d does not mean the note is a flat: here the \u266d7 is ' + name(flat.sp) + ' natural.' : ''),
           head + '"^' + R + 'maj7""_1 3 5 7"[' + maj7.map(function (n) { return T(n); }).join('') + ']4 | "^' + R + '7""_1 3 5 \u266d7"[' + dom.map(function (n) { return T(n, n === flat); }).join('') + ']4 |]', 260);
+        chart('mixolydian', 'Play the ' + R + ' major scale with its 7th lowered a half step and you have the scale that goes with ' + R + '7 (called Mixolydian):');
         var last = el('p'); last.innerHTML = 'In a major key only the chord on note 5 comes out this way. The blues takes that sound and puts it on every chord: I7, IV7 and V7 are all dominant sevenths, each with a major 3rd and a \u266d7 counted from its own root.'; host.appendChild(last);
       };
       b.draw(); return b;
     }
-    var scales = Array.prototype.map.call(document.querySelectorAll('.bl-scale'), function (h) { h.classList.add('bl-widget'); return scaleBlock(h); });
+    var scales = [];                                                   // (the panels are made once the charts' tables below exist)
 
     // the band's bass line as notation (bass lessons): `recs` = twelve bar records, from the player or written silently
     function keyAbc() { return ascii(pcName(dkey())); }
-    function lineAbc(recs) { return global.BandNotation.toAbc(recs, { key: keyAbc(), show: { comp: false, bass: !isDrums, drums: isDrums }, barsPerLine: 4 }); }
+    function showOf() { return isCongas ? { comp: false, bass: false, drums: false, congas: true } : { comp: false, bass: !isDrums, drums: isDrums }; }
+    function lineAbc(recs, d) { return global.BandNotation.toAbc(recs, { key: keyAbc(), show: showOf(), barsPerLine: d && d.six ? 2 : perLine(), accents: !!(d && d.accents) }); }
     function exampleLine(w) {
       var seed = 1234, rng = function () { seed = (seed + 0x6D2B79F5) | 0; var t = Math.imul(seed ^ (seed >>> 15), 1 | seed); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; };
-      return global.BandMidi.generate(global.TuneChart.parse(abcOf(w.bars)), { bars: 12, tempo: state.tempo, transpose: semis(), opts: band(w).opts, rng: rng });
+      return global.BandMidi.generate(w.parsed ? w.parsed() : global.TuneChart.parse(abcOf(w.bars)), { bars: w.bars.length, tempo: state.tempo, transpose: semis(), opts: band(w).opts, rng: rng });
     }
 
     // ---- one band for the page ----
@@ -303,8 +366,8 @@
       bt.addEventListener('click', function () { global.BluesTunes.backingTrack(t, { tempo: state.tempo, style: state.feel }); });
       if (!isMelody) { var nt = check('Leave out the tune'); w.noTune = nt.box; tools.appendChild(nt.lab); nt.box.addEventListener('change', function () { if (player && now && now.w === w) player.setOpts(band(w).opts); }); }
       w.tuneDraw = function () {
-        var abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody }), bars = global.BluesTunes.melody(abc, t.pickup), sh = regShift([].concat.apply([], bars).map(function (n) { return n.midi; }));
-        if (sh || horn.clef) abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody, octaves: sh / 12, clef: horn.clef });
+        var abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody, barsPerLine: perLine() }), bars = global.BluesTunes.melody(abc, t.pickup), sh = regShift([].concat.apply([], bars).map(function (n) { return n.midi; }));
+        if (sh || horn.clef) abc = global.BluesTunes.inKey(t, keyAbc(), { words: isMelody, octaves: sh / 12, clef: horn.clef, barsPerLine: perLine() });
         hold.s = engrave(staff, abc, 680, true); if (hold.s) hold.s.shift = sh; w.tuneBars = bars;          // (the band is given the notes as they were before the move)
       };
       w.tuneDraw(); tools.appendChild(bt);
@@ -316,13 +379,18 @@
       var opts = Object.assign({}, so.opts, { variation: 0.4, pins: null, melody: false, fills: undefined, fillBars: null });
       if (cfg.instrument === 'bass') opts.bassFeel = w.bass || opts.bassFeel;
       else if (isDrums) { if (feel === w.d.style) opts.groove = w.d.groove; opts.fills = 'none'; opts.fillBars = w.d.fillBars || null; }
+      else if (isCongas) {                                   // the step's pattern while the band is in the step's style; another style plays its own congas
+        opts.fills = 'none'; opts.fillBars = null;
+        if (feel === w.d.style) { opts.congas = w.d.pattern; if (w.d.drums) opts.groove = w.d.drums; }
+        if (opts.congas && opts.congas !== 'none' && so.instruments.indexOf('congas') < 0) so = { opts: so.opts, instruments: so.instruments.concat('congas') };
+      }
       else if (isMelody) { opts.melody = !w.out.checked; opts.melodyLevel = 0.95; }
       else { opts.pins = w.pins(); opts.voiceMove = 'hold'; opts.extend = null; opts.compRhythm = w.rhythm || (state.feel === 'swing' ? 'charleston' : opts.compRhythm); }
       if (w.tune) { opts.melody = isMelody ? !w.out.checked : !(w.noTune && w.noTune.checked); opts.melodyLevel = 0.95; }
       return { opts: opts, instruments: so.instruments };
     }
-    function mine() { return cfg.instrument === 'bass' ? 'bass' : isDrums ? 'drums' : isMelody ? null : 'comp'; }
-    function mix(w) { if (player) ['bass', 'comp', 'drums'].forEach(function (p) { player.setVolume(p, w.vol ? w.vol(p) : (p === mine() && w.out.checked ? 0 : 1)); }); }
+    function mine() { return cfg.instrument === 'bass' ? 'bass' : isDrums ? 'drums' : isCongas ? 'congas' : isMelody ? null : 'comp'; }
+    function mix(w) { if (player) ['bass', 'comp', 'drums'].concat(isCongas ? ['congas'] : []).forEach(function (p) { player.setVolume(p, w.vol ? w.vol(p) : (p === mine() && w.out.checked ? 0 : 1)); }); }
     // the chart the band reads: concert chords in F, and any melody at sounding pitch less the key (the player transposes both)
     function chartOf(w) {
       var p = w.parsed ? w.parsed() : global.TuneChart.parse(abcOf(w.bars)), sh = horn.t + semis();
@@ -330,9 +398,12 @@
       return p;
     }
     function showFeel() { $('bl-feel').value = state.feel; $('bl-tempo').value = state.tempo; $('bl-tempo-n').value = state.tempo; }
+    var lastStep = null;
     function play(btn, w) {
       var same = now && now.btn === btn; stop(); abcStop(); if (same) return;
-      if (w.style && w.style !== state.feel) { state.feel = w.style; state.tempo = FEELS.filter(function (f) { return f.id === w.style; })[0].tempo; showFeel(); }
+      if (w.style && w.style !== state.feel) { state.feel = w.style; state.tempo = feels.filter(function (f) { return f.id === w.style; })[0].tempo; showFeel(); }
+      if ((isCongas || hihat) && w.d.tempo && lastStep !== w) { state.tempo = w.d.tempo; showFeel(); }      // a step starts at its own tempo the first time; after that the strip is the player's
+      lastStep = w;
       var parsed = chartOf(w), b = band(w);
       if (!player) player = global.BandPlayer.create({ parsed: parsed, tempo: state.tempo, transpose: semis(), countIn: 1, opts: b.opts, instruments: b.instruments,
         onBar: function (info) { if (!now) return; now.index = info.countIn || info.ending ? -1 : info.index; if (!info.countIn && !info.ending) { now.chorus = info.chorus; now.w.line(); }
@@ -358,39 +429,81 @@
     }
 
     // the twelve bars of the chorus now sounding, once the player has written all of them (and only once a chorus)
-    function chorusNow() { var c = now.chorus, got = now.log[c] || []; if (now.drawn === c) return null; for (var i = 0; i < 12; i++) if (!got[i]) return null; now.drawn = c; return got; }
+    function chorusNow() { var c = now.chorus, got = now.log[c] || [], n = (now.w.bars || []).length || 12; if (now.drawn === c) return null; for (var i = 0; i < n; i++) if (!got[i]) return null; now.drawn = c; return got; }
     function check(text) { var lab = el('label', 'bl-check'), box = el('input'); box.type = 'checkbox'; lab.appendChild(box); lab.appendChild(document.createTextNode(' ' + text)); return { lab: lab, box: box }; }
     function playButton(w) { var go = el('button', 'btn btn-sm btn-primary', '▶ Play with the band'); go.type = 'button'; go.addEventListener('click', function () { play(go, w); }); return go; }
     function chartIn(paper, bars) { return global.TuneChart.render(paper, abcOf(bars), { header: false, barsPerLine: 4, barsPerRow: 4, roman: 'both', romanFn: H.roman, transpose: dsemis(), preferFlats: !SHARP[dkey()] }); }
 
     // ---- a drum step: two bars of the beat, the chorus on a drum staff, the band ----
+    // (the conga steps take the same path: the player of the part is the congas, and the staff is the Cga. staff)
     function makeDrumStep(host) {
-      var d = DRUMSTEPS[host.getAttribute('data-part')]; if (!d) return;
-      var w = { bars: split(CHARTS[host.getAttribute('data-chart')] || CHARTS.basic), d: d, style: d.style };
+      var d = (isCongas ? CONGASTEPS : DRUMSTEPS)[host.getAttribute('data-part')]; if (!d) return;
+      var w = { bars: split(CHARTS[host.getAttribute('data-chart')] || CHARTS[d.chart] || CHARTS.basic), d: d, style: d.style }, at = d.at == null ? 2 : d.at, who = isCongas ? 'congas' : 'drums';
+      if (d.stops && d.stops.length) w.parsed = function () { var p = global.TuneChart.parse(abcOf(w.bars)); d.stops.forEach(function (n) { if (p.bars[n - 1]) p.bars[n - 1].stop = true; }); return p; };
       host.classList.add('bl-widget');
-      var tools = el('div', 'bl-tools'), twoHead = el('p', 'bl-legend', 'Bars 3 and 4:'), two = el('div', 'bl-abc'), paper = el('div'), lineHead = el('p', 'bl-legend'), line = el('div', 'bl-abc');
-      [tools, twoHead, two, paper, lineHead, line].forEach(function (e) { host.appendChild(e); });
-      var out = check('Leave out the drums (I will play them)'), solo = check('Drums alone');
+      var tools = el('div', 'bl-tools'), twoHead = el('p', 'bl-legend', 'Bars ' + (at + 1) + ' and ' + (at + 2) + ':'), two = el('div', 'bl-abc'), paper = el('div'), lineHead = el('p', 'bl-legend'), line = el('div', 'bl-abc');
+      [twoHead, two, tools, paper, lineHead, line].forEach(function (e) { host.appendChild(e); });
+      var out = check('Leave out the ' + who + ' (I will play them)'), solo = check(isCongas ? 'Congas alone' : 'Drums alone');
       w.out = out.box; tools.appendChild(playButton(w)); tools.appendChild(out.lab); tools.appendChild(solo.lab);
-      w.vol = function (p) { return p === 'drums' ? (out.box.checked ? 0 : 1) : (solo.box.checked ? 0 : 1); };
+      w.vol = function (p) { return p === who ? (out.box.checked ? 0 : 1) : (solo.box.checked ? 0 : 1); };
       [out.box, solo.box].forEach(function (b) { b.addEventListener('change', function () { if (now && now.w === w) mix(w); }); });
-      var chart = chartIn(paper, w.bars), lineHold = { s: null, pickup: 0 }; w.timed = [lineHold]; addTune(host, w, tools, paper);
+      var chart = chartIn(paper, w.bars), lineHold = { s: null, pickup: 0 }; w.timed = [lineHold]; addTune(host, w, tools, tools);
       w.line = function () {
         if (!global.BandNotation || !global.BandMidi) return;
         var mineNow = now && now.w === w, recs = mineNow ? chorusNow() : exampleLine(w); if (!recs) return;
-        var varies = d.groove === 'auto' && d.style === 'swing';
-        lineHead.textContent = mineNow ? 'The drum part of this chorus, as the band is playing it:' : varies ? 'A chorus of it. The snare and bass drum are improvised, so they change every chorus; while the band plays, the chorus you are hearing is written here.' : 'The whole chorus:';
-        try { engrave(two, global.BandNotation.toAbc([recs[2], recs[3]], { key: keyAbc(), show: { comp: false, bass: false, drums: true }, barsPerLine: 2 }), 400, true); lineHold.s = engrave(line, lineAbc(recs), 680, true); } catch (e) { line.textContent = ''; }
+        var varies = !isCongas && d.groove === 'auto' && d.style === 'swing';
+        lineHead.textContent = mineNow ? 'The ' + (isCongas ? 'conga' : 'drum') + ' part of this chorus, as the band is playing it:' : varies ? 'A chorus of it. The snare and bass drum are improvised, so they change every chorus; while the band plays, the chorus you are hearing is written here.' : 'The whole chorus:';
+        try { drumHeads(engrave(two, global.BandNotation.toAbc([recs[at], recs[at + 1]], { key: keyAbc(), show: showOf(), barsPerLine: 2, accents: !!d.accents }), isCongas || d.six ? 560 : 400, true)); lineHold.s = drumHeads(engrave(line, lineAbc(recs, d), 680, true)); } catch (e) { line.textContent = ''; }
       };
       w.draw = w.line;
       w.rekey = function () { chart.setTranspose(dsemis(), !SHARP[dkey()]); if (!(now && now.w === w)) w.line(); };
       w.live = function (index) { chart.setLive(index); };
       w.line(); widgets.push(w); host.__bl = w;
     }
-    // what is where on a drum staff
+    // every head of a drum staff is named on hover (LessonDrumKit); one drawn again is tagged again
+    function drumHeads(sc, onHit) { if (!isCongas && sc && global.LessonDrumKit) global.LessonDrumKit.label(sc, { onHit: onHit }); return sc; }
+    // what is where on a drum staff, and a picture of the kit: click a piece, or a head on the staff, to hear it
+    Array.prototype.forEach.call(document.querySelectorAll('.bl-drumkit'), function (host) { if (global.LessonDrumKit) global.LessonDrumKit.draw(host); });
     Array.prototype.forEach.call(document.querySelectorAll('.bl-drumkey'), function (host) {
-      engrave(host, 'X:1\nM:none\nL:1/4\n%%vocalfont Helvetica 10\nK:C clef=perc\n!style=x!g !open!!style=x!g !style=x!f !style=harmonic!f !style=x!a c !style=x!c e d A F !style=x!D |]\n'
-        + 'w: hi\\-hat open~hi\\-hat ride ride~bell crash snare cross\\-stick high~tom mid~tom floor~tom bass~drum hi\\-hat~foot', 840, true);
+      drumHeads(engrave(host, 'X:1\nM:none\nL:1/4\n%%vocalfont Helvetica 10\n%%stretchlast 1\nK:C clef=perc\n' + (narrow() ? '!style=x!g !open!!style=x!g !style=x!f !style=harmonic!f |\nw: hi\\-hat open~hi\\-hat ride ride~bell\n!style=x!a c !style=x!c e |\nw: crash snare cross\\-stick high~tom\nd A F !style=x!D |]\nw: mid~tom floor~tom bass~drum hi\\-hat~foot'      // three lines on a phone
+        : '!style=x!g !open!!style=x!g !style=x!f !style=harmonic!f !style=x!a c !style=x!c e d A F !style=x!D |]\nw: hi\\-hat open~hi\\-hat ride ride~bell crash snare cross\\-stick high~tom mid~tom floor~tom bass~drum hi\\-hat~foot'), narrow() ? 340 : 840, true), function (piece) { global.LessonDrumKit.hit(piece); });
+    });
+
+    // ---- the five conga strokes: a stroke is heard by BandPlayer.hit (the congas' own bank), written as the Cga. staff writes it ----
+    var STROKES = [{ name: 'Bass tone', piece: 'congaBass', letter: 'B' }, { name: 'Open tone', piece: 'congaOpen', letter: 'O' }, { name: 'Muted tone', piece: 'congaMute', letter: 'M' },
+                   { name: 'Slap tone', piece: 'congaSlap', letter: 'S' }, { name: 'Heel-toe', piece: 'congaHeel', then: 'congaToe', letter: 'H T' }];
+    function hearStroke(piece, then) {
+      if (!global.BandPlayer || !global.BandPlayer.hit) return Promise.resolve();
+      var p = global.BandPlayer.hit(piece, { vel: 0.8 });
+      return then ? p.then(function () { return new Promise(function (r) { setTimeout(r, 160); }); }).then(function () { return global.BandPlayer.hit(then, { vel: 0.7 }); }) : p;
+    }
+    // the hi-hat's three sounds: a button plays a piece of the kit ("hatOpen,hatFoot": one after the other), and the key engraves how each is written
+    Array.prototype.forEach.call(document.querySelectorAll('[data-drum-hit]'), function (b) {
+      b.addEventListener('click', function () {
+        var ps = b.getAttribute('data-drum-hit').split(','), k = 0;
+        (function next() { if (k >= ps.length || !global.LessonDrumKit) return; global.LessonDrumKit.hit(ps[k++]); if (k < ps.length) setTimeout(next, 450); })();
+      });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('.bl-hatkey'), function (host) {
+      drumHeads(engrave(host, 'X:1\nM:none\nL:1/4\n%%vocalfont Helvetica 10\n%%stretchlast 1\nK:C clef=perc\n!style=x!g !open!!style=x!g !style=x!D |]\nw: closed~(stick) open~(stick) closed~(foot)', narrow() ? 300 : 420, true), function (piece) { global.LessonDrumKit.hit(piece); });
+    });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-conga-hit]'), function (b) {
+      b.addEventListener('click', function () { var s = STROKES.filter(function (x) { return x.piece === b.getAttribute('data-conga-hit'); })[0]; hearStroke(b.getAttribute('data-conga-hit'), s && s.then).catch(function () {}); });
+    });
+    // the key: the strokes engraved, a note head for each as the Cga. staff writes it, its name and its letter under it; a click on a head plays it
+    Array.prototype.forEach.call(document.querySelectorAll('.bl-congakey'), function (host) {
+      var N = global.BandNotation; if (!N || !N.congaWritten) return;
+      var heads = [], names = [], letters = [], items = [];
+      STROKES.forEach(function (s) { [s.piece, s.then].filter(Boolean).forEach(function (pc, k) {
+        var wr = N.congaWritten(pc), nm = s.then ? (k ? 'Toe' : 'Heel') : s.name;
+        heads.push((wr.style ? '!style=' + wr.style + '!' : '') + wr.letter); names.push(nm.replace(/ /g, '~').replace(/-/g, '\\-')); letters.push(s.then ? (k ? 'T' : 'H') : s.letter); items.push({ piece: pc, then: null, name: nm });
+      }); });
+      var abc = 'X:1\nM:none\nL:1/4\n%%vocalfont Helvetica 10\n%%stretchlast 1\nK:C clef=perc\n' + heads.join(' ') + ' |]\nw: ' + names.join(' ') + '\nw: ' + letters.join(' ');
+      var sc = engrave(host, abc, narrow() ? 340 : 560, true); if (!sc) return;
+      var notes = host.querySelectorAll('.abcjs-note');
+      Array.prototype.forEach.call(notes, function (g, i) { var it = items[i]; if (!it) return; g.style.cursor = 'pointer'; g.setAttribute('data-piece', it.piece);
+        var t = document.createElementNS('http://www.w3.org/2000/svg', 'title'); t.textContent = it.name + ' (click to hear it)'; g.appendChild(t);
+        g.addEventListener('click', function () { hearStroke(it.piece).catch(function () {}); }); });
     });
 
     // ---- a melody step: a twelve-bar line in the player's written key ----
@@ -442,7 +555,7 @@
         music.push(toks.join(' ')); words.push(ws.join(' '));
       });
       var out = 'X:1\nM:4/4\nL:1/8\nQ:1/4=' + state.tempo + '\nK:' + keyAbc() + clefAbc() + '\n';
-      for (var i = 0; i < music.length; i += 4) out += music.slice(i, i + 4).join(' | ') + (i + 4 >= music.length ? ' |]' : ' |') + '\nw: ' + words.slice(i, i + 4).join(' | ') + '\n';
+      for (var i = 0, n = perLine(); i < music.length; i += n) out += music.slice(i, i + n).join(' | ') + (i + n >= music.length ? ' |]' : ' |') + '\nw: ' + words.slice(i, i + n).join(' | ') + '\n';
       return out;
     }
     function makeMelodyStep(host) {
@@ -451,7 +564,7 @@
       host.classList.add('bl-widget');
       var tools = el('div', 'bl-tools'), row = el('div', 'bl-abc'), alone = el('button', 'btn btn-sm btn-outline-secondary', '▶ Play'), staff = el('div'), says = el('p', 'bl-legend'), paper = el('div');
       alone.type = 'button'; alone.title = 'The line alone, on a piano'; row.appendChild(alone); row.appendChild(staff);
-      [tools, row, says, paper].forEach(function (e) { host.appendChild(e); });
+      [row, says, tools, paper].forEach(function (e) { host.appendChild(e); });
       var out = check('Leave out the melody (I will play it)'); w.out = out.box; tools.appendChild(playButton(w)); tools.appendChild(out.lab);
       out.box.addEventListener('change', function () { if (player && now && now.w === w) player.setOpts(band(w).opts); });
       alone.addEventListener('click', function () { abcPlay(alone, hold.s); });
@@ -478,6 +591,7 @@
     }
     // a scale written out, up and back down, with the number of each note under it
     var SCALES = {
+      major:      { name: 'major scale', offs: [0, 2, 4, 5, 7, 9, 11], steps: [0, 1, 2, 3, 4, 5, 6], words: ['R', '2', '3', '4', '5', '6', '7'], major: 0 },
       minorblues: { name: 'minor blues scale', offs: [0, 3, 5, 6, 7, 10], steps: [0, 2, 3, 3, 4, 6], words: ['R', '♭3', '4', '♯4', '5', '♭7'] },
       majorblues: { name: 'major blues scale', offs: [0, 2, 3, 4, 7, 9], steps: [0, 1, 2, 2, 4, 5], words: ['R', '2', '♭3', '3', '5', '6'] },
       minorpent:  { name: 'minor pentatonic scale', offs: [0, 3, 5, 7, 10], steps: [0, 2, 3, 4, 6], words: ['R', '♭3', '4', '5', '♭7'] },
@@ -520,7 +634,7 @@
       function isThumb(hand, i) { return THUMBS[hand][major].indexOf(mod12(pc + sc.offs[((i % n) + n) % n])) >= 0; }
       for (var i = 0; i <= n; i++) {
         var back = 0; while (!isThumb('R', i - back) && back < n) back++; out.R.push(1 + back);              // right hand: count up from the thumb below
-        var on = 0; while (!isThumb('L', i + on) && on < n) on++; out.L.push(1 + on);                         // left hand: count down to the thumb above
+        var on = 0; while (!(isThumb('L', i + on) && !(sc.major === 0 && i + on === 0)) && on < n) on++; out.L.push(1 + on);                         // left hand: count down to the thumb above
       }
       if (out.R[n] === 1) out.R[n] = out.R[n - 1] + 1;                                                      // the top note ends the run: the next finger, not a thumb
       return out;
@@ -535,6 +649,13 @@
         : 'The notes of the scale; filled = the root. Five- and six-note scales have no single standard fingering: keep the thumb off the black keys where you can.'));
       return { fingers: fg, midis: midis };
     }
+    // the chart for a scale on an instrument (hh = an entry of HORNS), or nothing for the saxophones and concert pitch
+    function chartFor(box, hh, sc, pc, title, base) {
+      box.textContent = ''; box.hidden = !hh.chart; if (!hh.chart) return null;
+      if (hh.chart === 'guitar' || hh.chart === 'bass') return fretChart(box, hh.chart, sc, pc, title);
+      if (hh.chart === 'violin') return violinChart(box, sc, pc, title);
+      return pianoChart(box, sc, pc, title, base);
+    }
     // a scale written out, up and back down, with the number of each note under it, and on the instrument chosen
     function scaleNotes(host) {
       var sc = SCALES[host.getAttribute('data-scale')], on = DEGREES[host.getAttribute('data-on') || 'I']; if (!sc || !on) return null;
@@ -545,32 +666,29 @@
         var up = sc.offs.map(function (off, i) { return { midi: base + off, sp: spellFrom(letter, sc.steps[i], base + off), word: sc.words[i] }; });
         up.push({ midi: base + 12, sp: spellFrom(letter, 0, base + 12), word: 'R' });
         var all = up.concat(up.slice(0, -1).reverse()), root = LETTERS[up[0].sp.l] + (up[0].sp.acc > 0 ? '♯' : up[0].sp.acc < 0 ? '♭' : '');
-        b.midis = all.map(function (n) { return n.midi; }); b.title = root + ' ' + sc.name; var sh = regShift(b.midis);
-        score = engrave(staff, 'X:1\nM:none\nL:1/4\nQ:1/4=132\nK:' + keyAbc() + clefAbc() + '\n"^' + b.title + '"' + all.map(function (n) { return tokIn(n.sp, n.midi + sh, st, sig); }).join(' ') + ' |]\nw: ' + all.map(function (n) { return n.word; }).join(' '), 600, true);
-        if (score) score.shift = sh;
-        box.textContent = ''; box.hidden = !horn.chart; b.chart = null;
-        if (horn.chart === 'guitar' || horn.chart === 'bass') b.chart = fretChart(box, horn.chart, sc, pc, b.title);
-        else if (horn.chart === 'violin') b.chart = violinChart(box, sc, pc, b.title);
-        else if (horn.chart === 'piano') b.chart = pianoChart(box, sc, pc, b.title, base);
+        b.midis = all.map(function (n) { return n.midi; }); b.title = root + ' ' + sc.name; var hh = viewHorn(), sh = regShift(b.midis, hh);
+        score = engrave(staff, 'X:1\nM:none\nL:1/4\nQ:1/4=132\nK:' + keyAbc() + clefAbc(hh) + '\n"^' + b.title + '"' + all.map(function (n) { return tokIn(n.sp, n.midi + sh, st, sig); }).join(' ') + ' |]\nw: ' + all.map(function (n) { return n.word; }).join(' '), 600, true);
+        if (score) { score.shift = sh; score.t = hh.t; }
+        b.chart = chartFor(box, hh, sc, pc, b.title, base);
       } };
       b.draw(); host.__bl = b; return b;
     }
 
     // ---- a step ----    // ---- a step ----
     function makeStep(host) {
-      if (isDrums) return makeDrumStep(host); if (isMelody) return makeMelodyStep(host);
+      if (isPerc) return makeDrumStep(host); if (isMelody) return makeMelodyStep(host);
       var part = PARTS[cfg.instrument][host.getAttribute('data-part')]; if (!part) return;
       var bars = split(CHARTS[host.getAttribute('data-chart')] || CHARTS.basic), shown = host.getAttribute('data-show');
       var syms = shown ? shown.split(/\s+/) : bars.join(' ').split(' ').filter(function (s, i, a) { return a.indexOf(s) === i; }).slice(0, 4);
       var w = { bars: bars, bass: host.getAttribute('data-bass'), rhythm: host.getAttribute('data-rhythm'), view: host.getAttribute('data-view') === 'super' ? 'super' : 'each' };
       host.classList.add('bl-widget');
-      var tools = el('div', 'bl-tools'), boards = el('div', 'bl-boards'), hint = el('p', 'bl-legend'), staff = el('div', 'bl-abc'), staffNote = el('p', 'bl-legend'),
+      var tools = el('div', 'bl-tools'), playRow = el('div', 'bl-tools bl-playrow'), boards = el('div', 'bl-boards'), hint = el('p', 'bl-legend'), staff = el('div', 'bl-abc'), staffNote = el('p', 'bl-legend'),
           lineHead = el('p', 'bl-legend'), line = el('div', 'bl-abc'), paper = el('div'), isBass = cfg.instrument === 'bass', pairs = /^(g54|g43|shell)$/.test(host.getAttribute('data-part'));
-      [tools, boards, hint, staff, staffNote, paper].forEach(function (e) { host.appendChild(e); });
+      [tools, boards, hint, staff, staffNote, playRow, paper].forEach(function (e) { host.appendChild(e); });
       if (isBass) { host.appendChild(lineHead); host.appendChild(line); }
       staffNote.textContent = 'The same notes on a staff' + (fretted ? ', written an octave higher than they sound, as ' + me.name + ' music is.' : '.');
-      var go = el('button', 'btn btn-sm btn-primary', '▶ Play with the band'); go.type = 'button'; go.addEventListener('click', function () { play(go, w); }); tools.appendChild(go);
-      var outLab = el('label', 'bl-check'); w.out = el('input'); w.out.type = 'checkbox'; outLab.appendChild(w.out); outLab.appendChild(document.createTextNode(' Leave out the ' + me.name + ' (I will play it)')); tools.appendChild(outLab);
+      var go = el('button', 'btn btn-sm btn-primary', '▶ Play with the band'); go.type = 'button'; go.addEventListener('click', function () { play(go, w); }); playRow.appendChild(go);
+      var outLab = el('label', 'bl-check'); w.out = el('input'); w.out.type = 'checkbox'; outLab.appendChild(w.out); outLab.appendChild(document.createTextNode(' Leave out the ' + me.name + ' (I will play it)')); playRow.appendChild(outLab);
       w.out.addEventListener('change', function () { if (now && now.w === w) mix(w); });
       var views = {};
       if (fretted) [['each', 'One chord at a time'], ['super', 'Superimposed']].forEach(function (v) {
@@ -581,7 +699,7 @@
       hint.textContent = 'Click a chord name to hear it. ' + (fretted ? 'Dark ring = root. Hollow = optional, or shown only so you can see where it is. Strings are drawn low to high, left to right.'
         : 'Filled square = root. Dashed = optional, or played by someone else. Red band = left hand, grey band = right hand.');
       var chart = global.TuneChart.render(paper, abcOf(bars), { header: false, barsPerRow: 4, roman: 'both', romanFn: H.roman, transpose: semis(), preferFlats: !SHARP[state.key] });
-      var chords = [], results = [], staffScore = null, lineHold = { s: null, pickup: 0 }; w.timed = [lineHold]; addTune(host, w, tools, paper);
+      var chords = [], results = [], staffScore = null, lineHold = { s: null, pickup: 0 }; w.timed = [lineHold]; addTune(host, w, playRow, playRow);
       function labelled(ch, res) { return { label: ch.label, notes: res.notes.map(function (n) { return Object.assign({}, n, { text: state.dots === 'name' ? pcName(n.midi) : toneName(ch, n.midi) }); }) }; }
       w.draw = function () {
         chords = syms.map(chordOf); results = chords.map(function (ch) { return part(ch, w); });
@@ -621,12 +739,15 @@
       w.draw(); widgets.push(w); host.__bl = w;
     }
     Array.prototype.forEach.call(document.querySelectorAll('.bl-step'), makeStep);
+    Array.prototype.forEach.call(document.querySelectorAll('.bl-scale'), function (h) { h.classList.add('bl-widget'); scales.push(scaleBlock(h)); });
     Array.prototype.forEach.call(document.querySelectorAll('.bl-notes'), function (h) { var b = scaleNotes(h); if (b) scales.push(b); });
     function rekeyAll() { widgets.forEach(function (w) { w.rekey(); if (w.tuneDraw) w.tuneDraw(); }); scales.forEach(function (b) { b.draw(); }); }
+    var wasNarrow = narrow();                                   // turning a phone, or a window dragged past the width: write the lines out again
+    global.addEventListener('resize', function () { if (narrow() === wasNarrow) return; wasNarrow = narrow(); rekeyAll(); widgets.forEach(function (w) { if (w.line && !(now && now.w === w)) w.line(); }); });
 
     // ---- the strip at the bottom ----
     FLAT.forEach(function (k, i) { var o = el('option', null, k); o.value = i; $('bl-key').appendChild(o); });
-    if (isDrums || isMelody) $('bl-dots').parentNode.hidden = true;
+    if (isPerc || isMelody) $('bl-dots').parentNode.hidden = true;
     if (isMelody) {
       var hs = el('span'), hl = el('label', null, 'Instrument'), hsel = el('select'); hsel.id = 'bl-horn'; hl.htmlFor = 'bl-horn'; hs.setAttribute('data-pri', 5); hs.setAttribute('data-pri-live', 7);
       horns.forEach(function (h) { var o = el('option', null, h.label); o.value = h.id; hsel.appendChild(o); }); hsel.value = horn.id;
@@ -635,13 +756,13 @@
       hsel.addEventListener('change', function () { horn = horns.filter(function (h) { return h.id === hsel.value; })[0]; try { global.localStorage.setItem('blHorn', horn.id); } catch (e) {}
         rekeyAll(); setBand(); });
     }
-    FEELS.forEach(function (f) { var o = el('option', null, f.label); o.value = f.id; $('bl-feel').appendChild(o); });
+    feels.forEach(function (f) { var o = el('option', null, f.label); o.value = f.id; $('bl-feel').appendChild(o); });
     function showTempo() { $('bl-tempo').value = state.tempo; $('bl-tempo-n').value = state.tempo; }
     function setTempo(v) { v = Math.max(40, Math.min(220, Math.round(+v) || state.tempo)); state.tempo = v; showTempo(); if (player) player.setTempo(v); }
     function setBand() { if (!player || !now) return; var b = band(now.w); player.setInstruments(b.instruments); if (now.w.parsed || now.w.tune) player.setChart(chartOf(now.w)); player.setOpts(b.opts); }
     $('bl-key').value = state.key; $('bl-feel').value = state.feel; showTempo();
     $('bl-key').addEventListener('change', function () { state.key = +this.value; rekeyAll(); if (player) { player.setTranspose(semis()); setBand(); } });
-    $('bl-feel').addEventListener('change', function () { state.feel = this.value; var f = FEELS.filter(function (x) { return x.id === state.feel; })[0]; setBand(); setTempo(f.tempo);
+    $('bl-feel').addEventListener('change', function () { state.feel = this.value; var f = feels.filter(function (x) { return x.id === state.feel; })[0]; setBand(); setTempo(f.tempo);
       widgets.forEach(function (w) { if (!(now && now.w === w)) w.line(); }); });
     $('bl-dots').addEventListener('change', function () { state.dots = this.value; widgets.forEach(function (w) { w.draw(); }); });
     $('bl-tempo').addEventListener('input', function () { setTempo(this.value); });

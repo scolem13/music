@@ -136,10 +136,10 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // ---- the Lessons landing page
     await ev(`0`).catch(() => {}); await b.goto(B + "/lessons/index.html"); await b.sleep(1200);
     const shown = () => ev(`JSON.stringify(Array.prototype.filter.call(document.querySelectorAll("#ll-list li"), function (li){ return !li.hidden; }).map(function (li){ return li.querySelector(".ll-step").textContent + "|" + li.querySelector("a").getAttribute("href").split("/").pop(); }))`).then(JSON.parse);
-    assert.strictEqual((await shown()).length, 7, "all");
+    assert.strictEqual((await shown()).length, 10, "all");
     const pick = i => ev(`document.querySelector('#ll-pick [data-inst="${i}"]').click(); 0`);
     await pick("bass"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-bass.html", "Lesson 3|blues-improv.html"]);
-    await pick("drums"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-drums.html"]);
+    await pick("drums"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-drums.html", "Lesson 3|hihat-grooves.html"]);
     await pick("sax"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-melody.html", "Lesson 3|blues-improv.html"]);
     assert.strictEqual(await ev(`document.querySelector('#ll-pick [aria-pressed="true"]').getAttribute("data-inst")`), "sax");
     await b.goto(B + "/lessons/index.html"); await b.sleep(900); assert.strictEqual((await shown()).length, 3, "the choice is kept");

@@ -1,0 +1,157 @@
+---
+title: "Watermelon Man for Congas"
+toc: true
+toc-depth: 2
+---
+
+*Watermelon Man* is a 16-bar blues that a conga player can learn in an afternoon, once the
+tumbao is under the hands. If you have not played the tumbao yet, start with
+[How to Play Congas: Five Strokes and the Tumbao](congas-basics.qmd). This page assumes the
+heel, toe, slap and open tones, and the part **Heel Toe Slap Toe Heel Toe Open Open**.
+
+**How to use the page.** Every step has two bars of the part written large, a chord chart,
+and the whole chorus written on a conga staff. The note that is sounding lights up in the
+notation as the band plays. Press ▶ and the band plays it; the bar that is sounding lights up on
+the chart. Tick **Congas alone** to hear the congas without the bass and piano, and **Leave out
+the congas** to take over. Each step starts in its own style and tempo; the strip at the bottom
+changes both. The sounds are General MIDI stand-ins, so the heel, toe, slap and bass tones are
+approximations: listen to a real player for the sound.
+
+## The tune and its history
+
+Herbie Hancock wrote *Watermelon Man* for his first album, *Takin' Off* (Blue Note, 1962), with
+Freddie Hubbard, Dexter Gordon, Butch Warren and Billy Higgins on drums. No conga player is
+listed on that record. It is in F, in even eighths: Hancock said Higgins played "somewhere
+between straight eighth notes and the swinging triplets of jazz". It goes at roughly 120 to 130
+beats a minute.
+
+Late in 1962 Hancock filled in on piano in the band of the conga player Mongo Santamaría for a
+weekend at a club in the Bronx, and Donald Byrd urged him to play the tune for Mongo. Mongo's
+band recorded it on 17 December 1962 "in a cha-cha beat", with Kako Baster on timbales, Victor
+Venegas on bass and Ray Lucas adding a backbeat on drums. The single came out on Battle in
+1963 and reached the top ten or eleven of the Billboard Hot 100 (sources differ). It is
+slower than Hancock's, and is often named as a starting point of boogaloo and Latin soul. A
+much later remake, on *Head Hunters* in 1973, has Bill Summers blowing into beer bottles after
+the Central African hindewhu.
+
+**What this lesson teaches, and what it does not.** No published transcription of the conga part
+on Mongo's record was found. What you learn here is the standard tumbao, the part a conga player
+plays in a cha-cha beat. Listen to the record and copy what you hear.
+
+## Reading the part
+
+Click a note head to hear that stroke. The conga is written on the top space; a low drum, when
+there is one, sits on a lower space. A plain head is the open tone (or the bass tone), an ✕ is the
+slap, a triangle is heel or toe, and a diamond is the muted tone. Two lines of words sit under
+the notes: the stroke (**H** heel, **T** toe, **S** slap, **O** open, **M** muted, **B** bass) and
+the hand (**L** or **R**).
+
+<div class="bl-congakey"></div>
+
+## The form
+
+It is a 16-bar blues: a 12-bar blues whose bars 9 and 10 (C7 and B♭7) are played three times.
+In F, with one chord to a bar:
+
+- Bars 1 to 4: F7, F7, F7, F7
+- Bars 5 to 8: B♭7, B♭7, F7, F7
+- Bars 9 to 12: C7, B♭7, C7, B♭7
+- Bars 13 to 16: C7, B♭7, F7, F7
+
+The Backing Track has the same form as its "Watermelon Man (16 bars)" preset, with the band
+stopping on bar 14 (the break). The steps below use it.
+
+## 1. The form, with the open tones only
+
+Start with the two open tones, on 4 and the and of 4, and nothing else. Count the sixteen bars
+out loud. Listen for the three C7 to B♭7 pairs in bars 9 to 14: that is the part of the form a
+12-bar blues does not have.
+
+<div class="bl-step" data-part="wopens" data-chart="watermelon"></div>
+
+## 2. The right hand
+
+Add the slap on 2. The right hand plays the slap, then the two open tones. The slap on 2 lands
+with the backbeat.
+
+<div class="bl-step" data-part="wright" data-chart="watermelon"></div>
+
+## 3. The tumbao, slowly
+
+Now the whole part: **Heel Toe Slap Toe Heel Toe Open Open**, hands **L L R L L L R R**, one bar
+at a time, in a cha-cha beat at about 100 beats a minute. Do not speed up to catch the band;
+keep the left hand quiet and the slap and open tones clear.
+
+<div class="bl-step" data-part="wtumbao" data-chart="watermelon"></div>
+
+## 4. The break
+
+On bar 14 the band stops. The congas play one open tone on beat 1 with the band, then nothing, and
+come back in on bar 15 with the band. Count the silent beats. The two bars shown large are bars
+13 and 14.
+
+<div class="bl-step" data-part="wbreak" data-chart="watermelon"></div>
+
+The bar after the stop is the hard part: nothing in the band tells you the time but your own
+counting. Say "1 and 2 and 3 and 4 and" out loud through bar 14.
+
+## 5. With the melody
+
+The tune, written in F, above the chart. The band plays it on the piano with the congas. Tick
+**Leave out the tune** to hear the congas and the band alone. In this step the band plays
+straight through the break, so the melody is not cut off.
+
+<div class="bl-step" data-part="wtune" data-chart="watermelon" data-tune="watermelon"></div>
+
+Read the melody as you play. The riff in bars 1 and 2 is the line everyone knows.
+
+## 6. Mongo's way and Herbie's way
+
+The same part in two styles. The first plays the congas in the **Cha-cha** at a moderate tempo,
+as Mongo's band recorded it, with the break on bar 14. The second is the **Boogaloo** at about
+126, with straight eighths and the break, nearer Hancock's own tempo. Change between them with the
+Feel menu at the bottom. The part is the same tumbao in both.
+
+**Mongo's way**: Cha-cha, a moderate tempo.
+
+<div class="bl-step" data-part="wmongo" data-chart="watermelon"></div>
+
+**Herbie's way**: Boogaloo, about 126.
+
+<div class="bl-step" data-part="wherbie" data-chart="watermelon"></div>
+
+## 7. Two drums
+
+As an extension, the same form with **two drums** in the Son montuno: every second bar the right
+hand plays two open tones on the low drum, on the and of 2 and on 3, in place of the toe and the
+heel. Which bar of the pair takes the low drum depends on the clave, and this lesson does not say
+which way the clave runs on the record. A one-bar tumbao avoids the question: stay with step 6
+until you can play it through without thinking.
+
+<div class="bl-step" data-part="wtwo" data-chart="watermelon"></div>
+
+## Where to go next
+
+- Play step 6 with the congas left out and the tumbao in your hands for ten choruses.
+- Learn the five strokes properly in [How to Play Congas](congas-basics.qmd).
+- [Blues for Drums](blues-drums.qmd) has the same kind of steps for a drum kit.
+- **Tools → Backing Track** has the "Watermelon Man (16 bars)" preset and a Congas menu that
+  works in any style.
+- Listen to Mongo Santamaría's record and copy what you hear.
+
+## Sources
+
+- [Watermelon Man (composition)](https://en.wikipedia.org/wiki/Watermelon_Man_(composition)),
+  Wikipedia.
+- [Watermelon Man: Herbie Hancock](https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature),
+  uDiscover Music.
+- [Watermelon Man](https://ethanhein.substack.com/p/watermelon-man), Ethan Hein.
+- [Mongo Santamaría: Watermelon Man](https://jazz.com/music/mongo-santamaria-watermelon-man),
+  jazz.com.
+- [Tumbao](https://en.wikipedia.org/wiki/Tumbao), Wikipedia (the tumbao and its sticking).
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>BluesLesson.init({ instrument: "congas", key: 5 });</script>
+```
