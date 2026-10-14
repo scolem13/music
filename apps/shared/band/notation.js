@@ -274,12 +274,15 @@
           if (items[g]) return;                                                  // (two strokes at one moment: the first)
           items[g] = { short: true, want: 1, stroke: st, hand: e.hand === "L" ? "L" : "R", tok: function (){ return (CONGA_HEAD[st] || "") + w.letter; } }; });
         else { var loud = accents ? accented(P.drums || []) : [];
-          (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || !!v.down !== !!DOWN[e.piece]) return;
+          // a crash grabbed with the hand (a choke event with a damp time, after it in the same beat): written short, with "choke" over it
+          var grabs = (P.drums || []).filter(function (e){ return e.choke && e.damp; }).map(function (e){ return e.pos; });
+          (P.drums || []).forEach(function (e){ var d = DRUM[e.piece]; if (!d || e.grace || !!v.down !== !!DOWN[e.piece]) return;     // (a flam's grace note is written as the main note's mark)
           if (e.piece === "kick" && e.vel != null && e.vel < FEATHER) return;
           var g = snap(e.pos, cmp, e.six), it = items[g] || (items[g] = { short: true, want: 1, hits: [], tok: function (){
             var seen = {}, t = []; this.hits.forEach(function (h){ if (seen[h[0]]) return; seen[h[0]] = 1; t.push(h[1] + h[0]); });      // (two pieces on one line: the first)
-            return (this.acc ? "!>!" : "") + (t.length > 1 ? "[" + t.join("") + "]" : t[0]); } });
+            return (this.grab ? '"^choke"!staccato!' : "") + (this.acc ? "!>!" : "") + (t.length > 1 ? "[" + t.join("") + "]" : t[0]); } });
           if (loud.indexOf(e) >= 0) it.acc = true;
+          if (e.piece === "crash" && grabs.some(function (x){ return x > e.pos && x - e.pos < 1; })) it.grab = true;
           it.hits.push(d); }); }
         return items;
       });

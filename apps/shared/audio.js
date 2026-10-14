@@ -77,7 +77,7 @@
       try {
         bank = global.BandSounds.create(ctx);
         bankOut = ctx.createGain(); bankOut.gain.value = 0.5; bankOut.connect(master);
-        const send = ctx.createGain(); send.gain.value = 0.16; bankOut.connect(send); send.connect(reverb);
+        const send = ctx.createGain(); send.gain.value = 0.05; bankOut.connect(send); send.connect(reverb);
         bank.load(["piano"]).then(() => { bankState = 2; }, () => { bankState = 3; });
       } catch (e) { bankState = 3; }
     };

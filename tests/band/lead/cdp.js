@@ -1,10 +1,10 @@
 // Minimal headless-Chrome driver over the DevTools protocol (no npm packages).
 const { spawn } = require("child_process"), fs = require("fs"), os = require("os"), path = require("path");
 const CHROME = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome";
-async function launch({ width = 1280, height = 900 } = {}) {
+async function launch({ width = 1280, height = 900, args = [] } = {}) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bt-chrome-"));
   const proc = spawn(CHROME, ["--headless=new", "--remote-debugging-port=0", "--user-data-dir=" + dir, "--no-first-run", "--mute-audio",
-    "--autoplay-policy=no-user-gesture-required", `--window-size=${width},${height}`, "about:blank"], { stdio: ["ignore", "ignore", "pipe"] });
+    "--autoplay-policy=no-user-gesture-required", `--window-size=${width},${height}`, ...args, "about:blank"], { stdio: ["ignore", "ignore", "pipe"] });
   const wsUrl = await new Promise((res, rej) => { let buf = ""; proc.stderr.on("data", d => { buf += d; const m = /DevTools listening on (ws:\/\/\S+)/.exec(buf); if (m) res(m[1]); }); setTimeout(() => rej(new Error("chrome did not start: " + buf)), 15000); });
   const port = /:(\d+)\//.exec(wsUrl)[1];
   const targets = await (await fetch(`http://127.0.0.1:${port}/json`)).json();

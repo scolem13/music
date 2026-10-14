@@ -1,0 +1,68 @@
+---
+title: "Arranging 2: Bass and Drums"
+toc: true
+toc-depth: 2
+---
+
+The bass and drums are the **foundation**. If they agree, a band can lose everyone else
+and still sound like a band. This page is about how they agree. How the examples work is
+explained in [the first lesson](arrange-band.qmd).
+
+## 1. The bass follows the kick
+
+The kick drum and the bass are both low and both short at the start of a note. When they
+land together they sound like one big instrument. When they land apart, the bottom of
+the band sounds busy and blurred.
+
+Below, the drums play the same pop backbeat throughout. Try each bass line against it.
+Look at the bass staff and the kick drum (the lowest notes on the drum staff) and see
+where they line up.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass drums" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Dotted: 1, and of 2, 3","opts":{"bassFeel":"dotted"}},{"label":"Roots on every beat","opts":{"bassFeel":"roots"}},{"label":"Root eighths","opts":{"bassFeel":"eighths"}},{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+The **dotted** line is the one the style was written with: the bass plays exactly where
+the kick plays. The others still work, but they make a different song: roots on every
+beat is plainer, eighths push harder, root and fifth sounds like country.
+
+## 2. The drums choose the feel
+
+Now keep the bass line and change the groove. Each one divides the beat differently or
+puts the backbeat somewhere else.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="100" data-on="bass drums" data-staves="bass drums" data-choice-label="Groove:" data-choices='[{"label":"Rock backbeat","opts":{"groove":"rock"}},{"label":"Half-time","opts":{"groove":"halftime"}},{"label":"Four on the floor","opts":{"groove":"dance"}},{"label":"Train beat","opts":{"groove":"train"}}]'></div>
+
+**Half-time** moves the snare from 2 and 4 to 3 only: the chords go by just as fast but
+the song feels half as fast. Arrangers use it for a breakdown or a big final chorus.
+**Four on the floor** puts the kick on every beat, which is why the root-eighths bass now
+sounds like it's doubling something.
+
+## 3. Swing: the bass walks, the ride keeps time
+
+In jazz the roles change. The ride cymbal carries the time, the kick drum mostly keeps
+out of the way, and the bass plays a note on every beat. That's a **walking** line: the
+root on beat 1, other notes of the chord and scale in between, and a note on beat 4 that
+leads into the next chord.
+
+Compare it with the lighter **two-feel** (half notes) that a band often plays on the
+melody before walking for the solos, and with plain chord tones.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|Cmaj7|Fmaj7|Bm7b5 E7|Am7|Am7" data-tempo="140" data-on="bass drums" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Walking","opts":{"bassFeel":"walk"}},{"label":"Two-feel","opts":{"bassFeel":"two"}},{"label":"Chord tones","opts":{"bassFeel":"arp"}}]'></div>
+
+## 4. Latin: the bass anticipates
+
+In son montuno and salsa, the bass plays the **tumbao**: it doesn't land on beat 1 at all.
+The new chord's root arrives early, on the *and* of 2 and on 4, and rings over the
+barline. The clave and congas mark the beat instead.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="104" data-on="bass drums congas" data-staves="bass drums"></div>
+
+Switch the congas off, then the drums. With only the bass left, you can hear that it is
+always a beat ahead of the chord chart.
+
+## 5. Try it
+
+- In section 1, play the **Root eighths** line, then switch the drums to **Half-time**
+  in section 2. Which bass line would you choose for a half-time chorus?
+- Next: [Guitar and keyboards](arrange-chords.qmd).
+
+{{< include _arrange-kit.qmd >}}

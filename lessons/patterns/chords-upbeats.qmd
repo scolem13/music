@@ -1,0 +1,85 @@
+---
+title: "Comping rhythm: Every off-beat"
+subtitle: "For piano or guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Every off-beat**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+A short chord on the and of every beat and never on the beat: the ska and calypso afterbeat.
+
+It belongs in *Calypso*, *Ska / reggae* and *Freylekhs / polka*. Here it is in the ska / reggae style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+## Step 1: Quarter-note chords
+
+Start with something simpler. The chord on every beat, held. On the piano the left hand adds the root underneath as each chord arrives: Let It Be, Imagine, Someone Like You.
+
+This is a pattern of its own: [the lesson on it](chords-quarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="56" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Quarter-note chords","opts":{"compRhythm":"quarters"}}]'></div>
+
+## Step 2: Boom-chick / oom-pah-pah
+
+Short chords on the beats the bass leaves free: 2 and 4 in 4/4, 2 and 3 in a waltz. Goes with the Root and fifth bass line.
+
+This is a pattern of its own: [the lesson on it](chords-oompah.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="56" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Boom-chick / oom-pah-pah","opts":{"compRhythm":"oompah"}}]'></div>
+
+## Step 3: Every off-beat, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Never on the beat: a short chord on every and. Count 1-AND-2-AND aloud, tap the beat with your foot and play only with the and. On guitar it is a chop, the chord choked right after it sounds.
+
+The band plays it on piano here; the step after next has it on guitar.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="56" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}},{"label":"Boom-chick / oom-pah-pah (the step before)","opts":{"compRhythm":"oompah"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 80 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+## Step 5: On the guitar
+
+The same rhythm on the guitar. On guitar each chord is a strum or a pluck of a chord shape; a short chord is choked by easing the fretting hand off the strings.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+## Step 6: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="reggae" data-chart="C F|G C|Am F|G" data-tempo="80" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Calypso**
+
+<div class="ar-demo" data-style="calypso" data-chart="C|F|G7|C" data-tempo="110" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+**Freylekhs / polka**
+
+<div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="132" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Quarter-note chords](chords-quarters.qmd), [Boom-chick / oom-pah-pah](chords-oompah.qmd).
+- **Leads to:** [Son montuno](chords-montuno.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Hi-hat: off-beats only](drums-hhoffbeats.qmd) (drum groove), [Reggae one-drop](drums-onedrop.qmd) (drum groove), [Calypso](drums-calypso.qmd) (drum groove), [Root and fifth on every beat](bass-polka.qmd) (bass line).
+- **Plays with, in ska / reggae:** [Roots on every beat](bass-roots.qmd) (bass line), [Reggae one-drop](drums-onedrop.qmd) (drum groove).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

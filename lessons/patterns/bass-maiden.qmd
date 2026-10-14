@@ -1,0 +1,73 @@
+---
+title: "Bass line: Maiden Voyage: roots on the rhythm"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Maiden Voyage: roots on the rhythm**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The bass plays the comping rhythm: 1, the and of 2 and 4 in the first bar, the and of 2 and 4 in the second.
+
+It belongs in *Boogaloo* and *Bossa nova*. Here it is in the bossa nova style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+## Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass-halves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+## Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass-dotted.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+## Step 3: Maiden Voyage: roots on the rhythm, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The bass plays the same rhythm as the chords: 1, the and of 2 and 4 in the first bar (the note on 4 held over the barline), then the and of 2 and 4. Play with the piano's left hand, not against it.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="bossa" data-chart="Dsus|Dsus|Fsus|Fsus|Dsus|Dsus|Fsus|Fsus" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7 D7|Gmaj7 Em7|Am7 D7|Gmaj7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+## In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Maiden Voyage: roots on the rhythm","opts":{"bassFeel":"maiden"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Dotted (1, and of 2, 3)](bass-dotted.qmd).
+- **The same idea elsewhere in the band:** [Maiden Voyage](chords-maiden.qmd) (comping rhythm).
+- **Plays with, in bossa nova:** [Bossa nova](chords-bossa.qmd) (comping rhythm), [Bossa nova](drums-bossa.qmd) (drum groove).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass-sowhat.qmd), [Killer Joe: two-bar vamp](bass-killerjoe.qmd), [Song for My Father: root, fifth, octave](bass-songfather.qmd), [Footprints: waltz ostinato](bass-footprints.qmd), [All Blues: 6/8 vamp](bass-allblues.qmd), [Chameleon: chromatic pickup](bass-chameleon.qmd), [Take Five: 3 + 2](bass-takefive.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

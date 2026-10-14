@@ -1,0 +1,51 @@
+---
+title: "Drum groove: Motown"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Motown**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+The snare on all four beats, louder on 2 and 4 with a tambourine, over eighths on the cymbal. You Can't Hurry Love, Reach Out I'll Be There.
+
+It belongs in *Motown / soul*. Here it is in the motown / soul style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Motown","opts":{"groove":"motown"}}]'></div>
+
+## Step 1: Hi-hat: eighth notes
+
+Start with something simpler. Closed hi-hat on every eighth note, all of one weight, kick on 1 and 3, snare on 2 and 4. The basic rock beat. In 3/4: six eighths, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hheighths.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="78" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: eighth notes","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 2: Motown, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The snare on all four beats, louder on 2 and 4, over eighths on the cymbal. Light on 1 and 3, so the tambourine backbeat stands out.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="78" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Motown","opts":{"groove":"motown"}},{"label":"Hi-hat: eighth notes (the step before)","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Motown","opts":{"groove":"motown"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: eighth notes](drums-hheighths.qmd).
+- **The same idea elsewhere in the band:** [Motown: root, fifth, octave](bass-motown.qmd) (bass line), [The Barbara Ann rhythm](chords-barbara.qmd) (comping rhythm).
+- **Plays with, in motown / soul:** [Motown: root, fifth, octave](bass-motown.qmd) (bass line), [The Barbara Ann rhythm](chords-barbara.qmd) (comping rhythm).
+- **Other drum grooves in the Folk, rock and pop group:** [Bo Diddley beat](drums-bodiddley.qmd), [Waltz in one](drums-waltz.qmd), [Two-beat](drums-boomchick.qmd), [Rock backbeat](drums-rock.qmd), [Pop backbeat](drums-strum.qmd), [Ballad](drums-ballad.qmd), [Four on the floor](drums-dance.qmd), [Train beat](drums-train.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

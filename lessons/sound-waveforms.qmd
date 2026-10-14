@@ -1,0 +1,68 @@
+---
+title: "Sound 2: Oscillators and Pulse-Width Modulation"
+toc: true
+toc-depth: 2
+---
+
+An **oscillator** is the part of a synthesizer that makes a repeating wave. Its two settings are
+the **shape** of the wave and how fast it repeats (the **frequency**, heard as pitch). This lesson
+plays the classic shapes from [the harmonic series lesson](sound-harmonics.qmd) on a real
+oscillator, then makes the pulse wave move.
+
+**How to use the page.** Press ▶, or play the computer keys (`a w s e d…`), the on-screen keyboard
+or a MIDI keyboard; the widget sounds while a key is held. Keep the volume in the bottom bar low to
+start with. The bright waves are loud.
+
+## Four shapes
+
+<div class="sk" data-w="wave" data-set="type=sine"></div>
+
+Play the same note with each **Wave** and watch both pictures:
+
+- **Sine**: one spike in the spectrum.
+- **Triangle**: a few odd harmonics that die away fast. Softer than you'd guess from the pointed shape.
+- **Sawtooth**: a comb of every harmonic. The brightest and the most useful, because a filter can
+  carve almost anything out of it.
+- **Square**: only every other spike. Listen for the hollow, woody tone.
+
+Move **Pitch** up and down. On the spectrum the whole comb slides along together, keeping its
+pattern. That pattern (the timbre) is independent of the pitch.
+
+::: {.sk-tip}
+**Frequency and pitch.** Each octave doubles the frequency: A2 is 110 Hz, A3 220 Hz, A4 440 Hz.
+That's why the spectrum's frequency axis is drawn with every octave the same width.
+:::
+
+## Pulse width
+
+A pulse wave is up for part of each cycle and down for the rest. The fraction of the cycle it
+spends up is the **pulse width** (or *duty cycle*). At 50% it is a square wave.
+
+<div class="sk" data-w="wave" data-set="type=pulse,width=0.5" data-title="Pulse width"></div>
+
+Drag **Pulse width** slowly from 50% down to 5%. The sound goes from hollow to nasal to thin and
+reedy. On the spectrum, gaps appear and move: at width 1/*k*, every *k*th harmonic is missing.
+Widths of 30% and 70% sound the same: one is the other upside down.
+
+Inside the browser there is no pulse oscillator, so the widget makes one the way some analogue
+synths did: it takes a sawtooth and subtracts a delayed copy of the same sawtooth. The delay, as a
+fraction of the cycle, is the pulse width.
+
+## PWM: pulse-width modulation
+
+Now let something move the width for you. **PWM rate** is how many times a second the width swings,
+and **PWM depth** is how far.
+
+<div class="sk" data-w="wave" data-set="type=pulse,width=0.5,pwmDepth=0.35,pwmRate=0.6,freq=110" data-title="PWM"></div>
+
+A slowly swinging pulse width gives the rich, chorus-like shimmer of 1980s string machines and
+synth pads: the gaps in the spectrum sweep up and down, a little like a [phaser](sound-phaser.qmd).
+Turn the rate up to 5 Hz or so for a wobble. The thing doing the moving is an **LFO**, a low-frequency
+oscillator, which gets [its own lesson](sound-lfo.qmd).
+
+## Next
+
+- [Sound 3: Noise](sound-noise.qmd)
+- [Sound 5: LFOs](sound-lfo.qmd)
+
+{{< include _synth-kit.qmd >}}

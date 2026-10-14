@@ -1,0 +1,51 @@
+---
+title: "Drum groove: Tango"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Tango**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+A light habanera on the kick under quarter notes on the cymbal. Tango bands rarely carry a drum kit, so this stays out of the way.
+
+It belongs in *Tango*. Here it is in the tango style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Tango","opts":{"groove":"tango"}}]'></div>
+
+## Step 1: Hi-hat: quarter notes
+
+Start with something simpler. Closed hi-hat on every beat, kick on 1 and 3, snare on 2 and 4. The first rock beat. In 3/4: hi-hat on every beat, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hhquarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 2: Tango, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Quarter notes on the cymbal over a light habanera on the kick. Stay out of the way: tango bands rarely have a drum kit.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Tango","opts":{"groove":"tango"}},{"label":"Hi-hat: quarter notes (the step before)","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 104 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Tango","opts":{"groove":"tango"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: quarter notes](drums-hhquarters.qmd).
+- **The same idea elsewhere in the band:** [Tango (habanera)](bass-tango.qmd) (bass line), [Tango (habanera)](chords-tango.qmd) (comping rhythm).
+- **Plays with, in tango:** [Tango (habanera)](bass-tango.qmd) (bass line), [Tango (habanera)](chords-tango.qmd) (comping rhythm).
+- **Other drum grooves in the Latin group:** [Bossa nova](drums-bossa.qmd), [Son clave (2-3)](drums-clave.qmd), [Son clave (3-2)](drums-clave32.qmd), [Cha-cha](drums-chacha.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

@@ -1,0 +1,67 @@
+---
+title: "Drum groove: Reggaeton (dembow)"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Reggaeton (dembow)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+Kick on every beat, with the snare on the sixteenth before beats 2 and 4 and on the and of 2 and 4: a 3+3+2 in sixteenths, twice a bar. Despacito, One Dance.
+
+It belongs in *Reggaeton* and *Dance pop*. Here it is in the reggaeton style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="92" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Reggaeton (dembow)","opts":{"groove":"dembow"}}]'></div>
+
+## Step 1: Hi-hat: quarter notes
+
+Start with something simpler. Closed hi-hat on every beat, kick on 1 and 3, snare on 2 and 4. The first rock beat. In 3/4: hi-hat on every beat, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hhquarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="64" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 2: Four on the floor
+
+Kick on every beat, snare and clap on 2 and 4, and the open hi-hat on every off-beat.
+
+This is a pattern of its own: [the lesson on it](drums-dance.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="64" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Four on the floor","opts":{"groove":"dance"}}]'></div>
+
+## Step 3: Reggaeton (dembow), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Kick on every beat; snare on the sixteenth before 2 and 4 and on the and of 2 and 4: 3+3+2 in sixteenths, twice a bar. Learn the snare against the kick slowly.
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="64" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Reggaeton (dembow)","opts":{"groove":"dembow"}},{"label":"Four on the floor (the step before)","opts":{"groove":"dance"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 92 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="92" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Reggaeton (dembow)","opts":{"groove":"dembow"}}]'></div>
+
+## In other styles
+
+The same drum groove in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Dance pop**
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Reggaeton (dembow)","opts":{"groove":"dembow"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: quarter notes](drums-hhquarters.qmd), [Four on the floor](drums-dance.qmd).
+- **The same idea elsewhere in the band:** [3+3+2 (tresillo)](bass-tresillo.qmd) (bass line), [3+3+2 (tresillo)](chords-tresillo.qmd) (comping rhythm), [Strum: 3-3-2 accents](chords-strum332.qmd) (comping rhythm), [Ballad: syncopated](chords-ball-sync.qmd) (comping rhythm).
+- **Plays with, in reggaeton:** [3+3+2 (tresillo)](bass-tresillo.qmd) (bass line), [Long notes](chords-pad.qmd) (comping rhythm).
+- **Other drum grooves in the Caribbean group:** [Calypso](drums-calypso.qmd), [Reggae one-drop](drums-onedrop.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

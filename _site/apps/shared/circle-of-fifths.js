@@ -23,8 +23,10 @@
 //   tonality    follow and change the key shared with the site's other tools (Tonality) (default false)
 //   transpose   a function returning semitones, for pages that show a written key: the chord that sounds is moved by it
 //   onChange    function (state, source)  source is "click", "picker", "undo", "link", "tonality" or "set"
+//   blues       the key is a blues (major or minor): the characteristic chords are I7, IV7, V7 (i7, iv7, V7 in minor), drawn and
+//               played with their sevenths. With `tonality` it follows the shared key's flavor; changing to another mode ends it.
 //
-// The wheel:  c.state() -> { root, mode, keyNote, doPc, restPc, label }     c.set({ root, mode }, source)     c.undo()     c.canUndo()
+// The wheel:  c.state() -> { root, mode, keyNote, doPc, restPc, label, blues }     c.set({ root, mode, blues }, source)     c.undo()     c.canUndo()
 //             c.setKeySig(n)  n sharps (+) or flats (-)     c.keySig()     c.redraw()     c.destroy()     c.el
 (function (global) {
   "use strict";
@@ -173,6 +175,9 @@
       return global.DegreeNames.label(SYL_SEMI[syl], { doPc: 0, restPc: SYL_SEMI[MODES[selectedMode].tonic] });
     }
     function diatonicSet() { var rc = FIFTHS_TO_CHROMA[selectedRoot]; return MODES[selectedMode].steps.map(function (s) { return (rc + s) % 12; }); }
+    var bluesOn = bool(o.blues, false);
+    function isBlues() { return bluesOn && (selectedMode === 0 || selectedMode === 5 || selectedMode === 6); }
+    var BLUES_STEPS = [0, 3, 4];
     function qualities() { return MODES[selectedMode].harmonic ? HARM_MIN_QUALITIES : MODES[selectedMode].qualities; }
 
     // drawing
@@ -196,7 +201,7 @@
       if (rootExtOverride && (rootExtOverride.root !== selectedRoot || rootExtOverride.mode !== selectedMode)) rootExtOverride = null;
       var c = COLORS, W = CSS_SIZE;
       ctx.fillStyle = c.canvasBg; ctx.fillRect(0, 0, W, W);
-      var dia = diatonicSet(), quals = qualities(), solSet = MODE_SOLFEGE[selectedMode], charSet = characteristic ? CHARACTERISTIC[selectedMode] : [];
+      var dia = diatonicSet(), quals = qualities(), solSet = MODE_SOLFEGE[selectedMode], charSet = characteristic ? (isBlues() ? BLUES_STEPS : CHARACTERISTIC[selectedMode]) : [];
       for (var i = 0; i < 12; i++) {
         var a = sliceAngles(i), noteC = FIFTHS_TO_CHROMA[i], isDia = dia.indexOf(noteC) >= 0, isRoot = i === selectedRoot, step = dia.indexOf(noteC);
         if (geo.roman) {
@@ -205,6 +210,7 @@
           sector(g.o, g.i, a.start, a.end, oFill);
           if (isDia) {
             var q2 = quals[step], base = ROMAN[step], lbl = q2 === "M" ? base : q2 === "m" ? base.toLowerCase() : q2 === "aug" ? base + "+" : base.toLowerCase() + "°";
+            if (isBlues() && BLUES_STEPS.indexOf(step) >= 0) lbl = (step === 4 || selectedMode === 0 ? base : base.toLowerCase()) + "7";   // I7 IV7 V7 / i7 iv7 V7
             var isChar = charSet.indexOf(step) >= 0, p = pt((g.o + g.i) / 2, a.mid);
             text(lbl, p.x, p.y, (isChar ? 18 : 14) * g.k, isChar ? c.charGold : oTxt, "500");
           }
@@ -238,14 +244,14 @@
     }
 
     // state in, state out
-    function snapshot() { return { root: selectedRoot, mode: selectedMode, toggles: toggleState.slice(), over: rootExtOverride ? { root: rootExtOverride.root, mode: rootExtOverride.mode, ext: rootExtOverride.ext } : null }; }
-    function restore(s) { selectedRoot = s.root; selectedMode = s.mode; toggleState = s.toggles.slice(); rootExtOverride = s.over; }
+    function snapshot() { return { root: selectedRoot, mode: selectedMode, blues: bluesOn, toggles: toggleState.slice(), over: rootExtOverride ? { root: rootExtOverride.root, mode: rootExtOverride.mode, ext: rootExtOverride.ext } : null }; }
+    function restore(s) { selectedRoot = s.root; selectedMode = s.mode; bluesOn = !!s.blues; toggleState = s.toggles.slice(); rootExtOverride = s.over; }
     function state() {
       var rootPc = FIFTHS_TO_CHROMA[selectedRoot], doPc = mod12(rootPc + MODES[selectedMode].fifthsOffset * 7);
       return { root: rootPc, mode: selectedMode, modeId: OUR_MODE[selectedMode], keyNote: ringName(selectedRoot), doPc: doPc, restPc: rootPc,
-               label: ringName(selectedRoot) + " " + MODE_WORD[selectedMode].toLowerCase(), keySig: keySigValue() };
+               label: ringName(selectedRoot) + " " + MODE_WORD[selectedMode].toLowerCase() + (isBlues() ? " (blues)" : ""), keySig: keySigValue(), blues: isBlues() };
     }
-    function same(a, b) { return a.root === b.root && a.mode === b.mode; }
+    function same(a, b) { return a.root === b.root && a.mode === b.mode && !!a.blues === !!b.blues; }
     function emit(source) {
       var st = state(); updateUi(st);
       cbs.slice().forEach(function (f) { try { f(st, source); } catch (e) {} });
@@ -261,7 +267,8 @@
     function set(s, source) {
       s = s || {}; source = source || "set";
       return change(function () {
-        if (s.mode != null) selectedMode = modeIndex(s.mode);
+        if (s.mode != null) { selectedMode = modeIndex(s.mode); if (!isBlues() && source !== "tonality") bluesOn = false; }
+        if (s.blues != null) bluesOn = !!s.blues;
         if (s.root != null) { var i = FIFTHS_TO_CHROMA.indexOf(mod12(+s.root)); if (i >= 0 && i !== selectedRoot) { lockSpelling(i); selectedRoot = i; } }
       }, source, source === "click" || source === "picker");
     }
@@ -333,6 +340,7 @@
     });
     function playChord(noteC, step) {
       var q = qualities()[step], iv = q === "m" ? [0, 3, 7] : q === "d" ? [0, 3, 6] : q === "aug" ? [0, 4, 8] : [0, 4, 7];
+      if (isBlues() && BLUES_STEPS.indexOf(step) >= 0) iv = step === 4 || selectedMode === 0 ? [0, 4, 7, 10] : [0, 3, 7, 10];
       var ts = typeof o.transpose === "function" ? (o.transpose() || 0) : 0, base = 60 + mod12(noteC - ts);
       var play = function () { if (global.MusicAudio) global.MusicAudio.chord(iv.map(function (x) { return base + x; }), 1.1); };
       if (global.MusicAudio) play(); else loadAudio(play);
@@ -354,10 +362,10 @@
       var T = global.Tonality;
       var fromT = function (st) {
         if (!st || st.resting == null) return;
-        var m = C_MODE[st.mode] != null ? C_MODE[st.mode] : 0; set({ root: st.resting, mode: m }, "tonality");
+        var m = C_MODE[st.mode] != null ? C_MODE[st.mode] : 0; set({ root: st.resting, mode: m, blues: st.flavor === "blues" }, "tonality");
       };
-      fromT({ resting: T.getResting(), mode: T.getMode() });
-      cbs.push(function (st, source) { if (source !== "tonality") T.setAll(st.doPc, st.restPc, st.modeId, srcId); });
+      fromT({ resting: T.getResting(), mode: T.getMode(), flavor: T.getFlavor ? T.getFlavor() : "" });
+      cbs.push(function (st, source) { if (source !== "tonality") T.setAll(st.doPc, st.restPc, st.modeId, srcId, st.blues ? "blues" : ""); });
       T.onChange(function (st, src) { if (src !== srcId) fromT(st); });
     }
     if (global.DegreeNames) global.DegreeNames.onChange(function () { draw(); });
@@ -376,7 +384,7 @@
   }
 
   function loadAudio(then) {
-    var s = document.createElement("script"); s.src = "/apps/shared/audio.js?v=9"; s.onload = then; document.head.appendChild(s);
+    var s = document.createElement("script"); s.src = "/apps/shared/audio.js?v=10"; s.onload = then; document.head.appendChild(s);
   }
 
   // <div class="cof-widget" data-...> in a page is mounted once the page has loaded

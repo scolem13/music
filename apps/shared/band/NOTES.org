@@ -1053,7 +1053,7 @@ listened to. The old page's =localStorage= reads (=countingStyle=, =tuneMeter=, 
 - =toEvents(groove)= -> the =[{ pos, piece, vel, straight? }]= bars drums.js already returns, so the player, notation and MIDI
   take a written groove as they take a generated one. =fromEvents= for the other direction (see 7).
 - Tests: round trip of every groove in GrooveScribe's menu strings typed in by hand; triplet positions carry straight:true.
-** TODO 2. Articulations in the engine (written and levelled: done. Flam / drag / buzz still SOUND like one plain hit; no samples for tom3, cowbell, stacker, clicks)
+** TODO 2. Articulations in the engine (done with stand-ins, 2026-10-14: see "Flams, drags, buzzes and five more kit pieces"; recorded samples are still to do)
 - Accent, normal and ghost are levels (GrooveScribe uses MIDI 120 / 85 / 50); =vel= already carries them.
 - Flam, drag and buzz have no samples: the kit is the soundfont, velocity only. First pass: stand-ins built in the player
   (flam = a quiet grace hit about 30 ms early, drag = two, buzz = a short run of quiet hits), marked as stand-ins. New
@@ -1138,7 +1138,8 @@ Added =lessons/hihat-grooves.qmd= ("Hi-Hat Grooves: From Quarter Notes to Sixtee
 - drums.js: ="^choke"= on a bar of the chart (tune-chart.js -> form bar =choke=) = crash and kick on beat 1, ={ choke:"cymbals", damp:0.05 }=
   at 0.7 of a beat. =opts.endChoke= grabs the last hit (Backing Track: "Short ending"). No rng drawn. Test: fills/t_grab.js.
 ** NOBODY HAS LISTENED: every damp time above, where the hand lands (0.7 of a beat; 0.6 on the ending), whether the re-struck snare and kick sound better or thinner.
-** TODO The grab is not written in the notation (a staccato dot or "choke" over the crash) and has no lesson step yet.
+- 2026-10-14: the drum staff writes a grabbed crash short (staccato) with "choke" over it; =opts.chokeBars= asks for grabs by form index;
+  step 8 of lessons/blues-drums.qmd ("Grabbing the crash": bars 5 and 9 and the last hit, Boogaloo). Checked by eye in a screenshot.
 
 * Chord Entry: melody from a keyboard -- 2026-10-13
 - Chord Entry's "Melody, played along with the band" mode: the band plays the entered chords (count-in, then the form once) while single notes are
@@ -1245,3 +1246,67 @@ goes through the melody reader (tests/band/tune/t_score.js "SCORE OK").
 ** TODO With an intro or count-in "None" the pickup is not played before the first chorus.
 ** TODO Tuplets under a chord symbol: abcjs leaves the third note unscaled; the reader follows the ABC standard.
 ** VERIFY BY EAR: melody against the band, in a few tunes with repeats and endings.
+
+* Flams, drags, buzzes and five more kit pieces -- 2026-10-14
+- =groove.js= toEvents: a flam is a grace note 30 ms before the main note (0.42 of its level), a drag two (70 and 35 ms, 0.38 and 0.42),
+  a buzz a run of bounces every 28 ms for 90% of its cell (at most 0.3 s), from 0.75 of the level down to 0.35. All of them are the
+  plain snare sample: stand-ins, not recorded ornaments. Marked grace:true (fromEvents and the band's drum staff leave them out;
+  =opts.ornaments === false= leaves them off). A grace note before beat 1 has a pos below 0.
+- =drums.js= writtenBar: the player drops anything before a bar line (=collect= in player.js), so a grace note before the next bar's
+  first beat is played at the end of this bar instead (not after the last bar of the final chorus).
+- =sounds.js= kit: =tom3= (the mid tom's file at rate 0.94, between the mid and floor toms), =cowbell= (GM 56), =stacker= (GM 52, china;
+  in the "cymbals" group), =click= and =clickHi= (GM 33 and 34, metronome click and bell); all in =BandSounds.pieces=. =midi.js= GM map:
+  tom3 47, cowbell 56, stacker 52, click 33, clickHi 34. =tests/band/meter/fetch-samples.js= mirrors the four new files.
+- The snare's own choke (a drum struck again lets go of its last note) applies to the bounces, so a buzz does not pile up.
+** VERIFY BY EAR: whether 30 ms reads as a flam at slow and fast tempos; whether the buzz sounds like a buzz or a machine gun (it is
+   one sample struck again and again); every level of the five new pieces (gains are guesses: tom3 0.95, cowbell 0.8, stacker 1.3, clicks 0.9).
+** TODO Other pages still load =sounds.js?v=12= and =drums.js?v=12= (only the Drumset draft names the new versions).
+
+* Band marks in Chord Entry; O Hanukkah's intro -- 2026-10-14
+User: "I need a more obvious audio cue that it's about to be time to sing -- too easy to get lost over a one-chord vamp"; the intro "only
+the first time"; "the half time sections don't come through in the melody entry tool".
+- Chord Entry (tools/_chord-entry.qmd): choGrid reads half / ballad / normal / fill[:size] / stop / rit / plain as tools/chordpro.py does
+  (half runs to the end of the grid or to normal); choMarks writes them into the bars as "^half time", "^fill" etc. takeChanges keeps the
+  parsed bars' marks in =marks= (one per grid bar; the grid holds only chords) and refresh() puts them back on =parsed= for the band.
+  Saved with the work in progress. Not carried: the ABC box, Copy and the hand-off to the Backing Track (they are written from the grid).
+- Carols, site/extra/o-hanukkah.cho: the downloaded file (melodies, Intro) put in; Intro's last two bars E7 (was Am), fills on Intro bars
+  4, 7, 8 and the Interlude's last three bars (written out twice instead of |: :|); {comment: Segno} above Verse 1 and D.S. al Fine
+  (was D.C.), so the second pass starts at Verse 1. In 2/4 a fill is one beat at most (drums.js), and freylekhs' boom-chick has no fills
+  of its own (a light one is played): hence the E7 as well.
+- Test: entry/marks.cdp.js ("ENTRY MARKS OK"). entry/{songfile,sections,pickup,start-pickup,spelling,entry}.cdp.js, fills/tap.cdp.js pass.
+** VERIFY BY EAR: whether three one-beat light fills plus the E7 are cue enough at 148; if not, a stop on Intro bar 8 is the next thing.
+** VERIFY on the carols page: j walks Intro, Verse 1, Verse 2, Chorus, Interlude, Verse 1, Verse 2, Chorus and stops at Fine.
+
+* Words with letters outside A-Z -- 2026-10-14
+User: O Tannenbaum's "Blätter" broke the w: line ("jumps to the next word"); "Blatter" worked.
+- lyric-align.js (Chord Entry's drafts) and the carols site's tools/lyrics_align.py took a word to be [A-Za-z] only, so a word with
+  an umlaut matched nothing and was dropped. Now any alphabet's letters (\p{L}; [^\W\d_] in Python), the word normalised to NFC first,
+  and the vowel groups include the accented vowels (ä ö ü é è à å ø œ ...): Blät-ter, grü-nen, fröh-lich.
+- Lint over every song in site/extra gives the same output as before; t_lyrics.js has the umlaut cases.
+** TODO The guesser is English: a final e is silent ("deine" is one syllable) and a diaeresis is not a break (Noël). Write the
+   hyphen in the words (dei-ne) or add an override.
+
+* Chord Entry defaults; plainer phrase ends -- 2026-10-14
+User: record "from bar x to y" as in the Backing Track; swing "iff the band style uses swing"; record "from the starting place and continuing
+on"; "not hearing the piano input and not allowing keyboard entry", and warn on Record with neither; staccato by default; "prefer simpler
+notation (unlike I want a dotted eighth note as the last note of a phrase when a quarter could do)".
+- Record menu: "to the end of the tune" (now the default), "to the end of its section" (only with sections), "These bars" with From / To
+  (From is the marked bar, so a click in the chart moves it; To empty = the end; To never before From). Shown in melody mode whenever there
+  are bars, sections or not. Remembered (localStorage ce-mrange).
+- You play (swung / straight) is set from the style when the style comes from a song file, a hand-off or saved work, not only from the menu.
+- Sound the notes I play and Play with the computer keyboard start off and are remembered. Record (chords live, melody, split) with no MIDI
+  input listened to and the computer keyboard off: no take, a note saying why, the keyboard box outlined for a moment.
+- Short detached notes: Staccato note by default (remembered, like Beams). Fixed with it: a note and its equal rest were merged into a
+  staccato note across the bar line (a tied staccato note); now only within a bar.
+- chord-entry.js quantizeLine, o.ends "simple" (default) / "played": a note longer than an eighth with a rest after it ends at the grid
+  point near its release (within 0.25 of its length, at least a grid step, at most a beat: RULES.phraseTol) where the note and the rest
+  are fewest symbols (dotted = 1.5), off-beat ends cost 0.5 / 1, distance costs |moved| / window, and holding on to the next note (losing
+  the rest) costs RULES.phraseKeepRest 1.25. A quarter released a sixteenth early or late is a quarter; a half let go early is a half; a
+  dotted quarter with a clear eighth rest stays. Setting "Long notes before a rest" on Chord Entry and Notation Rules (rule text in N6),
+  in the take log (cfg.ends) and two "do what I mean" readings. The Backing Track's melody take gets the default (no menu there).
+- Tests: entry/defaults.cdp.js; t_entry.js (phrase-end cases); dwim.cdp.js sets "Note and rest" first, sections.cdp.js "to the end of its
+  section". All entry tests, melody-bt, rules, tap pass.
+** VERIFY by playing: the phrase-end window on real takes (slow ballads especially, where a held note let go a beat early may now be held
+   to the bar line), and whether staccato by default reads well in straight styles.
+** TODO A log made before cfg.ends existed replays with "simple".
+

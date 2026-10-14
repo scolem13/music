@@ -1,0 +1,73 @@
+---
+title: "Comping rhythm: Fingerpicking: Travis pattern"
+subtitle: "For guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Fingerpicking: Travis pattern**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+The same thumb on every beat: root, inner string, alternate bass, inner string. The fingers pinch with it on beat 1, then play between the thumb's notes: the and of 2, the and of 3, the and of 4.
+
+It belongs in *John Prine Fingerpicking*, *Boom-chick*, *Acoustic strum*, *Folk carol* and *Country train beat*. Here it is in the john prine fingerpicking style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="prine" data-chart="G|C|D|G" data-tempo="100" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+## Step 1: Fingerpicking: thumb, pinch-and
+
+Start with something simpler. Thumb and fingers, after John Prine. The thumb plays every beat on the low strings: the root, an inner string, the alternate bass, the inner string again. The fingers pinch a treble string with the thumb on 2 and 4 and add the string below it on the and after. In 3/4 the pinches are on 2 and 3.
+
+This is a pattern of its own: [the lesson on it](chords-prine.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="prine" data-chart="G|C|D|G" data-tempo="70" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Step:" data-choices='[{"label":"Fingerpicking: thumb, pinch-and","opts":{"compRhythm":"prine"}}]'></div>
+
+## Step 2: Fingerpicking: Travis pattern, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The same thumb on every beat. The fingers pinch with the thumb on beat 1, then play in between the thumb notes: the and of 2, the and of 3, the and of 4. Thumb and fingers alternate like two players.
+
+<div class="ar-demo" data-style="prine" data-chart="G|C|D|G" data-tempo="70" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Compare:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}},{"label":"Fingerpicking: thumb, pinch-and (the step before)","opts":{"compRhythm":"prine"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="prine" data-chart="G|C|D|G" data-tempo="100" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+## Step 4: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="prine" data-chart="G C|D G|C D|G" data-tempo="100" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boom-chick**
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+**Acoustic strum**
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+**Folk carol**
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Fingerpicking: Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Fingerpicking: thumb, pinch-and](chords-prine.qmd).
+- **The same idea elsewhere in the band:** [Root and fifth](bass-alt.qmd) (bass line), [Boom-chick / oom-pah-pah](chords-oompah.qmd) (comping rhythm), [Two-beat](drums-boomchick.qmd) (drum groove), [Fingerpicking: thumb, pinch-and](chords-prine.qmd) (comping rhythm).
+- **Plays with, in john prine fingerpicking:** [Root and fifth](bass-alt.qmd) (bass line).
+- **Other comping rhythms in the Folk, rock and pop group:** [Boom-chick / oom-pah-pah](chords-oompah.qmd), [Waltz in one](chords-waltz.qmd), [Ballad: rocking](chords-ball-rock.qmd), [Ballad: half-broken](chords-ball-broken.qmd), [Ballad: syncopated](chords-ball-sync.qmd), [Quarter-note chords](chords-quarters.qmd), [Triplet chords (12/8)](chords-triplets.qmd), [Driving eighths](chords-eighths.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

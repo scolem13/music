@@ -1,0 +1,184 @@
+---
+title: "Accompaniment Patterns"
+subtitle: "A lesson for every bass line, comping rhythm, drum groove and conga part the band plays"
+toc: true
+toc-depth: 2
+---
+
+Every pattern the [Backing Track](../../tools/backing-track.qmd) band can play has a lesson here. Each one starts from simpler patterns in the same list, plays every step on the band and writes out what it played, then takes the pattern into its styles and shows how it relates to the rest. A pattern marked ○ is a starting point: it builds on nothing else.
+
+## Bass lines {#bass}
+
+**Jazz**
+
+- [Walking](bass-walk.qmd) — from Roots on 1 and 3 → Two-feel → Chord tones (learning to walk)
+- [Chord tones (learning to walk)](bass-arp.qmd) — from Roots on 1 and 3 → Roots on every beat
+- [Two-feel](bass-two.qmd) — from Roots on 1 and 3
+- [Boogaloo riff](bass-riff.qmd) — from Roots on 1 and 3 → Dotted (1, and of 2, 3)
+- [Boogaloo riff, walking at times](bass-riffwalk.qmd) — from Boogaloo riff → Chord tones (learning to walk) → Walking
+
+**From tunes**
+
+- [So What: the bass call](bass-sowhat.qmd) — from Held roots (the bass voice) → Two-feel
+- [Killer Joe: two-bar vamp](bass-killerjoe.qmd) — from Roots on 1 and 3 → Two-feel
+- [Song for My Father: root, fifth, octave](bass-songfather.qmd) — from Roots on 1 and 3 → Dotted (1, and of 2, 3)
+- [Footprints: waltz ostinato](bass-footprints.qmd) — from Root and fifth → Chord tones (learning to walk)
+- [All Blues: 6/8 vamp](bass-allblues.qmd) — from Held roots (the bass voice) → 12/8 ballad
+- [Chameleon: chromatic pickup](bass-chameleon.qmd) — from Held roots (the bass voice) → Roots on every beat
+- [Maiden Voyage: roots on the rhythm](bass-maiden.qmd) — from Roots on 1 and 3 → Dotted (1, and of 2, 3)
+- [Take Five: 3 + 2](bass-takefive.qmd) — from Held roots (the bass voice) → Roots on 1 and 3
+
+**Folk, rock and pop**
+
+- [Roots on every beat](bass-roots.qmd) — from Held roots (the bass voice) → Roots on 1 and 3
+- [Root and fifth](bass-alt.qmd) — from Roots on 1 and 3
+- [Root and fifth on every beat](bass-polka.qmd) — from Root and fifth → Roots on every beat
+- [3+3+2 (tresillo)](bass-tresillo.qmd) — from Roots on 1 and 3 → Dotted (1, and of 2, 3)
+- [Root eighths](bass-eighths.qmd) — from Roots on 1 and 3 → Roots on every beat
+- [Dotted (1, and of 2, 3)](bass-dotted.qmd) — from Roots on 1 and 3 → Roots on every beat
+- [Octaves (disco)](bass-octaves.qmd) — from Roots on every beat → Root eighths
+- [Motown: root, fifth, octave](bass-motown.qmd) — from Root and fifth → Dotted (1, and of 2, 3)
+- [12/8 ballad](bass-twelve8.qmd) — from Roots on 1 and 3 → Two-feel
+
+**Hymns and carols**
+
+- ○ [Held roots (the bass voice)](bass-held.qmd)
+- [Roots on 1 and 3](bass-halves.qmd) — from Held roots (the bass voice)
+
+**Latin**
+
+- [Bossa nova](bass-bossa.qmd) — from Roots on 1 and 3 → Root and fifth
+- [Tango (habanera)](bass-tango.qmd) — from Roots on 1 and 3 → Dotted (1, and of 2, 3)
+- [Tumbao](bass-tumbao.qmd) — from Root and fifth → Bossa nova
+- [Cha-cha](bass-chacha.qmd) — from Roots on 1 and 3 → Root and fifth
+
+## Comping rhythms {#chords}
+
+**Jazz**
+
+- [Varied](chords-auto.qmd) — from Charleston → Reverse Charleston → Red Garland
+- [Charleston](chords-charleston.qmd) — from Long notes → Quarter-note chords
+- [Reverse Charleston](chords-reverse.qmd) — from Long notes → Charleston
+- [Red Garland](chords-garland.qmd) — from Charleston → Off-beats
+- [Off-beats](chords-offbeats.qmd) — from Charleston → Reverse Charleston
+- ○ [Long notes](chords-pad.qmd)
+- [Four to the bar](chords-four.qmd) — from Long notes → Quarter-note chords
+- [Boogaloo stabs](chords-stabs.qmd) — from Long notes → Charleston
+
+**From tunes**
+
+- [So What: the answer](chords-sowhat.qmd) — from Long notes → Off-beats
+- [Maiden Voyage](chords-maiden.qmd) — from Long notes → 3+3+2 (tresillo)
+- [Take Five vamp](chords-takefive.qmd) — from Long notes → Charleston
+
+**Folk, rock and pop**
+
+- [Boom-chick / oom-pah-pah](chords-oompah.qmd) — from Quarter-note chords
+- [Waltz in one](chords-waltz.qmd) — from Long notes → Boom-chick / oom-pah-pah
+- [Ballad: rocking](chords-ball-rock.qmd) — from Quarter-note chords → Hymn: four parts
+- [Ballad: half-broken](chords-ball-broken.qmd) — from Ballad: rocking → Arpeggio, up and down
+- [Ballad: syncopated](chords-ball-sync.qmd) — from Quarter-note chords → 3+3+2 (tresillo)
+- [Quarter-note chords](chords-quarters.qmd) — from Long notes
+- [Triplet chords (12/8)](chords-triplets.qmd) — from Quarter-note chords
+- [Driving eighths](chords-eighths.qmd) — from Quarter-note chords
+- [3+3+2 (tresillo)](chords-tresillo.qmd) — from Quarter-note chords → Ballad: syncopated
+- [3-2 clave / Bo Diddley beat](chords-clave32.qmd) — from 3+3+2 (tresillo)
+- [The Barbara Ann rhythm](chords-barbara.qmd) — from Quarter-note chords → 3-2 clave / Bo Diddley beat
+- [Alberti bass](chords-alberti.qmd) — from Hymn: four parts → Arpeggio, low and high
+- [Groups: 3+3+3+3+2+2](chords-g333322.qmd) — from 3+3+2 (tresillo) → 3-2 clave / Bo Diddley beat
+- [Groups: 3+3+4+3+3](chords-g33433.qmd) — from 3+3+2 (tresillo) → Groups: 3+3+3+3+2+2
+- [Groups: eight 3s then four 2s (sixteenths)](chords-g3x8.qmd) — from 3+3+2 (tresillo) → Strum: sixteenths
+- [Strum: D, D-U, U-D-U](chords-strum-camp.qmd) — from Strum: downstrokes on the beat → Strum: D, D-U, D, D-U
+- [Strum: D, D-U, D, D-U](chords-strum-folk.qmd) — from Strum: downstrokes on the beat
+- [Strum: down-up eighths](chords-strum-eights.qmd) — from Strum: downstrokes on the beat → Strum: D, D-U, D, D-U
+- [Strum: muted eighths, open in the chorus](chords-strum-punk.qmd) — from Strum: downstrokes on the beat → Strum: down-up eighths
+- [Strum: downstrokes on the beat](chords-strum-quarters.qmd) — from Long notes
+- [Strum: 3-3-2 accents](chords-strum332.qmd) — from Strum: downstrokes on the beat → Strum: D, D-U, U-D-U
+- [Strum: sixteenths](chords-strum16.qmd) — from Strum: down-up eighths → Strum: D, D-U, U-D-U
+- [Fingerpicking: thumb, pinch-and](chords-prine.qmd) — from Strum: downstrokes on the beat → Boom-chick / oom-pah-pah
+- [Fingerpicking: Travis pattern](chords-travis.qmd) — from Fingerpicking: thumb, pinch-and
+- [Arpeggio, up and down](chords-arp.qmd) — from Long notes → Arpeggio, low and high
+- [Arpeggio, low and high](chords-arp2.qmd) — from Long notes
+
+**Hymns and carols**
+
+- [Hymn: four parts](chords-hymn.qmd) — from Long notes
+
+**Caribbean**
+
+- [Every off-beat](chords-upbeats.qmd) — from Quarter-note chords → Boom-chick / oom-pah-pah
+
+**Latin**
+
+- [Bossa nova](chords-bossa.qmd) — from Long notes → Charleston
+- [Tango (habanera)](chords-tango.qmd) — from Quarter-note chords
+- [Son montuno](chords-montuno.qmd) — from Quarter-note chords → Every off-beat
+- [Cha-cha](chords-chacha.qmd) — from Quarter-note chords → Boom-chick / oom-pah-pah
+
+## Drum grooves {#drums}
+
+**Jazz**
+
+- [Jazz time](drums-auto.qmd) — from Quarter notes (learning swing, 1) → Ride pattern (learning swing, 2)
+- ○ [Quarter notes (learning swing, 1)](drums-quarters.qmd)
+- [Ride pattern (learning swing, 2)](drums-ridetime.qmd) — from Quarter notes (learning swing, 1)
+- [Blues shuffle](drums-shuffle.qmd) — from Ride pattern (learning swing, 2) → Hi-hat: quarter notes
+- [Funk](drums-funk.qmd) — from Hi-hat: eighth notes → Rock backbeat
+- [Hi-hat: swing time](drums-hhswing.qmd) — from Quarter notes (learning swing, 1) → Ride pattern (learning swing, 2)
+
+**Latin**
+
+- [Bossa nova](drums-bossa.qmd) — from Hi-hat: eighth notes
+- [Son clave (2-3)](drums-clave.qmd) — from Hi-hat: quarter notes
+- [Son clave (3-2)](drums-clave32.qmd) — from Son clave (2-3)
+- [Cha-cha](drums-chacha.qmd) — from Hi-hat: quarter notes
+- [Tango](drums-tango.qmd) — from Hi-hat: quarter notes
+
+**Folk, rock and pop**
+
+- [Bo Diddley beat](drums-bodiddley.qmd) — from Hi-hat: quarter notes → Son clave (3-2)
+- [Waltz in one](drums-waltz.qmd) — from Two-beat
+- [Two-beat](drums-boomchick.qmd) — from Hi-hat: quarter notes
+- [Rock backbeat](drums-rock.qmd) — from Hi-hat: quarter notes → Hi-hat: eighth notes
+- [Pop backbeat](drums-strum.qmd) — from Hi-hat: eighth notes
+- [Ballad](drums-ballad.qmd) — from Hi-hat: eighth notes → Pop backbeat
+- [Four on the floor](drums-dance.qmd) — from Hi-hat: quarter notes → Hi-hat: open off-beats
+- [Motown](drums-motown.qmd) — from Hi-hat: eighth notes
+- [Train beat](drums-train.qmd) — from Two-beat
+- [12/8](drums-twelve8.qmd) — from Hi-hat: quarter notes → Blues shuffle
+- [Half-time](drums-halftime.qmd) — from Hi-hat: eighth notes → Rock backbeat
+- ○ [Hi-hat: quarter notes](drums-hhquarters.qmd)
+- [Hi-hat: eighth notes](drums-hheighths.qmd) — from Hi-hat: quarter notes
+- [Hi-hat: accented eighths](drums-hhaccents.qmd) — from Hi-hat: eighth notes
+- [Hi-hat: off-beats only](drums-hhoffbeats.qmd) — from Hi-hat: eighth notes
+- [Hi-hat: one open note](drums-hhopen.qmd) — from Hi-hat: eighth notes
+- [Hi-hat: open off-beats](drums-hhdance.qmd) — from Hi-hat: eighth notes → Hi-hat: off-beats only
+- [Hi-hat: sixteenth notes](drums-hhsix.qmd) — from Hi-hat: eighth notes → Hi-hat: accented eighths
+- [Hi-hat: sixteenths, two hands](drums-hhsix2.qmd) — from Hi-hat: eighth notes → Hi-hat: sixteenth notes
+- [Hi-hat: foot on every beat](drums-hhfoot4.qmd) — from Hi-hat: eighth notes
+
+**Caribbean**
+
+- [Reggaeton (dembow)](drums-dembow.qmd) — from Hi-hat: quarter notes → Four on the floor
+- [Calypso](drums-calypso.qmd) — from Hi-hat: eighth notes
+- [Reggae one-drop](drums-onedrop.qmd) — from Hi-hat: eighth notes → Half-time
+
+**Hymns and carols**
+
+- [Light time](drums-brushes.qmd) — from Hi-hat: eighth notes
+
+## Conga parts {#congas}
+
+**Latin**
+
+- [Tumbao](congas-tumbao.qmd) — from Open tones only (learning the tumbao, 1) → Right hand alone (learning the tumbao, 2) → Left hand alone (learning the tumbao, 3)
+- [Tumbao, two drums](congas-tumbao2.qmd) — from Tumbao
+- ○ [Open tones only (learning the tumbao, 1)](congas-opens.qmd)
+- [Right hand alone (learning the tumbao, 2)](congas-slapopen.qmd) — from Open tones only (learning the tumbao, 1)
+- [Left hand alone (learning the tumbao, 3)](congas-heeltoe.qmd) — from Open tones only (learning the tumbao, 1) → Right hand alone (learning the tumbao, 2)
+
+**Folk, rock and pop**
+
+- [Steady congas](congas-steady.qmd) — from Open tones only (learning the tumbao, 1) → Right hand alone (learning the tumbao, 2)
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

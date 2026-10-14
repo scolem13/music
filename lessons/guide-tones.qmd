@@ -1,0 +1,226 @@
+---
+title: "Lesson: Guide Tones"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.bl-widget{margin:1rem 0 1.6rem}
+.bl-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.bl-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.bl-tools .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.bl-legend{font-size:.8rem;color:var(--site-ink-2);margin:.35rem 0 0}
+.bl-legend i{display:inline-block;width:.9em;height:.9em;vertical-align:-.1em;background:rgba(217,130,43,.3);border:1px solid #d9822b;border-radius:2px;margin-right:.3em}
+.tune-chart .tc-bar.bl-new{background:rgba(217,130,43,.16)}
+.tune-chart .tc-bar.bl-new.tc-live{background:var(--tc-live-soft)}
+.bl-slots{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.6rem .8rem;margin-bottom:.8rem}
+.bl-slots label{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2)}
+.bl-slots select{width:100%}
+.bl-count{display:grid;grid-template-columns:repeat(4,1fr);gap:4px;max-width:26rem;margin:.6rem 0}
+.bl-count div{border:1px solid var(--site-border);border-radius:4px;padding:.45rem 0;text-align:center;font-family:var(--font-mono);font-size:.85rem;color:var(--site-ink-3);background:var(--site-surface)}
+.bl-count div.bl-ask{border:2px solid #d9822b;color:var(--site-ink)}
+.bl-count div.bl-live{background:var(--site-accent-bg);color:var(--site-accent-text)}
+.bl-answers{display:flex;flex-direction:column;gap:.4rem;max-width:34rem;margin:.6rem 0}
+.bl-answers .btn{text-align:left}
+.bl-answers .btn.bl-right{background:#e3f1e8;border-color:var(--site-pass);color:var(--site-pass)}
+.bl-answers .btn.bl-wrong{background:#f8e4e2;border-color:var(--site-fail);color:var(--site-fail)}
+.bl-verdict{font-weight:600;min-height:1.5em}
+.bl-score{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.bl-abc{display:flex;flex-wrap:wrap;align-items:flex-start;gap:.5rem;margin:.3rem 0;overflow-x:auto}
+.bl-abc .btn{font-family:var(--font-mono);font-size:.8rem;margin-top:.6rem}
+.bl-abc .btn.bl-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.ls-on,.ls-on *{fill:#d6336c;stroke:#d6336c}
+.bl-staff{margin:.4rem 0 0}
+.bl-boards{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start;margin:.4rem 0}
+.bl-boards svg{border:1px solid var(--site-border);border-radius:6px}
+.bl-card{max-width:100%}
+.bl-each .bl-card svg{width:215px}
+body{padding-bottom:5.5rem}
+#bl-bar{position:fixed;left:0;right:0;bottom:0;z-index:1020;background:var(--parch);border-top:1px solid var(--parch-edge);box-shadow:0 -6px 18px -12px rgba(0,0,0,.35);
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.4rem 1rem;padding:.5rem .8rem;font-size:.85rem}
+#bl-bar label{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--parch-dim);margin-right:.3rem}
+#bl-bar select,#bl-bar input[type=number]{font-size:.85rem;padding:.15rem .3rem;border:1px solid var(--parch-edge);border-radius:4px;background:#fff}
+#bl-bar input[type=number]{width:4.2rem}
+#bl-bar input[type=range]{width:7rem;vertical-align:middle}
+#bl-status{font-family:var(--font-mono);font-size:.75rem;color:var(--parch-dim);min-width:9rem}
+</style>
+```
+
+In a seventh chord the **3rd** and the **7th** say what the chord is. A line made of those notes, one
+for each chord, is called a **guide-tone line**, and it moves by step or by nothing at all. This lesson
+writes that line over four-chord loops, on a staff, so that you can hear what the chords are doing
+inside.
+
+**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart. Under each chart is a one-voice staff with the line, and the band's piano plays the line over the chords.
+
+## 1. Just the 3rds
+
+**C, G, Am, F** as plain triads, with the 3rd of each chord on the staff. The 3rd is the note that
+makes a chord major or minor. Listen to the line E, B, C, A: it is the loop with the chords taken away.
+
+<div class="bl-step" data-step="thirds"></div>
+
+## 2. Sevenths, and the 3rds again
+
+**Cmaj7, G7, Am7, Fmaj7.** The same loop with a 7th on every chord. The 3rds are the same notes. The
+7ths are new, and they are what the next step uses.
+
+<div class="bl-step" data-step="thirds7"></div>
+
+## 3. Just the 7ths
+
+The 7ths of those chords: B, F, G and E. The 7th of one chord is often the 3rd of the next, or a step from it:
+the B of Cmaj7 is the 3rd of G7, and the G of Am7 rises a step to the A that is the 3rd of Fmaj7.
+
+<div class="bl-step" data-step="sevenths"></div>
+
+## 4. The guide-tone line
+
+For each chord, take whichever of its 3rd and 7th is nearer the last note you played. The line now
+moves by a step or a skip, and it holds a note where it can.
+
+<div class="bl-step" data-step="guide"></div>
+
+## 5. Over a two-five-one
+
+**Dm7, G7, Cmaj7.** The most important use of the line. The F is the 3rd of Dm7 and the 7th of G7:
+it does not move at all. It then falls a half step to E, the 3rd of Cmaj7, which is the note that
+tells you the chord has changed to major.
+
+<div class="bl-step" data-step="251"></div>
+
+## 6. Over the turnaround
+
+**Cmaj7, Am7, Dm7, G7.** Four chords, and the line moves by half steps and whole steps through
+all of them. A bass player and a pianist who both play the guide tones will be in tune with each
+other without having said a word.
+
+<div class="bl-step" data-step="turn"></div>
+
+## Build your own
+
+Choose a progression and what the staff shows: the chords, the 3rds, the 7ths or the guide-tone line. The band plays the line when the staff shows one.
+
+<div id="bl-builder" class="bl-widget"></div>
+
+
+## Where to go next
+
+- Play each line on your instrument over the band, then try singing it.
+- The guitar and piano lessons on the blues use the same 3rd and 7th as their shell chords.
+- In [turnarounds](turnarounds.qmd) the line is the same, with a tritone substitution in the V.
+
+```{=html}
+<div id="bl-bar">
+  <span><label for="bl-key">Key</label><select id="bl-key"></select></span>
+  <span><label for="bl-feel">Feel</label><select id="bl-feel"></select></span>
+  <span><label for="bl-tempo">Tempo</label><input type="range" id="bl-tempo" min="40" max="220" step="2"> <input type="number" id="bl-tempo-n" min="40" max="220" step="2" aria-label="Tempo in beats per minute"></span>
+  <span><label for="bl-inst">Chords</label><select id="bl-inst"><option value="piano">Piano</option><option value="guitar">Guitar</option><option value="organ">Organ</option></select></span>
+  <span><input type="checkbox" id="bl-loop"> <label for="bl-loop">Loop</label></span>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="bl-stop" disabled>■ Stop</button>
+  <span id="bl-status" aria-live="polite"></span>
+</div>
+
+<script src="/apps/shared/tonality.js?v=10"></script>
+<script src="/apps/shared/lessons/key-tonality.js?v=1"></script>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
+<script src="/apps/shared/lessons/score.js?v=4"></script>
+<script src="/apps/shared/lessons/tunes.js?v=5"></script>
+<script src="/apps/shared/lessons/diagrams.js?v=1"></script>
+<script src="/apps/shared/lessons/chord-staff.js?v=3"></script>
+<script src="/apps/shared/lessons/chord-lesson.js?v=2"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
+<script src="/apps/shared/voicings.js?v=5"></script>
+<script src="/apps/shared/band/harmony.js?v=28"></script>
+<script src="/apps/shared/band/bass.js?v=13"></script>
+<script src="/apps/shared/band/comp.js?v=28"></script>
+<script src="/apps/shared/band/catalog.js?v=33"></script>
+<script src="/apps/shared/band/drums.js?v=15"></script>
+<script src="/apps/shared/band/sounds.js?v=14"></script>
+<script src="/apps/shared/band/player.js?v=116"></script>
+<script>
+ChordLesson.init({
+ "tonic": 0,
+ "times": 4,
+ "feels": [
+  {
+   "id": "swing",
+   "label": "Medium swing",
+   "tempo": 120
+  },
+  {
+   "id": "bossa",
+   "label": "Bossa nova",
+   "tempo": 120
+  },
+  {
+   "id": "pop",
+   "label": "Piano ballad",
+   "tempo": 76
+  },
+  {
+   "id": "strum",
+   "label": "Acoustic strum",
+   "tempo": 100
+  }
+ ],
+ "steps": {
+  "251": {
+   "bars": "Dm7|G7|Cmaj7|Cmaj7",
+   "staff": "guide"
+  },
+  "thirds": {
+   "bars": "C|G|Am|F",
+   "staff": "third"
+  },
+  "thirds7": {
+   "bars": "Cmaj7|G7|Am7|Fmaj7",
+   "staff": "third"
+  },
+  "sevenths": {
+   "bars": "Cmaj7|G7|Am7|Fmaj7",
+   "staff": "seventh"
+  },
+  "guide": {
+   "bars": "Cmaj7|G7|Am7|Fmaj7",
+   "staff": "guide"
+  },
+  "turn": {
+   "bars": "Cmaj7|Am7|Dm7|G7",
+   "staff": "guide"
+  }
+ },
+ "builder": {
+  "slots": [
+   {
+    "label": "Progression",
+    "opts": [
+     [
+      "I V vi IV",
+      "Cmaj7|G7|Am7|Fmaj7"
+     ],
+     [
+      "I vi IV V",
+      "Cmaj7|Am7|Fmaj7|G7"
+     ],
+     [
+      "I vi ii V",
+      "Cmaj7|Am7|Dm7|G7"
+     ],
+     [
+      "ii V I",
+      "Dm7|G7|Cmaj7|Cmaj7"
+     ]
+    ]
+   }
+  ],
+  "staff": "guide"
+ }
+});
+</script>
+```

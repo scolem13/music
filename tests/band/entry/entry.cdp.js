@@ -15,7 +15,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   try {
     await ev(`0`).catch(() => {}); await b.goto(B + "/tools/chord-entry.html"); await b.sleep(1200);
     assert.deepStrictEqual(errs(), [], "page errors: " + errs().join(" | "));
-    await ev(`document.getElementById("ce-sound").checked = false; 0`); await set("ce-key", "F"); await set("ce-title", "Test Blues");
+    await ev(`document.getElementById("ce-sound").checked = false; document.getElementById("ce-type").checked = true; 0`); await set("ce-key", "F"); await set("ce-title", "Test Blues");
     assert.strictEqual(await ev(`Array.prototype.map.call(document.getElementById("ce-span").options, function(o){ return o.value; }).join(" ")`), "bar two half beat");
     assert.strictEqual(await ev(`document.getElementById("ce-keys").children.length`), 25); assert.strictEqual(await val("ce-abc"), "");
     // the style: jazz by default; rock means straight eighths, a rock beat and plain chords, for recording and for checking

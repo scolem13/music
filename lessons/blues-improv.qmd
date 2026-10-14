@@ -213,6 +213,11 @@ A plan for practice, one item per session:
 
 In every one of them, hit the change in bar 5.
 
+To hear what the chords are doing under your solo, see [guide tones](guide-tones.qmd) and [the changes lesson](blues-changes.qmd).
+
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a blues: the Key menu's tonality reads "(Blues)" (key-tonality.js)</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

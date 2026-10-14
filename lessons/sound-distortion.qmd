@@ -1,0 +1,54 @@
+---
+title: "Sound 9: Distortion"
+toc: true
+toc-depth: 2
+---
+
+**Distortion** changes the *shape* of a wave by squashing its loudest parts. A changed shape means a
+changed recipe of harmonics ([Sound 1](sound-harmonics.qmd)), so distortion *adds* harmonics that
+weren't there. A little gives warmth; a lot gives the roar of a rock guitar.
+
+**How to use the page.** Every effect on these pages has a **Source** menu (what goes in), a **Mix**
+(how much of the effect you hear), and **Bypass** to switch it out and back in. The square graph is
+the distortion **curve**: the input level runs across, the output level up. The dashed diagonal is
+"no change".
+
+## A sine wave in, harmonics out
+
+<div class="sk" data-w="distortion" data-source="tone"></div>
+
+The source starts as a pure **sine tone**: one spike on the spectrum. Raise **Drive** slowly.
+
+- The curve bends over at the ends: loud parts of the wave can't get any louder.
+- The scope shows the sine's peaks being flattened toward a square.
+- New spikes appear on the spectrum at 3, 5, 7… times the frequency: **odd harmonics**, because the top
+  and bottom of the wave are squashed the same way. That's the square-wave recipe.
+
+Now try the other curves:
+
+| Curve | What it does | Sound |
+|---|---|---|
+| **Soft clip** | bends over gradually | overdrive: a warm, singing tone, like a valve amp turned up |
+| **Hard clip** | flat-tops the wave at a fixed level | fuzz: buzzy and aggressive |
+| **Uneven (tube-like)** | squashes the top and bottom differently | adds **even** harmonics (2, 4, 6) too, which sound sweeter and fuller |
+| **Wavefolder** | folds the peaks back down instead of flattening them | the West-coast synth sound: glassy, metallic, changes wildly with drive |
+| **Bit crusher** | rounds the wave to a few steps | the gritty sound of old computers and samplers |
+
+**Tone** is a low-pass after the distortion: almost every guitar amp has one, to tame the fizz that
+heavy distortion adds at the top.
+
+## On music
+
+Switch the **Source** to *Chords* or the *Synth riff*. Distorting a chord sounds much messier than
+distorting one note: every note's harmonics clash with the others', and the curve also creates new
+frequencies at the *differences* between the notes (**intermodulation**). That's why heavy rock guitar
+plays **power chords** (root and fifth only). The difference frequencies of a fifth are another
+octave of the root, so it stays clean.
+
+Try your own voice or instrument through it with **Microphone** (and headphones).
+
+## Next
+
+- [Sound 10: Compressor](sound-compressor.qmd)
+
+{{< include _synth-kit.qmd >}}

@@ -47,6 +47,10 @@
 // "accent" "ghost" "flam" "drag" "buzz" "closed". Triplet divisions and compound meters are marked straight:true, so the
 // player leaves them where they are. Pieces the band's kit has no sample for yet (tom3, stacker, cowbell, click, clickHi)
 // are given out like any other; pass opts.pieces (a list of names) to have the rest dropped.
+// Ornaments: a flam, a drag and a buzz are more than one hit. toEvents adds them (opts.ornaments === false: not), each marked
+// grace:true, at the tempo opts.tempo (the band's beats a minute; else bpm(g)): a flam's grace note 30 ms before its main note,
+// a drag's two at 70 and 35 ms before, a buzz's bounces every 28 ms after it for most of its cell (at most 0.3 s), each quieter.
+// A grace note before the first beat has a pos below 0. These are made of the ordinary snare sample, not recorded ornaments.
 // Swing: opts.swing = where the second cell of each pair lands (0.5 = even, 0.667 = triplets), or true for the groove's own
 // (0.5 + Swing / 200, GrooveScribe's arithmetic). It moves the eighths of an eighth-note grid and the sixteenths of a
 // sixteenth-note grid, as there; no other division swings. Swung events are straight:true (already where they belong).
@@ -210,6 +214,15 @@
     return o;
   }
 
+  var ORN = { flam: [[-0.030, 0.42]], drag: [[-0.070, 0.38], [-0.035, 0.42]] };
+  function ornaments(e, g, opts, cellBeats){
+    var spb = 60 / (opts.tempo || bpm(g)), out = [];
+    function grace(dt, k){ var x = { pos: round6(e.pos + dt / spb), piece: e.piece, vel: round6(e.vel * k), grace: true, straight: true }; out.push(x); }
+    if (ORN[e.art]) ORN[e.art].forEach(function (o){ grace(o[0], o[1]); });
+    if (e.art === "buzz"){ var len = Math.min(0.3, cellBeats * spb * 0.9), n = Math.floor(len / 0.028);
+      for (var k = 1; k <= n; k++) grace(k * 0.028, 0.75 - 0.4 * (k - 1) / Math.max(1, n - 1)); }
+    return out;
+  }
   function events(g, lanes, opts){
     opts = opts || {};
     var st = steps(g), ratio = opts.swing === true ? ratioOf(g) : (opts.swing || 0), swung = ratio && ratio !== 0.5 && swings(g);
@@ -226,10 +239,12 @@
           if (lane === "Cg" || lane === "Tb") e.stroke = ch;
           if (straight) e.straight = true;
           bar.push(e);
+          if (opts.ornaments !== false && (c.art === "flam" || c.art === "drag" || c.art === "buzz")) bar.push.apply(bar, ornaments(e, g, opts, 1 / perBeat(g)));
         }
         add(c.piece, c.vel);
         if (lane === "K" && ch === "X") add("hatFoot", CELLS.K.x.vel);
       });
+      bar.sort(function (a, b){ return a.pos - b.pos; });
       out.push(bar);
     }
     return out;
@@ -269,7 +284,7 @@
     function stepOf(div, p){ return p * (comp ? 3 * div / 8 : div / proto.d); }
     function fits(div){
       var st = div / proto.d * proto.n; if (st !== Math.floor(st)) return false;
-      return bars.every(function (bar){ return bar.every(function (e){ if (!FROM[e.piece]) return true; var s = stepOf(div, place(e)); return Math.abs(s - Math.round(s)) < 1e-3; }); });
+      return bars.every(function (bar){ return bar.every(function (e){ if (!FROM[e.piece] || e.grace) return true; var s = stepOf(div, place(e)); return Math.abs(s - Math.round(s)) < 1e-3; }); });
     }
     var div = opts.div;
     if (!div){ for (var k = 0; k < FIT.length && !div; k++) if (fits(FIT[k])) div = FIT[k]; }
@@ -278,6 +293,7 @@
     var st = steps(g), unknown = {}, clash = 0;
     bars.slice(0, g.bars).forEach(function (bar, b){
       bar.forEach(function (e){
+        if (e.grace) return;                                                                  // (a flam's or buzz's extra hits: the art says it)
         if (!FROM[e.piece]){ if (e.piece) unknown[e.piece] = 1; return; }
         var m = FROM[e.piece](e), lane = m[0], ch = m[1], i = Math.round(stepOf(div, place(e)));
         if (i < 0 || i >= st) return;

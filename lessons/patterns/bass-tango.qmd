@@ -1,0 +1,65 @@
+---
+title: "Bass line: Tango (habanera)"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Tango (habanera)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The habanera rhythm: root held for a beat and a half, the fifth on the and of 2, then the root an octave up on 3 and the fifth on 4.
+
+It belongs in *Tango*. Here it is in the tango style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+## Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass-halves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+## Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass-dotted.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+## Step 3: Tango (habanera), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The habanera: a long root (a beat and a half), the fifth on the and of 2, then the octave on 3 and the fifth on 4. Play it marked and a little heavy, with every note clearly separated.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="72" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 104 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="tango" data-chart="Am|Am|E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="tango" data-chart="Am Dm|E7 Am|Dm E7|Am" data-tempo="104" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Tango (habanera)","opts":{"bassFeel":"tango"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Dotted (1, and of 2, 3)](bass-dotted.qmd).
+- **The same idea elsewhere in the band:** [Tango (habanera)](chords-tango.qmd) (comping rhythm), [Tango](drums-tango.qmd) (drum groove).
+- **Plays with, in tango:** [Tango (habanera)](chords-tango.qmd) (comping rhythm), [Tango](drums-tango.qmd) (drum groove).
+- **Other bass lines in the Latin group:** [Bossa nova](bass-bossa.qmd), [Tumbao](bass-tumbao.qmd), [Cha-cha](bass-chacha.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

@@ -1,0 +1,74 @@
+---
+title: "Comping rhythm: Strum: D, D-U, D, D-U"
+subtitle: "For guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Strum: D, D-U, D, D-U**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+Down on 1 and 3, down-up on 2 and 4.
+
+It belongs in *Folk carol*, *Boom-chick*, *Acoustic strum* and *Country train beat*. Here it is in the folk carol style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+## Step 1: Strum: downstrokes on the beat
+
+Start with something simpler. One ringing downstroke on every beat. The first strum to learn, and the usual one for a slow song.
+
+This is a pattern of its own: [the lesson on it](chords-strum-quarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="68" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Step:" data-choices='[{"label":"Strum: downstrokes on the beat","opts":{"compRhythm":"strumQuarters"}}]'></div>
+
+## Step 2: Strum: D, D-U, D, D-U, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Down on 1 and 3, down-up on 2 and 4. Keep the arm moving in eighths: down on every beat, up between. On 1 and 3 the up misses the strings.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="68" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Compare:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}},{"label":"Strum: downstrokes on the beat (the step before)","opts":{"compRhythm":"strumQuarters"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 96 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+## Step 4: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="carol" data-chart="G C|D G|C D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boom-chick**
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+**Acoustic strum**
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+**Country train beat**
+
+<div class="ar-demo" data-style="train" data-chart="G|G|C|D" data-tempo="120" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Strum: downstrokes on the beat](chords-strum-quarters.qmd).
+- **Leads to:** [Strum: D, D-U, U-D-U](chords-strum-camp.qmd), [Strum: down-up eighths](chords-strum-eights.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Train beat](drums-train.qmd) (drum groove).
+- **Plays with, in folk carol:** [Roots on 1 and 3](bass-halves.qmd) (bass line), [Light time](drums-brushes.qmd) (drum groove).
+- **Other comping rhythms in the Folk, rock and pop group:** [Boom-chick / oom-pah-pah](chords-oompah.qmd), [Waltz in one](chords-waltz.qmd), [Ballad: rocking](chords-ball-rock.qmd), [Ballad: half-broken](chords-ball-broken.qmd), [Ballad: syncopated](chords-ball-sync.qmd), [Quarter-note chords](chords-quarters.qmd), [Triplet chords (12/8)](chords-triplets.qmd), [Driving eighths](chords-eighths.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

@@ -1,0 +1,108 @@
+---
+title: "Arranging 4: The Organ"
+toc: true
+toc-depth: 2
+---
+
+The tonewheel organ (the Hammond B-3 and its relatives) is in gospel, soul, blues, jazz
+and rock. It looks like a piano but behaves very differently: a key has no touch, a note
+sounds for as long as you hold it, and the sound is built by the player from nine
+pitches. Then it goes through a chorus, a volume pedal, and a speaker that spins.
+
+The organ on this page is the band's own: nothing is recorded, every note is built from
+the same parts as the real instrument. (How it's built and where the numbers come from:
+`apps/shared/band/ORGAN.md`. It's a model, so some of its levels are informed guesses.)
+Everything you set here is also what the organ plays in the band at the bottom of the page.
+
+## 1. The organ
+
+Hold a key on the keyboard, or press **Hold a chord**, then work the controls while it
+sounds.
+
+<div class="ar-organ"></div>
+
+## 2. Tonebars (drawbars)
+
+Each of the nine bars adds one pitch to every key you press. Each bar is named by the
+length of an organ pipe in feet: the **8′** is the note you play, **16′** is an octave
+below, **4′** an octave above, and so on. The **white** bars are octaves of the note. The
+**black** ones are the 5ths and 3rd above it, which give the sound its colour. The two **brown**
+bars are the sub-octave pitches.
+
+Each bar has nine positions, 0 (in, silent) to 8 (all the way out, loudest). Each step
+is about 3 dB. A registration is written as the nine numbers in three groups:
+**88 8000 000** means the first three bars all the way out and the rest pushed in.
+
+Try this:
+
+- Start from **00 8000 000**: the note alone, nearly a pure tone. Pull out the **4′**,
+  then the **2′**, and watch the pitches stack up on the right.
+- Pull out the **1⅗′** alone over the 8′. That's the 3rd, two octaves up. The organ's 3rd
+  and 5ths are slightly out of tune with a pure harmonic, because they come from tonewheels
+  tuned to the keyboard. That's part of the sound.
+- Pick **88 8888 888**: the whole organ.
+
+## 3. Chorus and vibrato
+
+A **scanner** sweeps the sound through a very short delay, 6.9 times a second. On its own
+that wobbles the pitch: **vibrato** (V3). Mixed half and half with the plain sound the
+wobble becomes a shimmer: **chorus** (C3), the setting most players leave on for
+jazz, gospel and soul. Switch between **Off** and **C3 chorus** on a held chord to hear it.
+
+## 4. The swell pedal
+
+Because a key sounds the same however hard you press it, the organist plays dynamics
+with the right foot. The **swell pedal** is a volume pedal that never quite closes: at
+its quietest the organ is 24 dB down and the bass is kept up so the sound doesn't go thin.
+It sits *before* the amplifier, so opening it also makes the sound grittier.
+
+Organists open the pedal through the end of a phrase into the next one, pull it back
+sharply after a big hit, and ride it the way a singer leans into a long note.
+
+## 5. The Leslie speaker
+
+The organ's sound goes into a cabinet where it is split: the high notes go into a
+**horn** and the low notes into a **drum**, and both **spin**. As each one turns
+toward you it gets a bit louder and higher; as it turns away it gets softer and lower.
+That's the swirl.
+
+- **Slow** ("chorale"): about 48 turns a minute. A gentle movement.
+- **Fast** ("tremolo"): about 400 turns a minute. A shimmering, urgent sound.
+- **Stop**: the rotors stand still.
+
+The best part is the **change**. The light horn reaches its new speed in about a second
+and a half; the heavy drum takes about five. Switch from Slow to Fast on a held chord
+and listen to it wind up, then switch back and hear it wind down. The picture spins at
+the model's speeds.
+
+## 6. The organ in the band
+
+Here the organ comps in three styles. Unless you've taken them over above, the band's
+organist works the pedal and switch by itself: the pedal follows how hard the band is
+playing and opens into each new phrase, and the Leslie goes fast at the end of a phrase
+that leads into a chorus. In swing, the speaker stays slow until the very end. Untick
+**Let the band's organist…** above (or just move the control) to take them over.
+
+Soul jazz, organ comping a boogaloo:
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|F7|F7|Bb7|Bb7|F7|F7|C7|Bb7|F7|C7" data-tempo="108" data-comp="hammond" data-staves="comp bass"></div>
+
+Swing, organ comping a jazz blues:
+
+<div class="ar-demo" data-style="swing" data-chart="F7|Bb7|F7|F7|Bb7|Bb7|F7|D7|Gm7|C7|F7 D7|Gm7 C7" data-tempo="132" data-comp="hammond" data-staves="comp bass"></div>
+
+Ballad, long organ chords under a slow song (try **68 8600 000** and a low pedal):
+
+<div class="ar-demo" data-style="ballad" data-chart="Cmaj7|Am7|Dm7|G7" data-tempo="66" data-comp="hammond" data-staves="comp bass"></div>
+
+## 7. Try it
+
+- Set **00 8000 000**, chorus **Off**, Leslie **Stop**. That's a plain electronic tone.
+  Now put back the chorus, then the Leslie on Slow, then pull out the 16′ and 5⅓′. Each
+  step makes it more like the organ on a record.
+- In the boogaloo, take over the Leslie and switch it to **Fast** just before bar 9 each
+  time round.
+- In the ballad, take the pedal and play the dynamics: low through the first two bars,
+  opening through bar 4 into the top.
+
+{{< include _arrange-kit.qmd >}}

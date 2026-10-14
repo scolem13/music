@@ -1,0 +1,59 @@
+---
+title: "Drum groove: 12/8"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **12/8**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+Three eighths to every beat on the cymbal, kick on 1 and 3, backbeat on 2 and 4. In 4/4 the eighths are triplets.
+
+It belongs in *12/8 doo-wop*. Here it is in the 12/8 doo-wop style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="66" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"12/8","opts":{"groove":"twelve8"}}]'></div>
+
+## Step 1: Hi-hat: quarter notes
+
+Start with something simpler. Closed hi-hat on every beat, kick on 1 and 3, snare on 2 and 4. The first rock beat. In 3/4: hi-hat on every beat, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hhquarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="50" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 2: Blues shuffle
+
+Swung eighths all the way through on the cymbal, kick on 1 and 3 and a full snare on 2 and 4. The Chicago blues beat.
+
+This is a pattern of its own: [the lesson on it](drums-shuffle.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="50" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Blues shuffle","opts":{"groove":"shuffle"}}]'></div>
+
+## Step 3: 12/8, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Three eighths to every beat on the cymbal, kick on 1 and 3, snare on 2 and 4. Count 1-and-a 2-and-a.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="50" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"12/8","opts":{"groove":"twelve8"}},{"label":"Blues shuffle (the step before)","opts":{"groove":"shuffle"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 66 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="66" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"12/8","opts":{"groove":"twelve8"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: quarter notes](drums-hhquarters.qmd), [Blues shuffle](drums-shuffle.qmd).
+- **The same idea elsewhere in the band:** [12/8 ballad](bass-twelve8.qmd) (bass line), [Triplet chords (12/8)](chords-triplets.qmd) (comping rhythm), [Blues shuffle](drums-shuffle.qmd) (drum groove).
+- **Plays with, in 12/8 doo-wop:** [12/8 ballad](bass-twelve8.qmd) (bass line), [Triplet chords (12/8)](chords-triplets.qmd) (comping rhythm).
+- **Other drum grooves in the Folk, rock and pop group:** [Bo Diddley beat](drums-bodiddley.qmd), [Waltz in one](drums-waltz.qmd), [Two-beat](drums-boomchick.qmd), [Rock backbeat](drums-rock.qmd), [Pop backbeat](drums-strum.qmd), [Ballad](drums-ballad.qmd), [Four on the floor](drums-dance.qmd), [Motown](drums-motown.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

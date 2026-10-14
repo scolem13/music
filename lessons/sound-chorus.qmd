@@ -1,0 +1,54 @@
+---
+title: "Sound 12: Chorus and Flanger"
+toc: true
+toc-depth: 2
+---
+
+When a choir or a string section plays a note, no two players are exactly in tune or exactly in time.
+The tiny differences make the sound wide and shimmering instead of one thin line. A **chorus** effect
+fakes that with a single sound: it adds copies of the sound, each delayed by a few milliseconds, and
+an [LFO](sound-lfo.qmd) keeps changing those delays.
+
+**How to use the page.** The source starts as **chords**. Use headphones if you can: the copies are
+spread left and right. The strip under the controls draws each copy's delay time over the last four
+seconds.
+
+## The effect
+
+<div class="sk" data-w="chorus" data-source="chords"></div>
+
+## Why a moving delay changes the pitch
+
+A delay on its own only makes a sound later. But when the delay is **getting longer**, the sound
+coming out is slowed down a little, so it's a little flat. When the delay is **getting shorter**, the
+sound is sped up, so it's a little sharp. It's the Doppler effect of a passing siren. So an LFO on
+the delay time is a gentle [vibrato](sound-lfo.qmd) on the copy. Mixed with the original, the
+slightly detuned copy beats against it, and that beating is the shimmer.
+
+Press **Vibrato**: the mix is 100% wet, so you hear only the moving copy. Its pitch wobbles. Now press
+**Chorus** and the same wobble mixed with the dry sound becomes a shimmer.
+
+## The controls
+
+- **Delay**: the average delay. About 15 to 30 ms for chorus. Below 10 ms the copy no longer sounds
+  like a separate player; above 35 ms it starts to sound like a slap-back echo (try **Doubler**: a
+  single slowly moving copy at 35 ms sounds like the part was recorded twice).
+- **Depth**: how far the delay swings, and so how far the pitch wobbles.
+- **Rate**: how fast. Slow (0.3 to 1 Hz) is lush; fast is seasick.
+- **Voices**: more copies, each with its own swing, spread across the stereo field.
+- **Feedback**: feeds the delayed copy back into the delay.
+
+## The flanger
+
+Press **Flanger**. The delay is now very short (1 to 5 ms), and the feedback is high. At delays this
+short the copy doesn't sound like a second player. Instead it cancels some frequencies and reinforces
+others in an evenly spaced pattern, a **comb filter**. As the delay changes, the teeth of the comb
+sweep up and down: the jet-plane "whoosh". It was first done with two tape machines running together,
+an engineer pressing a thumb on the flange of one reel to slow it. Try it on the drum loop and on the
+noise source, where the moving comb is easiest to see on the spectrum.
+
+## Next
+
+- [Sound 13: Phaser](sound-phaser.qmd), a different way to sweep notches.
+
+{{< include _synth-kit.qmd >}}

@@ -1,0 +1,50 @@
+---
+title: "Sound 3: Noise"
+toc: true
+toc-depth: 2
+---
+
+A pitched note has its energy at a few frequencies (the harmonics). **Noise** has its energy spread
+over all of them at once, with no pattern and no repeating shape. It's the hiss of a cymbal, the
+breath in a flute, the "s" and "f" in speech, wind and rain. Synthesizers include a noise source for
+exactly these sounds.
+
+**How to use the page.** Press ▶ to hear the colour you chose, or press one of the *Made from noise*
+buttons. Noise is loud for its size: start with the volume low.
+
+## The colours of noise
+
+<div class="sk" data-w="noise"></div>
+
+- **White noise** has equal energy at every frequency. Because each octave up holds twice as many
+  frequencies as the one below, it sounds very bright: a hiss.
+- **Pink noise** has equal energy in every *octave*, so it falls away toward the highs. It sounds
+  more even to the ear, like steady rain or a waterfall, and sound engineers use it to test speakers.
+- **Brown noise** (named after Brownian motion, not the colour) falls away faster still: a deep rumble,
+  like surf heard from inside a house.
+
+Watch the spectrum as you switch. White is flat, pink tilts down gently, brown tilts down steeply.
+The oscilloscope never settles into a shape, because noise never repeats.
+
+## Sounds made from noise
+
+Noise on its own is not very musical. Its use comes from **shaping** it: a [filter](sound-filter.qmd)
+picks out a band of frequencies, an envelope makes it short or long, and an [LFO](sound-lfo.qmd)
+makes it move.
+
+| Button | Recipe |
+|---|---|
+| **Wind** | pink noise through a narrow band-pass filter whose centre drifts slowly |
+| **Surf** | pink noise through a low-pass, both the volume and the brightness swelling every eight seconds |
+| **Hi-hat** | white noise, only the highs, cut off within 50 ms (longer for the open hat) |
+| **Snare** | a burst of noise for the wires with a short low tone for the drum head |
+| **Steam** | white noise with the lows removed |
+| **Rain** | soft pink noise for the background, plus thousands of tiny filtered clicks for drops |
+
+Every drum sound in the site's backing band except the kick is made from noise in roughly this way.
+
+## Next
+
+- [Sound 4: Filters](sound-filter.qmd)
+
+{{< include _synth-kit.qmd >}}

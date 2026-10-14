@@ -11,9 +11,9 @@
   var KEY = "practiceWidgets.v1";
   var S = { tempo: 84, beats: 4, vol: { q: 80, e: 0, t: 0, s: 0 }, accent: true,
             droneDo: 0, droneOct: 3, tuning: "equal", tone: "soft", droneVol: 60, a4: 440, lowDo: false, pads: [0, 7],
-            mode: "sustain", tanFirst: 7, tanRate: 50 };
+            mode: "sustain", tanFirst: 7, tanRate: 50, tanTone: "string" };
   try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) Object.keys(saved).forEach(function (k) { S[k] = saved[k]; }); } catch (e) {}
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} if (typeof icons === "function") icons(); }
 
   var ctx = null, master = null;
   function audio() {
@@ -137,8 +137,50 @@
     }
     return tan.wave;
   }
+  // The "String" sound: a plucked string worked out sample by sample (Karplus-Strong), with the bridge's buzz (jawari) inside the
+  // loop: each time round, the wave is bent a little more on one side than the other, as the string grazes the curved bridge. That pushes
+  // energy up into the high harmonics while the note sounds, so the buzz rises and swirls by itself. Each pitch is worked out once
+  // (two takes, so repeated Sa's differ) and kept.
+  var tanBufs = {}, STRING_RING = 9;
+  function stringBuf(c, f, take) {
+    var key = f.toFixed(2) + ":" + take;
+    if (tanBufs[key]) return tanBufs[key];
+    if (Object.keys(tanBufs).length > 24) tanBufs = {};
+    var sr = c.sampleRate, len = Math.round(sr * STRING_RING), out = new Float32Array(len);
+    var sm = 0.3, D = sr / f - sm, size = Math.ceil(D) + 2, buf = new Float32Array(size);
+    var seed = 12345 + take * 777;
+    function rnd() { seed = (seed * 16807) % 2147483647; return seed / 1073741823.5 - 1; }
+    var lp = 0, pos = Math.max(1, Math.round(size / 7));           // a soft finger: smoothed noise, plucked near one end
+    for (var i = 0; i < size; i++) { lp += 0.2 * (rnd() - lp); buf[i] = lp; }
+    for (i = size - 1; i >= pos; i--) buf[i] -= buf[i - pos];
+    var T60 = 16 - Math.log2(f / 65) * 3, g = Math.pow(10, -3 / (f * Math.max(6, T60)));
+    var w = 0, prev = 0, env = 0, lx = 0, lpx = 0, ly = 0, envFall = 1 - 1 / (sr / f * 3), dcx = 0, dcy = 0, peak = 0;
+    for (var n = 0; n < len; n++) {
+      var rp = w - D; while (rp < 0) rp += size;
+      var i0 = Math.floor(rp), fr = rp - i0, a = buf[i0 % size], b = buf[(i0 + 1) % size];
+      var v = a + (b - a) * fr;
+      var y = g * ((1 - sm) * v + sm * prev); prev = v;
+      var av = Math.abs(y); env = av > env ? av : env * envFall;
+      var t = n / sr, amt = 0.02 * (t < 0.6 ? 0.3 + t / 0.6 * 0.7 : 1 - Math.min(0.4, (t - 0.6) * 0.1));   // the buzz swells, then eases
+      if (env > 1e-6) y += amt * y * y / env;
+      lx = y; y = y - lpx + 0.999 * ly; lpx = lx; ly = y;               // keep the bend from pushing the string off centre
+      buf[w] = y; w = (w + 1) % size;
+      dcy = y - dcx + 0.995 * dcy; dcx = y; out[n] = dcy;
+      if (Math.abs(dcy) > peak) peak = Math.abs(dcy);
+    }
+    var fade = Math.round(sr * 0.3), sc = peak ? 0.9 / peak : 1;
+    for (n = 0; n < len; n++) out[n] *= sc * (n > len - fade ? (len - n) / fade : 1);
+    var ab = c.createBuffer(1, len, sr); ab.getChannelData(0).set(out);
+    return (tanBufs[key] = ab);
+  }
+  function pluckString(step, t) {
+    var c = audio(), src = c.createBufferSource(), g = c.createGain();
+    src.buffer = stringBuf(c, freqFor(step), tan.i % 2); g.gain.value = 0.55;
+    src.connect(g); g.connect(tan.bus); src.start(t);
+  }
   function tanSteps() { return [S.tanFirst - 12, 0, 0, -12]; }
   function pluck(step, t) {
+    if (S.tanTone === "string") return pluckString(step, t);
     var c = audio(), f = freqFor(step), g = c.createGain(), bp = c.createBiquadFilter(), dry = c.createGain();
     bp.type = "bandpass"; bp.Q.value = 1.2;
     bp.frequency.setValueAtTime(Math.min(5000, f * 2), t); bp.frequency.linearRampToValueAtTime(Math.min(5000, f * 9), t + 0.35);
@@ -195,8 +237,22 @@
   // ───────────────────────── The panels ─────────────────────────
   var css = [
     "#pw-nav .nav-link{display:flex;align-items:center;gap:.4rem;cursor:pointer}",
-    "#pw-nav .pw-dot{width:.5rem;height:.5rem;border-radius:50%;background:transparent}",
-    "#pw-nav .is-on .pw-dot{background:var(--site-accent,#3fc2b4);box-shadow:0 0 0 3px var(--site-accent-bg,rgba(63,194,180,.25))}",
+    "#pw-nav .nav-link{padding-left:.45rem!important;padding-right:.45rem!important}",
+    "#pw-nav .pw-ico{width:1.7rem;height:1.7rem;display:block;overflow:visible}",
+    "#pw-nav .is-on .pw-ico{color:var(--site-accent-dk,#2b9c90)}",
+    "#pw-nav .pw-label{display:none}",
+    "@media (max-width:991.98px){#pw-nav .pw-label{display:inline}#pw-nav .nav-link{gap:.6rem}}",
+    /* the metronome's pendulum swings at the tempo while it runs; the drone's line breathes while it sounds */
+    "#pw-nav .pw-pend{transform-origin:12px 18px;transform:rotate(-14deg)}",
+    "#pw-nav .is-on .pw-pend{animation:pw-swing var(--pw-beat,.7s) ease-in-out infinite alternate}",
+    "@keyframes pw-swing{from{transform:rotate(-24deg)}to{transform:rotate(24deg)}}",
+    "#pw-nav .is-on .pw-breathe{animation:pw-breathe 2.4s ease-in-out infinite}",
+    "@keyframes pw-breathe{0%,100%{opacity:1}50%{opacity:.35}}",
+    "#pw-nav .is-on .pw-string{animation:pw-shimmer .18s linear infinite alternate}",
+    "@keyframes pw-shimmer{from{transform:translateX(-.5px)}to{transform:translateX(.5px)}}",
+    "#pw-nav .pw-ico{overflow:visible}",
+    "@media (prefers-reduced-motion:reduce){#pw-nav .is-on .pw-string{animation:none}}",
+    "@media (prefers-reduced-motion:reduce){#pw-nav .is-on .pw-pend,#pw-nav .is-on .pw-breathe{animation:none}}",
     "#pw-nav .is-open{color:var(--site-accent-dk,#2b9c90)!important}",
     ".pw-panel{position:fixed;top:4.2rem;right:.75rem;z-index:1045;width:min(21rem,calc(100vw - 1.5rem));max-height:calc(100vh - 5rem);overflow:auto;",
     " background:var(--site-surface,#fff);color:var(--site-ink,#1e1c18);border:1px solid var(--site-border,#e0d8ce);border-radius:12px;box-shadow:0 10px 32px rgba(30,28,24,.2);",
@@ -233,7 +289,52 @@
   ].join("\n");
 
   var navBtn = {}, panels = {};
+  // ---- the navbar's icons (drawn here so they can show what the tools are doing) ----
+  // Metronome: a pyramid metronome, its pendulum swinging at the tempo while it runs.
+  // Drone: a held wave (sustained notes) or a tanpura (plucked), breathing while it sounds.
+  // Circle: the twelve keys round a ring, the drone's Do marked and its other notes lit; in the middle the resting tone of the shared
+  // key (Tonality: the tune on the page, or what the circle was set to), upper case for major, Lydian, Mixolydian, lower case otherwise.
+  var SVG = '<svg class="pw-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">';
+  var LIGHT = SVG.replace('stroke-width="1.9"', 'stroke-width="1.5"');                  // the metronome and the drone: a lighter line
+  function metroIcon() {
+    return LIGHT + '<path d="M6.8 21 9.9 3h4.2l3.1 18z"/><path d="M5 21h14"/>' +
+      '<g class="pw-pend"><path d="M12 18V4.8"/><rect x="9.9" y="7.4" width="4.2" height="3" rx=".8" fill="currentColor"/></g>' +
+      (metro.on ? '<text class="pw-bpm" x="5" y="14.6" text-anchor="end" style="font:700 8.5px system-ui,sans-serif" fill="currentColor" stroke="none">' + S.tempo + "</text>" : "") + "</svg>";
+  }
+  function droneIcon() {
+    if (S.mode === "tanpura") return LIGHT + '<g class="pw-breathe"><circle cx="12" cy="17.2" r="4.6"/><path d="M10.9 13V2.8h2.2V13"/>' +
+      '<path d="M10.9 5h-1.6M10.9 8h-1.6M13.1 5h1.6M13.1 8h1.6"/></g><path class="pw-string" d="M12 3.5v16.5" stroke-width="1"/></svg>';
+    return LIGHT + '<g class="pw-breathe"><path d="M2 12c2.5-7 5-7 7.5 0s5 7 7.5 0c1.2-3.4 2.6-5 5-5" stroke-width="1.8"/></g></svg>';
+  }
+  function circleIcon() {
+    var dots = "", here = (S.droneDo * 7) % 12;                              // where Do sits round the circle (C at the top, G to its right)
+    var lit = {};                                                             // the drone's other notes (its pads: the fifth, ...)
+    if (S.mode !== "tanpura") (S.pads || []).forEach(function (iv) { lit[(((((S.droneDo + iv) % 12) + 12) % 12) * 7) % 12] = 1; });
+    else lit[(((((S.droneDo + (S.tanFirst || 7)) % 12) + 12) % 12) * 7) % 12] = 1;
+    for (var i = 0; i < 12; i++) {
+      var a = (i / 12) * 2 * Math.PI - Math.PI / 2, x = 12 + 9 * Math.cos(a), y = 12 + 9 * Math.sin(a);
+      dots += i === here ? '<circle cx="' + x.toFixed(2) + '" cy="' + y.toFixed(2) + '" r="2.1" fill="currentColor" stroke="none"/>'
+                         : lit[i] ? '<circle cx="' + x.toFixed(2) + '" cy="' + y.toFixed(2) + '" r="1.6" fill="currentColor" stroke="none"/>'
+                         : '<circle cx="' + x.toFixed(2) + '" cy="' + y.toFixed(2) + '" r="1.05" fill="currentColor" stroke="none" opacity=".55"/>';
+    }
+    return SVG + '<circle cx="12" cy="12" r="9" stroke-width="1.2" opacity=".35"/>' + dots +
+      '<text x="12" y="15.2" text-anchor="middle" style="font:700 ' + (rest().length > 1 ? 7.5 : 9) + 'px system-ui,sans-serif" fill="currentColor" stroke="none">' + rest() + "</text></svg>";
+  }
+  // the shared key (tonality.js keeps it in localStorage: a tune's page, the circle, the lessons set it); C major until something has
+  function rest() {
+    var r = null, mode = "maj", t = null;
+    try { r = localStorage.getItem("tonalResting"); mode = localStorage.getItem("tonalMode") || "maj"; t = localStorage.getItem("tonalTonic"); } catch (e) {}
+    var pc = r == null || r === "" ? 0 : +r, n = NAMES[pc];
+    if (t && /^[A-G][#b]?$/.test(t)) n = t.charAt(0) + t.slice(1).replace("#", "\u266f").replace("b", "\u266d");
+    return /^(maj|major|ion|ionian|lyd|lydian|mix|mixolydian)$/i.test(mode) ? n : n.charAt(0).toLowerCase() + n.slice(1);
+  }
+  function icons() {
+    if (navBtn.metro) { navBtn.metro.querySelector(".pw-icon").innerHTML = metroIcon(); navBtn.metro.style.setProperty("--pw-beat", (60 / (S.tempo || 84)).toFixed(3) + "s"); }
+    if (navBtn.drone) navBtn.drone.querySelector(".pw-icon").innerHTML = droneIcon();
+    if (navBtn.circle) navBtn.circle.querySelector(".pw-icon").innerHTML = circleIcon();
+  }
   function refresh() {
+    icons();
     if (navBtn.metro) navBtn.metro.classList.toggle("is-on", metro.on);
     if (navBtn.drone) navBtn.drone.classList.toggle("is-on", droneOn);
     var mb = $("#pw-metro-go"); if (mb) { mb.textContent = metro.on ? "Stop" : "Start"; mb.classList.toggle("pw-main", !metro.on); }
@@ -307,6 +408,7 @@
       '<label class="pw-check" style="margin-top:.5rem"><input type="checkbox" id="pw-low"> <span id="pw-low-lab">Add Do an octave lower</span></label>' +
       '</div><div id="pw-tan">' +
       '<span class="pw-lab">First string</span><div class="pw-row" id="pw-tan-first"></div><p class="pw-note" id="pw-tan-note"></p>' +
+      '<span class="pw-lab">Sound</span><div class="pw-row"><select id="pw-tan-tone" aria-label="Tanpura sound"><option value="string">String (modelled)</option><option value="simple">Simple (first try)</option></select></div>' +
       '<span class="pw-lab">Speed</span><input type="range" id="pw-tan-rate" min="25" max="90" step="1" aria-label="Tanpura speed">' +
       '</div>' +
       '<span class="pw-lab">Tuning</span>' +
@@ -386,13 +488,14 @@
     $("#pw-tone", p).addEventListener("change", function (e) { S.tone = e.target.value; save(); droneRetone(); });
     $("#pw-dvol", p).addEventListener("input", function (e) { S.droneVol = +e.target.value; save(); if (drone.outG) droneOut(); });
     $("#pw-a4", p).addEventListener("change", function (e) { S.a4 = clamp(+e.target.value || 440, 400, 480); e.target.value = S.a4; save(); droneSync(); });
+    $("#pw-tan-tone", p).addEventListener("change", function (e) { S.tanTone = e.target.value; save(); });
     $("#pw-tan-rate", p).addEventListener("input", function (e) { S.tanRate = +e.target.value; save(); });
     $("#pw-drone-go", p).addEventListener("click", function () {
       if (!droneOn && S.mode !== "tanpura" && !S.pads.length) { S.pads = [0]; padState(); save(); }
       droneToggle();
     });
     doSel.value = S.droneDo; octSel.value = S.droneOct; $("#pw-low", p).checked = S.lowDo; $("#pw-tone", p).value = S.tone;
-    $("#pw-dvol", p).value = S.droneVol; $("#pw-a4", p).value = S.a4; $("#pw-tan-rate", p).value = S.tanRate; padState(); tuned(); moded(); words();
+    $("#pw-dvol", p).value = S.droneVol; $("#pw-a4", p).value = S.a4; $("#pw-tan-rate", p).value = S.tanRate; $("#pw-tan-tone", p).value = S.tanTone; padState(); tuned(); moded(); words();
     return p;
   }
 
@@ -407,8 +510,8 @@
   }
   function openCircle() {
     if (circle || circleLoading) return; circleLoading = true;
-    var chain = window.CircleOfFifths ? Promise.resolve() : loadScript("/apps/shared/circle-of-fifths.js?v=1");
-    if (!window.Tonality) chain = chain.then(function () { return loadScript("/apps/shared/tonality.js?v=9"); });
+    var chain = window.CircleOfFifths ? Promise.resolve() : loadScript("/apps/shared/circle-of-fifths.js?v=2");
+    if (!window.Tonality) chain = chain.then(function () { return loadScript("/apps/shared/tonality.js?v=10"); });
     chain.then(function () {
       var host = $("#pw-circle-host", panels.circle); host.innerHTML = "";
       circle = window.CircleOfFifths.mount(host, { rings: "roman,notes,syllables", picker: "key,mode,names", undo: true, sound: true, tonality: !!window.Tonality, link: document.getElementById("bl-key") });
@@ -420,9 +523,9 @@
     var style = el("style"); style.textContent = css; document.head.appendChild(style);
     var collapse = document.getElementById("navbarCollapse") || document.querySelector(".navbar-collapse");
     var ul = el("ul", "navbar-nav ms-auto"); ul.id = "pw-nav";
-    [["metro", "Metronome"], ["drone", "Drone"], ["circle", "Circle"]].forEach(function (b) {
-      var li = el("li", "nav-item"), a = el("a", "nav-link", '<span class="pw-dot"></span><span>' + b[1] + "</span>");
-      a.href = "#"; a.setAttribute("role", "button");
+    [["metro", "Metronome"], ["drone", "Drone"], ["circle", "Circle of fifths"]].forEach(function (b) {
+      var li = el("li", "nav-item"), a = el("a", "nav-link", '<span class="pw-icon"></span><span class="pw-label">' + b[1] + "</span>");
+      a.href = "#"; a.setAttribute("role", "button"); a.setAttribute("aria-label", b[1]); a.title = b[1];
       a.addEventListener("click", function (e) { e.preventDefault(); openPanel(b[0]); if (b[0] === "circle") openCircle(); });
       li.appendChild(a); ul.appendChild(li); navBtn[b[0]] = a;
     });
@@ -430,6 +533,9 @@
       var auth = document.getElementById("navbar-auth");
       if (auth) { collapse.insertBefore(ul, auth); auth.classList.remove("ms-auto"); } else collapse.appendChild(ul);
     }
+    icons();
+    window.addEventListener("tonality-change", icons);                                  // a page (or the circle) changed the shared key
+    window.addEventListener("storage", function (e) { if (/^tonal/.test(e.key || "")) icons(); });   // ... or another tab did
     panels.metro = buildMetro(); panels.drone = buildDrone(); panels.circle = buildCircle();
     Object.keys(panels).forEach(function (k) {
       document.body.appendChild(panels[k]);

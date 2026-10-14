@@ -66,7 +66,7 @@ assert.equal(g.author, "A B"); assert.equal(g.comments, "c&d"); assert.equal(g.m
 ev = G.toEvents(g)[0];
 assert.deepEqual(ev.filter(e => e.pos < 3 && ["hatClosed", "hatOpen", "ride", "rideBell", "crash", "stacker", "cowbell", "click", "clickHi"].includes(e.piece)).map(e => e.piece),
   ["hatClosed", "hatClosed", "hatOpen", "hatClosed", "ride", "rideBell", "crash", "stacker", "cowbell", "click", "clickHi"]);
-assert.deepEqual(ev.filter(e => e.piece === "snare" || e.piece === "rim").map(e => e.art || e.piece), ["snare", "accent", "ghost", "rim", "flam", "drag", "buzz"]);
+assert.deepEqual(ev.filter(e => (e.piece === "snare" || e.piece === "rim") && !e.grace).map(e => e.art || e.piece), ["snare", "accent", "ghost", "rim", "flam", "drag", "buzz"]);
 assert.deepEqual(["tomHi", "tomMid", "tom3", "tomLo"].map(p => at(ev, p)[0]), [0, 0.25, 0.5, 0.75]);
 const sn = l => G.CELLS.S[l].vel; assert(sn("g") < sn("o") && sn("o") < sn("O"), "ghost under normal under accent");
 assert(G.CELLS.H.x.vel < G.CELLS.H.X.vel);
@@ -75,10 +75,12 @@ assert.deepEqual(G.congaEvents(g)[0].filter(e => /^conga/.test(e.piece)).map(e =
 Object.keys(BandCongas.STROKES).forEach(s => assert(G.CELLS.Cg[s], "conga stroke " + s));
 assert(!ev.some(e => /conga|tumba/.test(e.piece)), "the kit's events have no hand drums");
 // only the pieces a kit has
-const have = BandSounds.pieces, some = G.toEvents(g, { pieces: have })[0];
-assert(some.length < ev.length && some.every(e => have.includes(e.piece)));
+const have = BandSounds.pieces, some = G.toEvents(g, { pieces: ["kick", "snare"] })[0];
+assert(some.length < ev.length && some.every(e => ["kick", "snare"].includes(e.piece)), "only the pieces asked for");
 const missing = [...new Set(ev.map(e => e.piece).filter(p => !have.includes(p)))].sort();
-assert.deepEqual(missing, ["click", "clickHi", "cowbell", "stacker", "tom3"], "what the kit lacks: " + missing);
+assert.deepEqual(missing, [], "every piece a written groove can name is in the kit: " + missing);
+const src = fs.readFileSync(R + "band/sounds.js", "utf8");
+["tom3:45", "cowbell:56", "stacker:52", "click:33", "clickHi:34"].forEach(m => assert(src.includes(m), "kit sample " + m));
 // letters read as others, in any case; names in any case; a whole address; nonsense
 g = G.parse("https://example.org/groove/?timesig=4/4&div=8&h=|RRBB----|&t1=|x-------|&stickings=|rlb-----|&cg=|htsomb--|#x");
 assert.equal(lane(g, "H"), "rrbb----"); assert.equal(lane(g, "T1"), "o-------"); assert.equal(lane(g, "Stickings"), "RLB-----"); assert.equal(lane(g, "Cg"), "HTSOMB--");
@@ -183,7 +185,7 @@ console.log("BAND GROOVES AS TEXT OK");
 // ---- the drummer plays a written groove (opts.written)
 {
   const text = "?TimeSig=4/4&Div=16&Swing=20&Tempo=90&Measures=2&H=|x-x-x-x-x-x-x-x-|c-x-x-x-x-x-x-xx|&S=|----O--g----O---|----O-------O-gf|&K=|o-------o-o-----|o--o----o-------|&T3=|----------------|---------------o|";
-  const d = BandDrums.create({ rng: mb(1) }), want = G.toEvents(G.parse(text), { swing: true });
+  const d = BandDrums.create({ rng: mb(1) }), want = G.toEvents(G.parse(text), { swing: true, tempo: 120 });
   let draws = 0; const counted = BandDrums.create({ rng: () => { draws++; return 0.5; } });
   for (let i = 0; i < 6; i++){
     const b = d.bar(ctx(i, { opts: { written: text, groove: "rock", fills: "busy" }, last: i === 3, fill: i === 2 ? "large" : null }));
@@ -195,8 +197,14 @@ console.log("BAND GROOVES AS TEXT OK");
   assert(d.bar(ctx(1, { opts: { written: text } })).some(e => e.art === "flam"), "articulations are passed on");
   assert.deepEqual(d.bar(ctx(0, { stop: true, opts: { written: text } })).length, want[0].length, "no stop time");
   assert.deepEqual(d.ending(ctx(0, { opts: { written: text } })), []); assert.equal(d.fillNow(ctx(0, { opts: { written: text } }), "large", 3), null);
-  const noSwing = d.bar(ctx(0, { opts: { written: text, writtenSwing: 0.5 } })); assert.deepEqual(noSwing.filter(e => e.piece === "snare").map(e => e.pos), [1, 1.75, 3]);
-  assert(!d.bar(ctx(1, { opts: { written: text, writtenPieces: BandSounds.pieces } })).some(e => e.piece === "tom3"), "only the pieces the kit has");
+  const noSwing = d.bar(ctx(0, { opts: { written: text, writtenSwing: 0.5 } })); assert.deepEqual(noSwing.filter(e => e.piece === "snare" && !e.grace).map(e => e.pos), [1, 1.75, 3]);
+  assert(!d.bar(ctx(1, { opts: { written: text, writtenPieces: BandSounds.pieces.filter(p => p !== "tom3") } })).some(e => e.piece === "tom3"), "only the pieces asked for");
+  assert(d.bar(ctx(1, { opts: { written: text } })).some(e => e.grace), "the flam's grace note is played");
+  const fl = "?TimeSig=4/4&Div=8&Measures=2&S=|f-------|--------|&K=|--------|--------|&H=|--------|--------|", sp = 60 / 120;
+  const b0 = d.bar(ctx(0, { opts: { written: fl } })), b1 = d.bar(ctx(1, { opts: { written: fl } }));
+  assert.deepEqual(b0.map(e => e.grace ? "g" : "f").join(""), "f", "nothing before the bar line in bar 1"); assert.equal(b1.length, 1, "bar 2 ends with...");
+  assert(b1[0].grace && Math.abs((4 - b1[0].pos) * sp - 0.030) < 1e-4, "...the grace note of bar 1's flam, 30 ms before the next bar line");
+  assert(b0.concat(b1).every(e => e.pos >= 0 && e.pos < 4));
   assert(d.bar(ctx(0, { opts: { groove: "rock" } })).length > 0 && d.bar(ctx(0, { opts: { written: "", groove: "rock" } })).length > 0, "without one, the drummer as before");
   const three = d.bar(ctx(0, { beats: 3, opts: { written: text } })); assert(three.every(e => e.pos < 3), "a shorter bar of the form takes what fits");
   console.log("WRITTEN GROOVE PLAYED OK");
@@ -289,4 +297,28 @@ console.log("BAND GROOVES AS TEXT OK");
   assert.deepEqual(cg.bar({ index: 0, beats: 4, opts: { written: "?Div=8", congas: "tumbao" } }), [], "a written groove with empty hand lanes: no congas, whatever the pattern");
   assert.deepEqual(cg.ending({ opts: { written: t } }), []); assert.equal(cg.bar({ index: 0, beats: 4, tempo: 100, phrase: { bar: 0 }, opts: { congas: "tumbao" }, chords: [] }).length, 8);
   console.log("CLICK AND CONGAS OK");
+}
+
+// ---- flams, drags and buzzes are more than one hit
+{
+  const t = "?TimeSig=4/4&Div=8&Tempo=100&H=|--------|&S=|f-d-b---|&K=|--------|", x = G.parse(t), spb = 60 / 100;
+  const ev = G.toEvents(x)[0], sn = ev.filter(e => e.piece === "snare"), main = sn.filter(e => !e.grace), gr = sn.filter(e => e.grace);
+  assert.deepEqual(main.map(e => [e.pos, e.art]), [[0, "flam"], [1, "drag"], [2, "buzz"]]);
+  const near = (p, s) => gr.filter(e => e.pos > p - 0.25 && e.pos < p + 0.5 && Math.sign(e.pos - p) === s);
+  assert.equal(near(0, -1).length, 1, "a flam: one grace note"); assert(Math.abs(near(0, -1)[0].pos * spb + 0.030) < 1e-4, "30 ms before"); assert(near(0, -1)[0].pos < 0, "before the bar line");
+  assert.equal(near(1, -1).length, 2, "a drag: two"); assert.deepEqual(near(1, -1).map(e => Math.round((e.pos - 1) * spb * 1000)), [-70, -35]);
+  const bz = near(2, 1); assert(bz.length >= 8 && bz.length <= 11, "a buzz: bounces for most of its eighth: " + bz.length);
+  assert(bz.every((e, i) => i === 0 || e.vel < bz[i - 1].vel), "dying away"); assert(bz[bz.length - 1].pos - 2 < 0.5 * 0.9 + 1e-6, "inside its cell");
+  assert(gr.every(e => e.vel < main[0].vel && e.straight), "quieter than the note, and straight");
+  for (let i = 1; i < ev.length; i++) assert(ev[i].pos >= ev[i - 1].pos, "in time order");
+  assert(G.toEvents(G.parse(t), { tempo: 50 })[0].filter(e => e.grace)[0].pos > -0.03, "the same 30 ms is less of a slower beat");
+  assert(G.toEvents(G.parse("?TimeSig=4/4&Div=16&S=|b---------------|"))[0].filter(e => e.grace).length < bz.length, "a sixteenth buzzes for less time");
+  assert.deepEqual(G.toEvents(x, { ornaments: false })[0].filter(e => e.grace), []);
+  assert.deepEqual(G.fromEvents(G.toEvents(x)).lanes.S, x.lanes.S, "written back as the three marks, the extra hits left out");
+  assert.deepEqual(G.fromEvents(G.toEvents(x)).warnings, []);
+  // the band's staff writes the three main notes only
+  const rec = { beats: 4, meter: { n: 4, d: 4 }, compound: false, swing: 0.5, chords: [], parts: { drums: G.toEvents(x)[0] } };
+  const up = BandNotation.toAbc([rec], { show: { comp: false, bass: false, drums: true } }).split("\n").filter(l => /\|\]$/.test(l))[0];
+  assert.equal((up.match(/c/g) || []).length, 3, "three snare notes on the staff: " + up);
+  console.log("ORNAMENTS OK");
 }

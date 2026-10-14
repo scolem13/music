@@ -8,8 +8,8 @@ function play(name, extra){
   var p = BandPresets.filter(function (x){ return x.name.indexOf(name) === 0; })[0]; assert(p, name);
   var parsed = TuneChart.parse(p.abc), n = parsed.bars.length;
   ["bass", "comp"].forEach(function (k){ assert(BandCatalog.byId(BandCatalog[k], k === "bass" ? p.bass : p.rhythm), k + " id of " + name); });
-  assert(BandHarmony.hasStyle("piano", p.voicing), "voicing of " + name);
-  var opts = { bassFeel: p.bass, compRhythm: p.rhythm, voicing: p.voicing, comp: "piano", feel: p.feel, groove: p.groove, figures: p.fields["bt-figs"], variation: 0 };
+  assert(BandHarmony.hasStyle(/guitar/.test(p.fields["bt-comp"] || "") ? "guitar" : "piano", p.voicing), "voicing of " + name);
+  var opts = { bassFeel: p.bass, compRhythm: p.rhythm, voicing: p.voicing, comp: p.fields["bt-comp"] || "piano", feel: p.feel, groove: p.groove, figures: p.fields["bt-figs"], variation: 0 };
   return { n: n, bars: BandMidi.generate(parsed, { bars: n + 4, tempo: p.tempo, opts: Object.assign(opts, extra || {}) }) };
 }
 function bass(b){ return b.parts.bass.map(function (e){ return e.pos + ":" + N(e.midi); }).join(" "); }
@@ -47,18 +47,18 @@ assert.strictEqual(sf.bars[21].chords.length, 2);
       b.parts.comp.forEach(function (e){ assert(e.midis.length >= 2 && e.midis[0] >= 43 && e.midis[e.midis.length - 1] <= 84, "voicing " + r + q + " " + e.midis); });
     }); }); }); });
 // every built-in setup: ids exist, the changes parse with no unknown chord, the band plays every bar in range
-assert.strictEqual(BandPresets.length, 10);
+assert.strictEqual(BandPresets.length, 12);
 BandPresets.forEach(function (p){
   var parsed = TuneChart.parse(p.abc), n = parsed.bars.length, st = BandCatalog.byId(BandCatalog.styles, p.style);
   assert(st && BandCatalog.byId(BandCatalog.bass, p.bass) && BandCatalog.byId(BandCatalog.drums, p.groove), p.name);
   [[BandCatalog.bass, p.bass], [BandCatalog.drums, p.groove]].concat(p.rhythm.split("+").map(function (r){ return [BandCatalog.comp, r]; })).forEach(function (x){
     assert(BandCatalog.fits(BandCatalog.byId(x[0], x[1]), p.style), p.name + ": " + x[1] + " fits " + p.style); });
-  assert(n % 4 === 0 && BandHarmony.hasStyle("piano", p.voicing), p.name);
-  var opts = { bassFeel: p.bass, compRhythm: p.rhythm, voicing: p.voicing, comp: "piano", feel: p.feel, groove: p.groove, figures: p.fields["bt-figs"] };
+  assert(n % 4 === 0 && BandHarmony.hasStyle(/guitar/.test(p.fields["bt-comp"] || "") ? "guitar" : "piano", p.voicing), p.name);
+  var opts = { bassFeel: p.bass, compRhythm: p.rhythm, voicing: p.voicing, comp: p.fields["bt-comp"] || "piano", feel: p.feel, groove: p.groove, figures: p.fields["bt-figs"] };
   var bars = BandMidi.generate(parsed, { bars: 2 * n, tempo: p.tempo, opts: opts }), heard = 0;
   bars.forEach(function (b, i){
     assert(b.chords.length && b.chords.every(function (c){ return c.chord && !c.chord.nc && c.chord.quality; }), p.name + " bar " + i + " chords");
-    assert(b.parts.bass.length && b.parts.drums.length, p.name + " bar " + i);
+    assert(b.parts.bass.length && (b.parts.drums.length || /Fingerpicking/.test(p.abc)), p.name + " bar " + i);   // John Prine Fingerpicking is drumless by design
     b.parts.bass.forEach(function (e){ assert(e.midi >= BandBass.LO && e.midi <= BandBass.HI && e.pos < b.beats, p.name + " bass " + i); });
     b.parts.comp.forEach(function (e){ assert(e.pos < b.beats, p.name + " comp " + i); }); heard += b.parts.comp.length; });
   assert(heard > n / 2, p.name + " comping");

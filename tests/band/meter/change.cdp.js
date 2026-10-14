@@ -6,7 +6,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   try {
     await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track.html"); await b.sleep(1200);
     // a player of our own: where each bar starts (in beats of the tempo) and where the bass plays
-    await ev(`(function(){ window.__r = { bars: [], bass: [], where: [] }; var p = BandPlayer.create({ parsed: TuneChart.parse('${ABC}'), tempo: 300, countIn: 1, choruses: 1, humanize: 0, seed: 3,
+    await ev(`(function(){ window.__r = { bars: [], bass: [], where: [] }; var p = BandPlayer.create({ parsed: TuneChart.parse('${ABC}'), tempo: 300, countIn: 1, choruses: 2, humanize: 0, seed: 3, /* 2: the last bar of the final chorus is the ending, a single hit */
       opts: { bassFeel: "roots", compRhythm: "pad", groove: "rock", feel: "straight", comp: "piano", variation: 0 },
       onBar: function(i){ __r.bars.push(i.index + ":" + i.beats); var w = p.where(); if (w) __r.where.push(Math.round(w.pos * 10) / 10 + "/" + w.beats); },
       onEvent: function(e){ if (e.part === "bass") __r.bass.push(Math.round(e.L * 100) / 100); } }); window.__p = p; p.play(); return 0; })()`);

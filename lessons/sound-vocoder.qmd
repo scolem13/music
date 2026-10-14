@@ -1,0 +1,61 @@
+---
+title: "Sound 14: The Vocoder"
+toc: true
+toc-depth: 2
+---
+
+A **vocoder** makes an instrument talk. It takes two sounds: a **modulator** (usually a voice) and a
+**carrier** (usually a synth playing chords). It measures how loud each band of frequencies is in the
+voice, moment by moment, and sets the loudness of the same bands in the synth to match. The synth
+keeps its pitch and chords; the voice supplies the words. It's the robot voice of Kraftwerk, Herbie
+Hancock, Daft Punk and Laurie Anderson. It was invented at Bell Labs in the 1930s to squeeze speech
+down telephone lines.
+
+**How to use the page.** Put on **headphones**: the microphone hears the speakers otherwise. Choose
+**Microphone** as the modulator (or the built-in **Robot voice** if there's no mic), press ▶, then talk
+or sing while you play chords on the computer keys, the on-screen keyboard or a MIDI keyboard. Until
+you play, a chord is held for you.
+
+::: {.sk-care}
+The microphone only switches on when you choose it and press ▶ (the browser asks first). The
+**🎤 Mic** button in the bottom bar turns it off again. Nothing is recorded or sent anywhere.
+:::
+
+## The vocoder
+
+<div class="sk" data-w="vocoder"></div>
+
+## How it works
+
+The vocoder is built from parts you have already met:
+
+1. **Split the voice into bands.** A row of [band-pass filters](sound-filter.qmd), each a different
+   frequency from low to high, splits the voice into 16 or so bands.
+2. **Measure each band.** An **envelope follower** on each band turns the wobbling band into a smooth
+   level: how loud that band is right now. The bars under the controls show those levels.
+3. **Split the synth the same way.** A second row of band-pass filters, at the same frequencies,
+   splits the carrier.
+4. **Let the voice turn the synth up and down.** Each band of the synth is turned up and down by the
+   level of the matching band of the voice, and the bands are added back together.
+
+A vowel is a pattern of loud bands (the formants, from the [filter lesson](sound-filter.qmd)), so the
+synth takes on the vowel. The pitch comes from the synth, which is why you can speak in a monotone
+and have it sing in chords.
+
+## Things to try
+
+- **Bands.** With 4 bands the words are barely understandable; with 16 they're clear; with 32 it
+  sounds almost like a voice through a synth-shaped filter. Old hardware vocoders had 8 to 20.
+- **Band sharpness.** Higher Q makes each band narrower: more ringing and more "robot".
+- **Envelope speed.** Slow (5 Hz) blurs the words into a smooth pad; fast (60 Hz) keeps every
+  consonant but gets gritty.
+- **Let "s" sounds through.** A synth has little energy in the very top, so "s", "t" and "f"
+  disappear. Real vocoders pass the voice's top end straight through to keep the words clear.
+- **Carrier.** A sawtooth is best, because it has energy in every band for the voice to shape.
+  A square works less well (it is missing every other harmonic). **Noise** as the carrier gives a
+  whisper with no pitch at all.
+- **Listen to** the modulator or the carrier alone to hear what goes in.
+- **Drum loop as the modulator** makes the chord pulse in the rhythm of the drums, a trick used in
+  dance music.
+
+{{< include _synth-kit.qmd >}}

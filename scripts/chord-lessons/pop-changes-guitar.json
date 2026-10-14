@@ -1,0 +1,55 @@
+{
+ "title": "Pop Changes for Guitar: From Open Chords to Passing Chords",
+ "body": "This lesson is for a guitarist who knows the open chords. It puts the shapes of [the lesson on C, Am, F, G](pop-changes.qmd) on the neck. Each step has fretboard diagrams for its chords, the chart and the staff, and the band plays the chords on piano, guitar or organ (the **Chords** menu in the strip).\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.\n\n## 1. The basic chords\n\n**C, Am, F, G.** The four chords as open shapes. The diagrams show the neck standing upright: string 6 is on the left and the nut is at the top. A dot labelled R is the root. In a key that has no open shape the diagram shows the barre shape instead.\n\n<div class=\"bl-step\" data-step=\"basic\"></div>\n\n## 2. Extensions\n\n**Cadd9, Am7, Fadd9, Gsus2.** Each of these is the basic shape with one finger moved or lifted. Check the diagrams for what changed: the new note carries a 9, 7 or 2.\n\n<div class=\"bl-step\" data-step=\"ext\"></div>\n\n## 3. Passing chords\n\n**C, G/B | Am, C/G | F, F♯dim | G.** The bass note moves by step. A slash chord such as G/B is the G chord with the note after the slash as its lowest note: the diagram shows the G shape, and you play B (string 5, second fret) beneath it.\n\n<div class=\"bl-step\" data-step=\"pass\"></div>\n\n## 4. Secondary dominants\n\n**C, E7 | Am, C7 | F, D7 | G7.** Four dominant sevenths. Each has one note from outside the key, and it is the one that leads into the next chord.\n\n<div class=\"bl-step\" data-step=\"sec\"></div>\n\n\n## Where to go next\n\n- Change the key in the strip and see which shapes become barre chords.\n- Play the passing chords with the band, listening for the bass.\n- [Four-chord loops](four-chord-loops.qmd) uses the same shapes in other orders.\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 4,
+  "feels": [
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   },
+   {
+    "id": "motown",
+    "label": "Motown / soul",
+    "tempo": 110
+   },
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   }
+  ],
+  "steps": {
+   "basic": {
+    "bars": "C|Am|F|G",
+    "diagram": "guitar",
+    "staff": "chords"
+   },
+   "ext": {
+    "bars": "Cadd9|Am7|Fadd9|Gsus2",
+    "diagram": "guitar",
+    "staff": "chords",
+    "vs": "basic"
+   },
+   "pass": {
+    "bars": "C G/B|Am C/G|F F#dim|G",
+    "diagram": "guitar",
+    "staff": "chords",
+    "vs": "basic"
+   },
+   "sec": {
+    "bars": "C E7|Am C7|F D7|G7",
+    "diagram": "guitar",
+    "staff": "chords",
+    "vs": "pass"
+   }
+  }
+ }
+}

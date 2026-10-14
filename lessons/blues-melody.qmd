@@ -166,7 +166,11 @@ this melody as its starting point.
 - Loop a chorus with the melody left out and make up your own line from the chord tones,
   landing on a guide tone at each change.
 - Take a chorus from [the changes lesson](blues-changes.qmd) and write its guide-tone line.
+- Write guide-tone lines over other progressions in [the guide tones lesson](guide-tones.qmd), or put new chords under a melody in [reharmonizing](reharmonize.qmd).
 
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a blues: the Key menu's tonality reads "(Blues)" (key-tonality.js)</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

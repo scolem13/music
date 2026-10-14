@@ -1,0 +1,80 @@
+---
+title: "Comping rhythm: Groups: 3+3+4+3+3"
+subtitle: "For piano or guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Groups: 3+3+4+3+3**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+Sixteen eighth notes over two bars grouped 3+3+4+3+3. First bar (shown): 1, the and of 2, 4. Second bar: 2 and the and of 3. Party Rock Anthem, Starships.
+
+It belongs in *Dance pop* and *Reggaeton*. Here it is in the dance pop style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Groups: 3+3+4+3+3","opts":{"compRhythm":"g33433"}}]'></div>
+
+## Step 1: 3+3+2 (tresillo)
+
+Start with something simpler. Three held chords in a bar of eight eighth notes, grouped 3+3+2: beat 1, the and of 2, beat 4. Clocks, Shape of You, Eye of the Tiger.
+
+This is a pattern of its own: [the lesson on it](chords-tresillo.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"compRhythm":"tresillo"}}]'></div>
+
+## Step 2: Groups: 3+3+3+3+2+2
+
+Sixteen eighth notes over two bars grouped 3+3+3+3+2+2. First bar (shown): 1, the and of 2, 4. Second bar: the and of 1, 3, 4. Beautiful Day.
+
+This is a pattern of its own: [the lesson on it](chords-g333322.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Groups: 3+3+3+3+2+2","opts":{"compRhythm":"g333322"}}]'></div>
+
+## Step 3: Groups: 3+3+4+3+3, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Sixteen eighths over two bars grouped 3+3+4+3+3. As before, count the groups and play on the first of each; the 4 in the middle is the turnaround of the pattern.
+
+The band plays it on piano here; the step after next has it on guitar.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Groups: 3+3+4+3+3","opts":{"compRhythm":"g33433"}},{"label":"Groups: 3+3+3+3+2+2 (the step before)","opts":{"compRhythm":"g333322"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Groups: 3+3+4+3+3","opts":{"compRhythm":"g33433"}}]'></div>
+
+## Step 5: On the guitar
+
+The same rhythm on the guitar. On guitar each chord is a strum or a pluck of a chord shape; a short chord is choked by easing the fretting hand off the strings.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Groups: 3+3+4+3+3","opts":{"compRhythm":"g33433"}}]'></div>
+
+## Step 6: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="dance" data-chart="Am F|C G|Am F|C G" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Groups: 3+3+4+3+3","opts":{"compRhythm":"g33433"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Reggaeton**
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="92" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Groups: 3+3+4+3+3","opts":{"compRhythm":"g33433"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [3+3+2 (tresillo)](chords-tresillo.qmd), [Groups: 3+3+3+3+2+2](chords-g333322.qmd).
+- **Plays with, in dance pop:** [Octaves (disco)](bass-octaves.qmd) (bass line), [Four on the floor](drums-dance.qmd) (drum groove).
+- **Other comping rhythms in the Folk, rock and pop group:** [Boom-chick / oom-pah-pah](chords-oompah.qmd), [Waltz in one](chords-waltz.qmd), [Ballad: rocking](chords-ball-rock.qmd), [Ballad: half-broken](chords-ball-broken.qmd), [Ballad: syncopated](chords-ball-sync.qmd), [Quarter-note chords](chords-quarters.qmd), [Triplet chords (12/8)](chords-triplets.qmd), [Driving eighths](chords-eighths.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

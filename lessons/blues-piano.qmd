@@ -132,7 +132,11 @@ secure, play the riff in the right hand and rootless voicings in the left:
   each new chord.
 - The **Chord Sheet** tool (Tools menu) draws these and other voicings for any chords you
   type in, one at a time or superimposed.
+- Next on piano: [pop changes for piano](pop-changes-piano.qmd), from triads to passing chords.
 
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a blues: the Key menu's tonality reads "(Blues)" (key-tonality.js)</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

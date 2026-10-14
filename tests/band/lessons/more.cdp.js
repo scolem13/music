@@ -15,8 +15,8 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await ev(`!!document.querySelector(".bl-drumkey svg")`), true, "the drum key");
     assert.strictEqual(await ev(`document.getElementById("bl-dots").parentNode.hidden`), true);
     const parts = JSON.parse(await ev(`JSON.stringify(Array.prototype.map.call(document.querySelectorAll(".bl-step"), function (h){ return [h.getAttribute("data-part"), !!h.__bl, h.querySelectorAll(".bl-abc svg").length, h.querySelectorAll(".tc-bar").length]; }))`));
-    assert.deepStrictEqual(parts.map(p => p[0]), ["quarters", "ride", "time", "fills", "shuffle", "slow", "straight", "fills"]);        // (the last is the tune)
-    parts.forEach((p, i) => assert(p[1] && p[2] === (i === 7 ? 3 : 2) && p[3] === 12, "drum step " + p));
+    assert.deepStrictEqual(parts.map(p => p[0]), ["quarters", "ride", "time", "fills", "shuffle", "slow", "straight", "grab", "fills"]);        // (the last is the tune)
+    parts.forEach((p, i) => assert(p[1] && p[2] === (i === 8 ? 3 : 2) && p[3] === 12, "drum step " + p));
     const step = i => `document.querySelectorAll(".bl-step")[${i}]`;
     // every drum note head names its piece; a chord's heads differ; the kit picture has a button per piece on the right line or space
     const KNOWN = ["Ride cymbal", "Ride cymbal, on the bell", "Crash cymbal", "Hi-hat (closed), with the stick", "Hi-hat, open", "Hi-hat, with the foot", "Snare drum", "High tom", "Mid tom", "Floor tom", "Bass drum"];

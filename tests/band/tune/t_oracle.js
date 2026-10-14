@@ -3,7 +3,7 @@ const fs = require('fs'), vm = require('vm'), R = '/Users/sean.coleman/Projects/
 global.window = global; global.document = { createElement: () => ({ style: {}, setAttribute() {}, appendChild() {} }), createElementNS: () => ({ style: {}, setAttribute() {}, appendChild() {} }) };
 global.navigator = { userAgent: 'node' };
 const load = f => vm.runInThisContext(fs.readFileSync(R + f, 'utf8'), { filename: f });
-['apps/shared/tune-chart.js', 'apps/tune-assessment/abc-tune.js', 'apps/shared/band/tune-score.js'].forEach(load);
+['apps/shared/tune-chart.js', 'apps/shared/abc-core.js', 'apps/tune-assessment/abc-tune.js', 'apps/shared/band/tune-score.js'].forEach(load);
 vm.runInThisContext(fs.readFileSync(R + 'apps/shared/abcjs-basic.js', 'utf8'));
 const A = global.ABCJS;
 const tunesObject = vm.runInNewContext(fs.readFileSync(R + 'apps/tunes/tunes-object.js', 'utf8') + '\n;tunesObject');

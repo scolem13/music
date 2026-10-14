@@ -12,7 +12,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   try {
     await b.goto(B + "/tools/chord-entry.html"); await b.sleep(1200);
     assert.deepStrictEqual(errs(), [], "page errors: " + errs().join(" | "));
-    await ev(`document.getElementById("ce-sound").checked = false; 0`); await set("ce-key", "F"); await set("ce-tempo", "120");
+    await ev(`document.getElementById("ce-sound").checked = false; document.getElementById("ce-type").checked = true; 0`); await set("ce-key", "F"); await set("ce-tempo", "120");
     await click("ce-mode"); await set("ce-mode", "melody");
     assert.strictEqual(await ev(`document.getElementById("ce-melody").hidden`), false); assert.strictEqual(await val("ce-mfeel"), "swing", "a jazz style reads the melody as swung");
     await click("ce-mrec"); assert(/Enter the chords first/.test(await text("ce-note")), await text("ce-note"));

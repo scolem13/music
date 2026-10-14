@@ -1,0 +1,51 @@
+---
+title: "Drum groove: Train beat"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Train beat**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+The snare on every eighth note, leaning on 2 and 4, over a kick on 1 and 3. Folsom Prison Blues.
+
+It belongs in *Country train beat*. Here it is in the country train beat style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="train" data-chart="G|G|C|D" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Train beat","opts":{"groove":"train"}}]'></div>
+
+## Step 1: Two-beat
+
+Start with something simpler. Kick with the bass on 1 and 3, a soft snare with the chords on 2 and 4. In 3/4: kick on 1, snare on 2 and 3.
+
+This is a pattern of its own: [the lesson on it](drums-boomchick.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="train" data-chart="G|G|C|D" data-tempo="84" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Two-beat","opts":{"groove":"boomchick"}}]'></div>
+
+## Step 2: Train beat, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The snare on every eighth, leaning on 2 and 4, over a kick on 1 and 3. Alternate the hands and keep the unaccented notes soft. Folsom Prison Blues.
+
+<div class="ar-demo" data-style="train" data-chart="G|G|C|D" data-tempo="84" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Train beat","opts":{"groove":"train"}},{"label":"Two-beat (the step before)","opts":{"groove":"boomchick"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="train" data-chart="G|G|C|D" data-tempo="120" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Train beat","opts":{"groove":"train"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Two-beat](drums-boomchick.qmd).
+- **The same idea elsewhere in the band:** [Strum: D, D-U, D, D-U](chords-strum-folk.qmd) (comping rhythm).
+- **Plays with, in country train beat:** [Root and fifth](bass-alt.qmd) (bass line), [Strum: D, D-U, D, D-U](chords-strum-folk.qmd) (comping rhythm).
+- **Other drum grooves in the Folk, rock and pop group:** [Bo Diddley beat](drums-bodiddley.qmd), [Waltz in one](drums-waltz.qmd), [Two-beat](drums-boomchick.qmd), [Rock backbeat](drums-rock.qmd), [Pop backbeat](drums-strum.qmd), [Ballad](drums-ballad.qmd), [Four on the floor](drums-dance.qmd), [Motown](drums-motown.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

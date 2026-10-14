@@ -83,6 +83,7 @@
       <div class="nr-field"><label for="nr-beam">Beams</label><select id="nr-beam"><option value="beat">Within a beat</option><option value="half">Within half a bar</option><option value="none">None</option></select></div>
       <div class="nr-field"><label for="nr-tie">Syncopation</label><select id="nr-tie"><option value="none">As played</option><option value="mid">Tied across the middle of the bar</option><option value="beat">Tied across every beat</option></select></div>
       <div class="nr-field"><label for="nr-det">Short detached notes</label><select id="nr-det"><option value="rest">Note and rest</option><option value="staccato">Staccato note</option></select></div>
+      <div class="nr-field"><label for="nr-ends">Long notes before a rest</label><select id="nr-ends"><option value="simple">The simplest nearby length</option><option value="played">As released</option></select></div>
       <div class="nr-field"><label for="nr-trip">Triplets</label><select id="nr-trip"><option value="off">Never</option><option value="auto">Where the playing fits</option></select></div>
       <div class="nr-field"><label for="nr-pickup" title="Notes struck before the first downbeat (in the count-in).">Notes before bar 1</label><select id="nr-pickup"><option value="off">Leave them out</option><option value="auto">Write them (a pickup bar)</option></select></div>
       <div class="nr-field"><label for="nr-grace" title="A note whose next note starts within this many milliseconds is a grace note of it (0 = none; never more than a thirty-second note).">Grace notes within (ms)</label><input type="number" id="nr-grace" min="0" max="200" step="10" value="0"></div>
@@ -140,6 +141,7 @@
     <details class="nr-rule"><summary><span class="nr-id">N4</span>How long a note is written</summary><div class="nr-body">
       <p>A note lasts until the next note starts (it is written legato), unless the gap between its release and the next start is <span class="nr-val" data-rule="gap"></span> of an eighth or more: then it is written as released (rounded to the grid) and a rest follows. The last note is written to its release. A note is never shorter than one grid step. A note cannot run past the next note or the last bar line.</p>
       <p>So a line played short and detached, as swing is, is written with full note values and no rests unless a gap is clear.</p>
+      <p>Where a rest does follow a note longer than an eighth (the end of a phrase), the moment you let go is not much of a guide: with <em>Long notes before a rest: The simplest nearby length</em> (the default) the note ends wherever, near the release, the note and the rest after it are simplest to write. The end may move up to <span class="nr-val" data-rule="phraseTol"></span> of the note's length (at least one grid step, at most a beat). The candidates are scored by the written symbols of the note and the rest (a dotted one counts one and a half), an end that is off the beat, and the distance moved; holding the note right on to the next one, losing a rest that was played, costs <span class="nr-val" data-rule="phraseKeepRest"></span> more. So a quarter let go a sixteenth early is a quarter, not a dotted eighth and a sixteenth rest, while a dotted quarter and a clear eighth rest stay as played. <em>As released</em> writes the release rounded to the grid.</p>
       <p class="nr-where">Seen in: <em>length</em> in the note table says which case applied and the gap it measured.</p></div></details>
     <details class="nr-rule"><summary><span class="nr-id">N5</span>Bar lines, chord changes and ties</summary><div class="nr-body">
       <p>A note that runs over a bar line is split and tied. A note that runs over a chord change is split at the change and tied, so each chord symbol sits above the note under it. Only lengths that are written as one note are used: <span class="nr-val" data-rule="ticks"></span> grid steps (a dotted note is 3 or 6); any other length is split into those and tied.</p></div></details>
@@ -249,7 +251,7 @@
     if (!Array.prototype.some.call($("nr-meter").options, function(x){ return x.value === c.n + "/" + c.d; })){ var o = document.createElement("option"); o.textContent = c.n + "/" + c.d; $("nr-meter").appendChild(o); $("nr-meter").value = c.n + "/" + c.d; }
     $("nr-bars").value = c.bars; $("nr-tempo").value = Math.round(60 / c.beatSec * 10) / 10; $("nr-res").value = String(c.res); $("nr-poly").checked = !!c.poly;
     $("nr-ms").value = c.chordMs; $("nr-settle").value = c.settle; $("nr-snap").value = c.snap; $("nr-split").value = c.split; $("nr-slash").checked = !!c.slash;
-    $("nr-beam").value = c.beam || "beat"; $("nr-tie").value = c.tie || "none"; $("nr-pickup").value = c.pickup || "off"; $("nr-det").value = c.detached || "rest"; $("nr-trip").value = c.triplets || "off"; $("nr-grace").value = c.graceMs || 0;
+    $("nr-beam").value = c.beam || "beat"; $("nr-tie").value = c.tie || "none"; $("nr-pickup").value = c.pickup || "off"; $("nr-det").value = c.detached || "rest"; $("nr-ends").value = c.ends || "simple"; $("nr-trip").value = c.triplets || "off"; $("nr-grace").value = c.graceMs || 0;
     $("nr-feel").value = typeof c.swing === "string" ? c.swing : (c.swing > 0.5 ? "logged" : "straight");
   }
   function num(id, lo, hi, d){ var v = parseFloat($(id).value); return isNaN(v) ? d : Math.min(hi, Math.max(lo, v)); }
@@ -259,7 +261,7 @@
     var c = { kind: $("nr-kind").value, n: n, d: d, bars: Math.round(num("nr-bars", 1, 64, 2)), beatSec: 60 / bpm, count: CE.geoOf(n, d).bpb, key: $("nr-key").value, slash: $("nr-slash").checked,
       settle: num("nr-settle", 20, 300, R.settleMs), chordMs: num("nr-ms", 10, 200, R.togetherMs), poly: $("nr-poly").checked, res: parseFloat($("nr-res").value) || 1, swing: sw,
       snap: $("nr-snap").value, split: parseInt($("nr-split").value, 10), free: true,
-      beam: $("nr-beam").value, tie: $("nr-tie").value, detached: $("nr-det").value, pickup: $("nr-pickup").value, pickupBeats: base && base.cfg && base.cfg.pickupBeats || null, triplets: $("nr-trip").value, graceMs: num("nr-grace", 0, 200, 0) };
+      beam: $("nr-beam").value, tie: $("nr-tie").value, detached: $("nr-det").value, ends: $("nr-ends").value, pickup: $("nr-pickup").value, pickupBeats: base && base.cfg && base.cfg.pickupBeats || null, triplets: $("nr-trip").value, graceMs: num("nr-grace", 0, 200, 0) };
     if (base && base.cfg.free === false){ c.free = false; c.baseAbc = base.cfg.baseAbc; c.count = base.cfg.count != null ? base.cfg.count : c.count; }
     return c;
   }
@@ -344,7 +346,7 @@
   }
 
   // ---- the controls ----
-  ["nr-kind", "nr-key", "nr-meter", "nr-bars", "nr-feel", "nr-res", "nr-poly", "nr-ms", "nr-settle", "nr-snap", "nr-split", "nr-slash", "nr-beam", "nr-tie", "nr-det", "nr-trip", "nr-grace", "nr-pickup"].forEach(function(id){ $(id).addEventListener("change", run); });
+  ["nr-kind", "nr-key", "nr-meter", "nr-bars", "nr-feel", "nr-res", "nr-poly", "nr-ms", "nr-settle", "nr-snap", "nr-split", "nr-slash", "nr-beam", "nr-tie", "nr-det", "nr-ends", "nr-trip", "nr-grace", "nr-pickup"].forEach(function(id){ $(id).addEventListener("change", run); });
   $("nr-tempo").addEventListener("change", run);
   $("nr-preset").addEventListener("change", function(){ var v = $("nr-preset").value; if (v === "log"){ if ($("nr-log").value.trim()) loadLog($("nr-log").value); else say("Paste a take log below and press Load."); } else { say(""); loadPreset(+v); } });
   $("nr-load").addEventListener("click", function(){ loadLog($("nr-log").value); });
@@ -373,7 +375,7 @@
       var p = v.patch;
       if ("swing" in p) $("nr-feel").value = p.swing > 0.5 ? "swung" : "straight";
       if ("res" in p) $("nr-res").value = String(p.res); if ("poly" in p) $("nr-poly").checked = !!p.poly;
-      if ("detached" in p) $("nr-det").value = p.detached; if ("triplets" in p) $("nr-trip").value = p.triplets; if ("graceMs" in p) $("nr-grace").value = p.graceMs;
+      if ("detached" in p) $("nr-det").value = p.detached; if ("ends" in p) $("nr-ends").value = p.ends; if ("triplets" in p) $("nr-trip").value = p.triplets; if ("graceMs" in p) $("nr-grace").value = p.graceMs;
       run(); return "The whole take is now read as: " + v.label.toLowerCase() + " (see the settings above).";
     } });
   window.__nr = { dwim: function(){ return dwim; }, run: run, last: function(){ return last; }, load: loadLog, presets: PRESETS };       // for tests

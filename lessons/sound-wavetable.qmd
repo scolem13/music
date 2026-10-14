@@ -1,0 +1,50 @@
+---
+title: "Sound 8: Wavetable Synthesis"
+toc: true
+toc-depth: 2
+---
+
+A **wavetable** is a list of different single-cycle wave shapes, one after another. The oscillator
+plays one shape, and a **position** control chooses which. Move the position while a note is playing
+and the sound **morphs** smoothly from one shape to the next. Wolfgang Palm's PPG Wave (1981) made
+the idea famous; today it's the heart of software synths like Serum and Vital.
+
+**How to use the page.** Press **▶ Demo** or play the keys or MIDI. Drag **Position in the table**
+while a note plays. The drawing shows every shape in the table, front to back, with the current one
+in red.
+
+## The synth
+
+<div class="sk" data-w="wavetable"></div>
+
+This table has eight shapes: sine, triangle, sawtooth, square, a narrow pulse, a vowel ("ah"), a
+hollow wave and a sparse glassy one. Between two shapes the oscillator mixes them: halfway between
+sawtooth and square is half of each. Look at the spectrum as you drag: each shape is a different
+recipe of harmonics (see [Sound 1](sound-harmonics.qmd)), and the morph moves smoothly from one
+recipe to the next.
+
+## Scanning the table
+
+A wavetable is most interesting when the position **moves by itself**. Raise **Scan LFO depth** and the
+[LFO](sound-lfo.qmd) sweeps the position back and forth through the table. A slow scan (0.1 Hz) gives
+a pad that slowly changes colour. A fast scan (4 Hz or more) gives a talking, rhythmic wobble.
+
+In a full wavetable synth an envelope can also move the position, so that every note starts on one
+shape and ends on another. That's the same idea as the filter envelope in
+[subtractive synthesis](sound-subtractive.qmd), but the movement can be through any timbres at all,
+not just from bright to dark.
+
+## How it is built here
+
+A full wavetable synth stores each shape as hundreds or thousands of samples and plays them back very
+fast. For a lesson that is more than we need. The browser can build an oscillator from a list of
+harmonic strengths (as in the additive widget in [Sound 1](sound-harmonics.qmd)), so each shape in this
+table is stored as 48 harmonic strengths, and the position mixes neighbouring lists about thirty
+times a second. Mixing harmonic recipes and mixing wave shapes give exactly the same result, so it
+sounds and looks the same as the real thing, just with a smaller table.
+
+## Next
+
+- [Sound 9: Distortion](sound-distortion.qmd), the first of the effects.
+
+{{< include _synth-kit.qmd >}}

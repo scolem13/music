@@ -1,0 +1,140 @@
+{
+ "title": "Lesson: Reharmonizing a Melody",
+ "body": "One melody can sit on many sets of chords. A chord is right for a melody note if the note is in it\n(a **chord tone**) or if it passes quickly (a **passing note**). This lesson takes one tune, *Ode to Joy*,\nand puts four sets of chords under it.\n\n**How to use the page.** Press ▶ on a chart and the band plays it twice after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.  The tune is written above the chart and its notes light up as they sound. **▶ Play with the band** plays the melody on the piano with the chords under it.\n\n## 1. A plain setting\n\n**C and G, mostly.** Two chords. Every note of the tune is a chord tone or a passing note on one of them.\nThis is how the tune is usually harmonised in a school songbook.\n\n<div class=\"bl-step\" data-step=\"plain\" data-tune=\"ode\"></div>\n\n## 2. Sevenths on the dominants\n\n**G7 for G.** The tune does not change. The chord under it does: G7 adds an F, and the F is a note\nthe tune already passes through in bar 2. Now it is a chord tone.\n\n<div class=\"bl-step\" data-step=\"sev\" data-tune=\"ode\"></div>\n\n## 3. Secondary dominants\n\n**Am in bar 3, E7 in bar 4, and Am then D7 in bar 7.** The notes of the tune are the same. Under bar 4, E7 has the tune's E as its root and its D as the 7th. In bar 7, D7 holds the tune's D, and the E after it is the 9th.\n\n<div class=\"bl-step\" data-step=\"sec\" data-tune=\"ode\"></div>\n\n## 4. A chord for every pair of notes\n\n**C F | C/E Dm7 | Am7 | Dm7 G7 | C F | C/E Dm7 | Am7 | Dm7 C.** Now the chords change every two beats and\nthe bass moves by step: C, F, E, D. It is the tune as a jazz pianist might play it, and it\nsounds quite different even though the tune has not changed a note.\n\n<div class=\"bl-step\" data-step=\"busy\" data-tune=\"ode\"></div>\n\n## Build your own\n\nChoose one of the four settings for each pair of bars, and mix them. The tune is above the chart. All of the settings fit the tune, so there is no wrong combination.\n\n<div id=\"bl-builder\" class=\"bl-widget\"></div>\n\n\n## Where to go next\n\n- Pick your own tune and try three sets of chords on it. Play the melody note by note against each chord.\n- The question to ask of every chord is: is this melody note a chord tone, or is it passing?\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 2,
+  "feels": [
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   },
+   {
+    "id": "motown",
+    "label": "Motown / soul",
+    "tempo": 110
+   },
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   }
+  ],
+  "steps": {
+   "plain": {
+    "bars": "C|G|C|G|C|G|C|G C",
+    "tune": "ode"
+   },
+   "sev": {
+    "bars": "C|G7|C|G7|C|G7|C|G7 C",
+    "tune": "ode",
+    "vs": "plain"
+   },
+   "sec": {
+    "bars": "C|G7|Am|E7|C|G7|Am D7|G7 C",
+    "tune": "ode",
+    "vs": "sev"
+   },
+   "busy": {
+    "bars": "C F|C/E Dm7|Am7|Dm7 G7|C F|C/E Dm7|Am7|Dm7 C",
+    "tune": "ode",
+    "vs": "plain"
+   }
+  },
+  "builder": {
+   "slots": [
+    {
+     "label": "Bars 1 and 2",
+     "opts": [
+      [
+       "Plain",
+       "C|G"
+      ],
+      [
+       "Sevenths",
+       "C|G7"
+      ],
+      [
+       "Secondary dominants",
+       "C|G7"
+      ],
+      [
+       "A chord for every pair of notes",
+       "C F|C/E Dm7"
+      ]
+     ]
+    },
+    {
+     "label": "Bars 3 and 4",
+     "opts": [
+      [
+       "Plain",
+       "C|G"
+      ],
+      [
+       "Sevenths",
+       "C|G7"
+      ],
+      [
+       "Secondary dominants",
+       "Am|E7"
+      ],
+      [
+       "A chord for every pair of notes",
+       "Am7|Dm7 G7"
+      ]
+     ]
+    },
+    {
+     "label": "Bars 5 and 6",
+     "opts": [
+      [
+       "Plain",
+       "C|G"
+      ],
+      [
+       "Sevenths",
+       "C|G7"
+      ],
+      [
+       "Secondary dominants",
+       "C|G7"
+      ],
+      [
+       "A chord for every pair of notes",
+       "C F|C/E Dm7"
+      ]
+     ]
+    },
+    {
+     "label": "Bars 7 and 8",
+     "opts": [
+      [
+       "Plain",
+       "C|G C"
+      ],
+      [
+       "Sevenths",
+       "C|G7 C"
+      ],
+      [
+       "Secondary dominants",
+       "Am D7|G7 C"
+      ],
+      [
+       "A chord for every pair of notes",
+       "Am7|Dm7 C"
+      ]
+     ]
+    }
+   ],
+   "tune": "ode"
+  }
+ }
+}

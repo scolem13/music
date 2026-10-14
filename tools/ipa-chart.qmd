@@ -1,0 +1,143 @@
+---
+title: "IPA Chart for Singers"
+page-layout: full
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/ipa/ipa-chart.css?v=1">
+<script src="/apps/shared/ipa/ipa-data.js?v=1"></script>
+<script src="/apps/shared/ipa/ipa-audio.js?v=1"></script>
+<script src="/apps/shared/ipa/ipa-chart.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```
+
+The International Phonetic Alphabet gives one symbol to each sound, so a singer can read the same sounds in any language.
+Click a symbol for a description and reference words in English (General American and RP), Hindi, Marathi, German,
+French, Korean and Japanese. A language is left blank where it does not have the sound. This page has text only, no audio.
+
+## Find and filter {#find}
+
+<div id="ipa-filter"></div>
+
+Tick languages to dim every symbol that none of them uses, and to list only those languages in the detail panel.
+Search matches symbols, descriptive names, words, romanisations and glosses.
+
+## Vowels {#vowels}
+
+Tongue height runs down the page (close to open) and tongue position across it (front, central, back).
+
+<div id="ipa-vowels"></div>
+
+## Consonants {#consonants}
+
+The main chart of consonants made with air from the lungs: place of articulation across, manner down.
+
+<div id="ipa-consonants"></div>
+
+## Affricates and other consonants {#affricates}
+
+Sounds that do not fit the main chart's grid: affricates (a stop released into a fricative), glides and a few more.
+
+<div id="ipa-affricates"></div>
+
+## Modified sounds {#modified}
+
+Aspirated, breathy-voiced and tense stops, and nasal vowels.
+
+<div id="ipa-modified"></div>
+
+## Stop series by language {#series}
+
+The same stops are organised differently in each language. Click a symbol.
+
+<div id="ipa-series"></div>
+
+## Diacritics and marks {#diacritics}
+
+Small marks that change a symbol, and the marks that show length, stress and linking.
+
+<div id="ipa-marks"></div>
+
+## Notes for singers {#singers}
+
+::: {.ipa-cols}
+
+### How classical diction uses IPA
+
+A transcription records sounds, not spelling. Coaches and diction books write a song's text in IPA so everyone sings the
+same vowels and consonants, then add stress, linking and the places where a sung line differs from speech. Learn the sounds
+once and you can read the transcription for any language you meet.
+
+### Pure vowels
+
+Most sung languages here are built on steady vowels (Italian, German, French, Japanese, Hindi, Marathi, Korean).
+In English, [eɪ], [oʊ] and [aɪ] are diphthongs: sing the first element for nearly the whole note and add the second at the very end.
+Italianate five-vowel thinking ([a e i o u], with open and closed e and o) is a good basis for all of them.
+
+### English
+
+General American and RP differ most in r (after vowels), in the vowels of *bath*, *lot* and *thought*, and in the flap [ɾ] of *water*.
+Unstressed syllables have schwa in speech, but singers often give them a clearer vowel on long notes. Aspiration of initial p, t, k is
+a strong cue for audibility.
+
+### German
+
+Final voiced stops are voiceless (*Tag* [taːk]). Two ch sounds: [ç] after front vowels and l, n, r; [x] after a, o, u, au.
+Vowel length is meaningful, and the stage r is the tongue-tip trill [r] while everyday speech uses [ʁ]. Vowel-initial stressed
+syllables begin with a light glottal onset [ʔ].
+
+### French
+
+No diphthongs and no aspiration. Four nasal vowels, front rounded vowels [y ø œ], and the mute *e*, which is pronounced
+when sung. Liaison and enchaînement link words, and French syllables are even in stress.
+
+### Hindi and Marathi
+
+Keep dental (त द) and retroflex (ट ड) apart, and learn the four-way contrast (p, pʰ, b, bʱ). Hindi drops the inherent *a* at the end of words,
+and sometimes inside them; sung text may restore it. Marathi has the extra affricates [t͡s d͡z] and the retroflex lateral [ɭ].
+
+### Korean
+
+Three kinds of stop: lax, tense and aspirated. Lax stops are voiced between vowels. Tense and aspirated stops raise the pitch of the following vowel in speech.
+Final stops are unreleased.
+
+### Japanese
+
+Five vowels, with [ɯ̟ᵝ] spread-lip rather than rounded. Long vowels, double consonants and moraic ん count as extra time. Vowels i and u are often devoiced between voiceless consonants in speech.
+Japanese [ɾ] is a single tap.
+
+:::
+
+## Language notes {#languages}
+
+::: {.ipa-cols}
+
+### About the examples
+
+Examples use broad transcription of standard forms: General American and RP, Standard Hindi, Standard Marathi, Standard German,
+Metropolitan French, Seoul Korean and Tokyo Japanese. Individual speakers, regions and poetic or sung styles differ. For Devanagari,
+Hangul and kana the highlighted piece is the written syllable containing the sound (Devanagari and Hangul write a syllable as a unit);
+romanisation is a transliteration, not IPA. Check anything you will perform with a native speaker or diction coach.
+
+### Hindi and Marathi
+
+Both use the Devanagari script. Hindi has the Persian-Arabic sounds [f z x ɣ q] in loanwords, shown with a dot (nuqta) under the letter; many
+speakers replace them with native sounds. Marathi usually does not write the nuqta; its loan sounds are often assimilated.
+Marathi च and ज are [t͡s d͡z] before a, ā, u, o, and [t͡ʃ d͡ʒ] before i, e.
+
+### Korean
+
+Hangul writes sounds in syllable blocks. The Korean vowel ㅡ is [ɯ], and ㅓ [ʌ]. Final consonants are pronounced differently from initial ones.
+
+### Japanese
+
+Written in kana and kanji; the examples give kana. The し and ち sounds are alveolo-palatal ([ɕ], [t͡ɕ]) and ふ is [ɸɯ̟ᵝ].
+
+### Symbols without examples
+
+Some symbols (for example ɨ, ʉ, ɘ, ɵ, ɤ, ɞ, ɶ) are on the chart but are not separate sounds in any of the seven languages here. They are shown dashed and have no reference words.
+
+:::

@@ -1,0 +1,63 @@
+---
+title: "Conga part: Tumbao, two drums"
+subtitle: "For congas, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one conga part the [Backing Track](../../tools/backing-track.qmd) band plays: **Tumbao, two drums**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Conga parts](index.qmd#congas)
+
+## The pattern
+
+The tumbao in the first bar. In the second, the right hand plays two open tones on the lower drum, on the and of 2 and on 3, in place of the toe and the heel; then the left-hand toe and the two open tones of beat 4 on the higher drum. The low drum belongs to the bar with three clave notes, which is the second bar of the 2-3 clave.
+
+It belongs in *Son montuno*, *Cha-cha* and *Boogaloo*. Here it is in the son montuno style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="congas bass" data-choice-label="Conga part:" data-choices='[{"label":"Tumbao, two drums","opts":{"congas":"tumbao2"}}]'></div>
+
+## Step 1: Tumbao
+
+Start with something simpler. The basic conga part, on one drum with the hands alternating: left-hand heel on 1, left-hand toe on the and of 1, a right-hand slap on 2, left toe on the and of 2, left heel on 3, left toe on the and of 3, then two right-hand open tones on 4 and the and of 4. Heel and toe are quiet; slap and open tones carry.
+
+This is a pattern of its own: [the lesson on it](congas-tumbao.qmd) takes it further. Here it is only a step on the way, slowly. The bass plays with you; switch the drums and chords on when it is steady.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="congas bass" data-staves="congas" data-choice-label="Step:" data-choices='[{"label":"Tumbao","opts":{"congas":"tumbao"}}]'></div>
+
+## Step 2: Tumbao, two drums, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The tumbao, then in the second bar the right hand moves to the lower drum for two open tones on the and of 2 and on 3, then back up.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="congas bass" data-staves="congas" data-choice-label="Compare:" data-choices='[{"label":"Tumbao, two drums","opts":{"congas":"tumbao2"}},{"label":"Tumbao (the step before)","opts":{"congas":"tumbao"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's congas off and take the part yourself.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="congas bass" data-choice-label="Conga part:" data-choices='[{"label":"Tumbao, two drums","opts":{"congas":"tumbao2"}}]'></div>
+
+## In other styles
+
+The same conga part in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Cha-cha**
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="congas" data-choice-label="Conga part:" data-choices='[{"label":"Tumbao, two drums","opts":{"congas":"tumbao2"}}]'></div>
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="congas" data-choice-label="Conga part:" data-choices='[{"label":"Tumbao, two drums","opts":{"congas":"tumbao2"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Tumbao](congas-tumbao.qmd).
+- **The same idea elsewhere in the band:** [Tumbao](bass-tumbao.qmd) (bass line), [Tumbao](congas-tumbao.qmd) (conga part), [Son montuno](chords-montuno.qmd) (comping rhythm), [Son clave (2-3)](drums-clave.qmd) (drum groove).
+- **Plays with, in son montuno:** [Tumbao](bass-tumbao.qmd) (bass line), [Son montuno](chords-montuno.qmd) (comping rhythm), [Son clave (2-3)](drums-clave.qmd) (drum groove).
+- **Other conga parts in the Latin group:** [Tumbao](congas-tumbao.qmd), [Open tones only (learning the tumbao, 1)](congas-opens.qmd), [Right hand alone (learning the tumbao, 2)](congas-slapopen.qmd), [Left hand alone (learning the tumbao, 3)](congas-heeltoe.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

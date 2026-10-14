@@ -1,0 +1,60 @@
+---
+title: "Sound 10: The Compressor"
+toc: true
+toc-depth: 2
+---
+
+A **compressor** is an automatic hand on the volume knob. When the sound gets louder than a set level,
+it turns it down; when it gets quieter, it lets it back up. The loud parts and the quiet parts end up
+closer together. Almost every vocal, bass line and drum track on a record goes through one.
+
+**How to use the page.** The source starts as an **uneven riff** (some notes loud, some barely
+there). The graph shows input level across and output level up. The red dot is the sound right now,
+and the red bar on the right is the **gain reduction**: how many decibels the compressor is turning the
+sound down at this moment.
+
+## The controls
+
+<div class="sk" data-w="compressor" data-source="uneven"></div>
+
+- **Threshold**: the level where the compressor starts working. Anything quieter passes through
+  unchanged; on the graph the line follows the dashed diagonal until the threshold.
+- **Ratio**: how hard it turns down what goes over. At 4 : 1, a sound 8 dB over the threshold comes out
+  only 2 dB over. At 20 : 1 almost nothing gets over: that's a **limiter**.
+- **Knee**: how gently it starts. A soft knee bends into compression gradually.
+- **Attack**: how fast it reacts when the sound goes over. Slow attack lets the very start of each
+  note through before clamping down, which keeps drums punchy.
+- **Release**: how fast it lets go when the sound drops back.
+- **Make-up gain**: compression makes everything quieter, so you turn the whole thing back up. Now
+  the quiet notes are louder than before.
+
+Press **Bypass** on and off with the uneven riff: compressed, the quiet notes come forward and the
+loud ones stop jumping out.
+
+## Hearing attack and release
+
+Switch the source to the **drum loop**, set the ratio to 8 : 1 and the threshold to about −30 dB.
+
+- **Attack 1 ms**: the snare's crack is flattened; the drums sound small and thick.
+- **Attack 30 ms**: the crack gets through before the compressor reacts; the drums *punch*.
+- **Release 30 ms** with a fast attack: the sound "pumps", rising between hits. Dance music uses
+  this on purpose.
+
+## Parallel compression
+
+Turn **Mix** down to 50%. Now you hear the untouched drums *and* a heavily squashed copy together.
+The natural hits stay sharp and the squashed copy fills in between them. Engineers call it
+"New York" compression.
+
+## Your own playing
+
+Choose **Microphone** (headphones on) and play or sing from very soft to loud. With a threshold of
+−40 dB and a ratio of 6 : 1, watch the gain reduction bar follow you. The site's backing band runs
+through a compressor too (threshold −12 dB, ratio 4 : 1, attack 3 ms), and these sound pages end in a
+limiter so that nothing comes out too loud.
+
+## Next
+
+- [Sound 11: Reverb](sound-reverb.qmd)
+
+{{< include _synth-kit.qmd >}}

@@ -1,0 +1,28 @@
+```{=html}
+<style>
+.sh-shapes{margin:.8rem 0 1.6rem}
+.sh-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start}
+.sh-card{display:flex;flex-direction:column;align-items:center;gap:.3rem;border:1px solid var(--site-border);border-radius:6px;padding:.4rem;background:var(--site-surface)}
+.sh-card svg{width:170px;max-width:100%}
+.sh-board{max-width:44rem;margin-bottom:.5rem}
+.sh-board svg{width:100%}
+.sh-frets{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.sh-play,.sh-all{font-family:var(--font-mono);font-size:.78rem}
+.sh-staff{margin:.6rem 0 .3rem;max-width:44rem;overflow-x:auto}
+.sh-step-meta{font-size:.9rem;color:var(--site-ink-2)}
+.sh-toggles{display:flex;flex-wrap:wrap;gap:.8rem;align-items:center;margin:.6rem 0 1.2rem;padding:.3rem 0}
+.sh-fing{font-family:var(--font-mono);font-size:.8rem}.sh-bar-lbl{font-size:.88rem}
+.sh-ids{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+</style>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/audio.js"></script>
+<script src="/apps/shared/voicings.js"></script>
+<script src="/apps/shared/chord-catalog.js"></script>
+<script src="/apps/shared/lessons/diagrams.js?v=4"></script>
+<script src="/apps/shared/lessons/shape-steps.js?v=4"></script>
+<script src="/apps/shared/lessons/hands.js?v=1"></script>
+```
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

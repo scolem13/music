@@ -12,6 +12,7 @@
 //            colors:[index per chord] (default 0, 1, 2 ...), onPlay(chord, index) (a click on a label) }
 //            rows:{ fret: label } (what to write beside each fret in place of its number: a violin's finger names),
 //            rowHead (the word over those labels; default "fret"), fretless:true (no fret lines: positions only)
+//            barres:[{ fret, from, to }] (one finger laid across strings from..to at that fret, drawn as a bar under the dots)
 //   LessonDiagrams.tab(notes, o) -> <svg>   tablature of a run of single notes, left to right
 //        notes [{ string, fret }]; o { strings:["E","A","D","G"] (low to high; the top line is the highest string) }
 //   LessonDiagrams.keyboard(chords, o) -> <svg>
@@ -69,9 +70,17 @@
     text(svg, o.rowHead || "fret", G - 26, headY - 6, { "font-size": 10, "text-anchor": "end", fill: "#777" });
     for (i = 0; i < n; i++){ el("line", { x1: sx(i), y1: headY, x2: sx(i), y2: headY + FS * rows, stroke: LINE, "stroke-width": 1.3 }, svg); text(svg, strings[i], sx(i), headY + FS * rows + 18, { "font-size": 13 }); }
     for (r = 0; r <= rows; r++) if (!o.fretless || r === 0 || r === rows) el("line", { x1: G, y1: headY + r * FS, x2: G + boardW, y2: headY + r * FS, stroke: LINE, "stroke-width": r === 0 && start === 0 ? 5 : 1.6 }, svg);
+    (o.barres || []).forEach(function (b){                       // a barre: one finger across several strings
+      var by = fy(b.fret), x0 = sx(Math.min(b.from, b.to)), x1 = sx(Math.max(b.from, b.to));
+      el("rect", { x: x0 - 17, y: by - 12, width: x1 - x0 + 34, height: 24, rx: 12, fill: colorOf(o, 0), opacity: 0.35, "class": "ld-barre" }, svg);
+    });
     // the notes: who plays each spot
     var spots = {}, order = [];
     chords.forEach(function (c, k){ c.notes.forEach(function (x){
+      if (x.mute){                                              // a string marked with an X above the nut: damped on purpose
+        var mx = sx(x.string), my = openY, d = 7;
+        el("line", { x1: mx - d, y1: my - d, x2: mx + d, y2: my + d, stroke: "#c0392b", "stroke-width": 3, "stroke-linecap": "round" }, svg);
+        el("line", { x1: mx - d, y1: my + d, x2: mx + d, y2: my - d, stroke: "#c0392b", "stroke-width": 3, "stroke-linecap": "round" }, svg); return; }
       if (x.fret !== 0 && (x.fret < (start === 0 ? 1 : start) || x.fret > (start === 0 ? rows : start + rows - 1))) return;
       var key = x.string + ":" + x.fret; if (!spots[key]){ spots[key] = { string: x.string, fret: x.fret, by: [] }; order.push(key); }
       spots[key].by.push({ k: k, x: x }); }); });

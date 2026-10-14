@@ -21,7 +21,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     console.log(JSON.stringify(lay));
     assert(lay.inPlay.every(Boolean), "feel, count-in, choruses and loop are in the Play panel: " + lay.inPlay); assert(lay.inBand && lay.pre === 0 && lay.wide);
     assert.deepStrictEqual(lay.groups, ["Whole band", "Bass", "Comping", "Drums", "Congas"]); assert.strictEqual(lay.practice, "bt-start bt-step-on bt-step-a bt-step-b");
-    assert.strictEqual(lay.style, "swing"); assert.strictEqual(lay.styles, 21);
+    assert.strictEqual(lay.style, "swing"); assert.strictEqual(lay.styles, 24);
     const list = id => ev(`Array.from(document.getElementById("${id}").options).map(function(o){ return o.value; }).join(" ")`);
     const groups = id => ev(`Array.from(document.querySelectorAll("#${id} optgroup")).map(function(g){ return g.label + ":" + g.children.length; }).join(" | ")`);
     // unmarked extensions: off by default, a frequency and three kinds; not offered outside the jazz styles unless unlocked
@@ -31,8 +31,8 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await set("bt-style", "rock"); assert.strictEqual(await ev(`document.getElementById("bt-ext").disabled`), true); assert.strictEqual((await opts()).extend, null);
     await set("bt-style", "swing"); assert.strictEqual((await opts()).extend.amount, 0.35); await set("bt-ext", "0");
     // locked: each menu offers only what fits the style
-    assert.strictEqual(await list("bt-bass"), "walk two sowhat killerjoe footprints allblues takefive"); assert.strictEqual(await list("bt-rhythm"), "auto charleston reverse garland offbeats pad four sowhat takefive");
-    assert.strictEqual(await list("bt-groove"), "auto"); assert.strictEqual(await list("bt-voicing"), "shell guide rootless drop2 drop3 sowhat bh auto"); assert.strictEqual(lay.ticks, 8);
+    assert.strictEqual(await list("bt-bass"), "walk arp two sowhat killerjoe footprints allblues takefive"); assert.strictEqual(await list("bt-rhythm"), "auto charleston reverse garland offbeats pad four sowhat takefive");
+    assert.strictEqual(await list("bt-groove"), "auto quarters ridetime shuffle hhswing"); assert.strictEqual(await list("bt-voicing"), "shell guide rootless drop2 drop3 sowhat bh auto"); assert.strictEqual(lay.ticks, 8);
     assert(/Swing, bebop/.test(await txt("bt-style-note"))); assert(/Fits: Swing, Jazz ballad\.$/.test(await ev(`document.querySelector('#bt-bass option[value="walk"]').title`)));
     // a style sets everything
     await set("bt-style", "bossa"); assert.deepStrictEqual([await v("bt-bass"), await v("bt-rhythm"), await v("bt-groove"), await v("bt-feel"), await v("bt-voicing")], ["bossa", "bossa", "bossa", "straight", "rootless"]);
@@ -46,7 +46,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // unlocked: everything is listed, what fits first; the goofy combination reaches the band
     await set("bt-style", "swing");
     await ev(`(function(){ var c = document.getElementById("bt-unlock"); c.checked = true; c.dispatchEvent(new Event("change", { bubbles:true })); })()`);
-    assert.strictEqual(await groups("bt-rhythm"), "Fits Swing:9 | Jazz:1 | From tunes:1 | Folk, rock and pop:23 | Hymns and carols:1 | Caribbean:1 | Latin:4"); assert.strictEqual((await list("bt-bass")).split(" ").length, 26); assert.strictEqual((await list("bt-groove")).split(" ").length, 22);
+    assert.strictEqual(await groups("bt-rhythm"), "Fits Swing:9 | Jazz:1 | From tunes:1 | Folk, rock and pop:26 | Hymns and carols:1 | Caribbean:1 | Latin:4"); assert.strictEqual((await list("bt-bass")).split(" ").length, 28); assert.strictEqual((await list("bt-groove")).split(" ").length, 36);
     assert.deepStrictEqual([await v("bt-bass"), await v("bt-rhythm"), await v("bt-feel")], ["walk", "auto", "swing"], "unlocking changes nothing by itself");
     assert.strictEqual(await ev(`Array.from(document.querySelectorAll("#bt-rhythm-extra .bt-morehead")).map(function(h){ return h.textContent; }).join(" | ")`), "Fits Swing | Outside Swing");
     await set("bt-rhythm", "montuno"); await set("bt-voicing", "standard"); await set("bt-groove", "clave");

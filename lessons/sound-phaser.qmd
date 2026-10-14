@@ -1,0 +1,56 @@
+---
+title: "Sound 13: Phaser"
+toc: true
+toc-depth: 2
+---
+
+A **phaser** sweeps a few notches up and down the spectrum, and the result is a soft, swirling
+"whoosh". It's the sound of the electric piano in a thousand 1970s records, and Eddie Van Halen's
+guitar on the first Van Halen album.
+
+**How to use the page.** The source starts as **chords**. The red line on the spectrum shows the
+notches moving. Turn **Mix** to 100% and the effect disappears (to the ear), which says something
+about how it works.
+
+## The effect
+
+<div class="sk" data-w="phaser" data-source="chords"></div>
+
+## How it works
+
+A phaser passes the sound through a chain of **all-pass filters**. An all-pass filter is a strange
+kind of [filter](sound-filter.qmd): it doesn't change how loud any frequency is. It only delays some
+frequencies more than others, so it shifts their **phase**. On its own you can't hear it.
+
+But mix that phase-shifted copy back with the original, and wherever the copy has been shifted
+exactly half a cycle the two cancel. Those cancellations are the **notches**. The stages here are
+the browser's all-pass filters, each of which makes one notch, so **Stages** = 4 gives four notches. (A
+guitar pedal uses simpler stages, and needs two of them per notch.) An [LFO](sound-lfo.qmd)
+sweeps the all-pass filters up and down, and the notches sweep with them.
+
+That's why the wet sound alone (Mix at 100%) sounds plain. The notches only exist when the shifted
+copy meets the original. 50% gives the deepest notches.
+
+## The controls
+
+- **Stages**: more stages, more notches, a stronger effect. The MXR Phase 90 has two notches; 12 here
+  is very dramatic.
+- **Centre** and **Sweep**: where the notches sit and how far up and down they move.
+- **Rate**: slow for a swirl, fast for a warble.
+- **Width (Q)**: how sharp the phase change in each stage is, and so how narrow the notches are.
+- **Feedback**: feeds the output back to the input; the areas between the notches turn into
+  resonant peaks and the effect becomes more vocal and whistling. (The red line doesn't show the
+  feedback.)
+
+## Phaser or flanger?
+
+Both sweep notches. A [flanger](sound-chorus.qmd) uses a short delay, which makes many evenly spaced
+notches, like the teeth of a comb, so it sounds metallic and jet-like. A phaser uses all-pass
+filters, which make a few notches that aren't evenly spaced, so it sounds softer and more liquid.
+Switch the source to **noise** on both pages and compare the spectrum.
+
+## Next
+
+- [Sound 14: The vocoder](sound-vocoder.qmd)
+
+{{< include _synth-kit.qmd >}}

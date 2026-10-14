@@ -1,8 +1,10 @@
 // tunes.js — the tunes the blues lessons are built on (BluesTunes), written in F like the lessons' charts.
 //
 //   BluesTunes.watermelon        the same shape, 16 bars, no words
+//   BluesTunes.ode               Ode to Joy in C, for the reharmonizing lesson (no chords written in it)
 //   BluesTunes.closet            { title, composer, abc, chart ("F7|F7|..." one entry a bar), pickup (quarter notes before bar 1),
 //                                  words: for each line of music, the place of every note in the chord of the moment }
+//   (a tune is written in F unless it says `key`)
 //   BluesTunes.inKey(tune, "Eb", { words: true, octaves: -2, clef: "bass" })
 //                                                   -> its ABC in that key (AbcTranspose spells it), with the words under the notes,
 //                                                      moved by whole octaves and put in another clef if asked;
@@ -41,6 +43,15 @@
        + '"C7"z2 cc g2 a2 | "Bb7"_a2 FF c d2 F- | "F7"F8- | "F7"F8 |]'
   };
 
+  // Ode to Joy (Beethoven, the theme of the last movement of the Ninth Symphony; public domain), in C: the tune for the reharmonizing lesson.
+  // No chord symbols: the lesson writes the chords. pickup 0.
+  var ode = {
+    title: "Ode to Joy", composer: "Ludwig van Beethoven", pickup: 0, key: "C",
+    abc: 'X:1\nT:Ode to Joy\nC:Ludwig van Beethoven\nM:4/4\nL:1/4\nQ:1/4=100\nK:C\n'
+       + 'E E F G | G F E D | C C D E | E3/2 D/ D2 |\n'
+       + 'E E F G | G F E D | C C D E | D3/2 C/ C2 |]'
+  };
+
   // every note of the music lines moved n octaves (chord symbols, decorations and header lines are left alone)
   function octaves(abc, n){
     if (!n) return abc;
@@ -58,7 +69,7 @@
     return global.open("/tools/backing-track.html?from=chord-entry", "_blank");
   }
   function inKey(tune, key, o){
-    var T = global.AbcTranspose, abc = (T && key && key !== "F") ? T.transpose(tune.abc, key) : tune.abc;
+    var T = global.AbcTranspose, abc = (T && key && key !== (tune.key || "F")) ? T.transpose(tune.abc, key) : tune.abc;
     if (o && o.octaves) abc = octaves(abc, o.octaves);
     if (o && o.clef) abc = abc.replace(/^(K:[^\n]*)$/m, "$1 clef=" + o.clef);
     // a line of music (or of its words) cut in two after its second bar, for a narrow screen; the pickup stays with bar 1
@@ -85,5 +96,5 @@
     return bars;
   }
 
-  global.BluesTunes = { closet: closet, watermelon: watermelon, inKey: inKey, melody: melody, octaves: octaves, backingTrack: backingTrack };
+  global.BluesTunes = { closet: closet, watermelon: watermelon, ode: ode, inKey: inKey, melody: melody, octaves: octaves, backingTrack: backingTrack };
 })(typeof window !== "undefined" ? window : globalThis);

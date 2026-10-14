@@ -25,7 +25,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert(/^F7\|F7\|F7\|F7\|B♭7\|B♭7\|F7\|F7\|C7\|B♭7\|C7\|B♭7\|C7\|B♭7\|F7\|F7$/.test(st.chart.replace(/\s/g, "")), st.chart);
     // electric piano + electric bass, second ride, ride fader down, then play a chorus
     await set("bt-comp", "epiano"); await set("bt-bass-sound", "electric"); await set("bt-ride", "ride"); await set("bt-ride-sound", "ride2");
-    assert.strictEqual(await ev(`document.getElementById("bt-vol-comp-label").textContent`), "Electric piano volume");
+    assert.strictEqual(await ev(`document.getElementById("bt-vol-comp-label").textContent`), "Electric piano (plain samples) volume");
     assert(/rootless/.test(await ev(`Array.from(document.getElementById("bt-voicing").options).map(function(o){ return o.value; }).join(",")`)), "electric piano offers the piano voicings");
     await ev(`document.getElementById("bt-kit").open = true`); await set("bt-kit-kick", "50", "input"); await set("bt-kit-crash", "0", "input");
     await set("bt-countin", "0"); await set("bt-tempo-n", "240");

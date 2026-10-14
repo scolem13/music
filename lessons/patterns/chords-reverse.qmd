@@ -1,0 +1,73 @@
+---
+title: "Comping rhythm: Reverse Charleston"
+subtitle: "For piano or guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Reverse Charleston**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+The Charleston displaced: a short chord on the and of 1 and a held one on beat 3.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Reverse Charleston","opts":{"compRhythm":"reverse"}}]'></div>
+
+## Step 1: Long notes
+
+Start with something simpler. One held chord per bar (or per chord). Leaves the most room for a soloist.
+
+This is a pattern of its own: [the lesson on it](chords-pad.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Long notes","opts":{"compRhythm":"pad"}}]'></div>
+
+## Step 2: Charleston
+
+A held chord on beat 1 and a short one on the and of 2. The first comping rhythm most players learn.
+
+This is a pattern of its own: [the lesson on it](chords-charleston.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Charleston","opts":{"compRhythm":"charleston"}}]'></div>
+
+## Step 3: Reverse Charleston, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The Charleston moved over: a short chord on the and of 1, a held one on 3. It sounds lazier and leaves beat 1 to the bass.
+
+The band plays it on piano here; the step after next has it on guitar.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Reverse Charleston","opts":{"compRhythm":"reverse"}},{"label":"Charleston (the step before)","opts":{"compRhythm":"charleston"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Reverse Charleston","opts":{"compRhythm":"reverse"}}]'></div>
+
+## Step 5: On the guitar
+
+The same rhythm on the guitar. On guitar each chord is a strum or a pluck of a chord shape; a short chord is choked by easing the fretting hand off the strings.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Reverse Charleston","opts":{"compRhythm":"reverse"}}]'></div>
+
+## Step 6: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Reverse Charleston","opts":{"compRhythm":"reverse"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Long notes](chords-pad.qmd), [Charleston](chords-charleston.qmd).
+- **Leads to:** [Off-beats](chords-offbeats.qmd), [Varied](chords-auto.qmd): the patterns that use this one as a step.
+- **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Jazz time](drums-auto.qmd) (drum groove).
+- **Other comping rhythms in the Jazz group:** [Varied](chords-auto.qmd), [Charleston](chords-charleston.qmd), [Red Garland](chords-garland.qmd), [Off-beats](chords-offbeats.qmd), [Long notes](chords-pad.qmd), [Four to the bar](chords-four.qmd), [Boogaloo stabs](chords-stabs.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

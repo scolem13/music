@@ -1,0 +1,312 @@
+---
+title: "Reading Swing from a Lead Sheet"
+toc: true
+toc-depth: 2
+---
+
+A lead sheet writes swing eighths as plain eighth notes, and that is not an error. The way
+they are written is shorthand, the way a chord symbol is. It tells you which notes come where,
+and the style tells you how to play them. This lesson covers what the shorthand means, how much
+room it leaves you, and how to know when it does *not* mean swing. The two examples are
+Oscar Pettiford's *Blues in the Closet*, which swings, and Herbie Hancock's *Watermelon Man*,
+which does not.
+
+**How to use the page.** Every example is written out and can be played. Press **▶ Play** to
+hear it. Examples that have a **Swing** slider let you set how long the first eighth of each
+pair is held, from even (50%) up to a dotted-eighth-and-sixteenth (75%). The **Tempo** box sets
+the speed. Play each example at more than one setting before you read on.
+
+```{=html}
+<style>
+.sw-ex{border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface);padding:.6rem .9rem .8rem;margin:1rem 0 1.6rem}
+.sw-ex .sw-title{font-family:var(--font-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);margin-bottom:.2rem}
+.sw-ex .sw-staff{overflow-x:auto}
+.sw-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;margin-top:.3rem;font-size:.85rem}
+.sw-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.sw-tools label{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);margin-right:.3rem}
+.sw-tools input[type=range]{width:9rem;vertical-align:middle}
+.sw-tools input[type=number]{width:4.2rem;font-size:.85rem;padding:.1rem .3rem}
+.sw-ratio{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2);min-width:12rem}
+.sw-presets .btn{padding:.1rem .45rem}
+.sw-table{font-size:.9rem}
+</style>
+```
+
+## 1. What the page says, and what it means
+
+Here is the first bar of *Blues in the Closet* exactly as a lead sheet writes it.
+
+```{=html}
+<div class="sw-ex" data-tempo="120" data-swing="50" data-noslider="1" data-title="As written">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"F2 AF B2 AF |]
+</script></div>
+```
+
+Played as written, the eighths are even: each beat is split exactly in half. No jazz player
+reads it that way. In a swing tune each pair of eighths is played **long-short**: the note on
+the beat is held longer and the note on the "and" comes late. The usual way to explain it is
+with a triplet: the beat is split into three, the first note gets two thirds and the second
+gets one.
+
+```{=html}
+<div class="sw-ex" data-tempo="120" data-swing="50" data-noslider="1" data-title="The triplet explanation (what an arranger would write to be exact)">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"F2 (3:2:2A2F B2 (3:2:2A2F |]
+</script></div>
+```
+
+Arrangers almost never write that, because it is hard to read and because, as the rest of this
+lesson shows, it is not quite right either. Instead they write plain eighths and put a word or
+a sign at the top of the chart:
+
+- **Swing**, **Med. swing**, **Shuffle**, **Bluesy**, or just a tempo and a style name.
+- The sign **♫ = ♩ ♪³**: "a pair of eighths equals a quarter and an eighth under a triplet".
+- Nothing at all. On a jazz lead sheet, swing is the default, and you are expected to know it.
+
+The one way *not* to read swing eighths is as a dotted eighth and a sixteenth. That is a
+ratio of 3 to 1, and at most tempos it sounds stiff and jerky, like a march. Compare it with
+the triplet version above.
+
+```{=html}
+<div class="sw-ex" data-tempo="120" data-swing="50" data-noslider="1" data-title="Too far: dotted eighth and sixteenth">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"F2 A>F B2 A>F |]
+</script></div>
+```
+
+## 2. Swing is a range, not a ratio
+
+The triplet is a useful first picture and a poor final answer. Measurements of recordings
+find that players swing anywhere from nearly even to a little past the triplet, and that the
+same player changes ratio with the tempo. The rough rule:
+
+<table class="table sw-table">
+<thead><tr><th>Tempo</th><th>Typical long:short</th><th>Slider</th><th>What it sounds like</th></tr></thead>
+<tbody>
+<tr><td>Ballad, slow blues (under 80)</td><td>about 2:1, sometimes more</td><td>65–70%</td><td>Lazy, heavy triplet feel, often a 12/8 shuffle</td></tr>
+<tr><td>Medium (100–160)</td><td>between 3:2 and 2:1</td><td>60–67%</td><td>The "standard" swing of a blues like <em>Blues in the Closet</em></td></tr>
+<tr><td>Up-tempo (over 220)</td><td>close to even</td><td>52–58%</td><td>Eighths almost straight; the swing is in the accents</td></tr>
+</tbody>
+</table>
+
+The band on this site follows the same rule: its swing starts at 68% at 100 beats a minute and
+slides toward 60% as the tempo rises. Try it here. Set the slider to 66% and raise the tempo
+to 240: it becomes hard to play and starts to sound like a shuffle. Then lower the slider to
+55% at the same tempo.
+
+```{=html}
+<div class="sw-ex" data-tempo="132" data-swing="66" data-title="Set the swing yourself">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"F2 AF B2 AF | "F7"B2 AF- F C2 F- | "F7"F2 AF B2 AF- | "F7"F C3- C2 z F |]
+</script></div>
+```
+
+### Everything else the shorthand leaves to you
+
+The ratio is only one of the choices a plain line of eighths leaves open. Others matter at least
+as much, and the lead sheet says nothing about any of them.
+
+- **Accents on the off-beats.** Swing players lean on the "and", not the beat. A line of eighths
+  is usually played *doo-BAH doo-BAH*, with the beat note soft and the off-beat note pushed.
+  This is why fast swing still swings at nearly even eighths.
+- **Ghosted notes.** A note in the middle of a run may be barely played at all, more felt than
+  heard.
+- **Length.** A written quarter note is often played short (*dit*), especially on beats 2 and 4
+  and at the end of a phrase. A written eighth tied over the bar line is played long.
+- **Where in the beat.** Some players sit right on the beat, others play a fraction behind it
+  ("laid back") against a drummer who is on top of it. Neither is written; both are swing.
+- **Small changes to the rhythm.** Players anticipate a note by an eighth, delay one, or add a
+  pickup. On a lead sheet, that is interpretation, not a wrong note.
+
+What is *not* up to you: where the bar lines are, where the notes fall in the beat (on it or on
+the "and"), and the form. A swing eighth on the "and" of 2 is late, but it is still the "and"
+of 2.
+
+## 3. Blues in the Closet
+
+*Blues in the Closet* is a medium-tempo jazz blues, usually played somewhere between 120 and
+180 beats a minute. Here is the whole melody, in F, as it is written in the tune library.
+
+```{=html}
+<div class="sw-ex" data-tempo="132" data-swing="64" data-title="Blues in the Closet (Oscar Pettiford)">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:F
+F/-| "F7"F A/F/ B A/F/ | "F7"B A/F/- F/ C F/- | "F7"F A/F/ B A/F/- | "F7" F/ C3/2-C z/ F/-|
+"Bb7"F _A/F/ B A/F/ | "Bb7"B _A/F/- F/ C F/- | "F7"F =A/F/ B A/F/- | "F7" F/ C3/2-C z/ F/-|
+"Gm7"F A/F/ B A/F/ | "C7"B A/F/- F/ C F/- | "F7"F A/F/ B A/F/- | "C7"F2 z2 |]
+</script></div>
+```
+
+There is no "Swing" marking on it, and none is needed: it is a bebop-era blues, every
+recording of it swings, and the eighth-note pairs are written the way every jazz player
+expects. Play it at 50% and then at 64% to hear what the marking would have told you.
+
+### The places that change when it swings
+
+- **The pickup and the ties.** The tune starts on the "and" of 4 and ties it into the bar. In
+  swing, that pickup is late (it is the short note of a pair), so the first note of the tune
+  arrives *just* before the bar line and pulls the band into it. The same figure ends bars 4
+  and 8. These anticipations are the strongest swing feature in the tune: give them a little
+  accent.
+- **The figure *A F*.** In every bar the melody drops from the 3rd to the root in a pair of
+  eighths. Swung, it is *long-short*, and the short F is the one to lean on.
+- **The tied F in bar 2.** *A/F/- F/ C* is four eighths, with the second tied to the third.
+  Swung, the tied F lands on the late "and" of 2 and sustains through beat 3. Played even, the
+  syncopation is weaker and the bar sounds square.
+- **The long notes.** The C in bars 4 and 8 is a dotted quarter tied to a quarter. It can be
+  held full length or cut off early; both are common. The rest that follows is where the
+  rhythm section, or another player, answers.
+
+### A range of good readings
+
+Three players reading the same lead sheet would not play the same thing, and all three would be
+right. Try these settings and decide which one you like:
+
+<table class="table sw-table">
+<thead><tr><th>Setting</th><th>Tempo</th><th>Slider</th><th>Feel</th></tr></thead>
+<tbody>
+<tr><td>Relaxed</td><td>120</td><td>66–68%</td><td>Close to the triplet, heavy, bluesy</td></tr>
+<tr><td>Medium</td><td>150</td><td>60–64%</td><td>The usual jam-session reading</td></tr>
+<tr><td>Up</td><td>200+</td><td>55–58%</td><td>Nearly even; put the swing in accents on the off-beats</td></tr>
+</tbody>
+</table>
+
+What no setting allows is 50% at a medium tempo with every note accented equally. That is the
+one clear misreading.
+
+## 4. Watermelon Man: eighths that do not swing
+
+*Watermelon Man* (from *Takin' Off*, 1962) is also a blues, with 16 bars instead of 12, and it
+is written in exactly the same way: plain eighth notes, no triplets, no dots. Here are its
+first eight bars and the four-bar riff that follows.
+
+```{=html}
+<div class="sw-ex" data-tempo="126" data-swing="50" data-title="Watermelon Man (Herbie Hancock), bars 1 to 12">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"_e8- | "F7"e2 FF c d2 F- | "F7"F8- | "F7"F8 |
+"Bb7"f8- | "Bb7"f2 FF c d2 F- | "F7"F8- | "F7"F8 |
+"C7"z2 cc g2 a2 | "Bb7"_ag fd f2 g2 | "C7"z2 cc g2 a2 | "Bb7"_ag fd f2 d2 |]
+</script></div>
+```
+
+On the page it looks like *Blues in the Closet*: eighth notes, ties over the bar line,
+anticipations. The difference is the style. This is a **straight-eighth** tune: the eighths
+are even, and they stay even when the tempo drops. It is often marked "Funky", "Latin", "Even
+8ths" or "Straight 8ths", but on many lead sheets it is not marked at all, and you are
+expected to know it from the record, the same as with a swing tune.
+
+Now move the slider to 66% and play it again. Bars 9 to 12 suffer most: *z2 cc g2 a2* starts on
+an off-beat pair, and swinging it turns a crisp, funky riff into something closer to a
+nursery rhyme. The off-beat F in bars 2 and 6, which should snap against the beat, goes soft.
+
+### "Somewhere between"
+
+Even this tune is not perfectly even. Hancock said that Billy Higgins played it "somewhere
+between straight eighth notes and the swinging triplets of jazz". That is a slider setting of
+perhaps 53 to 56%, which is not enough to sound like swing but is enough to keep the line from
+sounding mechanical. Mongo Santamaría's hit version a year later is a cha-cha, and its eighths
+are straight. Both are good readings of the same lead sheet; a 66% swing is not.
+
+So the range of acceptable readings exists for straight tunes too. It is just centred in a
+different place.
+
+## 5. The contrast, side by side
+
+<table class="table sw-table">
+<thead><tr><th></th><th><em>Blues in the Closet</em></th><th><em>Watermelon Man</em></th></tr></thead>
+<tbody>
+<tr><td>Written as</td><td>Plain eighths</td><td>Plain eighths</td></tr>
+<tr><td>Played as</td><td>Swing, long-short</td><td>Even, or very nearly</td></tr>
+<tr><td>Slider</td><td>55–68%, by tempo</td><td>50–56%</td></tr>
+<tr><td>Where the energy is</td><td>Accents on the off-beats, late pickups</td><td>Crisp, equal subdivisions locked to a backbeat or a Latin pattern</td></tr>
+<tr><td>How you know</td><td>Jazz blues, bebop era, every recording</td><td>The record, the style ("funk", "Latin", "even 8ths")</td></tr>
+</tbody>
+</table>
+
+The point is that **the notation is identical**. Everything that separates these two tunes in
+performance comes from outside the notes: the style, the era, the recording and the band.
+
+## 6. Reading a new lead sheet
+
+When you open a chart you have not played before, before you play a note:
+
+1. **Look at the top of the page** for a style or feel word, a ♫ = ♩ ♪³ sign, or "even 8ths".
+2. **Look at the tempo.** The faster it is, the straighter the swing.
+3. **Know where the tune comes from.** A jazz standard or a bebop blues swings unless told
+   otherwise. A funk, Latin, rock, soul or bossa nova tune does not.
+4. **Listen to a recording.** It is the only thing that settles the question, and it tells you
+   about the accents and the note lengths too, which no lead sheet shows.
+5. **Listen to the band.** If the drummer plays the swing ride pattern, match its ratio; if the
+   drummer plays straight eighths on the hi-hat, play straight. The ratio is shared, not
+   chosen alone.
+
+Then practise both tunes in this lesson at three tempos each, and play the slider settings from
+the tables until you can hear the difference without looking.
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script>
+// Each .sw-ex holds an ABC tune in a <script type="text/plain">; render it and give it Play, Tempo and (unless
+// data-noslider) a Swing slider. Playback is abcjs's synth with its `swing` option (50 = even, 66 = triplet, 75 = dotted).
+(function () {
+  var ac = null, current = null;
+  function ratio(p) { var r = p / (100 - p); return p <= 50 ? 'even (1:1)' : p >= 74 ? 'dotted (3:1)' : r.toFixed(2).replace(/0$/, '') + ':1' + (Math.abs(p - 66.7) < 1.5 ? ' (triplet)' : ''); }
+  function stop() { if (current) { current.synth.stop(); current.btn.textContent = '▶ Play'; current = null; } }
+  Array.prototype.forEach.call(document.querySelectorAll('.sw-ex'), function (ex, i) {
+    var abc = ex.querySelector('script').textContent.trim();
+    var swing = +(ex.dataset.swing || 50), tempo = +(ex.dataset.tempo || 120);
+    var html = '<div class="sw-title">' + (ex.dataset.title || '') + '</div><div class="sw-staff" id="sw-staff-' + i + '"></div>' +
+      '<div class="sw-tools"><button type="button" class="btn btn-sm btn-outline-secondary sw-play">▶ Play</button>' +
+      '<span><label for="sw-t-' + i + '">Tempo</label><input type="number" id="sw-t-' + i + '" min="40" max="300" step="4" value="' + tempo + '"></span>';
+    if (!ex.dataset.noslider) html += '<span><label for="sw-s-' + i + '">Swing</label><input type="range" id="sw-s-' + i + '" min="50" max="75" step="1" value="' + swing + '"></span>' +
+      '<span class="sw-ratio"></span><span class="sw-presets"><button type="button" class="btn btn-sm btn-outline-secondary" data-p="50">Even</button> <button type="button" class="btn btn-sm btn-outline-secondary" data-p="60">3:2</button> <button type="button" class="btn btn-sm btn-outline-secondary" data-p="67">Triplet</button> <button type="button" class="btn btn-sm btn-outline-secondary" data-p="75">Dotted</button></span>';
+    html += '</div>';
+    ex.insertAdjacentHTML('beforeend', html);
+    var vo = ABCJS.renderAbc('sw-staff-' + i, abc, { responsive: 'resize', add_classes: true })[0];
+    var btn = ex.querySelector('.sw-play'), slider = ex.querySelector('input[type=range]'), tIn = ex.querySelector('input[type=number]'), out = ex.querySelector('.sw-ratio');
+    function show() { if (out) out.textContent = slider.value + '% — ' + ratio(+slider.value); }
+    if (slider) { slider.addEventListener('input', function () { show(); if (current && current.ex === ex) play(); }); show(); }
+    Array.prototype.forEach.call(ex.querySelectorAll('.sw-presets .btn'), function (b) { b.addEventListener('click', function () { slider.value = b.dataset.p; show(); play(); }); });
+    function play() {
+      stop();
+      ac = ac || new (window.AudioContext || window.webkitAudioContext)();
+      ac.resume();
+      var synth = new ABCJS.synth.CreateSynth(), me = { synth: synth, btn: btn, ex: ex };
+      current = me; btn.textContent = '■ Stop';
+      getSoundfontUrl().then(function (url) {
+        return synth.init({ audioContext: ac, visualObj: vo, millisecondsPerMeasure: 4 * 60000 / (+tIn.value || tempo),
+          options: { soundFontUrl: url, swing: slider ? +slider.value : swing, chordsOff: false, program: 0,
+            onEnded: function () { if (current === me) { btn.textContent = '▶ Play'; current = null; } } } });
+      }).then(function () { return synth.prime(); }).then(function () { if (current === me) synth.start(); })
+        .catch(function (e) { btn.textContent = '▶ Play'; console.error(e); });
+    }
+    btn.addEventListener('click', function () { if (current && current.ex === ex) stop(); else play(); });
+  });
+})();
+</script>
+```

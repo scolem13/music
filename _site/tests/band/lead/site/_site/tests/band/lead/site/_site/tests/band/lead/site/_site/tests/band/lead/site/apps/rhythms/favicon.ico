@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<!-- To do:
+- restore textarea and edit functionality
+- restore seek
+- provide "count-in"
+- give control over octave of Boom2
+- recognize measures in ABC string
+- create ability to loop bars
+- display multiple tunes (or versions, like FPIFO or something)
+- eventually, put all tunes in some database and allow sorting through the Python tools
+- ... would that be possible through Djago or Flask?
+ -->
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+  <!-- <link rel="stylesheet" href="examples-styles.css"/> -->
+
+	<title>Rhythm </title>
+
+	<link rel="stylesheet" type="text/css" href="abcjs-audio.css">
+    <style>
+        /* Some basic CSS to make the Audio controls in abcjs presentable. */
+
+select {
+	height: 26px;
+}
+
+.abcjs-inline-audio {
+	height: 26px;
+	padding: 0 5px;
+	border-radius: 3px;
+	background-color: #424242;
+	display: flex;
+	align-items: center;
+	box-sizing: border-box;
+}
+
+.abcjs-inline-audio.abcjs-disabled {
+	opacity: 0.5;
+}
+
+.abcjs-inline-audio .abcjs-btn {
+	display: block;
+	width: 28px;
+	height: 34px;
+	margin-right: 2px;
+	padding: 7px 4px;
+
+	background: none !important;
+	border: 1px solid transparent;
+	box-sizing: border-box;
+}
+
+.abcjs-btn g {
+	fill: #f4f4f4;
+	stroke: #f4f4f4;
+}
+
+.abcjs-inline-audio .abcjs-btn:hover g {
+	fill: #cccccc;
+	stroke: #cccccc;
+}
+
+.abcjs-inline-audio .abcjs-midi-selection.abcjs-pushed {
+	border: 1px solid #cccccc;
+	background-color: #666666;
+	box-sizing: border-box;
+}
+
+.abcjs-inline-audio .abcjs-midi-loop.abcjs-pushed {
+	border: 1px solid #cccccc;
+	background-color: #666666;
+	box-sizing: border-box;
+}
+
+.abcjs-inline-audio .abcjs-midi-reset.abcjs-pushed {
+	border: 1px solid #cccccc;
+	background-color: #666666;
+	box-sizing: border-box;
+}
+
+.abcjs-inline-audio .abcjs-midi-start .abcjs-pause-svg {
+	display: none;
+}
+
+.abcjs-inline-audio .abcjs-midi-start .abcjs-loading-svg {
+	display: none;
+}
+
+.abcjs-inline-audio .abcjs-midi-start.abcjs-pushed .abcjs-play-svg {
+	display: none;
+}
+
+.abcjs-inline-audio .abcjs-midi-start.abcjs-loading .abcjs-play-svg {
+	display: none;
+}
+
+.abcjs-inline-audio .abcjs-midi-start.abcjs-pushed .abcjs-pause-svg {
+	display: block;
+}
+
+.abcjs-inline-audio .abcjs-midi-progress-background {
+	background-color: #424242;
+	height: 10px;
+	border-radius: 5px;
+	border: 2px solid #cccccc;
+	margin: 0 8px 0 15px;
+	position: relative;
+	flex: 1;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.abcjs-inline-audio .abcjs-midi-progress-indicator {
+	width: 20px;
+	margin-left: -10px; /* half of the width */
+	height: 14px;
+	background-color: #f4f4f4;
+	position: absolute;
+	display: inline-block;
+	border-radius: 6px;
+	top: -4px;
+	left: 0;
+	box-sizing: border-box;
+}
+
+.abcjs-inline-audio .abcjs-midi-clock {
+	margin-left: 0px;
+	margin-top: 1px;
+	margin-right: 2px;
+	display: inline-block;
+	font-family: sans-serif;
+	font-size: 16px;
+	box-sizing: border-box;
+	color: #f4f4f4;
+}
+
+.abcjs-inline-audio .abcjs-tempo-wrapper {
+	font-size: 10px;
+	color: #f4f4f4;
+	box-sizing: border-box;
+	display: flex;
+	align-items: center;
+}
+
+.abcjs-inline-audio .abcjs-midi-tempo {
+	border-radius: 2px;
+	border: none;
+	margin: 0 0 0 -10px;
+	width: 42px;
+	/* padding-left: 2px; */
+	box-sizing: border-box;
+}
+
+.abcjs-midi-tempo {
+	font-size: x-small;
+}
+
+.abcjs-inline-audio .abcjs-loading .abcjs-loading-svg {
+	display: inherit;
+}
+
+.abcjs-inline-audio .abcjs-loading {
+	outline: none;
+	animation-name: abcjs-spin;
+	animation-duration: 1s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+}
+.abcjs-inline-audio .abcjs-loading-svg circle {
+	stroke: #f4f4f4;
+}
+
+@keyframes abcjs-spin {
+	from {transform:rotate(0deg);}
+	to {transform:rotate(360deg);}
+}
+
+/* Adding the class "abcjs-large" will make the control easier on a touch device. */
+.abcjs-large .abcjs-inline-audio {
+	height: 52px;
+}
+.abcjs-large .abcjs-btn {
+	width: 56px;
+	height: 52px;
+	font-size: 28px;
+	padding: 6px 8px;
+}
+.abcjs-large .abcjs-midi-progress-background {
+	height: 20px;
+	border: 4px solid #cccccc;
+}
+.abcjs-large .abcjs-midi-progress-indicator {
+	height: 28px;
+	top: -8px;
+	width: 40px;
+}
+.abcjs-large .abcjs-midi-clock {
+	font-size: 32px;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-top: -1px;
+}
+.abcjs-large .abcjs-midi-tempo {
+	font-size: 20px;
+	width: 50px;
+}
+.abcjs-large .abcjs-tempo-wrapper {
+	font-size: 20px;
+}
+
+.abcjs-css-warning {
+	display: none;
+}
+
+.abcjs-tempo-wrapper{
+	margin-left: 9px;
+}
+
+.options {
+	display: flex;
+	text-align: left;
+	align-items: left;
+	justify-content: left;
+	clear: both;
+	flex-wrap: wrap;
+	row-gap: 2px;
+}
+
+
+.abcjs-container {
+	height: 100%;
+	width: 100%;
+}
+
+.abcjs-midi-clock, .abcjs-midi-progress-background, .abcjs-midi-progress-indicator, .abcjs-midi-reset{
+	display: none !important;
+}
+
+/* *{
+	background-color: #ffd700;
+} */
+
+#audio{
+			width: 160px;
+			height: 26px;
+			clear: none;
+			/* margin: 1% */
+			/* position: fixed; 
+  			bottom: 1vh;
+			margin: auto;
+			left: 1vw; */
+		}
+
+	#the-top{
+		padding: 20px 0;
+	}
+
+    </style>
+	<style>
+		main {
+			max-width: 770px;
+			margin: 0 auto;
+		}
+		.feedback {
+			display: none;
+			height: 600px;
+			font-family: Arial, "sans-serif";
+		}
+		.highlight {
+			fill: #0057b7;
+		}
+		.abcjs-cursor {
+			stroke: #ffd700;
+			/* stroke: red; */
+			stroke: linear-gradient(blue, yellow);
+			width: 1;
+			stroke-width: 4;
+		}
+		.click-explanation {
+			color: #ffd700;
+			font-style: italic;
+		}
+		.beat {
+			display: none;
+			font-weight: bold;
+		}
+		.label {
+			color: #888888;
+    }
+		.midi {
+			margin-top: -20px;
+			margin-left: 5px;
+		}
+		.seek-controls {
+			margin-top: 5px;
+		}
+		.seek-controls.disabled {
+			background-color: #cccccc;
+			opacity: 0.5;
+		}
+
+		.warp, .seek, .download {
+			display: none;
+		}
+
+		textarea,
+		 .seek-controls, .abcjs-download-midi, .clicked-info {
+			display: none;
+		}
+
+		.tuneButtons, input {
+			display: inline-block;
+		}
+
+		input {
+			width: 40px;
+		}
+
+		button{
+			margin: 0 1%;
+			height: 26px;
+
+		}
+
+		
+
+		/* div.inflow {
+  position: relative; 
+  margin-right: 15%;
+  margin-left: 15%;
+} */
+/* div.positioner {position: absolute; right: 0;} may not be needed: see below */
+/* div.fixed {
+  position: fixed; 
+  bottom: 12vh;
+  left: 1vw;
+  /* right: 10vw; */
+} */
+
+.buddy {
+	display: inline-block;
+	/* margin-bottom: 6px; */
+}
+
+.buddy>label{
+	margin-left: 15px;
+}
+
+	.checkbox{
+		margin-left: -13px;
+	}
+	
+	.number-input-label{
+		margin-right: -16px;
+	}
+
+	.midi-transpose {
+		display: none;
+	}
+
+	.abcjs-staff{
+		display: none;
+	}
+
+	.abcjs-btn{
+		/* margin-right: -15px; */
+		margin-left: -5px;
+	}
+
+	/* .wrapper{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+	} */
+
+	
+	</style>
+
+	<script src="abcjs-basic.js" type="text/javascript"></script>
+	<script src="rhythm-pattern-object.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function showCursor(){
+		var theCursor = document.getElementById('abcjs-cursor');
+			if (document.getElementById("show-cursor").checked){
+		theCursor.style.display = 'block';
+		} else {
+		theCursor.style.display = 'none';	
+		}
+	}
+
+	function setRests(){
+		if (document.getElementById("set-rests").checked){
+			rests = true;
+		} else {
+			rests = false;	
+		}
+		setTune();
+	}
+
+
+	function showOptions(){
+		var theBottom = document.getElementById('the-bottom');
+			if (document.getElementById("show-options").checked){
+		theBottom.style.display = 'block';
+		} else {
+		theBottom.style.display = 'none';	
+		}
+	}
+
+	// midi instrument list
+
+	function disabler(elementId, order){
+			// Check
+			if (order){
+				document.getElementById(elementId).disabled = true;
+			} else{
+			// Uncheck
+			document.getElementById(elementId).disabled = false;
+			}
+		}
+	
+
+		function CursorControl() {
+			var self = this;
+
+			self.onReady = function() {
+				var downloadLink = document.querySelector(".download");
+				downloadLink.addEventListener("click", download);
+				downloadLink.setAttribute("style", "");
+				var clickEl = document.querySelector(".click-explanation")
+				clickEl.setAttribute("style", "");
+			};
+			self.onStart = function() {
+				var svg = document.querySelector("#paper svg");
+				var cursor = document.createElementNS("http://www.w3.org/2000/svg", "line");
+				cursor.setAttribute("class", "abcjs-cursor");
+				cursor.setAttribute("id", "abcjs-cursor")
+				cursor.setAttributeNS(null, 'x1', 0);
+				cursor.setAttributeNS(null, 'y1', 0);
+				cursor.setAttributeNS(null, 'x2', 0);
+				cursor.setAttributeNS(null, 'y2', 0);
+				svg.appendChild(cursor);
+
+			};
+			self.beatSubdivisions = 2;
+			self.onBeat = function(beatNumber, totalBeats, totalTime) {
+				if (!self.beatDiv)
+					self.beatDiv = document.querySelector(".beat");
+				self.beatDiv.innerText = "Beat: " + beatNumber + " Total: " + totalBeats + " Total time: " + totalTime;
+			};
+			self.onEvent = function(ev) {
+				if (ev.measureStart && ev.left === null)
+					return; // this was the second part of a tie across a measure line. Just ignore it.
+
+				var lastSelection = document.querySelectorAll("#paper svg .highlight");
+				for (var k = 0; k < lastSelection.length; k++)
+					lastSelection[k].classList.remove("highlight");
+
+				var el = document.querySelector(".feedback").innerHTML = "<div class='label'>Current Note:</div>" + JSON.stringify(ev, null, 4);
+				for (var i = 0; i < ev.elements.length; i++ ) {
+					var note = ev.elements[i];
+					for (var j = 0; j < note.length; j++) {
+						note[j].classList.add("highlight");
+					}
+				}
+
+				var cursor = document.querySelector("#paper svg .abcjs-cursor");
+				if (cursor) {
+					cursor.setAttribute("x1", ev.left - 2);
+					cursor.setAttribute("x2", ev.left - 2);
+					cursor.setAttribute("y1", ev.top);
+					cursor.setAttribute("y2", ev.top + ev.height);
+				}
+			};
+			self.onFinished = function() {
+				var els = document.querySelectorAll("svg .highlight");
+				for (var i = 0; i < els.length; i++ ) {
+					els[i].classList.remove("highlight");
+				}
+				var cursor = document.querySelector("#paper svg .abcjs-cursor");
+				if (cursor) {
+					cursor.setAttribute("x1", 0);
+					cursor.setAttribute("x2", 0);
+					cursor.setAttribute("y1", 0);
+					cursor.setAttribute("y2", 0);
+				}
+			};
+		}
+
+		
+
+		let abc = [];
+		let bars = [];
+		let details = "";
+		let ab;
+		let rests = false;
+
+		ab = patternObject["Duple-M-m-4-4"];
+
+		var tuneNames = [ "Cooleys", "Bill Bailey", "All Notes On Piano" ];
+
+		var currentTune = 0;
+
+		var synthControl;
+
+		function checkChanger(elementId, order){
+			// Check
+			if (order){
+				document.getElementById(elementId).checked = true;
+			} else{
+			// Uncheck
+			document.getElementById(elementId).checked = false;
+			}
+			pickTune();
+		}
+
+		function clefHandler(){
+			let inst = document.getElementById("inst-select").value;
+			switch(inst){
+				case "Flute":
+				case "Clarinet": 
+				case "Alto Sax":
+				case "Trumpet":
+					checkChanger("bass-clef", false);
+					disabler("bass-clef", true);
+					break;
+
+				case "Trombone":
+				case "Tuba":
+					checkChanger("bass-clef", true);
+					disabler("bass-clef", true);
+					break;
+
+				case "Piano":
+				case "Percussion":
+					checkChanger("bass-clef", false);
+					disabler("bass-clef", false);
+			}
+		}
+
+		function clickListener(abcElem, tuneNumber, classes, analysis, drag, mouseEvent) {
+			var output = "currentTrackMilliseconds: " + abcElem.currentTrackMilliseconds + "<br>" +
+				"currentTrackWholeNotes: " + abcElem.currentTrackWholeNotes + "<br>" +
+				"midiPitches: " + JSON.stringify(abcElem.midiPitches, null, 4) + "<br>" +
+				"gracenotes: " + JSON.stringify(abcElem.gracenotes, null, 4) + "<br>" +
+				"midiGraceNotePitches: " + JSON.stringify(abcElem.midiGraceNotePitches, null, 4) + "<br>";
+			document.querySelector(".clicked-info").innerHTML = "<div class='label'>Clicked info:</div>" +output;
+
+			var lastClicked = abcElem.midiPitches;
+			if (!lastClicked)
+				return;
+
+			ABCJS.synth.playEvent(lastClicked, abcElem.midiGraceNotePitches, synthControl.visualObj.millisecondsPerMeasure()).then(function (response) {
+				console.log("note played");
+			}).catch(function (error) {
+				console.log("error playing note", error);
+			});
+		}
+
+		function refreshSongbook(someAbc){
+
+			var tuneBook = new ABCJS.TuneBook(someAbc);
+			var selectTune = document.getElementById("tune-selector");
+			selectTune.innerHTML = "";
+			abc.length = 0;
+			bars.length = 0;
+			var option = document.createElement("option");			
+			for (var i = 0; i < tuneBook.tunes.length; i++) {
+				option = document.createElement("option");
+				optionContent = document.createTextNode(tuneBook.tunes[i].id);
+				let abcString = tuneBook.tunes[i].abc
+				abc.push(abcString);
+				abcString = abcString.split("\n");
+				if (!(i == tuneBook.tunes.length - 1)){
+					abcString.pop();
+				}
+				let bar = abcString.pop();
+				abcString.shift();
+				abcString = abcString.join("\n");
+				details = abcString;
+				bars.push(bar);
+				
+				option.appendChild(optionContent);
+				option.setAttribute('value', i);
+				selectTune.appendChild(option);
+			}
+			console.log(details);
+			console.log(bars);
+
+			
+		}
+
+		
+
+		function refreshCollection(){
+			let collection = document.getElementById("collection-selector").value;
+			console.log(collection);
+			let ab = patternObject[collection];
+			//refreshSongbook();
+			
+			refreshSongbook(ab);
+			pickTune();
+			
+		}
+
+		function load() {
+			var selectCollection = document.getElementById("collection-selector");
+			selectCollection.innerHTML = "";
+			var option = document.createElement("option");
+			for (i in patternObject) {
+				option = document.createElement("option");
+				optionContent = document.createTextNode(i);
+				option.appendChild(optionContent);
+				option.setAttribute('value', i)
+				selectCollection.appendChild(option)
+			}
+			//var tuneBook = new ABCJS.TuneBook(ab);
+			var selectTune = document.getElementById("tune-selector");
+			//var option = document.createElement("option");
+			// var optionContent = document.createTextNode("-- select tune --");
+			// option.appendChild(optionContent);
+			//selectTune.appendChild(option);
+			// instead create list from names and getTuneByTitle
+			// or set value to name of tune
+			// create list for tunes from tuneBook
+			// refreshCollection();
+			
+
+			refreshSongbook(ab);
+
+			
+			
+
+			
+
+			// select.addEventListener("change", setTune)
+			document.querySelector(".next").addEventListener("click", next);
+			// document.querySelector(".start").addEventListener("click", start);
+			document.querySelector(".warp").addEventListener("click", warp);
+			document.querySelector(".seek").addEventListener("click", seek);
+			document.querySelector(".seek2").addEventListener("click", seek2);
+			document.querySelector("#seek-units").addEventListener("change", seekExplanation);
+
+			if (ABCJS.synth.supportsAudio()) {
+				synthControl = new ABCJS.synth.SynthController();
+				// synthControl.load("#audio", cursorControl, {displayLoop: true, displayRestart: true, displayPlay: true, displayProgress: true, displayWarp: true});
+				synthControl.load("#audio", cursorControl, {displayLoop: true, displayRestart: true, displayPlay: true, displayProgress: true, displayWarp: true});
+
+			} else {
+				document.querySelector("#audio").innerHTML = "<div class='audio-error'>Audio is not supported in this browser.</div>";
+			}
+			setTune(false);
+
+			
+		}
+
+		function download() {
+			if (synthControl)
+				synthControl.download(tuneNames[currentTune] + ".wav");
+		}
+
+		function start() {
+			if (synthControl)
+				synthControl.play();
+				
+		}
+
+		function seek() {
+			synthControl.seek(0.50)
+		}
+
+		function seekExplanation() {
+			var explanation = document.getElementById("unit-explanation");
+			if (!synthControl.visualObj.noteTimings) {
+				explanation.innerText = "First start playing to load audio before seeking.";
+				return;
+			}
+			var units = this.value;
+			var max = 1;
+			switch (units) {
+				case "seconds":
+					max = synthControl.visualObj.getTotalTime();
+					break;
+				case "beats":
+					max = synthControl.visualObj.getTotalBeats();
+					break;
+			}
+			explanation.innerText = "Enter a number between 0 and {0}.".replace("{0}", max);
+		}
+
+		function seek2() {
+			var amount = document.getElementById("seek-amount").value;
+			var units = document.getElementById("seek-units").value;
+			synthControl.seek(amount, units)
+		}
+
+		function warp() {
+			var el = document.querySelector(".warp");
+			el.setAttribute("disabled", true)
+			var amount = Math.random()
+			console.log("warp", amount)
+			synthControl.setWarp(amount*100).then(function () {
+				el.removeAttribute("disabled")
+			})
+		}
+
+		
+
+		function setTune(userAction, r) {
+			
+			//  !!! TO-DO
+			const reg = new RegExp("U");
+			let pattern = document.getElementById("collection-selector").value;
+			
+			if (reg.test(pattern)){
+				disabler("randomPattern", true)
+				r = false; //this might not work -- maybe nest in if(r)
+			} else {
+				disabler("randomPattern", false)
+			}
+
+			let inst = 115;
+			let abcString = abc[currentTune]
+
+			if (r){
+				// select two random bars 
+				// var allTunes = selectTune.getElementsByTagName('option');
+				var pattern1 = bars[Math.floor(Math.random() * bars.length)];
+				var pattern2 = bars[Math.floor(Math.random() * bars.length)];
+				// var pattern3 = bars[Math.floor(Math.random() * bars.length)];
+				// var pattern4 = bars[Math.floor(Math.random() * bars.length)];
+				// currentTune = tuneIndex;
+				abcString = details + "\n" + pattern1 + pattern2; //+pattern3 +pattern4;
+				console.log(abcString);
+			}			
+			var count = (abcString.match(/\|/g) || []).length;
+			console.log(count);
+			if (r){
+				abcString += "\n";
+			}
+			abcString = abcString.split("\n");
+			// abcString[0] += `\n%%MIDI program ${inst} `;
+			abcString[0] += `\n%%MIDI channel 10 `;
+			// let bar = (abcString[abcString.length-2]);
+			// bars.push(bar);
+			// console.log(abc.length);
+			// console.log(currentTune);
+			
+			// add rests -- how do I figure out how many to add?
+			if(currentTune == abc.length - 1 & !r){
+				// abcString[abcString.length-2] += `\n`;	
+				if (rests){
+					abcString[abcString.length-1] += `Z${count}|`;	
+				}
+				// end of patternString
+				abcString[abcString.length-1] += "|";
+			
+			}else{
+
+				if (rests){
+					abcString[abcString.length-2] += `Z${count}|`;	
+				}
+			// end of patternString
+			abcString[abcString.length-2] += "|";
+			}
+
+			abcString = abcString.join("\n");
+			console.log(abcString);
+			var abcOptions = {
+			add_classes: true,
+			clickListener: self.clickListener,
+			// responsive: "resize",
+			// scale: 10
+			//visualTranspose: visualTransposeHalfSteps
+			//
+			};
+			var seekControls = document.querySelector(".seek-controls");
+			seekControls.classList.add("disabled");
+			synthControl.disable(true);
+			// var visualObjOld = ABCJS.renderAbc("paper", abc[currentTune], abcOptions)[0];
+			
+			// Oct 6
+			// 
+			// var abc = abcEl.value;
+			
+			var visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+			//var visualObj = ABCJS.strTranspose(abc, visualObj, -2)
+			var midi = ABCJS.synth.getMidiFile(abc[currentTune]);
+			var midiButton = document.querySelector(".midi");
+			midiButton.innerHTML = midi;
+			
+			// midi transposition
+			
+			// let midiTransposeHalfSteps = visualTransposeHalfSteps + parseInt(document.getElementById("midi-transpose").value);
+			// if(instAdjust % 12 != 0){
+			// 	midiTransposeHalfSteps -= instAdjust;
+			// }
+		 const synthOpts = {
+			//definitely mess with this for transposition
+			midiTranspose: -11,
+			//  this screws up the cursor at present
+			//  drumIntro: 1
+			//voicesOff: true,
+
+			}
+			// TODO-PER: This will allow the callback function to have access to timing info - this should be incorporated into the render at some point.
+			var midiBuffer = new ABCJS.synth.CreateSynth();
+			midiBuffer.init({
+				//audioContext: new AudioContext(),
+				visualObj: visualObj,
+				// sequence: [],
+				// millisecondsPerMeasure: 1000,
+				// debugCallback: function(message) { console.log(message) },
+				options: {
+					soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" ,
+					// callbackContext: this,
+					// onEnded: next(),
+					// pan: [ -0.5, 0.5 ]
+				}
+                // console.log("You see me");
+			}).then(function (response) {
+				console.log(response);
+				if (synthControl) {
+					synthControl.setTune(visualObj, userAction, synthOpts).then(function (response) {
+						console.log("Audio successfully loaded.")
+						seekControls.classList.remove("disabled");
+						seekExplanation();
+					}).catch(function (error) {
+						console.warn("Audio problem:", error);
+					});
+				}
+			}).catch(function (error) {
+				console.warn("Audio problem:", error);
+			});
+		}
+
+		function sequenceCallback(tracks) {
+				// The beats are 0.25 long so the amount of swing needs to be between 0 and 0.125,
+				// but practically it needs to be a bit smaller so that it doesn't sound like a grace note.
+				var swing = 0.1;
+				var track = tracks[0];
+				for (var i = 0; i < track.length; i++) {
+					var event = track[i];
+					if (event.start % 0.25) {
+						// This is the off beat
+						event.start += swing;
+					} else {
+						// This is the beat
+						event.end += swing;
+					}
+				
+				}
+			}
+
+		function next() {
+			currentTune++;
+			if (currentTune >= abc.length)
+				currentTune = 0;
+			document.getElementById('tune-selector').value = currentTune;
+			setTune(true);
+		}
+
+		function pickTune() {
+			currentTune =  document.getElementById('tune-selector').value;
+			setTune(true);
+		}
+
+
+		// pickTune();
+	</script>
+</head>
+<body onload="load()">
+  <header>
+  </header>
+  <div class="container">
+    <main>
+      
+      
+		<button class="download" style="display: none;">Download</button>
+		<div class="seek-controls disabled">
+			<!-- change to "start at measure" -->
+			<label>Seek: <input type="number" min="0" id="seek-amount"></label>
+			<select aria-label="seek units" id="seek-units">
+				<option value="percent">Percent</option>
+				<option value="seconds">Seconds</option>
+				<option value="beats">Beats</option>
+			</select>
+			<button class="seek2">Seek</button>
+			<span id="unit-explanation" class="click-explanation">First start playing to load audio before seeking.</span>
+		</div>
+      <div class="midi">MIDI</div>
+	  <div class="wrapper">
+      <div id="paper"></div>
+      
+	</div>
+	  
+	  <br>
+	  <div class="inflow">
+		<div class="positioner"><!-- may not be needed: see notes below-->
+		  <div class="fixed">
+			<div id = "the-top" class="options">
+				<div class="buddy">
+				<select id="collection-selector" onchange="refreshCollection()"></select>
+				<select id="tune-selector" onchange="pickTune()"></select>
+				</div>
+				<button class="next">Next</button>
+				<button id="randomPattern" class="randomPattern" onclick="setTune(true, true)">Rand</button>
+				
+				<div id="audio"></div>
+				<!-- <label for="rests-checkbox">Rests</label> -->
+				<input type="checkbox" id="set-rests" onclick="setRests()">
+					<!-- <input checked type="checkbox" id = "show-cursor" class="checkbox show-cursor" onchange="showCursor()"> -->
+				
+				<!-- <button class="start">Play</button> -->
+				
+				
+
+				<!-- <div class="buddy">
+					<label for="show-chords">Show chords?</label>
+					<input checked type="checkbox" id = "show-chords" class="checkbox show-chords" onchange="showChords()"> -->
+					<!-- </div> -->
+				<!-- the below is a test button to change check states -->
+				<!-- <button type="button" onclick="checkChanger('bass-clef', true)">Bass</button> -->
+				
+		
+			</div>
+		  </div>
+		</div>
+	  </div>
+
+	  
+	  <div class="tuneButtons">
+      <button class="warp">Rand. Warp</button>
+      <button class="seek">Seek to Middle</button>
+	  </div>
+      <p class="beat"></p>
+      <p class="click-explanation" style="display:none;">Click on a note to play that note.</p>
+      <pre class="clicked-info"></pre>
+      <pre class="feedback"></pre>
+
+	 
+    </main>
+  </div>
+<script>
+	//document.getElementById("abcText").value;
+	var cursorControl = new CursorControl();
+	showOptions();
+	
+	var selectCollection = document.getElementById("collection-selector");
+			selectCollection.innerHTML = "";
+			var option = document.createElement("option");
+			for (i in patternObject) {
+				option = document.createElement("option");
+				optionContent = document.createTextNode(i);
+				option.appendChild(optionContent);
+				option.setAttribute('value', i)
+				selectCollection.appendChild(option)
+			}
+	setTune();
+  </script>
+</script>	
+</body>
+</html>

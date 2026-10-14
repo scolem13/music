@@ -16,7 +16,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   try {
     await b.goto(B + "/tools/chord-entry.html"); await b.sleep(1200);
     assert.deepStrictEqual(errs(), [], "page errors: " + errs().join(" | "));
-    await ev(`document.getElementById("ce-sound").checked = false; 0`); await set("ce-key", "F"); await set("ce-tempo", "160");
+    await ev(`document.getElementById("ce-sound").checked = false; document.getElementById("ce-type").checked = true; 0`); await set("ce-key", "F"); await set("ce-tempo", "160");
     // ---- chords, in time with the click; the pedal makes the bars 3 beats long from beat 4 ----
     await set("ce-mode", "live"); await set("ce-with", "click"); await set("ce-bars", "5"); await set("ce-quant", "half");
     await click("ce-rec");

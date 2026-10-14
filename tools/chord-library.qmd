@@ -1,0 +1,22 @@
+---
+title: "Chord Library"
+html-table-processing: none
+---
+
+::: {.column-screen}
+```{=html}
+<!-- The app lives at /apps/chord-library/index.html (standalone; also opens on its own). The frame grows to fit it. -->
+<iframe id="chord-library-frame" src="/apps/chord-library/index.html" title="Chord Library"
+  style="width:100%;border:0;display:block;min-height:900px"></iframe>
+<script>
+(function () {
+  var f = document.getElementById('chord-library-frame');
+  function fit() { try { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; } catch (e) {} }
+  f.addEventListener('load', function () {
+    fit();
+    try { new ResizeObserver(fit).observe(f.contentDocument.body); } catch (e) { setInterval(fit, 1000); }
+  });
+})();
+</script>
+```
+:::

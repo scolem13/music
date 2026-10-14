@@ -12,7 +12,7 @@
 //   `stops` = bar numbers (1 counts the first) that are stop time, `at` = the first of the two bars written large. data-chart takes
 //   "vamp" (four bars of F7) or "watermelon" (the 16-bar form) as well as the 12-bar charts. The staff is the "Cga." staff of BandNotation.
 // A drum step may also say (the hi-hat lesson, BluesLesson.init({ instrument: "drums", feels: "hihat" })):
-//   DRUMSTEPS.name = { style, groove, tempo?, chart?, at?, accents?, six?, fillBars? }: `style` is a Feel-menu id (rock | strum | swing there), `groove` a
+//   DRUMSTEPS.name = { style, groove, tempo?, chart?, at?, accents?, six?, fillBars?, chokeBars?, endChoke? }: `style` is a Feel-menu id (rock | strum | swing there), `groove` a
 //   GROOVES id of drums.js, `tempo` where the step starts (the first time), `chart` "vamp" (four bars of F7) or a 12-bar chart (data-chart wins), `at` the
 //   first of the two bars written large (default 2), `accents: true` draws a > over the louder hi-hat notes (BandNotation accents), `six: true` is a
 //   step of sixteenths (wider staves, two bars to a line). These go through the same path as the conga steps: nothing changes for a step that leaves them out.
@@ -94,6 +94,7 @@
     shuffle:  { style: 'swing', groove: 'shuffle', fillBars: { 11: 'medium' } },
     slow:     { style: 'doowop', groove: 'twelve8', fillBars: { 11: 'medium' } },
     straight: { style: 'boogaloo', groove: 'auto', fillBars: { 11: 'medium' } },
+    grab:     { style: 'boogaloo', groove: 'auto', fillBars: { 3: 'small', 7: 'small', 11: 'medium' }, chokeBars: [4, 8], endChoke: true },
     // the hi-hat lesson (lessons/hihat-grooves.qmd): the straight steps on four bars of F7 in the rock or strum style, the swing ones on the 12-bar blues
     hhquarters: { style: 'rock',  groove: 'hhquarters', tempo: 80,  chart: 'vamp', at: 0 },
     hheighths:  { style: 'rock',  groove: 'hheighths',  tempo: 90,  chart: 'vamp', at: 0 },
@@ -378,7 +379,7 @@
       var feel = feelOf(w), fam = cfg.instrument === 'guitar' ? 'guitar' : 'piano', so = cat.styleOpts(feel, fam);
       var opts = Object.assign({}, so.opts, { variation: 0.4, pins: null, melody: false, fills: undefined, fillBars: null });
       if (cfg.instrument === 'bass') opts.bassFeel = w.bass || opts.bassFeel;
-      else if (isDrums) { if (feel === w.d.style) opts.groove = w.d.groove; opts.fills = 'none'; opts.fillBars = w.d.fillBars || null; }
+      else if (isDrums) { if (feel === w.d.style) opts.groove = w.d.groove; opts.fills = 'none'; opts.fillBars = w.d.fillBars || null; opts.chokeBars = w.d.chokeBars || null; opts.endChoke = !!w.d.endChoke; }
       else if (isCongas) {                                   // the step's pattern while the band is in the step's style; another style plays its own congas
         opts.fills = 'none'; opts.fillBars = null;
         if (feel === w.d.style) { opts.congas = w.d.pattern; if (w.d.drums) opts.groove = w.d.drums; }

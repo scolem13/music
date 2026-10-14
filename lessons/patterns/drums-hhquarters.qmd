@@ -1,0 +1,63 @@
+---
+title: "Drum groove: Hi-hat: quarter notes"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Hi-hat: quarter notes**. It is one of the first patterns to learn, so this page starts from it and takes it into the band. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+Closed hi-hat on every beat, kick on 1 and 3, snare on 2 and 4. The first rock beat. In 3/4: hi-hat on every beat, kick on 1, snare on 3.
+
+It belongs in *Straight-eighth rock*, *Piano ballad*, *Acoustic strum*, *Dance pop* and *Boogaloo*. Here it is in the straight-eighth rock style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="88" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 1: Hi-hat: quarter notes, slowly
+
+**How to play it.** Right hand on the closed hi-hat on every beat; kick on 1 and 3; left hand on the snare on 2 and 4. The first rock beat. Count aloud.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="62" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 2: Up to tempo, with the band
+
+The whole band, at 88 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="88" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## Step 3: In 3/4
+
+The same pattern in a waltz: three beats to the bar. Listen for what it keeps and what it drops when the bar is a beat shorter.
+
+<div class="ar-demo" data-style="rock" data-chart="C|C|F|F|G7|G7|C|C" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-meter="3/4" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## In other styles
+
+The same drum groove in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+**Acoustic strum**
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+**Dance pop**
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: quarter notes","opts":{"groove":"hhquarters"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Leads to:** [Blues shuffle](drums-shuffle.qmd), [Hi-hat: eighth notes](drums-hheighths.qmd), [Rock backbeat](drums-rock.qmd), [Four on the floor](drums-dance.qmd), [Two-beat](drums-boomchick.qmd), [12/8](drums-twelve8.qmd), [Son clave (2-3)](drums-clave.qmd), [Bo Diddley beat](drums-bodiddley.qmd), [Reggaeton (dembow)](drums-dembow.qmd), [Cha-cha](drums-chacha.qmd), [Tango](drums-tango.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Roots on every beat](bass-roots.qmd) (bass line), [Quarter-note chords](chords-quarters.qmd) (comping rhythm), [Strum: downstrokes on the beat](chords-strum-quarters.qmd) (comping rhythm).
+- **Plays with, in straight-eighth rock:** [Root eighths](bass-eighths.qmd) (bass line), [Strum: down-up eighths](chords-strum-eights.qmd) (comping rhythm).
+- **Other drum grooves in the Folk, rock and pop group:** [Bo Diddley beat](drums-bodiddley.qmd), [Waltz in one](drums-waltz.qmd), [Two-beat](drums-boomchick.qmd), [Rock backbeat](drums-rock.qmd), [Pop backbeat](drums-strum.qmd), [Ballad](drums-ballad.qmd), [Four on the floor](drums-dance.qmd), [Motown](drums-motown.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

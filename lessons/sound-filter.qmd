@@ -1,0 +1,76 @@
+---
+title: "Sound 4: Filters"
+toc: true
+toc-depth: 2
+---
+
+A **filter** turns some frequencies down and lets others through. It is the most-used control on a
+synthesizer and on a mixing desk: the treble and bass knobs on a stereo, the "wah" in a wah-wah pedal
+and the "wow" in a synth bass are all filters.
+
+**How to use the page.** Press ▶. The **Source** menu picks what goes into the filter: noise shows
+the filter's shape most clearly; the riff and chords show what it does to music; *Your keyboard*
+plays the keys or MIDI; *Microphone* filters your own voice (wear headphones). The red line on the
+spectrum is the filter's response: above the middle line it boosts, below it cuts. **Bypass**
+switches the filter out so you can compare.
+
+## Low-pass and high-pass
+
+<div class="sk" data-w="filter" data-source="noise"></div>
+
+A **low-pass** filter lets the lows through and cuts the highs. The frequency where it starts
+cutting is the **cutoff**. Drag **Cutoff** down slowly with noise playing: the hiss becomes a rush and
+then a rumble. Switch the source to the synth riff and do the same: the sound goes from bright to
+muffled, as if behind a wall.
+
+A **high-pass** does the opposite: it removes the lows. That's how a sound is made thin, like a
+telephone or a small radio, and how mixing engineers clear rumble out of everything except the bass
+and kick drum.
+
+The **slope** is how fast the filter cuts beyond the cutoff: 12 dB per octave is gentle, 24 dB per
+octave is the steep, classic "Moog" low-pass.
+
+::: {.sk-tip}
+**Why low-pass sounds "darker".** From the [harmonic series lesson](sound-harmonics.qmd): brightness
+is the strength of the high harmonics. A low-pass removes those harmonics, starting from the top.
+On a sawtooth (all harmonics) you can hear them go one by one as the cutoff passes them.
+:::
+
+## Resonance
+
+**Resonance** (or **Q**) boosts a narrow band right at the cutoff. With the riff playing and the
+cutoff around 800 Hz, turn **Resonance** up to 10 or more. A whistling peak appears on the red line
+and you can hear it ring. Now press **Sweep**: the cutoff moves up and down by itself, and the
+resonant peak sweeps through the harmonics. That's the classic synth "wow", and with a guitar it's
+a wah pedal.
+
+At very high resonance the filter rings at the cutoff frequency on its own, almost like a sine
+wave. Some synths let the filter *self-oscillate* and play it as an extra oscillator.
+
+## Band-pass, notch and EQ
+
+<div class="sk" data-w="filter" data-source="riff" data-set="type=bandpass,cutoff=1200,q=4" data-title="Band-pass, notch and EQ"></div>
+
+- **Band-pass** keeps a band around the cutoff and cuts both sides. Higher Q, narrower band. It's the
+  sound of a telephone or a megaphone, and it's how a vocoder splits a voice into bands
+  ([Sound 14](sound-vocoder.qmd)).
+- **Notch** is the opposite: it removes a narrow band and leaves everything else. Engineers use it to
+  remove a hum. A [phaser](sound-phaser.qmd) is several moving notches.
+- **Peak (bell)**, **low shelf** and **high shelf** are the filters of an **equaliser** (EQ). They
+  boost or cut (the **Boost/cut** slider) instead of removing. A shelf lifts or lowers everything
+  above or below the cutoff, like the treble and bass knobs. A bell lifts or lowers a band in the
+  middle.
+
+## Filters on your voice
+
+Choose **Microphone** as the source (with headphones on), choose **Band-pass** and sweep the cutoff
+while you talk. The vowels in speech are themselves made by filters: your mouth and throat are
+resonant tubes, and moving your tongue and lips moves their resonances (the **formants**). Say
+"ee-ah-oo" slowly and watch the bumps in the spectrum move.
+
+## Next
+
+- [Sound 5: LFOs](sound-lfo.qmd)
+- [Sound 6: Subtractive synthesis](sound-subtractive.qmd): oscillator, filter, envelope.
+
+{{< include _synth-kit.qmd >}}

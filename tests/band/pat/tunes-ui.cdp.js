@@ -10,10 +10,10 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   try {
     await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track.html"); await b.sleep(1200);
     const names = JSON.parse(await ev(`JSON.stringify(Array.from(document.querySelectorAll('#bt-changes optgroup[label="Built-in setups"] option')).map(function(o){ return o.textContent; }))`));
-    assert.strictEqual(names.length, 10, names.join());
+    assert.strictEqual(names.length, 12, names.join());
     // every built-in loads: the menus take its ids and nothing is reported about the changes
     for (let i = 0; i < names.length; i++){ await set("bt-changes", "setup:b:" + i); const x = await state(), want = JSON.parse(await ev(`JSON.stringify(BandPresets[${i}])`));
-      assert.deepStrictEqual([x.o.bassFeel, x.o.compRhythm, x.o.voicing, x.o.groove, x.o.feel, x.style, x.tempo, x.note], [want.bass, want.rhythm, want.voicing, want.groove, want.feel, want.style, String(want.tempo), ""], names[i]); }
+      assert.deepStrictEqual([x.o.bassFeel, x.o.compRhythm, x.o.voicing, x.o.groove, x.o.feel, x.style, x.tempo, (/%%style/.test(want.abc) && x.note.indexOf("Sections in a style of their own") === 0) ? "" : x.note], [want.bass, want.rhythm, want.voicing, want.groove, want.feel, want.style, String(want.tempo), ""], names[i]); }
     await set("bt-changes", "basic"); await set("bt-style", "swing");
     let s = await state(); assert.strictEqual(s.figs, false, "no figure menu on a plain blues");
     await set("bt-changes", "setup:b:0"); s = await state();

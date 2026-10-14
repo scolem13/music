@@ -1,0 +1,76 @@
+---
+title: "Drum groove: Hi-hat: sixteenth notes"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Hi-hat: sixteenth notes**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+Sixteen notes to the bar on the closed hi-hat with one hand, the beats a little stronger. Kick on 1 and 3, snare on 2 and 4. For slow and medium tempos.
+
+It belongs in *Straight-eighth rock*, *Piano ballad*, *Acoustic strum*, *Dance pop* and *Boogaloo*. Here it is in the straight-eighth rock style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="84" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: sixteenth notes","opts":{"groove":"hhsix"}}]'></div>
+
+## Step 1: Hi-hat: eighth notes
+
+Start with something simpler. Closed hi-hat on every eighth note, all of one weight, kick on 1 and 3, snare on 2 and 4. The basic rock beat. In 3/4: six eighths, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hheighths.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="58" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: eighth notes","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 2: Hi-hat: accented eighths
+
+The basic rock beat with the hi-hat leaning on the beats and the off-beats played lightly (shoulder of the stick on the beat, tip on the off-beat). Written with an accent over each beat.
+
+This is a pattern of its own: [the lesson on it](drums-hhaccents.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="58" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: accented eighths","opts":{"groove":"hhaccents"}}]'></div>
+
+## Step 3: Hi-hat: sixteenth notes, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Sixteenths on the closed hi-hat with one hand, beats a little stronger. Start slowly: the hand moves twice as fast as before.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="58" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Hi-hat: sixteenth notes","opts":{"groove":"hhsix"}},{"label":"Hi-hat: accented eighths (the step before)","opts":{"groove":"hhaccents"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 84 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="84" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: sixteenth notes","opts":{"groove":"hhsix"}}]'></div>
+
+## In other styles
+
+The same drum groove in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: sixteenth notes","opts":{"groove":"hhsix"}}]'></div>
+
+**Acoustic strum**
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: sixteenth notes","opts":{"groove":"hhsix"}}]'></div>
+
+**Dance pop**
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Hi-hat: sixteenth notes","opts":{"groove":"hhsix"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: eighth notes](drums-hheighths.qmd), [Hi-hat: accented eighths](drums-hhaccents.qmd).
+- **Leads to:** [Hi-hat: sixteenths, two hands](drums-hhsix2.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Groups: eight 3s then four 2s (sixteenths)](chords-g3x8.qmd) (comping rhythm), [Strum: sixteenths](chords-strum16.qmd) (comping rhythm), [Hi-hat: sixteenths, two hands](drums-hhsix2.qmd) (drum groove).
+- **Plays with, in straight-eighth rock:** [Root eighths](bass-eighths.qmd) (bass line), [Strum: down-up eighths](chords-strum-eights.qmd) (comping rhythm).
+- **Other drum grooves in the Folk, rock and pop group:** [Bo Diddley beat](drums-bodiddley.qmd), [Waltz in one](drums-waltz.qmd), [Two-beat](drums-boomchick.qmd), [Rock backbeat](drums-rock.qmd), [Pop backbeat](drums-strum.qmd), [Ballad](drums-ballad.qmd), [Four on the floor](drums-dance.qmd), [Motown](drums-motown.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

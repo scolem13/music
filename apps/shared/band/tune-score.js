@@ -56,11 +56,11 @@
       var up = ch.toUpperCase(), oct = ch === up ? 0 : 1; while (s[k] === "," || s[k] === "'"){ oct += s[k] === "'" ? 1 : -1; k++; }
       var kk = up + oct, semi = SEMI[up] + 60 + 12 * oct;
       if (a !== undefined) acc[kk] = a; var use = a !== undefined ? a : acc[kk] !== undefined ? acc[kk] : (keyAcc[up] || 0);
-      return [semi + use + octShift, k];
+      return [semi + use + octShift, k, (a !== undefined || acc[kk] !== undefined) && Math.abs(use) <= 2 ? up + (use > 1 ? "x" : use > 0 ? "#" : use < -1 ? "bb" : use < 0 ? "b" : "") : null];     // (the spelling, when the ABC wrote an accidental here or earlier in the bar)
     }
-    function event(isNote, midi, mult, off){ toBar(off); var d = span(mult), ev = { dur: d };
+    function event(isNote, midi, mult, off, sp){ toBar(off); var d = span(mult), ev = { dur: d };
       if (isNote){
-        var nt = { pos: (t - barT), dur: d, midi: midi };
+        var nt = { pos: (t - barT), dur: d, midi: midi }; if (sp) nt.sp = sp;
         if (last && last.tie && last.note && last.note.midi === midi){ last.note.dur += d; last.dur = d; last.tie = false; last.joined = true; t += d; return; }     // held over the barline or the beat
         out[cur].push(nt); ev.note = nt; }
       last = ev; t += d; }
@@ -88,18 +88,18 @@
           var fm = /^\[([A-Za-z]):([^\]]*)\]/.exec(s.slice(j));
           if (fm){ if (fm[1] === "K"){ setKey(fm[2].trim()); acc = {}; } else if (fm[1] === "L" && lenOf(fm[2])) L = lenOf(fm[2]); else if (fm[1] === "M" && meterOf(fm[2])){ M = meterOf(fm[2]); if (!Lx) L = defaultL(M); } j += fm[0].length; continue; }
           if (/[\d|]/.test(s[j + 1] || "")){ toBar(off); acc = {}; j++; var nm2 = /^[\d,-]+/.exec(s.slice(j)); if (nm2) j += nm2[0].length; else if (s[j] === "|") j++; continue; }
-          var k = j + 1, top = null, inner = 1, first = true;                                // a chord: the top note carries the tune
+          var k = j + 1, top = null, topSp = null, inner = 1, first = true;                                // a chord: the top note carries the tune
           while (k < s.length && s[k] !== "]"){
-            var pp = pitch(s, k, null); if (pp){ k = pp[1]; var dd = takeDur(s, k); k = dd[1]; if (first){ inner = dd[0]; first = false; } if (top == null || pp[0] > top) top = pp[0];
+            var pp = pitch(s, k, null); if (pp){ k = pp[1]; var dd = takeDur(s, k); k = dd[1]; if (first){ inner = dd[0]; first = false; } if (top == null || pp[0] > top){ top = pp[0]; topSp = pp[2]; }
               if (s[k] === "-"){ k++; } } else k++; }
-          var od = takeDur(s, k + 1); event(top != null, top, inner * od[0], off); j = od[1];
+          var od = takeDur(s, k + 1); event(top != null, top, inner * od[0], off, topSp); j = od[1];
           if (s[j] === "-"){ if (last && last.note) last.tie = true; j++; }
           continue;
         }
         if (ch === "z" || ch === "x"){ var rd = takeDur(s, j + 1); event(false, 0, rd[0], off); j = rd[1]; continue; }
         if (ch === "Z" || ch === "X"){ var zd = takeDur(s, j + 1), bl = 4 * M.n / M.d; toBar(off); var dz = zd[0] * bl; last = { dur: dz }; t += dz; j = zd[1]; continue; }
         var pr = /[\^_=A-Ga-g]/.test(ch) ? pitch(s, j, null) : null;
-        if (pr){ var nd = takeDur(s, pr[1]); event(true, pr[0], nd[0], off); j = nd[1]; if (s[j] === "-"){ if (last && last.note) last.tie = true; j++; } continue; }
+        if (pr){ var nd = takeDur(s, pr[1]); event(true, pr[0], nd[0], off, pr[2]); j = nd[1]; if (s[j] === "-"){ if (last && last.note) last.tie = true; j++; } continue; }
         j++;
       }
     }
@@ -129,7 +129,7 @@
     var r = read(abc, parsed);
     return r.bars.map(function (notes, i){
       var bar = parsed.bars[i], g = geoOf(bar), shift = bar.anacrusis ? Math.max(0, g.per - r.lens[i] * 2) : 0;
-      return notes.map(function (x){ return { pos: x.pos * 2 + shift, dur: x.dur * 2, midi: x.midi }; }).filter(function (x){ return x.pos < g.per - 1e-6 && x.dur > 0; });
+      return notes.map(function (x){ var o = { pos: x.pos * 2 + shift, dur: x.dur * 2, midi: x.midi }; if (x.sp) o.sp = x.sp; return o; }).filter(function (x){ return x.pos < g.per - 1e-6 && x.dur > 0; });
     });
   }
   function hasNotes(abc){

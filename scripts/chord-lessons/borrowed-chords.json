@@ -1,0 +1,114 @@
+{
+ "title": "Lesson: Borrowed Chords",
+ "body": "A song in C major is not limited to the chords of C major. It may borrow chords from the **parallel\nminor** (C minor) or from the mixolydian mode (a major scale with a flat 7). The borrowed chord has a note that is\nnot in the key, and it sounds like a colour change. This lesson adds those chords one at a time to a plain\nI, IV, V, I.\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.\n\n## 1. The plain version\n\n**C, F, G, C.** Every chord is in the key of C major.\n\n<div class=\"bl-step\" data-step=\"plain\"></div>\n\n## 2. The minor iv\n\n**C, F, Fm, C.** Replace the IV with the iv. F minor has A♭, a note that is not in C major and that\nfalls to G, the 5th of C. It is the sound of a major song turning wistful for one bar.\n\n<div class=\"bl-step\" data-step=\"iv\"></div>\n\n## 3. The ♭VII\n\n**C, F, B♭, C.** B♭ is the chord of the flat seventh (the 7th of the mixolydian mode). It falls a step\nto C. It sounds natural after F because the two roots are a whole step apart and the chords share the note F.\n\n<div class=\"bl-step\" data-step=\"b7\"></div>\n\n## 4. The ♭VI and ♭VII together\n\n**C, A♭, B♭, C.** Two borrowed chords, each a whole step above the last, rising to C.\nA♭ has A♭, C and E♭ (a minor-key chord), and B♭ has B♭, D and F. It sounds big and triumphant, and is sometimes called the \"Mario cadence\".\n\n<div class=\"bl-step\" data-step=\"b6b7\"></div>\n\n## 5. All three together\n\n**C, Fm, A♭ B♭, C.** The minor iv in bar 2, then the ♭VI and ♭VII together in bar 3.\n\n<div class=\"bl-step\" data-step=\"all\"></div>\n\n## Build your own\n\nChoose a chord for each bar, or start from one of the versions above.\n\n<div id=\"bl-builder\" class=\"bl-widget\"></div>\n\n\n## Test your ear\n\nThe band plays a four-bar phrase. Name its borrowed chord (or the lack of one).\n\n<div id=\"bl-quiz\" class=\"bl-widget\"></div>\n\n\n## Where to go next\n\n- Play each version in a different key with the Key menu. The borrowed chords move with you.\n- The ♭VII to I ending also appears in [the lesson on cadences](cadences.qmd).\n- [Four-chord loops](four-chord-loops.qmd) uses the ♭VII in its sixth loop.\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 4,
+  "feels": [
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   },
+   {
+    "id": "motown",
+    "label": "Motown / soul",
+    "tempo": 110
+   },
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   }
+  ],
+  "steps": {
+   "plain": {
+    "bars": "C|F|G|C"
+   },
+   "iv": {
+    "bars": "C|F|Fm|C",
+    "vs": "plain"
+   },
+   "b7": {
+    "bars": "C|F|Bb|C",
+    "vs": "plain"
+   },
+   "b6b7": {
+    "bars": "C|Ab|Bb|C",
+    "vs": "plain"
+   },
+   "all": {
+    "bars": "C|Fm|Ab Bb|C",
+    "vs": "plain"
+   }
+  },
+  "builder": {
+   "chords": [
+    "C",
+    "Am",
+    "Dm",
+    "F",
+    "Fm",
+    "G",
+    "Bb",
+    "Ab",
+    "Eb",
+    "Cm"
+   ],
+   "bars": 4,
+   "start": [
+    0,
+    3,
+    5,
+    0
+   ],
+   "presets": [
+    [
+     "The plain version",
+     "C|F|G|C"
+    ],
+    [
+     "The minor iv",
+     "C|F|Fm|C"
+    ],
+    [
+     "The ♭VII",
+     "C|F|Bb|C"
+    ],
+    [
+     "♭VI and ♭VII",
+     "C|Ab|Bb|C"
+    ]
+   ]
+  },
+  "quizzes": [
+   {
+    "host": "bl-quiz",
+    "question": "Which chord was borrowed?",
+    "items": [
+     {
+      "name": "None: it is all in the key",
+      "bars": "C|F|G|C"
+     },
+     {
+      "name": "The minor iv",
+      "bars": "C|F|Fm|C"
+     },
+     {
+      "name": "The ♭VII",
+      "bars": "C|F|Bb|C"
+     },
+     {
+      "name": "The ♭VI and ♭VII",
+      "bars": "C|Ab|Bb|C"
+     }
+    ]
+   }
+  ]
+ }
+}

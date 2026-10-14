@@ -1,0 +1,161 @@
+{
+ "title": "Lesson: Changes in a Minor Key",
+ "body": "The first lesson on this page's loops stayed in major. Minor is different in one important way: the\nscale you play on is not the scale the chords come from. Natural minor has no leading tone, so the V\nchord is changed to get one. This lesson writes everything in **A minor**.\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.\n\n## 1. The basic minor changes\n\n**Am, Dm, Em, Am**: i, iv, v, i, all from the natural minor scale. The v chord, Em, is minor. It is\npleasant and it is also weak: it has G, not G♯, so there is no leading tone to pull to A.\n\n<div class=\"bl-step\" data-step=\"basic\"></div>\n\n## 2. The harmonic-minor V7\n\n**Am, Dm, E7, Am.** One note changes, G to G♯, and the chord becomes the dominant. The G♯ is the\nleading tone and it rises to A. This is the chord that makes minor feel like a key and not a mode.\n\n<div class=\"bl-step\" data-step=\"harm\"></div>\n\n## 3. The Picardy third\n\n**Am, Dm, E7, A.** Finish on a major chord. The C of the A minor chord is raised to C♯. It is an old\ntrick, for a hymn or a baroque piece: the music goes dark and the last chord turns the lights on.\n\n<div class=\"bl-step\" data-step=\"pic\"></div>\n\n## 4. A walking bass\n\n**Am Am/G | Dm/F Dm | E7 | Am.** The bass steps down A, G, F, then falls a third to D, and E7 and Am follow. The slash chord Am/G is an A minor chord over a G in the\nbass.\n\n<div class=\"bl-step\" data-step=\"walk\"></div>\n\n## 5. ii° to V to i\n\n**Am, Dm, Bm7♭5 E7, Am.** Put the half-diminished ii chord in front of the dominant. It is the minor\nversion of the two-five: B, D, F, A, then E7. The bass falls a fifth from B to E, and again from E to A,\nthe same circle-of-fifths motion as in the major two-five-one.\n\n<div class=\"bl-step\" data-step=\"twofive\"></div>\n\n## Build your own\n\nChoose each chord. The shaded bars differ from the basic minor changes.\n\n<div id=\"bl-builder\" class=\"bl-widget\"></div>\n\n\n## Test your ear\n\nThe band plays one of the endings. Pick the version you heard.\n\n<div id=\"bl-quiz\" class=\"bl-widget\"></div>\n\n\n## Where to go next\n\n- Play the same chords in a different key with the Key menu. The numerals do not change.\n- Compare step 2 with the authentic cadence in [the lesson on cadences](cadences.qmd).\n- Try the [borrowed chords](borrowed-chords.qmd) lesson: its iv chord is this lesson's iv, played in a major key.\n\n",
+ "init": {
+  "tonic": 9,
+  "minor": true,
+  "times": 4,
+  "feels": [
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   },
+   {
+    "id": "motown",
+    "label": "Motown / soul",
+    "tempo": 110
+   },
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   }
+  ],
+  "steps": {
+   "basic": {
+    "bars": "Am|Dm|Em|Am",
+    "minor": true
+   },
+   "harm": {
+    "bars": "Am|Dm|E7|Am",
+    "minor": true,
+    "vs": "basic"
+   },
+   "pic": {
+    "bars": "Am|Dm|E7|A",
+    "minor": true,
+    "vs": "harm"
+   },
+   "walk": {
+    "bars": "Am Am/G|Dm/F Dm|E7|Am",
+    "minor": true,
+    "vs": "harm"
+   },
+   "twofive": {
+    "bars": "Am|Dm|Bm7b5 E7|Am",
+    "minor": true,
+    "vs": "harm"
+   }
+  },
+  "builder": {
+   "slots": [
+    {
+     "label": "Bar 1",
+     "opts": [
+      [
+       "i",
+       "Am"
+      ],
+      [
+       "i7",
+       "Am7"
+      ],
+      [
+       "i, then i over the 7th in the bass",
+       "Am Am/G"
+      ]
+     ]
+    },
+    {
+     "label": "Bar 2",
+     "opts": [
+      [
+       "iv",
+       "Dm"
+      ],
+      [
+       "iv7",
+       "Dm7"
+      ],
+      [
+       "iv over its 3rd, then iv",
+       "Dm/F Dm"
+      ]
+     ]
+    },
+    {
+     "label": "Bar 3",
+     "opts": [
+      [
+       "v (natural minor)",
+       "Em"
+      ],
+      [
+       "V",
+       "E"
+      ],
+      [
+       "V7",
+       "E7"
+      ],
+      [
+       "ii° then V7",
+       "Bm7b5 E7"
+      ]
+     ]
+    },
+    {
+     "label": "Bar 4",
+     "opts": [
+      [
+       "i",
+       "Am"
+      ],
+      [
+       "I (Picardy)",
+       "A"
+      ]
+     ]
+    }
+   ]
+  },
+  "quizzes": [
+   {
+    "host": "bl-quiz",
+    "question": "Which ending did you hear?",
+    "items": [
+     {
+      "name": "Natural minor (v, i)",
+      "bars": "Am|Dm|Em|Am",
+      "minor": true,
+      "why": "Em has a G, not a G♯: no leading tone."
+     },
+     {
+      "name": "Harmonic minor V7",
+      "bars": "Am|Dm|E7|Am",
+      "minor": true,
+      "why": "The G♯ rises to A."
+     },
+     {
+      "name": "Picardy third (ends on A major)",
+      "bars": "Am|Dm|E7|A",
+      "minor": true,
+      "why": "The last chord is major."
+     },
+     {
+      "name": "ii° and V7",
+      "bars": "Am|Dm|Bm7b5 E7|Am",
+      "minor": true,
+      "why": "Two chords in bar 3."
+     }
+    ]
+   }
+  ]
+ }
+}

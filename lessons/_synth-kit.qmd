@@ -1,0 +1,57 @@
+```{=html}
+<style>
+/* the sound-design lessons: widgets are made by apps/shared/lessons/synth-kit.js from <div class="sk" data-w="..."> */
+.sk-w{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem}
+.sk-w.sk-live{border-color:var(--site-accent)}
+.sk-w.sk-target{box-shadow:0 0 0 2px var(--site-accent) inset}
+.sk-head{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin-bottom:.6rem}
+.sk-title{font-family:var(--font-display);font-size:1.05rem}
+.sk-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin-left:auto}
+.sk-tools .sk-c{flex-direction:row;align-items:center;gap:.4rem;min-width:0}
+.sk-w .btn{font-family:var(--font-mono);font-size:.78rem}
+.sk-w .btn.sk-on,#sk-bar .btn.sk-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.sk-status{font-size:.8rem;color:var(--site-ink-2)}
+.sk-ctls{display:grid;grid-template-columns:repeat(auto-fill,minmax(11.5rem,1fr));gap:.45rem 1rem;margin:.3rem 0 .6rem}
+.sk-c{display:flex;flex-direction:column;font-size:.8rem;margin:0}
+.sk-c .sk-cl{color:var(--site-ink-2);font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.sk-c output{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink);order:2}
+.sk-c input[type=range]{order:3;width:100%;accent-color:var(--site-accent-dk)}
+.sk-c select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);max-width:100%}
+.sk-group{grid-column:1/-1;border-top:1px dashed var(--site-border);padding-top:.35rem}
+.sk-gl{font-family:var(--font-display);font-size:.9rem;margin-bottom:.1rem}
+.sk-presets{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;margin:.2rem 0 .6rem}
+.sk-presets .sk-cl{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;color:var(--site-ink-2);margin-right:.2rem}
+.sk-view{display:grid;grid-template-columns:1fr 1.6fr;gap:.6rem;margin-top:.5rem}
+.sk-view canvas,.sk-plot{width:100%;height:150px;border:1px solid var(--site-border);border-radius:6px;background:var(--site-bg,transparent);display:block}
+.sk-plot{margin:.4rem 0}
+.sk-plot.sk-short{height:110px}
+.sk-plot.sk-tall{height:230px}
+.sk-plot.sk-square{height:240px;max-width:330px}
+@media (max-width:640px){.sk-view{grid-template-columns:1fr}.sk-tools{margin-left:0}}
+.sk-harm{display:grid;grid-template-columns:repeat(16,1fr);gap:2px;margin:.4rem 0;max-width:640px}
+.sk-hcol{display:flex;flex-direction:column;align-items:center}
+.sk-hcol input{writing-mode:vertical-lr;direction:rtl;height:110px;width:22px;accent-color:var(--site-accent-dk)}
+.sk-hn{font-family:var(--font-mono);font-size:.7rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);padding:0 .2rem;min-width:1.5rem}
+.sk-staff{margin:.4rem 0}
+.sk-staff .abcjs-note,.sk-staff .abcjs-annotation{cursor:pointer}
+.sk-info{font-size:.9rem;color:var(--site-ink-2);min-height:1.4em}
+.sk-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.sk-care{border-left:3px solid #d9822b;padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+/* the bar at the foot of the window */
+#sk-bar{position:fixed;left:0;right:0;bottom:0;z-index:1030;display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .7rem;padding:.35rem 1rem;background:var(--site-surface);border-top:1px solid var(--site-border);box-shadow:0 -2px 8px rgba(0,0,0,.08);font-size:.8rem}
+#sk-bar .btn{font-family:var(--font-mono);font-size:.75rem;padding:.1rem .45rem}
+#sk-bar .sk-bl{font-family:var(--font-mono);font-size:.72rem;color:var(--site-ink-2)}
+#sk-bar input[type=range]{width:6rem;vertical-align:middle;accent-color:var(--site-accent-dk)}
+#sk-bar .sk-tgt{flex:1 1 12rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.sk-has-bar{padding-bottom:4.5rem}
+.sk-kbd[hidden]{display:none}
+.sk-kbd{flex-basis:100%;display:flex;height:80px;position:relative;user-select:none;touch-action:none;max-width:760px}
+.sk-key{flex:1;border:1px solid var(--site-border);background:#fff;border-radius:0 0 4px 4px;font-size:.6rem;color:#666;display:flex;align-items:flex-end;justify-content:center;padding:0 0 2px}
+.sk-key.sk-blk{background:#222;flex:.7;height:60%;margin:0 -1.1%;z-index:1;border-color:#000}
+.sk-key.sk-down{background:var(--site-accent)}
+</style>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script src="/apps/shared/lessons/synth-kit.js?v=4"></script>
+```

@@ -31,7 +31,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
 
     // ---- Chord Entry: a take of short detached notes; the panel re-reads it and puts the staccato bars in ----
     await b.goto(B + "/tools/chord-entry.html"); await b.sleep(1200);
-    await ev(`document.getElementById("ce-sound").checked = false; 0`); await set("ce-tempo", "160"); await set("ce-mode", "melody"); await set("ce-mwith", "click"); await set("ce-mbars", "2"); await set("ce-mfeel", "straight");
+    await ev(`document.getElementById("ce-sound").checked = false; document.getElementById("ce-type").checked = true; 0`); await set("ce-tempo", "160"); await set("ce-mode", "melody"); await set("ce-mwith", "click"); await set("ce-mbars", "2"); await set("ce-mfeel", "straight"); await set("ce-mdet", "rest");      // (staccato is the default: start from note and rest so it can be suggested)
     assert.strictEqual(await ev(`document.getElementById("ce-dwim").hidden`), true, "no panel before there is a melody");
     await click("ce-mrec"); await until(() => ev(`!!__entry.take()`), 5000, "the take starts");
     const notes = [60, 62, 64, 65, 67, 69, 71, 72].map((m, i) => [i, m]);

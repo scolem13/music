@@ -1,0 +1,167 @@
+---
+title: "Jazz Singing: Swing, Scat and the Changes"
+toc: true
+toc-depth: 2
+---
+
+A jazz singer is part of the band. The tone is conversational, the rhythm swings, and the melody is something to reshape rather than repeat. This lesson moves from tone and swing to scat, blue notes, singing the chords, and the back-phrasing of a ballad.
+
+**How to use the page.** Each exercise has a staff and a ▶ button. Choose **Your voice** once and every exercise moves into your range; men read treble-clef notes an octave lower. The playback is straight, but swing the eighth notes when you sing (see the next section). Click a heading to fold a section away.
+
+::: {.vx-care}
+**Look after your voice.** Warm up first. Stop if anything hurts or feels tight, and rest a hoarse voice. Jazz rarely needs loud singing, so let the microphone and the band do the work.
+:::
+
+## Tone: talk the tune
+
+Jazz singers from Billie Holiday to Shirley Horn sound like they are telling you something. Keep the tone close to your speaking voice, with clear words.
+
+**Vibrato** is a natural, regular wobble in a held note's pitch. Use it as a colour, not a constant. A common habit is to start a long note straight and let the vibrato bloom near the end.
+
+Sing the note below, straight for two beats and then letting it relax into vibrato.
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"_straight"G2 "_vibrato"G2- | G4 |]
+w: Ooh
+</script></div>
+
+## Swing eighths
+
+In swing, a pair of eighth notes is played long–short, roughly like the first and last notes of a triplet: "doo-ba doo-ba". Accent the off-beats (the "and"s) a little, and let some notes almost disappear. Those are **ghost notes**, shown in parentheses in the syllables under the staff.
+
+The playback here is straight; sing it swung. For a swung band to sing with, try [Reading swing](reading-swing.qmd) or the [Backing Track](../tools/backing-track.qmd) on a swing style.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+Q:1/4=120
+"C6"E G A G E G A c | "Dm7"d c A G F E D2 | "G7"B, D F A G F D B, | "C6"C8 |]
+w: doo ba doo ba (ba) doo ba dat doo ba doo ba (ba) doo dat ba doo ba doo ba doo ba dat doo
+</script></div>
+
+::: {.vx-tip}
+Tap your foot on beats 2 and 4, not 1 and 3. That is where the drummer's hi-hat closes in a swing feel, and it puts your body in the groove.
+:::
+
+## Scat syllables
+
+**Scat** is improvising with syllables instead of words. The syllables work like articulation on a horn:
+
+- **"doo"** for a smooth, legato note.
+- **"ba" and "da"** for a note with an attack.
+- **"dat" and "dot"** for a short note at the end of a phrase.
+- **"bee", "bop", "doo-dle"** for quick runs.
+
+Start by copying a horn line. Sing this phrase with the syllables written under it. Then make up your own syllables on the same notes.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+z G A c d c A G | E2 D C- C2 z2 | c d e g a g e c | d2 c A- A2 z2 |]
+w: doo-dle-ee doo-dle-ee dat doo-ba doo-dat ba doo-dle-ee doo-dle-ee dat doo-ba doo-dat
+</script></div>
+
+## Blue notes and the blues scale
+
+The **blues scale** adds the "blue notes" to a minor pentatonic: in C, that's C, E♭, F, F♯ (the ♭5), G and B♭. The ♭3 and ♭7 sung over major chords give blues and jazz their bite. Slide into them, and bend them slightly sharp.
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+C _E F ^F G _B c2 | c _B G ^F F _E C2 |]
+w: doo ba doo ba doo ba doo doo ba doo ba doo ba doo
+</script></div>
+
+**Practice:** sing the scale over a 12-bar blues in C with the [Backing Track](../tools/backing-track.qmd), then improvise a two-bar phrase using only C, E♭, F and G.
+
+## Singing the changes: arpeggios
+
+Improvisers outline the chords as they go by. Sing each chord's tones from the root up: 1, 3, 5, 7. Here is a ii–V–I in C, the most common progression in jazz.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"Dm7"D F A c | "G7"B, D F G | "Cmaj7"C E G B | c4 |]
+w: 1 3 5 7 3 5 7 1 1 3 5 7 1
+</script></div>
+
+Then sing them going down, from the 7th of each chord, and you'll see how the notes join up.
+
+## Guide tones: the line inside the changes
+
+The 3rd and 7th of each chord are its **guide tones**. Sung in a row they make a smooth line that moves by a half step or not at all, and it outlines the harmony with only two notes per chord. [Guide tones](guide-tones.qmd) covers the idea in depth.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+"Dm7"c F | "G7"B F | "Cmaj7"B E | "Cmaj7"E2 |]
+w: 7 3 3 7 7 3 3
+</script></div>
+
+**Practice:** sing the guide tones while the Backing Track plays a ii–V–I. Then add one passing note between each pair.
+
+## Back-phrasing a ballad
+
+On a ballad, jazz singers float the words over the beat. They start a phrase late and then catch up, stretch one word, and rush the next. This is **back-phrasing**. The band keeps strict time; the singer's line is free on top of it.
+
+Here is a phrase written plainly, then back-phrased, with each entry a beat or more late and some notes pulled together.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+T:Written
+E F G2 | A G E2 | D2 C2 | z4 |]
+w: Some-one to watch o-ver me soft-ly
+</script></div>
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+T:Back-phrased
+z4 z E F G- | G2 A G E4- | E2 D2- D C3 | z8 |]
+w: Some-one to watch o-ver me soft-ly
+</script></div>
+
+(The words are a stand-in to sing on, not a real tune.)
+
+**Practice:** sing a ballad you know with a slow backing track. Say the words in rhythm first, as speech, then sing them with the same freedom.
+
+## Trading fours
+
+In a jam the soloists **trade fours**: each takes four bars in turn, often answering what the last one played. Practise call and response: play the call, then sing a four-bar answer that starts with the same rhythm and ends somewhere new.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+T:Call
+"C7"z G _B c- c2 _B G | "F7"A2 F2 z4 | "C7"z G _B c d c _B G | "C7"C4 z4 |]
+w: doo ba doo dat doo-ba dat doo ba doo ba doo-ba doo dat
+</script></div>
+
+## Where to go next
+
+- [Pop singing](voice-pop.qmd): mix, belt and runs.
+- [Classical singing](voice-classical.qmd): breath, pure vowels and legato.
+- [Improvising on a blues](blues-improv.qmd): the same ideas for any instrument.
+
+{{< include _voice-kit.qmd >}}

@@ -42,9 +42,9 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await ev(`${cell("S", 7)}.classList.contains("ge-ghost")`), true);
     await click("S", 9); assert.strictEqual(await lane("S"), "----O--g-g--O---", "the ghost is now the snare row's mark");
     assert(/"<\(""\>\)"|\(/.test(await ev(`document.querySelector(".ge-staff svg").textContent`)), "parentheses on the staff");
-    // a cymbal with no sample says so
+    // every mark has a sound now
     await ev(`${cell("H", 0)}.dispatchEvent(new MouseEvent("contextmenu", { bubbles: true, cancelable: true }))`);
-    assert(/Cowbell \(no sound yet\)/.test(await ev(`document.querySelector(".ge-pop").textContent`))); assert(!/Ride cymbal \(no sound/.test(await ev(`document.querySelector(".ge-pop").textContent`)));
+    assert(/Cowbell/.test(await ev(`document.querySelector(".ge-pop").textContent`))); assert(!/no sound/.test(await ev(`document.querySelector(".ge-pop").textContent`)));
     await ev(`Array.prototype.filter.call(document.querySelectorAll(".ge-pop-item"), function (x){ return /^crCrash/.test(x.textContent); })[0].click()`);
     assert.strictEqual((await lane("H"))[0], "c");
     // ---- tempo, swing, click, title
@@ -106,8 +106,22 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await ev(`__kit.slice(${mark}).filter(function (k){ return k[0] === "snare"; }).length`), 0, "a muted row is not played"); assert(/S=\|----O/.test(await text()), "and is still written");
     await ev(`document.querySelector(".ge-play").click()`); assert.strictEqual(await ev(`__drumset.isPlaying()`), false);
     assert.strictEqual(await ev(`document.querySelectorAll(".ge-now").length`), 0); await clean("playing");
+    const saved = await ev(`location.search`);                                                    // (for the reload below)
+    // ---- the pieces that were missing, and the ornaments, are played and their samples load
+    await open("?TimeSig=4/4&Div=8&Tempo=100&H=|m-s-n-N-|&S=|f-d-b---|&K=|o-------|&T3=|------o-|");
+    await ev(`document.querySelectorAll(".ge-check input")[0].checked = false; __kit.length = 0; document.querySelector(".ge-play").click(); 0`);
+    await until(`__kit.filter(function (k){ return k[0] === "kick"; }).length > 2`, 15000, "the groove is played two times and more");
+    const k2 = JSON.parse(await ev(`JSON.stringify(__kit)`)); await ev(`document.querySelector(".ge-play").click()`);
+    ["cowbell", "stacker", "click", "clickHi", "tom3"].forEach(p => assert(k2.some(k => k[0] === p), p + " is played"));
+    const kk = k2.filter(k => k[0] === "kick"); assert(kk.length >= 2, "two bars");
+    const t0 = kk[1][2], sn2 = k2.filter(k => k[0] === "snare" && k[2] > t0 - 0.2 && k[2] < t0 + 2.3).map(k => Math.round((k[2] - t0) * 1000));   // the second time round (the first has no bar before it for a grace note to sit in)
+    assert(sn2.filter(t => t < 0 && t > -40).length === 1 && sn2.some(t => t >= 0 && t < 5), "a flam: a grace note just before the main one: " + sn2);
+    assert.strictEqual(sn2.filter(t => t > 500 && t < 605).length, 3, "a drag: two before the beat and the beat: " + sn2.join());
+    assert(sn2.filter(t => t >= 1195 && t < 1500).length >= 8, "a buzz: a run of bounces: " + sn2);
+    assert.deepStrictEqual(b.failed.filter(f => /percussion/.test(f)), [], "every percussion sample loads");
+    await clean("new pieces");
     // ---- the address is the save file: this groove again from its address; a GrooveScribe link; the band's grooves
-    const saved = await ev(`location.search`); await open(saved);
+    await open(saved);
     assert.strictEqual(await lane("S"), "----O--g-g--O---"); assert.strictEqual(await lane("Cg"), "------------O-O-"); assert.strictEqual(await ev(`!!${cell("T4", 0)} && !!${cell("Cg", 0)}`), true, "rows in use are shown");
     assert.strictEqual(await ev(`${field("Title")}.querySelector("input").value`), "My beat"); assert.strictEqual(await ev(`${field("Tempo")}.querySelector("input").value`), "132");
     await open("?TimeSig=4/4&Div=12&Title=Purdie%20Shuffle&Swing=0&Tempo=120&measures=1&H=|x-xx-xx-xx-x|&S=|-g--g-Og--g-|&K=|o----o-----o|");

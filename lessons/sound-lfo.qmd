@@ -1,0 +1,57 @@
+---
+title: "Sound 5: LFOs"
+toc: true
+toc-depth: 2
+---
+
+An **LFO**, or **low-frequency oscillator**, is an oscillator too slow to hear as a pitch,
+typically between a tenth of a beat and twenty times a second. Instead of being listened to, it
+*moves a control*: the pitch, the volume, a filter, the stereo position. Almost every effect that
+"moves" (vibrato, tremolo, wah, chorus, phaser, PWM) is an LFO turning a knob for you.
+
+**How to use the page.** Press ▶ or play the keys. The strip above the scope draws the LFO itself
+over the last two seconds; the red dot is where it is now.
+
+## What an LFO can move
+
+<div class="sk" data-w="lfo"></div>
+
+Leave the shape on **Sine** and try each target with **Rate** about 5 Hz:
+
+- **Pitch** gives **vibrato**: the note bends slightly sharp and flat. Singers and string players
+  use 5 to 7 cycles a second. Too deep and it sounds seasick; too fast and it sounds nervous.
+- **Volume** gives **tremolo**: the note gets louder and softer. The "tremolo" on a guitar amp is
+  this, and so is a vibraphone with its motor on.
+- **Filter cutoff** gives an automatic **wah**. Slow it right down (0.2 Hz) for a slowly opening and
+  closing sound; speed it up for a "wobble" bass.
+- **Pan** moves the sound between your left and right ear (**auto-pan**). Use headphones.
+
+**Depth** is how far the LFO moves the control, and **Rate** is how fast. Those two plus the shape
+are all an LFO has.
+
+## Shapes
+
+- **Sine** and **triangle**: smooth back-and-forth.
+- **Square**: jumps between two values. On pitch it's a trill; on volume, a chopped "gate".
+- **Sawtooth (ramp)**: rises slowly, then drops. On pitch it sounds like a siren.
+- **Random (sample & hold)**: jumps to a new random value every cycle. On the filter it's the
+  bubbling "computer" sound of 1970s science fiction.
+
+## When an LFO gets fast enough to hear
+
+Set the target to **Volume**, the shape to **Sine** and slowly push the rate past 20 Hz. The
+tremolo stops sounding like a pulse and becomes a rough, buzzy tone, and new pitches appear on the
+spectrum on both sides of the note. That is **amplitude modulation**. Do the same with **Pitch** and
+past about 30 Hz the vibrato becomes a metallic, bell-like timbre: that is **frequency modulation**,
+the subject of [Sound 7](sound-fm.qmd). An LFO and an audible oscillator are the same thing at
+different speeds.
+
+## LFOs elsewhere on these pages
+
+- The **PWM** in [Sound 2](sound-waveforms.qmd) is an LFO on the pulse width.
+- **Chorus** ([Sound 12](sound-chorus.qmd)) is an LFO on a very short delay.
+- A **phaser** ([Sound 13](sound-phaser.qmd)) is an LFO sweeping a chain of filters.
+- The **Leslie** speaker in the [organ lesson](arrange-organ.qmd) is a mechanical LFO: a spinning
+  horn moves pitch, volume and direction all at once.
+
+{{< include _synth-kit.qmd >}}

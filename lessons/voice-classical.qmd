@@ -1,0 +1,162 @@
+---
+title: "Classical Singing: Breath, Pure Vowels and Legato"
+toc: true
+toc-depth: 2
+---
+
+Classical singing fills a room without a microphone. It does that through resonance, not force: a steady breath, tall and pure vowels, and a seamless legato line that carries from the bottom of the voice to the top. Most of its training comes from the Italian *bel canto* ("beautiful singing") tradition. This lesson follows that tradition's order: breath, onset, vowels, registers, agility and the long note.
+
+**How to use the page.** Each exercise has a staff and a ▶ button. Choose **Your voice** once and every exercise moves into your range; tenors and basses read treble-clef notes an octave lower. *Step up* exercises climb a half step at a time, as in a teacher's warm-up. Click a heading to fold a section away.
+
+::: {.vx-care}
+**Look after your voice.** Warm up before singing repertoire. Work in short sessions (20–30 minutes at first) and stop if anything hurts or feels tight. A classical voice develops over years, and a teacher who can hear you in person is the best guide.
+:::
+
+## Posture and the appoggio breath
+
+Stand tall but not stiff: feet hip-width apart, weight forward slightly, sternum comfortably high, shoulders down, head balanced. Breathe in low and wide, so the lower ribs, belly and back expand.
+
+As you sing, keep the ribs open and let the belly come in slowly. Singers call this balance **appoggio** ("leaning"): the breath is supported rather than pushed out, so the tone stays steady.
+
+**Exercise:** breathe in for 4 counts, then hiss out on "sss" for 12 counts, keeping the ribs wide. Next time, go for 16 counts, then 20.
+
+## Onset and legato
+
+Begin each phrase with a clean, balanced onset: air and tone together, with no click and no rush of air first. Then join the notes so the sound never breaks between them. That's **legato**, the basis of classical singing.
+
+Sing this five-note scale on a single "ah", sliding nothing and dropping nothing between notes.
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+(C D E F | G F E D | C4) |]
+w: Ah _ _ _ _ _ _ _ _
+</script></div>
+
+## Pure vowels: i e a o u
+
+Italian has five pure vowels: [i] as in *si*, [e] as in *che*, [a] as in *la*, [o] as in *no*, [u] as in *tu*. Unlike English vowels, they don't glide into a second sound: Italian *no* is [nɔ], never "no-oo". Classical singers learn to sing every language on these clean vowel shapes.
+
+Sing them on one pitch, keeping the same space at the back of the mouth as the lips change shape.
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+G G | G G | G2 |]
+w: mi me ma mo mu
+</script></div>
+
+Then sing them on a scale.
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C D E F | G2 G2 | F E D C |]
+w: mi e a o u a mi e a o u
+</script></div>
+
+The [IPA chart](../tools/ipa-chart.qmd) shows these and the other sounds singers meet in Italian, German, French and English.
+
+## Resonance and the tall vowel
+
+A classical tone rings because the throat stays open and the soft palate is lifted. That's the feeling at the start of a yawn, or of a pleasant surprise. Singers call the ring **squillo**, and the warmth that comes with it **chiaroscuro** (light and dark).
+
+**Exercise:** sing an easy "ng" (as in *sing*) on a middle note, then open slowly to "ah" without moving the pitch. Keep the buzz you felt in the "ng".
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+E2 | E2 |]
+w: ng ah
+</script></div>
+
+## Registers and the passaggio
+
+Every voice has a lower register (**chest**) and a higher one (**head**), with a transition zone called the **passaggio**. Classical training aims for one even sound across it. To do that, singers *modify* vowels slightly as they go up: "ah" darkens a little toward "aw", and "ee" toward "ih". That keeps the throat open and the tone even.
+
+The arpeggio below climbs through the voice. Step it up a half step at a time, and as you near the top of your comfortable range, round the vowel and lighten the sound rather than push.
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C E G c | G E C2 |]
+w: A _ _ _ _ _ _
+</script></div>
+
+::: {.vx-tip}
+If the voice cracks around the passaggio, that's normal at first. Sing the same arpeggio more quietly, on "oo", where the voice blends most easily, then return to "ah".
+:::
+
+## Agility: the nine-note scale
+
+Quick runs (*coloratura*) need a light, flexible voice with the breath still steady. This scale of nine notes up and down is a classic warm-up. Sing it slowly and clean at first, keeping each note distinct, never "ha-ha-ha".
+
+<div class="abc-ex" data-loop="up"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+Q:1/4=72
+(C D E F G A B c | d c B A G F E D | C4) z4 |]
+w: Ah
+</script></div>
+
+## The long note: messa di voce
+
+*Messa di voce* means "placing the voice": one long note that grows from soft to loud and back to soft, with the pitch and the vowel unchanged. It's the most demanding exercise in breath control, and a lifelong one.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+!pp!!<(!G4 | G2 !f!G2!<)! | !>(!G4 | G4!>)!!pp! |]
+w: Ah
+</script></div>
+
+**Practice:** start on a comfortable middle note, and make the swell only as big as you can keep steady.
+
+## Vibrato
+
+A trained classical voice has a natural **vibrato**: a regular, even pulse in pitch, about five to seven times a second. It isn't made deliberately. It appears when the breath is steady and the throat is free. If yours wobbles slowly or flutters fast, the cause is usually in breath or tension, and is best fixed with a teacher, not by trying to control the vibrato itself.
+
+## Words: diction in Italian, German and French
+
+Classical singers sing in many languages, and each has its rules:
+
+- **Italian:** pure vowels; double consonants held longer (*nòtte*, "night"); a flipped or rolled R.
+- **German:** long and short vowels clearly different; final consonants crisp; the "ich" sound [ç] and the "ach" sound [x]; ü [y] and ö [ø] with rounded lips.
+- **French:** nasal vowels ([ɑ̃] in *chant*, [ɔ̃] in *mon*); the rounded [y] of *tu*; a smooth line with every syllable even.
+
+The [IPA chart](../tools/ipa-chart.qmd) gives each of these sounds with examples. Singers write IPA under the words of a song to learn its pronunciation before they sing it.
+
+## Reading and solfège
+
+Classical singers read music. [Tonal do re mi](tonal-do-re-mi.qmd) introduces solfège, which names the notes by their place in the key, so a singer can hear a line before singing it. Sing this phrase on solfège.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C D E C | E F G2 | G A G F | E D C2 |]
+w: do re mi do mi fa sol sol la sol fa mi re do
+</script></div>
+
+## Where to go next
+
+- [Pop singing](voice-pop.qmd): speech-level singing, mix, belt and runs.
+- [Jazz singing](voice-jazz.qmd): swing, scat and the changes.
+- The [IPA chart](../tools/ipa-chart.qmd) for diction in other languages.
+
+{{< include _voice-kit.qmd >}}

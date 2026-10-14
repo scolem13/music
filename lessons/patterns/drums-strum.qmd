@@ -1,0 +1,64 @@
+---
+title: "Drum groove: Pop backbeat"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Pop backbeat**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+A lighter backbeat for a strummed song: kick on 1, the and of 2 and 3, with the Dotted bass line. Fills are a snare note or two.
+
+It belongs in *Acoustic strum*, *Straight-eighth rock* and *Piano ballad*. Here it is in the acoustic strum style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Pop backbeat","opts":{"groove":"strum"}}]'></div>
+
+## Step 1: Hi-hat: eighth notes
+
+Start with something simpler. Closed hi-hat on every eighth note, all of one weight, kick on 1 and 3, snare on 2 and 4. The basic rock beat. In 3/4: six eighths, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hheighths.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: eighth notes","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 2: Pop backbeat, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** A lighter backbeat: kick on 1, the and of 2 and 3 (with the dotted bass line), snare on 2 and 4. Fills are a snare note or two.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Pop backbeat","opts":{"groove":"strum"}},{"label":"Hi-hat: eighth notes (the step before)","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 96 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Pop backbeat","opts":{"groove":"strum"}}]'></div>
+
+## In other styles
+
+The same drum groove in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Pop backbeat","opts":{"groove":"strum"}}]'></div>
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Pop backbeat","opts":{"groove":"strum"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: eighth notes](drums-hheighths.qmd).
+- **Leads to:** [Ballad](drums-ballad.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Dotted (1, and of 2, 3)](bass-dotted.qmd) (bass line), [Song for My Father: root, fifth, octave](bass-songfather.qmd) (bass line), [Ballad](drums-ballad.qmd) (drum groove).
+- **Plays with, in acoustic strum:** [Dotted (1, and of 2, 3)](bass-dotted.qmd) (bass line), [Strum: D, D-U, U-D-U](chords-strum-camp.qmd) (comping rhythm).
+- **Other drum grooves in the Folk, rock and pop group:** [Bo Diddley beat](drums-bodiddley.qmd), [Waltz in one](drums-waltz.qmd), [Two-beat](drums-boomchick.qmd), [Rock backbeat](drums-rock.qmd), [Ballad](drums-ballad.qmd), [Four on the floor](drums-dance.qmd), [Motown](drums-motown.qmd), [Train beat](drums-train.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

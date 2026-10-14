@@ -1,0 +1,175 @@
+---
+title: "Piano Chord Voicings: From Pop Triads Toward Jazz"
+toc: true
+toc-depth: 2
+---
+
+This lesson is for a pianist who plays pop and rock chords and hasn't yet met jazz voicings. Its thirteen steps each change one thing from the step before: how many notes, which chord tones, or where they sit. [Piano voicings by hand](chord-shapes-piano-hand.qmd) has the same chords in the order the hands find them easy.
+
+**How to read the diagrams.** Each keyboard shows one voicing. The dots carry the chord tones, counted up from the root: R, 3, 5, ♭7, 9 and so on. The root is a filled square. The staff underneath puts the right hand on the treble clef and the left hand on the bass clef. Press ▶ to hear a voicing.
+
+Fingers are numbered 1 (thumb) to 5 (little finger), listed from the lowest note up. Middle C is C4.
+
+Each step has an ID, such as **P-A3**, that other lessons use to point back here. The chords stay the same throughout: C, Am, F and G for pop, and Dm7, G7, Cmaj7 for the ii–V–I. That way a step here can be played with the same notes as its partner in the physical order.
+
+## P-A1 Root-position triads over a bass root {#p-a1}
+
+A triad is root, 3rd and 5th. The 3rd decides major or minor, and the 5th gives weight. The left hand names the chord with its root, and the right hand fills it in. This is the sound of most pop piano, and every later step rearranges these notes or adds to them.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C3 / C4 E4 G4; Am = A2 / A4 C5 E5; F = F2 / F4 A4 C5; G = G2 / G4 B4 D5"></div>
+
+**Fingering:** LH 5 on the root. RH 1-3-5.
+
+**Practice:** play the four chords on a steady beat. Notice that the right hand jumps every time. The next step gets rid of the jumps.
+
+**Unlocks:** Piano ballad with *Long notes* or *Quarter-note chords*.
+
+## P-A2 Inversions and smooth voice leading {#p-a2}
+
+Inverting a triad moves its lowest note to the top, so the hand can stay in one place. Here the note C stays put through the first three chords: it is the root of C, the 3rd of Am and the 5th of F. The other notes move by a step at most. This is **voice leading**: each note travels as little as it can, and the chords sound connected. The bass root still names the chord.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C3 / C4 E4 G4; Am = A2 / C4 E4 A4; F = F2 / C4 F4 A4; G = G2 / B3 D4 G4"></div>
+
+**Fingering:** RH root position 1-3-5, first inversion (3rd at the bottom) 1-2-5, second inversion (5th at the bottom) 1-3-5.
+
+**Practice:** loop the four chords with your eyes closed after the first time round. The hand moves no more than a finger's width. Then play the loop in F and in G.
+
+**Unlocks:** *Ballad: rocking*, *Ballad: half-broken*, *Arpeggio up and down*.
+
+## P-A3 Sus and add9 {#p-a3}
+
+Sus2 and sus4 replace the 3rd with the 2nd or the 4th. The chord is then neither major nor minor, and it wants to settle. Add9 keeps the 3rd and adds the 9th, the 2nd an octave up, for the shimmering open sound of pop ballads. Put the 9th above the 3rd, not right next to the root, or it rubs.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Csus2 = C3 / C4 D4 G4; Csus4 = C3 / C4 F4 G4; Cadd9 = C3 / E4 G4 D5; Gsus4 = G2 / G4 C5 D5; G = G2 / G4 B4 D5"></div>
+
+**Fingering:** sus2 1-2-5; sus4 1-4-5; Cadd9 (3–5–9) 1-2-5.
+
+**Practice:** play Gsus4 and then G. One finger moves, as C falls to B. Then go from C to Cadd9.
+
+**Unlocks:** Piano ballad, *Arpeggio low and high*; the Cadd9 bars of [pop changes for piano](pop-changes-piano.qmd).
+
+## P-A4 Slash chords: a moving bass under still triads {#p-a4}
+
+The two hands now do separate jobs. The left hand walks the bass line C, B, A, G, F, F♯, G, and the right hand holds triads that barely move. A triad over a bass note other than its root makes a new chord with a new name. F over G, the last chord here, is the first jazz-flavoured sound in the sequence: G with ♭7, 9 and 11. P-A13 comes back to the idea.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C3 / C4 E4 G4; G/B = B2 / B3 D4 G4; Am = A2 / C4 E4 A4; C/G = G2 / C4 E4 G4; F = F2 / C4 F4 A4; F#dim = F#2 / C4 F#4 A4; G = G2 / B3 D4 G4; G11 | F/G = G2 / F4 A4 C5"></div>
+
+**Practice:** play only the bass line, then only the right hand, then both together, slowly. Keep the right hand soft and let the bass line sing.
+
+**Unlocks:** the passing chords in [pop changes](pop-changes.qmd); Motown / soul.
+
+## P-A5 Seventh chords in close position {#p-a5}
+
+A seventh chord stacks one more 3rd on the triad, and the kind of 7th sets the colour. A major 7th (B in Cmaj7) is bright and floating. A ♭7 (B♭ in C7) is bluesy and restless. In a minor chord the ♭7 is soft. A dominant 7th has a tritone between its 3rd and its 7th (B and F in G7), which wants to resolve.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Cmaj7 = C3 / C4 E4 G4 B4; C7 = C3 / C4 E4 G4 Bb4; Am7 = A2 / A3 C4 E4 G4; Dm7 = D3 / D4 F4 A4 C5; G7 = G2 / G4 B4 D5 F5"></div>
+
+**Fingering:** RH 1-2-3-5.
+
+**Practice:** play C, Cmaj7, C7 and Cm7, changing one finger at a time, and put each colour into words.
+
+**Unlocks:** Medium swing with *Quarter-note chords*; the 7th chords in [blues for piano](blues-piano.qmd).
+
+## P-A6 Inverted 7ths: the ii–V–I {#p-a6}
+
+Choose each inversion so that the hand barely moves. From Dm7 to G7, F and D stay, A falls to G and C falls to B. From G7 to Cmaj7, F falls to E, D falls to C, and G and B stay. Each time, the 7th of one chord falls a step to the 3rd of the next: C to B, then F to E. That falling 7th is the engine of jazz harmony.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm7 = D3 / F4 A4 C5 D5; G7 = G2 / F4 G4 B4 D5; Cmaj7 = C3 / E4 G4 B4 C5"></div>
+
+**Fingering:** RH 1-2-3-5 for each.
+
+**Practice:** loop the three chords in time and sing the top line, D–D–C. Then move to F (Gm7, C7, Fmaj7) and B♭.
+
+**Unlocks:** Medium swing, *Charleston*, and ii–V–I turnarounds.
+
+## P-A7 Guide tones: 3rd and 7th {#p-a7}
+
+The 3rd and the 7th are the only tones that tell major from minor and dominant from major 7th, so two notes can stand for the whole chord. The root belongs to the bass, and the 5th adds little. Follow the lines: C falls to B while F holds, then F falls to E while B holds. [Guide tones](guide-tones.qmd) goes further.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm7 = D3 / C4 F4; G7 = G2 / B3 F4; Cmaj7 = C3 / B3 E4"></div>
+
+**Fingering:** RH 1-3 for a 4th; 1-4 for the tritone.
+
+**Practice:** play the ii–V–I in guide tones, then sing each line. Add a top note of your own, any chord tone.
+
+**Unlocks:** *Charleston* and *Reverse Charleston* without clutter; [blues for piano](blues-piano.qmd).
+
+## P-A8 Shells: 1–3–7 and 1–7–3 {#p-a8}
+
+A shell is root, 3rd and 7th in the left hand alone, which leaves the right hand free for a melody. In 1–3–7 order the shape spans a 7th and sits comfortably under one hand. In 1–7–3 order the 3rd is on top, a 10th above the root. That sounds more open, and it is the classic jazz left hand, but most hands need the right thumb to take the 3rd. The root is in the shell because, with no bass player, someone has to play it.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm7 = D3 F3 C4 / -; G7 = G2 B2 F3 / -; Cmaj7 = C3 E3 B3 / -; G7 = G2 F3 / B3; Cmaj7 = C3 B3 / E4"></div>
+
+**Fingering:** LH 5-3-1 for 1–3–7. For 1–7–3, LH 5-1 on root and 7th, and RH 1 on the 3rd.
+
+**Practice:** play the ii–V–I in the left hand only, then add a melody in the right. Alternate 1–3–7 and 1–7–3 (Dm7 1–3–7, G7 1–7–3, Cmaj7 1–3–7) so the hand hardly moves.
+
+**Unlocks:** solo piano and comping without a bass; [blues for piano](blues-piano.qmd).
+
+## P-A9 Rootless voicings, A and B {#p-a9}
+
+With a bass player covering the root, the left hand plays the 3rd, the 7th and two colour tones: the 9th, plus the 13th on a dominant. Form A has the 3rd at the bottom and form B has the 7th at the bottom. Alternate them and each chord is only a step from the last. This has been the left-hand sound of jazz piano since the 1950s, and the site's jazz styles use it. The Chord Library calls these *Rootless A/B*.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm9 | Dm7 (A) = F3 A3 C4 E4 / -; G13 | G7 (B) = F3 A3 B3 E4 / -; Cmaj9 | Cmaj7 (A) = E3 G3 B3 D4 / -; Dm9 | Dm7 (B) = C4 E4 F4 A4 / -; G13 | G7 (A) = B3 E4 F4 A4 / -; Cmaj9 | Cmaj7 (B) = B3 D4 E4 G4 / -"></div>
+
+**Fingering:** LH 5-3-2-1 for A forms; 5-3-2-1 or 5-4-2-1 for B forms.
+
+**Practice:** play the first chain (A–B–A) on a metronome, with the bass line D, G, C in the right hand. Then learn the chain that starts on B.
+
+**Unlocks:** Jazz ballad, Medium swing with *Charleston*, Bossa nova, and Boogaloo.
+
+## P-A10 Drop 2 {#p-a10}
+
+Take a four-note chord in close position and drop its second-highest note an octave. Dm7 in close position is D–F–A–C. The second note from the top is A, which drops to A3. The chord now spreads over an octave and a half, with the root back in the middle, and it sounds fuller and more orchestral. Put a melody note on top of a close chord, drop the second voice, and you have harmonised the melody.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm7 = A3 D4 / F4 C5; G7 = G3 D4 / F4 B4; Cmaj7 = G3 C4 / E4 B4"></div>
+
+**Fingering:** LH 2-1, RH 1-4 or 1-5.
+
+**Practice:** take the first phrase of a melody you know. Play each melody note as the top of a close chord, then drop the second voice. Drop 3, where the third voice from the top drops, is the same idea one voice lower.
+
+**Unlocks:** block-chord melody (George Shearing, Bill Evans), and *Long notes* under a singer.
+
+## P-A11 Spread voicings: low 5th, upper triad {#p-a11}
+
+An open 5th low in the left hand is the cleanest bass a piano has, because it stays out of the muddy middle register. Above it, the right hand plays a triad built from the 3rd, 7th and 9th. For Cmaj9 that is E–B–D, a little like an Em triad over C, which is why a rich chord can feel simple to play. The site has no voicing style for spread voicings yet.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm9 = D2 A2 / F4 C5 E5; G13 = G2 D3 / F4 B4 E5; Cmaj9 = C2 G2 / E4 B4 D5"></div>
+
+**Fingering:** LH 5-1, RH 1-3-5 (or 1-4-5 where the lower gap is wide).
+
+**Practice:** hold the low 5th with the pedal, then place the right hand above it. Learn the low 5th as one shape.
+
+**Unlocks:** *Arpeggio low and high*, *Ballad: syncopated*, Jazz ballad, and gospel and singer-songwriter ballads.
+
+## P-A12 Quartal voicings {#p-a12}
+
+Stacking 4ths leaves no 3rd in the chord, so it is neither major nor minor. It sounds open, modern and modal. The best-known example is the "So What" voicing from Miles Davis's *Kind of Blue* (1959): three 4ths and a major 3rd on top. Every interval in a stack of 4ths is the same, so the shape can slide up and down and keep its sound. The site has no quartal voicing style yet.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm13 | So What = E3 A3 D4 / G4 B4; Dm11 | D quartal = D2 / D4 G4 C5; G7sus4 = G2 / D4 G4 C5; G7 = G2 / D4 G4 B4"></div>
+
+**Fingering:** LH 5-2-1 with RH 1-3 for the So What chord; RH 1-3-5 for a three-note stack.
+
+**Practice:** play the So What chord, then the same shape a half step higher, and back. Then slide a three-note stack up the white keys from D.
+
+**Unlocks:** modal jazz and Bossa nova.
+
+## P-A13 Upper-structure triads {#p-a13}
+
+The left hand plays a shell that fixes the chord's name and type. The right hand plays a plain major triad built from the extensions above it. D major over a C shell gives Cmaj7 with a 9th, a ♯11 and a 13th. A major over a G7 shell is the same colour on a dominant. This is P-A4's idea again: a triad over a different bass note. The site has no voicing style for upper structures yet.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="G13#11 | G7 + A = G2 B2 F3 / A4 C#5 E5; G7alt | G7 + Db = G2 B2 F3 / Db5 F5 Ab5; Cmaj9#11 | Cmaj7 + D = C3 E3 B3 / D4 F#4 A4"></div>
+
+**Fingering:** LH 5-3-1, RH 1-3-5.
+
+**Practice:** play G7 as a shell, then place the A triad on top. Then try the D♭ triad and hear how strongly it pulls to C.
+
+**Unlocks:** ballad endings, tags and [turnarounds](turnarounds.qmd); reharmonising.
+
+## Where to go next
+
+- [Piano voicings by hand](chord-shapes-piano-hand.qmd) has the same chords in physical order.
+- [Guitar chord shapes](chord-shapes-guitar.qmd) has the same ideas on the guitar.
+- The [Chord Library](../tools/chord-library.qmd), set to Keyboard, has every close, shell, rootless and drop voicing of every chord.
+
+{{< include _shape-kit.qmd >}}

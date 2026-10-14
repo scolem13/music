@@ -1,0 +1,55 @@
+{
+ "title": "Pop Changes for Bass: Roots and the Walking Line",
+ "body": "This lesson is for a bass player. The bass is the instrument that plays the lowest note of every chord, so on [the changes of C, Am, F, G](pop-changes.qmd) it is the part that decides which passing chords are heard. Each step has the line in bass clef, a fretboard for it and the chart.\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.\n\n## 1. The roots\n\n**C, Am, F, G.** One note for each chord, the root. The bass-clef staff shows the line and the fretboard shows where to play it, on a four-string bass in the lowest position that has the note.\n\n<div class=\"bl-step\" data-step=\"basic\"></div>\n\n## 2. Extensions\n\n**Cadd9, Am7, Fadd9, Gsus2.** The roots are the same. The extensions are for the chord instruments, so the bass line does not change.\n\n<div class=\"bl-step\" data-step=\"ext\"></div>\n\n## 3. The walking line\n\n**C, G/B | Am, C/G | F, F♯dim | G.** Now the bass is the part that carries the passing chords: C, B, A, G, F, F♯, G. Every note is one step from the last. This is the line to learn.\n\n<div class=\"bl-step\" data-step=\"pass\"></div>\n\n## 4. Leading into the next chord\n\n**C, E7 | Am, C7 | F, D7 | G7.** The bass plays the root of the dominant, which is a fifth above the note that follows. E, then A. C, then F. D, then G.\n\n<div class=\"bl-step\" data-step=\"sec\"></div>\n\n\n## Where to go next\n\n- Play the walking line along with the band at three tempos.\n- Take the line to the key menu and play it in G, D and A.\n- The [blues bass lesson](blues-bass.qmd) goes further with the walk.\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 4,
+  "feels": [
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   },
+   {
+    "id": "motown",
+    "label": "Motown / soul",
+    "tempo": 110
+   },
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   }
+  ],
+  "steps": {
+   "basic": {
+    "bars": "C|Am|F|G",
+    "diagram": "bass",
+    "staff": "bass"
+   },
+   "ext": {
+    "bars": "Cadd9|Am7|Fadd9|Gsus2",
+    "diagram": "bass",
+    "staff": "bass",
+    "vs": "basic"
+   },
+   "pass": {
+    "bars": "C G/B|Am C/G|F F#dim|G",
+    "diagram": "bass",
+    "staff": "bass",
+    "vs": "basic"
+   },
+   "sec": {
+    "bars": "C E7|Am C7|F D7|G7",
+    "diagram": "bass",
+    "staff": "bass",
+    "vs": "pass"
+   }
+  }
+ }
+}

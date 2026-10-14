@@ -1,0 +1,66 @@
+---
+title: "Bass line: Bossa nova"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Bossa nova**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+Root on 1 and fifth on 3, each one set up by an eighth note just before it: the fifth on the and of 2, the next chord's root on the and of 4.
+
+It belongs in *Bossa nova*. Here it is in the bossa nova style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+## Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass-halves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+## Step 2: Root and fifth
+
+The boom of boom-chick: the root on beat 1 and the fifth on beat 3, short, the same every bar. In 3/4 it is one note a bar, root one bar and fifth the next.
+
+This is a pattern of its own: [the lesson on it](bass-alt.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Root and fifth","opts":{"bassFeel":"alt"}}]'></div>
+
+## Step 3: Bossa nova, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root on 1, fifth on 3, and each one set up by an eighth note just before it: the fifth on the and of 2, and on the and of 4 the root of the next bar's chord. The low notes sound like a heartbeat: long, short-long, short.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}},{"label":"Root and fifth (the step before)","opts":{"bassFeel":"alt"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7 D7|Gmaj7 Em7|Am7 D7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Bossa nova","opts":{"bassFeel":"bossa"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Root and fifth](bass-alt.qmd).
+- **Leads to:** [Tumbao](bass-tumbao.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Bossa nova](chords-bossa.qmd) (comping rhythm), [Bossa nova](drums-bossa.qmd) (drum groove).
+- **Plays with, in bossa nova:** [Bossa nova](chords-bossa.qmd) (comping rhythm), [Bossa nova](drums-bossa.qmd) (drum groove).
+- **Other bass lines in the Latin group:** [Tango (habanera)](bass-tango.qmd), [Tumbao](bass-tumbao.qmd), [Cha-cha](bass-chacha.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

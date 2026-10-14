@@ -1,0 +1,77 @@
+---
+title: "Bass line: 3+3+2 (tresillo)"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **3+3+2 (tresillo)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The root on beat 1 and on the and of 2, the fifth on beat 4: eight eighth notes grouped 3+3+2.
+
+It belongs in *Dance pop*, *Straight-eighth rock* and *Reggaeton*. Here it is in the dance pop style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+## Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass-halves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+## Step 2: Dotted (1, and of 2, 3)
+
+The root on beat 1, again on the and of 2 and on beat 3, the same rhythm as the kick drum. Every second bar ends with an eighth note that leads into the next chord.
+
+This is a pattern of its own: [the lesson on it](bass-dotted.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Dotted (1, and of 2, 3)","opts":{"bassFeel":"dotted"}}]'></div>
+
+## Step 3: 3+3+2 (tresillo), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Count eight eighth notes and play on 1, 4 and 7: ONE two three FOUR five six SEVEN eight. That is beat 1, the and of 2 and beat 4. The first two notes are the root, the last the fifth. It is the dotted line with its third note moved later.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}},{"label":"Dotted (1, and of 2, 3) (the step before)","opts":{"bassFeel":"dotted"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="dance" data-chart="Am F|C G|Am F|C G" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+## In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+**Reggaeton**
+
+<div class="ar-demo" data-style="reggaeton" data-chart="Am|F|C|G" data-tempo="92" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"3+3+2 (tresillo)","opts":{"bassFeel":"tresillo"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Dotted (1, and of 2, 3)](bass-dotted.qmd).
+- **The same idea elsewhere in the band:** [3+3+2 (tresillo)](chords-tresillo.qmd) (comping rhythm), [Strum: 3-3-2 accents](chords-strum332.qmd) (comping rhythm), [Ballad: syncopated](chords-ball-sync.qmd) (comping rhythm), [Reggaeton (dembow)](drums-dembow.qmd) (drum groove).
+- **Plays with, in dance pop:** [3+3+2 (tresillo)](chords-tresillo.qmd) (comping rhythm), [Four on the floor](drums-dance.qmd) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass-roots.qmd), [Root and fifth](bass-alt.qmd), [Root and fifth on every beat](bass-polka.qmd), [Root eighths](bass-eighths.qmd), [Dotted (1, and of 2, 3)](bass-dotted.qmd), [Octaves (disco)](bass-octaves.qmd), [Motown: root, fifth, octave](bass-motown.qmd), [12/8 ballad](bass-twelve8.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

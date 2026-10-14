@@ -1,0 +1,124 @@
+---
+title: "Sound 1: The Harmonic Series and Fourier"
+toc: true
+toc-depth: 2
+---
+
+A note played on a real instrument is never one frequency. It is a stack of frequencies, all at
+whole-number multiples of the lowest one. That stack is the **harmonic series**, and it explains
+why a violin and a flute playing the same A sound different, why the octave and the fifth sound
+"pure", and how every synthesizer on the following pages works.
+
+**How to use the page.** Every widget has a ▶ button, a picture of the wave's *shape* (an
+oscilloscope) and a picture of its *spectrum* (how loud each frequency is, low on the left, high on
+the right). The bar at the bottom of the window sets the volume. You can play the widgets from the
+computer keyboard (`a w s e d f t g y h u j k` is one octave, `z` and `x` move it), from the
+on-screen keyboard, or from a MIDI keyboard. Notes go to the widget you clicked last. Click a heading
+to fold a section away. Start with the volume low.
+
+## A string vibrates in pieces
+
+Pluck a string and it swings as a whole, but it also swings in halves, thirds, quarters and so on,
+all at once. Half the length vibrates twice as fast, a third of it three times as fast. If the
+whole string gives 100 Hz, the halves give 200 Hz, the thirds 300 Hz, and so on. The same happens in
+the air column of a trumpet or a clarinet, and in your voice.
+
+Each of those frequencies is a **harmonic**. The first harmonic, the whole string, is the
+**fundamental**, and it's the pitch you name. The others are **overtones**. You don't hear them as
+separate notes. You hear them as the *colour* (the **timbre**) of the one note.
+
+## The series, written out
+
+Here are the first sixteen harmonics written as notes. The number under each note is the harmonic's
+number: harmonic *n* vibrates *n* times as fast as the fundamental. The number above is how far the
+real harmonic is from the piano's version of that note, in **cents** (100 cents = one half step).
+Choose a different fundamental and the whole series is transposed. The pattern of steps never
+changes.
+
+<div class="sk" data-w="series"></div>
+
+Things to notice:
+
+- **The octaves are 1, 2, 4, 8 and 16.** Doubling the frequency always gives an octave.
+- **The gaps shrink as you go up.** Octave, then a fifth (2 to 3), a fourth (3 to 4), a major
+  third (4 to 5), a minor third (5 to 6), and then steps smaller than a minor third. The higher
+  harmonics are close enough to make scales.
+- **Harmonics 4, 5 and 6 are a major triad** (C, E, G over a C fundamental). The major chord is
+  built into every pitched sound.
+- **Harmonic 7 is about a third of a half step flat** of the piano's B♭, harmonic 11 sits almost
+  exactly between F and F♯, and harmonic 13 is well sharp of A♭. Press *Harmonic, then tempered* and
+  listen at those three. Piano tuning (equal temperament) moves every note slightly so that all keys
+  work. The pure intervals are the harmonics.
+- **The 5th harmonic is 14 cents flat** of the piano's major third. Barbershop singers and string
+  quartets lean their major thirds that way, toward the harmonic.
+
+Press *Build the tone* to hear the harmonics enter one at a time, each a little quieter than the one
+before (harmonic *n* at strength 1/*n*). With all sixteen it no longer sounds like a chord. It sounds
+like one buzzy note: a **sawtooth wave**.
+
+## Fourier: every wave is a stack of sine waves
+
+The **sine wave** is the simplest sound there is: one frequency and nothing else. It sounds pure and
+a little dull, like a tuning fork or a whistle.
+
+In 1807 Joseph Fourier showed that **any repeating wave, whatever its shape, can be built by adding
+sine waves at whole-number multiples of its frequency**. Each sine wave has its own strength (and
+it can be upside down). The recipe of strengths is the wave's spectrum. Going from a wave to its
+recipe is the **Fourier transform**; going from the recipe back to the wave is **Fourier synthesis**.
+
+You don't need the maths to use the idea:
+
+- The **shape** of a wave (the oscilloscope) and its **recipe** (the spectrum) are two views of the
+  same sound. Change one and the other changes.
+- **Sharp corners and sudden jumps need lots of high harmonics.** Smooth, rounded shapes need few.
+  Bright sounds have strong high harmonics; dark, mellow sounds don't.
+- The ear mostly hears the **recipe**, not the shape. Flip a harmonic upside down and the shape
+  changes a lot while the sound hardly changes.
+
+The spectrum display under every widget on these pages is a Fourier transform done about sixty
+times a second, by the browser.
+
+## Build waves from harmonics
+
+Each slider is one harmonic. Up is louder; below the middle line it is upside down. The numbers
+under the sliders play that harmonic alone. The drawing shows the harmonics faintly and their sum in
+bold. Press ▶ and move the sliders while it plays.
+
+<div class="sk" data-w="additive"></div>
+
+Try this:
+
+1. Press **Sine**. One harmonic, one frequency. The spectrum shows a single spike.
+2. Press **Sawtooth**: every harmonic, harmonic *n* at strength 1/*n*. Now turn **Harmonics used**
+   down to 1 and slowly back up. Each added harmonic sharpens the ramp. With few harmonics the edge
+   wobbles; the wobble (the **Gibbs effect**) gets narrower but never quite goes away.
+3. Drag the slider for harmonic 2 to zero. The note now sounds hollow, a little like a clarinet.
+4. Press **Organ**. Organ stops add harmonics 1, 2, 3, 4, 8 and so on (see the
+   [organ lesson](arrange-organ.qmd)): the tonebars are an additive synthesizer.
+
+## Square, triangle, sawtooth, pulse
+
+These four shapes are the raw material of almost every synthesizer, because each has a simple,
+recognisable recipe.
+
+| Wave | Harmonics | Strength of harmonic *n* | Sound |
+|---|---|---|---|
+| **Sine** | 1 only | — | Pure, flute-like, no edge |
+| **Sawtooth** | all | 1/*n* | Bright, buzzy, brassy and string-like |
+| **Square** | odd only (1, 3, 5…) | 1/*n* | Hollow, woody, clarinet-like |
+| **Triangle** | odd only | 1/*n*², alternating up and down | Soft, between sine and square |
+| **Pulse** | depends on width | a pulse 1/*k* wide has no harmonics at multiples of *k* | Thin and nasal as it narrows |
+
+Press each preset above and compare the spectrum. A **square** is a **pulse** exactly half a cycle
+wide, so it's missing every 2nd harmonic. Press **Pulse 1/3** and harmonics 3, 6, 9 and 12 drop out.
+**Pulse 25%** loses 4, 8, 12 and 16. The next lesson makes the pulse width move, which is **PWM**.
+
+The triangle's harmonics fall away as 1/*n*², much faster than the square's 1/*n*, which is why
+it sounds so much softer even though both have only odd harmonics.
+
+## Next
+
+- [Sound 2: Oscillators and Pulse-Width Modulation](sound-waveforms.qmd)
+- [Sound 4: Filters](sound-filter.qmd), the tool that takes harmonics away again.
+
+{{< include _synth-kit.qmd >}}

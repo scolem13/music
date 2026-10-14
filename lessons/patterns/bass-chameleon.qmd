@@ -1,0 +1,72 @@
+---
+title: "Bass line: Chameleon: chromatic pickup"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Chameleon: chromatic pickup**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The root on beat 1, then two eighth notes on beat 4 that climb by semitones into the next bar's root. Only the skeleton of the record's line.
+
+It belongs in *Boogaloo* and *Straight-eighth rock*. Here it is in the boogaloo style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="100" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+## Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass-held.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+## Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass-roots.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 3: Chameleon: chromatic pickup, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The root on beat 1, then two eighths on beat 4 climbing by half steps into the next root. Leave beats 2 and 3 empty: the silence is half the groove.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="70" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="Bbm7|Eb7|Bbm7|Eb7" data-tempo="100" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|Bb7 C7|F7|Gm7 C7" data-tempo="100" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+## In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chameleon: chromatic pickup","opts":{"bassFeel":"chameleon"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass-held.qmd), [Roots on every beat](bass-roots.qmd).
+- **Plays with, in boogaloo:** [Boogaloo stabs](chords-stabs.qmd) (comping rhythm), [Jazz time](drums-auto.qmd) (drum groove), [Tumbao](congas-tumbao.qmd) (conga part).
+- **Other bass lines in the From tunes group:** [So What: the bass call](bass-sowhat.qmd), [Killer Joe: two-bar vamp](bass-killerjoe.qmd), [Song for My Father: root, fifth, octave](bass-songfather.qmd), [Footprints: waltz ostinato](bass-footprints.qmd), [All Blues: 6/8 vamp](bass-allblues.qmd), [Maiden Voyage: roots on the rhythm](bass-maiden.qmd), [Take Five: 3 + 2](bass-takefive.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

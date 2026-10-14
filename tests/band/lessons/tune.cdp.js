@@ -122,6 +122,9 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // the last step has nothing written and still plays
     const last = `document.querySelectorAll(".bl-step")[document.querySelectorAll(".bl-step").length - 1]`;
     assert.strictEqual(await ev(`${last}.querySelectorAll(".bl-abc svg").length`), 0); assert(/the chorus is yours/.test(await ev(`${last}.textContent`)));
+    // CDN above also moved the band's samples off the local mirror (lead/cdp.js), and headless Chrome may never reach the CDN: put the mirror back
+    if (require("fs").existsSync(require("path").join(__dirname, "../lead/site/sf/percussion-mp3")))
+      await ev(`Object.defineProperty(window, "getSoundfontUrl", { configurable: true, writable: true, value: function(){ return Promise.resolve("${B}/sf/"); } }); 0`);
     await ev(`${last}.querySelector(".btn-primary").click(); 0`); await until(`!!${last}.querySelector(".tc-bar.tc-live")`, 15000, "the open chorus"); await ev(`document.getElementById("bl-stop").click(); 0`);
     await clean();
     // ---- the Backing Track really takes the hand-off (the page as last rendered into the test site)
@@ -136,14 +139,16 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // ---- the Lessons landing page
     await ev(`0`).catch(() => {}); await b.goto(B + "/lessons/index.html"); await b.sleep(1200);
     const shown = () => ev(`JSON.stringify(Array.prototype.filter.call(document.querySelectorAll("#ll-list li"), function (li){ return !li.hidden; }).map(function (li){ return li.querySelector(".ll-step").textContent + "|" + li.querySelector("a").getAttribute("href").split("/").pop(); }))`).then(JSON.parse);
-    assert.strictEqual((await shown()).length, 10, "all");
+    assert.strictEqual((await shown()).length, 22, "all");
+    // each instrument's list keeps the blues path in order (the chord lessons sit in between and are not checked here)
+    const blues = async () => (await shown()).map(x => x.split("|")[1]).filter(h => /^(blues-|hihat-)/.test(h));
     const pick = i => ev(`document.querySelector('#ll-pick [data-inst="${i}"]').click(); 0`);
-    await pick("bass"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-bass.html", "Lesson 3|blues-improv.html"]);
-    await pick("drums"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-drums.html", "Lesson 3|hihat-grooves.html"]);
-    await pick("sax"); assert.deepStrictEqual(await shown(), ["Lesson 1|blues-changes.html", "Lesson 2|blues-melody.html", "Lesson 3|blues-improv.html"]);
+    await pick("bass"); assert.deepStrictEqual(await blues(), ["blues-changes.html", "blues-bass.html", "blues-improv.html"]); assert.strictEqual((await shown())[0], "Lesson 1|blues-changes.html");
+    await pick("drums"); assert.deepStrictEqual(await blues(), ["blues-changes.html", "blues-drums.html", "hihat-grooves.html"]);
+    await pick("sax"); assert.deepStrictEqual(await blues(), ["blues-changes.html", "blues-melody.html", "blues-improv.html"]); const saxN = (await shown()).length;
     assert.strictEqual(await ev(`document.querySelector('#ll-pick [aria-pressed="true"]').getAttribute("data-inst")`), "sax");
-    await b.goto(B + "/lessons/index.html"); await b.sleep(900); assert.strictEqual((await shown()).length, 3, "the choice is kept");
-    await b.goto(B + "/lessons/index.html?instrument=guitar"); await b.sleep(900); assert.deepStrictEqual((await shown()).map(x => x.split("|")[1]), ["blues-changes.html", "blues-guitar.html", "blues-improv.html"]);
+    await b.goto(B + "/lessons/index.html"); await b.sleep(900); assert.strictEqual((await shown()).length, saxN, "the choice is kept");
+    await b.goto(B + "/lessons/index.html?instrument=guitar"); await b.sleep(900); assert.deepStrictEqual(await blues(), ["blues-changes.html", "blues-guitar.html", "blues-improv.html"]);
     for (const h of ["blues-changes", "blues-bass", "blues-guitar", "blues-piano", "blues-drums", "blues-melody", "blues-improv"]) assert.strictEqual((await (await fetch(B + "/lessons/" + h + ".html")).status), 200, h + " exists");
     console.log("TUNE AND IMPROVISING LESSONS OK" + (alone === 7 && sok ? "" : " (notation played by itself on " + alone + " of 7 pages" + (sok ? "" : ", the scale did not") + ": is the soundfont CDN reachable?)"));
   } catch (e) { console.error("FAIL", e.message, b.errors.slice(0, 5), b.failed.slice(0, 5)); process.exitCode = 1; }

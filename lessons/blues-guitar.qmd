@@ -150,7 +150,11 @@ your guide-tone shape does at the same moment.
   each new chord from its root.
 - The **Chord Sheet** tool (Tools menu) draws these and fuller voicings for any chords you
   type in, one at a time or superimposed.
+- Next on guitar: [pop changes for guitar](pop-changes-guitar.qmd), from open chords to passing chords.
 
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a blues: the Key menu's tonality reads "(Blues)" (key-tonality.js)</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

@@ -7,6 +7,7 @@
 //        bars       one string per bar: chords separated by spaces, "C:2" = two beats, chords without a length share the rest
 //                   (the bar is four beats), the same notation the lessons' charts use. Written in the key `tonic` (a pitch class).
 //        transpose  semitones added to everything (the key menu); flats  spell the new key with flats (default) or sharps
+//        mode       "chords" (default: the grand staff) | "third" | "seventh" | "guide" | "bass": one note for each chord, its 3rd, its 7th or the nearer of the two
 //   s.set(bars)                    new chords          s.rekey(transpose, flats)   a new key
 //   s.light(i)                     light bar i (-1 = none); the band's player calls it as each bar sounds
 //
@@ -69,7 +70,7 @@
     // the bass: the root (or the note after the slash), E2 to Eb3
     var bn = nm.bass ? rootOf(nm.bass) : r, bpc = mod(NATPC[LETTERS.indexOf(bn.letter)] + bn.acc, 12), bm = 40 + mod(bpc - 4, 12);
     var bacc = bn.acc, bnote = abcNote(bn.letter, bacc, Math.floor((bm - bacc) / 12) - 1, state.bass);
-    return { top: top.map(function (x) { return x.abc; }), bass: bnote, name: nm.name + nm.suffix + (nm.bass ? "/" + nm.bass : "") };
+    return { top: top.map(function (x) { return x.abc; }), midis: top.map(function (x) { return x.midi; }), bassMidi: bm, root: rootMidi, bass: bnote, name: nm.name + nm.suffix + (nm.bass ? "/" + nm.bass : "") };
   }
 
   function sigState(tonic, minor, t) {
@@ -79,7 +80,52 @@
   }
   function len(beats) { return beats === 1 ? "" : String(beats); }
 
+  // A single line over the chords (mode "third", "seventh" or "guide"): the 3rd or the 7th of each chord, or, for "guide", whichever of the two is
+  // nearer the note before, which is the guide-tone line. One note to a chord, in the treble clef, with the chord symbols over it.
+  function lineAbc(bars, o) {
+    var H = global.BandHarmony, t = mod(o.transpose || 0, 12), flats = o.flats !== false, mode = o.mode;
+    var tonic = mod(o.tonic + t, 12), key = (o.minor ? MINOR_KEY : MAJOR_KEY)[tonic], sig = sigState(o.tonic, o.minor, t), prev = 64, out = [], upper = [], rows = [];
+    bars.forEach(function (b, i) {
+      var st = { sig: sig }, hi = [];
+      splitBar(b).forEach(function (x) {
+        var nm = nameOf(x.chord, t, flats), c = H.parseChord(x.chord, 0);
+        if (!nm || !c || c.nc || c.unknown) { hi.push("z" + len(x.beats)); return; }
+        var r = rootOf(nm.name), rpc = mod(NATPC[LETTERS.indexOf(r.letter)] + r.acc, 12), base = 57 + mod(rpc - 9, 12), cands = [];
+        function cand(off, semis) { var shift = 12 * Math.round((prev - (base + semis)) / 12); while (base + shift + semis < 60) shift += 12; while (base + shift + semis > 79) shift -= 12; return { m: base + shift + semis, off: off, semis: semis, shift: shift }; }       // the octave nearest the note before, kept between middle C and the G above the staff
+        var third = c.third != null ? cand(2, c.third) : c.sus ? cand(c.sus === 2 ? 1 : 3, c.sus === 2 ? 2 : 5) : cand(4, c.fifth);
+        var seventh = c.seventh != null ? cand(6, c.seventh) : c.sixth != null ? cand(5, c.sixth) : cand(4, c.fifth);
+        var pick = mode === "third" ? third : mode === "seventh" ? seventh : (Math.abs(seventh.m - prev) < Math.abs(third.m - prev) ? seventh : third);
+        var n = tone(r, base + pick.shift, pick.off, pick.semis, st); prev = n.midi;
+        hi.push('"' + nm.name + nm.suffix + (nm.bass ? "/" + nm.bass : "") + '"' + n.abc + len(x.beats));
+      });
+      upper.push(hi.join(" "));
+      if (i % 4 === 3 || i === bars.length - 1) { rows.push(upper.join(" | ") + (i === bars.length - 1 ? " |]" : " |")); upper = []; }
+    });
+    return "X:1\nM:4/4\nL:1/4\nK:" + key + "\n" + rows.join("\n");
+  }
+
+  // mode "bass": the bass notes alone (the root, or the note after a slash), in the bass clef
+  function bassAbc(bars, o) {
+    var H = global.BandHarmony, t = mod(o.transpose || 0, 12), flats = o.flats !== false;
+    var key = (o.minor ? MINOR_KEY : MAJOR_KEY)[mod(o.tonic + t, 12)], sig = sigState(o.tonic, o.minor, t), rows = [], cur = [];
+    bars.forEach(function (b, i) {
+      var st = { sig: sig, bass: { sig: sig } }, lo = [];
+      splitBar(b).forEach(function (x) { var ch = build(x.chord, t, flats, H, st); lo.push(ch ? '"' + ch.name + '"' + ch.bass + len(x.beats) : "z" + len(x.beats)); });
+      cur.push(lo.join(" "));
+      if (i % 4 === 3 || i === bars.length - 1) { rows.push(cur.join(" | ") + (i === bars.length - 1 ? " |]" : " |")); cur = []; }
+    });
+    return "X:1\nM:4/4\nL:1/4\nK:" + key + " clef=bass\n" + rows.join("\n");
+  }
+
+  // what a chord is made of in this key, for the diagrams: { name, midis (the treble chord), bassMidi }
+  function describe(sym, transpose, flats) {
+    var H = global.BandHarmony, t = mod(transpose || 0, 12), st = { sig: {}, bass: { sig: {} } }, ch = build(sym, t, flats !== false, H, st);
+    return ch && { name: ch.name, midis: ch.midis, bassMidi: ch.bassMidi };
+  }
+
   function abcOf(bars, o) {
+    if (o.mode === "bass") return bassAbc(bars, o);
+    if (o.mode && o.mode !== "chords") return lineAbc(bars, o);
     var H = global.BandHarmony, t = mod(o.transpose || 0, 12), flats = o.flats !== false;
     var tonic = mod(o.tonic + t, 12), key = (o.minor ? MINOR_KEY : MAJOR_KEY)[tonic];
     var sig = sigState(o.tonic, o.minor, t), rows = [], upper = [], lower = [];
@@ -100,7 +146,7 @@
   }
 
   function create(host, o) {
-    var s = { bars: o.bars, o: { tonic: o.tonic || 0, minor: !!o.minor, transpose: o.transpose || 0, flats: o.flats !== false }, score: null, host: host, live: -1 };
+    var s = { bars: o.bars, o: { tonic: o.tonic || 0, minor: !!o.minor, mode: o.mode, transpose: o.transpose || 0, flats: o.flats !== false }, score: null, host: host, live: -1 };
     function draw() {
       s.score = global.LessonScore ? global.LessonScore.engrave(host, abcOf(s.bars, s.o), { width: 680, fluid: true }) : null;
       if (s.live >= 0) s.light(s.live);
@@ -112,5 +158,5 @@
     draw(); return s;
   }
 
-  global.LessonChordStaff = { create: create, abc: abcOf, splitBar: splitBar };
+  global.LessonChordStaff = { create: create, abc: abcOf, splitBar: splitBar, describe: describe };
 })(typeof window !== "undefined" ? window : globalThis);

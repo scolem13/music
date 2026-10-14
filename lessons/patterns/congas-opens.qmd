@@ -1,0 +1,52 @@
+---
+title: "Conga part: Open tones only (learning the tumbao, 1)"
+subtitle: "For congas, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one conga part the [Backing Track](../../tools/backing-track.qmd) band plays: **Open tones only (learning the tumbao, 1)**. It is one of the first patterns to learn, so this page starts from it and takes it into the band. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Conga parts](index.qmd#congas)
+
+## The pattern
+
+Only the two right-hand open tones of the tumbao, on 4 and the and of 4. The first thing to play.
+
+It belongs in *Son montuno*, *Cha-cha* and *Boogaloo*. Here it is in the cha-cha style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="congas bass" data-choice-label="Conga part:" data-choices='[{"label":"Open tones only (learning the tumbao, 1)","opts":{"congas":"opens"}}]'></div>
+
+## Step 1: Open tones only (learning the tumbao, 1), slowly
+
+**How to play it.** Only the two right-hand open tones on 4 and the and of 4. Strike near the edge with the fingers flat and let the drum ring.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="78" data-on="congas bass" data-staves="congas" data-choice-label="Compare:" data-choices='[{"label":"Open tones only (learning the tumbao, 1)","opts":{"congas":"opens"}}]'></div>
+
+## Step 2: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's congas off and take the part yourself.
+
+<div class="ar-demo" data-style="chacha" data-chart="Am|Dm|E7|Am" data-tempo="112" data-on="bass comp drums congas" data-staves="congas bass" data-choice-label="Conga part:" data-choices='[{"label":"Open tones only (learning the tumbao, 1)","opts":{"congas":"opens"}}]'></div>
+
+## In other styles
+
+The same conga part in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Son montuno**
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="congas" data-choice-label="Conga part:" data-choices='[{"label":"Open tones only (learning the tumbao, 1)","opts":{"congas":"opens"}}]'></div>
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="congas" data-choice-label="Conga part:" data-choices='[{"label":"Open tones only (learning the tumbao, 1)","opts":{"congas":"opens"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Leads to:** [Right hand alone (learning the tumbao, 2)](congas-slapopen.qmd), [Left hand alone (learning the tumbao, 3)](congas-heeltoe.qmd), [Tumbao](congas-tumbao.qmd), [Steady congas](congas-steady.qmd): the patterns that use this one as a step.
+- **Plays with, in cha-cha:** [Cha-cha](bass-chacha.qmd) (bass line), [Cha-cha](chords-chacha.qmd) (comping rhythm), [Cha-cha](drums-chacha.qmd) (drum groove).
+- **Other conga parts in the Latin group:** [Tumbao](congas-tumbao.qmd), [Tumbao, two drums](congas-tumbao2.qmd), [Right hand alone (learning the tumbao, 2)](congas-slapopen.qmd), [Left hand alone (learning the tumbao, 3)](congas-heeltoe.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

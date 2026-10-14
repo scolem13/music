@@ -135,14 +135,17 @@ console.log("VOICING NAMES OK");
   // ABC: spelled from the key, accidentals once per bar, chords above the notes, ties where a chord changes
   var G = CE.grid({ n: 4, d: 4 }); G.put("Cmaj7", "half"); G.put("G7", "half"); G.setLength(1);
   G.setMelody([M.map(function (m, i){ return { pos: i, dur: 1, midi: m }; })]);
-  assert.strictEqual(G.toAbc({ key: "C" }).split("\n").slice(3).join("|"), 'L:1/8|K:C|"Cmaj7"CD EF "G7"GA _Bc |]');
+  assert.strictEqual(G.toAbc({ key: "C" }).split("\n").slice(3).join("|"), 'L:1/8|K:C|"Cmaj7"CD EF "G7"GA _Bc |]', "(a chromatic note that leaps on is not spelled from the note before it: Bb over G7 going to C)");
   G = CE.grid({ n: 4, d: 4 }); G.put("Bbm7", "bar"); G.setMelody([[{ pos: 0, dur: 1, midi: 70 }, { pos: 1, dur: 1, midi: 71 }, { pos: 2, dur: 1.5, midi: 63 }, { pos: 3.5, dur: 0.5, midi: 61 }, { pos: 4, dur: 4, midi: 46, tie: true }]]);
-  assert.strictEqual(G.toAbc({ key: "Db" }).split("\n").slice(3).join("|"), 'L:1/16|K:Db|"Bbm7"B2_c2 E3 D B,,8- |]');
+  assert.strictEqual(G.toAbc({ key: "Db" }).split("\n").slice(3).join("|"), 'L:1/16|K:Db|"Bbm7"B2_c2 E3 D B,,8- |]', "(Cb leaps on to Eb: the key's spelling, not B natural from the Bb before it)");
   G = CE.grid({ n: 4, d: 4 }); G.put("C", "half"); G.put("F", "half"); G.setMelody([[{ pos: 2, dur: 4, midi: 64 }, { pos: 7, dur: 1, midi: 66 }, { pos: 7, dur: 0, midi: 66 }].slice(0, 2)]);
   assert.strictEqual(G.toAbc({ key: "F" }).split("\n").slice(5).join("|"), '"C"z2 E2- "F"E2 z _G |]', "a note held over a chord change is tied; the chromatic note nearest a key tie is flat (Gb in F)");
   // accidentals persist for the bar
-  G = CE.grid({ n: 4, d: 4 }); G.put("C7", "bar"); G.setMelody([[63, 63, 64, 63].map(function (m, i){ return { pos: i * 2, dur: 2, midi: m }; })]);
+  G = CE.grid({ n: 4, d: 4 }); G.put("C7", "bar"); G.setMelody([[63, 63, 64, 63].map(function (m, i){ return { pos: i * 2, dur: 2, midi: m, sp: m === 63 ? "Eb" : "E" }; })]);
   assert.strictEqual(G.toAbc({ key: "C" }).split("\n")[5], '"C7"_E2 E2 =E2 _E2 |]', "the flat holds for the bar, the natural is shown, then the flat again");
+  G.setMelody([[63, 63, 64, 63].map(function (m, i){ return { pos: i * 2, dur: 2, midi: m }; })]);
+  assert.strictEqual(G.toAbc({ key: "C" }).split("\n")[5], '"C7"^D2 D2 E2 _E2 |]', "(untyped: the first two sit below the E they climb to, the last falls from it)");
+  G.setMelody([[63, 63, 64, 63].map(function (m, i){ return { pos: i * 2, dur: 2, midi: m, sp: m === 63 ? "Eb" : "E" }; })]);
   // the chart still reads it: the same bars and chords, the melody gone from the chart
   var P = TuneChart.parse(G.toAbc({ key: "C" })); assert.strictEqual(P.bars.length, 1); assert.strictEqual(P.bars[0].chords[0].sym, "C7");
   // undo takes the melody back; a new grid has none
@@ -161,6 +164,58 @@ console.log("VOICING NAMES OK");
   var P4 = TuneChart.parse(out3); assert.deepStrictEqual(P4.bars.map(function (b){ return b.meter.n + "/" + b.meter.d; }), ["4/4", "3/4", "6/8"]);
   assert.deepStrictEqual(CE.playable(ml, [2, 2, 3]).map(function (b){ return b.map(function (n){ return n.pos + ":" + n.dur; }).join(" "); }), ["0:4", "0:1 1:2", "0:1 1:1"]);
   console.log("MELODY OK");
+})();
+
+// ---- spelling: what was typed is kept; the rest is spelled from the chord and the line ----
+(function (){
+  var fs = require("fs"), vm = require("vm");
+  ["apps/shared/abc-core.js", "apps/tune-assessment/abc-tune.js", "apps/shared/band/tune-score.js", "apps/shared/abc-transpose.js"].forEach(function (f){ vm.runInThisContext(fs.readFileSync(path.join(R, f), "utf8"), { filename: f }); });
+  function geo(){ return CE.geoOf(4, 4); }
+  function read(abc){ var p = TuneChart.parse(abc); return { p: p, m: BandTuneScore.melody(abc, p, geo) }; }
+  function body(g, key){ return g.toAbc({ key: key }).split("\n").slice(5).join(" / "); }
+  // typed ^A2 over B7 in A comes back as ^A (the key-only rule wrote _B)
+  var r = read('X:1\nT:x\nM:4/4\nL:1/8\nK:A\n"B7"^A2 B2 d2 ^f2 |'), G = CE.grid({ n: 4, d: 4 }); G.load(r.p); G.setMelody(r.m);
+  assert.strictEqual(r.m[0][0].sp, "A#"); assert.strictEqual(r.m[0][1].sp, undefined, "a plain note has no typed spelling"); assert.strictEqual(r.m[0][3].sp, "F#", "an accidental written in the key's own sharp counts as typed");
+  assert.strictEqual(G.melody()[0][0].sp, "A#", "setMelody keeps it");
+  assert.strictEqual(body(G, "A"), '"B7"^A2 B2 d2 f2 |]', "(the ^f is the key's own sharp: not written again)");
+  // the same pitch with no spelling: A# (it goes up to B); going down to A it is Bb
+  var plain = function (ms){ var g = CE.grid({ n: 4, d: 4 }); g.put("B7", "bar"); g.setMelody([ms.map(function (m, i){ return { pos: i * 2, dur: 2, midi: m }; })]); return body(g, "A"); };
+  assert.strictEqual(plain([70, 71, 74, 78]), '"B7"^A2 B2 d2 f2 |]'); assert.strictEqual(plain([70, 69, 66, 64]), '"B7"_B2 A2 F2 E2 |]');
+  // a typed spelling that no longer matches the pitch is ignored (the note was edited)
+  G.setMelody([[{ pos: 0, dur: 2, midi: 72, sp: "A#" }, { pos: 2, dur: 2, midi: 71, sp: "Cb" }]]); assert.strictEqual(body(G, "A").indexOf("^A"), -1);
+  // a note altered earlier in the bar counts as typed: ^C then a plain C is C# again
+  r = read('X:1\nT:x\nM:4/4\nL:1/8\nK:C\n"C"^C2 C2 =C2 C2 |'); assert.deepStrictEqual(r.m[0].map(function (n){ return n.sp || "-"; }), ["C#", "C#", "C", "C"]);
+  // diatonic notes: exactly the key-only spelling, in every key
+  ["C", "G", "D", "A", "E", "B", "F#", "F", "Bb", "Eb", "Ab", "Db", "Gb"].forEach(function (k){
+    var sp = CE.spelling(k), ms = [0, 2, 4, 5, 7, 9, 11].map(function (d){ return 60 + CE.keyLof(k) * 7 % 12 + d; }).map(function (m){ return m; });
+    var base = ((CE.keyLof(k) * 7) % 12 + 12) % 12, notes = [0, 2, 4, 5, 7, 9, 11].map(function (d, i){ return { pos: i, midi: 60 + (base + d) % 12 }; });
+    var got = CE.spellNotes(notes, [{ pos: 0, sym: k }], k, {}).map(function (x){ return x.name; }), want = notes.map(function (n){ var x = sp.spell(n.midi); return x.letter + (x.acc > 0 ? "#" : x.acc < 0 ? "b" : ""); });
+    assert.deepStrictEqual(got, want, "major scale in " + k);
+  });
+  G = CE.grid({ n: 4, d: 4 }); G.put("C", "bar"); G.setMelody([[60, 62, 64, 65, 67, 69, 71, 72].map(function (m, i){ return { pos: i, dur: 1, midi: m }; })]); assert.strictEqual(body(G, "C"), '"C"CD EF GA Bc |]');
+  // Winter Wonderland, the Bridge, in other keys: no double accidentals, and these spellings
+  var ww = 'X:1\nT:x\nM:4/4\nL:1/8\nK:C\n"GM7"DD BB "Am7/D"EE cc | "GM7"B2 G2- G4 | "G"DD BB "Am7/D"EE cc | "GM7"B8 |\n"Bb"FF dd "Cm7/F"GG _ee | "Bb"d2 _B2- B3 B | "C7"dd GG "F7"cc FF | "Bb"_B6 BB |]';
+  var FL = ["C", "Db", "D", "Eb", "E", "F", "Gb", "G", "Ab", "A", "Bb", "B"], PC = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  function tsym(sy, k, key){ return sy.replace(/([A-G][#b]?)/g, function (m){ var q = ((PC[m[0]] + (m[1] === "#" ? 1 : m[1] === "b" ? -1 : 0) + k) % 12 + 12) % 12, x = CE.spelling(key).spell(60 + q); return Math.abs(x.acc) > 1 ? FL[q] : x.letter + (x.acc > 0 ? "#" : x.acc < 0 ? "b" : ""); }); }
+  var chs = [["GM7", "Am7/D"], ["GM7"], ["G", "Am7/D"], ["GM7"], ["Bb", "Cm7/F"], ["Bb"], ["C7", "F7"], ["Bb"]], w0 = read(ww).m;
+  var want = { Eb: '"BbM7"FF dd "Cm7/F"GG ee | "BbM7"d2 B6 | "Bb"FF dd "Cm7/F"GG ee | "BbM7"d8 | / "Db"AA ff "Ebm7/Ab"BB _gg | "Db"f2 _d4- dd | "Eb7"ff BB "Ab7"ee AA | "Db"_d6 dd |]',
+    Gb: '"DbM7"AA ff "Ebm7/Ab"BB gg | "DbM7"f2 d6 | "Db"AA ff "Ebm7/Ab"BB gg | "DbM7"f8 | / "Fb"cc aa "Gbm7/Cb"dd =aa | "Fb"a2 _f4- ff | "Gb7"aa dd "Cb7"gg cc | "Fb"_f6 ff |]',
+    Db: '"AbM7"EE cc "Bbm7/Eb"FF dd | "AbM7"c2 A6 | "Ab"EE cc "Bbm7/Eb"FF dd | "AbM7"c8 | / "Cb"GG ee "Dbm7/Gb"AA _ff | "Cb"e2 _c4- cc | "Db7"ee AA "Gb7"dd GG | "Cb"_c6 cc |]',
+    G: '"DM7"A,A, FF "Em7/A"B,B, GG | "DM7"F2 D6 | "D"A,A, FF "Em7/A"B,B, GG | "DM7"F8 | / "F"CC AA "Gm7/C"DD _BB | "F"A2 =F4- FF | "G7"AA DD "C7"GG CC | "F"=F6 FF |]' };
+  [["Eb", 3], ["Gb", 6], ["Db", 1], ["G", -5]].forEach(function (t){
+    var g = CE.grid({ n: 4, d: 4 }); chs.forEach(function (b){ b.forEach(function (sy){ g.put(tsym(sy, t[1], t[0]), b.length === 1 ? "bar" : "half"); }); }); g.setLength(8);
+    g.setMelody(w0.map(function (b){ return b.map(function (n){ return { pos: n.pos, dur: n.dur, midi: n.midi + t[1], tie: !!n.tie }; }); }));
+    var out = body(g, t[0]); assert(!/__|\^\^|=?[A-Ga-g]bb/.test(out), "no double accidental in " + t[0] + ": " + out);
+    assert.strictEqual(out, want[t[0]], "Bridge in " + t[0]);
+  });
+  // a typed spelling moves with the key by letter names as well as semitones
+  var mv = function (sp, midi, from, to, dm){ return CE.moveSp(sp, midi, from, to, dm); };
+  assert.strictEqual(mv("A#", 71, "A", "Bb", 1).sp, "B", "A -> Bb is one letter and one semitone: A# becomes B");
+  assert.strictEqual(mv("D#", 64, "E", "F", 1).sp, "E", "E -> F: D# becomes E"); assert.strictEqual(mv("Bb", 72, "C", "D", 2).sp, "C", "up a tone: Bb is C");
+  assert.strictEqual(mv("Bb", 56, "C", "Bb", -2).sp, "Ab"); assert.strictEqual(mv("F#", 66, "A", "A", 0).sp, "F#");
+  var odd = mv("Eb", 69, "C", "Gb", 6); assert.strictEqual(odd.sp, "Bbb"); assert(odd.odd, "a double flat is kept and marked");
+  assert.strictEqual(mv("Fx", 68, "C", "C#", 1).sp, null, "three accidentals: dropped");
+  console.log("SPELLING OK");
 })();
 
 // ---- meters that change while you play: the layout, the pedal, a grid with bars of their own ----
@@ -297,6 +352,19 @@ console.log("VOICING NAMES OK");
   assert(/\[CE\]/.test(mus(tt)) && /\[DF\]/.test(mus(tt)) && /\[EG\]/.test(mus(tt)), "thirds written as stacked notes: " + mus(tt)); assert.strictEqual(tt.trace.chords.length, 1, "only the left hand is a chord");
   var one = CE.take({ kind: "both", n: 4, d: 4, bars: 1, beatSec: bs, key: "C", split: 48, poly: false }); feed(one, thirds);
   assert(!/\[/.test(mus(one)), "with the setting off only the top note of each pair is written: " + mus(one));
+  // ---- a long note before a rest ends where it is plainest to write (ends "simple", the default); "played" keeps the release ----
+  (function (){
+    function w(notes, o){ return CE.quantizeLine(notes, Object.assign({ beat: 2, per: 8, bars: 2 }, o)).map(function (b){ return b.map(function (n){ return n.pos + ":" + n.dur; }).join(" "); }).join(" | "); }
+    var dot = [{ midi: 60, on: 0, off: 0.78 }, { midi: 62, on: 2, off: 3 }];
+    assert.strictEqual(w(dot, { res: 0.5 }), "0:2 4:2 | ");                                   // a dotted eighth and a sixteenth rest: a quarter
+    assert.strictEqual(w(dot, { res: 0.5, ends: "played" }), "0:1.5 4:2 | ");
+    assert.strictEqual(w([{ midi: 60, on: 0, off: 1.2 }, { midi: 62, on: 2, off: 3 }], { res: 0.5 }), "0:2 4:2 | ");      // a quarter held a sixteenth long
+    assert.strictEqual(w([{ midi: 60, on: 0, off: 1.6 }, { midi: 62, on: 4, off: 5 }], {}), "0:4 | 0:2");             // a half note let go early
+    assert.strictEqual(w([{ midi: 60, on: 4, off: 6.7 }], { res: 0.5 }), " | 0:6");                                  // the last note: a dotted half
+    assert.strictEqual(w([{ midi: 60, on: 0, off: 1.4 }, { midi: 62, on: 2, off: 3 }], {}), "0:3 4:2 | ");             // a clear eighth rest stays
+    assert.strictEqual(w([{ midi: 60, on: 0, off: 0.25 }, { midi: 62, on: 0.5, off: 0.75 }, { midi: 64, on: 1, off: 1.25 }], { res: 0.5 }), "0:1 1:1 2:0.5 | ");   // short notes: as before
+    var tr = []; CE.quantizeLine(dot, { beat: 2, per: 8, bars: 2, res: 0.5, trace: tr }); assert(/plainer to write/.test(tr[0].endRule), tr[0].endRule);
+  })();
   console.log("WRITING OK");
 })();
 

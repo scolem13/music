@@ -19,9 +19,11 @@ function bestCents(fDet, refFreq, allowOct){
 
 // ---------- pattern library (from pattern-object.js, parsed by abcjs) ----------
 let currentAbc = "";     // ABC of the selected tune
-let baseTargets = [];    // V1 melody MIDI in the pattern's written key (C / Cm)
+let baseTargets = [];    // V1 melody MIDI in the pattern's written key (graded with its key signature)
 let targets = [];        // baseTargets + transpose (what the student must sing)
-let currentMinor = false;// pattern key is minor? (controls spelling)
+let currentMinor = false;// pattern key has a minor third (minor, dorian ...): picks the cadence
+let currentKey = "C";    // the pattern's K: field ("D", "Dm", "Ddor", "Gmix" ...)
+let writtenTonicMidi = 60;// tonic of the written key, 60..71 (C4 up to B4)
 let transpose = 0;       // semitones applied to display + targets (key + octave)
 let lastDetected = null; // freqs from the most recent attempt (for re-render)
 
@@ -30,7 +32,7 @@ let lastDetected = null; // freqs from the most recent attempt (for re-render)
 // (tonic of the current key), or sing just the first pitch.
 function gradeTargets(){
   const t = document.getElementById("assess").value;
-  if (t === "resting") return [60 + transpose];          // tonic in the current key/octave
+  if (t === "resting") return [writtenTonicMidi + transpose];          // tonic in the current key/octave
   if (t === "first")   return targets.length ? [targets[0]] : [];
   return targets;                                         // "repeat"
 }
@@ -130,18 +132,26 @@ function v1RenderAbc(abc){
   return keep.join("\n");
 }
 
-// Key dropdown: offsets in semitones from the written key (C / Cm).
+// Key dropdown: offsets in semitones from the written key (whatever the pattern's K: is).
 const KEY_OFFSETS = [0,1,2,3,4,5,6,7,8,9,10,11];
-const MAJOR_NAMES = ["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
-const MINOR_NAMES = ["Cm","C♯m","Dm","E♭m","Em","Fm","F♯m","Gm","G♯m","Am","B♭m","Bm"];
+const KEY_PC_MAJOR = ["C","D♭","D","E♭","E","F","G♭","G","A♭","A","B♭","B"];
+const KEY_PC_MINOR = ["C","C♯","D","E♭","E","F","F♯","G","G♯","A","B♭","B"];
+const MODE_SUFFIX = { m:"m", min:"m", minor:"m", aeo:"m", aeolian:"m", dor:" dor", dorian:" dor", phr:" phr", phrygian:" phr",
+  lyd:" lyd", lydian:" lyd", mix:" mix", mixolydian:" mix", loc:" loc", locrian:" loc" };
+const MINOR_THIRD_MODES = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/i;
+function keyModeOf(keyField){ const m = /^[A-Ga-g][#b]?\s*([A-Za-z]*)/.exec((keyField||"").trim()); return m ? m[1] : ""; }
+// Name of the key the pattern is in after shifting it up `off` semitones: Ddor +2 -> "E dor".
+function keyNameAt(off){
+  const pc = (AbcPitch.tonicPc(currentKey) + off) % 12;
+  return (currentMinor ? KEY_PC_MINOR : KEY_PC_MAJOR)[pc] + (MODE_SUFFIX[keyModeOf(currentKey).toLowerCase()] || "");
+}
 function populateKeys(){
   const sel = document.getElementById("key");
   const prev = sel.value || "0";
   sel.innerHTML = "";
-  const names = currentMinor ? MINOR_NAMES : MAJOR_NAMES;
-  KEY_OFFSETS.forEach(off => {
+    KEY_OFFSETS.forEach(off => {
     const o = document.createElement("option");
-    o.value = off; o.textContent = names[off];
+    o.value = off; o.textContent = keyNameAt(off);
     sel.appendChild(o);
   });
   sel.value = prev;
@@ -183,7 +193,9 @@ function loadPattern(){
   const idx = parseInt(patternSel.value, 10) || 0;
   currentAbc = tuneBook.tunes[idx].abc;
   baseTargets = AbcPitch.melodyMidi(currentAbc);
-  currentMinor = /^[A-Ga-g][#b]?\s*m/i.test(AbcPitch.extractVoice1(currentAbc).key);
+  currentKey = AbcPitch.extractVoice1(currentAbc).key.replace(/\)+\s*$/, "").trim() || "C";   // "Cm)" in the data
+  currentMinor = MINOR_THIRD_MODES.test(keyModeOf(currentKey));
+  writtenTonicMidi = 60 + AbcPitch.tonicPc(currentKey);
   lastDetected = null;
 
   populateKeys();
@@ -387,14 +399,23 @@ function segment(samps){
 
 // ---------- render the sung response as notation (same style as the pattern) ----------
 const BASE_NAT = { C:0, D:2, E:4, F:5, G:7, A:9, B:11 };
-function midiToAbcToken(midi, minorKey){
+function midiToAbcToken(midi, ksig){
+  ksig = ksig || {};
   const pc = ((midi % 12) + 12) % 12;
-  const prefMajor = {0:"C",1:"C",2:"D",3:"E",4:"E",5:"F",6:"F",7:"G",8:"G",9:"A",10:"B",11:"B"};
-  const prefMinor = {0:"C",1:"D",2:"D",3:"E",4:"E",5:"F",6:"G",7:"G",8:"A",9:"A",10:"B",11:"B"};
-  const letter = (minorKey ? prefMinor : prefMajor)[pc];
+  const prefNone = {0:"C",1:"C",2:"D",3:"E",4:"E",5:"F",6:"F",7:"G",8:"G",9:"A",10:"B",11:"B"};
+  const hasFlats = Object.keys(ksig).some(k => ksig[k] < 0);
+  // the letter the key signature already spells this pitch with, else (no key signature) the old table,
+  // else a natural ("=" where the key alters that letter), else a sharp (a flat in flat keys) of a neighbouring letter
+  let letter = Object.keys(BASE_NAT).find(L => ((BASE_NAT[L] + (ksig[L] || 0)) % 12 + 12) % 12 === pc);
+  if (!letter && Object.keys(ksig).length) letter = Object.keys(BASE_NAT).find(L => BASE_NAT[L] === pc);   // a natural, written "=" where the key alters it
+  if (!letter){
+    if (!Object.keys(ksig).length) letter = prefNone[pc];
+    else letter = Object.keys(BASE_NAT).find(L => BASE_NAT[L] === (pc + (hasFlats ? 1 : -1) + 12) % 12) ||
+                  Object.keys(BASE_NAT).find(L => BASE_NAT[L] === (pc + (hasFlats ? -1 : 1) + 12) % 12);
+  }
   let accAbs = pc - BASE_NAT[letter];
   if (accAbs > 6) accAbs -= 12; else if (accAbs < -6) accAbs += 12;
-  const keysigAlt = (minorKey && (letter==="E"||letter==="A"||letter==="B")) ? -1 : 0;
+  const keysigAlt = ksig[letter] || 0;
   const accMap = {"-2":"__","-1":"_","0":"=","1":"^","2":"^^"};
   const explicit = (accAbs === keysigAlt) ? "" : (accMap[accAbs] || "");
   const anchor = 60 + BASE_NAT[letter];
@@ -456,10 +477,10 @@ function renderResponse(detected){
     if (f <= 0) return;
     any = true;
     const d = Math.round(freqToMidiFloat(f));
-    const ref = gt.length ? gt[Math.min(i, gt.length - 1)] : 60 + transpose;
+    const ref = gt.length ? gt[Math.min(i, gt.length - 1)] : writtenTonicMidi + transpose;
     const octShift = Math.round((d - ref) / 12);
     const written = d - 12 * octShift - transpose;   // pre-transpose pitch for abcjs
-    notes.push({ tok: midiToAbcToken(written, currentMinor), octShift });
+    notes.push({ tok: midiToAbcToken(written, AbcPitch.keySignature(currentKey)), octShift });
     shifts.push(octShift);
     if (i < gt.length){
       const { cents } = bestCents(f, midiToFreq(gt[i]), allowOct);
@@ -477,7 +498,7 @@ function renderResponse(detected){
   const toks = notes.map(n => (!useBracket && markFor(n.octShift)) ? `"^${markFor(n.octShift)}"` + n.tok : n.tok);
 
   const abc = "X:1\nM:none\n%%staffwidth 200\n%%topspace 22\n%%score (V1)\nK:" +
-              (currentMinor ? "Cm" : "C") + clefField() +
+              currentKey + clefField() +
               "\n[V: V1] " + toks.join(" ");
   show("responseCard");                                 // reveal first so the pane has its real width
   requestAnimationFrame(() => {
@@ -693,7 +714,7 @@ function playTone(midi, start, dur, gain, type){
 // Establish tonality: I–IV–V7–I (major) or i–iv–V7–i (minor) in the current key.
 // Returns the cadence duration in ms. Caller must have ensured audio.
 function establishTonality(){
-  const tonic = 60 + transpose;     // concert tonic, follows key + octave
+  const tonic = writtenTonicMidi + transpose;     // concert tonic, follows key + octave
   const chords = currentMinor
     ? [ [0,3,7], [5,8,12], [7,11,14,17], [0,3,7,12] ]   // i  iv  V7  i
     : [ [0,4,7], [5,9,12], [7,11,14,17], [0,4,7,12] ];  // I  IV  V7  I
@@ -867,7 +888,7 @@ document.addEventListener("keydown", (e) => {
 });
 
 // ---------- session logging / makeup replay ----------
-const KEY_DISPLAY = () => (currentMinor ? MINOR_NAMES : MAJOR_NAMES)[parseInt(document.getElementById("key").value,10)||0];
+const KEY_DISPLAY = () => keyNameAt(parseInt(document.getElementById("key").value,10)||0);
 SessionLog.init({
   app: "tonal",
   getState: () => {

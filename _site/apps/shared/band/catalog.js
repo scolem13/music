@@ -21,6 +21,7 @@
 //   BandCatalog.feels / .cymbals -> [{ id, label, desc }]         ids = opts.feel / opts.ride
 //   BandCatalog.url({ style, bass, rhythm, drums, feel, comp, congas }) -> link that opens the Backing Track
 //       page with those choices preselected (it reads the same query names).
+//   BandCatalog.article(styleId) -> link to the style's article (history, listening): styles/<id>.qmd
 // tune on a bass / comp entry = the tune the figure comes from (group "From tunes"); after = what the
 // band plays instead once the head is over, when the page's "Figure from the tune" says first chorus only.
 // feel on an entry = the feel it is written for ("swing" | "straight" | "any").
@@ -467,7 +468,11 @@
     ["style", "bass", "rhythm", "drums", "feel", "comp", "congas"].forEach(function (k){ if (o[k]) q.push(k + "=" + encodeURIComponent(o[k])); });
     return "/tools/backing-track.html" + (q.length ? "?" + q.join("&") : "");
   }
+  // the style's article (history and listening): styles/<id>.qmd
+  function article(id){
+    return "/styles/" + encodeURIComponent(id) + ".html";
+  }
   function byId(list, id){ for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return null; }
 
-  global.BandCatalog = { bass: bass, comp: comp, drums: drums, congas: congas, voicings: voicings, styles: styles, styleOpts: styleOpts, sectionOpts: sectionOpts, secondFor: secondFor, nameSections: nameSections, placeSections: placeSections, fits: fits, feels: feels, cymbals: cymbals, url: url, byId: byId };
+  global.BandCatalog = { bass: bass, comp: comp, drums: drums, congas: congas, voicings: voicings, styles: styles, styleOpts: styleOpts, sectionOpts: sectionOpts, secondFor: secondFor, nameSections: nameSections, placeSections: placeSections, fits: fits, feels: feels, cymbals: cymbals, url: url, article: article, byId: byId };
 })(typeof window !== "undefined" ? window : globalThis);

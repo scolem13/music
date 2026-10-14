@@ -1,0 +1,77 @@
+---
+title: "Comping rhythm: Strum: 3-3-2 accents"
+subtitle: "For guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Strum: 3-3-2 accents**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+The D, D-U, U-D-U strum with the weight moved to beat 1, the and of 2 and beat 4, the 3+3+2 grouping under a great many pop songs.
+
+It belongs in *Acoustic strum*, *Straight-eighth rock* and *Dance pop*. Here it is in the acoustic strum style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: 3-3-2 accents","opts":{"compRhythm":"strum332"}}]'></div>
+
+## Step 1: Strum: downstrokes on the beat
+
+Start with something simpler. One ringing downstroke on every beat. The first strum to learn, and the usual one for a slow song.
+
+This is a pattern of its own: [the lesson on it](chords-strum-quarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Step:" data-choices='[{"label":"Strum: downstrokes on the beat","opts":{"compRhythm":"strumQuarters"}}]'></div>
+
+## Step 2: Strum: D, D-U, U-D-U
+
+The strum most songbooks start with: down on 1, down-up on 2, then up, down-up through 3 and 4 (the hand misses the strings on beat 3).
+
+This is a pattern of its own: [the lesson on it](chords-strum-camp.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Step:" data-choices='[{"label":"Strum: D, D-U, U-D-U","opts":{"compRhythm":"strumCamp"}}]'></div>
+
+## Step 3: Strum: 3-3-2 accents, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The same down-up motion, with the weight on beat 1, the and of 2 and beat 4 (3+3+2). Play the accented strums across all the strings and the others lightly on the top strings.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="68" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Compare:" data-choices='[{"label":"Strum: 3-3-2 accents","opts":{"compRhythm":"strum332"}},{"label":"Strum: D, D-U, U-D-U (the step before)","opts":{"compRhythm":"strumCamp"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 96 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: 3-3-2 accents","opts":{"compRhythm":"strum332"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="strum" data-chart="C G|Am F|C G|F G" data-tempo="96" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: 3-3-2 accents","opts":{"compRhythm":"strum332"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Straight-eighth rock**
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: 3-3-2 accents","opts":{"compRhythm":"strum332"}}]'></div>
+
+**Dance pop**
+
+<div class="ar-demo" data-style="dance" data-chart="Am|F|C|G" data-tempo="120" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Strum: 3-3-2 accents","opts":{"compRhythm":"strum332"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Strum: downstrokes on the beat](chords-strum-quarters.qmd), [Strum: D, D-U, U-D-U](chords-strum-camp.qmd).
+- **The same idea elsewhere in the band:** [3+3+2 (tresillo)](bass-tresillo.qmd) (bass line), [3+3+2 (tresillo)](chords-tresillo.qmd) (comping rhythm), [Ballad: syncopated](chords-ball-sync.qmd) (comping rhythm), [Reggaeton (dembow)](drums-dembow.qmd) (drum groove).
+- **Plays with, in acoustic strum:** [Dotted (1, and of 2, 3)](bass-dotted.qmd) (bass line), [Pop backbeat](drums-strum.qmd) (drum groove).
+- **Other comping rhythms in the Folk, rock and pop group:** [Boom-chick / oom-pah-pah](chords-oompah.qmd), [Waltz in one](chords-waltz.qmd), [Ballad: rocking](chords-ball-rock.qmd), [Ballad: half-broken](chords-ball-broken.qmd), [Ballad: syncopated](chords-ball-sync.qmd), [Quarter-note chords](chords-quarters.qmd), [Triplet chords (12/8)](chords-triplets.qmd), [Driving eighths](chords-eighths.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

@@ -44,7 +44,7 @@ const { launch } = require("./cdp.js"); const assert = require("assert"); const 
     await set("bt-side-on", true);
     // the list of sections: a link to each panel; a click opens it and scrolls to it
     const nav = await ev(`Array.from(document.querySelectorAll("#bt-nav a")).map(function(a){ return a.textContent; }).join(" | ")`);
-    assert.strictEqual(nav, "Play | Chart | Chart options | Band | Mixer | Practice | Save and load | Notation | Export MIDI | Edit ABC");
+    assert.strictEqual(nav, "Play | Chart | Chart options | Band | Mixer | Practice | Save and load | Notation | Melody | Export MIDI | Edit ABC");
     assert.strictEqual(await ev(`document.getElementById("bt-notation").open`), false);
     await ev(`Array.from(document.querySelectorAll("#bt-nav a")).filter(function(a){ return a.textContent === "Notation"; })[0].click(); 0`); await b.sleep(3000);
     const at = JSON.parse(await ev(`JSON.stringify([document.getElementById("bt-notation").open, Math.round(document.getElementById("bt-notation").getBoundingClientRect().top), document.querySelector("#bt-nav a.on").textContent, Math.round(document.getElementById("bt-nav").getBoundingClientRect().top), window.pageYOffset + window.innerHeight >= document.documentElement.scrollHeight - 2])`));

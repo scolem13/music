@@ -1,0 +1,65 @@
+---
+title: "Bass line: So What: the bass call"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **So What: the bass call**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The bass has the melody. A two-bar figure: the root, then eighth notes up the scale from the fifth (5, 6, 7, root, 9) and back through the seventh to the root on the next downbeat. Then it waits for the chords to answer. Pair it with the So What comping rhythm.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}}]'></div>
+
+## Step 1: Held roots (the bass voice)
+
+Start with something simpler. The root of every chord, held until the next chord: the bass part of a four-part hymn.
+
+This is a pattern of its own: [the lesson on it](bass-held.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Held roots (the bass voice)","opts":{"bassFeel":"held"}}]'></div>
+
+## Step 2: Two-feel
+
+Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
+
+This is a pattern of its own: [the lesson on it](bass-two.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
+## Step 3: So What: the bass call, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The bass has the tune here. Root, then eighth notes up from the fifth (5, 6, 7, root, 9), back down through the seventh to the root. Then wait while the chords answer. Sing it before playing it.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}},{"label":"Two-feel (the step before)","opts":{"bassFeel":"two"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"So What: the bass call","opts":{"bassFeel":"sowhat"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Held roots (the bass voice)](bass-held.qmd), [Two-feel](bass-two.qmd).
+- **The same idea elsewhere in the band:** [So What: the answer](chords-sowhat.qmd) (comping rhythm).
+- **Plays with, in swing:** [Varied](chords-auto.qmd) (comping rhythm), [Jazz time](drums-auto.qmd) (drum groove).
+- **Other bass lines in the From tunes group:** [Killer Joe: two-bar vamp](bass-killerjoe.qmd), [Song for My Father: root, fifth, octave](bass-songfather.qmd), [Footprints: waltz ostinato](bass-footprints.qmd), [All Blues: 6/8 vamp](bass-allblues.qmd), [Chameleon: chromatic pickup](bass-chameleon.qmd), [Maiden Voyage: roots on the rhythm](bass-maiden.qmd), [Take Five: 3 + 2](bass-takefive.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

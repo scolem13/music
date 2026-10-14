@@ -23,20 +23,25 @@ L.setOverrides({ fire: "fi-re", holy: "nope" });
 assert.deepStrictEqual(L.splitWord("Fire"), { pieces: ["Fi","re"], how: "override" }); assert.strictEqual(L.splitWord("holy").how, "dict", "an override that does not spell the word is ignored");
 L.setOverrides({});
 assert.deepStrictEqual(L.syllabify('"Now Fa-la, dead!" — 12'), [['"Now', false], ["Fa", true], ["la,", false], ['dead!"', false]]);
+// letters and vowels outside A-Z: an umlaut is a letter (the word is kept) and a vowel (Blät-ter), typed as one character or as two
+assert.deepStrictEqual(L.syllabify("Wie grün sind Blätter!"), [["Wie", false], ["grün", false], ["sind", false], ["Blät", true], ["ter!", false]]);
+assert.deepStrictEqual(L.syllabify("Bla\u0308tter"), [["Bl\u00e4t", true], ["ter", false]]);
 // ---- a draft ----
 let d = L.draft(['"D"A>G F E | "G"D2- D z | "A7"F G A B |]'], ["Deck the halls with boughs of holly now", "Fa-la la"]);
-assert.deepStrictEqual(d.lines, ["w: Deck the halls with | boughs * | of hol-ly now"]); assert(/3 syllables left over/.test(d.notes[0]), d.notes[0]);
+assert.deepStrictEqual(d.lines, ["w: Deck the halls with boughs * of hol-ly now"]); assert(/3 syllables left over/.test(d.notes[0]), d.notes[0]);
 d = L.draft(["A B c d | e2 f g |", "A B c d |]"], ["See the blazing Yule before", "us fa la la"]);          // as many lines of words as of music: line by line
-assert.deepStrictEqual(d.lines, ["w: See the blaz-ing | Yule be-fore", "w: us fa la la"]); assert.deepStrictEqual(d.notes, []);
+assert.deepStrictEqual(d.lines, ["w: See the blaz-ing Yule be-fore", "w: us fa la la"]); assert.deepStrictEqual(d.notes, []);
 d = L.draft(["A B c d | e2 f g |", "z4 |", "A B c d |]"], ["one two three", "four five six seven"]);
-assert.deepStrictEqual(d.lines, ["w: one two three *", "", "w: four five six sev-"], "a line of rests takes no words; a miscount stays in its own line"); assert.strictEqual(d.notes.length, 2);
+assert.deepStrictEqual(d.lines, ["w: one two three", "", "w: four five six sev-"], "a line of rests takes no words; a miscount stays in its own line"); assert.strictEqual(d.notes.length, 2);
 assert.deepStrictEqual(L.draft(["A B |"], []).lines, [""], "no words, no w: line");
 // ---- checks ----
 assert.deepStrictEqual(L.check(["A B c d | e2 f g |"], ["w: a b c d e | f g h"]), ["line 1, bar 1: 5 syllables for 4 notes"]);
 assert.deepStrictEqual(L.check(["A B c d | e2 f g |"], ["w: See the blaz-ing | Yule be-fore"]), []);
 assert.deepStrictEqual(L.check(["A B c d | e2 f g |"], ["w: a b | c"]), [], "too few is allowed");
-assert.deepStrictEqual(L.check(["A B c d |"], ["w: now_ Fa la la"]), ["line 1, bar 1: 5 syllables for 4 notes"], "a held syllable takes a note more");
+assert.deepStrictEqual(L.check(["A B c d |"], ["w: now_ Fa la la"]), ["line 1: 5 syllables for 4 notes"], "a held syllable takes a note more");
 assert.deepStrictEqual(L.check(["A B c d |"], ["w: now_ _ la"]), []);
+assert.deepStrictEqual(L.check(["A B c d | e2 f g |"], ["w: a b c d e f g h i"]), ["line 1: 9 syllables for 7 notes"], "no barlines: the whole line");
+assert.deepStrictEqual(L.draft(["A B c2- | c4 |"], ["one two three"]).lines, ["w: one two three"], "no trailing * for a tie at the end");
 assert.strictEqual(L.sungText("w: Deck the halls with | boughs * | of hol-ly now"), "Deck the halls with boughs of holly now");
 assert.strictEqual(L.sungText("w: ho- | ly night_ _"), "holy night");
 assert.strictEqual(L.differs(["w: Deck the hals"], ["Deck the [D]halls".replace(/\[[^\]]*\]/g, "")]) !== null, true);

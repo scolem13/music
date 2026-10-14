@@ -1,0 +1,19 @@
+```{=html}
+<style>
+.sh-shapes{margin:.8rem 0 1.6rem}
+.sh-row{display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start}
+.sh-card{display:flex;flex-direction:column;align-items:center;gap:.3rem;border:1px solid var(--site-border);border-radius:6px;padding:.4rem;background:var(--site-surface)}
+.sh-card svg{width:170px;max-width:100%}
+.sh-frets{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.sh-play,.sh-all{font-family:var(--font-mono);font-size:.78rem}
+.sh-staff{margin:.6rem 0 .3rem;max-width:44rem;overflow-x:auto}
+.sh-ids{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.pk-note{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+</style>
+<script src="/apps/shared/audio.js"></script>
+<script src="/apps/shared/chord-catalog.js"></script>
+<script src="/apps/shared/lessons/diagrams.js?v=4"></script>
+<script src="/apps/shared/lessons/shape-steps.js?v=3"></script>
+<script src="/apps/shared/lessons/abc-tab.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

@@ -1,0 +1,175 @@
+---
+title: "Travis Picking on Guitar"
+toc: true
+toc-depth: 2
+---
+
+Travis picking is a fingerpicking pattern in which the thumb plays a steady bass on every beat and the fingers play the melody or the chord notes on the strings above it, between the thumb notes. It is named for Merle Travis, from Muhlenberg County, Kentucky, and was spread by Chet Atkins and, later, by folk and country guitarists everywhere. The thumb is a bass player, and the fingers are a rhythm section that plays off it. This lesson builds it a step at a time, from the thumb alone to the band, with hammer-ons and pull-offs added at the end.
+
+The Backing Track band plays the pattern as the comping rhythm **Fingerpicking: Travis pattern**. There is a lesson on that pattern in the band's own terms, [Comping rhythm: Travis pattern](patterns/chords-travis.qmd), and one on the simpler pattern before it, [John Prine fingerpicking](patterns/chords-prine.qmd). This lesson is the hands.
+
+**How to read the examples.** Each exercise is written on a staff and in tablature. Tablature has one line a string, with the high E on top and a number for the fret. The staff is written an octave above where a guitar sounds, as guitarists read it. Press ▶ to hear it, and ↻ Loop to repeat it. The strings are numbered 6 (low E) to 1 (high E). The right hand uses **p** for the thumb, and **i**, **m** and **a** for the index, middle and ring fingers.
+
+Here is what you are working toward, played by the band. Switch the other players off to hear the guitar alone, and slow the tempo with the slider at the bottom of the page.
+
+<div class="ar-demo" data-style="prine" data-chart="G|C|D|G" data-tempo="90" data-on="comp bass" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Travis pattern","opts":{"compRhythm":"travis"}}]'></div>
+
+## 1. The thumb alone {#thumb}
+
+Start with the thumb, and only the thumb. On a chord, the thumb plays four bass notes in a bar, one on every beat: the **root**, an **inner string**, the **alternate bass**, and the inner string again. For C the root is the 5th string, the alternate bass is the 6th string (fret 3, which is a G), and the inner string is the 4th string, fret 2 (an E). Hold the C shape and play 5, 4, 6, 4.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C x32010@x32010"></div>
+
+<div class="abc-tab" data-tempo="70" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+"C"C E G, E | C E G, E |]
+</script></div>
+
+The alternate bass is the string on the other side of the root, so the thumb swings between a low note and a higher one. That is where the oom-pah comes from, and this pattern is the same as the band's bass line in its folk and country styles.
+
+- **Easy because:** one finger plays one note on every beat, and your fretting hand holds a chord you already know.
+- **Hard because:** the thumb has to find three strings without looking, and keep going in time.
+- **What goes wrong:**
+  - The thumb plays the wrong string, usually the next one over.
+  - The beat is uneven because the 5-to-6 jump takes longer than 5-to-4.
+  - The strings ring into each other. Rest the side of the right hand lightly on the bridge to damp the bass, and the notes come out shorter and cleaner.
+
+**Practice:** play it with a metronome at 60, with your eyes closed, for a minute. Then do the same on G, Am and D (section 4 has the strings).
+
+## 2. Pinches on beat 1 {#pinch}
+
+Now add a note on beat 1 only. Pick a treble string with a finger at the same moment as the thumb plays the root: that is a **pinch**. For C, use the B string (fret 1) with the middle finger. The other beats stay the same, thumb alone.
+
+<div class="abc-tab" data-tempo="70" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+"C"[Cc] E G, E | [Cc] E G, E |]
+</script></div>
+
+- **Easy because:** the thumb pattern is unchanged, and only one other note arrives, always on the same beat.
+- **Hard because:** the thumb and the finger have to start the note at the same instant. If they drift apart it sounds like a clumsy strum, not a pinch.
+- **What goes wrong:** the finger plays first or late. The pinch is louder than the thumb notes that follow.
+
+**Practice:** play only the pinches, with the thumb and finger leaving the strings together, then add the other three beats.
+
+## 3. Fingers between the thumb notes {#between}
+
+Now give the fingers their place. On each beat the thumb plays its note on the beat, and a finger plays a note on the "and" after beats 2, 3 and 4. Beat 1 stays a pinch, so there is nothing on its "and". Count it "1 2-and 3-and 4-and". The fingers play the treble strings: the middle finger on the B string and the ring finger on the high E string work, or the index finger on the G string. Use whichever fingers you prefer, and keep them the same from bar to bar.
+
+<div class="abc-tab" data-tempo="60" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"C"[Cc]2 E e G, c E e | [Cc]2 E e G, c E e |]
+</script></div>
+
+This is the Travis pattern. The thumb and the fingers alternate, so each one has a note, then a gap, then a note, and your hand feels like two people taking turns. Listen to the band play it in the demo above, and look at the staff to see how it matches.
+
+- **Easy because:** the thumb part is the same one from section 2, and the fingers play only three notes in a bar.
+- **Hard because:** the thumb and the fingers have to be independent. The thumb keeps its beat while the fingers play off it, and the thumb wants to follow the fingers.
+- **What goes wrong:**
+  - The thumb stops or stumbles when the fingers come in.
+  - The finger notes land on the beat instead of after it.
+  - The treble notes are as loud as the bass notes. Play the thumb a little louder and the fingers more lightly.
+
+**Practice:** count out loud, "one, two-and, three-and, four-and". Slow it down until it is steady, then bring it up in small steps. Spend a week on this step before the next.
+
+## 4. On C, G, Am and D {#chords}
+
+The same pattern needs a root, an inner string and an alternate bass for each chord. The thumb always plays the root of the chord on beat 1.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C x32010@x32010; G 320003@210003; Am x02210@x02310; D xx0232@xx0132"></div>
+
+- **C:** root on string 5, inner string 4 (fret 2), alternate bass on string 6 (fret 3). Treble: strings 2 and 1.
+- **G:** root on string 6 (fret 3), inner string 4 (open), alternate bass on string 5 (fret 2). Treble: strings 2 and 1.
+- **Am:** root on string 5 (open), inner string 4 (fret 2), alternate bass on string 6 (open). Treble: strings 2 and 1.
+- **D:** root on string 4 (open), inner string 3 (fret 2), alternate bass on string 5 (open). The strings below the root, 6, stay silent. Treble: strings 2 and 1.
+
+<div class="abc-tab" data-tempo="60" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"C"[Cc]2 E e G, c E e | "G"[G,B]2 D g B, B D g | "Am"[A,c]2 E e E, c E e | "D"[Dd]2 A ^f A, d A ^f |]
+</script></div>
+
+- **Easy because:** the pattern is the same each time, and the four chords are open shapes you know.
+- **Hard because:** the thumb has to learn a new set of strings for each chord. D, with only four strings in use, is the one that trips people up.
+- **What goes wrong:** the thumb plays a string that is not in the chord, and the bass sounds wrong. The alternate bass on D should be the open 5th string, not the low E.
+
+**Practice:** one chord for four bars, until the thumb finds the strings by feel. Then the next chord. For the chord shapes and the fretting hand see [guitar chord shapes by hand](chord-shapes-guitar-hand.qmd).
+
+## 5. Changing chords {#changes}
+
+Now move from one chord to the next without breaking the thumb's beat. The thumb keeps going while the fretting hand moves. The change lands on beat 1 of the next bar, on the root. The thumb notes on beats 3 and 4 are the time you have to move: let go of the old shape on beat 4 and have the new one down for beat 1.
+
+<div class="abc-tab" data-tempo="60" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"C"[Cc]2 E e G, c E e | "G"[G,B]2 D g B, B D g | "Am"[A,c]2 E e E, c E e | "D"[Dd]2 A ^f A, d A ^f |]
+</script></div>
+
+- **Easy because:** you can think of a bar at a time, and a bar of a chord you have already played is a bar you know.
+- **Hard because:** the picking hand cannot slow down while the fretting hand moves, and the roots of the chords move around on strings 4 to 6.
+- **What goes wrong:**
+  - The pattern stops dead at the change, because the picking hand waits for the fretting hand.
+  - The thumb plays the old chord's root on the new chord.
+  - The last beat of a bar is rushed.
+
+**Practice:** play C and G, two bars each, with a metronome. Do not stop. If the change is late, drop one beat of the picking (rest the fingers) and keep the thumb going. Then play it [with the band](#band).
+
+## 6. Travis picking with hammer-ons and pull-offs {#travis-hp}
+
+Hammer-ons and pull-offs make the pattern sound like Chet Atkins instead of a practice exercise. The hand technique is in [Hammer-ons and Pull-offs on Guitar](hammer-ons-pull-offs.qmd); you should be comfortable with sections 1 to 4 of that lesson first.
+
+**Hammer onto the 3rd of the chord, on beat 1.** The 3rd of a major chord is the note that makes it major, and in an open chord the string next to the root is often an open string a hammer-on away from it. On G, the thumb picks the open 5th string (A) and hammers to fret 2 (B, the 3rd). On C, it picks the open 4th string (D) and hammers to fret 2 (E, the 3rd). The hammered note takes the place of the pinch on beat 1, and then the pattern goes on.
+
+<div class="abc-tab" data-tempo="60" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"G"(A,B,) G, B D g B, B | "C"(DE) C c E e G, c |]
+</script></div>
+
+**Pull-offs in the treble, between the thumb notes.** The "and" after beat 2 can be two quick notes instead of one: pick the higher note, then pull off to the lower. On C the high E string is picked at fret 3 and pulled off to the open string. On Am the B string is picked at fret 1 and pulled off to the open B string.
+
+<div class="abc-tab" data-tempo="60" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"C"[Cc]2 E (g/e/) G, c E (g/e/) | "Am"[A,c]2 E (c/B/) E, c E (c/B/) |]
+</script></div>
+
+- **Easy because:** the thumb never changes. The hammer-ons and pull-offs are all in the fingers, and each one fits in one place in the pattern.
+- **Hard because:** the fretting hand has to do something while it is also holding the chord, and the picking hand has to stay steady while it waits for the hammer or the pull.
+- **What goes wrong:** the decorated beat gets rushed, or the thumb loses its place. The hammer-on is too soft to hear. A pull-off is not loud enough to match the picked notes.
+
+**Practice:** put one decoration in a four-bar phrase, in the same place each time, until you do not have to think about it. Then try a second one.
+
+## 7. With the band {#band}
+
+Now play the part with the band. The chart is G, C, D, G. The band's guitarist plays the pattern in section 3, and its bass plays the root and alternate bass with the thumb. Take the guitar off (the Chords button) and play the part yourself. Start at 70 beats a minute and speed up when it is steady.
+
+<div class="ar-demo" data-style="prine" data-chart="G|C|D|G" data-tempo="70" data-on="comp bass drums" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Travis pattern","opts":{"compRhythm":"travis"}},{"label":"Thumb, pinch-and (simpler)","opts":{"compRhythm":"prine"}}]'></div>
+
+The second button is the simpler pattern the band calls *thumb, pinch-and*. Use it to rehearse the thumb with fewer finger notes, and then play the Travis pattern.
+
+## 8. A neighbour: chicken pickin' {#chicken}
+
+Chicken pickin' is a cousin of Travis picking that sounds very different. It is a country guitar technique played with a flat pick and the middle and ring fingers (hybrid picking). The pick plays a bass or chord note, and the fingers snap the treble strings, pulling each one up and letting it slap against the frets. Notes are also muted by the picking hand, and the short, dry, clucking sound that results gives it the name. It began in the Telecaster-based country playing of the 1950s and 1960s, and you can hear it in the work of James Burton, Albert Lee and, more recently, Brad Paisley. This lesson does not teach it. If you can play the Travis pattern, you already have the independence of thumb and fingers that it takes.
+
+**Unlocks:** [the band's other fingerpicking pattern, Prine](patterns/chords-prine.qmd); [Hammer-ons and Pull-offs](hammer-ons-pull-offs.qmd).
+
+{{< include _arrange-kit.qmd >}}
+
+{{< include _pick-kit.qmd >}}

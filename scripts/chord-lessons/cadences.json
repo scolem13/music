@@ -1,0 +1,157 @@
+{
+ "title": "Lesson: Cadences, and the One That Is Not",
+ "body": "A **cadence** is how a phrase ends. Every ending has a different feel, and the feel comes from the\ntwo chords that make it. This lesson plays the five you will meet most, each as a four-bar phrase, and\nthen asks a harder question about one of them: is it a cadence at all?\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.\n\n## 1. The authentic cadence: V7 to I\n\n**C, F, G7, C.** The strongest ending there is. G7 contains the leading tone B and the note F, which\nare a tritone apart. Both are unstable: B wants to rise a half step to C and F wants to fall a half\nstep to E. The tonic chord that follows is where they land. The bass falls a fifth, and everything\nleans the same way.\n\n<div class=\"bl-step\" data-step=\"auth\"></div>\n\nLearn this one first. Every other ending on the page is compared with it.\n\n## 2. The half cadence: ending on V\n\n**C, F, C, G.** The phrase stops on the dominant, with the tension still in the air. It is a comma,\nnot a full stop: the ear expects an answer, and the next phrase usually supplies it.\n\n<div class=\"bl-step\" data-step=\"half\"></div>\n\n## 3. The deceptive cadence: V7 to vi\n\n**C, F, G7, Am.** Everything points at C, and then the last chord is Am, which shares two notes\nwith C (C and E). The leading tone still rises to C, but the chord on top of it is Am.\nThe listener expects a full stop and gets a surprise.\n\n<div class=\"bl-step\" data-step=\"decep\"></div>\n\n## 4. The plagal cadence, and why it is the fake one\n\n**C, Am, F, C.** IV to I, the \"Amen\". Most books call this a cadence. This lesson does not, and\nhere is the argument.\n\n- **A cadence is made by the dominant.** What ends a phrase in tonal music is the leading tone rising\n  to the tonic and the tritone of V7 resolving inward. IV to I has neither. No note in F is pulled\n  toward C, so nothing is resolved.\n- **IV is a neighbour of I.** I, IV, I leaves home and comes back, exactly as I, vi, I does. That\n  is a prolongation of the tonic chord, not an arrival.\n- **It comes after the real cadence.** The \"Amen\" at the end of a hymn follows a V to I that has\n  already closed the phrase. The plagal is tacked on afterwards, so it cannot be what made the ending.\n- **Some theorists agree.** William Caplin's *Classical Form* counts only authentic and half\n  cadences, and does not count IV to I as a cadence.\n\n<div class=\"bl-step\" data-step=\"plagal\"></div>\n\nHere is the \"Amen\" in its usual place: an authentic cadence first, then the plagal after it. Listen\nto bars 1 and 2, which end the phrase, and then to bars 3 and 4, which only soften it.\n\n<div class=\"bl-step\" data-step=\"amen\"></div>\n\nThere is a fair reply. In the blues, in gospel and in much rock, IV to I really is how a tune ends,\nbecause those styles never relied on a leading tone. So whether \"fake\" means \"not a cadence\" or \"a\ndifferent kind of ending\" depends on the style. In the classical tradition the first reading is the\none with the support.\n\n## 5. The backdoor: ♭VII to I\n\n**C, F, B♭, C.** The chord on the flat seventh is B♭, and it falls a whole step to C. There is no\nleading tone here either. The ending sounds relaxed, a door left open instead of shut. Compare it\nwith the plagal ending: both arrive without a dominant.\n\n<div class=\"bl-step\" data-step=\"flat7\"></div>\n\n## Build your own\n\nChoose how the phrase opens and how it ends, and the chart and the staff rewrite themselves. The shaded bars are the ones that differ from the plain authentic ending.\n\n<div id=\"bl-builder\" class=\"bl-widget\"></div>\n\n\n## Test your ear\n\nTwo questions. The first asks which ending the band played. The second plays one of three endings and asks how the last chord feels, so you can decide for yourself whether the plagal is a cadence.\n\n<div id=\"bl-quiz\" class=\"bl-widget\"></div>\n\n\n<div id=\"bl-quiz2\" class=\"bl-widget\"></div>\n\n## Where to go next\n\n- Play the five endings in a row at the same tempo and note which ones you could end a song on.\n- Take any of the phrases to **Tools → Backing Track** (*Copy as ABC*, then paste into *Edit the changes (ABC)*) to choose the bass line and drums.\n- The lesson on [borrowed chords](borrowed-chords.qmd) starts from the ♭VII to I ending.\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 4,
+  "feels": [
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   },
+   {
+    "id": "motown",
+    "label": "Motown / soul",
+    "tempo": 110
+   },
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   }
+  ],
+  "steps": {
+   "auth": {
+    "bars": "C|F|G7|C"
+   },
+   "half": {
+    "bars": "C|F|C|G",
+    "vs": "auth"
+   },
+   "decep": {
+    "bars": "C|F|G7|Am",
+    "vs": "auth"
+   },
+   "plagal": {
+    "bars": "C|Am|F|C",
+    "vs": "auth"
+   },
+   "amen": {
+    "bars": "G7|C|F|C"
+   },
+   "flat7": {
+    "bars": "C|F|Bb|C",
+    "vs": "auth"
+   }
+  },
+  "builder": {
+   "slots": [
+    {
+     "label": "Bars 1 and 2: the opening",
+     "opts": [
+      [
+       "I then IV",
+       "C|F"
+      ],
+      [
+       "I then ii",
+       "C|Dm"
+      ],
+      [
+       "I then vi",
+       "C|Am"
+      ]
+     ]
+    },
+    {
+     "label": "Bars 3 and 4: the ending",
+     "opts": [
+      [
+       "Authentic",
+       "G7|C"
+      ],
+      [
+       "Half",
+       "C|G"
+      ],
+      [
+       "Deceptive",
+       "G7|Am"
+      ],
+      [
+       "Plagal",
+       "F|C"
+      ],
+      [
+       "Backdoor",
+       "Bb|C"
+      ]
+     ]
+    }
+   ]
+  },
+  "quizzes": [
+   {
+    "host": "bl-quiz",
+    "question": "Which ending did you hear?",
+    "items": [
+     {
+      "name": "Authentic (V7 to I)",
+      "bars": "C|F|G7|C"
+     },
+     {
+      "name": "Half (ends on V)",
+      "bars": "C|F|C|G"
+     },
+     {
+      "name": "Deceptive (V7 to vi)",
+      "bars": "C|F|G7|Am"
+     },
+     {
+      "name": "Plagal (IV to I)",
+      "bars": "C|Am|F|C"
+     },
+     {
+      "name": "Backdoor (♭VII to I)",
+      "bars": "C|F|Bb|C"
+     }
+    ]
+   },
+   {
+    "host": "bl-quiz2",
+    "question": "How does the last chord feel?",
+    "options": [
+     "It ends: the phrase is finished",
+     "It settles, but nothing was resolved",
+     "It trails off, with the door open"
+    ],
+    "items": [
+     {
+      "name": "Authentic",
+      "answer": "It ends: the phrase is finished",
+      "bars": "C|F|G7|C",
+      "why": "The leading tone and the seventh both resolved."
+     },
+     {
+      "name": "Plagal",
+      "answer": "It settles, but nothing was resolved",
+      "bars": "C|Am|F|C",
+      "why": "IV to I: a soft landing, with no leading tone to resolve."
+     },
+     {
+      "name": "Backdoor",
+      "answer": "It trails off, with the door open",
+      "bars": "C|F|Bb|C",
+      "why": "♭VII to I: it arrives without a dominant, and with less finality than the plagal."
+     }
+    ]
+   }
+  ]
+ }
+}

@@ -12,6 +12,7 @@
 //     draw(el, abc),              // draw an ABC string in el
 //     options()                   // (optional) { beam, tie } to write the previews with
 //     mmOffset()                  // (optional) how many measures the notation has in front of the page's bar 1 (a pickup bar of the melody's own)
+//     label, intro                // (optional) the button's text (default "What did I mean?") and the first sentence under it
 //   });
 //   d.pick(classes, extend)       // a note was clicked in the page's notation (abcjs's class string); extend: shift was held
 //   d.markScore(el)               // colour the picked bars in the page's notation
@@ -37,13 +38,13 @@
   function attach(o){
     if (!document.getElementById("md-style")){ var st = el("style"); st.id = "md-style"; st.textContent = CSS; document.head.appendChild(st); }
     var box = el("div", "md-box"), row = el("div", "md-row"), sel = { a: 0, b: 0 };
-    var from = el("input"), to = el("input"), go = el("button", "md-btn is-main", "What did I mean?"), say = el("p", "md-say"), list = el("div", "md-list");
+    var from = el("input"), to = el("input"), go = el("button", "md-btn is-main", o.label || "What did I mean?"), say = el("p", "md-say"), list = el("div", "md-list");
     from.type = to.type = "number"; from.min = to.min = "1"; from.setAttribute("aria-label", "First bar"); to.setAttribute("aria-label", "Last bar");
     go.type = "button"; go.title = "Tries the other ways this playing could be written, for these bars, and shows each.";
     var l1 = el("label", null, "From bar"), l2 = el("label", null, "To bar"); l1.appendChild(from); l2.appendChild(to);
     row.appendChild(l1); row.appendChild(l2); row.appendChild(go);
     box.appendChild(row); box.appendChild(say); box.appendChild(list); o.host.appendChild(box);
-    say.textContent = "Pick bars (click a note in the notation, shift-click for a range, or type them) and ask what you meant. The notes are re-read from how they were played, so this only works on the take you have just made.";
+    say.textContent = o.intro || "Pick bars (click a note in the notation, shift-click for a range, or type them) and ask what you meant. The notes are re-read from how they were played, so this only works on the take you have just made.";
     function nb(){ return Math.max(1, (o.bars && o.bars()) || 1); }
     function clamp(x){ return Math.max(0, Math.min(nb() - 1, x | 0)); }
     var ready = false;

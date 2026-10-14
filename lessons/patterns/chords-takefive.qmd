@@ -1,0 +1,67 @@
+---
+title: "Comping rhythm: Take Five vamp"
+subtitle: "For piano or guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Take Five vamp**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+For 5/4, grouped 3 + 2: a held chord on 1, a short one on the and of 2, then short chords on 4 and 5.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="168" data-on="bass comp drums congas" data-staves="comp" data-meter="5/4" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Take Five vamp","opts":{"compRhythm":"takefive"}}]'></div>
+
+## Step 1: Long notes
+
+Start with something simpler. One held chord per bar (or per chord). Leaves the most room for a soloist.
+
+This is a pattern of its own: [the lesson on it](chords-pad.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="118" data-on="comp drums" data-staves="comp" data-meter="5/4" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Long notes","opts":{"compRhythm":"pad"}}]'></div>
+
+## Step 2: Charleston
+
+A held chord on beat 1 and a short one on the and of 2. The first comping rhythm most players learn.
+
+This is a pattern of its own: [the lesson on it](chords-charleston.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="118" data-on="comp drums" data-staves="comp" data-meter="5/4" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Charleston","opts":{"compRhythm":"charleston"}}]'></div>
+
+## Step 3: Take Five vamp, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** 5/4 grouped 3+2: held chord on 1, short on the and of 2, short chords on 4 and 5. It is the Charleston with two more beats.
+
+The band plays it on piano here; the step after next has it on guitar.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="118" data-on="comp drums" data-staves="comp" data-meter="5/4" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Take Five vamp","opts":{"compRhythm":"takefive"}},{"label":"Charleston (the step before)","opts":{"compRhythm":"charleston"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 168 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="168" data-on="bass comp drums congas" data-staves="comp bass" data-meter="5/4" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Take Five vamp","opts":{"compRhythm":"takefive"}}]'></div>
+
+## Step 5: On the guitar
+
+The same rhythm on the guitar. On guitar each chord is a strum or a pluck of a chord shape; a short chord is choked by easing the fretting hand off the strings.
+
+<div class="ar-demo" data-style="swing" data-chart="Ebm7|Bbm7|Ebm7|Bbm7" data-tempo="168" data-on="bass comp drums congas" data-staves="comp bass" data-meter="5/4" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Take Five vamp","opts":{"compRhythm":"takefive"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Long notes](chords-pad.qmd), [Charleston](chords-charleston.qmd).
+- **The same idea elsewhere in the band:** [Take Five: 3 + 2](bass-takefive.qmd) (bass line).
+- **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Jazz time](drums-auto.qmd) (drum groove).
+- **Other comping rhythms in the From tunes group:** [So What: the answer](chords-sowhat.qmd), [Maiden Voyage](chords-maiden.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

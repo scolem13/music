@@ -37,6 +37,8 @@
 #bt-root .bt-inline{display:flex;align-items:center;gap:.6rem}
 #bt-root .bt-inline input[type=range]{flex:1 1 auto;min-width:6rem}
 #bt-root .bt-unit{font-size:.8rem;color:var(--site-ink-3,#9a8d7e)}
+#bt-root .bt-tonality{display:flex;align-items:center;height:2.2rem;padding:0 .2rem;font-weight:600;white-space:nowrap}
+#bt-root .bt-label-like{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--site-ink-2,#5c5246)}
 #bt-root .bt-status{margin:.7rem 0 0;min-height:1.3em;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);
   font-size:.78rem;color:var(--site-ink-2,#5c5246)}
 #bt-root .bt-status.is-error{color:var(--site-fail,#b5251c)}
@@ -229,7 +231,7 @@
 </style>
 
 <div id="bt-root">
-  <p class="bt-hint" id="bt-remote" role="status" hidden style="margin:0 0 .8rem;padding:.6rem .9rem;border:1px solid var(--site-accent-dk,#2b9c90);border-radius:8px">This window is playing <span id="bt-remote-song">a song</span> for the lyrics page that opened it: Play, Stop and the sections are driven from there, and everything on this page still works while it plays. <strong id="bt-remote-click">Click anywhere in this window once so that it is allowed to make sound.</strong> <span id="bt-remote-versions" hidden><label for="bt-remote-version" style="font-weight:600">Changes</label> <select id="bt-remote-version" style="max-width:16rem"></select> <span>The chords over the words follow this menu, and the ABC below when it is edited without moving a chord.</span></span></p>
+  <p class="bt-hint" id="bt-remote" role="status" hidden style="margin:0 0 .8rem;padding:.6rem .9rem;border:1px solid var(--site-accent-dk,#2b9c90);border-radius:8px">This window is playing <span id="bt-remote-song">a song</span> for <span id="bt-remote-host">the lyrics page</span> that opened it: Play, Stop and the sections are driven from there, and everything on this page still works while it plays. <strong id="bt-remote-click">Click anywhere in this window once so that it is allowed to make sound.</strong> <span id="bt-remote-versions" hidden><label for="bt-remote-version" style="font-weight:600">Changes</label> <select id="bt-remote-version" style="max-width:16rem"></select> <span>The chords over the words follow this menu, and the ABC below when it is edited without moving a chord.</span></span></p>
   <div class="bt-panel">
     <div class="bt-row">
       <button type="button" id="bt-play" class="bt-play" data-state="idle">&#9654; Play</button>
@@ -243,6 +245,7 @@
         </div>
       </div>
       <div class="bt-field"><label for="bt-key">Key</label><select id="bt-key"></select></div>
+      <div class="bt-field"><span class="bt-label-like" id="bt-tonality-lab">Tonality</span><output id="bt-tonality" class="bt-tonality" aria-labelledby="bt-tonality-lab" title="Read from the chart: its key line and its chords (dominant sevenths on I and IV make a blues)."></output></div>
       <div class="bt-field"><label for="bt-changes">Changes</label><select id="bt-changes"></select></div>
       <div class="bt-field"><label for="bt-meter">Meter</label><select id="bt-meter"></select>
         <span class="bt-meter-fixed" id="bt-meter-fixed" hidden><span id="bt-meter-text"></span><button type="button" class="bt-meter-edit" id="bt-meter-edit">edit M:</button></span></div>
@@ -609,6 +612,7 @@
       <button type="button" class="bt-btn" id="bt-mel-rec">&#9679; Record melody</button>
       <button type="button" class="bt-btn" id="bt-mel-undo">Undo the take</button>
       <button type="button" class="bt-btn" id="bt-mel-clear">Remove the melody</button>
+      <button type="button" class="bt-btn" id="bt-mel-entry" title="Opens the Chord Entry page with these changes and the melody so far, set to record the melody with the band a section at a time (its words, the notation rules, a take kept in part).">Open in the melody entry tool</button>
       <label class="bt-check" title="Off: the band plays the changes alone."><input type="checkbox" id="bt-mel-hear" checked> Play the melody with the band</label>
       <label class="bt-check" title="Off: when several notes are struck together only the top one is written. On: they are written as a chord."><input type="checkbox" id="bt-mel-poly"> Notes struck together are written as a chord</label>
       <div class="bt-field"><label for="bt-mel-ms" title="Notes struck within this many milliseconds of each other count as struck together.">Together within (ms)</label>
@@ -676,13 +680,15 @@
 </div>
 
 <script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/tonality.js?v=10"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
-<script src="/apps/shared/chord-entry.js?v=7"></script>
+<script src="/apps/shared/chord-entry.js?v=9"></script>
 <script src="/apps/shared/musical-typing.js"></script>
 <script src="/apps/shared/melody-dwim.js?v=1"></script>
+<script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
-<script src="/apps/shared/band/tune-score.js?v=1"></script>
+<script src="/apps/shared/band/tune-score.js?v=2"></script>
 <script src="/apps/shared/tune-library.js?v=16"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=1"></script>
@@ -691,12 +697,12 @@
 <script src="/apps/shared/band/comp.js?v=30"></script>
 <script src="/apps/shared/band/presets.js?v=5"></script>
 <script src="/apps/shared/band/catalog.js?v=33"></script>
-<script src="/apps/shared/band/drums.js?v=14"></script>
+<script src="/apps/shared/band/drums.js?v=15"></script>
 <script src="/apps/shared/band/congas.js?v=2"></script>
 <script src="/apps/shared/band/sounds.js?v=14"></script>
 <script src="/apps/shared/band/player.js?v=120"></script>
 <script src="/apps/shared/band/midi.js?v=19"></script>
-<script src="/apps/shared/band/notation.js?v=11"></script>
+<script src="/apps/shared/band/notation.js?v=12"></script>
 <script src="/apps/shared/band/rebar.js?v=2"></script>
 <script>
 (function(){
@@ -890,6 +896,16 @@
   $("bt-tune-load").addEventListener("click", tunePicker);
 
   // Parse + show a new set of changes; hand them to the band (takes effect from its next bar).
+  // The chart's tonality, shown beside the Key menu (not a control: it is read from the chart) and handed to the site's shared key
+  // (tonality.js), so the navbar's circle and the other tools follow the tune: its K: line, and blues when I and IV are dominant sevenths.
+  function keyAnnounce(text){
+    var T = window.Tonality, out = $("bt-tonality"); if (!T || !out) return;
+    var kf = (/^K:\s*([^\s%]+)/m.exec(text) || [])[1] || "C", t = T.keyToTonality(kf); if (!t) return;
+    var chords = []; String(text).replace(/"([A-G][^"]*)"/g, function(m, c){ chords.push(c); return m; });
+    var flavor = T.flavorOf(chords, t.resting, t.mode);
+    out.textContent = T.label({ resting: t.resting, mode: t.mode, flavor: flavor, tonic: t.tonic });
+    T.setFromKey(kf, "backing-track", flavor);
+  }
   function applyAbc(text, fromEditor, allowEmpty){
     var parsed = null; try { parsed = TuneChart.parse(text); } catch (e) {}
     if (!parsed || !(allowEmpty ? parsed.bars.length : hasChords(parsed))){
@@ -902,6 +918,7 @@
     showChart(); barCheck(); abcSettings(text, parsed);
     secCheck(); marksToFields(); sectionsSync();
     $("bt-key").value = KEYS[parsed.keyPc];
+    keyAnnounce(text);
     showMeter(parsed);
     if (!fromEditor) $("bt-abc").value = text;
     if (player) player.setChart(parsedC);
@@ -1335,6 +1352,8 @@
     if (reset || !unlocked()) $("bt-feel").value = st.feel;
     extSync(); figsSync(); walkSync(reset); lockSync();
     $("bt-style-note").textContent = [st.genres, st.desc].filter(Boolean).join(". ") + (unlocked() ? (genre() ? " Unlocked: the menus list " + genre() + " and what is in use." : " Unlocked: every menu lists everything, what fits " + st.label + " first.") : "");
+    var about = document.createElement("a"); about.href = BandCatalog.article(st.id); about.textContent = "About " + st.label + ": history and listening";
+    $("bt-style-note").appendChild(document.createTextNode(" ")); $("bt-style-note").appendChild(about);
   }
   // unmarked extensions: how often, and which kinds (null = never)
   function extendChoice(){
@@ -1458,6 +1477,7 @@
     else if (!secApplying){ var now = pickSec(m), js = JSON.stringify(now);
       if (js !== secRef){ secOv[secShown] = { opts: now, state: bandState(), sounds: menuSounds() }; secRef = js; secNote(); } }
     Object.keys(secOv).forEach(function(k){ secs[k] = secOv[k].opts; });
+    if (typeof remoteReport === "function") remoteReport();
     return Object.assign(m, secBase, { sectionOverrides: secs });
   }
   window.__btSections = function(){ var o = {}; Object.keys(secOv).forEach(function(k){ o[k] = secOv[k].opts; });                   // for tests
@@ -1996,9 +2016,10 @@
     var was = pins, from = parsedC ? parsedC.keyPc : 0, auto = pinAuto;
     pins = null;
     var text = abc; try { text = AbcTranspose.transpose(abc, $("bt-key").value); } catch (e) {}
-    var melFrom = from;
+    // (a typed spelling moves by letter names as well as semitones: A# in A is B in Bb)
+    var melFrom = from, melFromName = parsedC ? parsedC.keyField : "C";
     applyAbc(text, false);
-    if (mel.length || melPickup){ var dm = (((parsedC.keyPc - melFrom) % 12) + 12) % 12; if (dm > 6) dm -= 12; mel.concat(melPickup ? [melPickup.notes] : []).forEach(function(b){ (b || []).forEach(function(n){ n.midi += dm; if (n.midis) n.midis = n.midis.map(function(x){ return x + dm; }); }); }); melAttach(); melShow(); }
+    if (mel.length || melPickup){ var dm = (((parsedC.keyPc - melFrom) % 12) + 12) % 12; if (dm > 6) dm -= 12; mel.concat(melPickup ? [melPickup.notes] : []).forEach(function(b){ (b || []).forEach(function(n){ n.midi += dm; if (n.sp){ var ms = ChordEntry.moveSp(n.sp, n.midi, melFromName, parsedC.keyField, dm); if (ms.sp){ n.sp = ms.sp; if (ms.odd) n.spOdd = true; else delete n.spOdd; } else { delete n.sp; delete n.spOdd; } } if (n.midis) n.midis = n.midis.map(function(x){ return x + dm; }); }); }); melAttach(); melShow(); }
     if (was){
       var d = (((parsedC.keyPc - from) % 12) + 12) % 12; if (d > 6) d -= 12;
       var map = {}; Object.keys(was.map).forEach(function(k){ map[k] = was.map[k].map(function(m){ return m + d; }); });
@@ -2296,7 +2317,8 @@
       var sameSong = remote.abc === m.abc, kept = {}; remote.abc = m.abc;
       ["bt-gap", "bt-gap-bars", "bt-gap-range", "bt-cyc-from", "bt-cyc-to", "bt-choruses"].forEach(function(id){ kept[id] = $(id).value; });
       kept.cyc = $("bt-cyc-on").checked; kept.again = !!remote.repeats;
-      remote.loaded = true; remote.melody = m.melody || null; remote.version = typeof m.version === "string" ? m.version : "";
+      remote.loaded = true; remote.melody = m.melody || null; remote.report = !!m.report;
+      if (m.host) $("bt-remote-host").textContent = m.host; remote.version = typeof m.version === "string" ? m.version : "";
       remoteVersions(m); remoteVersionShow();
       // the song's own saved setup (kept beside it on the lyrics site) sets everything, on the chart that was sent; otherwise style and tempo
       var su = m.setup && typeof m.setup === "object" ? Object.assign({}, m.setup, { abc: m.abc, pins: null }) : null;
@@ -2333,7 +2355,26 @@
     else if (m.type === "bt-fill") fillNow();
     else if (m.type === "bt-hold"){ $("bt-hold").value = m.on ? "hold" : "through"; sectionsSync(); }
     else if (m.type === "bt-melody"){ remote.mute = !m.on; player.setOpts(bandOpts()); }
+    // the Notation page: show one section's settings on the Band tab, so that what is changed there stays with that section
+    // (also a section with no settings of its own yet: the first change makes them). section < 0: the tune's own settings.
+    else if (m.type === "bt-focus"){
+      var fi = m.section | 0, secsF = chartSections();
+      if (fi >= 0 && secsF[fi]){
+        enterSection(fi, true);
+        if (secShown == null){ secBaseState = bandState(); secBaseSounds = menuSounds(); secShown = fi; secRef = JSON.stringify(pickSec(menuOpts())); }
+      } else if (secShown != null && secBaseState){ applyBand(secBaseState); secShown = null; secRef = ""; }
+      secNote();
+      var tb = $("dxa-tab-band"); if (tb) tb.click(); else { $("bt-sec-band").open = true; }
+      var to = $("bt-sec-tools") && !$("bt-sec-tools").hidden ? $("bt-sec-tools") : $("bt-sec-band"); if (to && to.scrollIntoView) to.scrollIntoView({ block: "center" });
+      if (m.label) $("bt-remote-song").textContent = m.label;
+      remoteReport();
+    }
   });
+  // Every change on the page goes back to the page that opened it, as a setup (the Notation page keeps it with the music).
+  var reportT = null;
+  function remoteReport(){ if (!remote.on || !remote.loaded || !remote.report) return; clearTimeout(reportT);
+    reportT = setTimeout(function(){ remoteSay({ type: "bt-setup", setup: snapshot(""), shown: secShown, styles: STYLES.map(function(x){ return { id: x.id, label: x.label }; }) }); }, 300); }
+  if (remote.on){ ["change", "input"].forEach(function(ev){ document.addEventListener(ev, function(e){ if (e.target && e.target.closest && e.target.closest("#bt-root")) remoteReport(); }, true); }); }
   if (remote.on){
     var rb = $("bt-remote"); rb.hidden = false;
     document.addEventListener("pointerdown", function(){ $("bt-remote-click").hidden = true; }, { once: true });
@@ -2581,12 +2622,12 @@
     if (loBar > 0 && q[loBar - 1] && q[loBar - 1].length) loBar--;            // notes played in the count-in belong to the bar before
     for (i = loBar; i <= hiBar; i++){
       var src = form[i].src; if (seen[src]) continue; seen[src] = 1;
-      next[src] = q[i].map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: n.tie && !!form[i + 1] && form[i + 1].src === src + 1 && i < hiBar }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces) o.graces = n.graces.slice(); return o; });
+      next[src] = q[i].map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: n.tie && !!form[i + 1] && form[i + 1].src === src + 1 && i < hiBar }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces) o.graces = n.graces.slice(); if (n.sp) o.sp = n.sp; if (n.spOdd) o.spOdd = true; return o; });
       got += q[i].length;
     }
     var newPickup = melPickup;
     if (r.a === 0 && $("bt-mel-pickup").value === "auto"){
-      var pn = pickBar ? pickBar.map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: false }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces) o.graces = n.graces.slice(); return o; }) : [];
+      var pn = pickBar ? pickBar.map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: false }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.stac) o.stac = true; if (n.graces) o.graces = n.graces.slice(); if (n.sp) o.sp = n.sp; if (n.spOdd) o.spOdd = true; return o; }) : [];
       if (parsedC.anacrusis){ next[0] = pn; got += pn.length; newPickup = null; }          // the chart's own pickup bar holds them
       else { newPickup = pn.length ? { beats: pk, notes: pn } : null; got += pn.length; }
     }
@@ -2675,6 +2716,15 @@
   window.__btMel = { dwim: function(){ return melDwim; }, beat: function(){ if (!melRec || !player) return null; var w = player.where(); if (!w || w.info.ending || w.info.intro) return null; if (w.info.countIn) return w.info.bar === -1 ? melRec.base - w.beats + w.pos : null; return (melRec.g[w.info.index] || { start: 0 }).start + w.pos; }, pickup: function(){ return melPickup; }, lastTake: function(){ return melLog; }, on: melOn, off: melOff, mel: function(){ return mel; }, where: function(){ var w = player && player.context() && player.where(); return w && !w.info.countIn && !w.info.intro && !w.info.ending && w.info.chorus === 0 ? (melForm()[w.info.index] || { start: 0 }).start + w.pos : null; }, recording: function(){ return !!melRec; } };   // for tests
   melShow();
 
+  // over to the Chord Entry page set to record the melody, the way the lyrics site's Band panel sends a song: chord-entry.html#from=tune&d=<JSON>
+  $("bt-mel-entry").addEventListener("click", function(){
+    if (!abc || !parsedC){ melNote("Enter some changes first."); return; }
+    var have = mel.filter(function(b){ return b && b.length; }).length, d = { abc: abc, title: parsedC.title || "", tempo: tempo(), style: $("bt-style").value, have: have, total: parsedC.bars.length };
+    if (have && mel.length === parsedC.bars.length) d.gridMelody = mel.map(function(b){ return (b || []).map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: !!n.tie }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.sp) o.sp = n.sp; if (n.spOdd) o.spOdd = true; return o; }); });
+    if (melPickup && melPickup.notes && melPickup.notes.length && !parsedC.anacrusis) d.pickup = { beats: melPickup.beats, notes: melPickup.notes.map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: !!n.tie }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.sp) o.sp = n.sp; if (n.spOdd) o.spOdd = true; return o; }) };      // (notes before bar 1: a short bar in front there too)
+    var page = "/tools/chord-entry.html#from=tune&d=" + encodeURIComponent(JSON.stringify(d));
+    if (!window.open(page, "bt-chord-entry")) location.href = page;
+  });
   // over to the Chord Entry page with what is here: localStorage.entryHandoff { v, from, at, abc, tempo, pinMap }
   $("bt-to-entry").addEventListener("click", function(){
     try { localStorage.setItem("entryHandoff", JSON.stringify({ v: 1, from: "backing-track", at: Date.now(), abc: abc, tempo: tempo(), style: $("bt-style").value, pinMap: pins ? pins.map : {} })); } catch (e) {}

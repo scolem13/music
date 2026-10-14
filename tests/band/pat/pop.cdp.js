@@ -12,7 +12,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`0`).catch(() => {}); await b.goto(B + "/tools/backing-track.html"); await b.sleep(1200); await hook();
     assert.deepStrictEqual(await snap(), ["piano", "upright", "ride", false, "walk", "auto", "auto"], "swing as before");
     assert.strictEqual(await ev(`Array.from(document.querySelectorAll("#bt-style optgroup[label='Folk, rock and pop'] option")).map(function(o){ return o.textContent; }).join(" | ")`),
-      "Straight-eighth rock | Emo / pop-punk | Acoustic strum | Piano ballad | Dance pop | Motown / soul | 12/8 doo-wop | Country train beat | Boom-chick | John Prine Fingerpicking");
+      "Straight-eighth rock | Emo / pop-punk | Acoustic strum | Piano ballad | Dance pop | Motown / soul | 12/8 doo-wop | Country train beat | Boom-chick | Freylekhs / polka | John Prine Fingerpicking");
     // a style brings its sounds; the instrument stays in its family unless the style is built around the other one
     await set("bt-style", "rock"); assert.deepStrictEqual(await snap(), ["piano", "electric", "hat", true, "eighths", "strumEights", "rock"]);
     await set("bt-style", "strum"); assert.deepStrictEqual(await snap(), ["aguitar", "electric", "hat", true, "dotted", "strumCamp", "strum"]);

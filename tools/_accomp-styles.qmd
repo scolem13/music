@@ -960,7 +960,7 @@
 <script src="/apps/shared/band/bass.js?v=14"></script>
 <script src="/apps/shared/band/comp.js?v=28"></script>
 <script src="/apps/shared/band/catalog.js?v=33"></script>
-<script src="/apps/shared/band/drums.js?v=14"></script>
+<script src="/apps/shared/band/drums.js?v=15"></script>
 <script src="/apps/shared/band/congas.js?v=2"></script>
 <script src="/apps/shared/band/sounds.js?v=14"></script>
 <script src="/apps/shared/band/player.js?v=112"></script>
@@ -1181,6 +1181,7 @@
       if (i) p.appendChild(document.createTextNode(' '));
       p.appendChild(el('strong', null, e.label + '.'));
       p.appendChild(document.createTextNode(' ' + e.desc));
+      if (e.href) { p.appendChild(document.createTextNode(' ')); var a = el('a', null, 'History and listening'); a.href = e.href; p.appendChild(a); }
     });
     return p;
   }
@@ -1193,7 +1194,7 @@
   if (cat.congas) root.appendChild(group('Conga patterns', cat.congas.filter(function (e) { return e.id !== 'none'; }), 'congas'));
   if (cat.styles) { var sg = el('div', 'as-group'); sg.appendChild(el('div', 'as-group-title', 'Styles'));
     sg.appendChild(noteLine('Each style sets a feel, bass line, comping rhythm, drum groove and voicings that belong together:',
-      cat.styles.map(function (x) { return { label: x.label, desc: x.genres + '. ' + x.desc }; })));
+      cat.styles.map(function (x) { return { label: x.label, desc: x.genres + '. ' + x.desc, href: cat.article(x.id) }; })));
     root.appendChild(sg); }
   var g = el('div', 'as-group');
   g.appendChild(el('div', 'as-group-title', 'Feels and cymbals'));

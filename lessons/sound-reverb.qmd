@@ -1,0 +1,56 @@
+---
+title: "Sound 11: Reverb"
+toc: true
+toc-depth: 2
+---
+
+Clap in a cathedral and the sound goes on for seconds after your hands stop. It bounces off the walls,
+the floor and the ceiling, thousands of times, each echo a little quieter and a little duller, until
+they blur into a smooth wash. That wash is **reverberation**, and every room has its own. A **reverb**
+effect puts a dry recording into a room that isn't there.
+
+**How to use the page.** The source starts as **single hits**, so you can hear each hit's tail die
+away. The strip under the controls is the room's **impulse response**: what one instant click would
+sound like in this room.
+
+## The room
+
+<div class="sk" data-w="reverb" data-source="hits"></div>
+
+- **Decay time (RT60)**: how long the tail takes to fall by 60 dB, which is about until you can't hear
+  it. A living room is about 0.5 s, a concert hall about 2 s, a cathedral 5 s or more.
+- **Pre-delay**: the gap before the reverb starts. In a big room the first reflection takes a while
+  to come back. A little pre-delay keeps a voice clear in front of its reverb.
+- **Damping**: in real rooms the high frequencies die first, absorbed by air, carpet and people. Lower
+  damping makes a darker, warmer tail.
+- **Early reflections**: the first few distinct echoes from the nearest walls. They tell your ear how
+  big the room is before the tail arrives.
+- **Mix**: how far away the sound seems. More wet signal pushes it to the back of the room.
+
+Try the presets: a small room, a hall, a cathedral, a **plate** (a big steel sheet with a pickup, used
+in studios since the 1950s: bright and dense, no early reflections) and **reverse**, the impulse response
+played backwards so each sound swells *into* itself.
+
+## How it is made: convolution
+
+This reverb is a **convolution reverb**. It needs one thing: the impulse response of the room. To
+capture a real room, engineers play a click (or a sweep) in it and record what comes back. The
+computer then replays that recording once for every sample of the input, scaled by that sample's
+level, and adds them all up. That's a lot of arithmetic, which the browser does for us.
+
+The impulse responses here aren't recordings. They are made from decaying [noise](sound-noise.qmd)
+that gets duller as it fades, plus a few early reflections. That's close to what a real room does, and
+it means every control can change the room instantly.
+
+## On music
+
+Switch the source to the **chords**, the **drum loop** or your **microphone** (headphones on). Long
+reverb makes chords smooth and huge but turns drums to mush; fast music wants short reverb or a lot of
+pre-delay. Singing into the cathedral preset and listening to your own voice come back is the best way
+to learn what reverb does.
+
+## Next
+
+- [Sound 12: Chorus and flanger](sound-chorus.qmd)
+
+{{< include _synth-kit.qmd >}}

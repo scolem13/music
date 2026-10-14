@@ -1,0 +1,82 @@
+{
+ "title": "Lesson: Guide Tones",
+ "body": "In a seventh chord the **3rd** and the **7th** say what the chord is. A line made of those notes, one\nfor each chord, is called a **guide-tone line**, and it moves by step or by nothing at all. This lesson\nwrites that line over four-chord loops, on a staff, so that you can hear what the chords are doing\ninside.\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart. Under each chart is a one-voice staff with the line, and the band's piano plays the line over the chords.\n\n## 1. Just the 3rds\n\n**C, G, Am, F** as plain triads, with the 3rd of each chord on the staff. The 3rd is the note that\nmakes a chord major or minor. Listen to the line E, B, C, A: it is the loop with the chords taken away.\n\n<div class=\"bl-step\" data-step=\"thirds\"></div>\n\n## 2. Sevenths, and the 3rds again\n\n**Cmaj7, G7, Am7, Fmaj7.** The same loop with a 7th on every chord. The 3rds are the same notes. The\n7ths are new, and they are what the next step uses.\n\n<div class=\"bl-step\" data-step=\"thirds7\"></div>\n\n## 3. Just the 7ths\n\nThe 7ths of those chords: B, F, G and E. The 7th of one chord is often the 3rd of the next, or a step from it:\nthe B of Cmaj7 is the 3rd of G7, and the G of Am7 rises a step to the A that is the 3rd of Fmaj7.\n\n<div class=\"bl-step\" data-step=\"sevenths\"></div>\n\n## 4. The guide-tone line\n\nFor each chord, take whichever of its 3rd and 7th is nearer the last note you played. The line now\nmoves by a step or a skip, and it holds a note where it can.\n\n<div class=\"bl-step\" data-step=\"guide\"></div>\n\n## 5. Over a two-five-one\n\n**Dm7, G7, Cmaj7.** The most important use of the line. The F is the 3rd of Dm7 and the 7th of G7:\nit does not move at all. It then falls a half step to E, the 3rd of Cmaj7, which is the note that\ntells you the chord has changed to major.\n\n<div class=\"bl-step\" data-step=\"251\"></div>\n\n## 6. Over the turnaround\n\n**Cmaj7, Am7, Dm7, G7.** Four chords, and the line moves by half steps and whole steps through\nall of them. A bass player and a pianist who both play the guide tones will be in tune with each\nother without having said a word.\n\n<div class=\"bl-step\" data-step=\"turn\"></div>\n\n## Build your own\n\nChoose a progression and what the staff shows: the chords, the 3rds, the 7ths or the guide-tone line. The band plays the line when the staff shows one.\n\n<div id=\"bl-builder\" class=\"bl-widget\"></div>\n\n\n## Where to go next\n\n- Play each line on your instrument over the band, then try singing it.\n- The guitar and piano lessons on the blues use the same 3rd and 7th as their shell chords.\n- In [turnarounds](turnarounds.qmd) the line is the same, with a tritone substitution in the V.\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 4,
+  "feels": [
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   },
+   {
+    "id": "bossa",
+    "label": "Bossa nova",
+    "tempo": 120
+   },
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   }
+  ],
+  "steps": {
+   "251": {
+    "bars": "Dm7|G7|Cmaj7|Cmaj7",
+    "staff": "guide"
+   },
+   "thirds": {
+    "bars": "C|G|Am|F",
+    "staff": "third"
+   },
+   "thirds7": {
+    "bars": "Cmaj7|G7|Am7|Fmaj7",
+    "staff": "third"
+   },
+   "sevenths": {
+    "bars": "Cmaj7|G7|Am7|Fmaj7",
+    "staff": "seventh"
+   },
+   "guide": {
+    "bars": "Cmaj7|G7|Am7|Fmaj7",
+    "staff": "guide"
+   },
+   "turn": {
+    "bars": "Cmaj7|Am7|Dm7|G7",
+    "staff": "guide"
+   }
+  },
+  "builder": {
+   "slots": [
+    {
+     "label": "Progression",
+     "opts": [
+      [
+       "I V vi IV",
+       "Cmaj7|G7|Am7|Fmaj7"
+      ],
+      [
+       "I vi IV V",
+       "Cmaj7|Am7|Fmaj7|G7"
+      ],
+      [
+       "I vi ii V",
+       "Cmaj7|Am7|Dm7|G7"
+      ],
+      [
+       "ii V I",
+       "Dm7|G7|Cmaj7|Cmaj7"
+      ]
+     ]
+    }
+   ],
+   "staff": "guide"
+  }
+ }
+}

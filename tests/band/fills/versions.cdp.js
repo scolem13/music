@@ -18,23 +18,23 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`0`).catch(() => {}); await b.goto(B);
     await ev(`(window.__errs = [], window.addEventListener("error", function(e){ __errs.push(e.message); }), 0)`);
     assert.strictEqual(await ready(), true);
-    const written = await chords(0), abc0 = await ev(`window.carolBandAbc`);
-    assert.deepStrictEqual(written, ["Eb", "Gm", "Cm", "Fm", "Bb", "Gm", "D9", "Gm7", "C9#5", "F9", "Bb7", "Eb"]);
+    const written = await chords(2), abc0 = await ev(`window.carolBandAbc`);
+    assert.deepStrictEqual(written, ["Eb", "Gm", "C7", "Fm", "Bb", "Gm", "D9", "Gm7", "C9#5", "F9", "Bb7", "Eb"]);
     assert.strictEqual(await ev(shown), true);                       // (127.0.0.1 is the teacher's own machine)
     assert.strictEqual(await ev(`document.querySelector(".band-version select").value`), "");
     await key("v");
     assert.strictEqual(await ev(`document.querySelector(".band-version select").value`), "Songbook");
-    console.log((await chords(0)).join(" "));
-    assert.deepStrictEqual(await chords(0), ["Eb", "Eb~*", "Eb~*", "Bb7*", "Bb7~*", "Bb7~*", "Fm*", "Bb7*", "Fm*", "F7*", "Bb7", "Eb"]);
-    assert.deepStrictEqual((await chords(2)).slice(0, 3), ["G*", "D7*", "G*"]);
+    console.log((await chords(2)).join(" "));
+    assert.deepStrictEqual(await chords(2), ["Eb", "Eb~*", "Eb~*", "Bb7*", "Bb7~*", "Bb7~*", "Fm*", "Bb7*", "Fm*", "F7*", "Bb7", "Eb"]);
+    assert.deepStrictEqual((await chords(4)).slice(0, 3), ["G*", "D7*", "G*"]);
     assert(/Tonic for two bars/.test(await ev(`document.querySelector(".band-version-note").textContent`)));
     assert(/"Bb7"z4"Fm"z4/.test(await ev(`window.carolBandAbc`)));
     await key("v");
-    console.log((await chords(0)).join(" ")); console.log((await chords(2)).join(" "));
-    assert.deepStrictEqual((await chords(2)).slice(0, 3), ["Gmaj7*", "Am7*", "Gmaj7*"]);
+    console.log((await chords(2)).join(" ")); console.log((await chords(4)).join(" "));
+    assert.deepStrictEqual((await chords(4)).slice(0, 3), ["Gmaj7*", "Am7*", "Gmaj7*"]);
     assert.strictEqual(await ev(`document.querySelector(".band-more select").value`), "swing");
     await key("v");
-    assert.deepStrictEqual(await chords(0), written);
+    assert.deepStrictEqual(await chords(2), written);
     assert.strictEqual(await ev(`window.carolBandAbc`), abc0);
     assert.notStrictEqual(await ev(`document.querySelector(".band-more select").value`), null);
     // the Backing Track page in its own window: its menu, and its ABC edited by hand, relabel the words here
@@ -46,28 +46,28 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.strictEqual(await far(`Array.prototype.map.call($("bt-remote-version").options, function(o){ return o.value; }).join()`), ",Songbook,Jazz ii-V,*");
     await far(`($("bt-remote-version").value = "Songbook", $("bt-remote-version").dispatchEvent(new w.Event("change")), 0)`);
     await until(`document.querySelector(".band-version select").value`, 4000, v => v === "Songbook");
-    assert.deepStrictEqual((await chords(0)).slice(0, 4), ["Eb", "Eb~*", "Eb~*", "Bb7*"]);
+    assert.deepStrictEqual((await chords(2)).slice(0, 4), ["Eb", "Eb~*", "Eb~*", "Bb7*"]);
     await key("v");                                                   // chosen here: that window takes it
     assert.strictEqual(await until(`0`, 1, () => true) || await (async () => { await b.sleep(500); return far(`$("bt-remote-version").value`); })(), "Jazz ii-V");
     assert(/"Ebmaj7"z4"C7b9"z4/.test(await far(`$("bt-abc").value`)));
     await far(`($("bt-abc").value = $("bt-abc").value.replace('"C7b9"', '"Gb7"'), $("bt-abc").dispatchEvent(new w.Event("input")), 0)`);
     await until(`document.querySelector(".band-version select").value`, 4000, v => v === "*");
-    console.log((await chords(0)).join(" "));
-    assert.deepStrictEqual((await chords(0)).slice(0, 4), ["Ebmaj7*", "Ebmaj7~*", "Gb7*", "Fm7*"]);
+    console.log((await chords(2)).join(" "));
+    assert.deepStrictEqual((await chords(2)).slice(0, 4), ["Ebmaj7*", "Ebmaj7~*", "Gb7*", "Fm7*"]);
     assert.strictEqual(await far(`$("bt-remote-version").value`), "*");
     await far(`($("bt-remote-version").value = "", $("bt-remote-version").dispatchEvent(new w.Event("change")), 0)`);
     await until(`document.querySelector(".band-version select").value`, 4000, v => v === "");
-    assert.deepStrictEqual(await chords(0), written);
+    assert.deepStrictEqual(await chords(2), written);
     await key("w"); await b.sleep(300);
     // a student: nothing of it shows, v does nothing, and the page opens as written
     await b.goto(B + "?teacher=0"); await ready();
     assert.strictEqual(await ev(shown), false);
     assert.strictEqual(await ev(`!!document.querySelector(".tap-panel")`), false);
-    await key("v"); assert.deepStrictEqual(await chords(0), written);
+    await key("v"); assert.deepStrictEqual(await chords(2), written);
     await b.goto(B + "?teacher=1"); await ready();
     assert.strictEqual(await ev(shown), true);
     assert.strictEqual(await ev(`!!document.querySelector(".tap-panel")`), true);
-    assert.deepStrictEqual(await chords(0), written);                 // (a version is never kept)
+    assert.deepStrictEqual(await chords(2), written);                 // (a version is never kept)
     assert.deepStrictEqual(JSON.parse(await ev(`JSON.stringify(__errs || [])`).catch(() => "[]")), []);
     console.log("VERSIONS OK");
   } catch (e) { console.error("FAILED", e.message); process.exitCode = 1; }

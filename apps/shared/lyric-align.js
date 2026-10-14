@@ -1,8 +1,8 @@
 // LyricAlign: put the words of a song under its notes, as ABC `w:` lines.
 // Plain script, one global; loads in Node for tests. The browser twin of carols/tools/lyrics_align.py: the same rules, checked
 // against abcjs (which draws the pages):
-//   * a rest takes no syllable; the second half of a tied note takes a `*`; a `|` in the w: line starts the next bar, so a bar
-//     with too few syllables does not push the rest of the line out of place (too many still spill into the next bar);
+//   * a rest takes no syllable; the second half of a tied note takes a `*`; draft writes no `|`, but a `|` you type in the w: line starts the next bar,
+//     so a bar with too few syllables does not push the rest of the line out of place (too many still spill into the next bar);
 //   * a word's syllables come from the dictionary (syllables-en.js, made from CMUdict and hyphenation patterns by
 //     carols/tools/export_syllables.py), from your own corrections (setOverrides), or, for a word in neither, from its vowels.
 //
@@ -40,9 +40,11 @@
   }
   function setOverrides(map) { overrides = {}; Object.keys(map || {}).forEach(function (k) { overrides[k.toLowerCase()] = String(map[k]).toLowerCase(); }); }
 
+  // the vowels, with the accented ones of the European languages the carols are sung in (ä ö ü é è à å ø œ ...)
+  var VOW = "aeiouy\u00e0-\u00e6\u00e8-\u00ef\u00f2-\u00f6\u00f8-\u00fd\u00ff\u0153";
   // split points between vowel groups: VCV -> V-CV, VCCV -> VC-CV
   function vowelCuts(word) {
-    var re = /[aeiouy]+/g, groups = [], m, cuts = [], low = word.toLowerCase();
+    var re = new RegExp("[" + VOW + "]+", "g"), groups = [], m, cuts = [], low = word.toLowerCase();
     while ((m = re.exec(low))) groups.push({ a: m.index, z: m.index + m[0].length });
     for (var i = 0; i + 1 < groups.length; i++) {
       var gap = groups[i + 1].a - groups[i].z;
@@ -52,7 +54,7 @@
   }
   // a word in no dictionary: its vowel groups, less a silent final e ("time", but not "little")
   function guessCount(low) {
-    var n = (low.match(/[aeiouy]+/g) || []).length;
+    var n = (low.match(new RegExp("[" + VOW + "]+", "g")) || []).length;
     if (n > 1 && /[^aeiouy]e$/.test(low) && !/[^aeiouy]le$/.test(low)) n--;
     if (n > 1 && /[^aeiouytd]ed$/.test(low)) n--;                     // "walked", not "wanted"
     return Math.max(1, n);
@@ -71,11 +73,11 @@
     return { pieces: cut(word, vowelCuts(word).slice(0, n - 1)), how: "guess" };
   }
 
-  var TOKEN = /^([^A-Za-z]*)([A-Za-z][A-Za-z'\u2019\-]*)([^A-Za-z]*)$/;
+  var TOKEN = /^(\P{L}*)(\p{L}[\p{L}\p{M}'\u2019\-]*)(\P{L}*)$/u;      // (any alphabet's letters: "Blätter" is one word)
   function syllabify(text, guesses) {
     var out = [];
     String(text || "").split(/\s+/).forEach(function (tok) {
-      var m = TOKEN.exec(tok); if (!m) return;                        // a dash, a number, stray marks
+      var m = TOKEN.exec(tok.normalize ? tok.normalize("NFC") : tok); if (!m) return;                        // a dash, a number, stray marks
       var pieces = [];
       m[2].split("-").forEach(function (part) {
         part = part.replace(/^['\u2019]+|['\u2019]+$/g, ""); if (!part) return;
@@ -132,12 +134,20 @@
 
   function joinTokens(toks) { var out = ""; toks.forEach(function (t) { out += (!out || /-$/.test(out)) ? t : " " + t; }); return out; }
 
+  // o.head: the first syllables of these words are sung before this music starts (on pickup notes at the end of the section before), so they
+  // are left out here. o.tail / o.tailWords: the last o.tail notes of this music are the pickup of the next section, and take its first syllables.
   function draft(musicLines, wordLines, o) {
+    o = o || {};
     var notes = [], guesses = {}, tie = false;
     var per = musicLines.map(function (ln) { var r = slots(ln, o, tie); tie = r.tie; return r.bars; });
     var sung = per.map(function (bars) { var k = 0; bars.forEach(function (b) { b.forEach(function (s) { if (s === "note") k++; }); }); return k; });
     var words = (wordLines || []).filter(function (t) { return /[A-Za-z]/.test(t); });
-    var syl = words.map(function (t) { return syllabify(t, guesses); }), flat = [].concat.apply([], syl);
+    var syl = words.map(function (t) { return syllabify(t, guesses); }), head = Math.max(0, o.head | 0), tailN = Math.max(0, o.tail | 0), tailAt = -1, tailSyl = [];
+    syl.forEach(function (line) { while (head > 0 && line.length) { line.shift(); head--; } });
+    if (tailN) { for (var ti = sung.length - 1; ti >= 0; ti--) if (sung[ti]) { tailN = Math.min(tailN, sung[ti]); sung[ti] -= tailN; tailAt = ti; break; }
+      if (tailAt < 0) tailN = 0;
+      tailSyl = [].concat.apply([], (o.tailWords || []).filter(function (t) { return /[A-Za-z]/.test(t); }).map(function (t) { return syllabify(t, guesses); })).slice(0, tailN); }
+    var flat = [].concat.apply([], syl);
     var singing = sung.filter(function (c) { return c; }).length, queues = [];
     if (words.length === singing && words.length > 1) {                 // as many lines of words as of music: line by line, so a miscount stays in its line
       var k = 0;
@@ -152,14 +162,19 @@
       if (pool.length) notes.push(pool.length + " syllable" + (pool.length === 1 ? "" : "s") + ' left over after the last note ("' + pool[0][0] + '\u2026")');
       if (total > flat.length && flat.length) notes.push((total - flat.length) + " note" + (total - flat.length === 1 ? " has" : "s have") + " no syllable");
     }
+    if (tailAt >= 0 && tailN) { var tq = queues[tailAt]; tq.length = Math.min(tq.length, sung[tailAt]); while (tq.length < sung[tailAt]) tq.push(null);
+      for (var tk = 0; tk < tailN; tk++) tq.push(tailSyl[tk] || null); }
     var lines = per.map(function (bars, idx) {
       var q = queues[idx], outBars = bars.map(function (bar) {
         return bar.map(function (s) { if (s === "tie") return "*"; if (s === "melisma") return "_"; var x = q.shift(); return x ? x[0] + (x[1] ? "-" : "") : "*"; });
       });
-      while (outBars.length && outBars[outBars.length - 1].every(function (t) { return t === "*"; }) && bars[outBars.length - 1].indexOf("tie") < 0) outBars.pop();
-      return outBars.length ? "w: " + outBars.map(joinTokens).join(" | ") : "";
+      // no barlines: a `|` makes every syllable moved across a bar a second edit; trailing `*`s (a tie or an unsung note at the
+      // end of the phrase) are left off, so nothing after them can be pushed about
+      var toks = [].concat.apply([], outBars);
+      while (toks.length && toks[toks.length - 1] === "*") toks.pop();
+      return toks.length ? "w: " + joinTokens(toks) : "";
     });
-    if (!flat.length) lines = lines.map(function () { return ""; });
+    if (!flat.length && !tailSyl.length) lines = lines.map(function () { return ""; });
     return { lines: lines, notes: notes, guesses: guesses };
   }
 
@@ -173,6 +188,11 @@
       var r = slots(ln, o, tie); tie = r.tie;
       var w = (wLines || [])[i]; if (!w || !/\S/.test(String(w).replace(/^\s*w:/, ""))) return;
       var got = wBars(w);
+      if (got.length === 1) {                         // a w: line without barlines: count the whole line
+        var all = 0; r.bars.forEach(function (b) { all += b.length; });
+        if (got[0] > all) out.push("line " + (i + 1) + ": " + got[0] + " syllables for " + all + " note" + (all === 1 ? "" : "s"));
+        return;
+      }
       got.forEach(function (have, b) {
         var want = r.bars[b] ? r.bars[b].length : 0;
         if (b >= r.bars.length) { if (have) out.push("line " + (i + 1) + ": the words have a bar " + (b + 1) + ", the music does not"); }

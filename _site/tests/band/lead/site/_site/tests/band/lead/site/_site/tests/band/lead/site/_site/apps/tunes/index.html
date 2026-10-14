@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../shared/abcjs-audio.css">
+	<title>Beginning Band Tunes</title>
+	<style>
+		main {
+			max-width: 770px;
+			margin: 0 auto;
+		}
+		.feedback {
+			display: none;
+		}
+		.highlight {
+			fill: #0057b7;
+		}
+		.abcjs-cursor {
+			stroke: red;
+			stroke-width: 4;
+		}
+		.abcjs-tempo-wrapper {
+			margin-left: 9px;
+		}
+		.click-explanation {
+			color: #ffd700;
+			font-style: italic;
+		}
+		.beat {
+			display: none;
+			font-weight: bold;
+		}
+		.label {
+			color: #888888;
+		}
+		.midi {
+			margin-top: -20px;
+			margin-left: 5px;
+		}
+		.seek-controls {
+			margin-top: 5px;
+		}
+		.seek-controls.disabled {
+			background-color: #cccccc;
+			opacity: 0.5;
+		}
+		.warp, .seek, .download {
+			display: none;
+		}
+		textarea, .seek-controls, .abcjs-download-midi, .next, .clicked-info {
+			display: none;
+		}
+		.tuneButtons, input {
+			display: inline-block;
+			margin: 5px 2vw;
+		}
+		input {
+			width: 40px;
+		}
+		div.inflow {
+			position: relative;
+			margin: 0 15%;
+		}
+		div.fixed {
+			position: fixed;
+			bottom: 3vh;
+			left: 10vw;
+			right: 10vw;
+		}
+		.options {
+			display: flex;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+		.buddy {
+			display: inline-block;
+			margin-bottom: 6px;
+		}
+		.buddy > label {
+			margin-left: 15px;
+		}
+		.checkbox {
+			margin-left: -13px;
+		}
+		.number-input-label {
+			margin-right: -16px;
+		}
+		.midi-transpose {
+			display: none;
+		}
+	</style>
+	<script>
+		const midiInstruments = [
+			"acoustic_grand_piano", "bright_acoustic_piano", "electric_grand_piano",
+			"honkytonk_piano", "electric_piano_1", "electric_piano_2", "harpsichord",
+			"clavinet", "celesta", "glockenspiel", "music_box", "vibraphone", "marimba",
+			"xylophone", "tubular_bells", "dulcimer", "drawbar_organ", "percussive_organ",
+			"rock_organ", "church_organ", "reed_organ", "accordion", "harmonica",
+			"tango_accordion", "acoustic_guitar_nylon", "acoustic_guitar_steel",
+			"electric_guitar_jazz", "electric_guitar_clean", "electric_guitar_muted",
+			"overdriven_guitar", "distortion_guitar", "guitar_harmonics", "acoustic_bass",
+			"electric_bass_finger", "electric_bass_pick", "fretless_bass", "slap_bass_1",
+			"slap_bass_2", "synth_bass_1", "synth_bass_2", "violin", "viola", "cello",
+			"contrabass", "tremolo_strings", "pizzicato_strings", "orchestral_harp",
+			"timpani", "string_ensemble_1", "string_ensemble_2", "synth_strings_1",
+			"synth_strings_2", "choir_aahs", "voice_oohs", "synth_choir", "orchestra_hit",
+			"trumpet", "trombone", "tuba", "muted_trumpet", "french_horn", "brass_section",
+			"synth_brass_1", "synth_brass_2", "soprano_sax", "alto_sax", "tenor_sax",
+			"baritone_sax", "oboe", "english_horn", "bassoon", "clarinet", "piccolo",
+			"flute", "recorder", "pan_flute", "blown_bottle", "shakuhachi", "whistle",
+			"ocarina", "lead_1_square", "lead_2_sawtooth", "lead_3_calliope", "lead_4_chiff",
+			"lead_5_charang", "lead_6_voice", "lead_7_fifths", "lead_8_bass__lead",
+			"pad_1_new_age", "pad_2_warm", "pad_3_polysynth", "pad_4_choir", "pad_5_bowed",
+			"pad_6_metallic", "pad_7_halo", "pad_8_sweep", "fx_1_rain", "fx_2_soundtrack",
+			"fx_3_crystal", "fx_4_atmosphere", "fx_5_brightness", "fx_6_goblins",
+			"fx_7_echoes", "fx_8_scifi", "sitar", "banjo", "shamisen", "koto", "kalimba",
+			"bagpipe", "fiddle", "shanai", "tinkle_bell", "agogo", "steel_drums", "woodblock"
+		];
+
+		const instrumentTranspositions = {
+			"Piano": 0, "Flute": 12, "Clarinet": 2, "Alto Sax": 9,
+			"Trumpet": 2, "Trombone": 0, "Tuba": -12, "Percussion": 0
+		};
+
+		let abc = [];
+		let currentTune = 0;
+		let synthControl;
+
+		function showCursor() {
+			const cursor = document.getElementById("abcjs-cursor");
+			if (cursor) cursor.style.display = document.getElementById("show-cursor").checked ? "block" : "none";
+		}
+
+		function showOptions() {
+			document.getElementById("the-bottom").style.display =
+				document.getElementById("show-options").checked ? "block" : "none";
+		}
+
+		function clefHandler() {
+			const inst = document.getElementById("inst-select").value;
+			switch (inst) {
+				case "Flute": case "Clarinet": case "Alto Sax": case "Trumpet":
+					checkChanger("bass-clef", false);
+					disabler("bass-clef", true);
+					break;
+				case "Trombone": case "Tuba":
+					checkChanger("bass-clef", true);
+					disabler("bass-clef", true);
+					break;
+				case "Piano": case "Percussion":
+					checkChanger("bass-clef", false);
+					disabler("bass-clef", false);
+					break;
+			}
+		}
+
+		function refreshSongbook(someAbc) {
+			const tuneBook = new ABCJS.TuneBook(someAbc);
+			const selectTune = document.getElementById("tune-selector");
+			selectTune.innerHTML = "";
+			abc.length = 0;
+			for (let i = 0; i < tuneBook.tunes.length; i++) {
+				const option = document.createElement("option");
+				option.textContent = tuneBook.tunes[i].title;
+				option.value = i;
+				abc.push(tuneBook.tunes[i].abc);
+				selectTune.appendChild(option);
+			}
+			selectTune.selectedIndex = 0;   // deterministic: start at the first tune (no random)
+			currentTune = 0;
+		}
+
+		function refreshCollection() {
+			const collection = document.getElementById("collection-selector").value;
+			refreshSongbook(tunesObject[collection]);
+			pickTune();
+		}
+
+		function load() {
+			const selectCollection = document.getElementById("collection-selector");
+			for (const key in tunesObject) {
+				const option = document.createElement("option");
+				option.textContent = key;
+				option.value = key;
+				selectCollection.appendChild(option);
+			}
+
+			// restore the last-viewed tune (so we return where we left off, same key)
+			let saved = null; try { saved = JSON.parse(localStorage.getItem("tunesLast")); } catch (e) {}
+			if (saved && tunesObject[saved.c]) selectCollection.value = saved.c;
+			refreshSongbook(tunesObject[selectCollection.value]);
+			if (saved) {
+				const ts = document.getElementById("tune-selector");
+				if (saved.i != null && saved.i < ts.options.length) { ts.selectedIndex = saved.i; currentTune = saved.i; }
+				if (saved.t != null) document.getElementById("vis-transpose").value = saved.t;
+			}
+
+			const selectMelInst = document.getElementById("mel-instrument");
+			for (let i = 0; i < midiInstruments.length; i++) {
+				const option = document.createElement("option");
+				option.textContent = midiInstruments[i];
+				option.value = i;
+				selectMelInst.appendChild(option);
+			}
+
+			document.querySelector(".next").addEventListener("click", next);
+			document.querySelector(".warp").addEventListener("click", warp);
+			document.querySelector(".seek").addEventListener("click", seek);
+			document.querySelector(".seek2").addEventListener("click", seek2);
+			document.querySelector("#seek-units").addEventListener("change", seekExplanation);
+
+			showOptions();
+
+			if (ABCJS.synth.supportsAudio()) {
+				synthControl = new ABCJS.synth.SynthController();
+				synthControl.load("#audio", cursorControl, {
+					displayLoop: true, displayRestart: true,
+					displayPlay: true, displayProgress: true, displayWarp: true
+				});
+			} else {
+				document.querySelector("#audio").innerHTML =
+					"<div class='audio-error'>Audio is not supported in this browser.</div>";
+			}
+
+			setTune(false);
+		}
+
+		// The tunes app steers the shared tonality: publish the SOUNDING key
+		// (written K: shifted by the current transpose) — DO from the key signature
+		// + resting tone from the mode — and reflect it in the Key dropdown.
+		function publishTonality() {
+			if (typeof Tonality === "undefined" || !abc[currentTune]) return;
+			const m = /^K:\s*(.+)$/m.exec(abc[currentTune]);
+			const t = m && Tonality.keyToTonality(m[1]);
+			if (!t) return;
+			const shift = (((parseInt(document.getElementById("vis-transpose").value) || 0) % 12) + 12) % 12;
+			const doPc = (t.do + shift) % 12, restPc = (t.resting + shift) % 12;
+			Tonality.setAll(doPc, restPc, t.mode, "tunes");
+			try { localStorage.setItem("tuneTonality", JSON.stringify({ do: doPc, resting: restPc, mode: t.mode })); } catch (e) {}
+			const ks = document.getElementById("key-select"); if (ks) ks.value = String(restPc);  // dropdown = tonal center
+		}
+
+		// Picking a key transposes the current tune so its tonal center (resting
+		// tone) becomes the chosen pitch — e.g. a G-minor tune → "D" = D minor.
+		function onKeySelect() {
+			if (typeof Tonality === "undefined" || !abc[currentTune]) return;
+			const m = /^K:\s*(.+)$/m.exec(abc[currentTune]);
+			const t = m && Tonality.keyToTonality(m[1]); if (!t) return;
+			const target = parseInt(document.getElementById("key-select").value);
+			let semis = (((target - t.resting) % 12) + 12) % 12; if (semis > 6) semis -= 12;
+			document.getElementById("vis-transpose").value = String(semis);
+			setTune(true);
+		}
+
+		function saveTunesState() {
+			try { localStorage.setItem("tunesLast", JSON.stringify({
+				c: document.getElementById("collection-selector").value,
+				i: currentTune,
+				t: document.getElementById("vis-transpose").value
+			})); } catch (e) {}
+		}
+
+		// Publish this tune's chord progression (transposed to the sounding key,
+		// deduped consecutively) so the chord-sheet builder can autopopulate.
+		function publishChords() {
+			if (!abc[currentTune]) return;
+			const shift = (((parseInt(document.getElementById("vis-transpose").value) || 0) % 12) + 12) % 12;
+			const PC = { C:0, D:2, E:4, F:5, G:7, A:9, B:11 };
+			const names = []; let re = /"([^"]+)"/g, m;
+			while ((m = re.exec(abc[currentTune]))) {
+				const raw = m[1]; const mm = /^([A-G])([#b]?)(.*)$/.exec(raw); if (!mm) continue;
+				const pc = ((PC[mm[1]] + (mm[2] === "#" ? 1 : mm[2] === "b" ? -1 : 0) + shift) % 12 + 12) % 12;
+				const root = (window.Tonality && Tonality.spellPc) ? Tonality.spellPc(pc)
+					: ["C","C#","D","D#","E","F","F#","G","G#","A","A#","B"][pc];
+				const name = root + mm[3];
+				if (names.indexOf(name) === -1) names.push(name);   // each chord once (unique, first-seen order)
+			}
+			try { localStorage.setItem("tuneChords", JSON.stringify(names)); } catch (e) {}
+		}
+
+		function setTune(userAction) {
+			publishTonality();
+			publishChords();
+			saveTunesState();
+			const instAdjust = instrumentTranspositions[document.getElementById("inst-select").value];
+			let visualTransposeHalfSteps = parseInt(document.getElementById("vis-transpose").value);
+			visualTransposeHalfSteps += parseInt(document.getElementById("vis-octaves").value) * 12;
+			visualTransposeHalfSteps += instAdjust;
+
+			const inst = parseInt(document.getElementById("mel-instrument").value);
+			let abcString = abc[currentTune].split("\n");
+			if (document.getElementById("bass-clef").checked) {
+				abcString[0] += "\nK: clef=bass";
+				visualTransposeHalfSteps -= 12;
+			}
+			abcString[0] += `\n%%MIDI program ${inst} `;
+			abcString = abcString.join("\n");
+
+			const playChords = document.getElementById("play-chords").checked;
+			const playTune   = document.getElementById("play-tune").checked;
+
+			const abcOptions = {
+				add_classes: true,
+				clickListener: clickListener,
+				responsive: "resize",
+				visualTranspose: visualTransposeHalfSteps
+			};
+
+			const seekControls = document.querySelector(".seek-controls");
+			seekControls.classList.add("disabled");
+			synthControl.disable(true);
+
+			const visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+			document.querySelector(".midi").innerHTML = ABCJS.synth.getMidiFile(abc[currentTune]);
+
+			let midiTransposeHalfSteps = visualTransposeHalfSteps +
+				parseInt(document.getElementById("midi-transpose").value);
+			if (instAdjust % 12 !== 0) midiTransposeHalfSteps -= instAdjust;
+
+			const synthOpts = {
+				midiTranspose: midiTransposeHalfSteps,
+				chordsOff: !playChords,
+				voicesOff: !playTune
+			};
+
+			new ABCJS.synth.CreateSynth().init({
+				visualObj: visualObj,
+				options: { soundFontUrl: "https://paulrosen.github.io/midi-js-soundfonts/MusyngKite/" }
+			}).then(function() {
+				if (synthControl) {
+					synthControl.setTune(visualObj, userAction, synthOpts).then(function() {
+						seekControls.classList.remove("disabled");
+						seekExplanation();
+					}).catch(function(error) { console.warn("Audio problem:", error); });
+				}
+			}).catch(function(error) { console.warn("Audio problem:", error); });
+		}
+
+		function next() {
+			currentTune = (parseInt(currentTune) + 1) % abc.length;
+			document.getElementById("tune-selector").value = currentTune;
+			setTune(true);
+		}
+
+		function pickTune() {
+			currentTune = parseInt(document.getElementById("tune-selector").value);
+			setTune(true);
+		}
+	</script>
+</head>
+<body>
+	<div class="container">
+		<main>
+			<button class="download" style="display: none;">Download</button>
+			<div class="seek-controls disabled">
+				<label>Seek: <input type="number" min="0" id="seek-amount"></label>
+				<select aria-label="seek units" id="seek-units">
+					<option value="percent">Percent</option>
+					<option value="seconds">Seconds</option>
+					<option value="beats">Beats</option>
+				</select>
+				<button class="seek2">Seek</button>
+				<span id="unit-explanation" class="click-explanation">First start playing to load audio before seeking.</span>
+			</div>
+			<div class="midi">MIDI</div>
+			<div id="paper"></div>
+			<div id="audio"></div>
+			<button class="next">Next Tune</button>
+			<br>
+			<div class="inflow">
+				<div class="positioner">
+					<div class="fixed">
+						<div id="the-top" class="options">
+							<div class="buddy">
+								<select id="collection-selector" onchange="refreshCollection()"></select>
+								<select id="tune-selector" onchange="pickTune()"></select>
+							</div>
+							<div class="buddy">
+								<label for="inst-select">Instrument:</label>
+								<select id="inst-select" onchange="clefHandler(); pickTune()">
+									<option value="Piano">Piano</option>
+									<option value="Flute">Flute</option>
+									<option value="Clarinet">Clarinet</option>
+									<option value="Alto Sax">Alto Sax</option>
+									<option value="Trumpet">Trumpet</option>
+									<option value="Trombone">Trombone</option>
+									<option value="Tuba">Tuba</option>
+									<option value="Percussion">Percussion</option>
+								</select>
+							</div>
+							<div class="buddy">
+								<label for="show-options">Show options?</label>
+								<input type="checkbox" id="show-options" class="checkbox" onchange="showOptions()">
+							</div>
+						</div>
+						<div id="the-bottom" class="options">
+							<div class="buddy">
+								<label for="mel-instrument">Playback instrument:</label>
+								<select id="mel-instrument" onchange="pickTune()"></select>
+							</div>
+							<div class="buddy">
+								<label for="key-select" class="number-input-label">Key:</label>
+								<select id="key-select" onchange="onKeySelect()">
+									<option value="0">C</option><option value="1">Db</option><option value="2">D</option>
+									<option value="3">Eb</option><option value="4">E</option><option value="5">F</option>
+									<option value="6">Gb</option><option value="7">G</option><option value="8">Ab</option>
+									<option value="9">A</option><option value="10">Bb</option><option value="11">B</option>
+								</select>
+							</div>
+							<div class="buddy">
+								<label for="vis-transpose" class="number-input-label">Semitones:</label>
+								<input id="vis-transpose" class="number-input" value="0" type="number" min="-12" max="12" oninput="pickTune()">
+							</div>
+							<div class="buddy">
+								<label for="midi-transpose" class="number-input-label midi-transpose">Further midi transposition:</label>
+								<input id="midi-transpose" class="number-input midi-transpose" value="0" type="number" min="-12" max="12" oninput="pickTune()">
+							</div>
+							<div class="buddy">
+								<label for="vis-octaves" class="number-input-label">Octaves:</label>
+								<input id="vis-octaves" class="number-input" value="0" type="number" min="-2" max="2" oninput="pickTune()">
+							</div>
+							<div class="buddy">
+								<label for="play-chords">Play chords?</label>
+								<input type="checkbox" id="play-chords" class="checkbox" checked onchange="pickTune()">
+							</div>
+							<div class="buddy">
+								<label for="play-tune">Play tune?</label>
+								<input type="checkbox" id="play-tune" class="checkbox" checked onchange="pickTune()">
+							</div>
+							<div class="buddy">
+								<label for="bass-clef">Bass clef?</label>
+								<input type="checkbox" id="bass-clef" class="checkbox" onchange="pickTune()">
+							</div>
+							<div class="buddy">
+								<label for="show-cursor">Show cursor?</label>
+								<input type="checkbox" id="show-cursor" class="checkbox" checked onchange="showCursor()">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="tuneButtons">
+				<button class="warp">Rand. Warp</button>
+				<button class="seek">Seek to Middle</button>
+			</div>
+			<p class="beat"></p>
+			<p class="click-explanation" style="display:none;">Click on a note to play that note.</p>
+			<pre class="clicked-info"></pre>
+			<pre class="feedback"></pre>
+		</main>
+	</div>
+	<script src="../shared/abcjs-basic.js"></script>
+	<script src="tunes-object.js"></script>
+	<script src="../shared/cursor-synth.js"></script>
+	<script src="../shared/tonality.js"></script>
+	<script src="../shared/audio.js"></script>
+	<script src="../shared/establish-button.js"></script>
+	<script>
+		const cursorControl = new CursorControl();
+		load();
+	</script>
+</body>
+</html>

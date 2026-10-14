@@ -15,6 +15,28 @@ Main files:
 - =index.html=       — Landing
 - Two others — see =MEMORY.md=
 
+* Chord Library catalogue (index.html)                                :ui:
+** DONE Rebuilt as a searchable catalogue (2026-10-14)
+The old single-diagram page (with its Scales mode) is ARCHIVED, unchanged and still working, at
+=archive/index-single-diagram-2026-10-14.html= and linked from the new page's header.
+- Engine: =apps/shared/chord-catalog.js= (=ChordCatalog=). 50 qualities; every playable fretted
+  voicing found by search from the tuning, each tagged with structure (close / drop 2 / drop 3 /
+  drop 2+4 / ... / spread / doubled), tones kept (full / shell / guide / rootless / partial),
+  bass string, root strings, string set, skipped strings, bass and top tone, position, stretch,
+  barre, open strings. Keyboard voicings come from =voicings.js= and get the same description.
+- Search box words (=Cmaj7 drop3 bass:6=, =root:5=, =set:4321=, =top:3=, =noskip= ...) set the filters;
+  filters are kept in the URL hash so a search can be linked.
+- Test: =node tests/chord-library/page.cdp.js= (headless Chrome, serves the repo itself).
+** TODO Listen/look over the less usual instruments
+Bass, ukulele, banjo, mandolin use the same generic search but nobody has checked their results.
+** DONE CAGED shapes and "Most common first" (2026-10-14)
+=ChordCatalog.cagedOf=: the open C A G E D shapes of major, minor, 7, maj7, m7 moved up the neck;
+other qualities read against their base chord with one string allowed to move <=2 frets (the colour
+tone). Tags =caged=/=cagedFull=; filter, sort and search words (=caged=, =caged:E=, =Eshape=, =caged:full=).
+Default sort ranks whole CAGED shapes, then textbook drop 2/drop 3/close/shell grips, then fragments.
+Standard tuning only (other tunings get no CAGED tags).
+** IDEA Play a card's voicing (soundfont.js).
+
 * Chord Sheet Builder                                              :chord-sheet:
 ** DONE Enharmonic preservation in chord input
 Stored =rootName= alongside =rootPc= in parsed tokens so "Bbm A#m"

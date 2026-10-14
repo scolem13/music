@@ -1,0 +1,179 @@
+{
+ "title": "Lesson: Turnarounds and Rhythm Changes",
+ "body": "The **turnaround** is a short chord pattern that sends a tune back to its beginning: I, vi, ii, V.\nJazz players have been changing it for a century. This lesson starts with the plain one and adds the\nstandard changes one at a time, and ends with the first four bars of *I Got Rhythm*.\n\n**How to use the page.** Press ▶ on a chart and the band plays it four times after a one-bar count-in. The bar that is sounding lights up, on the chart and on the staff. Under every chord is its Roman numeral, which stays the same in every key. The strip at the bottom of the window sets the key, the feel, the tempo and the chord instrument, and you can change them while the band plays. Shaded bars are the ones that differ from the version named under the chart.\n\n## 1. The plain turnaround\n\n**C, Am, Dm, G**: I, vi, ii, V. The bass follows the circle of fifths: C, then A, D, G, and back to C.\n\n<div class=\"bl-step\" data-step=\"plain\"></div>\n\n## 2. Sevenths\n\n**Cmaj7, Am7, Dm7, G7.** Every chord gets its 7th. The 7th of one chord is often a step from the 3rd of the next, which is what makes\nthe guide-tone line smooth (see the lesson on [guide tones](guide-tones.qmd)).\n\n<div class=\"bl-step\" data-step=\"sev\"></div>\n\n## 3. A dominant on the vi\n\n**Cmaj7, A7, Dm7, G7.** Make the vi a dominant. A7 is the V of Dm7, and its C♯ pulls up to D.\n\n<div class=\"bl-step\" data-step=\"dom\"></div>\n\n## 4. Start on the iii\n\n**Em7, A7, Dm7, G7.** iii, VI, ii, V: the turnaround begun a step earlier. Em7 is a good stand-in for Cmaj7\n(it has E, G and B, three of its four notes), and it makes a chain of fifths that is a link longer.\n\n<div class=\"bl-step\" data-step=\"iii\"></div>\n\n## 5. Tritone substitution\n\n**Cmaj7, E♭7, Dm7, D♭7.** Replace each dominant with the one a tritone away. A7 becomes E♭7 and G7\nbecomes D♭7. The bass line now falls by half step wherever a substitute is used: E♭ to D, D♭ to C.\n\n<div class=\"bl-step\" data-step=\"tri\"></div>\n\n## 6. Rhythm changes\n\n**C A7 | Dm7 G7 | Em7 A7 | Dm7 G7.** The first four bars of Gershwin's *I Got Rhythm* (in B♭ in the original, here in\nC). Two chords in every bar. Jazz players have written hundreds of tunes on these changes.\n\n<div class=\"bl-step\" data-step=\"rhythm\"></div>\n\n## Build your own\n\nChoose a version of each bar. The shaded bars differ from the plain turnaround.\n\n<div id=\"bl-builder\" class=\"bl-widget\"></div>\n\n\n## Test your ear\n\nThe band plays one of the versions. Pick the one you heard.\n\n<div id=\"bl-quiz\" class=\"bl-widget\"></div>\n\n\n## Where to go next\n\n- Play the guide-tone line over each version, from [the guide tones lesson](guide-tones.qmd).\n- Learn the rhythm changes in two or three keys.\n\n",
+ "init": {
+  "tonic": 0,
+  "times": 4,
+  "feels": [
+   {
+    "id": "swing",
+    "label": "Medium swing",
+    "tempo": 120
+   },
+   {
+    "id": "bossa",
+    "label": "Bossa nova",
+    "tempo": 120
+   },
+   {
+    "id": "pop",
+    "label": "Piano ballad",
+    "tempo": 76
+   },
+   {
+    "id": "strum",
+    "label": "Acoustic strum",
+    "tempo": 100
+   }
+  ],
+  "steps": {
+   "plain": {
+    "bars": "C|Am|Dm|G"
+   },
+   "sev": {
+    "bars": "Cmaj7|Am7|Dm7|G7",
+    "vs": "plain"
+   },
+   "dom": {
+    "bars": "Cmaj7|A7|Dm7|G7",
+    "vs": "sev"
+   },
+   "iii": {
+    "bars": "Em7|A7|Dm7|G7",
+    "vs": "dom"
+   },
+   "tri": {
+    "bars": "Cmaj7|Eb7|Dm7|Db7",
+    "vs": "dom"
+   },
+   "rhythm": {
+    "bars": "C A7|Dm7 G7|Em7 A7|Dm7 G7",
+    "vs": "plain"
+   }
+  },
+  "builder": {
+   "slots": [
+    {
+     "label": "Bar 1",
+     "opts": [
+      [
+       "I",
+       "C"
+      ],
+      [
+       "Imaj7",
+       "Cmaj7"
+      ],
+      [
+       "iii and VI7",
+       "Em7 A7"
+      ],
+      [
+       "I and VI7",
+       "C A7"
+      ]
+     ]
+    },
+    {
+     "label": "Bar 2",
+     "opts": [
+      [
+       "vi",
+       "Am"
+      ],
+      [
+       "vi7",
+       "Am7"
+      ],
+      [
+       "VI7",
+       "A7"
+      ],
+      [
+       "tritone substitute",
+       "Eb7"
+      ],
+      [
+       "ii and V7",
+       "Dm7 G7"
+      ]
+     ]
+    },
+    {
+     "label": "Bar 3",
+     "opts": [
+      [
+       "ii",
+       "Dm"
+      ],
+      [
+       "ii7",
+       "Dm7"
+      ],
+      [
+       "ii and V7",
+       "Dm7 G7"
+      ],
+      [
+       "iii and VI7",
+       "Em7 A7"
+      ]
+     ]
+    },
+    {
+     "label": "Bar 4",
+     "opts": [
+      [
+       "V",
+       "G"
+      ],
+      [
+       "V7",
+       "G7"
+      ],
+      [
+       "tritone substitute",
+       "Db7"
+      ],
+      [
+       "ii and V7",
+       "Dm7 G7"
+      ]
+     ]
+    }
+   ]
+  },
+  "quizzes": [
+   {
+    "host": "bl-quiz",
+    "question": "Which version did you hear?",
+    "items": [
+     {
+      "name": "Plain triads",
+      "bars": "C|Am|Dm|G"
+     },
+     {
+      "name": "Sevenths",
+      "bars": "Cmaj7|Am7|Dm7|G7"
+     },
+     {
+      "name": "A7 on the vi",
+      "bars": "Cmaj7|A7|Dm7|G7"
+     },
+     {
+      "name": "Starting on the iii",
+      "bars": "Em7|A7|Dm7|G7"
+     },
+     {
+      "name": "Tritone substitutes",
+      "bars": "Cmaj7|Eb7|Dm7|Db7"
+     },
+     {
+      "name": "Rhythm changes",
+      "bars": "C A7|Dm7 G7|Em7 A7|Dm7 G7"
+     }
+    ]
+   }
+  ]
+ }
+}

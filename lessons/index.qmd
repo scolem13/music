@@ -15,11 +15,10 @@ toc: false
 .ll-list a{font-family:var(--font-display);font-size:1.2rem;font-weight:600;text-decoration:none}
 .ll-list a:hover{text-decoration:underline}
 .ll-list p{margin:.3rem 0 0;color:var(--site-ink-2)}
-.ll-step{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-3);display:block;margin-bottom:.15rem}
 .ll-note{color:var(--site-ink-2);margin:.2rem 0 1rem}
 </style>
 
-<p>These lessons are built on the blues, and the site's backing band plays every example in them. Choose your instrument to see the lessons written for it, in the order to take them.</p>
+<p>The site's backing band plays every example in these lessons. Choose an instrument, a topic, or both. They run roughly from simpler to more involved.</p>
 
 <div class="ll-pick" id="ll-pick" role="group" aria-label="Instrument">
   <button type="button" data-inst="all">All</button>
@@ -30,100 +29,253 @@ toc: false
   <button type="button" data-inst="congas">Congas</button>
   <button type="button" data-inst="violin">Violin</button>
   <button type="button" data-inst="sax">Saxophone</button>
+  <button type="button" data-inst="voice">Voice</button>
   <button type="button" data-inst="other">Another instrument</button>
 </div>
-<p class="ll-note" id="ll-note" aria-live="polite"></p>
+<div class="ll-pick" id="ll-topic" role="group" aria-label="Topic">
+  <button type="button" data-topic="all">Any topic</button>
+  <button type="button" data-topic="blues">Blues</button>
+  <button type="button" data-topic="jazz">Jazz</button>
+  <button type="button" data-topic="pop">Pop</button>
+  <button type="button" data-topic="latin">Latin</button>
+  <button type="button" data-topic="harmony">Harmony</button>
+  <button type="button" data-topic="rhythm">Rhythm</button>
+  <button type="button" data-topic="improv">Improvising</button>
+  <button type="button" data-topic="reading">Reading</button>
+  <button type="button" data-topic="sound">Sound and synths</button>
+</div>
+<p class="ll-note" id="ll-note" aria-live="polite" hidden>No lessons match both choices yet.</p>
 
-<ol class="ll-list" id="ll-list">
-  <li data-for="all bass guitar piano drums violin sax other">
-    <span class="ll-step"></span>
-    <a href="blues-changes.html">Changing the Changes in a 12-Bar Blues</a>
-    <p>What the chords of a blues are and how players vary them, from three chords to a jazz blues, with a chorus you can build yourself and an ear test. For every instrument: start here.</p>
-  </li>
-  <li data-for="all bass guitar piano drums violin sax other">
-    <span class="ll-step"></span>
-    <a href="pop-changes.html">Changing the Changes in C, Am, F, G</a>
-    <p>The four chords under most pop songs, made richer one move at a time: extensions, passing chords, secondary dominants and ii-V-Is. With a chorus you can build yourself and an ear test.</p>
-  </li>
-  <li data-for="all bass guitar piano drums violin sax other">
-    <span class="ll-step"></span>
-    <a href="four-chord-loops.html">Four-Chord Loops</a>
-    <p>The loops under a great many songs (I V vi IV, vi IV I V, the fifties loop, the turnaround, a borrowed chord, two minor loops) one at a time, each on a chart and a staff, with a loop builder and an ear test.</p>
-  </li>
-  <li data-for="all bass">
-    <span class="ll-step"></span>
-    <a href="blues-bass.html">Blues for Bass: From Roots to a Walking Line</a>
-    <p>Roots, then root and fifth, then the chord tones as a written line, then walking. Fretboard diagrams, bass-clef notation and the band's own bass line written out.</p>
-  </li>
-  <li data-for="all guitar">
-    <span class="ll-step"></span>
-    <a href="blues-guitar.html">Blues for Guitar: From Roots to Shell Chords</a>
-    <p>Two- and three-note chords built from the 3rd and 7th, on strings 5 and 4 and on strings 4 and 3, with the same shapes a tritone higher. No barre chords.</p>
-  </li>
-  <li data-for="all piano">
-    <span class="ll-step"></span>
-    <a href="blues-piano.html">Blues for Piano: From Roots to Rootless Voicings</a>
-    <p>Left-hand roots, guide tones in the right hand, three-note shells and rootless left-hand voicings, each on a keyboard diagram and a grand staff.</p>
-  </li>
-  <li data-for="all drums">
-    <span class="ll-step"></span>
-    <a href="blues-drums.html">Blues for Drums: From Quarter Notes to the Shuffle</a>
-    <p>How to read a drum part, then the beat, the ride pattern, swing time, fills that mark the form, the shuffle, the slow 12/8 and straight eighths.</p>
-  </li>
-  <li data-for="all drums">
-    <span class="ll-step"></span>
-    <a href="hihat-grooves.html">Hi-Hat Grooves: From Quarter Notes to Sixteenths</a>
-    <p>For a drummer who can already play a basic beat. The three sounds of the hi-hat, then quarter notes, eighths, accents, off-beats, an open note, open off-beats, sixteenths with one hand and with two, the foot alone and the swing hi-hat.</p>
-  </li>
-  <li data-for="all congas">
-    <span class="ll-step"></span>
-    <a href="congas-basics.html">How to Play Congas: Five Strokes and the Tumbao</a>
-    <p>The drums, how to sit, the five strokes (bass, open, muted, slap, heel-toe) and how they are written, then the tumbao built in six steps with the band: open tones, right hand, left hand, both hands, a cha-cha band and two drums.</p>
-  </li>
-  <li data-for="all congas">
-    <span class="ll-step"></span>
-    <a href="watermelon-congas.html">Watermelon Man for Congas</a>
-    <p>The tumbao over a 16-bar blues: the form, the break on bar 14, the melody, and the same part in Mongo Santamar&iacute;a's cha-cha and in a boogaloo.</p>
-  </li>
-  <li data-for="all violin sax other">
-    <span class="ll-step"></span>
-    <a href="blues-melody.html">Blues for Violin and Saxophone: Playing the Changes</a>
-    <p>For any instrument that plays one note at a time. Roots, chord tones, guide-tone lines, a riff, and the melody of <em>Blues in the Closet</em>, written in your own key.</p>
-  </li>
-  <li data-for="all bass guitar piano violin sax other">
-    <span class="ll-step"></span>
+<ul class="ll-list" id="ll-list">
+  <li data-for="all bass guitar piano violin sax other" data-topic="blues jazz improv">
     <a href="blues-improv.html">Improvising on a Blues: Blues in the Closet</a>
     <p>Starting from the melody: hitting the change in bar 5, the blues and pentatonic scales, and a scale for each chord. Scales are shown as tablature, keyboard fingerings or a violin fingerboard, whichever you play.</p>
   </li>
-</ol>
+  <li data-for="all violin sax other" data-topic="blues jazz reading">
+    <a href="blues-melody.html">Blues for Violin and Saxophone: Playing the Changes</a>
+    <p>For any instrument that plays one note at a time. Roots, chord tones, guide-tone lines, a riff, and the melody of <em>Blues in the Closet</em>, written in your own key.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other" data-topic="blues jazz harmony">
+    <a href="blues-changes.html">Changing the Changes in a 12-Bar Blues</a>
+    <p>What the chords of a blues are and how players vary them, from three chords to a jazz blues, with a chorus you can build yourself and an ear test.</p>
+  </li>
+  <li data-for="all bass" data-topic="blues jazz harmony reading">
+    <a href="blues-bass.html">Blues for Bass: From Roots to a Walking Line</a>
+    <p>Roots, then root and fifth, then the chord tones as a written line, then walking. Fretboard diagrams, bass-clef notation and the band's own bass line written out.</p>
+  </li>
+  <li data-for="all guitar" data-topic="blues jazz harmony">
+    <a href="blues-guitar.html">Blues for Guitar: From Roots to Shell Chords</a>
+    <p>Two- and three-note chords built from the 3rd and 7th, on strings 5 and 4 and on strings 4 and 3, with the same shapes a tritone higher. No barre chords.</p>
+  </li>
+  <li data-for="all piano" data-topic="blues jazz harmony">
+    <a href="blues-piano.html">Blues for Piano: From Roots to Rootless Voicings</a>
+    <p>Left-hand roots, guide tones in the right hand, three-note shells and rootless left-hand voicings, each on a keyboard diagram and a grand staff.</p>
+  </li>
+  <li data-for="all drums" data-topic="blues jazz rhythm reading">
+    <a href="blues-drums.html">Blues for Drums: From Quarter Notes to the Shuffle</a>
+    <p>How to read a drum part, then the beat, the ride pattern, swing time, fills that mark the form, the shuffle, the slow 12/8 and straight eighths.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other" data-topic="jazz rhythm reading">
+    <a href="reading-swing.html">Reading Swing from a Lead Sheet</a>
+    <p>Why swing eighths are written as plain eighths, how far the long-short can stretch with tempo and style, and the range of good readings, with <em>Blues in the Closet</em> swung and <em>Watermelon Man</em> straight for contrast. Every example plays, with a swing slider.</p>
+  </li>
+  <li data-for="all drums" data-topic="rhythm">
+    <a href="hihat-grooves.html">Hi-Hat Grooves: From Quarter Notes to Sixteenths</a>
+    <p>For a drummer who can already play a basic beat. The three sounds of the hi-hat, then quarter notes, eighths, accents, off-beats, an open note, open off-beats, sixteenths with one hand and with two, the foot alone and the swing hi-hat.</p>
+  </li>
+  <li data-for="all congas" data-topic="latin rhythm reading">
+    <a href="congas-basics.html">How to Play Congas: Five Strokes and the Tumbao</a>
+    <p>The drums, how to sit, the five strokes (bass, open, muted, slap, heel-toe) and how they are written, then the tumbao built in six steps with the band: open tones, right hand, left hand, both hands, a cha-cha band and two drums.</p>
+  </li>
+  <li data-for="all congas" data-topic="latin blues rhythm">
+    <a href="watermelon-congas.html">Watermelon Man for Congas</a>
+    <p>The tumbao over a 16-bar blues: the form, the break on bar 14, the melody, and the same part in Mongo Santamar&iacute;a's cha-cha and in a boogaloo.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other" data-topic="pop harmony">
+    <a href="pop-changes.html">Changing the Changes in C, Am, F, G</a>
+    <p>The four chords under most pop songs, made richer one move at a time: extensions, passing chords, secondary dominants and ii-V-Is. With a chorus you can build yourself and an ear test.</p>
+  </li>
+  <li data-for="all guitar" data-topic="pop harmony">
+    <a href="pop-changes-guitar.html">Pop Changes for Guitar</a>
+    <p>The C, Am, F, G changes as fretboard diagrams: open shapes, extensions, passing chords and secondary dominants.</p>
+  </li>
+  <li data-for="all piano" data-topic="pop harmony">
+    <a href="pop-changes-piano.html">Pop Changes for Piano</a>
+    <p>The C, Am, F, G changes with a left-hand root and a right-hand chord, on a keyboard diagram and a grand staff.</p>
+  </li>
+  <li data-for="all bass" data-topic="pop harmony">
+    <a href="pop-changes-bass.html">Pop Changes for Bass: Roots and the Walking Line</a>
+    <p>The root of each chord, then the stepwise walking line through the passing chords, in bass clef and on a fretboard.</p>
+  </li>
+  <li data-for="all guitar" data-topic="harmony">
+    <a href="chord-shapes-guitar.html">Guitar Chord Shapes: From Pop and Rock Toward Jazz</a>
+    <p>Thirteen steps from open triads and power chords through barre chords, 7ths, shells and top-string triads to drop 2, drop 3 and altered dominants, each with diagrams, a staff and sound.</p>
+  </li>
+  <li data-for="all guitar" data-topic="harmony">
+    <a href="chord-shapes-guitar-hand.html">Guitar Chord Shapes by Hand</a>
+    <p>The same chords ordered by what the fretting hand finds hard, from one-finger shapes to barres, muted strings and stretches, with what goes wrong at each step.</p>
+  </li>
+  <li data-for="all guitar" data-topic="rhythm">
+    <a href="hammer-ons-pull-offs.html">Hammer-ons and Pull-offs on Guitar</a>
+    <p>From one finger on one string to trills, licks and the Sus embellishment on open D, A and C, each written in notation and tablature that plays.</p>
+  </li>
+  <li data-for="all guitar" data-topic="pop rhythm">
+    <a href="travis-picking.html">Travis Picking on Guitar</a>
+    <p>The thumb alone, pinches, fingers between the thumb notes, then C, G, Am and D, chord changes, hammer-ons and pull-offs, and the band. Ends with a note on chicken pickin'.</p>
+  </li>
+  <li data-for="all piano" data-topic="harmony">
+    <a href="chord-shapes-piano.html">Piano Chord Voicings: From Pop Triads Toward Jazz</a>
+    <p>Thirteen steps from triads and inversions through slash chords, 7ths, guide tones and shells to rootless, drop 2, spread, quartal and upper-structure voicings.</p>
+  </li>
+  <li data-for="all piano" data-topic="harmony">
+    <a href="chord-shapes-piano-hand.html">Piano Voicings by Hand</a>
+    <p>The same voicings ordered by what the hands find hard: span, black keys, two hands together, leaps, stretches and independence.</p>
+  </li>
+  <li data-for="all guitar piano" data-topic="harmony">
+    <a href="inversions.html">Inversions: Root Position, First and Second Inversion</a>
+    <p>Major and minor triads with the root, 3rd or 5th in the bass, their figured-bass names (⁶ and ⁶₄) and slash-chord names (C/E, C/G), on piano and guitar.</p>
+  </li>
+  <li data-for="all voice" data-topic="pop">
+    <a href="voice-pop.html">Pop Singing: Speech, Mix, Runs and the Mic</a>
+    <p>Breath, onsets, speech-level singing and the mix, words, safe belting, pentatonic runs, cry and flips, phrasing with a mic, and singing a third above. Exercises move into your range.</p>
+  </li>
+  <li data-for="all voice" data-topic="jazz">
+    <a href="voice-jazz.html">Jazz Singing: Swing, Scat and the Changes</a>
+    <p>Conversational tone, swing eighths and ghost notes, scat syllables, the blues scale, arpeggios and guide tones through a ii-V-I, back-phrasing a ballad, and trading fours.</p>
+  </li>
+  <li data-for="all voice" data-topic="reading">
+    <a href="voice-classical.html">Classical Singing: Breath, Pure Vowels and Legato</a>
+    <p>Appoggio breathing, onset and legato, the five Italian vowels, resonance, registers and the passaggio, the nine-note scale, messa di voce, vibrato, diction and solfège.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other" data-topic="pop harmony">
+    <a href="four-chord-loops.html">Four-Chord Loops</a>
+    <p>The loops under a great many songs (I V vi IV, vi IV I V, the fifties loop, the turnaround, a borrowed chord, two minor loops) one at a time, each on a chart and a staff, with a loop builder and an ear test.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other" data-topic="harmony">
+    <a href="cadences.html">Cadences, and the One That Is Not</a>
+    <p>Authentic, half, deceptive, plagal and backdoor endings, each as a four-bar phrase on a staff, with the argument for why the plagal "Amen" is not a cadence, a phrase builder and two ear tests.</p>
+  </li>
+  <li data-for="all bass guitar piano violin sax other" data-topic="jazz harmony">
+    <a href="guide-tones.html">Guide Tones</a>
+    <p>The 3rd and 7th of each chord written as a single line over four-chord loops, a two-five-one and the turnaround. The band plays the line.</p>
+  </li>
+  <li data-for="all bass guitar piano violin sax other" data-topic="harmony">
+    <a href="minor-changes.html">Changes in a Minor Key</a>
+    <p>From natural-minor i, iv, v to the harmonic-minor V7, the Picardy third, a walking bass and the ii&deg;-V-i, in A minor.</p>
+  </li>
+  <li data-for="all bass guitar piano violin sax other" data-topic="pop harmony">
+    <a href="borrowed-chords.html">Borrowed Chords</a>
+    <p>The minor iv, the &#9837;VII and the &#9837;VI borrowed into a major key, one at a time, with a chord-by-chord builder and an ear test.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax other" data-topic="jazz harmony">
+    <a href="turnarounds.html">Turnarounds and Rhythm Changes</a>
+    <p>I-vi-ii-V made richer: sevenths, a dominant on the vi, starting on the iii, tritone substitutions and the first four bars of <em>I Got Rhythm</em>.</p>
+  </li>
+  <li data-for="all bass guitar piano violin sax other" data-topic="harmony">
+    <a href="reharmonize.html">Reharmonizing a Melody</a>
+    <p>One tune, <em>Ode to Joy</em>, with four sets of chords under it, played with the melody. Mix the settings two bars at a time.</p>
+  </li>
+  <li data-for="all bass guitar piano drums other" data-topic="pop jazz latin">
+    <a href="arrange-band.html">Arranging 1: Who Plays What in a Band</a>
+    <p>The four jobs in a rhythm section, built up one player at a time. Switch players in and out while the band plays and see each part written out.</p>
+  </li>
+  <li data-for="all bass drums" data-topic="pop jazz latin rhythm">
+    <a href="arrange-bass-drums.html">Arranging 2: Bass and Drums</a>
+    <p>Why the bass follows the kick, how the groove sets the feel, walking in swing and the tumbao in Latin music.</p>
+  </li>
+  <li data-for="all guitar piano" data-topic="pop jazz">
+    <a href="arrange-chords.html">Arranging 3: Guitar and Keyboards</a>
+    <p>Comping: strum patterns, voicing and register, the off-beat chop, jazz comping, and two chord players without a fight.</p>
+  </li>
+  <li data-for="all piano" data-topic="jazz blues pop">
+    <a href="arrange-organ.html">Arranging 4: The Organ</a>
+    <p>A playable tonewheel organ: pull the nine tonebars, switch the chorus, work the swell pedal and spin the Leslie, then hear it in the band.</p>
+  </li>
+  <li data-for="all bass guitar piano drums other" data-topic="pop jazz latin rhythm">
+    <a href="patterns/index.html">Accompaniment Patterns</a>
+    <p>A lesson for every bass line, comping rhythm, drum groove and conga part the band plays, each built up from simpler ones, played on the band and written out.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-harmonics.html">Sound 1: The Harmonic Series and Fourier</a>
+    <p>The harmonics of a note written out over any root, with how far each is from the piano. Build square, triangle, sawtooth and pulse waves from sine waves.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-waveforms.html">Sound 2: Oscillators and Pulse-Width Modulation</a>
+    <p>The classic synth waves on an oscilloscope and spectrum, pulse width, and PWM.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-noise.html">Sound 3: Noise</a>
+    <p>White, pink and brown noise, and wind, surf, hi-hats, snares and rain made from it.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-filter.html">Sound 4: Filters</a>
+    <p>Low-pass, high-pass, resonance, band-pass, notch and EQ, on noise, music or your own voice.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-lfo.html">Sound 5: LFOs</a>
+    <p>Vibrato, tremolo, wah and auto-pan from one slow oscillator, and what happens when it speeds up.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-subtractive.html">Sound 6: Subtractive Synthesis</a>
+    <p>A two-oscillator synth with filter, envelopes and LFO, played from the keys or MIDI, with presets for bass, brass, pads and plucks.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-fm.html">Sound 7: FM Synthesis</a>
+    <p>Carrier, modulator, ratio and index: sidebands on the spectrum, and bells, electric piano and bass from two sine waves.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-wavetable.html">Sound 8: Wavetable Synthesis</a>
+    <p>Morph through a table of wave shapes by hand or with an LFO.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-distortion.html">Sound 9: Distortion</a>
+    <p>Soft clip, hard clip, tube-like, wavefolder and bit crusher, and the harmonics each one adds.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-compressor.html">Sound 10: The Compressor</a>
+    <p>Threshold, ratio, knee, attack and release, with a live gain-reduction meter.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-reverb.html">Sound 11: Reverb</a>
+    <p>A convolution reverb with a room you build: decay, pre-delay, damping and early reflections.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-chorus.html">Sound 12: Chorus and Flanger</a>
+    <p>Moving short delays, the Doppler effect, and the comb filter.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-phaser.html">Sound 13: Phaser</a>
+    <p>All-pass filters, phase and sweeping notches.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-vocoder.html">Sound 14: The Vocoder</a>
+    <p>Talk into the microphone and play chords: the voice shapes the synth band by band.</p>
+  </li>
+</ul>
 
 <script>
-// Show the lessons for one instrument, numbered in the order to take them. The choice is kept (localStorage.llInst) and
-// can be given in the address: lessons/?instrument=bass
+// Filter the lessons by instrument and topic; the order of the list stays as written. Both choices are kept
+// (localStorage.llInst, llTopic) and can be given in the address: lessons/?instrument=bass&topic=blues
 (function () {
-  var NOTES = {
-    all: 'Every lesson. The first is for everyone; the rest each say who they are for.',
-    bass: 'Three lessons for bass, in this order.',
-    guitar: 'Three lessons for guitar, in this order.',
-    piano: 'Three lessons for piano, in this order.',
-    drums: 'Three lessons for drums, in this order. The first is worth reading even though there is nothing in it to play: a drummer who knows the chords hears the form. The last, on the hi-hat, is for a drummer who can already play a basic beat.',
-    congas: 'Two lessons for congas, in this order: the strokes and the tumbao, then the tumbao in a 16-bar blues.',
-    violin: 'Three lessons for violin, in this order. Leave the Instrument menu on those pages at violin or concert pitch.',
-    sax: 'Three lessons for saxophone, in this order. On the last two, choose your saxophone in the Instrument menu and everything is written in your key.',
-    other: 'For any other instrument that plays one note at a time (flute, trumpet, clarinet, voice). Choose concert pitch or your transposition in the Instrument menu on the last two pages.'
-  };
-  var pick = document.getElementById('ll-pick'), items = document.querySelectorAll('#ll-list li'), note = document.getElementById('ll-note');
-  function show(inst) {
-    if (!NOTES[inst]) inst = 'all';
+  var inst = document.getElementById('ll-pick'), topic = document.getElementById('ll-topic'), items = document.querySelectorAll('#ll-list li'), note = document.getElementById('ll-note');
+  function valid(group, attr, v) { return v && group.querySelector('button[' + attr + '="' + v + '"]') ? v : 'all'; }
+  function has(li, attr, v) { return v === 'all' || li.getAttribute(attr).split(' ').indexOf(v) >= 0; }
+  var cur = { inst: 'all', topic: 'all' };
+  function show() {
     var n = 0;
-    Array.prototype.forEach.call(items, function (li) { var on = li.getAttribute('data-for').split(' ').indexOf(inst) >= 0; li.hidden = !on; if (on) li.querySelector('.ll-step').textContent = inst === 'all' ? '' : 'Lesson ' + (++n); });
-    Array.prototype.forEach.call(pick.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-inst') === inst)); });
-    note.textContent = NOTES[inst];
-    try { localStorage.setItem('llInst', inst); } catch (e) {}
+    Array.prototype.forEach.call(items, function (li) { var on = has(li, 'data-for', cur.inst) && has(li, 'data-topic', cur.topic); li.hidden = !on; if (on) n++; });
+    Array.prototype.forEach.call(inst.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-inst') === cur.inst)); });
+    Array.prototype.forEach.call(topic.querySelectorAll('button'), function (b) { b.setAttribute('aria-pressed', String(b.getAttribute('data-topic') === cur.topic)); });
+    note.hidden = n > 0;
+    try { localStorage.setItem('llInst', cur.inst); localStorage.setItem('llTopic', cur.topic); } catch (e) {}
   }
-  pick.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(b.getAttribute('data-inst')); });
-  var q = /[?&]instrument=([a-z]+)/.exec(location.search), saved = null; try { saved = localStorage.getItem('llInst'); } catch (e) {}
-  show(q ? q[1] : saved || 'all');
+  inst.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { cur.inst = b.getAttribute('data-inst'); show(); } });
+  topic.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) { cur.topic = b.getAttribute('data-topic'); show(); } });
+  var qi = /[?&]instrument=([a-z]+)/.exec(location.search), qt = /[?&]topic=([a-z]+)/.exec(location.search), si = null, st = null;
+  try { si = localStorage.getItem('llInst'); st = localStorage.getItem('llTopic'); } catch (e) {}
+  cur.inst = valid(inst, 'data-inst', qi ? qi[1] : si);
+  cur.topic = valid(topic, 'data-topic', qt ? qt[1] : st);
+  show();
 })();
 </script>
 ```

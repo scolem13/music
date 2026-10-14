@@ -1,0 +1,90 @@
+---
+title: "Arranging 1: Who Plays What in a Band"
+toc: true
+toc-depth: 2
+---
+
+An arrangement is a set of decisions about who plays what, where, and when they keep
+quiet. This series takes the site's backing band apart one player at a time. Each example
+below is the band itself: press **▶ Play**, then use the buttons under **Who plays** to
+switch players in and out while it runs. Under the buttons, the last four bars the band
+played are written out, one staff per player, so you can see what you are hearing.
+
+The four lessons:
+
+1. **Who plays what** (this page): the jobs in a rhythm section and how they stack up.
+2. [Bass and drums](arrange-bass-drums.qmd): the foundation, and why the bass follows the kick drum.
+3. [Guitar and keyboards](arrange-chords.qmd): comping, register, and two chord players at once.
+4. [The organ](arrange-organ.qmd): tonebars, chorus, swell pedal and Leslie, on a model you can play.
+
+## 1. Four jobs
+
+A rhythm section shares out four jobs:
+
+- **Time.** The drums say where the beat is and how it is divided: straight or swung,
+  busy or calm. Everyone else leans on them.
+- **The bottom.** The bass says which chord this is by playing its root, mostly on the
+  strong beats, and it ties the harmony to the drums' rhythm.
+- **The harmony and the inner rhythm.** Guitar and keyboards fill the middle: the rest of the
+  chord, played in a pattern that sits between the drums' hits.
+- **The melody.** A singer or soloist. The rhythm section's job is to leave room for it.
+
+A band sounds good when those jobs don't step on each other. Most of arranging is
+deciding who *doesn't* play.
+
+## 2. Build it up one player at a time
+
+Start with only the drums, then add the bass, then the guitar. Listen for what each
+player adds. The drums alone have rhythm but no key. The bass adds the chord changes. The
+guitar adds the colour of each chord (major or minor) and fills the gaps in the rhythm.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="100" data-comp="guitar" data-on="drums"></div>
+
+Now take one away at a time. Without the bass, the band suddenly sounds thin and high.
+Without the drums, the guitar and bass have to keep time themselves and they sound
+loose. Without the guitar, the bass and drums still hold the song up: that's why they
+are called the *foundation*.
+
+## 3. Register: everyone gets a floor of the house
+
+Look at the written parts while the band plays. The bass sits low, under the bass
+clef. The guitar sits in the middle. The drums aren't pitched, but the kick is low,
+the snare is in the middle and the cymbals are high.
+
+When two players share a register they blur together. The easiest fix is to move one of
+them. Here the piano comps in a ballad, then plays the same notes an octave higher, then
+an octave lower. Hear how the low one gets in the way of the bass and muddies the
+chords, and how the high one leaves the middle empty for a singer.
+
+<div class="ar-demo" data-style="pop" data-chart="C|G|Am|F" data-tempo="72" data-comp="piano" data-choice-label="Piano:" data-choices='[{"label":"Where it was written","opts":{"octave":{"comp":0}}},{"label":"An octave up","opts":{"octave":{"comp":1}}},{"label":"An octave down","opts":{"octave":{"comp":-1}}}]'></div>
+
+## 4. Same chords, three bands
+
+A style is a set of these decisions made together. These three play the same four
+chords. Switch players off in each to hear how the jobs are shared out differently.
+
+**Rock:** bass on every eighth note, guitar strumming eighths, a backbeat on 2 and 4.
+Everyone plays the same grid, so it drives.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-comp="guitar"></div>
+
+**Reggae:** the guitar plays only on the off-beats and the drums leave beat 1 empty.
+The bass carries the downbeat by itself. Take the bass out and the beat is gone.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|Am|F|G" data-tempo="80" data-comp="guitar"></div>
+
+**Swing:** the bass walks a note on every beat, the ride cymbal plays the swung pattern,
+and the piano plays short chords now and then, mostly off the beat. The piano part
+changes every time round: in jazz the comping is a conversation, not a fixed pattern.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7" data-tempo="132"></div>
+
+## 5. Try it
+
+- In each example, find the one player you could lose with the least damage. That
+  player is the first to drop out when a singer comes in.
+- Turn on only bass and drums in the reggae example, then only guitar and drums. Which
+  pair still sounds like reggae?
+- Next: [Bass and drums](arrange-bass-drums.qmd).
+
+{{< include _arrange-kit.qmd >}}

@@ -1,0 +1,76 @@
+---
+title: "Sound 6: Subtractive Synthesis"
+toc: true
+toc-depth: 2
+---
+
+**Subtractive synthesis** starts with a wave full of harmonics and takes some away with a filter.
+It was the design of the Moog, the ARP, the Prophet-5 and the Minimoog that defined synth bass and
+synth lead, and most software synths still start from it. It is three parts in a row, each with a
+helper:
+
+**Oscillators** (the raw tone) → **filter** (the brightness) → **amplifier** (the loudness).
+**Envelopes** shape the filter and the amplifier over the length of each note, and an **LFO** adds
+movement.
+
+**How to use the page.** Press **▶ Demo** to hear the synth play, or play it from the computer keys
+(`a w s e d…`), the on-screen keyboard or a MIDI keyboard. It plays chords. Start with the presets,
+then change one control at a time.
+
+## The synth
+
+<div class="sk" data-w="subtractive" data-preset="Brass"></div>
+
+## 1. Oscillators
+
+Two oscillators, each with a shape from [Sound 2](sound-waveforms.qmd). A **sawtooth** is the usual
+starting point because it has every harmonic for the filter to work on. A **square** or narrow
+**pulse** is hollower. **Osc 2 detune** sets the second oscillator a few cents off the first: the two
+drift in and out of phase and the sound becomes thick and moving. 5 to 15 cents is the classic
+"fat" sound; 0 is thin and still. Set **Osc 2 octave** to −1 for weight under a bass, or +1 for
+brightness. **Noise** adds breath, from [Sound 3](sound-noise.qmd).
+
+## 2. Filter
+
+The [low-pass filter](sound-filter.qmd) is where the character comes from. **Cutoff** sets how bright
+the note is, **resonance** adds the peak at the cutoff. The filter here is the steep 24 dB-per-octave
+kind.
+
+## 3. Envelopes: ADSR
+
+An **envelope** is a shape that runs once each time you play a note. It has four stages:
+
+- **Attack**: how long it takes to rise from nothing to full when the key goes down.
+- **Decay**: how long it takes to fall from full to the sustain level.
+- **Sustain**: the level it holds while the key stays down (a level, not a time).
+- **Release**: how long it takes to fade to nothing after the key comes up.
+
+The **amp envelope** shapes the loudness: a piano has fast attack, long decay, no sustain; an organ
+has instant attack, full sustain, instant release; a string pad has slow attack and slow release.
+
+The **filter envelope** moves the cutoff, by up to **Envelope amount** octaves. This is the secret of
+most good synth sounds: real instruments are brightest at the start of a note. A fast filter attack
+and short decay give the "pew" of a synth bass; a slow attack gives a brass "swell". The drawing under
+the controls shows both envelopes.
+
+## 4. LFO
+
+The **LFO** ([Sound 5](sound-lfo.qmd)) adds vibrato (**→ Pitch**) or a slow filter sweep
+(**→ Cutoff**).
+
+## Recipes to try
+
+1. **Bass.** Press **Bass**. Turn **Envelope amount** to 0: the note goes dull and loses its "pluck".
+   Put it back and change **Decay** in the filter envelope: short is a click, long is a wow.
+2. **From brass to strings.** Press **Brass**, then raise the amp **Attack** to 0.3 s and set the
+   filter **Envelope amount** to 0. The swell becomes a bowed string pad.
+3. **Pluck.** Press **Pluck** and play fast. Everything happens in the filter envelope: sustain at 0,
+   so every note closes down by itself.
+4. **No oscillator at all.** Press **Wind (noise)**: noise through a resonant band-pass, with the LFO
+   moving the band. Play different keys: nothing changes, because noise has no pitch.
+
+## Next
+
+- [Sound 7: FM synthesis](sound-fm.qmd), a completely different way to make harmonics.
+
+{{< include _synth-kit.qmd >}}

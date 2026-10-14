@@ -1,7 +1,7 @@
 // BandTuneScore on every tune in the library: the melody per chart bar, and the section fragments
 const fs = require('fs'), vm = require('vm'), R = '/Users/sean.coleman/Projects/everything-music-site/';
 const load = f => vm.runInThisContext(fs.readFileSync(R + f, 'utf8'), { filename: f });
-['apps/shared/tune-chart.js', 'apps/tune-assessment/abc-tune.js', 'apps/shared/band/tune-score.js'].forEach(load);
+['apps/shared/tune-chart.js', 'apps/shared/abc-core.js', 'apps/tune-assessment/abc-tune.js', 'apps/shared/band/tune-score.js'].forEach(load);
 const tunesObject = vm.runInNewContext(fs.readFileSync(R + 'apps/tunes/tunes-object.js', 'utf8') + '\n;tunesObject');
 // the page's melGeo
 function geo(m){ const n = m.n, d = m.d, den = Math.max(8, d), per = n * den / d, compound = d === 8 && n >= 6 && n % 3 === 0; return { per, beat: compound ? 3 : den / d }; }

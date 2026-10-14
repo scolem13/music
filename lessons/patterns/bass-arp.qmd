@@ -1,0 +1,78 @@
+---
+title: "Bass line: Chord tones (learning to walk)"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Chord tones (learning to walk)**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
+
+It belongs in *Swing*, *Jazz ballad* and *Boogaloo*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+## Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass-halves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+## Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass-roots.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 3: Chord tones (learning to walk), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root, 3rd, 5th, 7th, one to a beat, the same shape every bar. On a minor seventh chord the 3rd is three frets above the root; on a dominant or major chord, four. Say the chord tones as you play them.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+## In other styles
+
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jazz ballad**
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+**Boogaloo**
+
+<div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Roots on every beat](bass-roots.qmd).
+- **Leads to:** [Walking](bass-walk.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd), [Footprints: waltz ostinato](bass-footprints.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Arpeggio, up and down](chords-arp.qmd) (comping rhythm), [Arpeggio, low and high](chords-arp2.qmd) (comping rhythm), [Alberti bass](chords-alberti.qmd) (comping rhythm).
+- **Plays with, in swing:** [Varied](chords-auto.qmd) (comping rhythm), [Jazz time](drums-auto.qmd) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass-walk.qmd), [Two-feel](bass-two.qmd), [Boogaloo riff](bass-riff.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

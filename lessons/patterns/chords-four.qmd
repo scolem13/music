@@ -1,0 +1,65 @@
+---
+title: "Comping rhythm: Four to the bar"
+subtitle: "For guitar, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Four to the bar**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+A short chord on every beat with 2 and 4 a little louder, the way Freddie Green played rhythm guitar.
+
+It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
+
+## Step 1: Long notes
+
+Start with something simpler. One held chord per bar (or per chord). Leaves the most room for a soloist.
+
+This is a pattern of its own: [the lesson on it](chords-pad.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Step:" data-choices='[{"label":"Long notes","opts":{"compRhythm":"pad"}}]'></div>
+
+## Step 2: Quarter-note chords
+
+The chord on every beat, held. On the piano the left hand adds the root underneath as each chord arrives: Let It Be, Imagine, Someone Like You.
+
+This is a pattern of its own: [the lesson on it](chords-quarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Step:" data-choices='[{"label":"Quarter-note chords","opts":{"compRhythm":"quarters"}}]'></div>
+
+## Step 3: Four to the bar, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** A short chord on every beat, 2 and 4 a little louder, the way Freddie Green played. On guitar use three-note shapes on the middle strings and release the pressure right after each strum.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="84" data-on="comp drums" data-staves="comp" data-comp="guitar" data-choice-label="Compare:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}},{"label":"Quarter-note chords (the step before)","opts":{"compRhythm":"quarters"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Long notes](chords-pad.qmd), [Quarter-note chords](chords-quarters.qmd).
+- **The same idea elsewhere in the band:** [Quarter notes (learning swing, 1)](drums-quarters.qmd) (drum groove), [Walking](bass-walk.qmd) (bass line), [Ride pattern (learning swing, 2)](drums-ridetime.qmd) (drum groove).
+- **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Jazz time](drums-auto.qmd) (drum groove).
+- **Other comping rhythms in the Jazz group:** [Varied](chords-auto.qmd), [Charleston](chords-charleston.qmd), [Reverse Charleston](chords-reverse.qmd), [Red Garland](chords-garland.qmd), [Off-beats](chords-offbeats.qmd), [Long notes](chords-pad.qmd), [Boogaloo stabs](chords-stabs.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

@@ -6,9 +6,14 @@
 // The tunes app sets all three from each tune's K: (Tonality.setFromKey). Other
 // tools consume DO (Tonality.bindSelect binds a control to DO) and may read the
 // resting tone. Tonic of the current key is `do`; `resting` is the modal center.
+// Two more, for showing the key: `flavor` ("blues" or "") — a blues is played in a major (or minor) key but its I, IV and V are
+// dominant sevenths — and `tonic`, the resting tone as the tune spells it ("F#", not "Gb").
+//   Tonality.setFromKey(k, src, flavor)   Tonality.setAll(do, resting, mode, src, flavor)   (flavor left out: kept while the mode stays)
+//   Tonality.label(state?) -> "F Major (Blues)"     Tonality.flavorOf(chordNames, restingPc, mode) -> "blues" | ""
+//   Every change is also a window event "tonality-change" (for code loaded before this file, like the navbar's icons).
 
 (function (global) {
-  const K_DO = "tonalDo", K_REST = "tonalResting", K_MODE = "tonalMode";
+  const K_DO = "tonalDo", K_REST = "tonalResting", K_MODE = "tonalMode", K_FLAV = "tonalFlavor", K_TONIC = "tonalTonic";
   const K_INST = "tonalInstrument", K_VIEW = "tonalView";
   // transposing instruments: written semitone offset from concert (display transpose)
   const INSTRUMENTS = { Piano:0, Flute:12, Clarinet:2, "Alto Sax":9, Trumpet:2, Trombone:0, Tuba:-12, Percussion:0 };
@@ -37,27 +42,57 @@
     let mo = MODE_FIFTHS[mode]; if (mo === undefined){ mode = "maj"; mo = 0; }
     const fifths = (MAJOR_FIFTHS[tonic] == null ? 0 : MAJOR_FIFTHS[tonic]) + mo;
     const doPc = (((fifths*7) % 12) + 12) % 12;
-    return { do: doPc, resting, mode };
+    return { do: doPc, resting, mode, tonic };
   }
 
   const num = v => { const n = v==null?null:+v; return (n>=0 && n<=11) ? n : null; };
   const getDo      = () => num(localStorage.getItem(K_DO));
   const getResting = () => num(localStorage.getItem(K_REST));
   const getMode    = () => localStorage.getItem(K_MODE);
-  const state = () => ({ do: getDo(), resting: getResting(), mode: getMode() });
+  const getFlavor  = () => localStorage.getItem(K_FLAV) || "";
+  function getTonic(){ const t = localStorage.getItem(K_TONIC), r = getResting(); return t && parseNote(t) === r ? t : (r == null ? null : spellPc(r)); }
+  const state = () => ({ do: getDo(), resting: getResting(), mode: getMode(), flavor: getFlavor(), tonic: getTonic() });
 
   let cbs = [];
-  function emit(src){ const st = state(); cbs.forEach(cb => { try { cb(st, src); } catch(e){} }); }
-  function setAll(doPc, restPc, mode, src){
+  function emit(src){ const st = state(); cbs.forEach(cb => { try { cb(st, src); } catch(e){} });
+    try { global.dispatchEvent(new CustomEvent("tonality-change", { detail: { state: st, src } })); } catch(e){} }
+  function setAll(doPc, restPc, mode, src, flavor, tonic){
     if (doPc == null) return;
-    if (getDo()===doPc && getResting()===restPc && getMode()===mode) return;   // no change
+    mode = mode || "maj";
+    if (flavor === undefined) flavor = getMode() === mode ? getFlavor() : "";            // a new key in the same mode keeps its blues
+    if (getDo()===doPc && getResting()===restPc && getMode()===mode && getFlavor()===flavor && (tonic == null || tonic === localStorage.getItem(K_TONIC))) return;   // no change
     localStorage.setItem(K_DO, String(doPc));
     localStorage.setItem(K_REST, String(restPc == null ? doPc : restPc));
-    localStorage.setItem(K_MODE, mode || "maj");
+    localStorage.setItem(K_MODE, mode);
+    localStorage.setItem(K_FLAV, flavor || "");
+    if (tonic) localStorage.setItem(K_TONIC, tonic); else localStorage.removeItem(K_TONIC);
     emit(src);
   }
   const setDo = (pc, src) => setAll(pc, pc, "maj", src);          // a tool set DO without mode → treat major
-  function setFromKey(k, src){ const t = keyToTonality(k); if (t) setAll(t.do, t.resting, t.mode, src); }
+  function setFromKey(k, src, flavor){ const t = keyToTonality(k); if (t) setAll(t.do, t.resting, t.mode, src, flavor || "", t.tonic); }
+  const MODE_NAMES = { maj:"Major", major:"Major", ion:"Major", ionian:"Major", m:"Minor", min:"Minor", minor:"Minor", aeo:"Minor", aeolian:"Minor",
+    dor:"Dorian", dorian:"Dorian", phr:"Phrygian", phrygian:"Phrygian", lyd:"Lydian", lydian:"Lydian", mix:"Mixolydian", mixolydian:"Mixolydian", loc:"Locrian", locrian:"Locrian" };
+  // "F Major (Blues)", "D Dorian", "F♯ Minor" for a state (default: the current one)
+  function label(st){
+    st = st || state(); if (st.resting == null) return "";
+    const t = String(st.tonic || spellPc(st.resting)).replace(/#/g, "\u266f").replace(/b/g, "\u266d");
+    return t + " " + (MODE_NAMES[(st.mode || "maj").toLowerCase()] || st.mode) + (st.flavor === "blues" ? " (Blues)" : "");
+  }
+  // Is a progression a blues? chordNames: symbols as written ("F7", "Bb7", "Cm7"). A major key: dominant-type chords on I and IV.
+  // A minor key: minor sevenths on i and iv. (A I-IV-V in plain triads is not a blues.)
+  function flavorOf(chordNames, restingPc, mode){
+    if (restingPc == null || !chordNames || !chordNames.length) return "";
+    const minor = /^(m|min|minor|aeo|aeolian)$/i.test(mode || "");
+    if (mode && !minor && !/^(maj|major|ion|ionian)$/i.test(mode)) return "";
+    const seen = {};
+    chordNames.forEach(n => {
+      const m = /^([A-G][#b]?)(.*)$/.exec(String(n).trim()); if (!m) return;
+      const deg = (((parseNote(m[1]) - restingPc) % 12) + 12) % 12, q = m[2].split("/")[0];
+      const dom = /^(7|9|11|13)/.test(q) || /^7(sus|b|#|alt)/.test(q), m7 = /^(m|min|-)(7|9|11)/.test(q);
+      seen[deg + (dom ? "d" : m7 ? "m" : "")] = true;
+    });
+    return minor ? (seen["0m"] && seen["5m"] ? "blues" : "") : (seen["0d"] && seen["5d"] ? "blues" : "");
+  }
   function onChange(cb){ cbs.push(cb); }
 
   // Shared transposing-instrument selection (so concert/transposed key controls on
@@ -69,7 +104,7 @@
   const getView = () => localStorage.getItem(K_VIEW) || "concert";
   function setView(v, src){ v = v==="transposed" ? "transposed" : "concert"; if (getView()===v) return; localStorage.setItem(K_VIEW, v); emit(src); }
 
-  global.addEventListener("storage", e => { if ([K_DO,K_REST,K_MODE,K_INST,K_VIEW].includes(e.key)) emit("storage"); });
+  global.addEventListener("storage", e => { if ([K_DO,K_REST,K_MODE,K_FLAV,K_TONIC,K_INST,K_VIEW].includes(e.key)) emit("storage"); });
 
   // Bind a <select> to DO. kind: "pc" (option value 0–11) or "note" (note names).
   function bindSelect(el, kind){
@@ -152,7 +187,7 @@
     }
   }
 
-  global.Tonality = { getDo, getResting, getMode, setDo, setAll, setFromKey, keyToTonality,
+  global.Tonality = { getFlavor, getTonic, label, flavorOf, state, getDo, getResting, getMode, setDo, setAll, setFromKey, keyToTonality,
                       parseNote, spellPc, noteName, establish, onChange, bindSelect,
                       getInstrument, setInstrument, getView, setView, INSTRUMENTS };
 })(window);

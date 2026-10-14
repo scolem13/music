@@ -19,18 +19,59 @@ website:
         menu:
           - lessons/index.qmd
           - text: "---"
+          - lessons/blues-improv.qmd
+          - lessons/blues-melody.qmd
           - lessons/blues-changes.qmd
-          - lessons/pop-changes.qmd
-          - lessons/four-chord-loops.qmd
           - lessons/blues-bass.qmd
           - lessons/blues-guitar.qmd
           - lessons/blues-piano.qmd
           - lessons/blues-drums.qmd
+          - lessons/reading-swing.qmd
           - lessons/hihat-grooves.qmd
           - lessons/congas-basics.qmd
           - lessons/watermelon-congas.qmd
-          - lessons/blues-melody.qmd
-          - lessons/blues-improv.qmd
+          - lessons/pop-changes.qmd
+          - lessons/pop-changes-guitar.qmd
+          - lessons/pop-changes-piano.qmd
+          - lessons/pop-changes-bass.qmd
+          - lessons/chord-shapes-guitar.qmd
+          - lessons/chord-shapes-guitar-hand.qmd
+          - lessons/hammer-ons-pull-offs.qmd
+          - lessons/travis-picking.qmd
+          - lessons/chord-shapes-piano.qmd
+          - lessons/chord-shapes-piano-hand.qmd
+          - lessons/inversions.qmd
+          - lessons/voice-pop.qmd
+          - lessons/voice-jazz.qmd
+          - lessons/voice-classical.qmd
+          - lessons/four-chord-loops.qmd
+          - lessons/cadences.qmd
+          - lessons/guide-tones.qmd
+          - lessons/minor-changes.qmd
+          - lessons/borrowed-chords.qmd
+          - lessons/turnarounds.qmd
+          - lessons/reharmonize.qmd
+          - text: "---"
+          - lessons/arrange-band.qmd
+          - lessons/arrange-bass-drums.qmd
+          - lessons/arrange-chords.qmd
+          - lessons/arrange-organ.qmd
+          - lessons/patterns/index.qmd
+          - text: "---"
+          - lessons/sound-harmonics.qmd
+          - lessons/sound-waveforms.qmd
+          - lessons/sound-noise.qmd
+          - lessons/sound-filter.qmd
+          - lessons/sound-lfo.qmd
+          - lessons/sound-subtractive.qmd
+          - lessons/sound-fm.qmd
+          - lessons/sound-wavetable.qmd
+          - lessons/sound-distortion.qmd
+          - lessons/sound-compressor.qmd
+          - lessons/sound-reverb.qmd
+          - lessons/sound-chorus.qmd
+          - lessons/sound-phaser.qmd
+          - lessons/sound-vocoder.qmd
 #      - text: Lessons
 #        menu:
 #          - lessons/quarter-notes.qmd
@@ -61,13 +102,17 @@ website:
           - tools/scales.qmd
           - tools/circle-of-fifths.qmd
           - tools/chords-solfege.qmd
+          - tools/chord-library.qmd
           - tools/chord-sheet.qmd
           - tools/chord-sheet-deluxe.qmd
           - tools/drumset.qmd
           - tools/accomp-styles.qmd
+          - styles/index.qmd
           - tools/backing-track.qmd
           - tools/chord-entry.qmd
+          - tools/notation.qmd
           - tools/notation-rules.qmd
+          - tools/ipa-chart.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

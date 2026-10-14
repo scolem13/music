@@ -1,0 +1,51 @@
+---
+title: "Drum groove: Bossa nova"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Bossa nova**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+Eighths on the cymbal, the kick on 1 and 3 with an eighth-note pickup before each, and the two-bar bossa clave on the cross-stick.
+
+It belongs in *Bossa nova*. Here it is in the bossa nova style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Bossa nova","opts":{"groove":"bossa"}}]'></div>
+
+## Step 1: Hi-hat: eighth notes
+
+Start with something simpler. Closed hi-hat on every eighth note, all of one weight, kick on 1 and 3, snare on 2 and 4. The basic rock beat. In 3/4: six eighths, kick on 1, snare on 3.
+
+This is a pattern of its own: [the lesson on it](drums-hheighths.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Hi-hat: eighth notes","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 2: Bossa nova, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Eighths on the cymbal; kick on 1 and 3 with a pickup before each; the two-bar bossa clave on the cross-stick. Learn hands and feet apart, then together.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="84" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Bossa nova","opts":{"groove":"bossa"}},{"label":"Hi-hat: eighth notes (the step before)","opts":{"groove":"hheighths"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 120 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="bossa" data-chart="Am7|D7|Gmaj7|Gmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Bossa nova","opts":{"groove":"bossa"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Hi-hat: eighth notes](drums-hheighths.qmd).
+- **The same idea elsewhere in the band:** [Bossa nova](bass-bossa.qmd) (bass line), [Bossa nova](chords-bossa.qmd) (comping rhythm).
+- **Plays with, in bossa nova:** [Bossa nova](bass-bossa.qmd) (bass line), [Bossa nova](chords-bossa.qmd) (comping rhythm).
+- **Other drum grooves in the Latin group:** [Son clave (2-3)](drums-clave.qmd), [Son clave (3-2)](drums-clave32.qmd), [Cha-cha](drums-chacha.qmd), [Tango](drums-tango.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

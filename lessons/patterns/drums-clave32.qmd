@@ -1,0 +1,52 @@
+---
+title: "Drum groove: Son clave (3-2)"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Son clave (3-2)**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+The same groove as the 2-3 clave with its bars the other way round: three cross-stick notes in the first bar, two in the second.
+
+It belongs in *Son montuno*. Here it is in the son montuno style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Son clave (3-2)","opts":{"groove":"clave32"}}]'></div>
+
+## Step 1: Son clave (2-3)
+
+Start with something simpler. The 2-3 son clave on the cross-stick over two bars, a bell pattern on the cymbal and a light kick with the tumbao bass. A drum-kit part for the clave and timbales of a real section; the congas are a player of their own.
+
+This is a pattern of its own: [the lesson on it](drums-clave.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Son clave (2-3)","opts":{"groove":"clave"}}]'></div>
+
+## Step 2: Son clave (3-2), slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The same groove with its bars the other way round: three cross-stick notes in the first bar, two in the second. The tune decides which way round the clave goes.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="70" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Son clave (3-2)","opts":{"groove":"clave32"}},{"label":"Son clave (2-3) (the step before)","opts":{"groove":"clave"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 100 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="montuno" data-chart="C|F|G7|C" data-tempo="100" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Son clave (3-2)","opts":{"groove":"clave32"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Son clave (2-3)](drums-clave.qmd).
+- **Leads to:** [Bo Diddley beat](drums-bodiddley.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [3-2 clave / Bo Diddley beat](chords-clave32.qmd) (comping rhythm), [Bo Diddley beat](drums-bodiddley.qmd) (drum groove), [Son clave (2-3)](drums-clave.qmd) (drum groove).
+- **Plays with, in son montuno:** [Tumbao](bass-tumbao.qmd) (bass line), [Son montuno](chords-montuno.qmd) (comping rhythm), [Tumbao, two drums](congas-tumbao2.qmd) (conga part).
+- **Other drum grooves in the Latin group:** [Bossa nova](drums-bossa.qmd), [Son clave (2-3)](drums-clave.qmd), [Cha-cha](drums-chacha.qmd), [Tango](drums-tango.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

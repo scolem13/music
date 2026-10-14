@@ -24,4 +24,11 @@ assert(!gen(MARKED, { groove: "none" }, 1)[4].parts.drums.some(e => e.choke || e
 const D = BandDrums.create({ rng: mb(5) });
 assert(!D.ending({ opts: {} }).some(e => e.choke)); const end = D.ending({ opts: { endChoke: true } });
 assert(end.some(e => e.piece === "crash")); assert.strictEqual(end.filter(e => e.choke === "cymbals" && e.damp > 0.012 && e.pos > 0).length, 1);
+// asked for by bar number from a page (opts.chokeBars), and written on the drum staff as a short crash with "choke" over it
+const byOpt = gen(PLAIN, { groove: "rock", feel: "straight", ride: "hat", chokeBars: [2] }, 4);
+assert(byOpt[2].parts.drums.some(e => e.choke && e.damp) && !byOpt[1].parts.drums.some(e => e.choke));
+require(R + "band/notation.js");
+const abcN = BandNotation.toAbc(byOpt, { show: { comp: false, bass: false, drums: true } });
+assert.strictEqual((abcN.match(/"\^choke"!staccato!/g) || []).length, 1, "one grab written");
+assert(!/choke/.test(BandNotation.toAbc(gen(PLAIN, { groove: "rock", feel: "straight", ride: "hat" }, 4), { show: { comp: false, bass: false, drums: true } })), "nothing written without one");
 console.log("GRABBED CYMBAL OK");

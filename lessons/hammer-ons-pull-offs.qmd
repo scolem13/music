@@ -1,0 +1,210 @@
+---
+title: "Hammer-ons and Pull-offs on Guitar"
+toc: true
+toc-depth: 2
+---
+
+A hammer-on and a pull-off make a second note without a second pick stroke. The fretting hand does the work. This lesson builds both from one finger on one string up to licks, scale runs and chord embellishments. Each step says what makes it easy, what makes it hard, and what usually goes wrong, then gives something to practice. The same technique is the left-hand half of [Travis picking with hammer-ons and pull-offs](travis-picking.qmd#travis-hp).
+
+**How to read the examples.** Each exercise is written on a staff and in tablature. Tablature has one line a string, the high E on top, and a number for the fret. A slur between two notes is a hammer-on (the second note is higher, marked **H**) or a pull-off (the second note is lower, marked **P**), and both notes lie on one string. The staff is written an octave above where a guitar sounds, as guitarists read it. Press ▶ to hear it. The player picks every note, so on the recording the hammer-ons and pull-offs are separate soft attacks. Listen for the pitches and the rhythm and make the legato yourself. Fingers are numbered 1 (index) to 4 (little finger).
+
+## 1. One finger on one string {#one-finger}
+
+Pick the open G string once. Then bring finger 2 down on the 2nd fret from above, quickly, with the tip, just behind the fret wire. The string rings the higher note with no pick. That is a hammer-on.
+
+<div class="abc-tab" data-tempo="60"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+(GA) z2 | (GA) z2 |]
+</script></div>
+
+- **Easy because:** one finger, one string and one pick stroke.
+- **Hard because:** the finger has to land hard enough to sound a note with nothing but its own speed. A soft landing gives a faint or no note.
+- **What goes wrong:**
+  - The finger lands flat or too far back from the fret, and the note is dull or buzzes.
+  - The hand lifts the finger a long way before it falls. A short, quick drop is enough, and it keeps the hand relaxed.
+  - The other fingers fly up in sympathy. Let them hang near the strings.
+
+**Practice:** ten hammer-ons in a row, each one picked once, with a rest between. Listen for the hammered note being as loud as the picked one. That takes some weeks to get.
+
+## 2. From an open string: each finger {#open}
+
+An open string is the easiest start, because no finger is holding the lower note. On the high E string, hammer each finger in turn: finger 1 at fret 1, finger 2 at fret 2, finger 3 at fret 3, finger 4 at fret 4.
+
+<div class="abc-tab" data-tempo="60"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+(ef) (e^f) | (eg) (e^g) |]
+</script></div>
+
+- **Easy because:** the open string is a fixed, ringing starting point.
+- **Hard because:** fingers 3 and 4 are weaker than 1 and 2, and they land softly at first.
+- **What goes wrong:** the weak fingers give the faintest notes. A finger landing next to the fret rather than behind it, a thumb riding over the neck, and the wrist drooping all make it worse.
+
+**Practice:** the same drill on every string. Spend most of the time on fingers 3 and 4.
+
+## 3. Fretted to fretted {#fretted}
+
+Now the lower note is fretted too. Press finger 1 down on the 2nd fret of the A string and pick. Finger 1 stays down while finger 2 hammers onto fret 3. When the higher finger lands it shortens the string, and the higher note sounds. Then try fret 4 with finger 3, then move up one fret and do it again.
+
+<div class="abc-tab" data-tempo="60" data-pos="1"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+(B,C) (B,^C) | (CD) (^CD) |]
+</script></div>
+
+- **Easy because:** you already know both halves. The picked note is a plain fretted note, and the hammer is the move from section 2.
+- **Hard because:** two fingers have to be placed at once, one to keep the lower note ringing and one to hammer.
+- **What goes wrong:** the lower finger relaxes when the upper one lands and the first note dies. The hammer lands on a different string from the one picked. The hammered note is quieter than the picked one.
+
+**Practice:** hold finger 1 down and hammer with finger 2, then 3, then 4, up and down the neck on one string.
+
+## 4. Pull-offs {#pull}
+
+A pull-off is the mirror image. Put two fingers down on the same string, the upper one at the higher fret and the lower one at the lower fret. Pick, then pull the upper finger off, and as it leaves, pull it a little sideways, toward the floor, so that it plucks the string. The lower finger or the open string rings.
+
+<div class="abc-tab" data-tempo="60"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+(AG) z2 | (ge) z2 |]
+</script></div>
+
+Then with the lower note fretted:
+
+<div class="abc-tab" data-tempo="60" data-pos="1"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=treble-8
+(CB,) (^CB,) | (DC) (D^C) |]
+</script></div>
+
+- **Easy because:** a pull-off is a hammer-on backwards. Section 3's two-finger shape is the same.
+- **Hard because:** the lower finger must already be in place before the pull. A pull-off that only lifts the finger sounds weak. It has to flick.
+- **What goes wrong:**
+  - The upper finger lifts straight up and the lower note is barely heard.
+  - The finger drags across the next string and mutes it or sounds it.
+  - The lower finger is not down yet when the upper one leaves.
+
+**Practice:** put both fingers down, pick, and pull off. Play the picked note and the pulled note at an even loudness. Do the open-string version on every string, then the fretted one.
+
+## 5. Trills and hammer-pull loops {#trills}
+
+Put the two together. Pick once, hammer on, pull off, hammer on, and keep going, and the picked note turns into a **trill**. This is how guitarists get a long, fluttering note out of one pick stroke, and it is a fine test of both techniques at once.
+
+<div class="abc-tab" data-tempo="70"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+(GAGAGAGA) | (GAGAGAGA) |]
+</script></div>
+
+Make it faster by halving the note values. Then end with a picked note, so the trill has a landing.
+
+<div class="abc-tab" data-tempo="70"><script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:C clef=treble-8
+(GAGAGAGA GAGAGAGA) G4 z4 |]
+</script></div>
+
+- **Easy because:** nothing new: a hammer-on, a pull-off and a repeat.
+- **Hard because:** the notes have to stay even and loud while the hand tires.
+- **What goes wrong:** the notes fade away as the hand tires. The rhythm rushes. The lower finger gets pushed off when the upper finger hammers.
+
+**Practice:** one measure at a slow tempo, with a metronome, and then speed up 4 beats a minute at a time. Stop when the notes begin to fade. Try it with fingers 1-2, 1-3, 2-3 and 3-4.
+
+## 6. In licks and scale runs {#licks}
+
+A lick is a short phrase. Written below are three, all in the key of A minor, in the first of the pentatonic positions, with the index finger on the 5th fret. Each slur is on one string. The first goes up with hammer-ons and the second comes down with pull-offs:
+
+<div class="abc-tab" data-tempo="70" data-pos="5"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+(GA) (cd) (eg) (ac') | (c'a) (ge) (dc) (AG) |]
+</script></div>
+
+The third is in the open position and mixes both. The hammer-on from the open D string, and the pull-off back to the open G string, are the sound of a lot of blues and country playing:
+
+<div class="abc-tab" data-tempo="80"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+(DE) G (AG) E (ED) | (A,B,) C (B,A,) A,3 |]
+</script></div>
+
+- **Easy because:** a pentatonic run is only two notes a string, and each pair is a hammer-on or a pull-off you know.
+- **Hard because:** the picks and the slurs alternate, and the hand has to change strings after each pair.
+- **What goes wrong:** the picked note at the start of each pair is rushed, and then the slurred notes sound like they are in a hurry. Playing it fast without the pick on the first note of each pair is the quickest way to lose the beat.
+
+**Practice:** play the first two bars with a metronome at 70, and say the rhythm out loud, "one-and two-and". When the slurred notes are as loud as the picked ones, speed up.
+
+## 7. Inside chord shapes: the Sus embellishment {#chords}
+
+Hammer-ons and pull-offs also decorate a chord. The best known is the **Sus embellishment**: strum an open chord, then hammer one finger onto a note next to a chord tone, so that the chord briefly becomes a *sus* chord, and pull it off to come home again. Jimi Hendrix used the idea all through *Little Wing* and *Castles Made of Sand*, and rock, folk and country guitarists use it all the time. On D, A and C the moving finger is the little finger or the ring finger on the top strings, and the rest of the chord stays put.
+
+**D.** Strum D. The finger on the high E string (fret 2) stays down. Hammer the little finger onto fret 3 of the same string: the 3rd of the chord (F♯) becomes the 4th (G), and D becomes Dsus4. Pull off to come back.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="D xx0232@xx0132; Dsus4 xx0233@xx0134; Dsus2 xx0230@xx0130"></div>
+
+<div class="abc-tab" data-tempo="70" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"D"([DAd^f]2 g2 ^f2 g2) |]
+</script></div>
+
+**A.** Strum A. Hammer the little finger onto fret 3 of the B string, over the finger that holds fret 2: A becomes Asus4.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="A x02220@x01230; Asus4 x02230@x01240; Asus2 x02200@x01200"></div>
+
+<div class="abc-tab" data-tempo="70" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"A"([A,EA^ce]2 d2 ^c2 d2) |]
+</script></div>
+
+**C.** Strum C. The high E string is open. Hammer the little finger onto fret 3 of that string, then pull off. The top note moves from E to G and back.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C x32010@x32010; C(top G) x32013@x32014"></div>
+
+<div class="abc-tab" data-tempo="70" data-loop="true"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C clef=treble-8
+"C"([CEGce]2 g2 e2 g2) |]
+</script></div>
+
+- **Easy because:** the chord is already under your hand. Only one finger moves, and only one fret.
+- **Hard because:** the hammering finger is the little finger, and it has to land without touching the next string or lifting a finger that is holding the chord.
+- **What goes wrong:**
+  - The chord gets thinner because a finger of the shape lifted when the pinky came down.
+  - The pinky lands on the pad instead of the tip, and mutes the string next to it.
+  - It is played so fast and so loud that it stops sounding like a chord with a flourish.
+
+**Practice:** strum the chord once, then hammer and pull off with a steady pulse, one decoration to a chord. Play along with the band: the chart is D, A, C, D, one bar each. Do the embellishment on each chord in time.
+
+<div class="ar-demo" data-style="folk" data-chart="D|A|C|D" data-tempo="80" data-on="bass drums" data-staves="bass" data-comp="guitar"></div>
+
+**Unlocks:** [Travis picking with hammer-ons and pull-offs](travis-picking.qmd#travis-hp); the open-chord decorations of [pop changes for guitar](pop-changes-guitar.qmd); [guitar chord shapes by hand](chord-shapes-guitar-hand.qmd).
+
+{{< include _arrange-kit.qmd >}}
+
+{{< include _pick-kit.qmd >}}

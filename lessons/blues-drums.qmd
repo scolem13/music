@@ -100,7 +100,24 @@ on 2 and 4.
 
 <div class="bl-step" data-part="straight"></div>
 
-## 8. A tune: Blues in the Closet
+## 8. Grabbing the crash
+
+A crash cymbal rings for a long time. Sometimes you want the accent without the ring: hit the
+crash, then catch its edge with the other hand straight away, so that it stops. Drummers call
+this a *choke*. It is written as a short crash with **choke** over it.
+
+Here the band plays the straight-eighths beat from step 7 with a small fill at the end of bars 4
+and 8, and the crash is grabbed on beat 1 of **bar 5** and **bar 9**, the first bar of the second
+and third lines. Hit the crash together with the bass drum, and have the hand on the cymbal
+before beat 2. Then go straight back to the time. When the band stops at the end, the last
+crash is grabbed too.
+
+<div class="bl-step" data-part="grab"></div>
+
+Try it with the loop on and listen to the gap the choke leaves. A grabbed crash says "here"
+louder than a ringing one, because of the silence after it.
+
+## 9. A tune: Blues in the Closet
 
 Oscar Pettiford's riff blues, at a medium swing. The melody is one two-bar riff played
 three times, and each time it ends on a long note, in bars 4, 8 and 12. Those are the same
@@ -122,6 +139,9 @@ without counting.
   more the band needs the form marked clearly.
 - **Tools → Backing Track** has every groove on this page, and many others, under any tune.
 
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a blues: the Key menu's tonality reads "(Blues)" (key-tonality.js)</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

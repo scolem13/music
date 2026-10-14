@@ -1,0 +1,149 @@
+---
+title: "Guitar Chord Shapes: From Pop and Rock Toward Jazz"
+toc: true
+toc-depth: 2
+---
+
+This lesson is for a guitarist who knows open chords and strumming but hasn't played jazz. Its thirteen steps go in order of how simple the voicing is. First come more chord types in familiar shapes, then fewer strings, then fewer chord tones, then more colour. [Guitar chord shapes by hand](chord-shapes-guitar-hand.qmd) has the same chords in the order the hand finds them easy.
+
+**How to read the diagrams.** The neck stands upright, with string 6 (low E) on the left and the nut at the top. Each dot shows its chord tone: R is the root, and 3, 5, ♭7, 9 and so on are counted up from it. The fret numbers under each diagram run from low E to high E, and x is a string you don't play. Press ▶ to hear a shape. The staff writes the chords an octave above where they sound, which is how guitar music is written.
+
+Each step has an ID, such as **G-A3**, that other lessons use to point back here.
+
+## G-A1 Open triads {#g-a1}
+
+A triad is root, 3rd and 5th. A guitar has six strings, so some of those three tones are doubled: C `x32010` is C–E–G–C–E, with the 3rd on two strings. The doubled tones and ringing open strings give the bright sound of folk and pop. The 3rd decides major or minor, and it is the only difference between E and Em.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C x32010; G 320003; D xx0232; Am x02210; Em 022000; E 022100; A x02220; Dm xx0231"></div>
+
+**Practice:** loop C, Am, F, G ([four-chord loops](four-chord-loops.qmd), loop 1) until the changes land in time with no gap. Play F as the small shape `xx3211` until you reach the barre (G-A3).
+
+**Unlocks:** the strummed styles of the Backing Track: Acoustic strum, Straight-eighth rock, Boom-chick.
+
+## G-A2 Fifths (power chords) {#g-a2}
+
+Root and 5th, sometimes with the octave on top. There is no 3rd, so the chord is neither major nor minor. Fifths stay clear under distortion, where the 3rds of two chords would clash, and they fit whatever 3rd the bass or the singer supplies. This is also the first time a chord leaves a tone out, which every later step does too. The shape is the same with the root on string 6 or on string 5, so one fingering moves anywhere.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="E5 022xxx; A5 x022xx; G5 355xxx; C5 x355xx"></div>
+
+**Practice:** play a 12-bar blues in fifths. Then rock between the 5th and the 6th on the middle string (E5 to E6 to E5), the classic rock-and-roll rhythm figure.
+
+**Unlocks:** palm-muted eighth notes in rock and pop-punk.
+
+## G-A3 Barre chords: the E and A shapes {#g-a3}
+
+Any open shape can move up the neck if your index finger replaces the nut. The root is under the barre: on string 6 for the E shape and on string 5 for the A shape. Those two shapes give all twelve major and minor chords, and this is the point where the neck becomes a map rather than a list of chords. The physical side is in [G-B8 and G-B9](chord-shapes-guitar-hand.qmd#g-b8).
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="F 133211; Fm 133111; Bb x13331; Bm x24432; Cm x35543"></div>
+
+**Practice:** play one four-chord loop in three keys, naming each root as you land on it.
+
+**Unlocks:** the same strums in every key; Motown / soul.
+
+## G-A4 Sus and add9 {#g-a4}
+
+A sus chord replaces the 3rd with the 2nd (sus2) or the 4th (sus4). With no 3rd it is neither major nor minor, and it leans toward resolving: Dsus4 falls to D as G moves down to F♯. Add9 keeps the 3rd and adds the 9th, the 2nd an octave up. It is sweet rather than tense. These are the colours of pop and 80s rock guitar, and the first chords in this sequence that go beyond a triad.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="D xx0232; Dsus4 xx0233; Dsus2 xx0230; Asus2 x02200; Asus4 x02230; Cadd9 x32030"></div>
+
+**Practice:** D, Dsus4, D, Dsus2, one bar each. Then alternate C and Cadd9.
+
+**Unlocks:** sixteenth-note strums with hammer-ons, and fingerpicking (Travis pattern).
+
+## G-A5 Dominant 7th {#g-a5}
+
+A dominant 7th is root, major 3rd, 5th and flat 7th. The 3rd and the ♭7 are a tritone apart, and a tritone wants to resolve. Going from G7 to C, the 3rd (B) rises a half step to C and the ♭7 (F) falls a half step to E. That pull is what makes a chord dominant, and it drives the blues and every jazz tune.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C7 x32310; G7 320001; D7 xx0212; A7 x02020; E7 020100; B7 x21202; F7 131211; Bb7 x13131"></div>
+
+**Practice:** play G7 to C slowly and find the two notes that move by one fret. Then see [blues for guitar](blues-guitar.qmd).
+
+**Unlocks:** Blues shuffle, and a 12-bar blues on I7, IV7 and V7.
+
+## G-A6 Minor 7th and major 7th {#g-a6}
+
+A minor 7th is a minor triad plus a ♭7. It sounds soft and open rather than dark. A major 7th is a major triad plus the 7th one fret below the root, and it sounds dreamy. Pop already uses both: Am7 and Cmaj7 turn up all over [pop changes for guitar](pop-changes-guitar.qmd). In jazz these two types, together with the dominant 7th, make up most of the harmony.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="Am7 x02010; Em7 020000; Dm7 xx0211; Cmaj7 x32000; Fmaj7 xx3210; Gmaj7 320002; Fm7 131111; Bbm7 x13121; Bbmaj7 x13231"></div>
+
+**Practice:** Cmaj7, Am7, Dm7, G7 (I–vi–ii–V) in open shapes. Then play it in F with barre shapes.
+
+**Unlocks:** Bossa nova, and slow Charleston comping.
+
+## G-A7 Half-diminished and diminished 7th {#g-a7}
+
+Half-diminished (m7♭5) is a minor 7th with a flat 5th. It is chord vii in a major key (Bm7♭5 in C) and the ii chord in a minor key (see [minor changes](minor-changes.qmd)). A diminished 7th is a stack of minor 3rds, so the shape repeats every three frets with the same four notes. The F♯dim passing chord in pop changes is this chord.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="Bm7b5 x2323x; Am7b5 5x554x; Bdim7 x2313x; Ddim7 x5646x"></div>
+
+**Practice:** slide a dim7 shape up three frets at a time. You'll hear the same chord four times, with four different names.
+
+**Unlocks:** the passing chords in [turnarounds](turnarounds.qmd), and the minor-key ii–V–i.
+
+## G-A8 Shell voicings (root, 3rd, 7th) {#g-a8}
+
+The 3rd and the 7th are the **guide tones**: they say what kind of chord it is. The 5th adds the least, because the bass and the key already imply it, so a shell leaves it out. Root, 3rd and 7th make a chord thin enough to sit under a singer or a solo, which is how a rhythm guitarist plays in a jazz band. Shells come with the root on string 6 (strings 6, 4 and 3) or on string 5 (strings 5, 4 and 2). The Chord Library calls these *Shell (R-3-7)*.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C7 8-x-8-9-x-x; Cmaj7 8-x-9-9-x-x; Cm7 8-x-8-8-x-x; F7 x-8-x-8-10-x; Fmaj7 x-8-x-9-10-x; G7 3x34xx"></div>
+
+**Practice:** play C7, F7 and G7 as shells and watch the 3rd and the 7th: each moves a fret or two when the chord changes.
+
+**Unlocks:** Four to the bar, Charleston, Reverse Charleston, and the Shell voicing in the Backing Track's guitar menu.
+
+## G-A9 Triads on the top strings {#g-a9}
+
+Three strings and three notes, with nothing doubled. This is the cleanest chord on the guitar, and it sounds best in a band with a keyboard or a second guitar because it takes only a thin slice of the range. A triad has three positions, and each one moves the lowest note to the top. The shapes are small, so you can chain them with almost no movement. The Backing Track calls this *Voice-led triads*.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C xxx010; C xxx553; C xxx988; F xxx565; Am xxx210; G xxx433"></div>
+
+**Practice:** play C, F and G, choosing each time the shape nearest to the last.
+
+**Unlocks:** funk sixteenths and reggae or ska off-beats on the top three strings.
+
+## G-A10 Drop 2 voicings {#g-a10}
+
+Start with a seventh chord in close position, its four tones packed inside an octave. Take the second note from the top and drop it an octave. The chord opens up enough to fit the fingers, and it still has all four tones. On strings 4, 3, 2 and 1, a ii–V–I in C moves every voice by a fret or two. That smooth movement between chords, the **voice leading**, is what jazz chord shapes are for.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="Dm7 xx3535; G7 xx3433; Cmaj7 xx2413; C7 xx2313; Cm7 xx1313"></div>
+
+**Practice:** play that ii–V–I, then move the same three shapes up five frets to F.
+
+**Unlocks:** the Drop 2 guitar voicing in the Backing Track, with Bossa nova and Charleston comping.
+
+## G-A11 Drop 3 voicings {#g-a11}
+
+Drop the third voice from the top instead of the second, and the bass note moves down a string, leaving a string skipped in the middle. From the bottom up the tones are root, 7th, 3rd, 5th. Drop 3 sounds bigger than a shell and still has four notes. Guitarists use drop 3 when the chord needs a low root and weight, and drop 2 when it should sit higher and lighter.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="Cmaj7 8-x-9-9-8-x; C7 8-x-8-9-8-x; Cm7 8-x-8-8-8-x; Dm7 x5x565; G7 3x343x; Cmaj7 x3x453"></div>
+
+**Practice:** play the ii–V–I in drop 3 (Dm7 `x5x565`, G7 `3x343x`, Cmaj7 `x3x453`), then in drop 2, and listen to how close the voice leading is.
+
+**Unlocks:** the Drop 3 guitar voicing in the Backing Track, and slow ballad comping.
+
+## G-A12 Extensions: 9th and 13th {#g-a12}
+
+The 9th is the 2nd an octave up, the 11th is the 4th and the 13th is the 6th. An extension adds colour without changing what the chord does. C9 still pulls to F, only richer, and C13 is the dominant chord of a blues band's horn section. Here's a shortcut: an Em7 shape over a C bass note is Cmaj9, because E–G–B–D are the 3rd, 5th, 7th and 9th of C.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C9 x3233x; C13 8-x-8-9-10-x; G9 3x323x; G13 3x345x"></div>
+
+**Practice:** swap each dominant 7th of a 12-bar blues for a 9th or a 13th.
+
+**Unlocks:** funk, Boogaloo stabs, and the jazz blues.
+
+## G-A13 Altered dominants {#g-a13}
+
+An altered dominant raises or lowers the 5th or the 9th to add tension just before the chord resolves. The ♭9 and ♯9 pull down toward the chord that follows, and the ♯5 pulls up toward its 3rd. Altered chords are short and high-energy, and they usually come at the end of a phrase. The 7♭9 shape, without its root, is a diminished 7th, which is why a dim7 shape can stand in for a 7♭9.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="C7#9 x3234x; C7b9 x3232x; C7#5 8-x-8-9-9-x; G7#9 x-10-9-10-11-x"></div>
+
+**Practice:** in a ii–V–I in C, play G7♯9 instead of G7 and listen to the tension release into Cmaj7.
+
+**Unlocks:** endings, turnarounds and the last bar of a chorus in jazz comping.
+
+## Where to go next
+
+- [Guitar chord shapes by hand](chord-shapes-guitar-hand.qmd) has the same chords in physical order, with what makes each one hard.
+- [Piano chord voicings](chord-shapes-piano.qmd) has the same ideas on the keyboard.
+- The [Chord Library](../tools/chord-library.qmd) has every voicing of every chord: search `drop2`, `shell`, `caged:E` and so on.
+
+{{< include _shape-kit.qmd >}}

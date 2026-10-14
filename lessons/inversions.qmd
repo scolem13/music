@@ -1,0 +1,86 @@
+---
+title: "Inversions: Root Position, First and Second Inversion"
+toc: true
+toc-depth: 2
+---
+
+A triad has three notes: the root, the 3rd and the 5th. You can stack them in any order. The note you put lowest decides which **inversion** you are playing. The chord keeps its name, because the three notes are the same. Only the arrangement changes, and with it the sound and the way the hand moves. This lesson covers major and minor triads: how to build the three positions, what they are called, and how to write them. Press ▶ to hear a shape.
+
+## Root position, first inversion, second inversion {#positions}
+
+In **root position** the root is the lowest note. In **first inversion** the 3rd is lowest. In **second inversion** the 5th is lowest. To invert a chord, take the lowest note and move it to the top, an octave higher. Do it once for first inversion and twice for second inversion. Do it a third time and you are back in root position, an octave up.
+
+**Finger numbers.** Press **Show finger numbers** to see the fingering in the dots instead of the chord tones. On piano the thumb is 1 and the little finger 5, in both hands, so the right hand plays a root-position triad 1-3-5 and the left hand 5-3-1. On guitar the index finger is 1 and the little finger 4. Notice that on piano the inversions change the fingering (first inversion in the right hand is 1-2-5), because the wide gap moves.
+
+<div class="hand-row">
+<div class="hand-fig" data-hand="piano-left"></div>
+<div class="hand-fig" data-hand="piano-right"></div>
+<div class="hand-fig" data-hand="guitar-fret"></div>
+</div>
+
+
+<div class="sh-toggles"></div>
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = - / C4 E4 G4; C/E = - / E4 G4 C5; C/G = - / G4 C5 E5"></div>
+
+Look at the dots. In the first chord the root is on the bottom. In the second the 3rd is on the bottom and the root has moved to the top. In the third the 5th is on the bottom. The same three letters, C, E and G, are in all of them.
+
+**Telling them apart on the page.** Look at the lowest note and ask what it is for the chord. If it is the root, the chord is in root position. A 3rd means first inversion, and a 5th means second inversion. The way the notes sit also gives a clue. In root position the notes are stacked in 3rds (C to E to G). In first inversion the top two notes are a 4th apart (G to C). In second inversion the bottom two notes are a 4th apart (G to C).
+
+**Practice:** play C in root position, then first inversion, then second inversion, then root position an octave higher. Say the name of the lowest note each time. Repeat on F and G.
+
+## Minor triads {#minor}
+
+Minor triads invert in the same way. The only difference is that the 3rd is a half step lower.
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Am = - / A3 C4 E4; Am/C = - / C4 E4 A4; Am/E = - / E4 A4 C5"></div>
+
+The intervals inside the chord are the thing that changes. A major triad is a major 3rd with a minor 3rd on top; a minor triad is the reverse. So root-position Am (A C E) has a minor 3rd (A to C) and then a major 3rd (C to E). First inversion (C E A) has a major 3rd and then a 4th. Second inversion (E A C) has a 4th and then a minor 3rd. Whatever the quality, a 4th sits at the top of first inversion and at the bottom of second inversion, and that 4th is how you spot an inversion by eye.
+
+**Practice:** play Am in the three positions, then C and Am one after the other in first inversion. Notice that the two chords share two notes, and only one finger moves.
+
+## Names: figured bass {#figured}
+
+Classical musicians have a shorthand for the inversions that goes back to the 1600s. It is called **figured bass**, and it labels the chord by the intervals above the lowest note. You will still see it in theory books and in Roman-numeral analysis.
+
+| Position | Lowest note | Intervals above the bass | Figure | Say it |
+|---|---|---|---|---|
+| Root position | root | 3rd and 5th | 5/3 (usually left out) | "five-three" |
+| First inversion | 3rd | 3rd and 6th | **⁶** | "six" |
+| Second inversion | 5th | 4th and 6th | **⁶₄** | "six-four" |
+
+The 6 stands for the interval of a 6th above the bass note. In first inversion of C, the bass is E and the other notes are G (a 3rd up) and C (a 6th up). In second inversion, the bass is G, with C above it (a 4th up) and E (a 6th up). The figure for first inversion is simply ⁶, because the 3rd is understood and left unwritten. The second inversion needs both numbers, ⁶₄.
+
+With Roman numerals the figures go beside the numeral: I is a tonic triad in root position, I⁶ is in first inversion, and I⁶₄ is in second inversion. In C major, I⁶ is C/E and I⁶₄ is C/G.
+
+## Names: slash chords {#slash}
+
+Pop, rock and jazz players use a simpler system. They write the chord, a slash, and then the **bass note**. C/E means a C chord with E in the bass: first inversion. C/G means a C chord with G in the bass: second inversion. A plain C means the root is in the bass, although the player decides which notes go above.
+
+| Position | Written as | In C | In Am |
+|---|---|---|---|
+| Root position | C | C | Am |
+| First inversion | C/E | C/E | Am/C |
+| Second inversion | C/G | C/G | Am/E |
+
+Say it as "C over E". The note after the slash is always the bass. A slash chord can also have a bass note that isn't in the chord at all, such as C/D. That is not an inversion, and we leave it for another lesson. Chart writers use the slash form because it tells the bassist what to play, and the chord symbol alone does not.
+
+## Inversions on the guitar {#guitar}
+
+On the guitar an inversion is a different set of strings and frets, and the shape moves anywhere on the neck if it has no open string. These are on strings 3, 2 and 1. The root is on string 3 in root position, on string 1 in first inversion, and on string 2 in second inversion. Compare the F shapes with the C shapes on the piano above.
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="F x-x-x-10-10-8@xxx341; F/A xxx211@xxx211; F/C xxx565@xxx132"></div>
+
+<div class="sh-shapes" data-inst="guitar" data-shapes="Dm xxx765@xxx321; Dm/F x-x-x-10-10-10@xxx111; Dm/A xxx231@xxx231"></div>
+
+The numbers under each diagram are the frets from the low E string to the high E string, and x is a string you don't play. Move any of these along the neck and the root moves with it. The F shapes become G shapes two frets higher. More about moveable shapes is in [Guitar chord shapes by hand](chord-shapes-guitar-hand.qmd#g-b7).
+
+**Practice:** play the three F shapes in order, then slide each up two frets and name the new chord.
+
+## Why use them: voice leading {#voice-leading}
+
+Without inversions, every chord change makes the hand jump. With them you can choose the position of each chord so that the notes move as little as possible, and some notes stay where they are. This is **voice leading**. It makes a progression sound smooth and connected, and it is much easier on the hand. For example, going from C to Am to F, the top note C stays put in all three chords, as the root, the 3rd and the 5th, while the other notes move a step at most. That example is worked out in [piano chord voicings](chord-shapes-piano.qmd#p-a2), and [Piano voicings by hand](chord-shapes-piano-hand.qmd#p-b4) shows how it feels under the fingers.
+
+**Practice:** play C, then F in second inversion (F/C), then C again. The C stays where it is, and the other two notes each move a step. Then play C, F in root position, C and feel how much farther the hand travels.
+
+{{< include _shape-kit.qmd >}}

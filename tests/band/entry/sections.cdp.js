@@ -24,15 +24,15 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
   try {
     await b.goto(link); await b.sleep(1800);
     assert.deepStrictEqual(errs(), [], "page errors: " + errs().join(" | "));
-    await ev(`document.getElementById("ce-sound").checked = false; 0`); await set("ce-mfeel", "straight");
+    await ev(`document.getElementById("ce-sound").checked = false; document.getElementById("ce-type").checked = true; 0`); await set("ce-mfeel", "straight"); await set("ce-mrange", "section");
     // ---- sections on tabs; the words came with the song ----
     assert.strictEqual(await ev(`Array.prototype.map.call(document.querySelectorAll("#ce-tabs .nav-link"), function(a){ return a.textContent; }).join("|")`), "All|Intro|Verse 1|Verse 2");
     assert.strictEqual(await ev(`__ceWork.tab()`), 0, "it opens on the first section with no melody");
-    assert.strictEqual(await ev(`__ceWork.lyr()[1].words`), "Deck the halls with boughs of holly now\nFa la la la la la la la");
+    assert.strictEqual(await ev(`__ceWork.lyr()[1].words.replace(/-/g, "")`), "Deck the halls with boughs of holly now\nFa la la la la la la la");
     await ev(`__ceWork.setTab(1); 0`);
-    assert.strictEqual(await ev(`Array.prototype.filter.call(document.querySelectorAll("#ce-chart .tc-system"), function(r){ return !r.hidden; }).length`), 1, "only the section's row of the chart shows");
+    assert.strictEqual(await ev(`Array.prototype.filter.call(document.querySelectorAll("#ce-chart .tc-system"), function(r){ return !r.hidden; }).length`), 2, "the section's row of the chart shows, and the first row of the next section under it");
     assert.strictEqual(await ev(`__ceWork.start()`), 2); assert(/starts at bar 3 \(Verse 1\) and runs to bar 6/.test(await text("ce-mstart")), await text("ce-mstart"));
-    assert.strictEqual(await val("ce-words"), "Deck the halls with boughs of holly now\nFa la la la la la la la");
+    assert.strictEqual((await val("ce-words")).replace(/-/g, ""), "Deck the halls with boughs of holly now\nFa la la la la la la la");
     // ---- click a bar: the take starts there ----
     await ev(`document.querySelector('#ce-chart .tc-bar[data-bar="4"]').click(); 0`);
     assert.strictEqual(await ev(`__ceWork.start()`), 4); assert.strictEqual(await ev(`document.querySelector('#ce-chart .tc-bar.ce-start').getAttribute("data-bar")`), "4");
@@ -47,19 +47,27 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     // ---- the words go under the notes: a draft, a syllable to a note ----
     await b.sleep(900);                                                     // (the dictionary arrives and the draft is made again)
     let wl = await val("ce-wl");
-    assert.strictEqual(wl, "w: Deck the halls with | boughs of hol-ly | now Fa la la | la la la la", wl);
+    assert.strictEqual(wl, "w: Deck the halls with boughs of hol-ly now Fa la la la la la la", wl);
     assert(/A draft/.test(await text("ce-wl-state"))); assert(/1 syllable.* left over|syllables? left over/.test(await text("ce-wl-warn")), await text("ce-wl-warn"));
     assert(/w: Deck the halls with/.test(await ev(`__ceWork.scoreText()`)));
     assert.strictEqual(await ev(`/Deck/.test(document.getElementById("ce-score").textContent)`), true, "the words are drawn in the notation");
     // ---- the same melody on Verse 2, with Verse 2's words ----
-    assert.strictEqual(await text("ce-sec-apply"), "Apply this melody to Verse 2"); await click("ce-sec-apply");
+    assert.strictEqual(await ev(`Array.prototype.map.call(document.getElementById("ce-sec-to").options, function(o){ return o.textContent; }).join("|")`), "Verse 2|Intro (the first 2 bars of this)"); await click("ce-sec-apply");
     m = await mel(); assert.deepStrictEqual(m.slice(6), m.slice(2, 6), "Verse 2 has Verse 1's notes");
-    assert(/^w: See the blaz-ing \| Yule be-fore us/.test(await ev(`__ceWork.lyr()[2].wl[0]`)), await ev(`__ceWork.lyr()[2].wl[0]`));
+    assert(/^w: See the blaz-ing Yule be-fore us/.test(await ev(`__ceWork.lyr()[2].wl[0]`)), await ev(`__ceWork.lyr()[2].wl[0]`));
     // ---- edit the line under the notes: it is yours from then on ----
     await set("ce-wl", "w: Deck the halls with | boughs of hol-ly | now_ Fa la la | la la la la"); await b.sleep(500);
     assert.strictEqual(await ev(`__ceWork.lyr()[1].mine`), true); assert(/Yours/.test(await text("ce-wl-state")));
     assert(/now_ Fa la la/.test(await ev(`__ceWork.scoreText()`)), "the notation follows the edit");
     assert(/line 1, bar 3: 5 syllables for 4 notes/i.test(await text("ce-wl-warn")), await text("ce-wl-warn"));
+    // ---- the section's notes as ABC, changed by hand ----
+    let na = await val("ce-nabc"); assert(/^M:4\/4\nL:1\/8\nK:C\n"C"C2 \^C2 D2 _E2 \|/.test(na), na);      // (was _D2 =D2 _E2 with the key-only spelling: C# goes on up to D; Eb leaps back to C, so keeps the key's flat)
+    await ev(`document.getElementById("ce-nabc").focus(); 0`); await set("ce-nabc", na.replace('"C"C2 ^C2 D2 _E2', '"C"G4 =D2 _E2')); await b.sleep(900);
+    m = await mel(); assert.deepStrictEqual(m[2], [67, 62, 63], "bar 3 is what was typed: " + JSON.stringify(m[2])); assert.deepStrictEqual(m[3].length, 4);
+    assert(/"C"G4 D2 _E2/.test(await val("ce-abc")), "the page's ABC follows");
+    await set("ce-nabc", na.split("\n").slice(0, 3).join("\n") + '\n"C"C8 |]'); await b.sleep(900);
+    assert(/That is 1 bar; the section has 4/.test(await text("ce-nabc-warn")), await text("ce-nabc-warn")); assert.deepStrictEqual((await mel())[2], [67, 62, 63], "too few bars: nothing changes"); assert.strictEqual(await hidden("ce-nabc-fit"), false, "but they can be put at the start");
+    await set("ce-nabc", na); await b.sleep(900); await ev(`document.getElementById("ce-nabc").blur(); 0`); assert.deepStrictEqual((await mel())[2], [60, 61, 62, 63]);
     // ---- a take on Verse 2, stopped part-way; keep it up to bar 7 ----
     await ev(`__ceWork.setTab(2); 0`); assert.strictEqual(await ev(`__ceWork.start()`), 6);
     assert.strictEqual(await ev(`document.getElementById("ce-score").querySelectorAll("svg").length - Array.prototype.filter.call(document.getElementById("ce-score").querySelectorAll("svg"), function(v){ return v.hidden || v.parentNode.hidden; }).length`), 1, "one line of notation shows: the section's");
@@ -77,7 +85,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     const blk = lines.slice(v1 + 1, lines.indexOf("{end_of_abc}", v1) + 1);
     assert.deepStrictEqual(blk.slice(1, 4), ["M:4/4", "L:1/8", "K:C"]); assert(blk.indexOf("% lyrics: draft") < 0, "an edited section is not a draft");
     assert(blk.some(l => /^w: Deck the halls with \| boughs of hol-ly \| now_ Fa la la/.test(l)), blk.join("\n"));
-    assert(blk.some(l => /^"C"C2 _D2 =D2 _E2 \|/.test(l)), blk.join("\n"));
+    assert(blk.some(l => /^"C"C2 \^C2 D2 _E2 \|/.test(l)), blk.join("\n"));
     assert.strictEqual(lines[lines.indexOf("{end_of_abc}", v1) + 1], "{start_of_grid}", "the section's grid and words follow as they were");
     assert(lines.indexOf("[C]Deck the halls with [F]boughs of holly now") > v1); assert(lines.slice(v2).indexOf("% lyrics: draft") > 0, "Verse 2 is still a draft");
     assert.strictEqual(lines.indexOf("{comment: Intro}") + 1, lines.indexOf("{start_of_grid}"), "a section with no melody is left alone");

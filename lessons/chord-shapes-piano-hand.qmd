@@ -1,0 +1,257 @@
+---
+title: "Piano Voicings by Hand: From Easy to Hard"
+toc: true
+toc-depth: 2
+---
+
+This lesson orders piano voicings by what the hands find hard, starting from a first lesson. Each step adds one task: more notes, a wider span, black keys, two hands at once, leaps, and finally hands that move independently. Each step says what makes the voicing easy, what makes it hard, and what usually goes wrong. [Piano chord voicings](chord-shapes-piano.qmd) has the same chords in harmonic order, from pop toward jazz.
+
+**How to read the diagrams.** Each keyboard shows one voicing. The dots carry the chord tones, R for the root. The staff puts the right hand on the treble clef and the left hand on the bass clef. Press **Show finger numbers** below to put the fingering in the dots instead of the chord tones. The **span** is the distance from a hand's lowest note to its highest, counted in half steps: an octave is 12. Press ▶ to hear a voicing.
+
+**Finger numbers on piano and on guitar.** The two instruments count differently. On piano the **thumb is 1** and the fingers go 2, 3, 4 to the little finger, 5, in both hands. Because the hands are mirror images, the right hand plays a chord from the bottom 1-3-5 and the left hand 5-3-1: the left hand's little finger takes the lowest note. On guitar the thumb is not counted: the **index finger is 1** and the little finger is 4 (the thumb, when it frets a bass note over the neck, is written T). So a "3" means the middle finger to a pianist and the ring finger to a guitarist. The fingerings here are the usual ones; a hand of a different size may choose another.
+
+<div class="hand-row">
+<div class="hand-fig" data-hand="piano-left"></div>
+<div class="hand-fig" data-hand="piano-right"></div>
+<div class="hand-fig" data-hand="guitar-fret"></div>
+<div class="hand-fig" data-hand="guitar-pick"></div>
+</div>
+
+The two on the left are the piano hands, and the pair on the right is the guitar, for comparison. The left hand is the right hand's mirror image, so thumbs meet in the middle.
+
+<div class="sh-toggles"></div>
+
+## Hand position {#p-hand}
+
+<div class="hand-row">
+<div class="hand-fig" data-hand="piano-side"></div>
+</div>
+
+Set this up before the first chord, and check it when a voicing feels clumsy.
+
+- **Sitting:** sit on the front half of the stool, far enough from the keys that your forearms are level, or slope slightly down towards the keys, with your elbows a little in front of your body. A stool too low pushes the wrists up; too high pushes them down.
+- **Fingers:** curved, as if holding a ball. The knuckles are arched and the fingertip pad lands on the key. Fingers 2, 3 and 4 are about the same length when curved, so they land together.
+- **Wrist:** level with the back of the hand and the forearm, neither drooping below the keys nor lifted above them. The hand can float a little as it moves; it does not rest on the keys.
+- **Thumb:** it plays on its side, near the corner of the nail, not flat on its pad. Keep it relaxed and slightly curved, level with the other fingers.
+- **Where on the key:** play white keys near the front edge, where they go down most easily. Play a black key in the middle, not on its edge. When a chord mixes the two, the longer fingers (2, 3 and 4) usually take the black keys further back, while the thumb and little finger stay on the white keys at the front.
+
+- **Easy because:** a curved hand has every finger above its key, so the hand needs no tension to hold the position.
+- **Hard because:** the fingers tire when starting out, and it is tempting to flatten them to reach.
+- **What goes wrong:**
+  - Flat fingers: the pad lies on the key, the hand has less strength, and the fingers play neighbouring keys too.
+  - A dropped wrist, with the knuckles sinking below the hand.
+  - The little finger collapses, and its first joint folds in.
+  - The thumb plays flat on its pad and sticks out, and the hand twists.
+  - Shoulders lifted, with the arms held up from the shoulder instead of hanging.
+
+**Practice:** put the hand on C, E and G in 1-3-5 with the wrist level. Press each key, and check the wrist and finger tips between presses. Keep the fingers curved when the hand moves to the next chord.
+
+
+## P-B1 White-key triads, one hand {#p-b1}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = - / C4 E4 G4; F = - / F4 A4 C5; G = - / G4 B4 D5; Dm = - / D4 F4 A4; Em = - / E4 G4 B4; Am = - / A3 C4 E4"></div>
+
+RH 1-3-5, and LH 5-3-1 an octave lower.
+
+- **Easy because:** each finger has a white key of its own: thumb, middle finger and little finger, with a key left out between each.
+- **Hard because:** the three notes have to sound together and evenly. The thumb is strongest, so the bottom note comes out loud and the top note thin.
+- **What goes wrong:**
+  - The notes split instead of sounding as one chord.
+  - The top note is lost.
+
+**Practice:** play a chord, lift the hand, and put it back on the next chord without looking. Keep the wrist level.
+
+**Unlocks:** P-A1.
+
+## P-B2 Bass note plus triad: two hands {#p-b2}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C3 / C4 E4 G4; Am = A2 / A4 C5 E5; F = F2 / F4 A4 C5; G = G2 / G4 B4 D5"></div>
+
+- **Easy because:** the left hand plays one note, so it has one job.
+- **Hard because:** the two hands have to land together, and the right hand jumps a 4th or more between chords.
+- **What goes wrong:**
+  - The stronger hand arrives first and the other drags.
+  - One hand lifts early.
+  - Watching one hand loses the other.
+
+**Practice:** play C–Am–F–G in half notes, counting out loud. Close your eyes after one time through.
+
+**Unlocks:** P-A1; Piano ballad with *Long notes*.
+
+## P-B3 Inversions: small moves instead of jumps {#p-b3}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C3 / C4 E4 G4; Am = A2 / C4 E4 A4; F = F2 / C4 F4 A4; G = G2 / B3 D4 G4"></div>
+
+RH 1-3-5 for root position and second inversion; 1-2-5 for first inversion.
+
+- **Easy because:** the hand moves by a step instead of a jump, and there are only two finger patterns.
+- **Hard because:** the span grows to 8 or 9 half steps. The open space in a 1-2-5 shape tempts fingers 3 and 4 to fill it.
+- **What goes wrong:**
+  - Squeezing with finger 2, which makes the chord uneven.
+  - Choosing the wrong finger for the new note.
+
+**Practice:** play C in root position, first and second inversion, up the keyboard and back. Then do the same on F and G.
+
+**Unlocks:** P-A2.
+
+## P-B4 Black keys in triads {#p-b4}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="D = - / D4 F#4 A4; A = - / A3 C#4 E4; E = - / E4 G#4 B4; Bb = - / Bb3 D4 F4; Eb = - / Eb4 G4 Bb4"></div>
+
+All RH 1-3-5.
+
+- **Easy because:** in D, A and E the black key falls under finger 3, the longest finger, which reaches in easily.
+- **Hard because:** in B♭ and E♭ the thumb or finger 5 lands on a black key. Those fingers are short and prefer white keys, so the whole hand has to move further in toward the fallboard.
+- **What goes wrong:**
+  - The thumb slips off the black key.
+  - Finger 5 flattens.
+  - Reading the key signature becomes a second task.
+
+**Practice:** play D, A and E first, and B♭ and E♭ after them. Then do the same with the left hand.
+
+**Unlocks:** every key in the Key menu of the lesson pages, and [four-chord loops](four-chord-loops.qmd) in all twelve keys.
+
+## P-B5 Two-note guide-tone shapes {#p-b5}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm7 = D3 / C4 F4; G7 = G2 / B3 F4; Cmaj7 = C3 / B3 E4"></div>
+
+RH 1-3 for the 4ths; 1-4 for the tritone.
+
+- **Easy because:** only two notes, so the hand is always relaxed. The span is 5 or 6.
+- **Hard because:** the interval changes from chord to chord (4th, tritone, 4th), so the fingers have to adjust each time.
+- **What goes wrong:**
+  - Reaching with the arm instead of letting the fingers open.
+  - Losing track of which note is the 3rd.
+
+**Practice:** hold one pair, then change to the next while keeping the arm still.
+
+**Unlocks:** P-A7; Charleston comping and blues guide tones. This step comes before four-note 7ths (P-B6) because two notes are easier on the hand. In the harmonic order it comes after them.
+
+## P-B6 Four-note 7ths in one hand {#p-b6}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Cmaj7 = - / C4 E4 G4 B4; C7 = - / C4 E4 G4 Bb4; Dm7 = - / D4 F4 A4 C5; G7 = - / G4 B4 D5 F5; Am7 = - / A3 C4 E4 G4"></div>
+
+RH 1-2-3-5. The span is 10 or 11.
+
+- **Easy because:** the notes are a 3rd apart, so the fingers fall on every other key.
+- **Hard because:** the hand opens to a 7th, and finger 5 has to reach while fingers 2 and 3 stay curved.
+- **What goes wrong:**
+  - The thumb lies flat.
+  - Finger 5's note is weak.
+  - The chord comes out uneven.
+
+**Practice:** play each chord, then its closest inversion (as in P-A6), and compare how the hand feels. If the hand aches, leave out the top note.
+
+**Unlocks:** P-A5 and P-A6; the 7th chords in [blues for piano](blues-piano.qmd).
+
+## P-B7 Shells in the left hand {#p-b7}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm7 = D3 F3 C4 / -; G7 = G2 B2 F3 / -; Cmaj7 = C3 E3 B3 / -; Cmaj7 = C3 B3 / E4"></div>
+
+LH 5-3-1 for 1–3–7. For 1–7–3 (span 16), LH 5-1 and the right thumb on the top note.
+
+- **Easy because:** three notes in one hand, about the same span as P-B6.
+- **Hard because:** the left hand is usually the weaker one, and mistakes are easy to hear down low. The 1–7–3 order is a 10th wide, too wide for most hands to play alone.
+- **What goes wrong:**
+  - The thumb hangs over the edge of the key.
+  - The middle note doesn't sound.
+
+**Practice:** play the three shells slowly and listen for every note.
+
+**Unlocks:** P-A8; solo piano.
+
+## P-B8 Rootless voicings: four notes in the left hand {#p-b8}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Gm9 | Gm7 (A) = Bb3 D4 F4 A4 / -; C13 | C7 (B) = Bb3 D4 E4 A4 / -; Fmaj9 | Fmaj7 (A) = A3 C4 E4 G4 / -; Dm9 | Dm7 (A) = F3 A3 C4 E4 / -; G13 | G7 (B) = F3 A3 B3 E4 / -; Cmaj9 | Cmaj7 (A) = E3 G3 B3 D4 / -"></div>
+
+LH 5-3-2-1 throughout. The span is 9 to 11.
+
+- **Easy because:** the A and B forms alternate, so the hand moves by a step or less. The B forms are the narrowest.
+- **Hard because:** four fingers sound at once in the weaker hand, and you need the forms in every key. Black keys fall under different fingers in each key.
+- **What goes wrong:**
+  - Forgetting which form comes next.
+  - One note missing.
+
+**Practice:** learn the chain in F first, which sits well under the left hand, and then the chain in C. Then add a bass line in the right hand.
+
+**Unlocks:** P-A9; Jazz ballad, Bossa nova, Boogaloo.
+
+## P-B9 Leaps: bass note, then chord {#p-b9}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C2 / -; C = E3 G3 C4 / -; F = F2 / -; F = F3 A3 C4 / -; G = G2 / -; G = D3 G3 B3 / -"></div>
+
+The left hand alone, as in stride or boom-chick: a low bass note, then a chord about an octave and a half higher.
+
+- **Easy because:** the shapes are triads you already know.
+- **Hard because:** the hand jumps 1½ octaves on the beat. The eyes want to follow the hand, and the rhythm slips.
+- **What goes wrong:**
+  - The chord is late or too loud because the hand crashes onto it.
+  - Looking down and losing the place.
+
+**Practice:** left hand only, bass–chord–bass–chord, with a metronome at 60. Move in an arc and shape the chord in the air before it lands. Close your eyes once the landing is reliable.
+
+**Unlocks:** stride and boom-chick left hands; country and folk comping.
+
+## P-B10 Stacked 4ths: one shape that moves {#p-b10}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="Dm11 = - / D4 G4 C5; Em11 = - / E4 A4 D5; Fmaj7 = - / F4 Bb4 E5; Dm13 | So What = E3 A3 D4 / G4 B4"></div>
+
+RH 1-3-5, span 10. For the So What chord, LH 5-2-1 and RH 1-3.
+
+- **Easy because:** every interval is the same, so there is one hand shape.
+- **Hard because:** each stack of 4ths lands on a different mix of black and white keys, so the *same* shape feels different in each place.
+- **What goes wrong:**
+  - The hand follows the key colours and loses the shape.
+
+**Practice:** slide the stack of 4ths up the white keys from D to D, one hand at a time, noticing which positions feel best.
+
+**Unlocks:** P-A12; modal jazz.
+
+## P-B11 Wide spans: octaves, 9ths and 10ths {#p-b11}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="C = C2 C3 / -; Cadd9 = C2 D3 / -; C = C2 E3 / -; C = C2 G2 E3 / -"></div>
+
+LH 5-1 for the octave, the 9th and the 10th. LH 5-2-1, rolled, for C–G–E.
+
+- **Easy because:** most adult hands can play an octave, and a 9th is possible with a firm wrist.
+- **Hard because:** a 10th is beyond most hands played as one chord.
+- **What goes wrong:**
+  - Forcing the stretch. Roll the chord from the bottom instead, and never play through pain.
+
+**Practice:** roll C–G–E slowly and listen for the three notes blending into one sound. Then play it with the pedal.
+
+**Unlocks:** P-A11; *Arpeggio low and high*, *Ballad: syncopated*, Piano ballad.
+
+## P-B12 Independence: a held shell, a moving right hand {#p-b12}
+
+<div class="sh-shapes" data-inst="piano" data-shapes="G13#11 | G7 + A = G2 B2 F3 / A4 C#5 E5; Cmaj9#11 | Cmaj7 + D = C3 E3 B3 / D4 F#4 A4"></div>
+
+LH 5-3-1, RH 1-3-5.
+
+- **Easy because:** the left hand holds still, and the right hand plays a plain triad.
+- **Hard because:** the hands play different rhythms, three notes each, and each hand plays a different chord.
+- **What goes wrong:**
+  - Both hands playing on the same beat.
+  - The black keys in the right-hand triad (C♯, F♯) being missed.
+
+**Practice:** hold the shell on beat 1 and play the right-hand triad on the "and" of 2. Then on the "and" of 4. Tap your foot on the beat.
+
+**Unlocks:** P-A13; Charleston, Reverse Charleston, Boogaloo stabs and Son montuno.
+
+## Where the two sequences meet
+
+| By hand | Harmonic order | |
+|---|---|---|
+| P-B1, P-B2 | P-A1 | The same notes: the triad, then both hands. |
+| P-B3 | P-A2 | Inversions are a harmonic choice and a hand-size choice. |
+| P-B2 | P-A4 | A bass line under still triads needs P-B2's coordination. |
+| P-B5 | P-A7 | Two-note shapes are easier on the hand than four-note ones. |
+| P-B6 | P-A5, P-A6 | Four notes in one hand. |
+| P-B7 | P-A8 | The same step. |
+| P-B8 | P-A9 | The same step. |
+| P-B9, P-B11 | P-A10, P-A11 | Wide voicings need leaps and stretches. |
+| P-B10 | P-A12 | The same step. |
+| P-B12 | P-A13 | The same step; it also underlies every comping rhythm. |
+| P-B4 | every step | Play each harmonic step in F, B♭ and G as well as C. |
+
+{{< include _shape-kit.qmd >}}

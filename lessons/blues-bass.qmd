@@ -155,7 +155,11 @@ and then back to the top.
 - Learn to improvise over the same tune in [the improvising lesson](blues-improv.qmd).
 - Take any chorus from [the changes lesson](blues-changes.qmd) and walk through it with
   the recipe from step 4.
+- Next on bass: [pop changes for bass](pop-changes-bass.qmd), roots and the walking line.
 
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a blues: the Key menu's tonality reads "(Blues)" (key-tonality.js)</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

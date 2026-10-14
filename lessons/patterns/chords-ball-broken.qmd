@@ -1,0 +1,80 @@
+---
+title: "Comping rhythm: Ballad: half-broken"
+subtitle: "For piano, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Ballad: half-broken**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+A two-bar pattern. Three notes up the chord (thumb, middle, top) and the whole chord held from beat 3; then the chord held from beat 1 and the three notes on beats 3 and 4.
+
+It belongs in *Piano ballad*, *Acoustic strum*, *Folk carol* and *Hymn (four parts)*. Here it is in the piano ballad style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}}]'></div>
+
+## Step 1: Ballad: rocking
+
+Start with something simpler. Quarter notes: the chord on 1, the thumb on 2, the top two notes on 3, the thumb on 4, over held left-hand octaves on the root. On the piano with the Standard voicing the chord is a triad in first inversion.
+
+This is a pattern of its own: [the lesson on it](chords-ball-rock.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="50" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Ballad: rocking","opts":{"compRhythm":"ballRock"}}]'></div>
+
+## Step 2: Arpeggio, up and down
+
+The notes of the voicing one at a time in eighth notes, up to the top and back down, each left to ring.
+
+This is a pattern of its own: [the lesson on it](chords-arp.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="50" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Arpeggio, up and down","opts":{"compRhythm":"arp"}}]'></div>
+
+## Step 3: Ballad: half-broken, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Two bars. Bar one: three notes up the chord (thumb, middle, top), then the whole chord held from beat 3. Bar two: the chord held from 1, then the three notes on 3 and 4. Over held left-hand octaves.
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="50" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}},{"label":"Arpeggio, up and down (the step before)","opts":{"compRhythm":"arp"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 72 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="pop" data-chart="C G|Am F|Dm G|C" data-tempo="72" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Acoustic strum**
+
+<div class="ar-demo" data-style="strum" data-chart="C|G|Am|F" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}}]'></div>
+
+**Folk carol**
+
+<div class="ar-demo" data-style="carol" data-chart="G|C|D|G" data-tempo="96" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}}]'></div>
+
+**Hymn (four parts)**
+
+<div class="ar-demo" data-style="hymn" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Ballad: half-broken","opts":{"compRhythm":"ballBroken"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Ballad: rocking](chords-ball-rock.qmd), [Arpeggio, up and down](chords-arp.qmd).
+- **Plays with, in piano ballad:** [Dotted (1, and of 2, 3)](bass-dotted.qmd) (bass line), [Ballad](drums-ballad.qmd) (drum groove).
+- **Other comping rhythms in the Folk, rock and pop group:** [Boom-chick / oom-pah-pah](chords-oompah.qmd), [Waltz in one](chords-waltz.qmd), [Ballad: rocking](chords-ball-rock.qmd), [Ballad: syncopated](chords-ball-sync.qmd), [Quarter-note chords](chords-quarters.qmd), [Triplet chords (12/8)](chords-triplets.qmd), [Driving eighths](chords-eighths.qmd), [3+3+2 (tresillo)](chords-tresillo.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

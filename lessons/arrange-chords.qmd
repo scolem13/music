@@ -1,0 +1,75 @@
+---
+title: "Arranging 3: Guitar and Keyboards"
+toc: true
+toc-depth: 2
+---
+
+The chord instruments fill the middle of the band. They play the notes the bass leaves
+out, in a rhythm that fits between the drums' hits. This is called **comping**
+(short for *accompanying*). How the examples work is explained in [the first lesson](arrange-band.qmd).
+
+## 1. The rhythm is the part
+
+A guitar part is mostly a rhythm. The chords here never change, only the strumming
+pattern. Each one gives the same song a different energy.
+
+<div class="ar-demo" data-style="strum" data-chart="G|D|Em|C" data-tempo="96" data-comp="guitar" data-staves="comp" data-choice-label="Strum:" data-choices='[{"label":"D, D-U, U-D-U","opts":{"compRhythm":"strumCamp"}},{"label":"Downstrokes on the beat","opts":{"compRhythm":"strumQuarters"}},{"label":"Down-up eighths","opts":{"compRhythm":"strumEights"}},{"label":"Fingerpicking (Travis)","opts":{"compRhythm":"travis"}},{"label":"Long chords","opts":{"compRhythm":"pad"}}]'></div>
+
+Under a singer, **long chords** and **fingerpicking** leave the most room. **Down-up
+eighths** fill everything and suit a loud chorus. Many arrangements go from sparse in the
+verse to full in the chorus with the same chords.
+
+## 2. Voicing: which notes, how high
+
+The same chord can be played with all six strings ringing (an **open** chord) or as
+three notes higher up the neck (a **triad**). Open chords fill the whole range from low
+to high. A small triad stays out of the bass's way and out of the singer's.
+
+<div class="ar-demo" data-style="strum" data-chart="G|D|Em|C" data-tempo="96" data-comp="guitar" data-staves="comp bass" data-choice-label="Voicing:" data-choices='[{"label":"Open chords","opts":{"voicing":"open"}},{"label":"Three-note triads","opts":{"voicing":"triad3"}}]'></div>
+
+## 3. Off the beat: the chop
+
+In reggae and ska the guitar plays **only on the off-beats**: short and choked. Motown
+guitarists did something similar on 2 and 4, doubling the snare. A chord instrument that
+plays very little can still be the part everyone remembers.
+
+<div class="ar-demo" data-style="reggae" data-chart="C|Am|F|G" data-tempo="80" data-comp="guitar" data-staves="comp drums"></div>
+
+## 4. Jazz comping: piano and guitar
+
+In jazz, the piano doesn't play a pattern. It plays short chords, mostly off the beat,
+and answers the soloist. It also leaves out the root (the bass has it) and plays
+**rootless voicings**: the 3rd, 7th and colour notes.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7" data-tempo="132" data-comp="piano" data-staves="comp bass" data-choice-label="Piano:" data-choices='[{"label":"Varied (jazz time)","opts":{"compRhythm":"auto"}},{"label":"Charleston","opts":{"compRhythm":"charleston"}},{"label":"Long chords","opts":{"compRhythm":"pad"}}]'></div>
+
+A swing-era guitarist (Freddie Green in the Count Basie band) did the opposite: a short
+three-note chord on every beat, felt more than heard. Here are the two together. That's
+what the next section is about.
+
+## 5. Two chord players at once
+
+Two chord instruments that both play busy patterns in the same register fight. The
+fix is to give them different jobs: one plays the rhythm, the other holds long chords,
+or one plays low and the other high. The band does this by itself when a second chord
+player is added: switch each one off in turn.
+
+Swing: piano comps, the guitar plays four to the bar.
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7" data-tempo="132" data-comp="piano" data-second="guitar" data-staves="comp comp2"></div>
+
+Rock: the guitar strums, an organ holds long chords behind it. This is the classic
+"pad" organ of 60s and 70s rock and soul.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="104" data-comp="guitar" data-second="hammond" data-staves="comp comp2"></div>
+
+The organ is its own world. [The next lesson](arrange-organ.qmd) takes it apart.
+
+## 6. Try it
+
+- In section 2, pick **Open chords** and turn the bass off. Then pick **Triads**. Which one
+  needs the bass more?
+- In section 5, switch off the drums and bass and listen to only the two chord players.
+  Can you hear which one keeps the rhythm and which one holds the harmony?
+
+{{< include _arrange-kit.qmd >}}

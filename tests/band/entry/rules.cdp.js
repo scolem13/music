@@ -49,7 +49,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await ev(`document.getElementById("nr-log").value = "not json"; 0`); await click("nr-load"); assert(/not valid JSON/.test(await text("nr-say")));
     // from Chord Entry: the log of a real take goes over
     await b.goto(B + "/tools/chord-entry.html"); await b.sleep(1000);
-    await ev(`document.getElementById("ce-sound").checked = false; 0`); await set("ce-key", "F"); await set("ce-mode", "melody"); await set("ce-mwith", "click"); await set("ce-mbars", "1"); await set("ce-mfeel", "straight");
+    await ev(`document.getElementById("ce-sound").checked = false; document.getElementById("ce-type").checked = true; 0`); await set("ce-key", "F"); await set("ce-mode", "melody"); await set("ce-mwith", "click"); await set("ce-mbars", "1"); await set("ce-mfeel", "straight");
     await click("ce-mrec"); const t0 = Date.now(); while (!(await ev(`!!__entry.take()`))){ if (Date.now() - t0 > 5000) throw new Error("take never started"); await b.sleep(30); }
     await ev(`(function(){ var n = [[0, 65], [1, 67], [2, 69]], on = [], off = [], iv = setInterval(function(){ var t = __entry.take(); if (!t) return; n.forEach(function(x, i){ if (!on[i] && t.beat >= x[0]){ on[i] = 1; __entry.on(x[1], 0.7, performance.now()); } if (on[i] && !off[i] && t.beat >= x[0] + 0.8){ off[i] = 1; __entry.off(x[1], performance.now()); } }); }, 4); })()`);
     const t1 = Date.now(); while (!/^Wrote \d+ notes?/.test(await text("ce-note"))){ if (Date.now() - t1 > 15000) throw new Error("take never ended: " + await text("ce-note")); await b.sleep(50); }

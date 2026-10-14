@@ -1,0 +1,74 @@
+---
+title: "Bass line: Root eighths"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Root eighths**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+The root on every eighth note, the beats a little louder: the rock bass line under With or Without You and a thousand others.
+
+It belongs in *Straight-eighth rock* and *Emo / pop-punk*. Here it is in the straight-eighth rock style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+## Step 1: Roots on 1 and 3
+
+Start with something simpler. The root on beats 1 and 3, held; one note a bar in 3/4. A chord that changes in between gets its root when it arrives.
+
+This is a pattern of its own: [the lesson on it](bass-halves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on 1 and 3","opts":{"bassFeel":"halves"}}]'></div>
+
+## Step 2: Roots on every beat
+
+The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass-roots.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 3: Root eighths, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Eight even roots a bar, a little heavier on the beats. On bass, alternate two fingers or use downstrokes with a pick, and mute with the fretting hand between notes so they do not blur. Lock with the kick drum: the beats are where it lands.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="78" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}},{"label":"Roots on every beat (the step before)","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 112 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="rock" data-chart="C|Am|F|G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="rock" data-chart="C G|Am F|C G|F G" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+## In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Emo / pop-punk**
+
+<div class="ar-demo" data-style="emo" data-chart="C|G|Am|F" data-tempo="150" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Roots on every beat](bass-roots.qmd).
+- **Leads to:** [Octaves (disco)](bass-octaves.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Driving eighths](chords-eighths.qmd) (comping rhythm), [Strum: down-up eighths](chords-strum-eights.qmd) (comping rhythm), [Hi-hat: eighth notes](drums-hheighths.qmd) (drum groove), [Strum: muted eighths, open in the chorus](chords-strum-punk.qmd) (comping rhythm), [Rock backbeat](drums-rock.qmd) (drum groove).
+- **Plays with, in straight-eighth rock:** [Strum: down-up eighths](chords-strum-eights.qmd) (comping rhythm), [Rock backbeat](drums-rock.qmd) (drum groove).
+- **Other bass lines in the Folk, rock and pop group:** [Roots on every beat](bass-roots.qmd), [Root and fifth](bass-alt.qmd), [Root and fifth on every beat](bass-polka.qmd), [3+3+2 (tresillo)](bass-tresillo.qmd), [Dotted (1, and of 2, 3)](bass-dotted.qmd), [Octaves (disco)](bass-octaves.qmd), [Motown: root, fifth, octave](bass-motown.qmd), [12/8 ballad](bass-twelve8.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

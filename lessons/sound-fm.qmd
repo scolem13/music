@@ -1,0 +1,70 @@
+---
+title: "Sound 7: FM Synthesis"
+toc: true
+toc-depth: 2
+---
+
+**FM** (frequency modulation) synthesis makes harmonics by a different route from
+[subtractive synthesis](sound-subtractive.qmd). Instead of starting rich and filtering, it starts with
+two plain sine waves and uses one to wobble the pitch of the other so fast that the wobble becomes
+new frequencies. John Chowning found this at Stanford in 1967; Yamaha built it into the DX7 in 1983,
+and its electric piano, bells and slap bass are all over the music of the 1980s.
+
+**How to use the page.** Press **▶ Demo** or play the keys or MIDI. Choose a preset, then change one
+control at a time. The dashed lines on the spectrum mark where FM puts its new frequencies.
+
+## Carrier and modulator
+
+<div class="sk" data-w="fm" data-preset="Steady (to study)"></div>
+
+- The **carrier** is the sine wave you hear. Its frequency is the note you play.
+- The **modulator** is a second sine wave that you don't hear directly. It moves the carrier's pitch
+  up and down.
+- The **ratio** is the modulator's frequency divided by the carrier's.
+- The **index** is how far the modulator pushes the pitch. At 0 there's no modulation: a plain sine.
+
+This is the vibrato from the [LFO lesson](sound-lfo.qmd), sped up into the audio range. Below about
+20 Hz you hear a wobble; above it you hear a new *timbre*.
+
+## Sidebands
+
+With the preset **Steady (to study)** loaded, hold a note and slowly raise the **index** from 0.
+New spikes appear on the spectrum on both sides of the carrier, spaced by the modulator's frequency:
+carrier ± 1 × modulator, ± 2 ×, ± 3 × and so on. These are **sidebands**. The higher the index, the
+more sidebands, and the brighter the sound.
+
+Now change the **ratio**:
+
+- **Whole-number ratios** (1, 2, 3…) put every sideband on a harmonic of the note. The sound is
+  pitched and "musical". Ratio 1 gives every harmonic, like a sawtooth; ratio 2 gives only odd
+  harmonics, like a square or a clarinet.
+- **Other ratios** (1.41, 3.5…) put the sidebands between harmonics. The sound is
+  **inharmonic**: metallic, bell-like, clangorous. That's how FM makes bells and gongs so easily,
+  which subtractive synths find hard.
+- **Modulator fine tune** detunes the modulator a few cents: the sidebands beat against each other and
+  the sound shimmers.
+
+## Envelopes make FM come alive
+
+In FM the **index** does the job of the filter in a subtractive synth: it sets the brightness. Give
+the index its own envelope and the brightness changes during each note, the way real instruments do.
+
+- **Bell**: index starts high and dies away, the volume dies away more slowly. The clang at the
+  start fades into a pure hum.
+- **Electric piano**: ratio 1, a quick index decay: a bright "tine" attack and a mellow body.
+- **Brass**: the index rises with the attack, so the note gets brighter as it swells.
+- **Bass**: a short burst of index gives the slap at the start of each note.
+
+Try the **Bell** preset and change only the ratio: 3.5, 1.4, 2.76, 5.19. Each is a different metal.
+
+## FM and the spectrum, in one sentence
+
+Subtractive starts with all the harmonics and removes some; additive ([Sound 1](sound-harmonics.qmd))
+sets each harmonic by hand; FM makes a whole family of frequencies from two sine waves, controlled by
+just two numbers: the ratio decides *where* they go and the index decides *how many*.
+
+## Next
+
+- [Sound 8: Wavetable synthesis](sound-wavetable.qmd)
+
+{{< include _synth-kit.qmd >}}
