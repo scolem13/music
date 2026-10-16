@@ -1,0 +1,60 @@
+---
+title: "Sound 15: Gates and Transients"
+toc: true
+toc-depth: 2
+---
+
+A [compressor](sound-compressor.qmd) turns loud sounds down. A **gate** does the opposite: it turns
+*quiet* sounds down, all the way to silence. Below its threshold it's shut; when the sound gets loud
+enough, it opens. A **transient shaper** changes the start of each note without touching the rest.
+Both work on the *shape in time* of a sound, the [envelope](sound-envelopes.qmd), after it has been
+recorded.
+
+## The noise gate
+
+<div class="sk" data-w="gate"></div>
+
+The source is drum hits with **hiss and hum** mixed in, like a noisy recording or a guitar amp
+buzzing between notes. The strip shows the level, the **threshold** (dashed) and where the gate is open
+(shaded).
+
+- **Threshold**: the gate opens when the level goes above it. Set it just above the noise and just
+  below the quietest note you want to keep.
+- **Attack**: how fast it opens. Too slow and the start of each hit is cut off.
+- **Hold**: how long it stays open after the level falls, so it doesn't flutter.
+- **Release**: how fast it closes. Too fast cuts off the tail of each note; too slow lets the noise
+  back in.
+- **Range**: how far it closes. −80 dB is silence; −12 dB just tucks the noise down, which sounds more
+  natural.
+
+Try **Clean up hiss**, then raise the threshold too far and listen to the hits getting chopped.
+
+## The 80s gated snare
+
+Choose **80s gated snare**: there is now a big reverb *before* the gate, and the gate is keyed by the
+dry drums. Every hit gets a huge, explosive burst of reverb that stops dead a fraction of a second
+later instead of fading. Phil Collins' "In the Air Tonight" made it famous in 1981 (the engineer Hugh
+Padgham found it by accident on a talkback mic), and it's on half the pop records of the decade. Change
+**Hold** to change the length of the burst.
+
+## The transient shaper
+
+The **transient** is the first few milliseconds of a sound: the stick hitting the drum, the pick on the
+string. The rest is the **sustain** (the drum ringing, the room).
+
+<div class="sk" data-w="transient" data-source="drums"></div>
+
+- **Attack** up: every hit gets punchier and closer. Down: softer and further away.
+- **Sustain** up: the ring and the room come forward. Down: the drums get tight and dry, as if the
+  room were dead.
+
+It does this with two envelope followers, one fast and one slow. Where the fast one is above the slow
+one, a hit is starting: that gets the attack amount. Where it's below, the sound is ringing on: that
+gets the sustain amount. Unlike a compressor, it doesn't care how loud the sound is, only whether it's
+starting or fading. Try it on the **Synth riff** and on your **microphone** (clap).
+
+## Next
+
+- [Sound 16: Reverb](sound-reverb.qmd)
+
+{{< include _synth-kit.qmd >}}

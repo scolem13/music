@@ -9,3 +9,6 @@ tests/band/agent-b/out/
 tests/band/**/*.png
 
 **/*.quarto_ipynb
+
+# Test renders leak into the real site via the apps/** resource glob (see tests/band/README.md)
+/_site/tests/

@@ -1235,3 +1235,138 @@ each its own way; meter required before rhythm; key guessed but always confirmed
   pages regenerated, --check identical). Chord Sheet keeps its editable DO/Tonality/Resting menus and notes "Blues: I7, IV7 and V7" when
   the shared key is a blues. Accompaniment Styles has no key (patterns in C): nothing to do. Tests: tonality.cdp.js, lessons blues and
   loops, sheet.cdp.js pass. Pages rendered with scripts/render-test-page.sh only; _site not rendered.
+- **Is Watermelon Man a blues? (research + page):** notes in `research_notes/Is Watermelon Man a blues/`, report in
+  `reports/Is Watermelon Man a blues.md`, page `lessons/watermelon-man-blues.qmd` (in the Lessons menu after Watermelon Man for Congas,
+  linked from that lesson's first line; sections fold, Shift+click in the contents folds the rest). Verdict: label it F Major (Blues)
+  (harmonic test met; 16-bar = 12-bar with V-IV stated three times). watermelon-congas.qmd now marked data-tonality="blues".
+  Not verified: Real Book / Sher charts, Gioia p. 446, Grove, Hancock's memoir first-hand, the melody's blue notes.
+- **Dictation, graded (2026-10-15):** `practice/dictation.qmd` (+ `_dictation-embed.qmd`; sidebar after Reading Benchmarks) plays a
+  Reading Benchmarks line (abcjs synth, tempo, optional tonic chord first; meter, key and bar count given) and opens the Notation page
+  as a remote window (`tools/notation.html?dictation=1`: scratch doc in `ntDictDoc`, the user's `ntDoc` untouched; messages
+  `dict-ready`, `dict-load`, `dict-replay`, `dict-submit`). Hand in sends the ABC back; `apps/shared/dictation.js` grades it by onset
+  (ties merged): pitch (octave slip half credit) and rhythm (extra notes cost one note each), averaged. Result shows both scores side by
+  side and a per-note table; attempts logged to localStorage `dictationLog` (nothing reads it yet). Tests: `node tests/abc/dictation.test.js`,
+  `node tests/lessons/dictation.cdp.js` (after `quarto render` of both pages); notation-doc and notation.cdp still pass.
+  Not listened to (playback untested by ear). Limits: no chords/tuplets/grace notes (abc-events); a missing note costs only itself, but a
+  wrong length early puts every later onset off, so the rest score as wrong. Ideas: give the first note, mic or MIDI answer instead of writing, use the log for progress.
+- **Recording lessons (2026-10-15):** six pages, `lessons/rec-gain-staging`, `rec-mics`, `rec-placement`, `rec-monitoring`,
+  `rec-mixing`, `rec-mastering` ("Recording 1-6"), in the Lessons menu after Sound 24 and on lessons/index under a new
+  **Recording** topic button. Each includes `_synth-kit.qmd` (folding sections, jump bar) and reuses synth-kit widgets (chain
+  "Too hot", eq on mic, gate "Clean up hiss", stereo, compressor). New widgets, `<div class="rk" data-w=...>`, standalone Web
+  Audio (not synth-kit kinds; one at a time, own limiter), loaded per page after the include:
+  `apps/shared/lessons/rec-kit-level.js` (gainstage: preamp gain + hiss, clipping converter, fader, meters, latching clip light;
+  loudness: limiter, BS.1770 LUFS M/S/I, 4x true peak, -14 LUFS normalisation toggle), `rec-kit-mic.js` (polar: draggable room,
+  pattern/mic type, proximity, bleed dB; phase: two-mic comb, polarity, 3:1 mode; phantom: +48 V sim), `rec-kit-mix.js`
+  (latency: mic delay/buffer presets, double-monitoring flange, click; headmix: cue mix + speaker-bleed toggle; multitrack:
+  5-track balance with bad-mix preset vs reference, mono). All render and pass `node --check`. **Nobody has opened or listened
+  to them in a browser**: levels, meters, LUFS numbers, mic handling untested. No CDP test yet. Not in CLAUDE.md yet.
+- **Vocal Warm-up (2026-10-15):** `tools/vocal-warmup.qmd` (Tools menu, after IPA chart), `apps/shared/vocal-warmup.js` + `.css`.
+  A Set up form (voice type, length, focus, energy, pace, range shift, toggles for stretches / breathing / band / auto-advance;
+  remembered in localStorage `vocal-warmup:settings`) builds a routine; a Warm up panel walks it with Back / Pause / Again / Skip
+  (Space and arrow keys) and a clickable step list. Steps: timed stretches, paced breathing (growing ball), breath pulses on the
+  band's stick click (`BandPlayer.clickAt`), piano-led patterns via `BandPlayer.chord` (chord, then the pattern, up a half step to
+  a comfortable top and back down), and two band steps (a four-bar vamp in C, `BandCatalog.styleOpts` motown/folk and pop,
+  transposed into the next key from bar 4 of each pass). Folding sections + jump bar via `lessons/sections.js`. Longest option
+  tops out near 20 minutes (range limits the keys), so it is labelled "Long (20 minutes or more)". Test:
+  `node tests/lessons/warmup.cdp.js` after `sh scripts/render-test-page.sh tools/vocal-warmup.qmd` (all pass; the band check
+  skips because no samples load in the test's headless Chrome, not even the piano). In CLAUDE.md. **Not listened to**:
+  piano timing (setTimeout-paced), band key changes mid-loop, and levels are untested by ear. Not committed.
+
+## Accompaniment-pattern lessons, guitar/piano by-hand fixes, picking lessons (a separate session, 2026-10-14 to 15)
+
+- **Pattern lessons:** 112 generated pages in `lessons/patterns/` (every bass line, comping rhythm, drum groove and conga part in
+  `BandCatalog`, minus drums/congas "none") plus `lessons/patterns/index.qmd` (Lessons menu, after Arranging 4; card on lessons/index).
+  Generator: `node scripts/pattern-lessons.mjs` (catalog descs + its own PLAN table: per pattern a `ladder` of simpler patterns,
+  home style, tips; `SAME` = same rhythm in other parts; `THREE` = gets a 3/4 step). Each page: the pattern in its style, one step
+  per ladder rung (slow), the pattern slowly with a compare button, up to tempo, the other comping instrument, two chords a bar,
+  3/4, other styles, "How it relates". All `.ar-demo`s of arrange-kit. Then `quarto render lessons/patterns`.
+  `arrange-kit.js` (v=2) `abcOf` now takes any n/4 or n/8 meter (5/4 Take Five, 6/8 All Blues).
+  Test: `tests/band/lessons/patterns.cdp.js` ("PATTERNS OK", 112 pages, 151 demos); copy `_site/lessons/patterns` into
+  `tests/band/lead/site/lessons/` first and use port 8500 (another port can't reach the sample mirror: empty staves). In tests/band/README.
+  **Not listened to.** Tips are model-written; some ladder steps play a pattern outside its usual style. Navbar entry only on re-rendered pages.
+- **Guitar Chord Shapes by Hand** (`lessons/chord-shapes-guitar-hand.qmd`): D7 to G-B2; new G-B5 "Reach" with G7 (old G-B5..13 are
+  now G-B6..14; table and chord-shapes-guitar link updated); B-string muting note with an X grid in G-B3 (`X` in a shape = red X,
+  diagrams.js/shape-steps.js); Dm only in G-B2; G-B7 moveable shapes, root/1st/2nd inversion of F and Dm, voice-leading tease,
+  links. First barre chords drawn at fret 5 (G-B8 E shape A/Am/A7/Am7, G-B9 A shape D/Dm/Dm7/D7/Dmaj7) with the "start at fret 5,
+  not F" note (tension, fret width); G-B10 from fret 5 down, G-B11 names E and A shapes.
+- **Finger numbers and barres** (`shape-steps.js` v=4, `diagrams.js` v=4): guitar fingers after `@` ("F 133211@134211"), every shape on
+  the guitar page has them; piano fingers worked out per hand (`pianoFingers`; `C4:1` overrides). `<div class="sh-toggles">` = one
+  "Show finger numbers" button + "Show barres on every diagram" box (localStorage `shape-steps`). A barre (one finger, 2+ strings, one
+  fret) is drawn only on rows with `data-barre` (G-B6, G-B8, G-B9, G-B13) unless the box is ticked.
+- **Piano Voicings by Hand:** P-B1 (five-finger position) removed, rest renumbered P-B1..P-B12. Both by-hand pages explain the
+  guitar (index = 1) vs piano (thumb = 1, mirrored hands) numbering.
+- **New `lessons/inversions.qmd`:** root/1st/2nd inversion, minor, figured bass (⁶, ⁶₄), slash chords, guitar shapes, voice leading. Menu + index.
+- **Hands** (`apps/shared/lessons/hands.js`, in `_shape-kit.qmd`): SVG hands with finger numbers (guitar fretting T 1-4, picking p i m a,
+  piano left/right mirrored) on both by-hand pages and inversions; new first section "Hand position" (`#g-hand`, `#p-hand`) with
+  side views. Side views are rough (guitar arch looks like a loop). Dark mode and phone width not checked.
+- **New guitar lessons:** `lessons/hammer-ons-pull-offs.qmd` (7 sections) and `lessons/travis-picking.qmd` (8, incl. Travis with
+  hammer-ons/pull-offs and a chicken pickin' paragraph, no lesson). New `apps/shared/lessons/abc-tab.js` (staff + computed tab,
+  H/P over slurs; not abcjs's tab plugin, which clipped) and `lessons/_pick-kit.qmd`. Exercise ▶ untested: the test sample mirror
+  lacks nylon-guitar notes. Fingerings and tab worked out on paper; hammer-ons play back as picked notes.
+- Nothing above is committed; nobody has listened to or played any of it.
+
+## Big Timestamp Player, bar map, YouTube follow-along, lesson (a separate session, 2026-10-15)
+
+- **Ported** from `~/Projects/carols/site/player.*` into `apps/shared/timestamp-player/` (`player.js`, `player-log.js`, CSS);
+  page `tools/timestamp-player.qmd` (Tools menu, last). Now also takes audio files. A line under the title links to the lesson.
+- **Stamps** keep their exact time (`li.dataset.s`, saved as `s`); the log fires `btp-stamps` on change. YouTube's coarse clock is
+  carried on by `performance.now()` while playing.
+- **Bar map** (`bar-map.js`, `bar-map.css`): B taps a bar (Backspace undo; re-tap within 0.15 s replaces), beats a bar, per-bar
+  length/BPM with odd bars (>15% off the median) in yellow. Stamp notes naming a section (Intro/Verse/Chorus/... words, a letter
+  like A or B2, or `§ anything`) snap to the nearest bar; jump, Loop button or L, a "Bar 7 · Chorus" line, `bar-map.json`
+  export/import, localStorage `btp-bars`. Panels fold; no right-hand jump bar on this page (the log column is there).
+- **YouTube errors** now name the code (2, 5, 100, 101/150, 153). **Follow in a tab**: YouTube plays in its own tab, the page runs
+  its own clock (Return, `[`/`]` ±0.1 s, "Clock to", speed). Jumps open a new tab at `&t=Ns` and stop the clock there; Loop is
+  refused. Checked in headless Chrome: youtube.com's `Cross-Origin-Opener-Policy: same-origin-allow-popups` cuts the handle
+  immediately, so the page can't close, navigate or reuse (by name) the tab.
+- **The UMPG block** (J91ti_MpdHA, "blocked it from display on this website or application") is not about the domain: the
+  same video played on localhost in headless Chrome, both as a plain iframe and in our player. It's something in the user's
+  browser (which one, and extensions, not yet known). Puget Sound's textbook uses a plain youtube-nocookie iframe, nothing special.
+- **Lesson** `lessons/timestamp-player.qmd` ("Mapping a Recording", Lessons menu after rec-mastering, recording topic on the
+  index): load, stamp, name sections, tap bars, use the map, YouTube backup plan, a 15-minute exercise, keys table. sections.js.
+- **Tests:** `node tests/lessons/timestamp.cdp.js` (19 checks, silent WAV made in the page, after rendering). Never tried with a
+  real song or a real YouTube tab; follow-mode drift is unmeasured. Not committed.
+- **Next (planned):** the Backing Track and Notation pages read `bar-map.json` (jump the recording from a section or bar; the band
+  following the recording's own tempo). Other audio ideas from the session: slow-down/transpose of files, mic pitch vs the
+  Notation melody, recording takes over the band.
+
+## Record-yourself demo, audio sound check, wired into every mic page (this session, 2026-10-15)
+
+- **Record-yourself demo** `tools/webcam-demo.html` (plain HTML, not a Quarto page, not linked): a note-finding exercise drawn on a
+  canvas, webcam in the corner, cursor and click ripples, MIDI notes shown, mic plus the page's notes as audio, saved to the
+  student's downloads (nothing uploaded). It runs the sound check first and stamps "speakers/headphones · latency · mic peak" into the
+  video. At 2.5 Mb/s a 5-minute take is about 90 MB, too big for most email. Never tried with a real camera or MIDI keyboard.
+- **Sound check** `apps/shared/audio-check.js` (`AudioCheck.run/ensure/last`, helpers `latencySec`, `bleedFloorDb`, `callAndResponse`):
+  Chrome/Edge note, a soft sweep that tells speakers from headphones and measures round-trip latency, a mic level meter. `ensure()`
+  keeps the result in sessionStorage for the tab, so a student who puts headphones on later keeps "speakers" until the tab closes
+  (a "re-run sound check" link would fix that; not built).
+- **Hearing safety of the sweep:** 150 ms, 500 to 3000 Hz, 25 ms fades, starts at -48 dBFS and steps up 8 dB only until the mic hears it
+  (one confirming burst at that level), hard cap -24 dBFS. On headphones it plays four bursts and stops at the cap. The test checks the
+  cap holds.
+- **Detection bug found and fixed:** the first version took Chrome's fake-microphone beep for the sweep (it reported "speakers" with the
+  mic 40 dB louder than what was played). Now a match must have the sweep's shape (normalised correlation >= 0.3), be no more than 20 dB
+  louder than what was played, and come back at the same delay (within 3 ms) on a second burst. Not yet tried on real speakers: the
+  thresholds may need loosening in a reverberant room.
+- **Wired in (by agents, reviewed):**
+  - Rhythm assessments (`apps/rhythm-assessment`, `apps/lsa-rhythm-assessment`): measured latency becomes the default for the existing
+    Calibrate value (Calibrate still overrides); on speakers, onsets below the metronome's expected bleed are ignored (calibration ungated).
+    The bleed level assumes the accent click (gain 0.22); the LSA woodblocks are louder or softer, so their gating is approximate.
+  - Tune Assessment: recording clock uses the measured round trip; bleed gate from metronome and chord levels while recording; live pitch
+    muted while the page sounds on speakers. Levels are estimates from the volume settings. No sensitivity control to fall back on.
+  - `pitch-detect.js` `mic()`: runs the check, new options `floorDb` and `hold()`, frames carry a latency-corrected `t`.
+  - `synth-kit.js`: `SK.mic()` runs the check; on speakers the status warns about feedback (not muted, to keep analysis working).
+    Tuner skips the level step; Bendboard trace shifted by latency.
+  - Pitch assessment (`apps/assessment`): check and constraints only.
+  - Backing Track "follow my playing": check first; on speakers, mic below bleed (assumes the band near -20 dBFS) counts as silence.
+  - MIDI pages (Backing Track, Chord Entry, Chords/Solfege): a "Chrome or Edge is recommended" note after MIDI is allowed outside
+    Chromium. The "no Web MIDI" messages there and on the Chord Sheet no longer suggest Firefox.
+- **Tests:** new `node tests/lessons/audiocheck.cdp.js` (dialog flow, cap, headphones verdict with the fake mic, level meter, session
+  reuse, helpers; after rendering `practice/assessment-tune`). `tuner.cdp.js` and `sound.cdp.js` now seed a headphones result in
+  sessionStorage so the dialog doesn't block them; both pass, as does `tuner.test.js`. All 32 synth-kit pages and the assessment and
+  tools pages re-rendered into `_site`; each loads with no errors. Not committed.
+- **What nobody has tried:** the sweep on real laptop speakers and real headphones; the bleed gates with a real student on speakers;
+  the feedback warning in the sound lessons.
+- **Next candidates (from a survey of the courses):** a "check my singing" control in `abc-ex.js` (voice-pop, voice-jazz,
+  voice-classical: about 20 sing prompts); rhythm grading or record-yourself on the ~50 patterns pages (one template); grading the hum
+  against the drone in tuning-systems; quarter-notes and tonal-do-re-mi; the Vocal Warm-up (no mic yet; call-and-response suits it);
+  rec-monitoring and rec-gain-staging could show the check as a teaching demo.

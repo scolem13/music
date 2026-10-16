@@ -292,3 +292,7 @@ h2.panel-jump {
   background: var(--parch-2) !important;
   border-color: var(--parch-edge) !important;
 }
+
+/* figured bass (I⁶, I⁶₄): the numbers stacked one above the other, as printed in theory books */
+.fb{display:inline-flex;flex-direction:column;align-items:center;font-size:.75em;line-height:.9;vertical-align:.5em;margin:0 .08em;font-variant-numeric:lining-nums}
+.fb.solo{font-size:1em;vertical-align:middle}

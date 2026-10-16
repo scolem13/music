@@ -1,0 +1,54 @@
+---
+title: "Sound 10: Granular Synthesis"
+toc: true
+toc-depth: 2
+---
+
+Take a few seconds of recorded sound and cut it into hundreds of tiny pieces, each a few
+hundredths of a second long, each faded in and out so it doesn't click. These are **grains**. Play them
+back overlapping, dozens a second, and you can do things a tape never could: hold one moment of a sound
+forever, stretch a sound to ten times its length without making it lower, or scatter it into a
+glittering cloud. That's **granular synthesis**. The idea goes back to the composer Iannis Xenakis in
+the 1950s, who cut tape into tiny pieces with scissors.
+
+**How to use the page.** Pick a **sound to cut up** (or record three seconds of your own voice), press
+▶, and move the **Position**. The strip shows the sound; each flash is one grain being read.
+
+## The grain cloud
+
+<div class="sk" data-w="granular"></div>
+
+- **Position**: where in the sound the grains are read from.
+- **Scan speed**: how fast the position moves on its own. At ×1 it plays the sound at normal speed; at
+  ×0.2 it plays it five times slower, but **at the same pitch**, because each grain still plays at the
+  normal speed. At 0 the sound is **frozen**.
+- **Grain size**: under about 20 ms each grain is a click, and you hear the *rate* of the clicks as a
+  buzz. From 50 to 200 ms you hear the sound itself, smeared.
+- **Grains per second**: few grains give a crackle; many give a smooth cloud.
+- **Spray**: each grain is read from a slightly random place near the position. More spray, more blur.
+- **Pitch** and **Random pitch**: each grain can be played faster or slower. With random pitch the
+  grains turn into a shimmering chord.
+- **Backwards grains** and **Stereo spread** make the cloud stranger and wider.
+
+## Try this
+
+1. **Freeze** on *Vowels*. Move the position slowly through the sound: you can stop on any vowel and
+   hold it.
+2. **Stretch (slow motion)** on the *Synth riff*: the riff, five times slower, at its normal pitch.
+   Video editors and DJs use this to fit a sound to a length without changing the key.
+3. **Shimmer**: the grains an octave up and spread wide. Ambient music lives here.
+4. Record your own voice and choose **Scatter**.
+5. Play the keys: the whole cloud moves to the note you play, a melody made from your voice.
+
+## Where you've heard it
+
+Time-stretching in every DAW (Ableton's warp modes, Melodyne) is granular underneath. So are the
+"frozen" pads of ambient music, the shimmering textures of film scores, and many synths: Ableton's
+Granulator, Mutable Instruments' Clouds, the Tasty Chips GR-1. The [glitch](sound-delay.qmd) effects
+and the freeze button on the [reverb page](sound-reverb.qmd) use grains too.
+
+## Next
+
+- [Sound 11: The equaliser](sound-eq.qmd), the first of the effects.
+
+{{< include _synth-kit.qmd >}}

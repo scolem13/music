@@ -31269,8 +31269,8 @@ L:1/8
 %%id unfinished-song-1
 K:D
 I:linebreak $
-"^D""^I"DE FG | AF D2 | "^A""^V"CD EA | "^D""^I"F2 D2 | $
-"^D""^I"DE FG | "^A""^V"AB A2 | "^(V)"x4 | "^(I)"x4 |]
+"D""^I"DE FG | AF D2 | "A""^V"CD EA | "D""^I"F2 D2 | $
+"D""^I"DE FG | "A""^V"AB A2 | "A""^(V)"x4 | "D""^(I)"x4 |]
 
 X:52
 T:Unfinished Song #2
@@ -31279,10 +31279,10 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
 %%id unfinished-song-2
-K:F
+K:Dm
 I:linebreak $
-"^Dm""^i"A2B A2G | F2E D3 | "^A""^V"^C2D E2A | "^Dm""^i"F3 D3 | $
-"^Dm""^i"A2B A2G | F2G A3 | "^(V)"x6 | "^(i)"x6 ||
+"Dm""^i"A2B A2G | F2E D3 | "A""^V"^C2D E2A | "Dm""^i"F3 D3 | $
+"Dm""^i"A2B A2G | F2G A3 | "A""^(V)"x6 | "Dm""^(i)"x6 ||
 
 X:53
 T:Unfinished Song #3
@@ -31293,8 +31293,8 @@ L:1/8
 %%id unfinished-song-3
 K:D
 I:linebreak $
-"^D""^I"D/D/D/D/ FF | AF d2 | "^A""^V"c2 A2 | G2 E2 | $
-"^D""^I"D/D/D/D/ FF | AF d2 | "^(V)"x4 | "^(I)"x4 |]
+"D""^I"D/D/D/D/ FF | AF d2 | "A""^V"c2 A2 | G2 E2 | $
+"D""^I"D/D/D/D/ FF | AF d2 | "A""^(V)"x4 | "D""^(I)"x4 |]
 
 X:54
 T:Unfinished Song #4
@@ -31303,10 +31303,10 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:6/8
 L:1/8
 %%id unfinished-song-4
-K:F
+K:Dm
 I:linebreak $
-"^Dm""^i"DDE FED | FFG AFD | "^A""^V"A2B A2B | "^Dm""^i"A2G FED | $
-"^Dm""^i"DDE FED | FFG "^A""^V"A3 | "^(V)"x6 | "^(i)"x6 |]
+"Dm""^i"DDE FED | FFG AFD | "A""^V"A2B A2B | "Dm""^i"A2G FED | $
+"Dm""^i"DDE FED | FFG "A""^V"A3 | "A""^(V)"x6 | "Dm""^(i)"x6 |]
 
 X:55
 T:Unfinished Song #5
@@ -31317,8 +31317,8 @@ L:1/8
 %%id unfinished-song-5
 K:D
 I:linebreak $
-"^D""^I"A2 FE | DE F2 | "^A""^V"GE CE | A,2 A2 | $
-"^D""^I"A2 FD | "^G""^IV"GA B2 | "^(V)"x4 | "^(I)"x4 |]
+"D""^I"A2 FE | DE F2 | "A""^V"GE CE | A,2 A2 | $
+"D""^I"A2 FD | "G""^IV"GA B2 | "A""^(V)"x4 | "D""^(I)"x4 |]
 `,
 
 "test":

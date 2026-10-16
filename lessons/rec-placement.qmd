@@ -1,0 +1,97 @@
+---
+title: "Recording 3: Distance, Bleed and Phase"
+toc: true
+toc-depth: 2
+---
+
+Where the microphone goes changes the sound more than which microphone it is. Move it a few
+centimetres and the tone changes; move it a metre and the room becomes part of the recording.
+
+## Distance
+
+- **Close (2–15 cm)**: big, intimate, dry. Lots of the source, little of the room. Every mouth noise,
+  breath and pick scrape is there. Plosives (p, b) hit the diaphragm.
+- **Medium (20–60 cm)**: the usual distance for a voice with a condenser or an acoustic guitar. More
+  natural, the instrument has room to "bloom".
+- **Far (1 m and more)**: the room is part of the sound. Great in a good-sounding room, terrible in a
+  small boxy one.
+
+The level drops about **6 dB every time the distance doubles** (the inverse-square law). So a singer
+moving from 5 cm to 10 cm changes the level as much as moving from 50 cm to a metre. Close up, small
+movements make big level changes; a little further back, the performer can move without the level
+jumping.
+
+## Proximity effect
+
+Directional mics (cardioid, figure-8) boost the **bass** as the source gets close: below about 10 cm
+it can be +10 dB or more at 100 Hz. Radio voices use it on purpose. On an acoustic guitar it makes boom.
+Back off, or use a high-pass filter (a low cut around 80–100 Hz, often a switch on the mic or the
+interface). Omni mics have no proximity effect. Hear what a low cut and a bass boost do:
+
+<div class="sk" data-w="eq" data-source="mic"></div>
+
+## Where on the instrument
+
+- **Acoustic guitar**: not at the soundhole (boomy). Start pointing at where the neck meets the body,
+  about 20 cm away; move towards the soundhole for warmth, towards the neck for brightness.
+- **Guitar amp**: close on the speaker. At the centre of the cone, bright and aggressive; towards the
+  edge, darker and rounder. Turn the amp down: it doesn't need to be loud to sound good on a mic.
+- **Voice**: at mouth height or slightly above, pointing a little down; a **pop filter** 5–10 cm in front.
+  Slightly off to the side cuts plosives and sibilance (s, sh).
+- **Snare**: 3–5 cm above the rim, angled at the centre of the head, the back of the mic towards the hi-hat.
+
+Listen in headphones while someone else moves the mic, and choose by ear.
+
+## Bleed
+
+**Bleed** (spill) is one instrument getting into another's microphone: the drums in the vocal mic, the
+guitar amp in the piano mics. It happens whenever more than one thing is recorded in one room.
+
+Bleed isn't always bad: a band playing together with some bleed sounds alive and glued together. But it
+takes away choices: you can't re-record the vocal if the drums are in it, you can't EQ one without the
+other, and Auto-Tune on a vocal with drums in it makes the drums warble.
+
+To reduce it:
+
+- **Get closer** to the source you want. Each halving of the distance gains 6 dB over the bleed.
+- **Aim the dead side** of the mic (the back of a cardioid, the side of a figure-8) at the loud thing.
+- **Separate** players: across the room, behind gobos (movable baffles), amps in another room or a cupboard,
+  bass and keys through DI.
+- **Dynamic mics** on loud close sources pick up less of the room.
+- **Headphones** for everyone, not speakers (see [monitoring](rec-monitoring.qmd)).
+- Try it: bring the singer close, then turn the mic so the drums sit at its quiet side.
+
+<div class="rk" data-w="polar" data-set="pat=card,type=condenser"></div>
+
+- After recording, a **gate** or careful editing can remove bleed between hits (tom mics, mostly):
+
+<div class="sk" data-w="gate" data-preset="Clean up hiss"></div>
+
+## Phase
+
+Two microphones on one source at different distances get the same sound at slightly different times.
+Added together, some frequencies cancel (a comb filter, as in [Sound 18](sound-chorus.qmd)), and the
+sound goes thin and hollow. Bleed causes it too: the snare in the snare mic and in the overheads.
+
+- **The 3:1 rule**: the second mic at least three times as far from the first source as the first mic is.
+  A singer 20 cm from one mic and a guitarist 20 cm from another: keep the two mics 60 cm or more apart.
+- Two mics on the same speaker or drum: put them at **the same distance**.
+- A mic above and a mic below a snare (or front and back of an open-back amp) face opposite ways: flip
+  the **polarity** (Ø) of one.
+- Check by listening to both mics together and flipping polarity on one: choose whichever has more
+  bass and body. Check the mix in **mono**.
+
+Drag mic 2 away from mic 1 and watch the comb filter in the spectrum. Flip the polarity and compare the
+mono sum. Then switch to the 3:1 demo, where each mic has its own player:
+
+<div class="rk" data-w="phase"></div>
+
+## Next
+
+- [Recording 4: Monitoring and Headphones](rec-monitoring.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=1"></script>
+```

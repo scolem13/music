@@ -88,6 +88,8 @@
         <select id="cs-home"><option value="major">Major</option><option value="minor">Minor</option></select></div>
       <div class="cs-field"><label for="cs-label">Label the keys</label>
         <select id="cs-label"><option value="both">Names and note letters</option><option value="sol">Names</option><option value="names">Note letters</option><option value="none">Nothing</option></select></div>
+      <div class="cs-field"><label for="cs-tuning" title="Piano: the sampled piano, tuned equally. The organ tone can be tuned equally or in just intonation, where every note is a simple ratio of the key note and chords hold still.">Tuning</label>
+        <select id="cs-tuning"><option value="piano">Piano, equal temperament</option><option value="et">Organ tone, equal temperament</option><option value="just">Organ tone, just intonation</option></select></div>
       <label class="cs-check" title="Click a key to turn it on and click it again to turn it off, so you can build a chord one note at a time."><input type="checkbox" id="cs-hold"> Hold notes</label>
       <label class="cs-check"><input type="checkbox" id="cs-sound" checked> Sound the notes</label>
       <label class="cs-check"><input type="checkbox" id="cs-type" checked> Play with the computer keyboard</label>
@@ -99,15 +101,16 @@
   </div>
 </div>
 <script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/audio-check.js"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>
 <script src="/apps/shared/degree-names.js"></script>
 <script src="/apps/shared/chord-entry.js?v=4"></script>
 <script src="/apps/shared/musical-typing.js"></script>
 <script src="/apps/shared/band/harmony.js?v=24"></script>
-<script src="/apps/shared/band/bass.js?v=11"></script>
-<script src="/apps/shared/band/comp.js?v=25"></script>
-<script src="/apps/shared/band/catalog.js?v=33"></script>
-<script src="/apps/shared/band/drums.js?v=15"></script>
+<script src="/apps/shared/band/bass.js?v=13"></script>
+<script src="/apps/shared/band/comp.js?v=27"></script>
+<script src="/apps/shared/band/catalog.js?v=36"></script>
+<script src="/apps/shared/band/drums.js?v=16"></script>
 <script src="/apps/shared/band/congas.js?v=2"></script>
 <script src="/apps/shared/band/sounds.js?v=14"></script>
 <script src="/apps/shared/band/player.js?v=110"></script>
@@ -242,15 +245,43 @@
   }
 
   // ---- notes in: the on-screen keys, the computer keyboard, MIDI ----
+  // Just intonation: the organ tone, with every note a simple ratio of the key note (Do). Equal is the same tone at the piano's pitches,
+  // so the two can be compared. A note sounds while its key is held.
+  var JUST = [1, 16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8], actx = null, abus = null, voices = {};
+  function tuning(){ return $("cs-tuning").value; }
+  function pitch(m){                                      // Hz of MIDI note m in the chosen tuning (A4 = 440)
+    var et = 440 * Math.pow(2, (m - 69) / 12);
+    if (tuning() !== "just") return et;
+    var doPc = key().doPc, doMidi = 60 + doPc - (doPc > 6 ? 12 : 0), steps = m - doMidi, oct = Math.floor(steps / 12);   // the Do nearest middle C
+    return 440 * Math.pow(2, (doMidi - 69) / 12) * JUST[mod(steps)] * Math.pow(2, oct);
+  }
+  function organOn(m, vel){
+    if (voices[m]) return;
+    if (!actx){ var AC = window.AudioContext || window.webkitAudioContext; actx = new AC(); var lim = actx.createDynamicsCompressor(); lim.threshold.value = -8; lim.ratio.value = 12;
+      abus = actx.createGain(); abus.gain.value = 0.5; abus.connect(lim); lim.connect(actx.destination); }
+    if (actx.state === "suspended") actx.resume();
+    var f = pitch(m), g = actx.createGain(), t = actx.currentTime, parts = [];
+    [1, 2, 3, 4, 5, 6].forEach(function(h){ var o = actx.createOscillator(), l = actx.createGain(); o.frequency.value = f * h; l.gain.value = 0.5 / (h * h * 0.5 + 0.5);
+      o.connect(l); l.connect(g); o.start(t); parts.push(o); });
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.16 * Math.max(0.3, vel), t + 0.02); g.connect(abus);
+    voices[m] = { g: g, parts: parts };
+  }
+  function organOff(m){
+    var v = voices[m]; if (!v) return; delete voices[m]; var t = actx.currentTime;
+    v.g.gain.cancelScheduledValues(t); v.g.gain.setValueAtTime(v.g.gain.value, t); v.g.gain.linearRampToValueAtTime(0, t + 0.15);
+    v.parts.forEach(function(o){ o.stop(t + 0.2); });
+  }
+  function organSync(){ Object.keys(voices).map(Number).forEach(function(m){ if (!down[m] && !sticky[m]) organOff(m); }); }   // after any key goes up
   function sound(m, vel){
     if (!$("cs-sound").checked) return;
+    if (tuning() !== "piano"){ $("cs-note").textContent = tuning() === "just" ? "Just intonation from " + spell(key().doPc, key()) + ": each note is a simple ratio of the key note." : ""; organOn(m, vel); return; }
     $("cs-note").textContent = "";
     BandPlayer.chord([m], { inst: "piano", dur: 3, vel: Math.max(0.25, Math.min(1, vel)) }).catch(function(){ $("cs-note").textContent = "Couldn't load the piano sounds. Check your connection and try again."; });
   }
   function noteOn(m, vel){ down[m] = 1; remember(m); sound(m, vel); show(); }
-  function noteOff(m){ delete down[m]; show(); }
-  function toggle(m, vel){ if (sticky[m]){ delete sticky[m]; show(); } else { sticky[m] = 1; remember(m); sound(m, vel); show(); } }
-  function releaseAll(){ down = {}; sticky = {}; typing.releaseAll(); show(); }
+  function noteOff(m){ delete down[m]; organSync(); show(); }
+  function toggle(m, vel){ if (sticky[m]){ delete sticky[m]; organSync(); show(); } else { sticky[m] = 1; remember(m); sound(m, vel); show(); } }
+  function releaseAll(){ down = {}; sticky = {}; typing.releaseAll(); organSync(); show(); }
 
   var pointers = {};
   $("cs-kb").addEventListener("pointerdown", function(e){
@@ -284,8 +315,8 @@
     $("cs-note").textContent = input ? "Listening to " + (input.name || "the MIDI keyboard") + "." : "No MIDI keyboard found. Plug one in, or use the keys.";
   }
   $("cs-connect").addEventListener("click", function(){
-    if (!navigator.requestMIDIAccess){ $("cs-note").textContent = "This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome, Edge or Firefox, or the keys on screen."; return; }
-    navigator.requestMIDIAccess().then(function(a){ midiAccess = a; a.onstatechange = inputs; inputs(); },
+    if (!navigator.requestMIDIAccess){ $("cs-note").textContent = "This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome or Edge, or the keys on screen."; return; }
+    navigator.requestMIDIAccess().then(function(a){ midiAccess = a; a.onstatechange = inputs; inputs(); if (window.AudioCheck && !AudioCheck.isChromium()) $("cs-note").textContent = "Chrome or Edge is recommended for a MIDI keyboard."; },
       function(){ $("cs-note").textContent = "The browser did not allow MIDI. Allow it for this site, or use the keys on screen."; });
   });
   $("cs-midi").addEventListener("change", function(){ if (midiAccess) inputs(); });
@@ -301,8 +332,12 @@
   DegreeNames.onChange(function(){ words(); show(); });
   try { var was = JSON.parse(localStorage.getItem("chordsSolfege2") || "{}");
     if (was.d != null) $("cs-do").value = was.d; if (was.h) $("cs-home").value = was.h; if (was.l) $("cs-label").value = was.l; } catch (e) {}
-  function keep(){ try { localStorage.setItem("chordsSolfege2", JSON.stringify({ d: $("cs-do").value, h: $("cs-home").value, l: $("cs-label").value })); } catch (e) {} }
+  // a page that includes this tool (the tuning lesson) can set window.csPreset = { d: key note 0-11, type: false, tuning: "piano|et|just" } before it; nothing is then remembered
+  var pre = window.csPreset || null;
+  if (pre){ if (pre.d != null) $("cs-do").value = pre.d; if (pre.type === false) $("cs-type").checked = false; if (pre.tuning) $("cs-tuning").value = pre.tuning; }
+  function keep(){ if (pre) return; try { localStorage.setItem("chordsSolfege2", JSON.stringify({ d: $("cs-do").value, h: $("cs-home").value, l: $("cs-label").value })); } catch (e) {} }
   ["cs-do", "cs-home", "cs-label"].forEach(function(id){ $(id).addEventListener("change", function(){ keep(); $(id).blur(); show(); }); });
+  $("cs-tuning").addEventListener("change", function(){ releaseAll(); $("cs-tuning").blur(); });
   $("cs-hold").addEventListener("change", function(){ releaseAll(); $("cs-hold").blur(); });
   $("cs-type").addEventListener("change", function(){ typing.releaseAll(); typeNote(); });
   $("cs-clear").addEventListener("click", releaseAll);

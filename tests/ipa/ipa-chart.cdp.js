@@ -44,6 +44,14 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   await b.shot(out + "/ipa-desktop.png", false);
   await b.eval(`document.getElementById('vowels').scrollIntoView()`); await b.sleep(200);
   await b.shot(out + "/ipa-vowels.png", false);
+  // vowel synth: formant grid, and a drag on the trapezoid moves the point and sounds
+  const fm = await b.eval(`({i: IpaSynth.formants(0,0,0), u: IpaSynth.formants(0,2,1), a: IpaSynth.formants(6,0,0)})`);
+  check("synth formants: [i] high F2, [u] low F2, [a] high F1", fm.i[1] > 2000 && fm.u[1] < 900 && fm.a[0] > 700, JSON.stringify(fm));
+  const dr = await b.eval(`(() => { document.querySelector('.ipa-synth [data-k=r]').value = 0; const p = document.querySelector('#ipa-vowels .plot'), r = p.getBoundingClientRect();
+    const ev = (t, x, y) => p.dispatchEvent(new PointerEvent(t, {bubbles: true, pointerId: 1, clientX: r.left + r.width * x, clientY: r.top + r.height * y}));
+    ev('pointerdown', .97, .97); const s1 = IpaSynth.state(), on = IpaSynth.playing(); ev('pointermove', .2, .03); const s2 = IpaSynth.state(); ev('pointerup', .2, .03);
+    return {s1, s2, on, off: !IpaSynth.playing(), read: document.querySelector('.ipa-vread').textContent}; })()`);
+  check("drag sings through the chart", dr.on && dr.off && dr.s1.h > 5.5 && dr.s1.c > 1.8 && dr.s2.h < 0.5 && dr.s2.c < 0.3 && /nearest \[i\]/.test(dr.read), JSON.stringify(dr));
   const errs = b.errors.filter(e => !/supabaseUrl/.test(e)); check("no page errors (desktop)", !errs.length, errs.join(" | "));
   // phone width
   await b.resize(390, 800); await b.goto("http://127.0.0.1:8512/tools/ipa-chart.html"); await b.sleep(900);

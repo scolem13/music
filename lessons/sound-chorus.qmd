@@ -1,5 +1,5 @@
 ---
-title: "Sound 12: Chorus and Flanger"
+title: "Sound 18: Chorus and Flanger"
 toc: true
 toc-depth: 2
 ---
@@ -49,6 +49,6 @@ noise source, where the moving comb is easiest to see on the spectrum.
 
 ## Next
 
-- [Sound 13: Phaser](sound-phaser.qmd), a different way to sweep notches.
+- [Sound 19: Phaser](sound-phaser.qmd), a different way to sweep notches.
 
 {{< include _synth-kit.qmd >}}

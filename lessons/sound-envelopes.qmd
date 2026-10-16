@@ -1,0 +1,65 @@
+---
+title: "Sound 5: Envelopes"
+toc: true
+toc-depth: 2
+---
+
+Play a piano note and hold it: it starts with a hard knock and then fades, even while you hold the key.
+Bow a violin note: it swells in gently and stays as long as the bow moves. Same pitch, same harmonics
+perhaps, but they don't sound like the same instrument. The difference is the **envelope**: how the
+loudness of a note changes from the moment it starts to the moment it is gone.
+
+**How to use the page.** Press **▶ Demo**, or play the computer keys (a w s e d f t g y h u j k), the
+on-screen keyboard or a MIDI keyboard. Hold some notes down and let go of others quickly: the envelope
+only makes sense when you hear the difference between *pressing* and *letting go*.
+
+## The four stages: ADSR
+
+<div class="sk" data-w="envelope"></div>
+
+A synth describes an envelope with four numbers, **A D S R**:
+
+- **Attack**: how long the note takes to reach full volume after you press the key. Short for a drum or
+  a pluck; long for strings swelling in.
+- **Decay**: how long it then takes to fall to the sustain level.
+- **Sustain**: a *level*, not a time: how loud the note stays **while you hold the key**. 100% means
+  no decay at all (an organ); 0% means the note dies away even if you hold it (a piano, a guitar).
+- **Release**: how long the note takes to fade to silence **after you let go**.
+
+The strip draws the shape: rising for the attack, falling for the decay, flat while you hold, falling
+after you let go. The part that is flat lasts as long as your finger is down; the other three are times.
+
+## Hear the instruments in it
+
+Try the presets, each on a **sine** and then a **sawtooth**:
+
+| Preset | A | D | S | R | Like |
+|---|---|---|---|---|---|
+| **Organ** | instant | — | 100% | instant | an organ: on or off, nothing in between |
+| **Piano** | instant | long | 0% | short | the note dies away while held, and stops when you let go |
+| **Pluck** | instant | short | 0% | short | a guitar, a harp, a marimba |
+| **Brass** | a little | short | 70% | short | a "blat" at the start, then a steady tone |
+| **Strings** | slow | — | high | medium | bowed strings fading in and out |
+| **Pad** | very slow | — | high | very long | the soft wash under a pop song |
+| **Click** | 1 ms | — | 100% | 1 ms | too fast: listen to the click at each end |
+
+**Click** shows why attack and release are never quite zero: switching a wave on or off instantly
+makes a click, because a sudden jump has every frequency in it (look at the spectrum as a note starts).
+
+Now play **fast notes** with the **Pad** preset: the notes never get loud before you let go. A long
+attack and fast playing don't mix. That's why string sections can't play very fast passages loudly.
+
+## The VCA, and envelopes on other things
+
+In a synth the envelope drives an **amplifier** (on analog synths a **VCA**, voltage-controlled
+amplifier). But an envelope is just a shape that rises and falls with each note, so it can move
+anything. In [subtractive synthesis](sound-subtractive.qmd) a second envelope opens and closes the
+**filter**, so a note can start bright and turn dull, which is how most synth basses and brass work.
+On a drum synth an envelope bends the **pitch**: the "boom" of a kick drum is a sine wave whose pitch
+drops fast.
+
+## Next
+
+- [Sound 6: LFOs](sound-lfo.qmd): a shape that repeats instead of following each note.
+
+{{< include _synth-kit.qmd >}}

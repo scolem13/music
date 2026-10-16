@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Formants: What Makes a Vowel – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reading-swing.html">
+ <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-guitar.html">
+ <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-piano.html">
+ <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-bass.html">
+ <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar.html">
+ <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar-hand.html">
+ <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
+ <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/travis-picking.html">
+ <span class="dropdown-text">Travis Picking on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano.html">
+ <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano-hand.html">
+ <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inversions.html">
+ <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-pop.html">
+ <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-jazz.html">
+ <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-classical.html">
+ <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/cadences.html">
+ <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guide-tones.html">
+ <span class="dropdown-text">Lesson: Guide Tones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/minor-changes.html">
+ <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/borrowed-chords.html">
+ <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/turnarounds.html">
+ <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reharmonize.html">
+ <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-band.html">
+ <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-bass-drums.html">
+ <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-chords.html">
+ <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-organ.html">
+ <span class="dropdown-text">Arranging 4: The Organ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/patterns/index.html">
+ <span class="dropdown-text">Accompaniment Patterns</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-harmonics.html">
+ <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-waveforms.html">
+ <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-noise.html">
+ <span class="dropdown-text">Sound 3: Noise</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-filter.html">
+ <span class="dropdown-text">Sound 4: Filters</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-lfo.html">
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-subtractive.html">
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-fm.html">
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-wavetable.html">
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-distortion.html">
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-compressor.html">
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-reverb.html">
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chorus.html">
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-phaser.html">
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-vocoder.html">
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs-classic.html">
+ <span class="dropdown-text">Song Builder (Classic)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#source-filter" id="toc-source-filter" class="nav-link active" data-scroll-target="#source-filter">1. Source and filter</a></li>
+  <li><a href="#f1" id="toc-f1" class="nav-link" data-scroll-target="#f1">2. F1: tongue height and jaw</a></li>
+  <li><a href="#f2" id="toc-f2" class="nav-link" data-scroll-target="#f2">3. F2: front and back</a></li>
+  <li><a href="#plane" id="toc-plane" class="nav-link" data-scroll-target="#plane">4. The F1–F2 plane is the vowel chart</a></li>
+  <li><a href="#f3" id="toc-f3" class="nav-link" data-scroll-target="#f3">5. F3, r-colouring and lip rounding</a></li>
+  <li><a href="#ring" id="toc-ring" class="nav-link" data-scroll-target="#ring">6. The singer’s formant</a></li>
+  <li><a href="#pitch" id="toc-pitch" class="nav-link" data-scroll-target="#pitch">7. High notes: when the pitch outruns the formants</a></li>
+  <li><a href="#try" id="toc-try" class="nav-link" data-scroll-target="#try">Things to try</a></li>
+  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next">Next</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Formants: What Makes a Vowel</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Sing <em>ee</em> and then <em>ah</em> on the same note. The pitch stays the same, yet anyone can hear which vowel is which. Your vocal folds make the same buzz both times; what changes is the shape of the tube above them, and that tube boosts some frequencies and damps others. The boosted regions are the <strong>formants</strong>, numbered from the bottom: F1, F2, F3 and so on. Two of them, F1 and F2, are enough to tell most vowels apart, and they line up closely with the vowel chart singers already use. This lesson takes you through them with a synthesised voice. Click a section’s heading to fold it; the “On this page” bar at the right jumps to any section and opens it.</p>
+<p><strong>How to use the page.</strong> Each widget has a ▶ button that starts a sustained voice and ■ to stop it (only one plays at a time; start with your volume low). The pictures are <strong>spectra</strong>: frequency runs left to right up to 4 kHz, each vertical line is one harmonic of the voice, and the curve is the filter the vocal tract puts on top. The same synthesiser drives the vowel chart on the <a href="../tools/ipa-chart.html#vowels">IPA chart</a>, where you can drag through the vowel space.</p>
+<link rel="stylesheet" href="../apps/shared/ipa/ipa-chart.css?v=2">
+<script src="../apps/shared/ipa/ipa-synth.js?v=2"></script>
+<script src="../apps/shared/lessons/sections.js?v=1"></script>
+<style>
+.fm-lab{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem;max-width:46rem}
+.fm-lab h4{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}
+.fm-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;margin:.4rem 0}
+.fm-row label{display:flex;align-items:center;gap:.35rem;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2);margin:0}
+.fm-row select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.fm-row input[type=range]{width:9rem;accent-color:var(--site-accent-dk)}
+.fm-row output{font-family:var(--font-mono);font-size:.78rem;color:var(--site-ink);min-width:4.5rem}
+.fm-lab .btn{font-family:var(--font-mono);font-size:.78rem}
+.fm-lab .btn.fm-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.fm-lab canvas{width:100%;display:block;border:1px solid var(--site-border);border-radius:6px;background:var(--site-surface);margin-top:.4rem;touch-action:none}
+.fm-info{font-family:var(--font-mono);font-size:.78rem;color:var(--site-ink-2);min-height:1.3em;margin:.4rem 0 0}
+.fm-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.fm-tbl{border-collapse:collapse;font-size:.88rem;margin:.6rem 0 1rem}
+.fm-tbl th,.fm-tbl td{padding:.25rem .7rem;border-bottom:1px solid var(--site-border-soft);text-align:left}
+.fm-tbl td.n{font-family:var(--font-mono);text-align:right}
+</style>
+<section id="source-filter" class="level2">
+<h2 class="anchored" data-anchor-id="source-filter">1. Source and filter</h2>
+<p>The voice is two things in a row. The <strong>source</strong> is the vocal folds: they open and shut at the pitch you sing, so they make a buzz at that pitch plus every whole-number multiple of it (the <a href="../lessons/sound-harmonics.html">harmonic series</a>), each one a little quieter than the one below. The <strong>filter</strong> is the throat, mouth and lips: a tube about 17 cm long in an adult, and like any tube it resonates at certain frequencies. Where it resonates, the harmonics come through strongly; between resonances they are damped.</p>
+<p>The pitch belongs to the source and the vowel belongs to the filter, which is why you can sing any vowel on any note. Play the buzz on its own, then put a vowel’s filter on it.</p>
+<div id="fm-src" class="fm-lab">
+
+</div>
+<p>The buzz is rich but has no vowel. With the filter on, the harmonics near each peak of the curve stand out, and that pattern of peaks is what your ear reads as a vowel. Change the pitch: the harmonic lines get closer or further apart, but the curve, and the vowel, stays where it is.</p>
+</section>
+<section id="f1" class="level2">
+<h2 class="anchored" data-anchor-id="f1">2. F1: tongue height and jaw</h2>
+<p>The first formant, <strong>F1</strong>, is the lowest peak, between about 250 Hz and 850 Hz. It follows how open the vocal tract is: a close vowel like [i] or [u] has a low F1, an open vowel like [a] a high one. Dropping the jaw and lowering the tongue raises F1.</p>
+<div id="fm-f1" class="fm-lab">
+
+</div>
+<p>Slide F1 up with F2 high and you go from [i] through [e] and [ɛ] towards [a]. With F2 low you go from [u] through [o] towards [ɔ] and [ɑ]. On the vowel chart, <strong>F1 is the vertical axis</strong>: close at the top, open at the bottom.</p>
+</section>
+<section id="f2" class="level2">
+<h2 class="anchored" data-anchor-id="f2">3. F2: front and back</h2>
+<p>The second formant, <strong>F2</strong>, runs from about 700 Hz to 2400 Hz. It follows where the tongue is bunched: forward in the mouth gives a high F2 ([i], [e]), back gives a low F2 ([u], [o]). Rounding the lips lengthens the tube and pulls F2 (and F3) down, so a rounded front vowel like [y] sits between [i] and [u].</p>
+<div id="fm-f2" class="fm-lab">
+
+</div>
+<p>On the vowel chart, <strong>F2 is the horizontal axis</strong>, with high F2 (front) on the left. Try holding F1 low and sweeping F2: [i] to [y] to [ɨ] to [u] is the whole top row of the chart.</p>
+</section>
+<section id="plane" class="level2">
+<h2 class="anchored" data-anchor-id="plane">4. The F1–F2 plane is the vowel chart</h2>
+<p>Put F1 down the page and F2 across it, high on the left, and the vowels fall into a shape that is close to the IPA trapezoid. The phonetics chart started as a map of the tongue; formant measurements in the twentieth century showed that it is just as much a map of sound. Drag anywhere in the plane.</p>
+<div id="fm-plane" class="fm-lab">
+
+</div>
+<p>The trapezoid shape comes from acoustics: front vowels can spread across a wide range of F2, while back vowels are squeezed into a narrow one, so the chart is wider at the top than at the bottom. The values here are averages for an adult male voice; a higher, shorter vocal tract (women, children) moves everything up by roughly 15–20 %, but the shape stays the same, which is how we hear the same vowel from different speakers.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Vowel</th>
+<th style="text-align: left;">Example</th>
+<th style="text-align: right;">F1 (Hz)</th>
+<th style="text-align: right;">F2 (Hz)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">[i]</td>
+<td style="text-align: left;"><em>see</em>, Italian <em>vino</em></td>
+<td style="text-align: right;">280</td>
+<td style="text-align: right;">2250</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[e]</td>
+<td style="text-align: left;">German <em>See</em>, Italian <em>sera</em></td>
+<td style="text-align: right;">400</td>
+<td style="text-align: right;">2100</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[ɛ]</td>
+<td style="text-align: left;"><em>bed</em></td>
+<td style="text-align: right;">580</td>
+<td style="text-align: right;">1850</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[a]</td>
+<td style="text-align: left;">French <em>patte</em>, Italian <em>casa</em></td>
+<td style="text-align: right;">820</td>
+<td style="text-align: right;">1550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[ɑ]</td>
+<td style="text-align: left;"><em>father</em></td>
+<td style="text-align: right;">760</td>
+<td style="text-align: right;">1080</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[ɔ]</td>
+<td style="text-align: left;">RP <em>thought</em></td>
+<td style="text-align: right;">600</td>
+<td style="text-align: right;">900</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[o]</td>
+<td style="text-align: left;">German <em>so</em>, Italian <em>dove</em></td>
+<td style="text-align: right;">430</td>
+<td style="text-align: right;">750</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">[u]</td>
+<td style="text-align: left;"><em>food</em>, Italian <em>luna</em></td>
+<td style="text-align: right;">300</td>
+<td style="text-align: right;">750</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">[ə]</td>
+<td style="text-align: left;"><em>about</em></td>
+<td style="text-align: right;">500</td>
+<td style="text-align: right;">1450</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="f3" class="level2">
+<h2 class="anchored" data-anchor-id="f3">5. F3, r-colouring and lip rounding</h2>
+<p>The third formant, <strong>F3</strong> (around 2200–3000 Hz), changes less from vowel to vowel, but it carries two things. Lip rounding lowers it along with F2. And an <strong>r-coloured</strong> vowel, like the General American <em>nurse</em> [ɝ] or <em>butter</em> [ɚ], has a strikingly low F3, down near 1600 Hz, sitting just above F2. Drag F3 down on [ə] and listen to it turn into an American <em>er</em>.</p>
+<div id="fm-f3" class="fm-lab">
+
+</div>
+<p>F4 and above vary even less and mostly reflect the size of the singer’s head and throat: they are part of what makes a voice sound like that person.</p>
+</section>
+<section id="ring" class="level2">
+<h2 class="anchored" data-anchor-id="ring">6. The singer’s formant</h2>
+<p>Trained classical singers, especially men, make a strong peak around 2.5–3.2 kHz by clustering F3, F4 and F5 together, mostly by lowering the larynx and narrowing the tube just above the vocal folds. This <strong>singer’s formant</strong> is the “ring” or <em>squillo</em> that lets an unamplified voice carry over an orchestra: the orchestra is loudest below 1 kHz, and the ear is most sensitive near 3 kHz. Turn it on and off on the same vowel.</p>
+<div id="fm-ring" class="fm-lab">
+
+</div>
+<p>The vowel does not change, because F1 and F2 do not move. What changes is the brightness and the carrying power. Pop and musical theatre singers use the same region with a more speech-like vowel; a microphone means they need less of it.</p>
+</section>
+<section id="pitch" class="level2">
+<h2 class="anchored" data-anchor-id="pitch">7. High notes: when the pitch outruns the formants</h2>
+<p>The harmonics sample the filter curve only at multiples of the pitch. At a speaking pitch they are close together and trace the curve well. A soprano at 880 Hz has harmonics only at 880, 1760, 2640 Hz and so on, so F1 for [i] (about 300 Hz) is <em>below the lowest note she can produce</em>. No harmonic falls near it, and the vowel can’t be heard as [i] any more.</p>
+<div id="fm-pitch" class="fm-lab">
+
+</div>
+<p>Raise the pitch on [i] and listen to the vowels blur together above about 600 Hz. Then turn on <strong>Tune F1 to the pitch</strong>: this raises F1 to just above the fundamental, which is what sopranos do by opening the jaw on high notes. It is called <strong>formant tuning</strong>, and it is the acoustic reason for <strong>vowel modification</strong>: a high [i] is sung towards [ɪ] or [e], and a high [u] towards [ʊ] or [o], so that F1 stays with the fundamental and the note keeps its power. The cost is that the vowel is less clear, and on the very highest notes listeners cannot tell vowels apart at all.</p>
+<div class="fm-tip">
+For singers: if a high note feels thin or hard on a closed vowel, open the jaw and let the vowel drift towards its open neighbour ([i]→[ɪ]→[e], [u]→[ʊ]→[o]). In the words, keep the consonants clear; they carry more of the meaning than the vowels do up there.
+</div>
+</section>
+<section id="try" class="level2">
+<h2 class="anchored" data-anchor-id="try">Things to try</h2>
+<ul>
+<li>In section 4, find your own vowels: say a word, hold the vowel, and hunt for it in the plane. Vowels in your accent may sit between the symbols.</li>
+<li>In section 1, play [a] and drag the pitch slowly: the vowel stays put while the harmonics slide under the curve.</li>
+<li>On the <a href="../tools/ipa-chart.html#vowels">IPA chart</a>, switch on Hold and click from [i] to [y] to [u]: one formant moves at a time.</li>
+<li>In section 7, find the pitch where [i] and [e] stop sounding different without formant tuning.</li>
+</ul>
+</section>
+<section id="next" class="level2">
+<h2 class="anchored" data-anchor-id="next">Next</h2>
+<ul>
+<li><a href="../tools/ipa-chart.html">The IPA chart for singers</a>: every vowel with recordings, reference words in seven languages, and the synthesiser.</li>
+<li><a href="../lessons/sound-harmonics.html">The harmonic series</a>: where the vertical lines in these pictures come from.</li>
+<li><a href="../lessons/sound-filter.html">Filters</a>: the same idea of a resonant filter, on a synthesiser.</li>
+<li><a href="../lessons/sound-vocoder.html">The vocoder</a>: a machine that copies one sound’s formants onto another.</li>
+</ul>
+<script>
+(function () {
+  var S = window.IpaSynth, owner = null, FMAX = 4000;
+  // vowels by chart position (height row, column, rounded) and a formant set for each, from IpaSynth's grid
+  var V = { "i": [0, 0, 0], "e": [2, 0, 0], "ɛ": [4, 0, 0], "a": [6, 0, 0], "ɑ": [6, 2, 0], "ɔ": [4, 2, 1], "o": [2, 2, 1], "u": [0, 2, 1],
+            "y": [0, 0, 1], "ø": [2, 0, 1], "œ": [4, 0, 1], "ɨ": [0, 1, 0], "ʉ": [0, 1, 1], "ɯ": [0, 2, 0], "ɤ": [2, 2, 0], "ʌ": [4, 2, 0], "ə": [3, 1, 0], "ɒ": [6, 2, 1] };
+  function vf(id) { var v = V[id]; return S.formants(v[0], v[1], v[2], "low"); }
+  function nearest(F1, F2) {
+    var best = null, bd = 1e9;
+    Object.keys(V).forEach(function (id) { var f = vf(id), d = Math.pow(Math.log(F1 / f[0]) * 1.4, 2) + Math.pow(Math.log(F2 / f[1]), 2); if (d < bd) { bd = d; best = id; } });
+    return best;
+  }
+  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#888"; }
+  function el(h) { var d = document.createElement("div"); d.innerHTML = h; return d.firstElementChild; }
+
+  // one lab = title, a row of controls, a canvas, an info line; st() gives the synth state to play and draw
+  function lab(id, title, controls, st, draw) {
+    var host = document.getElementById(id); if (!host) return;
+    host.innerHTML = "<h4>" + title + '</h4><div class="fm-row"><button type="button" class="btn btn-sm btn-outline-secondary" data-play>&#9654; Play</button>' + controls +
+      '</div><canvas height="200"></canvas><div class="fm-info"></div>';
+    var btn = host.querySelector("[data-play]"), cv = host.querySelector("canvas"), info = host.querySelector(".fm-info");
+    var L = { host: host, cv: cv, info: info, q: function (k) { return host.querySelector('[data-k="' + k + '"]'); },
+      stop: function () { btn.classList.remove("fm-on"); btn.innerHTML = "&#9654; Play"; },
+      update: function (glide) { var s = st(); if (owner === L) S.set(Object.assign({ glide: glide == null ? 0.05 : glide }, s)); (draw || spectrum)(L, s); } };
+    btn.addEventListener("click", function () {
+      if (owner === L) { S.stop(); owner = null; L.stop(); return; }
+      if (owner) owner.stop(); owner = L; btn.classList.add("fm-on"); btn.innerHTML = "&#9632; Stop";
+      S.set(Object.assign({ glide: 0 }, st())); S.start();
+    });
+    host.addEventListener("input", function () { L.update(); });
+    host.addEventListener("change", function () { L.update(); });
+    new ResizeObserver(function () { L.update(0); }).observe(cv);
+    return L;
+  }
+  function size(cv) { var r = window.devicePixelRatio || 1, w = cv.clientWidth || 600, h = cv.clientHeight || 200; cv.width = w * r; cv.height = h * r; var g = cv.getContext("2d"); g.setTransform(r, 0, 0, r, 0, 0); return { g: g, w: w, h: h }; }
+
+  // spectrum: harmonics (1/n source x filter) as lines, filter envelope as a curve, formant peaks labelled; dB scale, 50 dB range
+  function spectrum(L, s) {
+    var c = size(L.cv), g = c.g, w = c.w, h = c.h, pad = 18, top = 14, bot = h - pad;
+    var ink = css("--site-ink-2"), acc = css("--site-accent-dk"), soft = css("--site-border");
+    var X = function (f) { return 30 + (w - 40) * f / FMAX; };
+    var env = function (f) { return s.raw ? 0.6 : S.envelope(f, s); };
+    var norm = 0; for (var f = 50; f < FMAX; f += 10) norm = Math.max(norm, env(f));
+    var Yd = function (a) { var db = 20 * Math.log10(Math.max(a, 1e-6)); return top + (bot - top) * Math.min(1, -db / 50); };
+    g.clearRect(0, 0, w, h); g.font = "10px " + (css("--font-mono") || "monospace"); g.fillStyle = ink; g.strokeStyle = soft; g.lineWidth = 1;
+    for (var k = 0; k <= FMAX; k += 500) { g.beginPath(); g.moveTo(X(k), top); g.lineTo(X(k), bot); g.stroke(); if (k % 1000 === 0) g.fillText(k ? k / 1000 + " kHz" : "0", X(k) - 8, h - 4); }
+    // harmonics
+    var hm = 0; for (var n = 1; n * s.pitch < FMAX; n++) hm = Math.max(hm, env(n * s.pitch) / n);
+    g.strokeStyle = ink; g.lineWidth = 2;
+    for (n = 1; n * s.pitch < FMAX; n++) { var x = X(n * s.pitch); g.beginPath(); g.moveTo(x, bot); g.lineTo(x, Yd(env(n * s.pitch) / n / hm)); g.stroke(); }
+    if (s.raw) return;
+    // envelope
+    g.strokeStyle = acc; g.lineWidth = 2; g.beginPath();
+    for (f = 40; f < FMAX; f += 8) { var y = Yd(env(f) / norm); if (f === 40) g.moveTo(X(f), y); else g.lineTo(X(f), y); }
+    g.stroke();
+    var F = s.F || S.formants(s.h, s.c, s.r, s.voice); g.fillStyle = acc;
+    F.forEach(function (fk, i) { g.fillText("F" + (i + 1), X(fk) - 6, Math.max(top - 2, Yd(env(fk) / norm) - 5)); });
+    if (s.ring) g.fillText("ring", X(S.RING) - 8, Yd(env(S.RING) / norm) - 5);
+  }
+  function vowelSel(k, def, list) { return '<label>Vowel <select data-k="' + k + '">' + list.map(function (v) { return "<option" + (v === def ? " selected" : "") + ">" + v + "</option>"; }).join("") + "</select></label>"; }
+  function slider(k, lab, min, max, step, val) { return "<label>" + lab + ' <input type="range" data-k="' + k + '" min="' + min + '" max="' + max + '" step="' + step + '" value="' + val + '"> <output data-o="' + k + '"></output></label>'; }
+  var base = { vib: 0.0035, ring: 0, raw: false, voice: "low", h: 3, c: 1, r: 0 };
+  function out(L, k, t) { var o = L.host.querySelector('[data-o="' + k + '"]'); if (o) o.textContent = t; }
+
+  // 1. source and filter
+  var L1 = lab("fm-src", "Buzz, then vowel", '<label><input type="checkbox" data-k="raw" checked> Buzz only (no filter)</label>' + vowelSel("v", "a", ["i", "e", "a", "o", "u"]) + slider("p", "Pitch", 80, 400, 1, 130),
+    function () { var p = +L1.q("p").value; out(L1, "p", p + " Hz"); return Object.assign({}, base, { raw: L1.q("raw").checked, F: vf(L1.q("v").value), pitch: p }); });
+  // 2. F1 with F2 chosen; 3. F2 with F1 chosen
+  function oneLab(id, title, moving) {
+    var other = moving === "f1" ? "f2" : "f1";
+    var sel = moving === "f1"
+      ? '<label>F2 <select data-k="f2"><option value="2200">high (front)</option><option value="1300">middle (central)</option><option value="800">low (back)</option></select></label>'
+      : '<label>F1 <select data-k="f1"><option value="300">low (close)</option><option value="450">mid-low (close-mid)</option><option value="600">mid-high (open-mid)</option><option value="780">high (open)</option></select></label>';
+    var L = lab(id, title, (moving === "f1" ? slider("f1", "F1", 220, 900, 5, 300) : slider("f2", "F2", 650, 2500, 10, 2200)) + sel,
+      function () {
+        var f1 = +L.q("f1").value, f2 = +L.q("f2").value, n = nearest(f1, f2);
+        out(L, moving, L.q(moving).value + " Hz"); L.info.textContent = "F1 " + f1 + " Hz · F2 " + f2 + " Hz · nearest vowel [" + n + "]";
+        return Object.assign({}, base, { F: [f1, f2, 2300 + (f2 - 700) * 0.3, 3500], pitch: 130 });
+      });
+    return L;
+  }
+  oneLab("fm-f1", "Move F1", "f1");
+  oneLab("fm-f2", "Move F2", "f2");
+
+  // 4. the F1-F2 plane
+  var P = { f1: 400, f2: 1500 }, drag = false;
+  var L4 = lab("fm-plane", "Drag through the F1–F2 plane", slider("p", "Pitch", 80, 400, 1, 130) +
+    '<label><input type="checkbox" data-k="hold"> Hold</label>',
+    function () { var p = +L4.q("p").value; out(L4, "p", p + " Hz"); return Object.assign({}, base, { F: [P.f1, P.f2, 2300 + (P.f2 - 700) * 0.3, 3500], pitch: p }); },
+    function (L, s) {
+      var c = size(L.cv), g = c.g, w = c.w, h = c.h, ink = css("--site-ink"), ink2 = css("--site-ink-2"), acc = css("--site-accent-dk"), soft = css("--site-border");
+      var x = function (f2) { return 30 + (w - 50) * (2500 - f2) / 1850; }, y = function (f1) { return 16 + (h - 34) * (f1 - 220) / 680; };
+      g.clearRect(0, 0, w, h); g.font = "10px " + (css("--font-mono") || "monospace"); g.strokeStyle = soft; g.fillStyle = ink2;
+      [1000, 1500, 2000].forEach(function (f) { g.beginPath(); g.moveTo(x(f), 12); g.lineTo(x(f), h - 16); g.stroke(); g.fillText("F2 " + f, x(f) - 18, h - 4); });
+      [300, 500, 700].forEach(function (f) { g.beginPath(); g.moveTo(26, y(f)); g.lineTo(w - 16, y(f)); g.stroke(); g.fillText(f, 2, y(f) + 3); });
+      g.fillText("F1", 2, 10);
+      g.font = "16px serif"; g.textAlign = "center"; g.textBaseline = "middle";
+      Object.keys(V).forEach(function (id) { var f = vf(id); g.fillStyle = V[id][2] ? ink2 : ink; g.fillText(id, x(f[1]), y(f[0])); });
+      g.textAlign = "start"; g.textBaseline = "alphabetic";
+      g.fillStyle = acc; g.globalAlpha = 0.8; g.beginPath(); g.arc(x(P.f2), y(P.f1), 7, 0, 7); g.fill(); g.globalAlpha = 1;
+      L.info.textContent = "F1 " + Math.round(P.f1) + " Hz · F2 " + Math.round(P.f2) + " Hz · nearest [" + nearest(P.f1, P.f2) + "]   (grey: rounded vowels)";
+      L.inv = function (cx, cy) { P.f2 = Math.max(650, Math.min(2500, 2500 - (cx - 30) / (w - 50) * 1850)); P.f1 = Math.max(220, Math.min(900, 220 + (cy - 16) / (h - 34) * 680)); };
+    });
+  if (L4) {
+    L4.cv.height = 280; L4.cv.style.height = "280px";
+    var at = function (e) { var b = L4.cv.getBoundingClientRect(); L4.inv(e.clientX - b.left, e.clientY - b.top); };
+    L4.cv.addEventListener("pointerdown", function (e) {
+      e.preventDefault(); drag = true; L4.cv.setPointerCapture(e.pointerId); at(e);
+      if (owner !== L4) L4.host.querySelector("[data-play]").click(); L4.update(0.005);
+    });
+    L4.cv.addEventListener("pointermove", function (e) { if (drag) { at(e); L4.update(0.03); } });
+    var up = function () { if (!drag) return; drag = false; if (!L4.q("hold").checked && owner === L4) L4.host.querySelector("[data-play]").click(); };
+    L4.cv.addEventListener("pointerup", up); L4.cv.addEventListener("pointercancel", up);
+  }
+
+  // 5. F3
+  var L5 = lab("fm-f3", "Lower F3 on schwa", slider("f3", "F3", 1500, 3000, 10, 2500),
+    function () { var f3 = +L5.q("f3").value; out(L5, "f3", f3 + " Hz"); L5.info.textContent = f3 < 1850 ? "r-coloured: [ɚ], American 'er'" : "plain [ə]";
+      return Object.assign({}, base, { F: [500, 1450, f3, 3500], pitch: 130 }); });
+  // 6. singer's formant
+  var L6 = lab("fm-ring", "Singer's formant on and off", '<label><input type="checkbox" data-k="ring"> Singer\'s formant</label>' + vowelSel("v", "ɑ", ["i", "e", "a", "ɑ", "o", "u"]) + slider("p", "Pitch", 80, 400, 1, 147),
+    function () { var p = +L6.q("p").value; out(L6, "p", p + " Hz"); return Object.assign({}, base, { F: vf(L6.q("v").value), ring: L6.q("ring").checked ? 1 : 0, pitch: p, vib: 0.006 }); });
+  // 7. pitch vs formants
+  var L7 = lab("fm-pitch", "Raise the pitch", vowelSel("v", "i", ["i", "e", "a", "o", "u"]) + slider("p", "Pitch", 100, 1000, 1, 220) +
+    '<label><input type="checkbox" data-k="tune"> Tune F1 to the pitch</label>',
+    function () {
+      var p = +L7.q("p").value, F = vf(L7.q("v").value).map(function (f) { return f * 1.16; });
+      if (L7.q("tune").checked && F[0] < p * 1.1) F[0] = p * 1.1;
+      out(L7, "p", p + " Hz");
+      L7.info.textContent = "F1 " + Math.round(F[0]) + " Hz · pitch " + p + " Hz" + (F[0] < p ? " · F1 is below the fundamental: no harmonic can excite it" : "");
+      return Object.assign({}, base, { voice: "high", F: F, pitch: p });
+    });
+  window.FormantLesson = { labs: [L1, L4, L5, L6, L7] };
+})();
+</script>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

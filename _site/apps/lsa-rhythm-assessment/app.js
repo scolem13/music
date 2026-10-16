@@ -130,6 +130,7 @@ const levelbar = document.getElementById("levelbar");
 const threshEl = document.getElementById("thresh");
 
 let collecting = false;
+let bleedFloorLin = 0;      // mic RMS below this is our own clicks off the speakers (0 = no gating)
 let frames = [];           // {t, rms} captured during an attempt
 let liveLast = 0, liveCount = 0;
 
@@ -140,9 +141,20 @@ async function enableMic(){
   try {
     audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
     await audioCtx.resume();
-    micStream = await navigator.mediaDevices.getUserMedia({ audio: {
-      echoCancellation: false, noiseSuppression: false, autoGainControl: false
-    }});
+    // Pre-flight (speakers/headphones, latency, level); cancelling keeps the plain raw-mic setup.
+    let micConstraints = { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
+    if (window.AudioCheck){
+      const r = await AudioCheck.ensure();
+      if (r){
+        micConstraints = r.constraints || micConstraints;
+        // Measured round trip is only the default; a Calibrate run by the student overrides it.
+        if (calibratedLatencyMs === null && r.latencyMs != null) calibratedLatencyMs = r.latencyMs;
+        // Metronome accent peaks at gain 0.22; on speakers, quieter mic input is bleed, not the student.
+        const fl = AudioCheck.bleedFloorDb(r, 20*Math.log10(0.22));
+        bleedFloorLin = isFinite(fl) ? Math.pow(10, fl/20) : 0;
+      }
+    }
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: micConstraints });
     const src = audioCtx.createMediaStreamSource(micStream);
     analyser = audioCtx.createAnalyser();
     analyser.fftSize = 1024;
@@ -180,7 +192,7 @@ function loop(){
 
   if (collecting){
     frames.push({ t: now, rms });
-    if (now >= perfT0 && rms > thr && liveLast <= thr && (now - (loop._lastOnset||0)) > REFRACTORY_MS){
+    if (now >= perfT0 && rms > Math.max(thr, bleedFloorLin) && liveLast <= Math.max(thr, bleedFloorLin) && (now - (loop._lastOnset||0)) > REFRACTORY_MS){
       liveCount++; loop._lastOnset = now;
       document.getElementById("liveCount").textContent = "Attacks detected: " + liveCount;
     }
@@ -190,7 +202,8 @@ function loop(){
 }
 
 // ---------- onset detection (post-process captured RMS frames) ----------
-function detectOnsets(fr, thr){
+function detectOnsets(fr, thr, floor = 0){
+  thr = Math.max(thr, floor);
   const onsets = [];
   let last = -1e9, prev = 0;
   for (const f of fr){
@@ -273,7 +286,7 @@ function grade(){
   const tolMs = parseInt(document.getElementById("tol").value, 10);
   const N = target.onsets.length;
   const tgtSec = targetTimesSec();
-  const detSec = detectOnsets(frames, sensitivity())
+  const detSec = detectOnsets(frames, sensitivity(), bleedFloorLin)
     .map(ms => (ms - perfT0) / 1000)
     .filter(s => s > -tolMs/1000 - 0.05);
   const area = document.getElementById("resultArea");

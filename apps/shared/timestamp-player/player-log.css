@@ -1,0 +1,292 @@
+/* The player and its timestamp log, side by side. */
+/* The log's width is --btp-log-w, set by dragging the splitter between them.
+   --btp-top is the fixed navbar's height, measured by player-log.js. */
+.btp-layout {
+  --btp-log-w: 24rem;
+  --btp-top: 4rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 1rem var(--btp-log-w) 9.5rem;
+  gap: .5rem;
+  align-items: start;
+  margin-bottom: 3rem;
+}
+@media (max-width: 1200px) {
+  .btp-layout { grid-template-columns: minmax(0, 1fr) 1rem var(--btp-log-w); }
+}
+@media (max-width: 900px) {
+  .btp-layout { grid-template-columns: minmax(0, 1fr); }
+  .btp-splitter { display: none; }
+}
+
+/* The sidebar: every part of the page, a click jumps to it (and opens it). On a narrower screen it is a strip at the top. */
+.ts-nav { position: sticky; top: var(--btp-top); font-size: .85rem; }
+.ts-nav p { margin: 0 0 .5rem; font-size: .68rem; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #6c757d; }
+.ts-nav ul { list-style: none; margin: 0; padding: 0; border-left: 2px solid #dee2e6; }
+.ts-nav a { display: block; padding: .25rem .6rem; margin-left: -2px; border-left: 2px solid transparent; color: #6c757d; text-decoration: none; line-height: 1.25; }
+.ts-nav a:hover { color: inherit; }
+.ts-nav a.is-here { border-left-color: #0d6efd; color: #0d6efd; font-weight: 600; }
+.ts-nav a.is-shut { opacity: .55; }
+.ts-all { display: flex; gap: .3rem; margin-top: .6rem; }
+.ts-all button { flex: 1; padding: .2rem .3rem; font: inherit; font-size: .72rem; color: inherit; background: #fff; border: 1px solid #ced4da; border-radius: .25rem; cursor: pointer; }
+.ts-all button:hover { background: #e9ecef; }
+@media (max-width: 1200px) {
+  .ts-nav { grid-column: 1 / -1; grid-row: 1; position: static; padding: .3rem 0; border-bottom: 1px solid #dee2e6; display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
+  .ts-nav p { display: none; }
+  .ts-nav ul { display: flex; flex-wrap: wrap; border-left: 0; gap: .1rem .3rem; }
+  .ts-nav a { border-left: 0; border-bottom: 2px solid transparent; margin: 0; padding: .2rem .4rem; }
+  .ts-nav a.is-here { border-bottom-color: #0d6efd; }
+  .ts-all { margin: 0; }
+}
+
+/* Folding: a part with a .ts-fold-h header (not a <details>) hides its .ts-fold-body; a part jumped to flashes. */
+.ts-panel.is-shut > .ts-fold-body { display: none; }
+.ts-fold-h { cursor: pointer; user-select: none; }
+.ts-fold-h::before { content: "\25B8"; display: inline-block; margin-right: .4rem; color: #6c757d; font-size: .8em; transform: rotate(90deg); transition: transform .15s; }
+.ts-panel.is-shut .ts-fold-h::before { transform: none; }
+.ts-panel.is-lit { outline: 3px solid #0d6efd; outline-offset: 4px; border-radius: .4rem; }
+.btp-log.is-shut { max-height: none; }
+.btp-log-body { display: flex; flex-direction: column; gap: .75rem; flex: 1 1 auto; min-height: 0; }
+
+/* A thin grip: the line darkens on hover and while dragging. */
+.btp-splitter {
+  position: sticky;
+  top: var(--btp-top);
+  align-self: start;
+  height: calc(100vh - var(--btp-top) - 1rem);
+  cursor: col-resize;
+  touch-action: none;
+}
+.btp-splitter::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; left: 50%;
+  width: 2px;
+  margin-left: -1px;
+  background: #dee2e6;
+  border-radius: 1px;
+}
+.btp-splitter:hover::before,
+.btp-splitter:focus-visible::before,
+.btp-splitter.dragging::before { background: #0d6efd; width: 4px; margin-left: -2px; }
+.btp-splitter:focus { outline: none; }
+body.btp-resizing { cursor: col-resize; user-select: none; }
+/* An iframe under the pointer swallows the drag; keep it out of the way. */
+body.btp-resizing iframe, body.btp-resizing video { pointer-events: none; }
+
+/* The log stays in view while the page scrolls, and its rows scroll within
+   it, so the header and buttons never leave the screen. */
+/* The right column: Now playing (when pinned) above the timestamps, together staying in view. */
+.btp-side {
+  position: sticky;
+  top: var(--btp-top);
+  max-height: calc(100vh - var(--btp-top) - 1rem);
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+.btp-log {
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  padding: 1rem;
+  border: 1px solid #dee2e6;
+  border-radius: .4rem;
+}
+.btp-log h2 {
+  margin: 0;
+  font-size: .8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: #6c757d;
+  border: 0;
+}
+.btp-log-note,
+.btp-log-empty {
+  margin: 0;
+  font-size: .8rem;
+  line-height: 1.4;
+  color: #6c757d;
+}
+.btp-log kbd {
+  padding: .05em .35em;
+  font-family: var(--bs-font-monospace, monospace);
+  font-size: .85em;
+  color: #495057;
+  background: #f1f3f5;
+  border: 1px solid #dee2e6;
+  border-radius: .2rem;
+}
+.btp-autonote-label {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  font-size: .8rem;
+  color: #495057;
+}
+
+/* One stamp per row: the time, then the note beside it. */
+.btp-log-rows {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .3rem;
+  flex: 1 1 auto;
+  min-height: 4rem;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+.btp-log-rows li {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr) max-content;
+  gap: .5rem;
+  align-items: center;
+}
+.btp-stamp {
+  padding: .1rem .3rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: .9rem;
+  color: #0d6efd;
+  background: none;
+  border: 0;
+  border-radius: .2rem;
+  cursor: pointer;
+}
+.btp-stamp:hover { background: rgba(13, 110, 253, .1); text-decoration: underline; }
+
+.btp-note {
+  width: 100%;
+  min-width: 0;
+  padding: .25rem .4rem;
+  font: inherit;
+  font-size: .85rem;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #dee2e6;
+  border-radius: .2rem;
+}
+.btp-note:focus {
+  outline: 2px solid #0d6efd;
+  outline-offset: -1px;
+  border-color: #0d6efd;
+}
+
+.btp-log-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  padding-top: .5rem;
+  border-top: 1px solid #dee2e6;
+}
+.btp-log-buttons button,
+.btp-log-buttons label.btp-import {
+  flex: 1 1 8rem;
+  padding: .35rem .6rem;
+  font: inherit;
+  font-size: .8rem;
+  color: inherit;
+  background: #fff;
+  border: 1px solid #ced4da;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+.btp-log-buttons label.btp-import:hover,
+.btp-log-buttons button:hover:not([disabled]) { background: #e9ecef; }
+.btp-log-buttons .btp-clear.armed {
+  color: #b4531f;
+  border-color: #b4531f;
+  background: rgba(180, 83, 31, .08);
+}
+.btp-log-buttons button[disabled] {
+  color: #adb5bd;
+  background: #f8f9fa;
+  cursor: default;
+}
+
+/* Import: a file picker dressed as a button, and a box to paste into. */
+.btp-log-buttons label.btp-import { text-align: center; margin: 0; }
+.btp-import input[type=file] { display: none; }
+.btp-paste { display: flex; flex-direction: column; gap: .4rem; }
+.btp-paste[hidden] { display: none; }
+.btp-paste textarea {
+  width: 100%;
+  padding: .35rem .45rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .8rem;
+  color: inherit;
+  border: 1px solid #dee2e6;
+  border-radius: .2rem;
+  resize: vertical;
+}
+.btp-paste .btp-log-buttons { border-top: 0; padding-top: 0; }
+
+/* Deleting one stamp: a quiet cross that reddens under the pointer. */
+.btp-del {
+  padding: 0 .35rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #adb5bd;
+  background: none;
+  border: 0;
+  border-radius: .2rem;
+  cursor: pointer;
+}
+.btp-del:hover, .btp-del:focus-visible { color: #b4531f; background: rgba(180, 83, 31, .08); }
+
+/* A time being typed (Shift+click on it). */
+.btp-time-edit {
+  width: 5.5rem;
+  padding: .1rem .3rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: .9rem;
+  color: #0d6efd;
+  border: 1px solid #0d6efd;
+  border-radius: .2rem;
+  background: transparent;
+}
+
+/* Section stamps (S): a label from the menu (or typed, under Other), its number when the label comes again, and the
+   choruses a head or a solo takes. */
+.btp-log-rows li.is-sec { background: #eef4ff; border-radius: .3rem; }
+.btp-sec-label { display: inline-flex; align-items: center; gap: .2rem; flex: 1 1 auto; min-width: 0; }
+.btp-sec-pick { flex: 1 1 auto; min-width: 0; font: inherit; font-weight: 600; padding: .1rem .2rem; border: 1px solid #9ec5fe; border-radius: .25rem; background: #fff; }
+.btp-sec-other { font-weight: 600; }
+.btp-sec-back { font: inherit; padding: 0 .35rem; border: 1px solid #ced4da; border-radius: .25rem; background: #fff; cursor: pointer; }
+.btp-sec-num { font-weight: 700; color: #0d6efd; padding: 0 .2rem; }
+.btp-sec-info { font-size: .75rem; color: #6c757d; white-space: nowrap; }
+.btp-chorus-count { font-size: .85rem; }
+.btp-form-bars { width: 4rem; }
+.btp-choruses ul { list-style: none; margin: .3rem 0 0; padding: 0; }
+.btp-choruses li span { color: #6c757d; font-size: .8em; }
+
+/* The MIDI keyboard, at the top of the sidebar where it can't be missed */
+.ts-midi { margin-bottom: 1rem; padding: .5rem; border: 2px solid #0d6efd; border-radius: .4rem; background: #f3f7ff; }
+.ts-midi p { margin-bottom: .3rem; }
+.ts-midi .btp-midi { display: block; width: 100%; font: inherit; font-weight: 600; padding: .35rem .3rem; border: 1px solid #0d6efd; border-radius: .3rem; background: #fff; color: #0d6efd; cursor: pointer; }
+.ts-midi .btp-midi.on { background: #0d6efd; color: #fff; }
+.ts-midi-state { display: block; margin-top: .25rem; font-size: .72rem; color: #6c757d; text-align: center; }
+@media (max-width: 1200px) { .ts-midi { margin: 0; display: flex; align-items: center; gap: .4rem; } .ts-midi p { display: none; } .ts-midi .btp-midi { width: auto; } }
+.btp-log-rows li.is-sec { grid-template-columns: max-content minmax(0, 1fr) max-content max-content max-content; }
+
+/* a time and its pencil (time-edit.js), everywhere on the page */
+.btp-time { display: inline-flex; align-items: center; gap: .1rem; white-space: nowrap; }
+.btp-pencil { padding: 0 .2rem; font-size: .8rem; line-height: 1; color: #6c757d; background: none; border: 0; border-radius: .2rem; cursor: pointer; opacity: .55; }
+.btp-pencil:hover, .btp-pencil:focus-visible { opacity: 1; color: #0d6efd; background: #e7f1ff; }
+
+/* the playhead, at the foot of the sidebar */
+.ts-clock { margin-top: 1rem; padding: .45rem .5rem; border-top: 1px solid #dee2e6; display: flex; flex-direction: column; gap: .1rem; }
+.ts-clock-t { font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums; font-size: 1.15rem; font-weight: 600; color: #212529; }
+.ts-clock-b { font-size: .75rem; color: #6c757d; line-height: 1.25; }
+@media (max-width: 1200px) { .ts-clock { margin: 0 0 0 auto; border-top: 0; padding: 0 .3rem; flex-direction: row; align-items: baseline; gap: .5rem; } .ts-clock-t { font-size: .95rem; } }
+
+/* the line the playhead is in -- a section, a chorus, a bar, a phrase -- wherever it is listed (bar-map.js marks it) */
+.is-now { background: rgba(13, 110, 253, .07); box-shadow: inset 3px 0 0 #0d6efd; border-radius: .2rem; }
+tr.is-now > td { background: rgba(13, 110, 253, .07); }
+tr.is-now > td:first-child { box-shadow: inset 3px 0 0 #0d6efd; }
+.btp-log-rows li.is-sec.is-now { background: #dbe8ff; }

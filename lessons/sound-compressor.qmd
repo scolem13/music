@@ -1,5 +1,5 @@
 ---
-title: "Sound 10: The Compressor"
+title: "Sound 13: The Compressor"
 toc: true
 toc-depth: 2
 ---
@@ -55,6 +55,6 @@ limiter so that nothing comes out too loud.
 
 ## Next
 
-- [Sound 11: Reverb](sound-reverb.qmd)
+- [Sound 14: Sidechain](sound-sidechain.qmd)
 
 {{< include _synth-kit.qmd >}}

@@ -1,0 +1,293 @@
+---
+title: "Timestamp Notes"
+aliases:
+  - timestamp-player.html
+toc: false
+page-layout: full
+---
+
+::: {.column-screen}
+```{=html}
+<div class="ts-root">
+<link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=1">
+<link rel="stylesheet" href="/apps/shared/timestamp-player/player-log.css?v=9">
+<link rel="stylesheet" href="/apps/shared/timestamp-player/bar-map.css?v=10">
+<link rel="stylesheet" href="/apps/shared/timestamp-player/words.css?v=11">
+<style>
+/* player.css is tuned for a reveal.js slide, where everything scales with the
+   deck. This is an ordinary page, so the component is given a base size of its
+   own -- and the clock the size the thing is named for. */
+.btp { font-size: 1.25rem; margin: 1.5rem 0 1.5rem; }
+.btp .btp-clock { font-size: clamp(3rem, 11vw, 7rem); }
+.btp .btp-stage,
+.btp .btp-drop,
+.btp .btp-bar { max-width: 900px; }
+.btp-howto { margin: .25rem 0 0; font-size: .95rem; color: #6c757d; }
+/* the whole width, as the Backing Track has it */
+.ts-root { max-width: 1500px; margin: 0 auto; padding: 0 1rem; }
+</style>
+
+<ol class="btp-steps">
+  <li><b>Audio</b>: a YouTube link or a file.</li>
+  <li><b>Words and chords</b>: paste them from Ultimate Guitar and Convert.</li>
+  <li><b>Sections, bars, chords</b>: <kbd>S</kbd> as each section starts, <kbd>B</kbd> on every downbeat, <kbd>N</kbd> on every chord change
+      &mdash; or all three at once from a MIDI keyboard.</li>
+  <li><b>Send on</b>: to the Notation page for the melody, or the Backing Track for a style.</li>
+</ol>
+
+<p class="btp-howto">New here? <a href="/lessons/timestamp-player.html">How to map a recording</a>, step by step, including what to do when YouTube won't play a video.</p>
+
+<div class="btp-layout">
+
+<div class="btp-main">
+
+<details class="btp-fold ts-panel" id="ts-player" data-nav="Player" open>
+<summary><h2>Player</h2></summary>
+<div class="btp">
+  <div class="btp-clock idle">00:00</div>
+  <div class="btp-stage" hidden></div>
+  <div class="btp-drop">Drop a video or audio file here</div>
+  <div class="btp-bar">
+    <input class="btp-url" type="text" placeholder="Paste a YouTube link…" spellcheck="false">
+    <button class="btp-load">Load</button>
+    <button class="btp-follow-btn" type="button" title="Play it in YouTube's own tab and keep the clock here">Follow in a tab</button>
+    <label class="btp-filebtn">Choose file<input class="btp-file" type="file" accept="video/*,audio/*"></label>
+  </div>
+  <div class="btp-err"></div>
+</div>
+</details>
+
+<section class="btp-live" aria-label="Now playing">
+  <details class="btp-fold ts-panel" id="ts-grid" data-nav="Chord grid" open>
+    <summary><h2>Chord grid</h2></summary>
+    <div class="panel-tabset btp-grid-tabset"><ul class="nav nav-tabs btp-grid-tabs" role="tablist"></ul></div>
+    <div class="btp-grid-now"></div>
+    <div class="btp-grid-next tune-chart" hidden><b></b><div class="btp-grid-next-bars"></div></div>
+    <div class="btp-grid-row">
+      <p class="btp-grid-note"></p>
+      <button class="btp-correct" type="button" aria-pressed="false" title="While it plays, each bar you play chords in (right hand) is rewritten with what you play there; a bar you play through without a note keeps what it had. A pause ends the pass.">Correct chords</button>
+      <button class="btp-grid-copy" type="button" title="Every timed section as ChordPro {start_of_grid} blocks">Copy as ChordPro grid</button>
+      <button class="btp-confirm" type="button" hidden>Timing is right</button>
+    </div>
+  </details>
+  <details class="btp-fold btp-live-set ts-panel" id="ts-midi" data-nav="Chord timing and MIDI">
+    <summary><h2>Chord timing and MIDI</h2></summary>
+    <p class="btp-log-note"><kbd>N</kbd> as each chord starts (<kbd>Shift</kbd>+<kbd>N</kbd> takes the last one back): which chord
+       it is comes from the words, so only the timing matters. Or all at once from a MIDI keyboard: the <b>left hand</b> plays
+       one note on every barline and two notes together where a section starts; the <b>right hand</b> plays the chords.
+       Only when notes start counts, and the left hand's pitches don't matter.</p>
+    <div class="btp-live-row">
+      <span class="btp-log-note">The MIDI keyboard connects in the sidebar on the right.</span>
+      <label>Split <input class="btp-split" type="number" min="21" max="108" value="60"> <span class="btp-split-name">C4</span></label>
+      <label title="Times are moved back by this much, for hearing the recording late">Latency <input class="btp-latency" type="number" min="0" max="500" step="5" value="0"> ms</label>
+      <label>Round to <select class="btp-grid"><option value="beat">the beat</option><option value="half">the half beat</option></select></label>
+      <button class="btp-live-clear" type="button" title="Forget the chord timing of the section under the playhead, to play it again">Clear this section's timing</button>
+      <button class="btp-correct" type="button" aria-pressed="false" title="While it plays, each bar you play chords in (right hand) is rewritten with what you play there; a bar you play through without a note keeps what it had. A pause ends the pass.">Correct chords</button>
+    </div>
+    <p class="btp-live-status" aria-live="polite"></p>
+  </details>
+</section>
+
+<section class="btp-words">
+  <details class="btp-fold ts-panel" id="ts-words" data-nav="Words and chords" open>
+    <summary><h2>Words and chords</h2></summary>
+    <p class="btp-log-note">Paste a song from Ultimate Guitar (chords on the line above the words, <code>[Verse 1]</code> headings)
+       and Convert: the chords go into the words as ChordPro, and the headings become the sections to stamp.</p>
+    <label class="btp-title-label"><span>Title</span><input class="btp-title" type="text" spellcheck="false" placeholder="Names the downloads too"></label>
+    <div class="btp-word-now" aria-live="polite" hidden></div>
+    <div class="btp-word-view" role="group" aria-label="Show">
+      <button type="button" data-view="ug">Ultimate Guitar</button><button type="button" data-view="cho">ChordPro</button><button type="button" data-view="both">Both</button>
+    </div>
+    <div class="btp-word-cols">
+      <textarea class="btp-ug" rows="12" spellcheck="false" aria-label="Ultimate Guitar text"
+        placeholder="[Verse 1]&#10;G              D&#10;Here comes the sun"></textarea>
+      <textarea class="btp-cho" rows="12" spellcheck="false" aria-label="ChordPro"
+        placeholder="The ChordPro appears here; change it as you like."></textarea>
+    </div>
+    <div class="btp-log-buttons">
+      <button class="btp-convert" type="button">Convert</button>
+      <button class="btp-from-stamps" type="button" title="The section stamps' labels become the ChordPro's sections (no chords or words needed)">Sections from stamps</button>
+    </div>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-wordsecs" data-nav="Sections from the words" open>
+    <summary><h2>Sections from the words</h2></summary>
+    <p class="btp-log-note">While it plays, press <kbd>S</kbd> as each section starts: it stamps the next one on this list.</p>
+    <ol class="btp-word-secs btp-sec-rows"></ol>
+    <div class="btp-log-buttons">
+      <button class="btp-stamp-next" type="button">Stamp the next section</button>
+    </div>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-send" data-nav="Send on" open>
+    <summary><h2>Send on</h2></summary>
+    <p class="btp-log-note">With the bars tapped, each section's chords are spread over its bars, at the tapped tempo.</p>
+    <div class="btp-log-buttons">
+      <button class="btp-send-notation" type="button">Notation page (melody)</button>
+      <button class="btp-send-band" type="button">Backing Track (style)</button>
+    </div>
+    <p class="btp-send-note" aria-live="polite"></p>
+  </details>
+</section>
+
+<div class="btp-barmap">
+  <div class="btp-bars-now" aria-live="off"></div>
+
+  <details class="btp-fold ts-panel" id="ts-barmap" data-nav="Bar map" open>
+    <summary><h2>Bar map</h2></summary>
+    <p class="btp-log-note">While it plays, press <kbd>B</kbd> on the first beat of every bar.
+       <kbd>Backspace</kbd> takes back the last tap; tapping a bar again replaces it. A missed tap shows as a long bar:
+       <b>Fill gaps</b> puts it in. Tapped in 4 but it's really in 2 (or the other way)? <b>Halve</b> or <b>Double</b> the bars. A bar in another meter (a 2/4 bar, a 3/4 bridge): set its <b>Beats</b> in the Bars table.</p>
+    <div class="btp-log-buttons">
+      <button class="btp-bars-tap" type="button">Tap a bar</button>
+      <label class="btp-beats-label">Beats a bar <input class="btp-beats" type="number" min="1" max="32" value="4"></label>
+      <button class="btp-bars-fill" type="button" title="Put in the bars missed between taps">Fill gaps</button>
+      <button class="btp-bars-extrapolate" type="button" title="Tap a stretch (the head), stamp where each section starts (S): the rest of the bars from the tempo, each section a whole number of choruses when it is close">Fill from the tempo</button>
+      <button class="btp-bars-guess-clear" type="button" title="Take out the bars put in from the tempo (your taps stay)">Clear guesses</button>
+      <button class="btp-bars-clear" type="button">Clear bars</button>
+    </div>
+    <p class="btp-log-note btp-guess-note" aria-live="polite"></p>
+    <div class="btp-log-buttons">
+      <button class="btp-bars-halve" type="button" title="Split every bar in two: tapped in 4, meant in 2">Halve bars</button>
+      <button class="btp-bars-double" type="button" title="Join the bars in pairs: tapped in 2, meant in 4">Double bars</button>
+      <button class="btp-bars-undo" type="button" hidden>Undo</button>
+    </div>
+    <p class="btp-bars-warn" hidden></p>
+    <p class="btp-bars-summary"></p>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-sections" data-nav="Sections (stamped)" open>
+    <summary><h2>Sections</h2></summary>
+    <p class="btp-log-note">Each section stamp (<kbd>S</kbd>) starts its section on the tapped bar nearest it. Open a section for its
+       choruses (a head or a solo), and a chorus for its bars. <b>&#9998;</b> beside any time corrects it: type the time and press
+       Return, or press a letter (or a key on the MIDI keyboard) as the playhead reaches it; <kbd>Space</kbd> plays meanwhile,
+       <kbd>&uarr;</kbd> <kbd>&darr;</kbd> nudge. <kbd>Shift</kbd>+<kbd>L</kbd> loops the section under the playhead.</p>
+    <ol class="btp-sec-rows"></ol>
+    <p class="btp-log-empty btp-sec-empty">No sections yet: stamp one with <kbd>S</kbd>.</p>
+  </details>
+
+  <details class="btp-fold ts-panel btp-phrases" id="ts-phrases" data-nav="Phrases" open>
+    <summary><h2>Phrases</h2></summary>
+    <p class="btp-log-note">Transcribe a phrase at a time. Each section is cut into phrases; a phrase loops from its <b>lead-in</b>
+       (the pickup: how many beats before its first downbeat the melody starts, up to two bars) to the next downbeat.
+       <kbd>P</kbd> loops the phrase under the playhead, <kbd>,</kbd> <kbd>.</kbd> the one before or after,
+       <kbd>-</kbd> <kbd>=</kbd> shorten or lengthen its lead-in, <kbd>T</kbd> (or <b>Notate</b>) goes to it on the Notation page,
+       whose <b>Back to the recording</b> loops the next one here. Slow it down with the player's speed.</p>
+    <div class="btp-log-buttons">
+      <label class="btp-beats-label">Bars a phrase <select class="btp-ph-size"><option>2</option><option selected>4</option><option>8</option></select></label>
+    </div>
+    <ol class="btp-ph-rows"></ol>
+    <p class="btp-log-empty btp-ph-empty">No phrases yet: tap the bars and stamp the sections.</p>
+    <p class="btp-ph-note btp-send-note" aria-live="polite"></p>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-bars" data-nav="Bars">
+    <summary><h2>Bars</h2></summary>
+    <p class="btp-log-note">The chords of each confirmed section, a cell a beat (<code>.</code> holds the chord on): the same as the
+       grids written into the ChordPro at each pause, where they can be changed by hand.</p>
+    <div class="btp-log-buttons"><button class="btp-bars-grid-copy" type="button">Copy the chord grid (ChordPro)</button></div>
+    <table class="btp-bar-table">
+      <thead><tr><th aria-label="Delete"></th><th>Bar</th><th>Starts</th><th>Length</th><th>BPM</th><th>Beats</th><th>Chords</th></tr></thead>
+      <tbody class="btp-bar-rows"></tbody>
+    </table>
+  </details>
+</div>
+
+</div>
+
+<div class="btp-splitter" role="separator" aria-orientation="vertical"
+     aria-label="Resize the notes column" tabindex="0"
+     title="Drag to resize · double-click to reset"></div>
+
+<div class="btp-side">
+  <div class="btp-live-stage ts-panel" id="ts-now" data-nav="Now playing">
+    <div class="btp-live-head ts-fold-h" title="Click to fold or open">
+      <span class="btp-live-drag" title="Drag to move it (when floating)" aria-hidden="true">&#10303;</span>
+      <span class="btp-live-sec"></span>
+      <select class="btp-live-pick" aria-label="Go to a section" title="Go to a section"></select>
+      <span class="btp-live-next"></span>
+      <span class="btp-live-tools">
+        <button type="button" class="btp-live-smaller" title="Smaller words" aria-label="Smaller words">A&minus;</button>
+        <button type="button" class="btp-live-bigger" title="Bigger words" aria-label="Bigger words">A+</button>
+        <button type="button" class="btp-live-mode" title="Float it over the page, to drag anywhere">Float</button>
+      </span>
+    </div>
+    <div class="ts-fold-body">
+      <div class="btp-live-words"></div>
+      <div class="btp-live-grip" role="separator" aria-orientation="horizontal" aria-label="Drag to make the words taller or shorter"
+           tabindex="0" title="Drag to show more or less · double-click to reset"></div>
+    </div>
+  </div>
+<section class="btp-log ts-panel" id="ts-log" data-nav="Timestamps">
+  <h2 class="ts-fold-h" title="Click to fold or open">Timestamps</h2>
+  <div class="ts-fold-body btp-log-body">
+  <p class="btp-log-note"><kbd>S</kbd> stamps a section: choose its label (Head, Verse, Sax solo, A, A&prime;, B &hellip; or Other to type one); a label that comes again is numbered everywhere (Head 1, Head 2). <kbd>C</kbd> stamps a note. Click a time to jump to it, &times; to delete it.
+     Shift+click to type a new one. <kbd>Space</kbd> or <kbd>Return</kbd> plays and pauses; <kbd>&larr;</kbd> <kbd>&rarr;</kbd> or <kbd>h</kbd> <kbd>l</kbd>
+     go 5 seconds back or on. Leave a note with <kbd>Esc</kbd> or <kbd>jk</kbd>.</p>
+  <label class="btp-autonote-label">
+    <input class="btp-autonote" type="checkbox" checked>
+    Jump to the note field after a stamp
+  </label>
+  <ol class="btp-log-rows"></ol>
+  <p class="btp-log-empty">Nothing stamped yet.</p>
+  <div class="btp-chorus-count">
+    <b>Choruses</b> <label title="The bars of one chorus (the form). Left empty, it is the first Head's bars.">a chorus is
+      <input class="btp-form-bars" type="number" min="1" max="256" placeholder="?"> bars</label>
+    <div class="btp-choruses"></div>
+  </div>
+  <div class="btp-log-buttons">
+    <button class="btp-stamp-now" type="button">Stamp now</button>
+    <button class="btp-sort" type="button">Sort by time</button>
+    <button class="btp-copy-all" type="button">Copy all</button>
+    <button class="btp-clear" type="button" title="Everything for this song: stamps, bars, words and chords, chord timing, phrases. Save the song file first to keep it.">Clear all data</button>
+    <button class="btp-download" type="button" title="Everything on the page: stamps, bars, words, chords, chord timing and the link">Save song file</button>
+    <label class="btp-import" title="A song file, or an older timestamps .txt or bar-map .json">Open file<input class="btp-import-file" type="file" accept=".json,.txt,application/json,text/plain"></label>
+    <button class="btp-paste-open" type="button">Paste…</button>
+  </div>
+  <div class="btp-paste" hidden>
+    <textarea rows="6" spellcheck="false"
+      placeholder="01:23&#9;Chorus starts&#10;02:05&#9;Key change"></textarea>
+    <div class="btp-log-buttons">
+      <button class="btp-paste-go" type="button">Import</button>
+      <button class="btp-paste-cancel" type="button">Cancel</button>
+    </div>
+  </div>
+  </div>
+</section>
+</div>
+
+<nav class="ts-nav" aria-label="Sections on this page">
+  <div class="ts-midi">
+    <p>MIDI keyboard</p>
+    <button class="btp-midi" type="button" title="Left hand: a note on every barline, two at a section; right hand: the chords">Connect MIDI keyboard</button>
+    <span class="ts-midi-state">Not connected</span>
+  </div>
+  <p>On this page</p>
+  <ul></ul>
+  <div class="ts-all"><button type="button" data-all="open">Open all</button><button type="button" data-all="fold">Fold all</button></div>
+  <div class="ts-clock" aria-live="off" title="Where the playhead is">
+    <span class="ts-clock-t">00:00.0</span>
+    <span class="ts-clock-b">No bars tapped</span>
+  </div>
+</nav>
+
+</div>
+
+<script src="/apps/shared/timestamp-player/player.js?v=6"></script>
+<script src="/apps/shared/timestamp-player/time-edit.js?v=1"></script>
+<script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
+<script src="/apps/shared/timestamp-player/player-log.js?v=15"></script>
+<script src="/apps/shared/timestamp-player/bar-map.js?v=16"></script>
+<script src="/apps/shared/abc-core.js?v=3"></script>
+<script src="/apps/shared/abc-events.js?v=3"></script>
+<script src="/apps/shared/notation-doc.js?v=8"></script>
+<script src="/apps/shared/ug-chordpro.js?v=4"></script>
+<script src="/apps/shared/timestamp-player/words.js?v=18"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
+<script src="/apps/shared/chord-entry.js?v=10"></script>
+<script src="/apps/shared/timestamp-player/live.js?v=19"></script>
+<script src="/apps/shared/timestamp-player/phrases.js?v=2"></script>
+<script src="/apps/shared/timestamp-player/page-nav.js?v=2"></script>
+</div>
+```
+:::

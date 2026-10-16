@@ -1,0 +1,68 @@
+---
+title: "Gear 2: Cables and Connectors"
+toc: true
+toc-depth: 2
+---
+
+Most "the sound isn't working" moments are cables: the wrong one, the wrong socket, or one that's broken. Learn the
+connectors, the two kinds of signal level, and how to coil a cable so it lasts.
+
+## The connectors
+
+- **1/4" (6.35 mm) jack**, two kinds that look almost the same:
+  - **TS** (tip, sleeve: one black ring): **unbalanced**. Guitar and instrument cables. Also speaker cables for
+    some amps, which are a different, thicker cable: **never** use a guitar cable between an amp head and a cabinet.
+  - **TRS** (tip, ring, sleeve: two rings): **balanced** mono (keyboards to a mixer, studio monitors) or **stereo**
+    (headphones, insert cables).
+- **XLR**: three pins, locks in place. Microphones, balanced line outputs, DI to mixer. Male end points toward the
+  mixer (the signal flows out of the pins).
+- **3.5 mm mini jack**: phones, laptops, small headphones.
+- **RCA (phono)**: home audio, DJ gear, older keyboards.
+- **speakON**: locking speaker connector for PA speakers and amp cabs; can't be confused with a signal cable.
+- **MIDI** (5-pin DIN) and **USB** (A, B, C, Micro): control data, not audio (except USB audio interfaces).
+- **IEC / kettle lead**: the detachable power cable on most gear.
+
+## Balanced and unbalanced
+
+An **unbalanced** cable has a signal wire and a shield. It picks up hum and noise, and longer than about 5–6 m
+(guitar cables) it also loses treble.
+
+A **balanced** cable carries the signal twice, once upside down. Any noise picked up along the way is the same on
+both, and the input flips one and adds them, so the noise cancels. Balanced lines can run 50 m or more.
+
+Both ends must be balanced to get the benefit: TRS to TRS, XLR to XLR, or TRS to XLR.
+
+## Levels: mic, instrument, line, speaker
+
+| Level | Example | Goes into |
+|---|---|---|
+| **Mic** | microphones (very quiet) | mic input (XLR), with preamp gain |
+| **Instrument (Hi-Z)** | electric guitar, bass pickups | instrument input, "Hi-Z" or "Inst" switch, or a **DI** |
+| **Line** | keyboards, phones, mixers, interfaces | line input |
+| **Speaker** | amplifier output to a passive speaker | only a speaker. Never into anything else |
+
+A **DI box** turns an instrument or line signal into a balanced mic-level signal for a long run to the mixer. Use
+one for bass, acoustic guitar with a pickup, and keyboards on stage.
+
+## Signal flow
+
+Follow the signal from the source to your ears: **instrument → cable → (pedals) → amp or DI → mixer → amplifier →
+speakers**. When there's no sound, check each step in order: is it on, is the volume up, is the cable in the right
+socket, does a different cable fix it, is the channel muted. Most problems are found in the first three.
+
+## Coil it right: over-under
+
+Wrapping a cable round your elbow twists it; twisted cables kink and break inside. Use **over-under**: one loop
+coiled normally, the next with a twist the other way. The cable lies flat, and thrown out it uncoils with no knots.
+Close it with a velcro tie.
+
+## Care and spares
+
+- Pull by the **plug**, never the cable.
+- Don't walk on, roll over, or bend cables sharply at the plug.
+- Mark broken cables (tape: "BAD") and take them out of the box; don't coil them back in.
+- Gig bag spares: two instrument cables, two XLRs, a patch cable, a 3.5 mm-to-two-1/4" lead, a DI, and spare batteries.
+
+## Next
+
+- [Gear 3: Amps, Speakers and the PA](gear-amps.qmd)

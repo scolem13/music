@@ -1,6 +1,6 @@
 // ipa-chart.js — builds the interactive IPA chart on tools/ipa-chart.qmd from ipa-data.js (window.IPA_DATA).
 // Containers it fills: #ipa-filter, #ipa-vowels, #ipa-consonants, #ipa-affricates, #ipa-modified, #ipa-series, #ipa-marks.
-// Text only: no audio is played or synthesised.
+// Audio: Commons recordings (ipa-audio.js) per symbol, and the vowel synthesiser (ipa-synth.js): drag across the vowel chart.
 (function () {
   var D = window.IPA_DATA, LANGS = D.LANGS, BY = {};
   D.SYMBOLS.forEach(function (s) { BY[s.id] = s; });
@@ -87,11 +87,74 @@
       var y = Y(s.y); b.style.left = X(s.c, y) + "%"; b.style.setProperty("--dx", ((1 - s.c) * 1.05).toFixed(2) + "rem"); b.style.top = y + "%"; plot.appendChild(b);
     });
     wrap.appendChild(plot);
+    var synthUI = window.IpaSynth ? vowelSynth(plot, front, back, X, Y) : null;
     var legend = document.createElement("p"); legend.className = "ipa-vleg";
     legend.textContent = "Where symbols come in pairs, the one on the left is unrounded and the one on the right is rounded. Dashed outline: no reference word in these languages.";
-    var left = document.createElement("div"); left.appendChild(wrap); left.appendChild(legend);
+    var left = document.createElement("div"); left.appendChild(wrap); if (synthUI) left.appendChild(synthUI); left.appendChild(legend);
     var two = document.createElement("div"); two.className = "ipa-two"; two.appendChild(left); two.appendChild(panel);
     host.appendChild(two);
+  }
+
+  // Drag on the trapezoid (off the symbols) to sing through it with IpaSynth; Hold keeps it sounding, and then a symbol
+  // click glides there. Arrow keys move the point when the chart has focus, Space starts and stops.
+  function vowelSynth(plot, front, back, X, Y) {
+    var S = window.IpaSynth, pos = { h: 3, c: 1 }, drag = false;
+    var dot = document.createElement("div"); dot.className = "ipa-vdot"; dot.hidden = true; plot.appendChild(dot);
+    plot.tabIndex = 0; plot.setAttribute("aria-label", "Vowel space: drag, or arrow keys and Space, to hear a synthesised vowel");
+    var bar = document.createElement("div"); bar.className = "ipa-synth";
+    bar.innerHTML = '<label><input type="checkbox" data-k="hold"> Hold</label>' +
+      '<label>Rounding <input type="range" data-k="r" min="0" max="1" step="0.01" value="0"></label>' +
+      '<label>Voice <select data-k="voice"><option value="low">Low</option><option value="high">High</option></select></label>' +
+      '<label>Pitch <input type="range" data-k="pitch" min="80" max="520" step="1" value="130"> <span data-o="pitch">130 Hz</span></label>' +
+      '<label>Vibrato <input type="range" data-k="vib" min="0" max="0.02" step="0.0005" value="0.0035"></label>' +
+      '<div class="ipa-vread" data-o="read">Drag across the chart to hear a synthesised vowel.</div>';
+    var q = function (k) { return bar.querySelector('[data-k="' + k + '"]'); }, out = function (k) { return bar.querySelector('[data-o="' + k + '"]'); };
+    var vowels = D.SYMBOLS.filter(function (s) { return s.cat === "v"; });
+    function nearest() {
+      var r = +q("r").value, best = null, bd = 1e9;
+      vowels.forEach(function (s) { var d = Math.pow((s.y - pos.h) / 6, 2) + Math.pow((s.c - pos.c) / 2, 2) + Math.pow((s.r - r) * 0.4, 2); if (d < bd) { bd = d; best = s; } });
+      return best;
+    }
+    function show() {
+      var y = Y(pos.h); dot.style.left = X(pos.c, y) + "%"; dot.style.top = y + "%"; dot.hidden = false;
+      var F = S.formants(pos.h, pos.c, +q("r").value, q("voice").value), n = nearest();
+      out("read").textContent = "F1 " + Math.round(F[0]) + " Hz · F2 " + Math.round(F[1]) + " Hz · F3 " + Math.round(F[2]) + " Hz · nearest [" + n.id + "] " + n.name;
+    }
+    function send(glide) { S.set({ h: pos.h, c: pos.c, r: +q("r").value, vib: +q("vib").value, F: null, ring: 0, raw: false, voice: q("voice").value, pitch: +q("pitch").value, glide: glide }); show(); }
+    function at(e) {
+      var b = plot.getBoundingClientRect(), py = Math.max(0, Math.min(100, (e.clientY - b.top) / b.height * 100));
+      var px = (e.clientX - b.left) / b.width * 100, f = front(py);
+      pos.h = py * 6 / 100; pos.c = Math.max(0, Math.min(2, 2 * (px - f) / (back - f)));
+    }
+    plot.addEventListener("pointerdown", function (e) {
+      if (e.target.closest(".ipa-sym")) return;
+      e.preventDefault(); plot.focus({ preventScroll: true }); drag = true; plot.setPointerCapture(e.pointerId);
+      at(e); send(0.005); S.start();
+    });
+    plot.addEventListener("pointermove", function (e) { if (drag) { at(e); send(0.03); } });
+    var up = function () { if (!drag) return; drag = false; if (!q("hold").checked) S.stop(); };
+    plot.addEventListener("pointerup", up); plot.addEventListener("pointercancel", up);
+    plot.addEventListener("keydown", function (e) {
+      var k = e.key, d = e.shiftKey ? 0.05 : 0.2;
+      if (k === " ") { e.preventDefault(); if (S.playing()) S.stop(); else { send(0); S.start(); } return; }
+      var mv = { ArrowUp: [-d * 1.5, 0], ArrowDown: [d * 1.5, 0], ArrowLeft: [0, -d / 1.5], ArrowRight: [0, d / 1.5] }[k];
+      if (!mv) return; e.preventDefault();
+      pos.h = Math.max(0, Math.min(6, pos.h + mv[0])); pos.c = Math.max(0, Math.min(2, pos.c + mv[1])); send(0.06);
+      if (!S.playing()) { S.start(); if (!q("hold").checked) { clearTimeout(plot._t); plot._t = setTimeout(S.stop, 600); } }
+      else if (!q("hold").checked) { clearTimeout(plot._t); plot._t = setTimeout(S.stop, 600); }
+    });
+    q("hold").addEventListener("change", function () { if (!this.checked && !drag) S.stop(); });
+    q("r").addEventListener("input", function () { send(0.05); });
+    q("vib").addEventListener("input", function () { send(0.05); });
+    q("voice").addEventListener("change", function () { q("pitch").value = S.VOICES[this.value].pitch; out("pitch").textContent = this.value === "low" ? "130 Hz" : "233 Hz"; send(0.05); });
+    q("pitch").addEventListener("input", function () { out("pitch").textContent = this.value + " Hz"; send(0.03); });
+    // a symbol: glide there if Hold is sounding (with its rounding), else just move the point
+    plot.addEventListener("click", function (e) {
+      var b = e.target.closest(".ipa-sym"); if (!b) return; var s = BY[b.dataset.id];
+      pos.h = s.y; pos.c = s.c; q("r").value = s.r ? 1 : 0; send(0.08);
+    });
+    vowelSynth.sing = function (s) { pos.h = s.y; pos.c = s.c; q("r").value = s.r ? 1 : 0; send(0); S.pulse(s.y, s.c, s.r ? 1 : 0, 1.3); };
+    return bar;
   }
 
   function buildConsonants(host, panel) {
@@ -147,6 +210,8 @@
     var au = window.IPA_AUDIO && window.IPA_AUDIO[s.id];
     if (au) h += '<div class="ipa-audio"><button type="button" class="btn btn-sm btn-outline-secondary" data-act="play">&#9654; Hear [' + esc(s.id) + ']</button>' +
       '<span class="ipa-credit">Recording: <a href="' + esc(au.page) + '" target="_blank" rel="noopener">' + esc(au.file) + "</a>, " + esc(au.author) + ", " + esc(au.license) + ", via Wikimedia Commons</span></div>";
+    if (s.cat === "v" && vowelSynth.sing) h += '<div class="ipa-audio"><button type="button" class="btn btn-sm btn-outline-secondary" data-act="sing">&#9654; Synthesise [' + esc(s.id) + "]</button>" +
+      '<span class="ipa-credit">Formant synthesis from the chart position; drag across the chart to move between vowels.</span></div>';
     h += "<p>" + esc(s.desc) + "</p>";
     if (s.tip) h += '<div class="ipa-tip"><strong>For singers.</strong> ' + esc(s.tip) + "</div>";
     if (shown.length) {
@@ -174,6 +239,8 @@
     p.innerHTML = h;
     var pb = p.querySelector('[data-act="play"]');
     if (pb) pb.addEventListener("click", function () { hear(au); });
+    var sb = p.querySelector('[data-act="sing"]');
+    if (sb) sb.addEventListener("click", function () { vowelSynth.sing(s); });
   }
   // Commons recordings, played from upload.wikimedia.org: Ogg where the browser plays it, else Commons' MP3 transcode
   var audioEl = null;

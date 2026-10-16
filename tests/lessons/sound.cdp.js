@@ -6,7 +6,7 @@ const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/_site", { launch 
 const type = f => f.endsWith(".js") ? "text/javascript" : f.endsWith(".css") ? "text/css" : "text/html";
 const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURIComponent(q.url.split(/[?#]/)[0]));
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(8515);
-const PAGES = "harmonics waveforms noise filter lfo subtractive fm wavetable distortion compressor reverb chorus phaser vocoder".split(" ");
+const PAGES = "harmonics waveforms noise filter envelopes lfo subtractive fm wavetable granular eq distortion compressor sidechain gate reverb delay chorus phaser tremolo pitch vocoder stereo chain".split(" ");
 const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = new Float32Array(a.fftSize); a.getFloatTimeDomainData(d); let s = 0; for (const x of d) s += x * x; return Math.sqrt(s / d.length); })`;
 (async () => {
   const b = await launch({ args: ["--use-fake-ui-for-media-stream", "--use-fake-device-for-media-stream"] }), out = process.argv[2] || "";
@@ -47,6 +47,8 @@ const RMS = `(w => { const a = w.view && w.view.an; if (!a) return 0; const d = 
   check("reverb: a key switches the source to the keyboard", await b.eval("SynthKit.widgets[0].c.source.value") === "keys" && await b.eval(`${RMS}(SynthKit.widgets[0])`) > 0.001);
   // the (fake) microphone into the vocoder and into an effect
   await b.goto("http://127.0.0.1:8515/lessons/sound-vocoder.html"); await b.sleep(600);
+  // a sound check already done this session (headphones), so AudioCheck.ensure() doesn't open its dialog
+  await b.eval(`sessionStorage.setItem('audio-check-v1', JSON.stringify({ browserOk: true, output: 'headphones', latencyMs: null, bleedDb: null, peakDb: -12, level: 'ok', constraints: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }))`);
   await b.eval("SynthKit.widgets[0].c.mod.set('mic')"); await b.eval("SynthKit.widgets[0].start()"); await b.sleep(800);
   let mic = 0; for (let k = 0; k < 15; k++) { await b.sleep(150); mic = Math.max(mic, await b.eval(`${RMS}(SynthKit.widgets[0])`)); }
   check("vocoder: microphone opens and drives it", /Microphone on/.test(await b.eval("SynthKit.widgets[0].host.textContent")) && mic > 0.01, await b.eval("SynthKit.widgets[0].host.querySelector('.sk-status').textContent"));

@@ -11,6 +11,9 @@ project:
 
 website:
   title: "Music Practice"
+  # No search key: letters are shortcuts on several pages (S stamps a section in Timestamp Notes). Click the navbar's search.
+  search:
+    keyboard-shortcut: []
   navbar:
     left:
       - href: index.qmd
@@ -25,11 +28,13 @@ website:
           - lessons/blues-bass.qmd
           - lessons/blues-guitar.qmd
           - lessons/blues-piano.qmd
+          - lessons/stride-boogie.qmd
           - lessons/blues-drums.qmd
           - lessons/reading-swing.qmd
           - lessons/hihat-grooves.qmd
           - lessons/congas-basics.qmd
           - lessons/watermelon-congas.qmd
+          - lessons/watermelon-man-blues.qmd
           - lessons/pop-changes.qmd
           - lessons/pop-changes-guitar.qmd
           - lessons/pop-changes-piano.qmd
@@ -37,6 +42,7 @@ website:
           - lessons/chord-shapes-guitar.qmd
           - lessons/chord-shapes-guitar-hand.qmd
           - lessons/hammer-ons-pull-offs.qmd
+          - lessons/guitar-bends.qmd
           - lessons/travis-picking.qmd
           - lessons/chord-shapes-piano.qmd
           - lessons/chord-shapes-piano-hand.qmd
@@ -46,6 +52,7 @@ website:
           - lessons/voice-classical.qmd
           - lessons/four-chord-loops.qmd
           - lessons/cadences.qmd
+          - lessons/write-an-ending.qmd
           - lessons/guide-tones.qmd
           - lessons/minor-changes.qmd
           - lessons/borrowed-chords.qmd
@@ -58,20 +65,54 @@ website:
           - lessons/arrange-organ.qmd
           - lessons/patterns/index.qmd
           - text: "---"
+          - lessons/notation-choices.qmd
+          - lessons/tuning-systems.qmd
+          - lessons/strobe-tuner.qmd
+          - lessons/inharmonicity.qmd
+          - lessons/vowel-formants.qmd
           - lessons/sound-harmonics.qmd
           - lessons/sound-waveforms.qmd
           - lessons/sound-noise.qmd
           - lessons/sound-filter.qmd
+          - lessons/sound-envelopes.qmd
           - lessons/sound-lfo.qmd
           - lessons/sound-subtractive.qmd
           - lessons/sound-fm.qmd
           - lessons/sound-wavetable.qmd
+          - lessons/sound-granular.qmd
+          - lessons/sound-eq.qmd
           - lessons/sound-distortion.qmd
           - lessons/sound-compressor.qmd
+          - lessons/sound-sidechain.qmd
+          - lessons/sound-gate.qmd
           - lessons/sound-reverb.qmd
+          - lessons/sound-delay.qmd
           - lessons/sound-chorus.qmd
           - lessons/sound-phaser.qmd
+          - lessons/sound-tremolo.qmd
+          - lessons/sound-pitch.qmd
           - lessons/sound-vocoder.qmd
+          - lessons/sound-stereo.qmd
+          - lessons/sound-chain.qmd
+          - lessons/rec-gain-staging.qmd
+          - lessons/rec-mics.qmd
+          - lessons/rec-placement.qmd
+          - lessons/rec-monitoring.qmd
+          - lessons/rec-mixing.qmd
+          - lessons/rec-mastering.qmd
+          - lessons/rec-stereo.qmd
+          - text: "---"
+          - lessons/gear-power.qmd
+          - lessons/gear-cables.qmd
+          - lessons/gear-amps.qmd
+          - lessons/gear-keyboards.qmd
+          - lessons/gear-setup.qmd
+          - lessons/gear-guitar.qmd
+          - lessons/gear-violin.qmd
+          - lessons/gear-sax.qmd
+          - lessons/gear-drums.qmd
+          - lessons/timestamp-player.qmd
+          - lessons/section-labels.qmd
 #      - text: Lessons
 #        menu:
 #          - lessons/quarter-notes.qmd
@@ -89,6 +130,7 @@ website:
           - practice/patterns.qmd
           - practice/rhythms.qmd
           - practice/reading-benchmarks.qmd
+          - practice/dictation.qmd
           - text: "---"
           - practice/lsa-practice.qmd
           - practice/lsa-practice-notated.qmd
@@ -113,6 +155,8 @@ website:
           - tools/notation.qmd
           - tools/notation-rules.qmd
           - tools/ipa-chart.qmd
+          - tools/vocal-warmup.qmd
+          - tools/timestamp-notes.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

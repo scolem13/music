@@ -1,5 +1,5 @@
 ---
-title: "Sound 14: The Vocoder"
+title: "Sound 22: The Vocoder"
 toc: true
 toc-depth: 2
 ---
@@ -57,5 +57,9 @@ and have it sing in chords.
 - **Listen to** the modulator or the carrier alone to hear what goes in.
 - **Drum loop as the modulator** makes the chord pulse in the rhythm of the drums, a trick used in
   dance music.
+
+## Next
+
+- [Sound 23: Stereo](sound-stereo.qmd)
 
 {{< include _synth-kit.qmd >}}

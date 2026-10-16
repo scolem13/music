@@ -13,7 +13,7 @@ This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-t
 
 A short chord on every beat with 2 and 4 a little louder, the way Freddie Green played rhythm guitar.
 
-It belongs in *Swing*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Swing*, *Boogie-woogie* and *Jump blues*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
 
@@ -53,12 +53,24 @@ Harder: now some bars have two chords, two beats each. The pattern keeps its rhy
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7 G7|Em7 A7|Dm7 G7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="comp bass" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
 
+## In other styles
+
+The same comping rhythm in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
+
+**Jump blues**
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="comp" data-comp="guitar" data-choice-label="Comping rhythm:" data-choices='[{"label":"Four to the bar","opts":{"compRhythm":"four"}}]'></div>
+
 ## How it relates to the other patterns
 
 - **Builds on:** [Long notes](chords-pad.qmd), [Quarter-note chords](chords-quarters.qmd).
 - **The same idea elsewhere in the band:** [Quarter notes (learning swing, 1)](drums-quarters.qmd) (drum groove), [Walking](bass-walk.qmd) (bass line), [Ride pattern (learning swing, 2)](drums-ridetime.qmd) (drum groove).
 - **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Jazz time](drums-auto.qmd) (drum groove).
-- **Other comping rhythms in the Jazz group:** [Varied](chords-auto.qmd), [Charleston](chords-charleston.qmd), [Reverse Charleston](chords-reverse.qmd), [Red Garland](chords-garland.qmd), [Off-beats](chords-offbeats.qmd), [Long notes](chords-pad.qmd), [Boogaloo stabs](chords-stabs.qmd).
+- **Other comping rhythms in the Jazz group:** [Varied](chords-auto.qmd), [Charleston](chords-charleston.qmd), [Reverse Charleston](chords-reverse.qmd), [Red Garland](chords-garland.qmd), [Off-beats](chords-offbeats.qmd), [Long notes](chords-pad.qmd), [Boogaloo stabs](chords-stabs.qmd), [Stride](chords-stride.qmd).
 
 {{< include ../_arrange-kit.qmd >}}
 

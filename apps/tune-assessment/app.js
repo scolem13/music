@@ -431,21 +431,11 @@ const COUNT_IN=4, INITIAL_DELAY=0.15;
 const latencyComp=()=>(audioCtx&&(audioCtx.outputLatency||audioCtx.baseLatency))||0;
 
 // ---------- pitch detection (YIN) ----------
-const RMS_GATE=0.012,YIN_THRESHOLD=0.15,FMIN=70,FMAX=1500;
-function detectPitch(buf,sr){
-  const SIZE=buf.length,W=Math.floor(SIZE/2); let rms=0;
-  for(let i=0;i<SIZE;i++)rms+=buf[i]*buf[i]; rms=Math.sqrt(rms/SIZE); if(rms<RMS_GATE)return -1;
-  const d=new Float32Array(W);
-  for(let tau=1;tau<W;tau++){ let s=0; for(let j=0;j<W;j++){const df=buf[j]-buf[j+tau];s+=df*df;} d[tau]=s; }
-  const c=new Float32Array(W); c[0]=1; let run=0;
-  for(let tau=1;tau<W;tau++){ run+=d[tau]; c[tau]=run>0?d[tau]*tau/run:1; }
-  let tau=-1; for(let t=2;t<W;t++){ if(c[t]<YIN_THRESHOLD){ while(t+1<W&&c[t+1]<c[t])t++; tau=t; break; } }
-  if(tau===-1)return -1;
-  let bt=tau; if(tau>0&&tau<W-1){const s0=c[tau-1],s1=c[tau],s2=c[tau+1],dn=2*(2*s1-s2-s0); if(dn)bt=tau+(s2-s0)/dn;}
-  const f0=sr/bt; return (f0<FMIN||f0>FMAX)?-1:f0;
-}
+// Now in apps/shared/pitch-detect.js (same algorithm and constants: RMS_GATE .012, YIN_THRESHOLD .15, FMIN 70, FMAX 1500).
+const detectPitch=(buf,sr)=>PitchDetect.detect(buf,sr);
 
 // ---------- audio ----------
+let acheck=null,bleedFloor=-Infinity;   // AudioCheck result (null: no check / cancelled)
 let audioCtx,analyser,micStream,buf,running=false,collecting=false,frames=[],smF=null,perfT0=0;
 const sensitivity=()=>parseFloat(document.getElementById("sens").value);
 // share the synth's AudioContext so scheduled playback + mic analysis use one clock
@@ -542,7 +532,10 @@ const cycleOn=()=>{ const el=document.getElementById("cycle"); return !!(el&&el.
 async function enableMic(){
   try{
     await ensureAudio();
-    micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:false,autoGainControl:false}});
+    // pre-flight (speakers vs headphones, latency, level); cancelled or missing -> the plain constraints below
+    const strict={echoCancellation:false,noiseSuppression:false,autoGainControl:false};
+    try{ acheck=window.AudioCheck?await AudioCheck.ensure():null; }catch(e){ acheck=null; }
+    micStream=await navigator.mediaDevices.getUserMedia({audio:Object.assign({},acheck&&acheck.constraints,strict)});
     const src=audioCtx.createMediaStreamSource(micStream);
     analyser=audioCtx.createAnalyser(); analyser.fftSize=2048; buf=new Float32Array(analyser.fftSize); src.connect(analyser);
     running=true; document.getElementById("record").disabled=false;
@@ -554,7 +547,12 @@ function rms(){ let s=0; for(let i=0;i<buf.length;i++)s+=buf[i]*buf[i]; return M
 function loop(){
   if(!running)return;
   analyser.getFloatTimeDomainData(buf);
-  const f=detectPitch(buf,audioCtx.sampleRate), now=performance.now(), r=rms();
+  let f=detectPitch(buf,audioCtx.sampleRate), r=rms(); const now=performance.now();
+  // on speakers a reference tone and the student must not overlap: don't analyse while the app is sounding
+  const muted=window.AudioCheck&&AudioCheck.callAndResponse(acheck)&&!collecting&&(playing||activeOscs.length>0);
+  // our own backing leaking into the mic is not the student: ignore anything below the expected bleed level
+  const bleed=collecting&&r>0&&20*Math.log10(r)<bleedFloor;
+  if(muted||bleed){ f=0; r=0; }
   document.getElementById("levelbar").style.width=Math.min(100,r/0.3*100)+"%";
   if(f>0){ smF=smF===null?f:smF+(f-smF)*0.2; const nm=Math.round(freqToMidiFloat(smF)); document.getElementById("liveNote").textContent=noteName(nm)+"  "+smF.toFixed(0)+" Hz"; }
   if(collecting)frames.push({t:now,f,rms:r});
@@ -742,7 +740,11 @@ document.getElementById("record").addEventListener("click",async()=>{
   scheduleMetronome(ctxNow,perfNow,countInBeats+perfBeats,beatsPerBar,spb);
   const pickupDelayQ=countInQ-anaQ;                                 // when target onset 0 (the pickup) sounds
   scheduleChords(ctxNow+INITIAL_DELAY+pickupDelayQ*spq);            // play-along accompaniment
-  perfT0=perfNow+(INITIAL_DELAY+pickupDelayQ*spq+latencyComp())*1000;
+  // loudest thing we play while listening (click or chords), in dBFS, for the bleed floor
+  bleedFloor=window.AudioCheck?AudioCheck.bleedFloorDb(acheck,20*Math.log10(Math.max(0.28*metroVol(),0.2*chordVol(),1e-4))):-Infinity;
+  // measured round trip (output + input) when the check ran, else the output latency alone
+  const recLat=(acheck&&acheck.latencyMs!=null)?AudioCheck.latencySec(acheck):latencyComp();
+  perfT0=perfNow+(INITIAL_DELAY+pickupDelayQ*spq+recLat)*1000;
   collecting=true; startRec();
 
   if(anaUnits>0) cap.textContent="Count-in (2 bars)… come in on the pickup in bar 2";

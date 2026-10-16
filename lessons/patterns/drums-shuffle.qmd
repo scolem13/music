@@ -13,7 +13,7 @@ This is a lesson on one drum groove the [Backing Track](../../tools/backing-trac
 
 Swung eighths all the way through on the cymbal, kick on 1 and 3 and a full snare on 2 and 4. The Chicago blues beat.
 
-It belongs in *Swing* and *12/8 doo-wop*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Swing*, *12/8 doo-wop*, *Boogie-woogie* and *Jump blues*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="96" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Blues shuffle","opts":{"groove":"shuffle"}}]'></div>
 
@@ -49,19 +49,27 @@ The whole band, at 96 beats a minute. Play along, then switch the band's drum ki
 
 ## In other styles
 
-The same drum groove in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+The same drum groove in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
 
 **12/8 doo-wop**
 
 <div class="ar-demo" data-style="doowop" data-chart="C|Am|F|G" data-tempo="66" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Blues shuffle","opts":{"groove":"shuffle"}}]'></div>
 
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Blues shuffle","opts":{"groove":"shuffle"}}]'></div>
+
+**Jump blues**
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Blues shuffle","opts":{"groove":"shuffle"}}]'></div>
+
 ## How it relates to the other patterns
 
 - **Builds on:** [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Hi-hat: quarter notes](drums-hhquarters.qmd).
-- **Leads to:** [12/8](drums-twelve8.qmd): the patterns that use this one as a step.
-- **The same idea elsewhere in the band:** [12/8 ballad](bass-twelve8.qmd) (bass line), [Triplet chords (12/8)](chords-triplets.qmd) (comping rhythm), [12/8](drums-twelve8.qmd) (drum groove).
+- **Leads to:** [12/8](drums-twelve8.qmd), [Jump blues](drums-jump.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [12/8 ballad](bass-twelve8.qmd) (bass line), [Triplet chords (12/8)](chords-triplets.qmd) (comping rhythm), [12/8](drums-twelve8.qmd) (drum groove), [Boogie-woogie](bass-boogie.qmd) (bass line), [Chord tones (learning to walk)](bass-arp.qmd) (bass line), [Boogie-woogie right hand](chords-boogie.qmd) (comping rhythm).
 - **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Varied](chords-auto.qmd) (comping rhythm).
-- **Other drum grooves in the Jazz group:** [Jazz time](drums-auto.qmd), [Quarter notes (learning swing, 1)](drums-quarters.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
+- **Other drum grooves in the Jazz group:** [Jazz time](drums-auto.qmd), [Quarter notes (learning swing, 1)](drums-quarters.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Jump blues](drums-jump.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
 
 {{< include ../_arrange-kit.qmd >}}
 

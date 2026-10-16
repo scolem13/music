@@ -53,3 +53,12 @@ Work happens in main, not a worktree. It does **not** touch any file in the swin
 Resumption notes are in `2026-10-14-in-progress.md`, section "Swing as one shared setting". First job on return: main has changed
 `drums.js`, `blues-kit.js`, `_blues-kit.qmd`, `NOTES.org`, `tests/band/README.md` since the baseline, and added `abc-core.js`;
 bring those into the worktree before step 2.
+
+## Also done in main (2026-10-14, evening): stride and boogie-woogie styles
+Edited in main, to files on the swing list: `catalog.js` (bass `boogie`, comp `stride` and `boogie`, styles `stride` and `boogie`, FITS,
+PLAIN), `ADDING-STYLES.md` (new step 7: the pages a style needs), `NOTES.org` (a new entry at the end, not a swing one). Also `bass.js`
+(LINES.boogie), `comp.js` (GRID.stride with a left hand, GRID.boogie), `presets.js` (two sections at the end of the jazz tour),
+`tests/band/pat/t_patterns.js`. When merging: both new styles are swung (`feel:"swing"`) and need a `swing` setting in the new model;
+their eighths are the swing model's to place (the boogie bass is all off-beat eighths, so it will show any change).
+- (2026-10-15) Also in main: catalog.js bass boogieOct, yancey; comp strideTenths (bass.js LINES, comp.js GRID).
+- (2026-10-15) Also in main: drums.js GROOVES.jump; catalog.js drums jump, styles ragtime and jump; presets.js two more tour sections.

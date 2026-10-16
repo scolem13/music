@@ -1,0 +1,308 @@
+---
+title: "Lesson: Sing it, then Notate it"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.sn-row{display:flex;flex-wrap:wrap;gap:.8rem 1.2rem;align-items:flex-end;margin:.6rem 0}
+.sn-row label{display:flex;flex-direction:column;font-size:.8rem;color:var(--site-ink-2)}
+.sn-row select,.sn-row input[type=range]{min-width:9rem;font-size:.95rem}
+.sn-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.6rem 0}
+.sn-note{font-size:.88rem;color:var(--site-ink-2);min-height:1.3em}
+.sn-takes{display:flex;gap:.5rem;flex-wrap:wrap;margin:.5rem 0}
+.sn-take{border:1px solid var(--site-border);border-radius:8px;padding:.35rem .7rem;font-size:.85rem;min-width:8rem}
+.sn-take.sn-done{border-color:var(--site-accent-dk)}
+.sn-level{height:8px;background:var(--site-border);border-radius:4px;overflow:hidden;max-width:18rem}
+.sn-level>i{display:block;height:100%;width:0;background:var(--site-accent-dk)}
+.sn-warn{border:2px solid #c0392b;border-radius:8px;padding:.7rem 1rem;margin:.6rem 0;background:rgba(192,57,43,.08)}
+.sn-good{border:2px solid var(--site-accent-dk);border-radius:8px;padding:.7rem 1rem;margin:.6rem 0}
+.sn-ok{border-left:4px solid var(--site-accent-dk);padding:.4rem .8rem;margin:.4rem 0;font-weight:600}
+.sn-paper{background:#fff;border-radius:6px;overflow-x:auto;margin:.4rem 0}
+.sn-frame{width:100%;border:1px solid var(--site-border);border-radius:10px;min-height:700px;background:var(--site-surface)}
+.sn-off{opacity:.45;pointer-events:none}
+</style>
+```
+
+Sing an ending for a song three times. The computer works out which of the site's familiar rhythm patterns and familiar tonal patterns you sang.
+Then you write it into the song on the Notation page, and it tells you when the rhythm is right and when the pitches are right.
+
+## The song
+
+You sing an ending for **Unfinished Song #1** from the tune library: its last two bars are empty, over V then I.
+The key, the tonality and the meter come from the song.
+
+```{=html}
+<div id="sn-song" style="background:#fff;border-radius:6px;overflow-x:auto"></div>
+```
+
+```{=html}
+<div class="sn-row" hidden>
+  <label>Tonality <select id="sn-mode"><option value="">Choose...</option></select></label>
+  <label>Key (do) <select id="sn-key"><option value="">Choose...</option></select></label>
+  <label>Meter <select id="sn-meter"><option value="">Choose...</option></select></label>
+  <label>Tempo (beats per minute) <input type="range" id="sn-tempo" min="50" max="120" value="76"><span id="sn-tempo-v" class="sn-note">76</span></label>
+</div>
+<div class="sn-note" id="sn-choice"></div>
+```
+
+## Sing it three times
+
+Press **Play and sing** once. The song plays three times in a row without stopping. Each time, sing your ending in its
+last two bars, where only the chords play. Only those two bars are recorded. Sing every note on a syllable ("da", "la"),
+and separate repeated notes.
+
+```{=html}
+<div id="sn-sing" class="sn-off">
+  <div class="sn-tools">
+    <button type="button" class="btn btn-outline-secondary" id="sn-mic">Turn on the microphone</button>
+    <button type="button" class="btn btn-outline-secondary" id="sn-rec" disabled>&#9679; Play and sing</button>
+    <button type="button" class="btn btn-outline-secondary" id="sn-clear">Clear the takes</button>
+  </div>
+  <div class="sn-level" aria-hidden="true"><i id="sn-level"></i></div>
+  <div class="sn-note" id="sn-live"></div>
+  <div class="sn-takes" id="sn-takes"></div>
+</div>
+<div class="sn-note" id="sn-msg" role="status"></div>
+```
+
+## What I heard
+
+```{=html}
+<div id="sn-result" aria-live="polite"><span class="sn-note">Nothing yet.</span></div>
+<div class="sn-tools" id="sn-result-tools" hidden>
+  <button type="button" class="btn btn-outline-secondary" id="sn-hear">&#9654; Hear what I understood</button>
+  <button type="button" class="btn btn-outline-secondary" id="sn-show">Show the answer</button>
+</div>
+<div class="sn-paper" id="sn-answer" hidden></div>
+```
+
+## Notate it
+
+Write what you sang in the song's two empty bars: choose the rhythm patterns, then enter the notes with letters, the computer keys or a MIDI keyboard.
+The rhythm and the pitches are checked separately, each confirmed once. Octave does not matter for the pitches.
+
+```{=html}
+<div id="sn-confirms" aria-live="polite"></div>
+<div class="sn-note" id="sn-wait">Sing three takes first.</div>
+<iframe class="sn-frame" id="sn-frame" title="Notation" src="/tools/notation.html?ending=1"></iframe>
+```
+
+## How it works
+
+- **Candidates.** Rhythms come from the Rhythm Sequences bank (`apps/rhythms/rhythm-pattern-object.js`), bars of the chosen meter only; any two bars together make a candidate.
+  Tonal patterns come from the Tonal Patterns bank (`apps/patterns/pattern-object.js`), the chosen tonality only, as semitones above the tonic, so the key does not change the match.
+- **Your three takes** (the song's last two bars, each time round) are put on a sixteenth-note grid. A note counts when two takes agree on it.
+  Your tuning drift (up to about a third of a semitone, sharp or flat all the way through) is removed.
+- **The match.** Every rhythm is scored by how well its onsets fit yours; the pitches are covered with as few tonal patterns as possible, in whichever octave you used.
+  It is lenient: onsets count up to about a third of a beat early or late, a repeated note counts as one pitch of a pattern, a pattern's
+  notes count in any octave (5 down to 1 is the pattern 5 1), and held notes over whole beats (half notes) are familiar rhythms.
+  A fit needs rhythm 66%, pitches 66% and the takes mostly in agreement. A note a half step out of the key never counts.
+  Otherwise you get a warning and a chance to sing again, never a guess.
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/tonality.js?v=10"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/abc-events.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/patterns/pattern-object.js"></script>
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/sing-notate.js?v=2"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); }, S = window.SingNotate;
+  // the banks are top-level consts in their scripts, so reach them by bare name
+  var RP = rhythmPatternObject, TP = patternObject;
+  var TAKES = 3, METERS = ["2/4", "3/4", "4/4", "6/8"], TONICS = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+  var MODE_LABEL = { major: "Major", minor: "Minor", dorian: "Dorian", mixolydian: "Mixolydian", lydian: "Lydian", phrygian: "Phrygian", locrian: "Locrian" };
+  var takes = [], result = null, checker = null, mic = null, recording = false, frames = [], ready = false;
+
+  S.modesIn(TP).forEach(function (m) { $("sn-mode").add(new Option(MODE_LABEL[m] || m, m)); });
+  TONICS.forEach(function (t) { $("sn-key").add(new Option(t, t)); });
+  METERS.forEach(function (m) { $("sn-meter").add(new Option(m, m)); });
+
+  // the song: read from the tune library on every load, so edits to it carry through. Its key, tonality and meter fill the
+  // (hidden) choices; its empty bars at the end are where the singer's idea goes.
+  var SONG_ID = "unfinished-song-1", SONG = null;
+  Object.keys(tunesObject).some(function (c) { return String(tunesObject[c]).split(/\n(?=X:)/).some(function (t) {
+    if (new RegExp("%%id\\s+" + SONG_ID + "\\b").test(t)) { SONG = t.trim(); return true; } }); });
+  var SONG_EV = SONG ? AbcEvents.fromAbc(SONG) : null;
+  if (SONG_EV) {
+    var sk = S.parseKey((/^K:\s*(\S+)/m.exec(SONG) || [])[1]), sm = (/^M:\s*(\S+)/m.exec(SONG) || [])[1], sq = /^Q:\s*(?:1\/4\s*=\s*)?(\d+)/m.exec(SONG);
+    if (sk) { $("sn-mode").value = sk.mode; $("sn-key").value = sk.tonic; }
+    if (sm) { if (![].some.call($("sn-meter").options, function (o) { return o.value === sm; })) $("sn-meter").add(new Option(sm, sm)); $("sn-meter").value = sm; }
+    $("sn-tempo").value = sq ? sq[1] : 92;
+    // the sung bars: from the last note's bar on (bars of x rests at the end)
+    var lastOn = SONG_EV.sounding.filter(function (e) { return e.kind === "note"; }).reduce(function (m, e) { return Math.max(m, e.t_off); }, 0);
+    var BQ = S.meterQuarters(sm), SING_FROM = Math.ceil(lastOn / BQ - 1e-6) * BQ, SONG_Q = SONG_EV.quarters;
+    ABCJS.renderAbc("sn-song", SONG, { responsive: "resize" });
+  } else $("sn-choice").textContent = "Unfinished Song #1 isn't in the tune library.";
+  function chosen() {
+    var mode = $("sn-mode").value, tonic = $("sn-key").value, meter = $("sn-meter").value;
+    return (mode && tonic && meter) ? { mode: mode, tonic: tonic, meter: meter, key: S.keyName(tonic, mode), tempo: +$("sn-tempo").value } : null;
+  }
+  var cache = null;
+  function pools() {
+    var c = chosen(); if (!c) return null;
+    var sig = c.mode + "|" + c.meter; if (cache && cache.sig === sig) return cache;
+    var barQ = S.meterQuarters(c.meter), bars = S.rhythmBars(RP, c.meter);
+    return (cache = { sig: sig, barQ: barQ, bars: bars, cands: S.rhythmCandidates(bars, barQ), pats: S.tonalPatterns(TP, c.mode) });
+  }
+  function onChoice() {
+    var c = chosen(), p = pools();
+    $("sn-tempo-v").textContent = $("sn-tempo").value;
+    $("sn-sing").classList.toggle("sn-off", !c);
+    if (c) $("sn-choice").textContent = (MODE_LABEL[c.mode] || c.mode) + " in " + c.tonic + ", " + c.meter + ": " + p.pats.length + " familiar tonal patterns, " + p.bars.length + " familiar rhythm bars.";
+    if (takes.length || result) clearTakes();
+  }
+  ["sn-mode", "sn-key", "sn-meter"].forEach(function (id) { $(id).onchange = onChoice; });
+  $("sn-tempo").oninput = function () { $("sn-tempo-v").textContent = this.value; };
+  onChoice();
+
+  // ---------- timing: the beat is a quarter, or a dotted quarter in 6/8 ----------
+  function timing(c) {
+    var compound = c.meter === "6/8", spb = 60 / c.tempo, spq = compound ? spb / 1.5 : spb;
+    return { spb: spb, spq: spq, beatsPerBar: compound ? 2 : +c.meter.split("/")[0], compound: compound };
+  }
+
+  // ---------- the microphone ----------
+  function ensureMic() {
+    if (mic) return Promise.resolve(mic);
+    var ctx = MusicAudio.ctx();
+    mic = PitchDetect.mic({ ctx: ctx, onFrame: function (f) {
+      $("sn-level").style.width = Math.min(100, f.rms / 0.3 * 100) + "%";
+      $("sn-live").textContent = f.hz > 0 ? f.name + "  " + f.hz.toFixed(0) + " Hz" : "";
+      if (recording) frames.push({ t: f.t, hz: f.hz, rms: f.rms });
+    }, onError: function (e) { $("sn-msg").textContent = "Microphone: " + e.message; } });
+    return mic.start().then(function () { return mic; });
+  }
+  $("sn-mic").onclick = function () {
+    var b = this; MusicAudio.ctx().resume();
+    ensureMic().then(function () { b.textContent = "Microphone on"; b.disabled = true; $("sn-rec").disabled = false; })
+      .catch(function (e) { $("sn-msg").textContent = "Microphone: " + e.message + " (it needs https or localhost)"; mic = null; });
+  };
+
+  function drawTakes() {
+    var el = $("sn-takes"); el.innerHTML = "";
+    for (var i = 0; i < TAKES; i++) {
+      var d = document.createElement("div"); d.className = "sn-take" + (takes[i] ? " sn-done" : "");
+      d.textContent = takes[i] ? "Take " + (i + 1) + ": " + takes[i].notes.length + " notes" : "Take " + (i + 1) + ": --";
+      el.appendChild(d);
+    }
+    $("sn-rec").textContent = recording ? "Playing..." : takes.length >= TAKES ? "Three times recorded" : "● Play and sing";
+    $("sn-rec").disabled = !mic || recording || takes.length >= TAKES;
+  }
+  function clearTakes() {
+    takes = []; result = null; checker = null; $("sn-result").innerHTML = '<span class="sn-note">Nothing yet.</span>';
+    $("sn-result-tools").hidden = true; $("sn-answer").hidden = true; $("sn-confirms").innerHTML = ""; $("sn-wait").hidden = false;
+    $("sn-msg").textContent = ""; drawTakes();
+  }
+  $("sn-clear").onclick = clearTakes;
+
+  // ---------- one run: the song three times in a row ----------
+  // The song's melody and chords (a bass note and the triad on each chord), and the beat clicked softly. Its empty bars at the end
+  // keep their chords; that's where they sing, and each time round only those bars are recorded: the three takes.
+  var NAT = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  function chordMidis(name) {
+    var m = /^([A-G])([#b]?)(m(?!aj))?(7)?/.exec(name || ""); if (!m) return null;
+    var r = NAT[m[1]] + (m[2] === "#" ? 1 : m[2] === "b" ? -1 : 0), ns = [0, m[3] ? 3 : 4, 7]; if (m[4]) ns.push(10);
+    return { root: r, notes: ns };
+  }
+  $("sn-rec").onclick = function () {
+    var c = chosen(); if (!c || recording || !mic || !SONG_EV) return;
+    var ctx = MusicAudio.ctx(), T = timing(c), spq = T.spq, songSec = SONG_Q * spq, barQ = BQ;
+    ctx.resume().then(function () {
+      var start = ctx.currentTime + 0.4, starts = [];
+      for (var r = 0; r < TAKES; r++) {
+        var s0 = start + r * songSec; starts.push(s0 + SING_FROM * spq);
+        SONG_EV.sounding.forEach(function (e) {
+          if (e.kind === "note") e.pitches.forEach(function (p) { MusicAudio.noteAt(p.midi, s0 + e.t_on * spq, Math.max(0.1, (e.t_off - e.t_on) * spq * 0.92), 0.28, "piano"); });
+        });
+        SONG_EV.chords.forEach(function (ch, i) {
+          var cm = chordMidis(ch.name); if (!cm) return;
+          var end = i + 1 < SONG_EV.chords.length ? SONG_EV.chords[i + 1].t : SONG_Q, t = s0 + ch.t * spq, d = (end - ch.t) * spq * 0.95;
+          MusicAudio.noteAt(36 + cm.root, t, d, 0.14, "piano");
+          cm.notes.forEach(function (iv) { MusicAudio.noteAt(48 + cm.root + iv, t, d, 0.06, "piano"); });
+        });
+        for (var q = 0; q < SONG_Q - 1e-6; q += T.spb / spq) MusicAudio.click(s0 + q * spq, Math.abs(q / barQ - Math.round(q / barQ)) < 1e-6);
+      }
+      frames = []; recording = true; takes = []; drawTakes();
+      var singSec = (SONG_Q - SING_FROM) * spq;
+      starts.forEach(function (t0, i) {
+        setTimeout(function () { $("sn-msg").textContent = "Listen (" + (i + 1) + " of " + TAKES + ")..."; }, Math.max(0, (t0 - SING_FROM * spq - ctx.currentTime) * 1000));
+        setTimeout(function () { $("sn-msg").textContent = "Sing the ending! (" + (i + 1) + " of " + TAKES + ")"; }, Math.max(0, (t0 - ctx.currentTime) * 1000));
+        setTimeout(function () {
+          var notes = S.segmentNotes(frames.filter(function (f) { return f.t >= t0 - 0.3 && f.t <= t0 + singSec + 0.25; }));
+          takes.push(S.takeFromNotes(notes, { secPerQuarter: spq, t0: t0 }));
+          if (i === TAKES - 1) { recording = false; $("sn-msg").textContent = ""; }
+          drawTakes();
+          if (takes.length >= TAKES) analyse();
+        }, Math.max(0, (t0 + singSec + 0.35 - ctx.currentTime) * 1000));
+      });
+    });
+  };
+
+  // ---------- the match ----------
+  function analyse() {
+    var c = chosen(), p = pools(); if (!c) return;
+    var comb = S.combine(takes, S.parseKey(c.key), { span: p.barQ * 2 });
+    var r = S.match(comb, p.cands, p.pats, { beat: S.beatOf(c.meter) }); result = r;
+    var el = $("sn-result"); $("sn-answer").hidden = true;
+    if (!r.ok) {
+      el.innerHTML = '<div class="sn-warn" role="alert"><strong>I can\'t tell what you sang.</strong> ' + esc(r.message) + '<div class="sn-tools"><button type="button" class="btn btn-outline-secondary" id="sn-again">Sing again</button></div></div>';
+      $("sn-again").onclick = clearTakes; $("sn-result-tools").hidden = true; checker = null; $("sn-wait").hidden = false;
+      $("sn-wait").textContent = "Sing three good takes first."; return;
+    }
+    el.innerHTML = '<div class="sn-good"><strong>Found it.</strong> Two bars of ' + esc(c.meter) + ', ' + r.best.notes.length + ' notes (rhythm ' + Math.round(r.best.rhythm * 100) + '%, pitches ' + Math.round(r.best.tonal * 100) +
+      '%). Now write it down below. The answer stays hidden until you ask.</div>';
+    $("sn-result-tools").hidden = false; $("sn-wait").hidden = true; $("sn-confirms").innerHTML = "";
+    checker = S.checker(r.best, S.parseKey(c.key), SING_FROM); sendBlank();
+  }
+  function esc(s) { return String(s).replace(/[&<>]/g, function (ch) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;" }[ch]; }); }
+
+  function answerAbc() { var c = chosen(); return S.answerAbc(result.best, { meter: c.meter, key: c.key }); }
+  $("sn-show").onclick = function () {
+    if (!result || !result.ok) return; var a = $("sn-answer");
+    a.hidden = !a.hidden; this.textContent = a.hidden ? "Show the answer" : "Hide the answer";
+    if (!a.hidden) ABCJS.renderAbc(a, answerAbc(), { responsive: "resize" });
+  };
+  $("sn-hear").onclick = function () {
+    if (!result || !result.ok) return; var c = chosen(), T = timing(c), k = S.parseKey(c.key), ctx = MusicAudio.ctx();
+    ctx.resume().then(function () {
+      var t = ctx.currentTime + 0.1;
+      result.best.notes.forEach(function (n) { MusicAudio.noteAt(60 + k.pc + n.semis, t + n.q * T.spq, Math.max(0.15, n.dur * T.spq * 0.95), 0.3, "piano"); });
+    });
+  };
+
+  // ---------- the Notation frame ----------
+  var frame = $("sn-frame");
+  function sendBlank() {
+    var c = chosen(); if (!ready || !c || !result || !result.ok) return;
+    frame.contentWindow.postMessage({ type: "end-load", abc: SONG, title: "Unfinished Song #1: your ending" }, location.origin);
+  }
+  window.addEventListener("message", function (e) {
+    if (e.source !== frame.contentWindow || e.origin !== location.origin || !e.data) return;
+    if (e.data.type === "end-ready") { ready = true; sendBlank(); }
+    if (e.data.type === "end-change" && typeof e.data.abc === "string" && checker) {
+      var u = checker.update(e.data.abc);
+      if (u.message) {
+        var d = document.createElement("div"); d.className = "sn-ok"; d.textContent = u.message + (u.done ? ". You wrote what you sang." : "."); $("sn-confirms").appendChild(d);
+      }
+    }
+  });
+  setInterval(function () {
+    try { var h = frame.contentDocument.documentElement.scrollHeight; if (h && Math.abs(h - frame.offsetHeight) > 20) frame.style.height = h + "px"; } catch (e) {}
+  }, 700);
+
+  drawTakes();
+  window.SingNotatePage = { state: function () { return { takes: takes, result: result, chosen: chosen() }; }, setTakes: function (t) { takes = t; drawTakes(); analyse(); } };
+})();
+</script>
+```

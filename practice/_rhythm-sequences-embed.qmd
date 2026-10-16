@@ -232,7 +232,14 @@
 			{ abc: "B//B/B/B/B//", required: { division: true, elongation: true } }
 		],
 		triple: [
-			{ abc: "B6", required: { elongation: true } }
+			{ abc: "B6", required: { elongation: true } },
+			{ abc: "B2 B", required: { elongation: true } },
+			{ abc: "B B2", required: { elongation: true } },
+			{ abc: "z6", required: { elongation: true, rest: true } },
+			{ abc: "z3", required: { rest: true } },
+			{ abc: "z BB", required: { rest: true } },
+			{ abc: "zB2", required: { elongation: true, rest: true } },
+			{ abc: "z2 B", required: { elongation: true, rest: true } }
 		]
 	};
 

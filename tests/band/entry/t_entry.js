@@ -339,6 +339,9 @@ console.log("VOICING NAMES OK");
   var gr = [].concat(nt(0, 62, 0.05), nt(0.06, 63, 0.9), nt(2, 65, 0.9));
   var t = mk({ graceMs: 80 }, gr); assert.strictEqual(mus(t), '{/D}_E2 z2 F2 z2 |]'); assert.deepStrictEqual(t.trace.notes[0].graces, [62]);
   assert(!/\{/.test(mus(mk({ graceMs: 0 }, gr))), "no grace notes unless asked");
+  // a grace slid into a chord: Eb, then G with it, released as E lands (the chord spread wider than chordMs, the grace held to the landing)
+  var sl = [[0, "on", 63], [0.06, "on", 67], [0.16, "off", 63], [0.16, "on", 64], [1.8, "off", 67], [1.8, "off", 64], [2, "on", 60], [2.9, "off", 60]];
+  assert.strictEqual(mus(mk({ graceMs: 80, poly: true, chordMs: 45 }, sl)), '{/_E}[=EG]4 C2 z2 |]', "Eb slid up to E under a G");
   // triplets in 2/4 (and 4/4): three notes in a beat, at thirds; a swung pair stays eighths
   var tri = [].concat(nt(0, 60, 0.3), nt(0.33, 62, 0.3), nt(0.67, 64, 0.3), nt(1, 65, 0.9));
   var t2 = mk({ n: 2, d: 4, triplets: "auto" }, tri); assert.strictEqual(mus(t2), '(3CDE F2 |]');

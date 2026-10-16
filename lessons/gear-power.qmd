@@ -1,0 +1,78 @@
+---
+title: "Gear 1: Power and Safety"
+toc: true
+toc-depth: 2
+---
+
+Every piece of electric music gear starts at the wall socket. Most problems (hum, crackles, gear that won't turn
+on, blown speakers) and the only really dangerous ones come from how it's powered.
+
+## The order: on last, off first
+
+Speakers and amplifiers make a loud **thump** when anything before them is switched on or off, and big thumps
+damage speakers and ears.
+
+- **Switching on**: sources first (keyboards, pedals, mixer, computer, interface), **amplifiers and powered
+  speakers last**, volume down.
+- **Switching off**: the reverse. **Amps and speakers off first**, then everything else.
+- Turn the **volume down** before plugging or unplugging any cable into a live amp.
+
+Easy way to remember: *amps are last on, first off.*
+
+## Sockets, power strips and extension leads
+
+- One wall socket can supply a limited current. In **India** mains is **230 V, 50 Hz**: the small 3-pin socket is
+  **6 A** (~1400 W) and the big one **16 A** (in the US 15 A at 120 V; UK/EU 13–16 A at 230 V). Add up the watts printed on each piece of gear; a band's backline plus a PA can get close.
+- **Daisy-chaining** power strips into power strips overloads the first one and its cable. One strip per socket.
+- **Unroll extension reels fully**: a coiled reel under load heats up and can melt.
+- Use strips with a **surge protector** for computers and digital gear; a cheap strip with no breaker is a fire risk.
+- **Voltage swings, power cuts and the inverter/generator switching over** send spikes. Where the supply is unsteady,
+  run keyboards, mixers and computers through a **stabiliser or UPS**, and switch amps off (or down) before power
+  returns after a cut. Many sockets in India have their own switch: turn it off before plugging in.
+- Plug adaptors (a 2-pin or UK plug in an Indian socket) often fit loosely and lose the earth: use a proper
+  Indian-plug cable or a strip with an earth.
+- Keep drinks off amps and mixers, cables out of puddles, and water bottles on the floor, not on the keyboard.
+
+## Earth (ground) and hum
+
+The third pin is the **earth** (ground). It's there so that if something fails inside, the metal case can't become live.
+
+- **Never** break, tape over or remove the earth pin, or use a "ground lift" plug on the power cable, to stop hum.
+  That's how musicians have been electrocuted.
+- **Hum** (a steady 50 or 60 Hz buzz and its harmonics) usually comes from a **ground loop**: two pieces of gear
+  earthed at different sockets and also joined by an audio cable. Fixes, safest first:
+  - Power everything that's connected together from the **same** socket or strip.
+  - Use **balanced** cables and **DI boxes**; press the DI's **ground lift** switch (that lifts the *audio* shield,
+    which is safe; the power earth stays connected).
+  - Keep audio cables away from power cables, or cross them at right angles.
+  - Laptops on chargers hum through their audio out: try running on battery.
+- **Buzz that changes when you touch the strings** on a guitar is shielding or grounding in the guitar or its
+  cable, not the wall.
+
+## Power supplies
+
+- **Wall warts** (adaptors) must match the gear: **voltage**, **polarity** (centre positive or negative, shown by a
+  little diagram), and at least the **current** (mA) it needs. Wrong voltage or polarity can kill a pedal or keyboard
+  instantly. Label every adaptor with what it belongs to.
+- **Pedalboards**: an isolated-output power supply is quieter than a daisy-chain cable.
+- **Travelling**: 120 V gear (bought in the US) on India's 230 V burns out unless it says "100–240 V". Check the label before using a
+  plug adaptor.
+- **Batteries**: take them out of pedals and wireless packs when stored; leaking batteries ruin the contacts.
+  Unplug the input jack of a battery pedal to switch it off.
+
+## Phantom power and wireless
+
+- **+48 V phantom power** for condenser mics: switch it on with the channel muted and turn it off before unplugging
+  ([Recording 2](rec-mics.qmd)).
+- **Wireless mics and in-ears**: fresh or fully charged batteries before every show, not "it still had a bar".
+
+## Stay safe
+
+- A tingle from a microphone or guitar strings is a fault: **stop**, unplug, and tell someone in charge.
+- Outdoors, and in the monsoon, power must go through an **RCD / RCCB / GFCI** (a breaker that trips on a leak to earth).
+- Don't open amps, especially **valve (tube) amps**: they hold lethal voltages after being unplugged.
+- Tape cables down or use cable ramps across walkways; trips are the most common injury at gigs.
+
+## Next
+
+- [Gear 2: Cables and Connectors](gear-cables.qmd)

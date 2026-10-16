@@ -43,10 +43,10 @@ const want = { oompah: ["1 3"], waltz: ["1 3"], eighths: ["0 0.5 1 1.5 2 2.5 3 3
                strumCamp: ["0 1 1.5 2.5 3 3.5"], strumFolk: ["0 1 1.5 2 3 3.5"], strumEights: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumPunk: ["0 0.5 1 1.5 2 2.5 3 3.5"], strumQuarters: ["0 1 2 3"], strum332: ["0 1 1.5 2.5 3 3.5"],
                strum16: ["0 0.5 0.75 1.25 1.5 1.75 2 2.5 2.75 3.25 3.5 3.75"], sowhat: ["", "2 3.5"], maiden: ["0 1.5 3", "1.5 3"], takefive: ["0 1.5 3"], tresillo: ["0 1.5 3"], clave32: ["0 1.5 3", "1 2"], barbara: ["0 1 2 3.5", "0.5 1.5 2"], g333322: ["0 1.5 3", "0.5 2 3"], g33433: ["0 1.5 3", "1 2.5"],
                g3x8: ["0 0.75 1.5 2.25 3 3.75", "0.5 1.25 2 2.5 3 3.5"], alberti: ["0 0.5 1 1.5 2 2.5 3 3.5"],
-               ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], prine: ["0 1 1 1.5 2 3 3 3.5"], travis: ["0 0 1 1.5 2 2.5 3 3.5"], hymn: ["0"], quarters: ["0 1 2 3"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
+               ballRock: ["0 2", "0 2 3.5"], ballBroken: ["2", "0"], ballSync: ["0 1.5 3", "0 1.5"], prine: ["0 1 1 1.5 2 3 3 3.5"], travis: ["0 0 1 1.5 2 2.5 3 3.5"], hymn: ["0"], quarters: ["0 1 2 3"], stride: ["1 3"], strideTenths: ["1 3"], boogie: ["0 0.5 1.5", "0.5 1 2.5"], triplets: [[0, 1, 2, 3].map(b => [b, b + 1 / 3, b + 2 / 3].join(" ")).join(" ")] };
 // (the piano's left-hand root under a strum or an lh pattern is a separate one-note event, marked arp like an arpeggio note)
 const rh = (id, evs) => BandComp.GRID[id].arp || BandComp.GRID[id].pick ? evs : BandComp.GRID[id].ballad ? evs.filter(e => e.midis.length > 1 && e.hand !== "L")   /* (the ballad: the right hand's chords and pairs) */
-  : evs.filter(e => !(e.arp && e.midis.length === 1));
+  : evs.filter(e => !(e.arp && e.midis.length === 1) && e.hand !== "L");   /* (and the stride left hand's octaves) */
 for (const id of GRID) gen("4/4", { compRhythm: id }, 5, ONE, 16).forEach(r => assert.strictEqual(pos(rh(id, r.parts.comp)), want[id][r.index % want[id].length], id + " bar " + r.index));
 // the left hand: one root below the chord each time a chord arrives, on the piano only, and never in the hand-off
 { const q = gen("4/4", { compRhythm: "quarters" }, 5, ONE, 8), lh = r => r.parts.comp.filter(e => e.arp);
@@ -186,4 +186,21 @@ for (const id of Object.keys(M)) for (const groove of Object.keys(BandDrums.GROO
 // notation and MIDI take the new patterns
 { const recs = gen("4/4", { compRhythm: "arp", bassFeel: "tumbao", feel: "straight" }, 2, ONE, 8);
   assert(BandNotation.toAbc(recs, { key: "F" }).length > 100); assert(BandMidi.build(recs).length > 200); }
+// boogie-woogie bass: root 3 5 6 b7 6 5 3 in eighths over F7; a chord arriving on beat 3 restarts the walk on its root
+{ const N = BandHarmony.noteName, iv = r => r.parts.bass.map(e => ((e.midi - r.parts.bass[0].midi) % 12 + 12) % 12).join(" ");
+  const b = gen("4/4", { bassFeel: "boogie", variation: 0 }, 5, ONE, 4);
+  b.forEach(r => { assert.strictEqual(pos(r.parts.bass), "0 0.5 1 1.5 2 2.5 3 3.5"); assert.strictEqual(iv(r), "0 4 7 9 10 9 7 4", "boogie " + r.index); });
+  const two = gen("4/4", { bassFeel: "boogie", variation: 0 }, 5, ["F7 Bb7"], 2)[0];
+  assert.strictEqual(N(two.parts.bass[4].midi).replace(/\d/, ""), "Bb", "the second chord starts on its root"); }
+// the stride left hand: an octave on the root on 1, the fifth on 3, both below the chords on 2 and 4; none on the guitar
+{ const s = gen("4/4", { compRhythm: "stride", voicing: "standard", variation: 0 }, 5, ONE, 4), L = r => r.parts.comp.filter(e => e.hand === "L");
+  s.forEach(r => { const l = L(r), top = Math.min(...r.parts.comp.filter(e => e.hand !== "L").map(e => e.midis[0])), root = r.chords[0].chord.bass;
+    assert.strictEqual(pos(l), "0 2"); assert.strictEqual(l[0].midis.length, l[0].midis[0] <= 45 ? 2 : 1); assert(l[0].midis.every(m => m % 12 === root));
+    assert.strictEqual(l[1].midis[0] % 12, (root + 7) % 12); assert(l.every(e => e.midis.every(m => m < top - 3 && m >= 36)), JSON.stringify(l)); });
+  assert.strictEqual(pos(L(gen("3/4", { compRhythm: "stride" }, 5, ONE, 2)[1])), "0", "one bass note a bar in 3/4");
+  assert(gen("4/4", { compRhythm: "stride", comp: "guitar" }, 5, ONE, 4).every(r => !L(r).length), "no left hand on a guitar"); }
+// jump blues drums: the kick on every beat, the snare on 2 and 4 (2 and 3 in 3/4)
+{ const pc = (r, p) => r.parts.drums.filter(e => e.piece === p).map(e => e.pos).join(" ");
+  const j = gen("4/4", { groove: "jump", fills: false }, 5, ONE, 2)[0]; assert.strictEqual(pc(j, "kick"), "0 1 2 3"); assert.strictEqual(pc(j, "snare"), "1 3");
+  assert.strictEqual(pc(gen("3/4", { groove: "jump", fills: false }, 5, ONE, 2)[0], "snare"), "1 2"); }
 console.log("PATTERNS OK:", n, "option sets");

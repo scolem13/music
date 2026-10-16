@@ -1,0 +1,77 @@
+---
+title: "Sound 17: Delay"
+toc: true
+toc-depth: 2
+---
+
+Shout at a cliff and your voice comes back a moment later: an **echo**. A **delay** effect records the
+sound and plays it back a set time later, mixed in with the original. Feed some of that copy back into
+the delay and it repeats again, and again, each time quieter. It's the simplest effect there is, and
+the building block of [chorus and flanger](sound-chorus.qmd) and of most of [reverb](sound-reverb.qmd).
+
+**How to use the page.** The source starts as **single hits**, so each echo is easy to hear. The strip
+under the controls shows one hit and every echo that follows it, as tall as it is loud.
+
+## The echo
+
+<div class="sk" data-w="delay" data-source="hits"></div>
+
+- **Delay time**: how long until the copy comes back. Under about 30 ms you don't hear an echo at all,
+  just a thicker sound (that's where chorus and flanger live). From about 60 to 150 ms you hear a
+  **slapback**. Longer, and you hear separate repeats.
+- **Feedback**: how much of each echo is sent round again. 0% is a single echo; 50% means each repeat is
+  half as loud as the last. Push it past 100% and every repeat is *louder*: the echoes pile up into a
+  roar (this delay squashes them so they can't blow up; real tape echoes do the same).
+- **Tone of the repeats**: a low-pass inside the loop, so every trip round loses more top end. The
+  echoes get darker as they fade, which is what tape and old analog delays did and why they sit
+  so well behind the music.
+- **Wow and flutter**: tape never runs at quite a steady speed. A slow wobble (wow) and a fast one
+  (flutter) bend the pitch of the repeats.
+- **Ping-pong**: two delays feeding each other, one on the left and one on the right, so the echoes
+  bounce between your ears. Headphones on.
+
+## The presets
+
+| Preset | Where you've heard it |
+|---|---|
+| **Slapback** | 1950s rock 'n' roll: Elvis's voice and Scotty Moore's guitar at Sun Records, one quick echo from a second tape machine |
+| **Echo** | a voice in a big space, a few repeats |
+| **Dotted eighth** | the Edge (U2): the echo lands between the notes, so a plain run of eighth notes becomes a sixteenth-note pattern. Try it on the **Synth riff** |
+| **Ping-pong** | a stereo bounce, timed to the beat |
+| **Tape echo** | a Roland Space Echo or an Echoplex: dark, wobbly repeats |
+| **Dub** | King Tubby and Lee "Scratch" Perry: long, dark repeats that hang on after the band drops out |
+| **Runaway** | feedback over 100%. While it plays, drag the **Delay time**: the repeats slide in pitch, the way a tape echo does when you turn its speed knob |
+
+**Timing to the beat.** At a tempo of *B* beats per minute, one beat lasts 60000 ÷ *B* milliseconds.
+The riff here is at 112 bpm, so a quarter note is 536 ms, an eighth note 268 ms, and a dotted eighth
+(three sixteenths) 402 ms. Most delays have a tap button or tempo sync to do this for you.
+
+## Glitch: stutter and beat repeat
+
+Electronic producers break the music on purpose. One of the commonest tricks is the **stutter** (or
+**beat repeat**): grab a tiny slice of the music and loop it, *rat-a-tat-tat*, for a beat or two.
+
+It's a delay used in a strange way. The delay time is set to the length of one slice. When a glitch
+fires, the input is cut and the feedback goes to exactly 100%, so the last slice goes round and
+round, never fading. When the glitch ends, the music comes back.
+
+<div class="sk" data-w="glitch" data-source="drums"></div>
+
+- **Slice**: how long the looped bit is. Short slices (1/32, 1/64) loop so fast they buzz with a pitch
+  of their own.
+- **Chance**: how likely a glitch is on each half beat. Press **Glitch now** to fire one yourself.
+- **Pitch drift**: the delay time shrinks (or grows) while the slice loops, so the repeats get faster
+  and rise (a **riser**) or slow down and fall (a **tape stop**).
+- **Crush the repeats** and **backwards slices** add the other two classic glitch sounds: a
+  [bit crusher](sound-distortion.qmd) and a slice played in reverse.
+
+Glitch effects are everywhere in electronic dance music, in Aphex Twin and Squarepusher, in trap
+hi-hat rolls, and in vocal chops in pop. Plug-ins like Ableton's Beat Repeat and iZotope's Stutter Edit
+are built on this idea. Used for a beat at the end of a phrase, it's a fill; used everywhere, it's
+annoying. Try your **Microphone** and say a sentence while it plays.
+
+## Next
+
+- [Sound 18: Chorus and flanger](sound-chorus.qmd): what happens when the delay is very short and moving.
+
+{{< include _synth-kit.qmd >}}

@@ -1,0 +1,98 @@
+---
+title: "Recording 1: Gain Staging"
+toc: true
+toc-depth: 2
+---
+
+Before any microphone choice or plug-in, one thing decides whether a recording is usable: **how loud the
+signal is at each step on the way in**. Too quiet and the noise of the gear comes up with it; too loud
+and the top of the wave is cut off, for ever. Getting this right at every stage is **gain staging**.
+
+## The chain on the way in
+
+A sound reaches the computer through a few stages, each with its own ceiling:
+
+1. **Source**: the voice or instrument, and the room.
+2. **Microphone** (or a DI box for a guitar or keyboard).
+3. **Preamp**: the **gain** knob on the interface. A microphone puts out a tiny voltage (*mic level*,
+   around −60 to −40 dBu); the preamp raises it by 30–60 dB to *line level*.
+4. **Converter** (A/D): turns the voltage into numbers. Its ceiling is **0 dBFS** (decibels relative to
+   *full scale*): the largest number it can write. Nothing goes above it.
+5. **The DAW**: tracks, plug-ins, buses, the master.
+
+The **gain** knob is the one that matters most, and it is the one to set *first*, with the fader in the
+DAW left at 0. A fader turns down what was recorded; it cannot un-clip it.
+
+<div class="sk-care">Clipping at the converter is permanent. A clipped take sounds harsh and crackly on
+every peak, and nothing later removes it. When in doubt, record quieter.</div>
+
+## How loud to record
+
+In 24-bit recording (the default in every DAW now) there is about 144 dB between the noise floor of the
+numbers and 0 dBFS, far more than any preamp or room can use. So there is no reason to record hot.
+
+- Aim for **peaks around −12 to −6 dBFS** and an average around **−18 dBFS**. That is where most analogue
+  gear and plug-ins are designed to sit (−18 dBFS is about 0 VU, "line level").
+- Set the gain while the player performs **the loudest part** of the song, not while they warm up. People
+  play louder in the take than in the sound check; singers louder in the chorus than the verse.
+- If the meter touches red even once, turn the gain down a few dB and do it again.
+- 16-bit recording (old gear, some phones) has 96 dB of range; there it is worth recording a bit
+  hotter, but still never into the red.
+
+## Hear it go wrong
+
+The signal chain from [Sound 24](sound-chain.qmd), with every stage clipping above 0 dB like real gear.
+Press **Too hot**, watch a stage go red, then lower the **Input gain** until nothing does.
+
+<div class="sk" data-w="chain" data-preset="Too hot"></div>
+
+Notice that turning down the *output* after a clipped stage only makes the damage quieter.
+
+## Try it: gain, clipping and hiss
+
+A quiet microphone-level voice (or drum loop) goes through a preamp, a converter that cuts hard at 0 dBFS,
+and then the fader in the DAW. Press play, then the three **Try** buttons in turn.
+
+- **Too hot, fader down**: the track meter looks safe, the red light has latched, and it still sounds
+  crunchy. The fader came after the damage.
+- **Too quiet, fader up**: nothing clips, but the signal-to-noise figure is poor and the hiss comes up
+  with the voice.
+- **Just right**: peaks around −12 to −6 dBFS, hiss far below.
+
+<div class="rk" data-w="gainstage"></div>
+
+## Pads, DI and the gain knob
+
+- **Pad** (−10 or −20 dB switch on the interface or the mic): for very loud sources (kick drum, guitar
+  amp, a belted high note close to a condenser) where even the lowest gain clips. It cuts *before* the
+  preamp, so the preamp isn't overloaded.
+- **Instrument / Hi-Z input**: an electric guitar or bass plugged straight in needs a high-impedance
+  input (the "Inst" switch) or a **DI box**. On a mic input it sounds thin and dull.
+- **Line input**: keyboards, drum machines, the outputs of other gear. Already loud; little or no gain.
+- **Too little gain** then turning up in the DAW raises the preamp hiss with the signal. Too much is
+  clipping. Somewhere between, the gain is right.
+
+## Inside the DAW
+
+Floating-point DAWs (all modern ones) won't clip *inside* a track; only the converter and the final
+file have a hard ceiling. But plug-ins that model analogue gear react to level: hit a vintage
+compressor or saturation plug-in at +6 dBFS and it distorts. Keep each track and bus around the same
+−18 dBFS average, use the **clip gain** or a trim plug-in at the start of a track rather than pushing
+faders far up, and leave the master peaking well below 0 before [mastering](rec-mastering.qmd).
+
+## Checklist
+
+- Faders at 0, gain at minimum, then bring gain up while they play the loudest part.
+- Peaks −12 to −6 dBFS. Never red.
+- Pad for loud sources, Inst/DI for guitar and bass.
+- Record 24-bit (48 kHz or 44.1 kHz).
+
+## Next
+
+- [Recording 2: Microphones and Phantom Power](rec-mics.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-level.js?v=1"></script>
+```

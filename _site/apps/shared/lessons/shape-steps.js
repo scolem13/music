@@ -169,7 +169,8 @@
       if (card !== row) row.appendChild(card);
     });
     host.appendChild(row);
-    var st = el("div", "sh-staff"); st.style.maxWidth = Math.min(44, 6 + shapes.length * 8) + "rem"; host.appendChild(st); staff(inst, shapes, st);
+    var st = el("div", "sh-staff"); st.style.maxWidth = Math.min(44, 6 + shapes.length * 8) + "rem"; host.appendChild(st);
+    var paper = el("div"); st.appendChild(paper); staff(inst, shapes, paper); // abcjs makes its target inline-block with a % padding: give it a block parent of its own width
     var all = el("button", "btn btn-sm btn-outline-secondary sh-all", "▶ Play in order"); all.type = "button";
     all.addEventListener("click", function () { shapes.forEach(function (sh, i) { setTimeout(function () { play(inst, sh); }, i * 1400); }); });
     host.appendChild(all);

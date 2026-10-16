@@ -80,6 +80,13 @@
 #bt-root .bt-tunepick{margin:0 0 .8rem;padding:.7rem .8rem;border:1px solid var(--site-border,#e0d8ce);border-radius:10px;max-height:26rem;overflow:auto}
 #bt-root .bt-tunepick[hidden],#bt-root #bt-tune[hidden],#bt-root .bt-chartcol [hidden]{display:none!important}
 #bt-root #bt-tune{margin:0 0 1rem}
+#bt-root .bt-chartcol.bt-beside{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:1rem;align-items:start}
+#bt-root .bt-chartcol.bt-beside #bt-tune{margin:0}
+@media (max-width:900px){ #bt-root .bt-chartcol.bt-beside{grid-template-columns:minmax(0,1fr)} }
+#bt-root .bt-to-notation{display:flex;align-items:center;gap:.8rem;flex-wrap:wrap;margin:0 0 .8rem;padding:.6rem .8rem;border-radius:10px;background:rgba(63,194,180,.1);border:1px solid rgba(43,156,144,.35)}
+#bt-root .bt-to-notation p{margin:0;font-size:.85rem;color:var(--site-ink-2,#5c5246);flex:1 1 16rem}
+#bt-root .bt-btn.bt-btn-notation{background:var(--site-accent-dk,#2b9c90);border-color:var(--site-accent-dk,#2b9c90);color:#fff;font-weight:600}
+#bt-root .bt-btn.bt-btn-notation:hover{background:var(--site-accent,#3fc2b4);border-color:var(--site-accent,#3fc2b4)}
 #bt-root .bt-tune-head{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem;margin:0 0 .35rem}
 #bt-root .bt-tune-head .bt-tune-title{font-family:var(--font-display,'Oswald',system-ui,sans-serif);font-size:1.15rem;font-weight:600;margin:0}
 #bt-root .bt-tune-head select{height:1.9rem;font-size:.85rem}
@@ -315,7 +322,7 @@
   <div class="bt-viewbar" id="bt-viewbar">
     <span class="bt-group-label" id="bt-view-l">Show</span>
     <span class="bt-seg" role="group" aria-labelledby="bt-view-l">
-      <button type="button" class="bt-btn" data-view="grid" aria-pressed="true" title="The chord grid">Chord grid</button><button type="button" class="bt-btn" data-view="tune" aria-pressed="false" title="The tune's notation, where the grid was">Tune notation</button><button type="button" class="bt-btn" data-view="both" aria-pressed="false" title="The notation above the chord grid">Both</button>
+      <button type="button" class="bt-btn" data-view="grid" aria-pressed="true" title="The chord grid">Chord grid</button><button type="button" class="bt-btn" data-view="tune" aria-pressed="false" title="The tune's notation, where the grid was">Tune notation</button><button type="button" class="bt-btn" data-view="both" aria-pressed="false" title="The notation above the chord grid">Both</button><button type="button" class="bt-btn" data-view="beside" aria-pressed="false" title="The notation beside the chord grid">Side by side</button>
     </span>
     <button type="button" class="bt-btn" id="bt-tune-load" aria-expanded="false" aria-controls="bt-tunepick" title="Pick a tune from the tune collection: its chords go to the band and its melody is played along with them.">Load a tune from the collection&hellip;</button>
     <details class="bt-sideopts" id="bt-tune-opts"><summary>Notation options</summary>
@@ -595,6 +602,10 @@
 
   <details class="bt-panel bt-fold" id="bt-melody">
     <summary>Melody</summary>
+    <div class="bt-to-notation">
+      <button type="button" class="bt-btn bt-btn-notation" id="bt-mel-notation" title="Opens the Notation page with these changes (and the melody so far): chords, sections and words, to write the melody note by note.">Open in the Notation app</button>
+      <p>Write the melody there note by note, with these chords and sections.</p>
+    </div>
     <div class="bt-row">
       <button type="button" class="bt-btn" id="bt-mel-connect">Connect a MIDI keyboard</button>
       <div class="bt-field"><label for="bt-mel-midi">MIDI keyboard</label><select id="bt-mel-midi" disabled><option value="">Not connected</option></select></div>
@@ -680,6 +691,7 @@
 </div>
 
 <script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/audio-check.js"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
@@ -693,11 +705,11 @@
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=1"></script>
 <script src="/apps/shared/band/harmony.js?v=31"></script>
-<script src="/apps/shared/band/bass.js?v=14"></script>
-<script src="/apps/shared/band/comp.js?v=30"></script>
-<script src="/apps/shared/band/presets.js?v=5"></script>
-<script src="/apps/shared/band/catalog.js?v=33"></script>
-<script src="/apps/shared/band/drums.js?v=15"></script>
+<script src="/apps/shared/band/bass.js?v=16"></script>
+<script src="/apps/shared/band/comp.js?v=32"></script>
+<script src="/apps/shared/band/presets.js?v=7"></script>
+<script src="/apps/shared/band/catalog.js?v=36"></script>
+<script src="/apps/shared/band/drums.js?v=16"></script>
 <script src="/apps/shared/band/congas.js?v=2"></script>
 <script src="/apps/shared/band/sounds.js?v=14"></script>
 <script src="/apps/shared/band/player.js?v=120"></script>
@@ -806,7 +818,7 @@
   // start of the next one, turning with the band. The melody the band plays comes from the same ABC (BandTuneScore.melody) when a
   // tune is loaded from the collection.
   var tuneMode = "grid", tuneSrc = null, tuneSec = 0, tuneKey = "", tuneSeq = 0, tuneMap = [], tuneLit = [], tuneBase = 0;
-  try { var vm0 = localStorage.getItem("btView"); if (vm0 === "tune" || vm0 === "both") tuneMode = vm0; } catch (e) {}
+  try { var vm0 = localStorage.getItem("btView"); if (vm0 === "tune" || vm0 === "both" || vm0 === "beside") tuneMode = vm0; } catch (e) {}
   function tuneScopeSection(){ return $("bt-tune-scope").value === "section" && tabSections().length > 1; }
   function tuneRender(el, text, from, to, shift){
     return loadAbcjs().then(function(){
@@ -862,6 +874,7 @@
     tuneMode = m; try { localStorage.setItem("btView", m); } catch (e) {}
     Array.prototype.forEach.call(document.querySelectorAll("#bt-viewbar [data-view]"), function(b){ b.setAttribute("aria-pressed", String(b.getAttribute("data-view") === m)); });
     $("bt-tune").hidden = m === "grid"; $("bt-chart").hidden = m === "tune"; tuneKey = "";
+    document.querySelector("#bt-root .bt-chartcol").classList.toggle("bt-beside", m === "beside");      // the notation beside the grid
     if (m === "tune") $("bt-tabstrip").hidden = true; else chartTabs();
     tuneDraw();
   }
@@ -2403,14 +2416,22 @@
   function followStart(){
     var md = navigator.mediaDevices; if (!md || !md.getUserMedia){ followStop("This browser gives the page no microphone."); return; }
     $("bt-follow-note").textContent = "Asking for the microphone…";
-    md.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }).then(function(stream){
+    var chk = window.AudioCheck ? AudioCheck.ensure() : Promise.resolve(undefined);
+    chk.then(function(r){
+      if (r === null){ followStop(""); return; }                           // cancelled the sound check: as if never asked
+      // on speakers the band's own sound reaches the mic: treat input at that level as bleed, not you (assumes the band plays near -20 dBFS)
+      var gate = r ? AudioCheck.bleedFloorDb(r, -20) : -Infinity;
+      return md.getUserMedia({ audio: r && r.constraints ? r.constraints : { echoCancellation: false, noiseSuppression: false, autoGainControl: false } }).then(function(stream){
       if (!$("bt-follow").checked){ stream.getTracks().forEach(function(t){ t.stop(); }); return; }
       var AC = window.AudioContext || window.webkitAudioContext, ctx = new AC(), an = ctx.createAnalyser(), buf; an.fftSize = 2048; buf = new Float32Array(an.fftSize);
       ctx.createMediaStreamSource(stream).connect(an);                    // (to the analyser only: you are not played back)
       follow = { level: 0.5, floor: null, ceil: null, stream: stream, ctx: ctx };
       follow.timer = setInterval(function(){ an.getFloatTimeDomainData(buf); var s = 0; for (var i = 0; i < buf.length; i++) s += buf[i] * buf[i];
-        followFeed(20 * Math.log(Math.max(1e-5, Math.sqrt(s / buf.length))) / Math.LN10); }, 100);
-    }, function(){ followStop("The microphone was not allowed."); });
+        var db = 20 * Math.log(Math.max(1e-5, Math.sqrt(s / buf.length))) / Math.LN10;
+        if (db < gate) db = -100;                                          // bleed: counts as silence
+        followFeed(db); }, 100);
+      });
+    }).catch(function(){ followStop("The microphone was not allowed."); });
   }
   $("bt-follow").addEventListener("change", function(){ if ($("bt-follow").checked) followStart(); else followStop(); });
   window.__follow = { feed: followFeed, stop: followStop };              // for tests
@@ -2652,8 +2673,8 @@
     melNote(melInput ? "Listening to " + (melInput.name || "the MIDI keyboard") + "." : "No MIDI keyboard found. Plug one in.");
   }
   $("bt-mel-connect").addEventListener("click", function(){
-    if (!navigator.requestMIDIAccess){ melNote("This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome, Edge or Firefox."); return; }
-    navigator.requestMIDIAccess().then(function(a){ melMidi = a; a.onstatechange = melInputs; melInputs(); }, function(){ melNote("The browser did not allow MIDI. Allow it for this site."); });
+    if (!navigator.requestMIDIAccess){ melNote("This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome or Edge."); return; }
+    navigator.requestMIDIAccess().then(function(a){ melMidi = a; a.onstatechange = melInputs; melInputs(); if (window.AudioCheck && !AudioCheck.isChromium()) melNote("Chrome or Edge is recommended for a MIDI keyboard."); }, function(){ melNote("The browser did not allow MIDI. Allow it for this site."); });
   });
   $("bt-mel-midi").addEventListener("change", function(){ if (melMidi) melInputs(); });
   // the computer keyboard as a piano, as on the Chord Entry page: lower row Z..M, upper row Q..P; Arrow Up / Down for the octave.
@@ -2724,6 +2745,23 @@
     if (melPickup && melPickup.notes && melPickup.notes.length && !parsedC.anacrusis) d.pickup = { beats: melPickup.beats, notes: melPickup.notes.map(function(n){ var o = { pos: n.pos, dur: n.dur, midi: n.midi, tie: !!n.tie }; if (n.midis && n.midis.length > 1) o.midis = n.midis.slice(); if (n.sp) o.sp = n.sp; if (n.spOdd) o.spOdd = true; return o; }) };      // (notes before bar 1: a short bar in front there too)
     var page = "/tools/chord-entry.html#from=tune&d=" + encodeURIComponent(JSON.stringify(d));
     if (!window.open(page, "bt-chord-entry")) location.href = page;
+  });
+  // over to the Notation page: opened as ?remote=1, it answers nt-ready and takes nt-abc { abc, title } (the changes, with the
+  // melody so far when there is one)
+  var ntWin = null, ntPending = null;
+  $("bt-mel-notation").addEventListener("click", function(){
+    if (!abc || !parsedC){ melNote("Enter some changes first."); return; }
+    var text = abc;
+    if (melCount() > 0){ var secs = []; formOf().forEach(function(fb){ if (fb.section != null && secs[fb.src] == null) secs[fb.src] = fb.section; });
+      text = ChordEntry.melodyAbc(parsedC, mel, { title: parsedC.title || "Melody", sections: secs, pickup: melPickup, beam: $("bt-mel-beam").value, tie: $("bt-mel-tie").value }); }
+    var m = { type: "nt-abc", abc: text, title: parsedC.title || "", host: "the Backing Track" };
+    if (ntWin && !ntWin.closed && ntWin._ready){ ntWin.postMessage(m, location.origin); try { ntWin.focus(); } catch (e) {} return; }
+    ntPending = m; ntWin = window.open("/tools/notation.html?remote=1", "bt-notation");
+    if (!ntWin) melNote("The browser blocked the Notation window: allow pop-ups for this site.");
+  });
+  window.addEventListener("message", function(e){
+    if (!ntWin || e.source !== ntWin || e.origin !== location.origin || !e.data || e.data.type !== "nt-ready") return;
+    ntWin._ready = true; if (ntPending){ ntWin.postMessage(ntPending, location.origin); ntPending = null; }
   });
   // over to the Chord Entry page with what is here: localStorage.entryHandoff { v, from, at, abc, tempo, pinMap }
   $("bt-to-entry").addEventListener("click", function(){

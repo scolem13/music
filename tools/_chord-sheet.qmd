@@ -2322,7 +2322,7 @@ function voiceToggle(){
     on:(m,vel,ms)=>{if(!voiceOn)return;if(window.BandPlayer)BandPlayer.chord([m],{inst:'piano',dur:1.4,vel:Math.max(.2,Math.min(1,vel))}).catch(()=>{});voiceLis.noteOn(m,ms)},
     off:(m,ms)=>{if(!voiceOn)return;voiceLis.noteOff(m,ms).forEach(c=>voiceEnter(c.midis))}
   }).then(a=>{voiceMidi=a;start();if(!a.inputs.size)voiceNote('No MIDI keyboard found yet. Plug one in and play.')},
-    e=>voiceNote(e&&e.message==='no-web-midi'?'This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome, Edge or Firefox.':'The browser did not allow MIDI. Allow it for this site and try again.'));
+    e=>voiceNote(e&&e.message==='no-web-midi'?'This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome or Edge.':'The browser did not allow MIDI. Allow it for this site and try again.'));
 }
 document.getElementById('btn-voice').addEventListener('click',voiceToggle);
 window.__sheetVoice={enter:voiceEnter,on:()=>{voiceOn=true;voiceMark()},at:()=>voiceAt,tokens:voiceTokens};   // for tests

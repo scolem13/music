@@ -1,5 +1,5 @@
 ---
-title: "Sound 6: Subtractive Synthesis"
+title: "Sound 7: Subtractive Synthesis"
 toc: true
 toc-depth: 2
 ---
@@ -55,7 +55,7 @@ the controls shows both envelopes.
 
 ## 4. LFO
 
-The **LFO** ([Sound 5](sound-lfo.qmd)) adds vibrato (**→ Pitch**) or a slow filter sweep
+The **LFO** ([Sound 6](sound-lfo.qmd)) adds vibrato (**→ Pitch**) or a slow filter sweep
 (**→ Cutoff**).
 
 ## Recipes to try
@@ -71,6 +71,6 @@ The **LFO** ([Sound 5](sound-lfo.qmd)) adds vibrato (**→ Pitch**) or a slow fi
 
 ## Next
 
-- [Sound 7: FM synthesis](sound-fm.qmd), a completely different way to make harmonics.
+- [Sound 8: FM synthesis](sound-fm.qmd), a completely different way to make harmonics.
 
 {{< include _synth-kit.qmd >}}

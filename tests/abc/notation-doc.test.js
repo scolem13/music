@@ -369,4 +369,57 @@ t("the band chart: P: per portion, the most particular settings win, reports lan
   assert.strictEqual(D.bandOf(d, 0).level, "piece");
 });
 
+t("a pickup chunk is a short first bar, and reads back from ABC", () => {
+  const d = D.create(); d.meter = "4/4"; d.key = "G";
+  const a = D.newChunk("Pickup"); a.pickup = true; a.rhythm = [{ type: "note", durQ: 1.5 }, { type: "note", durQ: 0.5 }, { type: "note", durQ: 1 }]; a.pitches = [59, 60, 62];
+  const b = D.newChunk("Take 1"); b.rhythm = [{ type: "note", durQ: 4 }, { type: "note", durQ: 2 }, { type: "rest", durQ: 2 }]; b.pitches = [67, 69];
+  d.chunks = [a, b];
+  const abc = D.toAbc(d).abc;
+  assert.strictEqual(music(abc), '"^Pickup"B,3 C D2 | "^Take 1"G8 | A4 z4 |]');
+  const back = D.fromAbc(abc);
+  assert.strictEqual(back.chunks[0].pickup, true); assert.strictEqual(back.chunks[1].pickup, false);
+  assert.strictEqual(D.toAbc(back).abc, abc);
+  // almost a whole bar (3.5 beats) still is one
+  a.rhythm = [{ type: "note", durQ: 0.5 }, { type: "note", durQ: 3 }]; a.pitches = [62, 64];
+  assert.ok(/^"\^Pickup"D E6 \| "\^Take 1"G8 \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
+  a.pickup = false;                                            // not a pickup: the bar is filled from the chunk's start
+  assert.ok(/^"\^Pickup"D E3- E3 "\^Take 1"G- \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
+});
+
+t("a phrase's lead-in: stitched into the bar before, the bar further back, a Pickup chunk at the top", () => {
+  const N = (t, d, midi) => ({ t, d, midi });
+  const mk = () => { const d = D.create(); d.meter = "4/4"; const a = D.newChunk("A"), b = D.newChunk("B");
+    a.rhythm = [{ type: "note", durQ: 4 }, { type: "note", durQ: 4 }]; a.pitches = [60, 62];       // A ends on a whole note D
+    b.rhythm = [{ type: "note", durQ: 4 }]; b.pitches = [67]; d.chunks = [a, b]; return d; };
+  // E F on beat 4 lead into B: A's D is cut at beat 4
+  let d = mk(), r = D.writeLeadIn(d, 1, 0, 0, [N(-1, 0.5, 64), N(-0.5, 0.5, 65)]);
+  assert.deepStrictEqual(D.barNotes(d, 0, 0, 1).map(n => [n.t, n.d, n.midi]), [[0, 3, 62], [3, 0.5, 64], [3.5, 0.5, 65]]);
+  assert.deepStrictEqual(r.line, { ci: 0, bar: 1, t: 3 }); assert.strictEqual(r.conflicts.length, 0);
+  assert.strictEqual(D.chunkLen(d, 0), 8);
+  // inside a chunk: the bar before is the same chunk's
+  d = mk(); D.writeLeadIn(d, 0, 0, 1, [N(-0.5, 0.5, 59)]);
+  assert.deepStrictEqual(D.barNotes(d, 0, 0, 0).map(n => [n.t, n.midi]), [[0, 60], [3.5, 59]]);
+  // a lead-in of a bar and a half: the bar further back is all the lead-in's
+  d = mk(); D.writeLeadIn(d, 1, 0, 0, [N(-6, 1, 67), N(-5, 1, 65), N(-1, 1, 64)]);
+  assert.deepStrictEqual(D.barNotes(d, 0, 0, 0).map(n => [n.t, n.midi]), [[2, 67], [3, 65]]);
+  assert.deepStrictEqual(D.barNotes(d, 0, 0, 1).map(n => [n.t, n.d, n.midi]), [[0, 3, 62], [3, 1, 64]]);
+  // the top of the piece: a Pickup chunk (a short first bar)
+  d = mk(); r = D.writeLeadIn(d, 0, 0, 0, [N(-1.5, 0.5, 55), N(-1, 1, 57)]);
+  assert.strictEqual(r.inserted, 1); assert.strictEqual(d.chunks[0].pickup, true); assert.strictEqual(D.chunkLen(d, 0), 1.5);
+  assert.ok(/^"\^Pickup"G, A,2 \| "\^A"C8/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
+  // again over that pickup: it is rebuilt, longer
+  r = D.writeLeadIn(d, 1, 0, 0, [N(-2, 0.5, 53), N(-1.5, 0.5, 55), N(-1, 1, 57)]);
+  assert.strictEqual(d.chunks.filter(c => c.pickup).length, 1); assert.strictEqual(D.chunkLen(d, 0), 2);
+  // longer than a bar at the top: a Pickup chunk and a whole bar
+  d = mk(); r = D.writeLeadIn(d, 0, 0, 0, [N(-5, 1, 55), N(-2, 1, 57)]);
+  assert.strictEqual(r.inserted, 2); assert.deepStrictEqual(d.chunks.slice(0, 3).map(c => c.name), ["Pickup", "Lead-in", "A"]);
+  assert.strictEqual(D.chunkLen(d, 0), 1);
+  // both sound at once: a conflict, the lead-in kept unless prefer "a"
+  const A2 = () => { const x = mk(); x.chunks[0].rhythm = [{ type: "note", durQ: 4 }, { type: "note", durQ: 3 }, { type: "note", durQ: 1 }]; x.chunks[0].pitches = [60, 62, 71]; return x; };
+  d = A2(); r = D.writeLeadIn(d, 1, 0, 0, [N(-1, 1, 64)]);
+  assert.strictEqual(r.conflicts.length, 1); assert.deepStrictEqual(D.barNotes(d, 0, 0, 1).map(n => n.midi), [62, 64]);
+  d = A2(); D.writeLeadIn(d, 1, 0, 0, [N(-1, 1, 64)], { prefer: "a" });
+  assert.deepStrictEqual(D.barNotes(d, 0, 0, 1).map(n => n.midi), [62, 71]);
+});
+
 console.log("NOTATION DOC OK (" + n + " tests)");

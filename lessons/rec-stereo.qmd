@@ -1,0 +1,159 @@
+---
+title: "Recording 7: Mono and Stereo"
+toc: true
+toc-depth: 2
+---
+
+A **mono** signal is one channel: one microphone, one cable, one speaker or many speakers all playing the
+same thing. A **stereo** signal is two channels, left and right, that differ a little, and the differences
+are what put sounds somewhere between the speakers ([Sound 23: Stereo](sound-stereo.qmd)). Most music is
+recorded largely in mono, mixed into stereo, and then heard, quite often, back in mono. Each step has its traps.
+
+## Recording: mostly mono
+
+- **One source, one mic** is a mono track: vocal, bass DI, kick, snare, guitar amp. That isn't a weakness:
+  the mix places each mono track in the stereo picture with the pan knob. A "stereo" vocal is almost never wanted.
+- **Two mics on one source is not automatically stereo.** Two mics at different distances on a guitar amp
+  hear the same sound at slightly different times; mixed together they comb-filter (cancel some
+  frequencies, boost others). Check the **polarity** button and nudge the far track in time until the low end
+  is fullest. The 3:1 rule helps: the second mic at least three times as far from the first as the first is from its source.
+- **Stereo pairs** record space on purpose ([Recording 2: Microphones](rec-mics.qmd)):
+  - **XY**: two cardioids, capsules touching at 90–135°. Only level differences, no time differences, so it
+    **sums to mono cleanly**. Narrower image.
+  - **ORTF / spaced pair (AB)**: capsules apart. Time differences give a wide, airy image, but in mono the
+    delays comb-filter: the more spaced, the more it can go hollow.
+  - **Mid/side**: a forward mic (mid) and a sideways figure-8 (side), decoded to L = M + S, R = M − S. In mono
+    the side cancels exactly and **you get the mid mic, perfectly**. Width is adjustable after the fact.
+- **Stereo sources**: keyboards, synths and drum machines often come out stereo (L/R outputs). Record both
+  if the patch is really stereo (a chorus, a Leslie, a stereo piano sample); record one if the two sides are identical.
+- **Room and overhead mics** are where stereo recording matters most: the drum kit, the choir, the piano, the hall.
+
+## Mixing: building the stereo picture
+
+The [mixing](rec-mixing.qmd) rules all serve two listeners at once, the one on stereo speakers and the one in mono:
+
+- **Centre** the things that carry the song: kick, snare, bass, lead vocal. A centred (mono) sound is equal in both
+  channels, so it survives every playback system, and its bass energy is shared by both speakers.
+- **Pan** the rest. Pan is a level difference; it sums to mono without cancelling.
+- **Pan law**: a sound panned centre plays in both speakers; to sound as loud as when it's hard to one side,
+  the centre is turned down 3 dB (or 4.5 or 6, the DAW decides). When the mix folds to mono, centre sounds come up
+  relative to hard-panned ones, so a balance can shift a little.
+- **Wideners** (Haas delays, phase tricks, stereo chorus, some "stereo enhancer" plug-ins) make width out of time
+  and phase differences, and those are exactly what **cancel in mono**.
+- **Double-tracking** (playing the part twice, panned left and right) is the safe way to wide: the two takes differ
+  naturally, so in mono they just sound like two players, not a comb filter.
+
+## One earbud: what happens when stereo is summed to mono
+
+Take one earbud out and the other still plays one channel only: you'd hear the left side of the mix, missing
+whatever was panned hard right (the second guitar, half the drum kit, a backing vocal). That's why phones and
+operating systems have a **Mono Audio** setting (iOS: Accessibility → Audio & Visual; Android, macOS and Windows have
+one too), and many earbuds switch to mono by themselves when only one is in. A single Bluetooth speaker, a phone's
+speaker, a smart speaker, a shop's ceiling speakers and many club and church PAs do the same thing: they play
+**L + R** (usually scaled by ½, or −3 dB, to keep it from clipping).
+
+What summing does to a mix:
+
+- **Anything equal in both channels** (the centred vocal, kick, bass) adds up and comes through solid. In fact it
+  gets louder relative to the sides (up to 6 dB on a plain L + R, 3 dB with a pan-law sum), so a mono mix sounds
+  more vocal-and-bass heavy.
+- **Hard-panned parts** stay, at their own level. Nothing is lost, but they drop back relative to the centre.
+- **Anything that's different in the two channels only by timing or phase** cancels partly or completely:
+  - A **Haas** widener (the same part a few ms late on one side) becomes a **comb filter**: hollow, thin, phasey.
+  - **Out-of-polarity** content (one side inverted, often from a miswired mic, a cable, or an overenthusiastic
+    widener) **disappears entirely**. Instruments or reverb vanish.
+  - **Spaced-pair** overheads and room mics go hollow; the cymbals can swish.
+  - **Stereo reverb** loses much of its tail (a reverb's two sides are deliberately decorrelated), so a mono mix
+    sounds drier than you meant.
+  - **Very wide synths and pads** (detuned unison spread across the field, stereo chorus) shrink, thin out, and
+    sometimes almost vanish behind the vocal.
+  - The **side** of a mid/side signal is gone: at 200% width you were only turning up what mono throws away.
+- **Bass** is the worst place for any of this: a bass note slightly out of phase between the sides loses its
+  weight in mono, and a mono subwoofer (see below) gets exactly that cancelled version.
+
+How to check it: press the DAW's **Mono** button (or put a utility plug-in on the master set to mono) several times
+while mixing, and watch a **correlation meter** or vectorscope. +1 is mono, 0 is wide and unrelated, anything
+heading toward −1 is trouble. Try it on the widget in [Sound 23](sound-stereo.qmd): Haas delay at 1, 3, 5, 10 ms with
+Mono on. If a part disappears in mono, fix the source: narrow the widener, use a real double, flip a polarity, or
+keep the low end (below about 120–150 Hz) mono with a mid/side EQ or a "mono bass" utility.
+
+## Live sound
+
+Most of a live audience doesn't hear stereo. Stereo needs you to sit between the speakers, roughly as far from each,
+and on a festival field or in a bar almost everyone is much nearer one stack than the other: they hear that side,
+plus a late copy of the other. So:
+
+- **Many live mixes are mono**, or nearly: both sides of the PA play the same mix, and nothing important is panned.
+  If a hard-left guitar plays only from the left stack, the people on the right don't get the guitar.
+- **Stereo is used lightly**: reverbs and delays, a little spread on keyboards and overheads, panning a few degrees.
+- **Front fills, delay towers and side fills** cover the parts of the room the main speakers miss. Delay speakers are
+  delayed to arrive just *after* the main PA (Haas again, 5–20 ms) so the sound still seems to come from the stage.
+- **Monitors** (wedges and in-ears) are separate mixes for each player ([Recording 4](rec-monitoring.qmd)). In-ears
+  are often stereo, for comfort and a sense of the band; wedges are mono.
+- **Feedback**: a mic in front of a speaker playing it howls. Keep mics behind the main PA, wedges in the mic's dead
+  zone (behind a cardioid, at the sides of a supercardioid).
+
+## Studio listening and speaker placement
+
+In the studio you're the one listener in the right seat, so stereo works fully, if the room and speakers allow it:
+
+- **Equilateral triangle**: the two speakers and your head at its three corners, 1–2 m on a side, tweeters at ear
+  height, speakers angled to point at (or just behind) your head. The phantom centre (a centred vocal floating
+  between them) is the test: if it's blurred or pulled to one side, the triangle is off.
+- **Symmetry**: the same distance from each side wall, so both sides reflect alike. Put the desk along the
+  **short** wall, firing down the room's long dimension.
+- **Off the walls**: a speaker near the wall behind it gets extra bass (and a dip where its reflection cancels).
+  Either keep it a metre or more out, or push it nearly flush and use the speaker's "boundary" EQ switch.
+  Avoid the room's exact centre (between front and back walls): bass standing waves are worst there.
+- **Decouple**: stands or isolation pads, not a resonant desk; the desk surface also reflects into your ears.
+- **First reflections**: absorbers on the side walls (where a mirror would show you the speaker) and above.
+- **Level**: moderate, ~75–85 dB SPL, then checked quiet.
+
+## Laptops, phones and small speakers
+
+- **Laptop speakers** are tiny and a few centimetres apart: almost no stereo width (some laptops fake it with
+  processing), and almost nothing below 150–200 Hz. Phones are often one speaker, or two that sum to near-mono.
+- Your **bass line** has to be heard through its **harmonics**: a bass with some upper-mid character (pick attack,
+  a little saturation, 700 Hz–1.5 kHz) stays audible; a pure sub-bass sine disappears.
+- Check mixes on the laptop and a phone, in mono. If the vocal is clear, the bass line can be followed and nothing has
+  vanished, the mix translates.
+- Laptop **headphone outputs** are usually fine; built-in **microphones** are mono, noisy, and processed (noise
+  suppression, echo cancellation): not for recording music if anything else is available.
+
+## Subwoofers, and why two
+
+A subwoofer plays only the deep bass (below a **crossover**, often 80 Hz). Low frequencies are hard to locate by ear,
+so one subwoofer is usually fed a **mono** sum of L + R. That's another mono fold: any bass that cancels in mono
+cancels in the sub.
+
+- **Why two?** Not mainly for stereo bass (below about 80 Hz you can hardly tell where it comes from). The reason is
+  the **room**. Bass wavelengths (4 m at 80 Hz, 17 m at 20 Hz) are the size of the room, so the room sets up
+  **standing waves**: at some seats a note booms, at others it nearly vanishes. Two subs in different places excite
+  those modes differently and fill in each other's holes, so the bass is **even across more seats** (and each sub
+  works less hard, with more headroom).
+- **Placement**: studies (Todd Welti and Allan Devantier at Harman) found two subs at the **midpoints of opposite
+  walls**, or four at the midpoints of all four, smooth the bass best across a listening area. A corner gives the
+  most level and the most uneven bass.
+- **Phase and time**: two subs must arrive together at the listener. Use each sub's **phase** (0/180° or a dial) and
+  delay so the bass gets *louder* at the crossover, not thinner; a sub out of phase with the mains causes the same
+  cancellation as an out-of-phase stereo pair.
+- **Live**, subs are often in a **cardioid** arrangement (one turned backward and delayed) to keep bass off the stage,
+  or spread across the front in an **end-fire** or **arc**. Two stacks far apart, left and right, with the same signal,
+  make a bass **power alley** down the middle and dead spots in between: the same comb filter as a Haas delay, but a
+  room-sized one.
+- **Studio**: the sub level is set so it continues the mains smoothly, not as an effect. A mix made with a loud sub
+  will be bass-light everywhere else.
+
+## Checklist
+
+- Kick, bass, snare, lead vocal centred; low end (below ~120 Hz) mono.
+- Mono button pressed often; correlation meter mostly positive.
+- No part disappears in mono; wideners and polarity checked.
+- Checked on speakers, headphones, one earbud, a laptop and a phone.
+- Speakers in a symmetrical triangle; sub(s) in phase with the mains.
+
+## Next
+
+- [Gear 1: Power and Safety](gear-power.qmd)
+- [Recording 1: Gain Staging](rec-gain-staging.qmd)
+- [Sound 23: Stereo](sound-stereo.qmd) (hear pan, Haas and width in mono)

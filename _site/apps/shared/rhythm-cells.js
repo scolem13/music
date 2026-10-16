@@ -43,7 +43,15 @@
       { abc: "B//B/B/B/B//", required: { division: true, elongation: true } }
     ],
     triple: [
-      { abc: "B6", required: { elongation: true } }
+      { abc: "B6", required: { elongation: true } },
+      // one macrobeat elongated (B2 B, B B2), and the rest cells for triple: the bank shows them with Elongation / Rest ticked
+      { abc: "B2 B", required: { elongation: true } },
+      { abc: "B B2", required: { elongation: true } },
+      { abc: "z6", required: { elongation: true, rest: true } },
+      { abc: "z3", required: { rest: true } },
+      { abc: "z BB", required: { rest: true } },
+      { abc: "zB2", required: { elongation: true, rest: true } },
+      { abc: "z2 B", required: { elongation: true, rest: true } }
     ]
   };
   var FORCE_DIVISION_AND_ELONGATION = { "B/>B/": 1, "B/<B/": 1, "B//B/B//": 1 };

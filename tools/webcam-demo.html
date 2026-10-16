@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Record Yourself Demo</title>
+<style>
+  :root { --bg:#f7f7f5; --fg:#1d1d1f; --muted:#666; --card:#fff; --line:#ddd; --accent:#2563eb; --rec:#dc2626; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151517; --fg:#eee; --muted:#999; --card:#1f1f23; --line:#333; } }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--fg); font:16px/1.5 system-ui, sans-serif; }
+  main { max-width: 900px; margin: 0 auto; padding: 16px; padding-right: 180px; }
+  nav.jump { position: fixed; right: 16px; top: 16px; width: 150px; font-size: 14px; }
+  nav.jump a { display:block; color:var(--accent); text-decoration:none; padding:2px 0; }
+  @media (max-width: 760px) { main { padding-right:16px; } nav.jump { display:none; } }
+  details { background:var(--card); border:1px solid var(--line); border-radius:10px; margin:12px 0; padding:4px 16px 16px; }
+  summary { cursor:pointer; font-weight:600; font-size:1.1em; padding:10px 0; }
+  canvas#stage { width:100%; height:auto; border-radius:8px; border:1px solid var(--line); touch-action:none; display:block; }
+  button { font:inherit; padding:8px 14px; border-radius:8px; border:1px solid var(--line); background:var(--card); color:var(--fg); cursor:pointer; }
+  button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  button.rec { background:var(--rec); color:#fff; border-color:var(--rec); }
+  button:disabled { opacity:.5; cursor:default; }
+  .row { display:flex; gap:8px; flex-wrap:wrap; align-items:center; margin:10px 0; }
+  .muted { color:var(--muted); font-size:14px; }
+  video#playback { width:100%; border-radius:8px; margin-top:8px; display:none; }
+</style>
+</head>
+<body>
+<nav class="jump">
+  <a href="#how">How it works</a>
+  <a href="#activity">Activity</a>
+  <a href="#review">Your recording</a>
+</nav>
+<main>
+  <h1>Record yourself: note-finding demo</h1>
+
+  <details id="how" open>
+    <summary>How it works</summary>
+    <p>Press <b>Start</b> and allow your camera and microphone. A note name appears and you click it on the keyboard.
+    The recording shows the activity, your mouse or finger, each click, and your webcam in the corner.</p>
+    <p class="muted">Everything stays on this device. Nothing is uploaded. When you stop, the video is saved to your
+    downloads so you can email it to your teacher.</p>
+  </details>
+
+  <details id="activity" open>
+    <summary>Activity</summary>
+    <canvas id="stage" width="1280" height="720"></canvas>
+    <div class="row">
+      <button id="start" class="primary">Start (camera + recording)</button>
+      <button id="stop" class="rec" disabled>Stop &amp; save</button>
+      <label class="muted"><input type="checkbox" id="mic" checked> Record microphone</label>
+      <span id="status" class="muted"></span>
+    </div>
+  </details>
+
+  <details id="review" open>
+    <summary>Your recording</summary>
+    <p class="muted" id="reviewMsg">After you stop, your recording plays back here and is downloaded.</p>
+    <video id="playback" controls playsinline></video>
+    <div class="row"><a id="again" style="display:none"><button>Download again</button></a></div>
+  </details>
+</main>
+
+<script src="../apps/shared/audio-check.js"></script>
+<script>
+(() => {
+  const W = 1280, H = 720;
+  const cv = document.getElementById('stage'), ctx = cv.getContext('2d');
+  const $ = id => document.getElementById(id);
+  const cam = document.createElement('video'); cam.muted = true; cam.playsInline = true;
+
+  // Keyboard: two octaves of white keys from C4
+  const NAMES = ['C','C♯','D','E♭','E','F','F♯','G','A♭','A','B♭','B'];
+  const WHITE = [0,2,4,5,7,9,11], BLACK = {1:0,3:1,6:3,8:4,10:5};
+  const KB = { x:80, y:330, w:1120, h:330, octaves:2 };
+  const ww = KB.w / (7*KB.octaves);
+  const keys = [];
+  for (let o=0;o<KB.octaves;o++) WHITE.forEach((pc,i)=>keys.push({pc, midi:60+12*o+pc, black:false,
+    x:KB.x+(o*7+i)*ww, y:KB.y, w:ww, h:KB.h}));
+  for (let o=0;o<KB.octaves;o++) for (const pc in BLACK) keys.push({pc:+pc, midi:60+12*o+ +pc, black:true,
+    x:KB.x+(o*7+BLACK[pc]+1)*ww-ww*0.3, y:KB.y, w:ww*0.6, h:KB.h*0.6});
+
+  let state = 'idle', target = 0, score = 0, tries = 0, feedback = '', fbColor = '#888', fbUntil = 0;
+  let pointer = null, ripples = [], pressed = null, t0 = 0;
+  let check = null, stream = null, rec = null, chunks = [], ac = null, mixDest = null;
+
+  function newTarget() { let n; do n = Math.floor(Math.random()*12); while (n === target); target = n; }
+
+  function hit(x, y) {
+    for (const k of keys) if (k.black && x>=k.x && x<k.x+k.w && y>=k.y && y<k.y+k.h) return k;
+    for (const k of keys) if (!k.black && x>=k.x && x<k.x+k.w && y>=k.y && y<k.y+k.h) return k;
+  }
+  function toStage(e) {
+    const r = cv.getBoundingClientRect();
+    return { x:(e.clientX-r.left)*W/r.width, y:(e.clientY-r.top)*H/r.height };
+  }
+
+  function tone(midi, ok) {
+    if (!ac) return;
+    const o = ac.createOscillator(), g = ac.createGain();
+    o.type = 'triangle'; o.frequency.value = 440*2**((midi-69)/12);
+    g.gain.setValueAtTime(check && check.output === 'speakers' ? 0.08 : 0.25, ac.currentTime); g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime+0.8);
+    o.connect(g); g.connect(ac.destination); if (mixDest) g.connect(mixDest);
+    o.start(); o.stop(ac.currentTime+0.8);
+  }
+
+  cv.addEventListener('pointermove', e => { pointer = toStage(e); });
+  cv.addEventListener('pointerleave', () => { pointer = null; });
+  cv.addEventListener('pointerdown', e => {
+    const p = pointer = toStage(e);
+    ripples.push({ ...p, t: performance.now() });
+    const k = hit(p.x, p.y); if (k) play(k.midi, 'mouse');
+  });
+
+  // One path for mouse/touch and MIDI. MIDI keys outside the drawn range still count by pitch class.
+  function play(midi, src, vel) {
+    const pc = midi % 12;
+    const k = keys.find(k => k.midi === midi);
+    pressed = { k, t: performance.now() };
+    midiLog.push({ midi, src, vel, t: performance.now() });
+    if (state === 'running') {
+      tries++;
+      const ok = pc === target;
+      if (ok) { score++; feedback = 'Yes! ' + NAMES[target]; fbColor = '#16a34a'; newTarget(); }
+      else { feedback = 'That was ' + NAMES[pc]; fbColor = '#dc2626'; }
+      fbUntil = performance.now() + 1200;
+    }
+    tone(midi);
+  }
+
+  // Web MIDI (Chrome, Edge, Firefox; not Safari). Note-ons from every connected input.
+  const midiLog = [];
+  let midiName = '';
+  async function initMidi() {
+    if (!navigator.requestMIDIAccess) { midiName = 'MIDI not supported in this browser'; return; }
+    try {
+      const access = await navigator.requestMIDIAccess();
+      const hook = () => {
+        const ins = [...access.inputs.values()];
+        midiName = ins.length ? 'MIDI: ' + ins.map(i => i.name).join(', ') : 'No MIDI keyboard connected';
+        ins.forEach(i => i.onmidimessage = e => {
+          const [st, note, vel] = e.data;
+          if ((st & 0xf0) === 0x90 && vel > 0) { if (!ac) ac = new AudioContext(); play(note, 'midi', vel); }
+        });
+      };
+      hook(); access.onstatechange = hook;
+    } catch { midiName = 'MIDI access denied'; }
+  }
+  initMidi();
+
+  function draw() {
+    const now = performance.now();
+    ctx.fillStyle = '#fafaf7'; ctx.fillRect(0,0,W,H);
+    ctx.fillStyle = '#1d1d1f'; ctx.font = '600 34px system-ui'; ctx.textAlign = 'left';
+    ctx.fillText(state === 'running' ? 'Find this note:' : 'Press Start to begin', 80, 90);
+    if (state === 'running') {
+      ctx.font = '700 120px system-ui'; ctx.fillText(NAMES[target], 80, 230);
+      ctx.font = '28px system-ui'; ctx.fillStyle = '#555';
+      ctx.fillText(`Score ${score} / ${tries}`, 80, 290);
+    }
+    if (now < fbUntil) { ctx.font = '600 40px system-ui'; ctx.fillStyle = fbColor; ctx.fillText(feedback, 360, 230); }
+
+    for (const black of [false, true]) for (const k of keys) if (k.black === black) {
+      const down = pressed && pressed.k === k && now - pressed.t < 250;
+      ctx.fillStyle = down ? '#93c5fd' : black ? '#222' : '#fff';
+      ctx.fillRect(k.x, k.y, k.w, k.h);
+      ctx.strokeStyle = '#333'; ctx.lineWidth = 2; ctx.strokeRect(k.x, k.y, k.w, k.h);
+    }
+
+    // Webcam picture-in-picture, top right
+    if (cam.readyState >= 2) {
+      const cw = 360, ch = cw * cam.videoHeight / cam.videoWidth, cx = W - cw - 24, cy = 24;
+      ctx.save(); ctx.translate(cx + cw, cy); ctx.scale(-1, 1);  // mirror like a selfie
+      ctx.drawImage(cam, 0, 0, cw, ch); ctx.restore();
+      ctx.strokeStyle = '#fff'; ctx.lineWidth = 4; ctx.strokeRect(cx, cy, cw, ch);
+    }
+
+    // Recording badge + elapsed time
+    if (rec && rec.state === 'recording') {
+      const s = Math.floor((now - t0)/1000);
+      ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(24, 16, 170, 40);
+      ctx.fillStyle = Math.floor(now/500)%2 ? '#dc2626' : '#7f1d1d';
+      ctx.beginPath(); ctx.arc(46, 36, 9, 0, 7); ctx.fill();
+      ctx.fillStyle = '#fff'; ctx.font = '600 22px system-ui';
+      if (check) { ctx.fillStyle = 'rgba(0,0,0,.6)'; ctx.fillRect(24, 60, 420, 30); ctx.fillStyle = '#fff'; ctx.font = '18px system-ui';
+        ctx.fillText(`${check.output}${check.latencyMs != null ? ' · ' + check.latencyMs + ' ms' : ''} · mic peak ${check.peakDb ?? '?'} dBFS`, 34, 81);
+        ctx.font = '600 22px system-ui'; }
+      ctx.fillText(`REC ${String(s/60|0).padStart(2,'0')}:${String(s%60).padStart(2,'0')}`, 64, 44);
+    }
+
+    // MIDI status and the last few notes, so the viewer sees what came from the keyboard
+    ctx.font = '20px system-ui'; ctx.fillStyle = '#555'; ctx.textAlign = 'right';
+    ctx.fillText(midiName, W - 24, 310);
+    const recent = midiLog.filter(m => m.src === 'midi' && now - m.t < 4000).slice(-8);
+    if (recent.length) {
+      ctx.fillStyle = '#7c3aed'; ctx.font = '600 22px system-ui';
+      ctx.fillText('🎹 ' + recent.map(m => NAMES[m.midi % 12] + (Math.floor(m.midi/12) - 1)).join('  '), W - 24, 285);
+    }
+    ctx.textAlign = 'left';
+
+    // Click ripples and cursor, so the viewer sees where they pointed
+    ripples = ripples.filter(r => now - r.t < 600);
+    for (const r of ripples) {
+      const a = (now - r.t)/600;
+      ctx.strokeStyle = `rgba(37,99,235,${1-a})`; ctx.lineWidth = 4;
+      ctx.beginPath(); ctx.arc(r.x, r.y, 10 + a*40, 0, 7); ctx.stroke();
+    }
+    if (pointer) {
+      ctx.fillStyle = 'rgba(250,204,21,.85)'; ctx.strokeStyle = '#000'; ctx.lineWidth = 2;
+      ctx.beginPath(); ctx.arc(pointer.x, pointer.y, 12, 0, 7); ctx.fill(); ctx.stroke();
+    }
+    requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+
+  $('start').onclick = async () => {
+    check = $('mic').checked ? await AudioCheck.ensure() : null;
+    if ($('mic').checked && !check) return;
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: { width: 640, height: 480 },
+        audio: check ? check.constraints : false });
+    } catch (err) { $('status').textContent = 'Camera not allowed: ' + err.message; return; }
+    cam.srcObject = stream; await cam.play();
+
+    ac = new AudioContext(); mixDest = ac.createMediaStreamDestination();
+    if (stream.getAudioTracks().length) ac.createMediaStreamSource(stream).connect(mixDest);  // mic into the mix
+
+    const out = new MediaStream([...cv.captureStream(30).getVideoTracks(), ...mixDest.stream.getAudioTracks()]);
+    const type = ['video/mp4', 'video/webm;codecs=vp9,opus', 'video/webm'].find(t => MediaRecorder.isTypeSupported(t));
+    rec = new MediaRecorder(out, { mimeType: type, videoBitsPerSecond: 2_500_000 });
+    chunks = [];
+    rec.ondataavailable = e => e.data.size && chunks.push(e.data);
+    rec.onstop = () => save(type);
+    rec.start(1000);
+    t0 = performance.now(); score = tries = 0; newTarget(); state = 'running';
+    $('start').disabled = true; $('stop').disabled = false; $('status').textContent = 'Recording…';
+  };
+
+  $('stop').onclick = () => {
+    state = 'idle'; rec.stop();
+    stream.getTracks().forEach(t => t.stop()); cam.srcObject = null;
+    $('start').disabled = false; $('stop').disabled = true; $('status').textContent = '';
+  };
+
+  function save(type) {
+    const blob = new Blob(chunks, { type });
+    const url = URL.createObjectURL(blob);
+    const ext = type.includes('mp4') ? 'mp4' : 'webm';
+    const name = `note-finding-${new Date().toISOString().slice(0,16).replace(/[:T]/g,'-')}.${ext}`;
+    const pb = $('playback'); pb.src = url; pb.style.display = 'block';
+    const a = $('again'); a.href = url; a.download = name; a.style.display = '';
+    $('reviewMsg').textContent = `Saved as ${name} (${(blob.size/1e6).toFixed(1)} MB). Email this file to your teacher.`;
+    a.click();
+  }
+})();
+</script>
+</body>
+</html>

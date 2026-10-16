@@ -1,0 +1,1914 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Tuning Systems: Just Intonation and Equal Temperament – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reading-swing.html">
+ <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-guitar.html">
+ <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-piano.html">
+ <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-bass.html">
+ <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar.html">
+ <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar-hand.html">
+ <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
+ <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/travis-picking.html">
+ <span class="dropdown-text">Travis Picking on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano.html">
+ <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano-hand.html">
+ <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inversions.html">
+ <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-pop.html">
+ <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-jazz.html">
+ <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-classical.html">
+ <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/cadences.html">
+ <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guide-tones.html">
+ <span class="dropdown-text">Lesson: Guide Tones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/minor-changes.html">
+ <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/borrowed-chords.html">
+ <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/turnarounds.html">
+ <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reharmonize.html">
+ <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-band.html">
+ <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-bass-drums.html">
+ <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-chords.html">
+ <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-organ.html">
+ <span class="dropdown-text">Arranging 4: The Organ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/patterns/index.html">
+ <span class="dropdown-text">Accompaniment Patterns</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-harmonics.html">
+ <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-waveforms.html">
+ <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-noise.html">
+ <span class="dropdown-text">Sound 3: Noise</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-filter.html">
+ <span class="dropdown-text">Sound 4: Filters</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-lfo.html">
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-subtractive.html">
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-fm.html">
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-wavetable.html">
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-distortion.html">
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-compressor.html">
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-reverb.html">
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chorus.html">
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-phaser.html">
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-vocoder.html">
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs-classic.html">
+ <span class="dropdown-text">Song Builder (Classic)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-harmonic-series-gives-the-ratios" id="toc-the-harmonic-series-gives-the-ratios" class="nav-link active" data-scroll-target="#the-harmonic-series-gives-the-ratios">The harmonic series gives the ratios</a></li>
+  <li><a href="#why-pure-intervals-do-not-beat" id="toc-why-pure-intervals-do-not-beat" class="nav-link" data-scroll-target="#why-pure-intervals-do-not-beat">Why pure intervals do not beat</a></li>
+  <li><a href="#two-commas-why-tuning-cannot-be-perfect" id="toc-two-commas-why-tuning-cannot-be-perfect" class="nav-link" data-scroll-target="#two-commas-why-tuning-cannot-be-perfect">Two commas: why tuning cannot be perfect</a></li>
+  <li><a href="#just-intonation-and-why-it-cannot-modulate" id="toc-just-intonation-and-why-it-cannot-modulate" class="nav-link" data-scroll-target="#just-intonation-and-why-it-cannot-modulate">Just intonation, and why it cannot modulate</a></li>
+  <li><a href="#equal-temperament-twelve-equal-steps" id="toc-equal-temperament-twelve-equal-steps" class="nav-link" data-scroll-target="#equal-temperament-twelve-equal-steps">Equal temperament: twelve equal steps</a></li>
+  <li><a href="#hear-and-play-it-chords-and-solfège" id="toc-hear-and-play-it-chords-and-solfège" class="nav-link" data-scroll-target="#hear-and-play-it-chords-and-solfège">Hear and play it: chords and solfège</a></li>
+  <li><a href="#other-systems-briefly" id="toc-other-systems-briefly" class="nav-link" data-scroll-target="#other-systems-briefly">Other systems, briefly</a></li>
+  <li><a href="#beyond-twelve-notes" id="toc-beyond-twelve-notes" class="nav-link" data-scroll-target="#beyond-twelve-notes">Beyond twelve notes</a></li>
+  <li><a href="#seeing-it-a-strobe-tuner-pure-intervals-and-why-pianos-are-stretched" id="toc-seeing-it-a-strobe-tuner-pure-intervals-and-why-pianos-are-stretched" class="nav-link" data-scroll-target="#seeing-it-a-strobe-tuner-pure-intervals-and-why-pianos-are-stretched">Seeing it: a strobe tuner, pure intervals, and why pianos are stretched</a></li>
+  <li><a href="#things-to-try" id="toc-things-to-try" class="nav-link" data-scroll-target="#things-to-try">Things to try</a></li>
+  <li><a href="#next" id="toc-next" class="nav-link" data-scroll-target="#next">Next</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Tuning Systems: Just Intonation and Equal Temperament</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>A piano is slightly out of tune on purpose. Every chord on it, apart from the octave, is a little wrong, and the wrongness is spread so evenly that all twelve keys sound alike. The alternative is <strong>just intonation</strong> (JI), where intervals are tuned to the simple ratios that the harmonic series gives you, and they sound smooth and still. This lesson shows what each costs, with ears first and numbers second.</p>
+<p><strong>How to use the page.</strong> Every widget has a ▶ button. The bar at the bottom of the window sets the volume (start low). The <strong>Drone</strong> button in the top navigation bar is the same drone as the one on this page. Click a heading to fold a section away, or use <em>On this page</em> on the right to jump (shift-click folds the others). The lesson on <a href="../lessons/sound-harmonics.html">the harmonic series</a> goes further into where the ratios come from.</p>
+<section id="the-harmonic-series-gives-the-ratios" class="level2">
+<h2 class="anchored" data-anchor-id="the-harmonic-series-gives-the-ratios">The harmonic series gives the ratios</h2>
+<p>A note on a real instrument is a stack of frequencies at whole-number multiples of the lowest, the <strong>fundamental</strong>: 1×, 2×, 3×, 4×, and so on. Those are the <strong>harmonics</strong>. Each interval between neighbouring harmonics is a simple ratio of whole numbers:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Between harmonics</th>
+<th>Ratio</th>
+<th>Interval</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1 and 2</td>
+<td>2:1</td>
+<td>Octave</td>
+</tr>
+<tr class="even">
+<td>2 and 3</td>
+<td>3:2</td>
+<td>Perfect fifth</td>
+</tr>
+<tr class="odd">
+<td>3 and 4</td>
+<td>4:3</td>
+<td>Perfect fourth</td>
+</tr>
+<tr class="even">
+<td>4 and 5</td>
+<td>5:4</td>
+<td>Major third</td>
+</tr>
+<tr class="odd">
+<td>5 and 6</td>
+<td>6:5</td>
+<td>Minor third</td>
+</tr>
+</tbody>
+</table>
+<p>Harmonics 4, 5 and 6 together are a major triad, 4:5:6. That is the reason a major chord sounds stable: it is already inside every note you hear. Below, the first sixteen harmonics are written out over any root, with how many <strong>cents</strong> each is from the nearest piano note. A cent is 1/100 of a piano half step, so an octave is 1200 cents. Press <em>Harmonic, then tempered</em> and listen to the harmonics that are most out of tune with the piano (7, 11, 13 and 14).</p>
+<div class="sk" data-w="series" data-title="The harmonic series, against the piano">
+
+</div>
+<p>Frequencies multiply, but we hear pitch by <strong>ratio</strong>: going up a fifth always multiplies the frequency by 3/2, whether you start on a low note or a high one. To compare ratios, take 1200 × log₂(ratio) to get cents. A pure fifth, 3:2, is 1200 × log₂(1.5) = <strong>701.96 cents</strong>. A pure major third, 5:4, is <strong>386.31 cents</strong>.</p>
+</section>
+<section id="why-pure-intervals-do-not-beat" class="level2">
+<h2 class="anchored" data-anchor-id="why-pure-intervals-do-not-beat">Why pure intervals do not beat</h2>
+<p>When two notes are close in frequency, their waves line up and then fall out of step, over and over. The sound swells and fades at a rate equal to the difference in their frequencies. That is a <strong>beat</strong>: 440 Hz with 443 Hz beats three times a second.</p>
+<p>Beating also happens between the <strong>harmonics</strong> of two different notes. In a pure major third (4:5), the 5th harmonic of the lower note and the 4th harmonic of the upper note are exactly the same frequency, so they simply reinforce each other. When the interval is slightly off, those two harmonics are a few hertz apart and beat. A pure fifth (2:3) has the same matching harmonics, the 3rd of the lower note and the 2nd of the upper.</p>
+<p>The widget shows it. With <em>Only the two harmonics that should match</em> the sound is just two sine waves, and the picture is their sum: it swells and fades as they drift in and out of step. Switch the tuning between <strong>Just</strong> and <strong>Equal temperament</strong> and hear the beating start and stop. The wavy line is drawn slowed down; the real rate is in the text under the controls.</p>
+<div class="sk" data-w="interval" data-title="A major third, pure and tempered" data-set="iv=M3,tun=equal,show=pair">
+
+</div>
+<p>Now the same with all the harmonics of two notes, which is what a real chord does. Choose another interval with the <em>Interval</em> menu. Notice that the <strong>fifth</strong> beats slowly (it is only 2 cents off) and the <strong>thirds</strong> and <strong>sixths</strong> beat fast (14 to 16 cents off). That is why equal temperament is so much kinder to fifths than to thirds.</p>
+<div class="sk" data-w="interval" data-title="Any interval, pure and tempered" data-set="iv=P5,tun=equal,show=notes">
+
+</div>
+</section>
+<section id="two-commas-why-tuning-cannot-be-perfect" class="level2">
+<h2 class="anchored" data-anchor-id="two-commas-why-tuning-cannot-be-perfect">Two commas: why tuning cannot be perfect</h2>
+<p>Pure tuning runs into arithmetic. Two facts about ratios cannot both be true:</p>
+<ul>
+<li><strong>Stack twelve pure fifths</strong> (3:2) and you arrive at the note seven octaves up, almost. Twelve fifths are (3/2)¹² = 129.746; seven octaves are 2⁷ = 128. The gap is the <strong>Pythagorean comma</strong>, 531441:524288, or <strong>23.46 cents</strong>, nearly a quarter of a half step.</li>
+<li><strong>Stack four pure fifths</strong> and reduce by two octaves and you get a major third, but a wide one: 81:64 (407.8 cents), compared with the pure 5:4 (386.3 cents). The difference, 81:80 or <strong>21.51 cents</strong>, is the <strong>syntonic comma</strong>.</li>
+</ul>
+<p>So the pure thirds of the harmonic series (5:4) and the pure fifths (3:2) are made of different building blocks, and they do not fit together. A tuning system is a decision about which of those to keep and which to spoil.</p>
+</section>
+<section id="just-intonation-and-why-it-cannot-modulate" class="level2">
+<h2 class="anchored" data-anchor-id="just-intonation-and-why-it-cannot-modulate">Just intonation, and why it cannot modulate</h2>
+<p>In a <strong>just</strong> scale, every note is a whole-number ratio of the tonic (Do). The common major scale version is:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Do</th>
+<th>Re</th>
+<th>Mi</th>
+<th>Fa</th>
+<th>Sol</th>
+<th>La</th>
+<th>Ti</th>
+<th>Do</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>9/8</td>
+<td>5/4</td>
+<td>4/3</td>
+<td>3/2</td>
+<td>5/3</td>
+<td>15/8</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>The I, IV and V chords (Do–Mi–Sol, Fa–La–Do, Sol–Ti–Re) are pure 4:5:6 triads, and they sound beautifully still. The trouble starts with the other chords. The <strong>ii</strong> chord is Re–Fa–La: from Re (9/8) to La (5/3) the ratio is (5/3) ÷ (9/8) = 40/27, which is <strong>680.4 cents</strong>. That is a fifth 21.5 cents flat, a syntonic comma off, and it sounds sour. To get a good ii chord you would need a <em>different Re</em> (10/9), but then the notes of V would be wrong. In the key of C, the note D has two jobs and a different pure frequency for each.</p>
+<p>That is the main limit of just intonation on a <strong>fixed-pitch instrument</strong> (a keyboard, a fretted guitar, a marimba). Tune the keyboard for C major and the same keys give poor chords in D major or E♭ major. You would want more than 12 notes per octave, or a retune for each key. Voices, violins, trombones and other instruments that can adjust each note do this naturally: a choir singing Do–Mi–Sol will tune the triad pure, and a progression like C – Am – Dm – G – C will drift upward in pitch by a syntonic comma over each lap if every chord is tuned pure.</p>
+<p>Here is the drone, held on Do with Mi and Sol above it (a major triad). <strong>Pure</strong> tunes Mi to 5/4 and Sol to 3/2 of Do; <strong>Equal</strong> uses the piano’s notes. Switch back and forth while it sounds. Listen for the third: in the pure setting the chord sits still, and in equal temperament it has a faint shimmer, the beating from the last section.</p>
+<div class="pw-embed" data-w="drone" data-tuning="pure" data-pads="0 4 7">
+
+</div>
+<p>Try this: with the drone sounding, sing or play (on any instrument that can bend its pitch) the note <strong>Mi</strong> above the drone, first sliding toward the piano’s version, then toward the pure one. The pure one <em>locks</em> into the drone. It is the pitch that stops beating.</p>
+</section>
+<section id="equal-temperament-twelve-equal-steps" class="level2">
+<h2 class="anchored" data-anchor-id="equal-temperament-twelve-equal-steps">Equal temperament: twelve equal steps</h2>
+<p>Equal temperament (12-TET) solves the key problem by making every half step the same size. An octave is a 2:1 ratio and has twelve steps, so each step multiplies the frequency by 2^(1/12) = 1.059463. A semitone is exactly 100 cents, and every interval of the same size is the same in every key. Twelve fifths then come out to exactly seven octaves, and the Pythagorean comma is spread evenly: each fifth is narrowed by 23.46 ÷ 12 = 1.96 cents.</p>
+<p>The price is that <strong>no interval except the octave is pure</strong>. The fifth is only 2 cents flat, which is close enough to ignore. But the thirds and sixths are 14 to 16 cents off, enough to hear:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Interval</th>
+<th>Just ratio</th>
+<th>Just (cents)</th>
+<th>Equal (cents)</th>
+<th>Equal minus just</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Minor second</td>
+<td>16:15</td>
+<td>111.7</td>
+<td>100</td>
+<td>−11.7</td>
+</tr>
+<tr class="even">
+<td>Major second</td>
+<td>9:8</td>
+<td>203.9</td>
+<td>200</td>
+<td>−3.9</td>
+</tr>
+<tr class="odd">
+<td>Minor third</td>
+<td>6:5</td>
+<td>315.6</td>
+<td>300</td>
+<td><strong>−15.6</strong></td>
+</tr>
+<tr class="even">
+<td>Major third</td>
+<td>5:4</td>
+<td>386.3</td>
+<td>400</td>
+<td><strong>+13.7</strong></td>
+</tr>
+<tr class="odd">
+<td>Perfect fourth</td>
+<td>4:3</td>
+<td>498.0</td>
+<td>500</td>
+<td>+2.0</td>
+</tr>
+<tr class="even">
+<td>Tritone</td>
+<td>45:32</td>
+<td>590.2</td>
+<td>600</td>
+<td>+9.8</td>
+</tr>
+<tr class="odd">
+<td>Perfect fifth</td>
+<td>3:2</td>
+<td>702.0</td>
+<td>700</td>
+<td><strong>−2.0</strong></td>
+</tr>
+<tr class="even">
+<td>Minor sixth</td>
+<td>8:5</td>
+<td>813.7</td>
+<td>800</td>
+<td>−13.7</td>
+</tr>
+<tr class="odd">
+<td>Major sixth</td>
+<td>5:3</td>
+<td>884.4</td>
+<td>900</td>
+<td>+15.6</td>
+</tr>
+<tr class="even">
+<td>Minor seventh</td>
+<td>9:5</td>
+<td>1017.6</td>
+<td>1000</td>
+<td>−17.6</td>
+</tr>
+<tr class="odd">
+<td>Major seventh</td>
+<td>15:8</td>
+<td>1088.3</td>
+<td>1100</td>
+<td>+11.7</td>
+</tr>
+<tr class="even">
+<td>Octave</td>
+<td>2:1</td>
+<td>1200</td>
+<td>1200</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p>In words: the tempered <strong>major third is about 14 cents sharp</strong> of the pure 5:4, the tempered <strong>fifth about 2 cents flat</strong> of 3:2, and the tempered <strong>minor third about 16 cents flat</strong> of 6:5. Thirds are the most exposed because the ear uses them to decide whether a chord is major or minor, and because the beating of two harmonics (the 5th and the 4th) falls in a region where the ear is most sensitive. The minor sixth and the major sixth are the thirds turned upside down, so they are wrong by the same amount.</p>
+<p>Equal temperament is the standard for the piano, the guitar, MIDI and nearly every synthesizer. Its strength is that it lets you play in any key, modulate anywhere, and use chromatic and jazz harmony that no pure system supports. Many singers, string players and brass players move toward just intonation while they play, without thinking about it.</p>
+</section>
+<section id="hear-and-play-it-chords-and-solfège" class="level2">
+<h2 class="anchored" data-anchor-id="hear-and-play-it-chords-and-solfège">Hear and play it: chords and solfège</h2>
+<p>The keyboard below names what you play in solfège and gives the chord. Its <em>Tuning</em> menu switches between the sampled piano, an organ tone in equal temperament and the same organ tone in just intonation (every note a ratio of the key note, here C). Play a C major chord (C, E, G) in each of the two organ settings, then try the A minor chord or the C major seventh. Turn on <em>Hold notes</em> to build a chord one key at a time. Pure chords from the key note are smooth; notice what happens in the pure setting with <strong>D minor</strong> (D, F, A): that is the ii chord from above, and the pure fifth D–A is not available.</p>
+<script>window.csPreset = { d: 0, type: false, tuning: "just" };</script>
+<style>
+/* ── Chords and Solfège: play notes, see what they are ─────────── */
+#cs-root{max-width:1040px;margin:0 auto;padding:1.25rem 1rem 4rem;color:var(--site-ink,#1e1c18);
+  font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
+#cs-root *{box-sizing:border-box}
+#cs-root.page-columns,#cs-root .page-columns{display:block!important;grid-template-columns:none!important}
+#cs-root [hidden]{display:none!important}
+#cs-root .cs-intro{border-left:3px solid var(--site-accent,#3fc2b4);padding-left:1rem;margin:0 0 1.5rem;color:var(--site-ink-2,#5c5246);font-size:.95rem;line-height:1.6;max-width:680px}
+#cs-root .cs-panel{background:var(--site-surface,#fff);border:1px solid var(--site-border,#e0d8ce);border-radius:10px;padding:1rem 1.1rem;margin:0 0 1rem}
+#cs-root .cs-panel h2{margin:0 0 .2rem;font-size:.92rem;font-weight:600;border:0;padding:0}
+#cs-root .cs-row{display:flex;gap:.7rem 1rem;flex-wrap:wrap;align-items:flex-end;margin-top:.8rem}
+#cs-root .cs-field{display:flex;flex-direction:column;gap:.25rem}
+#cs-root .cs-field label{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--site-ink-2,#5c5246)}
+#cs-root select{height:2.2rem;padding:0 .6rem;border:1px solid var(--site-border,#e0d8ce);border-radius:7px;background:var(--site-surface,#fff);color:inherit;font:inherit;font-size:.92rem}
+#cs-root .cs-check{display:inline-flex;align-items:center;gap:.35rem;font-size:.9rem;margin:0;cursor:pointer;height:2.2rem}
+#cs-root .cs-check input{accent-color:var(--site-accent-dk,#2b9c90)}
+#cs-root .cs-btn{height:2.2rem;padding:0 .9rem;border:1px solid var(--site-accent-dk,#2b9c90);border-radius:7px;background:var(--site-surface,#fff);color:var(--site-accent-text,#0a4f47);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer}
+#cs-root .cs-btn:hover{background:var(--site-accent-bg,rgba(63,194,180,.12))}
+#cs-root .cs-hint{margin:.6rem 0 0;font-size:.84rem;color:var(--site-ink-2,#5c5246);max-width:70ch}
+
+/* what you are playing */
+#cs-root .cs-read{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:1rem 2rem;align-items:start}
+@media (max-width:640px){#cs-root .cs-read{grid-template-columns:1fr}}
+#cs-root .cs-chord{font-size:2.4rem;font-weight:700;line-height:1.1;min-height:1.15em;letter-spacing:.01em}
+#cs-root .cs-chord small{font-size:.9rem;font-weight:500;color:var(--site-ink-2,#5c5246);margin-left:.5rem}
+#cs-root .cs-sub{margin:.35rem 0 0;font-size:.95rem;color:var(--site-ink-2,#5c5246);min-height:1.4em}
+#cs-root .cs-ghost .cs-chord,#cs-root .cs-ghost .cs-sub{opacity:.55}
+#cs-root .cs-table{border-collapse:collapse;width:100%;font-size:.92rem}
+#cs-root .cs-table th{font:600 .66rem/1 var(--font-mono,ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--site-ink-2,#5c5246);text-align:left;padding:.2rem .6rem .35rem 0;width:5.5rem;font-weight:600}
+#cs-root .cs-table td{padding:.2rem 0;font-weight:600}
+#cs-root .cs-table td > span{display:inline-block;min-width:2.9rem;margin-right:.3rem}
+#cs-root .cs-key{margin:.2rem 0 0;font-size:.82rem;color:var(--site-ink-2,#5c5246)}
+
+/* the keyboard */
+#cs-root .cs-scroll{overflow-x:auto;padding-bottom:.3rem}
+#cs-root .cs-kb{position:relative;height:11.5rem;min-width:660px;user-select:none;-webkit-user-select:none;touch-action:none}
+#cs-root .cs-k{position:absolute;top:0;padding:0;margin:0;cursor:pointer;font:inherit;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:.1rem}
+#cs-root .cs-k.w{height:100%;background:#fff;color:#2a2622;border:1px solid #bdb3a5;border-radius:0 0 6px 6px;padding-bottom:.45rem;z-index:1}
+#cs-root .cs-k.b{height:62%;background:#2a2622;color:#f1ece4;border:1px solid #2a2622;border-radius:0 0 5px 5px;padding-bottom:.35rem;z-index:2}
+#cs-root .cs-k b{font-size:.82rem;font-weight:700;line-height:1}
+#cs-root .cs-k i{font-style:normal;font-size:.68rem;line-height:1;opacity:.75}
+#cs-root .cs-k.w.on{background:var(--site-accent,#3fc2b4);color:#06302b;border-color:var(--site-accent-dk,#2b9c90)}
+#cs-root .cs-k.b.on{background:var(--site-accent-dk,#2b9c90);border-color:var(--site-accent-dk,#2b9c90);color:#fff}
+#cs-root .cs-k.root{box-shadow:inset 0 -5px 0 #d9566b}
+#cs-root .cs-k.do:not(.on){background:var(--site-accent-bg,rgba(63,194,180,.12))}
+#cs-root .cs-k.b.do:not(.on){background:#3b4a47}
+#cs-root .cs-oct{display:flex;align-items:center;gap:.5rem;margin-top:.6rem}
+#cs-root .cs-oct span{font:600 .78rem/1 var(--font-mono,ui-monospace,monospace);color:var(--site-ink-2,#5c5246)}
+</style>
+<div id="cs-root">
+  <p class="cs-intro">Play notes and see what they are: the chord name, its Roman numeral, and every note named in solfège, scale degrees or Sargam. The names move to whatever key you set, so the same chord reads the same in any key. Play on the keys below, on the letter keys of your computer, or on a MIDI keyboard.</p>
+
+  <div class="cs-panel">
+    <h2 class="anchored">What you are playing</h2>
+    <div class="cs-read" id="cs-read">
+      <div>
+        <div class="cs-chord" id="cs-chord" aria-live="polite">&nbsp;</div>
+        <p class="cs-sub" id="cs-sub">Play a note, or a chord.</p>
+        <p class="cs-key" id="cs-keyline"></p>
+      </div>
+      
+<table class="cs-table caption-top table">
+<tbody>
+<tr class="odd">
+<th id="cs-solth" data-quarto-table-cell-role="th">Solfège</th>
+<td id="cs-sol"></td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">Notes</th>
+<td id="cs-names"></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+  </div>
+
+  <div class="cs-panel">
+    <h2 class="anchored">Keys</h2>
+    <div class="cs-scroll"><div class="cs-kb" id="cs-kb" role="group" aria-label="Piano keys"></div></div>
+    <div class="cs-oct">
+      <button type="button" class="cs-btn" id="cs-oct-dn" aria-label="Octave down">− Octave</button>
+      <span id="cs-oct-lab"></span>
+      <button type="button" class="cs-btn" id="cs-oct-up" aria-label="Octave up">Octave +</button>
+      <button type="button" class="cs-btn" id="cs-clear" style="margin-left:auto">Release all</button>
+    </div>
+    <p class="cs-hint" id="cs-type-note"></p>
+    <p class="cs-hint" id="cs-note" role="status"></p>
+  </div>
+
+  <div class="cs-panel">
+    <h2 class="anchored">Set up</h2>
+    <div class="cs-row">
+      <div class="cs-field"><label for="cs-sys">Name the notes with</label><select id="cs-sys"></select></div>
+      <div class="cs-field"><label for="cs-do">Key note</label><select id="cs-do"></select></div>
+      <div class="cs-field"><label for="cs-home" title="A minor key keeps the Do of its relative major, so its home note is La. Roman numerals, scale degrees and Sargam count from the home note.">Major or minor</label>
+        <select id="cs-home"><option value="major">Major</option><option value="minor">Minor</option></select></div>
+      <div class="cs-field"><label for="cs-label">Label the keys</label>
+        <select id="cs-label"><option value="both">Names and note letters</option><option value="sol">Names</option><option value="names">Note letters</option><option value="none">Nothing</option></select></div>
+      <div class="cs-field"><label for="cs-tuning" title="Piano: the sampled piano, tuned equally. The organ tone can be tuned equally or in just intonation, where every note is a simple ratio of the key note and chords hold still.">Tuning</label>
+        <select id="cs-tuning"><option value="piano">Piano, equal temperament</option><option value="et">Organ tone, equal temperament</option><option value="just">Organ tone, just intonation</option></select></div>
+      <label class="cs-check" title="Click a key to turn it on and click it again to turn it off, so you can build a chord one note at a time."><input type="checkbox" id="cs-hold"> Hold notes</label>
+      <label class="cs-check"><input type="checkbox" id="cs-sound" checked=""> Sound the notes</label>
+      <label class="cs-check"><input type="checkbox" id="cs-type" checked=""> Play with the computer keyboard</label>
+    </div>
+    <div class="cs-row">
+      <div class="cs-field"><label for="cs-midi">MIDI keyboard</label><select id="cs-midi" disabled=""><option value="">Not connected</option></select></div>
+      <button type="button" class="cs-btn" id="cs-connect">Connect a MIDI keyboard</button>
+    </div>
+  </div>
+</div>
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/audio-check.js"></script>
+<script src="../apps/shared/pitch-spelling.js"></script>
+<script src="../apps/shared/degree-names.js"></script>
+<script src="../apps/shared/chord-entry.js?v=4"></script>
+<script src="../apps/shared/musical-typing.js"></script>
+<script src="../apps/shared/band/harmony.js?v=24"></script>
+<script src="../apps/shared/band/bass.js?v=13"></script>
+<script src="../apps/shared/band/comp.js?v=27"></script>
+<script src="../apps/shared/band/catalog.js?v=36"></script>
+<script src="../apps/shared/band/drums.js?v=16"></script>
+<script src="../apps/shared/band/congas.js?v=2"></script>
+<script src="../apps/shared/band/sounds.js?v=14"></script>
+<script src="../apps/shared/band/player.js?v=110"></script>
+<script>
+(function(){
+  var $ = function(id){ return document.getElementById(id); };
+  var ROOTS = ["C","D♭","D","E♭","E","F","F♯","G","A♭","A","B♭","B"];
+  var ROMAN = ["I","II","III","IV","V","VI","VII"];
+  var LOWER = { min:1, m6:1, min7:1, m7b5:1, dim7:1, dim:1, mmaj7:1, m9:1 };
+  var RSUF = { maj:"", min:"", dim:"°", aug:"+", "7":"7", maj7:"maj7", min7:"7", m6:"6", m9:"9", m7b5:"ø", dim7:"°7", mmaj7:"(maj7)" };
+  var INTERVALS = ["unison","minor 2nd","major 2nd","minor 3rd","major 3rd","perfect 4th","tritone","perfect 5th","minor 6th","major 6th","minor 7th","major 7th","octave"];
+  var INVERSION = { 0: "root position", 3: "first inversion", 4: "first inversion", 7: "second inversion", 5: "second inversion", 8: "second inversion", 9: "first inversion (6th chord)", 10: "third inversion", 11: "third inversion" };
+
+  var prevN = 0, kbOct = 3, down = {}, sticky = {}, last = null, recent = [], midiAccess = null, input = null, rootPc = null;
+  function mod(n){ return ((n % 12) + 12) % 12; }
+  function sharp(s){ return String(s).replace(/#/g, "♯").replace(/([A-G])b/g, "$1♭"); }
+
+  // ---- the key: Do, and which note is home ----
+  function detected(){                                    // the key the recent notes suggest
+    if (recent.length < 3) return { tonicPc: 0, mode: "major", guess: false };
+    var w = []; for (var i = 0; i < 12; i++) w.push(0);
+    recent.forEach(function(pc, i){ w[pc] += 1 + i / recent.length; });
+    var k = PitchSpelling.estimateKey(w); return { tonicPc: k.tonicPc, mode: k.mode, guess: true };
+  }
+  function key(){                                         // { doPc, mode, home, auto }
+    var sel = $("cs-do").value, auto = sel === "auto", d;
+    if (auto){ d = detected(); return { doPc: d.mode === "minor" ? mod(d.tonicPc + 3) : d.tonicPc, mode: d.mode, auto: true, guess: d.guess }; }
+    var mode = $("cs-home").value, tonic = +sel;                     // the key note is the home note; a minor key's Do is a minor third above it
+    return { doPc: mode === "minor" ? mod(tonic + 3) : tonic, mode: mode, auto: false };
+  }
+  function keyLof(k){ return PitchSpelling.keyTonicLOF(k.mode === "minor" ? mod(k.doPc + 9) : k.doPc); }
+  function spell(pc, k){ return sharp(PitchSpelling.spellPitchClass(pc, keyLof(k)).name); }
+  function homeOf(k){ return k.mode === "minor" ? mod(k.doPc + 9) : k.doPc; }
+  function solOf(pc, k){ return DegreeNames.label(pc, { doPc: k.doPc, restPc: homeOf(k) }); }   // in the chosen system
+
+  // ---- naming what is sounding ----
+  function romanFor(res, k){
+    var home = k.mode === "minor" ? mod(k.doPc + 9) : k.doPc, da = PitchSpelling.degreeForRoot(res.rootPc, home, k.mode);
+    var n = ROMAN[da.degree - 1]; if (LOWER[res.quality]) n = n.toLowerCase();
+    var acc = da.acc > 0 ? new Array(da.acc + 1).join("♯") : da.acc < 0 ? new Array(-da.acc + 1).join("♭") : "";
+    var suf = Object.prototype.hasOwnProperty.call(RSUF, res.quality) ? RSUF[res.quality] : res.suffix.replace(/^m(?!aj)/, "");
+    return acc + n + suf;
+  }
+  function sounding(){
+    var set = {}; Object.keys(down).forEach(function(m){ set[m] = 1; }); Object.keys(sticky).forEach(function(m){ set[m] = 1; });
+    return Object.keys(set).map(Number).sort(function(a, b){ return a - b; });
+  }
+  function describe(midis){
+    var k = key(), out = { midis: midis, k: k, chord: "", sub: "", root: null };
+    var pcs = []; midis.forEach(function(m){ var pc = mod(m); if (pcs.indexOf(pc) < 0) pcs.push(pc); });
+    out.sol = pcs.map(function(pc){ return solOf(pc, k); }); out.names = pcs.map(function(pc){ return spell(pc, k); });
+    if (midis.length === 1){
+      out.chord = out.names[0]; out.sub = out.sol[0];
+      out.root = pcs[0];
+    } else if (pcs.length === 1){ out.chord = out.names[0]; out.sub = out.sol[0] + ", in more than one octave"; out.root = pcs[0]; }
+    else {
+      var res = pcs.length >= 3 ? ChordEntry.analyse(midis, { keyLof: keyLof(k) }) : null;
+      if (res){
+        var sym = ChordEntry.symbol(res, { keyLof: keyLof(k), slash: true });
+        out.chord = sharp(sym); out.root = res.rootPc;
+        var bass = mod(midis[0] - res.rootPc), inv = INVERSION[bass] || "";
+        out.sub = romanFor(res, k) + "  ·  root " + solOf(res.rootPc, k) + (inv && bass ? "  ·  " + inv : "") + (res.exact ? "" : "  ·  closest name");
+        out.roman = romanFor(res, k);
+      } else if (pcs.length === 2){
+        var d = midis[midis.length - 1] - midis[0]; out.chord = INTERVALS[d] || (INTERVALS[d % 12] + " and an octave");
+        out.chord = out.chord.charAt(0).toUpperCase() + out.chord.slice(1);
+        out.sub = out.sol[0] + " up to " + out.sol[out.sol.length - 1]; out.root = null;
+      } else { out.chord = "No chord name"; out.sub = "These notes don't make a chord I know."; }
+    }
+    return out;
+  }
+  function show(){
+    var now = sounding(), d;
+    if (now.length){ d = describe(now); if (now.length >= prevN) last = d; }   // letting keys go does not replace the chord that was played
+    else d = last;
+    prevN = now.length;
+    var read = $("cs-read").parentNode;
+    read.classList.toggle("cs-ghost", !now.length && !!d);
+    if (!d){ $("cs-chord").innerHTML = "&nbsp;"; $("cs-sub").textContent = "Play a note, or a chord."; $("cs-sol").textContent = ""; $("cs-names").textContent = ""; rootPc = null; }
+    else {
+      d = now.length ? d : describe(d.midis);                      // a ghost is re-read in the key as it is now
+      $("cs-chord").textContent = d.chord;
+      $("cs-sub").innerHTML = DegreeNames.html(d.sub + (now.length ? "" : "  ·  last played"));
+      $("cs-sol").innerHTML = d.sol.map(function(s){ return "<span>" + DegreeNames.html(s) + "</span>"; }).join(" ");
+      $("cs-names").innerHTML = d.names.map(function(s){ return "<span>" + s + "</span>"; }).join(" ");
+      rootPc = d.root;
+    }
+    var k = key();
+    var homeName = spell(homeOf(k), k) + (k.mode === "minor" ? " minor" : " major");
+    $("cs-keyline").textContent = k.auto ? (k.guess ? "Key from your playing: " + homeName + ". Set the key note below to fix it." : "The key is C major until you play enough notes to tell. Set the key note below to fix it.")
+                                         : "Key: " + homeName + ".";
+    $("cs-home").disabled = k.auto;
+    lights();
+  }
+  function remember(m){ recent.push(mod(m)); if (recent.length > 24) recent.shift(); }
+
+  // ---- the keys ----
+  var WHITE = [0, 2, 4, 5, 7, 9, 11];
+  function lo(){ return 12 * (kbOct + 1); }
+  function build(){
+    var box = $("cs-kb"); box.innerHTML = "";
+    var first = lo(), count = 36, nW = 22, wi = {}, i = 0;
+    for (var m = first; m <= first + count; m++) if (WHITE.indexOf(mod(m)) >= 0) wi[m] = i++;
+    var ww = 100 / nW;
+    for (m = first; m <= first + count; m++){
+      var black = WHITE.indexOf(mod(m)) < 0, b = document.createElement("button");
+      b.type = "button"; b.className = "cs-k " + (black ? "b" : "w"); b.setAttribute("data-midi", m); b.setAttribute("aria-pressed", "false");
+      b.style.left = (black ? (wi[m - 1] + 1) * ww - ww * 0.3 : wi[m] * ww) + "%"; b.style.width = (black ? ww * 0.6 : ww) + "%";
+      b.innerHTML = "<b></b><i></i>"; box.appendChild(b);
+    }
+    labels(); lights();
+    $("cs-oct-lab").textContent = "C" + kbOct + " – C" + (kbOct + 3);
+  }
+  function labels(){
+    var k = key(), mode = $("cs-label").value;
+    Array.prototype.forEach.call($("cs-kb").children, function(b){
+      var m = +b.getAttribute("data-midi"), pc = mod(m);
+      b.firstChild.innerHTML = mode === "sol" || mode === "both" ? DegreeNames.html(solOf(pc, k)) : mode === "names" ? spell(pc, k) : "";
+      b.lastChild.textContent = mode === "both" ? spell(pc, k) : "";
+      b.classList.toggle("do", mod(pc - k.doPc) === 0);
+      b.setAttribute("aria-label", spell(pc, k) + Math.floor(m / 12 - 1) + ", " + solOf(pc, k));
+    });
+  }
+  function lights(){
+    var on = {}; sounding().forEach(function(m){ on[m] = 1; });
+    var k = key();
+    Array.prototype.forEach.call($("cs-kb").children, function(b){
+      var m = +b.getAttribute("data-midi"); b.classList.toggle("on", !!on[m]); b.setAttribute("aria-pressed", on[m] ? "true" : "false");
+      b.classList.toggle("root", rootPc != null && !!on[m] && mod(m) === rootPc && Object.keys(on).length > 1);
+    });
+    labels();
+  }
+
+  // ---- notes in: the on-screen keys, the computer keyboard, MIDI ----
+  // Just intonation: the organ tone, with every note a simple ratio of the key note (Do). Equal is the same tone at the piano's pitches,
+  // so the two can be compared. A note sounds while its key is held.
+  var JUST = [1, 16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8], actx = null, abus = null, voices = {};
+  function tuning(){ return $("cs-tuning").value; }
+  function pitch(m){                                      // Hz of MIDI note m in the chosen tuning (A4 = 440)
+    var et = 440 * Math.pow(2, (m - 69) / 12);
+    if (tuning() !== "just") return et;
+    var doPc = key().doPc, doMidi = 60 + doPc - (doPc > 6 ? 12 : 0), steps = m - doMidi, oct = Math.floor(steps / 12);   // the Do nearest middle C
+    return 440 * Math.pow(2, (doMidi - 69) / 12) * JUST[mod(steps)] * Math.pow(2, oct);
+  }
+  function organOn(m, vel){
+    if (voices[m]) return;
+    if (!actx){ var AC = window.AudioContext || window.webkitAudioContext; actx = new AC(); var lim = actx.createDynamicsCompressor(); lim.threshold.value = -8; lim.ratio.value = 12;
+      abus = actx.createGain(); abus.gain.value = 0.5; abus.connect(lim); lim.connect(actx.destination); }
+    if (actx.state === "suspended") actx.resume();
+    var f = pitch(m), g = actx.createGain(), t = actx.currentTime, parts = [];
+    [1, 2, 3, 4, 5, 6].forEach(function(h){ var o = actx.createOscillator(), l = actx.createGain(); o.frequency.value = f * h; l.gain.value = 0.5 / (h * h * 0.5 + 0.5);
+      o.connect(l); l.connect(g); o.start(t); parts.push(o); });
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.16 * Math.max(0.3, vel), t + 0.02); g.connect(abus);
+    voices[m] = { g: g, parts: parts };
+  }
+  function organOff(m){
+    var v = voices[m]; if (!v) return; delete voices[m]; var t = actx.currentTime;
+    v.g.gain.cancelScheduledValues(t); v.g.gain.setValueAtTime(v.g.gain.value, t); v.g.gain.linearRampToValueAtTime(0, t + 0.15);
+    v.parts.forEach(function(o){ o.stop(t + 0.2); });
+  }
+  function organSync(){ Object.keys(voices).map(Number).forEach(function(m){ if (!down[m] && !sticky[m]) organOff(m); }); }   // after any key goes up
+  function sound(m, vel){
+    if (!$("cs-sound").checked) return;
+    if (tuning() !== "piano"){ $("cs-note").textContent = tuning() === "just" ? "Just intonation from " + spell(key().doPc, key()) + ": each note is a simple ratio of the key note." : ""; organOn(m, vel); return; }
+    $("cs-note").textContent = "";
+    BandPlayer.chord([m], { inst: "piano", dur: 3, vel: Math.max(0.25, Math.min(1, vel)) }).catch(function(){ $("cs-note").textContent = "Couldn't load the piano sounds. Check your connection and try again."; });
+  }
+  function noteOn(m, vel){ down[m] = 1; remember(m); sound(m, vel); show(); }
+  function noteOff(m){ delete down[m]; organSync(); show(); }
+  function toggle(m, vel){ if (sticky[m]){ delete sticky[m]; organSync(); show(); } else { sticky[m] = 1; remember(m); sound(m, vel); show(); } }
+  function releaseAll(){ down = {}; sticky = {}; typing.releaseAll(); organSync(); show(); }
+
+  var pointers = {};
+  $("cs-kb").addEventListener("pointerdown", function(e){
+    var b = e.target.closest ? e.target.closest(".cs-k") : null; if (!b) return;
+    e.preventDefault(); var m = +b.getAttribute("data-midi");
+    if ($("cs-hold").checked){ toggle(m, 0.7); return; }
+    pointers[e.pointerId] = m; noteOn(m, 0.7);
+  });
+  function up(e){ var m = pointers[e.pointerId]; if (m == null) return; delete pointers[e.pointerId]; noteOff(m); }
+  document.addEventListener("pointerup", up); document.addEventListener("pointercancel", up);
+
+  var typing = MusicalTyping.attach({
+    onOn: function(m, vel){ noteOn(m, vel); }, onOff: function(m){ noteOff(m); },
+    onOctave: function(o){ kbOct = o; build(); typeNote(); }, enabled: function(){ return $("cs-type").checked; }, octave: kbOct });
+  function typeNote(){
+    $("cs-type-note").textContent = $("cs-type").checked ? "Computer keyboard: the Z row starts on C" + kbOct + " and the Q row on C" + (kbOct + 1) + ". Arrow Up and Arrow Down change the octave." : "";
+  }
+
+  function onMidi(e){ var d = e.data, cmd = d[0] & 0xf0;
+    if (cmd === 0x90 && d[2] > 0) noteOn(d[1], d[2] / 127); else if (cmd === 0x80 || cmd === 0x90) noteOff(d[1]); }
+  function inputs(){
+    var sel = $("cs-midi"), want = sel.value, list = [];
+    midiAccess.inputs.forEach(function(i){ list.push(i); });
+    sel.innerHTML = ""; (list.length ? list.map(function(i){ return { id: i.id, label: i.name || "MIDI input" }; }) : [{ id: "", label: "No MIDI keyboard found" }])
+      .forEach(function(it){ var o = document.createElement("option"); o.value = it.id; o.textContent = it.label; sel.appendChild(o); });
+    sel.disabled = !list.length;
+    if (list.some(function(i){ return i.id === want; })) sel.value = want;
+    if (input) input.onmidimessage = null;
+    input = list.filter(function(i){ return i.id === sel.value; })[0] || null;
+    if (input) input.onmidimessage = onMidi;
+    $("cs-note").textContent = input ? "Listening to " + (input.name || "the MIDI keyboard") + "." : "No MIDI keyboard found. Plug one in, or use the keys.";
+  }
+  $("cs-connect").addEventListener("click", function(){
+    if (!navigator.requestMIDIAccess){ $("cs-note").textContent = "This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome or Edge, or the keys on screen."; return; }
+    navigator.requestMIDIAccess().then(function(a){ midiAccess = a; a.onstatechange = inputs; inputs(); if (window.AudioCheck && !AudioCheck.isChromium()) $("cs-note").textContent = "Chrome or Edge is recommended for a MIDI keyboard."; },
+      function(){ $("cs-note").textContent = "The browser did not allow MIDI. Allow it for this site, or use the keys on screen."; });
+  });
+  $("cs-midi").addEventListener("change", function(){ if (midiAccess) inputs(); });
+
+  // ---- wiring ----
+  (function(){ var sel = $("cs-do"), o = document.createElement("option"); o.value = "auto"; o.textContent = "Found from what I play"; sel.appendChild(o);
+    ROOTS.forEach(function(n, i){ var p = document.createElement("option"); p.value = i; p.textContent = n; sel.appendChild(p); }); })();
+  function words(){                                       // the labels that name the system
+    var t = DegreeNames.term();
+    $("cs-solth").textContent = t.charAt(0).toUpperCase() + t.slice(1);
+  }
+  DegreeNames.bind($("cs-sys")); words();
+  DegreeNames.onChange(function(){ words(); show(); });
+  try { var was = JSON.parse(localStorage.getItem("chordsSolfege2") || "{}");
+    if (was.d != null) $("cs-do").value = was.d; if (was.h) $("cs-home").value = was.h; if (was.l) $("cs-label").value = was.l; } catch (e) {}
+  // a page that includes this tool (the tuning lesson) can set window.csPreset = { d: key note 0-11, type: false, tuning: "piano|et|just" } before it; nothing is then remembered
+  var pre = window.csPreset || null;
+  if (pre){ if (pre.d != null) $("cs-do").value = pre.d; if (pre.type === false) $("cs-type").checked = false; if (pre.tuning) $("cs-tuning").value = pre.tuning; }
+  function keep(){ if (pre) return; try { localStorage.setItem("chordsSolfege2", JSON.stringify({ d: $("cs-do").value, h: $("cs-home").value, l: $("cs-label").value })); } catch (e) {} }
+  ["cs-do", "cs-home", "cs-label"].forEach(function(id){ $(id).addEventListener("change", function(){ keep(); $(id).blur(); show(); }); });
+  $("cs-tuning").addEventListener("change", function(){ releaseAll(); $("cs-tuning").blur(); });
+  $("cs-hold").addEventListener("change", function(){ releaseAll(); $("cs-hold").blur(); });
+  $("cs-type").addEventListener("change", function(){ typing.releaseAll(); typeNote(); });
+  $("cs-clear").addEventListener("click", releaseAll);
+  $("cs-oct-dn").addEventListener("click", function(){ typing.setOctave(kbOct - 1); });
+  $("cs-oct-up").addEventListener("click", function(){ typing.setOctave(kbOct + 1); });
+  window.addEventListener("pagehide", releaseAll);
+  build(); typeNote(); show();
+  window.__cs = { on: noteOn, off: noteOff, toggle: toggle, now: function(){ return last; }, state: function(){ return { chord: $("cs-chord").textContent, sub: $("cs-sub").textContent, sol: $("cs-sol").textContent, key: $("cs-keyline").textContent }; } };
+})();
+</script>
+</section>
+<section id="other-systems-briefly" class="level2">
+<h2 class="anchored" data-anchor-id="other-systems-briefly">Other systems, briefly</h2>
+<p>Equal temperament is one answer to the comma problem, and not the only one used.</p>
+<ul>
+<li><strong>Pythagorean tuning.</strong> All fifths are pure 3:2, and the thirds come out wide (81:64, 407.8 cents, 21.5 cents sharp of 5:4). It suits melody, with its sharp leading tones and bright, tense thirds, and it was the system of medieval Europe, whose music was built on fifths and fourths. One fifth, the <strong>wolf</strong>, is out by the Pythagorean comma (678.5 cents).</li>
+<li><strong>Quarter-comma meantone.</strong> Renaissance and early Baroque keyboards narrowed each fifth by a quarter of a syntonic comma (696.6 cents) so that the major thirds came out pure (386.3 cents). Chords in the home keys are lovely. The cost is an even worse wolf fifth (about 737.6 cents), and keys with many sharps or flats are unusable.</li>
+<li><strong>Well temperaments</strong> (<em>Werckmeister</em>, <em>Vallotti</em>, <em>Kirnberger</em> and others). Eighteenth-century tunings that spread the comma <strong>unevenly</strong> so that every key works but each has its own colour: keys near C have nearly pure thirds, and distant keys are tenser. In Werckmeister III four fifths (C–G, G–D, D–A, B–F♯) are narrowed by a quarter of the Pythagorean comma and the rest are pure. In Vallotti six fifths (F–C–G–D–A–E–B) are narrowed by a sixth of the comma and the rest are pure. Bach’s <em>Well-Tempered Clavier</em> (1722) has a prelude and fugue in all 24 keys, so it needs a tuning where every key is playable. Its exact temperament is still debated; “well tempered” did <strong>not</strong> mean equal. Many listeners find these keys have individual character, which equal temperament flattens.</li>
+<li><strong>Equal temperament</strong> gradually took over in the nineteenth century, as chromatic harmony and modulation made key colour impossible to keep.</li>
+</ul>
+</section>
+<section id="beyond-twelve-notes" class="level2">
+<h2 class="anchored" data-anchor-id="beyond-twelve-notes">Beyond twelve notes</h2>
+<p>Not all music divides the octave into twelve.</p>
+<ul>
+<li><strong>Arabic maqam.</strong> Many maqamat use the “neutral” second and third, about halfway between a minor and a major one (roughly 150 and 350 cents), notated with a half-flat sign. This is often described as quarter tones (24 notes to the octave), but the actual pitches vary by maqam, region and performer, and are set by ear.</li>
+<li><strong>Equal divisions other than 12.</strong> <strong>19-TET</strong> has an almost pure minor third (315.8 cents against the 6:5 of 315.6) but a weak fifth (694.7). <strong>31-TET</strong> has near-pure major thirds (387.1 cents) and a good fifth (696.8), and was proposed in the 16th century to improve on meantone. <strong>53-TET</strong> has a fifth within 0.07 cent of 3:2 and a major third within 1.4 cents, which is why it is a favourite for theorists approximating just intonation. All need special keyboards or a computer.</li>
+<li><strong>Gamelan.</strong> Indonesian ensembles use two scales, five-note <strong>slendro</strong> (roughly equal steps of about 240 cents) and seven-note <strong>pelog</strong> (unequal steps, normally five of the seven in a piece). Every ensemble is tuned to itself, and no two are the same, so the instruments belong together. Paired instruments are often tuned slightly apart on purpose to give a shimmering beat, the <em>ombak</em> (“wave”), the same beating you heard above, used as a colour rather than avoided.</li>
+</ul>
+</section>
+<section id="seeing-it-a-strobe-tuner-pure-intervals-and-why-pianos-are-stretched" class="level2">
+<h2 class="anchored" data-anchor-id="seeing-it-a-strobe-tuner-pure-intervals-and-why-pianos-are-stretched">Seeing it: a strobe tuner, pure intervals, and why pianos are stretched</h2>
+<p>A needle tuner gives one number. A <strong>strobe tuner</strong> gives one row of moving stripes for every <strong>partial</strong> of the note you play. Row <em>k</em> listens at <em>k</em> times the pitch you are aiming at (the microphone signal is multiplied by a sine and cosine at that frequency and averaged; the <em>phase</em> of the result moves the stripes). If that partial is exactly where it should be, its stripes <strong>stand still</strong>. If it is sharp they drift to the right, and if flat to the left, at a speed equal to the error in Hz. Rows fade where the partial is weak, and the first tenth of a second of each note is ignored, because the attack is not a steady pitch.</p>
+<p>Choose the target below: the equal-tempered note, a <strong>just</strong> interval over a tonic you pick, a step of <strong>31-ET</strong>, or any number of cents above the note (350 is a neutral third). The conventional readout (nearest note and cents) is underneath. The microphone is asked for only when you press Start, and Stop lets it go. No microphone? The <strong>made-up string</strong> is a stack of oscillators you can detune.</p>
+<div class="sk" data-w="tuner" data-title="Strobe tuner: the pure fifth and third" data-set="note=E,oct=4,sys=ji,tonic=A">
+
+</div>
+<p><strong>Hear just intervals.</strong> With the tonic on A, the note E is aimed at 3:2 over A. Play (or sing) an E against an A drone (the <strong>Drone</strong> button in the top bar): when the beats stop, your E is the pure fifth, and every row stands still. It is about 2 cents <em>wider</em> than the piano’s E. Change the tonic to C: the target E is now the pure major third, 5:4, which is about 14 cents <em>narrower</em> than the piano’s. That is the number behind the beating in the widgets above, and the reason a choir with no keyboard drifts toward pure intervals.</p>
+<p><strong>Why a piano is stretched.</strong> The harmonic series of an ideal string is exactly 1, 2, 3, 4… times the fundamental. A real string has stiffness, so it resists bending near its ends, and the effect grows quickly with the partial number: partial <em>k</em> sounds at about <em>k f</em> √(1 + <em>B k</em>²), where <em>B</em> is the string’s <strong>inharmonicity</strong> (a mid-range piano string has <em>B</em> of the order of 0.0001 to 0.001, and the short thick bass strings and the shortest treble strings have more). Every upper partial is therefore <em>sharp</em> of the exact multiple. When two notes an octave apart are tuned, the beats a tuner listens to are between the upper note’s fundamental and the lower note’s <em>second partial</em>, which is already slightly sharp: so the upper note is tuned a little sharp of 2:1, and so on up the keyboard. The bass ends up flat and the treble sharp of the equal-tempered scale. This is called <strong>stretch tuning</strong>. Try it: set the source to the <strong>made-up string</strong>, press Start, and raise the stiffness. Row 1 stays still and the higher rows drift to the right, row 6 more than row 2. Notice that the readout above the bands, which reduces the whole sound to one pitch, is pulled sharp by the upper partials, while row 1 shows that the fundamental has not moved.</p>
+<div class="sk" data-w="tuner" data-title="Strobe tuner: a stiff string" data-set="note=A,oct=3,demo=on,stiff=0.0008,bands=8">
+
+</div>
+</section>
+<section id="things-to-try" class="level2">
+<h2 class="anchored" data-anchor-id="things-to-try">Things to try</h2>
+<ol type="1">
+<li>In the major-third widget, set the lower note to 110 Hz, then 440 Hz. At which pitch is the tempered third’s beating faster? (The beat rate is in Hz, so it doubles per octave.)</li>
+<li>In the second widget, step through the intervals in <em>Equal temperament</em> mode and rank them from most to least beating. The fifth and fourth should be at one end and the thirds and sixths at the other.</li>
+<li>Start the drone on Do with Mi and Sol, set to <em>Pure</em>, and hum along. Switch to <em>Equal</em> and hum again. Can you feel your pitch pulled toward the pure Mi?</li>
+<li>Play a D minor chord in the chord keyboard in just intonation and in equal temperament. Which sounds worse, and why? (The fifth D–A is 21.5 cents flat in the pure scale.)</li>
+<li>In the stiff-string tuner, set the stiffness to 0 and then to 0.0020. At which row does the drift first pass 10 cents? (Row <em>k</em> is sharp by 600 × log₂(1 + <em>B k</em>²) cents, from the formula above.)</li>
+<li>Calculate for yourself: the cents between two frequencies is 1200 × log₂(f₂ ÷ f₁). Check that A at 440 Hz and E at 660 Hz (a pure fifth) is 701.96 cents, and that the piano’s E is 659.26 Hz.</li>
+</ol>
+</section>
+<section id="next" class="level2">
+<h2 class="anchored" data-anchor-id="next">Next</h2>
+<ul>
+<li><a href="../lessons/sound-harmonics.html">Sound 1: The Harmonic Series and Fourier</a>, where the ratios come from.</li>
+<li><a href="../lessons/sound-waveforms.html">Sound 2: Oscillators and Pulse-Width Modulation</a>.</li>
+<li><a href="../lessons/cadences.html">Cadences</a> and <a href="../lessons/four-chord-loops.html">Four-chord loops</a>, to hear the chords that the comma affects.</li>
+</ul>
+<style>
+/* the sound-design lessons: widgets are made by apps/shared/lessons/synth-kit.js from <div class="sk" data-w="..."> */
+.sk-w{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem}
+.sk-w.sk-live{border-color:var(--site-accent)}
+.sk-w.sk-target{box-shadow:0 0 0 2px var(--site-accent) inset}
+.sk-head{display:flex;flex-wrap:wrap;align-items:center;gap:.5rem .8rem;margin-bottom:.6rem}
+.sk-title{font-family:var(--font-display);font-size:1.05rem}
+.sk-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin-left:auto}
+.sk-tools .sk-c{flex-direction:row;align-items:center;gap:.4rem;min-width:0}
+.sk-w .btn{font-family:var(--font-mono);font-size:.78rem}
+.sk-w .btn.sk-on,#sk-bar .btn.sk-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.sk-status{font-size:.8rem;color:var(--site-ink-2)}
+.sk-ctls{display:grid;grid-template-columns:repeat(auto-fill,minmax(11.5rem,1fr));gap:.45rem 1rem;margin:.3rem 0 .6rem}
+.sk-c{display:flex;flex-direction:column;font-size:.8rem;margin:0}
+.sk-c .sk-cl{color:var(--site-ink-2);font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.sk-c output{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink);order:2}
+.sk-c input[type=range]{order:3;width:100%;accent-color:var(--site-accent-dk)}
+.sk-c select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);max-width:100%}
+.sk-group{grid-column:1/-1;border-top:1px dashed var(--site-border);padding-top:.35rem}
+.sk-gl{font-family:var(--font-display);font-size:.9rem;margin-bottom:.1rem}
+.sk-presets{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem;margin:.2rem 0 .6rem}
+.sk-presets .sk-cl{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;color:var(--site-ink-2);margin-right:.2rem}
+.sk-view{display:grid;grid-template-columns:1fr 1.6fr;gap:.6rem;margin-top:.5rem}
+.sk-view canvas,.sk-plot{width:100%;height:150px;border:1px solid var(--site-border);border-radius:6px;background:var(--site-bg,transparent);display:block}
+.sk-plot{margin:.4rem 0}
+.sk-plot.sk-short{height:110px}
+.sk-plot.sk-tall{height:230px}
+.sk-plot.sk-square{height:240px;max-width:330px}
+@media (max-width:640px){.sk-view{grid-template-columns:1fr}.sk-tools{margin-left:0}}
+.sk-harm{display:grid;grid-template-columns:repeat(16,1fr);gap:2px;margin:.4rem 0;max-width:640px}
+.sk-hcol{display:flex;flex-direction:column;align-items:center}
+.sk-hcol input{writing-mode:vertical-lr;direction:rtl;height:110px;width:22px;accent-color:var(--site-accent-dk)}
+.sk-hn{font-family:var(--font-mono);font-size:.7rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);padding:0 .2rem;min-width:1.5rem}
+.sk-staff{margin:.4rem 0}
+.sk-staff .abcjs-note,.sk-staff .abcjs-annotation{cursor:pointer}
+.sk-info{font-size:.9rem;color:var(--site-ink-2);min-height:1.4em}
+.sk-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.sk-care{border-left:3px solid #d9822b;padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+/* the bar at the foot of the window */
+#sk-bar{position:fixed;left:0;right:0;bottom:0;z-index:1030;display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .7rem;padding:.35rem 1rem;background:var(--site-surface);border-top:1px solid var(--site-border);box-shadow:0 -2px 8px rgba(0,0,0,.08);font-size:.8rem}
+#sk-bar .btn{font-family:var(--font-mono);font-size:.75rem;padding:.1rem .45rem}
+#sk-bar .sk-bl{font-family:var(--font-mono);font-size:.72rem;color:var(--site-ink-2)}
+#sk-bar input[type=range]{width:6rem;vertical-align:middle;accent-color:var(--site-accent-dk)}
+#sk-bar .sk-tgt{flex:1 1 12rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+body.sk-has-bar{padding-bottom:4.5rem}
+.sk-tune-read{display:flex;flex-wrap:wrap;align-items:baseline;gap:.2rem 1rem;margin:.2rem 0 .4rem}
+.sk-tune-note{font-family:var(--font-display);font-size:1.8rem;min-width:3.4rem}
+.sk-tune-cents{font-family:var(--font-mono);font-size:1.1rem}
+.sk-tune-hz{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.sk-bb{margin:.4rem 0;overflow-x:auto}
+.sk-bb svg{background:#fff;border:1px solid var(--site-border);border-radius:6px;touch-action:none}
+.sk-kbd[hidden]{display:none}
+.sk-kbd{flex-basis:100%;display:flex;height:80px;position:relative;user-select:none;touch-action:none;max-width:760px}
+.sk-key{flex:1;border:1px solid var(--site-border);background:#fff;border-radius:0 0 4px 4px;font-size:.6rem;color:#666;display:flex;align-items:flex-end;justify-content:center;padding:0 0 2px}
+.sk-key.sk-blk{background:#222;flex:.7;height:60%;margin:0 -1.1%;z-index:1;border-color:#000}
+.sk-key.sk-down{background:var(--site-accent)}
+</style>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/abc-transpose.js?v=4"></script>
+<script src="../apps/shared/lessons/sections.js?v=1"></script>
+<script src="../apps/shared/audio-check.js"></script>
+<script src="../apps/shared/pitch-detect.js?v=2"></script>
+<script src="../apps/shared/strobe-view.js?v=1"></script>
+<script src="../apps/shared/lessons/diagrams.js?v=5"></script>
+<script src="../apps/shared/lessons/synth-kit.js?v=10"></script>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

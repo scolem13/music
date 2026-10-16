@@ -1,0 +1,69 @@
+---
+title: "Gear 3: Amps, Speakers and the PA"
+toc: true
+toc-depth: 2
+---
+
+An **amplifier** makes a small signal big enough to move a speaker. Instrument amps are part of the instrument's
+sound; a **PA** (public address) should just make everything louder, faithfully.
+
+## Instrument amps
+
+- **Combo** (amp and speaker in one box) or **head and cabinet**.
+- The usual controls: **Gain** (or Drive) sets how hard the preamp is pushed: low is clean, high distorts.
+  **Volume / Master** sets how loud. **Bass, Mid, Treble** shape it; **Presence** adds upper bite.
+- **Guitar amps** colour the sound heavily and are meant to. **Bass amps** need much more power for the same
+  loudness (low notes take more energy). **Keyboard amps** are flatter, more like a small PA.
+- Start everything at noon (12 o'clock), gain low, then adjust. Small changes.
+- Valve (tube) amps need a minute to warm up and should go into **standby** for breaks. Never run one without a
+  speaker connected: it can destroy the output transformer.
+- **Impedance** (ohms) of the cabinet must match what the head expects (printed by the speaker jack).
+
+## Powered and passive speakers
+
+- **Powered (active)**: the amplifier is inside. Plug in power and a line-level signal. Most small PAs and studio
+  monitors.
+- **Passive**: needs a separate power amp and speaker cable. Never plug a passive speaker into a line output, or a
+  speaker output into a line input.
+
+## A small PA
+
+A typical small rig: mics and instruments → **mixer** → two powered speakers on stands (the **mains**), plus
+**monitor** wedges for the players.
+
+On each mixer channel, top to bottom:
+
+1. **Gain / Trim**: set this first. Play or sing at full performance level and turn up until the peak light only
+   just flickers, or the meter sits around 0 to −6. ([Recording 1](rec-gain-staging.qmd))
+2. **High-pass (low cut)** on for vocals and anything without real bass.
+3. **EQ**: small cuts, not big boosts.
+4. **Aux sends**: the monitor mixes (pre-fader) and effects (post-fader).
+5. **Pan**, **Mute**, and the **fader**, near 0 for the main sound.
+
+## Sound check
+
+1. Everything on in the right order ([Gear 1](gear-power.qmd)), master down.
+2. One channel at a time: gain, then fader.
+3. Monitors: ask each player what they need more of. Their voice/instrument first.
+4. The whole band: balance from the audience, not from behind the mixer if you can help it.
+5. Leave headroom. A crowd absorbs sound, and everyone plays louder at the gig.
+
+## Feedback
+
+The howl or squeal when a mic hears a speaker that's playing that mic.
+
+- Keep the **mains in front** of the mics, never behind.
+- Point the mic's **dead side** at the monitor (the back of a cardioid; the sides at ~120° for a supercardioid).
+- Sing **close** to the mic: then the gain can stay lower.
+- Don't cup the mic's grille: it changes the pattern to omni and feeds back.
+- If it rings, pull the **monitor** or that channel down first, then find the ringing frequency with EQ.
+
+## Loudness and stage volume
+
+The quietest stage that still works sounds best out front. Turn amps toward the players (tilt them back, or put them
+on a stand) rather than turning them up. See also [Recording 7: Mono and Stereo](rec-stereo.qmd) for live speaker
+placement and subwoofers.
+
+## Next
+
+- [Gear 4: Keyboards](gear-keyboards.qmd)

@@ -7,16 +7,17 @@ toc-title: "On this page"
 ---
 
 ```{=html}
-<link rel="stylesheet" href="/apps/shared/ipa/ipa-chart.css?v=1">
+<link rel="stylesheet" href="/apps/shared/ipa/ipa-chart.css?v=2">
 <script src="/apps/shared/ipa/ipa-data.js?v=1"></script>
 <script src="/apps/shared/ipa/ipa-audio.js?v=1"></script>
-<script src="/apps/shared/ipa/ipa-chart.js?v=1"></script>
+<script src="/apps/shared/ipa/ipa-synth.js?v=2"></script>
+<script src="/apps/shared/ipa/ipa-chart.js?v=3"></script>
 <script src="/apps/shared/lessons/sections.js?v=1"></script>
 ```
 
 The International Phonetic Alphabet gives one symbol to each sound, so a singer can read the same sounds in any language.
 Click a symbol for a description and reference words in English (General American and RP), Hindi, Marathi, German,
-French, Korean and Japanese. A language is left blank where it does not have the sound. This page has text only, no audio.
+French, Korean and Japanese. A language is left blank where it does not have the sound.
 
 ## Find and filter {#find}
 
@@ -28,6 +29,9 @@ Search matches symbols, descriptive names, words, romanisations and glosses.
 ## Vowels {#vowels}
 
 Tongue height runs down the page (close to open) and tongue position across it (front, central, back).
+Drag anywhere on the chart, away from the symbols, to hear a synthesised vowel glide through the space: up and down moves
+the first formant, across moves the second. Rounding, voice and pitch sit below the chart; Hold keeps the sound going so you can
+click symbols to glide between them. The chart also takes arrow keys and Space. What the synthesiser is doing, and what F1 and F2 mean: [Formants: what makes a vowel](../lessons/vowel-formants.qmd).
 
 <div id="ipa-vowels"></div>
 

@@ -1,0 +1,88 @@
+---
+title: "Recording 4: Monitoring and Headphones"
+toc: true
+toc-depth: 2
+---
+
+**Monitoring** is what you listen on: while recording, while performing, while mixing. The rule of
+thumb is simple: **headphones while a microphone is open, speakers while mixing**. But each has its
+reasons and its traps.
+
+## When to use headphones
+
+- **Any time a mic is recording in the same room as the playback.** Speakers playing the backing track,
+  the click or the other parts will get into the mic (bleed). With the click, it can't be removed.
+- **Overdubbing**: singing or playing to tracks already recorded.
+- **Feedback**: a mic, turned up, pointed near speakers playing that mic, howls. Headphones stop it.
+- **Placing the mic**: listen in headphones while the mic is moved.
+- **Checking detail**: clicks, edits, noise, breaths, distortion are easier to hear.
+- **Late at night or in shared spaces.**
+
+## Closed or open
+
+- **Closed-back** headphones seal round the ear. Little sound gets in or out. **Use them for recording**:
+  a loud click in open-backs leaks into a sensitive condenser.
+- **Open-back** headphones are vented; they sound more natural and are more comfortable for hours, but
+  leak both ways. **Use them for mixing and listening**, not next to an open mic.
+- **In-ear monitors** (IEMs): very good isolation; used live and by drummers.
+
+## When to use speakers
+
+- **Mixing and mastering**. In headphones, each ear hears only one side; on speakers, both ears hear both
+  speakers, and the room, the way listeners will. Panning, reverb and bass sound very different.
+  Headphone mixes often end up with too little reverb and wrong bass.
+- **Tracking a band live in one room** where everyone wants to hear each other and bleed is accepted.
+- **Recording with no microphones**: DI guitar, keyboards, drum machines, synths.
+- Set monitors in an equilateral triangle with your head, tweeters at ear height, away from the walls.
+  Listen at a moderate level (around 75–85 dB SPL): ears hear less bass and treble when quiet, and tire
+  when loud.
+
+Do the mix on speakers, then **check on headphones, earbuds, a phone and a car**. Most people will hear
+it on one of those.
+
+## Latency and direct monitoring
+
+Sound going into the computer and out again takes time: the **buffer**. At 256 samples and 48 kHz, each
+way is about 5 ms plus the converters; with a big buffer it can be 20–40 ms. A singer hearing their own
+voice that late sounds as if they're singing in a tunnel, and timing suffers.
+
+- **Direct monitoring** (a knob or switch on the interface) sends the input straight to the headphones,
+  with no delay, before the computer. Mute the track's input monitoring in the DAW, or you hear yourself
+  twice, slightly apart (a flanger, see [Sound 18](sound-chorus.qmd)).
+- Or use a **small buffer** (64–128 samples) while recording, and a big one while mixing.
+- Under about 10 ms most players won't notice. Drummers and singers notice soonest.
+
+### Try it: hear the delay
+
+Press ▶ (headphones on), clap or speak along with the click, and try the buffer sizes. Then choose "Both on" to hear the flanging double.
+
+<div class="rk" data-w="latency"></div>
+
+## The headphone mix
+
+A performer plays better when the headphones sound good.
+
+- **Hear yourself enough.** Singers who can't hear themselves sing sharp and push; too much and they sing flat.
+- **Pulling one side off** the ear helps some singers pitch; it also leaks the click into the mic: turn
+  it down if they do.
+- **A little reverb** in the headphones (not recorded) helps singers.
+- **Click**: as quiet as still usable. A cowbell or rim click, not a high beep. Turn it off for the
+  quiet ending, or it'll be there in the mic.
+- **Careful with level.** Long sessions at high volume damage hearing for ever. If you need it very loud
+  to hear yourself, turn the backing down instead.
+
+### Try it: build a cue mix
+
+Set each fader, add the reverb, then switch to speakers to see how much click and backing would end up in the recording. Switch "Listen to" to the recorded track to hear it.
+
+<div class="rk" data-w="headmix"></div>
+
+## Next
+
+- [Recording 5: Mixing](rec-mixing.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-mix.js?v=1"></script>
+```

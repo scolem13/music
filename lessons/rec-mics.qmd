@@ -1,0 +1,111 @@
+---
+title: "Recording 2: Microphones and Phantom Power"
+toc: true
+toc-depth: 2
+---
+
+Every microphone turns air pressure into voltage, but the three main types do it differently, and that
+changes how they sound, how loud a source they can take and how fragile they are.
+
+## Dynamic
+
+A thin diaphragm glued to a coil of wire, sitting in a magnet. Sound moves the coil, the magnet makes a
+current. The Shure SM57 and SM58 are the classic examples.
+
+- **Tough**: dropped, rained on, shouted into, they keep working.
+- **Handles very loud sources**: snare, kick, guitar amps, brass close up.
+- Less detail in the highs and less sensitive, so it picks up **less of the room** and less bleed. That is
+  why it is the default for live sound and for recording in an untreated bedroom.
+- Needs a lot of preamp gain (often 50–60 dB on a quiet voice). Some very low-output ones (the Shure
+  SM7B) are used with an inline booster.
+- **No phantom power needed.**
+
+## Condenser
+
+A very thin, electrically charged diaphragm close to a metal back plate: a capacitor whose value changes
+as the diaphragm moves. It needs power to hold the charge and to run its small internal amplifier.
+
+- **Detailed and sensitive**: the air on a voice, the pick on an acoustic guitar, cymbals, overheads, a
+  piano, a choir or a room.
+- **Large-diaphragm** (an inch or so; the studio vocal mic) sounds warm and flattering; **small-diaphragm**
+  ("pencil" mics) is more accurate and even off-axis, good for acoustic instruments and stereo pairs.
+- Picks up **everything**: the fridge, the computer fan, the reflections off the walls. In a bare room a
+  condenser can sound worse than a dynamic.
+- More fragile. Keep it out of the damp and away from kick drums unless it is built for it.
+- **Needs phantom power** (or its own power supply, for valve/tube condensers).
+
+## Ribbon
+
+A strip of very thin corrugated aluminium hung in a magnetic field.
+
+- Smooth, dark, natural highs; loved on guitar amps, brass, strings and drum rooms.
+- Almost always **figure-8** (picks up front and back equally).
+- **Fragile**: a blast of air (a kick drum, a puff into it, being carried quickly) can stretch the ribbon.
+  Keep it covered when not in use.
+- Classic passive ribbons do **not** want phantom power, and old ones can be damaged by a faulty cable
+  with it on. Active ribbons (they say so) need it.
+
+## Phantom power (+48 V)
+
+Phantom power sends 48 volts DC down the same balanced XLR cable that brings the signal back. It is
+"phantom" because a dynamic mic, wired the usual way, doesn't see it at all.
+
+- Turn it on for **condensers** (and active ribbons, and some DI boxes).
+- **Plug in first, then switch on.** Switch **off and wait** a few seconds before unplugging. Plugging in
+  with 48 V live makes a loud pop through the speakers and can, rarely, harm gear.
+- **Monitors down** when switching it on or off.
+- On many cheap interfaces one 48 V button powers two or all inputs at once. Fine for dynamics; check
+  before plugging an old ribbon into any of them.
+- If a condenser makes no sound: is 48 V on? Is it an XLR cable (not a jack)?
+
+<div class="sk-care">Never patch an XLR in or out with phantom power on, and keep vintage ribbon mics
+on a channel with 48 V off.</div>
+
+Try the order yourself. Press **Monitors on** (speakers low), choose a mic, then plug in and switch
++48 V in the right and the wrong order:
+
+<div class="rk" data-w="phantom"></div>
+
+## Polar patterns
+
+The **polar pattern** is how sensitive a mic is from each direction.
+
+- **Cardioid** (heart-shaped): picks up the front, rejects the back. The default for almost everything.
+  Point the back at what you *don't* want (the drums, the monitor, the window).
+- **Supercardioid / hypercardioid**: narrower in front, with a small lobe at the back. Common on live
+  vocal mics. Point the *side* (not the back) at the monitor.
+- **Omni**: everything equally. Natural, no proximity effect (see [placement](rec-placement.qmd)), but
+  hears the whole room.
+- **Figure-8**: front and back, nothing from the sides. Ribbons; two singers facing each other; the side
+  mic of a mid/side pair ([Sound 23: Stereo](sound-stereo.qmd)).
+
+Many large-diaphragm condensers have a switch for several of these.
+
+Drag the singer and the drums, turn the mic, and compare patterns and mic types. Watch the voice
+against the drum bleed in dB:
+
+<div class="rk" data-w="polar"></div>
+
+## Which mic for what
+
+| Source | First choice | Also good |
+|---|---|---|
+| Voice in an untreated room | Dynamic (SM58, SM7B) | Cardioid condenser, close, with a pop filter |
+| Voice in a treated room | Large-diaphragm condenser | Ribbon for a dark, vintage sound |
+| Acoustic guitar | Small-diaphragm condenser | Large-diaphragm, or a pair |
+| Electric guitar amp | Dynamic (SM57) on the speaker | Ribbon, or both blended |
+| Snare, toms | Dynamic | |
+| Kick | Large dynamic (built for kick) | Condenser outside the drum |
+| Overheads, room | Pair of condensers | Ribbons |
+| Piano | Pair of condensers | |
+| Bass, keys | DI | Mic on the bass amp as well |
+
+## Next
+
+- [Recording 3: Distance, Bleed and Phase](rec-placement.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=1"></script>
+```

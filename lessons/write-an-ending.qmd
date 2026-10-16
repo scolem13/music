@@ -1,0 +1,145 @@
+---
+title: "Lesson: Write an Ending"
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.we-pick{display:flex;flex-wrap:wrap;gap:.5rem;margin:.6rem 0}
+.we-pick .btn.we-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.we-tools{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin:.6rem 0}
+.we-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.we-paper{background:#fff;border-radius:6px;overflow-x:auto;margin:.4rem 0}
+.we-note{font-size:.88rem;color:var(--site-ink-2);min-height:1.3em}
+.we-frame{width:100%;border:1px solid var(--site-border);border-radius:10px;min-height:900px;background:var(--site-surface)}
+</style>
+```
+
+Every song here stops two bars short. The chords for those bars are already written in: **V**, then **I** (or **i** in a minor key).
+That's an authentic cadence, the strongest way to end. Your job is to write the melody that goes over it.
+
+## Pick a song
+
+```{=html}
+<div id="we-pick" class="we-pick"><span class="we-note">Loading the tune library...</span></div>
+<div class="we-paper" id="we-orig"></div>
+<div class="we-tools">
+  <button type="button" class="btn btn-outline-secondary" id="we-play-orig">&#9654; Hear it as written</button>
+  <span class="we-note">The last two bars are silent. Only the chords play there.</span>
+</div>
+```
+
+## What makes an ending sound finished
+
+- **Land on the tonic.** End on the home note (D in these songs) on a strong beat. Make it long.
+- **Over V, sit on the leading tone or the 2nd.** In D, that's C♯ or E. Over A, both pull you home to D.
+- **Step down into the last note.** 3–2–1 (F♯–E–D) or 2–1 sounds settled. A leap up to the tonic sounds bolder.
+- **Echo the opening.** Bar 5 already repeats bar 1. Let your bars 7–8 answer bar 6 the way bars 3–4 answered bar 2.
+- **Slow down.** Use longer notes in the last bar than in the rest of the song.
+
+## Write it
+
+The chords are already in place. Choose rhythm patterns: they fill the empty bars in order, and once the last bar is full
+the song is complete (no bar is added). Then choose how to enter the notes (letters, the computer keys, or a MIDI keyboard)
+and enter them; they fill the rhythm from the first empty note. The score above the tools shows your ending as you go.
+Your work is saved for each song.
+
+```{=html}
+<div class="we-tools">
+  <button type="button" class="btn btn-outline-secondary" id="we-play-mine">&#9654; Hear my ending</button>
+  <button type="button" class="btn btn-outline-secondary" id="we-reset">Start this song over</button>
+  <span class="we-note" id="we-msg"></span>
+</div>
+<div class="we-paper" id="we-mine"></div>
+<iframe class="we-frame" id="we-frame" title="Notation" src="/tools/notation.html?ending=1"></iframe>
+```
+
+## Compare
+
+Write two different endings for the same song. Write one that steps down 3–2–1 and one that leaps up to the tonic.
+Then play them back to back. Which sounds more final? Which sounds more like *this* song?
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/tunes/tunes-object.js"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var KEY = "ending:", frame = $("we-frame"), ready = false, cur = null, songs = [];
+
+  // every tune in the library tagged %%id unfinished-song-N, wherever it lives: new ones, and edits to these, show up here
+  Object.keys(tunesObject).forEach(function (c) {
+    String(tunesObject[c]).split(/\n(?=X:)/).forEach(function (t) {
+      var m = /%%id\s+(unfinished-song-\S+)/.exec(t);
+      if (m) songs.push({ id: m[1], abc: t.trim(), title: (/^T:(.*)$/m.exec(t) || [, m[1]])[1].trim() });
+    });
+  });
+  songs.sort(function (a, b) { return a.id.localeCompare(b.id, undefined, { numeric: true }); });
+
+  function mine(s) { try { return localStorage.getItem(KEY + s.id); } catch (e) { return null; } }
+  function draw(el, abc) { return ABCJS.renderAbc(el, abc, { responsive: "resize", add_classes: true })[0]; }
+
+  var sfUrl = null; if (window.getSoundfontUrl) getSoundfontUrl().then(function (u) { sfUrl = u; });
+  var synth = null;
+  function play(abc) {
+    if (synth) { synth.stop(); synth = null; }
+    var tmp = document.createElement("div"), vo = ABCJS.renderAbc(tmp, abc)[0];
+    var s = new ABCJS.synth.CreateSynth(), opts = { visualObj: vo, options: { chordsOff: false } };
+    if (sfUrl) opts.options.soundFontUrl = sfUrl;
+    s.init(opts).then(function () { return s.prime(); }).then(function () { synth = s; s.start(); })
+      .catch(function (e) { $("we-msg").textContent = "Couldn't play: " + e.message; });
+  }
+
+  function send() {
+    if (!ready || !cur) return;
+    frame.contentWindow.postMessage({ type: "end-load", abc: mine(cur) || cur.abc, title: cur.title }, location.origin);
+  }
+  function choose(s) {
+    cur = s;
+    Array.prototype.forEach.call($("we-pick").children, function (b) { b.classList.toggle("we-on", b.dataset.id === s.id); });
+    draw($("we-orig"), s.abc);
+    var m = mine(s); draw($("we-mine"), m || s.abc);
+    $("we-msg").textContent = m ? "Your ending so far is below." : "";
+    try { localStorage.setItem(KEY + "current", s.id); } catch (e) {}
+    send();
+  }
+
+  $("we-pick").innerHTML = "";
+  if (!songs.length) $("we-pick").innerHTML = '<span class="we-note">No unfinished songs in the tune library.</span>';
+  songs.forEach(function (s) {
+    var b = document.createElement("button");
+    b.type = "button"; b.className = "btn btn-outline-secondary"; b.textContent = s.title; b.dataset.id = s.id;
+    b.onclick = function () { choose(s); };
+    $("we-pick").appendChild(b);
+  });
+
+  window.addEventListener("message", function (e) {
+    if (e.source !== frame.contentWindow || e.origin !== location.origin || !e.data) return;
+    if (e.data.type === "end-ready") { ready = true; send(); }
+    if (e.data.type === "end-change" && cur && typeof e.data.abc === "string") {
+      try { localStorage.setItem(KEY + cur.id, e.data.abc); } catch (err) {}
+      draw($("we-mine"), e.data.abc);
+    }
+  });
+  // the framed page grows with what's open in it
+  setInterval(function () {
+    try { var h = frame.contentDocument.documentElement.scrollHeight; if (h && Math.abs(h - frame.offsetHeight) > 20) frame.style.height = h + "px"; } catch (e) {}
+  }, 700);
+
+  $("we-play-orig").onclick = function () { if (cur) play(cur.abc); };
+  $("we-play-mine").onclick = function () { if (cur) play(mine(cur) || cur.abc); };
+  $("we-reset").onclick = function () {
+    if (!cur || !confirm("Throw away your ending for " + cur.title + "?")) return;
+    try { localStorage.removeItem(KEY + cur.id); } catch (e) {}
+    choose(cur);
+  };
+
+  var last = null; try { last = localStorage.getItem(KEY + "current"); } catch (e) {}
+  if (songs.length) choose(songs.find(function (s) { return s.id === last; }) || songs[0]);
+})();
+</script>
+```

@@ -1,0 +1,113 @@
+---
+title: "Section Labels: Naming the Parts of a Song"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+When you map a recording in the [Timestamp Notes](/tools/timestamp-notes.html), **S** stamps a section and
+gives it a label from a menu. This lesson covers what each label means, when to use letters instead of words, and
+how the page counts the choruses each player takes.
+
+## Two kinds of stamp
+
+- **S** marks a **section**: the place where a new part of the form starts. It gets a label from the menu, and the
+  bar map, the chord grid, the phrases and Send on all use it.
+- **C** marks a **note**: anything else worth finding again ("drum fill", "key change", "wrong note at 1:12").
+  A note is just text, and it doesn't split the song into sections.
+
+Both kinds of stamp go in the same Timestamps list, in time order. Section stamps are tinted blue and have the menu.
+
+## The words
+
+| Label | What it is | Where you hear it |
+|---|---|---|
+| **Intro** | Music before the first real section, often a vamp or the last bars of the tune | Pop, rock, jazz |
+| **Head** | The tune itself, played straight through, before and after the solos | Jazz |
+| **Verse** | Words that change each time over the same music | Songs |
+| **Pre-chorus** | A short build that lifts the verse into the chorus | Pop |
+| **Chorus** | The part that comes back with the same words: the hook | Songs |
+| **Bridge** | Contrasting music, usually heard once or twice | Songs, jazz (the B of AABA) |
+| **Interlude** | An instrumental passage between sung sections | Songs |
+| **Solo** | One player improvising over the form. Choose the instrument (Sax solo, Piano solo…) | Jazz, rock |
+| **Shout** | A written ensemble chorus, the whole band loud together, often after the solos | Big band, small group arrangements |
+| **Outro** | Whatever comes after the last real section: a tag, a vamp, a fade | Everywhere |
+
+The same word in pop and in jazz can mean different things. In a song a **chorus** is a section with the hook. In jazz
+a **chorus** is one time through the whole form: "he took three choruses" means the soloist went through the form three times.
+
+## The letters
+
+Jazz standards and older songs are usually described by **form letters**: each new piece of music gets the next
+letter, and a piece that comes back gets its old letter.
+
+- **AABA** (32 bars, 8 each): *I Got Rhythm*, *Satin Doll*. The B is the bridge.
+- **ABAC**: *All of Me*. The second A returns, but the end goes somewhere new.
+- **A A′**: the A comes back with a different ending. **A′** ("A prime") means *nearly A*.
+
+The menu starts by offering **A**. Once you've used A, it also offers **A′** (A changed) and **B** (something new).
+Each letter you use adds the next one: B brings B′ and C, A′ brings A″. You never have to type a prime mark.
+
+Letters aren't numbered. An AABA tune *should* have three A's, so they all stay "A".
+
+## Numbering is automatic
+
+Pick the same word twice and both are numbered: two Heads become **Head 1** and **Head 2** everywhere they appear
+(the bar map, the chord grid, the Notation page). Delete one and the other goes back to plain **Head**. Move a stamp
+earlier and the numbers follow time order, not the order you stamped them.
+
+Need a label that isn't on the menu? Choose **Other…** at the bottom and type it ("Vamp", "Drum break", "Trading 4s").
+A typed label is kept exactly as you wrote it. The **▾** next to it takes you back to the menu.
+
+## Choruses: who soloed how long
+
+Once the bars are tapped (**B**), the page measures each section and divides it by the length of one chorus:
+
+- **One chorus** is the length of the first **Head** stamp. If you stamped letters, it's the A A B A (or whatever
+  pattern repeats). If the guess is wrong, type the bar count into *a chorus is __ bars*.
+- **Back-to-back stamps with the same label are one solo.** It doesn't matter whether you stamp the sax solo once
+  or at the top of every chorus: three stamps of Sax solo, 32 bars each, make **Sax 3 choruses**.
+- **Untapped bars are worked out from the tempo**, so you can tap one chorus, stamp the rest with S and still get a
+  count. The last section runs to the end of the recording.
+- A count of 1.5 means the solo stopped halfway through the form. That happens, but check that your stamp is in the right
+  place.
+
+In a **song** (no Head and no letters), sections can each be a different length, so a solo is counted in bars instead,
+along with the section it matches in length: "Guitar 8 bars (as long as the Verse)". A last chorus tapped twice as long as
+the first plays its chords through twice rather than holding each one twice as long. If one section is a bar over a
+multiple of four and the next is a bar under (9 then 7), the Sections panel marks both with ⚠: one stamp is probably a bar off.
+
+**Fill from the tempo** (in the Bar map panel) goes further: tap the head, stamp where each solo starts, and it puts
+in every bar after the taps. Between two stamps the bars are spread evenly, so a band that speeds up or slows down
+lands back on each stamp. A head or solo that comes out within about a tenth of a chorus of a whole number becomes that
+many choruses. The guessed bars are grey in the Bars table. Tap **B** on any downbeat where they drift: your tap is
+kept and the bars around it are worked out again. **Clear guesses** takes them all out.
+
+Each count appears next to the solo's first stamp, and the full list is under the Timestamps.
+
+## Example: *Beautiful Love*, McCoy Tyner Quartet
+
+*Beautiful Love* (Victor Young) has 32 bars in two 16-bar halves. The second half is the same as the first until its
+ending, so its form is **A A′**. In a quartet recording you might stamp:
+
+| Time | S label | Shown as |
+|---|---|---|
+| 0:01 | Head | Head 1 |
+| 0:52 | Sax solo | Sax solo |
+| 1:43 | Sax solo | Sax solo |
+| 2:34 | Piano solo | Piano solo |
+| 4:15 | Head | Head 2 |
+
+Head 1 is 32 bars, so a chorus is 32 bars. The two sax stamps together are 64 bars, so the list shows **Sax 2 choruses**.
+
+You can also stamp each half: **A** at 0:01, **A′** at 0:26. The page then finds that A A′ repeats and uses its 32 bars as one chorus.
+
+## Exercise
+
+1. Choose a jazz recording with a head and at least two solos.
+2. Listen once and press **S** each time the form starts again. Choose Head, then the soloists.
+3. Tap a chorus of bars (**B**).
+4. Read the chorus counts. Do they match what you heard? If a count is a half, find the stamp that's off.
+5. Do it again with letters only (A, A, B, A…) and check that the chorus length comes out the same.
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

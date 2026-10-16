@@ -1,0 +1,225 @@
+---
+title: "Mapping a Recording with the Timestamp Notes"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+The [Timestamp Notes](/tools/timestamp-notes.html) turns a recording into a map: where each section
+starts, where every bar falls, and how fast the band is really playing. With the map you can jump straight
+to the bridge, loop a verse until you have it, and see whether the drummer speeds up in the last chorus.
+
+Keep the player open in a second tab and work through the steps with a song you know.
+
+## 1. Load a recording
+
+Open the [player](/tools/timestamp-notes.html). There are three ways in:
+
+1. **A file.** Drop a video or audio file (MP3, M4A, WAV, MP4…) on the box that says *Drop a video or audio
+   file here*, or press **Choose file**. A file is the best choice: it plays on this page, the timing is
+   exact, and nothing can block it.
+2. **A YouTube link.** Paste it into the box and press **Load** (or Return).
+3. **A link in the address.** `timestamp-player.html?v=` followed by a YouTube link or id loads it straight
+   away, which is handy for a link on a class page.
+
+The big clock shows where the recording is. **Space** or **Return** plays and pauses from anywhere on the page; the arrows (or **h** / **l**) go 5 seconds back or on.
+
+If YouTube says the video won't play here, skip to [When YouTube won't play it](#when-youtube-wont-play-it).
+
+## 2. Stamp the sections and the moments
+
+Listen through once. There are two keys, and both put a row in the *Timestamps* column, in time order:
+
+- **S** where a **section** starts (the next step).
+- **C** whenever anything else happens: a key change, a fill you want to learn, a wrong note in your own recording.
+
+For a **C** note:
+
+1. Press **C**. A row appears with the time.
+2. The cursor jumps into the row's note field. Type what happened ("Chorus", "sax fill", "key change").
+3. Leave the note with **Esc**, or type **jk** quickly. The letters are taken back out.
+4. Keep listening and stamping.
+
+Click any time in the list to jump there. Untick *Jump to the note field after a stamp* if you'd rather stamp
+everything first and write the notes afterwards.
+
+Everything is saved in the browser as you go, so a reload doesn't lose it. **Copy all** gives you a plain list
+(`01:23  Chorus`) and **Paste…** reads one back. Saving the whole song is covered in [step 7](#save-and-start-again).
+
+## 3. Name the sections
+
+Press **S** where a section starts. The row is tinted blue and has a menu: Intro, Head, Verse, Pre-chorus,
+Chorus, Bridge, Interlude, a solo for each instrument, Shout, Outro, and the form letters (A, then A′ and B, and so
+on). **Other…** at the bottom lets you type a label of your own. A new stamp starts with the label of the one before
+it, so chorus after chorus is just **S**, **S**, **S**.
+
+- A label used more than once is **numbered for you**: two Heads become Head 1 and Head 2 everywhere.
+- Under the Timestamps, the page counts **how many choruses each soloist takes** (in a pop song, how many bars).
+- If you've pasted the words ([step 6](#words-chords-and-the-chord-grid)), **S** stamps their next section instead.
+
+What each label means, and how the counting works: [Section Labels](/lessons/section-labels.html).
+
+A **C** note that names a section also counts as one (older song files work this way):
+
+| Write | For example |
+|---|---|
+| A section word first | Intro, Verse 1, Pre-chorus, Chorus 2, Bridge, Solo, Instrumental, Interlude, Break, Outro, Coda, Tag, Vamp, Head, Ending, Turnaround |
+| A letter, with or without a number | A, B, A2 |
+| Anything after `§` | `§ horns come in`, `§ modulation` |
+
+Any other note ("sax fill", "check this bar") stays a plain stamp.
+
+Stamp each section on its **first downbeat**. You don't have to be exact; the next step fixes that.
+
+## 4. Tap the bars
+
+Now give the recording its bars.
+
+1. Set **Beats a bar**: 4 for most pop and rock, 3 for a waltz, 6 for a slow 6/8 counted in six.
+2. Go back to the start (click the first stamp, or drag the video's own slider).
+3. Press **Return** to play, and press **B** on **beat 1 of every bar**. Count "1 2 3 4" under your breath
+   and press on each "1".
+4. Watch the line above the panels. It shows *Bar 7 · Chorus* and flashes on every tap.
+
+Fixing mistakes:
+
+- **Backspace** takes back the last tap.
+- Tapping near a bar you already tapped (within about a sixth of a second) **replaces** it. So to fix one
+  spot, go back a few bars before it and tap through it again.
+- Open the **Bars** panel. Any bar much longer or shorter than the others is **highlighted yellow**: that
+  is almost always a missed or doubled tap. Click its time to jump there and tap it again.
+- **Fill from the tempo**: tap a stretch (the head), stamp where each later section starts (**S**), and it puts in the rest of the bars, each solo a whole number of choruses when it's close. Tap **B** where a guessed bar drifts. See [Section Labels](/lessons/section-labels.html#choruses-who-soloed-how-long).
+- **Fill gaps** puts in the bars of a stretch you missed. **Halve bars** / **Double bars** fix taps made every
+  half bar or every other bar (**Undo** puts them back).
+- A bar really in another meter (a bar of 2 before a chorus)? Change its **Beats** in the Bars panel.
+- In the *Sections* panel, ⚠ beside two sections next to each other (9 bars then 7, say) means the stamp between
+  them is probably a bar off.
+
+Once the bars are in, every section moves onto the **nearest tapped bar**, so a stamp a little early or
+late lands on the right downbeat. The *Sections* panel now says *Verse 1 · bars 9–16*.
+
+The summary line tells you the tempo: *64 bars · about 118 bpm (114–122)*. A narrow range means a steady
+band (or a click track); a range that climbs through the song means it speeds up.
+
+Tip: listen to the first bars a couple of times before tapping. Tapping goes much better when you already
+know where "1" is. In a song with a pickup, start tapping at the first full bar.
+
+## 5. Use the map
+
+- **Jump.** Click a section's time, or a bar's time in the *Bars* panel.
+- **Loop.** Press **Loop** beside a section, or **Shift+L** while the playhead is in it. The recording goes
+  back to the start of the section every time it reaches the next one. Press **Shift+L** again (or the button,
+  now saying *Looping*) to stop.
+- **Phrases.** The *Phrases* panel cuts each section into 2-, 4- or 8-bar phrases, each looped from its lead-in.
+  **P** loops the phrase under the playhead, **,** and **.** step to the one before or after, and **T** sends it to the
+  Notation page to write down.
+- **Without the audio.** Once the timings are in, clicking a section (in the chord grid, the menu in *Now playing*,
+  or the Sections panel) moves to it even with nothing loaded, so you can check and fix the map anywhere.
+
+## 6. Words, chords and the chord grid
+
+- **Words and chords.** Paste a song from Ultimate Guitar (chords above the words, `[Verse 1]` headings) and press
+  **Convert**: it becomes ChordPro. No words yet? **Sections from stamps** puts your section labels in instead,
+  so the chord grid shows each section's bars anyway.
+- **Chord timing.** Press **N** as each chord starts (**Shift+N** takes the last one back); which chord it is comes from
+  the words. Or play it all in from a **MIDI keyboard**: connect it in the box at the top of the right sidebar. The
+  left hand plays a note on every barline (two together where a section starts), the right hand the chords.
+- **The chord grid** follows the section under the playhead. When a section's chords are in the right places,
+  press **Timing is right** to show them all.
+- **Send on.** **Notation page (melody)** sends the sections and chords for writing down the tune;
+  **Backing Track (style)** sends the chart to play along with, at the tapped tempo.
+
+## 7. Save and start again
+
+- **Save song file** saves everything in one `.json`: the stamps, the bars, the words and chords, the chord timing,
+  the phrases and the link. **Open file** reads one back (older `.txt` stamp lists and bar-map `.json` files open too).
+- The browser keeps **one song at a time**. Before you start on another, save the song file, then press
+  **Clear all data**. It asks first (press it again within a few seconds), then empties everything kept for the song:
+  stamps, bars, words and chords, chord timing, grids and phrases. The page reloads with nothing loaded. Your
+  page settings (column widths, folded parts, the MIDI keyboard) stay.
+
+## When YouTube won't play it
+
+Some videos show *Video unavailable* with a message like *"…blocked it from display on this website or
+application"*. The player shows the reason and YouTube's error number in its own words:
+
+| Error | Means |
+|---|---|
+| 101 or 150 | The owner, or a rights holder such as a music publisher, blocks it from playing here |
+| 100 | Removed, or private |
+| 2 | Not a valid video link |
+| 153 | YouTube couldn't tell which page asked for it |
+
+**First, try another browser window.** These blocks depend on the browser as well as the website. The same
+video can play in one browser and be refused in another. Try a private window with extensions off, or
+another browser. If it plays there, use that.
+
+**If it still won't play, follow along in a YouTube tab.** The video plays on YouTube itself, and the player
+keeps its own clock in step with it.
+
+1. Press **Follow in a tab** (next to Load, or on the error message). YouTube opens in a new tab.
+2. Put the two windows **side by side**, so you can see YouTube and press keys on the player.
+3. In YouTube, **pause** the video at a time you can read, for example 0:00 or 1:05.
+4. On the player, type that time into **Clock to** and press Return. The big clock shows it.
+5. Start the video in YouTube, click back onto the player straight away, and press **Return** as close to
+   the same moment as you can. Or start the clock on a sound you can hear: pause at the start of a bar,
+   set the clock to that time, then press Return here on the first note.
+6. Check it after a few seconds. If the clock is ahead, press **[** to pull it back 0.1 s; if it's
+   behind, press **]**.
+7. If you slow YouTube down (its settings gear, *Playback speed*), choose the same **Speed** on the player.
+
+Now **C**, **B**, section names and the bar map work as before.
+
+What can't work: the player can't see or steer YouTube's tab. YouTube's tab cuts itself off from the page
+that opened it, so the player can't pause it, move it, or close it.
+
+- **Jumping** (clicking a stamp, section or bar) opens **a new YouTube tab at that time**, and the clock
+  stops there. **Pause the old tab first**, or you'll hear two copies, then close it yourself. Press
+  **Return** when the new tab starts playing.
+- **Looping** isn't available. Loop in YouTube instead (right-click the video and choose *Loop*) or drag
+  its slider back.
+- The clock drifts a little. Expect to nudge by a tenth of a second or two, and check it again when you jump.
+
+**The best fix is a file.** If you have the recording (bought, from the band, from your own phone), drop
+it on the player instead. Everything works, exactly.
+
+## Exercise: map a song in 15 minutes
+
+Choose a song you're learning and do this in one sitting.
+
+1. **Load it** (5 min). Play it through once, stamping and naming every section.
+2. **Bars** (5 min). Set the beats, go back to the start, tap every bar. Fix the yellow bars.
+3. **Check** (3 min). Click through the sections. Does each one start on a downbeat? Write down the tempo
+   and whether it changes.
+4. **Practise** (2 min, then as long as you like). Loop the hardest section and play or sing along.
+5. **Save** the song file.
+
+Questions to answer about your song:
+
+- How many bars is each section? Are the verses and choruses the same length every time?
+- Is the tempo steady? Where does it change?
+- Is there a bar of 2 or a bar of 6 anywhere? (A bar in the Bars panel whose length is half or one and a
+  half times the others, that you tapped correctly, is one.)
+
+## All the keys
+
+| Key | Does |
+|---|---|
+| **Return** | Play and pause (following a tab: start and stop the clock) |
+| **Space** | Play and pause |
+| **←** **→**, or **h** **l** | 5 seconds back / on |
+| **S** | Stamp a section (choose its label) |
+| **C** | Stamp a note |
+| **Esc**, or **jk** | Leave a note field |
+| **B** | A bar starts here |
+| **Backspace** | Take back the last bar tap |
+| **Shift+L** | Loop the section under the playhead; again to stop |
+| **N** / **Shift+N** | A chord starts here / take the last one back |
+| **P** | Loop the phrase under the playhead |
+| **,** / **.** | The phrase before / after |
+| **T** | Send the phrase to the Notation page |
+| **[** / **]** | Following a tab: clock 0.1 s back / on |
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

@@ -13,7 +13,7 @@ This is a lesson on one drum groove the [Backing Track](../../tools/backing-trac
 
 Follows the Feel menu. Swing: the ride pattern, hi-hat foot on 2 and 4, a feathered kick and a little snare. Straight eighths: eighths on the cymbal, kick on 1 and 3, cross-stick on 2 and 4.
 
-It belongs in *Swing*, *Jazz ballad* and *Boogaloo*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Swing*, *Jazz ballad*, *Boogaloo* and *Stride piano*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Jazz time","opts":{"groove":"auto"}}]'></div>
 
@@ -59,11 +59,15 @@ The same drum groove in other styles it fits. The other players change; yours do
 
 <div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Jazz time","opts":{"groove":"auto"}}]'></div>
 
+**Stride piano**
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Jazz time","opts":{"groove":"auto"}}]'></div>
+
 ## How it relates to the other patterns
 
 - **Builds on:** [Quarter notes (learning swing, 1)](drums-quarters.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd).
 - **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Varied](chords-auto.qmd) (comping rhythm).
-- **Other drum grooves in the Jazz group:** [Quarter notes (learning swing, 1)](drums-quarters.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Blues shuffle](drums-shuffle.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
+- **Other drum grooves in the Jazz group:** [Quarter notes (learning swing, 1)](drums-quarters.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Blues shuffle](drums-shuffle.qmd), [Jump blues](drums-jump.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
 
 {{< include ../_arrange-kit.qmd >}}
 

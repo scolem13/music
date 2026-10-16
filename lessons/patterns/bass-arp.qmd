@@ -13,7 +13,7 @@ This is a lesson on one bass line the [Backing Track](../../tools/backing-track.
 
 The chord spelled out, one note on every beat: root, 3rd, 5th, 7th, the same in every bar. When a bar has two chords, each gets its root and one more note. A step between playing roots and walking.
 
-It belongs in *Swing*, *Jazz ballad* and *Boogaloo*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Swing*, *Jazz ballad*, *Boogaloo* and *Boogie-woogie*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
 
@@ -65,13 +65,17 @@ The same bass line in other styles it fits. The other players change; yours does
 
 <div class="ar-demo" data-style="boogaloo" data-chart="F7|F7|Bb7|F7" data-tempo="112" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
 
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Chord tones (learning to walk)","opts":{"bassFeel":"arp"}}]'></div>
+
 ## How it relates to the other patterns
 
 - **Builds on:** [Roots on 1 and 3](bass-halves.qmd), [Roots on every beat](bass-roots.qmd).
-- **Leads to:** [Walking](bass-walk.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd), [Footprints: waltz ostinato](bass-footprints.qmd): the patterns that use this one as a step.
-- **The same idea elsewhere in the band:** [Arpeggio, up and down](chords-arp.qmd) (comping rhythm), [Arpeggio, low and high](chords-arp2.qmd) (comping rhythm), [Alberti bass](chords-alberti.qmd) (comping rhythm).
+- **Leads to:** [Walking](bass-walk.qmd), [Boogie-woogie](bass-boogie.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd), [Footprints: waltz ostinato](bass-footprints.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Arpeggio, up and down](chords-arp.qmd) (comping rhythm), [Arpeggio, low and high](chords-arp2.qmd) (comping rhythm), [Alberti bass](chords-alberti.qmd) (comping rhythm), [Boogie-woogie](bass-boogie.qmd) (bass line), [Boogie-woogie right hand](chords-boogie.qmd) (comping rhythm), [Blues shuffle](drums-shuffle.qmd) (drum groove).
 - **Plays with, in swing:** [Varied](chords-auto.qmd) (comping rhythm), [Jazz time](drums-auto.qmd) (drum groove).
-- **Other bass lines in the Jazz group:** [Walking](bass-walk.qmd), [Two-feel](bass-two.qmd), [Boogaloo riff](bass-riff.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd).
+- **Other bass lines in the Jazz group:** [Walking](bass-walk.qmd), [Two-feel](bass-two.qmd), [Boogaloo riff](bass-riff.qmd), [Boogie-woogie](bass-boogie.qmd), [Boogie-woogie octaves](bass-boogie-oct.qmd), [Yancey figure](bass-yancey.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd).
 
 {{< include ../_arrange-kit.qmd >}}
 

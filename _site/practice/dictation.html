@@ -1,0 +1,1352 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Dictation – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reading-swing.html">
+ <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-guitar.html">
+ <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-piano.html">
+ <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-bass.html">
+ <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar.html">
+ <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar-hand.html">
+ <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
+ <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/travis-picking.html">
+ <span class="dropdown-text">Travis Picking on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano.html">
+ <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano-hand.html">
+ <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inversions.html">
+ <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-pop.html">
+ <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-jazz.html">
+ <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-classical.html">
+ <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/cadences.html">
+ <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guide-tones.html">
+ <span class="dropdown-text">Lesson: Guide Tones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/minor-changes.html">
+ <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/borrowed-chords.html">
+ <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/turnarounds.html">
+ <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reharmonize.html">
+ <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-band.html">
+ <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-bass-drums.html">
+ <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-chords.html">
+ <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-organ.html">
+ <span class="dropdown-text">Arranging 4: The Organ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/patterns/index.html">
+ <span class="dropdown-text">Accompaniment Patterns</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-harmonics.html">
+ <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-waveforms.html">
+ <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-noise.html">
+ <span class="dropdown-text">Sound 3: Noise</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-filter.html">
+ <span class="dropdown-text">Sound 4: Filters</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-lfo.html">
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-subtractive.html">
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-fm.html">
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-wavetable.html">
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-distortion.html">
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-compressor.html">
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-reverb.html">
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chorus.html">
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-phaser.html">
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-vocoder.html">
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs-classic.html">
+ <span class="dropdown-text">Song Builder (Classic)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Dictation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<style>
+#dc-root{--dc-ink2:#6c757d;--dc-line:#dee2e6;--dc-ok:#2b8a3e;--dc-half:#e67700;--dc-bad:#c92a2a;max-width:1200px;margin:0 auto;padding:0 16px}
+@media (prefers-color-scheme: dark){#dc-root{--dc-ink2:#adb5bd;--dc-line:#495057;--dc-ok:#69db7c;--dc-half:#ffa94d;--dc-bad:#ff8787}}
+#dc-root .dc-layout{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;align-items:start}
+#dc-root details{border:1px solid var(--dc-line);border-radius:10px;margin-bottom:16px}
+#dc-root details>summary{cursor:pointer;padding:.7rem 1.1rem}
+#dc-root details>summary h2{display:inline;font-size:1.15rem;margin:0}
+#dc-root .dc-body{padding:0 1.1rem 1rem}
+#dc-root .dc-row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:end;margin:.5rem 0}
+#dc-root .dc-hint{color:var(--dc-ink2);font-size:.92rem}
+#dc-root .dc-nav{position:sticky;top:80px;border-left:2px solid var(--dc-line)}
+#dc-root .dc-nav a{display:block;padding:.3rem .7rem;color:var(--dc-ink2);text-decoration:none}
+#dc-root .dc-score{font-size:1.6rem;font-weight:700}
+#dc-root table{border-collapse:collapse;margin-top:.5rem}
+#dc-root td,#dc-root th{padding:.2rem .6rem;border-bottom:1px solid var(--dc-line);text-align:left}
+#dc-root .ok{color:var(--dc-ok)} #dc-root .half{color:var(--dc-half)} #dc-root .bad{color:var(--dc-bad)}
+@media (max-width:800px){#dc-root .dc-layout{grid-template-columns:1fr}#dc-root .dc-nav{display:none}}
+</style>
+<div id="dc-root">
+ <div class="dc-layout"><div>
+  <details id="dc-pick" open=""><summary><h2 class="anchored">1. Pick a line</h2></summary><div class="dc-body">
+   <div class="dc-row">
+    <label>Benchmark set<br><select id="dc-set"></select></label>
+    <label>Line<br><select id="dc-line"></select></label>
+    <button type="button" id="dc-next">Next line</button>
+    <label>Tempo: <span id="dc-tempo-v">80</span><br><input type="range" id="dc-tempo" min="40" max="140" value="80"></label>
+    <label><input type="checkbox" id="dc-tonic" checked=""> Play the tonic chord first</label>
+   </div>
+   <p class="dc-hint">The line is the same one Reading Benchmarks asks you to play, but here you don't see it: you hear it and write it down. You're given the meter, the key and the number of bars.</p>
+  </div></details>
+  <details id="dc-listen" open=""><summary><h2 class="anchored">2. Listen and write</h2></summary><div class="dc-body">
+   <p id="dc-givens" class="dc-hint"></p>
+   <div class="dc-row">
+    <button type="button" id="dc-play">▶ Play the line</button>
+    <button type="button" id="dc-open">Open the Notation page to write it</button>
+   </div>
+   <p class="dc-hint">The Notation page opens in its own window, set up with the meter and key (your own piece there is kept, untouched). Write the line there, then press <b>Hand in</b>. <b>Hear it again</b> there plays it from here. Plays so far: <span id="dc-plays">0</span>.</p>
+   <p id="dc-status" class="dc-hint" aria-live="polite"></p>
+  </div></details>
+  <details id="dc-result" open=""><summary><h2 class="anchored">3. Result</h2></summary><div class="dc-body">
+   <div id="dc-out" class="dc-hint">Nothing handed in yet.</div>
+  </div></details>
+ </div>
+ <nav class="dc-nav" aria-label="On this page"><a href="#dc-pick">Pick a line</a><a href="#dc-listen">Listen and write</a><a href="#dc-result">Result</a></nav>
+ </div>
+ <div id="dc-hidden" style="position:absolute;left:-9999px;width:800px"></div>
+</div>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/abc-core.js?v=3"></script>
+<script src="../apps/shared/abc-events.js?v=3"></script>
+<script src="../apps/shared/dictation.js?v=1"></script>
+<script src="../apps/tunes/reading-benchmarks-object.js?v=1"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var sets = window.readingBenchmarks || {};
+  var lines = {}, cur = null, plays = 0, win = null, ready = false, synth = null, ctx = null;
+  Object.keys(sets).forEach(function (k) { lines[k] = sets[k].split(/\n(?=X:)/).map(function (s) { return s.trim(); }).filter(function (s) { return /^X:/.test(s); }); });
+  $("dc-set").innerHTML = Object.keys(lines).map(function (k) { return "<option>" + k + "</option>"; }).join("");
+  function fillLines() { var L = lines[$("dc-set").value] || []; $("dc-line").innerHTML = L.map(function (_, i) { return '<option value="' + i + '">Line ' + (i + 1) + "</option>"; }).join(""); pick(); }
+  function bars(abc) { var mus = abc.split("\n").filter(function (l) { return l && !/^[A-Za-z]:|^%/.test(l); }).join(" "); return mus.split("|").filter(function (b) { return /[A-Ga-g]/.test(b); }).length; }
+  function pick() {
+    var abc = (lines[$("dc-set").value] || [])[+$("dc-line").value]; if (!abc) return;
+    cur = { abc: abc.replace(/^T:.*\n/m, ""), name: $("dc-set").value + ", line " + (+$("dc-line").value + 1), g: Dictation.givens(abc), bars: bars(abc) };
+    plays = 0; $("dc-plays").textContent = "0"; $("dc-out").textContent = "Nothing handed in yet.";
+    $("dc-givens").textContent = "Meter " + cur.g.meter + ", key of " + cur.g.key + ", " + cur.bars + " bars.";
+    if (win && !win.closed) send();
+  }
+  function send() { if (ready) win.postMessage({ type: "dict-load", meter: cur.g.meter, key: cur.g.key, bars: cur.bars, title: "Dictation: " + cur.name }, location.origin); }
+  function tonicAbc() {
+    var k = cur.g.key, minor = /m$/.test(k), root = minor ? k.slice(0, -1) : k;
+    var letter = root[0];
+    // the key signature already supplies the third and fifth, so just name the letters
+    var LET = "CDEFGAB", i = LET.indexOf(letter);
+    var n = function (o) { var j = i + o; return j < 7 ? LET[j] : LET[j - 7].toLowerCase(); };
+    var m = /^(\d+)\/(\d+)$/.exec(cur.g.meter || "4/4"), eighths = m ? +m[1] * 8 / +m[2] : 8;
+    var h = Math.ceil(eighths / 2);   // a bar in eighths (L:1/8): the chord for about half of it, then rest
+    return "[" + n(0) + n(2) + n(4) + "]" + h + " z" + (eighths - h) + " |";
+  }
+  function play() {
+    if (!cur) return;
+    if (synth) { try { synth.stop(); } catch (e) {} synth = null; }
+    var abc = cur.abc.replace(/^K:(.*)$/m, function (m) { return "Q:1/4=" + $("dc-tempo").value + "\n" + m; });
+    if ($("dc-tonic").checked) abc = abc.replace(/(^K:.*\n)/m, "$1" + tonicAbc() + " ");
+    var vo = ABCJS.renderAbc("dc-hidden", abc)[0];
+    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+    var s = synth = new ABCJS.synth.CreateSynth();
+    plays++; $("dc-plays").textContent = plays;
+    getSoundfontUrl().then(function (u) { return s.init({ audioContext: ctx, visualObj: vo, options: { soundFontUrl: u } }); })
+      .then(function () { return s.prime(); }).then(function () { if (synth === s) s.start(); })
+      .catch(function (e) { $("dc-status").textContent = "Couldn't play: " + e; });
+  }
+  function openNotation() {
+    if (win && !win.closed) { send(); win.focus(); return; }
+    ready = false; win = window.open("/tools/notation.html?dictation=1", "dc-notation");
+    $("dc-status").textContent = "The Notation page is open in its own window.";
+  }
+  var NAMES = ["C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B"];
+  var nm = function (m) { return NAMES[m % 12] + (Math.floor(m / 12) - 1); };
+  var len = function (q) { var t = { 0.5: "eighth", 1: "quarter", 1.5: "dotted quarter", 2: "half", 3: "dotted half", 0.25: "16th", 0.75: "dotted eighth", 4: "whole" }; return t[Math.round(q * 100) / 100] || q + " beats"; };
+  function show(answer) {
+    var r = Dictation.grade(cur.abc, answer), cls = function (x) { return x >= 0.9 ? "ok" : x >= 0.6 ? "half" : "bad"; };
+    var rows = r.notes.map(function (n, i) {
+      var p = n.pitch === "ok" ? '<span class="ok">&#10003;</span>' : n.pitch === "octave" ? '<span class="half">octave off (' + nm(n.got.midi) + ")</span>" : n.pitch === "part" ? '<span class="half">' + Math.round(n.part * 100) + "% of the chord (" + n.got.midis.map(nm).join(" ") + ")</span>" : n.pitch === "missing" ? '<span class="bad">missing</span>' : '<span class="bad">' + n.got.midis.map(nm).join(" ") + "</span>";
+      var rh = n.rhythm ? '<span class="ok">&#10003;</span>' : n.got ? '<span class="bad">' + len(n.got.dur) + "</span>" : '<span class="bad">&mdash;</span>';
+      return "<tr><td>" + (i + 1) + "</td><td>" + nm(n.midi) + ", " + len(n.dur) + "</td><td>" + p + "</td><td>" + rh + "</td></tr>";
+    }).join("");
+    $("dc-out").innerHTML = '<div class="dc-score ' + cls(r.score) + '">' + Math.round(r.score * 100) + "%</div>" +
+      "<div>Pitch " + Math.round(r.pitchScore * 100) + "%, rhythm " + Math.round(r.rhythmScore * 100) + "%, " + plays + " play" + (plays === 1 ? "" : "s") + ". " + cur.name + "." +
+      (r.extras.length ? ' <span class="bad">' + r.extras.length + " extra note" + (r.extras.length > 1 ? "s" : "") + " (starting where none was played).</span>" : "") + "</div>" +
+      '<div class="dc-row" style="align-items:start"><div><b>What was played</b><div id="dc-t"></div></div><div><b>What you wrote</b><div id="dc-a"></div></div></div>' +
+      "<table><tr><th>#</th><th>Played</th><th>Pitch</th><th>Rhythm</th></tr>" + rows + "</table>";
+    ABCJS.renderAbc("dc-t", cur.abc, { responsive: "resize" });
+    ABCJS.renderAbc("dc-a", answer, { responsive: "resize" });
+    $("dc-result").open = true; $("dc-result").scrollIntoView({ behavior: "smooth" });
+    try { var log = JSON.parse(localStorage.getItem("dictationLog") || "[]"); log.push({ when: new Date().toISOString(), line: cur.name, score: r.score, pitch: r.pitchScore, rhythm: r.rhythmScore, plays: plays }); localStorage.setItem("dictationLog", JSON.stringify(log.slice(-500))); } catch (e) {}
+  }
+  window.addEventListener("message", function (e) {
+    if (!win || e.source !== win || e.origin !== location.origin || !e.data) return;
+    var m = e.data;
+    if (m.type === "dict-ready") { ready = true; send(); }
+    else if (m.type === "dict-replay") play();
+    else if (m.type === "dict-submit" && typeof m.abc === "string") show(m.abc);
+  });
+  $("dc-set").onchange = fillLines; $("dc-line").onchange = pick;
+  $("dc-next").onclick = function () { var s = $("dc-line"); s.selectedIndex = (s.selectedIndex + 1) % s.options.length; pick(); };
+  $("dc-tempo").oninput = function () { $("dc-tempo-v").textContent = this.value; };
+  $("dc-play").onclick = play; $("dc-open").onclick = openNotation;
+  fillLines();
+  window.DictationPage = { grade: show, cur: function () { return cur; } };   // for tests
+})();
+</script>
+</div>
+
+
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

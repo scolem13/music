@@ -1,0 +1,52 @@
+---
+title: "Sound 20: Tremolo and the Rotary Speaker"
+toc: true
+toc-depth: 2
+---
+
+**Tremolo** is the volume going up and down, over and over. It's one of the oldest effects: guitar
+amps had it built in from the 1950s, long before pedals. An [LFO](sound-lfo.qmd) does the work. Move
+the *position* instead of the volume and it's **auto-pan**. Spin a real speaker and you get both at
+once, plus a pitch wobble: the **rotary speaker**.
+
+## Tremolo and auto-pan
+
+<div class="sk" data-w="tremolo"></div>
+
+- **Rate**: how many times a second. Slow is a throb; fast is a shimmer.
+- **Depth**: how far the volume falls. At 100% it goes all the way to silence.
+- **Shape**: a sine wave swells smoothly; a square chops the sound on and off (**Chopper**).
+
+Try **Surf tremolo** on the *Synth riff*, then switch to **Auto-pan** with headphones on: the chords
+float from ear to ear. Push the rate up past about 15 Hz on the [LFO page](sound-lfo.qmd) and tremolo
+stops sounding like a wobble and starts sounding like a new tone: that's amplitude modulation, a
+cousin of [FM](sound-fm.qmd).
+
+Guitarists say "tremolo" for two different things, confusingly: the **tremolo arm** on a Stratocaster
+actually bends the *pitch* (that's vibrato), while a **tremolo** effect changes the *volume*. Fender
+named them backwards in the 1950s and the names stuck.
+
+## The rotary speaker
+
+Don Leslie built a speaker cabinet for the Hammond organ in the 1940s with two spinning parts: a **horn**
+for the high frequencies and a **drum** for the low ones. As each turns toward you it gets louder,
+higher in pitch (the [Doppler effect](sound-chorus.qmd), as when a siren passes) and moves across the
+stereo field.
+
+<div class="sk" data-w="rotary" data-source="organ"></div>
+
+- **Slow (chorale)** and **Fast (tremolo)**: the two speeds. Organists switch between them in the
+  middle of a song. Press **Slow ⇄ Fast** while it plays and listen to the *change*: the light horn gets
+  up to speed in about a second, while the heavy drum takes several. That lurch, the two parts going at
+  different speeds for a moment, is the sound people love.
+- **Crossover**: where the highs (horn) and lows (drum) are split.
+- **Amp drive**: the Leslie's own valve amp, pushed until it growls.
+
+Try it on the *Synth riff* and your *Microphone* as well. The Beatles put voices and guitars through
+a Leslie ("Tomorrow Never Knows"), and Stevie Ray Vaughan's "Cold Shot" guitar is one.
+
+## Next
+
+- [Sound 21: Pitch effects](sound-pitch.qmd)
+
+{{< include _synth-kit.qmd >}}

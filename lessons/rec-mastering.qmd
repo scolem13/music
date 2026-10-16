@@ -1,0 +1,84 @@
+---
+title: "Recording 6: Mastering"
+toc: true
+toc-depth: 2
+---
+
+Mastering is the last step: the finished stereo mix is made to sound its best **on every system** and
+**alongside other records**, and turned into the files that get released. It works on the whole song at
+once, with small moves. If something in the mix is wrong (the vocal too quiet, the bass boomy on one
+note), go back and fix the mix; mastering can't reach inside.
+
+## Fresh ears
+
+Mastering was traditionally a different engineer in a different room, for a reason: you've heard the
+mix a hundred times. Leave it a day. Listen to references. Listen on the speakers you know best.
+
+## Tonal balance
+
+A gentle [EQ](sound-eq.qmd) on the whole mix, compared with a reference:
+
+- Moves of **0.5 to 2 dB**, wide curves. More than 3 dB means the mix needs work.
+- Too much low end (muddy, boomy on small speakers), too little (thin), harsh 2–5 kHz, dull top.
+- A high-pass below 20–30 Hz removes rumble nobody hears but that eats headroom.
+
+<div class="sk" data-w="eq"></div>
+
+## Glue compression
+
+A slow, gentle [compressor](sound-compressor.qmd) on the whole mix (ratio 1.5:1–2:1, 1–2 dB of gain
+reduction, slow attack, release timed to the beat) makes the parts move together. Often done in the mix
+already ("mix-bus compression").
+
+<div class="sk" data-w="compressor"></div>
+
+## Loudness and limiting
+
+The **limiter** is the last plug-in: a very fast compressor with an infinite ratio that stops any peak
+crossing a ceiling, so the whole song can be turned up.
+
+- Set the **ceiling at −1 dBTP** (*true peak*: the level between the samples, which is what a converter
+  or an MP3 encoder actually reaches). This keeps lossy streaming versions from clipping.
+- Raise the input until it's loud enough, then **back off**: past a few dB of limiting the drums lose
+  their punch and the sound gets flat and tiring.
+- Loudness is measured in **LUFS** (loudness units relative to full scale), averaged over the song, which
+  follows how loud it *sounds* rather than its peaks.
+- Streaming services **turn loud songs down** to a target (Spotify, YouTube, Tidal about −14 LUFS; Apple
+  Music −16). A master squashed to −8 LUFS is just turned down to −14, and now sounds smaller than a
+  dynamic master at −14. For streaming, around **−14 to −10 LUFS integrated** is plenty; dynamic genres
+  (jazz, classical, acoustic) often sit at −16 to −20.
+
+### Hear what over-limiting costs
+
+A looping song through a limiter, measured the way streaming services measure it (LUFS, with a true-peak
+reading). Play it, then compare **Dynamic** with **Crushed**: the crushed one is louder, and has lost its
+punch. Now switch **streaming normalisation** on: both are turned to the same level, and the crushed one
+is simply smaller. Watch the *peak-to-loudness* figure shrink as the drive goes up.
+
+<div class="rk" data-w="loudness"></div>
+
+## Stereo and mono
+
+Check in **mono** ([Sound 23: Stereo](sound-stereo.qmd)): the vocal and bass must stay solid. Keep the
+bass (below ~120 Hz) in the centre; wide bass cancels on mono systems and cuts badly on vinyl. More on mono playback, one earbud, live sound and subwoofers in
+[Recording 7: Mono and Stereo](rec-stereo.qmd).
+
+## Finishing
+
+- **Sequence** an album: the order, the gaps, matching levels so no song jumps out.
+- **Fades** at the start and end; trim silence.
+- **Dither** when reducing to 16-bit (CD, some distributors): a tiny noise that replaces the
+  distortion of rounding. Only once, at the very end.
+- **Files**: a 24-bit WAV at the mix's sample rate for streaming distributors, a 16-bit/44.1 kHz WAV
+  for CD, and an MP3 for the band's phones.
+- **Metadata**: title, artist, ISRC codes if you have them.
+
+## Next
+
+- [Recording 7: Mono and Stereo](rec-stereo.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-level.js?v=1"></script>
+```

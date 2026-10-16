@@ -30,6 +30,7 @@
     comp.threshold.value = -16; comp.knee.value = 26; comp.ratio.value = 3;
     comp.attack.value = 0.004; comp.release.value = 0.2;
     comp.connect(ctx.destination);
+    if (global.AudioTap) global.AudioTap.register(ctx, comp, "Chord and solfège keyboard");
     master = ctx.createGain(); master.gain.value = 0.85; master.connect(comp);
     reverb = ctx.createConvolver(); reverb.buffer = makeIR(1.7, 2.6);   // small hall
     wetGain = ctx.createGain(); wetGain.gain.value = 1.0; reverb.connect(wetGain); wetGain.connect(comp);

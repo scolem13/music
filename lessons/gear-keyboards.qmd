@@ -1,0 +1,55 @@
+---
+title: "Gear 4: Keyboards"
+toc: true
+toc-depth: 2
+---
+
+Digital pianos, stage pianos, synths and MIDI controllers look alike and are set up alike. Here's what the
+connections do, and how to look after them.
+
+## Kinds of keyboard
+
+- **Digital piano**: weighted keys, built-in speakers, mostly piano sounds. Good for practice.
+- **Stage piano / workstation**: weighted or semi-weighted keys, many sounds, no speakers (needs an amp or PA).
+- **Synthesizer**: sound design controls (filter, envelopes; [the Sound lessons](sound-subtractive.qmd)), usually light synth-action keys.
+- **MIDI controller**: no sounds of its own. It sends MIDI to a computer or another instrument.
+- **Arranger** keyboard: auto-accompaniment styles and built-in speakers.
+
+**Key count**: 88 is a full piano; 61 and 76 are common on stage; 25–49 for controllers.
+
+## Connections
+
+- **Outputs**: usually **L/Mono** and **R** (1/4"). Mono gig? Use only **L/Mono**; the keyboard then sums both
+  sides. Stereo: both, into two channels panned left and right, or a stereo DI.
+- **Headphones**: often mutes the speakers. Turn the volume down before putting them on.
+- **Sustain pedal**: plug it in **before** switching on; many keyboards read the pedal's polarity at power-up, and
+  if it was plugged in later the sustain works backwards (on when lifted). Fix: switch off, plug in, switch on with
+  the foot off. Or use the polarity switch on the pedal.
+- **Expression pedal**: volume or other control, a separate TRS jack.
+- **MIDI**: **USB** to a computer (the site's [Notation page](../tools/notation.qmd) can take a MIDI keyboard in
+  Chrome), or 5-pin **MIDI Out → In** to another instrument.
+- **Power**: many keyboards use a specific adaptor: wrong voltage or polarity can kill them ([Gear 1](gear-power.qmd)).
+
+## Settings worth knowing
+
+- **Local Off**: the keys stop playing the keyboard's own sounds and only send MIDI. Use it when the computer plays
+  the sound back, or you'll hear two of everything.
+- **Transpose**: shifts all keys. Easy to leave on by accident: if you sound in the wrong key, check it first.
+- **Split / Layer**: two sounds on two halves, or two at once.
+- **Touch / velocity curve**: lighter or heavier response.
+- **Volume** slider: keep it fairly high (around ¾) and do the balance on the mixer, for less noise.
+
+## Setup and care
+
+- **Stand**: an X stand at a height where your forearms are level with the keys (elbows slightly above). Tighten
+  every knob; check it doesn't wobble.
+- **Dust cover** when not in use; no drinks on top.
+- **Cleaning**: unplugged, a soft cloth very slightly damp with water (a drop of mild soap). Never spray onto the keys.
+  Liquid between keys breaks contacts.
+- **Moving**: a padded bag or case, keys facing your body. Don't stand it on its end without a case.
+- **Cold**: a keyboard brought in from a cold car should warm up before switching on, so condensation doesn't form.
+- **Sticking or dead key**: note which one and report it; don't prise keys up.
+
+## Next
+
+- [Gear 5: Setting Up and Packing Down](gear-setup.qmd)

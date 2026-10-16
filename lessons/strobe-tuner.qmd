@@ -1,0 +1,432 @@
+---
+title: "How a Strobe Tuner Works"
+toc: true
+toc-depth: 2
+---
+
+A needle tuner gives you one number. A **strobe tuner** gives you a picture that stands still when the note is in tune, and drifts one way if you are sharp and the other way if you are flat. It is the most precise tuner there is, and the way it works is a lovely piece of physics that you can play with. This lesson builds one from the spinning disc of the 1930s to the few lines of arithmetic in the tuner on this site, with a widget at every step. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section and opens it.
+
+**How to use the page.** The pictures with a **Pause** button move on their own; the sliders change what they show. The sound widgets have a ▶ button, and the bar at the foot of the window sets the volume (start low). Nothing here needs a microphone: the last two widgets listen to the page's own sound. The **Strobe tuner** button in the top bar is the same tuner on every page of the site, and works with the microphone, with the page's sound, with a video on the page, or with another browser tab. For where the numbers 3:2 and 5:4 come from see [the harmonic series](sound-harmonics.qmd); for what the tuner is used to compare, see [tuning systems](tuning-systems.qmd).
+
+```{=html}
+<style>
+.st-lab{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem;max-width:46rem}
+.st-lab h4{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}
+.st-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;margin:.4rem 0}
+.st-row label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2)}
+.st-row select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.st-lab .btn{font-family:var(--font-mono);font-size:.78rem}
+.st-lab .btn.st-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.st-c{display:flex;flex-direction:column;font-size:.8rem;min-width:11rem;flex:1 1 11rem}
+.st-c .st-cl{color:var(--site-ink-2);font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+.st-c output{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink)}
+.st-c input[type=range]{width:100%;accent-color:var(--site-accent-dk)}
+.st-lab canvas{width:100%;display:block;border:1px solid var(--site-border);border-radius:6px;background:var(--site-surface);margin-top:.4rem}
+.st-info{font-size:.88rem;color:var(--site-ink-2);min-height:1.4em;margin:.4rem 0 0}
+.st-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.st-steps{display:flex;flex-wrap:wrap;gap:.3rem;margin:.2rem 0 .4rem}
+.st-key{display:inline-block;width:.8em;height:.8em;border-radius:2px;vertical-align:baseline;margin-right:.25em}
+</style>
+```
+
+## 1. The mechanical strobe tuner {#disc}
+
+The first strobe tuners (the Conn Strobotuner, 1936, is the famous one) had no electronics to speak of. A small motor spun a **disc** at a fixed, very steady speed. Printed on the disc were rings of black and white segments, a different number in each ring, one ring for each note (or octave of a note) to be tuned. A microphone and an amplifier fed the note you were playing to a **neon lamp** behind the disc, and the lamp flashed once for every cycle of the note's sound. You looked at the disc through the flashes.
+
+Take a simple disc with rings of 8, 16, 24 and 32 segment pairs, turning 13.75 times a second (825 rpm). The 8-pair ring sweeps 8 × 13.75 = **110** pairs past any fixed spot every second, the 16-pair ring 220, and so on. So ring 1 is a ruler for **110 Hz** (the A two octaves below the A at 440), ring 2 for 220 Hz, ring 3 for 330 and ring 4 for 440. Set the lamp to flash at 110 times a second and look at ring 1: each flash lights the disc at the moment it has turned exactly 8 pairs further round, which looks exactly like the last picture. The ring appears to **stand still**.
+
+Now play 112 Hz, a little sharp. The flashes come slightly faster than the ring's pairs pass, so each flash catches the ring a little further round than the last, and it **creeps** round at 2 pairs a second, the difference between the note and the ring's frequency. Flat, and it creeps the other way. That is the whole idea: **the speed of the creep is the number of hertz you are away, and its direction is sharp or flat.** The disc really turns 825 rpm; the lamp's light is what makes the difference visible.
+
+<div class="st" data-w="disc"></div>
+
+Try this. Set the lamp to **Steady** and the disc is a grey blur: without the flashes there is nothing to see, since the disc turns too fast to follow. Switch to **Flashing** and slide the note: ring 1 stops at 110 Hz, ring 2 at 220 Hz, and so on. Between those, every ring crawls or blurs. Press *Match the nearest ring* to see the one that stops.
+
+## 2. Why a pattern stands still: aliasing {#aliasing}
+
+The trick of "looking at something in flashes" has a name, **stroboscopic aliasing**, and you have seen it in films, where a car's wheels appear to stand still or turn backwards. A film camera takes (say) 24 pictures a second. If a spoked wheel turns a little less than one spoke-gap between pictures, the spokes look as if they have moved *forward* a little. If it turns a little more, they look as if they have moved back. And if it moves exactly one spoke-gap each picture, **the wheel stands still** although it is turning fast.
+
+What you see is the difference between the wheel's rate (spokes passing a point per second) and the flash rate, wrapped round so it is never more than half a flash away from zero:
+
+> apparent rate = (spokes × turns per second) − (flashes per second) × (the whole number that makes this as small as it can be)
+
+The widget below has a wheel with eight identical spokes on the left (the truth, drawn continuously) and the same wheel as the strobe light shows it on the right. Give the wheel a speed, give the strobe a rate, and watch.
+
+<div class="st" data-w="wheel"></div>
+
+Things to find: the wheel at 2 turns a second has 16 spokes passing a point each second; at 16 flashes a second it stands still. Raise the flash rate to 20 and the spokes appear to go *backwards*. Drop it to 8 flashes a second and it stands still again: the wheel moves two spoke-gaps between flashes, and the spokes all look the same. Tick *Mark one spoke* and both stillnesses go, because the marked spoke is now different from the others: only 2 flashes a second (one whole turn between flashes) stands still.
+
+In the disc tuner the *wheel* was the disc ring and the *flash rate* the note. A tuner lights up with a pattern that stands still only when the note is an exact multiple of the ring's rate. That is the mechanical strobe tuner, and the rest of the lesson is the same idea done with arithmetic.
+
+## 3. One band, one partial {#partials}
+
+A real note is not one frequency. A guitar string vibrates in halves, thirds, and so on all at once, so the sound has a stack of **partials** at (nearly) 1, 2, 3, 4... times the fundamental. See [the harmonic series](sound-harmonics.qmd) for why. A lamp that flashes with the wave flashes at the fundamental but also with the partials, so on a disc tuner the rings for 1×, 2×, 3× each get their own pattern, and they all stand still together when the string is in tune. That is a mixed blessing: you can read several rings at once, and each ring is a different ruler.
+
+The tuner on this site makes that explicit. It has one **band** (a row of stripes) for each partial. **Band *k* is a ruler tuned to *k* times the reference pitch.** The sound has a partial at *k* times the string's own fundamental. If the string is exactly at the reference, partial *k* matches band *k* and the stripes stand still. If the string is *c* cents sharp, partial *k* is at *k* × *f* × 2^(*c*/1200), so band *k* drifts at
+
+> drift (Hz) = *k* × *f*<sub>ref</sub> × (2^(*c*/1200) − 1)
+
+which is *k* times faster for the *k*th band. The upper bands are *k* times more sensitive: a small error shows on band 6 six times sooner than on band 1.
+
+Here are the bands with no microphone: a computed string, so you can see what a tuner should show for a given error. The small picture above shows the string's partials (bars) against the bands' rulers (the vertical lines).
+
+<div class="st" data-w="bands"></div>
+
+Set the *String is off by* slider to +8 cents: all six bands drift to the right, band 6 six times faster than band 1. Now add *stiffness*. A real string is a little stiff, like a thin rod, and a stiff string's partials are pushed up: partial *k* is at *k* *f* √(1 + *B* *k*²), so the high partials are sharp even when the fundamental is on the note. You will see the lower bands stand still and the higher ones drift right: the string is in tune where it matters, and the strobe shows exactly how much its upper partials are stretched.
+
+## 4. The software version: multiply and average {#demod}
+
+A computer cannot spin a disc, but it can do what the disc and the lamp do together, with two multiplications. This is called **demodulation**, and radios do it too. For band *k*, keep two reference waves going, a **cosine** and a **sine** at *k* × *f*<sub>ref</sub>. Multiply the incoming sound, sample by sample, by each of them, then **average** (a low-pass filter) the results.
+
+Why it works: multiplying two sine waves gives two new ones, at the **difference** and at the **sum** of their frequencies. The sum is fast and the average wipes it out. The difference is slow: it is zero if the sound is exactly at the reference, and then the average is a steady number; if the sound is 0.5 Hz sharp, the average is a number that swings slowly at 0.5 Hz. The cosine's average and the sine's average are two numbers *I* and *Q*, and together they are the corner of a right-angled triangle, a point on a circle. The angle of that point is the **phase**: where the stripes are. **If the note is in tune, the point stays put; otherwise it goes round the circle once for every Hz of difference**, counter-clockwise if sharp and clockwise if flat. The stripes you see are drawn at that angle.
+
+The widget runs the arithmetic on a slowed-down signal, so you can watch each step. The reference is 4 Hz (instead of 110 Hz or more) and the "note" is a slider. Step through it.
+
+<div class="st" data-w="demod"></div>
+
+Check that the averaged traces (step 4) are a cosine and a sine of the *difference* frequency: at a note 4.5 Hz against the 4 Hz reference they swing at 0.5 Hz, and the dot on the circle goes round once in two seconds. At exactly 4.0 Hz nothing moves. The sum frequency, 8.5 Hz, which you see in the products at step 3, is gone from step 4. (The first second or so is the average filling up, and the tuner ignores it. The real tuner also ignores the first 100 ms of every note, the pluck, since the attack is a noisy burst.)
+
+The bank of bands in `apps/shared/pitch-detect.js` does exactly this, at the sound card's sample rate, for each of up to ten bands at once. It reads the angle every 128 samples and works out the drift in hertz from how fast the angle turns; the cents are then 1200 × log₂((*kf* + drift) / *kf*).
+
+## 5. Drift is the beat rate; hertz to cents {#cents}
+
+The drift in hertz is exactly the **beat rate** you would hear if you played the reference and your note together. A note 3 Hz sharp of the reference beats 3 times a second against it, and the stripes go round 3 times a second. That is how a piano tuner sets a string by ear against a fork, and the strobe is the same measurement made visible and made at every partial.
+
+To turn hertz into **cents**, remember that a cent is a ratio, not a number of hertz. One cent is a factor of 2^(1/1200), about 1.000578. So the same pitch error is a small drift at a low note and a bigger one at a high note:
+
+| Reference | 1 cent is | 10 cents is | One stripe passes every, at 1 cent |
+|---|---|---|---|
+| A2, 110 Hz | 0.064 Hz | 0.64 Hz | 16 s |
+| A3, 220 Hz | 0.127 Hz | 1.27 Hz | 7.9 s |
+| A4, 440 Hz | 0.254 Hz | 2.5 Hz | 3.9 s |
+
+It also explains why strobe tuners are so exact for low notes. To see 1 cent on the open low E string of a guitar (82 Hz), band 1 needs 20 seconds to cross one stripe; band 6, being tuned to 494 Hz, crosses six times quicker. **Using the higher bands is how you resolve small errors on a low string quickly.** The calculator below does the sum.
+
+<div class="st" data-w="cents"></div>
+
+## 6. Why several bands help {#bands}
+
+If the fundamental were always the loudest partial, one band would do. Two things make that untrue for a guitar.
+
+**A weak fundamental.** On the low strings of a guitar and on a bass, the speaker or pickup and the string itself give a fundamental that is often *weaker* than the second or third partial. A tuner that listens for the lowest frequency, or that computes one pitch from the whole waveform, can then jump to the octave above or flicker between two answers. A strobe tuner has no such trouble: the rows are independent, and the bands that have a strong partial are bright and the others fade. In the tuner below, turn the fundamental down to 5% and the first row fades while the others stay bright; the readout above the bands (which is a single pitch worked out by a different method) may get unsettled, and the rows are still telling the truth.
+
+**Stiff strings.** Real strings are stiff, so the upper partials are pushed sharp by *k* *f* (√(1 + *B* *k*²) − 1) as in section 3. A piano's bass strings and a guitar's thickest strings are the stretched ones. Tuning by the fundamental (row 1) leaves the upper partials a few cents sharp, which is why a piano tuner stretches the octaves: they tune the octave so that the *partials* beat as little as possible, not the fundamentals. Look at the rows with the stiffness at 0.0008 and decide which row you would trust.
+
+<div class="sk" data-w="tuner" data-title="Strobe tuner: a weak fundamental and a stiff string" data-fund="1" data-set="note=A,oct=2,demo=on,stiff=0.0006,fund=0.05,bands=8"></div>
+
+Press **Start** (nothing here opens the microphone: the source is the made-up string), then drag *Fundamental's strength* up and down, and *String is off by* to a few cents. Row 1 is the one a single-pitch tuner would trust. Notice that when you detune the string every row moves together, row *k* by *k* times as much.
+
+## 7. Just and equal temperament, on the bands {#temperament}
+
+[Tuning systems](tuning-systems.qmd) shows that the pure major third, 5:4 (386.3 cents), is 13.7 cents narrower than the piano's 400. A strobe tuner makes this visible, because it needs a **target**: it can be set to 12-tone equal temperament or to a just interval over a tonic, and then it shows how far the note you are playing is from *that*.
+
+The widget gives the tuner a target (the note and its tuning system) and tunes a computed string to either system. When both agree, every band stands still. When the string is just and the target equal (or the other way round), the whole stack drifts, and the higher bands drift faster.
+
+<div class="st" data-w="temper"></div>
+
+Pick *Major third* with the target *12-ET* and the string *Just over C*: the string (327.0 Hz) is 13.7 cents flat of the piano's E (329.6 Hz), so band 1 drifts left at about 2.6 Hz, and band 6 six times faster, which is a blur on the screen (as the fast wheel was in section 2) but is still read in cents in the number beside the band. Set the target to *Just over C* and the string stands still. For the fifth the difference is only 2 cents, a slow creep of 0.4 Hz. That is the size of the compromise a piano makes in every chord.
+
+## 8. Watch it follow this page's own sound {#page-sound}
+
+The tuner does not need a microphone to listen. Each sound the site makes (the lesson widgets, the drone and metronome in the top bar, the chord keyboard, the Backing Track) hands its output to a small registry, `AudioTap`, and the tuner can listen to that instead: choose **This page's sound**. It works with headphones on, there is nothing to pick up from a room, and it hears nothing but the page.
+
+Below, the oscillator plays a sine wave at 221 Hz. The tuner's target is A3 = 220 Hz, which is 7.8 cents flat of it. Press ▶ on the oscillator, then **Start** on the tuner (the source is already *This page's sound*) and watch the bands drift to the right. Slide the oscillator's frequency down through 220 Hz and the stripes slow down, stop, and reverse. The sine has only one partial, so only row 1 is bright.
+
+<div class="sk" data-w="wave" data-title="Oscillator" data-set="type=sine,freq=221"></div>
+
+<div class="sk" data-w="tuner" data-title="Strobe tuner, listening to the page" data-set="note=A,oct=3,demo=tap,bands=4"></div>
+
+Switch the oscillator's wave to *sawtooth* or *square* and the other rows light up: those waves are sums of partials at whole-number multiples (see [the harmonic series](sound-harmonics.qmd)), so they stand still on the bands together.
+
+The same choice is in the **Strobe tuner** in the top bar, which also has two sources that never touch the microphone: a *video or audio file on the page* (the Timestamp Notes player, say), and *another browser tab* (a YouTube video, in Chrome: it asks which tab to share, and you must tick "Share tab audio"). Try the top-bar tuner while the drone is playing: it listens to the drone through exactly the same tap.
+
+## Things to try
+
+1. In the wheel, set 3 turns a second. At what flash rate does the eight-spoke wheel stand still? (24, since 24 spokes pass a point each second.) Which lower rates do it too, without a marked spoke? (12, 8, 6 and so on: 24 divided by a whole number.) With a marked spoke? (3, or 1.5, 1: only a whole number of turns between flashes.)
+2. In the disc, play 165 Hz. Does any ring stop? (No: it is halfway between ring 1 at 110 and ring 2 at 220, so both are 55 pairs a second out and blur.) Then play 220, and then 224, and find which way the ring creeps.
+3. In the bands widget, find the stiffness at which band 6 is 10 cents sharp with the string in tune. (600 × log₂(1 + *B* × 36) = 10 gives *B* of about 0.00032.)
+4. In the demodulation widget, set the note to 3.5 Hz, then 4.5 Hz. The dot goes round in opposite directions. Which direction means sharp?
+5. At 220 Hz, how many cents is a drift of 0.5 Hz on band 1? On band 3? (Convert with 1200 × log₂(1 + drift / (*k* *f*)): 3.9 cents and 1.3 cents.)
+6. In the last widget, tune the oscillator to 220 Hz, then play a sawtooth. Which rows light up, and do they all stand still?
+
+## Next
+
+- [Tuning systems](tuning-systems.qmd): the pure intervals the strobe is used to check, and the commas.
+- [Sound 1: The Harmonic Series and Fourier](sound-harmonics.qmd): where the partials come from.
+- [String bends on guitar](guitar-bends.qmd): the tuner and the bendboard together.
+- [Out-of-tune overtones](inharmonicity.qmd): the same tuner on stiff and old strings, bars, bells, timpani, clarinet, voice and brass (the *Practice instrument* menu), and who can change which partial.
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script>
+(function () {
+  "use strict";
+  var PD = window.PitchDetect, SV = window.StrobeView, TAU = Math.PI * 2;
+  var reduce = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function el(tag, cls, html) { var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+  function fit(cv) {
+    var r = window.devicePixelRatio || 1, w = cv.clientWidth, h = cv.clientHeight;
+    if (cv.width !== Math.round(w * r) || cv.height !== Math.round(h * r)) { cv.width = Math.round(w * r); cv.height = Math.round(h * r); }
+    var g = cv.getContext("2d"); g.setTransform(r, 0, 0, r, 0, 0); g.clearRect(0, 0, w, h); return { g: g, w: w, h: h };
+  }
+  function ctl(box, o) {
+    var c = el("label", "st-c"), n = el("span", "st-cl", o.label), out = el("output"), r = el("input");
+    r.type = "range"; r.min = o.min; r.max = o.max; r.step = o.step || "any"; r.value = o.value;
+    function show() { out.textContent = o.fmt ? o.fmt(+r.value) : r.value; }
+    r.addEventListener("input", function () { show(); if (o.on) o.on(+r.value); }); show();
+    c.appendChild(n); c.appendChild(out); c.appendChild(r); box.appendChild(c);
+    return { input: r, get: function () { return +r.value; }, set: function (v) { r.value = v; show(); if (o.on) o.on(+r.value); } };
+  }
+  function sel(box, label, list, value, on) {
+    var l = el("label", "", label), s = el("select"); l.style.display = "flex"; l.style.gap = ".4rem"; l.style.alignItems = "center";
+    list.forEach(function (o) { var x = el("option"); x.value = o[0]; x.textContent = o[1]; s.appendChild(x); }); s.value = value;
+    s.addEventListener("change", function () { if (on) on(s.value); }); l.appendChild(s); box.appendChild(l); return s;
+  }
+  function btn(box, text, on) { var b = el("button", "btn btn-sm btn-outline-secondary", text); b.type = "button"; b.addEventListener("click", function () { on(b); }); box.appendChild(b); return b; }
+  // one animation loop for every picture on the page; a picture that is off screen or paused is skipped
+  var anims = [], t0 = performance.now();
+  function now() { return (performance.now() - t0) / 1000; }
+  function loop() {
+    requestAnimationFrame(loop);
+    var t = now(), C = SV.colors();
+    anims.forEach(function (a) { if (a.paused && !a.dirty) return; if (!a.cv.offsetParent) return; a.dirty = false; a.fn(t, C); });
+  }
+  function anim(cv, fn, box, noPause) {
+    var a = { cv: cv, fn: fn, paused: reduce, dirty: true, t: 0 };
+    if (!noPause) { var b = btn(box, reduce ? "Play" : "Pause", function () { a.paused = !a.paused; b.textContent = a.paused ? "Play" : "Pause"; a.dirty = true; }); }
+    anims.push(a); window.addEventListener("resize", function () { a.dirty = true; });
+    return a;
+  }
+  function lab(host, title) { var d = el("div", "st-lab"); d.appendChild(el("h4", "", title)); host.appendChild(d); return d; }
+  function hz(v) { return (v < 10 ? v.toFixed(2) : v < 100 ? v.toFixed(1) : v.toFixed(0)) + " Hz"; }
+  function sgn(v, d) { return (v >= 0 ? "+" : "−") + Math.abs(v).toFixed(d == null ? 1 : d); }
+
+  // ---------- 1. the disc ----------
+  function Disc(host) {
+    var L = lab(host, "A strobe disc and its lamp"), REF = 110, PAIRS = 8, R = REF / PAIRS, RINGS = 4, mode = "flash";
+    var row = el("div", "st-row"); L.appendChild(row);
+    var fc = ctl(row, { label: "The note you play", min: 95, max: 450, step: 0.1, value: 112, fmt: hz, on: function () { a.dirty = true; info(); } });
+    var ms = sel(row, "Lamp", [["flash", "Flashing with the note"], ["steady", "Steady"]], "flash", function (v) { mode = v; a.dirty = true; info(); });
+    btn(row, "Match the nearest ring", function () { var f = fc.get(); fc.set(Math.max(1, Math.round(f / REF)) * REF); });
+    var cv = el("canvas"); cv.style.height = "320px"; cv.style.maxWidth = "24rem"; cv.setAttribute("role", "img"); cv.setAttribute("aria-label", "A disc with four rings of black and white segments. A ring that stands still is the one that matches the note."); L.appendChild(cv);
+    var inf = el("p", "st-info"); L.appendChild(inf);
+    function info() {
+      var f = fc.get(), best = Math.max(1, Math.min(RINGS, Math.round(f / REF))), d = best * REF - f;
+      inf.textContent = mode === "steady" ? "Steady light: the disc turns " + R.toFixed(2) + " times a second (825 rpm) and is just a grey blur." :
+        "Disc: " + R.toFixed(2) + " turns a second. Lamp: " + hz(f) + ". Nearest ring: " + best + " (" + hz(best * REF) + "), creeping at " + sgn(-d, 2) + " segments a second" + (Math.abs(d) < 0.05 ? " (standing still)" : (d > 0 ? ": the note is flat of it" : ": the note is sharp of it")) + ".";
+    }
+    var a = anim(cv, function (t, C) {
+      var q = fit(cv), g = q.g, cx = q.w / 2, cy = q.h / 2, Ro = Math.min(cx, cy) - 4, f = fc.get(), m, i;
+      for (m = RINGS; m >= 1; m--) {
+        var r1 = Ro * (0.28 + 0.72 * m / RINGS), r0 = Ro * (0.28 + 0.72 * (m - 1) / RINGS), n = PAIRS * m, drift = f - m * REF;   // pairs a second, + = sharp
+        var ph = (drift * t) % 1;                                                              // in pattern cycles
+        g.save(); g.beginPath(); g.arc(cx, cy, r1, 0, TAU); g.arc(cx, cy, r0, 0, TAU, true); g.clip();
+        if (mode === "steady" || Math.abs(drift) > 25) { g.fillStyle = C.ink; g.globalAlpha = 0.45; g.fillRect(cx - r1, cy - r1, 2 * r1, 2 * r1); }
+        else {
+          g.fillStyle = C.bg; g.fillRect(cx - r1, cy - r1, 2 * r1, 2 * r1); g.fillStyle = Math.abs(drift) < 0.3 ? C.acc2 : C.ink;
+          for (i = 0; i < n; i++) { var a0 = (i + ph) / n * TAU - Math.PI / 2; g.beginPath(); g.moveTo(cx, cy); g.arc(cx, cy, r1 + 1, a0, a0 + TAU / n / 2); g.closePath(); g.fill(); }
+        }
+        g.restore(); g.strokeStyle = C.line; g.beginPath(); g.arc(cx, cy, r1, 0, TAU); g.stroke();
+        g.fillStyle = C.ink2; g.font = "10px system-ui,sans-serif"; g.textAlign = "center"; g.textBaseline = "middle"; g.fillText(m + "× " + (m * REF), cx, cy - (r0 + r1) / 2 + 0.5 - (m === 1 ? 0 : 0));
+      }
+      g.fillStyle = C.ink2; g.beginPath(); g.arc(cx, cy, Ro * 0.04, 0, TAU); g.fill();
+    }, L);
+    info(); return a;
+  }
+
+  // ---------- 2. the wagon wheel ----------
+  function Wheel(host) {
+    var L = lab(host, "Wagon wheel and strobe"), N = 8, marked = false;
+    var row = el("div", "st-row"); L.appendChild(row);
+    var wc = ctl(row, { label: "Wheel speed", min: 0, max: 6, step: 0.05, value: 2, fmt: function (v) { return v.toFixed(2) + " turns/s"; }, on: function () { a.dirty = true; info(); } });
+    var fcl = ctl(row, { label: "Strobe flashes", min: 1, max: 30, step: 0.05, value: 20, fmt: function (v) { return v.toFixed(2) + " per s"; }, on: function () { a.dirty = true; info(); } });
+    var row2 = el("div", "st-row"); L.appendChild(row2);
+    var chk = el("label", "", '<input type="checkbox"> Mark one spoke'); chk.querySelector("input").addEventListener("change", function (e) { marked = e.target.checked; a.dirty = true; info(); }); row2.appendChild(chk);
+    btn(row2, "Make it stand still", function () { var w = wc.get(); if (w <= 0) return; var f = N * w; while (f > 30) f /= 2; if (marked) f = w; while (marked && f < 1) f *= 2; fcl.set(Math.max(1, Math.min(30, +f.toFixed(2)))); });
+    var cv = el("canvas"); cv.style.height = "250px"; cv.setAttribute("role", "img"); cv.setAttribute("aria-label", "Left, a spoked wheel turning continuously. Right, the same wheel lit by a strobe, which may seem to stand still or turn backwards."); L.appendChild(cv);
+    var inf = el("p", "st-info"); L.appendChild(inf);
+    function apparent() {
+      var w = wc.get(), F = fcl.get(), m = marked ? 1 : N, s = w / F, step = s - Math.round(s * m) / m;   // turns per flash
+      return step * F;
+    }
+    function info() {
+      var w = wc.get(), F = fcl.get(), ap = apparent();
+      inf.textContent = "Spokes passing a point: " + (N * w).toFixed(2) + " a second. Flashes: " + F.toFixed(2) + " a second. The strobe shows it turning " + (Math.abs(ap) < 0.005 ? "not at all (it stands still)" : Math.abs(ap).toFixed(2) + " turns a second " + (ap > 0 ? "forward" : "backward")) + ".";
+    }
+    function wheel(g, cx, cy, r, ang, C) {
+      g.strokeStyle = C.ink; g.lineWidth = 3; g.beginPath(); g.arc(cx, cy, r, 0, TAU); g.stroke();
+      for (var i = 0; i < N; i++) { var an = ang + i * TAU / N; g.strokeStyle = marked && i === 0 ? "#d6336c" : C.ink; g.lineWidth = marked && i === 0 ? 4 : 2; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + r * Math.cos(an), cy + r * Math.sin(an)); g.stroke(); }
+      g.fillStyle = C.ink; g.beginPath(); g.arc(cx, cy, 5, 0, TAU); g.fill(); g.lineWidth = 1;
+    }
+    var a = anim(cv, function (t, C) {
+      var q = fit(cv), g = q.g, r = Math.min(q.h / 2, q.w / 4) - 26, w = wc.get(), F = fcl.get();
+      wheel(g, q.w * 0.25, q.h / 2, r, TAU * w * t, C);
+      var tf = Math.floor(t * F) / F; wheel(g, q.w * 0.75, q.h / 2, r, TAU * w * tf, C);
+      g.fillStyle = C.ink2; g.font = "12px system-ui,sans-serif"; g.textAlign = "center"; g.fillText("the wheel, in steady light", q.w * 0.25, q.h - 5); g.fillText("the wheel, lit " + F.toFixed(1) + " times a second", q.w * 0.75, q.h - 6);
+      a.dirty = true;     // the flash instants move with time: redraw every frame
+    }, L);
+    info(); return a;
+  }
+
+  // ---------- the computed bands (no microphone) ----------
+  // bands: for each k, partial frequency pf(k) against a ruler at k * fref; the phase turns at the difference.
+  function simBands(fref, N, pf, t, amp) {
+    var out = [], k;
+    for (k = 1; k <= N; k++) {
+      var f = pf(k), fk = k * fref, d = f - fk, ph = ((TAU * d * t) % TAU + TAU) % TAU;
+      out.push({ k: k, f: fk, mag: amp(k), phase: ph, driftHz: d, cents: 1200 * Math.log(f / fk) / Math.LN2, alive: true });
+    }
+    return out;
+  }
+  function stripes(L, h) { var cv = el("canvas"); cv.style.height = h + "px"; L.appendChild(cv); return cv; }
+
+  // ---------- 3. one band, one partial ----------
+  function Bands(host) {
+    var L = lab(host, "The bands, with no microphone"), N = 6;
+    var row = el("div", "st-row"); L.appendChild(row); var freqs = [["110", "A2, 110 Hz"], ["82.41", "E2, 82.41 Hz (low guitar E)"], ["220", "A3, 220 Hz"], ["440", "A4, 440 Hz"]];
+    var fs = sel(row, "Reference", freqs, "110", function () { sp.dirty = true; a.dirty = true; });
+    var dc = ctl(row, { label: "String is off by", min: -30, max: 30, step: 0.5, value: 8, fmt: function (v) { return sgn(v) + " ¢"; }, on: function () { sp.dirty = true; a.dirty = true; } });
+    var bc = ctl(row, { label: "Stiffness B", min: 0, max: 0.003, step: 0.0001, value: 0, fmt: function (v) { return v.toFixed(4); }, on: function () { sp.dirty = true; a.dirty = true; } });
+    function partial(k) { var f = +fs.value * Math.pow(2, dc.get() / 1200); return k * f * Math.sqrt(1 + bc.get() * k * k); }
+    var spc = stripes(L, 90); spc.setAttribute("role", "img"); spc.setAttribute("aria-label", "The string's partials as bars against the rulers of the bands as vertical lines.");
+    var sp = { dirty: true };
+    function spectrum() {
+      var q = fit(spc), g = q.g, C = SV.colors(), W = q.w, H = q.h, fr = +fs.value, top = fr * (N + 0.7), k, x = function (f) { return 28 + (W - 40) * f / top; };
+      g.font = "11px system-ui,sans-serif"; g.textAlign = "center";
+      for (k = 1; k <= N; k++) {
+        g.strokeStyle = C.line; g.lineWidth = 1; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(x(k * fr), 14); g.lineTo(x(k * fr), H - 14); g.stroke(); g.setLineDash([]);
+        g.fillStyle = C.ink2; g.fillText("band " + k, x(k * fr), 9);
+        var h = (H - 34) / Math.pow(k, 0.9); g.fillStyle = Math.abs(partial(k) - k * fr) < 0.15 ? C.acc2 : C.ink; g.fillRect(x(partial(k)) - 2, H - 14 - h, 4, h);
+        g.fillStyle = C.ink2; g.fillText(hz(k * fr), x(k * fr), H - 2);
+      }
+    }
+    var cv = stripes(L, 38 * N + 36); cv.setAttribute("role", "img"); cv.setAttribute("aria-label", "Strobe bands: stripes standing still mean the partial matches the band.");
+    var a = anim(cv, function (t, C) {
+      var q = fit(cv); SV.draw(q.g, q.w, q.h, { bands: simBands(+fs.value, N, partial, t, function (k) { return 0.3 / Math.pow(k, 0.9); }), N: N, fref: +fs.value, running: true }, C);
+      if (sp.dirty) { sp.dirty = false; spectrum(); }
+    }, L);
+    window.addEventListener("resize", function () { sp.dirty = true; }); return a;
+  }
+
+  // ---------- 4. demodulation, step by step ----------
+  function Demod(host) {
+    var L = lab(host, "Multiply, average, read the angle"), FR = 4, T = 6, SR = 200, NS = T * SR, STEP = 1, TAUF = 0.35;
+    var row = el("div", "st-row"); L.appendChild(row);
+    var fc = ctl(row, { label: "The note (reference is 4 Hz)", min: 3, max: 5, step: 0.05, value: 4.5, fmt: function (v) { return v.toFixed(2) + " Hz"; }, on: function () { compute(); a.dirty = true; } });
+    var steps = el("div", "st-steps"); L.appendChild(steps);
+    var TXT = [
+      "Step 1. The sound is a sine wave at the note's frequency. This is all the tuner gets from the microphone.",
+      "Step 2. Two reference waves at the band's frequency (4 Hz here): a cosine, and a (negated) sine. They start together and run all the time.",
+      "Step 3. Multiply the sound by each reference, sample by sample. Each product has two parts: one at the sum of the frequencies (fast), and one at their difference (slow).",
+      "Step 4. Average each product (a low-pass filter). The fast parts cancel; the slow part is left. In the circle, I is the first average (across) and Q the second (up): the dot sits at (I, Q).",
+      "Step 5. The dot's angle is the phase, and the stripes are drawn at that angle. At the reference frequency the dot stays put. Sharp: it goes counter-clockwise, once a second for each hertz."
+    ];
+    var bs = [];
+    for (var i = 1; i <= 5; i++) (function (i) { bs.push(btn(steps, i + (i === 1 ? ". Sound" : i === 2 ? ". Reference" : i === 3 ? ". Multiply" : i === 4 ? ". Average" : ". Angle"), function () { STEP = i; show(); })); })(i);
+    var cv = stripes(L, 420); cv.setAttribute("role", "img"); cv.setAttribute("aria-label", "The signal at each step of demodulation, and a circle with a dot at the averaged cosine and sine.");
+    var inf = el("p", "st-info"); L.appendChild(inf);
+    var x = new Float32Array(NS), c = new Float32Array(NS), s = new Float32Array(NS), xc = new Float32Array(NS), xs = new Float32Array(NS), I = new Float32Array(NS), Q = new Float32Array(NS);
+    function compute() {
+      var f = fc.get(), al = 1 - Math.exp(-1 / (TAUF * SR)), i1 = 0, q1 = 0, i2 = 0, q2 = 0, n;
+      for (n = 0; n < NS; n++) {
+        var t = n / SR; x[n] = Math.cos(TAU * f * t); c[n] = Math.cos(TAU * FR * t); s[n] = -Math.sin(TAU * FR * t); xc[n] = x[n] * c[n]; xs[n] = x[n] * s[n];
+        i1 += al * (xc[n] - i1); q1 += al * (xs[n] - q1); i2 += al * (i1 - i2); q2 += al * (q1 - q2); I[n] = 2 * i2; Q[n] = 2 * q2;
+      }
+    }
+    function show() { cv.style.height = [86, 166, 246, 340, 340][STEP - 1] + "px"; bs.forEach(function (b, i) { b.classList.toggle("st-on", i + 1 === STEP); }); inf.textContent = TXT[STEP - 1]; a.dirty = true; }
+    function trace(g, C, X0, X1, y0, h, arrs, cols, label, tcur) {
+      g.strokeStyle = C.line; g.lineWidth = 1; g.strokeRect(X0 + .5, y0 + .5, X1 - X0, h - 1); g.beginPath(); g.moveTo(X0, y0 + h / 2); g.lineTo(X1, y0 + h / 2); g.globalAlpha = .4; g.stroke(); g.globalAlpha = 1;
+      arrs.forEach(function (arr, j) {
+        g.strokeStyle = cols[j]; g.lineWidth = 1.6; g.beginPath();
+        for (var n = 0; n < NS; n++) { var px = X0 + (X1 - X0) * n / NS, py = y0 + h / 2 - arr[n] * (h / 2 - 4); n ? g.lineTo(px, py) : g.moveTo(px, py); }
+        g.stroke();
+      });
+      g.font = "11px system-ui,sans-serif"; g.textAlign = "left"; g.textBaseline = "top"; g.fillStyle = C.bg; g.globalAlpha = .85; g.fillRect(X0 + 2, y0 + 1, g.measureText(label).width + 6, 14); g.globalAlpha = 1; g.fillStyle = C.ink2; g.fillText(label, X0 + 4, y0 + 2);
+      var cx = X0 + (X1 - X0) * tcur / T; g.strokeStyle = C.acc2; g.lineWidth = 1; g.beginPath(); g.moveTo(cx, y0); g.lineTo(cx, y0 + h); g.stroke();
+    }
+    var a = anim(cv, function (t, C) {
+      var q = fit(cv), g = q.g, W = q.w, tc = t % T, X0 = 6, X1 = STEP >= 4 ? W * 0.64 : W - 6, rows = [], H = 74, y = 4, hot = "#d6336c";
+      rows.push(["The sound: cos(2π · note · t)", [x], [C.ink]]);
+      if (STEP >= 2) rows.push(["Reference cosine and −sine (4 Hz)", [c, s], [C.acc2, hot]]);
+      if (STEP >= 3) rows.push(["Sound × cosine (blue) and sound × −sine (pink)", [xc, xs], [C.acc2, hot]]);
+      if (STEP >= 4) rows.push(["Averages: I (blue) and Q (pink)", [I, Q], [C.acc2, hot]]);
+      rows.forEach(function (r, i) { trace(g, C, X0, X1, y + i * (H + 4), H, r[1], r[2], r[0], tc); });
+      var n = Math.min(NS - 1, Math.floor(tc * SR));
+      if (STEP >= 4) {
+        var cx = W * 0.64 + (W * 0.36) / 2, cy = 4 + 100, R = Math.min(W * 0.16, 90), ii = I[n] / 0.5, qq = Q[n] / 0.5;   // the dot, as a fraction of its full size
+        g.strokeStyle = C.line; g.lineWidth = 1; g.beginPath(); g.arc(cx, cy, R, 0, TAU); g.stroke(); g.beginPath(); g.moveTo(cx - R - 6, cy); g.lineTo(cx + R + 6, cy); g.moveTo(cx, cy - R - 6); g.lineTo(cx, cy + R + 6); g.stroke();
+        g.strokeStyle = C.ink2; g.lineWidth = 1.2; g.beginPath(); g.moveTo(cx, cy); g.lineTo(cx + ii * R, cy - qq * R); g.stroke();
+        g.fillStyle = hot; g.beginPath(); g.arc(cx + ii * R, cy - qq * R, 5, 0, TAU); g.fill();
+        g.fillStyle = C.ink2; g.font = "11px system-ui,sans-serif"; g.textAlign = "center"; g.textBaseline = "alphabetic"; g.fillText("I", cx + R + 12, cy + 4); g.fillText("Q", cx, cy - R - 10);
+        g.fillText("the dot (I, Q)", cx, cy + R + 18);
+      }
+      if (STEP >= 5) {
+        var ang = Math.atan2(Q[n], I[n]), P = 36, X = W * 0.64, Wd = W * 0.36 - 8, y1 = 4 + 200 + 40, off = ((ang / TAU) * P % P + P) % P;
+        g.save(); g.beginPath(); g.rect(X, y1, Wd, 44); g.clip(); g.fillStyle = C.bg; g.fillRect(X, y1, Wd, 44); g.fillStyle = Math.abs(fc.get() - FR) < 0.03 ? C.acc2 : C.ink;
+        for (var sx = X - P + off; sx < X + Wd; sx += P) g.fillRect(sx, y1 + 3, P / 2, 38); g.restore(); g.strokeStyle = C.line; g.strokeRect(X + .5, y1 + .5, Wd, 44);
+        g.fillStyle = C.ink2; g.textAlign = "center"; g.fillText("the stripes: " + sgn(fc.get() - FR, 2) + " Hz, drift " + (Math.abs(fc.get() - FR) < 0.03 ? "none" : fc.get() > FR ? "right (sharp)" : "left (flat)"), X + Wd / 2, y1 + 62);
+      }
+      a.dirty = true;
+    }, L);
+    compute(); show(); return a;
+  }
+
+  // ---------- 5. hertz to cents ----------
+  function Cents(host) {
+    var L = lab(host, "Drift, beats and cents");
+    var row = el("div", "st-row"); L.appendChild(row);
+    var fs = sel(row, "Reference", [["82.41", "E2, 82.41 Hz"], ["110", "A2, 110 Hz"], ["220", "A3, 220 Hz"], ["440", "A4, 440 Hz"]], "110", function () { upd(); });
+    var ks = sel(row, "Band", [1, 2, 3, 4, 5, 6].map(function (k) { return [String(k), String(k)]; }), "1", function () { upd(); });
+    var cc = ctl(row, { label: "Note is off by", min: -50, max: 50, step: 0.5, value: 5, fmt: function (v) { return sgn(v) + " ¢"; }, on: function () { upd(); } });
+    var inf = el("p", "st-info"); L.appendChild(inf);
+    var cv = stripes(L, 60); cv.setAttribute("role", "img"); cv.setAttribute("aria-label", "One strobe band drifting at the beat rate.");
+    function drift() { var fk = +ks.value * +fs.value; return fk * (Math.pow(2, cc.get() / 1200) - 1); }
+    function upd() {
+      var d = drift(), fk = +ks.value * +fs.value;
+      inf.innerHTML = "Band " + ks.value + " listens at " + hz(fk) + ". A note " + sgn(cc.get()) + " cents off it is at " + hz(fk * Math.pow(2, cc.get() / 1200)) + ", so the stripes drift at <b>" + sgn(d, 3) + " Hz</b>" +
+        (Math.abs(d) > 1e-3 ? ": one stripe passes every " + (1 / Math.abs(d)).toFixed(1) + " s, and you would hear the note beat " + Math.abs(d).toFixed(2) + " times a second against the reference. " : ". ") +
+        "At this band, 1 Hz of drift is " + (1200 / Math.LN2 / fk).toFixed(2) + " cents.";
+      a.dirty = true;
+    }
+    var a = anim(cv, function (t, C) {
+      var q = fit(cv), d = drift(), P = 28, off = ((d * t % 1) * P + P) % P;
+      var g = q.g; g.save(); g.beginPath(); g.rect(4, 6, q.w - 8, q.h - 12); g.clip(); g.fillStyle = C.bg; g.fillRect(0, 0, q.w, q.h); g.fillStyle = Math.abs(d) < 0.02 ? C.acc2 : C.ink;
+      for (var x = -P + off; x < q.w; x += P) g.fillRect(x, 6, P / 2, q.h - 12); g.restore(); g.strokeStyle = C.line; g.strokeRect(4.5, 6.5, q.w - 9, q.h - 13);
+      a.dirty = true;
+    }, L);
+    upd(); return a;
+  }
+
+  // ---------- 7. just and equal on the bands ----------
+  function Temper(host) {
+    var L = lab(host, "The same interval, two tunings"), N = 6;
+    var row = el("div", "st-row"); L.appendChild(row);
+    var IV = [["E", "Major third (5:4)"], ["G", "Perfect fifth (3:2)"], ["Eb", "Minor third (6:5)"], ["Bb", "Minor seventh (9:5)"]];
+    var is = sel(row, "Interval above C4", IV, "E", function () { upd(); });
+    var ts = sel(row, "The tuner aims at", [["12et", "12-ET (the piano)"], ["ji", "Just, over C"]], "12et", function () { upd(); });
+    var ss = sel(row, "The string is tuned", [["12et", "12-ET (the piano)"], ["ji", "Just, over C"]], "ji", function () { upd(); });
+    var inf = el("p", "st-info"); L.appendChild(inf);
+    function fr(sys) { return PD.refFreq({ note: is.value, oct: 4, system: sys, tonic: "C" }); }
+    var cv = stripes(L, 38 * N + 36); cv.setAttribute("role", "img"); cv.setAttribute("aria-label", "Strobe bands for the chosen interval and tunings.");
+    function upd() {
+      var ft = fr(ts.value), fs = fr(ss.value), c = 1200 * Math.log(fs / ft) / Math.LN2;
+      inf.textContent = "Target " + hz(ft) + " (" + ts.selectedOptions[0].textContent + "); string " + hz(fs) + " (" + ss.selectedOptions[0].textContent + "): " + (Math.abs(c) < 0.05 ? "the same pitch, so every band stands still." : sgn(c) + " cents, so band 1 drifts " + sgn(fs - ft, 2) + " Hz and band 6 " + sgn(6 * (fs - ft), 2) + " Hz.");
+      a.dirty = true;
+    }
+    var a = anim(cv, function (t, C) {
+      var q = fit(cv), ft = fr(ts.value), fs = fr(ss.value);
+      SV.draw(q.g, q.w, q.h, { bands: simBands(ft, N, function (k) { return k * fs; }, t, function (k) { return 0.3 / Math.pow(k, 0.9); }), N: N, fref: ft, running: true }, C); a.dirty = true;
+    }, L);
+    upd(); return a;
+  }
+
+  var KINDS = { disc: Disc, wheel: Wheel, bands: Bands, demod: Demod, cents: Cents, temper: Temper };
+  function init() {
+    if (!PD || !SV) return;
+    Array.prototype.forEach.call(document.querySelectorAll("div.st[data-w]"), function (h) { var f = KINDS[h.getAttribute("data-w")]; if (f) f(h); });
+    loop();
+  }
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
+})();
+</script>
+```

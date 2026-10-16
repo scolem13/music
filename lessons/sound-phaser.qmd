@@ -1,5 +1,5 @@
 ---
-title: "Sound 13: Phaser"
+title: "Sound 19: Phaser"
 toc: true
 toc-depth: 2
 ---
@@ -51,6 +51,6 @@ Switch the source to **noise** on both pages and compare the spectrum.
 
 ## Next
 
-- [Sound 14: The vocoder](sound-vocoder.qmd)
+- [Sound 20: Tremolo and the rotary speaker](sound-tremolo.qmd)
 
 {{< include _synth-kit.qmd >}}

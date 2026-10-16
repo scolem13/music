@@ -1,0 +1,51 @@
+---
+title: "Sound 23: Stereo"
+toc: true
+toc-depth: 2
+---
+
+You have two ears, and you can tell where a sound is coming from with them: from which ear hears it
+**louder**, and which ear hears it **first**. A stereo recording has two channels, left and right,
+and mixing engineers use both of those clues to place each sound somewhere between the speakers.
+**Headphones on** for this page.
+
+**How to use the page.** The square is a **vectorscope**. A sound that's the same in both ears (mono)
+is a vertical line. One that's only on the left leans left; only on the right, leans right. A wide
+stereo sound is a fuzzy blob. Press **Mono** to fold left and right together, as a phone speaker or a
+club sound system does.
+
+## Pan, Haas and width
+
+<div class="sk" data-w="stereo"></div>
+
+**Pan** (the first tool) uses *loudness*: more in one ear than the other. Move it and watch the line
+lean. It's how most sounds are placed in a mix: bass, kick and lead vocal in the middle, the rest
+spread around them.
+
+**Haas delay** uses *time*. Choose it: the right channel is the same sound, a few milliseconds late.
+
+- Under about 1 ms the sound just moves toward the left, the side that arrives first.
+- From about 5 to 35 ms you don't hear an echo. The sound seems to come from the earlier side, but
+  much **wider**. Helmut Haas measured this in 1951 (the **precedence effect**); it's how your ears ignore
+  the reflections in a room.
+- Above about 40 ms it breaks apart into a [slapback echo](sound-delay.qmd).
+
+**Width (mid / side)** makes a stereo sound narrower or wider. Any stereo sound can be split into the
+**mid** (left + right: what's the same in both) and the **side** (left − right: what's different).
+Width turns the side up or down. At 0% the sound is mono; at 200% it's wider than the speakers. Watch
+the blob.
+
+## The mono check
+
+Set **Haas delay** to about 1 ms and press **Mono**. Then try 3, 5 and 10 ms. When the two channels are
+added back together, the delay cancels some frequencies and reinforces others: a [comb
+filter](sound-chorus.qmd), the hollow, phasey sound of a flanger standing still. A trick that sounds
+wide on headphones can sound thin and odd on a phone, a Bluetooth speaker, or a club PA, all of which are
+often mono. That's why engineers press their mono button all the time. Now try **Width** at 200%
+in mono: the side cancels out completely and the extra width simply disappears.
+
+## Next
+
+- [Sound 24: The signal chain](sound-chain.qmd)
+
+{{< include _synth-kit.qmd >}}

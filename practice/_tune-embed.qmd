@@ -280,7 +280,9 @@
 <script src="/apps/shared/tune-library.js?v=17"></script>
 <script src="/apps/shared/satb.js?v=1"></script>
 <script src="/apps/shared/arranger.js?v=16"></script>
-<script src="/apps/tune-assessment/app.js?v=38"></script>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+<script src="/apps/tune-assessment/app.js?v=40"></script>
 </div>
 <script src="/apps/shared/audio.js?v=10"></script>
 <script src="/apps/shared/establish-button.js"></script>

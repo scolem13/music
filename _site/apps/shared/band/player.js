@@ -189,6 +189,7 @@
     comp.threshold.value = -12; comp.knee.value = 8; comp.ratio.value = 4; comp.attack.value = 0.003; comp.release.value = 0.16;
     var clip = softClip(ctx);
     master.connect(comp); comp.connect(out); out.connect(clip); clip.connect(ctx.destination);
+    if (global.AudioTap && !(global.OfflineAudioContext && ctx instanceof global.OfflineAudioContext)) global.AudioTap.register(ctx, out, "Backing Track");
     var verb = ctx.createConvolver(), hp = ctx.createBiquadFilter(), lp = ctx.createBiquadFilter(), wet = ctx.createGain();
     verb.buffer = roomIR(ctx); hp.type = "highpass"; hp.frequency.value = 250; lp.type = "lowpass"; lp.frequency.value = 5500;
     wet.gain.value = WET; verb.connect(hp); hp.connect(lp); lp.connect(wet); wet.connect(master);
@@ -804,7 +805,7 @@
     var a = audio(), inst = o.inst || "piano", ms = (midis || []).slice().sort(function (x, y){ return x - y; }), n = ms.length;
     if (!n) return Promise.resolve();
     if (a.ctx.state === "suspended" && a.ctx.resume) a.ctx.resume();
-    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); }
+    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); if (global.AudioTap) global.AudioTap.register(a.ctx, chordOut, "Backing Track chord"); }
     return a.bank.load([inst]).then(function (){
       var t = a.ctx.currentTime + 0.03, roll = o.roll != null ? o.roll : (inst === "guitar" || (global.BandSounds.family && global.BandSounds.family(inst) === "guitar") ? 0.045 : 0.012);
       return ms.map(function (m, i){ return a.bank.play(inst, { midi: m, vel: o.vel == null ? 0.66 : o.vel, dur: o.dur || 1.6 }, t + (n > 1 ? roll * i / (n - 1) : 0), chordOut); });
@@ -830,7 +831,7 @@
     o = o || {};
     var bankName = o.bank || (/^(conga|tumba)/.test(piece) ? "congas" : "kit");
     var a = audio(); if (a.ctx.state === "suspended" && a.ctx.resume) a.ctx.resume();
-    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); }
+    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); if (global.AudioTap) global.AudioTap.register(a.ctx, chordOut, "Backing Track chord"); }
     return a.bank.load([bankName]).then(function (){ a.bank.play(bankName, { piece: piece, vel: o.vel == null ? 0.8 : o.vel }, a.ctx.currentTime + 0.02, chordOut); });
   }
 
@@ -838,7 +839,7 @@
   //   BandPlayer.clickLoad() -> Promise(AudioContext)     BandPlayer.clickAt(ctxTime, accent)
   function clickLoad(){
     var a = audio(); if (a.ctx.state === "suspended" && a.ctx.resume) a.ctx.resume();
-    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); }
+    if (!chordOut){ chordOut = a.ctx.createGain(); chordOut.gain.value = 0.8; chordOut.connect(a.ctx.destination); if (global.AudioTap) global.AudioTap.register(a.ctx, chordOut, "Backing Track chord"); }
     return a.bank.load(["kit"]).then(function (){ return a.ctx; });
   }
   function clickAt(at, accent){ var a = audio(); a.bank.play("kit", { piece: "sticks", vel: accent ? 0.85 : 0.55 }, at, chordOut); }

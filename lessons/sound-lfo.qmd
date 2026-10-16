@@ -1,5 +1,5 @@
 ---
-title: "Sound 5: LFOs"
+title: "Sound 6: LFOs"
 toc: true
 toc-depth: 2
 ---
@@ -43,15 +43,19 @@ Set the target to **Volume**, the shape to **Sine** and slowly push the rate pas
 tremolo stops sounding like a pulse and becomes a rough, buzzy tone, and new pitches appear on the
 spectrum on both sides of the note. That is **amplitude modulation**. Do the same with **Pitch** and
 past about 30 Hz the vibrato becomes a metallic, bell-like timbre: that is **frequency modulation**,
-the subject of [Sound 7](sound-fm.qmd). An LFO and an audible oscillator are the same thing at
+the subject of [Sound 8](sound-fm.qmd). An LFO and an audible oscillator are the same thing at
 different speeds.
 
 ## LFOs elsewhere on these pages
 
 - The **PWM** in [Sound 2](sound-waveforms.qmd) is an LFO on the pulse width.
-- **Chorus** ([Sound 12](sound-chorus.qmd)) is an LFO on a very short delay.
-- A **phaser** ([Sound 13](sound-phaser.qmd)) is an LFO sweeping a chain of filters.
+- **Chorus** ([Sound 18](sound-chorus.qmd)) is an LFO on a very short delay.
+- A **phaser** ([Sound 19](sound-phaser.qmd)) is an LFO sweeping a chain of filters.
 - The **Leslie** speaker in the [organ lesson](arrange-organ.qmd) is a mechanical LFO: a spinning
   horn moves pitch, volume and direction all at once.
+
+## Next
+
+- [Sound 7: Subtractive synthesis](sound-subtractive.qmd): oscillator, filter, envelope and LFO together.
 
 {{< include _synth-kit.qmd >}}

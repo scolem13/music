@@ -23,7 +23,8 @@
 //   AbcEvents.soundingFrom(written)    -> the sounding list for any written list (ties merged)
 //   AbcEvents.makeEvent(o)             -> an event with the defaults filled in
 // Reads what AbcCore.tokens reads: single notes, rests (z x Z), ties, broken rhythm (> <), bars, written accidentals that
-// last to the barline. Not read yet (as in the assessment parsers): chords [CEG], tuplets "(3", grace notes, repeats, voltas.
+// last to the barline. Chords "[CEG]" (and "[CEG]2") are one event: notes
+// [all midis, top first], and pitches holds only the top note (pitches are a decoder's alternatives, never simultaneous notes). Not read yet (as in the assessment parsers): tuplets "(3", grace notes, repeats, voltas.
 
 (function (global) {
   const Core = global.AbcCore || (typeof require === "function" ? require("./abc-core.js") : null);
@@ -68,6 +69,7 @@
       }
       open = makeEvent({ id: "s" + out.length, kind: "note", t_on: w.t_on, t_off: w.t_off, pitches: w.pitches,
                          confidence: w.confidence, source: w.source, from: [w.id], tieWaiting: !!w.tieNext });
+      if (w.notes) open.notes = w.notes.slice();
       Object.defineProperty(open, "_last", { value: w, writable: true, enumerable: false });
       out.push(open);
     }
@@ -82,13 +84,32 @@
     const meter = Core.meter(abc);
     const L = Core.lUnitQuarters(abc, 0.5);            // quarters per L: unit (1/8 default)
     let barQuarters = meter.n * 4 / meter.d;
-    const toks = Core.tokens(voiceText(abc, voice), { decorations: true, fields: true });
+    const text = voiceText(abc, voice);
+    const toks = Core.tokens(text, { decorations: true, fields: true });
 
     const written = [], chords = [], marks = [], fields = [];
     let t = 0, bar = 0, measureAcc = {}, broken = null;   // broken: { first: event, ch } waiting for its partner
     let pendingBroken = null;                             // ">" or "<" read, applies to the next note/rest
     let decos = [];                                       // "!...!" decorations read, for the next note/rest
-    for (const tok of toks) {
+    let chord = null;                                     // "[CEG]": { ev, mult } while inside the brackets
+    for (let ti = 0; ti < toks.length; ti++) {
+      const tok = toks[ti];
+      if (tok.t === "bar" && tok.ch === "[" && toks[ti + 1] && toks[ti + 1].t === "note" && toks[ti + 1].i === tok.i + 1 ||
+          tok.t === "bar" && tok.ch === "[" && /^\[[\^_=]*[A-Ga-g]/.test(text.slice(tok.i))) { chord = { ev: null }; continue; }
+      if (chord && tok.t === "note") {
+        if (chord.ev) { chord.ev.notes.push(Core.noteMidi(tok, ksig, measureAcc)); continue; }
+      } else if (chord && tok.t === "bar" && tok.ch === "]") {
+        // the chord's length: its first note's, times a length written after "]" ("[CEG]2", "[CE]/2")
+        const ev = chord.ev; chord = null;
+        const m = /^\](\d*)(\/(\d*))?/.exec(text.slice(tok.i));
+        if (ev && m && (m[1] || m[2])) {
+          const f = (m[1] ? +m[1] : 1) / (m[2] ? (m[3] ? +m[3] : 2) : 1), d = (ev.t_off - ev.t_on) * f;
+          ev.t_off = ev.t_on + d; t = ev.t_off;
+        }
+        // pitches stays one candidate (pitches are alternatives, not simultaneous notes): the top note, the melody
+        if (ev) { ev.notes.sort((a, b) => b - a); ev.pitches = [{ midi: ev.notes[0], p: 1 }]; }
+        continue;
+      }
       if (tok.t === "bar") {
         if (tok.ch === "|") { bar++; measureAcc = {}; }
         continue;
@@ -127,6 +148,7 @@
       pendingBroken = null;
       ev.t_on = t; ev.t_off = t + dur; t = ev.t_off;
       written.push(ev);
+      if (chord && tok.t === "note") { chord.ev = ev; ev.notes = [ev.pitches[0].midi]; }
     }
     return { written, sounding: soundingFrom(written), chords, marks, fields, key, meter, barQuarters, quarters: t };
   }

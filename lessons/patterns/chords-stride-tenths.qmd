@@ -1,0 +1,72 @@
+---
+title: "Comping rhythm: Stride in tenths"
+subtitle: "For piano, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Stride in tenths**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+Stride with a wider left hand: on beat 1 a tenth (the root with the chord's 3rd an octave above it, together); on beat 3 the fifth, or, when the chord is about to change, a tenth walking to a step from the next root. Chords in the middle of the keyboard on 2 and 4. A tenth that would crowd the chords is played as its low note alone. On the guitar it is plain boom-chick.
+
+It belongs in *Stride piano* and *Ragtime*. Here it is in the stride piano style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Stride in tenths","opts":{"compRhythm":"strideTenths"}}]'></div>
+
+## Step 1: Boom-chick / oom-pah-pah
+
+Start with something simpler. Short chords on the beats the bass leaves free: 2 and 4 in 4/4, 2 and 3 in a waltz. Goes with the Root and fifth bass line.
+
+This is a pattern of its own: [the lesson on it](chords-oompah.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="92" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Boom-chick / oom-pah-pah","opts":{"compRhythm":"oompah"}}]'></div>
+
+## Step 2: Stride
+
+The stride pianist's left hand: a low bass note on beats 1 and 3 (the root in octaves where a chord starts, its fifth on beat 3) and the chord in the middle of the keyboard on beats 2 and 4. In 3/4 the bass on 1 and the chord on 2 and 3. On the guitar it is plain boom-chick.
+
+This is a pattern of its own: [the lesson on it](chords-stride.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="92" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Stride","opts":{"compRhythm":"stride"}}]'></div>
+
+## Step 3: Stride in tenths, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The stride left hand, stretched: on beat 1 the root with the 3rd an octave above it, both at once (roll them if your hand will not reach). On beat 3 the fifth, or, before a chord change, a tenth a step away from the next root, so the bass walks into it. Learn the leaps first with single notes, then add the top of each tenth.
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="92" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Stride in tenths","opts":{"compRhythm":"strideTenths"}},{"label":"Stride (the step before)","opts":{"compRhythm":"stride"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Stride in tenths","opts":{"compRhythm":"strideTenths"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="stride" data-chart="C A7|Dm7 G7|C C7|F G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Stride in tenths","opts":{"compRhythm":"strideTenths"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Ragtime**
+
+<div class="ar-demo" data-style="ragtime" data-chart="C|C|G7|C" data-tempo="92" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Stride in tenths","opts":{"compRhythm":"strideTenths"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Boom-chick / oom-pah-pah](chords-oompah.qmd), [Stride](chords-stride.qmd).
+- **Plays with, in stride piano:** [Two-feel](bass-two.qmd) (bass line), [Jazz time](drums-auto.qmd) (drum groove).
+- **Other comping rhythms in the Jazz group:** [Varied](chords-auto.qmd), [Charleston](chords-charleston.qmd), [Reverse Charleston](chords-reverse.qmd), [Red Garland](chords-garland.qmd), [Off-beats](chords-offbeats.qmd), [Long notes](chords-pad.qmd), [Four to the bar](chords-four.qmd), [Boogaloo stabs](chords-stabs.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

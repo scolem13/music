@@ -1,0 +1,72 @@
+---
+title: "Bass line: Boogie-woogie octaves"
+subtitle: "For bass, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one bass line the [Backing Track](../../tools/backing-track.qmd) band plays: **Boogie-woogie octaves**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Bass lines](index.qmd#bass)
+
+## The pattern
+
+Rolling octaves: the root and the root an octave higher in swung eighths, low on every beat and high on every and, the same every bar. A chord that arrives on beat 3 starts again from its low root.
+
+It belongs in *Boogie-woogie* and *Jump blues*. Here it is in the boogie-woogie style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+## Step 1: Roots on every beat
+
+Start with something simpler. The root of the chord on every beat and nothing else. The plainest line there is, under driving eighths or a strummed song.
+
+This is a pattern of its own: [the lesson on it](bass-roots.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+## Step 2: Octaves (disco)
+
+The root on every beat and the root an octave up on every off-beat.
+
+This is a pattern of its own: [the lesson on it](bass-octaves.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Step:" data-choices='[{"label":"Octaves (disco)","opts":{"bassFeel":"octaves"}}]'></div>
+
+## Step 3: Boogie-woogie octaves, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Root low, octave high, in swung eighths: the low note on the beat, the high one on the and. Keep the hand loose and let it roll rather than hit. Each new chord starts on its low root.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="bass drums" data-staves="bass" data-choice-label="Compare:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}},{"label":"Octaves (disco) (the step before)","opts":{"bassFeel":"octaves"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's bass off and take the part yourself.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. Each chord gets its root when it arrives; the pattern squeezes into the beats it has.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|F7 F#dim7|C7|G7 F7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+## In other styles
+
+The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jump blues**
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Boogie-woogie octaves","opts":{"bassFeel":"boogieOct"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Roots on every beat](bass-roots.qmd), [Octaves (disco)](bass-octaves.qmd).
+- **Plays with, in boogie-woogie:** [Boogie-woogie right hand](chords-boogie.qmd) (comping rhythm), [Blues shuffle](drums-shuffle.qmd) (drum groove).
+- **Other bass lines in the Jazz group:** [Walking](bass-walk.qmd), [Chord tones (learning to walk)](bass-arp.qmd), [Two-feel](bass-two.qmd), [Boogaloo riff](bass-riff.qmd), [Boogie-woogie](bass-boogie.qmd), [Yancey figure](bass-yancey.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

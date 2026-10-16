@@ -1,0 +1,103 @@
+---
+title: "Two Left Hands: Stride and Boogie-Woogie"
+subtitle: "The piano as a whole band, two ways"
+toc: true
+toc-depth: 2
+---
+
+Stride and boogie-woogie are the two great left hands of early jazz piano. Both are solo piano music
+for dancing, both swing, and both make the pianist's left hand do the work of a bass player and a
+rhythm guitarist at once. They do it in opposite ways: stride **leaps**, boogie-woogie **walks**. This
+page plays them on the band one at a time, then side by side, then swaps their parts.
+
+How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read
+the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows
+everything down. For the history of each, see the Style Notes on [Stride piano](../styles/stride.qmd)
+and [Boogie-woogie](../styles/boogie.qmd).
+
+## 1. Where they meet
+
+- **Rent parties.** In the 1920s, tenants in Harlem and on Chicago's South Side paid the rent by
+  throwing a party with food, drink and a pianist. Harlem's pianists played stride; Chicago's played
+  boogie-woogie. One piano had to be the whole band.
+- **The left hand keeps time.** In both, the left hand never stops and never changes its pattern
+  much. The right hand is free to play the tune, riffs and runs on top.
+- **Swing eighths.** Both are swung: the eighth notes go long-short.
+- **The same players.** Count Basie began as a stride pianist taught by Fats Waller, and his band
+  recorded *Boogie Woogie* in 1936. Fats Waller played boogie-woogie too, and the boogie-woogie
+  pianists knew stride.
+- **Where they went.** Stride turned into swing piano (Teddy Wilson, Art Tatum, Basie); boogie-woogie
+  into jump blues and rock and roll.
+
+## 2. Stride: bass, chord, bass, chord
+
+The stride left hand plays a low bass note on beats 1 and 3 and a chord in the middle of the
+keyboard on 2 and 4. Here the band's pianist plays only that left hand. Compare it with plain
+boom-chick, where the bass note is left to the bass player.
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="100" data-on="comp" data-staves="comp" data-comp="piano" data-choice-label="Left hand:" data-choices='[{"label":"Stride","opts":{"compRhythm":"stride"}},{"label":"Boom-chick (chords only)","opts":{"compRhythm":"oompah"}}]'></div>
+
+**What to look for.** On the staff the left hand jumps about two octaves on every beat. Stride
+pianists practise the jump with their eyes on the landing note: the low one. Start with the root on 1
+and 3, then play the fifth on 3. Full lesson: [Stride](patterns/chords-stride.qmd).
+
+## 3. Boogie-woogie: eight to the bar
+
+The boogie-woogie left hand walks up the chord and back down in swung eighth notes: root, 3rd, 5th,
+6th, flat 7th, 6th, 5th, 3rd. The band gives it to the bass player. Compare it with the simpler lines
+it is built from.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7" data-tempo="100" data-on="bass" data-staves="bass" data-choice-label="Left hand:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie"}},{"label":"Chord tones, one a beat","opts":{"bassFeel":"arp"}},{"label":"Roots on every beat","opts":{"bassFeel":"roots"}}]'></div>
+
+**What to look for.** The shape is the same on every chord; only the root moves. On the piano the
+hand stays in one position, fingers 5 1 on the root and 6th. Full lesson:
+[Boogie-woogie](patterns/bass-boogie.qmd).
+
+## 4. Side by side on a blues
+
+The same 12-bar blues in C, once in each style, with the whole band. Listen to the bottom of the band:
+stride bounces between low and middle on the beats; boogie-woogie rolls along underneath in eighths.
+
+**Stride**
+
+<div class="ar-demo" data-style="stride" data-chart="C7|F7|C7|C7|F7|F7|C7|A7|D7|G7|C7 A7|D7 G7" data-tempo="132" data-on="bass comp drums" data-staves="comp bass"></div>
+
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|F7|C7|C7|F7|F7|C7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums" data-staves="bass comp"></div>
+
+The charts differ too. A stride player on a blues borrows the songs' turnarounds (A7, D7, G7 leading
+home); a boogie-woogie player keeps to three chords, because the left hand is the interest.
+
+## 5. Swap the parts
+
+Both styles' parts can be played in the other's band. Below is the boogie-woogie band; swap its bass
+and piano for stride's and back. The drums keep the shuffle.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7" data-tempo="120" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Bass and piano:" data-choices='[{"label":"Boogie-woogie","opts":{"bassFeel":"boogie","compRhythm":"boogie"}},{"label":"Stride","opts":{"bassFeel":"two","compRhythm":"stride"}},{"label":"Boogie bass under stride piano","opts":{"bassFeel":"boogie","compRhythm":"stride"}}]'></div>
+
+The last one is busy: two left hands at once, one leaping, one walking. Real players choose one.
+
+## 6. Before and after: ragtime and jump blues
+
+Stride came from **ragtime**: the same left hand in straight eighths, under a written, syncopated
+melody. Boogie-woogie went into **jump blues**: the same bass in a small band, with a hard backbeat on
+the drums. Switch between each pair and listen for what changes and what stays.
+
+<div class="ar-demo" data-style="ragtime" data-chart="C|C|G7|C" data-tempo="92" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Style:" data-choices='[{"label":"Ragtime (straight)","opts":{"feel":"straight","groove":"boomchick","bassFeel":"alt"}},{"label":"Stride (swung)","opts":{"feel":"swing","groove":"auto","bassFeel":"two"}}]'></div>
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums" data-staves="drums bass" data-choice-label="Drums:" data-choices='[{"label":"Jump blues","opts":{"groove":"jump"}},{"label":"Boogie-woogie shuffle","opts":{"groove":"shuffle"}}]'></div>
+
+See the Style Notes on [Ragtime](../styles/ragtime.qmd) and [Jump blues](../styles/jump.qmd).
+
+## 7. Try it
+
+- Pianists: switch the band's piano off in section 2 and play the stride left hand yourself, slowly.
+  Then switch the bass off in section 3 and play the boogie line with your left hand.
+- Bass players: the boogie-woogie line is a classic bass part in its own right. Play it on a 12-bar
+  blues in section 4.
+- Listen to Fats Waller's *Handful of Keys* and Albert Ammons's *Boogie Woogie Stomp* back to back.
+
+{{< include _arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

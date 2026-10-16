@@ -223,6 +223,9 @@
     ridetime: { bars: [ cymBeats(0.58).concat([[1.5, "cymOff", 0.42], [3.5, "cymOff", 0.42], [1, "hatFoot", 0.46], [3, "hatFoot", 0.46]]) ],
                 three: [[0, "cym", 0.58], [1, "cym", 0.58], [1.5, "cymOff", 0.42], [2, "cym", 0.58], [1, "hatFoot", 0.44], [2, "hatFoot", 0.44]], fills: false },
     shuffle:  { bars: [ cymEighths(0.56, 0.38).concat([[0, "kick", 0.58], [2, "kick", 0.54], [1, "snare", 0.62], [3, "snare", 0.62]]) ], fills: true },
+    // jump blues (Louis Jordan's Tympany Five): the shuffle with the kick feathered on all four beats and a hard backbeat on the snare
+    jump:     { bars: [ cymEighths(0.58, 0.40).concat([[0, "kick", 0.52], [1, "kick", 0.42], [2, "kick", 0.48], [3, "kick", 0.42], [1, "snare", 0.72], [3, "snare", 0.72], [1, "hatFoot", 0.40], [3, "hatFoot", 0.40]]) ],
+                three: cymEighths(0.58, 0.40).slice(0, 6).concat([[0, "kick", 0.52], [1, "kick", 0.42], [2, "kick", 0.42], [1, "snare", 0.66], [2, "snare", 0.66]]), fills: true },
     // The hi-hat lesson (lessons/hihat-grooves.qmd): the hi-hat written out piece by piece, whatever the Cymbal menu says (hat:true keeps the
     // foot when the menu is on the hi-hat). Each is one bar, no fills unless asked. sixteenths:true marks the sixteenth positions
     // (x.25, x.75) straight and six, so the player leaves them alone and the drum staff writes real sixteenths (notation.js).

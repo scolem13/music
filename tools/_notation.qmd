@@ -7,9 +7,32 @@
   padding:1.25rem clamp(16px,3vw,40px) 4rem;color:var(--nt-ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
 #nt-root *{box-sizing:border-box}
 #nt-root [hidden]{display:none!important}
-#nt-root .nt-layout{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;align-items:start}
-#nt-root .nt-cols{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px;align-items:start}
-#nt-root .nt-col{display:flex;flex-direction:column;gap:16px;min-width:0}
+#nt-root .nt-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:24px;align-items:start}
+#nt-root .nt-layout>*{grid-column:auto!important}   /* Quarto puts page-columns on it */
+#nt-root .nt-main,#nt-root .nt-side{display:flex;flex-direction:column;gap:16px;min-width:0}
+#nt-root .nt-side details.nt-panel{background:var(--nt-surface2)}
+#nt-root .nt-side .nt-start{grid-template-columns:minmax(0,1fr)}
+
+/* Play it in: the record button, bar counter, beat lights, what is being played, a strip of keys */
+#nt-root .nt-deck{display:grid;grid-template-columns:auto minmax(0,1fr);gap:1.2rem;align-items:center}
+#nt-root .nt-go{width:8rem;height:8rem;border-radius:50%;border:0;background:#b3261e;color:#fff;font:700 1.05rem/1.2 inherit;cursor:pointer;box-shadow:0 2px 0 rgba(0,0,0,.2)}
+#nt-root .nt-go small{display:block;font-weight:400;font-size:.75rem;opacity:.85;margin-top:.2rem}
+#nt-root .nt-go.is-on{background:#1e1c18;animation:nt-pulse 1s infinite}
+@keyframes nt-pulse{50%{box-shadow:0 0 0 8px rgba(179,38,30,.25)}}
+#nt-root .nt-qstate{font:700 2rem/1.1 var(--font-mono,monospace)}
+#nt-root .nt-qstate.is-count{color:#b3261e}
+#nt-root .nt-qbeats{display:flex;gap:.4rem;margin:.5rem 0}
+#nt-root .nt-qbeats span{width:1.1rem;height:1.1rem;border-radius:50%;background:var(--nt-surface2);border:1px solid var(--nt-line)}
+#nt-root .nt-qbeats span.is-on{background:var(--nt-accdk);border-color:var(--nt-accdk)}
+#nt-root .nt-qbeats span.is-on.is-one{background:#b3261e;border-color:#b3261e}
+#nt-root .nt-heard{font:600 1.1rem/1.4 var(--font-mono,monospace);min-height:1.6em;color:var(--nt-ink2);overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+#nt-root .nt-keys{margin-top:.8rem;height:44px;position:relative;border:1px solid var(--nt-line);border-radius:6px;overflow:hidden;background:#fff}
+#nt-root .nt-keys i{position:absolute;top:0;bottom:0;border-right:1px solid #ddd}
+#nt-root .nt-keys i.k-b{background:#333;bottom:40%;z-index:1;border:0}
+#nt-root .nt-keys i.is-down{background:var(--nt-acc)!important}
+#nt-root .nt-quick{display:flex;flex-wrap:wrap;gap:.5rem .9rem;margin-top:1rem;padding-top:.8rem;border-top:1px solid var(--nt-line)}
+#nt-root .nt-quick select,#nt-root .nt-quick input{height:1.9rem;font-size:.85rem}
+@media (max-width:640px){ #nt-root .nt-deck{grid-template-columns:minmax(0,1fr)} }
 #nt-root .nt-wide{grid-column:1 / -1}
 #nt-root .nt-intro{border-left:3px solid var(--nt-acc);padding-left:1rem;margin:0 0 1rem;color:var(--nt-ink2);font-size:.95rem;max-width:80ch}
 
@@ -25,9 +48,10 @@
 #nt-root .nt-body{padding:0 1.1rem 1rem}
 
 /* jump bar */
-#nt-root .nt-nav{position:sticky;top:76px;font-size:.88rem}
+#nt-root .nt-nav{position:sticky;top:64px;z-index:4;font-size:.85rem;background:var(--site-bg,#faf7f2);padding:.4rem 0 .5rem;border-bottom:1px solid var(--nt-line)}
 #nt-root .nt-nav p{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--nt-ink2);margin:0 0 .5rem}
-#nt-root .nt-nav ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--nt-line)}
+#nt-root .nt-nav p span{font:400 .72rem/1 Inter,system-ui,sans-serif;letter-spacing:0;text-transform:none;margin-left:.4rem}
+#nt-root .nt-nav ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--nt-line);display:grid;grid-template-columns:1fr 1fr}
 #nt-root .nt-nav a{display:block;padding:.3rem .7rem;margin-left:-2px;border-left:2px solid transparent;color:var(--nt-ink2);text-decoration:none}
 #nt-root .nt-nav a:hover{color:var(--nt-ink)}
 #nt-root .nt-nav a.is-here{border-left-color:var(--nt-accdk);color:var(--nt-acctext);font-weight:600}
@@ -88,6 +112,9 @@
 #nt-root #nt-cells .abcjs-staff{display:none}
 
 /* staff and code */
+#nt-root .nt-scope{display:inline-flex;align-items:center;gap:.35rem;margin-left:auto;font-size:.85rem;color:var(--nt-ink2)}
+#nt-root .nt-scope[hidden]{display:none}
+#nt-root .nt-scope select{height:1.9rem;font-size:.85rem;max-width:14rem}
 #nt-root .nt-paper{margin-top:.6rem;overflow-x:auto;background:#fff;border-radius:6px}
 #nt-root .nt-paper .nt-sel,#nt-root .nt-paper .nt-sel *{fill:#b3261e!important;stroke:#b3261e}
 #nt-root .nt-paper .abcjs-note,#nt-root .nt-paper .abcjs-rest{cursor:pointer}
@@ -97,13 +124,13 @@
 
 @media (max-width:1100px){
   #nt-root .nt-layout{grid-template-columns:minmax(0,1fr)}
+  #nt-root .nt-side{display:contents}
   #nt-root .nt-nav{order:-1;top:56px;z-index:5;background:var(--site-bg,#faf7f2);padding:.4rem 0;border-bottom:1px solid var(--nt-line)}
   #nt-root .nt-nav p{display:none}
   #nt-root .nt-nav ul{display:flex;overflow-x:auto;border-left:0;gap:.2rem}
   #nt-root .nt-nav a{white-space:nowrap;border-left:0;border-bottom:2px solid transparent;margin:0}
   #nt-root .nt-nav a.is-here{border-bottom-color:var(--nt-accdk)}
 }
-@media (max-width:800px){ #nt-root .nt-cols{grid-template-columns:minmax(0,1fr)} }
 #nt-root .nt-btn.is-rec{background:#b3261e;border-color:#b3261e;color:#fff}
 #nt-root .nt-voice{display:flex;gap:.5rem;align-items:center;margin-top:.4rem}
 #nt-root .nt-voice input[type=text]{width:7rem}
@@ -116,6 +143,10 @@
 #nt-root .nt-sec-in{display:flex;align-items:center;gap:.4rem}
 #nt-root .nt-sec-in input{font-weight:700;height:1.9rem;border-color:transparent;background:transparent;min-width:8rem}
 #nt-root .nt-sec-in input:hover,#nt-root .nt-sec-in input:focus{border-color:var(--nt-line);background:var(--nt-surface)}
+#nt-root .nt-eye{border:0;background:none;cursor:pointer;color:var(--nt-ink2);width:1.6rem;padding:0;display:inline-flex;align-items:center;justify-content:center}
+#nt-root .nt-eye[aria-pressed=false]{opacity:.45}
+#nt-root tr.nt-sec.nt-off input{opacity:.55;text-decoration:line-through}
+#nt-root .nt-sheet-all{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .5rem}
 #nt-root .nt-fold{border:0;background:none;cursor:pointer;font-size:.85rem;color:var(--nt-ink2);width:1.4rem;padding:0}
 #nt-root .nt-sec-in .nt-mini{min-height:1.7rem;padding:0 .45rem;font-size:.78rem}
 #nt-root .nt-sec-in .nt-sec-sum{margin-left:auto;font-size:.78rem;color:var(--nt-ink2);font-weight:400}
@@ -128,29 +159,120 @@
 #nt-root #nt-dwim-host .md-list{grid-template-columns:repeat(auto-fill,minmax(min(19rem,100%),1fr))}
 #nt-root #nt-dwim-host .md-card{min-width:0}
 #nt-root #nt-dwim-host .md-prev{max-width:100%;min-width:0}
+/* ?ending=1: embedded in the Write an Ending lesson (lessons/write-an-ending.qmd), a pared-down page */
+#nt-root.nt-ending .nt-intro,#nt-root.nt-ending #nt-start-panel,#nt-root.nt-ending #nt-take,#nt-root.nt-ending #nt-dwim,
+#nt-root.nt-ending #nt-cho,#nt-root.nt-ending #nt-words,#nt-root.nt-ending #nt-band-piece,#nt-root.nt-ending #nt-band-note,
+#nt-root.nt-ending #nt-setup,#nt-root.nt-ending #nt-chunks-panel,#nt-root.nt-ending #nt-chords,#nt-root.nt-ending #nt-score,
+#nt-root.nt-ending #nt-abc,#nt-root.nt-ending #nt-quick,#nt-root.nt-ending .nt-voice-pick{display:none!important}   /* only Rhythm and Notes: the lesson draws the score */
+#nt-root.nt-ending .nt-layout{grid-template-columns:minmax(0,1fr)!important}
+#nt-root.nt-ending .nt-side{display:contents}
+#nt-root.nt-ending{padding-top:.5rem}
 #nt-root .nt-seltools{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:.6rem}
 </style>
 
 <div id="nt-root">
-  <p class="nt-intro">Write music down in whatever order suits you: chords, a rhythm, the notes, the words, in any order. Work in chunks and enter each chunk its own way. Click a note on the staff and move it with the arrow keys.</p>
+  <div class="nt-panel nt-dict" id="nt-dict" hidden style="padding:.8rem 1.1rem;margin-bottom:1rem">
+    <strong>Dictation</strong> <span id="nt-dict-what">Waiting for the Dictation page...</span>
+    <div class="nt-row">
+      <button type="button" class="nt-btn" id="nt-dict-hear">&#9654; Hear it again</button>
+      <button type="button" class="nt-btn is-main" id="nt-dict-hand">Hand in</button>
+    </div>
+  </div>
+  <p class="nt-intro">The quickest way in: press <kbd>Space</kbd> and play the tune on a MIDI keyboard, a phrase at a time. Each take becomes a chunk. Chords, rhythms, typed notes and words go in from the sidebar, in any order. Click a note on the staff and move it with the arrow keys.</p>
 
   <div class="nt-layout">
-    <div class="nt-cols">
-      <details class="nt-panel nt-wide" id="nt-start-panel" open>
-        <summary><h2>Start here</h2></summary>
+    <div class="nt-main">
+      <details class="nt-panel" id="nt-quick" open>
+        <summary><h2>Play it in</h2><span class="nt-sum" id="nt-q-midi">MIDI: not connected</span></summary>
         <div class="nt-body">
-          <div class="nt-start">
-            <button type="button" class="nt-btn" data-go="nt-pitch">Some notes<small>Type letters, play the computer keys like a piano, or use a MIDI keyboard. Add the rhythm later.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-rhythm">A rhythm<small>Pick a meter, then build the rhythm from patterns. Add the notes later.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-chords">Chords<small>Type them bar by bar, or play them on a keyboard. No key needed.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-take">Play it in time<small>Play along with a click; the page writes down what you played.</small></button>
-            <button type="button" class="nt-btn" data-go="nt-abc">ABC or ChordPro I already have<small>Paste it in, then change what you like.</small></button>
+          <div class="nt-deck">
+            <button type="button" class="nt-go" id="nt-q-go">&#9679; Record<small>Space / pedal</small></button>
+            <div>
+              <div class="nt-qstate" id="nt-q-state">Ready</div>
+              <div class="nt-qbeats" id="nt-q-beats"></div>
+              <div class="nt-heard" id="nt-q-heard"></div>
+            </div>
           </div>
+          <div class="nt-keys" id="nt-q-keys" aria-hidden="true"></div>
+          <div class="nt-quick">
+            <div class="nt-field"><label for="nt-q-meter">Meter</label><select id="nt-q-meter"></select></div>
+            <div class="nt-field"><label for="nt-q-key">Key</label><select id="nt-q-key"></select></div>
+            <div class="nt-field"><label for="nt-q-bpm">Tempo</label><input type="number" id="nt-q-bpm" min="30" max="240" value="90"></div>
+            <div class="nt-field"><label for="nt-q-count">Count-in</label><select id="nt-q-count"><option value="1">1 bar</option><option value="2">2 bars</option></select></div>
+            <div class="nt-field"><label for="nt-q-pickup">Pickup</label><select id="nt-q-pickup"></select></div>
+            <div class="nt-field"><label for="nt-q-res">Shortest note</label><select id="nt-q-res"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
+            <div class="nt-field"><label for="nt-q-feel">Feel</label><select id="nt-q-feel"><option value="straight">Straight</option><option value="swing">Swing</option></select></div>
+            <div class="nt-field"><label for="nt-q-trip">Triplets</label><select id="nt-q-trip"><option value="off">Off</option><option value="auto">Find them</option></select></div>
+            <div class="nt-field"><label for="nt-q-quiet">Ends after</label><select id="nt-q-quiet"><option value="2">2 quiet bars</option><option value="1">1 quiet bar</option><option value="4">4 quiet bars</option><option value="0">Space only</option></select></div>
+          </div>
+          <div class="nt-row">
+            <button type="button" class="nt-btn" id="nt-q-redo" disabled>Redo the last take</button>
+            <button type="button" class="nt-btn" id="nt-q-drop" disabled>Drop the last take</button>
+          </div>
+          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>Space</kbd> or the sustain pedal records and stops, <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
+          <p class="nt-hint" id="nt-q-status" aria-live="polite"></p>
         </div>
       </details>
 
-      <div class="nt-col">
-        <details class="nt-panel" id="nt-setup" open>
+      <details class="nt-panel" id="nt-score" open>
+          <summary><h2>The music</h2></summary>
+          <div class="nt-body">
+            <div class="nt-row" style="margin-top:0">
+              <button type="button" class="nt-btn is-main" id="nt-play">&#9654; Play</button>
+              <button type="button" class="nt-btn" id="nt-undo">Undo</button>
+              <button type="button" class="nt-btn" id="nt-new">Start over</button>
+              <label class="nt-scope" id="nt-scope-l" hidden>Show <select id="nt-scope" title="The whole piece, or one section of it (as the Backing Track's tune notation does)"></select></label>
+            </div>
+            <div class="nt-seltools" id="nt-seltools">
+              <span class="nt-lab" id="nt-sel-what">Nothing selected</span>
+              <button type="button" class="nt-btn" id="nt-s-split" title="The chunk is split so that a new one starts on this note">Split here</button>
+              <button type="button" class="nt-btn" id="nt-s-copy">Copy</button>
+              <button type="button" class="nt-btn" id="nt-s-cut">Cut</button>
+              <button type="button" class="nt-btn" id="nt-s-paste">Paste after</button>
+              <button type="button" class="nt-btn" id="nt-s-del">Delete</button>
+              <button type="button" class="nt-btn is-main" id="nt-s-dwim" title="Do what I mean: the other ways the selected bars could be written from how they were played">DWIM</button>
+            </div>
+            <div class="nt-paper" id="nt-paper"></div>
+            <p class="nt-hint"><kbd>Shift</kbd>+click a second note to select everything between (one voice), then copy (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>C</kbd>), cut (<kbd>X</kbd>), paste after it (<kbd>V</kbd>) or <kbd>Delete</kbd>. Click a note, then <kbd>↑</kbd> <kbd>↓</kbd> move it to the next note in the key, <kbd>Shift</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by a half step, <kbd>Alt</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by an octave. <kbd>←</kbd> <kbd>→</kbd> pick the note before or after, <kbd>Esc</kbd> lets go. Slashes are rhythm with no note yet.</p>
+            <p class="nt-status" id="nt-status" aria-live="polite"></p>
+            <p class="nt-phrase" id="nt-phrase" hidden><span id="nt-phrase-label"></span> <button type="button" class="nt-btn is-main" id="nt-back" title="Back to Timestamp Notes, looping the next phrase">Back to the recording, next phrase</button> <button type="button" class="nt-btn" id="nt-back-again" title="Back to Timestamp Notes, this phrase again">This phrase again</button> <button type="button" class="nt-btn" id="nt-seam-keep" hidden title="Where the pickup and the end of the phrase before both sounded, keep the phrase before's notes">Keep the earlier notes</button></p>
+          </div>
+        </details>
+
+      <details class="nt-panel" id="nt-chunks-panel" open>
+          <summary><h2>Chunks</h2><span class="nt-sum" id="nt-chunks-sum"></span></summary>
+          <div class="nt-body">
+            <p class="nt-hint" style="margin-top:0"><kbd>j</kbd> / <kbd>k</kbd> select the next / previous chunk; <kbd>Alt</kbd>+<kbd>j</kbd> / <kbd>k</kbd> move it down / up; <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>j</kbd> / <kbd>k</kbd> move its section. Top to bottom is start to end. What you enter goes into the selected row. Sections (Verse, Chorus ...) gather the chunks under them, fold like headings, and move or duplicate as a block. <strong>Style</strong> opens the Backing Track on its Band tab for that row: what you set there is kept here, for the chunk, the section, or (with the button in The piece) the whole piece. The most particular wins: a chunk's own settings, else its section's, else the piece's.</p>
+            <div class="nt-sheet-all" id="nt-sheet-all" role="toolbar" aria-label="All sections">
+              <button type="button" class="nt-btn nt-mini" id="nt-fold-all">Fold all</button>
+              <button type="button" class="nt-btn nt-mini" id="nt-eye-all">Hide all</button>
+            </div>
+            <div class="nt-sheet-wrap"><table class="nt-sheet" id="nt-sheet"><thead></thead><tbody></tbody></table></div>
+            <div class="nt-tools" role="toolbar" aria-label="Selected chunk">
+              <button type="button" class="nt-btn" id="nt-c-up" title="Move up">&#8593; Up</button>
+              <button type="button" class="nt-btn" id="nt-c-down" title="Move down">&#8595; Down</button>
+              <span class="nt-sep"></span>
+              <button type="button" class="nt-btn" id="nt-c-add">+ New after</button>
+              <button type="button" class="nt-btn" id="nt-c-dup">Duplicate</button>
+              <button type="button" class="nt-btn" id="nt-c-merge">Merge with next</button>
+              <span class="nt-sep"></span>
+              <label class="nt-lab" for="nt-c-at" id="nt-c-at-lab">Split after bar</label>
+              <input type="number" id="nt-c-at" min="1" value="1">
+              <button type="button" class="nt-btn" id="nt-c-split">Split</button>
+              <span class="nt-sep"></span>
+              <button type="button" class="nt-btn" id="nt-c-del">Delete</button>
+              <span class="nt-sep"></span>
+              <button type="button" class="nt-btn" id="nt-c-sec">Start a section here</button>
+            </div>
+            <div class="nt-row">
+              <div class="nt-field"><label for="nt-c-meter">Meter from here</label><select id="nt-c-meter"></select></div>
+              <div class="nt-field"><label for="nt-c-key">Key from here</label><select id="nt-c-key"></select></div>
+            </div>
+            <p class="nt-warn" id="nt-c-msg" hidden></p>
+          </div>
+        </details>
+
+      <details class="nt-panel" id="nt-setup" open>
           <summary><h2>The piece</h2><span class="nt-sum" id="nt-setup-sum"></span></summary>
           <div class="nt-body">
             <div class="nt-row" style="margin-top:0">
@@ -181,36 +303,74 @@
           </div>
         </details>
 
-        <details class="nt-panel" id="nt-chunks-panel" open>
-          <summary><h2>Chunks</h2><span class="nt-sum" id="nt-chunks-sum"></span></summary>
+      <details class="nt-panel" id="nt-dwim" open>
+          <summary><h2>DWIM</h2><span class="nt-sum" id="nt-dwim-sum"></span></summary>
           <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0"><kbd>j</kbd> / <kbd>k</kbd> select the next / previous chunk; <kbd>Alt</kbd>+<kbd>j</kbd> / <kbd>k</kbd> move it down / up; <kbd>Shift</kbd>+<kbd>Alt</kbd>+<kbd>j</kbd> / <kbd>k</kbd> move its section. Top to bottom is start to end. What you enter goes into the selected row. Sections (Verse, Chorus ...) gather the chunks under them, fold like headings, and move or duplicate as a block. <strong>Style</strong> opens the Backing Track on its Band tab for that row: what you set there is kept here, for the chunk, the section, or (with the button in The piece) the whole piece. The most particular wins: a chunk's own settings, else its section's, else the piece's.</p>
-            <div class="nt-sheet-wrap"><table class="nt-sheet" id="nt-sheet"><thead></thead><tbody></tbody></table></div>
-            <div class="nt-tools" role="toolbar" aria-label="Selected chunk">
-              <button type="button" class="nt-btn" id="nt-c-up" title="Move up">&#8593; Up</button>
-              <button type="button" class="nt-btn" id="nt-c-down" title="Move down">&#8595; Down</button>
-              <span class="nt-sep"></span>
-              <button type="button" class="nt-btn" id="nt-c-add">+ New after</button>
-              <button type="button" class="nt-btn" id="nt-c-dup">Duplicate</button>
-              <button type="button" class="nt-btn" id="nt-c-merge">Merge with next</button>
-              <span class="nt-sep"></span>
-              <label class="nt-lab" for="nt-c-at" id="nt-c-at-lab">Split after bar</label>
-              <input type="number" id="nt-c-at" min="1" value="1">
-              <button type="button" class="nt-btn" id="nt-c-split">Split</button>
-              <span class="nt-sep"></span>
-              <button type="button" class="nt-btn" id="nt-c-del">Delete</button>
-              <span class="nt-sep"></span>
-              <button type="button" class="nt-btn" id="nt-c-sec">Start a section here</button>
-            </div>
-            <div class="nt-row">
-              <div class="nt-field"><label for="nt-c-meter">Meter from here</label><select id="nt-c-meter"></select></div>
-              <div class="nt-field"><label for="nt-c-key">Key from here</label><select id="nt-c-key"></select></div>
-            </div>
-            <p class="nt-warn" id="nt-c-msg" hidden></p>
+            <p class="nt-hint" style="margin-top:0">Do what I mean: select bars that were played in (<strong>Play it in time</strong>) and press <strong>DWIM</strong> to see the other ways they could be written, best first. The playing is kept with the chunk, so this keeps working after edits elsewhere, after splitting on a bar line, merging, duplicating, and after a reload.</p>
+            <p class="nt-warn" id="nt-dwim-warn" hidden></p>
+            <div id="nt-dwim-host"></div>
           </div>
         </details>
 
-        <details class="nt-panel" id="nt-chords" open>
+      <details class="nt-panel" id="nt-abc" open>
+          <summary><h2>ABC</h2></summary>
+          <div class="nt-body">
+            <p class="nt-hint" style="margin-top:0">Edit the code and the staff follows. Chunks start at <code>"^Name"</code> labels and at <code>[M:]</code> / <code>[K:]</code> changes; voices are <code>[V:1]</code> lines.</p>
+            <textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea>
+            <p class="nt-warn" id="nt-abc-warn" hidden></p>
+          </div>
+        </details>
+
+      <details class="nt-panel" id="nt-cho" open>
+          <summary><h2>ChordPro</h2></summary>
+          <div class="nt-body">
+            <p class="nt-hint" style="margin-top:0">The chords and words of the piece. ChordPro has no rhythm or notes: reading it in replaces the piece with its chords (one a bar, or as the <kbd>|</kbd> marks say) and words.</p>
+            <textarea id="nt-cho-text" spellcheck="false" aria-label="ChordPro"></textarea>
+            <div class="nt-row">
+              <button type="button" class="nt-btn" id="nt-cho-read">Read this ChordPro in</button>
+              <button type="button" class="nt-btn" id="nt-cho-copy">Copy</button>
+            </div>
+            <p class="nt-warn" id="nt-cho-warn" hidden></p>
+          </div>
+        </details>
+    </div>
+
+    <aside class="nt-side" aria-label="Other ways to enter music">
+      <nav class="nt-nav" aria-label="Sections on this page">
+        <p>On this page <span>Shift+click: fold the rest</span></p>
+        <ul id="nt-nav"></ul>
+      </nav>
+      <details class="nt-panel" id="nt-start-panel" open>
+        <summary><h2>Other ways in</h2></summary>
+        <div class="nt-body">
+          <div class="nt-start">
+            <button type="button" class="nt-btn" data-go="nt-pitch">Some notes<small>Type letters, play the computer keys like a piano, or use a MIDI keyboard. Add the rhythm later.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-rhythm">A rhythm<small>Pick a meter, then build the rhythm from patterns. Add the notes later.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-chords">Chords<small>Type them bar by bar, or play them on a keyboard. No key needed.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-take">Play it in time: more<small>Chords as well as notes, a fixed length, into the selected chunk.</small></button>
+            <button type="button" class="nt-btn" data-go="nt-abc">ABC or ChordPro I already have<small>Paste it in, then change what you like.</small></button>
+          </div>
+        </div>
+      </details>
+
+      <details class="nt-panel" id="nt-pitch" open>
+          <summary><h2>Notes</h2><span class="nt-sum" id="nt-pitch-sum"></span></summary>
+          <div class="nt-body">
+            <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
+            <div class="nt-row" role="group" aria-label="How to enter notes">
+              <button type="button" class="nt-btn" data-mode="letters" aria-pressed="true">Letters</button>
+              <button type="button" class="nt-btn" data-mode="piano" aria-pressed="false">Computer keys as a piano</button>
+              <button type="button" class="nt-btn" data-mode="midi" aria-pressed="false">MIDI keyboard</button>
+            </div>
+            <p class="nt-hint" id="nt-mode-help"></p>
+            <div id="nt-pending-wrap" hidden>
+              <p class="nt-lab" style="margin-top:.8rem">Waiting for a rhythm</p>
+              <div class="nt-paper" id="nt-pending"></div>
+            </div>
+          </div>
+        </details>
+
+      <details class="nt-panel" id="nt-chords" open>
           <summary><h2>Chords</h2><span class="nt-sum" id="nt-chords-sum"></span></summary>
           <div class="nt-body">
             <div class="nt-field"><label for="nt-chords-text">Chords by bar</label>
@@ -224,7 +384,7 @@
           </div>
         </details>
 
-        <details class="nt-panel" id="nt-rhythm" open>
+      <details class="nt-panel" id="nt-rhythm" open>
           <summary><h2>Rhythm</h2><span class="nt-sum" id="nt-rhythm-sum"></span></summary>
           <div class="nt-body">
             <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
@@ -250,24 +410,7 @@
           </div>
         </details>
 
-        <details class="nt-panel" id="nt-pitch" open>
-          <summary><h2>Notes</h2><span class="nt-sum" id="nt-pitch-sum"></span></summary>
-          <div class="nt-body">
-            <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
-            <div class="nt-row" role="group" aria-label="How to enter notes">
-              <button type="button" class="nt-btn" data-mode="letters" aria-pressed="true">Letters</button>
-              <button type="button" class="nt-btn" data-mode="piano" aria-pressed="false">Computer keys as a piano</button>
-              <button type="button" class="nt-btn" data-mode="midi" aria-pressed="false">MIDI keyboard</button>
-            </div>
-            <p class="nt-hint" id="nt-mode-help"></p>
-            <div id="nt-pending-wrap" hidden>
-              <p class="nt-lab" style="margin-top:.8rem">Waiting for a rhythm</p>
-              <div class="nt-paper" id="nt-pending"></div>
-            </div>
-          </div>
-        </details>
-
-        <details class="nt-panel" id="nt-words" open>
+      <details class="nt-panel" id="nt-words" open>
           <summary><h2>Words</h2><span class="nt-sum" id="nt-words-sum"></span></summary>
           <div class="nt-body">
             <textarea id="nt-words-text" class="nt-short" spellcheck="true" aria-label="Words of the selected chunk" placeholder="Twin-kle, twin-kle, lit-tle star"></textarea>
@@ -279,8 +422,8 @@
           </div>
         </details>
 
-        <details class="nt-panel" id="nt-take" open>
-          <summary><h2>Play it in time</h2><span class="nt-sum" id="nt-take-sum"></span></summary>
+      <details class="nt-panel" id="nt-take" open>
+          <summary><h2>Play it in time: more</h2><span class="nt-sum" id="nt-take-sum"></span></summary>
           <div class="nt-body">
             <div class="nt-target nt-voice-pick" role="group" aria-label="Voice"></div>
             <div class="nt-row">
@@ -303,70 +446,7 @@
             <p class="nt-hint">Listens to a MIDI keyboard and to the computer keys (laid out as a piano). What you play replaces this chunk's notes (and rhythm), or its chords, in the voice chosen above.</p>
           </div>
         </details>
-      </div>
-
-      <div class="nt-col">
-        <details class="nt-panel" id="nt-score" open>
-          <summary><h2>The music</h2></summary>
-          <div class="nt-body">
-            <div class="nt-row" style="margin-top:0">
-              <button type="button" class="nt-btn is-main" id="nt-play">&#9654; Play</button>
-              <button type="button" class="nt-btn" id="nt-undo">Undo</button>
-              <button type="button" class="nt-btn" id="nt-new">Start over</button>
-            </div>
-            <div class="nt-seltools" id="nt-seltools">
-              <span class="nt-lab" id="nt-sel-what">Nothing selected</span>
-              <button type="button" class="nt-btn" id="nt-s-split" title="The chunk is split so that a new one starts on this note">Split here</button>
-              <button type="button" class="nt-btn" id="nt-s-copy">Copy</button>
-              <button type="button" class="nt-btn" id="nt-s-cut">Cut</button>
-              <button type="button" class="nt-btn" id="nt-s-paste">Paste after</button>
-              <button type="button" class="nt-btn" id="nt-s-del">Delete</button>
-              <button type="button" class="nt-btn is-main" id="nt-s-dwim" title="Do what I mean: the other ways the selected bars could be written from how they were played">DWIM</button>
-            </div>
-            <div class="nt-paper" id="nt-paper"></div>
-            <p class="nt-hint"><kbd>Shift</kbd>+click a second note to select everything between (one voice), then copy (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>C</kbd>), cut (<kbd>X</kbd>), paste after it (<kbd>V</kbd>) or <kbd>Delete</kbd>. Click a note, then <kbd>↑</kbd> <kbd>↓</kbd> move it to the next note in the key, <kbd>Shift</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by a half step, <kbd>Alt</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by an octave. <kbd>←</kbd> <kbd>→</kbd> pick the note before or after, <kbd>Esc</kbd> lets go. Slashes are rhythm with no note yet.</p>
-            <p class="nt-status" id="nt-status" aria-live="polite"></p>
-          </div>
-        </details>
-
-        <details class="nt-panel" id="nt-dwim" open>
-          <summary><h2>DWIM</h2><span class="nt-sum" id="nt-dwim-sum"></span></summary>
-          <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0">Do what I mean: select bars that were played in (<strong>Play it in time</strong>) and press <strong>DWIM</strong> to see the other ways they could be written, best first. The playing is kept with the chunk, so this keeps working after edits elsewhere, after splitting on a bar line, merging, duplicating, and after a reload.</p>
-            <p class="nt-warn" id="nt-dwim-warn" hidden></p>
-            <div id="nt-dwim-host"></div>
-          </div>
-        </details>
-
-        <details class="nt-panel" id="nt-abc" open>
-          <summary><h2>ABC</h2></summary>
-          <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0">Edit the code and the staff follows. Chunks start at <code>"^Name"</code> labels and at <code>[M:]</code> / <code>[K:]</code> changes; voices are <code>[V:1]</code> lines.</p>
-            <textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea>
-            <p class="nt-warn" id="nt-abc-warn" hidden></p>
-          </div>
-        </details>
-
-        <details class="nt-panel" id="nt-cho" open>
-          <summary><h2>ChordPro</h2></summary>
-          <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0">The chords and words of the piece. ChordPro has no rhythm or notes: reading it in replaces the piece with its chords (one a bar, or as the <kbd>|</kbd> marks say) and words.</p>
-            <textarea id="nt-cho-text" spellcheck="false" aria-label="ChordPro"></textarea>
-            <div class="nt-row">
-              <button type="button" class="nt-btn" id="nt-cho-read">Read this ChordPro in</button>
-              <button type="button" class="nt-btn" id="nt-cho-copy">Copy</button>
-            </div>
-            <p class="nt-warn" id="nt-cho-warn" hidden></p>
-          </div>
-        </details>
-      </div>
-    </div>
-
-    <nav class="nt-nav" aria-label="Sections on this page">
-      <p>On this page</p>
-      <p style="font:400 .74rem/1.3 Inter,system-ui,sans-serif;letter-spacing:0;text-transform:none;margin:-.2rem 0 .5rem">Shift+click: fold the rest</p>
-      <ul id="nt-nav"></ul>
-    </nav>
+    </aside>
   </div>
 </div>
 
@@ -381,7 +461,8 @@
 <script src="/apps/shared/melody-dwim.js?v=2"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=3"></script>
-<script src="/apps/shared/notation-doc.js?v=5"></script>
+<script src="/apps/shared/phrase-seam.js?v=1"></script>
+<script src="/apps/shared/notation-doc.js?v=8"></script>
 <script>
 (function () {
   "use strict";
@@ -390,7 +471,17 @@
   var METERS = ["2/4","3/4","4/4","6/8","9/8","12/8","5/8","7/8"];
   var CLEFS = [["treble", "Treble"], ["bass", "Bass"], ["alto", "Alto"], ["tenor", "Tenor"]];
   var KEYNAME = function (k) { return k.slice(-1) === "m" ? k.slice(0, -1) + " minor" : k + " major"; };
-  var STORE = "ntDoc", OPEN = "ntOpen";
+  var DICT = /[?&]dictation=1/.test(location.search) && window.opener;   // opened by the Dictation page: a scratch doc, handed back
+  var ENDING = /[?&]ending=1/.test(location.search) && window.parent !== window;   // in the Write an Ending lesson's frame
+  var STORE = DICT ? "ntDictDoc" : ENDING ? "ntEndingDoc" : "ntDoc", OPEN = ENDING ? "ntEndingOpen" : "ntOpen";
+  if (ENDING) {   // framed: no site chrome; the lesson around it has the navbar and its own jump bar
+    $("nt-rhythm-clear").textContent = "Clear my ending";
+    $("nt-root").classList.add("nt-ending");
+    var fc = document.createElement("style");
+    fc.textContent = "#quarto-header,footer.footer,#quarto-sidebar,#quarto-margin-sidebar,.nav-footer{display:none!important}" +
+      "body{padding-top:0!important}main.content{margin-top:0!important}#nt-root .nt-layout{grid-template-columns:minmax(0,1fr)!important}#nt-root .nt-nav{display:none!important}";
+    document.head.appendChild(fc);
+  }
 
   var doc = D.upgrade(load() || D.create());
   var cur = 0, voice = 0;         // where entry goes: chunk and voice
@@ -399,7 +490,8 @@
   var history = [], map = [], pmap = [], tune = null, cells = [], guessRefused = null, editing = null, shownCur = -1;
 
   function load() { try { var s = localStorage.getItem(STORE); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
-  function save() { try { localStorage.setItem(STORE, JSON.stringify(doc)); } catch (e) {} }
+  function save() { try { localStorage.setItem(STORE, JSON.stringify(doc)); } catch (e) {} if (ENDING) endTell({ type: "end-change", abc: D.toAbc(doc).abc }); }
+  function endTell(m) { try { window.parent.postMessage(m, location.origin); } catch (e) {} }
   function snap() { history.push(JSON.stringify(doc)); if (history.length > 200) history.shift(); }
   function change(f) { snap(); f(); save(); render(); }
   function status(s) { $("nt-status").textContent = s || ""; }
@@ -412,6 +504,7 @@
   // ---- sections: collapsible, with the jump bar --------------------------------------------------------------------
   var panels = Array.prototype.slice.call(document.querySelectorAll("#nt-root details.nt-panel"));
   var shut = {}; try { shut = JSON.parse(localStorage.getItem(OPEN) || "{}"); } catch (e) {}
+  if (ENDING) panels = panels.filter(function (p) { return getComputedStyle(p).display !== "none"; });
   panels.forEach(function (p) {
     if (shut[p.id]) p.open = false;
     var li = document.createElement("li"), a = document.createElement("a");
@@ -462,11 +555,14 @@
   }
 
   // ---- drawing -----------------------------------------------------------------------------------------------------
+  // abcjs starts a note after a barline at the space before it ("| G2": G's startChar is the space), so a drawn element
+  // is matched to the map's entry whose start falls inside it, not by an equal start
+  function covers(el, m) { return el.startChar <= m.start && m.start < Math.max(el.endChar, el.startChar + 1); }
   function lightSelection(t, m, want) {
     if (!t || !want) return;
-    var hit = m.filter(want).map(function (e) { return e.start; });
+    var hit = m.filter(want);
     t.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (v) { v.forEach(function (el) {
-      if (hit.indexOf(el.startChar) >= 0 && el.abselem) el.abselem.elemset.forEach(function (g) { g.classList.add("nt-sel"); });
+      if (el.abselem && hit.some(function (e) { return covers(el, e); })) el.abselem.elemset.forEach(function (g) { g.classList.add("nt-sel"); });
     }); }); }); });
   }
   function mark(on, label) { return on ? '<span class="nt-yes" aria-label="' + label + '">&#10003;</span>' : '<span class="nt-no" aria-label="no ' + label + '">&middot;</span>'; }
@@ -501,6 +597,13 @@
       tr.onclick = function (e) { if (e.target.tagName !== "INPUT" && cur !== i) { cur = i; sel = null; msg(""); render(); } };
       body.appendChild(tr);
     });
+    $("nt-sheet-all").hidden = !secs.length;
+    var allFolded = secs.length && secs.every(function (x) { return x.folded; }), allShown = secs.every(function (x) { return !x.hidden; });
+    $("nt-fold-all").textContent = allFolded ? "Unfold all" : "Fold all";
+    $("nt-fold-all").onclick = function () { change(function () { secs.forEach(function (x) { doc.chunks[x.start].folded = !allFolded; }); var sc = D.sectionOf(doc, cur); if (!allFolded && sc) cur = sc.start; sel = null; }); };
+    $("nt-eye-all").textContent = allShown ? "Hide all" : "Show all";
+    $("nt-eye-all").title = allShown ? "Leave every section out of the score" : "Show every section in the score";
+    $("nt-eye-all").onclick = function () { change(function () { secs.forEach(function (x) { doc.chunks[x.start].hidden = allShown; }); }); };
     var ch = chunk();
     $("nt-c-up").disabled = cur === 0; $("nt-c-down").disabled = cur === doc.chunks.length - 1;
     $("nt-c-merge").disabled = cur === doc.chunks.length - 1;
@@ -569,12 +672,14 @@
   // a section's heading row: fold, name, move, duplicate, take the heading away
   function sectionRow(sec, cols) {
     var tr = document.createElement("tr"), first = doc.chunks[sec.start];
-    tr.className = "nt-sec"; tr.dataset.section = sec.start;
+    tr.className = "nt-sec" + (sec.hidden ? " nt-off" : ""); tr.dataset.section = sec.start;
     tr.setAttribute("aria-selected", cur >= sec.start && cur < sec.end ? "true" : "false");
     var bars = 0; for (var i = sec.start; i < sec.end; i++) bars += D.info(doc, i).bars;
     var n = sec.end - sec.start;
     tr.innerHTML = '<td colspan="' + cols + '"><div class="nt-sec-in">' +
       '<button type="button" class="nt-fold" aria-expanded="' + !sec.folded + '" aria-label="' + (sec.folded ? "Unfold " : "Fold ") + sec.name + '">' + (sec.folded ? "&#9656;" : "&#9662;") + "</button>" +
+      '<button type="button" class="nt-eye" aria-pressed="' + !sec.hidden + '" title="' + (sec.hidden ? "Show this section in the score" : "Leave this section out of the score") + '" aria-label="Show ' + sec.name.replace(/[<&"]/g, "") + ' in the score">' +
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>' + (sec.hidden ? '<line x1="3" y1="21" x2="21" y2="3"/>' : "") + "</svg></button>" +
       '<input type="text" aria-label="Name of section">' +
       '<button type="button" class="nt-btn nt-mini" data-s="up" title="Move the section up">&#8593;</button>' +
       '<button type="button" class="nt-btn nt-mini" data-s="down" title="Move the section down">&#8595;</button>' +
@@ -584,6 +689,7 @@
     var inp = tr.querySelector("input"); inp.value = sec.name;
     tr.querySelector(".nt-style-slot").appendChild(styleButton(D.bandOf(doc, sec.start, true), "section", function () { openBand({ section: sec.start }, sec.name); }));
     inp.onchange = function () { var v = inp.value.trim(); if (!v) { inp.value = sec.name; return; } change(function () { first.heading = v; }); };
+    tr.querySelector(".nt-eye").onclick = function (e) { e.stopPropagation(); change(function () { first.hidden = !first.hidden; }); };
     tr.querySelector(".nt-fold").onclick = function () { change(function () { first.folded = !first.folded; if (first.folded && cur >= sec.start && cur < sec.end) { cur = sec.start; } }); };
     tr.querySelectorAll("[data-s]").forEach(function (b) {
       b.onclick = function () {
@@ -668,6 +774,7 @@
     $("nt-setup-sum").textContent = [doc.title, doc.meter, doc.keyConfirmed && doc.key ? KEYNAME(doc.key) : "", doc.voices.length > 1 ? doc.voices.length + " voices" : ""].filter(Boolean).join(" · ");
     renderVoices();
     renderSheet();
+    renderQuick();
     keyAnnounce();
     var into = "into " + cname(cur) + (doc.voices.length > 1 ? ", voice " + doc.voices[voice].name : "");
     // chords
@@ -691,6 +798,41 @@
     $("nt-words-sum").textContent = "into " + cname(cur);
     // score
     var r = refreshText(); map = r.map;
+    // one section only (the Show menu): its chunks drawn on their own, the map's chunks counted from the whole piece
+    var secs = D.sections(doc), sk = $("nt-scope").getAttribute("data-k"), names = secs.map(function (x) { return x.name; }).join("|");
+    $("nt-scope-l").hidden = secs.length < 2;
+    if ($("nt-scope").getAttribute("data-names") !== names) {
+      $("nt-scope").setAttribute("data-names", names);
+      var cnt = {};
+      $("nt-scope").innerHTML = '<option value="">The whole piece</option>' + secs.map(function (x, i) {
+        var n = x.name.toLowerCase(), k = cnt[n] = (cnt[n] | 0) + 1;
+        return '<option value="' + i + '">' + (i + 1) + ". " + x.name.replace(/[<&]/g, "") + (k > 1 ? " " + k : "") + "</option>"; }).join("");
+    }
+    var one = sk !== null && sk !== "" && secs[+sk] ? secs[+sk] : null;
+    $("nt-scope").value = one ? sk : "";
+    if (one) {
+      var sub = JSON.parse(JSON.stringify(doc)), at0 = D.at(doc, one.start);
+      sub.chunks = sub.chunks.slice(one.start, one.end); sub.meter = at0.meter; sub.key = at0.key;
+      var rs = D.toAbc(sub);
+      r = { abc: rs.abc, map: rs.map.map(function (m) { return Object.assign({}, m, { chunk: m.chunk + one.start }); }) };
+      map = r.map;
+    } else if (secs.some(function (x) { return x.hidden; })) {
+      // sections with their eye off are left out: the rest drawn together, the map's chunks counted from the whole piece
+      var keep = [];
+      doc.chunks.forEach(function (c, i) { var sx = D.sectionOf(doc, i); if (!sx || !sx.hidden) keep.push(i); });
+      var sub2 = JSON.parse(JSON.stringify(doc));
+      sub2.chunks = keep.map(function (i, k) {
+        var c = sub2.chunks[i];
+        if (k === 0) { var a0 = D.at(doc, i); sub2.meter = a0.meter; sub2.key = a0.key; c.meter = null; c.key = null; }
+        else if (keep[k - 1] !== i - 1) { var a = D.at(doc, i), b = D.at(doc, keep[k - 1]); c.meter = a.meter !== b.meter ? a.meter : null; c.key = a.key !== b.key ? a.key : null; }
+        return c;
+      });
+      if (keep.length) {
+        var rs2 = D.toAbc(sub2);
+        r = { abc: rs2.abc, map: rs2.map.map(function (m) { return Object.assign({}, m, { chunk: keep[m.chunk] }); }) };
+      } else r = { abc: "X:1\nK:C\n", map: [] };
+      map = r.map;
+    }
     var paper = $("nt-paper");
     if (map.length || /x/.test(r.abc.split("K:")[1] || "")) {
       tune = ABCJS.renderAbc(paper, r.abc, { staffwidth: Math.max(300, paper.clientWidth - 40), add_classes: true, clickListener: clickScore,
@@ -747,12 +889,19 @@
   }
   function addCell(i) {
     var c = cells[i]; if (!c) return;
+    if (ENDING && endCap.length) {
+      var q = c.events.reduce(function (s, e) { return s + e.durQ; }, 0);
+      var to = endCap.findIndex(function (cap, ci) { return cap && D.part(doc.chunks[ci], 0).rhythm.reduce(function (s, e) { return s + e.durQ; }, 0) + q <= cap + 1e-6; });
+      if (to < 0) { status(endCap.some(function (cap, ci) { return cap && D.part(doc.chunks[ci], 0).rhythm.reduce(function (s, e) { return s + e.durQ; }, 0) < cap - 1e-6; })
+        ? "That pattern doesn't fit in what's left. Pick a shorter one." : "The song is complete: every bar is full."); return; }
+      cur = to; voice = 0;
+    }
     change(function () { c.events.forEach(function (e) { part().rhythm.push({ type: e.type, durQ: e.durQ }); }); });
   }
 
   // ---- selecting and moving notes ----------------------------------------------------------------------------------
   function clickScore(el, tn, cls, an, drag, ev) {
-    var e = map.find(function (m) { return m.start === el.startChar; });
+    var e = map.find(function (m) { return covers(el, m); });
     if (!e) return;
     if (ev && ev.shiftKey && sel && sel.slot !== undefined && sel.voice === e.voice) {
       sel = { chunk: sel.chunk, voice: sel.voice, slot: sel.slot, end: { chunk: e.chunk, slot: e.slot } }; cur = e.chunk; status(""); render(); return;
@@ -762,7 +911,7 @@
     render();
   }
   function clickPending(el) {
-    var e = pmap.find(function (m) { return m.start === el.startChar; });
+    var e = pmap.find(function (m) { return covers(el, m); });
     if (e) { sel = { chunk: e.chunk, voice: e.voice, pitch: e.pitch }; cur = e.chunk; voice = e.voice; render(); }
   }
   function selPart() { return D.part(doc.chunks[sel.chunk], sel.voice); }
@@ -843,7 +992,14 @@
     for (var i = cur; i >= 0; i--) { var p = D.part(doc.chunks[i], voice).pitches.filter(function (x) { return x != null; }); if (p.length) return p[p.length - 1]; }
     return null;
   }
-  function addPitch(midi) { change(function () { D.addPitch(part(), midi); sel = null; }); hear(midi); }
+  function addPitch(midi) {
+    if (ENDING && endCap.length && !sel) {   // the first open bar with a note still empty, else the last open bar
+      var to = endCap.findIndex(function (cap, ci) { var c = doc.chunks[ci]; return cap && c.pitches.filter(function (x) { return x != null; }).length < c.rhythm.filter(function (e) { return e.type === "note"; }).length; });
+      if (to < 0) for (var k = endCap.length - 1; k >= 0; k--) if (endCap[k]) { to = k; break; }
+      cur = to; voice = 0;
+    }
+    change(function () { D.addPitch(part(), midi); sel = null; }); hear(midi);
+  }
   function lastIndex() { var p = part().pitches; for (var i = p.length - 1; i >= 0; i--) if (p[i] != null) return i; return -1; }
   function editLast(f) { var k = lastIndex(); if (k < 0) return; var p = part().pitches; change(function () { p[k] = f(p[k]); }); hear(p[k]); }
   function removeLast() { var k = lastIndex(); if (k < 0) return; change(function () { var p = part().pitches; if (k === p.length - 1) p.pop(); else p[k] = null; }); }
@@ -864,11 +1020,13 @@
   }
   // every key from the MIDI keyboard or the computer keys comes here
   function noteOn(midi, vel, t) {
+    lightKey(midi, true);
     if (rec) { rec.on(midi, t); hear(midi); return; }
     if (chordsIn) { chordLis.noteOn(midi, t); hear(midi); return; }
     addPitch(midi);
   }
   function noteOff(midi, t) {
+    lightKey(midi, false);
     if (rec) { rec.off(midi, t); return; }
     if (chordsIn) chordHeard(chordLis.noteOff(midi, t));
   }
@@ -883,9 +1041,9 @@
     if (midiOn) return;
     if (!navigator.requestMIDIAccess) { status("This browser can't use a MIDI keyboard. Try Chrome or Edge."); return; }
     CE.connect({
-      on: function (m, v, t) { if (mode === "midi" || rec || chordsIn) noteOn(m, v, t); },
-      off: function (m, t) { if (mode === "midi" || rec || chordsIn) noteOff(m, t); },
-      inputs: function (names) { status(names.length ? "Listening to " + names.join(", ") + "." : "No MIDI keyboard found. Plug one in."); }
+      on: function (m, v, t) { if (mode === "midi" || rec || chordsIn) noteOn(m, v, t); else lightKey(m, true); },
+      off: function (m, t) { if (mode === "midi" || rec || chordsIn) noteOff(m, t); else lightKey(m, false); },
+      inputs: function (names) { $("nt-q-midi").textContent = names.length ? "MIDI: " + names.join(", ") : "MIDI: plug in a keyboard"; status(names.length ? "Listening to " + names.join(", ") + "." : "No MIDI keyboard found. Plug one in."); }
     }).then(function () { midiOn = true; }, function () { status("The browser did not allow MIDI."); });
   }
 
@@ -912,6 +1070,8 @@
       else if (e.key === "v" && clip) { e.preventDefault(); pasteAfter(); }
       return;
     }
+    if (e.code === "Space" && !e.altKey && !ENDING) { e.preventDefault(); if (rec) stopTake(); else quickStart(false); return; }
+    if (e.shiftKey && !rec && !ENDING && (e.code === "KeyR" || e.key === "Backspace") && lastQuick) { e.preventDefault(); if (e.code === "KeyR") quickRedo(); else quickDrop(); return; }
     if (rec) { if (e.key === "Escape") stopTake(); return; }
     // chunks from the keyboard: j / k go down / up (folded sections skipped), Alt+j / k drag the chunk, Shift+Alt+j / k its section.
     // Physical keys, so Option on a Mac works; plain j / k are piano keys while the computer keys are a piano, so they wait then.
@@ -983,11 +1143,15 @@
     log: function () { return dwimAt && dwimAt.take ? dwimAt.take.log : null; },
     none: function () { return "No take here: these bars were not played in with Play it in time (or a newer edit replaced the chunk)."; },
     bars: function () { return dwimAt ? chunkBars(dwimAt.ci) : 1; },
-    toLog: function (a, b) { var f = dwimAt.take.from; return { from: Math.max(0, a - f), to: Math.min(dwimAt.take.bars - 1, b - f) }; },
+    // the chunk's bars a..b -> the log's (a take recorded after a pickup has the pickup as the log's bar 0: lb 1)
+    toLog: function (a, b) { var t = dwimAt.take, f = t.from, lb = t.lb || 0; return { from: Math.max(0, a - f) + lb, to: Math.min(t.bars - 1, b - f) + lb }; },
     draw: function (el, abc) { ABCJS.renderAbc(el, abc, { responsive: "resize", add_classes: true }); },
     apply: function (v, from, to) {
-      var t = dwimAt.take, ci = dwimAt.ci, vv = dwimAt.v, cfg = t.log.cfg, geo = CE.geoOf(cfg.n, cfg.d), n = to - from + 1;
-      var w = D.fromTakeBars(v.melody || [], geo.per, 4 / Math.max(8, cfg.d), n);
+      var t = dwimAt.take, ci = dwimAt.ci, vv = dwimAt.v, cfg = t.log.cfg, geo = CE.geoOf(cfg.n, cfg.d), n = to - from + 1, unitQ = 4 / Math.max(8, cfg.d);
+      from -= t.lb || 0; to -= t.lb || 0;                                // the take's own bars from here on
+      // the Pickup chunk's one bar is as long as the chunk
+      var per = doc.chunks[ci].pickup ? Math.round(D.chunkLen(doc, ci) / unitQ * 1e6) / 1e6 : geo.per;
+      var w = D.fromTakeBars(v.melody || [], per, unitQ, n);
       change(function () {
         D.replaceBars(doc, ci, vv, from + t.from, to + t.from, w.rhythm, w.pitches);
         var tk = D.takeAt(doc, ci, vv, from + t.from);
@@ -1091,6 +1255,7 @@
   }
   function stopTake() {
     if (!rec) return;
+    if (rec.quick) { quickStop(); return; }
     var r = rec; rec = null; clearInterval(r.timer);
     $("nt-t-rec").innerHTML = "&#9679; Record"; $("nt-t-rec").classList.remove("is-rec");
     var played = (performance.now() - r.downPerf) / 1000 / r.cfg.beatSec;
@@ -1102,6 +1267,191 @@
     applyTake(r.cfg, r.events, bars);
     $("nt-t-status").textContent = "Written: " + bars + " bar" + (bars === 1 ? "" : "s") + " into " + cname(cur) + ".";
   }
+
+  // ---- Play it in: take after take, each its own chunk --------------------------------------------------------------
+  // One or two bars of count-in, then play; the take ends after `quiet` bars with nothing held (or Space / the pedal). Notes in the
+  // last bar of the count-in of the piece's first take make a pickup chunk (chunk.pickup), up to a whole bar less one shortest note.
+  // a phrase from Timestamp Notes (nt-goto): { ci, bar, bars, leadIn (beats), label }. Takes then go into its bars, notes in the
+  // count-in into the bar(s) before (NotationDoc.writeLeadIn). seamAlt: the doc with the earlier notes kept where both sounded.
+  var phrase = null, seamAlt = null;
+  var QSTORE = "ntQuick", Q = { bpm: 90, count: "1", pickup: "auto", res: "1", feel: "straight", trip: "off", quiet: "2" }, lastQuick = null;
+  try { Object.assign(Q, JSON.parse(localStorage.getItem(QSTORE) || "{}")); } catch (e) {}
+  function qSave() { try { localStorage.setItem(QSTORE, JSON.stringify(Q)); } catch (e) {} }
+  function qStatus(t) { $("nt-q-status").textContent = t || ""; }
+  function qGeo() { var mi = D.meterInfo(here().meter) || D.meterInfo("4/4"); return { mi: mi, g: CE.geoOf(mi.n, mi.d) }; }
+  function isEmpty(ch) {
+    if (ch.chords.length || (ch.words || "").trim()) return false;
+    for (var v = 0; v < doc.voices.length; v++) { var p = D.part(ch, v); if (p.rhythm.length || p.pitches.some(function (x) { return x != null; })) return false; }
+    return true;
+  }
+  // the pickup menu: lengths in eighths (the meter's units) from one to a bar less one
+  function qPickupOptions() {
+    var g = qGeo().g, h = '<option value="auto">From the count-in</option><option value="off">None</option>';
+    for (var k = 1; k < g.per; k++) {
+      var beats = k / g.beat, frac = beats % 1 ? (Math.floor(beats) ? Math.floor(beats) : "") + (Math.abs(beats % 1 - 0.5) < 1e-6 ? "½" : "") : beats;
+      var bl = g.compound || (beats % 1 && Math.abs(beats % 1 - 0.5) > 1e-6) ? "" : " (" + frac + " beat" + (beats === 1 ? "" : "s") + ")";
+      h += '<option value="' + k + '">' + k + " eighth" + (k === 1 ? "" : "s") + bl + "</option>";
+    }
+    var el = $("nt-q-pickup"); if (el.dataset.per !== String(g.per)) { el.innerHTML = h; el.dataset.per = g.per; }
+    el.value = Q.pickup; if (el.value !== String(Q.pickup)) { Q.pickup = "auto"; el.value = "auto"; }
+  }
+  function renderQuick() {
+    if (!$("nt-q-meter").options.length) {
+      $("nt-q-meter").innerHTML = options(METERS, "Choose");
+      $("nt-q-key").innerHTML = options(KEYS, "C (not chosen)", KEYNAME);
+    }
+    $("nt-q-meter").value = doc.meter || ""; $("nt-q-key").value = doc.keyConfirmed && doc.key ? doc.key : "";
+    ["bpm", "count", "res", "feel", "trip", "quiet"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
+    qPickupOptions();
+    var g = qGeo().g, dots = $("nt-q-beats");
+    if (dots.children.length !== g.bpb) { dots.innerHTML = ""; for (var i = 0; i < g.bpb; i++) dots.appendChild(document.createElement("span")); }
+    $("nt-q-redo").disabled = $("nt-q-drop").disabled = !lastQuick || !!rec;
+  }
+  function qBeat(i) { Array.prototype.forEach.call($("nt-q-beats").children, function (s, k) { s.classList.toggle("is-on", k === i); s.classList.toggle("is-one", k === 0); }); }
+  var keyEls = {};
+  (function () {
+    var LO = 36, HI = 96, whites = [], black = function (m) { return [1, 3, 6, 8, 10].indexOf(m % 12) >= 0; }, k = $("nt-q-keys");
+    for (var m = LO; m <= HI; m++) if (!black(m)) whites.push(m);
+    var w = 100 / whites.length;
+    whites.forEach(function (m, i) { var e = document.createElement("i"); e.style.left = i * w + "%"; e.style.width = w + "%"; k.appendChild(e); keyEls[m] = e; });
+    for (var n = LO; n <= HI; n++) if (black(n)) {
+      var e = document.createElement("i"), i = whites.indexOf(n - 1); e.className = "k-b";
+      e.style.left = (i + 0.68) * w + "%"; e.style.width = w * 0.64 + "%"; k.appendChild(e); keyEls[n] = e;
+    }
+  })();
+  function lightKey(m, on) { if (keyEls[m]) keyEls[m].classList.toggle("is-down", on); }
+
+  function quickStart(redo) {
+    if (rec) return;
+    if (!D.meterInfo(here().meter)) { if (!doc.meter) { change(function () { doc.meter = "4/4"; }); qStatus("No meter was chosen: 4/4."); } else { qStatus("Choose a meter for this chunk first."); return; } }
+    connectMidi(); sel = null; if (synth) play();
+    var q = qGeo(), g = q.g, mi = q.mi, bpm = Math.max(30, Math.min(240, +Q.bpm || 90)), beatSec = 60 / bpm, count = g.bpb, countBeats = count * (+Q.count || 1);
+    if (inPhrase() && phrase.leadIn) countBeats = Math.max(countBeats, count * Math.ceil(phrase.leadIn / count + 0.25));   // room for the pickup
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.resume) actx.resume();
+    var t0 = actx.currentTime + 0.12, downPerf = performance.now() + (t0 + countBeats * beatSec - actx.currentTime) * 1000;
+    rec = { quick: true, redo: redo, mi: mi, g: g, beatSec: beatSec, count: count, countBeats: countBeats, downPerf: downPerf, t0: t0, next: 0,
+      events: [], held: {}, lastOff: null, heard: [],
+      on: function (m, t) { var b = ((t == null ? performance.now() : t) - downPerf) / 1000 / beatSec; this.events.push({ k: "on", n: m, beat: b }); this.held[m] = 1;
+        this.heard.push(D.spell(m, here().key, {}).replace(/[,'=]/g, "").replace("^", "#").replace("_", "b").toUpperCase()); if (this.heard.length > 40) this.heard.shift(); $("nt-q-heard").textContent = this.heard.join(" "); },
+      off: function (m, t) { if (!this.held[m]) return; var b = ((t == null ? performance.now() : t) - downPerf) / 1000 / beatSec; delete this.held[m]; this.events.push({ k: "off", n: m, beat: b }); this.lastOff = b; }
+    };
+    $("nt-q-go").classList.add("is-on"); $("nt-q-go").innerHTML = "&#9632; Stop<small>Space / pedal</small>"; $("nt-q-heard").textContent = ""; qStatus("");
+    var r = rec;
+    r.timer = setInterval(function () {
+      while (r.t0 + r.next * beatSec < actx.currentTime + 0.2) { click(r.t0 + r.next * beatSec, r.next % count === 0); r.next++; }
+      var now = (performance.now() - downPerf) / 1000 / beatSec, st = $("nt-q-state");
+      qBeat((((Math.floor(now) % count) + count) % count));
+      if (now < 0) { st.textContent = "Count " + (Math.floor((now + countBeats) % count) + 1); st.classList.add("is-count"); }
+      else { st.textContent = "Bar " + (Math.floor(now / count) + 1); st.classList.remove("is-count"); }
+      var quiet = +Q.quiet;
+      if (quiet && r.lastOff != null && !Object.keys(r.held).length && now - r.lastOff > quiet * count) quickStop();
+    }, 20);
+    renderQuick();
+  }
+  function quickStop() {
+    var r = rec; if (!r || !r.quick) return;
+    rec = null; clearInterval(r.timer);
+    $("nt-q-go").classList.remove("is-on"); $("nt-q-go").innerHTML = "&#9679; Record<small>Space / pedal</small>";
+    $("nt-q-state").textContent = "Ready"; $("nt-q-state").classList.remove("is-count"); qBeat(-1);
+    var end = (performance.now() - r.downPerf) / 1000 / r.beatSec;
+    Object.keys(r.held).forEach(function (n) { r.events.push({ k: "off", n: +n, beat: end }); lightKey(+n, false); r.lastOff = end; });
+    var ons = r.events.filter(function (e) { return e.k === "on"; });
+    if (!ons.length) { qStatus("Nothing was played."); renderQuick(); return; }
+    quickApply(r, r.events);
+  }
+  // a finished take (events in beats from the first downbeat) -> a chunk after the selected one (or the selected one, when empty)
+  function inPhrase() { return !!phrase && cur === phrase.ci && phrase.ci < doc.chunks.length; }
+  function quickApply(r, events) {
+    if (inPhrase() || (r.redo && lastQuick && lastQuick.phrase)) { phraseApply(r, events); return; }
+    var g = r.g, mi = r.mi, count = r.count, unitQ = 4 / Math.max(8, mi.d), unitBeats = (+Q.res) / g.beat;
+    if (r.redo && lastQuick) { doc = D.upgrade(JSON.parse(lastQuick.before)); cur = lastQuick.cur; }
+    var into = isEmpty(chunk()) ? cur : cur + 1, first = into === 0;
+    // the pickup: the first note before the downbeat, to the nearest shortest note, at most a bar
+    var on0 = Math.min.apply(null, events.filter(function (e) { return e.k === "on"; }).map(function (e) { return e.beat; })), pk = 0;
+    if (first && Q.pickup !== "off") {
+      if (Q.pickup === "auto") { if (on0 < -unitBeats / 2) pk = Math.min(count, Math.round(-on0 / unitBeats) * unitBeats); }
+      else pk = +Q.pickup / g.beat;
+    }
+    var tk = CE.take({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: count, key: here().key || "C", slash: true, res: +Q.res,
+      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, split: 60, pickup: pk ? "auto" : "off", pickupBeats: pk || null });
+    events.slice().sort(function (a, b) { return a.beat - b.beat; }).forEach(function (e) { var t = e.beat * r.beatSec * 1000; if (e.k === "on") tk.on(e.n, 0.8, t); else tk.off(e.n, t); });
+    tk.finish();
+    var got = tk.pickup(), mel = tk.grid.melody() || [], lastEnd = r.lastOff != null ? r.lastOff : 0;
+    var nb = Math.max(1, Math.ceil(lastEnd / count - 0.02)), log = tk.log();
+    var short = got && got < count - 1e-6, before = JSON.stringify(doc), at0 = cur;
+    // a whole bar before the downbeat is no pickup: one more bar
+    var w = short ? D.fromTakeBars(mel.slice(1), g.per, unitQ, nb) : D.fromTakeBars(mel, g.per, unitQ, nb + (got ? 1 : 0));
+    var n = doc.chunks.filter(function (c) { return /^Take \d+$/.test(c.name); }).length + 1;
+    change(function () {
+      if (into === cur && isEmpty(chunk())) doc.chunks.splice(cur, 1);
+      var ch = D.newChunk("Take " + n), p = D.part(ch, voice);
+      p.rhythm = w.rhythm; p.pitches = w.pitches;
+      doc.chunks.splice(into, 0, ch); cur = into;
+      if (short) {
+        var pc = D.newChunk("Pickup"), pp = D.part(pc, voice), pw = D.fromTakeBars([mel[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1);
+        pc.pickup = true; pp.rhythm = pw.rhythm; pp.pitches = pw.pitches;
+        doc.chunks.splice(into, 0, pc); cur = into + 1;
+        // kept for DWIM (apps/shared/NOTATION-DWIM.md): the log's bar 0 is the pickup, its bar 1 the take's first
+        D.keepTake(doc, into, voice, log, 0, 1, 0);
+        D.keepTake(doc, cur, voice, log, 0, nb, 1);
+      } else D.keepTake(doc, cur, voice, log, 0, nb);                     // kept for DWIM (apps/shared/NOTATION-DWIM.md)
+      sel = null;
+    });
+    if (r.redo && lastQuick) history.splice(history.length - 1, 1, lastQuick.before);   // undo goes back past the replaced take
+    lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : at0 };
+    qStatus(cname(cur) + ": " + nb + " bar" + (nb === 1 ? "" : "s") + (short ? ", after a pickup of " + Math.round(got * g.beat) + " eighth" + (Math.round(got * g.beat) === 1 ? "" : "s") : "") + ".");
+    renderQuick();
+  }
+  // a take into the phrase's bars; notes started in the count-in are its lead-in, written into the bar(s) before
+  function phraseApply(r, events) {
+    var g = r.g, mi = r.mi, count = r.count, unitQ = 4 / Math.max(8, mi.d), unitBeats = (+Q.res) / g.beat, qpb = mi.barQ / count;
+    if (r.redo && lastQuick) { doc = D.upgrade(JSON.parse(lastQuick.before)); cur = lastQuick.cur; phrase = JSON.parse(lastQuick.phrase); }
+    var ph = phrase, before = JSON.stringify(doc), phBefore = JSON.stringify(ph), cut = -unitBeats / 2;
+    var sorted = events.slice().sort(function (a, b) { return a.beat - b.beat; }), open = {}, lead = [], body = [], isLead = {};
+    sorted.forEach(function (e) {
+      if (e.k === "on") { isLead[e.n] = e.beat < cut; open[e.n] = e.beat; if (!isLead[e.n]) body.push(e); return; }
+      if (open[e.n] == null) return;
+      if (isLead[e.n]) {
+        var on = Math.round(open[e.n] / unitBeats) * unitBeats, off = Math.max(on + unitBeats, Math.round(e.beat / unitBeats) * unitBeats);
+        if (on < 0) lead.push({ t: on * qpb, d: (Math.min(off, 0) - on) * qpb, midi: e.n });
+      } else body.push(e);
+      delete open[e.n];
+    });
+    var tk = CE.take({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: count, key: here().key || "C", slash: true, res: +Q.res,
+      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, split: 60, pickup: "off" });
+    body.forEach(function (e) { var t = e.beat * r.beatSec * 1000; if (e.k === "on") tk.on(e.n, 0.8, t); else tk.off(e.n, t); });
+    tk.finish();
+    var mel = tk.grid.melody() || [], nb = ph.bars, w = D.fromTakeBars(mel, g.per, unitQ, nb), log = tk.log(), res = null, alt = null;
+    change(function () {
+      D.replaceBars(doc, ph.ci, voice, ph.bar, ph.bar + nb - 1, w.rhythm, w.pitches);
+      D.keepTake(doc, ph.ci, voice, log, ph.bar, nb);                      // kept for DWIM (apps/shared/NOTATION-DWIM.md)
+      var mid = JSON.stringify(doc);
+      res = D.writeLeadIn(doc, ph.ci, voice, ph.bar, lead);
+      if (res.conflicts.length) { var d2 = D.upgrade(JSON.parse(mid)); D.writeLeadIn(d2, ph.ci, voice, ph.bar, lead, { prefer: "a" }); alt = JSON.stringify(d2); }
+      ph.ci += res.inserted; cur = ph.ci; sel = null;
+    });
+    if (r.redo && lastQuick) history.splice(history.length - 1, 1, lastQuick.before);
+    lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : cur - res.inserted, phrase: r.redo && lastQuick ? lastQuick.phrase : phBefore };
+    seamAlt = alt; $("nt-seam-keep").hidden = !alt;
+    var pk = lead.length ? lead.length + " pickup note" + (lead.length === 1 ? "" : "s") + (res.line && res.line.t == null ? " (a Pickup chunk)" : " in the bar before") : "";
+    qStatus(ph.label + ": " + nb + " bar" + (nb === 1 ? "" : "s") + (pk ? ", " + pk : "") +
+      (res.conflicts.length ? "; where the pickup and the phrase before both sounded the pickup was kept" : "") + ".");
+    renderQuick();
+  }
+  $("nt-seam-keep").onclick = function () {
+    if (!seamAlt) return;
+    var a = seamAlt; seamAlt = null; this.hidden = true;
+    change(function () { doc = D.upgrade(JSON.parse(a)); sel = null; });
+    qStatus("Kept the earlier notes where both sounded."); this.blur();
+  };
+  function quickDrop() {
+    if (!lastQuick || rec) return;
+    var b = lastQuick; lastQuick = null;
+    change(function () { doc = D.upgrade(JSON.parse(b.before)); cur = Math.min(b.cur, doc.chunks.length - 1); sel = null; if (b.phrase) phrase = JSON.parse(b.phrase); });
+    seamAlt = null; $("nt-seam-keep").hidden = true;
+    qStatus("The last take is gone."); renderQuick();
+  }
+  function quickRedo() { if (!lastQuick || rec) return; quickStart(true); }
 
   // ---- controls ----------------------------------------------------------------------------------------------------
   $("nt-key").innerHTML = options(KEYS, "Not chosen yet", KEYNAME);
@@ -1185,7 +1535,13 @@
   // rhythm, modes, score
   document.querySelectorAll("#nt-rhythm [data-crit]").forEach(function (b) { b.onchange = render; });
   $("nt-rhythm-undo").onclick = undo;
-  $("nt-rhythm-clear").onclick = function () { change(function () { part().rhythm = []; sel = null; }); };
+  $("nt-rhythm-clear").onclick = function () {
+    if (ENDING && endCap.length) {   // the whole ending: its rhythm and notes
+      change(function () { endCap.forEach(function (cap, ci) { if (cap) { doc.chunks[ci].rhythm = []; doc.chunks[ci].pitches = []; } }); cur = endCap.findIndex(Boolean); sel = null; });
+      return;
+    }
+    change(function () { part().rhythm = []; sel = null; });
+  };
   document.querySelectorAll("[data-mode]").forEach(function (b) { b.onclick = function () { setMode(b.dataset.mode); b.blur(); }; });
   $("nt-play").onclick = play;
   $("nt-undo").onclick = undo;
@@ -1221,11 +1577,117 @@
   };
   $("nt-cho-copy").onclick = function () { var t = $("nt-cho-text"); t.select(); try { navigator.clipboard.writeText(t.value).catch(function () { document.execCommand("copy"); }); } catch (e) { document.execCommand("copy"); } };
 
+  // dictation: the Dictation page sends dict-load (meter, key, title); Hand in sends the ABC back as dict-submit
+  if (DICT) {
+    var tell = function (m) { try { window.opener.postMessage(m, location.origin); } catch (e) {} };
+    $("nt-dict").hidden = false;
+    window.addEventListener("message", function (e) {
+      if (e.source !== window.opener || e.origin !== location.origin || !e.data || e.data.type !== "dict-load") return;
+      var m = e.data;
+      change(function () { doc = D.create(); doc.meter = m.meter || null; doc.key = m.key || null; doc.keyConfirmed = !!m.key; doc.title = m.title || "Dictation"; cur = 0; voice = 0; sel = null; shownCur = -1; });
+      $("nt-dict-what").textContent = "Write down what you hear" + (m.meter ? " (" + m.meter + (m.key ? ", " + KEYNAME(m.key) : "") + (m.bars ? ", " + m.bars + " bars" : "") + ")" : "") + ", then hand it in.";
+    });
+    $("nt-dict-hear").onclick = function () { tell({ type: "dict-replay" }); this.blur(); };
+    $("nt-dict-hand").onclick = function () { tell({ type: "dict-submit", abc: D.toAbc(doc).abc }); $("nt-dict-what").textContent = "Handed in: the result is on the Dictation page."; try { window.opener.focus(); } catch (e) {} };
+    tell({ type: "dict-ready" });
+  }
+
+  // ending: the Write an Ending lesson (iframe parent) sends end-load { abc, title, from } (from = the chunk to start writing in);
+  // every change goes back as end-change { abc }, so the lesson keeps each song's ending
+  var endCap = [];   // ending: each chunk's length still open for writing (0 = the song's own bars)
+  if (ENDING) {
+    window.addEventListener("message", function (e) {
+      if (e.source !== window.parent || e.origin !== location.origin || !e.data || e.data.type !== "end-load" || typeof e.data.abc !== "string") return;
+      var m = e.data;
+      history = [];
+      doc = D.upgrade(D.fromAbc(m.abc)); if (m.title) doc.title = m.title;
+      endCap = doc.chunks.map(function (c, i) {                     // the bars still to write: their length stays, their x rests go
+        if (D.info(doc, i).pitches) return 0;
+        var len = D.chunkLen(doc, i); c.chordLen = len; c.rhythm = []; return len;
+      });
+      var blank = doc.chunks.findIndex(function (c, i) { return !D.info(doc, i).pitches; });   // the first chunk with no notes yet
+      cur = Math.max(0, Math.min(doc.chunks.length - 1, m.from != null ? m.from : blank >= 0 ? blank : doc.chunks.length - 1)); voice = 0; sel = null; shownCur = -1;
+      try { localStorage.setItem(STORE, JSON.stringify(doc)); } catch (err) {}
+      render();
+      status("Write the ending in the empty bars: pick a chunk, then enter its notes.");
+    });
+    endTell({ type: "end-ready" });
+  }
+
+  // The Backing Track's Melody tab sends nt-abc { abc, title } the same way (?remote=1, after nt-ready).
+  // Timestamp Notes (tools/timestamp-notes.qmd) opens this page with ?remote=1 and sends nt-doc { doc, title } (a piece: sections
+  // the length tapped, chords where they were played) or nt-chordpro { chordpro, title } (words and chords, a chord per bar)
+  if (!DICT && /[?&]remote=1/.test(location.search) && window.opener) {
+    window.addEventListener("message", function (e) {
+      if (e.source !== window.opener || e.origin !== location.origin || !e.data) return;
+      var m = e.data;
+      // nt-goto { section, nth, bar, bars, leadIn, label }: a phrase from Timestamp Notes (phrases.js). Its section here, by name and
+      // occurrence; none -> nt-need-doc (Timestamp Notes then sends nt-doc and asks again)
+      if (m.type === "nt-goto") {
+        var low = String(m.section || "").trim().toLowerCase();
+        var sc = D.sections(doc).filter(function (x) { return x.name.trim().toLowerCase() === low; })[m.nth | 0];
+        if (!sc) { try { window.opener.postMessage({ type: "nt-need-doc" }, location.origin); } catch (err) {} return; }
+        var ci = sc.start, acc = 0;
+        while (ci + 1 < sc.end && acc + D.info(doc, ci).bars <= (m.bar | 0) + 1e-6) { acc += D.info(doc, ci).bars; ci++; }
+        cur = ci; voice = 0; sel = null;
+        var lead = +m.leadIn || 0;
+        phrase = { ci: ci, bar: (m.bar | 0) - acc, bars: Math.max(1, m.bars | 0), leadIn: lead, label: m.label || m.section };
+        seamAlt = null; $("nt-seam-keep").hidden = true;
+        $("nt-phrase-label").textContent = (m.label || m.section) + ": " + (m.bars | 0) + (m.bars === 1 ? " bar" : " bars") +
+          (lead ? "; its pickup (" + lead + (lead === 1 ? " beat" : " beats") + ") goes in the bar before" + (ci === 0 && phrase.bar === 0 ? " (a Pickup chunk)" : "") : "") +
+          ". Play it in writes a take into these bars, notes in the count-in into the bar before.";
+        $("nt-phrase").hidden = false;
+        render();
+        status("Phrase " + (m.label || m.section) + " from " + (m.host || "Timestamp Notes") + ".");
+        try { window.focus(); } catch (err) {}
+        return;
+      }
+      // nt-doc: a whole piece (its chords already placed where they were played); nt-chordpro: words and chords to read in
+      if (!(m.type === "nt-chordpro" && typeof m.chordpro === "string") && !(m.type === "nt-doc" && m.doc && Array.isArray(m.doc.chunks)) && !(m.type === "nt-abc" && typeof m.abc === "string")) return;
+      var f = doc.chunks.some(function (c, i) { var x = D.info(doc, i); return x.rhythm || x.pitches || x.chords || x.words; });
+      if (f && !confirm("Read in “" + (m.title || "Untitled") + "” from " + (m.host || "Timestamp Notes") + "? It replaces the piece here.")) return;
+      change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; cur = 0; voice = 0; sel = null; shownCur = -1; });
+      status("Read in from " + (m.host || "Timestamp Notes") + ": add the melody chunk by chunk.");
+      try { window.focus(); } catch (err) {}
+    });
+    // back to the recording: Timestamp Notes loops the next phrase (or this one again)
+    ["nt-back", "nt-back-again"].forEach(function (id) {
+      $(id).onclick = function () { try { window.opener.postMessage({ type: "nt-back", again: id === "nt-back-again" }, location.origin); window.opener.focus(); } catch (err) {} this.blur(); };
+    });
+    try { window.opener.postMessage({ type: "nt-ready" }, location.origin); } catch (e) {}
+  }
+
+  $("nt-scope").addEventListener("change", function () {
+    var v = $("nt-scope").value; $("nt-scope").setAttribute("data-k", v);
+    if (v !== "") { var sc = D.sections(doc)[+v]; if (sc) { cur = sc.start; sel = null; } }
+    render(); $("nt-scope").blur();
+  });
+
+  // Play it in
+  $("nt-q-go").onclick = function () { if (rec) stopTake(); else quickStart(false); this.blur(); };
+  $("nt-q-redo").onclick = function () { quickRedo(); this.blur(); };
+  $("nt-q-drop").onclick = function () { quickDrop(); this.blur(); };
+  $("nt-q-meter").onchange = function () { var v = this.value || null; change(function () { doc.meter = v; }); this.blur(); };
+  $("nt-q-key").onchange = function () { var v = this.value; change(function () { doc.key = v || null; doc.keyConfirmed = !!v; }); this.blur(); };
+  ["bpm", "count", "pickup", "res", "feel", "trip", "quiet"].forEach(function (k) {
+    $("nt-q-" + k).onchange = function () { Q[k] = k === "bpm" ? Math.max(30, Math.min(240, +this.value || 90)) : this.value; qSave(); renderQuick(); this.blur(); };
+  });
+  if (navigator.requestMIDIAccess && !ENDING) {            // the sustain pedal records and stops
+    navigator.requestMIDIAccess().then(function (a) {
+      var down = false;
+      function cc(e) { var d = e.data; if ((d[0] & 0xf0) !== 0xb0 || d[1] !== 64) return; var dn = d[2] >= 64; if (dn && !down) { if (rec) stopTake(); else quickStart(false); } down = dn; }
+      function bind() { a.inputs.forEach(function (i) { if (!i._ntq) { i.addEventListener("midimessage", cc); i._ntq = true; } }); }
+      a.addEventListener("statechange", bind); bind();
+    }, function () {});
+  }
   var lastW = 0;
   window.addEventListener("resize", function () { var w = $("nt-paper").clientWidth; if (Math.abs(w - lastW) > 40) { lastW = w; render(); } });
   setMode("letters");
-  window.NotationPage = { bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
-    voice: function () { return voice; }, takeCfg: takeCfg, applyTake: applyTake, chordHeard: chordHeard };   // for tests
+  if (!ENDING) connectMidi();
+  window.NotationPage = { phrase: function (p) { if (p !== undefined) phrase = p; return phrase; }, bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
+    voice: function () { return voice; }, takeCfg: takeCfg, applyTake: applyTake, chordHeard: chordHeard,
+    quickStart: quickStart, quickStop: quickStop, rec: function () { return rec; }, Q: Q,
+    setCur: function (c) { cur = c; sel = null; render(); }, render: function () { render(); } };   // for tests
 })();
 </script>
 ```

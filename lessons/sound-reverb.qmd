@@ -1,5 +1,5 @@
 ---
-title: "Sound 11: Reverb"
+title: "Sound 16: Reverb"
 toc: true
 toc-depth: 2
 ---
@@ -42,6 +42,42 @@ The impulse responses here aren't recordings. They are made from decaying [noise
 that gets duller as it fades, plus a few early reflections. That's close to what a real room does, and
 it means every control can change the room instantly.
 
+## Spring reverb
+
+Before digital reverb, a guitar amp couldn't carry a room around with it, so it carried a **spring**: a
+coil of wire with a small speaker-like driver at one end and a pickup at the other. The sound runs down
+the spring, bounces off the far end, runs back, and keeps bouncing.
+
+<div class="sk" data-w="reverb" data-source="hits" data-preset="Spring" data-title="Spring reverb"></div>
+
+Listen to a single snare hit. Instead of a smooth wash you hear a **"drip"** or **"boing"**: a quick
+falling whistle that repeats. A spring carries low frequencies faster than high ones, so each bounce
+arrives as a sweep from high to low (a **chirp**), and the bounces come back at a steady rate, which
+you can see as the evenly spaced bursts in the strip. **Room size** here sets how long the spring is, so
+how far apart the bounces are.
+
+- **Surf guitar** (Dick Dale, the Ventures) is a spring turned all the way up, with a clean, bright
+  guitar hitting it hard.
+- **Dub reggae** engineers kicked their spring units to get a crash of thunder.
+- Most Fender amps since 1963 have one; pick a guitar amp up and shake it and you'll hear it.
+
+Compare it with **Plate** and **Hall** on the drum loop: the spring is the one that never quite
+sounds like a real place, and that's why people like it.
+
+## Shimmer and freeze
+
+Two modern reverb tricks, both loved by ambient musicians and post-rock guitarists.
+
+<div class="sk" data-w="shimmer" data-source="chords"></div>
+
+- **Shimmer**: part of the reverb tail is [pitch-shifted](sound-pitch.qmd) up an octave and fed back
+  into the reverb. Every trip round, the tail climbs another octave, so a chord grows a halo of high
+  notes that rises and glows above it. Brian Eno and Daniel Lanois made it in the 1980s with two
+  machines; now pedals like the Strymon BigSky do it alone. Try the **Fifths** interval too.
+- **❄ Freeze**: press it while the chords play. The last second of sound is held forever (by reading
+  it as overlapping [grains](sound-granular.qmd)) and the live input is shut off. Change the chord on
+  your keys and the frozen one stays underneath. Press again to let go.
+
 ## On music
 
 Switch the source to the **chords**, the **drum loop** or your **microphone** (headphones on). Long
@@ -51,6 +87,6 @@ to learn what reverb does.
 
 ## Next
 
-- [Sound 12: Chorus and flanger](sound-chorus.qmd)
+- [Sound 17: Delay](sound-delay.qmd)
 
 {{< include _synth-kit.qmd >}}

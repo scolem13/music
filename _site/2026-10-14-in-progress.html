@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-01a82125dcc07191ca4a322ed0902c35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -53,12 +53,7 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "keyboard-shortcut": [],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +83,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
      tool scripts run; injects a step banner when a session is active. -->
 <script src="./apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="./apps/shared/audio-tap.js?v=1"></script>
 
 
 </head>
@@ -148,6 +145,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./lessons/blues-drums.html">
  <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
   </li>  
@@ -166,6 +167,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./lessons/watermelon-congas.html">
  <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/pop-changes.html">
@@ -194,6 +199,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./lessons/hammer-ons-pull-offs.html">
  <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/travis-picking.html">
@@ -230,6 +239,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./lessons/cadences.html">
  <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/guide-tones.html">
@@ -274,6 +287,26 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
+    <a class="dropdown-item" href="./lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./lessons/sound-harmonics.html">
  <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
   </li>  
@@ -290,44 +323,157 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Sound 4: Filters</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./lessons/sound-lfo.html">
- <span class="dropdown-text">Sound 5: LFOs</span></a>
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-subtractive.html">
- <span class="dropdown-text">Sound 6: Subtractive Synthesis</span></a>
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-fm.html">
- <span class="dropdown-text">Sound 7: FM Synthesis</span></a>
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-wavetable.html">
- <span class="dropdown-text">Sound 8: Wavetable Synthesis</span></a>
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-distortion.html">
- <span class="dropdown-text">Sound 9: Distortion</span></a>
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-compressor.html">
- <span class="dropdown-text">Sound 10: The Compressor</span></a>
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-reverb.html">
- <span class="dropdown-text">Sound 11: Reverb</span></a>
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-chorus.html">
- <span class="dropdown-text">Sound 12: Chorus and Flanger</span></a>
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-phaser.html">
- <span class="dropdown-text">Sound 13: Phaser</span></a>
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./lessons/sound-vocoder.html">
- <span class="dropdown-text">Sound 14: The Vocoder</span></a>
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
   </li>  
     </ul>
   </li>
@@ -372,6 +518,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./practice/reading-benchmarks.html">
  <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -461,6 +611,14 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="./tools/ipa-chart.html">
  <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
   </li>  
     </ul>
   </li>
@@ -572,6 +730,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#chord-shape-lessons-written-from-the-sequences-above" id="toc-chord-shape-lessons-written-from-the-sequences-above" class="nav-link" data-scroll-target="#chord-shape-lessons-written-from-the-sequences-above">Chord-shape lessons written (from the sequences above)</a></li>
   <li><a href="#voice-lessons-collapsible-sections-this-session" id="toc-voice-lessons-collapsible-sections-this-session" class="nav-link" data-scroll-target="#voice-lessons-collapsible-sections-this-session">Voice lessons, collapsible sections (this session)</a></li>
   <li><a href="#ipa-chart-sounds-wikimedia-commons-linked-not-copied" id="toc-ipa-chart-sounds-wikimedia-commons-linked-not-copied" class="nav-link" data-scroll-target="#ipa-chart-sounds-wikimedia-commons-linked-not-copied">IPA chart sounds (Wikimedia Commons, linked not copied)</a></li>
+  <li><a href="#accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15" id="toc-accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15" class="nav-link" data-scroll-target="#accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15">Accompaniment-pattern lessons, guitar/piano by-hand fixes, picking lessons (a separate session, 2026-10-14 to 15)</a></li>
+  <li><a href="#big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15" id="toc-big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15" class="nav-link" data-scroll-target="#big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15">Big Timestamp Player, bar map, YouTube follow-along, lesson (a separate session, 2026-10-15)</a></li>
+  <li><a href="#record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15" id="toc-record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15" class="nav-link" data-scroll-target="#record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15">Record-yourself demo, audio sound check, wired into every mic page (this session, 2026-10-15)</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1968,6 +2129,58 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li><strong>Tonality on the lessons and the Chord Sheet:</strong> <code>apps/shared/lessons/key-tonality.js</code> (with tonality.js) on every lesson with the strip’s Key menu: read-only tonality beside it, handed to the shared key. Blues: <code>data-tonality="blues"</code> on the menu (blues-changes) or on
 <html>
 (the six blues-*.qmd lessons; the shared _blues-kit include is also used by congas/hi-hat lessons, which are not marked). Added to _blues-kit.qmd, blues-changes, pop-changes, four-chord-loops, and the generator (scripts/chord-lessons.mjs SCRIPTS; the nine pages regenerated, –check identical). Chord Sheet keeps its editable DO/Tonality/Resting menus and notes “Blues: I7, IV7 and V7” when the shared key is a blues. Accompaniment Styles has no key (patterns in C): nothing to do. Tests: tonality.cdp.js, lessons blues and loops, sheet.cdp.js pass. Pages rendered with scripts/render-test-page.sh only; _site not rendered.</li>
+<li><strong>Is Watermelon Man a blues? (research + page):</strong> notes in <code>research_notes/Is Watermelon Man a blues/</code>, report in <code>reports/Is Watermelon Man a blues.md</code>, page <code>lessons/watermelon-man-blues.qmd</code> (in the Lessons menu after Watermelon Man for Congas, linked from that lesson’s first line; sections fold, Shift+click in the contents folds the rest). Verdict: label it F Major (Blues) (harmonic test met; 16-bar = 12-bar with V-IV stated three times). watermelon-congas.qmd now marked data-tonality=“blues”. Not verified: Real Book / Sher charts, Gioia p. 446, Grove, Hancock’s memoir first-hand, the melody’s blue notes.</li>
+<li><strong>Dictation, graded (2026-10-15):</strong> <code>practice/dictation.qmd</code> (+ <code>_dictation-embed.qmd</code>; sidebar after Reading Benchmarks) plays a Reading Benchmarks line (abcjs synth, tempo, optional tonic chord first; meter, key and bar count given) and opens the Notation page as a remote window (<code>tools/notation.html?dictation=1</code>: scratch doc in <code>ntDictDoc</code>, the user’s <code>ntDoc</code> untouched; messages <code>dict-ready</code>, <code>dict-load</code>, <code>dict-replay</code>, <code>dict-submit</code>). Hand in sends the ABC back; <code>apps/shared/dictation.js</code> grades it by onset (ties merged): pitch (octave slip half credit) and rhythm (extra notes cost one note each), averaged. Result shows both scores side by side and a per-note table; attempts logged to localStorage <code>dictationLog</code> (nothing reads it yet). Tests: <code>node tests/abc/dictation.test.js</code>, <code>node tests/lessons/dictation.cdp.js</code> (after <code>quarto render</code> of both pages); notation-doc and notation.cdp still pass. Not listened to (playback untested by ear). Limits: no chords/tuplets/grace notes (abc-events); a missing note costs only itself, but a wrong length early puts every later onset off, so the rest score as wrong. Ideas: give the first note, mic or MIDI answer instead of writing, use the log for progress.</li>
+<li><strong>Recording lessons (2026-10-15):</strong> six pages, <code>lessons/rec-gain-staging</code>, <code>rec-mics</code>, <code>rec-placement</code>, <code>rec-monitoring</code>, <code>rec-mixing</code>, <code>rec-mastering</code> (“Recording 1-6”), in the Lessons menu after Sound 24 and on lessons/index under a new <strong>Recording</strong> topic button. Each includes <code>_synth-kit.qmd</code> (folding sections, jump bar) and reuses synth-kit widgets (chain “Too hot”, eq on mic, gate “Clean up hiss”, stereo, compressor). New widgets, <code>&lt;div class="rk" data-w=...&gt;</code>, standalone Web Audio (not synth-kit kinds; one at a time, own limiter), loaded per page after the include: <code>apps/shared/lessons/rec-kit-level.js</code> (gainstage: preamp gain + hiss, clipping converter, fader, meters, latching clip light; loudness: limiter, BS.1770 LUFS M/S/I, 4x true peak, -14 LUFS normalisation toggle), <code>rec-kit-mic.js</code> (polar: draggable room, pattern/mic type, proximity, bleed dB; phase: two-mic comb, polarity, 3:1 mode; phantom: +48 V sim), <code>rec-kit-mix.js</code> (latency: mic delay/buffer presets, double-monitoring flange, click; headmix: cue mix + speaker-bleed toggle; multitrack: 5-track balance with bad-mix preset vs reference, mono). All render and pass <code>node --check</code>. <strong>Nobody has opened or listened to them in a browser</strong>: levels, meters, LUFS numbers, mic handling untested. No CDP test yet. Not in CLAUDE.md yet.</li>
+<li><strong>Vocal Warm-up (2026-10-15):</strong> <code>tools/vocal-warmup.qmd</code> (Tools menu, after IPA chart), <code>apps/shared/vocal-warmup.js</code> + <code>.css</code>. A Set up form (voice type, length, focus, energy, pace, range shift, toggles for stretches / breathing / band / auto-advance; remembered in localStorage <code>vocal-warmup:settings</code>) builds a routine; a Warm up panel walks it with Back / Pause / Again / Skip (Space and arrow keys) and a clickable step list. Steps: timed stretches, paced breathing (growing ball), breath pulses on the band’s stick click (<code>BandPlayer.clickAt</code>), piano-led patterns via <code>BandPlayer.chord</code> (chord, then the pattern, up a half step to a comfortable top and back down), and two band steps (a four-bar vamp in C, <code>BandCatalog.styleOpts</code> motown/folk and pop, transposed into the next key from bar 4 of each pass). Folding sections + jump bar via <code>lessons/sections.js</code>. Longest option tops out near 20 minutes (range limits the keys), so it is labelled “Long (20 minutes or more)”. Test: <code>node tests/lessons/warmup.cdp.js</code> after <code>sh scripts/render-test-page.sh tools/vocal-warmup.qmd</code> (all pass; the band check skips because no samples load in the test’s headless Chrome, not even the piano). In CLAUDE.md. <strong>Not listened to</strong>: piano timing (setTimeout-paced), band key changes mid-loop, and levels are untested by ear. Not committed.</li>
+</ul>
+</section>
+<section id="accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15" class="level2">
+<h2>Accompaniment-pattern lessons, guitar/piano by-hand fixes, picking lessons (a separate session, 2026-10-14 to 15)</h2>
+<ul>
+<li><strong>Pattern lessons:</strong> 112 generated pages in <code>lessons/patterns/</code> (every bass line, comping rhythm, drum groove and conga part in <code>BandCatalog</code>, minus drums/congas “none”) plus <code>lessons/patterns/index.qmd</code> (Lessons menu, after Arranging 4; card on lessons/index). Generator: <code>node scripts/pattern-lessons.mjs</code> (catalog descs + its own PLAN table: per pattern a <code>ladder</code> of simpler patterns, home style, tips; <code>SAME</code> = same rhythm in other parts; <code>THREE</code> = gets a 3/4 step). Each page: the pattern in its style, one step per ladder rung (slow), the pattern slowly with a compare button, up to tempo, the other comping instrument, two chords a bar, 3/4, other styles, “How it relates”. All <code>.ar-demo</code>s of arrange-kit. Then <code>quarto render lessons/patterns</code>. <code>arrange-kit.js</code> (v=2) <code>abcOf</code> now takes any n/4 or n/8 meter (5/4 Take Five, 6/8 All Blues). Test: <code>tests/band/lessons/patterns.cdp.js</code> (“PATTERNS OK”, 112 pages, 151 demos); copy <code>_site/lessons/patterns</code> into <code>tests/band/lead/site/lessons/</code> first and use port 8500 (another port can’t reach the sample mirror: empty staves). In tests/band/README. <strong>Not listened to.</strong> Tips are model-written; some ladder steps play a pattern outside its usual style. Navbar entry only on re-rendered pages.</li>
+<li><strong>Guitar Chord Shapes by Hand</strong> (<code>lessons/chord-shapes-guitar-hand.qmd</code>): D7 to G-B2; new G-B5 “Reach” with G7 (old G-B5..13 are now G-B6..14; table and chord-shapes-guitar link updated); B-string muting note with an X grid in G-B3 (<code>X</code> in a shape = red X, diagrams.js/shape-steps.js); Dm only in G-B2; G-B7 moveable shapes, root/1st/2nd inversion of F and Dm, voice-leading tease, links. First barre chords drawn at fret 5 (G-B8 E shape A/Am/A7/Am7, G-B9 A shape D/Dm/Dm7/D7/Dmaj7) with the “start at fret 5, not F” note (tension, fret width); G-B10 from fret 5 down, G-B11 names E and A shapes.</li>
+<li><strong>Finger numbers and barres</strong> (<code>shape-steps.js</code> v=4, <code>diagrams.js</code> v=4): guitar fingers after <code>@</code> (“F 133211@134211”), every shape on the guitar page has them; piano fingers worked out per hand (<code>pianoFingers</code>; <code>C4:1</code> overrides). <code>&lt;div class="sh-toggles"&gt;</code> = one “Show finger numbers” button + “Show barres on every diagram” box (localStorage <code>shape-steps</code>). A barre (one finger, 2+ strings, one fret) is drawn only on rows with <code>data-barre</code> (G-B6, G-B8, G-B9, G-B13) unless the box is ticked.</li>
+<li><strong>Piano Voicings by Hand:</strong> P-B1 (five-finger position) removed, rest renumbered P-B1..P-B12. Both by-hand pages explain the guitar (index = 1) vs piano (thumb = 1, mirrored hands) numbering.</li>
+<li><strong>New <code>lessons/inversions.qmd</code>:</strong> root/1st/2nd inversion, minor, figured bass (⁶, ⁶₄), slash chords, guitar shapes, voice leading. Menu + index.</li>
+<li><strong>Hands</strong> (<code>apps/shared/lessons/hands.js</code>, in <code>_shape-kit.qmd</code>): SVG hands with finger numbers (guitar fretting T 1-4, picking p i m a, piano left/right mirrored) on both by-hand pages and inversions; new first section “Hand position” (<code>#g-hand</code>, <code>#p-hand</code>) with side views. Side views are rough (guitar arch looks like a loop). Dark mode and phone width not checked.</li>
+<li><strong>New guitar lessons:</strong> <code>lessons/hammer-ons-pull-offs.qmd</code> (7 sections) and <code>lessons/travis-picking.qmd</code> (8, incl. Travis with hammer-ons/pull-offs and a chicken pickin’ paragraph, no lesson). New <code>apps/shared/lessons/abc-tab.js</code> (staff + computed tab, H/P over slurs; not abcjs’s tab plugin, which clipped) and <code>lessons/_pick-kit.qmd</code>. Exercise ▶ untested: the test sample mirror lacks nylon-guitar notes. Fingerings and tab worked out on paper; hammer-ons play back as picked notes.</li>
+<li>Nothing above is committed; nobody has listened to or played any of it.</li>
+</ul>
+</section>
+<section id="big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15" class="level2">
+<h2>Big Timestamp Player, bar map, YouTube follow-along, lesson (a separate session, 2026-10-15)</h2>
+<ul>
+<li><strong>Ported</strong> from <code>~/Projects/carols/site/player.*</code> into <code>apps/shared/timestamp-player/</code> (<code>player.js</code>, <code>player-log.js</code>, CSS); page <code>tools/timestamp-player.qmd</code> (Tools menu, last). Now also takes audio files. A line under the title links to the lesson.</li>
+<li><strong>Stamps</strong> keep their exact time (<code>li.dataset.s</code>, saved as <code>s</code>); the log fires <code>btp-stamps</code> on change. YouTube’s coarse clock is carried on by <code>performance.now()</code> while playing.</li>
+<li><strong>Bar map</strong> (<code>bar-map.js</code>, <code>bar-map.css</code>): B taps a bar (Backspace undo; re-tap within 0.15 s replaces), beats a bar, per-bar length/BPM with odd bars (&gt;15% off the median) in yellow. Stamp notes naming a section (Intro/Verse/Chorus/… words, a letter like A or B2, or <code>§ anything</code>) snap to the nearest bar; jump, Loop button or L, a “Bar 7 · Chorus” line, <code>bar-map.json</code> export/import, localStorage <code>btp-bars</code>. Panels fold; no right-hand jump bar on this page (the log column is there).</li>
+<li><strong>YouTube errors</strong> now name the code (2, 5, 100, 101/150, 153). <strong>Follow in a tab</strong>: YouTube plays in its own tab, the page runs its own clock (Return, <code>[</code>/<code>]</code> ±0.1 s, “Clock to”, speed). Jumps open a new tab at <code>&amp;t=Ns</code> and stop the clock there; Loop is refused. Checked in headless Chrome: youtube.com’s <code>Cross-Origin-Opener-Policy: same-origin-allow-popups</code> cuts the handle immediately, so the page can’t close, navigate or reuse (by name) the tab.</li>
+<li><strong>The UMPG block</strong> (J91ti_MpdHA, “blocked it from display on this website or application”) is not about the domain: the same video played on localhost in headless Chrome, both as a plain iframe and in our player. It’s something in the user’s browser (which one, and extensions, not yet known). Puget Sound’s textbook uses a plain youtube-nocookie iframe, nothing special.</li>
+<li><strong>Lesson</strong> <code>lessons/timestamp-player.qmd</code> (“Mapping a Recording”, Lessons menu after rec-mastering, recording topic on the index): load, stamp, name sections, tap bars, use the map, YouTube backup plan, a 15-minute exercise, keys table. sections.js.</li>
+<li><strong>Tests:</strong> <code>node tests/lessons/timestamp.cdp.js</code> (19 checks, silent WAV made in the page, after rendering). Never tried with a real song or a real YouTube tab; follow-mode drift is unmeasured. Not committed.</li>
+<li><strong>Next (planned):</strong> the Backing Track and Notation pages read <code>bar-map.json</code> (jump the recording from a section or bar; the band following the recording’s own tempo). Other audio ideas from the session: slow-down/transpose of files, mic pitch vs the Notation melody, recording takes over the band.</li>
+</ul>
+</section>
+<section id="record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15" class="level2">
+<h2>Record-yourself demo, audio sound check, wired into every mic page (this session, 2026-10-15)</h2>
+<ul>
+<li><strong>Record-yourself demo</strong> <code>tools/webcam-demo.html</code> (plain HTML, not a Quarto page, not linked): a note-finding exercise drawn on a canvas, webcam in the corner, cursor and click ripples, MIDI notes shown, mic plus the page’s notes as audio, saved to the student’s downloads (nothing uploaded). It runs the sound check first and stamps “speakers/headphones · latency · mic peak” into the video. At 2.5 Mb/s a 5-minute take is about 90 MB, too big for most email. Never tried with a real camera or MIDI keyboard.</li>
+<li><strong>Sound check</strong> <code>apps/shared/audio-check.js</code> (<code>AudioCheck.run/ensure/last</code>, helpers <code>latencySec</code>, <code>bleedFloorDb</code>, <code>callAndResponse</code>): Chrome/Edge note, a soft sweep that tells speakers from headphones and measures round-trip latency, a mic level meter. <code>ensure()</code> keeps the result in sessionStorage for the tab, so a student who puts headphones on later keeps “speakers” until the tab closes (a “re-run sound check” link would fix that; not built).</li>
+<li><strong>Hearing safety of the sweep:</strong> 150 ms, 500 to 3000 Hz, 25 ms fades, starts at -48 dBFS and steps up 8 dB only until the mic hears it (one confirming burst at that level), hard cap -24 dBFS. On headphones it plays four bursts and stops at the cap. The test checks the cap holds.</li>
+<li><strong>Detection bug found and fixed:</strong> the first version took Chrome’s fake-microphone beep for the sweep (it reported “speakers” with the mic 40 dB louder than what was played). Now a match must have the sweep’s shape (normalised correlation &gt;= 0.3), be no more than 20 dB louder than what was played, and come back at the same delay (within 3 ms) on a second burst. Not yet tried on real speakers: the thresholds may need loosening in a reverberant room.</li>
+<li><strong>Wired in (by agents, reviewed):</strong>
+<ul>
+<li>Rhythm assessments (<code>apps/rhythm-assessment</code>, <code>apps/lsa-rhythm-assessment</code>): measured latency becomes the default for the existing Calibrate value (Calibrate still overrides); on speakers, onsets below the metronome’s expected bleed are ignored (calibration ungated). The bleed level assumes the accent click (gain 0.22); the LSA woodblocks are louder or softer, so their gating is approximate.</li>
+<li>Tune Assessment: recording clock uses the measured round trip; bleed gate from metronome and chord levels while recording; live pitch muted while the page sounds on speakers. Levels are estimates from the volume settings. No sensitivity control to fall back on.</li>
+<li><code>pitch-detect.js</code> <code>mic()</code>: runs the check, new options <code>floorDb</code> and <code>hold()</code>, frames carry a latency-corrected <code>t</code>.</li>
+<li><code>synth-kit.js</code>: <code>SK.mic()</code> runs the check; on speakers the status warns about feedback (not muted, to keep analysis working). Tuner skips the level step; Bendboard trace shifted by latency.</li>
+<li>Pitch assessment (<code>apps/assessment</code>): check and constraints only.</li>
+<li>Backing Track “follow my playing”: check first; on speakers, mic below bleed (assumes the band near -20 dBFS) counts as silence.</li>
+<li>MIDI pages (Backing Track, Chord Entry, Chords/Solfege): a “Chrome or Edge is recommended” note after MIDI is allowed outside Chromium. The “no Web MIDI” messages there and on the Chord Sheet no longer suggest Firefox.</li>
+</ul></li>
+<li><strong>Tests:</strong> new <code>node tests/lessons/audiocheck.cdp.js</code> (dialog flow, cap, headphones verdict with the fake mic, level meter, session reuse, helpers; after rendering <code>practice/assessment-tune</code>). <code>tuner.cdp.js</code> and <code>sound.cdp.js</code> now seed a headphones result in sessionStorage so the dialog doesn’t block them; both pass, as does <code>tuner.test.js</code>. All 32 synth-kit pages and the assessment and tools pages re-rendered into <code>_site</code>; each loads with no errors. Not committed.</li>
+<li><strong>What nobody has tried:</strong> the sweep on real laptop speakers and real headphones; the bleed gates with a real student on speakers; the feedback warning in the sound lessons.</li>
+<li><strong>Next candidates (from a survey of the courses):</strong> a “check my singing” control in <code>abc-ex.js</code> (voice-pop, voice-jazz, voice-classical: about 20 sing prompts); rhythm grading or record-yourself on the ~50 patterns pages (one template); grading the hum against the drone in tuning-systems; quarter-notes and tonal-do-re-mi; the Vocal Warm-up (no mic yet; call-and-response suits it); rec-monitoring and rec-gain-staging could show the check as a teaching demo.</li>
 </ul>
 <div id="quarto-navigation-envelope" class="hidden">
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Music Practice</span></p>
@@ -1989,6 +2202,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtZ3VpdGFyLmh0bWw=">/lessons/blues-guitar.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIFBpYW5vOiBGcm9tIFJvb3RzIHRvIFJvb3RsZXNzIFZvaWNpbmdz">Blues for Piano: From Roots to Rootless Voicings</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtcGlhbm8uaHRtbA==">/lessons/blues-piano.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHdvIExlZnQgSGFuZHM6IFN0cmlkZSBhbmQgQm9vZ2llLVdvb2dpZQ==">Two Left Hands: Stride and Boogie-Woogie</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc3RyaWRlLWJvb2dpZS5odG1s">/lessons/stride-boogie.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIERydW1zOiBGcm9tIFF1YXJ0ZXIgTm90ZXMgdG8gdGhlIFNodWZmbGU=">Blues for Drums: From Quarter Notes to the Shuffle</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtZHJ1bXMuaHRtbA==">/lessons/blues-drums.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVhZGluZyBTd2luZyBmcm9tIGEgTGVhZCBTaGVldA==">Reading Swing from a Lead Sheet</span></p>
@@ -1999,6 +2214,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY29uZ2FzLWJhc2ljcy5odG1s">/lessons/congas-basics.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6V2F0ZXJtZWxvbiBNYW4gZm9yIENvbmdhcw==">Watermelon Man for Congas</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvd2F0ZXJtZWxvbi1jb25nYXMuaHRtbA==">/lessons/watermelon-congas.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SXMgV2F0ZXJtZWxvbiBNYW4gYSBCbHVlcz8=">Is Watermelon Man a Blues?</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvd2F0ZXJtZWxvbi1tYW4tYmx1ZXMuaHRtbA==">/lessons/watermelon-man-blues.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDaGFuZ2luZyB0aGUgQ2hhbmdlcyBpbiBDLCBBbSwgRiwgRw==">Lesson: Changing the Changes in C, Am, F, G</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcG9wLWNoYW5nZXMuaHRtbA==">/lessons/pop-changes.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UG9wIENoYW5nZXMgZm9yIEd1aXRhcjogRnJvbSBPcGVuIENob3JkcyB0byBQYXNzaW5nIENob3Jkcw==">Pop Changes for Guitar: From Open Chords to Passing Chords</span></p>
@@ -2013,6 +2230,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2hvcmQtc2hhcGVzLWd1aXRhci1oYW5kLmh0bWw=">/lessons/chord-shapes-guitar-hand.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SGFtbWVyLW9ucyBhbmQgUHVsbC1vZmZzIG9uIEd1aXRhcg==">Hammer-ons and Pull-offs on Guitar</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaGFtbWVyLW9ucy1wdWxsLW9mZnMuaHRtbA==">/lessons/hammer-ons-pull-offs.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U3RyaW5nIEJlbmRzIG9uIEd1aXRhcjogQmVuZGluZyBpbiBUdW5l">String Bends on Guitar: Bending in Tune</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ3VpdGFyLWJlbmRzLmh0bWw=">/lessons/guitar-bends.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHJhdmlzIFBpY2tpbmcgb24gR3VpdGFy">Travis Picking on Guitar</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdHJhdmlzLXBpY2tpbmcuaHRtbA==">/lessons/travis-picking.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UGlhbm8gQ2hvcmQgVm9pY2luZ3M6IEZyb20gUG9wIFRyaWFkcyBUb3dhcmQgSmF6eg==">Piano Chord Voicings: From Pop Triads Toward Jazz</span></p>
@@ -2031,6 +2250,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZm91ci1jaG9yZC1sb29wcy5odG1s">/lessons/four-chord-loops.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDYWRlbmNlcywgYW5kIHRoZSBPbmUgVGhhdCBJcyBOb3Q=">Lesson: Cadences, and the One That Is Not</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2FkZW5jZXMuaHRtbA==">/lessons/cadences.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBXcml0ZSBhbiBFbmRpbmc=">Lesson: Write an Ending</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvd3JpdGUtYW4tZW5kaW5nLmh0bWw=">/lessons/write-an-ending.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBHdWlkZSBUb25lcw==">Lesson: Guide Tones</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ3VpZGUtdG9uZXMuaHRtbA==">/lessons/guide-tones.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDaGFuZ2VzIGluIGEgTWlub3IgS2V5">Lesson: Changes in a Minor Key</span></p>
@@ -2051,6 +2272,16 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYXJyYW5nZS1vcmdhbi5odG1s">/lessons/arrange-organ.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QWNjb21wYW5pbWVudCBQYXR0ZXJucw==">Accompaniment Patterns</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcGF0dGVybnMvaW5kZXguaHRtbA==">/lessons/patterns/index.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6V3JpdGluZyBNdXNpYyBEb3duOiBDaG9vc2luZyB0aGUgUmlnaHQgTm90YXRpb24=">Writing Music Down: Choosing the Right Notation</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvbm90YXRpb24tY2hvaWNlcy5odG1s">/lessons/notation-choices.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuaW5nIFN5c3RlbXM6IEp1c3QgSW50b25hdGlvbiBhbmQgRXF1YWwgVGVtcGVyYW1lbnQ=">Tuning Systems: Just Intonation and Equal Temperament</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdHVuaW5nLXN5c3RlbXMuaHRtbA==">/lessons/tuning-systems.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG93IGEgU3Ryb2JlIFR1bmVyIFdvcmtz">How a Strobe Tuner Works</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc3Ryb2JlLXR1bmVyLmh0bWw=">/lessons/strobe-tuner.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6T3V0LW9mLVR1bmUgT3ZlcnRvbmVzOiBTdHJpbmdzLCBXaW5kcywgVm9pY2UsIEJhcnMsIEJlbGxzIGFuZCBEcnVtcw==">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaW5oYXJtb25pY2l0eS5odG1s">/lessons/inharmonicity.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Rm9ybWFudHM6IFdoYXQgTWFrZXMgYSBWb3dlbA==">Formants: What Makes a Vowel</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdm93ZWwtZm9ybWFudHMuaHRtbA==">/lessons/vowel-formants.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTogVGhlIEhhcm1vbmljIFNlcmllcyBhbmQgRm91cmllcg==">Sound 1: The Harmonic Series and Fourier</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtaGFybW9uaWNzLmh0bWw=">/lessons/sound-harmonics.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjogT3NjaWxsYXRvcnMgYW5kIFB1bHNlLVdpZHRoIE1vZHVsYXRpb24=">Sound 2: Oscillators and Pulse-Width Modulation</span></p>
@@ -2059,26 +2290,82 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtbm9pc2UuaHRtbA==">/lessons/sound-noise.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNDogRmlsdGVycw==">Sound 4: Filters</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZmlsdGVyLmh0bWw=">/lessons/sound-filter.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNTogTEZPcw==">Sound 5: LFOs</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNTogRW52ZWxvcGVz">Sound 5: Envelopes</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZW52ZWxvcGVzLmh0bWw=">/lessons/sound-envelopes.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNjogTEZPcw==">Sound 6: LFOs</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtbGZvLmh0bWw=">/lessons/sound-lfo.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNjogU3VidHJhY3RpdmUgU3ludGhlc2lz">Sound 6: Subtractive Synthesis</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNzogU3VidHJhY3RpdmUgU3ludGhlc2lz">Sound 7: Subtractive Synthesis</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtc3VidHJhY3RpdmUuaHRtbA==">/lessons/sound-subtractive.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNzogRk0gU3ludGhlc2lz">Sound 7: FM Synthesis</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgODogRk0gU3ludGhlc2lz">Sound 8: FM Synthesis</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZm0uaHRtbA==">/lessons/sound-fm.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgODogV2F2ZXRhYmxlIFN5bnRoZXNpcw==">Sound 8: Wavetable Synthesis</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgOTogV2F2ZXRhYmxlIFN5bnRoZXNpcw==">Sound 9: Wavetable Synthesis</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtd2F2ZXRhYmxlLmh0bWw=">/lessons/sound-wavetable.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgOTogRGlzdG9ydGlvbg==">Sound 9: Distortion</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTA6IEdyYW51bGFyIFN5bnRoZXNpcw==">Sound 10: Granular Synthesis</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZ3JhbnVsYXIuaHRtbA==">/lessons/sound-granular.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTE6IFRoZSBFcXVhbGlzZXI=">Sound 11: The Equaliser</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZXEuaHRtbA==">/lessons/sound-eq.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTI6IERpc3RvcnRpb24=">Sound 12: Distortion</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZGlzdG9ydGlvbi5odG1s">/lessons/sound-distortion.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTA6IFRoZSBDb21wcmVzc29y">Sound 10: The Compressor</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTM6IFRoZSBDb21wcmVzc29y">Sound 13: The Compressor</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtY29tcHJlc3Nvci5odG1s">/lessons/sound-compressor.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTE6IFJldmVyYg==">Sound 11: Reverb</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTQ6IFNpZGVjaGFpbg==">Sound 14: Sidechain</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtc2lkZWNoYWluLmh0bWw=">/lessons/sound-sidechain.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTU6IEdhdGVzIGFuZCBUcmFuc2llbnRz">Sound 15: Gates and Transients</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZ2F0ZS5odG1s">/lessons/sound-gate.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTY6IFJldmVyYg==">Sound 16: Reverb</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtcmV2ZXJiLmh0bWw=">/lessons/sound-reverb.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTI6IENob3J1cyBhbmQgRmxhbmdlcg==">Sound 12: Chorus and Flanger</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTc6IERlbGF5">Sound 17: Delay</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZGVsYXkuaHRtbA==">/lessons/sound-delay.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTg6IENob3J1cyBhbmQgRmxhbmdlcg==">Sound 18: Chorus and Flanger</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtY2hvcnVzLmh0bWw=">/lessons/sound-chorus.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTM6IFBoYXNlcg==">Sound 13: Phaser</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTk6IFBoYXNlcg==">Sound 19: Phaser</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtcGhhc2VyLmh0bWw=">/lessons/sound-phaser.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTQ6IFRoZSBWb2NvZGVy">Sound 14: The Vocoder</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjA6IFRyZW1vbG8gYW5kIHRoZSBSb3RhcnkgU3BlYWtlcg==">Sound 20: Tremolo and the Rotary Speaker</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtdHJlbW9sby5odG1s">/lessons/sound-tremolo.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjE6IFBpdGNoIEVmZmVjdHM=">Sound 21: Pitch Effects</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtcGl0Y2guaHRtbA==">/lessons/sound-pitch.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjI6IFRoZSBWb2NvZGVy">Sound 22: The Vocoder</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtdm9jb2Rlci5odG1s">/lessons/sound-vocoder.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjM6IFN0ZXJlbw==">Sound 23: Stereo</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtc3RlcmVvLmh0bWw=">/lessons/sound-stereo.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjQ6IFRoZSBTaWduYWwgQ2hhaW4=">Sound 24: The Signal Chain</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtY2hhaW4uaHRtbA==">/lessons/sound-chain.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDE6IEdhaW4gU3RhZ2luZw==">Recording 1: Gain Staging</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLWdhaW4tc3RhZ2luZy5odG1s">/lessons/rec-gain-staging.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDI6IE1pY3JvcGhvbmVzIGFuZCBQaGFudG9tIFBvd2Vy">Recording 2: Microphones and Phantom Power</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1pY3MuaHRtbA==">/lessons/rec-mics.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDM6IERpc3RhbmNlLCBCbGVlZCBhbmQgUGhhc2U=">Recording 3: Distance, Bleed and Phase</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLXBsYWNlbWVudC5odG1s">/lessons/rec-placement.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDQ6IE1vbml0b3JpbmcgYW5kIEhlYWRwaG9uZXM=">Recording 4: Monitoring and Headphones</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1vbml0b3JpbmcuaHRtbA==">/lessons/rec-monitoring.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDU6IE1peGluZw==">Recording 5: Mixing</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1peGluZy5odG1s">/lessons/rec-mixing.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDY6IE1hc3RlcmluZw==">Recording 6: Mastering</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1hc3RlcmluZy5odG1s">/lessons/rec-mastering.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDc6IE1vbm8gYW5kIFN0ZXJlbw==">Recording 7: Mono and Stereo</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLXN0ZXJlby5odG1s">/lessons/rec-stereo.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciAxOiBQb3dlciBhbmQgU2FmZXR5">Gear 1: Power and Safety</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1wb3dlci5odG1s">/lessons/gear-power.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciAyOiBDYWJsZXMgYW5kIENvbm5lY3RvcnM=">Gear 2: Cables and Connectors</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1jYWJsZXMuaHRtbA==">/lessons/gear-cables.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciAzOiBBbXBzLCBTcGVha2VycyBhbmQgdGhlIFBB">Gear 3: Amps, Speakers and the PA</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1hbXBzLmh0bWw=">/lessons/gear-amps.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA0OiBLZXlib2FyZHM=">Gear 4: Keyboards</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1rZXlib2FyZHMuaHRtbA==">/lessons/gear-keyboards.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA1OiBTZXR0aW5nIFVwLCBQYWNraW5nIERvd24gYW5kIFlvdXIgRWFycw==">Gear 5: Setting Up, Packing Down and Your Ears</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1zZXR1cC5odG1s">/lessons/gear-setup.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA2OiBHdWl0YXIgYW5kIEJhc3MgQ2FyZQ==">Gear 6: Guitar and Bass Care</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1ndWl0YXIuaHRtbA==">/lessons/gear-guitar.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA3OiBWaW9saW4gQ2FyZSBmb3IgQmVnaW5uZXJz">Gear 7: Violin Care for Beginners</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci12aW9saW4uaHRtbA==">/lessons/gear-violin.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA4OiBTYXhvcGhvbmUgQ2FyZSBmb3IgQmVnaW5uZXJz">Gear 8: Saxophone Care for Beginners</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1zYXguaHRtbA==">/lessons/gear-sax.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA5OiBEcnVtIEtpdCBTZXR1cCBhbmQgQ2FyZQ==">Gear 9: Drum Kit Setup and Care</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1kcnVtcy5odG1s">/lessons/gear-drums.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TWFwcGluZyBhIFJlY29yZGluZyB3aXRoIHRoZSBUaW1lc3RhbXAgTm90ZXM=">Mapping a Recording with the Timestamp Notes</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdGltZXN0YW1wLXBsYXllci5odG1s">/lessons/timestamp-player.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2VjdGlvbiBMYWJlbHM6IE5hbWluZyB0aGUgUGFydHMgb2YgYSBTb25n">Section Labels: Naming the Parts of a Song</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc2VjdGlvbi1sYWJlbHMuaHRtbA==">/lessons/section-labels.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UHJhY3RpY2U=">Practice</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2Vzc2lvbg==">Session</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3Nlc3Npb24uaHRtbA==">/practice/session.html</span></p>
@@ -2098,6 +2385,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JoeXRobXMuaHRtbA==">/practice/rhythms.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVhZGluZyBCZW5jaG1hcmtz">Reading Benchmarks</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JlYWRpbmctYmVuY2htYXJrcy5odG1s">/practice/reading-benchmarks.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RGljdGF0aW9u">Dictation</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2RpY3RhdGlvbi5odG1s">/practice/dictation.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFByYWN0aWNl">LSA Practice</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1wcmFjdGljZS5odG1s">/practice/lsa-practice.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFByYWN0aWNlIChOb3RhdGVkKQ==">LSA Practice (Notated)</span></p>
@@ -2139,6 +2428,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL25vdGF0aW9uLXJ1bGVzLmh0bWw=">/tools/notation-rules.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SVBBIENoYXJ0IGZvciBTaW5nZXJz">IPA Chart for Singers</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2lwYS1jaGFydC5odG1s">/tools/ipa-chart.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Vm9jYWwgV2FybS11cA==">Vocal Warm-up</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3ZvY2FsLXdhcm11cC5odG1s">/tools/vocal-warmup.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGltZXN0YW1wIE5vdGVz">Timestamp Notes</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3RpbWVzdGFtcC1ub3Rlcy5odG1s">/tools/timestamp-notes.html</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hlcg==">Teacher</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2Vzc2lvbiBCdWlsZGVy">Session Builder</span></p>
 <p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvc2Vzc2lvbi1idWlsZGVyLmh0bWw=">/teacher/session-builder.html</span></p>
@@ -2171,7 +2464,7 @@ document.addEventListener('DOMContentLoaded', async function () {
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="/apps/shared/degree-names.js?v=1"></script>
 <script src="/apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="/apps/shared/practice-widgets.js?v=6"></script>
+<script src="/apps/shared/practice-widgets.js?v=8"></script>
 <script id = "quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

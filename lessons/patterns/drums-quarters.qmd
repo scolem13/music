@@ -13,7 +13,7 @@ This is a lesson on one drum groove the [Backing Track](../../tools/backing-trac
 
 Only the beat: the cymbal on 1, 2, 3 and 4 and the hi-hat foot on 2 and 4. No kick, no snare, no fills. The first thing to play on a blues.
 
-It belongs in *Swing* and *Jazz ballad*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Swing*, *Jazz ballad*, *Stride piano* and *Boogie-woogie*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Quarter notes (learning swing, 1)","opts":{"groove":"quarters"}}]'></div>
 
@@ -31,18 +31,26 @@ The whole band, at 120 beats a minute. Play along, then switch the band's drum k
 
 ## In other styles
 
-The same drum groove in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+The same drum groove in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
 
 **Jazz ballad**
 
 <div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Quarter notes (learning swing, 1)","opts":{"groove":"quarters"}}]'></div>
+
+**Stride piano**
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Quarter notes (learning swing, 1)","opts":{"groove":"quarters"}}]'></div>
+
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Quarter notes (learning swing, 1)","opts":{"groove":"quarters"}}]'></div>
 
 ## How it relates to the other patterns
 
 - **Leads to:** [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Hi-hat: swing time](drums-hhswing.qmd), [Jazz time](drums-auto.qmd): the patterns that use this one as a step.
 - **The same idea elsewhere in the band:** [Four to the bar](chords-four.qmd) (comping rhythm), [Walking](bass-walk.qmd) (bass line), [Ride pattern (learning swing, 2)](drums-ridetime.qmd) (drum groove).
 - **Plays with, in swing:** [Walking](bass-walk.qmd) (bass line), [Varied](chords-auto.qmd) (comping rhythm).
-- **Other drum grooves in the Jazz group:** [Jazz time](drums-auto.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Blues shuffle](drums-shuffle.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
+- **Other drum grooves in the Jazz group:** [Jazz time](drums-auto.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Blues shuffle](drums-shuffle.qmd), [Jump blues](drums-jump.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
 
 {{< include ../_arrange-kit.qmd >}}
 

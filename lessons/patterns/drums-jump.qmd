@@ -1,0 +1,58 @@
+---
+title: "Drum groove: Jump blues"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Jump blues**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+The blues shuffle pushed harder: swung eighths on the cymbal, the kick feathered on all four beats, and a loud backbeat on the snare on 2 and 4. In 3/4 the snare on 2 and 3.
+
+It belongs in *Jump blues* and *Boogie-woogie*. Here it is in the jump blues style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Jump blues","opts":{"groove":"jump"}}]'></div>
+
+## Step 1: Blues shuffle
+
+Start with something simpler. Swung eighths all the way through on the cymbal, kick on 1 and 3 and a full snare on 2 and 4. The Chicago blues beat.
+
+This is a pattern of its own: [the lesson on it](drums-shuffle.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="112" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Blues shuffle","opts":{"groove":"shuffle"}}]'></div>
+
+## Step 2: Jump blues, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** The blues shuffle, harder: swung eighths on the cymbal, the snare hit hard on 2 and 4, and the kick played softly on all four beats (feathered: felt more than heard). Get the shuffle steady, then add the kick on 2 and 4 under the snare, quietly.
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="112" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Jump blues","opts":{"groove":"jump"}},{"label":"Blues shuffle (the step before)","opts":{"groove":"shuffle"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 160 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Jump blues","opts":{"groove":"jump"}}]'></div>
+
+## In other styles
+
+The same drum groove in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Jump blues","opts":{"groove":"jump"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Blues shuffle](drums-shuffle.qmd).
+- **Plays with, in jump blues:** [Boogie-woogie](bass-boogie.qmd) (bass line), [Boogie-woogie right hand](chords-boogie.qmd) (comping rhythm).
+- **Other drum grooves in the Jazz group:** [Jazz time](drums-auto.qmd), [Quarter notes (learning swing, 1)](drums-quarters.qmd), [Ride pattern (learning swing, 2)](drums-ridetime.qmd), [Blues shuffle](drums-shuffle.qmd), [Funk](drums-funk.qmd), [Hi-hat: swing time](drums-hhswing.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

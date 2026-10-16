@@ -4,7 +4,7 @@ toc: true
 toc-depth: 2
 ---
 
-*Watermelon Man* is a 16-bar blues that a conga player can learn in an afternoon, once the
+*Watermelon Man* is a [16-bar blues](watermelon-man-blues.qmd) that a conga player can learn in an afternoon, once the
 tumbao is under the hands. If you have not played the tumbao yet, start with
 [How to Play Congas: Five Strokes and the Tumbao](congas-basics.qmd). This page assumes the
 heel, toe, slap and open tones, and the part **Heel Toe Slap Toe Heel Toe Open Open**.
@@ -150,6 +150,9 @@ until you can play it through without thinking.
   jazz.com.
 - [Tumbao](https://en.wikipedia.org/wiki/Tumbao), Wikipedia (the tumbao and its sticking).
 
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");   // a 16-bar blues (see watermelon-man-blues.qmd): the Key menu reads "(Blues)"</script>
+```
 {{< include _blues-kit.qmd >}}
 
 ```{=html}

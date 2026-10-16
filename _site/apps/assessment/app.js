@@ -270,9 +270,12 @@ async function enableMic(){
   try {
     audioCtx = audioCtx || (window.MusicAudio ? MusicAudio.ctx() : new (window.AudioContext || window.webkitAudioContext)());
     await audioCtx.resume();
-    micStream = await navigator.mediaDevices.getUserMedia({ audio: {
-      echoCancellation: false, noiseSuppression: false, autoGainControl: false
-    }});
+    let micConstraints = { echoCancellation: false, noiseSuppression: false, autoGainControl: false };
+    if (window.AudioCheck){
+      const r = await AudioCheck.ensure();     // null (cancelled) keeps the raw-mic default
+      if (r && r.constraints) micConstraints = r.constraints;
+    }
+    micStream = await navigator.mediaDevices.getUserMedia({ audio: micConstraints });
     const src = audioCtx.createMediaStreamSource(micStream);
     analyser = audioCtx.createAnalyser();
     analyser.fftSize = 2048;

@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-01a82125dcc07191ca4a322ed0902c35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -53,12 +53,7 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "keyboard-shortcut": [],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +83,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
      tool scripts run; injects a step banner when a session is active. -->
 <script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
 <!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
      grind against the window. -->
 <style>
@@ -163,6 +160,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/blues-drums.html">
  <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
   </li>  
@@ -181,6 +182,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../lessons/watermelon-congas.html">
  <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/pop-changes.html">
@@ -209,6 +214,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
  <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/travis-picking.html">
@@ -245,6 +254,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../lessons/cadences.html">
  <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/guide-tones.html">
@@ -289,6 +302,26 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
+    <a class="dropdown-item" href="../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/sound-harmonics.html">
  <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
   </li>  
@@ -305,44 +338,157 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Sound 4: Filters</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/sound-lfo.html">
- <span class="dropdown-text">Sound 5: LFOs</span></a>
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-subtractive.html">
- <span class="dropdown-text">Sound 6: Subtractive Synthesis</span></a>
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-fm.html">
- <span class="dropdown-text">Sound 7: FM Synthesis</span></a>
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-wavetable.html">
- <span class="dropdown-text">Sound 8: Wavetable Synthesis</span></a>
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-distortion.html">
- <span class="dropdown-text">Sound 9: Distortion</span></a>
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-compressor.html">
- <span class="dropdown-text">Sound 10: The Compressor</span></a>
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-reverb.html">
- <span class="dropdown-text">Sound 11: Reverb</span></a>
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-chorus.html">
- <span class="dropdown-text">Sound 12: Chorus and Flanger</span></a>
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-phaser.html">
- <span class="dropdown-text">Sound 13: Phaser</span></a>
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-vocoder.html">
- <span class="dropdown-text">Sound 14: The Vocoder</span></a>
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
   </li>  
     </ul>
   </li>
@@ -387,6 +533,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../practice/reading-benchmarks.html">
  <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -476,6 +626,14 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../tools/ipa-chart.html">
  <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
   </li>  
     </ul>
   </li>
@@ -739,6 +897,8 @@ document.addEventListener('DOMContentLoaded', async function () {
         <select id="cs-home"><option value="major">Major</option><option value="minor">Minor</option></select></div>
       <div class="cs-field"><label for="cs-label">Label the keys</label>
         <select id="cs-label"><option value="both">Names and note letters</option><option value="sol">Names</option><option value="names">Note letters</option><option value="none">Nothing</option></select></div>
+      <div class="cs-field"><label for="cs-tuning" title="Piano: the sampled piano, tuned equally. The organ tone can be tuned equally or in just intonation, where every note is a simple ratio of the key note and chords hold still.">Tuning</label>
+        <select id="cs-tuning"><option value="piano">Piano, equal temperament</option><option value="et">Organ tone, equal temperament</option><option value="just">Organ tone, just intonation</option></select></div>
       <label class="cs-check" title="Click a key to turn it on and click it again to turn it off, so you can build a chord one note at a time."><input type="checkbox" id="cs-hold"> Hold notes</label>
       <label class="cs-check"><input type="checkbox" id="cs-sound" checked=""> Sound the notes</label>
       <label class="cs-check"><input type="checkbox" id="cs-type" checked=""> Play with the computer keyboard</label>
@@ -750,15 +910,16 @@ document.addEventListener('DOMContentLoaded', async function () {
   </div>
 </div>
 <script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/audio-check.js"></script>
 <script src="../apps/shared/pitch-spelling.js"></script>
 <script src="../apps/shared/degree-names.js"></script>
 <script src="../apps/shared/chord-entry.js?v=4"></script>
 <script src="../apps/shared/musical-typing.js"></script>
 <script src="../apps/shared/band/harmony.js?v=24"></script>
-<script src="../apps/shared/band/bass.js?v=11"></script>
-<script src="../apps/shared/band/comp.js?v=25"></script>
-<script src="../apps/shared/band/catalog.js?v=33"></script>
-<script src="../apps/shared/band/drums.js?v=15"></script>
+<script src="../apps/shared/band/bass.js?v=13"></script>
+<script src="../apps/shared/band/comp.js?v=27"></script>
+<script src="../apps/shared/band/catalog.js?v=36"></script>
+<script src="../apps/shared/band/drums.js?v=16"></script>
 <script src="../apps/shared/band/congas.js?v=2"></script>
 <script src="../apps/shared/band/sounds.js?v=14"></script>
 <script src="../apps/shared/band/player.js?v=110"></script>
@@ -893,15 +1054,43 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   // ---- notes in: the on-screen keys, the computer keyboard, MIDI ----
+  // Just intonation: the organ tone, with every note a simple ratio of the key note (Do). Equal is the same tone at the piano's pitches,
+  // so the two can be compared. A note sounds while its key is held.
+  var JUST = [1, 16/15, 9/8, 6/5, 5/4, 4/3, 45/32, 3/2, 8/5, 5/3, 9/5, 15/8], actx = null, abus = null, voices = {};
+  function tuning(){ return $("cs-tuning").value; }
+  function pitch(m){                                      // Hz of MIDI note m in the chosen tuning (A4 = 440)
+    var et = 440 * Math.pow(2, (m - 69) / 12);
+    if (tuning() !== "just") return et;
+    var doPc = key().doPc, doMidi = 60 + doPc - (doPc > 6 ? 12 : 0), steps = m - doMidi, oct = Math.floor(steps / 12);   // the Do nearest middle C
+    return 440 * Math.pow(2, (doMidi - 69) / 12) * JUST[mod(steps)] * Math.pow(2, oct);
+  }
+  function organOn(m, vel){
+    if (voices[m]) return;
+    if (!actx){ var AC = window.AudioContext || window.webkitAudioContext; actx = new AC(); var lim = actx.createDynamicsCompressor(); lim.threshold.value = -8; lim.ratio.value = 12;
+      abus = actx.createGain(); abus.gain.value = 0.5; abus.connect(lim); lim.connect(actx.destination); }
+    if (actx.state === "suspended") actx.resume();
+    var f = pitch(m), g = actx.createGain(), t = actx.currentTime, parts = [];
+    [1, 2, 3, 4, 5, 6].forEach(function(h){ var o = actx.createOscillator(), l = actx.createGain(); o.frequency.value = f * h; l.gain.value = 0.5 / (h * h * 0.5 + 0.5);
+      o.connect(l); l.connect(g); o.start(t); parts.push(o); });
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(0.16 * Math.max(0.3, vel), t + 0.02); g.connect(abus);
+    voices[m] = { g: g, parts: parts };
+  }
+  function organOff(m){
+    var v = voices[m]; if (!v) return; delete voices[m]; var t = actx.currentTime;
+    v.g.gain.cancelScheduledValues(t); v.g.gain.setValueAtTime(v.g.gain.value, t); v.g.gain.linearRampToValueAtTime(0, t + 0.15);
+    v.parts.forEach(function(o){ o.stop(t + 0.2); });
+  }
+  function organSync(){ Object.keys(voices).map(Number).forEach(function(m){ if (!down[m] && !sticky[m]) organOff(m); }); }   // after any key goes up
   function sound(m, vel){
     if (!$("cs-sound").checked) return;
+    if (tuning() !== "piano"){ $("cs-note").textContent = tuning() === "just" ? "Just intonation from " + spell(key().doPc, key()) + ": each note is a simple ratio of the key note." : ""; organOn(m, vel); return; }
     $("cs-note").textContent = "";
     BandPlayer.chord([m], { inst: "piano", dur: 3, vel: Math.max(0.25, Math.min(1, vel)) }).catch(function(){ $("cs-note").textContent = "Couldn't load the piano sounds. Check your connection and try again."; });
   }
   function noteOn(m, vel){ down[m] = 1; remember(m); sound(m, vel); show(); }
-  function noteOff(m){ delete down[m]; show(); }
-  function toggle(m, vel){ if (sticky[m]){ delete sticky[m]; show(); } else { sticky[m] = 1; remember(m); sound(m, vel); show(); } }
-  function releaseAll(){ down = {}; sticky = {}; typing.releaseAll(); show(); }
+  function noteOff(m){ delete down[m]; organSync(); show(); }
+  function toggle(m, vel){ if (sticky[m]){ delete sticky[m]; organSync(); show(); } else { sticky[m] = 1; remember(m); sound(m, vel); show(); } }
+  function releaseAll(){ down = {}; sticky = {}; typing.releaseAll(); organSync(); show(); }
 
   var pointers = {};
   $("cs-kb").addEventListener("pointerdown", function(e){
@@ -935,8 +1124,8 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("cs-note").textContent = input ? "Listening to " + (input.name || "the MIDI keyboard") + "." : "No MIDI keyboard found. Plug one in, or use the keys.";
   }
   $("cs-connect").addEventListener("click", function(){
-    if (!navigator.requestMIDIAccess){ $("cs-note").textContent = "This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome, Edge or Firefox, or the keys on screen."; return; }
-    navigator.requestMIDIAccess().then(function(a){ midiAccess = a; a.onstatechange = inputs; inputs(); },
+    if (!navigator.requestMIDIAccess){ $("cs-note").textContent = "This browser cannot read a MIDI keyboard (Safari, iPhone and iPad cannot). Use Chrome or Edge, or the keys on screen."; return; }
+    navigator.requestMIDIAccess().then(function(a){ midiAccess = a; a.onstatechange = inputs; inputs(); if (window.AudioCheck && !AudioCheck.isChromium()) $("cs-note").textContent = "Chrome or Edge is recommended for a MIDI keyboard."; },
       function(){ $("cs-note").textContent = "The browser did not allow MIDI. Allow it for this site, or use the keys on screen."; });
   });
   $("cs-midi").addEventListener("change", function(){ if (midiAccess) inputs(); });
@@ -952,8 +1141,12 @@ document.addEventListener('DOMContentLoaded', async function () {
   DegreeNames.onChange(function(){ words(); show(); });
   try { var was = JSON.parse(localStorage.getItem("chordsSolfege2") || "{}");
     if (was.d != null) $("cs-do").value = was.d; if (was.h) $("cs-home").value = was.h; if (was.l) $("cs-label").value = was.l; } catch (e) {}
-  function keep(){ try { localStorage.setItem("chordsSolfege2", JSON.stringify({ d: $("cs-do").value, h: $("cs-home").value, l: $("cs-label").value })); } catch (e) {} }
+  // a page that includes this tool (the tuning lesson) can set window.csPreset = { d: key note 0-11, type: false, tuning: "piano|et|just" } before it; nothing is then remembered
+  var pre = window.csPreset || null;
+  if (pre){ if (pre.d != null) $("cs-do").value = pre.d; if (pre.type === false) $("cs-type").checked = false; if (pre.tuning) $("cs-tuning").value = pre.tuning; }
+  function keep(){ if (pre) return; try { localStorage.setItem("chordsSolfege2", JSON.stringify({ d: $("cs-do").value, h: $("cs-home").value, l: $("cs-label").value })); } catch (e) {} }
   ["cs-do", "cs-home", "cs-label"].forEach(function(id){ $(id).addEventListener("change", function(){ keep(); $(id).blur(); show(); }); });
+  $("cs-tuning").addEventListener("change", function(){ releaseAll(); $("cs-tuning").blur(); });
   $("cs-hold").addEventListener("change", function(){ releaseAll(); $("cs-hold").blur(); });
   $("cs-type").addEventListener("change", function(){ typing.releaseAll(); typeNote(); });
   $("cs-clear").addEventListener("click", releaseAll);
@@ -975,7 +1168,7 @@ document.addEventListener('DOMContentLoaded', async function () {
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="../apps/shared/degree-names.js?v=1"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=6"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

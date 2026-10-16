@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>tune_facts – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../../apps/shared/audio-tap.js?v=1"></script>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/reading-swing.html">
+ <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/pop-changes-guitar.html">
+ <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/pop-changes-piano.html">
+ <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/pop-changes-bass.html">
+ <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/chord-shapes-guitar.html">
+ <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/chord-shapes-guitar-hand.html">
+ <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/hammer-ons-pull-offs.html">
+ <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/travis-picking.html">
+ <span class="dropdown-text">Travis Picking on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/chord-shapes-piano.html">
+ <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/chord-shapes-piano-hand.html">
+ <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/inversions.html">
+ <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/voice-pop.html">
+ <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/voice-jazz.html">
+ <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/voice-classical.html">
+ <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/cadences.html">
+ <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/guide-tones.html">
+ <span class="dropdown-text">Lesson: Guide Tones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/minor-changes.html">
+ <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/borrowed-chords.html">
+ <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/turnarounds.html">
+ <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/reharmonize.html">
+ <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../lessons/arrange-band.html">
+ <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/arrange-bass-drums.html">
+ <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/arrange-chords.html">
+ <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/arrange-organ.html">
+ <span class="dropdown-text">Arranging 4: The Organ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/patterns/index.html">
+ <span class="dropdown-text">Accompaniment Patterns</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-harmonics.html">
+ <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-waveforms.html">
+ <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-noise.html">
+ <span class="dropdown-text">Sound 3: Noise</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-filter.html">
+ <span class="dropdown-text">Sound 4: Filters</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-lfo.html">
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-subtractive.html">
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-fm.html">
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-wavetable.html">
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-distortion.html">
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-compressor.html">
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-reverb.html">
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-chorus.html">
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-phaser.html">
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-vocoder.html">
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/songs-classic.html">
+ <span class="dropdown-text">Song Builder (Classic)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#watermelon-man-hancock-1962-form-harmony-origins-later-versions" id="toc-watermelon-man-hancock-1962-form-harmony-origins-later-versions" class="nav-link active" data-scroll-target="#watermelon-man-hancock-1962-form-harmony-origins-later-versions">Watermelon Man (Hancock, 1962): form, harmony, origins, later versions</a>
+  <ul class="collapse">
+  <li><a href="#exact-form-of-the-1962-head-and-chord-changes" id="toc-exact-form-of-the-1962-head-and-chord-changes" class="nav-link" data-scroll-target="#exact-form-of-the-1962-head-and-chord-changes">1. Exact form of the 1962 head and chord changes</a>
+  <ul class="collapse">
+  <li><a href="#takeaway" id="toc-takeaway" class="nav-link" data-scroll-target="#takeaway">Takeaway</a></li>
+  <li><a href="#cited-findings" id="toc-cited-findings" class="nav-link" data-scroll-target="#cited-findings">Cited Findings</a></li>
+  <li><a href="#inferences" id="toc-inferences" class="nav-link" data-scroll-target="#inferences">Inferences</a></li>
+  <li><a href="#gaps" id="toc-gaps" class="nav-link" data-scroll-target="#gaps">Gaps</a></li>
+  </ul></li>
+  <li><a href="#hancocks-own-account" id="toc-hancocks-own-account" class="nav-link" data-scroll-target="#hancocks-own-account">2. Hancock’s own account</a>
+  <ul class="collapse">
+  <li><a href="#takeaway-1" id="toc-takeaway-1" class="nav-link" data-scroll-target="#takeaway-1">Takeaway</a></li>
+  <li><a href="#cited-findings-1" id="toc-cited-findings-1" class="nav-link" data-scroll-target="#cited-findings-1">Cited Findings</a></li>
+  <li><a href="#inferences-1" id="toc-inferences-1" class="nav-link" data-scroll-target="#inferences-1">Inferences</a></li>
+  <li><a href="#gaps-1" id="toc-gaps-1" class="nav-link" data-scroll-target="#gaps-1">Gaps</a></li>
+  </ul></li>
+  <li><a href="#mongo-santamaria-1963" id="toc-mongo-santamaria-1963" class="nav-link" data-scroll-target="#mongo-santamaria-1963">3. Mongo Santamaria 1963</a>
+  <ul class="collapse">
+  <li><a href="#takeaway-2" id="toc-takeaway-2" class="nav-link" data-scroll-target="#takeaway-2">Takeaway</a></li>
+  <li><a href="#cited-findings-2" id="toc-cited-findings-2" class="nav-link" data-scroll-target="#cited-findings-2">Cited Findings</a></li>
+  <li><a href="#gaps-2" id="toc-gaps-2" class="nav-link" data-scroll-target="#gaps-2">Gaps</a></li>
+  </ul></li>
+  <li><a href="#head-hunters-1973" id="toc-head-hunters-1973" class="nav-link" data-scroll-target="#head-hunters-1973">4. Head Hunters (1973)</a>
+  <ul class="collapse">
+  <li><a href="#takeaway-3" id="toc-takeaway-3" class="nav-link" data-scroll-target="#takeaway-3">Takeaway</a></li>
+  <li><a href="#cited-findings-3" id="toc-cited-findings-3" class="nav-link" data-scroll-target="#cited-findings-3">Cited Findings</a></li>
+  <li><a href="#inferences-2" id="toc-inferences-2" class="nav-link" data-scroll-target="#inferences-2">Inferences</a></li>
+  <li><a href="#gaps-3" id="toc-gaps-3" class="nav-link" data-scroll-target="#gaps-3">Gaps</a></li>
+  </ul></li>
+  <li><a href="#other-covers-relevant-to-form" id="toc-other-covers-relevant-to-form" class="nav-link" data-scroll-target="#other-covers-relevant-to-form">5. Other covers relevant to form</a>
+  <ul class="collapse">
+  <li><a href="#cited-findings-4" id="toc-cited-findings-4" class="nav-link" data-scroll-target="#cited-findings-4">Cited Findings</a></li>
+  <li><a href="#gaps-4" id="toc-gaps-4" class="nav-link" data-scroll-target="#gaps-4">Gaps</a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+
+
+
+<section id="watermelon-man-hancock-1962-form-harmony-origins-later-versions" class="level1">
+<h1>Watermelon Man (Hancock, 1962): form, harmony, origins, later versions</h1>
+<p>Method note: about 15 web calls. I did not reach a Real Book / Hal Leonard chart, jazzstandards.com, iReal Pro, the Hancock memoir text, Pond’s book, or the NPR transcript (the NPR fetch timed out twice; jazzguitar.be returned 403). Hancock quotes below are taken from secondary pages that quote him, not from the primary text. I could not check them against the memoir.</p>
+<section id="exact-form-of-the-1962-head-and-chord-changes" class="level2">
+<h2 class="anchored" data-anchor-id="exact-form-of-the-1962-head-and-chord-changes">1. Exact form of the 1962 head and chord changes</h2>
+<section id="takeaway" class="level3">
+<h3 class="anchored" data-anchor-id="takeaway">Takeaway</h3>
+<p>The head is 16 bars in F. It is a 12-bar-blues skeleton with the last four-plus bars reworked: bars 1-8 are a standard blues opening, and the bar 9-10 pair (C7 / Bb7) is stated three times before a 2-bar return to F7. Every source with chords uses dominant sevenths on F, Bb and C only; none shows an Eb7 or other bVII chord in the 1962 head.</p>
+</section>
+<section id="cited-findings" class="level3">
+<h3 class="anchored" data-anchor-id="cited-findings">Cited Findings</h3>
+<ul>
+<li>Bar-by-bar chart (one community forum post, not an authoritative lead sheet): bars 1-4 F7; 5-6 Bb7; 7-8 F7; 9 C7; 10 Bb7; 11 C7; 12 Bb7; 13 C7; 14 Bb7; 15-16 F7. The key is not stated on the page. The page itself calls the form “a blues modified a little bit”. — <a href="https://saxstation.com/watermelon-man-by-herbie-hancock.htm">saxstation.com</a></li>
+<li>Ethan Hein’s analysis agrees with that chart: “It’s essentially a twelve-bar blues in F, but with bars nine and ten repeated three times.” He adds that the last two bars are harmonically identical to the first four, so chorus boundaries are hard to hear, and Hancock exploits this on the 1973 recording. (Counting: 8 + 3x2 + 2 = 16.) — <a href="https://ethanhein.com/wp/2022/watermelon-man/">Ethan Hein</a></li>
+<li>Key of F: “It is most commonly played in the key of F”; “This 16 bar blues is played in a straight eight groove, originally a latin-rock style, and later funk.” — <a href="https://learnjazzstandards.com/?p=6627">learnjazzstandards.com</a>. Hooktheory also lists F major (128 BPM, 4/4) with I7, IV7 and V7 chords, though the page’s chord-string notation is unclear. — <a href="https://www.hooktheory.com/theorytab/view/herbie-hancock/watermelon-man">Hooktheory</a></li>
+<li>JazzFuel says: 16-bar blues, “first 8 bars follow a classic blues pattern, and the last 8 are an extended variation of the final section”; written in F; no chord changes given. It points to a Hancock-chaired Jazz Day score (jazzday.com, “WATERMELON-MAN-s2-Full-Score.pdf”) that I did not retrieve. — <a href="https://jazzfuel.com/watermelon-man/">JazzFuel</a></li>
+<li>Wikipedia: “sixteen-bar blues form”, drawing on R&amp;B, soul jazz and bebop; Hancock’s chordal work draws on gospel. — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a></li>
+<li>The Herbie Hancock official site’s Takin’ Off page quotes the liner notes as “a strongly gospel-infused 16-bar theme”. It says the opening piano vamp is a gospel-style figure (quarter rest, two eighths, an eighth and a dotted quarter), the horns state the theme mainly in unison, solos run Hubbard, Gordon, Hancock, and the master runs 7:09. It says Lion immediately heard the potential in the “modified blues”. — <a href="https://www.herbiehancock.com/music/discography/album/takin-off/">herbiehancock.com</a></li>
+<li>A UVM blog says dominant sevenths on “the four chords of the original” (contrast Cantaloupe Island’s minor sevenths) and a 16-bar form with a similar bassline and piano figure to Cantaloupe Island. I count three chords in the saxstation chart, so “four” disagrees with that chart. — <a href="https://blog.uvm.edu/tgcleary/2020/03/10/from-watermelon-man-to-cantaloupe-island-and-beyond-herbie-hancocks-ingenious-reinventions-featuring-caves-of-the-island-an-original-tune-based-on-cantaloupe-island/">UVM blog</a></li>
+<li>Personnel: Hancock, Dexter Gordon, Freddie Hubbard, Butch Warren, Billy Higgins. Recorded May 1962 (uDiscover). — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a>; <a href="https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature">uDiscover</a></li>
+<li>Billy Higgins’ feel, per Hancock (via uDiscover, quoting Possibilities): “somewhere between straight eighth notes and the swinging triplets of jazz” and a “great funky-jazz flavor”. — <a href="https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature">uDiscover</a></li>
+</ul>
+</section>
+<section id="inferences" class="level3">
+<h3 class="anchored" data-anchor-id="inferences">Inferences</h3>
+<ul>
+<li>The C7 (V) to Bb7 (IV) alternation in bars 9-14 is a V-IV oscillation, which is a normal blues turnaround element, not a bVII-IV cadence. The suggested Eb7 does not appear in any source I found for the 1962 head; the only flat-side chords found are in the 1973 version (section 3).</li>
+<li>This is a 12-bar blues with bars 9-12 (V IV V IV) stretched by one extra V-IV pair and a 2-bar tonic tag, which matches “sixteen-bar blues” usage.</li>
+</ul>
+</section>
+<section id="gaps" class="level3">
+<h3 class="anchored" data-anchor-id="gaps">Gaps</h3>
+<ul>
+<li>No published lead sheet checked (Real Book, Hancock songbook, iReal, jazzstandards.com). Whether published charts differ from the record (e.g.&nbsp;substituted chords, 9ths, or a different key) is unverified.</li>
+<li>No source I found describes the melody note by note (blue notes, minor pentatonic, blues scale). Only the general descriptions above exist. The melody having blue thirds or a minor pentatonic basis is unverified here; an ABC transcription from the Jazz Day score would settle it.</li>
+<li>No source describes the bass line in detail beyond “similar bassline and piano accompaniment figure” to Cantaloupe Island, and the gospel-style piano vamp rhythm above. Whether the vamp is in F with b7 chord tones is not stated.</li>
+<li>No source found for whether F is the written key in the Real Book.</li>
+</ul>
+</section>
+</section>
+<section id="hancocks-own-account" class="level2">
+<h2 class="anchored" data-anchor-id="hancocks-own-account">2. Hancock’s own account</h2>
+<section id="takeaway-1" class="level3">
+<h3 class="anchored" data-anchor-id="takeaway-1">Takeaway</h3>
+<p>Hancock ties the tune to the cry and horse-drawn wagon of a Chicago watermelon seller, says it took about 15 minutes to write, and says he wanted something real rather than a purely commercial tune. In the sources I reached he does not call it “a blues” or “bluesy”; that word comes from secondary writers.</p>
+</section>
+<section id="cited-findings-1" class="level3">
+<h3 class="anchored" data-anchor-id="cited-findings-1">Cited Findings</h3>
+<ul>
+<li>1962 Takin’ Off liner notes (Hancock): “In reflecting on my childhood I recalled the cry of the watermelon man making his rounds through the back streets and alleys” (truncated in the source). Leonard Feather’s notes mention the 1938 Ellington record of the same title: “No connection.” — <a href="https://www.herbiehancock.com/music/discography/album/takin-off/">herbiehancock.com</a>. Another page gives the same line with “Chicago’s South Side” wording, which is a secondary quotation. — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia, citing Santoro 2004 p.&nbsp;86</a></li>
+<li>Possibilities (2014), as quoted by uDiscover: “I grew up hearing the clackety-clack, clackety-clack of his horse-drawn wagon.” / “I’d heard the rhythmic clacking so many times, it was easy to turn it into a song patter.” / “I wrote out a funky arrangement, with the melody lilting over a rhythmic pattern”. Also “The only moment I remember worrying about was just before we played ‘Watermelon Man.’” — <a href="https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature">uDiscover</a>. Not verified against the book.</li>
+<li>MOJO interview: “the thing that kept hitting me was the watermelon man”; the vendor went “through the cobblestone alleys of Chicago with a horse-drawn carriage on wagonwheels, not tyres”; “It took 15 minutes to write.”; “I don’t wanna write a, quote, commercial tune just for the heck of it. I want it to be real.”; Donald Byrd’s advice: “half the record is for yourself, and half the record is for the company.” On the blues generally: “I’m from Chicago so I heard the real blues” and “I heard the real blues, Muddy Waters and Howlin’ Wolf and a bunch of others.” — <a href="https://www.mojo4music.com/articles/stories/herbie-hancock-interviewed/">MOJO</a></li>
+<li>Wikipedia states Hancock wrote the tune to help sell his debut and it was the first piece he composed with a commercial goal; he did not regard it as a sellout and called it one of his strongest pieces structurally (Lyons, 1989). That is Wikipedia’s paraphrase, not an exact Hancock quote. — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a></li>
+<li>Ethan Hein says Hancock got the idea by transcribing street calls from women in his neighbourhood, citing context from a 1985 Steven Feld interview (a different quote from that interview about Ba-Benzele: “I could do it but I know that it’s OK ’cause its just a brothers kind of thing.”). — <a href="https://ethanhein.com/wp/2022/watermelon-man/">Ethan Hein</a></li>
+<li>Liner notes via the official site: Hancock played the tune for Alfred Lion at his Blue Note audition and Lion asked for more originals. Donald Byrd urged him to play it for Mongo and to form Hancock Music publishing. — <a href="https://www.herbiehancock.com/music/discography/album/takin-off/">herbiehancock.com</a></li>
+</ul>
+</section>
+<section id="inferences-1" class="level3">
+<h3 class="anchored" data-anchor-id="inferences-1">Inferences</h3>
+<ul>
+<li>The only “bluesy/soul-jazz” characterisation I found comes from reviewers and the label-site notes (“modified blues”, “gospel-infused”). Hancock’s own words in the reached sources stress street-vendor calls, Chicago, gospel/R&amp;B listening and a commercial but “real” intent. The report should not attribute “blues” to Hancock.</li>
+</ul>
+</section>
+<section id="gaps-1" class="level3">
+<h3 class="anchored" data-anchor-id="gaps-1">Gaps</h3>
+<ul>
+<li>Did not read the NPR 2014 transcript (https://www.npr.org/transcripts/354871509 surfaced in search but the fetch timed out), JazzTimes, DownBeat, Guardian, or the memoir text. The Lyons 1989 and Santoro 2004 citations are only second-hand through Wikipedia. Exact memoir wording about the “women calling out” or any “bluesy” intention is not located. One search summary said the mother was involved; no source confirmed this.</li>
+</ul>
+</section>
+</section>
+<section id="mongo-santamaria-1963" class="level2">
+<h2 class="anchored" data-anchor-id="mongo-santamaria-1963">3. Mongo Santamaria 1963</h2>
+<section id="takeaway-2" class="level3">
+<h3 class="anchored" data-anchor-id="takeaway-2">Takeaway</h3>
+<p>Mongo’s hit keeps the same 16-bar form and F7/Bb7/C7 harmony, slower, with a Latin (guajira-based) groove and congas, and one analyst hears two extra groove bars on the second head. It reached No.&nbsp;10 on the Hot 100 (some sources say 11).</p>
+</section>
+<section id="cited-findings-2" class="level3">
+<h3 class="anchored" data-anchor-id="cited-findings-2">Cited Findings</h3>
+<ul>
+<li>Hancock briefly subbed for Chick Corea in Mongo’s band; Donald Byrd urged him to play the tune; Mongo recorded a three-minute radio version on 17 Dec 1962, re-recorded for Battle; released early 1963 (infobox Feb 1963); No.&nbsp;10 Hot 100 in April 1963; Grammy Hall of Fame 1998; sometimes called the start of boogaloo. — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a>. JazzTimes also says No.&nbsp;10. — <a href="https://www.jazztimes.com/?p=1178">JazzTimes obituary</a>. Conflict: uDiscover says “No.&nbsp;11”. — <a href="https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature">uDiscover</a></li>
+<li>Form per Ethan Hein: the same as Hancock’s except that “on the second pass through the head Mongo adds two bars of groove”; slower, guajira-based Latin groove, melody dragged behind the beat. — <a href="https://ethanhein.com/wp/2022/watermelon-man/">Ethan Hein</a></li>
+<li>Hancock (1998 notes, via official site): Mongo said “Keep playing!” and described it as “a tune the Cubans sang up in the mountains, a folk tune.” — <a href="https://www.herbiehancock.com/music/discography/album/takin-off/">herbiehancock.com</a></li>
+</ul>
+</section>
+<section id="gaps-2" class="level3">
+<h3 class="anchored" data-anchor-id="gaps-2">Gaps</h3>
+<ul>
+<li>No chord chart for Mongo’s version; the claim that harmony is unchanged rests on Hein’s “form matches” statement only. Published sources on the Battle record’s tempo, key and arrangement credits were not reached.</li>
+</ul>
+</section>
+</section>
+<section id="head-hunters-1973" class="level2">
+<h2 class="anchored" data-anchor-id="head-hunters-1973">4. Head Hunters (1973)</h2>
+<section id="takeaway-3" class="level3">
+<h3 class="anchored" data-anchor-id="takeaway-3">Takeaway</h3>
+<p>The 1973 track is a re-arrangement in funk: about 75 BPM, no solos, an added chord and a new section modulating up a minor third replace the final bars. Sources agree on the Hindewhu intro; the details of the added chords vary.</p>
+</section>
+<section id="cited-findings-3" class="level3">
+<h3 class="anchored" data-anchor-id="cited-findings-3">Cited Findings</h3>
+<ul>
+<li>Reworked by Hancock and Harvey Mason; only Head Hunters track not written for the album; 6:29. Personnel: Hancock (Rhodes, clavinet, synths), Maupin (soprano), Summers (percussion, beer bottle), Mason, Paul Jackson. — <a href="https://en.wikipedia.org/wiki/Head_Hunters">Wikipedia: Head Hunters</a>; <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a></li>
+<li>Wikipedia: Hancock “added an eight-bar section”; Summers blows into bottles for the intro and outro imitating hindewhu; inspiration was the 1966 recording by Simha Arom and Geneviève Taurelle (the Ba-Benzele Pygmies). Wikipedia’s Head Hunters article marks the beer-bottle credit “[citation needed]”. — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a></li>
+<li>Hein’s section map: about 75 BPM; no solos; “The last two bars of the form are replaced by a new section whose key jumps up a minor third”; sections labelled A (first half of 1962 head), B (bars 9-12 of the 1962 version) and C (new). Sequence: 15-bar hindewhu intro, bass enters (4), drums enter (4), clavinet (8), B (6), C (9), A (7, first Eb held over from the final Gb7 of C), B (6), C (3), A (7), B (6), C (9), outro groove (7), hindewhu fade. — <a href="https://ethanhein.com/wp/2022/watermelon-man/">Ethan Hein</a></li>
+<li>UVM blog: the 1973 version kept “its progression (expanded to include one more chord, Ab7) and a vestige of its melody” and added a new groove and electric instruments. — <a href="https://blog.uvm.edu/tgcleary/2020/03/10/from-watermelon-man-to-cantaloupe-island-and-beyond-herbie-hancocks-ingenious-reinventions-featuring-caves-of-the-island-an-original-tune-based-on-cantaloupe-island/">UVM blog</a></li>
+<li>Hein notes Madonna’s “Sanctuary” sample is a Mixolydian groove clashing with a natural-minor melody on top. — <a href="https://ethanhein.com/wp/2022/watermelon-man/">Ethan Hein</a></li>
+</ul>
+</section>
+<section id="inferences-2" class="level3">
+<h3 class="anchored" data-anchor-id="inferences-2">Inferences</h3>
+<ul>
+<li>Hein’s “Gb7” and UVM’s “Ab7” are two different flat-side chords (a minor third above F7 would put chords in Ab). They may both be real (both are bVII-side/bIII-side colour); I cannot reconcile them without a transcription. Both are the only place any flat-side chord appears, and they belong to the 1973 version only.</li>
+<li>The 1973 head is a re-built form that is no longer a plain 16-bar blues; the groove (Mixolydian vamp) is still blues-derived.</li>
+</ul>
+</section>
+<section id="gaps-3" class="level3">
+<h3 class="anchored" data-anchor-id="gaps-3">Gaps</h3>
+<ul>
+<li>Pond’s 2005 book, the Head Hunters liner notes, and a Hancock 1979 Down Beat quote (“the attention is on the rhythmic interplay…”, via Wikipedia) were not read. No reliable chart of the 1973 harmony found. Bar counts in Hein’s map do not obviously sum to a single-form repeat; treat as one listener’s analysis.</li>
+</ul>
+</section>
+</section>
+<section id="other-covers-relevant-to-form" class="level2">
+<h2 class="anchored" data-anchor-id="other-covers-relevant-to-form">5. Other covers relevant to form</h2>
+<section id="cited-findings-4" class="level3">
+<h3 class="anchored" data-anchor-id="cited-findings-4">Cited Findings</h3>
+<ul>
+<li>Baba Brooks, “Watermelon Man Ska” (1963); the Manish Boys played it live 1964 (no recording); Manfred Mann EP “The One in the Middle” (1965); Big Mama Thornton at Newport Folk Festival (1969); David Benoit (2003). — <a href="https://en.wikipedia.org/wiki/Watermelon_Man_(composition)">Wikipedia</a></li>
+<li>Wikipedia says the tune has been recorded over two hundred times. — same source.</li>
+</ul>
+</section>
+<section id="gaps-4" class="level3">
+<h3 class="anchored" data-anchor-id="gaps-4">Gaps</h3>
+<ul>
+<li>Jon Hendricks lyrics and Manfred Mann’s form were not found. No form data on any of these covers.</li>
+</ul>
+
+
+</section>
+</section>
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../../apps/shared/degree-names.js?v=1"></script>
+<script src="../../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

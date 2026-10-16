@@ -42,6 +42,14 @@ const assert = require("assert");
     assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .abcjs-note').length"), 8);
     assert.strictEqual(await b.eval("document.querySelectorAll('#nt-pending .abcjs-note').length"), 1);   // 9 notes, 8 slots
     { const txt = await b.eval("document.getElementById('nt-abc-text').value"); assert.ok(/G2 B2 d2 c2 \| B2 A2 G2 F2 \|\]/.test(txt), txt); }
+    // clicking the first note of a bar finds it (abcjs starts it at the space after the barline), and Shift+click makes a range
+    { const click = (i, shift) => b.eval(`(() => { const n = document.querySelectorAll('#nt-paper .abcjs-note')[${i}], r = n.getBoundingClientRect(), o = { bubbles: true, clientX: r.x + r.width / 2, clientY: r.y + r.height / 2, shiftKey: ${!!shift}, button: 0 };
+        n.dispatchEvent(new MouseEvent('mousedown', o)); n.dispatchEvent(new MouseEvent('mouseup', o)); })()`);
+      await click(4); await b.sleep(150);
+      assert.strictEqual(await b.eval("NotationPage.sel() && NotationPage.sel().slot"), 4, "the first note of bar 2 is clickable");
+      await click(1); await b.sleep(150); await click(5, true); await b.sleep(150);
+      assert.strictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].map(n => n.classList.contains('nt-sel') ? 1 : 0).join('')"), "01111100", "Shift+click selects the range, across the barline");
+      await click(7); await b.sleep(150); }
 
     // click the 3rd note, move it: step down (d -> c), semitone up (c -> c#), octave down
     await b.eval("document.querySelectorAll('#nt-paper .abcjs-note')[2].dispatchEvent(new MouseEvent('mousedown',{bubbles:true})), document.querySelectorAll('#nt-paper .abcjs-note')[2].dispatchEvent(new MouseEvent('mouseup',{bubbles:true})), 1");
@@ -99,13 +107,13 @@ const assert = require("assert");
 
     // sections collapse; the jump bar opens and goes to them
     const navs = await b.eval("[...document.querySelectorAll('#nt-nav a')].map(a => a.textContent)");
-    assert.deepStrictEqual(navs, ["Start here", "The piece", "Chunks", "Chords", "Rhythm", "Notes", "Words", "Play it in time", "The music", "DWIM", "ABC", "ChordPro"]);
+    assert.deepStrictEqual(navs, ["Play it in", "The music", "Chunks", "The piece", "DWIM", "ABC", "ChordPro", "Other ways in", "Notes", "Chords", "Rhythm", "Words", "Play it in time: more"]);
     await b.eval("document.querySelector('#nt-rhythm > summary').click()");
     assert.strictEqual(await b.eval("document.getElementById('nt-rhythm').open"), false);
     await b.eval("[...document.querySelectorAll('#nt-nav a')].find(a => a.textContent === 'Rhythm').click()");
     assert.strictEqual(await b.eval("document.getElementById('nt-rhythm').open"), true);
-    // two columns side by side at desktop width
-    assert.ok(await b.eval("(() => { const [a, c] = document.querySelectorAll('.nt-col'); return c.getBoundingClientRect().left > a.getBoundingClientRect().right; })()"));
+    // the other ways in sit in a sidebar to the right at desktop width
+    assert.ok(await b.eval("(() => { const a = document.querySelector('.nt-main'), c = document.querySelector('.nt-side'); return c.getBoundingClientRect().left > a.getBoundingClientRect().right && !!c.querySelector('#nt-rhythm'); })()"));
 
     // undo, then ABC typed in replaces the piece
     await b.eval("document.getElementById('nt-undo').click()");

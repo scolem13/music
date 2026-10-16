@@ -1,0 +1,7 @@
+---
+title: "Dictation"
+---
+
+::: {.column-screen}
+{{< include _dictation-embed.qmd >}}
+:::

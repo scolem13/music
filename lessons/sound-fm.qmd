@@ -1,5 +1,5 @@
 ---
-title: "Sound 7: FM Synthesis"
+title: "Sound 8: FM Synthesis"
 toc: true
 toc-depth: 2
 ---
@@ -65,6 +65,6 @@ just two numbers: the ratio decides *where* they go and the index decides *how m
 
 ## Next
 
-- [Sound 8: Wavetable synthesis](sound-wavetable.qmd)
+- [Sound 9: Wavetable synthesis](sound-wavetable.qmd)
 
 {{< include _synth-kit.qmd >}}

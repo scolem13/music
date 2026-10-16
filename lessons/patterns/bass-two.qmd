@@ -13,7 +13,7 @@ This is a lesson on one bass line the [Backing Track](../../tools/backing-track.
 
 Half notes on beats 1 and 3, root then fifth, with an occasional pickup into the next bar. The lighter feel a band often plays on the head before the bass starts to walk.
 
-It belongs in *Swing* and *Jazz ballad*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Swing*, *Jazz ballad* and *Stride piano*. Here it is in the swing style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="bass drums" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
 
@@ -47,18 +47,23 @@ Harder: now some bars have two chords, two beats each. Each chord gets its root 
 
 ## In other styles
 
-The same bass line in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+The same bass line in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
 
 **Jazz ballad**
 
 <div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
 
+**Stride piano**
+
+<div class="ar-demo" data-style="stride" data-chart="C|A7|D7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="bass" data-choice-label="Bass line:" data-choices='[{"label":"Two-feel","opts":{"bassFeel":"two"}}]'></div>
+
 ## How it relates to the other patterns
 
 - **Builds on:** [Roots on 1 and 3](bass-halves.qmd).
 - **Leads to:** [12/8 ballad](bass-twelve8.qmd), [Walking](bass-walk.qmd), [So What: the bass call](bass-sowhat.qmd), [Killer Joe: two-bar vamp](bass-killerjoe.qmd): the patterns that use this one as a step.
+- **The same idea elsewhere in the band:** [Stride](chords-stride.qmd) (comping rhythm), [Boom-chick / oom-pah-pah](chords-oompah.qmd) (comping rhythm), [Root and fifth](bass-alt.qmd) (bass line).
 - **Plays with, in swing:** [Varied](chords-auto.qmd) (comping rhythm), [Jazz time](drums-auto.qmd) (drum groove).
-- **Other bass lines in the Jazz group:** [Walking](bass-walk.qmd), [Chord tones (learning to walk)](bass-arp.qmd), [Boogaloo riff](bass-riff.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd).
+- **Other bass lines in the Jazz group:** [Walking](bass-walk.qmd), [Chord tones (learning to walk)](bass-arp.qmd), [Boogaloo riff](bass-riff.qmd), [Boogie-woogie](bass-boogie.qmd), [Boogie-woogie octaves](bass-boogie-oct.qmd), [Yancey figure](bass-yancey.qmd), [Boogaloo riff, walking at times](bass-riffwalk.qmd).
 
 {{< include ../_arrange-kit.qmd >}}
 

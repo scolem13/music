@@ -45,7 +45,7 @@ ul.task-list li input[type="checkbox"] {
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-01a82125dcc07191ca4a322ed0902c35.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -53,12 +53,7 @@ ul.task-list li input[type="checkbox"] {
   "panel-placement": "end",
   "type": "overlay",
   "limit": 50,
-  "keyboard-shortcut": [
-    "f",
-    "/",
-    "s"
-  ],
-  "show-item-context": false,
+  "keyboard-shortcut": [],
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +83,8 @@ ul.task-list li input[type="checkbox"] {
 <!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
      tool scripts run; injects a step banner when a session is active. -->
 <script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
 
 
 </head>
@@ -148,6 +145,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/blues-drums.html">
  <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
   </li>  
@@ -166,6 +167,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../lessons/watermelon-congas.html">
  <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/pop-changes.html">
@@ -194,6 +199,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
  <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/travis-picking.html">
@@ -230,6 +239,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../lessons/cadences.html">
  <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/guide-tones.html">
@@ -274,6 +287,26 @@ ul.task-list li input[type="checkbox"] {
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
+    <a class="dropdown-item" href="../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/sound-harmonics.html">
  <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
   </li>  
@@ -290,44 +323,157 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Sound 4: Filters</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../lessons/sound-lfo.html">
- <span class="dropdown-text">Sound 5: LFOs</span></a>
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-subtractive.html">
- <span class="dropdown-text">Sound 6: Subtractive Synthesis</span></a>
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-fm.html">
- <span class="dropdown-text">Sound 7: FM Synthesis</span></a>
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-wavetable.html">
- <span class="dropdown-text">Sound 8: Wavetable Synthesis</span></a>
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-distortion.html">
- <span class="dropdown-text">Sound 9: Distortion</span></a>
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-compressor.html">
- <span class="dropdown-text">Sound 10: The Compressor</span></a>
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-reverb.html">
- <span class="dropdown-text">Sound 11: Reverb</span></a>
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-chorus.html">
- <span class="dropdown-text">Sound 12: Chorus and Flanger</span></a>
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-phaser.html">
- <span class="dropdown-text">Sound 13: Phaser</span></a>
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../lessons/sound-vocoder.html">
- <span class="dropdown-text">Sound 14: The Vocoder</span></a>
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
   </li>  
     </ul>
   </li>
@@ -372,6 +518,10 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../practice/reading-benchmarks.html">
  <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -461,6 +611,14 @@ ul.task-list li input[type="checkbox"] {
         <li>
     <a class="dropdown-item" href="../tools/ipa-chart.html">
  <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
   </li>  
     </ul>
   </li>
@@ -661,6 +819,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   <button type="button" data-topic="improv">Improvising</button>
   <button type="button" data-topic="reading">Reading</button>
   <button type="button" data-topic="sound">Sound and synths</button>
+  <button type="button" data-topic="recording">Recording</button>
+  <button type="button" data-topic="gear">Gear and care</button>
 </div>
 <p class="ll-note" id="ll-note" aria-live="polite" hidden="">No lessons match both choices yet.</p>
 
@@ -688,6 +848,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   <li data-for="all piano" data-topic="blues jazz harmony">
     <a href="blues-piano.html">Blues for Piano: From Roots to Rootless Voicings</a>
     <p>Left-hand roots, guide tones in the right hand, three-note shells and rootless left-hand voicings, each on a keyboard diagram and a grand staff.</p>
+  </li>
+  <li data-for="all bass piano" data-topic="blues jazz">
+    <a href="stride-boogie.html">Two Left Hands: Stride and Boogie-Woogie</a>
+    <p>The two great left hands of early jazz piano, played on the band one at a time, side by side on a blues, and swapped: stride leaps between bass and chord, boogie-woogie walks in eighths.</p>
   </li>
   <li data-for="all drums" data-topic="blues jazz rhythm reading">
     <a href="blues-drums.html">Blues for Drums: From Quarter Notes to the Shuffle</a>
@@ -737,6 +901,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     <a href="hammer-ons-pull-offs.html">Hammer-ons and Pull-offs on Guitar</a>
     <p>From one finger on one string to trills, licks and the Sus embellishment on open D, A and C, each written in notation and tablature that plays.</p>
   </li>
+  <li data-for="all guitar" data-topic="blues improv">
+    <a href="guitar-bends.html">String Bends on Guitar: Bending in Tune</a>
+    <p>Half-step, whole-step and 1½-step bends, curls, pre-bends, unison and double-stop bends, how they're written in tab, and the blue notes they reach in the A minor pentatonic box, with a drone to bend against.</p>
+  </li>
   <li data-for="all guitar" data-topic="pop rhythm">
     <a href="travis-picking.html">Travis Picking on Guitar</a>
     <p>The thumb alone, pinches, fingers between the thumb notes, then C, G, Am and D, chord changes, hammer-ons and pull-offs, and the band. Ends with a note on chicken pickin'.</p>
@@ -751,7 +919,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   </li>
   <li data-for="all guitar piano" data-topic="harmony">
     <a href="inversions.html">Inversions: Root Position, First and Second Inversion</a>
-    <p>Major and minor triads with the root, 3rd or 5th in the bass, their figured-bass names (⁶ and ⁶₄) and slash-chord names (C/E, C/G), on piano and guitar.</p>
+    <p>Major and minor triads with the root, 3rd or 5th in the bass, their figured-bass names (<span class="fb one"><span>6</span></span> and <span class="fb"><span>6</span><span>4</span></span>) and slash-chord names (C/E, C/G), on piano and guitar.</p>
   </li>
   <li data-for="all voice" data-topic="pop">
     <a href="voice-pop.html">Pop Singing: Speech, Mix, Runs and the Mic</a>
@@ -772,6 +940,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   <li data-for="all bass guitar piano drums violin sax other" data-topic="harmony">
     <a href="cadences.html">Cadences, and the One That Is Not</a>
     <p>Authentic, half, deceptive, plagal and backdoor endings, each as a four-bar phrase on a staff, with the argument for why the plagal "Amen" is not a cadence, a phrase builder and two ear tests.</p>
+  </li>
+  <li data-for="all bass guitar piano violin sax other" data-topic="harmony">
+    <a href="write-an-ending.html">Write an Ending</a>
+    <p>The tune library's Unfinished Songs stop two bars short over V and I. Write the melody that ends them, in the Notation page, and hear it with the chords.</p>
   </li>
   <li data-for="all bass guitar piano violin sax other" data-topic="jazz harmony">
     <a href="guide-tones.html">Guide Tones</a>
@@ -813,6 +985,22 @@ document.addEventListener('DOMContentLoaded', async function () {
     <a href="patterns/index.html">Accompaniment Patterns</a>
     <p>A lesson for every bass line, comping rhythm, drum groove and conga part the band plays, each built up from simpler ones, played on the band and written out.</p>
   </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="reading sound">
+    <a href="notation-choices.html">Writing Music Down: Choosing the Right Notation</a>
+    <p>One melody as staff notation, jianpu, Hindustani and Carnatic sargam, a DAW piano roll and arrangement, a waveform and a spectrogram: what each shows, what it hides, and when to use it. With MYP and DP notes.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound harmony">
+    <a href="tuning-systems.html">Tuning Systems: Just Intonation and Equal Temperament</a>
+    <p>Why a pure major third does not beat and the piano's does, the syntonic and Pythagorean commas, and what twelve equal steps cost. Hear both on sine waves, the drone and a chord keyboard, then meet meantone, well temperaments and tunings that are not twelve-note.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="strobe-tuner.html">How a Strobe Tuner Works</a>
+    <p>The spinning disc and flashing lamp of the Strobotuner, why a pattern stands still (the wagon-wheel effect), one band for each partial, the multiply-and-average arithmetic of the software version, drift as beat rate and cents, stiff strings and weak fundamentals, and just against equal temperament. Watch it follow the page's own sound, no microphone.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="inharmonicity.html">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</a>
+    <p>Why some partials are not whole-number multiples: string stiffness (with a calculator), old strings, mode locking, brass and clarinet, formants, marimba and xylophone bars, chimes, church bells, timpani and gamelan. What a player can change (levels, not pitch) and what only the maker can, with every instrument as a practice preset on the strobe tuner.</p>
+  </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
     <a href="sound-harmonics.html">Sound 1: The Harmonic Series and Fourier</a>
     <p>The harmonics of a note written out over any root, with how far each is from the piano. Build square, triangle, sawtooth and pulse waves from sine waves.</p>
@@ -830,44 +1018,152 @@ document.addEventListener('DOMContentLoaded', async function () {
     <p>Low-pass, high-pass, resonance, band-pass, notch and EQ, on noise, music or your own voice.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-lfo.html">Sound 5: LFOs</a>
+    <a href="sound-envelopes.html">Sound 5: Envelopes</a>
+    <p>Attack, decay, sustain and release: why a piano, an organ and a violin playing the same note sound different.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-lfo.html">Sound 6: LFOs</a>
     <p>Vibrato, tremolo, wah and auto-pan from one slow oscillator, and what happens when it speeds up.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-subtractive.html">Sound 6: Subtractive Synthesis</a>
+    <a href="sound-subtractive.html">Sound 7: Subtractive Synthesis</a>
     <p>A two-oscillator synth with filter, envelopes and LFO, played from the keys or MIDI, with presets for bass, brass, pads and plucks.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-fm.html">Sound 7: FM Synthesis</a>
+    <a href="sound-fm.html">Sound 8: FM Synthesis</a>
     <p>Carrier, modulator, ratio and index: sidebands on the spectrum, and bells, electric piano and bass from two sine waves.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-wavetable.html">Sound 8: Wavetable Synthesis</a>
+    <a href="sound-wavetable.html">Sound 9: Wavetable Synthesis</a>
     <p>Morph through a table of wave shapes by hand or with an LFO.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-distortion.html">Sound 9: Distortion</a>
-    <p>Soft clip, hard clip, tube-like, wavefolder and bit crusher, and the harmonics each one adds.</p>
+    <a href="sound-granular.html">Sound 10: Granular Synthesis</a>
+    <p>A sound cut into hundreds of grains: freeze it, stretch it without changing its pitch, or scatter it into a cloud. Record your own voice.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-compressor.html">Sound 10: The Compressor</a>
+    <a href="sound-eq.html">Sound 11: The Equaliser</a>
+    <p>High-pass, shelves and bells, what lives in each frequency range, cut before you boost, and finding a hidden ringing frequency by ear.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-distortion.html">Sound 12: Distortion</a>
+    <p>Overdrive, distortion and fuzz told apart; soft clip, hard clip, tube-like, wavefolder and bit crusher, and the harmonics each one adds.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-compressor.html">Sound 13: The Compressor</a>
     <p>Threshold, ratio, knee, attack and release, with a live gain-reduction meter.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-reverb.html">Sound 11: Reverb</a>
-    <p>A convolution reverb with a room you build: decay, pre-delay, damping and early reflections.</p>
+    <a href="sound-sidechain.html">Sound 14: Sidechain</a>
+    <p>Music ducking under a kick drum, from invisible glue to EDM pumping, and radio-style ducking under a voice.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-chorus.html">Sound 12: Chorus and Flanger</a>
+    <a href="sound-gate.html">Sound 15: Gates and Transients</a>
+    <p>A noise gate, the 80s gated-reverb snare, and a transient shaper for punch or room.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-reverb.html">Sound 16: Reverb</a>
+    <p>A convolution reverb with a room you build: decay, pre-delay, damping and early reflections; spring reverb, shimmer and freeze.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-delay.html">Sound 17: Delay</a>
+    <p>Slapback, tempo echoes, ping-pong, tape and dub feedback, and a glitch stutter that loops slices of the beat.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-chorus.html">Sound 18: Chorus and Flanger</a>
     <p>Moving short delays, the Doppler effect, and the comb filter.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-phaser.html">Sound 13: Phaser</a>
+    <a href="sound-phaser.html">Sound 19: Phaser</a>
     <p>All-pass filters, phase and sweeping notches.</p>
   </li>
   <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
-    <a href="sound-vocoder.html">Sound 14: The Vocoder</a>
+    <a href="sound-tremolo.html">Sound 20: Tremolo and the Rotary Speaker</a>
+    <p>Tremolo, auto-pan, and a spinning Leslie speaker with its horn and drum speeding up at different rates.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-pitch.html">Sound 21: Pitch Effects</a>
+    <p>How a pitch shifter works, the octaver, a harmonizer that stays in key, and auto-tune from natural to robotic.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-vocoder.html">Sound 22: The Vocoder</a>
     <p>Talk into the microphone and play chords: the voice shapes the synth band by band.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-stereo.html">Sound 23: Stereo</a>
+    <p>Pan, the Haas effect and mid/side width on a vectorscope, and why you check a mix in mono.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="sound">
+    <a href="sound-chain.html">Sound 24: The Signal Chain</a>
+    <p>The order of effects and why it matters, and gain staging: never clip a stage.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-gain-staging.html">Recording 1: Gain Staging</a>
+    <p>Preamp gain, dBFS and headroom, pads and DI: record at −18 average, never in the red.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-mics.html">Recording 2: Microphones and Phantom Power</a>
+    <p>Dynamic, condenser and ribbon; +48 V and how not to pop it; polar patterns; which mic for what.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-placement.html">Recording 3: Distance, Bleed and Phase</a>
+    <p>The inverse-square law, proximity effect, where to point it, keeping bleed out, the 3:1 rule and polarity.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-monitoring.html">Recording 4: Monitoring and Headphones</a>
+    <p>When to use headphones and when speakers, closed vs open, latency and direct monitoring, the cue mix.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-mixing.html">Recording 5: Mixing</a>
+    <p>Balance, pan, EQ, compression and space, in that order, with sends and automation.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-mastering.html">Recording 6: Mastering</a>
+    <p>Tonal balance, glue, limiting to −1 dBTP, LUFS and streaming loudness, dither and delivery files.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="rec-stereo.html">Recording 7: Mono and Stereo</a>
+    <p>Stereo pairs, one earbud and summing to mono, live sound, speaker placement, laptops and two subwoofers.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="gear">
+    <a href="gear-power.html">Gear 1: Power and Safety</a>
+    <p>Amps last on, first off; sockets and extension leads; earth, hum and ground loops; adaptors.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="gear">
+    <a href="gear-cables.html">Gear 2: Cables and Connectors</a>
+    <p>Jack, XLR, TRS and the rest; balanced and unbalanced; mic, instrument, line and speaker level; over-under.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="gear">
+    <a href="gear-amps.html">Gear 3: Amps, Speakers and the PA</a>
+    <p>Instrument amps, powered and passive speakers, a mixer channel top to bottom, sound check and feedback.</p>
+  </li>
+  <li data-for="all piano other" data-topic="gear">
+    <a href="gear-keyboards.html">Gear 4: Keyboards</a>
+    <p>Kinds of keyboard, outputs and the sustain pedal, Local Off and transpose, stand height and cleaning.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="gear">
+    <a href="gear-setup.html">Gear 5: Setting Up, Packing Down and Your Ears</a>
+    <p>Stage plot, setup and pack-down order, rehearsal etiquette, lifting, and protecting your hearing.</p>
+  </li>
+  <li data-for="all bass guitar" data-topic="gear">
+    <a href="gear-guitar.html">Gear 6: Guitar and Bass Care</a>
+    <p>Strings, tuning, climate, and when it needs a setup.</p>
+  </li>
+  <li data-for="all violin" data-topic="gear">
+    <a href="gear-violin.html">Gear 7: Violin Care for Beginners</a>
+    <p>The bow and rosin, wiping down, fine tuners and pegs, the bridge, strings and humidity.</p>
+  </li>
+  <li data-for="all sax" data-topic="gear">
+    <a href="gear-sax.html">Gear 8: Saxophone Care for Beginners</a>
+    <p>Assembling, reeds, swabbing after every practice, and signs of a leak.</p>
+  </li>
+  <li data-for="all drums" data-topic="gear">
+    <a href="gear-drums.html">Gear 9: Drum Kit Setup and Care</a>
+    <p>Fitting the kit to the player, tuning heads, cymbal felts and care.</p>
+  </li>
+  <li data-for="all bass guitar piano drums violin sax voice other" data-topic="recording">
+    <a href="timestamp-player.html">Mapping a Recording</a>
+    <p>Stamp the sections, tap the bars, loop a verse: Timestamp Notes, and what to do when YouTube won't play.</p>
   </li>
 </ul>
 
@@ -906,7 +1202,7 @@ document.addEventListener('DOMContentLoaded', async function () {
      (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
 <script src="../apps/shared/degree-names.js?v=1"></script>
 <script src="../apps/shared/circle-of-fifths.js?v=2"></script>
-<script src="../apps/shared/practice-widgets.js?v=6"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";

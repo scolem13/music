@@ -1,0 +1,430 @@
+---
+title: "Writing Music Down: Choosing the Right Notation"
+toc: true
+toc-depth: 2
+---
+
+There is no single right way to write music down. A notation is a tool. Each one shows some things
+clearly and leaves others out, and each belongs to a tradition whose players read it fluently. This
+lesson writes **one melody six ways** so you can compare them side by side, then says when to reach
+for each.
+
+The melody is the opening of **Mò Lì Huā** (茉莉花, *Jasmine Flower*), a Chinese folk song known
+across the world. It uses only five notes (a pentatonic scale), which also exists in Indian
+music: Hindustani musicians call that scale *rāg Bhūpālī* and Carnatic musicians *rāga Mōhanam*. So
+it can be written naturally in every system on this page.
+
+<p><button type="button" class="btn btn-sm btn-outline-primary nc-play">▶ Hear the melody</button>
+<span class="nc-note">Every example below is this same phrase.</span></p>
+
+::: {.callout-note collapse="true"}
+## IB: why notation choice matters in MYP and DP
+
+In both programmes, *how* you show music is part of how you show understanding. Examiners and
+teachers look for notation that is **appropriate to the music** and **used accurately**. Writing a
+Chinese folk song only in staff notation, or a beat made in a DAW only as a waveform picture, can
+hide exactly the things you need to discuss. The notes in the boxes below say what to watch for in
+each programme. Always check the current subject guide and your teacher's instructions: the details of
+assessment change between guide editions.
+:::
+
+## The six notations at a glance
+
+| Notation | Shows well | Leaves out or blurs | Typical home |
+|---|---|---|---|
+| **Staff (Western) notation** | exact pitch and rhythm, harmony, several parts at once | tuning between the 12 notes, ornaments of other traditions, timbre | Western classical, jazz, film, band, most published music |
+| **Jianpu** (numbered notation) | scale degrees, rhythm, lyrics; quick to write and to transpose | harmony and multiple parts are clumsy | Chinese folk, pop and instrumental music; also Indonesia, Japan |
+| **Sargam** (Hindustani and Carnatic) | scale degrees *in a rāga*, rhythm against the tāla cycle | the ornaments (gamaka, mīnd) that matter most; it's a memory aid, not a full score | Indian classical teaching and composition |
+| **DAW screenshot** (piano roll, arrangement) | exact timing, velocity, structure, layers, effects and automation | key, harmony and musical meaning; it is a picture of data, not something to read | electronic, pop production, any music made in a computer |
+| **Waveform** | loudness over time, where sounds start, silence, clipping | pitch, harmony, almost everything else | editing audio, checking timing and dynamics |
+| **Spectrogram** | which frequencies sound when: timbre, harmonics, vibrato | it's hard to read notes, rhythm or harmony from it, especially with several instruments | acoustics, voice, sound design, analysis of non-pitched music |
+
+## Staff notation
+
+<div class="nc-fig" id="nc-staff"></div>
+
+Five lines, notes placed on lines and spaces for pitch, note shapes for length. Its strengths: **exact
+pitch** (every one of the 12 notes in every octave), **exact rhythm**, and **many parts at once**
+lined up vertically, so harmony and counterpoint can be seen. That's why orchestral, choral and band
+music, and almost all analysis of Western harmony, uses it.
+
+Its weaknesses: it assumes the 12 equal notes of a piano, so pitches *between* them (blue notes,
+Arabic maqām, Indian shruti, the slides of Chinese erhu playing) need extra signs or prose. It also
+needs training to read quickly.
+
+**Use it when:** writing for Western instruments or ensembles; analysing harmony, voice leading or
+form in Western music; when exact rhythm and pitch must be communicated to a reader who will play it.
+
+::: {.callout-note collapse="true"}
+## MYP and DP notes: staff notation
+
+- **MYP:** you don't have to use staff notation in MYP Music, but when you analyse Western music,
+  short notated examples (a motif, a chord progression) are the clearest evidence. Label what you're
+  showing: circle the motif and name it, write the chord symbols above. In your process journal, a
+  scan of a hand-written sketch is fine.
+- **DP:** when you discuss a Western work in the *Exploring music in context* portfolio or an analysis,
+  quote **short, annotated excerpts** with bar numbers instead of long unmarked pages, and say where
+  they come from. For your own compositions, staff notation is expected where the music is written
+  for performers to read; use notation software and check that what is written matches what you
+  intend to be played.
+:::
+
+## Jianpu (numbered notation)
+
+<div class="nc-fig nc-jp" id="nc-jianpu"></div>
+
+**Jianpu** (简谱, "simplified notation") numbers the notes of the scale: 1 to 7 are do, re, mi, fa,
+sol, la, ti. The key is given at the start (**1 = F** means do is F). A **dot above** a number puts
+it an octave up, a dot below an octave down. A plain number lasts one beat; each **line under** a
+number halves it; a **dash** after it adds a beat. Bar lines are as in staff notation.
+
+It was spread in China in the early 20th century from a French numbered system, and is still how
+most Chinese musicians write and read folk songs, pop songs and parts for traditional instruments
+like the erhu, pipa and dizi. Because it writes **scale degrees**, not fixed pitches, the same page
+can be played in any key just by changing "1 =".
+
+**Use it when:** writing or studying Chinese music, or when the players read jianpu; writing a
+single melody with lyrics quickly; teaching melodies by scale degree (it pairs naturally with
+[tonal solfège](tonal-do-re-mi.qmd)).
+
+::: {.callout-note collapse="true"}
+## MYP and DP notes: jianpu
+
+- **MYP:** if you investigate a Chinese musical tradition (Criterion A, *Investigating*), showing the
+  music in jianpu, with a short key that explains the dots, lines and dashes, demonstrates that you
+  understand how the tradition itself writes music. Put staff notation next to it if your reader
+  won't know jianpu.
+- **DP:** in the portfolio or an analysis, quoting music from a Chinese tradition in its own notation
+  is a sign of working *in context*. Provide a legend the first time, and if you compare it with a
+  Western piece, a parallel staff version helps the examiner follow. Don't just transcribe it into
+  staff notation and leave the original out.
+:::
+
+## Sargam: Hindustani and Carnatic notation
+
+Indian classical music names the notes of the scale **Sa Re Ga Ma Pa Dha Ni** (*sargam*), shortened
+to their first letters. Sa is the home note, chosen by the singer; like jianpu, it writes scale
+degrees, not fixed pitches. The two classical traditions write it a little differently.
+
+### Hindustani (North Indian): Bhatkhande notation
+
+<div class="nc-fig" id="nc-hindustani"></div>
+
+Developed by Vishnu Narayan Bhatkhande in the early 20th century. Each box is one **mātrā** (beat).
+Notes sharing a beat are joined by a curve beneath. A **dot above** a note is the upper octave (Ṡ), a
+dot below is the lower. A dash holds the previous note (some books use the Devanagari sign ऽ instead). Underneath, the **tāla** (the
+rhythmic cycle) is marked: **X** is *sam*, the first and strongest beat, and **0** is *khālī*, the
+"empty" beat. This melody fits exactly one cycle of the eight-beat **Keherwā** tāla. A flat (komal)
+note is shown by a line under it, and the raised Ma (tīvra) by a line above.
+
+### Carnatic (South Indian): swara notation
+
+<div class="nc-fig" id="nc-carnatic"></div>
+
+Carnatic notation writes the swaras in lower-case letters (s r g m p d n), with dots for octaves, a
+**comma** to extend a note by one time unit and a **semicolon** for two. The tāla is marked with
+bar lines at the end of each section: one line after the **laghu** (four beats here) and after each
+**drutam** (two beats), and a double line at the end of the cycle. Eight beats is **Ādi tāla**, the
+most common Carnatic tāla, so this melody fills exactly one cycle of it too.
+
+### What sargam leaves out
+
+The most important part of a rāga is *how* notes are approached: slides (mīnd), oscillations
+(gamaka), which notes are lingered on. The written swaras give the skeleton only, and students learn
+the rest by ear from a teacher. Many pieces are never written at all. So sargam notation is a
+reliable **memory aid and teaching tool**, not a complete score.
+
+**Use it when:** studying, teaching or composing in an Indian tradition; showing the shape of a
+rāga; showing how a melody sits against a tāla cycle.
+
+::: {.callout-note collapse="true"}
+## MYP and DP notes: sargam
+
+- **MYP:** in an investigation of Indian music, use the tradition's own terms (rāga, tāla, sam,
+  khālī, swara) and its notation for short examples. Explain in your own words what the notation
+  *cannot* show, such as gamaka, and support it with a timestamped recording ("listen at 1:42 for the
+  slide from Ga to Re").
+- **DP:** for the portfolio or an analysis of Indian music, sargam with a legend, plus **precise
+  timestamps** in a named recording, is stronger evidence than a staff transcription alone. Staff
+  notation can't show the shruti and gamaka you'd be discussing. If you do transcribe to staff for
+  comparison, say what it loses. Name the tradition (Hindustani or Carnatic), and the rāga and tāla.
+:::
+
+## DAW screenshots
+
+<div class="nc-fig" id="nc-pianoroll"></div>
+<div class="nc-fig" id="nc-arrange"></div>
+
+A **digital audio workstation** (DAW) shows music the way the computer stores it. The **piano roll**
+(top) is a grid: time runs left to right, pitch bottom to top, each bar is a note, and its shade is
+how hard it is played (velocity). The **arrangement view** (bottom) shows every track as a lane of
+blocks (regions or clips), with lines for **automation**: a volume fade, a filter opening.
+
+What it's good at: **exact timing** and **velocity**, how a track is **layered and structured**,
+which **sounds, effects and automation** were used. For electronic music, hip hop and most pop
+production, *this is the score*: the music was never written any other way.
+
+What it's bad at: it doesn't tell the reader the key, the chords or the beat they should feel. It's a
+picture to be *explained*, not something a performer can read. A wall of tiny clips means nothing
+without labels.
+
+**Use it when:** the music was made in a DAW; showing production decisions (layers, effects,
+automation, edits); showing a process (before and after).
+
+::: {.callout-note collapse="true"}
+## MYP and DP notes: DAW screenshots
+
+- **MYP:** screenshots are excellent process-journal evidence for Criterion B (*Developing*) and C
+  (*Creating*): show a "before" and "after" with a sentence on why you changed it. Crop to what
+  matters, zoom so it's readable, and add arrows and labels. A full-screen screenshot of the whole
+  project with no annotation shows very little.
+- **DP:** in the *Experimenting with music* report and in production-based *Presenting music* or HL
+  project work, annotated DAW screenshots are often the most appropriate evidence for music created in
+  a DAW. Annotate them: name the track, the plug-in and the setting, and say what musical effect it
+  had. Pair a screenshot with a timestamp in the audio ("the filter opens at 0:48"). For anything
+  that will be performed by players, include a readable score or lead sheet as well.
+:::
+
+## Waveforms
+
+<div class="nc-fig" id="nc-wave"></div>
+
+A **waveform** draws the sound itself: how far the speaker cone moves, over time. Zoomed out (top),
+it shows **loudness over time**: where notes start, how they fade, where the silences are, and
+whether the recording is clipping (flat-topped at the edges). Zoomed right in (bottom), you can see
+individual cycles of the wave (see [Sound 1](sound-harmonics.qmd)).
+
+That's about all it shows. You cannot read the pitches, the harmony or the instruments from it.
+
+**Use it when:** showing where an edit, an entry or a hit happens; comparing the dynamics of two
+performances or two masters; showing that a recording is too quiet or distorted.
+
+## Spectrograms
+
+<div class="nc-fig" id="nc-spec"></div>
+
+A **spectrogram** shows time left to right, frequency bottom to top, and loudness as brightness. Each
+note appears as a stack of lines (its harmonics), so it shows **timbre**, **vibrato** and **which
+frequencies are present when**. Here you can see the melody's notes, each with its harmonics above,
+and the slight vibrato on the long notes.
+
+With one clean instrument, it can be surprisingly readable. With a full band it becomes a dense
+cloud from which notes, chords and rhythm are very hard to pick out. Specialists use it for voice
+(formants), acoustics, birdsong, and for music where pitch isn't the point: electronic textures,
+noise music, extended techniques.
+
+**Use it when:** your point is about timbre, a sound's frequency content, vibrato or a texture with no
+clear notes, and only with labels that point at what to look at.
+
+::: {.callout-note collapse="true"}
+## MYP and DP notes: waveforms and spectrograms
+
+- **MYP and DP alike:** use them only when they **show the point you're making** (dynamics,
+  timing, timbre), and say what to look at. A waveform or spectrogram dropped in as decoration
+  isn't evidence of anything, and it won't stand in for notation. One cropped, labelled image with
+  a timestamp beats a full-track screenshot.
+- **DP:** in an analysis of electronic or non-notated music, a spectrogram with a labelled feature
+  ("the sweep from 200 Hz to 5 kHz is the filter opening") can support a point about timbre or
+  production that no score could show. Keep it as support for your writing, not a substitute.
+:::
+
+## Choosing: a short checklist
+
+1. **Whose music is it?** Use the notation the tradition itself uses (staff for a Bach chorale,
+   jianpu for a Chinese folk song, sargam for a bandish, a DAW view for a track made in Ableton), and
+   add a translation only if your reader needs it.
+2. **What's the point you're making?** Harmony → staff. Scale degrees and melody → jianpu or
+   sargam. Production → DAW. Dynamics or timing of a recording → waveform. Timbre → spectrogram.
+3. **Who has to read it?** A performer needs something playable. An examiner needs something
+   labelled.
+4. **What does it leave out?** Say so, and fill the gap with a recording and a timestamp.
+5. **Crop, label, cite.** Short excerpts, bar numbers or timestamps, the source of every example.
+
+::: {.callout-note collapse="true"}
+## MYP and DP notes: presenting evidence in general
+
+- **Legends.** The first time you use any notation your reader might not know (jianpu, sargam, a
+  graphic score), give a two-line key.
+- **Accuracy.** Wrong notes or rhythms in a notated example undermine the point it makes. Check
+  every example against the recording.
+- **Citations.** Every quoted score, recording and screenshot of someone else's work needs a source.
+- **Recordings and timestamps.** For music that isn't primarily written down, the recording is the
+  primary source, and a timestamp is your "bar number".
+- **Your own work.** In both programmes, evidence of process (sketches, screenshots of versions,
+  short recordings of tries) counts. Date it and say what changed.
+:::
+
+```{=html}
+<style>
+.nc-fig{margin:1rem 0 1.4rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface);padding:.8rem 1rem;overflow-x:auto}
+.nc-fig figcaption,.nc-cap{font-size:.85rem;color:var(--site-ink-2);margin-top:.4rem}
+.nc-note{font-size:.85rem;color:var(--site-ink-2);margin-left:.5rem}
+.nc-fig svg text{font-family:system-ui,sans-serif}
+.nc-fig canvas{width:100%;display:block;border-radius:4px}
+.nc-jp-line{display:flex;align-items:flex-end;flex-wrap:wrap;font-family:var(--font-mono);font-size:1.6rem;line-height:1;gap:0;padding:1rem 0 .4rem}
+.nc-jp-key{font-size:1rem;margin-right:1.2rem;align-self:center;font-family:var(--font-body)}
+.nc-jp-n{position:relative;display:inline-block;width:1.25em;text-align:center;padding-top:.35em}
+.nc-jp-n.up::before{content:"";position:absolute;top:0;left:50%;width:.2em;height:.2em;margin-left:-.1em;border-radius:50%;background:currentColor}
+.nc-jp-g{display:inline-flex;border-bottom:2px solid currentColor;padding-bottom:2px;margin:0 .1em}
+.nc-jp-bar{display:inline-block;width:2px;height:1.4em;background:currentColor;margin:0 .45em}
+.nc-jp-bar.end{box-shadow:5px 0 0 currentColor;width:2px;margin-right:.9em}
+.nc-jp-lyr{display:flex;font-size:.95rem;color:var(--site-ink-2);padding-left:3.7rem}
+.nc-sg{display:grid;grid-template-columns:repeat(8,minmax(3rem,1fr));max-width:640px;font-size:1.25rem;text-align:center}
+.nc-sg .b{border-right:1px solid var(--site-border);padding:.4rem 0}
+.nc-sg .b.v{border-right:3px solid var(--site-ink)}
+.nc-sg .t{font-size:.85rem;color:var(--site-ink-2);padding-top:.2rem}
+.nc-sg .grp{display:inline-block;border-bottom:2px solid currentColor;border-radius:0 0 .7em .7em;padding:0 .2em .1em}
+.nc-cn{font-family:var(--font-mono);font-size:1.3rem;letter-spacing:.06em;padding:.6rem 0;white-space:nowrap}
+.nc-cn .bar{color:var(--site-accent-dk);font-weight:700}
+.nc-legend{font-size:.85rem;color:var(--site-ink-2);display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;margin-top:.5rem}
+</style>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script>
+// Mò Lì Huā, the first phrase, drawn six ways from one list of notes: [degree, MIDI, beats, lyric]
+(function () {
+  var TEMPO = 76, SPB = 60 / TEMPO;
+  var N = [[3, 69, 1, "好"], [3, 69, .5, "一"], [5, 72, .5, "朵"], [6, 74, .5, "美"], [8, 77, .5, "丽"], [8, 77, .5, "的"], [6, 74, .5, "茉"], [5, 72, 1, "莉"], [5, 72, .5, "花"], [6, 74, .5, ""], [5, 72, 2, ""]];
+  function el(t, c, x) { var e = document.createElement(t); if (c) e.className = c; if (x != null) e.textContent = x; return e; }
+  function css(n, d) { var v = getComputedStyle(document.body).getPropertyValue(n).trim(); return v || d; }
+  function cap(host, t) { host.appendChild(el("div", "nc-cap", t)); }
+
+  // ---- staff
+  var staff = document.getElementById("nc-staff"), sdiv = el("div"); staff.appendChild(sdiv);
+  if (window.ABCJS) ABCJS.renderAbc(sdiv, "X:1\nT:\nM:2/4\nL:1/8\nQ:1/4=" + TEMPO + "\nK:F\nA2 Ac | df fd | c2 cd | c4 |]\n", { responsive: "resize", paddingleft: 0, paddingright: 0 });
+  cap(staff, "Staff notation, key of F major, 2/4.");
+
+  // ---- jianpu: 1 = F, 2/4. Bars: 3 35 | 6 1. 1. 6 | 5 56 | 5 - |
+  var jp = document.getElementById("nc-jianpu"), line = el("div", "nc-jp-line");
+  line.appendChild(el("span", "nc-jp-key", "1 = F  2/4"));
+  function num(d) { var s = el("span", "nc-jp-n" + (d > 7 ? " up" : ""), String(d > 7 ? d - 7 : d)); return s; }
+  function grp(ds) { var g = el("span", "nc-jp-g"); ds.forEach(function (d) { g.appendChild(num(d)); }); return g; }
+  function bar(end) { return el("span", "nc-jp-bar" + (end ? " end" : "")); }
+  [num(3), grp([3, 5]), bar(), grp([6, 8]), grp([8, 6]), bar(), num(5), grp([5, 6]), bar(), num(5), el("span", "nc-jp-n", "–"), bar(true)].forEach(function (x) { line.appendChild(x); });
+  jp.appendChild(line);
+  var lg = el("div", "nc-legend"); ["1 2 3 5 6 = do re mi sol la", "dot above: an octave higher", "line under: half a beat", "– : hold one more beat", "1 = F: do is F"].forEach(function (t) { lg.appendChild(el("span", null, t)); }); jp.appendChild(lg);
+  cap(jp, "Jianpu. The same phrase: the numbers are scale degrees, so changing “1 = F” to “1 = D” moves it to D with nothing else rewritten.");
+
+  // ---- Hindustani (Bhatkhande): one cycle of Keherwa (8 matras, X on 1, 0 on 5)
+  var hd = document.getElementById("nc-hindustani"), g = el("div", "nc-sg");
+  var beats = [["G"], ["G", "P"], ["D", "Ṡ"], ["Ṡ", "D"], ["P"], ["P", "D"], ["P"], ["–"]];
+  beats.forEach(function (b, i) { var c = el("div", "b" + (i === 3 ? " v" : "")); if (b.length > 1) { var s = el("span", "grp", b.join(" ")); c.appendChild(s); } else c.textContent = b[0]; g.appendChild(c); });
+  ["X", "", "", "", "0", "", "", ""].forEach(function (t, i) { g.appendChild(el("div", "t" + (i === 3 ? " v" : ""), t || String(i + 1))); });
+  hd.appendChild(g);
+  var lg2 = el("div", "nc-legend"); ["S R G P D = Sa Re Ga Pa Dha", "Ṡ: Sa an octave up", "curve under: notes sharing one beat", "– : hold the note", "X sam (beat 1), 0 khālī", "Sa = F here (any pitch the singer chooses)"].forEach(function (t) { lg2.appendChild(el("span", null, t)); }); hd.appendChild(lg2);
+  cap(hd, "Hindustani (Bhatkhande) notation in Keherwā tāl, 8 beats. Rāg Bhūpālī uses exactly these five notes: S R G P D.");
+
+  // ---- Carnatic: Adi tala, 2 units per beat: | after laghu (4 beats), | after each drutam, || at the end
+  var cn = document.getElementById("nc-carnatic"), row = el("div", "nc-cn");
+  row.innerHTML = "g , g p d ṡ ṡ d <span class='bar'>|</span> p , p d <span class='bar'>|</span> p , , , <span class='bar'>||</span>";
+  cn.appendChild(row);
+  var lg3 = el("div", "nc-legend"); ["s r g p d = sa ri ga pa da", "ṡ: upper octave", ", : extend one unit   ; : extend two", "| ends the laghu and each drutam", "|| ends the tāla cycle"].forEach(function (t) { lg3.appendChild(el("span", null, t)); }); cn.appendChild(lg3);
+  cap(cn, "Carnatic notation in Ādi tāla (4 + 2 + 2 beats), two units to a beat. Rāga Mōhanam has the same five notes.");
+
+  // ---- DAW piano roll (SVG)
+  var NS = "http://www.w3.org/2000/svg";
+  function svg(w, h) { var s = document.createElementNS(NS, "svg"); s.setAttribute("viewBox", "0 0 " + w + " " + h); s.setAttribute("width", "100%"); s.setAttribute("role", "img"); return s; }
+  function add(p, t, a, txt) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; p.appendChild(e); return e; }
+  (function () {
+    var host = document.getElementById("nc-pianoroll"), W = 760, H = 230, kw = 46, lo = 64, hi = 80, rh = (H - 24) / (hi - lo + 1), bw = (W - kw) / 8, s = svg(W, H);
+    s.setAttribute("aria-label", "Piano roll: the melody as bars on a pitch-by-time grid");
+    var acc = css("--site-accent-dk", "#1f8f84"), ink = css("--site-ink", "#222"), ink2 = css("--site-ink-2", "#777"), line = css("--site-border", "#ccc");
+    add(s, "rect", { x: 0, y: 0, width: W, height: H, fill: "#1e1f24", rx: 6 });
+    add(s, "rect", { x: kw, y: 0, width: W - kw, height: 22, fill: "#2a2c33" });
+    for (var b = 0; b <= 8; b++) { add(s, "line", { x1: kw + b * bw, y1: 22, x2: kw + b * bw, y2: H, stroke: b % 2 ? "#3a3d46" : "#5a5e6a" }); if (b < 8 && b % 2 === 0) add(s, "text", { x: kw + b * bw + 4, y: 15, fill: "#c9ccd6", "font-size": 11 }, String(b / 2 + 1)); }
+    for (var m = lo; m <= hi; m++) {
+      var y = 22 + (hi - m) * rh, black = [1, 3, 6, 8, 10].indexOf(m % 12) >= 0;
+      add(s, "rect", { x: kw, y: y, width: W - kw, height: rh, fill: black ? "#25272d" : "#2c2e35" });
+      add(s, "rect", { x: 0, y: y, width: kw - 2, height: rh, fill: black ? "#111" : "#eee", stroke: "#999", "stroke-width": .3 });
+      if (m % 12 === 0 || m % 12 === 5) add(s, "text", { x: 3, y: y + rh - 2, "font-size": 9, fill: "#333" }, ["C", "", "", "", "", "F"][m % 12] + (Math.floor(m / 12) - 1));
+    }
+    var t = 0; N.forEach(function (n, i) { var vel = [100, 70, 80, 90, 105, 95, 80, 100, 70, 85, 90][i], y = 22 + (hi - n[1]) * rh;
+      add(s, "rect", { x: kw + t * bw + 1, y: y + .5, width: n[2] * bw - 2, height: rh - 1, rx: 2, fill: "hsl(170," + (40 + vel / 3) + "%," + (30 + vel / 4) + "%)", stroke: "#9ff3e4", "stroke-width": .6 });
+      t += n[2]; });
+    host.appendChild(s);
+    cap(host, "Piano roll. Bars across are beats; each note is a block at its pitch. Brighter blocks are played harder (higher velocity). Timing is exact, but nothing says “F major” or “2/4”.");
+  })();
+
+  // ---- DAW arrangement view
+  (function () {
+    var host = document.getElementById("nc-arrange"), W = 760, H = 230, hw = 110, s = svg(W, H), bars = 16, bw = (W - hw) / bars;
+    s.setAttribute("aria-label", "Arrangement view: tracks as lanes of coloured clips, with a volume automation line");
+    add(s, "rect", { x: 0, y: 0, width: W, height: H, fill: "#1e1f24", rx: 6 });
+    add(s, "rect", { x: hw, y: 0, width: W - hw, height: 20, fill: "#2a2c33" });
+    for (var b = 0; b <= bars; b++) { add(s, "line", { x1: hw + b * bw, y1: 20, x2: hw + b * bw, y2: H, stroke: b % 4 ? "#33363e" : "#555a66" }); if (b < bars && b % 4 === 0) add(s, "text", { x: hw + b * bw + 3, y: 14, fill: "#c9ccd6", "font-size": 11 }, String(b + 1)); }
+    var tracks = [["Erhu (melody)", "#e0a14a", [[4, 8, "Verse"], [12, 4, "Verse 2"]]], ["Guzheng", "#6bb4e6", [[0, 4, "Intro"], [4, 12, "Pattern A"]]], ["Pad", "#a98be0", [[0, 16, "Pad – Jasmine"]]], ["Drums", "#e06a7a", [[8, 8, "Beat"]]], ["Vocal", "#5fd0a8", [[4, 4, "Take 3"], [12, 4, "Take 5"]]]];
+    var th = 36;
+    tracks.forEach(function (tr, i) {
+      var y = 20 + i * th;
+      add(s, "rect", { x: 0, y: y, width: hw, height: th, fill: "#2a2c33", stroke: "#1e1f24" });
+      add(s, "rect", { x: 0, y: y, width: 5, height: th, fill: tr[1] });
+      add(s, "text", { x: 10, y: y + 22, fill: "#e5e7ee", "font-size": 12 }, tr[0]);
+      tr[2].forEach(function (c) { add(s, "rect", { x: hw + c[0] * bw + 1, y: y + 3, width: c[1] * bw - 2, height: th - 6, rx: 3, fill: tr[1], opacity: .8 }); add(s, "text", { x: hw + c[0] * bw + 5, y: y + 15, fill: "#111", "font-size": 10 }, c[2]);
+        for (var k = 0; k < c[1] * 6; k++) { var xx = hw + c[0] * bw + 5 + k * (bw / 6); add(s, "line", { x1: xx, y1: y + th - 8, x2: xx, y2: y + th - 10 - ((k * 37 + i * 11) % 9), stroke: "#111", opacity: .45 }); } });
+    });
+    // automation lane on the pad
+    var ay = 20 + 2 * th, pts = [[0, .9], [4, .9], [8, .5], [12, .5], [16, .1]].map(function (p) { return (hw + p[0] * bw) + "," + (ay + 4 + (1 - p[1]) * (th - 8)); }).join(" ");
+    add(s, "polyline", { points: pts, fill: "none", stroke: "#fff", "stroke-width": 1.6 });
+    [[0, .9], [4, .9], [8, .5], [12, .5], [16, .1]].forEach(function (p) { add(s, "circle", { cx: hw + p[0] * bw, cy: ay + 4 + (1 - p[1]) * (th - 8), r: 3, fill: "#fff" }); });
+    add(s, "text", { x: hw + 8.2 * bw, y: H - 12, fill: "#ffd166", "font-size": 12 }, "← volume automation: the pad fades out");
+    host.appendChild(s);
+    cap(host, "Arrangement view (an illustration, not any one DAW). Structure, layering and automation are clear at a glance; the notes and harmony are hidden inside the clips.");
+  })();
+
+  // ---- synthesise the melody once, for the button, the waveform and the spectrogram
+  var SR = 16000, tail = .4, total = N.reduce(function (a, n) { return a + n[2]; }, 0) * SPB + tail, len = Math.ceil(total * SR), audio = new Float32Array(len);
+  (function () {
+    var t = 0;
+    N.forEach(function (n) {
+      var f = 440 * Math.pow(2, (n[1] - 69) / 12), dur = n[2] * SPB, i0 = Math.floor(t * SR), n0 = Math.floor(dur * SR * .97), ph = 0;
+      for (var i = 0; i < n0 + SR * .15 && i0 + i < len; i++) {
+        var tt = i / SR, env = Math.min(1, tt / .015) * Math.exp(-tt * .9) * (i < n0 ? 1 : Math.exp(-(i - n0) / (SR * .03)));
+        var vib = dur > .9 ? 1 + .006 * Math.sin(2 * Math.PI * 5.5 * tt) * Math.min(1, tt / .35) : 1;
+        ph += 2 * Math.PI * f * vib / SR; var x = 0; for (var h = 1; h <= 8; h++) x += Math.sin(h * ph) / (h * 1.3);
+        audio[i0 + i] += x * env * .28;
+      }
+      t += dur;
+    });
+  })();
+  var btn = document.querySelector(".nc-play"), ctx = null, src = null;
+  btn.addEventListener("click", function () {
+    if (src) { src.stop(); src = null; btn.textContent = "▶ Hear the melody"; return; }
+    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)(); var b = ctx.createBuffer(1, len, SR); b.copyToChannel(audio, 0);
+    src = ctx.createBufferSource(); src.buffer = b; src.connect(ctx.destination); src.start(); btn.textContent = "■ Stop";
+    src.onended = function () { src = null; btn.textContent = "▶ Hear the melody"; };
+  });
+
+  function canvas(host, h, label) { var c = el("canvas"); c.style.height = h + "px"; c.setAttribute("role", "img"); c.setAttribute("aria-label", label); host.appendChild(c); var r = window.devicePixelRatio || 1; c.width = c.clientWidth * r; c.height = h * r; var g = c.getContext("2d"); g.scale(r, r); return { g: g, w: c.clientWidth, h: h }; }
+
+  // ---- waveform: whole phrase, then a 20 ms close-up
+  (function () {
+    var host = document.getElementById("nc-wave"), A = canvas(host, 140, "Waveform of the whole phrase"), g = A.g, W = A.w, H = A.h, acc = css("--site-accent-dk", "#1f8f84"), ink2 = css("--site-ink-2", "#777");
+    g.fillStyle = acc; for (var x = 0; x < W; x++) { var a = Math.floor(x / W * len), b = Math.floor((x + 1) / W * len), mx = 0, mn = 0; for (var i = a; i < b; i++) { if (audio[i] > mx) mx = audio[i]; if (audio[i] < mn) mn = audio[i]; } g.fillRect(x, H / 2 - mx * H * .8, 1, (mx - mn) * H * .8 + 1); }
+    g.fillStyle = ink2; g.font = "11px system-ui"; var t = 0; N.forEach(function (n, i) { var xx = t * SPB / total * W; g.fillRect(xx, H - 10, 1, 10); t += n[2]; });
+    g.fillText("each tick: a note starts", 4, 12);
+    cap(host, "Waveform of the whole phrase (6 seconds). Each note's attack is a jump in height; the silence at the end is flat. No pitches can be read from it.");
+    var B = canvas(host, 110, "Close-up of the waveform: about 20 milliseconds"), g2 = B.g, s0 = Math.floor(.3 * SR), n = Math.floor(.02 * SR);
+    g2.strokeStyle = acc; g2.lineWidth = 1.6; g2.beginPath(); for (var k = 0; k < n; k++) { var xx2 = k / n * B.w, y = B.h / 2 - audio[s0 + k] * B.h * 1.2; k ? g2.lineTo(xx2, y) : g2.moveTo(xx2, y); } g2.stroke();
+    cap(host, "Zoomed into 20 milliseconds of the first note (A, 440 Hz): about nine repeats of the same wave shape.");
+  })();
+
+  // ---- spectrogram (FFT 512, hop 128)
+  (function () {
+    var host = document.getElementById("nc-spec"), C = canvas(host, 230, "Spectrogram: time across, frequency up, brightness is loudness"), g = C.g, W = C.w, H = C.h - 16, F = 512, hop = 128, frames = Math.floor((len - F) / hop), fmax = 4000, bins = Math.floor(fmax / (SR / F));
+    var re = new Float32Array(F), im = new Float32Array(F), win = new Float32Array(F); for (var i = 0; i < F; i++) win[i] = .5 - .5 * Math.cos(2 * Math.PI * i / F);
+    function fft(re, im) { var n = re.length; for (var i = 1, j = 0; i < n; i++) { var bit = n >> 1; for (; j & bit; bit >>= 1) j ^= bit; j ^= bit; if (i < j) { var t = re[i]; re[i] = re[j]; re[j] = t; t = im[i]; im[i] = im[j]; im[j] = t; } }
+      for (var size = 2; size <= n; size <<= 1) { var ang = -2 * Math.PI / size; for (var s = 0; s < n; s += size) for (var k = 0; k < size / 2; k++) { var c = Math.cos(ang * k), sn = Math.sin(ang * k), a = s + k, b = a + size / 2, tr = re[b] * c - im[b] * sn, ti = re[b] * sn + im[b] * c; re[b] = re[a] - tr; im[b] = im[a] - ti; re[a] += tr; im[a] += ti; } } }
+    var img = g.createImageData(frames, bins);
+    for (var f = 0; f < frames; f++) { for (var i2 = 0; i2 < F; i2++) { re[i2] = audio[f * hop + i2] * win[i2]; im[i2] = 0; } fft(re, im);
+      for (var b2 = 0; b2 < bins; b2++) { var db = 10 * Math.log10(re[b2] * re[b2] + im[b2] * im[b2] + 1e-12), v = Math.max(0, Math.min(1, (db + 30) / 60)), p = ((bins - 1 - b2) * frames + f) * 4;
+        img.data[p] = 255 * Math.min(1, v * 1.6); img.data[p + 1] = 255 * Math.max(0, v * 1.5 - .5); img.data[p + 2] = 255 * Math.max(0, .5 - v) * (v > .05 ? 1 : .4) + 40 * (1 - v); img.data[p + 3] = 255; } }
+    var tmp = document.createElement("canvas"); tmp.width = frames; tmp.height = bins; tmp.getContext("2d").putImageData(img, 0, 0);
+    g.imageSmoothingEnabled = true; g.drawImage(tmp, 0, 0, W, H);
+    g.fillStyle = "#e8e8f0"; g.font = "11px system-ui";
+    [500, 1000, 2000, 3000].forEach(function (hz) { var y = H - hz / fmax * H; g.fillRect(0, y, 6, 1); g.fillText(hz >= 1000 ? hz / 1000 + " kHz" : hz + " Hz", 8, y + 4); });
+    g.fillStyle = css("--site-ink-2", "#777"); g.fillText("time →", W - 46, H + 13);
+    cap(host, "Spectrogram of the same phrase, up to 4 kHz. The lowest bright line traces the melody; the lines above it are each note's harmonics. The wavy lines on the long notes are vibrato. Readable here because it's one synthetic instrument; a band recording would be a blur.");
+  })();
+})();
+</script>
+```

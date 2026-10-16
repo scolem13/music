@@ -1,0 +1,66 @@
+---
+title: "Sound 11: The Equaliser"
+toc: true
+toc-depth: 2
+---
+
+An **equaliser (EQ)** turns some frequencies up and others down. You met the parts on the
+[filter page](sound-filter.qmd): high-pass, low-pass, shelves and bells. An EQ is several of them in a
+row, and it's the most used tool in any recording studio. Every track in a mix gets some, to make room
+for the others.
+
+**How to use the page.** The pink curve on the spectrum is the EQ: above the middle line is a boost,
+below is a cut. Use **Bypass** often. Your ears get used to a change within seconds, and only comparing
+tells you whether it's better.
+
+## The bands
+
+<div class="sk" data-w="eq" data-source="chords"></div>
+
+- **High-pass (low cut)**: removes everything below a frequency. The most useful control on the desk:
+  almost nothing except bass and kick needs anything below 80–100 Hz, and rumble there muddies everything.
+- **Shelves** lift or lower everything above (high shelf) or below (low shelf) a frequency, like the
+  bass and treble knobs on a stereo.
+- **Bells** (peaking filters) boost or cut around one frequency. **Q** is how narrow: a high Q touches
+  only a few notes' worth of frequencies, a low Q a wide region.
+- **Low-pass (high cut)** removes the top: hiss, harshness, or everything at once for a muffled effect.
+
+A rough map of what lives where:
+
+| Range | Called | Sounds like |
+|---|---|---|
+| 20–60 Hz | sub | felt more than heard: kick drum thump, synth sub bass |
+| 60–250 Hz | bass | warmth and weight; too much is boomy |
+| 250–500 Hz | low mids | "mud" and "boxiness": most mixes are cut a little here |
+| 500 Hz–2 kHz | mids | the body of most instruments; too much honks |
+| 2–5 kHz | upper mids | presence, the bite of a voice or guitar; too much is harsh |
+| 5–10 kHz | highs | clarity, the "s" sounds |
+| 10–20 kHz | air | sparkle and openness |
+
+## Cut before you boost
+
+Try **Cut the mud** and **Presence** on the chords and on your **microphone**. Engineers usually **cut**
+what's wrong rather than **boost** what's missing: a cut makes room, a boost makes everything louder
+and soon everything is fighting. Two sounds that both have a lot at 300 Hz will mask each other; cut
+one of them there, and both become clear.
+
+**Telephone** keeps only 400 Hz to 3.2 kHz, the band a phone line carries. **Scooped** is the classic
+metal guitar curve: big lows and highs, a hole in the middle.
+
+## Find the problem
+
+Recordings often have one frequency that rings: a drum's overtone, a boomy room, a harsh voice. The
+trick for finding it is **boost and sweep**:
+
+1. Set **Hidden problem** to *A ringing frequency*. Something is now wrong with the sound.
+2. Press **Search (narrow boost)**: Bell 2 becomes a tall, narrow boost.
+3. Sweep **Bell 2 frequency** slowly. At most places it just sounds odd; at the problem frequency the
+   ring suddenly leaps out.
+4. Now turn that boost into a **cut** (Bell 2 gain to about −12 dB) and listen: the ring is gone.
+5. Press **Reveal** to see how close you were. Then try *Boomy* and *Harsh*.
+
+## Next
+
+- [Sound 12: Distortion](sound-distortion.qmd)
+
+{{< include _synth-kit.qmd >}}

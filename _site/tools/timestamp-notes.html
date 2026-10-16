@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Timestamp Notes – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Lessons</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
+        <li>
+    <a class="dropdown-item" href="../lessons/index.html">
+ <span class="dropdown-text">Lessons</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-improv.html">
+ <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-melody.html">
+ <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-bass.html">
+ <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-guitar.html">
+ <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-piano.html">
+ <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/stride-boogie.html">
+ <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/blues-drums.html">
+ <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reading-swing.html">
+ <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
+ <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/congas-basics.html">
+ <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
+ <span class="dropdown-text">Watermelon Man for Congas</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
+ <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes.html">
+ <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-guitar.html">
+ <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-piano.html">
+ <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/pop-changes-bass.html">
+ <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar.html">
+ <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-guitar-hand.html">
+ <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
+ <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guitar-bends.html">
+ <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/travis-picking.html">
+ <span class="dropdown-text">Travis Picking on Guitar</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano.html">
+ <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/chord-shapes-piano-hand.html">
+ <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inversions.html">
+ <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-pop.html">
+ <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-jazz.html">
+ <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/voice-classical.html">
+ <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
+ <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/cadences.html">
+ <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/write-an-ending.html">
+ <span class="dropdown-text">Lesson: Write an Ending</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/guide-tones.html">
+ <span class="dropdown-text">Lesson: Guide Tones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/minor-changes.html">
+ <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/borrowed-chords.html">
+ <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/turnarounds.html">
+ <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/reharmonize.html">
+ <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-band.html">
+ <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-bass-drums.html">
+ <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-chords.html">
+ <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/arrange-organ.html">
+ <span class="dropdown-text">Arranging 4: The Organ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/patterns/index.html">
+ <span class="dropdown-text">Accompaniment Patterns</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/notation-choices.html">
+ <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/tuning-systems.html">
+ <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
+ <span class="dropdown-text">How a Strobe Tuner Works</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/inharmonicity.html">
+ <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/vowel-formants.html">
+ <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-harmonics.html">
+ <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-waveforms.html">
+ <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-noise.html">
+ <span class="dropdown-text">Sound 3: Noise</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-filter.html">
+ <span class="dropdown-text">Sound 4: Filters</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
+ <span class="dropdown-text">Sound 5: Envelopes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-lfo.html">
+ <span class="dropdown-text">Sound 6: LFOs</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-subtractive.html">
+ <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-fm.html">
+ <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-wavetable.html">
+ <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-granular.html">
+ <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-eq.html">
+ <span class="dropdown-text">Sound 11: The Equaliser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-distortion.html">
+ <span class="dropdown-text">Sound 12: Distortion</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-compressor.html">
+ <span class="dropdown-text">Sound 13: The Compressor</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
+ <span class="dropdown-text">Sound 14: Sidechain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-gate.html">
+ <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-reverb.html">
+ <span class="dropdown-text">Sound 16: Reverb</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-delay.html">
+ <span class="dropdown-text">Sound 17: Delay</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chorus.html">
+ <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-phaser.html">
+ <span class="dropdown-text">Sound 19: Phaser</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
+ <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-pitch.html">
+ <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-vocoder.html">
+ <span class="dropdown-text">Sound 22: The Vocoder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-stereo.html">
+ <span class="dropdown-text">Sound 23: Stereo</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/sound-chain.html">
+ <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
+ <span class="dropdown-text">Recording 1: Gain Staging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mics.html">
+ <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-placement.html">
+ <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
+ <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mixing.html">
+ <span class="dropdown-text">Recording 5: Mixing</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-mastering.html">
+ <span class="dropdown-text">Recording 6: Mastering</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/rec-stereo.html">
+ <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-power.html">
+ <span class="dropdown-text">Gear 1: Power and Safety</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-cables.html">
+ <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-amps.html">
+ <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
+ <span class="dropdown-text">Gear 4: Keyboards</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-setup.html">
+ <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-guitar.html">
+ <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-violin.html">
+ <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-sax.html">
+ <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/gear-drums.html">
+ <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/timestamp-player.html">
+ <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../lessons/section-labels.html">
+ <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs-classic.html">
+ <span class="dropdown-text">Song Builder (Classic)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
+ <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content page-columns page-full column-body" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Timestamp Notes</h1>
+</div>
+
+
+
+<div class="quarto-title-meta column-body">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="column-screen">
+<div class="ts-root">
+<link rel="stylesheet" href="../apps/shared/timestamp-player/player.css?v=1">
+<link rel="stylesheet" href="../apps/shared/timestamp-player/player-log.css?v=9">
+<link rel="stylesheet" href="../apps/shared/timestamp-player/bar-map.css?v=10">
+<link rel="stylesheet" href="../apps/shared/timestamp-player/words.css?v=11">
+<style>
+/* player.css is tuned for a reveal.js slide, where everything scales with the
+   deck. This is an ordinary page, so the component is given a base size of its
+   own -- and the clock the size the thing is named for. */
+.btp { font-size: 1.25rem; margin: 1.5rem 0 1.5rem; }
+.btp .btp-clock { font-size: clamp(3rem, 11vw, 7rem); }
+.btp .btp-stage,
+.btp .btp-drop,
+.btp .btp-bar { max-width: 900px; }
+.btp-howto { margin: .25rem 0 0; font-size: .95rem; color: #6c757d; }
+/* the whole width, as the Backing Track has it */
+.ts-root { max-width: 1500px; margin: 0 auto; padding: 0 1rem; }
+</style>
+
+<ol class="btp-steps">
+  <li><b>Audio</b>: a YouTube link or a file.</li>
+  <li><b>Words and chords</b>: paste them from Ultimate Guitar and Convert.</li>
+  <li><b>Sections, bars, chords</b>: <kbd>S</kbd> as each section starts, <kbd>B</kbd> on every downbeat, <kbd>N</kbd> on every chord change
+      — or all three at once from a MIDI keyboard.</li>
+  <li><b>Send on</b>: to the Notation page for the melody, or the Backing Track for a style.</li>
+</ol>
+
+<p class="btp-howto">New here? <a href="../lessons/timestamp-player.html">How to map a recording</a>, step by step, including what to do when YouTube won't play a video.</p>
+
+<div class="btp-layout">
+
+<div class="btp-main">
+
+<details class="btp-fold ts-panel" id="ts-player" data-nav="Player" open="">
+<summary><h2 class="anchored">Player</h2></summary>
+<div class="btp">
+  <div class="btp-clock idle">00:00</div>
+  <div class="btp-stage" hidden=""></div>
+  <div class="btp-drop">Drop a video or audio file here</div>
+  <div class="btp-bar">
+    <input class="btp-url" type="text" placeholder="Paste a YouTube link…" spellcheck="false">
+    <button class="btp-load">Load</button>
+    <button class="btp-follow-btn" type="button" title="Play it in YouTube's own tab and keep the clock here">Follow in a tab</button>
+    <label class="btp-filebtn">Choose file<input class="btp-file" type="file" accept="video/*,audio/*"></label>
+  </div>
+  <div class="btp-err"></div>
+</div>
+</details>
+
+<section class="btp-live" aria-label="Now playing">
+  <details class="btp-fold ts-panel" id="ts-grid" data-nav="Chord grid" open="">
+    <summary><h2 class="anchored">Chord grid</h2></summary>
+    <div class="tabset-margin-container"></div><div class="panel-tabset btp-grid-tabset"><ul class="nav nav-tabs btp-grid-tabs" role="tablist"></ul></div>
+    <div class="btp-grid-now"></div>
+    <div class="btp-grid-next tune-chart" hidden=""><b></b><div class="btp-grid-next-bars"></div></div>
+    <div class="btp-grid-row">
+      <p class="btp-grid-note"></p>
+      <button class="btp-correct" type="button" aria-pressed="false" title="While it plays, each bar you play chords in (right hand) is rewritten with what you play there; a bar you play through without a note keeps what it had. A pause ends the pass.">Correct chords</button>
+      <button class="btp-grid-copy" type="button" title="Every timed section as ChordPro {start_of_grid} blocks">Copy as ChordPro grid</button>
+      <button class="btp-confirm" type="button" hidden="">Timing is right</button>
+    </div>
+  </details>
+  <details class="btp-fold btp-live-set ts-panel" id="ts-midi" data-nav="Chord timing and MIDI">
+    <summary><h2 class="anchored">Chord timing and MIDI</h2></summary>
+    <p class="btp-log-note"><kbd>N</kbd> as each chord starts (<kbd>Shift</kbd>+<kbd>N</kbd> takes the last one back): which chord
+       it is comes from the words, so only the timing matters. Or all at once from a MIDI keyboard: the <b>left hand</b> plays
+       one note on every barline and two notes together where a section starts; the <b>right hand</b> plays the chords.
+       Only when notes start counts, and the left hand's pitches don't matter.</p>
+    <div class="btp-live-row">
+      <span class="btp-log-note">The MIDI keyboard connects in the sidebar on the right.</span>
+      <label>Split <input class="btp-split" type="number" min="21" max="108" value="60"> <span class="btp-split-name">C4</span></label>
+      <label title="Times are moved back by this much, for hearing the recording late">Latency <input class="btp-latency" type="number" min="0" max="500" step="5" value="0"> ms</label>
+      <label>Round to <select class="btp-grid"><option value="beat">the beat</option><option value="half">the half beat</option></select></label>
+      <button class="btp-live-clear" type="button" title="Forget the chord timing of the section under the playhead, to play it again">Clear this section's timing</button>
+      <button class="btp-correct" type="button" aria-pressed="false" title="While it plays, each bar you play chords in (right hand) is rewritten with what you play there; a bar you play through without a note keeps what it had. A pause ends the pass.">Correct chords</button>
+    </div>
+    <p class="btp-live-status" aria-live="polite"></p>
+  </details>
+</section>
+
+<section class="btp-words">
+  <details class="btp-fold ts-panel" id="ts-words" data-nav="Words and chords" open="">
+    <summary><h2 class="anchored">Words and chords</h2></summary>
+    <p class="btp-log-note">Paste a song from Ultimate Guitar (chords on the line above the words, <code>[Verse 1]</code> headings)
+       and Convert: the chords go into the words as ChordPro, and the headings become the sections to stamp.</p>
+    <label class="btp-title-label"><span>Title</span><input class="btp-title" type="text" spellcheck="false" placeholder="Names the downloads too"></label>
+    <div class="btp-word-now" aria-live="polite" hidden=""></div>
+    <div class="btp-word-view" role="group" aria-label="Show">
+      <button type="button" data-view="ug">Ultimate Guitar</button><button type="button" data-view="cho">ChordPro</button><button type="button" data-view="both">Both</button>
+    </div>
+    <div class="btp-word-cols">
+      <textarea class="btp-ug" rows="12" spellcheck="false" aria-label="Ultimate Guitar text" placeholder="[Verse 1]
+G              D
+Here comes the sun"></textarea>
+      <textarea class="btp-cho" rows="12" spellcheck="false" aria-label="ChordPro" placeholder="The ChordPro appears here; change it as you like."></textarea>
+    </div>
+    <div class="btp-log-buttons">
+      <button class="btp-convert" type="button">Convert</button>
+      <button class="btp-from-stamps" type="button" title="The section stamps' labels become the ChordPro's sections (no chords or words needed)">Sections from stamps</button>
+    </div>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-wordsecs" data-nav="Sections from the words" open="">
+    <summary><h2 class="anchored">Sections from the words</h2></summary>
+    <p class="btp-log-note">While it plays, press <kbd>S</kbd> as each section starts: it stamps the next one on this list.</p>
+    <ol class="btp-word-secs btp-sec-rows"></ol>
+    <div class="btp-log-buttons">
+      <button class="btp-stamp-next" type="button">Stamp the next section</button>
+    </div>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-send" data-nav="Send on" open="">
+    <summary><h2 class="anchored">Send on</h2></summary>
+    <p class="btp-log-note">With the bars tapped, each section's chords are spread over its bars, at the tapped tempo.</p>
+    <div class="btp-log-buttons">
+      <button class="btp-send-notation" type="button">Notation page (melody)</button>
+      <button class="btp-send-band" type="button">Backing Track (style)</button>
+    </div>
+    <p class="btp-send-note" aria-live="polite"></p>
+  </details>
+</section>
+
+<div class="btp-barmap">
+  <div class="btp-bars-now" aria-live="off"></div>
+
+  <details class="btp-fold ts-panel" id="ts-barmap" data-nav="Bar map" open="">
+    <summary><h2 class="anchored">Bar map</h2></summary>
+    <p class="btp-log-note">While it plays, press <kbd>B</kbd> on the first beat of every bar.
+       <kbd>Backspace</kbd> takes back the last tap; tapping a bar again replaces it. A missed tap shows as a long bar:
+       <b>Fill gaps</b> puts it in. Tapped in 4 but it's really in 2 (or the other way)? <b>Halve</b> or <b>Double</b> the bars. A bar in another meter (a 2/4 bar, a 3/4 bridge): set its <b>Beats</b> in the Bars table.</p>
+    <div class="btp-log-buttons">
+      <button class="btp-bars-tap" type="button">Tap a bar</button>
+      <label class="btp-beats-label">Beats a bar <input class="btp-beats" type="number" min="1" max="32" value="4"></label>
+      <button class="btp-bars-fill" type="button" title="Put in the bars missed between taps">Fill gaps</button>
+      <button class="btp-bars-extrapolate" type="button" title="Tap a stretch (the head), stamp where each section starts (S): the rest of the bars from the tempo, each section a whole number of choruses when it is close">Fill from the tempo</button>
+      <button class="btp-bars-guess-clear" type="button" title="Take out the bars put in from the tempo (your taps stay)">Clear guesses</button>
+      <button class="btp-bars-clear" type="button">Clear bars</button>
+    </div>
+    <p class="btp-log-note btp-guess-note" aria-live="polite"></p>
+    <div class="btp-log-buttons">
+      <button class="btp-bars-halve" type="button" title="Split every bar in two: tapped in 4, meant in 2">Halve bars</button>
+      <button class="btp-bars-double" type="button" title="Join the bars in pairs: tapped in 2, meant in 4">Double bars</button>
+      <button class="btp-bars-undo" type="button" hidden="">Undo</button>
+    </div>
+    <p class="btp-bars-warn" hidden=""></p>
+    <p class="btp-bars-summary"></p>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-sections" data-nav="Sections (stamped)" open="">
+    <summary><h2 class="anchored">Sections</h2></summary>
+    <p class="btp-log-note">Each section stamp (<kbd>S</kbd>) starts its section on the tapped bar nearest it. Open a section for its
+       choruses (a head or a solo), and a chorus for its bars. <b>✎</b> beside any time corrects it: type the time and press
+       Return, or press a letter (or a key on the MIDI keyboard) as the playhead reaches it; <kbd>Space</kbd> plays meanwhile,
+       <kbd>↑</kbd> <kbd>↓</kbd> nudge. <kbd>Shift</kbd>+<kbd>L</kbd> loops the section under the playhead.</p>
+    <ol class="btp-sec-rows"></ol>
+    <p class="btp-log-empty btp-sec-empty">No sections yet: stamp one with <kbd>S</kbd>.</p>
+  </details>
+
+  <details class="btp-fold ts-panel btp-phrases" id="ts-phrases" data-nav="Phrases" open="">
+    <summary><h2 class="anchored">Phrases</h2></summary>
+    <p class="btp-log-note">Transcribe a phrase at a time. Each section is cut into phrases; a phrase loops from its <b>lead-in</b>
+       (the pickup: how many beats before its first downbeat the melody starts, up to two bars) to the next downbeat.
+       <kbd>P</kbd> loops the phrase under the playhead, <kbd>,</kbd> <kbd>.</kbd> the one before or after,
+       <kbd>-</kbd> <kbd>=</kbd> shorten or lengthen its lead-in, <kbd>T</kbd> (or <b>Notate</b>) goes to it on the Notation page,
+       whose <b>Back to the recording</b> loops the next one here. Slow it down with the player's speed.</p>
+    <div class="btp-log-buttons">
+      <label class="btp-beats-label">Bars a phrase <select class="btp-ph-size"><option>2</option><option selected="">4</option><option>8</option></select></label>
+    </div>
+    <ol class="btp-ph-rows"></ol>
+    <p class="btp-log-empty btp-ph-empty">No phrases yet: tap the bars and stamp the sections.</p>
+    <p class="btp-ph-note btp-send-note" aria-live="polite"></p>
+  </details>
+
+  <details class="btp-fold ts-panel" id="ts-bars" data-nav="Bars">
+    <summary><h2 class="anchored">Bars</h2></summary>
+    <p class="btp-log-note">The chords of each confirmed section, a cell a beat (<code>.</code> holds the chord on): the same as the
+       grids written into the ChordPro at each pause, where they can be changed by hand.</p>
+    <div class="btp-log-buttons"><button class="btp-bars-grid-copy" type="button">Copy the chord grid (ChordPro)</button></div>
+    
+<table class="btp-bar-table caption-top">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th" aria-label="Delete"></th>
+<th data-quarto-table-cell-role="th">Bar</th>
+<th data-quarto-table-cell-role="th">Starts</th>
+<th data-quarto-table-cell-role="th">Length</th>
+<th data-quarto-table-cell-role="th">BPM</th>
+<th data-quarto-table-cell-role="th">Beats</th>
+<th data-quarto-table-cell-role="th">Chords</th>
+</tr>
+</thead>
+<tbody class="btp-bar-rows">
+</tbody>
+</table>
+
+  </details>
+</div>
+
+</div>
+
+<div class="btp-splitter" role="separator" aria-orientation="vertical" aria-label="Resize the notes column" tabindex="0" title="Drag to resize · double-click to reset"></div>
+
+<div class="btp-side">
+  <div class="btp-live-stage ts-panel" id="ts-now" data-nav="Now playing">
+    <div class="btp-live-head ts-fold-h" title="Click to fold or open">
+      <span class="btp-live-drag" title="Drag to move it (when floating)" aria-hidden="true">⠿</span>
+      <span class="btp-live-sec"></span>
+      <select class="btp-live-pick" aria-label="Go to a section" title="Go to a section"></select>
+      <span class="btp-live-next"></span>
+      <span class="btp-live-tools">
+        <button type="button" class="btp-live-smaller" title="Smaller words" aria-label="Smaller words">A−</button>
+        <button type="button" class="btp-live-bigger" title="Bigger words" aria-label="Bigger words">A+</button>
+        <button type="button" class="btp-live-mode" title="Float it over the page, to drag anywhere">Float</button>
+      </span>
+    </div>
+    <div class="ts-fold-body">
+      <div class="btp-live-words"></div>
+      <div class="btp-live-grip" role="separator" aria-orientation="horizontal" aria-label="Drag to make the words taller or shorter" tabindex="0" title="Drag to show more or less · double-click to reset"></div>
+    </div>
+  </div>
+<section class="btp-log ts-panel" id="ts-log" data-nav="Timestamps">
+  <h2 class="ts-fold-h anchored" title="Click to fold or open">Timestamps</h2>
+  <div class="ts-fold-body btp-log-body">
+  <p class="btp-log-note"><kbd>S</kbd> stamps a section: choose its label (Head, Verse, Sax solo, A, A′, B … or Other to type one); a label that comes again is numbered everywhere (Head 1, Head 2). <kbd>C</kbd> stamps a note. Click a time to jump to it, × to delete it.
+     Shift+click to type a new one. <kbd>Space</kbd> or <kbd>Return</kbd> plays and pauses; <kbd>←</kbd> <kbd>→</kbd> or <kbd>h</kbd> <kbd>l</kbd>
+     go 5 seconds back or on. Leave a note with <kbd>Esc</kbd> or <kbd>jk</kbd>.</p>
+  <label class="btp-autonote-label">
+    <input class="btp-autonote" type="checkbox" checked="">
+    Jump to the note field after a stamp
+  </label>
+  <ol class="btp-log-rows"></ol>
+  <p class="btp-log-empty">Nothing stamped yet.</p>
+  <div class="btp-chorus-count">
+    <b>Choruses</b> <label title="The bars of one chorus (the form). Left empty, it is the first Head's bars.">a chorus is
+      <input class="btp-form-bars" type="number" min="1" max="256" placeholder="?"> bars</label>
+    <div class="btp-choruses"></div>
+  </div>
+  <div class="btp-log-buttons">
+    <button class="btp-stamp-now" type="button">Stamp now</button>
+    <button class="btp-sort" type="button">Sort by time</button>
+    <button class="btp-copy-all" type="button">Copy all</button>
+    <button class="btp-clear" type="button" title="Everything for this song: stamps, bars, words and chords, chord timing, phrases. Save the song file first to keep it.">Clear all data</button>
+    <button class="btp-download" type="button" title="Everything on the page: stamps, bars, words, chords, chord timing and the link">Save song file</button>
+    <label class="btp-import" title="A song file, or an older timestamps .txt or bar-map .json">Open file<input class="btp-import-file" type="file" accept=".json,.txt,application/json,text/plain"></label>
+    <button class="btp-paste-open" type="button">Paste…</button>
+  </div>
+  <div class="btp-paste" hidden="">
+    <textarea rows="6" spellcheck="false" placeholder="01:23	Chorus starts
+02:05	Key change"></textarea>
+    <div class="btp-log-buttons">
+      <button class="btp-paste-go" type="button">Import</button>
+      <button class="btp-paste-cancel" type="button">Cancel</button>
+    </div>
+  </div>
+  </div>
+</section>
+</div>
+
+<nav class="ts-nav" aria-label="Sections on this page">
+  <div class="ts-midi">
+    <p>MIDI keyboard</p>
+    <button class="btp-midi" type="button" title="Left hand: a note on every barline, two at a section; right hand: the chords">Connect MIDI keyboard</button>
+    <span class="ts-midi-state">Not connected</span>
+  </div>
+  <p>On this page</p>
+  <ul></ul>
+  <div class="ts-all"><button type="button" data-all="open">Open all</button><button type="button" data-all="fold">Fold all</button></div>
+  <div class="ts-clock" aria-live="off" title="Where the playhead is">
+    <span class="ts-clock-t">00:00.0</span>
+    <span class="ts-clock-b">No bars tapped</span>
+  </div>
+</nav>
+
+</div>
+
+<script src="../apps/shared/timestamp-player/player.js?v=6"></script>
+<script src="../apps/shared/timestamp-player/time-edit.js?v=1"></script>
+<script src="../apps/shared/timestamp-player/section-labels.js?v=1"></script>
+<script src="../apps/shared/timestamp-player/player-log.js?v=15"></script>
+<script src="../apps/shared/timestamp-player/bar-map.js?v=16"></script>
+<script src="../apps/shared/abc-core.js?v=3"></script>
+<script src="../apps/shared/abc-events.js?v=3"></script>
+<script src="../apps/shared/notation-doc.js?v=8"></script>
+<script src="../apps/shared/ug-chordpro.js?v=4"></script>
+<script src="../apps/shared/timestamp-player/words.js?v=18"></script>
+<script src="../apps/shared/tune-chart.js?v=31"></script>
+<script src="../apps/shared/chord-entry.js?v=10"></script>
+<script src="../apps/shared/timestamp-player/live.js?v=19"></script>
+<script src="../apps/shared/timestamp-player/phrases.js?v=2"></script>
+<script src="../apps/shared/timestamp-player/page-nav.js?v=2"></script>
+</div>
+</div>
+
+
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

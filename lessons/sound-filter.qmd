@@ -53,7 +53,7 @@ wave. Some synths let the filter *self-oscillate* and play it as an extra oscill
 
 - **Band-pass** keeps a band around the cutoff and cuts both sides. Higher Q, narrower band. It's the
   sound of a telephone or a megaphone, and it's how a vocoder splits a voice into bands
-  ([Sound 14](sound-vocoder.qmd)).
+  ([Sound 22](sound-vocoder.qmd)).
 - **Notch** is the opposite: it removes a narrow band and leaves everything else. Engineers use it to
   remove a hum. A [phaser](sound-phaser.qmd) is several moving notches.
 - **Peak (bell)**, **low shelf** and **high shelf** are the filters of an **equaliser** (EQ). They
@@ -70,7 +70,6 @@ resonant tubes, and moving your tongue and lips moves their resonances (the **fo
 
 ## Next
 
-- [Sound 5: LFOs](sound-lfo.qmd)
-- [Sound 6: Subtractive synthesis](sound-subtractive.qmd): oscillator, filter, envelope.
+- [Sound 5: Envelopes](sound-envelopes.qmd)
 
 {{< include _synth-kit.qmd >}}

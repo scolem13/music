@@ -1,0 +1,70 @@
+---
+title: "Sound 21: Pitch Effects"
+toc: true
+toc-depth: 2
+---
+
+Some effects change the **pitch** of a sound while it plays: an octave below to fatten a bass, a
+harmony above a voice, or a nudge to put a singer exactly in tune. All of them start from the same
+trick.
+
+## How to change pitch without changing speed
+
+Play a tape faster and it gets higher, but it also gets shorter. A **pitch shifter** wants the pitch
+without the speed. It reads the sound through a short delay whose time keeps changing: a delay that
+keeps getting *shorter* plays the sound back faster (higher), one that keeps getting *longer* plays it
+slower (lower). That's the [Doppler effect](sound-chorus.qmd) again. Of course a delay can't keep
+shrinking forever, so every few hundredths of a second it jumps back and starts again, and a second
+delay line, half a step behind, crossfades over the jump. Listen closely to big shifts and you can hear
+a faint flutter from the jumps: that's the price.
+
+## The octaver
+
+<div class="sk" data-w="octaver"></div>
+
+The **octaver** adds the same notes an octave (or two) below, or above. Bass players use the octave
+down to sound like a synth bass; guitarists use the octave up to sound like a twelve-string.
+
+**Octave up made by**: there's an old analog trick. Fold the bottom half of the wave up so it's all
+positive (a **rectifier**), and the wave now repeats twice as often: an octave up. It's rough and
+buzzy, and it only works cleanly on one note at a time: **Octave fuzz** is the Jimi Hendrix "Purple
+Haze" solo sound. Switch between the two kinds and compare. Play the **Chords** through each: the
+digital shifter copes; the analog trick turns chords to mush.
+
+## The harmonizer
+
+<div class="sk" data-w="harmonizer" data-source="voice"></div>
+
+A **harmonizer** adds one or two more voices at set intervals, so one singer becomes a trio.
+
+- **Fixed intervals**: always the same distance, say a major third and a fifth. Sing a scale and
+  listen: some of the harmonies are out of the key, because the thirds in a major key are not all the
+  same size.
+- **In the key of C major**: the harmonizer works out which note you're singing and picks the third or
+  fifth *in the key*, sometimes major, sometimes minor. This is how the "intelligent" harmonizers
+  (Eventide, TC-Helicon, the ones built into vocal pedals) work. Try your **Microphone** and sing a
+  C major scale slowly.
+
+## Pitch correction (auto-tune)
+
+<div class="sk" data-w="autotune"></div>
+
+The source is an **out-of-tune singer**: every note lands 20 to 50 cents sharp or flat. The graph
+shows the pitch as sung (grey) and after correction (pink), against the notes of the scale.
+
+- **Key** and **Scale**: which notes are "right". Every sung note is pulled to the nearest one.
+- **Retune speed**: how quickly. At around 100 ms the correction is gentle: the slides and the vibrato
+  survive, and you mostly can't tell. This is what happens, invisibly, on most pop vocals today.
+- At **1 ms** the pitch jumps instantly from note to note, with no slide at all. It sounds robotic,
+  and that became a style of its own: Cher's "Believe" (1998), T-Pain, Kanye West's *808s &
+  Heartbreak*, much of trap and Afrobeats.
+- **Wrong key**: correct to the wrong scale and the singer is snapped confidently onto wrong notes.
+
+Antares Auto-Tune came out in 1997, invented by an engineer who had used the same mathematics to look
+for oil underground. Try your own voice, on *Hard* and *Natural*.
+
+## Next
+
+- [Sound 22: The vocoder](sound-vocoder.qmd)
+
+{{< include _synth-kit.qmd >}}

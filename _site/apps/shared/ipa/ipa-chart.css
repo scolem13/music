@@ -50,6 +50,13 @@
 .ipa-vwrap .ipa-sym{position:absolute;width:2rem;padding:0;transform:translate(-50%,-50%)}
 .ipa-vwrap .ipa-sym.l{transform:translate(calc(-100% - 1px + var(--dx,0rem)),-50%)}
 .ipa-vwrap .ipa-sym.r{transform:translate(calc(1px + var(--dx,0rem)),-50%)}
+.ipa-vwrap .plot{touch-action:none;cursor:crosshair;outline:none}
+.ipa-vwrap .plot:focus-visible{box-shadow:0 0 0 2px var(--site-accent)}
+.ipa-vdot{position:absolute;width:14px;height:14px;margin:-7px 0 0 -7px;border-radius:50%;background:var(--site-accent-dk);opacity:.75;pointer-events:none;box-shadow:0 0 0 4px var(--site-accent-bg)}
+.ipa-synth{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem 1rem;max-width:34rem;margin:.5rem 0 0;font-size:.8rem;color:var(--site-ink-2)}
+.ipa-synth label{display:flex;align-items:center;gap:.3rem;margin:0}
+.ipa-synth input[type=range]{width:6.5rem}
+.ipa-vread{flex-basis:100%;font-family:var(--font-mono,monospace);font-size:.74rem;min-height:1.1em}
 .ipa-vleg{font-size:.78rem;color:var(--site-ink-2);margin:.4rem 0 0}
 /* consonant table */
 .ipa-ctwrap{overflow-x:auto;margin-bottom:1rem;border:1px solid var(--site-border);border-radius:6px;background:var(--site-surface)}

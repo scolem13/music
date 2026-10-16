@@ -36,6 +36,10 @@ const STYLE = {
   swing: ["Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7", 120, "Dm7 G7|Em7 A7|Dm7 G7|Cmaj7"],
   ballad: ["Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7", 66, "Dm7 G7|Em7 A7|Dm7 G7|Cmaj7"],
   boogaloo: ["F7|F7|Bb7|F7", 112, "F7|Bb7 C7|F7|Gm7 C7"],
+  stride: ["C|A7|D7|G7", 132, "C A7|Dm7 G7|C C7|F G7"],
+  ragtime: ["C|C|G7|C", 92, "C G7|C F|C G7|C"],
+  jump: ["C7|F7|C7|G7", 160, "C7|F7 F#dim7|C7|G7 F7"],
+  boogie: ["C7|C7|F7|C7|G7|F7|C7|G7", 132, "C7|F7 F#dim7|C7|G7 F7"],
   bossa: ["Am7|D7|Gmaj7|Gmaj7", 120, "Am7 D7|Gmaj7 Em7|Am7 D7|Gmaj7"],
   montuno: ["C|F|G7|C", 100, "C F|G7 C|C F|G7 C"],
   chacha: ["Am|Dm|E7|Am", 112, "Am Dm|E7 Am|Dm E7|Am"],
@@ -83,6 +87,9 @@ const PLAN = {
     two: { ladder: ["halves"], style: "swing", tips: "Half notes on 1 and 3, root then fifth, with a swung pickup into the next bar now and then. Let each note ring for its full two beats: the line breathes in two while the drummer plays in four." },
     arp: { ladder: ["halves", "roots"], style: "swing", tips: "Root, 3rd, 5th, 7th, one to a beat, the same shape every bar. On a minor seventh chord the 3rd is three frets above the root; on a dominant or major chord, four. Say the chord tones as you play them." },
     walk: { ladder: ["halves", "two", "arp"], tips: "Beat 1: the root. Beats 2 and 3: any two other chord tones or scale steps. Beat 4: a note one fret above or below the next bar's root. Start from the chord tones of the step before and change only beat 4, then free up beats 2 and 3." },
+    boogie: { ladder: ["roots", "arp"], style: "boogie", tips: "Eight swung eighths a bar, up the chord and back down: root, 3rd, 5th, 6th, flat 7th, 6th, 5th, 3rd. Learn the shape on one chord until the hand knows it, then move it up a fourth for the IV chord and a fifth for the V. The shape stays the same; only the root changes. Lean on beats 1 and 3." },
+    boogieOct: { ladder: ["roots", "octaves"], style: "boogie", tips: "Root low, octave high, in swung eighths: the low note on the beat, the high one on the and. Keep the hand loose and let it roll rather than hit. Each new chord starts on its low root." },
+    yancey: { ladder: ["halves", "tango"], style: "boogie", tempo: 84, tips: "Clap it first: 1, the and of 1, the and of 2, 3, 4. Then play root on 1, fifth on the and, root on the and of 2, fifth on 3, root on 4. Play it slowly and lazily, like a slow blues; the notes between the beats give the lilt, so do not rush them." },
     riff: { ladder: ["halves", "dotted"], style: "boogaloo", tips: "A straight-eighths riff: root on 1, root again on the and of 2, then fifth and flat seventh on beat 4 climbing back to the root. The push on the and of 2 is the same one as the dotted line; the ending is new. Play every bar the same." },
     riffwalk: { ladder: ["riff", "arp", "walk"], style: "boogaloo", tips: "Riff most of the time; at the end of some four-bar phrases, walk one bar of quarter notes into the next phrase. The skill is the switch: feel where the phrase ends and land on the next root exactly on 1." },
     sowhat: { ladder: ["held", "two"], style: "swing", chart: "Dm7|Dm7|Dm7|Dm7|Ebm7|Ebm7|Dm7|Dm7", tempo: 132, tips: "The bass has the tune here. Root, then eighth notes up from the fifth (5, 6, 7, root, 9), back down through the seventh to the root. Then wait while the chords answer. Sing it before playing it." },
@@ -115,6 +122,9 @@ const PLAN = {
     arp2: { ladder: ["pad"], style: "pop", tips: "Eighth notes rocking between the lowest and the highest note of the chord. On piano, thumb and little finger, the hand still; on guitar, the thumb on the bass string and a finger on the top string." },
     arp: { ladder: ["pad", "arp2"], style: "pop", tips: "The notes of the chord one at a time in eighths, up and back down, each left to ring. Piano: one hand position per chord, using the pedal. Guitar: hold the whole chord shape and pick string by string." },
     alberti: { ladder: ["hymn", "arp2"], style: "pop", on: "piano", tips: "Lowest, highest, middle, highest, in even eighths. Keep the chord under the hand and let the fingers do the work: 5-1-3-1 in the left hand, or 1-5-3-5 in the right. Quiet and even, the way Mozart wrote it." },
+    stride: { ladder: ["oompah"], style: "stride", on: "piano", tips: "The left hand alone first: a low octave on the root on beat 1, a chord about two octaves higher on beat 2, the fifth down low on beat 3, the chord again on 4. Look at where the hand lands, not where it has been: the leap down is the hard one. Keep the bass notes short and the chords lighter. When it is steady, let the band's bass and drums join." },
+    strideTenths: { ladder: ["oompah", "stride"], style: "stride", on: "piano", tips: "The stride left hand, stretched: on beat 1 the root with the 3rd an octave above it, both at once (roll them if your hand will not reach). On beat 3 the fifth, or, before a chord change, a tenth a step away from the next root, so the bass walks into it. Learn the leaps first with single notes, then add the top of each tenth." },
+    boogie: { ladder: ["upbeats", "charleston"], style: "boogie", on: "piano", tips: "Short chords against the walking bass, a two-bar riff: 1, the and of 1, the and of 2 held; then the and of 1, 2, the and of 3 held. Keep the right hand light and swung, and play the same riff on every chord of the blues: it does not need to change, the bass does the moving." },
     triplets: { ladder: ["quarters"], style: "doowop", on: "piano", tips: "The chord on all three eighths of every beat: 1-and-a, 2-and-a. Right hand, light repeated chords from the wrist; left hand, the root on 1 and 3. Lean slightly on each beat." },
     eighths: { ladder: ["quarters"], style: "rock", tips: "The chord on every eighth note, beats a little louder. On piano, the right hand bounces from the wrist; on guitar, all downstrokes. Keep it tight with the hi-hat." },
     upbeats: { ladder: ["quarters", "oompah"], style: "reggae", tips: "Never on the beat: a short chord on every and. Count 1-AND-2-AND aloud, tap the beat with your foot and play only with the and. On guitar it is a chop, the chord choked right after it sounds." },
@@ -174,6 +184,7 @@ const PLAN = {
     chacha: { ladder: ["hhquarters"], style: "chacha", tips: "The cymbal on every beat like the cha-cha bell, cross-stick on 2, two tom notes on 4 and the and of 4: the cha-cha-cha." },
     tango: { ladder: ["hhquarters"], style: "tango", tips: "Quarter notes on the cymbal over a light habanera on the kick. Stay out of the way: tango bands rarely have a drum kit." },
     calypso: { ladder: ["hheighths"], style: "calypso", tips: "Kick on 1 and 3, cross-stick on the and of 2 and on 4, cymbal eighths leaning on the off-beats." },
+    jump: { ladder: ["shuffle"], style: "jump", tips: "The blues shuffle, harder: swung eighths on the cymbal, the snare hit hard on 2 and 4, and the kick played softly on all four beats (feathered: felt more than heard). Get the shuffle steady, then add the kick on 2 and 4 under the snare, quietly." },
     onedrop: { ladder: ["hheighths", "halftime"], style: "reggae", tips: "Nothing on beat 1. Kick and cross-stick together on beat 3, cymbal eighths leaning on the off-beats. The silence on 1 is the style." }
   },
   congas: {
@@ -199,11 +210,11 @@ const SAME = [
   ["bass:riff", "bass:riffwalk", "comp:stabs", "drums:funk"], ["bass:octaves", "drums:dance", "drums:hhdance"],
   ["bass:dotted", "drums:strum", "bass:songfather", "drums:ballad"], ["comp:upbeats", "drums:hhoffbeats", "drums:onedrop", "drums:calypso"],
   ["bass:arp", "comp:arp", "comp:arp2", "comp:alberti"], ["bass:held", "bass:halves", "comp:pad", "comp:hymn", "drums:brushes"],
-  ["drums:train", "comp:strumFolk"], ["comp:strumPunk", "drums:rock", "bass:eighths"], ["comp:g3x8", "comp:strum16", "drums:hhsix", "drums:hhsix2"],
+  ["drums:train", "comp:strumFolk"], ["comp:stride", "comp:oompah", "bass:two", "bass:alt"], ["bass:boogie", "bass:arp", "comp:boogie", "drums:shuffle"], ["comp:strumPunk", "drums:rock", "bass:eighths"], ["comp:g3x8", "comp:strum16", "drums:hhsix", "drums:hhsix2"],
   ["bass:polka", "comp:upbeats"], ["comp:ballRock", "drums:ballad", "bass:dotted"], ["bass:footprints", "comp:waltz"], ["bass:allblues", "bass:twelve8"]
 ];
 // patterns written for 3/4 (or that have a 3/4 version worth a step of its own)
-const THREE = ["bass:alt", "bass:polka", "bass:halves", "bass:held", "bass:walk", "bass:roots", "comp:oompah", "comp:hymn", "comp:prine", "comp:quarters",
+const THREE = ["comp:stride", "bass:alt", "bass:polka", "bass:halves", "bass:held", "bass:walk", "bass:roots", "comp:oompah", "comp:hymn", "comp:prine", "comp:quarters",
   "comp:arp", "comp:arp2", "comp:alberti", "comp:pad", "comp:strumQuarters", "drums:hhquarters", "drums:hheighths", "drums:hhoffbeats", "drums:boomchick", "congas:steady"];
 
 const esc = (s) => String(s).replace(/&/g, "&amp;").replace(/'/g, "&#39;").replace(/</g, "&lt;");

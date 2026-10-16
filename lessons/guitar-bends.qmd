@@ -1,0 +1,249 @@
+---
+title: "String Bends on Guitar: Bending in Tune"
+toc: true
+toc-depth: 2
+---
+
+A **bend** pushes or pulls a fretted string sideways across the fret so that its pitch rises smoothly, with no second pick stroke. It is the guitar's version of a singer sliding up to a note, and it is the main way a guitarist reaches the notes *between* the piano's keys. This lesson builds the technique first, then the habit of bending **to a target pitch**, then the variants, and then where bends go in a blues in A. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section and opens it.
+
+**How to use the page.** Fingers are numbered 1 (index) to 4 (little finger). Strings are numbered 1 (high E) to 6 (low E). Tablature has one line a string, the high E on top, and a number for the fret. The **Drone** button in the top bar is the same drone as the one in section 2: keep it sounding on A while you practise, because a bend is only right or wrong against something that stays still. Start the volume low.
+
+```{=html}
+<style>
+.gb-lab{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem;max-width:46rem}
+.gb-lab h4{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}
+.gb-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin:.4rem 0}
+.gb-row label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2)}
+.gb-row select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.gb-lab .btn{font-family:var(--font-mono);font-size:.78rem}
+.gb-lab .btn.gb-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.gb-lab canvas{width:100%;height:150px;border:1px solid var(--site-border);border-radius:6px;display:block;margin-top:.4rem}
+.gb-info{font-size:.88rem;color:var(--site-ink-2);min-height:1.4em;margin:.4rem 0 0}
+.gb-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.gb-tab{font-size:.85rem;line-height:1.25}
+.gb-rg{max-width:22rem}
+</style>
+```
+
+## 1. The mechanics {#mechanics}
+
+**Support fingers.** One finger alone cannot move a string a whole step. Bend with the **ring finger (3)** and put the **middle (2)** and, if you can, the **index (1)** on the same string, one fret behind it, so that three fingers push together. The fingers behind are not decoration: they share the load and keep the string from sliding off the fret. For a small bend (a half step) with the middle finger, the index finger backs it. When the bend is on the note you are fretting with the little finger, the ring finger backs it.
+
+**Push or pull?** The string goes across the neck, so it has to go one way or the other.
+
+- On the thin strings (1 to 3, the high E, B and G) the usual way is to **push the string up** toward the ceiling, away from the palm.
+- On the thick strings (4 to 6) the usual way is to **pull it down** toward the floor, so that the string does not run off the edge of the fretboard and the pull is not blocked by the neighbouring string. Many players use this for the G string too, and a few bend the B string down. Either direction gives the same note: use whichever your hand finds steadier.
+
+**It is the wrist.** The bend comes from **rotating the forearm and wrist**, as if turning a doorknob, and not from squeezing the fingers sideways. The fingers keep their shape and the hand turns about the line of the forearm. Beginners squeeze and the bend stalls at a half step, and the hand tires.
+
+**Thumb.** Two usual ways, and both are right:
+
+- Thumb **over the top** of the neck, anchored on the low E string. The thumb damps that string and gives the hand a pivot to turn about. This suits push bends.
+- Thumb **behind the neck**, as in classical position. It gives more leverage for a pull bend.
+
+**Mute the other strings.** A bend gets sloppy from strings that were not meant to ring. The fingertip that frets the bend mutes the string below it, the underside of the same finger mutes the one above, and the picking hand's palm rests lightly at the bridge. The strings *you do not bend* ring only if you let them.
+
+**String gauge and place on the neck.** Lighter strings (for example a set of .009 to .042) bend more easily than heavier ones (.011 and up), and are easier on beginners' fingertips. Heavier strings give a fatter sound and more tension to play against. A longer scale length makes strings tighter, and so does a lower tuning, so a given set bends differently on different guitars. Within one guitar: the frets near the **5th to 12th** are friendliest for most players. Near the nut a bend stretches more string and takes more push, and above the 12th the string is short and stiff, so the same push moves it less and the last bit of the bend is hard to hold. Thick strings take the most effort. This is why a first bend is usually on the G or B string at the 7th or 8th fret.
+
+**Practice:** no pitch goals yet. Fret the G string at the 7th fret (D) with the ring finger, and put the middle and index fingers on frets 6 and 5 of the same string. Rotate the wrist slowly until the pitch has gone up as far as it will, then let it down slowly. Do ten. The bent note should be clean, with no buzzing from the string touching the next fret or ringing neighbours.
+
+## 2. Bending in tune {#in-tune}
+
+A bend is a slide with no frets in it, so nothing tells you when you have arrived. **The fix is to hear the target first.** Before you bend, **fret the target note** (the note a half step, whole step or more above where you start), play it, then go back, play the lower note and bend until it matches. After a few days your ear carries the target and you can skip the check.
+
+| Bend | Amount | Frets | Cents | Notes |
+|---|---|---|---|---|
+| Quarter-tone, "curl" | a little less than a half step | about half a fret | about 50 | A nudge, a lazy lift. Not a fixed pitch: it lands *between* the piano's notes |
+| Half step | semitone | 1 | 100 | The smallest bend with a named target. Easy to rush past |
+| Whole step | tone | 2 | 200 | **The most common bend** in rock and blues |
+| One and a half steps | minor third | 3 | 300 | Hard work on the thick strings, usual on the thin ones, with all three fingers |
+
+The **bendboard** below shows a bend three ways at once, and lets you try it. On the left is the neck as you see it in tab (the high E on top, the frets running to the right), with box 1 in grey. The **filled dot** is your finger and the string curves away from it toward the next string by as much as you bend. The **dashed dot** is the fret that *sounds the target pitch*, and the arrow between them carries the tab mark: ¼, ½, full, 1½, **PB** (pre-bend) or **R** (release). The gauge beside it counts the bend in cents, with ticks at 100, 200 and 300 and the **blue-note zones** shaded (around 316 to 350 cents above the root for the blue third, and around 583 for the blue fifth). The trace underneath is the pitch against time, with the target shape in dark grey.
+
+- **Drag the dot** toward the next string (or use the Bend slider, or the arrow keys on the dot): a tone glides with it, and the readout says how many cents you are off the target.
+- **Start** and **Target** play the two notes, and **Play the shape** bends the note for you along the dark line (pick bend, bend and release, pre-bend and release, or vibrato on a bend).
+- **Listen and compare** opens the microphone (only when you press it) and draws the pitch of your own guitar over the target: play the first note when the line begins. It needs the guitar in standard tuning and one note at a time.
+- **MIDI wheel** lets the pitch wheel or the mod wheel of a MIDI keyboard do the bending.
+
+Choose a bend from box 1 (each one is a note from section 5, with its string and fret). **Target, then bend** is the practice routine in sound. A bend that is a few cents off *beats* against the target and against the drone.
+
+```{=html}
+<div class="sk" data-w="bendboard" data-title="Bend to a target"></div>
+```
+
+The drone, tuned to A and with the E above it:
+
+<div class="pw-embed" data-w="drone" data-do="9" data-oct="3" data-pads="0 7"></div>
+
+On the gauge and the trace, a bend that lands inside a blue zone is the blue note: it is neither the piano's minor third nor its major third. Compare the **solid orange line** (you) with the **dark line** (the target): where they drift apart, the sound beats against the target.
+
+**Check against something that does not move.** The drone is one. Another is the **same note on another string**: to bend the G string's 7th fret (D) up a whole step to E, fret the E on the B string (5th fret), pick it, then bend and compare. Hearing two strings settle into one pitch is the most reliable test you have.
+
+**Hold the bend with a strobe.** A bend that is nearly right looks right on a needle. A strobe shows each partial of the string, and a bend you hold *still* at the target makes its stripes stand still. Set it to the target note (here E, the pitch of the 9th fret on the G string), press Start, bend, and hold: stripes drifting right mean you are sharp, left flat, and the speed is how far. Use it for long held bends and for the end of a bend with vibrato. Wait a moment after the pick strikes: the attack is ignored.
+
+```{=html}
+<div class="sk" data-w="tuner" data-title="Hold the bend: strobe on E" data-set="note=E,oct=4,sys=12et,bands=4"></div>
+```
+
+**Tune the guitar first.** A bend can't be in tune with a guitar that isn't.
+
+## 3. Variants {#variants}
+
+All of these start with the same push. What changes is *when* the bend happens.
+
+- **Bend and release.** Pick the lower note, bend up to the target, then let the string back down to the start while the note is still sounding. Written `7b9r7`.
+- **Pre-bend, and pre-bend and release.** Bend the string *silently*, before the pick strikes it, to the target pitch. Strike it, and then (if it is a pre-bend and release) let it back down. The ear never hears the lower note first. Written `PB` and `PB R`. This is harder than it sounds because there is no sliding to correct with: the bend is right or wrong before you hear it. Check against the target note as in section 2.
+- **Unison bend.** Two strings play the *same* pitch: fret the lower string (for example the G string at the 7th fret, D) and, on the next string up, the note a whole step higher (the B string at the 5th fret, E), pick both, and bend the lower one up to meet the one that stays still. You hear one note thicken, then split and merge. A slightly out-of-tune unison beats, which is the sound of a bend that is not quite there.
+- **Double-stop bend.** Two strings sound at once, and one or both are bent. With a double stop on strings 2 and 3, bend them together a whole step, or bend one and keep the other still. Listen for it in rock-and-roll and blues lead playing.
+- **Oblique bend.** One string is held still (often an open string, or a high fretted note) while another is bent against it. The distance between the two changes while one note does not.
+- **Vibrato on a bend.** Reach the target, then wobble the pitch a little *below and up to* it (and not above it) with small quick rotations of the wrist. A bend with vibrato is how most guitarists end a held note. Keep the target as the top of the wobble.
+- **Quarter-tone bends**, the "curl". A tiny bend, about half a fret. It is not meant to arrive anywhere on the piano. See section 5.
+
+## 4. How bends are written {#notation}
+
+In tablature a bend is a **curved arrow** from the fret number up to a bracket or the target number, with a word or number over the tip saying how far:
+
+| Mark | Meaning |
+|---|---|
+| arrow with `full` (or `1`) | a whole-step bend |
+| arrow with `1/2` | a half-step bend |
+| arrow with `1 1/2` | a bend of a whole step and a half |
+| `1/4` | a quarter-tone bend (a curl) |
+| `PB` | pre-bend: bend before you pick |
+| `R` or an arrow down | release: let the string back down |
+| `7b9` (text tab) | fret 7, bend to the pitch of fret 9; `7b9r7` bends and releases |
+| `(9)` | the pitch the bend is aimed at, as a fret number in brackets |
+
+The staff may also show the target note as a grace note, or a slur with "bend" over it. In plain text tab, the bend and release shown in the picture are written like this, on the B string:
+
+<pre class="gb-tab">
+e|----------------------------|
+B|--8b10----8b10r8------------|
+G|----------------------------|
+     full     full, release
+</pre>
+
+and a pre-bend and release (fret 8, bent silently to the pitch of fret 10, picked, then let down):
+
+<pre class="gb-tab">
+B|--(10) PB---R8-----|
+</pre>
+
+## 5. Bends in the blues {#blues}
+
+The minor pentatonic scale on the 5th fret ("box 1") in A is the first place most guitarists use bends. The scale below is written on a staff in A (with the notes' names); press ▶ Play to hear it, and use the table beneath for the strings and frets.
+
+<div class="bl-notes" data-scale="minorpent" data-on="I"></div>
+
+Box 1 in A, with the string and fret where each note is (string 1 is the high E). Every string has two notes in the box, at the 5th fret and at the 7th or 8th:
+
+| Degree | Note | Where in box 1 |
+|---|---|---|
+| 1 (root) | A | string 1 fret 5, string 4 fret 7, string 6 fret 5 |
+| ♭3 | C | string 1 fret 8, string 3 fret 5, string 6 fret 8 |
+| 4 | D | string 3 fret 7, string 5 fret 5 |
+| 5 | E | string 2 fret 5, string 5 fret 7 |
+| ♭7 | G | string 2 fret 8, string 4 fret 5 |
+| ♭5 (the blues note, not in the plain pentatonic) | E♭ | string 3 fret 8 |
+
+Bends that blues players reach for early (strings and frets as in the table; the target of each bend is a pitch you can also fret one or two frets up):
+
+- **4 to 5, a whole step.** D to E. On string 3 (G), fret 7 (D), bend to E (the pitch of fret 9). This is a favourite because the 5 is the strongest note against the I chord, and the 4 is the weakest, so the bend is a movement from tension to rest. In tab: `G|--7b9--`.
+- **♭7 to root, a whole step.** G to A. On string 2 (B), fret 8 (G), bend a whole step to A (the pitch of fret 10). The ♭7 pulls towards the root the way it does in the dominant chord. In tab: `B|--8b10--`.
+- **♭3 up toward the major 3.** C toward C♯. On string 1 (high E), fret 8 (or string 3, fret 5), bend a little, about a quarter-tone. The note is not C and not C♯. This is the **blue third**, between the minor third of the scale and the major third of the A7 chord sounding under it. In tab: a `1/4` over the arrow, not a number of frets.
+- **5 up a step and a half.** E up to G, the ♭7. On string 2 (B), fret 5, bend three frets' worth, to the pitch of fret 8. This is the 1½-step bend of section 2, and takes all three fingers. In tab: `B|--5b8--`.
+- **♭5 bends.** The blues scale adds ♭5 (E♭ in A). On string 3, fret 8 (E♭), bend a half step to E, from the ♭5 to the 5. In tab: `G|--8b9--`. Likewise a half-step bend from 4 (D, fret 7) to ♭5 (E♭, fret 8): `G|--7b8--`.
+
+Practise each of them against the A drone from section 2: the whole-step bends of D and G should land on notes (E and A) that are in the drone, so that you hear them *lock*.
+
+### Between the piano's notes
+
+A piano or a fretted guitar plays the third as either the minor third (300 cents above the root) or the major third (400). The blues third is *neither*. It sits in the middle, near **350 cents**, which is the region of a **neutral third**. Measurements of recorded blues singing and playing show this. Cutting (2019, *Empirical Musicology Review*) found clusters of blue-note pitches near **319, 583 and 1038 cents** above the tonic, in between the equal-tempered notes at 300 and 400, 500 and 600, and 1000 and 1100. A guitar with frets can't play those notes on a fretted string. **A bend can.** This is why the bends in the box are not "mistakes to be corrected": they are the way the guitar reaches notes the frets leave out.
+
+Hear it in the tool below, with the A drone sounding if you like. Each button plays A (220 Hz) with a second note above it: the minor third, a note 319 cents up (the first of Cutting's clusters), the neutral third at 350, and the major third. The last button slides from the minor third to the major third; listen for where it stops sounding like either. None of the notes between the minor and major third has a fret.
+
+```{=html}
+<div class="gb-lab" id="gb-third">
+  <h4>Minor third, neutral third, major third</h4>
+  <div class="gb-row">
+    <button class="btn btn-sm btn-outline-secondary" data-gt="300">Minor third, 300 cents (C)</button>
+    <button class="btn btn-sm btn-outline-secondary" data-gt="319">Blue third, 319 cents</button>
+    <button class="btn btn-sm btn-outline-secondary" data-gt="350">Neutral third, 350 cents</button>
+    <button class="btn btn-sm btn-outline-secondary" data-gt="400">Major third, 400 cents (C♯)</button>
+    <button class="btn btn-sm btn-outline-secondary" data-gt="slide">Slide from 300 to 400</button>
+  </div>
+  <p class="gb-info" id="gb-third-info">A220 plus the interval above it, on a sine tone.</p>
+</div>
+```
+
+**Listen to.** Pick one phrase from each of these players' recordings and try to copy its bend.
+
+- **B.B. King**, "The Thrill Is Gone" (1969): the vibrato that ends his phrases, and bends that sing like a voice.
+- **Albert King**, "Born Under a Bad Sign" (1967): long, wide bends on the high strings.
+- **Freddie King**, "Hide Away" (instrumental, early 1960s): bends inside a driving shuffle.
+- **Stevie Ray Vaughan**, "Pride and Joy" and "Texas Flood" (both from the early 1980s): big bends and a heavy touch.
+
+These are pointers for your ears. Check the recordings before repeating any detail about them.
+
+## 6. Practice, step by step {#practice}
+
+Spend a few minutes on each step, slowly. Do not move on until the previous step is clean three times in a row. Keep the A drone going.
+
+1. **No pitch.** Section 1's practice: ten slow bends with three fingers, then ten releases.
+2. **Half step.** Fret the target (G string fret 8, E♭), then the start (fret 7, D). Bend until they match. Repeat 10 times; switch to the B string, fret 8 to 9.
+3. **Whole step.** String 3 fret 7 to the pitch of fret 9. Fret fret 9 first, play it, play fret 7, bend. Aim for the drone's E.
+4. **Whole step, no check.** Hear the target in your head, bend, then check with the fretted note afterwards.
+5. **Whole step with release.** Bend, hold for four slow beats, release to the start without letting the note go sharp or flat on the way down.
+6. **Pre-bend and release.** Bend silently, pick, release. Check the pitch of the pre-bend against the fretted target before you pick.
+7. **Step and a half.** String 2: fret 5 to the pitch of fret 8. Use all three fingers.
+8. **Vibrato on the bend.** Bend to the target, hold it, and add a small wobble that does not drop below the start.
+9. **The curl.** On string 1 fret 8, bend a little, to between C and C♯, listening for the point where it sounds neither minor nor major. Compare with the neutral third button.
+10. **In a phrase.** Play four bars over a 12-bar blues in A (the band in [Blues for Guitar](blues-guitar.qmd) can play the chords in A) using only the bends 4 to 5 and ♭7 to the root, resting between them.
+
+**Where to go next:** [Hammer-ons and pull-offs](hammer-ons-pull-offs.qmd) for the other ways of changing pitch without picking, [Blues for Guitar](blues-guitar.qmd) for the chords under the solo, and [Tuning systems](tuning-systems.qmd) for why a pure interval and a piano's interval are not the same.
+
+```{=html}
+<script>
+(function () {
+  var ctx = null, outG = null, cur = [], timers = [], anim = 0, plan = null;
+  function ac() { if (!ctx) { var A = window.AudioContext || window.webkitAudioContext; ctx = new A(); outG = ctx.createGain(); outG.gain.value = 0.28; outG.connect(ctx.destination); } if (ctx.state === "suspended") ctx.resume(); return ctx; }
+  function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+  function ratio(c) { return Math.pow(2, c / 1200); }
+  function $(id) { return document.getElementById(id); }
+  function lerp(a, b, u) { return a * Math.pow(b / a, u); }   // pitch moves evenly in cents
+  function stopAll() { cur.forEach(function (n) { try { n.stop(); } catch (e) {} }); cur = []; timers.forEach(clearTimeout); timers = []; plan = null; }
+  // A sine with a quiet second harmonic that fades like a plucked string. bend = {t0, t1, to}: glide from f0 to "to" between t0 and t1 seconds.
+  function tone(f0, dur, delay, bend) {
+    var c = ac(), t = c.currentTime + 0.03 + (delay || 0), o = c.createOscillator(), o2 = c.createOscillator(), g = c.createGain(), g2 = c.createGain();
+    o.frequency.setValueAtTime(f0, t); o2.frequency.setValueAtTime(2 * f0, t); g2.gain.value = 0.12;
+    if (bend) for (var i = 1; i <= 30; i++) { var u = i / 30, f = lerp(f0, bend.to, u), tt = t + bend.t0 + (bend.t1 - bend.t0) * u; o.frequency.linearRampToValueAtTime(f, tt); o2.frequency.linearRampToValueAtTime(2 * f, tt); }
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(1, t + 0.01); g.gain.setTargetAtTime(0.5, t + 0.02, 0.8); g.gain.setTargetAtTime(0, t + dur - 0.2, 0.06);
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(outG); o.start(t); o2.start(t); o.stop(t + dur + 0.3); o2.stop(t + dur + 0.3);
+    cur.push(o, o2); return t;
+  }
+  // the thirds, over A220
+  var gi = $("gb-third-info");
+  document.querySelectorAll("[data-gt]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      stopAll(); var v = b.getAttribute("data-gt"), root = 220;
+      if (v === "slide") { tone(root, 4.2); tone(root * ratio(300), 4.2, 0, { t0: 0.4, t1: 3.6, to: root * ratio(400) }); gi.textContent = "A, and a note sliding from the minor third to the major third. Where does it sound like neither?"; return; }
+      tone(root, 2.4); tone(root * ratio(+v), 2.4);
+      gi.textContent = "A (220 Hz) and a note " + v + " cents above it (" + (root * ratio(+v)).toFixed(1) + " Hz).";
+    });
+  });
+})();
+</script>
+```
+
+{{< include _blues-kit.qmd >}}
+
+```{=html}
+<script>window.SK_NO_BAR = true;</script>
+```
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script>document.documentElement.setAttribute("data-tonality", "blues");</script>
+<script>BluesLesson.init({ instrument: "guitar", key: 9 });</script>
+```

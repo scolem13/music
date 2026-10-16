@@ -1,0 +1,158 @@
+/* Timestamp Notes: the steps, the words and chords, sending on. Dressed like the rest of the page: the player's
+   rounded boxes (.btp-url), the log's buttons, the bar map's folds. */
+.btp-steps { margin: .5rem 0 0; padding-left: 1.4rem; font-size: .95rem; }
+.btp-steps li { margin: .1rem 0; }
+.btp-words { max-width: 900px; margin: 0 auto .75rem; display: flex; flex-direction: column; gap: .75rem; }
+.btp-words kbd {
+  padding: .05em .35em; font-size: .85em; color: #495057;
+  background: #f1f3f5; border: 1px solid #dee2e6; border-radius: .2rem;
+}
+
+.btp-words .btp-title-label { display: flex; align-items: center; gap: .6rem; margin: 0; font-size: .85rem; color: #495057; }
+.btp-words .btp-title,
+.btp-word-cols textarea {
+  min-width: 0;
+  padding: .45rem .65rem;
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid #ced4da;
+  border-radius: 6px;
+}
+.btp-words .btp-title { flex: 1 1 auto; max-width: 28rem; font-size: .95rem; }
+.btp-words .btp-title:focus,
+.btp-word-cols textarea:focus { outline: 2px solid #0d6efd; outline-offset: -1px; border-color: #0d6efd; }
+
+/* The section under the playhead, above the boxes that have scrolled to it. */
+.btp-word-now {
+  padding: .3rem .65rem;
+  font-weight: 600;
+  color: #0d6efd;
+  background: rgba(13, 110, 253, .08);
+  border-left: 3px solid #0d6efd;
+  border-radius: .2rem;
+}
+.btp-word-now[hidden] { display: none; }
+
+.btp-word-cols { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+@media (max-width: 700px) { .btp-word-cols { grid-template-columns: 1fr; } }
+.btp-word-cols textarea {
+  width: 100%;
+  height: 18rem;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;   /* UG lines chords up by column */
+  font-size: .8rem;
+  line-height: 1.45;
+  resize: vertical;
+}
+.btp-word-cols textarea::placeholder, .btp-words .btp-title::placeholder { color: #adb5bd; }
+
+.btp-word-secs li { grid-template-columns: max-content minmax(0, 1fr) max-content; padding: .1rem .3rem; border-radius: .2rem; }
+.btp-word-secs li.done .btp-sec-name { color: #6c757d; font-weight: 500; }
+.btp-word-secs li.next { background: rgba(13, 110, 253, .08); }
+.btp-word-secs li.next .btp-sec-name::after { content: "  \2190  S"; color: #0d6efd; font-weight: 400; font-size: .8rem; }
+.btp-word-secs .btp-stamp[disabled] { color: #adb5bd; cursor: default; background: none; text-decoration: none; }
+
+.btp-send-note { margin: 0; min-height: 1.2em; font-size: .85rem; color: #495057; }
+
+/* Playing in: the words of the section under the playhead, large, with the chords over them; its name above, smaller.
+   It stays in view (under the navbar) while the rest of the page scrolls. */
+.btp-live { max-width: 900px; margin: 0 auto .75rem; display: flex; flex-direction: column; gap: .75rem; }
+.btp-live-stage {
+  position: relative; z-index: 5; flex: 0 0 auto;
+  padding: .6rem 1rem .8rem;
+  background: var(--bs-body-bg, #fff);
+  border: 1px solid #dee2e6; border-radius: .4rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .06);
+}
+.btp-live-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; margin-bottom: .3rem; }
+.btp-live-sec { font-size: .8rem; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; color: #0d6efd; }
+.btp-live-next { font-size: .8rem; color: #6c757d; }
+.btp-live-words { max-height: 34vh; overflow-y: auto; position: relative; }
+.btp-live-empty { margin: 0; font-size: .9rem; color: #6c757d; }
+.btp-line { display: flex; flex-wrap: wrap; align-items: flex-end; margin: 0 0 .35rem; }
+.btp-seg { display: inline-flex; flex-direction: column; white-space: pre; }
+.btp-ch { align-self: flex-start; min-height: 1.3em; padding: 0 .3em 0 0; font-size: calc(1rem * var(--live-scale, 1)); font-weight: 700; color: #495057; }
+.btp-ch.none { visibility: hidden; }
+.btp-ch.done { color: #adb5bd; }
+.btp-ch.now { color: #fff; background: #0d6efd; border-radius: .2rem; padding: 0 .25em; margin-right: .1em; }
+.btp-ch.next { outline: 2px solid #0d6efd; outline-offset: 1px; border-radius: .2rem; color: #0d6efd; }
+.btp-ch.wrong { color: #b4531f; text-decoration: underline wavy #b4531f; }
+.btp-wd { font-size: calc(1.5rem * var(--live-scale, 1)); line-height: 1.25; }
+.btp-live-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; font-size: .85rem; }
+.btp-live-row input[type=number] { width: 4.2rem; }
+.btp-live-row input, .btp-live-row select {
+  padding: .2rem .4rem; font: inherit; color: inherit; background: transparent; border: 1px solid #ced4da; border-radius: .25rem;
+}
+.btp-live-row button {
+  padding: .35rem .6rem; font: inherit; color: inherit; background: #fff; border: 1px solid #ced4da; border-radius: .25rem; cursor: pointer;
+}
+.btp-live-row button:hover { background: #e9ecef; }
+.btp-midi.on { color: #fff; background: #0d6efd; border-color: #0d6efd; }
+.btp-live-status { margin: 0; min-height: 1.2em; font-size: .85rem; color: #495057; }
+.btp-live kbd { padding: .05em .35em; font-size: .85em; color: #495057; background: #f1f3f5; border: 1px solid #dee2e6; border-radius: .2rem; }
+
+/* Which of the two boxes: Ultimate Guitar, ChordPro, or both. */
+.btp-word-view { display: inline-flex; border: 1px solid #ced4da; border-radius: .3rem; overflow: hidden; align-self: flex-start; }
+.btp-word-view button { padding: .25rem .7rem; font: inherit; font-size: .8rem; color: inherit; background: #fff; border: 0; border-right: 1px solid #ced4da; cursor: pointer; }
+.btp-word-view button:last-child { border-right: 0; }
+.btp-word-view button.on { color: #fff; background: #0d6efd; }
+.btp-word-cols[data-view=ug], .btp-word-cols[data-view=cho] { grid-template-columns: 1fr; }
+.btp-word-cols[data-view=ug] .btp-cho, .btp-word-cols[data-view=cho] .btp-ug { display: none; }
+
+/* The next section's first line, always under the words; the grip below it makes the words taller. */
+.btp-live-upnext { margin-top: .4rem; padding-top: .35rem; border-top: 1px dashed #ced4da; opacity: .7; }
+.btp-live-upnext[hidden] { display: none; }
+.btp-live-upname { display: block; font-size: .7rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: #6c757d; }
+.btp-live-upnext .btp-wd { font-size: calc(1.15rem * var(--live-scale, 1)); }
+.btp-live-upnext .btp-ch { font-size: calc(.85rem * var(--live-scale, 1)); }
+.btp-live-grip { height: 10px; margin: .35rem -1rem -.8rem; cursor: ns-resize; touch-action: none; position: relative; }
+.btp-live-grip::before { content: ""; position: absolute; left: 50%; top: 3px; width: 3rem; margin-left: -1.5rem; height: 4px; border-radius: 2px; background: #ced4da; }
+.btp-live-grip:hover::before, .btp-live-grip:focus-visible::before { background: #0d6efd; }
+.btp-live-grip:focus { outline: none; }
+.btp-live-stage.is-shut .btp-live-head { margin-bottom: 0; }
+
+/* The chord grid (tune-chart.js, as on the Backing Track) and its next line. */
+.btp-grid-next { margin-top: .7rem; padding-top: .5rem; border-top: 1px dashed #ced4da; }
+.btp-grid-next[hidden] { display: none; }
+.btp-grid-next b { display: block; margin-bottom: .4rem; font-size: .66rem; letter-spacing: .06em; text-transform: uppercase; color: #6c757d; }
+.btp-grid-next-bars { display: grid; grid-template-columns: repeat(4, 1fr); border-left: 2px solid var(--tc-ink, #333); }
+.btp-grid-next-bars .tc-bar { cursor: default; }
+.btp-grid-row { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-top: .5rem; }
+.btp-grid-note { margin: 0; font-size: .85rem; color: #6c757d; }
+.btp-confirm { padding: .35rem .7rem; font: inherit; font-size: .85rem; color: #fff; background: #0d6efd; border: 1px solid #0d6efd; border-radius: .25rem; cursor: pointer; }
+.btp-confirm[hidden] { display: none; }
+
+/* The stage's header: the fold arrow and the section name together on the left, the count on the right. */
+.btp-live-head { justify-content: flex-start; }
+.btp-live-next { margin-left: auto; }
+.btp-grid-next.tune-chart { background: none; padding: 0; }
+
+/* Now playing: pinned in the right column, or floating (fixed, dragged by its handle, its width dragged at the corner). */
+.btp-live-drag { display: none; margin-right: .3rem; cursor: move; color: #adb5bd; touch-action: none; }
+.btp-live-stage.is-float { position: fixed; z-index: 1050; resize: horizontal; overflow: hidden; min-width: 260px; max-width: 95vw;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, .18); }
+.btp-live-stage.is-float .btp-live-drag { display: inline; }
+.btp-live-tools { display: inline-flex; gap: .2rem; margin-left: .6rem; }
+.btp-live-tools button { padding: 0 .4rem; font-size: .75rem; line-height: 1.6; color: #495057; background: transparent; border: 1px solid #ced4da; border-radius: .2rem; cursor: pointer; }
+.btp-live-tools button:hover { background: #e9ecef; }
+.btp-side .btp-live-words { max-height: 40vh; }
+
+.btp-grid-copy { margin-left: auto; padding: .35rem .7rem; font: inherit; font-size: .85rem; color: inherit; background: #fff; border: 1px solid #ced4da; border-radius: .25rem; cursor: pointer; }
+.btp-grid-copy:hover { background: #e9ecef; }
+
+.btp-correct { padding: .35rem .7rem; font: inherit; font-size: .85rem; color: #b4531f; background: #fff; border: 1px solid #b4531f; border-radius: .25rem; cursor: pointer; }
+.btp-correct.on { color: #fff; background: #b4531f; }
+
+/* Going to a section: the menu in Now playing's header, the tabs over the chord grid. */
+.btp-live-pick { margin-left: .5rem; max-width: 11rem; padding: 0 .3rem; font-size: .75rem; height: 1.5rem; color: inherit; background: transparent; border: 1px solid #ced4da; border-radius: .2rem; }
+.btp-live-pick[hidden] { display: none; }
+.btp-grid-tabset { margin: 0 0 .5rem; }
+.btp-grid-tabs { flex-wrap: wrap; }
+.btp-grid-tabs .nav-link { padding: .3rem .7rem; font-size: .85rem; cursor: pointer; }
+
+.btp-grid-row { flex-wrap: wrap; }
+.btp-grid-row .btp-grid-note { flex: 1 1 14rem; }
+.btp-grid-row button { white-space: nowrap; }
+.btp-live-head { flex-wrap: wrap; row-gap: .3rem; }
+.btp-live-sec { white-space: nowrap; }
+.ts-nav { max-width: 10.5rem; }

@@ -1,0 +1,54 @@
+---
+title: "Sound 24: The Signal Chain"
+toc: true
+toc-depth: 2
+---
+
+Real rigs use several effects one after another: a guitarist's pedalboard, the plug-ins on a channel in
+a DAW. The **order** matters, often a lot. And the **level** going from one to the next matters too:
+that's **gain staging**.
+
+**How to use the page.** Choose an effect for each of the three slots, or press a preset. The bars show
+the peak level after each stage. The dashed line is 0 dB, the ceiling.
+
+## Order
+
+<div class="sk" data-w="chain"></div>
+
+Compare each pair of presets on the *Synth riff* and the *Drum loop*:
+
+- **Distortion → Delay**: clean echoes of a distorted note. The usual order.
+  **Delay → Distortion**: the echoes are distorted *together* with the new notes, so they pile into
+  each other and turn to mush.
+- **Distortion → Reverb**: a distorted guitar in a room. **Reverb → Distortion**: a distorted room,
+  a roaring wash.
+- **Compressor → Wah**: the compressor evens out the playing, then the wah sweeps it.
+  **Wah → Compressor**: the compressor flattens the wah's sweep back out.
+
+A rough rule for a guitarist's board: things that shape the *note* first (wah, compressor, overdrive,
+distortion), then things that change the *sound* (chorus, phaser, tremolo), then things that put it
+in a *space* (delay, reverb). Break the rule on purpose, not by accident.
+
+## Gain staging
+
+In the computer, signals can get as loud as they like. Real equipment can't: every pedal, preamp and
+converter has a ceiling, and above it the wave is chopped flat ([hard clipping](sound-distortion.qmd)).
+The switch **Clip above 0 dB at every stage** makes this page behave like real gear.
+
+Press **Too hot**: a big bass boost, then a compressor, then a delay, with the input turned up. Watch
+for a stage going red: everything after it carries that damage, and no amount of turning down later
+removes it. Now lower the **Input gain** until no bar goes red. The rule is simple: **at every stage,
+loud enough to be well above the noise, never over the ceiling.** Engineers aim for peaks around
+−18 to −6 dB at each stage, which leaves room for surprises.
+
+## Your own rig
+
+Choose **Microphone** (headphones on) and build a chain for your voice or instrument. Try the order
+you'd expect, then the opposite, and decide which you prefer.
+
+## Back to the start
+
+- [All the sound lessons](index.qmd)
+- [Sound 1: The harmonic series](sound-harmonics.qmd)
+
+{{< include _synth-kit.qmd >}}

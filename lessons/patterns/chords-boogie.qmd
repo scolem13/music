@@ -1,0 +1,73 @@
+---
+title: "Comping rhythm: Boogie-woogie right hand"
+subtitle: "For piano, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-track.qmd) band plays: **Boogie-woogie right hand**. It is built up from 2 simpler patterns, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Comping rhythms](index.qmd#chords)
+
+## The pattern
+
+A two-bar riff of short swung chords against the walking left hand: beat 1, the and of 1 and the and of 2 (held); then the and of 1, beat 2 and the and of 3 (held).
+
+It belongs in *Boogie-woogie* and *Jump blues*. Here it is in the boogie-woogie style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Boogie-woogie right hand","opts":{"compRhythm":"boogie"}}]'></div>
+
+## Step 1: Every off-beat
+
+Start with something simpler. A short chord on the and of every beat and never on the beat: the ska and calypso afterbeat.
+
+This is a pattern of its own: [the lesson on it](chords-upbeats.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
+## Step 2: Charleston
+
+A held chord on beat 1 and a short one on the and of 2. The first comping rhythm most players learn.
+
+This is a pattern of its own: [the lesson on it](chords-charleston.qmd) takes it further. Here it is only a step on the way, slowly. The drums keep time with you; switch the others on when it is steady.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Step:" data-choices='[{"label":"Charleston","opts":{"compRhythm":"charleston"}}]'></div>
+
+## Step 3: Boogie-woogie right hand, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** Short chords against the walking bass, a two-bar riff: 1, the and of 1, the and of 2 held; then the and of 1, 2, the and of 3 held. Keep the right hand light and swung, and play the same riff on every chord of the blues: it does not need to change, the bass does the moving.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="92" data-on="comp drums" data-staves="comp" data-comp="piano" data-choice-label="Compare:" data-choices='[{"label":"Boogie-woogie right hand","opts":{"compRhythm":"boogie"}},{"label":"Charleston (the step before)","opts":{"compRhythm":"charleston"}}]'></div>
+
+## Step 4: Up to tempo, with the band
+
+The whole band, at 132 beats a minute. Play along, then switch the band's chord player off and take the part yourself.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Boogie-woogie right hand","opts":{"compRhythm":"boogie"}}]'></div>
+
+## Step 5: Two chords in a bar
+
+Harder: now some bars have two chords, two beats each. The pattern keeps its rhythm and changes chord where the bar does: watch the staff for the hit that lands on beat 3.
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|F7 F#dim7|C7|G7 F7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp bass" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Boogie-woogie right hand","opts":{"compRhythm":"boogie"}}]'></div>
+
+## In other styles
+
+The same comping rhythm in another style it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Jump blues**
+
+<div class="ar-demo" data-style="jump" data-chart="C7|F7|C7|G7" data-tempo="160" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Boogie-woogie right hand","opts":{"compRhythm":"boogie"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Every off-beat](chords-upbeats.qmd), [Charleston](chords-charleston.qmd).
+- **The same idea elsewhere in the band:** [Boogie-woogie](bass-boogie.qmd) (bass line), [Chord tones (learning to walk)](bass-arp.qmd) (bass line), [Blues shuffle](drums-shuffle.qmd) (drum groove).
+- **Plays with, in boogie-woogie:** [Boogie-woogie](bass-boogie.qmd) (bass line), [Blues shuffle](drums-shuffle.qmd) (drum groove).
+- **Other comping rhythms in the Jazz group:** [Varied](chords-auto.qmd), [Charleston](chords-charleston.qmd), [Reverse Charleston](chords-reverse.qmd), [Red Garland](chords-garland.qmd), [Off-beats](chords-offbeats.qmd), [Long notes](chords-pad.qmd), [Four to the bar](chords-four.qmd), [Boogaloo stabs](chords-stabs.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

@@ -1,0 +1,48 @@
+---
+title: "Sound 14: Sidechain"
+toc: true
+toc-depth: 2
+---
+
+A [compressor](sound-compressor.qmd) turns a sound down when *that sound* gets loud. A **sidechain**
+lets a *different* sound decide. The music is turned down when the kick drum hits, or when the
+DJ talks. The sound that decides is called the **key**.
+
+**How to use the page.** The source (what gets turned down) starts as **chords**. The key is a kick
+drum playing four to the floor. The strip draws the chords' volume.
+
+## Ducking under the kick
+
+<div class="sk" data-w="sidechain"></div>
+
+Start with **Depth** at 0 and raise it. Each kick pushes the chords down, and they swell back up
+between kicks.
+
+- **Depth**: how far the music is pushed down.
+- **Attack**: how fast it goes down when the kick hits. Fast, so the kick's start is clear.
+- **Release**: how fast the music comes back. This sets the *rhythm* of the effect.
+
+Turn **Hear the key** off: the kick is gone but you can still hear where it was, because the chords
+breathe in its rhythm. Producers often key the sidechain from a kick nobody hears.
+
+## Glue or pump?
+
+- **Glue**: a little ducking, quick release. You barely hear it, but the kick cuts through and the mix
+  sounds tighter. Almost every mix with a bass line and a kick does this: the bass ducks for a moment
+  under each kick so the two don't fight over the low end.
+- **Pumping**: deep ducking and a release that lasts most of a beat. The chords swell up after every
+  kick: *whoom, whoom, whoom*. This is the sound of French house (Daft Punk's "One More Time", Eric
+  Prydz's "Call on Me") and most EDM since. Try it at different **tempos**: the release has to fit
+  the gap between kicks.
+
+## Ducking a voice
+
+Choose **Radio voice-over**: the key is now a voice. Whenever it talks, the music dips under it, and
+comes back slowly when it stops. Radio stations, podcasts, sat-navs talking over the car stereo and
+announcements at a station all do this automatically.
+
+## Next
+
+- [Sound 15: Gates and transients](sound-gate.qmd)
+
+{{< include _synth-kit.qmd >}}

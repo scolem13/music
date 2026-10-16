@@ -1,5 +1,5 @@
 ---
-title: "Sound 9: Distortion"
+title: "Sound 12: Distortion"
 toc: true
 toc-depth: 2
 ---
@@ -37,6 +37,35 @@ Now try the other curves:
 **Tone** is a low-pass after the distortion: almost every guitar amp has one, to tame the fizz that
 heavy distortion adds at the top.
 
+## Overdrive, distortion or fuzz?
+
+Guitarists use three words, and the pedals really are different. All three clip the wave; they
+differ in **how hard** they clip, **what shape** the clipping is, and what they do to the sound
+**before and after**.
+
+<div class="sk" data-w="distortion" data-source="riff" data-preset="Overdrive" data-title="Three pedals"></div>
+
+Play the synth riff and step through the presets, with **Bypass** to compare with the clean sound.
+Watch the curve and the scope.
+
+| | Overdrive | Distortion | Fuzz |
+|---|---|---|---|
+| **Curve** | soft clip: bends over gently | hard clip: flat tops | lopsided: one side clips much sooner, and a dead zone in the middle |
+| **Drive** | low: clean when you play softly, gritty when you dig in | high: distorted however softly you play | extreme: nearly a square wave |
+| **Before** | cuts the bass so the low notes don't turn to mud (the "mid hump" of a Tube Screamer) | some bass cut | nothing: the full, fat low end goes in |
+| **After** | a tone control | a darker tone control to tame the fizz | dark and woolly |
+| **Sound** | a turned-up valve amp: warm, still sounds like the instrument | tight and aggressive: metal and hard rock | buzzy, spitting, raw: "Satisfaction", Hendrix, the White Stripes |
+| **Inside** | diodes in the op-amp's feedback loop | diodes after the op-amp | two transistors pushed far past their limits |
+
+Two things to try:
+
+- On **Overdrive**, choose the **Uneven riff** source (loud and soft notes). The soft notes stay
+  almost clean and the loud ones break up: overdrive responds to how hard you play. On **Distortion**
+  every note is equally squashed.
+- On **Fuzz**, play a **Sine tone** and lower the **Drive**. The tone starts to **sputter**: quiet
+  parts of the wave fall into the dead zone and vanish. Fuzz pedals with an old, dying battery do this
+  on purpose, and the note cuts out raggedly as it fades.
+
 ## On music
 
 Switch the **Source** to *Chords* or the *Synth riff*. Distorting a chord sounds much messier than
@@ -49,6 +78,6 @@ Try your own voice or instrument through it with **Microphone** (and headphones)
 
 ## Next
 
-- [Sound 10: Compressor](sound-compressor.qmd)
+- [Sound 13: Compressor](sound-compressor.qmd)
 
 {{< include _synth-kit.qmd >}}

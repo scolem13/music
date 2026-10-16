@@ -1,0 +1,136 @@
+```{=html}
+<style>
+#dc-root{--dc-ink2:#6c757d;--dc-line:#dee2e6;--dc-ok:#2b8a3e;--dc-half:#e67700;--dc-bad:#c92a2a;max-width:1200px;margin:0 auto;padding:0 16px}
+@media (prefers-color-scheme: dark){#dc-root{--dc-ink2:#adb5bd;--dc-line:#495057;--dc-ok:#69db7c;--dc-half:#ffa94d;--dc-bad:#ff8787}}
+#dc-root .dc-layout{display:grid;grid-template-columns:minmax(0,1fr) 170px;gap:24px;align-items:start}
+#dc-root details{border:1px solid var(--dc-line);border-radius:10px;margin-bottom:16px}
+#dc-root details>summary{cursor:pointer;padding:.7rem 1.1rem}
+#dc-root details>summary h2{display:inline;font-size:1.15rem;margin:0}
+#dc-root .dc-body{padding:0 1.1rem 1rem}
+#dc-root .dc-row{display:flex;gap:.6rem;flex-wrap:wrap;align-items:end;margin:.5rem 0}
+#dc-root .dc-hint{color:var(--dc-ink2);font-size:.92rem}
+#dc-root .dc-nav{position:sticky;top:80px;border-left:2px solid var(--dc-line)}
+#dc-root .dc-nav a{display:block;padding:.3rem .7rem;color:var(--dc-ink2);text-decoration:none}
+#dc-root .dc-score{font-size:1.6rem;font-weight:700}
+#dc-root table{border-collapse:collapse;margin-top:.5rem}
+#dc-root td,#dc-root th{padding:.2rem .6rem;border-bottom:1px solid var(--dc-line);text-align:left}
+#dc-root .ok{color:var(--dc-ok)} #dc-root .half{color:var(--dc-half)} #dc-root .bad{color:var(--dc-bad)}
+@media (max-width:800px){#dc-root .dc-layout{grid-template-columns:1fr}#dc-root .dc-nav{display:none}}
+</style>
+<div id="dc-root">
+ <div class="dc-layout"><div>
+  <details id="dc-pick" open><summary><h2>1. Pick a line</h2></summary><div class="dc-body">
+   <div class="dc-row">
+    <label>Benchmark set<br><select id="dc-set"></select></label>
+    <label>Line<br><select id="dc-line"></select></label>
+    <button type="button" id="dc-next">Next line</button>
+    <label>Tempo: <span id="dc-tempo-v">80</span><br><input type="range" id="dc-tempo" min="40" max="140" value="80"></label>
+    <label><input type="checkbox" id="dc-tonic" checked> Play the tonic chord first</label>
+   </div>
+   <p class="dc-hint">The line is the same one Reading Benchmarks asks you to play, but here you don't see it: you hear it and write it down. You're given the meter, the key and the number of bars.</p>
+  </div></details>
+  <details id="dc-listen" open><summary><h2>2. Listen and write</h2></summary><div class="dc-body">
+   <p id="dc-givens" class="dc-hint"></p>
+   <div class="dc-row">
+    <button type="button" id="dc-play">&#9654; Play the line</button>
+    <button type="button" id="dc-open">Open the Notation page to write it</button>
+   </div>
+   <p class="dc-hint">The Notation page opens in its own window, set up with the meter and key (your own piece there is kept, untouched). Write the line there, then press <b>Hand in</b>. <b>Hear it again</b> there plays it from here. Plays so far: <span id="dc-plays">0</span>.</p>
+   <p id="dc-status" class="dc-hint" aria-live="polite"></p>
+  </div></details>
+  <details id="dc-result" open><summary><h2>3. Result</h2></summary><div class="dc-body">
+   <div id="dc-out" class="dc-hint">Nothing handed in yet.</div>
+  </div></details>
+ </div>
+ <nav class="dc-nav" aria-label="On this page"><a href="#dc-pick">Pick a line</a><a href="#dc-listen">Listen and write</a><a href="#dc-result">Result</a></nav>
+ </div>
+ <div id="dc-hidden" style="position:absolute;left:-9999px;width:800px"></div>
+</div>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abc-core.js?v=3"></script>
+<script src="/apps/shared/abc-events.js?v=3"></script>
+<script src="/apps/shared/dictation.js?v=1"></script>
+<script src="/apps/tunes/reading-benchmarks-object.js?v=1"></script>
+<script>
+(function () {
+  "use strict";
+  var $ = function (id) { return document.getElementById(id); };
+  var sets = window.readingBenchmarks || {};
+  var lines = {}, cur = null, plays = 0, win = null, ready = false, synth = null, ctx = null;
+  Object.keys(sets).forEach(function (k) { lines[k] = sets[k].split(/\n(?=X:)/).map(function (s) { return s.trim(); }).filter(function (s) { return /^X:/.test(s); }); });
+  $("dc-set").innerHTML = Object.keys(lines).map(function (k) { return "<option>" + k + "</option>"; }).join("");
+  function fillLines() { var L = lines[$("dc-set").value] || []; $("dc-line").innerHTML = L.map(function (_, i) { return '<option value="' + i + '">Line ' + (i + 1) + "</option>"; }).join(""); pick(); }
+  function bars(abc) { var mus = abc.split("\n").filter(function (l) { return l && !/^[A-Za-z]:|^%/.test(l); }).join(" "); return mus.split("|").filter(function (b) { return /[A-Ga-g]/.test(b); }).length; }
+  function pick() {
+    var abc = (lines[$("dc-set").value] || [])[+$("dc-line").value]; if (!abc) return;
+    cur = { abc: abc.replace(/^T:.*\n/m, ""), name: $("dc-set").value + ", line " + (+$("dc-line").value + 1), g: Dictation.givens(abc), bars: bars(abc) };
+    plays = 0; $("dc-plays").textContent = "0"; $("dc-out").textContent = "Nothing handed in yet.";
+    $("dc-givens").textContent = "Meter " + cur.g.meter + ", key of " + cur.g.key + ", " + cur.bars + " bars.";
+    if (win && !win.closed) send();
+  }
+  function send() { if (ready) win.postMessage({ type: "dict-load", meter: cur.g.meter, key: cur.g.key, bars: cur.bars, title: "Dictation: " + cur.name }, location.origin); }
+  function tonicAbc() {
+    var k = cur.g.key, minor = /m$/.test(k), root = minor ? k.slice(0, -1) : k;
+    var letter = root[0];
+    // the key signature already supplies the third and fifth, so just name the letters
+    var LET = "CDEFGAB", i = LET.indexOf(letter);
+    var n = function (o) { var j = i + o; return j < 7 ? LET[j] : LET[j - 7].toLowerCase(); };
+    var m = /^(\d+)\/(\d+)$/.exec(cur.g.meter || "4/4"), eighths = m ? +m[1] * 8 / +m[2] : 8;
+    var h = Math.ceil(eighths / 2);   // a bar in eighths (L:1/8): the chord for about half of it, then rest
+    return "[" + n(0) + n(2) + n(4) + "]" + h + " z" + (eighths - h) + " |";
+  }
+  function play() {
+    if (!cur) return;
+    if (synth) { try { synth.stop(); } catch (e) {} synth = null; }
+    var abc = cur.abc.replace(/^K:(.*)$/m, function (m) { return "Q:1/4=" + $("dc-tempo").value + "\n" + m; });
+    if ($("dc-tonic").checked) abc = abc.replace(/(^K:.*\n)/m, "$1" + tonicAbc() + " ");
+    var vo = ABCJS.renderAbc("dc-hidden", abc)[0];
+    ctx = ctx || new (window.AudioContext || window.webkitAudioContext)();
+    var s = synth = new ABCJS.synth.CreateSynth();
+    plays++; $("dc-plays").textContent = plays;
+    getSoundfontUrl().then(function (u) { return s.init({ audioContext: ctx, visualObj: vo, options: { soundFontUrl: u } }); })
+      .then(function () { return s.prime(); }).then(function () { if (synth === s) s.start(); })
+      .catch(function (e) { $("dc-status").textContent = "Couldn't play: " + e; });
+  }
+  function openNotation() {
+    if (win && !win.closed) { send(); win.focus(); return; }
+    ready = false; win = window.open("/tools/notation.html?dictation=1", "dc-notation");
+    $("dc-status").textContent = "The Notation page is open in its own window.";
+  }
+  var NAMES = ["C","C#","D","Eb","E","F","F#","G","Ab","A","Bb","B"];
+  var nm = function (m) { return NAMES[m % 12] + (Math.floor(m / 12) - 1); };
+  var len = function (q) { var t = { 0.5: "eighth", 1: "quarter", 1.5: "dotted quarter", 2: "half", 3: "dotted half", 0.25: "16th", 0.75: "dotted eighth", 4: "whole" }; return t[Math.round(q * 100) / 100] || q + " beats"; };
+  function show(answer) {
+    var r = Dictation.grade(cur.abc, answer), cls = function (x) { return x >= 0.9 ? "ok" : x >= 0.6 ? "half" : "bad"; };
+    var rows = r.notes.map(function (n, i) {
+      var p = n.pitch === "ok" ? '<span class="ok">&#10003;</span>' : n.pitch === "octave" ? '<span class="half">octave off (' + nm(n.got.midi) + ")</span>" : n.pitch === "part" ? '<span class="half">' + Math.round(n.part * 100) + "% of the chord (" + n.got.midis.map(nm).join(" ") + ")</span>" : n.pitch === "missing" ? '<span class="bad">missing</span>' : '<span class="bad">' + n.got.midis.map(nm).join(" ") + "</span>";
+      var rh = n.rhythm ? '<span class="ok">&#10003;</span>' : n.got ? '<span class="bad">' + len(n.got.dur) + "</span>" : '<span class="bad">&mdash;</span>';
+      return "<tr><td>" + (i + 1) + "</td><td>" + nm(n.midi) + ", " + len(n.dur) + "</td><td>" + p + "</td><td>" + rh + "</td></tr>";
+    }).join("");
+    $("dc-out").innerHTML = '<div class="dc-score ' + cls(r.score) + '">' + Math.round(r.score * 100) + "%</div>" +
+      "<div>Pitch " + Math.round(r.pitchScore * 100) + "%, rhythm " + Math.round(r.rhythmScore * 100) + "%, " + plays + " play" + (plays === 1 ? "" : "s") + ". " + cur.name + "." +
+      (r.extras.length ? ' <span class="bad">' + r.extras.length + " extra note" + (r.extras.length > 1 ? "s" : "") + " (starting where none was played).</span>" : "") + "</div>" +
+      '<div class="dc-row" style="align-items:start"><div><b>What was played</b><div id="dc-t"></div></div><div><b>What you wrote</b><div id="dc-a"></div></div></div>' +
+      "<table><tr><th>#</th><th>Played</th><th>Pitch</th><th>Rhythm</th></tr>" + rows + "</table>";
+    ABCJS.renderAbc("dc-t", cur.abc, { responsive: "resize" });
+    ABCJS.renderAbc("dc-a", answer, { responsive: "resize" });
+    $("dc-result").open = true; $("dc-result").scrollIntoView({ behavior: "smooth" });
+    try { var log = JSON.parse(localStorage.getItem("dictationLog") || "[]"); log.push({ when: new Date().toISOString(), line: cur.name, score: r.score, pitch: r.pitchScore, rhythm: r.rhythmScore, plays: plays }); localStorage.setItem("dictationLog", JSON.stringify(log.slice(-500))); } catch (e) {}
+  }
+  window.addEventListener("message", function (e) {
+    if (!win || e.source !== win || e.origin !== location.origin || !e.data) return;
+    var m = e.data;
+    if (m.type === "dict-ready") { ready = true; send(); }
+    else if (m.type === "dict-replay") play();
+    else if (m.type === "dict-submit" && typeof m.abc === "string") show(m.abc);
+  });
+  $("dc-set").onchange = fillLines; $("dc-line").onchange = pick;
+  $("dc-next").onclick = function () { var s = $("dc-line"); s.selectedIndex = (s.selectedIndex + 1) % s.options.length; pick(); };
+  $("dc-tempo").oninput = function () { $("dc-tempo-v").textContent = this.value; };
+  $("dc-play").onclick = play; $("dc-open").onclick = openNotation;
+  fillLines();
+  window.DictationPage = { grade: show, cur: function () { return cur; } };   // for tests
+})();
+</script>
+```

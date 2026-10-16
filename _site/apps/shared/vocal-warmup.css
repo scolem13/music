@@ -1,0 +1,43 @@
+/* vocal-warmup.css — the Vocal Warm-up page (tools/vocal-warmup.qmd, apps/shared/vocal-warmup.js) */
+.vw-setup{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.8rem 1.2rem;background:var(--site-surface);border:1px solid var(--site-border);border-radius:10px;padding:1rem 1.2rem}
+.vw-setup label{display:flex;flex-direction:column;font-size:.8rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2);gap:.25rem}
+.vw-setup select{font-family:inherit;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--site-ink);padding:.3rem .4rem;border:1px solid var(--site-border);border-radius:6px;background:var(--site-surface)}
+.vw-setup fieldset{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:.4rem 1.4rem;border:0;margin:0;padding:0}
+.vw-setup legend{font-size:.8rem;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2);margin-bottom:.2rem;float:none;width:auto}
+.vw-setup label.vw-check{flex-direction:row;align-items:center;gap:.4rem;font-family:inherit;text-transform:none;letter-spacing:0;font-size:.95rem;color:var(--site-ink)}
+.vw-go{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+.vw-summary{color:var(--site-ink-2);font-size:.9rem}
+
+.vw-stage{background:var(--site-surface);border:1px solid var(--site-border);border-radius:12px;padding:1.2rem 1.4rem;min-height:22rem;display:flex;flex-direction:column;gap:.6rem}
+.vw-head{display:flex;justify-content:space-between;gap:1rem;font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2)}
+.vw-kind{text-transform:uppercase;letter-spacing:.08em;padding:.1rem .5rem;border-radius:999px;background:var(--site-accent-bg);color:var(--site-accent-text)}
+.vw-kind:empty{display:none}
+.vw-title{margin:.2rem 0 0;font-size:1.6rem}
+.vw-how{margin:0;color:var(--site-ink-2);max-width:48rem}
+.vw-live{min-height:9rem;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;gap:.4rem}
+.vw-cue{text-align:center;font-size:1.25rem;font-weight:600;min-height:1.8rem}
+.vw-bar{height:6px;background:var(--site-surface-2);border-radius:3px;overflow:hidden}
+#vw-fill{height:100%;width:0;background:var(--site-accent);transition:width .25s linear}
+.vw-ctl{display:flex;flex-wrap:wrap;gap:.5rem;justify-content:center}
+.vw-upnext{text-align:center;font-size:.85rem;color:var(--site-ink-3);min-height:1.2rem}
+
+.vw-ball{width:7rem;height:7rem;border-radius:50%;background:var(--site-accent-bg);border:3px solid var(--site-accent);transform:scale(.45);transition-property:transform;transition-timing-function:ease-in-out;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-weight:700;color:var(--site-accent-text)}
+.vw-big{font-size:3.4rem;font-weight:700;font-variant-numeric:tabular-nums;color:var(--site-accent-dk)}
+.vw-key{width:100%;text-align:center;font-family:var(--font-mono);color:var(--site-ink-2);font-size:.9rem}
+.vw-note{min-width:2.6rem;padding:.35rem .5rem;text-align:center;border:1px solid var(--site-border);border-radius:8px;font-weight:600;transition:background .08s,transform .08s}
+.vw-note small{display:block;font-weight:400;font-size:.7rem;color:var(--site-ink-3)}
+.vw-note.on{background:var(--site-accent);border-color:var(--site-accent-dk);color:#fff;transform:translateY(-3px)}
+.vw-note.on small{color:#fff}
+.vw-gap{width:.6rem}
+.vw-dot{width:1.1rem;height:1.1rem;border-radius:50%;background:var(--site-surface-2);border:2px solid var(--site-border)}
+.vw-dot.on{background:var(--site-accent);border-color:var(--site-accent-dk)}
+
+.vw-list{padding-left:1.4rem}
+.vw-list li{padding:.25rem .4rem;border-radius:6px;cursor:pointer}
+.vw-list li:hover{background:var(--site-surface-2)}
+.vw-list li.now{background:var(--site-accent-bg);font-weight:600}
+.vw-list li.done{color:var(--site-ink-3)}
+.vw-list li.vw-empty{cursor:default;list-style:none;color:var(--site-ink-3)}
+.vw-list .vw-tag{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;color:var(--site-ink-3);margin-left:.4rem}
+.vw-list .vw-min{float:right;font-family:var(--font-mono);font-size:.75rem;color:var(--site-ink-3)}
+@media (max-width:600px){.vw-stage{padding:1rem}.vw-title{font-size:1.3rem}}

@@ -4,6 +4,9 @@
 // panel that floats over the page, so the tool can be used while the page underneath is in use. A dot on the button shows that it
 // is sounding. The drone either holds its notes or plucks them the way a tanpura does. Settings are remembered in localStorage. Sound stops when you go to another page (every page is a fresh load).
 //
+// A page can also put the drone in its text: <div class="pw-embed" data-w="drone"></div> (optional data-tuning="pure"|"equal", data-pads="0 4 7" (semitones above Do),
+// data-do="0-11", data-oct="2-4"). It is the same drone as the navbar's (same settings, same sound; start one and the other shows it), laid out in the page.
+//
 // Everything here is its own: an AudioContext of its own, no Tone.js, nothing shared with the Backing Track.
 (function () {
   "use strict";
@@ -13,13 +16,14 @@
             droneDo: 0, droneOct: 3, tuning: "equal", tone: "soft", droneVol: 60, a4: 440, lowDo: false, pads: [0, 7],
             mode: "sustain", tanFirst: 7, tanRate: 50, tanTone: "string" };
   try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) Object.keys(saved).forEach(function (k) { S[k] = saved[k]; }); } catch (e) {}
-  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} if (typeof icons === "function") icons(); }
+  function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} if (typeof icons === "function") icons(); if (typeof syncDrones === "function") syncDrones(); }
 
   var ctx = null, master = null;
   function audio() {
     if (!ctx) {
       var AC = window.AudioContext || window.webkitAudioContext; ctx = new AC();
       master = ctx.createGain(); master.gain.value = 0.9; master.connect(ctx.destination);
+      if (window.AudioTap) AudioTap.register(ctx, master, "Navbar drone and metronome");
     }
     if (ctx.state === "suspended") ctx.resume();
     return ctx;
@@ -253,6 +257,7 @@
     "#pw-nav .pw-ico{overflow:visible}",
     "@media (prefers-reduced-motion:reduce){#pw-nav .is-on .pw-string{animation:none}}",
     "@media (prefers-reduced-motion:reduce){#pw-nav .is-on .pw-pend,#pw-nav .is-on .pw-breathe{animation:none}}",
+    ".pw-panel.pw-inline{position:static;width:auto;max-width:34rem;max-height:none;box-shadow:none;margin:1rem 0 1.4rem}",
     "#pw-nav .is-open{color:var(--site-accent-dk,#2b9c90)!important}",
     ".pw-panel{position:fixed;top:4.2rem;right:.75rem;z-index:1045;width:min(21rem,calc(100vw - 1.5rem));max-height:calc(100vh - 5rem);overflow:auto;",
     " background:var(--site-surface,#fff);color:var(--site-ink,#1e1c18);border:1px solid var(--site-border,#e0d8ce);border-radius:12px;box-shadow:0 10px 32px rgba(30,28,24,.2);",
@@ -306,6 +311,10 @@
       '<path d="M10.9 5h-1.6M10.9 8h-1.6M13.1 5h1.6M13.1 8h1.6"/></g><path class="pw-string" d="M12 3.5v16.5" stroke-width="1"/></svg>';
     return LIGHT + '<g class="pw-breathe"><path d="M2 12c2.5-7 5-7 7.5 0s5 7 7.5 0c1.2-3.4 2.6-5 5-5" stroke-width="1.8"/></g></svg>';
   }
+  // Tuner: three strobe rows of stripes, drifting while the tuner listens.
+  function tunerIcon() {
+    return LIGHT + '<rect x="3" y="4" width="18" height="16" rx="2.5"/><g class="pw-string" stroke-width="2.2"><path d="M6.5 8h2M11 8h2M15.5 8h2M6.5 12h2M11 12h2M15.5 12h2M6.5 16h2M11 16h2M15.5 16h2"/></g></svg>';
+  }
   function circleIcon() {
     var dots = "", here = (S.droneDo * 7) % 12;                              // where Do sits round the circle (C at the top, G to its right)
     var lit = {};                                                             // the drone's other notes (its pads: the fifth, ...)
@@ -332,19 +341,21 @@
     if (navBtn.metro) { navBtn.metro.querySelector(".pw-icon").innerHTML = metroIcon(); navBtn.metro.style.setProperty("--pw-beat", (60 / (S.tempo || 84)).toFixed(3) + "s"); }
     if (navBtn.drone) navBtn.drone.querySelector(".pw-icon").innerHTML = droneIcon();
     if (navBtn.circle) navBtn.circle.querySelector(".pw-icon").innerHTML = circleIcon();
+    if (navBtn.tuner) navBtn.tuner.querySelector(".pw-icon").innerHTML = tunerIcon();
   }
   function refresh() {
     icons();
     if (navBtn.metro) navBtn.metro.classList.toggle("is-on", metro.on);
     if (navBtn.drone) navBtn.drone.classList.toggle("is-on", droneOn);
     var mb = $("#pw-metro-go"); if (mb) { mb.textContent = metro.on ? "Stop" : "Start"; mb.classList.toggle("pw-main", !metro.on); }
-    var db = $("#pw-drone-go"); if (db) { db.textContent = droneOn ? "Stop" : "Start"; db.classList.toggle("pw-main", !droneOn); }
+    Array.prototype.forEach.call(document.querySelectorAll("#pw-drone-go"), function (db) { db.textContent = droneOn ? "Stop" : "Start"; db.classList.toggle("pw-main", !droneOn); });
   }
   function openPanel(name, open) {
     Object.keys(panels).forEach(function (k) {
       var show = k === name ? (open == null ? panels[k].hidden : open) : false;
       panels[k].hidden = !show; navBtn[k].classList.toggle("is-open", show);
     });
+    if (panels.tuner && panels.tuner.hidden && window.TunerPanel) window.TunerPanel.stop();       // the tuner does not listen while its panel is shut
   }
 
   function buildMetro() {
@@ -393,8 +404,10 @@
     return p;
   }
 
-  function buildDrone() {
-    var p = el("div", "pw-panel"); p.id = "pw-drone"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Drone");
+  var inlineDrones = [];
+  function syncDrones() { inlineDrones.forEach(function (p) { p._sync(); }); if (panels.drone && panels.drone._sync) panels.drone._sync(); }
+  function buildDrone(inline) {
+    var p = el("div", "pw-panel" + (inline ? " pw-inline" : "")); if (!inline) { p.id = "pw-drone"; p.hidden = true; p.setAttribute("role", "dialog"); } p.setAttribute("aria-label", "Drone");
     p.innerHTML =
       '<div class="pw-head"><h2>Drone</h2><button class="pw-x" type="button" aria-label="Close">×</button></div>' +
       '<div class="pw-row"><button class="pw-btn pw-main" type="button" id="pw-drone-go" style="flex:1">Start</button></div>' +
@@ -494,8 +507,12 @@
       if (!droneOn && S.mode !== "tanpura" && !S.pads.length) { S.pads = [0]; padState(); save(); }
       droneToggle();
     });
-    doSel.value = S.droneDo; octSel.value = S.droneOct; $("#pw-low", p).checked = S.lowDo; $("#pw-tone", p).value = S.tone;
-    $("#pw-dvol", p).value = S.droneVol; $("#pw-a4", p).value = S.a4; $("#pw-tan-rate", p).value = S.tanRate; $("#pw-tan-tone", p).value = S.tanTone; padState(); tuned(); moded(); words();
+    p._sync = function () {                              // show the shared settings (another copy of the drone may have changed them)
+      doSel.value = S.droneDo; octSel.value = S.droneOct; $("#pw-low", p).checked = S.lowDo; $("#pw-tone", p).value = S.tone;
+      $("#pw-dvol", p).value = S.droneVol; $("#pw-a4", p).value = S.a4; $("#pw-tan-rate", p).value = S.tanRate; $("#pw-tan-tone", p).value = S.tanTone; padState(); tuned(); moded(); words();
+    };
+    p._sync();
+    if (inline) { var x = $(".pw-x", p); if (x) x.remove(); }
     return p;
   }
 
@@ -518,15 +535,32 @@
     }).catch(function () { $("#pw-circle-host", panels.circle).innerHTML = '<p class="pw-note">Couldn\u2019t load the circle. Check your connection and try again.</p>'; circleLoading = false; });
   }
 
+  // The strobe tuner (tuner-panel.js, with pitch-detect.js, strobe-view.js and audio-check.js) is loaded the first time its button is pressed.
+  var tunerState = 0;
+  function buildTuner() {
+    var p = el("div", "pw-panel pw-wide"); p.id = "pw-tuner"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Strobe tuner");
+    p.innerHTML = '<div class="pw-head"><h2>Strobe tuner</h2><button class="pw-x" type="button" aria-label="Close">\u00d7</button></div><div id="pw-tuner-host"><p class="pw-note">Loading\u2026</p></div>';
+    return p;
+  }
+  function openTuner() {
+    if (tunerState) { if (tunerState === 2 && window.TunerPanel) window.TunerPanel.refresh(); return; } tunerState = 1;
+    var chain = Promise.resolve();
+    [["PitchDetect", "/apps/shared/pitch-detect.js?v=1"], ["StrobeView", "/apps/shared/strobe-view.js?v=1"], ["AudioTap", "/apps/shared/audio-tap.js?v=1"], ["AudioCheck", "/apps/shared/audio-check.js"], ["TunerPanel", "/apps/shared/tuner-panel.js?v=1"]]
+      .forEach(function (d) { chain = chain.then(function () { return window[d[0]] ? null : loadScript(d[1]); }); });
+    chain.then(function () {
+      var host = $("#pw-tuner-host", panels.tuner); host.innerHTML = ""; window.TunerPanel.build(host); tunerState = 2;
+    }).catch(function () { $("#pw-tuner-host", panels.tuner).innerHTML = '<p class="pw-note">Couldn\u2019t load the tuner. Check your connection and try again.</p>'; tunerState = 0; });
+  }
+
   function init() {
     if (document.getElementById("pw-nav")) return;
     var style = el("style"); style.textContent = css; document.head.appendChild(style);
     var collapse = document.getElementById("navbarCollapse") || document.querySelector(".navbar-collapse");
     var ul = el("ul", "navbar-nav ms-auto"); ul.id = "pw-nav";
-    [["metro", "Metronome"], ["drone", "Drone"], ["circle", "Circle of fifths"]].forEach(function (b) {
+    [["metro", "Metronome"], ["drone", "Drone"], ["tuner", "Strobe tuner"], ["circle", "Circle of fifths"]].forEach(function (b) {
       var li = el("li", "nav-item"), a = el("a", "nav-link", '<span class="pw-icon"></span><span class="pw-label">' + b[1] + "</span>");
       a.href = "#"; a.setAttribute("role", "button"); a.setAttribute("aria-label", b[1]); a.title = b[1];
-      a.addEventListener("click", function (e) { e.preventDefault(); openPanel(b[0]); if (b[0] === "circle") openCircle(); });
+      a.addEventListener("click", function (e) { e.preventDefault(); openPanel(b[0]); if (b[0] === "circle") openCircle(); if (b[0] === "tuner") openTuner(); });
       li.appendChild(a); ul.appendChild(li); navBtn[b[0]] = a;
     });
     if (collapse) {
@@ -534,19 +568,30 @@
       if (auth) { collapse.insertBefore(ul, auth); auth.classList.remove("ms-auto"); } else collapse.appendChild(ul);
     }
     icons();
+    window.addEventListener("tuner-panel-state", function (e) { if (navBtn.tuner) navBtn.tuner.classList.toggle("is-on", !!(e.detail && e.detail.running)); });
     window.addEventListener("tonality-change", icons);                                  // a page (or the circle) changed the shared key
     window.addEventListener("storage", function (e) { if (/^tonal/.test(e.key || "")) icons(); });   // ... or another tab did
-    panels.metro = buildMetro(); panels.drone = buildDrone(); panels.circle = buildCircle();
+    panels.metro = buildMetro(); panels.drone = buildDrone(); panels.tuner = buildTuner(); panels.circle = buildCircle();
     Object.keys(panels).forEach(function (k) {
       document.body.appendChild(panels[k]);
       $(".pw-x", panels[k]).addEventListener("click", function () { openPanel(k, false); });
     });
     if (!collapse) {                                 // no navbar on this page: small fixed buttons instead
       var bar = el("div"); bar.style.cssText = "position:fixed;right:.75rem;bottom:.75rem;z-index:1045;display:flex;gap:.4rem";
-      ["metro", "drone", "circle"].forEach(function (k) { var b = el("button", "", k === "metro" ? "Metronome" : k === "drone" ? "Drone" : "Circle"); b.className = "btn btn-sm btn-outline-secondary"; b.addEventListener("click", function () { openPanel(k); if (k === "circle") openCircle(); }); bar.appendChild(b); });
+      ["metro", "drone", "tuner", "circle"].forEach(function (k) { var b = el("button", "", k === "metro" ? "Metronome" : k === "drone" ? "Drone" : k === "tuner" ? "Tuner" : "Circle"); b.className = "btn btn-sm btn-outline-secondary"; b.addEventListener("click", function () { openPanel(k); if (k === "circle") openCircle(); if (k === "tuner") openTuner(); }); bar.appendChild(b); });
       document.body.appendChild(bar);
     }
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") openPanel(null, false); });
+    Array.prototype.forEach.call(document.querySelectorAll('.pw-embed[data-w="drone"]'), function (host) {   // a drone laid out in the page
+      var d = host.dataset;
+      if (d.tuning === "pure" || d.tuning === "equal") S.tuning = d.tuning;
+      if (d.pads != null) S.pads = d.pads.split(/[\s,]+/).filter(Boolean).map(Number);
+      if (d.do != null) S.droneDo = clamp(+d.do || 0, 0, 11);
+      if (d.oct != null) S.droneOct = clamp(+d.oct || 3, 2, 4);
+      if (d.pads != null || d.tuning || d.do != null || d.oct != null) S.mode = "sustain";
+      var p = buildDrone(true); host.innerHTML = ""; host.appendChild(p); inlineDrones.push(p);
+    });
+    if (inlineDrones.length) { syncDrones(); Object.keys(panels).forEach(function (k) { if (panels[k]._sync) panels[k]._sync(); }); }
     refresh();
     window.PracticeWidgets = { metronome: { start: metroStart, stop: metroStop, running: function () { return metro.on; } },
                                circle: function () { return circle; },

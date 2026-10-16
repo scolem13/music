@@ -1,5 +1,5 @@
 ---
-title: "Sound 8: Wavetable Synthesis"
+title: "Sound 9: Wavetable Synthesis"
 toc: true
 toc-depth: 2
 ---
@@ -45,6 +45,6 @@ sounds and looks the same as the real thing, just with a smaller table.
 
 ## Next
 
-- [Sound 9: Distortion](sound-distortion.qmd), the first of the effects.
+- [Sound 10: Granular synthesis](sound-granular.qmd)
 
 {{< include _synth-kit.qmd >}}

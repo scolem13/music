@@ -1,0 +1,257 @@
+---
+title: "Formants: What Makes a Vowel"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+Sing *ee* and then *ah* on the same note. The pitch stays the same, yet anyone can hear which vowel is which. Your vocal folds make the same buzz both times; what changes is the shape of the tube above them, and that tube boosts some frequencies and damps others. The boosted regions are the **formants**, numbered from the bottom: F1, F2, F3 and so on. Two of them, F1 and F2, are enough to tell most vowels apart, and they line up closely with the vowel chart singers already use. This lesson takes you through them with a synthesised voice. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section and opens it.
+
+**How to use the page.** Each widget has a ▶ button that starts a sustained voice and ■ to stop it (only one plays at a time; start with your volume low). The pictures are **spectra**: frequency runs left to right up to 4 kHz, each vertical line is one harmonic of the voice, and the curve is the filter the vocal tract puts on top. The same synthesiser drives the vowel chart on the [IPA chart](../tools/ipa-chart.qmd#vowels), where you can drag through the vowel space.
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/ipa/ipa-chart.css?v=2">
+<script src="/apps/shared/ipa/ipa-synth.js?v=2"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<style>
+.fm-lab{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem;max-width:46rem}
+.fm-lab h4{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}
+.fm-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .9rem;margin:.4rem 0}
+.fm-row label{display:flex;align-items:center;gap:.35rem;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2);margin:0}
+.fm-row select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.fm-row input[type=range]{width:9rem;accent-color:var(--site-accent-dk)}
+.fm-row output{font-family:var(--font-mono);font-size:.78rem;color:var(--site-ink);min-width:4.5rem}
+.fm-lab .btn{font-family:var(--font-mono);font-size:.78rem}
+.fm-lab .btn.fm-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.fm-lab canvas{width:100%;display:block;border:1px solid var(--site-border);border-radius:6px;background:var(--site-surface);margin-top:.4rem;touch-action:none}
+.fm-info{font-family:var(--font-mono);font-size:.78rem;color:var(--site-ink-2);min-height:1.3em;margin:.4rem 0 0}
+.fm-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.fm-tbl{border-collapse:collapse;font-size:.88rem;margin:.6rem 0 1rem}
+.fm-tbl th,.fm-tbl td{padding:.25rem .7rem;border-bottom:1px solid var(--site-border-soft);text-align:left}
+.fm-tbl td.n{font-family:var(--font-mono);text-align:right}
+</style>
+```
+
+## 1. Source and filter {#source-filter}
+
+The voice is two things in a row. The **source** is the vocal folds: they open and shut at the pitch you sing, so they make a buzz at that pitch plus every whole-number multiple of it (the [harmonic series](sound-harmonics.qmd)), each one a little quieter than the one below. The **filter** is the throat, mouth and lips: a tube about 17 cm long in an adult, and like any tube it resonates at certain frequencies. Where it resonates, the harmonics come through strongly; between resonances they are damped.
+
+The pitch belongs to the source and the vowel belongs to the filter, which is why you can sing any vowel on any note. Play the buzz on its own, then put a vowel's filter on it.
+
+<div class="fm-lab" id="fm-src"></div>
+
+The buzz is rich but has no vowel. With the filter on, the harmonics near each peak of the curve stand out, and that pattern of peaks is what your ear reads as a vowel. Change the pitch: the harmonic lines get closer or further apart, but the curve, and the vowel, stays where it is.
+
+## 2. F1: tongue height and jaw {#f1}
+
+The first formant, **F1**, is the lowest peak, between about 250 Hz and 850 Hz. It follows how open the vocal tract is: a close vowel like [i] or [u] has a low F1, an open vowel like [a] a high one. Dropping the jaw and lowering the tongue raises F1.
+
+<div class="fm-lab" id="fm-f1"></div>
+
+Slide F1 up with F2 high and you go from [i] through [e] and [ɛ] towards [a]. With F2 low you go from [u] through [o] towards [ɔ] and [ɑ]. On the vowel chart, **F1 is the vertical axis**: close at the top, open at the bottom.
+
+## 3. F2: front and back {#f2}
+
+The second formant, **F2**, runs from about 700 Hz to 2400 Hz. It follows where the tongue is bunched: forward in the mouth gives a high F2 ([i], [e]), back gives a low F2 ([u], [o]). Rounding the lips lengthens the tube and pulls F2 (and F3) down, so a rounded front vowel like [y] sits between [i] and [u].
+
+<div class="fm-lab" id="fm-f2"></div>
+
+On the vowel chart, **F2 is the horizontal axis**, with high F2 (front) on the left. Try holding F1 low and sweeping F2: [i] to [y] to [ɨ] to [u] is the whole top row of the chart.
+
+## 4. The F1–F2 plane is the vowel chart {#plane}
+
+Put F1 down the page and F2 across it, high on the left, and the vowels fall into a shape that is close to the IPA trapezoid. The phonetics chart started as a map of the tongue; formant measurements in the twentieth century showed that it is just as much a map of sound. Drag anywhere in the plane.
+
+<div class="fm-lab" id="fm-plane"></div>
+
+The trapezoid shape comes from acoustics: front vowels can spread across a wide range of F2, while back vowels are squeezed into a narrow one, so the chart is wider at the top than at the bottom. The values here are averages for an adult male voice; a higher, shorter vocal tract (women, children) moves everything up by roughly 15–20 %, but the shape stays the same, which is how we hear the same vowel from different speakers.
+
+| Vowel | Example | F1 (Hz) | F2 (Hz) |
+|:--|:--|--:|--:|
+| [i] | *see*, Italian *vino* | 280 | 2250 |
+| [e] | German *See*, Italian *sera* | 400 | 2100 |
+| [ɛ] | *bed* | 580 | 1850 |
+| [a] | French *patte*, Italian *casa* | 820 | 1550 |
+| [ɑ] | *father* | 760 | 1080 |
+| [ɔ] | RP *thought* | 600 | 900 |
+| [o] | German *so*, Italian *dove* | 430 | 750 |
+| [u] | *food*, Italian *luna* | 300 | 750 |
+| [ə] | *about* | 500 | 1450 |
+
+## 5. F3, r-colouring and lip rounding {#f3}
+
+The third formant, **F3** (around 2200–3000 Hz), changes less from vowel to vowel, but it carries two things. Lip rounding lowers it along with F2. And an **r-coloured** vowel, like the General American *nurse* [ɝ] or *butter* [ɚ], has a strikingly low F3, down near 1600 Hz, sitting just above F2. Drag F3 down on [ə] and listen to it turn into an American *er*.
+
+<div class="fm-lab" id="fm-f3"></div>
+
+F4 and above vary even less and mostly reflect the size of the singer's head and throat: they are part of what makes a voice sound like that person.
+
+## 6. The singer's formant {#ring}
+
+Trained classical singers, especially men, make a strong peak around 2.5–3.2 kHz by clustering F3, F4 and F5 together, mostly by lowering the larynx and narrowing the tube just above the vocal folds. This **singer's formant** is the "ring" or *squillo* that lets an unamplified voice carry over an orchestra: the orchestra is loudest below 1 kHz, and the ear is most sensitive near 3 kHz. Turn it on and off on the same vowel.
+
+<div class="fm-lab" id="fm-ring"></div>
+
+The vowel does not change, because F1 and F2 do not move. What changes is the brightness and the carrying power. Pop and musical theatre singers use the same region with a more speech-like vowel; a microphone means they need less of it.
+
+## 7. High notes: when the pitch outruns the formants {#pitch}
+
+The harmonics sample the filter curve only at multiples of the pitch. At a speaking pitch they are close together and trace the curve well. A soprano at 880 Hz has harmonics only at 880, 1760, 2640 Hz and so on, so F1 for [i] (about 300 Hz) is *below the lowest note she can produce*. No harmonic falls near it, and the vowel can't be heard as [i] any more.
+
+<div class="fm-lab" id="fm-pitch"></div>
+
+Raise the pitch on [i] and listen to the vowels blur together above about 600 Hz. Then turn on **Tune F1 to the pitch**: this raises F1 to just above the fundamental, which is what sopranos do by opening the jaw on high notes. It is called **formant tuning**, and it is the acoustic reason for **vowel modification**: a high [i] is sung towards [ɪ] or [e], and a high [u] towards [ʊ] or [o], so that F1 stays with the fundamental and the note keeps its power. The cost is that the vowel is less clear, and on the very highest notes listeners cannot tell vowels apart at all.
+
+<div class="fm-tip">For singers: if a high note feels thin or hard on a closed vowel, open the jaw and let the vowel drift towards its open neighbour ([i]→[ɪ]→[e], [u]→[ʊ]→[o]). In the words, keep the consonants clear; they carry more of the meaning than the vowels do up there.</div>
+
+## Things to try {#try}
+
+- In section 4, find your own vowels: say a word, hold the vowel, and hunt for it in the plane. Vowels in your accent may sit between the symbols.
+- In section 1, play [a] and drag the pitch slowly: the vowel stays put while the harmonics slide under the curve.
+- On the [IPA chart](../tools/ipa-chart.qmd#vowels), switch on Hold and click from [i] to [y] to [u]: one formant moves at a time.
+- In section 7, find the pitch where [i] and [e] stop sounding different without formant tuning.
+
+## Next {#next}
+
+- [The IPA chart for singers](../tools/ipa-chart.qmd): every vowel with recordings, reference words in seven languages, and the synthesiser.
+- [The harmonic series](sound-harmonics.qmd): where the vertical lines in these pictures come from.
+- [Filters](sound-filter.qmd): the same idea of a resonant filter, on a synthesiser.
+- [The vocoder](sound-vocoder.qmd): a machine that copies one sound's formants onto another.
+
+```{=html}
+<script>
+(function () {
+  var S = window.IpaSynth, owner = null, FMAX = 4000;
+  // vowels by chart position (height row, column, rounded) and a formant set for each, from IpaSynth's grid
+  var V = { "i": [0, 0, 0], "e": [2, 0, 0], "ɛ": [4, 0, 0], "a": [6, 0, 0], "ɑ": [6, 2, 0], "ɔ": [4, 2, 1], "o": [2, 2, 1], "u": [0, 2, 1],
+            "y": [0, 0, 1], "ø": [2, 0, 1], "œ": [4, 0, 1], "ɨ": [0, 1, 0], "ʉ": [0, 1, 1], "ɯ": [0, 2, 0], "ɤ": [2, 2, 0], "ʌ": [4, 2, 0], "ə": [3, 1, 0], "ɒ": [6, 2, 1] };
+  function vf(id) { var v = V[id]; return S.formants(v[0], v[1], v[2], "low"); }
+  function nearest(F1, F2) {
+    var best = null, bd = 1e9;
+    Object.keys(V).forEach(function (id) { var f = vf(id), d = Math.pow(Math.log(F1 / f[0]) * 1.4, 2) + Math.pow(Math.log(F2 / f[1]), 2); if (d < bd) { bd = d; best = id; } });
+    return best;
+  }
+  function css(n) { return getComputedStyle(document.documentElement).getPropertyValue(n).trim() || "#888"; }
+  function el(h) { var d = document.createElement("div"); d.innerHTML = h; return d.firstElementChild; }
+
+  // one lab = title, a row of controls, a canvas, an info line; st() gives the synth state to play and draw
+  function lab(id, title, controls, st, draw) {
+    var host = document.getElementById(id); if (!host) return;
+    host.innerHTML = "<h4>" + title + '</h4><div class="fm-row"><button type="button" class="btn btn-sm btn-outline-secondary" data-play>&#9654; Play</button>' + controls +
+      '</div><canvas height="200"></canvas><div class="fm-info"></div>';
+    var btn = host.querySelector("[data-play]"), cv = host.querySelector("canvas"), info = host.querySelector(".fm-info");
+    var L = { host: host, cv: cv, info: info, q: function (k) { return host.querySelector('[data-k="' + k + '"]'); },
+      stop: function () { btn.classList.remove("fm-on"); btn.innerHTML = "&#9654; Play"; },
+      update: function (glide) { var s = st(); if (owner === L) S.set(Object.assign({ glide: glide == null ? 0.05 : glide }, s)); (draw || spectrum)(L, s); } };
+    btn.addEventListener("click", function () {
+      if (owner === L) { S.stop(); owner = null; L.stop(); return; }
+      if (owner) owner.stop(); owner = L; btn.classList.add("fm-on"); btn.innerHTML = "&#9632; Stop";
+      S.set(Object.assign({ glide: 0 }, st())); S.start();
+    });
+    host.addEventListener("input", function () { L.update(); });
+    host.addEventListener("change", function () { L.update(); });
+    new ResizeObserver(function () { L.update(0); }).observe(cv);
+    return L;
+  }
+  function size(cv) { var r = window.devicePixelRatio || 1, w = cv.clientWidth || 600, h = cv.clientHeight || 200; cv.width = w * r; cv.height = h * r; var g = cv.getContext("2d"); g.setTransform(r, 0, 0, r, 0, 0); return { g: g, w: w, h: h }; }
+
+  // spectrum: harmonics (1/n source x filter) as lines, filter envelope as a curve, formant peaks labelled; dB scale, 50 dB range
+  function spectrum(L, s) {
+    var c = size(L.cv), g = c.g, w = c.w, h = c.h, pad = 18, top = 14, bot = h - pad;
+    var ink = css("--site-ink-2"), acc = css("--site-accent-dk"), soft = css("--site-border");
+    var X = function (f) { return 30 + (w - 40) * f / FMAX; };
+    var env = function (f) { return s.raw ? 0.6 : S.envelope(f, s); };
+    var norm = 0; for (var f = 50; f < FMAX; f += 10) norm = Math.max(norm, env(f));
+    var Yd = function (a) { var db = 20 * Math.log10(Math.max(a, 1e-6)); return top + (bot - top) * Math.min(1, -db / 50); };
+    g.clearRect(0, 0, w, h); g.font = "10px " + (css("--font-mono") || "monospace"); g.fillStyle = ink; g.strokeStyle = soft; g.lineWidth = 1;
+    for (var k = 0; k <= FMAX; k += 500) { g.beginPath(); g.moveTo(X(k), top); g.lineTo(X(k), bot); g.stroke(); if (k % 1000 === 0) g.fillText(k ? k / 1000 + " kHz" : "0", X(k) - 8, h - 4); }
+    // harmonics
+    var hm = 0; for (var n = 1; n * s.pitch < FMAX; n++) hm = Math.max(hm, env(n * s.pitch) / n);
+    g.strokeStyle = ink; g.lineWidth = 2;
+    for (n = 1; n * s.pitch < FMAX; n++) { var x = X(n * s.pitch); g.beginPath(); g.moveTo(x, bot); g.lineTo(x, Yd(env(n * s.pitch) / n / hm)); g.stroke(); }
+    if (s.raw) return;
+    // envelope
+    g.strokeStyle = acc; g.lineWidth = 2; g.beginPath();
+    for (f = 40; f < FMAX; f += 8) { var y = Yd(env(f) / norm); if (f === 40) g.moveTo(X(f), y); else g.lineTo(X(f), y); }
+    g.stroke();
+    var F = s.F || S.formants(s.h, s.c, s.r, s.voice); g.fillStyle = acc;
+    F.forEach(function (fk, i) { g.fillText("F" + (i + 1), X(fk) - 6, Math.max(top - 2, Yd(env(fk) / norm) - 5)); });
+    if (s.ring) g.fillText("ring", X(S.RING) - 8, Yd(env(S.RING) / norm) - 5);
+  }
+  function vowelSel(k, def, list) { return '<label>Vowel <select data-k="' + k + '">' + list.map(function (v) { return "<option" + (v === def ? " selected" : "") + ">" + v + "</option>"; }).join("") + "</select></label>"; }
+  function slider(k, lab, min, max, step, val) { return "<label>" + lab + ' <input type="range" data-k="' + k + '" min="' + min + '" max="' + max + '" step="' + step + '" value="' + val + '"> <output data-o="' + k + '"></output></label>'; }
+  var base = { vib: 0.0035, ring: 0, raw: false, voice: "low", h: 3, c: 1, r: 0 };
+  function out(L, k, t) { var o = L.host.querySelector('[data-o="' + k + '"]'); if (o) o.textContent = t; }
+
+  // 1. source and filter
+  var L1 = lab("fm-src", "Buzz, then vowel", '<label><input type="checkbox" data-k="raw" checked> Buzz only (no filter)</label>' + vowelSel("v", "a", ["i", "e", "a", "o", "u"]) + slider("p", "Pitch", 80, 400, 1, 130),
+    function () { var p = +L1.q("p").value; out(L1, "p", p + " Hz"); return Object.assign({}, base, { raw: L1.q("raw").checked, F: vf(L1.q("v").value), pitch: p }); });
+  // 2. F1 with F2 chosen; 3. F2 with F1 chosen
+  function oneLab(id, title, moving) {
+    var other = moving === "f1" ? "f2" : "f1";
+    var sel = moving === "f1"
+      ? '<label>F2 <select data-k="f2"><option value="2200">high (front)</option><option value="1300">middle (central)</option><option value="800">low (back)</option></select></label>'
+      : '<label>F1 <select data-k="f1"><option value="300">low (close)</option><option value="450">mid-low (close-mid)</option><option value="600">mid-high (open-mid)</option><option value="780">high (open)</option></select></label>';
+    var L = lab(id, title, (moving === "f1" ? slider("f1", "F1", 220, 900, 5, 300) : slider("f2", "F2", 650, 2500, 10, 2200)) + sel,
+      function () {
+        var f1 = +L.q("f1").value, f2 = +L.q("f2").value, n = nearest(f1, f2);
+        out(L, moving, L.q(moving).value + " Hz"); L.info.textContent = "F1 " + f1 + " Hz · F2 " + f2 + " Hz · nearest vowel [" + n + "]";
+        return Object.assign({}, base, { F: [f1, f2, 2300 + (f2 - 700) * 0.3, 3500], pitch: 130 });
+      });
+    return L;
+  }
+  oneLab("fm-f1", "Move F1", "f1");
+  oneLab("fm-f2", "Move F2", "f2");
+
+  // 4. the F1-F2 plane
+  var P = { f1: 400, f2: 1500 }, drag = false;
+  var L4 = lab("fm-plane", "Drag through the F1–F2 plane", slider("p", "Pitch", 80, 400, 1, 130) +
+    '<label><input type="checkbox" data-k="hold"> Hold</label>',
+    function () { var p = +L4.q("p").value; out(L4, "p", p + " Hz"); return Object.assign({}, base, { F: [P.f1, P.f2, 2300 + (P.f2 - 700) * 0.3, 3500], pitch: p }); },
+    function (L, s) {
+      var c = size(L.cv), g = c.g, w = c.w, h = c.h, ink = css("--site-ink"), ink2 = css("--site-ink-2"), acc = css("--site-accent-dk"), soft = css("--site-border");
+      var x = function (f2) { return 30 + (w - 50) * (2500 - f2) / 1850; }, y = function (f1) { return 16 + (h - 34) * (f1 - 220) / 680; };
+      g.clearRect(0, 0, w, h); g.font = "10px " + (css("--font-mono") || "monospace"); g.strokeStyle = soft; g.fillStyle = ink2;
+      [1000, 1500, 2000].forEach(function (f) { g.beginPath(); g.moveTo(x(f), 12); g.lineTo(x(f), h - 16); g.stroke(); g.fillText("F2 " + f, x(f) - 18, h - 4); });
+      [300, 500, 700].forEach(function (f) { g.beginPath(); g.moveTo(26, y(f)); g.lineTo(w - 16, y(f)); g.stroke(); g.fillText(f, 2, y(f) + 3); });
+      g.fillText("F1", 2, 10);
+      g.font = "16px serif"; g.textAlign = "center"; g.textBaseline = "middle";
+      Object.keys(V).forEach(function (id) { var f = vf(id); g.fillStyle = V[id][2] ? ink2 : ink; g.fillText(id, x(f[1]), y(f[0])); });
+      g.textAlign = "start"; g.textBaseline = "alphabetic";
+      g.fillStyle = acc; g.globalAlpha = 0.8; g.beginPath(); g.arc(x(P.f2), y(P.f1), 7, 0, 7); g.fill(); g.globalAlpha = 1;
+      L.info.textContent = "F1 " + Math.round(P.f1) + " Hz · F2 " + Math.round(P.f2) + " Hz · nearest [" + nearest(P.f1, P.f2) + "]   (grey: rounded vowels)";
+      L.inv = function (cx, cy) { P.f2 = Math.max(650, Math.min(2500, 2500 - (cx - 30) / (w - 50) * 1850)); P.f1 = Math.max(220, Math.min(900, 220 + (cy - 16) / (h - 34) * 680)); };
+    });
+  if (L4) {
+    L4.cv.height = 280; L4.cv.style.height = "280px";
+    var at = function (e) { var b = L4.cv.getBoundingClientRect(); L4.inv(e.clientX - b.left, e.clientY - b.top); };
+    L4.cv.addEventListener("pointerdown", function (e) {
+      e.preventDefault(); drag = true; L4.cv.setPointerCapture(e.pointerId); at(e);
+      if (owner !== L4) L4.host.querySelector("[data-play]").click(); L4.update(0.005);
+    });
+    L4.cv.addEventListener("pointermove", function (e) { if (drag) { at(e); L4.update(0.03); } });
+    var up = function () { if (!drag) return; drag = false; if (!L4.q("hold").checked && owner === L4) L4.host.querySelector("[data-play]").click(); };
+    L4.cv.addEventListener("pointerup", up); L4.cv.addEventListener("pointercancel", up);
+  }
+
+  // 5. F3
+  var L5 = lab("fm-f3", "Lower F3 on schwa", slider("f3", "F3", 1500, 3000, 10, 2500),
+    function () { var f3 = +L5.q("f3").value; out(L5, "f3", f3 + " Hz"); L5.info.textContent = f3 < 1850 ? "r-coloured: [ɚ], American 'er'" : "plain [ə]";
+      return Object.assign({}, base, { F: [500, 1450, f3, 3500], pitch: 130 }); });
+  // 6. singer's formant
+  var L6 = lab("fm-ring", "Singer's formant on and off", '<label><input type="checkbox" data-k="ring"> Singer\'s formant</label>' + vowelSel("v", "ɑ", ["i", "e", "a", "ɑ", "o", "u"]) + slider("p", "Pitch", 80, 400, 1, 147),
+    function () { var p = +L6.q("p").value; out(L6, "p", p + " Hz"); return Object.assign({}, base, { F: vf(L6.q("v").value), ring: L6.q("ring").checked ? 1 : 0, pitch: p, vib: 0.006 }); });
+  // 7. pitch vs formants
+  var L7 = lab("fm-pitch", "Raise the pitch", vowelSel("v", "i", ["i", "e", "a", "o", "u"]) + slider("p", "Pitch", 100, 1000, 1, 220) +
+    '<label><input type="checkbox" data-k="tune"> Tune F1 to the pitch</label>',
+    function () {
+      var p = +L7.q("p").value, F = vf(L7.q("v").value).map(function (f) { return f * 1.16; });
+      if (L7.q("tune").checked && F[0] < p * 1.1) F[0] = p * 1.1;
+      out(L7, "p", p + " Hz");
+      L7.info.textContent = "F1 " + Math.round(F[0]) + " Hz · pitch " + p + " Hz" + (F[0] < p ? " · F1 is below the fundamental: no harmonic can excite it" : "");
+      return Object.assign({}, base, { voice: "high", F: F, pitch: p });
+    });
+  window.FormantLesson = { labs: [L1, L4, L5, L6, L7] };
+})();
+</script>
+```

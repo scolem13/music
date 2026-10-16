@@ -1,0 +1,280 @@
+---
+title: "Tuning Systems: Just Intonation and Equal Temperament"
+toc: true
+toc-depth: 2
+---
+
+A piano is slightly out of tune on purpose. Every chord on it, apart from the octave, is a little
+wrong, and the wrongness is spread so evenly that all twelve keys sound alike. The alternative is
+**just intonation** (JI), where intervals are tuned to the simple ratios that the harmonic series
+gives you, and they sound smooth and still. This lesson shows what each costs, with ears first and
+numbers second.
+
+**How to use the page.** Every widget has a ▶ button. The bar at the bottom of the window sets the
+volume (start low). The **Drone** button in the top navigation bar is the same drone as the one on
+this page. Click a heading to fold a section away, or use *On this page* on the right to jump
+(shift-click folds the others). The lesson on [the harmonic series](sound-harmonics.qmd) goes
+further into where the ratios come from.
+
+## The harmonic series gives the ratios
+
+A note on a real instrument is a stack of frequencies at whole-number multiples of the lowest, the
+**fundamental**: 1×, 2×, 3×, 4×, and so on. Those are the **harmonics**. Each interval between
+neighbouring harmonics is a simple ratio of whole numbers:
+
+| Between harmonics | Ratio | Interval |
+|---|---|---|
+| 1 and 2 | 2:1 | Octave |
+| 2 and 3 | 3:2 | Perfect fifth |
+| 3 and 4 | 4:3 | Perfect fourth |
+| 4 and 5 | 5:4 | Major third |
+| 5 and 6 | 6:5 | Minor third |
+
+Harmonics 4, 5 and 6 together are a major triad, 4:5:6. That is the reason a major chord sounds
+stable: it is already inside every note you hear. Below, the first sixteen harmonics are written
+out over any root, with how many **cents** each is from the nearest piano note. A cent is 1/100
+of a piano half step, so an octave is 1200 cents. Press *Harmonic, then tempered* and listen to
+the harmonics that are most out of tune with the piano (7, 11, 13 and 14).
+
+<div class="sk" data-w="series" data-title="The harmonic series, against the piano"></div>
+
+Frequencies multiply, but we hear pitch by **ratio**: going up a fifth always multiplies the
+frequency by 3/2, whether you start on a low note or a high one. To compare ratios, take
+1200 × log₂(ratio) to get cents. A pure fifth, 3:2, is 1200 × log₂(1.5) = **701.96 cents**.
+A pure major third, 5:4, is **386.31 cents**.
+
+## Why pure intervals do not beat
+
+When two notes are close in frequency, their waves line up and then fall out of step, over and
+over. The sound swells and fades at a rate equal to the difference in their frequencies. That is a
+**beat**: 440 Hz with 443 Hz beats three times a second.
+
+Beating also happens between the **harmonics** of two different notes. In a pure major third
+(4:5), the 5th harmonic of the lower note and the 4th harmonic of the upper note are exactly the
+same frequency, so they simply reinforce each other. When the interval is slightly off, those two
+harmonics are a few hertz apart and beat. A pure fifth (2:3) has the same matching harmonics, the
+3rd of the lower note and the 2nd of the upper.
+
+The widget shows it. With *Only the two harmonics that should match* the sound is just two sine
+waves, and the picture is their sum: it swells and fades as they drift in and out of step. Switch the
+tuning between **Just** and **Equal temperament** and hear the beating start and stop. The wavy
+line is drawn slowed down; the real rate is in the text under the controls.
+
+<div class="sk" data-w="interval" data-title="A major third, pure and tempered" data-set="iv=M3,tun=equal,show=pair"></div>
+
+Now the same with all the harmonics of two notes, which is what a real chord does. Choose another
+interval with the *Interval* menu. Notice that the **fifth** beats slowly (it is only 2 cents
+off) and the **thirds** and **sixths** beat fast (14 to 16 cents off). That is why
+equal temperament is so much kinder to fifths than to thirds.
+
+<div class="sk" data-w="interval" data-title="Any interval, pure and tempered" data-set="iv=P5,tun=equal,show=notes"></div>
+
+## Two commas: why tuning cannot be perfect
+
+Pure tuning runs into arithmetic. Two facts about ratios cannot both be true:
+
+- **Stack twelve pure fifths** (3:2) and you arrive at the note seven octaves up, almost. Twelve
+  fifths are (3/2)¹² = 129.746; seven octaves are 2⁷ = 128. The gap is the **Pythagorean comma**,
+  531441:524288, or **23.46 cents**, nearly a quarter of a half step.
+- **Stack four pure fifths** and reduce by two octaves and you get a major third, but a wide one:
+  81:64 (407.8 cents), compared with the pure 5:4 (386.3 cents). The difference, 81:80 or
+  **21.51 cents**, is the **syntonic comma**.
+
+So the pure thirds of the harmonic series (5:4) and the pure fifths (3:2) are made of different
+building blocks, and they do not fit together. A tuning system is a decision about which of
+those to keep and which to spoil.
+
+## Just intonation, and why it cannot modulate
+
+In a **just** scale, every note is a whole-number ratio of the tonic (Do). The common major scale
+version is:
+
+| Do | Re | Mi | Fa | Sol | La | Ti | Do |
+|---|---|---|---|---|---|---|---|
+| 1 | 9/8 | 5/4 | 4/3 | 3/2 | 5/3 | 15/8 | 2 |
+
+The I, IV and V chords (Do–Mi–Sol, Fa–La–Do, Sol–Ti–Re) are pure 4:5:6 triads, and they sound
+beautifully still. The trouble starts with the other chords. The **ii** chord is Re–Fa–La:
+from Re (9/8) to La (5/3) the ratio is (5/3) ÷ (9/8) = 40/27, which is **680.4 cents**. That is a
+fifth 21.5 cents flat, a syntonic comma off, and it sounds sour. To get a good ii chord you
+would need a *different Re* (10/9), but then the notes of V would be wrong. In the key of C, the
+note D has two jobs and a different pure frequency for each.
+
+That is the main limit of just intonation on a **fixed-pitch instrument** (a keyboard, a fretted
+guitar, a marimba). Tune the keyboard for C major and the same keys give poor chords in D major or E♭ major. You
+would want more than 12 notes per octave, or a retune for each key. Voices, violins,
+trombones and other instruments that can adjust each note do this naturally: a choir singing
+Do–Mi–Sol will tune the triad pure, and a progression like C – Am – Dm – G – C will drift upward in
+pitch by a syntonic comma over each lap if every chord is tuned pure.
+
+Here is the drone, held on Do with Mi and Sol above it (a major triad). **Pure** tunes Mi to 5/4
+and Sol to 3/2 of Do; **Equal** uses the piano's notes. Switch back and forth while it sounds.
+Listen for the third: in the pure setting the chord sits still, and in equal temperament it has a
+faint shimmer, the beating from the last section.
+
+<div class="pw-embed" data-w="drone" data-tuning="pure" data-pads="0 4 7"></div>
+
+Try this: with the drone sounding, sing or play (on any instrument that can bend its pitch) the
+note **Mi** above the drone, first sliding toward the piano's version, then toward the pure one.
+The pure one *locks* into the drone. It is the pitch that stops beating.
+
+## Equal temperament: twelve equal steps
+
+Equal temperament (12-TET) solves the key problem by making every half step the same size. An
+octave is a 2:1 ratio and has twelve steps, so each step multiplies the frequency by 2^(1/12) =
+1.059463. A semitone is exactly 100 cents, and every interval of the same size is the same in
+every key. Twelve fifths then come out to exactly seven octaves, and the Pythagorean comma is
+spread evenly: each fifth is narrowed by 23.46 ÷ 12 = 1.96 cents.
+
+The price is that **no interval except the octave is pure**. The fifth is only 2 cents flat, which
+is close enough to ignore. But the thirds and sixths are 14 to 16 cents off, enough to hear:
+
+| Interval | Just ratio | Just (cents) | Equal (cents) | Equal minus just |
+|---|---|---|---|---|
+| Minor second | 16:15 | 111.7 | 100 | −11.7 |
+| Major second | 9:8 | 203.9 | 200 | −3.9 |
+| Minor third | 6:5 | 315.6 | 300 | **−15.6** |
+| Major third | 5:4 | 386.3 | 400 | **+13.7** |
+| Perfect fourth | 4:3 | 498.0 | 500 | +2.0 |
+| Tritone | 45:32 | 590.2 | 600 | +9.8 |
+| Perfect fifth | 3:2 | 702.0 | 700 | **−2.0** |
+| Minor sixth | 8:5 | 813.7 | 800 | −13.7 |
+| Major sixth | 5:3 | 884.4 | 900 | +15.6 |
+| Minor seventh | 9:5 | 1017.6 | 1000 | −17.6 |
+| Major seventh | 15:8 | 1088.3 | 1100 | +11.7 |
+| Octave | 2:1 | 1200 | 1200 | 0 |
+
+In words: the tempered **major third is about 14 cents sharp** of the pure 5:4, the tempered
+**fifth about 2 cents flat** of 3:2, and the tempered **minor third about 16 cents flat** of 6:5.
+Thirds are the most exposed because the ear uses them to decide whether a chord is major or minor,
+and because the beating of two harmonics (the 5th and the 4th) falls in a region where the ear is
+most sensitive. The minor sixth and the major sixth are the thirds turned upside down, so they
+are wrong by the same amount.
+
+Equal temperament is the standard for the piano, the guitar, MIDI and nearly every
+synthesizer. Its strength is that it lets you play in any key, modulate anywhere, and use
+chromatic and jazz harmony that no pure system supports. Many singers, string players and brass
+players move toward just intonation while they play, without thinking about it.
+
+## Hear and play it: chords and solfège
+
+The keyboard below names what you play in solfège and gives the chord. Its *Tuning* menu
+switches between the sampled piano, an organ tone in equal temperament and the same organ tone
+in just intonation (every note a ratio of the key note, here C). Play a C major chord
+(C, E, G) in each of the two organ settings, then try the A minor chord or the C major seventh.
+Turn on *Hold notes* to build a chord one key at a time. Pure chords from the key note
+are smooth; notice what happens in the pure setting with **D minor** (D, F, A): that is the
+ii chord from above, and the pure fifth D–A is not available.
+
+<script>window.csPreset = { d: 0, type: false, tuning: "just" };</script>
+
+{{< include ../tools/_chords-solfege.qmd >}}
+
+## Other systems, briefly
+
+Equal temperament is one answer to the comma problem, and not the only one used.
+
+- **Pythagorean tuning.** All fifths are pure 3:2, and the thirds come out wide
+  (81:64, 407.8 cents, 21.5 cents sharp of 5:4). It suits melody, with its sharp leading tones
+  and bright, tense thirds, and it was the system of medieval Europe, whose music was built on
+  fifths and fourths. One fifth, the **wolf**, is out by the Pythagorean comma (678.5 cents).
+- **Quarter-comma meantone.** Renaissance and early Baroque keyboards narrowed each fifth by a
+  quarter of a syntonic comma (696.6 cents) so that the major thirds came out pure (386.3 cents).
+  Chords in the home keys are lovely. The cost is an even worse wolf fifth (about 737.6 cents),
+  and keys with many sharps or flats are unusable.
+- **Well temperaments** (*Werckmeister*, *Vallotti*, *Kirnberger* and others). Eighteenth-century
+  tunings that spread the comma **unevenly** so that every key works but each has its own colour:
+  keys near C have nearly pure thirds, and distant keys are tenser. In Werckmeister III four
+  fifths (C–G, G–D, D–A, B–F♯) are narrowed by a quarter of the Pythagorean comma and the rest are
+  pure. In Vallotti six fifths (F–C–G–D–A–E–B) are narrowed by a sixth of the comma and the rest
+  are pure. Bach's *Well-Tempered Clavier* (1722) has a prelude and fugue in all 24 keys, so it
+  needs a tuning where every key is playable. Its exact temperament is still debated; "well
+  tempered" did **not** mean equal. Many listeners find these keys have individual character,
+  which equal temperament flattens.
+- **Equal temperament** gradually took over in the nineteenth century, as chromatic harmony and
+  modulation made key colour impossible to keep.
+
+## Beyond twelve notes
+
+Not all music divides the octave into twelve.
+
+- **Arabic maqam.** Many maqamat use the "neutral" second and third, about halfway between a
+  minor and a major one (roughly 150 and 350 cents), notated with a half-flat sign. This is often
+  described as quarter tones (24 notes to the octave), but the actual pitches vary by maqam, region
+  and performer, and are set by ear.
+- **Equal divisions other than 12.** **19-TET** has an almost pure minor third (315.8 cents against
+  the 6:5 of 315.6) but a weak fifth (694.7). **31-TET** has near-pure major thirds (387.1 cents) and
+  a good fifth (696.8), and was proposed in the 16th century to improve on meantone. **53-TET**
+  has a fifth within 0.07 cent of 3:2 and a major third within 1.4 cents, which is why it is a
+  favourite for theorists approximating just intonation. All need special keyboards or a computer.
+- **Gamelan.** Indonesian ensembles use two scales, five-note **slendro** (roughly equal steps of
+  about 240 cents) and seven-note **pelog** (unequal steps, normally five of the seven in a
+  piece). Every ensemble is tuned to itself, and no two are the same, so the instruments belong
+  together. Paired instruments are often tuned slightly apart on purpose to give a shimmering
+  beat, the *ombak* ("wave"), the same beating you heard above, used as a colour rather than
+  avoided.
+
+## Seeing it: a strobe tuner, pure intervals, and why pianos are stretched
+
+A needle tuner gives one number. A **strobe tuner** gives one row of moving stripes for every
+**partial** of the note you play. Row *k* listens at *k* times the pitch you are aiming at (the
+microphone signal is multiplied by a sine and cosine at that frequency and averaged; the *phase* of
+the result moves the stripes). If that partial is exactly where it should be, its stripes **stand
+still**. If it is sharp they drift to the right, and if flat to the left, at a speed equal to the
+error in Hz. Rows fade where the partial is weak, and the first tenth of a second of each note is
+ignored, because the attack is not a steady pitch.
+
+Choose the target below: the equal-tempered note, a **just** interval over a tonic you pick, a step
+of **31-ET**, or any number of cents above the note (350 is a neutral third). The conventional
+readout (nearest note and cents) is underneath. The microphone is asked for only when you press
+Start, and Stop lets it go. No microphone? The **made-up string** is a stack of oscillators you can
+detune.
+
+<div class="sk" data-w="tuner" data-title="Strobe tuner: the pure fifth and third" data-set="note=E,oct=4,sys=ji,tonic=A"></div>
+
+**Hear just intervals.** With the tonic on A, the note E is aimed at 3:2 over A. Play (or sing) an E
+against an A drone (the **Drone** button in the top bar): when the beats stop, your E is the pure fifth, and every row
+stands still. It is about 2 cents *wider* than the piano's E. Change the tonic to C: the target E is now the
+pure major third, 5:4, which is about 14 cents *narrower* than the piano's. That is the
+number behind the beating in the widgets above, and the reason a choir with no keyboard drifts
+toward pure intervals.
+
+**Why a piano is stretched.** The harmonic series of an ideal string is exactly 1, 2, 3, 4... times
+the fundamental. A real string has stiffness, so it resists bending near its ends, and the effect
+grows quickly with the partial number: partial *k* sounds at about *k f* √(1 + *B k*²), where *B* is the
+string's **inharmonicity** (a mid-range piano string has *B* of the order of 0.0001 to 0.001, and the short thick bass
+strings and the shortest treble strings have more). Every upper partial is therefore *sharp* of the
+exact multiple. When two notes an octave apart are tuned, the beats a tuner listens to are between
+the upper note's fundamental and the lower note's *second partial*, which is already slightly
+sharp: so the upper note is tuned a little sharp of 2:1, and so on up the keyboard. The bass ends up flat and the treble sharp of the equal-tempered
+scale. This is called **stretch tuning**. Try it: set the source to the **made-up string**, press Start, and raise the stiffness. Row 1 stays still and
+the higher rows drift to the right, row 6 more than row 2. Notice that the readout above the bands, which
+reduces the whole sound to one pitch, is pulled sharp by the upper partials, while row 1 shows that the fundamental has not moved.
+
+<div class="sk" data-w="tuner" data-title="Strobe tuner: a stiff string" data-set="note=A,oct=3,demo=on,stiff=0.0008,bands=8"></div>
+
+## Things to try
+
+1. In the major-third widget, set the lower note to 110 Hz, then 440 Hz. At which pitch is the
+   tempered third's beating faster? (The beat rate is in Hz, so it doubles per octave.)
+2. In the second widget, step through the intervals in *Equal temperament* mode and rank them from
+   most to least beating. The fifth and fourth should be at one end and the thirds and sixths at
+   the other.
+3. Start the drone on Do with Mi and Sol, set to *Pure*, and hum along. Switch to *Equal* and hum
+   again. Can you feel your pitch pulled toward the pure Mi?
+4. Play a D minor chord in the chord keyboard in just intonation and in equal temperament.
+   Which sounds worse, and why? (The fifth D–A is 21.5 cents flat in the pure scale.)
+5. In the stiff-string tuner, set the stiffness to 0 and then to 0.0020. At which row does the drift
+   first pass 10 cents? (Row *k* is sharp by 600 × log₂(1 + *B k*²) cents, from the formula above.)
+6. Calculate for yourself: the cents between two frequencies is 1200 × log₂(f₂ ÷ f₁). Check that
+   A at 440 Hz and E at 660 Hz (a pure fifth) is 701.96 cents, and that the piano's E is
+   659.26 Hz.
+
+## Next
+
+- [Sound 1: The Harmonic Series and Fourier](sound-harmonics.qmd), where the ratios come from.
+- [Sound 2: Oscillators and Pulse-Width Modulation](sound-waveforms.qmd).
+- [Cadences](cadences.qmd) and [Four-chord loops](four-chord-loops.qmd), to hear the chords that
+  the comma affects.
+
+{{< include _synth-kit.qmd >}}

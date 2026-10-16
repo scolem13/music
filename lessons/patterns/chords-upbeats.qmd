@@ -13,7 +13,7 @@ This is a lesson on one comping rhythm the [Backing Track](../../tools/backing-t
 
 A short chord on the and of every beat and never on the beat: the ska and calypso afterbeat.
 
-It belongs in *Calypso*, *Ska / reggae* and *Freylekhs / polka*. Here it is in the ska / reggae style with the whole band. Switch the other players off to hear it alone.
+It belongs in *Calypso*, *Ska / reggae*, *Freylekhs / polka* and *Boogie-woogie*. Here it is in the ska / reggae style with the whole band. Switch the other players off to hear it alone.
 
 <div class="ar-demo" data-style="reggae" data-chart="C|F|G|C" data-tempo="80" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
 
@@ -73,10 +73,14 @@ The same comping rhythm in other styles it fits. The other players change; yours
 
 <div class="ar-demo" data-style="freylekhs" data-chart="Dm|Dm|A7|Dm" data-tempo="132" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
 
+**Boogie-woogie**
+
+<div class="ar-demo" data-style="boogie" data-chart="C7|C7|F7|C7|G7|F7|C7|G7" data-tempo="132" data-on="bass comp drums congas" data-staves="comp" data-comp="piano" data-choice-label="Comping rhythm:" data-choices='[{"label":"Every off-beat","opts":{"compRhythm":"upbeats"}}]'></div>
+
 ## How it relates to the other patterns
 
 - **Builds on:** [Quarter-note chords](chords-quarters.qmd), [Boom-chick / oom-pah-pah](chords-oompah.qmd).
-- **Leads to:** [Son montuno](chords-montuno.qmd): the patterns that use this one as a step.
+- **Leads to:** [Boogie-woogie right hand](chords-boogie.qmd), [Son montuno](chords-montuno.qmd): the patterns that use this one as a step.
 - **The same idea elsewhere in the band:** [Hi-hat: off-beats only](drums-hhoffbeats.qmd) (drum groove), [Reggae one-drop](drums-onedrop.qmd) (drum groove), [Calypso](drums-calypso.qmd) (drum groove), [Root and fifth on every beat](bass-polka.qmd) (bass line).
 - **Plays with, in ska / reggae:** [Roots on every beat](bass-roots.qmd) (bass line), [Reggae one-drop](drums-onedrop.qmd) (drum groove).
 

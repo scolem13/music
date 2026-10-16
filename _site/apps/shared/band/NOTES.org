@@ -1310,3 +1310,28 @@ notation (unlike I want a dotted eighth note as the last note of a phrase when a
    to the bar line), and whether staccato by default reads well in straight styles.
 ** TODO A log made before cfg.ends existed replays with "simple".
 
+
+* Stride piano and boogie-woogie -- 2026-10-14
+User: "Add both stride and boogie-woogie piano, which will have some overlap that you'll cover"; a style now also needs its lessons and
+history pages.
+- Styles stride (bass two, comping stride, drums auto) and boogie (bass boogie, comping boogie, drums shuffle), group Jazz, PLAINV, full.
+- bass.js LINES.boogie: swung eighths R 3 5 6 b7 6 5 3 every bar (rise, top 12, arp: a chord arriving on 3 restarts on its root).
+- comp.js GRID.stride: chords on 2 and 4 (2 and 3 in 3/4); on the piano, left-hand events (hand "L") on 1 and 3: the root as an octave
+  (C2..A3; a single root when the octave would pass A3: Bb, B) where a chord starts, its fifth on 3. Guitar: boom-chick, no left hand.
+- comp.js GRID.boogie: a two-bar right-hand riff, 1 &1 &2(held) | &1 2 &3(held).
+- Pages: styles/stride.qmd, styles/boogie.qmd (Style Notes), lessons/stride-boogie.qmd (the overlap: rent parties, the two left hands
+  side by side on a blues, parts swapped), pattern lessons bass-boogie, chords-stride, chords-boogie (scripts/pattern-lessons.mjs PLAN).
+  The jazz style tour preset ends with a Stride and a Boogie-woogie section.
+** VERIFY BY EAR: everything above. Whether the stride left hand (short, ~0.8 beat) and the bass in two double each other too heavily
+   (Fats Waller's Rhythm did double it); whether the boogie line wants the 6th on minor chords; whether the right-hand riff is idiomatic.
+** TODO A real stride left hand reaches tenths and walks them; boogie has many left hands (rolling octaves, Yancey bass). One each for now.
+** DONE (2026-10-15) Boogie bass lines boogieOct (rolling octaves) and yancey (R, 5 on &1, R on &2, 5 on 3, R on 4: from memory, CHECK BY EAR);
+   comping strideTenths (a tenth on 1; on 3 the fifth or a tenth walking to a step from the next root; a tenth within 3 semitones of the
+   right hand is cut to its low note, so with most jazz voicings the tenths rarely sound: the stride style's Standard voicing keeps the most).
+
+* Ragtime and jump blues -- 2026-10-15
+- ragtime: straight feel, bass alt, comping stride, drums boomchick (all existing parts). jump: bass boogie, comping boogie, new drums.js
+  GROOVES.jump (the shuffle, kick feathered on all four beats, snare 0.72 on 2 and 4; 3/4: snare on 2 and 3).
+- Pages: styles/ragtime.qmd, styles/jump.qmd; section 6 of lessons/stride-boogie.qmd (ragtime -> stride, boogie -> jump); pattern lesson
+  drums-jump; the jazz tour preset ends with Ragtime and Jump blues sections.
+** VERIFY BY EAR: the stride left hand in straight time as ragtime; whether jump wants a horn-like riff in the comping rather than the boogie right hand.

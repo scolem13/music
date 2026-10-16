@@ -336,16 +336,18 @@
       // [{ midi (the top note), midis (all, low to high), on, off, dropped (notes struck with it and left out) }], sorted; notes still held end at `end`
       notes: function (end){
         var a = notes.map(function (n){ return { midi: n.midi, on: n.on, off: n.off == null ? end : n.off }; }).sort(function (x, y){ return x.on - y.on || y.midi - x.midi; }), out = [];
+        if (grace) a = slides(a);
         a.forEach(function (n){
           var last = out[out.length - 1];
           if (last && n.on - last.on < chord && n.on < last.off){
+            if (n.graces) last.graces = (last.graces || []).concat(n.graces);
             if (poly){ if (last.midis.indexOf(n.midi) < 0) last.midis.push(n.midi); last.off = Math.max(last.off, n.off); last.midi = Math.max(last.midi, n.midi); }
             else if (n.midi > last.midi){ last.dropped.push(last.midi); last.midi = n.midi; last.midis = [n.midi]; last.off = n.off; }
             else last.dropped.push(n.midi);
             return;
           }
           if (last && last.off > n.on){ last.off = n.on; last.cut = true; }
-          out.push({ midi: n.midi, midis: [n.midi], on: n.on, off: n.off, dropped: [] });
+          out.push({ midi: n.midi, midis: [n.midi], on: n.on, off: n.off, dropped: [] }); if (n.graces) out[out.length - 1].graces = n.graces;
         });
         out.forEach(function (n){ n.midis.sort(function (x, y){ return x - y; }); });
         if (!grace) return out;
@@ -354,12 +356,32 @@
         out.forEach(function (n, j){
           var nx = out[j + 1];
           if (nx && nx.on - n.on <= grace){ pend.push(n.midi); return; }
-          if (pend.length){ n.graces = pend; pend = []; }
+          if (pend.length){ n.graces = pend.concat(n.graces || []); pend = []; }
           res.push(n);
         });
         return res;
       }
     };
+    // a grace note slid into a chord (Eb up to E under a G): a short note a step or less from one struck just after it, released as that one
+    //   lands. It is taken out before notes are grouped into chords, and the notes struck with it (from just before it to the landing) move to
+    //   the landing's first onset so they group with it, even when the slide made the chord spread wider than `chord`.
+    function slides(a){
+      var win = Math.min(grace * 1.3, RULES.graceBeats), gone = {};
+      a.forEach(function (g, i){
+        if (gone[i]) return;
+        for (var j = i + 1; j < a.length && a[j].on - g.on <= win; j++){
+          var x = a[j];
+          if (gone[j] || x.on <= g.on || Math.abs(x.midi - g.midi) > 2 || x.midi === g.midi || g.off > x.on + chord) continue;
+          gone[i] = true;
+          var mates = a.filter(function (m, k){ return k !== i && !gone[k] && m.on >= g.on - chord && m.on <= x.on; }),
+              t = Math.min.apply(null, mates.map(function (m){ return m.on; }));
+          mates.forEach(function (m){ m.on = t; });
+          x.graces = (x.graces || []).concat([g.midi]);
+          return;
+        }
+      });
+      return a.filter(function (n, i){ return !gone[i]; }).sort(function (x, y){ return x.on - y.on || y.midi - x.midi; });
+    }
   }
   function r2(x){ return Math.round(x * 100) / 100; }
   // quantizeLine(notes, o): the played notes [{ midi, midis, on, off }] (beats) as written bars [[{ pos, dur, midi, midis, tie }]] in units.
@@ -833,7 +855,8 @@
         if (cfg.kind !== "chords"){
           var last = lay[lay.length - 1], end = last ? last.start + last.len : 0, ns = ln.notes(end), geo = g.geoList(), pk = 0;
           // notes before the first downbeat (more than the early margin): with pickup "auto" they are written as a short bar in front of bar 1
-          if (cfg.pickup === "auto" && ns.length && ns[0].on < -RULES.early){
+          // (with pickupBeats given, a note more than half of it before the downbeat is enough: a half-beat pickup is not lost to the early margin)
+          if (cfg.pickup === "auto" && ns.length && ns[0].on < (cfg.pickupBeats ? -cfg.pickupBeats / 2 : -RULES.early)){
             pk = cfg.pickupBeats || Math.min(cfg.count, Math.ceil(-ns[0].on - 1e-6));
             ns = ns.map(function (n){ return Object.assign({}, n, { on: n.on + pk, off: n.off + pk }); });
             geo = [g.pickupGeo(pk)].concat(geo); g.insertPickup(pk); pickupBeats = pk; tr.pickup = pk;
