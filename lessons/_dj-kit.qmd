@@ -1,0 +1,6 @@
+```{=html}
+<link rel="stylesheet" href="/apps/shared/dj/turntables.css?v=1">
+<script src="/apps/shared/dj/turntables.js?v=1"></script>
+<script src="/apps/shared/dj/sampler-pads.js?v=1"></script>
+<script>Turntables.init(); SamplerPads.init();</script>
+```

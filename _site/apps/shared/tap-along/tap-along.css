@@ -1,0 +1,50 @@
+/* Tap Along and Tap Latency: a phone-first page with a fixed pad of three big buttons at the bottom. */
+.ta { --ta-accent: #0d6efd; --ta-pad-h: 7.5rem; padding-bottom: calc(var(--ta-pad-h) + 2rem); }
+.ta button { font: inherit; color: inherit; background: #fff; border: 1px solid #ced4da; border-radius: .4rem; padding: .35rem .7rem;
+  cursor: pointer; touch-action: manipulation; }
+.ta button:active { background: #e9ecef; }
+.ta-row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .4rem 0; }
+.ta-muted { color: #6c757d; font-size: .9rem; }
+
+/* status strip: clock, bar, section; sticks under the navbar */
+.ta-status { position: sticky; top: 0; z-index: 5; display: flex; gap: 1rem; align-items: baseline; flex-wrap: wrap;
+  background: rgba(255,255,255,.95); border-bottom: 1px solid #dee2e6; padding: .35rem 0; }
+.ta-clock { font-variant-numeric: tabular-nums; font-size: 1.6rem; font-weight: 600; }
+.ta-bar { font-variant-numeric: tabular-nums; font-size: 1.1rem; }
+.ta-sec { font-size: 1.1rem; color: var(--ta-accent); font-weight: 600; }
+
+/* the sheet: chords above their syllables */
+.ta-sheet { font-size: 1.15rem; line-height: 1.2; margin: .8rem 0; }
+.ta-sheet.is-big { font-size: 1.5rem; }
+.ta-head { margin: 1.1rem 0 .3rem; font-weight: 700; font-size: .8em; text-transform: uppercase; letter-spacing: .06em; color: #6c757d; }
+.ta-head.is-now { color: var(--ta-accent); }
+.ta-line { margin: .15rem 0 .35rem; }
+.ta-seg { display: inline-flex; flex-direction: column; vertical-align: bottom; white-space: pre; }
+.ta-ch { align-self: flex-start; font-weight: 700; font-size: .85em; min-height: 1.15em; padding-right: .3em; color: #495057; border-radius: .2rem; }
+.ta-ch.is-now { background: var(--ta-accent); color: #fff; padding: 0 .3em; }
+.ta-ch.is-next { outline: 2px dashed var(--ta-accent); outline-offset: 1px; }
+.ta-ch.is-done { color: #adb5bd; }
+.ta-chordline .ta-seg { margin-right: .6em; }
+
+/* the pad: buttons 1 2 3 across, small controls above */
+.ta-pad { position: fixed; left: 0; right: 0; bottom: 0; z-index: 20; background: rgba(248,249,250,.97); border-top: 1px solid #dee2e6;
+  padding: .4rem max(.6rem, env(safe-area-inset-left)) calc(.5rem + env(safe-area-inset-bottom)); }
+.ta-pad-small { display: flex; gap: .4rem; justify-content: center; margin-bottom: .4rem; flex-wrap: wrap; }
+.ta-pad-small button { padding: .3rem .8rem; font-size: .95rem; }
+.ta-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: .5rem; max-width: 700px; margin: 0 auto; }
+.ta-key { height: 4.6rem; font-size: 1.15rem !important; font-weight: 700; border-width: 2px !important; user-select: none; -webkit-user-select: none;
+  -webkit-touch-callout: none; touch-action: none; }
+.ta-key small { display: block; font-weight: 400; font-size: .75rem; color: #6c757d; }
+.ta-key.is-hit { background: var(--ta-accent) !important; color: #fff; }
+.ta-key.is-hit small { color: #fff; }
+.ta-key.is-cue { border-color: var(--ta-accent) !important; box-shadow: 0 0 0 3px rgba(13,110,253,.35); }
+.ta-key:disabled { opacity: .35; }
+
+.ta details { margin: .6rem 0; }
+.ta summary { cursor: pointer; font-weight: 600; }
+.ta textarea { width: 100%; min-height: 12rem; font-family: ui-monospace, Menlo, monospace; font-size: .85rem; }
+.ta input[type=text] { width: 100%; max-width: 30rem; }
+.ta-table { border-collapse: collapse; margin: .6rem 0; font-variant-numeric: tabular-nums; }
+.ta-table td, .ta-table th { border-bottom: 1px solid #dee2e6; padding: .3rem .7rem; text-align: right; }
+.ta-table th:first-child, .ta-table td:first-child { text-align: left; }
+.ta-cue { font-size: 1.6rem; font-weight: 700; margin: 1rem 0; min-height: 2.2em; }

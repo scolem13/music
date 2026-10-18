@@ -38,9 +38,9 @@
     if (!m) return null;
     const tonic = m[1].toUpperCase() + (m[2]||"");
     const resting = ((LETTER_PC[m[1].toUpperCase()] + (m[2]==="#"?1:m[2]==="b"?-1:0)) % 12 + 12) % 12;
-    let mode = (m[3]||"maj").toLowerCase();
+    let mode = (m[3]||"maj").toLowerCase(); if (mode === "hm") mode = "m";   // harmonic minor: the minor key's signature
     let mo = MODE_FIFTHS[mode]; if (mo === undefined){ mode = "maj"; mo = 0; }
-    const fifths = (MAJOR_FIFTHS[tonic] == null ? 0 : MAJOR_FIFTHS[tonic]) + mo;
+    const fifths = (MAJOR_FIFTHS[tonic] == null ? "FCGDAEB".indexOf(tonic[0]) - 1 + (tonic[1] === "#" ? 7 : tonic[1] === "b" ? -7 : 0) : MAJOR_FIFTHS[tonic]) + mo;
     const doPc = (((fifths*7) % 12) + 12) % 12;
     return { do: doPc, resting, mode, tonic };
   }

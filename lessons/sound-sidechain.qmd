@@ -2,6 +2,10 @@
 title: "Sound 14: Sidechain"
 toc: true
 toc-depth: 2
+description: "Music ducking under a kick drum, from invisible glue to EDM pumping, and radio-style ducking under a voice."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A [compressor](sound-compressor.qmd) turns a sound down when *that sound* gets loud. A **sidechain**

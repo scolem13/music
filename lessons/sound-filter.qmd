@@ -2,6 +2,10 @@
 title: "Sound 4: Filters"
 toc: true
 toc-depth: 2
+description: "Low-pass, high-pass, resonance, band-pass, notch and EQ, on noise, music or your own voice."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A **filter** turns some frequencies down and lets others through. It is the most-used control on a

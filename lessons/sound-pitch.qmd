@@ -2,6 +2,10 @@
 title: "Sound 21: Pitch Effects"
 toc: true
 toc-depth: 2
+description: "How a pitch shifter works, the octaver, a harmonizer that stays in key, and auto-tune from natural to robotic."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 Some effects change the **pitch** of a sound while it plays: an octave below to fatten a bass, a

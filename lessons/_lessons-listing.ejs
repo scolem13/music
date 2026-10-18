@@ -1,0 +1,12 @@
+<%
+// The Lessons listing: one <li> per lesson, its front matter's instruments / topics / has as data- attributes for index.qmd's filters.
+const j = v => Array.isArray(v) ? v.join(' ') : (v || '');
+%>
+<ul class="ll-list" id="ll-list">
+<% for (const item of items) { %>
+  <li <%= metadataAttrs(item) %> data-for="all <%= j(item.instruments) %>" data-topic="<%= j(item.topics) %>" data-has="<%= j(item.has) %>">
+    <a href="<%- item.path %>"><%= item.title %></a>
+    <% if (item.description) { %><p><%- item.description %></p><% } %>
+  </li>
+<% } %>
+</ul>

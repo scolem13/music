@@ -1,0 +1,85 @@
+---
+title: "DAW 4: Arranging a Song"
+toc: true
+toc-depth: 2
+description: "Clips on tracks; the band as session players; duplicate, split, drop parts out."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+A loop is not a song. **Arranging** is laying parts out along the timeline so the song has sections (intro, verse, chorus, bridge,
+outro) and changes as it goes: instruments come in and drop out, the drums get busier for the chorus, everything stops for a beat.
+In a DAW you arrange by moving **clips** (Logic and BandLab call them **regions**) on the tracks.
+
+## Session players
+
+Instead of writing every part, let the band write a start. Under the tracks, type chords (bars split by `|`), pick a **Style** and press
+**Write the parts**: the Backing Track band's drummer, bassist and chord player each write their part into a clip at the playhead.
+Logic's **Drummer** and **Session Players**, BandLab's **SongStarter** and Ableton's MIDI generators do the same job. The parts are now
+ordinary MIDI clips: open them in the editor and change any note.
+
+## Build a song
+
+1. Press **Write the parts** with *C | Am | F | G*, Rock, 2 times. That's 8 bars: call it the **verse**.
+2. Move the playhead to bar 9 (click the ruler), type *F | G | C | Am* and write 2 times again: the **chorus**.
+3. Select a clip and **Duplicate** (Ctrl/Cmd+D) to repeat a section. Set **Song** length longer first if you run out of room.
+4. **Drop a part out**: delete the Chords clip in the first verse, or drag the drum clip later so the drums enter at bar 5.
+   An arrangement is as much about who *isn't* playing.
+5. **Split** a clip at the playhead (put the playhead inside the clip, press Split) and delete the second half for a stop.
+6. Drag a clip by its right edge to change its length; drag the clip to move it (hold **Alt** to move by beats, not bars), or onto another track.
+7. Try a different **Style** for the chorus only: the band rewrites the clips under it, the verse stays.
+
+<div class="mdaw" data-id="daw-arrange" data-preset="band" data-bars="24" data-show="transport tracks editor band"></div>
+
+## Common shapes
+
+- **Build**: start with one or two instruments, add one every 4 or 8 bars.
+- **Contrast**: verse sparse and low, chorus full and wide; a bridge in other chords.
+- **Fewer is louder**: dropping the drums for two bars makes their return hit harder.
+- Sections are usually **4, 8 or 16 bars**. The DAW's grid makes it easy to keep them that way.
+
+Arranging for a band in more depth: [Arranging 1: Who Plays What](arrange-band.qmd). Naming sections: [Section labels](section-labels.qmd).
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| A clip is called | Region | Clip | Region |
+| Generated parts | **SongStarter**; loops | MIDI Generators (Live 12); loops from the browser | **Session Players**: Drummer, Bass Player, Keyboard Player |
+| Duplicate | **Alt/Option-drag** | **Cmd/Ctrl+D** | Edit → Repeat |
+| Split at the playhead | **S** (slice) | **Cmd/Ctrl+E** | Edit → Split → Regions at Playhead |
+| Move without the grid | Turn snap off | **Cmd/Ctrl+4** turns the grid off | The Snap menu |
+| Sections | Use region names / colours | Locators (Create → Add Locator) | **Arrangement track** (markers you can drag, copy and move whole sections) |
+
+</div>
+
+## Next
+
+- [DAW 5: The Mixer](daw-mixer.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Arrangement View." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/arrangement-view/](https://www.ableton.com/en/live-manual/12/arrangement-view/).
+
+"Duplicating and Extending Regions." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/57253754933529-Duplicating-and-Extending-Regions](https://help.bandlab.com/hc/en-us/articles/57253754933529-Duplicating-and-Extending-Regions).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Repeat Regions." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac](https://support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac).
+
+"Session Players Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac](https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac).
+
+"Slicing and Merging Regions." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/57252800910745-Slicing-and-Merging-Regions](https://help.bandlab.com/hc/en-us/articles/57252800910745-Slicing-and-Merging-Regions).
+
+"Split Regions." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/split-regions-lgcpf7c0e886/mac](https://support.apple.com/guide/logicpro/split-regions-lgcpf7c0e886/mac).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

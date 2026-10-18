@@ -1,0 +1,19 @@
+/* PanelColumns (panel-columns.js): the grip and ⇄ on every part's header, and where a dragged part would land. */
+.pc-tools { display: inline-flex; align-items: center; gap: .15rem; margin-left: auto; padding-left: .5rem; flex: none; }
+summary .nt-sum + .pc-tools, summary .nt-sum ~ .pc-tools { margin-left: .4rem; }
+.pc-grip, .pc-across {
+  display: inline-flex; align-items: center; justify-content: center; width: 1.6rem; height: 1.6rem;
+  font: 400 .95rem/1 system-ui, sans-serif; color: #6c757d; background: none; border: 1px solid transparent; border-radius: .3rem;
+  opacity: .45; transition: opacity .15s;
+}
+.pc-grip { cursor: grab; }
+.pc-across { cursor: pointer; padding: 0; }
+summary:hover .pc-tools > *, .ts-fold-h:hover .pc-tools > *, .pc-tools > :focus-visible { opacity: 1; }
+.pc-grip:hover, .pc-across:hover { border-color: #ced4da; background: rgba(0, 0, 0, .04); }
+.pc-dragging { opacity: .45; }
+.pc-drop-mark { height: 0; border-top: 3px solid #0d6efd; border-radius: 2px; margin: -2px 0; }
+.pc-empty { min-height: 6rem; border: 2px dashed transparent; border-radius: .4rem; }
+body.pc-moving .pc-empty { border-color: #ced4da; }
+/* the header holding the tools lays out in a row */
+.ts-fold-h:has(.pc-tools) { display: flex; align-items: center; }
+details > summary:has(.pc-tools) { display: flex; align-items: center; }

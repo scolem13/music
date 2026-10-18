@@ -1,0 +1,268 @@
+---
+title: "DAW 8: Your First Session in a Real DAW"
+toc: true
+toc-depth: 2
+description: "Step by step in BandLab, Ableton Live and Logic Pro, linked to each manual: setup, import, record, automate, bounce."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: []
+---
+
+Everything in the small DAW is in BandLab, Ableton Live and Logic Pro, under other names and in other places. This lesson is a
+checklist for your first session in one of them, then a small project: bring in the song you made here, and add the things
+the small DAW can't do.
+
+Each step links to the page in that program's own manual (BandLab Help Center, the Ableton Live 12 Reference Manual, the Logic
+Pro 12.3 User Guide). Menus move between versions: if a step doesn't match what you see, the linked page is the one to trust.
+
+## Before you start
+
+- **Headphones, wired.** Bluetooth headphones add a delay you can hear: BandLab's help puts wired at about 5–10 ms and
+  Bluetooth anywhere from 34 to 300 ms ([BandLab: what is latency?](https://help.bandlab.com/hc/en-us/articles/58874563630361-Latency-Issues)).
+- **Your files from DAW 7**: `mini-daw.mid` (the notes) and, if you like, `mini-daw.wav` (the mix, to compare with).
+- A name for the project, and a folder to keep it in.
+
+## The checklist
+
+::: {.panel-tabset}
+
+## BandLab
+
+BandLab runs in the browser (and as a phone app). Projects are saved to your BandLab account, so there is no folder to choose.
+Keyboard shortcuts work only in the web Studio ([shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts)).
+
+1. **Open the Studio** and start a new project ([Getting started with the Studio](https://help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio)).
+2. **Tempo and metronome.** Open the arrow next to the metronome in the transport bar: tempo, click sound, click volume and a
+   **count-in** for recording. **M** turns the click on and off ([Using the metronome](https://help.bandlab.com/hc/en-us/articles/115002960274-Using-the-Metronome)).
+3. **Bring in your MIDI file.** The web Studio imports MIDI files as well as audio (WAV, MP3 and others)
+   ([supported formats](https://help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats)). Then pick an
+   instrument for each track; give the drum track a drum kit.
+4. **Edit like DAW 3 and 4.** Double-click a MIDI region to edit its notes; select notes and quantize (right-click → Quantize, or **Q**)
+   ([Editing MIDI regions](https://help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks)).
+   Slice a region at the playhead with **S**, duplicate with **Alt/Option-drag**
+   ([Slicing and merging](https://help.bandlab.com/hc/en-us/articles/57252800910745-Slicing-and-Merging-Regions),
+   [Duplicating and extending](https://help.bandlab.com/hc/en-us/articles/57253754933529-Duplicating-and-Extending-Regions)).
+5. **Record audio.** Add a Voice/Audio track, put your headphones on, and press **R** to record (**R** again stops). Hearing yourself
+   (monitoring) is offered on Voice/Audio, Guitar and Bass tracks ([Studio FAQ](https://blog.bandlab.com/studio-faq/)).
+6. **Fix the latency** if your take lands late: BandLab has an automatic latency test; on iPhone and iPad it corrects itself
+   ([Fixing latency](https://help.bandlab.com/hc/en-us/articles/115002959414-Fixing-Latency)).
+7. **One effect, one automation move.** Add an effect to the voice track (an EQ, a limiter), then switch on automation in the
+   timeline and draw points so the voice comes up in the chorus ([BandLab blog: the Mix Editor](https://blog.bandlab.com/mix-editor/)).
+8. **Download the mix.** Project → Download → Mixdown As, then choose the format; single tracks can be downloaded as audio or MIDI
+   ([Downloading tracks](https://help.bandlab.com/hc/en-us/articles/115002959774-How-do-I-download-tracks),
+   [Exporting MIDI](https://help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files)).
+
+## Ableton Live
+
+Live has two views: **Arrangement** (the timeline, as in these lessons) and **Session** (a grid of clips to launch). **Tab** switches.
+Work in Arrangement for this project. All shortcuts: [Live keyboard shortcuts](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+1. **Set up audio.** Live → Settings (Mac) or Options → Settings (Windows), **Cmd/Ctrl+,** → Audio: choose the driver and the input and
+   output device ([Audio settings](https://www.ableton.com/en/live-manual/12/first-steps/#audio); on Windows an ASIO driver is recommended;
+   [setting up an audio interface](https://help.ableton.com/hc/en-us/articles/211476789)). The same page shows the buffer size and the overall latency.
+2. **Save the Set** straight away (File → Save Live Set As). Live makes a **Project** folder for it; when you finish, File →
+   **Collect All and Save** copies every sound the Set uses into that folder
+   ([saving Sets](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/#creating-opening-and-saving-sets),
+   [collecting files](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/#collecting-external-files)).
+3. **Tempo and metronome**: the tempo box and the metronome switch in the Control Bar (**O**); the count-in is in the menu next
+   to the metronome ([metronome settings](https://www.ableton.com/en/live-manual/12/recording-new-clips/#metronome-settings),
+   [count-in](https://www.ableton.com/en/live-manual/12/recording-new-clips/#recording-with-count-in)).
+4. **Bring in your MIDI file**: drag it from Live's browser into the Arrangement, or Create → Import MIDI File
+   ([MIDI files](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/#midi-files)). Each track arrives as a MIDI clip with
+   no sound: drop an instrument on each, and a **Drum Rack** kit on the drum track.
+5. **Edit like DAW 3 and 4.** Draw mode **B**; quantize **Cmd/Ctrl+U**; split **Cmd/Ctrl+E**; duplicate **Cmd/Ctrl+D**; loop the selection
+   **Cmd/Ctrl+L** ([splitting clips](https://www.ableton.com/en/live-manual/12/arrangement-view/#splitting-clips),
+   [the Arrangement loop](https://www.ableton.com/en/live-manual/12/arrangement-view/#the-arrangement-loop)).
+6. **Record audio.** Insert an audio track (Create → Insert Audio Track), choose its input, **arm** it, and press the Arrangement
+   Record button (**F9**) ([choosing an input](https://www.ableton.com/en/live-manual/12/recording-new-clips/#choosing-an-input),
+   [arming tracks](https://www.ableton.com/en/live-manual/12/recording-new-clips/#arming-record-enabling-tracks)). An armed track is
+   monitored by default (Auto); with speakers, set its monitor to **Off** ([monitoring](https://www.ableton.com/en/live-manual/12/routing-and-i-o/#monitoring)).
+7. **Fix the latency** if your take lands late: **Driver Error Compensation** in Settings → Audio. It only applies to tracks with the
+   monitor set to Off ([Driver Error Compensation FAQ](https://help.ableton.com/hc/en-us/articles/115000234830)).
+8. **One effect, one automation move.** Drag an audio effect onto the voice track. Press **A** to show automation, pick the track's
+   volume, and draw (or click) points so the voice comes up in the chorus
+   ([drawing and editing automation](https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/#drawing-and-editing-automation)).
+9. **Export.** File → Export Audio/Video (**Cmd/Ctrl+Shift+R**) for the mix; File → Export MIDI Clip for the notes of one clip
+   ([exporting audio](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/#exporting-audio-and-video),
+   [exporting MIDI](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/#exporting-midi-files)).
+
+## Logic Pro
+
+Mac only. The user guide is for Logic Pro 12.3 (the version menu on each page goes back to older ones).
+
+1. **Set up audio.** Logic Pro → Settings → Audio → **Devices**: the input and output device, and the **I/O Buffer Size**. Small for
+   recording (less delay), large for mixing (more plug-ins); clicks and crackles mean it's too small
+   ([Audio Devices settings](https://support.apple.com/guide/logicpro/audio-devices-settings-lgcpbb81aca5/mac),
+   [managing monitoring latency](https://support.apple.com/105040)).
+2. **New project.** File → New from Template (**Cmd+N**), New Project; open Details to set the tempo, key, time signature and the input
+   and output device ([Create projects](https://support.apple.com/guide/logicpro/create-projects-lgcpce0f09d9/mac)). Every
+   **Cmd+S** keeps a backup; File → Revert to goes back to one ([alternatives and backups](https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac)).
+3. **Metronome**: **K**; count-in **Shift+K**; Control-click the metronome button to choose when it clicks
+   ([Use the metronome](https://support.apple.com/guide/logicpro/use-the-metronome-lgcp0534986f/mac)). Cycle: **C**
+   ([the cycle area](https://support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/mac)).
+4. **Bring in your MIDI file**: File → Import → MIDI File (it lands at the playhead), or drag it from the Finder into the Tracks area
+   ([Standard MIDI files](https://support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac)). Choose a patch for each track.
+5. **Edit like DAW 3 and 4.** Double-click a region for the Piano Roll; quantize with the **Time Quantize** menu and its **Strength**
+   slider (it can always be undone) ([quantize note timing](https://support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac)).
+   Edit → Split → Regions at Playhead ([split regions](https://support.apple.com/guide/logicpro/split-regions-lgcpf7c0e886/mac)),
+   Edit → Repeat ([repeat regions](https://support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac)). Mixer: **X**.
+   The band's role is played by **Session Players** (Drummer, Bass Player, Keyboard Player)
+   ([Session Players](https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac)); drum steps by the
+   **Step Sequencer** ([overview](https://support.apple.com/guide/logicpro/step-sequencer-overview-lgcp39acefc9/mac)).
+6. **Record audio.** Add Tracks (**Option+Cmd+N**) → Audio → Mic or Line, choose the Audio Input ([Create tracks](https://support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac)).
+   Select the track, headphones on, **R** records, **Space** stops ([record from a microphone](https://support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/mac)).
+   The guide itself says to use headphones when the metronome is on, so the click isn't recorded.
+7. **Monitoring**: the **I** button on the track header; it always adds some delay ([input monitoring](https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac)).
+   Record → **Low Latency Mode** keeps it small ([managing monitoring latency](https://support.apple.com/105040)).
+8. **One effect, one automation move.** Add a plug-in in an Audio FX slot ([plug-ins](https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac)).
+   Press **A** to show automation, choose Volume, and click to add points
+   ([show automation](https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/mac),
+   [add points](https://support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac)).
+9. **Bounce.** File → Bounce → Project or Section; move the End a little past the last region so reverb tails aren't cut off
+   ([bounce a project](https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac)).
+   Notes out: File → Export → Selection as MIDI File.
+
+:::
+
+## The project
+
+Rebuild your small-DAW song, then do three things it couldn't:
+
+1. **Same song, new sounds.** Import `mini-daw.mid`, choose instruments, match the tempo. Play both mixes: what changed?
+2. **Record one real part** with a microphone, in headphones, to the click (DAW 6). Record it three times and keep the best.
+   Real DAWs keep every pass (**takes**) and let you build one from the best bits (**comping**):
+   [Logic](https://support.apple.com/guide/logicpro/comping-overview-lgcp317d758e/mac), [Ableton](https://www.ableton.com/en/live-manual/12/comping/#take-lanes).
+3. **Add one effect and one automation move.** Reverb on the voice, the chorus louder than the verse.
+4. **Bounce it**, listen on earbuds and on a phone speaker, and fix the loudest problem ([Recording 5: Mixing](rec-mixing.qmd)).
+
+## What you'll meet that wasn't here
+
+- **A loop and sound library**: BandLab's Sounds, Live's browser, Logic's [Apple Loops](https://support.apple.com/guide/logicpro/apple-loops-in-logic-pro-lgcp734a05f6/mac). Fast to start with; remember everyone else has them too.
+- **Plug-ins**: EQ, compressors, reverb, delay, amp models, synths. The [sound-design lessons](sound-harmonics.qmd) taught what they do; now it's only finding them.
+- **Automation**: any knob can move by itself through the song.
+- **Generated parts**: Logic's Session Players and BandLab's SongStarter do what the band does in DAW 4.
+- **Clip launching**: Live's Session View and Logic's Live Loops, for trying ideas live before arranging them.
+
+## When something goes wrong
+
+| What happens | Likely cause | Fix |
+|---|---|---|
+| No sound at all | The wrong output device | The audio settings (step 1) |
+| Clicks and crackles | Buffer too small for the computer | Raise the buffer size one step |
+| Hearing yourself late | Monitoring latency, Bluetooth | Wired headphones, smaller buffer, Low Latency Mode, or monitoring off |
+| Takes land late on the grid | Recording latency | The latency fix (BandLab test, Live's Driver Error Compensation) |
+| A howl | Monitoring through speakers | Headphones, or monitoring off |
+| Click or band in the vocal | Bleed | Headphones (DAW 6) |
+| The bounce crackles or sounds squashed | The master clipped | Pull the master down (DAW 5) |
+
+## All the DAW lessons
+
+1. [The Timeline and the Transport](daw-timeline.qmd)
+2. [Programming a Beat](daw-beat.qmd)
+3. [The Piano Roll and MIDI](daw-pianoroll.qmd)
+4. [Arranging a Song](daw-arrange.qmd)
+5. [The Mixer](daw-mixer.qmd)
+6. [Recording Audio: Bleed and Headphones](daw-record.qmd)
+7. [Bounce, Export and Taking It Further](daw-export.qmd)
+8. Your First Session in a Real DAW
+
+Checked against BandLab's Help Center, the Ableton Live 12 Reference Manual and the Logic Pro 12.3 User Guide in October 2026.
+
+```{=html}
+<style>.panel-tabset table{font-size:.9rem}</style>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Add Automation Points." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac](https://support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac).
+
+"Add, Remove, Move, and Copy Plug-ins." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac](https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac).
+
+"Apple Loops in Logic Pro." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/apple-loops-in-logic-pro-lgcp734a05f6/mac](https://support.apple.com/guide/logicpro/apple-loops-in-logic-pro-lgcp734a05f6/mac).
+
+"Arrangement View." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/arrangement-view/](https://www.ableton.com/en/live-manual/12/arrangement-view/).
+
+"Audio Devices Settings." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/audio-devices-settings-lgcpbb81aca5/mac](https://support.apple.com/guide/logicpro/audio-devices-settings-lgcpbb81aca5/mac).
+
+"Automation and Editing Envelopes." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/](https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/).
+
+"Bounce a Project to an Audio File." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac](https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac).
+
+"Comping." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/comping/](https://www.ableton.com/en/live-manual/12/comping/).
+
+"Comping Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/comping-overview-lgcp317d758e/mac](https://support.apple.com/guide/logicpro/comping-overview-lgcp317d758e/mac).
+
+"Create Projects." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/create-projects-lgcpce0f09d9/mac](https://support.apple.com/guide/logicpro/create-projects-lgcpce0f09d9/mac).
+
+"Create Tracks." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac](https://support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac).
+
+"Driver Error Compensation." *Ableton Help*, Ableton, [help.ableton.com/hc/en-us/articles/115000234830](https://help.ableton.com/hc/en-us/articles/115000234830).
+
+"Duplicating and Extending Regions." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/57253754933529-Duplicating-and-Extending-Regions](https://help.bandlab.com/hc/en-us/articles/57253754933529-Duplicating-and-Extending-Regions).
+
+"First Steps." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/first-steps/](https://www.ableton.com/en/live-manual/12/first-steps/).
+
+"Fixing Latency." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002959414-Fixing-Latency](https://help.bandlab.com/hc/en-us/articles/115002959414-Fixing-Latency).
+
+"Getting Started with the BandLab Studio." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio](https://help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio).
+
+"How Do I Download Tracks?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002959774-How-do-I-download-tracks](https://help.bandlab.com/hc/en-us/articles/115002959774-How-do-I-download-tracks).
+
+"How Do I Edit MIDI Tracks?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks](https://help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks).
+
+"How Do I Export MIDI Files?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files](https://help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files).
+
+"Latency Issues." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/58874563630361-Latency-Issues](https://help.bandlab.com/hc/en-us/articles/58874563630361-Latency-Issues).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Manage Input Monitoring Latency in Logic Pro." *Apple Support*, Apple, [support.apple.com/105040](https://support.apple.com/105040).
+
+"Managing Files and Sets." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/managing-files-and-sets/](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/).
+
+"Mix Editor." *BandLab Blog*, BandLab Technologies, [blog.bandlab.com/mix-editor/](https://blog.bandlab.com/mix-editor/).
+
+"Quantize the Timing of Notes." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac](https://support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac).
+
+"Record Sound from a Microphone or Electric Instrument." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/mac](https://support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/mac).
+
+"Recording New Clips." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/recording-new-clips/](https://www.ableton.com/en/live-manual/12/recording-new-clips/).
+
+"Repeat Regions." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac](https://support.apple.com/guide/logicpro/repeat-regions-lgcpe51317b6/mac).
+
+"Routing and I/O." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/routing-and-i-o/](https://www.ableton.com/en/live-manual/12/routing-and-i-o/).
+
+"Session Players Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac](https://support.apple.com/guide/logicpro/session-players-overview-lgcpbf624405/mac).
+
+"Setting Up an Audio Interface." *Ableton Help*, Ableton, [help.ableton.com/hc/en-us/articles/211476789](https://help.ableton.com/hc/en-us/articles/211476789).
+
+"Show Automation Curves." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/mac](https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/mac).
+
+"Slicing and Merging Regions." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/57252800910745-Slicing-and-Merging-Regions](https://help.bandlab.com/hc/en-us/articles/57252800910745-Slicing-and-Merging-Regions).
+
+"Split Regions." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/split-regions-lgcpf7c0e886/mac](https://support.apple.com/guide/logicpro/split-regions-lgcpf7c0e886/mac).
+
+"Standard MIDI Files." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac](https://support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac).
+
+"Step Sequencer Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/step-sequencer-overview-lgcp39acefc9/mac](https://support.apple.com/guide/logicpro/step-sequencer-overview-lgcp39acefc9/mac).
+
+"Studio FAQ." *BandLab Blog*, BandLab Technologies, [blog.bandlab.com/studio-faq/](https://blog.bandlab.com/studio-faq/).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+
+"Supported Import and Export File Formats." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats](https://help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats).
+
+"Turn On Input Monitoring for Audio Tracks." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac](https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac).
+
+"Use Project Alternatives and Backups." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac](https://support.apple.com/guide/logicpro/use-project-alternatives-and-backups-lgcpa158ef77/mac).
+
+"Use the Cycle Area." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/mac](https://support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/mac).
+
+"Use the Metronome." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/use-the-metronome-lgcp0534986f/mac](https://support.apple.com/guide/logicpro/use-the-metronome-lgcp0534986f/mac).
+
+"Using the Metronome." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002960274-Using-the-Metronome](https://help.bandlab.com/hc/en-us/articles/115002960274-Using-the-Metronome).
+:::
+<!-- /works-cited -->
+

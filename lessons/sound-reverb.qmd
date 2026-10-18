@@ -2,6 +2,10 @@
 title: "Sound 16: Reverb"
 toc: true
 toc-depth: 2
+description: "A convolution reverb with a room you build: decay, pre-delay, damping and early reflections; spring reverb, shimmer and freeze."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 Clap in a cathedral and the sound goes on for seconds after your hands stop. It bounces off the walls,

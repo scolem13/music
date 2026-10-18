@@ -2,6 +2,10 @@
 title: "Sound 7: Subtractive Synthesis"
 toc: true
 toc-depth: 2
+description: "A two-oscillator synth with filter, envelopes and LFO, played from the keys or MIDI, with presets for bass, brass, pads and plucks."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 **Subtractive synthesis** starts with a wave full of harmonics and takes some away with a filter.

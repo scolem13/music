@@ -1,0 +1,138 @@
+---
+title: "DAW 6: Recording Audio: Bleed and Headphones"
+toc: true
+toc-depth: 2
+description: "Record from the microphone with speakers, then headphones, and measure the bleed; monitoring, feedback and latency."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+So far every track has held MIDI notes. An **audio track** holds sound: what a microphone heard. Recording one is simple
+(pick the track, press record, play), but the microphone hears *everything* in the room, including the song you are playing
+along to. This lesson records twice, once with speakers and once with headphones, and measures the difference.
+
+You need a microphone (the one in a laptop or a headset is fine), Chrome or Edge, and a pair of headphones.
+
+## The setup
+
+The **Voice** track below is an audio track; the band has 8 bars of drums, bass and keys to play along with. With the Voice track
+selected, the **● Rec** button records from the microphone: a short sound check first (it tells speakers from headphones and asks
+for your loudest phrase), then one bar of count-in, then recording. The small meter by the buttons is the microphone's **input level**:
+keep your loudest moments out of the red ([Recording 1: Gain Staging](rec-gain-staging.qmd)).
+
+<div class="mdaw" data-id="daw-record" data-preset="record" data-show="transport tracks editor mixer record"></div>
+
+## Experiment 1: speakers
+
+1. Take off your headphones and play the band through your speakers at a normal listening level.
+2. Select the **Voice** track, press **● Rec** and **stay silent** for the whole 8 bars. Press Space to stop.
+3. Under the tracks, *This take* gives the take's **average level**. Write it down: everything in that take is **bleed**,
+   the band and the click coming back into the microphone.
+4. Click **S** on the Voice track to solo it and play. You hear the band, thin and roomy, and the click.
+5. Now record yourself singing or clapping along. Solo it again: you, *plus* the band, *plus* the click.
+
+Why it matters: that copy of the band is now part of your vocal for good. Turn the vocal up and the band comes up too.
+Change a chord in the keys part, and the old chord is still faintly in the vocal. Compress or EQ the vocal and you
+compress and EQ the band in it. And the click, which nobody is meant to hear, is in the song.
+
+## Experiment 2: headphones
+
+1. Plug in headphones, put them on, and **record 8 silent bars again**.
+2. Compare the average level with the speaker take. Closed headphones at a sensible level are usually **20 to 40 dB** quieter in
+   the microphone: almost nothing.
+3. Now turn the headphones up loud, or take one side off, and record silence again. Headphones leak too: open-back ones,
+   loud clicks and a mic close to the ear all bring bleed back.
+
+| Take (silent) | Average level |
+|---|---|
+| Speakers | ______ dBFS |
+| Headphones | ______ dBFS |
+| Headphones, loud / one side off | ______ dBFS |
+
+Every studio records vocals and overdubs in headphones for this reason. More on headphones and the cue mix:
+[Recording 4: Monitoring and Headphones](rec-monitoring.qmd); on bleed between instruments in one room:
+[Recording 3: Distance, Bleed and Phase](rec-placement.qmd).
+
+## Monitoring and latency
+
+**🎧 Monitor** sends the microphone through the Voice track so you hear yourself in the headphones, as a DAW's
+**input monitoring** does. Two things to notice:
+
+- **Only with headphones.** Monitoring through speakers sends the mic to the speakers, back into the mic, round and round: **feedback**, a howl.
+- You hear yourself a little **late**. Sound takes time to go through the computer and back out: **latency**, here
+  shown in milliseconds. Over about 10 ms it starts to feel odd; over 30 ms it's hard to sing with. Audio interfaces have
+  **direct monitoring** (the mic straight to the headphones, before the computer) to get round it.
+
+Latency also makes recordings land late on the timeline. The DAW moves each take earlier by the measured amount: the
+**Latency fix** box in the editor. Set it to 0 on a take and look at the waveform: everything has slid late against the grid.
+
+## Why phone calls don't sound like this
+
+Video-call apps and voice memos run **echo cancellation**: they subtract what the speakers played from what the mic heard.
+It's good for calls and bad for music (it chews up singing and room sound), so this DAW, like every real one, switches it off and
+records exactly what the microphone hears.
+
+## Tips for a clean take
+
+- Headphones on, **closed-back** if you have them. The click quieter than you think.
+- Point the microphone **away from** the headphones and the speakers; get close to the mic.
+- Record a few seconds of the room in silence: you will hear what noise is there before it is under your voice.
+- Watch the input meter: peaks around −10 dBFS, never in the red.
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Make an audio track | New track → Voice/Audio | Create → Insert Audio Track | Add Tracks (**Option+Cmd+N**) → Audio → Mic or Line |
+| Choose the input | The track's input | The track's input chooser (View → In/Out) | Audio Input in the New Tracks dialog |
+| Arm and record | Select the track, **R** | Arm the track, Arrangement Record (**F9**) | Select the track, **R** |
+| Input monitoring | On Voice/Audio, Guitar and Bass tracks | Monitor: In / **Auto** (the default) / Off | Input Monitoring button (**I**) on the track |
+| Latency fix | The latency test ([Fixing latency](https://help.bandlab.com/hc/en-us/articles/115002959414-Fixing-Latency)) | Settings → Audio → Driver Error Compensation (monitor Off) | Settings → Audio → Devices: I/O Buffer Size; Record → Low Latency Mode |
+| Input level | Track meter while armed | Track meter while armed | Channel strip meter while armed |
+
+</div>
+
+## Next
+
+- [DAW 7: Bounce, Export and Taking It Further](daw-export.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Audio Devices Settings." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/audio-devices-settings-lgcpbb81aca5/mac](https://support.apple.com/guide/logicpro/audio-devices-settings-lgcpbb81aca5/mac).
+
+"Comping." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/comping/](https://www.ableton.com/en/live-manual/12/comping/).
+
+"Comping Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/comping-overview-lgcp317d758e/mac](https://support.apple.com/guide/logicpro/comping-overview-lgcp317d758e/mac).
+
+"Driver Error Compensation." *Ableton Help*, Ableton, [help.ableton.com/hc/en-us/articles/115000234830](https://help.ableton.com/hc/en-us/articles/115000234830).
+
+"First Steps." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/first-steps/](https://www.ableton.com/en/live-manual/12/first-steps/).
+
+"Fixing Latency." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002959414-Fixing-Latency](https://help.bandlab.com/hc/en-us/articles/115002959414-Fixing-Latency).
+
+"Latency Issues." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/58874563630361-Latency-Issues](https://help.bandlab.com/hc/en-us/articles/58874563630361-Latency-Issues).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Manage Input Monitoring Latency in Logic Pro." *Apple Support*, Apple, [support.apple.com/105040](https://support.apple.com/105040).
+
+"Record Sound from a Microphone or Electric Instrument." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/mac](https://support.apple.com/guide/logicpro/record-sound-a-microphone-electric-instrument-lgcpb19e49e4/mac).
+
+"Recording New Clips." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/recording-new-clips/](https://www.ableton.com/en/live-manual/12/recording-new-clips/).
+
+"Routing and I/O." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/routing-and-i-o/](https://www.ableton.com/en/live-manual/12/routing-and-i-o/).
+
+"Studio FAQ." *BandLab Blog*, BandLab Technologies, [blog.bandlab.com/studio-faq/](https://blog.bandlab.com/studio-faq/).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+
+"Turn On Input Monitoring for Audio Tracks." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac](https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

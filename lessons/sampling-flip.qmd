@@ -1,0 +1,68 @@
+---
+title: "Sampling 5: Flipping a Sample"
+toc: true
+toc-depth: 2
+description: "Turn a sample into a new song: rearrange, re-pitch, reverse, filter, and the DJ's edits, mashups and live remixes."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sampling, daw]
+has: [interactive]
+---
+
+To **flip** a sample is to make something new from it, so the listener hears your song, not the record you took it from. A loop of
+someone's chorus with drums under it is not a flip. A chord chopped, re-pitched and played in a new order, under a new melody, is.
+
+## The flipper's moves
+
+1. **Reorder**: play the chops in a sequence the original never had. Four chords become a new progression.
+2. **Re-pitch**: move chops up or down until they make a new harmony (a minor chord pitched up 3 semitones sits on a new root).
+3. **Reverse**: backwards attacks swell instead of hitting; reversed cymbals and vocals are a classic transition.
+4. **Filter**: a low-pass filter removes the old record's drums and top end and keeps the warm middle, so new drums fit on top.
+5. **Change the time**: half-time (half the speed) or a different tempo turns a ballad into a club track, and the reverse.
+6. **Layer**: add your own bass, drums and parts so the sample becomes one voice among several.
+
+## Flip it
+
+<div class="sp-pads" data-id="sp-flip" data-loop="demo:soul84" data-slice="beats" data-bars="2"></div>
+
+The soul loop has one chord a beat in the first slices. A plan, one step at a time:
+
+1. Play pads 1, 5, 9, 13 (the first beat of each bar): the original progression.
+2. Re-pitch pad 9 by −2 and pad 13 by +3 (select a pad, then **Pitch**). Play 1, 5, 9, 13 again: a new progression from the same sound.
+3. Reverse pad 16 (**Reverse**) and use it as a swell into bar 1.
+4. Record a two-bar pattern with these pads (**● Rec**), with **Quantize 1/8**.
+5. Then load the **Funky Break** on the next sampler and record drums at the same tempo (84) over a click. Two machines, one song.
+
+<div class="sp-pads" data-id="sp-flip2" data-loop="demo:break100" data-slice="transients" data-show="pads edit pattern library"></div>
+
+## The DJ's flips: edits, acapellas, mashups
+
+DJs flip whole songs, live or before the gig:
+
+- An **edit** (or re-edit) rearranges a song for the dance floor: a longer intro with just drums for mixing in, the best section
+  repeated, the slow bridge cut. Disco DJs made them on tape with a razor blade; now they are made in a DAW.
+- An **acapella** is a vocal on its own; an **instrumental** is the song without it. Play one over another track and you have a
+  **mashup** or a live remix. Matching key matters more here than anywhere: see [DJ 6](dj-harmonic.qmd).
+- **Stems**: DJ software can now split a song into vocals, drums, bass and the rest as it plays, so any song becomes an acapella.
+
+Try a live mashup: deck A has a house groove, deck B a vocal phrase in the same key and tempo. Start A, then start B on a downbeat; bring
+B's channel up and cut A's **Mid** EQ a little so the voice sits on top.
+
+<div class="dj-tt" data-id="dj-flip" data-a="demo:house124" data-b="demo:vox124" data-show="decks mixer eq match library"></div>
+
+## Next
+
+- [Sampling 6: Clearing Samples and the Law](sampling-law.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Mashup (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mashup_(music)](https://en.wikipedia.org/wiki/Mashup_(music)).
+
+"Remix." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Remix](https://en.wikipedia.org/wiki/Remix).
+
+"Sampling (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sampling_(music)](https://en.wikipedia.org/wiki/Sampling_(music)).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

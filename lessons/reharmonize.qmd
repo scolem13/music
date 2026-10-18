@@ -2,6 +2,10 @@
 title: "Lesson: Reharmonizing a Melody"
 toc: true
 toc-depth: 2
+description: "One tune, *Ode to Joy*, with four sets of chords under it, played with the melody. Mix the settings two bars at a time."
+instruments: [bass, guitar, piano, violin, sax, other]
+topics: [harmony]
+has: [band, notation, interactive]
 ---
 
 ```{=html}
@@ -118,7 +122,7 @@ Choose one of the four settings for each pair of bars, and mix them. The tune is
 <script src="/apps/shared/lessons/chord-lesson.js?v=2"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
-<script src="/apps/shared/band/harmony.js?v=28"></script>
+<script src="/apps/shared/band/harmony.js?v=32"></script>
 <script src="/apps/shared/band/bass.js?v=15"></script>
 <script src="/apps/shared/band/comp.js?v=30"></script>
 <script src="/apps/shared/band/catalog.js?v=36"></script>

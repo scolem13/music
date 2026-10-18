@@ -2,6 +2,10 @@
 title: "Recording 2: Microphones and Phantom Power"
 toc: true
 toc-depth: 2
+description: "Dynamic, condenser and ribbon; +48 V and how not to pop it; polar patterns; which mic for what."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [recording]
+has: [interactive, svg]
 ---
 
 Every microphone turns air pressure into voltage, but the three main types do it differently, and that
@@ -81,12 +85,45 @@ The **polar pattern** is how sensitive a mic is from each direction.
 
 Many large-diaphragm condensers have a switch for several of these.
 
+<div class="gear-fig" data-fig="polar-patterns"></div>
+
 Drag the singer and the drums, turn the mic, and compare patterns and mic types. Watch the voice
 against the drum bleed in dB:
 
 <div class="rk" data-w="polar"></div>
 
+### Off axis
+
+A pattern drawing is for the middle frequencies. Off to the side, a mic doesn't just get quieter: the
+treble drops first, because a diaphragm stops hearing high sounds that arrive from the side. So a singer
+who wanders off the mic sounds further away *and* duller.
+
+<div class="gear-fig" data-fig="off-axis"></div>
+
+Walk the singer round the mic and listen:
+
+<div class="rk" data-w="offaxis"></div>
+
+### Don't cup the mic
+
+A cardioid is directional because of the **rear ports**, slots behind the capsule: sound reaching them
+from behind arrives at the back of the diaphragm too, and cancels. Wrap a hand round the grille and the
+ports are covered. The mic becomes almost omni, hears the wedge monitor it was meant to ignore, and
+feeds back. The hollow of the hand also makes a little chamber: the voice goes boxy and honky, and the
+sound engineer can't EQ it back. Hold the handle.
+
+<div class="gear-fig" data-fig="cupping"></div>
+
+Press **Cup the grille** to hear (and see) it:
+
+<div class="rk" data-w="offaxis" data-set="pat=card,dia=hand,angle=160" data-title="Cupping: the back stops being quiet"></div>
+
 ## Which mic for what
+
+No mic is flat on purpose. A handheld vocal dynamic trims the bass (you'll be close, and proximity effect
+puts it back) and lifts 4–6 kHz, where words are clear; a studio condenser stays near flat.
+
+<div class="gear-fig" data-fig="mic-response"></div>
 
 | Source | First choice | Also good |
 |---|---|---|
@@ -107,5 +144,6 @@ against the drum bleed in dB:
 {{< include _synth-kit.qmd >}}
 
 ```{=html}
-<script src="/apps/shared/lessons/rec-kit-mic.js?v=1"></script>
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=2"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
 ```

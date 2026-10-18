@@ -381,7 +381,7 @@
     var chorusBox = log.querySelector('.btp-choruses'), formIn = log.querySelector('.btp-form-bars'), chorusKey = '';
     function chorusInfo() {
       if (!chorusBox || !L) return;
-      var mapEl = document.querySelector('.btp-barmap'), m = mapEl && mapEl._btpMap, a = api();
+      var mapEl = document.querySelector('.btp-barmap:not(.pc-shell)'), m = mapEl && mapEl._btpMap, a = api();
       var secs = stamps().filter(function (li) { return li.classList.contains('is-sec'); })
         .sort(function (x, y) { return parseFloat(x.dataset.s) - parseFloat(y.dataset.s); });
       var ms = m ? m.sections() : [], barLen = m && m.barLen ? m.barLen() : NaN, dur = a && a.duration ? a.duration() : NaN;
@@ -534,7 +534,7 @@
     // Opening one replaces the page's work. Older files still open: a timestamps .txt (added to the stamps, with its
     // "# url:" line), and a bar-map .json (the bars only).
     function parts() {
-      var map = document.querySelector('.btp-barmap'), words = document.querySelector('.btp-words'), ph = document.querySelector('.btp-phrases');
+      var map = document.querySelector('.btp-barmap:not(.pc-shell)'), words = document.querySelector('.btp-words:not(.pc-shell)'), ph = document.querySelector('.btp-phrases:not(.pc-shell)');
       return { map: map && map._btpMap, words: words && words._btpWords, phrases: ph && ph._btpPhrases };
     }
     function songFile() {

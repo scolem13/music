@@ -1,0 +1,76 @@
+---
+title: "Sampling 4: A Beat from Chops"
+toc: true
+toc-depth: 2
+description: "Play chops from pads, record a pattern over a click, quantize, overdub: the MPC and SP-404 way of making a beat."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sampling, daw, rhythm]
+has: [interactive]
+---
+
+The Akai MPC (1988 onwards) put a sampler and a sequencer in one box with 16 rubber pads. You chop a record onto the pads, tap out a
+pattern while the sequencer loops, and the box remembers it. The pads respond to how hard you hit them; the **swing** and **quantize**
+settings shape the timing. Much of 1990s and 2000s hip-hop was made this way; the Roland SP-404 carried it into lo-fi and beat scenes.
+
+## Pads and keys
+
+The pads below follow the MPC layout: pad 1 is bottom left. With the sampler focused (click it), the keys play the pads:
+
+| | | | |
+|---|---|---|---|
+| **1** = 13 | **2** = 14 | **3** = 15 | **4** = 16 |
+| **Q** = 9 | **W** = 10 | **E** = 11 | **R** = 12 |
+| **A** = 5 | **S** = 6 | **D** = 7 | **F** = 8 |
+| **Z** = 1 | **X** = 2 | **C** = 3 | **V** = 4 |
+
+A MIDI pad controller or keyboard works too (**Connect MIDI**): notes 36–51 (C1 up), the first bank on most controllers.
+
+## Make a beat
+
+<div class="sp-pads" data-id="sp-beat" data-loop="demo:break100" data-slice="transients" data-bars="2"></div>
+
+1. Find a kick, a snare and a hat among the pads (sliced at the hits). Note which keys they are on.
+2. Press **● Rec**. The click counts the beats; each pass round the pattern is two bars. Tap **kicks** only, on 1 and the *and* of 2.
+3. Next pass, add **snares** on 2 and 4. Recording keeps going round and adds what you play (**overdub**). Made a mistake? **Undo**
+   removes the last pass.
+4. Stop recording, press **▶**, and listen. Turn **Quantize** off and record a hat pass: the hits land exactly where you played them,
+   human and uneven. With **1/16** they snap to the nearest sixteenth.
+5. Change the **Tempo** from 100 to 88. The pattern slows down, but each chop still plays at its own speed: the beat now has gaps.
+   Try **Length** ×1.15 on the snare pad (Repitch) to fill them, and hear it drop in pitch.
+
+## Chords over drums
+
+A beat from one break is a start. Producers layer: drums from one record, a chord stab from another, a bass note from a third. Load
+**Old Soul Record** into a second sampler, slice it **One a beat**, and play chords over the pattern you recorded above.
+
+<div class="sp-pads" data-id="sp-beat2" data-loop="demo:soul84" data-slice="beats" data-show="wave pads edit library"></div>
+
+## Timing feel
+
+- **Quantized to 1/16** sounds tight, machine-like: the house and trap way.
+- **Unquantized** keeps your timing. J Dilla famously turned quantize off on his MPC3000, so kicks fall slightly late and hats drag:
+  the "drunk" feel.
+- **Swing** delays every second sixteenth. An MPC's swing setting (50 % straight, 66 % triplet) is how many classic beats got their bounce.
+
+## The DJ's version: finger drumming and the sampler
+
+DJ software has a **sampler** too (slots you fire from pads on a controller), and the controllers' **performance pads** fire hot cues,
+loops and samples. Setting hot cues on a break's kick and snare and drumming a new pattern live is the DJ's beat from chops.
+
+## Next
+
+- [Sampling 5: Flipping a Sample](sampling-flip.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Akai MPC." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Akai_MPC](https://en.wikipedia.org/wiki/Akai_MPC).
+
+"Breakbeat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Breakbeat](https://en.wikipedia.org/wiki/Breakbeat).
+
+"Roland SP-404." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_SP-404](https://en.wikipedia.org/wiki/Roland_SP-404).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

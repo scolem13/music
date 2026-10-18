@@ -296,3 +296,18 @@ h2.panel-jump {
 /* figured bass (I⁶, I⁶₄): the numbers stacked one above the other, as printed in theory books */
 .fb{display:inline-flex;flex-direction:column;align-items:center;font-size:.75em;line-height:.9;vertical-align:.5em;margin:0 .08em;font-variant-numeric:lining-nums}
 .fb.solo{font-size:1em;vertical-align:middle}
+
+
+/* Works Cited and the Bibliography (MLA hanging indent) */
+.works-cited p {
+  padding-left: 2em;
+  text-indent: -2em;
+  margin: 0 0 .6em;
+  overflow-wrap: break-word;
+}
+.works-cited .wc-used {
+  display: block;
+  text-indent: 0;
+  font-size: .85em;
+  color: var(--site-ink-2);
+}

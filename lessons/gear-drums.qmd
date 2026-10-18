@@ -2,6 +2,10 @@
 title: "Gear 9: Drum Kit Setup and Care"
 toc: true
 toc-depth: 2
+description: "Fitting the kit to the player, tuning heads, cymbal felts and care."
+instruments: [drums]
+topics: [gear]
+has: [svg]
 ---
 
 A drum kit that's set up to fit the player is easier to play and easier on the body. Tuned and looked after, it
@@ -44,6 +48,39 @@ sounds much better than an expensive kit that isn't.
 - Same setup heights. Pad cables unplugged by the plug; don't hit the rims of mesh pads hard without a rim zone.
 - Volume down before putting on headphones; drums are the most hearing-damaging instrument ([Gear 5](gear-setup.qmd)).
 
+## Hand drums
+
+Hover any part of a drawing for its name.
+
+**Congas** come in three sizes of the same barrel-shaped drum. Tuning bolts (lugs) pull the hoop down
+onto the head; tune with the drum standing, a quarter turn at a time round the drum, as on a kit.
+
+<div class="gear-fig" data-fig="congas"></div>
+
+**Bongos** are a joined pair played with the fingers, held between the knees or on a stand. They are
+tuned high and tight; loosen them after playing so the heads aren't under tension all week.
+
+<div class="gear-fig" data-fig="bongos"></div>
+
+**Djembe** is carved from one piece of wood with a goatskin head, tuned by its ropes. Tightening is a
+job for someone who has done it: a skin pulled too far splits.
+
+<div class="gear-fig" data-fig="djembe"></div>
+
+**Tabla** is a pair from North India: the wooden dayan (right hand) is tuned to the key of the music by
+tapping the gatta and the rim with a small hammer; the metal bayan (left hand) gives the bass. The black
+syahi on each head is what makes them ring with a clear pitch. Keep them covered and never put them
+down on their heads.
+
+<div class="gear-fig" data-fig="tabla"></div>
+
+Natural skins (all of these, often) go slack when it's damp and tight when it's dry: let a drum get used to
+the room before tuning, and keep them out of sun and away from heaters.
+
 ## Back to the start
 
 - [Gear 1: Power and Safety](gear-power.qmd)
+
+```{=html}
+<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+```

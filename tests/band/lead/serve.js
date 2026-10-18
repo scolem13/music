@@ -1,7 +1,7 @@
 // Static server for page tests: /apps, /config.js, /track.js come LIVE from the project
 // root; everything else from the scratch Quarto render in ./site.
 const http = require("http"), fs = require("fs"), path = require("path");
-const ROOT = "/Users/sean.coleman/Projects/everything-music-site", SITE = path.join(__dirname, "site");
+const ROOT = path.resolve(__dirname, "../../.."), SITE = path.join(__dirname, "site");
 const TYPES = { ".html":"text/html", ".js":"text/javascript", ".css":"text/css", ".json":"application/json", ".svg":"image/svg+xml", ".woff":"font/woff", ".woff2":"font/woff2", ".png":"image/png", ".ico":"image/x-icon", ".mp3":"audio/mpeg" };
 http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split("?")[0]); if (p.endsWith("/")) p += "index.html";

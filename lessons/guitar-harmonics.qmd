@@ -1,0 +1,245 @@
+---
+title: "Harmonics on Guitar: Natural, Tapped and Pinch"
+toc: true
+toc-depth: 2
+description: "Natural harmonics at the 12th, 7th, 5th, 4th/9th and 3rd frets and why they are there, how to touch and lift, tapped and harp harmonics, pinch harmonics with gain, bends and vibrato, how harmonics are written, faults and fixes, and a practice plan."
+instruments: [guitar]
+topics: [technique, sound]
+has: [notation, interactive, svg]
+---
+
+A **harmonic** is the bell-like note you get when you touch a string lightly at the right spot instead of pressing it to the fret. The finger does not shorten the string: it stops the string from moving at that one point, so only the vibrations that already have a still point there can carry on. What is left is one of the string's **overtones**, on its own. This lesson starts with the natural harmonics on open strings, explains where they are and what pitch each one gives, and then moves on to tapped, harp and pinch harmonics. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section.
+
+**How to use the page.** Strings are numbered 1 (high E) to 6 (low E); tab has one line a string, high E on top. Start the volume low: the playable string in section 2 makes pure, ringing tones.
+
+```{=html}
+<style>
+.gh-lab{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem 1rem;margin:1.1rem 0 1.6rem;max-width:52rem}
+.gh-lab h4{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}
+.gh-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .6rem;margin:.4rem 0}
+.gh-row label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2)}
+.gh-row select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.gh-lab .btn{font-family:var(--font-mono);font-size:.78rem}
+.gh-fig svg{width:100%;height:auto;display:block}
+.gh-fig .gh-str{stroke:var(--site-ink);stroke-width:2;fill:none}
+.gh-fig .gh-fret{stroke:var(--site-border);stroke-width:2}
+.gh-fig .gh-nut{stroke:var(--site-ink);stroke-width:5}
+.gh-fig .gh-dot{fill:var(--site-surface-2,var(--site-border))}
+.gh-fig .gh-wave{stroke:var(--site-accent);stroke-width:1.6;fill:none;opacity:.85}
+.gh-fig .gh-node{fill:var(--site-surface);stroke:var(--site-ink);stroke-width:1.5;cursor:pointer}
+.gh-fig .gh-node:hover,.gh-fig .gh-node.gh-on{fill:var(--site-accent);stroke:var(--site-accent)}
+.gh-fig text{font-family:var(--font-mono);font-size:11px;fill:var(--site-ink-2)}
+.gh-fig .gh-cap{font-size:.88rem;color:var(--site-ink-2);margin:.3rem 0 0}
+.gh-info{font-size:.9rem;color:var(--site-ink);min-height:1.4em;margin:.4rem 0 0}
+.gh-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.gh-tab{font-size:.85rem;line-height:1.25}
+</style>
+```
+
+## 1. What a harmonic is {#what}
+
+A plucked string does not only swing as one long arc. At the same time it vibrates in **2 halves**, in **3 thirds**, in **4 quarters**, and so on. Each of these patterns sounds a pitch: the whole string gives the note you hear (the **fundamental**), halves give twice its frequency, thirds three times, quarters four times. Together they are the **harmonic series**, and their mix is what makes a guitar sound like a guitar.
+
+Each pattern has **nodes**, points that stay still, and between them **antinodes**, where the string swings most. Halves have a node in the middle. Thirds have nodes at one third and two thirds of the way along. When you touch the string lightly at one third of its length, every pattern that needs that point to move is choked off; the patterns that have a node there (thirds, sixths, ninths …) keep ringing. You hear the lowest of them: the 3rd harmonic.
+
+Here is the series on the low E string (E2). Click a note to hear it; the numbers under the notes say how many parts the string is divided into, the numbers above how many cents each is from the nearest piano note.
+
+<div class="sk" data-w="series" data-title="The harmonic series of the low E string" data-set="root=E"></div>
+
+The 2nd, 3rd, 4th and 6th harmonics are octaves and fifths of the open string, and nearly match the piano. The 5th harmonic is a major third, about 14 cents **flat** of the tempered G♯. That matters when you use harmonics to tune (section 8).
+
+## 2. Where the natural harmonics are {#where}
+
+The nut and the saddle are the string's two ends, so the 12th fret, halfway, is the node for halves. Frets get closer together as they go up because each one shortens the string by the same *ratio*, so the other simple fractions land on or near particular frets:
+
+| Divide the string into | Touch at | Nearest fret | Pitch over the open string | On the low E | Also at |
+|---|---|---|---|---|---|
+| 2 | 1/2 | **12** (exact) | an octave | E3 | — |
+| 3 | 1/3, 2/3 | **7** (2 cents off) and 19 | an octave and a fifth | B3 | 19th fret, and the same distance from the bridge |
+| 4 | 1/4, 3/4 | **5** (exact) and 24 | two octaves | E4 | 24th fret / over the neck pickup |
+| 5 | 1/5, 2/5, 3/5, 4/5 | **just behind the 4th** (3.9), **just behind the 9th** (8.8), 16 (15.9) | two octaves and a major third (14 cents flat) | G♯4 | four spots, all the same note |
+| 6 | 1/6, 5/6 | **just past the 3rd** (3.2) | two octaves and a fifth | B4 | — |
+
+A few things follow from the fractions:
+
+- **One pitch, several places.** Every node of a pattern gives the same note. The 7th and 19th frets give the same B; the 4th, 9th and 16th give the same G♯. The 7th fret harmonic and the 12th fret harmonic are *not* the same octave: thirds are higher than halves.
+- **The higher the harmonic, the narrower the spot.** The 12th is easy; the 5th-of-the-string spots near the 4th and 9th frets need you to be within a millimetre or two, a little toward the nut, and they ring quieter.
+- **The spot is over the fret wire**, not between frets where you would fret a note, because that is where the fractions land: at the 12th, 7th and 5th the node is right above the metal.
+
+Click a node to hear the harmonic it leaves ringing; the line shows the pattern of the string for that harmonic, with its still points.
+
+```{=html}
+<div class="gh-lab" id="gh-string">
+  <h4>Touch here: nodes on one string</h4>
+  <div class="gh-row">
+    <label for="gh-s">String</label>
+    <select id="gh-s">
+      <option value="40">6: low E</option><option value="45">5: A</option><option value="50">4: D</option>
+      <option value="55">3: G</option><option value="59">2: B</option><option value="64">1: high E</option>
+    </select>
+    <label for="gh-n">Show</label>
+    <select id="gh-n">
+      <option value="0">all nodes</option><option value="2">halves (2)</option><option value="3">thirds (3)</option>
+      <option value="4">quarters (4)</option><option value="5">fifths (5)</option><option value="6">sixths (6)</option>
+    </select>
+    <button class="btn btn-sm btn-outline-secondary" id="gh-open" type="button">▶ Open string</button>
+  </div>
+  <div class="gh-fig" id="gh-fig"></div>
+  <p class="gh-info" id="gh-info" aria-live="polite">Click a circle.</p>
+</div>
+```
+
+## 3. Playing natural harmonics {#play}
+
+1. **Touch, don't press.** Lay the fleshy pad of a fretting finger on the string **directly above the fret wire** (12th to begin with). Just touching: the string should not reach the fret. Pressing is the most common reason a harmonic comes out as a dead thud.
+2. **Pick near the bridge.** A firm pick stroke two or three fingers' width from the saddle brings out the high patterns more than picking over the soundhole or neck pickup does.
+3. **Lift.** Take the touching finger off the string **straight after** the pick stroke. The harmonic then rings on its own for as long as an open string would. Leave it on and the harmonic stays thin and dies.
+4. **Go in order.** Get the 12th clean on all six strings, then the 7th, then the 5th, then the spots just behind the 4th and 9th, then just past the 3rd.
+
+**Several strings at once.** Lay one finger flat across all six strings above the 12th fret and strum, then lift: a chord of harmonics, the open-string chord an octave up. The same across the 5th and 7th frets gives the bell chords in many intros.
+
+<div class="gh-tip">On electric guitar, the bridge pickup and a little gain make harmonics jump out. On acoustic, pick harder than you think, near the bridge.</div>
+
+## 4. Tapped and artificial harmonics {#artificial}
+
+Natural harmonics only give the open strings' overtones. To get harmonics of **any** note, fret the note, and the halfway point moves: it is now **12 frets above the fretted note**. Fret the 3rd fret, and the node is over the 15th.
+
+- **Tapped harmonic (T.H.)**: fret the note with the left hand, then strike the string sharply with a right-hand finger *on the fret wire* 12 frets higher and bounce straight off. The tap both starts the string and stops it at the node. Also works 5 and 7 frets above the fretted note (the 4th and 3rd harmonics), and over a whole chord shape: hold a chord at the 2nd fret, tap across the 14th.
+- **Artificial harmonic (A.H.)**, picked: fret the note, touch the node (12 frets up) lightly with the right-hand **index finger**, and pluck the string with the **thumb** or a pick held between thumb and middle finger, behind the touching finger toward the bridge. Lift the index just after.
+- **Harp harmonics**: the same artificial harmonic, alternated with ordinary plucked notes from the ring finger, on neighbouring strings, so harmonics and normal notes overlap like a harp. Fret a chord, then: thumb plucks string 4 while the index touches 12 frets up, ring finger plucks string 3 normally, then the same on strings 3 and 2 … Go slowly; the hand shape takes weeks.
+
+## 5. Pinch harmonics {#pinch}
+
+The squeal in rock and metal solos is a **pinch harmonic** (P.H., also "squealie"). It is an artificial harmonic made with the pick hand alone: the **pick** starts the string, and the **edge of the thumb** grazes it a split second later and stops it at a node.
+
+**The grip.** Hold the pick so that only a little of the tip sticks out past the thumb, a couple of millimetres. Pick downward, and roll the thumb's edge onto the string straight after the pick, as if the stroke ends with the thumb brushing it. Graze, don't damp: touch and let go. Push the stroke *through* the string, like an ordinary downstroke, a little harder than usual.
+
+**Finding the spot.** The harmonic only comes out where the thumb lands on a node, so slide the picking hand slowly from the neck pickup toward the bridge, picking all the way, and listen. You will hear different harmonics pop out in different places; the loud ones are usually between the pickups and just in front of the bridge pickup.
+
+**Why the spot moves.** The node is a fraction of the length of the string *that is vibrating*, which runs from the fretted note to the saddle. Fret higher up and that length is shorter, so every node moves toward the bridge with it. On the 5th fret of the G string, the node one quarter of the way from the bridge is somewhere other than on the 12th fret. So for each note you play, the sweet spot is in a slightly different place: practise by playing one note and walking the hand, then a note five frets higher and finding the spot again.
+
+**Sound.** Pinch harmonics are easiest with the **bridge pickup** and **gain** (overdrive or distortion), which bring up the quiet high overtone. On a clean amp or acoustic they still work, quietly. Add **vibrato** straight after the squeal, or pick the note and **bend** it up (see [String Bends on Guitar](guitar-bends.qmd)): the harmonic bends with it, a whole step on the fretted note being a whole step on the harmonic.
+
+## 6. How harmonics are written {#notation}
+
+| Mark | Means | In standard notation | In tab |
+|---|---|---|---|
+| **harm.**, **N.H.** | natural harmonic | a **diamond** notehead, usually at the *touched* pitch (some editions add the sounding pitch as a small normal note) | the fret number in angle brackets, `<12>`, or with "N.H." above |
+| **A.H.** | artificial (picked) harmonic | the fretted note, with a diamond for the touching point, or the sounding pitch with "A.H." | the fretted number, then the touch point in brackets: `3(15)` |
+| **T.H.** | tapped harmonic | as A.H., marked "T.H." | the fretted number with the tapped fret in brackets, "T.H." above |
+| **P.H.** | pinch harmonic | the fretted note, "P.H." above, often with the sounding harmonic as a small diamond | the fretted number, "P.H." above |
+
+Editions differ on whether a diamond shows where the finger goes or what you hear. Check the key at the front of the book; most guitar books say "harmonics sound one or more octaves higher than written".
+
+<pre class="gh-tab">
+     N.H.  N.H.  N.H.           A.H.        P.H.~~~~
+e|---<12>--------------|------------------|------------|
+B|---<12>--------------|------------------|------------|
+G|---<12>--<7>---------|------------------|----7b9-----|
+D|---------<7>--<5>----|-----2(14)--------|------------|
+A|--------------<5>----|------------------|------------|
+E|---------------------|--3(15)-----------|------------|
+</pre>
+
+## 7. Common faults and fixes {#faults}
+
+| Fault | Fix |
+|---|---|
+| A dull thud, no ring | You are pressing. Touch so lightly the string could slide under the finger. |
+| The normal note sounds, not the harmonic | You are between frets. Move the finger to sit right above the fret wire. |
+| It rings for a moment, then dies | Lift the touching finger straight after picking. |
+| The 4th/9th/3rd fret ones won't come | They are narrow and just off the fret (see the table in section 2); creep the finger toward the nut a millimetre at a time, and pick nearer the bridge. |
+| Neighbouring strings ring too | Mute them with the touching finger's underside and the picking palm. |
+| Pinch harmonics: just a normal note | Less pick showing; make the thumb actually touch the string; move the hand, the spot is small. |
+| Pinch harmonics: a choked click | The thumb stays on the string. Graze and let go. |
+| Pinch harmonics work on one note but not the next | The spot moved with the fretted note (section 5): walk the hand again. |
+| Tapped harmonics buzz | Tap on the fret wire, not behind it, and bounce off at once. |
+
+## 8. Harmonics for tuning {#tuning}
+
+Because the 5th fret harmonic of one string and the 7th fret harmonic of the next one up are (on most string pairs) the same pitch, sounding them together lets you hear **beats**, a slow wah-wah, when they disagree, and tune until it stops. Two cautions: the 7th fret harmonic is a pure fifth, 2 cents wider than the tempered one, so tuning a whole guitar this way stacks small errors; and the G-to-B pair is a third and doesn't work this way. [Guitar tuning methods](guitar-tuning-methods.qmd) goes through this and other methods, and the [Guitar tuning](../tools/guitar-tuning.qmd) tool has a strobe to check each string.
+
+<div class="sk" data-w="tuner" data-title="Check a 12th fret harmonic: strobe on E" data-set="note=E,oct=3,sys=12et,bands=4"></div>
+
+## 9. Practice, step by step {#practice}
+
+Five to ten minutes a day, in this order. Move on when the step rings clean nine times in ten.
+
+1. **12th fret, each string.** Touch, pick near the bridge, lift. Six strings, three times each.
+2. **12th, 7th, 5th on one string.** Play them in turn and hear that the 7th is higher than the 12th and the 5th higher again. Check against section 2.
+3. **The narrow ones.** Behind the 4th, behind the 9th, past the 3rd, on the low E. Compare the 4th and 9th: same note.
+4. **Chords of harmonics.** One finger flat across the 12th, then the 7th, then the 5th, strum and lift. Then a little tune: 12th on strings 3, 2, 1, then 7th on strings 3, 2, 1, then 5th.
+5. **Tapped harmonics.** Fret an E major shape at the open strings and tap the 12th fret wire across all strings; then a barre at the 3rd fret, tapping the 15th.
+6. **Artificial harmonics.** One note at a time: fret, touch 12 frets up with the index, pluck with the thumb. Then a slow C major scale on one string this way.
+7. **Pinch harmonic hunt.** Bridge pickup, some gain. Fret string 3 at the 7th fret; walk the pick hand from neck to bridge until it squeals. Then fret the 9th and find the new spot.
+8. **Pinch with vibrato and a bend.** Squeal on string 3 fret 7, add vibrato; then squeal and bend a whole step to the pitch of fret 9.
+9. **In a phrase.** Play a lick you know and end it on a pinch harmonic with vibrato.
+
+**Where to go next:** [String Bends on Guitar](guitar-bends.qmd) for the bends under a pinch harmonic, [Tuning systems](tuning-systems.qmd) for why the 5th harmonic is flat of the piano, and [Guitar tuning methods](guitar-tuning-methods.qmd).
+
+```{=html}
+<script>
+(function () {
+  // A string from nut (fret 0) to saddle, drawn to scale: fret f sits at 1 - 2^(-f/12) of the length.
+  // A node of harmonic n at k/n of the length is at fret -12*log2(1 - k/n).
+  var fig = document.getElementById("gh-fig"), info = document.getElementById("gh-info"), sS = document.getElementById("gh-s"), sN = document.getElementById("gh-n");
+  if (!fig) return;
+  var NS = "http://www.w3.org/2000/svg", W = 760, H = 150, X0 = 30, X1 = 740, Y = 70, NAMES = ["C", "C♯", "D", "E♭", "E", "F", "F♯", "G", "A♭", "A", "B♭", "B"];
+  var ctx = null, out = null, wave = null;
+  function ac() { if (!ctx) { var A = window.AudioContext || window.webkitAudioContext; ctx = new A(); out = ctx.createGain(); out.gain.value = .25; out.connect(ctx.destination); if (window.AudioTap) try { AudioTap.register(ctx, out, "Guitar harmonics"); } catch (e) {} } if (ctx.state === "suspended") ctx.resume(); return ctx; }
+  function hz(m) { return 440 * Math.pow(2, (m - 69) / 12); }
+  function name(f) { var m = 69 + 12 * Math.log2(f / 440), r = Math.round(m), c = Math.round(100 * (m - r)); return NAMES[(r % 12 + 12) % 12] + (Math.floor(r / 12) - 1) + (c ? " (" + (c > 0 ? "+" : "−") + Math.abs(c) + " cents)" : ""); }
+  function ring(f, dur) {
+    var c = ac(), t = c.currentTime + .02, o = c.createOscillator(), o2 = c.createOscillator(), g = c.createGain(), g2 = c.createGain();
+    o.frequency.value = f; o2.frequency.value = 2 * f; g2.gain.value = .06;
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(1, t + .005); g.gain.setTargetAtTime(0, t + .01, dur / 3);
+    o.connect(g); o2.connect(g2); g2.connect(g); g.connect(out); o.start(t); o2.start(t); o.stop(t + dur + .2); o2.stop(t + dur + .2);
+  }
+  function x(frac) { return X0 + (X1 - X0) * frac; }
+  function el(tag, a, txt) { var e = document.createElementNS(NS, tag); for (var k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; return e; }
+  function title(e, t) { e.appendChild(el("title", {}, t)); return e; }
+  function draw() {
+    var open = +sS.value, show = +sN.value;
+    fig.innerHTML = "";
+    var svg = el("svg", { viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": "A guitar string from nut to saddle, with frets to scale and circles at the harmonic nodes" });
+    for (var f = 1; f <= 24; f++) { var fx = x(1 - Math.pow(2, -f / 12)); svg.appendChild(title(el("line", { x1: fx, y1: Y - 34, x2: fx, y2: Y + 34, "class": "gh-fret" }), "fret " + f)); if ([3, 5, 7, 9, 12, 15, 17, 19, 21, 24].indexOf(f) >= 0) svg.appendChild(el("text", { x: fx, y: H - 8, "text-anchor": "middle" }, f)); }
+    svg.appendChild(title(el("line", { x1: X0, y1: Y - 36, x2: X0, y2: Y + 36, "class": "gh-nut" }), "nut"));
+    svg.appendChild(title(el("line", { x1: X1, y1: Y - 36, x2: X1, y2: Y + 36, "class": "gh-nut" }), "saddle (bridge)"));
+    svg.appendChild(el("text", { x: X0, y: 14, "text-anchor": "start" }, "nut"));
+    svg.appendChild(el("text", { x: X1, y: 14, "text-anchor": "end" }, "saddle"));
+    wave = el("path", { d: "", "class": "gh-wave" }); svg.appendChild(wave);
+    svg.appendChild(el("line", { x1: X0, y1: Y, x2: X1, y2: Y, "class": "gh-str" }));
+    var seen = {};
+    for (var n = 2; n <= 6; n++) {
+      if (show && n !== show) continue;
+      for (var k = 1; k < n; k++) {
+        var fr = k / n, key = fr.toFixed(4); if (seen[key]) continue; seen[key] = 1;   // 2/4 is the 12th: belongs to halves
+        var fret = -12 * Math.log2(1 - fr); if (fret > 24.5) continue;
+        var c = el("circle", { cx: x(fr), cy: Y, r: n <= 3 ? 8 : n === 4 ? 7 : 6, "class": "gh-node", tabindex: 0, "data-n": n, "data-k": k });
+        title(c, "harmonic " + n + ": " + k + "/" + n + " of the string, fret " + fret.toFixed(1));
+        svg.appendChild(c);
+        if (!show || show === n) svg.appendChild(el("text", { x: x(fr), y: Y - 40 - (n % 2) * 12, "text-anchor": "middle" }, n + ""));
+      }
+    }
+    fig.appendChild(svg);
+    var cap = document.createElement("p"); cap.className = "gh-cap"; cap.textContent = "Frets drawn to scale. The number over a circle is the harmonic: how many parts the string vibrates in when you touch there."; fig.appendChild(cap);
+    svg.querySelectorAll(".gh-node").forEach(function (c) {
+      function go() { pick(+c.getAttribute("data-n"), +c.getAttribute("data-k"), c); }
+      c.addEventListener("click", go); c.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); go(); } });
+    });
+  }
+  function shape(n) { var d = "", A = 22; for (var i = 0; i <= 200; i++) { var u = i / 200; d += (i ? "L" : "M") + x(u).toFixed(1) + " " + (Y - A * Math.sin(Math.PI * n * u)).toFixed(1); } for (i = 200; i >= 0; i--) { u = i / 200; d += "L" + x(u).toFixed(1) + " " + (Y + A * Math.sin(Math.PI * n * u)).toFixed(1); } return d; }
+  function pick(n, k, c) {
+    fig.querySelectorAll(".gh-on").forEach(function (e) { e.classList.remove("gh-on"); }); c.classList.add("gh-on");
+    var f0 = hz(+sS.value), f = f0 * n, fret = -12 * Math.log2(1 - k / n);
+    wave.setAttribute("d", shape(n)); ring(f, 2.5);
+    info.textContent = "Harmonic " + n + ": touch " + k + "/" + n + " of the way from the nut, at fret " + fret.toFixed(1) + ". The string vibrates in " + n + " parts and sounds " + name(f) + ", " + n + " × " + f0.toFixed(1) + " Hz = " + f.toFixed(1) + " Hz.";
+  }
+  document.getElementById("gh-open").addEventListener("click", function () { var f0 = hz(+sS.value); wave.setAttribute("d", shape(1)); ring(f0, 2.5); info.textContent = "Open string: " + name(f0) + ", " + f0.toFixed(1) + " Hz, vibrating as one arc."; });
+  sS.addEventListener("change", draw); sN.addEventListener("change", draw);
+  draw();
+})();
+</script>
+```
+
+{{< include _synth-kit.qmd >}}

@@ -11,6 +11,18 @@
 //   envelope    one ADSR on volume, played from the keys or a demo
 //   granular    a three-second sound (or the mic) read as grains
 //   eq sidechain gate transient tremolo rotary octaver harmonizer autotune stereo chain shimmer   more effects
+//   (amp and pa have a View menu, Sliders / Knobs: w.knobView(); drag a knob up/down, Shift fine, wheel, arrows, double-click resets)
+//   amp         a guitar or bass amp: Gain, Bass, Middle (+ Mid frequency), Treble, Master, Presence, Resonance (0-10), a Cabinet menu
+//               (CABS: 1x12, 2x12, 4x12, 4x10, bass 4x10 + horn, 1x15, 8x10, none); "Vintage" = one Volume, no master. Sources
+//               guitar / bass are the band's samples (BandSounds, loaded on first use), unamplified.
+//               data-set keys: design (master vintage), gain bass mid treble master presence resonance. Source: guitar riff by default
+//   pa          one mixer channel top to bottom: a mic-level source, Gain with a peak light, high-pass, EQ (sweepable mid), monitor send
+//               (pre-fader) into a wedge that the mic hears (feedback through a room ringing at 2.5 kHz; a mid cut there stops it), pan,
+//               mute, fader, meters. data-set keys: trim hpf low midf midg high aux wedge (back side front cupped) pan fader mute
+//   chip        a 1980s game sound chip: two pulse waves, a triangle and noise, playing a four-channel tune frame by frame
+//               (1/60 s); pulse 2 plays the chords as a fast arpeggio, the root alone, or a real chord. Held keys become its arpeggio.
+//   tracker     the chip's tune as an editable 64-row grid (notes A-4 / C#5, --- stops, pulse 2 takes an arpeggio 0xy, noise K S H),
+//               saved in localStorage sk-tracker-v1; a MIDI or on-screen key goes into the cell last clicked.
 //   vocoder     a mic (or the robot voice) shaping a synth played from the keys or MIDI
 //   tuner       a strobe tuner: one band for every partial of the note you play, which stands still when that partial is exactly
 //               k times the target pitch (drifts right if sharp, left if flat; the first 100 ms of an attack are ignored).
@@ -255,12 +267,27 @@
   }
 
   // ---------- sources for the effects ----------
-  var SOURCES = { riff: "Synth riff", chords: "Chords", drums: "Drum loop", hits: "Single hits", voice: "Robot voice", tone: "Sine tone", noise: "White noise", uneven: "Uneven riff", singer: "Out-of-tune singer", organ: "Organ chords", keys: "Your keyboard", mic: "Microphone" };
+  var SOURCES = { guitar: "Guitar riff", bass: "Bass riff", riff: "Synth riff", chords: "Chords", drums: "Drum loop", hits: "Single hits", voice: "Robot voice", tone: "Sine tone", noise: "White noise", uneven: "Uneven riff", singer: "Out-of-tune singer", organ: "Organ chords", keys: "Your keyboard", mic: "Microphone" };
   var RIFF = [57, 60, 64, 67, 69, 67, 64, 60, 53, 57, 60, 64, 55, 59, 62, 67];
   var CHORDS = [[48, 55, 64, 71], [45, 52, 60, 67], [50, 57, 65, 72], [43, 53, 59, 62]];
   function makeSource(kind, c) {
     var out = c.createGain(), stop = function () {}, src = { out: out };
-    if (kind === "riff" || kind === "uneven") {
+    if (kind === "guitar" || kind === "bass") {
+      // the band's own samples, unamplified (a guitar or bass straight into the desk, as a DI); the plucked synth while
+      // they load or if they can't. Guitar: power chords and a lick; bass: an E minor groove; both at 100 bpm in eighths.
+      var gtr = kind === "guitar", dead = false;
+      var G = gtr ? [[40, 47, 52], 0, [40, 47, 52], [40, 47, 52], [43, 50, 55], 0, [45, 52, 57], 0, [40, 47, 52], 0, [40, 47, 52], [40, 47, 52], 64, 67, 69, 67]
+                  : [28, 0, 28, 40, 0, 28, 38, 40, 31, 0, 33, 0, 35, 33, 31, 26];
+      return bandBank(c, gtr ? "guitar" : "ebass").then(function (bank) {
+        stop = loop(c, 60 / 100 / 2, function (s, t) { var e = G[s % 16]; if (!e || dead) return; var ch = Array.isArray(e);
+          (ch ? e : [e]).forEach(function (m, i) {
+            if (bank) bank.play(gtr ? "guitar" : "ebass", { midi: m, vel: ch ? .75 : .85, dur: gtr ? (ch ? .26 : .45) : .5 }, t + i * .008, out);
+            else pluck(c, out, t + i * .008, mtof(m), ch ? .8 : 1, ch ? .28 : .5);
+          }); });
+        src.stop = function () { dead = true; stop(); if (bank) bank.stopAll(); };
+        return src;
+      });
+    } else if (kind === "riff" || kind === "uneven") {
       stop = loop(c, 60 / 112 / 4, function (s, t) { var v = kind === "uneven" ? (s % 4 === 0 ? 1 : .08 + Math.random() * .5) : (s % 4 === 0 ? 1 : .7); pluck(c, out, t, mtof(RIFF[s % 16]), v, .3); });
     } else if (kind === "chords") {
       stop = loop(c, 2.4, function (s, t) { pad(c, out, t, CHORDS[s % 4], 2.4); });
@@ -288,6 +315,18 @@
     }
     src.stop = stop;
     return Promise.resolve(src);
+  }
+
+  // the band's sample bank (apps/shared/band/sounds.js), loaded on first use; resolves null if it can't load in time
+  var bandScript = null, banks = [];
+  function bandBank(c, name) {
+    if (!bandScript) bandScript = window.BandSounds ? Promise.resolve() : new Promise(function (res, rej) {
+      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=14"; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+    var got = bandScript.then(function () {
+      var b = banks.filter(function (x) { return x.c === c; })[0]; if (!b) { b = { c: c, bank: BandSounds.create(c) }; banks.push(b); }
+      return b.bank.load([name]).then(function () { return b.bank.has(name) ? b.bank : null; });
+    });
+    return Promise.race([got, new Promise(function (r) { setTimeout(function () { r(null); }, 8000); })]).catch(function () { return null; });
   }
 
   // ---------- microphone ----------
@@ -381,11 +420,42 @@
     if (o.log) { r.min = 0; r.max = 1000; r.step = 1; } else { r.min = lo; r.max = hi; r.step = o.step || "any"; }
     function toV(x) { return o.log ? lo * Math.pow(hi / lo, x / 1000) : +x; }
     function toX(v) { return o.log ? 1000 * Math.log(v / lo) / Math.log(hi / lo) : v; }
-    function show() { val.textContent = (o.fmt || fmtN(2))(toV(r.value)); }
+    // a knob drawn beside the slider; shown instead of it when the widget has class sk-knobs (w.knobView)
+    var kn = el("span", "sk-knob"), NS = "http://www.w3.org/2000/svg";
+    kn.innerHTML = '<svg viewBox="0 0 40 40" aria-hidden="true"><path class="sk-kt" d="M10.8 32.2A15 15 0 1 1 29.2 32.2"/><path class="sk-kv"/><circle class="sk-kb" cx="20" cy="20" r="10.5"/><line class="sk-kp" x1="20" y1="20" x2="20" y2="11"/></svg>';
+    kn.tabIndex = 0; kn.setAttribute("role", "slider"); kn.setAttribute("aria-label", o.label);
+    function frac() { return (r.value - r.min) / (r.max - r.min || 1); }
+    function paintKnob() {
+      var f = frac(), a0 = -135, a = a0 + 270 * f, rad = function (d) { return (d - 90) * Math.PI / 180; };
+      var x = 20 + 15 * Math.cos(rad(a)), y = 20 + 15 * Math.sin(rad(a));
+      kn.querySelector(".sk-kv").setAttribute("d", f <= 0 ? "" : "M10.8 32.2A15 15 0 " + (270 * f > 180 ? 1 : 0) + " 1 " + x.toFixed(2) + " " + y.toFixed(2));
+      kn.querySelector(".sk-kp").setAttribute("transform", "rotate(" + a.toFixed(1) + " 20 20)");
+      kn.setAttribute("aria-valuetext", val.textContent);
+    }
+    function nudge(dx) { if (r.disabled) return; var lo = +r.min, hi = +r.max, st = r.step === "any" ? (hi - lo) / 200 : +r.step, v = Math.max(lo, Math.min(hi, +r.value + dx)); v = Math.round((v - lo) / st) * st + lo; if (v === +r.value) return; r.value = v; r.dispatchEvent(new Event("input", { bubbles: true })); }
+    kn.addEventListener("pointerdown", function (e) {
+      if (r.disabled) return; e.preventDefault(); kn.focus(); kn.setPointerCapture(e.pointerId);
+      var y0 = e.clientY, v0 = +r.value, span = r.max - r.min;
+      function mv(ev) { var d = (y0 - ev.clientY) / (ev.shiftKey ? 600 : 150) * span; r.value = Math.max(+r.min, Math.min(+r.max, v0 + d)); r.dispatchEvent(new Event("input", { bubbles: true })); }
+      function up() { kn.removeEventListener("pointermove", mv); kn.removeEventListener("pointerup", up); kn.removeEventListener("pointercancel", up); }
+      kn.addEventListener("pointermove", mv); kn.addEventListener("pointerup", up); kn.addEventListener("pointercancel", up);
+    });
+    kn.addEventListener("click", function (e) { e.preventDefault(); });
+    kn.addEventListener("dblclick", function () { if (o.value != null) { r.value = toX(o.value); r.dispatchEvent(new Event("input", { bubbles: true })); } });
+    kn.addEventListener("wheel", function (e) { if (r.disabled || !w.closest(".sk-knobs")) return; e.preventDefault(); nudge((e.deltaY < 0 ? 1 : -1) * (r.step === "any" ? (r.max - r.min) / 100 : +r.step) * (e.shiftKey ? 1 : 2)); }, { passive: false });
+    kn.addEventListener("keydown", function (e) {
+      var st = r.step === "any" ? (r.max - r.min) / 100 : +r.step, big = (r.max - r.min) / 10;
+      var d = { ArrowUp: st, ArrowRight: st, ArrowDown: -st, ArrowLeft: -st, PageUp: big, PageDown: -big }[e.key];
+      if (e.key === "Home") d = -1e9; if (e.key === "End") d = 1e9;
+      if (d == null) return; e.preventDefault(); e.stopPropagation(); nudge(e.shiftKey ? d * 10 : d);
+    });
+    function show() { val.textContent = (o.fmt || fmtN(2))(toV(r.value)); paintKnob(); }
     r.addEventListener("input", function () { show(); if (o.on) o.on(toV(r.value)); });
     r.value = toX(o.value); show();
+    // the number beside the slider can be clicked and typed into (num-edit.js); it works in shown units
+    r.numEdit = { get: function () { return toV(r.value); }, set: function (v) { v = Math.max(lo, Math.min(hi, v)); r.value = toX(v); r.dispatchEvent(new Event("input", { bubbles: true })); } };
     if (o.title) w.title = o.title;
-    w.appendChild(name); w.appendChild(val); w.appendChild(r); box.appendChild(w);
+    w.appendChild(name); w.appendChild(val); w.appendChild(kn); w.appendChild(r); box.appendChild(w);
     return { el: w, input: r, get value() { return toV(r.value); }, set: function (v) { r.value = toX(v); show(); if (o.on) o.on(toV(r.value)); } };
   }
   function sel(box, label, opts, value, on) {
@@ -410,6 +480,16 @@
     w.playBtn = button(w.tools, "▶ Play", function () { w.running ? w.stop() : w.start(); }, "btn-outline-primary sk-play");
     w.num = function (key, o, box) { o.on = (function (f) { return function (v) { w.P[key] = v; if (w.running && w.apply) w.apply(key, v); if (w.redraw) w.redraw(); if (f) f(v); }; })(o.on); w.P[key] = o.value; return (w.c[key] = ctl(box || w.ctls, o)); };
     w.pick = function (key, label, opts, value, box, extra) { w.P[key] = value; return (w.c[key] = sel(box || w.ctls, label, opts, value, function (v) { w.P[key] = v; if (w.running && w.apply) w.apply(key, v); if (w.redraw) w.redraw(); if (extra) extra(v); })); };
+    // Sliders / Knobs: a View menu in the widget's tools; the choice is kept for every widget that offers it
+    w.knobView = function () {
+      var saved = "sliders"; try { saved = localStorage.getItem("sk-view") || "sliders"; } catch (e) {}
+      var v = sel(w.tools, "View", [["sliders", "Sliders"], ["knobs", "Knobs"]], saved, function (x) {
+        host.classList.toggle("sk-knobs", x === "knobs"); try { localStorage.setItem("sk-view", x); } catch (e) {}
+        document.querySelectorAll(".sk-w").forEach(function (o) { var s2 = o.querySelector(".sk-viewsel select"); if (o !== host && s2 && s2.value !== x) { s2.value = x; o.classList.toggle("sk-knobs", x === "knobs"); } });
+      });
+      v.el.classList.add("sk-viewsel"); w.tools.insertBefore(v.el, w.playBtn); host.classList.toggle("sk-knobs", saved === "knobs"); w.c.view = v;
+      return v;
+    };
     w.presets = function (list) {
       var box = el("div", "sk-presets"); box.appendChild(el("span", "sk-cl", "Presets"));
       list.forEach(function (p) { button(box, p.name, function () { w.preset(p); }); });
@@ -699,6 +779,176 @@
     return w;
   }
 
+  // ---------- chip: a 1980s game sound chip (two pulses, a triangle, noise), run one frame (1/60 s) at a time ----------
+  // The song is 64 rows of tracker text, one column a channel: a note "A-4" / "C#5", "---" cuts it, "" holds; pulse 2 takes an
+  // arpeggio effect after its note ("A-4 037": 0xy adds x and y semitones, in hex); noise is K S H. A row lasts a whole number
+  // of frames; pulse 2 plays its chord as an arpeggio (or, to compare, the root alone, or a real three-note chord). Volumes step
+  // down in 16 levels per frame, as the hardware did. Held keys replace the chord in the arpeggio, or, in the tracker, go into
+  // the cell last clicked.
+  var CHIP_NN = ["C-", "C#", "D-", "D#", "E-", "F-", "F#", "G-", "G#", "A-", "A#", "B-"], CHIP_COLS = ["p1", "p2", "tri", "noi"];
+  function chipName(m) { return CHIP_NN[m % 12] + (Math.floor(m / 12) - 1); }
+  function chipNote(s) {
+    var m = /^([A-Ga-g])([-#b]?)(\d)$/.exec(s); if (!m) return null;
+    var pc = { c: 0, d: 2, e: 4, f: 5, g: 7, a: 9, b: 11 }[m[1].toLowerCase()] + (m[2] === "#" ? 1 : m[2] === "b" ? -1 : 0);
+    return 12 * (+m[3] + 1) + pc;
+  }
+  // One cell's text -> undefined (hold), 0 (cut), a MIDI note, a chord [root, ...] (pulse 2), "k" "s" "h" (noise); null if unreadable.
+  function chipCell(col, s) {
+    s = (s || "").trim(); if (!s || /^\.+$/.test(s)) return undefined; if (/^-+$/.test(s) || s === "===") return 0;
+    if (col === "noi") { s = s.toLowerCase(); return /^[ksh]$/.test(s) ? s : null; }
+    var p = s.split(/\s+/), r = chipNote(p[0]); if (r == null || p.length > 2) return null;
+    if (col !== "p2") return p.length > 1 ? null : r;
+    if (!p[1]) return [r];
+    var fx = /^0([0-9a-fA-F])([0-9a-fA-F])$/.exec(p[1]); if (!fx) return null;
+    var n = [r]; [fx[1], fx[2]].forEach(function (x) { if (+("0x" + x)) n.push(r + parseInt(x, 16)); }); return n;
+  }
+  // The example tune: Am F C G in A minor, 16 rows (sixteenths) a bar.
+  function chipExample() {
+    var CH = ["A-4 037", "F-4 047", "E-4 038", "G-4 047"], BASS = [45, 41, 48, 43], DRUMS = "k.h.s.h.k.k.s.hh";
+    var EIGHTHS = [76, "-", 74, 72, 74, "-", 72, 69, 72, "-", "-", 69, 72, 74, 76, "-", 79, "-", 76, "-", 74, 72, 74, 76, 74, "-", "-", 71, 67, "-", ".", "."];
+    var rows = [];
+    for (var r = 0; r < 64; r++) {
+      var bar = r >> 4, s = r & 15, e = r % 2 ? "-" : EIGHTHS[r >> 1];
+      rows.push({ p1: e === "-" ? "" : e === "." ? "---" : chipName(e), p2: s ? "" : CH[bar],
+        tri: s % 4 === 0 ? chipName(BASS[bar]) : s % 4 === 2 ? chipName(BASS[bar] + 12) : "", noi: DRUMS[s] === "." ? "" : DRUMS[s].toUpperCase() });
+    }
+    return rows;
+  }
+  function Chip(host, opts) {
+    opts = opts || {};
+    var w = Base(host, opts.title || "Four channels"), on = { p1: 1, p2: 1, tri: 1, noi: 1 }, held = [];
+    var row = el("div", "sk-presets"); row.appendChild(el("span", "sk-cl", "Channels"));
+    [["p1", "Pulse 1: tune"], ["p2", "Pulse 2: chords"], ["tri", "Triangle: bass"], ["noi", "Noise: drums"]].forEach(function (ch) {
+      var b = button(row, ch[1], function () { on[ch[0]] = on[ch[0]] ? 0 : 1; b.classList.toggle("sk-on", !!on[ch[0]]); b.setAttribute("aria-pressed", String(!!on[ch[0]])); });
+      b.classList.add("sk-on"); b.setAttribute("aria-pressed", "true"); b.title = "Mute or unmute this channel";
+    });
+    w.body.insertBefore(row, w.ctls);
+    var DUTY = { "12": .125, "25": .25, "50": .5 }, duties = [["12", "12.5% (thin)"], ["25", "25%"], ["50", "50% (square)"]];
+    w.pick("chords", "Chords on pulse 2", [["arp", "Arpeggio (one channel)"], ["root", "Root only"], ["full", "Real chord (three channels)"]], "arp");
+    w.pick("pattern", "Arpeggio", [["up", "Up"], ["updown", "Up and down"], ["oct", "Up, then the octave"]], "up");
+    w.num("arp", { label: "Frames per arpeggio note", min: 1, max: 15, step: 1, value: opts.tracker ? 1 : 2, fmt: function (v) { return v + " (" + +(60 / v).toFixed(1) + " notes a second)"; } });
+    w.num("speed", { label: "Frames per row (tempo)", min: 3, max: 12, step: 1, value: 7, fmt: function (v) { return v + " (" + Math.round(900 / v) + " bpm)"; } });
+    w.pick("duty1", "Pulse 1 width", duties, "50");
+    w.pick("duty2", "Pulse 2 width", duties, "25");
+    w.pick("vib", "Vibrato on long notes", [["on", "On"], ["off", "Off"]], "on");
+    w.song = chipExample().map(function (x) { var o = {}; CHIP_COLS.forEach(function (k) { o[k] = chipCell(k, x[k]); }); return o; });
+    if (opts.tracker) opts.tracker(w);
+    w.view = viewer(w.body, { ms: 20 });
+    var HIT = { k: [15, 3, 20, 300], s: [13, 1.2, 900, 9000], h: [7, 3, 7000, 20000] };   // volume, fall per frame, high-pass, low-pass
+    var lead, arps, tri, gL, gT, gN, hp, lp;
+    w.apply = function (k, v) { if (k === "duty1" && lead) lead.setWidth(DUTY[v]); if (k === "duty2" && arps) arps.forEach(function (o) { o.setWidth(DUTY[v]); }); };
+    w.onStart = function (c, out) {
+      var t0 = c.currentTime + .02;
+      function chan() { var g = c.createGain(); g.gain.value = 0; g.connect(out); return g; }
+      lead = mkOsc(c, "pulse", 440, DUTY[w.P.duty1]); gL = chan(); lead.out.connect(gL); lead.start(t0);
+      arps = [0, 1, 2].map(function () { var o = mkOsc(c, "pulse", 440, DUTY[w.P.duty2]); o.g = chan(); o.out.connect(o.g); o.start(t0); return o; });
+      tri = c.createOscillator(); tri.type = "triangle"; gT = chan(); tri.connect(gT); tri.start(t0);
+      var nz = noiseSrc("white"); hp = c.createBiquadFilter(); hp.type = "highpass"; lp = c.createBiquadFilter(); lp.type = "lowpass";
+      gN = chan(); nz.connect(hp); hp.connect(lp); lp.connect(gN); nz.start(t0);
+      var r = -1, fc = 0, ac2 = 0, note = 0, age = 0, lv = 0, nv = 0, nf = 1, chord = null, bass = 0;
+      function newRow(t) {
+        r = (r + 1) % w.song.length; var x = w.song[r] || {};
+        if (x.p1 > 0) { note = x.p1; lv = 15; age = 0; } else if (x.p1 === 0) note = 0;
+        if (x.p2 === 0) chord = null; else if (x.p2) { chord = x.p2; ac2 = 0; }
+        if (x.tri === 0) bass = 0; else if (x.tri > 0) { bass = x.tri; tri.frequency.setValueAtTime(mtof(bass), t); }
+        var d = HIT[x.noi]; if (d) { nv = d[0]; nf = d[1]; hp.frequency.setValueAtTime(d[2], t); lp.frequency.setValueAtTime(d[3], t); }
+        if (w.onRow) { var rr = r; setTimeout(function () { if (w.running) w.onRow(rr); }, Math.max(0, (t - c.currentTime) * 1000)); }
+      }
+      var stopLoop = loop(c, 1 / 60, function (f, t) {
+        if (fc % w.P.speed === 0) newRow(t);
+        fc++;
+        // pulse 1: the tune, its volume stepping down to a sustain level, with software vibrato after a while
+        if (note) { age++; lv = Math.max(9, lv - .5); lead.setFreq(mtof(note + (w.P.vib === "on" && age > 14 ? .3 * Math.sin(age * .63) : 0)), t); }
+        gL.gain.setValueAtTime(on.p1 && note ? Math.round(lv) / 15 * .22 : 0, t);
+        // pulse 2: the chord
+        var n = held.length && !w.takesKeys ? held.slice(0, 3) : chord || [], seq = n;
+        if (w.P.pattern === "updown") seq = n.concat(n.slice(1, -1).reverse()); else if (w.P.pattern === "oct") seq = n.concat([n[0] + 12]);
+        var mode = w.P.chords;
+        arps.forEach(function (o, i) {
+          var m = !n.length ? 0 : mode === "full" ? n[i] : i ? 0 : mode === "root" ? n[0] : seq[Math.floor(ac2 / w.P.arp) % seq.length];
+          if (m) o.setFreq(mtof(m), t);
+          o.g.gain.setValueAtTime(on.p2 && m ? (mode === "full" ? .1 : .15) : 0, t);
+        });
+        ac2++;
+        // the triangle has no volume control: on or off
+        gT.gain.setValueAtTime(on.tri && bass ? .4 : 0, t);
+        nv = Math.max(0, nv - nf); gN.gain.setValueAtTime(on.noi ? Math.round(nv) / 15 * .35 : 0, t);
+      });
+      return function () {
+        stopLoop(); var t = c.currentTime + .1;
+        lead.stop(t); arps.forEach(function (o) { o.stop(t); }); tri.stop(t); nz.stop(t); lead = arps = null;
+        if (w.onRow) w.onRow(-1);
+      };
+    };
+    w.noteOn = function (m) {
+      if (w.takesKeys && w.takesKeys(m)) return;
+      held = held.filter(function (x) { return x !== m; }); held.push(m); held.sort(function (a, b) { return a - b; }); if (!w.running) w.start();
+    };
+    w.noteOff = function (m) { held = held.filter(function (x) { return x !== m; }); };
+    return w;
+  }
+
+  // ---------- tracker: the chip's song as an editable grid ----------
+  function Tracker(host) {
+    var KEY = "sk-tracker-v1";
+    return Chip(host, { title: "Tracker", tracker: function (w) {
+      var text = chipExample(), cells = [], trs = [], last = null, follow = true, playing = -1;
+      try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved && saved.length === 64) text = saved; } catch (e) {}
+      var tools = el("div", "sk-presets");
+      button(tools, "Example tune", function () { load(chipExample()); });
+      button(tools, "Clear", function () { load(text.map(function () { return { p1: "", p2: "", tri: "", noi: "" }; })); });
+      var fb = button(tools, "Follow", function () { follow = !follow; fb.classList.toggle("sk-on", follow); fb.setAttribute("aria-pressed", String(follow)); });
+      fb.classList.add("sk-on"); fb.setAttribute("aria-pressed", "true"); fb.title = "Scroll the grid with the playing row";
+      w.body.insertBefore(tools, w.ctls);
+      var box = el("div", "sk-trk"), tb = el("table"), hd = el("tr");
+      ["Row", "Pulse 1", "Pulse 2 + arp", "Triangle", "Noise"].forEach(function (h) { hd.appendChild(el("th", null, h)); });
+      tb.appendChild(hd);
+      for (var r = 0; r < 64; r++) {
+        var tr = el("tr", r % 16 === 0 ? "sk-trk-bar" : r % 4 === 0 ? "sk-trk-beat" : null); tr.appendChild(el("td", "sk-trk-n", (r < 10 ? "0" : "") + r));
+        cells.push(CHIP_COLS.map(function (col, ci) {
+          var td = el("td"), inp = el("input"); inp.type = "text"; inp.spellcheck = false; inp.autocomplete = "off"; inp.placeholder = "...";
+          inp.size = col === "p2" ? 8 : col === "noi" ? 2 : 4; inp.setAttribute("aria-label", "Row " + r + ", " + hd.children[ci + 1].textContent);
+          inp.dataset.r = r; inp.dataset.c = ci;
+          inp.addEventListener("input", function () { parse(+inp.dataset.r, ci); save(); });
+          inp.addEventListener("focus", function () { last = inp; });
+          inp.addEventListener("keydown", function (e) {
+            var d = { ArrowUp: -1, ArrowDown: 1, Enter: 1 }[e.key], dc = { ArrowLeft: -1, ArrowRight: 1 }[e.key];
+            if (dc && ((dc < 0 && inp.selectionStart === 0) || (dc > 0 && inp.selectionEnd === inp.value.length))) d = 0;
+            else if (dc) return;
+            if (d == null) return; e.preventDefault(); move(+inp.dataset.r + d, ci + (dc || 0));
+          });
+          td.appendChild(inp); tr.appendChild(td); return inp;
+        }));
+        trs.push(tr); tb.appendChild(tr);
+      }
+      box.appendChild(tb); w.body.insertBefore(box, w.ctls);
+      function move(r, c) { r = (r + 64) % 64; c = Math.max(0, Math.min(3, c)); cells[r][c].focus(); cells[r][c].select(); }
+      function parse(r, c) {
+        var col = CHIP_COLS[c], v = chipCell(col, cells[r][c].value);
+        cells[r][c].classList.toggle("sk-bad", v === null); cells[r][c].title = v === null ? "Not read: " + help(col) : "";
+        w.song[r][col] = v === null ? undefined : v; text[r][col] = cells[r][c].value;
+      }
+      function help(col) { return col === "noi" ? "K, S or H" : col === "p2" ? "a note like A-4, then an arpeggio like 037" : "a note like A-4 or C#5, or --- to stop"; }
+      function load(t) { text = t.map(function (x) { return { p1: x.p1 || "", p2: x.p2 || "", tri: x.tri || "", noi: x.noi || "" }; }); for (var r = 0; r < 64; r++) CHIP_COLS.forEach(function (col, c) { cells[r][c].value = text[r][col]; parse(r, c); }); save(); }
+      function save() { try { localStorage.setItem(KEY, JSON.stringify(text)); } catch (e) {} }
+      w.onRow = function (r) {
+        if (playing >= 0) trs[playing].classList.remove("sk-trk-now"); playing = r; if (r < 0) return;
+        trs[r].classList.add("sk-trk-now");
+        if (follow) box.scrollTop = trs[r].offsetTop - box.clientHeight / 2;
+      };
+      // a key from MIDI or the on-screen keyboard goes into the cell last clicked (keeping pulse 2's arpeggio), then moves down
+      w.takesKeys = function (m) {
+        var a = document.activeElement; if (a && a.dataset && a.dataset.c != null && box.contains(a)) last = a;
+        if (!last || !document.body.contains(last) || +last.dataset.c === 3) return false;
+        var r = +last.dataset.r, c = +last.dataset.c, fx = c === 1 ? (last.value.trim().split(/\s+/)[1] || "") : "";
+        last.value = chipName(m) + (fx ? " " + fx : ""); parse(r, c); save(); move(r + 1, c);
+        return true;
+      };
+      w.song = []; for (var i = 0; i < 64; i++) w.song.push({});
+      load(text);
+    } });
+  }
+
   // ======================================================================================
   // Effects: source picker, dry/wet mix, bypass, and the effect itself (w.build).
   function Fx(host, title, defSource, defMix) {
@@ -714,7 +964,7 @@
     function mix() { if (!dry) return; var t = ac().currentTime, m = w.bypass ? 0 : w.P.mix; dry.gain.setTargetAtTime(1 - m, t, .02); wet.gain.setTargetAtTime(m, t, .02); }
     function swap() {
       var c = ac(); if (src) { src.stop(); try { src.out.disconnect(); } catch (e) {} src = null; }
-      var mine = w.c.source.value; w.status.textContent = mine === "mic" ? "Opening the microphone… use headphones." : "";
+      var mine = w.c.source.value; w.status.textContent = mine === "mic" ? "Opening the microphone… use headphones." : mine === "guitar" || mine === "bass" ? "Loading the band's samples…" : "";
       makeSource(mine, c).then(function (s) { if (!w.running || w.c.source.value !== mine) { s.stop(); return; } src = s; s.out.connect(bus); w.status.textContent = mine === "mic" ? (SK.micResult && SK.micResult.output === "speakers" ? "Microphone on, but your speakers are playing. Put on headphones now or this will feed back; Stop silences it." : "Microphone on. Use headphones.") : mine === "keys" ? "Play the computer keys, the keyboard below or MIDI." : ""; },
         function (e) { w.status.textContent = "Microphone not available: " + (e.message || e.name); });
     }
@@ -2041,7 +2291,7 @@
       else { poly = new Poly(function (m, v, t) { return sawVoice(c, carIn, m, v, t, { type: w.P.car === "square" ? "square" : "sawtooth", cut: 9000, a: .005, r: .15 }); }); stops.push(function () { poly.all(c.currentTime); poly = null; }); }
       if (poly && !keysUsed) { held = [48, 55, 58, 62, 67]; held.forEach(function (m) { poly.on(m, .9, c.currentTime); }); }
       // modulator
-      var mine = w.P.mod; w.status.textContent = mine === "mic" ? "Opening the microphone… use headphones." : "";
+      var mine = w.P.mod; w.status.textContent = mine === "mic" ? "Opening the microphone… use headphones." : mine === "guitar" || mine === "bass" ? "Loading the band's samples…" : "";
       makeSource(mine, c).then(function (s) { if (!w.running) { s.stop(); return; } s.out.connect(modIn); stops.push(function () { s.stop(); }); w.status.textContent = mine === "mic" ? "Microphone on (headphones!). Talk, and play notes on the keys or MIDI." : "Play notes on the keys or MIDI to change the chord."; },
         function (e) { w.status.textContent = "Microphone not available (" + (e.message || e.name) + "). Try the robot voice."; });
       return function () { stops.forEach(function (f) { f(); }); bands = []; w.n = null; held = null; };
@@ -2379,7 +2629,238 @@
   function noteOn(m, v) { if (!target) { var first = widgets.filter(function (w) { return w.noteOn; })[0]; if (first) setTarget(first); } if (target) target.noteOn(m, v); }
   function noteOff(m) { if (target && target.noteOff) target.noteOff(m); }
 
-  var KINDS = { series: Series, interval: Interval, additive: Additive, wave: Wave, noise: Noise, filter: Filter, lfo: Lfo, subtractive: Subtractive, fm: Fm, wavetable: Wavetable, distortion: Distortion, compressor: Compressor, chorus: Chorus, phaser: Phaser, reverb: Reverb, delay: Delay, glitch: Glitch, envelope: Envelope, granular: Granular, eq: Eq, sidechain: Sidechain, gate: Gate, transient: Transient, tremolo: Tremolo, rotary: Rotary, octaver: Octaver, harmonizer: Harmonizer, autotune: AutoTune, stereo: Stereo, chain: Chain, shimmer: Shimmer, vocoder: Vocoder, tuner: Tuner, bendboard: Bendboard };
+  // ======================================================================================
+  // amp: a guitar amp, knob by knob (the Gear 3 lesson). Input -> Gain -> preamp valves (clip) -> Bass Mid Treble (the tone
+  // stack) -> Master -> power amp (clips only when the master is high) -> Presence and Resonance (in the power amp, after the
+  // distortion) -> a 1x12 speaker cabinet. Knobs read 0-10, 5 is flat for the tone controls. "Vintage, one Volume" makes the
+  // Gain knob drive both stages, as on an amp without a master.
+  function knob(v) { return v.toFixed(1); }
+  function curve(fn) { var n = 2048, a = new Float32Array(n); for (var i = 0; i < n; i++) a[i] = fn(i / (n - 1) * 2 - 1); return a; }
+  // The cabinets: each a few filters (six slots, in a row after the power amp). What they model: the low end (how deep the
+  // speakers go, and the thump of a closed box, which an open back cancels), cone break-up in the upper mids, the
+  // interference of several speakers side by side (a dip), and the roll-off: the bigger the cone the earlier. A horn
+  // tweeter (bass cabs) puts the top back. [type, Hz, Q, dB]
+  var CABS = {
+    "1x12o": ["1×12 open back (combo)", [["highpass", 85, .7], ["peaking", 120, 1.2, 2], ["peaking", 2500, 1.5, 3], ["lowpass", 5200, .9], ["lowpass", 6000, .6]]],
+    "2x12o": ["2×12 open back", [["highpass", 75, .8], ["peaking", 110, 1.2, 3], ["peaking", 2200, 1.4, 3], ["peaking", 3400, 3, -4], ["lowpass", 5000, .9], ["lowpass", 5800, .6]]],
+    "4x12c": ["4×12 closed back", [["highpass", 65, 1.1], ["peaking", 100, 1.4, 5], ["peaking", 2000, 1.2, 4], ["peaking", 3200, 2, -4], ["lowpass", 4600, .9], ["lowpass", 5500, .6]]],
+    "4x10":  ["4×10 open back (Bassman)", [["highpass", 80, .8], ["peaking", 140, 1.2, 3], ["peaking", 2800, 1.2, 4], ["peaking", 4200, 3, -3], ["lowpass", 6500, .8], ["lowpass", 7000, .6]]],
+    "410t":  ["Bass 4×10 closed, horn tweeter", [["highpass", 45, .9], ["peaking", 90, 1.2, 3], ["peaking", 2800, 1.2, 2], ["peaking", 4200, 2, -2], ["highshelf", 7000, .7, 4], ["lowpass", 14000, .7]]],
+    "1x15":  ["Bass 1×15 closed", [["highpass", 40, .9], ["peaking", 70, 1.1, 3], ["peaking", 800, 1, 1], ["peaking", 1800, .8, -3], ["lowpass", 2500, .8], ["lowpass", 3200, .6]]],
+    "8x10":  ["Bass 8×10 closed (the fridge)", [["highpass", 45, 1], ["peaking", 80, 1.3, 4], ["peaking", 2600, 1.2, 2], ["peaking", 4200, 2, -3], ["lowpass", 5000, .8], ["lowpass", 6000, .6]]],
+    "none":  ["No cabinet (straight from the amp)", []]
+  };
+  function Amp(host) {
+    var w = Fx(host, "Guitar amp", "guitar", 1);
+    w.c.mix.el.style.display = "none"; w.knobView();
+    w.presets([
+      { name: "Clean", set: { type: "guitar", source: "guitar", cab: "1x12o", design: "master", gain: 2, bass: 5, mid: 5, midf: 700, treble: 6, master: 5, presence: 5, resonance: 5 } },
+      { name: "Crunch", set: { type: "guitar", source: "guitar", cab: "2x12o", design: "master", gain: 5.5, bass: 5, mid: 6, midf: 700, treble: 6, master: 4, presence: 5, resonance: 5 } },
+      { name: "High gain, quiet", set: { type: "guitar", source: "guitar", cab: "4x12c", design: "master", gain: 9, bass: 6, mid: 4, midf: 700, treble: 6, master: 1.5, presence: 5, resonance: 6 } },
+      { name: "Clean, loud", set: { type: "guitar", source: "guitar", cab: "1x12o", design: "master", gain: 2, bass: 5, mid: 5, midf: 700, treble: 6, master: 8, presence: 5, resonance: 5 } },
+      { name: "Vintage, cranked", set: { type: "guitar", source: "guitar", cab: "4x10", design: "vintage", gain: 9, bass: 5, mid: 6, midf: 700, treble: 6, presence: 5, resonance: 5 } },
+      { name: "Presence 0 (woolly)", set: { presence: 0 } },
+      { name: "Presence 10 (fizzy)", set: { presence: 10 } },
+      { name: "Bass amp", set: { type: "bass", source: "bass", cab: "410t", design: "master", gain: 3, bass: 5.5, mid: 5, midf: 500, treble: 5, master: 5, presence: 5, resonance: 5 } },
+      { name: "Bass, growl", set: { type: "bass", source: "bass", cab: "8x10", design: "master", gain: 6.5, bass: 6, mid: 6.5, midf: 800, treble: 5, master: 4, presence: 5, resonance: 5 } },
+      { name: "Bass through a guitar amp", set: { type: "guitar", source: "bass", cab: "1x12o", design: "master", gain: 3, bass: 5, mid: 5, midf: 700, treble: 5, master: 5, presence: 5, resonance: 5 } }
+    ]);
+    w.pick("type", "Amp", [["guitar", "Guitar amp"], ["bass", "Bass amp"]], "guitar", null, function () { label(); });
+    w.pick("design", "Volume knobs", [["master", "Gain + Master"], ["vintage", "Vintage: one Volume, no master"]], "master", null, function () { label(); });
+    w.pick("cab", "Cabinet", Object.keys(CABS).map(function (k) { return [k, CABS[k][0]]; }), "1x12o", null, function () { label(); if (w.n) setCab(); });
+    var K = { min: 0, max: 10, step: .1, fmt: knob };
+    function k(key, lab, v, title) { var o = {}; for (var x in K) o[x] = K[x]; o.label = lab; o.value = v; o.title = title; return w.num(key, o); }
+    k("gain", "Gain", 3, "How hard the preamp is pushed: the sound (clean, crunch, distortion)");
+    k("bass", "Bass", 5, "Tone stack, before the power amp: around 100 Hz (60 Hz on the bass amp)");
+    k("mid", "Middle", 5, "Tone stack: boost or cut at the Mid frequency. Scooped mids sound big alone and vanish in a band");
+    w.num("midf", { label: "Mid frequency", min: 200, max: 3000, log: true, value: 700, fmt: function (v) { return fmtHz(v < 1000 ? Math.round(v / 10) * 10 : Math.round(v / 50) * 50); }, title: "Where the Middle knob works: low (200-400 Hz) is body and boom, 700 Hz-1 kHz honk and growl, 1.5-3 kHz bite and attack" });
+    k("treble", "Treble", 5, "Tone stack: from about 2.5 kHz up (4 kHz on the bass amp). In the preamp, so it changes what gets distorted");
+    k("master", "Master", 3, "How loud: between the preamp and the power amp");
+    k("presence", "Presence", 5, "In the power amp, after the distortion: about 2-6 kHz, the cut and edge");
+    k("resonance", "Resonance", 5, "In the power amp: the low end's thump, around 90 Hz");
+    var info = el("p", "sk-info"); w.body.appendChild(info);
+    w.view = viewer(w.body, { ms: 30 });
+    function vintage() { return w.P.design === "vintage"; }
+    function bassAmp() { return w.P.type === "bass"; }
+    function preGain() { return Math.pow(10, (w.P.gain * 4.2 - 8) / 20) * (bassAmp() ? .35 : 1); }   // 0 -> x0.4, 10 -> x50; a bass amp has more headroom
+    function masterLin() { var m = vintage() ? w.P.gain : w.P.master; return 1.6 * Math.pow(m / 10, 2.2); }   // 10 -> drives the power valves
+    function db(v) { return (v - 5) * 2.4; }                                                 // a tone knob: 0 -> -12 dB, 10 -> +12 dB
+    function label() {
+      w.c.master.el.style.opacity = vintage() ? .4 : 1; w.c.master.input.disabled = vintage();
+      w.c.gain.el.querySelector(".sk-cl").textContent = vintage() ? "Volume" : "Gain";
+      w.head.querySelector(".sk-title").textContent = bassAmp() ? "Bass amp" : "Guitar amp";
+      var g = w.P.gain, m = vintage() ? g : w.P.master, gb = bassAmp() ? g - 2.5 : g;
+      var pre = gb < 3 ? "clean" : gb < 5 ? "just breaking up" : gb < 7.5 ? "crunch" : "full distortion";
+      var pow = m < 6 ? "clean" : m < 8.5 ? "starting to push" : "pushed: a second, looser distortion";
+      var cab = w.P.cab, lows = { "1x12o": "an open-back 12″ stops around 85 Hz", "2x12o": "an open back, so the lows below 75 Hz cancel", "4x12c": "a closed box adds thump around 100 Hz", "4x10": "10″ speakers: quick and bright, little deep bass",
+        "410t": "goes down to 45 Hz, the horn adds the top", "1x15": "deep and round, nothing above 2.5 kHz", "8x10": "deep and loud, a growly top", "none": "no cabinet: the raw amp, fizzy and harsh" }[cab];
+      var warn = w.P.source === "bass" && !bassAmp() ? " A guitar amp on bass: the low E (41 Hz) and its octave (82 Hz) are cut away by the amp and the cabinet." : "";
+      info.textContent = "Preamp: " + pre + ". Power amp: " + pow + ". Cabinet: " + lows + "." + (vintage() ? " One knob does both: to get the preamp dirty you must also make it loud." : "") + warn;
+      if (w.running) w.apply("all");
+    }
+    w.redraw = function () { label(); w.view.dirty = true; };
+    function setCab() {
+      var spec = CABS[w.P.cab][1], t = ac().currentTime;
+      w.n.cab.forEach(function (f, i) { var x = spec[i] || ["peaking", 1000, 1, 0];
+        f.type = x[0]; f.frequency.setValueAtTime(x[1], t); f.Q.setValueAtTime(x[2], t); f.gain.setValueAtTime(x[3] || 0, t); });
+    }
+    w.build = function (c) {
+      var inp = c.createGain(), tight = c.createBiquadFilter(), gain = c.createGain(), pre = c.createWaveShaper(), preOut = c.createGain(),
+          bass = c.createBiquadFilter(), mid = c.createBiquadFilter(), tre = c.createBiquadFilter(), master = c.createGain(), power = c.createWaveShaper(),
+          pres = c.createBiquadFilter(), reso = c.createBiquadFilter(), out = c.createGain(), cab = [0, 1, 2, 3, 4, 5].map(function () { return c.createBiquadFilter(); });
+      tight.type = "highpass"; tight.frequency.value = 90;
+      pre.curve = curve(function (x) { return (Math.tanh(1.2 * x + .25) - Math.tanh(.25)) / 1.1; }); pre.oversample = "4x";   // uneven, like a valve
+      preOut.gain.value = .7;
+      bass.type = "lowshelf"; mid.type = "peaking"; mid.Q.value = .7; tre.type = "highshelf";
+      power.curve = curve(function (x) { return Math.tanh(x * 1.3) / Math.tanh(1.3); }); power.oversample = "4x";
+      pres.type = "peaking"; pres.frequency.value = 3800; pres.Q.value = .6; reso.type = "peaking"; reso.frequency.value = 90; reso.Q.value = 1;
+      out.gain.value = .9;
+      [inp, tight, gain, pre, preOut, bass, mid, tre, master, power, pres, reso].concat(cab, [out]).reduce(function (a, b) { a.connect(b); return b; });
+      w.n = { tight: tight, gain: gain, bass: bass, mid: mid, tre: tre, master: master, pres: pres, reso: reso, cab: cab };
+      setCab(); w.apply("all");
+      return { input: inp, output: out };
+    };
+    w.apply = function (key) {
+      if (!w.n) return; var t = ac().currentTime, n = w.n, ba = bassAmp();
+      n.tight.frequency.setTargetAtTime(ba ? 30 : 90, t, .02);
+      n.bass.frequency.setTargetAtTime(ba ? 60 : 110, t, .02); n.tre.frequency.setTargetAtTime(ba ? 4000 : 2500, t, .02); n.mid.frequency.setTargetAtTime(w.P.midf, t, .02);
+      n.gain.gain.setTargetAtTime(preGain(), t, .02);
+      n.bass.gain.setTargetAtTime(db(w.P.bass), t, .02); n.mid.gain.setTargetAtTime(db(w.P.mid), t, .02); n.tre.gain.setTargetAtTime(db(w.P.treble), t, .02);
+      n.master.gain.setTargetAtTime(masterLin(), t, .02);
+      n.pres.gain.setTargetAtTime(db(w.P.presence) * .8, t, .02); n.reso.gain.setTargetAtTime(db(w.P.resonance), t, .02);
+      if (key === "cab") setCab();
+    };
+    w.c.source.input.addEventListener("change", function () { label(); });
+    label();
+    return w;
+  }
+
+  // ======================================================================================
+  // pa: one mixer channel, top to bottom (the Gear 3 lesson): a mic-level source -> Gain (trim, with a peak light) -> High-pass
+  // -> EQ (low shelf, a sweepable mid, high shelf) -> Aux to a monitor wedge (pre-fader) -> Pan, Mute, Fader -> the mains.
+  // The wedge is real: what it plays goes back into the mic (how much depends on where the mic's dead side points), through
+  // a room that rings around 2.5 kHz, so too much gain or monitor howls, and a mid cut at the ringing frequency stops it.
+  // The microphone source leaves the wedge out (your speakers would make the real thing).
+  function Pa(host) {
+    var w = Base(host, "Mixer channel");
+    var srcs = [["voice", "Singer (robot voice)"], ["singer", "Singer (out of tune)"], ["drums", "Drum loop"], ["guitar", "Guitar riff"], ["mic", "Microphone"]];
+    w.pick("source", "Source", srcs, host.getAttribute("data-source") || "voice", w.tools, function () { if (w.running) { w.stop(); w.start(); } });
+    w.tools.insertBefore(w.c.source.el, w.playBtn); w.knobView();
+    w.status = el("span", "sk-status"); w.tools.appendChild(w.status);
+    w.presets([
+      { name: "Start here", set: { trim: 0, hpf: "off", low: 0, midg: 0, midf: 1000, high: 0, aux: -30, fader: -60, pan: 0, mute: "off", wedge: "back" } },
+      { name: "Gain set", set: { trim: 32, hpf: "on", low: 0, midg: 0, high: 0, aux: -30, fader: 0, mute: "off" } },
+      { name: "Too hot", set: { trim: 52, fader: -12 } },
+      { name: "Feedback", set: { trim: 34, aux: 8, wedge: "front", midg: 0 } },
+      { name: "Fixed: dead side", set: { wedge: "back" } },
+      { name: "Fixed: notch it", set: { wedge: "front", midf: 2500, midg: -12, aux: 4 } }
+    ]);
+    var strip = el("div", "sk-ctls"); w.body.appendChild(strip);
+    var steps = [
+      ["1 Gain", [["trim", { label: "Gain (trim)", min: 0, max: 60, step: .5, value: 0, fmt: function (v) { return "+" + v.toFixed(1) + " dB"; } }]]],
+      ["2 High-pass", null],
+      ["3 EQ", [["low", { label: "Low (100 Hz)", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }], ["midf", { label: "Mid frequency", min: 200, max: 8000, log: true, value: 1000, fmt: fmtHz }],
+                ["midg", { label: "Mid boost / cut", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }], ["high", { label: "High (10 kHz)", min: -15, max: 15, step: .5, value: 0, fmt: fmtDb }]]],
+      ["4 Aux (monitor)", [["aux", { label: "Monitor send (pre-fader)", min: -30, max: 10, step: .5, value: -30, fmt: function (v) { return v <= -30 ? "off" : fmtDb(v); } }]]],
+      ["5 Pan, Mute, Fader", [["pan", { label: "Pan", min: -1, max: 1, step: .05, value: 0, fmt: function (v) { return v === 0 ? "C" : (v < 0 ? "L" : "R") + Math.round(Math.abs(v) * 100); } }],
+                ["fader", { label: "Fader", min: -60, max: 10, step: .5, value: -60, fmt: function (v) { return v <= -60 ? "−∞" : fmtDb(v); } }]]]
+    ];
+    steps.forEach(function (s) {
+      var box = el("fieldset", "sk-group"); box.appendChild(el("legend", null, s[0])); strip.appendChild(box);
+      if (s[0] === "2 High-pass") w.pick("hpf", "High-pass (100 Hz)", [["off", "Off"], ["on", "On"]], "off", box);
+      (s[1] || []).forEach(function (c) { w.num(c[0], c[1], box); });
+      if (s[0] === "5 Pan, Mute, Fader") w.pick("mute", "Mute", [["off", "Off"], ["on", "Muted"]], "off", box);
+      if (s[0] === "4 Aux (monitor)") w.pick("wedge", "The wedge is at the mic's", [["back", "back (dead side)"], ["side", "side"], ["front", "front"], ["cupped", "front, grille cupped"]], "back", box);
+    });
+    var meters = el("div", "sk-pa-meters"); w.body.appendChild(meters);
+    function meter(name) {
+      var row = el("div", "sk-pa-m"), lab = el("span", "sk-cl", name), bar = el("span", "sk-pa-bar"), fill = el("span", "sk-pa-fill"), led = el("span", "sk-pa-led", "PEAK"), val = el("output", "sk-cv");
+      bar.appendChild(fill); row.appendChild(lab); row.appendChild(bar); row.appendChild(val); row.appendChild(led); meters.appendChild(row);
+      return { fill: fill, led: led, val: val, peak: 0 };
+    }
+    var mGain = meter("After gain"), mMain = meter("Mains"), info = el("p", "sk-info"); w.body.appendChild(info);
+    w.view = viewer(w.body, { ms: 30 });
+    var css = document.getElementById("sk-pa-css");
+    if (!css) { css = el("style"); css.id = "sk-pa-css"; css.textContent =
+      ".sk-group{border:1px solid var(--site-border);border-radius:6px;padding:.2rem .5rem .4rem;margin:0;min-width:11rem;flex:1 1 11rem}" +
+      ".sk-group legend{font-size:.78rem;font-weight:700;float:none;width:auto;padding:0 .3rem;margin:0}" +
+      ".sk-pa-meters{display:grid;gap:.25rem;margin:.5rem 0}.sk-pa-m{display:grid;grid-template-columns:6.5rem 1fr 4.5rem 3rem;gap:.4rem;align-items:center}" +
+      ".sk-pa-bar{height:.7rem;background:var(--site-surface-2);border:1px solid var(--site-border);border-radius:3px;overflow:hidden;position:relative}" +
+      ".sk-pa-bar::after{content:'';position:absolute;left:83.3%;top:0;bottom:0;border-left:1px dashed var(--site-ink-3)}" +
+      ".sk-pa-fill{display:block;height:100%;width:0;background:var(--site-pass)}" +
+      ".sk-pa-led{font:700 .62rem var(--font-mono),monospace;text-align:center;border-radius:3px;padding:.05rem 0;color:var(--site-ink-3);border:1px solid var(--site-border)}" +
+      ".sk-pa-led.on{background:var(--site-fail);color:#fff;border-color:var(--site-fail)}";
+      document.head.appendChild(css); }
+    function lin(d) { return Math.pow(10, d / 20); }
+    var PICK = { back: .08, side: .45, front: 1, cupped: 1.5 }, PICKUP = .006, RING = 2.8;   // RING: the room's +9 dB at 2.5 kHz
+    var fq = new Float32Array([2500]), fm = new Float32Array(1), fp = new Float32Array(1);
+    // the gain once round the loop at the ringing frequency: above 1 it grows into a howl
+    function loopGain() { var P = w.P; if (!n || !n.fb || P.aux <= -30) return 0; n.mid.getFrequencyResponse(fq, fm, fp); return lin(P.trim) * lin(P.aux) * RING * PICKUP * PICK[P.wedge] * fm[0]; }
+    var n = null, raf = 0, buf = new Float32Array(2048);
+    function level(an, m) {
+      an.getFloatTimeDomainData(buf); var pk = 0, s = 0; for (var i = 0; i < buf.length; i++) { var a = Math.abs(buf[i]); if (a > pk) pk = a; s += a * a; }
+      var rms = Math.sqrt(s / buf.length), d = 20 * Math.log10(rms + 1e-9);
+      m.fill.style.width = Math.max(0, Math.min(100, (d + 60) / 72 * 100)) + "%";      // -60 .. +12 dBFS; the dashed mark is 0
+      m.val.textContent = d < -59 ? "−∞" : d.toFixed(0) + " dB";
+      if (pk > .9) m.peak = performance.now(); m.led.classList.toggle("on", performance.now() - m.peak < 600);
+      return d;
+    }
+    function tick() {
+      if (!n) return; raf = requestAnimationFrame(tick);
+      var g = level(n.anG, mGain), mm = level(n.anM, mMain), P = w.P, lg = loopGain(), howl = lg > 1;
+      info.textContent = P.trim < 15 ? "Step 1: play or sing at full level and bring the Gain up until the After-gain meter sits around the dashed mark and PEAK only flickers."
+        : g > 4 ? "Too much gain: the preamp is clipping. The fader can't undo that; turn the Gain down."
+        : howl ? "Feedback (loop gain ×" + lg.toFixed(1) + "): the wedge is feeding the mic. Turn the monitor send down, point the mic's dead side at the wedge, or find the ringing frequency with the Mid and cut it."
+        : lg > .6 ? "Close to feedback (loop gain ×" + lg.toFixed(1) + "): you'd hear the room ring around 2.5 kHz. A little less monitor would be safer."
+        : P.fader <= -59 ? "Gain is set. Now bring the fader up to about 0 dB."
+        : "A healthy channel: gain sets the level going in, the fader sets the level in the mix.";
+    }
+    w.usesMic = function () { return w.P.source === "mic"; };
+    w.onStart = function (c, out) {
+      var src = null, mine = w.P.source, inp = c.createGain(), trim = c.createGain(), clip = c.createWaveShaper(), hpf = c.createBiquadFilter(),
+          low = c.createBiquadFilter(), mid = c.createBiquadFilter(), high = c.createBiquadFilter(), fader = c.createGain(), mute = c.createGain(), pan = c.createStereoPanner(),
+          aux = c.createGain(), room = c.createBiquadFilter(), roomLo = c.createBiquadFilter(), dly = c.createDelay(.1), pick = c.createGain(), cap = c.createWaveShaper(),
+          anG = c.createAnalyser(), anM = c.createAnalyser();
+      inp.gain.value = lin(-34);                                       // a mic is quiet: about -34 dB below the line-level demo sounds
+      clip.curve = curve(function (x) { return Math.max(-1, Math.min(1, x * 1.05)); });
+      hpf.type = "highpass"; hpf.Q.value = .7; low.type = "lowshelf"; low.frequency.value = 100; mid.type = "peaking"; mid.Q.value = 1.4; high.type = "highshelf"; high.frequency.value = 10000;
+      inp.connect(trim); trim.connect(clip); clip.connect(anG); clip.connect(hpf); hpf.connect(low); low.connect(mid); mid.connect(high);
+      high.connect(fader); fader.connect(mute); mute.connect(pan); pan.connect(anM); pan.connect(out);
+      // the wedge, the room and the mic again: a loop. The room rings at 2.5 kHz; the cap keeps a howl at a sane level.
+      var fb = mine !== "mic";
+      if (fb) {
+        room.type = "peaking"; room.frequency.value = 2500; room.Q.value = 4; room.gain.value = 9; roomLo.type = "highpass"; roomLo.frequency.value = 300;
+        dly.delayTime.value = .012; cap.curve = curve(function (x) { return .5 * Math.tanh(2 * x); });
+        high.connect(aux); aux.connect(room); room.connect(roomLo); roomLo.connect(dly); dly.connect(cap); cap.connect(pick); pick.connect(trim);
+      }
+      n = { trim: trim, hpf: hpf, low: low, mid: mid, high: high, fader: fader, mute: mute, pan: pan, aux: aux, pick: pick, anG: anG, anM: anM, fb: fb };
+      w.apply(); tick();
+      w.status.textContent = mine === "mic" ? "Opening the microphone… use headphones." : "";
+      var go = mine === "mic" ? SK.mic().then(function (node) { node.connect(inp); return { stop: function () { try { node.disconnect(); } catch (e) {} } }; })
+                              : makeSource(mine, c).then(function (s) { s.out.connect(inp); return s; });
+      go.then(function (s) { if (!n || w.P.source !== mine) { s.stop(); return; } src = s; if (mine === "mic") w.status.textContent = "Microphone on. Use headphones; the wedge is left out."; },
+              function (e) { w.status.textContent = "Microphone not available: " + (e.message || e.name); });
+      return function () {
+        cancelAnimationFrame(raf); if (src) src.stop();
+        [inp, trim, clip, hpf, low, mid, high, fader, mute, pan, aux, room, roomLo, dly, cap, pick].forEach(function (x) { try { x.disconnect(); } catch (e) {} });
+        n = null; [mGain, mMain].forEach(function (m) { m.fill.style.width = "0"; m.val.textContent = ""; m.led.classList.remove("on"); });
+      };
+    };
+    w.apply = function () {
+      if (!n) return; var t = ac().currentTime, P = w.P;
+      n.trim.gain.setTargetAtTime(lin(P.trim), t, .02);
+      n.hpf.frequency.setTargetAtTime(P.hpf === "on" ? 100 : 10, t, .02);
+      n.low.gain.setTargetAtTime(P.low, t, .02); n.mid.frequency.setTargetAtTime(P.midf, t, .02); n.mid.gain.setTargetAtTime(P.midg, t, .02); n.high.gain.setTargetAtTime(P.high, t, .02);
+      n.aux.gain.setTargetAtTime(P.aux <= -30 ? 0 : lin(P.aux), t, .05);
+      n.pick.gain.setTargetAtTime(PICKUP * PICK[P.wedge], t, .05);
+      n.fader.gain.setTargetAtTime(P.fader <= -60 ? 0 : lin(P.fader), t, .02);
+      n.mute.gain.setTargetAtTime(P.mute === "on" ? 0 : 1, t, .02);
+      n.pan.pan.setTargetAtTime(P.pan, t, .02);
+    };
+    return w;
+  }
+
+  var KINDS = { series: Series, interval: Interval, additive: Additive, wave: Wave, noise: Noise, filter: Filter, lfo: Lfo, subtractive: Subtractive, fm: Fm, wavetable: Wavetable, distortion: Distortion, compressor: Compressor, chorus: Chorus, phaser: Phaser, reverb: Reverb, delay: Delay, glitch: Glitch, envelope: Envelope, granular: Granular, eq: Eq, sidechain: Sidechain, gate: Gate, transient: Transient, tremolo: Tremolo, rotary: Rotary, octaver: Octaver, harmonizer: Harmonizer, autotune: AutoTune, stereo: Stereo, chain: Chain, shimmer: Shimmer, vocoder: Vocoder, tuner: Tuner, bendboard: Bendboard, chip: Chip, tracker: Tracker, amp: Amp, pa: Pa };
   function init() {
     if (!global.SK_NO_BAR) makeBar();
     Array.prototype.forEach.call(document.querySelectorAll("div.sk[data-w]"), function (host) {

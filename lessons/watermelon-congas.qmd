@@ -2,6 +2,10 @@
 title: "Watermelon Man for Congas"
 toc: true
 toc-depth: 2
+description: "The tumbao over a 16-bar blues: the form, the break on bar 14, the melody, and the same part in Mongo Santamar&iacute;a's cha-cha and in a boogaloo."
+instruments: [congas]
+topics: [latin, blues, rhythm]
+has: [band, notation, interactive, svg]
 ---
 
 *Watermelon Man* is a [16-bar blues](watermelon-man-blues.qmd) that a conga player can learn in an afternoon, once the
@@ -139,16 +143,21 @@ until you can play it through without thinking.
   works in any style.
 - Listen to Mongo Santamaría's record and copy what you hear.
 
-## Sources
+## Works Cited
 
-- [Watermelon Man (composition)](https://en.wikipedia.org/wiki/Watermelon_Man_(composition)),
-  Wikipedia.
-- [Watermelon Man: Herbie Hancock](https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature),
-  uDiscover Music.
-- [Watermelon Man](https://ethanhein.substack.com/p/watermelon-man), Ethan Hein.
-- [Mongo Santamaría: Watermelon Man](https://jazz.com/music/mongo-santamaria-watermelon-man),
-  jazz.com.
-- [Tumbao](https://en.wikipedia.org/wiki/Tumbao), Wikipedia (the tumbao and its sticking).
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hein, Ethan. "Watermelon Man." *Substack*, [ethanhein.substack.com/p/watermelon-man](https://ethanhein.substack.com/p/watermelon-man).
+
+"Mongo Santamaría: Watermelon Man." *Jazz.com*, [jazz.com/music/mongo-santamaria-watermelon-man](https://jazz.com/music/mongo-santamaria-watermelon-man).
+
+"Tumbao." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tumbao](https://en.wikipedia.org/wiki/Tumbao). Cites Rebeca Mauleón, *Salsa Guidebook*.
+
+"Watermelon Man (Composition)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Watermelon_Man_(composition)](https://en.wikipedia.org/wiki/Watermelon_Man_(composition)).
+
+"Watermelon Man: Herbie Hancock's Classic Tune." *uDiscover Music*, [www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature](https://www.udiscovermusic.com/stories/watermelon-man-herbie-hancock-feature). Quotes Herbie Hancock and Lisa Dickey, *Possibilities*, Viking, 2014.
+:::
+<!-- /works-cited -->
 
 ```{=html}
 <script>document.documentElement.setAttribute("data-tonality", "blues");   // a 16-bar blues (see watermelon-man-blues.qmd): the Key menu reads "(Blues)"</script>

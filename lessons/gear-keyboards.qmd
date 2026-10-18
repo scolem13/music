@@ -2,6 +2,10 @@
 title: "Gear 4: Keyboards"
 toc: true
 toc-depth: 2
+description: "Kinds of keyboard, outputs and the sustain pedal, Local Off and transpose, stand height and cleaning."
+instruments: [piano, other]
+topics: [gear]
+has: [svg]
 ---
 
 Digital pianos, stage pianos, synths and MIDI controllers look alike and are set up alike. Here's what the
@@ -30,6 +34,11 @@ connections do, and how to look after them.
   Chrome), or 5-pin **MIDI Out → In** to another instrument.
 - **Power**: many keyboards use a specific adaptor: wrong voltage or polarity can kill them ([Gear 1](gear-power.qmd)).
 
+```{=html}
+<div class="gear-fig" data-fig="keyboard-panel"></div>
+<div class="gear-fig" data-fig="midi-chain"></div>
+```
+
 ## Settings worth knowing
 
 - **Local Off**: the keys stop playing the keyboard's own sounds and only send MIDI. Use it when the computer plays
@@ -53,3 +62,7 @@ connections do, and how to look after them.
 ## Next
 
 - [Gear 5: Setting Up and Packing Down](gear-setup.qmd)
+
+```{=html}
+<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+```

@@ -2,6 +2,10 @@
 title: "Sound 19: Phaser"
 toc: true
 toc-depth: 2
+description: "All-pass filters, phase and sweeping notches."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A **phaser** sweeps a few notches up and down the spectrum, and the result is a soft, swirling

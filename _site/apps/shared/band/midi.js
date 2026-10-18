@@ -15,6 +15,7 @@
 (function (global) {
   var GM = { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46, crash:49, ride:51, rideBell:53,
              tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54, tom3:47, cowbell:56, stacker:52, click:33, clickHi:34,
+             brushTap:38, brushSwish:40, brushSweep:40,   // (General MIDI's brush kit has a tap on 38 and a swirl on 40; here they sound on the standard kit)
              congaOpen:63, congaSlap:62, congaMute:62, congaHeel:62, congaToe:62, congaBass:64, tumbaOpen:64, tumbaMute:64, tumbaBass:64 };   // GM has three conga sounds: 62 mute high, 63 open high, 64 low
   var PROGRAM = { bass:32, ebass:33, piano:0, epiano:4, rhodes:4, wurli:4, organ:19, hammond:16, guitar:26, aguitar:25, nguitar:24, cguitar:27, clguitar:27, dguitar:30, odguitar:30 };   // acoustic / fingered electric bass, grand / electric piano, jazz guitar
   var CHANNEL = { bass:0, comp:1, comp2:2, drums:9, congas:9 };      // the congas share the drum channel (10), a track of their own

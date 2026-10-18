@@ -2,23 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Notation – Music Practice</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,6 +79,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../apps/shared/session-nav.js"></script>
 <!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
 <script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
 <!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
      grind against the window. -->
 <style>
@@ -125,373 +132,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lessons</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
-        <li>
-    <a class="dropdown-item" href="../lessons/index.html">
- <span class="dropdown-text">Lessons</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
   </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-improv.html">
- <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-melody.html">
- <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-changes.html">
- <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-bass.html">
- <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-guitar.html">
- <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-piano.html">
- <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/stride-boogie.html">
- <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/blues-drums.html">
- <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/reading-swing.html">
- <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/hihat-grooves.html">
- <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/congas-basics.html">
- <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/watermelon-congas.html">
- <span class="dropdown-text">Watermelon Man for Congas</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/watermelon-man-blues.html">
- <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/pop-changes.html">
- <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/pop-changes-guitar.html">
- <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/pop-changes-piano.html">
- <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/pop-changes-bass.html">
- <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/chord-shapes-guitar.html">
- <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/chord-shapes-guitar-hand.html">
- <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/hammer-ons-pull-offs.html">
- <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/guitar-bends.html">
- <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/travis-picking.html">
- <span class="dropdown-text">Travis Picking on Guitar</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/chord-shapes-piano.html">
- <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/chord-shapes-piano-hand.html">
- <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/inversions.html">
- <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/voice-pop.html">
- <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/voice-jazz.html">
- <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/voice-classical.html">
- <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/four-chord-loops.html">
- <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/cadences.html">
- <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/write-an-ending.html">
- <span class="dropdown-text">Lesson: Write an Ending</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/guide-tones.html">
- <span class="dropdown-text">Lesson: Guide Tones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/minor-changes.html">
- <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/borrowed-chords.html">
- <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/turnarounds.html">
- <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/reharmonize.html">
- <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../lessons/arrange-band.html">
- <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/arrange-bass-drums.html">
- <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/arrange-chords.html">
- <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/arrange-organ.html">
- <span class="dropdown-text">Arranging 4: The Organ</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/patterns/index.html">
- <span class="dropdown-text">Accompaniment Patterns</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../lessons/notation-choices.html">
- <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/tuning-systems.html">
- <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/strobe-tuner.html">
- <span class="dropdown-text">How a Strobe Tuner Works</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/inharmonicity.html">
- <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/vowel-formants.html">
- <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-harmonics.html">
- <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-waveforms.html">
- <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-noise.html">
- <span class="dropdown-text">Sound 3: Noise</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-filter.html">
- <span class="dropdown-text">Sound 4: Filters</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-envelopes.html">
- <span class="dropdown-text">Sound 5: Envelopes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-lfo.html">
- <span class="dropdown-text">Sound 6: LFOs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-subtractive.html">
- <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-fm.html">
- <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-wavetable.html">
- <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-granular.html">
- <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-eq.html">
- <span class="dropdown-text">Sound 11: The Equaliser</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-distortion.html">
- <span class="dropdown-text">Sound 12: Distortion</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-compressor.html">
- <span class="dropdown-text">Sound 13: The Compressor</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-sidechain.html">
- <span class="dropdown-text">Sound 14: Sidechain</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-gate.html">
- <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-reverb.html">
- <span class="dropdown-text">Sound 16: Reverb</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-delay.html">
- <span class="dropdown-text">Sound 17: Delay</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-chorus.html">
- <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-phaser.html">
- <span class="dropdown-text">Sound 19: Phaser</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-tremolo.html">
- <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-pitch.html">
- <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-vocoder.html">
- <span class="dropdown-text">Sound 22: The Vocoder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-stereo.html">
- <span class="dropdown-text">Sound 23: Stereo</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/sound-chain.html">
- <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-gain-staging.html">
- <span class="dropdown-text">Recording 1: Gain Staging</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-mics.html">
- <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-placement.html">
- <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-monitoring.html">
- <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-mixing.html">
- <span class="dropdown-text">Recording 5: Mixing</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-mastering.html">
- <span class="dropdown-text">Recording 6: Mastering</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/rec-stereo.html">
- <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-power.html">
- <span class="dropdown-text">Gear 1: Power and Safety</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-cables.html">
- <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-amps.html">
- <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-keyboards.html">
- <span class="dropdown-text">Gear 4: Keyboards</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-setup.html">
- <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-guitar.html">
- <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-violin.html">
- <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-sax.html">
- <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/gear-drums.html">
- <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/timestamp-player.html">
- <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../lessons/section-labels.html">
- <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Practice</span>
@@ -632,8 +276,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Vocal Warm-up</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../tools/timestamp-notes.html">
  <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
   </li>  
     </ul>
   </li>
@@ -806,7 +466,18 @@ document.addEventListener('DOMContentLoaded', async function () {
   padding:1.25rem clamp(16px,3vw,40px) 4rem;color:var(--nt-ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.5}
 #nt-root *{box-sizing:border-box}
 #nt-root [hidden]{display:none!important}
-#nt-root .nt-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px);gap:24px;align-items:start}
+#nt-root .nt-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,400px) 9.5rem;gap:24px;align-items:start}
+/* the sidebar: a column of its own, beside the two columns of parts (as on Timestamp Notes), staying put as the page scrolls */
+#nt-root .nt-nav{position:sticky;top:72px;font-size:.85rem;max-height:calc(100vh - 88px);overflow-y:auto}
+#nt-root .nt-nav p{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--nt-ink2);margin:0 0 .5rem}
+#nt-root .nt-nav ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--nt-line)}
+#nt-root .nt-nav a{display:block;padding:.25rem .6rem;margin-left:-2px;border-left:2px solid transparent;color:var(--nt-ink2);text-decoration:none;line-height:1.25}
+#nt-root .nt-nav a:hover{color:var(--nt-ink)}
+#nt-root .nt-nav a.is-here{border-left-color:var(--nt-accdk);color:var(--nt-acctext);font-weight:600}
+#nt-root .nt-nav a.is-shut{opacity:.6}
+#nt-root .nt-nav .nt-nav-tip{margin:.7rem 0 .5rem;font:400 .72rem/1.35 Inter,system-ui,sans-serif;letter-spacing:0;text-transform:none}
+#nt-root .nt-nav .nt-reset-cols{width:100%;font-size:.75rem}
+#nt-root .nt-main.pc-empty,#nt-root .nt-side.pc-empty{min-height:12rem}
 #nt-root .nt-layout>*{grid-column:auto!important}   /* Quarto puts page-columns on it */
 #nt-root .nt-main,#nt-root .nt-side{display:flex;flex-direction:column;gap:16px;min-width:0}
 #nt-root .nt-side details.nt-panel{background:var(--nt-surface2)}
@@ -847,14 +518,6 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-body{padding:0 1.1rem 1rem}
 
 /* jump bar */
-#nt-root .nt-nav{position:sticky;top:64px;z-index:4;font-size:.85rem;background:var(--site-bg,#faf7f2);padding:.4rem 0 .5rem;border-bottom:1px solid var(--nt-line)}
-#nt-root .nt-nav p{font:600 .68rem/1 var(--font-mono,'JetBrains Mono',ui-monospace,monospace);letter-spacing:.1em;text-transform:uppercase;color:var(--nt-ink2);margin:0 0 .5rem}
-#nt-root .nt-nav p span{font:400 .72rem/1 Inter,system-ui,sans-serif;letter-spacing:0;text-transform:none;margin-left:.4rem}
-#nt-root .nt-nav ul{list-style:none;margin:0;padding:0;border-left:2px solid var(--nt-line);display:grid;grid-template-columns:1fr 1fr}
-#nt-root .nt-nav a{display:block;padding:.3rem .7rem;margin-left:-2px;border-left:2px solid transparent;color:var(--nt-ink2);text-decoration:none}
-#nt-root .nt-nav a:hover{color:var(--nt-ink)}
-#nt-root .nt-nav a.is-here{border-left-color:var(--nt-accdk);color:var(--nt-acctext);font-weight:600}
-#nt-root .nt-nav a.is-shut{opacity:.6}
 
 /* controls */
 #nt-root .nt-row{display:flex;gap:.5rem .8rem;flex-wrap:wrap;align-items:center;margin-top:.6rem}
@@ -865,6 +528,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-btn{min-height:2.1rem;padding:.25rem .8rem;border:1px solid var(--nt-accdk);border-radius:7px;background:var(--nt-surface);color:var(--nt-acctext);font:inherit;font-size:.88rem;font-weight:600;cursor:pointer}
 #nt-root .nt-btn:hover{background:var(--nt-accbg)}
 #nt-root .nt-btn.is-main,#nt-root .nt-btn[aria-pressed=true]{background:var(--nt-accdk);color:#fff}
+#nt-root .nt-through{display:inline-flex;align-items:center;gap:.3rem;font-size:.88rem;cursor:pointer}
 #nt-root .nt-btn:disabled{opacity:.4;cursor:default;background:var(--nt-surface)}
 #nt-root .nt-start{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.6rem}
 #nt-root .nt-start button{text-align:left;padding:.7rem .9rem;line-height:1.35}
@@ -909,6 +573,21 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .cell-preview{pointer-events:none}
 #nt-root .cell-preview svg{display:block}
 #nt-root #nt-cells .abcjs-staff{display:none}
+#nt-root #nt-pending .abcjs-stem,#nt-root .nt-pitchonly .abcjs-stem{display:none}
+#nt-root .nt-crow{margin:0 0 .35rem}
+#nt-root .nt-cline{display:flex;align-items:center}
+#nt-root .nt-nl{border:0;background:none;color:#b3261e;font-size:1.2rem;line-height:1;padding:0 .3rem;cursor:pointer}
+#nt-root .nt-nl:hover{color:#000}
+#nt-root .nt-keypick,#nt-root .nt-meterpick{display:inline-flex;gap:.3rem;align-items:center;flex-wrap:wrap}
+#nt-root .nt-meterpick input{width:3.4rem}
+#nt-root .nt-enh{padding:.25rem .5rem;min-width:0}
+#nt-root .nt-ctitle{font-family:Georgia,'Times New Roman',serif;font-size:1.4rem;text-align:center;margin:.3rem 0 .2rem}
+#nt-root .nt-clab{font-size:.8rem;color:var(--nt-ink2);cursor:pointer;margin:.2rem 0 -.2rem .3rem}
+#nt-root .nt-crow.is-cur .nt-clab{color:#b3261e;font-weight:600}
+#nt-root .nt-csec{font-weight:700;font-size:.9rem;margin:.6rem 0 0 .3rem}
+#nt-root .nt-cempty{font-size:.8rem;color:var(--nt-ink2);margin:.1rem 0 .4rem .3rem;font-style:italic}
+#nt-root #nt-insert[aria-pressed=true]{background:#b3261e;border-color:#b3261e;color:#fff}
+#nt-root .nt-caret{stroke:#b3261e;stroke-width:2.5}
 
 /* staff and code */
 #nt-root .nt-scope{display:inline-flex;align-items:center;gap:.35rem;margin-left:auto;font-size:.85rem;color:var(--nt-ink2)}
@@ -916,6 +595,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-scope select{height:1.9rem;font-size:.85rem;max-width:14rem}
 #nt-root .nt-paper{margin-top:.6rem;overflow-x:auto;background:#fff;border-radius:6px}
 #nt-root .nt-paper .nt-sel,#nt-root .nt-paper .nt-sel *{fill:#b3261e!important;stroke:#b3261e}
+#nt-root .nt-paper .nt-playing,#nt-root .nt-paper .nt-playing *{fill:#1565c0!important;stroke:#1565c0}
 #nt-root .nt-paper .abcjs-note,#nt-root .nt-paper .abcjs-rest{cursor:pointer}
 #nt-root textarea{display:block;width:100%;min-height:12rem;margin-top:.6rem;padding:.7rem .8rem;resize:vertical;border:1px solid var(--nt-line);border-radius:7px;
   background:var(--nt-surface2);color:inherit;font-family:var(--font-mono,'JetBrains Mono',ui-monospace,monospace);font-size:.84rem;line-height:1.55}
@@ -924,8 +604,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 @media (max-width:1100px){
   #nt-root .nt-layout{grid-template-columns:minmax(0,1fr)}
   #nt-root .nt-side{display:contents}
-  #nt-root .nt-nav{order:-1;top:56px;z-index:5;background:var(--site-bg,#faf7f2);padding:.4rem 0;border-bottom:1px solid var(--nt-line)}
-  #nt-root .nt-nav p{display:none}
+  #nt-root .nt-nav{order:-1;top:56px;z-index:5;max-height:none;overflow:visible;background:var(--site-bg,#faf7f2);padding:.4rem 0;border-bottom:1px solid var(--nt-line);display:flex;align-items:center;gap:.5rem}
+  #nt-root .nt-nav p,#nt-root .nt-nav .nt-reset-cols{display:none}
+  #nt-root .nt-nav ul{flex:1;min-width:0}
   #nt-root .nt-nav ul{display:flex;overflow-x:auto;border-left:0;gap:.2rem}
   #nt-root .nt-nav a{white-space:nowrap;border-left:0;border-bottom:2px solid transparent;margin:0}
   #nt-root .nt-nav a.is-here{border-bottom-color:var(--nt-accdk)}
@@ -945,6 +626,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 #nt-root .nt-eye{border:0;background:none;cursor:pointer;color:var(--nt-ink2);width:1.6rem;padding:0;display:inline-flex;align-items:center;justify-content:center}
 #nt-root .nt-eye[aria-pressed=false]{opacity:.45}
 #nt-root tr.nt-sec.nt-off input{opacity:.55;text-decoration:line-through}
+#nt-root tr.nt-off:not(.nt-sec) td:not(.nt-num){opacity:.5}
+#nt-root td.nt-num .nt-eye{margin-right:.15rem;vertical-align:middle}
 #nt-root .nt-sheet-all{display:flex;flex-wrap:wrap;gap:.4rem;margin:0 0 .5rem}
 #nt-root .nt-fold{border:0;background:none;cursor:pointer;font-size:.85rem;color:var(--nt-ink2);width:1.4rem;padding:0}
 #nt-root .nt-sec-in .nt-mini{min-height:1.7rem;padding:0 .45rem;font-size:.78rem}
@@ -977,7 +660,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       <button type="button" class="nt-btn is-main" id="nt-dict-hand">Hand in</button>
     </div>
   </div>
-  <p class="nt-intro">The quickest way in: press <kbd>Space</kbd> and play the tune on a MIDI keyboard, a phrase at a time. Each take becomes a chunk. Chords, rhythms, typed notes and words go in from the sidebar, in any order. Click a note on the staff and move it with the arrow keys.</p>
+  <p class="nt-intro">The quickest way in: press <kbd>r</kbd> and play the tune on a MIDI keyboard, a phrase at a time. Each take becomes a chunk. Chords, rhythms, typed notes and words go in from the sidebar, in any order. Click a note on the staff and move it with the arrow keys.</p>
 
   <div class="nt-layout page-columns page-full">
     <div class="nt-main">
@@ -985,7 +668,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         <summary><h2 class="anchored">Play it in</h2><span class="nt-sum" id="nt-q-midi">MIDI: not connected</span></summary>
         <div class="nt-body">
           <div class="nt-deck">
-            <button type="button" class="nt-go" id="nt-q-go">● Record<small>Space / pedal</small></button>
+            <button type="button" class="nt-go" id="nt-q-go">● Record<small>r / pedal</small></button>
             <div>
               <div class="nt-qstate" id="nt-q-state">Ready</div>
               <div class="nt-qbeats" id="nt-q-beats"></div>
@@ -995,20 +678,20 @@ document.addEventListener('DOMContentLoaded', async function () {
           <div class="nt-keys" id="nt-q-keys" aria-hidden="true"></div>
           <div class="nt-quick">
             <div class="nt-field"><label for="nt-q-meter">Meter</label><select id="nt-q-meter"></select></div>
-            <div class="nt-field"><label for="nt-q-key">Key</label><select id="nt-q-key"></select></div>
+            <div class="nt-field"><label for="nt-q-key">Key</label><select id="nt-q-key" data-kind="key"></select></div>
             <div class="nt-field"><label for="nt-q-bpm">Tempo</label><input type="number" id="nt-q-bpm" min="30" max="240" value="90"></div>
             <div class="nt-field"><label for="nt-q-count">Count-in</label><select id="nt-q-count"><option value="1">1 bar</option><option value="2">2 bars</option></select></div>
             <div class="nt-field"><label for="nt-q-pickup">Pickup</label><select id="nt-q-pickup"></select></div>
             <div class="nt-field"><label for="nt-q-res">Shortest note</label><select id="nt-q-res"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
             <div class="nt-field"><label for="nt-q-feel">Feel</label><select id="nt-q-feel"><option value="straight">Straight</option><option value="swing">Swing</option></select></div>
             <div class="nt-field"><label for="nt-q-trip">Triplets</label><select id="nt-q-trip"><option value="off">Off</option><option value="auto">Find them</option></select></div>
-            <div class="nt-field"><label for="nt-q-quiet">Ends after</label><select id="nt-q-quiet"><option value="2">2 quiet bars</option><option value="1">1 quiet bar</option><option value="4">4 quiet bars</option><option value="0">Space only</option></select></div>
+            <div class="nt-field"><label for="nt-q-quiet">Ends after</label><select id="nt-q-quiet"><option value="2">2 quiet bars</option><option value="1">1 quiet bar</option><option value="4">4 quiet bars</option><option value="0">Only when stopped</option></select></div>
           </div>
           <div class="nt-row">
             <button type="button" class="nt-btn" id="nt-q-redo" disabled="">Redo the last take</button>
             <button type="button" class="nt-btn" id="nt-q-drop" disabled="">Drop the last take</button>
           </div>
-          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>Space</kbd> or the sustain pedal records and stops, <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
+          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
           <p class="nt-hint" id="nt-q-status" aria-live="polite"></p>
         </div>
       </details>
@@ -1018,8 +701,14 @@ document.addEventListener('DOMContentLoaded', async function () {
           <div class="nt-body">
             <div class="nt-row" style="margin-top:0">
               <button type="button" class="nt-btn is-main" id="nt-play">▶ Play</button>
+              <label class="nt-through" title="Space plays on through the chunks after this one, to the end of the piece, instead of stopping at the chunk's end"><input type="checkbox" id="nt-through"> Play through</label>
               <button type="button" class="nt-btn" id="nt-undo">Undo</button>
               <button type="button" class="nt-btn" id="nt-new">Start over</button>
+              <button type="button" class="nt-btn" id="nt-insert" aria-pressed="false" title="i: new rhythm goes in at the caret (h / l move it) instead of at the end">Insert mode</button>
+              <button type="button" class="nt-btn" id="nt-file-save" title="Download the whole piece as a file, to open again later">Save to file</button>
+              <button type="button" class="nt-btn" id="nt-file-open" title="Open a piece saved with Save to file (or an .abc file)">Open file</button>
+              <input type="file" id="nt-file-in" accept=".json,.abc,.txt,application/json" hidden="">
+              <label class="nt-scope" title="Bars on each line of the score (a pickup bar not counted). Empty: as many as fit. RET puts a line break of your own after the active note's bar (↴); RET there again, or a click on ↴, takes it away.">Line break every <input type="number" id="nt-lines" min="1" max="32" placeholder="fit" style="width:3.6rem"> bars</label>
               <label class="nt-scope" id="nt-scope-l" hidden="">Show <select id="nt-scope" title="The whole piece, or one section of it (as the Backing Track's tune notation does)"></select></label>
             </div>
             <div class="nt-seltools" id="nt-seltools">
@@ -1032,6 +721,10 @@ document.addEventListener('DOMContentLoaded', async function () {
               <button type="button" class="nt-btn is-main" id="nt-s-dwim" title="Do what I mean: the other ways the selected bars could be written from how they were played">DWIM</button>
             </div>
             <div class="nt-paper" id="nt-paper"></div>
+            <div id="nt-pending-wrap" hidden="">
+              <p class="nt-lab" style="margin-top:.8rem">Pitches only (waiting for a rhythm)</p>
+              <div class="nt-paper" id="nt-pending"></div>
+            </div>
             <p class="nt-hint"><kbd>Shift</kbd>+click a second note to select everything between (one voice), then copy (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>C</kbd>), cut (<kbd>X</kbd>), paste after it (<kbd>V</kbd>) or <kbd>Delete</kbd>. Click a note, then <kbd>↑</kbd> <kbd>↓</kbd> move it to the next note in the key, <kbd>Shift</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by a half step, <kbd>Alt</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by an octave. <kbd>←</kbd> <kbd>→</kbd> pick the note before or after, <kbd>Esc</kbd> lets go. Slashes are rhythm with no note yet.</p>
             <p class="nt-status" id="nt-status" aria-live="polite"></p>
             <p class="nt-phrase" id="nt-phrase" hidden=""><span id="nt-phrase-label"></span> <button type="button" class="nt-btn is-main" id="nt-back" title="Back to Timestamp Notes, looping the next phrase">Back to the recording, next phrase</button> <button type="button" class="nt-btn" id="nt-back-again" title="Back to Timestamp Notes, this phrase again">This phrase again</button> <button type="button" class="nt-btn" id="nt-seam-keep" hidden="" title="Where the pickup and the end of the phrase before both sounded, keep the phrase before's notes">Keep the earlier notes</button></p>
@@ -1053,7 +746,8 @@ document.addEventListener('DOMContentLoaded', async function () {
               <span class="nt-sep"></span>
               <button type="button" class="nt-btn" id="nt-c-add">+ New after</button>
               <button type="button" class="nt-btn" id="nt-c-dup">Duplicate</button>
-              <button type="button" class="nt-btn" id="nt-c-merge">Merge with next</button>
+              <button type="button" class="nt-btn" id="nt-c-join" title="J: the next chunk goes on the end of this one">Join with next</button>
+              <button type="button" class="nt-btn" id="nt-c-merge" title="Rhythm only + pitches only become one chunk; two the same length become two voices">Merge with next</button>
               <span class="nt-sep"></span>
               <label class="nt-lab" for="nt-c-at" id="nt-c-at-lab">Split after bar</label>
               <input type="number" id="nt-c-at" min="1" value="1">
@@ -1065,7 +759,8 @@ document.addEventListener('DOMContentLoaded', async function () {
             </div>
             <div class="nt-row">
               <div class="nt-field"><label for="nt-c-meter">Meter from here</label><select id="nt-c-meter"></select></div>
-              <div class="nt-field"><label for="nt-c-key">Key from here</label><select id="nt-c-key"></select></div>
+              <div class="nt-field"><label for="nt-c-key">Key from here</label><select id="nt-c-key" data-kind="key"></select></div>
+              <div class="nt-field"><label for="nt-c-tempo">Tempo from here</label><input type="number" id="nt-c-tempo" min="20" max="320" style="width:5.5rem"></div>
             </div>
             <p class="nt-warn" id="nt-c-msg" hidden=""></p>
           </div>
@@ -1077,8 +772,9 @@ document.addEventListener('DOMContentLoaded', async function () {
             <div class="nt-row" style="margin-top:0">
               <div class="nt-field"><label for="nt-title">Title</label><input type="text" id="nt-title" placeholder="Untitled"></div>
               <div class="nt-field"><label for="nt-meter">Meter</label><select id="nt-meter"></select></div>
-              <div class="nt-field"><label for="nt-key">Key</label><select id="nt-key"></select></div>
-              <div class="nt-field"><span class="nt-lab" id="nt-tonality-lab">Tonality</span><output id="nt-tonality" class="nt-tonality" aria-labelledby="nt-tonality-lab" title="From the key and the chords: dominant sevenths on I and IV make a blues."></output></div>
+              <div class="nt-field"><label for="nt-key">Key</label><select id="nt-key" data-kind="key"></select></div>
+              <div class="nt-field"><label for="nt-tempo">Tempo</label><input type="number" id="nt-tempo" min="20" max="320" placeholder="90" style="width:5.5rem"></div>
+              <div class="nt-field"><span class="nt-lab" id="nt-tonality-lab">Heard as</span><output id="nt-tonality" class="nt-tonality" aria-labelledby="nt-tonality-lab" title="From the key and the chords: dominant sevenths on I and IV make a blues."></output></div>
             </div>
             <div class="nt-keyguess" id="nt-keyguess" hidden="">
               <span id="nt-keyguess-text"></span>
@@ -1123,7 +819,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       <details class="nt-panel" id="nt-cho" open="">
           <summary><h2 class="anchored">ChordPro</h2></summary>
           <div class="nt-body">
-            <p class="nt-hint" style="margin-top:0">The chords and words of the piece. ChordPro has no rhythm or notes: reading it in replaces the piece with its chords (one a bar, or as the <kbd>|</kbd> marks say) and words.</p>
+            <p class="nt-hint" style="margin-top:0">The chords and words of the piece, and at the end the notes as an ABC block (<code>{start_of_abc}</code> … <code>{end_of_abc}</code>), so this text is the whole song. Edit the words or the ABC here and the piece follows. ChordPro without an ABC block has no rhythm or notes: reading it in replaces the piece with its chords (one a bar, or as the <kbd>|</kbd> marks say) and words.</p>
             <textarea id="nt-cho-text" spellcheck="false" aria-label="ChordPro"></textarea>
             <div class="nt-row">
               <button type="button" class="nt-btn" id="nt-cho-read">Read this ChordPro in</button>
@@ -1135,10 +831,6 @@ document.addEventListener('DOMContentLoaded', async function () {
     </div>
 
     <aside class="nt-side" aria-label="Other ways to enter music">
-      <nav class="nt-nav" aria-label="Sections on this page">
-        <p>On this page <span>Shift+click: fold the rest</span></p>
-        <ul id="nt-nav"></ul>
-      </nav>
       <details class="nt-panel" id="nt-start-panel" open="">
         <summary><h2 class="anchored">Other ways in</h2></summary>
         <div class="nt-body">
@@ -1160,12 +852,9 @@ document.addEventListener('DOMContentLoaded', async function () {
               <button type="button" class="nt-btn" data-mode="letters" aria-pressed="true">Letters</button>
               <button type="button" class="nt-btn" data-mode="piano" aria-pressed="false">Computer keys as a piano</button>
               <button type="button" class="nt-btn" data-mode="midi" aria-pressed="false">MIDI keyboard</button>
+              <button type="button" class="nt-btn" id="nt-rest" title="z while typing letters">Rest</button>
             </div>
             <p class="nt-hint" id="nt-mode-help"></p>
-            <div id="nt-pending-wrap" hidden="">
-              <p class="nt-lab" style="margin-top:.8rem">Waiting for a rhythm</p>
-              <div class="nt-paper" id="nt-pending"></div>
-            </div>
           </div>
         </details>
 
@@ -1192,11 +881,14 @@ document.addEventListener('DOMContentLoaded', async function () {
               <div class="nt-row" id="nt-meter-quick"></div>
             </div>
             <div id="nt-rhythm-bank" hidden="">
+              <div class="nt-row" role="group" aria-label="How to enter rhythm">
+                <button type="button" class="nt-btn" id="nt-rhythm-single" aria-pressed="false" title="Shift+R switches">One note at a time</button>
+              </div>
               <div class="cell-bank" id="nt-cells"></div>
               <div class="nt-row">
                 <button type="button" class="nt-btn" id="nt-rhythm-undo">Undo</button>
                 <button type="button" class="nt-btn" id="nt-rhythm-clear">Clear this chunk's rhythm</button>
-                <div class="cell-criteria">
+                <div class="cell-criteria" id="nt-cell-crit">
                   <label><input type="checkbox" data-crit="macrobeat" checked=""> Macrobeat</label>
                   <label><input type="checkbox" data-crit="microbeat" checked=""> Microbeat</label>
                   <label><input type="checkbox" data-crit="division"> Division</label>
@@ -1213,9 +905,10 @@ document.addEventListener('DOMContentLoaded', async function () {
           <summary><h2 class="anchored">Words</h2><span class="nt-sum" id="nt-words-sum"></span></summary>
           <div class="nt-body">
             <textarea id="nt-words-text" class="nt-short" spellcheck="true" aria-label="Words of the selected chunk" placeholder="Twin-kle, twin-kle, lit-tle star"></textarea>
-            <p class="nt-hint">One syllable for each note of the first voice. Put a hyphen between the syllables of a word.</p>
+            <p class="nt-hint">One syllable for each note of the first voice. Put a hyphen between the syllables of a word, an underscore after a syllable held over the next note (<code>zoo-dle,_</code>), a <code>*</code> for a note with no word.</p>
             <div class="nt-row">
               <button type="button" class="nt-btn" id="nt-words-split">Split into syllables</button>
+              <button type="button" class="nt-btn" id="nt-words-paras" title="Each paragraph (lines with a blank line between) becomes a section of its own, Verse 1, Verse 2 ...">Paragraphs to sections</button>
               <span class="nt-hint" id="nt-words-count" style="margin:0"></span>
             </div>
           </div>
@@ -1246,9 +939,17 @@ document.addEventListener('DOMContentLoaded', async function () {
           </div>
         </details>
     </aside>
+    <nav class="nt-nav" aria-label="Sections on this page">
+      <p>On this page</p>
+      <ul id="nt-nav"></ul>
+      <p class="nt-nav-tip">Shift+click: fold the rest. Drag a part's ⠿ grip, or click ⇄, to move it to the other column.</p>
+      <button type="button" class="nt-btn nt-reset-cols" title="Every part back in the column it started in">Reset columns</button>
+    </nav>
   </div>
 </div>
 
+<link rel="stylesheet" href="../apps/shared/panel-columns.css?v=1">
+<script src="../apps/shared/panel-columns.js?v=1"></script>
 <script src="../apps/shared/soundfont.js"></script>
 <script src="../apps/shared/tonality.js?v=10"></script>
 <script src="../apps/shared/abcjs-basic.js"></script>
@@ -1261,7 +962,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../apps/shared/abc-core.js?v=3"></script>
 <script src="../apps/shared/abc-events.js?v=3"></script>
 <script src="../apps/shared/phrase-seam.js?v=1"></script>
-<script src="../apps/shared/notation-doc.js?v=8"></script>
+<script src="../apps/shared/timestamp-player/section-labels.js?v=1"></script>
+<script src="../apps/shared/notation-doc.js?v=9"></script>
 <script>
 (function () {
   "use strict";
@@ -1269,17 +971,84 @@ document.addEventListener('DOMContentLoaded', async function () {
   var KEYS = ["C","G","D","A","E","B","F#","F","Bb","Eb","Ab","Db","Am","Em","Bm","F#m","C#m","Dm","Gm","Cm","Fm"];
   var METERS = ["2/4","3/4","4/4","6/8","9/8","12/8","5/8","7/8"];
   var CLEFS = [["treble", "Treble"], ["bass", "Bass"], ["alto", "Alto"], ["tenor", "Tenor"]];
-  var KEYNAME = function (k) { return k.slice(-1) === "m" ? k.slice(0, -1) + " minor" : k + " major"; };
+  var MODES = [["", "Major"], ["m", "Minor (natural)"], ["hm", "Harmonic minor"], ["dor", "Dorian"], ["phr", "Phrygian"], ["lyd", "Lydian"], ["mix", "Mixolydian"], ["loc", "Locrian"]];
+  var MODE_FIFTHS = { "": 0, m: -3, hm: -3, dor: -2, phr: -4, lyd: 1, mix: -1, loc: -5 };
+  var TONICS = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"];
+  var ENH = { C: "B#", "B#": "C", Db: "C#", "C#": "Db", Eb: "D#", "D#": "Eb", E: "Fb", Fb: "E", F: "E#", "E#": "F", "F#": "Gb", Gb: "F#", Ab: "G#", "G#": "Ab", Bb: "A#", "A#": "Bb", B: "Cb", Cb: "B" };
+  function splitKey(k) { var m = /^([A-G][#b]?)(.*)$/.exec(k || ""); return m ? { tonic: m[1], mode: m[2] } : null; }
+  function keyFifths(tonic, mode) { return "FCGDAEB".indexOf(tonic[0]) - 1 + (tonic[1] === "#" ? 7 : tonic[1] === "b" ? -7 : 0) + (MODE_FIFTHS[mode] || 0); }
+  var KEYNAME = function (k) {
+    var p = splitKey(k); if (!p) return k;
+    var mn = (MODES.find(function (x) { return x[0] === p.mode; }) || ["", p.mode])[1].replace(" (natural)", "").toLowerCase();
+    return p.tonic.replace("b", "\u266d").replace("#", "\u266f") + " " + mn;
+  };
   var DICT = /[?&]dictation=1/.test(location.search) && window.opener;   // opened by the Dictation page: a scratch doc, handed back
   var ENDING = /[?&]ending=1/.test(location.search) && window.parent !== window;   // in the Write an Ending lesson's frame
-  var STORE = DICT ? "ntDictDoc" : ENDING ? "ntEndingDoc" : "ntDoc", OPEN = ENDING ? "ntEndingOpen" : "ntOpen";
-  if (ENDING) {   // framed: no site chrome; the lesson around it has the navbar and its own jump bar
-    $("nt-rhythm-clear").textContent = "Clear my ending";
-    $("nt-root").classList.add("nt-ending");
+  // ?stage=1, framed by a Notation lesson: only the parts the lesson has reached are shown (see "stage" below)
+  var STAGE = /[?&]stage=1/.test(location.search) && window.parent !== window;
+  var STORE = DICT ? "ntDictDoc" : ENDING ? "ntEndingDoc" : STAGE ? "ntStageDoc" : "ntDoc", OPEN = ENDING ? "ntEndingOpen" : STAGE ? "ntStageOpen" : "ntOpen";
+  if (ENDING || STAGE) {   // framed: no site chrome; the lesson around it has the navbar and its own jump bar
+    if (ENDING) { $("nt-rhythm-clear").textContent = "Clear my ending"; $("nt-root").classList.add("nt-ending"); }
+    else $("nt-root").classList.add("nt-stage");
     var fc = document.createElement("style");
     fc.textContent = "#quarto-header,footer.footer,#quarto-sidebar,#quarto-margin-sidebar,.nav-footer{display:none!important}" +
       "body{padding-top:0!important}main.content{margin-top:0!important}#nt-root .nt-layout{grid-template-columns:minmax(0,1fr)!important}#nt-root .nt-nav{display:none!important}";
     document.head.appendChild(fc);
+  }
+
+  // a select's value, adding the option first when it isn't in the list (a custom meter, a key with a mode)
+  function setSel(el, v) {
+    if (el.dataset.kind === "meter" && ![].some.call(el.options, function (o) { return o.value === "other"; })) el.add(new Option("Other\u2026", "other"));
+    if (v && ![].some.call(el.options, function (o) { return o.value === v; })) {
+      var o = new Option(el.dataset.kind === "key" ? KEYNAME(v) : v, v), oth = [].find.call(el.options, function (x) { return x.value === "other"; });
+      el.add(o, oth || null);
+    }
+    el.value = v || "";
+    if (el._sync) el._sync();
+  }
+  // a key menu shown as tonic + tonality + an enharmonic switch (C# major <-> Db major); the select itself stays, hidden, as the value
+  function keyPicker(sel) {
+    sel.style.display = "none";
+    var w = document.createElement("span"); w.className = "nt-keypick";
+    var ts = document.createElement("select"), ms = document.createElement("select"), eb = document.createElement("button");
+    ts.setAttribute("aria-label", "Tonic"); ms.setAttribute("aria-label", "Tonality");
+    ms.innerHTML = MODES.map(function (m) { return '<option value="' + m[0] + '">' + m[1] + "</option>"; }).join("");
+    eb.type = "button"; eb.className = "nt-btn nt-enh"; eb.textContent = "\u266f/\u266d"; eb.title = "Enharmonic: the same key spelled the other way (C\u266f \u2194 D\u266d, B \u2194 C\u266d)";
+    w.appendChild(ts); w.appendChild(ms); w.appendChild(eb); sel.parentNode.insertBefore(w, sel.nextSibling);
+    function tonics(cur) {
+      var list = TONICS.slice(); if (cur && list.indexOf(cur) < 0) list.splice(list.indexOf(ENH[cur]) + 1 || list.length, 0, cur);
+      ts.innerHTML = '<option value="">' + (sel.options[0] ? sel.options[0].text : "Choose") + "</option>" + list.map(function (t) { return '<option value="' + t + '">' + t.replace("b", "\u266d").replace("#", "\u266f") + "</option>"; }).join("");
+    }
+    function emit(t) { setSel(sel, t ? t + ms.value : ""); sel.dispatchEvent(new Event("change")); }
+    ts.onchange = function () { emit(ts.value); ts.blur(); };
+    ms.onchange = function () { if (ts.value) { var t = ts.value; if (Math.abs(keyFifths(t, ms.value)) > 7 && ENH[t]) t = ENH[t]; emit(t); } ms.blur(); };
+    eb.onclick = function () { var t = ts.value, a = ENH[t]; if (a && Math.abs(keyFifths(a, ms.value)) <= 7) emit(a); eb.blur(); };
+    sel._sync = function () {
+      var p = splitKey(sel.value); tonics(p && p.tonic);
+      ts.value = p ? p.tonic : ""; ms.value = p ? p.mode : ""; ms.disabled = !p;
+      var a = p && ENH[p.tonic]; eb.disabled = !(a && Math.abs(keyFifths(a, p.mode)) <= 7);
+    };
+    sel._sync();
+  }
+  // a meter menu with Other...: two number boxes for any meter (5/4, 7/16 ...)
+  function meterPicker(sel) {
+    sel.dataset.kind = "meter";
+    var w = document.createElement("span"); w.className = "nt-meterpick"; w.hidden = true;
+    w.innerHTML = '<input type="number" min="1" max="32" aria-label="Beats in a bar"> / <input type="number" min="1" max="32" aria-label="Note value of a beat"> <button type="button" class="nt-btn nt-mini">Use</button>';
+    sel.parentNode.insertBefore(w, sel.nextSibling);
+    var n = w.children[0], d = w.children[1], orig = sel.onchange;
+    function use() {
+      var a = +n.value, b = +d.value;
+      if (!(a >= 1 && a <= 32) || [1, 2, 4, 8, 16, 32].indexOf(b) < 0) { n.focus(); return; }
+      w.hidden = true; setSel(sel, a + "/" + b); if (orig) orig.call(sel);
+    }
+    w.children[2].onclick = use;
+    n.onkeydown = d.onkeydown = function (e) { if (e.key === "Enter") use(); e.stopPropagation(); };
+    sel.onchange = function () {
+      if (this.value === "other") { var m = /^(\d+)\/(\d+)$/.exec(doc.meter || ""); n.value = m ? m[1] : ""; d.value = m ? m[2] : "4"; w.hidden = false; n.focus(); return; }
+      w.hidden = true; if (orig) orig.call(this);
+    };
+    setSel(sel, sel.value);
   }
 
   var doc = D.upgrade(load() || D.create());
@@ -1289,7 +1058,11 @@ document.addEventListener('DOMContentLoaded', async function () {
   var history = [], map = [], pmap = [], tune = null, cells = [], guessRefused = null, editing = null, shownCur = -1;
 
   function load() { try { var s = localStorage.getItem(STORE); return s ? JSON.parse(s) : null; } catch (e) { return null; } }
-  function save() { try { localStorage.setItem(STORE, JSON.stringify(doc)); } catch (e) {} if (ENDING) endTell({ type: "end-change", abc: D.toAbc(doc).abc }); }
+  function save() {
+    try { localStorage.setItem(STORE, JSON.stringify(doc)); } catch (e) {}
+    if (ENDING) endTell({ type: "end-change", abc: D.toAbc(doc).abc });
+    if (STAGE) endTell({ type: "st-change", doc: JSON.parse(JSON.stringify(doc)), abc: D.toAbc(doc).abc });
+  }
   function endTell(m) { try { window.parent.postMessage(m, location.origin); } catch (e) {} }
   function snap() { history.push(JSON.stringify(doc)); if (history.length > 200) history.shift(); }
   function change(f) { snap(); f(); save(); render(); }
@@ -1301,7 +1074,14 @@ document.addEventListener('DOMContentLoaded', async function () {
   function cname(i) { return doc.chunks[i].name || "Chunk " + (i + 1); }
 
   // ---- sections: collapsible, with the jump bar --------------------------------------------------------------------
+  // every part moves between the two columns (panel-columns.js), first, so the sidebar lists them where they are
+  if (!ENDING && window.PanelColumns) PanelColumns.init({ columns: [document.querySelector("#nt-root .nt-main"), document.querySelector("#nt-root .nt-side")],
+    panels: "details.nt-panel", key: "ntColumns", reset: document.querySelector("#nt-root .nt-reset-cols") });
   var panels = Array.prototype.slice.call(document.querySelectorAll("#nt-root details.nt-panel"));
+  document.addEventListener("panelcolumns:move", function () {
+    panels.slice().sort(function (a, b) { return a.compareDocumentPosition(b) & 4 ? -1 : 1; })
+      .forEach(function (p) { var a = document.querySelector('#nt-nav a[data-for="' + p.id + '"]'); if (a) $("nt-nav").appendChild(a.parentNode); });
+  });
   var shut = {}; try { shut = JSON.parse(localStorage.getItem(OPEN) || "{}"); } catch (e) {}
   if (ENDING) panels = panels.filter(function (p) { return getComputedStyle(p).display !== "none"; });
   panels.forEach(function (p) {
@@ -1340,18 +1120,222 @@ document.addEventListener('DOMContentLoaded', async function () {
     ABCJS.synth.playEvent([].concat(midis).map(function (m) { return { pitch: m, volume: 90, start: 0, duration: 0.5, instrument: 0 }; }), [], 1000, sfUrl).catch(function () {});
   }
   var synth = null;
-  function play() {
-    if (synth) { synth.stop(); synth = null; $("nt-play").innerHTML = "&#9654; Play"; return; }
-    if (!tune || !ABCJS.synth.supportsAudio()) return;
-    var s = synth = new ABCJS.synth.CreateSynth();
+  // Space: from the active note (else the chunk's start) to the end of the selected chunk
+  // (Play through, ticked: on past the chunk's end to the end of the piece)
+  function playChunk() {
+    if (synth) { play(); return; }
+    var ch = chunk(), len = D.chunkLen(doc, cur), a = activeSlot();
+    if (!len) { status("Nothing in time in this chunk to play."); return; }
+    var t = a && a.chunk === cur && !insertMode ? D.slotTime(D.part(ch, a.voice), a.slot) : insertMode ? D.slotTime(part(), Math.min(caretPos(), part().rhythm.length - 1)) : 0;
+    if ($("nt-through").checked) { playThrough(t); return; }
+    var sub = JSON.parse(JSON.stringify(doc)), c = sub.chunks[cur], h0 = D.at(doc, cur);
+    sub.chunks = [c]; sub.meter = h0.meter; sub.key = h0.key; sub.tempo = h0.tempo; sub.title = ""; c.meter = c.key = c.tempo = null; c.pickup = true;
+    var drop = [];
+    for (var v = 0; v < doc.voices.length; v++) {                 // each voice from time t on
+      var p = D.part(c, v), at = 0, k = 0, keep = [], kp = [];
+      drop[v] = 0;
+      p.rhythm.forEach(function (r) {
+        var end = at + r.durQ;
+        if (end <= t + 1e-6) drop[v]++;
+        if (end > t + 1e-6) keep.push(at >= t - 1e-6 ? r : { type: "rest", durQ: Math.round((end - t) * 1000) / 1000 });
+        if (r.type === "note") { if (at >= t - 1e-6) kp.push(p.pitches[k]); k++; }
+        at = end;
+      });
+      p.rhythm = keep; p.pitches = kp.filter(function (x) { return x !== undefined; });
+    }
+    c.chords = c.chords.filter(function (x) { return x.at >= t - 1e-6; }).map(function (x) { return { at: x.at - t, name: x.name }; }); c.chordLen = 0; c.words = "";
+    carryChord(c, cur, t);
+    var rs = D.toAbc(sub), vo = ABCJS.renderAbc(document.createElement("div"), rs.abc)[0];
+    var pc = cur;
+    play(vo, { doc: sub, toPage: function (ci, v, si) { return { chunk: pc, voice: v, slot: si + (drop[v] || 0) }; }, map: rs.map.map(function (m) { return Object.assign({}, m, { chunk: cur, slot: m.slot + (drop[m.voice] || 0) }); }) });
+  }
+  // c (a copy of chunk ci, cut to start at time t) gets the chord sounding at t, from earlier in the chunk or in the piece, so the
+  // band plays a stretch that has no chord symbol of its own
+  function carryChord(c, ci, t) {
+    if (c.chords[0] && c.chords[0].at < 1e-6) return;
+    for (var i = ci; i >= 0; i--) {
+      var cs = doc.chunks[i].chords.filter(function (x) { return i < ci || x.at < t + 1e-6; });
+      if (cs.length) { c.chords.unshift({ at: 0, name: cs[cs.length - 1].name }); return; }
+    }
+  }
+  // From time t in the chunk on to the end of the piece. The chunk is cut at the barline before t (what comes before t in that
+  // bar is rest), so the bars after it stay where they are.
+  function playThrough(t) {
+    var sub = JSON.parse(JSON.stringify(doc)), h0 = D.at(doc, cur), c = sub.chunks[cur], mi = D.meterInfo(h0.meter) || { barQ: 4 };
+    var lead = c.lead > 1e-6 && c.lead < mi.barQ - 1e-6 ? c.lead : 0;
+    var tb = t < lead + 1e-6 ? 0 : lead + Math.floor((t - lead) / mi.barQ + 1e-6) * mi.barQ;
+    sub.chunks = sub.chunks.slice(cur); sub.meter = h0.meter; sub.key = h0.key; sub.tempo = h0.tempo; sub.title = "";
+    c.meter = c.key = c.tempo = null;
+    if (tb > 0) { c.lead = 0; c.pickup = false; c.nl = []; }
+    var drop = [];
+    for (var v = 0; v < doc.voices.length; v++) {
+      var p = D.part(c, v), at = 0, k = 0, keep = [], kp = [];
+      drop[v] = 0;
+      p.rhythm.forEach(function (r) {
+        var end = at + r.durQ;
+        if (end <= tb + 1e-6) drop[v]++;
+        else if (at < t - 1e-6) keep.push(at >= tb - 1e-6 ? { type: "rest", durQ: r.durQ } : { type: "rest", durQ: Math.round((end - tb) * 1000) / 1000 });
+        else { keep.push(r); if (r.type === "note") kp.push(p.pitches[k]); }
+        if (r.type === "note") k++;
+        at = end;
+      });
+      p.rhythm = keep; p.pitches = kp.filter(function (x) { return x !== undefined; });
+    }
+    c.chords = c.chords.filter(function (x) { return x.at >= tb - 1e-6; }).map(function (x) { return { at: x.at - tb, name: x.name }; });
+    carryChord(c, cur, tb);
+    c.chordLen = 0;
+    var pc = cur, back = function (ci, v, si) { return { chunk: ci + pc, voice: v, slot: si + (ci === 0 ? drop[v] || 0 : 0) }; };
+    var rs = D.toAbc(sub), vo = ABCJS.renderAbc(document.createElement("div"), rs.abc)[0];
+    play(vo, { doc: sub, toPage: back, map: rs.map.map(function (m) { return Object.assign({}, m, back(m.chunk, m.voice, m.slot)); }) });
+  }
+  // Play: the notes on abcjs's piano; chords, when there are any, by the band (the Backing Track's players, in the piece's style),
+  // started together. The note sounding is lit on the score (nt-playing).
+  var tuneSrc = null, drawn = [], playing = null;
+  function stopPlay() {
+    var pl = playing; playing = null;
+    if (synth) { try { synth.stop(); } catch (e) {} synth = null; }
+    if (pl) { if (pl.band) pl.band.stop(); if (pl.cursor) pl.cursor.stop(); clearTimeout(pl.timer); clearInterval(pl.head); }
+    lightHits(null);
+    $("nt-play").innerHTML = "&#9654; Play";
+  }
+  function lightPlaying(src, ev) {
+    if (!src || !ev || !ev.startCharArray) { lightHits(null); return; }
+    lightHits(src.map.filter(function (m) { return ev.startCharArray.some(function (sc, i) { var ec = ev.endCharArray[i]; return m.start >= sc && m.start < Math.max(ec, sc + 1); }); }));
+  }
+  // light the drawn notes of these { chunk, voice, slot } (null: none)
+  var litKey = "";
+  function lightHits(hits) {
+    var k = (hits || []).map(function (h) { return h.chunk + "/" + h.voice + "/" + h.slot; }).join(",");
+    if (k === litKey && document.querySelector("#nt-paper .nt-playing")) return;
+    litKey = k;
+    document.querySelectorAll("#nt-paper .nt-playing").forEach(function (g) { g.classList.remove("nt-playing"); });
+    if (!hits || !hits.length) return;
+    drawn.forEach(function (d) {
+      var want = d.m.filter(function (e) { return hits.some(function (h) { return h.chunk === e.chunk && h.voice === e.voice && h.slot === e.slot; }); });
+      if (!want.length) return;
+      d.t.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (v) { v.forEach(function (el) {
+        if (el.abselem && want.some(function (e) { return covers(el, e); })) el.abselem.elemset.forEach(function (g) { g.classList.add("nt-playing"); });
+      }); }); }); });
+    });
+  }
+  var BAND_JS = ["/apps/shared/abc-transpose.js?v=4", "/apps/shared/tune-chart.js?v=31", "/apps/tune-assessment/abc-tune.js?v=3", "/apps/shared/voicings.js?v=5",
+    "/apps/shared/band/harmony.js?v=32", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=36",
+    "/apps/shared/band/drums.js?v=16", "/apps/shared/band/congas.js?v=2", "/apps/shared/band/sounds.js?v=14", "/apps/shared/band/player.js?v=120"], bandJs = null;
+  function loadBand() {
+    if (window.BandPlayer && window.BandCatalog && window.TuneChart) return Promise.resolve();
+    if (bandJs) return bandJs;
+    return bandJs = BAND_JS.reduce(function (pr, src) {
+      return pr.then(function () { return new Promise(function (ok, no) { var el = document.createElement("script"); el.src = src; el.onload = ok; el.onerror = no; document.head.appendChild(el); }); });
+    }, Promise.resolve());
+  }
+  // The band for doc d (chunk numbers in d mapped back to the page's by src.map's own): it plays the chords AND the notes
+  // (bar.melody on the parsed chart, as the Backing Track does), so the two can't drift apart. A Pickup chunk is the chart's
+  // short first bar, sounded at the end of a bar of count-in. -> { player, notes: [[{ pos, dur, hit }]] per form bar } or null
+  function makeBand(d, src) {
+    var bd = JSON.parse(JSON.stringify(d)), pick = null, base = 0;
+    if (bd.chunks[0] && bd.chunks[0].pickup && bd.chunks.length > 1) {
+      pick = bd.chunks[0]; var a1 = D.at(bd, 1); bd.meter = a1.meter; bd.key = a1.key; bd.tempo = a1.tempo; bd.chunks.shift(); base = 1;
+      bd.chunks[0].meter = bd.chunks[0].key = bd.chunks[0].tempo = null;
+    }
+    var chart = D.bandChart(bd), tempos = [], bars = [], abc = chart.abc;
+    // each chunk's notes, by the chart's bars (a chunk starts on a bar of its own there)
+    var addNotes = function (ch, ci, into, startBar, barQ, beatQ) {
+      for (var v = 0; v < bd.voices.length; v++) {
+        var p = D.part(ch, v), t = 0, k = 0, held = null;
+        p.rhythm.forEach(function (r, si) {
+          if (r.type === "note") {
+            var midi = p.pitches[k++];
+            if (held && held.midi === midi) { held.dur += r.durQ / beatQ; held.hits.push({ voice: v, slot: si, ci: ci }); }
+            else if (midi != null) {
+              var bi = startBar + Math.floor(t / barQ + 1e-6), n = { pos: (t - (bi - startBar) * barQ) / beatQ, dur: r.durQ / beatQ, midi: midi, hits: [{ voice: v, slot: si, ci: ci }] };
+              (into[bi] = into[bi] || []).push(n); held = n;
+            } else held = null;
+            if (!r.tie) held = null;
+          } else held = null;
+          t += r.durQ;
+        });
+      }
+    };
+    bd.chunks.forEach(function (c, i) {
+      var mi = D.meterInfo(D.at(bd, i).meter) || D.meterInfo("4/4"), len = D.chunkLen(bd, i), nb = len ? Math.ceil(len / mi.barQ - 1e-6) : 0;
+      var beatQ = mi.family === "triple" ? 12 / mi.d : 4 / mi.d, start = tempos.length;
+      for (var k = 0; k < nb; k++) tempos.push(D.at(bd, i).tempo || 90);
+      if (nb) addNotes(c, i + base, bars, start, mi.barQ, beatQ);
+    });
+    if (!tempos.length) return null;
+    var pkNotes = [];
+    if (pick) {
+      var mi0 = D.meterInfo(D.at(d, 0).meter) || D.meterInfo("4/4"), pq = D.chunkLen(d, 0), bq0 = mi0.family === "triple" ? 12 / mi0.d : 4 / mi0.d, tmp = [];
+      addNotes(pick, 0, tmp, 0, 1e9, bq0); pkNotes = tmp[0] || [];
+      abc = abc.replace(/^(K:.*\n)/m, "$1x" + Math.round(pq * 2) + " |\n");          // the short first bar (L:1/8)
+    }
+    var parsed = TuneChart.parse(abc), off = pick ? 1 : 0;
+    if (pick && parsed.bars[0]) parsed.bars[0].melody = pkNotes.map(function (n) { return { pos: n.pos + (mi0.family === "triple" ? mi0.n / 3 : mi0.n) - pq / bq0, dur: n.dur, midi: n.midi }; });   // the player sounds these in the count-in bar
+    bars.forEach(function (list, bi) { var pb = parsed.bars[bi + off]; if (pb) pb.melody = list.map(function (n) { return { pos: n.pos, dur: n.dur, midi: n.midi }; }); });
+    var so = BandCatalog.styleOpts((doc.band && doc.band.style) || "pop", "piano"), now = tempos[0], opts = Object.assign({}, so.opts, { melodyLevel: 0.85 });
+    var toPage = src.toPage || function (ci, v, si) { return { chunk: ci, voice: v, slot: si }; };
+    var hitOf = function (n) { return n.hits.map(function (h) { return toPage(h.ci, h.voice, h.slot); }); };
+    var notes = bars.map(function (list) { return (list || []).map(function (n) { return { pos: n.pos, dur: n.dur, hits: hitOf(n) }; }); });
+    var pk = pkNotes.map(function (n) { return { pos: n.pos, dur: n.dur, hits: hitOf(n) }; });
+    var p = BandPlayer.create({ parsed: parsed, tempo: now, countIn: pick ? 1 : 0, choruses: 1, opts: opts, instruments: so.instruments,
+      volumes: { bass: 0.8, comp: 0.85, drums: 0.6 }, humanize: 0.5,
+      onBar: function (info) {
+        var idx = info.countIn ? -1 : info.index;          // (form bars: the short first bar isn't one)
+        band.at = { idx: idx, count: !!info.countIn, t: performance.now(), beat: 0 };
+        var tp = idx >= 0 ? tempos[idx] : null; if (tp && tp !== now) { now = tp; p.setTempo(tp); }
+      },
+      onBeat: function (info) { if (band.at) { band.at.beat = info.beat; band.at.t = performance.now(); } },
+      onEnd: function () { band.done = true; } });
+    var band = { player: p, parsed: parsed, notes: notes, pk: pk, pkBeats: pick ? D.chunkLen(d, 0) / (mi0.family === "triple" ? 12 / mi0.d : 4 / mi0.d) : 0, beatsOf: function () { return D.meterInfo(D.at(d, 0).meter) || D.meterInfo("4/4"); },
+      bpm: function () { return now; }, at: null, done: false };
+    return band;
+  }
+  // the band's playhead: the note sounding now, from the beat it last reported
+  function bandHead(band) {
+    var a = band.at; if (!a) return null;
+    var beat = a.beat + (performance.now() - a.t) / 1000 * band.bpm() / 60, list;
+    if (a.count) { var mi = band.beatsOf(); list = band.pk.map(function (n) { return Object.assign({}, n, { pos: n.pos + (mi.family === "triple" ? mi.n / 3 : mi.n) - band.pkBeats }); }); }
+    else list = band.notes[a.idx] || [];
+    var on = []; list.forEach(function (n) { if (beat >= n.pos - 1e-3 && beat < n.pos + n.dur) on = on.concat(n.hits); });
+    return on;
+  }
+  function play(vo, src) {
+    if (synth || playing) { stopPlay(); return; }
+    vo = vo || tune; src = src || tuneSrc;
+    if (!vo) return;
+    var pl = playing = { band: null };
+    $("nt-play").innerHTML = "&#9632; Stop";
+    var withBand = !!(src && src.doc.chunks.some(function (c) { return c.chords && c.chords.length; }));
+    if (withBand) {
+      status("Loading the band\u2026");
+      loadBand().then(function () {
+        var b = makeBand(src.doc, src); if (!b) throw new Error("no bars");
+        return Promise.race([b.player.load().then(function () { return b; }), new Promise(function (ok) { setTimeout(function () { ok(null); }, 12000); })]);
+      }).then(function (b) {
+        if (playing !== pl) return;
+        if (!b) { status("The band took too long to load: the piano plays it this time."); playing = null; pianoPlay(vo, src); return; }
+        status(""); pl.band = b.player;
+        b.player.play();
+        pl.head = setInterval(function () { if (playing !== pl) return; if (b.done) { stopPlay(); return; } lightHits(bandHead(b)); }, 40);
+      }).catch(function () { if (playing !== pl) return; status("The band couldn't load: the piano plays it."); playing = null; pianoPlay(vo, src); });
+      return;
+    }
+    playing = null; pianoPlay(vo, src);
+  }
+  function pianoPlay(vo, src) {
+    if (!ABCJS.synth.supportsAudio()) { stopPlay(); return; }
+    var s = synth = new ABCJS.synth.CreateSynth(), pl = playing = { band: null };
     $("nt-play").innerHTML = "&#9632; Stop";
     getSoundfontUrl().then(function (u) {
-      return s.init({ audioContext: new (window.AudioContext || window.webkitAudioContext)(), visualObj: tune, options: { soundFontUrl: u } });
+      return s.init({ audioContext: new (window.AudioContext || window.webkitAudioContext)(), visualObj: vo, options: { soundFontUrl: u } });
     }).then(function () { return s.prime(); }).then(function (r) {
-      if (synth !== s) return;
-      s.start(); setTimeout(function () { if (synth === s) play(); }, r.duration * 1000 + 300);
-    }).catch(function () { synth = null; $("nt-play").innerHTML = "&#9654; Play"; });
+      if (synth !== s || playing !== pl) return;
+      s.start();
+      try { pl.cursor = new ABCJS.TimingCallbacks(vo, { eventCallback: function (ev) { if (playing === pl) lightPlaying(src, ev); } }); pl.cursor.start(); } catch (e) {}
+      pl.timer = setTimeout(function () { if (playing === pl) stopPlay(); }, r.duration * 1000 + 300);
+    }).catch(function () { if (playing === pl) stopPlay(); });
   }
+
 
   // ---- drawing -----------------------------------------------------------------------------------------------------
   // abcjs starts a note after a barline at the space before it ("| G2": G's startChar is the space), so a drawn element
@@ -1369,6 +1353,10 @@ document.addEventListener('DOMContentLoaded', async function () {
     return (first ? '<option value="">' + first + "</option>" : "") + list.map(function (k) { var v = Array.isArray(k) ? k[0] : k; return '<option value="' + v + '">' + (Array.isArray(k) ? k[1] : name ? name(k) : k) + "</option>"; }).join("");
   }
 
+  function eyeButton(on, what) {
+    return '<button type="button" class="nt-eye" aria-pressed="' + on + '" title="' + (on ? "Leave " + what + " out of the score" : "Show " + what + " in the score") + '" aria-label="Show ' + what + ' in the score">' +
+      '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>' + (on ? "" : '<line x1="3" y1="21" x2="21" y2="3"/>') + "</svg></button>";
+  }
   function renderSheet() {
     var changes = D.hasChanges(doc);
     $("nt-sheet").tHead.innerHTML = "<tr><th>#</th><th>Name</th><th>Bars</th>" + (changes ? "<th>Meter</th><th>Key</th>" : "") +
@@ -1383,29 +1371,31 @@ document.addEventListener('DOMContentLoaded', async function () {
       tr.setAttribute("aria-selected", i === cur ? "true" : "false");
       if (sec) tr.className = "nt-in";
       var showM = changes && (i === 0 || f.meterChange), showK = changes && (i === 0 || f.keyChange);
-      tr.innerHTML = '<td class="nt-num">' + (i + 1) + '</td><td><input type="text" class="nt-name" aria-label="Name of chunk ' + (i + 1) + '"></td>' +
+      if (ch.off) tr.className += " nt-off";
+      tr.innerHTML = '<td class="nt-num">' + eyeButton(!ch.off, "chunk " + (i + 1)) + (i + 1) + '</td><td><input type="text" class="nt-name" aria-label="Name of chunk ' + (i + 1) + '"></td>' +
         "<td>" + (f.bars ? f.bars : "&ndash;") + "</td>" +
         (changes ? '<td class="nt-change">' + (showM && f.meter ? f.meter : "") + '</td><td class="nt-change">' + (showK && f.key ? f.key : "") + "</td>" : "") +
         '<td class="nt-c">' + mark(f.chords, "chords") + '</td><td class="nt-c">' + mark(f.rhythm, "rhythm") + '</td><td class="nt-c">' + mark(f.pitches, "pitches") + '</td><td class="nt-c">' + mark(f.words, "words") + "</td><td></td>";
       tr.lastChild.appendChild(styleButton(D.bandOf(doc, i), "chunk", function () { openBand({ chunk: i }, cname(i)); }));
+      tr.querySelector(".nt-eye").onclick = function (e) { e.stopPropagation(); change(function () { ch.off = !ch.off; }); };
       var name = tr.querySelector("input");
       name.value = ch.name || "";
       name.oninput = function () { ch.name = name.value; save(); refreshText(); };
       name.onfocus = function () { if (cur !== i) { cur = i; sel = null; render(); var r = body.querySelector('tr[data-chunk="' + i + '"] input'); if (r) r.focus(); } };
       tr.dataset.chunk = i;
-      tr.onclick = function (e) { if (e.target.tagName !== "INPUT" && cur !== i) { cur = i; sel = null; msg(""); render(); } };
+      tr.onclick = function (e) { if (e.target.tagName !== "INPUT" && cur !== i) { toChunkStart(i); msg(""); render(); } };
       body.appendChild(tr);
     });
-    $("nt-sheet-all").hidden = !secs.length;
-    var allFolded = secs.length && secs.every(function (x) { return x.folded; }), allShown = secs.every(function (x) { return !x.hidden; });
+    $("nt-fold-all").hidden = !secs.length;
+    var allFolded = secs.length && secs.every(function (x) { return x.folded; }), allShown = secs.every(function (x) { return !x.hidden; }) && doc.chunks.every(function (c) { return !c.off; });
     $("nt-fold-all").textContent = allFolded ? "Unfold all" : "Fold all";
     $("nt-fold-all").onclick = function () { change(function () { secs.forEach(function (x) { doc.chunks[x.start].folded = !allFolded; }); var sc = D.sectionOf(doc, cur); if (!allFolded && sc) cur = sc.start; sel = null; }); };
     $("nt-eye-all").textContent = allShown ? "Hide all" : "Show all";
-    $("nt-eye-all").title = allShown ? "Leave every section out of the score" : "Show every section in the score";
-    $("nt-eye-all").onclick = function () { change(function () { secs.forEach(function (x) { doc.chunks[x.start].hidden = allShown; }); }); };
+    $("nt-eye-all").title = allShown ? "Leave every chunk and section out of the score" : "Show every chunk and section in the score";
+    $("nt-eye-all").onclick = function () { change(function () { secs.forEach(function (x) { doc.chunks[x.start].hidden = allShown; }); doc.chunks.forEach(function (c) { c.off = allShown; }); }); };
     var ch = chunk();
     $("nt-c-up").disabled = cur === 0; $("nt-c-down").disabled = cur === doc.chunks.length - 1;
-    $("nt-c-merge").disabled = cur === doc.chunks.length - 1;
+    $("nt-c-merge").disabled = $("nt-c-join").disabled = cur === doc.chunks.length - 1;
     $("nt-c-sec").disabled = !!ch.heading;
     $("nt-c-at-lab").textContent = D.chunkLen(doc, cur) ? "Split after bar" : "Split after note";
     if (shownCur !== cur) {
@@ -1413,8 +1403,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       $("nt-c-meter").innerHTML = options(METERS, cur === 0 ? "Not chosen yet" : "Same as before");
       $("nt-c-key").innerHTML = options(KEYS, cur === 0 ? "Not chosen yet" : "Same as before", KEYNAME);
     }
-    $("nt-c-meter").value = cur === 0 ? (doc.meter || "") : (ch.meter || "");
-    $("nt-c-key").value = cur === 0 ? (doc.key || "") : (ch.key || "");
+    setSel($("nt-c-meter"), cur === 0 ? (doc.meter || "") : (ch.meter || ""));
+    setSel($("nt-c-key"), cur === 0 ? (doc.key || "") : (ch.key || ""));
+    if (document.activeElement !== $("nt-c-tempo")) { $("nt-c-tempo").value = cur === 0 ? (doc.tempo || "") : (ch.tempo || ""); $("nt-c-tempo").placeholder = cur === 0 ? "90" : String(D.at(doc, cur - 1).tempo || 90); }
     var total = doc.chunks.reduce(function (s, c, i) { return s + D.info(doc, i).bars; }, 0);
     $("nt-chunks-sum").textContent = doc.chunks.length + (doc.chunks.length === 1 ? " chunk" : " chunks") + (total ? ", " + Math.round(total * 100) / 100 + " bars" : "");
   }
@@ -1479,7 +1470,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       '<button type="button" class="nt-fold" aria-expanded="' + !sec.folded + '" aria-label="' + (sec.folded ? "Unfold " : "Fold ") + sec.name + '">' + (sec.folded ? "&#9656;" : "&#9662;") + "</button>" +
       '<button type="button" class="nt-eye" aria-pressed="' + !sec.hidden + '" title="' + (sec.hidden ? "Show this section in the score" : "Leave this section out of the score") + '" aria-label="Show ' + sec.name.replace(/[<&"]/g, "") + ' in the score">' +
       '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>' + (sec.hidden ? '<line x1="3" y1="21" x2="21" y2="3"/>' : "") + "</svg></button>" +
-      '<input type="text" aria-label="Name of section">' +
+      '<input type="text" list="nt-sec-names" aria-label="Name of section">' +
       '<button type="button" class="nt-btn nt-mini" data-s="up" title="Move the section up">&#8593;</button>' +
       '<button type="button" class="nt-btn nt-mini" data-s="down" title="Move the section down">&#8595;</button>' +
       '<button type="button" class="nt-btn nt-mini" data-s="dup" title="Duplicate the section" aria-label="Duplicate the section">&#10697;</button>' +
@@ -1487,7 +1478,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       '<span class="nt-style-slot"></span><span class="nt-sec-sum">' + n + (n === 1 ? " chunk" : " chunks") + (bars ? ", " + Math.round(bars * 100) / 100 + " bars" : "") + "</span></div></td>";
     var inp = tr.querySelector("input"); inp.value = sec.name;
     tr.querySelector(".nt-style-slot").appendChild(styleButton(D.bandOf(doc, sec.start, true), "section", function () { openBand({ section: sec.start }, sec.name); }));
-    inp.onchange = function () { var v = inp.value.trim(); if (!v) { inp.value = sec.name; return; } change(function () { first.heading = v; }); };
+    secNames();
+    inp.onchange = function () { var v = inp.value.trim(); if (!v) { inp.value = sec.name; return; } change(function () { first.heading = v; renumberSections(); }); };
+    inp.onkeydown = function (e) { if (e.key === "Enter" || e.key === "Escape") { if (e.key === "Escape") inp.value = sec.name; inp.blur(); e.preventDefault(); } };
     tr.querySelector(".nt-eye").onclick = function (e) { e.stopPropagation(); change(function () { first.hidden = !first.hidden; }); };
     tr.querySelector(".nt-fold").onclick = function () { change(function () { first.folded = !first.folded; if (first.folded && cur >= sec.start && cur < sec.end) { cur = sec.start; } }); };
     tr.querySelectorAll("[data-s]").forEach(function (b) {
@@ -1564,8 +1557,10 @@ document.addEventListener('DOMContentLoaded', async function () {
   function render() {
     var h = here(), mi = D.meterInfo(h.meter), ch = chunk();
     $("nt-title").value = doc.title || "";
-    $("nt-meter").value = doc.meter || "";
-    $("nt-key").value = doc.keyConfirmed && doc.key ? doc.key : "";
+    if (document.activeElement !== $("nt-lines")) $("nt-lines").value = doc.lineEvery > 0 ? doc.lineEvery : "";
+    setSel($("nt-meter"), doc.meter || "");
+    setSel($("nt-key"), doc.keyConfirmed && doc.key ? doc.key : "");
+    if (document.activeElement !== $("nt-tempo")) $("nt-tempo").value = doc.tempo || "";
     var g = !doc.keyConfirmed ? D.guessKey(doc) : null, showGuess = g && g.key !== guessRefused;
     $("nt-keyguess").hidden = !showGuess;
     if (showGuess) $("nt-keyguess-text").textContent = "These notes look like " + KEYNAME(g.key) + ". Is that the key?";
@@ -1589,7 +1584,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("nt-take-sum").textContent = into;
     $("nt-rhythm-keys").innerHTML = mode === "piano"
       ? "The number keys play black keys while the computer keys are a piano. Click a pattern instead, or switch the notes to Letters."
-      : "Press <kbd>1</kbd> to <kbd>9</kbd> to add the pattern with that number.";
+      : (single ? "Press the number under a note value to add it." : "Press <kbd>1</kbd> to <kbd>9</kbd> to add the pattern with that number.") + " <kbd>Shift</kbd>+<kbd>R</kbd> switches between patterns and one note at a time.";
     // words
     if (editing !== "words") $("nt-words-text").value = ch.words || "";
     var nsyl = D.syllables(ch.words).length, nnotes = ch.rhythm.filter(function (r) { return r.type === "note"; }).length;
@@ -1611,64 +1606,181 @@ document.addEventListener('DOMContentLoaded', async function () {
     $("nt-scope").value = one ? sk : "";
     if (one) {
       var sub = JSON.parse(JSON.stringify(doc)), at0 = D.at(doc, one.start);
-      sub.chunks = sub.chunks.slice(one.start, one.end); sub.meter = at0.meter; sub.key = at0.key;
+      sub.chunks = sub.chunks.slice(one.start, one.end); sub.meter = at0.meter; sub.key = at0.key; sub.tempo = at0.tempo; sub.chunks[0].tempo = null;
       var rs = D.toAbc(sub);
-      r = { abc: rs.abc, map: rs.map.map(function (m) { return Object.assign({}, m, { chunk: m.chunk + one.start }); }) };
+      r = { src: sub, toPage: function (ci, v, si) { return { chunk: ci + one.start, voice: v, slot: si }; }, abc: rs.abc, map: rs.map.map(function (m) { return Object.assign({}, m, { chunk: m.chunk + one.start }); }), keep: [] };
+      for (var oi = one.start; oi < one.end; oi++) r.keep.push(oi);
       map = r.map;
-    } else if (secs.some(function (x) { return x.hidden; })) {
+    } else if (secs.some(function (x) { return x.hidden; }) || doc.chunks.some(function (c) { return c.off; })) {
       // sections with their eye off are left out: the rest drawn together, the map's chunks counted from the whole piece
       var keep = [];
-      doc.chunks.forEach(function (c, i) { var sx = D.sectionOf(doc, i); if (!sx || !sx.hidden) keep.push(i); });
+      doc.chunks.forEach(function (c, i) { var sx = D.sectionOf(doc, i); if ((!sx || !sx.hidden) && !c.off) keep.push(i); });
       var sub2 = JSON.parse(JSON.stringify(doc));
       sub2.chunks = keep.map(function (i, k) {
         var c = sub2.chunks[i];
-        if (k === 0) { var a0 = D.at(doc, i); sub2.meter = a0.meter; sub2.key = a0.key; c.meter = null; c.key = null; }
-        else if (keep[k - 1] !== i - 1) { var a = D.at(doc, i), b = D.at(doc, keep[k - 1]); c.meter = a.meter !== b.meter ? a.meter : null; c.key = a.key !== b.key ? a.key : null; }
+        if (k === 0) { var a0 = D.at(doc, i); sub2.meter = a0.meter; sub2.key = a0.key; sub2.tempo = a0.tempo; c.meter = null; c.key = null; c.tempo = null; }
+        else if (keep[k - 1] !== i - 1) { var a = D.at(doc, i), b = D.at(doc, keep[k - 1]); c.meter = a.meter !== b.meter ? a.meter : null; c.key = a.key !== b.key ? a.key : null; c.tempo = a.tempo !== b.tempo ? a.tempo : null; }
         return c;
       });
       if (keep.length) {
         var rs2 = D.toAbc(sub2);
-        r = { abc: rs2.abc, map: rs2.map.map(function (m) { return Object.assign({}, m, { chunk: keep[m.chunk] }); }) };
-      } else r = { abc: "X:1\nK:C\n", map: [] };
+        r = { src: sub2, toPage: function (ci, v, si) { return { chunk: keep[ci], voice: v, slot: si }; }, abc: rs2.abc, map: rs2.map.map(function (m) { return Object.assign({}, m, { chunk: keep[m.chunk] }); }), keep: keep };
+      } else r = { abc: "X:1\nK:C\n", map: [], keep: [] };
       map = r.map;
     }
-    var paper = $("nt-paper");
-    if (map.length || /x/.test(r.abc.split("K:")[1] || "")) {
-      tune = ABCJS.renderAbc(paper, r.abc, { staffwidth: Math.max(300, paper.clientWidth - 40), add_classes: true, clickListener: clickScore,
-        wrap: { minSpacing: 1.8, maxSpacing: 2.7, preferredMeasuresPerLine: 4 } })[0];
-      lightSelection(tune, map, inSel);
-    } else { tune = null; paper.innerHTML = '<p class="nt-hint" style="padding:.6rem">' + (h.meter ? "Nothing in time yet." : "Nothing in time yet. Notes you enter wait in Notes until there is a rhythm.") + "</p>"; }
+    // each chunk on its own line (drawChunks); the flowing ABC of what's shown is kept for Play
+    var shown = r.keep || doc.chunks.map(function (c, i) { return i; });
+    tune = map.length ? ABCJS.renderAbc(document.createElement("div"), r.abc)[0] : null;
+    tuneSrc = { doc: r.src || doc, map: r.map, toPage: r.toPage };
+    drawChunks(shown, h);
     renderSelTools();
-    var p = D.pendingAbc(doc); pmap = p ? p.map : [];
-    $("nt-pending-wrap").hidden = !p;
-    if (p) {
-      var pt = ABCJS.renderAbc($("nt-pending"), p.abc, { responsive: "resize", add_classes: true, clickListener: clickPending })[0];
-      lightSelection(pt, pmap, function (e) { return sel && sel.pitch !== undefined && e.chunk === sel.chunk && e.voice === sel.voice && e.pitch === sel.pitch; });
-    }
+    $("nt-pending-wrap").hidden = true;
+  }
+
+  // ---- the score: one line per chunk, bars the same width on every line ------------------------------------------------
+  // where each chunk starts inside its bar (quarters): its line begins with that much invisible rest, so barlines line up
+  function chunkOffsets() { return D.offsets(doc); }
+  function visibleChunk(i) { var sx = D.sectionOf(doc, i); return !doc.chunks[i].off && !(sx && sx.hidden); }
+  function drawChunks(shown, h) {
+    var paper = $("nt-paper"), W = Math.max(300, paper.clientWidth - 40), offs = chunkOffsets(), any = false;
+    paper.innerHTML = ""; map = []; pmap = []; drawn = [];
+    var act = sel ? null : activeSlot();
+    var lightWant = sel ? inSel : function (e) { return act && e.chunk === act.chunk && e.voice === act.voice && e.slot === act.slot; };
+    if (doc.title && shown.length) { var tt = document.createElement("div"); tt.className = "nt-ctitle"; tt.textContent = doc.title; paper.appendChild(tt); }
+    var lastMeter = null;
+    shown.forEach(function (ci) {
+      var ch = doc.chunks[ci], a = D.at(doc, ci), mi = D.meterInfo(a.meter), len = D.chunkLen(doc, ci);
+      if (ch.heading) { var hd = document.createElement("div"); hd.className = "nt-csec"; hd.textContent = ch.heading; paper.appendChild(hd); }
+      var row = document.createElement("div"); row.className = "nt-crow" + (ci === cur ? " is-cur" : ""); row.dataset.chunk = ci;
+      var lab = document.createElement("div"); lab.className = "nt-clab"; lab.textContent = cname(ci);
+      lab.onclick = function () { if (cur !== ci) { toChunkStart(ci); msg(""); render(); } };
+      var box = document.createElement("div"); row.appendChild(lab); row.appendChild(box); paper.appendChild(row);
+      var sub = JSON.parse(JSON.stringify(doc)), c = sub.chunks[ci];
+      sub.chunks = [c]; sub.meter = a.meter; sub.key = a.key; sub.title = ""; c.meter = null; c.key = null; c.pickup = ci === 0 && !!ch.pickup; c.lead = c.pickup ? 0 : ch.lead || 0;   // a lead: a short first bar, as a pickup is
+      var p0 = D.part(ch, 0), pitchOnly = !p0.rhythm.length && p0.pitches.some(function (x) { return x != null; });
+      if (mi && len > 1e-6) {
+        any = true;
+        var off = 0, pre = {};
+        if (off > 1e-6) {
+          for (var v = 0; v < doc.voices.length; v++) { var pp = D.part(c, v); if (v === 0 || pp.rhythm.length) { pp.rhythm.unshift({ type: "space", durQ: off }); pre[v] = 1; } }
+          c.chords.forEach(function (x) { x.at = Math.round((x.at + off) * 1000) / 1000; }); if (c.chordLen) c.chordLen += off;
+          if (c.nl) c.nl = c.nl.map(function (q) { return Math.round((q + off) * 1000) / 1000; });
+        }
+        var rs = D.toAbc(sub), cmap = [];
+        rs.map.forEach(function (m0) { var m1 = Object.assign({}, m0, { chunk: ci }); if (pre[m1.voice]) m1.slot--; if (m1.slot >= 0) cmap.push(m1); });
+        var keyAcc = Object.keys(AbcCore.keyAccidentals(a.key || "C") || {}).length, over = 70 + 9 * keyAcc;
+        // the short first bar (a pickup, a lead) gets its share of a bar's width, not a whole one
+        var shortQ = c.pickup ? (len < mi.barQ - 1e-6 ? mi.barQ - len : 0) : c.lead > 1e-6 && c.lead < mi.barQ - 1e-6 ? mi.barQ - c.lead : 0;
+        var barW = Math.max(120, 38 * mi.barQ), bars = Math.max(1, Math.ceil((shortQ + len) / mi.barQ - 1e-6)), cutW = shortQ / mi.barQ * barW;
+        var maxPer = Math.max(1, Math.floor((W - over) / barW)), lines = Math.ceil(bars / maxPer), per = Math.ceil(bars / lines);
+        var SL = "%%stretchlast " + (lines > 1 ? 0 : 1) + "\n", abc = rs.abc.replace(/^(X:.*\n)/, "$1" + SL), shift = SL.length;   // the line moves every note on
+        var showM = a.meter !== lastMeter; lastMeter = a.meter;
+        if (!showM) { var mOld = abc.match(/^M:.*$/m)[0]; abc = abc.replace(/^M:.*$/m, "M:none"); shift += "M:none".length - mOld.length; over -= 20; }   // the meter only where it starts or changes
+        var qm = abc.match(/^Q:.*\n/m); if (qm) { abc = abc.replace(qm[0], ""); shift -= qm[0].length; }   // no tempo mark on every line
+        cmap.forEach(function (m1) { m1.start += shift; m1.end += shift; });
+        if (doc.lineEvery > 0 || (ch.nl && ch.nl.length)) {
+          // lines as set (Line break every, RET): each line drawn on its own, so every bar keeps its width
+          var hdr = abc.slice(0, rs.lines[0].start + shift).replace("%%stretchlast 0", "%%stretchlast 1");
+          rs.lines.forEach(function (L, li) {
+            var s0 = L.start + shift, s1 = L.end + shift, h0 = li ? hdr.replace(/^M:.*$/m, "M:none") : hdr;
+            var lm = cmap.filter(function (m1) { return m1.start >= s0 && m1.start < s1; }).map(function (m1) { return Object.assign({}, m1, { start: m1.start - s0 + h0.length, end: m1.end - s0 + h0.length }); });
+            var lb = document.createElement("div"); lb.className = "nt-cline"; box.appendChild(lb);
+            var lw = (li && showM ? over - 20 : over) + L.bars * barW - (li ? 0 : cutW);
+            var lt = ABCJS.renderAbc(lb, h0 + abc.slice(s0, s1), { staffwidth: Math.min(W, lw), add_classes: true,
+              clickListener: function (el, tn, cls, an, drag, ev) { map = lm; clickScore(el, tn, cls, an, drag, ev); } })[0];
+            lightSelection(lt, lm, lightWant); drawn.push({ t: lt, m: lm });
+            if (ci === cur) drawCaret(lt, lm);
+            map = map.concat(lm);
+            if (L.manual) {
+              var nb = document.createElement("button"); nb.type = "button"; nb.className = "nt-nl"; nb.textContent = "\u21B4";
+              nb.title = "A line break of your own: click (or RET on the note before it) to take it away"; nb.setAttribute("aria-label", "Remove this line break");
+              var q = Math.round((L.at - off) * 1000) / 1000;
+              nb.onclick = function () { change(function () { ch.nl = (ch.nl || []).filter(function (x) { return Math.abs(x - q) > 1e-6; }); }); };
+              lb.appendChild(nb);
+            }
+          });
+        } else {
+        var opts = { staffwidth: Math.min(W, over + Math.min(per, bars) * barW - (lines > 1 ? 0 : cutW)), add_classes: true,
+          clickListener: function (el, tn, cls, an, drag, ev) { map = cmap; clickScore(el, tn, cls, an, drag, ev); } };
+        if (lines > 1) opts.wrap = { minSpacing: 0.5, maxSpacing: 6, preferredMeasuresPerLine: per };
+        var t = ABCJS.renderAbc(box, abc, opts)[0];
+        lightSelection(t, cmap, lightWant); drawn.push({ t: t, m: cmap });
+        if (ci === cur) drawCaret(t, cmap);
+        map = map.concat(cmap);
+        }
+        var left = D.pendingAbc(sub, { noNames: true });     // pitches past the rhythm's last note: waiting, under the line
+        if (left) {
+          var lb = document.createElement("div"); lb.className = "nt-pitchonly"; row.appendChild(lb);
+          var lm = left.map.map(function (m0) { return Object.assign({}, m0, { chunk: ci }); });
+          var lt = ABCJS.renderAbc(lb, left.abc, { staffwidth: Math.min(W, 80 + lm.length * 38), add_classes: true, clickListener: function (el) { pmap = lm; clickPending(el); } })[0];
+          lightSelection(lt, lm, function (e) { return sel && sel.pitch !== undefined && e.chunk === sel.chunk && e.voice === sel.voice && e.pitch === sel.pitch; });
+          pmap = pmap.concat(lm);
+        }
+      } else if (pitchOnly) {
+        any = true;
+        box.className = "nt-pitchonly";
+        var pr = D.pendingAbc(sub, { noNames: true }), cp = pr ? pr.map.map(function (m0) { return Object.assign({}, m0, { chunk: ci }); }) : [];
+        if (pr) {
+          var pt = ABCJS.renderAbc(box, pr.abc, { staffwidth: Math.min(W, 80 + p0.pitches.length * 38), add_classes: true,
+            clickListener: function (el) { pmap = cp; clickPending(el); } })[0];
+          lightSelection(pt, cp, function (e) { return sel && sel.pitch !== undefined && e.chunk === sel.chunk && e.voice === sel.voice && e.pitch === sel.pitch; });
+          pmap = pmap.concat(cp);
+        }
+      } else {
+        box.className = "nt-cempty"; box.textContent = !mi ? "No meter yet." : "Nothing in it yet.";
+      }
+    });
+    if (!shown.length) paper.innerHTML = '<p class="nt-hint" style="padding:.6rem">' + (doc.chunks.length ? "Every chunk is hidden: press V, or use the eyes in Chunks." : "Nothing yet.") + "</p>";
   }
 
   // the bank, drawn and numbered the way the Song Builder draws it
-  var cellsFor = null;
+  var cellsFor = null, single = false;
+  try { single = localStorage.getItem("ntRhythmSingle") === "1"; } catch (e) {}
+  // one note at a time: the same values and keys whatever the meter (the key is the number shown)
+  var SINGLE = [["B4", 4, "1"], ["B2", 2, "2"], ["B", 1, "4"], ["B/", .5, "8"], ["B//", .25, "6"], ["B///", .125, "7"],
+    ["B3", 3, "3"], ["B3/2", 1.5, "5"], ["B3/4", .75, "9"]].map(function (x) { return { abc: x[0], defaultL: "1/4", key: x[2], events: [{ type: "note", durQ: x[1] }] }; });
+  // whole-bar patterns for 3/4, ahead of the beat patterns
+  var BARS34 = [["B2 B", [2, 1]], ["B B2", [1, 2]], ["BBB", [1, 1, 1]], ["B3", [3]]].map(function (x) {
+    return { abc: x[0], defaultL: "1/4", events: x[1].map(function (q) { return { type: "note", durQ: q }; }) };
+  });
+  function setSingle(on) {
+    single = on; try { localStorage.setItem("ntRhythmSingle", on ? "1" : "0"); } catch (e) {}
+    $("nt-rhythm-single").setAttribute("aria-pressed", on ? "true" : "false");
+    cellsFor = null; render();
+  }
   function renderCells(mi) {
     var crit = {}; document.querySelectorAll("#nt-rhythm [data-crit]").forEach(function (b) { crit[b.dataset.crit] = b.checked; });
-    var sig = mi.family + mi.barQ + JSON.stringify(crit);
+    var sig = single ? "single" : mi.family + mi.n + "/" + mi.d + JSON.stringify(crit);
+    $("nt-rhythm-single").setAttribute("aria-pressed", single ? "true" : "false");
+    $("nt-cell-crit").hidden = single;
     if (cellsFor === sig) return;
     var box = $("nt-cells");
     if (box.offsetParent === null) return;          // drawn when visible (needs layout to measure)
     cellsFor = sig; box.innerHTML = "";
     var seenAbc = {};
-    cells = RhythmCells.pool().filter(function (c) {
+    var pats = single ? [] : (mi.n === 3 && mi.d === 4 ? BARS34 : []).concat(RhythmCells.pool().filter(function (c) {
       if (c.family !== mi.family || seenAbc[c.abc]) return false;
       seenAbc[c.abc] = 1;
       if (!Object.keys(c.required || {}).every(function (k) { return crit[k]; })) return false;
       return c.events.reduce(function (s, e) { return s + e.durQ; }, 0) <= mi.barQ + 1e-9;
-    });
+    }));
+    // 2 3 4 8 are always the half, dotted half, quarter and eighth, in the patterns too (each one there when the ticked boxes
+    // give a pattern with that note and it fits the bar); the patterns take 1 5 6 7 9, then go without a key
+    if (!single) {
+      var hasDur = function (q) { return pats.some(function (c) { return c.events.some(function (e) { return e.type === "note" && Math.abs(e.durQ - q) < 1e-6; }); }); };
+      var fixed = ["2", "3", "4", "8"].map(function (k) { return SINGLE.find(function (c) { return c.key === k; }); })
+        .filter(function (c) { var q = c.events[0].durQ; return q <= mi.barQ + 1e-9 && hasDur(q); });
+      var free = ["1", "5", "6", "7", "9"];
+      pats = pats.filter(function (c) { return !(c.events.length === 1 && fixed.some(function (f) { return Math.abs(f.events[0].durQ - c.events[0].durQ) < 1e-6 && c.events[0].type === "note"; })); });
+      pats = pats.map(function (c, i) { return Object.assign({}, c, { key: free[i] || "" }); });
+      cells = fixed.concat(pats);
+    } else cells = SINGLE;
     var entries = [];
     cells.forEach(function (c, i) {
       var w = document.createElement("div"); w.className = "cell-wrapper";
-      var n = document.createElement("span"); n.className = "cell-number"; n.textContent = String(i + 1); w.appendChild(n);
+      var n = document.createElement("span"); n.className = "cell-number"; n.textContent = c.key || ""; w.appendChild(n);
       var b = document.createElement("button"); b.type = "button"; b.className = "cell-btn";
-      b.setAttribute("aria-label", "Rhythm pattern " + (i + 1) + ": " + c.abc);
+      b.setAttribute("aria-label", "Rhythm pattern" + (c.key ? " " + c.key : "") + ": " + c.abc);
       b.onclick = function () { addCell(i); };
       var pv = document.createElement("div"); pv.className = "cell-preview"; b.appendChild(pv);
       w.appendChild(b); box.appendChild(w);
@@ -1695,7 +1807,98 @@ document.addEventListener('DOMContentLoaded', async function () {
         ? "That pattern doesn't fit in what's left. Pick a shorter one." : "The song is complete: every bar is full."); return; }
       cur = to; voice = 0;
     }
+    if (insertMode && !ENDING) {
+      var at = caretPos();
+      change(function () {
+        var p = part(), k = slotPitch(p, at);
+        c.events.forEach(function (e, j) { p.rhythm.splice(at + j, 0, { type: e.type, durQ: e.durQ }); if (e.type === "note" && k < p.pitches.length) p.pitches.splice(k++, 0, null); });
+        if (at && p.rhythm[at - 1].tie) delete p.rhythm[at - 1].tie;     // a tie can't reach over what went in between
+        caret.pos = at + c.events.length;
+      });
+      return;
+    }
     change(function () { c.events.forEach(function (e) { part().rhythm.push({ type: e.type, durQ: e.durQ }); }); });
+  }
+  // the active note: the selected one, else the first note still without a pitch, else the last slot written
+  // insert mode (i): a caret between the selected chunk's notes; new rhythm goes in there, and the note just before it is the active one
+  var insertMode = false, caret = null;   // caret: { chunk, voice, pos } (pos: the slot it stands before; rhythm.length = the end)
+  function caretPos() {
+    var p = part(), n = p.rhythm.length;
+    if (!caret || caret.chunk !== cur || caret.voice !== voice || caret.pos > n) caret = { chunk: cur, voice: voice, pos: n };
+    return caret.pos;
+  }
+  function setInsert(on) {
+    insertMode = on; caret = null;
+    if (on && sel && sel.slot !== undefined) { cur = sel.chunk; voice = sel.voice; caret = { chunk: cur, voice: voice, pos: sel.slot + 1 }; }
+    sel = null;
+    $("nt-insert").setAttribute("aria-pressed", on ? "true" : "false");
+    status(on ? "Insert mode: rhythm goes in at the red line; h / l move it, H / L by bars. i again: add to the end." : "");
+    render();
+  }
+  function moveCaret(dir) {
+    var n = part().rhythm.length, p0 = caretPos();
+    caret.pos = Math.max(0, Math.min(n, p0 + dir)); render();
+  }
+  function caretBar(dir) {      // to the start of this bar (again: the bar before) / of the next bar (or the end)
+    var p = part(), mi = D.meterInfo(here().meter) || { barQ: 4 }, starts = [], t = 0, pos = caretPos();
+    p.rhythm.forEach(function (r, i) { if (Math.abs(t / mi.barQ - Math.round(t / mi.barQ)) < 1e-6 || !i) starts.push(i); t += r.durQ; });
+    starts.push(p.rhythm.length);
+    var to = dir > 0 ? starts.find(function (x) { return x > pos; }) : starts.filter(function (x) { return x < pos; }).pop();
+    if (to !== undefined) { caret.pos = to; render(); }
+  }
+  function drawCaret(t, m) {
+    if (!insertMode || !t) return;
+    var p = part(), pos = caretPos(); if (!p.rhythm.length) return;
+    var slot = pos > 0 ? pos - 1 : 0, ents = (m || map).filter(function (m) { return m.chunk === cur && m.voice === voice && m.slot === slot; });
+    if (!ents.length) return;
+    var ent = pos > 0 ? ents[ents.length - 1] : ents[0], box = null, svg = null;
+    t.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (v) { v.forEach(function (el) {
+      if (!el.abselem || !covers(el, ent)) return;
+      el.abselem.elemset.forEach(function (g) {
+        svg = g.ownerSVGElement;
+        var shapes = g.tagName === "g" ? Array.prototype.slice.call(g.querySelectorAll("path, ellipse, circle, rect")) : [g];
+        shapes.forEach(function (sh) {               // the note's own shapes, not the chunk label or chord above it
+          if (sh.closest("text, .abcjs-annotation, .abcjs-chord")) return;
+          var b = sh.getBBox();
+          box = box ? { x0: Math.min(box.x0, b.x), x1: Math.max(box.x1, b.x + b.width), y0: Math.min(box.y0, b.y), y1: Math.max(box.y1, b.y + b.height) } : { x0: b.x, x1: b.x + b.width, y0: b.y, y1: b.y + b.height };
+        });
+      });
+    }); }); }); });
+    if (!box || !svg) return;
+    var x = pos > 0 ? box.x1 + 5 : box.x0 - 5, ln = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    ln.setAttribute("class", "nt-caret"); ln.setAttribute("x1", x); ln.setAttribute("x2", x);
+    ln.setAttribute("y1", Math.min(box.y0, box.y1 - 40) - 6); ln.setAttribute("y2", Math.max(box.y1, box.y0 + 40) + 6);
+    svg.appendChild(ln);
+  }
+  function activeSlot() {
+    if (insertMode && !sel) { var cp = caretPos(), n0 = part().rhythm.length; return n0 ? { chunk: cur, voice: voice, slot: cp > 0 ? cp - 1 : 0 } : null; }
+    if (sel) return sel.slot !== undefined && !sel.end ? { chunk: sel.chunk, voice: sel.voice, slot: sel.slot } : null;
+    var p = part(), k = 0, last = -1;
+    for (var i = 0; i < p.rhythm.length; i++) {
+      var r = p.rhythm[i];
+      if (r.type === "note") { if (k >= p.pitches.length || p.pitches[k] == null) return { chunk: cur, voice: voice, slot: i }; k++; }
+      if (r.type !== "space") last = i;
+    }
+    return last >= 0 ? { chunk: cur, voice: voice, slot: last } : null;
+  }
+  function slotPitch(p, slot) { var k = 0; for (var i = 0; i < slot; i++) if (p.rhythm[i].type === "note") k++; return k; }
+  // u: the active note loses its pitch (an empty active note: the last pitched one before it)
+  function unpitch() {
+    var a = activeSlot(); if (!a) return;
+    var p = D.part(doc.chunks[a.chunk], a.voice), s = a.slot;
+    for (; s >= 0; s--) { var k = slotPitch(p, s); if (p.rhythm[s].type === "note" && p.pitches[k] != null) break; }
+    if (s < 0) { status("No pitched note to take the pitch from."); return; }
+    change(function () { p.pitches[slotPitch(p, s)] = null; while (p.pitches.length && p.pitches[p.pitches.length - 1] == null) p.pitches.pop(); });
+  }
+  // Backspace: the active note goes, rhythm and pitch (with no rhythm yet, the last pitch waiting)
+  function deleteActive() {
+    var a = activeSlot();
+    if (!a) { removeLast(); return; }
+    change(function () {
+      D.removeSpan(doc, a.voice, { chunk: a.chunk, slot: a.slot }, { chunk: a.chunk, slot: a.slot });
+      if (insertMode && !sel && caret && caret.pos > a.slot) caret.pos--;
+      sel = null;
+    });
   }
 
   // ---- selecting and moving notes ----------------------------------------------------------------------------------
@@ -1705,6 +1908,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (ev && ev.shiftKey && sel && sel.slot !== undefined && sel.voice === e.voice) {
       sel = { chunk: sel.chunk, voice: sel.voice, slot: sel.slot, end: { chunk: e.chunk, slot: e.slot } }; cur = e.chunk; status(""); render(); return;
     }
+    if (insertMode && !(ev && ev.shiftKey)) { cur = e.chunk; voice = e.voice; sel = null; caret = { chunk: cur, voice: voice, pos: e.slot + 1 }; render(); return; }
     sel = { chunk: e.chunk, voice: e.voice, slot: e.slot }; cur = e.chunk; voice = e.voice;
     status(e.filled === null ? "That's a rest." : e.filled ? "" : "No note there yet: enter one and it goes into the first empty slot of this chunk.");
     render();
@@ -1754,6 +1958,21 @@ document.addEventListener('DOMContentLoaded', async function () {
     var ci = sel.chunk, t = D.slotTime(selPart(), sel.slot);
     tryOp(function () { var err = D.splitAt(doc, ci, t, "That's the first note of the chunk already."); if (!err) cur = ci + 1; return err; });
   }
+  // s: split the chunk at the caret (Insert mode), else just before the active note; the second part becomes the active chunk
+  function splitChunkKey() {
+    var p = part(), si;
+    if (insertMode && !sel) si = caretPos();
+    else { var a = activeSlot(); if (!a || a.chunk !== cur) { status("Nothing to split here."); return; } si = a.slot; }
+    if (!p.rhythm.length) { status("This chunk has no rhythm to split."); return; }
+    var t = 0; for (var i = 0; i < si && i < p.rhythm.length; i++) t += p.rhythm[i].durQ;
+    var ci = cur, done = false;
+    tryOp(function () {
+      var err = D.splitAt(doc, ci, t, insertMode ? "Move the caret inside the chunk (h / l): it's at an end." : "That's the first note of the chunk: pick a later one (h / l).");
+      if (!err) { cur = ci + 1; done = true; if (insertMode) caret = { chunk: cur, voice: voice, pos: 0 }; }
+      return err;
+    });
+    if (done) status("Split: " + cname(ci + 1) + " starts here.");
+  }
   function renderSelTools() {
     var has = !!sel && sel.slot !== undefined, n = 0;
     if (has) map.forEach(function (e) { if (inSel(e)) n++; });
@@ -1773,10 +1992,19 @@ document.addEventListener('DOMContentLoaded', async function () {
     var k = 0; for (var i = 0; i < sel.slot; i++) if (p.rhythm[i].type === "note") k++;
     return k < p.pitches.length && p.pitches[k] != null ? k : -1;
   }
+  // j / k or a click on another chunk: its first note is the active one (Space plays from there; i i: the end again)
+  function toChunkStart(ci) {
+    cur = ci; sel = null; caret = null;
+    var v = Math.min(voice, doc.voices.length - 1), p = D.part(doc.chunks[ci], v);
+    if (p.rhythm.length && !insertMode) sel = { chunk: ci, voice: v, slot: 0 };
+    if (insertMode) caret = { chunk: ci, voice: v, pos: 0 };
+  }
   function moveSel(dir) {
     var all = [];
-    doc.chunks.forEach(function (ch, ci) { D.part(ch, sel.voice).rhythm.forEach(function (r, si) { all.push({ chunk: ci, voice: sel.voice, slot: si }); }); });
+    // within the selected chunk only: j / k (or a click) move between chunks
+    doc.chunks.forEach(function (ch, ci) { if (ci === sel.chunk) D.part(ch, sel.voice).rhythm.forEach(function (r, si) { all.push({ chunk: ci, voice: sel.voice, slot: si }); }); });
     doc.chunks.forEach(function (ch, ci) {
+      if (ci !== sel.chunk) return;
       var p = D.part(ch, sel.voice), slots = p.rhythm.length ? p.rhythm.filter(function (r) { return r.type === "note"; }).length : 0;
       for (var k = slots; k < p.pitches.length; k++) all.push({ chunk: ci, voice: sel.voice, pitch: k });
     });
@@ -1797,18 +2025,118 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (to < 0) for (var k = endCap.length - 1; k >= 0; k--) if (endCap[k]) { to = k; break; }
       cur = to; voice = 0;
     }
-    change(function () { D.addPitch(part(), midi); sel = null; }); hear(midi);
+    if ((sel && sel.slot !== undefined) || hasRhythm()) { if (pitchActive(midi)) return; }
+    change(function () { D.addPitch(part(), midi); sel = null; lastSet = null; }); hear(midi);
   }
   function lastIndex() { var p = part().pitches; for (var i = p.length - 1; i >= 0; i--) if (p[i] != null) return i; return -1; }
-  function editLast(f) { var k = lastIndex(); if (k < 0) return; var p = part().pitches; change(function () { p[k] = f(p[k]); }); hear(p[k]); }
+  function editLast(f) {
+    if (lastSet && doc.chunks[lastSet.chunk]) {
+      var lp = D.part(doc.chunks[lastSet.chunk], lastSet.voice), lr = lp.rhythm[lastSet.slot], lk = lr && lr.type === "note" ? slotPitch(lp, lastSet.slot) : -1;
+      if (lk >= 0 && lp.pitches[lk] != null) { var m = f(lp.pitches[lk]); change(function () { setPitchAt(lp, lastSet.slot, m); }); hear(m); return; }
+    }
+    var k = lastIndex(); if (k < 0) return; var p = part().pitches; change(function () { p[k] = f(p[k]); }); hear(p[k]);
+  }
+  // ---- acting on the active note (a chunk with rhythm); a chunk with no rhythm yet just collects pitches ----------------
+  var lastSet = null;                    // the slot a letter last went into, for ' , = -
+  function hasRhythm() { return part().rhythm.some(function (r) { return r.type !== "space"; }); }
+  function advance(a) {                  // after a key acted on a selected note, the selection moves on
+    if (sel && sel.slot !== undefined && !sel.end) { var n = D.part(doc.chunks[a.chunk], a.voice).rhythm.length; if (a.slot + 1 < n) sel = { chunk: a.chunk, voice: a.voice, slot: a.slot + 1 }; }
+  }
+  function setPitchAt(p, s, midi) {      // slot s becomes a note with this pitch; notes tied on from it follow
+    var k = slotPitch(p, s);
+    if (p.rhythm[s].type !== "note") { p.rhythm[s].type = "note"; if (k < p.pitches.length) p.pitches.splice(k, 0, null); }
+    while (p.pitches.length <= k) p.pitches.push(null);
+    p.pitches[k] = midi;
+    if (s && p.rhythm[s - 1].tie && p.pitches[k - 1] !== midi) delete p.rhythm[s - 1].tie;   // a new pitch: the tie into it goes
+    for (var i = s; p.rhythm[i] && p.rhythm[i].tie && p.rhythm[i + 1] && p.rhythm[i + 1].type === "note"; i++) p.pitches[k + (i - s) + 1] = midi;
+  }
+  function pitchActive(midi) {
+    var a = activeSlot(); if (!a) return false;
+    var p = D.part(doc.chunks[a.chunk], a.voice);
+    change(function () { setPitchAt(p, a.slot, midi); lastSet = a; advance(a); });
+    hear(midi); return true;
+  }
+  // z: the active note becomes a rest (with no rhythm yet, z does nothing)
+  function addRest() {
+    if (!hasRhythm() && !sel) { status("A rest needs a rhythm: in a chunk of pitches only, enter the rhythm in a chunk of its own and Merge them."); return; }
+    var a = activeSlot(); if (!a) return;
+    var p = D.part(doc.chunks[a.chunk], a.voice), r = p.rhythm[a.slot]; if (r.type === "rest") { advance(a); render(); return; }
+    change(function () {
+      if (r.type === "note") { var k = slotPitch(p, a.slot); if (k < p.pitches.length) p.pitches.splice(k, 1); }
+      r.type = "rest"; delete r.tie; if (a.slot && p.rhythm[a.slot - 1].tie) delete p.rhythm[a.slot - 1].tie;
+      while (p.pitches.length && p.pitches[p.pitches.length - 1] == null) p.pitches.pop();
+      advance(a);
+    });
+  }
+  // t: tie the active note to the next one (which takes its pitch), or take that tie away
+  function tieNext() {
+    var a = activeSlot(); if (!a) return;
+    var p = D.part(doc.chunks[a.chunk], a.voice), r = p.rhythm[a.slot], nx = p.rhythm[a.slot + 1];
+    if (r.type !== "note") { status("A rest can't be tied."); return; }
+    if (!nx || nx.type === "space") { status("There's no note after this one in the chunk to tie to."); return; }
+    change(function () {
+      if (r.tie) { delete r.tie; return; }
+      r.tie = true;
+      var pm = p.pitches[slotPitch(p, a.slot)];
+      if (pm != null) setPitchAt(p, a.slot + 1, pm); else if (nx.type !== "note") setPitchAt(p, a.slot + 1, null);
+    });
+  }
+  // T: tie the active note to the note before it (its pitch), or take that tie away
+  function toggleTie() {
+    var a = activeSlot(); if (!a || !a.slot) { status("A tie needs a note before this one."); return; }
+    var p = D.part(doc.chunks[a.chunk], a.voice), prev = p.rhythm[a.slot - 1];
+    if (prev.type !== "note") { status("The slot before this one is a rest: there's nothing to tie from."); return; }
+    change(function () {
+      if (prev.tie) { delete prev.tie; return; }
+      prev.tie = true;
+      var pm = p.pitches[slotPitch(p, a.slot - 1)];
+      if (pm != null) setPitchAt(p, a.slot, pm); else if (p.rhythm[a.slot].type !== "note") setPitchAt(p, a.slot, null);
+      advance(a);
+    });
+  }
+  // |: in a chunk with rhythm, a barline at the end of what's there (or at the caret): what comes before it is the chunk's pickup
+  // (chunk.lead); again at the same place takes it away. In a chunk of pitches only, a double barline to group them.
+  function setLead() {
+    var mi = D.meterInfo(here().meter); if (!mi) { status("Choose a meter first."); return; }
+    var p = part(), upto = insertMode ? caretPos() : p.rhythm.length, t = 0;
+    for (var i = 0; i < upto; i++) t += p.rhythm[i].durQ;
+    var lead = Math.round((t % mi.barQ) * 1000) / 1000, ch = chunk();
+    if (lead < 1e-6 || Math.abs((ch.lead || 0) - lead) < 1e-6) { change(function () { ch.lead = 0; }); status(lead < 1e-6 ? "There's a barline there already." : "Pickup taken away."); return; }
+    change(function () { ch.lead = lead; });
+    status("A barline there: " + cname(cur) + " starts with a pickup of " + (lead * (mi.d / 4)) + " " + (mi.d === 8 ? "eighth" : mi.d === 2 ? "half" : "beat") + (lead * (mi.d / 4) === 1 ? "" : "s") + ".");
+  }
+  function pitchBreak() {
+    if (hasRhythm()) { setLead(); return; }
+    var p = part(), k = p.pitches.length; if (!k) return;
+    change(function () { p.breaks = p.breaks || []; var i = p.breaks.indexOf(k); if (i >= 0) p.breaks.splice(i, 1); else p.breaks.push(k); });
+  }
+  // H / L: to the first note of this bar (again: the bar before) / of the next bar
+  function moveBar(dir) {
+    var a = activeSlot(); if (!a) return;
+    var all = [];
+    doc.chunks.forEach(function (ch, ci) {
+      if (ci !== a.chunk) return;                       // within the chunk
+      var mi = D.meterInfo(D.at(doc, ci).meter) || { barQ: 4 }, p = D.part(ch, a.voice), t = 0;
+      p.rhythm.forEach(function (r, si) { all.push({ chunk: ci, slot: si, bar: ci + ":" + Math.floor(t / mi.barQ + 1e-6) }); t += r.durQ; });
+    });
+    var i = all.findIndex(function (x) { return x.chunk === a.chunk && x.slot === a.slot; }); if (i < 0) return;
+    var j;
+    if (dir > 0) { j = i; while (j < all.length && all[j].bar === all[i].bar) j++; }
+    else {
+      j = i; while (j > 0 && all[j - 1].bar === all[i].bar) j--;
+      if (j === i && j > 0) { j--; while (j > 0 && all[j - 1].bar === all[i - 1].bar) j--; }
+    }
+    if (j < 0 || j >= all.length) return;
+    sel = { chunk: all[j].chunk, voice: a.voice, slot: all[j].slot }; cur = all[j].chunk; voice = a.voice; render();
+  }
   function removeLast() { var k = lastIndex(); if (k < 0) return; change(function () { var p = part().pitches; if (k === p.length - 1) p.pop(); else p[k] = null; }); }
 
   var chordLis = CE.listener({ mode: "step" });
   function chordHeard(list) {
     list.forEach(function (c) {
-      var r = CE.analyse(c.midis, { keyLof: CE.keyLof(here().key || "C") });
+      var r = CE.analyse(c.midis, { keyLof: CE.keyLof(D.majorOf(here().key || "C")) });
       if (!r) { $("nt-chords-heard").textContent = "Not a chord: play two or more different notes."; return; }
-      var name = CE.symbol(r, { keyLof: CE.keyLof(here().key || "C"), slash: true }), mi = D.meterInfo(here().meter);
+      var name = CE.symbol(r, { keyLof: CE.keyLof(D.majorOf(here().key || "C")), slash: true }), mi = D.meterInfo(here().meter);
       $("nt-chords-heard").textContent = name;
       if (!mi) return;
       change(function () {
@@ -1847,9 +2175,9 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   var HELP = {
-    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>=</kbd> raises it a half step, <kbd>-</kbd> lowers it. <kbd>Backspace</kbd> takes it away.",
-    piano: "Bottom row <kbd>Z</kbd> to <kbd>/</kbd> are white keys from C, the row above (<kbd>S</kbd> <kbd>D</kbd> <kbd>G</kbd> ...) the black ones. <kbd>Q</kbd> row: an octave higher, with black keys on the numbers. <kbd>↑</kbd> <kbd>↓</kbd> move the octave. <kbd>Backspace</kbd> takes the last note away.",
-    midi: "Play notes one at a time; each goes in the next slot. <kbd>Backspace</kbd> takes the last note away."
+    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>=</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
+    piano: "Bottom row <kbd>Z</kbd> to <kbd>/</kbd> are white keys from C, the row above (<kbd>S</kbd> <kbd>D</kbd> <kbd>G</kbd> ...) the black ones. <kbd>Q</kbd> row: an octave higher, with black keys on the numbers. <kbd>↑</kbd> <kbd>↓</kbd> move the octave. <kbd>Backspace</kbd> deletes the note in red.",
+    midi: "Play notes one at a time; each goes in the next slot (in red). <kbd>Backspace</kbd> deletes the note in red, <kbd>u</kbd> takes its pitch away."
   };
   function setMode(m) {
     mode = m;
@@ -1859,9 +2187,83 @@ document.addEventListener('DOMContentLoaded', async function () {
     render();
   }
 
+  // ---- chunks from the keyboard: o / O a new one after / before, v / V show or hide this one / the others,
+  // J / M join / merge with the next, only when both are on view (else: show them? y / n)
+  var askShow = null;      // { chunks, op } while the y / n question is open (or { yes: fn } for another question)
+  // yy copies the chunk, DD cuts it (the first DD asks: Caps Lock turns typed d d into it), p / P put the copy after / before this chunk
+  var chunkClip = null, lastKey = null;
+  function yankChunk() { chunkClip = JSON.parse(JSON.stringify(doc.chunks[cur])); status("Copied " + cname(cur) + ": p puts it after a chunk, P before."); }
+  function putChunk(after) {
+    if (!chunkClip) { status("Copy a chunk with yy (or cut it with DD) first."); return; }
+    var c = JSON.parse(JSON.stringify(chunkClip)); c.heading = null; c.folded = false; c.hidden = false; c.off = false;
+    if (cur === 0 && !after) c.pickup = false;
+    change(function () { var at = after ? cur + 1 : cur; doc.chunks.splice(at, 0, c); cur = at; sel = null; });
+  }
+  function killChunk() {
+    chunkClip = JSON.parse(JSON.stringify(doc.chunks[cur]));
+    var name = cname(cur);
+    change(function () {
+      var h = doc.chunks[cur].heading, f = doc.chunks[cur].folded;
+      doc.chunks.splice(cur, 1);
+      if (!doc.chunks.length) doc.chunks.push(D.newChunk("Chunk 1"));
+      else if (h && doc.chunks[cur] && !doc.chunks[cur].heading) { doc.chunks[cur].heading = h; doc.chunks[cur].folded = f; }   // the section stays
+      cur = Math.min(cur, doc.chunks.length - 1); sel = null;
+    });
+    status("Cut " + name + ": p puts it back after a chunk, P before (u undoes).");
+  }
+  function askDD(undoPitch) {
+    var ok = false; try { ok = localStorage.getItem("ntDDok") === "1"; } catch (e) {}
+    if (ok) { if (undoPitch) undo(); killChunk(); return; }
+    askShow = { yes: function () { try { localStorage.setItem("ntDDok", "1"); } catch (e) {} if (undoPitch) undo(); killChunk(); },
+      no: function () { if (undoPitch) addPitch(D.letterMidi("D", lastPitch(), here().key)); } };   // it was a D after all
+    var q = "DD cuts the whole chunk (" + cname(cur) + "). Is that what you meant? If Caps Lock is on, you were typing the note D. (y / n)";
+    status(q); msg(q);
+  }
+  function showChunk(i) {
+    var sx = D.sectionOf(doc, i);
+    if (sx && sx.hidden) {                         // its section was hidden: the section comes back, its other chunks stay out of view
+      doc.chunks[sx.start].hidden = false;
+      for (var k = sx.start; k < sx.end; k++) if (k !== i) doc.chunks[k].off = true;
+    }
+    doc.chunks[i].off = false;
+  }
+  function newChunkAt(at) { change(function () { doc.chunks.splice(at, 0, D.newChunk("Chunk " + (doc.chunks.length + 1))); cur = at; sel = null; }); }
+  function toggleChunk() { var on = visibleChunk(cur); change(function () { if (on) doc.chunks[cur].off = true; else showChunk(cur); }); status(on ? cname(cur) + " is hidden from the score (v shows it)." : ""); }
+  function toggleOthers() {
+    var others = doc.chunks.map(function (c, i) { return i; }).filter(function (i) { return i !== cur; }), anyOn = others.some(visibleChunk);
+    change(function () {
+      if (anyOn) others.forEach(function (i) { doc.chunks[i].off = true; });
+      else { others.forEach(function (i) { doc.chunks[i].off = false; }); D.sections(doc).forEach(function (x) { doc.chunks[x.start].hidden = false; }); }
+      showChunk(cur);
+    });
+  }
+  function bothShown(op) {
+    if (cur >= doc.chunks.length - 1) { status("There is no chunk after this one."); return; }
+    var hid = [cur, cur + 1].filter(function (i) { return !visibleChunk(i); }), what = op === "J" ? "join" : "merge";
+    if (doc.chunks[cur + 1].heading) { var wsx = "Warning: " + cname(cur + 1) + " starts the section " + doc.chunks[cur + 1].heading + ", and " + op + " doesn't " + what + " across sections."; status(wsx); msg(wsx); return; }
+    if (hid.length) {
+      askShow = { chunks: hid, op: op };
+      var wq = "Warning: " + hid.map(cname).join(" and ") + (hid.length > 1 ? " are" : " is") + " hidden, and " + op + " only " + what + "s chunks you can see. Show " + (hid.length > 1 ? "them" : "it") + "? (y / n)";
+      status(wq); msg(wq);
+      return;
+      status("Warning: " + hid.map(cname).join(" and ") + (hid.length > 1 ? " are" : " is") + " hidden, and " + op + " only " + what + "s chunks you can see. Show " + (hid.length > 1 ? "them" : "it") + "? (y / n)");
+      return;
+    }
+    tryOp(function () { return op === "J" ? D.merge(doc, cur) : D.combine(doc, cur, voice); });
+  }
   document.addEventListener("keydown", function (e) {
     var t = e.target;
     if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable)) return;
+    if (askShow && !e.ctrlKey && !e.metaKey) {
+      var q = askShow; askShow = null;
+      if (q.yes) {
+        msg(""); status(""); e.preventDefault();
+        if (e.key === "y" || e.key === "Y") q.yes(); else if (q.no) q.no();
+        return;
+      }
+      if (e.key === "y") { change(function () { q.chunks.forEach(showChunk); }); msg(""); status("Shown. Press " + q.op + " again to " + (q.op === "J" ? "join" : "merge") + " them."); e.preventDefault(); return; }
+      status(""); msg(""); if (e.key === "n" || e.key === "Escape") { e.preventDefault(); return; }
+    }
     if (e.ctrlKey || e.metaKey) {
       if (e.key === "z") { e.preventDefault(); undo(); }
       else if (e.key === "c" && copySel()) e.preventDefault();
@@ -1869,9 +2271,56 @@ document.addEventListener('DOMContentLoaded', async function () {
       else if (e.key === "v" && clip) { e.preventDefault(); pasteAfter(); }
       return;
     }
-    if (e.code === "Space" && !e.altKey && !ENDING) { e.preventDefault(); if (rec) stopTake(); else quickStart(false); return; }
-    if (e.shiftKey && !rec && !ENDING && (e.code === "KeyR" || e.key === "Backspace") && lastQuick) { e.preventDefault(); if (e.code === "KeyR") quickRedo(); else quickDrop(); return; }
+    if (STAGE && stageShow) {
+      var noPitch = !stageHas("pitch") && (/^[a-gA-G]$/.test(e.key) || /^[ztTU'=,+-]$/.test(e.key));
+      var noChunks = !stageHas("chunks-panel") && (e.code === "KeyJ" || e.code === "KeyK" || /^[ypPoOvVMDSs]$/.test(e.key));
+      var noRhythm = !stageHas("rhythm") && (/^[1-9]$/.test(e.key) || e.key === "R");
+      if (noPitch || noChunks || noRhythm || (e.code === "Space" && !stageHas("score")) || (e.key === "r" && !stageHas("quick"))) { e.preventDefault(); return; }
+    }
+    if (e.code === "Space" && !e.altKey) { e.preventDefault(); if (rec) stopTake(); else playChunk(); return; }   // play / stop (a take: stop it)
+    if (e.key === "r" && mode !== "piano" && !e.altKey && !ENDING && !rec && !chordsIn) {                          // record a take
+      e.preventDefault();
+      quickStart(false); return;
+    }
+    if (e.shiftKey && !rec && !ENDING && (e.code === "KeyR" || e.key === "Backspace") && lastQuick && lastQuick.hist === history.length) { e.preventDefault(); if (e.code === "KeyR") quickRedo(); else quickDrop(); return; }
     if (rec) { if (e.key === "Escape") stopTake(); return; }
+    if (e.key === "R" && !e.altKey) { setSingle(!single); e.preventDefault(); return; }
+    var prevKey = lastKey, now = performance.now(); lastKey = { key: e.key, t: now, hist: history.length };
+    var twice = prevKey && prevKey.key === e.key && now - prevKey.t < 800;
+    if (!e.altKey && !chordsIn && !ENDING) {
+      if (e.key === "y" && mode !== "piano") { if (twice) { yankChunk(); lastKey = null; } e.preventDefault(); return; }
+      if ((e.key === "p" && mode !== "piano") || e.key === "P") { putChunk(e.key === "p"); e.preventDefault(); return; }
+      if (e.key === "D" && twice && mode === "letters") {
+        lastKey = null; e.preventDefault();
+        askDD(prevKey.hist + 1 === history.length);   // the first D went in as a note: take it back
+        return;
+      }
+      if (e.key === "D" && twice && mode !== "letters") { lastKey = null; e.preventDefault(); askDD(false); return; }
+    }
+    if (e.key === "Enter" && !e.altKey && !e.shiftKey && !chordsIn && !(t && /^(BUTTON|SUMMARY|A)$/.test(t.tagName))) { toggleBreak(); e.preventDefault(); return; }
+    if (e.key === "S" && !e.altKey && !chordsIn && !ENDING) { sectionMenu(); e.preventDefault(); return; }
+    if (e.key === "s" && mode !== "piano" && !e.altKey && !chordsIn && !ENDING) { splitChunkKey(); e.preventDefault(); return; }
+    if ((e.key === "J" || e.key === "M") && !e.altKey && !chordsIn) { bothShown(e.key); e.preventDefault(); return; }
+    if (!e.altKey && !chordsIn && mode !== "piano" && (e.key === "o" || e.key === "v")) {
+      if (e.key === "o") newChunkAt(cur + 1); else toggleChunk();
+      e.preventDefault(); return;
+    }
+    if (!e.altKey && !chordsIn && (e.key === "O" || e.key === "V")) { if (e.key === "O") newChunkAt(cur); else toggleOthers(); e.preventDefault(); return; }
+    if (e.key === "i" && mode !== "piano" && !e.altKey && !chordsIn && !ENDING) { setInsert(!insertMode); e.preventDefault(); return; }
+    if (e.key === "I" && !e.altKey && !chordsIn && !ENDING) { if (!insertMode) setInsert(true); caretPos(); caret.pos = 0; sel = null; render(); e.preventDefault(); return; }   // as in vim: insert at the start
+    if (e.key === "u" && mode !== "piano" && !e.altKey && !chordsIn) { undo(); e.preventDefault(); return; }
+    if (insertMode && !sel && !chordsIn) {
+      var hz = e.key === "ArrowLeft" || (mode !== "piano" && e.key === "h") ? -1 : e.key === "ArrowRight" || (mode !== "piano" && e.key === "l") ? 1 : 0;
+      if (hz && !e.altKey) { moveCaret(hz); e.preventDefault(); return; }
+      if ((e.key === "H" || e.key === "L") && !e.altKey) { caretBar(e.key === "L" ? 1 : -1); e.preventDefault(); return; }
+    }
+    if ((e.key === "H" || e.key === "L") && !e.altKey && !chordsIn) { moveBar(e.key === "L" ? 1 : -1); e.preventDefault(); return; }
+    var horiz = e.key === "ArrowLeft" || e.key === "ArrowRight" ? (e.key === "ArrowLeft" ? -1 : 1)
+      : mode !== "piano" && !e.altKey && (e.key === "h" || e.key === "l") ? (e.key === "h" ? -1 : 1) : 0;
+    if (horiz && !chordsIn) {
+      if (!sel) { var a0 = activeSlot(); if (!a0) return; sel = a0; }
+      moveSel(horiz); e.preventDefault(); return;
+    }
     // chunks from the keyboard: j / k go down / up (folded sections skipped), Alt+j / k drag the chunk, Shift+Alt+j / k its section.
     // Physical keys, so Option on a Mac works; plain j / k are piano keys while the computer keys are a piano, so they wait then.
     if ((e.code === "KeyJ" || e.code === "KeyK") && !e.ctrlKey && !e.metaKey && !chordsIn) {
@@ -1886,14 +2335,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       if (mode !== "piano") {
         var i = cur;
         do { i += down ? 1 : -1; var sx = i >= 0 && i < doc.chunks.length ? D.sectionOf(doc, i) : null; } while (i >= 0 && i < doc.chunks.length && sx && sx.folded && !doc.chunks[i].heading);
-        if (i >= 0 && i < doc.chunks.length) { cur = i; sel = null; msg(""); render(); }
+        if (i >= 0 && i < doc.chunks.length) { toChunkStart(i); msg(""); render(); }
         e.preventDefault(); return;
       }
     }
     if (sel) {
       var k = selPitchIndex(), p = selPart();
       if (e.key === "Escape") { sel = null; render(); e.preventDefault(); return; }
-      if (e.key === "ArrowLeft" || e.key === "ArrowRight") { moveSel(e.key === "ArrowLeft" ? -1 : 1); e.preventDefault(); return; }
       if (sel.end && (e.key === "Backspace" || e.key === "Delete")) { deleteSel(); e.preventDefault(); return; }
       if (sel.end && (e.key === "ArrowUp" || e.key === "ArrowDown")) {             // move every note of the span
         var dir0 = e.key === "ArrowUp" ? 1 : -1, how0 = e.altKey ? "octave" : e.shiftKey ? "semi" : "step", ends0 = spanEnds();
@@ -1915,16 +2363,25 @@ document.addEventListener('DOMContentLoaded', async function () {
         change(function () { p.pitches[k] = D.nudge(p.pitches[k], D.at(doc, sel.chunk).key, how, dir); });
         hear(p.pitches[k]); e.preventDefault(); return;
       }
-      if ((e.key === "Backspace" || e.key === "Delete") && k >= 0) {
-        change(function () { if (k === p.pitches.length - 1) p.pitches.pop(); else if (sel.pitch !== undefined) p.pitches.splice(k, 1); else p.pitches[k] = null; sel = null; });
+      if ((e.key === "Backspace" || e.key === "Delete") && sel.pitch !== undefined) {
+        change(function () { p.pitches.splice(sel.pitch, 1); sel = null; });
         e.preventDefault(); return;
       }
+      if ((e.key === "Backspace" || e.key === "Delete") && sel.slot !== undefined) { deleteActive(); e.preventDefault(); return; }
     }
     if (chordsIn) return;
-    if (e.key === "Backspace") { removeLast(); e.preventDefault(); return; }
-    if (mode !== "piano" && !e.altKey && /^[1-9]$/.test(e.key) && D.meterInfo(here().meter)) { addCell(+e.key - 1); e.preventDefault(); return; }
+    if (e.key === "Backspace") { deleteActive(); e.preventDefault(); return; }
+    if (e.key === "U" && !e.altKey) { unpitch(); e.preventDefault(); return; }
+    if (mode !== "piano" && !e.altKey && /^[1-9]$/.test(e.key) && D.meterInfo(here().meter)) {
+      var ki = cells.findIndex(function (c) { return c.key === e.key; });
+      addCell(ki); e.preventDefault(); return;
+    }
     if (mode !== "letters" || e.altKey) return;
     if (/^[a-gA-G]$/.test(e.key)) { addPitch(D.letterMidi(e.key, lastPitch(), here().key)); e.preventDefault(); }
+    else if (e.key === "z") { addRest(); e.preventDefault(); }
+    else if (e.key === "T") { toggleTie(); e.preventDefault(); }
+    else if (e.key === "t") { tieNext(); e.preventDefault(); }
+    else if (e.key === "|") { pitchBreak(); e.preventDefault(); }
     else if (e.key === "'") { editLast(function (m) { return m + 12; }); e.preventDefault(); }
     else if (e.key === ",") { editLast(function (m) { return m - 12; }); e.preventDefault(); }
     else if (e.key === "=" || e.key === "+") { editLast(function (m) { return m + 1; }); e.preventDefault(); }
@@ -2076,6 +2533,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   var QSTORE = "ntQuick", Q = { bpm: 90, count: "1", pickup: "auto", res: "1", feel: "straight", trip: "off", quiet: "2" }, lastQuick = null;
   try { Object.assign(Q, JSON.parse(localStorage.getItem(QSTORE) || "{}")); } catch (e) {}
   function qSave() { try { localStorage.setItem(QSTORE, JSON.stringify(Q)); } catch (e) {} }
+  function pieceBpm() { return Math.max(30, Math.min(240, here().tempo || 90)); }
+  function takeBpm() { return Q.bpmOwn || pieceBpm(); }
   function qStatus(t) { $("nt-q-status").textContent = t || ""; }
   function qGeo() { var mi = D.meterInfo(here().meter) || D.meterInfo("4/4"); return { mi: mi, g: CE.geoOf(mi.n, mi.d) }; }
   function isEmpty(ch) {
@@ -2099,8 +2558,9 @@ document.addEventListener('DOMContentLoaded', async function () {
       $("nt-q-meter").innerHTML = options(METERS, "Choose");
       $("nt-q-key").innerHTML = options(KEYS, "C (not chosen)", KEYNAME);
     }
-    $("nt-q-meter").value = doc.meter || ""; $("nt-q-key").value = doc.keyConfirmed && doc.key ? doc.key : "";
-    ["bpm", "count", "res", "feel", "trip", "quiet"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
+    setSel($("nt-q-meter"), doc.meter || ""); setSel($("nt-q-key"), doc.keyConfirmed && doc.key ? doc.key : "");
+    ["count", "res", "feel", "trip", "quiet"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
+    if (document.activeElement !== $("nt-q-bpm")) $("nt-q-bpm").value = takeBpm();
     qPickupOptions();
     var g = qGeo().g, dots = $("nt-q-beats");
     if (dots.children.length !== g.bpb) { dots.innerHTML = ""; for (var i = 0; i < g.bpb; i++) dots.appendChild(document.createElement("span")); }
@@ -2124,7 +2584,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     if (rec) return;
     if (!D.meterInfo(here().meter)) { if (!doc.meter) { change(function () { doc.meter = "4/4"; }); qStatus("No meter was chosen: 4/4."); } else { qStatus("Choose a meter for this chunk first."); return; } }
     connectMidi(); sel = null; if (synth) play();
-    var q = qGeo(), g = q.g, mi = q.mi, bpm = Math.max(30, Math.min(240, +Q.bpm || 90)), beatSec = 60 / bpm, count = g.bpb, countBeats = count * (+Q.count || 1);
+    var q = qGeo(), g = q.g, mi = q.mi, bpm = takeBpm(), beatSec = 60 / bpm, count = g.bpb, countBeats = count * (+Q.count || 1);
     if (inPhrase() && phrase.leadIn) countBeats = Math.max(countBeats, count * Math.ceil(phrase.leadIn / count + 0.25));   // room for the pickup
     actx = actx || new (window.AudioContext || window.webkitAudioContext)(); if (actx.resume) actx.resume();
     var t0 = actx.currentTime + 0.12, downPerf = performance.now() + (t0 + countBeats * beatSec - actx.currentTime) * 1000;
@@ -2150,7 +2610,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function quickStop() {
     var r = rec; if (!r || !r.quick) return;
     rec = null; clearInterval(r.timer);
-    $("nt-q-go").classList.remove("is-on"); $("nt-q-go").innerHTML = "&#9679; Record<small>Space / pedal</small>";
+    $("nt-q-go").classList.remove("is-on"); $("nt-q-go").innerHTML = "&#9679; Record<small>r / pedal</small>";
     $("nt-q-state").textContent = "Ready"; $("nt-q-state").classList.remove("is-count"); qBeat(-1);
     var end = (performance.now() - r.downPerf) / 1000 / r.beatSec;
     Object.keys(r.held).forEach(function (n) { r.events.push({ k: "off", n: +n, beat: end }); lightKey(+n, false); r.lastOff = end; });
@@ -2194,10 +2654,14 @@ document.addEventListener('DOMContentLoaded', async function () {
         D.keepTake(doc, into, voice, log, 0, 1, 0);
         D.keepTake(doc, cur, voice, log, 0, nb, 1);
       } else D.keepTake(doc, cur, voice, log, 0, nb);                     // kept for DWIM (apps/shared/NOTATION-DWIM.md)
+      // played at a tempo typed for the take: the take's chunk(s) keep it (the piece's own tempo, else)
+      var tb = Math.round(60 / r.beatSec), was = into ? (D.at(doc, into - 1).tempo || 90) : (doc.tempo || 90);
+      if (tb !== was) { if (into === 0) { doc.tempo = tb; if (doc.chunks[cur + 1]) doc.chunks[cur + 1].tempo = doc.chunks[cur + 1].tempo || was; } else { doc.chunks[into].tempo = tb; var nx = doc.chunks[cur + 1]; if (nx && !nx.tempo) nx.tempo = was; } }
+      Q.bpmOwn = null;
       sel = null;
     });
     if (r.redo && lastQuick) history.splice(history.length - 1, 1, lastQuick.before);   // undo goes back past the replaced take
-    lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : at0 };
+    lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : at0, hist: history.length };
     qStatus(cname(cur) + ": " + nb + " bar" + (nb === 1 ? "" : "s") + (short ? ", after a pickup of " + Math.round(got * g.beat) + " eighth" + (Math.round(got * g.beat) === 1 ? "" : "s") : "") + ".");
     renderQuick();
   }
@@ -2230,7 +2694,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       ph.ci += res.inserted; cur = ph.ci; sel = null;
     });
     if (r.redo && lastQuick) history.splice(history.length - 1, 1, lastQuick.before);
-    lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : cur - res.inserted, phrase: r.redo && lastQuick ? lastQuick.phrase : phBefore };
+    lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : cur - res.inserted, phrase: r.redo && lastQuick ? lastQuick.phrase : phBefore, hist: history.length };
     seamAlt = alt; $("nt-seam-keep").hidden = !alt;
     var pk = lead.length ? lead.length + " pickup note" + (lead.length === 1 ? "" : "s") + (res.line && res.line.t == null ? " (a Pickup chunk)" : " in the bar before") : "";
     qStatus(ph.label + ": " + nb + " bar" + (nb === 1 ? "" : "s") + (pk ? ", " + pk : "") +
@@ -2276,7 +2740,54 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("nt-c-add").onclick = function () { change(function () { doc.chunks.splice(cur + 1, 0, D.newChunk("Chunk " + (doc.chunks.length + 1))); cur++; sel = null; }); };
   $("nt-c-dup").onclick = function () { change(function () { D.duplicate(doc, cur); cur++; sel = null; }); };
   function tryOp(f) { var before = JSON.stringify(doc), err = f(); if (err) { msg(err); return; } history.push(before); msg(""); sel = null; shownCur = -1; save(); render(); }
-  $("nt-c-merge").onclick = function () { tryOp(function () { return D.merge(doc, cur); }); };
+  $("nt-lines").onchange = function () {
+    var n = parseInt(this.value, 10);
+    change(function () { if (n > 0) doc.lineEvery = Math.min(32, n); else delete doc.lineEvery; });
+  };
+  // RET: a line break of your own after the bar of the active note (again: taken away)
+  function toggleBreak() {
+    var a = activeSlot(); if (!a) { status("Enter some rhythm first: RET breaks the line after the active note's bar."); return; }
+    var ch = doc.chunks[a.chunk], mi = D.meterInfo(D.at(doc, a.chunk).meter); if (!mi) return;
+    var p = D.part(ch, a.voice), t = 0;
+    for (var i = 0; i < a.slot; i++) t += p.rhythm[i].durQ;
+    var off = D.offsets(doc)[a.chunk] || 0, len = D.chunkLen(doc, a.chunk), q = null;
+    for (var j = 1; j < 1000; j++) { var bq = j * mi.barQ - off; if (bq > t + 1e-6) { q = Math.round(bq * 1000) / 1000; break; } }
+    if (q == null || q >= len - 1e-6) { status("That's the chunk's last bar: its line ends there anyway."); return; }
+    var has = (ch.nl || []).some(function (x) { return Math.abs(x - q) < 1e-6; });
+    change(function () {
+      ch.nl = has ? ch.nl.filter(function (x) { return Math.abs(x - q) > 1e-6; }) : (ch.nl || []).concat([q]).sort(function (x, y) { return x - y; });
+      if (!ch.nl.length) delete ch.nl;
+    });
+    status(has ? "Line break taken away." : "Line break after this bar (\u21B4). RET again takes it away.");
+  }
+  // S: the active chunk starts a section (its first bar the section's first bar), like adding a heading in an outline: the
+  // heading row appears in Chunks with its name ready to type over (the Timestamp Notes names offered); repeated words numbered.
+  function secBase(h) { var m = /^(.*\S)\s+\d+$/.exec(h || ""); return m && window.TsLabels && TsLabels.kind(m[1]) === "word" ? m[1] : h; }
+  function renumberSections() {
+    if (!window.TsLabels) return;
+    var hs = []; doc.chunks.forEach(function (c, i) { if (c.heading) hs.push({ i: i, b: secBase(c.heading), o: TsLabels.kind(secBase(c.heading)) === "other" }); });
+    TsLabels.names(hs).forEach(function (nm, k) { var c = doc.chunks[hs[k].i]; if (c.name === c.heading) c.name = nm; c.heading = nm; });
+  }
+  function secNames() {
+    if ($("nt-sec-names")) return;
+    var dl = document.createElement("datalist"); dl.id = "nt-sec-names";
+    (window.TsLabels ? TsLabels.menu([]) : [{ items: ["Intro", "Verse", "Pre-chorus", "Chorus", "Bridge", "Outro"] }]).forEach(function (g) { g.items.forEach(function (it) { var o = document.createElement("option"); o.value = it; dl.appendChild(o); }); });
+    document.body.appendChild(dl);
+  }
+  function sectionMenu() {
+    var ci = cur;
+    if (!doc.chunks[ci].heading) {
+      var prev = null; for (var i = ci - 1; i >= 0; i--) if (doc.chunks[i].heading) { prev = secBase(doc.chunks[i].heading); break; }
+      change(function () { doc.chunks[ci].heading = prev && /^(Verse|Chorus)$/.test(prev) ? (prev === "Verse" ? "Chorus" : "Verse") : "Verse"; doc.chunks[ci].folded = false; renumberSections(); });
+    }
+    var pn = $("nt-chunks-panel"); if (pn && pn.tagName === "DETAILS") pn.open = true;
+    var inp = document.querySelector('tr.nt-sec[data-section="' + ci + '"] input');
+    if (!inp) return;
+    inp.scrollIntoView({ block: "nearest" }); inp.focus({ preventScroll: true }); inp.select();
+    status("A section starts at " + cname(ci) + ": type its name (or pick one) and press RET.");
+  }
+  $("nt-c-join").onclick = function () { bothShown("J"); this.blur(); };
+  $("nt-c-merge").onclick = function () { bothShown("M"); this.blur(); };
   $("nt-c-split").onclick = function () { tryOp(function () { return D.split(doc, cur, Math.max(1, parseInt($("nt-c-at").value, 10) || 1)); }); };
   $("nt-c-del").onclick = function () {
     var f = D.info(doc, cur);
@@ -2299,10 +2810,32 @@ document.addEventListener('DOMContentLoaded', async function () {
   // words
   var wordsTimer = null;
   $("nt-words-text").addEventListener("input", function () {
-    editing = "words"; clearTimeout(wordsTimer); var txt = this.value;
+    editing = "words"; clearTimeout(wordsTimer); var txt = this.value.replace(/^\s*\{[^}]*\}\s*$/gm, "");
     wordsTimer = setTimeout(function () { change(function () { chunk().words = txt; }); }, 400);
   });
   $("nt-words-text").addEventListener("blur", function () { editing = null; render(); });
+  // Paragraphs to sections: a {comment: Verse n} before each paragraph; the first stays with this chunk, each other one a new
+  // chunk after it, every one heading a section
+  $("nt-words-paras").onclick = function () {
+    var txt = $("nt-words-text").value.replace(/\r/g, "").replace(/^\s*\{\s*comment\s*:[^}]*\}\s*$/gim, "").trim();
+    var paras = txt.split(/\n[ \t]*\n\s*/).map(function (x) { return x.trim(); }).filter(Boolean);
+    if (!paras.length) { status("Type or paste the words first: a blank line between paragraphs."); return; }
+    clearTimeout(wordsTimer);
+    var gaps = []; txt.replace(/\n([ \t]*\n)+/g, function (m) { gaps.push(m.replace(/[ \t]/g, "")); return m; });
+    var shown = paras.map(function (p, i) { return "{comment: Verse " + (i + 1) + "}\n" + p; }).reduce(function (a, p, i) { return i ? a + (gaps[i - 1] || "\n\n") + p : p; }, "");
+    var at = cur;
+    change(function () {
+      paras.forEach(function (p, i) {
+        var c = i ? D.newChunk("Verse " + (i + 1)) : doc.chunks[at];
+        if (i) doc.chunks.splice(at + i, 0, c);
+        c.words = p.replace(/\s*\n\s*/g, " "); c.heading = "Verse " + (i + 1); c.folded = false;
+        if (!i && /^Chunk \d+$/.test(c.name || "")) c.name = c.heading;
+      });
+      renumberSections();
+    });
+    editing = "words"; $("nt-words-text").value = shown; editing = null;
+    status(paras.length + " paragraph" + (paras.length === 1 ? "" : "s") + ": " + paras.length + " section" + (paras.length === 1 ? "" : "s") + ", Verse 1" + (paras.length > 1 ? " to Verse " + paras.length : "") + ". Rename them in Chunks.");
+  };
   var dict = null;
   $("nt-words-split").onclick = function () {
     var btn = this; btn.disabled = true; btn.textContent = "Loading the dictionary...";
@@ -2334,6 +2867,8 @@ document.addEventListener('DOMContentLoaded', async function () {
   // rhythm, modes, score
   document.querySelectorAll("#nt-rhythm [data-crit]").forEach(function (b) { b.onchange = render; });
   $("nt-rhythm-undo").onclick = undo;
+  $("nt-rhythm-single").onclick = function () { setSingle(!single); this.blur(); };
+  $("nt-rest").onclick = function () { addRest(); this.blur(); };
   $("nt-rhythm-clear").onclick = function () {
     if (ENDING && endCap.length) {   // the whole ending: its rhythm and notes
       change(function () { endCap.forEach(function (cap, ci) { if (cap) { doc.chunks[ci].rhythm = []; doc.chunks[ci].pitches = []; } }); cur = endCap.findIndex(Boolean); sel = null; });
@@ -2342,8 +2877,32 @@ document.addEventListener('DOMContentLoaded', async function () {
     change(function () { part().rhythm = []; sel = null; });
   };
   document.querySelectorAll("[data-mode]").forEach(function (b) { b.onclick = function () { setMode(b.dataset.mode); b.blur(); }; });
-  $("nt-play").onclick = play;
+  $("nt-play").onclick = function () { play(); this.blur(); };
+  try { $("nt-through").checked = localStorage.getItem("ntThrough") === "1"; } catch (e) {}
+  $("nt-through").onchange = function () { try { localStorage.setItem("ntThrough", this.checked ? "1" : "0"); } catch (e) {} this.blur(); };
   $("nt-undo").onclick = undo;
+  // a piece as a file: { kind: "notation-doc", version: 1, saved, doc } (everything: chunks, voices, takes, band settings);
+  // Open also takes plain ABC
+  $("nt-file-save").onclick = function () {
+    var body = JSON.stringify({ kind: "notation-doc", version: 1, saved: new Date().toISOString(), doc: doc }, null, 1);
+    var name = ((doc.title || "untitled").trim().replace(/[^\w\- ]+/g, "").replace(/\s+/g, "-") || "untitled") + ".notation.json";
+    var a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([body], { type: "application/json" })); a.download = name;
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(function () { URL.revokeObjectURL(a.href); }, 1000);
+    status("Saved " + name + ".");
+    this.blur();
+  };
+  $("nt-insert").onclick = function () { setInsert(!insertMode); this.blur(); };
+  $("nt-file-open").onclick = function () { $("nt-file-in").value = ""; $("nt-file-in").click(); this.blur(); };
+  $("nt-file-in").onchange = function () {
+    var f = this.files && this.files[0]; if (!f) return;
+    f.text().then(function (txt) {
+      var nd = null;
+      try { var j = JSON.parse(txt); nd = j && j.kind === "notation-doc" ? j.doc : j && j.chunks ? j : null; } catch (e) { if (/^\s*(X:|M:|L:|K:|T:)/m.test(txt)) nd = D.fromAbc(txt); }
+      if (!nd || !nd.chunks) { status("That file isn't a piece saved from this page (or ABC)."); return; }
+      change(function () { doc = D.upgrade(JSON.parse(JSON.stringify(nd))); cur = 0; voice = 0; sel = null; shownCur = -1; });
+      status("Opened " + f.name + ".");
+    });
+  };
   $("nt-new").onclick = function () { if (confirm("Clear everything and start over?")) change(function () { doc = D.create(); cur = 0; voice = 0; sel = null; guessRefused = null; shownCur = -1; }); };
   document.querySelectorAll("[data-go]").forEach(function (b) {
     b.onclick = function () { jump(b.dataset.go); if (b.dataset.go === "nt-abc") $("nt-abc-text").focus({ preventScroll: true }); else b.blur(); };
@@ -2357,15 +2916,33 @@ document.addEventListener('DOMContentLoaded', async function () {
       try {
         var d = D.fromAbc(txt);
         if (!d.meter) { $("nt-abc-warn").hidden = false; $("nt-abc-warn").textContent = "Add a meter line (M:4/4) to read the rhythm."; return; }
-        $("nt-abc-warn").hidden = true;
+        $("nt-abc-warn").hidden = true; keepLayout(d);
         change(function () { doc = d; cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); sel = null; shownCur = -1; });
       } catch (err) { $("nt-abc-warn").hidden = false; $("nt-abc-warn").textContent = "Can't read that yet: " + err.message; }
     }, 600);
   });
   $("nt-abc-text").addEventListener("blur", function () { editing = null; render(); });
+  // what ABC and ChordPro don't carry: the line breaks, hidden chunks (by place, when the chunks still line up)
+  function keepLayout(d) {
+    if (doc.lineEvery) d.lineEvery = doc.lineEvery;
+    if (d.chunks.length === doc.chunks.length) d.chunks.forEach(function (c, i) { var o = doc.chunks[i]; if (o.nl) c.nl = o.nl.slice(); if (o.off) c.off = true; if (o.tempo && !c.tempo) c.tempo = o.tempo; });
+  }
   // ChordPro
-  $("nt-cho-text").addEventListener("input", function () { editing = "cho"; });
-  $("nt-cho-text").addEventListener("blur", function () { editing = null; });
+  $("nt-cho-text").addEventListener("input", function () {
+    editing = "cho"; clearTimeout(textTimer);
+    var txt = this.value;
+    if (!/\{\s*start_of_abc/i.test(txt)) return;          // without the notes it waits for Read this ChordPro in
+    textTimer = setTimeout(function () {
+      try {
+        var d = D.fromChordPro(txt, doc.meter);
+        if (!d.meter) { $("nt-cho-warn").hidden = false; $("nt-cho-warn").textContent = "The ABC block needs a meter line (M:4/4)."; return; }
+        $("nt-cho-warn").hidden = true;
+        keepLayout(d);
+        change(function () { doc = d; cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); sel = null; shownCur = -1; });
+      } catch (err) { $("nt-cho-warn").hidden = false; $("nt-cho-warn").textContent = "Can't read that yet: " + err.message; }
+    }, 700);
+  });
+  $("nt-cho-text").addEventListener("blur", function () { editing = null; render(); });
   $("nt-cho-read").onclick = function () {
     var txt = $("nt-cho-text").value;
     if (!/\[[^\]]+\]|\{/.test(txt)) { $("nt-cho-warn").hidden = false; $("nt-cho-warn").textContent = "No chords or directives found."; return; }
@@ -2411,6 +2988,31 @@ document.addEventListener('DOMContentLoaded', async function () {
       status("Write the ending in the empty bars: pick a chunk, then enter its notes.");
     });
     endTell({ type: "end-ready" });
+  }
+
+  // stage: a Notation lesson (iframe parent, ?stage=1) sends st-load { show, doc?, rhythm?, status? }:
+  //   show    the parts on view: panel ids without "nt-" (score, rhythm, pitch, chunks-panel, setup, chords, words, abc ...), and
+  //           "select" for the selection's tools;
+  //           keys for what isn't shown do nothing (no pitch: letters, z, T, u, |; no chunks-panel: j k J)
+  //   doc     a piece to start from (else what the student had at this stage); rhythm "single" | "patterns" fixes the rhythm bank
+  // and gets st-ready once, then st-change { doc, abc } after every change, which it checks against the step's target.
+  var stageShow = null;
+  function stageHas(id) { return !STAGE || !stageShow || stageShow.indexOf(id) >= 0; }
+  if (STAGE) {
+    document.querySelectorAll("#title-block-header, #nt-root .nt-intro, #nt-root .nt-nav, #nt-file-save, #nt-file-open, #nt-new").forEach(function (el) { el.style.display = "none"; });
+    window.addEventListener("message", function (e) {
+      if (e.source !== window.parent || e.origin !== location.origin || !e.data || e.data.type !== "st-load") return;
+      var m = e.data;
+      stageShow = (m.show || []).slice();
+      document.querySelectorAll("#nt-root details.nt-panel").forEach(function (p) { p.style.display = stageShow.indexOf(p.id.replace(/^nt-/, "")) >= 0 ? "" : "none"; });
+      $("nt-seltools").style.display = stageShow.indexOf("select") >= 0 ? "" : "none";   // "select": the selection's tools (Split, Copy, DWIM ...)
+      if (m.rhythm) { setSingle(m.rhythm === "single"); $("nt-rhythm-single").parentNode.style.display = "none"; }
+      history = [];
+      if (m.doc) { doc = D.upgrade(JSON.parse(JSON.stringify(m.doc))); cur = 0; voice = 0; sel = null; shownCur = -1; }
+      save(); render();
+      status(m.status || "");
+    });
+    endTell({ type: "st-ready" });
   }
 
   // The Backing Track's Melody tab sends nt-abc { abc, title } the same way (?remote=1, after nt-ready).
@@ -2468,8 +3070,16 @@ document.addEventListener('DOMContentLoaded', async function () {
   $("nt-q-drop").onclick = function () { quickDrop(); this.blur(); };
   $("nt-q-meter").onchange = function () { var v = this.value || null; change(function () { doc.meter = v; }); this.blur(); };
   $("nt-q-key").onchange = function () { var v = this.value; change(function () { doc.key = v || null; doc.keyConfirmed = !!v; }); this.blur(); };
+  $("nt-tempo").onchange = function () { var v = Math.round(+this.value) || null; if (v) v = Math.max(20, Math.min(320, v)); change(function () { doc.tempo = v; }); this.blur(); };
+  $("nt-c-tempo").onchange = function () { var v = Math.round(+this.value) || null; if (v) v = Math.max(20, Math.min(320, v)); change(function () { if (cur === 0) doc.tempo = v; else chunk().tempo = v; }); this.blur(); };
+  ["nt-meter", "nt-c-meter", "nt-q-meter"].forEach(function (id) { meterPicker($(id)); });
+  ["nt-key", "nt-c-key", "nt-q-key"].forEach(function (id) { keyPicker($(id)); });
   ["bpm", "count", "pickup", "res", "feel", "trip", "quiet"].forEach(function (k) {
-    $("nt-q-" + k).onchange = function () { Q[k] = k === "bpm" ? Math.max(30, Math.min(240, +this.value || 90)) : this.value; qSave(); renderQuick(); this.blur(); };
+    $("nt-q-" + k).onchange = function () {
+      // the take's tempo: the piece's at this chunk, unless one is typed here (then the take's chunk gets it)
+      if (k === "bpm") { var v = Math.round(+this.value); Q.bpmOwn = v ? Math.max(30, Math.min(240, v)) : null; if (Q.bpmOwn === pieceBpm()) Q.bpmOwn = null; renderQuick(); this.blur(); return; }
+      Q[k] = this.value; qSave(); renderQuick(); this.blur();
+    };
   });
   if (navigator.requestMIDIAccess && !ENDING) {            // the sustain pedal records and stops
     navigator.requestMIDIAccess().then(function (a) {
@@ -2483,7 +3093,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   window.addEventListener("resize", function () { var w = $("nt-paper").clientWidth; if (Math.abs(w - lastW) > 40) { lastW = w; render(); } });
   setMode("letters");
   if (!ENDING) connectMidi();
-  window.NotationPage = { phrase: function (p) { if (p !== undefined) phrase = p; return phrase; }, bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
+  window.NotationPage = { makeBand: makeBand, loadBand: loadBand, tuneSrc: function () { return tuneSrc; }, phrase: function (p) { if (p !== undefined) phrase = p; return phrase; }, bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
     voice: function () { return voice; }, takeCfg: takeCfg, applyTake: applyTake, chordHeard: chordHeard,
     quickStart: quickStart, quickStop: quickStop, rec: function () { return rec; }, Q: Q,
     setCur: function (c) { cur = c; sel = null; render(); }, render: function () { render(); } };   // for tests
@@ -2552,14 +3162,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

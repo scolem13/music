@@ -900,7 +900,7 @@
   var BALLAD = "ballRock+ballBroken+ballSync";
   // How a tune ends, for the player on its last pass. `order` = the form's bar indexes in the order they are played.
   // The band lands on the tune's own last chord where it arrives and lets it ring: `land` is that bar (the last bar, or
-  // the bar before it when the two hold one chord), `setup` the bar before that, `ring` the bars after it and `hold`
+  // the bar before it when the two hold one chord and the last is a bar over the phrasing: 5, 9, 17 bars), `setup` the bar before that, `ring` the bars after it and `hold`
   // the beats from the landing to the end. null when the tune does not come to rest: its last bar has two chords, or
   // a dominant seventh that is not the chord the tune starts on (a turnaround). Then the old ending stands, a hit on
   // the top chord after the last bar.
@@ -911,7 +911,9 @@
     var c = one(n - 1), top = form[order[0]], first = top && top.chords && top.chords[0] ? top.chords[0].chord : null;
     if (!c || (c.quality === "dom" && !(first && first.root === c.root))) return null;
     var land = n - 1, lb = form[order[n - 1]];
-    if (n >= 3 && sameChord(one(n - 2), c) && form[order[n - 2]].beats === lb.beats && (form[order[n - 2]].unit || 1) === (lb.unit || 1)) land = n - 2;
+    // (only when that extra bar falls outside the phrasing: C F G C | C lands on bar 4, but a 16-bar tune ends on bar 16 even
+    // when bars 15 and 16 share their chord)
+    if (n >= 3 && (n - 1) % 4 === 0 && n % 4 !== 0 && sameChord(one(n - 2), c) && form[order[n - 2]].beats === lb.beats && (form[order[n - 2]].unit || 1) === (lb.unit || 1)) land = n - 2;
     return { land: order[land], setup: order[land - 1], ring: order.slice(land + 1), hold: lb.beats * (n - land) };
   }
 

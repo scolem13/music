@@ -1,0 +1,92 @@
+---
+title: "DAW 1: The Timeline and the Transport"
+toc: true
+toc-depth: 2
+description: "Bars, beats and the playhead; tempo, metronome and loop, and where they are in BandLab, Ableton and Logic."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+A **DAW** (digital audio workstation) is a tape recorder, a mixing desk and a box of instruments in one program.
+BandLab, Ableton Live, Logic Pro, GarageBand, FL Studio, Reaper and Pro Tools all look different, but they are built
+from the same handful of parts. These lessons teach those parts on a DAW small enough to see all at once, played by
+the [Backing Track](../tools/backing-track.qmd) band's instruments. Each lesson ends with where the same thing is in
+**BandLab**, **Ableton Live** and **Logic Pro**, so you can do it there next.
+
+## Time runs left to right
+
+Every DAW draws the song as a **timeline**: time runs left to right, one row (a **track**) per instrument. The numbers along
+the top are the **ruler**, counted in **bars**. The red line is the **playhead**: where playback starts and where you are.
+
+The counter by the buttons reads **bar . beat . sixteenth**: `3.2.1` is bar 3, beat 2, on the beat. This is how every DAW
+counts, and it's why a DAW wants to know your **tempo** (BPM, beats a minute) before you start: bars only make sense at a tempo.
+
+## Try it
+
+1. Press **▶ Play** (or **Space**). Watch the playhead and the counter. **Space** again stops.
+2. Click the ruler at bar 5: the playhead jumps there. **Enter** (or ⏮) goes back to the top.
+3. Change the **Tempo** to 130 and play again. Everything is faster, nothing else changed: the notes are stored in bars and beats, not in seconds.
+4. Switch on **♩ Click**, the **metronome**: a high click on beat 1, a lower one on 2, 3 and 4.
+5. **Loop** (also called **cycle**): the yellow bracket under the ruler. Drag along the ruler from bar 3 to bar 4. With ⟲ Loop on,
+   playback goes round those two bars until you stop it. Practising one hard spot, or writing a part over a four-bar loop,
+   is most of what people use a DAW for.
+
+<div class="mdaw" data-id="daw-timeline" data-preset="song" data-show="transport tracks"></div>
+
+## Why bars, not seconds
+
+A DAW that knows the tempo can put a note *on beat 3* rather than *at 4.37 seconds*. That is what lets you change the tempo
+later, line notes up to the grid, copy a bar and have it fit, and hear a click in time. Audio you record is stored in seconds
+but placed on the same bar grid. Set the tempo **before** you record, and record **to the click**, or the grid won't line up with
+what you played.
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab (Studio, web/app) | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Play / stop | Space | Space | Space |
+| Back to the start | ⏮ button | Click the start of the ruler | Go to Beginning button, or click the ruler |
+| Tempo | In the metronome menu | Tempo box in the Control Bar | Tempo in the control bar display |
+| Counter | Time display in the transport bar | Arrangement Position in the Control Bar | Bars . beats . divisions . ticks in the control bar display |
+| Metronome | Metronome button (**M**); count-in in its menu | Metronome switch (**O**); count-in in its menu | Metronome button (**K**); count-in **Shift+K** |
+| Loop | Cycle button, then drag the region on the ruler | Loop switch, drag the loop brace on the ruler (Cmd/Ctrl+L loops the selection) | Cycle button (C), drag the yellow bar on the ruler |
+
+</div>
+
+Ableton Live has two views. The **Arrangement View** is the timeline taught here. The **Session View** (Tab switches) is a grid
+of clips you launch live; leave it for later.
+
+## Next
+
+- [DAW 2: Programming a Beat](daw-beat.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Arrangement View." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/arrangement-view/](https://www.ableton.com/en/live-manual/12/arrangement-view/).
+
+"Create Projects." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/create-projects-lgcpce0f09d9/mac](https://support.apple.com/guide/logicpro/create-projects-lgcpce0f09d9/mac).
+
+"Create Tracks." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac](https://support.apple.com/guide/logicpro/create-tracks-lgcpff5da064/mac).
+
+"Getting Started with the BandLab Studio." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio](https://help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Recording New Clips." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/recording-new-clips/](https://www.ableton.com/en/live-manual/12/recording-new-clips/).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+
+"Use the Cycle Area." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/mac](https://support.apple.com/guide/logicpro/use-the-cycle-area-lgcp59e41e86/mac).
+
+"Use the Metronome." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/use-the-metronome-lgcp0534986f/mac](https://support.apple.com/guide/logicpro/use-the-metronome-lgcp0534986f/mac).
+
+"Using the Metronome." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002960274-Using-the-Metronome](https://help.bandlab.com/hc/en-us/articles/115002960274-Using-the-Metronome).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

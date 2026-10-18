@@ -1,0 +1,100 @@
+```{=html}
+<style>
+/* the DAW lessons: apps/shared/daw/mini-daw.js makes a DAW in every <div class="mdaw"> */
+.mdaw{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.6rem .8rem .8rem;margin:1.1rem 0 1.8rem;outline:none;color:var(--site-ink)}
+.mdaw [hidden]{display:none!important}
+.mdaw:focus-visible{box-shadow:0 0 0 2px var(--site-accent)}
+.mdaw .btn{font-family:var(--font-mono);font-size:.78rem;padding:.12rem .45rem}
+.mdaw .btn.mdaw-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.mdaw .btn.mdaw-recon,.mdaw .mdaw-rec:hover{background:#c0302a;border-color:#c0302a;color:#fff}
+.mdaw-transport,.mdaw-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .5rem;margin:.2rem 0 .5rem}
+.mdaw-transport{padding-bottom:.5rem;border-bottom:1px solid var(--site-border)}
+.mdaw-pos{font-family:var(--font-mono);font-size:1rem;min-width:4.5rem;text-align:center;padding:.05rem .4rem;border-radius:4px;background:#1e1b18;color:#9fe3a0}
+.mdaw-lbl{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--site-ink-2);display:inline-flex;align-items:center;gap:.25rem;margin:0}
+.mdaw input[type=number]{width:3.8rem;font-size:.85rem;padding:.05rem .25rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.mdaw input[type=text]{min-width:14rem;font-size:.85rem;padding:.1rem .35rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.mdaw select{font-size:.8rem;padding:.05rem .2rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);max-width:12rem}
+.mdaw-wide{flex:1 1 16rem}.mdaw-wide input{flex:1}
+.mdaw-status{font-size:.8rem;color:var(--site-ink-2);flex:1 1 10rem}
+.mdaw-hint{font-size:.8rem;color:var(--site-ink-2);margin:.35rem 0 0}
+.mdaw-sub{font-family:var(--font-mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);margin:.8rem 0 .3rem}
+/* arrangement */
+.mdaw-grid{position:relative;overflow-x:auto;border:1px solid var(--site-border);border-radius:6px}
+.mdaw-row{display:flex;min-height:46px;border-bottom:1px solid var(--site-border);width:max-content;min-width:100%}
+.mdaw-row:last-of-type{border-bottom:0}
+.mdaw-th{flex:0 0 196px;width:196px;box-sizing:border-box;padding:.2rem .35rem;border-left:5px solid transparent;border-right:1px solid var(--site-border);background:var(--site-surface);position:sticky;left:0;z-index:3;display:flex;flex-direction:column;gap:.15rem}
+.mdaw-selrow .mdaw-th{background:color-mix(in srgb,var(--site-accent) 14%,var(--site-surface))}
+.mdaw-corner{font-family:var(--font-mono);font-size:.7rem;color:var(--site-ink-2);justify-content:center}
+.mdaw-name{font-size:.82rem;font-weight:600;border:0;background:transparent;color:var(--site-ink);padding:0;width:100%}
+.mdaw-thline{display:flex;gap:.2rem;align-items:center}
+.mdaw-thline select{flex:1;min-width:0}
+.mdaw .btn.mdaw-ms{font-size:.68rem;padding:0 .3rem;line-height:1.3}
+.mdaw .btn.mdaw-mute{background:#d08a1a;border-color:#d08a1a;color:#fff}
+.mdaw .btn.mdaw-solo{background:#2a7ac0;border-color:#2a7ac0;color:#fff}
+.mdaw-lane{position:relative;flex:0 0 auto;min-height:46px;background-image:repeating-linear-gradient(90deg,var(--site-border) 0 1px,transparent 1px 104px);cursor:copy}
+.mdaw-rulerrow{min-height:22px}
+.mdaw-ruler{min-height:22px;cursor:pointer;background:color-mix(in srgb,var(--site-ink) 6%,transparent)}
+.mdaw-bar{position:absolute;top:3px;font-family:var(--font-mono);font-size:.68rem;padding-left:3px;color:var(--site-ink-2);pointer-events:none}
+.mdaw-loop{position:absolute;bottom:0;height:7px;background:var(--site-ink-2);opacity:.3;border-radius:2px;pointer-events:none}
+.mdaw-loop.mdaw-loopon{background:#d0a21a;opacity:.9}
+.mdaw-clip{position:absolute;top:4px;bottom:4px;border-radius:4px;cursor:grab;overflow:hidden;box-shadow:inset 0 0 0 1px rgba(0,0,0,.25)}
+.mdaw-clip.mdaw-selclip{box-shadow:0 0 0 2px var(--site-ink),inset 0 0 0 1px rgba(0,0,0,.25)}
+.mdaw-mini{position:absolute;left:0;top:2px;pointer-events:none}
+.mdaw-grip{position:absolute;right:0;top:0;bottom:0;width:7px;cursor:ew-resize;background:rgba(0,0,0,.18)}
+.mdaw-head{position:absolute;top:0;bottom:0;width:2px;background:#e03a2a;pointer-events:none;z-index:2}
+/* editor */
+.mdaw-editor{margin-top:.8rem}
+.mdaw-edtitle{font-weight:600;font-size:.9rem;margin-right:.4rem}
+.mdaw-rollwrap{display:flex;max-height:21rem;overflow:auto;border:1px solid var(--site-border);border-radius:6px;position:relative}
+.mdaw-keys{position:sticky;left:0;z-index:2;flex:0 0 5.2rem;background:var(--site-surface);border-right:1px solid var(--site-border)}
+.mdaw-key{font-family:var(--font-mono);font-size:.62rem;line-height:1;display:flex;align-items:center;padding-left:.3rem;border-bottom:1px solid color-mix(in srgb,var(--site-border) 50%,transparent);cursor:pointer;box-sizing:border-box}
+.mdaw-key.mdaw-black{background:#2a2622;color:#ddd}
+.mdaw-key.mdaw-vlab{cursor:default;color:var(--site-ink-2)}
+.mdaw-rollscroll{flex:0 0 auto}
+.mdaw-cv{display:block;cursor:crosshair;touch-action:none}
+.mdaw-num{font-family:var(--font-mono);font-size:.75rem;min-width:2.2rem;display:inline-block}
+/* mixer */
+.mdaw-strips{display:flex;gap:.5rem;overflow-x:auto;padding-bottom:.3rem}
+.mdaw-strip{flex:0 0 6.4rem;border:1px solid var(--site-border);border-top:4px solid var(--site-ink-2);border-radius:6px;padding:.3rem;display:flex;flex-direction:column;align-items:center;gap:.25rem;background:color-mix(in srgb,var(--site-ink) 3%,var(--site-surface))}
+.mdaw-strip:last-child{border-top-color:var(--site-ink);background:color-mix(in srgb,var(--site-ink) 7%,var(--site-surface))}
+.mdaw-sname{font-size:.75rem;font-weight:600;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mdaw-pan{display:flex;flex-direction:column;align-items:center;font-size:.65rem;color:var(--site-ink-2);margin:0;width:100%}
+.mdaw-pan input{width:100%}
+.mdaw-fadwrap{display:flex;gap:.35rem;height:9rem;align-items:stretch}
+.mdaw-fader{writing-mode:vertical-lr;direction:rtl;width:1.4rem;height:100%;accent-color:var(--site-accent-dk)}
+.mdaw-meter{position:relative;width:.55rem;background:#1e1b18;border-radius:2px;overflow:hidden}
+.mdaw-mfill{position:absolute;left:0;right:0;bottom:0;background:#4caf50}
+.mdaw-mfill.mdaw-hot{background:linear-gradient(to top,#4caf50 0 80%,#e0b020 80% 93%,#e0402a 93%)}
+.mdaw-mpeak{position:absolute;left:0;right:0;height:2px;background:#fff}
+.mdaw-clipled{font-family:var(--font-mono);font-size:.6rem;padding:0 .3rem;border-radius:3px;background:#3a2a2a;color:#a88;cursor:pointer}
+.mdaw-clipled.mdaw-over{background:#e0402a;color:#fff}
+.mdaw-in{display:inline-block;width:5rem;height:.6rem;background:#1e1b18;border-radius:3px;overflow:hidden;vertical-align:middle}
+.mdaw-infill{display:block;height:100%;width:0;background:#4caf50}.mdaw-infill.mdaw-hot{background:#e0402a}
+.mdaw-take{font-family:var(--font-mono);font-size:.8rem;margin:.3rem 0}
+.mdaw-audioed{max-height:none}
+.mdaw-band{margin-top:.6rem;padding-top:.3rem;border-top:1px dashed var(--site-border)}
+.mdaw-files{margin-top:.7rem;padding-top:.5rem;border-top:1px dashed var(--site-border)}
+/* "in other DAWs" tables */
+.daw-map{font-size:.88rem;overflow-x:auto;max-width:100%}
+.daw-map th:first-child{white-space:nowrap}
+</style>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/abc-transpose.js?v=4"></script>
+<script src="/apps/shared/tune-chart.js?v=31"></script>
+<script src="/apps/shared/voicings.js?v=5"></script>
+<script src="/apps/shared/band/harmony.js?v=32"></script>
+<script src="/apps/shared/band/bass.js?v=15"></script>
+<script src="/apps/shared/band/comp.js?v=30"></script>
+<script src="/apps/shared/band/catalog.js?v=36"></script>
+<script src="/apps/shared/band/drums.js?v=16"></script>
+<script src="/apps/shared/band/congas.js?v=2"></script>
+<script src="/apps/shared/band/sounds.js?v=14"></script>
+<script src="/apps/shared/band/player.js?v=117"></script>
+<script src="/apps/shared/band/midi.js?v=19"></script>
+<script src="/apps/shared/daw/mini-daw.js?v=3"></script>
+<script>MiniDaw.init();</script>
+```

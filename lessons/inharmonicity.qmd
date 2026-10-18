@@ -2,6 +2,10 @@
 title: "Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums"
 toc: true
 toc-depth: 2
+description: "Why some partials are not whole-number multiples: string stiffness (with a calculator), old strings, mode locking, brass and clarinet, formants, marimba and xylophone bars, chimes, church bells, timpani and gamelan. What a player can change (levels, not pitch) and what only the maker can, with every instrument as a practice preset on the strobe tuner."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 [The harmonic series](sound-harmonics.qmd) says a note is a stack of partials at 1, 2, 3, 4... times the fundamental. That is exactly true for an ideal vibrating string or an ideal pipe, and only roughly true for the real ones. Some instruments (a bowed violin, a clarinet, a singer) are harmonic almost to the cent. Others (a piano bass string, a marimba bar, a church bell, a timpani) have partials that are **not** whole-number multiples at all, and yet we hear a clear pitch. This lesson asks why, shows the numbers instrument by instrument, and asks who gets to change them: the player, or the maker. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section and opens it.
@@ -225,40 +229,71 @@ The player's choices end where the instrument's partials are fixed. Makers set t
 - [Tuning systems](tuning-systems.qmd): the pure intervals the harmonic partials make, and the commas.
 - [Sound 1: The Harmonic Series and Fourier](sound-harmonics.qmd): where the partials come from.
 
-## References {#references}
+## Works Cited {#references}
 
-<ol class="in-refs">
-<li id="r1">Fletcher, H., Blackham, E. D. &amp; Stratton, R. (1962). Quality of piano tones. <em>J. Acoust. Soc. Am.</em> 34(6), 749-761. <a href="https://physics.byu.edu/docs/publication/1504">BYU copy</a>. I read the abstract and a summary only.</li>
-<li id="r2">Univ. of Rhode Island, ELE 369 course notes, "Inharmonicity" (the formula <em>f</em><sub>n</sub> = <em>n f</em><sub>0</sub>&radic;(1+<em>Bn</em>&sup2;), <em>B</em> = &pi;&sup3;<em>YD</em>&sup4;/(64<em>TL</em>&sup2;)): found through a search snippet, <a href="https://www.ele.uri.edu/courses/ele369g/14a_Inharmonicity.pdf">PDF</a> (its text would not extract).</li>
-<li id="r3">Modartt forum, "Research: The Missing Stretch Physics in Pianoteq Steinway D" (cents = 600 log<sub>2</sub>(1+<em>Bn</em>&sup2;), steel 200-207 GPa): <a href="https://forum.modartt.com/viewtopic.php?id=12942">forum post, not peer-reviewed</a>.</li>
-<li id="r4">Wikipedia, <a href="https://en.wikipedia.org/wiki/Piano_acoustics">Piano acoustics</a> (inharmonicity, wound strings, small pianos, stretch, Railsback curve).</li>
-<li id="r5">Wikipedia, <a href="https://en.wikipedia.org/wiki/Inharmonicity">Inharmonicity</a>.</li>
-<li id="r6">Wolfe, J. UNSW Music Acoustics, <a href="https://newt.phys.unsw.edu.au/jw/strings.html">Strings, standing waves and harmonics</a>.</li>
-<li id="r7">Wolfe, J. UNSW Music Acoustics, <a href="https://newt.phys.unsw.edu.au/jw/harmonics.html">How harmonic are harmonics?</a></li>
-<li id="r8">Allen, J. B. (1976). On the aging of steel guitar strings. <em>Catgut Acoustical Society Newsletter</em> (not retrieved); described in Allen's post on the <a href="https://auditory.org/mhonarc/2005/msg00041.html">AUDITORY list</a>, which also cites Brown, J. C. (1994), <em>J. Acoust. Soc. Am.</em> 95, 2889 (not read).</li>
-<li id="r9">Fletcher, N. H. (1978). Mode locking in nonlinearly excited inharmonic musical oscillators. <em>J. Acoust. Soc. Am.</em> 64, 1566-1569. <a href="https://www.phys.unsw.edu.au/music/people/publications/Fletcher1978.pdf">UNSW PDF</a>. I could only read the abstract (via a search summary); the PDF would not extract.</li>
-<li id="r10">Railsback, O. L. (1938), as cited in [4] (J. Acoust. Soc. Am. 9(3) Suppl., 274); Giordano, N. J. (2015), explaining the Railsback stretch by sensory dissonance, <a href="https://aurora.auburn.edu/handle/11200/48533">repository entry</a>; Koenig, D. (2014), "Octave stretching, inharmonicity, and the Railsback curve", in <em>Spectral Analysis of Musical Sounds with Emphasis on the Piano</em>, OUP (abstract only).</li>
-<li id="r11">HyperPhysics, <a href="https://hyperphysics.gsu.edu/hbase/Music/brassa.html">Producing a harmonic sequence of notes with a trumpet</a> (found via search; read through the search summary).</li>
-<li id="r12">Wolfe, J. UNSW Music Acoustics, <a href="https://newt.phys.unsw.edu.au/jw/clarinetacoustics.html">Clarinet acoustics</a>.</li>
-<li id="r13">Joliveau, E., Smith, J. &amp; Wolfe, J. (2004). Tuning of vocal tract resonances by sopranos. <em>Nature</em>; Smith, J. &amp; Wolfe, J. (2009). <em>J. Acoust. Soc. Am. Express Lett.</em>; Henrich, N., Smith, J. &amp; Wolfe, J. Vocal tract resonances in singing: strategies used by sopranos, altos, tenors and baritones, <a href="https://www.phys.unsw.edu.au/jw/reprints/SATB.pdf">UNSW PDF</a> (journal citation not confirmed). Read through search summaries.</li>
-<li id="r14">Wolfe, J. UNSW Music Acoustics, <a href="https://newt.phys.unsw.edu.au/jw/didjeridu.html">The didjeridu</a> (formants, vocal tract, harmonics).</li>
-<li id="r15">Bergevin, C. et al. (2020). Overtone focusing in biphonic Tuvan throat singing. <em>eLife</em> 9:e50476. <a href="https://elifesciences.org/articles/50476">eLife</a>.</li>
-<li id="r16">Stanford CCRMA, Music 150 course notes, <a href="https://ccrma.stanford.edu/CCRMA/Courses/150/percussion.html">percussion</a> (bar partial ratios).</li>
-<li id="r17">Mechanical Music Digest, <a href="https://www.mmdigest.com/gallery/technical/xylobars">The Construction and Tuning of Vibrating Bars</a>.</li>
-<li id="r18">Yoo, J. &amp; Rossing, T. D., undercut bars, <a href="https://acoustics.org/2704-2/">ASA abstract</a>; patents <a href="https://patents.google.com/patent/US5198602">US5198602</a> (1:4:10) and <a href="https://data.epo.org/publication-server/rest/v1.2/publication-dates/19960724/patents/EP0723255NWA2/document.html">EP0723255</a> (vibraphone 1:4:8).</li>
-<li id="r19">Bork, I. et al. (1999). Comparison between modal analysis and finite element modelling of a marimba bar. <em>Acta Acustica</em> 85, 258-266, as cited by <a href="https://lafavre.us/tuning-marimba.htm">La Favre</a> (also his pages on lateral and torsional modes); Curtin University, <a href="https://espace.curtin.edu.au/handle/20.500.11937/68">Automatic multi-modal tuning of idiophone bars</a>. (I have not read Bork's paper.)</li>
-<li id="r20">Rossing, T. D. (2000). <em>Science of Percussion Instruments</em>. World Scientific. Not read directly: cited via [21] and [22].</li>
-<li id="r21">Wikipedia, <a href="https://en.wikipedia.org/wiki/Tubular_bells">Tubular bells</a> (citing Rossing 2000, pp. 67-69); HyperPhysics, <a href="https://hyperphysics.gsu.edu/hbase/Music/tbell.html">Tubular bells</a>.</li>
-<li id="r22">Wikipedia, <a href="https://en.wikipedia.org/wiki/Strike_tone">Strike tone</a> (table of partials; Rossing 2000; Fletcher &amp; Rossing 2008; Starmer 1902); Hibbert, W. A., <a href="https://oro.open.ac.uk/44498">The quantification of strike pitch and pitch shifts in church bells</a> (Open University thesis).</li>
-<li id="r23">Hibbert, <a href="https://www.hibberts.co.uk/a-history-of-taylors-in-bell-sounds/">A history of Taylors in bell sounds</a> (Simpson, tuning machine).</li>
-<li id="r24">On major-third bells: <a href="https://www.essentialvermeer.com/music/carillon/carillon_b.html">carillon history page</a> (secondary) and Hibbert, <a href="https://www.hibberts.co.uk/a-history-of-gillett-and-johnston-in-bell-sounds/">Gillett and Johnston</a>; Lehr, A. (1987) reported via those pages.</li>
-<li id="r25">Rossing, T. D., <a href="https://acoustics.org/pressroom/httpdocs/131st/lay10.html">ASA lay-language paper (1996)</a>; Packer (1993), Durham thesis on timpani air loading, <a href="https://etheses.durham.ac.uk/id/eprint/5633/1/5633_3049.PDF">PDF</a>; Mills (1980), NIU thesis, <a href="https://huskiecommons.lib.niu.edu/allgraduate-thesesdissertations/6350">record</a>; Purdue dissertation <a href="https://docs.lib.purdue.edu/dissertations/AAI8825522">Mathematical modeling of the orchestral timpani</a>; Emory thesis (2022), <a href="https://etd.library.emory.edu/concern/etds/kw52j9322">The wave equation and the timpani</a>; HyperPhysics, <a href="https://hyperphysics.gsu.edu/hbase/Music/cirmem.html">Circular membrane modes</a>. Abstracts and summaries only.</li>
-<li id="r26">Sethares, W. A. (2005). <em>Tuning, Timbre, Spectrum, Scale</em>, 2nd ed., Springer. <a href="https://sethares.engr.wisc.edu/ttss.html">Author's pages</a>.</li>
-<li id="r27">Hagerman, B. &amp; Sundberg, J. (1980). Fundamental frequency adjustment in barbershop singing. <em>STL-QPSR</em> 21(1), 28-42 (<a href="https://www.oeaw.ac.at/resources/Record/990002704380504498">record</a>; paper not read); Wikipedia, <a href="https://en.wikipedia.org/wiki/Harmonic_seventh">Harmonic seventh</a>.</li>
-<li id="r28">McGill CAML course notes on the Schelleng diagram, <a href="https://caml.music.mcgill.ca/~gary/618/week11/node3.html">week 11</a>; Guettler, K., <a href="https://knutsacoustics.com/files/starting-transients-guettler.pdf">Looking at starting transients and tone</a> (bow force, speed and position).</li>
-<li id="r29">Hansen, U. J. &amp; Rossing, T. D., <a href="https://www.hangblog.org/pdf/hansen_rossing_the-caribbean-steelpan-and-some-offsprings.pdf">The Caribbean steelpan and some offsprings</a>; Zarek, <a href="https://www.ioa.org.uk/system/files/publications/JHB%20ZAREK%20VIBRATION%20OF%20STEEL%20BAND%20PANS.pdf">Vibration of steel band pans</a> (IOA).</li>
-<li id="r30">Intonation and compensation of fretted string instruments, <a href="https://arxiv.org/pdf/0906.0127">arXiv:0906.0127</a> (the title only; the points on stiffness versus stretch are from luthiers' forum posts on the topic, not from this paper).</li>
-</ol>
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+[[1]]{#r1} Fletcher, Harvey, et al. "Quality of Piano Tones." *The Journal of the Acoustical Society of America*, vol. 34, no. 6, 1962, pp. 749–61. [physics.byu.edu/docs/publication/1504](https://physics.byu.edu/docs/publication/1504). Abstract and a summary read only.
+
+[[2]]{#r2} "Inharmonicity." ELE 369 course notes, University of Rhode Island, [www.ele.uri.edu/courses/ele369g/14a_Inharmonicity.pdf](https://www.ele.uri.edu/courses/ele369g/14a_Inharmonicity.pdf). Found through a search snippet; the PDF text would not extract.
+
+[[3]]{#r3} "Research: The Missing Stretch Physics in Pianoteq Steinway D." *Modartt Forum*, [forum.modartt.com/viewtopic.php?id=12942](https://forum.modartt.com/viewtopic.php?id=12942). A forum post, not peer-reviewed.
+
+[[4]]{#r4} "Piano Acoustics." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Piano_acoustics](https://en.wikipedia.org/wiki/Piano_acoustics).
+
+[[5]]{#r5} "Inharmonicity." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Inharmonicity](https://en.wikipedia.org/wiki/Inharmonicity).
+
+[[6]]{#r6} Wolfe, Joe. "Strings, Standing Waves and Harmonics." *Music Acoustics*, University of New South Wales, [newt.phys.unsw.edu.au/jw/strings.html](https://newt.phys.unsw.edu.au/jw/strings.html).
+
+[[7]]{#r7} Wolfe, Joe. "How Harmonic Are Harmonics?" *Music Acoustics*, University of New South Wales, [newt.phys.unsw.edu.au/jw/harmonics.html](https://newt.phys.unsw.edu.au/jw/harmonics.html).
+
+[[8]]{#r8} Allen, Jont B. "On the Aging of Steel Guitar Strings." Post to the AUDITORY mailing list, 2005, [auditory.org/mhonarc/2005/msg00041.html](https://auditory.org/mhonarc/2005/msg00041.html). Describes Allen's 1976 *Catgut Acoustical Society Newsletter* article (not retrieved) and cites J. C. Brown, *JASA* 95, 1994, p. 2889 (not read).
+
+[[9]]{#r9} Fletcher, Neville H. "Mode Locking in Nonlinearly Excited Inharmonic Musical Oscillators." *The Journal of the Acoustical Society of America*, vol. 64, 1978, pp. 1566–69. [www.phys.unsw.edu.au/music/people/publications/Fletcher1978.pdf](https://www.phys.unsw.edu.au/music/people/publications/Fletcher1978.pdf). Abstract only, via a search summary.
+
+[[10]]{#r10} Giordano, Nicholas J. "Explaining the Railsback Stretch in Terms of the Inharmonicity of Piano Tones and Sensory Dissonance." 2015, *AUrora*, Auburn University, [aurora.auburn.edu/handle/11200/48533](https://aurora.auburn.edu/handle/11200/48533). With O. L. Railsback (1938), *JASA* 9(3) suppl., p. 274, as cited in [4], and D. Koenig, *Spectral Analysis of Musical Sounds with Emphasis on the Piano*, Oxford UP, 2014 (abstract only).
+
+[[11]]{#r11} "Producing a Harmonic Sequence of Notes with a Trumpet." *HyperPhysics*, Georgia State University, [hyperphysics.gsu.edu/hbase/Music/brassa.html](https://hyperphysics.gsu.edu/hbase/Music/brassa.html). Read through a search summary.
+
+[[12]]{#r12} Wolfe, Joe. "Clarinet Acoustics." *Music Acoustics*, University of New South Wales, [newt.phys.unsw.edu.au/jw/clarinetacoustics.html](https://newt.phys.unsw.edu.au/jw/clarinetacoustics.html).
+
+[[13]]{#r13} Henrich, Nathalie, et al. "Vocal Tract Resonances in Singing: Strategies Used by Sopranos, Altos, Tenors, and Baritones." University of New South Wales, [www.phys.unsw.edu.au/jw/reprints/SATB.pdf](https://www.phys.unsw.edu.au/jw/reprints/SATB.pdf). With Joliveau, Smith and Wolfe, *Nature*, 2004, and Smith and Wolfe, *JASA Express Letters*, 2009. Read through search summaries; journal citation not confirmed.
+
+[[14]]{#r14} Wolfe, Joe. "The Didjeridu." *Music Acoustics*, University of New South Wales, [newt.phys.unsw.edu.au/jw/didjeridu.html](https://newt.phys.unsw.edu.au/jw/didjeridu.html).
+
+[[15]]{#r15} Bergevin, Christopher, et al. "Overtone Focusing in Biphonic Tuvan Throat Singing." *eLife*, vol. 9, 2020, e50476, [elifesciences.org/articles/50476](https://elifesciences.org/articles/50476).
+
+[[16]]{#r16} "Percussion." Music 150 course notes, Stanford University CCRMA, [ccrma.stanford.edu/CCRMA/Courses/150/percussion.html](https://ccrma.stanford.edu/CCRMA/Courses/150/percussion.html).
+
+[[17]]{#r17} "The Construction and Tuning of Vibrating Bars." *Mechanical Music Digest*, [www.mmdigest.com/gallery/technical/xylobars](https://www.mmdigest.com/gallery/technical/xylobars).
+
+[[18]]{#r18} Yoo, Jesse, and Thomas D. Rossing. "Undercut Bars." Acoustical Society of America, [acoustics.org/2704-2/](https://acoustics.org/2704-2/). With patents US5198602 (patents.google.com/patent/US5198602) and EP0723255 (European Patent Office).
+
+[[19]]{#r19} La Favre, Jeff. "Tuning a Marimba Bar." [lafavre.us/tuning-marimba.htm](https://lafavre.us/tuning-marimba.htm). Cites Bork, I., et al., *Acta Acustica*, vol. 85, 1999, pp. 258–66 (not read). With "Automatic Multi-Modal Tuning of Idiophone Bars," *espace*, Curtin University, espace.curtin.edu.au/handle/20.500.11937/68.
+
+[[20]]{#r20} Rossing, Thomas D. *Science of Percussion Instruments*. World Scientific, 2000. Not read directly; cited via [21] and [22].
+
+[[21]]{#r21} "Tubular Bells." *HyperPhysics*, Georgia State University, [hyperphysics.gsu.edu/hbase/Music/tbell.html](https://hyperphysics.gsu.edu/hbase/Music/tbell.html). With Wikipedia, "Tubular Bells" (citing Rossing 2000, pp. 67–69), en.wikipedia.org/wiki/Tubular_bells.
+
+[[22]]{#r22} Hibbert, William A. *The Quantification of Strike Pitch and Pitch Shifts in Church Bells*. 2008. Open University, PhD thesis, [oro.open.ac.uk/44498](https://oro.open.ac.uk/44498). With Wikipedia, "Strike Tone," en.wikipedia.org/wiki/Strike_tone.
+
+[[23]]{#r23} Hibbert, Bill. "A History of Taylors in Bell Sounds." *Hibberts*, [www.hibberts.co.uk/a-history-of-taylors-in-bell-sounds/](https://www.hibberts.co.uk/a-history-of-taylors-in-bell-sounds/).
+
+[[24]]{#r24} Hibbert, Bill. "A History of Gillett and Johnston in Bell Sounds." *Hibberts*, [www.hibberts.co.uk/a-history-of-gillett-and-johnston-in-bell-sounds/](https://www.hibberts.co.uk/a-history-of-gillett-and-johnston-in-bell-sounds/). With a carillon history page, *Essential Vermeer*, www.essentialvermeer.com/music/carillon/carillon_b.html (secondary); A. Lehr (1987) reported via both.
+
+[[25]]{#r25} Rossing, Thomas D. "Acoustics of Timpani." Lay-language paper, 131st Meeting of the Acoustical Society of America, 1996, [acoustics.org/pressroom/httpdocs/131st/lay10.html](https://acoustics.org/pressroom/httpdocs/131st/lay10.html). With theses by Packer (Durham, 1993), Mills (Northern Illinois, 1980), a Purdue dissertation ("Mathematical Modeling of the Orchestral Timpani"), an Emory thesis ("The Wave Equation and the Timpani," 2022), and HyperPhysics, "Circular Membrane Modes." Abstracts and summaries only.
+
+[[26]]{#r26} Sethares, William A. *Tuning, Timbre, Spectrum, Scale*. 2nd ed., Springer, 2005. [sethares.engr.wisc.edu/ttss.html](https://sethares.engr.wisc.edu/ttss.html).
+
+[[27]]{#r27} Hagerman, Bo, and Johan Sundberg. "Fundamental Frequency Adjustment in Barbershop Singing." *STL-QPSR*, vol. 21, no. 1, 1980, pp. 28–42. [www.oeaw.ac.at/resources/Record/990002704380504498](https://www.oeaw.ac.at/resources/Record/990002704380504498). Paper not read. With Wikipedia, "Harmonic Seventh," en.wikipedia.org/wiki/Harmonic_seventh.
+
+[[28]]{#r28} Guettler, Knut. "Looking at Starting Transients and Tone." [knutsacoustics.com/files/starting-transients-guettler.pdf](https://knutsacoustics.com/files/starting-transients-guettler.pdf). With McGill CAML course notes on the Schelleng diagram, caml.music.mcgill.ca/~gary/618/week11/node3.html.
+
+[[29]]{#r29} Hansen, Uwe J., and Thomas D. Rossing. "The Caribbean Steelpan and Some Offsprings." [www.hangblog.org/pdf/hansen_rossing_the-caribbean-steelpan-and-some-offsprings.pdf](https://www.hangblog.org/pdf/hansen_rossing_the-caribbean-steelpan-and-some-offsprings.pdf). With Zarek, "Vibration of Steel Band Pans," Institute of Acoustics.
+
+[[30]]{#r30} "Intonation and Compensation of Fretted String Instruments." *arXiv*, 2009, arXiv:0906.0127, [arxiv.org/pdf/0906.0127](https://arxiv.org/pdf/0906.0127). The title only; the points on stiffness versus stretch are from luthiers' forum posts.
+:::
+<!-- /works-cited -->
 
 {{< include _synth-kit.qmd >}}
 

@@ -124,7 +124,8 @@ function run(sec){ const end = now + sec; while (now < end){ now += 0.02; timers
     const F = cs => BandHarmony.buildForm(tune(cs), 0), plan = cs => BandHarmony.endingPlan(F(cs));
     assert.deepStrictEqual(plan(["C", "F", "G", "C"]), { land: 3, setup: 2, ring: [], hold: 4 });
     assert.deepStrictEqual(plan(["C", "F", "G", "C", "C"]), { land: 3, setup: 2, ring: [4], hold: 8 });
-    assert.deepStrictEqual(plan(["C", "C", "C"]), { land: 1, setup: 0, ring: [2], hold: 8 }, "never more than two bars of ringing");
+    assert.deepStrictEqual(plan(["C", "C", "C"]), { land: 2, setup: 1, ring: [], hold: 4 }, "the last bar ends the phrase");
+    assert.strictEqual(plan(["C", "F", "C", "G", "C", "F", "G7", "C", "C", "F", "C", "G", "C", "F", "C", "C"]).land, 15, "16 bars: lands on 16 though 15 holds the same chord");
     assert.strictEqual(plan(["C", "Am", "Dm7", "G7"]), null, "a turnaround"); assert.strictEqual(plan(["C", "F", "C G7"]), null, "two chords in the last bar");
     assert.deepStrictEqual(plan(["F7", "Bb7", "C7", "F7"]).land, 3, "a blues ends on its own seventh chord"); assert.deepStrictEqual(plan(["Dm7", "G7", "C"]).land, 2);
     assert.deepStrictEqual(BandHarmony.endingPlan(F(["C", "F", "G", "C"]), [2, 3, 0, 1]), { land: 1, setup: 0, ring: [], hold: 4 }, "a loop over the end: its own last bars");

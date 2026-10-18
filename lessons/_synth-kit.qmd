@@ -16,6 +16,20 @@
 .sk-c .sk-cl{color:var(--site-ink-2);font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
 .sk-c output{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink);order:2}
 .sk-c input[type=range]{order:3;width:100%;accent-color:var(--site-accent-dk)}
+.sk-knob{display:none}
+.sk-knobs .sk-ctls{grid-template-columns:repeat(auto-fill,minmax(5.6rem,1fr))}
+.sk-knobs .sk-ctls .sk-c:not(.sk-s){align-items:center;text-align:center}
+.sk-knobs .sk-c:not(.sk-s) input[type=range]{display:none}
+.sk-knobs .sk-c .sk-knob{display:block;order:2;width:3.4rem;height:3.4rem;cursor:ns-resize;touch-action:none;border-radius:50%;outline:none}
+.sk-knobs .sk-c .sk-knob:focus-visible{box-shadow:0 0 0 2px var(--site-accent)}
+.sk-knobs .sk-c output{order:3}
+.sk-knob svg{width:100%;height:100%;display:block}
+.sk-knob .sk-kt{fill:none;stroke:var(--site-border);stroke-width:3.5;stroke-linecap:round}
+.sk-knob .sk-kv{fill:none;stroke:var(--site-accent-dk);stroke-width:3.5;stroke-linecap:round}
+.sk-knob .sk-kb{fill:var(--site-surface-2,var(--site-surface));stroke:var(--site-ink-3,var(--site-border));stroke-width:1}
+.sk-knob .sk-kp{stroke:var(--site-ink);stroke-width:2.2;stroke-linecap:round}
+.sk-knobs fieldset.sk-group{display:flex;flex-wrap:wrap;gap:.3rem .8rem;align-items:flex-start;justify-content:center}
+.sk-knobs fieldset.sk-group>.sk-c:not(.sk-s){align-items:center;width:5.4rem}
 .sk-c select{font-size:.85rem;padding:.1rem .3rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink);max-width:100%}
 .sk-group{grid-column:1/-1;border-top:1px dashed var(--site-border);padding-top:.35rem}
 .sk-gl{font-family:var(--font-display);font-size:.9rem;margin-bottom:.1rem}
@@ -37,6 +51,19 @@
 .sk-info{font-size:.9rem;color:var(--site-ink-2);min-height:1.4em}
 .sk-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
 .sk-care{border-left:3px solid #d9822b;padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+/* the tracker: a 64-row grid, one column a chip channel */
+.sk-trk{position:relative;max-height:22rem;overflow:auto;border:1px solid var(--site-border);border-radius:6px;margin:.2rem 0 .6rem}
+.sk-trk table{border-collapse:collapse;font-family:var(--font-mono);font-size:.8rem}
+.sk-trk th{position:sticky;top:0;z-index:1;background:var(--site-surface);font-size:.68rem;text-transform:uppercase;color:var(--site-ink-2);text-align:left;padding:.2rem .4rem;border-bottom:1px solid var(--site-border)}
+.sk-trk td{padding:0 .2rem}
+.sk-trk .sk-trk-n{color:var(--site-ink-2);padding:0 .5rem;text-align:right}
+.sk-trk tr.sk-trk-beat td{background:color-mix(in srgb,var(--site-ink) 4%,transparent)}
+.sk-trk tr.sk-trk-bar td{background:color-mix(in srgb,var(--site-ink) 9%,transparent)}
+.sk-trk tr.sk-trk-now td{background:color-mix(in srgb,var(--site-accent) 35%,transparent)}
+.sk-trk input{font:inherit;border:1px solid transparent;border-radius:3px;background:transparent;color:var(--site-ink);padding:0 .2rem}
+.sk-trk input:focus{border-color:var(--site-accent);outline:none;background:var(--site-surface)}
+.sk-trk input::placeholder{color:var(--site-ink-2);opacity:.5}
+.sk-trk input.sk-bad{border-color:#c0392b;color:#c0392b}
 /* the bar at the foot of the window */
 #sk-bar{position:fixed;left:0;right:0;bottom:0;z-index:1030;display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .7rem;padding:.35rem 1rem;background:var(--site-surface);border-top:1px solid var(--site-border);box-shadow:0 -2px 8px rgba(0,0,0,.08);font-size:.8rem}
 #sk-bar .btn{font-family:var(--font-mono);font-size:.75rem;padding:.1rem .45rem}
@@ -63,5 +90,5 @@ body.sk-has-bar{padding-bottom:4.5rem}
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/shared/strobe-view.js?v=1"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=5"></script>
-<script src="/apps/shared/lessons/synth-kit.js?v=10"></script>
+<script src="/apps/shared/lessons/synth-kit.js?v=11"></script>
 ```

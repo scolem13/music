@@ -35,6 +35,15 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     await set("bt-step-on", true); assert.strictEqual(await val("bt-choruses"), "0");
     await b.eval(`window.__w.postMessage({ type: "bt-play", startBar: 0 }, location.origin)`);
     seen = await bars(10000); console.log("steps:", seen); assert(/8 x 1 2/.test(seen), "the whole song goes round, with the click between");
+    await b.eval(`window.__w.postMessage({ type: "bt-stop" }, location.origin)`); await b.sleep(300);
+    // a tune sent with the song (a section written in ABC on the lyrics page) shows as notation in the Melody tab
+    const MEL = [[{ pos: 0, dur: 1.5, midi: 69 }, { pos: 1.5, dur: 0.5, midi: 67 }, { pos: 2, dur: 1, midi: 66 }, { pos: 3, dur: 0.5, midi: 64 }, { pos: 3.5, dur: 0.5, midi: 66 }]].concat([null, null, null, null, null, null, null]);
+    await b.eval(`window.__w.postMessage({ type: "bt-load", abc: ${JSON.stringify(ABC)}, melody: ${JSON.stringify(MEL)}, tempo: 120, style: "rock", title: "Tune" }, location.origin)`);
+    await b.sleep(1500);
+    assert.strictEqual(await W(`return document.getElementById("bt-mel-out").hidden;`), false, "the melody notation is shown");
+    const heads = await W(`return document.querySelectorAll("#bt-mel-score .abcjs-note").length;`);
+    console.log("melody notes drawn:", heads); assert(heads >= 5, "the sent notes are drawn");
+    assert(/A3\/2|A>G|A3/.test(await W(`return document.getElementById("bt-mel-score").getAttribute("data-abc");`)), "the first note is a dotted A");
     console.log("REMOTE OK");
   } catch (e) { console.log("FAILED:", e.message); console.log(b.errors.filter(e => !/supabase/i.test(e)).join("\n")); process.exitCode = 1; }
   finally { await b.close(); }

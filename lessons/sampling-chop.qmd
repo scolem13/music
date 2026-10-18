@@ -1,0 +1,81 @@
+---
+title: "Sampling 2: Chopping and Slicing"
+toc: true
+toc-depth: 2
+description: "Cut a loop into slices: equal slices, one a beat, or at the hits; move the chop points by hand."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sampling, daw]
+has: [interactive]
+---
+
+**Chopping** is cutting a sample into pieces so each can be played on its own. On an Akai MPC the pieces go onto the 16 pads; on a
+Roland SP-404 each pad holds a sample with its own start and end; in a DAW the pieces become slices of a clip or notes of a sampler.
+
+## Three ways to cut
+
+1. **Equal slices**: cut the loop into 16 equal parts. For a one-bar loop in 4/4 each slice is a sixteenth note; for two bars,
+   an eighth. Quick, and it keeps the timing grid, but a slice can start just before or after a hit.
+2. **One a beat**: cut at every beat (from the loop's tempo). Good for chord samples, where each beat is a chord.
+3. **At the transients**: cut where the sound suddenly gets louder (a **transient**: the attack of a drum or a plucked note). Each
+   slice starts exactly on a hit, so it sounds clean; the slices are of different lengths.
+
+## Try it
+
+<div class="sp-pads" data-id="sp-chop" data-loop="demo:break100" data-slice="equal" data-show="wave pads edit library"></div>
+
+1. With **16 equal slices**, play pads 1–16. Some slices start with a click or a bit of the hit before. Listen for it.
+2. Switch to **At the hits**. Now pads start on kicks, snares and hats. Play pads 1–4: each is a clean one-shot.
+3. **Move a chop**: drag one of the marker lines on the waveform left or right. The pad plays as you let go. Put a marker
+   exactly at the start of a snare: the slice before it now ends cleanly too.
+4. Load **Old Soul Record (chords)** from the menu and choose **One a beat**: each pad is now a chord. Play a new progression with them.
+
+## The art of the chop
+
+- **Short chops** (a single hit or a word) become an instrument: you play a new rhythm with them.
+- **Long chops** (a bar, a phrase) keep the feel of the original: you rearrange them like building blocks, as J Dilla and Pete Rock did
+  with soul records.
+- Leave out the obvious bit. The famous hook of a record is the hardest to clear and the most recognised; a tiny chord stab from the
+  middle of side B is yours to transform.
+- **Fades**: a slice that starts or ends in the middle of a sound clicks. This sampler fades each slice in and out over 1.5 ms;
+  a DAW or MPC has fade or "attack/release" settings for the same reason.
+
+## The DJ's version: loops and cue points
+
+A DJ chops live. A **cue point** is a marked spot in a track to jump to; a **loop** repeats a stretch (a bar, four bars) until it is
+released. With hot cues on the four snare hits of a break, a DJ can "finger drum" a new pattern over the next record: a chop made in the
+moment. On the deck below, press **CUE** while stopped to set a cue point where you are, then **▶**; press **CUE** while it plays and it jumps
+back and stops.
+
+<div class="dj-tt" data-id="dj-chop" data-decks="1" data-a="demo:break100" data-show="decks library"></div>
+
+## In other gear
+
+<div class="dj-map">
+
+| | Akai MPC | Roland SP-404 | Ableton Live |
+|---|---|---|---|
+| Slice a loop | Sample Edit → Chop (Regions / Threshold / Beats) | Edit start and end per pad; MKII: Chop | **Slice to New MIDI Track**, or Simpler in Slice mode ([Live Instrument Reference](https://www.ableton.com/en/live-manual/12/live-instrument-reference/)) |
+| Slice at the hits | Chop by Threshold | Chop by Transient (MKII) | Slice by Transient |
+| Move a chop | Drag the region marker | Start/end knobs | Drag the slice marker |
+
+</div>
+
+## Next
+
+- [Sampling 3: Pitch and Time-Stretch](sampling-pitch.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Akai MPC." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Akai_MPC](https://en.wikipedia.org/wiki/Akai_MPC).
+
+"Live Instrument Reference." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/live-instrument-reference/](https://www.ableton.com/en/live-manual/12/live-instrument-reference/).
+
+"Roland SP-404." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_SP-404](https://en.wikipedia.org/wiki/Roland_SP-404).
+
+"Sampling (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sampling_(music)](https://en.wikipedia.org/wiki/Sampling_(music)).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

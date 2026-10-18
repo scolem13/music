@@ -1,0 +1,119 @@
+---
+title: "Lesson: Using the Notation Page"
+toc: false
+---
+
+```{=html}
+<style>
+.ns-steps{display:flex;flex-wrap:wrap;gap:.4rem;margin:.4rem 0 1rem}
+.ns-steps button{font-family:var(--font-mono);font-size:.8rem}
+.ns-steps button.ns-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.ns-steps button.ns-done::after{content:" \2713"}
+.ns-card{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:1rem 1.2rem;margin:0 0 1rem}
+.ns-card h2{margin:0 0 .4rem;font-size:1.25rem;border:0}
+.ns-target{background:#fff;border-radius:6px;padding:.2rem .4rem;margin:.6rem 0;max-width:34rem}
+.ns-result{font-weight:600;min-height:1.4em;margin:.4rem 0}
+.ns-result.ns-ok{color:var(--site-accent-dk,#14665a)}
+.ns-frame{width:100%;border:1px solid var(--site-border);border-radius:10px;min-height:700px;background:var(--site-surface)}
+</style>
+```
+
+The Notation page has a lot on it. These steps show it to you a part at a time: you only see a part once a step needs it,
+and each step asks you to write something specific before the next one opens. Your work is checked as you go.
+
+```{=html}
+<div class="ns-steps" id="ns-steps" role="tablist" aria-label="Steps"></div>
+<div class="ns-card">
+  <h2 id="ns-title"></h2>
+  <div id="ns-text"></div>
+  <div class="ns-target" id="ns-target"></div>
+  <p class="ns-result" id="ns-result" aria-live="polite"></p>
+  <button type="button" class="btn btn-outline-secondary" id="ns-again">Start this step again</button>
+  <button type="button" class="btn btn-primary" id="ns-next" disabled>Next step &rarr;</button>
+</div>
+<iframe class="ns-frame" id="ns-frame" src="/tools/notation.html?stage=1" title="The Notation page"></iframe>
+
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script>
+(function () {
+  // A step: what the page shows (st-load's show: panel ids without "nt-"), the rhythm bank's view, the meter, and a target.
+  // rhythm targets are voice 1's slots across every chunk, as "n1 n1 n.5 r1" (note / rest, quarters); pitches aren't checked yet.
+  // Later steps (pitches, ties and rests, chunks, Join and Merge) go on the end of this list.
+  var STEPS = [
+    { title: "1. Four quarter notes", meter: "4/4", show: ["score", "rhythm"], rhythm: "single",
+      text: "<p>Rhythm comes first. In the <b>Rhythm</b> panel, each note value has a number key under it. Press <kbd>4</kbd> four times to " +
+        "write a bar of quarter notes (or click the quarter note four times). <kbd>Ctrl</kbd>+<kbd>Z</kbd> undoes, <kbd>Backspace</kbd> deletes the note in red.</p>",
+      target: "B B B B |", want: "n1 n1 n1 n1" },
+    { title: "2. Longer and shorter", meter: "4/4", show: ["score", "rhythm"], rhythm: "single",
+      text: "<p>Now mix the values: a half note (<kbd>2</kbd>), a quarter (<kbd>4</kbd>), two eighths (<kbd>8</kbd> <kbd>8</kbd>).</p>",
+      target: "B2 B B/B/ |", want: "n2 n1 n.5 n.5" },
+    { title: "3. Patterns in 3/4", meter: "3/4", show: ["score", "rhythm"], rhythm: "patterns",
+      text: "<p>The bank can also hold whole patterns. In 3/4 its first patterns fill a bar. Write these two bars with two patterns: " +
+        "press the number shown above each one.</p>",
+      target: "B2 B | B B B |", want: "n2 n1 n1 n1 n1" }
+  ];
+  var KEY = "ns-progress", $ = function (id) { return document.getElementById(id); };
+  var done = 0; try { done = +localStorage.getItem(KEY) || 0; } catch (e) {}
+  var at = Math.min(done, STEPS.length - 1), ready = false, frame = $("ns-frame");
+
+  function slots(doc) {
+    var out = [];
+    (doc.chunks || []).forEach(function (c) { c.rhythm.forEach(function (r) { if (r.type !== "space") out.push((r.type === "rest" ? "r" : "n") + String(+r.durQ.toFixed(3)).replace(/^0\./, ".")); }); });
+    return out.join(" ");
+  }
+  function fresh(st) {
+    return { title: "", meter: st.meter, key: null, keyConfirmed: false, voices: [{ name: "1", clef: "treble" }], together: true,
+      chunks: [{ name: "Chunk 1", rhythm: [], pitches: [], parts: [], chords: [], chordLen: 0, words: "", meter: null, key: null, heading: null, folded: false, hidden: false, takes: [], pickup: false }] };
+  }
+  function drawSteps() {
+    $("ns-steps").innerHTML = "";
+    STEPS.forEach(function (st, i) {
+      var b = document.createElement("button");
+      b.type = "button"; b.className = "btn btn-outline-secondary" + (i === at ? " ns-on" : "") + (i < done ? " ns-done" : "");
+      b.textContent = "Step " + (i + 1); b.disabled = i > done; b.setAttribute("role", "tab"); b.setAttribute("aria-selected", i === at);
+      b.onclick = function () { at = i; show(true); };
+      $("ns-steps").appendChild(b);
+    });
+  }
+  function send(reset) {
+    if (!ready) return;
+    var st = STEPS[at], m = { type: "st-load", show: st.show, rhythm: st.rhythm, status: "" };
+    if (reset) m.doc = fresh(st);
+    frame.contentWindow.postMessage(m, location.origin);
+  }
+  function show(reset) {
+    var st = STEPS[at];
+    $("ns-title").textContent = st.title; $("ns-text").innerHTML = st.text;
+    ABCJS.renderAbc($("ns-target"), "X:1\nM:" + st.meter + "\nL:1/4\nK:clef=none\n" + st.target + "]", { staffwidth: 420, scale: 1.1 });
+    $("ns-result").textContent = ""; $("ns-result").className = "ns-result";
+    $("ns-next").disabled = at >= done || at === STEPS.length - 1;
+    drawSteps(); send(reset);
+  }
+  function check(doc) {
+    var st = STEPS[at], got = slots(doc);
+    if (got === st.want) {
+      $("ns-result").textContent = at === STEPS.length - 1 ? "That's it. More steps are on the way." : "That's it. On to the next step.";
+      $("ns-result").className = "ns-result ns-ok";
+      if (done <= at) { done = at + 1; try { localStorage.setItem(KEY, done); } catch (e) {} }
+      $("ns-next").disabled = at === STEPS.length - 1; drawSteps();
+    } else {
+      var w = st.want.split(" "), g = got ? got.split(" ") : [];
+      var ok = g.every(function (x, i) { return x === w[i]; });
+      $("ns-result").textContent = !g.length ? "" : ok ? "So far so good: " + (w.length - g.length) + " more to go." : "Not quite: compare with the target and undo (Ctrl+Z) back to where it went wrong.";
+      $("ns-result").className = "ns-result";
+    }
+  }
+  window.addEventListener("message", function (e) {
+    if (e.source !== frame.contentWindow || e.origin !== location.origin || !e.data) return;
+    if (e.data.type === "st-ready") { ready = true; send(true); }
+    if (e.data.type === "st-change" && e.data.doc) check(e.data.doc);
+  });
+  $("ns-next").onclick = function () { if (at < done && at < STEPS.length - 1) { at++; show(true); } };
+  $("ns-again").onclick = function () { send(true); };
+  setInterval(function () {   // the framed page grows with what's open in it
+    try { var h = frame.contentDocument.documentElement.scrollHeight; if (h && Math.abs(h - frame.offsetHeight) > 20) frame.style.height = h + "px"; } catch (e) {}
+  }, 700);
+  show(false);
+})();
+</script>
+```

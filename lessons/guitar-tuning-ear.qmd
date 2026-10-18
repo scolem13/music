@@ -1,0 +1,61 @@
+---
+title: "Tuning 1: Your Ear Is the Tuner"
+toc: true
+toc-depth: 2
+description: "Why a beginner tunes by ear from day one: matching a reference pitch, hearing beats (the wobble two nearly-equal notes make), tuning up to the note, and tuning against a drone. Strengths and weaknesses of each."
+instruments: [guitar, bass]
+topics: [tuning, ear]
+has: [interactive]
+---
+
+{{< include _synth-kit.qmd >}}
+
+You can buy a tuner for the price of a sandwich, so why learn to tune by ear? Because **playing in tune is something you hear, not something you see**. A string drifts during a song, a singer goes a little flat, the band's keyboard is tuned slightly high: a screen can't fix any of that for you, and your ear can. Tuning is the best ear training a guitarist gets, and you do it every time you pick the guitar up. This lesson and the next two compare the ways of tuning, and what each is good and bad at. Practise them in the [tuning tool](../tools/guitar-tuning.qmd).
+
+**Words.** Strings are numbered **6** (thickest) to **1** (thinnest). **Flat** means too low, **sharp** too high. A **cent** is a hundredth of a half step (one fret): most people can't hear 5 cents on one note alone, but they can hear it easily as beating between two notes.
+
+## 1. Matching a reference {#reference}
+
+The simplest method: something plays the right note (a piano, a tuning fork, an app, the [tuning tool](../tools/guitar-tuning.qmd)'s **Play reference**), and you make the string match.
+
+1. Listen to the reference. **Hum it.**
+2. Pick the open string. Is it higher or lower than what you hummed? Say it out loud.
+3. Turn the peg *while the string rings*, a little at a time.
+
+| Strengths | Weaknesses |
+|---|---|
+| Needs nothing but a reference; works in any tuning | A note heard one after another is hard to judge closer than about 10–20 cents |
+| Trains the most important skill: is it higher or lower? | Low strings are harder to hear than high ones |
+| Works with any reference, including a bandmate's note | You need a reference that is itself in tune |
+
+## 2. Beats: the wobble you tune by {#beats}
+
+Play two notes that are nearly the same and you hear a slow **wah-wah-wah**. That's **beating**: the two waves slide in and out of step. The beat rate is the difference between the two frequencies: notes at 110 and 111 Hz beat once a second, 110 and 113 three times. So the beats tell you how far off you are, and they slow down as you get closer. **In tune, they stop.** This is far more precise than comparing notes one after another, and it's what every method in these lessons relies on.
+
+Hear it: the widget below plays two notes. Pick **P8** (an octave) or **P5**, and switch between *just* (whole-number ratios, no beating) and *equal* (the guitar's frets, a slow beat).
+
+<div class="sk" data-w="interval" data-title="Two notes and their beats" data-set="iv=P5,tun=equal,root=110"></div>
+
+**Tune up to the note.** If you're sharp, go below and come back up. The gear in the tuning peg then holds against the string's pull, and the string stays put.
+
+## 3. Tuning to a drone {#drone}
+
+A **drone** is a note that keeps sounding. Tune a string against it and you hear the beating the whole time, so you can turn the peg and listen at once. The drone on this site (the **Drone** button in the top bar, or the one below) holds a note and its fifth; the tuning tool puts one on each string's note.
+
+<div class="pw-embed" data-w="drone" data-do="4" data-oct="2" data-pads="0 7"></div>
+
+| Strengths | Weaknesses |
+|---|---|
+| The ear hears beats continuously: very precise | A drone on E and B tunes those strings best; the others want their own drone note |
+| Trains hearing *in tune against something*, the way you play with a band | A pure fifth in the drone isn't quite the guitar's fifth (2 cents): see [Tuning 2](guitar-tuning-methods.qmd) |
+| No microphone, works in a noisy room with headphones | Needs a device |
+
+**Listening and not listening.** Practise both: tune to the drone, then turn the drone off and play a chord. Does it still sound right? Then turn it back on and check. The tool's **Listening** switch does the same with the microphone: tune with it off, and only then turn it on to see how close your ear got.
+
+## 4. A practice plan {#plan}
+
+- Every day, tune by ear first, then check with the microphone in the tool, with **Ear first** ticked: guess flat, in tune or sharp before the reading shows. Watch your score improve.
+- Detune one string on purpose (a quarter turn) and find it by strumming a chord.
+- Sing each open string's note before you play it.
+
+Next: [Tuning 2: fifth-fret, harmonics and octaves](guitar-tuning-methods.qmd).

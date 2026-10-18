@@ -1,0 +1,66 @@
+---
+title: "Drum groove: Brushes, ballad"
+subtitle: "For drum kit, built up a step at a time"
+toc: true
+toc-depth: 2
+---
+
+This is a lesson on one drum groove the [Backing Track](../../tools/backing-track.qmd) band plays: **Brushes, ballad**. It is built up from a simpler pattern, one step at a time, and every step is played by the band and written out as it plays. How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.
+
+[All the accompaniment patterns](index.qmd) · [Drum grooves](index.qmd#drums)
+
+## The pattern
+
+One long sweep of the brush across the snare on 1 and another on 3, a tap on 2 and 4, a soft kick on 1 and the hi-hat foot on 2 and 4. In 3/4 one sweep to the bar and a tap on 2 and 3. No fills.
+
+It belongs in *Jazz ballad*, *Swing*, *Piano ballad*, *Boom-chick*, *Folk carol* and *Hymn (four parts)*. Here it is in the jazz ballad style with the whole band. Switch the other players off to hear it alone.
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Brushes, ballad","opts":{"groove":"brushballad"}}]'></div>
+
+## Step 1: Quarter notes (learning swing, 1)
+
+Start with something simpler. Only the beat: the cymbal on 1, 2, 3 and 4 and the hi-hat foot on 2 and 4. No kick, no snare, no fills. The first thing to play on a blues.
+
+This is a pattern of its own: [the lesson on it](drums-quarters.qmd) takes it further. Here it is only a step on the way, slowly. The drums play alone first; switch the bass and chords on when it is steady.
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="50" data-on="drums" data-staves="drums" data-choice-label="Step:" data-choices='[{"label":"Quarter notes (learning swing, 1)","opts":{"groove":"quarters"}}]'></div>
+
+## Step 2: Brushes, ballad, slowly
+
+Now the pattern itself. Compare it with the step before: press each button while the band plays and watch what changes on the staff.
+
+**How to play it.** One slow circle across the snare head to the bar, a long sweep landing on 1 and again on 3, a light tap on 2 and 4. Let the sound hang; do not press the wires.
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="50" data-on="drums" data-staves="drums" data-choice-label="Compare:" data-choices='[{"label":"Brushes, ballad","opts":{"groove":"brushballad"}},{"label":"Quarter notes (learning swing, 1) (the step before)","opts":{"groove":"quarters"}}]'></div>
+
+## Step 3: Up to tempo, with the band
+
+The whole band, at 66 beats a minute. Play along, then switch the band's drum kit off and take the part yourself.
+
+<div class="ar-demo" data-style="ballad" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="66" data-on="bass comp drums congas" data-staves="drums bass" data-choice-label="Drum groove:" data-choices='[{"label":"Brushes, ballad","opts":{"groove":"brushballad"}}]'></div>
+
+## In other styles
+
+The same drum groove in other styles it fits. The other players change; yours does not. Notice how the same part sounds different in a different band.
+
+**Swing**
+
+<div class="ar-demo" data-style="swing" data-chart="Dm7|G7|Cmaj7|A7|Dm7|G7|Cmaj7|Cmaj7" data-tempo="120" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Brushes, ballad","opts":{"groove":"brushballad"}}]'></div>
+
+**Piano ballad**
+
+<div class="ar-demo" data-style="pop" data-chart="C|Am|F|G" data-tempo="72" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Brushes, ballad","opts":{"groove":"brushballad"}}]'></div>
+
+**Boom-chick**
+
+<div class="ar-demo" data-style="folk" data-chart="G|C|D|G" data-tempo="104" data-on="bass comp drums congas" data-staves="drums" data-choice-label="Drum groove:" data-choices='[{"label":"Brushes, ballad","opts":{"groove":"brushballad"}}]'></div>
+
+## How it relates to the other patterns
+
+- **Builds on:** [Quarter notes (learning swing, 1)](drums-quarters.qmd).
+- **Plays with, in jazz ballad:** [Two-feel](bass-two.qmd) (bass line), [Long notes](chords-pad.qmd) (comping rhythm).
+- **Other drum grooves in the Hymns and carols group:** [Light time](drums-brushes.qmd), [Brushes, swing](drums-brushswing.qmd), [Brushes, folk](drums-brushfolk.qmd).
+
+{{< include ../_arrange-kit.qmd >}}
+
+<script src="/apps/shared/lessons/sections.js?v=1"></script>

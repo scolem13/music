@@ -2,6 +2,10 @@
 title: "Sound 24: The Signal Chain"
 toc: true
 toc-depth: 2
+description: "The order of effects and why it matters, and gain staging: never clip a stage."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 Real rigs use several effects one after another: a guitarist's pedalboard, the plug-ins on a channel in
@@ -45,6 +49,10 @@ loud enough to be well above the noise, never over the ceiling.** Engineers aim 
 
 Choose **Microphone** (headphones on) and build a chain for your voice or instrument. Try the order
 you'd expect, then the opposite, and decide which you prefer.
+
+## Next
+
+- [Sound 25: Chiptune](sound-chiptune.qmd)
 
 ## Back to the start
 

@@ -1,0 +1,143 @@
+---
+title: "Tune Your Guitar by Ear"
+toc: false
+---
+
+```{=html}
+<style>
+.gt{max-width:56rem}
+.gt-lead{font-size:1.02rem}
+.gt-king{border-left:4px solid var(--site-accent);background:var(--site-surface);padding:.6rem 1rem;margin:.8rem 0 1.2rem}
+.gt-card{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem;margin:.8rem 0}
+.gt-card h3{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .5rem}
+.gt-row{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .8rem;margin:.35rem 0}
+.gt-row label,.gt-lab{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2)}
+.gt select,.gt input[type=number],.gt input[type=text]{font-size:.88rem;padding:.12rem .35rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.gt input[type=number]{width:4.5rem}
+.gt .btn{font-family:var(--font-mono);font-size:.8rem}
+.gt .btn.gt-on,.gt-method.gt-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.gt-methods{display:grid;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr));gap:.5rem}
+.gt-method{text-align:left;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface);color:var(--site-ink);padding:.5rem .7rem;cursor:pointer;font:inherit}
+.gt-method b{display:block;font-family:var(--font-display);font-size:.98rem}
+.gt-method span{font-size:.82rem;opacity:.85}
+.gt-steps{display:flex;flex-wrap:wrap;gap:.3rem}
+#gt-say{font-size:.98rem;line-height:1.5;margin:.5rem 0}
+.gt-stepn{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;color:var(--site-ink-2);margin-bottom:.15rem}
+.gt-warn{display:block;color:#b5651d;font-size:.86rem;margin-top:.3rem}
+#gt-board svg{width:100%;height:auto;display:block}
+.gt-wood{fill:color-mix(in srgb,#8b5a2b 22%,var(--site-surface))}
+.gt-fret{stroke:var(--site-ink-2);stroke-width:2}
+.gt-nut{stroke:var(--site-ink);stroke-width:6}
+.gt-str{stroke:var(--site-ink-2)}
+.gt-str-now{stroke:var(--site-accent-dk)}
+.gt-inlay{fill:var(--site-border)}
+.gt-fnum,.gt-slab{font-family:var(--font-mono);font-size:11px;fill:var(--site-ink-2)}
+.gt-slab-now{fill:var(--site-accent-dk);font-weight:700}
+.gt-hit{fill:transparent;cursor:pointer}
+.gt-hit:hover{fill:color-mix(in srgb,var(--site-accent) 15%,transparent)}
+.gt-mk{fill:var(--site-accent);stroke:var(--site-ink);stroke-width:1.2;cursor:pointer}
+.gt-mk-open{fill:none;stroke:var(--site-accent-dk);stroke-width:3}
+.gt-mk-h{fill:#fff;stroke:var(--site-accent-dk);stroke-width:2.5}
+.gt-mk-t{font-family:var(--font-mono);font-size:11px;fill:var(--site-accent-dk);font-weight:700}
+.gt-flash{fill:var(--site-accent-dk)!important}
+.gt-stress{outline:2px solid var(--site-accent);outline-offset:4px;border-radius:6px}
+.gt-read{display:grid;grid-template-columns:auto 1fr;gap:.2rem 1rem;align-items:center}
+.gt-r-note{font-family:var(--font-display);font-size:2.2rem;min-width:4rem;text-align:center}
+.gt-meter{position:relative;height:1.6rem;border:1px solid var(--site-border);border-radius:5px;background:linear-gradient(90deg,transparent 47%,color-mix(in srgb,#2e9e5b 25%,transparent) 47% 53%,transparent 53%)}
+.gt-meter:before{content:"flat";position:absolute;left:.4rem;top:.15rem;font-size:.7rem;color:var(--site-ink-2)}
+.gt-meter:after{content:"sharp";position:absolute;right:.4rem;top:.15rem;font-size:.7rem;color:var(--site-ink-2)}
+.gt-dot{position:absolute;top:.2rem;width:1.1rem;height:1.1rem;margin-left:-.55rem;border-radius:50%;background:#c0392b;transition:left .08s}
+.gt-dot.gt-near{background:#d9a52b}.gt-dot.gt-ok{background:#2e9e5b}
+#gt-r-cents{font-family:var(--font-mono)}
+#gt-r-say{grid-column:1/-1;font-size:.9rem;color:var(--site-ink-2)}
+.gt-read.gt-hidden .gt-meter,.gt-read.gt-hidden #gt-r-note,.gt-read.gt-hidden #gt-r-cents{filter:blur(9px);opacity:.35}
+#gt-msg{min-height:1.4em;font-size:.92rem;margin:.4rem 0 0}
+.gt-keys{font-size:.8rem;color:var(--site-ink-2)}
+@media (max-width:640px){.gt-r-note{font-size:1.6rem}}
+</style>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+
+<div class="gt">
+<p class="gt-lead">Pick a way to tune, then follow the steps one string at a time. The fretboard shows where to put your fingers; click any
+spot on it to hear that note. No guitar knowledge needed: strings are numbered <b>6</b> (the thickest, nearest your chin) to <b>1</b> (the thinnest),
+and frets are counted from the end where the tuning pegs are.</p>
+
+<div class="gt-king"><b>Your ear is the tuner.</b> Every method here asks you to <i>listen</i>: to two notes agreeing, to a wobble slowing
+down, to a chord sounding sweet. The microphone reading is there to check your ear, not to replace it. With <b>Ear first</b> ticked it stays
+blurred until you've said what you hear. Start that habit today: musicians who only tune by looking at a screen can't hear when they've drifted
+out of tune halfway through a song.</div>
+
+<div class="gt-card">
+  <h3>1. Your guitar and how you'll tune it</h3>
+  <div class="gt-row">
+    <label for="gt-tuning">Tuning</label> <select id="gt-tuning"></select>
+    <label for="gt-a4">A =</label> <input id="gt-a4" type="number" min="415" max="466" step="1"> <span class="gt-lab">Hz</span>
+  </div>
+  <div class="gt-row" id="gt-custom" hidden>
+    <label for="gt-custom-in">Your tuning, lowest string first</label>
+    <input id="gt-custom-in" type="text" size="26" placeholder="D A D G A D" spellcheck="false">
+    <button class="btn btn-sm btn-outline-secondary" id="gt-custom-go" type="button">Use it</button>
+    <span id="gt-custom-say" class="gt-keys">Note names, or with octaves (C2 G2 C3 G3 C4 E4). Notes below about D2 are too low for the microphone reading.</span>
+  </div>
+  <div class="gt-methods" id="gt-methods"></div>
+</div>
+
+<div class="gt-card">
+  <h3>2. One string at a time</h3>
+  <div class="gt-steps" id="gt-steps"></div>
+  <p id="gt-say"></p>
+  <div id="gt-board"></div>
+  <div class="gt-row">
+    <button class="btn btn-sm btn-outline-secondary" id="gt-prev" type="button">← Back</button>
+    <button class="btn btn-sm btn-primary" id="gt-play" type="button">▶ Play reference</button>
+    <button class="btn btn-sm btn-outline-secondary" id="gt-together" type="button">▶ Both together</button>
+    <button class="btn btn-sm btn-outline-secondary" id="gt-next" type="button">Next string →</button>
+    <label for="gt-vol">Volume</label> <input id="gt-vol" type="range" min="0" max="100" value="55">
+  </div>
+  <div class="gt-row" id="gt-drone-row">
+    <button class="btn btn-sm btn-outline-secondary" id="gt-drone" type="button">Drone: off</button>
+    <span class="gt-keys">on <b id="gt-dnote"></b>, an octave under the string; follows the step</span>
+    <label><input type="checkbox" id="gt-fifth"> add the fifth</label>
+  </div>
+</div>
+
+<div class="gt-card">
+  <h3>3. Check your ear</h3>
+  <div class="gt-row">
+    <button class="btn btn-sm btn-outline-secondary" id="gt-listen" type="button">Listening: off</button>
+    <label><input type="checkbox" id="gt-earfirst"> Ear first (guess before you see)</label>
+  </div>
+  <div class="gt-read" id="gt-read">
+    <div id="gt-r-note" class="gt-r-note">–</div>
+    <div><div class="gt-meter"><div id="gt-r-dot" class="gt-dot" style="left:50%"></div></div><span id="gt-r-cents"></span></div>
+    <div id="gt-r-say"></div>
+  </div>
+  <div class="gt-row" id="gt-guess">
+    <span class="gt-lab">What do you hear?</span>
+    <button class="btn btn-sm btn-outline-secondary" data-g="flat" type="button">Flat (too low)</button>
+    <button class="btn btn-sm btn-outline-secondary" data-g="in" type="button">In tune</button>
+    <button class="btn btn-sm btn-outline-secondary" data-g="sharp" type="button">Sharp (too high)</button>
+  </div>
+  <p id="gt-msg" aria-live="polite"></p>
+  <p class="gt-keys">With speakers, the page's own reference and drone reach the microphone too: stop them, or use headphones, when you check.
+  Keys: Space reference, ← → strings, d drone, m microphone.</p>
+</div>
+
+<div class="gt-card">
+  <h3>Tips that apply to every method</h3>
+  <ul>
+    <li><b>Tune up to the note.</b> If a string is sharp, go below the note and come back up. The string then holds its pitch better.</li>
+    <li><b>Turn while the string rings.</b> Small turns. You hear the change happen.</li>
+    <li><b>Hum or sing the note.</b> If you can sing the reference and then sing the string, your ear is doing the work.</li>
+    <li><b>Finish with a chord.</b> Every method ends at your ear: strum something and adjust any string that sounds sour.</li>
+    <li>New strings stretch and go flat for a day or two. Tune, play, tune again.</li>
+  </ul>
+  <p>Why there are several methods, and what each gets wrong: <a href="/lessons/guitar-tuning-ear.html">Tuning 1: your ear and beats</a>,
+  <a href="/lessons/guitar-tuning-methods.html">Tuning 2: fifth-fret, harmonics, octaves</a>,
+  <a href="/lessons/guitar-tuning-tuners.html">Tuning 3: tuners and their limits</a>. Something always out however you tune?
+  The <a href="/tools/guitar-setup-check.html">Setup Check</a> finds out whether the guitar needs an adjustment.</p>
+</div>
+</div>
+<script src="/apps/shared/guitar-tuning.js?v=1"></script>
+```

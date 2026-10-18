@@ -11,11 +11,15 @@
 
   function boot() {
     var nav = document.querySelector('.ts-nav');
-    var panels = Array.prototype.slice.call(document.querySelectorAll('.ts-panel[id][data-nav]'));
-    if (!nav || !panels.length) return;
+    if (!nav) return;
     var shut = {};
     try { shut = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch (e) {}
     var list = nav.querySelector('ul'), links = {};
+    // every part moves between the two columns (panel-columns.js), first, so the sidebar lists them where they are
+    if (window.PanelColumns) PanelColumns.init({ columns: [document.querySelector('.btp-main'), document.querySelector('.btp-side')],
+      panels: '.ts-panel[id][data-nav]', key: 'ts-columns', reset: nav.querySelector('.ts-reset-cols') });
+    var panels = Array.prototype.slice.call(document.querySelectorAll('.ts-panel[id][data-nav]'));
+    if (!panels.length) return;
 
     function isOpen(p) { return p.tagName === 'DETAILS' ? p.open : !p.classList.contains('is-shut'); }
     function remember(p) { shut[p.id] = !isOpen(p); try { localStorage.setItem(KEY, JSON.stringify(shut)); } catch (e) {} links[p.id].classList.toggle('is-shut', !isOpen(p)); }
@@ -45,7 +49,7 @@
         var h = p.querySelector('.ts-fold-h');
         if (h) {
           h.setAttribute('role', 'button'); h.setAttribute('tabindex', '0');
-          h.addEventListener('click', function (e) { if (e.target.closest('a, button, input')) return; set(p, !isOpen(p)); });
+          h.addEventListener('click', function (e) { if (e.target.closest('a, button, input, .pc-tools')) return; set(p, !isOpen(p)); });
           h.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); e.stopPropagation(); set(p, !isOpen(p)); } });
         }
       }
@@ -54,6 +58,12 @@
     });
     nav.querySelectorAll('[data-all]').forEach(function (b) {
       b.addEventListener('click', function () { var open = b.dataset.all === 'open'; panels.forEach(function (p) { set(p, open); }); b.blur(); });
+    });
+
+    // a part moved to the other column: the list follows the page's order (left column, then right)
+    document.addEventListener('panelcolumns:move', function () {
+      panels.slice().sort(function (a, b) { return a.compareDocumentPosition(b) & 4 ? -1 : 1; })
+        .forEach(function (p) { list.appendChild(links[p.id].parentNode); });
     });
 
     // the part at the top of the screen is marked in the sidebar

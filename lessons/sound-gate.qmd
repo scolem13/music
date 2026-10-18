@@ -2,6 +2,10 @@
 title: "Sound 15: Gates and Transients"
 toc: true
 toc-depth: 2
+description: "A noise gate, the 80s gated-reverb snare, and a transient shaper for punch or room."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A [compressor](sound-compressor.qmd) turns loud sounds down. A **gate** does the opposite: it turns

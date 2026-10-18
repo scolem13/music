@@ -382,8 +382,8 @@ t("a pickup chunk is a short first bar, and reads back from ABC", () => {
   // almost a whole bar (3.5 beats) still is one
   a.rhythm = [{ type: "note", durQ: 0.5 }, { type: "note", durQ: 3 }]; a.pitches = [62, 64];
   assert.ok(/^"\^Pickup"D E6 \| "\^Take 1"G8 \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
-  a.pickup = false;                                            // not a pickup: the bar is filled from the chunk's start
-  assert.ok(/^"\^Pickup"D E3- E3 "\^Take 1"G- \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
+  a.pickup = false;                                            // not a pickup: a full first bar, and the next chunk still starts on beat 1
+  assert.ok(/^"\^Pickup"D E3- E3 "\^Take 1"x \| G8 \|/.test(music(D.toAbc(d).abc)), D.toAbc(d).abc);
 });
 
 t("a phrase's lead-in: stitched into the bar before, the bar further back, a Pickup chunk at the top", () => {

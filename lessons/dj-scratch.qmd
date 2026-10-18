@@ -1,0 +1,87 @@
+---
+title: "DJ 5: Scratching Basics"
+toc: true
+toc-depth: 2
+description: "The baby scratch, forward, chirp and transformer: one hand on the record, one on the fader."
+instruments: [other]
+topics: [dj, rhythm]
+has: [interactive]
+---
+
+**Scratching** is playing the record as an instrument: moving it back and forth under the needle while the other hand opens and closes
+the sound with a fader. Grand Wizzard Theodore is credited with discovering it in the Bronx in the late 1970s; Grandmaster Flash,
+DJ Jazzy Jeff, Qbert and the turntablist crews made it an art.
+
+## Set up
+
+- **A short sound** at the start of a cue: "Ahh" or a horn stab. Put a cue point (or a sticker on the record) right at its start.
+- **Record hand** on the label; it pushes the record forward and pulls it back.
+- **Fader hand** on the crossfader or channel fader, with a **sharp curve**, so a tiny movement opens or closes the sound.
+- One revolution of the record at 33⅓ RPM is 1.8 seconds of sound. Short scratches move the record a quarter turn or less.
+
+Below: one deck with the scratch sample, and a mixer with its fader. Click **CUE** (stopped) at the start of the "Ahh" to mark it. The platter's
+**label** is the record: drag it forwards and backwards. Use your other hand (or a second finger on a touch screen) on the channel **fader**.
+
+<div class="dj-tt" data-id="dj-scratch" data-decks="1" data-a="demo:ahh" data-show="decks mixer library" data-curve="1"></div>
+
+## The scratches
+
+Learn each slowly, then in time with a beat (play a loop on your phone or the next widget's deck at 90 BPM).
+
+1. **Baby scratch**: record hand only, fader open. Push forward a quarter turn, pull back, in steady eighth notes. Forward is the sound
+   played; back is it reversed. Even, smooth movements; the sound should be the same each time.
+2. **Forward scratch**: push forward with the fader **open**, close the fader, pull back silently, open it again. Only the forward sound is heard.
+   (The opposite, sound only on the pull, is a backward scratch.)
+3. **Chirp**: push forward and close the fader *during* the push; open it as you pull back and close it again during the pull. Each movement
+   gets cut off, making a short "chirp". Record and fader hands move together.
+4. **Transformer**: let the record move slowly (a slow push of a long "Ahh"), and tap the fader open and closed in rhythm, so the long sound
+   is chopped into pulses (sixteenths, triplets). Named after the sound effects of the *Transformers* cartoon.
+
+## Back on the beat
+
+Scratches sit on a beat played by the other deck. Here deck A plays a boom-bap loop at 90 BPM; deck B has the "Ahh". With the crossfader curve
+sharp, cut B in and out from the crossfader while scratching it.
+
+<div class="dj-tt" data-id="dj-scratch2" data-a="demo:boom90" data-b="demo:ahh" data-curve="1" data-show="decks mixer library"></div>
+
+## Hamster switch, tips
+
+- Many scratch DJs reverse the crossfader direction (**hamster** style) so the fader hand pushes towards the deck being scratched.
+- Keep the needle (here, the platter) steady: **small, precise movements** sound better than big ones.
+- Practise slowly with a metronome; speed comes later.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| Scratching with real records | DVS (timecode vinyl) | DVS | Traktor Scratch (timecode vinyl) |
+| On a controller | Jog wheel in Vinyl mode (top touch) | Jog mode VINYL | Jog wheel, scratch / vinyl mode |
+| Crossfader curve and hamster | Setup → Mixer, or the hardware's switches | On the mixer / controller | Preferences → Mixer (Crossfader: Curve, Reverse) |
+
+</div>
+
+## Next
+
+- [DJ 6: Harmonic Mixing](dj-harmonic.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Crossfader." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Crossfader](https://en.wikipedia.org/wiki/Crossfader).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+"Scratching." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Scratching](https://en.wikipedia.org/wiki/Scratching).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+"Technics SL-1200." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Technics_SL-1200](https://en.wikipedia.org/wiki/Technics_SL-1200).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

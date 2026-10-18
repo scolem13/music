@@ -1,0 +1,105 @@
+---
+title: "DJ 1: The Gear"
+toc: true
+toc-depth: 2
+description: "Turntables, CDJs, controllers and the mixer: what each part does, and the two decks and mixer you'll practise on."
+instruments: [other]
+topics: [dj, gear]
+has: [interactive]
+---
+
+A DJ plays recorded music for people, one track flowing into the next. The job needs two (or more) sources you can start, stop and
+speed up independently, and a **mixer** to blend them, with headphones to hear the next track before anyone else does.
+
+## The decks
+
+- **Turntables**. The Technics SL-1200 (1972 onwards) became the club standard: a direct-drive motor that gets to speed in under a
+  second, a heavy platter, and a **pitch fader** (±8 %, later ±16 % on some models). A **slipmat** lets the record slip over the
+  spinning platter, so you can hold the record still while the platter turns, then let go on the beat.
+- **CDJs** (Pioneer's name, now used for all such players) play files from USB sticks. A **jog wheel** stands in for the record:
+  touch the top to scratch, turn the side to nudge. Tempo range, cue and loop buttons, **key lock** (Master Tempo) and a waveform display.
+- **DVS** (digital vinyl systems): turntables playing records of a timecode signal that software reads, so a laptop file follows the
+  record's speed and direction. Serato, rekordbox and Traktor all offer it with supported audio interfaces.
+- **Controllers**: two jog wheels, a mixer and pads in one box, for DJ software on a laptop. Cheaper and lighter; the same skills.
+
+## The mixer
+
+Each **channel** has, top to bottom: **gain** (trim the input so loud and quiet tracks match), **EQ** (usually three bands: high,
+mid, low, cutting well below the boost, so a band can be nearly "killed"), often a **filter**, a **cue** button (send this channel to
+the headphones), and the **channel fader**. Then the **crossfader** blends the two sides, and the **master** sets the output level.
+
+- **Headphones**: the **cue mix** (or "cue/master") knob blends what you've cued with the master. Some DJs use **split cue**: cue in
+  one ear, master in the other.
+- **Crossfader curve**: smooth (both sides at full in the middle, for long blends) or sharp (a cut, for scratching: the sound comes
+  in within a millimetre of the edge).
+
+## Your decks
+
+The widget below is the practice rig for these lessons: two decks and a two-channel mixer. Everything here works with a mouse or
+a finger.
+
+<div class="dj-tt" data-id="dj-gear" data-a="demo:house124" data-b="demo:disco118"></div>
+
+1. Press **▶** on deck A. Notice the platter turning, the waveform scrolling past the red line (now), and the time readout.
+2. **Stop** and start it again: the "motor" takes a moment to reach speed and to stop, as a real turntable does.
+3. Pull the **Lo** knob on channel A all the way down: the kick and bass vanish. Bring it back.
+4. Move the **crossfader** from A to B, with deck B playing. Then press **CUE** on channel B, and click **Listen: speakers** to switch
+   to what the headphones would hear. A browser has one output, so this is how you hear the cue here; with **Split cue** ticked and
+   headphones on, cue is in the left ear and the master in the right.
+5. Drag the **label** of a playing record: you are holding it. Move it back and forth. Then drag the **rim** (the outer ring) while
+   it plays: the side of the platter, to speed it up or slow it down a touch (a **nudge**).
+
+## Choosing gear
+
+| | Turntables + mixer | CDJs + mixer | Controller |
+|---|---|---|---|
+| Music | Records (or DVS) | USB / SD files, streaming | Files on a laptop, streaming |
+| Cost | High | Highest | Lowest |
+| In clubs | Some, for vinyl nights and scratch DJs | The standard booth | Rare in booths; common for mobile DJs |
+| Learn here | All of it | All of it | All of it |
+
+Start with whatever you have. Beatmatching, phrasing and EQ are the same on all of them.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| Load a track | Drag from the library to a deck | Drag to a deck, or the deck's Load | Drag to a deck |
+| Pitch range | Tempo range ±8/16/50 % in the deck | Tempo range ±6/10/16 %/WIDE | Tempo range in Preferences |
+| Key lock | KEYLOCK | MASTER TEMPO | Keylock |
+| Headphone cue | Cue buttons in the mixer, Cue mix | CUE, Headphones MIX | Cue buttons, Mix knob |
+| Timecode vinyl (DVS) | Serato DJ Pro with DVS | rekordbox DVS | Traktor Scratch |
+
+</div>
+
+The manuals are on each program's download page (Serato DJ Pro manual, rekordbox Operating Instructions, Traktor Pro manual).
+
+## Next
+
+- [DJ 2: Beatmatching by Ear](dj-beatmatch.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"CDJ." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/CDJ](https://en.wikipedia.org/wiki/CDJ).
+
+"Crossfader." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Crossfader](https://en.wikipedia.org/wiki/Crossfader).
+
+"Disc Jockey." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Disc_jockey](https://en.wikipedia.org/wiki/Disc_jockey).
+
+"DJ Mixer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DJ_mixer](https://en.wikipedia.org/wiki/DJ_mixer).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+"Technics SL-1200." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Technics_SL-1200](https://en.wikipedia.org/wiki/Technics_SL-1200).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

@@ -2,6 +2,10 @@
 title: "How to Play Congas: Five Strokes and the Tumbao"
 toc: true
 toc-depth: 2
+description: "The drums, how to sit, the five strokes (bass, open, muted, slap, heel-toe) and how they are written, then the tumbao built in six steps with the band: open tones, right hand, left hand, both hands, a cha-cha band and two drums."
+instruments: [congas]
+topics: [latin, rhythm, reading]
+has: [band, notation, interactive, svg]
 ---
 
 This is a first lesson for someone who has never played congas. You will learn five ways
@@ -25,6 +29,8 @@ are approximations. Listen to a real player for the sound.
 The **conga** is the higher drum of a pair, and the one this lesson uses. The **tumba** is the
 lower drum. A conga player often has both, and step 6 uses the tumba for a moment; everything
 else on this page is played on one drum.
+
+<div class="gear-fig" data-fig="congas"></div>
 
 ## Sitting and hands
 
@@ -151,16 +157,25 @@ tumbao.
 - Listen to a real conga player and copy what you hear. A page cannot give you the sound of the
   hands.
 
-## Sources
+## Works Cited
 
-- The teacher's handout: stroke types and tumbao pattern.
-- [Tumbao](https://en.wikipedia.org/wiki/Tumbao), Wikipedia: the heel-toe-slap-toe, open-open
-  figure and its sticking (citing Rebeca Mauleón, *Salsa Guidebook*).
-- [Conga](https://en.wikipedia.org/wiki/Conga), Wikipedia.
-- [Congas: first steps](https://www.thomannmusic.com/onlineexpert_page_congas_first_steps.html),
-  Thomann.
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Conga." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Conga](https://en.wikipedia.org/wiki/Conga).
+
+"Congas: First Steps." *Thomann Online Expert*, Thomann, [www.thomannmusic.com/onlineexpert_page_congas_first_steps.html](https://www.thomannmusic.com/onlineexpert_page_congas_first_steps.html).
+
+Teacher's handout on conga stroke types and the tumbao pattern. Unpublished classroom material.
+
+"Tumbao." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tumbao](https://en.wikipedia.org/wiki/Tumbao). Cites Rebeca Mauleón, *Salsa Guidebook*.
+:::
+<!-- /works-cited -->
 
 {{< include _blues-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+```
 
 ```{=html}
 <script>BluesLesson.init({ instrument: "congas", key: 5 });</script>

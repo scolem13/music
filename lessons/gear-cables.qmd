@@ -2,6 +2,10 @@
 title: "Gear 2: Cables and Connectors"
 toc: true
 toc-depth: 2
+description: "Jack, XLR, TRS and the rest; balanced and unbalanced; mic, instrument, line and speaker level; over-under."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [gear]
+has: [svg]
 ---
 
 Most "the sound isn't working" moments are cables: the wrong one, the wrong socket, or one that's broken. Learn the
@@ -22,6 +26,17 @@ connectors, the two kinds of signal level, and how to coil a cable so it lasts.
 - **MIDI** (5-pin DIN) and **USB** (A, B, C, Micro): control data, not audio (except USB audio interfaces).
 - **IEC / kettle lead**: the detachable power cable on most gear.
 
+```{=html}
+<div class="gear-fig" data-fig="connectors"></div>
+```
+
+The two you will plug most, opened up:
+
+```{=html}
+<div class="gear-fig" data-fig="jack-wiring"></div>
+<div class="gear-fig" data-fig="xlr-pins"></div>
+```
+
 ## Balanced and unbalanced
 
 An **unbalanced** cable has a signal wire and a shield. It picks up hum and noise, and longer than about 5–6 m
@@ -31,6 +46,10 @@ A **balanced** cable carries the signal twice, once upside down. Any noise picke
 both, and the input flips one and adds them, so the noise cancels. Balanced lines can run 50 m or more.
 
 Both ends must be balanced to get the benefit: TRS to TRS, XLR to XLR, or TRS to XLR.
+
+```{=html}
+<div class="gear-fig" data-fig="balanced"></div>
+```
 
 ## Levels: mic, instrument, line, speaker
 
@@ -50,6 +69,10 @@ Follow the signal from the source to your ears: **instrument → cable → (peda
 speakers**. When there's no sound, check each step in order: is it on, is the volume up, is the cable in the right
 socket, does a different cable fix it, is the channel muted. Most problems are found in the first three.
 
+```{=html}
+<div class="gear-fig" data-fig="signal-flow"></div>
+```
+
 ## Coil it right: over-under
 
 Wrapping a cable round your elbow twists it; twisted cables kink and break inside. Use **over-under**: one loop
@@ -66,3 +89,7 @@ Close it with a velcro tie.
 ## Next
 
 - [Gear 3: Amps, Speakers and the PA](gear-amps.qmd)
+
+```{=html}
+<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+```

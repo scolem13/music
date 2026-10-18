@@ -2,23 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>in-progress – Music Practice</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,6 +79,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="./apps/shared/session-nav.js"></script>
 <!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
 <script src="./apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="./apps/shared/help-eye.js?v=1"></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="./apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
 
 
 </head>
@@ -110,373 +117,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="./index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lessons</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
-        <li>
-    <a class="dropdown-item" href="./lessons/index.html">
- <span class="dropdown-text">Lessons</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="./lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
   </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-improv.html">
- <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-melody.html">
- <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-changes.html">
- <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-bass.html">
- <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-guitar.html">
- <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-piano.html">
- <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/stride-boogie.html">
- <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/blues-drums.html">
- <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/reading-swing.html">
- <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/hihat-grooves.html">
- <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/congas-basics.html">
- <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/watermelon-congas.html">
- <span class="dropdown-text">Watermelon Man for Congas</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/watermelon-man-blues.html">
- <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/pop-changes.html">
- <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/pop-changes-guitar.html">
- <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/pop-changes-piano.html">
- <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/pop-changes-bass.html">
- <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/chord-shapes-guitar.html">
- <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/chord-shapes-guitar-hand.html">
- <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/hammer-ons-pull-offs.html">
- <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/guitar-bends.html">
- <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/travis-picking.html">
- <span class="dropdown-text">Travis Picking on Guitar</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/chord-shapes-piano.html">
- <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/chord-shapes-piano-hand.html">
- <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/inversions.html">
- <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/voice-pop.html">
- <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/voice-jazz.html">
- <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/voice-classical.html">
- <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/four-chord-loops.html">
- <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/cadences.html">
- <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/write-an-ending.html">
- <span class="dropdown-text">Lesson: Write an Ending</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/guide-tones.html">
- <span class="dropdown-text">Lesson: Guide Tones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/minor-changes.html">
- <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/borrowed-chords.html">
- <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/turnarounds.html">
- <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/reharmonize.html">
- <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="./lessons/arrange-band.html">
- <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/arrange-bass-drums.html">
- <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/arrange-chords.html">
- <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/arrange-organ.html">
- <span class="dropdown-text">Arranging 4: The Organ</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/patterns/index.html">
- <span class="dropdown-text">Accompaniment Patterns</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="./lessons/notation-choices.html">
- <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/tuning-systems.html">
- <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/strobe-tuner.html">
- <span class="dropdown-text">How a Strobe Tuner Works</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/inharmonicity.html">
- <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/vowel-formants.html">
- <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-harmonics.html">
- <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-waveforms.html">
- <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-noise.html">
- <span class="dropdown-text">Sound 3: Noise</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-filter.html">
- <span class="dropdown-text">Sound 4: Filters</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-envelopes.html">
- <span class="dropdown-text">Sound 5: Envelopes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-lfo.html">
- <span class="dropdown-text">Sound 6: LFOs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-subtractive.html">
- <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-fm.html">
- <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-wavetable.html">
- <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-granular.html">
- <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-eq.html">
- <span class="dropdown-text">Sound 11: The Equaliser</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-distortion.html">
- <span class="dropdown-text">Sound 12: Distortion</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-compressor.html">
- <span class="dropdown-text">Sound 13: The Compressor</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-sidechain.html">
- <span class="dropdown-text">Sound 14: Sidechain</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-gate.html">
- <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-reverb.html">
- <span class="dropdown-text">Sound 16: Reverb</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-delay.html">
- <span class="dropdown-text">Sound 17: Delay</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-chorus.html">
- <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-phaser.html">
- <span class="dropdown-text">Sound 19: Phaser</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-tremolo.html">
- <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-pitch.html">
- <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-vocoder.html">
- <span class="dropdown-text">Sound 22: The Vocoder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-stereo.html">
- <span class="dropdown-text">Sound 23: Stereo</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/sound-chain.html">
- <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-gain-staging.html">
- <span class="dropdown-text">Recording 1: Gain Staging</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-mics.html">
- <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-placement.html">
- <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-monitoring.html">
- <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-mixing.html">
- <span class="dropdown-text">Recording 5: Mixing</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-mastering.html">
- <span class="dropdown-text">Recording 6: Mastering</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/rec-stereo.html">
- <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-power.html">
- <span class="dropdown-text">Gear 1: Power and Safety</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-cables.html">
- <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-amps.html">
- <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-keyboards.html">
- <span class="dropdown-text">Gear 4: Keyboards</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-setup.html">
- <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-guitar.html">
- <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-violin.html">
- <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-sax.html">
- <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/gear-drums.html">
- <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/timestamp-player.html">
- <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./lessons/section-labels.html">
- <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Practice</span>
@@ -617,8 +261,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Vocal Warm-up</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./tools/timestamp-notes.html">
  <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
   </li>  
     </ul>
   </li>
@@ -733,6 +393,11 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15" id="toc-accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15" class="nav-link" data-scroll-target="#accompaniment-pattern-lessons-guitarpiano-by-hand-fixes-picking-lessons-a-separate-session-2026-10-14-to-15">Accompaniment-pattern lessons, guitar/piano by-hand fixes, picking lessons (a separate session, 2026-10-14 to 15)</a></li>
   <li><a href="#big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15" id="toc-big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15" class="nav-link" data-scroll-target="#big-timestamp-player-bar-map-youtube-follow-along-lesson-a-separate-session-2026-10-15">Big Timestamp Player, bar map, YouTube follow-along, lesson (a separate session, 2026-10-15)</a></li>
   <li><a href="#record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15" id="toc-record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15" class="nav-link" data-scroll-target="#record-yourself-demo-audio-sound-check-wired-into-every-mic-page-this-session-2026-10-15">Record-yourself demo, audio sound check, wired into every mic page (this session, 2026-10-15)</a></li>
+  <li><a href="#brushes-for-the-drummer-this-session-2026-10-17" id="toc-brushes-for-the-drummer-this-session-2026-10-17" class="nav-link" data-scroll-target="#brushes-for-the-drummer-this-session-2026-10-17">Brushes for the drummer (this session, 2026-10-17)</a></li>
+  <li><a href="#offline-use-and-audio-in-r2-plan-nothing-built" id="toc-offline-use-and-audio-in-r2-plan-nothing-built" class="nav-link" data-scroll-target="#offline-use-and-audio-in-r2-plan-nothing-built">Offline use and audio in R2 (plan, nothing built)</a></li>
+  <li><a href="#also-done-in-main-another-session-2026-10-17-tap-along-and-tap-latency" id="toc-also-done-in-main-another-session-2026-10-17-tap-along-and-tap-latency" class="nav-link" data-scroll-target="#also-done-in-main-another-session-2026-10-17-tap-along-and-tap-latency">Also done in main (another session, 2026-10-17): Tap Along and Tap Latency</a></li>
+  <li><a href="#sampling-djing-turntables-and-a-catalogue-of-the-lessons-tools-this-session-2026-10-18" id="toc-sampling-djing-turntables-and-a-catalogue-of-the-lessons-tools-this-session-2026-10-18" class="nav-link" data-scroll-target="#sampling-djing-turntables-and-a-catalogue-of-the-lessons-tools-this-session-2026-10-18">Sampling, DJing, turntables, and a catalogue of the lessons’ tools (this session, 2026-10-18)</a></li>
+  <li><a href="#also-done-in-main-another-session-2026-10-18-guitar-tuning-tuning-lessons-harmonics-setup-check" id="toc-also-done-in-main-another-session-2026-10-18-guitar-tuning-tuning-lessons-harmonics-setup-check" class="nav-link" data-scroll-target="#also-done-in-main-another-session-2026-10-18-guitar-tuning-tuning-lessons-harmonics-setup-check">Also done in main (another session, 2026-10-18): guitar tuning, tuning lessons, harmonics, Setup Check</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -1133,7 +798,9 @@ document.addEventListener('DOMContentLoaded', async function () {
 <h2 class="anchored" data-anchor-id="style-articles-history-and-listening-for-each-backing-track-style-a-separate-session-2026-10-14">Style articles: history and listening for each Backing Track style (a separate session, 2026-10-14)</h2>
 <p>Goal: every style in <code>BandCatalog.styles</code> (<code>apps/shared/band/catalog.js</code>, 24 of them) gets an article: a little history, what the band’s parts imitate, and key recordings (artist, title, year, what to listen for).</p>
 <p><strong>Done.</strong> All 24 are written: <code>styles/&lt;style id&gt;.qmd</code>, index <code>styles/index.qmd</code> (“Style Notes”, Tools menu in <code>_quarto.yml</code>). Each: Open-in-Backing-Track button (<code>?style=id</code>), what it is, history, the band’s version, listening table, sources.</p>
-<p>Links in: <code>BandCatalog.article(id)</code> -&gt; <code>/styles/&lt;id&gt;.html</code> (new in <code>catalog.js</code>). The Backing Track’s style note (<code>#bt-style-note</code>) ends with “About <style>: history and listening”; the Styles line on the Accompaniment Styles band tab gives each style a “History and listening” link. Test pages re-rendered to <code>tests/band/lead/site</code>; <code>pat/band-ui.cdp.js</code>, <code>styles/{page,menus,keep}.cdp.js</code> and all <code>pat/t_*.js</code> pass.</p>
+Links in: <code>BandCatalog.article(id)</code> -&gt; <code>/styles/&lt;id&gt;.html</code> (new in <code>catalog.js</code>). The Backing Track’s style note (<code>#bt-style-note</code>) ends with “About
+<style>
+<p>: history and listening”; the Styles line on the Accompaniment Styles band tab gives each style a “History and listening” link. Test pages re-rendered to <code>tests/band/lead/site</code>; <code>pat/band-ui.cdp.js</code>, <code>styles/{page,menus,keep}.cdp.js</code> and all <code>pat/t_*.js</code> pass.</p>
 <p><strong>How far to trust it.</strong> History and listening lists were written from standard references (cited per article) and only spot-checked on the web. Checked: <em>Alligator Bogaloo</em> (date, personnel: corrected organist to Lonnie Smith), Arsenio Rodríguez 1946, Lord Invader (his own <em>Rum and Coca-Cola</em> is 1946, corrected), Kitchener 1951, Carter Family 1935, Brandwein 1923, Yankovic. Marked unchecked in the article: <em>El bodeguero</em> year, <em>Kentucky Waltz</em> year, <em>Tanga</em> recording year, all of the Folk carol tracks. Worth a human pass: every other listening table; a teacher may want different “key” recordings.</p>
 <p>Ideas not done: audio/Spotify links per recording (a Spotify connector is attached to this account); a short notated example of each style’s groove in its article (the Accompaniment Styles cards already draw comp hits).</p>
 <p><strong>“More recent” tables.</strong> Asked for after the first pass (“these are highly historical recordings”): each article now has a second table, “More recent”, of popular recordings (mostly 1990s-2020s) that show the same groove, under the original list. Keep that balance when adding to an article: the history list for where the style comes from, the recent list for what a student already knows. Checked: <em>Polka Face</em> (2011, <em>Alpocalypse</em>), Laufey <em>Valentine</em> (2022). Dropped: Meghan Trainor <em>Like I’m Gonna Lose You</em> (no source for it being in 12/8). The rest were picked from memory; listen before trusting Ed Sheeran <em>Perfect</em> as 12/8, Michael Bublé <em>Sway</em> as cha-cha, Dwight Yoakam <em>Guitars, Cadillacs</em> as a train beat, Taylor Swift <em>invisible string</em> as fingerpicking. Thin: train (one recent track), carol (its one addition is from the Sufjan Stevens album already listed), reggaeton (already recent, one added).</p>
@@ -2182,277 +1849,96 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li><strong>What nobody has tried:</strong> the sweep on real laptop speakers and real headphones; the bleed gates with a real student on speakers; the feedback warning in the sound lessons.</li>
 <li><strong>Next candidates (from a survey of the courses):</strong> a “check my singing” control in <code>abc-ex.js</code> (voice-pop, voice-jazz, voice-classical: about 20 sing prompts); rhythm grading or record-yourself on the ~50 patterns pages (one template); grading the hum against the drone in tuning-systems; quarter-notes and tonal-do-re-mi; the Vocal Warm-up (no mic yet; call-and-response suits it); rec-monitoring and rec-gain-staging could show the check as a teaching demo.</li>
 </ul>
+</section>
+<section id="brushes-for-the-drummer-this-session-2026-10-17" class="level2">
+<h2>Brushes for the drummer (this session, 2026-10-17)</h2>
+<ul>
+<li><strong>What was added:</strong> three brush grooves in <code>apps/shared/band/drums.js</code>, listed in <code>catalog.js</code> under Hymns and carols: <code>brushswing</code> (Brushes, swing: a swish on every beat leaning on 2 and 4, taps on the ride pattern, hat foot on 2 and 4, a barely-there kick; 3/4 too), <code>brushballad</code> (one long sweep on 1 and on 3, a tap on 2 and 4, soft kick on 1; in 3/4 one sweep and a tap on 2 and 3) and <code>brushfolk</code> (swish on every beat leaning on 2 and 4, light off-beat taps, kick on 1 and 3). No fills. The old “Light time” (<code>brushes</code>) is untouched. Fit lists (<code>FITS.drums</code>), GM notes (<code>midi.js</code>), staff heads (<code>notation.js</code>) and <code>PLAN</code> entries in <code>scripts/pattern-lessons.mjs</code> are done. <code>tests/band/pat/t_patterns.js</code> knows the new pieces and checks each groove’s beats.</li>
+<li><strong>Sounds are synthesized, not recorded.</strong> <code>sounds.js</code> <code>brushBuffer</code> makes <code>brushTap</code>, <code>brushSwish</code> and <code>brushSweep</code> from seeded noise when the kit loads (zones with <code>make:</code> instead of <code>url:</code>). The MusyngKite percussion the kit uses is the GM standard kit only, so there are no brush samples in it. First guesses for level and tone; nobody has listened.</li>
+<li><strong>Tests:</strong> <code>t_patterns.js</code>, <code>t_pop.js</code>, <code>t_fills.js</code> pass; <code>t_sections.js</code> and <code>t_change.js</code> passed before the <code>t_patterns</code> fix. The tests hardcode <code>/Users/sean.coleman/...</code>, so they only run with that path changed to <code>/Users/sean/</code> (run from temporary copies; not fixed). The buffers were checked in node (no NaN, peak 0.9); not tried in a browser.</li>
+<li><strong>Not done:</strong> <code>?v=</code> numbers in <code>tools/_backing-track.qmd</code>, <code>tools/_accomp-styles.qmd</code> and every lesson that loads <code>band/*.js</code>; <code>quarto render</code>; <code>quarto render lessons/patterns</code>; <code>bash ~/Projects/carols/tools/build.sh</code>. No style uses the grooves by default yet (a jazz ballad style, or brushes on swing, would). Not committed.</li>
+<li><strong>Real recordings, if the synth is not good enough.</strong> Searched, not downloaded:
+<ul>
+<li><em>Brushed Drum Sample Pack</em>, Ben Burnes and Mark Powers: CC0, 150+ unprocessed brush hits (Yamaha Birch Custom snare, Remo Coated Ambassador head, two Vic Firth brush types), 28 loops. $2.99 on Gumroad (gumroad.com/ben_burnes); the free coupon ended January
+<ol start="2019" type="1">
+<li>Reported at rekkerd.org/?p=134767. The best lead.</li>
+</ol></li>
+<li>GM brush kit in FluidR3 / MS_General: forum reports say the swirl sounds like a hit, tap and slap like stick hits. Not worth it.</li>
+<li>Polyphone “Jazz Kit” (SF2, attribution): the listing does not mention brushes. Freesound: no CC0 brush pages found by search; try its own CC0 filter (“brush sweep”, “brush stir”).</li>
+<li>If the pack is bought: put a few taps, swishes and long sweeps (soft and medium) in <code>apps/shared/band/samples/kit/</code>, list them as round-robin zones for the three pieces in <code>sounds.js</code> (the synth stays as the fallback), add them to <code>tests/band/meter/fetch-samples.js</code>, and credit the pack.</li>
+</ul></li>
+<li><strong>What nobody has tried:</strong> hearing any of it. Whether the swish sits right under the swung ride pattern; whether the long sweep rings through the next beat at slow tempos; levels against the bass and a vocal.</li>
+</ul>
+</section>
+<section id="offline-use-and-audio-in-r2-plan-nothing-built" class="level2">
+<h2>Offline use and audio in R2 (plan, nothing built)</h2>
+<p>Goal: work on a poor connection by serving web assets locally, and keep a growing set of audio files in Cloudflare R2 that local runs can read from a local copy. Only a survey so far; no files changed.</p>
+<ul>
+<li><strong>What the site loads from the web today:</strong>
+<ul>
+<li>jsDelivr / unpkg: supabase-js (<code>_includes/head.html</code>), bootstrap 5.3.x, svguitar, vexflow, Tone, html2canvas.</li>
+<li>Google Fonts: Oswald, JetBrains Mono, Inter, Source Sans (<code>&lt;link&gt;</code> in <code>head.html</code> and several pages).</li>
+<li><code>raw.githubusercontent.com</code>: the Bravura notation font (one file).</li>
+<li>Soundfonts: <code>apps/shared/soundfont.js</code> picks jsDelivr (<code>paulrosen/midi-js-soundfonts/MusyngKite/</code>) and falls back to <code>paulrosen.github.io</code>; <code>tools/_drumset.qmd</code> hardcodes the jsDelivr URL; FluidR3_GM and abcjs soundfont URLs also appear.</li>
+<li>Wikimedia: about 190 IPA clips in <code>apps/shared/ipa/ipa-audio.js</code> (<code>src</code>, <code>mp3</code>) plus many images. <code>scripts/ipa-audio.mjs</code> already builds that list.</li>
+<li>YouTube iframe API (Timestamp Notes, <code>player.js</code>). Cannot be local; audio-file mode is the offline path.</li>
+</ul></li>
+<li><strong>Biggest risk:</strong> <code>head.html</code> loads supabase-js with a blocking script, then calls <code>window.supabase.createClient(...)</code> at once. If the CDN is slow or down, that line throws. Vendoring the file fixes it; guarding the call helps too.</li>
+<li><strong>Soundfonts are the large part.</strong> The full MusyngKite set is hundreds of MB. Download only the instruments the band, drumset and abcjs request, and make the local path <code>PRIMARY</code> in <code>soundfont.js</code> with the CDN as the fallback.</li>
+<li><strong>Plan:</strong> one script, <code>scripts/vendor-assets.mjs</code>: download the libraries into <code>apps/vendor/</code>, fonts as woff2 with a local <code>@font-face</code> CSS, the soundfont instruments in use, and the Wikimedia files (keep the <code>page</code> attribution links, since Commons licences need credit); then rewrite the references. Open question: commit the vendored files, or git-ignore them and fetch.</li>
+<li><strong>R2 audio:</strong> nothing in the repo refers to R2 yet. Use one base URL (<code>AUDIO_BASE</code>, in <code>config.js</code> or a small <code>audio-base.js</code>): the R2 public bucket or custom domain in production, a local server (e.g. <code>http://localhost:4456/audio/</code>) when running locally.
+<ul>
+<li>Keep the local mirror outside the Quarto project, or anything in it is copied into <code>_site</code>. Sync with <code>rclone sync</code> or <code>wrangler</code> (neither is installed). Serve with <code>npx http-server &lt;dir&gt; -p 4456 --cors</code>.</li>
+<li>R2 needs a CORS policy for the site’s origin (Web Audio <code>fetch</code> / <code>decodeAudioData</code>), including <code>http://localhost:4455</code>.</li>
+<li>Range requests work on both, so long files can seek.</li>
+</ul></li>
+<li><strong>Alternative:</strong> a service worker with cache-first for fonts, scripts and soundfonts. Less work than vendoring, but the first load still needs a connection.</li>
+<li><strong>Not tried:</strong> any of it. Not yet decided: whether to build the script, and committed vs ignored vendor files.</li>
+</ul>
+</section>
+<section id="also-done-in-main-another-session-2026-10-17-tap-along-and-tap-latency" class="level2">
+<h2>Also done in main (another session, 2026-10-17): Tap Along and Tap Latency</h2>
+<p>For a phone: chords and words, with bars, chord changes and sections marked against a song playing in any other app (Spotify, a CD, a band). Uncommitted. It touches no file in the swing list. In <code>_quarto.yml</code>, the Tools menu gets two lines after <code>tools/timestamp-notes.qmd</code>.</p>
+<ul>
+<li><strong>New:</strong> <code>tools/tap-along.qmd</code>, <code>tools/tap-latency.qmd</code>, <code>apps/shared/tap-along/</code> (<code>tap-along.js</code>, <code>tap-latency.js</code>, <code>tap-along.css</code>), <code>tests/lessons/tap-along.cdp.js</code> (8 checks, all pass at 390×800). A paragraph about them was added to <code>CLAUDE.md</code>.</li>
+<li><strong>Idea:</strong> the page keeps its own clock. One pass without pauses keeps the taps consistent with each other, so only one shift is needed: in Play mode, Sync (button 1) on the first tapped bar. Pause here if the other app is paused, since a pause the page isn’t told about can’t be fixed afterwards.</li>
+<li><strong>Pad:</strong> 1 Bar, 2 Chord, 3 Section. The n-th chord tap is the sheet’s n-th chord. Sheet: UG text (via <code>UgChordPro.convert</code>) or ChordPro.</li>
+<li><strong>Lag:</strong> Tap Latency uses a metronome (four to count in, twelve taps on each button in turn). It compares each tap with when its click came out (<code>getOutputTimestamp</code>) and saves the medians in localStorage <code>tap-latency-v1</code>. Tap Along takes them off each tap. Sync gets button 1’s lag, so lag the buttons share cancels.</li>
+<li><strong>Not tried:</strong> a real phone (touch feel, iOS audio, the silent switch). <strong>Not done:</strong> opening Tap Along files in Timestamp Notes (or the other way round); fixing a single chord tap other than Undo; a Note key.</li>
+</ul>
+</section>
+<section id="sampling-djing-turntables-and-a-catalogue-of-the-lessons-tools-this-session-2026-10-18" class="level2">
+<h2>Sampling, DJing, turntables, and a catalogue of the lessons’ tools (this session, 2026-10-18)</h2>
+<p>Uncommitted.</p>
+<ul>
+<li><strong>Sampling (6):</strong> <code>lessons/sampling-{what,chop,pitch,beat,flip,law}.qmd</code>, from a producer’s and a DJ’s side (loops, acapellas, edits). The law lesson says it is not legal advice.</li>
+<li><strong>DJing (7):</strong> <code>lessons/dj-{gear,beatmatch,phrasing,eq,scratch,harmonic,set}.qmd</code>, each ending with an “In other gear” table (Serato, rekordbox, Traktor). New sidebar parts “Sampling” and “DJing” after the DAWs; in the listing with topic filters; 34 sources in <code>works-cited.py</code>.</li>
+<li><strong>Widgets</strong> (<code>lessons/_dj-kit.qmd</code>, documented at their tops): <code>apps/shared/dj/turntables.js</code> (+ <code>.css</code>, <code>&lt;div class="dj-tt"&gt;</code>): two decks (worklet per deck, scratches backwards), pitch ±8/±16 with key shift, CUE, waveform, BPM + Tap, key/Camelot; mixer with gain, 3-band EQ with kills, filter, cue, faders, crossfader curve, a Listen speakers/phones switch, a Match readout. Ten demo loops are synthesised in the browser (no samples needed). <code>apps/shared/dj/sampler-pads.js</code> (<code>sp-pads</code>): 16 slices (equal, beats, hits; draggable), MPC keys / MIDI 36-51, repitch or stretch, reverse, pattern recorder with undo.</li>
+<li><strong>R2 hook (for the song library):</strong> <code>Turntables.TRACK_SOURCES</code>; point at a manifest with <code>window.DJ_CONFIG = {manifest}</code>, <code>&lt;meta name="dj-manifest"&gt;</code>, <code>data-manifest</code>, or <code>Turntables.addManifest(url)</code>. Manifest <code>{label, tracks:[{id,title,artist,bpm,key,url,   firstBeat,license}]}</code>, URLs relative to it, fetched with CORS (the bucket needs a GET rule for the site; see the R2 plan above). <code>Turntables.addSource</code> for anything else (signed URLs).</li>
+<li><strong>Tools catalogue:</strong> <code>node scripts/tool-catalog.cjs</code> writes <code>apps/shared/lessons/tool-catalog-data.js</code> (104 lessons, 80 tools); <code>lessons/tools.qmd</code> (second in the Lessons sidebar) lists them by family with a filter; <code>apps/shared/lessons/tool-links.js</code>, loaded on /lessons/ pages from <code>_includes/head.html</code>, adds a “Same tools in” box at each lesson’s foot.</li>
+<li><strong>Tests:</strong> <code>node tests/lessons/dj.cdp.js</code> passes (incl. the manifest hook against a local server). Catalogue checked headless on two pages.</li>
+<li><strong>Not done:</strong> re-render every lesson so the “Same tools in” box shows; run <code>scripts/lesson-features.cjs</code> (the new lessons’ <code>has:</code> was set by hand); check the Serato/rekordbox/Traktor menu names against the manuals (written from memory; links go to download pages).</li>
+<li><strong>Integration ideas, not built:</strong> synth-kit EQ / compressor / sidechain inside the DAW mixer lessons; the strobe tuner in the guitar, violin and sax gear lessons; blues examples opening in the Notation page; the band’s loops as turntable/pad sources.</li>
+<li><strong>Nobody has listened to:</strong> the decks, the scratch sound, the demo loops, the pads’ stretch.</li>
+</ul>
+</section>
+<section id="also-done-in-main-another-session-2026-10-18-guitar-tuning-tuning-lessons-harmonics-setup-check" class="level2">
+<h2>Also done in main (another session, 2026-10-18): guitar tuning, tuning lessons, harmonics, Setup Check</h2>
+<p>Ear-first guitar tuning, three lessons on what each tuning method gets right and wrong, a lesson on playing harmonics (written by an agent), and a guitar/bass setup diagnosis. Uncommitted. Shared files touched: <code>_quarto.yml</code> (Tools menu: two lines after <code>tools/vocal-warmup.qmd</code>; Guitar Technique: three tuning lessons first, <code>guitar-harmonics</code> after <code>guitar-bends</code>), the <code>contents:</code> of <code>lessons/index.qmd</code> (the same four), and a paragraph in <code>CLAUDE.md</code>.</p>
+<ul>
+<li><strong>New:</strong> <code>tools/guitar-tuning.qmd</code> + <code>apps/shared/guitar-tuning.js</code>; <code>tools/guitar-setup-check.qmd</code> + <code>apps/shared/setup-check.js</code>; <code>lessons/guitar-tuning-ear.qmd</code>, <code>-methods.qmd</code>, <code>-tuners.qmd</code>; <code>lessons/guitar-harmonics.qmd</code>; <code>tests/lessons/guitar-tuning.cdp.js</code> (8 checks, all pass; a sine stands in for the mic through <code>window.TEST_MIC_SOURCE</code>).</li>
+<li><strong>Tuning page:</strong> six methods, one string at a time: reference, drone (follows the string; optional fifth), fifth-fret, harmonics (B and high E come from low E’s 7th and 5th harmonics; the 4th-fret G-to-B harmonic is avoided), octaves, and the tuner with ear first. A fretboard you can click. Listening on/off (mic). With Ear first, the reading stays blurred until you guess flat, in tune or sharp, and it keeps a score. Tunings: six presets plus Custom (<code>GuitarTuning.parseTuning</code>: “D A D G A D” lands near standard; octaves can be given). localStorage <code>gtune-v1</code>.</li>
+<li><strong>Setup Check:</strong> electric, acoustic, classical, bass 4 and 5. Relief (paper / card choices or mm), a buzz map (open + four fret zones), action at 12, nut, 12th-fret harmonic against the fretted note (by ear, then the mic, median of ~1.2 s), other symptoms. Each finding is marked You / Teacher / Repair tech. Order of work: relief → action → nut → intonation. localStorage <code>setup-check-v1</code>. On bass, measuring at the 12th fret (an octave up) keeps the low strings above PitchDetect’s 70 Hz floor.</li>
+<li><strong>Harmonics lesson:</strong> the <code>series</code> widget, a clickable string that plays each node, natural / tapped / artificial / harp / pinch harmonics, notation, faults, a practice routine, and a strobe on E3.</li>
+<li><strong>Nobody has listened to:</strong> the plucks (Karplus-Strong), the harmonic tones, the drone, or the harmonics lesson’s string. Not tried with a real guitar and microphone, or on a phone.</li>
+<li><strong>To check:</strong> the relief and action targets, and the who-does-what rules, are from general setup knowledge, not a cited source. <code>has:</code> on the four lessons was written by hand (rerun <code>scripts/lesson-features.cjs</code>). In the harmonics lesson, the notation conventions aren’t sourced, and <code>technique</code> as a topic is used by only one other lesson.</li>
+<li><strong>Not done:</strong> the fifth-fret and harmonics steps are generated for any tuning, but only the standard-tuning steps were checked by hand; the mic can’t read the open low strings of a bass or a tuning below about D2 (the tuning page says so).</li>
+</ul>
 <div id="quarto-navigation-envelope" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Music Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Music Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG9tZQ==">Home</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29ucw==">Lessons</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaW5kZXguaHRtbA==">/lessons/index.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6LS0t">—</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SW1wcm92aXNpbmcgb24gYSBCbHVlczogQmx1ZXMgaW4gdGhlIENsb3NldA==">Improvising on a Blues: Blues in the Closet</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtaW1wcm92Lmh0bWw=">/lessons/blues-improv.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIFZpb2xpbiBhbmQgU2F4b3Bob25lOiBQbGF5aW5nIHRoZSBDaGFuZ2Vz">Blues for Violin and Saxophone: Playing the Changes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtbWVsb2R5Lmh0bWw=">/lessons/blues-melody.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDaGFuZ2luZyB0aGUgQ2hhbmdlcyBpbiBhIDEyLUJhciBCbHVlcw==">Lesson: Changing the Changes in a 12-Bar Blues</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtY2hhbmdlcy5odG1s">/lessons/blues-changes.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIEJhc3M6IEZyb20gUm9vdHMgdG8gYSBXYWxraW5nIExpbmU=">Blues for Bass: From Roots to a Walking Line</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtYmFzcy5odG1s">/lessons/blues-bass.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIEd1aXRhcjogRnJvbSBSb290cyB0byBTaGVsbCBDaG9yZHM=">Blues for Guitar: From Roots to Shell Chords</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtZ3VpdGFyLmh0bWw=">/lessons/blues-guitar.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIFBpYW5vOiBGcm9tIFJvb3RzIHRvIFJvb3RsZXNzIFZvaWNpbmdz">Blues for Piano: From Roots to Rootless Voicings</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtcGlhbm8uaHRtbA==">/lessons/blues-piano.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHdvIExlZnQgSGFuZHM6IFN0cmlkZSBhbmQgQm9vZ2llLVdvb2dpZQ==">Two Left Hands: Stride and Boogie-Woogie</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc3RyaWRlLWJvb2dpZS5odG1s">/lessons/stride-boogie.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Qmx1ZXMgZm9yIERydW1zOiBGcm9tIFF1YXJ0ZXIgTm90ZXMgdG8gdGhlIFNodWZmbGU=">Blues for Drums: From Quarter Notes to the Shuffle</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYmx1ZXMtZHJ1bXMuaHRtbA==">/lessons/blues-drums.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVhZGluZyBTd2luZyBmcm9tIGEgTGVhZCBTaGVldA==">Reading Swing from a Lead Sheet</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVhZGluZy1zd2luZy5odG1s">/lessons/reading-swing.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SGktSGF0IEdyb292ZXM6IEZyb20gUXVhcnRlciBOb3RlcyB0byBTaXh0ZWVudGhz">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaGloYXQtZ3Jvb3Zlcy5odG1s">/lessons/hihat-grooves.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG93IHRvIFBsYXkgQ29uZ2FzOiBGaXZlIFN0cm9rZXMgYW5kIHRoZSBUdW1iYW8=">How to Play Congas: Five Strokes and the Tumbao</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY29uZ2FzLWJhc2ljcy5odG1s">/lessons/congas-basics.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6V2F0ZXJtZWxvbiBNYW4gZm9yIENvbmdhcw==">Watermelon Man for Congas</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvd2F0ZXJtZWxvbi1jb25nYXMuaHRtbA==">/lessons/watermelon-congas.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SXMgV2F0ZXJtZWxvbiBNYW4gYSBCbHVlcz8=">Is Watermelon Man a Blues?</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvd2F0ZXJtZWxvbi1tYW4tYmx1ZXMuaHRtbA==">/lessons/watermelon-man-blues.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDaGFuZ2luZyB0aGUgQ2hhbmdlcyBpbiBDLCBBbSwgRiwgRw==">Lesson: Changing the Changes in C, Am, F, G</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcG9wLWNoYW5nZXMuaHRtbA==">/lessons/pop-changes.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UG9wIENoYW5nZXMgZm9yIEd1aXRhcjogRnJvbSBPcGVuIENob3JkcyB0byBQYXNzaW5nIENob3Jkcw==">Pop Changes for Guitar: From Open Chords to Passing Chords</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcG9wLWNoYW5nZXMtZ3VpdGFyLmh0bWw=">/lessons/pop-changes-guitar.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UG9wIENoYW5nZXMgZm9yIFBpYW5vOiBGcm9tIFRyaWFkcyB0byBQYXNzaW5nIENob3Jkcw==">Pop Changes for Piano: From Triads to Passing Chords</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcG9wLWNoYW5nZXMtcGlhbm8uaHRtbA==">/lessons/pop-changes-piano.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UG9wIENoYW5nZXMgZm9yIEJhc3M6IFJvb3RzIGFuZCB0aGUgV2Fsa2luZyBMaW5l">Pop Changes for Bass: Roots and the Walking Line</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcG9wLWNoYW5nZXMtYmFzcy5odG1s">/lessons/pop-changes-bass.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R3VpdGFyIENob3JkIFNoYXBlczogRnJvbSBQb3AgYW5kIFJvY2sgVG93YXJkIEpheno=">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2hvcmQtc2hhcGVzLWd1aXRhci5odG1s">/lessons/chord-shapes-guitar.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R3VpdGFyIENob3JkIFNoYXBlcyBieSBIYW5kOiBGcm9tIEVhc3kgdG8gSGFyZCBGaW5nZXJpbmdz">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2hvcmQtc2hhcGVzLWd1aXRhci1oYW5kLmh0bWw=">/lessons/chord-shapes-guitar-hand.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SGFtbWVyLW9ucyBhbmQgUHVsbC1vZmZzIG9uIEd1aXRhcg==">Hammer-ons and Pull-offs on Guitar</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaGFtbWVyLW9ucy1wdWxsLW9mZnMuaHRtbA==">/lessons/hammer-ons-pull-offs.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U3RyaW5nIEJlbmRzIG9uIEd1aXRhcjogQmVuZGluZyBpbiBUdW5l">String Bends on Guitar: Bending in Tune</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ3VpdGFyLWJlbmRzLmh0bWw=">/lessons/guitar-bends.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHJhdmlzIFBpY2tpbmcgb24gR3VpdGFy">Travis Picking on Guitar</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdHJhdmlzLXBpY2tpbmcuaHRtbA==">/lessons/travis-picking.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UGlhbm8gQ2hvcmQgVm9pY2luZ3M6IEZyb20gUG9wIFRyaWFkcyBUb3dhcmQgSmF6eg==">Piano Chord Voicings: From Pop Triads Toward Jazz</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2hvcmQtc2hhcGVzLXBpYW5vLmh0bWw=">/lessons/chord-shapes-piano.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UGlhbm8gVm9pY2luZ3MgYnkgSGFuZDogRnJvbSBFYXN5IHRvIEhhcmQ=">Piano Voicings by Hand: From Easy to Hard</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2hvcmQtc2hhcGVzLXBpYW5vLWhhbmQuaHRtbA==">/lessons/chord-shapes-piano-hand.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SW52ZXJzaW9uczogUm9vdCBQb3NpdGlvbiwgRmlyc3QgYW5kIFNlY29uZCBJbnZlcnNpb24=">Inversions: Root Position, First and Second Inversion</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaW52ZXJzaW9ucy5odG1s">/lessons/inversions.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UG9wIFNpbmdpbmc6IFNwZWVjaCwgTWl4LCBSdW5zIGFuZCB0aGUgTWlj">Pop Singing: Speech, Mix, Runs and the Mic</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdm9pY2UtcG9wLmh0bWw=">/lessons/voice-pop.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SmF6eiBTaW5naW5nOiBTd2luZywgU2NhdCBhbmQgdGhlIENoYW5nZXM=">Jazz Singing: Swing, Scat and the Changes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdm9pY2UtamF6ei5odG1s">/lessons/voice-jazz.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2xhc3NpY2FsIFNpbmdpbmc6IEJyZWF0aCwgUHVyZSBWb3dlbHMgYW5kIExlZ2F0bw==">Classical Singing: Breath, Pure Vowels and Legato</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdm9pY2UtY2xhc3NpY2FsLmh0bWw=">/lessons/voice-classical.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBGb3VyLUNob3JkIExvb3Bz">Lesson: Four-Chord Loops</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZm91ci1jaG9yZC1sb29wcy5odG1s">/lessons/four-chord-loops.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDYWRlbmNlcywgYW5kIHRoZSBPbmUgVGhhdCBJcyBOb3Q=">Lesson: Cadences, and the One That Is Not</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvY2FkZW5jZXMuaHRtbA==">/lessons/cadences.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBXcml0ZSBhbiBFbmRpbmc=">Lesson: Write an Ending</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvd3JpdGUtYW4tZW5kaW5nLmh0bWw=">/lessons/write-an-ending.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBHdWlkZSBUb25lcw==">Lesson: Guide Tones</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ3VpZGUtdG9uZXMuaHRtbA==">/lessons/guide-tones.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBDaGFuZ2VzIGluIGEgTWlub3IgS2V5">Lesson: Changes in a Minor Key</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvbWlub3ItY2hhbmdlcy5odG1s">/lessons/minor-changes.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBCb3Jyb3dlZCBDaG9yZHM=">Lesson: Borrowed Chords</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYm9ycm93ZWQtY2hvcmRzLmh0bWw=">/lessons/borrowed-chords.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBUdXJuYXJvdW5kcyBhbmQgUmh5dGhtIENoYW5nZXM=">Lesson: Turnarounds and Rhythm Changes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdHVybmFyb3VuZHMuaHRtbA==">/lessons/turnarounds.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29uOiBSZWhhcm1vbml6aW5nIGEgTWVsb2R5">Lesson: Reharmonizing a Melody</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVoYXJtb25pemUuaHRtbA==">/lessons/reharmonize.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QXJyYW5naW5nIDE6IFdobyBQbGF5cyBXaGF0IGluIGEgQmFuZA==">Arranging 1: Who Plays What in a Band</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYXJyYW5nZS1iYW5kLmh0bWw=">/lessons/arrange-band.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QXJyYW5naW5nIDI6IEJhc3MgYW5kIERydW1z">Arranging 2: Bass and Drums</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYXJyYW5nZS1iYXNzLWRydW1zLmh0bWw=">/lessons/arrange-bass-drums.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QXJyYW5naW5nIDM6IEd1aXRhciBhbmQgS2V5Ym9hcmRz">Arranging 3: Guitar and Keyboards</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYXJyYW5nZS1jaG9yZHMuaHRtbA==">/lessons/arrange-chords.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QXJyYW5naW5nIDQ6IFRoZSBPcmdhbg==">Arranging 4: The Organ</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvYXJyYW5nZS1vcmdhbi5odG1s">/lessons/arrange-organ.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QWNjb21wYW5pbWVudCBQYXR0ZXJucw==">Accompaniment Patterns</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcGF0dGVybnMvaW5kZXguaHRtbA==">/lessons/patterns/index.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6V3JpdGluZyBNdXNpYyBEb3duOiBDaG9vc2luZyB0aGUgUmlnaHQgTm90YXRpb24=">Writing Music Down: Choosing the Right Notation</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvbm90YXRpb24tY2hvaWNlcy5odG1s">/lessons/notation-choices.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuaW5nIFN5c3RlbXM6IEp1c3QgSW50b25hdGlvbiBhbmQgRXF1YWwgVGVtcGVyYW1lbnQ=">Tuning Systems: Just Intonation and Equal Temperament</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdHVuaW5nLXN5c3RlbXMuaHRtbA==">/lessons/tuning-systems.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG93IGEgU3Ryb2JlIFR1bmVyIFdvcmtz">How a Strobe Tuner Works</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc3Ryb2JlLXR1bmVyLmh0bWw=">/lessons/strobe-tuner.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6T3V0LW9mLVR1bmUgT3ZlcnRvbmVzOiBTdHJpbmdzLCBXaW5kcywgVm9pY2UsIEJhcnMsIEJlbGxzIGFuZCBEcnVtcw==">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaW5oYXJtb25pY2l0eS5odG1s">/lessons/inharmonicity.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Rm9ybWFudHM6IFdoYXQgTWFrZXMgYSBWb3dlbA==">Formants: What Makes a Vowel</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdm93ZWwtZm9ybWFudHMuaHRtbA==">/lessons/vowel-formants.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTogVGhlIEhhcm1vbmljIFNlcmllcyBhbmQgRm91cmllcg==">Sound 1: The Harmonic Series and Fourier</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtaGFybW9uaWNzLmh0bWw=">/lessons/sound-harmonics.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjogT3NjaWxsYXRvcnMgYW5kIFB1bHNlLVdpZHRoIE1vZHVsYXRpb24=">Sound 2: Oscillators and Pulse-Width Modulation</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtd2F2ZWZvcm1zLmh0bWw=">/lessons/sound-waveforms.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMzogTm9pc2U=">Sound 3: Noise</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtbm9pc2UuaHRtbA==">/lessons/sound-noise.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNDogRmlsdGVycw==">Sound 4: Filters</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZmlsdGVyLmh0bWw=">/lessons/sound-filter.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNTogRW52ZWxvcGVz">Sound 5: Envelopes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZW52ZWxvcGVzLmh0bWw=">/lessons/sound-envelopes.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNjogTEZPcw==">Sound 6: LFOs</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtbGZvLmh0bWw=">/lessons/sound-lfo.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgNzogU3VidHJhY3RpdmUgU3ludGhlc2lz">Sound 7: Subtractive Synthesis</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtc3VidHJhY3RpdmUuaHRtbA==">/lessons/sound-subtractive.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgODogRk0gU3ludGhlc2lz">Sound 8: FM Synthesis</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZm0uaHRtbA==">/lessons/sound-fm.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgOTogV2F2ZXRhYmxlIFN5bnRoZXNpcw==">Sound 9: Wavetable Synthesis</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtd2F2ZXRhYmxlLmh0bWw=">/lessons/sound-wavetable.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTA6IEdyYW51bGFyIFN5bnRoZXNpcw==">Sound 10: Granular Synthesis</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZ3JhbnVsYXIuaHRtbA==">/lessons/sound-granular.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTE6IFRoZSBFcXVhbGlzZXI=">Sound 11: The Equaliser</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZXEuaHRtbA==">/lessons/sound-eq.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTI6IERpc3RvcnRpb24=">Sound 12: Distortion</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZGlzdG9ydGlvbi5odG1s">/lessons/sound-distortion.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTM6IFRoZSBDb21wcmVzc29y">Sound 13: The Compressor</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtY29tcHJlc3Nvci5odG1s">/lessons/sound-compressor.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTQ6IFNpZGVjaGFpbg==">Sound 14: Sidechain</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtc2lkZWNoYWluLmh0bWw=">/lessons/sound-sidechain.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTU6IEdhdGVzIGFuZCBUcmFuc2llbnRz">Sound 15: Gates and Transients</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZ2F0ZS5odG1s">/lessons/sound-gate.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTY6IFJldmVyYg==">Sound 16: Reverb</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtcmV2ZXJiLmh0bWw=">/lessons/sound-reverb.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTc6IERlbGF5">Sound 17: Delay</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtZGVsYXkuaHRtbA==">/lessons/sound-delay.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTg6IENob3J1cyBhbmQgRmxhbmdlcg==">Sound 18: Chorus and Flanger</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtY2hvcnVzLmh0bWw=">/lessons/sound-chorus.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMTk6IFBoYXNlcg==">Sound 19: Phaser</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtcGhhc2VyLmh0bWw=">/lessons/sound-phaser.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjA6IFRyZW1vbG8gYW5kIHRoZSBSb3RhcnkgU3BlYWtlcg==">Sound 20: Tremolo and the Rotary Speaker</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtdHJlbW9sby5odG1s">/lessons/sound-tremolo.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjE6IFBpdGNoIEVmZmVjdHM=">Sound 21: Pitch Effects</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtcGl0Y2guaHRtbA==">/lessons/sound-pitch.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjI6IFRoZSBWb2NvZGVy">Sound 22: The Vocoder</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtdm9jb2Rlci5odG1s">/lessons/sound-vocoder.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjM6IFN0ZXJlbw==">Sound 23: Stereo</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtc3RlcmVvLmh0bWw=">/lessons/sound-stereo.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U291bmQgMjQ6IFRoZSBTaWduYWwgQ2hhaW4=">Sound 24: The Signal Chain</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc291bmQtY2hhaW4uaHRtbA==">/lessons/sound-chain.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDE6IEdhaW4gU3RhZ2luZw==">Recording 1: Gain Staging</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLWdhaW4tc3RhZ2luZy5odG1s">/lessons/rec-gain-staging.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDI6IE1pY3JvcGhvbmVzIGFuZCBQaGFudG9tIFBvd2Vy">Recording 2: Microphones and Phantom Power</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1pY3MuaHRtbA==">/lessons/rec-mics.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDM6IERpc3RhbmNlLCBCbGVlZCBhbmQgUGhhc2U=">Recording 3: Distance, Bleed and Phase</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLXBsYWNlbWVudC5odG1s">/lessons/rec-placement.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDQ6IE1vbml0b3JpbmcgYW5kIEhlYWRwaG9uZXM=">Recording 4: Monitoring and Headphones</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1vbml0b3JpbmcuaHRtbA==">/lessons/rec-monitoring.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDU6IE1peGluZw==">Recording 5: Mixing</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1peGluZy5odG1s">/lessons/rec-mixing.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDY6IE1hc3RlcmluZw==">Recording 6: Mastering</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLW1hc3RlcmluZy5odG1s">/lessons/rec-mastering.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVjb3JkaW5nIDc6IE1vbm8gYW5kIFN0ZXJlbw==">Recording 7: Mono and Stereo</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvcmVjLXN0ZXJlby5odG1s">/lessons/rec-stereo.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciAxOiBQb3dlciBhbmQgU2FmZXR5">Gear 1: Power and Safety</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1wb3dlci5odG1s">/lessons/gear-power.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciAyOiBDYWJsZXMgYW5kIENvbm5lY3RvcnM=">Gear 2: Cables and Connectors</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1jYWJsZXMuaHRtbA==">/lessons/gear-cables.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciAzOiBBbXBzLCBTcGVha2VycyBhbmQgdGhlIFBB">Gear 3: Amps, Speakers and the PA</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1hbXBzLmh0bWw=">/lessons/gear-amps.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA0OiBLZXlib2FyZHM=">Gear 4: Keyboards</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1rZXlib2FyZHMuaHRtbA==">/lessons/gear-keyboards.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA1OiBTZXR0aW5nIFVwLCBQYWNraW5nIERvd24gYW5kIFlvdXIgRWFycw==">Gear 5: Setting Up, Packing Down and Your Ears</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1zZXR1cC5odG1s">/lessons/gear-setup.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA2OiBHdWl0YXIgYW5kIEJhc3MgQ2FyZQ==">Gear 6: Guitar and Bass Care</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1ndWl0YXIuaHRtbA==">/lessons/gear-guitar.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA3OiBWaW9saW4gQ2FyZSBmb3IgQmVnaW5uZXJz">Gear 7: Violin Care for Beginners</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci12aW9saW4uaHRtbA==">/lessons/gear-violin.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA4OiBTYXhvcGhvbmUgQ2FyZSBmb3IgQmVnaW5uZXJz">Gear 8: Saxophone Care for Beginners</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1zYXguaHRtbA==">/lessons/gear-sax.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R2VhciA5OiBEcnVtIEtpdCBTZXR1cCBhbmQgQ2FyZQ==">Gear 9: Drum Kit Setup and Care</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvZ2Vhci1kcnVtcy5odG1s">/lessons/gear-drums.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TWFwcGluZyBhIFJlY29yZGluZyB3aXRoIHRoZSBUaW1lc3RhbXAgTm90ZXM=">Mapping a Recording with the Timestamp Notes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvdGltZXN0YW1wLXBsYXllci5odG1s">/lessons/timestamp-player.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2VjdGlvbiBMYWJlbHM6IE5hbWluZyB0aGUgUGFydHMgb2YgYSBTb25n">Section Labels: Naming the Parts of a Song</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvc2VjdGlvbi1sYWJlbHMuaHRtbA==">/lessons/section-labels.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UHJhY3RpY2U=">Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2Vzc2lvbg==">Session</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3Nlc3Npb24uaHRtbA==">/practice/session.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Umh5dGhtIFNlcXVlbmNlcw==">Rhythm Sequences</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JoeXRobS1zZXF1ZW5jZXMuaHRtbA==">/practice/rhythm-sequences.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9uYWwgU2VxdWVuY2Vz">Tonal Sequences</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3RvbmFsLXNlcXVlbmNlcy5odG1s">/practice/tonal-sequences.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U29uZyBCdWlsZGVy">Song Builder</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3NvbmdzLmh0bWw=">/practice/songs.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U29uZyBCdWlsZGVyIChDbGFzc2ljKQ==">Song Builder (Classic)</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3NvbmdzLWNsYXNzaWMuaHRtbA==">/practice/songs-classic.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuZXM=">Tunes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3R1bmVzLmh0bWw=">/practice/tunes.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9uYWwgUGF0dGVybnM=">Tonal Patterns</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3BhdHRlcm5zLmh0bWw=">/practice/patterns.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Umh5dGhtIFBhdHRlcm5z">Rhythm Patterns</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JoeXRobXMuaHRtbA==">/practice/rhythms.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVhZGluZyBCZW5jaG1hcmtz">Reading Benchmarks</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JlYWRpbmctYmVuY2htYXJrcy5odG1s">/practice/reading-benchmarks.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RGljdGF0aW9u">Dictation</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2RpY3RhdGlvbi5odG1s">/practice/dictation.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFByYWN0aWNl">LSA Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1wcmFjdGljZS5odG1s">/practice/lsa-practice.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFByYWN0aWNlIChOb3RhdGVkKQ==">LSA Practice (Notated)</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1wcmFjdGljZS1ub3RhdGVkLmh0bWw=">/practice/lsa-practice-notated.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFJoeXRobSBBc3Nlc3NtZW50">LSA Rhythm Assessment</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1yaHl0aG0tYXNzZXNzbWVudC5odG1s">/practice/lsa-rhythm-assessment.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuZSBBc3Nlc3NtZW50">Tune Assessment</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2Fzc2Vzc21lbnQtdHVuZS5odG1s">/practice/assessment-tune.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9uYWwgQWNjdXJhY3k=">Tonal Accuracy</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2Fzc2Vzc21lbnQuaHRtbA==">/practice/assessment.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Umh5dGhtaWMgQWNjdXJhY3k=">Rhythmic Accuracy</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2Fzc2Vzc21lbnQtcmh5dGhtLmh0bWw=">/practice/assessment-rhythm.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9vbHM=">Tools</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2NhbGVz">Scales</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3NjYWxlcy5odG1s">/tools/scales.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2lyY2xlIG9mIEZpZnRocw==">Circle of Fifths</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2NpcmNsZS1vZi1maWZ0aHMuaHRtbA==">/tools/circle-of-fifths.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmRzIGFuZCBTb2xmw6hnZQ==">Chords and Solfège</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3Jkcy1zb2xmZWdlLmh0bWw=">/tools/chords-solfege.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgTGlicmFyeQ==">Chord Library</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLWxpYnJhcnkuaHRtbA==">/tools/chord-library.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgU2hlZXQ=">Chord Sheet</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLXNoZWV0Lmh0bWw=">/tools/chord-sheet.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgU2hlZXQg4oCUIFN0YWdlIEVkaXRpb24=">Chord Sheet — Stage Edition</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLXNoZWV0LWRlbHV4ZS5odG1s">/tools/chord-sheet-deluxe.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RHJ1bXNldA==">Drumset</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2RydW1zZXQuaHRtbA==">/tools/drumset.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QWNjb21wYW5pbWVudCBTdHlsZXM=">Accompaniment Styles</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2FjY29tcC1zdHlsZXMuaHRtbA==">/tools/accomp-styles.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U3R5bGUgTm90ZXM=">Style Notes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3N0eWxlcy9pbmRleC5odG1s">/styles/index.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QmFja2luZyBUcmFjaw==">Backing Track</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2JhY2tpbmctdHJhY2suaHRtbA==">/tools/backing-track.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgRW50cnk=">Chord Entry</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLWVudHJ5Lmh0bWw=">/tools/chord-entry.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Tm90YXRpb24=">Notation</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL25vdGF0aW9uLmh0bWw=">/tools/notation.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Tm90YXRpb24gUnVsZXM=">Notation Rules</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL25vdGF0aW9uLXJ1bGVzLmh0bWw=">/tools/notation-rules.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SVBBIENoYXJ0IGZvciBTaW5nZXJz">IPA Chart for Singers</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2lwYS1jaGFydC5odG1s">/tools/ipa-chart.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Vm9jYWwgV2FybS11cA==">Vocal Warm-up</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3ZvY2FsLXdhcm11cC5odG1s">/tools/vocal-warmup.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGltZXN0YW1wIE5vdGVz">Timestamp Notes</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3RpbWVzdGFtcC1ub3Rlcy5odG1s">/tools/timestamp-notes.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hlcg==">Teacher</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2Vzc2lvbiBCdWlsZGVy">Session Builder</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvc2Vzc2lvbi1idWlsZGVyLmh0bWw=">/teacher/session-builder.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hlciBSZXBvcnQ=">Teacher Report</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvcmVwb3J0Lmh0bWw=">/teacher/report.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIERpcmVjdG9yeQ==">LSA Directory</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWRpcmVjdG9yeS5odG1s">/teacher/lsa-directory.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIEluc3RydWN0aW9ucw==">LSA Instructions</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWluc3RydWN0aW9ucy5odG1s">/teacher/lsa-instructions.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RXZhbHVhdGlvbiBDaGFydA==">Evaluation Chart</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWNoYXJ0Lmh0bWw=">/teacher/lsa-chart.html</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIERhdGEgQW5hbHlzaXM=">LSA Data Analysis</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWFuYWx5c2lzLmh0bWw=">/teacher/lsa-analysis.html</span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Music Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Music Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG9tZQ==">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TGVzc29ucw==">Lessons</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2xlc3NvbnMvaW5kZXguaHRtbA==">/lessons/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UHJhY3RpY2U=">Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2Vzc2lvbg==">Session</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3Nlc3Npb24uaHRtbA==">/practice/session.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6LS0t">—</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Umh5dGhtIFNlcXVlbmNlcw==">Rhythm Sequences</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JoeXRobS1zZXF1ZW5jZXMuaHRtbA==">/practice/rhythm-sequences.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9uYWwgU2VxdWVuY2Vz">Tonal Sequences</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3RvbmFsLXNlcXVlbmNlcy5odG1s">/practice/tonal-sequences.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U29uZyBCdWlsZGVy">Song Builder</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3NvbmdzLmh0bWw=">/practice/songs.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U29uZyBCdWlsZGVyIChDbGFzc2ljKQ==">Song Builder (Classic)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3NvbmdzLWNsYXNzaWMuaHRtbA==">/practice/songs-classic.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuZXM=">Tunes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3R1bmVzLmh0bWw=">/practice/tunes.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9uYWwgUGF0dGVybnM=">Tonal Patterns</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3BhdHRlcm5zLmh0bWw=">/practice/patterns.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Umh5dGhtIFBhdHRlcm5z">Rhythm Patterns</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JoeXRobXMuaHRtbA==">/practice/rhythms.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVhZGluZyBCZW5jaG1hcmtz">Reading Benchmarks</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL3JlYWRpbmctYmVuY2htYXJrcy5odG1s">/practice/reading-benchmarks.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RGljdGF0aW9u">Dictation</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2RpY3RhdGlvbi5odG1s">/practice/dictation.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFByYWN0aWNl">LSA Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1wcmFjdGljZS5odG1s">/practice/lsa-practice.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFByYWN0aWNlIChOb3RhdGVkKQ==">LSA Practice (Notated)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1wcmFjdGljZS1ub3RhdGVkLmh0bWw=">/practice/lsa-practice-notated.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIFJoeXRobSBBc3Nlc3NtZW50">LSA Rhythm Assessment</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2xzYS1yaHl0aG0tYXNzZXNzbWVudC5odG1s">/practice/lsa-rhythm-assessment.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuZSBBc3Nlc3NtZW50">Tune Assessment</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2Fzc2Vzc21lbnQtdHVuZS5odG1s">/practice/assessment-tune.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9uYWwgQWNjdXJhY3k=">Tonal Accuracy</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2Fzc2Vzc21lbnQuaHRtbA==">/practice/assessment.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Umh5dGhtaWMgQWNjdXJhY3k=">Rhythmic Accuracy</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3ByYWN0aWNlL2Fzc2Vzc21lbnQtcmh5dGhtLmh0bWw=">/practice/assessment-rhythm.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VG9vbHM=">Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2NhbGVz">Scales</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3NjYWxlcy5odG1s">/tools/scales.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2lyY2xlIG9mIEZpZnRocw==">Circle of Fifths</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2NpcmNsZS1vZi1maWZ0aHMuaHRtbA==">/tools/circle-of-fifths.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmRzIGFuZCBTb2xmw6hnZQ==">Chords and Solfège</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3Jkcy1zb2xmZWdlLmh0bWw=">/tools/chords-solfege.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgTGlicmFyeQ==">Chord Library</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLWxpYnJhcnkuaHRtbA==">/tools/chord-library.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgU2hlZXQ=">Chord Sheet</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLXNoZWV0Lmh0bWw=">/tools/chord-sheet.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgU2hlZXQg4oCUIFN0YWdlIEVkaXRpb24=">Chord Sheet — Stage Edition</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLXNoZWV0LWRlbHV4ZS5odG1s">/tools/chord-sheet-deluxe.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RHJ1bXNldA==">Drumset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2RydW1zZXQuaHRtbA==">/tools/drumset.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QWNjb21wYW5pbWVudCBTdHlsZXM=">Accompaniment Styles</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2FjY29tcC1zdHlsZXMuaHRtbA==">/tools/accomp-styles.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U3R5bGUgTm90ZXM=">Style Notes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3N0eWxlcy9pbmRleC5odG1s">/styles/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QmFja2luZyBUcmFjaw==">Backing Track</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2JhY2tpbmctdHJhY2suaHRtbA==">/tools/backing-track.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Q2hvcmQgRW50cnk=">Chord Entry</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2Nob3JkLWVudHJ5Lmh0bWw=">/tools/chord-entry.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Tm90YXRpb24=">Notation</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL25vdGF0aW9uLmh0bWw=">/tools/notation.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Tm90YXRpb24gUnVsZXM=">Notation Rules</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL25vdGF0aW9uLXJ1bGVzLmh0bWw=">/tools/notation-rules.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SVBBIENoYXJ0IGZvciBTaW5nZXJz">IPA Chart for Singers</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2lwYS1jaGFydC5odG1s">/tools/ipa-chart.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6Vm9jYWwgV2FybS11cA==">Vocal Warm-up</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3ZvY2FsLXdhcm11cC5odG1s">/tools/vocal-warmup.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VHVuZSBZb3VyIEd1aXRhciBieSBFYXI=">Tune Your Guitar by Ear</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2d1aXRhci10dW5pbmcuaHRtbA==">/tools/guitar-tuning.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6R3VpdGFyIGFuZCBCYXNzIFNldHVwIENoZWNr">Guitar and Bass Setup Check</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL2d1aXRhci1zZXR1cC1jaGVjay5odG1s">/tools/guitar-setup-check.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGltZXN0YW1wIE5vdGVz">Timestamp Notes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3RpbWVzdGFtcC1ub3Rlcy5odG1s">/tools/timestamp-notes.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGFwIEFsb25n">Tap Along</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3RhcC1hbG9uZy5odG1s">/tools/tap-along.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGFwIExhdGVuY3k=">Tap Latency</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3Rvb2xzL3RhcC1sYXRlbmN5Lmh0bWw=">/tools/tap-latency.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hlcg==">Teacher</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6U2Vzc2lvbiBCdWlsZGVy">Session Builder</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvc2Vzc2lvbi1idWlsZGVyLmh0bWw=">/teacher/session-builder.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6VGVhY2hlciBSZXBvcnQ=">Teacher Report</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvcmVwb3J0Lmh0bWw=">/teacher/report.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIERpcmVjdG9yeQ==">LSA Directory</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWRpcmVjdG9yeS5odG1s">/teacher/lsa-directory.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIEluc3RydWN0aW9ucw==">LSA Instructions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWluc3RydWN0aW9ucy5odG1s">/teacher/lsa-instructions.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RXZhbHVhdGlvbiBDaGFydA==">Evaluation Chart</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWNoYXJ0Lmh0bWw=">/teacher/lsa-chart.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6TFNBIERhdGEgQW5hbHlzaXM=">LSA Data Analysis</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L3RlYWNoZXIvbHNhLWFuYWx5c2lzLmh0bWw=">/teacher/lsa-analysis.html</span></p>
 </div>
 <div id="quarto-meta-markdown" class="hidden">
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Music Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Music Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Music Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Music Practice</span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span></p>
-<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Music Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Music Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Music Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGFzaXRlbmFtZQ==">Music Practice</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
 </div>
 </section>
 </section>
@@ -2516,14 +2002,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -2870,4 +2355,4 @@ document.addEventListener('DOMContentLoaded', async function () {
 </body>
 
 </html>
-</style></p></section></section></main></div></body></html>
+</style></section></section></main></div></body></html>

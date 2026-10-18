@@ -2,6 +2,10 @@
 title: "Sound 6: LFOs"
 toc: true
 toc-depth: 2
+description: "Vibrato, tremolo, wah and auto-pan from one slow oscillator, and what happens when it speeds up."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 An **LFO**, or **low-frequency oscillator**, is an oscillator too slow to hear as a pitch,

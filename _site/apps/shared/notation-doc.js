@@ -7,7 +7,9 @@
 //   voices      one or more; voice 0 carries the chords and the words. together: all voices on one staff (stems up / down),
 //               else a staff each.
 // A chunk: { name, rhythm, pitches, parts, chords, chordLen, words, meter, key }
-//   rhythm   voice 0's slots in quarter notes: [{ type: "note" | "rest" | "space", durQ }] ("space" is an invisible rest).
+//   rhythm   voice 0's slots in quarter notes: [{ type: "note" | "rest" | "space", durQ, tie? }] ("space" is an invisible rest;
+//            tie: tied to the next note, which carries the same pitch).
+//   breaks   (a chunk of pitches only) pitch indices a double barline is drawn before: a way to group them, not real bars.
 //   pitches  voice 0's MIDI numbers in order, no durations. Pitch k goes in note slot k. null keeps a slot empty. Note slots with
 //            no pitch are written with a slash notehead (!style=rhythm!); pitches past the last slot wait for a rhythm and are
 //            written on their own staff (pendingAbc).
@@ -21,6 +23,8 @@
 //   takes    [{ voice, log, from, bars, sig, lb }]: takes played in (ChordEntry take logs), kept for DWIM; `from` is the chunk bar where
 //            the take's bar 1 sits, sig[b] what the take wrote in its bar b (barSig), lb the bar of the log that is the take's bar 1 (0;
 //            1 in the chunk after a pickup: the log's bar 0 is the pickup, kept by the Pickup chunk with lb 0 and bars 1). See apps/shared/NOTATION-DWIM.md.
+//   lead     quarters before the chunk's first barline (its pickup). Every chunk starts on beat 1 of a bar, or (with a lead) that far
+//            before a barline, whatever the chunk before ends on; the gap is filled with rest (offsets(doc); Join writes the rest in).
 //   pickup   (first chunk only) the chunk is a pickup bar (anacrusis): it is as long as it is, and the bar after it starts the first
 //            full bar. Written as a short first bar; read back from ABC when the first chunk is labelled "Pickup" and is shorter than a bar.
 //   band, sectionBand  Backing Track settings for this chunk, and (on a heading chunk) for its section. See tools/_notation.qmd.
@@ -29,7 +33,7 @@
 //
 //   NotationDoc.create() / newChunk(name) / part(chunk, v) / chunkLen(doc, ci) / at(doc, ci) -> { meter, key }
 //   NotationDoc.toAbc(doc)       -> { abc, map: [{ start, end, chunk, voice, slot, filled }] } (one entry per written note or rest)
-//   NotationDoc.pendingAbc(doc)  -> { abc, map: [{ start, end, chunk, voice, pitch }] } or null when nothing waits
+//   NotationDoc.pendingAbc(doc, { noNames })  -> { abc, map: [{ start, end, chunk, voice, pitch }] } or null when nothing waits
 //   NotationDoc.fromAbc(abc)     -> a doc read back: chunks start at "^Name" labels and at inline [M:] / [K:] fields; voices from
 //                                   [V:x] lines and %%score; chords from "G7" symbols, words from w: lines under the first voice
 //   NotationDoc.toChordPro(doc) / fromChordPro(text, meter) -> ChordPro out (words with [chords]) / in (a chord per bar, or the bars
@@ -38,7 +42,10 @@
 //   NotationDoc.chunkLabels(doc)  -> each chunk in a section named for it: I1a, V1a, PC1a PC1b, C1a, V2a ... (sectionAbbr(name))
 //   NotationDoc.info(doc, ci)    -> { bars, chords, rhythm, pitches, words, meter, key, meterChange, keyChange }
 //   NotationDoc.hasChanges(doc)
-//   NotationDoc.split(doc, ci, bar) / merge(doc, ci) -> an error message or null; duplicate / move / remove
+//   NotationDoc.split(doc, ci, bar) / merge(doc, ci) (joins the next chunk on; rests fill out a shorter voice) -> an error message
+//                                   or null; duplicate / move / remove
+//   NotationDoc.combine(doc, ci, v) -> error or null: voice v of the next chunk folded into this one: rhythm only + pitches only
+//                                   become one; two of the same length with both become two voices on one staff
 //   NotationDoc.barNotes(doc, ci, v, bar) / prevBar(doc, ci, bar) / writeLeadIn(doc, ci, v, bar, lead, { prefer }) -> a phrase's
 //                                   lead-in (pickup) written into the bar(s) before it, stitched with what is there (phrase-seam.js)
 //   NotationDoc.parseChords(text, barQ) -> { chords, chordLen } from "G | C D | Em"; chordsText(chunk, barQ) the other way
@@ -55,7 +62,7 @@
   const EPS = 1e-6;
   const r3 = x => Math.round(x * 1000) / 1000;
 
-  function newChunk(name) { return { name: name || "", rhythm: [], pitches: [], parts: [], chords: [], chordLen: 0, words: "", meter: null, key: null, heading: null, folded: false, hidden: false, takes: [], pickup: false }; }
+  function newChunk(name) { return { name: name || "", rhythm: [], pitches: [], parts: [], chords: [], chordLen: 0, words: "", meter: null, key: null, heading: null, folded: false, hidden: false, takes: [], pickup: false, lead: 0 }; }
   function create() {
     return { title: "", meter: null, key: null, keyConfirmed: false, voices: [{ name: "1", clef: "treble" }], together: true, chunks: [newChunk("Chunk 1")] };
   }
@@ -75,7 +82,13 @@
     return { n, d, barQ: n * 4 / d, family };
   }
 
-  const keyName = k => k || "C";
+  // keys: an ABC key (tonic + mode: "", m, dor, phr, lyd, mix, loc), or "hm" for harmonic minor (written as the minor key)
+  const keyName = k => (k || "C").replace(/hm$/, "m");
+  // the major key with the same signature (for chord spelling that only knows major and minor)
+  function majorOf(key) {
+    const acc = Core.keyAccidentals(keyName(key)), n = Object.values(acc).reduce((s, v) => s + v, 0);
+    return n >= 0 ? ["C", "G", "D", "A", "E", "B", "F#", "C#"][n] : ["C", "F", "Bb", "Eb", "Ab", "Db", "Gb", "Cb"][-n];
+  }
   function sig(key) { return Core.keyAccidentals(keyName(key)); }
   function sharpish(key) { const s = sig(key); return !Object.values(s).some(v => v < 0); }
   function scalePcs(key) { const s = sig(key); return LETTERS.map(l => (SEMI[l] + (s[l] || 0) + 12) % 12); }
@@ -89,13 +102,32 @@
   }
   const voiceCount = doc => (doc.voices || [1]).length;
   function at(doc, ci) {
-    let meter = doc.meter, key = doc.key;
+    let meter = doc.meter, key = doc.key, tempo = doc.tempo || null;
     for (let i = 0; i <= ci && i < doc.chunks.length; i++) {
       if (doc.chunks[i].meter) meter = doc.chunks[i].meter;
       if (doc.chunks[i].key) key = doc.chunks[i].key;
+      if (doc.chunks[i].tempo) tempo = doc.chunks[i].tempo;
     }
-    return { meter, key };
+    return { meter, key, tempo };
   }
+  // where each chunk starts inside its bar, in quarters: where the one before ended, or (a chunk with a lead) a lead before a barline
+  function offsets(doc) {
+    const out = [];
+    let pos = 0, meter;
+    doc.chunks.forEach((c, ci) => {
+      const a = at(doc, ci), mi = meterInfo(a.meter), len = chunkLen(doc, ci);
+      if (a.meter !== meter) pos = 0;
+      meter = a.meter;
+      if (!mi) { out.push(0); return; }
+      let start = 0;
+      if (ci === 0 && c.pickup && len < mi.barQ - EPS) start = r3(mi.barQ - len);
+      if (c.lead > EPS && c.lead < mi.barQ - EPS) start = r3(mi.barQ - c.lead);
+      out.push(start);
+      pos = r3((start + len) % mi.barQ);
+    });
+    return out;
+  }
+  const DEFAULT_TEMPO = 90;   // when no tempo is set (abcjs's own default is 180)
   const noteSlots = p => p.rhythm.filter(r => r.type === "note").length;
   const lengthQ = p => p.rhythm.reduce((s, r) => s + r.durQ, 0);
   function chunkLen(doc, ci) {
@@ -134,8 +166,17 @@
   function syllables(text) {
     if (!text || !text.trim()) return [];
     if (splitter) return splitter(text);
+    // as in ABC's w: lines: "-" between syllables, "_" holds the syllable before over one more note, "*" skips a note
     const out = [];
-    text.trim().split(/\s+/).forEach(w => { const ps = w.split("-").filter(Boolean); ps.forEach((s, i) => out.push({ s, join: i < ps.length - 1 })); });
+    text.trim().split(/\s+/).forEach(w => {
+      (w.match(/_|\*|-|[^_*-]+/g) || []).forEach(t => {
+        const last = out[out.length - 1];
+        if (t === "-") { if (last && !last.hold && !last.skip) last.join = true; }
+        else if (t === "_") out.push({ s: "_", join: false, hold: true });
+        else if (t === "*") out.push({ s: "*", join: false, skip: true });
+        else out.push({ s: t, join: false });
+      });
+    });
     return out;
   }
   const sylText = list => list.map(x => x.s + (x.join ? "-" : " ")).join("").trim();
@@ -213,6 +254,15 @@
       const mi = meterInfo(at(doc, ci).meter), cb = mi ? cut / mi.barQ : 0, whole = Math.abs(cb - Math.round(cb)) < EPS;
       a.takes = copy(ch.takes || []);
       b.takes = whole ? copy(ch.takes || []).map(t => Object.assign(t, { from: t.from - Math.round(cb) })).filter(t => t.from + t.bars > 0) : [];
+      // the first part keeps where it starts (pickup, lead), tempo and line breaks; a cut inside a bar makes the second part
+      // start with a lead up to the next barline, so the barlines stay where they were
+      a.pickup = !!ch.pickup; a.lead = ch.lead || 0; if (ch.tempo) a.tempo = ch.tempo; if (ch.off) { a.off = true; b.off = true; }
+      if (mi) {
+        const off = offsets(doc)[ci] || 0;
+        let bl = null; for (let k = 1; k < 100000; k++) { const q = k * mi.barQ - off; if (q > cut - EPS) { bl = q; break; } }
+        b.lead = bl != null && bl - cut > EPS ? r3(bl - cut) : 0;
+      }
+      if (ch.nl) { a.nl = ch.nl.filter(q => q < cut - EPS); b.nl = ch.nl.filter(q => q > cut + EPS).map(q => r3(q - cut)); if (!a.nl.length) delete a.nl; if (!b.nl.length) delete b.nl; }
     }
     doc.chunks.splice(ci, 1, a, b);
     return null;
@@ -224,7 +274,10 @@
     if (b.meter && b.meter !== at(doc, ci).meter) return "The next chunk changes the meter, so they can't be one chunk.";
     if (b.key && b.key !== at(doc, ci).key) return "The next chunk changes the key, so they can't be one chunk.";
     if (b.heading) return "The next chunk starts the section " + b.heading + ". Take its heading away first to merge them.";
-    const lenA = chunkLen(doc, ci);
+    const lenA0 = chunkLen(doc, ci), mi0 = meterInfo(at(doc, ci).meter), offs = offsets(doc);
+    // meter-aware: rest from where this chunk ends to where the next one starts in its bar (its lead)
+    const restQ = mi0 ? r3(((offs[ci + 1] - (offs[ci] + lenA0)) % mi0.barQ + mi0.barQ) % mi0.barQ) : 0;
+    const lenA = r3(lenA0 + restQ);
     for (let v = 0; v < voiceCount(doc); v++) {
       const pa = part(a, v);
       if (pa.rhythm.length && pa.pitches.length > noteSlots(pa)) return "This chunk has notes waiting for a rhythm. Give them one, or take them away, first.";
@@ -232,7 +285,10 @@
     for (let v = 0; v < voiceCount(doc); v++) {
       const pa = part(a, v), pb = part(b, v), slots = noteSlots(pa);
       const gap = r3(lenA - lengthQ(pa));
-      if (gap > EPS && (pb.rhythm.length || pb.pitches.length)) pa.rhythm.push({ type: "space", durQ: gap });
+      if (gap > EPS && (pb.rhythm.length || pb.pitches.length)) {
+        if (restQ > EPS && gap - restQ > EPS) pa.rhythm.push({ type: "rest", durQ: r3(gap - restQ) });   // this voice to the chunk's end, then the rest
+        pa.rhythm.push({ type: "rest", durQ: gap - restQ > EPS && restQ > EPS ? restQ : gap });
+      }
       if (pb.pitches.length) while (pa.pitches.length < slots) pa.pitches.push(null);
       pa.rhythm = pa.rhythm.concat(pb.rhythm);
       pa.pitches = pa.pitches.concat(pb.pitches);
@@ -243,6 +299,30 @@
     a.words = [a.words, b.words].filter(w => w && w.trim()).join(" ");
     const mi = meterInfo(at(doc, ci).meter), lb = mi ? lenA / mi.barQ : 0;
     if (mi && Math.abs(lb - Math.round(lb)) < EPS) a.takes = (a.takes || []).concat(copy(b.takes || []).map(t => Object.assign(t, { from: t.from + Math.round(lb) })));
+    doc.chunks.splice(ci + 1, 1);
+    return null;
+  }
+
+  function combine(doc, ci, v) {
+    v = v || 0;
+    const a = doc.chunks[ci], b = doc.chunks[ci + 1];
+    if (!b) return "There is no chunk after this one.";
+    if (b.heading) return "The next chunk starts the section " + b.heading + ". Take its heading away first to merge them.";
+    const pa = part(a, v), pb = part(b, v), pitched = p => p.pitches.some(x => x != null);
+    const kind = p => p.rhythm.length ? (pitched(p) ? "both" : "rhythm") : pitched(p) ? "pitches" : "empty";
+    const ka = kind(pa), kb = kind(pb);
+    if ((ka === "rhythm" && kb === "pitches") || (ka === "pitches" && kb === "rhythm")) {
+      const r = ka === "rhythm" ? pa : pb, q = ka === "rhythm" ? pb : pa;
+      pa.rhythm = copy(r.rhythm); pa.pitches = q.pitches.slice(); delete pa.breaks;
+    } else if (ka === "both" && kb === "both") {
+      if (Math.abs(lengthQ(pa) - lengthQ(pb)) > EPS) return "The two chunks aren't the same length, so they can't be two voices.";
+      let w = 1;
+      while (w < voiceCount(doc) && (part(a, w).rhythm.length || part(a, w).pitches.length)) w++;
+      if (w >= voiceCount(doc)) { doc.voices.push({ name: String(w + 1), clef: doc.voices[v].clef || "treble" }); doc.together = true; }
+      const t = part(a, w); t.rhythm = copy(pb.rhythm); t.pitches = pb.pitches.slice();
+    } else return "Merge needs a chunk of rhythm only and one of pitches only, or two chunks with both, of the same length (they become two voices). Join puts them one after the other.";
+    if (!a.chords.length && b.chords.length) { a.chords = b.chords; a.chordLen = b.chordLen; }
+    if (!(a.words || "").trim()) a.words = b.words;
     doc.chunks.splice(ci + 1, 1);
     return null;
   }
@@ -425,15 +505,18 @@
         h += "\n";
       });
     } else if (doc.voices[0].clef && doc.voices[0].clef !== "treble") h += "V:" + vid(doc, 0) + " clef=" + doc.voices[0].clef + "\n";
-    return h + "K:" + keyName(doc.key) + "\n";
+    const t0 = at(doc, 0).tempo || DEFAULT_TEMPO;
+    return h + "Q:1/4=" + t0 + "\n" + "K:" + keyName(doc.key) + "\n";
   }
 
   // one voice as bars: [{ items: [{ text, mark? }], syl: [string] }]; every voice gets the same bar lines
   function voiceBars(doc, v) {
     const bars = [];
     let bar = { items: [], syl: [] }, pos16 = 0, prevBar16 = 0, barAcc = {}, any = false;
-    let meter = at(doc, 0).meter, key = at(doc, 0).key;
+    let meter = at(doc, 0).meter, key = at(doc, 0).key, tempo = at(doc, 0).tempo || DEFAULT_TEMPO;
+    let tempoSet = v === 0 || !doc.chunks.some((c, i) => at(doc, i).tempo && at(doc, i).tempo !== tempo);   // later voices restate it only when it changes
     let barMi = null;
+    const chunkBarSeen = {};
     const close = () => { beam(bar, barMi); bars.push(bar); bar = { items: [], syl: [] }; barAcc = {}; };
     doc.chunks.forEach((ch, ci) => {
       const here = at(doc, ci), mi = meterInfo(here.meter);
@@ -444,19 +527,28 @@
       let fields = "";
       if (here.meter !== meter) { fields += "[M:" + here.meter + "]"; if (any && pos16 % prevBar16 !== 0) close(); pos16 = 0; }
       if (here.key !== key) { fields += "[K:" + keyName(here.key) + "]"; barAcc = {}; }
+      // every voice says its tempo changes (abcjs scales each voice from the tempo it last met; a later voice starts from the first one's end)
+      const tHere = here.tempo || tempo;
+      if (!tempoSet || tHere !== tempo) fields += "[Q:1/4=" + tHere + "]";
+      tempo = tHere; tempoSet = true;
       meter = here.meter; key = here.key; prevBar16 = bar16; barMi = mi;
       if (ch.pickup && ci === 0 && !any) { const p16 = Math.round(len * 4); if (p16 < bar16) pos16 = bar16 - p16; }   // a short first bar
+      let padIn = 0;                                // every chunk starts on beat 1, or a lead (its pickup) before a barline
+      const hasLead = ch.lead > EPS && ch.lead < mi.barQ - EPS, want = hasLead ? bar16 - Math.round(ch.lead * 4) : 0;
+      if (hasLead && !any && ci === 0 && pos16 % bar16 === 0) pos16 = want;                 // the piece's first chunk: a short first bar
+      else if (!(ch.pickup && ci === 0)) padIn = ((want - pos16 % bar16) + bar16) % bar16;   // else rest up to there
       const p = part(ch, v);
       const slots = p.rhythm.slice();
+      if (padIn) slots.unshift({ type: "space", durQ: padIn / 4, padding: true });
       const pad = r3(len - lengthQ(p));
       if (pad > EPS) slots.push({ type: "space", durQ: pad, padding: true });
       const chords = v === 0 ? ch.chords.slice() : [];
       const syl = v === 0 ? syllables(ch.words) : [];
-      let t = 0, noteK = 0, sylK = 0, firstPiece = true;
+      let t = -padIn / 4, noteK = 0, sylK = 0, firstPiece = true;
       slots.forEach((slot, si) => {
         const pi = slot.type === "note" ? p.pitches[noteK] : undefined;
         const filled = slot.type === "note" && pi != null;
-        const midi = slot.type === "note" ? (filled ? pi : 71) : null;
+        const midi = slot.type === "note" ? (filled ? pi : 71 + (sig(here.key).B || 0)) : null;   // an empty slot: the key's own B, no accidental
         if (slot.type === "note") noteK++;
         let left = Math.round(slot.durQ * 4), firstOfSlot = true;
         while (left > 0) {
@@ -478,21 +570,22 @@
             let tok;
             if (slot.type === "rest") tok = "z" + LEN[pc];
             else if (slot.type === "space") tok = "x" + LEN[pc];
-            else tok = (filled ? "" : "!style=rhythm!") + spell(midi, here.key, barAcc) + LEN[pc];
+            else tok = filled ? spell(midi, here.key, barAcc) + LEN[pc] : "!style=rhythm!B" + LEN[pc];   // an empty slot: never an accidental
             const lastOfSlot = k === all.length - 1 && take === left;
-            const item = { pre, tok, tail: slot.type === "note" && !lastOfSlot ? "-" : "", pos: piecePos, len: pc, note: slot.type === "note" };
+            const item = { pre, tok, tail: slot.type === "note" && (!lastOfSlot || slot.tie) ? "-" : "", pos: piecePos, len: pc, note: slot.type === "note" };
             piecePos += pc;
             if (!slot.padding) item.mark = { chunk: ci, voice: v, slot: si, filled: slot.type === "note" ? filled : null };
+            if (!bar.items.length) { bar.ci = ci; bar.from = r3(t); bar.lead = !chunkBarSeen[ci] && (item.pos > 0 || slot.type === "space"); chunkBarSeen[ci] = true; }
             bar.items.push(item);
             if (slot.type === "note" && v === 0 && syl.length) {
-              if (firstOfSlot && sylK < syl.length) { const x = syl[sylK++]; bar.syl.push(x.s.replace(/[|*~_-]/g, "") + (x.join ? "-" : "")); }
+              if (firstOfSlot && sylK < syl.length) { const x = syl[sylK++]; bar.syl.push(x.hold ? "_" : x.skip ? "*" : x.s.replace(/[|*~_-]/g, "") + (x.join ? "-" : "")); }
               else bar.syl.push("*");
             }
             firstOfSlot = false;
             t += pc / 4;
           });
           left -= take; pos16 += take; any = true;
-          if (pos16 % bar16 === 0) close();
+          if (pos16 % bar16 === 0) { bar.endCi = ci; bar.endT = r3(t); close(); }
         }
       });
     });
@@ -539,17 +632,35 @@
     });
   }
 
+  // where the lines end: after every 4 bars; or, with doc.lineEvery (bars a line, a chunk's pickup bar not counted) or any
+  // chunk's own breaks (chunk.nl: barline times from the chunk's start, as RET leaves them), a new line at every chunk too, the
+  // count starting again after each break of a chunk's own. -> [{ from, to, manual }] bar indices
+  function lineRuns(doc, bars) {
+    const every = doc.lineEvery > 0 ? Math.round(doc.lineEvery) : 0, own = doc.chunks.some(c => c.nl && c.nl.length);
+    const runs = [];
+    if (!every && !own) { for (let l = 0; l < bars.length; l += 4) runs.push({ from: l, to: Math.min(l + 4, bars.length) - 1 }); return runs; }
+    let from = 0, count = 0;
+    bars.forEach((bar, b) => {
+      if (!bar.lead) count++;
+      const nx = bars[b + 1], nl = bar.endCi != null && (doc.chunks[bar.endCi].nl || []).some(q => Math.abs(q - bar.endT) < EPS);
+      if (!nx || nl || nx.ci !== bar.ci || (every && count >= every)) { runs.push({ from, to: b, manual: !!nl }); from = b + 1; count = 0; }
+    });
+    return runs;
+  }
+
   function toAbc(doc) {
     doc = upgrade(doc);
     let abc = header(doc, at(doc, 0).meter);
-    const map = [], n = voiceCount(doc);
+    const map = [], n = voiceCount(doc), lines = [];
     const all = doc.voices.map((_, v) => voiceBars(doc, v));
     const nb = Math.max(0, ...all.map(b => b.length));
-    for (let l = 0; l < nb; l += 4) {
+    const bars0 = Array.from({ length: nb }, (_, b) => all[0][b] || {});
+    lineRuns(doc, bars0).forEach(run => {
+      const l = run.from, lEnd = run.to + 1, lineStart = abc.length;
       for (let v = 0; v < n; v++) {
         if (n > 1) abc += "[V:" + vid(doc, v) + "] ";
         const line = [];
-        for (let b = l; b < Math.min(l + 4, nb); b++) {
+        for (let b = l; b < lEnd; b++) {
           const bar = all[v][b];
           if (bar) bar.items.forEach((it, i) => {
             abc += it.pre;
@@ -561,17 +672,20 @@
           });
           const last = b === nb - 1;
           abc += last ? "|]" : "|";
-          if (!last && b < Math.min(l + 4, nb) - 1) abc += " ";
+          if (!last && b < lEnd - 1) abc += " ";
           if (bar) line.push(bar.syl.join(" "));
         }
         abc += "\n";
         if (v === 0 && line.some(s => s)) abc += "w: " + line.join(" | ") + "\n";
       }
-    }
-    return { abc, map };
+      const b1 = bars0[run.to];
+      lines.push({ start: lineStart, end: abc.length, bars: lEnd - l, manual: run.manual, ci: b1.endCi != null ? b1.endCi : b1.ci, at: b1.endT });
+    });
+    return { abc, map, lines };
   }
 
-  function pendingAbc(doc) {
+  function pendingAbc(doc, opts) {
+    const noNames = opts && opts.noNames;
     doc = upgrade(doc);
     let abc = "X:1\nM:none\nL:1/8\nK:" + keyName(doc.key) + "\n", any = false;
     const map = [];
@@ -579,9 +693,12 @@
       const key = at(doc, ci).key;
       for (let v = 0; v < voiceCount(doc); v++) {
         const p = part(ch, v), slots = p.rhythm.length ? noteSlots(p) : 0;
+        let named = false;
         for (let k = slots; k < p.pitches.length; k++) {
+          if (!slots && k && (p.breaks || []).indexOf(k) >= 0) abc += "|| ";
           if (p.pitches[k] == null) continue;
           const start = abc.length;
+          if (!named && !noNames) { named = true; if (any) abc += "|] "; abc += '"^' + (ch.name || "Chunk " + (ci + 1)).replace(/"/g, "'") + (v ? " (" + (doc.voices[v].name || v + 1) + ")" : "") + '"'; }
           abc += spell(p.pitches[k], key, {}) + "2";
           map.push({ start, end: abc.length, chunk: ci, voice: v, pitch: k });
           abc += " "; any = true;
@@ -601,8 +718,9 @@
       const v = /^\[V:\s*([^\]]+)\]/.exec(t);
       if (v) { inFirst = v[1].trim() === firstVoice; return; }
       if (/^w:/.test(t) && (inFirst || firstVoice == null)) {
-        t.slice(2).replace(/\|/g, " ").replace(/-/g, "- ").split(/\s+/).filter(Boolean).forEach(x => {
+        t.slice(2).replace(/\|/g, " ").replace(/-/g, "- ").replace(/_/g, " _ ").split(/\s+/).filter(Boolean).forEach(x => {
           if (x === "*") out.push(null);
+          else if (x === "_") out.push({ s: "_", join: false, hold: true });
           else out.push({ s: x.replace(/-$/, ""), join: /-$/.test(x) });
         });
       }
@@ -635,11 +753,22 @@
     const starts = [{ t: 0, name: null, meter: null, key: null, heading: null }];
     const startAt = tt => { let s = starts.find(x => Math.abs(x.t - tt) < EPS); if (!s) { s = { t: tt, name: null, meter: null, key: null, heading: null }; starts.push(s); } return s; };
     r0.marks.forEach(x => { startAt(x.t).name = x.text; });
-    r0.fields.forEach(f => { const s = startAt(f.t); if (f.name === "M" && /^\d+\/\d+$/.test(f.value)) s.meter = f.value; if (f.name === "K") s.key = f.value; if (f.name === "P") s.heading = f.value; });
+    r0.fields.forEach(f => { const s = startAt(f.t); if (f.name === "M" && /^\d+\/\d+$/.test(f.value)) s.meter = f.value; if (f.name === "K") s.key = f.value; if (f.name === "P") s.heading = f.value; if (f.name === "Q") { const q = /=\s*(\d+)/.exec(f.value); if (q) s.tempo = +q[1]; } });
     starts.sort((a, b) => a.t - b.t);
     starts.forEach((s, i) => { const d = starts[i + 1]; if (d && Math.abs(d.t - s.t) < EPS) { Object.keys(d).forEach(k => { if (d[k] != null) s[k] = d[k]; }); starts.splice(i + 1, 1); } });
     const total = Math.max(...reads.map(r => r.quarters));
     doc.chunks = starts.map((s, i) => Object.assign(newChunk(s.name || s.heading || "Chunk " + (i + 1)), { meter: i ? s.meter : null, key: i ? s.key : null, heading: s.heading || null }));
+    const q0 = /^Q:\s*(?:1\/4\s*=\s*)?(\d+)/m.exec(abc); if (q0 && +q0[1] !== DEFAULT_TEMPO) doc.tempo = +q0[1];
+    starts.forEach((s, i) => { if (s.tempo && (i || s.tempo !== doc.tempo)) doc.chunks[i].tempo = i ? s.tempo : null; if (!i && s.tempo) doc.tempo = s.tempo; });
+    // a chunk that starts inside a bar: its notes up to the barline are its lead (a pickup)
+    starts.forEach((s, i) => {
+      if (!i) return;
+      const ev = r0.written.find(e => Math.abs(e.t_on - s.t) < EPS); if (!ev) return;
+      const inBar = r0.written.filter(e => e.bar === ev.bar), nextBar = r0.written.find(e => e.bar > ev.bar);
+      const b0 = Math.min(...inBar.map(e => e.t_on)), b1 = nextBar ? nextBar.t_on : null;
+      s.atBar = Math.abs(s.t - b0) < EPS;
+      if (b1 != null && s.t - b0 > EPS && b1 - s.t > EPS) doc.chunks[i].lead = r3(b1 - s.t);
+    });
     if (starts[0].meter) doc.meter = starts[0].meter;
     if (starts[0].key) doc.key = starts[0].key;
     const chunkAt = tt => { let i = 0; while (i + 1 < starts.length && tt >= starts[i + 1].t - EPS) i++; return i; };
@@ -648,7 +777,7 @@
       let held = null, sylK = 0;
       r.written.forEach(ev => {
         const durQ = ev.t_off - ev.t_on, ci = chunkAt(ev.t_on), p = part(doc.chunks[ci], v);
-        if (ev.kind === "note" && v === 0) { const x = syl[sylK++]; if (x) doc.chunks[ci].words += (x.s + (x.join ? "-" : " ")); }
+        if (ev.kind === "note" && v === 0) { const x = syl[sylK++]; if (x) doc.chunks[ci].words += (x.s + (x.join ? "-" : " ")); else if (!held && sylK <= syl.length && syl.slice(sylK).some(Boolean)) doc.chunks[ci].words += "* "; }
         if (held) { held.durQ += durQ; if (!ev.tieNext) held = null; return; }
         if (ev.kind === "rest") { p.rhythm.push({ type: ev.visible === false ? "space" : "rest", durQ }); return; }
         const slot = { type: "note", durQ };
@@ -665,6 +794,13 @@
         p.rhythm.forEach(s => { s.durQ = r3(s.durQ); });
         while (p.rhythm.length && p.rhythm[p.rhythm.length - 1].type === "space") p.rhythm.pop();   // padding
         trim(p);
+      }
+      // written by toAbc: a chunk with a lead starts with invisible rest up to it ("^B"x6 D2 |)
+      const mL = meterInfo(at(doc, ci).meter), p0 = part(ch, 0), sp = p0.rhythm[0];
+      if (ci && starts[ci].atBar && mL && sp && sp.type === "space" && sp.durQ < mL.barQ - EPS && p0.rhythm.length > 1 && !ch.lead) {
+        ch.lead = r3(mL.barQ - sp.durQ);
+        for (let v = 0; v < voiceCount(doc); v++) { const pv = part(ch, v); if (pv.rhythm[0] && pv.rhythm[0].type === "space") { pv.rhythm.shift(); } }
+        ch.chords.forEach(c => { c.at = r3(c.at - sp.durQ); });
       }
       const end = ci + 1 < starts.length ? starts[ci + 1].t : total;
       if (ch.chords.length && !hasRhythm(doc, ch)) ch.chordLen = r3(end - starts[ci].t);
@@ -803,16 +939,53 @@
       syl.forEach((x, i) => {                              // a chord goes before the syllable it starts under (or during)
         const next = i + 1 < times.length && i + 1 < syl.length ? times[i + 1] : Infinity;
         while (chords.length && chords[0].at < next - EPS) line += "[" + chords.shift().name + "]";
-        line += x.s + (x.join ? "" : " ");
+        if (!x.hold && !x.skip) line += x.s + (x.join ? "" : " ");
       });
       chords.forEach(c => { line += "[" + c.name + "]"; });
       out.push(line.trim());
     });
     if (open) out.push("{end_of_" + open + "}");
+    // the notes as well, so the file is the whole song: ChordPro's own ABC block (fromChordPro reads it back)
+    if (doc.chunks.some(ch => hasRhythm(doc, ch))) out.push("", "{start_of_abc}", toAbc(doc).abc.trim(), "{end_of_abc}");
     return out.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
   }
+  // a {start_of_abc} block -> { abc, rest } (the ChordPro without it)
+  function abcBlock(text) {
+    const m = /^[ \t]*\{\s*start_of_abc[^}]*\}[ \t]*\n([\s\S]*?)^[ \t]*\{\s*end_of_abc\s*\}[ \t]*$/m.exec(text || "");
+    return m ? { abc: m[1], rest: text.slice(0, m.index) + text.slice(m.index + m[0].length) } : null;
+  }
 
+  // With an ABC block the notes come from it, and the words of each chunk from the ChordPro above it (matched by chunk name,
+  // else in order), so words edited in the ChordPro win.
   function fromChordPro(text, meter) {
+    const blk = abcBlock(text);
+    if (blk && /^\s*K:/m.test(blk.abc)) {
+      const doc = upgrade(fromAbc(blk.abc)), words = chordProOnly(blk.rest, doc.meter || meter);
+      const t = /\{\s*(?:title|t)\s*:\s*([^}]*)\}/i.exec(blk.rest); if (t) doc.title = t[1].trim();
+      const named = {}; words.chunks.forEach((c, i) => { if (c.name && !(c.name in named)) named[c.name] = i; });
+      const withWords = words.chunks.filter(c => (c.words || "").trim());
+      doc.chunks.forEach((ch, i) => {
+        const j = ch.name in named ? named[ch.name] : (words.chunks.length === doc.chunks.length ? i : -1);
+        if (j >= 0 && plainWords(words.chunks[j].words) !== plainWords(ch.words)) ch.words = respell(words.chunks[j].words || "", ch.words);
+        else if (doc.chunks.length === 1 && withWords.length) ch.words = withWords.map(c => c.words).join(" ");
+      });
+      return doc;
+    }
+    return chordProOnly(blk ? blk.rest : text, meter);
+  }
+  // words edited in the ChordPro (written there whole: "zoodle,") keep the syllables, holds and skips the ABC gave each
+  // word that is still there ("zoo-dle,_"), so they stay under the same notes
+  function respell(text, abcWords) {
+    const key = w => w.replace(/[-_*]/g, "");
+    const old = (abcWords || "").trim().split(/\s+/).filter(Boolean), used = [];
+    let from = 0;
+    return text.trim().split(/\s+/).filter(Boolean).map(w => {
+      for (let k = from; k < old.length; k++) if (!used[k] && key(old[k]) === w) { used[k] = true; from = k + 1; return old[k] + (old[k + 1] && !key(old[k + 1]) ? " " + old[k + 1] : ""); }
+      return w;
+    }).join(" ");
+  }
+  const plainWords = w => syllables(w).filter(x => !x.hold && !x.skip).map(x => x.s + (x.join ? "" : " ")).join("").replace(/\s+/g, " ").trim();
+  function chordProOnly(text, meter) {
     const doc = create();
     doc.meter = meter || null;
     const tm = /\{\s*(?:time)\s*:\s*(\d+\/\d+)\s*\}/i.exec(text); if (tm) doc.meter = tm[1];
@@ -862,7 +1035,11 @@
   }
   function letterMidi(letter, prev, key) {
     const l = letter.toUpperCase();
-    const pc = (SEMI[l] + (sig(key)[l] || 0) + 12) % 12;
+    let pc = (SEMI[l] + (sig(key)[l] || 0) + 12) % 12;
+    if (/hm$/.test(key || "")) {                    // harmonic minor: the seventh degree raised
+      const t = /^([A-G])([#b]?)/.exec(key), tpc = (SEMI[t[1]] + (t[2] === "#" ? 1 : t[2] === "b" ? -1 : 0) + 12) % 12;
+      if (pc === (tpc + 10) % 12) pc = (pc + 1) % 12;
+    }
     const near = prev == null ? 64 : prev;
     let best = null;
     for (let m = near - 6; m <= near + 6; m++) if (((m % 12) + 12) % 12 === pc && (best === null || Math.abs(m - near) < Math.abs(best - near))) best = m;
@@ -985,7 +1162,7 @@
   }
 
   const api = { chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
-                hasChanges, split, merge, duplicate, move, remove, addPitch, nudge, letterMidi, guessKey, scalePcs, parseChords, chordsText,
+                hasChanges, split, merge, combine, offsets, majorOf, keyName, duplicate, move, remove, addPitch, nudge, letterMidi, guessKey, scalePcs, parseChords, chordsText,
                 syllables, setSyllabify, barNotes, prevBar, writeLeadIn };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   global.NotationDoc = api;

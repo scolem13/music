@@ -1,0 +1,60 @@
+---
+title: "Tuning 2: Fifth-Fret, Harmonics and Octaves"
+toc: true
+toc-depth: 2
+description: "Tuning the guitar to itself: the fifth-fret method, the harmonics method (and why its pure fourths are 2 cents off, and the G-to-B harmonic is 14 cents off), octave checks, and the final chord check. What each gets right and wrong."
+instruments: [guitar, bass]
+topics: [tuning, ear]
+has: [interactive]
+---
+
+{{< include _synth-kit.qmd >}}
+
+With no reference at all, you can still tune the guitar **to itself**: get one string right (or just leave it where it is), and tune the others from it. The pitch may not match a piano, but the guitar will agree with itself, which matters more when you play alone. Each method compares two notes that should be the same, so you listen for the beating of [Tuning 1](guitar-tuning-ear.qmd) to stop. Every method is in the [tuning tool](../tools/guitar-tuning.qmd), drawn on a fretboard.
+
+## 1. The fifth-fret method {#fifth}
+
+Press string 6 at the **5th fret**: that's A, the note of open string 5. Tune string 5 to it. Then string 5 fret 5 gives string 4, and string 4 fret 5 gives string 3. String 3 (G) to string 2 (B) is a smaller gap: use the **4th fret**. Then string 2 fret 5 gives string 1. (On a bass, the 5th fret every time.)
+
+| Strengths | Weaknesses |
+|---|---|
+| Needs nothing; easy to remember | Errors **add up**: a 3-cent mistake on each step leaves string 1 up to 15 cents off string 6 |
+| Gives equal temperament, the tuning the frets are made for | A fretted note is only as good as the guitar's intonation and your finger: press hard and it goes sharp |
+| Teaches where the notes are on the neck | The first note dies away while you tune the second |
+
+## 2. The harmonics method {#harmonics}
+
+Touch a string lightly over the 5th fret wire (don't press), pick and lift: a bell-like **harmonic**, two octaves above the open string. The harmonic over the 7th fret of the next string is the same note, and harmonics ring for a long time, so you can play both and tune while they beat. (How to play harmonics: [Guitar harmonics](guitar-harmonics.qmd).)
+
+The catch: harmonics are notes from the **harmonic series**, which is pure, while frets are equal-tempered. The 5th-fret harmonic is the string's 4th harmonic, the 7th-fret one its 3rd, so matching them makes the two strings a **pure fourth** (ratio 4:3, 498 cents) instead of the frets' 500 cents: 2 cents narrow. Hear the difference:
+
+<div class="sk" data-w="interval" data-title="A pure fourth and an equal-tempered fourth" data-set="iv=P4,tun=just,root=110"></div>
+
+Tune strings 6 → 5 → 4 → 3 that way and string 3 ends about **6 cents flat** of where the frets want it. Two cents on one string is nothing; six starts to show in chords.
+
+**The G-to-B trap.** An old instruction says: harmonic at the 4th fret of string 3 against open string 2. The 4th-fret harmonic is the string's 5th harmonic, a **pure major third**, which is 14 cents flatter than the frets' major third. Tuned that way, the B string is 14 cents flat: clearly sour in a G or E chord. Use instead the **7th-fret harmonic of string 6** (a B) against **open string 2**, and the **5th-fret harmonic of string 6** (an E) against **open string 1**: unisons, off by only 2 cents and 0. The tuning tool does this.
+
+| Strengths | Weaknesses |
+|---|---|
+| Harmonics ring on while you turn the peg: both hands free | Pure intervals: 2 cents a step, adding up |
+| No fretting, so finger pressure and fret errors don't enter | Wrong pairs (the G–B 4th-fret one) are badly out |
+| Clear beats, easy to hear | Hard to play harmonics on day one; weak on some guitars |
+
+## 3. Octaves and unisons {#octaves}
+
+Some shapes give the **octave** of an open string: string 4 fret 2 is the E an octave above string 6. String 3 fret 2 is the A above string 5, string 2 fret 3 the D above string 4, string 1 fret 3 the G above string 3. Strings 6 and 1 are two octaves apart. An octave in tune sounds like **one fat note**; out of tune it shimmers. Octaves don't add up errors the way a chain does: each one compares against a string further away, so they catch the drift of the other two methods.
+
+## 4. The last check: a chord {#chord}
+
+Every method ends at your ear. Strum chords that use all six strings (E, A minor, G, C, D) and listen. If one sounds sour, play its strings two at a time to find the culprit. A small adjustment that makes the chords you play *sound* right is the right adjustment, even if the tuner disagrees by a cent or two. (Guitarists sometimes shade the B string a little flat for this reason.)
+
+| Method | Accuracy | Best for |
+|---|---|---|
+| Reference by ear | ~10–20 cents note-by-note, much better with beats | Matching a band, any tuning |
+| Drone | very fine | Practice; training the ear |
+| Fifth-fret | adds up, 5–15 cents worst | No device at all |
+| Harmonics | 2 cents a step, ~6 worst; 14 with the wrong pair | Fast, hands free |
+| Octaves | fine, doesn't add up | Checking the others |
+| Tuner | ~1 cent, if used well | Stage, loud rooms: see [Tuning 3](guitar-tuning-tuners.qmd) |
+
+Next: [Tuning 3: tuners and their limits](guitar-tuning-tuners.qmd).

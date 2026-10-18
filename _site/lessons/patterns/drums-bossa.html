@@ -2,23 +2,17 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.10.18">
+<meta name="generator" content="quarto-1.7.33">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Drum groove: Bossa nova – Music Practice</title>
 <style>
-/* Default styles provided by pandoc.
-** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
-*/
+code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: 1.5em;}
-div.column{flex: auto;}
-@media screen {
-div.columns{gap: min(4vw, 1.5em);}
-div.column{overflow-x: auto;}
-}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -42,10 +36,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-1778872dbfe70c82c6c514480fe8274f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -85,6 +79,19 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../apps/shared/session-nav.js"></script>
 <!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
 <script src="../../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../../apps/shared/help-eye.js?v=1"></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
 
 
 </head>
@@ -110,373 +117,10 @@ ul.task-list li input[type="checkbox"] {
     <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
-  <li class="nav-item dropdown ">
-    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-lessons" role="link" data-bs-toggle="dropdown" aria-expanded="false">
- <span class="menu-text">Lessons</span>
-    </a>
-    <ul class="dropdown-menu" aria-labelledby="nav-menu-lessons">    
-        <li>
-    <a class="dropdown-item" href="../../lessons/index.html">
- <span class="dropdown-text">Lessons</span></a>
+  <li class="nav-item">
+    <a class="nav-link" href="../../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
   </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-improv.html">
- <span class="dropdown-text">Improvising on a Blues: Blues in the Closet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-melody.html">
- <span class="dropdown-text">Blues for Violin and Saxophone: Playing the Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-changes.html">
- <span class="dropdown-text">Lesson: Changing the Changes in a 12-Bar Blues</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-bass.html">
- <span class="dropdown-text">Blues for Bass: From Roots to a Walking Line</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-guitar.html">
- <span class="dropdown-text">Blues for Guitar: From Roots to Shell Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-piano.html">
- <span class="dropdown-text">Blues for Piano: From Roots to Rootless Voicings</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/stride-boogie.html">
- <span class="dropdown-text">Two Left Hands: Stride and Boogie-Woogie</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/blues-drums.html">
- <span class="dropdown-text">Blues for Drums: From Quarter Notes to the Shuffle</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/reading-swing.html">
- <span class="dropdown-text">Reading Swing from a Lead Sheet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/hihat-grooves.html">
- <span class="dropdown-text">Hi-Hat Grooves: From Quarter Notes to Sixteenths</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/congas-basics.html">
- <span class="dropdown-text">How to Play Congas: Five Strokes and the Tumbao</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/watermelon-congas.html">
- <span class="dropdown-text">Watermelon Man for Congas</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/watermelon-man-blues.html">
- <span class="dropdown-text">Is Watermelon Man a Blues?</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/pop-changes.html">
- <span class="dropdown-text">Lesson: Changing the Changes in C, Am, F, G</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/pop-changes-guitar.html">
- <span class="dropdown-text">Pop Changes for Guitar: From Open Chords to Passing Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/pop-changes-piano.html">
- <span class="dropdown-text">Pop Changes for Piano: From Triads to Passing Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/pop-changes-bass.html">
- <span class="dropdown-text">Pop Changes for Bass: Roots and the Walking Line</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/chord-shapes-guitar.html">
- <span class="dropdown-text">Guitar Chord Shapes: From Pop and Rock Toward Jazz</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/chord-shapes-guitar-hand.html">
- <span class="dropdown-text">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/hammer-ons-pull-offs.html">
- <span class="dropdown-text">Hammer-ons and Pull-offs on Guitar</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/guitar-bends.html">
- <span class="dropdown-text">String Bends on Guitar: Bending in Tune</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/travis-picking.html">
- <span class="dropdown-text">Travis Picking on Guitar</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/chord-shapes-piano.html">
- <span class="dropdown-text">Piano Chord Voicings: From Pop Triads Toward Jazz</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/chord-shapes-piano-hand.html">
- <span class="dropdown-text">Piano Voicings by Hand: From Easy to Hard</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/inversions.html">
- <span class="dropdown-text">Inversions: Root Position, First and Second Inversion</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/voice-pop.html">
- <span class="dropdown-text">Pop Singing: Speech, Mix, Runs and the Mic</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/voice-jazz.html">
- <span class="dropdown-text">Jazz Singing: Swing, Scat and the Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/voice-classical.html">
- <span class="dropdown-text">Classical Singing: Breath, Pure Vowels and Legato</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/four-chord-loops.html">
- <span class="dropdown-text">Lesson: Four-Chord Loops</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/cadences.html">
- <span class="dropdown-text">Lesson: Cadences, and the One That Is Not</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/write-an-ending.html">
- <span class="dropdown-text">Lesson: Write an Ending</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/guide-tones.html">
- <span class="dropdown-text">Lesson: Guide Tones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/minor-changes.html">
- <span class="dropdown-text">Lesson: Changes in a Minor Key</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/borrowed-chords.html">
- <span class="dropdown-text">Lesson: Borrowed Chords</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/turnarounds.html">
- <span class="dropdown-text">Lesson: Turnarounds and Rhythm Changes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/reharmonize.html">
- <span class="dropdown-text">Lesson: Reharmonizing a Melody</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../../lessons/arrange-band.html">
- <span class="dropdown-text">Arranging 1: Who Plays What in a Band</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/arrange-bass-drums.html">
- <span class="dropdown-text">Arranging 2: Bass and Drums</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/arrange-chords.html">
- <span class="dropdown-text">Arranging 3: Guitar and Keyboards</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/arrange-organ.html">
- <span class="dropdown-text">Arranging 4: The Organ</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/patterns/index.html">
- <span class="dropdown-text">Accompaniment Patterns</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../../lessons/notation-choices.html">
- <span class="dropdown-text">Writing Music Down: Choosing the Right Notation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/tuning-systems.html">
- <span class="dropdown-text">Tuning Systems: Just Intonation and Equal Temperament</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/strobe-tuner.html">
- <span class="dropdown-text">How a Strobe Tuner Works</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/inharmonicity.html">
- <span class="dropdown-text">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/vowel-formants.html">
- <span class="dropdown-text">Formants: What Makes a Vowel</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-harmonics.html">
- <span class="dropdown-text">Sound 1: The Harmonic Series and Fourier</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-waveforms.html">
- <span class="dropdown-text">Sound 2: Oscillators and Pulse-Width Modulation</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-noise.html">
- <span class="dropdown-text">Sound 3: Noise</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-filter.html">
- <span class="dropdown-text">Sound 4: Filters</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-envelopes.html">
- <span class="dropdown-text">Sound 5: Envelopes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-lfo.html">
- <span class="dropdown-text">Sound 6: LFOs</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-subtractive.html">
- <span class="dropdown-text">Sound 7: Subtractive Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-fm.html">
- <span class="dropdown-text">Sound 8: FM Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-wavetable.html">
- <span class="dropdown-text">Sound 9: Wavetable Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-granular.html">
- <span class="dropdown-text">Sound 10: Granular Synthesis</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-eq.html">
- <span class="dropdown-text">Sound 11: The Equaliser</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-distortion.html">
- <span class="dropdown-text">Sound 12: Distortion</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-compressor.html">
- <span class="dropdown-text">Sound 13: The Compressor</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-sidechain.html">
- <span class="dropdown-text">Sound 14: Sidechain</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-gate.html">
- <span class="dropdown-text">Sound 15: Gates and Transients</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-reverb.html">
- <span class="dropdown-text">Sound 16: Reverb</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-delay.html">
- <span class="dropdown-text">Sound 17: Delay</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-chorus.html">
- <span class="dropdown-text">Sound 18: Chorus and Flanger</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-phaser.html">
- <span class="dropdown-text">Sound 19: Phaser</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-tremolo.html">
- <span class="dropdown-text">Sound 20: Tremolo and the Rotary Speaker</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-pitch.html">
- <span class="dropdown-text">Sound 21: Pitch Effects</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-vocoder.html">
- <span class="dropdown-text">Sound 22: The Vocoder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-stereo.html">
- <span class="dropdown-text">Sound 23: Stereo</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/sound-chain.html">
- <span class="dropdown-text">Sound 24: The Signal Chain</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-gain-staging.html">
- <span class="dropdown-text">Recording 1: Gain Staging</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-mics.html">
- <span class="dropdown-text">Recording 2: Microphones and Phantom Power</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-placement.html">
- <span class="dropdown-text">Recording 3: Distance, Bleed and Phase</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-monitoring.html">
- <span class="dropdown-text">Recording 4: Monitoring and Headphones</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-mixing.html">
- <span class="dropdown-text">Recording 5: Mixing</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-mastering.html">
- <span class="dropdown-text">Recording 6: Mastering</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/rec-stereo.html">
- <span class="dropdown-text">Recording 7: Mono and Stereo</span></a>
-  </li>  
-        <li><hr class="dropdown-divider"></li>
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-power.html">
- <span class="dropdown-text">Gear 1: Power and Safety</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-cables.html">
- <span class="dropdown-text">Gear 2: Cables and Connectors</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-amps.html">
- <span class="dropdown-text">Gear 3: Amps, Speakers and the PA</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-keyboards.html">
- <span class="dropdown-text">Gear 4: Keyboards</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-setup.html">
- <span class="dropdown-text">Gear 5: Setting Up, Packing Down and Your Ears</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-guitar.html">
- <span class="dropdown-text">Gear 6: Guitar and Bass Care</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-violin.html">
- <span class="dropdown-text">Gear 7: Violin Care for Beginners</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-sax.html">
- <span class="dropdown-text">Gear 8: Saxophone Care for Beginners</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/gear-drums.html">
- <span class="dropdown-text">Gear 9: Drum Kit Setup and Care</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/timestamp-player.html">
- <span class="dropdown-text">Mapping a Recording with the Timestamp Notes</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../lessons/section-labels.html">
- <span class="dropdown-text">Section Labels: Naming the Parts of a Song</span></a>
-  </li>  
-    </ul>
-  </li>
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
  <span class="menu-text">Practice</span>
@@ -617,8 +261,24 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Vocal Warm-up</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="../../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="../../tools/timestamp-notes.html">
  <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
   </li>  
     </ul>
   </li>
@@ -896,7 +556,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <script src="../../apps/shared/abc-transpose.js?v=4"></script>
 <script src="../../apps/shared/tune-chart.js?v=31"></script>
 <script src="../../apps/shared/voicings.js?v=5"></script>
-<script src="../../apps/shared/band/harmony.js?v=28"></script>
+<script src="../../apps/shared/band/harmony.js?v=32"></script>
 <script src="../../apps/shared/band/bass.js?v=15"></script>
 <script src="../../apps/shared/band/comp.js?v=30"></script>
 <script src="../../apps/shared/band/catalog.js?v=36"></script>
@@ -971,14 +631,13 @@ document.addEventListener('DOMContentLoaded', async function () {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-      const outerScaffold = trigger.parentElement.cloneNode(true);
-      const codeEl = outerScaffold.querySelector('code');
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
         }
-      }
-      return codeEl.innerText;
+        return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

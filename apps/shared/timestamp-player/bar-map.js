@@ -42,10 +42,10 @@
   function boot() {
     var player = document.querySelector('.btp');
     var log = document.querySelector('.btp-log');
-    var root = document.querySelector('.btp-barmap');
+    var root = document.querySelector('.btp-barmap:not(.pc-shell)');
     if (!player || !root) return;
 
-    var q = function (sel) { return root.querySelector(sel); };
+    var q = function (sel) { return PanelColumns.q(root, sel); };
     var err = player.querySelector('.btp-err');
     var beatsIn = q('.btp-beats'), now = q('.btp-bars-now'), summary = q('.btp-bars-summary');
     var secRows = q('.btp-sec-rows'), secEmpty = q('.btp-sec-empty');
@@ -336,7 +336,7 @@
       });
       list.sort(function (a, b) { return a.start - b.start; });
       // a numbered stamp (Chorus 2) goes by the words' name (Chorus) when the words have only that (words.js)
-      var w = document.querySelector('.btp-words'), W = w && w._btpWords;
+      var w = document.querySelector('.btp-words:not(.pc-shell)'), W = w && w._btpWords;
       if (W && W.wordsName) list.forEach(function (sec) { sec.label = sec.name; sec.name = W.wordsName(sec.name); });
       list.forEach(function (sec, i) {
         var next = list[i + 1];
@@ -474,7 +474,7 @@
 
       barBody.innerHTML = '';
       // the chords of the confirmed (or grid-written) sections, bar by bar (words.js)
-      var wordsEl = document.querySelector('.btp-words'), chords = {};
+      var wordsEl = document.querySelector('.btp-words:not(.pc-shell)'), chords = {};
       try { chords = wordsEl && wordsEl._btpWords ? wordsEl._btpWords.barChords() : {}; } catch (e) { chords = {}; }
       bars.forEach(function (t, i) {
         var tr = document.createElement('tr');
@@ -662,7 +662,7 @@
     q('.btp-bars-undo').addEventListener('click', function (e) { undoScale(); e.target.blur(); });
     var gcopy = q('.btp-bars-grid-copy');
     if (gcopy) gcopy.addEventListener('click', function () {
-      var w = document.querySelector('.btp-words');
+      var w = document.querySelector('.btp-words:not(.pc-shell)');
       if (w && w._btpWords) w._btpWords.copyGrids();
       gcopy.blur();
     });

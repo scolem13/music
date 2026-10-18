@@ -1,0 +1,49 @@
+---
+title: "Tuning 3: Tuners and Their Limits"
+toc: true
+toc-depth: 2
+description: "Needle, clip-on and strobe tuners: how they hear a note, why the reading jumps at the attack, why a guitar in tune on a tuner can still sound out (intonation, finger pressure, old strings), and how to use a tuner without letting it replace your ear."
+instruments: [guitar, bass]
+topics: [tuning, ear]
+has: [interactive]
+---
+
+{{< include _synth-kit.qmd >}}
+
+A tuner is the right tool for a loud stage, a noisy room, or a quick check. It is the wrong tool for learning to play in tune, because it only answers one question (is this one note at this pitch?) and music asks many. This lesson is about what a tuner does well, where it misleads, and how to keep your ear in charge. Before this: [Tuning 1](guitar-tuning-ear.qmd) and [Tuning 2](guitar-tuning-methods.qmd).
+
+## 1. Kinds of tuner {#kinds}
+
+| Kind | How it hears | Strengths | Weaknesses |
+|---|---|---|---|
+| App, microphone | the air | free, always with you | hears the room too; low strings and noise confuse it |
+| Clip-on | vibration of the headstock | works on a loud stage | a cheap one reads ±3 cents or worse; can be fooled by sympathetic strings |
+| Pedal / cable | the pickup signal | very clean signal | electric only |
+| Strobe | one stripe per harmonic, standing still in tune | about 0.1 cent; shows the harmonics | more to read; the precision often isn't the problem |
+
+The site's own strobe is in the top bar, and explained in [How a strobe tuner works](strobe-tuner.qmd). Try it on a string here, or listen to the page's own made-up string with **demo**:
+
+<div class="sk" data-w="tuner" data-title="Strobe tuner on the low E" data-set="note=E,oct=2"></div>
+
+## 2. Why the reading jumps {#attack}
+
+When you pick a string hard, it goes **sharp for a moment**: it's stretched further than usual, and the attack is noisy. Then it settles, and slowly goes a little flat as it dies. So: pick at your normal strength, ignore the first half second, read the settled note. Many beginners chase the attack and end up flat.
+
+## 3. In tune on the tuner, out of tune in the chord {#out}
+
+The tuner measured the **open** strings. You play **fretted** notes, and they can be off for reasons no tuner on an open string can see:
+
+- **Finger pressure.** Pressing hard stretches the string sharp, by 5–10 cents on a high fret. Fret just behind the fret wire, with only as much pressure as makes the note clean.
+- **Intonation.** If the bridge saddles are set wrong, fretted notes up the neck go sharp or flat. The [Setup Check](../tools/guitar-setup-check.qmd) measures it: the 12th-fret harmonic against the 12th-fret note.
+- **Old strings** play sharp up the neck. Change them.
+- **High action or a high nut** stretches every fretted note sharp, most near the nut.
+- **Equal temperament itself.** A G chord's major third (B) is 14 cents wider than a pure one. The tuner calls that in tune; your ear may hear it as a little bright. This is why a guitar tuned perfectly by a tuner can still sound "off" in one chord and fine in another.
+
+## 4. Using a tuner well {#well}
+
+1. **Ear first.** Tune by ear, then look. In the [tuning tool](../tools/guitar-tuning.qmd), tick **Ear first**: the reading stays blurred until you say flat, in tune or sharp. Keep score.
+2. **Listen, then stop listening.** Turn the microphone off, play a chord, decide; turn it on to check.
+3. **End with a chord.** If the chords you're about to play sound wrong, trust that over the needle.
+4. **Check between songs.** By ear: play the open strings against a chord, fix the one that's moved.
+
+The tuner is a ruler; your ear is the judge.

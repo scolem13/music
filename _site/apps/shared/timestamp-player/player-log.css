@@ -84,7 +84,11 @@ body.btp-resizing iframe, body.btp-resizing video { pointer-events: none; }
   display: flex;
   flex-direction: column;
   gap: .75rem;
+  overflow-y: auto;   /* parts moved into it scroll with it */
 }
+.btp-side > * { flex: none; }
+.btp-side > .btp-log { flex: 1 1 auto; }
+.btp-main.pc-empty, .btp-side.pc-empty { min-height: 12rem; }
 .btp-log {
   flex: 1 1 auto;
   min-height: 0;

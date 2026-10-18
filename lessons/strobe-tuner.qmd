@@ -2,6 +2,10 @@
 title: "How a Strobe Tuner Works"
 toc: true
 toc-depth: 2
+description: "The spinning disc and flashing lamp of the Strobotuner, why a pattern stands still (the wagon-wheel effect), one band for each partial, the multiply-and-average arithmetic of the software version, drift as beat rate and cents, stiff strings and weak fundamentals, and just against equal temperament. Watch it follow the page's own sound, no microphone."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A needle tuner gives you one number. A **strobe tuner** gives you a picture that stands still when the note is in tune, and drifts one way if you are sharp and the other way if you are flat. It is the most precise tuner there is, and the way it works is a lovely piece of physics that you can play with. This lesson builds one from the spinning disc of the 1930s to the few lines of arithmetic in the tuner on this site, with a widget at every step. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section and opens it.

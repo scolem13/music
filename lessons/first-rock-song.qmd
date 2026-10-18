@@ -1,0 +1,174 @@
+---
+title: "First Rock Song: One Loop, a Part for Everyone"
+toc: true
+toc-depth: 2
+description: "G, D, Em, C for a whole class at once. Drums, bass, guitar, keyboard and voice each have four levels, from a first day on the instrument to a rock beat, root eighths and a folk-rock strum. The band plays the level you pick."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [pop, rhythm]
+has: [band, interactive]
+---
+
+This whole song is four chords, played over and over: **G, D, Em, C**. Many hit songs are built on
+this loop. Everyone in the class plays the same song at the same time. Each player picks a level.
+
+- **Level 1** is for your first day on the instrument.
+- **Level 4** is for players who already play.
+- Start at the level you can play **without stopping**. Move up when you can play it through four
+  times without looking at your hands.
+
+**How to use the page.** Press **▶ Play** and the band plays the loop. Under **Who plays**, switch
+your own instrument off and play its part yourself. The buttons under each example pick the
+level. The band plays exactly the part you choose, and it is written out underneath. Use the
+tempo control at the bottom of the window to slow it down.
+
+**Count it.** Every chord lasts one bar: four beats. Count "1, 2, 3, 4" out loud. The chord
+changes on every "1".
+
+| Bar | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Chord | G | D | Em | C |
+| Bass note | G | D | E | C |
+
+## Drums
+
+You play with both feet and both hands. The **bass drum** (right foot) and the **snare drum**
+are the two most important sounds. The bass drum is low and goes on 1 and 3. The snare is
+sharp and goes on 2 and 4. Together they make the **backbeat**, the beat under nearly all rock.
+
+- **Level 1: Bass drum and snare.** Bass drum on 1 and 3, snare on 2 and 4. Just
+  "boom, crack, boom, crack". (The band's drummer also taps the hi-hat pedal on 2 and 4. Skip
+  that at first.)
+- **Level 2: Add the hi-hat in quarter notes.** Your right hand plays the closed hi-hat on every
+  beat. Your left hand plays the snare on 2 and 4. On 2 and 4, both hands hit at once.
+- **Level 3: Hi-hat in eighth notes.** Count "1 and 2 and 3 and 4 and". The hi-hat plays on
+  every number and every "and".
+- **Level 4: The rock beat.** The bass drum moves around a little, and you play a fill at the
+  end of each time through the loop. Next: [Hi-hat Grooves](hihat-grooves.qmd).
+
+<div class="ar-demo" data-style="rock" data-chart="G|D|Em|C" data-tempo="92" data-comp="guitar" data-on="bass comp drums" data-staves="drums" data-choice-label="Level:" data-choices='[{"label":"1: Bass drum and snare","opts":{"groove":"boomchick","push":false}},{"label":"2: Hi-hat in quarters","opts":{"groove":"hhquarters","push":false}},{"label":"3: Hi-hat in eighths","opts":{"groove":"hheighths","push":false}},{"label":"4: Rock beat with fills","opts":{"groove":"rock"}}]'></div>
+
+## Bass
+
+The bass plays the lowest note of each chord. That note is the **root**, the letter name of
+the chord: G, D, E, C. On a bass in standard tuning (E A D G, lowest string first):
+
+| Chord | String | Fret |
+|---|---|---|
+| G | E (lowest) | 3 |
+| D | A | 5 (or the open D string) |
+| Em | E (lowest) | open |
+| C | A | 3 |
+
+- **Level 1: One note a bar.** Play the root on "1" and let it ring for four beats.
+- **Level 2: Two notes a bar.** The root on 1 and on 3.
+- **Level 3: Four notes a bar.** The root on every beat.
+- **Level 4: Eighth notes.** The root eight times a bar: "1 and 2 and 3 and 4 and". This is
+  the classic rock bass part. Lock in with the drummer's bass drum.
+
+<div class="ar-demo" data-style="rock" data-chart="G|D|Em|C" data-tempo="92" data-comp="guitar" data-on="bass comp drums" data-staves="bass" data-choice-label="Level:" data-choices='[{"label":"1: One note a bar","opts":{"bassFeel":"held","push":false}},{"label":"2: Root on 1 and 3","opts":{"bassFeel":"halves","push":false}},{"label":"3: Root on every beat","opts":{"bassFeel":"roots","push":false}},{"label":"4: Root eighths","opts":{"bassFeel":"eighths"}}]'></div>
+
+## Guitar
+
+There are two things to learn: the **chord shapes** (left hand) and the **strum** (right hand).
+Pick a level of each. They do not have to match.
+
+**Chord shapes.** Pick one row. The dots show where your fingers go; the number in each dot is
+the note's place in the chord (1 = the root, 3, 5). An x above a string means don't play it.
+Every shape opens in the [Chord Library](/tools/chord-library.html), with the other ways to play it.
+
+*Easy shapes (one or two fingers).* The D is a D5: it has no F♯, but it fits the song.
+
+<div class="sc-shapes" data-inst="guitar" data-shapes="G:xx0003 D5:xx023x Em:022000 C:xxx010"></div>
+
+*Full open chords.* More on these in [Guitar Chord Shapes by Hand](chord-shapes-guitar-hand.qmd).
+
+<div class="sc-shapes" data-inst="guitar" data-shapes="G:320003 D:xx0232 Em:022000 C:x32010"></div>
+
+*Power chords* (for a louder, harder rock sound). Two fingers, the same shape every time; only
+E5 uses an open string.
+
+<div class="sc-shapes" data-inst="guitar" data-shapes="G5:35xxxx D5:x57xxx E5:02xxxx C5:x35xxx"></div>
+
+**Strum.**
+
+- **Level 1: One strum a bar.** Strum down on "1" and let it ring. This gives you three beats
+  to get to the next chord.
+- **Level 2: Down on every beat.** Four downstrokes a bar.
+- **Level 3: Down, up.** Eight strums a bar: down on the numbers, up on the "and"s. Keep your
+  arm moving even when you miss a string.
+- **Level 4: D, D-U, D, D-U.** The folk-rock strum. Count "1, 2 and, 3, 4 and".
+
+<div class="ar-demo" data-style="rock" data-chart="G|D|Em|C" data-tempo="92" data-comp="guitar" data-on="bass comp drums" data-staves="comp" data-choice-label="Level:" data-choices='[{"label":"1: One strum a bar","opts":{"compRhythm":"pad","push":false}},{"label":"2: Down on every beat","opts":{"compRhythm":"strumQuarters","push":false}},{"label":"3: Down-up eighths","opts":{"compRhythm":"strumEights","push":false}},{"label":"4: D, D-U, D, D-U","opts":{"compRhythm":"strumFolk"}}]'></div>
+
+## Keyboard
+
+The notes below stay close together, so your right hand barely moves.
+
+Level 1 plays only the root, the note marked 1 (G, D, E, C). Level 2 and up play all three notes.
+
+<div class="sc-shapes" data-inst="keyboard" data-shapes="G:55,59,62 D:57,62,66 Em:55,59,64 C:55,60,64"></div>
+
+- **Level 1: One note a bar.** Play the root with your right thumb on "1" and hold it.
+- **Level 2: The chord, once a bar.** Three notes together on "1", held for four beats.
+- **Level 3: The chord on every beat**, with your left hand playing the root on "1".
+- **Level 4: Driving eighths.** The chord eight times a bar, left hand on the root. Keep it
+  light so that it does not cover the guitar.
+
+<div class="ar-demo" data-style="rock" data-chart="G|D|Em|C" data-tempo="92" data-comp="piano" data-on="bass comp drums" data-staves="comp" data-choice-label="Level:" data-choices='[{"label":"1 and 2: One chord a bar","opts":{"compRhythm":"pad","push":false}},{"label":"3: Chord on every beat","opts":{"compRhythm":"quarters","push":false}},{"label":"4: Driving eighths","opts":{"compRhythm":"eighths"}}]'></div>
+
+## Voice, and instruments that play one note at a time
+
+This is for singers, saxophone, violin, flute, trumpet and any other instrument that plays
+one note at a time. (Saxophone and trumpet players: these are concert pitches. Ask which notes
+to read on your instrument.)
+
+- **Level 1: The roots.** Sing or play G, D, E, C, one long note a bar. This is the bass part
+  sung higher.
+- **Level 2: A smooth line.** B, A, B, C. Every note is in its chord, and each one is a step from
+  the last. Sing it on "oo", then make up words.
+- **Level 3: Make up a riff.** Use only the notes **G A B D E** (the G major pentatonic scale).
+  They fit all four chords. Make a short rhythm, two beats long, and repeat it every bar.
+- **Level 4: Make up a melody.** Use the same five notes. Play a short idea, then answer it
+  with a different one, like a question and an answer. See also [Pop Singing](voice-pop.qmd).
+
+Switch on all the players below and play along.
+
+<div class="ar-demo" data-style="rock" data-chart="G|D|Em|C" data-tempo="92" data-comp="guitar" data-on="bass comp drums" data-staves="bass"></div>
+
+## The whole band
+
+Everyone together. Turn off the players your class is covering. The buttons set every player
+in the band to the same level, so you can hear what level 1 and level 4 sound like as a band.
+They don't have to match: a level 1 bass under a level 4 drummer sounds fine.
+
+<div class="ar-demo" data-style="rock" data-chart="G|D|Em|C" data-tempo="92" data-comp="guitar" data-choice-label="Band:" data-choices='[{"label":"Everyone at level 1","opts":{"groove":"boomchick","bassFeel":"held","compRhythm":"pad","push":false}},{"label":"Everyone at level 2","opts":{"groove":"hhquarters","bassFeel":"halves","compRhythm":"strumQuarters","push":false}},{"label":"Everyone at level 3","opts":{"groove":"hheighths","bassFeel":"roots","compRhythm":"strumEights","push":false}},{"label":"Everyone at level 4","opts":{"groove":"rock","bassFeel":"eighths","compRhythm":"strumFolk"}}]'></div>
+
+## Make it a song
+
+A loop becomes a song when the parts change between sections.
+
+- **Verse:** quieter. Drums at level 1 or 2, guitars at level 1.
+- **Chorus:** everybody up a level. Louder.
+- **Ending:** play the G one last time on "1" and let it ring.
+
+Try verse, chorus, verse, chorus, ending. Somebody counts it in: "1, 2, 3, 4".
+
+## For the teacher
+
+- **Grouping.** A band of four to six covers drums, bass, one or two guitars, keys and a voice
+  or melody player. Students who don't play yet can start on drums level 1, bass level 1 or the
+  voice level 1 line.
+- **Tempo.** 92 is a starting point. Slow the band to 70 for level 1 players. Speed it up for
+  the final performance.
+- **Checking progress.** For each student, note the level they can play four times through without
+  stopping, in time with the band. Four times through at a level is the goal before moving up.
+- **Other loops.** The same parts work over **C, G, Am, F** and the other loops in
+  [Four-Chord Loops](four-chord-loops.qmd). Change the chord names and the bass notes.
+
+{{< include _arrange-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/chord-catalog.js?v=1"></script>
+<script src="/apps/shared/lessons/diagrams.js?v=1"></script>
+<script src="/apps/shared/lessons/shape-cards.js?v=1"></script>
+```

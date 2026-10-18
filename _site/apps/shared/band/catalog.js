@@ -243,6 +243,12 @@
       desc:"The drummer sits out." },
     { id:"brushes", label:"Light time", feel:"straight", group:"Hymns and carols", tags:["Carol","Folk"],
       desc:"Very quiet eighths on the hi-hat, a soft kick on 1 and 3 and a light cross-stick on 2 and 4. No fills. A stand-in for brushes." },
+    { id:"brushswing", label:"Brushes, swing", feel:"swing", group:"Hymns and carols", tags:["Jazz","Brushes","Ballad"],
+      desc:"Brushes on the snare: a swish on every beat, leaning on 2 and 4, and taps on the ride pattern (1, 2, the skip after 2, 3, 4, the skip after 4). Hi-hat foot on 2 and 4, a kick you feel more than hear. No fills.", three:true },
+    { id:"brushballad", label:"Brushes, ballad", feel:"any", group:"Hymns and carols", tags:["Jazz","Brushes","Ballad"],
+      desc:"One long sweep of the brush across the snare on 1 and another on 3, a tap on 2 and 4, a soft kick on 1 and the hi-hat foot on 2 and 4. In 3/4 one sweep to the bar and a tap on 2 and 3. No fills.", three:true },
+    { id:"brushfolk", label:"Brushes, folk", feel:"straight", group:"Hymns and carols", tags:["Folk","Country","Brushes"],
+      desc:"A swish on every beat that leans on 2 and 4, light taps on the off-beat eighths and a soft kick on 1 and 3. A quiet country backbeat. No fills.", three:true },
     { id:"twelve8", label:"12/8", feel:"any", group:"Folk, rock and pop", tags:["Doo-wop","Blues","Ballad"],
       desc:"Three eighths to every beat on the cymbal, kick on 1 and 3, backbeat on 2 and 4. In 4/4 the eighths are triplets." },
     { id:"halftime", label:"Half-time", feel:"straight", group:"Folk, rock and pop", tags:["Pop","Ballad","Rock"],
@@ -298,7 +304,7 @@
             strumCamp:"strum rock folk carol", strumFolk:"carol folk strum train", strumEights:"rock strum emo", strumPunk:"emo rock", strumQuarters:"strum rock folk pop carol emo", strum332:"strum rock dance", strum16:"strum rock dance", upbeats:"calypso reggae freylekhs boogie", bossa:"bossa", tango:"tango",
             montuno:"montuno", chacha:"chacha", arp:"pop ballad folk strum doowop hymn carol", arp2:"pop folk strum carol emo prine", prine:"prine folk strum carol train", travis:"prine folk strum carol train", alberti:"pop folk", tresillo:"dance rock reggaeton", clave32:"rock", barbara:"motown rock", g333322:"rock dance", g33433:"dance reggaeton", g3x8:"dance rock", sowhat:"swing", maiden:"boogaloo bossa", takefive:"swing" },
     drums: { auto:"swing ballad boogaloo stride", quarters:"swing ballad stride boogie", ridetime:"swing ballad stride", shuffle:"swing doowop boogie jump", jump:"jump boogie", funk:"boogaloo rock", bossa:"bossa", clave:"montuno", clave32:"montuno", bodiddley:"rock", dembow:"reggaeton dance", chacha:"chacha", tango:"tango", calypso:"calypso",
-             onedrop:"reggae", none:"hymn carol pop folk strum prine", brushes:"carol strum folk pop", boomchick:"folk train carol freylekhs ragtime", waltz:"waltz folk carol", rock:"rock emo", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock emo",
+             onedrop:"reggae", none:"hymn carol pop folk strum prine", brushes:"carol strum folk pop", brushswing:"swing ballad carol folk", brushballad:"ballad swing pop folk carol hymn", brushfolk:"folk carol strum prine train pop", boomchick:"folk train carol freylekhs ragtime", waltz:"waltz folk carol", rock:"rock emo", strum:"strum rock pop", ballad:"pop strum", dance:"dance", motown:"motown", train:"train", twelve8:"doowop", halftime:"pop rock emo",
              hhquarters:"rock pop strum dance boogaloo", hheighths:"rock pop strum dance boogaloo", hhaccents:"rock pop strum dance boogaloo", hhoffbeats:"rock pop strum dance boogaloo", hhopen:"rock pop strum dance boogaloo",
              hhdance:"rock pop strum dance boogaloo", hhsix:"rock pop strum dance boogaloo", hhsix2:"rock pop strum dance boogaloo", hhfoot4:"rock pop strum dance boogaloo", hhswing:"swing stride boogie" }
   };

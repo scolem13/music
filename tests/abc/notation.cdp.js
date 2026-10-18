@@ -19,8 +19,7 @@ const assert = require("assert");
     let d = await doc();
     assert.deepStrictEqual(d.chunks[0].pitches, [67, 71, 74, 72, 71, 69, 67, 66, 67]);
     assert.strictEqual(await b.eval("document.getElementById('nt-rhythm-nometer').hidden"), false);
-    assert.strictEqual(await b.eval("document.getElementById('nt-pending-wrap').hidden"), false);
-    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-pending .abcjs-note').length"), 9);
+    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .nt-pitchonly .abcjs-note').length"), 9);   // a pitches-only chunk, in its place in the score
 
     // key guess needs a yes
     assert.strictEqual(await b.eval("document.getElementById('nt-keyguess').hidden"), false);
@@ -33,26 +32,26 @@ const assert = require("assert");
     await b.eval("document.querySelector('#nt-meter-quick button:nth-child(3)').click()");   // 4/4
     const cells = await b.eval("document.querySelectorAll('#nt-cells .cell-btn').length");
     assert.ok(cells > 1, "rhythm bank has patterns: " + cells);
-    assert.strictEqual(await b.eval("document.querySelector('#nt-cells .cell-number').textContent"), "1");
+    assert.strictEqual(await b.eval("document.querySelector('#nt-cells .cell-number').textContent"), "4");   // 2 3 4 8 always the half, dotted half, quarter, eighth (those the ticked boxes give)
     assert.ok(await b.eval("document.querySelector('#nt-cells .cell-btn').style.height === '50px'"), "cells sized like the Song Builder's");
     for (let i = 0; i < 7; i++) await b.eval("document.querySelector('#nt-cells .cell-btn').click()");
-    await key({ key: "1" });                                                              // the 8th by its number
+    await key({ key: "4" });                                                              // the 8th by its number
     d = await doc();
     assert.strictEqual(d.chunks[0].rhythm.length, 8);
-    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .abcjs-note').length"), 8);
-    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-pending .abcjs-note').length"), 1);   // 9 notes, 8 slots
+    assert.strictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly')).length"), 8);
+    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .nt-pitchonly .abcjs-note').length"), 1);   // 9 notes, 8 slots
     { const txt = await b.eval("document.getElementById('nt-abc-text').value"); assert.ok(/G2 B2 d2 c2 \| B2 A2 G2 F2 \|\]/.test(txt), txt); }
     // clicking the first note of a bar finds it (abcjs starts it at the space after the barline), and Shift+click makes a range
-    { const click = (i, shift) => b.eval(`(() => { const n = document.querySelectorAll('#nt-paper .abcjs-note')[${i}], r = n.getBoundingClientRect(), o = { bubbles: true, clientX: r.x + r.width / 2, clientY: r.y + r.height / 2, shiftKey: ${!!shift}, button: 0 };
+    { const click = (i, shift) => b.eval(`(() => { const n = [...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly'))[${i}], r = n.getBoundingClientRect(), o = { bubbles: true, clientX: r.x + r.width / 2, clientY: r.y + r.height / 2, shiftKey: ${!!shift}, button: 0 };
         n.dispatchEvent(new MouseEvent('mousedown', o)); n.dispatchEvent(new MouseEvent('mouseup', o)); })()`);
       await click(4); await b.sleep(150);
       assert.strictEqual(await b.eval("NotationPage.sel() && NotationPage.sel().slot"), 4, "the first note of bar 2 is clickable");
       await click(1); await b.sleep(150); await click(5, true); await b.sleep(150);
-      assert.strictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].map(n => n.classList.contains('nt-sel') ? 1 : 0).join('')"), "01111100", "Shift+click selects the range, across the barline");
+      assert.strictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly')).map(n => n.classList.contains('nt-sel') ? 1 : 0).join('')"), "01111100", "Shift+click selects the range, across the barline");
       await click(7); await b.sleep(150); }
 
     // click the 3rd note, move it: step down (d -> c), semitone up (c -> c#), octave down
-    await b.eval("document.querySelectorAll('#nt-paper .abcjs-note')[2].dispatchEvent(new MouseEvent('mousedown',{bubbles:true})), document.querySelectorAll('#nt-paper .abcjs-note')[2].dispatchEvent(new MouseEvent('mouseup',{bubbles:true})), 1");
+    await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly'))[2].dispatchEvent(new MouseEvent('mousedown',{bubbles:true})), [...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly'))[2].dispatchEvent(new MouseEvent('mouseup',{bubbles:true})), 1");
     await b.sleep(50);
     assert.deepStrictEqual(await b.eval("NotationPage.sel()"), { chunk: 0, voice: 0, slot: 2 });
     await key({ key: "ArrowDown" });
@@ -68,7 +67,7 @@ const assert = require("assert");
 
     // a second chunk: rhythm first, slashes until notes arrive by computer piano keys
     await b.eval("document.getElementById('nt-c-add').click()");
-    for (let i = 0; i < 4; i++) await key({ key: "1" });
+    for (let i = 0; i < 4; i++) await key({ key: "4" });
     assert.ok(/"\^Chunk 2"/.test(await b.eval("document.getElementById('nt-abc-text').value")));
     assert.strictEqual((await b.eval("document.getElementById('nt-abc-text').value")).split("!style=rhythm!").length - 1, 4);
     await b.eval("document.querySelector('[data-mode=piano]').click()");
@@ -92,13 +91,13 @@ const assert = require("assert");
     assert.ok(/\[M:2\/4\]/.test(await b.eval("document.getElementById('nt-abc-text').value")));
     await b.eval("(() => { const s = document.getElementById('nt-c-meter'); s.value = ''; s.dispatchEvent(new Event('change')); })()");
     assert.ok(!(await b.eval("[...document.querySelectorAll('#nt-sheet thead th')].map(t => t.textContent)")).includes("Meter"));
-    // duplicate, move up, merge, split
+    // duplicate, move up, join, split
     await b.eval("document.getElementById('nt-c-dup').click()");
     assert.deepStrictEqual((await doc()).chunks.map(c => c.name), ["Chunk 1", "Chorus", "Chorus (copy)"]);
     await b.eval("document.getElementById('nt-c-up').click()");
     assert.deepStrictEqual((await doc()).chunks.map(c => c.name), ["Chunk 1", "Chorus (copy)", "Chorus"]);
     assert.strictEqual(await b.eval("NotationPage.cur()"), 1);
-    await b.eval("document.getElementById('nt-c-merge').click()");
+    await b.eval("document.getElementById('nt-c-join').click()");
     d = await doc(); assert.deepStrictEqual(d.chunks.map(c => c.rhythm.length), [8, 8]);
     await b.eval("(() => { document.getElementById('nt-c-at').value = 1; document.getElementById('nt-c-split').click(); })()");
     d = await doc(); assert.deepStrictEqual(d.chunks.map(c => c.rhythm.length), [8, 4, 4]);
@@ -123,7 +122,7 @@ const assert = require("assert");
     d = await doc();
     assert.strictEqual(d.meter, "3/4"); assert.strictEqual(d.key, "D");
     assert.deepStrictEqual(d.chunks[0].pitches, [62, 66, 69, 74]);
-    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .abcjs-note').length"), 4);
+    assert.strictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly')).length"), 4);
 
     // chords typed by bar into a new chords-only chunk
     await b.eval("document.getElementById('nt-c-add').click()");
@@ -157,7 +156,7 @@ const assert = require("assert");
     await typeIn("nt-words-text", "Hap-py birth-day to");
     await b.sleep(600); await b.eval("document.getElementById('nt-words-text').dispatchEvent(new Event('blur'))");
     assert.ok(/w: +\| +\| Hap- py birth- \| day to \*/.test(await b.eval("document.getElementById('nt-abc-text').value")), await b.eval("document.getElementById('nt-abc-text').value"));
-    assert.deepStrictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-lyric')].map(e => e.textContent.trim())"), ["", "", "", "", "Hap-", "py", "birth-", "day", "to", ""]);
+    assert.deepStrictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-lyric')].map(e => e.textContent.trim()).filter(Boolean)"), ["Hap-", "py", "birth-", "day", "to"]);   // each chunk on its line: blanks vary
     assert.ok(/\[D\]Hap/.test(await b.eval("document.getElementById('nt-cho-text').value")));
 
     // a second voice, entered by letters, on one staff
@@ -185,7 +184,7 @@ const assert = require("assert");
     await b.sleep(900);
     d = await doc();
     assert.strictEqual(d.voices.length, 2);
-    assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .abcjs-note').length"), 24);
+    assert.strictEqual(await b.eval("[...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly')).length"), 24);
     await b.eval("document.getElementById('nt-abc-text').dispatchEvent(new Event('blur'))");
 
     // beams drawn: eight eighths in 4/4 make two beams
@@ -195,7 +194,7 @@ const assert = require("assert");
     assert.strictEqual(await b.eval("document.querySelectorAll('#nt-paper .abcjs-beam-elem').length"), 2);
 
     // shift-click a span, copy, paste after it
-    const clickNote = (i, shift) => b.eval(`(() => { const n = document.querySelectorAll('#nt-paper .abcjs-note')[${i}];
+    const clickNote = (i, shift) => b.eval(`(() => { const n = [...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly'))[${i}];
       n.dispatchEvent(new MouseEvent('mousedown', { bubbles: true, shiftKey: ${!!shift} })); n.dispatchEvent(new MouseEvent('mouseup', { bubbles: true, shiftKey: ${!!shift} })); })()`);
     await clickNote(1); await clickNote(3, true);
     assert.deepStrictEqual(await b.eval("NotationPage.sel()"), { chunk: 0, voice: 0, slot: 1, end: { chunk: 0, slot: 3 } });

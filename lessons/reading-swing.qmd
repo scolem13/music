@@ -2,6 +2,10 @@
 title: "Reading Swing from a Lead Sheet"
 toc: true
 toc-depth: 2
+description: "Why swing eighths are written as plain eighths, how far the long-short can stretch with tempo and style, and the range of good readings, with *Blues in the Closet* swung and *Watermelon Man* straight for contrast. Every example plays, with a swing slider."
+instruments: [bass, guitar, piano, drums, violin, sax, other]
+topics: [jazz, rhythm, reading]
+has: [notation, interactive]
 ---
 
 A lead sheet writes swing eighths as plain eighth notes, and that is not an error. The way
@@ -123,17 +127,202 @@ K:F
 The ratio is only one of the choices a plain line of eighths leaves open. Others matter at least
 as much, and the lead sheet says nothing about any of them.
 
-- **Accents on the off-beats.** Swing players lean on the "and", not the beat. A line of eighths
-  is usually played *doo-BAH doo-BAH*, with the beat note soft and the off-beat note pushed.
-  This is why fast swing still swings at nearly even eighths.
-- **Ghosted notes.** A note in the middle of a run may be barely played at all, more felt than
-  heard.
-- **Length.** A written quarter note is often played short (*dit*), especially on beats 2 and 4
-  and at the end of a phrase. A written eighth tied over the bar line is played long.
-- **Where in the beat.** Some players sit right on the beat, others play a fraction behind it
-  ("laid back") against a drummer who is on top of it. Neither is written; both are swing.
-- **Small changes to the rhythm.** Players anticipate a note by an eighth, delay one, or add a
-  pickup. On a lead sheet, that is interpretation, not a wrong note.
+Each choice below shows the line as written, two ways to play it that are both swing, and one
+way that is not. The played versions are written out more exactly than any chart would be:
+accent marks (>), staccato dots, and "ghost" over a note that is barely played.
+
+#### Accents on the off-beats
+
+Swing players lean on the "and", not the beat. A line of eighths is usually played
+*doo-BAH doo-BAH*, with the beat note soft and the off-beat note pushed. This is why fast swing
+still swings at nearly even eighths.
+
+```{=html}
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="As written">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"FA cA dc AF | "Bb7"D2 FA- A4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Accent every &quot;and&quot; (doo-BAH doo-BAH)">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"F!>!A c!>!A d!>!c A!>!F | "Bb7"D2 F!>!A- A4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Accent only the off-beats that start or turn the line">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"F!>!A cA dc A!>!F | "Bb7"D2 F!>!A- A4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✗ Accent every beat (DOO-bah DOO-bah): a march, however long-short it is">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"!>!FA !>!cA !>!dc !>!AF | "Bb7"!>!D2 FA- A4 |]
+</script></div>
+```
+
+#### Ghosted notes
+
+A note in the middle of a run may be barely played at all, more felt than heard.
+
+```{=html}
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="As written">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"cB AG FG Ac | "Bb7"d4 z4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Ghost one note on a beat in the middle of the run">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"cB "^ghost"!pp!A!f!G FG Ac | "Bb7"d4 z4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Ghost two notes on beats, so the line seems to skip down">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"cB "^ghost"!pp!A!f!G "^ghost"!pp!F!f!G Ac | "Bb7"d4 z4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✗ Ghost the note the line is heading for: the melody goes missing">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"cB AG FG Ac | "Bb7""^ghost"!pp!d4 z4 |]
+</script></div>
+```
+
+#### Length
+
+A written quarter note is often played short (*dit*), especially on beats 2 and 4 and at the
+end of a phrase. A written eighth tied over the bar line is played long.
+
+```{=html}
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="As written">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z2 A2 z2 c2 | "Bb7"z2 dc A2 F2- | "F7"F8 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Quarters on 2 and 4 short (dit), the tied note held full">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z2 .A2 z2 .c2 | "Bb7"z2 dc .A2 F2- | "F7"F8 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Quarters held (doo), the tied note let go after beat 2">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z2 !tenuto!A2 z2 !tenuto!c2 | "Bb7"z2 dc !tenuto!A2 F2- | "F7"F4 z4 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✗ The tie dropped: the F played again on beat 1 instead of held over the bar line">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z2 .A2 z2 .c2 | "Bb7"z2 dc .A2 F2 | "F7"F8 |]
+</script></div>
+```
+
+#### Where in the beat
+
+Some players sit right on the beat, others play a fraction behind it ("laid back") against a
+drummer who is on top of it. Neither is written; both are swing. Laid back is far smaller than
+any written note value; the sixteenth rest below is an exaggeration so it can be seen.
+
+```{=html}
+<div class="sw-ex" data-tempo="120" data-swing="62" data-noslider="1" data-title="As written (and ✓ played on top of the beat)">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:F
+"F7"F4 A2F2 B4 A2F2 | "F7"C8 z8 |]
+</script></div>
+<div class="sw-ex" data-tempo="120" data-swing="50" data-noslider="1" data-title="✓ Laid back (exaggerated): every note a hair late, the bar lines where they were">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:F
+"F7"z F3 zA zF zB3 zA zF | "F7"z C7 z8 |]
+</script></div>
+<div class="sw-ex" data-tempo="120" data-swing="62" data-noslider="1" data-title="✗ So far behind that the beat notes land on the &quot;and&quot;: the line has moved, not leaned">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:F
+"F7"z2 F4 A2F2 B4 A2 | "F7"F2 C8 z6 |]
+</script></div>
+```
+
+#### Small changes to the rhythm
+
+Players anticipate a note by an eighth, delay one, or add a pickup. On a lead sheet, that is
+interpretation, not a wrong note.
+
+```{=html}
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="As written">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z4 A2 c2 | "Bb7"d4 c2 A2 | "F7"F8 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Anticipate: the d and the last F come an eighth early, tied over">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z4 A2 cd- | "Bb7"d4 c2 AF- | "F7"F8 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✓ Add a pickup into the phrase and delay the c by an eighth">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z2 FG A2 zc | "Bb7"d4 c2 A2 | "F7"F8 |]
+</script></div>
+<div class="sw-ex" data-tempo="132" data-swing="62" data-noslider="1" data-title="✗ The whole phrase a beat late: the long notes now fall on 2, and it ends in the next bar">
+<script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:F
+"F7"z6 A2 | "Bb7"c2 d4 c2 | "F7"A2 F6 |]
+</script></div>
+```
 
 What is *not* up to you: where the bar lines are, where the notes fall in the beat (on it or on
 the "and"), and the form. A swing eighth on the "and" of 2 is late, but it is still the "and"

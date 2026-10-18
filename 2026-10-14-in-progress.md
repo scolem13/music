@@ -1370,3 +1370,137 @@ each its own way; meter required before rhythm; key guessed but always confirmed
   voice-classical: about 20 sing prompts); rhythm grading or record-yourself on the ~50 patterns pages (one template); grading the hum
   against the drone in tuning-systems; quarter-notes and tonal-do-re-mi; the Vocal Warm-up (no mic yet; call-and-response suits it);
   rec-monitoring and rec-gain-staging could show the check as a teaching demo.
+
+## Brushes for the drummer (this session, 2026-10-17)
+
+- **What was added:** three brush grooves in `apps/shared/band/drums.js`, listed in `catalog.js` under Hymns and carols: `brushswing`
+  (Brushes, swing: a swish on every beat leaning on 2 and 4, taps on the ride pattern, hat foot on 2 and 4, a barely-there kick; 3/4 too),
+  `brushballad` (one long sweep on 1 and on 3, a tap on 2 and 4, soft kick on 1; in 3/4 one sweep and a tap on 2 and 3) and `brushfolk`
+  (swish on every beat leaning on 2 and 4, light off-beat taps, kick on 1 and 3). No fills. The old "Light time" (`brushes`) is untouched.
+  Fit lists (`FITS.drums`), GM notes (`midi.js`), staff heads (`notation.js`) and `PLAN` entries in `scripts/pattern-lessons.mjs` are done.
+  `tests/band/pat/t_patterns.js` knows the new pieces and checks each groove's beats.
+- **Sounds are synthesized, not recorded.** `sounds.js` `brushBuffer` makes `brushTap`, `brushSwish` and `brushSweep` from seeded noise
+  when the kit loads (zones with `make:` instead of `url:`). The MusyngKite percussion the kit uses is the GM standard kit only, so
+  there are no brush samples in it. First guesses for level and tone; nobody has listened.
+- **Tests:** `t_patterns.js`, `t_pop.js`, `t_fills.js` pass; `t_sections.js` and `t_change.js` passed before the `t_patterns` fix. The tests
+  hardcode `/Users/sean.coleman/...`, so they only run with that path changed to `/Users/sean/` (run from temporary copies; not fixed).
+  The buffers were checked in node (no NaN, peak 0.9); not tried in a browser.
+- **Not done:** `?v=` numbers in `tools/_backing-track.qmd`, `tools/_accomp-styles.qmd` and every lesson that loads `band/*.js`; `quarto render`;
+  `quarto render lessons/patterns`; `bash ~/Projects/carols/tools/build.sh`. No style uses the grooves by default yet (a jazz ballad
+  style, or brushes on swing, would). Not committed.
+- **Real recordings, if the synth is not good enough.** Searched, not downloaded:
+  - *Brushed Drum Sample Pack*, Ben Burnes and Mark Powers: CC0, 150+ unprocessed brush hits (Yamaha Birch Custom snare, Remo Coated
+    Ambassador head, two Vic Firth brush types), 28 loops. $2.99 on Gumroad (gumroad.com/ben_burnes); the free coupon ended January
+    2019. Reported at rekkerd.org/?p=134767. The best lead.
+  - GM brush kit in FluidR3 / MS_General: forum reports say the swirl sounds like a hit, tap and slap like stick hits. Not worth it.
+  - Polyphone "Jazz Kit" (SF2, attribution): the listing does not mention brushes. Freesound: no CC0 brush pages found by search; try its
+    own CC0 filter ("brush sweep", "brush stir").
+  - If the pack is bought: put a few taps, swishes and long sweeps (soft and medium) in `apps/shared/band/samples/kit/`, list them as
+    round-robin zones for the three pieces in `sounds.js` (the synth stays as the fallback), add them to
+    `tests/band/meter/fetch-samples.js`, and credit the pack.
+- **What nobody has tried:** hearing any of it. Whether the swish sits right under the swung ride pattern; whether the long sweep
+  rings through the next beat at slow tempos; levels against the bass and a vocal.
+
+## Offline use and audio in R2 (plan, nothing built)
+
+Goal: work on a poor connection by serving web assets locally, and keep a growing set of audio files in Cloudflare R2 that
+local runs can read from a local copy. Only a survey so far; no files changed.
+
+- **What the site loads from the web today:**
+  - jsDelivr / unpkg: supabase-js (`_includes/head.html`), bootstrap 5.3.x, svguitar, vexflow, Tone, html2canvas.
+  - Google Fonts: Oswald, JetBrains Mono, Inter, Source Sans (`<link>` in `head.html` and several pages).
+  - `raw.githubusercontent.com`: the Bravura notation font (one file).
+  - Soundfonts: `apps/shared/soundfont.js` picks jsDelivr (`paulrosen/midi-js-soundfonts/MusyngKite/`) and falls back to
+    `paulrosen.github.io`; `tools/_drumset.qmd` hardcodes the jsDelivr URL; FluidR3_GM and abcjs soundfont URLs also appear.
+  - Wikimedia: about 190 IPA clips in `apps/shared/ipa/ipa-audio.js` (`src`, `mp3`) plus many images. `scripts/ipa-audio.mjs`
+    already builds that list.
+  - YouTube iframe API (Timestamp Notes, `player.js`). Cannot be local; audio-file mode is the offline path.
+- **Biggest risk:** `head.html` loads supabase-js with a blocking script, then calls `window.supabase.createClient(...)` at once.
+  If the CDN is slow or down, that line throws. Vendoring the file fixes it; guarding the call helps too.
+- **Soundfonts are the large part.** The full MusyngKite set is hundreds of MB. Download only the instruments the band,
+  drumset and abcjs request, and make the local path `PRIMARY` in `soundfont.js` with the CDN as the fallback.
+- **Plan:** one script, `scripts/vendor-assets.mjs`: download the libraries into `apps/vendor/`, fonts as woff2 with a local
+  `@font-face` CSS, the soundfont instruments in use, and the Wikimedia files (keep the `page` attribution links, since Commons
+  licences need credit); then rewrite the references. Open question: commit the vendored files, or git-ignore them and fetch.
+- **R2 audio:** nothing in the repo refers to R2 yet. Use one base URL (`AUDIO_BASE`, in `config.js` or a small
+  `audio-base.js`): the R2 public bucket or custom domain in production, a local server (e.g. `http://localhost:4456/audio/`)
+  when running locally.
+  - Keep the local mirror outside the Quarto project, or anything in it is copied into `_site`. Sync with `rclone sync` or
+    `wrangler` (neither is installed). Serve with `npx http-server <dir> -p 4456 --cors`.
+  - R2 needs a CORS policy for the site's origin (Web Audio `fetch` / `decodeAudioData`), including `http://localhost:4455`.
+  - Range requests work on both, so long files can seek.
+- **Alternative:** a service worker with cache-first for fonts, scripts and soundfonts. Less work than vendoring, but the first
+  load still needs a connection.
+- **Not tried:** any of it. Not yet decided: whether to build the script, and committed vs ignored vendor files.
+
+## Also done in main (another session, 2026-10-17): Tap Along and Tap Latency
+For a phone: chords and words, with bars, chord changes and sections marked against a song playing in any other app (Spotify, a CD,
+a band). Uncommitted. It touches no file in the swing list. In `_quarto.yml`, the Tools menu gets two lines after
+`tools/timestamp-notes.qmd`.
+
+- **New:** `tools/tap-along.qmd`, `tools/tap-latency.qmd`, `apps/shared/tap-along/` (`tap-along.js`, `tap-latency.js`,
+  `tap-along.css`), `tests/lessons/tap-along.cdp.js` (8 checks, all pass at 390×800). A paragraph about them was added to `CLAUDE.md`.
+- **Idea:** the page keeps its own clock. One pass without pauses keeps the taps consistent with each other, so only one shift
+  is needed: in Play mode, Sync (button 1) on the first tapped bar. Pause here if the other app is paused, since a pause the page
+  isn't told about can't be fixed afterwards.
+- **Pad:** 1 Bar, 2 Chord, 3 Section. The n-th chord tap is the sheet's n-th chord. Sheet: UG text (via `UgChordPro.convert`) or ChordPro.
+- **Lag:** Tap Latency uses a metronome (four to count in, twelve taps on each button in turn). It compares each tap with when
+  its click came out (`getOutputTimestamp`) and saves the medians in localStorage `tap-latency-v1`. Tap Along takes them off
+  each tap. Sync gets button 1's lag, so lag the buttons share cancels.
+- **Not tried:** a real phone (touch feel, iOS audio, the silent switch). **Not done:** opening Tap Along files in Timestamp
+  Notes (or the other way round); fixing a single chord tap other than Undo; a Note key.
+
+## Sampling, DJing, turntables, and a catalogue of the lessons' tools (this session, 2026-10-18)
+Uncommitted.
+
+- **Sampling (6):** `lessons/sampling-{what,chop,pitch,beat,flip,law}.qmd`, from a producer's and a DJ's side (loops, acapellas,
+  edits). The law lesson says it is not legal advice.
+- **DJing (7):** `lessons/dj-{gear,beatmatch,phrasing,eq,scratch,harmonic,set}.qmd`, each ending with an "In other gear" table
+  (Serato, rekordbox, Traktor). New sidebar parts "Sampling" and "DJing" after the DAWs; in the listing with topic filters; 34 sources
+  in `works-cited.py`.
+- **Widgets** (`lessons/_dj-kit.qmd`, documented at their tops): `apps/shared/dj/turntables.js` (+ `.css`, `<div class="dj-tt">`): two
+  decks (worklet per deck, scratches backwards), pitch ±8/±16 with key shift, CUE, waveform, BPM + Tap, key/Camelot; mixer with gain,
+  3-band EQ with kills, filter, cue, faders, crossfader curve, a Listen speakers/phones switch, a Match readout. Ten demo loops are
+  synthesised in the browser (no samples needed). `apps/shared/dj/sampler-pads.js` (`sp-pads`): 16 slices (equal, beats, hits;
+  draggable), MPC keys / MIDI 36-51, repitch or stretch, reverse, pattern recorder with undo.
+- **R2 hook (for the song library):** `Turntables.TRACK_SOURCES`; point at a manifest with `window.DJ_CONFIG = {manifest}`,
+  `<meta name="dj-manifest">`, `data-manifest`, or `Turntables.addManifest(url)`. Manifest `{label, tracks:[{id,title,artist,bpm,key,url,
+  firstBeat,license}]}`, URLs relative to it, fetched with CORS (the bucket needs a GET rule for the site; see the R2 plan above).
+  `Turntables.addSource` for anything else (signed URLs).
+- **Tools catalogue:** `node scripts/tool-catalog.cjs` writes `apps/shared/lessons/tool-catalog-data.js` (104 lessons, 80 tools);
+  `lessons/tools.qmd` (second in the Lessons sidebar) lists them by family with a filter; `apps/shared/lessons/tool-links.js`, loaded on
+  /lessons/ pages from `_includes/head.html`, adds a "Same tools in" box at each lesson's foot.
+- **Tests:** `node tests/lessons/dj.cdp.js` passes (incl. the manifest hook against a local server). Catalogue checked headless on two pages.
+- **Not done:** re-render every lesson so the "Same tools in" box shows; run `scripts/lesson-features.cjs` (the new lessons' `has:` was
+  set by hand); check the Serato/rekordbox/Traktor menu names against the manuals (written from memory; links go to download pages).
+- **Integration ideas, not built:** synth-kit EQ / compressor / sidechain inside the DAW mixer lessons; the strobe tuner in the guitar,
+  violin and sax gear lessons; blues examples opening in the Notation page; the band's loops as turntable/pad sources.
+- **Nobody has listened to:** the decks, the scratch sound, the demo loops, the pads' stretch.
+
+## Also done in main (another session, 2026-10-18): guitar tuning, tuning lessons, harmonics, Setup Check
+Ear-first guitar tuning, three lessons on what each tuning method gets right and wrong, a lesson on playing harmonics (written by
+an agent), and a guitar/bass setup diagnosis. Uncommitted. Shared files touched: `_quarto.yml` (Tools menu: two lines after
+`tools/vocal-warmup.qmd`; Guitar Technique: three tuning lessons first, `guitar-harmonics` after `guitar-bends`), the
+`contents:` of `lessons/index.qmd` (the same four), and a paragraph in `CLAUDE.md`.
+
+- **New:** `tools/guitar-tuning.qmd` + `apps/shared/guitar-tuning.js`; `tools/guitar-setup-check.qmd` + `apps/shared/setup-check.js`;
+  `lessons/guitar-tuning-ear.qmd`, `-methods.qmd`, `-tuners.qmd`; `lessons/guitar-harmonics.qmd`; `tests/lessons/guitar-tuning.cdp.js`
+  (8 checks, all pass; a sine stands in for the mic through `window.TEST_MIC_SOURCE`).
+- **Tuning page:** six methods, one string at a time: reference, drone (follows the string; optional fifth), fifth-fret,
+  harmonics (B and high E come from low E's 7th and 5th harmonics; the 4th-fret G-to-B harmonic is avoided), octaves, and the
+  tuner with ear first. A fretboard you can click. Listening on/off (mic). With Ear first, the reading stays blurred until you guess
+  flat, in tune or sharp, and it keeps a score. Tunings: six presets plus Custom (`GuitarTuning.parseTuning`: "D A D G A D" lands
+  near standard; octaves can be given). localStorage `gtune-v1`.
+- **Setup Check:** electric, acoustic, classical, bass 4 and 5. Relief (paper / card choices or mm), a buzz map (open + four fret
+  zones), action at 12, nut, 12th-fret harmonic against the fretted note (by ear, then the mic, median of ~1.2 s), other symptoms.
+  Each finding is marked You / Teacher / Repair tech. Order of work: relief → action → nut → intonation. localStorage
+  `setup-check-v1`. On bass, measuring at the 12th fret (an octave up) keeps the low strings above PitchDetect's 70 Hz floor.
+- **Harmonics lesson:** the `series` widget, a clickable string that plays each node, natural / tapped / artificial / harp /
+  pinch harmonics, notation, faults, a practice routine, and a strobe on E3.
+- **Nobody has listened to:** the plucks (Karplus-Strong), the harmonic tones, the drone, or the harmonics lesson's string.
+  Not tried with a real guitar and microphone, or on a phone.
+- **To check:** the relief and action targets, and the who-does-what rules, are from general setup knowledge, not a cited
+  source. `has:` on the four lessons was written by hand (rerun `scripts/lesson-features.cjs`). In the harmonics lesson, the
+  notation conventions aren't sourced, and `technique` as a topic is used by only one other lesson.
+- **Not done:** the fifth-fret and harmonics steps are generated for any tuning, but only the standard-tuning steps were checked by hand; the
+  mic can't read the open low strings of a bass or a tuning below about D2 (the tuning page says so).

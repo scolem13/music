@@ -1,0 +1,173 @@
+---
+title: "Sound 25: Chiptune"
+toc: true
+toc-depth: 2
+description: "Four channels on a game console chip, and arpeggios so fast they turn into chords."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
+---
+
+The music of 1980s home computers and game consoles wasn't recorded. A small **sound chip** played it
+live, note by note, as the game ran. The Nintendo Entertainment System (NES, 1983 in Japan as the
+Famicom) had **two pulse waves, one triangle wave and one noise channel**, plus a channel for short,
+low-quality samples that most games barely used. The Game Boy had nearly the same four: two pulses, a
+small wave channel of your own design, and noise. The Commodore 64's SID chip had three voices.
+
+Each channel could play **one note at a time**. That's four notes in all, and one of them is noise,
+so it can't hold a pitch. Composers such as Koji Kondo (*Super Mario Bros.*, 1985), Hirokazu Tanaka,
+Tim Follin, and on the Commodore 64 Rob Hubbard and Martin Galway still wrote full arrangements:
+melody, harmony, bass and drums. The music people now call **chiptune** grew out of the tricks they
+used to do it.
+
+**How to use the page.** Press ▶ to hear a four-bar tune written for the four channels. The buttons
+mute and unmute each channel. Hold two or three keys (computer keys, the keyboard below, or MIDI) and
+the chord channel arpeggiates your chord in place of the song's. Start with the volume low.
+
+## Four channels
+
+<div class="sk" data-w="chip"></div>
+
+Every channel has a job, and the jobs follow from what each channel can do:
+
+| Channel | What it can do | What composers gave it |
+|---|---|---|
+| **Pulse 1** | a pulse wave at 12.5%, 25% or 50% width, 16 volume levels | the melody |
+| **Pulse 2** | the same | harmony, a counter-melody, or an echo of the melody |
+| **Triangle** | a triangle wave, an octave lower than the pulses, **no volume control**: on or off | the bass |
+| **Noise** | noise, high or low, 16 volume levels | the drums |
+
+The **pulse width** is the instrument choice. 50% is the hollow square wave (odd harmonics only;
+[Sound 2](sound-waveforms.qmd)). 25% is fuller and more nasal, and 12.5% is thin and buzzy. Try
+both pulse widths while the tune plays. Composers often changed the width partway through a note to
+give it more movement.
+
+Because the triangle has no volume control, chip bass lines never fade. A note sounds at full level
+until it's cut off, so bass lines are written as bouncing octaves or with short gaps to make the
+rhythm. Drums are short bursts of noise: a low, quick one for the kick, a brighter one for the
+snare, a tiny high one for the hi-hat (built the same way as in [Sound 3](sound-noise.qmd)). Mute the
+other three channels to hear how little each drum is.
+
+## Rows and frames
+
+The music was played by a small program that ran once every screen refresh: **60 times a second**
+on American and Japanese machines (50 in Europe). Each run is a **frame**. Nothing in the music
+could happen between frames, so every note change, volume step and vibrato wobble fell on a
+1/60-second grid.
+
+Composers wrote in **trackers**: a spreadsheet of notes, one column per channel, read from top to
+bottom. Each line is a **row**, and the "speed" is how many frames a row lasts. Six frames a row,
+with four rows to a beat, gives 150 beats per minute. Tempo only comes in steps: move **Frames per row**
+and the tempo jumps between fixed values. Some composers alternated two speeds from row to row to
+get a tempo in between.
+
+The program also made the expressive details by hand. The melody's volume steps down frame by frame
+after each attack (you can see the steps in the oscilloscope), and after a long note has sounded for
+a while its pitch starts to wobble. That's **vibrato**, written in software. Turn it off to hear
+how flat the long notes sound without it.
+
+## Chords from one channel
+
+With one channel for the melody, one for the bass and one for drums, only **one channel is left for
+harmony**. One channel can play one note. A chord needs at least three.
+
+The answer was the **arpeggio**: play the chord's notes one after another, so fast that the ear
+can't hear them as separate notes. Played every frame or every other frame, that's **30 to 60 notes
+a second**. Below about 50 ms per note, the ear stops following a tune and hears a texture
+instead: a buzzing, shimmering chord. It's the most recognisable chiptune sound.
+
+Compare the three settings of **Chords on pulse 2**:
+
+- **Arpeggio (one channel)**: what the composers actually did.
+- **Root only**: what you'd get from that channel without the trick. The harmony is gone, and the
+  F and C bars sound like they're missing something.
+- **Real chord (three channels)**: what the chip couldn't do. It's smoother, but now three
+  channels are busy with one chord and there's nothing left for the tune or drums.
+
+Then go back to *Arpeggio* and slow it down with **Frames per arpeggio note**. At 12 or 15 frames a note you hear a tune of single notes going up and down. Speed
+it back up and somewhere around 4 to 6 frames the separate notes merge into a chord. The *pattern*
+matters less at full speed: *Up*, *Up and down* and *Up, then the octave* all sound like the same
+chord, each with a slightly different buzz.
+
+In trackers this became a one-line effect: `047` on a note means "add 4 and then 7 semitones above
+it, each for one frame, over and over": a major chord on one channel. `037` is minor.
+
+## Write your own: a tracker
+
+This is the same tune in a **tracker**, laid out the way chip composers wrote it. Each column is a
+channel, each line is a row, and time runs down the page. The shaded lines are beats, and the darker
+ones start a bar. Press ▶ and edit while it plays: a change is heard the next time that row comes round.
+
+<div class="sk" data-w="tracker"></div>
+
+What to type in a cell:
+
+| Column | Type | Example |
+|---|---|---|
+| **Pulse 1**, **Triangle** | a note: letter, `-` or `#`, octave | `A-4`, `C#5` |
+| **Pulse 2** | a note, then an arpeggio effect `0xy` | `A-4 037` (minor), `C-5 047` (major) |
+| **Noise** | `K` kick, `S` snare, `H` hi-hat | `S` |
+| any | `---` stops the note; an empty cell lets it ring on | |
+
+In the effect `0xy`, `x` and `y` are how many semitones above the note to add. They're written in
+hexadecimal, so `C` means 12, an octave. `037` is a minor triad, `047` a major one, `038` a minor
+triad in first inversion (the C chord in bar 3), `05C` a fourth plus an octave, and `07C` the
+open fifth heard in a lot of game music. Arrow keys and Enter move around the grid. Click a cell and
+play a note on MIDI or the on-screen keyboard to write that note in (Pulse 2 keeps its effect).
+**Frames per arpeggio note** starts at 1 here, which is how trackers play `0xy`.
+
+Some things to try:
+
+- Change the chords: make bar 2 `F-4 037` (F minor) and hear the whole tune go darker.
+- Give the triangle a walking bass line, a note every beat, instead of octaves.
+- Write a drum fill in the last bar: an `S` on every row.
+- Speed up to 3 frames per row and write a run of sixteenths that no one could play.
+
+Your grid is kept in this browser. **Example tune** brings back the original, and **Clear** empties
+everything.
+
+## Music no one can play
+
+Write that arpeggio out as sheet music and it isn't playable. At 150 bpm, a new note every two
+frames is **12 notes per beat**: steady 48th-note triplets. A note every frame is 24 to a beat. The
+fastest human trills and tremolos reach roughly 15 to 20 notes a second, and only on two notes, not
+a chord broken note by note. A pianist playing a chip tune "as written" would need to play the
+melody plus a chord broken into 30 notes a second in the other hand, perfectly even, for the
+whole song.
+
+Composers knew no one would ever play it. The parts were written for a machine, so the usual
+limits of hands, breath and bows didn't apply. Some of them made a style of that:
+
+- **Rob Hubbard** (*Monty on the Run*, 1985) and **Martin Galway** on the Commodore 64 wrote
+  long, fast arpeggio passages and pitch slides that are part of the melody, not hidden behind it.
+- **Tim Follin**'s NES music (*Silver Surfer*, 1990) has arpeggios, echoes and runs at speeds
+  that sound like a much bigger chip.
+- Fast single-note runs, octave leaps every frame, and drum fills on the noise channel quicker
+  than any drummer are common.
+
+Other tricks came from the same limits:
+
+- **Echo**: pulse 2 plays the melody a few rows late and quieter, to sound like a delay
+  ([Sound 17](sound-delay.qmd)) the chip didn't have.
+- **Channel stealing**: a sound effect (a jump, a coin) takes over a pulse channel for a moment,
+  and that part of the music drops out. Composers planned the music so that it still made sense
+  with a part missing.
+- **Pitch sweeps**: a note sliding down fast is a laser, or, on the triangle, a kick drum with
+  more punch than noise alone gives.
+- **Shared drums**: a quick noise hit and a triangle blip together, so a snare has a pitched body
+  ([Sound 3](sound-noise.qmd) builds a snare the same way).
+
+## Chiptune today
+
+Many musicians still write for these chips, on the original machines or in trackers such as
+FamiTracker and LSDj (which runs on a Game Boy). They follow the old limits on purpose: four
+channels, frame timing, arpeggiated chords. A lot of the sound is the struggle with the limits.
+Pop and electronic producers also use pulse waves and fast arpeggios, without the limits, when they
+want that sound.
+
+## Next
+
+- [All the sound lessons](index.qmd)
+- [Sound 1: The harmonic series](sound-harmonics.qmd)
+
+{{< include _synth-kit.qmd >}}

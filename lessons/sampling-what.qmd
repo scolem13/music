@@ -1,0 +1,81 @@
+---
+title: "Sampling 1: What a Sample Is"
+toc: true
+toc-depth: 2
+description: "A piece of a recording used in a new one: one-shots, loops, breaks, and how producers and DJs each use them."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sampling, daw]
+has: [interactive]
+---
+
+A **sample** is a piece of a recording reused in a new piece of music. It can be one drum hit, a bar of a drum break, a chord from
+an old soul record, a word from a film, or a whole chorus. Hip-hop was built on samples; so were house, jungle, much of pop since
+the 1990s, and every DJ set ever played.
+
+## Three sizes of sample
+
+- **One-shot**: a single sound (a kick, a snare, a horn stab, "Ahh"). You play it from a pad or key; it lasts as long as it lasts.
+- **Loop**: one, two or four bars that repeat seamlessly. A loop has a tempo (BPM) and usually a key.
+- **Phrase**: a longer piece (a sung line, a riff, a speech) placed once, not looped.
+
+A **break** is a special loop: the moment in a funk or soul record when everything drops out but the drums. DJ Kool Herc played two
+copies of the same record in the Bronx in the 1970s and switched between them to stretch the break out for dancers: the "merry-go-round"
+that started hip-hop. The most sampled break is probably the Winstons' "Amen, Brother" (1969), the basis of jungle and drum and bass.
+
+## Two ways to use a sample
+
+| | The producer | The DJ |
+|---|---|---|
+| Where the sample lives | Inside a new track (a DAW, an MPC, an SP-404) | On a record, a USB stick or a laptop, played live |
+| What changes it | Chopping, re-pitching, re-sequencing, effects | Mixing, EQ, loops, cue points, scratching |
+| The result | A new recording | A performance (a set, a mix) |
+| Typical material | Breaks, one-shots, chords, vocal phrases | Whole songs, **acapellas** (vocals only), **instrumentals**, **edits** |
+
+The two overlap more every year: DJ software can loop, slice and separate a song into stems live, and producers make "DJ tools"
+(intros, edits, loops) for other DJs to play.
+
+## Hear a loop, then pieces of it
+
+The sampler below has a two-bar drum break loaded (made on this site, so it is free to use). Press **▶ Whole loop** to hear
+it, then click the pads: each plays one of 16 equal slices. The waveform shows where each slice starts.
+
+<div class="sp-pads" data-id="sp-what" data-loop="demo:break100" data-show="wave pads library"></div>
+
+1. Find the pads that hold a **kick**, a **snare** and a **hi-hat**. Those are one-shots cut out of a loop.
+2. Play the pads in order, 1 to 16, steadily. You have rebuilt the loop by hand.
+3. Now play 1, 1, 5, 1, 1, 1, 5, 7. The same sounds, a new rhythm: that is sampling in one sentence.
+
+## A loop on a deck
+
+A DJ hears the same material as a whole. Press **▶** on the deck, then pull the **pitch fader**: the loop speeds up *and*
+its pitch rises, like a record on a faster turntable. Drag the label on the platter to move the record by hand.
+
+<div class="dj-tt" data-id="dj-what" data-decks="1" data-a="demo:soul84" data-show="decks library"></div>
+
+## What makes a good sample
+
+- **Space**: a few bars where one instrument plays alone, or the drums play alone, are easier to reuse than a full mix.
+- **A clean start**: a hit right on the beat makes a loop that lines up.
+- **Character**: tape hiss, room sound and a drummer's swing are part of why producers sample old records rather than programming drums.
+
+Every sample of someone else's recording also raises a question of permission: [Sampling 6](sampling-law.qmd) is about that.
+
+## Next
+
+- [Sampling 2: Chopping and Slicing](sampling-chop.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Amen Break." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Amen_break](https://en.wikipedia.org/wiki/Amen_break).
+
+"Breakbeat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Breakbeat](https://en.wikipedia.org/wiki/Breakbeat).
+
+"DJ Kool Herc." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DJ_Kool_Herc](https://en.wikipedia.org/wiki/DJ_Kool_Herc).
+
+"Sampling (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sampling_(music)](https://en.wikipedia.org/wiki/Sampling_(music)).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

@@ -2,6 +2,10 @@
 title: "Gear 3: Amps, Speakers and the PA"
 toc: true
 toc-depth: 2
+description: "Instrument amps, powered and passive speakers, a mixer channel top to bottom, sound check and feedback."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [gear]
+has: [interactive]
 ---
 
 An **amplifier** makes a small signal big enough to move a speaker. Instrument amps are part of the instrument's
@@ -13,11 +17,146 @@ sound; a **PA** (public address) should just make everything louder, faithfully.
 - The usual controls: **Gain** (or Drive) sets how hard the preamp is pushed: low is clean, high distorts.
   **Volume / Master** sets how loud. **Bass, Mid, Treble** shape it; **Presence** adds upper bite.
 - **Guitar amps** colour the sound heavily and are meant to. **Bass amps** need much more power for the same
-  loudness (low notes take more energy). **Keyboard amps** are flatter, more like a small PA.
+  loudness (low notes take more energy), and are built to stay clean and reach low. **Keyboard amps** are flatter,
+  more like a small PA. (More below: [Guitar amps and bass amps](#guitar-amps-and-bass-amps).)
 - Start everything at noon (12 o'clock), gain low, then adjust. Small changes.
 - Valve (tube) amps need a minute to warm up and should go into **standby** for breaks. Never run one without a
   speaker connected: it can destroy the output transformer.
 - **Impedance** (ohms) of the cabinet must match what the head expects (printed by the speaker jack).
+
+### Gain (or Volume) and Master: two volume knobs
+
+An amp is two amplifiers in a row. The **preamp** takes the tiny signal from the guitar and shapes it; the **power
+amp** makes it strong enough to drive the speaker. Each knob sits in front of one of them:
+
+- **Gain**, **Drive**, or on many amps a knob just called **Volume** (sometimes per channel), sets how hard the
+  signal hits the preamp. That decides the **sound**: low is clean, higher breaks up, highest is full distortion.
+  It changes loudness too, but only until the preamp is clipping; after that more gain means more distortion, not more level.
+- **Master** sits between the preamp and the power amp and decides **how loud** all of that is in the room. It
+  doesn't change the character, so you can have a fully distorted sound quietly at home, or a clean one loud.
+
+Set them in that order: Master low, Gain for the sound you want, then Master up to the level the room needs. It's
+the same idea as [gain staging](rec-gain-staging.qmd) on a mixer: the first knob sets the sound, the last one the loudness.
+
+An old-style amp with **only one Volume** (many vintage Fenders and Voxes) has no master: the one knob does both,
+so it is clean when quiet and only starts to break up when it is loud. That's why those amps are "too loud" to get
+their overdrive at home. On a valve amp, turning the Master far up drives the **power valves** too, which adds a
+second, looser kind of distortion that a low-master setting can't give you.
+
+### Treble and Presence
+
+Both turn up the high end, and on a lot of amps they sit side by side, so they look like the same knob twice.
+They aren't. **Presence** is a treble control, but not a second Treble knob. It works on a higher band (roughly 2–6 kHz:
+pick attack, string edge, the "cut" that lets a guitar be heard through a band), and it sits in a different place:
+
+- **Treble** is in the preamp's tone stack, **before** or in the middle of the distortion. Turning it up also
+  changes what gets distorted, and so how the distortion sounds.
+- **Presence** is in the **power amp**, **after** the distortion. On a valve amp it reduces the power amp's
+  negative feedback at high frequencies (the circuit that keeps the power amp flat), so those frequencies come
+  through stronger. On a solid-state or modelling amp it's a high-frequency boost placed at the same point. It
+  adds clarity without changing how the drive feels.
+
+Too little and the amp sounds woolly and lost in the mix, even when it's loud. Too much sounds harsh and fizzy
+(the "ice pick", worst with high gain and in small rooms). Start it at noon, set Treble first, then use Presence to
+make the guitar cut through the band. Some amps have a matching low control, **Resonance** or **Depth**, which
+does the same thing for the low end. On a bass amp the equivalent (sometimes **Bright**) helps slap and fingernoise speak.
+
+| | **Treble** | **Presence** |
+|---|---|---|
+| Where | preamp tone stack, before the power amp | power amp, after the distortion |
+| Range | a shelf from about 2.5 kHz up (everything above) | a broad bump around 2–6 kHz |
+| With distortion | changes what gets distorted: more treble in, a buzzier, tighter drive | brightens the distortion that's already there, like EQ after it |
+| Too much | thin, spiky | harsh, fizzy, "ice pick" |
+| Use it for | the basic colour of the sound | cutting through a band without more gain |
+
+To hear it, set **High gain, quiet**, then turn **Treble** from 3 to 8: the distortion itself changes, getting
+buzzier and tighter. Back to 5, and turn **Presence** from 3 to 8 instead: the same distortion, just brighter on top.
+
+### Middle and the Mid frequency
+
+The **Middle** knob boosts or cuts one band, and where that band sits matters as much as how much. On most guitar amps it is
+fixed, somewhere around 500 Hz to 800 Hz. Many bass amps and some guitar amps (and almost every mixer channel, see the
+[mixer](#try-it-one-channel)) let you move it with a second knob, **Mid frequency** (a "sweepable" or semi-parametric mid):
+
+- **200–400 Hz**: body and boom. Cut here when the guitar is muddy or fights the bass; boost on a thin bass.
+- **500 Hz–1 kHz**: the honk and growl. A guitar's mids live here; so does the "growl" of a bass that cuts through.
+- **1.5–3 kHz**: bite, pick and finger attack. Boost for a bass that has to be heard on small speakers.
+
+To find a frequency: boost the Middle a lot (8 or 9), sweep the Mid frequency until it sounds worst (or best),
+then set the Middle back to the amount you want. The **scooped** sound (Middle at 2 or 3, bass and treble up) is
+big and exciting alone, and disappears as soon as the band plays, because the middle is where a guitar is heard.
+
+### Guitar amps and bass amps
+
+A bass's low E is 41 Hz; a guitar's is 82 Hz. Most of the differences follow from that octave:
+
+- **Power.** Moving the air for low notes takes far more energy: a bass amp needs several times the watts of a guitar amp
+  to keep up with it (300–500 W against a 30–50 W guitar valve amp in a band).
+- **Clean on purpose.** A guitar amp is designed to distort when pushed. A bass amp is designed to stay clean (more
+  headroom, in the simulation: the same Gain distorts later); bass drive is something added on purpose, gently,
+  usually keeping the clean lows underneath (**Bass, growl**).
+- **The EQ sits lower.** Bass at about 40–60 Hz instead of 100 Hz, a mid that is often sweepable, treble at 4–5 kHz
+  and up for string and slap noise. Many bass amps add a graphic EQ.
+- **The cabinet goes deeper and is closed**, often with a **horn tweeter** for the top (see Cabinets below).
+- **A DI out.** Bass amps nearly always have an XLR **DI output**, so the PA gets the bass directly while the amp is
+  only for the stage.
+
+Playing bass through a guitar amp works quietly, but the amp throws away the bottom octave (the low-cut at the input
+and the cabinet's roll-off), and loud low notes can tear a guitar speaker, which isn't built to move that far.
+Try **Bass through a guitar amp**, then **Bass amp**. A guitar through a bass amp is safe, just clean and polite.
+
+### Cabinets
+
+The speaker cabinet is the last, and largest, tone control. The amp's raw output is harsh and fizzy (pick
+**No cabinet** to hear it); the speakers roll off almost everything above 5 kHz, and that roll-off is a large part of what
+"guitar tone" is. This is also why recording a guitar amp means a mic on a speaker, or a cabinet simulation (an **IR**,
+impulse response) when there is no speaker. What decides a cabinet's sound:
+
+- **Speaker size.** A smaller cone moves faster and reaches higher but goes less deep: **10″** speakers sound quick, bright
+  and punchy; **12″** is the usual guitar speaker, fuller, rolling off around 5 kHz; **15″** goes deep and round and has
+  almost no top (old-school bass).
+- **How many.** More speakers move more air: louder, and fuller at the bottom, at the same amp power. They also
+  interfere with each other a little (a dip in the upper mids, which changes where you stand) and spread the sound
+  more narrowly. A **4×10** and a **2×12** have roughly the same cone area but sound different: the 4×10 tighter and brighter, the 2×12 warmer.
+- **Open or closed back.** An **open-back** combo also radiates from the back, and the back wave cancels the front's
+  lowest notes: airy, spread out, less bass, fills a room. A **closed-back** cabinet (most 4×12s and nearly all bass
+  cabinets) traps that air: tight, punchy low end with a thump around 100 Hz, and more directional (beamy).
+- **A horn tweeter** (bass cabinets): a small extra speaker that adds back the top end that big cones can't make, with
+  a level knob or switch on the back. Turn it down for an old-school sound.
+- **Impedance and power handling** must match the amp (printed on the back, see above).
+
+In the simulation, the cabinet changes the low end, the upper mids and the roll-off; switch between **2×12 open back** and
+**4×10 open back** on the same setting, or **4×12 closed back** with high gain. It can't model the real differences in
+loudness, spread and how a cab interacts with the room, but you can hear the colour.
+
+### Try it
+
+Start with **Clean**, then **Crunch**: the Gain moved (and the cabinet is a 2×12). **High gain, quiet** is a full distortion at a low
+Master; **Clean, loud** is the opposite. **Vintage, cranked** greys out the Master: the one Volume knob makes it
+dirty and loud together. Then sweep **Presence** from 0 to 10 with the Treble left alone. Play your own notes from
+the keys at the foot of the page, or plug in a guitar (Source: Microphone, through an audio interface; headphones on).
+The guitar and bass riffs are the band's own recorded samples, unamplified, as if the instrument were plugged
+straight into a desk. **Bass amp**, **Bass, growl** and **Bass through a guitar amp** switch the source to the bass riff.
+**View** switches the controls between sliders and knobs; click any number to type a value.
+
+<div class="sk" data-w="amp" data-preset="Clean"></div>
+
+::: {.callout-warning}
+## Modelling amps: the knobs may be lying
+
+Many small practice amps are **modelling amps**: a computer that imitates many amps and stores **presets**. The
+**Fender Mustang** series, Boss Katana, Line 6 Spider, Positive Grid Spark and Yamaha THR are all like this. When
+you choose a preset (or switch the amp on, which loads one), the amp uses the preset's stored Gain, Volume and EQ,
+**not** what the physical knobs point at. A Volume knob sitting at 2 can be playing a preset saved at 10. Turn
+a knob and the setting jumps to where the knob is.
+
+So:
+
+1. Before switching on and before changing presets, turn **Master to 1** (on amps where Master is the one real,
+   unstored knob, as on the Mustangs, it is the one control you can trust).
+2. Choose the preset, play, and bring the Master up slowly to the level you want.
+3. Then touch the other knobs one at a time to take control of them, and **save** if you want to keep the result.
+:::
 
 ## Powered and passive speakers
 
@@ -39,6 +178,16 @@ On each mixer channel, top to bottom:
 3. **EQ**: small cuts, not big boosts.
 4. **Aux sends**: the monitor mixes (pre-fader) and effects (post-fader).
 5. **Pan**, **Mute**, and the **fader**, near 0 for the main sound.
+
+### Try it: one channel
+
+Press **Start here**, then work down the strip in the lesson's order. Bring the **Gain** up while the singer sings
+until the After-gain meter sits near the dashed line and PEAK only flickers, switch the **High-pass** on, then the
+**Fader** to about 0. **Too hot** shows what the fader can't fix. **Feedback** turns the monitor up with the wedge in
+front of the mic (keep your volume low); the two **Fixed** presets show the two cures: the mic's dead side toward
+the wedge, or a narrow cut at the frequency that rings.
+
+<div class="sk" data-w="pa" data-preset="Start here"></div>
 
 ## Sound check
 
@@ -67,3 +216,5 @@ placement and subwoofers.
 ## Next
 
 - [Gear 4: Keyboards](gear-keyboards.qmd)
+
+{{< include _synth-kit.qmd >}}

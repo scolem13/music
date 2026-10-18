@@ -3,6 +3,10 @@ title: "Accompaniment Patterns"
 subtitle: "A lesson for every bass line, comping rhythm, drum groove and conga part the band plays"
 toc: true
 toc-depth: 2
+description: "A lesson for every bass line, comping rhythm, drum groove and conga part the band plays, each built up from simpler ones, played on the band and written out."
+instruments: [bass, guitar, piano, drums, other]
+topics: [pop, jazz, latin, rhythm]
+has: [interactive]
 ---
 
 Every pattern the [Backing Track](../../tools/backing-track.qmd) band can play has a lesson here. Each one starts from simpler patterns in the same list, plays every step on the band and writes out what it played, then takes the pattern into its styles and shows how it relates to the rest. A pattern marked ○ is a starting point: it builds on nothing else.
@@ -173,6 +177,9 @@ Every pattern the [Backing Track](../../tools/backing-track.qmd) band can play h
 **Hymns and carols**
 
 - [Light time](drums-brushes.qmd) — from Hi-hat: eighth notes
+- [Brushes, swing](drums-brushswing.qmd) — from Ride pattern (learning swing, 2)
+- [Brushes, ballad](drums-brushballad.qmd) — from Quarter notes (learning swing, 1)
+- [Brushes, folk](drums-brushfolk.qmd) — from Light time
 
 ## Conga parts {#congas}
 

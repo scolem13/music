@@ -2,6 +2,10 @@
 title: "Sound 1: The Harmonic Series and Fourier"
 toc: true
 toc-depth: 2
+description: "The harmonics of a note written out over any root, with how far each is from the piano. Build square, triangle, sawtooth and pulse waves from sine waves."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [notation, interactive]
 ---
 
 A note played on a real instrument is never one frequency. It is a stack of frequencies, all at

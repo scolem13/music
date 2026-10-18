@@ -10,6 +10,11 @@
 //             the mics apart and watch the comb of the bleed shrink. data-set keys: mode (two or three), dist (metres), src (noise voice drums)
 //   phantom   a small simulator: choose the mic, plug the XLR, switch +48 V. Plugging with 48 V on makes a (quiet, capped) pop and a
 //             warning; a ribbon with 48 V warns; a condenser without 48 V is silent. Press the monitor button to hear it.
+//   proximity a distance slider (1 cm to 1 m, logarithmic) and a pattern menu: the bass boost of a directional mic close up, drawn against
+//             the same mic at 1 m and heard on a voice-like sound, low notes or noise ("Keep the level" takes off the inverse-square change).
+//             data-set keys: dist (metres), pat, src (voice bass noise)
+//   offaxis   drag the source round the mic (or the Angle slider): quieter and duller off axis, by pattern and diaphragm size; "Cup the grille"
+//             covers the rear ports (almost omni) and adds the hand's honk. data-set keys: angle, pat, dia (small large hand), src, cup (1)
 // One widget sounds at a time (starting one stops the others). The volume is modest by default and everything goes through
 // a soft clipper and a limiter.
 (function () {
@@ -27,6 +32,7 @@
     lim.threshold.value = -10; lim.knee.value = 6; lim.ratio.value = 20; lim.attack.value = 0.003; lim.release.value = 0.15;
     master.connect(sh); sh.connect(lim); lim.connect(c.destination);
     G = { ctx: c, master: master };
+    if (window.AudioTap && window.AudioTap.register) { try { window.AudioTap.register(c, lim, 'Mic lessons'); } catch (e) {} }   // (the navbar tuner can listen)
     return G;
   }
   function stopOthers(w) { widgets.forEach(function (o) { if (o !== w && o.playing) o.stop(); }); }
@@ -436,7 +442,133 @@
     refresh();
   }
 
-  var KINDS = { polar: polar, phase: phase, phantom: phantom };
+
+  // ---------- a small frequency graph on a canvas (shared by proximity and offaxis) ----------
+  function freqCanvas(box, lo, hi) {
+    var cv = el('canvas'); cv.width = 480; cv.height = 170; cv.style.cssText = 'width:100%;max-width:520px;display:block;border:1px solid ' + css('--site-border', '#ccc') + ';border-radius:6px';
+    box.appendChild(cv);
+    var x = cv.getContext('2d'), W = cv.width, H = cv.height, l0 = Math.log(20), l1 = Math.log(20000);
+    function X(f) { return 32 + (Math.log(f) - l0) / (l1 - l0) * (W - 40); }
+    function Y(d) { return 8 + (hi - Math.max(lo, Math.min(hi, d))) / (hi - lo) * (H - 28); }
+    return function (curves) {
+      x.clearRect(0, 0, W, H); x.font = '10px ' + (css('--font-mono', 'monospace')); x.lineWidth = 1; x.strokeStyle = css('--site-border', '#ccc'); x.fillStyle = css('--site-ink-2', '#555');
+      [50, 100, 200, 500, 1000, 2000, 5000, 10000].forEach(function (f) { x.beginPath(); x.moveTo(X(f), 8); x.lineTo(X(f), H - 20); x.stroke(); x.fillText(f >= 1000 ? f / 1000 + 'k' : f, X(f) - 8, H - 6); });
+      for (var d = lo; d <= hi; d += 10) { x.beginPath(); x.moveTo(32, Y(d)); x.lineTo(W - 8, Y(d)); x.stroke(); x.fillText((d > 0 ? '+' : '') + d, 2, Y(d) + 3); }
+      curves.forEach(function (c) {
+        x.beginPath(); x.lineWidth = c.w || 2; x.strokeStyle = c.col; x.setLineDash(c.dash || []);
+        for (var i = 0; i <= 160; i++) { var f = Math.exp(l0 + (l1 - l0) * i / 160), y = Y(c.f(f)); if (i) x.lineTo(X(f), y); else x.moveTo(X(f), y); }
+        x.stroke(); x.setLineDash([]);
+      });
+    };
+  }
+  // one sound source with a gain and a filter chain; parts = list of filters to update; returns {nodes, stop}
+  function chain(c, srcKind, specs) {
+    var src = srcKind === 'bass' ? makeBass(c) : makeSrc(c, srcKind), last = src.out, fs = specs.map(function (s) { var b = c.createBiquadFilter(); b.type = s; last.connect(b); last = b; return b; });
+    var g = c.createGain(); last.connect(g); g.connect(ctx().master);
+    return { f: fs, g: g, stop: function () { src.stop(); g.disconnect(); } };
+  }
+  // a low line: a bass guitar-ish pluck, rich in low harmonics, so the proximity effect is plain to hear
+  function makeBass(c) {
+    var out = c.createGain(), osc = c.createOscillator(), lp = c.createBiquadFilter(), amp = c.createGain();
+    osc.type = 'sawtooth'; lp.type = 'lowpass'; lp.frequency.value = 900; amp.gain.value = 0; osc.connect(lp); lp.connect(amp); amp.connect(out);
+    var notes = [55, 55, 73.4, 82.4, 65.4, 65.4, 49, 61.7], i = 0;
+    function step() { var t = c.currentTime; osc.frequency.setValueAtTime(notes[i++ % notes.length], t); amp.gain.cancelScheduledValues(t); amp.gain.setValueAtTime(0.9, t); amp.gain.setTargetAtTime(0.2, t + 0.02, 0.25); amp.gain.setTargetAtTime(0, t + 0.4, 0.04); }
+    step(); var iv = setInterval(step, 500); osc.start();
+    return { out: out, stop: function () { clearInterval(iv); try { osc.stop(); } catch (e) {} out.disconnect(); } };
+  }
+
+  // ---------- proximity: distance -> bass ----------
+  // The gradient part of a directional mic near a point source is boosted by |1 + 1/(jkr)| (k = 2πf/c): the pattern menu sets how
+  // much of the mic is gradient (omni none, cardioid half, figure-8 all). Played as a low shelf at the corner f = c / (2πr), its gain the
+  // boost at 60 Hz (capped at 24 dB); "Keep the level" takes off the inverse-square change so only the tone moves.
+  function proxBoost(A, r, f) { var kr = 2 * Math.PI * f / 343 * r; return 20 * Math.log10(A + (1 - A) * Math.sqrt(1 + 1 / (kr * kr))); }
+  function proximity(host) {
+    var w = {}, S = parseSet(host.getAttribute('data-set')), st = { r: +S.dist || 0.3, pat: PAT[S.pat] ? S.pat : 'card', src: S.src || 'voice', keep: true };
+    var box = card(host, 'Proximity effect: move the mic in', w), ctl = el('div', 'sk-ctls'), info = el('div', 'sk-info');
+    var draw = freqCanvas(box, -10, 30); box.appendChild(ctl); box.appendChild(info);
+    info.style.fontFamily = 'var(--font-mono)'; info.style.fontSize = '.82rem';
+    box.appendChild(el('div', 'sk-tip', 'Play, then slide the mic in from 1 m to 1 cm. With a cardioid the bass swells as it comes close; switch to omni and it doesn\'t. The faint line is the same mic at 1 m.'));
+    var acc = css('--site-accent', '#2a7de1'), ink = css('--site-ink-3', '#999');
+    function A() { return PAT[st.pat].A; }
+    function upd() {
+      var a = A();
+      draw([{ f: function (f) { return proxBoost(a, 1, f); }, col: ink, dash: [5, 4], w: 1.5 }, { f: function (f) { return proxBoost(a, st.r, f); }, col: acc, w: 2.6 }]);
+      var b100 = proxBoost(a, st.r, 100), lvl = -20 * Math.log10(st.r / 0.3);
+      info.innerHTML = 'Distance <b>' + (st.r < 0.1 ? (st.r * 100).toFixed(1) : Math.round(st.r * 100)) + ' cm</b> &nbsp; bass at 100 Hz <b>' + fmtdb(b100) + '</b> &nbsp; level ' + (st.keep ? 'kept the same' : '<b>' + fmtdb(lvl) + '</b> (vs 30 cm)');
+      if (w.n) {
+        var t = G.ctx.currentTime, fc = Math.min(2000, 343 / (2 * Math.PI * st.r)), gain = Math.min(24, proxBoost(a, st.r, 60));
+        w.n.f[0].frequency.setTargetAtTime(fc, t, 0.03); w.n.f[0].gain.setTargetAtTime(gain, t, 0.03);
+        var lin = st.keep ? 1 : Math.min(4, 0.3 / st.r); w.n.g.gain.setTargetAtTime(lin * Math.pow(10, -Math.max(0, gain - 6) / 40), t, 0.03);
+      }
+    }
+    w.start = function () { var c = ctx().ctx; stopOthers(w); w.n = chain(c, st.src, ['lowshelf']); w.playing = true; w.setBtn(); upd(); };
+    w.stop = function () { if (w.n) { w.n.stop(); w.n = null; } w.playing = false; w.setBtn(); };
+    // the slider is logarithmic: 1 cm to 1 m
+    var ds = slider(ctl, 'Distance', 0, 2, 0.01, Math.log10(st.r * 100), function (v) { var cm = Math.pow(10, v); return (cm < 10 ? cm.toFixed(1) : Math.round(cm)) + ' cm'; }, function (v) { st.r = Math.pow(10, v) / 100; upd(); });
+    if (ds.el.numEdit === undefined) ds.el.numEdit = { get: function () { return Math.round(st.r * 1000) / 10; }, set: function (cm) { st.r = Math.max(0.01, Math.min(1, cm / 100)); ds.set(Math.log10(st.r * 100)); upd(); } };
+    select(ctl, 'Pattern', [['omni', 'Omni'], ['card', 'Cardioid'], ['super', 'Supercardioid'], ['fig8', 'Figure-8']], st.pat, function (v) { st.pat = v; upd(); });
+    select(ctl, 'Source', [['voice', 'Voice-like'], ['bass', 'Low notes'], ['noise', 'Noise']], st.src, function (v) { st.src = v; if (w.playing) { w.stop(); w.start(); } });
+    var kb = el('button', 'btn btn-sm btn-outline-secondary sk-on', 'Keep the level: on'); kb.type = 'button'; ctl.appendChild(kb);
+    kb.addEventListener('click', function () { st.keep = !st.keep; kb.textContent = 'Keep the level: ' + (st.keep ? 'on' : 'off'); kb.classList.toggle('sk-on', st.keep); upd(); });
+    upd();
+  }
+
+  // ---------- off-axis: turn the source round the mic, and cup the grille ----------
+  // Level = the pattern at that angle; the treble falls further off axis, from about c / (π · diameter) up (a model: 1 + (f/fc)²(1 − cos θ)).
+  // Cupped: the rear ports covered, the pattern goes almost omni (A 0.85), the hand's hollow adds a peak near 1.2 kHz and takes the top off.
+  var DIA = { small: { n: 'Small diaphragm (12 mm)', fc: 9000 }, large: { n: 'Large diaphragm (25 mm)', fc: 4000 }, hand: { n: 'Handheld vocal', fc: 5500 } };
+  function offaxis(host) {
+    var w = {}, S = parseSet(host.getAttribute('data-set'));
+    var st = { ang: +S.angle || 0, pat: PAT[S.pat] ? S.pat : 'card', dia: DIA[S.dia] ? S.dia : 'large', src: S.src || 'voice', cup: S.cup === '1' };
+    var box = card(host, 'Off axis: walk round the mic', w);
+    var row = el('div'); row.style.cssText = 'display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start'; box.appendChild(row);
+    var svg = sv('svg', { viewBox: '0 0 220 220', width: '220' }); svg.style.cssText = 'max-width:100%;border:1px solid ' + css('--site-border', '#ccc') + ';border-radius:6px;touch-action:none';
+    row.appendChild(svg); var gbox = el('div'); gbox.style.cssText = 'flex:1 1 260px;min-width:0'; row.appendChild(gbox);
+    var draw = freqCanvas(gbox, -40, 10), ctl = el('div', 'sk-ctls'), info = el('div', 'sk-info'); box.appendChild(ctl); box.appendChild(info);
+    info.style.fontFamily = 'var(--font-mono)'; info.style.fontSize = '.82rem';
+    box.appendChild(el('div', 'sk-tip', 'Drag the dot (the singer) round the mic, or use the slider. Off axis it gets quieter and duller. Then cup the grille: the back stops being quiet, and the sound goes boxy.'));
+    var ink = css('--site-ink', '#222'), acc = css('--site-accent', '#2a7de1'), cx = 110, cy = 110;
+    [80, 53, 27].forEach(function (r) { sv('circle', { cx: cx, cy: cy, r: r, fill: 'none', stroke: css('--site-border', '#ccc') }, svg); });
+    var lobe = sv('path', { fill: acc, 'fill-opacity': 0.18, stroke: acc, 'stroke-width': 1.5 }, svg);
+    sv('rect', { x: cx - 6, y: cy - 6, width: 12, height: 40, rx: 4, fill: ink }, svg); sv('circle', { cx: cx, cy: cy - 6, r: 9, fill: css('--site-surface', '#fff'), stroke: ink, 'stroke-width': 2 }, svg);
+    var hand = sv('path', { d: 'M' + (cx - 14) + ',' + (cy + 8) + ' C' + (cx - 18) + ',' + (cy - 8) + ' ' + (cx - 12) + ',' + (cy - 20) + ' ' + (cx - 3) + ',' + (cy - 18) + ' M' + (cx + 14) + ',' + (cy + 8) + ' C' + (cx + 18) + ',' + (cy - 8) + ' ' + (cx + 12) + ',' + (cy - 20) + ' ' + (cx + 3) + ',' + (cy - 18), fill: 'none', stroke: acc, 'stroke-width': 4, 'stroke-linecap': 'round' }, svg);
+    var tf = sv('text', { x: cx, y: 14, 'text-anchor': 'middle', 'font-size': 11, fill: css('--site-ink-2', '#555') }, svg); tf.textContent = 'front';
+    var dot = sv('g', {}, svg); sv('circle', { r: 11, fill: css('--site-surface', '#fff'), stroke: ink, 'stroke-width': 1.5 }, dot); var dt = sv('text', { y: 4, 'text-anchor': 'middle', 'font-size': 12 }, dot); dt.textContent = '♪';
+    function A() { return st.cup ? 0.85 : PAT[st.pat].A; }
+    function lvl(f, deg) {
+      var th = deg * Math.PI / 180, a = A(), p = Math.abs(a + (1 - a) * Math.cos(th)), fc = DIA[st.dia].fc, hf = -10 * Math.log10(1 + Math.pow(f / fc, 2) * (1 - Math.cos(th)));
+      var cupd = st.cup ? 9 * Math.exp(-Math.pow(Math.log2(f / 1200) * 1.6, 2)) - 10 * Math.log10(1 + Math.pow(f / 3500, 4)) : 0;
+      return 20 * Math.log10(Math.max(p, 0.01)) + hf + cupd;
+    }
+    function upd() {
+      var pts = [], a = A();
+      for (var d = 0; d <= 360; d += 4) { var v = Math.abs(a + (1 - a) * Math.cos(d * Math.PI / 180)), db_ = 20 * Math.log10(Math.max(v, 1e-4)), r = 80 * Math.max(0, (db_ + 30) / 30), t = d * Math.PI / 180; pts.push((cx + r * Math.sin(t)).toFixed(1) + ',' + (cy - r * Math.cos(t)).toFixed(1)); }
+      lobe.setAttribute('d', 'M' + pts.join('L') + 'Z'); hand.style.display = st.cup ? '' : 'none';
+      var t = st.ang * Math.PI / 180; dot.setAttribute('transform', 'translate(' + (cx + 92 * Math.sin(t)).toFixed(1) + ',' + (cy - 92 * Math.cos(t)).toFixed(1) + ')');
+      draw([{ f: function (f) { return lvl(f, 0); }, col: css('--site-ink-3', '#999'), dash: [5, 4], w: 1.5 }, { f: function (f) { return lvl(f, st.ang); }, col: acc, w: 2.6 }]);
+      var off = st.ang > 180 ? 360 - st.ang : st.ang;
+      info.innerHTML = Math.round(off) + '&deg; off axis &nbsp; level at 1 kHz <b>' + fmtdb(lvl(1000, st.ang) - lvl(1000, 0)) + '</b> &nbsp; at 8 kHz <b>' + fmtdb(lvl(8000, st.ang) - lvl(8000, 0)) + '</b> (vs on axis)' + (st.cup ? ' &nbsp; <b>cupped</b>' : '');
+      if (w.n) {
+        var c = G.ctx, now = c.currentTime, th = st.ang * Math.PI / 180, p = Math.abs(a + (1 - a) * Math.cos(th)), fc = DIA[st.dia].fc / Math.sqrt(Math.max(1 - Math.cos(th), 0.02));
+        w.n.f[0].frequency.setTargetAtTime(Math.min(fc, 20000), now, 0.03);
+        w.n.f[1].frequency.value = 1200; w.n.f[1].Q.value = 2.2; w.n.f[1].gain.setTargetAtTime(st.cup ? 9 : 0, now, 0.03);
+        w.n.f[2].frequency.setTargetAtTime(st.cup ? 3500 : 20000, now, 0.03);
+        w.n.g.gain.setTargetAtTime(Math.max(p, 0.01) * (st.cup ? 0.7 : 1), now, 0.03);
+      }
+    }
+    w.start = function () { var c = ctx().ctx; stopOthers(w); w.n = chain(c, st.src, ['lowpass', 'peaking', 'lowpass']); w.n.f[0].Q.value = 0.5; w.n.f[2].Q.value = 0.7; w.playing = true; w.setBtn(); upd(); };
+    w.stop = function () { if (w.n) { w.n.stop(); w.n = null; } w.playing = false; w.setBtn(); };
+    var as = slider(ctl, 'Angle', 0, 359, 1, st.ang, function (v) { return v + '°'; }, function (v) { st.ang = v; upd(); });
+    dragger(svg, dot, function (x, y) { var a = Math.atan2(x - cx, cy - y) * 180 / Math.PI; st.ang = Math.round((a + 360) % 360); as.set(st.ang); upd(); });
+    select(ctl, 'Pattern', [['omni', 'Omni'], ['card', 'Cardioid'], ['super', 'Supercardioid'], ['fig8', 'Figure-8']], st.pat, function (v) { st.pat = v; upd(); });
+    select(ctl, 'Mic', Object.keys(DIA).map(function (k) { return [k, DIA[k].n]; }), st.dia, function (v) { st.dia = v; upd(); });
+    select(ctl, 'Source', [['voice', 'Voice-like'], ['noise', 'Noise'], ['drums', 'Drums']], st.src, function (v) { st.src = v; if (w.playing) { w.stop(); w.start(); } });
+    var cb = el('button', 'btn btn-sm btn-outline-secondary', 'Cup the grille: off'); cb.type = 'button'; ctl.appendChild(cb);
+    function setCup(v) { st.cup = v; cb.textContent = 'Cup the grille: ' + (v ? 'ON' : 'off'); cb.classList.toggle('sk-on', v); upd(); }
+    cb.addEventListener('click', function () { setCup(!st.cup); }); setCup(st.cup);
+  }
+
+  var KINDS = { polar: polar, phase: phase, phantom: phantom, proximity: proximity, offaxis: offaxis };
   function init() {
     var hs = document.querySelectorAll('.rk');
     for (var i = 0; i < hs.length; i++) { var f = KINDS[hs[i].getAttribute('data-w')]; if (f && !hs[i].getAttribute('data-ready')) { hs[i].setAttribute('data-ready', '1'); f(hs[i]); } }

@@ -11,7 +11,7 @@ const assert = require("assert");
     await b.eval("localStorage.clear()");
     await b.goto("http://127.0.0.1:8500/tools/notation.html");
     await b.sleep(400);
-    await b.eval(`(() => { const P = NotationPage, d = P.doc(); d.meter = "4/4"; d.key = "G"; d.keyConfirmed = true; P.Q.bpm = 120; })()`);
+    await b.eval(`(() => { const P = NotationPage, d = P.doc(); d.meter = "4/4"; d.key = "G"; d.keyConfirmed = true; d.tempo = 120; })()`);
     const doc = () => b.eval("NotationPage.doc()");
     const key = k => b.eval(`document.dispatchEvent(new KeyboardEvent("keydown", ${JSON.stringify(k)})), 1`);
     // [beat, midi, length in beats]; 0.5 s a beat
@@ -50,7 +50,7 @@ const assert = require("assert");
     // a fresh piece, the pickup set to one eighth
     await b.eval(`localStorage.removeItem("ntDoc"), localStorage.setItem("ntQuick", JSON.stringify({ bpm: 120, pickup: "1" })), 1`);
     await b.goto("http://127.0.0.1:8500/tools/notation.html"); await b.sleep(400);
-    await b.eval(`(() => { const d = NotationPage.doc(); d.meter = "4/4"; d.key = "G"; d.keyConfirmed = true; })()`);
+    await b.eval(`(() => { const d = NotationPage.doc(); d.meter = "4/4"; d.key = "G"; d.keyConfirmed = true; d.tempo = 120; })()`);
     await play([[-0.5, 62, 0.45], [0, 67, 3.9]]);
     d = await doc();
     assert.deepStrictEqual(d.chunks.map(c => c.name), ["Pickup", "Take 1"]);
@@ -61,11 +61,11 @@ const assert = require("assert");
     // DWIM after a pickup: the Take chunk re-reads its own bars (not the pickup's), the Pickup chunk its one short bar
     await b.eval(`localStorage.removeItem("ntDoc"), localStorage.setItem("ntQuick", JSON.stringify({ bpm: 120, pickup: "auto" })), 1`);
     await b.goto("http://127.0.0.1:8500/tools/notation.html"); await b.sleep(400);
-    await b.eval(`(() => { const d = NotationPage.doc(); d.meter = "4/4"; d.key = "C"; d.keyConfirmed = true; })()`);
+    await b.eval(`(() => { const d = NotationPage.doc(); d.meter = "4/4"; d.key = "C"; d.keyConfirmed = true; d.tempo = 120; })()`);
     await play([[-1, 59, 0.45], [0, 60, 0.45], [1, 62, 0.45], [2, 64, 0.45], [3, 65, 0.45]]);
     d = await doc();
     assert.deepStrictEqual(d.chunks.map(c => [c.name, c.takes.length, c.takes[0].lb]), [["Pickup", 1, 0], ["Take 1", 1, 1]]);
-    const clickNote = i => b.eval(`(() => { const n = document.querySelectorAll('#nt-paper .abcjs-note')[${i}];
+    const clickNote = i => b.eval(`(() => { const n = [...document.querySelectorAll('#nt-paper .abcjs-note')].filter(n => !n.closest('.nt-pitchonly'))[${i}];
       n.dispatchEvent(new MouseEvent('mousedown', { bubbles: true })); n.dispatchEvent(new MouseEvent('mouseup', { bubbles: true })); })()`);
     const dwimCards = async i => { await clickNote(i); await b.eval("document.getElementById('nt-s-dwim').click()"); await b.sleep(300);
       return b.eval("[...document.querySelectorAll('#nt-dwim-host .md-card .md-head')].map(e => e.textContent)"); };
@@ -91,7 +91,7 @@ const assert = require("assert");
     // a phrase from Timestamp Notes: the take goes into its bars; count-in notes into the bar before, stitched with what is there
     await b.eval(`localStorage.removeItem("ntDoc"), localStorage.setItem("ntQuick", JSON.stringify({ bpm: 120, pickup: "auto" })), 1`);
     await b.goto("http://127.0.0.1:8500/tools/notation.html"); await b.sleep(400);
-    await b.eval(`(() => { const P = NotationPage, D = NotationDoc, d = P.doc(); d.meter = "4/4"; d.key = "C"; d.keyConfirmed = true;
+    await b.eval(`(() => { const P = NotationPage, D = NotationDoc, d = P.doc(); d.meter = "4/4"; d.key = "C"; d.keyConfirmed = true; d.tempo = 120;
       const a = D.newChunk("V1a"), c = D.newChunk("V1b"); a.heading = "Verse 1"; a.rhythm = [{ type: "note", durQ: 4 }, { type: "note", durQ: 4 }]; a.pitches = [60, 62];
       c.chordLen = 8; c.chords = [{ at: 0, name: "G" }]; d.chunks = [a, c]; P.render(); })()`);
     await b.eval(`(() => { NotationPage.phrase({ ci: 1, bar: 0, bars: 2, leadIn: 1, label: "Verse 1 · 2/2" }); NotationPage.setCur(1); })()`);

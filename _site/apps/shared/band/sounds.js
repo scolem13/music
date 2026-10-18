@@ -51,7 +51,8 @@
 (function (global) {
   var SF_DEFAULT = "https://cdn.jsdelivr.net/gh/paulrosen/midi-js-soundfonts/MusyngKite/";
   var PIECES = ["kick","snare","rim","hatClosed","hatFoot","hatOpen","ride","ride2","rideBell","crash","tomHi","tomMid","tomLo","sticks",
-                "tom3","cowbell","stacker","click","clickHi"];   // (the last five: for written grooves, groove.js)
+                "tom3","cowbell","stacker","click","clickHi",
+                "brushTap","brushSwish","brushSweep"];   // (click..clickHi: for written grooves, groove.js; the brushes are made, not sampled: brushBuffer)
 
   // ======================================================================================
   // INSTRUMENT DEFINITIONS — edit this block (and nothing else) to change the sounds.
@@ -157,7 +158,11 @@
       kit:    { family: "kit", gain: 1.25,
                 zones: soundfontKit(sf, { kick:36, rim:37, snare:38, hatClosed:42, hatFoot:44, hatOpen:46,
                                           crash:49, ride:51, ride2:59, rideBell:53, tomLo:43, tomMid:45, tomHi:48, sticks:31, clap:39, tamb:54,
-                                          tom3:45, cowbell:56, stacker:52, click:33, clickHi:34 }),
+                                          tom3:45, cowbell:56, stacker:52, click:33, clickHi:34 }).concat([
+                  { piece: "brushTap", make: "tap" }, { piece: "brushSwish", make: "swish" }, { piece: "brushSweep", make: "sweep" } ]),
+                // The brushes have no samples: each is noise shaped when the kit loads (brushBuffer). The tap is the wires of the brush
+                // slapped on the head, the swish a short stroke across it, the sweep a long one (a circle on the snare). A new stroke
+                // takes over from the last (one hand, one head). First guesses, not yet listened to.
                 // tom3 (a written groove's fourth tom, between the mid and floor toms) is the mid tom's file played lower;
                 // the stacker is GM's china cymbal; click and clickHi GM's metronome click and bell. Levels not yet listened to.
                 // per-piece trim (the soundfont's kick is ~8x hotter than its ride); group/chokes =
@@ -170,7 +175,9 @@
                           hatClosed:{ gain:1.6, chokes:"hat" }, hatFoot:{ gain:1.6, chokes:"hat" }, hatOpen:{ gain:1.4, group:"hat" },
                           tomHi:{ gain:0.95, group:"tomHi", chokes:"tomHi", damp:0.04 }, tomMid:{ gain:0.95, group:"tomMid", chokes:"tomMid", damp:0.04 }, tomLo:{ gain:0.95, group:"tomLo", chokes:"tomLo", damp:0.04 },
                           tom3:{ gain:0.95, rate:0.94, group:"tom3", chokes:"tom3", damp:0.04 }, cowbell:{ gain:0.8 }, stacker:{ gain:1.3, group:"cymbals" },
-                          click:{ gain:0.9 }, clickHi:{ gain:0.9 } } },
+                          click:{ gain:0.9 }, clickHi:{ gain:0.9 },
+                          brushTap:{ gain:1.0, group:"brush", chokes:"brush", damp:0.02 }, brushSwish:{ gain:1.0, group:"brush", chokes:"brush", damp:0.03 },
+                          brushSweep:{ gain:1.0, group:"brush", chokes:"brush", damp:0.05 } } },
       // Congas. General MIDI has only three conga sounds (62 mute high, 63 open high, 64 low), so heel, toe, slap and the bass tone are
       // stand-ins made from them: the same file at another level (and, for the toe and the bass, another pitch). The pieces share
       // files, which are fetched once. A first guess, not yet listened to. The conga is the higher drum, the tumba the lower.
@@ -199,6 +206,28 @@
   // kit: piece name -> the soundfont's percussion note
   function soundfontKit(sf, map){
     return Object.keys(map).map(function (piece){ return { url: sf + "percussion-mp3/" + noteName(map[piece]) + ".mp3", piece: piece }; });
+  }
+  // A brush stroke as a buffer: white noise (a fixed seed, so every load sounds the same) run through a high-pass and a low-pass, under an
+  // envelope. kind "tap" = 0.14 s: a bright slap that dies at once, with a little of the head under it; "swish" = 0.24 s and "sweep" = 0.6 s:
+  // a stroke that builds to its middle and fades, the long one rougher at the start (the wires catching).
+  function brushBuffer(ctx, kind){
+    var sr = ctx.sampleRate, dur = kind === "tap" ? 0.14 : kind === "swish" ? 0.24 : 0.6, n = Math.round(sr * dur);
+    var buf = ctx.createBuffer(1, n, sr), d = buf.getChannelData(0), seed = kind === "tap" ? 7 : kind === "swish" ? 11 : 13;
+    var hp = kind === "tap" ? 2500 : 1600, lp = kind === "tap" ? 9000 : 7500;
+    var ah = Math.exp(-2 * Math.PI * hp / sr), al = 1 - Math.exp(-2 * Math.PI * lp / sr), px = 0, ph = 0, pl = 0, peak = 0, i, t, x, e;
+    for (i = 0; i < n; i++){
+      seed = (Math.imul(seed, 1103515245) + 12345) | 0; x = (seed >>> 8) / 8388608 - 1;
+      ph = ah * (ph + x - px); px = x; pl += al * (ph - pl);
+      t = i / sr;
+      if (kind === "tap") e = Math.min(1, t / 0.002) * Math.exp(-t / 0.022);
+      else { var mid = dur * (kind === "swish" ? 0.35 : 0.4); e = t < mid ? Math.pow(Math.sin(Math.PI / 2 * t / mid), 2) : Math.exp(-(t - mid) / (dur * 0.22)); }
+      d[i] = pl * e;
+      if (kind === "tap") d[i] += 0.5 * Math.sin(2 * Math.PI * 190 * t) * Math.exp(-t / 0.03) * 0.35;
+      if (Math.abs(d[i]) > peak) peak = Math.abs(d[i]);
+    }
+    var fade = Math.min(n, Math.round(0.008 * sr)), g = peak > 0 ? 0.9 / peak : 1;
+    for (i = 0; i < n; i++) d[i] *= g * (i > n - fade ? (n - i) / fade : 1);
+    return buf;
   }
   function resolveBase(){
     try { if (typeof global.getSoundfontUrl === "function")
@@ -478,6 +507,7 @@
       var def = defs[name]; if (!def) return Promise.reject(new Error("BandSounds: unknown instrument " + name));
       if (def.synth){ ready[name] = true; return (loading[name] = Promise.resolve()); }       // synthesized: nothing to fetch
       var p = Promise.all(def.zones.map(function (z){
+        if (z.make && !z.buffer){ z.buffer = brushBuffer(ctx, z.make); z.offset = 0; }
         if (z.buffer){ tick(); return null; }
         return fetchBuffer(ctx, z.url).then(function (r){ z.buffer = r.buffer; z.offset = r.offset; },
                                             function (e){ if (global.console) console.warn("BandSounds: sample failed —", e && e.message); })

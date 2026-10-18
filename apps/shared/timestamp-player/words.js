@@ -20,13 +20,13 @@
   var SECTION = /^(intro|verse|pre-?chorus|chorus|refrain|bridge|middle\s*8|solo|instrumental|interlude|break(down)?|outro|coda|tag|vamp|head|ending|turnaround)\b/i;
 
   function boot() {
-    var root = document.querySelector('.btp-words');
+    var root = document.querySelector('.btp-words:not(.pc-shell)');
     var player = document.querySelector('.btp');
     var log = document.querySelector('.btp-log');
-    var map = document.querySelector('.btp-barmap');
+    var map = document.querySelector('.btp-barmap:not(.pc-shell)');
     if (!root || !player || !window.UgChordPro) return;
     var U = window.UgChordPro;
-    var q = function (sel) { return root.querySelector(sel); };
+    var q = function (sel) { return PanelColumns.q(root, sel); };
     var ugIn = q('.btp-ug'), choIn = q('.btp-cho'), titleIn = q('.btp-title'), secList = q('.btp-word-secs');
     var note = q('.btp-send-note'), nowLabel = q('.btp-word-now');
     var sections = [];          // [{ name, chords, times }] from the last conversion (and an Intro added at 0:00)
@@ -167,7 +167,7 @@
         info.className = 'btp-sec-bars';
         info.textContent = s.chords.length ? s.chords.length + (s.chords.length === 1 ? ' chord' : ' chords') : '';
         // how many of its chords have been timed (N, or the right hand)
-        var live = document.querySelector('.btp-live'), L = live && live._btpLive, m = map && map._btpMap;
+        var live = document.querySelector('.btp-live:not(.pc-shell)'), L = live && live._btpLive, m = map && map._btpMap;
         var sec = got[i] && m && m.sections().filter(function (x) { return Math.abs(x.stamp - got[i].s) < 0.01; })[0];
         var n = sec && L ? L.count(sec) : 0;
         if (n) info.textContent = n + ' of ' + chordNames(s.name, sections.slice(0, i).filter(function (x) { return x.name === s.name; }).length).length + ' chords timed';
@@ -295,7 +295,7 @@
       var c = chart();
       if (!c) return null;
       var D = window.NotationDoc, doc = D.fromChordPro(c.chordpro, meter()), m = map && map._btpMap;
-      var live = document.querySelector('.btp-live'), L = live && live._btpLive;
+      var live = document.querySelector('.btp-live:not(.pc-shell)'), L = live && live._btpLive;
       doc.title = c.title;
       var secs = m ? m.sections() : [], notes = c.notes.slice();
       // The chunks in the order they were stamped. UG writes a chorus out once and only names it (or not even that) when it
@@ -438,7 +438,7 @@
     // edited by hand stays); new hits in it write it again.
     var gridSigs = {};
     try { gridSigs = JSON.parse(localStorage.getItem('btp-grid-sigs') || '{}') || {}; } catch (e) {}
-    function L() { var el = document.querySelector('.btp-live'); return el && el._btpLive; }
+    function L() { var el = document.querySelector('.btp-live:not(.pc-shell)'); return el && el._btpLive; }
     function cellsOf(p) {
       var bs = p.sec.beats && p.sec.beats.length ? p.sec.beats.slice() : [];
       if (!bs.length) { var n = Math.ceil(p.ch.chordLen / 4 - 1e-6); for (var i = 0; i < n; i++) bs.push(4); }
@@ -531,10 +531,10 @@
     var cols = q('.btp-word-cols');
     function view(v) {
       cols.dataset.view = v;
-      root.querySelectorAll('button[data-view]').forEach(function (b) { b.classList.toggle('on', b.dataset.view === v); b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
+      PanelColumns.qa(root, 'button[data-view]').forEach(function (b) { b.classList.toggle('on', b.dataset.view === v); b.setAttribute('aria-pressed', String(b.dataset.view === v)); });
       try { localStorage.setItem('btp-word-view', v); } catch (e) {}
     }
-    root.querySelectorAll('button[data-view]').forEach(function (b) { b.addEventListener('click', function () { view(b.dataset.view); b.blur(); }); });
+    PanelColumns.qa(root, 'button[data-view]').forEach(function (b) { b.addEventListener('click', function () { view(b.dataset.view); b.blur(); }); });
     var v0 = 'both';
     try { v0 = localStorage.getItem('btp-word-view') || 'both'; } catch (e) {}
     view(v0);
@@ -572,12 +572,12 @@
       body: body, chordNames: chordNames, stampNext: stampNext, buildDoc: buildDoc, sectionAbc: sectionAbc,
       refresh: function () { renderSecs(); },
       state: function () {
-        var live = document.querySelector('.btp-live'), L = live && live._btpLive;
+        var live = document.querySelector('.btp-live:not(.pc-shell)'), L = live && live._btpLive;
         return { ug: ugIn.value, chordpro: choIn.value, title: titleIn.value, sections: sections, hits: L ? L.hits() : [], confirmed: L ? L.confirmed() : {}, gridSigs: gridSigs };
       },
       load: function (d) {
         ugIn.value = d.ug || ''; choIn.value = d.chordpro || ''; titleIn.value = d.title || ''; sections = d.sections || [];
-        var live = document.querySelector('.btp-live'), L = live && live._btpLive;
+        var live = document.querySelector('.btp-live:not(.pc-shell)'), L = live && live._btpLive;
         gridSigs = d.gridSigs || {};
         try { localStorage.setItem('btp-grid-sigs', JSON.stringify(gridSigs)); } catch (e) {}
         if (L) { L.load(d.hits || []); L.setConfirmed(d.confirmed || {}); }

@@ -1,0 +1,94 @@
+---
+title: "DJ 7: Building a Set and Reading a Room"
+toc: true
+toc-depth: 2
+description: "Energy curves, sets that tell a story, preparing crates, and watching the dance floor to know what to play next."
+instruments: [other]
+topics: [dj]
+has: [interactive]
+---
+
+Skills mix two tracks. A **set** is an hour or more of them, chosen for these people at this moment. The best technical mix of the
+wrong record empties a floor; a rough mix of the right one fills it.
+
+## The energy curve
+
+A set usually builds: start below the room's energy, raise it in steps, give it a peak, let it breathe, raise it again. Ways to raise
+energy: faster tempo (a few BPM at a time), busier drums, a brighter key step (+1 or +2 on the Camelot wheel), a familiar song. Ways to let it
+breathe: a breakdown, a vocal track, a lower tempo, a classic everyone sings.
+
+**Warm-up DJs** keep the energy below the headliner's, playing deeper, slower music. Playing your biggest tracks at 10 pm to an empty room is
+a classic beginner's mistake.
+
+## Prepare
+
+- **Crates / playlists** by mood and energy, not only genre: "openers", "builders", "peak", "breathers", "closers".
+- Know each track's **BPM, key**, where its **intro** and **outro** are, and how long it takes to mix in. Set **hot cues** before the gig.
+- Plan the **first three tracks** and a few **pairs** that mix well. Then be ready to throw the plan away.
+- **Gain**: check levels so the meter peaks the same on every track; leave the master below the red (the venue's sound system adds volume, not you).
+
+## Read the room
+
+Watch the floor, not the screen:
+
+- **Are people dancing?** Growing or shrinking? People leaving the floor after a track tells you something.
+- **Who is dancing?** Different crowds want different things; a room of friends of the birthday girl wants songs they know.
+- **Energy**: heads down and dancing hard, hands up at the drop, or talking at the bar?
+- Change direction **one step at a time**. A sudden switch of genre or tempo loses people; a bridge track (the same key, a shared rhythm) keeps them.
+- The **request** you get repeatedly tells you what the room wants, even if you don't play it.
+
+## Practise a mini-set
+
+Plan a four-track set from the loops (each listed with BPM and Camelot code), then play it with transitions from the earlier lessons.
+
+<div class="dj-tt" data-id="dj-set" data-a="demo:disco118" data-b="demo:house120"></div>
+
+One plan: **Mirrorball** 118 (9B) → **Late Bus** 120 (5A: a contrast, use a drum intro or a cut) → **Warehouse** 124 (8A) → **Neon Floor** 126 (9A)
+→ **Concrete** 128 (4A, by a filter mix or a cut). Tempo rises 2–4 BPM each time. Where would the **acapella** go?
+
+1. Write the order down with each track's BPM and key before you play.
+2. Mix each pair on a phrase, with an EQ bass swap or a filter.
+3. Record yourself (your phone, or the navbar's tools) and listen back: are the transitions even in level? Any clash of keys or phrases?
+
+## After the gig
+
+- Write down what worked and what emptied the floor.
+- Update your crates: tracks that worked well together become pairs.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| Crates / playlists | Crates and Smart Crates | Playlists, Intelligent playlists, My Tag | Playlists, Favourites |
+| Record your mix | REC panel | Recording (Mix recording) | Audio Recorder |
+| Prepare cues and loops | Hot cues, saved loops | Hot cues, memory cues; rekordbox export to USB for CDJs | Cue points and loops in the track |
+
+</div>
+
+## Next
+
+- Back to [DJ 1: The Gear](dj-gear.qmd), or the [sampling lessons](sampling-what.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Disc Jockey." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Disc_jockey](https://en.wikipedia.org/wiki/Disc_jockey).
+
+"DJ Mix." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DJ_mix](https://en.wikipedia.org/wiki/DJ_mix).
+
+"Harmonic Mixing Guide." *Mixed In Key*, [mixedinkey.com/harmonic-mixing-guide/](https://mixedinkey.com/harmonic-mixing-guide/).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+
+United States Copyright Office. *Copyright Law of the United States*, Title 17, Chapter 1. [www.copyright.gov/title17/92chap1.html](https://www.copyright.gov/title17/92chap1.html).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

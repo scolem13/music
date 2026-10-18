@@ -2,6 +2,10 @@
 title: "Sound 2: Oscillators and Pulse-Width Modulation"
 toc: true
 toc-depth: 2
+description: "The classic synth waves on an oscilloscope and spectrum, pulse width, and PWM."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 An **oscillator** is the part of a synthesizer that makes a repeating wave. Its two settings are

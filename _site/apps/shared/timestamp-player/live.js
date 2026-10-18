@@ -51,12 +51,12 @@
   }
 
   function boot() {
-    var root = document.querySelector('.btp-live');
+    var root = document.querySelector('.btp-live:not(.pc-shell)');
     var player = document.querySelector('.btp');
-    var map = document.querySelector('.btp-barmap');
-    var wordsEl = document.querySelector('.btp-words');
+    var map = document.querySelector('.btp-barmap:not(.pc-shell)');
+    var wordsEl = document.querySelector('.btp-words:not(.pc-shell)');
     if (!root || !player) return;
-    var q = function (sel) { return root.querySelector(sel); };
+    var q = function (sel) { return PanelColumns.q(root, sel); };
     var stage = document.querySelector('.btp-live-stage');      // (in the right column, above the timestamps)
     var sq = function (sel) { return stage.querySelector(sel); };
     var stageName = sq('.btp-live-sec'), stageNext = sq('.btp-live-next'), stageWords = sq('.btp-live-words');

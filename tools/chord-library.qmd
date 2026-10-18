@@ -11,6 +11,7 @@ html-table-processing: none
 <script>
 (function () {
   var f = document.getElementById('chord-library-frame');
+  if (location.hash) f.src = '/apps/chord-library/index.html' + location.hash;   // a lesson's link to a chord or shape
   function fit() { try { f.style.height = f.contentDocument.documentElement.scrollHeight + 'px'; } catch (e) {} }
   f.addEventListener('load', function () {
     fit();

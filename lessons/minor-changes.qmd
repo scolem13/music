@@ -2,6 +2,10 @@
 title: "Lesson: Changes in a Minor Key"
 toc: true
 toc-depth: 2
+description: "From natural-minor i, iv, v to the harmonic-minor V7, the Picardy third, a walking bass and the ii&deg;-V-i, in A minor."
+instruments: [bass, guitar, piano, violin, sax, other]
+topics: [harmony]
+has: [band, notation, interactive]
 ---
 
 ```{=html}
@@ -134,7 +138,7 @@ The band plays one of the endings. Pick the version you heard.
 <script src="/apps/shared/lessons/chord-lesson.js?v=2"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
-<script src="/apps/shared/band/harmony.js?v=28"></script>
+<script src="/apps/shared/band/harmony.js?v=32"></script>
 <script src="/apps/shared/band/bass.js?v=15"></script>
 <script src="/apps/shared/band/comp.js?v=30"></script>
 <script src="/apps/shared/band/catalog.js?v=36"></script>

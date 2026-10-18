@@ -2,6 +2,10 @@
 title: "Sound 22: The Vocoder"
 toc: true
 toc-depth: 2
+description: "Talk into the microphone and play chords: the voice shapes the synth band by band."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A **vocoder** makes an instrument talk. It takes two sounds: a **modulator** (usually a voice) and a

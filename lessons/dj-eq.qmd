@@ -1,0 +1,73 @@
+---
+title: "DJ 4: EQ Mixing and Transitions"
+toc: true
+toc-depth: 2
+description: "Swap the basslines, filter in and out, the long blend and the quick cut: transitions on the mixer."
+instruments: [other]
+topics: [dj, recording]
+has: [interactive]
+---
+
+Two full tracks at full volume together are loud and muddy: two kicks, two basslines, two sets of hi-hats. **EQ mixing** gives each track
+its own space during a blend. The golden rule: **only one bassline at a time.**
+
+## The bass swap
+
+1. Beatmatched and phrased, bring the incoming track in with its **Lo** cut right down. You hear its hats and mids over the outgoing track's full sound.
+2. On the first beat of a phrase, swap: incoming **Lo** up, outgoing **Lo** down, at the same moment (one hand on each knob).
+3. Over the next 8 or 16 bars take the outgoing track's **Mid** and **Hi** down, then its fader.
+
+## Other transitions
+
+- **Long blend**: both tracks play together for 32 bars or more, EQs moving slowly. House and techno.
+- **Filter mix**: sweep the outgoing track's **filter** to a high-pass (it thins out to nothing but hats) while the incoming one comes in,
+  or bring the new track in through a low-pass that opens up.
+- **Cut**: on the first beat of a phrase, flick the crossfader across. Hip-hop and open-format DJs cut; it's quick and clean if the phrase is right.
+- **Echo out**: an echo or delay effect on the last beat of the outgoing track, then cut it; the echo trails off under the new one.
+- **Gain first**: before any of these, set both channels' **gain** so the tracks are equally loud. A transition that jumps in volume sounds like a mistake.
+
+## Practise
+
+<div class="dj-tt" data-id="dj-eq" data-a="demo:house124" data-b="demo:house126" data-xf="0.5"></div>
+
+1. Beatmatch B to A (B: about −1.6 %). With B's **Lo** at the bottom (−26 dB, a near kill), start B on a phrase and bring its fader up.
+2. On the next phrase, swap the **Lo** knobs. Then fade A out over 8 bars, **Hi** first.
+3. Do it again with the **Filter** instead: B in at full EQ but low fader; sweep A's filter to the right (high-pass) over 8 bars while B's fader rises.
+4. Try a **cut**: both decks matched, faders up, crossfader full A. On the 1 of a phrase, throw the crossfader to B. Set the **Curve** towards
+   "cut" and try again: in the middle both channels are now at full, and the change happens only at the very ends.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| EQ and filter | Mixer EQ (on the controller or mixer), Filter knob | EQ, COLOR / Sound Color FX filter | EQ (several types, set in Preferences), Filter |
+| Echo out | FX: Echo, with Tap / beat setting | Beat FX: Echo | FX: Delay / Echo |
+| Crossfader curve | Setup → Mixer (or on the hardware) | Crossfader curve on the mixer / Preferences | Preferences → Mixer → Crossfader curve |
+
+</div>
+
+## Next
+
+- [DJ 5: Scratching Basics](dj-scratch.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Crossfader." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Crossfader](https://en.wikipedia.org/wiki/Crossfader).
+
+"DJ Mix." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DJ_mix](https://en.wikipedia.org/wiki/DJ_mix).
+
+"DJ Mixer." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DJ_mixer](https://en.wikipedia.org/wiki/DJ_mixer).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

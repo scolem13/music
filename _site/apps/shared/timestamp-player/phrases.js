@@ -82,11 +82,11 @@
   var STORE = 'btp-phrases';
 
   function boot() {
-    var root = document.querySelector('.btp-phrases');
-    var mapEl = document.querySelector('.btp-barmap'), wordsEl = document.querySelector('.btp-words');
+    var root = document.querySelector('.btp-phrases:not(.pc-shell)');
+    var mapEl = document.querySelector('.btp-barmap:not(.pc-shell)'), wordsEl = document.querySelector('.btp-words:not(.pc-shell)');
     var player = document.querySelector('.btp');
     if (!root || !mapEl) return;
-    var q = function (sel) { return root.querySelector(sel); };
+    var q = function (sel) { return PanelColumns.q(root, sel); };
     var list = q('.btp-ph-rows'), empty = q('.btp-ph-empty'), sizeIn = q('.btp-ph-size'), note = q('.btp-ph-note');
     var state = { size: 4, leadIns: {} };
     try { var kept = JSON.parse(localStorage.getItem(STORE) || 'null'); if (kept) state = { size: kept.size || 4, leadIns: kept.leadIns || {} }; } catch (e) {}

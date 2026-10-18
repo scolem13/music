@@ -10,9 +10,10 @@ page-layout: full
 ```{=html}
 <div class="ts-root">
 <link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=1">
-<link rel="stylesheet" href="/apps/shared/timestamp-player/player-log.css?v=9">
+<link rel="stylesheet" href="/apps/shared/timestamp-player/player-log.css?v=10">
 <link rel="stylesheet" href="/apps/shared/timestamp-player/bar-map.css?v=10">
 <link rel="stylesheet" href="/apps/shared/timestamp-player/words.css?v=11">
+<link rel="stylesheet" href="/apps/shared/panel-columns.css?v=1">
 <style>
 /* player.css is tuned for a reveal.js slide, where everything scales with the
    deck. This is an ordinary page, so the component is given a base size of its
@@ -35,6 +36,7 @@ page-layout: full
   <li><b>Send on</b>: to the Notation page for the melody, or the Backing Track for a style.</li>
 </ol>
 
+<p class="btp-howto">Every part folds; drag its &#10303; grip, or click &#8644;, to move it to the other column.</p>
 <p class="btp-howto">New here? <a href="/lessons/timestamp-player.html">How to map a recording</a>, step by step, including what to do when YouTube won't play a video.</p>
 
 <div class="btp-layout">
@@ -265,6 +267,7 @@ page-layout: full
   <p>On this page</p>
   <ul></ul>
   <div class="ts-all"><button type="button" data-all="open">Open all</button><button type="button" data-all="fold">Fold all</button></div>
+  <div class="ts-all"><button type="button" class="ts-reset-cols" title="Every part back in the column it started in">Reset columns</button></div>
   <div class="ts-clock" aria-live="off" title="Where the playhead is">
     <span class="ts-clock-t">00:00.0</span>
     <span class="ts-clock-b">No bars tapped</span>
@@ -273,21 +276,22 @@ page-layout: full
 
 </div>
 
+<script src="/apps/shared/panel-columns.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/player.js?v=6"></script>
 <script src="/apps/shared/timestamp-player/time-edit.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
-<script src="/apps/shared/timestamp-player/player-log.js?v=15"></script>
-<script src="/apps/shared/timestamp-player/bar-map.js?v=16"></script>
+<script src="/apps/shared/timestamp-player/player-log.js?v=16"></script>
+<script src="/apps/shared/timestamp-player/bar-map.js?v=17"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=3"></script>
-<script src="/apps/shared/notation-doc.js?v=8"></script>
+<script src="/apps/shared/notation-doc.js?v=9"></script>
 <script src="/apps/shared/ug-chordpro.js?v=4"></script>
-<script src="/apps/shared/timestamp-player/words.js?v=18"></script>
+<script src="/apps/shared/timestamp-player/words.js?v=19"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/chord-entry.js?v=10"></script>
-<script src="/apps/shared/timestamp-player/live.js?v=19"></script>
-<script src="/apps/shared/timestamp-player/phrases.js?v=2"></script>
-<script src="/apps/shared/timestamp-player/page-nav.js?v=2"></script>
+<script src="/apps/shared/timestamp-player/live.js?v=20"></script>
+<script src="/apps/shared/timestamp-player/phrases.js?v=3"></script>
+<script src="/apps/shared/timestamp-player/page-nav.js?v=3"></script>
 </div>
 ```
 :::

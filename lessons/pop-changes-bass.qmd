@@ -2,6 +2,10 @@
 title: "Pop Changes for Bass: Roots and the Walking Line"
 toc: true
 toc-depth: 2
+description: "The root of each chord, then the stepwise walking line through the passing chords, in bass clef and on a fretboard."
+instruments: [bass]
+topics: [pop, harmony]
+has: [band, notation, fingering, interactive]
 ---
 
 ```{=html}
@@ -107,7 +111,7 @@ This lesson is for a bass player. The bass is the instrument that plays the lowe
 <script src="/apps/shared/lessons/chord-lesson.js?v=2"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
-<script src="/apps/shared/band/harmony.js?v=28"></script>
+<script src="/apps/shared/band/harmony.js?v=32"></script>
 <script src="/apps/shared/band/bass.js?v=15"></script>
 <script src="/apps/shared/band/comp.js?v=30"></script>
 <script src="/apps/shared/band/catalog.js?v=36"></script>

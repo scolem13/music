@@ -1,0 +1,92 @@
+---
+title: "Sampling 6: Clearing Samples and the Law"
+toc: true
+toc-depth: 2
+description: "Two copyrights in every record, what clearing a sample means, the court cases, and where DJs stand."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sampling]
+has: []
+---
+
+*This lesson explains how sampling law has worked, mainly in the United States, so you know which questions to ask. It is not legal
+advice: for a release that matters, ask a music lawyer or a sample-clearance service.*
+
+## Two copyrights in every recording
+
+A commercial recording usually carries two separate copyrights:
+
+1. The **musical work** (the composition: melody, harmony, words), owned by the songwriters and their **publisher**.
+2. The **sound recording** (the "master": that particular performance, captured), usually owned by the **record label**.
+
+Sampling a recording uses both. **Clearing** a sample means getting permission (a licence) from the publisher *and* the master owner.
+If you **replay** (interpolate) the part yourself instead of sampling the record, you use only the composition, so you need only the
+publisher's permission. That is why many producers re-record samples.
+
+## What the courts have said
+
+- ***Grand Upright Music v. Warner Bros. Records* (1991)**. Biz Markie's "Alone Again" used a piece of Gilbert O'Sullivan's
+  "Alone Again (Naturally)" without permission. The judge found infringement and referred the case for criminal prosecution. After it,
+  labels started clearing samples routinely.
+- ***Campbell v. Acuff-Rose Music* (1994)**. The US Supreme Court held that 2 Live Crew's parody of "Oh, Pretty Woman" could be
+  **fair use**: a new work that comments on the old one weighs strongly in its favour. Fair use is decided case by case; it is not a rule
+  like "under two seconds is fine" (there is no such rule).
+- ***Newton v. Diamond* (2004)**. The Beastie Boys licensed the recording of a flute passage from James Newton but not the composition.
+  The court held the three-note composition use was too small to matter (**de minimis**).
+- ***Bridgeport Music v. Dimension Films* (2005)**. A two-second guitar chord, pitched down and looped, from a Funkadelic recording.
+  The Sixth Circuit court said that for sound recordings there is no "too small to matter": "Get a license or do not sample."
+- ***VMG Salsoul v. Ciccone* (2016)**. A 0.23-second horn hit in Madonna's "Vogue". The Ninth Circuit disagreed with *Bridgeport*:
+  a use too small for the public to recognise is de minimis. So US courts are split by region.
+
+## How clearing works
+
+1. Find out who owns the composition (the performing-rights databases, ASCAP / BMI / SOCAN / PRS, list publishers) and who owns the master
+   (the label on the release, or its current owner).
+2. Ask both, saying how much you used, how, and how the song will be released.
+3. Expect an up-front fee, a share of the new song's publishing, a royalty on sales, or a mix. A famous hook costs far more than an obscure
+   bar, and an owner can simply say no.
+4. Get it in writing **before** release. Clearing after a song is out is harder and dearer.
+
+## The safe routes
+
+- **Royalty-free sample packs** and loops sold for production: read the licence (most allow use in your music, not resale of the samples).
+- **Public domain**: compositions whose copyright has expired. Note that a *recording* of an old composition can still be protected.
+- **Creative Commons** recordings, under the terms of their licence (CC BY: credit the creator).
+- **Your own recordings**: sample yourself, your band, the street. Every loop in these lessons was made on this site, so you may use them.
+- **Replay** the part (an interpolation) and clear only the composition.
+
+## Where DJs stand
+
+- **Playing records in public** is a public performance of the songs. Venues (clubs, bars) normally hold blanket licences from the
+  performing-rights organisations that cover the DJ playing commercially released music there.
+- **Mixes posted online** are copies and performances of every track in them. Streaming sites that host DJ mixes either hold licences
+  for that (some have agreements with labels and rights organisations) or remove mixes when rights holders object.
+- **Edits, bootlegs and mashups** use others' recordings in a new one: legally, they are unlicensed derivative works unless cleared. Many are
+  played and tolerated in clubs; releasing or selling them is where the trouble starts.
+
+## Next
+
+- Start the DJ lessons: [DJ 1: The Gear](dj-gear.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Bridgeport Music, Inc. v. Dimension Films." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bridgeport_Music,_Inc._v._Dimension_Films](https://en.wikipedia.org/wiki/Bridgeport_Music,_Inc._v._Dimension_Films).
+
+"Campbell v. Acuff-Rose Music, Inc.." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Campbell_v._Acuff-Rose_Music,_Inc.](https://en.wikipedia.org/wiki/Campbell_v._Acuff-Rose_Music,_Inc.).
+
+"Grand Upright Music, Ltd. v. Warner Bros. Records Inc.." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Grand_Upright_Music,_Ltd._v._Warner_Bros._Records_Inc.](https://en.wikipedia.org/wiki/Grand_Upright_Music,_Ltd._v._Warner_Bros._Records_Inc.).
+
+"Newton v. Diamond." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Newton_v._Diamond](https://en.wikipedia.org/wiki/Newton_v._Diamond).
+
+"Sampling (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sampling_(music)](https://en.wikipedia.org/wiki/Sampling_(music)).
+
+United States Copyright Office. *Copyright Law of the United States*, Title 17, Chapter 1. [www.copyright.gov/title17/92chap1.html](https://www.copyright.gov/title17/92chap1.html).
+
+United States Copyright Office. *Copyright Registration for Sound Recordings* (Circular 56A). [www.copyright.gov/circs/circ56a.pdf](https://www.copyright.gov/circs/circ56a.pdf).
+
+United States Copyright Office. "U.S. Copyright Office Fair Use Index." [www.copyright.gov/fair-use/](https://www.copyright.gov/fair-use/).
+
+"VMG Salsoul v. Ciccone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/VMG_Salsoul_v._Ciccone](https://en.wikipedia.org/wiki/VMG_Salsoul_v._Ciccone).
+:::
+<!-- /works-cited -->

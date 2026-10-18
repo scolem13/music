@@ -125,7 +125,7 @@
     const tonic = m[1].toUpperCase() + (m[2] || "");
     const mode = (m[3] || "maj").toLowerCase();
     let fifths = MAJOR_FIFTHS[tonic];
-    if (fifths === undefined) fifths = 0;
+    if (fifths === undefined) fifths = "FCGDAEB".indexOf(tonic[0]) - 1 + (tonic[1] === "#" ? 7 : tonic[1] === "b" ? -7 : 0);   // A#, Fb ...
     fifths += (MODE_FIFTHS[mode] !== undefined ? MODE_FIFTHS[mode] : 0);
     const acc = {};
     if (fifths > 0) for (let i = 0; i < fifths && i < 7; i++) acc[SHARP_ORDER[i]] = 1;

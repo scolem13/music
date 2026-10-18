@@ -1,0 +1,96 @@
+---
+title: "DAW 7: Bounce, Export and Taking It Further"
+toc: true
+toc-depth: 2
+description: "WAV and MIDI out, into BandLab, Ableton or Logic; what a full DAW adds."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+A project file only opens in the DAW that made it. To share a song, or take a part to another DAW, you **export**:
+
+- **Bounce** (Logic), **Export Audio** (Ableton), **Download / Export** (BandLab): the whole mix rendered to one audio file,
+  WAV (full quality) or MP3 (smaller). This is what you send people. What's muted is left out, the master fader applies, and if
+  the master clips, the file clips.
+- **Export MIDI**: the notes, not the sound. A `.mid` file opens in every DAW and notation program: the notes arrive on new tracks,
+  ready for that DAW's own instruments. This is how a part written here gets into BandLab, Ableton or Logic.
+- **Stems**: each track bounced to its own audio file, for someone else to mix.
+
+## The whole DAW
+
+Everything from the other lessons in one place. Make a short song (let the band write a start, change it, mix it), then:
+
+1. Press **Bounce to WAV**. It renders the song faster than real time and tells you the peak level. Over 0 dBFS? Pull the master down and bounce again.
+2. Press **Export MIDI** and open `mini-daw.mid` in another DAW (below).
+3. **Save project** keeps everything in a `.json` file you can open here again. (The page also remembers your work in this browser.)
+
+<div class="mdaw" data-id="daw-full" data-preset="empty" data-bars="16"></div>
+
+## Taking the MIDI file into another DAW
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Bring in the `.mid` | Import it in the web Studio (MIDI is a supported format) | Drag it from Live's browser, or Create → Import MIDI File | File → Import → MIDI File, or drag it from the Finder |
+| What you get | MIDI tracks; pick an instrument for each | A MIDI clip per track; drop an instrument (a Drum Rack on the drum track) | Software instrument tracks; choose a patch for each |
+| Bounce the mix | Project → Download → **Mixdown As** (WAV or M4A) | File → **Export Audio/Video** (**Cmd/Ctrl+Shift+R**) | File → **Bounce → Project or Section** |
+| Stems | Project → Download → Tracks | Export Audio/Video, all individual tracks | File → Export → All Tracks as Audio Files |
+| Export MIDI | Right-click a region → Export Region → As MIDI | File → **Export MIDI Clip** | File → Export → Selection as MIDI File |
+
+</div>
+
+The drum track is written on MIDI channel 10 with General MIDI drum numbers (kick 36, snare 38, closed hi-hat 42), so a GM drum kit
+plays the right drums. Other instruments may need their sound chosen again.
+
+## What this small DAW leaves out
+
+Real DAWs do much more. In the order you'll want them:
+
+- **Audio editing**: many takes of one part and the best bits of each (comping), fades, time-stretching ([Recording 1: Gain Staging](rec-gain-staging.qmd), [Recording 2: Microphones](rec-mics.qmd)).
+- **Effects / plug-ins** on each track: EQ, compression, reverb, delay ([Sound 11: The Equaliser](sound-eq.qmd) onwards).
+- **Sends and buses**: one reverb shared by many tracks ([Recording 5: Mixing](rec-mixing.qmd)).
+- **Automation**: a fader or knob that moves by itself as the song plays.
+- **Meter and tempo changes**, takes and comping, time-stretching audio, software synths ([the sound-design lessons](sound-harmonics.qmd)).
+
+## Next
+
+- [DAW 8: Your First Session in a Real DAW](daw-real.qmd)
+
+## All the DAW lessons
+
+1. [The Timeline and the Transport](daw-timeline.qmd)
+2. [Programming a Beat](daw-beat.qmd)
+3. [The Piano Roll and MIDI](daw-pianoroll.qmd)
+4. [Arranging a Song](daw-arrange.qmd)
+5. [The Mixer](daw-mixer.qmd)
+6. [Recording Audio: Bleed and Headphones](daw-record.qmd)
+7. Bounce, Export and Taking It Further
+8. [Your First Session in a Real DAW](daw-real.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Apple Loops in Logic Pro." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/apple-loops-in-logic-pro-lgcp734a05f6/mac](https://support.apple.com/guide/logicpro/apple-loops-in-logic-pro-lgcp734a05f6/mac).
+
+"Bounce a Project to an Audio File." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac](https://support.apple.com/guide/logicpro/bounce-a-project-to-an-audio-file-lgcp785a41c3/mac).
+
+"How Do I Download Tracks?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/115002959774-How-do-I-download-tracks](https://help.bandlab.com/hc/en-us/articles/115002959774-How-do-I-download-tracks).
+
+"How Do I Export MIDI Files?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files](https://help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Managing Files and Sets." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/managing-files-and-sets/](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/).
+
+"Standard MIDI Files." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac](https://support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+
+"Supported Import and Export File Formats." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats](https://help.bandlab.com/hc/en-us/articles/360036010533-Supported-Import-and-Export-File-Formats).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

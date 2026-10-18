@@ -2,6 +2,10 @@
 title: "Sound 8: FM Synthesis"
 toc: true
 toc-depth: 2
+description: "Carrier, modulator, ratio and index: sidebands on the spectrum, and bells, electric piano and bass from two sine waves."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 **FM** (frequency modulation) synthesis makes harmonics by a different route from

@@ -1,0 +1,92 @@
+---
+title: "DAW 2: Programming a Beat"
+toc: true
+toc-depth: 2
+description: "The step sequencer: kick, snare and hi-hat on sixteen steps, accents and ghost notes."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+Most beats in pop, hip-hop and dance music are not played: they are **programmed**, one hit at a time, in a
+**step sequencer**. A bar of 4/4 is cut into **16 steps** (sixteenth notes). Each row is one drum; each square is a step.
+Light a square and that drum hits there.
+
+## The parts of a drum row
+
+Count a bar of sixteenths as *1 e & a 2 e & a 3 e & a 4 e & a*. The thick lines are beats, the thin ones sixteenths.
+
+- **Kick** (bass drum): the low thump, usually on 1 and somewhere around 3.
+- **Snare**: the crack on **2 and 4**, the **backbeat**. Move it and it stops sounding like pop music.
+- **Hi-hat**: the ticking that keeps time, in eighths (every other step) or sixteenths.
+
+## Try it
+
+The beat below is one bar, looping. The clip is selected, so its steps show under the tracks.
+
+1. Press **Play**. Click squares on and off while it plays: a DAW lets you edit as it goes round.
+2. Fill the closed hi-hat on **every** step, then only every other step. Which is busier?
+3. Add a kick on the *a* of 2 (step 8). Then one on the *&* of 3 (step 11). This is the difference between a stiff beat and one that moves.
+4. **Velocity** is how hard a hit is (0 to 127 in MIDI). **Shift+click** a hi-hat to make it an **accent**, **Alt+click** for a quiet
+   **ghost note**. Accent every hi-hat on the beat, ghost a snare just before beat 4. Brightness shows velocity.
+5. Try the **Grid** menu: at 1/8 there are 8 squares a bar; at *1/8 triplet* 12, for a shuffle.
+6. When you like it, make it longer: select the clip and press **Duplicate** (Ctrl/Cmd+D) three times. Now there are four bars; change the
+   last one into a **fill** (snare and toms on the last few steps).
+7. Switch on **⌨ Keys** and play the kit from your computer keyboard: A kick, S snare, D closed hat, F open hat, G H toms, J crash, K ride.
+
+<div class="mdaw" data-id="daw-beat" data-preset="beat" data-show="transport tracks editor"></div>
+
+## Patterns to copy
+
+Steps are numbered 1 to 16; `x` a hit.
+
+| | 1 . . . 2 . . . 3 . . . 4 . . . |
+|---|---|
+| **Rock** hat | `x.x.x.x.x.x.x.x.` |
+| snare | `....x.......x...` |
+| kick | `x.......x.x.....` |
+| **Four on the floor** (disco, house) kick | `x...x...x...x...` |
+| snare/clap | `....x.......x...` |
+| open hat (off-beats) | `..x...x...x...x.` |
+| **Half time** (trap, ballad) snare | `........x.......` |
+
+The band's own grooves, played for real, are in [Patterns](patterns/index.qmd) and [Hi-hat grooves](hihat-grooves.qmd).
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Where the step grid is | New track → **Drum Machine** | Drag a **Drum Rack** kit onto a MIDI track, double-click the clip: the MIDI editor shows one row a pad. Draw mode (B) clicks hits in | **Step Sequencer** with a Drum Machine Designer kit (or **Drummer** for a played part) |
+| Steps per bar | Grid size in the sequencer | Grid: right-click the editor → Fixed Grid 1/16 | Step rate in the Step Sequencer's settings |
+| Velocity / accents | Velocity per step in the sequencer | Velocity lane under the notes | Velocity edit mode in the Step Sequencer |
+| Duplicate the clip | **Alt/Option-drag** the region | **Cmd/Ctrl+D** | Edit → Repeat |
+
+</div>
+
+## Next
+
+- [DAW 3: The Piano Roll](daw-pianoroll.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Editing MIDI." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/editing-midi/](https://www.ableton.com/en/live-manual/12/editing-midi/).
+
+"How Do I Edit MIDI Tracks?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks](https://help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Quantize the Timing of Notes." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac](https://support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac).
+
+"Recording New Clips." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/recording-new-clips/](https://www.ableton.com/en/live-manual/12/recording-new-clips/).
+
+"Step Sequencer Overview." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/step-sequencer-overview-lgcp39acefc9/mac](https://support.apple.com/guide/logicpro/step-sequencer-overview-lgcp39acefc9/mac).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

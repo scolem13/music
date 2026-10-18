@@ -29,7 +29,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   // the frame is only Rhythm and Notes; rhythm fills the open bars in order and stops when the song is complete
   await ev(`localStorage.removeItem('ending:unfinished-song-1'); document.querySelectorAll('#we-pick button')[0].click()`); await b.sleep(1500);
   const shown = await ev(`[...${F}.document.querySelectorAll('#nt-root details.nt-panel')].filter(p => p.offsetParent).map(p => p.id).join(',')`);
-  check("only Rhythm and Notes shown", shown === "nt-rhythm,nt-pitch", shown);
+  check("only Rhythm and Notes shown", shown.split(',').sort().join(',') === "nt-pitch,nt-rhythm", shown);
   const fill = await ev(`(async () => { const w = ${F}, P = w.NotationPage, n = () => P.doc().chunks.length;
     const before = n(), btn = () => w.document.querySelector('#nt-cells .cell-btn');
     if (!btn()) return 'no cells';

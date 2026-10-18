@@ -6,6 +6,7 @@
 //
 // Drums (data-part = a name from DRUMSTEPS): no diagrams. A step shows two bars of its beat and the whole chorus on a drum
 // staff (BandNotation), and the band's drummer plays that groove in that step's style.
+// Every drum and conga step also draws the kit or the congas from above, lit as the band plays (LessonGrooveAnim, groove-anim.js).
 // Congas (data-part = a name from CONGASTEPS): the drum step's path with the conga player instead of the drummer. A step is declared
 //   CONGASTEPS.name = { style, pattern, tempo, drums?, stops?, at? }: the band style it is played in (chacha | boogaloo | montuno, the Feel menu),
 //   the conga pattern (a PATTERNS id of congas.js), its tempo, "none" in `drums` takes the drummer out (so the congas are heard bare),
@@ -345,15 +346,23 @@
     var player = null, now = null, widgets = [];
     function status(t) { $('bl-status').textContent = t || ''; }
     function idle() {
-      if (now) { now.btn.textContent = now.label; now.btn.classList.remove('bl-on'); now.w.live(-1, 0); markAll(now.w, -1, 0); now = null; }
+      if (now) { now.btn.textContent = now.label; now.btn.classList.remove('bl-on'); now.w.live(-1, 0); markAll(now.w, -1, 0); if (now.w.anim) now.w.anim.clear(); now = null; }
       $('bl-stop').disabled = true; status('');
     }
     function stop() { if (player) { try { player.stop(); } catch (e) {} } idle(); }
     // Notation in time with the band: w.timed = [{ s: a score, pickup: quarter notes written before bar 1 }]
     function markAll(w, index, pos) { (w.timed || []).forEach(function (t) { if (!t.s) return; if (index < 0) t.s.clear(); else t.s.mark(t.pickup + 4 * index + pos); }); }
+    // the kit / congas from above (LessonGrooveAnim), lit from the bars the player wrote (now.log) at the beat sounding now
+    function animate(a, at) {
+      var i = at.info, c = i.chorus != null ? i.chorus : now.chorus, lg = now.log[c] || [];
+      if (i.countIn || i.ending || i.index < 0 || !lg[i.index]) return a.clear();
+      var prev = i.index > 0 ? lg[i.index - 1] : (now.log[c - 1] || []).slice(-1)[0];
+      a.at(lg[i.index], prev || null, at.pos);
+    }
     function follow() {
       if (!now || !player) return;
       var at = player.where && player.where(); if (at && at.info && !at.info.countIn && !at.info.ending && at.info.index >= 0) markAll(now.w, at.info.index, at.pos);
+      if (now.w.anim && at && at.info) animate(now.w.anim, at);
       global.requestAnimationFrame(follow);
     }
     // A step on a tune: the tune written above `before`, and its melody handed to the band (chartOf)
@@ -444,6 +453,7 @@
       host.classList.add('bl-widget');
       var tools = el('div', 'bl-tools'), twoHead = el('p', 'bl-legend', 'Bars ' + (at + 1) + ' and ' + (at + 2) + ':'), two = el('div', 'bl-abc'), paper = el('div'), lineHead = el('p', 'bl-legend'), line = el('div', 'bl-abc');
       [twoHead, two, tools, paper, lineHead, line].forEach(function (e) { host.appendChild(e); });
+      if (global.LessonGrooveAnim) { var animBox = el('div', 'bl-anim'); host.insertBefore(animBox, tools); w.anim = global.LessonGrooveAnim.create(animBox, isCongas ? 'congas' : 'kit'); }
       var out = check('Leave out the ' + who + ' (I will play them)'), solo = check(isCongas ? 'Congas alone' : 'Drums alone');
       w.out = out.box; tools.appendChild(playButton(w)); tools.appendChild(out.lab); tools.appendChild(solo.lab);
       w.vol = function (p) { return p === who ? (out.box.checked ? 0 : 1) : (solo.box.checked ? 0 : 1); };

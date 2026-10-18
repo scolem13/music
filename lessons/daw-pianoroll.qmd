@@ -1,0 +1,85 @@
+---
+title: "DAW 3: The Piano Roll and MIDI"
+toc: true
+toc-depth: 2
+description: "Notes as data: draw, move, velocity, transpose; record from the keyboard and quantize."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+A clip on an instrument track holds **MIDI notes**, not sound. Each note is only: *which key*, *when*, *how long*, and *how hard*
+(**velocity**). The instrument turns them into sound when you play. So you can change any note, the tempo, or the instrument
+afterwards, and nothing is lost. That is the big difference from **audio**, a recording of sound, which you can cut and move but not
+re-voice note by note.
+
+The **piano roll** shows the notes: pitch up the side (a piano keyboard on its edge), time across, each note a bar whose length is its length.
+
+## Writing notes
+
+The Keys track below has the four chords of a C Am F G loop as whole notes, and an empty Bass clip is waiting.
+
+1. Click the clip on the **Keys** track. Its notes show in the piano roll. Click a key on the left to hear it.
+2. **Draw**: click an empty spot to write a note one grid step long. Drag the note up or down to change its pitch, drag its right end to make it longer.
+3. **Velocity**: the bars under the notes. Drag them down for softer notes. Shift+click several notes to select them, then use the Velocity slider.
+4. **Transpose**: select notes (or none, for all) and press +12 / −12 for an octave, +1 / −1 for a semitone.
+5. Select the **Bass** clip and write a bass line: one note a bar, the chord's root (C, A, F, G), then try root on 1 and 3.
+
+<div class="mdaw" data-id="daw-pianoroll" data-preset="keys" data-show="transport tracks editor record"></div>
+
+## Recording and quantizing
+
+Clicking notes in is precise but slow. Most people **record** from a keyboard and then fix the timing.
+
+1. Select a track (click its name). Press **● Rec** (or R): one bar of clicks to count you in, then it records. Play with the computer keyboard
+   (**A W S E D F T G Y H U J K**: the white and black keys from C; **Z / X** octave down / up) or a MIDI keyboard plugged in (Chrome or Edge).
+   Space stops; the take becomes a new clip.
+2. Your notes will be a little early or late: that's human. **Quantize** (Q) moves them onto the grid. Set **Grid** to the smallest note you played first.
+3. **Quantize 50%** moves them only half way: tighter, still human. Producers often quantize less than fully for this reason.
+4. **Undo** (Ctrl/Cmd+Z) whenever an edit goes wrong. Every DAW keeps a long undo history: use it freely.
+
+Quantizing to the wrong grid is the commonest beginner mistake: triplets forced onto a 1/16 grid, or a swung part straightened.
+Listen after you quantize.
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Open the piano roll | Double-click a MIDI region | Double-click a MIDI clip (the MIDI Note Editor at the bottom) | Double-click a region (or Window → Open Piano Roll, **Cmd+4**) |
+| Draw a note | Click in the MIDI editor | Draw mode (**B**) | Pencil tool |
+| Velocity | In the MIDI editor | Velocity lane under the notes | Velocity in the Piano Roll |
+| Play from the computer keyboard | The instrument track's keyboard | Computer MIDI Keyboard (**M**) | Window → Show Musical Typing |
+| Record | **R** (count-in in the metronome menu) | Arrangement Record button (●), or **F9** | **R** |
+| Quantize | Select notes, right-click → Quantize, or **Q** | Select notes, **Cmd/Ctrl+U** | **Time Quantize** menu, with a **Strength** slider |
+
+</div>
+
+## Next
+
+- [DAW 4: Arranging a Song](daw-arrange.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Editing MIDI." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/editing-midi/](https://www.ableton.com/en/live-manual/12/editing-midi/).
+
+"How Do I Edit MIDI Tracks?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks](https://help.bandlab.com/hc/en-us/articles/360022659314-How-do-I-edit-MIDI-tracks).
+
+"How Do I Export MIDI Files?." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files](https://help.bandlab.com/hc/en-us/articles/360019607454-How-do-I-export-MIDI-files).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Managing Files and Sets." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/managing-files-and-sets/](https://www.ableton.com/en/live-manual/12/managing-files-and-sets/).
+
+"Quantize the Timing of Notes." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac](https://support.apple.com/guide/logicpro/quantize-the-timing-of-notes-lgcpfa6e7f80/mac).
+
+"Standard MIDI Files." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac](https://support.apple.com/guide/logicpro/standard-midi-files-lgcpdf6a3851/mac).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

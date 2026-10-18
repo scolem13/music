@@ -1,0 +1,35 @@
+---
+title: "Tap Latency"
+toc: false
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/tap-along/tap-along.css?v=1">
+<script src="/apps/shared/tap-along/tap-latency.js?v=1"></script>
+
+<div class="ta ta-latency">
+  <p class="ta-muted">How late each of <a href="/tools/tap-along.html">Tap Along</a>'s buttons lands behind the beat you hear. Use the
+  phone and the headphones or speaker you'll mark songs with (Bluetooth adds a lot), turn the ringer on (on an iPhone the silent switch
+  mutes this page), and press Start. After four clicks to count you in, tap <b>button 1</b> on the next twelve clicks, then
+  <b>button 2</b>, then <b>button 3</b>, the way you'd tap along to a song. Listen to the clicks rather than watching the screen.</p>
+
+  <div class="ta-row">
+    <label class="ta-muted">Tempo <select class="ta-bpm"><option>80</option><option selected>100</option><option>120</option></select></label>
+    <button type="button" class="ta-go">Start</button>
+  </div>
+  <div class="ta-cue"></div>
+  <div class="ta-results"></div>
+  <p class="ta-muted ta-current"></p>
+  <p class="ta-muted">The lag is the median of the last ten taps (the first two settle in); the spread shows how steady they were.
+  Most people tap a little <i>ahead</i> of a metronome, so a small or negative lag is normal. With Sync, Tap Along takes off
+  what the buttons have in common anyway. What matters most is the difference between buttons.</p>
+
+  <div class="ta-pad">
+    <div class="ta-keys">
+      <button type="button" class="ta-key">1<small>Bar</small></button>
+      <button type="button" class="ta-key">2<small>Chord</small></button>
+      <button type="button" class="ta-key">3<small>Section</small></button>
+    </div>
+  </div>
+</div>
+```

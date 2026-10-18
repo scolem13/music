@@ -2,6 +2,10 @@
 title: "Sound 13: The Compressor"
 toc: true
 toc-depth: 2
+description: "Threshold, ratio, knee, attack and release, with a live gain-reduction meter."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A **compressor** is an automatic hand on the volume knob. When the sound gets louder than a set level,

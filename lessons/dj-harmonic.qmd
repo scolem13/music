@@ -1,0 +1,91 @@
+---
+title: "DJ 6: Harmonic Mixing"
+toc: true
+toc-depth: 2
+description: "Mix tracks in compatible keys with the Camelot wheel, and why the pitch fader moves the key."
+instruments: [other]
+topics: [dj, harmony]
+has: [interactive]
+---
+
+Two beatmatched tracks in clashing keys sound sour in a long blend, especially with chords or vocals. **Harmonic mixing** chooses the
+next track by key, so blends sound like one piece of music.
+
+## The Camelot wheel
+
+The **Camelot** system (by Mark Davis; popularised by Mixed In Key) numbers the keys around a clock, 1 to 12, **A** for minor and **B** for
+major. It is the circle of fifths with easy names: one step round is a fifth up.
+
+| 1A A♭m | 2A E♭m | 3A B♭m | 4A Fm | 5A Cm | 6A Gm | 7A Dm | 8A Am | 9A Em | 10A Bm | 11A F♯m | 12A C♯m |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **1B B** | **2B F♯** | **3B D♭** | **4B A♭** | **5B E♭** | **6B B♭** | **7B F** | **8B C** | **9B G** | **10B D** | **11B A** | **12B E** |
+
+From a track in **8A** (A minor), the safest moves are:
+
+- **8A** (the same key),
+- **7A** or **9A** (one step: D minor or E minor, keys a fifth apart, sharing six of seven notes),
+- **8B** (the relative major, C major: the same notes).
+
+Moving +2 (an "energy boost", 8A → 10A) or across diagonally works sometimes, and is a choice, not a rule.
+
+## The pitch fader moves the key
+
+Without key lock, speeding a track up raises its key: about **6 %** is one semitone. +3 % is a quarter-tone sharp, enough to clash with a
+track in the "same" key. The decks show it: the key readout adds the shift in semitones. **Key lock** (Master Tempo) keeps the key while the
+tempo changes, by time-stretching. Some DJs use the shift on purpose: a track pitched up 6 % moves one semitone, so 8A becomes 3A.
+
+## Practise
+
+<div class="dj-tt" data-id="dj-harmonic" data-a="demo:house124" data-b="demo:house126"></div>
+
+The loops are in different keys: Warehouse **Am (8A)**, Neon Floor **Em (9A)**, Late Bus **Cm (5A)**, Concrete **Fm (4A)**, Mirrorball **G (9B)**.
+
+1. A: Warehouse (8A). B: Neon Floor (9A), matched to 124. Blend with both full. One step on the wheel: it works.
+2. Load **Late Bus (5A)** on B instead (match it to 124: +3.3 %). Three steps away: hear the chords rub.
+3. Load **Hey Now (acapella)** (8A) on B over Warehouse (8A): same key. Then over Neon Floor on A (9A). Then over Mirrorball (9B, the relative
+   major of 9A): which works best?
+4. Watch the key readout as you push a pitch fader to +8 %: how far has the key moved?
+
+## Notes
+
+- Software detects keys; it is right most of the time, not always. Trust your ears in the headphones.
+- Drum-only intros and outros have no key: mix in there and keys don't matter.
+- The Camelot code is a nickname for the key: the [Circle of Fifths](../tools/circle-of-fifths.qmd) tool shows the circle behind it.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| Key shown | Key column; display as musical, Open Key or Camelot (Setup → Library + Display) | Key column; display Classic or Alphanumeric (Preferences) | Key column; Open Key or musical (Preferences) |
+| Key lock | KEYLOCK | MASTER TEMPO | Keylock |
+| Shift the key | Pitch 'n Time key shift | KEY SHIFT (and KEY SYNC) | Key knob / Key sync |
+
+</div>
+
+## Next
+
+- [DJ 7: Building a Set and Reading a Room](dj-set.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Audio Time Stretching and Pitch Scaling." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Audio_time_stretching_and_pitch_scaling](https://en.wikipedia.org/wiki/Audio_time_stretching_and_pitch_scaling).
+
+"Camelot Wheel." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Camelot_Wheel](https://en.wikipedia.org/wiki/Camelot_Wheel).
+
+"Harmonic Mixing Guide." *Mixed In Key*, [mixedinkey.com/harmonic-mixing-guide/](https://mixedinkey.com/harmonic-mixing-guide/).
+
+"Harmonic Mixing." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Harmonic_mixing](https://en.wikipedia.org/wiki/Harmonic_mixing).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

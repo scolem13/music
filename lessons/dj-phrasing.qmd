@@ -1,0 +1,79 @@
+---
+title: "DJ 3: Phrasing and Counting Bars"
+toc: true
+toc-depth: 2
+description: "Dance music comes in 8-, 16- and 32-bar phrases; start the next track on a phrase so changes land together."
+instruments: [other]
+topics: [dj, rhythm]
+has: [interactive]
+---
+
+Beatmatched tracks can still clash: if one reaches its drop while the other is halfway through a breakdown, the mix sounds wrong
+even with the beats together. Dance music is built in **phrases**, and a good mix lines phrases up.
+
+## Counting
+
+- A **beat** is one kick in four-on-the-floor music. A **bar** is four beats.
+- A **phrase** is usually **8 bars** (32 beats). Changes (a new sound, a fill, a breakdown) arrive on the first beat of a phrase,
+  and often bigger changes every 16 or 32 bars.
+- Many tracks start with a 16- or 32-bar **intro** of mostly drums (made for DJs to mix in) and end with a matching **outro**.
+
+Count bars on your fingers: *1 2 3 4, 2 2 3 4, 3 2 3 4, …, 8 2 3 4*. A drum fill or a cymbal crash in bar 8 tells you the next phrase is coming.
+
+## The rule
+
+**Start the incoming track on the first beat of a phrase of the playing track.** Then their phrases line up: when the outgoing track
+changes, so does the incoming one, and the switch sounds planned. A common plan: incoming intro (16 bars) under the outgoing outro (16 bars),
+then the outgoing track is gone exactly as the incoming one's main part starts.
+
+## Practise
+
+The decks have 8-bar loops, so each loop is one phrase (the long tick on the waveform marks each bar; the overview shows the whole phrase).
+
+<div class="dj-tt" data-id="dj-phrasing" data-a="demo:techno128" data-b="demo:house126"></div>
+
+1. Start A. Watch the overview: the playhead goes round once per phrase. Count the bars aloud.
+2. Match B to A (B needs about +1.6 %; use the readout to check).
+3. **Set a cue on B at its start**: with B stopped at 0:00, press **CUE**.
+4. Start B exactly when A's playhead returns to the start of its loop (bar 1 of a phrase). Bring B's fader up over the next 8 bars.
+5. Now start B on bar **3** of A's phrase instead. Listen for the chord change in B arriving at a different moment from A's. That's what
+   phrasing avoids.
+
+## Reading a track's structure
+
+DJs learn their records. In software you see it: the waveform's dense parts are full sections, the thin parts are breakdowns. Mark the
+phrases you'll mix at with **hot cues** (the first beat of the intro, the drop, the outro), and colour them so you know at a glance.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| Bars and phrases on the waveform | Beatgrid with bar markers | Phrase analysis colours the waveform by section (Intro, Verse, Chorus…) | Beat and bar markers on the grid |
+| Mark a phrase | Hot cues (up to 8) | Hot cues, Memory cues | Cue points (Hotcues) |
+| Jump by a phrase | Beat jump (set in bars) | Beat jump | Beat jump / move |
+
+</div>
+
+## Next
+
+- [DJ 4: EQ Mixing and Transitions](dj-eq.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Beatmatching." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Beatmatching](https://en.wikipedia.org/wiki/Beatmatching).
+
+"DJ Mix." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/DJ_mix](https://en.wikipedia.org/wiki/DJ_mix).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

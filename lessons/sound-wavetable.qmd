@@ -2,6 +2,10 @@
 title: "Sound 9: Wavetable Synthesis"
 toc: true
 toc-depth: 2
+description: "Morph through a table of wave shapes by hand or with an LFO."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 A **wavetable** is a list of different single-cycle wave shapes, one after another. The oscillator

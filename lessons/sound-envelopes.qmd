@@ -2,6 +2,10 @@
 title: "Sound 5: Envelopes"
 toc: true
 toc-depth: 2
+description: "Attack, decay, sustain and release: why a piano, an organ and a violin playing the same note sound different."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [sound]
+has: [interactive]
 ---
 
 Play a piano note and hold it: it starts with a hard knock and then fades, even while you hold the key.

@@ -682,6 +682,12 @@
   <details class="bt-panel bt-abc">
     <summary>Edit the changes (ABC)</summary>
     <div class="bt-row"><button type="button" class="bt-btn" id="bt-to-entry" title="Opens the Chord Entry page with these changes and voicings. Play chords or voicings in there, then send them back.">Enter chords or voicings from a keyboard</button></div>
+    <details class="bt-fold" id="bt-cp"><summary>Paste ChordPro</summary>
+      <textarea id="bt-cp-text" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="ChordPro to play" placeholder="{title: My Song}&#10;{time: 3/4}&#10;{start_of_verse}&#10;[C]Words with [F]chords in [G]brackets [C]here&#10;{end_of_verse}" style="display:block;width:100%;min-height:9rem;margin-top:.6rem;font-family:var(--font-mono,monospace);font-size:.85rem"></textarea>
+      <div class="bt-row"><button type="button" class="bt-btn" id="bt-cp-go">Use these chords</button></div>
+      <p class="bt-hint">Each line of words is a bar per chord, as on the Notation page; a line of bars (<code>[G] | [C] [D] |</code>) is played as written. <code>{start_of_verse}</code>, <code>{start_of_chorus}</code> or <code>{c: Bridge}</code> start sections; <code>{time:}</code>, <code>{key:}</code>, <code>{tempo:}</code> and <code>{title:}</code> are read. Chords over words copied from Ultimate Guitar work too. The result replaces the ABC below.</p>
+      <p class="bt-hint bt-warn" id="bt-cp-note" role="status"></p>
+    </details>
     <textarea id="bt-abc" spellcheck="false" autocapitalize="off" autocomplete="off" aria-label="Changes as ABC" aria-describedby="bt-abc-hint"></textarea>
     <details class="bt-info"><summary>Info</summary>
     <p class="bt-hint" id="bt-abc-hint">The chord symbols in quotes are what the band reads. Where a symbol sits in the bar sets the beat it lands on, so <code>"Cm7"z2 "F7"z2</code> gives each chord two beats. The rests only fill out the bar. A line such as <code>P:Verse</code> or <code>P:Chorus</code> names the section that starts at the next bar: the drummer fills into each one, a section called Chorus is played up, and the Sections menu by the Play button can hold each section until you press Next. <code>"^fill"</code> (or <code>"^small fill"</code>, <code>"^big fill"</code>) in a bar makes the drummer fill at the end of it, and <code>"^stop"</code> makes it a stop-time bar; a line <code>%%style bossa nova</code> under a <code>P:</code> line plays that section in another style from the Style menu, and single parts can follow it, as in <code>%%style Swing; voicing drop2; rhythm charleston; bass two</code> (in a bar, <code>"^style bossa nova"</code> does the same from there to the next section); the Fill on bar and Stop on bar boxes write these for you. The <code>M:</code> line sets the meter: the band plays 3/4 as a jazz waltz and counts 6/8 and 12/8 in dotted quarters.</p>
@@ -699,12 +705,15 @@
 <script src="/apps/shared/musical-typing.js"></script>
 <script src="/apps/shared/melody-dwim.js?v=1"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/shared/abc-events.js?v=3"></script>
+<script src="/apps/shared/notation-doc.js?v=9"></script>
+<script src="/apps/shared/ug-chordpro.js?v=4"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/band/tune-score.js?v=2"></script>
 <script src="/apps/shared/tune-library.js?v=16"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=1"></script>
-<script src="/apps/shared/band/harmony.js?v=31"></script>
+<script src="/apps/shared/band/harmony.js?v=32"></script>
 <script src="/apps/shared/band/bass.js?v=16"></script>
 <script src="/apps/shared/band/comp.js?v=32"></script>
 <script src="/apps/shared/band/presets.js?v=7"></script>
@@ -930,6 +939,7 @@
     remoteTune(); melAttach();
     showChart(); barCheck(); abcSettings(text, parsed);
     secCheck(); marksToFields(); sectionsSync();
+    if (remote && remote.melody) melShow();
     $("bt-key").value = KEYS[parsed.keyPc];
     keyAnnounce(text);
     showMeter(parsed);
@@ -2151,6 +2161,25 @@
     v.addEventListener("change", function(){ var m = $(p[1]); m.value = v.value; m.dispatchEvent(new Event("change", { bubbles: true })); });
     v.addEventListener("pointerdown", voiceSync); v.addEventListener("focus", voiceSync); });
   $("bt-root").addEventListener("change", voiceSync);
+  // ChordPro (or Ultimate Guitar's chords over words) -> the chart, through the Notation page's reading of it
+  $("bt-cp-go").addEventListener("click", function(){
+    var text = $("bt-cp-text").value, note = $("bt-cp-note"), D = window.NotationDoc;
+    note.textContent = "";
+    if (!text.trim()){ note.textContent = "Paste a song in ChordPro first."; return; }
+    if (!D){ note.textContent = "The ChordPro reader didn't load: reload the page."; return; }
+    try {
+      if (!/\[[A-G][^\]]*\]/.test(text) && window.UgChordPro) text = UgChordPro.convert(text, {}).chordpro;     // chords over words
+      var doc = D.fromChordPro(text), ch = D.bandChart(doc);
+      if (!/"[^"^]+"/.test(ch.abc)){ note.textContent = "No chords found. Put each one in square brackets before its word, like [F7]."; return; }
+      var tm = /\{\s*tempo\s*:\s*(\d+)/i.exec(text), bpm = tm ? +tm[1] : 0;
+      if (state !== "idle") player.stop();
+      var abc = ch.abc.replace(/^P:(.)/gm, function(_, c){ return "P:" + c.toUpperCase(); });       // (Chorus, not chorus: it is played up)
+      if (!applyAbc(abc, false)){ note.textContent = "Those chords couldn't be read as a chart."; return; }
+      $("bt-changes").value = "custom"; clearPins("you pasted new changes");
+      if (bpm > 0){ $("bt-tempo").value = bpm; $("bt-tempo-n").value = bpm; player.setTempo(tempo()); }
+      note.textContent = "Read " + (abc.match(/\|/g) || []).length + " bars" + (ch.parts.length ? " in " + ch.parts.length + " section" + (ch.parts.length > 1 ? "s" : "") : "") + ".";
+    } catch (e){ note.textContent = "Couldn't read that ChordPro: " + e.message; }
+  });
   $("bt-abc").addEventListener("input", function(){
     clearTimeout(editTimer);
     editTimer = setTimeout(function(){ if (applyAbc($("bt-abc").value, true)){ $("bt-changes").value = "custom"; clearPins("you edited the changes"); } }, 300);
@@ -2309,7 +2338,11 @@
   function remoteOk(o){ return /^https:\/\/([a-z0-9-]+\.)?seancoleman\.org$/.test(o) || /^https?:\/\/(localhost|127\.0\.0\.1)(:\d+)?$/.test(o); }
   function remoteSay(msg){ if (!remote || !remote.on) return; try { window.opener.postMessage(msg, remote.origin || "*"); } catch (e) {} }
   function remoteTune(){ if (!remote || !remote.melody || !parsedC || parsedC.bars.length !== remote.melody.length) return;
-    parsedC.bars.forEach(function(b, i){ if (remote.melody[i]) b.melody = remote.melody[i]; }); }
+    parsedC.bars.forEach(function(b, i){ if (remote.melody[i]) b.melody = remote.melody[i]; });
+    // the same notes in the Melody tab, so the notation shows them: the lyrics page sends beats of the meter's note value, mel counts eighths
+    mel = parsedC.bars.map(function(b, i){ var m = melMeter(b), u = Math.max(8, m.d) / m.d;
+      return (remote.melody[i] || []).map(function(n){ return { pos: n.pos * u, dur: n.dur * u, midi: n.midi, tie: false }; }); });
+    melPickup = null; melSaved = null; }
   function remoteVersionShow(){ var sel = $("bt-remote-version"), ed = sel.querySelector('option[value="*"]');
     if (ed) ed.hidden = remote.version != null; sel.value = remote.version == null ? "*" : remote.version; }
   function remoteVersions(m){ var sel = $("bt-remote-version"); remote.versions = Array.isArray(m.versions) ? m.versions.filter(function(v){ return v && typeof v.abc === "string" && typeof v.name === "string"; }) : [];

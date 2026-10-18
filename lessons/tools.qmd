@@ -1,0 +1,18 @@
+---
+title: "Interactive Tools"
+description: "Every interactive tool used in the lessons, and the lessons that use each one."
+---
+
+Each tool below is used in the lessons listed under it. The foot of every lesson also lists the other lessons
+sharing its tools. Written by `node scripts/tool-catalog.cjs`.
+
+<div id="tool-catalog"></div>
+
+```{=html}
+<style>
+.tc-filter{max-width:24rem;margin:0 0 1rem}
+.tc-tool h3{font-size:1rem;margin:.8rem 0 .2rem}
+.tc-n{font-size:.75rem;color:var(--bs-secondary-color);font-weight:400}
+.tc-tool p{margin:0}
+</style>
+```

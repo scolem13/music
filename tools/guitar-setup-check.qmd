@@ -1,0 +1,124 @@
+---
+title: "Guitar and Bass Setup Check"
+toc: false
+---
+
+```{=html}
+<style>
+.sc{max-width:54rem}
+.sc-card{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem;margin:.8rem 0}
+.sc-card h3{font-family:var(--font-display);font-size:1.05rem;margin:0 0 .4rem}
+.sc-row{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .8rem;margin:.4rem 0}
+.sc-row label{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;color:var(--site-ink-2)}
+.sc select,.sc input[type=number]{font-size:.88rem;padding:.12rem .35rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.sc input[type=number]{width:5.5rem}
+.sc .btn{font-family:var(--font-mono);font-size:.78rem}
+.sc-note{font-size:.86rem;color:var(--site-ink-2)}
+.sc-grid{border-collapse:collapse;font-size:.85rem}
+.sc-grid th,.sc-grid td{padding:.2rem .6rem;text-align:center;border-bottom:1px solid var(--site-border)}
+.sc-grid th:first-child{text-align:left}
+.sc-irow{display:flex;flex-wrap:wrap;align-items:center;gap:.35rem .6rem;margin:.3rem 0}
+.sc-iname{min-width:7rem;font-family:var(--font-mono);font-size:.82rem}
+.sc-iout{font-family:var(--font-mono);font-size:.82rem}
+#sc-other label{display:block;font-size:.9rem;margin:.15rem 0}
+.sc-f{border-left:4px solid var(--site-border);padding:.4rem .8rem;margin:.4rem 0;background:var(--site-surface)}
+.sc-tech{border-left-color:#c0392b}.sc-teacher{border-left-color:#d9a52b}.sc-you{border-left-color:var(--site-accent)}.sc-ok{border-left-color:#2e9e5b}
+.sc-who{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;padding:.05rem .35rem;border-radius:3px;border:1px solid currentColor;margin-right:.3rem}
+.sc-sum,.sc-order{font-size:.92rem}
+.sc-care{border-left:3px solid #d9822b;padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.94rem}
+#sc-report{position:relative}
+</style>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+
+<div class="sc">
+<p>A guitar that's hard to play, buzzes, or won't play in tune up the neck usually needs an adjustment, not a new guitar. Work through the
+checks below with the instrument <b>in tune</b> (<a href="/tools/guitar-tuning.html">tune it here</a>) and in your playing position. Each answer
+goes into the list at the bottom: what's wrong, what to change, and <b>who</b> should change it: you, your teacher, or a repair tech.
+Answers are kept in this browser.</p>
+
+<div class="sc-care"><b>Before anyone turns anything:</b> the truss rod is a steel rod inside the neck. A quarter turn at a time, never forced,
+and wait for the neck to settle before judging. Bridge screws are safe to turn and easy to undo; nut slots and acoustic saddles are not
+(material taken off doesn't come back). When in doubt, it's a tech's job: a setup costs about as much as a few sets of strings.</div>
+
+<div class="sc-card">
+  <h3>The instrument</h3>
+  <div class="sc-row"><label for="sc-inst">What is it?</label> <select id="sc-inst"></select>
+  <button class="btn btn-sm btn-outline-secondary" id="sc-reset" type="button">Clear answers</button></div>
+  <p class="sc-note" id="sc-rod-note"></p>
+</div>
+
+<div class="sc-card">
+  <h3>1. Neck relief: is the neck bowed?</h3>
+  <p>A neck should bow very slightly forward under string tension, so the vibrating string clears the frets. Put a <b>capo at the 1st fret</b>.
+  With your right hand (or arm), press the <b>lowest string</b> down at the fret where the neck meets the body (around fret 14–17). The string is now a
+  straight edge. Look at the gap between the string and the top of the <b>7th or 8th fret</b>, and tap the string there: a tiny click means a small gap.</p>
+  <div class="sc-row"><label for="sc-relief">The gap</label>
+  <select id="sc-relief">
+    <option value="">not checked</option>
+    <option value="none">none: the string touches, no click</option>
+    <option value="low">barely: a faint click</option>
+    <option value="ok">a sheet of paper's thickness, a clear click</option>
+    <option value="high">a business card fits</option>
+    <option value="vhigh">more than a business card</option>
+  </select>
+  <label for="sc-relief-mm">or feeler gauge, mm</label> <input id="sc-relief-mm" type="number" min="0" max="2" step="0.01"></div>
+  <p class="sc-note" id="sc-relief-target"></p>
+</div>
+
+<div class="sc-card">
+  <h3>2. Where does it buzz?</h3>
+  <p>Play every string at every fret in each zone, at the strength you normally play (not harder: everything buzzes if you dig in). Listen
+  <b>acoustically</b>, not through an amp: tick each place where a note buzzes or dies early. This is your ear's job, and the most telling test on the page.</p>
+  <div id="sc-buzz"></div>
+  <div class="sc-row"><label for="sc-single">Only at one fret, on several strings?</label>
+  <input id="sc-single" type="number" min="1" max="24" step="1" placeholder="fret"></div>
+</div>
+
+<div class="sc-card">
+  <h3>3. String height (action)</h3>
+  <p>Measure from the top of the <b>12th fret</b> to the bottom of the string, with a steel ruler that reads half millimetres (no capo, nothing pressed).</p>
+  <div class="sc-row"><label for="sc-a-bass">Lowest string, mm</label> <input id="sc-a-bass" type="number" min="0" max="8" step="0.1">
+  <label for="sc-a-treble">Highest string, mm</label> <input id="sc-a-treble" type="number" min="0" max="8" step="0.1"></div>
+  <p class="sc-note" id="sc-action-target"></p>
+</div>
+
+<div class="sc-card">
+  <h3>4. The nut</h3>
+  <p>Press a string at the <b>3rd fret</b>, and look at (and tap) the string over the <b>1st fret</b>. Then play an open chord, then the same notes fretted near
+  the nut: if the fretted ones sound sharp to your ear, the nut is likely high.</p>
+  <div class="sc-row"><label for="sc-nut">Gap at the 1st fret</label>
+  <select id="sc-nut"><option value="">not checked</option><option value="none">none: string touches the 1st fret</option>
+  <option value="ok">tiny: you can just see it, a click</option><option value="high">clearly visible, and first-fret notes sound sharp</option></select></div>
+</div>
+
+<div class="sc-card">
+  <h3>5. Intonation: does it play in tune up the neck?</h3>
+  <p>On each string, play the <b>harmonic at the 12th fret</b> (touch lightly right over the fret wire, pick, lift), then <b>press</b> the 12th
+  fret and pick. They are the same note when the string length is right. Listen first: is the fretted note the same, higher, or lower? Then let the
+  microphone measure it (🎤 buttons; let each note ring for two seconds). Retune the open string before each one.</p>
+  <div id="sc-into"></div>
+  <p class="sc-note">With old strings this test lies: they play sharp up the neck however the saddles are set. Fit new strings first if they're
+  more than a few months old.</p>
+</div>
+
+<div class="sc-card">
+  <h3>6. Anything else?</h3>
+  <div id="sc-other">
+    <label><input type="checkbox" data-k="tuners"> It won't stay in tune</label>
+    <label><input type="checkbox" data-k="frets"> Fret ends feel sharp at the edge of the neck</label>
+    <label><input type="checkbox" data-k="worn"> Dents worn into the frets under the strings</label>
+    <label><input type="checkbox" data-k="bridge"> The bridge is lifting at the back (acoustic)</label>
+    <label><input type="checkbox" data-k="crack"> A crack anywhere</label>
+    <label><input type="checkbox" data-k="rodstuck"> The truss rod won't turn, or is already very tight</label>
+    <label><input type="checkbox" data-k="electric"> Crackles or cuts out (electric)</label>
+  </div>
+</div>
+
+<div class="sc-card">
+  <h3>What to do</h3>
+  <div id="sc-report" aria-live="polite"></div>
+</div>
+</div>
+<script src="/apps/shared/setup-check.js?v=1"></script>
+```

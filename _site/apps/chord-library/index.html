@@ -59,6 +59,9 @@ aside select:focus,aside input[type=number]:focus{border-color:var(--site-accent
 .tags{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px}
 .tag{font-size:.7rem;padding:1px 6px;border-radius:999px;background:var(--chip);color:var(--soft)}
 .tag.k{background:var(--site-accent);color:var(--site-accent-text);font-weight:600}
+.tag.t{background:var(--site-accent-bg,#e6f2ef);color:var(--site-accent-text,#14594d);border:1px solid var(--site-accent,#2a9d8f)}
+.card.picked{outline:3px solid var(--site-accent,#2a9d8f);outline-offset:1px}
+dialog td a{color:inherit}
 .notation{margin-top:4px;color:var(--ink)}
 .notation svg{display:block;width:100%;height:auto}
 .notation svg path,.notation svg text{fill:currentColor}
@@ -77,6 +80,13 @@ dialog td:first-child{color:var(--soft);width:42%}
 .dlg-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;margin-top:12px}
 @media(max-width:860px){.shell{grid-template-columns:1fr}aside{position:static;max-height:none}}
 @media(max-width:520px){.wrap{padding:12px 12px 40px}.search{flex-wrap:wrap}.search input{flex-basis:100%}.search button{flex:1}.row2{gap:6px}.grid{grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:8px}.dlg-actions .btn{flex:1}}
+</style>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
 </style>
 </head>
 <body>
@@ -108,6 +118,7 @@ dialog td:first-child{color:var(--soft);width:42%}
         <label>Family<select id="f-family"></select></label>
       </div>
       <label>Quality<select id="f-quality"></select></label>
+      <label>Taught in a lesson<select id="f-taught"><option value="">Any</option><option value="yes">Only shapes a lesson teaches</option></select></label>
       <h3>Voicing</h3>
       <label>Structure<select id="f-structure"></select></label>
       <label>Tones<select id="f-type"></select></label>
@@ -178,6 +189,7 @@ dialog td:first-child{color:var(--soft);width:42%}
 <script src="../shared/abcjs-basic.js"></script>
 <script src="../shared/voicings.js"></script>
 <script src="../shared/chord-catalog.js"></script>
+<script src="../shared/chord-taught-data.js"></script>
 <script>
 (function () {
 'use strict';
@@ -257,8 +269,8 @@ function fill(sel, opts, value) {
   });
   if (value != null) sel.value = value;
 }
-const FIELDS = ['instrument','tuning','root','family','quality','structure','type','style','inversion','top','notes','bassString','rootString','stringSet','caged','skips','fretMin','fretMax','open','barre','span','labels','tags','notation','sort'];
-const DEFAULTS = { instrument:'guitar', tuning:'0', root:'0', family:'', quality:'maj7', structure:'', type:'', style:'', inversion:'', top:'', notes:'',
+const FIELDS = ['taught','instrument','tuning','root','family','quality','structure','type','style','inversion','top','notes','bassString','rootString','stringSet','caged','skips','fretMin','fretMax','open','barre','span','labels','tags','notation','sort'];
+const DEFAULTS = { taught:'', instrument:'guitar', tuning:'0', root:'0', family:'', quality:'maj7', structure:'', type:'', style:'', inversion:'', top:'', notes:'',
   bassString:'', rootString:'', stringSet:'', caged:'', skips:'', fretMin:'0', fretMax:'15', open:'', barre:'', span:'4', labels:'degrees', tags:'show', notation:'off', sort:'common' };
 const state = Object.assign({}, DEFAULTS);
 
@@ -315,8 +327,20 @@ function chordsToSearch() {
   const qs = state.quality !== 'any' ? [C.quality(state.quality)] : C.QUALITIES.filter(q => !state.family || q.family === state.family);
   const out = []; roots.forEach(r => qs.forEach(q => out.push({ rootPc: r, q }))); return out;
 }
+// ===== where a shape is taught (apps/shared/chord-taught-data.js, written by scripts/chord-taught.cjs) =====
+const TAUGHT = {};
+(window.ChordTaughtData || []).forEach(t => { const k = t.inst + '|' + t.key; (TAUGHT[k] = TAUGHT[k] || []).push(t); });
+function shapeKey(v) { return v.frets ? v.frets.map(f => f == null ? 'x' : f).join(v.frets.some(f => f > 9) ? '-' : '') : v.midis.join(','); }
+function taughtIn(v) {
+  const inst = isKeys() ? 'keyboard' : state.instrument;
+  if (inst !== 'keyboard' && state.tuning !== '0') return [];          // the lessons use standard tuning
+  const seen = {}, out = [];
+  (TAUGHT[inst + '|' + shapeKey(v)] || []).forEach(t => { const k = t.lesson + '#' + t.anchor; if (!seen[k]) { seen[k] = 1; out.push(t); } });
+  return out;
+}
 function passes(v) {
   const s = state;
+  if (s.taught === 'yes' && !taughtIn(v).length) return false;
   if (s.structure && v.structure !== s.structure) return false;
   if (s.type && v.type !== s.type) return false;
   if (s.inversion && group(v.bassTone) !== s.inversion) return false;
@@ -392,6 +416,7 @@ function run() {
       fill($('f-stringSet'), [['','Any']].concat(keys.map(k => [k, k.split('').join('-') + (setCounts[k] ? `  (${setCounts[k]})` : '')])), state.stringSet);
     }
     results = sortResults(all); shown = 0;
+    if (pickShape) { const i = results.findIndex(r => shapeKey(r.v) === pickShape); if (i >= 0) { picked = results.splice(i, 1)[0]; results.unshift(picked); } pickShape = null; }
     $('grid').innerHTML = '';
     $('count').textContent = results.length ? `${results.length.toLocaleString()} voicing${results.length === 1 ? '' : 's'}` : 'No voicings match';
     if (!results.length) $('grid').innerHTML = '<p class="empty">Nothing matches every filter. Try loosening one (“Any”), or widen the fret range.</p>';
@@ -410,6 +435,8 @@ function more() {
 // ===== describing a voicing =====
 function tagsFor(v) {
   const t = [STRUCT_LABEL[v.structure] || v.structure];
+  const lessons = [...new Set(taughtIn(v).map(x => x.title.replace(/:.*$/, '')))];   // the title before its colon
+  if (lessons.length) t.push({ taught: lessons.length === 1 ? 'Taught in ' + lessons[0] : `Taught in ${lessons.length} lessons` });
   if (v.type !== 'full') t.push(TYPE_LABEL[v.type] + (v.omitted.length && v.type !== 'shell' && v.type !== 'guide' ? ` (no ${v.omitted.map(pretty).join(', ')})` : ''));
   t.push(group(v.bassTone) === 'root' ? 'Root in bass' : `${pretty(v.bassTone)} in bass`);
   t.push(`${pretty(v.topTone)} on top`);
@@ -432,6 +459,14 @@ function rows(r) {
     ['In the bass / on top', `${pretty(v.bassTone)} / ${pretty(v.topTone)}`],
     ['Left out', v.omitted.length ? v.omitted.map(pretty).join(', ') : '—']
   ];
+  const where = taughtIn(v);
+  if (where.length) {
+    const box = document.createElement('span');
+    where.forEach((t, i) => { if (i) box.appendChild(document.createElement('br'));
+      const a = document.createElement('a'); a.href = '/' + t.lesson + (t.anchor ? '#' + t.anchor : ''); a.target = '_top';
+      a.textContent = t.title + (t.section ? ' — ' + t.section : ''); box.appendChild(a); });
+    out.unshift(['Taught in', box]);
+  }
   if (v.style) out.push(['Piano style', (PIANO_STYLES.find(p => p[0] === v.style) || [, v.style])[1] + (v.label ? ' · ' + v.label : '')]);
   if (v.frets) out.push(
     ['Frets, low string to high', v.frets.map(f => f == null ? 'x' : f).join(' ')],
@@ -547,9 +582,10 @@ function card(r) {
   b.appendChild(diagram(r));
   if (state.notation === 'on') b.appendChild(notation(r));
   const tags = document.createElement('div'); tags.className = 'tags';
-  tagsFor(r.v).forEach((t, i) => { const s = document.createElement('span'); s.className = 'tag' + (i === 0 ? ' k' : ''); s.textContent = t; tags.appendChild(s); });
+  tagsFor(r.v).forEach((t, i) => { const s = document.createElement('span'); s.className = 'tag' + (i === 0 ? ' k' : t.taught ? ' t' : ''); s.textContent = t.taught || t; tags.appendChild(s); });
   b.appendChild(tags);
   b.addEventListener('click', () => open(r));
+  if (r === picked) { b.classList.add('picked'); b.title = 'The shape the lesson links to'; picked = null; }
   return b;
 }
 
@@ -560,7 +596,7 @@ function open(r) {
   $('dlg-title').textContent = chordName(r.rootPc, r.q) + ' · ' + (STRUCT_LABEL[r.v.structure] || r.v.structure);
   $('dlg-diagram').replaceChildren(diagram(r));
   $('dlg-notation').replaceChildren(...(state.notation === 'on' ? [notation(r, true)] : []));
-  $('dlg-table').replaceChildren(...rows(r).map(([k, v]) => { const tr = document.createElement('tr'); tr.innerHTML = '<td></td><td></td>'; tr.children[0].textContent = k; tr.children[1].textContent = v; return tr; }));
+  $('dlg-table').replaceChildren(...rows(r).map(([k, v]) => { const tr = document.createElement('tr'); tr.innerHTML = '<td></td><td></td>'; tr.children[0].textContent = k; if (v instanceof Node) tr.children[1].appendChild(v); else tr.children[1].textContent = v; return tr; }));
   $('dlg').showModal();
 }
 function exportable() {
@@ -615,7 +651,7 @@ function parseQuery(text) {
       openstrings:['open','some'], barre:['barre','yes'], nobarre:['barre','no'], keyboard:['instrument','keyboard'], piano:['instrument','keyboard'],
       guitar:['instrument','guitar'], bass:['instrument','bass'], ukulele:['instrument','ukulele'], uke:['instrument','ukulele'], mandolin:['instrument','mandolin'], banjo:['instrument','banjo'],
       caged:['caged','any'], cshape:['caged','C'], ashape:['caged','A'], gshape:['caged','G'], eshape:['caged','E'], dshape:['caged','D'],
-      anyroot:['root','any'], any:['root','any'] };
+      anyroot:['root','any'], any:['root','any'], taught:['taught','yes'], lessons:['taught','yes'] };
     if (words[lw]) { set[words[lw][0]] = words[lw][1]; return; }
     unknown.push(w);
   });
@@ -653,8 +689,10 @@ function writeHash() {
   const h = p.toString();
   try { history.replaceState(null, '', h ? '#' + h : location.pathname + location.search); } catch (e) {}
 }
+let pickShape = null, picked = null;          // #...&shape=xx0003 (or 55,59,62): a lesson's link to one shape, shown first and outlined
 function readHash() {
   const p = new URLSearchParams(location.hash.slice(1));
+  pickShape = p.get('shape');
   FIELDS.forEach(k => { if (p.has(k)) state[k] = p.get(k); });
 }
 

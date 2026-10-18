@@ -14,105 +14,173 @@ website:
   # No search key: letters are shortcuts on several pages (S stamps a section in Timestamp Notes). Click the navbar's search.
   search:
     keyboard-shortcut: []
+  # The Lessons read like a book: parts by topic, Previous / Next at the foot of each page.
+  page-navigation: true
+  sidebar:
+    - id: lessons
+      title: Lessons
+      style: docked
+      collapse-level: 1
+      contents:
+        - lessons/index.qmd
+        - lessons/tools.qmd
+        - section: "Blues and Jazz"
+          contents:
+            - lessons/blues-improv.qmd
+            - lessons/blues-melody.qmd
+            - lessons/blues-changes.qmd
+            - lessons/blues-bass.qmd
+            - lessons/blues-guitar.qmd
+            - lessons/blues-piano.qmd
+            - lessons/stride-boogie.qmd
+            - lessons/blues-drums.qmd
+            - lessons/reading-swing.qmd
+            - lessons/watermelon-man-blues.qmd
+        - section: "Pop and Rock"
+          contents:
+            - lessons/first-rock-song.qmd
+            - lessons/pop-changes.qmd
+            - lessons/pop-changes-guitar.qmd
+            - lessons/pop-changes-piano.qmd
+            - lessons/pop-changes-bass.qmd
+            - lessons/four-chord-loops.qmd
+        - section: "Rhythm and Percussion"
+          contents:
+            - lessons/hihat-grooves.qmd
+            - lessons/congas-basics.qmd
+            - lessons/watermelon-congas.qmd
+            - lessons/drum-grips.qmd
+            - lessons/drum-brushes.qmd
+            - lessons/cajon-basics.qmd
+        - section: "Guitar Technique"
+          contents:
+            - lessons/guitar-tuning-ear.qmd
+            - lessons/guitar-tuning-methods.qmd
+            - lessons/guitar-tuning-tuners.qmd
+            - lessons/chord-shapes-guitar.qmd
+            - lessons/chord-shapes-guitar-hand.qmd
+            - lessons/hammer-ons-pull-offs.qmd
+            - lessons/guitar-bends.qmd
+            - lessons/guitar-harmonics.qmd
+            - lessons/travis-picking.qmd
+        - section: "Piano Technique"
+          contents:
+            - lessons/chord-shapes-piano.qmd
+            - lessons/chord-shapes-piano-hand.qmd
+            - lessons/inversions.qmd
+        - section: "Voice"
+          contents:
+            - lessons/voice-pop.qmd
+            - lessons/voice-jazz.qmd
+            - lessons/voice-classical.qmd
+            - lessons/vowel-formants.qmd
+        - section: "Harmony"
+          contents:
+            - lessons/cadences.qmd
+            - lessons/write-an-ending.qmd
+            - lessons/guide-tones.qmd
+            - lessons/minor-changes.qmd
+            - lessons/borrowed-chords.qmd
+            - lessons/turnarounds.qmd
+            - lessons/reharmonize.qmd
+        - section: "Arranging"
+          contents:
+            - lessons/arrange-band.qmd
+            - lessons/arrange-bass-drums.qmd
+            - lessons/arrange-chords.qmd
+            - lessons/arrange-organ.qmd
+            - lessons/patterns/index.qmd
+        - section: "Notation, Tuning and Acoustics"
+          contents:
+            - lessons/notation-choices.qmd
+            - lessons/tuning-systems.qmd
+            - lessons/strobe-tuner.qmd
+            - lessons/inharmonicity.qmd
+        - section: "Sound Design"
+          contents:
+            - lessons/sound-harmonics.qmd
+            - lessons/sound-waveforms.qmd
+            - lessons/sound-noise.qmd
+            - lessons/sound-filter.qmd
+            - lessons/sound-envelopes.qmd
+            - lessons/sound-lfo.qmd
+            - lessons/sound-subtractive.qmd
+            - lessons/sound-fm.qmd
+            - lessons/sound-wavetable.qmd
+            - lessons/sound-granular.qmd
+            - lessons/sound-eq.qmd
+            - lessons/sound-distortion.qmd
+            - lessons/sound-compressor.qmd
+            - lessons/sound-sidechain.qmd
+            - lessons/sound-gate.qmd
+            - lessons/sound-reverb.qmd
+            - lessons/sound-delay.qmd
+            - lessons/sound-chorus.qmd
+            - lessons/sound-phaser.qmd
+            - lessons/sound-tremolo.qmd
+            - lessons/sound-pitch.qmd
+            - lessons/sound-vocoder.qmd
+            - lessons/sound-stereo.qmd
+            - lessons/sound-chain.qmd
+            - lessons/sound-chiptune.qmd
+        - section: "Recording"
+          contents:
+            - lessons/rec-gain-staging.qmd
+            - lessons/rec-mics.qmd
+            - lessons/rec-placement.qmd
+            - lessons/rec-monitoring.qmd
+            - lessons/rec-mixing.qmd
+            - lessons/rec-mastering.qmd
+            - lessons/rec-stereo.qmd
+        - section: "DAWs"
+          contents:
+            - lessons/daw-timeline.qmd
+            - lessons/daw-beat.qmd
+            - lessons/daw-pianoroll.qmd
+            - lessons/daw-arrange.qmd
+            - lessons/daw-mixer.qmd
+            - lessons/daw-record.qmd
+            - lessons/daw-export.qmd
+            - lessons/daw-real.qmd
+        - section: "Sampling"
+          contents:
+            - lessons/sampling-what.qmd
+            - lessons/sampling-chop.qmd
+            - lessons/sampling-pitch.qmd
+            - lessons/sampling-beat.qmd
+            - lessons/sampling-flip.qmd
+            - lessons/sampling-law.qmd
+        - section: "DJing"
+          contents:
+            - lessons/dj-gear.qmd
+            - lessons/dj-beatmatch.qmd
+            - lessons/dj-phrasing.qmd
+            - lessons/dj-eq.qmd
+            - lessons/dj-scratch.qmd
+            - lessons/dj-harmonic.qmd
+            - lessons/dj-set.qmd
+        - section: "Gear and Care"
+          contents:
+            - lessons/gear-power.qmd
+            - lessons/gear-cables.qmd
+            - lessons/gear-amps.qmd
+            - lessons/gear-keyboards.qmd
+            - lessons/gear-setup.qmd
+            - lessons/gear-guitar.qmd
+            - lessons/gear-violin.qmd
+            - lessons/gear-sax.qmd
+            - lessons/gear-drums.qmd
+        - section: "Mapping a Recording"
+          contents:
+            - lessons/timestamp-player.qmd
+            - lessons/section-labels.qmd
+        - bibliography.qmd
   navbar:
     left:
       - href: index.qmd
         text: Home
-      - text: Lessons
-        menu:
-          - lessons/index.qmd
-          - text: "---"
-          - lessons/blues-improv.qmd
-          - lessons/blues-melody.qmd
-          - lessons/blues-changes.qmd
-          - lessons/blues-bass.qmd
-          - lessons/blues-guitar.qmd
-          - lessons/blues-piano.qmd
-          - lessons/stride-boogie.qmd
-          - lessons/blues-drums.qmd
-          - lessons/reading-swing.qmd
-          - lessons/hihat-grooves.qmd
-          - lessons/congas-basics.qmd
-          - lessons/watermelon-congas.qmd
-          - lessons/watermelon-man-blues.qmd
-          - lessons/pop-changes.qmd
-          - lessons/pop-changes-guitar.qmd
-          - lessons/pop-changes-piano.qmd
-          - lessons/pop-changes-bass.qmd
-          - lessons/chord-shapes-guitar.qmd
-          - lessons/chord-shapes-guitar-hand.qmd
-          - lessons/hammer-ons-pull-offs.qmd
-          - lessons/guitar-bends.qmd
-          - lessons/travis-picking.qmd
-          - lessons/chord-shapes-piano.qmd
-          - lessons/chord-shapes-piano-hand.qmd
-          - lessons/inversions.qmd
-          - lessons/voice-pop.qmd
-          - lessons/voice-jazz.qmd
-          - lessons/voice-classical.qmd
-          - lessons/four-chord-loops.qmd
-          - lessons/cadences.qmd
-          - lessons/write-an-ending.qmd
-          - lessons/guide-tones.qmd
-          - lessons/minor-changes.qmd
-          - lessons/borrowed-chords.qmd
-          - lessons/turnarounds.qmd
-          - lessons/reharmonize.qmd
-          - text: "---"
-          - lessons/arrange-band.qmd
-          - lessons/arrange-bass-drums.qmd
-          - lessons/arrange-chords.qmd
-          - lessons/arrange-organ.qmd
-          - lessons/patterns/index.qmd
-          - text: "---"
-          - lessons/notation-choices.qmd
-          - lessons/tuning-systems.qmd
-          - lessons/strobe-tuner.qmd
-          - lessons/inharmonicity.qmd
-          - lessons/vowel-formants.qmd
-          - lessons/sound-harmonics.qmd
-          - lessons/sound-waveforms.qmd
-          - lessons/sound-noise.qmd
-          - lessons/sound-filter.qmd
-          - lessons/sound-envelopes.qmd
-          - lessons/sound-lfo.qmd
-          - lessons/sound-subtractive.qmd
-          - lessons/sound-fm.qmd
-          - lessons/sound-wavetable.qmd
-          - lessons/sound-granular.qmd
-          - lessons/sound-eq.qmd
-          - lessons/sound-distortion.qmd
-          - lessons/sound-compressor.qmd
-          - lessons/sound-sidechain.qmd
-          - lessons/sound-gate.qmd
-          - lessons/sound-reverb.qmd
-          - lessons/sound-delay.qmd
-          - lessons/sound-chorus.qmd
-          - lessons/sound-phaser.qmd
-          - lessons/sound-tremolo.qmd
-          - lessons/sound-pitch.qmd
-          - lessons/sound-vocoder.qmd
-          - lessons/sound-stereo.qmd
-          - lessons/sound-chain.qmd
-          - lessons/rec-gain-staging.qmd
-          - lessons/rec-mics.qmd
-          - lessons/rec-placement.qmd
-          - lessons/rec-monitoring.qmd
-          - lessons/rec-mixing.qmd
-          - lessons/rec-mastering.qmd
-          - lessons/rec-stereo.qmd
-          - text: "---"
-          - lessons/gear-power.qmd
-          - lessons/gear-cables.qmd
-          - lessons/gear-amps.qmd
-          - lessons/gear-keyboards.qmd
-          - lessons/gear-setup.qmd
-          - lessons/gear-guitar.qmd
-          - lessons/gear-violin.qmd
-          - lessons/gear-sax.qmd
-          - lessons/gear-drums.qmd
-          - lessons/timestamp-player.qmd
-          - lessons/section-labels.qmd
+      - href: lessons/index.qmd
+        text: Lessons
 #      - text: Lessons
 #        menu:
 #          - lessons/quarter-notes.qmd
@@ -156,7 +224,11 @@ website:
           - tools/notation-rules.qmd
           - tools/ipa-chart.qmd
           - tools/vocal-warmup.qmd
+          - tools/guitar-tuning.qmd
+          - tools/guitar-setup-check.qmd
           - tools/timestamp-notes.qmd
+          - tools/tap-along.qmd
+          - tools/tap-latency.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

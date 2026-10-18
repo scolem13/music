@@ -1,0 +1,80 @@
+---
+title: "DAW 5: The Mixer"
+toc: true
+toc-depth: 2
+description: "Faders in dB, pan, mute and solo, meters and clipping: fix a bad mix."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [daw, recording]
+has: [band, interactive]
+---
+
+Each track ends in a **channel strip** in the **mixer**: a fader for its level, a pan control for where it sits left to right,
+**mute** and **solo**, and a **meter**. All the strips add up in the **master** strip, which is what you hear and what is saved
+when you bounce. The mixer is the same in every DAW; only the colours change.
+
+## The controls
+
+- **Fader**, in **decibels (dB)**. 0 dB leaves the track as it is; −6 dB is about half its voltage, and to the ear a little under half as loud
+  takes about −10 dB. Faders move in dB because the ear hears in ratios.
+- **Pan**: C is the middle, L100 / R100 hard left / right. Kick, snare, bass and the lead stay in the middle; spread the rest.
+- **Mute (M)** silences a track; **Solo (S)** silences every *other* track. Solo is for finding a problem; judge balance with everything playing.
+- **Meter**: how loud the track is, with a white **peak** mark. Green is fine, yellow is getting loud, red is close to **0 dBFS**,
+  the most a digital file can hold. Past it the waveform is cut off: **clipping**, a harsh crackle. The CLIP light stays lit
+  once it happens (click it to reset).
+
+## Fix a bad mix
+
+This mix is wrong on purpose: the keys and guitar are too loud, the bass is nearly gone, the drums are buried, and everything is
+in the middle.
+
+1. Play it. Is the master's CLIP light coming on? Pull the **Master** down until it stops, then leave it there.
+2. Start with the drums and bass: bring them up until the groove is solid.
+3. Bring the keys and guitar **down** until they sit around the groove, not on top of it. Turning things down is most of mixing.
+4. Pan the guitar to L40 and the keys to R40. Listen to how they stop fighting.
+5. Solo the bass to hear what it's doing, then un-solo. Mute the guitar: is the song better without it?
+6. Double-click any fader or pan to put it back to 0 / centre.
+
+<div class="mdaw" data-id="daw-mixer" data-preset="badmix" data-show="transport tracks mixer"></div>
+
+The rest of mixing (EQ, compression, reverb on sends, references) is in [Recording 5: Mixing](rec-mixing.qmd); level and headroom before
+the mix in [Recording 1: Gain Staging](rec-gain-staging.qmd).
+
+## In other DAWs
+
+<div class="daw-map">
+
+| | BandLab | Ableton Live | Logic Pro |
+|---|---|---|---|
+| Open the mixer | Mixer button (bottom), or each track's header controls | Session View (**Tab**), or the Mixer section in Arrangement (Cmd/Ctrl+Option/Alt+M) | **X** |
+| Fader / pan | Volume and pan on every track header and in the mixer | Track Volume and Pan in the mixer section | Fader and pan knob on each channel strip |
+| Mute / solo | M / S on the track | Track Activator (the number button) / S | M / S |
+| Master | Master track volume | Main track (Master), far right | Stereo Out strip |
+| Effects on a track | Effects (FX) slot on the track | Drag a device onto the track | Audio FX slots on the channel strip |
+
+</div>
+
+## Next
+
+- [DAW 6: Recording Audio: Bleed and Headphones](daw-record.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Add Automation Points." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac](https://support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac).
+
+"Add, Remove, Move, and Copy Plug-ins." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac](https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac).
+
+"Automation and Editing Envelopes." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/](https://www.ableton.com/en/live-manual/12/automation-and-editing-envelopes/).
+
+"Live Keyboard Shortcuts." *Ableton Reference Manual Version 12*, Ableton, [www.ableton.com/en/manual/live-keyboard-shortcuts/](https://www.ableton.com/en/manual/live-keyboard-shortcuts/).
+
+"Mix Editor." *BandLab Blog*, BandLab Technologies, [blog.bandlab.com/mix-editor/](https://blog.bandlab.com/mix-editor/).
+
+"Show Automation Curves." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/mac](https://support.apple.com/guide/logicpro/show-automation-curves-lgcpb1a3f099/mac).
+
+"Studio Keyboard Shortcuts." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts](https://help.bandlab.com/hc/en-us/articles/360021363353-Studio-Keyboard-Shortcuts).
+:::
+<!-- /works-cited -->
+
+{{< include _daw-kit.qmd >}}

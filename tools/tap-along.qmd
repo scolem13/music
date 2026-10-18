@@ -1,0 +1,56 @@
+---
+title: "Tap Along"
+toc: false
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/tap-along/tap-along.css?v=1">
+<script src="/apps/shared/ug-chordpro.js"></script>
+<script src="/apps/shared/tap-along/tap-along.js?v=1"></script>
+
+<div class="ta ta-along">
+  <p class="ta-muted">Chords and words on your phone, for a song playing in any other app. <b>Mark</b>: start the song there and
+  this page's clock together, then tap <b>1 Bar</b> on each downbeat, <b>2 Chord</b> on each chord change, <b>3 Section</b> where each
+  section starts, in one pass (pause here if you pause there). <b>Play</b>: start the song, tap <b>Sync</b> on the first bar you
+  tapped, and the sheet follows it. Keys 1 2 3 and Space work too.</p>
+  <p class="ta-muted"><span class="ta-lat"></span> <a href="/tools/tap-latency.html">Measure your tap lag</a>.</p>
+
+  <div class="ta-status"><span class="ta-clock">0:00.0</span><span class="ta-bar"></span><span class="ta-sec"></span></div>
+
+  <div class="ta-sheet"></div>
+
+  <p class="ta-muted ta-info"></p>
+
+  <details class="ta-paste">
+    <summary>Chords and words</summary>
+    <label class="ta-muted">Title <input type="text" class="ta-title"></label>
+    <p class="ta-muted">Paste from Ultimate Guitar (chords over words, [Verse] headings), or ChordPro.</p>
+    <textarea class="ta-text" spellcheck="false"></textarea>
+    <div class="ta-row"><button type="button" class="ta-use">Use these</button></div>
+  </details>
+
+  <div class="ta-row">
+    <button type="button" class="ta-save">Save song file</button>
+    <button type="button" class="ta-open">Open song file</button>
+    <input type="file" class="ta-file" accept=".json,application/json" hidden>
+    <button type="button" class="ta-big">Bigger / smaller</button>
+    <button type="button" class="ta-clear">Clear taps</button>
+  </div>
+
+  <div class="ta-pad">
+    <div class="ta-pad-small">
+      <button type="button" class="ta-go">Start</button>
+      <button type="button" class="ta-rewind">To 0:00</button>
+      <button type="button" class="ta-undo">Undo tap</button>
+      <button type="button" class="ta-minus">−0.1 s</button>
+      <button type="button" class="ta-plus">+0.1 s</button>
+      <button type="button" class="ta-mode">Switch to Play</button>
+    </div>
+    <div class="ta-keys">
+      <button type="button" class="ta-key">Bar</button>
+      <button type="button" class="ta-key">Chord</button>
+      <button type="button" class="ta-key">Section</button>
+    </div>
+  </div>
+</div>
+```

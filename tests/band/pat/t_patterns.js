@@ -164,7 +164,7 @@ const sig = r => pos(r.parts.comp);
   assert(leaps <= joins * 0.05, "the walked bar steps into the riff's root: " + leaps + " leaps in " + joins);
 }
 // drum grooves
-const PIECES = "kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo clap tamb".split(" ");
+const PIECES = "kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo clap tamb brushTap brushSwish brushSweep".split(" ");
 const at = (r, piece) => r.parts.drums.filter(e => e.piece === piece).map(e => e.pos).join(" ");
 for (const id of Object.keys(M)) for (const groove of Object.keys(BandDrums.GROOVES)) for (const ride of ["ride", "hat", "bell"])
   gen(id, { groove, ride, feel: "straight", stops: [9] }, ++n).forEach((r, i) => r.parts.drums.forEach(e => { if (e.choke) return;
@@ -172,6 +172,9 @@ for (const id of Object.keys(M)) for (const groove of Object.keys(BandDrums.GROO
 { const g = o => gen("4/4", Object.assign({ feel: "straight" }, o), 31, ONE, 16);
   g({ groove: "clave" }).forEach(r => assert.strictEqual(at(r, "rim"), r.index % 2 ? "0 1.5 3" : "1 2", "2-3 son clave, bar " + r.index));
   g({ groove: "bossa" }).forEach(r => { assert.strictEqual(at(r, "rim"), r.index % 2 ? "1 2.5" : "0 1.5 3"); assert.strictEqual(at(r, "kick"), "0 1.5 2 3.5"); assert.strictEqual(at(r, "ride").split(" ").length, 8); });
+  g({ groove: "brushswing" }).forEach(r => { assert.strictEqual(at(r, "brushSwish"), "0 1 2 3"); assert.strictEqual(at(r, "brushTap"), "0 1 1.5 2 3 3.5"); assert.strictEqual(at(r, "hatFoot"), "1 3"); });
+  g({ groove: "brushballad" }).forEach(r => { assert.strictEqual(at(r, "brushSweep"), "0 2"); assert.strictEqual(at(r, "brushTap"), "1 3"); });
+  g({ groove: "brushfolk" }).forEach(r => { assert.strictEqual(at(r, "brushSwish"), "0 1 2 3"); assert.strictEqual(at(r, "kick"), "0 2"); });
   g({ groove: "onedrop" }).forEach(r => { assert.strictEqual(at(r, "kick"), "2"); assert.strictEqual(at(r, "rim"), "2"); });
   g({ groove: "bossa", ride: "hat" }).forEach(r => { assert.strictEqual(at(r, "hatFoot"), ""); assert.strictEqual(at(r, "ride"), ""); });
   // the Latin and Caribbean grooves never fill; rock does, and comes back in on a crash

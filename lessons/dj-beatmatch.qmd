@@ -1,0 +1,86 @@
+---
+title: "DJ 2: Beatmatching by Ear"
+toc: true
+toc-depth: 2
+description: "Match the tempo with the pitch fader, line up the beats with nudges, and learn to hear which one is fast."
+instruments: [other]
+topics: [dj, rhythm]
+has: [interactive]
+---
+
+**Beatmatching** is making two tracks play at the same tempo with their beats together, so you can blend them without a clatter.
+DJ software has a **SYNC** button for this; learn it by ear anyway. Sync needs a correct beatgrid and fails on live drummers, old records and
+tempo changes, and hearing two beats drift apart is the skill under every other one.
+
+## Two problems, two controls
+
+1. **Tempo** (are they going at the same speed?): the **pitch fader**. A track at 120 BPM against one at 124 needs +3.3 %
+   (124 ÷ 120 = 1.033).
+2. **Phase** (are the beats on top of each other?): a **nudge**. Push the side of the platter, or the jog wheel, to speed it a moment
+   (or hold it back) until the kicks line up.
+
+Get the tempo close first; otherwise the beats line up for a moment and drift apart again.
+
+## The routine
+
+1. Deck A plays out loud. Cue deck B in the headphones (here: **CUE** on B, then **Listen: phones**).
+2. Start B on a **downbeat** of A (the "1" of a bar): on a turntable, hold the record, let it go exactly on A's kick.
+3. Listen: do the kicks **flam** (two hits close together, "ka-tunk")? Which is first?
+   - If B's kick comes **before** A's, B is ahead: hold it back (drag the rim backwards, or the **‹** button) and, if it keeps getting
+     ahead, pull B's pitch **slower**.
+   - If **after**, push it forward and make B **faster**.
+4. Make small pitch corrections (0.1–0.3 %) and keep listening for a minute. When the beats stay together, the tempo is right.
+
+## Practise
+
+Deck A: **Warehouse** at 124 BPM. Deck B: **Late Bus** at 120. The **Match** line below the decks shows the tempo difference, and once
+both play, how far apart the beats are. Cover it with your hand (or a sticky note) once you've got the idea.
+
+<div class="dj-tt" data-id="dj-beatmatch" data-a="demo:house124" data-b="demo:house120" data-xf="0.5"></div>
+
+1. Start A. Press **CUE** on B and set **Listen: phones**, with the phones knob in the middle: you hear both.
+2. Set B's pitch fader to about **+3.3 %** (the shown number can be typed into: click it). Read B's **BPM**: about 124.0.
+3. Start B on one of A's kicks. Hear the flam? Nudge with **‹ ›** (hold) until the kicks hit as one.
+4. Now the hard way: reset B's pitch to 0, start both, and find the tempo by ear: B's kicks will drift behind A's, slowly at first.
+   Each time, push the fader a little faster and nudge back into place.
+5. Swap: let **B** be the one playing out, and match **A** to it at 120 (pitch about −3.2 %).
+
+## Tips
+
+- **Listen to the kick and the hats**, not the melody. On a fast flam, the hats are easier to hear than the kick.
+- **Count**. If they drift apart within one bar, the tempo is far off; within 8 bars, close; staying together over 32 bars, done.
+- **Tap**: tap the TAP button on the beat to measure a track's tempo when you don't know it (records don't print it).
+- A track's tempo is **a number you can read** off a deck or software, but on a record you're often matching by ear: that is the skill.
+
+## In other gear
+
+<div class="dj-map">
+
+| | [Serato DJ Pro](https://serato.com/dj/pro/downloads) | [rekordbox](https://rekordbox.com/en/download/) | [Traktor Pro](https://www.native-instruments.com/en/support/downloads/) |
+|---|---|---|---|
+| Tempo readout | BPM on the deck | BPM on the deck | BPM on the deck |
+| Nudge | Jog wheel side, or Pitch bend buttons | Jog wheel side, Pitch bend | Jog wheel, Tempo bend buttons |
+| Sync (when you need it) | SYNC (Beat / Tempo sync) | BEAT SYNC | SYNC, with a master clock |
+| Beatgrid (for sync to work) | Beatgrid editor | Grid edit | Grid panel |
+
+</div>
+
+## Next
+
+- [DJ 3: Phrasing and Counting Bars](dj-phrasing.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Beatmatching." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Beatmatching](https://en.wikipedia.org/wiki/Beatmatching).
+
+*rekordbox Operating Instructions*. AlphaTheta, downloads page, [rekordbox.com/en/download/](https://rekordbox.com/en/download/).
+
+*Serato DJ Pro Software Manual*. Serato, downloads page, [serato.com/dj/pro/downloads](https://serato.com/dj/pro/downloads).
+
+*Traktor Pro Manual*. Native Instruments, downloads page, [www.native-instruments.com/en/support/downloads/](https://www.native-instruments.com/en/support/downloads/).
+:::
+<!-- /works-cited -->
+
+{{< include _dj-kit.qmd >}}

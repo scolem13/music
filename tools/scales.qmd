@@ -6,3 +6,12 @@ html-table-processing: none
 ::: {.column-screen}
 {{< include _scales.qmd >}}
 :::
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Aebersold, Jamey. *Scale Syllabus*. Jamey Aebersold Jazz, [www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf](https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf).
+:::
+<!-- /works-cited -->
+

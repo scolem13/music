@@ -50,7 +50,7 @@
   var STEP = [0, 1, 1, 2, 2, 3, 3, 4, 5, 5, 6, 6];
   // piece -> [pitch on the staff, decorations written before it]
   var X = "!style=x!";
-  var DRUM = { ride:["f",X], rideBell:["f","!style=harmonic!"], crash:["a",X], hatClosed:["g",X], hatOpen:["g","!open!" + X], sticks:["c",X], rim:["c",X], clap:["c",X], tamb:["g",X],
+  var DRUM = { ride:["f",X], rideBell:["f","!style=harmonic!"], crash:["a",X], hatClosed:["g",X], hatOpen:["g","!open!" + X], sticks:["c",X], rim:["c",X], clap:["c",X], tamb:["g",X], brushTap:["c",""], brushSwish:["c","!style=harmonic!"], brushSweep:["c","!style=harmonic!"],
                snare:["c",""], tomHi:["e",""], tomMid:["d",""], tomLo:["A",""], kick:["F",""], hatFoot:["D",X] };
   var DOWN = { kick:1, hatFoot:1 };
   // piece -> what it is called to a student. THE ONE PLACE a staff position is turned into a name (the hover text on every drum
