@@ -5,6 +5,8 @@
 //   node scripts/when-in-rome/build.mjs            (sources in scripts/when-in-rome/src, fetched from the URLs in PIECES)
 import fs from "fs";
 import path from "path";
+import { createRequire } from "module";
+const require = createRequire(import.meta.url);
 const HERE = path.dirname(new URL(import.meta.url).pathname), ROOT = path.resolve(HERE, "../.."), SRC = HERE + "/src";
 
 // ---- kern -> events. Time in ticks, a whole note = 384.
@@ -149,7 +151,7 @@ const PRETTY = s => stack(s.replace(/\/o/g, "ø").replace(/o(?=\d|\/|$)/g, "°")
   .replace(/^b(?=[IViv])/, "♭").replace(/^#(?=[IViv])/, "♯").replace(/maj7/, "M7"));
 const PKEY = k => k.replace(/^([A-Ga-g])b/, "$1♭").replace(/^([A-Ga-g])#/, "$1♯").replace(/:$/, "") + ":";
 export function parseRomanText(text) {
-  const byM = new Map(), notes = [], vars = [];
+  const byM = new Map(), notes = [], vars = []; let cur = null;   // cur: the key in force (it carries across bars)
   for (const raw of text.split("\n")) {
     const line = raw.trim();
     if (/^Note:/.test(line)) { notes.push(line.slice(5).trim()); continue; }
@@ -164,14 +166,43 @@ export function parseRomanText(text) {
     const meas = +m[1], list = []; let beat = 1, key = null;
     for (const t of m[2].split(/\s+/).filter(Boolean)) {
       if (/^b\d+(\.\d+)?$/.test(t)) { beat = +t.slice(1); continue; }
-      if (/^[A-Ga-g][b#]?:$/.test(t)) { key = PKEY(t); continue; }
+      if (/^[A-Ga-g][b#]?:$/.test(t)) { key = PKEY(t); cur = t.slice(0, -1); continue; }
       if (/^:?\|\|:?$/.test(t)) continue;
-      list.push({ beat, text: (key ? key + " " : "") + PRETTY(t) }); key = null;
+      list.push({ beat, text: (key ? key + " " : "") + PRETTY(t), raw: t, key: cur }); key = null;
     }
     byM.set(meas, list);
   }
-  const ev = []; [...byM.keys()].sort((a, b) => a - b).forEach(mm => byM.get(mm).forEach(x => ev.push({ m: mm, beat: x.beat, text: x.text })));
+  const ev = []; [...byM.keys()].sort((a, b) => a - b).forEach(mm => byM.get(mm).forEach(x => ev.push({ m: mm, beat: x.beat, text: x.text, raw: x.raw, key: x.key })));
   return { events: ev, notes, vars };
+}
+// ---- a Roman numeral in a key -> a lead-sheet chord name, whose notes the site's non-harmonic-tone engine (AbcNHT.chordPcs) gives.
+// RomanText's conventions: case is the quality (o diminished, ø or /o half-diminished, + augmented); 7 65 43 42 2 a seventh chord;
+// in minor, an uppercase VI / VII is on the lowered degree and a lowercase vi / vii on the raised one; X/Y is X in the key of Y;
+// N = ♭II, Cad64 = I64; It / Fr / Ger = the augmented sixths on ♭6.
+const NAMES = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"], MAJ = [0, 2, 4, 5, 7, 9, 11], MIN = [0, 2, 3, 5, 7, 8, 10];
+const DEGN = { i: 1, ii: 2, iii: 3, iv: 4, v: 5, vi: 6, vii: 7 };
+function keyPc(k) { const m = /^([A-Ga-g])(#|b|♯|♭)?/.exec(k); return (NAT[LET.indexOf(m[1].toUpperCase())] + (m[2] === "#" || m[2] === "♯" ? 1 : m[2] ? -1 : 0) + 12) % 12; }
+export function rnChord(rn, key) {   // key like "c#" (minor) or "E"
+  const minor = key[0] === key[0].toLowerCase(), ton = keyPc(key);
+  let t = rn.replace(/^Cad64$/, minor ? "i64" : "I64").replace(/\[.*?\]/g, "").replace(/6\/5/g, "65").replace(/4\/3/g, "43").replace(/4\/2/g, "42").replace(/6\/4/g, "64");
+  const majSev = /maj|M(?=\d)/.test(t); t = t.replace(/maj(?=\d)|M(?=\d)/, "");
+  const aug6 = /^(It|Fr|Ger)/.exec(t);
+  if (aug6) { const r = (ton + 8) % 12; return NAMES[r] + (aug6[1] === "Fr" ? "7b5" : "7"); }
+  if (/^N/.test(t)) return NAMES[(ton + 1) % 12];
+  const m = /^(b|#|♭|♯)?(vii|vi|v|iv|iii|ii|i|VII|VI|V|IV|III|II|I)(\/o|ø|o|°|\+)?(maj7|M7|7|65|43|42|2|64|6|9|11|13)?(?:\/(.+))?$/.exec(t); if (!m) return null;
+  let base = ton, tMinor = minor;
+  if (m[5]) { const sub = m[5]; const tc = rnChord(sub, key); if (!tc) return null; base = keyPc(tc); tMinor = sub[0] === sub[0].toLowerCase() || /^[b#♭♯]?[ivx]/.test(sub) && sub.replace(/^[b#♭♯]/, "")[0] === sub.replace(/^[b#♭♯]/, "")[0].toLowerCase(); }
+  const up = m[2] === m[2].toUpperCase(), d = DEGN[m[2].toLowerCase()], scale = tMinor ? MIN : MAJ;
+  let root = base + scale[d - 1];
+  if (tMinor && !m[5] && (d === 6 || d === 7) && !up) root += 1;   // raised 6 / 7 in minor
+  if (m[5] && d === 5) root = base + 7; if (m[5] && d === 7) root = base + 11;   // V/x, vii/x of the chord x
+  if (m[1] === "b" || m[1] === "♭") root -= 1; if (m[1] === "#" || m[1] === "♯") root += 1;
+  root = ((root % 12) + 12) % 12;
+  const sev = /^(7|65|43|42|2|9|11|13)$/.test(m[4] || "") || /maj7|M7/.test(m[4] || ""), q = m[3];
+  let suf;
+  if (q === "ø" || q === "/o") suf = "m7b5"; else if (q === "o" || q === "°") suf = sev ? "dim7" : "dim"; else if (q === "+") suf = sev ? "aug7" : "aug";
+  else if (up) suf = sev ? (majSev || /maj7|M7/.test(m[4]) ? "maj7" : "7") : ""; else suf = sev ? (majSev ? "mmaj7" : "m7") : "m";
+  return NAMES[root] + suf;
 }
 // place the analysis: bar and beat -> a tick; on the first voice (in `prefer` order) with a note starting there
 function timesOf(k, conv, rt, beatTicks, barTicks) {
@@ -215,6 +246,8 @@ function place(k, conv, rt, prefer, beatTicks, barTicks) {
   return { ann, misses };
 }
 
+let NHTlib = null;
+function nht() { if (!NHTlib) { require(ROOT + "/apps/shared/abc-core.js"); require(ROOT + "/apps/shared/abc-events.js"); require(ROOT + "/apps/shared/abc-nht.js"); NHTlib = globalThis.AbcNHT; } return NHTlib; }
 const PIECES = [
   { id: "bach-o-haupt", kern: "chor074.krn", title: "J. S. Bach, “O Haupt voll Blut und Wunden” (“O Sacred Head, Now Wounded”), BWV 244.54",
     analyses: [["chor074-analysis.txt", "Dmitri Tymoczko"], ["chor074-analysis-BCMH.txt", "Bach Chorales Melody-Harmony Corpus (BCMH)"]],
@@ -228,7 +261,7 @@ export function buildPiece(p) {
   const [num, den] = k.meter.split("/").map(Number), barTicks = W * num / den, beatTicks = W / den;
   const versions = p.analyses.map(([f, who]) => {
     const rt = parseRomanText(fs.readFileSync(SRC + "/" + f, "utf8"));
-    const pre = toAbc(k, {}), times = timesOf(k, pre, rt, beatTicks, barTicks).filter(x => x != null);
+    const pre = toAbc(k, {}), times0 = timesOf(k, pre, rt, beatTicks, barTicks), times = times0.filter(x => x != null);
     const kk = { ...k, voices: new Map([...k.voices].map(([id, evs]) => [id, id === p.prefer[0] ? splitAt(evs, times) : evs])) };
     const pl = place(kk, pre, rt, p.prefer, beatTicks, barTicks), conv = toAbc(kk, { annotations: pl.ann });
     const staffs = [...new Set(conv.ids.map(i => i.split(".")[0]))].sort((a, b) => a - b);   // staff 1 is the top one
@@ -241,7 +274,10 @@ export function buildPiece(p) {
       ...order.map(id => `V:${vname(id)} clef=${clef(id.split(".")[0])}${p.names[id] ? ` name="${p.names[id]}"` : ""}`), "K:" + keyAbc];
     const perLine = 1000, nb = conv.bars[order[0]].length, body = [];
     for (let b = 0; b < nb; b += perLine) for (const id of order) body.push(`[V:${vname(id)}] ` + conv.bars[id].slice(b, b + perLine).join(" "));
-    return { k: kk, who, file: f, abc: head.join("\n") + "\n" + body.join("\n") + "\n", misses: pl.misses, notes: rt.notes, vars: rt.vars, count: rt.events.length };
+    const NHT = nht(), chords = [];
+    rt.events.forEach((e, i) => { const t = times0[i]; if (t == null) return; const name = rnChord(e.raw, e.key), c = name && NHT.chordPcs(name);
+      chords.push([+(t / W).toFixed(6), c ? c.pcs : null, e.raw, name]); });
+    return { chords, k: kk, who, file: f, abc: head.join("\n") + "\n" + body.join("\n") + "\n", misses: pl.misses, notes: rt.notes, vars: rt.vars, count: rt.events.length };
   });
   return { k, versions };
 }
@@ -251,10 +287,10 @@ if (process.argv[1] && process.argv[1].endsWith("build.mjs")) {
   let md = "<!-- Generated by scripts/when-in-rome/build.mjs. Do not edit. -->\n\n";
   for (const p of PIECES) {
     const { versions } = buildPiece(p);
-    for (const v of versions) console.log(p.id, v.who.slice(0, 30), "chords", v.count, "not placed", v.misses.length, v.misses.slice(0, 6).map(x => "m" + x.m + " b" + x.beat + " " + x.text).join(", "));
+    for (const v of versions) console.log(p.id, v.who.slice(0, 30), "unread numerals", v.chords.filter(c => !c[1]).map(c => c[2]).join(" ") || "none", "chords", v.count, "not placed", v.misses.length, v.misses.slice(0, 6).map(x => "m" + x.m + " b" + x.beat + " " + x.text).join(", "));
     md += `::: {.panel-tabset}\n\n`;
     for (const v of versions) {
-      md += `## ${v.who.split(" (")[0].split(",")[0]}\n\nAnalysis: ${v.who}.\n\n<div class="as-score" data-bpm="${p.bpm}" data-pickup="${p.pickup ? 1 : 0}"><script type="text/plain">\n${v.abc}</script></div>\n\n`;
+      md += `## ${v.who.split(" (")[0].split(",")[0]}\n\nAnalysis: ${v.who}.\n\n<div class="as-score" data-bpm="${p.bpm}" data-pickup="${p.pickup ? 1 : 0}" data-chords='${JSON.stringify(v.chords.map(c => [c[0], c[1]]))}'><script type="text/plain">\n${v.abc}</script></div>\n\n`;
       if (v.misses.length) md += `*Not shown on the score (no note starts there):* ${v.misses.map(x => "bar " + x.m + " beat " + x.beat + ": " + x.text).join("; ")}.\n\n`;
       if (v.notes.length) md += "**The analyst's notes:**\n\n" + v.notes.map(n => "- " + n).join("\n") + "\n\n";
       if (v.vars.length) md += "**Other readings the analyst gives:**\n\n" + v.vars.map(x => `- Bar ${x.m}: ${x.text.split(/\s+/).filter(t => !/^b[\d.]+$/.test(t)).map(t => /:$/.test(t) ? PKEY(t) : PRETTY(t)).join(" ")}`).join("\n") + "\n\n";

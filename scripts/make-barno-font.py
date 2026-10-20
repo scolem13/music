@@ -80,3 +80,16 @@ for r in v["name"].names:
 sub2 = subset.Subsetter(opts); sub2.populate(text="0123456789"); sub2.subset(v)
 v.save(OUT2)
 print("wrote", OUT2)
+
+# ---- the bar numbers now used (Classical Themes, Analysed Scores): Source Serif 4 (the scores' own typeface, OFL, google/fonts
+# ofl/sourceserif4) at its smallest optical size and weight 200, digits only, under the same family name "Bar Numbers Mono" in CSS.
+SS, OUT3 = "scripts/fonts-src/SourceSerif4-VF.ttf", "apps/shared/fonts/BarNumbers-SourceSerif4-200.ttf"
+s4 = instancer.instantiateVariableFont(TTFont(SS), {"wght": 200, "opsz": 8})
+for r in s4["name"].names:
+    if r.nameID in (1, 16): r.string = "Bar Numbers Serif Light"
+    elif r.nameID == 4: r.string = "Bar Numbers Serif Light Regular"
+    elif r.nameID == 6: r.string = "BarNumbersSerifLight-Regular"
+o3 = subset.Options(); o3.layout_features = ["tnum"]; o3.name_IDs = ["*"]
+sub3 = subset.Subsetter(o3); sub3.populate(text="0123456789"); sub3.subset(s4)
+s4.save(OUT3)
+print("wrote", OUT3)

@@ -52,7 +52,23 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("Space plays, Space pauses", pl === "true" && pa === "true", pl + " " + pa);
   check("a click on a bass note moves the position there, lights it, and finds its four-voice chord", moved === "true" && +ch === 4 && +lit >= 4, [moved, ch, lit].join(" "));
   const font = await b.eval(`[...document.styleSheets].flatMap(s => { try { return [...s.cssRules]; } catch (e) { return []; } }).filter(r => r.cssText && /Bar Numbers Mono/.test(r.cssText) && /font-face/.test(r.cssText)).map(r => r.cssText).join(' ')`);
-  check("bar numbers use the light (200) font", /digits-200\.ttf/.test(font), font.slice(0, 120));
+  check("bar numbers use the light (200) Source Serif digits", /SourceSerif4-200\.ttf/.test(font), font.slice(0, 120));
+  const sp = await b.eval(`(async () => { const S = AnalysedScores.scores()[0], h = () => S.paper.querySelector('svg').getBoundingClientRect().height, r = document.querySelector('#as-space input');
+    const set = async v => { r.value = v; r.dispatchEvent(new Event('input')); await new Promise(x => setTimeout(x, 300)); return h(); };
+    const lo = await set(0), hi = await set(150); await set(60);
+    const st = S.paper.querySelector('svg .abcjs-staff').getBBox(), nb = [...S.paper.querySelectorAll('text.ct-barno')].map(t => t.getBBox().x + t.getBBox().width);
+    return [r.closest('#quarto-margin-sidebar') ? 'sidebar' : 'elsewhere', hi > lo + 50, nb.every(x => x <= st.x + 0.5)].join(' '); })()`);
+  check("system spacing slider in the sidebar changes the spacing; bar numbers end left of the staff", sp === "sidebar true true", sp);
+  const more = await b.eval(`(() => { const S = AnalysedScores.scores()[0], svg = S.paper.querySelector('svg');
+    const fits = S.paper.getBoundingClientRect().height + 1 >= svg.getBoundingClientRect().height;
+    const M = AnalysedScores.scores()[2]; M.paper.getBoundingClientRect();   // Moonlight, bar 14 (2/2: bar n starts at whole note n-1)
+    const ms = 13 * M.tune.millisecondsPerMeasure(), onBeat = AnalysedScores.chordAt(M, ms), whole = AnalysedScores.chordTones(M, ms);
+    const span = M.spans.find(s => Math.abs(s.ms - ms) < 2), pcsOk = whole.every(m => span.pcs.includes(((m % 12) + 12) % 12));
+    return [fits, onBeat.length, whole.length, pcsOk, !!document.querySelector('#as-space input[type=checkbox]')].join(' '); })()`);
+  const [fits, ob, wh, pcsOk, fol] = more.split(" ");
+  check("the score's box grows with the system spacing (nothing cut off)", fits === "true", fits);
+  check("Moonlight bar 14: the click plays every written chord tone up to the next numeral, not just the downbeat", +wh > +ob && pcsOk === "true", ob + " → " + wh);
+  check("Follow playback box in the sidebar", fol === "true");
   check("no errors", !errs().length, errs().join(" | "));
   await b.close(); srv.close();
   console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);
