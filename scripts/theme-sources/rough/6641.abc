@@ -1,0 +1,10 @@
+X:6641
+%%from edm
+T:Symphony No. 4, in A minor, Op. 63, 1st Movement - 3rd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6641 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+B6 G2 G2^D3 E2^F- | ^FG2A2 ^A2^c2 =f2g b4- | b4

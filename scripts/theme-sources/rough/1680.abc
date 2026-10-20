@@ -1,0 +1,10 @@
+X:1680
+%%from edm
+T:Quintet in F minor, 1st Movement - Intro B
+C:César Franck
+%%composer Franck|César
+% EDM 1680 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+A8- A2F2 A4- | A6 F2 A8- | A2G2 z12 | B8- B2A2 A4- | A6 _G2 G8- | _G2F2

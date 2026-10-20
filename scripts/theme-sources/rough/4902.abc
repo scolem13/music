@@ -1,0 +1,10 @@
+X:4902
+%%from edm
+T:Gavotte No. 2, Op. 23, 1st Theme
+C:David Popper
+%%composer Popper|David
+% EDM 4902 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+D,4 F,4 A,4 B,2C2 | D4 A,4 F8 | F2G2F2G2 E4 A,4 | E2F2E2F2 D4 A,4 |

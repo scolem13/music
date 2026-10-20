@@ -1,0 +1,10 @@
+X:8965
+%%from edm
+T:Toccata No. 21 in F, Organ, 1st Theme
+C:Dietrich Buxtehude
+%%composer Buxtehude|Dietrich
+% EDM 8965 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+fcde fgab c'abc' d'e'f'g' | a'c'd'e' f'c'd'b c'abg abc'e | a4

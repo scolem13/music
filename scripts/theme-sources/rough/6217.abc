@@ -1,0 +1,10 @@
+X:6217
+%%from edm
+T:Concerto in D minor, 3rd Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6217 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+e2c'3 b a6 | d2a3 g f4 f'2- | f'2b3 g' f'4 f'2- | f'2b3 a'gb e'g'eg | c'e'2<d2

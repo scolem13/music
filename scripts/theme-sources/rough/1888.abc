@@ -1,0 +1,10 @@
+X:1888
+%%from edm
+T:Iphigenia in Aulis, Chaconne (Also in Orpheus and Eurydice)
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1888 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d'4 a4 f4 | a4 f4 d4 | f2e2d2c2B2A2 | G2F2 E2A2 F4 | D4 D4 z/2 D/2E/2D/2E/2D/2E/2D/2 | E/2D/2E/2<D/2CD E4 A,4 | E4 E4

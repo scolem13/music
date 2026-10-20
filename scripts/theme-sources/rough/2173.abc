@@ -1,0 +1,10 @@
+X:2173
+%%from edm
+T:Concerto Grosso in G, Op. 6, No. 1, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2173 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g4 d4 B4- | B2cd e2e2 e2fe | d6 ef g2g2 | g2ag f2d2 g2c2 | B4 A4 G2

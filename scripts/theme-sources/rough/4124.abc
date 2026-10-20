@@ -1,0 +1,10 @@
+X:4124
+%%from edm
+T:Concerto in C, K 503, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4124 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c'2c'2g2g2 | a2a2e2e2 | f2f2 gege | agfe ^cdd2 |

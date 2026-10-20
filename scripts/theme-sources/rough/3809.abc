@@ -1,0 +1,10 @@
+X:3809
+%%from edm
+T:Capriccio Brilliant, Op. 22, 4th Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3809 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f'3d' a4 (3^g2a2b2 a4 | d'3a f4 (3=f2^f2g2 f4 | d3e f4 f3g a4 | d'4 a8

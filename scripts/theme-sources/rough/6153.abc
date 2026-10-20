@@ -1,0 +1,10 @@
+X:6153
+%%from edm
+T:American Festival Overture, 2nd Theme, Fugue Theme
+C:William Schuman
+%%composer Schuman|William
+% EDM 6153 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+F4 ^G2 z4 ^AA G2A2 | ^G2^c2 ^f12- | ^f z =ff f2f2 f2^d z f2d z | f2^g z f2^d z fd^cd fdcd |

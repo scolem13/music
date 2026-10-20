@@ -1,0 +1,11 @@
+X:8080
+%%from edm
+T:Jubel-Ouverture, 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8080 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+e8 B4 g2g2 | e4 b4 g4 e'4 | b4 g'8 f'2e'2 | e'2d'2e'2b2 b2^a2b2g2 | g2f2g2e2 e2d2e2B2 |

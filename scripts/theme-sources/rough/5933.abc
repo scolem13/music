@@ -1,0 +1,11 @@
+X:5933
+%%from edm
+T:Quartet No. 6 in D, 4th Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5933 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+f4 f4 z4 d4 | B4 B4 z4 B4 | g4 g4 z4 e4 | c4 c4 z4 c4 | a4 d4 c4 g4 | f4

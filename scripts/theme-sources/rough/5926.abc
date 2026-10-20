@@ -1,0 +1,10 @@
+X:5926
+%%from edm
+T:Quartet No. 4 in C, 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5926 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+C8 B,4 ^A,4 | A,4 ^G,4 =G,4 C4- | C4 B,8 ^A,4 | A,4 D6 G,2 C4 |

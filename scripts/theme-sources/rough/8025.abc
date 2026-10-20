@@ -1,0 +1,10 @@
+X:8025
+%%from edm
+T:Facade, Suite No. 1, A Swiss Yodeling Song, 3rd Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8025 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a3b2<c'2c'2<c'2c' | f'3f'2<b2b2<b2b | g3a2<b2b2<b2b | g'3g'2<_a2a a2

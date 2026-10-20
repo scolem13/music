@@ -1,0 +1,10 @@
+X:3892
+%%from edm
+T:Quartet No. 4, in E minor, Op. 44, No. 2, 4th Movement - 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3892 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+F8 G4 | ^G4 A4 B4 | c4 B4 A4 | g8 f4 | F8 G4 | ^G4 A4 B4 | c4 d4 f4 | b8 a4 |

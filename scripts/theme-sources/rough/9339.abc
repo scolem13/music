@@ -1,0 +1,10 @@
+X:9339
+%%from edm
+T:Waltzes, Op. 34, No. 3 in F, Themes A and B
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9339 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a'2g'2f'2c'2e'2d'2 | c'2a2a'2g'2f'2d'2 | e'2d'2 c'2a2 z4 | _e'12 | f12 | f4 b4 z/2 d'3-d'/2 | z/2 f'3-f'/2 z/2 b'3-b'/2

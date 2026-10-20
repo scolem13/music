@@ -1,0 +1,10 @@
+X:97
+%%from edm
+T:Concerto in G, Op. 7, No. 6, 2nd Movement
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0097 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+g8 B4 | B4 c4 a4 | g2c4<d4 ef | gfef e4

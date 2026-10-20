@@ -1,0 +1,10 @@
+X:1403
+%%from edm
+T:Concerto in E minor, Op. 85, 2nd Movement - 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1403 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+c'6 d4<^a4 ^d2 | c2^g2 =g2 z f g4 z2 d2 | ^d6 ^c4<=d4 G2 | ^D2c2 ^A2 z =A G8 |

@@ -1,0 +1,10 @@
+X:5873
+%%from edm
+T:Kleine Suite, 3rd Movement - Canon
+C:Franz Schreker
+%%composer Schreker|Franz
+% EDM 5873 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z6 a2 ^a2=a2d2c2 | d6 c/2d/2^d/2f/2 =d2c2 z/2 d3-d/2- | d2c2d2^d2 f2ga a2g2 | g6

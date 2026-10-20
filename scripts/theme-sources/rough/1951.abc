@@ -1,0 +1,10 @@
+X:1951
+%%from edm
+T:Goyescas, Opera, Intermezzo, 1st Theme
+C:Enrique Granados
+%%composer Granados|Enrique
+% EDM 1951 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+^A,12 | C12 | ^D4 =D8 | ^D12- | ^D12 | ^C8 ^D2C2 | ^A,8 ^G,4 | ^A,12- | ^A,12 |

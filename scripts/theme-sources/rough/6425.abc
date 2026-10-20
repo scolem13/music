@@ -1,0 +1,11 @@
+X:6425
+%%from edm
+T:Preludes, Op. 11, No. 2
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6425 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+e2f2 c'4<b4 | a2 A4 z2 d2g2 | f2 B4 z2 B2f2 | e2 A4 z6 | B2c2 g4<^f4 | e2 E4 z2 A2d2 | c2 ^F4

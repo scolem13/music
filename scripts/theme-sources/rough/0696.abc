@@ -1,0 +1,13 @@
+X:696
+%%from mtd
+T:Quartet in C minor, Op. 18, No. 4, 2nd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0690, Barlow & Morgenstern B594, EDM 0696 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo. Andante scherzoso, quasi allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=82
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+GGG | cc c/B/ | A/G/F/E/D/C/ | B,DG |

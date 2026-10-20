@@ -1,0 +1,13 @@
+X:3210
+%%from mtd
+T:Gayane, Ayshe's Awakening and Dance, 2nd Theme
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4865, Barlow & Morgenstern K39, EDM 3210 (Musical Theme Dataset, CC BY 4.0)
+N:Aishe's Dance  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=202
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g3- | g ^f d | =f3 | e2 g | _e3/2 ^f/ g | _b3- | b a =f | a3 | g3/2 c'/ _b | a3 |

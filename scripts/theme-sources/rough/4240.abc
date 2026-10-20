@@ -1,0 +1,13 @@
+X:4240
+%%from mtd
+T:Quartet in A, K 298, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5890, Barlow & Morgenstern M615, EDM 4240 (Musical Theme Dataset, CC BY 4.0)
+N:Tema con variazioni  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=112
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+E2 | A2 AB{d} c2{B} A2 | e2 ef e2 d2 | dcBA AB/A/ GA | B2 |

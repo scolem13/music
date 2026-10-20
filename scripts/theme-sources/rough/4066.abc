@@ -1,0 +1,10 @@
+X:4066
+%%from edm
+T:Concerto in C, K 299, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4066 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e4 e4 e8 | z/2 f3-f/2e2f2 g2e2 c4 | c'6 b2 z/2 a3-a/2 g4 | c'6 b2 z/2 a3-a/2 g4 |

@@ -1,0 +1,11 @@
+X:7758
+%%from edm
+T:Ballade et Polonaise, Op. 38, 2nd Theme
+C:Henri Vieuxtemps
+%%composer Vieuxtemps|Henri
+% EDM 7758 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+b2 z b3 z/2 ^a/2b c'bbg | f'/2g'/2 z e'e a6 g2 | f2 z f3 a2 c'2e'2 | e'd'd'^c' d'6

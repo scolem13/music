@@ -1,0 +1,10 @@
+X:6541
+%%from edm
+T:Concerto, Op. 47, 3rd Movement - 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6541 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d4- d3/2c<dc<dB<Bc/2 | d4- d3/2c<dc<dc<Bc/2 | d4- d3/2c<de<fe<dc/2 | B4 c4 d4 |

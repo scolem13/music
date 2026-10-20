@@ -1,0 +1,10 @@
+X:2125
+%%from edm
+T:Concerto No. 1 in B-flat, 2nd Movement, Fugue
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2125 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f8 g6 ag | f4 b4 e8 | d4 d'6 c'2 c'2b2 | a2f2b2d2 e2g2f2e2 | d2

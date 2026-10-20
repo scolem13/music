@@ -1,0 +1,10 @@
+X:2400
+%%from edm
+T:Sonata Op. 1, 3rd Movement, 1st Theme
+C:Howard Hanson
+%%composer Hanson|Howard
+% EDM 2400 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G,2<C2 G,2<C2 | G, (3CG,C G4 G- | GF2C2 G,2 z | G, G,4

@@ -1,0 +1,10 @@
+X:2306
+%%from edm
+T:Sonata in F, Op. 1, No. 12, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2306 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 c4 A4 | A8 c4 | d4 B4 G4 | E8 F4 | BcAc B2ef g2B2 | A2

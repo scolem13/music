@@ -1,0 +1,12 @@
+X:1086
+T:Symphony No. 5, in C minor, Op. 67, 4th Movement - 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1080, Barlow & Morgenstern B962, EDM 1086 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=181
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+(3ABc | d2 (3Bcd e2 (3e^fg | d6 (3dcB | A2 (3cBA G2 (3BAG | ^F2 (3FGA D2 |

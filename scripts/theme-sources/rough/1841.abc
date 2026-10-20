@@ -1,0 +1,10 @@
+X:1841
+%%from edm
+T:Kamarinskaya, Orchestra, 1st Theme
+C:Mikhail Glinka
+%%composer Glinka|Mikhail
+% EDM 1841 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f2a2 b4 a4 | g4 f2e2 d2c2 | g2g4<c4 f2 | e2c2 A4 d4 | e4 z/2 f3/2d2 c2f2 | g3a/2g/2 c'4

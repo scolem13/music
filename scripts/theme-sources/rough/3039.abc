@@ -1,0 +1,10 @@
+X:3039
+%%from edm
+T:Suite en Parties, Op. 91, 3rd Movement, Sarabande, 1st Theme
+C:Vincent D'Indy
+%%composer D'Indy|Vincent
+% EDM 3039 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+C4 G8 | A3B G4 F2E2 | D3E G4 c4 | B4 A2G2 =F2^F2 |

@@ -1,0 +1,13 @@
+X:7558
+%%from mtd
+T:Swan Lake Suite, from the Ballet, Op. 20a, 4th Movement - Hungarian Dance and Czardas, 2nd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9184, Barlow & Morgenstern T215, EDM 7558 (Musical Theme Dataset, CC BY 4.0)
+N:Danse hongroise (Czárdás)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=137
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+edcd edce | f2 f4 g2 | dcBc dcBd | e2 e4 f2 |

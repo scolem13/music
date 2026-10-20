@@ -1,0 +1,10 @@
+X:2776
+%%from edm
+T:Symphony in D, No. 101, 4th Movement, 3rd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2776 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+d8 f8 | a8 d'8 | _d'8 b8 | g8 e8 | d2

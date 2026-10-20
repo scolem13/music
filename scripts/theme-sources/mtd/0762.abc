@@ -1,0 +1,12 @@
+X:762
+T:Quartet in A minor, Op. 132, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0756, Barlow & Morgenstern B658, EDM 0762 (Musical Theme Dataset, CC BY 4.0)
+N:Assai sostenuto – Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=107
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+FGA | B7/2 A/ G2 G2 | B2 AG F2 GA | G3 E F3 =B, | C2 |

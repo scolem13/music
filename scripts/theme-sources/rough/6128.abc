@@ -1,0 +1,11 @@
+X:6128
+%%from edm
+T:Trio in B-flat, Op. 99, 2nd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6128 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Eb
+g6 f6 | a6 g6 | b2g3e g2 f4 | b2=abge g2 f4 |

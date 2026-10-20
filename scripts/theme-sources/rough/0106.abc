@@ -1,0 +1,10 @@
+X:106
+%%from edm
+T:Sinfonia in B-flat (Overture to opera Lucio Sila), 1st Movement - 1st Theme
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0106 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+b8 b6 b2 | b4 z2 f2 d2 z2 agfg | f4 z2 d2 c2 z2 fede | d4

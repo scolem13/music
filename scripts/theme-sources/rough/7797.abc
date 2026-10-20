@@ -1,0 +1,10 @@
+X:7797
+%%from edm
+T:Concerto in A minor, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7797 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z8 c'3/2e'<a'c'<ae<Ac'/2 | b3/2^g'<b'd'<be<Eb<c'e'<a'c'<ae<Ac'/2 | b3/2e/2E

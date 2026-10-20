@@ -1,0 +1,10 @@
+X:2360
+%%from edm
+T:Suite No. 8, in G, 2nd Set, 6th Movement, Gavotte
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2360 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+G4 A/2B/2A/2G/2A2 B4 c4 | d4 e4 f4 d4 | g4 f4 e4 d4 | c4 B4 A4 D4 |

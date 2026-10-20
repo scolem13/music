@@ -1,0 +1,11 @@
+X:6462
+%%from edm
+T:Quintet, Op. 57, 4th Movement - Intermezzo
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6462 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+z8 a8 | g2f2 g8 a4- | a2g2f2e2 d4 a4 | b8- b2f2f2g2 | a8 a8- | a2d'2d2e4<f4 g2 | f4

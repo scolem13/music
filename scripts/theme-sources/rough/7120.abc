@@ -1,0 +1,10 @@
+X:7120
+%%from edm
+T:Capriccio, 1st Movement - 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7120 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+G,GB,B, GG,G,G, | B,2G2 z G,GG, | B,GG,G GG,B,G |

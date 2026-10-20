@@ -1,0 +1,10 @@
+X:2353
+%%from edm
+T:Suite No. 4, in D minor, 2nd Set, 3rd Movement, Sarabande
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2353 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:F
+F8 F8 z4 G4 | E8 E8 z8 | A8 A8 z4 B4 | G8 G8 z4 A4 | B8 B8 z4 c4 | A8

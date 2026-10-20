@@ -1,0 +1,10 @@
+X:5067
+%%from edm
+T:Sonata in E, No. 1, 1st Movement
+C:Gaetano Pugnani
+%%composer Pugnani|Gaetano
+% EDM 5067 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+E3/2G/2B2 B4 B2=c^c c4 | E2A3/2E/2 z/2 cA/2 z/2 ec/2 z/2 ac/2 z/2 c/2d/2<c/2 B2

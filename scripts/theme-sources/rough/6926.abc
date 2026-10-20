@@ -1,0 +1,12 @@
+X:6926
+%%from mtd
+T:Wein, Weib und Gesang, Op. 333, Waltzes, No. 2, 2nd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8555, Barlow & Morgenstern S1317, EDM 6926 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=165
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+d6 | c6 | Bd a3 g | g6 | c6 | B6 | Ac g3 f | f6 | e2 e3 e | f2 f3 f |

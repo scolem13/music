@@ -1,0 +1,10 @@
+X:3411
+%%from edm
+T:Etude No. 3 in D-flat
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3411 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+z4 A2 z2 B2 z2 d2 z2 | e2 z2 f2 z2 e2 z2 B2 z2 | d4

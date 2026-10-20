@@ -1,0 +1,10 @@
+X:2103
+%%from edm
+T:The Pleasure Dome of Kubla Khan, 2nd Theme
+C:Charles Tomlinson Griffes
+%%composer Griffes|Charles Tomlinson
+% EDM 2103 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:B
+F4 f6 =f4<d4 c2 B4 | c2B2 c4 d4 c2B2 c4 d4 | F4 f6 =f4<d4 c2 =c4 | A2G2 A4 =c4

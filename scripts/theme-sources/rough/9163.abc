@@ -1,0 +1,11 @@
+X:9163
+%%from edm
+T:Concerto No. 1 in E minor, 2nd Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9163 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/FSSx9Z7-dJQ
+M:2/4
+L:1/16
+K:E
+e6 f2 | g4 a3b | c'8- | c'2b2c'2b2 | a8- | a8 |

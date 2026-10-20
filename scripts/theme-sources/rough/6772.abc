@@ -1,0 +1,11 @@
+X:6772
+%%from edm
+T:Stars and Stripes Forever, March, 3rd Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6772 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Ab
+e8 e8 | d4 c4 c8 | =B4 c4 c8- | c16 | =B4 c4 c8 | =B4 c4 e8 | c6 e2 d8- | d8 B4

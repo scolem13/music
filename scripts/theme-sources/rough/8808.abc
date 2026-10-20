@@ -1,0 +1,10 @@
+X:8808
+%%from edm
+T:Trio in C, Op. 87, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8808 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+gggggg _g2c2d2 | gggggg _g2c2d2 | a8 g2_g2 | g2e2g2 e2c2e2 |

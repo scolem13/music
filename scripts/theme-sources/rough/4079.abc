@@ -1,0 +1,10 @@
+X:4079
+%%from edm
+T:Concerto in A, K 414, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4079 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+e2e/2f/2^d/2e/2 a2 z2 | e2e/2f/2^d/2e/2 A2 z2 | cB z2 dced | fefd c2B2 |

@@ -1,0 +1,10 @@
+X:6382
+%%from edm
+T:Symphony No. 3 in E-flat, Op. 97, 4th Movement
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6382 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+B4 e8 d4 | _g4 f4 b8- | b4 a8 g4 | =b4 _b4 e'8 |

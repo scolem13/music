@@ -1,0 +1,10 @@
+X:3242
+%%from edm
+T:Hary Janos, Suite from Opera, Op. 15, Kezdodik a Mese (The Fairy Tale Begins)
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% EDM 3242 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 ^D,8 | ^A,4 ^F,4 ^D,4 | F,4 C,8 | ^A,,8 ^D,4 | D,2C,2 ^A,,4 F,,4 | G,,8

@@ -1,0 +1,11 @@
+X:5360
+%%from edm
+T:Konzert in Alten Stil, Op. 123, 3rd Movement
+C:Max Reger
+%%composer Reger|Max
+% EDM 5360 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+FABG c2fd c2 (3fga | g2fe dcBb gfec' | a_a=ae fef_d =dcBd |

@@ -1,0 +1,10 @@
+X:2409
+%%from edm
+T:Symphony No. 3, 4th Theme
+C:Roy Harris
+%%composer Harris|Roy
+% EDM 2409 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z4 A4 ^c2B2 A4 | ^c4 e4 ^g4 b4 | ^a4 g2^d2 c4 d4- | ^d4

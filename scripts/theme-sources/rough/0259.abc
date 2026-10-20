@@ -1,0 +1,10 @@
+X:259
+%%from edm
+T:Partita No. 3 in E, Gavotte En Rondeau - Bouree
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0259 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:E
+B4 c4 A2B2c2d2 | e4 G2B2 e4 e2d2 | e4

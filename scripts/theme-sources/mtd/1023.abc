@@ -1,0 +1,13 @@
+X:1023
+T:Symphony No. 1, in C, Op. 21, 2nd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1017, Barlow & Morgenstern B899, EDM 1023 (Musical Theme Dataset, CC BY 4.0)
+N:Andante cantabile con moto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 27 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/8
+L:1/8
+Q:1/4=51
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+G | e z e | f z a/>f/ | d z d | e z g/>e/ | ccc | c=Bc | df- f/4e/4d/4e/4 | d |

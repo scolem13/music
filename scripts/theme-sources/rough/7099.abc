@@ -1,0 +1,10 @@
+X:7099
+%%from edm
+T:Apollon Musagetes, Pas de Deux
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7099 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:C
+e3 f g2 ab | d'c' ge2<b2 f | ^fg d'c' c'c =fe | A2 Bc

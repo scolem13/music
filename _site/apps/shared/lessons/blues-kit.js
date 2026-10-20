@@ -141,7 +141,7 @@
     var isDrums = cfg.instrument === 'drums', isMelody = cfg.instrument === 'melody', isCongas = cfg.instrument === 'congas', isPerc = isDrums || isCongas;
     var hihat = isDrums && cfg.feels === 'hihat';
     var feels = isCongas ? CFEELS : hihat ? HFEELS : FEELS;
-    var state = { key: cfg.key == null ? 5 : cfg.key, feel: isCongas ? 'chacha' : hihat ? 'rock' : 'swing', tempo: isCongas ? 104 : hihat ? 96 : 108, dots: 'tone', loop: false };
+    var state = { swing: null, key: cfg.key == null ? 5 : cfg.key, feel: isCongas ? 'chacha' : hihat ? 'rock' : 'swing', tempo: isCongas ? 104 : hihat ? 96 : 108, dots: 'tone', loop: false };
     // cfg.horns = the ids the page's Instrument menu offers, in order (the first is where it starts)
     var horns = (cfg.horns || ['c', 'alto', 'tenor', 'bb', 'bari']).map(function (id) { return HORNS.filter(function (h) { return h.id === id; })[0]; }).filter(Boolean), horn = horns[0] || HORNS[0];
     if (isMelody) { try { var saved = global.localStorage.getItem('blHorn'); horns.forEach(function (h) { if (h.id === saved) horn = h; }); } catch (e) {} }
@@ -288,9 +288,16 @@
     // (LessonScore draws; a score lights its notes as they sound)
     function engrave(host, abc, width, fluid) { return global.LessonScore ? global.LessonScore.engrave(host, abc, { width: width, fluid: fluid }) : null; }
     function abcStop() { if (global.LessonScore) global.LessonScore.stop(); }
+    // the band's swing for the Feel and tempo now, as abcjs counts it (0 = even eighths); the Swing slot overrides it (LessonScore.setSwing)
+    function autoSwing() {
+      var P = global.BandPlayer, C = global.BandCatalog;
+      if (!P || !P.swingAt) return state.feel === 'boogaloo' ? 0 : 66;
+      var o = C && C.styleOpts ? C.styleOpts(state.feel).opts : { feel: state.feel === 'boogaloo' ? 'straight' : 'swing' }, sa = P.swingAt(o, state.tempo);
+      return sa.s <= 0.5 || sa.div === 16 ? 0 : Math.round(sa.s * 100);
+    }
     // abcjs plays a score by itself. Written notation sounds at the instrument's pitch: horn.t lower.
     // (and a line moved down onto the bass staff is played where it was; swung unless the feel is straight eighths)
-    function abcPlay(btn, score) { if (global.LessonScore) global.LessonScore.play(btn, score, { transpose: -((score && score.t != null) ? score.t : horn.t) - ((score && score.shift) || 0), swing: state.feel === 'boogaloo' ? 0 : 66, onStart: stop }); }
+    function abcPlay(btn, score) { if (global.LessonScore) global.LessonScore.play(btn, score, { transpose: -((score && score.t != null) ? score.t : horn.t) - ((score && score.shift) || 0), swing: autoSwing(), onStart: stop }); }
 
     // ---- where flat 7 comes from: the home chord's own major scale, and the scale it is the V chord of ----
     function scaleBlock(host) {
@@ -425,6 +432,7 @@
         onRewind: function (bar) { if (!now) return; Object.keys(now.log).forEach(function (c) { now.log[c].forEach(function (r, i) { if (r && r.bar >= bar) delete now.log[c][i]; }); }); now.drawn = -1; },
         onEnd: idle });
       else { player.setInstruments(b.instruments); player.setChart(parsed); player.setOpts(b.opts); player.setTempo(state.tempo); player.setTranspose(semis()); }
+      if (state.swing != null && player.swing() !== state.swing) player.setSwing(state.swing);
       player.setChoruses(state.loop ? 0 : 2);
       mix(w);
       now = { btn: btn, label: btn.textContent, w: w, index: -1, chorus: 0, log: {}, drawn: -1 };
@@ -781,6 +789,9 @@
     $('bl-loop').addEventListener('change', function () { state.loop = this.checked; if (player && now) player.setChoruses(state.loop ? 0 : 2); });
     $('bl-stop').addEventListener('click', stop);
     // one row at the foot of the window: Stop always, the rest by how much each matters before and while the band plays (data-pri in the page)
+    if (global.PlayBar && global.PlayBar.swingSlot) {          // Auto (the Feel's own, by tempo) or 50-75 %: the band and the notation both follow
+      $('bl-bar').insertBefore(global.PlayBar.swingSlot({ id: 'bl-swing', pri: 4, priLive: 6, onChange: function (r) { state.swing = r; if (player) player.setSwing(r); if (global.LessonScore) global.LessonScore.setSwing(r); } }), $('bl-stop'));
+    }
     if (global.PlayBar) global.PlayBar.attach($('bl-bar'), { live: function () { return !$('bl-stop').disabled; } });
   }
 

@@ -1,0 +1,10 @@
+X:2880
+%%from edm
+T:Der Schwanendreher Concerto on Old Folk Tunes, 1st Movement, "Zwischen Berg und Tiefem Tal", 1st Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2880 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+C,4 C,4 G,8 | C8 ^A,4 =A,4 | F,8 z4 F,4 | ^A,4 G,4 =A,8 | G,8

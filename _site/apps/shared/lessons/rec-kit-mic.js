@@ -15,6 +15,11 @@
 //             data-set keys: dist (metres), pat, src (voice bass noise)
 //   offaxis   drag the source round the mic (or the Angle slider): quieter and duller off axis, by pattern and diaphragm size; "Cup the grille"
 //             covers the rear ports (almost omni) and adds the hand's honk. data-set keys: angle, pat, dia (small large hand), src, cup (1)
+//   ampmic    a guitar speaker from the front: drag the mic from the dust cap to the edge, distance, angle, mic (dynamic ribbon condenser),
+//             a live room; the tone drawn against an SM57-type at the cap edge, 3 cm, and heard on a generated riff.
+//             data-set keys: x (0 cap .. 1 edge), dist (cm), angle, type, room (1)
+//   vocalmic  a singer from the side: drag the mic; the air jet of plosives, sibilance off the mouth's axis, proximity, the room;
+//             pop filter, mic, room menus. data-set keys: dist (cm), type (condenser dynamic), filter (1), room (treated untreated boxy)
 // One widget sounds at a time (starting one stops the others). The volume is modest by default and everything goes through
 // a soft clipper and a limiter.
 (function () {
@@ -156,7 +161,7 @@
 
   function polar(host) {
     var w = {}, S = parseSet(host.getAttribute('data-set'));
-    var st = { pat: PAT[S.pat] ? S.pat : 'card', type: MIC[S.type] ? S.type : 'dynamic', ang: +S.angle || 0, hear: 'both',
+    var st = { pat: PAT[S.pat] ? S.pat : 'card', type: MIC[S.type] ? S.type : 'dynamic', ang: S.angle != null ? +S.angle || 0 : 180, hear: 'both',
       sing: { x: 200, y: 215 }, kit: { x: 330, y: 60 } };
     var mic = { x: 200, y: 140 };
     var box = card(host, 'Mic, pattern and bleed', w);
@@ -568,7 +573,193 @@
     cb.addEventListener('click', function () { setCup(!st.cup); }); setCup(st.cup);
   }
 
-  var KINDS = { polar: polar, phase: phase, phantom: phantom, proximity: proximity, offaxis: offaxis };
+
+  // ---------- shared for ampmic and vocalmic: a short room (decaying noise), filters, a curve from biquads ----------
+  var roomBuf = {};
+  function getRoom(c, kind) {
+    var k = kind + c.sampleRate; if (roomBuf[k]) return roomBuf[k];
+    var sr = c.sampleRate, len = kind === 'boxy' ? 0.25 : 0.7, n = Math.round(sr * len), b = c.createBuffer(2, n, sr);
+    for (var ch = 0; ch < 2; ch++) { var d = b.getChannelData(ch);
+      for (var i = 0; i < n; i++) d[i] = (Math.random() * 2 - 1) * Math.exp(-i / sr * (kind === 'boxy' ? 18 : 7));
+      if (kind === 'boxy') [0.0031, 0.0047, 0.0062].forEach(function (t, j) { var s = Math.round(t * sr); d[s] += 0.9 - 0.2 * j; });     // a small room's first strong reflections: the boxy comb
+    }
+    return (roomBuf[k] = b);
+  }
+  function bq(c, type, f, g, q) { var b = c.createBiquadFilter(); b.type = type; b.frequency.value = f; if (g != null) b.gain.value = g; if (q != null) b.Q.value = q; return b; }
+  function series(list) { for (var i = 0; i < list.length - 1; i++) list[i].connect(list[i + 1]); return list; }
+  function setT(p, v) { p.setTargetAtTime(v, G.ctx.currentTime, 0.04); }
+
+  // ---------- ampmic: a mic in front of a guitar speaker ----------
+  // A model of what engineers describe (and frequency plots of close-miked speakers show): on the dust cap the brightest, the top
+  // falling as the mic moves out toward the edge of the cone (lower and rounder there), angling the mic takes off treble (off axis),
+  // close up a directional mic adds bass (proximity, as above), and from about 30 cm the room joins in. The speaker itself is the
+  // last filter of the guitar sound: little above 5-6 kHz comes out of a guitar speaker at all.
+  var AMIC = {
+    dynamic:   { n: 'Dynamic (SM57 type)', A: 0.5, f: function (f) { return bump(f, 4500, 4, 1.2) - 10 * Math.log10(1 + Math.pow(f / 13000, 4)); } },
+    ribbon:    { n: 'Ribbon (figure-8)', A: 0, f: function (f) { return -10 * Math.log10(1 + Math.pow(f / 5000, 2)) + 1.5; } },
+    condenser: { n: 'Condenser (large)', A: 0.5, f: function (f) { return bump(f, 10000, 2, 1); } }
+  };
+  function bump(f, f0, g, q) { var x = Math.log2(f / f0) * q; return g * Math.exp(-x * x); }
+  function ampTone(st, f) {
+    var x = st.x, fc = 7500 * Math.pow(0.32, x), th = st.ang * Math.PI / 180, m = AMIC[st.type];
+    var d = -10 * Math.log10(1 + Math.pow(f / fc, 4))                          // the cone's top end where the mic is
+      + bump(f, 2800, 5 * (1 - x), 1) + bump(f, 220, 3 * x, 1.2)               // the cap's bite; the edge's lower mids
+      - 10 * Math.log10(1 + Math.pow(f / 4000, 2) * (1 - Math.cos(th)))         // angled: off axis
+      + proxBoost(m.A, st.d / 100, f) - proxBoost(m.A, 0.3, f)                // proximity, against the same mic at 30 cm
+      + m.f(f);
+    return d - 10 * Math.log10(1 + Math.pow(70 / f, 4));                        // (a guitar speaker has no deep bass)
+  }
+  function makeGuitar(c) {
+    var out = c.createGain(), sh = c.createWaveShaper(), cur = new Float32Array(1024), amp = c.createGain(), oscs = [];
+    for (var i = 0; i < 1024; i++) { var x = i / 1023 * 2 - 1; cur[i] = Math.tanh(x * 9) * 0.6; } sh.curve = cur;
+    var pre = bq(c, 'highpass', 120, null, 0.7), cab1 = bq(c, 'lowpass', 5500, null, 0.9), cab2 = bq(c, 'peaking', 2200, 3, 1), cab3 = bq(c, 'highpass', 75, null, 0.8);
+    [1, 1.498, 2].forEach(function (r) { var o = c.createOscillator(); o.type = 'sawtooth'; o.r = r; o.detune.value = (Math.random() - 0.5) * 12; o.connect(pre); oscs.push(o); o.start(); });
+    series([pre, amp, sh, cab1, cab2, cab3, out]); amp.gain.value = 0;
+    var riff = [[82.4, 1], [82.4, 0], [82.4, 0], [98, 1], [82.4, 0], [110, 1], [82.4, 0], [123.5, 1]], k = 0;     // eighths at 140 bpm: E5 chugs, G5 A5 B5 hits
+    function step() { var r = riff[k++ % riff.length], t = c.currentTime; oscs.forEach(function (o) { o.frequency.setValueAtTime(r[0] * o.r, t); });
+      amp.gain.cancelScheduledValues(t); amp.gain.setValueAtTime(r[1] ? 1 : 0.6, t); amp.gain.setTargetAtTime(r[1] ? 0.5 : 0.02, t + 0.02, r[1] ? 0.25 : 0.05); }
+    step(); var iv = setInterval(step, 214);
+    return { out: out, stop: function () { clearInterval(iv); oscs.forEach(function (o) { try { o.stop(); } catch (e) {} }); out.disconnect(); } };
+  }
+  function ampmic(host) {
+    var w = {}, S = parseSet(host.getAttribute('data-set'));
+    var st = { x: S.x != null ? +S.x : 0.35, d: +S.dist || 3, ang: +S.angle || 0, type: AMIC[S.type] ? S.type : 'dynamic', room: S.room === '1' };
+    var box = card(host, 'Mic on a guitar speaker', w);
+    var row = el('div'); row.style.cssText = 'display:flex;flex-wrap:wrap;gap:.6rem;align-items:flex-start'; box.appendChild(row);
+    var svg = sv('svg', { viewBox: '0 0 220 220', width: '220' }); svg.style.cssText = 'max-width:100%;border:1px solid ' + css('--site-border', '#ccc') + ';border-radius:6px;touch-action:none';
+    row.appendChild(svg); var gbox = el('div'); gbox.style.cssText = 'flex:1 1 260px;min-width:0'; row.appendChild(gbox);
+    var draw = freqCanvas(gbox, -30, 15), ctl = el('div', 'sk-ctls'), info = el('div', 'sk-info'); box.appendChild(ctl); box.appendChild(info);
+    info.style.fontFamily = 'var(--font-mono)'; info.style.fontSize = '.82rem';
+    box.appendChild(el('div', 'sk-tip', 'Drag the mic (the dot) from the dust cap in the middle out to the edge of the cone, and listen to the top end go. Then try further away, angled, a ribbon, and the room.'));
+    var ink = css('--site-ink', '#222'), acc = css('--site-accent', '#2a7de1'), sur = css('--site-surface-2', '#eee'), cx = 110, cy = 110, R = 96;
+    sv('rect', { x: 4, y: 4, width: 212, height: 212, rx: 6, fill: '#3a3a3a' }, svg);
+    sv('circle', { cx: cx, cy: cy, r: R, fill: sur, stroke: ink, 'stroke-width': 2 }, svg);
+    sv('circle', { cx: cx, cy: cy, r: R - 8, fill: 'none', stroke: ink, 'stroke-opacity': 0.4 }, svg);
+    for (var rr = 30; rr < 88; rr += 14) sv('circle', { cx: cx, cy: cy, r: rr, fill: 'none', stroke: ink, 'stroke-opacity': 0.12 }, svg);
+    sv('circle', { cx: cx, cy: cy, r: 22, fill: css('--site-surface', '#fff'), stroke: ink, 'stroke-width': 1.5 }, svg);
+    [['cap', 0], ['cap edge', 30], ['cone', 58], ['edge', 84]].forEach(function (l) { var t = sv('text', { x: cx, y: cy - l[1] - (l[1] ? 3 : -4), 'text-anchor': 'middle', 'font-size': 10, fill: ink }, svg); t.textContent = l[0]; });
+    var m = sv('g', {}, svg); sv('circle', { r: 10, fill: acc, 'fill-opacity': 0.85, stroke: ink, 'stroke-width': 1.5 }, m); sv('circle', { r: 3, fill: ink }, m);
+    function pos() { return { x: cx + st.x * (R - 8) * 0.6, y: cy + st.x * (R - 8) * 0.8 }; }
+    function where() { return st.x < 0.15 ? 'on the dust cap: brightest, most bite' : st.x < 0.4 ? 'at the cap\'s edge: bright and full, the usual start' : st.x < 0.75 ? 'on the cone: warmer, rounder' : 'near the edge: dark, woolly'; }
+    var nodes = null;
+    function upd() {
+      var p = pos(); m.setAttribute('transform', 'translate(' + p.x.toFixed(1) + ',' + p.y.toFixed(1) + ')');
+      var ref = { x: 0.3, d: 3, ang: 0, type: 'dynamic' };
+      draw([{ f: function (f) { return ampTone(ref, f); }, col: css('--site-ink-3', '#999'), dash: [5, 4], w: 1.5 }, { f: function (f) { return ampTone(st, f); }, col: acc, w: 2.6 }]);
+      var room = st.room ? Math.min(1, Math.max(0.08, (st.d - 5) / 80)) : 0;
+      info.innerHTML = '<b>' + where() + '</b><br>' + st.d + ' cm, ' + st.ang + '&deg; angle, ' + AMIC[st.type].n + (st.room ? ', room ' + Math.round(room * 100) + '%' : '') +
+        ' &nbsp; 3 kHz <b>' + fmtdb(ampTone(st, 3000) - ampTone(ref, 3000)) + '</b>, 150 Hz <b>' + fmtdb(ampTone(st, 150) - ampTone(ref, 150)) + '</b> (vs the dashed line: an SM57 at the cap edge, 3 cm)';
+      if (nodes) {
+        var x = st.x, th = st.ang * Math.PI / 180, mm = AMIC[st.type];
+        setT(nodes.lp.frequency, 7500 * Math.pow(0.32, x) / Math.sqrt(1 + 3 * (1 - Math.cos(th))));
+        setT(nodes.bite.gain, 5 * (1 - x)); setT(nodes.mids.gain, 3 * x);
+        setT(nodes.prox.gain, Math.max(-6, Math.min(18, proxBoost(mm.A, st.d / 100, 80) - proxBoost(mm.A, 0.3, 80)))); setT(nodes.prox.frequency, Math.min(800, 343 / (2 * Math.PI * st.d / 100)));
+        setT(nodes.type.gain, st.type === 'ribbon' ? -7 : st.type === 'condenser' ? 2 : 0); setT(nodes.pres.gain, st.type === 'dynamic' ? 4 : 0);
+        setT(nodes.dry.gain, (1 - room * 0.7) * Math.min(1.5, 6 / st.d + 0.25)); setT(nodes.wet.gain, room * 0.6);
+      }
+    }
+    w.start = function () {
+      var c = ctx().ctx; stopOthers(w); var src = makeGuitar(c);
+      nodes = { src: src, lp: bq(c, 'lowpass', 5000, null, 0.6), bite: bq(c, 'peaking', 2800, 0, 1.2), mids: bq(c, 'peaking', 220, 0, 1), prox: bq(c, 'lowshelf', 200, 0),
+        type: bq(c, 'highshelf', 5000, 0), pres: bq(c, 'peaking', 4500, 0, 1.2), dry: c.createGain(), wet: c.createGain(), rv: c.createConvolver() };
+      nodes.rv.buffer = getRoom(c, 'room');
+      series([src.out, nodes.lp, nodes.bite, nodes.mids, nodes.prox, nodes.type, nodes.pres, nodes.dry, G.master]);
+      nodes.pres.connect(nodes.rv); nodes.rv.connect(nodes.wet); nodes.wet.connect(G.master);
+      w.playing = true; w.setBtn(); upd();
+    };
+    w.stop = function () { if (nodes) { nodes.src.stop(); [nodes.dry, nodes.wet, nodes.rv].forEach(function (n) { n.disconnect(); }); nodes = null; } w.playing = false; w.setBtn(); };
+    dragger(svg, m, function (x, y) { var r = Math.hypot(x - cx, y - cy) / ((R - 8)); st.x = Math.round(Math.max(0, Math.min(1, r)) * 100) / 100; xs.set(st.x); upd(); });
+    var xs = slider(ctl, 'Across the speaker', 0, 1, 0.01, st.x, function (v) { return v < 0.15 ? 'cap' : v < 0.4 ? 'cap edge' : v < 0.75 ? 'cone' : 'edge'; }, function (v) { st.x = v; upd(); });
+    slider(ctl, 'Distance', 1, 100, 1, st.d, function (v) { return v + ' cm'; }, function (v) { st.d = v; upd(); });
+    slider(ctl, 'Angle', 0, 60, 5, st.ang, function (v) { return v + '°'; }, function (v) { st.ang = v; upd(); });
+    select(ctl, 'Mic', Object.keys(AMIC).map(function (k) { return [k, AMIC[k].n]; }), st.type, function (v) { st.type = v; upd(); });
+    var rb = el('button', 'btn btn-sm btn-outline-secondary', ''); rb.type = 'button'; ctl.appendChild(rb);
+    function setRoom(v) { st.room = v; rb.textContent = 'Room: ' + (v ? 'a live room' : 'dead (close mic only)'); rb.classList.toggle('sk-on', v); upd(); }
+    rb.addEventListener('click', function () { setRoom(!st.room); }); setRoom(st.room);
+  }
+
+  // ---------- vocalmic: a singer's mouth and a mic, side view ----------
+  // Plosives (p, b) are a jet of air going forward and a little down from the mouth, narrow (about ±15°): a mic in it gets a thump of
+  // wind; out of it, or behind a pop filter, very little. Sibilance (s, sh, t) is high and beams forward from the mouth: above or
+  // below the mouth's axis it is softer. The mic always points at the mouth here; it is the mouth's angle to the mic that changes.
+  var VMIC = { condenser: { n: 'Large condenser', A: 0.5, s: 4, room: 1 }, dynamic: { n: 'Dynamic (SM7B / SM58 type)', A: 0.5, s: -2, room: 0.5 } };
+  var PXCM = 5;                                                                 // the drawing: 5 units a centimetre
+  function vocGeom(st) {
+    var dx = st.mx - 70, dy = st.my - 110, d = Math.max(Math.hypot(dx, dy) / PXCM, 1), a = Math.atan2(dy, dx) * 180 / Math.PI;   // degrees below the mouth's axis (+ = down)
+    return { d: d, a: a, jet: Math.abs(a - 8) };                                // the jet goes forward and about 8° down
+  }
+  function vocModel(st) {
+    var g = vocGeom(st), m = VMIC[st.type];
+    var inJet = Math.exp(-Math.pow(Math.max(0, g.jet - 6) / 12, 2));                       // full within ±6°, gone by about 30°
+    var pop = inJet * Math.min(1, Math.pow(12 / g.d, 1.5)) * (st.filter ? 0.12 : 1);     // the jet spreads and slows with distance
+    var sib = -10 * Math.log10(1 + Math.pow(7000 / 4500, 2) * (1 - Math.cos(g.a * Math.PI / 180)) * 2) + m.s;
+    var prox = proxBoost(m.A, g.d / 100, 120) - proxBoost(m.A, 0.2, 120);
+    var room = Math.min(1, (g.d / 60) * (st.room === 'boxy' ? 1 : st.room === 'treated' ? 0.25 : 0.6) * m.room);
+    return { g: g, pop: pop, popdb: db(pop + 1e-4), sib: sib, prox: prox, room: room };
+  }
+  function makeSinger(c) {          // a voice-like line with a "p" at the start of a phrase and an "s" in the middle (separate outputs)
+    var v = makeVoice(c), pop = c.createGain(), s = c.createGain(), nz = c.createBufferSource(); nz.buffer = getNoise(c); nz.loop = true; nz.start();
+    var plp = bq(c, 'lowpass', 140, null, 0.9), pg = c.createGain(), shp = bq(c, 'bandpass', 7000, null, 1.4), sg = c.createGain();
+    nz.connect(plp); plp.connect(pg); pg.connect(pop); nz.connect(shp); shp.connect(sg); sg.connect(s); pg.gain.value = 0; sg.gain.value = 0;
+    function phrase() { var t = c.currentTime + 0.02;
+      pg.gain.setValueAtTime(0, t); pg.gain.linearRampToValueAtTime(9, t + 0.008); pg.gain.setTargetAtTime(0, t + 0.02, 0.035);      // "p": a thump of air
+      sg.gain.setValueAtTime(0, t + 1.0); sg.gain.linearRampToValueAtTime(2.2, t + 1.05); sg.gain.setTargetAtTime(0, t + 1.2, 0.03); }  // "s"
+    phrase(); var iv = setInterval(phrase, 2000);
+    return { voice: v.out, pop: pop, s: s, stop: function () { clearInterval(iv); v.stop(); try { nz.stop(); } catch (e) {} pop.disconnect(); s.disconnect(); } };
+  }
+  function vocalmic(host) {
+    var w = {}, S = parseSet(host.getAttribute('data-set'));
+    var st = { mx: 70 + (+S.dist || 15) * PXCM, my: 110, type: VMIC[S.type] ? S.type : 'condenser', filter: S.filter === '1', room: S.room || 'untreated' };
+    var box = card(host, 'Singer and mic, from the side', w);
+    var svg = sv('svg', { viewBox: '0 0 420 220', width: '100%' }); svg.style.cssText = 'max-width:560px;display:block;border:1px solid ' + css('--site-border', '#ccc') + ';border-radius:6px;touch-action:none';
+    box.appendChild(svg);
+    var ink = css('--site-ink', '#222'), acc = css('--site-accent', '#2a7de1'), hot = '#d6336c', sur = css('--site-surface-2', '#eee');
+    sv('path', { d: 'M40,20 C70,18 76,60 72,84 L80,100 L72,104 L76,112 L70,116 L74,124 C70,140 56,140 40,150 L40,210', fill: sur, stroke: ink, 'stroke-width': 2 }, svg);    // a head in profile, facing right
+    sv('path', { d: 'M70,110 L420,159 L420,61 Z', fill: hot, 'fill-opacity': 0.08 }, svg);
+    var jet = sv('path', { d: 'M70,110 L330,165 L330,126 Z', fill: hot, 'fill-opacity': 0.22, stroke: hot, 'stroke-dasharray': '4 3' }, svg);
+    var jl = sv('text', { x: 300, y: 178, 'font-size': 10, fill: hot }, svg); jl.textContent = 'air jet (p, b)';
+    for (var cm = 10; cm <= 60; cm += 10) { var t = sv('text', { x: 70 + cm * PXCM, y: 214, 'text-anchor': 'middle', 'font-size': 10, fill: css('--site-ink-2', '#555') }, svg); t.textContent = cm + ' cm'; }
+    var pf = sv('g', {}, svg); sv('ellipse', { cx: 70 + 6 * PXCM, cy: 110, rx: 4, ry: 26, fill: 'none', stroke: ink, 'stroke-width': 2, 'stroke-dasharray': '2 2' }, pf);
+    var pft = sv('text', { x: 70 + 6 * PXCM, y: 78, 'text-anchor': 'middle', 'font-size': 10, fill: ink }, pf); pft.textContent = 'pop filter';
+    var mic = sv('g', {}, svg); sv('rect', { x: -8, y: -14, width: 34, height: 28, rx: 12, fill: css('--site-surface', '#fff'), stroke: ink, 'stroke-width': 2 }, mic); sv('rect', { x: 26, y: -5, width: 34, height: 10, rx: 3, fill: ink }, mic);
+    var ctl = el('div', 'sk-ctls'), info = el('div', 'sk-info'); box.appendChild(ctl); box.appendChild(info); info.style.fontFamily = 'var(--font-mono)'; info.style.fontSize = '.82rem';
+    box.appendChild(el('div', 'sk-tip', 'Drag the mic. Straight ahead and close, every "p" thumps (the air jet hits it) and the bass swells; a little above the mouth, pointing down at it, the pops go and the "s" softens. Then try the pop filter, distance, and the room.'));
+    var n = null;
+    function upd() {
+      var M = vocModel(st), g = M.g;
+      mic.setAttribute('transform', 'translate(' + st.mx.toFixed(1) + ',' + st.my.toFixed(1) + ') rotate(' + (g.a).toFixed(1) + ')');
+      pf.style.display = st.filter ? '' : 'none';
+      var popw = M.pop > 0.5 ? 'heavy' : M.pop > 0.15 ? 'some' : M.pop > 0.04 ? 'slight' : 'none';
+      info.innerHTML = Math.round(g.d) + ' cm, ' + Math.abs(Math.round(g.a)) + '&deg; ' + (g.a > 1 ? 'below' : g.a < -1 ? 'above' : 'level with') + ' the mouth' +
+        '<br>Plosives <b>' + popw + '</b> &nbsp; sibilance <b>' + fmtdb(M.sib) + '</b> (vs a flat mic, straight on) &nbsp; bass (proximity) <b>' + fmtdb(M.prox) + '</b> &nbsp; room <b>' + Math.round(M.room * 100) + '%</b>';
+      if (n) {
+        setT(n.popG.gain, M.pop * (st.type === 'dynamic' ? 0.7 : 1)); setT(n.sG.gain, Math.pow(10, M.sib / 20));
+        setT(n.vHf.gain, Math.max(-12, M.sib * 0.6)); setT(n.prox.gain, Math.max(-6, Math.min(18, M.prox))); setT(n.prox.frequency, Math.min(600, 343 / (2 * Math.PI * g.d / 100)));
+        setT(n.dry.gain, (1 - 0.6 * M.room) * Math.min(1.6, 15 / g.d + 0.2)); setT(n.wet.gain, M.room * 0.8);
+        if (n.roomKind !== st.room) { n.rv.buffer = getRoom(G.ctx, st.room === 'boxy' ? 'boxy' : 'room'); n.roomKind = st.room; }
+      }
+    }
+    w.start = function () {
+      var c = ctx().ctx; stopOthers(w); var s = makeSinger(c);
+      n = { s: s, popG: c.createGain(), sG: c.createGain(), vHf: bq(c, 'highshelf', 4000, 0), sum: c.createGain(), prox: bq(c, 'lowshelf', 200, 0), dry: c.createGain(), wet: c.createGain(), rv: c.createConvolver() };
+      n.rv.buffer = getRoom(c, st.room === 'boxy' ? 'boxy' : 'room'); n.roomKind = st.room;
+      s.voice.connect(n.vHf); n.vHf.connect(n.sum); s.pop.connect(n.popG); n.popG.connect(n.sum); s.s.connect(n.sG); n.sG.connect(n.sum);
+      series([n.sum, n.prox, n.dry, G.master]); n.prox.connect(n.rv); n.rv.connect(n.wet); n.wet.connect(G.master);
+      w.playing = true; w.setBtn(); upd();
+    };
+    w.stop = function () { if (n) { n.s.stop(); [n.dry, n.wet, n.rv, n.sum].forEach(function (x) { x.disconnect(); }); n = null; } w.playing = false; w.setBtn(); };
+    dragger(svg, mic, function (x, y) { st.mx = Math.max(70 + 2 * PXCM, Math.min(410, x)); st.my = Math.max(20, Math.min(200, y)); upd(); });
+    select(ctl, 'Mic', Object.keys(VMIC).map(function (k) { return [k, VMIC[k].n]; }), st.type, function (v) { st.type = v; upd(); });
+    select(ctl, 'Room', [['treated', 'Treated (absorption)'], ['untreated', 'Ordinary room'], ['boxy', 'Small, bare (boxy)']], st.room, function (v) { st.room = v; upd(); });
+    var fb = el('button', 'btn btn-sm btn-outline-secondary', ''); fb.type = 'button'; ctl.appendChild(fb);
+    function setF(v) { st.filter = v; fb.textContent = 'Pop filter: ' + (v ? 'on' : 'off'); fb.classList.toggle('sk-on', v); upd(); }
+    fb.addEventListener('click', function () { setF(!st.filter); }); setF(st.filter);
+    var preset = el('button', 'btn btn-sm btn-outline-secondary', 'Usual spot: 15 cm, a little above'); preset.type = 'button'; ctl.appendChild(preset);
+    preset.addEventListener('click', function () { st.mx = 70 + 15 * PXCM; st.my = 110 - 6 * PXCM; upd(); });
+    w.model = function () { return vocModel(st); }; w.st = st; w.upd = upd;
+  }
+
+  var KINDS = { polar: polar, phase: phase, phantom: phantom, proximity: proximity, offaxis: offaxis, ampmic: ampmic, vocalmic: vocalmic };
   function init() {
     var hs = document.querySelectorAll('.rk');
     for (var i = 0; i < hs.length; i++) { var f = KINDS[hs[i].getAttribute('data-w')]; if (f && !hs[i].getAttribute('data-ready')) { hs[i].setAttribute('data-ready', '1'); f(hs[i]); } }

@@ -1,0 +1,12 @@
+X:2470
+T:Quartet in F minor, Op. 20, No. 5, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4131, Barlow & Morgenstern H351, EDM 2470 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=50
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c>dc cdA | B>cB B2 z | B>cB BdG | A>BA A2 z |

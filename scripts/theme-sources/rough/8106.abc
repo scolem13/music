@@ -1,0 +1,11 @@
+X:8106
+%%from edm
+T:Sonata No. 2 in A-flat, Op. 39, 3rd Movement - 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8106 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Ab
+A,2G,2A,2C2E2=D2 | F2E2 C2A,2 E,4 | e2f2g2a2b2g2 | a2e2 b2g2 a4 |

@@ -1,0 +1,10 @@
+X:4269
+%%from edm
+T:Quartet in D minor, K 421, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4269 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+D2<F2 F2<A2 A2<d2 | d2<f2 f2<a2 a2<d'2 | d'2<c'2

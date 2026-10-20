@@ -1,0 +1,13 @@
+X:1018
+T:Symphony No. 1, in C, Op. 21, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1012, Barlow & Morgenstern B894, EDM 1018 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio molto - Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 13  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/2
+L:1/8
+Q:1/4=197
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+C6 G,>B, | C6 G,>B, | CCG,B, CCG,B, | C2 E2 G2 B2 | c8 |

@@ -1,0 +1,11 @@
+X:1779
+T:An American in Paris, 3rd Theme, Blues Theme
+C:George Gershwin
+%%composer Gershwin|George
+% MTD 3442, Barlow & Morgenstern G41, EDM 1779 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=97
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+{/=e} f8- | fgfB{/c-} _dcBG | F8- | F8 |{/=e} f8- | fgfB{/c} _dcBG | B8 |

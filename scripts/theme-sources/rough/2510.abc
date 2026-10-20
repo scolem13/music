@@ -1,0 +1,10 @@
+X:2510
+%%from edm
+T:Quartet in E, Op. 54, No. 3, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2510 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e3d c z B z A z B z | c3-c/2d/2 e2 z6 | a3-a/2g/2 f2e2 d2c2 | cd^d3/2e/2 B2

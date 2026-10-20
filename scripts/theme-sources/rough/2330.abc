@@ -1,0 +1,10 @@
+X:2330
+%%from edm
+T:Suite No. 4, in E minor, 3rd Movement, Courante
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2330 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+e4<e4 d2c2 | B4<A4 c2B2 | A2G2 E2 c6- | c4 d2 B6- | B2

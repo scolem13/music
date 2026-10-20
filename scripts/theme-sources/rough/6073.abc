@@ -1,0 +1,11 @@
+X:6073
+%%from edm
+T:Symphony No. 3 in D, 4th Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6073 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:D
+d'2e'2f'2 g'4 z2 | d2e2f2 g4 z2 | D2E2F2 G4 z2 | ^G6 A4

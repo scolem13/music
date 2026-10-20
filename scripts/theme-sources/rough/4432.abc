@@ -1,0 +1,10 @@
+X:4432
+%%from edm
+T:Sonata in B-flat, K 570, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4432 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+B4 G2F2 E2B,2E2F2 | G2A2B2c2 G3A F

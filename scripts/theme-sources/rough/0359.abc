@@ -1,0 +1,10 @@
+X:359
+%%from edm
+T:English Suite No. 6, in D minor, Piano, Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0359 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+D_D=DE _D=DF_D =DG_D=D A_D=DB | AGFE D_A=A=B

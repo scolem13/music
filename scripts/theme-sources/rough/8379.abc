@@ -1,0 +1,10 @@
+X:8379
+%%from edm
+T:Sonata No. 2 in C, 2nd Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8379 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+f4 c'4 c'8 | c'bab z/2 b3-b/2 a4 g4- | g4

@@ -1,0 +1,11 @@
+X:9128
+%%from edm
+T:Concerto, Piano and Orchestra, 1st Movement - 1st Theme
+C:Carlos Chávez
+%%composer Chávez|Carlos
+% EDM 9128 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+e4 d2e2 A2d2 | e2d2e2g2e2d2 | e4 d2e2 B2e2 | g2f2g2a2g2f2 |

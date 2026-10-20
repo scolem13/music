@@ -1,0 +1,12 @@
+X:7362
+%%from mtd
+T:Quartet in E minor, 1st Movement - Prelude
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% MTD 8988, Barlow & Morgenstern T58, EDM 7362 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=67
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+G8- | GGFE e4- | e2 e>B b3 b | b2 e2 a3/2g/4f/4 g>a | f2 B2 |

@@ -1,0 +1,10 @@
+X:2763
+%%from edm
+T:Symphony in G, No. 100, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2763 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+d2^c2 d4 d2c2 d4 | e4 f2g2 f2e2 d4 | d'2^c'2 d'4 d'2c'2 d'4 | b4 a2b2 a2g2 f4 |

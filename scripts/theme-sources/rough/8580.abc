@@ -1,0 +1,10 @@
+X:8580
+%%from edm
+T:Quartet in B-flat, Op. 67, Str., 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8580 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+f2d2g2 f2d2b2 | f2d2g2 f4 z2 | f'2d'2g'2 f'2d'2b'2 | f'2d'2g'2 f'4 d2 | f2f2c2 e2e2d2 | g2g2f2 c4

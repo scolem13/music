@@ -1,0 +1,10 @@
+X:8223
+%%from edm
+T:Harold in Italy, Op. 16, 2nd Movement - March of the Pilgrims
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8223 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+b4 e'4 | g4 b2a2 | g4 =g4 | g4 d4 | =d4 d4 | f4 =f2d2 | b4 ^a4 | d'8 |

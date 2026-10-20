@@ -1,0 +1,13 @@
+X:9593
+%%from mtd
+T:Arabesque No. 1 in E, 1st Theme B
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2584, Barlow & Morgenstern D16, EDM 9593 (Musical Theme Dataset, CC BY 4.0)
+N:Andante con moto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=127
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z2 (3efc (3eBc (3GBF | (3GEG D4 C2 | B, z |

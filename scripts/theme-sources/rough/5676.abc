@@ -1,0 +1,10 @@
+X:5676
+%%from edm
+T:Septet, Op. 65, 2nd Movement - Minuet, 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5676 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+B4 e4 B4 | B4 A2B2 c4 | c4 B4 A4 | B12 | B4 c4 d4 | e4 f4 g4 | f4 c2d2 e4 | d12 |

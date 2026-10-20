@@ -281,4 +281,50 @@ reduces the whole sound to one pitch, is pulled sharp by the upper partials, whi
 - [Cadences](cadences.qmd) and [Four-chord loops](four-chord-loops.qmd), to hear the chords that
   the comma affects.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Ableton. *Tuning: An Introduction to Pitch and Tuning Systems*. [tuning.ableton.com/](https://tuning.ableton.com/). Glossary gives the 4:3 fourth vs. 500-cent fourth used in the harmonics-method lesson.
+
+"Cent (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cent_(music)](https://en.wikipedia.org/wiki/Cent_(music)).
+
+"Equal temperament." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Equal_temperament](https://en.wikipedia.org/wiki/Equal_temperament).
+
+"Harmonic series (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Harmonic_series_(music)](https://en.wikipedia.org/wiki/Harmonic_series_(music)).
+
+"Just intonation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Just_intonation](https://en.wikipedia.org/wiki/Just_intonation).
+
+"Meantone temperament." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Meantone_temperament](https://en.wikipedia.org/wiki/Meantone_temperament).
+
+Nave, Rod. "Beat Frequencies." *HyperPhysics*, Georgia State University. [hyperphysics.phy-astr.gsu.edu/hbase/Sound/beat.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Sound/beat.html).
+
+"Pitch, Temperament & Timbre." *Dolmetsch Online*. [www.dolmetsch.com/musictheory27.htm](https://www.dolmetsch.com/musictheory27.htm).
+
+"Pythagorean comma." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pythagorean_comma](https://en.wikipedia.org/wiki/Pythagorean_comma).
+
+"Syntonic comma." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Syntonic_comma](https://en.wikipedia.org/wiki/Syntonic_comma).
+
+"Well temperament." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Well_temperament](https://en.wikipedia.org/wiki/Well_temperament).
+
+Wolfe, Joe. "Beats." *Physclips*, University of New South Wales. [newt.phys.unsw.edu.au/jw/beats.html](https://newt.phys.unsw.edu.au/jw/beats.html).
+
+**For teachers**
+
+Barbour, J. Murray. *Tuning and Temperament: A Historical Survey*. Michigan State College Press, 1951.
+
+Duffin, Ross W. *How Equal Temperament Ruined Harmony (and Why You Should Care)*. W. W. Norton, 2007.
+
+Gann, Kyle. "An Introduction to Historical Tunings." [www.kylegann.com/histune.html](https://www.kylegann.com/histune.html). Meantone, Werckmeister III, Young, Pythagorean; does not define commas beyond the Pythagorean.
+
+Helmholtz, Hermann von. *On the Sensations of Tone*. Translated by Alexander J. Ellis, Dover, 1954.
+
+Rossing, Thomas D., F. Richard Moore, and Paul A. Wheeler. *The Science of Sound*. 3rd ed., Addison-Wesley, 2002.
+
+Sethares, William A. *Tuning, Timbre, Spectrum, Scale*. 2nd ed., Springer, 2005. Companion site, [sethares.engr.wisc.edu/ttss.html](https://sethares.engr.wisc.edu/ttss.html).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

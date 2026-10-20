@@ -1,0 +1,10 @@
+X:3539
+%%from edm
+T:Concerto Grosso, Op. 1, No. 2, 5th Movement
+C:Pietro Locatelli
+%%composer Locatelli|Pietro
+% EDM 3539 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+c2 z2 d2 z2 | e2 z2 f2 z2 | g2fg a2c2 | =B2=A2 G4 |

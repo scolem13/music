@@ -1,0 +1,10 @@
+X:8907
+%%from edm
+T:Symphony No. 4 in E-flat "Romantic", 1st Movement - 1st Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8907 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+b16 | e12 z3 e | b16 | z16 | =b16 | e12 z3 e | b16 |

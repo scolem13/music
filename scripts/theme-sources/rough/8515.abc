@@ -1,0 +1,10 @@
+X:8515
+%%from edm
+T:Intermezzo in A minor, Op. 116, No. 2, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8515 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c'2c'2 d'8 | c'2c'2 b8 | a2a2 c'4 a4 | ^g4 b8 | c'2c'2 e'8 | f'2f'2 a'8 |

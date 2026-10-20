@@ -1,0 +1,10 @@
+X:6329
+%%from edm
+T:Sonata in D minor, Op. 121, 2nd Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6329 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+d2e2f2 g4 f2 | g2f2b4<c'4 | f'6 d'6 | b6 f6 |

@@ -1,0 +1,10 @@
+X:8841
+%%from edm
+T:Waltzes, Op. 39, No. 12
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8841 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g4 f4 z4 | a4 g4 z4 | b4 a2g2 f4 | g4 B8 | g4 b8 | b4 e'8 |

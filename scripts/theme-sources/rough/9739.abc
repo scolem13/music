@@ -1,0 +1,11 @@
+X:9739
+%%from edm
+T:Coppelia, Act III, Valse des Heures, 2nd Theme
+C:Clement Philibert Leo Delibes
+%%composer Delibes|Clement Philibert Leo
+% EDM 9739 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:Eb
+E6 | F6 | E2 G2 B2 | c2 e2 g2 | b2 z2 b2 | f2 z2 f2 | z/2 g3/2 f2 g2 |

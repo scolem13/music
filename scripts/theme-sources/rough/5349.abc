@@ -1,0 +1,11 @@
+X:5349
+%%from edm
+T:The Christmas Tree, Opera, Dance of the Dolls, 1st Theme
+C:Vladimir Rebikov
+%%composer Rebikov|Vladimir
+% EDM 5349 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+d'2c'2b2a2g2f2 | g8 f4 | g2f2e2d2c2B2 | c8 B4 | B2A2d2c2g2f2 | e2d2g2f2c2b2 |

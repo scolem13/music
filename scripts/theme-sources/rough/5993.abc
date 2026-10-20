@@ -1,0 +1,10 @@
+X:5993
+%%from edm
+T:Ballet No. 1, 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5993 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+f4 b8 b4- | b4 c'6 e'd' c'4 | d'4 c'4 d'4 c'4 | b8<^a8 |

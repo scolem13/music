@@ -1,0 +1,10 @@
+X:4739
+%%from edm
+T:Magnificat - Fugue, Organ and Harpsichord
+C:Johann Pachelbel
+%%composer Pachelbel|Johann
+% EDM 4739 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D4 A4 F2D2 ^A4 | A2G2F2E4<D4 E2 | F6 G2 A8 |

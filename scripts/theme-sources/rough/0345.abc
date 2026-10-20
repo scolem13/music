@@ -1,0 +1,10 @@
+X:345
+%%from edm
+T:English Suite No. 4, in F, Piano, Sarabande
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0345 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c3_e/2d/2 e8 | d2c2 d8 | G2A2A2B2B2c2 | A/2G/2A/2B/2A2 G2A2 F4 |

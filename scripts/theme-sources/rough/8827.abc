@@ -1,0 +1,11 @@
+X:8827
+%%from edm
+T:Trio in E-flat, Op. 40, 3rd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8827 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Gb
+g2=d2e2 B4 B2 | g2=d2e2 =e4 f2 | =g2a2b2 b4 a2 | e2d2e2 =e2d2A2 | (3A4-A=A4- A B4- B

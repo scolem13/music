@@ -1,0 +1,11 @@
+X:2078
+%%from edm
+T:Sonata in G, Op. 13, No. 2, 3rd Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2078 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/s47tbA5cTX0?t=17m33s
+M:3/4
+L:1/16
+K:Eb
+b6 c'2 d'2e'2- | e'6 z/2 d'3/2 c'2b2- | b6 z/2 a3/2 g2f2- | f6 z/2 B4- B3/2 | d2 c4 f6- | f2 d4 c6- | c6 B6- | B6

@@ -1,0 +1,10 @@
+X:7529
+%%from edm
+T:Serenade in C, Op. 48, 3rd Movement - Elegie, 2nd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7529 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 g2a2 b2f2 | a12 | a4 b2c'2 d'2b2 | d'4 c'8 | b4 c'2d'2 e'2f'2 | g'6

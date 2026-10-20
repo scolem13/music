@@ -1,0 +1,13 @@
+X:6523
+%%from mtd
+T:Symphony No. 9, Op. 70, 4th Movement
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8154, Barlow & Morgenstern S920, EDM 6523 (Musical Theme Dataset, CC BY 4.0)
+N:Largo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=38
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+B,4- B,7/2B,/ | C4- C7/2B,/ | D4- D3C/D/ | E4- E3D/E/ | =E8 | =A,8 | F8- | F8- | F2 |

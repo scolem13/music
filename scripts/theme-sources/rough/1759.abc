@@ -1,0 +1,10 @@
+X:1759
+%%from edm
+T:Sonata in C minor, 1st Movement
+C:Francesco Geminiani
+%%composer Geminiani|Francesco
+% EDM 1759 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+z4 G6 c2 | c=BFB a6 B2 | dceg =b4 c'2g2 | a2f2d2f2a2c2 | =B4 G4

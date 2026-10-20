@@ -1,0 +1,10 @@
+X:2211
+%%from edm
+T:Concerto Grosso in C minor, Op. 6, No. 8, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2211 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e/2f/2gc2 E/2F/2GC2 =b/2c'/2d'f2 B/2c/2dF2 | e/2f/2gc2 E/2F/2GC2 z edc d=BG2 |

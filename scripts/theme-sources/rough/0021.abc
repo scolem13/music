@@ -1,0 +1,10 @@
+X:21
+%%from edm
+T:Iberia, Book III, El Albaicin (El Pollo)
+C:Isaac M. F. Albéniz
+%%composer Albéniz|Isaac M. F.
+% EDM 0021 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Ab
+f2 f2 f z | B z e3 z | z/2 f3/2 e2 f z | B z d2 e2 | f z f2 f z | =B

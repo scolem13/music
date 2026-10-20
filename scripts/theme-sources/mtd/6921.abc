@@ -1,0 +1,11 @@
+X:6921
+T:Thousand and One Nights, Op. 346, Waltzes, No. 2
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8550, Barlow & Morgenstern S1312, EDM 6921 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+{/F} E ^D E | c B A | ^G A z/ A/ | A2 F |{/=G} F E F | c B A | ^F G z/ G/ | G2 z |

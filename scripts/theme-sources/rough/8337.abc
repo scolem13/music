@@ -1,0 +1,10 @@
+X:8337
+%%from edm
+T:Three Nocturnes, Vn., Cello and Piano, I
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8337 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+z b f4 e2 | z b f4 e2 | z b e'4 f'2 | d'2^g'2 f'4 |

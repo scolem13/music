@@ -1,0 +1,10 @@
+X:1772
+%%from edm
+T:Welsh Rhapsody, 2nd Theme
+C:Edward German
+%%composer German|Edward
+% EDM 1772 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+d2^d/2=d/2^c/2d/2 f2^d2 | ^A2c/2A/2=A/2^A/2 d2c2 | F3/2G/2^G3- G/2^A/2c2- | c3/2d<^df/2 z/2 gf<g^g/2 |

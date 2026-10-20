@@ -1,0 +1,10 @@
+X:4800
+%%from edm
+T:Sonata in D, 1st Movement - Napolitano
+C:Pietro Domenico Paradies
+%%composer Paradies|Pietro Domenico
+% EDM 4800 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d'2a2f2d2A2F2 | D4 z6 F2- | F2 G4 E4 A2 | z/2 F/2G/2F/2G/2F/2G/2F/2 G/2F/2G/2<F/2EF D4 |

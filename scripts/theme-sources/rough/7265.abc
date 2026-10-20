@@ -1,0 +1,10 @@
+X:7265
+%%from edm
+T:Morning, Noon, and Night in Vienna, Overture, 4th Theme
+C:Franz von Suppé
+%%composer Suppé|Franz von
+% EDM 7265 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+g'4 g'f'e'd' | e'4 e'd'c'b | d'4 d'c'af | d4 f2

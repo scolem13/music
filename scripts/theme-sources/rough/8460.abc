@@ -1,0 +1,10 @@
+X:8460
+%%from edm
+T:The Power of Music, Overture - 1st Theme
+C:William Boyce
+%%composer Boyce|William
+% EDM 8460 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+b6 c'2 d'4 e'4 | a4 z/2 d/2=e/2_g/2=g/2a/2b/2c'/2 d'4 f4 | =e4 z/2 c/2d/2e/2f/2g/2a/2b/2 c'4 _e4 | d4

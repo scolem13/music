@@ -1,0 +1,13 @@
+X:461
+T:Well-tempered Clavichord, Book II, Prelude No. 10
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0456, Barlow & Morgenstern B368, EDM 0461 (Musical Theme Dataset, CC BY 4.0)
+N:Præludium  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/8
+L:1/16
+Q:1/4=88
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+z GABcA | BGFE^DA | G/F/Ee2 z2 | ^d/^c/Ba2 z2 |

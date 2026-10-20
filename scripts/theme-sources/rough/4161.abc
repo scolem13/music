@@ -1,0 +1,10 @@
+X:4161
+%%from edm
+T:Deutsche Tanze, K 571, No. 6
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4161 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+D4 D4 D4 | D2C2D2C2D2A,2 | F4 F4 F4 | F2E2F2E2F2D2 |

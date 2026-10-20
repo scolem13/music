@@ -1,0 +1,13 @@
+X:8763
+%%from mtd
+T:Symphony No. 3 in F, Op. 90, 4th Movement - 1st Theme B
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1766, Barlow & Morgenstern B1630, EDM 8763 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=138
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+F2 | =E3 C- C3 F | A3 =E A3 F | =E3 C- C3 =D | =E6 |

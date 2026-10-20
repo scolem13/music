@@ -1,0 +1,10 @@
+X:9791
+%%from edm
+T:Sonata No. 2, Vn. and Piano, 1st Theme
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9791 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e4 f4 g4 a4 | d'8<c'8 | g'2e'2d'2b2 a2f2 e4 | (3c2d2e2 ^f4 g4

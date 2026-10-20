@@ -1,0 +1,11 @@
+X:3217
+T:Gayane, Sword Dance, 1st Theme
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4872, Barlow & Morgenstern K46, EDM 3217 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=207
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z ^fff ffff | ^ffff ffff |: e/=f/^f ff e/=f/^f ff :| ^f=ffe e_eed | d2 |

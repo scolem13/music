@@ -1,0 +1,10 @@
+X:4119
+%%from edm
+T:Concerto in C minor, K 491, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4119 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+B4 B3B B2e2e2 z2 | g2d2e2f2 B8 | g4 g3g2<b2ge2 z2 | D2D2D2D2 E4

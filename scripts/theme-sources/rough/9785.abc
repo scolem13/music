@@ -1,0 +1,11 @@
+X:9785
+%%from edm
+T:In a Summer Garden, 4th Theme
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9785 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+a12- | a2ga ^f2ef d2Bd | e2^fe d2Bd e2fg | a6

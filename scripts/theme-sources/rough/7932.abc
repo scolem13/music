@@ -1,0 +1,10 @@
+X:7932
+%%from edm
+T:Tristan und Isolde, Prelude, 2nd Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7932 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+A2B3c c4 D2 | c2d3e e2 d4- | d2e3f g2c2^a2- | ^a2=a3g g2f3e | ^d2=d3e d2 ^c4 |

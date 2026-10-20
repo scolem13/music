@@ -1,0 +1,11 @@
+X:5823
+%%from edm
+T:Polish Dance, Op. 3, No. 1, 2nd Theme
+C:Franz Scharwenka
+%%composer Scharwenka|Franz
+% EDM 5823 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+B6- Bc d4 | e2f2 g2 z a b4- | b2g2 b2 z/2 z/2 a c4 | d4 e2f2 g2B2 | e2c2

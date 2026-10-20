@@ -1,0 +1,11 @@
+X:6118
+%%from edm
+T:Symphony No. 7 in C, “Great”, 4th Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6118 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+e3e f4 | e4 d4 | ^c4 d4 | e4 f4 | (3^f2g2a2 g4 | f4 e4 | ^d4 e4 | f4 g4 |

@@ -134,7 +134,7 @@
         ? makeEvent({ kind: "note", pitches: [{ midi: Core.noteMidi(tok, ksig, measureAcc), p: 1 }] })
         : makeEvent({ kind: "rest", visible: tok.ch !== "x" });
       ev.id = "w" + written.length; ev.bar = bar; ev.i = tok.i;
-      if (tok.t === "note") ev.tieNext = false;
+      if (tok.t === "note") { ev.tieNext = false; ev.letter = tok.letter.toUpperCase(); }   // the letter written (Fb: E's pitch, letter F)
       if (decos.length) { ev.decos = decos; decos = []; }
       // broken rhythm: "A>B" dots the first and halves the second ("<" the other way); the pair's total is unchanged
       if (pendingBroken && written.length) {

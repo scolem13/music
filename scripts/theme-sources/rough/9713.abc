@@ -1,0 +1,10 @@
+X:9713
+%%from edm
+T:Sonata in G minor, Vn. and Piano, 1st Movement, 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9713 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d'8 b4- | b4 g8 | b8 g4 | z4 e8 | z2 B2 c2d2 e2B2 | c6 A2 A4- | A12- | A4

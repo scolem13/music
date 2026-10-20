@@ -1,0 +1,10 @@
+X:8887
+%%from edm
+T:Overture in G minor - 3rd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8887 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+b'8 a8 | e'8 f8- | f6 g2 a2b2b2c'2 | d'8 c'8 |

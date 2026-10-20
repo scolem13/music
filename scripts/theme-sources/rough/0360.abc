@@ -1,0 +1,10 @@
+X:360
+%%from edm
+T:French Suite No. 1, in D minor, Piano, Courante
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0360 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:F
+A4 A6 G2F2E2 F2D2 B4- | B2B2 A12 A4 d2_d2 | d2e2 _d4

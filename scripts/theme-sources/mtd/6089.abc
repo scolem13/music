@@ -1,0 +1,12 @@
+X:6089
+T:Symphony No. 5 in B-flat, 2nd Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7721, Barlow & Morgenstern S502, EDM 6089 (Musical Theme Dataset, CC BY 4.0)
+N:Andante con moto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=45
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B | GBD E2 E | c2 c/4B/4A/4G/4 F z A | FAD B>c B/4A/4G/4F/4 | E2 F/>G/ E z |

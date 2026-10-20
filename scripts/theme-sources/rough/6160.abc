@@ -1,0 +1,11 @@
+X:6160
+%%from edm
+T:Symphony for Strings, 2nd Movement - Intro.
+C:William Schuman
+%%composer Schuman|William
+% EDM 6160 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/2
+L:1/16
+K:C
+^f8 e8 ^d8 | ^c24 | ^f8 e8 z4 ^d4 | ^c8 ^G8

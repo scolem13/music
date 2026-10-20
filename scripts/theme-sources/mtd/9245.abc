@@ -1,0 +1,12 @@
+X:9245
+T:Mazurkas 47, Op. 68, No. 2, 2nd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2242, Barlow & Morgenstern C255, EDM 9245 (Musical Theme Dataset, CC BY 4.0)
+N:Lento  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=120
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c>c E2 A2 | c>c E2 A2 | e>^d f3 e |{^df} e>=d f3 e |

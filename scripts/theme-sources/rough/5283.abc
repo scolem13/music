@@ -1,0 +1,11 @@
+X:5283
+%%from edm
+T:Introduction and Allegro, Allegro, 1st Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5283 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Gb
+a8 g2f2 | e8 f2g2 | a4 d'8 | a8 g2f2 | e8 f2g2 | a4 d'8 | e'4 d'4 b4 | a8 g2a2 | b4 a4 f4 | e8 d2e2 | f4 d4

@@ -1,0 +1,10 @@
+X:4111
+%%from edm
+T:Concerto in E-flat, K 482, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4111 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+d6 f6 | c6 f6 | B2c2d2 f2e2d2 | c2f2f2 f2=e2_e2 | d6

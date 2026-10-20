@@ -1,0 +1,11 @@
+X:7005
+%%from edm
+T:Der Burger Als Edelmann, Op. 60, Minuet
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7005 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+e4 A2 z2 z/2 a3/2 z2 | z/2 e2-e/2E A2c2 e2a2 | c'2 z2 d'2 z2 ^d'2 z2 | e'8 e'f'e'c' | d'3b e4

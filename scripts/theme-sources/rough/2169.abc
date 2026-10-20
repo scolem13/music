@@ -1,0 +1,10 @@
+X:2169
+%%from edm
+T:Concerto in F, 5th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2169 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+z8 z2 C2 F2G2 | F2C2A,2C2 F2C2F2G2- | G2G2A2B2 A2G2F2G2 | A2G2 A2 G4

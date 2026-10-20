@@ -1,0 +1,11 @@
+X:9398
+%%from edm
+T:Billy the Kid, Ballet - The Open Prairie Intro - 1st Theme
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9398 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+b4 g8 | b6 g6 | b2d'2 c'4 b4 | =a4 f4 c2e2 | g4 e8 | d6 B6 |

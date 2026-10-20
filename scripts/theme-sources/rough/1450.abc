@@ -1,0 +1,10 @@
+X:1450
+%%from edm
+T:Sonata in E minor, Op. 82, Vn. and Piano, 2nd Movement - 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1450 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+c2F2F2c2c2f2- | f2B2B2f2f2b2 | e12 | d8 _d4 | c4 =B4 _B4 | z/2 a3-a/2 g4 _g4 | f4

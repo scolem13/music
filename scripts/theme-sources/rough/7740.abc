@@ -1,0 +1,11 @@
+X:7740
+%%from edm
+T:La Forza del Destino, Overture, 3rd Theme
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% EDM 7740 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:G
+d4 f4 b6 a2 | g4 b4 e'6 ^d'2 | d'4 ^c'4 =c'6 a2 | g8 d4

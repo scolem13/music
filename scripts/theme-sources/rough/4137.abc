@@ -1,0 +1,10 @@
+X:4137
+%%from edm
+T:Concerto in G, K 216, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4137 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+d6- | d2 g2 b2 | a2 g2 g2 | g/2a/2g/2a/2 z4 | e6- | e2 g2 e2 | ^c2 d2 d2 | d/2e/2d/2e/2

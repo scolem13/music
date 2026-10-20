@@ -1,0 +1,10 @@
+X:3117
+%%from edm
+T:Waves of the Danube, Waltzes, No. 2, 1st Theme
+C:Iosif Ivanovici
+%%composer Ivanovici|Iosif
+% EDM 3117 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 _A4 =A4 | d4 z4 c4 | c4 z4 B4 | B12 | z/2 B3-B/2 A4 B4 | f4 z4 e4 | d4 z4 c4 | A12 |

@@ -1,0 +1,11 @@
+X:7804
+%%from edm
+T:Concerto in C minor, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7804 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Ab
+z2 f2 f2a2 a2g2 | z2 b2 b2a2 a2g2 | z2 f2 f2a2 a2g2 | z2 e2 e2g2 g2f2 | z2 d2 d2f2 f2=e2 |

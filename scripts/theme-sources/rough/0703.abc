@@ -1,0 +1,13 @@
+X:703
+%%from mtd
+T:Quartet in A, Op. 18, No. 5, 2nd Movement - Minuet
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0697, Barlow & Morgenstern B601, EDM 0703 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto e trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c2 | e6 | B6 | dcBAGA | c2 B2 c2 | e6 |

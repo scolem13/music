@@ -1,0 +1,11 @@
+X:3960
+%%from edm
+T:Trio, No. 1, in D minor, Op. 49, 1st Movement - 1st Theme B
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3960 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/CHT8Ikq57gQ?t=1m54s
+M:3/4
+L:1/16
+K:F
+E,4 E,4 A,4 | _D4 E4 =D4 | _D4 =D4 =B,4 | A,4 _A,8 |

@@ -1,0 +1,10 @@
+X:3005
+%%from edm
+T:Escales (Ports of Call), 1st Movement, Rome-Palerme, 1st Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3005 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F#
+B2B3A2 =A2<F2G | =E3 z =A=G B2B3B- | B/2A/2 z/2 =A/2F2G2 =E3

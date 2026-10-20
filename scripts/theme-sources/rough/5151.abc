@@ -1,0 +1,10 @@
+X:5151
+%%from edm
+T:Etude Tableau, Op. 33, No. 2
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5151 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c8<c'8 | ^a2 z/2 a3/2 ^g2=g4<g4 c2- | c8- c2 ^A4 =A2 | f6 c8- c2- | c8

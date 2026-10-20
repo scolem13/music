@@ -1,0 +1,10 @@
+X:6632
+%%from edm
+T:Symphony No. 3, in C, Op. 52, 1st Movement - 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6632 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z8 CCCC B,2A,2 | G,2 z2 G,2G,2 A,A,A,A, B,2G,2 | A,2 z2 A,2B,2 CCCC B,2A,2 | G,A,B,C

@@ -1,0 +1,10 @@
+X:5587
+%%from edm
+T:Sonata in F, 2nd Movement - 2nd Theme
+C:Antonio Sacchini
+%%composer Sacchini|Antonio
+% EDM 5587 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c8 z/2 d3/2c2 | c8 d2c2 | c4 f4 a4 | g3a/2b/2 a4

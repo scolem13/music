@@ -1,0 +1,10 @@
+X:4001
+%%from edm
+T:Concerto, 1st Movement - 3rd Theme
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4001 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c4 c2c2 c4 ^A2c2 | ^d2 ^c4 =c2 ^A8 | ^G2F2 G4 =g4 d2^d2 | c4

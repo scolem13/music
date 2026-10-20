@@ -1,0 +1,10 @@
+X:2008
+%%from edm
+T:In Der Heimat, Op. 43, No. 3, Piano
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2008 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F#
+e4 g2a2 e4 a2b2 | c'4 c'2b4<g4 a2 | b2a2e2g2 a2c2 z/2 e3/2f2 | d8 c8 |

@@ -1,0 +1,10 @@
+X:5077
+%%from edm
+T:Fairy Queen, Opera, Hornpipe
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5077 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Bb
+G4 B2c2 d4 =e2_g2 =g4 a2g2 | _g12 =e4 d4 d2c2 | B2e2 d4 A2d2 c4 G2c2 B4 | B12 A4 G8 |

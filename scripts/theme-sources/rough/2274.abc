@@ -1,0 +1,10 @@
+X:2274
+%%from edm
+T:Sonata in B minor, Op. 1, No. 9, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2274 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+z4 E4 G4 | B12- | B4 ^d4 f4 | a12- | a4 ^d6 z d | e3f g8 |

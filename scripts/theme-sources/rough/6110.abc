@@ -1,0 +1,10 @@
+X:6110
+%%from edm
+T:Symphony No. 7 in C, “Great”, 2nd Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6110 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+a4 b4 | ^c'2d'e' e'2^g2 | a4 b4 | ^c'4 e'4 |

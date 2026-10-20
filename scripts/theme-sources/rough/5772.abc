@@ -1,0 +1,10 @@
+X:5772
+%%from edm
+T:Sonatas, Longo 33 in B minor
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5772 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 g2f2 b4- | b4 ^a2b2 c'2a2 | b12 | ^a4 z2 b2 c'4 | d'6 c'2 b4 |

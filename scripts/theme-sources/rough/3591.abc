@@ -1,0 +1,10 @@
+X:3591
+%%from edm
+T:Le Bourgeois Gentilhomme, Opera, Overture, 1st Theme
+C:Jean Baptiste Lully
+%%composer Lully|Jean Baptiste
+% EDM 3591 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+d8- d2d2=e2_g2 | g6 _g4<=g4 a2 | b16 | d6 c4<d4 =e2 | f12

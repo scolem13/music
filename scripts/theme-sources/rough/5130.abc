@@ -1,0 +1,10 @@
+X:5130
+%%from edm
+T:Concerto No. 1, in F-sharp minor, Op. 1, 1st Movement - 2nd Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5130 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+z2 E2 F2G2 =c8 | c4 A2B2 =c8 | c2A2B2c2 =f8 | f4 c2e4<d4 e2 | f4 a4

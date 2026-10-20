@@ -1,0 +1,11 @@
+X:7840
+%%from edm
+T:Sonata in D minor, Op. 2, No. 3, 4th Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7840 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+d2e2f2e2 f2g2f2g2 | a2g/2a/2g/2a/2 g/2a/2g/2a/2g/2a/2g/2a/2 z/2 a3/2g2 f2e2 | f2d2_d2=B2 A2

@@ -1,0 +1,10 @@
+X:5234
+%%from edm
+T:Platee, Minuet, No. 2
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5234 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 a8 | e4 g6 b2 | a2g2f2e2d2_d2 | d2A2 A8 | B2A2B2A2B2A2 | d2_d2 f8 | e2f2 g4 f4 |

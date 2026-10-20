@@ -1,0 +1,11 @@
+X:7009
+%%from edm
+T:Der Burger Als Edelmann, Op. 60, Entry and Dance of the Tailors, 2nd Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7009 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f2dB A6 ^g2 | b2ag f6 f2- | faag gffg geef | d4

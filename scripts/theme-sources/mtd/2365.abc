@@ -1,0 +1,12 @@
+X:2365
+T:Water Music, 1st Movement, Overture
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% MTD 4027, Barlow & Morgenstern H246, EDM 2365 (Musical Theme Dataset, CC BY 4.0)
+N:Overture  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=89
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c4 z cde Tf4 z efg | Te4 z efg Ta4 z gab | Tg4 |

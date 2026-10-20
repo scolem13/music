@@ -12,6 +12,8 @@
 //        sounds; the button becomes Stop. One score plays at a time. transpose = semitones added to the sound.
 //        swing = how late the off-beat eighth is played, as abcjs counts it: 50 or unset = even, 66 = a triplet's last note
 //        (the lit note keeps even time, so in a swung pair it changes a little before the second note sounds).
+//   LessonScore.setSwing(ratio | null)   the listener's swing for every score (null = Auto: the o.swing a page passes to play, which
+//        pages work out from BandPlayer.swingAt so that the notation swings as the band does)
 //   LessonScore.stop()
 // A lit note carries class "ls-on" (the page colours it).
 
@@ -52,6 +54,11 @@
     return s;
   }
 
+  // The listener's swing (the PlayBar's Swing slot, same as BandPlayer.setSwing): a ratio 0.5..0.75, or null = Auto, which is the
+  // page's own o.swing (the band's amount for the style and tempo, as a percentage). Even eighths are 0 to abcjs.
+  var userSwing = null;
+  function setSwing(x){ userSwing = x == null || !isFinite(+x) ? null : Math.max(0.5, Math.min(0.75, +x)); }
+  function swingPercent(auto){ if (userSwing == null) return auto || 0; return userSwing <= 0.5 ? 0 : Math.round(userSwing * 100); }
   var cur = null;                                           // { synth, timer, score, button, label }
   function stop(){
     var c = cur; cur = null; if (!c) return;
@@ -65,7 +72,7 @@
     button.textContent = "\u25a0 Stop"; button.classList.add("bl-on");
     var done = function (){ if (cur === c) stop(); };
     (global.getSoundfontUrl ? global.getSoundfontUrl() : Promise.resolve(undefined)).then(function (url){
-      return synth.init({ visualObj: score.visual, options: { soundFontUrl: url, chordsOff: true, midiTranspose: o.transpose || 0, swing: score.free ? 0 : (o.swing || 0), onEnded: done } }); })
+      return synth.init({ visualObj: score.visual, options: { soundFontUrl: url, chordsOff: true, midiTranspose: o.transpose || 0, swing: score.free ? 0 : swingPercent(o.swing), onEnded: done } }); })
       .then(function (){ return synth.prime(); })
       .then(function (){ if (cur !== c) return;
         c.timer = new A.TimingCallbacks(score.visual, { eventCallback: function (ev){ if (cur !== c) return; if (!ev) return; score.light(flat(ev.elements)); } });
@@ -73,5 +80,5 @@
       .catch(done);
   }
 
-  global.LessonScore = { engrave: engrave, play: play, stop: stop };
+  global.LessonScore = { engrave: engrave, play: play, stop: stop, setSwing: setSwing, swing: function (){ return userSwing; } };
 })(typeof window !== "undefined" ? window : globalThis);

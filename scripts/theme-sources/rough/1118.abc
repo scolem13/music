@@ -1,0 +1,13 @@
+X:1118
+%%from mtd
+T:Symphony No. 7, in A, Op. 92, 2nd Movement - 1st Theme B
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1111, Barlow & Morgenstern B993, EDM 1118 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/4
+Q:1/4=68
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G, G,/A,/ | B, B, | ^F, F,/^G,/ | A, A, | E, E,/E,/ | E, E, | E, ^F,/^G,/ | A, |

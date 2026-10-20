@@ -1,0 +1,10 @@
+X:5573
+%%from edm
+T:Kamennoi-Ostrow, Op. 10, No. 22, 1st Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5573 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F#
+e8 f8 | d8 c4 E4 | A8 c6 e2 | a16 | d'8 c'6 e2 | a16 | b8 a6 c2 | g16 |

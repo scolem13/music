@@ -14,7 +14,7 @@ const URL = "http://127.0.0.1:8500/tools/";
   const state = () => ev(`[${$("bt-meter")}.value, ${$("bt-tempo-n")}.value, ${$("bt-changes")}.value].join("|")`);
   const typeAbc = async abc => { await ev(`(function(){ var t = ${$("bt-abc")}; t.value = ${JSON.stringify(abc)}; t.dispatchEvent(new Event("input", { bubbles: true })); })()`); await b.sleep(600); };
   try {
-    for (const page of ["backing-track.html", "backing-track-classic.html", "backing-track-b.html"]) {
+    for (const page of ["backing-track.html", "backing-track-classic.html"]) {
       await b.goto(URL + page); await b.sleep(1300);
       await set("bt-changes", "basic"); await b.sleep(400);
       const t0 = (await state()).split("|");

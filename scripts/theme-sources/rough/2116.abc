@@ -1,0 +1,10 @@
+X:2116
+%%from edm
+T:Mississippi Suite, 2nd Movement, Huckleberry Finn
+C:Ferde Grofé
+%%composer Grofé|Ferde
+% EDM 2116 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+b4 c'2 e'6- | e'2c'2b2 g2f2e2 | c4 e2 =B6- | =B4 e2 _B6- | B4 e2 =B4 e2 | c4

@@ -1,0 +1,10 @@
+X:5947
+%%from edm
+T:Quartet No. 10 in E-flat, Op. 125, 3rd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5947 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+e6 f2 z4 | f6 g2 z4 | e8 a2c'2 | b8 e'2g2 | f3ga3/2b/2 c'2a2f2 |

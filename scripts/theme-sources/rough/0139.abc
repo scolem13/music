@@ -1,0 +1,10 @@
+X:139
+%%from edm
+T:Brandenburg Concerto No. 6, in B-flat, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0139 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+BA2<B2FDB, FE2<F2DB,F, | B,A,2<B,2F,D2 B,2<F2DB2

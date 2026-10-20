@@ -1,0 +1,10 @@
+X:1909
+%%from edm
+T:Symphony, Op. 26, "Rustic Wedding", 3rd Movement - 2nd Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1909 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+E3e e6- ed c2 z2 | a2 z2 e6- ed c2 z2 | E3e e2d2 B2c2 d2 z2 | f2 z2 e2f2 d2e2 z/2 c3/2B2 | c2d2

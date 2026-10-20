@@ -1,0 +1,11 @@
+X:7599
+%%from edm
+T:Symphony No. 4, in F minor, Op. 36, 1st Movement - 3rd Theme (Variant of T253)
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7599 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:9/8
+L:1/16
+K:B
+b3a a4 =a2 z2 g3=gg2 | f2=f2 g4 ^f2 z2 e3dd2 | c2B2

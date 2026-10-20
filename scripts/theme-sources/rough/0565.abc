@@ -1,0 +1,13 @@
+X:565
+%%from mtd
+T:Concerto for Violin and Orchestra, 2nd Movement
+C:Béla Bartók
+%%composer Bartók|Béla
+% MTD 0559, Barlow & Morgenstern B463, EDM 0565 (Musical Theme Dataset, CC BY 4.0)
+N:Andante tranquillo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:9/8
+L:1/8
+Q:1/4=37
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z/ d/ d^c cBA/B/ G D2 | z/ D/ GA B>AB/^c/ d A2 |

@@ -1,0 +1,10 @@
+X:1444
+%%from edm
+T:Serenade, Op. 20, Str. Orchestra, 1st Movement - 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1444 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:E
+B12 | a12- | a6 =g6 | g6 f4 e2 | d6 e4 c2 | B6 c4 F2 | F6

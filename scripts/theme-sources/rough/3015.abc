@@ -1,0 +1,10 @@
+X:3015
+%%from edm
+T:Piece, flute Solo.
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3015 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+f6 ^c6- | ^c2^G2^d2 F2^A2^F2 | f6 ^c6- | ^c2^G2^d2 F2^A2^F2 | ^g8 b4- | b2^a2^g4<g4 |

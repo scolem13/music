@@ -1,0 +1,10 @@
+X:6154
+%%from edm
+T:American Festival Overture, 3rd Theme, Counter Theme
+C:William Schuman
+%%composer Schuman|William
+% EDM 6154 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e4 ^f4 e4 a4 | b4 d'4 ^c'8 | e'8- e'2

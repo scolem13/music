@@ -1,0 +1,10 @@
+X:222
+%%from edm
+T:Partita No. 1 in B-flat, Piano, Prelude
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0222 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z BB/2A/2B cBdB eBB/2A/2B dBeB | f

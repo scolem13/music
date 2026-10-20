@@ -1,0 +1,11 @@
+X:8038
+%%from edm
+T:Portsmouth Point, Overture, 1st Theme A
+C:William Walton
+%%composer Walton|William
+% EDM 8038 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+d'4 g4 z2 d'2 g4 | d'2g2 z fed2<c2B cBc2- | cdef gab2 e2 z2 a2cB | c2d3 ecA c2

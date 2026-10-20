@@ -1,0 +1,10 @@
+X:7836
+%%from edm
+T:Sonata No. 5, in E minor, 4th Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7836 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+e2 B2 e2 | cB A2 c2 | B2 F2 B2 | G2 F2 E2 | ef g2 e2 | d2 f2 d2 | cd e2 c2 | B6 |

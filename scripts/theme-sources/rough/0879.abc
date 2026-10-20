@@ -1,0 +1,13 @@
+X:879
+%%from mtd
+T:Sonata No. 12, in A-flat, Op. 26, 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0873, Barlow & Morgenstern B755, EDM 0879 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=101
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+ecf=A | dBeG c_AdF | BGc=E AFB=D | G_E=DE |

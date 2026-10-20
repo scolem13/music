@@ -1,0 +1,10 @@
+X:2608
+%%from edm
+T:Quartet in E-flat, Op. 76, No. 6, 2nd Movement, "Fantasia"
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2608 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+B4 ^A4 B4 | ^c3^d e4 d4 | ^d4 ^c4 B4 | B4 ^A2

@@ -1,0 +1,10 @@
+X:8392
+%%from edm
+T:Sonata in C, 3rd Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8392 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e'4 g'2f'2 e'2d'2 | c'3b c'2c'2 b2c'2 | c'2d'2g2d'2e'2f'2 | f'2e'2- e'/2 (3d'c'b c'/2 z/2 d'/2 c'4 |

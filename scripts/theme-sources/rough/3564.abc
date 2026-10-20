@@ -1,0 +1,10 @@
+X:3564
+%%from edm
+T:Sonata No. 7 in F, 4th Movement - Gavotte
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3564 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+a4 b4 c'4 b2a2 | g4 a2b2 a4 f4 | c'4 b2a2 d'4 c'4 | b4 a4 g8 |

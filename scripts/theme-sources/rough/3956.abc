@@ -1,0 +1,10 @@
+X:3956
+%%from edm
+T:Symphony No. 5, in D, Chorale, 3rd Movement - 4th Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3956 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f8 e8 | a12 a4 | f4 a4 d'4 e'4 | f'4 g'4 f'4

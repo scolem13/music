@@ -1,0 +1,12 @@
+X:4100
+T:Concerto in D minor, K 466, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5751, Barlow & Morgenstern M478, EDM 4100 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=268
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+z D FAdf | a2 d2 ^c2 d2 | b6 ag | gfed ^cdcd | e2 |

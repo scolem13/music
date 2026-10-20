@@ -1,0 +1,10 @@
+X:7666
+%%from edm
+T:Joe Clark Steps Out, Theme A
+C:Charles Vardell
+%%composer Vardell|Charles
+% EDM 7666 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+d'2e'2f'2e'2 | d'2c'2 b4 | d'2e'2f'2e'2 | d'8 | d'2d'e' f'2e'2 | d'2c'2 b4 | gabg a2a2 | g8 |

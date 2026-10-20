@@ -1,0 +1,10 @@
+X:3225
+%%from edm
+T:Toccata, Piano, 1st Theme
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% EDM 3225 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+B,4 E4 B,4 E4 | B,4 E4 B,4 E4 | B,4 =D4 B,4 D4 | B,4 =D4 B,4 D4 |

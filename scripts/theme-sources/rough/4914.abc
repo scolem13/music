@@ -1,0 +1,10 @@
+X:4914
+%%from edm
+T:Mouvements Perpetuels, No. 3, 2nd Theme
+C:Francis Poulenc
+%%composer Poulenc|Francis
+% EDM 4914 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A4 A4 A6 G2 | A2G2A2c4<A4 G2 | A2G2A2d2 z/2 c/2^A=AG A2A2 |

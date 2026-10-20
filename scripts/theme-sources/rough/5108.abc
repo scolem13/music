@@ -1,0 +1,10 @@
+X:5108
+%%from edm
+T:Suite No. 7, in D minor, Courant
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5108 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+D D4 z2 A,4 D- | D3E2 E/2F/2E/2F/2E/2F/2 E/2F/2E/2F/2E/2F/2D | E z2 F4 D4 A- | A3B2 G/2A/2G/2A/2G/2A/2 G/2A/2G/2A/2G/2A/2F | G

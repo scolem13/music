@@ -1,0 +1,14 @@
+X:4606
+%%from mtd
+T:Symphony No. 40, in G minor, K 550, 4th Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6255, Barlow & Morgenstern M980, EDM 4606 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 71  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/2
+L:1/8
+Q:1/4=270
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+f2 | f8 |{/=e} f4{/e} f4 | b3 g _e4- | e4 d4- | d2 z =B c2 z d | e2 z f ^f2 z g |

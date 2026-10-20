@@ -1,0 +1,10 @@
+X:219
+%%from edm
+T:Italian Concerto, 3rd Movement, 2nd Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0219 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+F4 A4 c4 A4 | F4 B2c2 d4 F4 | G4 B4 e4 c4 | f2e2 f4

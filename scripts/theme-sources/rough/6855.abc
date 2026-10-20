@@ -1,0 +1,12 @@
+X:6855
+%%from mtd
+T:Du Und Du, Waltzes from Die Fledermaus, Op. 367, No. 3, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8484, Barlow & Morgenstern S1246, EDM 6855 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=147
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+AC^GA | d z c z c z | z2 BCAB | d z c z c z | f6 | e6 | B6 | d2 c z c2 |

@@ -1,0 +1,10 @@
+X:7835
+%%from edm
+T:Sonata No. 5, in E minor, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7835 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B3d/2c/2 B2 B4 B2 e3g/2f/2 | e2 e4 e2 ^d2f/2e/2d2 d3- | ^dd2e3 =dc2 B4

@@ -1,0 +1,13 @@
+X:8771
+%%from mtd
+T:Symphony No. 4 in E minor, Op. 98, 1st Movement - 4th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1774, Barlow & Morgenstern B1638, EDM 8771 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=149
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+F,2 E2- | E F E D | G2 F2- | F ^C D E | ^A, B,2 |

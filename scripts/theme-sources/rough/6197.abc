@@ -1,0 +1,10 @@
+X:6197
+%%from edm
+T:Concerto in A minor, Op. 129, 1st Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6197 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z4 e4 e'4 c'2a2 | a4 ^g4 a4 e3=g | f4 f4 f'4 d'3b | ^g3a b8

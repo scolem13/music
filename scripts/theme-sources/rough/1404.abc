@@ -1,0 +1,10 @@
+X:1404
+%%from edm
+T:Concerto in E minor, Op. 85, 3rd Movement
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1404 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+D,2 F,2 B,2 | f2 _g2 =g2 | z2 B,2 C2 | D4 F2 | z2 G,2 A,2 | B,4 D2 | z2 B,2 A,2 | F,4

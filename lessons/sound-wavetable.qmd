@@ -51,4 +51,20 @@ sounds and looks the same as the real thing, just with a smaller table.
 
 - [Sound 10: Granular synthesis](sound-granular.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Wavetable synthesis." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wavetable_synthesis](https://en.wikipedia.org/wiki/Wavetable_synthesis).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: From Polyphony To Digital Synths." *Sound On Sound*, Jan. 2001. [www.soundonsound.com/techniques/polyphony-digital-synths](https://www.soundonsound.com/techniques/polyphony-digital-synths).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

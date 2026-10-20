@@ -1,0 +1,10 @@
+X:2532
+%%from edm
+T:Quartet in G, Op. 64, No. 4, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2532 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+z2 A2 A2A2 c2 ^A4 ^G2- | ^G2 A4 =F4 E4 ^C2 | z2 D2 D2D2

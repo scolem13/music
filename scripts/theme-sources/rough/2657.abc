@@ -1,0 +1,10 @@
+X:2657
+%%from edm
+T:Symphony in F-sharp minor, No. 45, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2657 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+A4 z/2 f3-f/2 e2d2 | d8 c4 | z2 A2 z/2 =g3-g/2 f2e2 | e8 d2 z2 | z2 A2 z/2 a3-a/2 =g2f2 | f2

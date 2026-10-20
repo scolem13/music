@@ -81,6 +81,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../apps/shared/audio-tap.js?v=1"></script>
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
 <script src="../../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../../apps/shared/midi-learn.js?v=1" defer=""></script>
 <script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
 <style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
 <!-- Click the number shown beside any slider to type a value. -->
@@ -144,10 +146,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
  <span class="dropdown-text">Song Builder</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../../practice/songs-classic.html">
- <span class="dropdown-text">Song Builder (Classic)</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../../practice/tunes.html">
  <span class="dropdown-text">Tunes</span></a>
   </li>  
@@ -166,6 +164,74 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../../practice/dictation.html">
  <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/theory-drills.html">
+ <span class="dropdown-text">Theory Drills</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/exercise-builder.html">
+ <span class="dropdown-text">Exercise Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/analysed-scores.html">
+ <span class="dropdown-text">Analysed Scores</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/triads.html">
+ <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/roman-numerals.html">
+ <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/seventh-chords.html">
+ <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/progressions.html">
+ <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/non-chord-tones.html">
+ <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/melodic-analysis.html">
+ <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/pop-forms.html">
+ <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/accompaniment-textures.html">
+ <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/secondary-dominants.html">
+ <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/secondary-diminished.html">
+ <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/mode-mixture.html">
+ <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/neapolitan.html">
+ <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/augmented-sixths.html">
+ <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../practice/jazz-theory.html">
+ <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -219,10 +285,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../../tools/chord-sheet.html">
  <span class="dropdown-text">Chord Sheet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../tools/chord-sheet-deluxe.html">
- <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../tools/drumset.html">
@@ -279,6 +341,14 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../../tools/tap-latency.html">
  <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
   </li>  
     </ul>
   </li>
@@ -411,7 +481,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       '</li>';
   } else {
     ul.innerHTML =
-      '<li class="nav-item dropdown" id="auth-signin-item">' +
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
         '<a class="nav-link dropdown-toggle" href="#" role="button"' +
         '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
           'Sign in' +
@@ -537,6 +607,10 @@ document.addEventListener('DOMContentLoaded', async function () {
 .ar-on,.ar-tools .btn.ar-on,.ao-seg .btn.ar-on,.ao-row .btn.ar-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
 .ar-chip:not(.ar-on){text-decoration:line-through;opacity:.75}
 .ar-staff{min-height:3rem;overflow-x:auto}
+.ar-quiz{margin:1rem 0 1.8rem;padding:.8rem 1rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
+.ar-quiz .ar-right{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.ar-quiz .ar-wrong{background:#b3261e;border-color:#b3261e;color:#fff;text-decoration:line-through}
+.ar-fb{font-size:.95rem}.ar-fb-ok{color:#2e7d32}.ar-fb-no{color:#b3261e}
 .ar-hint,.ao-hint{font-size:.82rem;color:var(--site-ink-2);margin:.3rem 0}
 .ar-organ{margin:1rem 0 1.8rem;padding:1rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
 .ao-top{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end}
@@ -583,23 +657,23 @@ document.addEventListener('DOMContentLoaded', async function () {
   <span id="ar-status" aria-live="polite" data-pri="2"></span>
 </div>
 <script src="../../apps/shared/soundfont.js"></script>
-<script src="../../apps/shared/playbar.js?v=1"></script>
+<script src="../../apps/shared/playbar.js?v=2"></script>
 <script src="../../apps/shared/abcjs-basic.js"></script>
 <script src="../../apps/shared/abc-core.js?v=1"></script>
 <script src="../../apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="../../apps/shared/abc-transpose.js?v=4"></script>
 <script src="../../apps/shared/tune-chart.js?v=31"></script>
 <script src="../../apps/shared/voicings.js?v=5"></script>
-<script src="../../apps/shared/band/harmony.js?v=32"></script>
+<script src="../../apps/shared/band/harmony.js?v=33"></script>
 <script src="../../apps/shared/band/bass.js?v=15"></script>
 <script src="../../apps/shared/band/comp.js?v=30"></script>
-<script src="../../apps/shared/band/catalog.js?v=36"></script>
-<script src="../../apps/shared/band/drums.js?v=16"></script>
-<script src="../../apps/shared/band/congas.js?v=2"></script>
-<script src="../../apps/shared/band/sounds.js?v=14"></script>
-<script src="../../apps/shared/band/player.js?v=117"></script>
+<script src="../../apps/shared/band/catalog.js?v=37"></script>
+<script src="../../apps/shared/band/drums.js?v=17"></script>
+<script src="../../apps/shared/band/congas.js?v=3"></script>
+<script src="../../apps/shared/band/sounds.js?v=15"></script>
+<script src="../../apps/shared/band/player.js?v=118"></script>
 <script src="../../apps/shared/band/notation.js?v=12"></script>
-<script src="../../apps/shared/lessons/arrange-kit.js?v=2"></script>
+<script src="../../apps/shared/lessons/arrange-kit.js?v=4"></script>
 <script>ArrangeLesson.init();</script>
 <script src="../../apps/shared/lessons/sections.js?v=1"></script>
 

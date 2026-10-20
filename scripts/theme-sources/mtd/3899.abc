@@ -1,0 +1,12 @@
+X:3899
+T:Songs Without Words, No. 9 in E, Op. 30, No. 3, "Consolation"
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5551, Barlow & Morgenstern M289, EDM 3899 (Musical Theme Dataset, CC BY 4.0)
+N:Andante sostenuto in E, op. 30 no. 3  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G2 F>E | B A2 G FEDE | G2 F z F2 F>G | A3 F CDG>F | E2 |

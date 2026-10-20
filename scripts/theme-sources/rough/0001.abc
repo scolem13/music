@@ -1,0 +1,10 @@
+X:1
+%%from edm
+T:La Poupée de Nuremberg (the Nurenberg Doll), Overture, 1st Theme
+C:Adolphe Adam
+%%composer Adam|Adolphe
+% EDM 0001 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+D2 z2 F2 z2 G2 z2 B2 z2 | B6 G2 F4 D2 z2 | F2G2F2E2 D2C2D2E2 | F4 G2 z E D4 C2

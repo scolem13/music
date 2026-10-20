@@ -1,0 +1,11 @@
+X:9856
+%%from edm
+T:La Peri Dance, Poem for Orchestra, 4th Theme
+C:Paul Dukas
+%%composer Dukas|Paul
+% EDM 9856 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:E
+c'4 b2 ^a2g2c'2 | c'2b2^a2 =g2g2b2 | b2^a2=a2 f2=g2a2 | ^a2g2=g2 =f2^f2g2 |

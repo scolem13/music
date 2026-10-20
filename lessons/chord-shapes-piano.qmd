@@ -176,4 +176,22 @@ The left hand plays a shell that fixes the chord's name and type. The right hand
 - [Guitar chord shapes](chord-shapes-guitar.qmd) has the same ideas on the guitar.
 - The [Chord Library](../tools/chord-library.qmd), set to Keyboard, has every close, shell, rootless and drop voicing of every chord.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Hutchinson, Robert. "Introduction to Jazz Theory." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/IntroductionToJazzTheory.html](https://musictheory.pugetsound.edu/mt21c/IntroductionToJazzTheory.html).
+
+Hutchinson, Robert. "Jazz Chord Voicings." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/JazzChordVoicings.html](https://musictheory.pugetsound.edu/mt21c/JazzChordVoicings.html).
+
+Hutchinson, Robert. "Voice Leading First-Inversion Triads." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/VoiceLeadingFirstInversionTriads.html](https://musictheory.pugetsound.edu/mt21c/VoiceLeadingFirstInversionTriads.html).
+
+**For teachers**
+
+Levine, Mark. *The Jazz Theory Book*. Sher Music, 1995.
+:::
+<!-- /works-cited -->
+
 {{< include _shape-kit.qmd >}}

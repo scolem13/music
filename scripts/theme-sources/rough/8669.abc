@@ -1,0 +1,10 @@
+X:8669
+%%from edm
+T:Sonata in F minor, Op. 120, No. 1, Cl. Viola and Piano, 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8669 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Ab
+e'6 e'2 | d'4- d'd'/2c'/2b/2=a/2b/2c'/2 | d'6 d'2 | c'4- c'd'/2=b/2_b/2a/2b/2=b/2 | f4

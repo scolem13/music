@@ -1,0 +1,10 @@
+X:2081
+%%from edm
+T:Sonata in C minor, Op. 45, No. 3, 1st Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2081 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+G12 | B12 | G6 z/2 F3/2E2G2 | B12 | G6 G6 | G6 z/2 F3-F/2E2 | F12 | B6

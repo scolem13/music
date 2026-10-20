@@ -1,0 +1,10 @@
+X:8936
+%%from edm
+T:Symphony No. 7 in E, 2nd Movement - 1st Theme A
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8936 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+e4 f4 g6 ef | g6 f=g ^g6 ab | c'2b2a2g2 g4 f4 | A4 B4 c6

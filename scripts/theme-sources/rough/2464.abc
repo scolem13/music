@@ -1,0 +1,13 @@
+X:2464
+%%from mtd
+T:Quartet in D, Op. 20, No. 4, "The Rose of Venice", 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4125, Barlow & Morgenstern H345, EDM 2464 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro di molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=188
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+D D D | D3 | G3 | F B A | d2{c} B/A/4B/4 | A z z |

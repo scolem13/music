@@ -1,0 +1,10 @@
+X:7477
+%%from edm
+T:Concerto No. 2, in G, Op. 44, 2nd Movement - 1st Theme B
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7477 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 a4 d'4 | f'2>e'2 g8 | f4 a4 d'4 | f'2>e'2 g8 | f4 d'6 ^a2 | b4 z8 | e4 f2g2 a2b2 | c'2d'2 e'2f'2 g'3g' | g'8

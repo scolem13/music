@@ -1,0 +1,10 @@
+X:5222
+%%from edm
+T:La Joyeuse, 1st Theme
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5222 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+D2E2F2G2 A4 A4 | B4 B4 A4 d4 | A4 B4 A4 d2A2 | B2A2G2F2 z/2 E/2F/2E/2F/2E/2F/2E/2F/2E/2F/2E/2F/2E/2F/2E/2 |

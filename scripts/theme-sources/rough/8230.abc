@@ -1,0 +1,11 @@
+X:8230
+%%from edm
+T:Fancy Free Ballet - At the Bar - Intro
+C:Leonard Bernstein
+%%composer Bernstein|Leonard
+% EDM 8230 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+a16- | a8 d8- | d8 e8 | g16- | g16 | g8 a8 | d8 e8- | e4 g12 | ^f16- | ^f16- | ^f8 e8 | d8 ^F8 | E8

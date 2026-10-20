@@ -79,6 +79,30 @@ This lesson is for a guitarist who knows the open chords. It puts the shapes of 
 
 <div class="bl-step" data-step="sec"></div>
 
+## 5. The two-five-one
+
+**Dm7, G7, Cmaj7.** The chord before the G7 is Dm7, and the G7 goes home to C. Each root is a fifth below the last. All three are open shapes: Dm7 (x x 0 2 1 1), G7 (3 2 0 0 0 1) and Cmaj7 (x 3 2 0 0 0). Hold each for its bar and listen to the G7 pull toward the C.
+
+<div class="bl-step" data-step="251"></div>
+
+## 6. The two-five-one in minor
+
+**Dm7♭5, G7, Cm7.** The same fall in C minor. The first chord is half-diminished (D, F, A♭, C) and the home chord is minor. The library gives Dm7♭5 as a small four-string shape up the neck (fifth fret on the A string); Cm7 is a barre at the third fret. Change the key and watch which shapes move.
+
+<div class="bl-step" data-step="251m"></div>
+
+## Build your own
+
+Pick a chord for each bar from the ones in this lesson. Fretboard diagrams and the staff follow your choices. Try a two-five in bars 3 and 4.
+
+<div id="bl-builder" class="bl-widget"></div>
+
+
+## Test your ear
+
+The band plays four bars with one of five kinds of change in them. Say which. The chart appears when you answer.
+
+<div id="bl-quiz" class="bl-widget"></div>
 
 ## Where to go next
 
@@ -104,20 +128,20 @@ This lesson is for a guitarist who knows the open chords. It puts the shapes of 
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
-<script src="/apps/shared/lessons/score.js?v=4"></script>
+<script src="/apps/shared/lessons/score.js?v=5"></script>
 <script src="/apps/shared/lessons/tunes.js?v=5"></script>
 <script src="/apps/shared/lessons/diagrams.js?v=1"></script>
 <script src="/apps/shared/lessons/chord-staff.js?v=3"></script>
 <script src="/apps/shared/lessons/chord-lesson.js?v=2"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
-<script src="/apps/shared/band/harmony.js?v=32"></script>
+<script src="/apps/shared/band/harmony.js?v=33"></script>
 <script src="/apps/shared/band/bass.js?v=15"></script>
 <script src="/apps/shared/band/comp.js?v=30"></script>
-<script src="/apps/shared/band/catalog.js?v=36"></script>
-<script src="/apps/shared/band/drums.js?v=16"></script>
-<script src="/apps/shared/band/sounds.js?v=14"></script>
-<script src="/apps/shared/band/player.js?v=116"></script>
+<script src="/apps/shared/band/catalog.js?v=37"></script>
+<script src="/apps/shared/band/drums.js?v=17"></script>
+<script src="/apps/shared/band/sounds.js?v=15"></script>
+<script src="/apps/shared/band/player.js?v=117"></script>
 <script>
 ChordLesson.init({
  "tonic": 0,
@@ -145,6 +169,11 @@ ChordLesson.init({
   }
  ],
  "steps": {
+  "251": {
+   "bars": "Dm7|G7|Cmaj7|Cmaj7",
+   "diagram": "guitar",
+   "staff": "chords"
+  },
   "basic": {
    "bars": "C|Am|F|G",
    "diagram": "guitar",
@@ -167,8 +196,119 @@ ChordLesson.init({
    "diagram": "guitar",
    "staff": "chords",
    "vs": "pass"
+  },
+  "251m": {
+   "bars": "Dm7b5|G7|Cm7|Cm7",
+   "diagram": "guitar",
+   "staff": "chords",
+   "minor": true,
+   "vs": "251"
   }
- }
+ },
+ "builder": {
+  "chords": [
+   "C",
+   "Cmaj7",
+   "Am",
+   "Am7",
+   "Dm7",
+   "Em",
+   "E7",
+   "F",
+   "G",
+   "G7",
+   "D7",
+   "G/B"
+  ],
+  "bars": 4,
+  "start": [
+   0,
+   2,
+   5,
+   8
+  ],
+  "presets": [
+   [
+    "The plain version",
+    "C|Am|F|G"
+   ],
+   [
+    "With a two-five",
+    "Cmaj7|Am7|Dm7|G7"
+   ],
+   [
+    "A two-five-one",
+    "Dm7|G7|Cmaj7|Cmaj7"
+   ],
+   [
+    "With a secondary dominant",
+    "C|E7|Am|G7"
+   ]
+  ],
+  "diagram": "guitar",
+  "staff": "chords"
+ },
+ "quizzes": [
+  {
+   "host": "bl-quiz",
+   "question": "Which changes did the band play?",
+   "items": [
+    {
+     "name": "The plain four chords (C, Am, F, G)",
+     "bars": "C|Am|F|G",
+     "why": "No outside notes: every chord is in the key."
+    },
+    {
+     "name": "A secondary dominant (E7 into Am)",
+     "bars": "C|E7|Am|G",
+     "why": "The G♯ of E7 leads up into the A of Am."
+    },
+    {
+     "name": "A two-five-one in major (Dm7, G7, Cmaj7)",
+     "bars": "Dm7|G7|Cmaj7|Cmaj7",
+     "why": "Each root falls a fifth, and the last chord is home."
+    },
+    {
+     "name": "A two-five-one in minor (Dm7♭5, G7, Cm7)",
+     "bars": "Dm7b5|G7|Cm7|Cm7",
+     "minor": true,
+     "why": "The same fall, but the home chord is minor."
+    },
+    {
+     "name": "Passing chords (G/B and C/G)",
+     "bars": "C G/B|Am C/G|F F#dim|G",
+     "why": "The bass walks by step under the chords."
+    }
+   ]
+  }
+ ]
 });
 </script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"ii–V–I progression." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ii%E2%80%93V%E2%80%93I_progression](https://en.wikipedia.org/wiki/Ii%E2%80%93V%E2%80%93I_progression).
+
+"Secondary chord." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Secondary_chord](https://en.wikipedia.org/wiki/Secondary_chord).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "Applied Chords." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/appliedChords.html](https://openmusictheory.github.io/appliedChords.html).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "Harmony in Pop/Rock Music." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony.html](https://openmusictheory.github.io/popRockHarmony.html).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "The '50s Doo-Wop Progression." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony-dooWop.html](https://openmusictheory.github.io/popRockHarmony-dooWop.html).
+
+**For teachers**
+
+de Clercq, Trevor, and David Temperley. "A Corpus Analysis of Rock Harmony." *Popular Music*, vol. 30, no. 1, 2011, pp. 47-70. [www.cambridge.org/core/journals/popular-music/article/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4](https://www.cambridge.org/core/journals/popular-music/article/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4). Read the abstract and summary.
+
+Doll, Christopher. *Hearing Harmony: Toward a Tonal Theory for the Rock Era*. U of Michigan P, 2017.
+
+Levine, Mark. *The Jazz Theory Book*. Sher Music, 1995.
+:::
+<!-- /works-cited -->
+

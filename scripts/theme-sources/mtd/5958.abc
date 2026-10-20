@@ -1,0 +1,12 @@
+X:5958
+T:Quartet No. 14 in D minor, "Der Tod und das Madchen", 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7590, Barlow & Morgenstern S371, EDM 5958 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=134
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c | =BcA>_B c3 A | ^GAF>=G A4 | A2 A2 c2 c>d | dcAB c7/2 |

@@ -1,0 +1,10 @@
+X:1634
+%%from edm
+T:Three Chorals, Organ, No. 1, 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1634 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+B4 B4 c4 | B2A2 B4 G4 | F4 E8 | c4 c4 d4 | c2B2 e4 =d4 | =c4 B8 |

@@ -1,0 +1,10 @@
+X:20
+%%from edm
+T:Iberia, Book II, Triana, 2nd Theme
+C:Isaac M. F. Albéniz
+%%composer Albéniz|Isaac M. F.
+% EDM 0020 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e8 e4 | z/2 e2-e/2d e z e4 de | f8 g4 | z/2 a2-a/2g g z f4 ef | g

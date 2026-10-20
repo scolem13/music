@@ -1,0 +1,10 @@
+X:5189
+%%from edm
+T:Suite No. 2, Op. 17, 1st Movement - Intro
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5189 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c4 c2d2 e8- | e4 c2d2 e2f2g2f2 | e2d2c2d2 e4 c2B2 | A2B2 c4 d2G2A2B2 | c4

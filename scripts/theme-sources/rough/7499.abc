@@ -1,0 +1,11 @@
+X:7499
+%%from edm
+T:Polonaise, from Eugene Onegin, 3rd Act
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7499 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+d'2 z/2 a/2^g a4- a3/2g<ab/2 | d'g z/2 g/2f g4- g3/2a<bd'/2 | e'2e'3- e'/2f'<g'f'/2

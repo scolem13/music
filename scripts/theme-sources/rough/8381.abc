@@ -1,0 +1,10 @@
+X:8381
+%%from edm
+T:Sonata No. 6 in A, Cello and Piano, 1st Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8381 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+e2 z/2 f/2 z/2 g/2 a2a2 a3/2 z/2 g2 f4 | e2 (3e/2f/2g/2 (3a/2b/2c'/2 e2 z/2 d/2>c/2d/2 d4 (3cAB (3cde |

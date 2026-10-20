@@ -1,0 +1,10 @@
+X:9840
+%%from edm
+T:M. Henry Noel, His Galliard, Lute and Strings
+C:John Dowland
+%%composer Dowland|John
+% EDM 9840 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+b3 a g2 | a2 b2 c'2 | d'6- | d'2 z2 f'2 | e'3 d' c'2 | b2 a3 g | a6- | a6 | d'3 e' f'2- | f'2 c'4 | d'6 | c'2 b3 b |

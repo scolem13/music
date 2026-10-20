@@ -1,0 +1,11 @@
+X:6534
+%%from edm
+T:The Bard, Op. 64, 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6534 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Gb
+z =g2a2 b2a2 d2 z4 z | z4 z a2b2 =b2_b2 e2

@@ -1,0 +1,11 @@
+X:5542
+%%from edm
+T:Sinfonietta, Op. 52, 2nd Movement
+C:Albert Roussel
+%%composer Roussel|Albert
+% EDM 5542 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+a6 d2 d4 | a4 d4 a4- | a4 f4 a4 | c' d'8- d'c'2 | e'/2e'/2 e8- e3- | e8- e2

@@ -1,0 +1,10 @@
+X:9309
+%%from edm
+T:Scherzo in C-sharp minor, Op. 39, 3rd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9309 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+A12 | d12 | e12 | f4 b'2f'2 a'2d'2 | g'2d'2f'2a2e'2a2 |

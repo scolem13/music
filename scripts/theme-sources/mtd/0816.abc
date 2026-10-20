@@ -1,0 +1,12 @@
+X:816
+T:Sonata No. 1, in F minor, Op. 2, No. 1, 3rd Movement - 1st Theme - Minuet
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0810, Barlow & Morgenstern B692, EDM 0816 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto: Allegretto – trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=164
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+A | B G z | A F F | =E F G | B A |

@@ -1,0 +1,10 @@
+X:1428
+%%from edm
+T:Introduction and Allegro, Op. 47, Str. Quart. and Str. Orchestra, 3rd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1428 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+ddB_G =GABc d2g2 A/2B/2c/2d/2e2 | F2e2 G/2A/2B/2c/2d2 =E2B2 AFED |

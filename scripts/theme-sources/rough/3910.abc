@@ -1,0 +1,13 @@
+X:3910
+%%from mtd
+T:Songs Without Words, No. 28 in G, Op. 62, No. 4, "Morning Song"
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5562, Barlow & Morgenstern M300, EDM 3910 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro Con Anima In G Op. 62 No. 4  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:9/8
+L:1/8
+Q:1/4=149
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+D G2 F | A3- A2 G c2 B | e3- e2 d d2 d | g2 d B2 G{/A} GFG | B3 A2 |

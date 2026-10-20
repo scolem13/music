@@ -1,0 +1,13 @@
+X:6413
+%%from mtd
+T:Etudes, Op. 8, No. 10
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% MTD 8044, Barlow & Morgenstern S817, EDM 6413 (Musical Theme Dataset, CC BY 4.0)
+N:Nr. 10 in Des-dur  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=97
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+=EFG=GAd | =AB_c=cdg | =Bcd=dea | b__ba=g_gf |

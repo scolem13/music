@@ -1,0 +1,10 @@
+X:3569
+%%from edm
+T:Suite No. 1 in G minor, 3rd Movement - Sarabande
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3569 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g6 d2 e4 | d2e4<c4 d2 | B/2c/2B/2c/2B/2c/2B/2c/2 B/2c/2B/2c/2AB A4 | B/2c/2B/2c/2B/2c/2B/2c/2 B/2c/2B/2c/2AB A4 | d3_G2<=G2d2<e2G | _G3e d2

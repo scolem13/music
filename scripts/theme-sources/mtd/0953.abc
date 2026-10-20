@@ -1,0 +1,12 @@
+X:953
+T:Sonata No. 28, in A, Op. 101, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0947, Barlow & Morgenstern B829, EDM 0953 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio ma non troppo con affetto - Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=21
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+E4 E(3F/E/^D/Ec | ^G3B/A/ A2e2 | e2de f2_BA | ^G2Ac ec=B2 |

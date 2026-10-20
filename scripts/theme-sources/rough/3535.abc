@@ -1,0 +1,10 @@
+X:3535
+%%from edm
+T:Concerto Grosso, Op. 1, No. 2, 1st Movement
+C:Pietro Locatelli
+%%composer Locatelli|Pietro
+% EDM 3535 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+c4 z cde d2G2 z agf | e2c2 z efg f2B2 z c'ba | g2e2

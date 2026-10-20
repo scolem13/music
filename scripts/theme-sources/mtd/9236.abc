@@ -1,0 +1,11 @@
+X:9236
+T:Mazurkas 36, Op. 59, No. 1
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2233, Barlow & Morgenstern C246, EDM 9236 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=119
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+eB c2 A2 | B^G E4 | ^F^G A2 B2 | cf e4 |

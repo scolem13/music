@@ -1,0 +1,12 @@
+X:9675
+T:Pour le Piano, Suite - 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2666, Barlow & Morgenstern D98, EDM 9675 (Musical Theme Dataset, CC BY 4.0)
+N:Prélude  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=137
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A,, B,, C, | D, B,, C, | A,, B,, C, | D, E, F, | G, E, F, | G, _B, A, | G, |

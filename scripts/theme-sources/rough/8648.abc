@@ -1,0 +1,10 @@
+X:8648
+%%from edm
+T:Sextet in G, Op. 36, Str., 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8648 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g12 | d'12 | ^d'8- d'2^a'2 | ^a'12 | g'8 ^d'4 | ^a4 g4 a4 | d'8 b4 | d'4 g'8 |

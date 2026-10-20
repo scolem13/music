@@ -1,0 +1,10 @@
+X:4428
+%%from edm
+T:Sonata in C, K 445, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4428 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+B8 dcBc | d3B G4 z4 | g6 ag fed^c | d3B G4

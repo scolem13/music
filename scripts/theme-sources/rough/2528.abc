@@ -1,0 +1,10 @@
+X:2528
+%%from edm
+T:Quartet in B-flat, Op. 64, No. 3, 3rd Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2528 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+f8 g2 z2 | f8 d2 z2 | B8 F2 z2 | D8 B,2 z2 | D4 z/2 E3-E/2 E2D2 | E4 D8 |

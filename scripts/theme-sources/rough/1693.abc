@@ -1,0 +1,10 @@
+X:1693
+%%from edm
+T:Sonata, Vn. and Piano, 3rd (Recitative-Fantasia)
+C:César Franck
+%%composer Franck|César
+% EDM 1693 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z2 A,2 C8 B,4 | z2 C2 ^D8 =D4 | z2 D2 F8 E4 | ^D8 =D4

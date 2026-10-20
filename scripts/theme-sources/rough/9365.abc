@@ -1,0 +1,10 @@
+X:9365
+%%from edm
+T:Sonata in G minor, Didone Abbandonata, Op. 50, No. 3 - 1st Movement
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9365 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g8 _g4 | b8 a4 | e'4 d'4 a'4 | c'8 b4 | c''4 b'4 _g'4 | _g'12 | a'4 g'4 d'4 | d'12 |

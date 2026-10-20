@@ -1,0 +1,10 @@
+X:1657
+%%from edm
+T:Prelude, Aria, and Finale, Piano, Prelude, 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1657 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+B4 c4 d4 B3A | G4 A4 B8 | B4 c4 e4 d3c | B4 c4 F8 |

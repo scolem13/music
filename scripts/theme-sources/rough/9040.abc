@@ -1,0 +1,11 @@
+X:9040
+%%from edm
+T:Pupazzetti, 5th Movement - 2nd Theme
+C:Alfredo Casella
+%%composer Casella|Alfredo
+% EDM 9040 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+z4 a4 | ^a4 b4 | c'3d' c'2^a2 | c'2^d'2c'2d'2 | g4 g4 | g6 d2 | f4 f4 | f6

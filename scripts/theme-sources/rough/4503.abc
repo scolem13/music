@@ -1,0 +1,13 @@
+X:4503
+%%from mtd
+T:Symphony No. 13, in F, K 112, 4th Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6152, Barlow & Morgenstern M877, EDM 4503 (Musical Theme Dataset, CC BY 4.0)
+N:Molto allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=131
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+a3 |{g} fed | b3 |{a} gfe | a3 | gfe | d2 z |

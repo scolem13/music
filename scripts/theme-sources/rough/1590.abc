@@ -1,0 +1,10 @@
+X:1590
+%%from edm
+T:Quartet in C minor, Op. 15, 2nd Movement - 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1590 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+e2f2e2 z2 d2c2 | e2d2e2 z2 f2g2 | c2 z2 c'2 b2 z4 | e2f2e2 z2 d2c2 | e2d2e2 z2 f2g2 | =B2 z2 d2 c2

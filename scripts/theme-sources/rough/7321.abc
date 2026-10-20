@@ -1,0 +1,11 @@
+X:7321
+%%from edm
+T:Quartet in D, 3rd Movement - 1st Theme
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7321 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+a4 a2b2 a2b2 | ^a4 a2b2 a2b2 | b4 F8 | ^g4 g2a2 g2a2 | a4 e4 f4- | f4 e3d2<c2B | c2d2 e4

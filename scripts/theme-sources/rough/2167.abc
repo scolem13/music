@@ -1,0 +1,10 @@
+X:2167
+%%from edm
+T:Concerto in F, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2167 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+c8 F4 B4 | B/2A/2B/2c/2B2 A4 z8 | f8 c4 f/2e/2f/2g/2f2- | f2ed e2g2 A2dc d2f2 | G4

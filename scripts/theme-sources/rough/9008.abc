@@ -1,0 +1,10 @@
+X:9008
+%%from edm
+T:Sinfonia in B-flat, 3rd Movement - 2nd Theme
+C:Christian Cannabich
+%%composer Cannabich|Christian
+% EDM 9008 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+c'12 c'4 | d'12 b4 | a8 e'8 | d'12 b4 | a8 e'8 | d'12 c'4 | b4 a4 b4 g4 | f4

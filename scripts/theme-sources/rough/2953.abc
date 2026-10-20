@@ -1,0 +1,10 @@
+X:2953
+%%from edm
+T:Concertino, 1st Movement, 3rd Theme
+C:Arthur Honegger
+%%composer Honegger|Arthur
+% EDM 2953 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z2 E2 ^d2e3 ded e^fed | d2B^c d2e2 d2B=c d2^f2 | e2g2^f2e2 d2^cB A2G2 |

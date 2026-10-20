@@ -1,0 +1,10 @@
+X:3395
+%%from edm
+T:Ballade No. 2 in B minor, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3395 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:D
+F,24 | G,12 A,12 | B,24- | B,8 F,4 A,8 G,4 | G,24 | F,12

@@ -1,0 +1,10 @@
+X:1451
+%%from edm
+T:Sonata in E minor, Op. 82, Vn. and Piano, 3rd Movement - 1st Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1451 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+G8- G2A2B2c2 | e8- e2de c2B2 | =d8- d2cd B2A2 | =G8- G2FG E2=D2 | C2E2

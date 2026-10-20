@@ -1,0 +1,11 @@
+X:5979
+%%from edm
+T:Quintet in C, Op. 163, 3rd Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5979 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+c4 d8- | d8 e4 | c4 d4 f4 | e4 d4 z4 | c4 d8- | d8 e4 | c4 d4 g4 | f4 e4 f4 | g4 a8- | a4

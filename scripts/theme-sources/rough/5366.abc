@@ -1,0 +1,10 @@
+X:5366
+%%from edm
+T:Quintet, in A, Op. 146, 4th Movement
+C:Max Reger
+%%composer Reger|Max
+% EDM 5366 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:A
+e'c' e'4 d'2 | c'a c'4 b2 | a'2 =f'^f' f'd' d'c' | bc' a2 g2 e2 |

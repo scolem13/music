@@ -1,0 +1,10 @@
+X:4942
+%%from edm
+T:Classical Symphony, Op. 25, 2nd Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4942 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+a'6 g'a' g' z f'g' | f' z e'2 d'2c'2 b2a2 | g/2a/2g/2a/2g/2a/2g/2a/2 c'2d'c' bag2 | f6 f/2a/2 z a/2=f/2 z f/2b/2 z | f6

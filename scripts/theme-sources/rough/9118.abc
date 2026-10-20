@@ -1,0 +1,11 @@
+X:9118
+%%from edm
+T:Quartet, Op. 30, 4th Movement - 2nd Theme
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9118 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Db
+f6 e6 | =B4 d4<e4 | f6 a6 | f6 e6 | =B4 d4<e4 |

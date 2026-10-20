@@ -1,0 +1,10 @@
+X:1701
+%%from edm
+T:Symphony in D minor, 1st Movement - Intro
+C:César Franck
+%%composer Franck|César
+% EDM 1701 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+D,6 _D,2 F,4 z4 | F,6 E,2 A,4 z4 | A,4 G,4 C4 B,2A,2 | G,12 F,4 | E,4 D,4 G,4 F,2E,2 | D,16 |

@@ -1,0 +1,11 @@
+X:7061
+%%from edm
+T:Salome, Op. 54, Dance of the Seven Veils, 3rd Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7061 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+^c'2b2 a4<e4 | d^cg z3 e6 | d^cg2 ^A=c ^G6- | ^G6

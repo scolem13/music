@@ -1,0 +1,11 @@
+X:9417
+%%from edm
+T:Dance Symphony - 1st Movement - 2nd Theme
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9417 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+^a4 ^g8 =g2f2 | e4 d8 e2f2 | g4 f2e2 d4 ^c2B2 | ^A4 ^G2A2 B2^c2d2

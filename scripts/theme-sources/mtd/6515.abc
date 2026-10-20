@@ -1,0 +1,12 @@
+X:6515
+T:Symphony No. 7, Op. 60, 4th Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8146, Barlow & Morgenstern S912, EDM 6515 (Musical Theme Dataset, CC BY 4.0)
+N:Victory. Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+G, A,6 G, | B,3 G, E3 D | C2 E2 G4- | G2 FG A2 EF | G2 C2 E2 D2 | F2 CC C2 D2 | A,2 |

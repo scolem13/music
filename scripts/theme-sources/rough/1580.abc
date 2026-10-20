@@ -1,0 +1,10 @@
+X:1580
+%%from edm
+T:Impromptu, No. 3, Op. 34, Piano, 2nd Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1580 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Ab
+e6 =e2 | g4 =e4 | e6 =e2 | _g4 a4 | b4 a4 | _g4 =e4 | e6

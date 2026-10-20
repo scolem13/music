@@ -1,0 +1,10 @@
+X:278
+%%from edm
+T:Sonata No. 1 in B minor, Vn. and Piano, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0278 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:D
+f12- f2g2 g2f2 f2e2 | e12- e2f2 f2e2 e2d2 | d12

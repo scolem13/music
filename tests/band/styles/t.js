@@ -1,8 +1,8 @@
 const fs=require('fs');
 global.window=global;
-require('/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/comp.js');
-require('/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/catalog.js');
-const src=fs.readFileSync('/Users/sean.coleman/Projects/everything-music-site/tools/_accomp-styles.qmd','utf8');
+require((require("path").join(__dirname, "../../..") + "/apps/shared/band/comp.js"));
+require((require("path").join(__dirname, "../../..") + "/apps/shared/band/catalog.js"));
+const src=fs.readFileSync((require("path").join(__dirname, "../../..") + "/tools/_accomp-styles.qmd"),'utf8');
 const a=src.indexOf('var LEN ='), b=src.indexOf('window.asHitsToAbc');
 const f=new Function(src.slice(a,b)+';return hitsToAbc;')();
 for(const e of BandCatalog.comp){ if(!e.hits) continue;

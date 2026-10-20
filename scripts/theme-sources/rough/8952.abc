@@ -1,0 +1,10 @@
+X:8952
+%%from edm
+T:Chaconne in E minor, Organ
+C:Dietrich Buxtehude
+%%composer Buxtehude|Dietrich
+% EDM 8952 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+E12 | D8 B,4 | C8 A,4 | B,12 | E,4

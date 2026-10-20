@@ -1,0 +1,10 @@
+X:6755
+%%from edm
+T:The High School Cadets, March, 4th Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6755 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Gb
+g4 a4 b8 | d'4 d'4 d'8 | g4 a4 b4 d'4 | b4 d'4 =b8 | b4 d'4 e'8 | f'4 f'4 f'8 | b4 d'4 e'4 f'4 | d'4 e'4 b8 |

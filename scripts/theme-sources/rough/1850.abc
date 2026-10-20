@@ -1,0 +1,10 @@
+X:1850
+%%from edm
+T:Quartet in F, Str., 1st Movement - 1st Theme
+C:Mikhail Glinka
+%%composer Glinka|Mikhail
+% EDM 1850 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+c2c2 f4<f4 A2A2 | c2 c4 E4 z2 E/2F/2E/2F/2D2 | E2F2 G4<A4 D2D2 | d2 F8 E2

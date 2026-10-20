@@ -1,0 +1,10 @@
+X:7772
+%%from edm
+T:Bachianas-Brasileiras, 2nd Theme
+C:Heitor Villa-Lobos
+%%composer Villa-Lobos|Heitor
+% EDM 7772 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c6 c2- | c4 A4 | c8- | c4 c2-c/2d3/2- | d6 d2- | d4 A4 | d8- | d4 d4 | e4 d4 | c6

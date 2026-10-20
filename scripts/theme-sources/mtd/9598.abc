@@ -1,0 +1,11 @@
+X:9598
+T:Ballade - 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2589, Barlow & Morgenstern D21, EDM 9598 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+A,,>=B,,C,D,/E,/ E,D,-D,C, | =B,,A,,/B,,/G,,B,, A,,4 |

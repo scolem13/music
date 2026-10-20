@@ -1,0 +1,10 @@
+X:4770
+%%from edm
+T:Caprices, Op. 1, No. 21
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4770 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+c3B B4 A6 A2 | d2c2 ^A4 B8 | (3c2B2A2 A4 G6 d2 | c2B2 G4 A8 |

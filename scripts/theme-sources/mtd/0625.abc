@@ -1,0 +1,12 @@
+X:625
+T:Concerto No. 1 in C, Op. 15, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0619, Barlow & Morgenstern B523, EDM 0625 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio (cadenza: Ludwig van Beethoven)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=150
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+_B4 A_BcB | _B_AGF _EDC_B, | _E2 E2{/F} EDEG | =E2 F2 z4 |

@@ -1,0 +1,10 @@
+X:2100
+%%from edm
+T:Waltz, Op. 12, No. 2, Piano, 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2100 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+A8 B2G2 | z/2 F3/2E2 E8 | A4 B2c2 A2F2 | z/2 F3/2E2 E8 |

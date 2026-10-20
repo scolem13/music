@@ -48,7 +48,7 @@
 //                                   become one; two of the same length with both become two voices on one staff
 //   NotationDoc.barNotes(doc, ci, v, bar) / prevBar(doc, ci, bar) / writeLeadIn(doc, ci, v, bar, lead, { prefer }) -> a phrase's
 //                                   lead-in (pickup) written into the bar(s) before it, stitched with what is there (phrase-seam.js)
-//   NotationDoc.parseChords(text, barQ) -> { chords, chordLen } from "G | C D | Em"; chordsText(chunk, barQ) the other way
+//   NotationDoc.parseChords(text, barQ) -> { chords, chordLen } from "G | C D | Em" ("C . . D": "." holds a place); chordsText(chunk, barQ) the other way
 //   NotationDoc.syllables(text)  -> [{ s, join }]; setSyllabify(fn) replaces the splitter
 //   NotationDoc.addPitch(part, midi), nudge(midi, key, how, dir), letterMidi(letter, prev, key), guessKey(doc), meterInfo(meter),
 //   spell(midi, key, barAcc)
@@ -182,22 +182,38 @@
   const sylText = list => list.map(x => x.s + (x.join ? "-" : " ")).join("").trim();
 
   // ---- chords --------------------------------------------------------------------------------------------------------
-  function parseChords(text, barQ) {
+  // lead: a chunk's pickup (quarters); the first bar typed is the first full bar after it
+  function parseChords(text, barQ, lead) {
+    lead = lead || 0;
     const bars = (text || "").split("|").map(b => b.trim());
     while (bars.length && !bars[bars.length - 1]) bars.pop();
     const chords = [];
     bars.forEach((b, i) => {
       const names = b.split(/\s+/).filter(Boolean);
-      names.forEach((n, j) => chords.push({ at: r3(i * barQ + j * barQ / names.length), name: n }));
+      names.forEach((n, j) => { if (n !== ".") chords.push({ at: r3(lead + i * barQ + j * barQ / names.length), name: n }); });   // "." holds a place
     });
-    return { chords, chordLen: r3(bars.length * barQ) };
+    return { chords, chordLen: bars.length ? r3(lead + bars.length * barQ) : 0 };
   }
-  function chordsText(ch, barQ) {
-    if (!ch.chords || !ch.chords.length || !barQ) return "";
-    const n = Math.max(Math.ceil((ch.chordLen || 0) / barQ - EPS), Math.floor(ch.chords[ch.chords.length - 1].at / barQ + EPS) + 1);
+  function chordsText(ch, barQ, lead) {   // lead given: the bars after it only (chords in the pickup are left out)
+    lead = lead || 0;
+    const cs = (ch.chords || []).filter(c => c.at >= lead - EPS);
+    if (!cs.length || !barQ) return "";
+    const n = Math.max(Math.ceil(((ch.chordLen || 0) - lead) / barQ - EPS), Math.floor((cs[cs.length - 1].at - lead) / barQ + EPS) + 1);
     const bars = Array.from({ length: n }, () => []);
-    ch.chords.forEach(c => bars[Math.min(n - 1, Math.floor(c.at / barQ + EPS))].push(c.name));
-    return bars.map(b => b.join(" ")).join(" | ");
+    cs.forEach(c => bars[Math.min(n - 1, Math.floor((c.at - lead) / barQ + EPS))].push(c));
+    // the fewest equal places in the bar that put every chord on one ("C D": halves; "C . . D": beats 1 and 4)
+    return bars.map((b, i) => {
+      if (!b.length) return "";
+      const off = b.map(c => (c.at - lead - i * barQ) / barQ);
+      for (let k = b.length; k <= 48; k++) {
+        const pl = off.map(o => o * k);
+        if (pl.every(x => Math.abs(x - Math.round(x)) < 1e-3) && new Set(pl.map(Math.round)).size === pl.length) {
+          const out = Array(k).fill("."); pl.forEach((x, j) => { out[Math.round(x)] = b[j].name; });
+          return out.join(" ");
+        }
+      }
+      return b.map(c => c.name).join(" ");
+    }).join(" | ");
   }
 
   // ---- split, merge, duplicate, move, remove -------------------------------------------------------------------------
@@ -372,7 +388,7 @@
       let k = noteIndex(p, from);
       for (let s = from; s <= to; s++) {
         const r = p.rhythm[s];
-        clip.push({ type: r.type, durQ: r.durQ, pitch: r.type === "note" ? (k < p.pitches.length ? p.pitches[k] : null) : null });
+        clip.push({ type: r.type, durQ: r.durQ, pitch: r.type === "note" ? (k < p.pitches.length ? p.pitches[k] : null) : null }); if (r.spell) clip[clip.length - 1].spell = r.spell;
         if (r.type === "note") k++;
       }
     });
@@ -394,9 +410,20 @@
     const s = after === undefined ? p.rhythm.length : after + 1, k = noteIndex(p, s);
     const notes = clip.filter(c => c.type === "note").map(c => c.pitch);
     if (notes.length) { while (p.pitches.length < k) p.pitches.push(null); p.pitches.splice(k, 0, ...notes); }
-    p.rhythm.splice(s, 0, ...clip.map(c => ({ type: c.type, durQ: c.durQ })));
+    p.rhythm.splice(s, 0, ...clip.map(c => c.spell ? { type: c.type, durQ: c.durQ, spell: c.spell } : { type: c.type, durQ: c.durQ }));
     trim(p);
     return s + clip.length - 1;
+  }
+  // cut slot si of part p at offQ (quarters into it): two slots of the same kind, a note's tied, its pitch and spelling on both
+  function splitSlot(p, si, offQ) {
+    const r = p.rhythm[si]; if (!r || offQ <= EPS || offQ >= r.durQ - EPS) return false;
+    const a = Object.assign({}, r, { durQ: r3(offQ) }), b = Object.assign({}, r, { durQ: r3(r.durQ - offQ) });
+    if (r.type === "note") {
+      a.tie = true;
+      const k = noteIndex(p, si); if (k < p.pitches.length) p.pitches.splice(k + 1, 0, p.pitches[k]);
+    }
+    p.rhythm.splice(si, 1, a, b);
+    return true;
   }
   function slotTime(p, slot) { let t = 0; for (let i = 0; i < slot; i++) t += p.rhythm[i].durQ; return r3(t); }
 
@@ -468,18 +495,27 @@
   function addPitch(p, midi) { const gap = p.pitches.indexOf(null); if (gap >= 0) p.pitches[gap] = midi; else p.pitches.push(midi); }
 
   // ---- spelling ----------------------------------------------------------------------------------------------------
-  function spell(midi, key, barAcc) {
-    const s = sig(key), pc = ((midi % 12) + 12) % 12, sharps = sharpish(key);
-    const cands = [];
-    for (const l of LETTERS) {
-      let a = pc - SEMI[l]; if (a > 6) a -= 12; if (a < -6) a += 12;
-      if (Math.abs(a) <= 1) cands.push({ l, a });
-    }
+  // every way to write a pitch class: [{ l: letter, a: accidental -2..2 }], double sharp first, double flat last
+  function enharmonics(midi) {
+    const pc = ((midi % 12) + 12) % 12, out = [];
+    for (const l of LETTERS) { let a = pc - SEMI[l]; if (a > 6) a -= 12; if (a < -6) a += 12; if (Math.abs(a) <= 2) out.push({ l, a }); }
+    return out.sort((x, y) => y.a - x.a);
+  }
+  // a slot's own spelling ("E@5": write pitch class 5 with the letter E, so E#); it only counts while the pitch class matches
+  function wanted(midi, want) {
+    const m = want && /^([A-G])@(\d+)$/.exec(want), pc = ((midi % 12) + 12) % 12;
+    return m && +m[2] === pc ? enharmonics(midi).find(c => c.l === m[1]) || null : null;
+  }
+  const ACC = { 2: "^^", 1: "^", 0: "=", "-1": "_", "-2": "__" };
+  function spell(midi, key, barAcc, want) {
+    const s = sig(key), sharps = sharpish(key);
+    const cands = enharmonics(midi).filter(c => Math.abs(c.a) <= 1);
     const effective = l => (barAcc[l] !== undefined ? barAcc[l] : (s[l] || 0));
-    let pick = cands.find(c => c.a === effective(c.l));                 // needs no accidental written
+    let pick = wanted(midi, want);
+    if (!pick) pick = cands.find(c => c.a === effective(c.l));          // needs no accidental written
     if (!pick) pick = cands.find(c => c.a === 0) || cands.find(c => c.a === (sharps ? 1 : -1)) || cands[0];
     let acc = "";
-    if (pick.a !== effective(pick.l)) { acc = pick.a === 1 ? "^" : pick.a === -1 ? "_" : "="; barAcc[pick.l] = pick.a; }
+    if (pick.a !== effective(pick.l)) { acc = ACC[pick.a]; barAcc[pick.l] = pick.a; }
     const oct = Math.round((midi - pick.a - SEMI[pick.l]) / 12) - 1;    // C4 = 60 is octave 4
     let name = oct >= 5 ? pick.l.toLowerCase() : pick.l;
     if (oct >= 5) name += "'".repeat(oct - 5); else name += ",".repeat(4 - oct);
@@ -550,7 +586,8 @@
         const filled = slot.type === "note" && pi != null;
         const midi = slot.type === "note" ? (filled ? pi : 71 + (sig(here.key).B || 0)) : null;   // an empty slot: the key's own B, no accidental
         if (slot.type === "note") noteK++;
-        let left = Math.round(slot.durQ * 4), firstOfSlot = true;
+        const len16 = Math.round(slot.durQ * 4), tiedOn = si > 0 && slots[si - 1].type === "note" && slots[si - 1].tie && slot.type === "note";
+        let left = len16, firstOfSlot = !tiedOn;                                         // a note tied on from the one before takes no syllable
         while (left > 0) {
           const room = bar16 - (pos16 % bar16);
           const nextChord = chords.find(c => c.at > t + EPS);
@@ -570,11 +607,12 @@
             let tok;
             if (slot.type === "rest") tok = "z" + LEN[pc];
             else if (slot.type === "space") tok = "x" + LEN[pc];
-            else tok = filled ? spell(midi, here.key, barAcc) + LEN[pc] : "!style=rhythm!B" + LEN[pc];   // an empty slot: never an accidental
+            else tok = filled ? spell(midi, here.key, barAcc, slot.spell) + LEN[pc] : "!style=rhythm!B" + LEN[pc];   // an empty slot: never an accidental
             const lastOfSlot = k === all.length - 1 && take === left;
             const item = { pre, tok, tail: slot.type === "note" && (!lastOfSlot || slot.tie) ? "-" : "", pos: piecePos, len: pc, note: slot.type === "note" };
             piecePos += pc;
-            if (!slot.padding) item.mark = { chunk: ci, voice: v, slot: si, filled: slot.type === "note" ? filled : null };
+            if (!slot.padding) item.mark = { chunk: ci, voice: v, slot: si, filled: slot.type === "note" ? filled : null,
+              offQ: ((len16 - left) + (item.pos - inBar)) / 4, lenQ: pc / 4, atQ: r3(t), down: item.pos === 0 };   // atQ: from the chunk's start; down: on beat 1          // which piece of the slot this is (a note drawn as tied pieces)
             if (!bar.items.length) { bar.ci = ci; bar.from = r3(t); bar.lead = !chunkBarSeen[ci] && (item.pos > 0 || slot.type === "space"); chunkBarSeen[ci] = true; }
             bar.items.push(item);
             if (slot.type === "note" && v === 0 && syl.length) {
@@ -780,9 +818,11 @@
         if (ev.kind === "note" && v === 0) { const x = syl[sylK++]; if (x) doc.chunks[ci].words += (x.s + (x.join ? "-" : " ")); else if (!held && sylK <= syl.length && syl.slice(sylK).some(Boolean)) doc.chunks[ci].words += "* "; }
         if (held) { held.durQ += durQ; if (!ev.tieNext) held = null; return; }
         if (ev.kind === "rest") { p.rhythm.push({ type: ev.visible === false ? "space" : "rest", durQ }); return; }
-        const slot = { type: "note", durQ };
+        const slot = { type: "note", durQ }, rhy = (ev.decos || []).includes("style=rhythm"), mid = ev.pitches[0].midi;
+        // a letter other than the plain spelling's (Fb, E#, B##) is kept on the slot
+        if (!rhy && ev.letter) { const kk = at(doc, ci).key || doc.key, plain = spell(mid, kk, {}).replace(/[\^_=,']/g, "").toUpperCase(); if (plain !== ev.letter) slot.spell = ev.letter + "@" + (((mid % 12) + 12) % 12); }
         p.rhythm.push(slot);
-        p.pitches.push((ev.decos || []).includes("style=rhythm") ? null : ev.pitches[0].midi);
+        p.pitches.push(rhy ? null : mid);
         if (ev.tieNext) held = slot;
       });
     });
@@ -1161,7 +1201,7 @@
     return res;
   }
 
-  const api = { chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
+  const api = { splitSlot, enharmonics, wanted, sharpish, chunkLabels, sectionAbbr, bandChart, takeBand, bandOf, barSig, keepTake, takeAt, changedBars, replaceBars, fromTakeBars, splitAt, sections, sectionOf, moveSection, duplicateSection, extract, removeSpan, insert, slotTime, create, upgrade, newChunk, part, chunkLen, meterInfo, spell, toAbc, pendingAbc, fromAbc, toChordPro, fromChordPro, at, info,
                 hasChanges, split, merge, combine, offsets, majorOf, keyName, duplicate, move, remove, addPitch, nudge, letterMidi, guessKey, scalePcs, parseChords, chordsText,
                 syllables, setSyllabify, barNotes, prevBar, writeLeadIn };
   if (typeof module !== "undefined" && module.exports) module.exports = api;

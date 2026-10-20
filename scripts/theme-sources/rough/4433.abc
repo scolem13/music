@@ -1,0 +1,10 @@
+X:4433
+%%from edm
+T:Sonata in B-flat, K 570, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4433 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B2d2 z2 e2 z2 =e4 f2 | d2 z/2 c3/2 =B2c2 d2 f4 e2 | A2B2 B4 =B2c2 c4 | _d2=d2

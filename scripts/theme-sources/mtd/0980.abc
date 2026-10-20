@@ -1,0 +1,12 @@
+X:980
+T:Sonata No. 2, in A, Op. 12, No. 2, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0974, Barlow & Morgenstern B856, EDM 0980 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro piacevole  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=201
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+E- | E/>A/ c c- | c B A- | A G A | B z z |

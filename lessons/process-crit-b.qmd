@@ -1,0 +1,134 @@
+---
+title: "Process 2: MYP Criterion B, Developing (Grades 6–10)"
+toc: true
+toc-depth: 2
+description: "What MYP Arts Criterion B asks of a music student: practical exploration of ideas, and a clear artistic intention linked to the statement of inquiry, with choices stated, described, explained or justified. Ways to explore in sound, a sorting exercise, and an intention builder."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [composing, research]
+has: [interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+MYP Arts is assessed on four criteria, each out of 8: **A Investigating**, **B Developing**, **C Creating/Performing** and **D Evaluating**.
+This lesson is about B: how you get from an idea to the piece you will make or perform. It is shown almost entirely through your
+[process journal](process-journal.qmd).
+
+The wording below is from the IB's *Arts guide* for use from September 2022, Year 5 (the last year of the MYP). Years 1 and 3 have their own,
+simpler wording. Ask your teacher for the version for your year.
+
+## 1. What Criterion B asks
+
+At the end of Year 5, students should be able to:
+
+> i. practically explore ideas to inform development of a final artwork or performance
+>
+> ii. present a clear artistic intention for the final artwork or performance in line with the statement of inquiry.
+
+That is two things: **exploring in practice**, and **saying what you intend and why**.
+
+## 2. Strand i: practical exploration
+
+*Practical* means in sound, with your instrument, voice, software or players, not only thinking about it. *Explore* means trying more than one
+possibility before choosing. The levels go from *limited*, through *sufficient* and *substantial*, to *extensive and varied* practical exploration.
+
+**Extensive** means a lot of it. **Varied** means different kinds. Ten versions of the same melody with one note changed is a lot, but it isn't varied.
+Ways to explore in music:
+
+| Explore | For example |
+|---|---|
+| **Material** | three different motifs for the opening; three chord progressions under the same melody |
+| **Development** | the motif in sequence, inversion, augmentation (try them in the [motif lab](compose-motif.qmd#the-motif-lab)) |
+| **Form** | verse–chorus or AABA; where the climax goes; how it ends |
+| **Sound** | which instrument plays the tune; doubling; register; a synth patch or an effect |
+| **Performance** | tempo, dynamics, articulation, phrasing: record it three ways and compare |
+| **Testing** | a player tries your part; a friend hears two versions without being told which is which |
+
+Each one counts as exploration in your journal only with **evidence** (the recordings, scores or screenshots of each version) and a line on
+**what you found out**.
+
+<div class="cp-tip">
+<strong>Explore before you settle.</strong> If your first idea is in the final piece unchanged, there is little exploration to show, however good
+the idea is. Try alternatives even when you like the first one. Keeping it after a fair comparison is a decision you can explain.
+</div>
+
+## 3. Strand ii: the artistic intention
+
+An **artistic intention** says what you are going to make or perform and what you want it to do, and it connects to your unit's **statement of
+inquiry** (the big idea your teacher gives the unit). In the Year 5 descriptors, every level asks for a *clear artistic intention in line with the
+statement of inquiry*. What changes from level to level is what you do with your **artistic choices**:
+
+| Level | The student presents a clear artistic intention ... and |
+|---|---|
+| 1–2 | **states** artistic choices |
+| 3–4 | **describes** artistic choices |
+| 5–6 | **explains** artistic choices |
+| 7–8 | **justifies** artistic choices |
+
+These are **command terms**, and the IB defines each one:
+
+- **State:** give a specific name, value or other brief answer without explanation or calculation.
+- **Describe:** give a detailed account or picture of a situation, event, pattern or process.
+- **Explain:** give a detailed account including reasons or causes.
+- **Justify:** give valid reasons or evidence to support an answer or conclusion.
+
+In practice: *state* names the choice. *Describe* adds the musical detail. *Explain* adds the reason. *Justify* backs the reason with evidence:
+a piece you studied, a test you recorded, feedback you got.
+
+### Try it: which is which?
+
+Four sentences about the same choice. Match each to its command term.
+
+<div class="cp-try">
+<div class="cp-sort"></div>
+</div>
+
+## 4. Build your intention
+
+Fill in the boxes. The intention is written as you type, and kept in this browser. Under it is a rough guide to how far your choices go,
+from *state* to *justify*. It only counts words, though: it can't judge whether your reasons are good. Your teacher can.
+
+<div class="cp-try">
+<div class="cp-intent"></div>
+</div>
+
+## 5. A worked example
+
+A Year 5 unit with the statement of inquiry *"Composers use repetition and contrast to shape a listener's experience over time."*
+
+> **Intention.** I intend to make a 24-bar piano piece in ABA form for the class recital, so that the listener feels settled, then unsettled, then
+> settled again but changed. **Choices.** The A section uses a four-note motif in a period, in C major, mostly steps, *mp*, because steps and
+> repeated rhythm sound settled. I tested this: in `A_v1` the melody leapt a lot and two classmates called it "restless"; in `A_v3`, mostly
+> steps, they called it "calm". The B section develops the same motif by inversion and sequence, in A minor, *f*, because I want the contrast
+> to come from the same idea. In Beethoven's Fifth (first movement) the opening motif returns throughout in changed forms, and I wanted that
+> unity. The return of A is in augmentation so it sounds familiar but slower and further on.
+
+This intention is clear, connected to the statement of inquiry, and its choices come with reasons and evidence (tests and a piece studied). That
+evidence is in the journal: `A_v1` and `A_v3`, the classmates' comments, the score of B with the inversions labelled.
+
+## 6. For teachers
+
+- These strands, descriptors and command terms are from the Year 5 criteria of the *Arts guide* (for use from September 2022/January 2023), read
+  from a school's published copy. Years 1 and 3 differ in wording.
+- The earlier *Arts guide*, which this one replaced, has a Criterion B called *Developing skills*, about acquiring and applying skills and techniques; its
+  Criterion C, *Thinking creatively*, held the artistic intention and the exploration of ideas. Students' older exemplars and school documents
+  may still use that wording.
+- The composing lessons give B-friendly tasks: the [motif lab](compose-motif.qmd#the-motif-lab) (explore by development), the takes in
+  [Composing 3](compose-song.qmd#write-a-verse-and-a-chorus) (explore by performance), and the two quartet textures in
+  [Composing 5](compose-orchestra.qmd#the-same-melody-two-ways) (a choice to explain).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Symphony No. 5 (Beethoven)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Symphony_No._5_(Beethoven)](https://en.wikipedia.org/wiki/Symphony_No._5_(Beethoven)).
+
+**For teachers**
+
+International Baccalaureate Organization. *Arts Guide*: assessment criteria, years 1, 3 and 5 (the earlier guide). School District 38 (Richmond), [boyd.sd38.bc.ca/files/boyd/2022-02/Arts.pdf](https://boyd.sd38.bc.ca/files/boyd/2022-02/Arts.pdf). The earlier criteria: B Developing skills, C Thinking creatively.
+
+International Baccalaureate Organization. *Arts Guide (for Use from September 2022/January 2023)*: "Arts Assessment Criteria: Year 5/Competent." Surrey Schools, [media.surreyschools.ca/media/Default/frf/8755/Grade%209%20and%2010%20Arts%20Criterion%20(1).pdf](https://media.surreyschools.ca/media/Default/frf/8755/Grade%209%20and%2010%20Arts%20Criterion%20(1).pdf). The guide's pages 47–50, as published by a school district; the criteria, descriptors and command terms quoted in Process 2.
+:::
+<!-- /works-cited -->

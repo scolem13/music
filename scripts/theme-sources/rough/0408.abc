@@ -1,0 +1,13 @@
+X:408
+%%from mtd
+T:Well-tempered Clavichord, Book I, Prelude No. 8
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0403, Barlow & Morgenstern B315, EDM 0408 (Musical Theme Dataset, CC BY 4.0)
+N:Præludium  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/2
+L:1/8
+Q:1/4=80
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Gb
+B4 z2 z B e3 g | c4 z2 z e a3 c' | =d4 z2 z f PA2- A/G/A/B/ | PG3 F/E/ |

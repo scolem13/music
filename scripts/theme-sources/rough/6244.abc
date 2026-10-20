@@ -1,0 +1,11 @@
+X:6244
+%%from edm
+T:Papillons, Op. 29, No. 7
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6244 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:Ab
+FG AB cd | c2 f2 a2 | gc c'b ag | a2 g2 f2 |

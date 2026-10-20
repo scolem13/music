@@ -1,0 +1,10 @@
+X:3518
+%%from edm
+T:Valse Melancolique, Piano, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3518 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+B,2E2 F2 G4 A2- | A4 G2 ^A6- | ^A2 B4 z/2 =A3/2 G2F2- | F4 G2A2 B2=c2- | =c6

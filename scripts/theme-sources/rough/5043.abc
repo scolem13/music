@@ -1,0 +1,10 @@
+X:5043
+%%from edm
+T:Sonata in D, Op. 94, 2nd Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5043 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e4 a8 | e'4 e'6 ^f2 | e4 ^d4 ^F2G2 | ^F2G2 ^G8 | ^F4 z/2 A3/2^c2 d2e2 | f2g2a2b2a2^f2 | a2b2 a2f2

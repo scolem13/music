@@ -1,0 +1,10 @@
+X:4427
+%%from edm
+T:Sonata in C, K 445, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4427 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+d'2b4<g4 ab a2g2 | g/2a/2g/2a/2g/2a/2^f f4

@@ -1,0 +1,10 @@
+X:2794
+%%from edm
+T:Symphony in D, No. 104, "London", 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2794 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d4 d3-d/2d/2 a8 | d4 d3-d/2d/2 A8 | D4 D3-D/2E/2 E2d3- d/2_d/2d2 | _d2

@@ -1,0 +1,10 @@
+X:5311
+%%from edm
+T:Rapsodie Espagnole, 4th Movement - Feria, 3rd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5311 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+c'8 c'4 | c'2c'2 c'8- | c'3b c'aba f2 z2 | f8 =f2f3/2^f/2- | f/2-[f/2=f/2-]=fc2 z2 c6- | c2

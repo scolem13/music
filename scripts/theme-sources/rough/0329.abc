@@ -1,0 +1,10 @@
+X:329
+%%from edm
+T:English Suite No. 1, in A, Piano, Bouree - 2nd Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0329 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+C2D2 E4 F4 E4 | D4 E4 A,8 | G,4 A,4 F4 E4 | D4 E4 A,8 |

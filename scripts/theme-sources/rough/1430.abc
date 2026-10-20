@@ -1,0 +1,10 @@
+X:1430
+%%from edm
+T:May Song, Orchestra, 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1430 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+B4 E4- | E4 z/2 ^d3-d/2 | c4 F4- | F4 z/2 e3-e/2 | z/2 ^d3-d/2 A4 | A2G2F2E2 | G4 C4- | C2B,2

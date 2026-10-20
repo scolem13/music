@@ -1,0 +1,10 @@
+X:1911
+%%from edm
+T:Symphony, Op. 26, "Rustic Wedding", 4th Movement - 2nd Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1911 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+G,4 F,3G, B,4 G,4 | A4 =G3A d4 e3d | g6 f3 B e6 | d2a4<g4 b2 e2

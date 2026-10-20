@@ -1,0 +1,10 @@
+X:4802
+%%from edm
+T:Sicilienne
+C:Marie Therese von Paradis
+%%composer Paradis|Marie Therese von
+% EDM 4802 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+G2 B4 B2=B3_B | A2 B4 G2 z/2 A2-A/2G | F2G3B, EG F4- | F2 G8- G2 |

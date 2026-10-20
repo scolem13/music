@@ -1,0 +1,10 @@
+X:8275
+%%from edm
+T:Symphony No. 1 in C, 1st Movement - 1st Theme A
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+g'4 g'4 c''4 z4 | c''4 c''4 e''4 z4 | e''4 e''4 g''4 z4 | g'4 g'4 c''4 e'4 | g'4 c'4 e'4 g4 | c'4 e8 d/2e/2d/2e/2d/2e/2d/2e/2 | d/2e/2d/2e/2d/2e/2d/2e/2 c8

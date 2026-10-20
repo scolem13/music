@@ -1,0 +1,123 @@
+---
+title: "Annotated Bibliography 2: Summarise, Evaluate, Connect (Grades 9–10)"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+description: "For grades 9–10: descriptive and evaluative annotations, MLA's format for an annotated bibliography, paraphrasing without copying, and judging sources against each other."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [research]
+---
+
+In [Annotated Bibliography 1](annotate-start.qmd) each annotation had three sentences: what is it, why do I trust
+it, how will I use it. At this level, the annotation does more work. It **summarises** the source, **evaluates** it
+(often by comparing it with your other sources), and **connects** it to your project.
+
+It builds on [Sources 2](sources-check.qmd): primary and secondary sources, SIFT, and MLA citations.
+
+## Descriptive and evaluative
+
+A **descriptive** annotation says what the source is and what it covers, like the abstract at the top of a journal
+article. An **evaluative** (or critical) annotation also judges it:
+
+- **Authority:** who is the author, and why should we listen to them?
+- **Evidence:** what is the source based on (recordings, interviews, archives, the author's own experience)?
+- **Audience and purpose:** who was it written for? Is it selling something?
+- **Comparison:** how does it fit with your other sources? Does it agree, add something, or contradict them?
+- **Use:** what exactly will you take from it, and for which part of your project?
+
+Your teacher may ask for one kind or the other. If they don't say, write evaluative annotations.
+
+## MLA format
+
+The MLA Style Center's guidance:
+
+- Write each source's entry exactly as you would in a **Works Cited** list. Put the annotation after it.
+- Annotations can be short **phrases**. If you write full **sentences**, leave a line after the entry and start the
+  annotation with a paragraph indent.
+- Annotations **describe or evaluate** the source. They don't quote the author, cite evidence, go over minor
+  details, or retell every step of the argument.
+- Title the list **Annotated Bibliography** (or Annotated List of Works Cited).
+- Order the entries alphabetically, unless your teacher asks for another order (by date, or by topic).
+
+About 50–150 words per source is typical. Check your task, though: some ask for exactly two to four sentences.
+
+## Paraphrase without copying
+
+A paraphrase that follows the source sentence by sentence, with a few words swapped, is still copying. Here's a way
+to avoid it, from Kate Turabian's guide for writers: read the passage, **look away**, think about it, and write it in
+your own words while still looking away. Then check: if you can run your finger along your sentence and find the same
+ideas *in the same order* in the source, so can your reader. Try again.
+
+## Two examples
+
+> Chaffin, Roger, and Gabriela Imreh. "'Pulling Teeth and Torture': Musical Memory and Problem Solving." *Thinking
+> and Reasoning*, vol. 3, no. 4, 1997, pp. 315–36.
+>
+> A case study of a concert pianist learning a Bach piece for performance, built from video recordings of her practice
+> sessions and her own comments on them. The authors found that she started and stopped her practice segments at the
+> boundaries of the music's form, not at random. It's one pianist, so it can't prove what all musicians do, but it's
+> careful, detailed evidence from inside an expert's practice. I'll use it to justify cutting my piece into sections
+> that follow its phrases, and compare it with the larger survey studies on practice.
+
+> "Kind of Blue Transcription." *MuseScore*, uploaded by a user.
+>
+> A note-for-note transcription of the album's first track, uploaded by an anonymous user. There's no named
+> transcriber and no edition, and I found two wrong notes in bars 9–12 when I checked it against the recording. I'll
+> use it only as a rough guide, correct it by ear, and cite the recording as my main source.
+
+(The second example is invented, to show the kind of thing to write.) It's a weak source, honestly evaluated. Including a weak source with a clear-eyed annotation is
+better than pretending it's strong. If it's too weak to use, leave it out.
+
+## AI summaries don't get an entry
+
+::: {.callout-warning}
+## AI-generated answers are not sources, and they aren't reliable
+
+An AI summary from Google, Bing or a chatbot has no author and no fixed text, so your reader can't check it. These
+summaries often get facts wrong, and AI tools regularly invent sources that don't exist: book titles, authors, and
+links that lead nowhere.
+
+- **Never put an AI summary in your annotated bibliography as a source.**
+- **Never copy a reference an AI tool suggested** unless you've found the real thing and read it yourself.
+- If an AI answer pointed you somewhere, go to that place. Read the actual source, and annotate *that*.
+:::
+
+## Try it
+
+Choose a research question about a style you're studying.
+
+1. Find **four sources**: at least one primary (a recording, a score, an interview) and at least one scholarly
+   secondary source (a book from the library, or an article from *Grove Music Online* or *JSTOR*).
+2. Run SIFT on each one.
+3. Write an MLA entry and an evaluative annotation of 50–150 words for each, comparing each source with at least one
+   of the others.
+4. Swap with a partner. Underline every phrase in their annotations that could be copied from the source. Rewrite
+   your own underlined phrases using the look-away method.
+
+Next: [Annotated Bibliography 3: DP Music](annotate-dp.qmd) (grades 11–12).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Annotated Bibliographies." *Purdue Online Writing Lab*, Purdue University, [owl.purdue.edu/owl/general_writing/common_writing_assignments/annotated_bibliographies/index.html](https://owl.purdue.edu/owl/general_writing/common_writing_assignments/annotated_bibliographies/index.html).
+
+"Annotated Bibliography Samples." *Purdue Online Writing Lab*, Purdue University, [owl.purdue.edu/owl/general_writing/common_writing_assignments/annotated_bibliographies/annotated_bibliography_samples.html](https://owl.purdue.edu/owl/general_writing/common_writing_assignments/annotated_bibliographies/annotated_bibliography_samples.html).
+
+*Grove Music Online*. Oxford UP, [www.oxfordmusiconline.com/](https://www.oxfordmusiconline.com/). Subscription; most school and public libraries give access.
+
+"How to Prepare an Annotated Bibliography: The Annotated Bibliography." Cornell University Library, [guides.library.cornell.edu/annotatedbibliography](https://guides.library.cornell.edu/annotatedbibliography).
+
+*JSTOR*. ITHAKA, [www.jstor.org/](https://www.jstor.org/).
+
+"What Guidance Should I Give My Students for Preparing an Annotated Bibliography?" *MLA Style Center*, Modern Language Association, 4 Nov. 2016, [style.mla.org/annotated-bibliographies/](https://style.mla.org/annotated-bibliographies/). Written for the eighth edition of the *MLA Handbook*.
+
+**For teachers**
+
+Chaffin, Roger, and Gabriela Imreh. "'Pulling Teeth and Torture': Musical Memory and Problem Solving." *Thinking and Reasoning*, vol. 3, no. 4, 1997, pp. 315–36. [musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf](https://musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf).
+
+Turabian, Kate L. *A Manual for Writers of Research Papers, Theses, and Dissertations*. 8th ed., U of Chicago P, 2013. The paraphrasing advice (pp. 80–81) as quoted in the course book's task references; edition assumed from the 2013 date.
+:::
+<!-- /works-cited -->

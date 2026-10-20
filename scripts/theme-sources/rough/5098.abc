@@ -1,0 +1,10 @@
+X:5098
+%%from edm
+T:Sonata No. 9, in F, 5th Movement
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5098 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:F
+f2 c2 c2 | d2 A2 A2 | B2 G2 c2 | F4 f2 | ed ef ed | cB cd cB | A2 =B4 | c4

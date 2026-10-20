@@ -1,0 +1,13 @@
+X:795
+%%from mtd
+T:Serenade, Op. 8, 4th Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0789, Barlow & Morgenstern B679d, EDM 0795 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio – Scherzo. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=30
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+d6 d>e | f6 f>g | a6 g>a | bagf ed^cd | e4 A2 z2 |

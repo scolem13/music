@@ -1,0 +1,10 @@
+X:9326
+%%from edm
+T:Sonata in B minor, Op. 58, 1st Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9326 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+g'f'd'b f8 b4 | c'4 ^a4 z2 f2 b2c'2 | d'2e'2 f'8 a'4- | a'2g'2 f'8

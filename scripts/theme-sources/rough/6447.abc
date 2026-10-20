@@ -1,0 +1,11 @@
+X:6447
+%%from edm
+T:The Golden Age, Op. 22, Ballet, 1st Theme, Polka
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6447 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+f'2d'f' gc'^f2 | f'2d'f' gc'^f2 | f'2d'^a dg^f^d | d^cA2 b2b^d' | d'c'

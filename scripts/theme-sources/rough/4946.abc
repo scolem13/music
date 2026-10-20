@@ -1,0 +1,10 @@
+X:4946
+%%from edm
+T:Classical Symphony, Op. 25, 4th Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4946 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+e8 a4 f3f | e4 d4 c4 B4 | A4 F4 A4 B4 | c4 d3A a4 f4 | e8

@@ -1,0 +1,10 @@
+X:277
+%%from edm
+T:Sonata No. 3 in C, Allegro
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0277 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+cdef g2c2 dcBA | GABc defa gfed | c

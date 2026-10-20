@@ -1,0 +1,10 @@
+X:321
+%%from edm
+T:Suite No. 3 in D, Orchestra, Overture - 2nd Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0321 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+ABc2 cde2 cde2 efg2 | gfg2 agf2 a2d2 f4 |

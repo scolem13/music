@@ -1,0 +1,10 @@
+X:8262
+%%from edm
+T:Carmen, Opera - Prelude to Act I, 2nd Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8262 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+c'2f'2c'2b2 | a2gf g2c2 | f2g2a2c'2 | =f'2^d'f' c'2

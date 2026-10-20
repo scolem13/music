@@ -1,0 +1,11 @@
+X:7075
+%%from edm
+T:Sinfonia Domestica, Op. 53, 1st Movement - 2nd Theme B
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7075 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:B
+a6 c'2 | b2a2 ag z/2 g/2=g | =g4 ^g2A2 | B2=c2 d^c z/2 c/2=c | c2Af caf

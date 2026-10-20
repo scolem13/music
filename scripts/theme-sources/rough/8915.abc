@@ -1,0 +1,11 @@
+X:8915
+%%from edm
+T:Symphony No. 4 in E-flat, 4th Movement - 1st Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8915 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Eb
+e'16 | e16 | =B16 | z4 =b4 (3b4_d'4e'4 | b8 e8 | =e8 g4>a4 | B8

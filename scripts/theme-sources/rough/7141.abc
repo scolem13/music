@@ -1,0 +1,10 @@
+X:7141
+%%from edm
+T:Concerto, 1st Movement
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7141 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+a4 a3a | a4 ^g3g | ^g8 | a2 z6 | z3 b4- b- | b8 | ^a3 ^g4- g- | ^g3 g4 =g |

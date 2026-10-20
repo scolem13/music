@@ -1,0 +1,13 @@
+X:2302
+T:Sonata in A, Op. 1, No. 3, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% MTD 3964, Barlow & Morgenstern H183, EDM 2302 (Musical Theme Dataset, CC BY 4.0)
+N:Andante – Allegro – Adagio – Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/16
+Q:1/4=49
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c6 B>A e6 dc | f4- f>fg>a g2>f2 e2d>c | c6 |

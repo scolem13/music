@@ -1,0 +1,10 @@
+X:2515
+%%from edm
+T:Quartet in A, Op. 55, No. 1, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2515 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+g6 ag f4 b4 | b2a2a2g2 g4 a2 z2 | f6 ga g4 f2 z2 | a4 g2 z2 c'4 b2

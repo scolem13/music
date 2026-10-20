@@ -1,0 +1,13 @@
+X:7168
+%%from mtd
+T:Octet, 1st Movement - 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% MTD 8794, Barlow & Morgenstern S1542, EDM 7168 (Musical Theme Dataset, CC BY 4.0)
+N:Sinfonia  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=116
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+e2 c2 | b3 a | gbag | fagf | egfe |[M:5/8] dfe dc |[M:3/4] d2 b2 z2 |

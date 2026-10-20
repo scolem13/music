@@ -1,0 +1,10 @@
+X:3321
+%%from edm
+T:Rapsodie Norvegienne, 1st Movement - Intro
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3321 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e'6 e'2 e'4 | z/2 d'3/2c'4<a4 a2- | a2b/2a/2b/2a/2 c'2b2 ^g4 | ^G6- GA A4 |

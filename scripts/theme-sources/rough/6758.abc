@@ -1,0 +1,10 @@
+X:6758
+%%from edm
+T:King Cotton March, 3rd Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6758 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Ab
+e2 f4 =e2_e2 z2 | a2g2 z2 a2 c'4- | c'2 a'6 g'4- | g'2 f'6 c'4- | c'8 a2 z2 | b2c'2 z2 a2 f'4- | f'2 d'6 c'4- | c'8 b4 |

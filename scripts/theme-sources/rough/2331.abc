@@ -1,0 +1,10 @@
+X:2331
+%%from edm
+T:Suite No. 4, in E minor, 4th Movement, Sarabande
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2331 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G2A4<A4 GA | B6 ^d2 e4 | f4 g6 a2 | ^d6 ^c2 B4 |

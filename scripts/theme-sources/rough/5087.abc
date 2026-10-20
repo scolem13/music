@@ -1,0 +1,10 @@
+X:5087
+%%from edm
+T:Sonata No. 3, in A minor, 1st Movement
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5087 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+a6 b2 c'4 ^g4 | a4 a2^ga b2e2d2B2 | c2A4<f4 e2 e4- | e4 d4 e8 |

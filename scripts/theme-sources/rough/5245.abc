@@ -1,0 +1,10 @@
+X:5245
+%%from edm
+T:Suite in E minor, La Villageoise
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5245 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+B4 c4 | B4 e4 | ^d2e2f2d2 | e4 B4 | c2B2A2c2 | z/2 B/2c/2B/2c/2B/2c/2B/2 c/2B/2c/2B/2c/2B/2c/2<B/2 | z/2 c3/2B2 A2G2 | FEFG F4 |

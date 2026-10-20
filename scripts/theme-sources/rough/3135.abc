@@ -1,0 +1,10 @@
+X:3135
+%%from edm
+T:Sinfonietta, 1st Movement
+C:Leoš Janáček
+%%composer Janáček|Leoš
+% EDM 3135 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+^F2^D2 F4 | ^D4 ^F2D2 | z8 | ^A2^c2 A4 | ^G2^D2 ^F4 | ^D4 ^F2D2 | ^D4 ^F2D2 |

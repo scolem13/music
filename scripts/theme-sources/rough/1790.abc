@@ -1,0 +1,10 @@
+X:1790
+%%from edm
+T:Prelude No. 1, Piano
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1790 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+_d'=d'f2 b2<b2 | _d'=d'f2 _a2<a2 | fg_d2 =dfF2 | _AcCD F2<F2 | F/2E/2D/2C/2D2

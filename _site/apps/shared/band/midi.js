@@ -25,11 +25,12 @@
     if (bar.swing != null) return bar.swing;
     if (bar.compound) return 2 / 3;                         // x.5 is the beat's third eighth
     var o = bar.opts || {};
-    if (o.feel === "straight" || o.swing === false) return 0.5;
+    if (o.swing === false || (o.feel === "straight" && o.swingSet == null && o.styleSwing == null)) return 0.5;
     var P = global.BandPlayer;
-    return (P && P.swingFor) ? P.swingFor(bar.tempo || 120) : 2 / 3;
+    return (P && P.swingAt) ? P.swingAt(o, bar.tempo || 120).s : (P && P.swingFor) ? P.swingFor(bar.tempo || 120) : 2 / 3;
   }
-  function warp(pos, s){ var b = Math.floor(pos), f = pos - b; return b + (f <= 0.5 ? f * (s / 0.5) : s + (f - 0.5) * ((1 - s) / 0.5)); }
+  function swingDivOf(bar){ var P = global.BandPlayer; return (P && P.swingAt && !bar.compound) ? P.swingAt(bar.opts || {}, bar.tempo || 120).div : 8; }
+  function warp(pos, s, div){ var u = div === 16 ? 0.5 : 1, b = Math.floor(pos / u + 1e-9) * u, f = (pos - b) / u; return b + u * (f <= 0.5 ? f * (s / 0.5) : s + (f - 0.5) * ((1 - s) / 0.5)); }
 
   function vlq(n){ var out = [n & 0x7f]; while ((n >>= 7) > 0) out.unshift((n & 0x7f) | 0x80); return out; }
   function str(s){ var a = []; for (var i = 0; i < s.length; i++) a.push(s.charCodeAt(i) & 0x7f); return a; }
@@ -53,7 +54,7 @@
     var tracks = {}, starts = [], tick = 0, lastTempo = null, lastBeats = null;
     want.forEach(function (p){ tracks[p] = []; });
     (bars || []).forEach(function (bar){
-      var beats = bar.beats || 4, s = swingOf(bar);
+      var beats = bar.beats || 4, s = swingOf(bar), sdiv = swingDivOf(bar);
       var q = bar.compound ? 1.5 : 1, bq = ppq * q;         // a compound beat is a dotted quarter: 1.5 MIDI quarters
       var tempo = Math.round((bar.tempo || 120) * q * 100) / 100, sig = bar.compound ? (beats * 3) + "/8" : beats + "/4";
       if (tempo !== lastTempo){ var us = Math.round(60000000 / tempo);
@@ -63,7 +64,7 @@
       want.forEach(function (p){
         ((bar.parts && bar.parts[p]) || []).forEach(function (ev){
           if (!ev || !(ev.pos >= 0)) return;
-          var on = tick + Math.round((ev.straight ? ev.pos : warp(ev.pos, s)) * bq);
+          var on = tick + Math.round((ev.straight ? ev.pos : warp(ev.pos, s, sdiv)) * bq);
           var vel = Math.max(1, Math.min(127, Math.round((ev.vel == null ? 0.7 : ev.vel) * 127)));
           var ch = CHANNEL[p], notes, len;
           if (p === "drums" || p === "congas"){ if (GM[ev.piece] == null) return; notes = [GM[ev.piece]]; len = Math.round(ppq / 8); }
@@ -141,5 +142,5 @@
     return out;
   }
 
-  global.BandMidi = { build: build, generate: generate, swingOf: swingOf, warp: warp, GM: GM };
+  global.BandMidi = { build: build, generate: generate, swingOf: swingOf, swingDivOf: swingDivOf, warp: warp, GM: GM };
 })(typeof window !== "undefined" ? window : globalThis);

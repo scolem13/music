@@ -1,0 +1,10 @@
+X:1753
+%%from edm
+T:Sonata in D, 3rd Movement
+C:Baldassare Galuppi
+%%composer Galuppi|Baldassare
+% EDM 1753 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+a2<d2 b2<a2 ggf3 z3 | a2<B2 a2<g2 ff2<e2

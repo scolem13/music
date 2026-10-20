@@ -1,0 +1,10 @@
+X:4116
+%%from edm
+T:Concerto in A, K 488, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4116 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+e4 z4 A4 z4 | a12 g2f2 | f2e2d2c2 d2B2c2A2 | c2B2A2G2 F2E2^D2E2 |

@@ -1,0 +1,10 @@
+X:1445
+%%from edm
+T:Serenade, Op. 20, Str. Orchestra, 2nd Movement
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1445 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G4 E2FG | A4 c4 | B2A2 G2AG | f4- fecE | F2GA2<f2e | e2d2

@@ -1,0 +1,10 @@
+X:4665
+%%from edm
+T:Pictures From an Exposition, The Great Gate at Kiev
+C:Modest Petrovich Mussorgsky
+%%composer Mussorgsky|Modest Petrovich
+% EDM 4665 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e16 | f16 | g8 e4 g4 | f8 B8 | g4 b4 f4 e4 | d8 B8 |

@@ -1,0 +1,13 @@
+X:812
+%%from mtd
+T:Sonata in F, Op. 17, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0806, Barlow & Morgenstern B688a, EDM 0812 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=133
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c2 c2 | f4 F4 | E4 b4 | PbaPgf Pedc'b | a4 g2 |

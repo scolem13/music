@@ -1,0 +1,10 @@
+X:215
+%%from edm
+T:Three-Part Inventions, No. 13 in A minor
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0215 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+A4 B2 | c4 d2 | c2 B4 | AB cd e^f | g

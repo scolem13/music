@@ -1,0 +1,10 @@
+X:8128
+%%from edm
+T:Dudziarz (Mazurka), Op. 19, No. 2, 2nd Theme
+C:Henryk Wieniawski
+%%composer Wieniawski|Henryk
+% EDM 8128 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d4 g3b d'4 | g'4 f'3d' b4 | d'2c'2 a2c'2 z/2 b3/2 z2 | a2g2 a8 | d4

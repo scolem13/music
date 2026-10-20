@@ -1,0 +1,11 @@
+X:5401
+%%from edm
+T:Suite No. 3, 4th Movement - Passacaglia (After Roncalli)
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5401 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+E2D2 C2 g4 z/2 z/2 g | F2E2 D2 g4 _a2 | g2_g2a2=g2b2a2- | a2 z2 ga g4 g2- | g2

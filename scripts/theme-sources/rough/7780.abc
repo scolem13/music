@@ -1,0 +1,11 @@
+X:7780
+%%from edm
+T:Sonata in D, 5th Movement
+C:Leonardo Vinci
+%%composer Vinci|Leonardo
+% EDM 7780 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+a2d'2 c'ba2 | g2f3 gg/2a/2g/2a/2 | g/2a/2g/2a/2 z/2 a3/2 gfe2 | d4<c4 |

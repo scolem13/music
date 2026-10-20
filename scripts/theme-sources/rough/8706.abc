@@ -1,0 +1,10 @@
+X:8706
+%%from edm
+T:Sonata in D minor, Op. 108, 4th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8706 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+e6 d6 | c6 f6 | e6 d6 | c6 _A6 | G6 c6 | =B6 d6 | A6 d6 |

@@ -1,0 +1,10 @@
+X:7756
+%%from edm
+T:I Vespri Siciliani, Overture, 2nd Theme
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% EDM 7756 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B8 c4 ^c4 | d8 e6 f2 | a8 g6 e2 | e8 d4 z4 | g4 f4 e4 d4 | c12 B4 | z/2 c3-c/2 B4 c4 e4 | d16 |

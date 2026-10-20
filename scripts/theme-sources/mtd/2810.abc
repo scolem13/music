@@ -1,0 +1,12 @@
+X:2810
+T:Trio No. 1 in G, 2nd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4471, Barlow & Morgenstern H690, EDM 2810 (Musical Theme Dataset, CC BY 4.0)
+N:Poco adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=64
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G3/2{AGF}G/ B2 E2 | D>F A4 | G3/2{AGF}G/ c2{/B} (3AGF | E2 (3DB,C (3DEF |

@@ -1,0 +1,10 @@
+X:2203
+%%from edm
+T:Concerto Grosso in G minor, Op. 6, No. 6, 5th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2203 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+g2 gd b2 | B2 BG d2 | (3dcB (3cBA (3BAG | (3AG_G (3=G_G=E D2 |

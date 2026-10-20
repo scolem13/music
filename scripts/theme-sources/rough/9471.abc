@@ -1,0 +1,10 @@
+X:9471
+%%from edm
+T:Sonata in E minor, Op. 5, No. 8 - 3rd Movement - Sarabande
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9471 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+b4 e'6 f'2 | ^d'8 e'4 | c'2b4<c'4 c'2 | c'4 b8 | e'4 a6 a2 | a4 g4 b4 |

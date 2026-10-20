@@ -1,0 +1,10 @@
+X:3625
+%%from edm
+T:Marionettes, Villain, Op. 38, No. 6
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3625 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 A,4 E,4 | A,,4 D,6 C,2 | F,4 B,,4 D,2^D,2 | E,8 C,4 | z/2 D,3-D,/2 C,4 B,,4 | C,6

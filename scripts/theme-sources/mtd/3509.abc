@@ -1,0 +1,11 @@
+X:3509
+T:Les Preludes, Symphonic Poem No. 3, 3rd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% MTD 5163, Barlow & Morgenstern L215, EDM 3509 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=67
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G2- (3G^^FG G2- (3G=FG | A4 G2 z B, | F2- (3F^EF F2- (3FEF | B6 |

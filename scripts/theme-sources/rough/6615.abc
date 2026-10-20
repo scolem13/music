@@ -1,0 +1,10 @@
+X:6615
+%%from edm
+T:Symphony No. 1, in E minor, Op. 39, 3rd Movement - 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6615 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+B4 z2 e2 e4 | e8 B4 | B8 G4 | E6 ^F2 G2A2 |

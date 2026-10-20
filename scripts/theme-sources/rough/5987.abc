@@ -1,0 +1,10 @@
+X:5987
+%%from edm
+T:Rosamunde, Alfonso and Estrella, Overture
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5987 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+d''12- d''2d'2 | d'4 z4 f4 d2c2 | B2d2e2c2 d2f2b2^g2 | a4

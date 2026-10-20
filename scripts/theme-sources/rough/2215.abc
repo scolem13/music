@@ -1,0 +1,10 @@
+X:2215
+%%from edm
+T:Concerto Grosso in F, Op. 6, No. 9, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2215 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+z4 C4 C4 | z4 E4 E4 | z4 F4 F4 | z4 d6 F2 | E8

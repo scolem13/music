@@ -1,0 +1,10 @@
+X:4093
+%%from edm
+T:Concerto in F, K 459, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4093 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+e6 g2f2d2 | c2 z4 e2f2^f2 | g2 z4 G2A2B2 | c2d2e2 f2g2a2 | e4 d2

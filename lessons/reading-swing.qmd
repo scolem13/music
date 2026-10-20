@@ -101,13 +101,13 @@ same player changes ratio with the tempo. The rough rule:
 <thead><tr><th>Tempo</th><th>Typical long:short</th><th>Slider</th><th>What it sounds like</th></tr></thead>
 <tbody>
 <tr><td>Ballad, slow blues (under 80)</td><td>about 2:1, sometimes more</td><td>65–70%</td><td>Lazy, heavy triplet feel, often a 12/8 shuffle</td></tr>
-<tr><td>Medium (100–160)</td><td>between 3:2 and 2:1</td><td>60–67%</td><td>The "standard" swing of a blues like <em>Blues in the Closet</em></td></tr>
-<tr><td>Up-tempo (over 220)</td><td>close to even</td><td>52–58%</td><td>Eighths almost straight; the swing is in the accents</td></tr>
+<tr><td>Medium (100–160)</td><td>between 3:2 and 2:1</td><td>62–68%</td><td>The "standard" swing of a blues like <em>Blues in the Closet</em></td></tr>
+<tr><td>Up-tempo (over 220)</td><td>close to even</td><td>55–60%</td><td>Eighths almost straight; the swing is in the accents</td></tr>
 </tbody>
 </table>
 
-The band on this site follows the same rule: its swing starts at 68% at 100 beats a minute and
-slides toward 60% as the tempo rises. Try it here. Set the slider to 66% and raise the tempo
+The band on this site follows the same rule: its swing is 68% at 100 beats a minute or slower,
+66% at 120, 64% at 160, 60% at 220 and 55% at 300 (the Swing menu's Auto). Try it here. Set the slider to 66% and raise the tempo
 to 240: it becomes hard to play and starts to sound like a shuffle. Then lower the slider to
 55% at the same tempo.
 
@@ -130,6 +130,11 @@ as much, and the lead sheet says nothing about any of them.
 Each choice below shows the line as written, two ways to play it that are both swing, and one
 way that is not. The played versions are written out more exactly than any chart would be:
 accent marks (>), staccato dots, and "ghost" over a note that is barely played.
+
+With a MIDI keyboard plugged in (Chrome or Edge), **Play it on a keyboard** under any example
+counts you in for a bar, records you against a click, and says how you did: your swing ratio for
+the tempo, which notes you leaned on, ghosts, note lengths and ties, how far ahead of or behind
+the click you sat, and any notes you moved by an eighth.
 
 #### Accents on the off-beats
 
@@ -375,8 +380,8 @@ right. Try these settings and decide which one you like:
 <thead><tr><th>Setting</th><th>Tempo</th><th>Slider</th><th>Feel</th></tr></thead>
 <tbody>
 <tr><td>Relaxed</td><td>120</td><td>66–68%</td><td>Close to the triplet, heavy, bluesy</td></tr>
-<tr><td>Medium</td><td>150</td><td>60–64%</td><td>The usual jam-session reading</td></tr>
-<tr><td>Up</td><td>200+</td><td>55–58%</td><td>Nearly even; put the swing in accents on the off-beats</td></tr>
+<tr><td>Medium</td><td>150</td><td>62–66%</td><td>The usual jam-session reading</td></tr>
+<tr><td>Up</td><td>220+</td><td>55–60%</td><td>Nearly even; put the swing in accents on the off-beats</td></tr>
 </tbody>
 </table>
 
@@ -459,6 +464,7 @@ the tables until you can hear the difference without looking.
 ```{=html}
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/midi-feel.js"></script>
 <script>
 // Each .sw-ex holds an ABC tune in a <script type="text/plain">; render it and give it Play, Tempo and (unless
 // data-noslider) a Swing slider. Playback is abcjs's synth with its `swing` option (50 = even, 66 = triplet, 75 = dotted).
@@ -495,7 +501,29 @@ the tables until you can hear the difference without looking.
         .catch(function (e) { btn.textContent = '▶ Play'; console.error(e); });
     }
     btn.addEventListener('click', function () { if (current && current.ex === ex) stop(); else play(); });
+    if (window.MidiFeel) MidiFeel.attach(ex, { abc: abc, getBpm: function () { return +tIn.value || tempo; } });
   });
 })();
 </script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Lead sheet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Lead_sheet](https://en.wikipedia.org/wiki/Lead_sheet).
+
+"Swing time." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Swing_(jazz_performance_style)](https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)).
+
+**For teachers**
+
+Benadon, Fernando. "Slicing the Beat: Jazz Eighth-Notes as Expressive Microrhythm." *Ethnomusicology*, vol. 50, no. 1, 2006, pp. 73-98. Citation confirmed from catalogue records only.
+
+Friberg, Anders, and Andreas Sundström. "Swing Ratios and Ensemble Timing in Jazz Performance: Evidence for a Common Rhythmic Pattern." *Music Perception*, vol. 19, no. 3, 2002, pp. 333-49. [www.speech.kth.se/music/performance/Texts/ensemble_swing.htm](https://www.speech.kth.se/music/performance/Texts/ensemble_swing.htm). Link is the authors' KTH page with sound examples; article itself not read.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

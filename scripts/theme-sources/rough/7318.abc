@@ -1,0 +1,11 @@
+X:7318
+%%from edm
+T:Concerto in D minor, 3rd Mvt
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7318 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+a4 a4 | a4 e2f2 | g4 g4 | g4 d2e2 | f2g2a2=b2 | _d'4 =d'4 | z/2 b6- b3/2 | a4

@@ -1,0 +1,12 @@
+X:1134
+T:Symphony No. 8, in F, Op. 93, 2nd Movement - 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1127, Barlow & Morgenstern B1009, EDM 1134 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto scherzando  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=37
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+cf | =edcb ac'2a/f/ | =eee f/4e/4d/4e/4 f |

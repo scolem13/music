@@ -1,0 +1,10 @@
+X:1728
+%%from edm
+T:Capriccio: La Spagnoletta
+C:Girolamo Frescobaldi
+%%composer Frescobaldi|Girolamo
+% EDM 1728 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/2
+L:1/16
+K:F
+G,12 A,4 B,8 A,4 B,4 | C8 B,4 C4 D8 B,8 | A,8 C8 B,4 C4 D4 E4 | F4 C4 _E8 D8

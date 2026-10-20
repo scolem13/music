@@ -1,0 +1,12 @@
+X:7497
+%%from edm
+T:Soldiers' March, Op. 39, No. 5, from Children's Album Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7497 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/anb23r36kQM
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+d2 z2 d2 z2 | B3^A B2 z c | d2 z2 d2 z2 | B3^A B2 z c | d2 z2 e2 z2 | f2

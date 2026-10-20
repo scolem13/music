@@ -1,0 +1,10 @@
+X:2198
+%%from edm
+T:Concerto Grosso in G minor, Op. 6, No. 6, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2198 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Bb
+z8 G8 B6 A2 | A16 d8- | d8 c12- c2d2 | B8 A8

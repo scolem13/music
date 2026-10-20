@@ -1,0 +1,10 @@
+X:4041
+%%from edm
+T:Spanish Dances, Op. 12, No. 4, 2nd Theme
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4041 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+B4 c4 d4 | g12 | d4 c4 B4 | G12 | A4 B4 A4 | =E12 | A4 E4 A4 | D8

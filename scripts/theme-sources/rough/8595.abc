@@ -1,0 +1,11 @@
+X:8595
+%%from edm
+T:Quintet in F minor, Op. 34, 3rd Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8595 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Eb
+=a6 g6 | =e6 f2e2f2 | g6 f6 | d6 =e2d2e2 | c6 =e2d2e2 | c6 d2c2d2 | G6

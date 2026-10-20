@@ -1,0 +1,10 @@
+X:7809
+%%from edm
+T:Concerto in G minor, 1st Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7809 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+g2b2d'2g'2 _g'2a'2c'2e'2 | a2c'2_g2c'2 =G2g2b2d'2 | g'2b'2g'2d'2 e'2c2e2g2 | c'2e'2g'2b2 a2f2

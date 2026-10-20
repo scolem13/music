@@ -1,0 +1,13 @@
+X:922
+%%from mtd
+T:Sonata No. 20, in G, Op. 49, No. 2, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0916, Barlow & Morgenstern B798, EDM 0922 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=145
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+AAA | d2 ^c2 d2 e2 | gf e2 z AAA | e2 d2 e2 f2 | ag f z |

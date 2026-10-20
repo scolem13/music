@@ -1,0 +1,13 @@
+X:4057
+%%from mtd
+T:Concerto in A, K 622, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5708, Barlow & Morgenstern M435, EDM 4057 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=48
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A2 d3 f | fe d2 z2 | A3 dfa | ag f2 z2 | e3 afa | e3 aBf | A4 |

@@ -1,0 +1,10 @@
+X:5359
+%%from edm
+T:Konzert in Alten Stil, Op. 123, 2nd Movement
+C:Max Reger
+%%composer Reger|Max
+% EDM 5359 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 e'6 a'2 | d'2e'2 f'3e' e'2d'c' | ^a3=a a2g2 ^f3e | e4

@@ -1,0 +1,10 @@
+X:2257
+%%from edm
+T:Oratorios, Dead March, from Saul
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2257 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+E4 E4 E4 z2 E2 | E2DE F2E2 D4 z4 | F4 F2GA F4 z2 A2 | G2F2 E2D/2E/2F E4

@@ -1,0 +1,10 @@
+X:4471
+%%from edm
+T:Sonata in G, K 379, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4471 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+B2B/2c/2B/2c/2 z/2 d3-d/2 | G2G/2A/2G/2A/2 z/2 B3-B/2 | ABAB cBAG | GFAG GFED |

@@ -1,0 +1,13 @@
+X:6726
+%%from mtd
+T:My Country, No. 2, The Moldau, 4th Theme
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% MTD 8355, Barlow & Morgenstern S1117, EDM 6726 (Musical Theme Dataset, CC BY 4.0)
+N:Die Moldau  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=149
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+b6 | e'6- | e'3 d'3 | b6 | e'6- | e'3 d'3 | g6 | c'6- | c'3 b3 | g6 |

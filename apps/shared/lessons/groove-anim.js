@@ -27,8 +27,9 @@
   // when an event sounds, in the (swung) beats of the player's clock
   function when(e, rec) {
     var P = global.BandPlayer; if (e.straight || !P || !P.warp) return e.pos;
-    var s = rec.compound ? 2 / 3 : (rec.opts && rec.opts.feel === "straight") ? 0.5 : P.swingFor(rec.tempo || 120);
-    return P.warp(e.pos, s);
+    if (rec.compound) return P.warp(e.pos, 2 / 3);
+    var sa = P.swingAt ? P.swingAt(rec.opts, rec.tempo || 120) : { s: (rec.opts && rec.opts.feel === "straight") ? 0.5 : P.swingFor(rec.tempo || 120), div: 8 };
+    return P.warp(e.pos, sa.s, sa.div);
   }
   function recent(rec, prev, pos, part) {
     var out = [];

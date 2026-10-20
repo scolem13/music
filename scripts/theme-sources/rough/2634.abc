@@ -1,0 +1,13 @@
+X:2634
+%%from mtd
+T:Sonata in E minor, No. 34, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4295, Barlow & Morgenstern H514, EDM 2634 (Musical Theme Dataset, CC BY 4.0)
+N:Vivace molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=117
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+G | G>A Be | ^df z B | ee ff |{a} g2 ff | g>a bb |

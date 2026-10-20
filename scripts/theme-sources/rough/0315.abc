@@ -1,0 +1,10 @@
+X:315
+%%from edm
+T:Suite No. 1 in C, Orchestra, Gavotte
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0315 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e4 f4 g4 a2f2 | g4 c4 a4 f4 | d4 e4 f4 g2e2 | f2d2 g4 e/2f/2e/2f/2e/2f/2e/2f/2

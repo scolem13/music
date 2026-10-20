@@ -1,0 +1,10 @@
+X:7632
+%%from edm
+T:Symphony No. 6, in B minor, Op. 74, 3rd Movement - 3rd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7632 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+e2 z2 B2 z B e2 z2 B2 z2 | e2 a8- a2 g2 z f | b2 z2 z/2 e3/2 z d e2 z2 B2 z2 | e12

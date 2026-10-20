@@ -1,0 +1,10 @@
+X:4010
+%%from edm
+T:Creation Du Monde, 4th Movement - 2nd Theme
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4010 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+^c'16 | z/2 c'4- c' ^a4- a-[^a/2^g/2-] ^g4- g | (3^a8 ^g8 ^f'8 | ^c'12- c'3e' | ^c'3^d'2<c'2f'2<c'2

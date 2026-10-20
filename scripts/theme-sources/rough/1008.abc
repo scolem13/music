@@ -1,0 +1,13 @@
+X:1008
+%%from mtd
+T:Sonata No. 9, in A, Op. 47, 3rd Movement - 1st Theme A
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1002, Barlow & Morgenstern B884, EDM 1008 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=260
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c | c2 c c2 c | c2 c c2 ^d | e3 c2 ^d | e3 c2 ^d | e3 |

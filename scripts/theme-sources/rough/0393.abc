@@ -1,0 +1,10 @@
+X:393
+%%from edm
+T:Toccata and Fugue in G minor, Organ - Fugue Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0393 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+D2G,3 G,2<C2 C2<A,2 A,D2- | DD2<B,2 B,2<E2 E E6 | z _G,2<=G,2 A,2<G,2 _G,2<=G,2

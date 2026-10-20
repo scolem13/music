@@ -1,0 +1,10 @@
+X:5280
+%%from edm
+T:Introduction and Allegro, Intro, 1st Theme A
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5280 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+b4 f'6 b2 e'2=a2 | a4 e'8- e'2a2- | a8 g8 | a2d'2 =c'12 |

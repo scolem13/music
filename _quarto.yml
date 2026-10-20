@@ -1,5 +1,9 @@
 project:
   type: website
+  # Only .qmd pages are rendered, so the root .md dev notes (CLAUDE.md, in-progress notes), reports/ and research_notes/ stay off the site; archive/ is excluded too (see archive/README.md).
+  render:
+    - "**/*.qmd"
+    - "!archive/"
   # A fixed port for `quarto preview`, so the lyrics site (run locally) knows where to find the local Backing Track.
   preview:
     port: 4455
@@ -90,9 +94,19 @@ website:
             - lessons/arrange-chords.qmd
             - lessons/arrange-organ.qmd
             - lessons/patterns/index.qmd
+        - section: "Composing"
+          contents:
+            - lessons/compose-melody.qmd
+            - lessons/compose-motif.qmd
+            - lessons/compose-song.qmd
+            - lessons/compose-instruments.qmd
+            - lessons/compose-orchestra.qmd
+            - lessons/process-journal.qmd
+            - lessons/process-crit-b.qmd
         - section: "Notation, Tuning and Acoustics"
           contents:
             - lessons/notation-choices.qmd
+            - lessons/ornaments-by-period.qmd
             - lessons/tuning-systems.qmd
             - lessons/strobe-tuner.qmd
             - lessons/inharmonicity.qmd
@@ -128,6 +142,8 @@ website:
             - lessons/rec-gain-staging.qmd
             - lessons/rec-mics.qmd
             - lessons/rec-placement.qmd
+            - lessons/rec-guitar-amp.qmd
+            - lessons/rec-voice.qmd
             - lessons/rec-monitoring.qmd
             - lessons/rec-mixing.qmd
             - lessons/rec-mastering.qmd
@@ -170,6 +186,14 @@ website:
             - lessons/gear-violin.qmd
             - lessons/gear-sax.qmd
             - lessons/gear-drums.qmd
+        - section: "Research and Sources"
+          contents:
+            - lessons/sources-start.qmd
+            - lessons/sources-check.qmd
+            - lessons/sources-dp.qmd
+            - lessons/annotate-start.qmd
+            - lessons/annotate-check.qmd
+            - lessons/annotate-dp.qmd
         - section: "Mapping a Recording"
           contents:
             - lessons/timestamp-player.qmd
@@ -181,11 +205,6 @@ website:
         text: Home
       - href: lessons/index.qmd
         text: Lessons
-#      - text: Lessons
-#        menu:
-#          - lessons/quarter-notes.qmd
-#          - lessons/dotted-rhythms.qmd
-#          - lessons/tonal-do-re-mi.qmd
       - text: Practice
         menu:
           - practice/session.qmd
@@ -193,12 +212,28 @@ website:
           - practice/rhythm-sequences.qmd
           - practice/tonal-sequences.qmd
           - practice/songs.qmd
-          - practice/songs-classic.qmd
           - practice/tunes.qmd
           - practice/patterns.qmd
           - practice/rhythms.qmd
           - practice/reading-benchmarks.qmd
           - practice/dictation.qmd
+          - practice/theory-drills.qmd
+          - practice/exercise-builder.qmd
+          - practice/analysed-scores.qmd
+          - practice/triads.qmd
+          - practice/roman-numerals.qmd
+          - practice/seventh-chords.qmd
+          - practice/progressions.qmd
+          - practice/non-chord-tones.qmd
+          - practice/melodic-analysis.qmd
+          - practice/pop-forms.qmd
+          - practice/accompaniment-textures.qmd
+          - practice/secondary-dominants.qmd
+          - practice/secondary-diminished.qmd
+          - practice/mode-mixture.qmd
+          - practice/neapolitan.qmd
+          - practice/augmented-sixths.qmd
+          - practice/jazz-theory.qmd
           - text: "---"
           - practice/lsa-practice.qmd
           - practice/lsa-practice-notated.qmd
@@ -214,7 +249,6 @@ website:
           - tools/chords-solfege.qmd
           - tools/chord-library.qmd
           - tools/chord-sheet.qmd
-          - tools/chord-sheet-deluxe.qmd
           - tools/drumset.qmd
           - tools/accomp-styles.qmd
           - styles/index.qmd
@@ -229,6 +263,8 @@ website:
           - tools/timestamp-notes.qmd
           - tools/tap-along.qmd
           - tools/tap-latency.qmd
+          - tools/chunk-practice.qmd
+          - tools/classical-themes.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd

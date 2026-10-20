@@ -1,0 +1,13 @@
+X:1005
+%%from mtd
+T:Sonata No. 9, in A, Op. 47, Vn. and Piano, "Kreutzer", 1st Movement, Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0999, Barlow & Morgenstern B881, EDM 1005 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio sostenuto – Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=33
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+a f d | B e3/2 G/ | A d d | d c/ z/ |

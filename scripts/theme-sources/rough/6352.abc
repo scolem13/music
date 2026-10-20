@@ -1,0 +1,10 @@
+X:6352
+%%from edm
+T:Symphony No. 1 in B-flat, Op. 38, 3rd Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6352 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+f4 f'8 | e'4 z8 | a4 c'8 | b4 z8 | a4 g8 | f4 =e8 | g4 g8 | f4

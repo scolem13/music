@@ -1,0 +1,11 @@
+X:5615
+%%from edm
+T:Concerto No. 4, in C minor, Op. 44, 1st Movement - 2nd Theme A
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5615 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Ab
+z4 a4 a4 c'4 | b4 a4 d'4 c'2b2 | c'16 | z4 e'4 f'4 a'4 | f'4 e'4 c'4 b2a2 | b16 |

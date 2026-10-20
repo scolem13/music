@@ -1,0 +1,12 @@
+X:4545
+T:Symphony No. 33, in B-flat, K 319, 4th Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6194, Barlow & Morgenstern M919, EDM 4545 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=191
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b2 (3BBB | (3BBB (3BBB | B z d z | c2 z2 | c'2 (3ccc | (3ccc (3ccc | c z e z | d2 |

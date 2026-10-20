@@ -1,0 +1,10 @@
+X:5186
+%%from edm
+T:Sonata in G minor, Op. 19, 3rd Movement
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5186 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z2 B2 B2B4<F4 E2 | E4 B12 | z2 B2 B2B2 B2c2B2E2 | E4 B12 | z2 c2 e8 d2c2 | B8

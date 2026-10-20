@@ -1,0 +1,10 @@
+X:6370
+%%from edm
+T:Symphony No. 2 in C, Op. 61, 3rd Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6370 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+g6 e'2 | =b2 c'4 _b2 | a2a'3 f'2d' | c'2 =b4

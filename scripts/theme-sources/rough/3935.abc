@@ -1,0 +1,10 @@
+X:3935
+%%from edm
+T:Symphony No. 4, in A, Op. 90, 1st Movement - 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3935 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:A
+G6 B2 z2 e2 | e6 c4 z2 | F6 G2 z2 A2 | A6 G4

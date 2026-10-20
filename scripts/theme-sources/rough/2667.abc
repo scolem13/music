@@ -1,0 +1,10 @@
+X:2667
+%%from edm
+T:Symphony in D, No. 73, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2667 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d4 c4 d4 | d4 c4 d4 | ^d4 e4 e4 | e12 | e4 ^d4 e4 | e4 ^d4 e4 | =f4 ^f4 f4 | f12 |

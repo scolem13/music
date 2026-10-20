@@ -1,0 +1,10 @@
+X:6592
+%%from edm
+T:Quartet, Op. 56, "Voces Intimae", 4th Movement - 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6592 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d4 e4 f4 | e4 d4 e2d2 | e4 d4 e2d2 | e4 d2e2 f2g2 | a4 =b4 c'4 | =b4 a4 b2a2 | g2a2f2e2d2e2 |

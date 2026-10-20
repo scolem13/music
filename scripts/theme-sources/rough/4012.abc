@@ -1,0 +1,10 @@
+X:4012
+%%from edm
+T:Pastorale, 2nd Theme
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4012 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+A2^f2b2a2 gfe2g2f2 | ed^c2d2 A8 ^FG | ^FGAB^cdB2 d4<g4 | b2e2d2

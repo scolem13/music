@@ -1,0 +1,10 @@
+X:6142
+%%from edm
+T:Trio in B-flat, (1817), 3rd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6142 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d'2e'2 f'8 | b2c'2 d'8 | g2a2c'2b2d'2c'2 | e'2d'2 =b4 c'2

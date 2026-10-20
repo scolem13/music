@@ -1,0 +1,11 @@
+X:8531
+%%from edm
+T:Academic Festival Overture, Op. 80, 2nd Theme A
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8531 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+e16 | d8 d8 | c16 | G8 G8 | g16 | f8 g8 | e16- | e4 z4 c8 | a8 a8 |

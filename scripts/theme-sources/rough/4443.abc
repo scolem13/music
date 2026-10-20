@@ -1,0 +1,10 @@
+X:4443
+%%from edm
+T:Sonata in D, K 448, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4443 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d4 z/2 z/2 d4- dc2 | c2B2 e2d2 d4- | d4 z8 | e6 f/2e/2d/2e/2 f4- | f4 a4 g4 | f4 e/2f/2e/2f/2de d4- | d4

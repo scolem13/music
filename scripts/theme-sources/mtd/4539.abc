@@ -1,0 +1,12 @@
+X:4539
+T:Symphony No. 33, in B-flat, K 319, 1st Movement - 2nd Theme A
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6188, Barlow & Morgenstern M913, EDM 4539 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=168
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+x c' ^g | a =e f | c3- | c3 | b2 ^f | g ^d =e | B3- | B3 |

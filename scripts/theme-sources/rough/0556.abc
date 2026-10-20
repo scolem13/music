@@ -1,0 +1,10 @@
+X:556
+%%from edm
+T:First Symphony, Op. 9 - 7th Theme
+C:Samuel Barber
+%%composer Barber|Samuel
+% EDM 0556 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+z4 E4 F4 | G4 A4 B4 | B4 B6 B2 | B4 c6 B2 | B4 A8- | A4 G4 F4 | F4 G6 A2 | B6

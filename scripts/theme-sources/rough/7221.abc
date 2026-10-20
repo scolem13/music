@@ -1,0 +1,10 @@
+X:7221
+%%from edm
+T:Suite No. 2, 1st Movement - March
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7221 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+a2-a/2e'/2 z/2 ^c'/2 a2-a/2e'/2 z/2 c'/2 | a2b2c'2b2 | agfe d2d2 | a2-a/2e'/2 z/2 ^c'/2 ab=c'b | agfe

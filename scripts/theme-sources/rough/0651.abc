@@ -1,0 +1,13 @@
+X:651
+%%from mtd
+T:Concerto in D, Op. 61, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0645, Barlow & Morgenstern B549, EDM 0651 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=108
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f g a b/c'/ | d'2 a2 | g f e f/d/ | e2 A2 |

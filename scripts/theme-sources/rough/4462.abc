@@ -1,0 +1,10 @@
+X:4462
+%%from edm
+T:Sonata in F, K 376, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4462 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c4 f2 z2 f4 z/2 g3-g/2 | g3e f6 a2c'2 z2 | c'3af2 z2 c'3af2

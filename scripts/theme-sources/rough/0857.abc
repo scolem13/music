@@ -1,0 +1,13 @@
+X:857
+%%from mtd
+T:Sonata No. 8, in C minor, Op. 13, Piano, 3rd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0851, Barlow & Morgenstern B733, EDM 0857 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo: Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=198
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+Gcd | e3 f d3 e | c4{/d} c=Bcd |{/f} edef g2 g2 | g6 |

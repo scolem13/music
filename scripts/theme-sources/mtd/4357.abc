@@ -1,0 +1,12 @@
+X:4357
+T:Serenade in D, K 320, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6006, Barlow & Morgenstern M731, EDM 4357 (Musical Theme Dataset, CC BY 4.0)
+N:Concertante. Andante grazioso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=70
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d2{/^c} d{/c}d{/c} d{/c}d |{e} d=c/B/ B2 z2 |

@@ -1,7 +1,7 @@
 // Page logic smoke test without a browser: presets parse to 12 bars, and transposing
 // through every key keeps the form and returns to the original symbols.
 const fs = require("fs"), vm = require("vm"), assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/";
+const R = (require("path").join(__dirname, "../../..") + "/");
 for (const f of ["apps/shared/tune-chart.js", "apps/shared/abc-transpose.js"]) vm.runInThisContext(fs.readFileSync(R + f, "utf8"));
 const src = fs.readFileSync(R + "tools/_backing-track.qmd", "utf8");
 const m = /var METERS = [\s\S]*?function presetAbc[\s\S]*?\n  \}/.exec(src); assert(m, "meters + presets block found");

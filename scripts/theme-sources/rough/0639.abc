@@ -1,0 +1,13 @@
+X:639
+%%from mtd
+T:Concerto No. 4 in G, Op. 58, Piano - 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0633, Barlow & Morgenstern B537, EDM 0639 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato (cadenza: Ludwig van Beethoven)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=95
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B4- B BBB | BAAA ABBB | B2 c4 A2 | F4 |

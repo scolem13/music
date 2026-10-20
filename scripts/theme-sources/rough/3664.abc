@@ -1,0 +1,13 @@
+X:3664
+%%from mtd
+T:Symphony No. 1, in D, 4th Movement - 2nd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5316, Barlow & Morgenstern M56, EDM 3664 (Musical Theme Dataset, CC BY 4.0)
+N:Stürmisch bewegt  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=78
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bbmin
+z2 (f2 | f) =e f A | f2 (_e2 | e2) f2 | d3 =d | e f g a | g2 f2 |

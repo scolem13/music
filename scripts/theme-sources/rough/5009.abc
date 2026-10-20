@@ -1,0 +1,10 @@
+X:5009
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 7th Movement - Death of Tybalt, 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5009 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+A,,2C,=E, _E,2A,2 =B,2A,2 | G,4 E,2A,2 =B,2A,2 | G,2E,2=E,2A,2F,2A,2 | =E,2G,2_E,2D,2C,2B,,2 | A,,2

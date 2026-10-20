@@ -1,0 +1,11 @@
+X:7829
+%%from edm
+T:Concerto Grosso in D minor, Op. 3, No. 11, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7829 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:F
+a3gf2 f3ed2 | b3eb2 c4 b2 | b4 a2 z2 d'2d2 | g3ab2 b3ag2 |

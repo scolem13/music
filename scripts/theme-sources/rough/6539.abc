@@ -1,0 +1,10 @@
+X:6539
+%%from edm
+T:Concerto, Op. 47, 2nd Movement - Intro.
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6539 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z8 _a3/2=a/2d'3 bag | _a3/2=a/2 d'4 z2 _d'3/2=d'/2g'3 e'd'c' | _d'3/2=d'/2g'2 z2 _g'3/2=g'/2 d''3b' a'g'

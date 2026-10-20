@@ -1,0 +1,11 @@
+X:7530
+%%from edm
+T:Serenade in C, Op. 48, Finale 4th Movement - (Russian Theme), 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7530 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/x2TIIvk3KAs?t=1m35s
+M:2/4
+L:1/16
+K:C
+c'2c'2b2b2 | abc'a g2g2 | c'2c'2b2b2 | abc'a g4 | f2f2e2e2 | d2ef g2g2 |

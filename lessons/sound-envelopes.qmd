@@ -66,4 +66,24 @@ drops fast.
 
 - [Sound 6: LFOs](sound-lfo.qmd): a shape that repeats instead of following each note.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Envelope (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Envelope_(music)](https://en.wikipedia.org/wiki/Envelope_(music)).
+
+*Learning Synths*. Ableton. [learningsynths.ableton.com/](https://learningsynths.ableton.com/).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: An Introduction To VCAs." *Sound On Sound*, Jan. 2000. [www.soundonsound.com/techniques/introduction-vcas](https://www.soundonsound.com/techniques/introduction-vcas).
+
+Reid, Gordon. "Synth Secrets: Envelopes, Gates & Triggers." *Sound On Sound*, Nov. 1999. [www.soundonsound.com/techniques/envelopes-gates-triggers](https://www.soundonsound.com/techniques/envelopes-gates-triggers).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

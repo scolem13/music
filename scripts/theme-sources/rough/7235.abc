@@ -1,0 +1,10 @@
+X:7235
+%%from edm
+T:Serenade, Op. 6, 1st Movement - 1st Theme
+C:Joseph Suk
+%%composer Suk|Joseph
+% EDM 7235 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z4 g'4 e'4 c'4 | b16- | b2 z2 c'4 b4 g4 | e2f2 g12- | g2 z2 g8 f4 | e4 b8 a4 | g4 f2e4<f4 d2 | e6

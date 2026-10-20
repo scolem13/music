@@ -1,0 +1,10 @@
+X:8866
+%%from edm
+T:Variations on a Theme of Frank Bridge, Op. 10, Orchestra Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% EDM 8866 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+e'12 | a12- | a8 z4 | e'4 b8 | a12- | a8 z4 | c'4 ^d'4 c'4 | ^a4 ^g4 z4 | g8 z4 | f8

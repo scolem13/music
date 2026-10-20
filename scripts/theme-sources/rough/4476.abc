@@ -1,0 +1,10 @@
+X:4476
+%%from edm
+T:Sonata in C, K 404, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4476 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+g2g^f/2g/2 c'2e' z | e2e/2f/2d/2e/2 g2c'2 | c2c/2d/2B/2c/2 e3g | ^f=fec

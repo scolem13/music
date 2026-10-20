@@ -1,0 +1,13 @@
+X:7550
+%%from mtd
+T:The Sleeping Beauty Suite, from the Ballet, Op. 66a, 1st Movement - La Fee des Lilas
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9176, Barlow & Morgenstern T207, EDM 7550 (Musical Theme Dataset, CC BY 4.0)
+N:March (Moderato)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=71
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z BG GF^E | FGA B3- | Bcd edc | B2 F F3 |

@@ -1,0 +1,10 @@
+X:8041
+%%from edm
+T:Capriol, Suite for Orchestra, 1st Movement - Basse Dance
+C:Peter Warlock
+%%composer Warlock|Peter
+% EDM 8041 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d4 d4 d4 | f4 e2d2 c4 | f4 g2e2 f2g2 | a8 a4 | a2g2f2g2a2b2 | c'4 c'2b2 a4 | b2a2g2f2g2e2 | f8

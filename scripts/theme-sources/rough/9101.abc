@@ -1,0 +1,11 @@
+X:9101
+%%from edm
+T:Concerto in D, 2nd Movement - Sicilienne
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9101 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+ed e4 d6 | ed e4 d6 | e3fg2 a3gf2 | a8- a2c'2 |

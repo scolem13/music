@@ -1,0 +1,12 @@
+X:722
+T:Quartet in E minor, Op. 59, No. 2 - 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0716, Barlow & Morgenstern B619, EDM 0722 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=237
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+c'd' | e'2 z d' c'2 z a | g6 c'd' | e'd'c'b d'c'ba | g4 |

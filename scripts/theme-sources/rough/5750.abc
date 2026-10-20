@@ -1,0 +1,11 @@
+X:5750
+%%from edm
+T:Introduction and Tarantelle, Op. 43, Tarantelle, 2nd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5750 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:G
+B3c2<d2e | f3g2<b2b | b3b2<b2b | b3b b4 | a4 b4 | a3e g4 | f3c e4 | d3A c4 |

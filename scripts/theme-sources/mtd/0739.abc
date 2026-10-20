@@ -1,0 +1,12 @@
+X:739
+T:Quartet in E-flat, Op. 127, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0733, Barlow & Morgenstern B636, EDM 0739 (Musical Theme Dataset, CC BY 4.0)
+N:Maestoso – Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=136
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b3 | a2 g/^f/ | a e d/c/ | c B c |

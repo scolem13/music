@@ -1,0 +1,12 @@
+X:731
+T:Quartet in E-flat, Op. 74, 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0725, Barlow & Morgenstern B628, EDM 0731 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto con variazioni  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=88
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B>A | G z e>d | c z c>B | A z A>G | F |

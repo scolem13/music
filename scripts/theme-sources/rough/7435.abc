@@ -1,0 +1,10 @@
+X:7435
+%%from edm
+T:Quartet No. 2, 1st Movement - 2nd Theme
+C:Virgil Thomson
+%%composer Thomson|Virgil
+% EDM 7435 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+g6 g4 g2 | g4 c2 =b6- | =b2 g4 d'4 d'2- | d'2_d'2=b4<a4 | c'3a_g4<d4 |

@@ -1,0 +1,10 @@
+X:2719
+%%from edm
+T:Symphony in G, No. 94, "Surprise", 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2719 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d4 g4 e4 | d3e/2c/2 B2 z4 G2 | F2G2c2B2A2G2 | D6

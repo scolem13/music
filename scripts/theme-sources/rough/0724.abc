@@ -1,0 +1,13 @@
+X:724
+%%from mtd
+T:Quartet in C, Op. 59, No. 3 - 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0718, Barlow & Morgenstern B621, EDM 0724 (Musical Theme Dataset, CC BY 4.0)
+N:Andante con moto quasi allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=81
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z z E ABc | BA^G FED | CB,A, E3- | E3- E^F^G | A2 |

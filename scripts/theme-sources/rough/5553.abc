@@ -1,0 +1,10 @@
+X:5553
+%%from edm
+T:Symphony No. 4, Op. 53, 1st Movement - 1st Theme
+C:Albert Roussel
+%%composer Roussel|Albert
+% EDM 5553 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+z4 A2e2 c2a2 | ^d'12- | ^d'6 a2 =d2e2 | c2 z2 =c2 z2 g2 z2 | z4 f2c'2 a2f'2 | =c''12 |

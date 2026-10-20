@@ -1,0 +1,10 @@
+X:9341
+%%from edm
+T:Waltzes, Op. 42 in A-flat, Themes B and C
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9341 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+e4 c4 (3a2b2a2 | g8 f'4 | g8 e'4 | e12 | f6 e2 d2c2 | B4 z2 f'2 e'2 z d' | c'4

@@ -1,0 +1,10 @@
+X:8014
+%%from edm
+T:Crown Imperial, Coronation March, 1st Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8014 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+cc z c d4- | d4 d2cc | d2e2 d3 z | ee z e g4- | g6 f2 | gg z f gfe2- | eeee d4- | d4

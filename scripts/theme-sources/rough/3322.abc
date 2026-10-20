@@ -1,0 +1,10 @@
+X:3322
+%%from edm
+T:Rapsodie Norvegienne, 1st Movement - 1st Theme
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3322 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+e4 dcBA | e2fe z/2 c3/2BA | e4 c2A2 | e2fe dcBA | e4 d2c2 | ^defd fece |

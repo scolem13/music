@@ -1,0 +1,10 @@
+X:8217
+%%from edm
+T:Harold in Italy, Op. 16, Orchestra - 1st Movement - Harold in the Mountains - Intro A
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8217 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G,^G,G,G, G,=G,G,G, ^A,=A,A,C | ^CDG,G FG=FG E^DCA, | ^A,G,G,G,

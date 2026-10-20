@@ -1,0 +1,10 @@
+X:1878
+%%from edm
+T:Iphigenia in Aulis, Overture, 2nd Theme
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1878 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z G,A,B, C12 | z G,A,B, C12 | C4 D2C2 F2E2D2C2 | B,2C2 D12 | C4 D2C2 F2E2D2C2 | B,2C2 D12 |

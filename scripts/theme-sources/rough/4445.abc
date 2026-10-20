@@ -1,0 +1,10 @@
+X:4445
+%%from edm
+T:Sonata in D, K 448, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4445 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+B2d2 z2 g2 | f2a2 z2 d2 | g2b2 z2 d'2 | c'2 d'4 =c'a |

@@ -1,0 +1,10 @@
+X:1791
+%%from edm
+T:Prelude No. 2, Piano, 1st Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1791 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+z8 z2 G2 B2G2 | B2 G6 z2 G2 B2G2 | B2 G6 z2 G2 B2G2 | B2G2c2G2 B2G2c2B2 | z/2 B3/2 G6

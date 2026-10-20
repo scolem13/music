@@ -1,0 +1,13 @@
+X:247
+T:Partita No. 1 in B minor, Sarabande Vn. Solo
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0242, Barlow & Morgenstern B156, EDM 0247 (Musical Theme Dataset, CC BY 4.0)
+N:Sarabande  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/8
+Q:1/4=71
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f2 g2 fe | f3 edc | BedcdB | ^A3 |

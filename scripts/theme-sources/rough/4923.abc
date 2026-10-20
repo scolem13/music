@@ -1,0 +1,10 @@
+X:4923
+%%from edm
+T:Alexander Nevsky, Op. 78, 2nd Movement - 1st Theme, Pt. 2
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4923 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+B,,4 C,4 | D,4 B,,4 | E,8 | G,2A,2 G,4 | B,4 B,4 | B,,8 |

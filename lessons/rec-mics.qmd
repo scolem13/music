@@ -144,6 +144,39 @@ puts it back) and lifts 4–6 kHz, where words are clear; a studio condenser sta
 {{< include _synth-kit.qmd >}}
 
 ```{=html}
-<script src="/apps/shared/lessons/rec-kit-mic.js?v=2"></script>
-<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=3"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=5"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Brixen, Eddy Bøgh. "Proper Hand Placement on a Vocal Mic." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/audio-production/proper-hand-placement-on-a-vocal-mic/](https://www.dpamicrophones.com/mic-university/audio-production/proper-hand-placement-on-a-vocal-mic/).
+
+"Phantom power." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Phantom_power](https://en.wikipedia.org/wiki/Phantom_power).
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)).
+
+"Ribbon microphone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ribbon_microphone](https://en.wikipedia.org/wiki/Ribbon_microphone).
+
+Royer Labs. "Can Phantom Power Damage a Ribbon Mic?" *Royer Labs FAQ*. [royerlabs.com/faq/can-phantom-power-damage-a-ribbon-mic/](https://royerlabs.com/faq/can-phantom-power-damage-a-ribbon-mic/).
+
+Shure. "What Is Phantom Power & Why Do I Need It?" *Shure Insights*, 28 Feb. 2014. [www.shure.com/en-US/insights/what-is-phantom-power-why-do-i-need-it](https://www.shure.com/en-US/insights/what-is-phantom-power-why-do-i-need-it).
+
+**For teachers**
+
+Bartlett, Bruce, and Jenny Bartlett. *Practical Recording Techniques: The Step-by-Step Approach to Professional Audio Recording*. 7th ed., Routledge, 2017. Details from the Routledge listing.
+
+Brixen, Eddy Bøgh. "Proximity Effect in Microphones Explained: How It Affects Different Sound Sources." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/background-knowledge/proximity-effect-in-microphones-explained/](https://www.dpamicrophones.com/mic-university/background-knowledge/proximity-effect-in-microphones-explained/).
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Owsinski, Bobby. *The Recording Engineer's Handbook*. 5th ed., BOMG Publishing, 2023. Details from retailer listings.
+
+Royer Labs. "Cross-Patching Microphone Tie Lines." *Royer Labs FAQ*. [royerlabs.com/faq/cross-patching-microphone-tie-lines/](https://royerlabs.com/faq/cross-patching-microphone-tie-lines/).
+:::
+<!-- /works-cited -->
+

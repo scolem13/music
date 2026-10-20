@@ -1,0 +1,10 @@
+X:307
+%%from edm
+T:Suite No. 2 in B minor, Fl. and Str., Overture - Sarabande
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0307 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 z/2 d4- d3/2e2 | f4 B4 e4 | d8 c2B2 | ^A2B2 A2B2 z/2 c3-c/2- | c2F4<f4

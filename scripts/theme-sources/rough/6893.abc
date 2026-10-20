@@ -1,0 +1,12 @@
+X:6893
+%%from mtd
+T:Lagunen-Waltzes, from Eine Nacht in Venedig, 2nd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8522, Barlow & Morgenstern S1284, EDM 6893 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=172
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g g g | g d2 | g g g | g a2 | a a a | a b2 | b b b | b c'2 |

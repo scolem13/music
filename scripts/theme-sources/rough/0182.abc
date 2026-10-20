@@ -1,0 +1,10 @@
+X:182
+%%from edm
+T:Concerto in D minor, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0182 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d_d=dA BGAF GEFD | E_D=D2 B2B2 A3=B | _dA=d_d =d2

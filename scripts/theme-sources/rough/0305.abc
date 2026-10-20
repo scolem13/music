@@ -1,0 +1,10 @@
+X:305
+%%from edm
+T:Suite No. 2 in B minor, Fl. and Str., Overture - 2nd Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0305 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f4 g4 f8 | e4 f2e2 d2e2 f4 | B4 e4 d8 | c4 d2e2 d2c2B2c2 | d2e2 f2

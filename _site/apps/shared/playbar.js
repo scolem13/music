@@ -7,6 +7,7 @@
 //     Each child of `bar` that may leave carries data-pri (0-9: the higher the number, the sooner it leaves), and optionally
 //     data-pri-live, its importance while playing (the tempo matters before, Fill now during). A child with neither never leaves:
 //     Play and Stop. A child that is hidden takes no room and is left where it is.
+//   PlayBar.swingSlot(opts)   the Swing menu (Auto / 50-75 %) to put in a bar; see below
 //   PlayBar.HEIGHT   the bar's height as a CSS length (pages pad their foot by it)
 (function (global) {
   var HEIGHT = "3.4rem";
@@ -58,5 +59,22 @@
     refit();
     return { refit: refit, more: more, pop: pop };
   }
-  global.PlayBar = { attach: attach, HEIGHT: HEIGHT };
+  // The Swing slot: one menu, Auto (the style's own by tempo, BandPlayer.swingAt) or 50-75 % (50 = even eighths, 67 = triplets).
+  //   PlayBar.swingSlot({ value: null | ratio, pri: 4, priLive: 6, onChange: function(ratio | null){} }) -> the element (put it in the bar before attach);
+  //   el.set(ratio | null) shows a value without calling onChange. A ratio is 0.5..0.75; null is Auto.
+  var SWING_STEPS = [50, 54, 58, 62, 67, 71, 75];
+  function swingSlot(o){
+    o = o || {};
+    var span = document.createElement("span"), lab = document.createElement("label"), sel = document.createElement("select");
+    sel.id = o.id || "pb-swing"; lab.htmlFor = sel.id; lab.textContent = "Swing"; sel.title = "How late the off-beat eighth is played: Auto follows the style and slows down the swing as the tempo rises; 50 % is even, 67 % is a triplet";
+    var a = document.createElement("option"); a.value = "auto"; a.textContent = "Auto"; sel.appendChild(a);
+    SWING_STEPS.forEach(function (p){ var op = document.createElement("option"); op.value = String(p); op.textContent = p + " %"; sel.appendChild(op); });
+    span.setAttribute("data-pri", o.pri == null ? 4 : o.pri); span.setAttribute("data-pri-live", o.priLive == null ? 6 : o.priLive);
+    span.appendChild(lab); span.appendChild(sel);
+    span.set = function (r){ if (r == null) { sel.value = "auto"; return; } var p = Math.round(r * 100), best = SWING_STEPS.reduce(function (m, x){ return Math.abs(x - p) < Math.abs(m - p) ? x : m; }, 50); sel.value = String(best); };
+    span.set(o.value == null ? null : o.value);
+    sel.addEventListener("change", function (){ if (o.onChange) o.onChange(sel.value === "auto" ? null : +sel.value / 100); });
+    return span;
+  }
+  global.PlayBar = { attach: attach, swingSlot: swingSlot, HEIGHT: HEIGHT };
 })(typeof window !== "undefined" ? window : globalThis);

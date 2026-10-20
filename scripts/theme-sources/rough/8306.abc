@@ -1,0 +1,10 @@
+X:8306
+%%from edm
+T:Quartet, Str. - 3rd Movement - 1st Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8306 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c'3^c'/2=c'/2 a2c'2 ^c'2=c'2 | a2 c'8- c'

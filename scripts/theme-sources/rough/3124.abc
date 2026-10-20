@@ -1,0 +1,10 @@
+X:3124
+%%from edm
+T:Indian Dances, Buffalo Dance, Theme
+C:Frederick Jacobi
+%%composer Jacobi|Frederick
+% EDM 3124 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+C4 E2G2 G2^A2 | ^A3G GFFE E4 | ECC2 C4 ECC2 | C2C2 C4

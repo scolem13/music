@@ -1,0 +1,10 @@
+X:6336
+%%from edm
+T:Symphonic Etude, in C-sharp minor, Op. 13, Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6336 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+c'4 g4 e4 c4 | a6 g2 g4 g4 | f4 g4 e4 f4 | d4 ^A4 d4

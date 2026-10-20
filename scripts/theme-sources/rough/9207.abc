@@ -1,0 +1,11 @@
+X:9207
+%%from edm
+T:Fantaisie in F minor, Op. 49 - 3rd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9207 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Ab
+c'2d'2=d'2e'2 f'2e'2 z/2 c''2-c''/2b' | b'2a'2 (3g'2f'2=e'2 g'2 z f' (3f'2_e'2=d'2 |

@@ -1,0 +1,10 @@
+X:3244
+%%from edm
+T:Hary Janos, Op. 15, Dal (Song)
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% EDM 3244 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A4<A4 d4<d4 | c4<A4 d8 | e8- e2B2c2d2 | e2d2 A2 d8- d2 | c8 G8 | A16 |

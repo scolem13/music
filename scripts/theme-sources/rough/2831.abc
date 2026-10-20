@@ -1,0 +1,10 @@
+X:2831
+%%from edm
+T:Trio No. 1 in C, "London", 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2831 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+G4 c8 e4- | e4 d3e f2B2 c4 | z2 G4<g4 ag c'2b2 | a2g2 g4 f/2g/2f/2g/2f/2g/2f/2g/2 e4 |

@@ -1,0 +1,10 @@
+X:520
+%%from edm
+T:Concerto in D minor - 2nd Movement
+C:Wilhelm Friedemann Bach
+%%composer Bach|Wilhelm Friedemann
+% EDM 0520 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:F
+a3g f2f3 ed2 b3d b2 c4 b2 | b/2a/2b/2c'/2b2 a2 z2 a2d2 g3a b2b3 ag2 | _g4

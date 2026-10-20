@@ -1,0 +1,10 @@
+X:9467
+%%from edm
+T:Sonata in G minor, Op. 5, No. 5 - 4th Movement
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9467 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d'2g'2b'2g'2d'2g'2 | _g'8 z4 | b2d'2g'2d'2b2g2 | a8 z4 | d'2f'2b'2f'2d'2b2 | c'8 z4 | b2d'2g2b2_e2c'2 | d'4

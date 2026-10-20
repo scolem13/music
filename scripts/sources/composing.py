@@ -1,0 +1,41 @@
+# The Composing lessons (Composing 1–5) and the Process lessons (Process 1–2). Checked Oct 2026: pages fetched, except
+# Pattison's book (quoted through the Wikipedia article on prosody) and the IB Arts guide (read from schools' published copies;
+# the IB site refuses scripted requests).
+C1, C2, C3, C4, C5 = ("lessons/compose-%s.qmd" % s for s in "melody motif song instruments orchestra".split())
+P1, P2 = "lessons/process-journal.qmd", "lessons/process-crit-b.qmd"
+SOURCES = [
+    web('"The Sentence." *Open Music Theory*, Hybrid Pedagogy Publishing, URL.', "https://openmusictheory.github.io/sentence.html", [C1, C2], who="student"),
+    web('"The Period." *Open Music Theory*, Hybrid Pedagogy Publishing, URL.', "https://openmusictheory.github.io/period.html", [C1], who="student"),
+    wiki("Motif (Music)", "Motif_(music)", [C1, C2], who="student"),
+    wiki("Sequence (Music)", "Sequence_(music)", [C2], who="student"),
+    wiki("Inversion (Music)", "Inversion_(music)", [C2], who="student"),
+    wiki("Retrograde (Music)", "Retrograde_(music)", [C2], who="student"),
+    wiki("Augmentation (Music)", "Augmentation_(music)", [C2], who="student"),
+    wiki("Diminution", "Diminution", [C2], who="student"),
+    wiki("Symphony No. 5 (Beethoven)", "Symphony_No._5_(Beethoven)", [C2, P2], who="student"),
+    wiki("Jaws (Film)", "Jaws_(film)", [C2], who="student"),
+    book('Schoenberg, Arnold. *Fundamentals of Musical Composition*. Edited by Gerald Strang with Leonard Stein, Faber and Faber, 1967.', [C1, C2], who="teacher",
+         note="The classic treatment of the motive, its variation, and the sentence and period; not quoted here."),
+    wiki("Prosody (Music)", "Prosody_(music)", [C3], who="student"),
+    wiki("Song Structure", "Song_structure", [C3], who="student"),
+    book('Pattison, Pat. *Writing Better Lyrics*. 2nd ed., Writer\'s Digest Books, 2009.', [C3], who="teacher",
+         note="On prosody as the music supporting what is said; quoted through the Wikipedia article on prosody."),
+    web('Nave, R. "Playing Ranges of Instruments." *HyperPhysics*, Georgia State U, URL.', "https://hyperphysics.gsu.edu/hbase/Music/orchins.html", [C4], who="student",
+        note="The sounding ranges of the orchestral instruments (and the transposer's range check)."),
+    wiki("Transposing Instrument", "Transposing_instrument", [C4], who="student"),
+    wiki("Alto Saxophone", "Alto_saxophone", [C4], who="student"),
+    wiki("Tenor Saxophone", "Tenor_saxophone", [C4], who="student"),
+    wiki("Cor Anglais", "Cor_anglais", [C4], who="student"),
+    wiki("Orchestra", "Orchestra", [C4, C5], who="student"),
+    wiki("Texture (Music)", "Texture_(music)", [C5], who="student"),
+    wiki("Countermelody", "Countermelody", [C5], who="student"),
+    wiki("String Quartet", "String_quartet", [C5], who="student"),
+    web('Coleman, Sean. "Assessment Guidance." *IB Music*, URL.', "https://dp-music.seancoleman.org/book/assessment-guidance.html", [P1], who="student",
+        note="A synthesis of the IB\'s DP Music Additional Guidance (2024) and the subject reports, Nov. 2022 to May 2025."),
+    web('International Baccalaureate Organization. *Arts Guide (for Use from September 2022/January 2023)*: "Arts Assessment Criteria: Year 5/Competent." Surrey Schools, URL.',
+        "https://media.surreyschools.ca/media/Default/frf/8755/Grade%209%20and%2010%20Arts%20Criterion%20(1).pdf", [P1, P2], who="teacher",
+        note="The guide\'s pages 47–50, as published by a school district; the criteria, descriptors and command terms quoted in Process 2."),
+    web('International Baccalaureate Organization. *Arts Guide*: assessment criteria, years 1, 3 and 5 (the earlier guide). School District 38 (Richmond), URL.',
+        "https://boyd.sd38.bc.ca/files/boyd/2022-02/Arts.pdf", [P2], who="teacher",
+        note="The earlier criteria: B Developing skills, C Thinking creatively."),
+]

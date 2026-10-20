@@ -1,0 +1,10 @@
+X:51
+%%from edm
+T:Symphony No. 6 in C, Op. 31, 2nd Movement - 1st Theme
+C:Kurt Atterberg
+%%composer Atterberg|Kurt
+% EDM 0051 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+B2B3 c B6 | A2G3 F G6 | E2F3 G2<A2 F^D2- | ^DB,2<E2 G B6 |

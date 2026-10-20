@@ -1,0 +1,10 @@
+X:5980
+%%from edm
+T:Quintet in C, Op. 163, 3rd Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5980 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+c c6- c B A4 z3 | B A6- A =G2<F2 =E2<F2 | =G z/2 A6- A/2 G F4 E3- | E D4

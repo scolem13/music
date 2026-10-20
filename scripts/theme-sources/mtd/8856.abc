@@ -1,0 +1,11 @@
+X:8856
+T:Phantasy-Quartet, 3rd Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% MTD 1859, Barlow & Morgenstern B1711l, EDM 8856 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/8
+Q:1/4=290
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z2 C6 | _B,C C3 z _EC | C8 | _B,C C3 z FC | C8 | _B,C C3 z GC | C8 | DEFG A2 z2 | c8 |

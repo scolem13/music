@@ -1,0 +1,10 @@
+X:115
+%%from edm
+T:Christ Lag in Todesbunden (Church Cantata, No. 4)
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0115 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B4 ^A4 B2^c2 d4 | e4 d4 ^c4 B4 | B4 G4 A4 B4 | A2G2F2E2 F4 E4 |

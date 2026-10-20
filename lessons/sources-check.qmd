@@ -1,0 +1,140 @@
+---
+title: "Sources 2: Checking and Citing (Grades 9–10)"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+description: "For grades 9–10: primary and secondary sources in music, checking a source by reading around it (SIFT), why AI search answers can't be cited, and MLA citations for recordings, scores and web pages."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [research]
+---
+
+In [Sources 1](sources-start.qmd) the question was "where did you find that?" Now there are two more: **is it
+true?** and **how do you show the reader exactly where it came from?**
+
+## Primary and secondary sources
+
+In music research, a **primary source** is the music itself, or the people directly involved in making it:
+
+- recordings and live performances
+- scores, lead sheets and the composer's manuscripts
+- interviews with the composer or the performers, their letters, the album's liner notes
+
+A **secondary source** is written *about* the music by someone who wasn't part of it:
+
+- books and journal articles by music researchers
+- music encyclopedias (such as *Grove Music Online*)
+- documentaries, reviews and critical editions of scores
+
+Good research uses both. The primary sources show what the music does. The secondary sources tell you what's
+**normal** for that style, its history, and what the experts have found. One song isn't enough to tell you what's
+typical of a whole style. If you listen to one blues and it has a 16-bar form, that doesn't mean the blues uses 16 bars.
+
+## Check a source by reading *around* it
+
+Fact-checkers don't decide whether a web page is good by staring at it. They open new tabs and find out what *other*
+people say about the page and its author. Mike Caulfield's **SIFT** method puts this into four moves:
+
+1. **Stop.** Before you use something, ask whether you know who made it.
+2. **Investigate the source.** Open a new tab and search for the author or the site. Who are they? What do others say about them?
+3. **Find better coverage.** Look for other trusted sources on the same claim. If good sources agree, you're on firm ground.
+4. **Trace claims back to the original.** If a page says "the band said in an interview...", find that interview.
+
+## AI search answers can't be cited
+
+::: {.callout-warning}
+## AI summaries are not sources, and they aren't reliable
+
+The AI answers at the top of Google, Bing and other search engines, and the answers chatbots give, are **not
+citeable sources**:
+
+- **There's no author** who is responsible for the claim, and no editor checked it.
+- **There's nothing fixed to cite.** The text is generated fresh each time. Your reader can't go and look at what you saw.
+- **They get things wrong, confidently.** Google's AI Overviews told people to add glue to pizza (from a joke on
+  Reddit). They said a US president who died in 1875 had earned degrees between 1947 and 2012.
+- **Their own "sources" are often wrong.** In a 2025 test by Columbia University's Tow Center, eight AI search tools
+  were asked to find the source of real news quotes. They got it wrong more than 60% of the time. Google's Gemini gave
+  a completely correct answer only once out of 200, and two of the tools gave more made-up links than real ones.
+
+Style guides like MLA do show how to cite a chatbot. That's for when you quote what the chatbot *said*, for example
+in an essay about AI. It doesn't turn the chatbot into evidence for a fact about music.
+:::
+
+**What to do instead:**
+
+- Treat an AI answer, at most, as a hint about what to look for. Then go and find a real source that says it.
+- Click through to the page it claims to be summarising, and read that page. Often it doesn't say what the summary said.
+- Cite the page, book, recording or score you actually read.
+- If your teacher allows AI for brainstorming, say that you used it, following your school's rules. Still check and
+  cite every fact against a real source.
+
+## Where to look
+
+- **Your school library's databases:** *Grove Music Online* (the standard music encyclopedia), *JSTOR* (journal
+  articles), and the library catalogue for books. Ask your librarian for the login.
+- **Scores:** *IMSLP* (the Petrucci Music Library) has scans of published scores whose copyright has run out. The
+  publisher's edition is better than a fan's upload.
+- **Interviews and liner notes:** the musicians' own words, from a magazine, a radio show, a museum archive, or the
+  album itself.
+- **Museums and archives:** the Library of Congress, the Smithsonian, and national music museums.
+
+## Citing in MLA
+
+A citation has two parts.
+
+**1. In the text**, where you use the source, put the author's name (and the page, if it's a book) in brackets:
+
+> The twelve-bar form was already common in the earliest blues recordings (Smith 45).
+
+(Smith is a made-up author, to show the pattern.)
+
+For music, point to the exact place: "the bass drops out at 2:13" or "the modulation in bar 33".
+
+**2. At the end**, in a list called **Works Cited**, the full entry, in alphabetical order. The pattern is:
+
+> Author. "Title of the Part." *Title of the Whole*, Publisher, Date, Location.
+
+Some patterns for music:
+
+| Source | Pattern |
+|---|---|
+| A song on an album | Davis, Miles. "So What." *Kind of Blue*, Columbia, 1959. |
+| A score | Composer. *Title*. Edited by Editor, Publisher, Year. |
+| A web page | Author. "Page Title." *Website Name*, Date, URL. |
+| An interview | Person interviewed. Interview by Interviewer. *Where It Appeared*, Date, URL. |
+| A video | "Video Title." *YouTube*, uploaded by Channel, Date, URL. |
+
+Quoting is using the exact words, in quotation marks. Paraphrasing is putting the idea in your own words. Both need
+a citation. The idea came from someone else, even when the words are yours.
+
+## Try it
+
+Pick a style you're studying, for example reggae, bossa nova, or Baroque dance music.
+
+1. Ask a search engine one question about it, and copy down the AI summary.
+2. Using SIFT, find **two primary** and **two secondary** sources on the same question.
+3. Mark each sentence of the AI summary: **confirmed** (and by which source), **wrong**, or **couldn't confirm**.
+4. Write four sentences about the style, each with an in-text citation. Then write the Works Cited list.
+
+Next: [Sources 3: Research for DP Music](sources-dp.qmd) (grades 11–12).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Caulfield, Mike. "SIFT (The Four Moves)." *Hapgood*, 19 June 2019, [hapgood.us/2019/06/19/sift-the-four-moves/](https://hapgood.us/2019/06/19/sift-the-four-moves/).
+
+*Grove Music Online*. Oxford UP, [www.oxfordmusiconline.com/](https://www.oxfordmusiconline.com/). Subscription; most school and public libraries give access.
+
+"How Do I Cite Generative AI in MLA Style?" *MLA Style Center*, Modern Language Association, [style.mla.org/citing-generative-ai/](https://style.mla.org/citing-generative-ai/).
+
+*IMSLP: Petrucci Music Library*. [imslp.org/](https://imslp.org/).
+
+Jaźwińska, Klaudia, and Aisvarya Chandrasekar. "AI Search Has a Citation Problem." *Columbia Journalism Review*, Tow Center for Digital Journalism, 6 Mar. 2025, [www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php](https://www.cjr.org/tow_center/we-compared-eight-ai-search-engines-theyre-all-bad-at-citing-news.php).
+
+*JSTOR*. ITHAKA, [www.jstor.org/](https://www.jstor.org/).
+
+*MLA Style Center*. Modern Language Association, [style.mla.org/](https://style.mla.org/).
+
+Williams, Rhiannon. "Why Google's AI Overviews Gets Things Wrong." *MIT Technology Review*, 31 May 2024, [www.technologyreview.com/2024/05/31/1093019/why-are-googles-ai-overviews-results-so-bad](https://www.technologyreview.com/2024/05/31/1093019/why-are-googles-ai-overviews-results-so-bad).
+:::
+<!-- /works-cited -->

@@ -1,0 +1,10 @@
+X:133
+%%from edm
+T:Brandenburg Concerto No. 4, in G, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0133 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+bd' g'd' bg | fa d'a fd | b2 a2 g2 | z2 ga b2 | a2 g2 f2 | z2 fg a2 |

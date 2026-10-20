@@ -1,0 +1,11 @@
+X:5648
+T:Introduction and Rondo Capriccioso, Op. 28, Intro
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7282, Barlow & Morgenstern S63, EDM 5648 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=47
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e2A2 z E- E/A/c/e/ | f2c2 z F- F/A/c/f/ | a3g/f/ e z c z | d8 | f2A2 z F- F/A/d/f/ | e2^G2 |

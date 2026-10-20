@@ -1,0 +1,14 @@
+X:407
+%%from mtd
+T:Well-tempered Clavichord, Book I, Fugue No. 7
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0402, Barlow & Morgenstern B314, EDM 0407 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/d0jne4Rsk6Y?t=214
+N:Fuga  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=93
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+BGFG EAGA c2B2 z2 =AF | e2d2 Tc4 BfdB _AfdA | G2 |

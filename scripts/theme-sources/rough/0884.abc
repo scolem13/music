@@ -1,0 +1,13 @@
+X:884
+%%from mtd
+T:Sonata No. 13, in E-flat, Op. 27, No. 1, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0878, Barlow & Morgenstern B760, EDM 0884 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio con espressione  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=24
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+C8 CB,A,C/B,/ | A,6 A,2B,2C2 | D4 DCDE FGAF | =D3F/E/ E2 |

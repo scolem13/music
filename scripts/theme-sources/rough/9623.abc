@@ -1,0 +1,13 @@
+X:9623
+%%from mtd
+T:Gigues, from Images, No. 1 - 3rd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2614, Barlow & Morgenstern D46, EDM 9623 (Musical Theme Dataset, CC BY 4.0)
+N:Gigues  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/4
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G (3F/_E/D/ | _E _B | G2 | D F |

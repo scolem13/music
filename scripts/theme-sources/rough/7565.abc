@@ -1,0 +1,11 @@
+X:7565
+%%from edm
+T:Symphony No. 1, Op. 13, 3rd Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7565 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:Eb
+c'd'2<c'2 d' | c'3 d' c'2 | ga2<b2 g | f3 a g2 | de2<f2 e | d3 c d2 | de2<f2 e | d3 c d2 |

@@ -1,0 +1,10 @@
+X:2499
+%%from edm
+T:Quartet in G, Op. 54, No. 1, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2499 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:8/8
+L:1/16
+K:C
+z/2 g8- g3- g/2 fg bg | d2 d2 d2 d2 d2 d2 d2 d2 | z/2 d'8- d'/2^c' d'c' d'b =c'a | g4

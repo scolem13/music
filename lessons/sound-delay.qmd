@@ -78,4 +78,30 @@ annoying. Try your **Microphone** and say a sentence while it plays.
 
 - [Sound 18: Chorus and flanger](sound-chorus.qmd): what happens when the delay is very short and moving.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Delay (audio effect)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Delay_(audio_effect)](https://en.wikipedia.org/wiki/Delay_(audio_effect)).
+
+**For teachers**
+
+*DAFx Conference Paper Archive*. Digital Audio Effects Conference. [www.dafx.de/paper-archive/](https://www.dafx.de/paper-archive/). Searchable archive of peer-reviewed effect papers.
+
+Dattorro, Jon. "Effect Design, Part 2: Delay-Line Modulation and Chorus." *Journal of the Audio Engineering Society*, vol. 45, no. 10, 1997. [ccrma.stanford.edu/~dattorro/EffectDesignPart2.pdf](https://ccrma.stanford.edu/~dattorro/EffectDesignPart2.pdf).
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: Creative Synthesis With Delays." *Sound On Sound*, May 2004. [www.soundonsound.com/techniques/creative-synthesis-delays](https://www.soundonsound.com/techniques/creative-synthesis-delays).
+
+Reid, Gordon. "Synth Secrets: From Analogue To Digital Effects." *Sound On Sound*, Apr. 2004. [www.soundonsound.com/techniques/analogue-digital-effects](https://www.soundonsound.com/techniques/analogue-digital-effects).
+
+Reid, Gordon. "Synth Secrets: From Springs, Plates & Buckets To Physical Modelling." *Sound On Sound*, Feb. 2001. [www.soundonsound.com/techniques/springs-plates-buckets-physical-modelling](https://www.soundonsound.com/techniques/springs-plates-buckets-physical-modelling).
+
+Smith, Julius O., III. *Physical Audio Signal Processing*. W3K Publishing, 2010. [ccrma.stanford.edu/~jos/pasp/](https://ccrma.stanford.edu/~jos/pasp/). See its chapters Artificial Reverberation, Flanging, Phasing with First-Order Allpass Filters, The Leslie.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

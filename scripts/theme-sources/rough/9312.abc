@@ -1,0 +1,10 @@
+X:9312
+%%from edm
+T:Scherzo in E, Op. 54, 3rd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9312 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g12 | e8 f4 | g12 | c'8 e'4 | e'12 | d'8 c'4 | c'12 |

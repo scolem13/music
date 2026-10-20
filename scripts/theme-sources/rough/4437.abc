@@ -1,0 +1,10 @@
+X:4437
+%%from edm
+T:Sonata in F, K 497, 1st Movement - Intro
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4437 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 e4 f4 | _g4 =g4 z4 | a4 b4 z4 | =b4 c'4

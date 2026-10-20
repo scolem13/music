@@ -1,0 +1,11 @@
+X:7885
+%%from edm
+T:Die Walkure, Ride of the Valkyries, 1st Theme Opera
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7885 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:9/8
+L:1/16
+K:D
+g2^d3G B6 z/2 b3-b/2 z2 | g2^d3G B6 z/2 b3-b/2 z2 | g2e3G =c6 z/2 e'3-e'/2 z2 | g2e3G =c6 z/2 e'3-e'/2

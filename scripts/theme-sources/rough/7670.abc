@@ -1,0 +1,10 @@
+X:7670
+%%from edm
+T:Concerto Accademico in D minor, 1st Movement - 3rd Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7670 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+A4 A2d2 | e4 a4 | g2e3- e/2d-[d/2B/2-]B | a4 a2d'2 | e'4 a'4 | b'2e'3- e'/2d'-[d'/2b/2-]b | d'3/2c'-[c'/2a/2-]a2 z/2 g-[g/2d/2-]d |

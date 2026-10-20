@@ -256,7 +256,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("a second Chorus with no words of its own still has a grid", await ev(`document.querySelectorAll('.btp-grid-now .tc-bar[data-bar]').length`) >= 1 && !/Tap the bars/.test(await ev(`document.querySelector('.btp-grid-note').textContent`)),
     await ev(`document.querySelector('.btp-grid-note').textContent`));
   check("and is sent as a section of its own", (await docOf()).filter(x => /^Chorus:/.test(x)).length === 2, (await docOf()).join(' '));
-  await ev(`[...document.querySelectorAll('.btp-log-rows li')].filter(li => li.querySelector('.btp-note').value === 'Chorus').pop().querySelector('.btp-del').click()`);
+  await ev(`[...document.querySelectorAll('.btp-log-rows li')].filter(li => (li.dataset.b || (li.querySelector('.btp-note') || {}).value) === 'Chorus').pop().querySelector('.btp-del').click()`);
   for (let i = 0; i < 2; i++) await key("Backspace");
   await ev(`(() => { document.querySelector('.btp-ug').value = "[Verse 1]\\nG       D\\nHere it comes\\n"; document.querySelector('.btp-convert').click();
     [...document.querySelectorAll('.btp-log-rows .btp-del')].forEach(x => x.click()); })()`);
@@ -307,7 +307,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
     && await ev(`document.querySelector('.btp-url').value`) === "https://www.youtube.com/watch?v=J91ti_MpdHA", await ev(`JSON.stringify(document.querySelector('.btp')._btp.source())`));
   const txt2 = await ev(`(() => { let s; navigator.clipboard.writeText = x => (s = x, Promise.resolve()); document.querySelector('.btp-copy-all').click(); return s; })()`);
   check("and exports it again", txt2.startsWith("# url: https://www.youtube.com/watch?v=J91ti_MpdHA (in a tab)\n"), txt2.slice(0, 80));
-  await ev(`[...document.querySelectorAll('.btp-log-rows li')].find(li => li.querySelector('.btp-note').value === 'Bridge').querySelector('.btp-del').click()`);
+  await ev(`[...document.querySelectorAll('.btp-log-rows li')].find(li => (li.dataset.b || (li.querySelector('.btp-note') || {}).value) === 'Bridge').querySelector('.btp-del').click()`);
 
   // following a YouTube tab: the page's own clock, started with Return, nudged with ], set with "Clock to"
   await ev(`window.open = () => null; document.querySelector('.btp-url').value = 'https://www.youtube.com/watch?v=J91ti_MpdHA'; document.querySelector('.btp-follow-btn').click()`);

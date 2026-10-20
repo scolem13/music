@@ -1,0 +1,11 @@
+X:9056
+%%from edm
+T:España, Rhapsody for Orchestra, 3rd Theme
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9056 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:C
+d2 d2 d2 | d2 c2 d2 | e z2 d c2- | c2 z4 | f z f2 f2 | f2 e2 f2 | g z2 f e2 |

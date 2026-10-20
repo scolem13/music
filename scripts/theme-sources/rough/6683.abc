@@ -1,0 +1,10 @@
+X:6683
+%%from edm
+T:Symphony No. 7, in C, Op. 105, 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6683 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+z2 d'8 c' z d'2e' z a6 b2 | z2 c'8 ^a z c'2d' z g6 =a2 |

@@ -1,0 +1,12 @@
+X:9219
+%%from mtd
+T:Mazurkas 9, Op. 7, No. 5
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2216, Barlow & Morgenstern C229, EDM 9219 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=194
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+(3ded G2 c>e | (3ded G2 c>e | a2 g>e f>d | c>e g>b d'>c' |

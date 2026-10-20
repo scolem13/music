@@ -4,7 +4,17 @@
 //   AudioTap.register(ctx, node, label)   a sound source says "this node carries my output". It costs nothing: no connection is made
 //        until a listener asks. Call it where the source builds its master (a line, after the existing routing; that routing is not changed).
 //        Registering the same node twice does nothing.
-//   AudioTap.sources() -> [{ ctx, node, label }]   what has registered (contexts not closed). A listener connects `node` to its own
+//        A fourth argument { gain: AudioParam } names the param the navbar Mixer (mixer-panel.js) turns up and down; without it the
+//        Mixer scales `node`'s own gain when it is a GainNode. More in that object, all optional, for the Mixer:
+//          group: "Backing Track"   strips of one group sit together under that name; mixLabel: the strip's name there (else label)
+//          active: fn -> bool       the strip is shown only while it says true (the drone while it plays); call AudioTap.changed() when it flips
+//          get: fn -> 0..1.5, set: fn(v)   the fader is the source's own volume setting (the drone's Volume slider), not a gain of the Mixer's
+//          order: n                 where the strip sits in its group (lower first; else in the order they came)
+//          master: true             the group's overall strip: drawn after the group's box, not in it
+//          voices: fn -> [{ id, label }], voice: fn -> id, setVoice: fn(id)   the strip's name opens a menu of sounds
+//          sub: [{ label, get: fn -> 0..1.5, set: fn(v), ctx, node }]   (node, in ctx: what its meter reads)   the strip's name opens faders of its own (the drum kit's pieces)
+//   AudioTap.changed()                    a source started or stopped (listeners redraw).
+//   AudioTap.sources() -> [{ ctx, node, label, gain }]   what has registered (contexts not closed). A listener connects `node` to its own
 //        analysis node IN THE SAME CONTEXT (PitchDetect.mic({ ctx: e.ctx, source: e.node })): an AudioNode can only reach nodes of its own
 //        context, and the site has several (the navbar drone, synth-kit, audio.js's chord keyboard, the band), so the analysis follows the source
 //        and no bridge between contexts is needed.
@@ -19,17 +29,19 @@
 (function (global) {
   var list = [], subs = [], mctx = null, med = [];
   function AC() { return global.AudioContext || global.webkitAudioContext; }
-  function register(ctx, node, label) {
+  function register(ctx, node, label, opts) {
+    var gain = opts && opts.gain; opts = opts || {};
     if (!ctx || !node) return;
     label = label || "Sound";
     for (var i = 0; i < list.length; i++) {
       if (list[i].node === node) return;
-      if (list[i].ctx === ctx && list[i].label === label) { list[i].node = node; return; }   // the same source, rebuilt (the band makes a new bus for each performance)
+      if (list[i].ctx === ctx && list[i].label === label) { list[i].node = node; list[i].gain = gain; list[i].opts = opts; subs.slice().forEach(function (f) { try { f(); } catch (e) {} }); return; }   // the same source, rebuilt (the band makes a new bus for each performance)
     }
-    list.push({ ctx: ctx, node: node, label: label || "Sound" });
+    list.push({ ctx: ctx, node: node, label: label || "Sound", gain: gain, opts: opts });
     subs.slice().forEach(function (f) { try { f(); } catch (e) {} });
   }
   function sources() { return list.filter(function (e) { return e.ctx.state !== "closed"; }); }
+  function changed() { subs.slice().forEach(function (f) { try { f(); } catch (e) {} }); }
   function onChange(f) { subs.push(f); }
   function mediaElements() { return Array.prototype.slice.call(document.querySelectorAll("audio, video")); }
   function media(el) {
@@ -58,5 +70,5 @@
       throw new Error(e && e.name === "NotAllowedError" ? "Sharing was cancelled. Pick a tab, and tick “Share tab audio”." : (e && (e.message || e.name)) || "Tab capture failed.");
     });
   }
-  global.AudioTap = { register: register, sources: sources, onChange: onChange, mediaElements: mediaElements, media: media, display: display, canDisplay: canDisplay };
+  global.AudioTap = { register: register, sources: sources, onChange: onChange, changed: changed, mediaElements: mediaElements, media: media, display: display, canDisplay: canDisplay };
 })(typeof window !== "undefined" ? window : globalThis);

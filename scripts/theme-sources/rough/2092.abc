@@ -1,0 +1,10 @@
+X:2092
+%%from edm
+T:Symphonic Dances, Op. 64, Orchestra, No. 4, 1st Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2092 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+A,4 E4 | E4 E4 | E4 D3C | B,8 | C4 B,3A, | ^G,4 A,3B, | A,8 | A,4

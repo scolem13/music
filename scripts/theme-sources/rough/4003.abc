@@ -1,0 +1,10 @@
+X:4003
+%%from edm
+T:Concerto, 3rd Movement - 1st Theme
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4003 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z2 A,,2 F,2^A,,2 G,2C,2 ^G,=G,F,^D, | F,2D,2 A,2B,,C, D,2^A,,2 G,2

@@ -1,0 +1,11 @@
+X:8370
+%%from edm
+T:Quintet in E, 4th Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8370 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:E
+g3/2a/2 z/2 z/2 a b2b2 | b2b3/2b<bg/2e2 | g3/2a/2 z/2 z/2 a b2b2 | b2b3/2b<bg/2e2 |

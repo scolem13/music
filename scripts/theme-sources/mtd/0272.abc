@@ -1,0 +1,12 @@
+X:272
+T:Sonata No. 2 in A minor, Andante
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0267, Barlow & Morgenstern B180, EDM 0272 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=29
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+E4 z2 E2 FEDC | GDF2- F2A2 GFED | E |

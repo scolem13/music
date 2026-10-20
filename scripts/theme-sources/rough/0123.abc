@@ -1,0 +1,10 @@
+X:123
+%%from edm
+T:Brandenburg Concerto No. 1, in F, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0123 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+z2 F2F2 F2AGAF | c2c2c2 c2edec | f2f2f2 f2gfed |

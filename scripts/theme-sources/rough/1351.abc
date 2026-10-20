@@ -1,0 +1,10 @@
+X:1351
+%%from edm
+T:Symphony No. 4 in G, Op. 88, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1351 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+g8 b8 | d'2 z b e'2 z b d'2 z b e'2 z b | d'4 b4 z4 b4 | d'4 b4 g4 a2b2 | d'8

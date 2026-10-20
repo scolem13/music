@@ -1,0 +1,10 @@
+X:1674
+%%from edm
+T:Quartet in D, 3rd Movement - 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1674 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+d4 c4 B4 | e3d d4 c4 | d4 B6 A2 | B3G G4 F4 |

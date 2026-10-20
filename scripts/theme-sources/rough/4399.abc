@@ -1,0 +1,10 @@
+X:4399
+%%from edm
+T:Sonata in C, K 309, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4399 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+g2fe dcc2 | c4<c4 | c'2ba gff2 | f4<f4 |

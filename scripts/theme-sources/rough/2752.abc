@@ -1,0 +1,10 @@
+X:2752
+%%from edm
+T:Symphony in E-flat, No. 99, London 10, 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2752 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e8 d4 e4 | dcBc B2 z2 BAGA G2 z2 | F8 G4 A4 | cB=AB e2e2

@@ -1,0 +1,10 @@
+X:7692
+%%from edm
+T:A London Symphony, 3rd Movement - 2nd Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7692 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:Db
+B6 c6 B6 | A6 F6 E6 | D6 E6 C6 | b6 c'6 b6 | a6 f6 e6 | d6 e6 c6 |

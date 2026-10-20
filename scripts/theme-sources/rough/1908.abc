@@ -1,0 +1,10 @@
+X:1908
+%%from edm
+T:Symphony, Op. 26, "Rustic Wedding", 3rd Movement - Serenade - 1st Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1908 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+FG^GA f2 z2 e2 z2 d2 z2 | B2 z2 A6 cB A2 z2 | B3e A2 z2 B3e A2 z2 | B3d c2 z2 B2 z2 A2

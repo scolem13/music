@@ -1,0 +1,13 @@
+X:8739
+%%from mtd
+T:Symphony No. 2 in D, Op. 73, 1st Movement - Coda
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1742, Barlow & Morgenstern B1606, EDM 8739 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=92
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A^GAdcd | f z z2 z2 | F^EFdcd | f z z2 z2 | z6 | B2 ^A2 B2 | e2 d2 B2 |

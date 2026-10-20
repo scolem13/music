@@ -1,0 +1,11 @@
+X:7950
+%%from edm
+T:Espana, Op. 286, No. 4, 1st Theme
+C:Emil Waldteufel
+%%composer Waldteufel|Emil
+% EDM 7950 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+g4 c'2 z2 c'2c'2 | d'4 b4 c'4- | c'2a2 b4 g2a2 | f4 z4 d4- | d2d2 b2 z2 b2b2 | c'4 a4 b4- | b2g2 a4 f2g2 | e4

@@ -1,0 +1,13 @@
+X:5762
+%%from mtd
+T:Gymnopedies, No. 2
+C:Erik Satie
+%%composer Satie|Erik
+% MTD 7395, Barlow & Morgenstern S176, EDM 5762 (Musical Theme Dataset, CC BY 4.0)
+N:2ème  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=77
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g3 | a g f | e f g | d3 | g3 | a g f | e f g | f c2 |

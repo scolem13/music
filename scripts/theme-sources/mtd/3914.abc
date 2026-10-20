@@ -1,0 +1,11 @@
+X:3914
+T:Songs Without Words, No. 35 in B minor, Op. 67, No. 5, "Song of the Heather"
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5566, Barlow & Morgenstern M304, EDM 3914 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=58
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+fcd | ^A3 Bcd | c3/2e/4d/4 ccde | fBfede | c3 |

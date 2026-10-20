@@ -1,0 +1,10 @@
+X:322
+%%from edm
+T:"Air for the G String"
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0322 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f16- | f2bg z/2 e/2dcd c4 z/2 A3-A/2 | a8- af=cB e^dag | g8

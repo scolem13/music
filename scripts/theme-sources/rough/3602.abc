@@ -1,0 +1,10 @@
+X:3602
+%%from edm
+T:Le Temple de la Paix, Minuet, 1st Theme
+C:Jean Baptiste Lully
+%%composer Lully|Jean Baptiste
+% EDM 3602 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+g6 f2 e4 | d4 e4 c4 | d4 G8 | c8 d4 | e4 f/2g/2f/2g/2f/2g/2f/2g/2 f/2g/2f/2g/2ef | g8 g4 |

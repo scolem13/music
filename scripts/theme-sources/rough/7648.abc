@@ -1,0 +1,11 @@
+X:7648
+%%from edm
+T:Femmes d'Espagne, L'Andalouse, Sentimentale, 2nd Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7648 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:A
+^d=f df ^f2- | fg f=f ^df | c^d cd =f2- | =f^f =f^d cd | c^d ed c2 | cB2<^A2 c |

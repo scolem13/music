@@ -1,0 +1,10 @@
+X:6459
+%%from edm
+T:Quintet, Op. 57, 2nd Movement - Fugue
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6459 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z4 g4 a8 | z4 f4 a4 b4 | z4 e'2g'2 f'4 b2d'2 | c'4 d'2f'2 e'4 f2g2 | a2b2 c'8 b2a2 | b4 g8 f2a2 | g12

@@ -1,0 +1,11 @@
+X:3340
+%%from edm
+T:Symphonie Espagnole, Op. 21, 4th Movement
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3340 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/g5cUeeRO3PI?t=1m12s
+M:3/4
+L:1/16
+K:F
+A4 d8 | d4 d4 _d4- | _d4 e4 =d4- | d8 B4 | A4 _A2=A2 =B2_d2 | d2e2 f4 e4 | d4 _d A6- A |

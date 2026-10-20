@@ -1,0 +1,216 @@
+---
+title: "Mode Mixture: Practice for Chapter 19"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 19 of Hutchinson's Music Theory for the 21st-Century Classroom: chords borrowed from the parallel minor (i, ii°, iiø7, ♭III, iv, v, ♭VI, ♭VII, ♭VII7, vii°7), naming and writing them with figures, lead-sheet symbols, the deceptive cadence to ♭VI, the Picardy third, and the book's listening examples."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=13"></script>
+<script src="/apps/shared/drills/mixture.js?v=1"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+```
+
+This page goes with **Chapter 19, Mode Mixture** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/ModeMixture.html). Read each section there
+first; the book is the reference for the terms used here. It follows [Chapter 18, Secondary Diminished Chords](secondary-diminished.qmd),
+and uses the Roman numerals of [Chapter 7](roman-numerals.qmd) and the seventh chords of [Chapter 8](seventh-chords.qmd).
+
+Every drill has **Settings**, and is also on the [Theory Drills](theory-drills.qmd) page.
+
+**Typing a borrowed chord:** case and the sign after the numeral give the quality, as always: `iv`, `ii°`, `iiø7`, `vii°7`, `♭VI`,
+`♭VII7`. Type `b` for ♭ (`bVI`), `o` for °, `h` for ø. Inversions take the figures 6 and 64 for triads, 65, 43 and 42 for seventh
+chords: `iv6`, `♭VI64`, `iiø65`, `vii°42`.
+
+## 19.1 Mode mixture
+
+**Mode mixture** means using, in a major key, chords that belong to the **parallel minor** (the minor key on the same tonic). The book
+also calls them **borrowed chords**. You spot them by their lowered notes: most often **♭6̂** (A♭ in C major), sometimes **♭3̂** (E♭)
+and **♭7̂** (B♭). Listen for the sudden darkening when a minor-key chord appears in a major-key passage.
+[Read 19.1](https://musictheory.pugetsound.edu/mt21c/ModeMixtureSection.html)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples
+
+::: {.rn-quiz}
+<figure><figcaption>Lennon–McCartney, "Blackbird"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/4J5FPNitDc8?start=13&end=24&rel=0" title="Blackbird" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Richard Strauss, <em>Also sprach Zarathustra</em>: major I straight to minor i</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/IFPwm0e_K98?start=16&end=36&rel=0" title="Also sprach Zarathustra (1)" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Richard Strauss, <em>Also sprach Zarathustra</em>: a second borrowed chord</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/IFPwm0e_K98?start=69&end=79&rel=0" title="Also sprach Zarathustra (2)" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Linda Perry, "Beautiful": bass 1̂–♭7̂–6̂–♭6̂</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/f1zLSpzCh9E?start=26&end=39&rel=0" title="Beautiful" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Hoyt Axton, "Joy to the World": the same bass line</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/kyI1OImD7ow?start=13&end=20&rel=0" title="Joy to the World" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Ashman and Menken, "Part of Your World": the same bass line again</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/SXKlJuO07eM?start=142&end=153&rel=0" title="Part of Your World" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Radiohead, "Creep": IV, then the borrowed iv</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/XFkzRNyygfk?start=0&end=21&rel=0" title="Creep" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Kurt Cobain, "Lithium"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/pkcJEvMcnEg?start=0&end=9&rel=0" title="Lithium" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Brahms, Symphony No. 3, III: I alternating with a borrowed chord</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/t9ndxDhgZBM?start=58&end=73&rel=0" title="Brahms Symphony 3, III" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Frank Loesser, "Inchworm": I alternating with ♭VII7</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/6dd6e14ov2c?start=22&end=34&rel=0" title="Inchworm" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Tchaikovsky, <em>The Nutcracker</em>, "Waltz of the Flowers"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Kw0wLLVEMaA?start=63&end=72&rel=0" title="Waltz of the Flowers" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Joe Sample and Will Jennings, "One Day I'll Fly Away"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/W4ROfyCjJeE?start=126&end=133&rel=0" title="One Day I'll Fly Away" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+Start with the symbols. Given the numeral in a major key, which chord is it?
+
+<div class="drill" data-ex="mixsym" data-settings="most=1&dir=find&chords=iv,♭VI,♭VII,♭III,i"></div>
+
+## 19.2 Which chords contain the borrowed notes
+
+Put a lowered note into the major key's chords and their quality changes. The book lists each place ♭6̂, ♭3̂ and ♭7̂ can sit. In C major:
+
+| Borrowed note | as root | as 3rd | as 5th | as 7th |
+|---|---|---|---|---|
+| ♭6̂ (A♭) | ♭VI (A♭ C E♭) | iv (F A♭ C) | ii° (D F A♭), iiø7 (D F A♭ C) | vii°7 (B D F A♭), ♭VII7 (B♭ D F A♭) |
+| ♭3̂ (E♭) | ♭III (E♭ G B♭) | i (C E♭ G) | ♭VI (A♭ C E♭) | |
+| ♭7̂ (B♭) | ♭VII (B♭ D F) | v (G B♭ D) | ♭III (E♭ G B♭) | |
+
+The book's advice: you don't need to memorize the list. What matters is seeing that a minor-key note changes the quality of the chord it
+sits in. The drills add **iv7** (F A♭ C E♭), which is not in the book's two figures.
+[Read 19.2](https://musictheory.pugetsound.edu/mt21c/HarmonizationOfBorrowedScaleDegrees.html)
+
+Find the chord, with every chord in the table:
+
+<div class="drill" data-ex="mixsym" data-settings="most=3&dir=find"></div>
+
+And the other way round. Given the symbol, name it with a numeral:
+
+<div class="drill" data-ex="mixsym" data-settings="most=3&dir=name"></div>
+
+## 19.3 Analysing and writing borrowed chords
+
+Analysing a borrowed chord is easier than analysing a secondary chord: there is no slash. You give its **root, quality and inversion**,
+as for any chord. The book's example: in G major, the notes C–E♭–G–A stack in thirds as A–C–E♭–G. The root is A (2̂), the thirds are
+m3–m3–M3, so it is half-diminished, and C (the 3rd) is in the bass: **iiø65**.
+
+To write one, read the numeral's quality carefully. The ♭ in **♭VI** means the root is a half step below the major key's 6̂; it does not
+mean "write a flat". In A major, 6̂ is F♯, so ♭VI is built on **F♮**: F–A–C.
+[Read 19.3](https://musictheory.pugetsound.edu/mt21c/AnalyzingAndWritingBorrowedChords.html)
+
+Name the chord on the staff:
+
+<div class="drill" data-ex="mix" data-settings="most=3&inv=root&clef=treble,bass"></div>
+
+With inversions. Stack it in thirds to find the root, then read the bass for the figure:
+
+<div class="drill" data-ex="mix" data-settings="most=5&inv=all&clef=treble,bass"></div>
+
+Write it, lowest note first:
+
+<div class="drill" data-ex="mixwrite" data-settings="most=3&inv=root"></div>
+
+<div class="drill" data-ex="mixwrite" data-settings="most=6&inv=all"></div>
+
+## 19.4 The deceptive cadence with ♭VI
+
+The usual deceptive cadence goes V–vi. Going instead to the major chord on ♭6̂, **V–♭VI**, is a stronger surprise. The book's examples
+are endings of "The Star-Spangled Banner" as sung at Super Bowls and inaugurations, where ♭VI then moves to ♭VII and I.
+[Read 19.4](https://musictheory.pugetsound.edu/mt21c/TheDeceptiveCadenceWithFlatSix.html)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples
+
+::: {.rn-quiz}
+<figure><figcaption>"The Star-Spangled Banner", Whitney Houston, Super Bowl 1991</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/KbkWuVUkPmY?start=105&end=122&rel=0" title="Star-Spangled Banner (Whitney Houston)" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>"The Star-Spangled Banner", Beyoncé, Presidential Inauguration 2013</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/qGDH18R7GfA?start=121&end=140&rel=0" title="Star-Spangled Banner (Beyoncé)" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>"The Star-Spangled Banner", Lady Gaga, Super Bowl 2016</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/GbXSZBnBOQ4?start=135&end=165&rel=0" title="Star-Spangled Banner (Lady Gaga)" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+By ear: the phrase is I, then IV or ii, then V, then either vi or ♭VI. Which one? (The staff appears after you answer.)
+
+<div class="drill" data-ex="mixdc" data-settings="most=3&show=ear"></div>
+
+## 19.5 The Picardy third
+
+Borrowing the other way, from major into minor, is rare. The one common case is the **last chord of a minor-key piece**: a major I
+instead of i. Its raised 3rd is the **Picardy third**. The book notes it was most common in the Baroque, and is still used now and
+then.
+[Read 19.5](https://musictheory.pugetsound.edu/mt21c/Picardy3rd.html)
+
+::: {.rn-quiz}
+<figure><figcaption>J. S. Bach, French Suite No. 1 in D minor, BWV 812, Sarabande</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/fTwkVsECg9w?start=141&end=167&rel=0" title="French Suite No. 1, Sarabande" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+A minor-key phrase, i, then iv or VI, then V, then the tonic. Does it end minor or major?
+
+<div class="drill" data-ex="picardy" data-settings="most=3&show=ear"></div>
+
+## 19.6 Everything together
+
+All borrowed chords, all positions. Set **Questions** to 20 for a score.
+[Practice exercises with answers (19.6)](https://musictheory.pugetsound.edu/mt21c/ModeMixturePracticeExercises.html)
+
+The book's exercise 1, analysing (the book's set also mixes in secondary chords; for those, see the [Chapter 17](secondary-dominants.qmd)
+and [Chapter 18](secondary-diminished.qmd) pages):
+
+<div class="drill" data-ex="mix" data-settings="most=7&inv=all&clef=treble,bass"></div>
+
+The book's exercise 2, writing:
+
+<div class="drill" data-ex="mixwrite" data-settings="most=7&inv=all"></div>
+
+Both exercises also ask for lead-sheet symbols:
+
+<div class="drill" data-ex="mixsym" data-settings="most=7&dir=both"></div>
+
+The book's exercise 3 analyses a passage of Chopin's Nocturne in E♭ major, Op. 9 No. 2.
+
+::: {.rn-quiz}
+<figure><figcaption>Chopin, Nocturne in E♭ major, Op. 9 No. 2</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/bVeOdm-29pU?start=1&end=19&rel=0" title="Nocturne Op. 9 No. 2" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+- **Chords drilled:** the book's Figures 19.2.1 and 19.2.2: i, ii°, iiø7, ♭III, iv, v, ♭VI, ♭VII, ♭VII7 and vii°7, in major keys, plus
+  iv7, which is not in those figures. Pick any of them under **Settings → Chords**. Every one has at least one note outside the key
+  signature, and no two of them, nor any diatonic chord of the major key, have the same spelled notes, so each question has one answer.
+  Keys that would need a double flat for a chord are skipped for that chord.
+- **Numerals:** as in the book: no slash, case and ° / ø for quality, ♭ before the numeral for a lowered root. vii°7 has no ♭, as in the
+  book's figure and its exercise 1 (D: vii°42).
+- **Ear drills:** four chords, one a bar, root in the bass and a close triad above. The deceptive cadence drill is I, IV or ii, V, then
+  vi or ♭VI; the Picardy drill is i, iv or VI, V, then i or I.
+- **Voicing:** close position above the bass. The drills are for spelling and labelling, not for voice leading.
+- **Checked:** `node tests/lessons/mixture-drill.test.js` generates about 14,000 questions and checks each against its own table of the
+  chords in C moved to the question's key: the spelling, the figure, a chromatic note, one answer only, the drawn ABC sounding the same
+  notes, and the typed forms the page promises.
+- **Videos:** the clips use the book's YouTube links and start and end times; each was checked against YouTube. Some are covers or
+  other recordings rather than the writers' own: "Blackbird" is Sarah McLachlan's recording, "Beautiful" is Christina Aguilera's,
+  "Joy to the World" is Three Dog Night's, and "One Day I'll Fly Away" is a lyrics video of the *Moulin Rouge!* version on a fan channel.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

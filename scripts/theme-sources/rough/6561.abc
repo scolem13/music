@@ -1,0 +1,10 @@
+X:6561
+%%from edm
+T:King Christian II, Op. 27, Suite for Orchestra, Serenade, 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6561 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g4 a4 b4- | b2e'2 c'2e'2 b4 | e'4 b2 z c' a2 z b | g2 z a f2 z g e2 z f | g4

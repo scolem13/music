@@ -1,0 +1,12 @@
+X:3240
+T:Galanta Dances, Orchestra, 5th Movement - 1st Theme
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% MTD 4895, Barlow & Morgenstern K69, EDM 3240 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/fwJPPyYT6Ho
+M:2/4
+L:1/8
+Q:1/4=163
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A2 dd | cBAE | AAdd | cBAE | AAdd | cBAE | A2 dd | cB A2 |

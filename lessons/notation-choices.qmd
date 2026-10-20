@@ -89,7 +89,7 @@ can be played in any key just by changing "1 =".
 
 **Use it when:** writing or studying Chinese music, or when the players read jianpu; writing a
 single melody with lyrics quickly; teaching melodies by scale degree (it pairs naturally with
-[tonal solfège](tonal-do-re-mi.qmd)).
+[tonal solfège](../practice/tonal-sequences.qmd)).
 
 ::: {.callout-note collapse="true"}
 ## MYP and DP notes: jianpu
@@ -432,3 +432,24 @@ clear notes, and only with labels that point at what to look at.
 })();
 </script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Lead sheet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Lead_sheet](https://en.wikipedia.org/wiki/Lead_sheet).
+
+"Numbered musical notation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Jianpu](https://en.wikipedia.org/wiki/Jianpu).
+
+"Svara." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Swara](https://en.wikipedia.org/wiki/Swara).
+
+**For teachers**
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+
+Walshaw, Chris, editor. "The abc Music Standard 2.1." *abcnotation.com*, 2011. [abcnotation.com/wiki/abc:standard:v2.1](https://abcnotation.com/wiki/abc:standard:v2.1).
+:::
+<!-- /works-cited -->
+

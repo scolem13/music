@@ -1,0 +1,10 @@
+X:1796
+%%from edm
+T:Rhapsody in Blue, 3rd Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1796 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z2 c'2 c'2c'2 c'2^a2a2a2 | ^a2c'2c'2c'2 c'2^d'2d'2d'2 | ^d'2e'2c'2a2 ^a2=a2g2^d2 | e2g2 e2 c8- c2 |

@@ -1,0 +1,10 @@
+X:8432
+%%from edm
+T:Symphony No. 1 in E-flat, 1st Movement - 1st Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8432 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+z2 e4 d4 B2 | c4 G2c2 G4 | A2B2 c2 d4 e2 | f12 |

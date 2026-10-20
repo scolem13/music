@@ -1,0 +1,13 @@
+X:974
+%%from mtd
+T:Sonata No. 1, in D, Op. 12, Vn. and Piano, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0968, Barlow & Morgenstern B850, EDM 0974 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=123
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d12 .z2 Ad | f4 z2 df a4 z2 af | d4 z4 z4 z2 fd | A4 z2 dA F4 z2 AF | D4 |

@@ -1,0 +1,13 @@
+X:8787
+%%from mtd
+T:Symphony No. 4 in E minor, Op. 98, 4th Movement - 6th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1790, Barlow & Morgenstern B1654, EDM 8787 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro energico e passionato - Più allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/2
+L:1/4
+Q:1/4=91
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G2 B2 z c | c2 d2 z2 | d2 e2 z B | ^B2 c2 |

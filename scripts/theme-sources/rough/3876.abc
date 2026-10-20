@@ -1,0 +1,10 @@
+X:3876
+%%from edm
+T:Quartet No. 3, in D, Op. 44, No. 1, 1st Movement - 1st Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3876 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+dfad' f'6 e'2 d'4- | d'2a4<f4 e2 d4- | d2A2 B4 B3B B/2c/2B/2c/2B/2c/2B/2c/2 | B/2c/2B/2c/2AB c8

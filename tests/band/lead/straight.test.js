@@ -1,5 +1,5 @@
 const fs=require("fs"),vm=require("vm"),assert=require("assert");
-const R="/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/";
+const R=(require("path").join(__dirname, "../../..") + "/apps/shared/band/");
 vm.runInThisContext(fs.readFileSync(R+"drums.js","utf8")); vm.runInThisContext(fs.readFileSync(R+"player.js","utf8"));
 function mb(a){return function(){a|=0;a=a+0x6D2B79F5|0;let t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
 assert.strictEqual(BandPlayer.warp(1.5,0.5),1.5); assert.strictEqual(BandPlayer.warp(2.25,0.5),2.25);

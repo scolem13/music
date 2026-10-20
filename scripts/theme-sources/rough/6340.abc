@@ -1,0 +1,10 @@
+X:6340
+%%from edm
+T:Symphonic Etude, in C-sharp minor, Op. 13, Etude VI
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6340 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+BB=GG ^gg=c^c | fe=GG ^gg=c^c | fe

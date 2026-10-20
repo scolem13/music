@@ -1,0 +1,10 @@
+X:7675
+%%from edm
+T:Fantasia on a Theme by Tallis, 2nd Theme B
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7675 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+d3ef2 g4 f2 | e2e4<d4 B2 | c6 G2_A2A2 | G8 c4 | e3dc2 B4 G2 | c3B_A2 G4

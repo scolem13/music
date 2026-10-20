@@ -1,0 +1,10 @@
+X:8263
+%%from edm
+T:Carmen, Opera - Prelude to Act I, 3rd Theme (Toreador Song)
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8263 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+=c'4 d'3c' | a4 a4 | z/2 a2-a/2=g2<a2^a | a6

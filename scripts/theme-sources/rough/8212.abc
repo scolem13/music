@@ -1,0 +1,10 @@
+X:8212
+%%from edm
+T:Fantastic Symphony, Op. 14, 4th Movement - March to the Scaffold - 1st Theme B
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8212 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+g8 f8 | e4 d2c2 B4 z4 | A4 z4 G8 | F4 E2D2 C4 z4 | B,4 z4 A,8 | G,4 A,2B,2 C4 z4 | A,4 z4 D8 |

@@ -1,0 +1,11 @@
+X:9666
+%%from edm
+T:Petite Suite, 2 Pianos - En Bateau - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9666 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:G
+b12 | g8 a2g2 | b12 | g8 a2g2 | d'12- | d'12- | d'12- | d'6 e'6 | g12 |

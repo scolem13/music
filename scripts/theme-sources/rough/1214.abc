@@ -1,0 +1,10 @@
+X:1214
+%%from edm
+T:Quartet in D, Op. 23, 3rd Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1214 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z4 c4 e4 A4- | A4 ^G2B2 d4 F4- | F4 =F4 ^G4 c2G2 | B4 A2^G2 F4 E4 |

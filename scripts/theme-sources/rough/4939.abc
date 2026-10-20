@@ -1,0 +1,10 @@
+X:4939
+%%from edm
+T:Alexander Nevsky, Op. 78, 7th Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4939 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:A
+A4 B2c2 B4 A4 e8 | f4 e2d2 c4 A4 d8 | B4 c2d2 c4 B4 f8 | e4 d4 c4 B4 c8 |

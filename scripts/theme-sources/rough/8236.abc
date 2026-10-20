@@ -1,0 +1,11 @@
+X:8236
+%%from edm
+T:Fancy Free Ballet - Variation 3 - 1st Theme
+C:Leonard Bernstein
+%%composer Bernstein|Leonard
+% EDM 8236 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+B2c2 e2 a4 g2 a4- | a12- a2 z2 | A2c2 e2 a4 g2 z/2 e3-e/2- | e6 e8

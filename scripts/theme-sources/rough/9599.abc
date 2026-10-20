@@ -1,0 +1,13 @@
+X:9599
+%%from mtd
+T:Ballade - Children's Corner Suite - Doctor Gradus Ad Parnassum
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2590, Barlow & Morgenstern D22, EDM 9599 (Musical Theme Dataset, CC BY 4.0)
+N:Doctor Gradus ad Parnassum  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=165
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z G,CD EG,CE DF,CD FA,B,F | EG,CE GB,CG FA,CF AB,FA |

@@ -1,0 +1,10 @@
+X:1399
+%%from edm
+T:Concerto in E minor, Op. 85, Cello and Orchestra, 1st Movement - Intro
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1399 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B,8 E4 D2C2 | B,2C2 A,4 A,6 G,2 | F,2 z/2 G,3/2 C,8- C,2B,,2 | A,,2C,2 B,,8 z/2 E,,3-E,,/2 |

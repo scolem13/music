@@ -1,0 +1,12 @@
+X:4361
+T:Serenade in D, K 320, 7th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6010, Barlow & Morgenstern M735, EDM 4361 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=290
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+D2{G} F E/D/ | A A A A | F D A A | F D |

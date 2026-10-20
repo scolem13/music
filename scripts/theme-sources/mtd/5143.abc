@@ -1,0 +1,11 @@
+X:5143
+T:Concerto No. 3, Op. 30, 2nd Movement - 1st Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% MTD 6782, Barlow & Morgenstern R15, EDM 5143 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=47
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+a4 (3:2:2g2 e | e4 (3:2:2=g2 =f | (3e=fd d3 e | e2- e |

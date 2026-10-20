@@ -1,0 +1,10 @@
+X:9765
+%%from edm
+T:Appalachia, Orchestra Intro
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9765 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e8 b8 | f12 a4 | g16 | b16 |

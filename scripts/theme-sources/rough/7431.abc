@@ -1,0 +1,10 @@
+X:7431
+%%from edm
+T:The Plow That Broke the Plains, 4th Movement - Blues (Speculation), 1st Theme
+C:Virgil Thomson
+%%composer Thomson|Virgil
+% EDM 7431 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d'3_d'2<=d'2_d'2<a2_a2<g2=d | f4<f4 d8 | a4<a4 _a8 | f4<f4 e8 |

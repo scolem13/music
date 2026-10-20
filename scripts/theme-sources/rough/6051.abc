@@ -1,0 +1,10 @@
+X:6051
+%%from edm
+T:Symphony No. 1 in D, 2nd Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6051 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+g6 b6 | d'6 c'4 b2 | a3ba2 d'3e'd'2 | d'3e'/2f'/2g'a' b'2

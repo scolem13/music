@@ -1,0 +1,11 @@
+X:6265
+%%from edm
+T:Quartet in A minor, Op. 41, No. 1, 4th Movement
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6265 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+a4 z4 a4 z4 | e'12 d'2b2 | c'2a2^g2b2 a2e2d2f2 | z/2 e3/2d2e2f2 e4

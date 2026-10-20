@@ -1,0 +1,10 @@
+X:2768
+%%from edm
+T:Symphony in G, No. 100, 4th Movement, 2nd Theme, Pt. 1
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2768 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+D,4 z2 D4 z2 | z/2 E3-E/2 z2 ^c4 z2 | z/2 f3-f/2

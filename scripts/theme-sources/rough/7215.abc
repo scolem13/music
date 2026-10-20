@@ -1,0 +1,10 @@
+X:7215
+%%from edm
+T:Le Sacre du Printemps, Sacrificial Dance, Motive B
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7215 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/8
+L:1/16
+K:C
+cc/2-[c/2-c/2] c/2B/2-[B/2^A/2-]^A/2 | ^A4- | ^A2

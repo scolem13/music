@@ -1,0 +1,10 @@
+X:6335
+%%from edm
+T:Sonata in D minor, Op. 121, 4th Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6335 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+A2 a4 _a2 =b2=a2f'2e'2 | a2d'3 c'/2=b/2b3 a/2_a/2 =a4

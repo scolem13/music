@@ -1,0 +1,10 @@
+X:8612
+%%from edm
+T:Quintet in B minor, Op. 115, 4th Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8612 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+d'4 c'2b2 | ^a4 c'4 | b4 f4- | f4 ^g4 | ^a4 c'4 | b4 f4 | b4 a2g2 | f8 |

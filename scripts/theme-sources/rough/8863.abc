@@ -1,0 +1,10 @@
+X:8863
+%%from edm
+T:Simple Symphony - 3rd Movement, 2nd Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% EDM 8863 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Bb
+d16 d8- | d4 e4 c16 | F8 c8 c8- | c4 d4 B16 | F16 F8- | F4 G4 E16 | F8

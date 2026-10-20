@@ -1,0 +1,10 @@
+X:2179
+%%from edm
+T:Concerto Grosso in F, Op. 6, No. 2, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2179 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c4 A4 F4 | D4 B4 G4 | E2C2c2B2A2G2 | A2C2D2E2F2G2 | A2

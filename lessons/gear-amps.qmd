@@ -109,7 +109,7 @@ Try **Bass through a guitar amp**, then **Bass amp**. A guitar through a bass am
 
 The speaker cabinet is the last, and largest, tone control. The amp's raw output is harsh and fizzy (pick
 **No cabinet** to hear it); the speakers roll off almost everything above 5 kHz, and that roll-off is a large part of what
-"guitar tone" is. This is also why recording a guitar amp means a mic on a speaker, or a cabinet simulation (an **IR**,
+"guitar tone" is. This is also why recording a guitar amp means a mic on a speaker ([Recording 4](rec-guitar-amp.qmd)), or a cabinet simulation (an **IR**,
 impulse response) when there is no speaker. What decides a cabinet's sound:
 
 - **Speaker size.** A smaller cone moves faster and reaches higher but goes less deep: **10″** speakers sound quick, bright
@@ -210,11 +210,31 @@ The howl or squeal when a mic hears a speaker that's playing that mic.
 ## Loudness and stage volume
 
 The quietest stage that still works sounds best out front. Turn amps toward the players (tilt them back, or put them
-on a stand) rather than turning them up. See also [Recording 7: Mono and Stereo](rec-stereo.qmd) for live speaker
+on a stand) rather than turning them up. See also [Recording 9: Mono and Stereo](rec-stereo.qmd) for live speaker
 placement and subwoofers.
 
 ## Next
 
 - [Gear 4: Keyboards](gear-keyboards.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Audio feedback." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Audio_feedback](https://en.wikipedia.org/wiki/Audio_feedback).
+
+**For teachers**
+
+Davis, Gary, and Ralph Jones. *The Sound Reinforcement Handbook*. 2nd ed., Yamaha / Hal Leonard. Edition from Hal Leonard listings; year not confirmed.
+
+Health and Safety Executive. *Sound Advice: Control of Noise at Work in Music and Entertainment*. HSG260, 2008. [www.hse.gov.uk/pubns/books/hsg260.htm](https://www.hse.gov.uk/pubns/books/hsg260.htm).
+
+Rane Technical Staff. "Sound System Interconnection." *RaneNote 110*, Rane, 1985, rev. 2015. [www.ranecommercial.com/legacy/note110.html](https://www.ranecommercial.com/legacy/note110.html).
+
+Shure Notes Editors. "How to Control Feedback in a Sound System." *Shure Insights*, 25 Jan. 2013. [www.shure.com/en-US/insights/how-to-control-feedback-in-a-sound-system](https://www.shure.com/en-US/insights/how-to-control-feedback-in-a-sound-system).
+:::
+<!-- /works-cited -->
 
 {{< include _synth-kit.qmd >}}

@@ -1,0 +1,10 @@
+X:1266
+%%from edm
+T:Scherzo Capriccioso, Op. 66, 4th Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1266 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 z4 f4- | f2g4<d4 e2 | f4 z4 f4- | f2g4<d4 e2 | f4 z4 f4- | f2d'4<c'4 b2 | a4 z4 a4 | =f4

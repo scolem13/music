@@ -1,0 +1,11 @@
+X:6692
+%%from edm
+T:Symphony No. 7, in C, Op. 105, 10th Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6692 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:C
+d12 e12 | f4 z2 g2 e8<d8 | d12 e4 z4 e2d2 | c24 |

@@ -1,0 +1,11 @@
+X:9094
+%%from edm
+T:Scarf Dance, Piano, 1st Theme
+C:Cécile Chaminade
+%%composer Chaminade|Cécile
+% EDM 9094 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Ab
+c4 =B2c2 B2c2 | f4 f4 f4 | f8 B4 |

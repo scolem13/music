@@ -1,0 +1,10 @@
+X:5627
+%%from edm
+T:Concerto No. 3, in B minor, Op. 61, 3rd Movement - 3rd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5627 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+d'16 | e'16 | d'8 g'8 | d'8 c'8 | b8 c'4 d'4 | e'8 c'8 | a16 | d'16 |

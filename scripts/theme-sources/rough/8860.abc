@@ -1,0 +1,10 @@
+X:8860
+%%from edm
+T:Simple Symphony - 2nd Movement (Playful Pizzicato), 1st Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% EDM 8860 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+c2f2a2 c'2b2g2 | c'2a2f2 b2g2e2 | a2f2d2 g2e2c2 | f2d2=B2 e2c2

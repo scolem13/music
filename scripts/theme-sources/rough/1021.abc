@@ -1,0 +1,13 @@
+X:1021
+%%from mtd
+T:Symphony No. 1, in C, Op. 21, 1st Movement - 4th Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1015, Barlow & Morgenstern B897, EDM 1021 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio molto - Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/16
+Q:1/4=200
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+dddd d4 cccc c4 | BBBB B4 A2B2c2^c2 | dddd d4 |

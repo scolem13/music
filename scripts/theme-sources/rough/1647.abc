@@ -1,0 +1,10 @@
+X:1647
+%%from edm
+T:Grande Piece Symphonique, Op. 17, 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1647 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+z4 e8 | f2g2 g4 c4- | c4 ^d2e2 e4 | ^d2c2 c4 =c4 | c8- c2

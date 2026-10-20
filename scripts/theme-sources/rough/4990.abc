@@ -1,0 +1,10 @@
+X:4990
+%%from edm
+T:Peter and the Wolf, Op. 67, 6th Theme, The Wolf
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4990 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+D,8 B,A,B,A, B,2B,2 | D2_D2=D2B,2 C4

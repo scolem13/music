@@ -1,0 +1,10 @@
+X:8821
+%%from edm
+T:Trio in E-flat, Op. 40, Vn., Hn. and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8821 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+B4 f4 | =e2f2 f4 | g2f2 f4 | d2c2 c4 | B2c2 c4 | B2c2 c4 | B2e2 e4 | f4

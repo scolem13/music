@@ -1,0 +1,10 @@
+X:1402
+%%from edm
+T:Concerto in E minor, Op. 85, 2nd Movement - 1st Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1402 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B,B,B,B, B,DDD DB,B,B, B,A,A,A, | B,2 z2 F,4 G,4

@@ -1,0 +1,11 @@
+X:5525
+%%from edm
+T:Tancredi, Overture, 1st Theme
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5525 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+z2 A2 B2c2 d2e2 f3f | f3f2<f2f (3a2g2f2 e3e | e3e2<e2e (3g2f2e2 d3d | d3d2<d2d (3d2B2e2 A4- | A4

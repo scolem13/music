@@ -1,0 +1,13 @@
+X:8775
+T:Symphony No. 4 in E minor, Op. 98, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1778, Barlow & Morgenstern B1642, EDM 8775 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/Bo_UVzFQ7DE
+N:Andante moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/16
+Q:1/4=31
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G2G2Az/B/ G2G2Fz/E/ | G2G2Fz/E/ G2G2Ez/B,/ | =D2D2=Cz/D/ B,2 |

@@ -1,0 +1,12 @@
+X:2469
+T:Quartet in F minor, Op. 20, No. 5, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4130, Barlow & Morgenstern H350, EDM 2469 (Musical Theme Dataset, CC BY 4.0)
+N:Menuet e Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=119
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+c3- | c B G | F f f | f2 =e | c2{_e} d/c/ | c c c |

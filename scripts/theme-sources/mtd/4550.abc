@@ -1,0 +1,12 @@
+X:4550
+T:Symphony No. 34, in C, K 338, 2nd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6199, Barlow & Morgenstern M924, EDM 4550 (Musical Theme Dataset, CC BY 4.0)
+N:II Andante di molto più tosto allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=46
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c/ | f>g a>b | c'c'c'c' | c'2 a2 | b |

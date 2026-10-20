@@ -1,0 +1,10 @@
+X:4340
+%%from edm
+T:Serenade in D, K 239, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4340 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+z/2 a3/2 z/2 a3/2 z/2 f3/2ed | g2g2=f2^f2 | d3c c2B2 | g3f f2e2 |

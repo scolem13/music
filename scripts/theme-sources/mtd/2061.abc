@@ -1,0 +1,12 @@
+X:2061
+T:Sonata in A minor, Op. 36, 1st Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% MTD 3723, Barlow & Morgenstern G311, EDM 2061 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro agitato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=182
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+C4 | G,4 | C3 B, | G,4 | C3 B, | A,2 B, C | D4 | G4 |

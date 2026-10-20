@@ -1,0 +1,10 @@
+X:1726
+%%from edm
+T:Capriccio on La Girolometa, Harpsichord
+C:Girolamo Frescobaldi
+%%composer Frescobaldi|Girolamo
+% EDM 1726 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+E6 ^F2 G4 E2G2 | F4 E4 D2C2G2F2 | E4 D4 C4

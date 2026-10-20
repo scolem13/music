@@ -1,0 +1,10 @@
+X:4073
+%%from edm
+T:Concerto in E-flat, K 271, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4073 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+C2G,2 z2 G,2 A,2G,2 | D2G,2 z2 G,2 A,2G,2 | E2G,2 z2 C2 =B,2C2 | A6

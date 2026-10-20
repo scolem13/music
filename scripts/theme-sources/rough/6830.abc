@@ -1,0 +1,11 @@
+X:6830
+%%from edm
+T:Die Fledermaus, Overture, 4th Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% EDM 6830 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+B2B2 G4<B4 | e2^d2 A4<d4 | f2e2 B4<e4 | g2 f8- f2- | f2a2g2f2e2d2 | A2 c4 B6 |

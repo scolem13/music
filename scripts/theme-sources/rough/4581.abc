@@ -1,0 +1,13 @@
+X:4581
+%%from mtd
+T:Symphony No. 38, in D, K 504, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6230, Barlow & Morgenstern M955, EDM 4581 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio - Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=145
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A,4 | B, =C2 A, | B, =C2 A, | B,2 A,2 | B,2 ^C2 | D |

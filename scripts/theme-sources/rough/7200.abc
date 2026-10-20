@@ -1,0 +1,10 @@
+X:7200
+%%from edm
+T:Pulcinella, Gavotte
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7200 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+d'4 e'd'c'd' a'4 c'4 | c'8 d'4 a4 | b4 g4 a4 e4 | f4 e4 d8 |

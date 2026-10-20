@@ -1,0 +1,10 @@
+X:3435
+%%from edm
+T:Grand Galop Chromatique, Piano, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3435 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+B=B2c2 _d2=d- | de=ef _g=g2a- | a=a2b2 =b2c'- | c'c'=b_b =ab2e'- | e'

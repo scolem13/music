@@ -1,0 +1,10 @@
+X:250
+%%from edm
+T:Partita No. 2 in D minor, Courante
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0250 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A A4 _D2B2 A2G- | GF2E2 F4 A,2G- | GF2E2 D2_D2 =D3 |

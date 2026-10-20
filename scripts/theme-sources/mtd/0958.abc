@@ -1,0 +1,12 @@
+X:958
+T:Sonata No. 29, in B-flat, Op. 106, 2nd Movement - Scherzo
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0952, Barlow & Morgenstern B834, EDM 0958 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo: Assai vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=199
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d>f | f2 d z B>d | d2 B z G>B | B2 G z G>A | A2 B z |

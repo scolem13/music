@@ -1,0 +1,10 @@
+X:8638
+%%from edm
+T:Serenade in A, Op. 16, 4th Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8638 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:D
+f4 a8 f4 d8 | z4 e8 z4 f4 z4 | g4 b8 g4 e8 | z4 f8 z4 g4

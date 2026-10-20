@@ -1,0 +1,10 @@
+X:3771
+%%from edm
+T:Phedre, Overture, 3rd Theme
+C:Jules Massenet
+%%composer Massenet|Jules
+% EDM 3771 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+z4 A4 B4 ^c4 | e4 d4 A8- | A3/2^G-[A/2-^G/2]A (3^G2=G2G2 d2 z4 z G | B8 A4

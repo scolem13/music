@@ -1,0 +1,10 @@
+X:2210
+%%from edm
+T:Concerto Grosso in C minor, Op. 6, No. 8, 2nd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2210 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z4 C4 C4 C4 | A4 z12 | f4 e4 _d4 c4 | B4 c2_d2 e4 d4 | c4 B4 A4 B4 | G8

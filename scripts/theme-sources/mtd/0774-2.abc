@@ -1,0 +1,12 @@
+X:774
+T:Motives "Muss Es Sein?", "Es Muss Sein", 4th Movement - Intro (part 2)
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0768-2, Barlow & Morgenstern B666, EDM 0774 (Musical Theme Dataset, CC BY 4.0)
+N:Der schwer gefasste Entschluss, grave – Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=266
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+A | c2 G2 | z2 z G | B2 F2 |

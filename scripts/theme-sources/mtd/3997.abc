@@ -1,0 +1,11 @@
+X:3997
+T:Le Boeuf Sur Le Toit, 7th Theme, Dance of the Policemen
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% MTD 5648, Barlow & Morgenstern M380, EDM 3997 (Musical Theme Dataset, CC BY 4.0)
+M:3/8
+L:1/16
+Q:1/4=34
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+a4 ^fa | g6 | ^f4 df | e6 | ^fga2fa | g4 g2 | ^fdf2df | e6 |

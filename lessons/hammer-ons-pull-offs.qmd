@@ -211,4 +211,14 @@ K:C clef=treble-8
 
 {{< include _arrange-kit.qmd >}}
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Hammer-on." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hammer-on](https://en.wikipedia.org/wiki/Hammer-on).
+
+"Pull-off." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pull-off](https://en.wikipedia.org/wiki/Pull-off).
+:::
+<!-- /works-cited -->
+
 {{< include _pick-kit.qmd >}}

@@ -1,0 +1,10 @@
+X:4463
+%%from edm
+T:Sonata in F, K 377, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4463 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+F8 z/2 a4- a3/2g2 | f4 e4 d4 c4 | B4 z4 z/2 z/2 g4- gf2 | e4 d4 c4 B4 | A4

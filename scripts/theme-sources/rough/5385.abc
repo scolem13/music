@@ -1,0 +1,11 @@
+X:5385
+%%from edm
+T:Antiche Dance ed Arie Per Liuto, 3rd Movement - Villanella, 2nd Theme
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5385 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+d3e f2g2 | f2ef gfed | e2d2d2e2 | d8 | f3g a2g2 | fdef gfed | e2d2d2e2 | f8 |

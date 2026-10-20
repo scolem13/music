@@ -1,0 +1,10 @@
+X:8245
+%%from edm
+T:Jeremiah, Symphony - 3rd Movement - 2nd Theme
+C:Leonard Bernstein
+%%composer Bernstein|Leonard
+% EDM 8245 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+a3a ^f4 a3a ^c'2a2- | a4 a3a ^c'4 b4 | a3a2<^c'2c' b4 a3a | e'4

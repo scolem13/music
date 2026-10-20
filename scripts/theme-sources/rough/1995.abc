@@ -1,0 +1,10 @@
+X:1995
+%%from edm
+T:Concerto, Op. 16, 3rd Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 1995 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c8 | f8 | z/2 e2c2- c/2 z/2 e2-e/2 | z/2 d2^A2- A/2 z/2 d2-d/2 | c8- | c4 d4 | ^d4 f2<g2 | (3f4f4^d4 | ^d4 =d4 |

@@ -1,0 +1,10 @@
+X:181
+%%from edm
+T:Concerto in D minor, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0181 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:F
+f8 e2d2 c8 B2A2 | G2E2 F2 B8 A2 c2f2 gfed | e

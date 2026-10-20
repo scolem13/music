@@ -1,0 +1,10 @@
+X:7003
+%%from edm
+T:Der Burger Als Edelmann, Op. 60, Overture, 1st Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7003 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^a2c2e2d2 f2e2 g=ab2 | c'2c'2c'2c'2 c'4<c'4 | c'e'd'c' bc'd'2 f'2e'2g'2f'2 | e'2d'2c'2b2 a2 f'4

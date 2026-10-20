@@ -1,0 +1,10 @@
+X:2304
+%%from edm
+T:Sonata in A, Op. 1, No. 3, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2304 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+C4- CF/2A/2c/2d/2B/2 z/2 B4 z4 | C3=F/2G/2 B/2d/2c/2=f/2g/2b/2a/2 z/2 a4

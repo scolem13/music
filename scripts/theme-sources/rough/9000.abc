@@ -1,0 +1,10 @@
+X:9000
+%%from edm
+T:Suite No. 2 in D minor, 2nd Movement - Allegro
+C:Louis de Caix d'Hervelois
+%%composer Caix d'Hervelois|Louis de
+% EDM 9000 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+D2E2F2G2 A2G2F2E2 | D2E2F2E2 D2C2=B,2A,2 | G,2A,2B,2G,2 A,2G,2F,2E,2 | D,2

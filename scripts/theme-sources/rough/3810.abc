@@ -1,0 +1,10 @@
+X:3810
+%%from edm
+T:Concerto No. 1, in G minor, Op. 25, 1st Movement - Intro.
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3810 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+G,12 A,4 | B,12 =B,4 | C4 D4 E4 =E4 | F4 _G4 =G4

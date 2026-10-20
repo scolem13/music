@@ -1,0 +1,10 @@
+X:289
+%%from edm
+T:Sonata No. 4 in C minor, Vn. and Piano, 1st Movement, Siciliana
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0289 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+G3ed2 c3=Bc2 | c8- c2 z2 | c3ag2 f3=ef2 | f12 |

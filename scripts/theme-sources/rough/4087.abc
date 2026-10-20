@@ -1,0 +1,10 @@
+X:4087
+%%from edm
+T:Concerto in B-flat, K 450, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4087 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+f2 b4 b2b2c'2 | d'2d'2f2 f2 f4 | f2 g4 g2g2a2 | b2b2d2 d2 d4 |

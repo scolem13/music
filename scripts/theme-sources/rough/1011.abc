@@ -1,0 +1,13 @@
+X:1011
+%%from mtd
+T:Sonata No. 10, in G, Op. 96, Vn. and Piano, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1005, Barlow & Morgenstern B887, EDM 1011 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=108
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B2 | ed F2 AG | D4 GB | dgbd'bg | fa g2 |

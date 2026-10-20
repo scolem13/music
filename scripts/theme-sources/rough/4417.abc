@@ -1,0 +1,10 @@
+X:4417
+%%from edm
+T:Sonata in F, K 332, 1st Movement - 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4417 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+z/2 e3/2 z2 e2 z2 e2 z2 | z/2 g4- g3/2f2 d4 | d2c4<c4 d2 | d8 e4 |

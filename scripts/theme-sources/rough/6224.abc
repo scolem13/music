@@ -1,0 +1,10 @@
+X:6224
+%%from edm
+T:Faschingsschwank Aus Wien, Op. 26, 1st Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6224 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+f4 f4 F2B2 | d2f2 f4 c2f2 | a2c'2 d'4 d'4 | =e'4 f'8 | b4 b4 B2e2 | g2b2 b4 f2b2 | d'2f'2 g'4 g'4 | a'4 b'8 |

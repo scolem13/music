@@ -1,0 +1,10 @@
+X:9057
+%%from edm
+T:España, Rhapsody for Orchestra, 4th Theme
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9057 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:F
+z2 cc cc | d2 cB A2 | z2 AA AA | A2 GA B2 | z2 BB BB | c2 BA G2 |

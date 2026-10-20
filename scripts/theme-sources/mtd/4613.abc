@@ -1,0 +1,12 @@
+X:4613
+T:Symphony No. 41, in C, K 551, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6262, Barlow & Morgenstern M987, EDM 4613 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto. Allegretto - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+B6 | c2 z2 ag | ^fg=fdec | edcBAG | B6 | c2 z2 ag |

@@ -1,0 +1,10 @@
+X:3748
+%%from edm
+T:Cavalleria Rusticana, Intermezzo, 1st Theme
+C:Pietro Mascagni
+%%composer Mascagni|Pietro
+% EDM 3748 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 a4 c'4- | c'6 b2 a2g2 | d'2f2 a8 | g4 a8- | a2f2 e2d2 d'3=b | c'8

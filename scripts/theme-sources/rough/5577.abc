@@ -1,0 +1,10 @@
+X:5577
+%%from edm
+T:Romance, Op. 44, No. 1, 1st Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5577 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z2 e2 d2e2 =e2f2f2f2 | a2a2 g3_g g4 =g4 | z2 g2 _g2=g2 g2a2a2a2 | c'2c'2 b3=a c'4 b4 |

@@ -1,0 +1,12 @@
+X:6826
+%%from mtd
+T:Perpetuum Mobile, Op. 257, Variation
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8455, Barlow & Morgenstern S1217, EDM 6826 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=185
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B,2G2F2E2 | DEFG A2D2 | EFGA B2E2 | EFGA B2E2 | FGAB c2F2 |

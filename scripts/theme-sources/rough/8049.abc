@@ -1,0 +1,11 @@
+X:8049
+%%from edm
+T:Abu Hassan, Overture, 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8049 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+abc'b d'c'e'c' | d'bc'a b^ga2 | ^gabg a^fge | ^f^d e6 |

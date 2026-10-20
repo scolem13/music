@@ -53,4 +53,26 @@ a Leslie ("Tomorrow Never Knows"), and Stevie Ray Vaughan's "Cold Shot" guitar i
 
 - [Sound 21: Pitch effects](sound-pitch.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Leslie speaker." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Leslie_speaker](https://en.wikipedia.org/wiki/Leslie_speaker).
+
+"Tremolo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tremolo](https://en.wikipedia.org/wiki/Tremolo).
+
+**For teachers**
+
+Reid, Gordon. "Synth Secrets: Amplitude Modulation." *Sound On Sound*, Mar. 2000. [www.soundonsound.com/techniques/amplitude-modulation](https://www.soundonsound.com/techniques/amplitude-modulation).
+
+Reid, Gordon. "Synth Secrets: Synthesizing Hammond Organ Effects." *Sound On Sound*, Jan. 2004. [www.soundonsound.com/techniques/synthesizing-hammond-organ-effects](https://www.soundonsound.com/techniques/synthesizing-hammond-organ-effects).
+
+Smith, Julius O., III. *Physical Audio Signal Processing*. W3K Publishing, 2010. [ccrma.stanford.edu/~jos/pasp/](https://ccrma.stanford.edu/~jos/pasp/). See its chapters Artificial Reverberation, Flanging, Phasing with First-Order Allpass Filters, The Leslie.
+
+Smith, Julius O., III. "The Leslie." *Physical Audio Signal Processing*, W3K Publishing, 2010. [ccrma.stanford.edu/~jos/pasp/Leslie.html](https://ccrma.stanford.edu/~jos/pasp/Leslie.html).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

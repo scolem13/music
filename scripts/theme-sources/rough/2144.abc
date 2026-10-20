@@ -1,0 +1,10 @@
+X:2144
+%%from edm
+T:Concerto No. 4 in F, Op. 4, No. 4, 4th Movement, 1st Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2144 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+z8 f8 | g8 a8 | b2B2B2B2 B2B2B2B2 | g2e2f2A2 G4 e4 | f2

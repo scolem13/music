@@ -1,0 +1,13 @@
+X:2482
+%%from mtd
+T:Quartet in C, Op. 33, No. 3, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4143, Barlow & Morgenstern H363, EDM 2482 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio, ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=46
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c3/2d/4c/4 B2 A2 | G>E FGAB | c3/2B/4c/4 dD BG | F2 E z z2 |

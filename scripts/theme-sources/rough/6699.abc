@@ -1,0 +1,12 @@
+X:6699
+%%from mtd
+T:Valse Triste, Op. 44, 3rd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% MTD 8329, Barlow & Morgenstern S1091, EDM 6699 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=117
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+{/d} b6- | bagfge | g3 ^deg | f4 e2 | d6- | d6 |

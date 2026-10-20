@@ -1,0 +1,11 @@
+X:1192
+%%from edm
+T:Carnaval Overture, Op. 92 - 4th Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1192 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:G
+d6 | B2 d3 G | g6- | g4 f/2g/2f/2e/2 | B6- | B4

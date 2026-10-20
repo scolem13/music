@@ -1,0 +1,10 @@
+X:8831
+%%from edm
+T:Variations on a Theme of Schumann, Op. 23, Piano, 4 Hands
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8831 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+g4 f2e2 | a3g f4 | f4 e2d2 | g3f e4 | e4 a4 | g4 c'4 | b6 a2- | a2g2 f4 |

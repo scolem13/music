@@ -1,5 +1,5 @@
 const fs = require("fs"), vm = require("vm");
-vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/voicings.js", "utf8"));
+vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/voicings.js"), "utf8"));
 const N = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"];
 const nn = m => N[m % 12] + (Math.floor(m / 12) - 1);
 const show = (title, list) => { console.log("\n== " + title + " (" + list.length + ")"); list.forEach(c => console.log("  " + c.label.padEnd(44) + c.midis.map(nn).join(" ").padEnd(22) + (c.strings ? c.strings.map(s => s.string + ":" + s.fret).join(" ") : ""))); };

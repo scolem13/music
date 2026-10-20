@@ -1,0 +1,11 @@
+X:1962
+T:Spanish Dance, No. 6, Rondalla Aragonesa, 2nd Theme
+C:Enrique Granados
+%%composer Granados|Enrique
+% MTD 3624, Barlow & Morgenstern G213, EDM 1962 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=69
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d{Bc}BA | F6- | F4 A2 | d4 e2 | f2 de{cd}cB | G6- | G2 |

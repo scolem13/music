@@ -1,0 +1,11 @@
+X:7869
+%%from edm
+T:Die Meistersinger von Nurnberg, Overture, 2nd Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7869 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+z2 g'2 d'2 f'4 c'2 e'4- | e'd'c'b a2g3 ^fg^g bafc |

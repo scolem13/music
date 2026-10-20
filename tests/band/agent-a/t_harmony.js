@@ -2,7 +2,7 @@ const { CH, abcOf } = require('./load.js');
 const H = BandHarmony; const fs = require('fs');
 let fail = 0; const ok = (c, msg) => { if (!c){ fail++; console.log('FAIL', msg); } };
 // 1. every library suffix parses
-const src = fs.readFileSync('/Users/sean.coleman/Projects/everything-music-site/apps/tunes/tunes-object.js', 'utf8');
+const src = fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/tunes/tunes-object.js"), 'utf8');
 const re = /"([^"\n]*)"/g; let m; const syms = new Map();
 while ((m = re.exec(src))){ const s = m[1].trim(); if (/^[A-G]/.test(s)) syms.set(s, (syms.get(s)||0)+1); }
 let unknown = new Map(), parsed = 0, uses = 0, unkUses = 0; const byQ = {};

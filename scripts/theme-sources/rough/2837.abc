@@ -1,0 +1,10 @@
+X:2837
+%%from edm
+T:Trio No. 2 in G, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2837 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+D4 G6 G2 | B2d4<g4 a2 | b2a2g2f2e2d2 | c2B2 d4 c2

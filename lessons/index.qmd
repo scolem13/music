@@ -16,6 +16,7 @@ listing:
     - stride-boogie.qmd
     - blues-drums.qmd
     - reading-swing.qmd
+    - watermelon-man-blues.qmd
     - hihat-grooves.qmd
     - congas-basics.qmd
     - watermelon-congas.qmd
@@ -42,6 +43,7 @@ listing:
     - voice-pop.qmd
     - voice-jazz.qmd
     - voice-classical.qmd
+    - vowel-formants.qmd
     - four-chord-loops.qmd
     - cadences.qmd
     - write-an-ending.qmd
@@ -55,7 +57,22 @@ listing:
     - arrange-chords.qmd
     - arrange-organ.qmd
     - patterns/index.qmd
+    - compose-melody.qmd
+    - compose-motif.qmd
+    - compose-song.qmd
+    - compose-instruments.qmd
+    - compose-orchestra.qmd
+    - process-journal.qmd
+    - process-crit-b.qmd
     - notation-choices.qmd
+    - ornaments-by-period.qmd
+    - section-labels.qmd
+    - sources-start.qmd
+    - sources-check.qmd
+    - sources-dp.qmd
+    - annotate-start.qmd
+    - annotate-check.qmd
+    - annotate-dp.qmd
     - tuning-systems.qmd
     - strobe-tuner.qmd
     - inharmonicity.qmd
@@ -87,6 +104,8 @@ listing:
     - rec-gain-staging.qmd
     - rec-mics.qmd
     - rec-placement.qmd
+    - rec-guitar-amp.qmd
+    - rec-voice.qmd
     - rec-monitoring.qmd
     - rec-mixing.qmd
     - rec-mastering.qmd
@@ -165,6 +184,7 @@ listing:
   <button type="button" data-topic="rhythm">Rhythm</button>
   <button type="button" data-topic="improv">Improvising</button>
   <button type="button" data-topic="reading">Reading</button>
+  <button type="button" data-topic="composing">Composing</button>
   <button type="button" data-topic="sound">Sound and synths</button>
   <button type="button" data-topic="recording">Recording</button>
   <button type="button" data-topic="daw">DAWs</button>

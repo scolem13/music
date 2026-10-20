@@ -1,0 +1,145 @@
+---
+title: "Composing 3: Words and Music"
+toc: true
+toc-depth: 2
+description: "Writing a song: putting stressed syllables on strong beats (prosody), rhyme and line length, verse, pre-chorus, chorus and bridge, the hook, and making the chorus sound different from the verse."
+instruments: [voice, guitar, piano, other]
+topics: [composing, pop]
+has: [notation, band, interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+A song is words and music working together. You can start from either one. Some writers start with a line of lyrics they like and find
+the melody hidden in how it is spoken. Others start with a chord loop or a riff and sing nonsense syllables over it until words arrive.
+Whichever comes first, the two have to fit, and this lesson is mostly about **how they fit**.
+
+**How to use the page.** Press ▶ under a staff to hear the melody. The chorus example also has chords, so the band plays them with it, and
+**▶ Chords** plays the chords alone.
+
+## 1. Stress: the words already have a rhythm
+
+Say this line out loud: *I can't stop thinking about you.* Some syllables are louder and longer than others:
+*i CAN'T STOP THINK-ing a-BOUT you*. Those are the **stressed** syllables. Matching the words to the music is called **prosody**.
+Good prosody puts the stressed syllables on strong beats or on notes that stand out (higher, longer). Then the line is sung the way it is spoken,
+and it is easy to understand.
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="92"><script type="text/plain">
+X:1
+T:Stresses on strong beats
+M:4/4
+L:1/8
+K:C
+z7 C | E2 E2 G2 F E | D2 C6 |]
+w: I can't stop think-ing a-bout you
+</script></div>
+
+<div class="abc-ex" data-bpm="92"><script type="text/plain">
+X:1
+T:Stresses in the wrong places
+M:4/4
+L:1/8
+K:C
+z4 C E G A | c4 A2 G2 | E8 |]
+w: I can't stop think-ing a-bout you
+</script></div>
+:::
+
+In the second one, the long high note is on *-ing*, and *-bout* is squeezed onto a weak beat. It sounds like *thinkING aBOUT*. Singers can
+force it, but listeners have to work to hear the words.
+
+<div class="cp-tip">
+<strong>Test it.</strong> Speak your line in time to a beat, clapping on the strong beats. The syllables you clap on are the ones that
+should land on beats 1 and 3 (in 4/4). If you have to bend the word to make it fit, change the rhythm or change the word.
+</div>
+
+Prosody is wider than stress. The songwriter Pat Pattison describes it as the music supporting what the words say. A line about
+falling can fall; a line about being stuck can stay on one note; a question can end up in the air, on a note that is not the tonic.
+
+## 2. Lines and rhyme
+
+Lyrics usually come in groups of lines (a verse, a chorus). How the lines rhyme gives the section its shape. Label each line's last sound with
+a letter:
+
+| Scheme | What happens | How it feels |
+|---|---|---|
+| **AABB** | lines 1 and 2 rhyme, then 3 and 4 | simple, settled, a bit nursery-rhyme |
+| **ABAB** | lines 1 and 3, then 2 and 4 | flowing, the rhyme always pulls you on to the next line |
+| **XAXA** | only lines 2 and 4 rhyme | the most common in songs: room to say what you mean in lines 1 and 3 |
+| **AAAX** | three rhymes, then a line that doesn't | the odd line stands out: put the title or the twist there |
+
+A **perfect rhyme** has the same vowel and the same ending (*go / slow*). A **near rhyme** shares only the vowel or only the ending
+(*go / home*, *time / mine*). Most songwriters use both. A near rhyme often sounds less forced than a perfect one.
+
+**Line length matters too.** Lines with the same number of stressed syllables can be sung to the same melody. If line 3 is much longer, the melody
+has to change there, which can be good (contrast) or awkward (crowding).
+
+## 3. Song form
+
+Most popular songs are built from a few kinds of section:
+
+- **Verse:** tells the story. The music is usually the same each time; the words change.
+- **Pre-chorus** (optional): a short section that builds from the verse into the chorus.
+- **Chorus:** the main message, with the **same words and music every time**. Usually the title is here.
+- **Bridge:** a contrasting section, once, usually after the second chorus: new chords, new melody, a new angle on the lyric.
+
+A common plan is *verse, chorus, verse, chorus, bridge, chorus*. An older one, the **AABA** or 32-bar form of many jazz standards and
+show tunes, has four eight-bar sections: a melody (A), the same again (A), a contrasting **middle eight** (B), and the melody once more (A).
+Practise naming the sections of songs you know with [Section Labels](section-labels.qmd).
+
+## 4. The hook, and making the chorus different
+
+A **hook** is the short idea a listener remembers: often the title, sung on a motif that repeats (see [Composing 2](compose-motif.qmd)).
+Here is a four-bar chorus over the loop C, G, Am, F. Its two lines use the same rhythm, and the hook *hold on, hold on* opens both:
+
+<div class="abc-ex" data-bpm="100" data-style="pop"><script type="text/plain">
+X:1
+T:A chorus hook: same rhythm, two lines
+M:4/4
+L:1/8
+K:C
+"C"G3 E G3 E | "G"d2 B2 G4 | "Am"A3 E A3 E | "F"A2 G2 F4 |]
+w: Hold on, hold on, don't let go, Hold on, hold on, sing it slow.
+</script></div>
+
+The chorus has to sound like **arrival**. If the verse and chorus sound alike, the listener can't tell where the chorus starts. Change
+something, or several things:
+
+| | Verse | Chorus |
+|---|---|---|
+| **Register** | lower, closer to speech | higher: the melody's high point is usually here |
+| **Rhythm** | more words, shorter notes | fewer words, longer notes |
+| **Harmony** | can avoid the tonic, or start somewhere else | lands on the tonic, often on its first chord |
+| **Arrangement** | thinner (see [Arranging 1](arrange-band.qmd)) | fuller: more instruments, drums open up |
+| **Lyric** | details, story | the main idea, said simply |
+
+## 5. Write a verse and a chorus
+
+1. Write the chorus lyric first: two or four lines with the title in them. Speak it in time and mark the stresses.
+2. Find a chord loop (see [Four-Chord Loops](four-chord-loops.qmd)), or use the one above.
+3. Sing the chorus lyric over the loop several times, a different way each time. **Record each take on your phone.** Pick the best one and
+   write down why it was the best.
+4. Write the verse: lower, more words, and an ending that leads into the chorus.
+5. Put it in the [Notation page](/tools/notation.qmd) with its words and chords (it reads ChordPro too), and hear it with the band.
+
+Those recordings are evidence of your process. Keep them, give each a name and a date, and note which one you chose: see
+[Process 1: Keeping a Process Journal](process-journal.qmd).
+
+Next: [Composing 4: Instruments, Ranges and Transposing](compose-instruments.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Prosody (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Prosody_(music)](https://en.wikipedia.org/wiki/Prosody_(music)).
+
+"Song Structure." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Song_structure](https://en.wikipedia.org/wiki/Song_structure).
+
+**For teachers**
+
+Pattison, Pat. *Writing Better Lyrics*. 2nd ed., Writer's Digest Books, 2009. On prosody as the music supporting what is said; quoted through the Wikipedia article on prosody.
+:::
+<!-- /works-cited -->

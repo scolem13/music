@@ -1,0 +1,11 @@
+X:6056
+%%from edm
+T:Symphony No. 1 in D, 4th Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6056 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+d'8 f8 | a8 z2 A2 B2c2 | d4 f4 a4 c'4 | d'8 =c'8 | b8 ^d8 | e8

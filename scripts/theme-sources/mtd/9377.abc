@@ -1,0 +1,12 @@
+X:9377
+T:Othello Suite, 2nd Movement - Children's Intermezzo - 1st Theme
+C:Samuel Coleridge-Taylor
+%%composer Coleridge-Taylor|Samuel
+% MTD 2369, Barlow & Morgenstern C389, EDM 9377 (Musical Theme Dataset, CC BY 4.0)
+N:Children’s Intermezzo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=58
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c2 E | B2 B | B2 C | A3 | AcA |{AB} A2 G | G E2- | E2 |

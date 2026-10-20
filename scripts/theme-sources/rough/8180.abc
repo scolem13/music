@@ -1,0 +1,10 @@
+X:8180
+%%from edm
+T:Benvenuto Cellini, Overture, Op. 23, 3rd Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8180 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d'8 c'4 | b6- bc'2<d'2e' | e'4 a4 b3g | g6- ga f2

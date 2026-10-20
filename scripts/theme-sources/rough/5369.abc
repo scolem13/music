@@ -1,0 +1,11 @@
+X:5369
+%%from edm
+T:Serenade, Op. 77a, 2nd Movement
+C:Max Reger
+%%composer Reger|Max
+% EDM 5369 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/8
+L:1/16
+K:A
+e4 a4 | d3/2c<de/2 c4 | B4 f3 =f | z/2 a/2g fe ed dc | c4 B3 e | e4 d4 |

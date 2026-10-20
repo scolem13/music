@@ -1,0 +1,10 @@
+X:4452
+%%from edm
+T:Sonata in C, K 296, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4452 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e12 f/2g/2f/2g/2f/2g/2f/2g/2 | z/2 g4- g3/2e2 c4 z2 c2 | c'12 a4 | z/2 g3-g/2 z/2 e3-e/2 c4

@@ -1,0 +1,10 @@
+X:5246
+%%from edm
+T:Les Tendres Plaintes
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5246 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f8 a4 | d8 f4 | e4 d/2c/2d/2e/2d2 _d4 | d8 g4 | f4 e/2d/2e/2f/2e2 d4 | e4 _d4 =d4 | e6 f2 g4 | z/2 e8- e3-e/2 |

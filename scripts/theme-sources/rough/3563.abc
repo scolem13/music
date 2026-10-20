@@ -1,0 +1,10 @@
+X:3563
+%%from edm
+T:Sonata No. 7 in F, 3rd Movement
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3563 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:F
+a8 g16 | a8 f16 | a8 d16 | c8 B16 | g8 g8 z8 | f8 f8 z8 | _e8 e8 d8 | d8 d16 | _d8

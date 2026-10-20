@@ -1,0 +1,12 @@
+X:8075
+%%from mtd
+T:Invitation to the Dance, Op. 65, 3rd Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% MTD 9698, Barlow & Morgenstern W229, EDM 8075 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=310
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+d'/e'/d' | c'd'f'e'd'c' | bagfed |{/c} bagfed | cBAGFE | FG=GABA |

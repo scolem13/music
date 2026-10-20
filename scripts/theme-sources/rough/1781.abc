@@ -1,0 +1,10 @@
+X:1781
+%%from edm
+T:Concerto in F, 1st Movement - 1st Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1781 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+C3D2<D2F2<F2A2<A2c | c3d2<d2c2<c2A (3G2F2E2 | _E3F2<F2_A2<A2c2<c2_e |

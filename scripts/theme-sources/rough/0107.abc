@@ -1,0 +1,10 @@
+X:107
+%%from edm
+T:Sinfonia in B-flat, 1st Movement - 2nd Theme
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0107 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z4 f4 f4 f4 | f6 ga b2a2g2f2 | e4 e3f d4 d3e | c2A2 F4

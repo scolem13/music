@@ -1,0 +1,10 @@
+X:7768
+%%from edm
+T:Concerto No. 4 in D minor, 3rd Movement - 2nd Theme
+C:Henri Vieuxtemps
+%%composer Vieuxtemps|Henri
+% EDM 7768 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 a4 g4 | f4 a4 g4 | f4 e4 d4 | e4 f8- | f3d d8- | d12- | d4

@@ -1,0 +1,10 @@
+X:3593
+%%from edm
+T:Le Bourgeois Gentilhomme, Act 1, 1st Theme
+C:Jean Baptiste Lully
+%%composer Lully|Jean Baptiste
+% EDM 3593 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d8 A4 A4 | B6 B4<B4 A2 | G6 g4<g4 d2 | e6 f4<d4 d2 | d6 e4<c4 Bc | d16 |

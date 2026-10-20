@@ -1,0 +1,10 @@
+X:6202
+%%from edm
+T:Concerto in A minor, Op. 129, 3rd Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6202 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+z2 e4 e2 | e6 ^d2 | e2g2c'2d'2 | e'2b2c'2^a2 | a4

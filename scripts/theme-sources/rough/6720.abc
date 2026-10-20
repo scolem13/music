@@ -1,0 +1,11 @@
+X:6720
+%%from edm
+T:The Bartered Bride, 2nd Act III, Dance of the Comedians, 3rd Theme
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% EDM 6720 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+e4 ^f4- | ^f4 B4 | e2g2 ^f4- | ^f4 B4 | e4 ^f4- | ^f4 B4 | e2g2^f2a2 | g2^f2 e4 |

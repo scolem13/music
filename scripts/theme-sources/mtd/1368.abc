@@ -1,0 +1,12 @@
+X:1368
+T:Symphony No. 5 in E minor, Op. 95, 4th Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 3032, Barlow & Morgenstern D444, EDM 1368 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con fuoco  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=142
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+(3efg (3dBd (3efg (3dBd | (3efg d'>c' b>g f>e |

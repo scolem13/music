@@ -1,6 +1,6 @@
 // A pickup: sounded at the end of the count-in, and at the end of each chorus's last bar (played whole, so a chorus is not a beat short)
 const assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 ["tune-chart.js", "voicings.js", "band/harmony.js", "band/bass.js", "band/comp.js", "band/drums.js", "band/player.js"].forEach(f => require(R + f));
 const abc = `X:1\nT:P\nM:4/4\nL:1/4\nK:C\nG | "C"c2 e2 | "F"f2 a2 | "G"g2 d |]\n`;
 const parsed = TuneChart.parse(abc);

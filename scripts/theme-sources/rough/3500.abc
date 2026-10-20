@@ -1,0 +1,10 @@
+X:3500
+%%from edm
+T:Sonata in B minor, 3rd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3500 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+^A,,,/2B,,,/2C,,/2D,,2D,,2 D,,2D,,2 D,,2C,, B,,,F,,2=F,,/2- | =F,,3/2 E,,6

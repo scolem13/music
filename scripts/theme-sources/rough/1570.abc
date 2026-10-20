@@ -1,0 +1,10 @@
+X:1570
+%%from edm
+T:Dolly, Op. 56, Kitty-Valse, 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1570 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+e4 B8 | c4 F8 | G4 B,4 =B,4 | C12- | C2=A,2B,2C2D2E2 | F2G2A2B2c2d2 | e4 d4 c4 | B4

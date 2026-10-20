@@ -1,0 +1,11 @@
+X:9062
+%%from edm
+T:Habanera, 2nd Theme
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9062 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+z/2 c'3/2g2 z/2 a3/2g2 | z/2 a3/2a2 c2c2 | c4 a4 | a2 z/2 a3/2 g2e/2g/2b/2d'/2 | c'2

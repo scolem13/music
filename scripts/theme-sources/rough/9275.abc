@@ -1,0 +1,13 @@
+X:9275
+%%from mtd
+T:Polonaises, Op. 53, in A-flat, 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2271, Barlow & Morgenstern C284, EDM 9275 (Musical Theme Dataset, CC BY 4.0)
+N:Maestoso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=76
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+f2>e2 e4 z2 cd | fe{/f}e=d e4 z2 c_d | fe{/f}e=d fe{/f}ed e2_g2 | f2c2d2 |

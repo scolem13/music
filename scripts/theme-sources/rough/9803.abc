@@ -1,0 +1,11 @@
+X:9803
+%%from edm
+T:Rounds, Str. Orchestra, 1st Movement, 3rd Theme
+C:David Diamond
+%%composer Diamond|David
+% EDM 9803 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:E
+z/2 b3-b/2 b4 b4 b4 | b4 b4 b4 b4 | b4 c'4 a4 c'4 | e8 b4 g4- | g4 e4 b8 | g4 g4 e4 c4- | c4 e12- | e4

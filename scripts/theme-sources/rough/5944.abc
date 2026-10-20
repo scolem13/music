@@ -1,0 +1,10 @@
+X:5944
+%%from edm
+T:Quartet No. 10 in E-flat, Op. 125, 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5944 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+e16 | f4 g4 a4 z4 | a2 z2 b2 z2 c'2 z6 | c8 d8 | e4 f4 g4

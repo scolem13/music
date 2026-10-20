@@ -1,0 +1,11 @@
+X:6248
+%%from edm
+T:Papillons, Op. 29, No. 12, Finale
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6248 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+A4 d6 d2 | d4 d4 e4 | f4 f4 e4 | e4 e8 |

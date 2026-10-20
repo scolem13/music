@@ -1,0 +1,13 @@
+X:2233
+%%from mtd
+T:Concerto Grosso in A, Op. 6, No. 11, 5th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% MTD 3895, Barlow & Morgenstern H114, EDM 2233 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=125
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+A2 Bc dB c2 | e2 d/c/B/A/ G/A/B z2 | B2 cd ecdB | cA TB2 A2 z2 |

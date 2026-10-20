@@ -1,0 +1,11 @@
+X:8457
+%%from edm
+T:Symphony No. 3 in A minor, 2nd Movement - 2nd Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8457 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+a2^a2 (3=a2g2=f2 | g2a2 (3g2=f2e2 | =f2g2 (3f2e2f2 | e2=f2 (3e2f2e2 |

@@ -1,0 +1,10 @@
+X:4007
+%%from edm
+T:Creation Du Monde, 2nd Movement
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4007 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z4 c4 ^d4 c4 | d4 c4 ^d4 c4 | d4 c4 c4 ^A4 | c16- | c4

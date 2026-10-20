@@ -1,0 +1,10 @@
+X:7024
+%%from edm
+T:Burleske, 1st Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7024 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+D4 D4 A,4 | E4 z2 D2 F4 | E2D2 F4 E4 | D2E2 A,4 z4 | a'2_a'2 =a'4 g'2_g'2 | g'4 e'2_e'2 =e'4 | d'4 e'2d'2 f'4 | d'4 e'2d'2 a'4 |

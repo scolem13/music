@@ -1,0 +1,10 @@
+X:2310
+%%from edm
+T:Sonata in D, Op. 1, No. 13, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2310 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z2 D2 F2A2 e8- | e2A2d2f2 b3a g3/2f<ed/2 | c3/2B/2A2

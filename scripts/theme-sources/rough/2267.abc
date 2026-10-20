@@ -1,0 +1,10 @@
+X:2267
+%%from edm
+T:Sonata in C, Op. 1, No. 7, 2nd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2267 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+g6 | a6 | b6 | c'2 c2 c2 | d2 d3 c/2d/2 | e2 c2 f2- | f2 e2 d2 | e/2f/2d3

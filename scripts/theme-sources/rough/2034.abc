@@ -1,0 +1,10 @@
+X:2034
+%%from edm
+T:Peer Gynt, Suite No. 1, Op. 46, 3rd Movement - Anitra's Dance, 1st Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2034 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+E4 z/2 A3/2^G2 A2B2 | c2d2 e2a2 e4 | d/2e/2d/2e/2d/2e/2d/2e/2 c2a2 c4 | B/2c/2B/2c/2B/2c/2B/2c/2 A8 | z4 A2c2 A4 | G/2A/2G/2A/2G/2A/2G/2A/2 ^F2c2 F4- | ^F4

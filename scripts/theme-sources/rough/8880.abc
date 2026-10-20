@@ -1,0 +1,10 @@
+X:8880
+%%from edm
+T:Concerto No. 2 in D minor, 3rd Movement - 1st Theme B
+C:Max Bruch
+%%composer Bruch|Max
+% EDM 8880 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+c'4 d'2 | c'2 f4 | c'4 d'2 | c'2 f'4 | c'4 d'2 | c'2 f4- | f2 A4- | AA B4- | B2

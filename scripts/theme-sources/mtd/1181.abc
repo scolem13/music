@@ -1,0 +1,11 @@
+X:1181
+T:Variations on "Nel Cor Piu" of Paisiello, Piano
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1174, Barlow & Morgenstern B1056, EDM 1181 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d | B2 B A2 A | G2 G z2 d | d2 G e2 e | A3 |

@@ -1,0 +1,10 @@
+X:3521
+%%from edm
+T:Valse Oubilee, Piano, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3521 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F#
+A4 z4 A4- | A4 F4 A4 | =A4 z2 A2 A4 | G4 F4 C4 | G4 z2 G2 G4 | =G4 =E4 C4 |

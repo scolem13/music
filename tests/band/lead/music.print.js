@@ -1,5 +1,5 @@
 const fs = require("fs"), vm = require("vm");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 for (const f of ["tune-chart.js", "band/harmony.js", "band/bass.js", "band/comp.js", "band/drums.js"]) vm.runInThisContext(fs.readFileSync(R + f, "utf8"));
 function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const H = BandHarmony, nn = H.noteName;

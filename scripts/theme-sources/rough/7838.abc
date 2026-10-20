@@ -1,0 +1,11 @@
+X:7838
+%%from edm
+T:Sonata in D minor, Op. 2, No. 3, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7838 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+d4 d/2e/2d/2e/2d/2e/2d/2e/2 d/2e/2d/2e/2_d=d | e2_d2A2E2D2A,2 | e4 e/2f/2e/2f/2e/2f/2e/2f/2 e/2f/2e/2f/2de | f2d2A2F2D2A,2 | f4 f/2g/2f/2g/2f/2g/2f/2g/2 f/2g/2f/2g/2ef | g2e2c2G2E2C2 |

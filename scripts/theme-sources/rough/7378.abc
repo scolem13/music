@@ -1,0 +1,11 @@
+X:7378
+%%from edm
+T:Quartet in B minor, 7th Movement
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7378 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f4 e6 fg | z/2 f/2g/2f/2g/2f/2g/2f/2 g/2f/2g/2f/2g/2f/2g/2<f/2 B4 | z/2 e3-e/2 d4 c4 | d4 c2d2 B4 |

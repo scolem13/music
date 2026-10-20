@@ -1,0 +1,10 @@
+X:8105
+%%from edm
+T:Sonata No. 2 in A-flat, Op. 39, 2nd Movement
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8105 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+c'4 g4 | e'3d' c'4 | =b4 =a4 | g8 | c'4 g4 | e'3d' c'4 | b4 =a4 | g8 |

@@ -1,0 +1,10 @@
+X:2162
+%%from edm
+T:Concerto No. 11 in G minor, Op. 7, No. 5, 3rd Movement, Minuet
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2162 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d12 | z/2 c6- c3/2 z4 | e2<c2 d2<A2 B2<_G2 | z/2 G8- G3-G/2 |

@@ -1,0 +1,11 @@
+X:7385
+%%from edm
+T:Suite in A minor, Forlane
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7385 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+e2 A4 f2e/2f/2e/2f/2e/2f/2e/2f/2 | d2 (3g4-gc4- c c4- c | e2 (3A4-Af4- f e4- e | d2 (3g4-gc4- c c4- c | e2d3e c2B3c | A2 (3B4-BE4- E E4- E |

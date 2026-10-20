@@ -1,0 +1,10 @@
+X:2032
+%%from edm
+T:Peer Gynt, Suite No. 1, Op. 46, 1st Movement - Morning Mood
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2032 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:E
+b2g2f2 e2f2g2 | b2 z/2 g3/2f2 e2fgfg | z/2 b3/2g2b2 c'2g2c'2 | b2g2f2 e4

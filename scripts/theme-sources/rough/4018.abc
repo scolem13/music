@@ -1,0 +1,10 @@
+X:4018
+%%from edm
+T:Halka Overture, Intro
+C:Stanislaw Moniuszko
+%%composer Moniuszko|Stanislaw
+% EDM 4018 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a6 g/2f/2e/2d/2 _d2 z e a2 z d | e8 a2 z4 A2 | e6 de g2f2A2=B2 | _d6 e2 e4

@@ -1,0 +1,11 @@
+X:6974
+%%from edm
+T:Alpensinfonie, Op. 64, 12th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6974 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:A
+c'8- c'3=c'2<c'2^c' | c'3d'2<d'2c'2<c'2g2<g2a | =f8- f2^f2a2=g2 | =f2^f2a2=g2 =c2^c2 z/2 d3/2B2 | A8

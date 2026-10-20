@@ -1,0 +1,12 @@
+X:3716
+T:Symphony No. 9, in D, 4th Movement - 2nd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5368, Barlow & Morgenstern M108, EDM 3716 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio. Sehr langsam und noch zurückhaltend.  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=24
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+z2 z D,, E,,_F,,G,,A,, | _F,,2 D,,E,, F,,G,,/A,,/ __B,,_C, | A,,2 |

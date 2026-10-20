@@ -1,0 +1,11 @@
+X:6022
+T:Sonata in B-flat, (Posth.), 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7654, Barlow & Morgenstern S435, EDM 6022 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/4
+Q:1/4=100
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B | B A B c | d3 c/B/ | c c c B/A/ | B3 |

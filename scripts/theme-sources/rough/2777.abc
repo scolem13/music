@@ -1,0 +1,10 @@
+X:2777
+%%from edm
+T:Symphony in B-flat, No. 102, London 9, 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2777 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B16 | f4 b4 a4 g4 | f12 f4 | f4 e2 z d c2B2A2B2 | d6 _d2 c2

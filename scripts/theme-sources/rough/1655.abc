@@ -1,0 +1,10 @@
+X:1655
+%%from edm
+T:Piece Heroique, Organ, 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1655 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+z2 B,,C, D,6 C,2 | z2 C,E, G,6 F,2 | F,3=F, E,8 | E,3^D, =D,8 | D,3B,, A,,4 G,,/2A,,/2G,,/2A,,/2G,,/2A,,/2G,,/2A,,/2 | z/2 F,,4- F,,3/2

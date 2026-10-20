@@ -1,0 +1,10 @@
+X:6240
+%%from edm
+T:Papillons, Op. 29, No. 2
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6240 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Ab
+e'a'2 z d'c'2 z | c'f'2 z b2<f'2 | a2<g2 b2<e'2 | d'2<=b2 c'2<a2 |

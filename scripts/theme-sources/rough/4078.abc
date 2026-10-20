@@ -1,0 +1,10 @@
+X:4078
+%%from edm
+T:Concerto in A, K 414, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4078 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A4 G4 F4 | F4 E4 F4 | G3A B6 A2 | A2G2 F4

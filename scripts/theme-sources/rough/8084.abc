@@ -1,0 +1,10 @@
+X:8084
+%%from edm
+T:Oberon, Overture, Intro.
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8084 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+d6- de f8 | a3f ^a4 a4 =a4 | d6- de f8 | f3d a4 d'8 |

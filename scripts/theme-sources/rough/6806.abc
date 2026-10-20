@@ -1,0 +1,10 @@
+X:6806
+%%from edm
+T:Afro-American Symphony, 1st Movement - 1st Theme B
+C:William Grant Still
+%%composer Still|William Grant
+% EDM 6806 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+e'2e'2 e'2 a6 z4 | z2 e'2 e'2a2 =d'e' _d'4 =b2 | a2 z12 z2 | z16 | d'2d'2 d'4<a4

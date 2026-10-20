@@ -1,0 +1,10 @@
+X:1235
+%%from edm
+T:Quartet in A-flat, Op. 105, 3rd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1235 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+A4- AGAB c2A2f2c2 | d6 AB G4 z2 G2 | G4- GFEF G2A2 c3B | B8 A4

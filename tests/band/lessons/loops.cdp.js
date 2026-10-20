@@ -5,7 +5,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
 (async () => { const b = await launch({ width: 1280, height: 1200 }); const B = "http://127.0.0.1:8500";
   const ev = x => Promise.race([b.eval(x), b.sleep(8000).then(() => { throw new Error("eval timed out: " + x.slice(0, 60)); })]);
   try {
-    for (const [page, n] of [["pop-changes", 6], ["four-chord-loops", 9], ["blues-changes", 9], ["cadences", 7], ["guide-tones", 7], ["minor-changes", 6], ["borrowed-chords", 6], ["turnarounds", 7], ["reharmonize", 5], ["pop-changes-guitar", 4], ["pop-changes-piano", 4], ["pop-changes-bass", 4]]) {
+    for (const [page, n] of [["pop-changes", 6], ["four-chord-loops", 9], ["blues-changes", 9], ["cadences", 7], ["guide-tones", 7], ["minor-changes", 6], ["borrowed-chords", 6], ["turnarounds", 7], ["reharmonize", 5], ["pop-changes-guitar", 7], ["pop-changes-piano", 7], ["pop-changes-bass", 8]]) {
       await b.goto(B + "/lessons/" + page + ".html"); await b.sleep(1500);
       await ev(`window.__err = []; window.addEventListener("error", function(e){ __err.push(e.message); }); 0`);
       assert.strictEqual(await ev(`document.querySelectorAll(".bl-staff svg").length`), n, page + ": a staff under every chart");
@@ -19,7 +19,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
       assert.deepStrictEqual(await ev(`__err`), [], page + ": no errors");
     }
     // the ear tests: a question, an answer, a verdict and the chart revealed
-    for (const [page, host] of [["cadences", "bl-quiz"], ["cadences", "bl-quiz2"], ["minor-changes", "bl-quiz"], ["borrowed-chords", "bl-quiz"], ["turnarounds", "bl-quiz"]]) {
+    for (const [page, host] of [["cadences", "bl-quiz"], ["cadences", "bl-quiz2"], ["minor-changes", "bl-quiz"], ["borrowed-chords", "bl-quiz"], ["turnarounds", "bl-quiz"], ["pop-changes-guitar", "bl-quiz"], ["pop-changes-piano", "bl-quiz"], ["pop-changes-bass", "bl-quiz"]]) {
       await b.goto(B + "/lessons/" + page + ".html"); await b.sleep(1500);
       await ev(`document.querySelector("#${host} .btn-primary").click(); 0`); await b.sleep(500);
       await ev(`document.querySelector("#${host} .bl-answers .btn").click(); 0`);
@@ -40,6 +40,25 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
     assert.ok(await ev(`(() => { const st = document.querySelector('[data-step="basic"]'); const v = st.querySelector(".bl-boards .bl-card:not([hidden])"); return v && v.getAttribute("data-sym") === document.querySelectorAll('[data-step="basic"] .bl-boards .bl-card')[0].getAttribute("data-sym"); })()`));
     await ev(`document.querySelector('[data-step="basic"] .bl-one').click(); 0`);
     assert.strictEqual(await ev(vis), 4);
+    // the instrument lessons' two-five-one steps (major, then minor) and chord builder
+    for (const [page, dia, sel, want] of [["pop-changes-guitar", 3, ".bl-boards svg", null], ["pop-changes-piano", 1, ".bl-boards svg", null], ["pop-changes-bass", 3, ".bl-boards svg", null]]) {
+      await b.goto(B + "/lessons/" + page + ".html"); await b.sleep(1500);
+      const chords = async id => ev(`[...document.querySelectorAll('[data-step="${id}"] .tc-bar')].map(x => x.textContent).join(" ")`);
+      assert.ok(/Dm7/.test(await chords("251")) && /G7/.test(await chords("251")) && /maj7/.test(await chords("251")), page + ": the ii-V-I step");
+      assert.ok(/Dm7.5|Dm7♭5|ø/.test(await chords("251m")), page + ": the minor ii-V-i step");
+      assert.strictEqual(await ev(`document.querySelectorAll('[data-step="251"] ${sel}').length`), dia, page + ": diagrams in the ii-V-I step");
+      assert.strictEqual(await ev(`document.querySelectorAll('[data-step="251m"] .bl-staff svg').length`), 1);
+      // the builder: four menus, a ready-made progression rewrites the chart, a new chord shows on the staff
+      assert.strictEqual(await ev(`document.querySelectorAll("#bl-builder select.form-select").length`), 5, page + ": a menu for each bar and the presets");
+      await ev(`var p = document.querySelector("#bl-builder .tools select, #bl-builder .bl-tools select"); p.value = "2"; p.dispatchEvent(new Event("change")); 0`);
+      const bar = await ev(`[...document.querySelectorAll("#bl-builder .tc-bar")].map(x => x.textContent.replace(/\\s+/g, " ")).join("|")`);
+      assert.ok(/Dm7.*G7.*maj7/.test(bar), page + ": preset ii-V-I in the builder: " + bar);
+      assert.strictEqual(await ev(`document.querySelectorAll("#bl-builder .bl-staff svg").length`), 1);
+    }
+    // bass: the line through the two-five-one is D C | B G | C B | C G, with B-flat as the minor's new note
+    await b.goto(B + "/lessons/pop-changes-bass.html"); await b.sleep(1500);
+    assert.strictEqual(await ev(`document.querySelectorAll('[data-step="251line"] .bl-staff .abcjs-note').length`), 8);
+    assert.ok(await ev(`LessonChordStaff.abc(["Cm7 Cm7/Bb"], { tonic: 0, minor: true, mode: "bass" }).indexOf('"Cm7/Bb"B,') >= 0`), "B-flat in the minor line (it is in the key signature)");
     // the ii-V bar is drawn tight, so that its numerals do not run together
     await b.goto(B + "/lessons/pop-changes.html"); await b.sleep(1500);
     assert.ok(await ev(`document.querySelectorAll('[data-step="twofive"] .tc-tight').length >= 3`));

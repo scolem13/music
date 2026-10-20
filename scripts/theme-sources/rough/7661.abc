@@ -1,0 +1,11 @@
+X:7661
+%%from edm
+T:Sevilla, 1st Movement - Sous les Orangers, 2nd Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7661 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/X7S0-0CZqq0?t=88
+M:4/4
+L:1/16
+K:C
+z2 d2 e2f2 ab g4 a2- | a2^a2c'2f'2 ^d'3g' ^a'4- | ^a'2b'2^g'2e'2 f'c' ^g4 ^a2- | ^a2b2a2^g2 =g8 |

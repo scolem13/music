@@ -1,0 +1,10 @@
+X:2043
+%%from edm
+T:Peer Gynt, Suite No. 2, Op. 55, 4th Movement - 1st Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2043 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+E4 A4 B2c2 d4 | e2f2f2e2 e2c2 A4 | A2c2c2B2 B2^G2 GE3- | E4

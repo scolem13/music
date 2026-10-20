@@ -1,0 +1,10 @@
+X:1889
+%%from edm
+T:Orpheus and Eurydice, Overture
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1889 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e4 z/2 f3/2ef g4 z4 | e4 z/2 f3/2ef g4 z4 | a4 z/2 b3/2ab c'bag c'bag | c'3g2<g2e2<e2c2<c2e |

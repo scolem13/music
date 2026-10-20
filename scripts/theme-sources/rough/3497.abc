@@ -1,0 +1,10 @@
+X:3497
+%%from edm
+T:Rapsodie Espagnole, 4th Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3497 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+c4 B2 G2A2B2 | d4 c2 A2 z2 c2 | d4 c2 A2c2f2 | f6 c2

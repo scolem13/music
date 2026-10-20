@@ -1,0 +1,12 @@
+X:9344
+T:Waltzes, Op. 64, No. 2 in C-sharp minor, Theme B (part 1)
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2338-1, Barlow & Morgenstern C350, EDM 9344 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/hOcryGEw1NY?t=47s
+M:3/4
+L:1/8
+Q:1/4=182
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G2 | gagfdG | fgfecG |

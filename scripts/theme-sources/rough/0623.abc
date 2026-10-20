@@ -1,0 +1,10 @@
+X:623
+%%from edm
+T:Andante Favori, F
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% EDM 0623 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:F
+c3/2d/2 c2 B2 | A3/2B/2 A2 G2 | F3/2_G/2 z/2 z/2 =G2- G/2A/2 | z/2 BG/2 F2 E

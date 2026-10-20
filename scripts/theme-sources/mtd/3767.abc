@@ -1,0 +1,12 @@
+X:3767
+T:Meditation, from Opera Thais, 1st Theme
+C:Jules Massenet
+%%composer Massenet|Jules
+% MTD 5419, Barlow & Morgenstern M157, EDM 3767 (Musical Theme Dataset, CC BY 4.0)
+N:Méditation religieuse – Symphonie  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=56
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f4- fd (3Adf | b4 c'2 d'2 | d2 e (5:4:5f/g/f/e/f/ aA | B6 |

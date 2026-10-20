@@ -1,0 +1,13 @@
+X:1041
+T:Symphony No. 2, in D, Op. 36, 4th Movement - 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1035, Barlow & Morgenstern B917, EDM 1041 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+% More than one voice in the score: the melody (voice 1) only. All voices: scripts/theme-sources/mtd-two-voice/1041.abc
+M:2/2
+L:1/8
+Q:1/4=331
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+e8 | c4 A4 | e8 | z2 ba ^gfeg | a2 x6 | c4 A4 |

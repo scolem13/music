@@ -77,4 +77,26 @@ The **LFO** ([Sound 6](sound-lfo.qmd)) adds vibrato (**→ Pitch**) or a slow fi
 
 - [Sound 8: FM synthesis](sound-fm.qmd), a completely different way to make harmonics.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+*Learning Synths*. Ableton. [learningsynths.ableton.com/](https://learningsynths.ableton.com/).
+
+"Subtractive synthesis." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Subtractive_synthesis](https://en.wikipedia.org/wiki/Subtractive_synthesis).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: An Introduction To VCAs." *Sound On Sound*, Jan. 2000. [www.soundonsound.com/techniques/introduction-vcas](https://www.soundonsound.com/techniques/introduction-vcas).
+
+Reid, Gordon. "Synth Secrets: Modulation." *Sound On Sound*, Feb. 2000. [www.soundonsound.com/techniques/modulation](https://www.soundonsound.com/techniques/modulation).
+
+Reid, Gordon. "Synth Secrets: Of Responses & Resonance." *Sound On Sound*, Oct. 1999. [www.soundonsound.com/techniques/responses-resonance](https://www.soundonsound.com/techniques/responses-resonance).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

@@ -1,0 +1,10 @@
+X:4782
+%%from edm
+T:Concerto No. 2, in B minor, Op. 7, Rondo (La Campanella), 3rd Movement - 1st Theme A
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4782 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+f2 z/2 f'3/2f'2 e'2 z/2 d'3/2d'2 | c'2 z/2 b3/2^a2 b2 z/2 c'3/2f2 | f2g2f2 e2d2c2 | B2

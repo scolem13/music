@@ -1,0 +1,2624 @@
+---
+title: "Grace Notes and Ornaments: How to Play Them"
+toc: true
+toc-depth: 2
+description: "The ornament tables of Bach, Couperin, Geminiani, Purcell, Türk, Leopold Mozart, Clementi and Hummel, read from the original prints, each sign written and played out; Haydn and Mozart in practice, Chopin and the 19th century, Irish ornaments, and jazz and blues chart symbols, with reference recordings."
+instruments: [piano, violin, guitar, voice, other]
+topics: [reading, classical, jazz]
+has: [notation, interactive]
+search: false
+---
+
+<!-- INTERNAL: work in progress, delisted 2026-10-20 (out of the sidebar, the Lessons listing and site search; the URL still works).
+     Replaced for students by lessons/ornaments-by-period.qmd. Open items: the page's abcjs drawings still show stand-ins for signs
+     abcjs cannot draw (Purcell, Bach accents, Geminiani); swap in the LilyPond SVGs from scripts/ornaments/lily/ once LilyPond runs;
+     Couperin's tremblement unchecked against his 1713 table; none of the LilyPond compiled yet. -->
+
+A grace note is a small note printed before a main note. An ornament is a sign (a trill, a
+mordent, a turn) that stands for a short group of notes. Neither tells you exactly *when* the
+extra notes sound or *how long* they last. The answer depends on the period and the style, and
+for older music it comes from what performers and teachers of the time wrote down.
+
+The main question is the same in every style: **does the grace note fall on the beat, taking
+time from the main note, or just before the beat, taking time from the note before?**
+
+Many composers and teachers answered that question in print, in tables of their signs with the
+notes written out underneath. This page gives eight of those tables as their authors wrote them,
+read from the original prints and manuscripts, from Bach (1720) to Hummel (1828), alongside how
+the signs were used in practice, and the very different habits of Irish traditional music and of
+jazz and blues.
+
+**How to use the page.** Each sign is shown twice: as written, and played out the way the
+source writes it, moved onto the note C so the tables can be compared. Press **▶** on either to
+hear the played-out notes. Small print under a name gives the page in the source, and says where a
+note count or rhythm is our reading rather than the source's. Each part ends with recordings to
+hear the style. The Classical Themes page plays grace notes on the beat, the Baroque and Classical
+default.
+
+## Two kinds of grace note
+
+| Written | Name | Where it falls | How long |
+|---|---|---|---|
+| small note, no slash | appoggiatura | on the beat | long: often half the main note, or more |
+| small note with a slash | acciaccatura | on or just before the beat | as short as possible |
+
+The slash only became a reliable sign in the 19th century. In Bach and Haydn an unslashed small
+note can still be short, and the context decides (Neumann, *Ornamentation in Baroque*;
+Rosenblum).
+
+## Bach and the Baroque
+
+In 1720 J. S. Bach wrote a table of ornaments, the *Explication*, at the front of the
+keyboard book he began for his son Wilhelm Friedemann. Each sign stands above a quarter note
+with the notes it stands for written out below (Bach, *Clavier-Büchlein*). Together with
+C. P. E. Bach's *Versuch* (1753) and Quantz (1752), it is the main evidence for how Bach's signs
+were played.
+
+### Bach's whole table
+
+Here is the *Explication* entry by entry, each on the note C as Bach wrote it: the sign, and the
+notes Bach wrote out beneath it, with his own note values, read from the manuscript (Bach,
+*Clavier-Büchlein*, leaf 3v). Both ▶ buttons in a row play the same written-out notes.
+
+Bach's values do not always add up to the quarter note above them: the trill and the mordent stop
+short, and the last three entries run over. The table shows the shape of each ornament, not a
+count. On a longer note or at a slower tempo a trill goes on longer, and its last note is held
+(Neumann, *Ornamentation in Baroque*).
+
+His signs differ in small hooks and strokes that the music font here cannot draw:
+
+- **Trillo:** a short wave of two humps. **Mordant:** a short wave with a vertical stroke through it.
+  **Trillo und Mordant:** a longer wave ending in that stroke.
+- **Cadence:** a curl standing upright, like a question mark, not the lying ∽ used today.
+- **Doppelt-Cadence:** a small hook rising from below into the wave (begin below). **Idem:** a large
+  hook coming down from above (begin with a turn from above). Entries 7 and 8 add the closing stroke.
+- **Accent:** a small hook just before the note; the realisation shows whether it rises or falls.
+- **The last Idem:** a stroke dropping into a long wave.
+
+<!-- ornament-table: bach-explication -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Bach's name</th><th>Sign</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Trillo</em><br>trill<div class="ax-rownote">Bach's values: five 32nds and a dotted 32nd, short of the quarter; the trill fills the note.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcd c3/2 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcd c3/2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcd c3/2 |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Mordant</em><br>mordent<div class="ax-rownote">Written as two 32nds and a dotted 32nd; the main note is then held.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c3/2 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cB c3/2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c3/2 |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Trillo und Mordant</em><br>trill ending with a mordent</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcBc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Cadence</em><br>turn<div class="ax-rownote">Four 32nds, as Bach wrote them.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Doppelt-Cadence</em><br>trill from the note below</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+Bcdcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>Idem</em><br>trill from a turn above</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">7</td><td><em>Doppelt-Cadence und Mordant</em><br>from below, ending with a mordent</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcBc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+BcdcdcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">8</td><td><em>Idem</em><br>from a turn above, on a dotted note, ending with a mordent</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c12 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdcdcBc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBcdcdcdcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdcdcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">9</td><td><em>Accent steigend</em><br>appoggiatura from below</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">10</td><td><em>Accent fallend</em><br>appoggiatura from above</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">11</td><td><em>Accent und Mordant</em><br>appoggiatura from below, then a mordent<div class="ax-rownote">B and the last c share an eighth beam, so Bach's values add up to more than a quarter.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}!mordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4 cB c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">12</td><td><em>Accent und Trillo</em><br>appoggiatura from above, then a trill<div class="ax-rownote">As in 11, the values add up to more than a quarter.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}!uppermordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 cdcd c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">13</td><td><em>Idem</em><br>the same, with a stroke dropping into the wave instead of the hook</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 cdcd c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+**Hear it.** The Netherlands Bach Society's *All of Bach* videos are free and well made. Two
+show Bach writing ornaments out in full, the best evidence of what his signs meant:
+
+- English Suite No. 2, BWV 807, Bertrand Cuiller: the Sarabande at
+  [11:32](https://www.youtube.com/watch?v=kPDTyKts0J4&t=692s), then Bach's own ornamented version,
+  *Les agréments de la même Sarabande*, at [14:16](https://www.youtube.com/watch?v=kPDTyKts0J4&t=856s).
+- Italian Concerto, BWV 971, Christine Schornsheim: the Andante, whose melody Bach wrote out
+  ornament by ornament, at [4:22](https://www.youtube.com/watch?v=wjXCJL8P0rs&t=262s).
+- English Suite No. 3, BWV 808, Pierre Hantaï: the Sarabande at [10:23](https://www.youtube.com/watch?v=2UxTsFXZsnQ&t=623s).
+- Goldberg Variations, BWV 988, Jean Rondeau: [the Aria](https://www.youtube.com/watch?v=chQ7cbSUU-s),
+  almost every beat ornamented.
+
+### The appoggiatura: on the beat, and long
+
+An appoggiatura is played **on the beat** and takes its length from the main note. C. P. E. Bach's
+rule: before a note that divides in two it takes half, and before a dotted note it takes two
+thirds (C. P. E. Bach, ch. 2, sec. 2). It is the dissonant note, so it is the louder one,
+and the main note resolves it softly.
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:1
+T:Written
+M:2/4
+L:1/8
+K:C
+{d}c2 B2 | {f}e3 d | c4 |]
+</script><script type="text/plain" data-play>
+X:2
+T:Played: half of a plain note, two thirds of a dotted one
+M:2/4
+L:1/8
+K:C
+dc B2 | f2 e d | c4 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:2
+T:Played: half of a plain note, two thirds of a dotted one
+M:2/4
+L:1/8
+K:C
+dc B2 | f2 e d | c4 |]
+</script></div>
+</div>
+```
+
+Not every scholar agrees that all of Bach's small notes are long and on the beat. Frederick
+Neumann argued that many, especially those filling in a falling third, were short and could
+come before the beat (Neumann, *Ornamentation in Baroque*). Treat on the beat as the default,
+and use a short or pre-beat grace when the long one would spoil the line or the counterpoint.
+
+### The trill: start on the upper note
+
+Bach's table and C. P. E. Bach both start a trill on the **note above**, on the beat, so the
+trill begins with a dissonance like an appoggiatura. A trill on a long note may end with a
+turn (*Nachschlag*) into the next note.
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:3
+T:Written
+M:2/4
+L:1/16
+K:C
+Tc4 B4 | c8 |]
+</script><script type="text/plain" data-play>
+X:4
+T:Played: from the upper note, on the beat
+M:2/4
+L:1/16
+K:C
+dcdc B4 | c8 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:4
+T:Played: from the upper note, on the beat
+M:2/4
+L:1/16
+K:C
+dcdc B4 | c8 |]
+</script></div>
+</div>
+```
+
+### The mordent: main note, the one below, main note
+
+Bach's *mordant* is quick: the main note, the note below, then back, all at the start of the
+beat.
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:5
+T:Written
+M:2/4
+L:1/16
+K:C
+Me4 d4 | c8 |]
+</script><script type="text/plain" data-play>
+X:6
+T:Played
+M:2/4
+L:1/32
+K:C
+ede6 d8 | c16 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:6
+T:Played
+M:2/4
+L:1/32
+K:C
+ede6 d8 | c16 |]
+</script></div>
+</div>
+```
+
+### Improvising ornaments
+
+Baroque players were expected to add ornaments of their own, above all on the repeat of a slow
+movement. Bach shows how far this could go: after the Sarabande of his English Suite No. 3 he wrote
+out a second, ornamented version of the whole tune, *Les agréments de la même Sarabande*. Below is
+its opening theme (from the Classical Themes collection), followed by two ways to ornament it that a
+Baroque player might choose, and one they would not.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:20
+T:Bach, Sarabande, English Suite No. 3 (BWV 808): the theme
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+BA A3 c/B/ | cA ^F3 A/G/ | AE E2 PD>C | B,3 A, G,2 |]
+</script></div>
+```
+
+**Choice 1, French: graces on the strong notes.** An appoggiatura from above leans on beat 2,
+where a sarabande puts its weight. A trill from the upper note goes on the leading tone, and a
+mordent goes on the last note of the cadence. The tune stays the same, and each ornament falls on
+a note that is a dissonance or a point of arrival.
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:21
+T:Written
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+B{B}A A3 c/B/ | cA T^F3 A/G/ | AE E2 D>C | B,3 A, MG,2 |]
+</script><script type="text/plain" data-play>
+X:22
+T:Played
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B2 B2A2 A4 c B | c2A2 G^FG^F^F2 A G | A2E2 E4 D3C | B,6 A,2 G,=F, G,2 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:22
+T:Played
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B2 B2A2 A4 c B | c2A2 G^FG^F^F2 A G | A2E2 E4 D3C | B,6 A,2 G,=F, G,2 |]
+</script></div>
+</div>
+```
+
+**Choice 2, Italian: fill in the long notes.** The long notes are broken into running notes
+(*passaggi*, also called divisions) that circle the written pitch and move on to the next one.
+The notes that fall on the beat are still the written melody, so the harmony underneath doesn't
+change. Corelli's slow movements, printed with ornaments added in 1710, are the classic model.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:23
+T:Divisions on the long notes
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+BA AG/A/ Bc/B/ | cA ^F/G/A/^F/ G A/G/ | AE E/^F/G/E/ D>C | B,3 A, G,2 |]
+</script></div>
+```
+
+**Not appropriate: ornaments everywhere, and on the wrong notes.** Here there's a mordent on
+every note, and a trill on the final G, where the cadence comes to rest. A trill adds tension, so
+it belongs on the note before the resolution, never on the resolution itself. With an ornament on
+every note, beat 2 no longer stands out, and the dance goes with it. C. P. E. Bach warned that
+ornaments used too freely are like too much seasoning (C. P. E. Bach, ch. 2, sec. 1).
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:24
+T:Too much, in the wrong places
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+MBMA MA3 Mc/MB/ | McMA M^F3 MA/MG/ | MAME ME2 MD>MC | MB,3 MA, TG,2 |]
+</script></div>
+```
+
+## France: Couperin and d'Anglebert
+
+The French harpsichordists printed the most detailed ornament tables of all, and Bach's own table
+borrows from them. Jean-Henri d'Anglebert's *Pièces de clavecin* (1689) opens with 29 *agréments*:
+plain, leaned-on and turned trills (*tremblement simple*, *appuyé*, *cadence*), the *double cadence*
+(a turn), the *pincé* (mordent), the *cheute* or *port de voix* (appoggiatura from below or above),
+*coulés* filling in thirds, arpeggios, and the *détaché*, a short silence before a trill or a mordent.
+Like Bach, he writes every ornament on the beat and starts every trill from the note above
+(d'Anglebert).
+
+François Couperin's *L'Art de toucher le clavecin* (1716) explains how his signs are played, and
+adds two things the tables do not show. A trill's beats "begin more slowly than they end", and every
+pincé, double pincé and trill stops on the main note (the *point d'arrêt*) inside the note's value
+(Couperin).
+
+<!-- ornament-table: couperin-1716 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Couperin's name</th><th>Sign</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Pincé simple</em><br>mordent: the note below once, then the note held<div class="ax-rownote">Written in small notes; their exact length is not given.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cB c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Pincé double</em><br>a longer mordent, stopping on the note (<em>point d'arrêt</em>) inside its value</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cBcBcB c8-c2 |]
+</script></div></td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cBcBcB c8-c2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cBcBcB c8-c2 |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Port de voix</em><br>the small note below "strikes with the harmony": on the beat; here with a pincé</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}!mordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c2 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4 cB c2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c2 |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Tremblement</em><br>always from the note or semitone above: the <em>appui</em> (leaned on), the beats (starting slower than they end), the <em>point d'arrêt</em><div class="ax-rownote">The beats speed up; even notes here. The length of the <em>appui</em> is left to the player.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 dcdcdc c6 |]
+</script></div></td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 dcdcdc c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 dcdcdc c6 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+## Italy and England: Geminiani and Purcell
+
+Francesco Geminiani's *The Art of Playing on the Violin* (London, 1751) lists fourteen "Ornaments of
+Expression" and, unusually, says what each one expresses: a long beat for "Fury, Anger,
+Resolution", a soft swelling one for "Horror, Fear, Grief". Six of them change the notes; the rest
+are holding the note, staccato, swelling and diminishing, piano and forte, and the "close shake",
+which he says "cannot possibly be described by Notes" (it is vibrato, and he wants it often)
+(Geminiani).
+
+<!-- ornament-table: geminiani-1751 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Geminiani's name</th><th>Sign</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>A plain Shake</em><br><em>Trillo semplice</em>: for quick movements<div class="ax-rownote">Eight slurred 32nds; the start on the note above is read from the group ending on the main note.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>A turn&#x27;d Shake</em><br><em>Trillo composto</em>: quick and long for gaiety, short and soft for tender passions<div class="ax-rownote">About ten notes on the plate: the trill, the note below, the main note.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^+"c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc B c |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc B c |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc B c |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>A superior Apogiatura</em><br>from above, on the beat, "more than half the Length" of the note, swelling<div class="ax-rownote">Geminiani gives it more than half the note; the plate also shows a short one.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4-d c3 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4-d c3 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4-d c3 |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>An inferior Apogiatura</em><br>from the note below, only when the melody rises a second or third, then a beat</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{^B}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+^B4 c^B c2 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+^B4 c^B c2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+^B4 c^B c2 |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Holding the Note</em><br><em>Trattenimento</em>: the note held plain, then shaken, so the pure note is heard<div class="ax-rownote">Shape from the plate; note count approximate.</div></td><td><div class="abc-ex" data-width="110"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^-"c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcdcdc^Bc |]
+</script></div></td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c8 dcdcdc^Bc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcdcdc^Bc |]
+</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>A Beat</em><br>the note and the semitone below, slurred: strong and long for fury, soft and swelling for grief<div class="ax-rownote">A trill on the lower note, starting on the main note.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^//"c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c^Bc^Bc^Bc2 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c^Bc^Bc^Bc2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c^Bc^Bc^Bc2 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+Henry Purcell's harpsichord *Lessons* (1696, published by his widow) begin with "Rules for Graces":
+"you allway's shake from the note above and beat from ye note or half note below, according to the
+key you play in". A shake is the upper-note trill; a beat is the English name for a mordent from the
+note below. The printed examples are hard to read and are said to contain misprints, so the note
+counts below follow the rules more than the plate (Purcell).
+
+<!-- ornament-table: purcell-1696 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Purcell's name</th><th>Sign</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Shake</em><br>from the note above ("you allway's shake from the note above")<div class="ax-rownote">The sign is a double oblique stroke through the stem.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Beat</em><br>from the note or half note below, "according to the key you play in"<div class="ax-rownote">A stroke with a cross stroke. The rule is clear; the number of notes on the poor scan is not.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcBc c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+BcBc c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcBc c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Plain note and Shake</em><br>half the note held on the note above, then shaken (a dotted note: only the dot)</td><td><div class="abc-ex" data-width="110"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8 dcdcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8 dcdcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8 dcdcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Forefall</em><br>an oblique stroke rising to the note: the note below first</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 c12 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4 c12 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 c12 |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Backfall</em><br>a stroke falling to the note: the note above first</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 c12 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 c12 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 c12 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+## Haydn, Mozart and the Classical style
+
+The Classical sources keep the long appoggiatura on the beat but give the short one more room.
+Leopold Mozart's violin method (1756) and Türk's *Klavierschule* (1789) both describe long
+appoggiaturas that take half or more of the main note, and short ones that are played quickly
+**on the beat**, taking only a sliver of the main note (L. Mozart; Türk, ch. 3).
+
+- **Long or short?** A small note written as a longer value (an eighth before a quarter) is
+  usually long. A sixteenth or a thirty-second before a note, a grace before a repeated note,
+  or one in a quick tempo is usually short (Türk; Neumann, *Mozart*).
+- **On the beat.** Even the short ones fall on the beat in Haydn and Mozart, with the bass.
+  Playing them before the beat is a later habit (Brown).
+- **Trills.** Most begin on the upper note, as in Bach, but Classical sources allow a
+  main-note start when the note before is already the upper note, or when the trill starts a
+  phrase (Rosenblum; Neumann, *Mozart*).
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:7
+T:Written: a long and a short appoggiatura
+M:2/4
+L:1/8
+K:G
+{c}B2 A2 | {a/}g g f2 | g4 |]
+</script><script type="text/plain" data-play>
+X:8
+T:Played: the long one takes half; the short one a quick note on the beat
+M:2/4
+L:1/16
+K:G
+c2B2 A4 | agg2 f4 | g8 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:8
+T:Played: the long one takes half; the short one a quick note on the beat
+M:2/4
+L:1/16
+K:G
+c2B2 A4 | agg2 f4 | g8 |]
+</script></div>
+</div>
+```
+
+### Three treatises, as their authors wrote them
+
+Daniel Gottlob Türk's *Klavierschule* (1789), Leopold Mozart's violin method (1756) and Muzio
+Clementi's piano *Introduction* (c. 1801) are the closest we have to Bach's table for Haydn's and
+Mozart's world. All three put the appoggiatura on the beat and give it half the main note (more
+before a dotted note), and all start the trill on the note above. They differ in the details:
+Türk times the short appoggiatura by tempo; Leopold Mozart lets an appoggiatura before a dotted
+note take everything but the dot, and allows one grace before the beat, the *passing*
+appoggiatura between notes a third apart; Clementi, a generation later, allows a short shake that
+starts on the main note, and says composers leave the kind of shake to "the taste and judgment of
+the performer" (Türk; L. Mozart; Clementi).
+
+#### Türk, *Klavierschule* (1789)
+
+<!-- ornament-table: turk-1789 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Türk's name</th><th>Written</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Kurzer Vorschlag</em><br>short appoggiatura: on the beat, "at most a 32nd in a moderate tempo", a 64th in a slow one<div class="ax-rownote">§9, p. 209.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d1c7 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Langer Vorschlag</em><br>long appoggiatura: half of a note that divides in two<div class="ax-rownote">§11, p. 210.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Langer Vorschlag, punktirt</em><br>before a dotted note: two thirds (sometimes only one third)<div class="ax-rownote">§12, pp. 210-211.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c12 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Langer Vorschlag, gebunden</em><br>before a note tied to the same pitch: the whole first note<div class="ax-rownote">§13, p. 212, in 6/8; Türk adds that the rule is often broken.</div></td><td><div class="abc-ex" data-width="110"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c12-c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c6 |]
+</script></div></td><td><div class="abc-ex" data-width="120"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d12c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Schleifer</em><br>slide: two quick notes from a third below, on the beat<div class="ax-rownote">§20, p. 246. The exact speed is left to the tempo.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{AB}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+A1B1c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+A1B1c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+A1B1c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>Schneller</em><br><em>pincé renversé</em>: the note, the second above, the note, "always very fast"<div class="ax-rownote">§24, p. 251; also shown in 64ths.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{cd}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c1d1c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">7</td><td><em>Triller</em><br>trill: from the note above, with even notes<div class="ax-rownote">§§27-29, pp. 252-254.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">8</td><td><em>Pralltriller</em><br>half trill: the upper note is the note before, tied over; then a very fast c d c<div class="ax-rownote">§55, p. 272: "really only a shortened trill without a Nachschlag".</div></td><td><div class="abc-ex" data-width="110"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(d8 !uppermordent!c8) |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8-d1c1d1c4-c |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8-d1c1d1c4-c |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8-d1c1d1c4-c |]
+</script></div></td></tr>
+<tr><td class="ax-n">9</td><td><em>Mordent</em><br>the note below, "extremely fast"<div class="ax-rownote">§60, p. 275.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1B1c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c1B1c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1B1c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">10</td><td><em>Doppelschlag</em><br>turn: "must always begin with the note above"; a start on the main note is marked <em>falsch</em><div class="ax-rownote">§§71-72, pp. 282-283. Rhythm as in Clementi's matching example.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(3:2:3d1c1B1 c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+#### Leopold Mozart, *Versuch einer gründlichen Violinschule* (1756)
+
+<!-- ornament-table: lmozart-1756 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Leopold Mozart's name</th><th>Written</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Vorschlag</em><br>before a plain note it takes half: "what the note loses, the appoggiatura gains"<div class="ax-rownote">Ch. 9 §3, p. 194. Loud and swelling; the main note slurred on very softly (§8).</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Vorschlag vor einer punktirten Note</em><br>before a dotted note it takes the whole undotted value: the main note comes in on the dot<div class="ax-rownote">Ch. 9 §4, pp. 195-196.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c12 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Vorschlag vor einer halben Note</em><br>a half note starting a bar in 3/4: the appoggiatura takes three quarters<div class="ax-rownote">Ch. 9 §4, p. 196.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d12c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Durchgehender Vorschlag</em><br>passing appoggiatura between notes a third apart: played in the time of the note <em>before</em>, softly<div class="ax-rownote">Ch. 9 §17, p. 206: his one grace before the beat.</div></td><td><div class="abc-ex" data-width="110"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+e8 {d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+e6 d2 c8 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+e6 d2 c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+e6 d2 c8 |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Triller</em><br>trill: "begin it from above", here with a closing turn (<em>Nachschlag</em>)<div class="ax-rownote">Ch. 10 §§3-5, pp. 218-219. Note count approximate.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script></div></td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdcdcdcdcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>Mordant (I)</em><br>his "mordent" is a cluster of very fast, soft grace notes that "grip" the main note: here from the note itself<div class="ax-rownote">Ch. 11 §§8-9, p. 242. Not Bach's mordent.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{cB}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c/B/c7 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c/B/c7 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c/B/c7 |]
+</script></div></td></tr>
+<tr><td class="ax-n">7</td><td><em>Mordant (II)</em><br>from the two neighbours, below and above<div class="ax-rownote">Ch. 11 §9, p. 242.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{Bd}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B/d/c7 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B/d/c7 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B/d/c7 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+#### Clementi, *Introduction to the Art of Playing on the Piano Forte* (c. 1801)
+
+<!-- ornament-table: clementi-1801 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Clementi's name</th><th>Written</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Appoggiatura</em><br>"in general, it is half of its duration; more or less, however, according to the expression"</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Grace for emphasis</em><br>"to give emphasis": very short, on the beat</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B1c7 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B1c7 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B1c7 |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Turn</em><br>a quick triplet from the note above<div class="ax-rownote">"The lowest note of every sort of turn is mostly a semitone."</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(3:2:3d1c1B1 c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Turn inverted</em><br>from the note below</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!invertedturn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3B1c1d1 c6 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(3:2:3B1c1d1 c6 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3B1c1d1 c6 |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Shake</em><br>from the note above<div class="ax-rownote">Composers "trust chiefly to the taste and judgment of the performer, whether it shall be long, short, transient, or turned".</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>Short shake</em><br>"beginning by the note itself"</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c2 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c1d1c2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c2 |]
+</script></div></td></tr>
+<tr><td class="ax-n">7</td><td><em>Beat</em><br>Clementi's beat starts on the note below (a semitone when the note before is not a step away)</td><td></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B1c1B1c1B1c3 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B1c1B1c1B1c3 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+### Haydn's own sign
+
+Haydn's keyboard music has a sign of its own, a turn with a vertical stroke through it, the
+"Haydn ornament". What it meant is still argued over, and the sources disagree even on where it
+stands: in the slow movement of the E♭ Sonata, Hob. XVI:49 (1790), the first edition (Artaria,
+1791) engraves a small cross-like sign over two notes in each of bars 9 and 11, where Haydn's
+autograph has a sign that a coarse scan cannot tell from a short trill (Haydn, autograph; Haydn,
+Artaria). Modern editions and Somfai's study discuss it; until we have read them, this page gives no
+realisation (Somfai).
+
+**Hear four readings of the same Adagio.** Hob. XVI:49, II. *Adagio e cantabile*, on official uploads.
+Listen to bars 1-12 (about the first minute) and compare the small notes and signs:
+
+- Ronald Brautigam, fortepiano: [YouTube](https://www.youtube.com/watch?v=hGq5VGR_6oQ)
+- Alfred Brendel, piano: [YouTube](https://www.youtube.com/watch?v=ZT5eJcW6RHI)
+- Paul Lewis, piano: [YouTube](https://www.youtube.com/watch?v=f77tyuwa8Qs)
+- Marc-André Hamelin, piano: [YouTube](https://www.youtube.com/watch?v=3m7qHE3QU7U)
+
+### Mozart writes it out
+
+Mozart's Sonata in F, K. 332, shows how much a Classical player added. In the autograph, the
+Adagio's reprise repeats the opening plainly; in the first edition (Artaria, 1784), printed under
+Mozart's eye, the same bars return heavily embellished, with runs of 32nds, triplets and trills
+(Mozart, Artaria). Hear it on fortepiano: Kristian Bezuidenhout,
+[K. 332, II. Adagio](https://www.youtube.com/watch?v=1sgfcMXbpQg); the reprise comes about halfway through.
+
+## Hummel, Chopin and the 19th century
+
+Through the 19th century, short grace notes moved **before the beat** in much music, and trills
+more and more started on the main note (Brown). The turning point in print is Johann Nepomuk
+Hummel's piano method (1828). He says the old rule, the trill from the note above, "was made for
+the voice", and that on the piano the weight belongs on the main note: his trill begins and ends on
+it, and a start from above or below has to be written as a small note (Hummel).
+
+<!-- ornament-table: hummel-1828 -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Hummel's name</th><th>Written</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Triller</em><br>trill: "begins with the main note and always ends with it too", with a closing turn as fast as the trill<div class="ax-rownote">p. 394: the upper-note start "was made for the voice"; on the piano the weight belongs on the main note.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcdcdcdcdcdcdBc |]
+</script></div></td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cdcdcdcdcdcdcdBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcdcdcdcdcdcdBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Triller von oben</em><br>a start from above must be shown by a small added note</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}!trill!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script></div></td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdcdcdcdcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Triller von unten</em><br>and a start from below likewise</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}!trill!c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcdcdcdcdcBc |]
+</script></div></td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+BcdcdcdcdcdcdcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcdcdcdcdcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Schneller</em><br>a short trill: main, upper, main, quick and on the beat<div class="ax-rownote">p. 398; note values approximate.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c2d2c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c2d2c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c2d2c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Doppelschlag von oben</em><br>turn from the note above, "lively, round and rather strong"<div class="ax-rownote">pp. 398-399.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBc c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>Doppelschlag von der Hauptnote</em><br>turn from the main note, shown by a small added note</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{c}!turn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcBc c3 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cdcBc c3 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcBc c3 |]
+</script></div></td></tr>
+<tr><td class="ax-n">7</td><td><em>Doppelschlag von unten</em><br>turn from the note below (the inverted sign)</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!invertedturn!c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdc c4 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+Bcdc c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdc c4 |]
+</script></div></td></tr>
+<tr><td class="ax-n">8</td><td><em>Doppelschlag über dem Punkt</em><br>over a dot: the turn ends on the note just as the dot comes in<div class="ax-rownote">Shape from p. 399; values approximate. (The sign sits after the note.)</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^∽ on the dot"c12 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcBc |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c8 dcBc |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcBc |]
+</script></div></td></tr>
+<tr><td class="ax-n">9</td><td><em>Langer Vorschlag</em><br>half of a plain note, two thirds of a dotted one, struck with the other voices<div class="ax-rownote">pp. 399-401.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script></div></td></tr>
+<tr><td class="ax-n">10</td><td><em>Kurzer Vorschlag</em><br>written as a crossed eighth: takes almost nothing; the accent is on the main note</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{/d}c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d1c7 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+**Chopin** is the exception pianists remember. His pupils report that he wanted grace notes and
+the start of trills played **with the bass note**, on the beat (Eigeldinger). The Polish National
+Edition's performance notes spell it out piece by piece: in the Moderato in E (WN 56) the first
+grace note is struck with the bass; "all trills without grace notes should begin with the
+principal"; and where Chopin writes a small note before a trill, the trill starts on that note,
+"simultaneously with the G in the left hand". Yet in the early Contredanse (WN 27) the edition says
+to "execute all grace notes in an anticipated manner", before the beat (Ekier). Chopin wanted even
+a turn sung: "not a quick gruppetto, but eight notes well sung" (Ekier). Raoul Pugno, who studied
+the Chopin tradition in Paris, notes that in the Berceuse a small flat over a trill belongs to its
+upper note, and asks for two of its trills "a little longer" and the next one strictly in time
+(Pugno).
+
+**Singers** kept the older rule longest. Manuel García's *Traité* (1847) says the appoggiatura in
+Italian singing is less an ornament than a matter of the words: it "falls always on the downbeat
+and on the long syllable", and can come from any interval, a fifth in Mozart's "andiam" in *Don
+Giovanni* (García).
+
+**Hear it.** Recordings by players and singers trained in the 19th century, free on the Internet
+Archive:
+
+- Vladimir de Pachmann, Chopin, [Nocturne in B, Op. 32 No. 1](https://archive.org/details/78_nocturne-in-b-major_vladimir-de-pachmann-chopin_gbia0545821a)
+  and [Mazurka in F♯ minor](https://archive.org/details/loc-jukebox-285277-mazurka-in-f-sharp-minor) (1912, Library of Congress National Jukebox).
+- Ignacy Jan Paderewski, Chopin, [Nocturne in F♯, Op. 15 No. 2](https://archive.org/details/78_nocturne-in-e-sharp-major-op-15-no-2_ignace-jan-paderewski-chopin_gbia7042343a)
+  (HMV, 1928; the archive's title says "E sharp").
+- Adelina Patti, Bellini, ["Casta diva"](https://archive.org/details/78_castadiva_139_09) (1906), with
+  [more of her 1905–06 recordings](https://archive.org/details/adelina-patti): bel canto
+  appoggiaturas and turns from a singer born in 1843.
+
+## Irish traditional music
+
+In Irish flute, whistle and fiddle music grace notes are not melody notes at all but
+articulations: a **cut** is a flick to a higher note, a **tap** (or strike) a flick to a lower
+one, and a **roll** combines them around a long note. They are so short that they have no
+rhythmic value of their own and fall right at the start of the main note (Larsen).
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:9
+T:Cut, tap and a long roll on G
+M:6/8
+L:1/8
+K:D
+{a}G2 A {F}G2 A | ~G3 B2 A |]
+</script><script type="text/plain" data-play>
+X:91
+M:6/8
+L:1/32
+K:D
+Q:3/8=60
+a G7 A4 F G7 A4 | G4 a G3 F G3 B8 A4 |]
+</script></div>
+```
+
+## Jazz and blues
+
+Jazz players use grace notes freely and they are rarely written. They come **before the beat**
+or across it, in swing time, and they are part of how a phrase is shaped rather than decoration
+added on top. Where an arranger does write them, the big-band chart has its own set of signs:
+Michele Caniato's checklist of "expressive devices" runs from gliss, rip and bend through shake,
+doit, growl, smear, fall, spill and plop to the turn (Caniato).
+
+- **The blue third.** On piano, which cannot bend a note, the minor third is crushed into the major
+  third: struck together and the lower one let go, or a quick grace from the minor into the major.
+  It stands in for the singer's or guitarist's bend between them (Komara; Hines). Grace from below,
+  never from above, or it sounds minor. See [Blues Piano](blues-piano.qmd).
+- **Terminal vibrato.** Louis Armstrong starts a long note straight and lets vibrato in towards
+  its end; Gunther Schuller calls the trumpet shake "a more extreme way of enlivening and swinging
+  the tone" (Schuller). B.B. King's guitar version is the "butterfly" vibrato, from the wrist
+  (Koch).
+- **Ghost notes and bends** are written as a note in brackets (or an x notehead) and as an arrow
+  marked ¼, ½ or full.
+
+In the table below, ▶ plays the slides on a clean electric guitar, so a fall falls and a bend bends, where
+notation can only show steps. How far and how fast each one goes is our estimate: players differ.
+
+<!-- ornament-table: jazz-chart -->
+```{=html}
+<table class="ax-table">
+<thead><tr><th class="ax-n">#</th><th>Name</th><th>In a chart</th><th>Roughly played</th></tr></thead>
+<tbody>
+<tr><td class="ax-n">1</td><td><em>Crushed note</em><br>piano: the minor and major third struck together, the lower let go at once, standing in for a bend<div class="ax-rownote">Komara; Hines, ed. Taylor.</div></td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+{/_E}E4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+[_EE] E3 |]
+</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+[_EE] E3 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+[_EE] E3 |]
+</script></div></td></tr>
+<tr><td class="ax-n">2</td><td><em>Fall</em><br>a line falling away after the note: at the release, never before the beat, into silence</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^fall"c4 z4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 B/A/ z4 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, -7]]}]}</script></div></td><td><div class="abc-ex" data-width="130"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+c3 B/A/ z4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 B/A/ z4 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, -7]]}]}</script></div></td></tr>
+<tr><td class="ax-n">3</td><td><em>Doit</em><br>the opposite: "a smear that ascends into infinity after the initial pitch is heard"<div class="ax-rownote">Pejrolo and DeRosa.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^doit"c4 z4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 d/e/ z4 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, 5]]}]}</script></div></td><td><div class="abc-ex" data-width="130"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+c3 d/e/ z4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 d/e/ z4 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, 5]]}]}</script></div></td></tr>
+<tr><td class="ax-n">4</td><td><em>Scoop</em><br>a curve up into the note: the attack is on the beat but below pitch, sliding up</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^scoop"c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+A/B/ c3 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, -2], [0.25, 0]]}]}</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+A/B/ c3 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+A/B/ c3 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, -2], [0.25, 0]]}]}</script></div></td></tr>
+<tr><td class="ax-n">5</td><td><em>Plop</em><br>a curve down into the note from above</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^plop"c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+e/d/ c3 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 4], [0.25, 0]]}]}</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+e/d/ c3 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+e/d/ c3 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 4], [0.25, 0]]}]}</script></div></td></tr>
+<tr><td class="ax-n">6</td><td><em>Rip</em><br>a fast run up from below, starting before the beat so the top note lands on it</td><td><div class="abc-ex" data-width="80"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^rip"c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3GAB c4 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1.4, "midi": 72, "bend": [[0, -7], [0.35, 0]]}]}</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+(3GAB c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3GAB c4 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1.4, "midi": 72, "bend": [[0, -7], [0.35, 0]]}]}</script></div></td></tr>
+<tr><td class="ax-n">7</td><td><em>Bend</em><br>guitar: push the string up a whole step ("full"; ½ = a half step), hold, let it back down</td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^full"c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c2 d4 c2 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0, 0], [0.3, 2], [1.5, 2], [1.9, 0]]}]}</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+c2 d4 c2 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c2 d4 c2 |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0, 0], [0.3, 2], [1.5, 2], [1.9, 0]]}]}</script></div></td></tr>
+<tr><td class="ax-n">8</td><td><em>Shake</em><br>trumpet: a wide, fast lip trill, "done solely with the embouchure"<div class="ax-rownote">Pejrolo and DeRosa; Barnhart.</div></td><td><div class="abc-ex" data-width="90"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^shake"c8 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3cec (3ece (3cec (3ece |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0.0, 0], [0.16666666666666666, 3], [0.3333333333333333, 0], [0.5, 3], [0.6666666666666666, 0], [0.8333333333333334, 3], [1.0, 0], [1.1666666666666667, 3], [1.3333333333333333, 0], [1.5, 3], [1.6666666666666667, 0], [1.8333333333333333, 3], [2.0, 0]]}]}</script></div></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+(3cec (3ece (3cec (3ece |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3cec (3ece (3cec (3ece |]
+</script><script type="text/plain" data-bend>{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0.0, 0], [0.16666666666666666, 3], [0.3333333333333333, 0], [0.5, 3], [0.6666666666666666, 0], [0.8333333333333334, 3], [1.0, 0], [1.1666666666666667, 3], [1.3333333333333333, 0], [1.5, 3], [1.6666666666666667, 0], [1.8333333333333333, 3], [2.0, 0]]}]}</script></div></td></tr>
+<tr><td class="ax-n">9</td><td><em>Enclosure</em><br>bebop: the notes above and below circle the target, which lands on the beat<div class="ax-rownote">Usually written out in full; a bebop staple (Owens).</div></td><td></td><td><div class="abc-ex" data-width="150"><script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+d2 B2 c4 |]
+</script><script type="text/plain" data-play>
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+d2 B2 c4 |]
+</script></div></td></tr>
+</tbody></table>
+```
+<!-- /ornament-table -->
+
+```{=html}
+<div class="abc-ex" data-style="swing"><script type="text/plain">
+X:10
+T:The blue third crushed into the major third (the band swings it)
+M:4/4
+L:1/8
+K:F
+Q:1/4=120
+"F7"z {^G}A2 F {^G}A2 c2 | {^G}A8 |]
+</script><script type="text/plain" data-play>
+X:92
+M:4/4
+L:1/32
+K:F
+Q:1/4=120
+z4 ^G A7 F4 ^G A7 c8 | ^G A31 |]
+</script></div>
+```
+
+**Hear it.** Official uploads (label channels):
+
+- Louis Armstrong and His Hot Five, ["West End Blues"](https://www.youtube.com/watch?v=BTxhgmk_ofk)
+  (1928): the opening cadenza, then bends and the blue third in the first strain and "hushed
+  vibrato on the final A♭" (Edexcel).
+- Meade "Lux" Lewis, ["Honky Tonk Train Blues"](https://www.youtube.com/watch?v=FTKJtTaysrA) and
+  Jimmy Yancey, ["Yancey Stomp"](https://www.youtube.com/watch?v=x_XTl_vXwiI): crushed notes.
+- Thelonious Monk Quartet, ["Misterioso"](https://www.youtube.com/watch?v=3oHjXTZO33g): crushed
+  minor seconds (Kelley).
+- Count Basie Orchestra, ["April in Paris"](https://www.youtube.com/watch?v=O3-jTzSgU38) (1955):
+  falls and shakes from the whole band.
+- Duke Ellington, ["Black and Tan Fantasy"](https://www.youtube.com/watch?v=fvKQJt8idKg) (1927):
+  growl and plunger, smears.
+- Charlie Parker, ["Ko-Ko"](https://www.youtube.com/watch?v=0ajJBNodEYs) and
+  ["Parker's Mood"](https://www.youtube.com/watch?v=25EkxQyQCBk): bebop turns and enclosures, blues
+  inflection on alto.
+- B.B. King, ["The Thrill Is Gone"](https://www.youtube.com/watch?v=kpC69qIe02E) (1969): bends and
+  butterfly vibrato.
+- Billie Holiday, ["Strange Fruit"](https://www.youtube.com/watch?v=649wWWkW_1o) (1939): late
+  placement and sparing vibrato (Gourse).
+
+## At a glance
+
+| Style | Grace note | Trill starts | Sources |
+|---|---|---|---|
+| J. S. Bach (1720) | on the beat, long by default | upper note | J. S. Bach; C. P. E. Bach; Neumann |
+| d'Anglebert, Couperin (1689, 1716) | on the beat ("with the harmony") | upper note, leaned on, beats speeding up | d'Anglebert; Couperin |
+| Purcell (1696) | forefall / backfall on the beat | "from the note above"; beat from below | Purcell |
+| Geminiani (1751) | on the beat, more than half the note | upper note | Geminiani |
+| Leopold Mozart (1756) | on the beat, half (all but the dot before a dotted note); passing ones before | upper note | L. Mozart |
+| Türk (1789) | on the beat; short ones a 32nd at moderate speed | upper note, even | Türk |
+| Clementi (c. 1801) | on the beat, "in general" half | upper note; a short shake may start on the note | Clementi |
+| Hummel (1828) | half the note, on the beat; short ones almost nothing | main note | Hummel |
+| Chopin | with the bass, on the beat | main note unless a small note says otherwise | Eigeldinger; Ekier |
+| Later 19th century | short ones before the beat | main note | Brown |
+| Irish traditional | a flick at the start of the note | (rolls, not trills) | Larsen |
+| Jazz, blues | before or across the beat, swung | (shakes, falls, doits) | Caniato; Komara; Schuller |
+
+## Works Cited
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Edexcel. "Louis Armstrong and His Hot Five: West End Blues." A Level Music, Unit 6 teaching notes, Pearson, 2011. [qualifications.pearson.com/content/dam/pdf/A%20Level/Music/2013/Teaching%20and%20learning%20materials/Unit%206%20-%2048.%20Louis%20Armstrong%20and%20his%20Hot%20Five%20-%20West%20End%20Blues.pdf](https://qualifications.pearson.com/content/dam/pdf/A%20Level/Music/2013/Teaching%20and%20learning%20materials/Unit%206%20-%2048.%20Louis%20Armstrong%20and%20his%20Hot%20Five%20-%20West%20End%20Blues.pdf).
+
+Koch, Greg. *Hal Leonard Guitar Method: Blues Guitar*. Hal Leonard, 2002. B.B. King's "butterfly" vibrato.
+
+Larsen, Grey. *The Essential Guide to Irish Flute and Tin Whistle*. Mel Bay, 2003.
+
+Netherlands Bach Society. "Bach - Aria from Goldberg Variations BWV 988." *All of Bach*, YouTube. [www.youtube.com/watch?v=chQ7cbSUU-s](https://www.youtube.com/watch?v=chQ7cbSUU-s).
+
+Netherlands Bach Society. "Bach - English Suite no. 2 in A minor BWV 807 - Cuiller." *All of Bach*, YouTube. [www.youtube.com/watch?v=kPDTyKts0J4](https://www.youtube.com/watch?v=kPDTyKts0J4).
+
+Netherlands Bach Society. "Bach - English Suite no. 3 in G minor BWV 808 - Hantaï." *All of Bach*, YouTube. [www.youtube.com/watch?v=2UxTsFXZsnQ](https://www.youtube.com/watch?v=2UxTsFXZsnQ).
+
+Netherlands Bach Society. "Bach - Italian Concerto in F major BWV 971 - Schornsheim." *All of Bach*, YouTube. [www.youtube.com/watch?v=wjXCJL8P0rs](https://www.youtube.com/watch?v=wjXCJL8P0rs).
+
+Pachmann, Vladimir de. Chopin, Mazurka in F sharp minor. Victor, 26 Apr. 1912. National Jukebox, Library of Congress. Internet Archive. [archive.org/details/loc-jukebox-285277-mazurka-in-f-sharp-minor](https://archive.org/details/loc-jukebox-285277-mazurka-in-f-sharp-minor).
+
+Pachmann, Vladimir de. Chopin, Nocturne in B, Op. 32 No. 1. HMV, 78 rpm. Internet Archive. [archive.org/details/78_nocturne-in-b-major_vladimir-de-pachmann-chopin_gbia0545821a](https://archive.org/details/78_nocturne-in-b-major_vladimir-de-pachmann-chopin_gbia0545821a).
+
+Paderewski, Ignacy Jan. Chopin, Nocturne in F sharp, Op. 15 No. 2. HMV, 1928. Internet Archive. [archive.org/details/78_nocturne-in-e-sharp-major-op-15-no-2_ignace-jan-paderewski-chopin_gbia7042343a](https://archive.org/details/78_nocturne-in-e-sharp-major-op-15-no-2_ignace-jan-paderewski-chopin_gbia7042343a).
+
+Patti, Adelina. "Casta diva" (Bellini, *Norma*). With Alfredo Barili, Gramophone & Typewriter 03082, 1906. Internet Archive. [archive.org/details/78_castadiva_139_09](https://archive.org/details/78_castadiva_139_09).
+
+**For teachers**
+
+Anglebert, Jean-Henry d'. *Pièces de clavecin ... Livre premier*. Paris, 1689. IMSLP. [imslp.org/wiki/Pi%C3%A8ces_de_clavecin_(Anglebert,_Jean-Henri_d%27)](https://imslp.org/wiki/Pi%C3%A8ces_de_clavecin_(Anglebert,_Jean-Henri_d%27)). "Marques des Agrements et leur signification", read from the 1689 print (IMSLP #110970).
+
+Bach, Carl Philipp Emanuel. *Essay on the True Art of Playing Keyboard Instruments*. Translated and edited by William J. Mitchell, W. W. Norton, 1949. First published as *Versuch über die wahre Art das Clavier zu spielen*, 1753. Ch. 2, Embellishments.
+
+Bach, Johann Sebastian. *Clavier-Büchlein vor Wilhelm Friedemann Bach*. Manuscript, begun 22 Jan. 1720. Yale University, Irving S. Gilmore Music Library. [collections.library.yale.edu/catalog/10991080](https://collections.library.yale.edu/catalog/10991080). The *Explication unterschiedlicher Zeichen* is on leaf 3v (IIIF image 10991088); the table on this page is read from it.
+
+Barnhart, Scotty. *The World of Jazz Trumpet: A Comprehensive History and Practical Philosophy*. Hal Leonard, 2005.
+
+Brown, Clive. *Classical and Romantic Performing Practice 1750–1900*. Oxford UP, 1999.
+
+Caniato, Michele. *The Jazz Ensemble Companion*. R&L Education, 2009. Table B.10, "Expressive devices".
+
+Clementi, Muzio. *Introduction to the Art of Playing on the Piano Forte*. London, Clementi, Banger, Hyde, Collard & Davis, [1801]. Internet Archive. [archive.org/details/imslp-to-the-art-of-playing-the-pianoforte-op42-clementi-muzio](https://archive.org/details/imslp-to-the-art-of-playing-the-pianoforte-op42-clementi-muzio). Graces, pp. 10-11.
+
+Couperin, François. *L'Art de toucher le clavecin*. Paris, 1716. Edited by Nicolas Sceaux, 2008. IMSLP. [imslp.org/wiki/L%27art_de_toucher_le_clavecin_(Couperin,_Fran%C3%A7ois)](https://imslp.org/wiki/L%27art_de_toucher_le_clavecin_(Couperin,_Fran%C3%A7ois)). "Agréments qui servent au jeu", pp. 6-7 (IMSLP #22200).
+
+Eigeldinger, Jean-Jacques. *Chopin: Pianist and Teacher as Seen by His Pupils*. Edited by Roy Howat, translated by Naomi Shohet et al., Cambridge UP, 1986.
+
+Ekier, Jan, editor. *Wydanie Narodowe Dzieł Fryderyka Chopina* (National Edition). Polskie Wydawnictwo Muzyczne. Performance commentaries. Commentary to Various Compositions (WN 27, WN 56); introduction, "Ozdobniki".
+
+García, Manuel. *École de García: Traité complet de l'art du chant*. Part 2, Paris, 1847. IMSLP. [imslp.org/wiki/%C3%89cole_de_Garcia_(Garcia_Jr.,_Manuel)](https://imslp.org/wiki/%C3%89cole_de_Garcia_(Garcia_Jr.,_Manuel)). The appoggiatura, p. 40 (BnF copy, IMSLP #599813).
+
+Geminiani, Francesco. *The Art of Playing on the Violin*. Op. 9, London, 1751. IMSLP. [imslp.org/wiki/The_Art_of_Playing_on_the_Violin_(Geminiani,_Francesco)](https://imslp.org/wiki/The_Art_of_Playing_on_the_Violin_(Geminiani,_Francesco)). Example XVIII, text pp. [6]-[8] and plate p. 26 (IMSLP #05501).
+
+Gourse, Leslie, editor. *The Billie Holiday Companion*. Schirmer Books, 1997.
+
+Haydn, Joseph. Piano Sonata in E-flat, Hob. XVI:49. Autograph, 1790. IMSLP. [imslp.org/wiki/Keyboard_Sonata_in_E-flat_major,_Hob.XVI:49_(Haydn,_Joseph)](https://imslp.org/wiki/Keyboard_Sonata_in_E-flat_major,_Hob.XVI:49_(Haydn,_Joseph)). The autograph (IMSLP #561866) and the Artaria first edition, 1791 (IMSLP #52562).
+
+Hines, Earl. *Selected Piano Solos, 1928–1941*. Edited by Jeffrey Taylor, A-R Editions, 2006. On "crushed note" figures.
+
+Hummel, Johann Nepomuk. *Ausführliche theoretisch-practische Anweisung zum Piano-Forte-Spiel*. Vienna, Tobias Haslinger, 1828. Internet Archive. [archive.org/details/ausfhrlichetheor00humm](https://archive.org/details/ausfhrlichetheor00humm). Part III, "Von den Verzierungen", pp. 393-402.
+
+Kelley, Robin D. G. *Thelonious Monk: The Life and Times of an American Original*. Free Press, 2009.
+
+Komara, Edward, editor. *Encyclopedia of the Blues*. Routledge, 2006. Crushed notes and bends.
+
+Mozart, Leopold. *A Treatise on the Fundamental Principles of Violin Playing*. Translated by Editha Knocker, Oxford UP, 1948. First published as *Versuch einer gründlichen Violinschule*, 1756.
+
+Mozart, Leopold. *Versuch einer gründlichen Violinschule*. Augsburg, 1756. Internet Archive (Bayerische Staatsbibliothek copy). [archive.org/details/10527451bsb](https://archive.org/details/10527451bsb). Chs. 9-11, pp. 193-242.
+
+Mozart, Wolfgang Amadeus. *Trois Sonates pour le Clavecin ou Pianoforte*, Op. 6 [K. 330-332]. Vienna, Artaria, 1784. IMSLP. [imslp.org/wiki/Piano_Sonata_No.12_in_F_major,_K.332/300k_(Mozart,_Wolfgang_Amadeus)](https://imslp.org/wiki/Piano_Sonata_No.12_in_F_major,_K.332/300k_(Mozart,_Wolfgang_Amadeus)). K. 332, Adagio, pp. 31-32 (IMSLP #292670); the autograph is IMSLP #559838.
+
+Neumann, Frederick. *Ornamentation and Improvisation in Mozart*. Princeton UP, 1986.
+
+Neumann, Frederick. *Ornamentation in Baroque and Post-Baroque Music, with Special Emphasis on J. S. Bach*. Princeton UP, 1978.
+
+Owens, Thomas. *Bebop: The Music and Its Players*. Oxford UP, 1995.
+
+Pejrolo, Andrea, and Richard DeRosa. *Acoustic and MIDI Orchestration for the Contemporary Composer*. Focal Press, 2009. Falls, doits and the shake.
+
+Pugno, Raoul. *Les leçons écrites de Raoul Pugno: Chopin*. Librairie des Annales, 1909. Internet Archive. [archive.org/details/lesleonscritesde00chop](https://archive.org/details/lesleonscritesde00chop). Berceuse, p. 31.
+
+Purcell, Henry. *A Choice Collection of Lessons for the Harpsichord or Spinnet*. London, Frances Purcell, 1696. Internet Archive. [archive.org/details/bim_early-english-books-1641-1700_a-choice-collection-of-l_purcell-henry_1696](https://archive.org/details/bim_early-english-books-1641-1700_a-choice-collection-of-l_purcell-henry_1696). "Rules for Graces".
+
+Quantz, Johann Joachim. *On Playing the Flute*. Translated by Edward R. Reilly, 2nd ed., Northeastern UP, 2001. First published as *Versuch einer Anweisung die Flöte traversiere zu spielen*, 1752.
+
+Rosenblum, Sandra P. *Performance Practices in Classic Piano Music: Their Principles and Applications*. Indiana UP, 1988.
+
+Schuller, Gunther. *Early Jazz: Its Roots and Musical Development*. Oxford UP, 1968. The Armstrong chapter, on terminal vibrato and the shake.
+
+Somfai, László. *The Keyboard Sonatas of Joseph Haydn: Instruments and Performance Practice, Genres and Styles*. Translated by the author with Charlotte Greenspan, U of Chicago P, 1995.
+
+Steinberg. "Jazz Articulations." *Dorico Pro Operation Manual*. [steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_jazz_articulations/notation_reference_jazz_articulations_c.html](https://steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_jazz_articulations/notation_reference_jazz_articulations_c.html).
+
+Türk, Daniel Gottlob. *Klavierschule, oder Anweisung zum Klavierspielen für Lehrer und Lernende*. Leipzig and Halle, 1789. Internet Archive. [archive.org/details/klavierschuleode00trkd](https://archive.org/details/klavierschuleode00trkd). Ch. 3 (Vorschläge), ch. 4 (wesentliche Manieren), pp. 207-283.
+
+Türk, Daniel Gottlob. *School of Clavier Playing*. Translated by Raymond H. Haggh, U of Nebraska P, 1982. First published as *Klavierschule*, 1789. Ch. 3 appoggiaturas, ch. 4 essential ornaments.
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<style>.ax-rownote{font-size:.8rem;color:var(--site-ink-2);margin-top:.25rem}.ax-table td:last-child a{font-size:.8rem}</style>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;   // instrumental examples: no Your voice menu</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=13"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

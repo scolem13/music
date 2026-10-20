@@ -1,0 +1,10 @@
+X:4393
+%%from edm
+T:Sonata in G, K 283, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4393 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d3B d4 z4 | G4 F4 z4 | a3f a4 z4 | c4 B4 z4 | g3f f2e2 e4 |

@@ -1,0 +1,10 @@
+X:5048
+%%from edm
+T:Sonata in D, Op. 94, 4th Movement - 3rd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5048 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+A,2C2B,2D2 C2E2 A,CB,D | C2E2D2F2 E2C2 A,CB,D | C2E2D2F2 E2

@@ -1,0 +1,10 @@
+X:5827
+%%from edm
+T:Banchetto Musicale, Suite No. 1, 4th Movement - Allemande
+C:Johann Schein
+%%composer Schein|Johann
+% EDM 5827 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+a6 a2 b4 ^c'4 | d'8 a8 | ^a4 =a8 g4 | a12 a4 | g4 e4 f4 g4 | a6 ^a2 =a4 g2f2 | e4 d4 d4 ^c4 | d16 |

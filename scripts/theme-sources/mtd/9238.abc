@@ -1,0 +1,11 @@
+X:9238
+T:Mazurkas 39, Op. 63, No. 1
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2235, Barlow & Morgenstern C248, EDM 9238 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=147
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:B
+D z F,B,DE | ^Ez/G,/ E2 F2 | B z B,BAG | ^Ez/G,/ E2 F2 |

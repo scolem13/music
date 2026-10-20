@@ -1,0 +1,10 @@
+X:3313
+%%from edm
+T:Concerto Russe, Op. 29, 4th Movement - Chant Russe
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3313 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+G2 z2 G4 G4 | B8 G4 | c2d2 c2 z2 B2 z2 | G12 | g_g=g_g =g2 z2 G2 z2 | B4 b2 z2 g2

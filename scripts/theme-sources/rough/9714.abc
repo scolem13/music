@@ -1,0 +1,10 @@
+X:9714
+%%from edm
+T:Sonata in G minor, 1st Movement, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9714 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+z2 f2 e2f2 | g2f2a2g2 | f2e2g2f2 | e2d2f2d2 | z/2 d3-d/2 c4 |

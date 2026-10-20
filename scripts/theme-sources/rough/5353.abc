@@ -1,0 +1,10 @@
+X:5353
+%%from edm
+T:The Christmas Tree, March of the Gnomes, 2nd Theme
+C:Vladimir Rebikov
+%%composer Rebikov|Vladimir
+% EDM 5353 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+e4 f4 | e4 c4 | e2f2 c4 | e4 c4 | d4 e4 | d4 B4 | d2e2 B4 | d8 |

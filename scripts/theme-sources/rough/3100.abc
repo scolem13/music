@@ -1,0 +1,10 @@
+X:3100
+%%from edm
+T:Sonata in G minor, 1st Movement, 1st Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3100 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z A,,B,,=E, D,6 G,2 _G,2B,,2 | D,6 =E,2 F,2G,2E,2_G,2 | D,6 =E,2 (3F,2A,2G,2 (3E,2G,2_G,2 | D,6 D,2 B,4

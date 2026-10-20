@@ -106,6 +106,7 @@
 #nt-root .cell-criteria label{display:inline-flex;align-items:center;gap:4px;font-weight:normal}
 #nt-root .cell-criteria input[type=checkbox]{width:auto;margin:0}
 #nt-root .cell-bank{display:flex;flex-wrap:wrap;align-items:flex-end;gap:6px;margin:.6rem 0 .5rem}
+#nt-root .cell-fixed{display:flex;flex-wrap:nowrap;gap:4px;flex-basis:100%}
 #nt-root .cell-wrapper{display:flex;flex-direction:column;align-items:flex-start}
 #nt-root .cell-number{font-size:11px;color:var(--nt-ink2);margin-bottom:2px;margin-left:4px}
 #nt-root .cell-btn{background:#fff!important;border:1px solid #ced4da!important;border-radius:.375rem!important;cursor:pointer!important;padding:2px!important;
@@ -135,6 +136,12 @@
 #nt-root .nt-scope[hidden]{display:none}
 #nt-root .nt-scope select{height:1.9rem;font-size:.85rem;max-width:14rem}
 #nt-root .nt-paper{margin-top:.6rem;overflow-x:auto;background:#fff;border-radius:6px}
+#nt-root .nt-paper .nt-chord-on,#nt-root .nt-paper .nt-chord-on *{fill:#b3261e!important}
+#nt-chord-ed{position:absolute;z-index:2000;font:600 15px var(--font-mono,monospace);width:6.5em;padding:1px 4px;border:2px solid #b3261e;border-radius:4px;background:#fff3f1;color:#b3261e}
+#nt-root .nt-cbars{display:flex;flex-wrap:wrap;gap:4px;margin:.3rem 0 .2rem;font:600 .85rem var(--font-mono,monospace)}
+#nt-root .nt-cbar{display:inline-flex;gap:2px;align-items:center;padding:1px 6px;border-left:2px solid var(--nt-line)}
+#nt-root .nt-cchip{border:0;background:none;padding:1px 4px;border-radius:3px;cursor:pointer;color:inherit;font:inherit}
+#nt-root .nt-cchip.is-on{background:#b3261e;color:#fff}
 #nt-root .nt-paper .nt-sel,#nt-root .nt-paper .nt-sel *{fill:#b3261e!important;stroke:#b3261e}
 #nt-root .nt-paper .nt-playing,#nt-root .nt-paper .nt-playing *{fill:#1565c0!important;stroke:#1565c0}
 #nt-root .nt-paper .abcjs-note,#nt-root .nt-paper .abcjs-rest{cursor:pointer}
@@ -191,6 +198,8 @@
 #nt-root.nt-ending .nt-side{display:contents}
 #nt-root.nt-ending{padding-top:.5rem}
 #nt-root .nt-seltools{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin-top:.6rem}
+  .nt-vimline { font: 0.8rem ui-monospace, monospace; min-height: 1.2em; opacity: 0.75; }
+  textarea.vim-normal { caret-color: transparent; }
 </style>
 
 <div id="nt-root">
@@ -352,7 +361,9 @@
           <summary><h2>ABC</h2></summary>
           <div class="nt-body">
             <p class="nt-hint" style="margin-top:0">Edit the code and the staff follows. Chunks start at <code>"^Name"</code> labels and at <code>[M:]</code> / <code>[K:]</code> changes; voices are <code>[V:1]</code> lines.</p>
+            <label class="nt-hint" style="display:inline-flex;gap:.4em;align-items:center;margin:0 0 .3em"><input type="checkbox" id="nt-abc-vim" checked> Vim keys (Esc: normal mode, <kbd>i</kbd> to type; <kbd>=</kbd> respells the note under the cursor; <kbd>Tab</kbd> back to the score)</label>
             <textarea id="nt-abc-text" spellcheck="false" aria-label="ABC code"></textarea>
+            <div id="nt-abc-vimline" class="nt-vimline" aria-live="polite"></div>
             <p class="nt-warn" id="nt-abc-warn" hidden></p>
           </div>
         </details>
@@ -404,7 +415,8 @@
           <div class="nt-body">
             <div class="nt-field"><label for="nt-chords-text">Chords by bar</label>
               <input type="text" id="nt-chords-text" class="nt-wide-in" placeholder="G | C D | Em | D7" spellcheck="false" autocomplete="off"></div>
-            <p class="nt-hint"><kbd>|</kbd> between bars. Two chords in a bar split it in half, three in thirds.</p>
+            <div class="nt-cbars" id="nt-chords-bars" aria-label="This chunk's chords, bar by bar"></div>
+            <p class="nt-hint"><kbd>|</kbd> between bars. Two chords in a bar split it in half, three in thirds; <kbd>.</kbd> holds a place (<code>C . . G</code>: G on beat 4). On the score: click a chord symbol, or <kbd>"</kbd> on a note, to type one there; <kbd>h</kbd> / <kbd>l</kbd> or the arrows go to the note before / after, <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> or <kbd>L</kbd> / <kbd>H</kbd> to the next / last chord or beat 1, <kbd>Enter</kbd> keeps it, <kbd>Esc</kbd> leaves it as it was.</p>
             <div class="nt-row">
               <button type="button" class="nt-btn" id="nt-chords-play" aria-pressed="false">Play chords in, one a bar</button>
               <button type="button" class="nt-btn" id="nt-chords-clear">Clear this chunk's chords</button>
@@ -455,6 +467,20 @@
           </div>
         </details>
 
+      <details class="nt-panel" id="nt-rec" open>
+          <summary><h2>Recording</h2><span class="nt-sum" id="nt-rec-sum"></span></summary>
+          <div class="nt-body">
+            <div id="nt-rec-mount"></div>
+            <div class="nt-row">
+              <div class="nt-field"><label for="nt-rec-sec">Go to section</label><select id="nt-rec-sec" disabled><option value="">(open a song file)</option></select></div>
+              <label class="nt-through"><input type="checkbox" id="nt-rec-click" checked> Choosing a chunk moves the recording</label>
+              <label class="nt-through"><input type="checkbox" id="nt-rec-follow"> The band follows the recording&rsquo;s tempo</label>
+            </div>
+            <p class="nt-hint">Open the song file from Timestamp Notes (or a bar map) and its recording. A chunk&rsquo;s first bar is taken to be the map&rsquo;s bar of the same number (a Pickup chunk is not a bar); the number box shifts that. With the band following, Play uses the map&rsquo;s tempo bar by bar instead of the piece&rsquo;s.</p>
+            <p class="nt-hint" id="nt-rec-note" role="status"></p>
+          </div>
+        </details>
+
       <details class="nt-panel" id="nt-take" open>
           <summary><h2>Play it in time: more</h2><span class="nt-sum" id="nt-take-sum"></span></summary>
           <div class="nt-body">
@@ -500,11 +526,15 @@
 <script src="/apps/shared/chord-entry.js?v=10"></script>
 <script src="/apps/shared/lyric-align.js?v=3"></script>
 <script src="/apps/shared/melody-dwim.js?v=2"></script>
+<script src="/apps/shared/vim-textarea.js?v=1"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=3"></script>
 <script src="/apps/shared/phrase-seam.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
-<script src="/apps/shared/notation-doc.js?v=9"></script>
+<script src="/apps/shared/notation-doc.js?v=10"></script>
+<link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=2">
+<script src="/apps/shared/timestamp-player/player.js?v=7"></script>
+<script src="/apps/shared/timestamp-player/recording-follow.js?v=3"></script>
 <script>
 (function () {
   "use strict";
@@ -760,8 +790,8 @@
     });
   }
   var BAND_JS = ["/apps/shared/abc-transpose.js?v=4", "/apps/shared/tune-chart.js?v=31", "/apps/tune-assessment/abc-tune.js?v=3", "/apps/shared/voicings.js?v=5",
-    "/apps/shared/band/harmony.js?v=32", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=36",
-    "/apps/shared/band/drums.js?v=16", "/apps/shared/band/congas.js?v=2", "/apps/shared/band/sounds.js?v=14", "/apps/shared/band/player.js?v=120"], bandJs = null;
+    "/apps/shared/band/harmony.js?v=33", "/apps/shared/band/bass.js?v=16", "/apps/shared/band/comp.js?v=32", "/apps/shared/band/catalog.js?v=37",
+    "/apps/shared/band/drums.js?v=17", "/apps/shared/band/congas.js?v=3", "/apps/shared/band/sounds.js?v=15", "/apps/shared/band/player.js?v=121"], bandJs = null;
   function loadBand() {
     if (window.BandPlayer && window.BandCatalog && window.TuneChart) return Promise.resolve();
     if (bandJs) return bandJs;
@@ -769,6 +799,73 @@
       return pr.then(function () { return new Promise(function (ok, no) { var el = document.createElement("script"); el.src = src; el.onload = ok; el.onerror = no; document.head.appendChild(el); }); });
     }, Promise.resolve());
   }
+  // ---- a recording and its bar map (Timestamp Notes' song file; recording-follow.js) ----
+  var recPanel = null, REMOTE_TS = false;
+  if (!(ENDING || STAGE || DICT) && window.RecordingFollow) recPanel = RecordingFollow.mount($("nt-rec-mount"), { onLoad: recLoaded });
+  else $("nt-rec").hidden = true;
+  function recNote(t) { $("nt-rec-note").textContent = t || ""; }
+  // the form bar (0-based, a Pickup chunk not counted) a chunk starts on
+  function chunkStartBar(i) {
+    var n = 0;
+    for (var j = 0; j < i; j++) if (!doc.chunks[j].pickup) n += Math.ceil(D.info(doc, j).bars - 1e-6);
+    return n;
+  }
+  function recSeekChunk(i) {
+    if (!recPanel || !recPanel.model() || !$("nt-rec-click").checked || doc.chunks[i].pickup) return;
+    recNote(recPanel.seekHostBar(chunkStartBar(i)) ? "" : "The recording has no bar " + (chunkStartBar(i) + 1 + recPanel.offset()) + ".");
+  }
+  function recLoaded(m) {
+    var s = $("nt-rec-sec"); s.textContent = ""; s.disabled = !m.sections.length;
+    var seen = {}, o0 = document.createElement("option"); o0.value = ""; o0.textContent = m.sections.length ? "Choose\u2026" : "(no sections in this map)"; s.appendChild(o0);
+    m.sections.forEach(function (sc) {
+      var k = sc.name.toLowerCase(), nth = seen[k] = (seen[k] == null ? 0 : seen[k] + 1), o = document.createElement("option");
+      o.value = sc.name + "\u0001" + nth; o.textContent = sc.name + " (bar " + (sc.bar + 1) + ")"; s.appendChild(o);
+    });
+    $("nt-rec-sum").textContent = m.bars.length + " bars";
+  }
+  if (recPanel) $("nt-rec-sec").onchange = function () {
+    var v = this.value.split("\u0001"); if (v.length < 2) return;
+    recPanel.seekSection(v[0], +v[1]);
+    var secs = D.sections(doc), hit = secs.filter(function (x) { return x.name.toLowerCase() === v[0].toLowerCase(); })[+v[1]];
+    if (hit) { toChunkStart(hit.start); msg(""); render(); }
+  };
+  // the map's tempo for form bar idx while the band follows the recording (else null: the piece's own)
+  function recTempo(idx) { return recPanel && recPanel.model() && $("nt-rec-follow").checked ? recPanel.bpmForHostBar(idx, "smooth") : null; }
+  window.__ntRec = recPanel;       // for tests
+  // Shift+Space: the recording from the active note (this page's Recording panel, else Timestamp Notes when it opened this page).
+  // Again on the same note while it plays: pause.
+  // where: { host (form bar + fraction, from bar 1), section, nth, bar (bars into the section) }
+  function listenWhere() {
+    var a = activeSlot(), ch = chunk(), mi = D.meterInfo(here().meter) || D.meterInfo("4/4");
+    var t = a && a.chunk === cur && !insertMode ? D.slotTime(D.part(ch, a.voice), a.slot) : insertMode ? D.slotTime(part(), Math.min(caretPos(), Math.max(0, part().rhythm.length - 1))) : 0;
+    var into = ch.pickup ? (t - D.chunkLen(doc, cur)) / mi.barQ : (t - (ch.lead || 0)) / mi.barQ;
+    var host = chunkStartBar(cur) + into, secs = D.sections(doc), sc = null, nth = 0;
+    secs.forEach(function (x) { if (x.start <= cur) sc = x; });
+    if (sc) secs.forEach(function (x) { if (x !== sc && x.start < sc.start && x.name.trim().toLowerCase() === sc.name.trim().toLowerCase()) nth++; });
+    var inSec = sc ? host - chunkStartBar(sc.start) : host;
+    if (sc && doc.chunks[sc.start].pickup && cur === sc.start) inSec = into;
+    return { host: host, section: sc ? sc.name : null, nth: nth, bar: inSec, key: cur + ":" + t };
+  }
+  var lastListen = null;
+  function listen() {
+    var w = listenWhere(), again = lastListen === w.key;
+    lastListen = w.key;
+    if (recPanel && recPanel.model()) {
+      if (again && recPanel.playing()) { recPanel.pause(); lastListen = null; return; }
+      if (!recPanel.seekHostAt(w.host)) { recNote("The recording has no bar " + (Math.floor(w.host) + 1 + recPanel.offset()) + "."); return; }
+      if (!recPanel.playing()) recPanel.play();
+      status("The recording from bar " + (Math.floor(w.host) + 1) + ".");
+      return;
+    }
+    if (REMOTE_TS && window.opener && w.section) {
+      try { window.opener.postMessage(again ? { type: "nt-listen", pause: true } : { type: "nt-listen", section: w.section, nth: w.nth, bar: w.bar }, location.origin); } catch (err) {}
+      if (again) lastListen = null;
+      status(again ? "" : "The recording from " + w.section + ", bar " + (Math.floor(w.bar) + 1) + " (in Timestamp Notes).");
+      return;
+    }
+    status("No recording: open a song file in the Recording part, or send the piece here from Timestamp Notes.");
+  }
+
   // The band for doc d (chunk numbers in d mapped back to the page's by src.map's own): it plays the chords AND the notes
   // (bar.melody on the parsed chart, as the Backing Track does), so the two can't drift apart. A Pickup chunk is the chart's
   // short first bar, sounded at the end of a bar of count-in. -> { player, notes: [[{ pos, dur, hit }]] per form bar } or null
@@ -813,7 +910,7 @@
     var parsed = TuneChart.parse(abc), off = pick ? 1 : 0;
     if (pick && parsed.bars[0]) parsed.bars[0].melody = pkNotes.map(function (n) { return { pos: n.pos + (mi0.family === "triple" ? mi0.n / 3 : mi0.n) - pq / bq0, dur: n.dur, midi: n.midi }; });   // the player sounds these in the count-in bar
     bars.forEach(function (list, bi) { var pb = parsed.bars[bi + off]; if (pb) pb.melody = list.map(function (n) { return { pos: n.pos, dur: n.dur, midi: n.midi }; }); });
-    var so = BandCatalog.styleOpts((doc.band && doc.band.style) || "pop", "piano"), now = tempos[0], opts = Object.assign({}, so.opts, { melodyLevel: 0.85 });
+    var so = BandCatalog.styleOpts((doc.band && doc.band.style) || "pop", "piano"), now = recTempo(0) || tempos[0], opts = Object.assign({}, so.opts, { melodyLevel: 0.85 });
     var toPage = src.toPage || function (ci, v, si) { return { chunk: ci, voice: v, slot: si }; };
     var hitOf = function (n) { return n.hits.map(function (h) { return toPage(h.ci, h.voice, h.slot); }); };
     var notes = bars.map(function (list) { return (list || []).map(function (n) { return { pos: n.pos, dur: n.dur, hits: hitOf(n) }; }); });
@@ -823,7 +920,7 @@
       onBar: function (info) {
         var idx = info.countIn ? -1 : info.index;          // (form bars: the short first bar isn't one)
         band.at = { idx: idx, count: !!info.countIn, t: performance.now(), beat: 0 };
-        var tp = idx >= 0 ? tempos[idx] : null; if (tp && tp !== now) { now = tp; p.setTempo(tp); }
+        var tp = idx >= 0 ? (recTempo(idx) || tempos[idx]) : null; if (tp && tp !== now) { now = tp; p.setTempo(tp); }
       },
       onBeat: function (info) { if (band.at) { band.at.beat = info.beat; band.at.t = performance.now(); } },
       onEnd: function () { band.done = true; } });
@@ -924,7 +1021,7 @@
       name.oninput = function () { ch.name = name.value; save(); refreshText(); };
       name.onfocus = function () { if (cur !== i) { cur = i; sel = null; render(); var r = body.querySelector('tr[data-chunk="' + i + '"] input'); if (r) r.focus(); } };
       tr.dataset.chunk = i;
-      tr.onclick = function (e) { if (e.target.tagName !== "INPUT" && cur !== i) { toChunkStart(i); msg(""); render(); } };
+      tr.onclick = function (e) { if (e.target.tagName !== "INPUT" && cur !== i) { toChunkStart(i); msg(""); render(); recSeekChunk(i); } };
       body.appendChild(tr);
     });
     $("nt-fold-all").hidden = !secs.length;
@@ -1113,10 +1210,11 @@
     keyAnnounce();
     var into = "into " + cname(cur) + (doc.voices.length > 1 ? ", voice " + doc.voices[voice].name : "");
     // chords
-    if (editing !== "chords") $("nt-chords-text").value = mi ? D.chordsText(ch, mi.barQ) : ch.chords.map(function (c) { return c.name; }).join(" ");
+    var cT = chordChunk(), cCh = doc.chunks[cT];
+    if (editing !== "chords") $("nt-chords-text").value = mi ? D.chordsText(cCh, mi.barQ, chordLead(cT)) : cCh.chords.map(function (c) { return c.name; }).join(" ");
     $("nt-chords-text").disabled = !mi;
     $("nt-chords-text").placeholder = mi ? "G | C D | Em | D7" : "Choose a meter first (The piece)";
-    $("nt-chords-sum").textContent = "into " + cname(cur);
+    $("nt-chords-sum").textContent = "into " + cname(cT) + (cT !== cur ? " (the bars after the pickup)" : chordLead(cT) ? " (from its first full bar)" : "");
     // rhythm
     $("nt-rhythm-nometer").hidden = !!mi; $("nt-rhythm-bank").hidden = !mi;
     if (mi && $("nt-rhythm").open) renderCells(mi);
@@ -1271,6 +1369,7 @@
         box.className = "nt-cempty"; box.textContent = !mi ? "No meter yet." : "Nothing in it yet.";
       }
     });
+    placeChord();
     if (!shown.length) paper.innerHTML = '<p class="nt-hint" style="padding:.6rem">' + (doc.chunks.length ? "Every chunk is hidden: press V, or use the eyes in Chunks." : "Nothing yet.") + "</p>";
   }
 
@@ -1316,6 +1415,8 @@
       pats = pats.map(function (c, i) { return Object.assign({}, c, { key: free[i] || "" }); });
       cells = fixed.concat(pats);
     } else cells = SINGLE;
+    var nFixed = single ? 0 : fixed.length, row = box;   // the one-note keys get a small line of their own on top
+    if (nFixed) { row = document.createElement("div"); row.className = "cell-fixed"; box.appendChild(row); }
     var entries = [];
     cells.forEach(function (c, i) {
       var w = document.createElement("div"); w.className = "cell-wrapper";
@@ -1324,20 +1425,24 @@
       b.setAttribute("aria-label", "Rhythm pattern" + (c.key ? " " + c.key : "") + ": " + c.abc);
       b.onclick = function () { addCell(i); };
       var pv = document.createElement("div"); pv.className = "cell-preview"; b.appendChild(pv);
-      w.appendChild(b); box.appendChild(w);
+      w.appendChild(b); (i < nFixed ? row : box).appendChild(w);
       ABCJS.renderAbc(pv, "X:1\nM:none\nL:" + c.defaultL + "\nK:clef=none\n" + c.abc, { add_classes: true });
       var svg = pv.querySelector("svg"); svg.style.transformOrigin = "0 0";
       entries.push({ button: b, svg: svg, bbox: svg.getBBox() });
     });
     if (!entries.length) { box.innerHTML = '<p class="nt-hint">No patterns with only those. Tick another box.</p>'; return; }
-    var SPACING = 0.9;
-    var width = Math.ceil(Math.max.apply(null, entries.map(function (e) { return e.bbox.width * SPACING; }))) + 16;
-    entries.forEach(function (e) {
-      e.button.style.width = width + "px"; e.button.style.height = "50px";
-      var tx = e.button.clientWidth / 2 - (e.bbox.x * SPACING + e.bbox.width * SPACING / 2);
-      var ty = e.button.clientHeight / 2 - (e.bbox.y + e.bbox.height / 2);
-      e.svg.style.transform = "translate(" + tx + "px, " + ty + "px) scale(" + SPACING + ", 1)";
-    });
+    var size = function (list, sc, sy, h) {
+      if (!list.length) return;
+      var width = Math.ceil(Math.max.apply(null, list.map(function (e) { return e.bbox.width * sc; }))) + (sc < 0.9 ? 10 : 16);
+      list.forEach(function (e) {
+        e.button.style.width = width + "px"; e.button.style.height = h + "px";
+        var tx = e.button.clientWidth / 2 - (e.bbox.x * sc + e.bbox.width * sc / 2);
+        var ty = e.button.clientHeight / 2 - (e.bbox.y + e.bbox.height / 2) * sy;
+        e.svg.style.transform = "translate(" + tx + "px, " + ty + "px) scale(" + sc + ", " + sy + ")";
+      });
+    };
+    size(entries.slice(0, nFixed), 0.6, 0.6, 32);
+    size(entries.slice(nFixed), 0.9, 1, 50);
   }
   function addCell(i) {
     var c = cells[i]; if (!c) return;
@@ -1446,6 +1551,20 @@
   function clickScore(el, tn, cls, an, drag, ev) {
     var e = map.find(function (m) { return covers(el, m); });
     if (!e) return;
+    if (ev && ev.target && ev.target.closest && ev.target.closest(".abcjs-chord") && e.atQ != null) { openChord(e.chunk, e.atQ); return; }
+    // one note drawn as tied pieces (across a barline, or a length written as two): the piece clicked becomes a note of its own,
+    // tied to the rest, so it can be selected alone (it sounds and looks the same)
+    var pcs = map.filter(function (m) { return m.chunk === e.chunk && m.voice === e.voice && m.slot === e.slot; });
+    if (pcs.length > 1 && e.offQ != null && !(ev && ev.shiftKey)) {
+      var sp = D.part(doc.chunks[e.chunk], e.voice), si0 = e.slot, cutA = e.offQ, cutB = e.offQ + e.lenQ;
+      change(function () {
+        var at = si0;
+        if (cutB < sp.rhythm[si0].durQ - 1e-6) D.splitSlot(sp, si0, cutB);         // the rest after it first, so si0 stays put
+        if (cutA > 1e-6 && D.splitSlot(sp, si0, cutA)) at = si0 + 1;
+        cur = e.chunk; voice = e.voice; sel = { chunk: e.chunk, voice: e.voice, slot: at };
+      });
+      return;
+    }
     if (ev && ev.shiftKey && sel && sel.slot !== undefined && sel.voice === e.voice) {
       sel = { chunk: sel.chunk, voice: sel.voice, slot: sel.slot, end: { chunk: e.chunk, slot: e.slot } }; cur = e.chunk; status(""); render(); return;
     }
@@ -1453,6 +1572,124 @@
     sel = { chunk: e.chunk, voice: e.voice, slot: e.slot }; cur = e.chunk; voice = e.voice;
     status(e.filled === null ? "That's a rest." : e.filled ? "" : "No note there yet: enter one and it goes into the first empty slot of this chunk.");
     render();
+  }
+  // ---- chord symbols typed on the score ------------------------------------------------------------------------------
+  // chordEd = { ci, at }: a chord being typed at that time of chunk ci (one there or not). The stops are the times a note or
+  // rest of the top voice starts (as drawn: a piece of a tied note is one); Tab / H / L stop only at chords and beat 1.
+  var chordEd = null, chordMoving = false;
+  function chordStops() {
+    var seen = {}, out = [];
+    map.forEach(function (m) { if (m.voice !== 0 || m.atQ == null) return; var k = m.chunk + ":" + m.atQ; if (!seen[k]) { seen[k] = 1; out.push(m); } });
+    return out;
+  }
+  function chordOf(ci, at) { return doc.chunks[ci].chords.find(function (c) { return Math.abs(c.at - at) < 1e-6; }); }
+  function chordInput() {
+    var inp = $("nt-chord-ed");
+    if (inp) return inp;
+    inp = document.createElement("input"); inp.id = "nt-chord-ed"; inp.type = "text"; inp.spellcheck = false; inp.autocomplete = "off";
+    inp.setAttribute("aria-label", "Chord symbol"); inp.hidden = true; document.body.appendChild(inp);
+    inp.addEventListener("keydown", function (e) {
+      var k = e.key;
+      if (k === "Enter") { e.preventDefault(); commitChord(); closeChord(); }
+      else if (k === "Escape") { e.preventDefault(); closeChord(); }
+      else if (k === "ArrowLeft" || k === "ArrowRight" || k === "h" || k === "l") { e.preventDefault(); moveChord(k === "ArrowRight" || k === "l" ? 1 : -1, false); }
+      else if (k === "Tab" || k === "H" || k === "L") { e.preventDefault(); moveChord(k === "L" || (k === "Tab" && !e.shiftKey) ? 1 : -1, true); }
+      e.stopPropagation();
+    });
+    inp.addEventListener("input", function () { chordBars(inp.value.trim()); });
+    inp.addEventListener("blur", function () { if (!chordMoving && chordEd) { commitChord(); closeChord(); } });
+    return inp;
+  }
+  function openChord(ci, at) {
+    chordMoving = true;
+    if (chordEd) commitChord();
+    chordEd = { ci: ci, at: at }; cur = ci; sel = null;
+    var c = chordOf(ci, at), inp = chordInput(); inp.value = c ? c.name : "";
+    render(); chordMoving = false;
+  }
+  function commitChord() {
+    var inp = $("nt-chord-ed"); if (!chordEd || !inp) return;
+    var name = inp.value.trim().replace(/["|\s]/g, ""), ed = chordEd, c = chordOf(ed.ci, ed.at);
+    if ((c ? c.name : "") === name) return;
+    chordMoving = true;
+    change(function () {
+      var ch = doc.chunks[ed.ci];
+      ch.chords = ch.chords.filter(function (x) { return Math.abs(x.at - ed.at) >= 1e-6; });
+      if (name) { ch.chords.push({ at: ed.at, name: name }); ch.chords.sort(function (a, b) { return a.at - b.at; }); }
+    });
+    chordMoving = false;
+  }
+  function closeChord() { chordEd = null; var inp = $("nt-chord-ed"); if (inp) inp.hidden = true; render(); }
+  function moveChord(dir, byBar) {
+    var st = chordStops(), i = st.findIndex(function (m) { return m.chunk === chordEd.ci && Math.abs(m.atQ - chordEd.at) < 1e-6; });
+    for (var j = i + dir; j >= 0 && j < st.length; j += dir) {
+      if (byBar && !st[j].down && !chordOf(st[j].chunk, st[j].atQ)) continue;
+      openChord(st[j].chunk, st[j].atQ); return;
+    }
+    status(dir > 0 ? "That's the last one." : "That's the first one.");
+  }
+  // " on the score: a chord at the active note (the top voice's note or rest sounding then)
+  function chordAtActive() {
+    var a = activeSlot(); if (!a) { status("Write some rhythm first: chords go over its notes."); return; }
+    var p = D.part(doc.chunks[a.chunk], a.voice), t = 0;
+    for (var i = 0; i < a.slot; i++) t += p.rhythm[i].durQ;
+    var st = chordStops().filter(function (m) { return m.chunk === a.chunk && m.atQ <= t + 1e-6; });
+    if (st.length) openChord(a.chunk, st[st.length - 1].atQ);
+  }
+  function placeChord() {
+    var inp = $("nt-chord-ed");
+    if (!chordEd) { if (inp) inp.hidden = true; chordBars(); return; }
+    inp = chordInput();
+    var ed = chordEd, ent = null, d = drawn.find(function (x) { return (ent = x.m.find(function (m) { return m.chunk === ed.ci && m.voice === 0 && m.atQ != null && Math.abs(m.atQ - ed.at) < 1e-6; })); });
+    if (!d) { chordEd = null; inp.hidden = true; chordBars(); return; }
+    var head = null, chord = null;
+    d.t.lines.forEach(function (l) { (l.staff || []).forEach(function (st) { st.voices.forEach(function (v) { v.forEach(function (el) {
+      if (!el.abselem || !covers(el, ent)) return;
+      el.abselem.elemset.forEach(function (g) {
+        var cs = g.matches && g.matches(".abcjs-chord") ? [g] : Array.prototype.slice.call(g.querySelectorAll ? g.querySelectorAll(".abcjs-chord") : []);
+        cs.forEach(function (c) { c.classList.add("nt-chord-on"); chord = chord || c; });
+        if (!head && !(g.matches && g.matches(".abcjs-chord, .abcjs-annotation"))) head = g;
+      });
+    }); }); }); });
+    var r = (chord || head || d.t.lines && null), hr = head ? head.getBoundingClientRect() : null;
+    if (!hr && !chord) { inp.hidden = true; return; }
+    var x, y;
+    if (chord) { var cr = chord.getBoundingClientRect(); x = cr.left - 6; y = cr.top - 4; }
+    else {
+      var svg = head.ownerSVGElement, top = hr.top;
+      Array.prototype.forEach.call(svg.querySelectorAll(".abcjs-staff"), function (s0) { var b = s0.getBoundingClientRect(); if (b.bottom > hr.top - 50 && b.top < hr.bottom + 50) top = Math.min(top, b.top); });
+      x = hr.left - 6; y = top - 30;
+    }
+    inp.style.left = (x + window.scrollX) + "px"; inp.style.top = (y + window.scrollY) + "px";
+    var was = inp.hidden; inp.hidden = false;
+    if (document.activeElement !== inp) { inp.focus(); if (was || true) inp.select(); }
+    chordBars();
+  }
+  // the Chords part: the chunk's chords bar by bar, the one being typed lit (a gap where there's none yet)
+  function chordBars(preview) {
+    var box = $("nt-chords-bars"); if (!box) return;
+    var ci = chordEd ? chordEd.ci : chordChunk(), ch = doc.chunks[ci], mi = D.meterInfo(D.at(doc, ci).meter);
+    box.innerHTML = "";
+    if (!mi || !ch) return;
+    var list = ch.chords.map(function (c) { return { at: c.at, name: c.name }; });
+    if (chordEd) {
+      var on = list.find(function (c) { return Math.abs(c.at - chordEd.at) < 1e-6; });
+      if (!on) { on = { at: chordEd.at, name: "" }; list.push(on); list.sort(function (a, b) { return a.at - b.at; }); }
+      on.on = true; if (preview !== undefined) on.name = preview;
+    }
+    if (!list.length) return;
+    var lead = ch.pickup ? D.chunkLen(doc, ci) : chordLead(ci), bars = {};
+    list.forEach(function (c) { var b = Math.floor((c.at - lead) / mi.barQ + 1e-6); (bars[b] = bars[b] || []).push(c); });
+    Object.keys(bars).map(Number).sort(function (a, b) { return a - b; }).forEach(function (b) {
+      var bx = document.createElement("span"); bx.className = "nt-cbar"; bx.title = b < 0 ? "The pickup" : "Bar " + (b + 1);
+      bars[b].forEach(function (c) {
+        var bt = document.createElement("button"); bt.type = "button"; bt.className = "nt-cchip" + (c.on ? " is-on" : "");
+        bt.textContent = c.name || "\u00b7"; bt.onmousedown = function (e) { e.preventDefault(); };
+        bt.onclick = function () { openChord(ci, c.at); };
+        bx.appendChild(bt);
+      });
+      box.appendChild(bx);
+    });
   }
   function clickPending(el) {
     var e = pmap.find(function (m) { return covers(el, m); });
@@ -1466,7 +1703,16 @@
     var after = e.chunk > a.chunk || (e.chunk === a.chunk && e.slot >= a.slot), before = e.chunk < b.chunk || (e.chunk === b.chunk && e.slot <= b.slot);
     return after && before;
   }
-  var clip = null;
+  var clip = null, lastYank = null;      // lastYank: what p / P put, "notes" (Visual y / d, Ctrl+C) or "chunk" (yy / DD)
+  // P: the copied notes go in before the active note (no active note: at the end of the chunk)
+  function pasteBefore() {
+    if (!clip || !clip.length) { status("Copy something first."); return; }
+    var a = activeSlot(), c = clip;
+    change(function () {
+      if (a) { var last = D.insert(doc, a.voice, a.chunk, a.slot - 1, c); sel = { chunk: a.chunk, voice: a.voice, slot: a.slot, end: { chunk: a.chunk, slot: last } }; }
+      else { D.insert(doc, voice, cur, undefined, c); sel = null; }
+    });
+  }
   function clipAbc(c) {
     var d = D.create(); d.meter = here().meter; d.key = here().key; d.voices = [{ name: "1", clef: "treble" }];
     d.chunks[0].rhythm = c.map(function (x) { return { type: x.type, durQ: x.durQ }; });
@@ -1475,7 +1721,7 @@
   }
   function copySel() {
     if (!sel || sel.slot === undefined) return false;
-    var ends = spanEnds(); clip = D.extract(doc, sel.voice, ends[0], ends[1]);
+    var ends = spanEnds(); clip = D.extract(doc, sel.voice, ends[0], ends[1]); lastYank = "notes";
     try { var w = navigator.clipboard && navigator.clipboard.writeText(clipAbc(clip)); if (w && w.catch) w.catch(function () {}); } catch (e) {}   // the page keeps its own copy either way
     status("Copied " + clip.length + (clip.length === 1 ? " note or rest." : " notes and rests."));
     return true;
@@ -1489,6 +1735,7 @@
     if (!clip || !clip.length) { status("Copy something first."); return; }
     var c = clip;
     change(function () {
+      var a0 = !sel ? activeSlot() : null; if (a0) sel = a0;   // as in vim: after the active note
       if (sel && sel.slot !== undefined) { var b = spanEnds()[1], last = D.insert(doc, sel.voice, b.chunk, b.slot, c); sel = { chunk: b.chunk, voice: sel.voice, slot: b.slot + 1, end: { chunk: b.chunk, slot: last } }; }
       else { D.insert(doc, voice, cur, undefined, c); sel = null; }
     });
@@ -1681,7 +1928,8 @@
       $("nt-chords-heard").textContent = name;
       if (!mi) return;
       change(function () {
-        var ch = chunk(), len = D.chunkLen(doc, cur), barAt = ch.chordLen || (ch.chords.length ? Math.ceil(len / mi.barQ - 1e-6) * mi.barQ : 0);
+        var ci = chordChunk(), ch = doc.chunks[ci], lead = chordLead(ci), len = D.chunkLen(doc, ci);
+        var barAt = ch.chordLen > lead ? ch.chordLen : (ch.chords.some(function (x) { return x.at >= lead - 1e-6; }) ? lead + Math.ceil((len - lead) / mi.barQ - 1e-6) * mi.barQ : lead);
         ch.chords.push({ at: barAt, name: name }); ch.chordLen = barAt + mi.barQ;
       });
     });
@@ -1716,7 +1964,7 @@
   }
 
   var HELP = {
-    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>=</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
+    letters: "Type <kbd>a</kbd> to <kbd>g</kbd> for notes in the key, nearest the last one. <kbd>'</kbd> moves the last note up an octave, <kbd>,</kbd> down. <kbd>+</kbd> raises it a half step, <kbd>-</kbd> lowers it. In a chunk with a rhythm every key acts on the note in red (it moves on as you type): a letter gives it that pitch, <kbd>z</kbd> makes it a rest, <kbd>t</kbd> ties it to the next note, <kbd>T</kbd> to the note before (again: unties), <kbd>U</kbd> takes its pitch away, <kbd>Backspace</kbd> deletes it; <kbd>u</kbd> undoes. In a new chunk with no rhythm the letters just collect pitches; <kbd>|</kbd> draws a double barline to group them (in a chunk with rhythm, <kbd>|</kbd> puts a barline after what's there: the notes before it are a pickup), and Merge puts them onto a rhythm chunk. <kbd>h</kbd> <kbd>l</kbd> (or the arrows) move note by note, <kbd>H</kbd> <kbd>L</kbd> bar by bar, inside the selected chunk (<kbd>j</kbd> <kbd>k</kbd> or a click go to another); <kbd>J</kbd> joins the next chunk on, <kbd>M</kbd> merges it (both need to be on view). <kbd>o</kbd> / <kbd>O</kbd> start a new chunk after / before this one; <kbd>y</kbd><kbd>y</kbd> copies the chunk, <kbd>D</kbd><kbd>D</kbd> cuts it, <kbd>p</kbd> / <kbd>P</kbd> put it after / before this one; <kbd>v</kbd> starts Visual mode, as in vim: <kbd>h</kbd> <kbd>l</kbd> select notes (with a count: <kbd>v</kbd><kbd>8</kbd><kbd>l</kbd>), <kbd>H</kbd> <kbd>L</kbd> whole bars, <kbd>y</kbd> copies them, <kbd>d</kbd> cuts them, then <kbd>p</kbd> / <kbd>P</kbd> put them after / before the red note (<kbd>p</kbd> / <kbd>P</kbd> put whatever you copied last, notes or a chunk). <kbd>Alt</kbd>+<kbd>v</kbd> shows or hides this chunk, <kbd>V</kbd> all the others. <kbd>=</kbd> writes the red note another way (F# / Gb; again: every spelling, double sharp to double flat), <kbd>+</kbd> raises the last note a half step. <kbd>Tab</kbd> jumps to the red note's ABC (selected in the ABC box); <kbd>Tab</kbd> there jumps back to the note at the caret. <kbd>&quot;</kbd> (or a click on a chord symbol) types a chord over the red note; there <kbd>h</kbd> <kbd>l</kbd> or the arrows go note by note, <kbd>Tab</kbd> / <kbd>Shift+Tab</kbd> or <kbd>L</kbd> / <kbd>H</kbd> to the next / last chord or beat 1, <kbd>Enter</kbd> keeps it, <kbd>Esc</kbd> leaves it. <kbd>Space</kbd> plays from the red note to the end of the chunk (again: stop). <kbd>r</kbd> records a take (MIDI or the computer keys) into a new chunk below this one. <kbd>i</kbd> (Insert mode; <kbd>I</kbd>: at the start) puts new rhythm in at a red line you move with <kbd>h</kbd> <kbd>l</kbd>, instead of at the end; the note just before the line is the one keys act on.",
     piano: "Bottom row <kbd>Z</kbd> to <kbd>/</kbd> are white keys from C, the row above (<kbd>S</kbd> <kbd>D</kbd> <kbd>G</kbd> ...) the black ones. <kbd>Q</kbd> row: an octave higher, with black keys on the numbers. <kbd>↑</kbd> <kbd>↓</kbd> move the octave. <kbd>Backspace</kbd> deletes the note in red.",
     midi: "Play notes one at a time; each goes in the next slot (in red). <kbd>Backspace</kbd> deletes the note in red, <kbd>u</kbd> takes its pitch away."
   };
@@ -1732,8 +1980,8 @@
   // J / M join / merge with the next, only when both are on view (else: show them? y / n)
   var askShow = null;      // { chunks, op } while the y / n question is open (or { yes: fn } for another question)
   // yy copies the chunk, DD cuts it (the first DD asks: Caps Lock turns typed d d into it), p / P put the copy after / before this chunk
-  var chunkClip = null, lastKey = null;
-  function yankChunk() { chunkClip = JSON.parse(JSON.stringify(doc.chunks[cur])); status("Copied " + cname(cur) + ": p puts it after a chunk, P before."); }
+  var chunkClip = null, lastKey = null, visual = false, visCount = "";
+  function yankChunk() { chunkClip = JSON.parse(JSON.stringify(doc.chunks[cur])); lastYank = "chunk"; status("Copied " + cname(cur) + ": p puts it after a chunk, P before."); }
   function putChunk(after) {
     if (!chunkClip) { status("Copy a chunk with yy (or cut it with DD) first."); return; }
     var c = JSON.parse(JSON.stringify(chunkClip)); c.heading = null; c.folded = false; c.hidden = false; c.off = false;
@@ -1741,7 +1989,7 @@
     change(function () { var at = after ? cur + 1 : cur; doc.chunks.splice(at, 0, c); cur = at; sel = null; });
   }
   function killChunk() {
-    chunkClip = JSON.parse(JSON.stringify(doc.chunks[cur]));
+    chunkClip = JSON.parse(JSON.stringify(doc.chunks[cur])); lastYank = "chunk";
     var name = cname(cur);
     change(function () {
       var h = doc.chunks[cur].heading, f = doc.chunks[cur].folded;
@@ -1769,7 +2017,7 @@
     doc.chunks[i].off = false;
   }
   function newChunkAt(at) { change(function () { doc.chunks.splice(at, 0, D.newChunk("Chunk " + (doc.chunks.length + 1))); cur = at; sel = null; }); }
-  function toggleChunk() { var on = visibleChunk(cur); change(function () { if (on) doc.chunks[cur].off = true; else showChunk(cur); }); status(on ? cname(cur) + " is hidden from the score (v shows it)." : ""); }
+  function toggleChunk() { var on = visibleChunk(cur); change(function () { if (on) doc.chunks[cur].off = true; else showChunk(cur); }); status(on ? cname(cur) + " is hidden from the score (Alt+v shows it)." : ""); }
   function toggleOthers() {
     var others = doc.chunks.map(function (c, i) { return i; }).filter(function (i) { return i !== cur; }), anyOn = others.some(visibleChunk);
     change(function () {
@@ -1818,7 +2066,10 @@
       var noRhythm = !stageHas("rhythm") && (/^[1-9]$/.test(e.key) || e.key === "R");
       if (noPitch || noChunks || noRhythm || (e.code === "Space" && !stageHas("score")) || (e.key === "r" && !stageHas("quick"))) { e.preventDefault(); return; }
     }
+    if (e.key === "Tab" && !e.shiftKey && !e.altKey && !(t && /^(BUTTON|SUMMARY|A)$/.test(t.tagName))) { e.preventDefault(); toAbcText(); return; }
+    if (e.code === "Space" && e.shiftKey && !e.altKey && !rec) { e.preventDefault(); listen(); return; }
     if (e.code === "Space" && !e.altKey) { e.preventDefault(); if (rec) stopTake(); else playChunk(); return; }   // play / stop (a take: stop it)
+    if (e.key === '"' && !e.altKey) { e.preventDefault(); chordAtActive(); return; }        // a chord symbol at the active note
     if (e.key === "r" && mode !== "piano" && !e.altKey && !ENDING && !rec && !chordsIn) {                          // record a take
       e.preventDefault();
       quickStart(false); return;
@@ -1828,7 +2079,53 @@
     if (e.key === "R" && !e.altKey) { setSingle(!single); e.preventDefault(); return; }
     var prevKey = lastKey, now = performance.now(); lastKey = { key: e.key, t: now, hist: history.length };
     var twice = prevKey && prevKey.key === e.key && now - prevKey.t < 800;
+    // Visual mode (v, as in vim): h / l (arrows) stretch the selection inside the chunk, y copies it, d / x cut it, Esc / v leave
+    if (visual && !chordsIn) {
+      if (!sel || sel.slot === undefined) visual = false;
+      else {
+        // a count first, as in vim: v8l takes eight notes, 2L two bars
+        if (/^[0-9]$/.test(e.key) && (e.key !== "0" || visCount) && !e.altKey) { visCount += e.key; status("-- VISUAL -- " + visCount); e.preventDefault(); return; }
+        var vcount = Math.max(1, parseInt(visCount, 10) || 1);
+        var vh = e.key === "ArrowLeft" || e.key === "h" ? -1 : e.key === "ArrowRight" || e.key === "l" ? 1 : 0;
+        var vend = sel.end || { chunk: sel.chunk, slot: sel.slot }, vpart = D.part(doc.chunks[vend.chunk], sel.voice), vn = vpart.rhythm.length;
+        if (vh && !e.altKey) {
+          var vs = Math.max(0, Math.min(vn - 1, vend.slot + vh * vcount));
+          sel.end = { chunk: vend.chunk, slot: vs }; visCount = "";
+          render(); e.preventDefault(); return;
+        }
+        // L / H: to the end of this bar (already there: of the next), to the start of this bar (already there: of the one before)
+        if ((e.key === "L" || e.key === "H") && !e.altKey) {
+          var vmi = D.meterInfo(D.at(doc, vend.chunk).meter) || { barQ: 4 }, vlead = doc.chunks[vend.chunk].lead || 0, vt = 0, vbar = [];
+          vpart.rhythm.forEach(function (r0) { vbar.push(Math.floor((vt - vlead) / vmi.barQ + 1e-6)); vt += r0.durQ; });
+          var vto = vend.slot;
+          for (var vc = 0; vc < vcount; vc++) {
+            if (e.key === "L") { var vb = vbar[vto]; if (vto + 1 < vn && vbar[vto + 1] !== vb) vb = vbar[vto + 1]; while (vto + 1 < vn && vbar[vto + 1] === vb) vto++; }
+            else { var vb2 = vbar[vto]; if (vto > 0 && vbar[vto - 1] !== vb2) vb2 = vbar[vto - 1]; while (vto > 0 && vbar[vto - 1] === vb2) vto--; }
+          }
+          sel.end = { chunk: vend.chunk, slot: vto }; visCount = "";
+          render(); e.preventDefault(); return;
+        }
+        if (e.key === "y" || e.key === "d" || e.key === "x") {
+          copySel(); var vst = spanEnds()[0]; visual = false;
+          if (e.key === "y") { sel = { chunk: vst.chunk, voice: sel.voice, slot: vst.slot }; render(); } else deleteSel();
+          lastKey = null; e.preventDefault(); return;
+        }
+        if (e.key === "Escape" || e.key === "v") { visual = false; var vst2 = spanEnds()[0]; sel = { chunk: vst2.chunk, voice: sel.voice, slot: vst2.slot }; status(""); render(); e.preventDefault(); return; }
+      }
+    }
+    if (e.key === "v" && !e.altKey && !chordsIn && mode !== "piano") {
+      var va = activeSlot(); e.preventDefault();
+      if (!va) { status("No notes in this chunk to select."); return; }
+      visual = true; visCount = ""; sel = { chunk: va.chunk, voice: va.voice, slot: va.slot, end: { chunk: va.chunk, slot: va.slot } }; cur = va.chunk;
+      status("-- VISUAL -- h / l select (8l: eight notes), H / L by bar, y copies, d cuts, Esc leaves; then p / P put the notes after / before the red note."); render(); return;
+    }
+    if (e.altKey && e.code === "KeyV" && !chordsIn) { toggleChunk(); e.preventDefault(); return; }
     if (!e.altKey && !chordsIn && !ENDING) {
+      if ((e.key === "p" && mode !== "piano") || e.key === "P") { if (lastYank === "notes") {
+        if (e.key === "p") pasteAfter(); else pasteBefore();
+        if (sel && sel.end) { sel = { chunk: sel.end.chunk, voice: sel.voice, slot: sel.end.slot }; render(); }   // as in vim: on the last note put in
+        e.preventDefault(); return;
+      } }
       if (e.key === "y" && mode !== "piano") { if (twice) { yankChunk(); lastKey = null; } e.preventDefault(); return; }
       if ((e.key === "p" && mode !== "piano") || e.key === "P") { putChunk(e.key === "p"); e.preventDefault(); return; }
       if (e.key === "D" && twice && mode === "letters") {
@@ -1842,8 +2139,8 @@
     if (e.key === "S" && !e.altKey && !chordsIn && !ENDING) { sectionMenu(); e.preventDefault(); return; }
     if (e.key === "s" && mode !== "piano" && !e.altKey && !chordsIn && !ENDING) { splitChunkKey(); e.preventDefault(); return; }
     if ((e.key === "J" || e.key === "M") && !e.altKey && !chordsIn) { bothShown(e.key); e.preventDefault(); return; }
-    if (!e.altKey && !chordsIn && mode !== "piano" && (e.key === "o" || e.key === "v")) {
-      if (e.key === "o") newChunkAt(cur + 1); else toggleChunk();
+    if (!e.altKey && !chordsIn && mode !== "piano" && e.key === "o") {
+      newChunkAt(cur + 1);
       e.preventDefault(); return;
     }
     if (!e.altKey && !chordsIn && (e.key === "O" || e.key === "V")) { if (e.key === "O") newChunkAt(cur); else toggleOthers(); e.preventDefault(); return; }
@@ -1910,6 +2207,7 @@
       }
       if ((e.key === "Backspace" || e.key === "Delete") && sel.slot !== undefined) { deleteActive(); e.preventDefault(); return; }
     }
+    if (e.key === "=" && !e.altKey && !chordsIn && mode !== "piano") { enharmonic(); e.preventDefault(); return; }
     if (chordsIn) return;
     if (e.key === "Backspace") { deleteActive(); e.preventDefault(); return; }
     if (e.key === "U" && !e.altKey) { unpitch(); e.preventDefault(); return; }
@@ -1925,7 +2223,7 @@
     else if (e.key === "|") { pitchBreak(); e.preventDefault(); }
     else if (e.key === "'") { editLast(function (m) { return m + 12; }); e.preventDefault(); }
     else if (e.key === ",") { editLast(function (m) { return m - 12; }); e.preventDefault(); }
-    else if (e.key === "=" || e.key === "+") { editLast(function (m) { return m + 1; }); e.preventDefault(); }
+    else if (e.key === "+") { editLast(function (m) { return m + 1; }); e.preventDefault(); }
     else if (e.key === "-") { editLast(function (m) { return m - 1; }); e.preventDefault(); }
   });
 
@@ -2337,9 +2635,17 @@
   };
   // chords typed by bar
   var chordTimer = null;
+  // chords go on full bars: a Pickup chunk's go to the chunk after it, a chunk with a lead starts them after the lead.
+  // A chord in the pickup itself is written in the ABC ("D"A2 |); those are kept as they are.
+  function chordChunk() { return chunk().pickup && doc.chunks[cur + 1] ? cur + 1 : cur; }
+  function chordLead(ci) { return doc.chunks[ci].lead || 0; }
+  function setChords(ci, p) {
+    var c = doc.chunks[ci], lead = chordLead(ci), keep = c.chords.filter(function (x) { return x.at < lead - 1e-6; });
+    c.chords = keep.concat(p.chords); c.chordLen = p.chords.length ? p.chordLen : (keep.length ? lead : 0);
+  }
   $("nt-chords-text").addEventListener("input", function () {
     editing = "chords"; clearTimeout(chordTimer); var txt = this.value;
-    chordTimer = setTimeout(function () { var mi = D.meterInfo(here().meter); if (!mi) return; change(function () { var p = D.parseChords(txt, mi.barQ); chunk().chords = p.chords; chunk().chordLen = p.chordLen; }); }, 500);
+    chordTimer = setTimeout(function () { var mi = D.meterInfo(here().meter); if (!mi) return; var ci = chordChunk(); change(function () { setChords(ci, D.parseChords(txt, mi.barQ, chordLead(ci))); }); }, 500);
   });
   $("nt-chords-text").addEventListener("blur", function () { editing = null; render(); });
   $("nt-chords-play").onclick = function () {
@@ -2347,7 +2653,7 @@
     $("nt-chords-heard").textContent = chordsIn ? "Play a chord: it goes in the next bar." : "";
     if (chordsIn) connectMidi(); this.blur();
   };
-  $("nt-chords-clear").onclick = function () { change(function () { chunk().chords = []; chunk().chordLen = 0; }); };
+  $("nt-chords-clear").onclick = function () { var ci = chordChunk(); change(function () { setChords(ci, { chords: [], chordLen: 0 }); }); };
   // words
   var wordsTimer = null;
   $("nt-words-text").addEventListener("input", function () {
@@ -2463,6 +2769,88 @@
     }, 600);
   });
   $("nt-abc-text").addEventListener("blur", function () { editing = null; render(); });
+  // Tab: from the score to the active note's ABC (selected in the ABC box), and from the ABC box back to the note at the caret
+  // =: the note is written another way, same pitch (F# -> Gb). The first = takes the likeliest other spelling (one accidental
+  // before two, the key's side first); = again goes through them all, double sharp first, double flat last (then round)
+  var enhLast = null;
+  var ACCS = { 2: "##", 1: "#", 0: "", "-1": "b", "-2": "bb" };
+  function enhTarget(a) {   // the active note if it has a pitch, else the note a letter last went into
+    var cand = [a, lastSet];
+    for (var i = 0; i < cand.length; i++) {
+      var c = cand[i]; if (!c || !doc.chunks[c.chunk]) continue;
+      var p = D.part(doc.chunks[c.chunk], c.voice), r = p.rhythm[c.slot], k = r && r.type === "note" ? slotPitch(p, c.slot) : -1;
+      if (k >= 0 && p.pitches[k] != null) return { chunk: c.chunk, voice: c.voice, slot: c.slot, p: p, midi: p.pitches[k] };
+    }
+    return null;
+  }
+  function enharmonic(at) {
+    var t = enhTarget(at || activeSlot());
+    if (!t) { status("No note with a pitch to respell."); return null; }
+    var key = D.at(doc, t.chunk).key, opts = D.enharmonics(t.midi), slot = t.p.rhythm[t.slot];
+    var w = D.wanted(t.midi, slot.spell), curL = w ? w.l : D.spell(t.midi, key, {}).replace(/[\^_=,']/g, "").toUpperCase();
+    var ci = opts.findIndex(function (o) { return o.l === curL; }), again = enhLast && enhLast.chunk === t.chunk && enhLast.voice === t.voice && enhLast.slot === t.slot && enhLast.hist === history.length, pick;
+    if (again) pick = opts[(ci + 1) % opts.length];
+    else {
+      var sharps = !key || D.sharpish(key);
+      var others = opts.filter(function (o) { return o.l !== curL; }).sort(function (x, y) {
+        return Math.abs(x.a) - Math.abs(y.a) || (sharps ? y.a - x.a : x.a - y.a);
+      });
+      pick = others[0];
+    }
+    if (!pick) return null;
+    var pc = ((t.midi % 12) + 12) % 12;
+    change(function () {
+      var rr = t.p.rhythm, s0 = t.slot;
+      do { rr[s0].spell = pick.l + "@" + pc; } while (rr[s0].tie && rr[++s0] && rr[s0].type === "note");   // notes tied on keep the same spelling
+    });
+    enhLast = { chunk: t.chunk, voice: t.voice, slot: t.slot, hist: history.length };
+    status("Written " + pick.l + ACCS[pick.a] + " (= again: " + opts.map(function (o) { return o.l + ACCS[o.a]; }).join(" ") + ").");
+    return t;
+  }
+  function abcEntry(r, a) { return r.map.find(function (m) { return m.chunk === a.chunk && m.voice === a.voice && m.slot === a.slot; }); }
+  function toAbcText() {
+    var a = activeSlot(), r = D.toAbc(doc), ta = $("nt-abc-text"), m = a && abcEntry(r, a);
+    jump("nt-abc"); ta.value = r.abc; ta.focus({ preventScroll: true }); if (vim && vim.mode() === "insert") vim.setMode("normal");
+    if (m) { ta.setSelectionRange(m.start, m.end); var lh = parseFloat(getComputedStyle(ta).lineHeight) || 16; ta.scrollTop = Math.max(0, r.abc.slice(0, m.start).split("\n").length - 3) * lh; }
+    status(m ? "Tab goes back to the score, on the note at the caret." : "No note to find in the ABC.");
+  }
+  // the note at a place in the ABC box (what's typed there read in first)
+  function abcNoteAt(pos) {
+    var ta = $("nt-abc-text"), txt = ta.value;
+    if (textTimer) { clearTimeout(textTimer); textTimer = null; try { var d = D.fromAbc(txt); if (d.meter) { keepLayout(d); change(function () { doc = d; cur = Math.min(cur, doc.chunks.length - 1); voice = Math.min(voice, doc.voices.length - 1); }); } } catch (err) {} }
+    var r = D.toAbc(doc);
+    if (r.abc !== txt) pos = Math.round(pos * r.abc.length / Math.max(1, txt.length));   // rewritten: the same place, roughly
+    var notes = r.map.filter(function (m) { return m.slot !== undefined; }), m = null;
+    notes.forEach(function (n) { if (n.start <= pos) m = n; });
+    return m || notes[0] || null;
+  }
+  // = in the ABC box: respell the note under the cursor, rewrite the box, the cursor on that note again
+  function abcEnharmonic(pos) {
+    var m = abcNoteAt(pos); if (!m) return pos;
+    var t = enharmonic({ chunk: m.chunk, voice: m.voice, slot: m.slot }); if (!t) return pos;
+    var r = D.toAbc(doc), ta = $("nt-abc-text"), m2 = abcEntry(r, t);
+    ta.value = r.abc;
+    return m2 ? m2.start : pos;
+  }
+  function fromAbcText() {
+    var ta = $("nt-abc-text"), m = abcNoteAt(ta.selectionStart);
+    editing = null; ta.blur();
+    if (m) { cur = m.chunk; voice = m.voice; sel = { chunk: m.chunk, voice: m.voice, slot: m.slot }; }
+    render();
+    var paper = $("nt-paper"); if (paper && paper.scrollIntoView) paper.scrollIntoView({ block: "nearest" });
+    status("");
+  }
+  var vim = null;
+  function setVim(on) {
+    if (vim) { vim.off(); vim = null; }
+    if (on && window.VimTextarea) vim = VimTextarea.attach($("nt-abc-text"), { status: $("nt-abc-vimline"), keys: { "=": abcEnharmonic } });
+    try { localStorage.setItem("ntAbcVim", on ? "1" : "0"); } catch (e) {}
+  }
+  (function () { var on = true; try { on = localStorage.getItem("ntAbcVim") !== "0"; } catch (e) {} $("nt-abc-vim").checked = on; setVim(on); })();
+  $("nt-abc-vim").onchange = function () { setVim(this.checked); };
+  $("nt-abc-text").addEventListener("keydown", function (e) {
+    if (e.key === "Tab" && !e.shiftKey && !e.altKey && !e.ctrlKey && !e.metaKey) { e.preventDefault(); fromAbcText(); }
+  });
   // what ABC and ChordPro don't carry: the line breaks, hidden chunks (by place, when the chunks still line up)
   function keepLayout(d) {
     if (doc.lineEvery) d.lineEvery = doc.lineEvery;
@@ -2565,6 +2953,7 @@
       var m = e.data;
       // nt-goto { section, nth, bar, bars, leadIn, label }: a phrase from Timestamp Notes (phrases.js). Its section here, by name and
       // occurrence; none -> nt-need-doc (Timestamp Notes then sends nt-doc and asks again)
+      if (m.host === "Timestamp Notes") REMOTE_TS = true;
       if (m.type === "nt-goto") {
         var low = String(m.section || "").trim().toLowerCase();
         var sc = D.sections(doc).filter(function (x) { return x.name.trim().toLowerCase() === low; })[m.nth | 0];
@@ -2588,7 +2977,7 @@
       if (!(m.type === "nt-chordpro" && typeof m.chordpro === "string") && !(m.type === "nt-doc" && m.doc && Array.isArray(m.doc.chunks)) && !(m.type === "nt-abc" && typeof m.abc === "string")) return;
       var f = doc.chunks.some(function (c, i) { var x = D.info(doc, i); return x.rhythm || x.pitches || x.chords || x.words; });
       if (f && !confirm("Read in “" + (m.title || "Untitled") + "” from " + (m.host || "Timestamp Notes") + "? It replaces the piece here.")) return;
-      change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; cur = 0; voice = 0; sel = null; shownCur = -1; });
+      change(function () { doc = m.type === "nt-doc" ? D.upgrade(JSON.parse(JSON.stringify(m.doc))) : m.type === "nt-abc" ? D.upgrade(D.fromAbc(m.abc)) : D.fromChordPro(m.chordpro, doc.meter); if (m.title) doc.title = m.title; if (!doc.tempo && +m.tempo > 0) doc.tempo = Math.round(+m.tempo); cur = 0; voice = 0; sel = null; shownCur = -1; });
       status("Read in from " + (m.host || "Timestamp Notes") + ": add the melody chunk by chunk.");
       try { window.focus(); } catch (err) {}
     });
@@ -2632,12 +3021,20 @@
   }
   var lastW = 0;
   window.addEventListener("resize", function () { var w = $("nt-paper").clientWidth; if (Math.abs(w - lastW) > 40) { lastW = w; render(); } });
+  // on opening, a chunk whose notes all have pitches starts with its first note active, so Space plays it from the start
+  // (else the active note would be its last one); a chunk still being filled keeps its first empty note
+  (function () {
+    if (ENDING || !doc.chunks[cur]) return;
+    var p = part(), n = p.rhythm.filter(function (r) { return r.type === "note"; }).length;
+    if (p.rhythm.length && p.pitches.filter(function (x) { return x != null; }).length >= n) toChunkStart(cur);
+  })();
   setMode("letters");
   if (!ENDING) connectMidi();
   window.NotationPage = { makeBand: makeBand, loadBand: loadBand, tuneSrc: function () { return tuneSrc; }, phrase: function (p) { if (p !== undefined) phrase = p; return phrase; }, bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
     voice: function () { return voice; }, takeCfg: takeCfg, applyTake: applyTake, chordHeard: chordHeard,
     quickStart: quickStart, quickStop: quickStop, rec: function () { return rec; }, Q: Q,
-    setCur: function (c) { cur = c; sel = null; render(); }, render: function () { render(); } };   // for tests
+    setCur: function (c) { cur = c; sel = null; render(); }, render: function () { render(); },
+    clickEntry: function (m, ev) { clickScore({ startChar: m.start, endChar: m.end }, null, null, null, null, ev || null); } };   // for tests
 })();
 </script>
 ```

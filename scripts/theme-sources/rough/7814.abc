@@ -1,0 +1,11 @@
+X:7814
+%%from edm
+T:Concerto Grosso in G minor, Op. 3, No. 2, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7814 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+g4 z6 z g | g4 _g4 z3 g | g4 z6 z g | a4 z6 z a | b4 z8 | b4 a3b2<a2b | g4 g3a2<g2a |

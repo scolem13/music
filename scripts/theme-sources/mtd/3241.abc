@@ -1,0 +1,11 @@
+X:3241
+T:Galanta Dances, Orchestra, 5th Movement - 2nd Theme
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% MTD 4896, Barlow & Morgenstern K70, EDM 3241 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=140
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+d'2 d4 d2 | edcB dcBA |{/^c'} d'2 d4 d2 | edcB c2 z2 |

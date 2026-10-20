@@ -1,0 +1,10 @@
+X:4222
+%%from edm
+T:Cosi Fan Tutte, Overture, K 588, 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4222 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+G2A2^A2=A2 G4 z4 | A2^A2c2A2 =A2^A2=A2G2 | ^F2G2A2G2 F4

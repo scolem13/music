@@ -1,0 +1,10 @@
+X:6204
+%%from edm
+T:Concerto in A minor, Op. 54, 1st Movement - 2nd Theme A
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6204 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e4 f4 e8 | d4 c4 B4 A4 | e4 f4 e8 | d4 c4 B4 A4 |

@@ -1,0 +1,10 @@
+X:496
+%%from edm
+T:Solfeggio, Piano
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0496 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+E,C,E,G, CEDC =B,G,B,D GFED | ECEG cedc dc=B=A GFED |

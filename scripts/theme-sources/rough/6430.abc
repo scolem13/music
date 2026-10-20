@@ -1,0 +1,10 @@
+X:6430
+%%from edm
+T:Symphony No. 3, Op. 43, "Le Divin Poeme", Intro.
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6430 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Eb
+_D4 C4 D4 F4 G,4 z2 A,2 | =A,16 A,8 | B,24 |

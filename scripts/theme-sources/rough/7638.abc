@@ -1,0 +1,10 @@
+X:7638
+%%from edm
+T:Trio in A minor, Op. 50, 2nd Movement - Theme and Variations
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7638 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+b4 e'4 d'4 c'2d'2 | e'8<f'8 | b4 e'4 b4 a2g2 | c'8<b8 |

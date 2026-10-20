@@ -1,0 +1,10 @@
+X:3
+%%from edm
+T:La Poupée de Nuremberg, 3rd Theme
+C:Adolphe Adam
+%%composer Adam|Adolphe
+% EDM 0003 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+b2 z2 b2 z2 b2g2 | g'2e'2b2g2b2g2 | b8 a2f2 | f'2d'2a2f2a2f2 | a4

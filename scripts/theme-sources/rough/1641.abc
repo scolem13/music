@@ -1,0 +1,10 @@
+X:1641
+%%from edm
+T:Les Djinns, Symphonic Poem, 3rd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1641 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+C3A A4- | A3/2G-[B/2-G/2]B A2 z2 | C3A A4- | A3/2G-[G/2E/2-]E =G2 z2 | C3F F4- | F2E2E2=F2 | =F2

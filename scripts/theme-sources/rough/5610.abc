@@ -1,0 +1,10 @@
+X:5610
+%%from edm
+T:Concerto No. 2, in G minor, Op. 22, 2nd Movement - 2nd Theme, Pt. 1
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5610 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+F2 G8- G2 | G2 e4 d2c3B | c2 d4 B2 F4- | F2

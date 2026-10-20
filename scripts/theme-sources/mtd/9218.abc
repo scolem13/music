@@ -1,0 +1,11 @@
+X:9218
+T:Mazurkas 7, Op. 7, No. 3
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2215, Barlow & Morgenstern C228, EDM 9218 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=154
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+Fz/G/ABcA | (3GAG F2 f2 | Bz/c/defd | (3ded c2 A2 |

@@ -1,0 +1,10 @@
+X:2656
+%%from edm
+T:Symphony in F-sharp minor, No. 45, "Farewell", 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2656 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+f4 c4 A4 | F4 C4 A,4 | B,4 D4 D4 | D12 |

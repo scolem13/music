@@ -1,0 +1,10 @@
+X:9838
+%%from edm
+T:M. George Whitehead, His Almand, Lute and Strings
+C:John Dowland
+%%composer Dowland|John
+% EDM 9838 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c'4 d'4 c'4 b4 | a4 a4 b8 | c'4 c'4 d'4 f'4 | e'8 d'8 | f'4 e'2d'2 c'2d'2 e'4 | d'4 c'4 b8 | g4 g4 a2b2 c'4 |

@@ -1,0 +1,10 @@
+X:4935
+%%from edm
+T:Alexander Nevsky, Op. 78, 5th Movement - 4th Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4935 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+a4 f2d2 g4 b4 | e'4 e'2f'2 d'4 c'2=c'2 | b4 d'2b2 f4 a2f2 | c2f2d2f2 c2f2e2a2 |

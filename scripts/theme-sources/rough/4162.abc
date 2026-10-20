@@ -1,0 +1,10 @@
+X:4162
+%%from edm
+T:Deutsche Tanze, K 600, No. 1
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4162 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e2f2 ^f2g2 g4 | c2d2 ^d2e2 e4 | ^c2d2f2e2d2=c2 | c2B2d2B2^F2G2 |

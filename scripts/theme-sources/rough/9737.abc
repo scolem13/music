@@ -1,0 +1,10 @@
+X:9737
+%%from edm
+T:Coppelia, Act III, Marche de la Cloche, 2nd Theme
+C:Clement Philibert Leo Delibes
+%%composer Delibes|Clement Philibert Leo
+% EDM 9737 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+e'4 b4 | b6- bc' | a3g2<f2b | g3f2<e2b | c'4 d'3b | b4 c'3g | a4 g4 | g4 f2

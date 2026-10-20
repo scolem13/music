@@ -1,0 +1,11 @@
+X:6458
+%%from edm
+T:Quintet, Op. 57, 1st Movement - Prelude, 2nd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6458 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:Bb
+D2 d4- | d4 cB | cf d4- | d3 g ab | ag fa c'2- | c'4 ce | g2 d4- | d2

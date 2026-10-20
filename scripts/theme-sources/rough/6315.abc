@@ -1,0 +1,10 @@
+X:6315
+%%from edm
+T:Sonata No. 2, in G minor, Op. 22, 3rd Movement
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6315 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+b'4 _a'4 f'4 | g'3f' e'4 c'3b | a3g _g4 =g3f | e3d c2_d2 =d4 |

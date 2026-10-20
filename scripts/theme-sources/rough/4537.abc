@@ -1,0 +1,13 @@
+X:4537
+%%from mtd
+T:Symphony No. 32, in G, K 318, (In One Movement), 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6186, Barlow & Morgenstern M911, EDM 4537 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=53
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d2 c | B2 c | A2 B |{B} AG/F/G | DBA | DcB | Ef/e/d/c/ | B2 A |

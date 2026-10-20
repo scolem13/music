@@ -1,0 +1,10 @@
+X:4278
+%%from edm
+T:Quartet in B-flat, K 458, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4278 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+G4 A2 z3/2 G/2 z/2 F3/2E2 z2 G,2 | B,2E2G2B2 e4 B4 |

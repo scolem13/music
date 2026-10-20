@@ -1,0 +1,11 @@
+X:3522
+%%from edm
+T:Waldesrauschen (Etude), Piano
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3522 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/dxIYi6wV2p8
+M:4/4
+L:1/16
+K:Db
+z2 G4 F2 =D2F2E2_D2 | =B,2D2C2_B,2 =G,2B,2A,2_G,2 | F,2A,2D2E2 =E4 F2

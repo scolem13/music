@@ -1,0 +1,10 @@
+X:4327
+%%from edm
+T:Quintet in D, K 593, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4327 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g12- | g4 c'4 b4 | b2a z a2g z g2f z | z/2 g2-g/2f/2e/2 d2

@@ -1,0 +1,13 @@
+X:1301
+%%from mtd
+T:Slavonic Dances, Op. 72, No. 2, 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2965, Barlow & Morgenstern D377, EDM 1301 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto grazioso [Dumka]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+z bc'b^ab | c'4 b2 | a2>g2fe | f6 | z fgf^ef | a4 g2 | g2>f2e^d | e4- e z |

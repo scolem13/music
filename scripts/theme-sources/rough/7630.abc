@@ -1,0 +1,10 @@
+X:7630
+%%from edm
+T:Symphony No. 6, in B minor, Op. 74, 3rd Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7630 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+b2g2b2a2 ^g2a2c'2a2 | c'2b2^a2b2 c'2d'2e'2f'2 | e'2d'2e'2f'2 g'2f'2g'2a'2 |

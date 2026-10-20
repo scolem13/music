@@ -1,0 +1,10 @@
+X:4911
+%%from edm
+T:Mouvements Perpetuels, No. 1
+C:Francis Poulenc
+%%composer Poulenc|Francis
+% EDM 4911 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+f4 f2^d2 =d4 c4 | ^A4 G4 F8 | f4 f2^d2 =d4 c4 | ^A4 G4 F8 | z2 C2 D2E2 F2G2E2F2 | D2

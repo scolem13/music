@@ -1,0 +1,10 @@
+X:9003
+%%from edm
+T:Suite No. 2 in D minor, 5th Movement - La Neapolitaine
+C:Louis de Caix d'Hervelois
+%%composer Caix d'Hervelois|Louis de
+% EDM 9003 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+d4 d4 A4 A4 | d4 z/2 e6- e3/2 A4 | e4 e4 A4 A4 | e4 z/2 f4- f3/2e2 d4 |

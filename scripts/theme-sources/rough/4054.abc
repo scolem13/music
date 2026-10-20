@@ -1,0 +1,10 @@
+X:4054
+%%from edm
+T:Concerto in B-flat, K 191, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4054 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c6 z/2 f3/2 f2e2 z2 B2 | B2A2 z2 A2 G2 F4 E2 | F4

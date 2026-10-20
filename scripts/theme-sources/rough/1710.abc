@@ -1,0 +1,10 @@
+X:1710
+%%from edm
+T:Symphony in D minor, 3rd Movement - 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1710 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:B
+F8 G4 A4- | A2G2 F8 F4- | F4 G12 | A4 G4 F4

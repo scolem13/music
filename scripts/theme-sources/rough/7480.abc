@@ -1,0 +1,10 @@
+X:7480
+%%from edm
+T:Concerto in D, Op. 35, 1st Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7480 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z/2 f3/2 z2 f8 edfa | e6 f2 e4 f4 | z/2 g3/2 z2 g6- ga bc'd'e' | a6

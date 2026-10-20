@@ -1,0 +1,10 @@
+X:8536
+%%from edm
+T:Tragic Overture, Op. 81 - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8536 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+A4 c4 f4 a4 | g2f2 a8 e4 | e'4 d'4 c'4 b4 | a2f2 a8 e4 | e'3f' d'8 c'4 | b3c' a8

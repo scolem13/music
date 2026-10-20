@@ -1,0 +1,10 @@
+X:7986
+%%from edm
+T:Sirenenzauber, Op. 154, No. 4
+C:Emil Waldteufel
+%%composer Waldteufel|Emil
+% EDM 7986 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+c'12 | b8 a4 | g12 | f12 | e12 | =d12 | d12- | d12 | d12 | c'8 b4 | c12 | b8 a4 |

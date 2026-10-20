@@ -1,0 +1,10 @@
+X:8794
+%%from edm
+T:Trio in A minor, Op. 114, 4th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8794 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+e'4 d'^c'bd' | e'4 ^c'bac' | e'4 d'^c'bd' | a'4 ^c'bac' |

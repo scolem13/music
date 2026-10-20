@@ -1,0 +1,10 @@
+X:6431
+%%from edm
+T:Symphony No. 3, Op. 43, "Le Divin Poeme", 1st Movement - Luttes, 1st Theme
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6431 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+c4 =B2c2 d2 z G | g4 _g2=g2 a2 z c | c'4 b4 g4 | ba z2 e4 _g4 | g2_g2 =g2a2 =B2 z c | e12 |

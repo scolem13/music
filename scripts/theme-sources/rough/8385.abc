@@ -1,0 +1,10 @@
+X:8385
+%%from edm
+T:Sonata No. 6 in A, Cello and Piano, 3rd Movement - 2nd Theme
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8385 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+B4 B4 e4 | ^d6 ef e2 z2 | B4 B4 g4 | f6 ga g2

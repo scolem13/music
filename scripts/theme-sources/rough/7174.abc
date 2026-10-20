@@ -1,0 +1,11 @@
+X:7174
+%%from edm
+T:Petrouchka, Suite for Ballet, Tableau 1, 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7174 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+a2d'2 a d'6- d' | a d'6- d' ad'3- | d'3/2e'-[a'/2-e'/2]a' (3g'2e'2d'2 a4 |

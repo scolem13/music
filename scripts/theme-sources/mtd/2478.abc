@@ -1,0 +1,12 @@
+X:2478
+T:Quartet in C, Op. 33, No. 3, "The Bird", 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4139, Barlow & Morgenstern H359, EDM 2478 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=164
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g16 |{/^f} g8{/f} g8 |{^fga} g8- g2eg{g} =f2dB | Bcec G4 |

@@ -1,0 +1,11 @@
+X:1182
+T:Thirty-Two Variations, C minor, Piano, Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1175, Barlow & Morgenstern B1057, EDM 1182 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/16
+Q:1/4=97
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+z4 c7 e | d2 z2 G6 G/=A/(3=B/c/d/ | =e2 z2 e7 g | f2 z2 F6 |

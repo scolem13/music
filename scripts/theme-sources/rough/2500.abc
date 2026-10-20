@@ -1,0 +1,10 @@
+X:2500
+%%from edm
+T:Quartet in G, Op. 54, No. 1, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2500 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+G2c2c2 z/2 c3/2B2c2 | d3ed2 d2 z4 | ^cdedfe d2

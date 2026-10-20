@@ -1,0 +1,10 @@
+X:379
+%%from edm
+T:French Suite No. 5, in G, Piano, Gavotte
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0379 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+b4 g4 d4 e2f2 | g4 e4 B8 | e4 c4 A4 B2c2 | d2B2c2A2 c2B2A2G2 |

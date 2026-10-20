@@ -1,0 +1,11 @@
+X:7399
+%%from edm
+T:Hamlet - Act IV, Pantomime
+C:Ambroise Thomas
+%%composer Thomas|Ambroise
+% EDM 7399 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Bb
+F,2C2B,2F2 | E2G2 F4 | d' z c' z c'd'b z | g z a z z/2 g/2ff

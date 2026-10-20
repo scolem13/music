@@ -1,0 +1,10 @@
+X:9115
+%%from edm
+T:Quartet, Op. 30, Str. and Piano, 3rd Movement - 1st Theme
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9115 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+D4 A4 A2B2 | A4 G2_E2 E2G2 | D4 A4 A2B2 | A4 G2_E2 E2A2 |

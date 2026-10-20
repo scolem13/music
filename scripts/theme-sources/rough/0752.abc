@@ -1,0 +1,13 @@
+X:752
+%%from mtd
+T:Quartet in C-sharp minor, Op. 131, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0746, Barlow & Morgenstern B649, EDM 0752 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio ma non troppo e molto espressivo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G | ^B2 c2 | A3 G | F A G F | E F G2 |

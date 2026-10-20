@@ -1,0 +1,12 @@
+X:895
+T:Sonata No. 15, in D, Op. 28, 2nd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0889, Barlow & Morgenstern B771, EDM 0895 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=37
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+D2 A2 | GF/>E/ Dd | dd dd | d2 ^c z |

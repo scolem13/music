@@ -1,0 +1,10 @@
+X:8825
+%%from edm
+T:Trio in E-flat, Op. 40, 2nd Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8825 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+e12 | B4 d4 e4 | g8 =e4 | d12 | e12 | d4 e4 =e4 | a8 g4 | e8

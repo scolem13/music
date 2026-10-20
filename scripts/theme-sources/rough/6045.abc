@@ -1,0 +1,13 @@
+X:6045
+%%from mtd
+T:Sonata in A, Op. 162, 4th Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7677, Barlow & Morgenstern S458, EDM 6045 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=222
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+=c e B | =c d _B | A2 =B | =c2 d/e/ | =f3 | e d =c | B A{/A} d | =G/ |

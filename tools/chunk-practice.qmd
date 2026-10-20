@@ -1,0 +1,214 @@
+---
+title: "Chunk Practice"
+description: "Break a fast passage into small chunks, link them up, and practise at changing tempos until it's clean at speed."
+toc: false
+---
+
+```{=html}
+<style>
+#cp-root { max-width: 980px; margin: 0 auto; --cp-a: rgba(127,127,127,.05); --cp-b: rgba(127,127,127,.10); --cp-on: rgba(37,99,235,.13); --cp-live: rgba(22,163,74,.30); }
+#cp-root .cp-muted { color: var(--bs-secondary-color, #666); font-size: .92rem; }
+#cp-root .cp-row { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: center; margin: .6rem 0; }
+#cp-root .cp-row label { font-size: .92rem; display: inline-flex; align-items: center; gap: .4rem; }
+#cp-root .cp-row .form-select, #cp-root .cp-row .form-control { width: auto; display: inline-block; }
+#cp-root input[type=number] { width: 5em; }
+#cp-root textarea { font-family: ui-monospace, Menlo, monospace; font-size: .85rem; min-height: 8em; }
+#cp-root details { border: 1px solid var(--bs-border-color, #ccc); border-radius: 10px; padding: .5rem .9rem; margin: .6rem 0; }
+#cp-root details[open] > summary { margin-bottom: .4rem; }
+#cp-root summary { cursor: pointer; font-weight: 600; }
+#cp-root .cp-views { display: inline-flex; border: 1px solid var(--bs-border-color, #bbb); border-radius: 999px; overflow: hidden; }
+#cp-root .cp-views button { border: 0; border-radius: 0; padding: .35rem 1rem; background: transparent; color: inherit; }
+#cp-root .cp-views button[aria-pressed=true] { background: #2563eb; color: #fff; }
+#cp-root.is-quick .cp-full-only { display: none !important; }
+#cp-root:not(.is-quick) .cp-quick-only { display: none !important; }
+#cp-score { margin: .8rem 0 .2rem; }
+#cp-score svg { overflow: visible; }
+#cp-score rect.cp-band { stroke: none; transition: fill .12s; }
+#cp-score .cp-band-a { fill: var(--cp-a); } #cp-score .cp-band-b { fill: var(--cp-b); }
+#cp-score rect.cp-band-on { fill: var(--cp-on); }
+#cp-score.is-live rect.cp-band-on { fill: var(--cp-live); }
+#cp-score text.cp-band-n { fill: currentColor; opacity: .35; font: 600 9px system-ui, sans-serif; }
+#cp-score text.cp-band-n.cp-band-on { opacity: .9; }
+#cp-score .abcjs-note { cursor: pointer; }
+#cp-root .cp-card { border: 2px solid var(--bs-border-color, #ccc); border-radius: 14px; padding: 1rem 1.1rem; margin: .8rem 0; }
+#cp-root.is-playing .cp-card { border-color: #2563eb; }
+#cp-root .cp-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; flex-wrap: wrap; }
+#cp-root .cp-head h3 { margin: 0; font-size: 1.3rem; }
+#cp-root .cp-big { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin: .5rem 0 .3rem; }
+#cp-tempo { font-size: 3.2rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+#cp-root .cp-kind { padding: .15rem .6rem; border-radius: 999px; font-size: .85rem; font-weight: 600; align-self: center; }
+#cp-root .cp-kind:empty { display: none; }
+#cp-root .cp-k-base { background: rgba(37,99,235,.15); }
+#cp-root .cp-k-slow { background: rgba(22,163,74,.18); }
+#cp-root .cp-k-stretch { background: rgba(234,88,12,.2); }
+#cp-root .cp-track { height: 8px; border-radius: 4px; background: rgba(127,127,127,.2); overflow: hidden; margin: .4rem 0; }
+#cp-bar { height: 100%; background: #16a34a; width: 0; transition: width .3s; }
+#cp-root button { border-radius: 8px; border: 1px solid var(--bs-border-color, #bbb); background: var(--bs-body-bg, #fff); color: inherit; padding: .45rem 1rem; }
+#cp-root button:disabled { opacity: .4; }
+#cp-root .cp-primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+#cp-root .cp-yes { background: #16a34a; color: #fff; border-color: #16a34a; }
+#cp-root .cp-no { background: #b91c1c; color: #fff; border-color: #b91c1c; }
+#cp-root .cp-yes, #cp-root .cp-no, #cp-go { font-size: 1.05rem; padding: .55rem 1.2rem; }
+#cp-root .cp-flash { box-shadow: 0 0 0 5px rgba(127,127,127,.35); }
+#cp-root .cp-btns { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; }
+#cp-root .cp-spacer { flex: 1; }
+#cp-root .cp-say { min-height: 1.5em; margin: .3rem 0; font-weight: 600; }
+#cp-root .cp-say-ok { color: #15803d; } #cp-root .cp-say-no { color: #b91c1c; }
+#cp-log { display: flex; flex-wrap: wrap; gap: .35rem; }
+#cp-root .cp-chip { padding: .2rem .5rem; font-size: .85rem; display: inline-flex; flex-direction: column; align-items: center; min-width: 3.2em; }
+#cp-root .cp-chip small { opacity: .7; }
+#cp-root .cp-chip.is-now { outline: 2px solid #2563eb; }
+#cp-root .cp-chip.is-done { background: rgba(22,163,74,.18); }
+#cp-root kbd { font-size: .75em; padding: .05em .35em; margin-left: .3em; background: rgba(0,0,0,.25); color: inherit; }
+#cp-msg { color: #b91c1c; }
+@media (max-width: 560px) { #cp-root .cp-btns > button { flex: 1 1 auto; } #cp-root .cp-spacer { flex-basis: 100%; height: 0; } }
+</style>
+
+<div id="cp-root" class="is-quick">
+  <p class="cp-muted">Fast passages get learned in small pieces. Cut the passage into chunks, play each one at a tempo you can
+  play clean, then link them together and bring the tempo up.</p>
+
+  <div class="cp-row"><span class="cp-views" role="group" aria-label="Mode">
+    <button type="button" data-view="quick" data-midi="off">Quick</button><button type="button" data-view="full" data-midi="off">Full control</button></span>
+    <span class="cp-muted cp-quick-only">Press Play and play along. Every clean pass is a little faster; slip, and it slows a step.</span>
+    <span class="cp-muted cp-full-only">Changing tempos, rhythm variants, your own linking order.</span>
+  </div>
+
+  <details>
+    <summary>The passage</summary>
+    <p class="cp-muted">Paste ABC, or take the piece from the <a href="/tools/notation.html">Notation page</a>.</p>
+    <textarea id="cp-abc" class="form-control" spellcheck="false"></textarea>
+    <div class="cp-row">
+      <button type="button" id="cp-use" class="cp-primary">Use this</button>
+      <button type="button" id="cp-from-nt">From the Notation page</button>
+      <button type="button" id="cp-reset">Example</button>
+      <span id="cp-msg"></span>
+    </div>
+  </details>
+
+  <div class="cp-row">
+    <label>Chunk size <select id="cp-per" class="form-select form-select-sm"><option value="0.5">½ beat</option><option value="1">1 beat</option><option value="2">2 beats</option>
+      <option value="4">4 beats</option><option value="8">8 beats</option></select></label>
+    <label>Target tempo <input type="number" id="cp-target" class="form-control form-control-sm" min="20" max="400"></label>
+    <label><input type="checkbox" id="cp-keys" class="form-check-input"> Grade me from my MIDI keyboard</label>
+    <span class="cp-muted" id="cp-keys-msg"></span>
+  </div>
+
+  <details class="cp-full-only">
+    <summary>Linking and tempos</summary>
+    <div class="cp-row">
+      <label>Order <select id="cp-order" class="form-select form-select-sm">
+        <option value="forward">Link forwards (1, 2, 1–2, 3, 2–3, 1–3 …)</option>
+        <option value="backward">Link backwards (from the last chunk)</option>
+        <option value="each">Each chunk, then the whole</option></select></label>
+      <label><input type="checkbox" id="cp-land" class="form-check-input"> End on the next chunk's first note</label>
+    </div>
+    <div class="cp-row">
+      <label>Start at <select id="cp-startpct" class="form-select form-select-sm"><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option></select> % of the target</label>
+      <label>Step <input type="number" id="cp-stepsize" class="form-control form-control-sm" min="1" max="40"> bpm</label>
+      <label>Clean tries in a row <input type="number" id="cp-need" class="form-control form-control-sm" min="1" max="10"></label>
+      <label>Tempos <select id="cp-mode" class="form-select form-select-sm"><option value="varied">Changing (slow, working, stretch)</option><option value="steady">Steady climb</option></select></label>
+    </div>
+    <div class="cp-row">
+      <label><input type="checkbox" id="cp-loop" class="form-check-input"> Keep the click going between tries</label>
+      <label>If I don't answer <select id="cp-silent" class="form-select form-select-sm"><option value="again">play it again</option><option value="clean">count it clean</option></select></label>
+    </div>
+  </details>
+
+  <div id="cp-score"></div>
+  <p class="cp-muted" id="cp-count"></p>
+
+  <div class="cp-card">
+    <div class="cp-head"><h3 id="cp-step-name"></h3><span class="cp-muted" id="cp-step-of"></span></div>
+    <div class="cp-big"><span id="cp-tempo"></span><span class="cp-muted">bpm</span><span id="cp-kind" class="cp-kind"></span></div>
+    <div class="cp-track"><div id="cp-bar"></div></div>
+    <p id="cp-run" class="cp-muted" style="margin:.2rem 0"></p>
+    <div class="cp-btns">
+      <button type="button" id="cp-go" class="cp-primary">▶ Play</button>
+      <button type="button" id="cp-listen">Listen</button>
+      <label class="cp-full-only">Rhythm <select id="cp-rhythm" class="form-select form-select-sm d-inline-block w-auto"><option value="as">As written</option><option value="ls">Long–short</option><option value="sl">Short–long</option></select></label>
+    </div>
+    <div class="cp-btns">
+      <button type="button" id="cp-yes" class="cp-yes" data-midi="note:108">Clean<kbd>Y</kbd></button>
+      <button type="button" id="cp-no" class="cp-no" data-midi="note:21">Not yet<kbd>N</kbd></button>
+      <span class="cp-spacer"></span>
+      <button type="button" id="cp-prev">← Back</button>
+      <button type="button" id="cp-next">Next step →</button>
+    </div>
+    <div id="cp-say" class="cp-say" aria-live="polite"></div>
+    <details class="cp-help">
+      <summary class="cp-muted">Keys, pedals and what "clean" means</summary>
+      <p class="cp-muted"><kbd>Space</kbd> play / stop, <kbd>M</kbd> listen, <kbd>Y</kbd> clean, <kbd>N</kbd> not yet, <kbd>←</kbd> <kbd>→</kbd> steps.
+      "Clean" means right notes, right rhythm, no tension.</p>
+      <p class="cp-muted">Pedals: Clean is the top key of an 88-key keyboard (C8) and Not yet the bottom key (A0). Change them, or bind a
+      footswitch, with <b>MIDI buttons</b> in the top bar.</p>
+      <p class="cp-muted cp-quick-only">In Quick, saying nothing counts as clean, so one pedal (Not yet) is all you need.</p>
+      <p class="cp-muted cp-full-only">With the click going round, answer any time during the pass or in the clicks after it. A missed stretch try costs
+      nothing; a missed working try drops the tempo a step.</p>
+    </details>
+  </div>
+
+  <details>
+    <summary>Best clean tempo for each step</summary>
+    <div id="cp-log"></div>
+    <div class="cp-row"><button type="button" id="cp-clearlog">Clear</button>
+    <span class="cp-muted">Kept in this browser for this passage. Click a step to go to it.</span></div>
+  </details>
+
+  <details>
+    <summary>For teachers: how it works</summary>
+    <ol class="cp-muted">
+      <li><b>Quick.</b> Chunks link forwards; the click never stops; each clean pass is about a fifth of the way from 70% of the target to the
+      target, a slip a step back. Saying nothing is a clean pass, so a student needs only to own up to the misses.</li>
+      <li><b>Chunks.</b> Small enough to play clean on the first or second try. Ending on the next chunk's first note practises the joins.</li>
+      <li><b>Linking.</b> Forwards: each new chunk alone, then with the one before, then everything so far. Backwards does the same from the end,
+      so the end of the passage gets the most practice.</li>
+      <li><b>Changing tempos</b> (Full control). Each step cycles a working try, a slow try (two steps under), a working try, and a stretch (a step over).
+      Clean working tries in a row raise the tempo a step; a clean stretch becomes the new working tempo. A linked step starts a little under the
+      slowest of its chunks' best.</li>
+      <li><b>Keyboard grading.</b> With a MIDI keyboard each pass is checked note by note: the right key, within about a third of the shortest
+      note's length (60–140 ms) of the click; a missed, wrong or extra note is not clean. A Clean / Not yet press overrides it.</li>
+      <li><b>Rhythm variants.</b> Long–short and short–long reshape pairs of equal notes, so each note gets a turn to be the long one.</li>
+    </ol>
+  </details>
+</div>
+
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/abc-events.js"></script>
+<script src="/apps/shared/notation-doc.js?v=10"></script>
+<script src="/apps/shared/chunk-practice.js?v=3"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Kageyama, Noa. *The Bulletproof Musician*. [bulletproofmusician.com/](https://bulletproofmusician.com/). A performance psychologist's articles on practice research, written for players.
+
+Lam, Ann. "Chunking and Piano." *Substack*, [annlam.substack.com/p/chunking-and-piano](https://annlam.substack.com/p/chunking-and-piano).
+
+"Rhythm Practice Done Right." *Practising the Piano*, [practisingthepiano.com/rhythm-practice-done-right/](https://practisingthepiano.com/rhythm-practice-done-right/).
+
+**For teachers**
+
+Allingham, Emma, and Clemens Wöllner. "Slow Practice and Tempo-Management Strategies in Instrumental Music Learning: Investigating Prevalence and Cognitive Functions." *Psychology of Music*, 2022, doi:10.1177/03057356211073481. [doi.org/10.1177/03057356211073481](https://doi.org/10.1177/03057356211073481). Abstract and the university's summary read.
+
+Allingham, Emma. *Slow Practice in Instrumental Music Learning*. 2022. Universität Hamburg, PhD dissertation, [ediss.sub.uni-hamburg.de/handle/ediss/9763](https://ediss.sub.uni-hamburg.de/handle/ediss/9763). Summary read; title as listed there may differ slightly.
+
+Barry, Nancy H. "The Effects of Practice Strategies, Individual Differences in Cognitive Style, and Gender upon Technical Accuracy and Musicality of Student Instrumental Performance." *Psychology of Music*, vol. 20, no. 2, 1992, pp. 112–23. [journals.sagepub.com/doi/10.1177/0305735692202002](https://journals.sagepub.com/doi/10.1177/0305735692202002). Abstract read.
+
+Carter, Christine E., and Jessica A. Grahn. "Optimizing Music Learning: Exploring How Blocked and Interleaved Practice Schedules Affect Advanced Performance." *Frontiers in Psychology*, vol. 7, 2016, article 1251. [pmc.ncbi.nlm.nih.gov/articles/PMC4989027](https://pmc.ncbi.nlm.nih.gov/articles/PMC4989027).
+
+Chaffin, Roger, and Gabriela Imreh. "'Pulling Teeth and Torture': Musical Memory and Problem Solving." *Thinking and Reasoning*, vol. 3, no. 4, 1997, pp. 315–36. [musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf](https://musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf).
+
+Duke, Robert A., Amy L. Simmons, and Carla Davis Cash. "It's Not How Much; It's How: Characteristics of Practice Behavior and Retention of Performance Skills." *Journal of Research in Music Education*, vol. 56, no. 4, 2009, pp. 310–21. Read through a summary.
+
+Stambaugh, Laura A. "When Repetition Isn't the Best Practice Strategy: Effects of Blocked and Random Practice Schedules." *Journal of Research in Music Education*, vol. 58, no. 4, 2011, pp. 368–83. Abstract read.
+
+Wightman, Dennis C., and Gavan Lintern. "Part-Task Training of Tracking for Manual Control." *Human Factors*, vol. 27, no. 3, 1985, pp. 267–83. Read through later reviews that cite it.
+:::
+<!-- /works-cited -->
+

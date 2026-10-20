@@ -1,0 +1,11 @@
+X:6338
+%%from edm
+T:Symphonic Etude, in C-sharp minor, Op. 13, Etude II
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6338 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+c4 d3-d/2d/2 g4- gc z/2 =d/2c | f4 g3-g/2g/2 z/2 c'3/2 f4

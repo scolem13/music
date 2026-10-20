@@ -1,0 +1,11 @@
+X:9848
+%%from edm
+T:Les Millions d'Arlequin, Serenade, 2nd Theme
+C:Riccardo Drigo
+%%composer Drigo|Riccardo
+% EDM 9848 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:A
+a6- | a2 z/2 g/2f ga | g2 f3 c | f6 | g6- | g2 z/2 f/2e fg | f2 e3 B | e4 d2 | c6 |

@@ -1,6 +1,6 @@
 const fs = require("fs"), vm = require("vm"), assert = require("assert"), path = require("path");
 const { launch } = require("./cdp.js");
-vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/voicings.js", "utf8"));
+vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/voicings.js"), "utf8"));
 const CV = ChordVoicings, mod12 = n => ((n % 12) + 12) % 12, BASE = "http://127.0.0.1:8310/__c/";
 const SHOTS = path.join(__dirname, "shots"); fs.mkdirSync(SHOTS, { recursive: true });
 const wait = ms => new Promise(r => setTimeout(r, ms));

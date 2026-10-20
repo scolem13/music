@@ -1,0 +1,10 @@
+X:511
+%%from edm
+T:Concerto in D, 3rd Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0511 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+a2f2 d4 b2e2- | e2a2fe fga2d2- | dABcdc dABcdc | dABcd2 fga2

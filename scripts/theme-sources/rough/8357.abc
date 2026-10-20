@@ -1,0 +1,11 @@
+X:8357
+%%from edm
+T:Quartet in D, Op. 6, No. 1, 3rd Movement - 1st Theme
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8357 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f4 f4 f4 | f4 z/2 g3/2f2 g4 | e4 e4 e4 | e6 f2 d4 | d6 f2 e2c2 | d6

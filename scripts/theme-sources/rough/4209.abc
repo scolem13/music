@@ -1,0 +1,10 @@
+X:4209
+%%from edm
+T:Fantasia in F minor, K 608, Mechanical Organ, 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4209 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+f4 z3 z/2 A/2 c3c2<B2A | g4 z3 z/2 B/2 d3d2<c2B | b4

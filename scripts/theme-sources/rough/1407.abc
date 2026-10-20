@@ -1,0 +1,10 @@
+X:1407
+%%from edm
+T:Concerto in B minor, Op. 61, 1st Movement - 1st Theme B
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1407 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+e6 e2 e4 d4 | A2 (3B4-B=F4- F A4- A ^G4 | =c2 (3d4-dA4- A c4- c B4 | e2 =f4 ^d2 e8 |

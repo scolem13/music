@@ -1,0 +1,12 @@
+X:1306
+T:Slavonic Dances, Op. 72, No. 3, 3rd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2970, Barlow & Morgenstern D382, EDM 1306 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro [Skocná]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=87
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d'3 e'/d'/ | c'4 | b3 a/g/ | f4 | _a3 g/^f/ | _a g2 c | _g2 f>e | d f2 f |

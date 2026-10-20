@@ -1,0 +1,10 @@
+X:3388
+%%from edm
+T:The Music Box, Op. 32 (or The Musical Snuff Box), 1st Theme
+C:Anatol Liadov
+%%composer Liadov|Anatol
+% EDM 3388 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:A
+d'2 e2 c'2 | e2 b2 e2 | c'2 e2 e'2 | e2 a2 e2 | b2 e2 d'2 | e2 g2 e2 | a2 e2 b2 | e2 c'2 e2 |

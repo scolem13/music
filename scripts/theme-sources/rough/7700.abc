@@ -1,0 +1,10 @@
+X:7700
+%%from edm
+T:Symphony No. 4, in F minor, 3rd Movement - 1st Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7700 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+D,8 G,2C2 | D2G2c2 _e2 _a4- | _a2 =a6 d2a2- | a2d2 a4 d2g2 | c2 z2 B2 f4 B2 | f4 B2 e2A2

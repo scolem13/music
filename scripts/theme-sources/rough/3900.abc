@@ -1,0 +1,13 @@
+X:3900
+%%from mtd
+T:Songs Without Words, No. 10 in B minor, Op. 30, No. 4
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5552, Barlow & Morgenstern M290, EDM 3900 (Musical Theme Dataset, CC BY 4.0)
+N:Agitato e con fuoco in B minor, op. 30 no. 4  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=90
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F | F^G/^A/B/c/ | d^AB | e^AB | c2 g | f>ed/c/ | e>dc/B/ |

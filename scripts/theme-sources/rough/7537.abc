@@ -1,0 +1,13 @@
+X:7537
+%%from mtd
+T:The Nutcracker Suite, Op. 71a, Russian Dance, "Trepak"
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9163, Barlow & Morgenstern T194, EDM 7537 (Musical Theme Dataset, CC BY 4.0)
+N:Russian Dance  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=156
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+gg/f/ gg | edce | dd/^c/ dd | BAG |

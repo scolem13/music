@@ -1,0 +1,11 @@
+X:7379
+%%from edm
+T:Suite in A minor, Overture, 1st Theme
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7379 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+A6 c2 B/2c/2B/2c/2B/2c/2B/2c/2 B/2c/2B/2c/2A2 | z/2 e8- e3-e/2 z2 e2 | z/2 a4- a3/2a4<b4 c'2 | c'4 g8 z2 a2 | z/2 f/2g/2f/2g/2f/2g/2f/2 g/2f/2g/2<f/2e2 f3e2<d2e | e/2f/2e/2f/2e/2f/2e/2f/2

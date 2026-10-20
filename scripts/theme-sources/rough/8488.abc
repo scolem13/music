@@ -1,0 +1,13 @@
+X:8488
+%%from mtd
+T:Concerto No. 2 in B-flat, Op. 83, Piano and Orchestra, 4th Movement - 4th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1491, Barlow & Morgenstern B1355, EDM 8488 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto grazioso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=106
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c4 fefc | d4 cdcf | e4 fefc | d4 cdcd | c4 |

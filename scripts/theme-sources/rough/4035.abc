@@ -1,0 +1,10 @@
+X:4035
+%%from edm
+T:Spanish Dances, Op. 12, No. 1, 3rd Theme
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4035 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+c2 d2 e2 | z/2 e/2^d ef e2 | z/2 e/2^d ef e2 | d2 ^A4 |

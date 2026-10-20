@@ -91,5 +91,32 @@ Close it with a velcro tie.
 - [Gear 3: Amps, Speakers and the PA](gear-amps.qmd)
 
 ```{=html}
-<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=5"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Balanced audio." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Balanced_audio](https://en.wikipedia.org/wiki/Balanced_audio).
+
+"Phone connector (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Phone_connector_(audio)](https://en.wikipedia.org/wiki/Phone_connector_(audio)).
+
+"XLR connector." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/XLR_connector](https://en.wikipedia.org/wiki/XLR_connector).
+
+**For teachers**
+
+Bohn, Dennis. "Audio Specifications." *RaneNote 145*, Rane, 2000, rev. 2003. [www.ranecommercial.com/legacy/note145.html](https://www.ranecommercial.com/legacy/note145.html).
+
+Davis, Gary, and Ralph Jones. *The Sound Reinforcement Handbook*. 2nd ed., Yamaha / Hal Leonard. Edition from Hal Leonard listings; year not confirmed.
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Macatee, Steve. "Grounding and Shielding Audio Devices." *RaneNote 151*, Rane, 1995, rev. 2002. [www.ranecommercial.com/legacy/note151.html](https://www.ranecommercial.com/legacy/note151.html).
+
+Rane Technical Staff. "Sound System Interconnection." *RaneNote 110*, Rane, 1985, rev. 2015. [www.ranecommercial.com/legacy/note110.html](https://www.ranecommercial.com/legacy/note110.html).
+:::
+<!-- /works-cited -->
+

@@ -1,0 +1,10 @@
+X:7150
+%%from edm
+T:Concerto in D, 2nd Movement - Aria A
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7150 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d16- | d4 f4 a4 a'4 | f'4 d'3f _d6- de | g8 f8 | a4 a'4 b8- | b_d' e'4- e'=d' af

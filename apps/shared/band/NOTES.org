@@ -221,7 +221,7 @@ Each needs an entry in bass.js and catalog.js.
 * Known defects and rough edges
 ** TODO Chord Sheet auto-detects the wrong key for ii-V-I-VI (G for Dm7 G7 Cmaj7 A7); the key travels in the hand-off
 ** TODO Pinned keyboard voicings omit greyed notes (Standard greys the 5th, so Dm7 arrives as D-F-C)
-** TODO jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js
+** DONE jsDelivr refuses one guitar sample (F4); add a per-file fallback host in sounds.js (2026-10-18, see the end)
 ** TODO Notation: comping sits low on the treble staff (use a grand staff); stabs have no staccato
 ** DONE Drum notation: a triplet fill has never been looked at rendered; open/closed hat look alike; feathered kick is written full size (2026-10-12, see the end)
 ** TODO Count-in and the final ending hit are not notated or exported
@@ -1062,7 +1062,7 @@ listened to. The old page's =localStorage= reads (=countingStyle=, =tuneMeter=, 
   soundfont's percussion notes before adding names.
 - notation.js writes none of these yet (no accent, ghost, flam, drag or buzz marks): add accent mark, parenthesised ghost,
   grace notes, tremolo slashes to the drum staff, with =drumName= entries so the lesson tooltips name them.
-** TODO 3. The page: grid and staff together (draft built; not carried over yet: the big icon grid and its PNG export, custom labels, bongos, the ride menu and its synth, label / title / diagram size sliders)
+** TODO 3. The page: grid and staff together (draft built; icon grid, PNG export, custom labels, bongos, ride synth and size sliders carried over 2026-10-18: see "Draft B carried over" below)
 - Lanes down, steps across, several pieces at once; a click sets a cell, a second click or a small menu changes the
   articulation; the staff (BandNotation's drum staff) redraws on every change and lights the sounding note (LessonScore).
 - Playback through BandSounds and a look-ahead scheduler on the audio clock (the player's, or the part of it that can be
@@ -1072,7 +1072,7 @@ listened to. The old page's =localStorage= reads (=countingStyle=, =tuneMeter=, 
   grid and its PNG export for handouts, title and size controls, the ride menu if the sample ride cannot replace the synth one.
 - The address is the save file: every edit rewrites the query string; undo / redo is a stack of those strings.
 - Add and remove bars; copy a bar; per-lane mute.
-** TODO 4. Groove library, written at the resolution the groove needs (the band's own grooves are in the menu; the standard patterns and the fills are not)
+** TODO 4. (started 2026-10-18: the drum rudiments, =groove-library.js=; nothing else has a checked source yet) Groove library, written at the resolution the groove needs (the band's own grooves are in the menu; the standard patterns and the fills are not)
 Replace the eighth-note token strings. Sources: the band's own GROOVES through =fromEvents= (so the tool and the band agree),
 and standard patterns checked against a published source each (two-bar bossa, samba, songo, Purdie shuffle, train beat, the
 foot ostinatos). The hand-percussion presets from =congas.js= PATTERNS. Fills: a few from FILLS / FILLS_ROCK as one-bar grooves.
@@ -1118,9 +1118,18 @@ drawn and played by the lesson kit) so =lessons/blues-drums.qmd= can show a writ
    are guesses; so is the click's level. The player eases the first bar in by about 3%.
 ** VERIFY BY EYE: ghost parentheses round a chord; beaming in 5/8 and 7/8 (cells are beamed in quarters, so 7/8 reads 2+2+2+1);
    thirty-second grids on a phone (the cells are about 8 px); the staff is not the same width as the grid under it.
-** TODO The old page's =localStorage.tuneMeter= (the tune page's meter) is not read by the draft.
+** DONE (2026-10-18) The old page's =localStorage.tuneMeter= is read: a new page opens in that meter; the pattern menu's Fits filter starts on its family.
 ** TODO =_site= has not been rendered with the draft; =tools/_backing-track.qmd= and the lesson kit still name =drums.js?v=12= and
    =congas.js?v=2= (the additions are only used when =opts.written= is set, so nothing there changes).
+
+* Draft B carried over (agent, 2026-10-18)
+What the first Drumset page had and the draft lacked, now in the draft (the old page is untouched, draft not swapped in). See 2026-10-14-in-progress.md for the list.
+- =groove.js= =Bo= lane (bongos H / L, pieces bongoHi / bongoLo in the =congas= bank of =sounds.js=, GM 60 / 61); =ride-synth.js= (=RideSynth=);
+  =groove-library.js= (=BandGrooveLibrary=: items with a source each; only the PAS rudiments so far); =groove-editor.js=: Marks Icons, Export PNG
+  (own SVG renderer), Customize labels, ride choice, Pattern + Fits menus, tuneMeter.
+** VERIFY BY EAR: the bongo levels (0.95 piece gain, vel 0.6), the synth ride against the sample ride (the synth bypasses the band's bus).
+** VERIFY: the PAS citation in groove-library.js (written from memory; check the title, year and the list of 40, and that each sticking is as printed there).
+** TODO Fills and standard beats with a source (none added: nothing attributable could be checked). Candidates in the plan: bossa, samba, songo, Purdie shuffle, train beat.
 
 * Hi-hat grooves lesson -- 2026-10-12
 Added =lessons/hihat-grooves.qmd= ("Hi-Hat Grooves: From Quarter Notes to Sixteenths"), eleven sections (0 to 10, 0 is the three sounds with buttons and a key).
@@ -1335,3 +1344,30 @@ history pages.
 - Pages: styles/ragtime.qmd, styles/jump.qmd; section 6 of lessons/stride-boogie.qmd (ragtime -> stride, boogie -> jump); pattern lesson
   drums-jump; the jazz tour preset ends with Ragtime and Jump blues sections.
 ** VERIFY BY EAR: the stride left hand in straight time as ragtime; whether jump wants a horn-like riff in the comping rather than the boogie right hand.
+
+* 2026-10-18 sounds.js: fetch timeout and fallback hosts
+- =fetchBuffer= no longer waits for ever: each try is aborted after 15 s (=AbortController=, headers and body; =window.BAND_FETCH_TIMEOUT= ms overrides).
+- A sample under the default jsDelivr soundfont base is retried once each at gleitz.github.io and raw.githubusercontent.com (the upstream
+  =midi-js-soundfonts=); =window.BAND_SOUND_FALLBACKS= (list of base URLs, may be =[]=) replaces that list. A custom =getSoundfontUrl= base gets no fallback.
+- A sample that fails everywhere is skipped (console warning, kept in =BandSounds.failures=); an instrument with no sample at all still rejects,
+  so pages' existing error paths show it instead of "Loading the sounds…" for ever. Unverified: the fallback hosts' file layout in a real browser
+  (only simulated), and no page yet shows =failures= to the user.
+- Test: =node tests/band/sounds/t_timeout.js=. =sounds.js?v=14= became =v=15= on every tools/ and lessons/ page that loaded 14 (=_drumset-b.qmd= is still v=13).
+- =tests/band/groove/t_groove.js= fails on "brushswing bar 1: brushSwish" (groove/drums files had uncommitted edits from another session; not this change).
+
+* 2026-10-18 Swing as one shared setting (rebuilt on main: the =swing-model= branch and worktree were gone)
+- =BandPlayer.swingAt(opts, bpm, override)= -> ={ div, s }=: the one place that decides where the late note of a pair lands. Order: the
+  listener's =opts.swingSet= (=player.setSwing(0.5..0.75)=, null = Auto) > the style's =swing= (=opts.styleSwing=, from =styleOpts=: a ratio,
+  ={ div, amount }=, ={ div, curve:"jazz" }=) > even for feel straight > =swingFor(bpm)= (68% at 100 bpm or slower, 66% at 120, 64% at 160,
+  60% at 220, 55% at 300). =warp(pos, s, div)= swings sixteenths for div 16. 12/8 stays 2/3 whatever is set; =straight:true= events never move.
+- Used by =Session.pump=, =BandMidi.swingOf= / =swingDivOf=, harmony's half-time =swingOf=, =groove-anim.js=. =swingFor= is unchanged
+  (Chord Entry / Notation still call it for Auto).
+- No style has a =swing= yet, so nothing sounds different (=tests/band/swing/t_swing.js= checks Auto = the old curve for every style, 40-300 bpm).
+  Not carried over from the lost branch: =golden.js= (note-for-note snapshot), section text =swing 62=, =player.swing()= is the override only.
+- Swing menu: =PlayBar.swingSlot= (Auto / 50-75%), in the lesson bar (=blues-kit.js=) and Backing Track draft A (=D.swing=). It calls
+  =player.setSwing= and =LessonScore.setSwing=; the notation (abcjs) swings by the band's amount for the Feel and tempo (=autoSwing=, 0 for
+  even or sixteenth swing) instead of a fixed 66. abcjs rounds to whole percent. The choice is not remembered between pages.
+- Written grooves (=drums.js= / =congas.js= =writtenSwing= unset): the groove's own swing, else the style's or the listener's when on the
+  groove's grid (=BandGroove.swingFor=); an eighth swing leaves a sixteenth groove straight. The Auto tempo curve never applies to a written groove.
+- =lessons/reading-swing.qmd= tables now quote the band's curve (62-68% medium, 55-60% up-tempo). Still abcjs's own slider; step 4 (lesson) not started.
+** VERIFY BY EAR: the Swing menu at 50 / 62 / 75% against the band and the notation together (Blues in the Closet); that Auto is unchanged.

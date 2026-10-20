@@ -65,6 +65,33 @@ semitones. DJ software and CDJs add **key lock** (Master Tempo on Pioneer gear):
 
 </div>
 
+## Many samples, one instrument
+
+Pitch a single note far and it stops sounding like the instrument. A real instrument's body resonates at the same frequencies whatever
+note is played, but a repitched sample moves those resonances with the note: a piano sample shifted up an octave sounds small and
+"chipmunked", shifted down it sounds slow and woolly. So sampled instruments are built from **many recordings** (a **multi-sample**):
+
+- **Key zones.** A note recorded every few semitones (often every minor third), each covering the keys around it, so no note is pitched far.
+- **Velocity layers.** The same note recorded soft and hard. A hard hit isn't just louder: it's brighter, with more attack. Turning a
+  soft recording up doesn't make it sound hard.
+- **Round robin.** Several takes of each note and layer, played in turn. Repeat one recording and you hear the **machine-gun effect**,
+  the same hit every time.
+
+Choose **Multi-sample** in the sampler's menu. The demo is a plucked string recorded at C2, C3, C4 and C5, soft and hard, three takes each
+(24 recordings). The map has keys across and velocity up; each coloured block is a zone.
+
+<div class="sp-pads" data-id="sp-multi" data-kind="multi"></div>
+
+1. Click across the bottom of the map, then across the top. The top uses the hard layer: brighter, with a knock.
+2. Click the same spot again and again, then untick **Round robin**. Now every hit is the same take.
+3. Tick **One sample only** and play from C2 up to C6. Every key now comes from the C4 recording. Low notes go dull and slow, high
+   ones thin. That's why instruments are sampled every few notes.
+4. With your own recordings: name each file with its note (and, if you have them, a layer and a take), e.g. `Guitar_E2_soft_rr1.wav`,
+   then **Load recordings…**. **Spread zones** fills the keyboard between them.
+
+In other gear this is a sampler instrument: Ableton's **Sampler** (Zone editor), Logic's **Sampler** (Mapping pane), Kontakt, and the
+SFZ and SoundFont file formats. On an MPC it's a **keygroup** program.
+
 ## Next
 
 - [Sampling 4: A Beat from Chops](sampling-beat.qmd)
@@ -80,6 +107,12 @@ semitones. DJ software and CDJs add **key lock** (Master Tempo on Pioneer gear):
 "Audio Time Stretching and Pitch Scaling." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Audio_time_stretching_and_pitch_scaling](https://en.wikipedia.org/wiki/Audio_time_stretching_and_pitch_scaling).
 
 "Roland SP-404." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Roland_SP-404](https://en.wikipedia.org/wiki/Roland_SP-404).
+
+**For teachers**
+
+Katz, Mark. *Capturing Sound: How Technology Has Changed Music*. Rev. ed., U of California P, 2010. Ch. 7, "Music in 1s and 0s: The Art and Politics of Digital Sampling" (from a table of contents).
+
+Schloss, Joseph G. *Making Beats: The Art of Sample-Based Hip-Hop*. Wesleyan UP, 2004. 2nd ed. 2014, foreword by Jeff Chang.
 :::
 <!-- /works-cited -->
 

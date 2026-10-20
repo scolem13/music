@@ -1,0 +1,10 @@
+X:2780
+%%from edm
+T:Symphony in B-flat, No. 102, 1st Movement, 3rd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2780 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+c'4 =e8 f4 | g4 a4 b4 z4 | c'4 =e8 f4 | g4 a4 b4

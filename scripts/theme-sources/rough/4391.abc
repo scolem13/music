@@ -1,0 +1,10 @@
+X:4391
+%%from edm
+T:Sonata in E-flat, K 282, 2nd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4391 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+BcB=A B4 z3 B | e3e e4 d4 | BcB=A B4

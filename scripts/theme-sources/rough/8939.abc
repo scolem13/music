@@ -1,0 +1,10 @@
+X:8939
+%%from edm
+T:Symphony No. 7 in E, 3rd Movement - 2nd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8939 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a12 | g4 f4 g4 | a12 | f12 | d12 | b8- b2a2 | a8 g4 | d'12 |

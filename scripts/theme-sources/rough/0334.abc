@@ -1,0 +1,10 @@
+X:334
+%%from edm
+T:English Suite No. 2, in A minor, Piano, Sarabande
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0334 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c4 c2B2 A2^G2 | A4 A8 | e4 e2d2 c2B2 | B4 c3B A4 |

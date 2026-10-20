@@ -1,0 +1,11 @@
+X:7220
+%%from edm
+T:Suite No. 1, 4th Movement - Balalaika
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7220 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+e4 e2e2 | e2d2 c4 | z8 | z4 e2e2 | e2d2 c4 | c2e2 f4 | e4

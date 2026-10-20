@@ -1,0 +1,12 @@
+X:825
+T:Sonata No. 2, in A, Op. 2, No. 2, 4th Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0819, Barlow & Morgenstern B701, EDM 0825 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo: Grazioso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=109
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+A,,C,E,A,[K:treble] (3CEA c/e/a/c'/ e'4 e'4 | e'2G z G8 G4 | A4 B4 c4 d4 |{/d} e6 dc B4 z4 |

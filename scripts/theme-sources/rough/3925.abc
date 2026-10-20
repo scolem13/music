@@ -1,0 +1,10 @@
+X:3925
+%%from edm
+T:Symphony No. 3, in A minor, Op. 56, 1st Movement - 4th Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3925 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+G2A2 B8 | G2A2 B8 | B2e2 ^d8 | e2^f2 B8 |

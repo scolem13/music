@@ -1,0 +1,10 @@
+X:4069
+%%from edm
+T:Concerto in E-flat, K 447, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4069 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+E6 A2 C4 C4 | D2E2F2D2 B,4 z2 B,2 | C2 z2 D2 z2 E2 z2 F2D2 | C8 B,2

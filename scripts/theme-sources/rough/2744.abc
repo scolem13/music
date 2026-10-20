@@ -1,0 +1,10 @@
+X:2744
+%%from edm
+T:Symphony in B-flat, No. 98, 2nd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2744 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+F8 G4 | E4 F2 z6 | A8 z/2 B3-B/2 | A4 G2 z6 | f3e/2d/2 c2B2 G2E2 | F2 z/2 z/2 F/2>A/2 G2

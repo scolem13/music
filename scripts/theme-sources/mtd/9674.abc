@@ -1,0 +1,12 @@
+X:9674
+T:Pour le Piano, Suite, Prelude - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2665, Barlow & Morgenstern D97, EDM 9674 (Musical Theme Dataset, CC BY 4.0)
+N:Prélude  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=128
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A,2 A,A, A,E, | G,G,G,G,G,^G, | A,2 A,A,A,E, | G,G,^F,F,=F,F, | E,2 |

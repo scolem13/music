@@ -1,0 +1,11 @@
+X:5810
+%%from edm
+T:Sonatas, Longo 479 in F
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5810 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:F
+F2 A2 c2 | f2 c'2 a2 | f2 f2 f2 | z/2 f/2g/2f/2 g/2f/2g/2<f/2 f2 | (3agf (3edc (3BAG | (3AGF (3EDC (3B,A,G, |

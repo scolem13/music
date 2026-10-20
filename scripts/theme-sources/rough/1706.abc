@@ -1,0 +1,10 @@
+X:1706
+%%from edm
+T:Symphony in D minor, 2nd Movement - 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1706 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d8 e4 | d4 e4 d4 | f8 g4 | f4 g4 f4 | b2c'2 d'8 | e'2d'2 d'4 _d'4 | d'4 c'4 b4 | d'4 f'8 |

@@ -1,0 +1,10 @@
+X:3456
+%%from edm
+T:Hungarian Rhapsody No. 6 in D-flat, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3456 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+C4 C2F2 | ^F4 =F4 | D2C2 ^C4 | z2 C4 C2 | G4 G2c2 | ^c4 =c4 |

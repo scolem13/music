@@ -1,0 +1,10 @@
+X:2279
+%%from edm
+T:Sonata in F, Op. 1, No. 11, 2nd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2279 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+c2f2c2c2 c2d/2e/2d/2e/2 c2 z2 | c2g2c2c2 c2a/2b/2a/2b/2 g2 z2 | g2a2e2f2 g2e/2f/2e/2d/2 c2

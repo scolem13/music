@@ -1,0 +1,10 @@
+X:371
+%%from edm
+T:French Suite No. 3, in B minor, Piano, Sarabande
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0371 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+B2d2 f2 b4 ^a2 | b2f2 edc2<B2 z/2 z/2 ^A | B2g2

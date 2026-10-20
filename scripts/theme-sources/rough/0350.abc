@@ -1,0 +1,10 @@
+X:350
+%%from edm
+T:English Suite No. 5, in E minor, Piano, Courante
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0350 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:G
+B4<B4 c2B2A2G2 F2E2^D2c2- | c2 B6 g2f2e2^d2 e4<e4 | ^de f4

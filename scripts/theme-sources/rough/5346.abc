@@ -1,0 +1,10 @@
+X:5346
+%%from edm
+T:Valses Nobles et Sentimentales, No. 6
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5346 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+^G4 A4 =g4 ^A4 B4 =a4 | ^d4 e4 =d'4 ^f4 g4 e'4 | g'16 f'8 | ^d'4 ^f'4 g'4 e4 ^d8 |

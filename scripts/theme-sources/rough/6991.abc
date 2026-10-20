@@ -1,0 +1,10 @@
+X:6991
+%%from edm
+T:Aus Italien, Symphonic Fantasy, Op. 16, In the Roman Ruins (In Roms Ruinen), 3rd Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6991 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:C
+g'12 c'12 | ^d'12 c8 =d'4 | ^d4 g4 c'4 ^a12- | ^a8 ^g4 =g8 z4 | ^a'12 ^g'12- | ^g'8 =g'4 ^f'8

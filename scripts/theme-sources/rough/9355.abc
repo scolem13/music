@@ -1,0 +1,11 @@
+X:9355
+%%from edm
+T:Waltzes, Waltz in E minor, Posth., 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9355 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+B4 B2B2 B4 | ^A2B2 e2g2 b4 | z/2 c'3/2b2 ^a2b2 f'2b'2 | g'4

@@ -1,0 +1,10 @@
+X:7805
+%%from edm
+T:Concerto in C minor, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7805 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+c' e'4 d'3- | d' c'4 z2 b | ag2f ef2g- | g A4 z3 | c' e'4 d'3- | d' c'4 z2 b | ag2f ef2g- | g c4

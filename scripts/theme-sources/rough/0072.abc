@@ -1,0 +1,10 @@
+X:72
+%%from edm
+T:Suite Breve, Op. 6, Orchestra, I. Menuet, 1st Theme
+C:Louis Aubert
+%%composer Aubert|Louis
+% EDM 0072 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+b4 f4 b4 | a2b2c'2d'2c'2a2 | b8 e4 | f6 z2 F4 | ^G6 B2 ^AGF2 |

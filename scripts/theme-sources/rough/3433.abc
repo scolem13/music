@@ -1,0 +1,10 @@
+X:3433
+%%from edm
+T:Les Funerailles, Piano, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3433 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+c8 f6- f=e | =e8- e2_e2A2B2 | c4 c4 f6- f=e | =e8- e2_e2A2B2 | c4 c4 d6 =A2 | B4

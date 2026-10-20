@@ -1,0 +1,12 @@
+X:4494
+T:Symphony No. 12, in G, K 110, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6143, Barlow & Morgenstern M868, EDM 4494 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B c ^A | B ^D E | =A B ^G | A C B, | G D C | c E D | B/d/ G F | G2 |

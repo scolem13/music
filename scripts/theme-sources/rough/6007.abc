@@ -1,0 +1,13 @@
+X:6007
+%%from mtd
+T:Sonata in A, Op. 120, 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7639, Barlow & Morgenstern S420, EDM 6007 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=100
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+e'2 e'e' e'2 b z | (3aba (3c'ba g2 b z |

@@ -1,0 +1,10 @@
+X:2728
+%%from edm
+T:Symphony in C minor, No. 95, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2728 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g g4 e2 z e e4 B2 z | BB2A2 A2G2 G4 z3 | a a4 f2 z f f4 d2 z | AA2G2 G2F2 F4

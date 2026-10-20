@@ -1,0 +1,10 @@
+X:1603
+%%from edm
+T:Sonata in A, Op. 13, 1st Movement - 2nd Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1603 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+g12 f4 | e8 ^d4 c4 | =c12 ^c4 | d4 ^d4 f4 b4 | b12 a4 | =g8 f4 e4 | ^d12 e4 |

@@ -1,0 +1,11 @@
+X:6958
+%%from edm
+T:Wiener Kinder, Op. 61, Waltzes, No. 2
+C:Joseph Strauss
+%%composer Strauss|Joseph
+% EDM 6958 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+g2 z2 g6 g2 | A4 z4 A4 | a2 z2 a6 a2 | B12 | b2 z2 b6 b2 | a4 z4 g4 | e'4 z4 g4 | f8- f2d2 |

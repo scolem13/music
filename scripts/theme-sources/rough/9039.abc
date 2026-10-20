@@ -1,0 +1,10 @@
+X:9039
+%%from edm
+T:Pupazzetti, 5th Movement - 1st Theme - Polka
+C:Alfredo Casella
+%%composer Casella|Alfredo
+% EDM 9039 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+z2 ^cc ^d2^f2 | ^g2b2^d'2^f'2 | ^g'2b'g' ^f'2^d'2 | c'2d'c' ^a2g2 |

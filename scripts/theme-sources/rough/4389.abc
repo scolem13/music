@@ -1,0 +1,10 @@
+X:4389
+%%from edm
+T:Sonata in E-flat, K 282, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4389 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+B3c B6 B2 e2e2 | edcB B4 dc c4 fd | cB B4

@@ -1,0 +1,10 @@
+X:8875
+%%from edm
+T:Concerto No. 2 in D minor, Vn. and Orchestra, 1st Movement - 1st Theme
+C:Max Bruch
+%%composer Bruch|Max
+% EDM 8875 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a8- a2 c'4 b2 | g8- g2 b4 a2 | f6- fg g/2a/2g/2a/2g/2a/2g/2a/2 g/2a/2g/2a/2fg | a12

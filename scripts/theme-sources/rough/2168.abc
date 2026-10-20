@@ -1,0 +1,10 @@
+X:2168
+%%from edm
+T:Concerto in F, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2168 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d2 _d4 =d2 d3/2e/2f2 e2e3/2f/2 | g2f2 e4 d2

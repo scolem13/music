@@ -1,0 +1,10 @@
+X:5567
+%%from edm
+T:Cracovienne, Op. 5, No. 3, 1st Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5567 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G4 B6 e2 | g4 f6 e2 | b4 z/2 c'4- c'3/2b2 | b4 g8 | a4 d6 a2 | g4 b8 | a4 d6 a2 | g4 e8 |

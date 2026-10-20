@@ -1,0 +1,11 @@
+X:5942
+%%from edm
+T:Quartet No. 9 in G minor, 3rd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5942 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+d4 g4 b4 | g4 d'8 | c'4 c'2b2 a2g2 | _g2=g2 d8 |

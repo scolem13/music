@@ -1,0 +1,10 @@
+X:4409
+%%from edm
+T:Sonata in C, K 330, 2nd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4409 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+A2A2 A4<A4 | G2B2 =E4<F4 | c2c2 c4<c4 | d2c2 B2 z/2 B3/2 A2

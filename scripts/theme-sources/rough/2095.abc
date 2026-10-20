@@ -1,0 +1,10 @@
+X:2095
+%%from edm
+T:Two Elegaic Melodies, Op. 34, No. 1, Heart Wounds
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2095 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+G4 _G6 G2 =G4 | B2G2 _G4 G2G2 =G4- | G2G2 =A4 A2A2 B4 | =A2G2 B4 A8 | D4 =B6 B2 c4 | e2c2

@@ -1,0 +1,11 @@
+X:7818
+%%from edm
+T:Concerto Grosso in A minor, Op. 3, No. 6, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7818 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+z2 e2 a2b2 | c'2 z2 b2 z2 | a4 z2 a2 | g2f2e2d2 | c2B2A2B2 | c2 z2 d2 z2 | e4

@@ -1,0 +1,10 @@
+X:1564
+%%from edm
+T:Barcarolle No. 5, Op. 66, Piano
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1564 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:A
+A2F2 z4 =c3B A2F2 z2 | G2^A2 z4 =c4 ^c2C2 z2 | z2 g2f2 A2B2G2 F3GF2 |

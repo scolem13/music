@@ -1,0 +1,10 @@
+X:1615
+%%from edm
+T:Nocturne No. 5, Piano
+C:John Field
+%%composer Field|John
+% EDM 1615 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Bb
+f12 =e6 f6 | f8- f2d2 f6 z6 | d12 e6 c6 | B8- B2dc B6

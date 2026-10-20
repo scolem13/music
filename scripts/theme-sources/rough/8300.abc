@@ -1,0 +1,11 @@
+X:8300
+%%from edm
+T:Quartet, Str. - 1st Movement - 1st Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8300 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:G
+z2 f'4 e'2 | ^d'2c'2 (3b2c'2b2 | b2 f6- | f8- | f8- | f4

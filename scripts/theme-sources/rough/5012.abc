@@ -1,0 +1,10 @@
+X:5012
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 2, 1st Movement - The Montagues and the Capulets, 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5012 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B,3E2<G2B2<e2B2<G2E | B,3E2<G2B e2 z2 B4- | B3d2<f2b2<d'2b2<f2d | B3d2<f2b d'8 |

@@ -1,0 +1,10 @@
+X:1241
+%%from edm
+T:Quartet in G, Op. 106, 2nd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1241 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Eb
+B,4 B,3/2B,/2 | E6 | E2 G2 FC | B,4 G,A, | B,4 B,3/2B,/2 | E4 B,3/2E/2 | F2 F2 cB | B2 G

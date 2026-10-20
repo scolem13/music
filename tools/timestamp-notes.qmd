@@ -9,7 +9,7 @@ page-layout: full
 ::: {.column-screen}
 ```{=html}
 <div class="ts-root">
-<link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=1">
+<link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=2">
 <link rel="stylesheet" href="/apps/shared/timestamp-player/player-log.css?v=10">
 <link rel="stylesheet" href="/apps/shared/timestamp-player/bar-map.css?v=10">
 <link rel="stylesheet" href="/apps/shared/timestamp-player/words.css?v=11">
@@ -174,9 +174,11 @@ page-layout: full
        (the pickup: how many beats before its first downbeat the melody starts, up to two bars) to the next downbeat.
        <kbd>P</kbd> loops the phrase under the playhead, <kbd>,</kbd> <kbd>.</kbd> the one before or after,
        <kbd>-</kbd> <kbd>=</kbd> shorten or lengthen its lead-in, <kbd>T</kbd> (or <b>Notate</b>) goes to it on the Notation page,
-       whose <b>Back to the recording</b> loops the next one here. Slow it down with the player's speed.</p>
+       whose <b>Back to the recording</b> loops the next one here. With <b>Phrases as chunks</b> each phrase is a chunk there (V1a, V1b ...),
+       and <kbd>Shift</kbd>+<kbd>Space</kbd> there plays this recording from the note being written. Slow it down with the player's speed.</p>
     <div class="btp-log-buttons">
       <label class="btp-beats-label">Bars a phrase <select class="btp-ph-size"><option>2</option><option selected>4</option><option>8</option></select></label>
+      <label class="btp-beats-label"><input type="checkbox" class="btp-ph-chunks" checked> Phrases as chunks on the Notation page</label>
     </div>
     <ol class="btp-ph-rows"></ol>
     <p class="btp-log-empty btp-ph-empty">No phrases yet: tap the bars and stamp the sections.</p>
@@ -277,20 +279,20 @@ page-layout: full
 </div>
 
 <script src="/apps/shared/panel-columns.js?v=1"></script>
-<script src="/apps/shared/timestamp-player/player.js?v=6"></script>
+<script src="/apps/shared/timestamp-player/player.js?v=7"></script>
 <script src="/apps/shared/timestamp-player/time-edit.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/player-log.js?v=16"></script>
 <script src="/apps/shared/timestamp-player/bar-map.js?v=17"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=3"></script>
-<script src="/apps/shared/notation-doc.js?v=9"></script>
+<script src="/apps/shared/notation-doc.js?v=10"></script>
 <script src="/apps/shared/ug-chordpro.js?v=4"></script>
-<script src="/apps/shared/timestamp-player/words.js?v=19"></script>
+<script src="/apps/shared/timestamp-player/words.js?v=20"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/chord-entry.js?v=10"></script>
 <script src="/apps/shared/timestamp-player/live.js?v=20"></script>
-<script src="/apps/shared/timestamp-player/phrases.js?v=3"></script>
+<script src="/apps/shared/timestamp-player/phrases.js?v=5"></script>
 <script src="/apps/shared/timestamp-player/page-nav.js?v=3"></script>
 </div>
 ```

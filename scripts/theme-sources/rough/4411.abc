@@ -1,0 +1,12 @@
+X:4411
+%%from mtd
+T:Sonata in A, K 331, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6060, Barlow & Morgenstern M785, EDM 4411 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=55
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c>dc e2 e | B>cB d2 d | A2 A B2 B | c2 e/d/ c2 B |

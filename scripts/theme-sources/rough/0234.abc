@@ -1,0 +1,10 @@
+X:234
+%%from edm
+T:Partita No. 3 in A minor, Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0234 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:C
+E2A,2 C2E2 A2^G2 A2B,2 D2E2 A2G2 | A2C2 E2^G2 A2B2 c2D2

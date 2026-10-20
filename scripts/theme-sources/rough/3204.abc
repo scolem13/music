@@ -1,0 +1,13 @@
+X:3204
+%%from mtd
+T:Concerto, 2nd Movement
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4859, Barlow & Morgenstern K33, EDM 3204 (Musical Theme Dataset, CC BY 4.0)
+N:Andante sostenuto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=70
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z2 B2 d2 | e4 e2 | e2 g2 (3fgf | e6- | e2 B2 d2 | e3 eee | e3 g^f=f | (3fgf e4 |

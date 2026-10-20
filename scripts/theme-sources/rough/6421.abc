@@ -1,0 +1,12 @@
+X:6421
+%%from mtd
+T:Poeme D'Extase, Op. 34, 1st Theme
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% MTD 8052, Barlow & Morgenstern S825, EDM 6421 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=47
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z A e2- | e d2 ^c | f2 (3^cd^d | a4- |[M:6/8] a z z z g2- | g z _b g2 _a | z =b2- b^g=a |

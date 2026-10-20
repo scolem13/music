@@ -1,0 +1,13 @@
+X:6122
+%%from mtd
+T:Symphony No. 8 in B minor, 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7754, Barlow & Morgenstern S535, EDM 6122 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=107
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+G,2 D,3 G, | F,>G, A,3 G, | F,>G, A,D,E,F, | G,2 D,4 | G,2 D,3 G, | ^G,>A, B,3 |

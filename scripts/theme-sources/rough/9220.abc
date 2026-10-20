@@ -1,0 +1,12 @@
+X:9220
+%%from mtd
+T:Mazurkas 13, Op. 17, No. 4
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2217, Barlow & Morgenstern C230, EDM 9220 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=89
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+B>c d2 A2 |{/A} c4 Bc | de f2 g>d | e6 |

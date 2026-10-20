@@ -1,0 +1,10 @@
+X:9023
+%%from edm
+T:Quartet in A minor, 1st Movement - 1st Theme
+C:John Alden Carpenter
+%%composer Carpenter|John Alden
+% EDM 9023 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+a2e'4<a'4 g'2 d'4- | d'2b4<e'4 d'2 a2g2 | a12- a2g2 | a8 a2b2d'2g2 |

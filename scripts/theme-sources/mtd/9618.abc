@@ -1,0 +1,11 @@
+X:9618
+T:L'Isle Joyeuse - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2609, Barlow & Morgenstern D41, EDM 9618 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/16
+Q:1/4=70
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+{/^d} c>Bc>d c>Bc>d (3cde(3fed (3cde(3=ged |

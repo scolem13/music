@@ -1,0 +1,10 @@
+X:3530
+%%from edm
+T:Tarantella, Piano, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3530 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+D2D2D2 D2=E2_G2 | G2G2G2 G2A2B2 | A2B2A2 A2B2A2 | G2B2G2 E2E2E2 |

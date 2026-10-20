@@ -1,0 +1,11 @@
+X:8077
+T:Invitation to the Dance, Op. 65, 5th Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% MTD 9700, Barlow & Morgenstern W231, EDM 8077 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=225
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+f3 c a2 | c'3 b a2 |{/a} =g2 f g2 | aba=g a2 |

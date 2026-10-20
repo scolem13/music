@@ -1,0 +1,10 @@
+X:9567
+%%from edm
+T:Messe Pour Les Convents, Organ Offertoire Sur Les Grands Jeux
+C:François Couperin
+%%composer Couperin|François
+% EDM 9567 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g4 a4 b4 | c'4 b/2a/2b/2c'/2b2 g4 | b4 a4 b4 | g4 f4 d4 | d'4 e'4 c'4 | a4 d'4 g4 | a4 b4 a4- | a2g2 g8 |

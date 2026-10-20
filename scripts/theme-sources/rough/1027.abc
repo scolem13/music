@@ -1,0 +1,13 @@
+X:1027
+%%from mtd
+T:Symphony No. 1, in C, Op. 21, 4th Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1021, Barlow & Morgenstern B903, EDM 1027 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio - Allegro molto e vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=143
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+GAB | cdef g2g2 | e4 c2c2 | d2d2 edcd | e4 cGAB | cdef g2g2 |

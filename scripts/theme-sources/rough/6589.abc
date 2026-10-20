@@ -1,0 +1,10 @@
+X:6589
+%%from edm
+T:Quartet, Op. 56, "Voces Intimae", 2nd Movement - 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6589 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+z3 ^d d2e2 | f2 z e e2f2 | g2f2e2^d2 | f2e2^d2e2 | z3 e e2f2 | g2 z f f2g2 | a2g2f2e2 |

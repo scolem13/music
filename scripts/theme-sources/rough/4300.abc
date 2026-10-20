@@ -1,0 +1,10 @@
+X:4300
+%%from edm
+T:Quartet in B-flat, K 589, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4300 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+e8 f3a2<d2f | z/2 e4- e3/2dc B2 z2 Begb | b4 a2 z g g2f2g2e2 | g6 ag f4

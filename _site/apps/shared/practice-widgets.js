@@ -18,12 +18,21 @@
   try { var saved = JSON.parse(localStorage.getItem(KEY) || "null"); if (saved) Object.keys(saved).forEach(function (k) { S[k] = saved[k]; }); } catch (e) {}
   function save() { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} if (typeof icons === "function") icons(); if (typeof syncDrones === "function") syncDrones(); }
 
-  var ctx = null, master = null;
+  var ctx = null, master = null, metroMix = null, droneMix = null;
   function audio() {
     if (!ctx) {
       var AC = window.AudioContext || window.webkitAudioContext; ctx = new AC();
       master = ctx.createGain(); master.gain.value = 0.9; master.connect(ctx.destination);
-      if (window.AudioTap) AudioTap.register(ctx, master, "Navbar drone and metronome");
+      if (window.AudioTap) AudioTap.register(ctx, master, "Navbar drone and metronome", { active: function () { return false; } });   // the tuner can listen; the Mixer has a strip for each instead
+      // the Mixer's strips: each with a gain of its own for Mute / Solo; the drone's fader is its Volume setting
+      metroMix = ctx.createGain(); metroMix.connect(master);
+      droneMix = ctx.createGain(); droneMix.connect(master);
+      if (window.AudioTap) {
+        AudioTap.register(ctx, metroMix, "Metronome", { gain: metroMix.gain, active: function () { return metro.on; } });
+        AudioTap.register(ctx, droneMix, "Drone", { gain: droneMix.gain, active: function () { return droneOn; },
+          get: function () { return S.droneVol / 100; },
+          set: function (v) { S.droneVol = Math.round(Math.max(0, Math.min(1, v)) * 100); save(); if (drone.outG) droneOut(); Array.prototype.forEach.call(document.querySelectorAll("#pw-dvol"), function (x) { x.value = S.droneVol; }); } });
+      }
     }
     if (ctx.state === "suspended") ctx.resume();
     return ctx;
@@ -46,7 +55,7 @@
     o.type = "triangle"; o.frequency.value = hz;
     g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(Math.max(0.001, level), t + 0.002);
     g.gain.exponentialRampToValueAtTime(0.0001, t + 0.055);
-    o.connect(g); g.connect(master); o.start(t); o.stop(t + 0.07);
+    o.connect(g); g.connect(metroMix || master); o.start(t); o.stop(t + 0.07);
   }
   function metroStep() {
     var c = audio();
@@ -73,12 +82,12 @@
   function metroStart() {
     if (metro.on) return;
     var c = audio(); metro.on = true; metro.beat = 0; metro.queue = []; metro.next = c.currentTime + 0.06;
-    metroStep(); metro.timer = setInterval(metroStep, 25); lampLoop(); refresh();
+    metroStep(); metro.timer = setInterval(metroStep, 25); lampLoop(); refresh(); if (window.AudioTap && AudioTap.changed) AudioTap.changed();
   }
   function metroStop() {
     if (!metro.on) return;
     metro.on = false; clearInterval(metro.timer); cancelAnimationFrame(metro.raf);
-    metro.lamps.forEach(function (l) { l.classList.remove("on"); }); refresh();
+    metro.lamps.forEach(function (l) { l.classList.remove("on"); }); refresh(); if (window.AudioTap && AudioTap.changed) AudioTap.changed();
   }
 
   // ───────────────────────── Drone ─────────────────────────
@@ -100,7 +109,7 @@
   function centsOff(step) { return 1200 * Math.log2(freqFor(step) / (etFreq(doMidi()) * Math.pow(2, step / 12))); }
   function droneOut() {
     var c = audio();
-    if (!drone.outG) { drone.outG = c.createGain(); drone.outG.connect(master); }
+    if (!drone.outG) { drone.outG = c.createGain(); drone.outG.connect(droneMix || master); }
     drone.outG.gain.value = Math.pow(S.droneVol / 100, 2) * 0.5;
     return drone.outG;
   }
@@ -230,7 +239,7 @@
   function droneToggle(on) {
     droneOn = on == null ? !droneOn : on;
     if (droneOn) { audio(); droneSync(); } else { Object.keys(drone.voices).map(Number).forEach(voiceStop); tanStop(); }
-    refresh();
+    refresh(); if (window.AudioTap && AudioTap.changed) AudioTap.changed();
   }
   function droneRetone() {                          // a new tone colour needs new voices
     if (!droneOn) return;
@@ -315,6 +324,10 @@
   function tunerIcon() {
     return LIGHT + '<rect x="3" y="4" width="18" height="16" rx="2.5"/><g class="pw-string" stroke-width="2.2"><path d="M6.5 8h2M11 8h2M15.5 8h2M6.5 12h2M11 12h2M15.5 12h2M6.5 16h2M11 16h2M15.5 16h2"/></g></svg>';
   }
+  // Mixer: three faders
+  function mixerIcon() {
+    return LIGHT + '<path d="M6 4v16M12 4v16M18 4v16"/><g stroke-width="2.6"><path d="M4 14.5h4M10 8h4M16 12h4"/></g></svg>';
+  }
   function circleIcon() {
     var dots = "", here = (S.droneDo * 7) % 12;                              // where Do sits round the circle (C at the top, G to its right)
     var lit = {};                                                             // the drone's other notes (its pads: the fifth, ...)
@@ -342,6 +355,7 @@
     if (navBtn.drone) navBtn.drone.querySelector(".pw-icon").innerHTML = droneIcon();
     if (navBtn.circle) navBtn.circle.querySelector(".pw-icon").innerHTML = circleIcon();
     if (navBtn.tuner) navBtn.tuner.querySelector(".pw-icon").innerHTML = tunerIcon();
+    if (navBtn.mixer) navBtn.mixer.querySelector(".pw-icon").innerHTML = mixerIcon();
   }
   function refresh() {
     icons();
@@ -356,6 +370,7 @@
       panels[k].hidden = !show; navBtn[k].classList.toggle("is-open", show);
     });
     if (panels.tuner && panels.tuner.hidden && window.TunerPanel) window.TunerPanel.stop();       // the tuner does not listen while its panel is shut
+    if (panels.mixer && panels.mixer.hidden && window.MixerPanel) window.MixerPanel.stop();       // nor do the mixer's meters
   }
 
   function buildMetro() {
@@ -552,15 +567,28 @@
     }).catch(function () { $("#pw-tuner-host", panels.tuner).innerHTML = '<p class="pw-note">Couldn\u2019t load the tuner. Check your connection and try again.</p>'; tunerState = 0; });
   }
 
+  // The mixer (mixer-panel.js) is loaded the first time its button is pressed; each opening redraws its strips (what's sounding now).
+  function buildMixer() {
+    var p = el("div", "pw-panel pw-wide"); p.id = "pw-mixer"; p.hidden = true; p.setAttribute("role", "dialog"); p.setAttribute("aria-label", "Mixer");
+    p.innerHTML = '<div class="pw-head"><h2>Mixer</h2><button class="pw-x" type="button" aria-label="Close">\u00d7</button></div><div id="pw-mixer-host"><p class="pw-note">Loading\u2026</p></div>';
+    return p;
+  }
+  function openMixer() {
+    if (panels.mixer.hidden) return;
+    var go = function () { window.MixerPanel.build($("#pw-mixer-host", panels.mixer)); };
+    if (window.MixerPanel) { go(); return; }
+    loadScript("/apps/shared/mixer-panel.js?v=1").then(go).catch(function () { $("#pw-mixer-host", panels.mixer).innerHTML = '<p class="pw-note">Couldn\u2019t load the mixer. Check your connection and try again.</p>'; });
+  }
+
   function init() {
     if (document.getElementById("pw-nav")) return;
     var style = el("style"); style.textContent = css; document.head.appendChild(style);
     var collapse = document.getElementById("navbarCollapse") || document.querySelector(".navbar-collapse");
     var ul = el("ul", "navbar-nav ms-auto"); ul.id = "pw-nav";
-    [["metro", "Metronome"], ["drone", "Drone"], ["tuner", "Strobe tuner"], ["circle", "Circle of fifths"]].forEach(function (b) {
+    [["metro", "Metronome"], ["drone", "Drone"], ["tuner", "Strobe tuner"], ["circle", "Circle of fifths"], ["mixer", "Mixer"]].forEach(function (b) {
       var li = el("li", "nav-item"), a = el("a", "nav-link", '<span class="pw-icon"></span><span class="pw-label">' + b[1] + "</span>");
       a.href = "#"; a.setAttribute("role", "button"); a.setAttribute("aria-label", b[1]); a.title = b[1];
-      a.addEventListener("click", function (e) { e.preventDefault(); openPanel(b[0]); if (b[0] === "circle") openCircle(); if (b[0] === "tuner") openTuner(); });
+      a.addEventListener("click", function (e) { e.preventDefault(); openPanel(b[0]); if (b[0] === "circle") openCircle(); if (b[0] === "tuner") openTuner(); if (b[0] === "mixer") openMixer(); });
       li.appendChild(a); ul.appendChild(li); navBtn[b[0]] = a;
     });
     if (collapse) {
@@ -571,14 +599,14 @@
     window.addEventListener("tuner-panel-state", function (e) { if (navBtn.tuner) navBtn.tuner.classList.toggle("is-on", !!(e.detail && e.detail.running)); });
     window.addEventListener("tonality-change", icons);                                  // a page (or the circle) changed the shared key
     window.addEventListener("storage", function (e) { if (/^tonal/.test(e.key || "")) icons(); });   // ... or another tab did
-    panels.metro = buildMetro(); panels.drone = buildDrone(); panels.tuner = buildTuner(); panels.circle = buildCircle();
+    panels.metro = buildMetro(); panels.drone = buildDrone(); panels.tuner = buildTuner(); panels.circle = buildCircle(); panels.mixer = buildMixer();
     Object.keys(panels).forEach(function (k) {
       document.body.appendChild(panels[k]);
       $(".pw-x", panels[k]).addEventListener("click", function () { openPanel(k, false); });
     });
     if (!collapse) {                                 // no navbar on this page: small fixed buttons instead
       var bar = el("div"); bar.style.cssText = "position:fixed;right:.75rem;bottom:.75rem;z-index:1045;display:flex;gap:.4rem";
-      ["metro", "drone", "tuner", "circle"].forEach(function (k) { var b = el("button", "", k === "metro" ? "Metronome" : k === "drone" ? "Drone" : k === "tuner" ? "Tuner" : "Circle"); b.className = "btn btn-sm btn-outline-secondary"; b.addEventListener("click", function () { openPanel(k); if (k === "circle") openCircle(); if (k === "tuner") openTuner(); }); bar.appendChild(b); });
+      ["metro", "drone", "tuner", "circle", "mixer"].forEach(function (k) { var b = el("button", "", k === "metro" ? "Metronome" : k === "drone" ? "Drone" : k === "tuner" ? "Tuner" : k === "circle" ? "Circle" : "Mixer"); b.className = "btn btn-sm btn-outline-secondary"; b.addEventListener("click", function () { openPanel(k); if (k === "circle") openCircle(); if (k === "tuner") openTuner(); if (k === "mixer") openMixer(); }); bar.appendChild(b); });
       document.body.appendChild(bar);
     }
     document.addEventListener("keydown", function (e) { if (e.key === "Escape") openPanel(null, false); });

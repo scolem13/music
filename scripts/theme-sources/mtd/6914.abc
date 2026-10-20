@@ -1,0 +1,11 @@
+X:6914
+T:Schatz Waltzer, Op. 418, No. 2
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8543, Barlow & Morgenstern S1305, EDM 6914 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=163
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+{/d} D z D3 ^D | E4- EG | F4- FA | G6 | e z e3 e | F2 z2 F2 | e z e3 e | G2 |

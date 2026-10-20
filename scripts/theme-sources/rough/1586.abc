@@ -1,0 +1,10 @@
+X:1586
+%%from edm
+T:Pelleas and Melisande, Op. 80, 2nd Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1586 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+D8 ^C4 | D4 F,8 | D6 ^C2 E4 | F8- F2 z2 | D8 ^C4 | D4 G,8 | C6 D2 ^A,4 | A,2

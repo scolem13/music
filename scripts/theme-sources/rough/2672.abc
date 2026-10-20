@@ -1,0 +1,10 @@
+X:2672
+%%from edm
+T:Symphony in C, No. 82, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2672 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+b8 baga | g4 g4 a3^f | g4 g4 a3^f | g4

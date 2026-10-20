@@ -1,0 +1,11 @@
+X:9230
+T:Mazurkas 27, Op. 41, No. 2
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2227, Barlow & Morgenstern C240, EDM 9230 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=86
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B2 B2 c>B | B2 A>^G A2 | F2 F2 =G>F | FE{/F} E^D E2 |

@@ -1,0 +1,11 @@
+X:5483
+%%from edm
+T:Snow Maiden (Snegourotchka), Opera, Dance of the Buffoons, 1st Theme
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% EDM 5483 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+c2e2 f2gf | e2g2 d4 | c2e2 f4 | e8 | f2g2 e2fe | d2e2 c4 | B2d2 A4 | G8 |

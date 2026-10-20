@@ -1,0 +1,10 @@
+X:3604
+%%from edm
+T:Thesee Opera, Overture, 1st Theme
+C:Jean Baptiste Lully
+%%composer Lully|Jean Baptiste
+% EDM 3604 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c6 g4<e4 dc | f6 f4<f4 g2 | e6 e4<d4 cB | c6 c2 c6- c

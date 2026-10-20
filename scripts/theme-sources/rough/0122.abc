@@ -1,0 +1,10 @@
+X:122
+%%from edm
+T:Brandenburg Concerto No. 1, in F, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0122 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a6 ba gfeg/2f/2 | g6 ab agfg/2e/2 | f/2g/2f/2e/2de/2_d/2 =d3

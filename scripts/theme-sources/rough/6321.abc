@@ -1,0 +1,10 @@
+X:6321
+%%from edm
+T:Sonata in A minor, Op. 105, 2nd Movement - 1st Theme B
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6321 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+e'/2f'/2g'f'/2e'/2f' a/2b/2c'b/2a/2d' | g/2a/2ba/2g/2a/2b/2 a/2b/2a/2b/2a/2b/2

@@ -1,0 +1,10 @@
+X:2983
+%%from edm
+T:Hansel and Gretel, Prelude to Act III, "The Gingerbread House", "Gingerbread Waltz"
+C:Engelbert Humperdinck
+%%composer Humperdinck|Engelbert
+% EDM 2983 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+f4 b4 z4 | f4 z4 f4- | f2e2 e4 d4 | d4 z4 d4- | d2c4<B4 c2 | d6 e2 f4 | g4 a8 |

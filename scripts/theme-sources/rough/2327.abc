@@ -1,0 +1,10 @@
+X:2327
+%%from edm
+T:Suite No. 3, in D minor, 5th Movement, Minuet
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2327 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a4 a4 a4 | agab a4 A4 | d4 d2f2 e2d2 | _d4 =B2d2 A4 |

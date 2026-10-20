@@ -1,0 +1,10 @@
+X:3413
+%%from edm
+T:Eight Grandes Etudes de Paganini, Etude No. 2 in E-flat (Paganini Caprice, No. 17), 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3413 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z4 =a/2b/2e'/2c'/2b/2_a/2g/2f/2 e/2d/2c/2B z E z F z _G/2- | _G/2 z =G2E

@@ -1,0 +1,10 @@
+X:7915
+%%from edm
+T:Tannhauser, Overture, 1st Theme B
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7915 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+B,3B B8 | ^A3=A A8 | =D3=d d8 | c3=c c8 | =F3=f f8 | e3d d8 | e4 =d4 =c4 | =G3A B8 |

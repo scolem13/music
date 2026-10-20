@@ -1,0 +1,11 @@
+X:8834
+%%from edm
+T:Waltzes, Op. 39, No. 3
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8834 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:B
+g6 d2 d2e2 | d6 G2 G2d2 | g6 c2 c2d2 | c6 G2 G2c2 | g6 f2 B2f2 | f6

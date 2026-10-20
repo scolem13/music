@@ -1,0 +1,10 @@
+X:3312
+%%from edm
+T:Concerto Russe, Op. 29, 4th Movement - Intro
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3312 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+z4 d4 e4 | d4 G4 A4 | B4 D6 _G2 | G12- | G8 d4 | g6 fe d4 | (3f2e2d2 e4 z/2 e<de3/2 | _a8 c4 |

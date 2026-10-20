@@ -1,0 +1,10 @@
+X:9699
+%%from edm
+T:Quartet in G minor, 1st Movement, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9699 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+a4 ^g2a2 g4 ^f2g2 | (3^f2e2^c2 c8 (3f2a2^c'2 | (3^c'2^f'2a'2 a'6 f'4 c'2 |

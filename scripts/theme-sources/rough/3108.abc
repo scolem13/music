@@ -1,0 +1,10 @@
+X:3108
+%%from edm
+T:Trio in E minor and major, 2nd Movement, 1st Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3108 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:G
+E8 D2E2 B2A2F2 | E2 z2 E2 F2 z2 D2 E2E2D2 | B,2 z2 B,2 E8 D2E2 | B2A2F2 e12 |

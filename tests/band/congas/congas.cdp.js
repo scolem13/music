@@ -11,7 +11,7 @@ const assert = require("assert"), { launch } = require("../lead/cdp.js");
   const opts = async () => { await ev(`(function(){ var g = BandMidi.generate; if (!window.__hooked){ window.__hooked = 1; BandMidi.generate = function(p, o){ window.__opts = o.opts; return g.apply(this, arguments); }; HTMLAnchorElement.prototype.click = function(){}; } })()`);
     await ev(`document.getElementById("bt-mid-go").click()`); return JSON.parse(await ev(`JSON.stringify(window.__opts)`)); };
   try {
-    for (const page of ["backing-track.html", "backing-track-classic.html", "backing-track-b.html"]) {
+    for (const page of ["backing-track.html", "backing-track-classic.html"]) {
       await b.goto("http://127.0.0.1:8500/tools/" + page); await b.sleep(1200);
       assert(await ev(`!!document.getElementById("bt-congas") && !!document.getElementById("bt-vol-congas") && !!document.getElementById("bt-nt-congas")`), page + ": the controls exist");
     }

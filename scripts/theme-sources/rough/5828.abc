@@ -1,0 +1,10 @@
+X:5828
+%%from edm
+T:Banchetto Musicale, Suite No. 1, 5th Movement - Tripla
+C:Johann Schein
+%%composer Schein|Johann
+% EDM 5828 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+a8 b8 ^c'8 | d'16 a8 | ^a8 =a8 g8 | a16 a8 | g8 e8 f4 g4 | a16 g4 f4 | e8 d8 ^c8 | d24 |

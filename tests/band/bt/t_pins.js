@@ -1,6 +1,6 @@
 // Pinned voicings + as-played extraction + style menu, in plain Node. LIB=1 also loads voicings.js.
 const fs = require('fs'), vm = require('vm'), assert = require('assert');
-const R = '/Users/sean.coleman/Projects/everything-music-site/apps/shared/';
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 const { mulberry32, CH, abcOf } = require('../agent-a/load.js');
 if (process.env.LIB === '1') vm.runInThisContext(fs.readFileSync(R + 'voicings.js', 'utf8'));
 const H = BandHarmony, nn = H.noteName, m12 = n => ((n % 12) + 12) % 12;

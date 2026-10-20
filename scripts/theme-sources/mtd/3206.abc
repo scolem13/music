@@ -1,0 +1,12 @@
+X:3206
+T:Concerto, 3rd Movement - 2nd Theme
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4861, Barlow & Morgenstern K35, EDM 3206 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=150
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+^c' ^f2 | ^f ^c2 |{/^c} B>AB | ^c ^f2 | ^F^cc | ^ff^c' |{b^c'} b>ab | ^c' ^f'2 |

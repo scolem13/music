@@ -1,0 +1,10 @@
+X:9301
+%%from edm
+T:Preludes, Op. 28, No. 24
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9301 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+a4 f2 d6- | d6 f2a3d' | c'8- c'3b | a6 z4 z a | a4 z f z/2 z/2 ed2

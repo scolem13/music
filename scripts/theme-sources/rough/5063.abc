@@ -1,0 +1,10 @@
+X:5063
+%%from edm
+T:Symphony No. 5 in B-flat, Op. 100, 3rd Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5063 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G3_G =G4 C4 | D/2E/2D/2E/2D/2E/2D/2E/2 E3D F4 | E4 G,3C F4 | D4 E4 A4- | A4

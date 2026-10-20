@@ -1,0 +1,10 @@
+X:2402
+%%from edm
+T:Symphony No. 2, "Romantic"
+C:Roy Harris
+%%composer Harris|Roy
+% EDM 2402 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A8 F4 D4 | C12 A4 | c4 ^A4 =A4 F4 | G16 |

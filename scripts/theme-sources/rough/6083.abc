@@ -1,0 +1,10 @@
+X:6083
+%%from edm
+T:Symphony No. 4 in C minor, 4th Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6083 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+c'8- c'2e'2=b2c'2 | g8 c'4 z4 | c'8- c'2e'2=b2c'2 | g8 c'4 z4 | d'8- d'2f'2_d'2=d'2 | a8 d'4

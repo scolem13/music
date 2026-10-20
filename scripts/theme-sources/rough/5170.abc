@@ -1,0 +1,12 @@
+X:5170
+%%from mtd
+T:Preludes, Op. 23, No. 5, 1st Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% MTD 6809, Barlow & Morgenstern R42, EDM 5170 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+G,,3 B,, D, z B,, z | G,,3 A,,/B,,/ D, z B,, z | G,,3 D,/F,/ G,3 B,,/D,/ | F,3 B,,/D,/ E,3 G,,/A,,/ | D,3 |

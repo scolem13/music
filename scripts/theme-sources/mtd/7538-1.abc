@@ -1,0 +1,12 @@
+X:7538
+T:The Nutcracker Suite, Op. 71a, Arabian Dance, Themes A and B (part 1)
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9164-1, Barlow & Morgenstern T195, EDM 7538 (Musical Theme Dataset, CC BY 4.0)
+N:Arabian Dance  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=36
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+"_gva..................................................................................................." F4 D2 | F2 D4 | F2(5:4:5E/F/E/F/E/D2 |

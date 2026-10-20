@@ -1,0 +1,11 @@
+X:7337
+%%from edm
+T:Sonata in C, 2nd Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7337 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+e3/2f/2g3 a/2b/2ga/2b/2 ga/2b/2g2 c4 | d3/2e/2f3 g/2a/2fg/2a/2 fg/2a/2f2 G4 | c3/2d/2e3 fef efbc' bc'

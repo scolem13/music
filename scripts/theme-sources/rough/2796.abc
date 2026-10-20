@@ -1,0 +1,10 @@
+X:2796
+%%from edm
+T:Symphony in D, No. 104, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2796 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+C4 D4 F4 B,4 | e8 c4 A4 | C4 D4 F4 B,4 | e8 c4 A4 |

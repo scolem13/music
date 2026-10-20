@@ -1,0 +1,10 @@
+X:8889
+%%from edm
+T:Quintet in F, 1st Movement - 2nd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8889 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c'3a/2=b/2 c'2 z g2<f'2_e'/2d'/2 | c'2 z8 z2 | _d'3b/2c'/2 d'2 z _a2<_g'2f'/2_e'/2 | d'2

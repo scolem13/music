@@ -1,0 +1,11 @@
+X:2430
+%%from edm
+T:Concerto in E-flat, 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2430 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/RLDF8OeD-hc
+M:4/4
+L:1/16
+K:Eb
+E8 F8 | G4 z2 B,2 E2F2G2A2 | B8 c2d2e2c2 | B4

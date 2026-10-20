@@ -1,0 +1,13 @@
+X:4586
+%%from mtd
+T:Symphony No. 38, in D, K 504, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6235, Barlow & Morgenstern M960, EDM 4586 (Musical Theme Dataset, CC BY 4.0)
+N:Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=193
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+z dfd | a4- | a g2 f- | f e2 ^d | fe z ^d | fe z ^d | fee^d |

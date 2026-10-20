@@ -1,0 +1,10 @@
+X:1825
+%%from edm
+T:Ouverture Solennelle, 1st Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1825 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+d2e4<f4 d2 f2g2 | a6 f2 a4 b4 | c'2d'4<e'4 c'2 b2g2 | e2

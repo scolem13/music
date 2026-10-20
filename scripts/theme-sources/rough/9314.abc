@@ -1,0 +1,10 @@
+X:9314
+%%from edm
+T:Sonata in G, Op. 65, Cello and Piano, 2nd Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9314 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 A4 A2B2 | B2A2A2d2_d2=d2 | e4 f4 A2B2 | B2A2A2F2E2D2 | C4

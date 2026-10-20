@@ -84,6 +84,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="../apps/shared/audio-tap.js?v=1"></script>
 <!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
 <script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
 <script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
 <style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
 <!-- Click the number shown beside any slider to type a value. -->
@@ -147,10 +149,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
  <span class="dropdown-text">Song Builder</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="../practice/songs-classic.html">
- <span class="dropdown-text">Song Builder (Classic)</span></a>
-  </li>  
-        <li>
     <a class="dropdown-item" href="../practice/tunes.html">
  <span class="dropdown-text">Tunes</span></a>
   </li>  
@@ -169,6 +167,74 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../practice/dictation.html">
  <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/theory-drills.html">
+ <span class="dropdown-text">Theory Drills</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/exercise-builder.html">
+ <span class="dropdown-text">Exercise Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/analysed-scores.html">
+ <span class="dropdown-text">Analysed Scores</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/triads.html">
+ <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/roman-numerals.html">
+ <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/seventh-chords.html">
+ <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/progressions.html">
+ <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/non-chord-tones.html">
+ <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/melodic-analysis.html">
+ <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/pop-forms.html">
+ <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/accompaniment-textures.html">
+ <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/secondary-dominants.html">
+ <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/secondary-diminished.html">
+ <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/mode-mixture.html">
+ <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/neapolitan.html">
+ <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/augmented-sixths.html">
+ <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/jazz-theory.html">
+ <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
   </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
@@ -222,10 +288,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../tools/chord-sheet.html">
  <span class="dropdown-text">Chord Sheet</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../tools/chord-sheet-deluxe.html">
- <span class="dropdown-text">Chord Sheet — Stage Edition</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tools/drumset.html">
@@ -282,6 +344,14 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../tools/tap-latency.html">
  <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
   </li>  
     </ul>
   </li>
@@ -743,7 +813,7 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false">
- <span class="menu-text">Notation, Tuning and Acoustics</span></a>
+ <span class="menu-text">Composing</span></a>
           <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -751,8 +821,67 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
       <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lessons/compose-melody.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Composing 1: Writing a Melody</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/compose-motif.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Composing 2: Developing a Motif</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/compose-song.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Composing 3: Words and Music</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/compose-instruments.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Composing 4: Instruments, Ranges and Transposing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/compose-orchestra.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Composing 5: Arranging for Orchestra</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/process-journal.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Process 1: Keeping a Process Journal</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/process-crit-b.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Process 2: MYP Criterion B, Developing (Grades 6–10)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Notation, Tuning and Acoustics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../lessons/notation-choices.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Writing Music Down: Choosing the Right Notation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/ornaments-by-period.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Ornaments by Period</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -777,13 +906,13 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
  <span class="menu-text">Sound Design</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/sound-harmonics.html" class="sidebar-item-text sidebar-link">
@@ -938,13 +1067,13 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
  <span class="menu-text">Recording</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/rec-gain-staging.html" class="sidebar-item-text sidebar-link">
@@ -965,39 +1094,51 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../lessons/rec-guitar-amp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recording 4: Miking a Guitar Amp</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/rec-voice.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recording 5: Miking a Voice</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../lessons/rec-monitoring.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recording 4: Monitoring and Headphones</span></a>
+ <span class="menu-text">Recording 6: Monitoring and Headphones</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/rec-mixing.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recording 5: Mixing</span></a>
+ <span class="menu-text">Recording 7: Mixing</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/rec-mastering.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recording 6: Mastering</span></a>
+ <span class="menu-text">Recording 8: Mastering</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/rec-stereo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recording 7: Mono and Stereo</span></a>
+ <span class="menu-text">Recording 9: Mono and Stereo</span></a>
   </div>
 </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
  <span class="menu-text">DAWs</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/daw-timeline.html" class="sidebar-item-text sidebar-link">
@@ -1050,13 +1191,13 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true">
  <span class="menu-text">Sampling</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/sampling-what.html" class="sidebar-item-text sidebar-link">
@@ -1097,13 +1238,13 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
  <span class="menu-text">DJing</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-14" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-14" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/dj-gear.html" class="sidebar-item-text sidebar-link">
@@ -1150,13 +1291,13 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
  <span class="menu-text">Gear and Care</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-15" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-15" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/gear-power.html" class="sidebar-item-text sidebar-link">
@@ -1215,13 +1356,60 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false">
- <span class="menu-text">Mapping a Recording</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-16" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false">
+ <span class="menu-text">Research and Sources</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-17" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-16" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-17" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/sources-start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources 1: Where Did You Find That? (Grades 6–8)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/sources-check.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources 2: Checking and Citing (Grades 9–10)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/sources-dp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Sources 3: Research for DP Music (Grades 11–12)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/annotate-start.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotated Bibliography 1: What It Is and Why I Chose It (Grades 6–8)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/annotate-check.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotated Bibliography 2: Summarise, Evaluate, Connect (Grades 9–10)</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../lessons/annotate-dp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Annotated Bibliography 3: DP Music (Grades 11–12)</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false">
+ <span class="menu-text">Mapping a Recording</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-18" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-18" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../lessons/timestamp-player.html" class="sidebar-item-text sidebar-link">
@@ -1329,7 +1517,7 @@ document.addEventListener('DOMContentLoaded', async function () {
       '</li>';
   } else {
     ul.innerHTML =
-      '<li class="nav-item dropdown" id="auth-signin-item">' +
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
         '<a class="nav-link dropdown-toggle" href="#" role="button"' +
         '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
           'Sign in' +
@@ -1434,11 +1622,15 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>“Mashup (Music).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Mashup_(music)">en.wikipedia.org/wiki/Mashup_(music)</a>.</p>
 <p>“Remix.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Remix">en.wikipedia.org/wiki/Remix</a>.</p>
 <p>“Sampling (Music).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Sampling_(music)">en.wikipedia.org/wiki/Sampling_(music)</a>.</p>
+<p><strong>For teachers</strong></p>
+<p>Katz, Mark. <em>Capturing Sound: How Technology Has Changed Music</em>. Rev.&nbsp;ed., U of California P, 2010. Ch. 7, “Music in 1s and 0s: The Art and Politics of Digital Sampling” (from a table of contents).</p>
+<p>Rose, Tricia. <em>Black Noise: Rap Music and Black Culture in Contemporary America</em>. UP of New England, 1994. Sampling at pp.&nbsp;73–80, 88–93 (per a catalogue record).</p>
+<p>Schloss, Joseph G. <em>Making Beats: The Art of Sample-Based Hip-Hop</em>. Wesleyan UP, 2004. 2nd ed.&nbsp;2014, foreword by Jeff Chang.</p>
 </div>
 <!-- /works-cited -->
-<link rel="stylesheet" href="../apps/shared/dj/turntables.css?v=1">
+<link rel="stylesheet" href="../apps/shared/dj/turntables.css?v=2">
 <script src="../apps/shared/dj/turntables.js?v=1"></script>
-<script src="../apps/shared/dj/sampler-pads.js?v=1"></script>
+<script src="../apps/shared/dj/sampler-pads.js?v=2"></script>
 <script>Turntables.init(); SamplerPads.init();</script>
 
 

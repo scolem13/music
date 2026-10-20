@@ -1,0 +1,11 @@
+X:9081
+%%from edm
+T:Le Roi Malgré Lui, 2nd Theme
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9081 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+c'2b2 a2c2 b4 | a4 A2B2 g2b2 | a4 A2B2 g2b2 | a4 (3^fga g2 e2c2 | A2G2

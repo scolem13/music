@@ -1,0 +1,11 @@
+X:7029
+%%from edm
+T:Don Juan, Op. 20, 1st Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7029 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:E
+z =G,A,G,=CEG=c e8 | (3f2=g2a2 b4 z4 e'3f' | g'8 b'8- | b'4 (3e2f2B2 g8- | g2

@@ -1,0 +1,12 @@
+X:750
+T:Quartet in B-flat, Op. 130, 4th Movement - Cavatina
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0744, Barlow & Morgenstern B647, EDM 0750 (Musical Theme Dataset, CC BY 4.0)
+N:Cavatina. Adagio molto espressivo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=29
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B,>G | G3 A BA/G/ | G<F z2 z2 | F3 G AG/F/ | B2 d2 e2 |

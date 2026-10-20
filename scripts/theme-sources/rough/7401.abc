@@ -1,0 +1,11 @@
+X:7401
+%%from edm
+T:Hamlet - Act IV, Valse-Mazurka, 2nd Theme
+C:Ambroise Thomas
+%%composer Thomas|Ambroise
+% EDM 7401 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+df2 z f=e2 z4 z | =eg2 z ge2 z4 z | =eg2 z fd'2 z =ac'2 z | bg2 z f8 | fb2 z b2c2 c4 | c4

@@ -1,0 +1,10 @@
+X:1746
+%%from edm
+T:Sonata in A, 2nd Movement
+C:Baldassare Galuppi
+%%composer Galuppi|Baldassare
+% EDM 1746 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+A4 z8 | z2 FG A2B2 c2d2 | c4 z8 | z2 AB c2d2 e2f2 | eABc defg agfe |

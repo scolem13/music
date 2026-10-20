@@ -1,0 +1,10 @@
+X:3972
+%%from edm
+T:Trio, No. 2, in C minor, Op. 66, 3rd Movement - 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3972 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+d4 c2B2 | A/2B/2A/2B/2G2 A2B2 | G2F2E2D2 | ^C2D2E2C2 |

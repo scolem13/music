@@ -1,0 +1,11 @@
+X:5930
+%%from edm
+T:Quartet No. 6 in D, 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5930 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:D
+a12 g2f2 | z/2 e3-e/2 e4 e4 e2f2 | d16 | g8 b8 |

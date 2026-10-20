@@ -1,0 +1,10 @@
+X:284
+%%from edm
+T:Sonata No. 2 in A, Vn. and Piano, 4th Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0284 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+A8 E4 A4 | B2A2G2F2 E8 | c4 B2c2 d2c2B2A2 | e2d2c2B2 A4

@@ -1,0 +1,12 @@
+X:4511
+T:Symphony No. 25, in G minor, K 183, 4th Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6160, Barlow & Morgenstern M885, EDM 4511 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=234
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b2 z f d3 e | c3 d e3 f | d3 f b3 d' | c'3 e' f3 a |

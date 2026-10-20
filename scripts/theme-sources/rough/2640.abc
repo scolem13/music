@@ -1,0 +1,13 @@
+X:2640
+%%from mtd
+T:Sonata in C-sharp minor, No. 36, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4301, Barlow & Morgenstern H520, EDM 2640 (Musical Theme Dataset, CC BY 4.0)
+N:Moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=85
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+C{/D}C/4^B,/4C/4D/4 ED CG, CE | CGGG G2 z2 |

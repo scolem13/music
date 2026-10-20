@@ -1,0 +1,12 @@
+X:4570
+T:Symphony No. 36, in C, K 425, 4th Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6219, Barlow & Morgenstern M944, EDM 4570 (Musical Theme Dataset, CC BY 4.0)
+N:Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=154
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c4 | f3 e |{/e} d^c{/e}dc | d2 z2 | def^f | g^ga=f | ee{g} fe/f/ | g2 z2 |

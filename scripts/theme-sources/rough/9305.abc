@@ -1,0 +1,11 @@
+X:9305
+%%from edm
+T:Scherzo in B-flat minor, Op. 31, 1st Theme Part B
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9305 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Db
+f'12 | e'2d'2a2f2e'2d'2 | a2f2 e2d2 A4 |

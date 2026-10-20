@@ -1,0 +1,10 @@
+X:3534
+%%from edm
+T:Venice and Naples, "Gondoliera", Piano
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3534 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F#
+c2B2 A4 A2A2- | A2B2 d4 c2 z2 | B2A2G2 d2c2c2 | d2B2 =A4 A2

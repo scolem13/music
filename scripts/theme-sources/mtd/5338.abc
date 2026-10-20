@@ -1,0 +1,12 @@
+X:5338
+T:La Valse, 7th Theme, Pt. 1
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6975, Barlow & Morgenstern R208, EDM 5338+5339 (Musical Theme Dataset, CC BY 4.0)
+%%bar 330 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/8
+Q:1/4=119
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F,D | C4 F,D | C4 F,D | ^A,4 C2 | C4 B,G |[K:treble] A4 B,G | ^D4 EB | B4 ^E2 | B2- B |

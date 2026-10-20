@@ -1,0 +1,12 @@
+X:4342
+T:Serenade in D, K 250, "Haffner", 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5991, Barlow & Morgenstern M716, EDM 4342 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro maestoso - Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+D8 z4 z2 A/G/F/E/ | D8 z4 z2 A/G/F/E/ | D2DD D2DD D2 |

@@ -1,0 +1,10 @@
+X:8600
+%%from edm
+T:Quintet in F, Op. 88, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8600 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:F
+c2d2e2f2 a2g2f2e2 f2d2e2c2 | c2d2e2f2 c'2a2f2e2 f2d2e2c2 | c2d2e2f2

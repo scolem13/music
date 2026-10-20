@@ -1,0 +1,10 @@
+X:4047
+%%from edm
+T:Valse, Op. 34, No. 1, 2nd Theme
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4047 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e4 a4 e4 | g12 | G4 d4 G4 | c12 | c2d2=c2^c2e2d2 | c8 B4 |

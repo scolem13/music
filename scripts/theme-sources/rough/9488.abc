@@ -1,0 +1,10 @@
+X:9488
+%%from edm
+T:Les Calotins et Les Calotines, Harpsichord
+C:François Couperin
+%%composer Couperin|François
+% EDM 9488 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+f'2 z/2 e'/2d' e'2a2 | f'2 z/2 e'/2d' e'2a2 | ad'c'd' be'd'e' | z/2 z/2 ^c'd'2 e'/2d'/2e'/2f'/2e'2 |

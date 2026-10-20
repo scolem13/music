@@ -1,0 +1,11 @@
+X:8424
+%%from edm
+T:Quartet No. 2 in D, Str., 1st Movement - 2nd Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8424 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:D
+f4 b6 aba2^g2 | f2^gag2f2 c8 | d3e f6 efe2d2 | c8 ^G8 |

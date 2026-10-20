@@ -1,0 +1,10 @@
+X:155
+%%from edm
+T:Concerto No. 5, in F minor, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0155 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Ab
+FG AB c2 | A2 c2 =e2- | =e2 f2 c2 | z/2 A/2B/2A/2 B/2A/2B/2<A/2 G2 |

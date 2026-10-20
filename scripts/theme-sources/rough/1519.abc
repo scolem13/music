@@ -1,0 +1,11 @@
+X:1519
+%%from edm
+T:Concerto in D, 3rd Movement - 1st Theme A
+C:Manuel de Falla
+%%composer Falla|Manuel de
+% EDM 1519 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/krTQg7MT34I?t=507
+M:3/4
+L:1/16
+K:D
+d2 f4 c2 z/2 e3/2B2 | z/2 d3/2G2 B2E2 A/2G/2A/2B/2A2 |

@@ -1,0 +1,10 @@
+X:5418
+%%from edm
+T:Rossiniana, 1st Movement - Capri and Taormina (Barcarola and Siciliana), 2nd Theme
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5418 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+d'6 d''2 z4 | b2e'2d'2 g4 a2 | b8 z4 | c'2f'2e'2 a4 b2 | c'8- c'2 z2 | d'2b'2g'2 f'2b2f'2 | e'2 g'4

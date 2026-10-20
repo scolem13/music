@@ -1,0 +1,10 @@
+X:3481
+%%from edm
+T:Liebestraum, No. 1, Piano
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3481 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+c8<c8 | f4 e4 A4 A4 | B4 c12- | c4 z/2 c3-c/2

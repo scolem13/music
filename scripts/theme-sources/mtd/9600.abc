@@ -1,0 +1,12 @@
+X:9600
+T:Ballade - Children's Corner Suite - Jimbo's Lullaby
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2591, Barlow & Morgenstern D23, EDM 9600 (Musical Theme Dataset, CC BY 4.0)
+N:Jimbo's Lullaby  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=86
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+F,,2 D,,4 F,,G,, | C,,D,, F,,4 D,,C,, | C,,D,, D,,2 C,,2 F,,2 | D,,8 |

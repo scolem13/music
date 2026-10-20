@@ -1,0 +1,10 @@
+X:7414
+%%from edm
+T:Raymond, Overture, 3rd Theme
+C:Ambroise Thomas
+%%composer Thomas|Ambroise
+% EDM 7414 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+b4 g4 | a4 b4 | c'2d'2 e'4 | d'4 d'4 | c'4 b4 | g4 f4 | b4 b4- | b2c'2 c'4 |

@@ -1,0 +1,10 @@
+X:8930
+%%from edm
+T:Symphony No. 5 in B-flat, 4th Movement - 3rd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8930 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z8 _g8 | =B8 _g8 | _a4 b4 =b4 =a4 | b4 z4 _g'8 | _a'4 b'4 =b'4 =a'4 | b'4

@@ -1,0 +1,10 @@
+X:9125
+%%from edm
+T:Symphony in B-flat, Op. 20, 2nd Movement - 2nd Theme
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9125 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f4 _g8 _d4 | _g4 f8- f2 z2 | b4 _d'8 =e'2>d'2 | _d'2c'2 b8- b2

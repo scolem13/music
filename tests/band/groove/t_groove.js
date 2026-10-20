@@ -1,7 +1,7 @@
 // A written groove and its text (apps/shared/band/groove.js): GrooveScribe's own menu grooves read and written back, every
 // letter of every lane, positions in every division and meter, swing, the band's grooves written as text. Run from this folder.
 const fs = require("fs"), vm = require("vm"), assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 for (const f of ["band/groove.js", "band/drums.js", "band/congas.js", "band/sounds.js", "band/notation.js"]) vm.runInThisContext(fs.readFileSync(R + f, "utf8"), { filename: f });
 const G = BandGroove;
 function mb(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
@@ -135,7 +135,7 @@ assert.equal(lane(g, "S"), "--O-----", "resize leaves the groove it was given al
 function ctx(i, extra){ return Object.assign({ index: i, length: 12, beats: 4, tempo: 120, intensity: 0.5, opts: {} }, extra || {}); }
 function barsOf(groove, n, opts, extra){ const d = BandDrums.create({ rng: mb(3) }), out = [];
   for (let i = 0; i < n; i++) out.push(d.bar(ctx(i, Object.assign({ opts: Object.assign({ groove, fills: "none" }, opts || {}) }, extra || {})))); return out; }
-const NOLANE = ["clap", "tamb", "sticks"];
+const NOLANE = ["clap", "tamb", "sticks", "brushTap", "brushSwish", "brushSweep"];
 Object.keys(BandDrums.GROOVES).forEach(id => {
   if (id === "none") return;
   const bars = barsOf(id, 4), x = G.fromEvents(bars, { tempo: 120, title: id });
@@ -321,4 +321,31 @@ console.log("BAND GROOVES AS TEXT OK");
   const up = BandNotation.toAbc([rec], { show: { comp: false, bass: false, drums: true } }).split("\n").filter(l => /\|\]$/.test(l))[0];
   assert.equal((up.match(/c/g) || []).length, 3, "three snare notes on the staff: " + up);
   console.log("ORNAMENTS OK");
+}
+
+// ---- bongos (the Bo lane) and the standard patterns (groove-library.js)
+{
+  vm.runInThisContext(fs.readFileSync(R + "band/groove-library.js", "utf8"), { filename: "groove-library.js" });
+  const t = "?TimeSig=4/4&Div=8&Tempo=100&Measures=1&H=|--------|&S=|--------|&K=|--------|&Bo=|H-HLL-L-|";
+  const g = G.parse(t); assert.deepEqual(g.warnings, []); assert.equal(lane(g, "Bo"), "H-HLL-L-");
+  assert.equal(G.stringify(g), t, "the Bo lane is written back");
+  assert.equal(G.stringify(G.parse(t.replace("&Bo=|H-HLL-L-|", ""))).includes("Bo="), false, "and left out when empty");
+  assert.equal(lane(G.parse(t.replace("Bo=|H-HLL-L-|", "bo=|h-hll-l-|")), "Bo"), "H-HLL-L-", "lower case read");
+  const ev = G.congaEvents(g)[0]; assert.deepEqual(ev.map(e => e.piece), ["bongoHi", "bongoHi", "bongoLo", "bongoLo", "bongoLo"]); assert.deepEqual(ev.map(e => e.pos), [0, 1, 1.5, 2, 3]);
+  assert.deepEqual(G.toEvents(g)[0], [], "the kit does not play them");
+  assert.deepEqual(G.fromEvents(G.congaEvents(g), { n: 4, d: 4, div: 8 }).lanes.Bo, g.lanes.Bo, "events written back");
+  const abc = G.toAbc(g); assert(/V:C/.test(abc) && /c'2 c'a a2 a2/.test(abc), abc);
+  assert.equal(G.set(g, "Bo", 1, "O"), false, "a bongo has two marks");
+  assert.equal(G.resize(g, { div: 16 }).lanes.Bo.join(""), "H---H-L-L---L---", "kept in time on a finer grid");
+  const L = BandGrooveLibrary; assert(L.ITEMS.length >= 10);
+  assert.deepEqual(L.ITEMS.map(i => i.id).filter((x, i, a) => a.indexOf(x) !== i), [], "ids are unique");
+  for (const it of L.ITEMS){
+    const p = G.parse(it.text); assert.deepEqual(p.warnings, [], it.id); assert(L.SOURCES[it.source] && L.SOURCES[it.source].cite, it.id + " has a source");
+    assert.equal(G.stringify(p), it.text, it.id + " round trip"); assert(/^[RLB-]+$/.test(lane(p, "Stickings")), it.id);
+    assert.equal(L.meterOf(p.n, p.d), it.meter, it.id);
+    assert(G.toAbc(p).includes("V:U"), it.id);
+  }
+  assert.equal(lane(G.parse(L.byId("r-single-paradiddle").text), "Stickings"), "RLRRLRLLRLRRLRLL");
+  assert.deepEqual([L.meterOf(4, 4), L.meterOf(3, 4), L.meterOf(6, 8), L.meterOf(12, 8), L.meterOf(5, 4)], ["duple", "triple", "compound", "compound", "duple"]);
+  console.log("BONGOS AND PATTERNS OK");
 }

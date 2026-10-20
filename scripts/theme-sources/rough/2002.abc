@@ -1,0 +1,10 @@
+X:2002
+%%from edm
+T:Holberg Suite, Op. 40, Str. Orchestra, 1st Movement - Prelude
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2002 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+b4 b6 b2 e4- | e4 z6 (3efg a4- | a4 a6 a2 d4- | d4 z6 (3def g4- | g4 z6 (3^cde f4 |

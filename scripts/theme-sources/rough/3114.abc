@@ -1,0 +1,10 @@
+X:3114
+%%from edm
+T:Trio in E minor and major, 4th Movement, 2nd Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3114 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+F4 A4 A4 B4 | B4 f6 e2 B4 | A2F2 A4 A4 B2c2 | d2e2 f4 b6 a2 | a2f4<e4

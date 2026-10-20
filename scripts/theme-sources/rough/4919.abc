@@ -1,0 +1,10 @@
+X:4919
+%%from edm
+T:Toccato, Intro
+C:Francis Poulenc
+%%composer Poulenc|Francis
+% EDM 4919 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+bag^f e2e2 f2f2 B4 | bag^f e2e2 f2f2 B4 | B2cd e2^f2 g2e2f2d2 | B2cd e2^f2 g2e2 B2

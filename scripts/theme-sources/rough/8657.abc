@@ -1,0 +1,10 @@
+X:8657
+%%from edm
+T:Sonata in E minor, Op. 38, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8657 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+E4 A6 B2 | c2A2 ^G4 e4 | e4 A6 B2 | c2A2 G4 f4 | f4 c6 d2 | e2g4<g4 ^f2 | g2e4<d4

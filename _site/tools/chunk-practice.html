@@ -1,0 +1,1142 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Break a fast passage into small chunks, link them up, and practise at changing tempos until it’s clean at speed.">
+
+<title>Chunk Practice – Music Practice</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/theory-drills.html">
+ <span class="dropdown-text">Theory Drills</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/exercise-builder.html">
+ <span class="dropdown-text">Exercise Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/analysed-scores.html">
+ <span class="dropdown-text">Analysed Scores</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/triads.html">
+ <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/roman-numerals.html">
+ <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/seventh-chords.html">
+ <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/progressions.html">
+ <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/non-chord-tones.html">
+ <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/melodic-analysis.html">
+ <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/pop-forms.html">
+ <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/accompaniment-textures.html">
+ <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/secondary-dominants.html">
+ <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/secondary-diminished.html">
+ <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/mode-mixture.html">
+ <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/neapolitan.html">
+ <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/augmented-sixths.html">
+ <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/jazz-theory.html">
+ <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Chunk Practice</h1>
+</div>
+
+<div>
+  <div class="description">
+    Break a fast passage into small chunks, link them up, and practise at changing tempos until it’s clean at speed.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<style>
+#cp-root { max-width: 980px; margin: 0 auto; --cp-a: rgba(127,127,127,.05); --cp-b: rgba(127,127,127,.10); --cp-on: rgba(37,99,235,.13); --cp-live: rgba(22,163,74,.30); }
+#cp-root .cp-muted { color: var(--bs-secondary-color, #666); font-size: .92rem; }
+#cp-root .cp-row { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: center; margin: .6rem 0; }
+#cp-root .cp-row label { font-size: .92rem; display: inline-flex; align-items: center; gap: .4rem; }
+#cp-root .cp-row .form-select, #cp-root .cp-row .form-control { width: auto; display: inline-block; }
+#cp-root input[type=number] { width: 5em; }
+#cp-root textarea { font-family: ui-monospace, Menlo, monospace; font-size: .85rem; min-height: 8em; }
+#cp-root details { border: 1px solid var(--bs-border-color, #ccc); border-radius: 10px; padding: .5rem .9rem; margin: .6rem 0; }
+#cp-root details[open] > summary { margin-bottom: .4rem; }
+#cp-root summary { cursor: pointer; font-weight: 600; }
+#cp-root .cp-views { display: inline-flex; border: 1px solid var(--bs-border-color, #bbb); border-radius: 999px; overflow: hidden; }
+#cp-root .cp-views button { border: 0; border-radius: 0; padding: .35rem 1rem; background: transparent; color: inherit; }
+#cp-root .cp-views button[aria-pressed=true] { background: #2563eb; color: #fff; }
+#cp-root.is-quick .cp-full-only { display: none !important; }
+#cp-root:not(.is-quick) .cp-quick-only { display: none !important; }
+#cp-score { margin: .8rem 0 .2rem; }
+#cp-score svg { overflow: visible; }
+#cp-score rect.cp-band { stroke: none; transition: fill .12s; }
+#cp-score .cp-band-a { fill: var(--cp-a); } #cp-score .cp-band-b { fill: var(--cp-b); }
+#cp-score rect.cp-band-on { fill: var(--cp-on); }
+#cp-score.is-live rect.cp-band-on { fill: var(--cp-live); }
+#cp-score text.cp-band-n { fill: currentColor; opacity: .35; font: 600 9px system-ui, sans-serif; }
+#cp-score text.cp-band-n.cp-band-on { opacity: .9; }
+#cp-score .abcjs-note { cursor: pointer; }
+#cp-root .cp-card { border: 2px solid var(--bs-border-color, #ccc); border-radius: 14px; padding: 1rem 1.1rem; margin: .8rem 0; }
+#cp-root.is-playing .cp-card { border-color: #2563eb; }
+#cp-root .cp-head { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1rem; flex-wrap: wrap; }
+#cp-root .cp-head h3 { margin: 0; font-size: 1.3rem; }
+#cp-root .cp-big { display: flex; align-items: baseline; gap: .6rem; flex-wrap: wrap; margin: .5rem 0 .3rem; }
+#cp-tempo { font-size: 3.2rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+#cp-root .cp-kind { padding: .15rem .6rem; border-radius: 999px; font-size: .85rem; font-weight: 600; align-self: center; }
+#cp-root .cp-kind:empty { display: none; }
+#cp-root .cp-k-base { background: rgba(37,99,235,.15); }
+#cp-root .cp-k-slow { background: rgba(22,163,74,.18); }
+#cp-root .cp-k-stretch { background: rgba(234,88,12,.2); }
+#cp-root .cp-track { height: 8px; border-radius: 4px; background: rgba(127,127,127,.2); overflow: hidden; margin: .4rem 0; }
+#cp-bar { height: 100%; background: #16a34a; width: 0; transition: width .3s; }
+#cp-root button { border-radius: 8px; border: 1px solid var(--bs-border-color, #bbb); background: var(--bs-body-bg, #fff); color: inherit; padding: .45rem 1rem; }
+#cp-root button:disabled { opacity: .4; }
+#cp-root .cp-primary { background: #2563eb; color: #fff; border-color: #2563eb; }
+#cp-root .cp-yes { background: #16a34a; color: #fff; border-color: #16a34a; }
+#cp-root .cp-no { background: #b91c1c; color: #fff; border-color: #b91c1c; }
+#cp-root .cp-yes, #cp-root .cp-no, #cp-go { font-size: 1.05rem; padding: .55rem 1.2rem; }
+#cp-root .cp-flash { box-shadow: 0 0 0 5px rgba(127,127,127,.35); }
+#cp-root .cp-btns { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .6rem 0; }
+#cp-root .cp-spacer { flex: 1; }
+#cp-root .cp-say { min-height: 1.5em; margin: .3rem 0; font-weight: 600; }
+#cp-root .cp-say-ok { color: #15803d; } #cp-root .cp-say-no { color: #b91c1c; }
+#cp-log { display: flex; flex-wrap: wrap; gap: .35rem; }
+#cp-root .cp-chip { padding: .2rem .5rem; font-size: .85rem; display: inline-flex; flex-direction: column; align-items: center; min-width: 3.2em; }
+#cp-root .cp-chip small { opacity: .7; }
+#cp-root .cp-chip.is-now { outline: 2px solid #2563eb; }
+#cp-root .cp-chip.is-done { background: rgba(22,163,74,.18); }
+#cp-root kbd { font-size: .75em; padding: .05em .35em; margin-left: .3em; background: rgba(0,0,0,.25); color: inherit; }
+#cp-msg { color: #b91c1c; }
+@media (max-width: 560px) { #cp-root .cp-btns > button { flex: 1 1 auto; } #cp-root .cp-spacer { flex-basis: 100%; height: 0; } }
+</style>
+
+<div id="cp-root" class="is-quick">
+  <p class="cp-muted">Fast passages get learned in small pieces. Cut the passage into chunks, play each one at a tempo you can
+  play clean, then link them together and bring the tempo up.</p>
+
+  <div class="cp-row"><span class="cp-views" role="group" aria-label="Mode">
+    <button type="button" data-view="quick" data-midi="off">Quick</button><button type="button" data-view="full" data-midi="off">Full control</button></span>
+    <span class="cp-muted cp-quick-only">Press Play and play along. Every clean pass is a little faster; slip, and it slows a step.</span>
+    <span class="cp-muted cp-full-only">Changing tempos, rhythm variants, your own linking order.</span>
+  </div>
+
+  <details>
+    <summary>The passage</summary>
+    <p class="cp-muted">Paste ABC, or take the piece from the <a href="../tools/notation.html">Notation page</a>.</p>
+    <textarea id="cp-abc" class="form-control" spellcheck="false"></textarea>
+    <div class="cp-row">
+      <button type="button" id="cp-use" class="cp-primary">Use this</button>
+      <button type="button" id="cp-from-nt">From the Notation page</button>
+      <button type="button" id="cp-reset">Example</button>
+      <span id="cp-msg"></span>
+    </div>
+  </details>
+
+  <div class="cp-row">
+    <label>Chunk size <select id="cp-per" class="form-select form-select-sm"><option value="0.5">½ beat</option><option value="1">1 beat</option><option value="2">2 beats</option>
+      <option value="4">4 beats</option><option value="8">8 beats</option></select></label>
+    <label>Target tempo <input type="number" id="cp-target" class="form-control form-control-sm" min="20" max="400"></label>
+    <label><input type="checkbox" id="cp-keys" class="form-check-input"> Grade me from my MIDI keyboard</label>
+    <span class="cp-muted" id="cp-keys-msg"></span>
+  </div>
+
+  <details class="cp-full-only">
+    <summary>Linking and tempos</summary>
+    <div class="cp-row">
+      <label>Order <select id="cp-order" class="form-select form-select-sm">
+        <option value="forward">Link forwards (1, 2, 1–2, 3, 2–3, 1–3 …)</option>
+        <option value="backward">Link backwards (from the last chunk)</option>
+        <option value="each">Each chunk, then the whole</option></select></label>
+      <label><input type="checkbox" id="cp-land" class="form-check-input"> End on the next chunk's first note</label>
+    </div>
+    <div class="cp-row">
+      <label>Start at <select id="cp-startpct" class="form-select form-select-sm"><option>40</option><option>50</option><option>60</option><option>70</option><option>80</option></select> % of the target</label>
+      <label>Step <input type="number" id="cp-stepsize" class="form-control form-control-sm" min="1" max="40"> bpm</label>
+      <label>Clean tries in a row <input type="number" id="cp-need" class="form-control form-control-sm" min="1" max="10"></label>
+      <label>Tempos <select id="cp-mode" class="form-select form-select-sm"><option value="varied">Changing (slow, working, stretch)</option><option value="steady">Steady climb</option></select></label>
+    </div>
+    <div class="cp-row">
+      <label><input type="checkbox" id="cp-loop" class="form-check-input"> Keep the click going between tries</label>
+      <label>If I don't answer <select id="cp-silent" class="form-select form-select-sm"><option value="again">play it again</option><option value="clean">count it clean</option></select></label>
+    </div>
+  </details>
+
+  <div id="cp-score"></div>
+  <p class="cp-muted" id="cp-count"></p>
+
+  <div class="cp-card">
+    <div class="cp-head"><h3 id="cp-step-name" class="anchored"></h3><span class="cp-muted" id="cp-step-of"></span></div>
+    <div class="cp-big"><span id="cp-tempo"></span><span class="cp-muted">bpm</span><span id="cp-kind" class="cp-kind"></span></div>
+    <div class="cp-track"><div id="cp-bar"></div></div>
+    <p id="cp-run" class="cp-muted" style="margin:.2rem 0"></p>
+    <div class="cp-btns">
+      <button type="button" id="cp-go" class="cp-primary">▶ Play</button>
+      <button type="button" id="cp-listen">Listen</button>
+      <label class="cp-full-only">Rhythm <select id="cp-rhythm" class="form-select form-select-sm d-inline-block w-auto"><option value="as">As written</option><option value="ls">Long–short</option><option value="sl">Short–long</option></select></label>
+    </div>
+    <div class="cp-btns">
+      <button type="button" id="cp-yes" class="cp-yes" data-midi="note:108">Clean<kbd>Y</kbd></button>
+      <button type="button" id="cp-no" class="cp-no" data-midi="note:21">Not yet<kbd>N</kbd></button>
+      <span class="cp-spacer"></span>
+      <button type="button" id="cp-prev">← Back</button>
+      <button type="button" id="cp-next">Next step →</button>
+    </div>
+    <div id="cp-say" class="cp-say" aria-live="polite"></div>
+    <details class="cp-help">
+      <summary class="cp-muted">Keys, pedals and what "clean" means</summary>
+      <p class="cp-muted"><kbd>Space</kbd> play / stop, <kbd>M</kbd> listen, <kbd>Y</kbd> clean, <kbd>N</kbd> not yet, <kbd>←</kbd> <kbd>→</kbd> steps.
+      "Clean" means right notes, right rhythm, no tension.</p>
+      <p class="cp-muted">Pedals: Clean is the top key of an 88-key keyboard (C8) and Not yet the bottom key (A0). Change them, or bind a
+      footswitch, with <b>MIDI buttons</b> in the top bar.</p>
+      <p class="cp-muted cp-quick-only">In Quick, saying nothing counts as clean, so one pedal (Not yet) is all you need.</p>
+      <p class="cp-muted cp-full-only">With the click going round, answer any time during the pass or in the clicks after it. A missed stretch try costs
+      nothing; a missed working try drops the tempo a step.</p>
+    </details>
+  </div>
+
+  <details>
+    <summary>Best clean tempo for each step</summary>
+    <div id="cp-log"></div>
+    <div class="cp-row"><button type="button" id="cp-clearlog">Clear</button>
+    <span class="cp-muted">Kept in this browser for this passage. Click a step to go to it.</span></div>
+  </details>
+
+  <details>
+    <summary>For teachers: how it works</summary>
+    <ol class="cp-muted">
+      <li><b>Quick.</b> Chunks link forwards; the click never stops; each clean pass is about a fifth of the way from 70% of the target to the
+      target, a slip a step back. Saying nothing is a clean pass, so a student needs only to own up to the misses.</li>
+      <li><b>Chunks.</b> Small enough to play clean on the first or second try. Ending on the next chunk's first note practises the joins.</li>
+      <li><b>Linking.</b> Forwards: each new chunk alone, then with the one before, then everything so far. Backwards does the same from the end,
+      so the end of the passage gets the most practice.</li>
+      <li><b>Changing tempos</b> (Full control). Each step cycles a working try, a slow try (two steps under), a working try, and a stretch (a step over).
+      Clean working tries in a row raise the tempo a step; a clean stretch becomes the new working tempo. A linked step starts a little under the
+      slowest of its chunks' best.</li>
+      <li><b>Keyboard grading.</b> With a MIDI keyboard each pass is checked note by note: the right key, within about a third of the shortest
+      note's length (60–140 ms) of the click; a missed, wrong or extra note is not clean. A Clean / Not yet press overrides it.</li>
+      <li><b>Rhythm variants.</b> Long–short and short–long reshape pairs of equal notes, so each note gets a turn to be the long one.</li>
+    </ol>
+  </details>
+</div>
+
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/abc-core.js"></script>
+<script src="../apps/shared/abc-events.js"></script>
+<script src="../apps/shared/notation-doc.js?v=10"></script>
+<script src="../apps/shared/chunk-practice.js?v=3"></script>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p><strong>For students</strong></p>
+<p>Kageyama, Noa. <em>The Bulletproof Musician</em>. <a href="https://bulletproofmusician.com/">bulletproofmusician.com/</a>. A performance psychologist’s articles on practice research, written for players.</p>
+<p>Lam, Ann. “Chunking and Piano.” <em>Substack</em>, <a href="https://annlam.substack.com/p/chunking-and-piano">annlam.substack.com/p/chunking-and-piano</a>.</p>
+<p>“Rhythm Practice Done Right.” <em>Practising the Piano</em>, <a href="https://practisingthepiano.com/rhythm-practice-done-right/">practisingthepiano.com/rhythm-practice-done-right/</a>.</p>
+<p><strong>For teachers</strong></p>
+<p>Allingham, Emma, and Clemens Wöllner. “Slow Practice and Tempo-Management Strategies in Instrumental Music Learning: Investigating Prevalence and Cognitive Functions.” <em>Psychology of Music</em>, 2022, doi:10.1177/03057356211073481. <a href="https://doi.org/10.1177/03057356211073481">doi.org/10.1177/03057356211073481</a>. Abstract and the university’s summary read.</p>
+<p>Allingham, Emma. <em>Slow Practice in Instrumental Music Learning</em>. 2022. Universität Hamburg, PhD dissertation, <a href="https://ediss.sub.uni-hamburg.de/handle/ediss/9763">ediss.sub.uni-hamburg.de/handle/ediss/9763</a>. Summary read; title as listed there may differ slightly.</p>
+<p>Barry, Nancy H. “The Effects of Practice Strategies, Individual Differences in Cognitive Style, and Gender upon Technical Accuracy and Musicality of Student Instrumental Performance.” <em>Psychology of Music</em>, vol.&nbsp;20, no. 2, 1992, pp.&nbsp;112–23. <a href="https://journals.sagepub.com/doi/10.1177/0305735692202002">journals.sagepub.com/doi/10.1177/0305735692202002</a>. Abstract read.</p>
+<p>Carter, Christine E., and Jessica A. Grahn. “Optimizing Music Learning: Exploring How Blocked and Interleaved Practice Schedules Affect Advanced Performance.” <em>Frontiers in Psychology</em>, vol.&nbsp;7, 2016, article 1251. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC4989027">pmc.ncbi.nlm.nih.gov/articles/PMC4989027</a>.</p>
+<p>Chaffin, Roger, and Gabriela Imreh. “‘Pulling Teeth and Torture’: Musical Memory and Problem Solving.” <em>Thinking and Reasoning</em>, vol.&nbsp;3, no. 4, 1997, pp.&nbsp;315–36. <a href="https://musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf">musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf</a>.</p>
+<p>Duke, Robert A., Amy L. Simmons, and Carla Davis Cash. “It’s Not How Much; It’s How: Characteristics of Practice Behavior and Retention of Performance Skills.” <em>Journal of Research in Music Education</em>, vol.&nbsp;56, no. 4, 2009, pp.&nbsp;310–21. Read through a summary.</p>
+<p>Stambaugh, Laura A. “When Repetition Isn’t the Best Practice Strategy: Effects of Blocked and Random Practice Schedules.” <em>Journal of Research in Music Education</em>, vol.&nbsp;58, no. 4, 2011, pp.&nbsp;368–83. Abstract read.</p>
+<p>Wightman, Dennis C., and Gavan Lintern. “Part-Task Training of Tracking for Manual Control.” <em>Human Factors</em>, vol.&nbsp;27, no. 3, 1985, pp.&nbsp;267–83. Read through later reviews that cite it.</p>
+</div>
+<!-- /works-cited -->
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

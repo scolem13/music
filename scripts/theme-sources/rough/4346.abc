@@ -1,0 +1,13 @@
+X:4346
+%%from mtd
+T:Serenade in D, K 250, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5995, Barlow & Morgenstern M720, EDM 4346 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=148
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d | g g b | a a c' | ^f f a | g2 |

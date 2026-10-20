@@ -1,6 +1,6 @@
 // Voice-led guitar triads (styles "triadvl" and "uppervl"): tones, one string set, small motion.
 const assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 require(R + "voicings.js"); require(R + "band/harmony.js");
 const V = ChordVoicings, H = BandHarmony;
 const pcs = m => m.map(x => x % 12).sort((a, b) => a - b).join(",");

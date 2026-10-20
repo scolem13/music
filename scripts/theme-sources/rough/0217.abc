@@ -1,0 +1,10 @@
+X:217
+%%from edm
+T:Italian Concerto, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0217 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a/2g/2 a4 gfe d_d=df | f/2e/2d2<e2 gab2 _d=de |

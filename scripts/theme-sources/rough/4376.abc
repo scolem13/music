@@ -1,0 +1,10 @@
+X:4376
+%%from edm
+T:Serenade in C minor, K 388, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4376 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+C16 | E8 G8 | c8- c3cc/2d/2c/2d/2=Bc | e8 _G8 | G8

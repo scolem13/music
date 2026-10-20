@@ -1,0 +1,10 @@
+X:500
+%%from edm
+T:Sonata No. 4, in B-flat, Piano, 1st Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0500 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d3e f2d2 c3B | A3B/2c/2 B4 z3 d | c3d/2e/2 d3B g4 | z/2 e3-e/2 d4

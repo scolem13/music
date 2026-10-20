@@ -1,0 +1,10 @@
+X:2602
+%%from edm
+T:Quartet in D, Op. 76, No. 5, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2602 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A,4 D4 F4 | A4 A4 G4 | F4 z/2 E3-E/2 D4 | E4 E2F2 D4 | d4 z/2 B3-B/2 ^A4 | B4 ^G2A2 D4 |

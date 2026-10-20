@@ -1,0 +1,12 @@
+X:9670
+%%from edm
+T:Petite Suite, 2 Pianos - Menuet, 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9670 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/s-PtlUOnkBo?t=7m37s
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+a4 e'4 e'4 | e'd'c'd' e'8 | b2c'2 d'2b2 aba=f | a12 |

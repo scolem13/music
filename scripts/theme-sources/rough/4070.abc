@@ -1,0 +1,10 @@
+X:4070
+%%from edm
+T:Concerto in E-flat, K 447, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4070 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+B,2E2E2 E2E2E2 | E2 E4 =E2F2 z2 | B,2F2F2 F2F2F2 | F2 F4 _G2=G2

@@ -1,0 +1,10 @@
+X:2050
+%%from edm
+T:Quartet in G minor, Op. 27, 3rd Movement - Intermezzo, 1st Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2050 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g8 g4- | g4 g6 _g2 | d8 d4- | d4 d6 _d2 | A8 A4- | A12- | A2D2A2d2d2a2 | d'4

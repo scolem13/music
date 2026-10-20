@@ -1,0 +1,10 @@
+X:4076
+%%from edm
+T:Concerto in A, K 414, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4076 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+A4 A4 c4 e4 | e2<d2 c2<B2 A2<G2 F2<G2 | B4 B4 d4 f4 | e6 c2 e4

@@ -1,0 +1,13 @@
+X:6468
+%%from mtd
+T:Sonata, Op. 40, 1st Movement - 2nd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8099, Barlow & Morgenstern S870b, EDM 6468 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=143
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:B
+z f2 e | d3 c | d3 c | f2 B2- | B2 B A | =A2 c2 | e2 c'2 | g4 |

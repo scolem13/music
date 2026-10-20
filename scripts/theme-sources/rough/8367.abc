@@ -1,0 +1,11 @@
+X:8367
+%%from edm
+T:Quintet in E, 2nd Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8367 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+B3/2B/2e2 e4 f3/2d/2 z/2 e3/2 e3 z/2 e/2 | fe/2d/2 z/2 e/2>d/2e/2 z/2 f/2>e/2d/2 z/2 e/2>d/2e/2 z/2 f/2>e/2d/2ed/2e/2 B2

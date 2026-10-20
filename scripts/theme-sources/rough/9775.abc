@@ -1,0 +1,11 @@
+X:9775
+%%from edm
+T:Concerto, Vn. and Orchestra, 6th Theme
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9775 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+(3a4-ad'4- d' c'4- c' a2 e4 | d4<e4 g4 a2b2- | b2a2 e4 d4<c4 |

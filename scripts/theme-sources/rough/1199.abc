@@ -1,0 +1,10 @@
+X:1199
+%%from edm
+T:Concerto in A minor, Op. 53, Vn. and Orchestra, 1st Movement - 1st Theme A
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1199 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+eA a8- a2 z4 | eA a8- a2 z4 | eA a4 e4 c2 c2ed | cB A4 z2 B2 c4 z2 | d2 e12- e2- | e2

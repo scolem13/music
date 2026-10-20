@@ -1,0 +1,10 @@
+X:5815
+%%from edm
+T:Sonatas, Longo 499 in G minor, "Cat Fugue"
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5815 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+G6 B6 | e6 _g6 | b6 _d'6 | d'2c'2b2 a2g2_g2 | g2

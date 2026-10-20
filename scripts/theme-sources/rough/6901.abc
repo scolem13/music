@@ -1,0 +1,12 @@
+X:6901
+%%from mtd
+T:Morgenblatter Waltz, Op. 279, 5th Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8530, Barlow & Morgenstern S1292, EDM 6901 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=194
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E,/G,/ | B, z B, | B, z/ E/D/C/ | C2 B, | B, z E,/G,/ | B,2 A, | A, z D,/F,/ | A,2 G, | G, |

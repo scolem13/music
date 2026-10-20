@@ -1,0 +1,10 @@
+X:8101
+%%from edm
+T:Sonata No. 1 in C, Op. 24, 3rd Movement - Pt. 2
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8101 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+e2c2 B4 g2c2 | B4 b2c2 B4 | c'2c2 B4

@@ -1,0 +1,11 @@
+X:9366
+%%from edm
+T:Sonata in G minor, Didone Abbandonata, Op. 50, No. 3 - 2nd Movement
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9366 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Bb
+z2 g2g2 g2g2g2 | g2_g2g2 z2 e2e2 | e2d2d2 z2 b2b2 | b2_g2 g4 =g_ga=g/2e/2 | _d2=d2d2

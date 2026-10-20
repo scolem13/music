@@ -1,0 +1,14 @@
+X:5889
+%%from mtd
+T:Impromptus, Op. 90, No. 4, in A-flat, 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7521, Barlow & Morgenstern S302, EDM 5889 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/KdnETWq7rcY
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=143
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+_c'e'c'a ac'ae eae_c | _cecA AcAF B2 z2 |

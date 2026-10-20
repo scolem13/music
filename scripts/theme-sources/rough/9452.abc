@@ -1,0 +1,10 @@
+X:9452
+%%from edm
+T:Concerto Grosso in G minor, Op. 6, No. 8, Christmas Concerto, 2nd Movement
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9452 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e2 e'4 d'2 eg c'4 b2 | ce a4 g2 Ac f4 e2- | e2d2 c3f d2

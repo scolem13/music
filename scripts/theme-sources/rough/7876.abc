@@ -1,0 +1,10 @@
+X:7876
+%%from edm
+T:Parsifal, Opera, Prelude, 1st Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7876 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+z4 A6 c4 e2- | e3f f6 g4 a2 | g4 c3=d e8- | e2A2B2c2 d8- | d2 c4 B8 c2 | c12

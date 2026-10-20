@@ -1,0 +1,10 @@
+X:8692
+%%from edm
+T:Sonata in A, Op. 100, Vn. and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8692 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+c'4 g4 a4 | b6 f2 g2f2 | e4 a4 c'4 | f'8 c'4 | f'6 e'2 d'2c'2 |

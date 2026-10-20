@@ -1,0 +1,10 @@
+X:1272
+%%from edm
+T:Serenade for Strings, in E, Op. 22, 4th Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1272 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+a4 g4 | c6 c2 | f4 e3f/2e/2 | A6 A2 | d4 c4 | B4- Bc^AB | c4 e3d | c6

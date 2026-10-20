@@ -1,0 +1,10 @@
+X:216
+%%from edm
+T:Italian Concerto, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0216 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+z2 f2 A2B2 | c4 d4 | c2 f4 _ed | d2c2

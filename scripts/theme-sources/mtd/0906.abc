@@ -1,0 +1,12 @@
+X:906
+T:Sonata No. 17, in D minor, Op. 31, No. 2, 2nd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0900, Barlow & Morgenstern B782, EDM 0906 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=46
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d7/8e/8 f[K:bass] B, | A,3 |[K:treble] a7/8b/8 c' E | D3 |

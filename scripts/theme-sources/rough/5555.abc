@@ -1,0 +1,10 @@
+X:5555
+%%from edm
+T:Symphony No. 4, Op. 53, 2nd Movement
+C:Albert Roussel
+%%composer Roussel|Albert
+% EDM 5555 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z2 g'2 d'2e'2 b2d'2^a2=a2 | (3^g2a2c'2 e'2=g'2 b'2 ^d'4 e'2 | f'2 ^a4 d'2 ^c'2=a3 d'f'a' | c''4 g'4

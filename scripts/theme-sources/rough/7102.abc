@@ -1,0 +1,10 @@
+X:7102
+%%from edm
+T:Le Baiser de la Fee, Ballet on Tchaikovsky Themes, 1st Movement - Berceuse de la Tempete, 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7102 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+c'2f'2 =e'4 f'4 | c'8 b4 | a2b2 c'4 c'4 | f8 =e4 | f2g2 a4 a4 | b8 f4 | f2g2 a4 a4 | b8 f4 |

@@ -1,0 +1,10 @@
+X:4929
+%%from edm
+T:Alexander Nevsky, Op. 78, 4th Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4929 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e4 e4 _d4 _g4 | =e2_e2 _d4 =B2d2 e2 z2 | e4 e4 _d4 _g4 | =e2_e2 _d4 e2d2 =B2

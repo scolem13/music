@@ -1,0 +1,10 @@
+X:1612
+%%from edm
+T:Nocturne No. 3, Piano
+C:John Field
+%%composer Field|John
+% EDM 1612 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Ab
+A6 B6 | c6 e2d2B2 | c6 B6 | A6 B2F2G2 | A6 =A4 B2 | (3=B4-Bc4- c e4- ed2 |

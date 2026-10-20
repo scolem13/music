@@ -1,0 +1,11 @@
+X:7301
+%%from edm
+T:Romance, Op. 23, 2nd Theme
+C:Karol Szymanowski
+%%composer Szymanowski|Karol
+% EDM 7301 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:D
+c4 e2 =f6- | =f4 ^f4<c'4 | (3=c'4-c'^c'4- c' e'4- e'^d'2 | d'3=c'^a2 =a4 =c2 |

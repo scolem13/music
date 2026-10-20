@@ -1,0 +1,13 @@
+X:1144
+%%from mtd
+T:Symphony No. 9, in D minor, Op. 125, 1st Movement - 4th Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1137, Barlow & Morgenstern B1019, EDM 1144 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro ma non troppo e un poco maestoso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=73
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+f=e/>e/ f z | g^f/>f/ g z | g3 a/b/ | d2 c/d/_e | f |

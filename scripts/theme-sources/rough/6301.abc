@@ -1,0 +1,10 @@
+X:6301
+%%from edm
+T:Quintet in E-flat, Op. 44, 3rd Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6301 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Ab
+e=e_ed =BdBA | a=aa_g =eged | B=B_BA GAGe |

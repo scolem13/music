@@ -1,0 +1,10 @@
+X:8830
+%%from edm
+T:Variations on a Theme of Haydn, Op. 56a, Orchestra
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8830 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+d'3e' d'2d'2 | e'4 d'4 | c'4 b4 | c'3d' e'c'd'b | d'4 c'abc' | d'3e' d'2d'2 | e'4 d'4 |

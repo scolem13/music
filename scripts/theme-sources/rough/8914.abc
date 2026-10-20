@@ -1,0 +1,10 @@
+X:8914
+%%from edm
+T:Symphony No. 4 in E-flat, 3rd Movement - 3rd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8914 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+d2g2b2a2g2d2 | g2a2 b8 | d2=b2_b2a2g2f2 | g2a2 d8 |

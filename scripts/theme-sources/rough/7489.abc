@@ -1,0 +1,10 @@
+X:7489
+%%from edm
+T:Francesca da Rimini, Op. 32, 2nd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7489 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:G
+z2 B2 c4 ^A2B2 z2 g2 c4 A2B2 | z2 b2 c'4 ^a2b2 z2 g'2 c'4 a2b2 | z2 e'2 f'4 ^d'2e'2 z2 c''2 f'4 d'2e'2 |

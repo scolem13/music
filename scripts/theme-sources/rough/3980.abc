@@ -1,0 +1,10 @@
+X:3980
+%%from edm
+T:Sinfonietta in B minor, Op. 32, No. 2, 2nd Movement - Theme for Variations
+C:Nicolas Miaskovsky
+%%composer Miaskovsky|Nicolas
+% EDM 3980 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+A,4 D8 F4 | F4 E4 D4 A4- | A4 ^G4 =G4 d4 | A16 | A4 d2f2 e4 c2A2 |

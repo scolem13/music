@@ -1,0 +1,10 @@
+X:8383
+%%from edm
+T:Sonata No. 6 in A, 2nd Movement - 2nd Theme
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8383 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+b4 c'4 ^d'4 e'4 | z/2 e'3/2^d'c' z/2 b3/2ag a2a2 a/2b/2a/2b/2g2 |

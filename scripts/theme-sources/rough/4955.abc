@@ -1,0 +1,10 @@
+X:4955
+%%from edm
+T:Concerto No. 1, Op. 19, 2nd Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4955 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+G,2A2G2A2 G,2G2F2G2 | G,2F2E2F2 z/2 G3/2F2 E2D2 | A2A,2^A,2=A2 ^A2A,2B,2A2 | B2^C2F2A,2

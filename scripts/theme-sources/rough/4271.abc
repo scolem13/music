@@ -1,0 +1,10 @@
+X:4271
+%%from edm
+T:Quartet in E-flat, K 428, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4271 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+E8 e8 | =A12 B4 | =B4 c4 =E4 F4 | A8 G4

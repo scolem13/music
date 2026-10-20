@@ -1,0 +1,10 @@
+X:4478
+%%from edm
+T:Sonata in E-flat, K 481, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4478 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+f4 d4 B4 | G4 g4 e4 | c4 d4 e4 | d2c2 c4

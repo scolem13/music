@@ -1,0 +1,10 @@
+X:3526
+%%from edm
+T:Years of Travel, Piano, Second Year, Sonnet 104 of Petrarch
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3526 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+g8 g4 g4 | g4- g3/2f2e/2 e4 z2 E2 | e2 e'4 d'4 =g2 g3c' | b6 ^a2 =a4

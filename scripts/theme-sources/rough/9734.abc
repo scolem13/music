@@ -1,0 +1,11 @@
+X:9734
+%%from edm
+T:Coppelia, Act II, Musique des Automates
+C:Clement Philibert Leo Delibes
+%%composer Delibes|Clement Philibert Leo
+% EDM 9734 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:E
+gbgb abfb | gbgb abfb | gabc' bc'd'e' | f'g'f'g' f'd'ba |

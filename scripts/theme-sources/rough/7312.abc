@@ -1,0 +1,10 @@
+X:7312
+%%from edm
+T:Concerto in D, 1st Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7312 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+d4 f3e d4 A4 | z2 B2 B3/2c/2dc/2B/2 B/2c/2B/2c/2B/2c/2B/2c/2 z/2 A3-A/2 | d4 f3e2<d2c/2d/2 A4 | z2 G2 G3/2A/2BA/2G/2 G4 z/2 F3-F/2 |

@@ -1,0 +1,10 @@
+X:7872
+%%from edm
+T:Die Meistersinger von Nurnberg, Overture, 5th Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7872 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+b4 e2g4<B4 cd | e2g2 b^a=ac e4 defg | c4- cdef B4

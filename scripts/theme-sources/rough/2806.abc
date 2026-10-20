@@ -1,0 +1,10 @@
+X:2806
+%%from edm
+T:Symphony in C, 2nd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2806 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c3G G4 z4 | e3c c4 z4 | g4 e4 c2e2 | e2c2 d2B2 c4 |

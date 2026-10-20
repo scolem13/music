@@ -1,0 +1,13 @@
+X:1166
+%%from mtd
+T:Trio in C minor, Op. 1, Str., 4th Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1159, Barlow & Morgenstern B1041, EDM 1166 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Prestissimo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=251
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+G4 A3 G | F4 G4 | A4 B3 A | G4 A4 | B4 c3 d | e4 E4 |

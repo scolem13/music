@@ -1,0 +1,11 @@
+X:7991
+%%from edm
+T:The Skaters, Op. 183, No. 3, 1st Theme
+C:Emil Waldteufel
+%%composer Waldteufel|Emil
+% EDM 7991 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+c'12 | e12 | e12 | ^d12 | b12 | d12 | d12 | c12 | B8 c4 | d4 g6 f2 | f12 | =f12 |

@@ -1,0 +1,11 @@
+X:7654
+%%from edm
+T:La Oracion del Torero, 4th Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7654 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+z2 d4<e4 g2 | ^f2a4<d'4 ^c'2 | c'2d'4<b4 ^a2 | a6 b2 a2^a2 | a6 b2 a2^a2 | a2^a2c'2a2c'2a2 |

@@ -1,0 +1,10 @@
+X:46
+%%from edm
+T:Trio in D minor, Op. 32, 4th Movement - 1st Theme
+C:Anton Arensky
+%%composer Arensky|Anton
+% EDM 0046 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A3-A/2B/2 A8 | A3-A/2c/2 A8 | c3-c/2d/2 c8 | c3-c/2e/2 c8 | E3F2<G2A2<B2A | A3

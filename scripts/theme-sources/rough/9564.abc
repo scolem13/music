@@ -1,0 +1,11 @@
+X:9564
+%%from edm
+T:Les Tambourins
+C:François Couperin
+%%composer Couperin|François
+% EDM 9564 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+G2d2 d2c2 z/2 z/2 BG2 | d2g2 fgaf g/2f/2g/2a/2g2 |

@@ -1,0 +1,11 @@
+X:8203
+%%from edm
+T:Romeo and Juliet, Overture, Op. 17, 4th Movement, 2nd Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8203 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+A4 d4 f4 | _d4 =d4 a4 | e4 b8 | a8 _a4 | e4 g8 | e2f2 g8 | e2f2g2e2f2g2 | a8- a2

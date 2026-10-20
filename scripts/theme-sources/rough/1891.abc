@@ -1,0 +1,10 @@
+X:1891
+%%from edm
+T:Orpheus and Eurydice, Overture, Dance of the Happy Spirits
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1891 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c4 A2B2 c2f2 | f4 e4 d4 | c4 d2c2 B2c2 | z/2 A6- A3/2 G4 | f2 z2 A2 z2 d2 z2 | c4 E4 F4 | G2B2 A4 G2F2 | F12 |

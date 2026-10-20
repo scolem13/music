@@ -1,0 +1,10 @@
+X:3293
+%%from edm
+T:Sonata, The Combat Between David and Goliath, 1st Theme, The Bravado of Goliah
+C:Johann Kuhnau
+%%composer Kuhnau|Johann
+% EDM 3293 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+E4 z4 G,3G,2<A,2A, | B,4 z4 D3D2<E2E | F4 z4 C3C2<D2D | E3E2<^F2F G

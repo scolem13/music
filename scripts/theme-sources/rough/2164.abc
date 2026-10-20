@@ -1,0 +1,10 @@
+X:2164
+%%from edm
+T:Concerto in F, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2164 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+f3c2<c2c2<c2c2<c2c | a3f2<f2f2<f2f2<f2f | c'3a2<a2a2<a2a2<a2a |

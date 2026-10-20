@@ -1,0 +1,12 @@
+X:7658
+%%from edm
+T:La Procession del Rocio, La Procession, 1st Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7658 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/j7SEB2uqJOw?t=223
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+c'/2d'/2c'/2b/2a3 bc'e' | d'b d'4- d'e' | c'/2d'/2c'/2b/2a3 bc'e' | d'c' z/2 c'/2b2<d'2c' |

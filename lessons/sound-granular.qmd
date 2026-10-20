@@ -55,4 +55,20 @@ and the freeze button on the [reverb page](sound-reverb.qmd) use grains too.
 
 - [Sound 11: The equaliser](sound-eq.qmd), the first of the effects.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Granular synthesis." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Granular_synthesis](https://en.wikipedia.org/wiki/Granular_synthesis).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Roads, Curtis. *Microsound*. MIT Press, 2001.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

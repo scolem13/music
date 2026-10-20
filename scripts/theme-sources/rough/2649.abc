@@ -1,0 +1,13 @@
+X:2649
+%%from mtd
+T:Sonata in D, No. 37, 3rd Movement, 3rd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4310, Barlow & Morgenstern H529, EDM 2649 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Presto ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=117
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d | g/f/a/g/ bg | fa dd' | z b z c' | z ba |

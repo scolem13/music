@@ -1,5 +1,5 @@
 const fs=require('fs'),vm=require('vm'),assert=require('assert');
-const R='/Users/sean.coleman/Projects/everything-music-site/apps/shared/';
+const R=(require("path").join(__dirname, "../../..") + "/apps/shared/");
 for(const f of['tune-chart.js','voicings.js','band/harmony.js','band/comp.js'])vm.runInThisContext(fs.readFileSync(R+f,'utf8'));
 const {mulberry32,CH,abcOf}=require('../agent-a/load.js');
 const H=BandHarmony,nn=H.noteName,m12=n=>((n%12)+12)%12;

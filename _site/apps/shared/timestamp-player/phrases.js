@@ -74,7 +74,65 @@
     var ph = phrases[i], li = Math.max(0, Math.min(leadIn || 0, maxLeadIn(grid, phrases, i)));
     return { start: backFrom(grid, ph.from, li), end: endOf(grid, ph.to), leadIn: li };
   }
-  var api = { split: split, backFrom: backFrom, endOf: endOf, maxLeadIn: maxLeadIn, loopOf: loopOf };
+  // Cut each section of a Notation doc (NotationDoc D) into a chunk per phrase: phrases from split(), matched to the doc's
+  // sections by name and occurrence. Chunks without notes keep their words on the section's first chunk. Relabels (I1a, V1b ...).
+  function chunkDoc(doc, D, phrases) {
+    var secs = D.sections(doc), count = {}, jobs = [];
+    secs.forEach(function (sc) {
+      var low = sc.name.trim().toLowerCase(), nth = count[low] = (count[low] == null ? 0 : count[low] + 1);
+      var cuts = phrases.filter(function (ph) { return ph.name.trim().toLowerCase() === low && ph.nth === nth && ph.offset > 0; })
+                        .map(function (ph) { return ph.offset; });
+      if (cuts.length) jobs.push({ sc: sc, cuts: cuts });
+    });
+    for (var j = jobs.length - 1; j >= 0; j--) {                 // from the back, so earlier sections' indices stay put
+      var sc = jobs[j].sc, end = sc.end, words = doc.chunks[sc.start].words;
+      jobs[j].cuts.slice().reverse().forEach(function (cut) {
+        var acc = 0;
+        for (var ci = sc.start; ci < end; ci++) {
+          var mi = D.meterInfo(D.at(doc, ci).meter) || D.meterInfo('4/4'), bars = D.info(doc, ci).bars;
+          if (cut > acc + 1e-6 && cut < acc + bars - 1e-6) {
+            if (!D.splitAt(doc, ci, (cut - acc) * mi.barQ)) end++;
+            break;
+          }
+          acc += Math.ceil(bars - 1e-6);
+        }
+      });
+      var noNotes = true;
+      for (var k = sc.start; k < end; k++) if (D.info(doc, k).rhythm) noNotes = false;
+      if (noNotes) for (var k2 = sc.start; k2 < end; k2++) doc.chunks[k2].words = k2 === sc.start ? words : '';
+    }
+    D.chunkLabels(doc);
+    return doc;
+  }
+  // The tapped tempo onto a Notation doc: doc.tempo the first section's (else the song's) (sections: [{ name, bar, bars }], grid as above), and a
+  // section's first chunk its own tempo where it differs by 3 bpm or more from the one before it.
+  function tempos(doc, D, sections, grid) {
+    function bpmOf(from, to) {
+      var beats = 0, secs = 0;
+      for (var b = from; b < to && b + 1 < grid.bars.length; b++) { beats += grid.beats[b]; secs += grid.bars[b + 1] - grid.bars[b]; }
+      return secs > 0 ? beats * 60 / secs : null;
+    }
+    var all = bpmOf(0, grid.bars.length) || (grid.beatLen > 0 ? 60 / grid.beatLen : null);
+    if (!all) return doc;
+    doc.tempo = Math.round(all);
+    var count = {}, now = doc.tempo, byKey = {};
+    sections.forEach(function (s) {
+      var low = s.name.trim().toLowerCase(), nth = count[low] = (count[low] == null ? 0 : count[low] + 1);
+      byKey[low + '#' + nth] = s;
+    });
+    count = {};
+    D.sections(doc).forEach(function (sc) {
+      var low = sc.name.trim().toLowerCase(), nth = count[low] = (count[low] == null ? 0 : count[low] + 1), s = byKey[low + '#' + nth];
+      var b = s && s.bars > 0 ? bpmOf(s.bar, s.bar + s.bars) : null;
+      if (!b) return;
+      b = Math.round(b);
+      if (sc.start === 0) { doc.tempo = now = b; return; }
+      if (Math.abs(b - now) >= 3) { doc.chunks[sc.start].tempo = b; now = b; }
+      else if (doc.chunks[sc.start].tempo) delete doc.chunks[sc.start].tempo;
+    });
+    return doc;
+  }
+  var api = { tempos: tempos, chunkDoc: chunkDoc, split: split, backFrom: backFrom, endOf: endOf, maxLeadIn: maxLeadIn, loopOf: loopOf };
   global.TsPhrases = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (typeof document === 'undefined') return;
@@ -167,8 +225,43 @@
       if (!win || e.source !== win) return;
       var c = w.buildDoc();
       if (!c) { say('Nothing to send yet: paste the words and chords, then Convert.'); return; }
-      win.postMessage({ type: 'nt-doc', doc: c.doc, title: c.title, tempo: c.bpm, host: 'Timestamp Notes' }, location.origin);
+      win.postMessage({ type: 'nt-doc', doc: asChunks(c.doc), title: c.title, tempo: c.bpm, host: 'Timestamp Notes' }, location.origin);
       win.postMessage(lastGoto, location.origin);
+    });
+    // phrases as chunks (the Send to Notation button and the doc sent with Notate both use this)
+    // the player's Speed row shows the tempo it plays at: the tapped bars' (3 averaged) where the recording is
+    if (player) player._btpBpm = function (t) {
+      var g = grid(); if (!g || g.bars.length < 2) return null;
+      var b = -1; for (var i = 0; i < g.bars.length; i++) if (g.bars[i] <= t + 1e-6) b = i;
+      if (b < 0) b = 0;
+      var a = Math.max(0, b - 1), z = Math.min(g.bars.length - 2, b + 1), beats = 0, secs = 0;
+      for (var k = a; k <= z; k++) { beats += g.beats[k]; secs += g.bars[k + 1] - g.bars[k]; }
+      return secs > 0 ? beats * 60 / secs : null;
+    };
+    function asChunks(doc) {
+      var box = q('.btp-ph-chunks'), m = M(), g = grid(), D = window.NotationDoc;
+      if (m && g && g.bars.length > 1) tempos(doc, D, m.sections(), g);       // the tapped tempo, section by section
+      return box && !box.checked ? doc : chunkDoc(doc, D, phrases());
+    }
+    // nt-listen { section, nth, bar (bars into the section, fractional; < 0 in its pickup), pause }: Shift+Space on the
+    // Notation page plays the recording from the note being written
+    window.addEventListener('message', function (e) {
+      if (e.origin !== location.origin || !e.data || e.data.type !== 'nt-listen') return;
+      var w = W(), a = player && player._btp, m = M(), g = grid();
+      if (!w || e.source !== w.remoteWin('ts-notation') || !a) return;
+      if (e.data.pause) { if (a.playing()) a.toggle(); return; }
+      var low = String(e.data.section || '').trim().toLowerCase(), n = 0, sec = null;
+      (m ? m.sections() : []).forEach(function (s) { if (s.name.trim().toLowerCase() === low && n++ === (e.data.nth | 0)) sec = s; });
+      if (!sec || !g) { say('Shift+Space on the Notation page: no section ' + (e.data.section || '') + ' here.'); return; }
+      var x = sec.bar + (+e.data.bar || 0), b = Math.floor(x), t;
+      if (b < 0) t = Math.max(0, g.bars[0] + x * (g.beats[0] || 4) * (g.beatLen || 0.5));
+      else if (b >= g.bars.length) { say('That is past the last tapped bar.'); return; }
+      else t = g.bars[b] + (x - b) * (endOf(g, b + 1) - g.bars[b]);
+      var l = m.loop && m.loop();
+      if (l && (t < l.start - 0.01 || t >= l.end)) { m.setLoop(null); render(); }
+      a.seek(t);
+      if (!a.playing()) a.toggle();
+      say('From the Notation page: bar ' + (b + 1) + '.');
     });
     window.addEventListener('message', function (e) {
       if (e.origin !== location.origin || !e.data || e.data.type !== 'nt-back') return;
@@ -241,7 +334,7 @@
     root._btpPhrases = {
       state: function () { return JSON.parse(JSON.stringify(state)); },
       load: function (d) { if (!d) return; state = { size: d.size || 4, leadIns: d.leadIns || {} }; sizeIn.value = String(state.size); save(); render(); },
-      phrases: phrases, loopAt: loopAt, toNotation: toNotation, nudge: nudge
+      phrases: phrases, asChunks: asChunks, loopAt: loopAt, toNotation: toNotation, nudge: nudge
     };
     render();
   }

@@ -1,0 +1,10 @@
+X:4122
+%%from edm
+T:Concerto in C, K 503, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4122 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+G2G2 G2 c4 c4 d2- | d2 d4 ^d4 z6 | c2^d2 g2 f4 f4 d2- | ^d2 d4 =d4

@@ -1,0 +1,12 @@
+X:6046
+T:Sonata in A, Op. 162, 4th Movement - 3rd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7678, Barlow & Morgenstern S459, EDM 6046 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=216
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+e3 |{/e} g f e | ^d2 c | B2 z | c2 ^d | e3/2 f/g/a/ | b b b | g |

@@ -1,0 +1,10 @@
+X:6673
+%%from edm
+T:Symphony No. 6, in D minor, Op. 104, 2nd Movement - 3rd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6673 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d2=e2_g2=g2a2b2 | c'2d'2=e'2_g2=g2a2 | b2 z2 a8 | g2 z2 _g6

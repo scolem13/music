@@ -1,0 +1,12 @@
+X:2637
+T:Sonata in C, No. 35, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4298, Barlow & Morgenstern H517, EDM 2637 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+F>C{B} AG/F/ EFGA | B>G{e} dc/B/ ABc^c | d>e{g} fe/d/ c |

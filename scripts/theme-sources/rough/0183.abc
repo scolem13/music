@@ -1,0 +1,10 @@
+X:183
+%%from edm
+T:Chromatic Fantasie and Fugue, Fugue Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0183 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 B4 =B4 | c4 c2=B2 c4 | E4 F4 _G4 | G4 G2_G2 =G2A2 | B4 A4 G4 | F4 G2F2 E2D2 |

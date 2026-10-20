@@ -1,0 +1,10 @@
+X:1810
+%%from edm
+T:Concerto in A minor, Op. 82, 5th Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1810 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+A2B2F2 A2E2F2 | D2E2B,2 D2 A,4 | A2F/2G/2F/2G/2F/2G/2F/2G/2 D2 E4 | F2 A8- A2 |

@@ -1,0 +1,10 @@
+X:6471
+%%from edm
+T:Sonata, Op. 40, 3rd Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6471 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+F,8 C8 | D12 ^D4 | =F8 D4 F4 | G4 ^G8 =G4 | ^A16- | ^A4 B4 d6 B2 | d8 B8 |

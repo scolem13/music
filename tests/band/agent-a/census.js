@@ -1,5 +1,5 @@
 const fs = require('fs');
-const src = fs.readFileSync('/Users/sean.coleman/Projects/everything-music-site/apps/tunes/tunes-object.js', 'utf8');
+const src = fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/tunes/tunes-object.js"), 'utf8');
 const re = /"([^"\n]*)"/g; let m; const suf = new Map(); const odd = new Map();
 while ((m = re.exec(src))) {
   const s = m[1].trim();

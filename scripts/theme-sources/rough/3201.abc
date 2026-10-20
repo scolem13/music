@@ -1,0 +1,14 @@
+X:3201
+%%from mtd
+T:Concerto, 1st Movement - 1st Theme A
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4856, Barlow & Morgenstern K30, EDM 3201 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/KGtrkHG5ZN8
+N:Allegro con fermezza  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=153
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+D/D/F EF D/D/F EF :: D/D/G FG E/E/G FG :| D/D/A GA F/F/A GA | D/D/A GA F/F/A |

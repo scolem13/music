@@ -1,0 +1,11 @@
+X:6466
+%%from edm
+T:Quintet, Op. 57, 5th Movement - Finale, 3rd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6466 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:G
+a8<d'8 | a4 d''4 a'8 | a'8 d'4 ^c''4 | ^c''4 g'4 a''4 d''4- | d''8 d''2e''2 z/2 =f''3/2e''2 | d''2c''2 ^a'4 a'4 =f'4 | ^a'8

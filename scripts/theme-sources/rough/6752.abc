@@ -1,0 +1,10 @@
+X:6752
+%%from edm
+T:The High School Cadets, March, 1st Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6752 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Db
+z4 d'4 a4 =a4 | b4 a4 f4 e4 | d16- | d4 c4 B4 A4 | d16- | d4 c4 B4 A4 | e12 f4 | g16 |

@@ -1,0 +1,11 @@
+X:5026
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 2, 7th Movement - Romeo at Juliet's Grave
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5026 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Db
+F6 B2 | d6 f2 | =a2 (3a_a=g _g4- | g2B2f2c2 | d8- | d4 e2=e2 | c2=A2 F4 |

@@ -1,0 +1,10 @@
+X:1818
+%%from edm
+T:Novelettes, Op. 15, 1st Movement - 2nd Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1818 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+z4 B4 B2^c2B2F2 | B4 F2^G2 A4 E4 | z4 ^G6 A2 G2^D2 | F4 ^C2^D2 E4 B,4 |

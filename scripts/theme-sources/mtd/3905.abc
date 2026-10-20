@@ -1,0 +1,12 @@
+X:3905
+T:Songs Without Words, No. 22 in F, Op. 53, No. 4, "Sadness of Soul"
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5557, Barlow & Morgenstern M295, EDM 3905 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio in F, op. 53 no. 4  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:9/8
+L:1/8
+Q:1/4=53
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+C{/E}DC | A3- AB=B cAF | E3 D3 D2 C | C3- CDE FAF |

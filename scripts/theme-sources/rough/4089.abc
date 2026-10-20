@@ -1,0 +1,10 @@
+X:4089
+%%from edm
+T:Concerto in G, K 453, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4089 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B4 B8 B4 | c2B2 B4 z4 B4 | e4 e8 e4 | =f2e2 e4

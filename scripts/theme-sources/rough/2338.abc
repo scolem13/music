@@ -1,0 +1,10 @@
+X:2338
+%%from edm
+T:Suite No. 7, in G minor, 1st Movement, Overture, 1st Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2338 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+g6 d2 B/2c/2B/2c/2B/2c/2B/2c/2 B/2c/2B/2c/2AG | d3/2c3/2d3/2 e3/2 d6 z2 d2 | d3G2<A2B c6 c2 | c6 d4<B4

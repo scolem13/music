@@ -1,0 +1,12 @@
+X:1957
+%%from mtd
+T:Spanish Dance, No. 4, Villanesca, Piano, 1st Theme
+C:Enrique Granados
+%%composer Granados|Enrique
+% MTD 3619, Barlow & Morgenstern G208, EDM 1957 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=67
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+D | G2G2 GABc |{/c} B2AB G2>E2 | A2A2 ABcd |{/d} c2Bc A2>G2 | F2F2{/G} FDEF | G4 |

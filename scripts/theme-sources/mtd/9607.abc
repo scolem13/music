@@ -1,0 +1,12 @@
+X:9607
+T:Danses - I, Danse Sacree
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2598, Barlow & Morgenstern D30, EDM 9607 (Musical Theme Dataset, CC BY 4.0)
+N:Danse sacrée  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/2
+L:1/4
+Q:1/4=102
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+A4 G2 | c3 d c d | A4 G2 | E6- | E6 |

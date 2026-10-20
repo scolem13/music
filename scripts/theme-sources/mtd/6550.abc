@@ -1,0 +1,11 @@
+X:6550
+T:Finlandia, Op. 26, No. 7, 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% MTD 8180, Barlow & Morgenstern S942, EDM 6550 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/4
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+F4 | E2 D2 | C4- | C B, C D | C2 B, A, | G,2 G,2 | C4- | C7/2 |

@@ -1,0 +1,10 @@
+X:2035
+%%from edm
+T:Peer Gynt, Suite No. 1, Op. 46, 3rd Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2035 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+f6 e2 e2d2 | d6 e2 e2f2 | f12 | e4 z8 | z2 F2 D2C2 B,2F2 | D2C2B,2D2B,2A,2 | ^G,4

@@ -1,0 +1,13 @@
+X:3196
+%%from mtd
+T:Concerto, 2nd Movement - Intro
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4851, Barlow & Morgenstern K25, EDM 3196 (Musical Theme Dataset, CC BY 4.0)
+N:Andante con anima  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=52
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A,,3 D,, (3F,,A,,C, | _D,3 F,{/D,F,}D,_B,, :| F,_D,_B,,F,D,B,, | _A,,2 F,,2 _G,,A,, | =A,,6 |

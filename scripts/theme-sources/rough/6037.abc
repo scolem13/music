@@ -1,0 +1,13 @@
+X:6037
+%%from mtd
+T:Sonatina in G minor, Op. 137, No. 3, 3rd Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7669, Barlow & Morgenstern S450, EDM 6037 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto: Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=148
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+D4 E3/2D/4E/4 | F z B z G z | F z B z G z | F2 |

@@ -1,0 +1,13 @@
+X:3219
+%%from mtd
+T:Masquerade, Suite for Orchestra, 1st Movement - Waltz, 1st Theme
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4874, Barlow & Morgenstern K48, EDM 3219 (Musical Theme Dataset, CC BY 4.0)
+N:Waltz  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=192
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e4 e2 | e4 ^d2 | z2 g3 ^f | ^f4 e2 | z2 ^f3 e | e4 ^d2 | z2 g3 ^f | ^f4 e2 |

@@ -1,0 +1,11 @@
+X:8208
+%%from edm
+T:Fantastic Symphony, Op. 14, 2nd Movement - A Ball - 1st Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8208 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:A
+cB AG AB | cd2<e2 =f | fg2<a2 g | ba g4 | f

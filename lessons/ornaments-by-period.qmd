@@ -1,0 +1,710 @@
+---
+title: "Ornaments by Period"
+toc: true
+toc-depth: 2
+description: "The same trill or small note means different things in Baroque, Classical, Romantic, 20th and 21st-century, and jazz scores. Hear each reading, with right and wrong interpretations for every period, how improvisation fits in then and now, and a flow chart for any ornament you meet."
+instruments: [piano, violin, guitar, voice, other]
+topics: [reading, classical, jazz]
+has: [notation, interactive, band]
+---
+
+An ornament sign is shorthand, and what it stands for has changed over 300 years. A small note
+before a main note, or a **tr** over it, can mean four or five different things depending on when
+and where the piece was written. Reading the sign isn't enough. **You have to know whose shorthand
+it is.**
+
+This page:
+
+1. sets the five idioms side by side on one small note and one trill,
+2. gives right and wrong readings for each period,
+3. explains where improvisation fits, then and now,
+4. ends with a [flow chart](#flowchart) that walks you from the ornament in front of you to a way
+   to play it.
+
+Press **▶** on any example to hear it. The notes shown are what is played, not just what is
+written.
+
+## One sign, five meanings {#five}
+
+### A small note before the main note
+
+Every reading in the table below starts from the same written notes:
+
+```{=html}
+<div class="abc-ex" data-width="160"><script type="text/plain">
+X:1
+T:Written
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+{d}c8 B8 |]
+</script></div>
+<table class="ax-table ob-five">
+<thead><tr><th>Idiom</th><th>How it's played</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td><b>Baroque</b><br><small>to c. 1750</small></td><td>An <em>appoggiatura</em>: <b>on the beat</b>, leaning on the dissonance, long. Half of the main note is the default, more before a long note.</td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:2
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+d4 c4 B8 |]
+</script></div></td></tr>
+<tr><td><b>Classical</b><br><small>c. 1750–1820</small></td><td>The same: on the beat and long, usually half (Leopold Mozart; Türk). Short graces before quick or repeated notes. Mozart often writes the long ones out in full-size notes.</td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:3
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+d4 c4 B8 |]
+</script></div></td></tr>
+<tr><td><b>Romantic</b><br><small>c. 1820–1900</small></td><td>Mostly <b>short</b>. Chopin wants it on the beat, struck with the bass (Eigeldinger). Later in the century short graces often go before the beat (Brown).</td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:4
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+d c7 B8 |]
+</script></div></td></tr>
+<tr><td><b>20th and 21st century</b></td><td><b>Before the beat</b>, as quickly as possible, so the main note lands on the beat. Scores that want something else say so in a performance note (Gould).</td><td><div class="abc-ex" data-width="190"><script type="text/plain">
+X:5
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+z15 d | c8 B8 |]
+</script></div></td></tr>
+<tr><td><b>Jazz and blues</b></td><td>A smear: one note sliding into the next, before or across the beat. ▶ plays it as a slide on guitar.</td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:6
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+"^smear"c8 B8 |]
+</script><script type="text/plain" data-bend>{"bpm": 60, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 2], [0.12, 0]]}, {"t": 1, "d": 1, "midi": 71}]}</script></div></td></tr>
+</tbody></table>
+```
+
+The key line runs between Classical and Romantic. **Before about 1820 the small note is a real
+note that takes the beat and much of the main note's time. After that it's usually a quick flick,
+and from the 20th century it goes before the beat.**
+
+### A trill
+
+Every reading starts from the same written trill:
+
+```{=html}
+<div class="abc-ex" data-width="160"><script type="text/plain">
+X:11
+T:Written
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+Tc8 B8 |]
+</script></div>
+<table class="ax-table ob-five">
+<thead><tr><th>Idiom</th><th>How it's played</th><th>Played</th></tr></thead>
+<tbody>
+<tr><td><b>Baroque</b></td><td>From the <b>note above</b>, on the beat, leaning on the first note. The trill is a decorated appoggiatura (J. S. Bach; C. P. E. Bach).</td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:12
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+d3c dcdc B8 |]
+</script></div></td></tr>
+<tr><td><b>Classical</b></td><td>Still from the note above, now even, often with a closing turn into the next note (Türk; Clementi).</td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:13
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+dcdc dcBc B8 |]
+</script></div></td></tr>
+<tr><td><b>Romantic</b></td><td>From the <b>main note</b>: Hummel (1828) says the start from above "was made for the voice". Chopin too, unless he writes a small note before the trill (Hummel; Ekier).</td><td><div class="abc-ex" data-width="170"><script type="text/plain">
+X:14
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+cdcd cdBc B8 |]
+</script></div></td></tr>
+<tr><td><b>20th and 21st century</b></td><td>From the main note, unmeasured: as many notes as fit, as fast as possible. The speed, the note it trills with, even a slowing or speeding trill, may be written into the score (Gould).</td><td><div class="abc-ex" data-width="200"><script type="text/plain">
+X:15
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+c/d/c/d/c/d/c/d/c/d/c/d/c/d/c/d/ B8 |]
+</script></div></td></tr>
+<tr><td><b>Jazz</b></td><td>A <b>shake</b>: a wide, loose lip trill (on trumpet, often a third or more), with no fixed number of notes (Pejrolo and DeRosa; Barnhart). ▶ plays it on guitar.</td><td><div class="abc-ex" data-width="160"><script type="text/plain">
+X:16
+M:2/4
+L:1/32
+Q:1/4=60
+K:C
+"^shake"c8 B8 |]
+</script><script type="text/plain" data-bend>{"bpm": 60, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.12, 3], [0.24, 0], [0.36, 3], [0.48, 0], [0.6, 3], [0.72, 0], [0.84, 3], [0.96, 0]]}, {"t": 1, "d": 1, "midi": 71}]}</script></div></td></tr>
+</tbody></table>
+```
+
+## Baroque: the player finishes the music {#baroque}
+
+A Baroque score is incomplete on purpose. Composers expected the player to add graces, and in
+France each composer printed a table of his own signs (d'Anglebert 1689, Couperin 1713). The
+defaults are clear: **ornaments start on the beat, and from the note above** (J. S. Bach; C. P. E.
+Bach). How many to add, and where, is taste. Some scholars argue that Bach's trills could start
+on the main note too (Neumann, *Ornamentation in Baroque*). Most players today still start them
+from above.
+
+Here is the opening of the Sarabande from Bach's English Suite No. 3, as plain as Bach wrote it
+the first time. He then wrote out an ornamented version of his own (*Les agréments de la même
+Sarabande*).
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:20
+T:Bach, Sarabande, English Suite No. 3 (BWV 808): the theme
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+BA A3 c/B/ | cA ^F3 A/G/ | AE E2 PD>C | B,3 A, G,2 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**French style: graces on the strong notes.** An appoggiatura leans on beat 2, where a sarabande
+puts its weight. A trill from above goes on the leading tone, and a mordent on the last note.
+The tune stays the same.
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:21
+T:Written
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+B{B}A A3 c/B/ | cA T^F3 A/G/ | AE E2 D>C | B,3 A, MG,2 |]
+</script><script type="text/plain" data-play>
+X:22
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B2 B2A2 A4 c B | c2A2 G^FG^F^F2 A G | A2E2 E4 D3C | B,6 A,2 G,=F, G,2 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:22
+T:Played
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B2 B2A2 A4 c B | c2A2 G^FG^F^F2 A G | A2E2 E4 D3C | B,6 A,2 G,=F, G,2 |]
+</script></div>
+</div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**Italian style: fill in the long notes.** The long notes become running notes (*passaggi*, or
+divisions) that circle the written pitch. The notes on the beat are still Bach's, so the harmony
+doesn't change.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:23
+T:Divisions on the long notes
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+BA AG/A/ Bc/B/ | cA ^F/G/A/^F/ G A/G/ | AE E/^F/G/E/ D>C | B,3 A, G,2 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-no">Not appropriate</div>
+
+**Ornaments everywhere, and a trill on the resolution.** A mordent on every note flattens the
+dance: beat 2 no longer stands out. The trill on the final G is the worst of it. A trill adds
+tension, so it belongs on the note *before* the resolution, never on the resolution itself.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:24
+T:Too much, in the wrong places
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+MBMA MA3 Mc/MB/ | McMA M^F3 MA/MG/ | MAME ME2 MD>MC | MB,3 MA, TG,2 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-no">Not appropriate</div>
+
+**A 19th-century reading.** The trill starts on the main note, and the grace on beat 2 is crushed
+into a flick before the beat. Both are right in Chopin. Here they lose the two dissonances, the
+leaning A against B♭ and the trill's upper note, that the Baroque ornaments exist to make.
+
+```{=html}
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:25
+T:Written
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+B{B}A A3 c/B/ | cA T^F3 A/G/ | AE E2 D>C | B,3 A, G,2 |]
+</script><script type="text/plain" data-play>
+X:26
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B B A2 A6 c B | c2A2 ^FG^FG^F2 A G | A2E2 E4 D3C | B,6 A,2 G,4 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:26
+T:Played
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B B A2 A6 c B | c2A2 ^FG^FG^F2 A G | A2E2 E4 D3C | B,6 A,2 G,4 |]
+</script></div>
+</div>
+```
+
+## Classical: written down more, still on the beat {#classical}
+
+The rules hardly change from the late Baroque. **Appoggiaturas fall on the beat and take half the
+main note**, or two-thirds of a dotted one (Leopold Mozart; Türk; Clementi), and trills start
+from the note above. What changes is how much the composer writes. Mozart often writes his
+appoggiaturas as full-size notes and writes out the decorations of a slow movement, so there is
+less for the player to add (Neumann, *Ornamentation and Improvisation in Mozart*). There are still
+two places to improvise: the **cadenza** at the fermata in a concerto, and the short **Eingang**
+(lead-in) at a pause before a theme comes back.
+
+The phrase below is written for this page in the Classical style.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:30
+T:Written
+M:2/4
+L:1/8
+Q:1/4=66
+K:F
+{d}c2 B A | {A}G2 F2 | A c {g}f e | Td3/2 c/ c2 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**The textbook reading.** Each appoggiatura takes half its note, on the beat. The short grace
+before the quick F is short, and the trill starts from above and ends on a quick anticipation of
+the last note.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:31
+T:Played
+M:2/4
+L:1/16
+Q:1/4=66
+K:F
+d2 c2 B2 A2 | A2 G2 F4 | A2 c2 g f e2 | e/d/e/d/e/d/ c c4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**On the repeat, a little more.** A turn fills the first bar and a rising figure leads into the
+third. Every decoration starts and ends on the written notes. This is what Mozart writes out
+himself when a melody comes back.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:32
+T:Played, second time
+M:2/4
+L:1/16
+Q:1/4=66
+K:F
+d2 c2 BcBA | A2 G2 F2 E F G | A2 c2 g f e2 | e/d/e/d/e/d/ c c4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-no">Not appropriate</div>
+
+**Crushed graces and a main-note trill.** Every appoggiatura is flicked away, so the sighs
+(D against C, A against G) disappear. Leopold Mozart and Türk both treat the long appoggiatura
+as the expressive heart of the phrase. The trill from the main note is the 19th-century habit.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:33
+T:Played
+M:2/4
+L:1/16
+Q:1/4=66
+K:F
+d/c7/2 B2 A2 | A/G7/2 F4 | A2 c2 g/f3/2 e2 | d/e/d/e/d/e/ c c4 |]
+</script></div>
+```
+
+## Romantic: short, and the composer decides {#romantic}
+
+Through the 19th century grace notes get shorter and move towards (or before) the beat, and
+trills start on the main note (Brown; Hummel). Composers write ever more precisely what they
+want, and the player's job shifts from **adding** ornaments to **shaping** the ones written.
+Chopin is the famous exception: grace notes and trills **start with the bass note**, on the beat
+(Eigeldinger; Ekier).
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:40
+T:Written (in the style of a nocturne)
+M:2/4
+L:1/16
+Q:1/4=54
+K:Eb
+V:1
+{c}B4 G2 F2 | TF4 E4 |]
+V:2 clef=bass
+E,,2 B,,2 G,2 B,,2 | B,,,2 A,,2 E,,4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid (Chopin)</div>
+
+**With the bass.** The grace note sounds together with the low E♭, as a quick lean, and the trill
+starts on its main note F.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:41
+T:Played
+M:2/4
+L:1/16
+Q:1/4=54
+K:Eb
+V:1
+c B3 G2 F2 | F/G/F/G/F/G/E/F/ E4 |]
+V:2 clef=bass
+E,,2 B,,2 G,2 B,,2 | B,,,2 A,,2 E,,4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid (later 19th century)</div>
+
+**Before the beat.** In much later Romantic music (and in Chopin's early Contredanse, by his
+editors' reading) the grace goes before the beat, so the bass and the main note sound together
+(Brown; Ekier).
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:42
+T:Played
+M:2/4
+L:1/16
+Q:1/4=54
+K:Eb
+V:1
+z7 c | B4 G2 F2 | F/G/F/G/F/G/E/F/ E4 |]
+V:2 clef=bass
+z8 | E,,2 B,,2 G,2 B,,2 | B,,,2 A,,2 E,,4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-no">Not appropriate</div>
+
+**A Baroque appoggiatura.** A long lean on C takes half the beat and smothers the melody's first
+note. The trill starts from above, and an extra turn is added. None of it was asked for: by now
+the composer writes what he wants.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:43
+T:Played
+M:2/4
+L:1/16
+Q:1/4=54
+K:Eb
+V:1
+c2 B2 G2 F2 | GFEF E4 |]
+V:2 clef=bass
+E,,2 B,,2 G,2 B,,2 | B,,,2 A,,2 E,,4 |]
+</script></div>
+```
+
+## 20th and 21st century: read the legend {#modern}
+
+Concert music after about 1900 mostly writes out exactly what it wants. Where signs survive,
+the general conventions are: **grace notes before the beat, trills from the main note and as fast
+as possible**, and nothing added (Gould). Many scores invent their own signs, for microtones,
+trills that speed up or slow down, or extended techniques, and explain them in a **performance
+note** at the front. That note overrules any period rule. Improvisation returns in a new form:
+some scores give a box of notes to repeat freely, or a graphic to interpret, and say so.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:50
+T:Written
+M:2/4
+L:1/16
+Q:1/4=60
+K:C
+z4 {e}d4 | Tc4 B4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**The default.** The grace goes before the beat, and the trill is unmeasured from the main note.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:51
+T:Played
+M:2/4
+L:1/16
+Q:1/4=60
+K:C
+z3 e d4 | c/d/c/d/c/d/c/d/ B4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid, if the legend says so</div>
+
+**On the beat.** Some composers ask for graces on the beat. If the performance note says so,
+that's the right reading, and only then.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:52
+T:Played
+M:2/4
+L:1/16
+Q:1/4=60
+K:C
+z4 e d3 | c/d/c/d/c/d/c/d/ B4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-no">Not appropriate</div>
+
+**A Baroque reading.** A long appoggiatura on the beat and a trill from above would be right in
+Bach. Here they change the composer's rhythm and harmony.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:53
+T:Played
+M:2/4
+L:1/16
+Q:1/4=60
+K:C
+z4 e2 d2 | dcdc B4 |]
+</script></div>
+```
+
+## Jazz: the player owns the sound {#jazz}
+
+In jazz the written notes are an outline. Grace notes, falls and scoops are part of a player's
+**sound**: they come before or across the beat, in swing time, and are mostly not written at all
+(Caniato). A big-band chart writes them as signs (fall, doit, scoop, plop, shake), and the
+section plays them the way its **lead player** does. Singers and soloists add them freely.
+▶ plays the slides on a clean electric guitar, so a fall really falls.
+
+```{=html}
+<div class="abc-ex" data-style="swing"><script type="text/plain">
+X:60
+T:Written (lead sheet)
+M:4/4
+L:1/8
+Q:1/4=120
+K:C
+"C7"G2 E G c4 |]
+</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**A fall off the long note.** The line is swung, and the last note falls away at its release,
+never before the beat.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:61
+T:With a fall
+M:4/4
+L:1/8
+Q:1/4=120
+K:C
+G2 E G "^fall"c4 |]
+</script><script type="text/plain" data-bend>{"bpm": 120, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 67}, {"t": 1, "d": 0.66, "midi": 64}, {"t": 1.66, "d": 0.34, "midi": 67}, {"t": 2, "d": 2, "midi": 72, "bend": [[0, 0], [1.2, 0], [2, -7]]}]}</script></div>
+```
+
+<div class="ob-verdict ob-ok">Valid</div>
+
+**Scoop in, shake out.** The first note slides up from below, and the long note gets a shake
+after it has sounded straight for a moment. That's Armstrong's "terminal vibrato" made wider
+(Schuller).
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:62
+T:Scoop and shake
+M:4/4
+L:1/8
+Q:1/4=120
+K:C
+"^scoop"G2 E G "^shake"c4 |]
+</script><script type="text/plain" data-bend>{"bpm": 120, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 67, "bend": [[0, -2], [0.25, 0]]}, {"t": 1, "d": 0.66, "midi": 64}, {"t": 1.66, "d": 0.34, "midi": 67}, {"t": 2, "d": 2, "midi": 72, "bend": [[0, 0], [0.5, 0], [0.6, 3], [0.7, 0], [0.8, 3], [0.9, 0], [1, 3], [1.1, 0], [1.2, 3], [1.3, 0], [1.4, 3], [1.5, 0], [1.6, 3], [1.7, 0]]}]}</script></div>
+```
+
+<div class="ob-verdict ob-no">Not appropriate</div>
+
+**A Classical trill, played straight.** Even eighths and a measured trill from above, closed with
+a neat turn. Every note is "right", but the line no longer swings, and a jazz shake is looser and
+wider than this.
+
+```{=html}
+<div class="abc-ex"><script type="text/plain">
+X:63
+T:Played
+M:4/4
+L:1/16
+Q:1/4=120
+K:C
+G4 E2 G2 dcdcdcBc |]
+</script></div>
+```
+
+## Improvisation, then and now {#improvisation}
+
+Ornaments are what remains in the notation of a much larger habit of making music up on the
+spot. How much of that habit a score expects changes from period to period:
+
+| Period | What the player was expected to invent | Today |
+|---|---|---|
+| Baroque | Graces on almost any note; divisions on slow movements, above all on the repeat; the chords over a figured bass; cadenzas at fermatas (C. P. E. Bach; Quantz) | Early-music players add their own again. Bach's written-out *agréments* and ornamented editions of Corelli's slow movements are the models. |
+| Classical | Cadenzas in concertos, Eingänge at pauses, decoration of repeats in slow movements and arias (Neumann, *Ornamentation and Improvisation in Mozart*) | Players play written cadenzas (Mozart's own, Beethoven's) or write their own; singers decorate the repeats in Mozart's arias. |
+| Romantic | Less and less: composers write the ornaments and the cadenzas themselves | Play what's written. Shape the written ornaments with rubato and tone instead of adding to them. |
+| 20th and 21st century | Nothing, unless the score asks. Then sometimes a great deal: free repetition, graphic scores, open form. | Follow the performance note. |
+| Jazz | Almost everything: the melody's shape, the ornaments, the solo | The heart of the style. The written melody is a starting point. |
+
+Two things hold across all of them:
+
+- **Ornaments serve the structure.** Baroque, Classical and jazz improvisers all decorate weak
+  notes and long notes, and leave the arrivals (cadences, downbeats, chord tones) clear.
+- **More isn't better.** C. P. E. Bach compared too many ornaments to too much seasoning
+  (C. P. E. Bach, ch. 2). A Basie section player would say much the same about a fall on every
+  note.
+<!-- unverified: the "seasoning" wording is from memory of Mitchell's translation, ch. 2; check the page before quoting it. -->
+
+## Which way do I play it? {#flowchart}
+
+Pick the period, or type a composer, and answer the questions. Each step stays on the chart, so
+you can change an answer and see where the path goes instead.
+
+```{=html}
+<div id="ob-flow" class="ob-flow" aria-live="polite">
+  <div class="ob-flow-top">
+    <label for="ob-composer">Composer</label>
+    <input id="ob-composer" list="ob-composers" placeholder="e.g. Bach, Mozart, Chopin, Ellington" autocomplete="off">
+    <datalist id="ob-composers"></datalist>
+    <button type="button" id="ob-restart">Start again</button>
+  </div>
+  <div id="ob-chain"></div>
+</div>
+```
+
+## Works Cited
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Anglebert, Jean-Henry d'. *Pièces de clavecin ... Livre premier*. Paris, 1689. IMSLP. [imslp.org/wiki/Pi%C3%A8ces_de_clavecin_(Anglebert,_Jean-Henri_d%27)](https://imslp.org/wiki/Pi%C3%A8ces_de_clavecin_(Anglebert,_Jean-Henri_d%27)). "Marques des Agrements et leur signification", read from the 1689 print (IMSLP #110970).
+
+Bach, Carl Philipp Emanuel. *Essay on the True Art of Playing Keyboard Instruments*. Translated and edited by William J. Mitchell, W. W. Norton, 1949. First published as *Versuch über die wahre Art das Clavier zu spielen*, 1753. Ch. 2, Embellishments.
+
+Bach, Johann Sebastian. *Clavier-Büchlein vor Wilhelm Friedemann Bach*. Manuscript, begun 22 Jan. 1720. Yale University, Irving S. Gilmore Music Library. [collections.library.yale.edu/catalog/10991080](https://collections.library.yale.edu/catalog/10991080). The *Explication unterschiedlicher Zeichen* is on leaf 3v (IIIF image 10991088); the table on this page is read from it.
+
+Barnhart, Scotty. *The World of Jazz Trumpet: A Comprehensive History and Practical Philosophy*. Hal Leonard, 2005.
+
+Brown, Clive. *Classical and Romantic Performing Practice 1750–1900*. Oxford UP, 1999.
+
+Caniato, Michele. *The Jazz Ensemble Companion*. R&L Education, 2009. Table B.10, "Expressive devices".
+
+Clementi, Muzio. *Introduction to the Art of Playing on the Piano Forte*. London, Clementi, Banger, Hyde, Collard & Davis, [1801]. Internet Archive. [archive.org/details/imslp-to-the-art-of-playing-the-pianoforte-op42-clementi-muzio](https://archive.org/details/imslp-to-the-art-of-playing-the-pianoforte-op42-clementi-muzio). Graces, pp. 10-11.
+
+Couperin, François. *L'Art de toucher le clavecin*. Paris, 1716. Edited by Nicolas Sceaux, 2008. IMSLP. [imslp.org/wiki/L%27art_de_toucher_le_clavecin_(Couperin,_Fran%C3%A7ois)](https://imslp.org/wiki/L%27art_de_toucher_le_clavecin_(Couperin,_Fran%C3%A7ois)). "Agréments qui servent au jeu", pp. 6-7 (IMSLP #22200).
+
+Eigeldinger, Jean-Jacques. *Chopin: Pianist and Teacher as Seen by His Pupils*. Edited by Roy Howat, translated by Naomi Shohet et al., Cambridge UP, 1986.
+
+Ekier, Jan, editor. *Wydanie Narodowe Dzieł Fryderyka Chopina* (National Edition). Polskie Wydawnictwo Muzyczne. Performance commentaries. Commentary to Various Compositions (WN 27, WN 56); introduction, "Ozdobniki".
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+
+Hummel, Johann Nepomuk. *Ausführliche theoretisch-practische Anweisung zum Piano-Forte-Spiel*. Vienna, Tobias Haslinger, 1828. Internet Archive. [archive.org/details/ausfhrlichetheor00humm](https://archive.org/details/ausfhrlichetheor00humm). Part III, "Von den Verzierungen", pp. 393-402.
+
+Mozart, Leopold. *A Treatise on the Fundamental Principles of Violin Playing*. Translated by Editha Knocker, Oxford UP, 1948. First published as *Versuch einer gründlichen Violinschule*, 1756.
+
+Neumann, Frederick. *Ornamentation and Improvisation in Mozart*. Princeton UP, 1986.
+
+Neumann, Frederick. *Ornamentation in Baroque and Post-Baroque Music, with Special Emphasis on J. S. Bach*. Princeton UP, 1978.
+
+Pejrolo, Andrea, and Richard DeRosa. *Acoustic and MIDI Orchestration for the Contemporary Composer*. Focal Press, 2009. Falls, doits and the shake.
+
+Purcell, Henry. *A Choice Collection of Lessons for the Harpsichord or Spinnet*. London, Frances Purcell, 1696. Internet Archive. [archive.org/details/bim_early-english-books-1641-1700_a-choice-collection-of-l_purcell-henry_1696](https://archive.org/details/bim_early-english-books-1641-1700_a-choice-collection-of-l_purcell-henry_1696). "Rules for Graces".
+
+Quantz, Johann Joachim. *On Playing the Flute*. Translated by Edward R. Reilly, 2nd ed., Northeastern UP, 2001. First published as *Versuch einer Anweisung die Flöte traversiere zu spielen*, 1752.
+
+Schuller, Gunther. *Early Jazz: Its Roots and Musical Development*. Oxford UP, 1968. The Armstrong chapter, on terminal vibrato and the shake.
+
+Türk, Daniel Gottlob. *School of Clavier Playing*. Translated by Raymond H. Haggh, U of Nebraska P, 1982. First published as *Klavierschule*, 1789. Ch. 3 appoggiaturas, ch. 4 essential ornaments.
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<style>
+.ob-verdict{display:inline-block;font-size:.75rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:.1rem .5rem;border-radius:3px;margin:.8rem 0 -.2rem}
+.ob-ok{background:color-mix(in srgb,#2e8b57 18%,transparent);color:#2e8b57}
+.ob-no{background:color-mix(in srgb,#c0392b 18%,transparent);color:#c0392b}
+.ob-five td:first-child{white-space:nowrap}
+.ob-flow{border:1px solid var(--site-border);border-radius:8px;padding:1rem;background:var(--site-surface);margin:1rem 0}
+.ob-flow-top{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;margin-bottom:.8rem}
+.ob-flow-top input{flex:1 1 14rem;min-width:0;padding:.3rem .5rem}
+.ob-node{position:relative;border:1px solid var(--site-border);border-radius:6px;padding:.6rem .8rem;background:var(--site-bg,transparent);margin-left:1rem}
+.ob-node + .ob-node{margin-top:1.4rem}
+.ob-node + .ob-node::before{content:"";position:absolute;left:1.2rem;top:-1.4rem;height:1.4rem;border-left:2px solid var(--site-accent)}
+.ob-node + .ob-node::after{content:"▼";position:absolute;left:.9rem;top:-.75rem;font-size:.6rem;color:var(--site-accent)}
+.ob-q{font-weight:600;margin-bottom:.4rem}
+.ob-help{font-size:.85rem;color:var(--site-ink-2);margin:-.2rem 0 .4rem}
+.ob-opts{display:flex;flex-wrap:wrap;gap:.4rem}
+.ob-opts button{border:1px solid var(--site-border);border-radius:16px;padding:.25rem .8rem;background:transparent;color:inherit;cursor:pointer;font-size:.9rem;text-align:left}
+.ob-opts button small{display:block;font-size:.72rem;color:var(--site-ink-2)}
+.ob-opts button:hover{border-color:var(--site-accent)}
+.ob-opts button.on{background:var(--site-accent);border-color:var(--site-accent);color:#fff}
+.ob-opts button.on small{color:#fff}
+.ob-node.done .ob-opts button:not(.on){opacity:.55}
+.ob-result{border-left:4px solid var(--site-accent)}
+.ob-result h4{margin:.1rem 0 .5rem;font-size:1.05rem}
+.ob-result ul{margin:.2rem 0 .5rem 1.1rem;padding:0}
+.ob-result .ob-avoid li{color:#c0392b}
+.ob-result .ob-avoid li span{color:var(--site-ink,inherit)}
+</style>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=13"></script>
+<script src="/apps/shared/lessons/ornament-flow.js?v=1"></script>
+```

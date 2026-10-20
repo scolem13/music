@@ -1,0 +1,10 @@
+X:1323
+%%from edm
+T:Slavonic Rhapsody, Op. 45, No. 3, Orchestra, 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1323 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:Ab
+A8<B8 A2 | B2A2B4<A4 d6 | c6 c4 B2 A4 z2 | e8<f8 e2 | f2e2f2 e4 a6

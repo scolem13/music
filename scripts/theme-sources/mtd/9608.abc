@@ -1,0 +1,12 @@
+X:9608
+T:Danses - II, Danse Profane
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2599, Barlow & Morgenstern D31, EDM 9608 (Musical Theme Dataset, CC BY 4.0)
+N:Danse profane  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=122
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+z F2 | z ^G A | z F2 | z/ E/E/^G/ G | z F2 | z ^G A | z B/A/ ^G | F E D |

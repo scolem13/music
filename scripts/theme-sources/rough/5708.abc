@@ -1,0 +1,11 @@
+X:5708
+%%from edm
+T:Suite Algerienne, Op. 60, 2nd Movement - Rapsodie Mauresque, 3rd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5708 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+d4 e4 f4 | d4 e4 z4 | d4 e2f2 g2a2 | abaf d4 z4 | d4 =c4 A4 | A4 B2=c2 d2e2 | d4

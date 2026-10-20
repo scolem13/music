@@ -1,0 +1,12 @@
+X:9617
+%%from mtd
+T:L'Isle Joyeuse - Intro
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2608, Barlow & Morgenstern D40, EDM 9617 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/16
+Q:1/4=92
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+"^#" !fermata!c8- c>=c B/^d/=g/_B/ A/^c/=f/_A/ =G/=B/d/g/ |

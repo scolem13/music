@@ -1,0 +1,10 @@
+X:5225
+%%from edm
+T:Pieces de Clavecin en Concert, No. 3, La Timide
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5225 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c2B2 z/2 z/2 A^G2 A2c2B2d2 | c2B2 z/2 z/2 A^G2 A2c2B2d2 | ^c2d2B2c2 d2c2f2e2 | d2c2B2A2 ^G2^F2 E4 |

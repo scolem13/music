@@ -1,0 +1,11 @@
+X:6275
+%%from edm
+T:Quartet in A, Op. 41, No. 3, 1st Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+z4 g4 a4 | b4 c'6 f2 | f4 f4 g4 | a4 b6 e2 | e4

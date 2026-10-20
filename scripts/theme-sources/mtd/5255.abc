@@ -1,0 +1,11 @@
+X:5255
+T:Bolero, Theme B
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6893, Barlow & Morgenstern R126, EDM 5255 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/16
+Q:1/4=67
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+_B4- BAGF BcAG | _B2AG B4 ABAG- | G4- GFED E4- | E4 z2 _B2 c2_d2 | _d2 d4 d2 d2d2 |

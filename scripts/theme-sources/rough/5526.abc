@@ -1,0 +1,11 @@
+X:5526
+%%from edm
+T:Tancredi, Overture, 2nd Theme
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5526 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+e6 f4<e4 f2 | e6 ac' e'2e'2e'2e'2 | (3f'2e'2d'2 (3e'2d'2c'2 (3d'2c'2b2 (3c'2b2a2 | (3b2a2^g2 (3a2=g2f2

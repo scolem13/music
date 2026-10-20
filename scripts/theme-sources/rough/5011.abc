@@ -1,0 +1,10 @@
+X:5011
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 7th Movement - 3rd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5011 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G,2C2 E2G2 _G=GE2 | C2G2c2G2D2E2 | G2G2e2G2F2_G2 | G2A2c2G2F2E2 | =B2

@@ -1,0 +1,13 @@
+X:1148
+T:Symphony No. 9, in D minor, Op. 125, 2nd Movement - 3rd Theme B
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1141, Barlow & Morgenstern B1023, EDM 1148 (Musical Theme Dataset, CC BY 4.0)
+N:Molto vivace - Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 427  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/2
+L:1/4
+Q:1/4=346
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d' c' | d' b a g | f e d =c | B ^c d f | a |

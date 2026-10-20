@@ -1,0 +1,10 @@
+X:3280
+%%from edm
+T:Praeludium and Allegro (Style of Pagnani), Praeludium
+C:Fritz Kreisler
+%%composer Kreisler|Fritz
+% EDM 3280 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+E4 B,4 E4 B4 | e4 B4 e4 b4 | e'4 e4 b4 B4 | e4 E4 B4 B,4 |

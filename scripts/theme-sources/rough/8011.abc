@@ -1,0 +1,10 @@
+X:8011
+%%from edm
+T:Concerto, Violin and Orchestra, 2nd Movement - 3rd Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8011 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z4 e8 e4 | e4 e4 f4 g4 | e4 c4 d4 c2d2 | e4 G4 A4 c4 | d8 c8- | c4

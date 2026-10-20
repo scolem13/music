@@ -1,0 +1,12 @@
+X:4563
+T:Symphony No. 36, in C, K 425, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6212, Barlow & Morgenstern M937, EDM 4563 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio - Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=167
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+E4 | F4 | G3/2 A/4B/4 c G |{B} A G z2 | c4 | _B4 | A =B/A/4B/4 c d |

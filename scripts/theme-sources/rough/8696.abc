@@ -1,0 +1,10 @@
+X:8696
+%%from edm
+T:Sonata in A, Op. 100, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8696 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+z2 c'2 f'2e'3/2 z/2 | f'c'd'2 c'ab2 | ac'c'2 a'2g'3/2 z/2 | f'c'f'2 e'gd'2 | c'

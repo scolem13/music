@@ -1,0 +1,10 @@
+X:1441
+%%from edm
+T:Pomp and Circumstance, Military Marches, Op. 39, No. 4, 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1441 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G,8 | A,2B,2 C4 | E8- | E6 z2 | G,6 G,2 | A,2B,2C2E2 | G8- | G6 z2 | A4 G4 | E2F2 G4 | F4 E4 | C2D2 E4 |

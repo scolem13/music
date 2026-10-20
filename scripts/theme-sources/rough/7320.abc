@@ -1,0 +1,11 @@
+X:7320
+%%from edm
+T:Quartet in D, 2nd Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7320 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+z fb3/2^a/2 b/2c'/2a/2b/2f3- f/2g<gg/2 g/2=a/2f/2b/2f2- | f3/2f<b^a/2 ba/2b/2f3- f/2d/2e/2f/2e/2f/2 f4 |

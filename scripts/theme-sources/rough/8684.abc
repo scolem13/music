@@ -1,0 +1,10 @@
+X:8684
+%%from edm
+T:Sonata in F minor, Op. 5, 4th Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8684 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+C4 c2 z2 c2d2 | z2 d2 A2 z B c2 z2 | z2 d''6 d''4- | d''2c''b' a'2 z b' c''2

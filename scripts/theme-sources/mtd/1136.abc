@@ -1,0 +1,13 @@
+X:1136
+T:Symphony No. 8, in F, Op. 93, 3rd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1129, Barlow & Morgenstern B1011, EDM 1136 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/dSmrReHQuak?t=151
+N:Tempo di menuetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=101
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+CDE | F3 G A2 | A3 G F2 | F2 A3 c | cB G2 |

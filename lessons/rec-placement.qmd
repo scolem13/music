@@ -100,11 +100,40 @@ mono sum. Then switch to the 3:1 demo, where each mic has its own player:
 
 ## Next
 
-- [Recording 4: Monitoring and Headphones](rec-monitoring.qmd)
+- [Recording 4: Miking a Guitar Amp](rec-guitar-amp.qmd)
 
 {{< include _synth-kit.qmd >}}
 
 ```{=html}
-<script src="/apps/shared/lessons/rec-kit-mic.js?v=2"></script>
-<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=3"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=5"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Comb filter." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Comb_filter](https://en.wikipedia.org/wiki/Comb_filter).
+
+DPA Microphones. "3:1 Rule." *Mic Dictionary*. [dpamicrophones.com/mic-dictionary/3-1-rule](https://dpamicrophones.com/mic-dictionary/3-1-rule).
+
+"Inverse-square law." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Inverse-square_law](https://en.wikipedia.org/wiki/Inverse-square_law).
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)).
+
+White, Paul. "Two-mic Guitar Tracking." *Sound On Sound*, Oct. 2021. [www.soundonsound.com/techniques/two-mic-guitar-tracking](https://www.soundonsound.com/techniques/two-mic-guitar-tracking).
+
+**For teachers**
+
+Bartlett, Bruce, and Jenny Bartlett. *Practical Recording Techniques: The Step-by-Step Approach to Professional Audio Recording*. 7th ed., Routledge, 2017. Details from the Routledge listing.
+
+Brixen, Eddy Bøgh. "Proximity Effect in Microphones Explained: How It Affects Different Sound Sources." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/background-knowledge/proximity-effect-in-microphones-explained/](https://www.dpamicrophones.com/mic-university/background-knowledge/proximity-effect-in-microphones-explained/).
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Owsinski, Bobby. *The Recording Engineer's Handbook*. 5th ed., BOMG Publishing, 2023. Details from retailer listings.
+:::
+<!-- /works-cited -->
+

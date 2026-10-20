@@ -1,0 +1,11 @@
+X:9597
+T:Ballade - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2588, Barlow & Morgenstern D20, EDM 9597 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=102
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+egeg f2 df | e2 ce d2 cd | egeg f2 df | e2 ce d2 |

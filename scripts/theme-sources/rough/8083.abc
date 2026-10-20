@@ -1,0 +1,11 @@
+X:8083
+%%from edm
+T:Jubel-Ouverture, 4th Theme (God Save the King)
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8083 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+e4 e4 f4 | d6 e2 f4 | g4 g4 a4 | g6 f2 e4 | z/2 f3-f/2 e4 d4 | e8

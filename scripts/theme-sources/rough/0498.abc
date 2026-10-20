@@ -1,0 +1,10 @@
+X:498
+%%from edm
+T:Sonata No. 1, in A minor, 2nd Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0498 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+A4 c4 B4 | A4 G4 A4 | z4 B6 cd | (3c2B2A2 A8 |

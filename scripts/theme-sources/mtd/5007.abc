@@ -1,0 +1,12 @@
+X:5007
+T:Romeo and Juliet, Op. 64, Suite No. 1, 5th Movement - Masks
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% MTD 6649, Barlow & Morgenstern P263, EDM 5007 (Musical Theme Dataset, CC BY 4.0)
+N:Masks  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=81
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+F/4G/4F/4=E/4F/G/ Fc B2 fg | f6 ed | fBBc ^c2 ab | a3 |

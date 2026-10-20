@@ -1,0 +1,11 @@
+X:8642
+%%from edm
+T:Sextet in B-flat, Op. 18, Str., 1st Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8642 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+c2a4<a4 c2 | a2c'4<c'4 b2 | g4 c'6 c2 | a2f'4<f'4 =e'2 | g4

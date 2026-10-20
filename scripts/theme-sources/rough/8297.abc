@@ -1,0 +1,10 @@
+X:8297
+%%from edm
+T:Concerto grosso, 3rd Movement - 5th Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8297 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e4 a4 ^c'4 | b2^c'4<a4 b2 | ^c'2d'2 c'4 a4 | ^c'4 b8- | b4

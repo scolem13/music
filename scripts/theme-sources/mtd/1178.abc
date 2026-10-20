@@ -1,0 +1,11 @@
+X:1178
+T:Trio, Vn., Cello, Piano, (Little Trio in B-flat) - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1171, Barlow & Morgenstern B1053, EDM 1178 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=76
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+de | ffe ddc | cB B2 Bc/d/ | eed ccB | BA A2 |

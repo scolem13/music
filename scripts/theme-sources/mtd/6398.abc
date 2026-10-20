@@ -1,0 +1,12 @@
+X:6398
+T:Three Romances, Op. 94, No. 1
+C:Robert Schumann
+%%composer Schumann|Robert
+% MTD 8029, Barlow & Morgenstern S802, EDM 6398 (Musical Theme Dataset, CC BY 4.0)
+N:No. 1  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=75
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z2{/f} a3 f | ecBecA | =Gagdef | ec B/d/c- cB | A6 |

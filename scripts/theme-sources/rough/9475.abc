@@ -1,0 +1,11 @@
+X:9475
+%%from edm
+T:Sonata Da Camera, B-flat, Op. 2, No. 5, 2 Vns., 2nd Movement - Allemande
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9475 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+f8 B6 z B | c3d2<_e2f2<d2B b4- | b4 a4 b3d2<c2B | _e8 d4

@@ -1,0 +1,12 @@
+X:5335
+T:La Valse, 4th Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6972, Barlow & Morgenstern R205, EDM 5335 (Musical Theme Dataset, CC BY 4.0)
+%%bar 146 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/8
+Q:1/4=197
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+a3 ^A =a2- | ag f3 c | e3 ^E =e2- | ed B3 F | G3 ^B, G2- | G^B, G2 G2 | G4 F2 |

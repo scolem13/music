@@ -1,0 +1,11 @@
+X:7374
+%%from edm
+T:Quartet in B minor, 4th Movement - 1st Theme
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7374 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:D
+f4 B2 ^A/2B/2A/2B/2A/2B/2A/2B/2B2 | e4 d2 c/2d/2c/2d/2c/2d/2c/2d/2B2 | g4 f2 e/2f/2e/2f/2e/2f/2e/2f/2d2 | c2d2B4<f4 |

@@ -1,0 +1,10 @@
+X:3857
+%%from edm
+T:Meeresstille und Gluckliche Fahrt, Op. 27, Overture (Calm Sea and Prosperous Voyage) Gluckliche Farht, 1st Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3857 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+z2 G,2G,2G,2 G,2A,2B,2=C2 | D2E2D2B,2 G,2A,2B,2=C2 | D2E2F2G2 G,2B,2=C2D2 | E2F2G2A2 B2G2D2G2 | B4

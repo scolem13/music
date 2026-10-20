@@ -1,0 +1,10 @@
+X:1835
+%%from edm
+T:Valse de Concert, Op. 47, 3rd Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1835 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+z4 d8 | c12- | c4 B8 | A12- | A4 G8 | F4 G4 A4 | B4 c4 d4 | d4 e8- | e4

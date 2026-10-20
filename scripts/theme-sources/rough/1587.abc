@@ -1,0 +1,10 @@
+X:1587
+%%from edm
+T:Pelleas and Melisande, Op. 80, Fileuse
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1587 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+A4 B8 | G4 A4 B4 | ^c2d2 e4 f4- | f2d2 B6 z2 | A4 B8 | G4 A4 B4 | ^c2d4<B4 D2 | A4

@@ -1,0 +1,10 @@
+X:5630
+%%from edm
+T:Concertstuck, Op. 20, 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5630 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:A
+g6 e2 ^d2c4<G4 c2 e2g2 | b8 a4 g4 z8 | g6 e2 ^d2=c4<^c4 e2 g2c'2 | e'8 ^d'4 g4

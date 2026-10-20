@@ -1,0 +1,11 @@
+X:5741
+%%from edm
+T:Danses Espagnoles, Op. 22, No. 1, Romanza Andaluza, 3rd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5741 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+d8 a2^f2 | z/2 g3/2^fe d4 a2f2 | g6 z/2 g3/2^f2e2 | d12 |

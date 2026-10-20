@@ -1,0 +1,10 @@
+X:4730
+%%from edm
+T:La Vie Parisienne, Act II - Entr'acte, 2nd Theme
+C:Jacques Offenbach
+%%composer Offenbach|Jacques
+% EDM 4730 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+D4 G2G2 G2G2 | A4 B2B2 B2B2 | c4 d2B2 d2B2 | e2d2 c2^G2 A4 |

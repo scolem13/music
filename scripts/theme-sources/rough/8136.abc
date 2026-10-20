@@ -1,0 +1,11 @@
+X:8136
+%%from edm
+T:Obertass (Mazurka), Op. 19, No. 1, 2nd Theme
+C:Henryk Wieniawski
+%%composer Wieniawski|Henryk
+% EDM 8136 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+c3d2<^d2e2<=f2^f | g3g e'6 d'2 | z/2 c'2-c'/2b c'6 a2 | g2 z2 a6 e2 | =f2 z2 g6 d2 | e6

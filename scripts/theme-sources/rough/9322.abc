@@ -1,0 +1,10 @@
+X:9322
+%%from edm
+T:Sonata in B-flat minor, Op. 35, 2nd Movement - Scherzo - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9322 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+B4 e2e2 e2e2 | e4 f4 f'2e'2 | f'2g'2g2g2g2g2 | g4 a8 |

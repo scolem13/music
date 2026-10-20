@@ -1,0 +1,10 @@
+X:9086
+%%from edm
+T:Symphonic Sketches, 2nd Theme
+C:George W. Chadwick
+%%composer Chadwick|George W.
+% EDM 9086 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+c4 c8 B4 | G12 F4 | G4 C4 C4 ^D2<E2 | C4 ^D2<E2 C4 D2<E2 | C6

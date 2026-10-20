@@ -1,0 +1,12 @@
+X:949
+T:Sonata No. 27, in E minor, Op. 90, Piano, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0943, Barlow & Morgenstern B825, EDM 0949 (Musical Theme Dataset, CC BY 4.0)
+N:Mit lebhaftigkeit und durchaus mit empfindung und ausdruck  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=147
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+G z | G3 F E z | A z z2 A2 | A3 G A2 | B4 |

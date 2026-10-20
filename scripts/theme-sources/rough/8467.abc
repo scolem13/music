@@ -1,0 +1,11 @@
+X:8467
+%%from edm
+T:Capriccio, in B minor, Op. 76, No. 2, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8467 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+Bdfg fcfg | f=cfg z/2 b2-b/2e | Bebd' ^aeab | a^dab z/2 e'2-e'/2

@@ -1,0 +1,11 @@
+X:5748
+%%from edm
+T:Introduction and Tarantelle, Op. 43, Intro
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5748 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+z2 G2 c2d2 e2g2c'2a2 | b8- b2a2f2d2 | G4 f8 e2d2 | e16 |

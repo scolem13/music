@@ -1,6 +1,6 @@
 // A page's own settings for a section (opts.sectionOverrides) come before the section's %%style, and touch no other section.
 const assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 ["tune-chart.js", "voicings.js", "band/harmony.js", "band/bass.js", "band/comp.js", "band/sounds.js", "band/catalog.js", "band/drums.js", "band/player.js", "band/midi.js"].forEach(f => require(R + f));
 function mb(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const ABC = 'X:1\nM:4/4\nL:1/4\nK:C\nP:Verse\n"C"z4|"F"z4|\nP:Chorus\n%%style bossa nova\n"Dm7"z4|"G7"z4|\nP:Verse 2\n"C"z4|"F"z4|\nP:Chorus 2\n%%style bossa nova\n"Dm7"z4|"G7"z4|]';

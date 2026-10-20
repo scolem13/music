@@ -1,0 +1,12 @@
+X:9214
+%%from mtd
+T:Fantaisie-Impromptu, Op. 66 - 2nd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2211, Barlow & Morgenstern C224, EDM 9214 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/8
+Q:1/4=76
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+A4 BAde | f4 a4 | g2 f2 e2 f>d | A4 |

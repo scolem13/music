@@ -1,0 +1,10 @@
+X:7925
+%%from edm
+T:Tannhauser, Act II, March, 2nd Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7925 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:B
+f8 =f3^f2<g2a | b8 z/2 b2-b/2a2<b2d' | f'6 =f'2 e'2d'2 c'3b | a8 g2=c'2^c'2e'2 | g'8

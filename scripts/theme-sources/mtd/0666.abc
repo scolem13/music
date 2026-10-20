@@ -1,0 +1,11 @@
+X:666
+T:Fidelio, Op. 72b, Overture, 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0660, Barlow & Morgenstern B564, EDM 0666 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/8
+Q:1/4=245
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+e2 e'4 e'd' | d'c' c'4 c'b | ba a4 ag | gfed dcBA |

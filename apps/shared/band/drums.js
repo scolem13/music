@@ -462,7 +462,7 @@
     // A written groove (opts.written): its bars in turn, exactly as written, every note where the groove puts it.
     function writtenBar(ctx){
       var w = written(ctx), B = global.BandGroove, sw = ctx.opts.writtenSwing;
-      var bars = B.toEvents(w, { swing: sw == null ? true : sw, pieces: ctx.opts.writtenPieces, tempo: ctx.tempo }), beats = ctx.beats || 4;
+      var bars = B.toEvents(w, { swing: sw == null ? B.swingFor(w, ctx.opts, ctx.tempo) : sw, pieces: ctx.opts.writtenPieces, tempo: ctx.tempo }), beats = ctx.beats || 4;
       // a grace note before the next bar's first beat (a flam on 1) is played at the end of this bar: the player takes nothing before a bar line
       var here = bars[(ctx.index || 0) % bars.length].filter(function (e){ return e.pos >= 0 && e.pos < beats; }), next = ctx.last && ctx.finalChorus ? [] : bars[((ctx.index || 0) + 1) % bars.length];
       next.forEach(function (e){ if (e.pos < 0) here.push(Object.assign({}, e, { pos: Math.round((e.pos + beats) * 1e6) / 1e6 })); });

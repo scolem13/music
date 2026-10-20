@@ -1,0 +1,11 @@
+X:8302
+%%from edm
+T:Quartet, Str. - 1st Movement - 3rd Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8302 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+c'2d'2c'2b2c'2d'2 | b2a2c'2b2a2b2 | g2f2b2a2g2f2 | e2d2a2g2b2a2 | c'12- | c'2

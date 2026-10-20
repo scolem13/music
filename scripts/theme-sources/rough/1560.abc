@@ -1,0 +1,10 @@
+X:1560
+%%from edm
+T:Ballade, Op. 19, Piano and Orchestra, 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1560 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F#
+c8 E4 G3A | A4 G6 G2 d2A2 | c2B2e2d4<c4 G2 | B4 A6

@@ -1,0 +1,12 @@
+X:4526
+T:Symphony No. 29, in A, K 201, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6175, Barlow & Morgenstern M900, EDM 4526 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=107
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+e/B/ | B2 A/G/ |{G} F F A/c/ | B A G | A z f/A/ | A G ^^F | G z |

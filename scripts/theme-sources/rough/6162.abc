@@ -1,0 +1,10 @@
+X:6162
+%%from edm
+T:Symphony for Strings, 2nd Movement - 2nd Theme
+C:William Schuman
+%%composer Schuman|William
+% EDM 6162 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+B8 B8 B8 | c8 d8 e4 ^f4 | ^a8 a16 | ^c'8 =c'8 g8 | ^g4 ^a4 ^d'8 d'8 | ^f'16

@@ -1,0 +1,13 @@
+X:8747
+%%from mtd
+T:Symphony No. 2 in D, Op. 73, 3rd Movement - 4th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1750, Barlow & Morgenstern B1614, EDM 8747 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto grazioso (quasi andantino) - Presto ma non assai - Tempo I  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/8
+Q:1/4=169
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d'c'b | c'ba | bag | ag=f | e d2 | e =f2 |

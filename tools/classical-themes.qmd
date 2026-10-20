@@ -1,0 +1,99 @@
+---
+title: "Classical Themes"
+description: "2,067 themes from the classical repertoire: filter them as the Tune Assessment does, sort on up to three things, and show as many at a time as you like."
+toc: false
+---
+
+```{=html}
+<style>
+@font-face { font-family: "Bar Numbers Mono"; src: url(/apps/shared/fonts/BarNumbers-CommitMono-digits-200.ttf) format("truetype"); font-display: swap; }   /* Commit Mono digits, plain zero: scripts/make-barno-font.py */
+#ct-root { max-width: 1200px; margin: 0 auto; }
+#ct-root .ct-controls { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: flex-start; margin: .8rem 0; }
+#ct-root .ct-sortrow { display: flex; gap: .4rem; align-items: center; margin: .2rem 0; flex-wrap: wrap; }
+#ct-root .ct-sortrow > span { min-width: 4.2em; font-size: .9rem; }
+#ct-root select, #ct-root input[type=number] { padding: .25rem .4rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 6px; background: var(--bs-body-bg, #fff); color: inherit; font: inherit; font-size: .9rem; }
+#ct-root input[type=number] { width: 5em; }
+#ct-root button { padding: .25rem .6rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 6px; background: var(--bs-body-bg, #fff); color: inherit; font-size: .88rem; cursor: pointer; }
+#ct-root button:disabled { opacity: .4; cursor: default; }
+#ct-root .ct-dir { min-width: 9.5em; text-align: left; }
+#ct-root .ct-group { display: flex; flex-direction: column; gap: .35rem; }
+#ct-root .ct-line { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; font-size: .9rem; }
+#ct-root .ct-pager { display: flex; gap: .6rem; align-items: center; margin: .6rem 0; font-size: .9rem; }
+#ct-count { font-weight: 600; margin-top: .6rem; scroll-margin-top: 80px; }
+#ct-status { opacity: .7; font-size: .9rem; }
+#ct-root .ct-credit { font-size: .85rem; opacity: .8; }
+#ct-list { display: grid; gap: .8rem; grid-template-columns: 1fr; }
+#ct-list[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#ct-list[data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { #ct-list[data-cols] { grid-template-columns: 1fr; } }
+#ct-root .ct-card { border: 1px solid var(--bs-border-color, #ddd); border-radius: 10px; padding: .6rem .8rem; min-height: 190px; min-width: 0; }
+#ct-root .ct-head { display: flex; justify-content: space-between; gap: .8rem; align-items: flex-start; }
+#ct-root .ct-title { font-weight: 600; line-height: 1.25; }
+#ct-root .ct-move { font-style: italic; font-size: .9rem; }
+#ct-root .ct-comp { font-size: .85rem; opacity: .75; }
+#ct-root .ct-btns { display: flex; gap: .5rem; align-items: center; flex-shrink: 0; font-size: .85rem; }
+#ct-root .ct-meta { display: flex; flex-wrap: wrap; gap: .25rem .4rem; font-size: .76rem; }
+#ct-root .ct-meta span { padding: .05rem .45rem; border-radius: 999px; background: var(--bs-tertiary-bg, #f1f3f5); }
+#ct-root .ct-score { min-height: 90px; margin-bottom: .35rem; }
+#ct-root .ct-on { fill: #d6336c; }
+#ct-root .ct-barno { font-family: "Bar Numbers Mono", ui-monospace, monospace; font-size: 7.5px; font-weight: 400; fill: currentColor; }
+#ct-root .ct-barno-one { font-style: italic; opacity: .7; }   /* bar numbers from a single PDMX score */
+#ct-picker .tl-results, #ct-picker .tl-sort, #ct-picker .tl-count { display: none; }
+</style>
+<div id="ct-root">
+  <p class="ct-hint">Themes from the classical repertoire, one or two phrases each: the openings of symphonies, sonatas, operas,
+  songs and dances. Filter them the way the Tune Assessment's finder does (composer, tonality, meter, key, the note a theme starts on,
+  a tonal pattern such as <em>Do Mi So</em>, rhythm patterns), then sort them on up to three things and show as many as you want.
+  The scores don't say whether a key is major or minor, so a minor key is read from the work's title where it names the key, and
+  otherwise guessed from the melody (marked "guessed"; right about four times in five).</p>
+  <p class="ct-credit">The themes are the 2,067 of Barlow and Morgenstern's <em>A Dictionary of Musical Themes</em> (1948) newly
+  engraved for the <a href="https://www.audiolabs-erlangen.de/resources/MIR/MTD">Musical Theme Dataset</a> (Zalkow, Balke,
+  Arifi-Müller and Müller, International Audio Laboratories Erlangen, 2020), used under
+  <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> and converted to ABC.</p>
+  <div id="ct-picker"></div>
+  <div class="ct-controls">
+    <div class="ct-group" id="ct-sorts"></div>
+    <div class="ct-group">
+      <div class="ct-line"><label for="ct-per">Show</label>
+        <select id="ct-per"><option value="1">1</option><option value="5">5</option><option value="10">10</option><option value="25">25</option>
+          <option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="n">Other…</option><option value="all">All</option></select>
+        <input type="number" id="ct-pernum" min="1" max="10000" aria-label="Themes a page"> at a time</div>
+      <div class="ct-line"><label for="ct-cols">Columns</label>
+        <select id="ct-cols"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+      <div class="ct-line"><label for="ct-tempo">Play at</label><input type="number" id="ct-tempo" min="10" max="600" placeholder="as recorded"> per quarter note</div>
+      <div class="ct-line"><label><input type="checkbox" id="ct-yt"> Only themes with a recording link</label>
+        <button type="button" id="ct-reshuffle" title="New order for the Random sort">Reshuffle</button></div>
+    </div>
+  </div>
+  <div id="ct-status" aria-live="polite"></div>
+  <div id="ct-count"></div>
+  <div class="ct-pager"><button type="button" id="ct-prev">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next">Next →</button></div>
+  <div id="ct-list"></div>
+  <div class="ct-pager"><button type="button" id="ct-prev2">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next2">Next →</button></div>
+</div>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/tonality.js?v=10"></script>
+<script src="/apps/shared/tune-chart.js?v=11"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/shared/rhythm-cells.js?v=1"></script>
+<script src="/apps/shared/tune-library.js?v=18"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/themes/themes-data.js?v=3"></script>
+<script src="/apps/shared/ornament-play.js?v=1"></script>
+<script src="/apps/themes/themes-page.js?v=8"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Barlow, Harold, and Sam Morgenstern. *A Dictionary of Musical Themes*. Crown, 1948. The book MTD's themes are taken from; not consulted directly.
+
+International Audio Laboratories Erlangen. *MTD: Musical Theme Dataset*, version 1.0.0. [www.audiolabs-erlangen.de/resources/MIR/MTD](https://www.audiolabs-erlangen.de/resources/MIR/MTD). The themes on this page, converted to ABC; licensed CC BY 4.0.
+
+Zalkow, Frank, Stefan Balke, Vlora Arifi-Müller, and Meinard Müller. "MTD: A Multimodal Dataset of Musical Themes for MIR Research." *Transactions of the International Society for Music Information Retrieval*, 2020, doi:10.5334/tismir.68. [doi.org/10.5334/tismir.68](https://doi.org/10.5334/tismir.68).
+:::
+<!-- /works-cited -->

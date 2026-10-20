@@ -1,0 +1,11 @@
+X:5730
+%%from edm
+T:Canto Amorose, (Arr. by Elman)
+C:Giuseppe Sammartini
+%%composer Sammartini|Giuseppe
+% EDM 5730 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:A
+cd e4 e4 e4 f2- | f2 z/2 d2- d/2c d8 e2 | d4<c4 Bc d6 | c2 c8 B4

@@ -1,0 +1,10 @@
+X:7808
+%%from edm
+T:Concerto in G minor, Op. 6, No. 1, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7808 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g3g2<b2b2<d'2d' | _g3g2<a2a2<c'2c' | _g'3g'2<a'2a'2<c'2c' | b3b2<g2g2<b2b |

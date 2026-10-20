@@ -1,0 +1,12 @@
+X:6094
+T:Symphony No. 5 in B-flat, 4th Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7726, Barlow & Morgenstern S507, EDM 6094 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=157
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+a4 | c'bd=e | gf=ed | c2 d/=e/f/g/ | a4 | c'bd=e | gf (3=efd | c4 |

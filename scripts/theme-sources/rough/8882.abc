@@ -1,0 +1,10 @@
+X:8882
+%%from edm
+T:Kol Nidrei (Based on Traditional Hebrew Themes), Vn. and Piano, 1st Theme
+C:Max Bruch
+%%composer Bruch|Max
+% EDM 8882 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d4 z2 d2 d2_d2 z2 d2 | _d2A2 z2 A2 A2d2 z2 d2 | _d2=d2 z2 d2 z/2 f2-f/2d _d=ded | f2e2d2_d4<=d4

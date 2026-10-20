@@ -1,0 +1,11 @@
+X:9165
+%%from edm
+T:Concerto No. 1 in E minor, 3rd Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9165 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:E
+B2b2e2g2- | g3f dBe2 | ga^ab c'd'e'

@@ -1,0 +1,10 @@
+X:4369
+%%from edm
+T:Serenade in E-flat, K 375, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4369 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e16 | e8 e6 e2 | e12 e2 z2 | e2 z2 e2 z2 e2 z2 e2 z2 | e12 g3f | e2 z2 e3d c2 z2 c3B | A12

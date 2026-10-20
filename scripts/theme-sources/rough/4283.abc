@@ -1,0 +1,10 @@
+X:4283
+%%from edm
+T:Quartet in A, K 464, 4th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4283 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+e8 ^d4 =d4 | c4 z8 =f4 | f4 f6 =g2 =f2^f2 | d4

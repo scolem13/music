@@ -1,0 +1,10 @@
+X:3745
+%%from edm
+T:Notturno, Orchestra
+C:Giuseppe Martucci
+%%composer Martucci|Giuseppe
+% EDM 3745 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+=D4 E4 G4 F4 | A4 e8 d4 | B2A2 d4 B4 A2G2 | F2G2 B8 A4 | G2F2 E8 D4 |

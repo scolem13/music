@@ -66,6 +66,14 @@ All of it. I checked layout in screenshots and that the pages run without errors
 - **"Show one chord at a time"** (`chord-lesson.js?v=2`, all nine pages regenerated with the new version): a button above the diagrams on guitar and bass pages (not piano, which is one card). Off by default; on, only the sounding bar's chords are shown (the first bar's when stopped), and it follows the band. Test added in `loops.cdp.js`; `loops.cdp.js` and `blues.cdp.js` pass. Not looked at on a phone.
 - Still not done: two-fives/builder in the instrument lessons, rewriting the quiz wording.
 
+## Update (agent, 2026-10-18): two-fives and builders in the instrument lessons
+
+- `pop-changes-guitar`, `-piano`, `-bass` now have step 5 (ii-V-I: Dm7 G7 Cmaj7) and step 6 (ii-V-i in C minor: Dm7b5 G7 Cm7, a step with `minor: true`), a "Build your own" (one menu of 12 chords per bar, four presets, with the lesson's diagram and staff) and "Test your ear" (five kinds of change, hosts `bl-builder`, `bl-quiz`). Bass has an extra step: a line D C | B G | C B | C G (7th of the ii falls a half step to the 3rd of the V, as in guide tones; the minor one ends C Bb) and the minor step uses that line. Written through slash chords, so the staff keeps each note in E2-Eb3.
+- Guitar shapes checked from `BandHarmony.openShape`: Dm7 xx0211, G7 320001, Cmaj7 x32000, Dm7b5 x5656x, Cm7 x35343 (barre). All playable; the prose names the open ones.
+- The generator had fallen behind the .qmd files (front-matter `description/instruments/topics/has`, script versions bumped by other sessions), so `--check` said DIFFERS for all nine. `scripts/chord-lessons.mjs` now keeps those extra front-matter lines as `front` in each JSON; I ran `--extract` (all nine JSONs refreshed from the .qmd files, then `--check` says identical) and `--write` for the three instrument lessons only.
+- `loops.cdp.js`: staff counts for the three pages, the new steps' chords and diagram counts, the builder's preset, the bass line's notes, the ear test on the three pages.
+- Not listened to: the bass line against the band's own bass pattern, and the Dm7b5 shape on a real neck. Quiz wording is mine.
+
 ## Other people's changes in the working tree
 
 `reading-swing.qmd`, `changes-now.md`, the `tests/abc` folder and many changes to the band and tools files were in the tree when this was written and are not part of this work. `_quarto.yml` and `lessons/index.qmd` have both sets of edits in them.
@@ -217,6 +225,13 @@ Watch: swing should come from the one shared setting the swing worktree (`change
   `_site` copies are not refreshed. Open choices: the resting tone for tonics G..B is in the octave from C4 up (octave tolerance
   covers the rest); past session logs saved with the old key index will show the new key names for the same offset.
 
+**Update (agent, 2026-10-18)** — "Next, in order" steps 1 and 2 were already done on 2026-10-14 (see the afternoon update above); nothing in the parsers needed changing.
+- Rechecked: the tonal key bug is gone (`AbcPitch` grades with `AbcCore.keyAccidentals`; `app.js` uses `tonicPc`/`writtenTonicMidi`). New regression test
+  `node tests/abc/tonal-key.test.js` ("TONAL KEY OK (7 tests)": D, Dm, Gmix, Ddor, Eb, C and `tonicPc`; fails on the old C-only reader).
+- Run today, all green: `compare.js` (ABC SAME, 53 of 148 intended), `events.test.js` (EVENTS OK, 11), `nht.test.js` (NHT OK, 23),
+  `SITE=_site PORT=8520 node tests/abc/pages.cdp.js` (PAGES SAME, 13 pages; the baseline's missing `tonicPc` is now filtered in the test).
+- Step 2 (`abc-events.js`: written vs sounding, candidates, confidence, source) is done; still no chords, tuplets, grace notes or repeats. Next is step 3, the profile schema.
+
 ## Lyrics site (carols) and the Backing Track's practice controls (a separate session, 2026-10-13)
 
 Nothing committed (carols is not a git repository). Carols notes for the user: `~/Projects/carols/HOWTO.md` and
@@ -295,6 +310,17 @@ Committed on `swing-model` only (main untouched):
 - Not run: any browser (CDP) test; `_site` not rendered. Nobody has listened to the slot, to the lesson notation at Auto against the band (abcjs rounds its swing), or to it on a phone behind Options. The slot is not remembered between pages.
 - Next: step 3 (written grooves). Merging later: `git checkout -- tests` first in the worktree (its test paths point at `-swing`, uncommitted).
 
+### Update (agent, 2026-10-18): rebuilt on main, steps 1-3
+
+The branch, worktree and `changes-now.md` (now `archive/changes-now.md`) are gone, and none of the commits could be recovered, so steps 1-3 were
+redone directly in main's working tree (nothing committed). Details are in `apps/shared/band/NOTES.org` ("Swing as one shared setting").
+- Step 1: `BandPlayer.swingAt(opts, bpm, override)` -> `{ div, s }`; style `swing` via `styleOpts` (`opts.styleSwing`); `warp(pos, s, div)`;
+  `player.setSwing(x)` / `player.swing()`; `BandMidi.swingOf`, harmony half-time and `groove-anim.js` follow it. Test `tests/band/swing/t_swing.js`.
+- Step 2: `PlayBar.swingSlot` (Auto / 50-75 %) in `blues-kit.js` and Backing Track draft A; `LessonScore.setSwing`; `autoSwing()` replaces the fixed 66.
+- Step 3: `BandGroove.swingFor`, used by `drums.js` and `congas.js` when `writtenSwing` is unset.
+- `reading-swing.qmd`'s two tables and the paragraph under the first now quote the band's curve (68/66/64/60/55 % at 100/120/160/220/300 bpm).
+- Not done: step 4 (the lesson) and 5; browser listening; the slot is not remembered; `?v=` pins of the changed scripts bumped by one on every page that loads them.
+
 ## Piano too reverberant (a separate session, 2026-10-14)
 
 Nothing committed. Nobody has listened to any of it.
@@ -342,6 +368,33 @@ Where to pick up:
    export and a lesson embed; "Hear it with the band" and back; swap the draft in for `tools/drumset.qmd`.
 4. Only the draft loads the new `sounds.js?v=13` / `drums.js?v=14`; other pages still name the old versions.
 5. Watch: the swing branch's step 3 changes `writtenSwing` in `drums.js` (this session's code); merge with care.
+
+### Draft B: what the old page had is carried over (agent, 2026-10-18)
+
+Nothing committed; `tools/drumset.qmd` is still the old page and draft B is NOT swapped in (left for you). Items 2 and 4 above are done, item 3 started.
+- Carried from `tools/_drumset.qmd` (behaviour ported, not names): `localStorage.tuneMeter` (a new page opens in that meter unless the address has a
+  groove; follows the other tab's `storage` event while nothing is written; the pattern menu's "Fits" filter starts on its family, non-fitting patterns marked
+  with a hollow bullet as before); the **icon grid** (Look fold, "Marks" Icons: the old page's 14x14 drawings and colours, plus new ones for ride, bell, stacker,
+  cowbell, ghost, drag, buzz, hi-hat foot + kick; remembered in `localStorage.drumsetMarks`; "Cell size" slider); **Export PNG** (not html2canvas: the grid is drawn
+  as an SVG of its own, black on white, title included, rasterised on a canvas, 1x to 4x); **custom labels** ("Customize labels", click a count word, prompt;
+  Reset labels; kept until meter or grid changes, as the old page; also under the staff and in the PNG); count / title size sliders; **bongos** (a `Bo` lane: H high,
+  L low, GM 60 / 61 in the congas bank as pieces `bongoHi` / `bongoLo`, in the "Congas, bongos" row group, on the staff's "Cga." line, not sent to GrooveScribe);
+  the **ride synth** (`apps/shared/band/ride-synth.js`, the old page's cymbal verbatim: five rides, stick / mallet / brush, decay, reverb, high-pass, low-pass).
+  The ride is a choice, default the band's sample: with "Synthesized here" the band's ride and ride bell are turned to zero (`setKitVolume`) and the synth plays
+  the same hits from `onEvent` times. The synth goes straight to the output, not through the band's mix bus (no band reverb / compressor on it).
+- Not carried: the old page's empty "Fill" menu (a placeholder there too); the "Beat is" tempo-note dial (the draft's Tempo is quarter notes, GrooveScribe's way); the
+  old per-row instrument chips (the draft's right-click row menus do that); html2canvas (own renderer instead); "Diagram scale" is "Cell size".
+- Edits outside the draft: `groove.js` (Bo lane, v=3), `sounds.js` (two congas-bank pieces, additive, now `v=16` in the draft only: other pages still load 15 and simply
+  lack the bongos), new `groove-library.js`, `ride-synth.js`, `tests/band/meter/fetch-samples.js` (notes 60, 61).
+- Library of standard patterns: started with the **drum rudiments**, each with its source (Percussive Arts Society, International Drum Rudiments): single stroke,
+  double stroke open roll, single paradiddle, double paradiddle, paradiddle-diddle, flam, flam tap, flam accent, flam paradiddle, drag, single drag tap (stickings in the
+  Stickings lane). The citation was written from memory and has not been checked against the PAS document (no page or year beyond "40 rudiments"); the practice
+  tempos and note values are ours. **No rock / shuffle / bossa / samba / fill is in it**: I could not attribute any of those to a source I could check, so none were added
+  (the old page's tokens had no sources either). Source line is shown under the menu.
+- Tests: `node tests/band/groove/t_groove.js` (new "BONGOS AND PATTERNS OK"), `tests/band/groove/carried.cdp.js` ("DRUMSET CARRIED OK"), `editor.cdp.js` still OK;
+  `lead/drums.test.js`, `lead/straight.test.js`, `congas/t_*.js`, `meter/t_meter.js`, `agent-b/zones.test.cjs` pass. Nobody has listened to the bongos, the synth ride beside the sample ride,
+  or the icons on a phone.
+- The draft's script versions now match the Backing Track's (drums 16, player 120, sounds 16, ...). To swap in: copy `_drumset-b.qmd` over `_drumset.qmd` (or point `drumset.qmd` at it).
 
 ## Note spelling: typed spellings kept, a context speller (a separate thread of the pickup session, 2026-10-14)
 
@@ -1326,8 +1379,13 @@ each its own way; meter required before rhythm; key guessed but always confirmed
   index): load, stamp, name sections, tap bars, use the map, YouTube backup plan, a 15-minute exercise, keys table. sections.js.
 - **Tests:** `node tests/lessons/timestamp.cdp.js` (19 checks, silent WAV made in the page, after rendering). Never tried with a
   real song or a real YouTube tab; follow-mode drift is unmeasured. Not committed.
-- **Next (planned):** the Backing Track and Notation pages read `bar-map.json` (jump the recording from a section or bar; the band
-  following the recording's own tempo). Other audio ideas from the session: slow-down/transpose of files, mic pitch vs the
+- **Done 2026-10-18:** `recording-follow.js` (`RecordingFollow`): the Backing Track (Recording panel) and the Notation page read a song file or
+  bar map and show the recording with the same player; a clicked chart bar / chosen chunk / section seeks it; "band follows the recording's tempo"
+  sets the band's tempo per bar from the map (Backing Track `onBar` -> `player.setTempo`, as Notation's `makeBand` already did per chunk; the tempo
+  set on the page returns on stop). Test `node tests/lessons/recording-follow.cdp.js`. Not tried with a real song or the band playing with samples;
+  starting the recording on the band's first bar ignores the scheduler's lead, so it may sit a few tens of ms off. The Backing Track's bar n is
+  the map's bar n + an offset typed in the panel (no automatic matching of a pickup). **Still planned:** slow-down/transpose of files.
+  (Rest of the old Next:) Other audio ideas from the session: slow-down/transpose of files, mic pitch vs the
   Notation melody, recording takes over the band.
 
 ## Record-yourself demo, audio sound check, wired into every mic page (this session, 2026-10-15)
@@ -1504,3 +1562,20 @@ an agent), and a guitar/bass setup diagnosis. Uncommitted. Shared files touched:
   notation conventions aren't sourced, and `technique` as a topic is used by only one other lesson.
 - **Not done:** the fifth-fret and harmonics steps are generated for any tuning, but only the standard-tuning steps were checked by hand; the
   mic can't read the open low strings of a bass or a tuning below about D2 (the tuning page says so).
+
+## Drum grips, brushes and cajón lessons (2026-10-18)
+
+- **Files:** `lessons/drum-grips.qmd` (matched German / American / French, traditional, strokes, Moeller, a table of other
+  choices: lead hand and open-handed, pedal heel up / down, burying the beater, hi-hat foot, throne, kit size, cymbals, sticks,
+  reading), `lessons/drum-brushes.qmd` (brushes and heads, holding, swing pattern, circle / half-moon, when to use), and
+  `lessons/cajon-basics.qmd` (parts, sitting, bass / slap / ghost / tone, a first 4/4 beat as a count table, 16ths, 6/8, rumba
+  flamenca, landó, extras). In the Rhythm and Percussion sidebar part after the conga lessons, and in the Lessons listing.
+  Wikipedia sources added to `scripts/works-cited.py`. Rendered.
+- **Text and tables only:** no band, notation, sound or drawings. `has: []` written by hand; `lesson-features.cjs` and
+  `tool-catalog.cjs` not rerun.
+- **Open: samples.** The band has no brush or cajón sounds (General MIDI kits have no sweep; cajón would be a stand-in at
+  best, as on the conga lesson). To play the examples, these need: brush taps and continuous sweeps (a loop or noise shaped by
+  the hand's speed?), cajón bass / slap / ghost / tone, and maybe the grips' stroke heights as velocity layers. Decide where
+  they come from (record, license, or synthesise), then how they load (`BandSounds`, or the R2 manifest route the DJ lessons use).
+- **To check:** the content is from general drumming knowledge beyond the Wikipedia pages; nobody has checked the brush
+  pattern descriptions or the cajón counts against a teacher or a recording.

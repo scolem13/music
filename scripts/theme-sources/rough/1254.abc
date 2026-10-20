@@ -1,0 +1,10 @@
+X:1254
+%%from edm
+T:Quintet, Op. 81, 3rd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1254 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+A2G2A2B2c2d2 | e4 ^d2f2 e4 | f4 =f2g2 ^f4 | c'12 | d'2c'2d'2e'2f'2g'2 | a'2 z2 e'2c'2 a4 |

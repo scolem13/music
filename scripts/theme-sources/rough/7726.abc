@@ -1,0 +1,11 @@
+X:7726
+%%from edm
+T:Sonata in E minor, 4th Movement - Gavotte
+C:Francesco Veracini
+%%composer Veracini|Francesco
+% EDM 7726 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:G
+B2 z2 B2 z2 g4 f2e2 | ^d2 z2 e2 z2 ^A4 B2 z2 | g/2^a/2g/2a/2g/2a/2g/2a/2f2e2 ^d4 e2 z2 | B4 c2 z2 z/2 A3-A/2G2

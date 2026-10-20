@@ -1,0 +1,10 @@
+X:1500
+%%from edm
+T:Hunyadi Laszlo, Overture, 4th Theme
+C:Franz Erkel
+%%composer Erkel|Franz
+% EDM 1500 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+B2 z2 c2^c2 | e2 z d c2B2 | A2G2 F2 z G | A2 z6 | e2 z2 d2c2 | B2 z A A2G2 | F2A2 d2 z c | B2

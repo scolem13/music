@@ -1,0 +1,11 @@
+X:7107
+%%from edm
+T:Le Baiser de la Fee, 2nd Movement - Fête au Village, 4th Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7107 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:G
+e2e2 e3f | e2d2 dddd | d2c2 eeef | e2d2e2e2 | e3f e2d2 | dddd d2c2 | eeef g4 |

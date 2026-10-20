@@ -1,0 +1,10 @@
+X:6553
+%%from edm
+T:Karelia, Op. 11, Suite for Orchestra, 1st Movement - Intermezzo
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6553 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+b3g g2b2 | c'2bb b2g2 | a2gg g2e2 | f2 b4 b2 | b3g =a2_g2 | g2 b4 c'2 | c'3=a b2g2 |

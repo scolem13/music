@@ -1,0 +1,10 @@
+X:3404
+%%from edm
+T:Concerto No. 2 in A, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3404 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+F, F,8- F,3- | F,/2A,,/2A,2 z8 z | A, A,6- A, B,,2<D2 | C =B,4

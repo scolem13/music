@@ -1,0 +1,11 @@
+X:6386
+%%from edm
+T:Symphony No. 3 in E-flat, Op. 97, 5th Movement - 4th Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6386 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+f4 b4 f4 d4 | =e4 f4 c4 F4 | g4 c'4 g4 =a4 | f8<f'8 |

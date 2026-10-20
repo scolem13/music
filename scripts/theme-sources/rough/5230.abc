@@ -1,0 +1,10 @@
+X:5230
+%%from edm
+T:Pieces de Clavecin en Concert, No. 5, La Forqueray
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5230 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+z4 d4 D4 d4- | d2c2B2A2 G2F2E2D2 | C4 c4 C4 c4- | c2B2A2G2 F2E2D2C2 | B,4 B4 B,4 B4 |

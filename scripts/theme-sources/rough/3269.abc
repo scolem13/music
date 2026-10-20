@@ -1,0 +1,10 @@
+X:3269
+%%from edm
+T:Caprice Viennois, Op. 2, 2nd Theme
+C:Fritz Kreisler
+%%composer Kreisler|Fritz
+% EDM 3269 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+d6 e2 d4 | z/2 c4- c3/2B2 c4 | d6 e2 f4 | f12 | d6 e2 f4 | g6 a2 g4 | G12- | G12 |

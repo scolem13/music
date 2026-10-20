@@ -1,0 +1,12 @@
+X:8751
+T:Symphony No. 2 in D, Op. 73, 4th Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1754, Barlow & Morgenstern B1618, EDM 8751 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=180
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A2 e<^d B2 e<c | A2 =d<B F<A ^G<B | E2 |

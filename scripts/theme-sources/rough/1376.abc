@@ -1,0 +1,10 @@
+X:1376
+%%from edm
+T:Trio, Op. 90, Vn., Piano and Cello, "Dumky", 1st Movement - Intro
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1376 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:G
+B4 g4 | a4 c4 | B4 g4 | f4 A4 | G8 | F8 |

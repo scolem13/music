@@ -1,0 +1,10 @@
+X:3650
+%%from edm
+T:Woodland Sketches, Piano, To a Water Lily, Op. 51, No. 6, 1st Theme
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3650 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F#
+c'16 | c'16 | d'4 f'4 d'4 a4 | c'16 | a16 | e12 d4 | B16 | A8<c8 |

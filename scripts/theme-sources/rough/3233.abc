@@ -1,0 +1,10 @@
+X:3233
+%%from edm
+T:Symphony No. 1, Op. 4, 3rd Movement - 2nd Theme
+C:Tikhon Khrennikov
+%%composer Khrennikov|Tikhon
+% EDM 3233 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z8 ^a8- | ^a4 c'4 ^c'4 =c'4 | ^a2c'2^g2a2 ^f2g2=f2^f2 | f4 e4 ^a4 ^g4 | f16- | f4 z4 f4 ^d4 | B16 |

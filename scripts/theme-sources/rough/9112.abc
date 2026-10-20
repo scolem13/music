@@ -1,0 +1,10 @@
+X:9112
+%%from edm
+T:Quartet, Op. 30, 1st Movement - 3rd Theme
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9112 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c'4 ^a8 g2a2 | c'4 ^a8 g2a2 | c'4 d'4 e'4 g'4 | f'2e'2 d'4 e'4 c'2a2 | d'12

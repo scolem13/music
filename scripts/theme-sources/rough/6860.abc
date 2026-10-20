@@ -1,0 +1,12 @@
+X:6860
+%%from mtd
+T:Fruhlingsteimmen, Op. 410, Waltz, 4th Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8489, Barlow & Morgenstern S1251, EDM 6860 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=186
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+Ba | g4 Bf | e4 Ad | c6- | cBGEGd | c6- | cBAFAd | c6- | c2 |

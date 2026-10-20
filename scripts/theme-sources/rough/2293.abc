@@ -1,0 +1,10 @@
+X:2293
+%%from edm
+T:Sonata in G minor, Op. 1, No. 6, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2293 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d2g2a2b2 a2g2_g2=g2 | f2e2d2c2 B2A2B2c2 | B2A2G2_G2 =E2D2

@@ -1,0 +1,10 @@
+X:2332
+%%from edm
+T:Suite No. 4, in E minor, 5th Movement, Gigue
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2332 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B2 e4 B2 c2B2A2G2- | G4 A/2B/2A/2B/2A/2B/2A/2B/2 A/2B/2A/2B/2B2 A2G2 | F2G2 E4<^D4

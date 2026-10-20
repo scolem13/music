@@ -1,0 +1,10 @@
+X:91
+%%from edm
+T:Concerto in C, Op. 7 No. 1, 2nd Movement - Minuet
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0091 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+g8 z/2 f/2efg | a3g g4 z4 | e8 gfef | e4 d/2e/2d/2e/2d/2e/2d/2e/2 c4 |

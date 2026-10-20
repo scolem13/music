@@ -1,0 +1,10 @@
+X:1906
+%%from edm
+T:Symphony, Op. 26, "Rustic Wedding", 1st Movement - Wedding March
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1906 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+E,4 B,,2E,2 | F,4 B,,2F,2 | G,2A,G, F,2E,2 | F,4 B,,2F,2 | G,2A,B, A,2G,2 | F,2G,2E,2F,2 |

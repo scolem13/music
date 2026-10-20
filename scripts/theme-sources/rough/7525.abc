@@ -1,0 +1,10 @@
+X:7525
+%%from edm
+T:Serenade in C, Op. 48, 1st Movement - (Piece in Form of Sonatine), 3rd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7525 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+d'bgabc' d'd'd'd'd'd' | g'c'c'c'c'c' f'bbbbb | e'aaaaa d'

@@ -1,0 +1,11 @@
+X:6243
+%%from edm
+T:Papillons, Op. 29, No. 5
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6243 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+d6 gf d'2c'b | b2ag _g2a=g =B2dc | d8

@@ -1,0 +1,12 @@
+X:6909
+%%from mtd
+T:Roses From the South, Waltzes, Op. 388, No. 3, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8538, Barlow & Morgenstern S1300, EDM 6909 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=164
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+b6- | b4 fg | a6- | a4 ce | g4 ce | g4 fe | d6 | B2 z2 z2 |

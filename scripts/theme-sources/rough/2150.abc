@@ -1,0 +1,10 @@
+X:2150
+%%from edm
+T:Concerto No. 7 in B-flat , Op. 7, No. 1, 1st Movement, 2nd Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2150 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z4 B4 E4 F4 | B,4 E2C2 F2B,2F2F2 | B,4

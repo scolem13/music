@@ -1,0 +1,10 @@
+X:8040
+%%from edm
+T:Portsmouth Point, Overture, 2nd Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8040 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e4- efg=a b2b2b2b2 | (3b4-be'4- e' g4- g c'2 b4 | e'2 g4 c'2 b2e'2g2c'2 | b4

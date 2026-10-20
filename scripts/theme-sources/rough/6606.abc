@@ -1,0 +1,10 @@
+X:6606
+%%from edm
+T:The Swan of Tuonela, Op. 22, No. 3, 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6606 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/4
+L:1/16
+K:C
+e12 ^f4 e4 a8 b4 a4 | e16 d4 e4 c4 e4 ^f4 | a24

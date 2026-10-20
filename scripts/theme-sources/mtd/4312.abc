@@ -1,0 +1,12 @@
+X:4312
+T:Quintet in E-flat, K 452, 1st Movement - Intro
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5962, Barlow & Morgenstern M687, EDM 4312 (Musical Theme Dataset, CC BY 4.0)
+N:Largo - Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=40
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E2 B3/2d/4c/4 B bde | f2 B3/2d/4c/4 B bef | g2 |

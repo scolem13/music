@@ -1,0 +1,11 @@
+X:5413
+%%from edm
+T:Pines of Rome, Pines of the Gianicolo, 1st Theme
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5413 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:B
+f6 d2 c3F g2f2 | d3F a4 g8 | f2d2 c2 d4 F2 f4- | f16- | f4

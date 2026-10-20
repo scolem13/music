@@ -1,0 +1,10 @@
+X:3412
+%%from edm
+T:Eight Grandes Etudes de Paganini, Etude No. 1 in G minor, (Paganini Caprice, No. 6)
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3412 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+D6 G2 _G2E2 | D6 D2 C2B,2 | A,6 C2 A,2G,2 | B,4 A,2

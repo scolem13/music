@@ -1,0 +1,11 @@
+X:7260
+%%from edm
+T:Light Cavalry, Overture, 3rd Theme B
+C:Franz von Suppé
+%%composer Suppé|Franz von
+% EDM 7260 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:A
+a6 a6 | a2g2f2 e2^d2e2 | f2 z2 B2 z/2 B3/2^A2B2 | (3c4-cB4- B G4- GE2 |

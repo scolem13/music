@@ -1,6 +1,6 @@
 // Guitar shapes follow each other by the smallest move of the fretting hand; two-note chords (guide2).
 const assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 require(R + "voicings.js"); require(R + "band/harmony.js");
 const V = ChordVoicings, H = BandHarmony;
 const g = (...f) => f.map((fret, string) => fret == null ? null : { string, fret }).filter(Boolean);

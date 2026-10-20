@@ -1,0 +1,10 @@
+X:2996
+%%from edm
+T:Divertissement, 2nd Movement, 2nd Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 2996 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+z2 ^C2 ^F4 | ^c2 ^G4 ^A2- | ^A2^F2 ^G2AB | ^c4 g4 | ^d2^c2^f2d2 | ^c2^A2^G2A2 |

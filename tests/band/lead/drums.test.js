@@ -1,5 +1,5 @@
 const fs = require("fs"), vm = require("vm"), assert = require("assert");
-vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/drums.js", "utf8"));
+vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/band/drums.js"), "utf8"));
 function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const PIECES = new Set("kick snare rim hatClosed hatFoot hatOpen ride rideBell crash tomHi tomMid tomLo sticks".split(" "));
 const stats = { bars:0, fills:{}, crashes:0, comps:0, pieces:{} };

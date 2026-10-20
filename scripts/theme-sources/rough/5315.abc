@@ -1,0 +1,13 @@
+X:5315
+%%from mtd
+T:Sonatine, 3rd Movement - 1st Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6952, Barlow & Morgenstern R185, EDM 5315 (Musical Theme Dataset, CC BY 4.0)
+N:Animé  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=170
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+z2 z c f8 | z2 z A e8 | z2 z F ^d2zA e4 | z2 z c f8- | f2ef c'8 |

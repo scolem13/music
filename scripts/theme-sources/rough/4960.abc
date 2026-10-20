@@ -1,0 +1,10 @@
+X:4960
+%%from edm
+T:Concerto, No. 2, Op. 63, 2nd Movement - 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4960 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Eb
+e16 d2 f6- | f2e2 f2e2 a4 g2f2 e2B2 c4 | A4 G2F4<E4 e8- e2- | e2f2 d2B2 B2 b4

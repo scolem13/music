@@ -1,0 +1,10 @@
+X:9790
+%%from edm
+T:Paris Nocturne, Orchestra, 4th Theme
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9790 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+g'4 z4 f'3d'2<e'2f' | b3e' e'4 z8 | b4 z4 e3g2<a2b | e3g g4

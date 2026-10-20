@@ -1,0 +1,13 @@
+X:4854
+%%from mtd
+T:The Incredible Flutist, Suite from Ballet, Intro
+C:Walter Piston
+%%composer Piston|Walter
+% MTD 6500, Barlow & Morgenstern P114, EDM 4854 (Musical Theme Dataset, CC BY 4.0)
+N:Introduction - Siesta in the Market Place  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=35
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z2 ^f/8a/8^g3/4- g3 | ^f d2- d>ff/f/ | ^f/8a/8^g3/4- g2- g/ z/ f2- | f^f/4d/4c/4d/4-d- dfd- | d2 c d2 |

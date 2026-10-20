@@ -1,0 +1,11 @@
+X:5381
+%%from edm
+T:Antiche Dance ed Arie Per Liuto, 1st Movement - Balletto "II Conte Orlando" (After Simone Molinaro)
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5381 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+f4 f2g2 a4 b4 | a6 g2 f4 e2d2 | c4 d8 c4 | d2c2d2e2 f4 d4 |

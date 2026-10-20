@@ -1,0 +1,10 @@
+X:3641
+%%from edm
+T:Suite No. 2, IV. Elegy
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3641 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+F8 =E4 B,2 z2 | z4 =E4 D4 B,4 | z/2 F6- F3/2 =E4 B,2 z2 | z4 D4 _D4 A,4 |

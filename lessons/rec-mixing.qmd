@@ -1,5 +1,5 @@
 ---
-title: "Recording 5: Mixing"
+title: "Recording 7: Mixing"
 toc: true
 toc-depth: 2
 description: "Balance, pan, EQ, compression and space, in that order, with sends and automation."
@@ -39,7 +39,7 @@ Spread things across the stereo picture so they don't sit on top of each other.
 - **Centre**: kick, snare, bass, lead vocal: the foundation.
 - **Off centre**: guitars, keys, backing vocals, percussion. Two similar guitars hard left and hard right.
 - Drums panned as the audience sees them (or the drummer does; pick one).
-- Check in **mono**: everything should still be heard. Why, and what goes wrong: [Recording 7: Mono and Stereo](rec-stereo.qmd).
+- Check in **mono**: everything should still be heard. Why, and what goes wrong: [Recording 9: Mono and Stereo](rec-stereo.qmd).
 
 <div class="sk" data-w="stereo"></div>
 
@@ -87,10 +87,31 @@ A [compressor](sound-compressor.qmd) evens out the level so a part stays in plac
 
 ## Next
 
-- [Recording 6: Mastering](rec-mastering.qmd)
+- [Recording 8: Mastering](rec-mastering.qmd)
 
 {{< include _synth-kit.qmd >}}
 
 ```{=html}
 <script src="/apps/shared/lessons/rec-kit-mix.js?v=1"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Houghton, Matt. "Q. Should I Gain-stage to -6dBFS or -18dBFS?" *Sound On Sound*, Apr. 2026. [www.soundonsound.com/sound-advice/q-should-gain-stage-6dbfs-or-18dbfs](https://www.soundonsound.com/sound-advice/q-should-gain-stage-6dbfs-or-18dbfs).
+
+**For teachers**
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Izhaki, Roey. *Mixing Audio: Concepts, Practices, and Tools*. 4th ed., Routledge, 2023. Details from the Routledge listing (O'Reilly's copy says 2024).
+
+Owsinski, Bobby. *The Mixing Engineer's Handbook*. 5th ed., BOMG Publishing, 2022. Details from retailer and Goodreads listings.
+
+Senior, Mike. *Mixing Secrets for the Small Studio*. 2nd ed., Routledge, 2018. Details from retailer and library listings.
+:::
+<!-- /works-cited -->
+

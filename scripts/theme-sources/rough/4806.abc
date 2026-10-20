@@ -1,0 +1,10 @@
+X:4806
+%%from edm
+T:Toccata Con Lo Scherzo Del Crucco, Harpsichord
+C:Bernardo Pasquini
+%%composer Pasquini|Bernardo
+% EDM 4806 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+e2 c8 B6- | B8- B2 e6- | e6 d/2e/2d/2e/2 d/2e/2c d6- | d6 c3 B c6- | c8- c2 A6- | A2 A8

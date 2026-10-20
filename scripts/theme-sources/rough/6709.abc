@@ -1,0 +1,11 @@
+X:6709
+%%from edm
+T:Aus Meinem Leben, Quartet No. 1 in E minor, 3rd Movement
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% EDM 6709 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Ab
+c6 c4 c2 | c2B3c d6 | d6 d4 d2 | d2c3-c/2d/2 e6 | e6 e4 f2 | e2

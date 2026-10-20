@@ -1,0 +1,10 @@
+X:4085
+%%from edm
+T:Concerto in B-flat, K 450, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4085 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+f8 d8 | B6 A2 e4 z4 | e8 c8 | A6 B2 f4

@@ -1,0 +1,14 @@
+X:9606
+%%from mtd
+T:Golliwogg's Cake Walk - 3rd Theme (Parody on Tristan)
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2597, Barlow & Morgenstern D29, EDM 9606 (Musical Theme Dataset, CC BY 4.0)
+N:Golliwogg's Cakewalk  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+% More than one voice in the score: the melody (voice 1) only. All voices: scripts/theme-sources/mtd-two-voice/9606.abc
+M:2/4
+L:1/8
+Q:1/4=106
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Gb
+=A,2 | F3 =E | _E4 | z{/=d} e{/=c}_d{/=d}e |

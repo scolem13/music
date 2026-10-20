@@ -1,0 +1,10 @@
+X:1416
+%%from edm
+T:Falstaff, Op. 68, Symphonic Study, 1st Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1416 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+G,4 D,6 F,2 A,,4- | A,,2E,4<B,,,4 D,2 F,,4- | F,,2C,4<^F,,4 ^A,,2 D,,4- | D,,2A,,2 G,,4

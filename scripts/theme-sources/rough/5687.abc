@@ -1,0 +1,10 @@
+X:5687
+%%from edm
+T:Sonata No. 2, in F, Op. 123, 1st Movement - 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5687 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+z C2<F2 A2<c2 dBA GABc | z A2<c2 c2<d2 def edec | B4<A4 d4<c4 |

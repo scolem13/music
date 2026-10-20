@@ -1,0 +1,10 @@
+X:5884
+%%from edm
+T:Fantasie in C, "Wanderer", Op. 15, 4th Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5884 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+_g6 g2 g4 =b4- | =b2b2 b4 _b6 b2 | b8<=e'8 | e'6 e'2 =b4

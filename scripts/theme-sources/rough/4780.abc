@@ -1,0 +1,10 @@
+X:4780
+%%from edm
+T:Concerto No. 2, in B minor, Op. 7, 1st Movement - 2nd Theme
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4780 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f12 gfed | d8 c4 z2 A2 | dedc dfeg fgfe fa^gb | b8 a2

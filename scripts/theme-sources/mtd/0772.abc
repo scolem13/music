@@ -1,0 +1,12 @@
+X:772
+T:Quartet in F, Op. 135, Str., 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0766, Barlow & Morgenstern B664, EDM 0772 (Musical Theme Dataset, CC BY 4.0)
+N:Vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=321
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+F,, z A,, | B,, z C, | D, z C, | B,, z G,, | F,, z A,, | B,, z C, | D, D,, C,, | F,, |

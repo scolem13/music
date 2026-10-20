@@ -1,0 +1,10 @@
+X:6402
+%%from edm
+T:Toccata, Op. 7, Intro.
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6402 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G2 b4 c'2 | ^f2 a4 g2 |

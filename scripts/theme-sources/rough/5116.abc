@@ -1,0 +1,10 @@
+X:5116
+%%from edm
+T:Concerto in G, 3rd Movement
+C:Johann Quantz
+%%composer Quantz|Johann
+% EDM 5116 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+d8 | c2B2A2G2 | F2E2D2C2 | B,2G2G2G2 | AGFG A2c2 | BGFG EGFG | DGFG CGFG |

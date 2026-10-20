@@ -1,0 +1,13 @@
+X:3710
+%%from mtd
+T:Symphony No. 9, in D, 3rd Movement - 2nd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5362, Barlow & Morgenstern M102, EDM 3710 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo-Burleske. Allegro assai. Sehr trotzig.  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=223
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A,CE | F4 ^G4 | A^G A z z2 A z | B4 c4 | d6 d z | f z _e z d z c z |

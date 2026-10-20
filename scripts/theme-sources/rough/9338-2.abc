@@ -1,0 +1,12 @@
+X:9338
+%%from mtd
+T:Waltzes, Op. 34, No. 2 in A minor, Theme C (part 2)
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2332-2, Barlow & Morgenstern C344, EDM 9338 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=171
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c6 | B4 A2 |{/GA} G2 ^^FGAB | A6 |

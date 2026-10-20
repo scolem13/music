@@ -1,0 +1,10 @@
+X:4870
+%%from edm
+T:Quartet No. 1, 2nd Movement - 1st Theme A
+C:Walter Piston
+%%composer Piston|Walter
+% EDM 4870 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:8/8
+L:1/16
+K:C
+z8 z2 ^F,3 G, F,D, | E, ^F,8 z F,3 ^G, F,B,, | E,^F,2<F,2 ^G, G,A, A,B,2<C2 A, ^D=D |

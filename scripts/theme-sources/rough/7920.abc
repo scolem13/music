@@ -1,0 +1,11 @@
+X:7920
+%%from edm
+T:Tannhauser, Overture, 6th Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7920 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:E
+b8 =d2d2e2b2 | d'8 c'8 | ^a4 f4 b4 b4 | c'6 ^a2 f4 f4 | f8 b2^a2b2=c'2 | c'12

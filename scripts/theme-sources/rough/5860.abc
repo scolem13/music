@@ -1,0 +1,10 @@
+X:5860
+%%from edm
+T:Verklarte Nacht, Op. 4, 4th Theme
+C:Arnold Schonberg
+%%composer Schonberg|Arnold
+% EDM 5860 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f4 f4 f4 f4- | f4 _d8 f4- | f4 _d8 f4- | f4 _d8 f4- | f4 _d6 e'2 _d'4 | c'3b a2_d'2 f'2a'2 _d''4 | c''3b' f'8

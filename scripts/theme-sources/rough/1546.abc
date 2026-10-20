@@ -1,0 +1,10 @@
+X:1546
+%%from edm
+T:Suite Populaire Espagnole, Asturiana
+C:Manuel de Falla
+%%composer Falla|Manuel de
+% EDM 1546 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+z4 =E4 F4 | G4 F4 A4 | c8 B2A2 | G12- | G8 =E2F2 | G4 F4 A4 | c8 B2A2 | G8

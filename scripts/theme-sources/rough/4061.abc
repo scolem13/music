@@ -1,0 +1,10 @@
+X:4061
+%%from edm
+T:Concerto in G, K 313, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4061 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+A,4 D2F2 A2A2A2A2 | AdB^G AB z/2 G/2 z/2 E/2 D4- D/2E/2F/2G2

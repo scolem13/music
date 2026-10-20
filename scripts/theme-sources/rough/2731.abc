@@ -1,0 +1,10 @@
+X:2731
+%%from edm
+T:Symphony in C minor, No. 95, 3rd Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2731 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+C2B,2C2G,2E,2C,2 | F,2A,2G,2E,2C,2G,,2 | E,,2G,2F,,2A,2G,2B,2 | D2F2E2C2B,2C2 |

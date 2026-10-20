@@ -1,0 +1,10 @@
+X:8864
+%%from edm
+T:Simple Symphony - 4th Movement (Frolicsome Finale), 1st Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% EDM 8864 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+A4 A4 A4 e4 | e4 e4 d2e2 f4 | f4 d4 d4 a4 | a4 _a4

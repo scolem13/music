@@ -1,0 +1,11 @@
+X:1778
+T:An American in Paris, 2nd Theme
+C:George Gershwin
+%%composer Gershwin|George
+% MTD 3441, Barlow & Morgenstern G40, EDM 1778 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=127
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z EFD | ED C2 | z EFD | ED C2 | z B,CD | F4- | F4 |

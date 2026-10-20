@@ -1,0 +1,10 @@
+X:1249
+%%from edm
+T:Quintet, Op. 81, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1249 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:E
+G2G2 G4 =G2G2 c4 | B2A2 G4 =G2G2 B4 | A2F2 E4 D2E2 G4- | G2D4<G4 C2

@@ -1,0 +1,10 @@
+X:4754
+%%from edm
+T:Minuet, Op. 14, No. 1, 3rd Theme
+C:Ignace Jan Paderewski
+%%composer Paderewski|Ignace Jan
+% EDM 4754 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G4 g8 | d4 ^d6 =f2 | g2^d2 g8 | d4 z/2 g3/2^d2 =f2=d2 | ^d2c2 =f8 | c4 d6 ^d2 | =f2d2

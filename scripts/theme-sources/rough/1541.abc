@@ -1,0 +1,10 @@
+X:1541
+%%from edm
+T:Three dances, from El Sombrero de Tres Picos, Miller's Dance
+C:Manuel de Falla
+%%composer Falla|Manuel de
+% EDM 1541 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e4 a4 a4 a/2g/2a/2b/2a2 | g2f2 e12 | e4 a4 a4 a/2g/2a/2b/2a2 | g2f2g2f2 e8 | e4 a4 a4 a/2g/2a/2b/2a2 | g2a2b2c'2 b2a2

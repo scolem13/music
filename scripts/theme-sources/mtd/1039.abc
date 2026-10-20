@@ -1,0 +1,12 @@
+X:1039
+T:Symphony No. 2, in D, Op. 36, 4th Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1033, Barlow & Morgenstern B915, EDM 1039 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=257
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f | g2 z C TC3 B,/C/ | E2 A,2 z2 AA | dAff eAgg | fAaa agfe |

@@ -1,0 +1,11 @@
+X:5754
+%%from edm
+T:Zigeunerweisen, Op. 20, 3th. Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5754 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+g4 g4 | c'6 g2 | f2<e2 d2<c2 | d8 | g4 e'4 | d'6 c'2 | b2<f2 g2<a2 | g8 |

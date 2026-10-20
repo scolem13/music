@@ -1,0 +1,10 @@
+X:3333
+%%from edm
+T:Symphonie Espagnole, Op. 21, 1st Movement - 2nd Theme
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3333 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c4 d4 _e4 d2c2 | B16 | c4 d4 z/2 _e3-e/2d2c2 | c2d2 B12 | d4 _e4 g4 b2-b/2a3/2- | a z/2 (3g4f4_e4 d2-d/2

@@ -1,0 +1,10 @@
+X:306
+%%from edm
+T:Suite No. 2 in B minor, Fl. and Str., Overture - Rondeau
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0306 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+d4 c4 F8 | e4 d4 F8 | f2e2f2g2 f2e2d2f2 | e2d2e2f2 e2d2c2e2 |

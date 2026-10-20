@@ -1,0 +1,10 @@
+X:5847
+%%from edm
+T:Sonata in F, Op. 8, 1st Movement
+C:Johann Schobert
+%%composer Schobert|Johann
+% EDM 5847 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+(3f'c'a g4 f2 | (3abc' c'4 b2 | (3b'g'e' d'4 c'2 | (3gab b4 af' | z/2 f'/2>e'/2f'/2e'2 d'2c'f' |

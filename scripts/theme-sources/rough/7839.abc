@@ -1,0 +1,11 @@
+X:7839
+%%from edm
+T:Sonata in D minor, Op. 2, No. 3, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7839 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+a4- agfe d6 d2 | b2eb2<a2g fed2 z2 ad | d2ac c2c2 c2=B2

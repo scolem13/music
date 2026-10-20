@@ -1,0 +1,10 @@
+X:34
+%%from edm
+T:Midsommarvarka, Op. 19, Orchestra, 3rd Theme
+C:Hugo Alfven
+%%composer Alfven|Hugo
+% EDM 0034 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+F4 F4 | D4 D4 | E2>D2 E2F2 | E3/2C-[C/2^A,/2-]^A,3

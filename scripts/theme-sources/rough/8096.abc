@@ -1,0 +1,11 @@
+X:8096
+%%from edm
+T:Rondo Brillant, "La Gaite", Op. 62, 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8096 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+d/2f/2e=A/2c/2B _a/2c'/2bd/2f/2e | =b/2d'/2c'g/2_b/2a =B/2d/2c3- | c

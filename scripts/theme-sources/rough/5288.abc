@@ -1,0 +1,11 @@
+X:5288
+%%from edm
+T:Ma Mère L'Oye, Hop O'My Thumb (Petit Poucet)
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5288 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:5/4
+L:1/16
+K:Eb
+g2=a2 b2 g4 f2 g2c2 d2f2 | e2d2 c2 B4 c2 d2d2 c2c2- | c2

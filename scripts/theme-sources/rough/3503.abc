@@ -1,0 +1,10 @@
+X:3503
+%%from edm
+T:Sonata in B minor, 6th Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3503 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F#
+c4 c4 e4 | d4 c6 B2- | B2A2 G4 z/2 z/2 d3- | d2c2 c8 |

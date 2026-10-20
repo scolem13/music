@@ -1,0 +1,12 @@
+X:8548
+T:Quartet in G minor, Op. 25, 4th Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1551, Barlow & Morgenstern B1415, EDM 8548 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo alla zingarese  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=159
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+{/D} G2{/G} B2 |{/B} AG^FG | d2 A2 |{/D} G2{/G} B2 |{/B} AG^FG | d=e ^f2 |

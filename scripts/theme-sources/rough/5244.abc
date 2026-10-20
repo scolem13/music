@@ -1,0 +1,10 @@
+X:5244
+%%from edm
+T:Suite in E minor, Tambourin
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5244 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+E2F2G2F2 E4 B4 | B4 A4 G/2F/2G/2A/2G2 F4 | E2F2G2A2 B4 e4 | ^d/2c/2d/2e/2d2 e4 fefg f4 |

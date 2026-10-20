@@ -1,0 +1,10 @@
+X:4949
+%%from edm
+T:Concerto No. 3, Op. 26, 1st Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4949 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+g4 f4 e8 | c4 ^G4 B4 ^d4 | ^c2=c2 B4 z/2 a6- a3/2 | ^g2a2^a2b2 B8- | B4 (3c2^c2^d2 f4

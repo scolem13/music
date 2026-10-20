@@ -1,0 +1,11 @@
+X:5774
+%%from edm
+T:Sonatas, Longo 104 in C
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5774 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+g2f2e2 e2d2c2 | c2d2 z/2 e/2f/2e/2 f/2e/2f/2<e/2d2d2 | g2f2e2 e2d2c2 | c2d2 z/2 e/2f/2e/2 f/2e/2f/2<e/2d2d2 |

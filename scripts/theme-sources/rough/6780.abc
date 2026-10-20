@@ -1,0 +1,10 @@
+X:6780
+%%from edm
+T:The Washington Post March, 3rd Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6780 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+f2 =e4 f2d2 z2 | f2 =e4 f2 _e4- | e2 A6 B4- | B2 c6 d4 | f2 =e4 f2d2f2 | b2d'2b2 f2 e4- | e2 A6 f4- | f12 |

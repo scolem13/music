@@ -1,0 +1,10 @@
+X:7640
+%%from edm
+T:Danzas Fantasticas, Ensueno, 1st Theme B
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7640 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/8
+L:1/16
+K:C
+e4- e^f2<b2f | e2^f3g2<a2b | e4- e^f2<b2f | e2f3^f2<g2^g | a4

@@ -1,0 +1,10 @@
+X:9472
+%%from edm
+T:Sonata in E minor, Op. 5, No. 8 - 4th Movement - Giga
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9472 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:G
+b2g2 f2e2 g2b2 e'2^d'2 ^c'2b2 z4 | e'2c'2 d'2e'2 a2d'2 c'2b2 a2g2

@@ -1,0 +1,12 @@
+X:9650
+T:La Mer, De L'Aube A  Sur La Mer, 1st Movement - 5th Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2641, Barlow & Morgenstern D73, EDM 9650 (Musical Theme Dataset, CC BY 4.0)
+N:De l'aube à midi sur la mer  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=64
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B,/4C7/4 G6- | G6 z2 | B,/4C7/4 G4 (3Bc3/2G/ | (3BFG (3DE3/2B,/ C2- (3CA,3/2C/ | (3ECE G |

@@ -1,0 +1,10 @@
+X:3026
+%%from edm
+T:Istar, Op. 42, Symphonic Variations, 5th Theme
+C:Vincent D'Indy
+%%composer D'Indy|Vincent
+% EDM 3026 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:F
+D12 C12 | _A,12 =A,12 | C12 E8 D4 | D24 | B,6 C6 _D12 | A24 | G12 G,12 | F12

@@ -1,0 +1,10 @@
+X:1919
+%%from edm
+T:Faust, Ballet Music, Act V, 1st Theme
+C:Charles François Gounod
+%%composer Gounod|Charles François
+% EDM 1919 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e6 c2 f2^d2 | e6 c2 f2^d2 | e6 c2 f2^d2 | e2f2g2a2b2c'2 | d6 B2 e2c2 | d6 B2 e2c2 | d6

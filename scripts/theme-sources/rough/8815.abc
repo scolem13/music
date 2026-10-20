@@ -1,0 +1,10 @@
+X:8815
+%%from edm
+T:Trio in C minor, Op. 101, 1st Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8815 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+B4 c4 d4 | e8 d2e2 | c8 d2B2 | c12 | B4 c4 d4 | e8 d2e2 | c8 d2e2 | f12 |

@@ -1,0 +1,11 @@
+X:8862
+%%from edm
+T:Simple Symphony - 3rd Movement - (Sentimental Sarabande) - 1st Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% EDM 8862 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/2
+L:1/16
+K:Bb
+g12 a4 b8- | b8 a8 g4 f4 | e12 f4 g8- | g8 f8 e4 d4 | d24 |

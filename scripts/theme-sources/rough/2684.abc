@@ -1,0 +1,10 @@
+X:2684
+%%from edm
+T:Symphony in D, No. 86, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2684 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A4 d8 | z/2 d3/2cd c4 c4 | z/2 d3/2cd e4 e4 | z/2 f3/2ef g4 e4 | b4 b4 b4 |

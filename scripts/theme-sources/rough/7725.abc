@@ -1,0 +1,11 @@
+X:7725
+%%from edm
+T:Sonata in E minor, 3rd Movement - Minuet
+C:Francesco Veracini
+%%composer Veracini|Francesco
+% EDM 7725 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+g2<a2 b2<g2 a2<f2 | g2<e2 b8 | fga2 z/2 f/2g/2f/2g/2f/2g/2f/2 g/2f/2g/2f/2g/2f/2g/2<f/2 | z/2 g/2fe2 e8 |

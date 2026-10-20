@@ -1,0 +1,13 @@
+X:4489
+%%from mtd
+T:Symphony No. 12, in G, K 110, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6138, Barlow & Morgenstern M863, EDM 4489 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+G,2 B2 c2 | d3 e d2 | G,2 c2 d2 | e3 =f e2 | G,2 B2 c2 | dggbbd' |

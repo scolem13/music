@@ -1,0 +1,10 @@
+X:3499
+%%from edm
+T:Sonata in B minor, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3499 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+G g8 ^A6- A | B d12 c3/2^A-[^A/2G/2-] | G E4 z6 ^D2E2F- | F A12 G3/2E-[E/2C/2-] | C ^A,4

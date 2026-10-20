@@ -1,0 +1,10 @@
+X:3007
+%%from edm
+T:Escales, 2nd Movement, Tunis-Nefta
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3007 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+G16 | A2G2_G2_E2 D4 D4- | D12 G4- | G6 A2 B2_d2 B4- | B8

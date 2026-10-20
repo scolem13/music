@@ -1,0 +1,10 @@
+X:1786
+%%from edm
+T:Concerto in F, 2nd Movement - 2nd Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1786 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+z/2 a3/2 z/2 a3/2 z/2 a3/2 z/2 a8- a3/2- | a6 z2 z/2 b3/2b2 b2b2 | z/2 =e3/2e2 e2ef d2d2 d4- | d12- d2

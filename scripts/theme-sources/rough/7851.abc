@@ -1,0 +1,10 @@
+X:7851
+%%from edm
+T:A Faust Overture, 1st Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7851 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+D8 E,4 G,3E, | B,8 B,,6- B,,A,, | _A,,2 z12 z2 | A8 a8 | b8 B6- BA | _A16 |

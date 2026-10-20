@@ -1,0 +1,11 @@
+X:8469
+%%from edm
+T:Capriccio, in D minor, Op. 116, No. 1, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8469 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:F
+d2 d2 d2 | b2 b2 b2 | g2 g2 g2 | e2 e2 f2 | e2 d2 g2 | f2 e2 f2 | e2 d2 e2 | d4

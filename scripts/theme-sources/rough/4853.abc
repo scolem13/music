@@ -1,0 +1,10 @@
+X:4853
+%%from edm
+T:Concertino, 3rd Theme
+C:Walter Piston
+%%composer Piston|Walter
+% EDM 4853 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/4
+L:1/16
+K:C
+z4 ^F4 A2F2 F2G2 D4- | D4 E2G2 G2A2 ^F2G2 A4- | A2d2 ^c2B4<A4 G2 B4 | A4 C4

@@ -1,0 +1,10 @@
+X:8520
+%%from edm
+T:Intermezzo in B-flat, Op. minor, Op. 117, No. 2 Piano - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8520 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Db
+fe e2<d2 | d'e' e'2<a'2 | f'b' e'2<a'2 | f'c' d'2<a2 | gg2

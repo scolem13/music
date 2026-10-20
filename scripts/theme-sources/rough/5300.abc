@@ -1,0 +1,10 @@
+X:5300
+%%from edm
+T:Quartet in F, 4th Movement
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5300 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/8
+L:1/16
+K:F
+a2b2g2 _a2=a2 | a2b2g2 _a2=a2 | a2b2=b2 c'2_d'2 | _d'2=d'2_e'2 =e'2f'2 |

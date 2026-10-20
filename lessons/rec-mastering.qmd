@@ -1,5 +1,5 @@
 ---
-title: "Recording 6: Mastering"
+title: "Recording 8: Mastering"
 toc: true
 toc-depth: 2
 description: "Tonal balance, glue, limiting to −1 dBTP, LUFS and streaming loudness, dither and delivery files."
@@ -65,7 +65,7 @@ is simply smaller. Watch the *peak-to-loudness* figure shrink as the drive goes 
 
 Check in **mono** ([Sound 23: Stereo](sound-stereo.qmd)): the vocal and bass must stay solid. Keep the
 bass (below ~120 Hz) in the centre; wide bass cancels on mono systems and cuts badly on vinyl. More on mono playback, one earbud, live sound and subwoofers in
-[Recording 7: Mono and Stereo](rec-stereo.qmd).
+[Recording 9: Mono and Stereo](rec-stereo.qmd).
 
 ## Finishing
 
@@ -79,10 +79,41 @@ bass (below ~120 Hz) in the centre; wide bass cancels on mono systems and cuts b
 
 ## Next
 
-- [Recording 7: Mono and Stereo](rec-stereo.qmd)
+- [Recording 9: Mono and Stereo](rec-stereo.qmd)
 
 {{< include _synth-kit.qmd >}}
 
 ```{=html}
 <script src="/apps/shared/lessons/rec-kit-level.js?v=1"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Dither." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dither](https://en.wikipedia.org/wiki/Dither).
+
+"Loudness war." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Loudness_war](https://en.wikipedia.org/wiki/Loudness_war).
+
+Robjohns, Hugh. "Q. How Loud Should I Master Tracks Intended for Streaming?" *Sound On Sound*, July 2019. [www.soundonsound.com/sound-advice/q-how-loud-should-master-tracks-intended-streaming](https://www.soundonsound.com/sound-advice/q-how-loud-should-master-tracks-intended-streaming).
+
+Spotify. "Loudness Normalization on Spotify." *Spotify for Artists Support*. [support.spotify.com/us/artists/article/loudness-normalization/](https://support.spotify.com/us/artists/article/loudness-normalization/).
+
+**For teachers**
+
+European Broadcasting Union. *EBU R 128: Loudness Normalisation and Permitted Maximum Level of Audio Signals*. Version 5.0, 2023. [tech.ebu.ch/publications/r128](https://tech.ebu.ch/publications/r128).
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+International Telecommunication Union. *Recommendation ITU-R BS.1770: Algorithms to Measure Audio Programme Loudness and True-Peak Audio Level*. [www.itu.int/rec/R-REC-BS.1770](https://www.itu.int/rec/R-REC-BS.1770). Catalogue page read, not the recommendation.
+
+Izhaki, Roey. *Mixing Audio: Concepts, Practices, and Tools*. 4th ed., Routledge, 2023. Details from the Routledge listing (O'Reilly's copy says 2024).
+
+Katz, Bob. *Mastering Audio: The Art and the Science*. 3rd ed., Focal Press, 2015. Details from library catalogues.
+
+Owsinski, Bobby. *The Mixing Engineer's Handbook*. 5th ed., BOMG Publishing, 2022. Details from retailer and Goodreads listings.
+:::
+<!-- /works-cited -->
+

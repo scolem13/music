@@ -411,7 +411,7 @@
   // family = "piano" | "guitar" (the comping instrument to use; default the style's lead, else piano).
   function styleOpts(id, family){
     var s = byId(styles, id) || styles[0], fam = family || s.sound.lead || "piano", snd = s.sound[fam] || fam;
-    return { opts: { comp: fam, compSound: snd, bassSound: s.sound.bass, ride: s.sound.cymbal, push: !!s.push, full: !!s.full, calm: !!s.calm, halfRhythm: s.halfRhythm || null, feel: s.feel, congas: s.congas || "none", bassFeel: s.bass, compRhythm: s.rhythm, groove: s.drums,
+    return { opts: { comp: fam, compSound: snd, bassSound: s.sound.bass, ride: s.sound.cymbal, push: !!s.push, styleSwing: s.swing, full: !!s.full, calm: !!s.calm, halfRhythm: s.halfRhythm || null, feel: s.feel, congas: s.congas || "none", bassFeel: s.bass, compRhythm: s.rhythm, groove: s.drums,
                      voicing: (s.voicing && s.voicing[fam]) || undefined, timeFeel: s.time ? s.time.feel : "normal", timeFeelParts: s.time ? s.time.parts : undefined },
              instruments: [s.sound.bass === "electric" ? "ebass" : "bass", snd, "kit"].concat(s.congas && s.congas !== "none" ? ["congas"] : []) };
   }
@@ -431,6 +431,7 @@
     var so = styleOpts(st.id, st.sound.lead || (base && base.comp === "guitar" ? "guitar" : "piano")), o = Object.assign({}, base);
     Object.keys(so.opts).forEach(function (k){ if (so.opts[k] !== undefined) o[k] = so.opts[k]; });
     if (so.opts.voicing === undefined) delete o.voicing;
+    if (so.opts.styleSwing === undefined) delete o.styleSwing;
     bits.slice(1).forEach(function (b){ var m = /^\s*([a-z]+)\s*[:=]?\s*(\S+)\s*$/i.exec(b), k = m && SECTION_KEYS[m[1].toLowerCase()]; if (k) o[k] = m[2]; });
     o.rhythmMix = null; o.voicingMix = null; o.walk = undefined; o.sectionStyle = st.id;
     var inst = so.instruments; if (o.congas && o.congas !== "none" && inst.indexOf("congas") < 0) inst = inst.concat("congas");      // (also when the section named them)

@@ -1,0 +1,10 @@
+X:1217
+%%from edm
+T:Quartet in E-flat, Op. 87, 2nd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1217 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+G4 B4 d4 g4 | e4 =B4 G4 B4 | d8 B4 d4 | =B8 A4 B4 | B4 d2B2 A4 =B2A2 | G4 G4

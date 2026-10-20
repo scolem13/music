@@ -1,0 +1,13 @@
+X:629
+%%from mtd
+T:Concerto No. 1 in C, Op. 15, 3rd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0623, Barlow & Morgenstern B527, EDM 0629 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=137
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+d | g^fga | g^fed | g^fga | ^f2 z d | c'c' z c' | bb z b |

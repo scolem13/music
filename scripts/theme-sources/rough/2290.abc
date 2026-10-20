@@ -1,0 +1,10 @@
+X:2290
+%%from edm
+T:Sonata in G minor, Op. 1, No. 6, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2290 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d6 b2 a2bg _g/2=g/2_g/2=g/2_g/2=g/2g | a2d3 cB/2c/2B/2A/2 B2g3 fed | e2d2

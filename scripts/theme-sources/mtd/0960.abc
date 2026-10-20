@@ -1,0 +1,12 @@
+X:960
+T:Sonata No. 29, in B-flat, Op. 106, 3rd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0954, Barlow & Morgenstern B836, EDM 0960 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio sostenuto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=33
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+ffa c' | c'2 e'/d'/ d'^eb | bBc/d/ dc>B | B/A |

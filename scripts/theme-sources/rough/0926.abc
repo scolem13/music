@@ -1,0 +1,13 @@
+X:926
+%%from mtd
+T:Sonata No. 21, in C, Op. 53, 2nd Movement - Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0920, Barlow & Morgenstern B802, EDM 0926 (Musical Theme Dataset, CC BY 4.0)
+N:Introduzione: Adagio molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=21
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+z C,/>C,/ A, z A,/>A,/^D | z EE E2 z |[K:treble] z =B,/>B,/ G z ^C/>C/^A | z =BB B2 z |

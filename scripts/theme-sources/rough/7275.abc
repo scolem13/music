@@ -1,0 +1,11 @@
+X:7275
+%%from edm
+T:Poet and Peasant, Overture, 3rd Theme
+C:Franz von Suppé
+%%composer Suppé|Franz von
+% EDM 7275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:Bb
+a6 | a2 g2 f2 | g2 z2 g2 | f6 | g6 | g2 f2 e2 | f2 z2 f2 | d6 |

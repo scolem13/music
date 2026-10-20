@@ -1,0 +1,153 @@
+---
+title: "Composing 1: Writing a Melody"
+toc: true
+toc-depth: 2
+description: "Shape, steps and leaps, a climax, rhythm that repeats, and two classic eight-bar plans (the period and the sentence), each heard on the staff, then a melody of your own in the Notation page."
+instruments: [piano, guitar, violin, sax, voice, other]
+topics: [composing]
+has: [notation, interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+A melody is a line of notes that a listener can follow and remember. Most melodies that work have a few things in common.
+This lesson takes them one at a time, with a short example of each you can play. At the end you write eight bars of your own.
+
+**How to use the page.** Press ▶ under any staff to hear it on the piano. The note that is sounding turns red.
+
+## 1. Shape: where the line goes
+
+Draw a melody as a line on paper, going up and down with the pitch, and you get its **contour**. A
+good melody usually has one clear shape: an arch (up, then down), a wave, or a long fall. Most of it moves
+by **step** (to the next note of the scale), with a few **leaps**. After a big leap, the line usually turns and steps back the other way:
+that fills the gap the leap left.
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:An arch: steps, one leap, a peak, then down
+M:4/4
+L:1/8
+K:C
+C2 D2 E2 G2 | A2 G2 c4 | B2 A2 G2 F2 | E2 D2 C4 |]
+</script></div>
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:No shape: leaps everywhere, no peak
+M:4/4
+L:1/8
+K:C
+C2 A2 D2 B2 | E2 c2 F2 G,2 | B,2 A2 C2 a2 | D6 z2 |]
+</script></div>
+:::
+
+The first has a **climax**: one highest note (the high C), reached once, on a strong beat, by a leap, and left by steps going down.
+The second leaps up and down at random. It is hard to sing back and hard to remember.
+
+<div class="cp-tip">
+<strong>Rule of thumb.</strong> One high point, reached once. Mostly steps. Leap to a strong note, then step back. Keep it inside about an octave
+unless you have a reason not to.
+</div>
+
+## 2. Rhythm that comes back
+
+A listener remembers rhythm before pitch. If the opening rhythm comes back, the melody holds together even when the notes change.
+Here the same rhythm (two eighths and a quarter, twice) is used in three bars out of four, with new notes each time:
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:One rhythm, three times, then a long note
+M:4/4
+L:1/8
+K:G
+GA B2 GA B2 | AB c2 AB c2 | Bc d2 cB A2 | G8 |]
+</script></div>
+
+Try it the other way too: keep the notes and change the rhythm. Both are ways of **developing** an idea, which is the subject of
+[Composing 2](compose-motif.qmd).
+
+## 3. Phrases: question and answer
+
+Melodies come in **phrases**, usually four bars long, ending with a **cadence**: a resting point, like a comma or a full stop
+(see [Cadences](cadences.qmd)). Two phrases often pair up as a question and an answer.
+
+### The period
+
+A **period** is eight bars: two four-bar phrases that start the same way. The first, the **antecedent**, ends with a weak cadence, often on
+the dominant (a half cadence). The second, the **consequent**, starts like the first and ends with a strong cadence on the tonic.
+It sounds like a question and its answer.
+
+<div class="abc-ex" data-bpm="104" data-width="680"><script type="text/plain">
+X:1
+T:A period in C: bars 1-4 ask, bars 5-8 answer
+M:4/4
+L:1/8
+K:C
+"C"E2 G2 c2 G2 | "F"A2 F2 "C"G4 | "F"A2 c2 "C"G2 E2 | "G"D6 z2 |
+"C"E2 G2 c2 G2 | "F"A2 F2 "C"G4 | "F"A2 F2 "G7"D2 B,2 | "C"C6 z2 |]
+</script></div>
+
+Bars 5–6 copy bars 1–2. Bar 4 stops on D over G: it wants to go on. Bar 8 lands on C over C: it is finished.
+
+### The sentence
+
+A **sentence** is also eight bars, but it is built differently. A short **basic idea** (two bars) is stated and repeated
+(bars 1–4, the **presentation**). Then the **continuation** speeds up: the idea breaks into smaller pieces, and it drives to a cadence (bars 5–8).
+
+<div class="abc-ex" data-bpm="104" data-width="680"><script type="text/plain">
+X:1
+T:A sentence in D: idea, idea again, pieces, cadence
+M:4/4
+L:1/8
+K:D
+"D"D2 F2 A4 | "D"F2 E2 D4 | "A"E2 G2 B4 | "A"G2 F2 E4 |
+"D"FG A2 "G"GA B2 | "D"AB c2 "Bm"Bc d2 | "G"B2 "A7"A2 G2 E2 | "D"D8 |]
+</script></div>
+
+Bars 3–4 repeat bars 1–2 a step higher. In bars 5–6 the two-bar idea is cut down to two-beat pieces, which makes the music speed up.
+
+<div class="cp-tip">
+<strong>Which plan?</strong> A period sounds balanced and song-like: it suits a tune people will sing back. A sentence sounds like it is
+going somewhere: it suits a theme that has to build. Both are eight bars; both end on the tonic.
+</div>
+
+## 4. Fitting the chords
+
+If the melody has chords under it, the notes on strong beats (beats 1 and 3 in 4/4) usually belong to the chord. Notes between them can be
+anything that steps: they pass through or turn round and come back. In the period above, every note on beat 1 is in the chord written over it.
+[Guide tones](guide-tones.qmd) and [reharmonizing](reharmonize.qmd) go further.
+
+## 5. Write eight bars
+
+Open the [Notation page](/tools/notation.qmd) and write a period or a sentence, in any key you can play.
+A checklist to read before you start and again when you finish:
+
+1. Does it have one high point? Where is it?
+2. Is it mostly steps? Does each big leap turn back?
+3. Does a rhythm come back?
+4. Does bar 4 end open (not on the tonic), and bar 8 closed (on the tonic, on a strong beat)?
+5. Can you sing it back without looking?
+
+Keep **every version** you write, not only the last one, and note what you changed and why. That is the evidence that shows how
+you developed the piece: see [Process 1: Keeping a Process Journal](process-journal.qmd).
+
+Next: [Composing 2: Developing a Motif](compose-motif.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Motif (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Motif_(music)](https://en.wikipedia.org/wiki/Motif_(music)).
+
+"The Period." *Open Music Theory*, Hybrid Pedagogy Publishing, [openmusictheory.github.io/period.html](https://openmusictheory.github.io/period.html).
+
+"The Sentence." *Open Music Theory*, Hybrid Pedagogy Publishing, [openmusictheory.github.io/sentence.html](https://openmusictheory.github.io/sentence.html).
+
+**For teachers**
+
+Schoenberg, Arnold. *Fundamentals of Musical Composition*. Edited by Gerald Strang with Leonard Stein, Faber and Faber, 1967. The classic treatment of the motive, its variation, and the sentence and period; not quoted here.
+:::
+<!-- /works-cited -->

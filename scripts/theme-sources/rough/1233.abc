@@ -1,0 +1,10 @@
+X:1233
+%%from edm
+T:Quartet in A-flat, Op. 105, 2nd Movement - 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1233 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+c'2f'2 z2 f'2 f4- | f4 g4 a4 | g2c'2 z2 c'2 c4- | c4 =d4 =e4 |

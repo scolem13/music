@@ -1,0 +1,13 @@
+X:9614
+%%from mtd
+T:Danses - La Soiree dans Grenade - 3rd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2605, Barlow & Morgenstern D37, EDM 9614 (Musical Theme Dataset, CC BY 4.0)
+N:La Soirée dans Grenade  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=75
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+d'c' | ba a6- | a4- aagf | fee2- eddc | cBB2- BccB | BAA2 |

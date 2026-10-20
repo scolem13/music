@@ -1,0 +1,10 @@
+X:5923
+%%from edm
+T:Octet in F, Op. 166, 6th Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5923 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c4 f8 e4- | e4 f6 ed c4 | d2e2 f4 g4 a4 | =b4 c'8

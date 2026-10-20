@@ -1,0 +1,10 @@
+X:6971
+%%from edm
+T:Alpensinfonie, Op. 64, 9th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6971 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+z4 B6 c2d2e2 | e4 d8 B4 | e8- e2f2g2a2 | g4 f8 B4- | B2c2d2e2 e2d2e2f2 | _g2=g2a2=a2 c'2b2

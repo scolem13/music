@@ -1,0 +1,13 @@
+X:652
+%%from mtd
+T:Concerto in D, Op. 61, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0646, Barlow & Morgenstern B550, EDM 0652 (Musical Theme Dataset, CC BY 4.0)
+N:Larghetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=32
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+G>G | A2 B z z2 G>G | A2 B z z2 B>B | g2 e2 B2 ^c2 | ^c6 f>c | ^d2 e z |

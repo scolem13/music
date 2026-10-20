@@ -1,0 +1,10 @@
+X:5432
+%%from edm
+T:Sigurd, Overture, 2nd Theme
+C:Ernest Reyer
+%%composer Reyer|Ernest
+% EDM 5432 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+b8 g4 | e8 f4 | g8 =b4 | b4 a4 d'4 | d'8 g2d'2 | =b8 e2b2 | b4 a4

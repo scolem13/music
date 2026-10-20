@@ -1,0 +1,10 @@
+X:5010
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 7th Movement - Death of Tybalt, 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5010 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+E2E2F2G2A2B2 | c2e2 e'2c'e' b2a2 | g2f2=e2a2c2_e2 | B2d2 F2=AF =E2GE | E2E2

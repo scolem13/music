@@ -1,0 +1,10 @@
+X:7853
+%%from edm
+T:A Faust Overture, 3rd Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7853 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+d16 | d'16 | _e'16 | _e12- e2d2 | _d4 _d'4 c'4 c4 | =B2

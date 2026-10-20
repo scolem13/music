@@ -1,0 +1,12 @@
+X:789
+T:Septet in E-flat, Op. 20, 5th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0783, Barlow & Morgenstern B677, EDM 0789 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo. Allegro molto e vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=322
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E | B, z B, | G, z G, | E,2[K:treble] B | b3 | b a g | g f e | e3 |

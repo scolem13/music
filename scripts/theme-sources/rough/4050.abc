@@ -1,0 +1,10 @@
+X:4050
+%%from edm
+T:Adagio in E, K 261
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4050 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+b4 agab b3-b/2=c'/2 ^c'2 z2 | a4 gfga a3-a/2^a/2 b2

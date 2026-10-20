@@ -1,0 +1,10 @@
+X:9391
+%%from edm
+T:Appalachian Spring, Ballet, 1st Theme, A and B
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9391 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+a8 c'4 e'4 | c'4 e'8 c4 | e8<a8 | b4 e'4 g'8- | g'4

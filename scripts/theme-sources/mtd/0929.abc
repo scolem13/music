@@ -1,0 +1,12 @@
+X:929
+T:Sonata No. 22, in F, Op. 54, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0923, Barlow & Morgenstern B805, EDM 0929 (Musical Theme Dataset, CC BY 4.0)
+N:In tempo d’un menuetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=101
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+(3Cc=B | (3c_BA (3GAB (3AGF | (3EFG (3FED (3^CDE | (3D=CB, (3A,G,F, |

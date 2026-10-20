@@ -71,4 +71,22 @@ for oil underground. Try your own voice, on *Hard* and *Natural*.
 
 - [Sound 22: The vocoder](sound-vocoder.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Auto-Tune." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Auto-Tune](https://en.wikipedia.org/wiki/Auto-Tune).
+
+**For teachers**
+
+*DAFx Conference Paper Archive*. Digital Audio Effects Conference. [www.dafx.de/paper-archive/](https://www.dafx.de/paper-archive/). Searchable archive of peer-reviewed effect papers.
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Smith, Julius O., III. "Phase Vocoder." *Spectral Audio Signal Processing*, W3K Publishing, 2011. [ccrma.stanford.edu/~jos/sasp/Phase_Vocoder.html](https://ccrma.stanford.edu/~jos/sasp/Phase_Vocoder.html).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

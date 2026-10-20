@@ -1,0 +1,13 @@
+X:343
+%%from mtd
+T:English Suite No. 3, in G minor, Piano, Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0338, Barlow & Morgenstern B250, EDM 0343 (Musical Theme Dataset, CC BY 4.0)
+N:Gigue  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:12/8
+L:1/8
+Q:1/4=190
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d | edc BAG ^FAD CB,A, | B,DG A,G^F G |

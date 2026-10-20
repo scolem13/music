@@ -1,0 +1,10 @@
+X:243
+%%from edm
+T:Partita No. 6 in E minor, Piano, Courante
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0243 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+BB E2 ^D2 | EF c2 B2 | A3 G2 F/2E/2 | F<A ^D

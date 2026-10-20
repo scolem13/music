@@ -1,0 +1,13 @@
+X:1284
+%%from mtd
+T:Slavonic Dances, Op. 46, No. 2, 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2948, Barlow & Morgenstern D360, EDM 1284 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto scherzando [Dumka]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=139
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+dd'^c'=c' | bc'/b/ ag | ab/a/ gf | gb d2 |

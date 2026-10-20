@@ -1,0 +1,10 @@
+X:229
+%%from edm
+T:Partita No. 2 in C minor, Rondeau
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0229 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Eb
+c'2 c2 z/2 z/2 d | e4 f2 | g2 c2 z2 | f2 G2 z2 | e2 F2 z2 | d2 E2

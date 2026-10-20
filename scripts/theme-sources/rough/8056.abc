@@ -1,0 +1,11 @@
+X:8056
+%%from edm
+T:Euryanthe, Overture, 1st Theme B
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8056 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+B4 g8 e4- | e4 f12 | A4 G3A2<B2c2<d2e | f3g f4 b4 B4 |

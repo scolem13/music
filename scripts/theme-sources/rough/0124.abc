@@ -1,0 +1,10 @@
+X:124
+%%from edm
+T:Brandenburg Concerto No. 1, in F, 4th Movement - Menuetto, 1st Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0124 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c4 _e4 d4 | c4 B2A2 B4 | c4 _e4 d4 | c/2d/2c/2d/2c/2d/2c/2d/2 c/2d/2c/2d/2c/2d/2c/2d/2 f4 |

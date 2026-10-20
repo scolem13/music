@@ -1,0 +1,10 @@
+X:1986
+%%from edm
+T:Concerto, Op. 16, Piano and Orchestra, 1st Movement - Intro
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 1986 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+a6 a^g e6 ec | A2A^G E2EC A,2A,^G, E,2E,C, | A,,12- A,,2

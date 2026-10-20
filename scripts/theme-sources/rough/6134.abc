@@ -1,0 +1,13 @@
+X:6134
+%%from mtd
+T:Trio in E-flat, Op. 100, 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7766, Barlow & Morgenstern S547, EDM 6134 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=146
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+d2 dddd | =B2 BBBB | ^c2 c^ff=e | d6 |

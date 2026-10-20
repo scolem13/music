@@ -1,0 +1,12 @@
+X:5632
+T:Dance Macabre, Op. 40, 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7266, Barlow & Morgenstern S47, EDM 5632 (Musical Theme Dataset, CC BY 4.0)
+%%bar 33  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/8
+Q:1/4=190
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+z2 GBGA | B2 ABGB | PAG GBGA | B2 ABGB | _A z AcAB | c2 Bc_Ac | PB_A |

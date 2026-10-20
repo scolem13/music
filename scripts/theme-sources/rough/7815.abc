@@ -1,0 +1,11 @@
+X:7815
+%%from edm
+T:Concerto Grosso in G minor, Op. 3, No. 2, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7815 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+g2f2 e2 d4 c2 B2A2 | G2 z4 b2 a4 d'2b2 | a2g2_g2=e2 d2 z4 d2 | (3f4-f=B4- B d4- d F2 _a4- | _a4 g2f2 e2d2 c2

@@ -1,0 +1,10 @@
+X:523
+%%from edm
+T:Sonata in C, 2nd Movement
+C:Wilhelm Friedemann Bach
+%%composer Bach|Wilhelm Friedemann
+% EDM 0523 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+g4 e4 c4 | z/2 _d3-d/2 c2g2 fe=dc | z/2 _d3-d/2 c2g2 fe=dc | B4 A8 |

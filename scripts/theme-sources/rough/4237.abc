@@ -1,0 +1,13 @@
+X:4237
+%%from mtd
+T:Quartet in D, K 285, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5887, Barlow & Morgenstern M612, EDM 4237 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=136
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+a8 f4- f2>g2 | b2a2 a8{g} f2ed | d2ef gabc' d'c'd'c' d' |

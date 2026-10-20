@@ -1,0 +1,11 @@
+X:7642
+%%from edm
+T:Danzas Fantasticas, Ensueno, 3rd Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7642 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+b6 b6 | b6- bc'd'e'd'c' | b6 b6 | b6- bc'd'e'd'b | a6 a6 | a6

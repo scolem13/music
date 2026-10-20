@@ -1,0 +1,10 @@
+X:7868
+%%from edm
+T:Die Meistersinger von Nurnberg, Opera, Overture, 1st Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7868 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c'8 g6 g2 | g8- g2e2f2g2 | a4 b4 c'4 d'4 | e'4 f'6 e'2 d'2c'2 | d'8 a6 b2 | c'8

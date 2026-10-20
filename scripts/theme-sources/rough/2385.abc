@@ -1,0 +1,10 @@
+X:2385
+%%from edm
+T:Water Music, 18th Movement, 2nd Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2385 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d4 b4 B4 | A12 | d4 a4 A4 | G8 G4 | d4 g4 G4 | _G8 A4 | d4 c4 B4 | A4

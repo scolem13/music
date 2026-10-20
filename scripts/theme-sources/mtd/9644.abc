@@ -1,0 +1,12 @@
+X:9644
+T:Poissons D'Or (Goldfish), from Images - 2nd Series
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2635, Barlow & Morgenstern D67, EDM 9644 (Musical Theme Dataset, CC BY 4.0)
+N:Poissons d'or  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=71
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F#
+z z3/4 A/4 G4- | G7/4A/4 GAGF | E4 F2 | E3 EF=A | c7/4d/4 cc |

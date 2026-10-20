@@ -1,0 +1,11 @@
+X:5261
+%%from edm
+T:Concerto for the Left Hand, 1st Theme A
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5261 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/KJTUUKAdZDU
+M:3/4
+L:1/16
+K:D
+E,, F,,6- F,, E,,2<G,,2 | F,, A,,6- A,, E,,/2G,,/2B,,3 | F, F,6- F, G,2<E,2 | B,, A,,4

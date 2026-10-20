@@ -1,0 +1,10 @@
+X:2250
+%%from edm
+T:Alcina, Gavotte, From Ballet
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2250 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+d4 d4 g8 | a6 ga b4 a2g2 | f4 e2d2 f4 e2d2 | f4 e2d2 c4 B4 |

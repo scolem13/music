@@ -1,0 +1,11 @@
+X:8284
+%%from edm
+T:Baal Shem (Three Pictures of Chassidic Life), Vn. and Piano - Vidui (Contrition)
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8284 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:G
+B4 E4- E z B2 e4 | d4 d4- d z3 f4 | a6 g2 b2 f4 e2 | d3/2e-[=f/2-e/2] =f6- f

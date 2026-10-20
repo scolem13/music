@@ -1,0 +1,10 @@
+X:3479
+%%from edm
+T:Hungarian Rhapsody No. 15 in A minor, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3479 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+c2e2 A8 z4 | c2e2 A8 z4 | a2g2g2f2 f2=f2g2^f2 | f2=f2 ^f4

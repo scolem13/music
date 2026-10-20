@@ -1,0 +1,11 @@
+X:8929
+%%from edm
+T:Symphony No. 5 in B-flat, 4th Movement - 2nd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8929 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+_A4 f2e4<_d4 e2 | _d4 c2d4<_a4 e2 | B2_a2_g2f4<e4 gf | e4 d2e2 f4

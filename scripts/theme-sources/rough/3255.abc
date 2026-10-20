@@ -1,0 +1,10 @@
+X:3255
+%%from edm
+T:Hary Janos, Op. 15, Toborzo, 1st Theme
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% EDM 3255 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:C
+E2<E2 e2<e2 | d2<d2 z/2 d/2^c d z | z/2 e/2e3 z/2 d/2c c2 | B4 B4 |

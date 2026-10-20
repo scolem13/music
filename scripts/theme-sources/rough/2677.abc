@@ -1,0 +1,10 @@
+X:2677
+%%from edm
+T:Symphony in C, No. 82, 4th Movement, 1st Theme B
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2677 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+g2c'2b2a2 | g4<g4 | e2 z/2 f3/2 e2f2 | d4<c4 | d2e2f2g2 | d2e2f2g2 |

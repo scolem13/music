@@ -1,0 +1,10 @@
+X:8113
+%%from edm
+T:Trio in G minor, Op. 63, 3rd Movement
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8113 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+f2 b4 b2 z/2 b2-b/2a | b2 a4 g2f2 z2 | f2 b4 b2 z/2 c'2-c'/2b | c'2 d'8- d'2 |

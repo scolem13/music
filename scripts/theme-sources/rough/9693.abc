@@ -1,0 +1,10 @@
+X:9693
+%%from edm
+T:Printemps, Symphonic Suite, Orchestra, 1st Movement, 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9693 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:F#
+a12 g6 | e2g2a4<c'4 d'6 | a12 g6 | e2g2 a12- a2 |

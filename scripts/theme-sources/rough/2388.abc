@@ -1,0 +1,10 @@
+X:2388
+%%from edm
+T:Merry Mount Suite, Overture
+C:Howard Hanson
+%%composer Hanson|Howard
+% EDM 2388 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+B,2E,2G,2B,2^C2C2 | B,4 B,6 B,2 | D3B, B,2B,2 A,2A,2 | B,4 B,6

@@ -1,0 +1,10 @@
+X:5210
+%%from edm
+T:Castor et Pollux, Minuet ,No. 2, Pt. 1
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5210 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+F,2E,2F,2A,2G,2B,2 | A,2C2 =B,2_D2 =D4 | g2e2f2d2e2_d2 | d4 z/2 z/2 _d=B2 A4 |

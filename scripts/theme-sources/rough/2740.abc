@@ -1,0 +1,10 @@
+X:2740
+%%from edm
+T:Symphony in C, No. 97, 4th Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2740 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+C6 B,C | D6 EF | G2E2C2C2 | z/2 D3/2C2 D2E2 | C6

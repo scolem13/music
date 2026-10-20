@@ -1,0 +1,10 @@
+X:9776
+%%from edm
+T:Eventyr ("Once Upon a Time"), Orchestra, 1st Theme
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9776 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D4 E4 F4 A4 | G8- G2F2D2C2 | D4 A,8- A,2G,2 | A,16 |

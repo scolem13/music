@@ -1,0 +1,11 @@
+X:6473
+%%from edm
+T:Sonata, Op. 40, 4th Movement
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6473 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+z/2 z/2 d z2 d2 z2 | f2 z2 f2 z2 | a4- agfe | d2 z2 d2 z2 | c'2 z2 c'2 z2 | b2 z2 b2 z2 | _a4

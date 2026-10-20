@@ -1,0 +1,10 @@
+X:3168
+%%from edm
+T:Symphony No. 2, in C minor, Op. 19, 3rd Movement - 1st Theme, Pt. 1
+C:Dmitri Kabalevsky
+%%composer Kabalevsky|Dmitri
+% EDM 3168 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+B,8- B,2C2 | B,8- B,2C2 | B2 z4 c'2 z4 | B2B2B2 B2B2c'2 | B2B2c'2 B2A2G2 | F2F2F2 F2F2G2 | E2E2E2 E2E2F2 | B,6

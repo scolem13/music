@@ -1,0 +1,13 @@
+X:801
+%%from mtd
+T:Sonata No. 2, in G minor, Op. 5, No. 2, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0795, Barlow & Morgenstern B680a, EDM 0801 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=68
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+c2d2 |{/d} e2e/d/c/B/ AAAd | B2G2{B} A>DGB | A>DGB AA/B/ GG/A/ | F2D2 |

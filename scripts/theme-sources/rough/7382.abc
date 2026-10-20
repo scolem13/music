@@ -1,0 +1,11 @@
+X:7382
+%%from edm
+T:Suite in A minor, Gavotte
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7382 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+e4 a4 f/2g/2f/2g/2f/2g/2f/2g/2 f/2g/2f/2g/2ef | g4 B4 c8 | A4 A2Bc B4 B2cd | c4 B4 c4 A4 |

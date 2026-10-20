@@ -1,0 +1,13 @@
+X:3690
+%%from mtd
+T:Symphony No. 4, in G, 3rd Movement - 1st Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5342, Barlow & Morgenstern M82, EDM 3690 (Musical Theme Dataset, CC BY 4.0)
+N:Ruhevoll. Poco adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=54
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B,4 | C4 | D7/2 E/ | E4 | F3 G | A2 F G | A c B G | F E D |

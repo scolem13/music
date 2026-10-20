@@ -1,0 +1,13 @@
+X:955
+T:Sonata No. 29, in B-flat, Op. 106, Piano, "Hammerklavier", 1st Movement - 1st Theme A
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0949, Barlow & Morgenstern B831, EDM 0955 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/8
+Q:1/4=179
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B,,, | D3[K:treble] d' d'2 e'd' | d'2 b2 z2 z[K:bass] B,,, | F3[K:treble] f' f'2 g'f' | f'2 d'2 |

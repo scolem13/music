@@ -1,0 +1,11 @@
+X:7364
+T:Quartet in E minor, 2nd Movement - 2nd Theme
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% MTD 8990, Barlow & Morgenstern T60, EDM 7364 (Musical Theme Dataset, CC BY 4.0)
+M:3/8
+L:1/16
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+b2- | b2 f4 | gfgeb2- | b2 f4 | geaBcg | fdgABf | eBcBAe |

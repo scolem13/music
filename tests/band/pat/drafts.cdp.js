@@ -13,7 +13,7 @@ const URL = "http://127.0.0.1:8500/tools/", IDS = `Array.prototype.map.call(docu
       return [document.getElementById("bt-bass-sound").value, [].some.call(document.getElementById("bt-eq-inst").options, function(o){ return o.value === "ebass"; }), Math.abs(r.width - l.width) < 2 && r.height > 8]; })()`);
     assert.deepStrictEqual(own, ["electric", true, true], "current page: the name over the bass fader changes the bass");
     const remembered = await b.eval(`new Promise(function(r){ setTimeout(function(){ r(window.localStorage.getItem("btSections")); }, 300); })`);
-    for (const x of ["a", "b"]) {
+    for (const x of ["a"]) {
       await b.resize(1440, 1000);
       await b.goto(URL + (x === "a" ? "backing-track.html" : "backing-track-b.html"));
       const got = await b.eval(IDS);
@@ -101,7 +101,7 @@ const URL = "http://127.0.0.1:8500/tools/", IDS = `Array.prototype.map.call(docu
           if (Math.min(b.right, q.right) - Math.max(b.left, q.left) > 1 && Math.min(b.bottom, q.bottom) - Math.max(b.top, q.top) > 1) out.push(name + " overlaps slider " + (o.id || o.className)); }); });
       return { n: rs.length, issues: out }; })()`;
     const STATES = [["piano", "", "upright"], ["hammond", "guitar", "electric"], ["guitar", "wurli", "upright"], ["odguitar", "", "upright"]];
-    for (const [page, tabs] of [["backing-track.html", ["mix", "band"]], ["backing-track-b.html", [null]], ["backing-track-classic.html", [null]]]) {
+    for (const [page, tabs] of [["backing-track.html", ["mix", "band"]], ["backing-track-classic.html", [null]]]) {
       for (const width of [1600, 1200, 1000, 800, 600, 390]) {
         await b.resize(width, 900);
         for (const tab of tabs) {

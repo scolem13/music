@@ -1,0 +1,10 @@
+X:4631
+%%from edm
+T:Trio in G, K 564, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4631 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B4 A4 G6 AB | c2c2B2B2 A^GAB A2A2 | c4 B4 A6 Bc | d2d2c2c2 B

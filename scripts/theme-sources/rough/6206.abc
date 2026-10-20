@@ -1,0 +1,10 @@
+X:6206
+%%from edm
+T:Concerto in A minor, Op. 54, 1st Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6206 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+z3 g' a'6 z =d' e'2 z =b | c'2 z g a2 z =d e2 z =B c2 z E | A4

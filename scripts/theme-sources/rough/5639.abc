@@ -1,0 +1,10 @@
+X:5639
+%%from edm
+T:Henry VIII, Ballet Music, Entry of the Clans, 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5639 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+G2 c4 c2c2=B2 | G2 (3e4-ee4- e d4- d | f2f2e2 A2e2d2 | =B2 c8

@@ -1,0 +1,13 @@
+X:1070
+%%from mtd
+T:Symphony No. 4, in B-flat, Op. 60, 4th Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1064, Barlow & Morgenstern B946, EDM 1070 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=146
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+e3 c | B3 G | F z F z | F4 |

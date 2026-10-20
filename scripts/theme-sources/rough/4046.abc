@@ -1,0 +1,10 @@
+X:4046
+%%from edm
+T:Valse, Op. 34, No. 1, 1st Theme
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4046 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+B12 | ^A12 | c12 | B12 | =G4 G4 B4 | d4 f4 e4 | A12- | A12 |

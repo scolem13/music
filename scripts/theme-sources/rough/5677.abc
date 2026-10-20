@@ -1,0 +1,10 @@
+X:5677
+%%from edm
+T:Septet, Op. 65, 3rd Movement - Intermede
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5677 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+c'16 | f'16 | a'8 g'6 f'2 | e'4 g'4 c'2d'2 e'4- | e'2d'2c'2g2 e2f2g2e2 | c4

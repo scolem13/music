@@ -1,0 +1,10 @@
+X:2549
+%%from edm
+T:Quartet in B-flat, Op. 71, No. 1, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2549 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f8 d4 B4 | B6 d'b f4 z2 d2 | c4 =B4 c4 A4 | B2 z2 d2 z2 f2

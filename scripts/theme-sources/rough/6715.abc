@@ -1,0 +1,13 @@
+X:6715
+%%from mtd
+T:The Bartered Bride, Act 1, Polka, 1st Theme
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% MTD 8344, Barlow & Morgenstern S1106, EDM 6715 (Musical Theme Dataset, CC BY 4.0)
+N:Akt: 5. Szene: Tanz und Chor. Polka, Herz am herzen fühlt man schlagen  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=98
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e/f/g | gf{/g} fe |{/f} ed e/f/g | gf{/g} fe | d2 e/^f/g | ba{/b} ag |

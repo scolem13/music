@@ -1,0 +1,10 @@
+X:6686
+%%from edm
+T:Symphony No. 7, in C, Op. 105, 4th Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6686 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+z4 d12 c8 | G6 c2 d8 e8- | e16 d8- | d6 d2 d4 e4 c4 G4 | C24 |

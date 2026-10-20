@@ -1,0 +1,10 @@
+X:7569
+%%from edm
+T:Symphony No. 2, in C minor, Op. 17, "Little Russia", 1st Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7569 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g4 d2e2 f2e2g2f2 | c6 d2 e4 c4 | g4 g4 a2g2 a4 | g8 g4 g4 | a4 g2f2 c4 e2e2 | d4 f4 g2a2g2f2 | c16 |

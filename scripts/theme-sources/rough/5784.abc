@@ -1,0 +1,10 @@
+X:5784
+%%from edm
+T:Sonatas, Longo 243 in A minor, "Pastorale"
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5784 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 a4 e4 | a6 c'2 b2e'2 | a8 e'4- | e'4 d'8- | d'8 d'4 | c'2a'2e'2c'2a2e2 |

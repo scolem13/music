@@ -1,0 +1,10 @@
+X:5619
+%%from edm
+T:Concerto No. 4, in C minor, Op. 44, 3rd Movement
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5619 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c4 c8 | e4 d8 | c4 f8 | e2d2 e4 c4 | g4 g8 | a4 c'8 | a4 g6 e2 | d2c2 d4

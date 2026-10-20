@@ -1,0 +1,10 @@
+X:5228
+%%from edm
+T:Pieces de Clavecin en Concert, No. 4, La Pantomine
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5228 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Bb
+f4 fefg f4 f4 fefg f4 | f4 b16- b4 | b4 (3a2b2c'2 (3b2a2g2 f2 z2 f8 | e4 (3d2e2f2 (3e2d2c2 B2 z2 B8 |

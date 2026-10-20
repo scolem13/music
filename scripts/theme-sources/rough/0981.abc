@@ -1,0 +1,13 @@
+X:981
+%%from mtd
+T:Sonata No. 3, in E-flat, Op. 12, No. 3, Vn. and Piano, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0975, Barlow & Morgenstern B857, EDM 0981 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=110
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+(3EB,G, | E,6 B,,E,[K:treble] G,B,EG Begf | e8 d4 |

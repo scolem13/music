@@ -1,0 +1,10 @@
+X:1918
+%%from edm
+T:The Dying Poet, Piano
+C:Louis Gottschalk
+%%composer Gottschalk|Louis
+% EDM 1918 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+G,2B,2E2 D4 C2 | z/2 C3/2 B,8- B,2 | G,2B,2G2 F4 C2 | F6 B,6 |

@@ -1,0 +1,10 @@
+X:7806
+%%from edm
+T:Concerto in G minor, Op. 6, No. 1, 1st Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7806 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+g g4 z ab c'd'2d'2 e'3- | e' _g4 z/2 a/2b/2c'/2d'/2=e'/2 _g'/2=g'/2a'2c'2 c'3 | b/2a/2 b4

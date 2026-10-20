@@ -1,0 +1,12 @@
+X:9229
+%%from mtd
+T:Mazurkas 26, Op. 41, No. 1
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2226, Barlow & Morgenstern C239, EDM 9229 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=108
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z/ c/ B A | G/>E/ C =D | E/>F/ G{/B} A | G/>E/ C =D | E3/4 |

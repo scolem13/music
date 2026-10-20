@@ -1,0 +1,10 @@
+X:3787
+%%from edm
+T:Scenes Pittoresques, Suite No. 4, II - Air De Ballet, 1st Theme
+C:Jules Massenet
+%%composer Massenet|Jules
+% EDM 3787 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:D
+z2 z/2 B,/2^A, B,D | C6 | z2 z/2 B,/2^A, B,D | C6 | z2 B,C DE | FF FF FF/2G/2 | A2

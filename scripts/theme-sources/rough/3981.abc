@@ -1,0 +1,10 @@
+X:3981
+%%from edm
+T:Sinfonietta in B minor, Op. 32, No. 2, 3rd Movement - 1st Theme
+C:Nicolas Miaskovsky
+%%composer Miaskovsky|Nicolas
+% EDM 3981 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+F2^G,2 ^A,4<B,4 C2F2 | D4 B,2D2 G2F2 z4 | G2B2e2c2

@@ -1,0 +1,11 @@
+X:5256
+T:Concerto, 1st Movement - 1st Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6894, Barlow & Morgenstern R127, EDM 5256 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/8
+Q:1/4=226
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z2 Gd d2 e2 | dcAc d2 cd | g4- gagd | e2 d2 z dge | c2 c2 cBcd |

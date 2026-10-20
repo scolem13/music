@@ -1,0 +1,10 @@
+X:6108
+%%from edm
+T:Symphony No. 7 in C, “Great”, 1st Movement - 3rd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6108 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+b4 g4 g4 a4 | b4 g4 g4 b4 | (3c'4d'4e'4 e'8 | (3c'4d'4e'4 e'8 |

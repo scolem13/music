@@ -1,0 +1,10 @@
+X:4926
+%%from edm
+T:Alexander Nevsky, Op. 78, 3rd Movement - 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4926 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+G,8 G,4 F,4 | F,4 G,4 G,4 C,4 | G,2G,2 G,4 C4 D4 | D4 C4 C4<e4 |

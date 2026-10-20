@@ -1,0 +1,10 @@
+X:3566
+%%from edm
+T:Sonata No. 7 in F, 6th Movement
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3566 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c'16 | =b8 c'4 a4- | a4 g8 f4- | f4 e4 f4 a4 | c'4 c4 z4 a4 | c'4 c4 f4 F4 | f4 f4 d4

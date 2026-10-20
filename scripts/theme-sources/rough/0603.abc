@@ -1,0 +1,11 @@
+X:603
+%%from edm
+T:Rumanian Folk Dances, Piano - 3rd Movement
+C:Béla Bartók
+%%composer Bartók|Béla
+% EDM 0603 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+z2 d2 =f2^f2 | z/2 z/2 =fd2 f2^f2 | z/2 z/2 =fd2 f2^f2- | f2=f/2d/2f/2^f/2 =f2

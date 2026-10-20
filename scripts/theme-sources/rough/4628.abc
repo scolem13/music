@@ -1,0 +1,10 @@
+X:4628
+%%from edm
+T:Trio in C, K 548, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4628 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+C12 G,3C | E12 C3E | G4 E3G c2 z2 e2 z2 | G4 z8 e3f | g2 z2 g2 z2 g2 z2 g2 z2 | B8 c2

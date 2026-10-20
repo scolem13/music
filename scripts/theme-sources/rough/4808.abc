@@ -1,0 +1,10 @@
+X:4808
+%%from edm
+T:Concertino in F minor, 2nd Movement
+C:Giovanni Pergolesi
+%%composer Pergolesi|Giovanni
+% EDM 4808 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+F16 | C8 c8 | F8 f8 | =e4 f4 g4 B4 | A4 B4 c4 F4 | =E4

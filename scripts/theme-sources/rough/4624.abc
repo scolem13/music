@@ -1,0 +1,10 @@
+X:4624
+%%from edm
+T:Trio in B-flat, K 502, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4624 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f4 f4 z/2 d'6- d'3/2 | z/2 c'6- c'3/2 z/2 b6- b3/2 | c'2b2a2g2 f2 z/2 f/2=e f2g2 | e2 z/2 e/2d e2f2

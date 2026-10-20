@@ -1,0 +1,10 @@
+X:4082
+%%from edm
+T:Concerto in E-flat, K 449, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4082 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+F2 B4 A2 | B2 d4 c2 | B2 f4 e2 | e2-e/2d/2c/2d/2 c2

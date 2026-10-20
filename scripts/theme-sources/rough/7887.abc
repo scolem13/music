@@ -1,0 +1,13 @@
+X:7887
+%%from mtd
+T:Die Walkure, Magic Fire Music, 2nd Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% MTD 9511, Barlow & Morgenstern W42, EDM 7887 (Musical Theme Dataset, CC BY 4.0)
+N:Dritter Aufzug. [Feuerzauber]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=69
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+e c' b g/>f/ | e c' b g/>f/ | e c' b g/>f/ | e c' b a/>g/ | a f' e' c'/>b/ |

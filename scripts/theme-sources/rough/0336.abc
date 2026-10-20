@@ -1,0 +1,10 @@
+X:336
+%%from edm
+T:English Suite No. 2, in A minor, Piano, Bouree II
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0336 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+E4 E4 F4 =G2F2 | E2D2 E4 A2G2 A4 | E4

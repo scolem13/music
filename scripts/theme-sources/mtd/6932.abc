@@ -1,0 +1,11 @@
+X:6932
+T:Wiener-Blut, Op. 354, Waltzes, No. 3, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8561, Barlow & Morgenstern S1323, EDM 6932 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=146
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e2 f2 | g4 c'2- | c'c/e/ a3 a | a2 ^A2 B2- | BB/d/ a3 a | a2 ^A2 B2- | BB/d/ a3 a | a2 ^d2 e2 |

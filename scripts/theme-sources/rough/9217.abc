@@ -1,0 +1,12 @@
+X:9217
+%%from mtd
+T:Mazurkas 6, Op. 7, No. 2
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2214, Barlow & Morgenstern C227, EDM 9217 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=96
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e2 | f>e d2 f2 | f4 e2 | (3d/e/d/^c d^deB | d4 c2 |

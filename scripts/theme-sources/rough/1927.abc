@@ -1,0 +1,10 @@
+X:1927
+%%from edm
+T:The Queen of Sheba, Cortege
+C:Charles François Gounod
+%%composer Gounod|Charles François
+% EDM 1927 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e'6 e4- ee e2B2 | G2B2e2g4<f4 g2 | e2g2 f8 z2 b2 | a'4 z2 f'4 z2 g'4 | z2 e'4 z2 c'8 | d'2e'2d'2e'2 f'2b2

@@ -1,0 +1,10 @@
+X:2296
+%%from edm
+T:Sonata in E, Op. 1, No. 15, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2296 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:E
+g8 f4 e4 d4 c4 | =c12 ^c4 c8 | d8 e4 g4 f4 e4 | d12 c4 c8 |

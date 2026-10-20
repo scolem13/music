@@ -1,0 +1,12 @@
+X:9626
+T:Iberia, from Images, No. 2, 1st Movement, 3rd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2617, Barlow & Morgenstern D49, EDM 9626 (Musical Theme Dataset, CC BY 4.0)
+N:Ibéria - 1. Par les rues et par les chemins  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=74
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+z3 d3 | d3d3 |{^cd} e6 | d3^c3 | B^c d4 |

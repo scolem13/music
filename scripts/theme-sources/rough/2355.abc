@@ -1,0 +1,10 @@
+X:2355
+%%from edm
+T:Suite No. 8, in G, 2nd Set, 1st Movement, Allemande
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2355 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+G2 G4 z G A3/2B/2A2 D2 z c | B3/2A<BA<Bc<Bd<cB/2A/2B/2A/2B/2 A/2B/2A/2B/2

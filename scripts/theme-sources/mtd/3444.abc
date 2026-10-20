@@ -1,0 +1,12 @@
+X:3444
+T:Hungarian Rhapsody No. 2 in C-sharp minor, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% MTD 5098, Barlow & Morgenstern L150, EDM 3444 (Musical Theme Dataset, CC BY 4.0)
+N:Rapsodie hongroise II  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=64
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G,/G,/ | C2 z2 C4- | C^B,CD EA,ED | C4{CD} C2>^B,2 | C7 D | E2 z2 E4 |

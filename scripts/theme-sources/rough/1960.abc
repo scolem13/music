@@ -1,0 +1,12 @@
+X:1960
+%%from mtd
+T:Spanish Dance, No. 5, Playera-Andaluza, Piano, 2nd Theme
+C:Enrique Granados
+%%composer Granados|Enrique
+% MTD 3622, Barlow & Morgenstern G211, EDM 1960 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=57
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+e/f/g/ |[M:3/4] b2 b3 a | b3 efg | a2 a3 g | f3 def | g2 g3 f | g3 cde | f2 f3 e | e3 |

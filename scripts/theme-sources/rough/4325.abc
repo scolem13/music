@@ -1,0 +1,10 @@
+X:4325
+%%from edm
+T:Quintet in D, K 593, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4325 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 a4 c4 | d4 e3 z/2 f/2 g4 | f4 e2 z2 e2 z2 | z12 | g4 b4 c4 | d4

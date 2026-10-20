@@ -1,0 +1,10 @@
+X:1335
+%%from edm
+T:Symphony No. 1 in D, Op. 60, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1335 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+F,4 C4 E4 | D6 C2 B,4 | A,4 G2 z2 G4 | F8 D2D2 | =C4 E4 G4 | D6 =C2 B,4 |

@@ -1,0 +1,10 @@
+X:1761
+%%from edm
+T:Sonata in C minor, 3rd Movement, Siciliano
+C:Francesco Geminiani
+%%composer Geminiani|Francesco
+% EDM 1761 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+c3d c2 a4 c2 g2_g2- | _g2 z/2 z/2 =g4- g z/2 =e3-e/2 f2f2- | fg=e2 (3f4-f_e4- e _d4- dc2 |

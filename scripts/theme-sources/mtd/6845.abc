@@ -1,0 +1,11 @@
+X:6845
+T:An Der Schonen Blauen Donau, Op. 317, Waltzes, No. 3, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8474, Barlow & Morgenstern S1236, EDM 6845 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=180
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+D | B z B- | B d3/2 c/ | PB D D | D2 D | B z B- | B e3/2 d/ | Pc F/ z/ F | F3 |

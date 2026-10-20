@@ -1,0 +1,10 @@
+X:9197
+%%from edm
+T:Etudes, Op. 25 - No. 10 in B minor - Intro
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9197 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f2=f2^f2g2 ^g2a2g2g2 | ^g2a2^a2b2 a2=a2a2b2 | =c'2^c'2=c'2b2 b2^c'2d'2^d'2 |

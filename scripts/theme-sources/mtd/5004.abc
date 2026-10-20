@@ -1,0 +1,12 @@
+X:5004
+T:Romeo and Juliet, Op. 64, Suite No. 1, 3rd Movement - Madrigal, 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% MTD 6646, Barlow & Morgenstern P260, EDM 5004 (Musical Theme Dataset, CC BY 4.0)
+N:Madrigal  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=51
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+AB | dzef az^ga | b2e'2 =gzab | =c'2ba g2fe | d2f2 A z |

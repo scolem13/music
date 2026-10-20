@@ -1,0 +1,10 @@
+X:8950
+%%from edm
+T:A Gigge (Doctor Bull's My Selfe) Piano, Harpsichord
+C:John Bull
+%%composer Bull|John
+% EDM 8950 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+e'2 (3d'4-d'c'4- c' b4- b | a4<g4 g4 | f'2 (3e'4-e'd'4- d' c'4- c' | b4<a4 a4 |

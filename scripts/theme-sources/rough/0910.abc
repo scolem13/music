@@ -1,0 +1,13 @@
+X:910
+%%from mtd
+T:Sonata No. 18, in E-flat, Op. 31, No. 3, Piano, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0904, Barlow & Morgenstern B786, EDM 0910 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=98
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+c>F F2 z2 | c>F F2 z2 | F2 F2 F2 | _G6 | _G2 G2 G2 | =G6 | GF F/G/F/=E/ FG | E/ |

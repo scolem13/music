@@ -1,0 +1,10 @@
+X:108
+%%from edm
+T:Sinfonia in B-flat, 2nd Movement
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0108 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G8 A3F | E8 c3B | B4 A2G2 F2E2 | F6 GA G2

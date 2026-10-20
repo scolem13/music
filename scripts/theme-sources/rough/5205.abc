@@ -1,0 +1,10 @@
+X:5205
+%%from edm
+T:Cavatina, Op. 85, No. 3
+C:Joseph Joachim Raff
+%%composer Raff|Joseph Joachim
+% EDM 5205 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+A,4 A,8 B,4 | G8<F8 | F4 E4 A4 E4 | F8<G8 | G4 G4 AGFG B4 | A4 G4 F4 A4 | d4

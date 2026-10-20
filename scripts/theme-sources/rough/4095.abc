@@ -1,0 +1,10 @@
+X:4095
+%%from edm
+T:Concerto in F, K 459, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4095 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+e4 gfef | g2e2 c4 | =B2c2 d4 | c2d2 e4 | A2a2_a2g2 | _g2f2e2_d2 | d2e2f2a2 | e4 d4 |

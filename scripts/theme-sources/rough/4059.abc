@@ -1,0 +1,13 @@
+X:4059
+%%from mtd
+T:Concerto in A, K 622, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5710, Barlow & Morgenstern M437, EDM 4059 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=119
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c3{e} dcd | e3- e2 ^e | fdA afd | e2 c A2 |

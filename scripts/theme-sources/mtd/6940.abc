@@ -1,0 +1,11 @@
+X:6940
+T:Wiener-Bonbons, Op. 307, Waltzes, No. 4
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8569, Barlow & Morgenstern S1331, EDM 6940 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=170
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+z a2 | c'/ z/ z e | z g2 | b/ z/ z a | z c'2 | e'/ z/ z d' | z c'2 | ^g/ z/ z a |

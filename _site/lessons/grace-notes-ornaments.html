@@ -1,0 +1,4535 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.33">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="The ornament tables of Bach, Couperin, Geminiani, Purcell, Türk, Leopold Mozart, Clementi and Hummel, read from the original prints, each sign written and played out; Haydn and Mozart in practice, Chopin and the 19th century, Irish ornaments, and jazz and blues chart symbols, with reference recordings.">
+
+<title>Grace Notes and Ornaments: How to Play Them – Music Practice</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/theory-drills.html">
+ <span class="dropdown-text">Theory Drills</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/exercise-builder.html">
+ <span class="dropdown-text">Exercise Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/analysed-scores.html">
+ <span class="dropdown-text">Analysed Scores</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/triads.html">
+ <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/roman-numerals.html">
+ <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/seventh-chords.html">
+ <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/progressions.html">
+ <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/non-chord-tones.html">
+ <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/melodic-analysis.html">
+ <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/pop-forms.html">
+ <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/accompaniment-textures.html">
+ <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/secondary-dominants.html">
+ <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/secondary-diminished.html">
+ <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/mode-mixture.html">
+ <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/neapolitan.html">
+ <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/augmented-sixths.html">
+ <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/jazz-theory.html">
+ <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#two-kinds-of-grace-note" id="toc-two-kinds-of-grace-note" class="nav-link active" data-scroll-target="#two-kinds-of-grace-note">Two kinds of grace note</a></li>
+  <li><a href="#bach-and-the-baroque" id="toc-bach-and-the-baroque" class="nav-link" data-scroll-target="#bach-and-the-baroque">Bach and the Baroque</a></li>
+  <li><a href="#france-couperin-and-danglebert" id="toc-france-couperin-and-danglebert" class="nav-link" data-scroll-target="#france-couperin-and-danglebert">France: Couperin and d’Anglebert</a></li>
+  <li><a href="#italy-and-england-geminiani-and-purcell" id="toc-italy-and-england-geminiani-and-purcell" class="nav-link" data-scroll-target="#italy-and-england-geminiani-and-purcell">Italy and England: Geminiani and Purcell</a></li>
+  <li><a href="#haydn-mozart-and-the-classical-style" id="toc-haydn-mozart-and-the-classical-style" class="nav-link" data-scroll-target="#haydn-mozart-and-the-classical-style">Haydn, Mozart and the Classical style</a></li>
+  <li><a href="#hummel-chopin-and-the-19th-century" id="toc-hummel-chopin-and-the-19th-century" class="nav-link" data-scroll-target="#hummel-chopin-and-the-19th-century">Hummel, Chopin and the 19th century</a></li>
+  <li><a href="#irish-traditional-music" id="toc-irish-traditional-music" class="nav-link" data-scroll-target="#irish-traditional-music">Irish traditional music</a></li>
+  <li><a href="#jazz-and-blues" id="toc-jazz-and-blues" class="nav-link" data-scroll-target="#jazz-and-blues">Jazz and blues</a></li>
+  <li><a href="#at-a-glance" id="toc-at-a-glance" class="nav-link" data-scroll-target="#at-a-glance">At a glance</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Grace Notes and Ornaments: How to Play Them</h1>
+</div>
+
+<div>
+  <div class="description">
+    The ornament tables of Bach, Couperin, Geminiani, Purcell, Türk, Leopold Mozart, Clementi and Hummel, read from the original prints, each sign written and played out; Haydn and Mozart in practice, Chopin and the 19th century, Irish ornaments, and jazz and blues chart symbols, with reference recordings.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- INTERNAL: work in progress, delisted 2026-10-20 (out of the sidebar, the Lessons listing and site search; the URL still works).
+     Replaced for students by lessons/ornaments-by-period.qmd. Open items: the page's abcjs drawings still show stand-ins for signs
+     abcjs cannot draw (Purcell, Bach accents, Geminiani); swap in the LilyPond SVGs from scripts/ornaments/lily/ once LilyPond runs;
+     Couperin's tremblement unchecked against his 1713 table; none of the LilyPond compiled yet. -->
+<p>A grace note is a small note printed before a main note. An ornament is a sign (a trill, a mordent, a turn) that stands for a short group of notes. Neither tells you exactly <em>when</em> the extra notes sound or <em>how long</em> they last. The answer depends on the period and the style, and for older music it comes from what performers and teachers of the time wrote down.</p>
+<p>The main question is the same in every style: <strong>does the grace note fall on the beat, taking time from the main note, or just before the beat, taking time from the note before?</strong></p>
+<p>Many composers and teachers answered that question in print, in tables of their signs with the notes written out underneath. This page gives eight of those tables as their authors wrote them, read from the original prints and manuscripts, from Bach (1720) to Hummel (1828), alongside how the signs were used in practice, and the very different habits of Irish traditional music and of jazz and blues.</p>
+<p><strong>How to use the page.</strong> Each sign is shown twice: as written, and played out the way the source writes it, moved onto the note C so the tables can be compared. Press <strong>▶</strong> on either to hear the played-out notes. Small print under a name gives the page in the source, and says where a note count or rhythm is our reading rather than the source’s. Each part ends with recordings to hear the style. The Classical Themes page plays grace notes on the beat, the Baroque and Classical default.</p>
+<section id="two-kinds-of-grace-note" class="level2">
+<h2 class="anchored" data-anchor-id="two-kinds-of-grace-note">Two kinds of grace note</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Written</th>
+<th>Name</th>
+<th>Where it falls</th>
+<th>How long</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>small note, no slash</td>
+<td>appoggiatura</td>
+<td>on the beat</td>
+<td>long: often half the main note, or more</td>
+</tr>
+<tr class="even">
+<td>small note with a slash</td>
+<td>acciaccatura</td>
+<td>on or just before the beat</td>
+<td>as short as possible</td>
+</tr>
+</tbody>
+</table>
+<p>The slash only became a reliable sign in the 19th century. In Bach and Haydn an unslashed small note can still be short, and the context decides (Neumann, <em>Ornamentation in Baroque</em>; Rosenblum).</p>
+</section>
+<section id="bach-and-the-baroque" class="level2">
+<h2 class="anchored" data-anchor-id="bach-and-the-baroque">Bach and the Baroque</h2>
+<p>In 1720 J. S. Bach wrote a table of ornaments, the <em>Explication</em>, at the front of the keyboard book he began for his son Wilhelm Friedemann. Each sign stands above a quarter note with the notes it stands for written out below (Bach, <em>Clavier-Büchlein</em>). Together with C. P. E. Bach’s <em>Versuch</em> (1753) and Quantz (1752), it is the main evidence for how Bach’s signs were played.</p>
+<section id="bachs-whole-table" class="level3">
+<h3 class="anchored" data-anchor-id="bachs-whole-table">Bach’s whole table</h3>
+<p>Here is the <em>Explication</em> entry by entry, each on the note C as Bach wrote it: the sign, and the notes Bach wrote out beneath it, with his own note values, read from the manuscript (Bach, <em>Clavier-Büchlein</em>, leaf 3v). Both ▶ buttons in a row play the same written-out notes.</p>
+<p>Bach’s values do not always add up to the quarter note above them: the trill and the mordent stop short, and the last three entries run over. The table shows the shape of each ornament, not a count. On a longer note or at a slower tempo a trill goes on longer, and its last note is held (Neumann, <em>Ornamentation in Baroque</em>).</p>
+<p>His signs differ in small hooks and strokes that the music font here cannot draw:</p>
+<ul>
+<li><strong>Trillo:</strong> a short wave of two humps. <strong>Mordant:</strong> a short wave with a vertical stroke through it. <strong>Trillo und Mordant:</strong> a longer wave ending in that stroke.</li>
+<li><strong>Cadence:</strong> a curl standing upright, like a question mark, not the lying ∽ used today.</li>
+<li><strong>Doppelt-Cadence:</strong> a small hook rising from below into the wave (begin below). <strong>Idem:</strong> a large hook coming down from above (begin with a turn from above). Entries 7 and 8 add the closing stroke.</li>
+<li><strong>Accent:</strong> a small hook just before the note; the realisation shows whether it rises or falls.</li>
+<li><strong>The last Idem:</strong> a stroke dropping into a long wave.</li>
+</ul>
+<!-- ornament-table: bach-explication -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Bach's name</th>
+<th data-quarto-table-cell-role="th">Sign</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Trillo</em><br>
+trill
+<div class="ax-rownote">
+Bach's values: five 32nds and a dotted 32nd, short of the quarter; the trill fills the note.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcd c3/2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcd c3/2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcd c3/2 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Mordant</em><br>
+mordent
+<div class="ax-rownote">
+Written as two 32nds and a dotted 32nd; the main note is then held.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c3/2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cB c3/2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c3/2 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Trillo und Mordant</em><br>
+trill ending with a mordent</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Cadence</em><br>
+turn
+<div class="ax-rownote">
+Four 32nds, as Bach wrote them.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Doppelt-Cadence</em><br>
+trill from the note below</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+Bcdcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>Idem</em><br>
+trill from a turn above</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">7</td>
+<td><em>Doppelt-Cadence und Mordant</em><br>
+from below, ending with a mordent</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+BcdcdcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">8</td>
+<td><em>Idem</em><br>
+from a turn above, on a dotted note, ending with a mordent</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c12 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdcdcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBcdcdcdcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBcdcdcdcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">9</td>
+<td><em>Accent steigend</em><br>
+appoggiatura from below</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">10</td>
+<td><em>Accent fallend</em><br>
+appoggiatura from above</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">11</td>
+<td><em>Accent und Mordant</em><br>
+appoggiatura from below, then a mordent
+<div class="ax-rownote">
+B and the last c share an eighth beam, so Bach's values add up to more than a quarter.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}!mordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4 cB c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">12</td>
+<td><em>Accent und Trillo</em><br>
+appoggiatura from above, then a trill
+<div class="ax-rownote">
+As in 11, the values add up to more than a quarter.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}!uppermordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 cdcd c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">13</td>
+<td><em>Idem</em><br>
+the same, with a stroke dropping into the wave instead of the hook</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 cdcd c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 cdcd c4 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+<p><strong>Hear it.</strong> The Netherlands Bach Society’s <em>All of Bach</em> videos are free and well made. Two show Bach writing ornaments out in full, the best evidence of what his signs meant:</p>
+<ul>
+<li>English Suite No.&nbsp;2, BWV 807, Bertrand Cuiller: the Sarabande at <a href="https://www.youtube.com/watch?v=kPDTyKts0J4&amp;t=692s">11:32</a>, then Bach’s own ornamented version, <em>Les agréments de la même Sarabande</em>, at <a href="https://www.youtube.com/watch?v=kPDTyKts0J4&amp;t=856s">14:16</a>.</li>
+<li>Italian Concerto, BWV 971, Christine Schornsheim: the Andante, whose melody Bach wrote out ornament by ornament, at <a href="https://www.youtube.com/watch?v=wjXCJL8P0rs&amp;t=262s">4:22</a>.</li>
+<li>English Suite No.&nbsp;3, BWV 808, Pierre Hantaï: the Sarabande at <a href="https://www.youtube.com/watch?v=2UxTsFXZsnQ&amp;t=623s">10:23</a>.</li>
+<li>Goldberg Variations, BWV 988, Jean Rondeau: <a href="https://www.youtube.com/watch?v=chQ7cbSUU-s">the Aria</a>, almost every beat ornamented.</li>
+</ul>
+</section>
+<section id="the-appoggiatura-on-the-beat-and-long" class="level3">
+<h3 class="anchored" data-anchor-id="the-appoggiatura-on-the-beat-and-long">The appoggiatura: on the beat, and long</h3>
+<p>An appoggiatura is played <strong>on the beat</strong> and takes its length from the main note. C. P. E. Bach’s rule: before a note that divides in two it takes half, and before a dotted note it takes two thirds (C. P. E. Bach, ch.&nbsp;2, sec.&nbsp;2). It is the dissonant note, so it is the louder one, and the main note resolves it softly.</p>
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:1
+T:Written
+M:2/4
+L:1/8
+K:C
+{d}c2 B2 | {f}e3 d | c4 |]
+</script><script type="text/plain" data-play="">
+X:2
+T:Played: half of a plain note, two thirds of a dotted one
+M:2/4
+L:1/8
+K:C
+dc B2 | f2 e d | c4 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:2
+T:Played: half of a plain note, two thirds of a dotted one
+M:2/4
+L:1/8
+K:C
+dc B2 | f2 e d | c4 |]
+</script></div>
+</div>
+<p>Not every scholar agrees that all of Bach’s small notes are long and on the beat. Frederick Neumann argued that many, especially those filling in a falling third, were short and could come before the beat (Neumann, <em>Ornamentation in Baroque</em>). Treat on the beat as the default, and use a short or pre-beat grace when the long one would spoil the line or the counterpoint.</p>
+</section>
+<section id="the-trill-start-on-the-upper-note" class="level3">
+<h3 class="anchored" data-anchor-id="the-trill-start-on-the-upper-note">The trill: start on the upper note</h3>
+<p>Bach’s table and C. P. E. Bach both start a trill on the <strong>note above</strong>, on the beat, so the trill begins with a dissonance like an appoggiatura. A trill on a long note may end with a turn (<em>Nachschlag</em>) into the next note.</p>
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:3
+T:Written
+M:2/4
+L:1/16
+K:C
+Tc4 B4 | c8 |]
+</script><script type="text/plain" data-play="">
+X:4
+T:Played: from the upper note, on the beat
+M:2/4
+L:1/16
+K:C
+dcdc B4 | c8 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:4
+T:Played: from the upper note, on the beat
+M:2/4
+L:1/16
+K:C
+dcdc B4 | c8 |]
+</script></div>
+</div>
+</section>
+<section id="the-mordent-main-note-the-one-below-main-note" class="level3">
+<h3 class="anchored" data-anchor-id="the-mordent-main-note-the-one-below-main-note">The mordent: main note, the one below, main note</h3>
+<p>Bach’s <em>mordant</em> is quick: the main note, the note below, then back, all at the start of the beat.</p>
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:5
+T:Written
+M:2/4
+L:1/16
+K:C
+Me4 d4 | c8 |]
+</script><script type="text/plain" data-play="">
+X:6
+T:Played
+M:2/4
+L:1/32
+K:C
+ede6 d8 | c16 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:6
+T:Played
+M:2/4
+L:1/32
+K:C
+ede6 d8 | c16 |]
+</script></div>
+</div>
+</section>
+<section id="improvising-ornaments" class="level3">
+<h3 class="anchored" data-anchor-id="improvising-ornaments">Improvising ornaments</h3>
+<p>Baroque players were expected to add ornaments of their own, above all on the repeat of a slow movement. Bach shows how far this could go: after the Sarabande of his English Suite No.&nbsp;3 he wrote out a second, ornamented version of the whole tune, <em>Les agréments de la même Sarabande</em>. Below is its opening theme (from the Classical Themes collection), followed by two ways to ornament it that a Baroque player might choose, and one they would not.</p>
+<div class="abc-ex"><script type="text/plain">
+X:20
+T:Bach, Sarabande, English Suite No. 3 (BWV 808): the theme
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+BA A3 c/B/ | cA ^F3 A/G/ | AE E2 PD>C | B,3 A, G,2 |]
+</script></div>
+<p><strong>Choice 1, French: graces on the strong notes.</strong> An appoggiatura from above leans on beat 2, where a sarabande puts its weight. A trill from the upper note goes on the leading tone, and a mordent goes on the last note of the cadence. The tune stays the same, and each ornament falls on a note that is a dissonance or a point of arrival.</p>
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:21
+T:Written
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+B{B}A A3 c/B/ | cA T^F3 A/G/ | AE E2 D>C | B,3 A, MG,2 |]
+</script><script type="text/plain" data-play="">
+X:22
+T:Played
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B2 B2A2 A4 c B | c2A2 G^FG^F^F2 A G | A2E2 E4 D3C | B,6 A,2 G,=F, G,2 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:22
+T:Played
+M:3/4
+L:1/16
+Q:1/4=60
+K:Gm
+B2 B2A2 A4 c B | c2A2 G^FG^F^F2 A G | A2E2 E4 D3C | B,6 A,2 G,=F, G,2 |]
+</script></div>
+</div>
+<p><strong>Choice 2, Italian: fill in the long notes.</strong> The long notes are broken into running notes (<em>passaggi</em>, also called divisions) that circle the written pitch and move on to the next one. The notes that fall on the beat are still the written melody, so the harmony underneath doesn’t change. Corelli’s slow movements, printed with ornaments added in 1710, are the classic model.</p>
+<div class="abc-ex"><script type="text/plain">
+X:23
+T:Divisions on the long notes
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+BA AG/A/ Bc/B/ | cA ^F/G/A/^F/ G A/G/ | AE E/^F/G/E/ D>C | B,3 A, G,2 |]
+</script></div>
+<p><strong>Not appropriate: ornaments everywhere, and on the wrong notes.</strong> Here there’s a mordent on every note, and a trill on the final G, where the cadence comes to rest. A trill adds tension, so it belongs on the note before the resolution, never on the resolution itself. With an ornament on every note, beat 2 no longer stands out, and the dance goes with it. C. P. E. Bach warned that ornaments used too freely are like too much seasoning (C. P. E. Bach, ch.&nbsp;2, sec.&nbsp;1).</p>
+<div class="abc-ex"><script type="text/plain">
+X:24
+T:Too much, in the wrong places
+M:3/4
+L:1/8
+Q:1/4=60
+K:Gm
+MBMA MA3 Mc/MB/ | McMA M^F3 MA/MG/ | MAME ME2 MD>MC | MB,3 MA, TG,2 |]
+</script></div>
+</section>
+</section>
+<section id="france-couperin-and-danglebert" class="level2">
+<h2 class="anchored" data-anchor-id="france-couperin-and-danglebert">France: Couperin and d’Anglebert</h2>
+<p>The French harpsichordists printed the most detailed ornament tables of all, and Bach’s own table borrows from them. Jean-Henri d’Anglebert’s <em>Pièces de clavecin</em> (1689) opens with 29 <em>agréments</em>: plain, leaned-on and turned trills (<em>tremblement simple</em>, <em>appuyé</em>, <em>cadence</em>), the <em>double cadence</em> (a turn), the <em>pincé</em> (mordent), the <em>cheute</em> or <em>port de voix</em> (appoggiatura from below or above), <em>coulés</em> filling in thirds, arpeggios, and the <em>détaché</em>, a short silence before a trill or a mordent. Like Bach, he writes every ornament on the beat and starts every trill from the note above (d’Anglebert).</p>
+<p>François Couperin’s <em>L’Art de toucher le clavecin</em> (1716) explains how his signs are played, and adds two things the tables do not show. A trill’s beats “begin more slowly than they end”, and every pincé, double pincé and trill stops on the main note (the <em>point d’arrêt</em>) inside the note’s value (Couperin).</p>
+<!-- ornament-table: couperin-1716 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Couperin's name</th>
+<th data-quarto-table-cell-role="th">Sign</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Pincé simple</em><br>
+mordent: the note below once, then the note held
+<div class="ax-rownote">
+Written in small notes; their exact length is not given.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cB c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cB c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Pincé double</em><br>
+a longer mordent, stopping on the note (<em>point d'arrêt</em>) inside its value</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cBcBcB c8-c2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="160">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cBcBcB c8-c2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cBcBcB c8-c2 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Port de voix</em><br>
+the small note below "strikes with the harmony": on the beat; here with a pincé</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}!mordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4 cB c2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 cB c2 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Tremblement</em><br>
+always from the note or semitone above: the <em>appui</em> (leaned on), the beats (starting slower than they end), the <em>point d'arrêt</em>
+<div class="ax-rownote">
+The beats speed up; even notes here. The length of the <em>appui</em> is left to the player.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 dcdcdc c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="160">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 dcdcdc c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 dcdcdc c6 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+</section>
+<section id="italy-and-england-geminiani-and-purcell" class="level2">
+<h2 class="anchored" data-anchor-id="italy-and-england-geminiani-and-purcell">Italy and England: Geminiani and Purcell</h2>
+<p>Francesco Geminiani’s <em>The Art of Playing on the Violin</em> (London, 1751) lists fourteen “Ornaments of Expression” and, unusually, says what each one expresses: a long beat for “Fury, Anger, Resolution”, a soft swelling one for “Horror, Fear, Grief”. Six of them change the notes; the rest are holding the note, staccato, swelling and diminishing, piano and forte, and the “close shake”, which he says “cannot possibly be described by Notes” (it is vibrato, and he wants it often) (Geminiani).</p>
+<!-- ornament-table: geminiani-1751 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Geminiani's name</th>
+<th data-quarto-table-cell-role="th">Sign</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>A plain Shake</em><br>
+<em>Trillo semplice</em>: for quick movements
+<div class="ax-rownote">
+Eight slurred 32nds; the start on the note above is read from the group ending on the main note.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>A turn'd Shake</em><br>
+<em>Trillo composto</em>: quick and long for gaiety, short and soft for tender passions
+<div class="ax-rownote">
+About ten notes on the plate: the trill, the note below, the main note.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^+"c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc B c |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc B c |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc B c |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>A superior Apogiatura</em><br>
+from above, on the beat, "more than half the Length" of the note, swelling
+<div class="ax-rownote">
+Geminiani gives it more than half the note; the plate also shows a short one.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4-d c3 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4-d c3 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4-d c3 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>An inferior Apogiatura</em><br>
+from the note below, only when the melody rises a second or third, then a beat</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{^B}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+^B4 c^B c2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+^B4 c^B c2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+^B4 c^B c2 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Holding the Note</em><br>
+<em>Trattenimento</em>: the note held plain, then shaken, so the pure note is heard
+<div class="ax-rownote">
+Shape from the plate; note count approximate.
+</div></td>
+<td><div class="abc-ex" data-width="110">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^-"c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcdcdc^Bc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="170">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c8 dcdcdc^Bc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcdcdc^Bc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>A Beat</em><br>
+the note and the semitone below, slurred: strong and long for fury, soft and swelling for grief
+<div class="ax-rownote">
+A trill on the lower note, starting on the main note.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^//"c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c^Bc^Bc^Bc2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c^Bc^Bc^Bc2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c^Bc^Bc^Bc2 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+<p>Henry Purcell’s harpsichord <em>Lessons</em> (1696, published by his widow) begin with “Rules for Graces”: “you allway’s shake from the note above and beat from ye note or half note below, according to the key you play in”. A shake is the upper-note trill; a beat is the English name for a mordent from the note below. The printed examples are hard to read and are said to contain misprints, so the note counts below follow the rules more than the plate (Purcell).</p>
+<!-- ornament-table: purcell-1696 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Purcell's name</th>
+<th data-quarto-table-cell-role="th">Sign</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Shake</em><br>
+from the note above ("you allway's shake from the note above")
+<div class="ax-rownote">
+The sign is a double oblique stroke through the stem.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Beat</em><br>
+from the note or half note below, "according to the key you play in"
+<div class="ax-rownote">
+A stroke with a cross stroke. The rule is clear; the number of notes on the poor scan is not.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcBc c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+BcBc c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcBc c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Plain note and Shake</em><br>
+half the note held on the note above, then shaken (a dotted note: only the dot)</td>
+<td><div class="abc-ex" data-width="110">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8 dcdcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="170">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8 dcdcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8 dcdcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Forefall</em><br>
+an oblique stroke rising to the note: the note below first</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 c12 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B4 c12 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B4 c12 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Backfall</em><br>
+a stroke falling to the note: the note above first</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 c12 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4 c12 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4 c12 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+</section>
+<section id="haydn-mozart-and-the-classical-style" class="level2">
+<h2 class="anchored" data-anchor-id="haydn-mozart-and-the-classical-style">Haydn, Mozart and the Classical style</h2>
+<p>The Classical sources keep the long appoggiatura on the beat but give the short one more room. Leopold Mozart’s violin method (1756) and Türk’s <em>Klavierschule</em> (1789) both describe long appoggiaturas that take half or more of the main note, and short ones that are played quickly <strong>on the beat</strong>, taking only a sliver of the main note (L. Mozart; Türk, ch.&nbsp;3).</p>
+<ul>
+<li><strong>Long or short?</strong> A small note written as a longer value (an eighth before a quarter) is usually long. A sixteenth or a thirty-second before a note, a grace before a repeated note, or one in a quick tempo is usually short (Türk; Neumann, <em>Mozart</em>).</li>
+<li><strong>On the beat.</strong> Even the short ones fall on the beat in Haydn and Mozart, with the bass. Playing them before the beat is a later habit (Brown).</li>
+<li><strong>Trills.</strong> Most begin on the upper note, as in Bach, but Classical sources allow a main-note start when the note before is already the upper note, or when the trill starts a phrase (Rosenblum; Neumann, <em>Mozart</em>).</li>
+</ul>
+<div class="ax-pair">
+<div class="abc-ex"><script type="text/plain">
+X:7
+T:Written: a long and a short appoggiatura
+M:2/4
+L:1/8
+K:G
+{c}B2 A2 | {a/}g g f2 | g4 |]
+</script><script type="text/plain" data-play="">
+X:8
+T:Played: the long one takes half; the short one a quick note on the beat
+M:2/4
+L:1/16
+K:G
+c2B2 A4 | agg2 f4 | g8 |]
+</script></div>
+<div class="abc-ex"><script type="text/plain">
+X:8
+T:Played: the long one takes half; the short one a quick note on the beat
+M:2/4
+L:1/16
+K:G
+c2B2 A4 | agg2 f4 | g8 |]
+</script></div>
+</div>
+<section id="three-treatises-as-their-authors-wrote-them" class="level3">
+<h3 class="anchored" data-anchor-id="three-treatises-as-their-authors-wrote-them">Three treatises, as their authors wrote them</h3>
+<p>Daniel Gottlob Türk’s <em>Klavierschule</em> (1789), Leopold Mozart’s violin method (1756) and Muzio Clementi’s piano <em>Introduction</em> (c.&nbsp;1801) are the closest we have to Bach’s table for Haydn’s and Mozart’s world. All three put the appoggiatura on the beat and give it half the main note (more before a dotted note), and all start the trill on the note above. They differ in the details: Türk times the short appoggiatura by tempo; Leopold Mozart lets an appoggiatura before a dotted note take everything but the dot, and allows one grace before the beat, the <em>passing</em> appoggiatura between notes a third apart; Clementi, a generation later, allows a short shake that starts on the main note, and says composers leave the kind of shake to “the taste and judgment of the performer” (Türk; L. Mozart; Clementi).</p>
+<section id="türk-klavierschule-1789" class="level4">
+<h4 class="anchored" data-anchor-id="türk-klavierschule-1789">Türk, <em>Klavierschule</em> (1789)</h4>
+<!-- ornament-table: turk-1789 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Türk's name</th>
+<th data-quarto-table-cell-role="th">Written</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Kurzer Vorschlag</em><br>
+short appoggiatura: on the beat, "at most a 32nd in a moderate tempo", a 64th in a slow one
+<div class="ax-rownote">
+§9, p. 209.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d1c7 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Langer Vorschlag</em><br>
+long appoggiatura: half of a note that divides in two
+<div class="ax-rownote">
+§11, p. 210.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Langer Vorschlag, punktirt</em><br>
+before a dotted note: two thirds (sometimes only one third)
+<div class="ax-rownote">
+§12, pp. 210-211.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c12 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Langer Vorschlag, gebunden</em><br>
+before a note tied to the same pitch: the whole first note
+<div class="ax-rownote">
+§13, p. 212, in 6/8; Türk adds that the rule is often broken.
+</div></td>
+<td><div class="abc-ex" data-width="110">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c12-c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="120">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d12c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Schleifer</em><br>
+slide: two quick notes from a third below, on the beat
+<div class="ax-rownote">
+§20, p. 246. The exact speed is left to the tempo.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{AB}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+A1B1c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+A1B1c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+A1B1c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>Schneller</em><br>
+<em>pincé renversé</em>: the note, the second above, the note, "always very fast"
+<div class="ax-rownote">
+§24, p. 251; also shown in 64ths.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{cd}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c1d1c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">7</td>
+<td><em>Triller</em><br>
+trill: from the note above, with even notes
+<div class="ax-rownote">
+§§27-29, pp. 252-254.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">8</td>
+<td><em>Pralltriller</em><br>
+half trill: the upper note is the note before, tied over; then a very fast c d c
+<div class="ax-rownote">
+§55, p. 272: "really only a shortened trill without a Nachschlag".
+</div></td>
+<td><div class="abc-ex" data-width="110">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(d8 !uppermordent!c8) |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8-d1c1d1c4-c |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8-d1c1d1c4-c |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8-d1c1d1c4-c |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">9</td>
+<td><em>Mordent</em><br>
+the note below, "extremely fast"
+<div class="ax-rownote">
+§60, p. 275.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!mordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1B1c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c1B1c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1B1c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">10</td>
+<td><em>Doppelschlag</em><br>
+turn: "must always begin with the note above"; a start on the main note is marked <em>falsch</em>
+<div class="ax-rownote">
+§§71-72, pp. 282-283. Rhythm as in Clementi's matching example.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(3:2:3d1c1B1 c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+</section>
+<section id="leopold-mozart-versuch-einer-gründlichen-violinschule-1756" class="level4">
+<h4 class="anchored" data-anchor-id="leopold-mozart-versuch-einer-gründlichen-violinschule-1756">Leopold Mozart, <em>Versuch einer gründlichen Violinschule</em> (1756)</h4>
+<!-- ornament-table: lmozart-1756 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Leopold Mozart's name</th>
+<th data-quarto-table-cell-role="th">Written</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Vorschlag</em><br>
+before a plain note it takes half: "what the note loses, the appoggiatura gains"
+<div class="ax-rownote">
+Ch. 9 §3, p. 194. Loud and swelling; the main note slurred on very softly (§8).
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d4c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d4c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Vorschlag vor einer punktirten Note</em><br>
+before a dotted note it takes the whole undotted value: the main note comes in on the dot
+<div class="ax-rownote">
+Ch. 9 §4, pp. 195-196.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c12 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Vorschlag vor einer halben Note</em><br>
+a half note starting a bar in 3/4: the appoggiatura takes three quarters
+<div class="ax-rownote">
+Ch. 9 §4, p. 196.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d12c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d12c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Durchgehender Vorschlag</em><br>
+passing appoggiatura between notes a third apart: played in the time of the note <em>before</em>, softly
+<div class="ax-rownote">
+Ch. 9 §17, p. 206: his one grace before the beat.
+</div></td>
+<td><div class="abc-ex" data-width="110">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+e8 {d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+e6 d2 c8 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+e6 d2 c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+e6 d2 c8 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Triller</em><br>
+trill: "begin it from above", here with a closing turn (<em>Nachschlag</em>)
+<div class="ax-rownote">
+Ch. 10 §§3-5, pp. 218-219. Note count approximate.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="170">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdcdcdcdcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>Mordant (I)</em><br>
+his "mordent" is a cluster of very fast, soft grace notes that "grip" the main note: here from the note itself
+<div class="ax-rownote">
+Ch. 11 §§8-9, p. 242. Not Bach's mordent.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{cB}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c/B/c7 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c/B/c7 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c/B/c7 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">7</td>
+<td><em>Mordant (II)</em><br>
+from the two neighbours, below and above
+<div class="ax-rownote">
+Ch. 11 §9, p. 242.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{Bd}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B/d/c7 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B/d/c7 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B/d/c7 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+</section>
+<section id="clementi-introduction-to-the-art-of-playing-on-the-piano-forte-c.-1801" class="level4">
+<h4 class="anchored" data-anchor-id="clementi-introduction-to-the-art-of-playing-on-the-piano-forte-c.-1801">Clementi, <em>Introduction to the Art of Playing on the Piano Forte</em> (c.&nbsp;1801)</h4>
+<!-- ornament-table: clementi-1801 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Clementi's name</th>
+<th data-quarto-table-cell-role="th">Written</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Appoggiatura</em><br>
+"in general, it is half of its duration; more or less, however, according to the expression"</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Grace for emphasis</em><br>
+"to give emphasis": very short, on the beat</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B1c7 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B1c7 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B1c7 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Turn</em><br>
+a quick triplet from the note above
+<div class="ax-rownote">
+"The lowest note of every sort of turn is mostly a semitone."
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(3:2:3d1c1B1 c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3d1c1B1 c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Turn inverted</em><br>
+from the note below</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!invertedturn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3B1c1d1 c6 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+(3:2:3B1c1d1 c6 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+(3:2:3B1c1d1 c6 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Shake</em><br>
+from the note above
+<div class="ax-rownote">
+Composers "trust chiefly to the taste and judgment of the performer, whether it shall be long, short, transient, or turned".
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>Short shake</em><br>
+"beginning by the note itself"</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c2 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c1d1c2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c1d1c2 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">7</td>
+<td><em>Beat</em><br>
+Clementi's beat starts on the note below (a semitone when the note before is not a step away)</td>
+<td></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+B1c1B1c1B1c3 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+B1c1B1c1B1c3 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+</section>
+</section>
+<section id="haydns-own-sign" class="level3">
+<h3 class="anchored" data-anchor-id="haydns-own-sign">Haydn’s own sign</h3>
+<p>Haydn’s keyboard music has a sign of its own, a turn with a vertical stroke through it, the “Haydn ornament”. What it meant is still argued over, and the sources disagree even on where it stands: in the slow movement of the E♭ Sonata, Hob. XVI:49 (1790), the first edition (Artaria, 1791) engraves a small cross-like sign over two notes in each of bars 9 and 11, where Haydn’s autograph has a sign that a coarse scan cannot tell from a short trill (Haydn, autograph; Haydn, Artaria). Modern editions and Somfai’s study discuss it; until we have read them, this page gives no realisation (Somfai).</p>
+<p><strong>Hear four readings of the same Adagio.</strong> Hob. XVI:49, II. <em>Adagio e cantabile</em>, on official uploads. Listen to bars 1-12 (about the first minute) and compare the small notes and signs:</p>
+<ul>
+<li>Ronald Brautigam, fortepiano: <a href="https://www.youtube.com/watch?v=hGq5VGR_6oQ">YouTube</a></li>
+<li>Alfred Brendel, piano: <a href="https://www.youtube.com/watch?v=ZT5eJcW6RHI">YouTube</a></li>
+<li>Paul Lewis, piano: <a href="https://www.youtube.com/watch?v=f77tyuwa8Qs">YouTube</a></li>
+<li>Marc-André Hamelin, piano: <a href="https://www.youtube.com/watch?v=3m7qHE3QU7U">YouTube</a></li>
+</ul>
+</section>
+<section id="mozart-writes-it-out" class="level3">
+<h3 class="anchored" data-anchor-id="mozart-writes-it-out">Mozart writes it out</h3>
+<p>Mozart’s Sonata in F, K. 332, shows how much a Classical player added. In the autograph, the Adagio’s reprise repeats the opening plainly; in the first edition (Artaria, 1784), printed under Mozart’s eye, the same bars return heavily embellished, with runs of 32nds, triplets and trills (Mozart, Artaria). Hear it on fortepiano: Kristian Bezuidenhout, <a href="https://www.youtube.com/watch?v=1sgfcMXbpQg">K. 332, II. Adagio</a>; the reprise comes about halfway through.</p>
+</section>
+</section>
+<section id="hummel-chopin-and-the-19th-century" class="level2">
+<h2 class="anchored" data-anchor-id="hummel-chopin-and-the-19th-century">Hummel, Chopin and the 19th century</h2>
+<p>Through the 19th century, short grace notes moved <strong>before the beat</strong> in much music, and trills more and more started on the main note (Brown). The turning point in print is Johann Nepomuk Hummel’s piano method (1828). He says the old rule, the trill from the note above, “was made for the voice”, and that on the piano the weight belongs on the main note: his trill begins and ends on it, and a start from above or below has to be written as a small note (Hummel).</p>
+<!-- ornament-table: hummel-1828 -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Hummel's name</th>
+<th data-quarto-table-cell-role="th">Written</th>
+<th data-quarto-table-cell-role="th">Played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Triller</em><br>
+trill: "begins with the main note and always ends with it too", with a closing turn as fast as the trill
+<div class="ax-rownote">
+p. 394: the upper-note start "was made for the voice"; on the piano the weight belongs on the main note.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!trill!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcdcdcdcdcdcdBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="170">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cdcdcdcdcdcdcdBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcdcdcdcdcdcdBc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Triller von oben</em><br>
+a start from above must be shown by a small added note</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}!trill!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="170">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcdcdcdcdcdcdcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcdcdcdcdcdcdcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Triller von unten</em><br>
+and a start from below likewise</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{B}!trill!c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcdcdcdcdcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="170">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+BcdcdcdcdcdcdcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+BcdcdcdcdcdcdcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Schneller</em><br>
+a short trill: main, upper, main, quick and on the beat
+<div class="ax-rownote">
+p. 398; note values approximate.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!uppermordent!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c2d2c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c2d2c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c2d2c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Doppelschlag von oben</em><br>
+turn from the note above, "lively, round and rather strong"
+<div class="ax-rownote">
+pp. 398-399.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!turn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+dcBc c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+dcBc c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>Doppelschlag von der Hauptnote</em><br>
+turn from the main note, shown by a small added note</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{c}!turn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcBc c3 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+cdcBc c3 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+cdcBc c3 |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">7</td>
+<td><em>Doppelschlag von unten</em><br>
+turn from the note below (the inverted sign)</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+!invertedturn!c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdc c4 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+Bcdc c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+Bcdc c4 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">8</td>
+<td><em>Doppelschlag über dem Punkt</em><br>
+over a dot: the turn ends on the note just as the dot comes in
+<div class="ax-rownote">
+Shape from p. 399; values approximate. (The sign sits after the note.)
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+"^∽ on the dot"c12 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcBc |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+c8 dcBc |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+c8 dcBc |]
+</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">9</td>
+<td><em>Langer Vorschlag</em><br>
+half of a plain note, two thirds of a dotted one, struck with the other voices
+<div class="ax-rownote">
+pp. 399-401.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{d}c16 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d8c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d8c8 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">10</td>
+<td><em>Kurzer Vorschlag</em><br>
+written as a crossed eighth: takes almost nothing; the accent is on the main note</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+{/d}c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/32
+K:C
+d1c7 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/32
+K:C
+Q:1/4=50
+d1c7 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+<p><strong>Chopin</strong> is the exception pianists remember. His pupils report that he wanted grace notes and the start of trills played <strong>with the bass note</strong>, on the beat (Eigeldinger). The Polish National Edition’s performance notes spell it out piece by piece: in the Moderato in E (WN 56) the first grace note is struck with the bass; “all trills without grace notes should begin with the principal”; and where Chopin writes a small note before a trill, the trill starts on that note, “simultaneously with the G in the left hand”. Yet in the early Contredanse (WN 27) the edition says to “execute all grace notes in an anticipated manner”, before the beat (Ekier). Chopin wanted even a turn sung: “not a quick gruppetto, but eight notes well sung” (Ekier). Raoul Pugno, who studied the Chopin tradition in Paris, notes that in the Berceuse a small flat over a trill belongs to its upper note, and asks for two of its trills “a little longer” and the next one strictly in time (Pugno).</p>
+<p><strong>Singers</strong> kept the older rule longest. Manuel García’s <em>Traité</em> (1847) says the appoggiatura in Italian singing is less an ornament than a matter of the words: it “falls always on the downbeat and on the long syllable”, and can come from any interval, a fifth in Mozart’s “andiam” in <em>Don Giovanni</em> (García).</p>
+<p><strong>Hear it.</strong> Recordings by players and singers trained in the 19th century, free on the Internet Archive:</p>
+<ul>
+<li>Vladimir de Pachmann, Chopin, <a href="https://archive.org/details/78_nocturne-in-b-major_vladimir-de-pachmann-chopin_gbia0545821a">Nocturne in B, Op. 32 No.&nbsp;1</a> and <a href="https://archive.org/details/loc-jukebox-285277-mazurka-in-f-sharp-minor">Mazurka in F♯ minor</a> (1912, Library of Congress National Jukebox).</li>
+<li>Ignacy Jan Paderewski, Chopin, <a href="https://archive.org/details/78_nocturne-in-e-sharp-major-op-15-no-2_ignace-jan-paderewski-chopin_gbia7042343a">Nocturne in F♯, Op. 15 No.&nbsp;2</a> (HMV, 1928; the archive’s title says “E sharp”).</li>
+<li>Adelina Patti, Bellini, <a href="https://archive.org/details/78_castadiva_139_09">“Casta diva”</a> (1906), with <a href="https://archive.org/details/adelina-patti">more of her 1905–06 recordings</a>: bel canto appoggiaturas and turns from a singer born in 1843.</li>
+</ul>
+</section>
+<section id="irish-traditional-music" class="level2">
+<h2 class="anchored" data-anchor-id="irish-traditional-music">Irish traditional music</h2>
+<p>In Irish flute, whistle and fiddle music grace notes are not melody notes at all but articulations: a <strong>cut</strong> is a flick to a higher note, a <strong>tap</strong> (or strike) a flick to a lower one, and a <strong>roll</strong> combines them around a long note. They are so short that they have no rhythmic value of their own and fall right at the start of the main note (Larsen).</p>
+<div class="abc-ex"><script type="text/plain">
+X:9
+T:Cut, tap and a long roll on G
+M:6/8
+L:1/8
+K:D
+{a}G2 A {F}G2 A | ~G3 B2 A |]
+</script><script type="text/plain" data-play="">
+X:91
+M:6/8
+L:1/32
+K:D
+Q:3/8=60
+a G7 A4 F G7 A4 | G4 a G3 F G3 B8 A4 |]
+</script></div>
+</section>
+<section id="jazz-and-blues" class="level2">
+<h2 class="anchored" data-anchor-id="jazz-and-blues">Jazz and blues</h2>
+<p>Jazz players use grace notes freely and they are rarely written. They come <strong>before the beat</strong> or across it, in swing time, and they are part of how a phrase is shaped rather than decoration added on top. Where an arranger does write them, the big-band chart has its own set of signs: Michele Caniato’s checklist of “expressive devices” runs from gliss, rip and bend through shake, doit, growl, smear, fall, spill and plop to the turn (Caniato).</p>
+<ul>
+<li><strong>The blue third.</strong> On piano, which cannot bend a note, the minor third is crushed into the major third: struck together and the lower one let go, or a quick grace from the minor into the major. It stands in for the singer’s or guitarist’s bend between them (Komara; Hines). Grace from below, never from above, or it sounds minor. See <a href="../lessons/blues-piano.html">Blues Piano</a>.</li>
+<li><strong>Terminal vibrato.</strong> Louis Armstrong starts a long note straight and lets vibrato in towards its end; Gunther Schuller calls the trumpet shake “a more extreme way of enlivening and swinging the tone” (Schuller). B.B. King’s guitar version is the “butterfly” vibrato, from the wrist (Koch).</li>
+<li><strong>Ghost notes and bends</strong> are written as a note in brackets (or an x notehead) and as an arrow marked ¼, ½ or full.</li>
+</ul>
+<p>In the table below, ▶ plays the slides on a clean electric guitar, so a fall falls and a bend bends, where notation can only show steps. How far and how fast each one goes is our estimate: players differ.</p>
+<!-- ornament-table: jazz-chart -->
+
+<table class="ax-table caption-top table" data-quarto-postprocess="true">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th class="ax-n" data-quarto-table-cell-role="th">#</th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">In a chart</th>
+<th data-quarto-table-cell-role="th">Roughly played</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td class="ax-n">1</td>
+<td><em>Crushed note</em><br>
+piano: the minor and major third struck together, the lower let go at once, standing in for a bend
+<div class="ax-rownote">
+Komara; Hines, ed. Taylor.
+</div></td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+{/_E}E4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+[_EE] E3 |]
+</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+[_EE] E3 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+[_EE] E3 |]
+</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">2</td>
+<td><em>Fall</em><br>
+a line falling away after the note: at the release, never before the beat, into silence</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^fall"c4 z4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 B/A/ z4 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, -7]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="130">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+c3 B/A/ z4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 B/A/ z4 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, -7]]}]}</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">3</td>
+<td><em>Doit</em><br>
+the opposite: "a smear that ascends into infinity after the initial pitch is heard"
+<div class="ax-rownote">
+Pejrolo and DeRosa.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^doit"c4 z4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 d/e/ z4 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, 5]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="130">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+c3 d/e/ z4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c3 d/e/ z4 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 0], [0.6, 0], [1, 5]]}]}</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">4</td>
+<td><em>Scoop</em><br>
+a curve up into the note: the attack is on the beat but below pitch, sliding up</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^scoop"c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+A/B/ c3 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, -2], [0.25, 0]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+A/B/ c3 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+A/B/ c3 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, -2], [0.25, 0]]}]}</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">5</td>
+<td><em>Plop</em><br>
+a curve down into the note from above</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^plop"c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+e/d/ c3 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 4], [0.25, 0]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+e/d/ c3 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+e/d/ c3 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1, "midi": 72, "bend": [[0, 4], [0.25, 0]]}]}</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">6</td>
+<td><em>Rip</em><br>
+a fast run up from below, starting before the beat so the top note lands on it</td>
+<td><div class="abc-ex" data-width="80">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^rip"c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3GAB c4 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1.4, "midi": 72, "bend": [[0, -7], [0.35, 0]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+(3GAB c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3GAB c4 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 1.4, "midi": 72, "bend": [[0, -7], [0.35, 0]]}]}</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">7</td>
+<td><em>Bend</em><br>
+guitar: push the string up a whole step ("full"; ½ = a half step), hold, let it back down</td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^full"c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c2 d4 c2 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0, 0], [0.3, 2], [1.5, 2], [1.9, 0]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+c2 d4 c2 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+c2 d4 c2 |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0, 0], [0.3, 2], [1.5, 2], [1.9, 0]]}]}</script>
+</div></td>
+</tr>
+<tr class="even">
+<td class="ax-n">8</td>
+<td><em>Shake</em><br>
+trumpet: a wide, fast lip trill, "done solely with the embouchure"
+<div class="ax-rownote">
+Pejrolo and DeRosa; Barnhart.
+</div></td>
+<td><div class="abc-ex" data-width="90">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+"^shake"c8 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3cec (3ece (3cec (3ece |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0.0, 0], [0.16666666666666666, 3], [0.3333333333333333, 0], [0.5, 3], [0.6666666666666666, 0], [0.8333333333333334, 3], [1.0, 0], [1.1666666666666667, 3], [1.3333333333333333, 0], [1.5, 3], [1.6666666666666667, 0], [1.8333333333333333, 3], [2.0, 0]]}]}</script>
+</div></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+(3cec (3ece (3cec (3ece |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+(3cec (3ece (3cec (3ece |]
+</script>
+<script type="text/plain" data-bend="">{"bpm": 96, "sound": "clguitar", "notes": [{"t": 0, "d": 2, "midi": 72, "bend": [[0.0, 0], [0.16666666666666666, 3], [0.3333333333333333, 0], [0.5, 3], [0.6666666666666666, 0], [0.8333333333333334, 3], [1.0, 0], [1.1666666666666667, 3], [1.3333333333333333, 0], [1.5, 3], [1.6666666666666667, 0], [1.8333333333333333, 3], [2.0, 0]]}]}</script>
+</div></td>
+</tr>
+<tr class="odd">
+<td class="ax-n">9</td>
+<td><em>Enclosure</em><br>
+bebop: the notes above and below circle the target, which lands on the beat
+<div class="ax-rownote">
+Usually written out in full; a bebop staple (Owens).
+</div></td>
+<td></td>
+<td><div class="abc-ex" data-width="150">
+<script type="text/plain">
+X:1
+M:none
+L:1/16
+K:C
+d2 B2 c4 |]
+</script>
+<script type="text/plain" data-play="">
+X:2
+M:none
+L:1/16
+K:C
+Q:1/4=96
+d2 B2 c4 |]
+</script>
+</div></td>
+</tr>
+</tbody>
+</table>
+
+<!-- /ornament-table -->
+<div class="abc-ex" data-style="swing"><script type="text/plain">
+X:10
+T:The blue third crushed into the major third (the band swings it)
+M:4/4
+L:1/8
+K:F
+Q:1/4=120
+"F7"z {^G}A2 F {^G}A2 c2 | {^G}A8 |]
+</script><script type="text/plain" data-play="">
+X:92
+M:4/4
+L:1/32
+K:F
+Q:1/4=120
+z4 ^G A7 F4 ^G A7 c8 | ^G A31 |]
+</script></div>
+<p><strong>Hear it.</strong> Official uploads (label channels):</p>
+<ul>
+<li>Louis Armstrong and His Hot Five, <a href="https://www.youtube.com/watch?v=BTxhgmk_ofk">“West End Blues”</a> (1928): the opening cadenza, then bends and the blue third in the first strain and “hushed vibrato on the final A♭” (Edexcel).</li>
+<li>Meade “Lux” Lewis, <a href="https://www.youtube.com/watch?v=FTKJtTaysrA">“Honky Tonk Train Blues”</a> and Jimmy Yancey, <a href="https://www.youtube.com/watch?v=x_XTl_vXwiI">“Yancey Stomp”</a>: crushed notes.</li>
+<li>Thelonious Monk Quartet, <a href="https://www.youtube.com/watch?v=3oHjXTZO33g">“Misterioso”</a>: crushed minor seconds (Kelley).</li>
+<li>Count Basie Orchestra, <a href="https://www.youtube.com/watch?v=O3-jTzSgU38">“April in Paris”</a> (1955): falls and shakes from the whole band.</li>
+<li>Duke Ellington, <a href="https://www.youtube.com/watch?v=fvKQJt8idKg">“Black and Tan Fantasy”</a> (1927): growl and plunger, smears.</li>
+<li>Charlie Parker, <a href="https://www.youtube.com/watch?v=0ajJBNodEYs">“Ko-Ko”</a> and <a href="https://www.youtube.com/watch?v=25EkxQyQCBk">“Parker’s Mood”</a>: bebop turns and enclosures, blues inflection on alto.</li>
+<li>B.B. King, <a href="https://www.youtube.com/watch?v=kpC69qIe02E">“The Thrill Is Gone”</a> (1969): bends and butterfly vibrato.</li>
+<li>Billie Holiday, <a href="https://www.youtube.com/watch?v=649wWWkW_1o">“Strange Fruit”</a> (1939): late placement and sparing vibrato (Gourse).</li>
+</ul>
+</section>
+<section id="at-a-glance" class="level2">
+<h2 class="anchored" data-anchor-id="at-a-glance">At a glance</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Style</th>
+<th>Grace note</th>
+<th>Trill starts</th>
+<th>Sources</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>J. S. Bach (1720)</td>
+<td>on the beat, long by default</td>
+<td>upper note</td>
+<td>J. S. Bach; C. P. E. Bach; Neumann</td>
+</tr>
+<tr class="even">
+<td>d’Anglebert, Couperin (1689, 1716)</td>
+<td>on the beat (“with the harmony”)</td>
+<td>upper note, leaned on, beats speeding up</td>
+<td>d’Anglebert; Couperin</td>
+</tr>
+<tr class="odd">
+<td>Purcell (1696)</td>
+<td>forefall / backfall on the beat</td>
+<td>“from the note above”; beat from below</td>
+<td>Purcell</td>
+</tr>
+<tr class="even">
+<td>Geminiani (1751)</td>
+<td>on the beat, more than half the note</td>
+<td>upper note</td>
+<td>Geminiani</td>
+</tr>
+<tr class="odd">
+<td>Leopold Mozart (1756)</td>
+<td>on the beat, half (all but the dot before a dotted note); passing ones before</td>
+<td>upper note</td>
+<td>L. Mozart</td>
+</tr>
+<tr class="even">
+<td>Türk (1789)</td>
+<td>on the beat; short ones a 32nd at moderate speed</td>
+<td>upper note, even</td>
+<td>Türk</td>
+</tr>
+<tr class="odd">
+<td>Clementi (c.&nbsp;1801)</td>
+<td>on the beat, “in general” half</td>
+<td>upper note; a short shake may start on the note</td>
+<td>Clementi</td>
+</tr>
+<tr class="even">
+<td>Hummel (1828)</td>
+<td>half the note, on the beat; short ones almost nothing</td>
+<td>main note</td>
+<td>Hummel</td>
+</tr>
+<tr class="odd">
+<td>Chopin</td>
+<td>with the bass, on the beat</td>
+<td>main note unless a small note says otherwise</td>
+<td>Eigeldinger; Ekier</td>
+</tr>
+<tr class="even">
+<td>Later 19th century</td>
+<td>short ones before the beat</td>
+<td>main note</td>
+<td>Brown</td>
+</tr>
+<tr class="odd">
+<td>Irish traditional</td>
+<td>a flick at the start of the note</td>
+<td>(rolls, not trills)</td>
+<td>Larsen</td>
+</tr>
+<tr class="even">
+<td>Jazz, blues</td>
+<td>before or across the beat, swung</td>
+<td>(shakes, falls, doits)</td>
+<td>Caniato; Komara; Schuller</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p><strong>For students</strong></p>
+<p>Edexcel. “Louis Armstrong and His Hot Five: West End Blues.” A Level Music, Unit 6 teaching notes, Pearson, 2011. <a href="https://qualifications.pearson.com/content/dam/pdf/A%20Level/Music/2013/Teaching%20and%20learning%20materials/Unit%206%20-%2048.%20Louis%20Armstrong%20and%20his%20Hot%20Five%20-%20West%20End%20Blues.pdf">qualifications.pearson.com/content/dam/pdf/A%20Level/Music/2013/Teaching%20and%20learning%20materials/Unit%206%20-%2048.%20Louis%20Armstrong%20and%20his%20Hot%20Five%20-%20West%20End%20Blues.pdf</a>.</p>
+<p>Koch, Greg. <em>Hal Leonard Guitar Method: Blues Guitar</em>. Hal Leonard, 2002. B.B. King’s “butterfly” vibrato.</p>
+<p>Larsen, Grey. <em>The Essential Guide to Irish Flute and Tin Whistle</em>. Mel Bay, 2003.</p>
+<p>Netherlands Bach Society. “Bach - Aria from Goldberg Variations BWV 988.” <em>All of Bach</em>, YouTube. <a href="https://www.youtube.com/watch?v=chQ7cbSUU-s">www.youtube.com/watch?v=chQ7cbSUU-s</a>.</p>
+<p>Netherlands Bach Society. “Bach - English Suite no. 2 in A minor BWV 807 - Cuiller.” <em>All of Bach</em>, YouTube. <a href="https://www.youtube.com/watch?v=kPDTyKts0J4">www.youtube.com/watch?v=kPDTyKts0J4</a>.</p>
+<p>Netherlands Bach Society. “Bach - English Suite no. 3 in G minor BWV 808 - Hantaï.” <em>All of Bach</em>, YouTube. <a href="https://www.youtube.com/watch?v=2UxTsFXZsnQ">www.youtube.com/watch?v=2UxTsFXZsnQ</a>.</p>
+<p>Netherlands Bach Society. “Bach - Italian Concerto in F major BWV 971 - Schornsheim.” <em>All of Bach</em>, YouTube. <a href="https://www.youtube.com/watch?v=wjXCJL8P0rs">www.youtube.com/watch?v=wjXCJL8P0rs</a>.</p>
+<p>Pachmann, Vladimir de. Chopin, Mazurka in F sharp minor. Victor, 26 Apr.&nbsp;1912. National Jukebox, Library of Congress. Internet Archive. <a href="https://archive.org/details/loc-jukebox-285277-mazurka-in-f-sharp-minor">archive.org/details/loc-jukebox-285277-mazurka-in-f-sharp-minor</a>.</p>
+<p>Pachmann, Vladimir de. Chopin, Nocturne in B, Op. 32 No.&nbsp;1. HMV, 78 rpm. Internet Archive. <a href="https://archive.org/details/78_nocturne-in-b-major_vladimir-de-pachmann-chopin_gbia0545821a">archive.org/details/78_nocturne-in-b-major_vladimir-de-pachmann-chopin_gbia0545821a</a>.</p>
+<p>Paderewski, Ignacy Jan.&nbsp;Chopin, Nocturne in F sharp, Op. 15 No.&nbsp;2. HMV, 1928. Internet Archive. <a href="https://archive.org/details/78_nocturne-in-e-sharp-major-op-15-no-2_ignace-jan-paderewski-chopin_gbia7042343a">archive.org/details/78_nocturne-in-e-sharp-major-op-15-no-2_ignace-jan-paderewski-chopin_gbia7042343a</a>.</p>
+<p>Patti, Adelina. “Casta diva” (Bellini, <em>Norma</em>). With Alfredo Barili, Gramophone &amp; Typewriter 03082, 1906. Internet Archive. <a href="https://archive.org/details/78_castadiva_139_09">archive.org/details/78_castadiva_139_09</a>.</p>
+<p><strong>For teachers</strong></p>
+<p>Anglebert, Jean-Henry d’. <em>Pièces de clavecin … Livre premier</em>. Paris, 1689. IMSLP. <a href="https://imslp.org/wiki/Pi%C3%A8ces_de_clavecin_(Anglebert,_Jean-Henri_d%27)">imslp.org/wiki/Pi%C3%A8ces_de_clavecin_(Anglebert,_Jean-Henri_d%27)</a>. “Marques des Agrements et leur signification”, read from the 1689 print (IMSLP #110970).</p>
+<p>Bach, Carl Philipp Emanuel. <em>Essay on the True Art of Playing Keyboard Instruments</em>. Translated and edited by William J. Mitchell, W. W. Norton, 1949. First published as <em>Versuch über die wahre Art das Clavier zu spielen</em>, 1753. Ch. 2, Embellishments.</p>
+<p>Bach, Johann Sebastian. <em>Clavier-Büchlein vor Wilhelm Friedemann Bach</em>. Manuscript, begun 22 Jan.&nbsp;1720. Yale University, Irving S. Gilmore Music Library. <a href="https://collections.library.yale.edu/catalog/10991080">collections.library.yale.edu/catalog/10991080</a>. The <em>Explication unterschiedlicher Zeichen</em> is on leaf 3v (IIIF image 10991088); the table on this page is read from it.</p>
+<p>Barnhart, Scotty. <em>The World of Jazz Trumpet: A Comprehensive History and Practical Philosophy</em>. Hal Leonard, 2005.</p>
+<p>Brown, Clive. <em>Classical and Romantic Performing Practice 1750–1900</em>. Oxford UP, 1999.</p>
+<p>Caniato, Michele. <em>The Jazz Ensemble Companion</em>. R&amp;L Education, 2009. Table B.10, “Expressive devices”.</p>
+<p>Clementi, Muzio. <em>Introduction to the Art of Playing on the Piano Forte</em>. London, Clementi, Banger, Hyde, Collard &amp; Davis, [1801]. Internet Archive. <a href="https://archive.org/details/imslp-to-the-art-of-playing-the-pianoforte-op42-clementi-muzio">archive.org/details/imslp-to-the-art-of-playing-the-pianoforte-op42-clementi-muzio</a>. Graces, pp.&nbsp;10-11.</p>
+<p>Couperin, François. <em>L’Art de toucher le clavecin</em>. Paris, 1716. Edited by Nicolas Sceaux, 2008. IMSLP. <a href="https://imslp.org/wiki/L%27art_de_toucher_le_clavecin_(Couperin,_Fran%C3%A7ois)">imslp.org/wiki/L%27art_de_toucher_le_clavecin_(Couperin,_Fran%C3%A7ois)</a>. “Agréments qui servent au jeu”, pp.&nbsp;6-7 (IMSLP #22200).</p>
+<p>Eigeldinger, Jean-Jacques. <em>Chopin: Pianist and Teacher as Seen by His Pupils</em>. Edited by Roy Howat, translated by Naomi Shohet et al., Cambridge UP, 1986.</p>
+<p>Ekier, Jan, editor. <em>Wydanie Narodowe Dzieł Fryderyka Chopina</em> (National Edition). Polskie Wydawnictwo Muzyczne. Performance commentaries. Commentary to Various Compositions (WN 27, WN 56); introduction, “Ozdobniki”.</p>
+<p>García, Manuel. <em>École de García: Traité complet de l’art du chant</em>. Part 2, Paris, 1847. IMSLP. <a href="https://imslp.org/wiki/%C3%89cole_de_Garcia_(Garcia_Jr.,_Manuel)">imslp.org/wiki/%C3%89cole_de_Garcia_(Garcia_Jr.,_Manuel)</a>. The appoggiatura, p.&nbsp;40 (BnF copy, IMSLP #599813).</p>
+<p>Geminiani, Francesco. <em>The Art of Playing on the Violin</em>. Op. 9, London, 1751. IMSLP. <a href="https://imslp.org/wiki/The_Art_of_Playing_on_the_Violin_(Geminiani,_Francesco)">imslp.org/wiki/The_Art_of_Playing_on_the_Violin_(Geminiani,_Francesco)</a>. Example XVIII, text pp.&nbsp;[6]-[8] and plate p.&nbsp;26 (IMSLP #05501).</p>
+<p>Gourse, Leslie, editor. <em>The Billie Holiday Companion</em>. Schirmer Books, 1997.</p>
+<p>Haydn, Joseph. Piano Sonata in E-flat, Hob. XVI:49. Autograph, 1790. IMSLP. <a href="https://imslp.org/wiki/Keyboard_Sonata_in_E-flat_major,_Hob.XVI:49_(Haydn,_Joseph)">imslp.org/wiki/Keyboard_Sonata_in_E-flat_major,<em>Hob.XVI:49</em>(Haydn,_Joseph)</a>. The autograph (IMSLP #561866) and the Artaria first edition, 1791 (IMSLP #52562).</p>
+<p>Hines, Earl. <em>Selected Piano Solos, 1928–1941</em>. Edited by Jeffrey Taylor, A-R Editions, 2006. On “crushed note” figures.</p>
+<p>Hummel, Johann Nepomuk. <em>Ausführliche theoretisch-practische Anweisung zum Piano-Forte-Spiel</em>. Vienna, Tobias Haslinger, 1828. Internet Archive. <a href="https://archive.org/details/ausfhrlichetheor00humm">archive.org/details/ausfhrlichetheor00humm</a>. Part III, “Von den Verzierungen”, pp.&nbsp;393-402.</p>
+<p>Kelley, Robin D. G. <em>Thelonious Monk: The Life and Times of an American Original</em>. Free Press, 2009.</p>
+<p>Komara, Edward, editor. <em>Encyclopedia of the Blues</em>. Routledge, 2006. Crushed notes and bends.</p>
+<p>Mozart, Leopold. <em>A Treatise on the Fundamental Principles of Violin Playing</em>. Translated by Editha Knocker, Oxford UP, 1948. First published as <em>Versuch einer gründlichen Violinschule</em>, 1756.</p>
+<p>Mozart, Leopold. <em>Versuch einer gründlichen Violinschule</em>. Augsburg, 1756. Internet Archive (Bayerische Staatsbibliothek copy). <a href="https://archive.org/details/10527451bsb">archive.org/details/10527451bsb</a>. Chs. 9-11, pp.&nbsp;193-242.</p>
+<p>Mozart, Wolfgang Amadeus. <em>Trois Sonates pour le Clavecin ou Pianoforte</em>, Op. 6 [K. 330-332]. Vienna, Artaria, 1784. IMSLP. <a href="https://imslp.org/wiki/Piano_Sonata_No.12_in_F_major,_K.332/300k_(Mozart,_Wolfgang_Amadeus)">imslp.org/wiki/Piano_Sonata_No.12_in_F_major,<em>K.332/300k</em>(Mozart,_Wolfgang_Amadeus)</a>. K. 332, Adagio, pp.&nbsp;31-32 (IMSLP #292670); the autograph is IMSLP #559838.</p>
+<p>Neumann, Frederick. <em>Ornamentation and Improvisation in Mozart</em>. Princeton UP, 1986.</p>
+<p>Neumann, Frederick. <em>Ornamentation in Baroque and Post-Baroque Music, with Special Emphasis on J. S. Bach</em>. Princeton UP, 1978.</p>
+<p>Owens, Thomas. <em>Bebop: The Music and Its Players</em>. Oxford UP, 1995.</p>
+<p>Pejrolo, Andrea, and Richard DeRosa. <em>Acoustic and MIDI Orchestration for the Contemporary Composer</em>. Focal Press, 2009. Falls, doits and the shake.</p>
+<p>Pugno, Raoul. <em>Les leçons écrites de Raoul Pugno: Chopin</em>. Librairie des Annales, 1909. Internet Archive. <a href="https://archive.org/details/lesleonscritesde00chop">archive.org/details/lesleonscritesde00chop</a>. Berceuse, p.&nbsp;31.</p>
+<p>Purcell, Henry. <em>A Choice Collection of Lessons for the Harpsichord or Spinnet</em>. London, Frances Purcell, 1696. Internet Archive. <a href="https://archive.org/details/bim_early-english-books-1641-1700_a-choice-collection-of-l_purcell-henry_1696">archive.org/details/bim_early-english-books-1641-1700_a-choice-collection-of-l_purcell-henry_1696</a>. “Rules for Graces”.</p>
+<p>Quantz, Johann Joachim. <em>On Playing the Flute</em>. Translated by Edward R. Reilly, 2nd ed., Northeastern UP, 2001. First published as <em>Versuch einer Anweisung die Flöte traversiere zu spielen</em>, 1752.</p>
+<p>Rosenblum, Sandra P. <em>Performance Practices in Classic Piano Music: Their Principles and Applications</em>. Indiana UP, 1988.</p>
+<p>Schuller, Gunther. <em>Early Jazz: Its Roots and Musical Development</em>. Oxford UP, 1968. The Armstrong chapter, on terminal vibrato and the shake.</p>
+<p>Somfai, László. <em>The Keyboard Sonatas of Joseph Haydn: Instruments and Performance Practice, Genres and Styles</em>. Translated by the author with Charlotte Greenspan, U of Chicago P, 1995.</p>
+<p>Steinberg. “Jazz Articulations.” <em>Dorico Pro Operation Manual</em>. <a href="https://steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_jazz_articulations/notation_reference_jazz_articulations_c.html">steinberg.help/dorico/v4/en/dorico/topics/notation_reference/notation_reference_jazz_articulations/notation_reference_jazz_articulations_c.html</a>.</p>
+<p>Türk, Daniel Gottlob. <em>Klavierschule, oder Anweisung zum Klavierspielen für Lehrer und Lernende</em>. Leipzig and Halle, 1789. Internet Archive. <a href="https://archive.org/details/klavierschuleode00trkd">archive.org/details/klavierschuleode00trkd</a>. Ch. 3 (Vorschläge), ch.&nbsp;4 (wesentliche Manieren), pp.&nbsp;207-283.</p>
+<p>Türk, Daniel Gottlob. <em>School of Clavier Playing</em>. Translated by Raymond H. Haggh, U of Nebraska P, 1982. First published as <em>Klavierschule</em>, 1789. Ch. 3 appoggiaturas, ch.&nbsp;4 essential ornaments.</p>
+</div>
+<!-- /works-cited -->
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<style>.ax-rownote{font-size:.8rem;color:var(--site-ink-2);margin-top:.25rem}.ax-table td:last-child a{font-size:.8rem}</style>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;   // instrumental examples: no Your voice menu</script>
+<script src="../apps/shared/lessons/abc-ex.js?v=13"></script>
+<script src="../apps/shared/lessons/sections.js?v=1"></script>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

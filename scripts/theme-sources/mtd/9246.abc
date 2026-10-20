@@ -1,0 +1,13 @@
+X:9246
+T:Nocturnes, Op. 9, No. 1 in B-flat minor, 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2243, Barlow & Morgenstern C256, EDM 9246 (Musical Theme Dataset, CC BY 4.0)
+N:Larghetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:6/4
+L:1/8
+Q:1/4=103
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+bc'd'=abg | f2 f2 f2 f2 gfec | d4 B2 |

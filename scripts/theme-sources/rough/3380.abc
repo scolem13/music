@@ -1,0 +1,10 @@
+X:3380
+%%from edm
+T:Sonata in G, 3rd Movement - 2nd Theme
+C:Guillaume Lekeu
+%%composer Lekeu|Guillaume
+% EDM 3380 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+G4<F4 B2 d4 c2- | cG F6 B2 d4 c2- | c2 f4 _d8 _A2 | B2 c4 B6 c2_d2 | e2 _a4

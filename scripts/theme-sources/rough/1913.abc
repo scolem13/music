@@ -1,0 +1,10 @@
+X:1913
+%%from edm
+T:Symphony, Op. 26, "Rustic Wedding", 5th Movement - 2nd Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1913 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+D4 D2B,2 E2B,2 D4- | D4 D2B,2 E2B,2 D4- | D2C2G,2B,2 C2E2 G4- | G2F2C2E2 F2=A2c2F2 |

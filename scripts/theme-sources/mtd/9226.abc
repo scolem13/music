@@ -1,0 +1,11 @@
+X:9226
+T:Mazurkas 23, Op. 33, No. 2
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2223, Barlow & Morgenstern C236, EDM 9226 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=180
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A2- | Acdefg |{fg} f2 edcB | Ad (3ded cB | c4 A2 |

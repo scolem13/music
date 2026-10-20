@@ -1,0 +1,10 @@
+X:2187
+%%from edm
+T:Concerto Grosso in A minor, Op. 6, No. 4, 2nd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2187 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z4 A8 ^G4 | A4 d2B2 c2A2 f4 | e4 ^g4 a2e2f2d2 | e2B2c2A2 d2B2e2d2 | c2

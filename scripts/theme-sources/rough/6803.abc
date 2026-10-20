@@ -1,0 +1,10 @@
+X:6803
+%%from edm
+T:Sonata in D, 3rd Movement
+C:Karl Stamitz
+%%composer Stamitz|Karl
+% EDM 6803 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+d'2 z/2 z/2 g'4 d' | c'b z/2 c'3/2 b2^c'/2d'/2c'/2d'/2 | e'/2d'/2c'/2b/2bc' c'2-c'/2b/2a/2g/2 | f/2e/2d/2c/2c/2B/2A/2G/2 G4 |

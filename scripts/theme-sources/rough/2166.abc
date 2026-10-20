@@ -1,0 +1,10 @@
+X:2166
+%%from edm
+T:Concerto in F, 2nd Movement, 2nd Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2166 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c4 F4 A4 | B12- | B4 A8- | A4 GFGA G4 | A4 F2F2 G2A2 | z/2 z/2 BA2 B2G2 A2B2 | z/2 z/2 AG2 A4

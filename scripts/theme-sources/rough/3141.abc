@@ -1,0 +1,10 @@
+X:3141
+%%from edm
+T:Praeludium, Piano or Orchestra
+C:Armas Jarnefelt
+%%composer Jarnefelt|Armas
+% EDM 3141 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+F4 GABG | A2 c4 c2 | f2c2 BcdB | c2c2 BABG | ABcd efg2 | f2

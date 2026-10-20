@@ -1,0 +1,13 @@
+X:3699
+%%from mtd
+T:Symphony No. 9, in D, 1st Movement - 1st Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5351, Barlow & Morgenstern M91, EDM 3699 (Musical Theme Dataset, CC BY 4.0)
+N:Andante comodo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=57
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+z4 z2 F2 | E4 z2 F2 | E4 z2 FA | A4 z FGB | B2 A2 z2 cG | B4 z2 cG | B4 |

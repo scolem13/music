@@ -1,0 +1,11 @@
+X:1780
+T:An American in Paris, 4th Theme
+C:George Gershwin
+%%composer Gershwin|George
+% MTD 3443, Barlow & Morgenstern G42, EDM 1780 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=153
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A | dFAD FA,B,D | z D z D- D3 A | ddaA dDFA | A4- A3 |

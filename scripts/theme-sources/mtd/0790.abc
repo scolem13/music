@@ -1,0 +1,12 @@
+X:790
+T:Septet in E-flat, Op. 20, 6th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0784, Barlow & Morgenstern B678, EDM 0790 (Musical Theme Dataset, CC BY 4.0)
+N:Andante con moto alla marcia – Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=32
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E | _G7/4E/4 DF | E2 z E | B7/4B/4 _GE | B,2 |

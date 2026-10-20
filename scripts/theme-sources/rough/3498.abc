@@ -1,0 +1,10 @@
+X:3498
+%%from edm
+T:Sonata in B minor, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3498 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z4 G,4 z4 G,4 | z4 G,4 =F,6 ^D,2 | D,4 =C,4 ^A,,4 ^G,,4 | z4 G,,4 z4 G,,4 |

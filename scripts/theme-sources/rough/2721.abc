@@ -1,0 +1,10 @@
+X:2721
+%%from edm
+T:Symphony in G, No. 94, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2721 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+a4<a4 g/2a/2g/2a/2f2 | g2f2f2 f2 f4 | d'4<a4 g/2a/2g/2a/2f2 | g2f2f2 f2f2 z2 | d'2e2 z2 d'2e2

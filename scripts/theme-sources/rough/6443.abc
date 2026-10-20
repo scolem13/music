@@ -1,0 +1,10 @@
+X:6443
+%%from edm
+T:Concerto, Op. 35, 2nd Movement
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6443 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+b'12- | b'4 c''2b'2 a'4 | b'12- | b'4 a'2g'2 f'2e'2 | d'2^c'2 c'4 c'4 | ^g'2^c'2 c'4 c'4 | d'6 ^c'2 =c'2a2 | g8- g2^f2 | e8

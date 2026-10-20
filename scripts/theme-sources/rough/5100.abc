@@ -1,0 +1,10 @@
+X:5100
+%%from edm
+T:Suite No. 1, in G, Almand
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5100 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+d2 d4 G2 d2 e4 A2 | d2 z/2 z/2 BG2B2 d2 g4 ^c2 | g2 z/2 z/2 fd2f2 a2 b4 e2 | c'2 a4 A2 a2 g4

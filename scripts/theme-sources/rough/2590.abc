@@ -1,0 +1,13 @@
+X:2590
+%%from mtd
+T:Quartet in C, Op. 76, No. 3, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4251, Barlow & Morgenstern H470, EDM 2590 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto e Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=178
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c | B c e | G2 c | D2 A | G,3/2 A/G/F/ | F E c | B c e |

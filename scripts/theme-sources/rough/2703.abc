@@ -1,0 +1,10 @@
+X:2703
+%%from edm
+T:Symphony in G, No. 92, 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2703 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+c6 B2 A2G2 | F4- FAGB AcBd | c6 B2 A2G2 | F2 z2 a2 z6 | G4 b4 z2 g2 |

@@ -1,0 +1,10 @@
+X:2404
+%%from edm
+T:Symphony No. 2, 2nd Movement, Andante Ostinato
+C:Roy Harris
+%%composer Harris|Roy
+% EDM 2404 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/2
+L:1/16
+K:C
+e4 a4 ^c'4 a4 ^d4 =c'4 ^g4 =d4 a4 ^d'4 c'4

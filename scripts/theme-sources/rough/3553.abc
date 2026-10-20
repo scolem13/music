@@ -1,0 +1,10 @@
+X:3553
+%%from edm
+T:Quintet, (In One Movement), 2nd Theme
+C:Charles Martin Loeffler
+%%composer Loeffler|Charles Martin
+% EDM 3553 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+F2 z2 _E6 _D2 E2F2 | _G2_A2B2A2 z8 | F2 z2 _E6 _D2 E2F2 | _G2F2_E2_D2 z2 B,2

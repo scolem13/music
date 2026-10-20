@@ -1,0 +1,13 @@
+X:1288
+%%from mtd
+T:Slavonic Dances, Op. 46, No. 4, 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2952, Barlow & Morgenstern D364, EDM 1288 (Musical Theme Dataset, CC BY 4.0)
+N:Tempo di minuetto [Sousedská]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=109
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+{/=e} f2 dd_ec |{/=e} f2 dd_ec | dB F4- | F3 FBd |

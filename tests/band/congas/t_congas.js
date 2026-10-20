@@ -1,6 +1,6 @@
 // The conga player: patterns in every meter, the other parts unchanged by it, the catalog, MIDI and notation. Run from this folder.
 const fs = require("fs"), vm = require("vm"), assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 for (const f of ["tune-chart.js", "voicings.js", "band/harmony.js", "band/bass.js", "band/comp.js", "band/congas.js", "band/drums.js", "band/catalog.js", "band/player.js", "band/midi.js", "band/notation.js"])
   vm.runInThisContext(fs.readFileSync(R + f, "utf8"), { filename: f });
 const ABC = require(R + "abcjs-basic.js");

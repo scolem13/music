@@ -1,0 +1,11 @@
+X:9270
+%%from edm
+T:Polonaises, Op. 26, No. 1 in C-sharp minor
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9270 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+G4<d4 cd=f2 | d=f^f2 =f^fg2 fga2 | A2 G4- G3/2^A- [=c/2-^A/2]=c^c3/2d/2- | d/2-[e/2-d/2]e d8- d2- | d2

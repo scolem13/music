@@ -1,0 +1,11 @@
+X:6362
+%%from edm
+T:Symphony No. 2 in C, Op. 61, 1st Movement - Intro. B
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6362 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:C
+z3 e2<f2e f2a2 e2e2 d2f2 e2 z2 | z3 c B6- Bd c2 z b/2b/2 c'3^f/2f/2 a3c/2c/2 | f2

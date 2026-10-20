@@ -1,0 +1,12 @@
+X:6444
+%%from edm
+T:Concerto, Op. 35, 3rd Movement - Finale, 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6444 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/u0EsE1LT5ZA?t=946
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+cdef g2g2 | g2g2g2g2 | g2g2g2g2 | gaba g2c2 | g2=e'2 d'4 | d2=e'2 c'4 | g2=e2

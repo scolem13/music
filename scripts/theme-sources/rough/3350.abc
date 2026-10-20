@@ -1,0 +1,10 @@
+X:3350
+%%from edm
+T:Fest-Overture, Op. 51, 5th Theme
+C:Eduard Lassen
+%%composer Lassen|Eduard
+% EDM 3350 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+g8 b6 a2 | g8 f8 | e8 z/2 d3-d/2 c4 | d6 c2 B4 z4 | B4 e4 d4 c4 | d8 c4 B4 | g12 b2a2 | g8 f4

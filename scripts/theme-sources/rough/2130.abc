@@ -1,0 +1,10 @@
+X:2130
+%%from edm
+T:Concerto No. 3 in G minor, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2130 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 f6 _e2 | d6 _e2 f4 | B4 g4 _e4 | c6 c2 d2_e2 | f4 f6 _e2 | d4

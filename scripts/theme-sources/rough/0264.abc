@@ -1,0 +1,10 @@
+X:264
+%%from edm
+T:Sonata No. 1 in B minor, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0264 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+B8 d8 | c4 g4 f4 B4 | ^A4 e4 d4 B4 | c4 F4

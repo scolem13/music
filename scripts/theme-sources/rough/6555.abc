@@ -1,0 +1,10 @@
+X:6555
+%%from edm
+T:Karelia, Op. 11, Suite for Orchestra, 3rd Movement - Alla Marcia, 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6555 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+e4 f3/2g<ab/2 | c'3/2d'/2 e'4 e'2 | e'2e'2e'2e'2 | e'3/2f'<e'f'/2 e'2e2 | e4 f3/2g<ab/2 | c'^d'/2e'2

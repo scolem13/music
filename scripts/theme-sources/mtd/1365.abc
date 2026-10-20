@@ -1,0 +1,12 @@
+X:1365
+T:Symphony No. 5 in E minor, Op. 95, 3rd Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 3029, Barlow & Morgenstern D441, EDM 1365 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo. Molto vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=137
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+GB B4- | B4 (3cBF | E4 F2 | GB B4- | Bedc B2- | BcBG B2 |

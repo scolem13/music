@@ -84,4 +84,22 @@ Try your own voice or instrument through it with **Microphone** (and headphones)
 
 - [Sound 13: Compressor](sound-compressor.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Distortion (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Distortion_(music)](https://en.wikipedia.org/wiki/Distortion_(music)).
+
+**For teachers**
+
+*DAFx Conference Paper Archive*. Digital Audio Effects Conference. [www.dafx.de/paper-archive/](https://www.dafx.de/paper-archive/). Searchable archive of peer-reviewed effect papers.
+
+Reid, Gordon. "Synth Secrets: From Analogue To Digital Effects." *Sound On Sound*, Apr. 2004. [www.soundonsound.com/techniques/analogue-digital-effects](https://www.soundonsound.com/techniques/analogue-digital-effects).
+
+Smith, Julius O., III. *Physical Audio Signal Processing*. W3K Publishing, 2010. [ccrma.stanford.edu/~jos/pasp/](https://ccrma.stanford.edu/~jos/pasp/). See its chapters Artificial Reverberation, Flanging, Phasing with First-Order Allpass Filters, The Leslie.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

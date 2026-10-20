@@ -1,0 +1,10 @@
+X:8280
+%%from edm
+T:Symphony No. 1 in C, 3rd Movement
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8280 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d4 g8 | b4 g4 d4 | g4 a8 | c'4 a4 d4 | a4 b4 d'4 | g4 g8 | b4 e8- | e4

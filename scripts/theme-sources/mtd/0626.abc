@@ -1,0 +1,12 @@
+X:626
+T:Concerto No. 1 in C, Op. 15, 2nd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0620, Barlow & Morgenstern B524, EDM 0626 (Musical Theme Dataset, CC BY 4.0)
+N:Largo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=43
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+c4 dcBA | d7/2 B/ G2 z E | !turn!A2 c>B !turn!B2 d>c | ce/=d/ f/e/_d/c/ =AB |

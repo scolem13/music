@@ -1,0 +1,10 @@
+X:9810
+%%from edm
+T:Quartet, No. 5, in E-flat, 2nd Movement, 1st Theme
+C:Carl Ditters von Dittersdorf
+%%composer Dittersdorf|Carl Ditters von
+% EDM 9810 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+b'4 g'4 e'4 | z/2 d'6- d'3/2 c'4 | b4 b4 a4 | z/2 g6- g3/2 f4 | e4 e4 e4 | f4 f4 f4 | d4 d4 d4 | d4 e2

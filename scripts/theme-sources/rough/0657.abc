@@ -1,0 +1,12 @@
+X:657
+%%from mtd
+T:Minuet in G, Piano, 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0651, Barlow & Morgenstern B555, EDM 0657 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B>c | d>^c d>c d>c | d4 e>B | c4 d>A | B4 |

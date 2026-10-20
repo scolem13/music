@@ -1,0 +1,10 @@
+X:7101
+%%from edm
+T:Apollon Musagetes, Apotheosis
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7101 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/2
+L:1/16
+K:D
+b8 f8 d8 e4 d4- | d4 e4 f4 g8 e8 f4 | g4 a8 d8 e4 f4 g4 | a4 b8

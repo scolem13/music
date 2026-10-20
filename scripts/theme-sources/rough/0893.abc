@@ -1,0 +1,13 @@
+X:893
+%%from mtd
+T:Sonata No. 15, in D, Op. 28, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0887, Barlow & Morgenstern B769, EDM 0893 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=193
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+^E3 | F3 | ^G3 | A3 | ^A3 | B c d | =A2 ^G | A/ |

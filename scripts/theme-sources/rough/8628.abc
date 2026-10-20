@@ -1,0 +1,10 @@
+X:8628
+%%from edm
+T:Serenade in D, Op. 11, 4th Movement - Minuet I
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8628 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g6 a2 g2b2 | ^g4 a4 z4 | a6 b2 a2c'2 | ^a4 b4

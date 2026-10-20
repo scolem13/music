@@ -1,0 +1,11 @@
+X:5320
+%%from edm
+T:Le Tombeau de Couperin, Forlane, 2nd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5320 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:G
+f2 z/2 f3-f/2 e2 f4 | b2 (3b4-ba4- a ^c'4- c' | f2 z/2 f3-f/2 e2 f4 | b2a2f2 g2a2

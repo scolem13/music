@@ -1,0 +1,11 @@
+X:8695
+%%from edm
+T:Sonata in A, Op. 100, 1st Movement - 4th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8695 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+c'4 c'4 (3f2g2a2 | g4 g4 (3f2e2^d2 | e3^d2<d2c =cd^cA | G4

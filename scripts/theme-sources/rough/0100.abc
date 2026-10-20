@@ -1,0 +1,10 @@
+X:100
+%%from edm
+T:Quartet in C, Op. 8, No. 1, Fl. and Str., 2nd Movement - Minuet
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0100 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c12- | c3B/2c/2 d2c2 B2A2 | g8 gfef | f4 e4 d4 | G8 cBAB | c4 d2<f2 e2<g2 |

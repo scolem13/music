@@ -1,0 +1,10 @@
+X:9330
+%%from edm
+T:Sonata in B minor, Op. 58, 4th Movement
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9330 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+B2D2F2 G2E2^A2 | B2D2F2 G2E2^A2 | B2F2B2 z/2 B3/2^A2B2 | d8

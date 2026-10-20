@@ -1,0 +1,10 @@
+X:3130
+%%from edm
+T:Scherzo, 2nd Theme
+C:Frederick Jacobi
+%%composer Jacobi|Frederick
+% EDM 3130 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+_G8 A4- | A4 =B8 | =A8 _G4- | _G4 A8 | F8 G4- | G4 E8 |

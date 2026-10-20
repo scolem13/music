@@ -1,0 +1,11 @@
+X:8260
+%%from edm
+T:L'Arlesienne Suite No. 2, Orchestra - Farandole
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8260 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+d2c2d2e2 | f2e2d2c2 | B2c2d2e2 | c2dc ded2 | d2c2d2e2 | f2e2d2c2 | B2c2d2e2 | c2 d4

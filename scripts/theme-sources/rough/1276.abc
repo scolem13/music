@@ -1,0 +1,10 @@
+X:1276
+%%from edm
+T:Sextet, Op. 48, 2nd Movement - Dumka, 1st Theme A
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1276 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+A2FA _A4 | A2FA B4 | A2FG A2G2- | G2F3 EFG | F2E2D2A,2 |

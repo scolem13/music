@@ -34,7 +34,7 @@ A note can start three ways:
 
 Pop uses all three for effect, but a balanced onset is home base. Sing the five notes below on "mum", starting each note gently with the M.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -51,7 +51,7 @@ Your speaking voice and your high, light voice (head voice) join somewhere aroun
 
 Sing this on a lip trill first, then on "nay" (bright and a bit nasal, like a teasing kid). Let the sound stay small at the top. Don't shout up there.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/8
@@ -75,7 +75,7 @@ Sing the words the way you'd say them: "love" is "luv", not an operatic "lahv". 
 
 Sing this line on "I can't stop thinking 'bout you", holding the vowels and putting the consonants late.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/8
@@ -88,7 +88,7 @@ w: I can't stop think-ing 'bout you
 
 **Belting** is the strong, speech-like sound of pop and musical theatre on high notes, like a call across a playground: "Hey!". Done well it is bright and forward, not shouted. Keep it short at first, and keep it well inside your comfort zone.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -107,7 +107,7 @@ A **run** is a quick string of notes on one syllable, usually at the end of a ph
 
 This run starts on A minor pentatonic: A, C, D, E, G.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/16
@@ -119,7 +119,7 @@ w: ah _ _ _ _ ah _ _ _ _ _ _ _
 
 And a common descending one from C major pentatonic: C, D, E, G, A.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/16
@@ -142,7 +142,7 @@ These colours are what make a singer sound like pop:
 
 Sing the line below twice: plainly, then adding a flip on the high note and a little breath at the start.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/8
@@ -155,13 +155,13 @@ w: Oh, I know it's true
 
 - **Sit a little behind the beat.** Pop singers often land a word just after the beat, like a relaxed conversation. Try a line both ways with the [Backing Track](../tools/backing-track.qmd) playing.
 - **Shape each phrase.** Most lines rise toward an important word and fall away after it.
-- **Use the mic.** Sing close (a finger or two away) for quiet, intimate lines. Pull back a few inches for loud notes, so they don't blast. Point the mic at your mouth, not your chin.
+- **Use the mic** (more in [Recording 5: Miking a Voice](rec-voice.qmd)). Sing close (a finger or two away) for quiet, intimate lines. Pull back a few inches for loud notes, so they don't blast. Point the mic at your mouth, not your chin.
 
 ## Harmony: singing a third above
 
 Backing vocals often sing a **third above** the melody: two scale steps higher, moving in parallel with it. Sing the melody below, then sing the harmony line written above it.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -179,5 +179,35 @@ C D E F | E D C2 |]
 - [Jazz singing](voice-jazz.qmd): swing, scat and singing the changes.
 - [Classical singing](voice-classical.qmd): breath, pure vowels and legato.
 - [Four-chord loops](four-chord-loops.qmd): sing melodies and harmonies over the loops of most pop songs.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Belting (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Belting_(music)](https://en.wikipedia.org/wiki/Belting_(music)).
+
+"Vocal Registration." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vocal_registration](https://en.wikipedia.org/wiki/Vocal_registration).
+
+Wolfe, Joe, Maëva Garnier, and John Smith. "Voice Acoustics: An Introduction." *Music Acoustics*, U of New South Wales, [newt.phys.unsw.edu.au/jw/voice.html](https://newt.phys.unsw.edu.au/jw/voice.html). Formants, the F1–F2 vowel map, the singer's formant (2–4 kHz, F3–F5 clustered by lowering the larynx).
+
+**For teachers**
+
+McCoy, Scott. *Your Voice: An Inside View*. Inside View Press, 2004. Later editions 2012 and 2019.
+
+Miller, Richard. *The Structure of Singing: System and Art in Vocal Technique*. Schirmer Books, 1986. Chapters on onset, appoggio, vowel modification, registers, messa di voce, vibrato (from the catalogue contents).
+
+National Association of Teachers of Singing. "Science-Informed Voice Pedagogy Resources." *NATS*, [www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html](https://www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html). Syllabi, labs on registers, resonance, vowels and vibrato; belting articles; terminology document.
+
+Popeil, Lisa. "The Multiplicity of Belting." *Journal of Singing*, vol. 64, no. 1, 2007. Listed in the NATS Science-Informed Voice Pedagogy Resources; the PDF there is a scan, not read.
+
+Sundberg, Johan, Margareta Thalén, and Lisa Popeil. "Substyles of Belting: Phonatory and Resonatory Characteristics." *Journal of Voice*, vol. 26, no. 1, 2012, pp. 44–50. Citation confirmed from reference lists; abstract not read.
+
+Sundberg, Johan. *The Science of the Singing Voice*. Northern Illinois UP, 1987. Details from library catalogue records.
+
+Titze, Ingo R. *Principles of Voice Production*. Prentice Hall, 1994. Reprinted by the National Center for Voice and Speech, 2000.
+:::
+<!-- /works-cited -->
 
 {{< include _voice-kit.qmd >}}

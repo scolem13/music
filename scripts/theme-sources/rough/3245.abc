@@ -1,0 +1,10 @@
+X:3245
+%%from edm
+T:Hary Janos, Op. 15, (Battle and Defeat of Napoleon), 1st Theme, Franciak Induloja
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% EDM 3245 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+DEF2 A4 | G2A2 C4 | DEF2 A3F | G2G2 G2 z2 | DEF2 A4 | G2A2 CDE z | F4

@@ -1,0 +1,10 @@
+X:5989
+%%from edm
+T:Rosamunde, Overture, Op. 26, 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5989 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+g4 g8 c'2 z2 | g4 g8 d'2 z2 | g4 g4 a'4 g'4 | ^f'4 g'8 e'2

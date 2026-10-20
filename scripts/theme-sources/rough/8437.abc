@@ -1,0 +1,10 @@
+X:8437
+%%from edm
+T:Symphony No. 1 in E-flat, 3rd Movement - 1st Theme A
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8437 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+e2g2 a4 e4- | e2g2 a4 e4- | e2g4<f4 e2 | f2a2 b4 f4- | f2a2 g2f/2g/2f/2e/2 e4 |

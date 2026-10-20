@@ -1,0 +1,10 @@
+X:6795
+%%from edm
+T:Orchestra-Quartet in F, Op. 4, No. 4, 1st Movement - 1st Theme
+C:Karl Stamitz
+%%composer Stamitz|Karl
+% EDM 6795 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+f4 z2 c2 f2g2a2b2 | c'4 baga b4 g4 | f4 z2 c2 f2g2a2b2 | c'4 baga b4 g4 | f8

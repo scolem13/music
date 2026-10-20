@@ -114,7 +114,7 @@
     // drums.js, which does the same with the kit's lanes). It takes the place of any pattern.
     function writtenBar(ctx){
       var w = ctx.opts.written, B = global.BandGroove; if (typeof w === "string") w = B.parse(w);
-      var sw = ctx.opts.writtenSwing, bars = B.congaEvents(w, { swing: sw == null ? true : sw }), beats = ctx.beats || 4;
+      var sw = ctx.opts.writtenSwing, bars = B.congaEvents(w, { swing: sw == null ? B.swingFor(w, ctx.opts, ctx.tempo) : sw }), beats = ctx.beats || 4;
       return bars[(ctx.index || 0) % bars.length].filter(function (e){ return e.pos < beats; })
         .map(function (e){ return { pos: e.pos, piece: e.piece, vel: e.vel, stroke: e.stroke, hand: "R", straight: true }; });
     }

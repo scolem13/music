@@ -1,0 +1,11 @@
+X:5814
+%%from edm
+T:Sonatas, Longo 490 in G
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5814 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:G
+z2 b2 B2 | c2 c'2 A2 | B2 b2 G2 | A2 a2 F2 | G2 z2 b2- | b2 a2 c'2- | c'4 b2 |

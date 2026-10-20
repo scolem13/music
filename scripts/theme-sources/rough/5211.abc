@@ -1,0 +1,10 @@
+X:5211
+%%from edm
+T:Castor et Pollux, Passepied, No. 1
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5211 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:E
+G2 G2 G2 | G2 G2 G2 | G2 GA BA | GF E4 | A4 B2- | B2 cB AB | cd e2 A2 | G2 F4 |

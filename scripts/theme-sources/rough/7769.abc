@@ -1,0 +1,10 @@
+X:7769
+%%from edm
+T:Concerto No. 4 in D minor, 4th Movement - 1st Theme
+C:Henri Vieuxtemps
+%%composer Vieuxtemps|Henri
+% EDM 7769 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f8 g8 | a12 f'2 z2 | e'2 z2 d'2 z2 c'2 z2 e'2 z2 | a12 f'2 z2 | e'2 z2 d'2 z2 c'2 z2 e'2 z2 | a8- a2

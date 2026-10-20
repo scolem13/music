@@ -1,0 +1,10 @@
+X:8299
+%%from edm
+T:Concerto grosso, 4th Movement - 2nd Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8299 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+e2a2=b2_d'2 a2_g'2b2d'2 | e2a2=b2_d'2 a2_g'2b2d'2 | e2a2=b2_d'2 a2d'2=d'2e'2 |

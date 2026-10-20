@@ -1,0 +1,10 @@
+X:1424
+%%from edm
+T:Falstaff, Op. 68, Symphonic Study, 9th Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1424 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+(3e2^f2^g2 a4 (3=g2a2g2 (3e2c2d2 | (3c2d2e2 f4 (3e2f2e2 (3c2A2B2 | c16 |

@@ -1,0 +1,10 @@
+X:7130
+%%from edm
+T:Capriccio, 3rd Movement - 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7130 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+z3 ^a' b' z2 f' | g' z2 g c'bfg | ^d3=d2 egb | e'3a2 bc'd' | e'f'g'a'

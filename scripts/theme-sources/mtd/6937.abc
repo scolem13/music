@@ -1,0 +1,11 @@
+X:6937
+T:Wiener-Bonbons, Op. 307, Waltzes, No. 2
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8566, Barlow & Morgenstern S1328, EDM 6937 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=168
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+b z | e'2 g z c' z | b2 d z a z | g2 B z f z | ff f2 e2 | f2 B z e z | ee e2 d2 |

@@ -1,0 +1,10 @@
+X:5248
+%%from edm
+T:Les Tricotets
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5248 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G2D2B,2B,2B,,2B,2 | C2E2A,2A,2B,,2A,2 | B,2D2G,2G,2D,2G,2 | A,2C2G,2G,2E,2G,2 | E2D2 C2B,2 z/2 z/2 A,G,2 | B,2A,2 G,2F,2 G,4 |

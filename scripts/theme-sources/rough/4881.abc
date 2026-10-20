@@ -1,0 +1,10 @@
+X:4881
+%%from edm
+T:Sonata in A, 1st Movement - 1st Theme B
+C:Aldebrando Pizzetti
+%%composer Pizzetti|Aldebrando
+% EDM 4881 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+f8 _g8 | _g12 f4 | d4 e4 f6 _g2 | _g12 f4- | f8

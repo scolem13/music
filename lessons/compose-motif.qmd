@@ -1,0 +1,176 @@
+---
+title: "Composing 2: Developing a Motif"
+toc: true
+toc-depth: 2
+description: "A motif is a short idea that a piece keeps coming back to. Repetition, sequence, inversion, retrograde, augmentation, diminution and fragmentation, each heard, and a motif lab that builds a phrase from your own idea, one change at a time."
+instruments: [piano, guitar, violin, sax, voice, other]
+topics: [composing]
+has: [notation, interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+A **motif** is a short musical idea, often only three to six notes, that a piece keeps coming back to. It is recognised by its rhythm and its shape
+more than by its exact notes, so it can change and still be heard as the same idea. That is what **developing** a motif means: changing it
+step by step so the music grows out of one idea instead of jumping from one new idea to the next.
+
+The best-known example is the opening of Beethoven's Fifth Symphony: three short notes and one long one. The whole first movement is
+built from that rhythm, on different notes, in different instruments, louder and softer.
+
+<div class="abc-ex" data-bpm="108"><script type="text/plain">
+X:1
+T:Beethoven, Symphony No. 5: the opening, one line (the whole orchestra plays it in octaves)
+M:2/4
+L:1/8
+Q:1/4=108
+K:Cm
+z G G G | !fermata!E4 | z F F F | D4- | !fermata!D4 |]
+</script></div>
+
+**How to use the page.** Each technique below has a short example: the motif, then the change. The motif is always the same one,
+**C E G E** with the rhythm *short short short long*, so you can hear what each change does to it.
+
+## The techniques
+
+### Repetition
+
+Play it again, exactly. It sounds simple, but a listener needs to hear an idea twice before it sticks. Most motifs are repeated straight away.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Motif, then repetition
+M:4/4
+L:1/8
+K:C
+C E G E4 z | C E G E4 z |]
+</script></div>
+
+### Sequence
+
+The same shape, starting on a different note: usually a step higher or lower each time. Sequences make the music feel like it is moving
+somewhere. In a **diatonic** sequence the notes stay in the key, so the steps between them may change size slightly (a major third becomes a minor one).
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Motif, then two steps up the scale
+M:4/4
+L:1/8
+K:C
+C E G E4 z | D F A F4 z | E G B G4 z |]
+</script></div>
+
+### Inversion
+
+Turn it upside down. Each step up becomes the same step down. The rhythm stays the same, so it is still recognisable.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Motif, then its inversion (from the same first note)
+M:4/4
+L:1/8
+K:C
+c e g e4 z | c A F A4 z |]
+</script></div>
+
+### Retrograde
+
+Play it backwards: the last note first. Retrograde is harder to hear than the others, so composers often use it as a hidden link rather than
+an obvious one.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Motif, then its retrograde (notes and rhythm backwards)
+M:4/4
+L:1/8
+K:C
+C E G E4 z | z E4 G E C |]
+</script></div>
+
+### Augmentation and diminution
+
+Make every note twice as long (augmentation) or half as long (diminution). Augmentation sounds broader and more serious: it is a common way to
+end a piece. Diminution sounds more urgent.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Motif, augmentation, diminution
+M:4/4
+L:1/8
+K:C
+C E G E4 z | C2 E2 G2 E2- | E6 z2 | C/E/G/E2 z/ z4 |]
+</script></div>
+
+### Fragmentation
+
+Use only part of it: the first two or three notes, repeated or sequenced on their own. Breaking an idea into pieces speeds the music up.
+It is how the continuation of a sentence works (see [Composing 1](compose-melody.qmd#the-sentence)).
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Motif, then fragments of its first three notes, going up
+M:4/4
+L:1/8
+K:C
+C E G E4 z | C E G D F A E G | B c4 z3 |]
+</script></div>
+
+### Changing one thing at a time
+
+You can also keep the rhythm and change the notes, keep the notes and change the rhythm, change the harmony under it, the instrument, the
+register, the dynamics, or the articulation. The rule that keeps it recognisable: **change one or two things, keep the rest**.
+
+## The motif lab
+
+Pick a motif or type your own. Then build a phrase: each button adds a changed copy of the last group. Start with **Motif**, then try,
+for example, *Repeat, Sequence up, Fragment, Fragment, Land on C*. Play it and decide what to keep. **Copy ABC** gives the phrase in
+ABC, which the [Notation page](/tools/notation.qmd) opens (paste it into its ABC box).
+
+<div class="cp-try">
+<div class="cp-motif"></div>
+</div>
+
+<div class="cp-tip">
+<strong>Explore, then choose.</strong> Make three different phrases from the same motif before you pick one. Copy each into your process
+journal with one line on what you changed and how it sounds. That record of trying several ideas and choosing between them is exactly what
+MYP Criterion B asks you to show: see [Process 2](process-crit-b.qmd).
+</div>
+
+## Listen for it
+
+Motifs are everywhere once you listen for them. A few to try (find a recording, and count how many times you hear the idea):
+
+- **Beethoven, Symphony No. 5, first movement:** the rhythm *short short short long*, in every instrument, all the way through.
+- **John Williams, *Jaws*:** two notes a half step apart, alternating, low in the bass. Almost nothing but repetition, and it works.
+- **A song's chorus hook:** in most pop songs the hook is a motif, repeated several times in each chorus.
+
+Next: [Composing 3: Words and Music](compose-song.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Augmentation (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Augmentation_(music)](https://en.wikipedia.org/wiki/Augmentation_(music)).
+
+"Diminution." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Diminution](https://en.wikipedia.org/wiki/Diminution).
+
+"Inversion (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Inversion_(music)](https://en.wikipedia.org/wiki/Inversion_(music)).
+
+"Jaws (Film)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Jaws_(film)](https://en.wikipedia.org/wiki/Jaws_(film)).
+
+"Motif (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Motif_(music)](https://en.wikipedia.org/wiki/Motif_(music)).
+
+"Retrograde (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Retrograde_(music)](https://en.wikipedia.org/wiki/Retrograde_(music)).
+
+"The Sentence." *Open Music Theory*, Hybrid Pedagogy Publishing, [openmusictheory.github.io/sentence.html](https://openmusictheory.github.io/sentence.html).
+
+"Sequence (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sequence_(music)](https://en.wikipedia.org/wiki/Sequence_(music)).
+
+"Symphony No. 5 (Beethoven)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Symphony_No._5_(Beethoven)](https://en.wikipedia.org/wiki/Symphony_No._5_(Beethoven)).
+
+**For teachers**
+
+Schoenberg, Arnold. *Fundamentals of Musical Composition*. Edited by Gerald Strang with Leonard Stein, Faber and Faber, 1967. The classic treatment of the motive, its variation, and the sentence and period; not quoted here.
+:::
+<!-- /works-cited -->

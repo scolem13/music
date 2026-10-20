@@ -1,0 +1,10 @@
+X:192
+%%from edm
+T:Aria for Goldberg Variations, Piano
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0192 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g4 g4 a/2b/2a/2b/2 z/2 a/2b | a2g<f e d6- d | G4 G/2A/2G/2A/2G/2A/2G/2A/2 G/2A/2G/2A/2FG | A/2G/2FG/2F/2E E/2 D6- D3/2 |

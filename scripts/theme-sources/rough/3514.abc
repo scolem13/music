@@ -1,0 +1,10 @@
+X:3514
+%%from edm
+T:Two Legends, Piano, St. François d'Assise Predicant aux Oiseaux, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3514 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+z4 G4 ^D6 E2 | E8 ^D4 A4 | G4 F4 ^D4 E4 |

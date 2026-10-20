@@ -1,0 +1,10 @@
+X:4750
+%%from edm
+T:Melodie, Op. 16, No. 2
+C:Ignace Jan Paderewski
+%%composer Paderewski|Ignace Jan
+% EDM 4750 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Gb
+d4 g6 f2 | g8 d4 | e2f2 g4 a4 | b8- b3b | d'4 g6 a2 | b4 e6 f2 | g4

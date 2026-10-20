@@ -1,0 +1,10 @@
+X:3493
+%%from edm
+T:Polonaise No. 2 in E, 3rd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3493 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+E8- E2A,B, | C8- C2B,A, | E,8- E,2^D,E, | z/2 F,3-F,/2 E,4 E,4 |

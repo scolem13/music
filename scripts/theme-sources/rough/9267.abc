@@ -1,0 +1,14 @@
+X:9267
+%%from mtd
+T:Nocturnes, Op. 72, No. 1 in E minor
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2263, Barlow & Morgenstern C276, EDM 9267 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/3iH1ONnXrdY
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=54
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+{/B} g6 fe | ^d4- d2 e>c | B3 F cBAG | F2 G2 F z |

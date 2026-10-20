@@ -1,0 +1,11 @@
+X:9298
+%%from edm
+T:Preludes, Op. 28, No. 21
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9298 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+f12 | d8 e4 | d12 | G12 | A4 e4 e4 | e4 z/2 z/2 d3 e4 | g8- g3f | d8

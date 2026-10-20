@@ -1,0 +1,11 @@
+X:7681
+%%from edm
+T:A London Symphony, 1st Movement - 1st Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7681 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Bb
+z8 g'8- | g'2_g'2f'2=e'2 _e'8- | e'4 (3e'2=e'2f'2 e'4 _e'2

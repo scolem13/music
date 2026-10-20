@@ -1,0 +1,11 @@
+X:7090
+%%from edm
+T:Tod Und Verklarung, Op. 24, 5th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7090 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+^D4 ^G4 ^A4 c4 | c'8<^a8 | c'4 ^a4

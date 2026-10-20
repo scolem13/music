@@ -1,0 +1,12 @@
+X:5074
+T:Dido and Aeneas, Overture, 2nd Theme
+C:Henry Purcell
+%%composer Purcell|Henry
+% MTD 6714, Barlow & Morgenstern P328, EDM 5074 (Musical Theme Dataset, CC BY 4.0)
+N:Peace and I are strangers grown). The Triumphing Dance in C  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=185
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+cGcG cece | cgcg egeg | fefd edec | ddBd B |

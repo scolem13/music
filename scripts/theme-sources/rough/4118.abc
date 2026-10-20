@@ -1,0 +1,10 @@
+X:4118
+%%from edm
+T:Concerto in C minor, K 491, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4118 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+C12 | E12 | A8 G4 | _G4 e4 z3 G | A4 G4 F4 | =E4 _d4 z3 E | _G4 F4 E4 | D4

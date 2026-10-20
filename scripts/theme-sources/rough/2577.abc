@@ -1,0 +1,13 @@
+X:2577
+%%from mtd
+T:Quartet in G, Op. 76, No. 1, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4238, Barlow & Morgenstern H457, EDM 2577 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio sostenuto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=30
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+E2 D2 | C>^C DE | FAGF |{F} E2 D>^D | E2 |

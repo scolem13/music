@@ -1,0 +1,10 @@
+X:6372
+%%from edm
+T:Symphony No. 2 in C, Op. 61, 4th Movement - Intro.
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6372 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c8- c2defgab | c'8 ^c'8 | d'8 ^f'8 | g'8

@@ -1,0 +1,10 @@
+X:8707
+%%from edm
+T:Sonata in D minor, Op. 108, Vn. and Piano, 4th Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8707 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+e2 e'8 d'2 | c'2=b2c'2 d'2c'2a2 | _g'2 e'8 d'2 | c'2=b2c'2 d'2c'2a2 | _g'2 _a'8 =a'2 | =b'4<a'4

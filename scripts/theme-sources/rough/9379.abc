@@ -1,0 +1,13 @@
+X:9379
+%%from mtd
+T:Othello Suite, 3rd Movement - Funeral March - 1st Theme
+C:Samuel Coleridge-Taylor
+%%composer Coleridge-Taylor|Samuel
+% MTD 2371, Barlow & Morgenstern C391, EDM 9379 (Musical Theme Dataset, CC BY 4.0)
+N:Funeral March  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=100
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+z3/2 D/ D>C B,>C D2- | D2 =E^F D4- | D z/ D/ D>C B,>C D2- | D2 =E^F B4- | B |

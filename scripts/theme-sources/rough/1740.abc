@@ -1,0 +1,10 @@
+X:1740
+%%from edm
+T:Trio, Op. 42, 2nd Movement
+C:Niels Gade
+%%composer Gade|Niels
+% EDM 1740 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+B4 e4 d4 | G4 c4 B4 | E4 A4 G4 | B,4 F4 E4- | E8 G4 | F4 E8- | E8 F4 | E4 E8 |

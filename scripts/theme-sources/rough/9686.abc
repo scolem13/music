@@ -1,0 +1,10 @@
+X:9686
+%%from edm
+T:Preludes, Book I, Piano, No. 10 La Cathedrale Engloutie, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9686 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:C
+z8 c'8 d'8 | g'12 f'4 e'4 d'4 | d'8 a8 e'8- | e'4 f'8<d'8 c'4 | c'16

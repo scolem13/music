@@ -91,4 +91,12 @@ changes every time round: in jazz the comping is a conversation, not a fixed pat
   pair still sounds like reggae?
 - Next: [Bass and drums](arrange-bass-drums.qmd).
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Rhythm section." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Rhythm_section](https://en.wikipedia.org/wiki/Rhythm_section).
+:::
+<!-- /works-cited -->
+
 {{< include _arrange-kit.qmd >}}

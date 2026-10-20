@@ -1,0 +1,10 @@
+X:8956
+%%from edm
+T:Prelude and Fugue, No. 6 in E minor, 3rd Theme - Fugue 2
+C:Dietrich Buxtehude
+%%composer Buxtehude|Dietrich
+% EDM 8956 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:G
+B8 E4 e4 ^d4 =d4 | ^c4 =c4 ^G8 ^c4 ^d4 | e2^A2 B4 B8

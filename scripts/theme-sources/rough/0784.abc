@@ -1,0 +1,13 @@
+X:784
+%%from mtd
+T:Septet in E-flat, Op. 20, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0778, Barlow & Morgenstern B672, EDM 0784 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio – Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=214
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B=AB | e4- eede | g4- gg^fg | b6 |

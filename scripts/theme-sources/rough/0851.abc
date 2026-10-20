@@ -1,0 +1,13 @@
+X:851
+%%from mtd
+T:Sonata No. 7, in D, Op. 10, No. 3, 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0845, Barlow & Morgenstern B727, EDM 0851 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo: Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=126
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F |GB z2 z2 z F |GB z2 z2 z B | Adcg fbae'- | e'/d'/c'/b/ a/ |

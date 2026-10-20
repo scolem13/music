@@ -5,7 +5,7 @@ toc-depth: 2
 description: "G, D, Em, C for a whole class at once. Drums, bass, guitar, keyboard and voice each have four levels, from a first day on the instrument to a rock beat, root eighths and a folk-rock strum. The band plays the level you pick."
 instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
 topics: [pop, rhythm]
-has: [band, interactive]
+has: [band, fingering, interactive]
 ---
 
 This whole song is four chords, played over and over: **G, D, Em, C**. Many hit songs are built on
@@ -172,3 +172,36 @@ Try verse, chorus, verse, chorus, ending. Somebody counts it in: "1, 2, 3, 4".
 <script src="/apps/shared/lessons/diagrams.js?v=1"></script>
 <script src="/apps/shared/lessons/shape-cards.js?v=1"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"'50s progression." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/%2750s_progression](https://en.wikipedia.org/wiki/%2750s_progression).
+
+"Backbeat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Backbeat](https://en.wikipedia.org/wiki/Backbeat).
+
+"I–V–vi–IV progression." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/I%E2%80%93V%E2%80%93vi%E2%80%93IV_progression](https://en.wikipedia.org/wiki/I%E2%80%93V%E2%80%93vi%E2%80%93IV_progression).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "Harmony in Pop/Rock Music." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony.html](https://openmusictheory.github.io/popRockHarmony.html).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "Syncopation in Pop/Rock Music." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/syncopation.html](https://openmusictheory.github.io/syncopation.html).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "The '50s Doo-Wop Progression." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony-dooWop.html](https://openmusictheory.github.io/popRockHarmony-dooWop.html).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "The Singer/Songwriter Chord Progression." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony-sscp.html](https://openmusictheory.github.io/popRockHarmony-sscp.html).
+
+**For teachers**
+
+Biamonte, Nicole. "Triadic Modal and Pentatonic Patterns in Rock Music." *Music Theory Spectrum*, vol. 32, no. 2, 2010, pp. 95-. [escholarship.mcgill.ca/downloads/73666866p](https://escholarship.mcgill.ca/downloads/73666866p). Author's copy at McGill; end page not confirmed.
+
+de Clercq, Trevor, and David Temperley. "A Corpus Analysis of Rock Harmony." *Popular Music*, vol. 30, no. 1, 2011, pp. 47-70. [www.cambridge.org/core/journals/popular-music/article/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4](https://www.cambridge.org/core/journals/popular-music/article/corpus-analysis-of-rock-harmony/C5210A8EC985DDF170B53124F4464DA4). Read the abstract and summary.
+
+de Clercq, Trevor. Review of *Hearing Harmony: Toward a Tonal Theory for the Rock Era*, by Christopher Doll. *Music Theory Online*, vol. 24, no. 1, 2018. [www.mtosmt.org/issues/mto.18.24.1/mto.18.24.1.declercq.php](https://www.mtosmt.org/issues/mto.18.24.1/mto.18.24.1.declercq.php).
+
+Doll, Christopher. *Hearing Harmony: Toward a Tonal Theory for the Rock Era*. U of Michigan P, 2017.
+:::
+<!-- /works-cited -->
+

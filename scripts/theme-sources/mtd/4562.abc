@@ -1,0 +1,12 @@
+X:4562
+T:Symphony No. 36, in C, K 425, "Linz", 1st Movement - Intro
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6211, Barlow & Morgenstern M936, EDM 4562 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio - Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=36
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+C2z>C E2z>E A2z>A | B,2z>d' d'4 z2 z3/2 B,/ | _B,2z>c' c'4 z4 |

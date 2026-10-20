@@ -1,0 +1,10 @@
+X:4812
+%%from edm
+T:Sonata in C minor, 1st Movement
+C:Giovanni Pescetti
+%%composer Pescetti|Giovanni
+% EDM 4812 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+c4 G4 e4 c4 | d4 G4 f4 d4 | e8 c8- | c8 =B8 | c4 G4 e4 c4 | d4 G4 g4 d4 | =e4 c4 f4 c4 |

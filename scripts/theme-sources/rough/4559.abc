@@ -1,0 +1,13 @@
+X:4559
+%%from mtd
+T:Symphony No. 35, in D, K 385, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6208, Barlow & Morgenstern M933, EDM 4559 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=126
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c3 d e2 |{/e} d2 c2 B2 | A6 | B6 | c3 d e2 |{/e} d2 c2 B2 | A3 |

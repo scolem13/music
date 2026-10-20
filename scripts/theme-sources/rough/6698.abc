@@ -1,0 +1,12 @@
+X:6698
+%%from mtd
+T:Valse Triste, Op. 44, 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% MTD 8328, Barlow & Morgenstern S1090, EDM 6698 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=98
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+D D z/ D/ | D D D | D D z/ D/ | D D D | D E F | G F E | F E F | D2 |

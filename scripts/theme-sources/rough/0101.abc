@@ -1,0 +1,10 @@
+X:101
+%%from edm
+T:Quintet in D, No. 6, 1st Movement - 1st Theme
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0101 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+a12 g/2a/2g/2a/2f2 | f2b2 b8 a4 | a4 g8 f/2g/2f/2g/2e2 | e2a2 a8 g4 | f3ga2a2 a8 |

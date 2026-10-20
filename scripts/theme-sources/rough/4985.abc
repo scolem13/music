@@ -1,0 +1,10 @@
+X:4985
+%%from edm
+T:Peter and the Wolf, Op. 67, 1st Theme, Peter
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4985 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+G4 c3e g2a2 g3e | g2a2 b3c' g2e2c2d2 | ^d4 d2b2 d4 d2b2 | ^d4 ^A4 A6

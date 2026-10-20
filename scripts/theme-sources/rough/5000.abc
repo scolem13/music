@@ -1,0 +1,10 @@
+X:5000
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 1st Movement - Folk Dance, 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5000 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Db
+a12- | a8 g2f2 | e2d2c2 B2A2B2 | c8 d2e2 | f8 z4 | g2 z4 f2 z4 | e12- | e2

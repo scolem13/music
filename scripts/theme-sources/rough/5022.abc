@@ -1,0 +1,10 @@
+X:5022
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 2, 5th Movement - Romeo and Juliet Before Parting, 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5022 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d'3_d' c'2=d'e' f'2d'2 c'2ab | g2g2 d8

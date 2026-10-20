@@ -1,0 +1,10 @@
+X:3865
+%%from edm
+T:Ruy Blas, Overture, Op. 95, 2nd Theme A
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3865 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+z8 A,8 | G,12 F,4 | A,8 G,8 | B,12 A,4 | C8 B,8 | E12 D4 | _D8 C8- | C4 B,4

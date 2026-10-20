@@ -1,0 +1,10 @@
+X:1381
+%%from edm
+T:Trio, Op. 90, 2nd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1381 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+A4 B4 c4 | e3e e8 | c4 d2c2 B2A2 | e8 e4 | a3g c8 | f3e A8 |

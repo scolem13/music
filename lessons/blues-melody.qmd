@@ -180,3 +180,22 @@ this melody as its starting point.
 ```{=html}
 <script>BluesLesson.init({ instrument: "melody", key: 5, horns: ["violin", "concert", "alto", "tenor", "bb", "bari"] });</script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Blues scale." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Blues_scale](https://en.wikipedia.org/wiki/Blues_scale).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "The Blues Progression." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony-blues.html](https://openmusictheory.github.io/popRockHarmony-blues.html).
+
+"Twelve-bar blues." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Twelve-bar_blues](https://en.wikipedia.org/wiki/Twelve-bar_blues).
+
+**For teachers**
+
+Levine, Mark. *The Jazz Theory Book*. Sher Music, 1995.
+:::
+<!-- /works-cited -->
+

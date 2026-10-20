@@ -1,0 +1,11 @@
+X:8069
+%%from edm
+T:Grand Duo Concertant, Op. 48, 3rd Movement - 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8069 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Eb
+e8 defd | e8 defd | e4 g4 fedc | B6 =B6 |

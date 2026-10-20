@@ -1,0 +1,11 @@
+X:9489
+%%from edm
+T:Le Carillon de Cythere, Harpsichord
+C:François Couperin
+%%composer Couperin|François
+% EDM 9489 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+z2 d2 z/2 z/2 ef2 | d2f2 z/2 z/2 ef2 | d2f2 g2 z/2 f/2e | z/2 f/2gef g2 z/2 f/2e | f/2e/2f/2g/2f2

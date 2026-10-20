@@ -1,0 +1,12 @@
+X:9092
+%%from mtd
+T:Callirhoe, in G, Air de Ballet, Piano
+C:Cécile Chaminade
+%%composer Chaminade|Cécile
+% MTD 2091, Barlow & Morgenstern C105, EDM 9092 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=83
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+e'd'e'd' c'bag | fe{/f}e^d e4 | ^c=dcd ^de^ef | ag{/a}gf g4 |

@@ -1,0 +1,10 @@
+X:6602
+%%from edm
+T:Romance, Op. 24, No. 9, 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6602 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+a2b2c'2d'2c'2b2 | =e2f2=g2a2g2f2 | c2d2e2f2a2f2 | B2c2 A4<f4 |

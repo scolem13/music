@@ -1,0 +1,11 @@
+X:8937
+%%from edm
+T:Symphony No. 7 in E, 2nd Movement - 2nd Theme B
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8937 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+z2 c4 f2 c=c^cd | d2b2 z2 bc' c'd'd'=f' | f'3=f'/2d'/2 c'2=f2 f^fg^a | c2

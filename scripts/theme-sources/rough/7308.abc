@@ -1,0 +1,10 @@
+X:7308
+%%from edm
+T:Triptyque, 2nd Movement
+C:Alexander Tansman
+%%composer Tansman|Alexander
+% EDM 7308 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c4 d6 c2 f2e2 | d4 A2c2 G2F2 E4- | E2D2A2^A2 G4 f2d2 | c6

@@ -1,0 +1,10 @@
+X:1567
+%%from edm
+T:Dolly, Op. 56, Mi-a-ou, 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1567 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 F4 A4 | d4 d8 | f2e2 d4 e4 | c4 a8 | c'2=b2 a4 b4 | e'4 b4 e'4 | a4 e'4 =b4 | e'4 c'8 |

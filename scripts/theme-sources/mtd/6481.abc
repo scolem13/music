@@ -1,0 +1,12 @@
+X:6481
+T:Symphony No. 1, in F, Op. 10, 4th Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8112, Barlow & Morgenstern S878, EDM 6481 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro molto – Lento – Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=141
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+C2zC =B,CD=D | E2z=D _D=D_E=E | F2z=e _e=d_dG | c_cB=E =A_AGD |

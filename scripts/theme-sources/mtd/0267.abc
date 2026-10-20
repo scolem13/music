@@ -1,0 +1,12 @@
+X:267
+T:Sonata No. 1 in G minor, 1st Movement - Fugue, Vn. Solo
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0262, Barlow & Morgenstern B176, EDM 0267 (Musical Theme Dataset, CC BY 4.0)
+N:Fuga (allegro)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=72
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+z ddd dc/B/ cA | B |

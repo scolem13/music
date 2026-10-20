@@ -1,0 +1,10 @@
+X:9400
+%%from edm
+T:Billy the Kid, Street in a Frontier Town (Cowboy Tune) - 1st Theme
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9400 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+e'4 c'4 f'4 e'4 | c'4 e'4 a6 a2 | b4 c'4 d'4 c'2b2 | c'4 f'4 e'6

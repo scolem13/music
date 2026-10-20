@@ -1,0 +1,10 @@
+X:9288
+%%from edm
+T:Preludes, Op. 28, No. 12
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9288 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+d2e2e2=f2f2^f2 | f3=g2 f2g2 g2=a- | =aa2a2 a2b2 b2=c'- | =c'

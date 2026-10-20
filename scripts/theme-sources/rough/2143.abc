@@ -1,0 +1,10 @@
+X:2143
+%%from edm
+T:Concerto No. 4 in F, Op. 4, No. 4, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2143 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+A4- A3/2d<_d=d/2 G4- G3/2e<de/2 | F4- F3/2f<ef<dc<cd/2 B/2c/2B/2c/2B/2c/2A | A4

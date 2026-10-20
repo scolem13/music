@@ -1,0 +1,10 @@
+X:7468
+%%from edm
+T:Concerto No. 1, in B-flat minor, Op. 23, 1st Movement - 3rd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7468 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+z4 e4 f4 =g4 | e4 f4 =g4 a4 | e4 f4 B4 f4 | B4 f4 c4 f4 | c4

@@ -1,0 +1,10 @@
+X:9072
+%%from edm
+T:Pièces Pittoresques, No. 6, Idyle
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9072 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+a4 g8- g2g2 | b2g2 g4 f8 | f2g2a2b2 c'8 | a2c'2 d'12 | f'2d'2 e'12 | a4 g8

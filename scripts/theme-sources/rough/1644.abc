@@ -1,0 +1,10 @@
+X:1644
+%%from edm
+T:Les Eolides, Symphonic Poem, 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1644 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:A
+z2 c3 d | ^d2 e2 z2 | z c2 d ^de | =f2 e2 z2 | z c d^d e=f | =f^f2 f2 f | f2 =f3 c | e6 |

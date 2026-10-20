@@ -49,4 +49,18 @@ announcements at a station all do this automatically.
 
 - [Sound 15: Gates and transients](sound-gate.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Dynamic range compression." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dynamic_range_compression](https://en.wikipedia.org/wiki/Dynamic_range_compression).
+
+**For teachers**
+
+Giannoulis, Dimitrios, Michael Massberg, and Joshua D. Reiss. "Digital Dynamic Range Compressor Design: A Tutorial and Analysis." *Journal of the Audio Engineering Society*, vol. 60, no. 6, 2012. [www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf](https://www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

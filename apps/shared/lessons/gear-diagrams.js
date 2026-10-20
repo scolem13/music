@@ -18,7 +18,8 @@
 // MIDI 1.0 Electrical Spec: pins 4 and 5 the current loop, 2 the shield (grounded at the OUT end only), 1 and 3 unused.
 //   Hand drums (side views, every part named on hover): congas (quinto, conga, tumba) | bongos | djembe (and its head from above) | tabla
 //   Microphones: polar-patterns (four, in dB) | mic-response (vocal dynamic vs condenser) | proximity (a cardioid at 2-50 cm) |
-//        off-axis (a cardioid at 0, 90, 135°, by frequency) | cupping (held vs cupped, with a wedge behind). Curves are models; see beside them.
+//        off-axis (a cardioid at 0, 90, 135°, by frequency) | cupping (held vs cupped, with a wedge behind) |
+//        speaker-zones (cap, cap edge, cone, edge) | amp-miking (close, angled, room) | vocal-setup (pop filter, the air jet, the mic above). Curves are models; see beside them.
 // Self-contained: no other script is needed.
 (function (global) {
   "use strict";
@@ -454,6 +455,47 @@
     return svg(480, 262, "A handheld cardioid held by its handle and cupped: cupping covers the rear ports and the pattern becomes almost omni", o);
   }
 
+  // ---- miking a guitar amp and a voice ----
+  // Speaker zones and their sound: the common engineering description (cap bright, cone darker), as on rec-kit-mic's ampmic.
+  function smallMic(x, y, rot, label, cls) {           // a side-view mic, the grille at (x, y), pointing along rot (degrees, 0 = left)
+    return part(label, '<g transform="translate(' + x + ',' + y + ') rotate(' + rot + ')">' + rect(0, -9, 20, 18, cls || "gd-face", 8) + rect(20, -5, 46, 10, "gd-body", 3) + '</g>');
+  }
+  function speakerZones() {
+    var cx = 120, cy = 120, R = 100, o = "";
+    o += rect(10, 10, 220, 220, "gd-body", 8);
+    o += part("Cone edge and surround: the darkest, woolliest spot", circ(cx, cy, R, "gd-face"));
+    o += part("The cone: warmer and rounder than the middle", circ(cx, cy, 70, "gd-face"));
+    o += part("Cap edge (where the dust cap meets the cone): bright but full. Where most people start", '<circle cx="' + cx + '" cy="' + cy + '" r="30" class="gd-ln gd-s-hot" style="stroke-width:10;stroke-opacity:.35"/>');
+    o += part("Dust cap: the brightest, most bite (and fizz)", circ(cx, cy, 24, "gd-face"));
+    o += callout(149, 40, 240, "edge: darkest") + callout(152, 75, 240, "cone: warmer") + callout(142, 100, 240, "cap edge: bright, full") + callout(128, 125, 240, "cap: brightest");
+    o += txt(240, 170, "the further out,", "gd-sm", "start") + txt(240, 186, "the darker", "gd-sm", "start");
+    return svg(400, 240, "A guitar speaker from the front: dust cap, cap edge, cone and edge; brighter in the middle, darker toward the edge", o);
+  }
+  function ampMiking() {
+    var o = "";
+    o += part("The amp's cabinet, from the side; the speaker faces right", rect(20, 40, 90, 150, "gd-body", 4) + rect(106, 60, 6, 110, "gd-face"));
+    o += part("The speaker cone", path("M112,70 L136,95 L136,135 L112,160 Z", "gd-face"));
+    o += smallMic(140, 115, 0, "Close mic: 1-5 cm from the grille cloth, pointing at the speaker. Mostly speaker, little room", "gd-f-hot");
+    o += smallMic(140, 160, 35, "The same mic angled (off axis): a little darker, less fizz", "gd-face");
+    o += smallMic(330, 115, 0, "Room mic: 1-2 m back. The amp in the room; blend it under the close mic");
+    o += line(140, 92, 140, 82, "gd-ln gd-thin") + txt(140, 76, "close: 1-5 cm", "gd-sm", "start");
+    o += txt(206, 178, "angled", "gd-sm", "start") + txt(330, 92, "room: 1-2 m", "gd-sm", "start");
+    o += path("M200,210 L320,210", "gd-ln gd-thin gd-dash") + txt(260, 226, "more room the further back", "gd-sm");
+    o += txt(65, 30, "amp", "gd-b");
+    return svg(480, 236, "Miking an amp from the side: a close mic on the speaker, the same mic angled, and a room mic a metre or two back", o);
+  }
+  function vocalSetup() {
+    var o = "";
+    o += part("The singer, side view", path("M30,30 C64,26 72,64 68,88 L78,104 L70,108 L74,116 L68,120 L72,128 C68,146 52,146 30,156 L30,226", "gd-body"));
+    o += part("The air jet of a p or b: forward and a little down, narrow", '<path d="M70,112 L330,170 L330,132 Z" class="gd-f-hot" style="fill-opacity:.3;stroke-dasharray:4 3"/>');
+    o += part("Pop filter: mesh 5-10 cm from the mouth; stops the jet, lets the sound through", '<ellipse cx="110" cy="102" rx="5" ry="30" class="gd-ln gd-dash"/>');
+    o += smallMic(150, 92, -22, "The mic: 15-25 cm away (a condenser), a little above the mouth and pointing down at it: out of the air jet", "gd-f-cold");
+    o += txt(110, 62, "pop filter", "gd-sm") + txt(178, 30, "mic: 15-25 cm, above,", "gd-sm", "start") + txt(178, 44, "pointing at the mouth", "gd-sm", "start");
+    o += txt(250, 190, "air jet (p, b)", "gd-sm") ;
+    o += path("M70,212 L160,212", "gd-ln gd-thin") + txt(115, 228, "15-25 cm", "gd-sm");
+    return svg(400, 236, "A singer and a condenser mic from the side: a pop filter between, the mic a little above the mouth, out of the jet of air from p and b", o);
+  }
+
   var FIGS = {
     "jack-wiring":    [jackWiring, "TS has two contacts, TRS three. The same TRS cable is balanced mono or stereo, depending on the sockets."],
     "xlr-pins":       [xlrPins, "XLR, seen from the contacts. Pin 1 is always ground; 2 hot, 3 cold."],
@@ -469,6 +511,9 @@
     "mic-response":   [micResponse, "Not flat on purpose: a vocal dynamic trims the bass and lifts the words; a condenser is near flat."],
     "proximity":      [proxGraph, "The same cardioid, closer and closer to a voice: the bass grows. (The physics of an ideal one; real mics trim their bass, so the boost is smaller.) Omni mics don't do this."],
     "off-axis":       [offAxisGraph, "Off axis a mic is quieter, and duller: the treble drops first. A mic pointed past a source hears it darker."],
+    "speaker-zones":  [speakerZones, "Where on the speaker: the further from the middle, the darker. Most engineers start at the cap edge."],
+    "amp-miking":     [ampMiking, "Close for the speaker's own sound, angled for less fizz, back for the room."],
+    "vocal-setup":    [vocalSetup, "Out of the air jet, behind a pop filter, pointing at the mouth."],
     "cupping":        [cupping, "Cupping the grille covers the rear ports: the mic hears all round, sounds boxy, and feeds back."]
   };
 

@@ -1,0 +1,11 @@
+X:8324
+%%from edm
+T:Sonata, Vn. and Piano - 3rd Movement
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8324 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+a6 ^g2 f4 e4- | e2dA A6 DD D2AB | z/2 e2-e/2d2<e2f a4 b4 |

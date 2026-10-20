@@ -1,0 +1,11 @@
+X:5258
+T:Concerto, 2nd Movement
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6896, Barlow & Morgenstern R129, EDM 5258 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/16
+Q:1/4=34
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G4 A8 | G4 F4 E4 | B4- B2AB cB-B2- | B8- B2B2- | B4 c4 B4 | G8- GFEF | GF-F2- F4 |

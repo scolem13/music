@@ -1,0 +1,10 @@
+X:4991
+%%from edm
+T:Peter and the Wolf, Op. 67, 7th Theme, March of the Hunters
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4991 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+C4 ^C2 z2 ^D2 z2 E2 z2 | C4 ^C2 z2 ^D2 z2 E2 z2 | C4 ^C2E2 F2^G2 =c4 | B2c2 ^c2 z2 f2 z2 e4- | e4

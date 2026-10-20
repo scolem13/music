@@ -1,0 +1,10 @@
+X:8964
+%%from edm
+T:Toccata No. 20 in F, 2nd Theme
+C:Dietrich Buxtehude
+%%composer Buxtehude|Dietrich
+% EDM 8964 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:F
+g4 g2e2 f2g2 f2a2 f2d2 e2f2 | e6 f2 g2a4<g4 e6 |

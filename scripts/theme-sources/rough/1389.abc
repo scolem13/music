@@ -1,0 +1,11 @@
+X:1389
+%%from edm
+T:Wedding Dance, From die Waldtaube, Op. 110, Orchestra, 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1389 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+c12 | c4 ^c4 ^d4 | ^d8 ^c2d2 | c12 | ^d4 f4 d4 | ^g4 =g4 f4 | c12 |

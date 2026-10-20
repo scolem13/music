@@ -1,0 +1,10 @@
+X:255
+%%from edm
+T:Partita No. 3 in E, Loure
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0255 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:E
+B2 b4 g6 a2f/2g/2f/2g/2 f/2g/2f/2g/2 g4 e2- | e2 g4 f6 g2 a4 a2 f2d2- | d2 e4

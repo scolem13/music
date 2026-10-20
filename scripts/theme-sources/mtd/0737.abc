@@ -1,0 +1,12 @@
+X:737
+T:Quartet in F minor, Op. 95, 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0731, Barlow & Morgenstern B634, EDM 0737 (Musical Theme Dataset, CC BY 4.0)
+N:Larghetto espressivo – Allegretto agitato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=124
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+f | bc'd' c'2 f | bc'd' c'2 f | f=ef aga |{/g} c'2 |

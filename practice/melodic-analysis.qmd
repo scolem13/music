@@ -1,0 +1,327 @@
+---
+title: "Melodic Analysis: Practice for Chapter 11"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 11 of Hutchinson's Music Theory for the 21st-Century Classroom: motives and the book's seven melodic alterations (inversion, intervallic change, augmentation, diminution, rhythmic change, ornamentation, extension, retrograde), fragments, phrases and subphrases, with themes from the site's Classical Themes collection and the book's listening examples."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=13"></script>
+<script src="/apps/shared/drills/motives.js?v=1"></script>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=13"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+```
+
+This page goes with **Chapter 11, Melodic Analysis** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/MelodicAnalysis.html). Read each section there
+first. The book is the reference for the terms used here. It builds on [Chapter 10, Non-Chord Tones](non-chord-tones.qmd), which you
+need for **ornamentation**.
+
+The book takes a melody apart at four sizes, smallest first: the **motive**, which can be split into **fragments**; and the
+**phrase**, which can be split into **subphrases**. The drills here are about motives and how they change. Phrases and subphrases are
+practised by listening, with the book's clips, and by looking at themes in the site's
+[Classical Themes](../tools/classical-themes.qmd) collection.
+
+For writing your own motives and developing them, see the lesson
+[Composing 2: Developing a Motif](../lessons/compose-motif.qmd).
+
+## 11.1 Motive
+
+A **motive** (or motif) is the smallest melodic idea you can recognize as itself. It is usually two to seven notes, and it is
+recognized by its rhythm and shape more than by its exact pitches. A composer **develops** a motive: repeats it, moves it to other
+notes, changes it.
+
+The book's example is the first theme of Beethoven's Symphony No. 1, where it finds **four motives in four bars**. Here is the theme
+with the book's labels (the book's Figure 11.1.1, engraved for this page; the Classical Themes collection has the same theme from its
+first downbeat, without the opening run):
+
+<div class="abc-ex" data-bpm="200"><script type="text/plain">
+X:1
+T:Beethoven, Symphony No. 1, I (Allegro con brio): the first theme, with the book's motives
+M:C|
+L:1/8
+Q:1/2=100
+K:C
+"^mot. 1"G/F/E/D/ | C6 "^mot. 2"G,>B, | C6 "^mot. 2"G,>B, | "^mot. 3"CCG,B, "^mot. 3"CCG,B, | "^mot. 4"C2 E2 G2 B2 | c8 |]
+</script></div>
+
+- **Motive 1:** a quick run down four steps to a long C.
+- **Motive 2:** a dotted pickup, G up to B, into C. It comes twice.
+- **Motive 3:** four short notes, C C G B, also twice.
+- **Motive 4:** a scale of quarter notes rising through the C major chord and up to C.
+
+Later in the movement Beethoven takes each motive out of the theme and builds whole passages from it, usually as a **sequence**: the
+same motive repeated higher or lower. The book's clips follow each one:
+
+::: {.callout-note collapse="true"}
+## Listen: the theme, and what Beethoven does with each motive
+
+::: {.rn-quiz}
+<figure><figcaption>The first theme</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/I1rA68yF4tM?start=93&end=100&rel=0" title="Beethoven Symphony No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Development of motive 1</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/I1rA68yF4tM?start=440&end=452&rel=0" title="Beethoven Symphony No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Development of motive 2</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/I1rA68yF4tM?start=383&end=395&rel=0" title="Beethoven Symphony No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Development of motives 2 and 3 together</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/I1rA68yF4tM?start=341&end=352&rel=0" title="Beethoven Symphony No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Development of motive 4 (it follows straight on from the clip before)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/I1rA68yF4tM?start=356&end=367&rel=0" title="Beethoven Symphony No. 1" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+**Try it:** the opening of Beethoven's Fifth (Classical Themes, two themes) is one of the most famous motives there is. How many notes
+is it? Where does it come back, and what changes when it does?
+
+<div class="abc-ex" data-bpm="134"><script type="text/plain">
+X:1
+T:Beethoven, Symphony No. 5, I: the opening (two themes from the Classical Themes collection, one after the other)
+M:2/4
+L:1/8
+Q:1/4=134
+K:Cm
+z GGG | !fermata!E4 | z FFF | D4- | !fermata!D4 | z GGG | z AAA | z eee | c4 |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## One answer
+
+Four notes: three short repeated notes and a long note a 3rd below. It comes straight back a step lower, as a sequence. In the next
+three bars only the three short notes are kept, each time after a rest, and they climb: G, then A♭, then up to E♭. Then the line falls
+to a long C. That keeps a **fragment** of the motive (11.3). This analysis is the site's, not the book's.
+:::
+
+## 11.2 Melodic alteration
+
+The book names seven ways to change a motive. Move it to other notes and keep its shape, and it is a **sequence**. The book does not count that as an alteration,
+because it is so common. So the drill offers *Sequence* as an answer too, and you have to tell it apart from the real changes.
+
+| Alteration | What changes | What stays |
+|---|---|---|
+| **Inversion** | every interval turned upside down (up becomes down) | the rhythm |
+| **Intervallic change** | some intervals (not all), so the shape changes a little | the rhythm |
+| **Augmentation** | every note twice as long | the intervals |
+| **Diminution** | every note half as long | the intervals |
+| **Rhythmic change** | some of the note lengths | the notes |
+| **Ornamentation** | notes added between the motive's notes (passing tones, neighbor tones) | the motive's notes, the length |
+| **Extension** | notes added at the end | the whole motive, at the start |
+| **Retrograde** | the order: the notes from last to first | the notes |
+
+The book's inversions in tonal music are **tonal**: mirrored by steps of the scale, so a major 3rd may become a minor 3rd. The drill's
+inversions are tonal too.
+[Read 11.2](https://musictheory.pugetsound.edu/mt21c/MelodicAlteration.html)
+
+**In the drill:** bar 1 is the motive, bar 2 the changed copy. Press **▶ Hear it** to hear both. Start with the changes you can see
+at a glance:
+
+<div class="drill" data-ex="motive" data-settings="types=INV,RET,SEQ&mode=major"></div>
+
+Changes of rhythm:
+
+<div class="drill" data-ex="motive" data-settings="types=AUG,DIM,RHY,SEQ&mode=major"></div>
+
+Changes that add or alter notes:
+
+<div class="drill" data-ex="motive" data-settings="types=INT,ORN,EXT,SEQ&mode=major"></div>
+
+The book's own example of rhythmic change is the *Pathétique* Sonata. In the slow introduction, motive 1 is a dotted figure. It is
+heard here as the top line, as in the Classical Themes collection. The book marks motive 1 from the second note of each bar:
+
+<div class="abc-ex" data-bpm="40"><script type="text/plain">
+X:1
+T:Beethoven, Piano Sonata Op. 13 (Pathétique), I: the top line of the introduction
+M:4/4
+L:1/16
+Q:1/4=40
+K:Cm
+C4- "^mot. 1"C>CD>E E4 D2 z2 | F4- "^mot. 1"F>FG>A A4 G2 z2 |]
+</script></div>
+
+In the development section the motive comes back with its rhythm changed. In the next bar it is shortened and moved up a step.
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples of each alteration
+
+::: {.rn-quiz}
+<figure><figcaption>Bach, Invention No. 1 in C, BWV 772: the motive in bar 1 is inverted in bar 3</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/E8EvUmq0Zao?start=0&end=17&rel=0" title="Bach Invention No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Ray Noble, "The Very Thought of You" (Ella Fitzgerald): intervallic change</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/v9V98ECtsfY?start=15&end=25&rel=0" title="The Very Thought of You" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>10cc, "I'm Not in Love": intervallic change, one with a change of direction</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/STugQ0X1NoI?start=14&end=22&rel=0" title="I'm Not in Love" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Bach, Invention No. 1: augmentation of the motive's first fragment</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/E8EvUmq0Zao?start=9&end=17&rel=0" title="Bach Invention No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Holst, <em>The Planets</em>, "Uranus": diminution of the first four notes</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/aDFGmiXnLjU?start=7&end=30&rel=0" title="Uranus" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Salt-N-Pepa, "Push It": rhythmic change</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/vCadcBR95oU?start=174&end=182&rel=0" title="Push It" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Beethoven, <em>Pathétique</em> Sonata, I: motive 1 in the introduction</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/SrcOcKYQX3c?start=19&end=41&rel=0" title="Pathétique Sonata" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Beethoven, <em>Pathétique</em> Sonata, I: motive 1 with its rhythm changed, in the development</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/SrcOcKYQX3c?start=385&end=395&rel=0" title="Pathétique Sonata" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Stevie Wonder, "Sir Duke": ornamentation, and extension</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/s6fPN5aQVDI?start=0&end=8&rel=0" title="Sir Duke" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Britney Spears, "Toxic": retrograde</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/tVdr_JWmnsA?start=82&end=98&rel=0" title="Toxic" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 11.3 Fragment
+
+Some motives are **compound**: long enough to break into smaller pieces, called **fragments** (some writers say "germs"). Each
+fragment can then be developed on its own. The book's example is the seven-note motive that opens Bach's Invention No. 1. It splits
+into two four-note fragments that overlap (they share the middle note). Bach later augments the first and inverts the second.
+[Read 11.3](https://musictheory.pugetsound.edu/mt21c/FragmentSection.html)
+
+Listen back to the Beethoven Fifth example above: after the first two statements, only the three repeated notes are kept. That is a
+fragment of the motive.
+
+::: {.callout-note collapse="true"}
+## Listen: Bach, Invention No. 1, the two fragments developed
+
+::: {.rn-quiz}
+<figure><figcaption>Fragment "a" in augmentation</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/E8EvUmq0Zao?start=9&end=17&rel=0" title="Bach Invention No. 1" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Fragment "b" inverted, leading to a cadence in G major</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/E8EvUmq0Zao?start=18&end=25&rel=0" title="Bach Invention No. 1" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 11.4 Phrase
+
+A **phrase** is the smallest section that sounds *complete*. In classical music a phrase ends with a **cadence**
+([Chapter 7](roman-numerals.qmd)). In popular music a phrase may end without one: the melody reaches four bars, or a line of the lyric ends.
+Most phrases are **four bars** long, some eight. Five, six and seven bars also happen, and three is rare.
+[Read 11.4](https://musictheory.pugetsound.edu/mt21c/PhraseSection.html)
+
+**Listen and count:** play each clip and count the bars until the music sounds finished. The book's answers are in the captions,
+under *Answer*.
+
+::: {.rn-quiz}
+<figure><figcaption>The Temptations, "My Girl" <details><summary>Answer</summary>Four bars, complete without a cadence.</details></figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/1hZSulcsImQ?start=16&end=26&rel=0" title="My Girl" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Chaka Khan, "I'm Every Woman" <details><summary>Answer</summary>Four bars.</details></figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/vNAq7Cv34l4?start=17&end=26&rel=0" title="I'm Every Woman" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Beyoncé, "Irreplaceable" <details><summary>Answer</summary>Five bars. It ends on a minor iv chord, yet sounds complete.</details></figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/2EwViQxSJJQ?start=73&end=88&rel=0" title="Irreplaceable" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Mozart, Symphony No. 40, K. 550, III <details><summary>Answer</summary>Six bars, ending with V7–i in G minor.</details></figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/PbwJhFGUiFc?start=43&end=49&rel=0" title="Mozart Symphony No. 40" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Mozart, Piano Sonata in C, K. 545, II <details><summary>Answer</summary>Eight bars.</details></figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/1vDxlnJVvW8?start=180&end=206&rel=0" title="Mozart K. 545" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+## 11.5 Subphrase
+
+A **subphrase** is bigger than a motive and smaller than a phrase. It is usually **two bars**, half of a four-bar phrase. Other books
+call it a phrase segment or phrase member. The book labels subphrases with letters. A repeat with small changes gets a prime: **a′**
+("a prime"), then **a″**. A subphrase that is only transposed keeps its letter (**a**, not a′).
+[Read 11.5](https://musictheory.pugetsound.edu/mt21c/subphrase.html)
+
+**Try it:** label the subphrases of this Schubert theme (Classical Themes; two bars each):
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Schubert, Symphony No. 5 in B♭, I: first theme (Classical Themes)
+M:2/2
+L:1/8
+Q:1/2=100
+K:Bb
+B3 d f2 f2 | f4 z4 | A3 c f2 f2 | f4 z4 | e3 g b2 b2 | b4 agfe |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## One answer
+
+**a** (bars 1–2). **a′** (bars 3–4): the same rhythm, but it starts on A, a step lower, and the leap up to F is bigger (a 4th
+instead of a 3rd). **a″** (bars 5–6): bar 5 is bar 1 moved up a 4th, but the held note at the end is replaced by running eighth notes
+down from A. You could also argue that bars 5–6 are new (**b**) because of the eighth notes.
+This analysis is the site's, not the book's.
+:::
+
+::: {.callout-note collapse="true"}
+## Listen: the book's subphrase examples
+
+::: {.rn-quiz}
+<figure><figcaption>Fleetwood Mac, "Don't Stop": a and a′ share their first six notes</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/OvSbZEYlfnM?start=73&end=81&rel=0" title="Don't Stop" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>LMFAO, "Party Rock Anthem": a four-bar phrase, subphrases a and b</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/KQ6zr6kCPj8?start=114&end=122&rel=0" title="Party Rock Anthem" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Journey, "Don't Stop Believin'": ideas at three levels (motive, subphrase, phrase)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/1k8craCGpgs?start=82&end=91&rel=0" title="Don't Stop Believin'" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>"The Very Thought of You": two-bar motives or subphrases? The book discusses the ambiguity</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/v9V98ECtsfY?start=15&end=25&rel=0" title="The Very Thought of You" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 11.6 Everything together
+
+All nine answers, major and minor keys. Set **Questions** to 20 for a score.
+[Practice exercises with answers (11.6)](https://musictheory.pugetsound.edu/mt21c/MelodicAnalysisPracticeExercises.html)
+
+<div class="drill" data-ex="motive" data-settings="mode=both"></div>
+
+By ear only (the staff appears after you answer). Intervallic change and ornamentation are left out here, as they are hard to hear
+at speed:
+
+<div class="drill" data-ex="motive" data-settings="mode=both&show=ear&types=INV,AUG,DIM,RHY,EXT,RET,SEQ"></div>
+
+The book's exercise 4 analyses Schumann's "First Loss" (*Album for the Young*, Op. 68 No. 16): motives with their alterations, and
+subphrases. Listen, then try it on the book's score:
+
+::: {.rn-quiz}
+<figure><figcaption>Schumann, "Erster Verlust" (First Loss)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Dbb_VGJXaSU?start=0&end=11&rel=0" title="First Loss" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+**More to analyse:** the [Classical Themes](../tools/classical-themes.qmd) collection has over two thousand themes with recordings.
+Pick one, find its motive, and look for the motive's next appearance in the theme: is it a sequence, or one of the alterations?
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+- **The drill:** a motive of two to six notes filling half a bar of 4/4, in a major or minor key (natural minor), then one change
+  of it. The answers are the book's seven alterations, with augmentation and diminution counted separately, plus *Sequence*. Inversion,
+  augmentation and diminution may also be transposed. The other changes start on the motive's own first note (retrograde on its last),
+  so only the change itself differs. A question is asked only when exactly one answer fits, which the drill checks before asking.
+  Ornamentation adds one passing tone or neighbor tone and keeps the motive's length. Retrograde reverses the pitches and the rhythm.
+- **Checked:** `node tests/lessons/motive-drill.test.js` reads thousands of questions back from their notation and classifies each
+  change with its own code. Exactly one alteration must fit, and it must be the answer. It also checks the bar lengths and that the
+  notes played are the notes drawn.
+- **Not drilled:** fragments, phrases and subphrases. Recognizing them needs real melodies, and the analysis is often open to argument
+  (the book says so for subphrases). They are taught with the book's clips and short examples from the Classical Themes collection.
+- **Analyses:** the Beethoven Symphony No. 1 motives and the *Pathétique* motive are the book's (Figures 11.1.1 and 11.2.8). The
+  answers for the Beethoven Fifth and Schubert examples are the site's own. The themes come from the Musical Theme Dataset
+  (Barlow and Morgenstern's themes, newly engraved; CC BY 4.0), as credited on the Classical Themes page.
+- **Videos:** the clips use the book's YouTube links and start and end times. Each title was checked against YouTube.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

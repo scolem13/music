@@ -1,0 +1,11 @@
+X:7317
+%%from edm
+T:Concerto in D minor, 2nd Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7317 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+e2ee f3/2g/2ag/2f/2 f2e3/2e/2 e2d3/2e/2 | d2<c2 B2<A2 a2a2 g2ae | f2e2 z cde e4 E4 |

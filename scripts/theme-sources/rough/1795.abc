@@ -1,0 +1,10 @@
+X:1795
+%%from edm
+T:Rhapsody in Blue, 2nd Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1795 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c2e2 g4 | g4 g4 | g4 z/2 a3/2g2 | f2e2 d4 | c8- | c8 |

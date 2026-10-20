@@ -1,0 +1,12 @@
+X:6891
+%%from mtd
+T:Kuss Waltz from Der Lustige Krieg, Op. 400, 4th Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8520, Barlow & Morgenstern S1282, EDM 6891 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=177
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+eg^dgea | a2 z a a2 | eg^dgea | a2 z a a2 | dff^cde | f2 z f f2 |

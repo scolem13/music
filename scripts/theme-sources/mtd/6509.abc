@@ -1,0 +1,12 @@
+X:6509
+T:Symphony No. 7, Op. 60, 2nd Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8140, Barlow & Morgenstern S906, EDM 6509 (Musical Theme Dataset, CC BY 4.0)
+N:Memories: Moderato, poco allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=95
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+z2 B,2 B2A2 G2FG AGFE | D2C2 B,2CD E2A2 E2A2 | GFED C2C2 CDCB, A,2G,A, | B,2 |

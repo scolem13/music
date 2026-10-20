@@ -125,4 +125,26 @@ it sounds so much softer even though both have only odd harmonics.
 - [Sound 2: Oscillators and Pulse-Width Modulation](sound-waveforms.qmd)
 - [Sound 4: Filters](sound-filter.qmd), the tool that takes harmonics away again.
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Fourier series." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fourier_series](https://en.wikipedia.org/wiki/Fourier_series).
+
+"Harmonic series (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Harmonic_series_(music)](https://en.wikipedia.org/wiki/Harmonic_series_(music)).
+
+Nave, Rod. "Vibrating String." *HyperPhysics*, Georgia State University. [hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html](http://hyperphysics.phy-astr.gsu.edu/hbase/Waves/string.html).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: What's In A Sound?." *Sound On Sound*, May 1999. [www.soundonsound.com/techniques/whats-sound](https://www.soundonsound.com/techniques/whats-sound).
+
+Smith, Julius O., III. *Mathematics of the Discrete Fourier Transform (DFT), with Audio Applications*. 2nd ed., W3K Publishing, 2007. [ccrma.stanford.edu/~jos/mdft/](https://ccrma.stanford.edu/~jos/mdft/).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

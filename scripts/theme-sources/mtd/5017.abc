@@ -1,0 +1,12 @@
+X:5017
+T:Romeo and Juliet, Op. 64, Suite No. 2, 2nd Movement - Juliet - The Little Girl, 3rd Theme A
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% MTD 6659, Barlow & Morgenstern P273, EDM 5017 (Musical Theme Dataset, CC BY 4.0)
+N:The Young Juliet  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c'3 c' | c' g e' c' | b e a e'/4c'/4b/4a/4 | b e a a/c'/ | g c f f/c'/ | e |

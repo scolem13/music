@@ -1,0 +1,13 @@
+X:823
+T:Sonata No. 2, in A, Op. 2, No. 2, 3rd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0817, Barlow & Morgenstern B699, EDM 0823 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo: Allegretto - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 66  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/16
+Q:1/4=156
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+aec'a | e'4 z4 cAec | a4 z4 CA,EC | A4 A4 A4 | A4 G4 |

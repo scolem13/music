@@ -1,0 +1,10 @@
+X:5826
+%%from edm
+T:Banchetto Musicale, Suite No. 1, 3rd Movement - Courante
+C:Johann Schein
+%%composer Schein|Johann
+% EDM 5826 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:C
+a6 b2 ^c'4 d'4 a4 ^f4 | g6 ^f2 e4 d8 d'4 | c'6 b2 a2g2 a2g2 f2e2 d4 | ^a2=a2 g2f2 g8<f8 |

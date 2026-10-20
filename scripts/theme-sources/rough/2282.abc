@@ -1,0 +1,13 @@
+X:2282
+%%from mtd
+T:Sonata in C minor, Op. 2, No. 1, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% MTD 3944, Barlow & Morgenstern H163, EDM 2282 (Musical Theme Dataset, CC BY 4.0)
+N:Andante – Allegro – Largo – Allegro 1  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=44
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+c2e>d c2c2 c>=Bc2 z2 gd | d2ef e2>d2 edc2 |

@@ -1,0 +1,10 @@
+X:9153
+%%from edm
+T:Ballade 1, Op. 23 - 2nd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9153 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Bb
+f16 g8 | g4 e16 e'4- | e'2d'2 c'12 d'8 | d'8<b8

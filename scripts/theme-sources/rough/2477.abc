@@ -1,0 +1,13 @@
+X:2477
+%%from mtd
+T:Quartet in E-flat, Op. 33, No. 2, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4138, Barlow & Morgenstern H358, EDM 2477 (Musical Theme Dataset, CC BY 4.0)
+N:Finale: Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=251
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+g | g2 a fga | bge e z f | f2 g edc | B=AB B z |

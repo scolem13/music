@@ -1,0 +1,11 @@
+X:7841
+%%from edm
+T:Trio Sonata in G minor, Op. 1, No. 1, 1st Movement - Prelude
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7841 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+z4 G4 d4 G4 | d4 c4 f8 | b6 c'2 a8 | a4 g2f2 e4 a2g2 | _g4 =g8 _g4 | g4

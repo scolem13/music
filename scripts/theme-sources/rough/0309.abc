@@ -1,0 +1,11 @@
+X:309
+%%from edm
+T:Suite No. 2 in B minor, Fl. and Str., Overture - Polonaise
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0309 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+B3d c2B2 z/2 ^A2-A/2B/2c/2 | B3d c2B2 cB^Ac | B6

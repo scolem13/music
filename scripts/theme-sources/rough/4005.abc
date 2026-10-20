@@ -1,0 +1,10 @@
+X:4005
+%%from edm
+T:Creation Du Monde, Ballet, Prelude
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4005 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+A16- | A8 d8 | d8 c8 | ^A16- | ^A8 e8 | e8 d8 | c16- | c8

@@ -1,0 +1,10 @@
+X:5914
+%%from edm
+T:Octet in F, Op. 166, 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5914 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+f12 e3f | f2 z2 _a3=a a2 z2 =b3c' | f'8- f'2d'2b2g2 | c'2

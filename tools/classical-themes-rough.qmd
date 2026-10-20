@@ -1,0 +1,84 @@
+---
+title: "Classical Themes (rough)"
+description: "The original 9,824 themes (midi2abc from the EDM MIDI), unreliable, kept for reference. Not linked from the menus."
+toc: false
+---
+
+```{=html}
+<style>
+#ct-root { max-width: 1200px; margin: 0 auto; }
+#ct-root .ct-controls { display: flex; flex-wrap: wrap; gap: .6rem 1.4rem; align-items: flex-start; margin: .8rem 0; }
+#ct-root .ct-sortrow { display: flex; gap: .4rem; align-items: center; margin: .2rem 0; flex-wrap: wrap; }
+#ct-root .ct-sortrow > span { min-width: 4.2em; font-size: .9rem; }
+#ct-root select, #ct-root input[type=number] { padding: .25rem .4rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 6px; background: var(--bs-body-bg, #fff); color: inherit; font: inherit; font-size: .9rem; }
+#ct-root input[type=number] { width: 5em; }
+#ct-root button { padding: .25rem .6rem; border: 1px solid var(--bs-border-color, #ccc); border-radius: 6px; background: var(--bs-body-bg, #fff); color: inherit; font-size: .88rem; cursor: pointer; }
+#ct-root button:disabled { opacity: .4; cursor: default; }
+#ct-root .ct-dir { min-width: 9.5em; text-align: left; }
+#ct-root .ct-group { display: flex; flex-direction: column; gap: .35rem; }
+#ct-root .ct-line { display: flex; gap: .5rem; align-items: center; flex-wrap: wrap; font-size: .9rem; }
+#ct-root .ct-pager { display: flex; gap: .6rem; align-items: center; margin: .6rem 0; font-size: .9rem; }
+#ct-count { font-weight: 600; margin-top: .6rem; scroll-margin-top: 80px; }
+#ct-status { opacity: .7; font-size: .9rem; }
+#ct-root .ct-warn { border-left: 4px solid #d97706; padding: .4rem .8rem; background: rgba(217,119,6,.08); }
+#ct-root .ct-credit { font-size: .85rem; opacity: .8; }
+#ct-list { display: grid; gap: .8rem; grid-template-columns: 1fr; }
+#ct-list[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+#ct-list[data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { #ct-list[data-cols] { grid-template-columns: 1fr; } }
+#ct-root .ct-card { border: 1px solid var(--bs-border-color, #ddd); border-radius: 10px; padding: .6rem .8rem; min-height: 190px; min-width: 0; }
+#ct-root .ct-head { display: flex; justify-content: space-between; gap: .8rem; align-items: flex-start; }
+#ct-root .ct-title { font-weight: 600; line-height: 1.25; }
+#ct-root .ct-move { font-style: italic; font-size: .9rem; }
+#ct-root .ct-comp { font-size: .85rem; opacity: .75; }
+#ct-root .ct-btns { display: flex; gap: .5rem; align-items: center; flex-shrink: 0; font-size: .85rem; }
+#ct-root .ct-meta { display: flex; flex-wrap: wrap; gap: .25rem .4rem; font-size: .76rem; }
+#ct-root .ct-meta span { padding: .05rem .45rem; border-radius: 999px; background: var(--bs-tertiary-bg, #f1f3f5); }
+#ct-root .ct-score { min-height: 90px; margin-bottom: .35rem; }
+#ct-root .ct-on { fill: #d6336c; }
+#ct-picker .tl-results, #ct-picker .tl-sort, #ct-picker .tl-count { display: none; }
+</style>
+<div id="ct-root">
+  <p class="ct-warn"><strong>Reference only: partly unreliable.</strong> The original set of 9,824 themes. The 2,067 that the
+  <a href="https://www.audiolabs-erlangen.de/resources/MIR/MTD">Musical Theme Dataset</a> has are its corrected versions (tagged
+  "corrected (MTD)", played at their recording's tempo); they are also on <a href="classical-themes.html">Classical Themes</a>.
+  The rest are midi2abc conversions of the <em>Electronic Dictionary of Musical Themes</em> MIDI, with beams and repeated
+  accidentals tidied but the notes as they were: many are barred from the first note instead of the pickup, have lost or
+  broken triplets, or sit an octave off. Themes that sit very high have been moved down an octave by rule (tagged "octave lowered
+  (guessed)"; the rule was right 98.7% of the time on the themes MTD also has), which catches a bit under half of the octave errors. Those play at 96 unless you type a tempo in.</p>
+  <div id="ct-picker"></div>
+  <div class="ct-controls">
+    <div class="ct-group" id="ct-sorts"></div>
+    <div class="ct-group">
+      <div class="ct-line"><label for="ct-per">Show</label>
+        <select id="ct-per"><option value="1">1</option><option value="5">5</option><option value="10">10</option><option value="25">25</option>
+          <option value="50">50</option><option value="100">100</option><option value="250">250</option><option value="n">Other…</option><option value="all">All</option></select>
+        <input type="number" id="ct-pernum" min="1" max="10000" aria-label="Themes a page"> at a time</div>
+      <div class="ct-line"><label for="ct-cols">Columns</label>
+        <select id="ct-cols"><option value="1">1</option><option value="2">2</option><option value="3">3</option></select></div>
+      <div class="ct-line"><label for="ct-tempo">Play at</label><input type="number" id="ct-tempo" min="10" max="600" placeholder="96"> per quarter note</div>
+      <div class="ct-line"><label><input type="checkbox" id="ct-yt"> Only themes with a recording link</label>
+        <button type="button" id="ct-reshuffle" title="New order for the Random sort">Reshuffle</button></div>
+    </div>
+  </div>
+  <div id="ct-status" aria-live="polite"></div>
+  <div id="ct-count"></div>
+  <div class="ct-pager"><button type="button" id="ct-prev">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next">Next →</button></div>
+  <div id="ct-list"></div>
+  <div class="ct-pager"><button type="button" id="ct-prev2">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next2">Next →</button></div>
+</div>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js?v=1"></script>
+<script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="/apps/shared/pitch-spelling.js"></script>
+<script src="/apps/shared/tonality.js?v=10"></script>
+<script src="/apps/shared/tune-chart.js?v=11"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/shared/rhythm-cells.js?v=1"></script>
+<script src="/apps/shared/tune-library.js?v=18"></script>
+<script src="/apps/shared/audio.js?v=10"></script>
+<script src="/apps/themes/themes-rough-data.js?v=4"></script>
+<script src="/apps/shared/ornament-play.js?v=1"></script>
+<script src="/apps/themes/themes-page.js?v=8"></script>
+```
+

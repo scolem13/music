@@ -1,0 +1,10 @@
+X:7792
+%%from edm
+T:Concerto in A, 1st Movement - 1st Theme
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7792 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+a4 c'4 a4 c'4 | a4 e'4 e4 e4 | e'4 g'4 b'4 b4 | d'4 c'4 a4 a4 |

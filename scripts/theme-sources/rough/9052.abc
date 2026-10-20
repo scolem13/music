@@ -1,0 +1,11 @@
+X:9052
+%%from edm
+T:Bourrée Fantasque, Piano, Arr. for Orchestra, F. Mottl - 2nd Theme A
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9052 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/e47CELxHqVA?t=1m8s
+M:2/4
+L:1/16
+K:F
+_a2_d2=a2=d2 | _e2=e2g2f2 | e'2d'2g'2f'2 | e''2 d''4 c''2 | e'2 d'4 c'2 | f2

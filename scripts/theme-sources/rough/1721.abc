@@ -1,0 +1,10 @@
+X:1721
+%%from edm
+T:Concerto No. 2 in G, 1st Movement - 1st Theme
+C:King of Prussia Frederick II
+%%composer Frederick II|King of Prussia
+% EDM 1721 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+G4 d4 g4 z def | g2d2d2c2 B2G3 DEF | G2D2D2C2 B,2B,C D2

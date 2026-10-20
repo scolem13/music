@@ -1,0 +1,10 @@
+X:1415
+%%from edm
+T:"Enigma" Variations, Op. 36, Orchestra, Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1415 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z4 B2G2 c4 A4 | z4 d4 B4 A2c2 | z4 B2d2 g4 A4 | z4 f4 G4 A2B2 | z4 A2G2 d4 B4 | z4 B4 G4 A2G2 | =B4

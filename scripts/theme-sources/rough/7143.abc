@@ -1,0 +1,10 @@
+X:7143
+%%from edm
+T:Concerto, 2nd Movement - 2nd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7143 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c'6 a2 | c'6 a2 | c'6 a2 | b2c'2d2b2- | b2g2 b4- | b2g2b2c'2 | d2b2c2c'2 | d2d'2

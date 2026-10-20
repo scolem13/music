@@ -1,0 +1,10 @@
+X:537
+%%from edm
+T:Thamar (Tamara), 3rd Theme
+C:Mily Balakirev
+%%composer Balakirev|Mily
+% EDM 0537 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:D
+f3=f ^f2^g2 a2=g2 f3g f2=f2 ^f2d2 | e3^d e2=f2 ^f2e2 =d3e d2c2 d2B2 |

@@ -1,0 +1,10 @@
+X:2895
+%%from edm
+T:Sonata No. 3, Piano, 3rd Movement
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2895 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+^D,3=D,2<^D,2F, | ^G,2^F,=F, ^F,2B,2 | ^A,4 ^CA,C2 | ^G,6

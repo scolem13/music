@@ -1,0 +1,10 @@
+X:8533
+%%from edm
+T:Academic Festival Overture, Op. 80, 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8533 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+b6 ^g2 e4 e'4 | ^c'4 b4 a4 ^g4 | f6 ^g4<f4 g2 | f4 ^g4 a4 ^c'4 |

@@ -1,0 +1,10 @@
+X:1521
+%%from edm
+T:Concerto in D, 3rd Movement - 2nd Theme
+C:Manuel de Falla
+%%composer Falla|Manuel de
+% EDM 1521 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+z2 E2 e4 B2d2 | c2 z2 e4 B2d2 | z/2 c3/2 z2 e4 A2a2- | a2f2d2 B2e2F2 |

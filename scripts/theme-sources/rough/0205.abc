@@ -1,0 +1,10 @@
+X:205
+%%from edm
+T:Two-Part Inventions, Piano, No. 12 in A
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0205 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:A
+A,B,CB,A,G, F,G,A,G,F,E, | D,F,A,F,D,F, B,,D,F,D,B,,D, | G,,2B,,2G,,2 E,,2F,,2G,,2 | A,,4

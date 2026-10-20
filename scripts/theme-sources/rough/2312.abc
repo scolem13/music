@@ -1,0 +1,10 @@
+X:2312
+%%from edm
+T:Sonata in D, Op. 1, No. 13, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2312 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+B6 b2 ^a3b | d6 b2 ^a3b | c6 g2 f3e | d3c B4

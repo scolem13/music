@@ -1,0 +1,10 @@
+X:4481
+%%from edm
+T:Sonata in A, K 526, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4481 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:A
+e2d2c2 B2A2d2 | c2f2e2 a2g2c'2 | b2d'2c'2 b2a2g2 | f2 e4 d2c2

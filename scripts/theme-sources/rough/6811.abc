@@ -1,0 +1,11 @@
+X:6811
+%%from edm
+T:Afro-American Symphony, 3rd Movement - 2nd Theme
+C:William Grant Still
+%%composer Still|William Grant
+% EDM 6811 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Ab
+e'2c'2 e'4 e'4 a4 | b2_g2 e12 | g2e2 a4<a4 c'2b2- | b4 a12 | e'2c'2 e'4 e'4 a'4 | _g'2e'2 c'2 a4

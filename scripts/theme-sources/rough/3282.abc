@@ -1,0 +1,10 @@
+X:3282
+%%from edm
+T:La Precieuse (Style of Couperin), 1st Theme
+C:Fritz Kreisler
+%%composer Kreisler|Fritz
+% EDM 3282 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+def2 A2B2 | d2EF G4 | ABAd AF z/2 G/2F | GE z/2 F/2E D2

@@ -1,0 +1,13 @@
+X:5603
+%%from mtd
+T:Concerto No. 1, in A minor, Op. 33, 2nd Movement
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7238, Barlow & Morgenstern S19, EDM 5603 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/sru18UyAweA?t=8m32s
+M:3/4
+L:1/4
+Q:1/4=125
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+f | e/f/g/e/ g | g f d | e{/f} e/d/ e | e2 f | e/f/g/e/ g | g f d |

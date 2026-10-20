@@ -1,0 +1,12 @@
+X:8409
+%%from edm
+T:Polovetsian Dances, from Prince Igor, 2nd Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8409 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/TmfTqVqngO8?t=2m31s
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+g2g3 a2b2 bc'b aaba | gf2f3 gf eefe _ede=e | f

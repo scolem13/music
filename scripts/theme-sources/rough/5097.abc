@@ -1,0 +1,10 @@
+X:5097
+%%from edm
+T:Sonata No. 9, in F, 4th Movement
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5097 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+z4 f4 g8 | a12 g4- | g4 f4 e4 A4 | =B8 c8- | c4 =B2A2 _A4 =A4- | A4 _A4 =A8 |

@@ -1,0 +1,13 @@
+X:6412
+T:Etudes, Op. 2, No. 1
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% MTD 8043, Barlow & Morgenstern S816, EDM 6412 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/NSsKJIzwapA
+%%bar 1  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/8
+Q:1/4=65
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+CDEFGc | B>A A4 | FGABcf | e>d d4 | cdefgc' | b>g g2 e2 |

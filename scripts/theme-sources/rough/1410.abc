@@ -1,0 +1,10 @@
+X:1410
+%%from edm
+T:Concerto in B minor, Op. 61, 2nd Movement - 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1410 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+z4 F4 A4 d4 | A6 G2 G8- | G4 F4 G4 E4 | B16- | B4 B8 =G4 | F12 F4- | F12

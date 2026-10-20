@@ -1,0 +1,10 @@
+X:9514
+%%from edm
+T:Concert No. 13, in G, 3rd Movement, Sarabande
+C:François Couperin
+%%composer Couperin|François
+% EDM 9514 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+B4 z/2 d4- d3/2A2 | z/2 B3-B/2 z/2 G3-G/2 D4 | G4 A6 B2 | BABc B4 A4 |

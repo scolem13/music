@@ -1,0 +1,11 @@
+X:7018
+%%from edm
+T:Der Burger Als Edelmann, Op. 60, The Dinner, 1st Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7018 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+e4 g4 | c2c3/2d/2 e4 | g4 c'4 | bc'e'd' f4 | e2e3/2f/2 g2c2 | c3/2d/2e2 A2A3/2B/2 | c3/2e/2a2

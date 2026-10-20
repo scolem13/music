@@ -1,0 +1,10 @@
+X:8529
+%%from edm
+T:Intermezzo in C, Op. 119, No. 3, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8529 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+e2g2a2 g4 e2 | g2a2g2 e2g2a2 | g4 e2 g2a2b2 | c'4 b2 a2b2c'2 | b4 a2 g2a2b2 |

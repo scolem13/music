@@ -1,0 +1,10 @@
+X:4386
+%%from edm
+T:Sextet in F, K 522, Ein Musikalischer Spass, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4386 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f3f f6 g2 | a2g2 f4 z4 | a3a a6 b2 | c'2b2 a4

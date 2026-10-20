@@ -1,0 +1,11 @@
+X:8583
+%%from edm
+T:Quartet in B-flat, Op. 67, 2nd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8583 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+ad'3 z4 ab3 z4 | g c'6- c'/2b/2 a/2g/2a2 z4 z | g e12- e3 | a e12- e2

@@ -1,0 +1,10 @@
+X:1929
+%%from edm
+T:Die Flote von Sans-Souci, Op. 88, Intro, 2nd Theme
+C:Paul Graener
+%%composer Graener|Paul
+% EDM 1929 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+z4 f4 e3f/2d/2 g4- | g4 f4 e3d/2e/2 d4- | d12 c3=B/2c/2 | A8 a6 ga | e12

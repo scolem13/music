@@ -67,4 +67,20 @@ trick for finding it is **boost and sweep**:
 
 - [Sound 12: Distortion](sound-distortion.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Equalization (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Equalization_(audio)](https://en.wikipedia.org/wiki/Equalization_(audio)).
+
+**For teachers**
+
+Bristow-Johnson, Robert. "Cookbook Formulae for Audio Equalizer Biquad Filter Coefficients." W3C Audio Working Group. [webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html](https://webaudio.github.io/Audio-EQ-Cookbook/audio-eq-cookbook.html).
+
+Smith, Julius O., III. *Introduction to Digital Filters with Audio Applications*. W3K Publishing, 2007. [ccrma.stanford.edu/~jos/filters/](https://ccrma.stanford.edu/~jos/filters/).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

@@ -1,0 +1,13 @@
+X:2488
+%%from mtd
+T:Quartet in D, Op. 33, No. 6, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4149, Barlow & Morgenstern H369, EDM 2488 (Musical Theme Dataset, CC BY 4.0)
+N:Finale: Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=89
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d | D3/2F/4A/4 GE | FGEA | FBA^G | ^G2 A |

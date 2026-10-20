@@ -1,0 +1,11 @@
+X:655
+T:Ecossaises, Piano
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0649, Barlow & Morgenstern B553, EDM 0655 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=221
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+GB B2 | cB B2 | eB B2 | cB B2 | FB B2 | GB B2 | AB B2 |

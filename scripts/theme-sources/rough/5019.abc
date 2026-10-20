@@ -1,0 +1,13 @@
+X:5019
+%%from mtd
+T:Romeo and Juliet, Op. 64, Suite No. 2, 3rd Movement - Friar Lawrence, 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% MTD 6661, Barlow & Morgenstern P275, EDM 5019 (Musical Theme Dataset, CC BY 4.0)
+N:Romeo at Friar Laurence's  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=50
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+F, A, B, G, | D C B, A, | A, G, C B,/D/ | A, G, F,2 |

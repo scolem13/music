@@ -1,0 +1,11 @@
+X:5423
+%%from edm
+T:Rossiniana, 4th Movement - Tarantella and Procession, 1st Theme
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5423 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+z/2 z/2 ag2f2 e2d2c2 | B2d2c2 G2 z4 | z/2 z/2 ag2f2 e2d2c2 | ^c2e2d2 A2 z4 | z/2 z/2 ba2g2 f2e2d2 | c2

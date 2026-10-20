@@ -1,0 +1,13 @@
+X:2628
+%%from mtd
+T:Sonata in F, No. 23, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4289, Barlow & Morgenstern H508, EDM 2628 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=73
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c>A | F2A>F E2G>E | F2d2 c2{g}fe/d/ | c2(3aAd{c} B4 | B4 A2 |

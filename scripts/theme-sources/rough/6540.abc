@@ -1,0 +1,10 @@
+X:6540
+%%from edm
+T:Concerto, Op. 47, 2nd Movement
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6540 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d4 c3A B2 e4 d2 | c8 d4 e4 | f4 f4 g4 a4 | b4 =e8 f4 | g8 f6- fe | e2 d4 c3- c/2B-[B/2A/2-]A

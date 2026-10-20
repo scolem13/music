@@ -1,0 +1,13 @@
+X:6088
+%%from mtd
+T:Symphony No. 5 in B-flat, 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7720, Barlow & Morgenstern S501, EDM 6088 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=291
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+a2 g3/2 =e/ | =e f c2 | d d ^f f |{/a} g/^f/g/a/ b z |

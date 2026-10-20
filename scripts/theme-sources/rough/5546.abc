@@ -1,0 +1,13 @@
+X:5546
+%%from mtd
+T:Symphony No. 3, in G minor, Op. 42, 1st Movement - 2nd Theme
+C:Albert Roussel
+%%composer Roussel|Albert
+% MTD 7181, Barlow & Morgenstern R411, EDM 5546 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=110
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+e/g/c'/ | b2 =e' | c' f b | d3/2 g/ c' | f'3- | f'2 g' | d'3/2 ^c'/ d' | a ^f c' | e3 | _g3 | c B2 |

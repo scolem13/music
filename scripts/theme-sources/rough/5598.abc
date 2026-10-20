@@ -1,0 +1,13 @@
+X:5598
+%%from mtd
+T:Carnaval des Animaux, Fossiles
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7233, Barlow & Morgenstern S14, EDM 5598 (Musical Theme Dataset, CC BY 4.0)
+N:Fossiles  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=242
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+z4 GBGA | B2 z2 EGEF | G2 z2 B,EB,D | E2 EE E2 E2 | D2 z2 |

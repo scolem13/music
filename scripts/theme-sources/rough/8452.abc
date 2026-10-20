@@ -1,0 +1,11 @@
+X:8452
+%%from edm
+T:Symphony No. 2 in B minor, 4th Movement - 2nd Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8452 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+z4 e4 c4 | f4 z/2 e3/2d2 B2f2 | e2c2 a4 ^g4 | f4 z/2 e3/2d2 B2f2 |

@@ -1,0 +1,12 @@
+X:831
+T:Sonata No. 3, in C, Op. 2, No. 3, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0825, Barlow & Morgenstern B707, EDM 0831 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo: Allegro - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=243
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g/^f/ g/ | a g =f | e d c | B3 | c3 | d3 | e3 | g f e | d |

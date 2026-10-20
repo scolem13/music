@@ -1,0 +1,11 @@
+X:7698
+%%from edm
+T:Symphony No. 4, in F minor, 1st Movement - 4th Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7698 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/2
+L:1/16
+K:C
+a16- a6 ^a2 | ^a12- a2f2 =a8- | a4 d'6- d'/2c'2-c'/2 z/2 f2-f/2 a8- | a4 d4 f8 e4 d4 | (3f4e4d4 c8

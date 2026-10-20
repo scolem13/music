@@ -1,0 +1,10 @@
+X:2509
+%%from edm
+T:Quartet in E, Op. 54, No. 3, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2509 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:E
+G,4 A,4 B,4 C4 | e4 d4 B4 A4 | F2D2 E4 D4 E4 | A4 G8 F4 |

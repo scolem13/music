@@ -1,0 +1,12 @@
+X:303
+T:Suite No. 6 in D, Cello Solo, Gavotte
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0298, Barlow & Morgenstern B210, EDM 0303 (Musical Theme Dataset, CC BY 4.0)
+N:Gavotte I & II  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=125
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F2 F2 | F2 EDEF G2 | DCB,A, A2 A2 | A2 BA GFEF | GFED |

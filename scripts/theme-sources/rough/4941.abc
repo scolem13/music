@@ -1,0 +1,10 @@
+X:4941
+%%from edm
+T:Classical Symphony, Op. 25, 1st Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4941 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+z/2 e'3-e'/2 z4 e'4 z4 | z/2 E3-E/2 z4 E4 z4 | d'4 z4 d'4 z4 | z/2 D3-D/2 z4 D4 z4 | z/2 =c'3-c'/2 a4 =f4 =c4 | A4 =F4 =C4 A,4 | B,4

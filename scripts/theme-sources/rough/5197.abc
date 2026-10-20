@@ -1,0 +1,13 @@
+X:5197
+%%from mtd
+T:Symphony No. 2 in E minor, Op. 27, 2nd Movement - 1st Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% MTD 6836, Barlow & Morgenstern R69, EDM 5197 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo. Allegro molto – Meno mosso – Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=253
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z A g ^g | a e/f/ g d/e/ | f ^d e2- | e ^c d2- | d B c _B | c A/B/ c E | A |

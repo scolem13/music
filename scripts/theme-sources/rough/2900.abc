@@ -1,0 +1,11 @@
+X:2900
+%%from edm
+T:Sonata, Piano, 4 Hands, 2nd Movement, 2nd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2900 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+z8 z/2 z/2 f6- f- | f4 ^d4 d4 f4 | f4 ^g4 ^c4 c4 | ^c2^d2 e4 d4 c4 | ^A4 c4

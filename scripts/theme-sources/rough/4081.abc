@@ -1,0 +1,10 @@
+X:4081
+%%from edm
+T:Concerto in E-flat, K 449, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4081 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+e12 | c12 | G4 =A/2B/2A/2B/2A/2B/2A/2B/2 A/2B/2A/2B/2GA | B12 | F4 G/2A/2G/2A/2G/2A/2G/2A/2 G/2A/2G/2A/2FG | A6 B2 c4 | B,4 C4 D4 | E2

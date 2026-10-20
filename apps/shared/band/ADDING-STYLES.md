@@ -24,6 +24,13 @@ and defaults that belong together.
   `calm` (strike and hold the chords around cadences and in bars with more chords than usual: `BandHarmony.calmAt`; a chart marks phrase ends with `"^phrase"` and single bars with `"^plain"`),
   `halfRhythm` (comping rhythm ids, `a+b`: what the comping plays in bars of half time instead of its own rhythm), `time` (`{ feel:"half", parts }`), `ext:true` (unmarked extensions on offer).
   A style with no `sound` gets upright bass, ride, piano, jazz guitar.
+- `swing` (optional, one setting for the whole band): a ratio for where the late eighth lands (`0.62`), `{ div: 16, amount: 0.58 }` for
+  swung sixteenths, or `{ div: 8, curve: "jazz" }` for the tempo curve. Left out, the style swings by `feel` as it always did (`straight`
+  = even, otherwise `BandPlayer.swingFor(bpm)`: 68% at 100 bpm or slower, 66% at 120, 64% at 160, 60% at 220, 55% at 300).
+  `BandPlayer.swingAt(opts, bpm, override)` -> `{ div, s }` is the one place that decides; the player, the MIDI export (`BandMidi.swingOf`),
+  half-time figures and written grooves all ask it. The listener's Swing menu (PlayBar.swingSlot, Auto / 50-75 %) is `player.setSwing(x)`
+  (`opts.swingSet`) and beats the style's. A written groove (`written`) with no swing of its own takes the style's or the listener's
+  swing when they are set and on the groove's grid (eighths for an eighth groove, sixteenths for a sixteenth one); the tempo curve never applies to it.
 
 A style made only of parts that already exist is one line in `styles` plus the fit lists (step 3).
 Most requests need at least one new part. Decide that first: listen in your head to what the bass,

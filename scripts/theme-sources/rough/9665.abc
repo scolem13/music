@@ -1,0 +1,11 @@
+X:9665
+%%from edm
+T:Nocturnes, Sirènes - 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9665 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:B
+=f2d3- d/2f-[=f/2d/2-]d =f2d3- d/2f-[=f/2d/2-]d | =f2d2f2^f2 g2f2=f2f2 | =f2d2

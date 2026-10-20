@@ -1,0 +1,10 @@
+X:1899
+%%from edm
+T:Alt-Wien, Piano
+C:Leopold Godowsky
+%%composer Godowsky|Leopold
+% EDM 1899 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+=A2e4<d4 A2 | e2=c4<d4 =A2 | e2f2 d8- | d4 z4 D2G2 | B2d2 g4 f4 | z2 g2 e4 d4 | z2 B2 =B8- | B4

@@ -1,0 +1,13 @@
+X:7554
+T:Swan Lake Suite, from the Ballet, Op. 20a, 1st Movement - Intro.
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9180, Barlow & Morgenstern T211, EDM 7554 (Musical Theme Dataset, CC BY 4.0)
+N:Scene (Moderato)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 2  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/8
+Q:1/4=102
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f4 Bcde | f3 d f3 d | f3 B dBGd | B4 |

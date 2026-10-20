@@ -1,0 +1,10 @@
+X:6760
+%%from edm
+T:The Liberty Bell March, 2nd Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6760 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+c'2a2_a2 =a2 d'4 | c'4<a4 f4- | f2 d6 g4- | g2 f8- f2 | f2g2a2 b2 e'4 | d'4<c'4 f'4- | f'2 e'6 d'4- | d'2 c'6

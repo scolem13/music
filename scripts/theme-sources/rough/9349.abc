@@ -1,0 +1,11 @@
+X:9349
+%%from edm
+T:Waltzes, Op. 69, No. 2 in B minor, 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9349 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f6 g2 f2c2 | d2B2 ^A8 | f6 g2 f2c2 | e2d2 B8 |

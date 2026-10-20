@@ -1,0 +1,10 @@
+X:2234
+%%from edm
+T:Concerto Grosso in B minor, Op. 6, No. 12, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2234 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+b4 z FB3/2d/2 d2c2 z4 | c'4 z ce3/2e/2 e2d2

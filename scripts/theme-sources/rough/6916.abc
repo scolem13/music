@@ -1,0 +1,12 @@
+X:6916
+%%from mtd
+T:Schatz Waltzer, Op. 418, No. 4, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8545, Barlow & Morgenstern S1307, EDM 6916 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=155
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+b | c'4- c'b | c'4- c'^a | b6- | b4- b^a | b4- b^g | a4- a^f | g6- | g4 |

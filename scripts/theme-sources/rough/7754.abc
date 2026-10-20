@@ -1,0 +1,11 @@
+X:7754
+%%from edm
+T:La Traviata, Opera, Act 1, Prelude, 2nd Theme
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% EDM 7754 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+e8 d4 c4 | B6 A2 F4 z4 | e8 d4 c4 | B6 A2 F4 z4 | g8 a6 g2 | f3e2<f2e2<d2c2<d2c |

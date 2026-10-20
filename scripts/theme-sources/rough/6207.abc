@@ -1,0 +1,10 @@
+X:6207
+%%from edm
+T:Concerto in A minor, Op. 54, 1st Movement - Coda
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6207 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c'4 b3a | a4 b4 | c'4 b3a | a4 g'4- | g'4 e'4 | d'4 b4 |

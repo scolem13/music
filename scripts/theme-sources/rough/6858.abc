@@ -1,0 +1,12 @@
+X:6858
+%%from mtd
+T:Fruhlingsteimmen, Op. 410, Waltz, 2nd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8487, Barlow & Morgenstern S1249, EDM 6858 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=197
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+d z c | c2 F | d z c | c2 E | d z c | e3 | g2 B | A3 |

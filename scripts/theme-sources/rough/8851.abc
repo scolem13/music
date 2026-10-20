@@ -1,0 +1,10 @@
+X:8851
+%%from edm
+T:Peter Grimes: Four Sea Interludes, Op. 33a, 2nd Theme B
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% EDM 8851 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z4 ^A,8 =A,4- | A,12 E,2 z2 | z4 ^A,8 =A,4- | A,4 E,4 D4 ^C4 | z4 C8 B,4- | B,4 C4 B,4 E,2

@@ -3,6 +3,10 @@ title: "Formants: What Makes a Vowel"
 toc: true
 toc-depth: 2
 toc-title: "On this page"
+description: "What makes one vowel sound different from another: F1 and F2, the third formant, the singer's formant and formant tuning, heard on a synthesised voice."
+instruments: [voice]
+topics: [sound]
+has: [interactive]
 ---
 
 Sing *ee* and then *ah* on the same note. The pitch stays the same, yet anyone can hear which vowel is which. Your vocal folds make the same buzz both times; what changes is the shape of the tube above them, and that tube boosts some frequencies and damps others. The boosted regions are the **formants**, numbered from the bottom: F1, F2, F3 and so on. Two of them, F1 and F2, are enough to tell most vowels apart, and they line up closely with the vowel chart singers already use. This lesson takes you through them with a synthesised voice. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section and opens it.
@@ -255,3 +259,32 @@ Raise the pitch on [i] and listen to the vowels blur together above about 600 Hz
 })();
 </script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Formant." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Formant](https://en.wikipedia.org/wiki/Formant).
+
+Nave, Carl R. "The Singing Formant." *HyperPhysics*, Georgia State U, [hyperphysics.gsu.edu/hbase/Music/singfor.html](https://hyperphysics.gsu.edu/hbase/Music/singfor.html).
+
+Truax, Barry, editor. "Formant." *Handbook for Acoustic Ecology*, Simon Fraser U, [www.sfu.ca/sonic-studio-webdav/handbook/Formant.html](https://www.sfu.ca/sonic-studio-webdav/handbook/Formant.html).
+
+Wolfe, Joe, Maëva Garnier, and John Smith. "Voice Acoustics: An Introduction." *Music Acoustics*, U of New South Wales, [newt.phys.unsw.edu.au/jw/voice.html](https://newt.phys.unsw.edu.au/jw/voice.html). Formants, the F1–F2 vowel map, the singer's formant (2–4 kHz, F3–F5 clustered by lowering the larynx).
+
+**For teachers**
+
+Joliveau, Elodie, John Smith, and Joe Wolfe. "The Tuning of Vocal Tract Resonances by Sopranos." *Nature*, vol. 427, 2004, p. 116. Summary at [newt.phys.unsw.edu.au/jw/soprane.html](https://newt.phys.unsw.edu.au/jw/soprane.html). UNSW summary page read.
+
+McCoy, Scott. *Your Voice: An Inside View*. Inside View Press, 2004. Later editions 2012 and 2019.
+
+Sundberg, Johan. "The Acoustics of the Singing Voice." *Scientific American*, vol. 236, no. 3, 1977, pp. 82–91. [acousticslab.org/RECA220/PMFiles/PMDownloads/Sundberg1977_SingingVoice.pdf](https://acousticslab.org/RECA220/PMFiles/PMDownloads/Sundberg1977_SingingVoice.pdf). Citation confirmed from JSTOR listing and citing pages; the singer's formant at about 2–3 kHz.
+
+Sundberg, Johan. *The Science of the Singing Voice*. Northern Illinois UP, 1987. Details from library catalogue records.
+
+Titze, Ingo R. *Principles of Voice Production*. Prentice Hall, 1994. Reprinted by the National Center for Voice and Speech, 2000.
+:::
+<!-- /works-cited -->
+

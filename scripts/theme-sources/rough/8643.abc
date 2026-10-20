@@ -1,0 +1,10 @@
+X:8643
+%%from edm
+T:Sextet in B-flat, Op. 18, Str., 1st Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8643 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+a2a2 b2 b4 z2 | b2b2 c'2 c'4 z2 | c'2c'2 f'2 f'4 =e'2- | =e'2 b4 a4

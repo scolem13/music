@@ -1,0 +1,10 @@
+X:1223
+%%from edm
+T:Quartet in F, Op. 96, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1223 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+A4 =B4 _d4 B2A2 | =B2_gB A2G2 G8 | =B2 A4 _G2 EEA_d e4 | _g6 d2 _de e6 |

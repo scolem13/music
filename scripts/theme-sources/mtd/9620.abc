@@ -1,0 +1,11 @@
+X:9620
+T:L'Isle Joyeuse - 3rd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2611, Barlow & Morgenstern D43, EDM 9620 (Musical Theme Dataset, CC BY 4.0)
+M:3/8
+L:1/8
+Q:1/4=73
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+ba>b | ba>b | bab | c'e'a | ab>e' | e'f'>a |

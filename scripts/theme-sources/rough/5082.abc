@@ -1,0 +1,10 @@
+X:5082
+%%from edm
+T:Four-Part Fantasia, No. 1
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5082 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/2
+L:1/16
+K:Bb
+D12 C4 B,4 A,2G,2 B,4 C4 | D8 G,4 E6 D4<C4 =B,A, B,4 | C16

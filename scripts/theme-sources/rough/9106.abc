@@ -1,0 +1,10 @@
+X:9106
+%%from edm
+T:Poeme, Op. 25, Vn. and Orchestra - Intro
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9106 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+B,12 | =B,8 E4 | B12 | =B8 e4 | b12 | d'4 =b4 d'4 | b12 |

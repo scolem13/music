@@ -1,0 +1,10 @@
+X:3088
+%%from edm
+T:Concerto in E-flat, 2nd Movement, 1st Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3088 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+f4 =G8 | e4 =F4 =d4 | D4 E2EE GFED | G3G G2A2 B2c2 | d2dd2<d2G G4 |

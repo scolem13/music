@@ -1,0 +1,10 @@
+X:2121
+%%from edm
+T:Andante Religioso, 2nd Theme
+C:Johan Halvorsen
+%%composer Halvorsen|Johan
+% EDM 2121 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+F4 G4 A3B | B4 A2G2 z/2 A2-A/2G | F4 B4 c3d | d8

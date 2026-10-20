@@ -1,0 +1,10 @@
+X:4425
+%%from edm
+T:Sonata in C minor, K 457, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4425 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+z4 B4 B4 | B/2 z/2 (3cBA B3 c2 B4 | a8 d4 | f8 e4 |

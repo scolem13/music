@@ -1,0 +1,10 @@
+X:8380
+%%from edm
+T:Sonata No. 2 in C, 3rd Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8380 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G2 z/2 cB<cd/2 z/2 cB/2 | c3/2d/2c2 G2E2 | C2 z/2 ed<ef/2 z/2 ed/2 | e3/2f/2e2 c2

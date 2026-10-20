@@ -1,0 +1,12 @@
+X:2417
+T:Capriccio in G, Piano
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4078, Barlow & Morgenstern H297, EDM 2417 (Musical Theme Dataset, CC BY 4.0)
+N:1 "Acht Sauschneider müssen sein"  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=153
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+D | G G/A/B/G/ | A2 B/G/ | A2 B |{d} c B A | G2 |

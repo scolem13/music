@@ -1,0 +1,12 @@
+X:758
+T:Quartet in C-sharp minor, Op. 131, 6th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0752, Barlow & Morgenstern B654, EDM 0758 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio quasi un poco andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=51
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:B
+G | ^^F7/4 D/4 G | A B2 | B/>A/ G ^^F | G D |

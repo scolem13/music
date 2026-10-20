@@ -1,0 +1,13 @@
+X:931
+%%from mtd
+T:Sonata No. 23, in F minor, Op. 57, "Appassionata", Piano, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0925, Barlow & Morgenstern B807, EDM 0931 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:12/8
+L:1/16
+Q:1/4=159
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+C4- CA, | F,12- F,6 A,4- A,C | F6 A4- Ac f6 F6 | c6- c4 =d2{/c} d6- d2>c2=ed | c4 |

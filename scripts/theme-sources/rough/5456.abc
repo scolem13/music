@@ -1,0 +1,11 @@
+X:5456
+%%from edm
+T:Le Coq D'Or, Suite, 1st Movement - 3rd Theme
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% EDM 5456 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Db
+f4 a4 a4 | a8 g2f2 | b8 a2g2 | a8 a2g2 | f2g2 a4 a2b2 | a8 g2f2 | g2a2 b4

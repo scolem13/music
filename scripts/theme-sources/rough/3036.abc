@@ -1,0 +1,10 @@
+X:3036
+%%from edm
+T:Sonata in C, Op. 59, 4th Movement
+C:Vincent D'Indy
+%%composer D'Indy|Vincent
+% EDM 3036 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+G6 E4<F4 G2 | ^G6 e4<d4 c2 | B6 A4<G4 E2 | C2 D4 E2 G8 |

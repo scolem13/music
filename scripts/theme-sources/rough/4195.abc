@@ -1,0 +1,10 @@
+X:4195
+%%from edm
+T:Divertimento in F, K 247, 6th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4195 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c8 d6 e2 | e8 f4 z2 g2 | a6 e4<f4 g2 | f8 e4

@@ -1,0 +1,10 @@
+X:7574
+%%from edm
+T:Symphony No. 2, in C minor, Op. 17, 2nd Movement - 2nd Theme, Pt. 1
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7574 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+c4 e4 d4 c4 | G6 =A2 B4 G4 | c4 e4 d4 c4 | G6 =A2 B8 |

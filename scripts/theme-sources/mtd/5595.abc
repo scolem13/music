@@ -1,0 +1,12 @@
+X:5595
+T:Carnaval des Animaux, Kangorous
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7230, Barlow & Morgenstern S11, EDM 5595 (Musical Theme Dataset, CC BY 4.0)
+N:Kangourous  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=255
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+{/^F} G z{/=B} c z{/d} e z{/^f} g z |{/=b} c' z{/d'} e' z{/^f'} g' z{/d'} e' z | {/=b} c' z{/^f} g z{/d} e z{/=B} c z |[M:3/4] =A4 =a2 |

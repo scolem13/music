@@ -1,0 +1,10 @@
+X:1724
+%%from edm
+T:Concerto No. 2 in G, 3rd Movement
+C:King of Prussia Frederick II
+%%composer Frederick II|King of Prussia
+% EDM 1724 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+g4 B/2A/2G3 | d4 F/2E/2D3 | G2AB c2B2 | ce d4 z2 | e/2d/2c3 a4 | d/2c/2B3 g4 | c2ed c2B2 | A2

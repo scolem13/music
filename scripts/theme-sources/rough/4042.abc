@@ -1,0 +1,10 @@
+X:4042
+%%from edm
+T:Spanish Dances, Op. 12, No. 5, Bolero, 1st Theme
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4042 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+a4- a z/2 b<ag<fg<ef/2 | d4 A2 z2 d3-d/2e/2 | f4- f z/2 g<fe<dc<Bc/2 | A8

@@ -1,0 +1,10 @@
+X:3646
+%%from edm
+T:Woodland Sketches, Piano, Will O'the Wisp, Op. 51, No. 2
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3646 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:A
+C2 z2 C4 =C2^C2 D4 E2 | C2 z2 C4 =C2^C2 B,2 G,4 |

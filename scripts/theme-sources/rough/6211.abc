@@ -1,0 +1,10 @@
+X:6211
+%%from edm
+T:Concerto in A minor, Op. 54, 3rd Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6211 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+g4 z4 g4 | z4 g4 z2 a2 | g4 z4 f4 | z4 f4 z2 g2 | f4 z4 e4 | z4 e4 z2 f2 | ^d4 z4 c4 |

@@ -1,0 +1,12 @@
+X:3840
+T:Midsummer Night's Dream, Intermezzo, Op. 61, No. 5, 4th Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5492, Barlow & Morgenstern M230, EDM 3840 (Musical Theme Dataset, CC BY 4.0)
+N:Entr'acte  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=91
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+E/F/E/D/ CC | DD B,2 | CCA,A, | B,/A,/B,/C/ B,B, |

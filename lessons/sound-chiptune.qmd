@@ -170,4 +170,20 @@ want that sound.
 - [All the sound lessons](index.qmd)
 - [Sound 1: The harmonic series](sound-harmonics.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Chiptune." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Chiptune](https://en.wikipedia.org/wiki/Chiptune).
+
+"Ricoh 2A03." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ricoh_2A03](https://en.wikipedia.org/wiki/Ricoh_2A03).
+
+**For teachers**
+
+Collins, Karen. *Game Sound: An Introduction to the History, Theory, and Practice of Video Game Music and Sound Design*. MIT Press, 2008.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

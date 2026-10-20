@@ -1,0 +1,12 @@
+X:6928
+%%from mtd
+T:Wein, Weib und Gesang, Op. 333, Waltzes, No. 4
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8557, Barlow & Morgenstern S1319, EDM 6928 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=153
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+fc | e4 dA | c4 BA | G2 c2 c2 | c2 z2 e=B | d4 cG | B4 AG | F2 f2 f2 | f2 z2 |

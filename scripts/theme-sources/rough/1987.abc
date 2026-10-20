@@ -1,0 +1,10 @@
+X:1987
+%%from edm
+T:Concerto, Op. 16, 1st Movement - 1st Theme A
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 1987 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e4 f3g f2e2 z4 | e3f f2g2 e4 z4 | g4 a3b a2g2 z4 | g3a a2b2 g4

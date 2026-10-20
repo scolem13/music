@@ -1,0 +1,10 @@
+X:2188
+%%from edm
+T:Concerto Grosso in A minor, Op. 6, No. 4, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2188 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+A,8 C8 F8 | E12 F4 G8- | G8 F8 ^D8 | D12 E4 F4 D4 | E8

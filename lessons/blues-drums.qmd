@@ -151,3 +151,24 @@ without counting.
 ```{=html}
 <script>BluesLesson.init({ instrument: "drums", key: 5 });</script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Backbeat." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Backbeat](https://en.wikipedia.org/wiki/Backbeat).
+
+Shaffer, Kris, Bryn Hughes, and Brian Moseley. "The Blues Progression." *Open Music Theory*, Hybrid Pedagogy Publishing. [openmusictheory.github.io/popRockHarmony-blues.html](https://openmusictheory.github.io/popRockHarmony-blues.html).
+
+"Twelve-bar blues." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Twelve-bar_blues](https://en.wikipedia.org/wiki/Twelve-bar_blues).
+
+**For teachers**
+
+Levine, Mark. *The Jazz Theory Book*. Sher Music, 1995.
+
+Riley, John. *The Art of Bop Drumming*. Author, title and content confirmed from a retailer listing (ISBN 9780898988901); publisher and year not confirmed.
+:::
+<!-- /works-cited -->
+

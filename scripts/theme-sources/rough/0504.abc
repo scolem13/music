@@ -1,0 +1,10 @@
+X:504
+%%from edm
+T:Sonata No. 1, in G, 2nd Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0504 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:A
+z g g z/2 a3/2 g | z g gc'2 b | b/2 z/2 d'2 c'2 b | z/2 z/2 z/2 a/2 g

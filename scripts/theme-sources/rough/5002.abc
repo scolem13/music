@@ -1,0 +1,10 @@
+X:5002
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 2nd Movement - A Scene, 1st Theme B
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5002 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+A2d2 f2 z2 | f2f2 b2 z2 | f2e2 f2 z2 | f2f2 b2 z2 | f2e2d2f2 | b2a2 g2 z2 | d'2 z2 d'2 z2 | c'2b2 a2

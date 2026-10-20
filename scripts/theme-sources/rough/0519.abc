@@ -1,0 +1,10 @@
+X:519
+%%from edm
+T:Concerto in D minor - 1st Movement - Fugue
+C:Wilhelm Friedemann Bach
+%%composer Bach|Wilhelm Friedemann
+% EDM 0519 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+z2 D,E, F,2F,2 E,2E,F, G,2E,2 | F,2D,2 D4 G,4 C4 | F,4 B,4 E,4 A,4 | D,4 G,6 F,2 E,/2D,/2E,/2F,/2E,2 | D,4

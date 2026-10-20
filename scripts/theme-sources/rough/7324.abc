@@ -1,0 +1,11 @@
+X:7324
+%%from edm
+T:Sonatas, A minor, 2nd Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7324 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+a2a3/2a<ab<c'b/2 z/2 a2-a/2^g2<a2f | z/2 e2-e/2d z/2 c2-c/2B (3cBA A6 |

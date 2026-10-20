@@ -1,0 +1,10 @@
+X:7072
+%%from edm
+T:Sinfonia Domestica, Op. 53, 1st Movement - 1st Theme A
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7072 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+C,A,F,2 C,2D,2 | E,2F,2G,2_A,2 | A,DCG, F2ED | B4 A4 |

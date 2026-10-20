@@ -1,0 +1,13 @@
+X:7908
+%%from mtd
+T:Gotterdammerung, Siegfried's Funeral Music, 7th Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% MTD 9530, Barlow & Morgenstern W61, EDM 7908 (Musical Theme Dataset, CC BY 4.0)
+N:Dritter Aufzug. [Trauermarsch]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=39
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+_G2- (6:4:5GF/G/A/G/ e3 B | _d2 E4- EF | _G6 |

@@ -1,0 +1,10 @@
+X:3868
+%%from edm
+T:Quartet No. 1, in E-flat, Op. 12, 1st Movement - Intro
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3868 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+G8 _d6 c2 | c12 z4 | z2 F2 G2A2 A4 G2 z2 | c8 g6 _g2 | _g12

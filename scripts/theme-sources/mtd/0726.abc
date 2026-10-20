@@ -1,0 +1,13 @@
+X:726
+T:Quartet in C, Op. 59, No. 3 - 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0720, Barlow & Morgenstern B623, EDM 0726 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/CNXE42waoy8
+N:Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=294
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G4- GGAG | FE D2 z FGF | ED C2 z GAG | FEDE FDGF | ED C |

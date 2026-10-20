@@ -1,0 +1,13 @@
+X:2259
+%%from mtd
+T:Messiah, Overture, 2nd Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% MTD 3921, Barlow & Morgenstern H140, EDM 2259 (Musical Theme Dataset, CC BY 4.0)
+N:Sinfonia  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=177
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+z b g f/e/ | f B f T^g | a e (a2 | a/)b/=g/a/ f/ |

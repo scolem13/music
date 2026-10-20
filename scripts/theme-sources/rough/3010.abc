@@ -1,0 +1,10 @@
+X:3010
+%%from edm
+T:Histoires, No. 1, La Meneuse de Tortues D'Or (The Keeper of the Golden Tortoises)
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3010 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+d2a2 e4 f2g2 | z/2 f3/2e4<d4 e2- | e4 c2 Bcd2d2- | d6

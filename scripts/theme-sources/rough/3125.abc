@@ -1,0 +1,10 @@
+X:3125
+%%from edm
+T:Indian Dances, Butterfly Dance
+C:Frederick Jacobi
+%%composer Jacobi|Frederick
+% EDM 3125 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g2 z2 g8 | d2 z2 d8 | z/2 c3-c/2 c4 c4 | G12 | g2 z2 g8 | z/2 d3/2 z2 d8 | z/2 z/2 c3 c4 c4 | G12 |

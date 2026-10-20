@@ -1,0 +1,13 @@
+X:2414
+%%from mtd
+T:Andante and Variations, Op. 83, F minor, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4075, Barlow & Morgenstern H294, EDM 2414 (Musical Theme Dataset, CC BY 4.0)
+N:6  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=50
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+c'>c' | c'2a2 f2f>f | f2f>f f2f>f | f3g/a/{/c'} bagf | =e |

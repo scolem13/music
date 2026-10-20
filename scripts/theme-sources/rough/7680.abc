@@ -1,0 +1,10 @@
+X:7680
+%%from edm
+T:A London Symphony, 1st Movement - Intro.
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7680 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:G
+D,8 G,8 A,8 | D24- | D24 | D,8 G,8 A,8 | D4 E4 E16 |

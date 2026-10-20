@@ -1,0 +1,13 @@
+X:436
+%%from mtd
+T:Well-tempered Clavichord, Book I, Prelude No. 22
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0431, Barlow & Morgenstern B343, EDM 0436 (Musical Theme Dataset, CC BY 4.0)
+N:Præludium  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+z B/c/ dd dc/d/ ee | ed/e/ ff fe/f/ gg | gf/e/ f |

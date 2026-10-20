@@ -1,0 +1,10 @@
+X:4049
+%%from edm
+T:Adagio in B minor, K 540, Piano
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4049 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+B4 F2d2 d4 c2B2 | B4 ^A3/2e<cA/2 cBdc ed

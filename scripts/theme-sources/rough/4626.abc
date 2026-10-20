@@ -1,0 +1,10 @@
+X:4626
+%%from edm
+T:Trio in E, K 542, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4626 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+c2c2 e4 | B3/2A<Bc/2 F2G2 | A2B2c2A2 | d3/2e<cd/2 B2E

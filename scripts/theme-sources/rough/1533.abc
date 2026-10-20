@@ -1,0 +1,10 @@
+X:1533
+%%from edm
+T:Three dances, from El Sombrero de Tres Picos, Dance of the Neighbors, 1st Theme
+C:Manuel de Falla
+%%composer Falla|Manuel de
+% EDM 1533 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+z2 d'd' d'2d'2 e'3d' | c'2ab2<=c'2a2<b2a | g2ab2<a2f2<g2f | e3f/2e/2 d8 |

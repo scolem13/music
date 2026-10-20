@@ -1,0 +1,13 @@
+X:776
+%%from mtd
+T:Quintet in E-flat, Op. 16 (Piano, Ob., Cl., Hn. and Fg.), 1st Movement - Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0770, Barlow & Morgenstern B667a, EDM 0776 (Musical Theme Dataset, CC BY 4.0)
+N:Grave – Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=28
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B,/ | E7/2E/ G7/4E/4G7/4E/4 B,7/2B,/ E7/4B,/4E7/4B,/4 |[K:bass] G,2 B,4 A,/G,/F,/E,/ D,2 |

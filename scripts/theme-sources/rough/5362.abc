@@ -1,0 +1,10 @@
+X:5362
+%%from edm
+T:Quintet, in A, Op. 146, 1st Movement - 2nd Theme
+C:Max Reger
+%%composer Reger|Max
+% EDM 5362 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+a'4 g'4 f'4- | f'4 e'2^d'2 d'2c'2 | b4 g8 | c'4 f4 f4 | b8 g4 |

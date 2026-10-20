@@ -1,0 +1,11 @@
+X:5623
+%%from edm
+T:Concerto No. 3, in B minor, Op. 61, 2nd Movement - 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5623 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:F
+c'6 f6- | f2g2a2 c2d2f2 | e4- ef g6- | ga b8- bc' | d'6 a4 z2 | c'6 g4 z2 | a12 |

@@ -1,0 +1,10 @@
+X:4449
+%%from edm
+T:Sonata in C, K 336, (in One Movement)
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4449 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c4 c8 d3B | c6- cd e4 z4 | e4 e8 f3d | g6- gf e4

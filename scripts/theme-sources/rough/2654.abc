@@ -1,0 +1,10 @@
+X:2654
+%%from edm
+T:Symphony in A, No. 28, 4th Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2654 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:A
+A4 c2 B2c2d2 | c4 e2 d2e2f2 | e4 a2 g2a2b2 | a4

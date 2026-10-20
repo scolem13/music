@@ -1,0 +1,10 @@
+X:3952
+%%from edm
+T:Symphony No. 5, in D, Op. 107, 2nd Movement - 2nd Theme.
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3952 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d4 B4 c4 | B4 b4 a4 | z/2 g3-g/2 f4 e4 | d4 B4 d4 | A6 B2 c4 | B4 c4 d4 | e4 c4 B4 | A4

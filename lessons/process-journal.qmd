@@ -1,0 +1,102 @@
+---
+title: "Process 1: Keeping a Process Journal"
+toc: true
+toc-depth: 2
+description: "Documenting how a piece was made: what to capture (ideas, versions, tests, feedback, decisions and reasons), recordings named so they can be found, annotated screenshots and scores, a weak entry next to a strong one, and an entry builder."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [composing, research]
+has: [interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+A **process journal** is the record of how a piece of music was made: the ideas you had, what you tried, what you heard, what you changed, and why.
+The finished piece shows *what* you made. The journal shows *how you got there*, and in MYP and DP Music that is assessed as well as the piece.
+
+It is not a diary. "Today I worked on my song. It went well" tells a reader nothing. A useful entry lets someone else **see and hear** what you tried
+and **follow your reasons**.
+
+## 1. What to capture
+
+| Capture | Looks like | Why it matters |
+|---|---|---|
+| **Ideas** | a voice memo of a hummed tune, a chord loop, a lyric line, a rhythm on the desk, a photo of a sketch | shows where the piece came from |
+| **Versions** | *chorus v1, v2, v3*, each saved, not overwritten, with a line on what changed | shows that you explored, not just the result |
+| **Tests** | a recording of you or a player trying it, dated | shows how you found out what works |
+| **Feedback** | who said what ("Sam: the bridge is too long"), and what you did about it | shows you used it, or chose not to, and why |
+| **Decisions** | "I kept v2 **because** ..." | the most important line in any entry |
+| **Research** | a piece you listened to and what you took from it, with its source | links your choices to music you studied (see [Sources 1](sources-start.qmd)) |
+| **Reflection** | what you'd do differently, what you learned about yourself as a musician | the evaluating part of the work |
+
+<div class="cp-tip">
+<strong>Keep every version.</strong> The most common mistake is saving over the old file. Once v1 is gone, you can't show how far you came. Save
+a copy each time you make a real change.
+</div>
+
+## 2. A weak entry and a strong one
+
+::: {.ax-pair}
+::: {.cp-col}
+**Weak**
+
+> **12 Oct.** Worked on the chorus. Tried some different things and it sounds better now. Next time I'll do the verse.
+:::
+::: {.cp-col}
+**Strong**
+
+> **12 Oct. Chorus melody.** Tried three versions over C–G–Am–F
+> (`2026-10-12_chorus_v1.m4a`, `_v2`, `_v3`). v1 starts on the tonic and sounded flat; v2 jumps up to the high E on "hold" and sounded more like
+> arrival; v3 had the same jump but too many words. **Kept v2 because** the chorus needs to be higher than the verse and the jump puts the
+> stress on "hold". Played it to Mia: she said the last line was rushed (0:21 in v2). **Next:** slow the last line to half notes.
+:::
+:::
+
+The strong entry has: more than one version, named so they can be found; what each sounded like; a decision with **because**; feedback with a timestamp;
+a next step. It took about five minutes to write.
+
+## 3. Evidence other people can check
+
+- **Recordings.** Name files with the date, the section and the version: `2026-10-12_chorus_v2.m4a`. Then a reader can find "v2 at 0:21".
+  The [Timestamp Notes](/tools/timestamp-notes.qmd) tool can stamp the moments you want to talk about.
+- **Scores and screenshots.** Crop to what matters, and **annotate**: arrows, labels, and a sentence on why ("moved the melody up an octave so the
+  violin is heard over the piano"). A before and an after, side by side, shows a decision better than a paragraph does. More on this in
+  [Writing Music Down](notation-choices.qmd).
+- **Your own words.** Use the terms the subject uses (*motif*, *sequence*, *period*, *countermelody*, *texture*). They make your reasons precise.
+
+## 4. How often, and where
+
+A short entry **every working session** is better than a long one at the end, which you'd be writing from memory. Five minutes at the end of the
+lesson is enough.
+
+Paper notebook, a document, a slide deck, a folder of recordings with a text file: any of these work if your teacher agrees, as long as recordings and
+pages stay together and in date order. Many schools ask MYP arts students for a process journal in every unit. Check what yours expects.
+
+## 5. Write an entry
+
+Fill in the boxes for today's work. **Preview** checks for the parts a strong entry has; **Keep this entry** stores it in this browser,
+and **Download all** gives you every kept entry as one file to put in your journal.
+
+<div class="cp-try">
+<div class="cp-journal"></div>
+</div>
+
+## 6. For MYP and DP
+
+- **MYP:** the journal is where Criterion B (*Developing*) is shown: your practical exploration of ideas and your artistic intention.
+  [Process 2](process-crit-b.qmd) goes through it. It also feeds Criterion D (*Evaluating*): you can't reflect on your development without a record of it.
+- **DP:** the same habit supplies the evidence for the *Experimenting with music* report and the HL project: annotated scores, screenshots and
+  timestamped recordings, with reasons. See the [assessment guidance](https://dp-music.seancoleman.org/book/assessment-guidance.html) in the DP Music course book.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Coleman, Sean. "Assessment Guidance." *IB Music*, [dp-music.seancoleman.org/book/assessment-guidance.html](https://dp-music.seancoleman.org/book/assessment-guidance.html). A synthesis of the IB's DP Music Additional Guidance (2024) and the subject reports, Nov. 2022 to May 2025.
+
+**For teachers**
+
+International Baccalaureate Organization. *Arts Guide (for Use from September 2022/January 2023)*: "Arts Assessment Criteria: Year 5/Competent." Surrey Schools, [media.surreyschools.ca/media/Default/frf/8755/Grade%209%20and%2010%20Arts%20Criterion%20(1).pdf](https://media.surreyschools.ca/media/Default/frf/8755/Grade%209%20and%2010%20Arts%20Criterion%20(1).pdf). The guide's pages 47–50, as published by a school district; the criteria, descriptors and command terms quoted in Process 2.
+:::
+<!-- /works-cited -->

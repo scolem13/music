@@ -1,0 +1,10 @@
+X:5934
+%%from edm
+T:Quartet No. 8 in B-flat, Op. 168, 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5934 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f'16 | g'12 c'2d'2 | f'8 =e'4 _e'4 | d'16 | e'12 a2b2 | d'8 _d'4 c'4 | b12 =b4 | c'12

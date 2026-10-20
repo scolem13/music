@@ -1,0 +1,10 @@
+X:8031
+%%from edm
+T:Facade, Suite No. 2, Scotch Rhapsody, 1st Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8031 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+g'3/2a'<b'g'<a'f'<g'd'/2 | c'3/2b<ac'<d'_d'/2=d'2 | z/2 d''3/2gg aba2 | g2f2 e2de | f2

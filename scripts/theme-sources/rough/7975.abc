@@ -1,0 +1,10 @@
+X:7975
+%%from edm
+T:Mein Traum, Op. 151, No. 2, 1st Theme
+C:Emil Waldteufel
+%%composer Waldteufel|Emil
+% EDM 7975 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g4 f4 e4- | e12 | f4 e4 d4- | d12 | e4 f4 g4 | g4 g4 g4 | f6 g2 g4- | g4 f8 |

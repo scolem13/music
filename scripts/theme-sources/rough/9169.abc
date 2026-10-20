@@ -1,0 +1,11 @@
+X:9169
+%%from edm
+T:Concerto No. 2 in F minor, Op. 21, 2nd Movement
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9169 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Ab
+c'4 d'3c' b4 e'4 | a4 g3f g8 |

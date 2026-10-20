@@ -1,0 +1,13 @@
+X:808
+%%from mtd
+T:Sonata No. 4, in C, Op. 102, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0802, Barlow & Morgenstern B686a, EDM 0808 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio – Tempo d’andante – Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/16
+Q:1/4=34
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c2B2A2 G>A GG2A/B/ | cdecgg g4 e2 |

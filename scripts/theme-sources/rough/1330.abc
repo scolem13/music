@@ -1,0 +1,10 @@
+X:1330
+%%from edm
+T:Sonatina in G, Op. 100, 3rd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1330 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+z6 d2 d4 | d12 | z6 d2 d4 | E12 | D4 G4 B4 | A4 d4 e2d2 | d4 B8- | B4

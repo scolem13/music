@@ -1,0 +1,10 @@
+X:4818
+%%from edm
+T:Palestrina, Musical Legend, Prelude to Act. II, 1st Theme
+C:Hans Eric Pfitzner
+%%composer Pfitzner|Hans Eric
+% EDM 4818 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+z4 _D2=D2 E4 _G2=G2 | B16- | B2E2F2G2 A2B2E2=E2 | F2_G2=G2A2 G2_G2F2E2 |

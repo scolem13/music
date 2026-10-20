@@ -1,0 +1,10 @@
+X:8114
+%%from edm
+T:Trio in G minor, Op. 63, 4th Movement - 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8114 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+d'4 e'8 _g4- | _g4 a4 d8 | =e2_g2 =g4 a4 b4 | d'2c'2 a12 |

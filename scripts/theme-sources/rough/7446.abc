@@ -1,0 +1,10 @@
+X:7446
+%%from edm
+T:The River, 2nd Movement - 1st Theme (Hot Time in the Old Town Tonight)
+C:Virgil Thomson
+%%composer Thomson|Virgil
+% EDM 7446 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+b4 b4 b6 bb | c'2b2^a2b2 g4 z4 | d'4 d'4 d'6 d'd' | e'2d'2^c'2d'2 b4

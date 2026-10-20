@@ -1,0 +1,10 @@
+X:2867
+%%from edm
+T:Mathis der Mahler Symphony, 3rd Movement, 3rd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2867 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+f4- f^f^c^d2<^g2=g | ^a6 b2 B3^c | e3d g6 f2 | c^c^GE ^D4 =D4 |

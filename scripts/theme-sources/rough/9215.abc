@@ -1,0 +1,12 @@
+X:9215
+%%from mtd
+T:Mazurkas 1, Op. 6, No. 1
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2212, Barlow & Morgenstern C225, EDM 9215 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=129
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+F2- | (3FGF ^EFG>D | Cz/F/ A2 A2- | (3ABA GAB>F | Ez/A/ c2 c2 |

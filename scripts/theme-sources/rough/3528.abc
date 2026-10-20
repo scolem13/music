@@ -1,0 +1,10 @@
+X:3528
+%%from edm
+T:Sposalizio, Piano, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3528 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:E
+z4 B,4 C4 F,4 G,4 C,4- | C,4 D,6 G,2 F,4 B,,8 |

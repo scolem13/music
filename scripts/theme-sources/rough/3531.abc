@@ -1,0 +1,10 @@
+X:3531
+%%from edm
+T:Fountains at the Villa D'Este, Piano, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3531 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+G2 z2 A2 B2 z2 c2 | d2 z2 B2 f2 z2 e2 | d4 z2 B2

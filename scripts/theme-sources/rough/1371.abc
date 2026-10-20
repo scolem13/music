@@ -1,0 +1,10 @@
+X:1371
+%%from edm
+T:Trio in F minor, Op. 65, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1371 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+z4 A,8 A,4- | A,2 z2 A,6 =A,2 A,2B,2 | A,4 F4 E4 D4 | C4 B,4 A,4 _G,2=B,2 | B,2=B,4<_B,4 =B,2 _B,4 |

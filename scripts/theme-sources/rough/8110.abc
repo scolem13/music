@@ -1,0 +1,10 @@
+X:8110
+%%from edm
+T:Trio in G minor, Op. 63, 1st Movement - 2nd Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8110 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+z2 d2 d2d2 e4- | e2d2 _g2f2 a4 | f'12- | f'2c'2 e'2d'c' b2c'2 |

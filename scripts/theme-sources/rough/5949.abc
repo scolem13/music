@@ -1,0 +1,10 @@
+X:5949
+%%from edm
+T:Quartet No. 12 in C minor, 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5949 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+c'2=b2c'2 _b2=a2b2 | a2g2a2 g2g'2e'2 |

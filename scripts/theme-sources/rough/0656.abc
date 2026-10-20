@@ -1,0 +1,12 @@
+X:656
+%%from mtd
+T:Fur Elise, Piano
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0650, Barlow & Morgenstern B554, EDM 0656 (Musical Theme Dataset, CC BY 4.0)
+M:3/8
+L:1/16
+Q:1/4=76
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e^d | e^deB=dc | A2 z CEA | B z E^GB | c |

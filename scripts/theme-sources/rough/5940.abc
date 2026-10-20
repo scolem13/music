@@ -1,0 +1,10 @@
+X:5940
+%%from edm
+T:Quartet No. 9 in G minor, 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5940 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+G8 B8 | d12 =e2_g2 | g2 z2 a2 z2 b2 z2 c'2 z2 | d'4

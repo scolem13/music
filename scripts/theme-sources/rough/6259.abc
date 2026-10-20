@@ -1,0 +1,10 @@
+X:6259
+%%from edm
+T:Quartet in A minor, Op. 41, No. 1, 1st Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6259 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+a8 g2f2 | c'8 b2a2 | d'6 f'6- | f'4 d'4<c'4 | b6 d'6- | d'4 b4<a4 |

@@ -1,0 +1,14 @@
+X:5473
+%%from mtd
+T:Scheherezade, Op. 35, 1st Movement - The Sea and Sinbad's Ship, Intro. B
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% MTD 7108, Barlow & Morgenstern R338, EDM 5473 (Musical Theme Dataset, CC BY 4.0)
+N:The Sea and Sinbad's Ship  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=27
+K:G
+% Hand-corrected: MTD nests triplets inside triplets, which abcjs can't read. Same notes and timing, flattened:
+% inside the outer 3:2, e'2 keeps 2/3 and each inner triplet note 2/3 x 2/3 = 4/9 (so 9:4).
+e'8- (3:2:1e'2 (9:4:6d'e'd'c'd'c' (9:4:9bc'bac'e'g'f'e' | e'4 |

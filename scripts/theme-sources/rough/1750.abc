@@ -1,0 +1,10 @@
+X:1750
+%%from edm
+T:Sonata in C minor, 3rd Movement
+C:Baldassare Galuppi
+%%composer Galuppi|Baldassare
+% EDM 1750 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Eb
+g2 d2 e2 | g2 e2 d2 | g2 d2 c2 | g2 c2 =B2 | z A cf ac' | Gc =Bd c2 |

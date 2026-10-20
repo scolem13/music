@@ -1,0 +1,10 @@
+X:4022
+%%from edm
+T:Halka Overture, 4th Theme
+C:Stanislaw Moniuszko
+%%composer Moniuszko|Stanislaw
+% EDM 4022 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+d16 | A8 d8 | d12 c4 | G4 z4 c8 | c8 B8 | F8 G8 | A8- A2

@@ -1,0 +1,13 @@
+X:5551
+%%from mtd
+T:Symphony No. 3, in G minor, Op. 42, 4th Movement - 1st Theme
+C:Albert Roussel
+%%composer Roussel|Albert
+% MTD 7186, Barlow & Morgenstern R416, EDM 5551 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=147
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+b>g a>e g>d fd | e2 ge a2 b/g/b | d' z |

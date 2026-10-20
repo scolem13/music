@@ -1,0 +1,10 @@
+X:5917
+%%from edm
+T:Octet in F, Op. 166, 2nd Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5917 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+_a4 b3/2a/2 a2f'2_d'2 | _a4 b3/2a/2 a2f'2e'2- | e'4 d'4 e'2_g'3/2e'/2 | e'2_d'2c'3/2_a'/2 a'6 |

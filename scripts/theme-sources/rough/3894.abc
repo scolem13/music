@@ -1,0 +1,10 @@
+X:3894
+%%from edm
+T:Andante and Rondo Capriccioso, Op. 14, Rondo, 1st Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3894 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+e'^d'e'2b2 c'2b2g2 | a2g2e2 f2e2B2 | B^AB2^d2 BAB2f2 | B^AB2b2 g2f2

@@ -1,0 +1,13 @@
+X:5313
+%%from mtd
+T:Sonatine, 1st Movement - 2nd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6950, Barlow & Morgenstern R183, EDM 5313 (Musical Theme Dataset, CC BY 4.0)
+N:Modéré  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=52
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+B7 c | B7 c | B4- Bcec | A2Bc A2G2 | B4- Bcec | A2Bc A2G2 | F4 E4 |

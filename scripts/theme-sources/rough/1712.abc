@@ -1,0 +1,10 @@
+X:1712
+%%from edm
+T:Sarabande
+C:François Francœur
+%%composer Francœur|François
+% EDM 1712 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A4 d6 A2 | B6 B2 c4 | d4 e6 f2 | e8 A4 | a2g2f2e2d2c2 | B6 B2 c4- | c2d2 B/2c/2B/2c/2B/2c/2B/2c/2 B/2c/2B/2c/2A2 |

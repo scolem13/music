@@ -1,0 +1,13 @@
+X:486
+%%from mtd
+T:Well-tempered Clavichord, Book II, Prelude No. 22
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0480, Barlow & Morgenstern B392, EDM 0486 (Musical Theme Dataset, CC BY 4.0)
+N:Præludium  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=95
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+d/c/B/=A/ B F | G E C F | D B, |

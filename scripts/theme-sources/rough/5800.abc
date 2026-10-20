@@ -1,0 +1,13 @@
+X:5800
+%%from mtd
+T:Sonatas, Longo 413 in D minor, "Pastorale"
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% MTD 7433, Barlow & Morgenstern S214, EDM 5800 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=119
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+A | def eaA |{g} f3 e2 a | gb/a/g/f/ eg/f/e/d/ | d2 ^c- c2 |

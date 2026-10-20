@@ -1,0 +1,10 @@
+X:4211
+%%from edm
+T:Fantasia in F minor, K 608, 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4211 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+c4 B4 A4 | G4 d4 c4 | =B4 _B4 A4 | A3 z/2 B/2 G2

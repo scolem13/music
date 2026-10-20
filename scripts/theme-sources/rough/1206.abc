@@ -1,0 +1,10 @@
+X:1206
+%%from edm
+T:Concerto in A minor, Op. 53, 3rd Movement - 3rd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1206 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+d3e f2f2 | f2ef e2d2 | _d2=d2 e4 | d4

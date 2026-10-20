@@ -1,0 +1,10 @@
+X:8514
+%%from edm
+T:Intermezzo in A minor, Op. 76, No. 7, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8514 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e4 a4 g6 f2 | e6 ^d4<e4 d2 | e4 a4 g6 f2 | e6 ^d2 e4

@@ -1,0 +1,10 @@
+X:1470
+%%from edm
+T:The Wand of Youth, Suite No. 1, Op. 1a, Orchestra, Sun Dance
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1470 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+cdef g2c'2 a2b2 | g2 a4 f2 g2e2 | e2 f4 d2 e2c2 | c2d2e2f2g2a2 |

@@ -1,0 +1,11 @@
+X:3234
+T:Galanta Dances, Orchestra, Intro
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% MTD 4889, Barlow & Morgenstern K63, EDM 3234 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=51
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+^F7 E/F/ | G7 ^F/E/ | ^F7 E/F/ | G6- G/^F/E/D/ | E4 A,4- | A,8 |

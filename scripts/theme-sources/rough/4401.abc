@@ -1,0 +1,10 @@
+X:4401
+%%from edm
+T:Sonata in A minor, K 310, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4401 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+FAcf z/2 a2-a/2f c2c2- | cBAB2<B2c/2B/2 A2

@@ -1,0 +1,10 @@
+X:8523
+%%from edm
+T:Intermezzo in A, Op. 118, No. 2, 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8523 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+c'6 f'2 e'4 | d'4 c'4 b2d'2 | g'2f'2 b4 a2c'2 | f'2e'2a2g2e'2d'2 | b2g2

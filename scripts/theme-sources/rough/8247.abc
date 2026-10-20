@@ -1,0 +1,10 @@
+X:8247
+%%from edm
+T:L'Arlesienne Suite No. 1, Orchestra - Overture, 1st Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8247 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z8 c4 G4 | c6 z d e2 z d e2 z c | g6 z e f4 g4 | a2g2f2e2 d4 g4 | f2e2d2e2

@@ -1,0 +1,10 @@
+X:8874
+%%from edm
+T:Concerto No. 1 in G minor, 3rd Movement - 2nd Theme
+C:Max Bruch
+%%composer Bruch|Max
+% EDM 8874 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+a'16 | a12- a2g'2 | g'16- | g'8 f'4 e'4 | d'4 ^c'4 b6 a2 | a8 a8 | c'16 |

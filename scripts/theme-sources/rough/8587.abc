@@ -1,0 +1,11 @@
+X:8587
+%%from edm
+T:Quintet in F minor, Op. 34, Piano and Str., 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8587 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Ab
+c4 f6 g2 a2f2 | d2f4<c4 g2 a2f2 | d2f2g2e2 c2e2g2=d2 | G2=d2 g8

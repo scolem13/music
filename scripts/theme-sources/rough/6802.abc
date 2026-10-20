@@ -1,0 +1,11 @@
+X:6802
+%%from edm
+T:Sonata in D, 2nd Movement
+C:Karl Stamitz
+%%composer Stamitz|Karl
+% EDM 6802 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+d4 (3fed (3cde | d2 A4 G2 | g4 (3agf (3efg | f2 f4 e2 | d2 A4 ^A2 | Bd d4

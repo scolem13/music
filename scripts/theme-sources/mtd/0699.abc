@@ -1,0 +1,12 @@
+X:699
+T:Quartet in C minor, Op. 18, No. 4, 4th Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0693, Barlow & Morgenstern B597, EDM 0699 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=287
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+ef | gefd ecd=B |{/d} c=Bcd e=ef^f | g2 g2 g2 g2 | g6 |

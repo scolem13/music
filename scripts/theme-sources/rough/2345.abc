@@ -1,0 +1,10 @@
+X:2345
+%%from edm
+T:Suite No. 8, in F minor, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2345 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+z8 z2 c2 A2F2 | D4 d6 c3 BcB | A4

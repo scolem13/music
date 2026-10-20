@@ -1,0 +1,11 @@
+X:8309
+%%from edm
+T:Quartet, Str. - 4th Movement - 2nd Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8309 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+dc2B c2d2 | e4 dc2B- | B8- | B2

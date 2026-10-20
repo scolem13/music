@@ -1,0 +1,10 @@
+X:5192
+%%from edm
+T:Suite No. 2, Op. 17, 2nd Movement - Valse, 3rd Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5192 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+E8 D4- | D4 E8 | C12- | C4 E8- | E8 D4- | D4 E8 | =B,12- | =B,4 E8- | E8 B,4- | B,4 E8 |

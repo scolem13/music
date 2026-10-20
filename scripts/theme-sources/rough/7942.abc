@@ -1,0 +1,11 @@
+X:7942
+%%from edm
+T:Dolores Waltzes, Op. 170, No. 4, 1st Theme
+C:Emil Waldteufel
+%%composer Waldteufel|Emil
+% EDM 7942 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+F2 z2 f2 z2 F2f2 | _g2 z2 =g8 | _a2 z2 =a2 z2 a2c'2 | b2 z2 d6 d2 | a2 z2 g2 z2 _g2a2 | g2 z2 A4

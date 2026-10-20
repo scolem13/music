@@ -1,0 +1,10 @@
+X:5111
+%%from edm
+T:Suite in G minor, Air
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5111 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+BAG2d2A2 d2B2d2A2 | d2B2edc2 f2d2f2c2 | f2d2g2=e2 a2_g2d2ba | g_g

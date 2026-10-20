@@ -1,0 +1,10 @@
+X:2866
+%%from edm
+T:Mathis der Mahler Symphony, 3rd Movement, 2nd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2866 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:C
+z6 ^c12- | ^c16- c2- | ^c12 ^d6 | c12 ^c6 | e6 ^d12 | ^c6 d2c2d2 e2d2e2 | f12

@@ -1,0 +1,10 @@
+X:2329
+%%from edm
+T:Suite No. 4, in E minor, 2nd Movement, Allemande
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2329 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+e4 e4- edcB A2Bc | B3A G2E2 B3^c d2B2 | ^d3d2<e2

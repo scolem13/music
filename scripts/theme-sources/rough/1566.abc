@@ -1,0 +1,10 @@
+X:1566
+%%from edm
+T:Dolly, Op. 56, Piano, 4 Hands, Berceuse
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1566 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+b4 b4- | b2g2a2b2 | g2e2f2g2 | e4 B2 z2 | b4 b4- | b2g2a2b2 | g2e2e'2d'2 | c'4 b2

@@ -1,0 +1,10 @@
+X:6620
+%%from edm
+T:Symphony No. 2, in D, Op. 43, 1st Movement - 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6620 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+e'16- | e'8 (3d'4b4d'4 | e'12 z2 f'2 | d'4 a4 b4 z2 d'2 | c'4 ^g4 a4 f4 | b16 |

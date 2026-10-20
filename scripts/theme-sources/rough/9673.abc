@@ -1,0 +1,10 @@
+X:9673
+%%from edm
+T:Petite Suite, 2 Pianos - Ballet, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9673 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+e2 d2 d^c | e2 d4 | e2 d2 d^c | e2 d4 | eg g2 fb | gb b2 bd' | c'e' e'2 e'g' |

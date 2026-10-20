@@ -1,0 +1,13 @@
+X:3667
+%%from mtd
+T:Symphony No. 2, in C minor, 1st Movement - 2nd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5319, Barlow & Morgenstern M59, EDM 3667 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro maestoso. "Totenfeier". Mit durchaus ernstem und feierlichem Ausdruck  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=98
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+C8 | D4 F3 A | c4 G3 G | c4 (3z z c (3dc=B | cz/G/ C z |

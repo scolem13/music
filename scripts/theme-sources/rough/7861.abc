@@ -1,0 +1,10 @@
+X:7861
+%%from edm
+T:The Flying Dutchman, Overture, 2nd Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7861 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:F
+a12 g8 f4 | f8 c4 f4 A4 d4 | c8 A4 c4 f4 a4 | c'8- c'2d'2 c'8

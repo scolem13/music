@@ -1,0 +1,10 @@
+X:1377
+%%from edm
+T:Trio, Op. 90, 1st Movement - 1st Theme A
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1377 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:E
+B,8 | G8 | A8 | C8 | B,8- | B,4 A,4 | G,2 F,2 E,4- | E,2

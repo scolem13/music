@@ -1,0 +1,12 @@
+X:706
+T:Quartet in A, Op. 18, No. 5, 4th Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0700, Barlow & Morgenstern B603, EDM 0706 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=221
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+G4 | c4 | F4 | B4 | E2 A2- | A2 G2- | G F2 E- | E ^D F B |

@@ -1,0 +1,153 @@
+---
+title: "Seventh Chords: Practice for Chapter 8"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 8 of Hutchinson's Music Theory for the 21st-Century Classroom: the five seventh-chord qualities and their lead-sheet symbols, inversions, the IV/5 sus chord, and Roman numerals for diatonic seventh chords in major and minor."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=13"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+```
+
+This page goes with **Chapter 8, Seventh Chords** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/SeventhChords.html). Read each section
+there first; the book is the reference for the symbols used here. It builds on [Chapter 6, Triads](triads.qmd) and
+[Chapter 7, Roman Numerals](roman-numerals.qmd).
+
+Every drill grades each answer and has **Settings** (your teacher's link may set them; you can change them, and **Back to the link's
+settings** undoes it). They are also on the [Theory Drills](theory-drills.qmd) page. Typing is **case-sensitive**, as in the
+earlier chapters.
+
+## 8.1 The five seventh chords
+
+A seventh chord is a triad with one more third on top: root, third, fifth and **seventh**. Two things name it: the quality of the
+triad underneath, and the size of the seventh from the root.
+[Read 8.1](https://musictheory.pugetsound.edu/mt21c/SeventhChordsIntroduction.html) ·
+[musictheory.net: Seventh Chords](https://www.musictheory.net/lessons/45) ·
+[More Seventh Chords](https://www.musictheory.net/lessons/48) ·
+[Open Music Theory: Seventh Chords](https://viva.pressbooks.pub/openmusictheory/chapter/seventh-chords/)
+
+| Name | Triad | Root to seventh | Symbol on C | Notes | Other labels in the book |
+|---|---|---|---|---|---|
+| Major seventh | major | M7 | Cmaj7 | C E G B | CMaj7, CΔ7, CMM7 |
+| Major-minor (dominant) seventh | major | m7 | C7 | C E G B♭ | CMm7, Cdom7 |
+| Minor seventh | minor | m7 | Cm7 | C E♭ G B♭ | C-7, Cmm7 |
+| Half-diminished seventh | diminished | m7 | Cø7 | C E♭ G♭ B♭ | Cm7(♭5), C-7(-5), Cdm7 |
+| Fully-diminished seventh | diminished | d7 | C°7 | C E♭ G♭ B𝄫 | Cdim7, Cdd7 |
+
+**Typing a symbol:** the drill takes any label in the table. As with triads, a small root letter means minor: *c7* is C minor seventh,
+not C7. Type `#` and `b` for ♯ and ♭, `o` for °.
+
+<div class="drill" data-ex="seventh" data-settings="quals=maj7,dom7,min7,hdim7,dim7&roots=natural&inv=root&clef=treble"></div>
+
+The other way round: from the symbol to the notes. Type the four notes, root first.
+
+<div class="drill" data-ex="spell7" data-settings="quals=maj7,dom7,min7,hdim7,dim7&roots=any&inv=root"></div>
+
+::: {.callout-tip collapse="true"}
+## musictheory.net: Chord Identification, with seventh chords
+
+Under the gear icon, tick the seventh chords and untick the triads.
+
+<iframe class="dr-embed" src="https://www.musictheory.net/exercises/chord" title="musictheory.net Chord Identification" loading="lazy"></iframe>
+:::
+
+### Inversions
+
+A seventh chord has four notes, so it has three inversions: the third, the fifth or the seventh in the bass. On a lead sheet that is a
+slash chord (*Bm7/D*); with a Roman numeral the book writes /3rd, /5th or /7th, as in Chapter 7.
+[musictheory.net: Seventh Chord Inversion](https://www.musictheory.net/lessons/47)
+
+<div class="drill" data-ex="seventh" data-settings="quals=maj7,dom7,min7,hdim7,dim7&roots=any&inv=all&clef=treble,bass"></div>
+
+::: {.callout-tip collapse="true"}
+## musictheory.net: Chord Ear Training
+
+Hear the quality without seeing it. Under the gear icon choose the seventh chords.
+
+<iframe class="dr-embed" src="https://www.musictheory.net/exercises/ear-chord" title="musictheory.net Chord Ear Training" loading="lazy"></iframe>
+:::
+
+## 8.2 The IV/5 "sus" chord
+
+In popular music a IV triad over the 5th scale degree in the bass (*F/G* in C major) often stands in for V7: it has the dominant's bass
+and its pull to I, with a softer sound. The book's two examples:
+
+::: {.rn-quiz}
+<figure><figcaption>The Five Stairsteps, "O-o-h Child" (Stan Vincent), in A♭ major: D♭/E♭</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/gIsj8VxQNkw?start=38&end=49&rel=0" title="O-o-h Child" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>The Beatles, "The Long and Winding Road", in E♭ major: A♭/B♭</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/fR4HjTH_fTM?start=0&end=9&rel=0" title="The Long and Winding Road" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+[Read 8.2](https://musictheory.pugetsound.edu/mt21c/IVover5SusChord.html). Naming one is a slash chord, which the
+[triads drill](triads.qmd#inverted-triads-and-slash-chords) already practises.
+
+## 8.3 Roman numerals for diatonic seventh chords
+
+The numeral's case still gives the triad (capital major, small minor), and what follows gives the seventh: **7** a minor seventh,
+**M7** a major seventh, **ø7** half-diminished, **°7** fully diminished. So *V7* is a major triad with a minor seventh, *IVM7* a major
+triad with a major seventh.
+[Read 8.3](https://musictheory.pugetsound.edu/mt21c/RomanNumeralsOfDiatonicSeventhChords.html) ·
+[musictheory.net: Diatonic Seventh Chords](https://www.musictheory.net/lessons/46) ·
+[Roman Numeral Analysis: Seventh Chords](https://www.musictheory.net/lessons/49)
+
+| | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|---|
+| Major | IM7 | ii7 | iii7 | IVM7 | V7 | vi7 | viiø7 |
+| Minor | i7 | iiø7 | IIIM7 | iv7 | V7 | VIM7 | vii°7 |
+
+In minor, V7 and vii°7 take the raised 7th, as V and vii° did in Chapter 7.
+
+**Typing a numeral:** `IVmaj7` and `IVΔ7` work for IVM7, `h` for ø, `o` for °. For inversions type /3rd, /5th or /7th; if you
+know figured bass, 65, 43 and 42 (or 2) work too.
+
+<div class="drill" data-ex="rn7" data-settings="mode=major&most=3&inv=root&clef=treble"></div>
+
+<div class="drill" data-ex="rn7" data-settings="mode=minor&most=3&inv=root&clef=treble,bass"></div>
+
+Write the chord from its numeral (the book's exercise 2):
+
+<div class="drill" data-ex="rn7write" data-settings="mode=both&most=4&inv=root"></div>
+
+## 8.4 Everything together
+
+The book's exercise 1: lead-sheet symbols and Roman numerals, inversions included. Set **Questions** to 20 for a score.
+[Practice exercises with answers (8.4)](https://musictheory.pugetsound.edu/mt21c/SeventhChordsExercises.html)
+
+<div class="drill" data-ex="seventh" data-settings="quals=maj7,dom7,min7,hdim7,dim7&roots=any&inv=all&clef=treble,bass"></div>
+
+<div class="drill" data-ex="rn7" data-settings="mode=both&most=5&inv=all&clef=treble,bass"></div>
+
+<div class="drill" data-ex="rn7write" data-settings="mode=both&most=5&inv=all"></div>
+
+Exercise 3 asks for symbols and numerals in two real excerpts. Listen first, then do it on paper with the book's score, and check the answer
+on its page:
+
+::: {.rn-quiz}
+<figure><figcaption>TLC, "No Scrubs" (1999)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/FrLequ6dUdM?start=8&end=19&rel=0" title="No Scrubs" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Mozart, Piano Sonata in C major, K. 545, I</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/5NkzTTkqTB4?start=0&end=8&rel=0" title="Sonata K. 545, I" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+- **Symbols the drills accept:** every label in the book's Figure 8.1.2 (maj7, Maj7, M7, Δ7, MM7; 7, Mm7, dom7; m7, -7, mm7; ø7, m7♭5, -7(-5), dm7; °7, dim7, dd7). A small root letter means minor, so *c7* is Cm7 and *cmaj7* is refused.
+- **Numerals:** the book's /3rd, /5th, /7th, and also 65, 43, 42 and 2. A numeral without a 7 counts as a triad and is marked wrong.
+- **Minor keys:** the drills use the book's minor table (i7 iiø7 IIIM7 iv7 V7 VIM7 vii°7); the other forms that raised 6ths and 7ths make are not drilled.
+- **MIDI:** the naming drills take a played chord (all four notes, lowest note = the bass). The writing drills need spelling, so they take typing only.
+- **Videos:** the clips use the book's YouTube links and start and end times. Each title was checked against YouTube.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

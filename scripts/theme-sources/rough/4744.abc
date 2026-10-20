@@ -1,0 +1,10 @@
+X:4744
+%%from edm
+T:Concerto in A minor, Op. 17, 1st Movement - 2nd Theme
+C:Ignace Jan Paderewski
+%%composer Paderewski|Ignace Jan
+% EDM 4744 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+G4 g4 ^f4 | f8 d4- | d4 c4 A4 | G8 G4 | G4 c4 e4 | e4 a8 | d6 e2 f4 | f4 e4

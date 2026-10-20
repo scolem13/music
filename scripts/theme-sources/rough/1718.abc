@@ -1,0 +1,10 @@
+X:1718
+%%from edm
+T:Sonata in D minor, 5th Movement - Rondeau
+C:François Francœur
+%%composer Francœur|François
+% EDM 1718 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+z2 G2A2B2 B2A2G2_G2 | G,2G2A2B2 B2A2G2_G2 | B,2G2A2B2 B2A2G2_G2 | G2_G2=G2A2 B2A2B2c2 | d2d2d2d2

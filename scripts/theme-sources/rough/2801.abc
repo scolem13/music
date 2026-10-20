@@ -1,0 +1,10 @@
+X:2801
+%%from edm
+T:Symphony in D, No. 104, 4th Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2801 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+^A16 | g8 f8 | e8 d8 | c8 B8 | A8 ^G8 | f8 e8 | d8 c8 | B8 A8 |

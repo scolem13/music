@@ -1,0 +1,10 @@
+X:4176
+%%from edm
+T:Divertimento in D, K 136, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4176 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+a16 | z/2 f6- f3/2 z/2 d6- d3/2 | cded cded cded cdec | d4

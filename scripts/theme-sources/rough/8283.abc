@@ -1,0 +1,10 @@
+X:8283
+%%from edm
+T:Symphony No. 1 in C, 4th Movement - 3rd Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8283 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+d4<b4 | z/2 c'3/2b2 a2 z2 | d2d2^f2a2 | c'2e'2d'2g'2 |

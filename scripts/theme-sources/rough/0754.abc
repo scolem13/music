@@ -1,0 +1,14 @@
+X:754
+%%from mtd
+T:Quartet in C-sharp minor, Op. 131, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0748, Barlow & Morgenstern B650a, EDM 0754 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+% More than one voice in the score: the melody (voice 1) only. All voices: scripts/theme-sources/mtd-two-voice/0754.abc
+M:4/4
+L:1/4
+Q:1/4=112
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+z F c z | z/ F/4G/4 ^A/B/ c z | =G |

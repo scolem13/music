@@ -1,0 +1,11 @@
+X:8087
+%%from edm
+T:Oberon, Overture, 3rd Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8087 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+^de c'4 b2 B=d a4 ^g2 | ^GB f6 ed =c4 ^c2 |

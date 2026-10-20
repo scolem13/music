@@ -1,0 +1,10 @@
+X:2553
+%%from edm
+T:Quartet in C, Op. 74, No. 1, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2553 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c8 d4 B4- | B4 c4 ^c4 d4- | d4 ^d4 e4 z/2 f/2g/2f/2g/2f/2g/2f/2 | g/2f/2g/2f/2g/2f/2g/2<f/2 e4

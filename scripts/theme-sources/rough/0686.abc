@@ -1,0 +1,13 @@
+X:686
+%%from mtd
+T:Quartet in G, Op. 18, No. 2, 3rd Movement - 2nd Theme - Trio
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0680, Barlow & Morgenstern B584, EDM 0686 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo, Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=130
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G, | C3 | D D TD/C/4D/4 | E E TD/D/4E/4 | F z |

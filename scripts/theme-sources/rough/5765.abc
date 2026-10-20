@@ -1,0 +1,10 @@
+X:5765
+%%from edm
+T:Trois Petites Pieces Montees (after Rabelais), De L'Enfance de Pantagruel
+C:Erik Satie
+%%composer Satie|Erik
+% EDM 5765 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+F,4 E,2F,2 G,4 | F,2G,2 A,4 C4 | B,2A,2 G,4 F,4 | G,2C2 D4 C2

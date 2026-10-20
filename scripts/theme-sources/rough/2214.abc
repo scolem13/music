@@ -1,0 +1,10 @@
+X:2214
+%%from edm
+T:Concerto Grosso in C minor, Op. 6, No. 8, 6th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2214 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G2c2 c=Bc2 G4 | g2fe d2c2 =Bcd2 | e2dc B2A2 GAB2 |

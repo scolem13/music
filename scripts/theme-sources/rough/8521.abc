@@ -1,0 +1,11 @@
+X:8521
+%%from edm
+T:Intermezzo in A minor, Op. 118, No. 1, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8521 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+c'8<^a8 | a4 z12 | a8<g8 | f4 z12 | f4 e8 ^d4 | B4 d8 c4 |

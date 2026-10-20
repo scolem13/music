@@ -1,0 +1,10 @@
+X:3485
+%%from edm
+T:Mazeppa, Transcendental Etude No. 4, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3485 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d8 d6 c2 | B8 B6 B2 | A6 A4<_g4 A2 | c8 B4

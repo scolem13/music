@@ -1,0 +1,13 @@
+X:7646
+%%from mtd
+T:Fandanguillo, Guitar, 2nd Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% MTD 9271, Barlow & Morgenstern T302, EDM 7646 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/1Tqh6_e_X5s?t=2m28s
+M:3/4
+L:1/8
+Q:1/4=59
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+AB ^cd c^B | ^ce c^f c2 | AB ^ce c^B | ^c^f c=g c2 |

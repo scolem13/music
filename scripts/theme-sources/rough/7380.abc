@@ -1,0 +1,10 @@
+X:7380
+%%from edm
+T:Suite in A minor, Overture, 2nd Theme
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7380 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+a4 b4 c'4 b2c'2 | d'4 c'2b2 c'4 a4 | c'8 b8 | c'4 b2a2 b8 |

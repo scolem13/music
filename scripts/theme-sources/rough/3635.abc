@@ -1,0 +1,10 @@
+X:3635
+%%from edm
+T:Suite No. 2 (Indian), 1. Legend, Intro
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3635 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+B16 | G2E2 z4 B4 G4 | E12 z4 | B,8 D8 | E8 F4 D2 z2 | E12

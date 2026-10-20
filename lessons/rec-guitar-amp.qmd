@@ -1,0 +1,108 @@
+---
+title: "Recording 4: Miking a Guitar Amp"
+toc: true
+toc-depth: 2
+description: "Which mic, where on the speaker, how far, at what angle; a room mic, two mics and their phase; DI and re-amping."
+instruments: [guitar, bass]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A guitar amp's sound is mostly its **speaker**: little above 5–6 kHz comes out of one at all, and what
+does changes a lot across its face. So the first decision is not which mic, but where to put it.
+
+## Which mic
+
+- **Dynamic** (the SM57 type): the usual first choice. Takes any level, sounds right close up, its lift
+  around 4–6 kHz helps a guitar cut through. Cheap enough to own two.
+- **Ribbon**: darker and smoother; takes the fizz off a distorted amp. A figure-8, so its back hears the
+  room (or the ceiling) as much as its front hears the speaker. Some ribbons can't take a loud amp
+  close up; check the manual, and never send them phantom power from a miswired cable
+  ([Recording 2](rec-mics.qmd)).
+- **Condenser** (large diaphragm): detailed and open, best a little back from the amp, or as a room mic.
+- **Two at once**: a dynamic and a ribbon side by side on the same speaker, blended, is a classic.
+
+<div class="gear-fig" data-fig="amp-miking"></div>
+
+## Where on the speaker
+
+Shine a torch through the grille cloth to find the speaker and its dust cap. In a cabinet with several
+speakers, listen to each with your ear close (at low volume) and pick the best-sounding one; they
+are rarely identical.
+
+<div class="gear-fig" data-fig="speaker-zones"></div>
+
+- **On the dust cap**: brightest, most bite, can be harsh or fizzy.
+- **At the cap's edge**: bright and full. Start here.
+- **On the cone**: warmer and rounder.
+- **Near the edge**: dark and woolly, rarely what you want.
+
+A centimetre matters. Have someone move the mic while you listen in closed headphones in another room.
+
+## Distance and angle
+
+- **Close (1–5 cm from the grille cloth)**: the speaker's own sound, little room, and the most proximity
+  bass. Most rock and pop guitar is recorded like this.
+- **Further back (20–60 cm)**: the speaker's sound "comes together"; the room starts to join in.
+- **Angled** 30–45°: a little darker, less fizz, without moving across the speaker. Try it before reaching
+  for the EQ.
+
+Drag the mic across the speaker, then change the distance, angle, mic and room:
+
+<div class="rk" data-w="ampmic"></div>
+
+## A room mic, and two mics
+
+A second mic 1–2 m back (a condenser, or a ribbon) records the amp in the room. Blend a little under
+the close mic for size. Two mics on one amp are two distances, so check their **phase**: flip the
+polarity of one and keep whichever sounds fuller, and keep two close mics the same distance from the
+speaker ([Recording 3: Phase](rec-placement.qmd#phase)). An open-back combo can be miked from behind
+as well; the back mic faces the other way, so flip its polarity.
+
+## Volume
+
+The amp doesn't need to be loud to sound good on a mic. Many amps sound best with their power section
+working, but a small amp turned up often records better than a big one turned down. Loud amps go in
+another room, or facing a wall with a blanket over them and the mic, so they don't bleed into everything
+else ([Recording 3: Bleed](rec-placement.qmd#bleed)).
+
+## DI and re-amping
+
+Record a **DI** of the guitar (straight from the guitar through a DI box or the interface's instrument
+input) at the same time as the mic. Later the clean DI can be sent back out to an amp (**re-amping**, through
+a re-amp box) or into an amp simulator, if the sound you chose doesn't fit the mix. Bass is usually
+recorded with a DI and a mic on the cab, blended.
+
+## Next
+
+- [Recording 5: Miking a Voice](rec-voice.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=3"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=5"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Re-amping." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Re-amping](https://en.wikipedia.org/wiki/Re-amping).
+
+White, Paul. "Recording Electric Guitar." *Sound On Sound*, Dec. 2002. [www.soundonsound.com/techniques/recording-electric-guitar](https://www.soundonsound.com/techniques/recording-electric-guitar).
+
+White, Paul. "Two-mic Guitar Tracking." *Sound On Sound*, Oct. 2021. [www.soundonsound.com/techniques/two-mic-guitar-tracking](https://www.soundonsound.com/techniques/two-mic-guitar-tracking).
+
+**For teachers**
+
+Bartlett, Bruce, and Jenny Bartlett. *Practical Recording Techniques: The Step-by-Step Approach to Professional Audio Recording*. 7th ed., Routledge, 2017. Details from the Routledge listing.
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Owsinski, Bobby. *The Recording Engineer's Handbook*. 5th ed., BOMG Publishing, 2023. Details from retailer listings.
+:::
+<!-- /works-cited -->
+

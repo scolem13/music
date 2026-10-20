@@ -1,0 +1,10 @@
+X:2613
+%%from edm
+T:Quartet in G, Op. 77, No. 1, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2613 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+d'8 ^c'4 d'4 | e'4 f'4 g'4 ^c'4 | d'8 ^c'8 | b8- b2^c'2d'2b2 | a12 g2e2 | d2

@@ -1,0 +1,10 @@
+X:281
+%%from edm
+T:Sonata No. 2 in A, Vn. and Piano, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0281 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:A
+A4 E2 FG2<G2F/2G/2 | A2G2A2 B2c2B2 | d2cBe2

@@ -1,0 +1,12 @@
+X:4343
+T:Serenade in D, K 250, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5992, Barlow & Morgenstern M717, EDM 4343 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro maestoso - Allegro molto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=177
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d'2 z D EFGA | BGed cABc | d2 |

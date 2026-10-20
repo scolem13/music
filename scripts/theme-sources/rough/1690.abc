@@ -1,0 +1,10 @@
+X:1690
+%%from edm
+T:Sonata, Vn. and Piano, 1st Movement - 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1690 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:A
+b2a2g4<g4 f6 | =g4 B4<B4 A6 | d'2=c'2b4<b4 a6 | ^a4 d4<d4 =c6- | =c6

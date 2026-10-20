@@ -1,0 +1,13 @@
+X:3682
+%%from mtd
+T:Symphony No. 4, in G, 1st Movement - Intro
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5334, Barlow & Morgenstern M74, EDM 3682 (Musical Theme Dataset, CC BY 4.0)
+N:Bedächtig. Nicht eilen - Recht gemächlich  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=91
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+{/g} f{/g}f{/g}f{/g}f{/g} f{/g}f{/g}f{/g}f |{/g} f/g/f/g/ fB{/g} f/g/f/g/ fB/b/ | f |

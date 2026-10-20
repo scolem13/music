@@ -1,0 +1,10 @@
+X:5913
+%%from edm
+T:Nocturne in E-flat, Op. 148, 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5913 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g3-g/2a/2 b4 z4 | e'3-e'/2a/2 b4 z4 | g3-g/2b/2 a4 z4 | b3-b/2f/2 g4

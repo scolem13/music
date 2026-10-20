@@ -1,0 +1,10 @@
+X:8599
+%%from edm
+T:Quintet in F, Op. 88, 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8599 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g2=f2 d4 (3d2f2^f2 | g2=f2 d4 (3d2f2^f2 | g2^a4<a4 b2 | b2c'2 b2a2 g4 |

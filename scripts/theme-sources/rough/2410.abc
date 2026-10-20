@@ -1,0 +1,10 @@
+X:2410
+%%from edm
+T:Symphony No. 3, 5th Theme
+C:Roy Harris
+%%composer Harris|Roy
+% EDM 2410 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z8 D,4 A,2^F,2 | ^D,2 z2 C2^G,2 D,2 z2 C4 | ^D6 C2 ^G,4 ^D,4 | E,8- E,2

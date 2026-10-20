@@ -1,0 +1,12 @@
+X:3697
+T:Symphony No. 4, in G, 4th Movement - 3rd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5349, Barlow & Morgenstern M89, EDM 3697 (Musical Theme Dataset, CC BY 4.0)
+N:Sehr behaglich. "Wir genießen die himmlischen Freuden"  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=77
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z4 E/F/G/A/{GA} (3GFE | B>G B2 c>G c2 | (3cde{ef} (3edc B>G B2 |

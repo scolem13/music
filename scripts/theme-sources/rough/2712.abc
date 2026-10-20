@@ -1,0 +1,10 @@
+X:2712
+%%from edm
+T:Symphony in D, No. 93, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2712 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+e8 c2A2 | A2^G2 G4 E4 | A2^G2A2B2c2d2 | B4 E4 f2e2 | e8 c2A2 | A2^G2 G4 E4 |

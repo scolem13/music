@@ -1,0 +1,11 @@
+X:8213
+%%from edm
+T:Fantastic Symphony, Op. 14, 4th Movement - 2nd Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8213 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+B4 B8 c4 | d8 e3d2<c2e | d3c2<d2e d4 e4 | g4 f8

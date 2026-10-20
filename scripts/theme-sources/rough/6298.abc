@@ -1,0 +1,10 @@
+X:6298
+%%from edm
+T:Quintet in E-flat, Op. 44, 2nd Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6298 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+z2 c4<d4 c2=B2c2 | f2a2g2c4<d4 c2 | =B2c2g2_b2 a2f2 g4 |

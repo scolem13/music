@@ -1,5 +1,5 @@
 const fs = require("fs"), vm = require("vm"), assert = require("assert");
-vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/voicings.js", "utf8"));
+vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/voicings.js"), "utf8"));
 const CV = ChordVoicings, mod12 = n => ((n % 12) + 12) % 12;
 // [name, intervals, third, seventhOrSixth (null for triads), hasRootInRootless]
 const Q = [["maj7",[0,4,7,11],4,11,0],["7",[0,4,7,10],4,10,0],["m7",[0,3,7,10],3,10,0],["m7b5",[0,3,6,10],3,10,1],["dim7",[0,3,6,9],3,9,1],
@@ -58,7 +58,7 @@ for (const [qn, ivs, third, seventh, rootless] of Q) for (let root = 0; root < 1
   }
 }
 // spot checks against the band engine's own table (BandHarmony.voicing, with prev = null)
-const band = {}; vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/harmony.js", "utf8"));
+const band = {}; vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/band/harmony.js"), "utf8"));
 let agree = 0, differ = [];
 for (const [qn, ivs] of Q) for (let root = 0; root < 12; root++){
   const sym = ["C","Db","D","Eb","E","F","Gb","G","Ab","A","Bb","B"][root] + ({maj7:"maj7","7":"7",m7:"m7",m7b5:"m7b5",dim7:"dim7","6":"6",m6:"m6","9":"9","13":"13","7b9":"7b9","7#9":"7#9",sus4:"sus4",maj:"",min:"m"}[qn] ?? "?");

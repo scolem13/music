@@ -1,0 +1,10 @@
+X:2905
+%%from edm
+T:Trauermusik, 4th Movement, choral, Fur deinen Thron Tret'lch Hiermit
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2905 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+A4 A8 | ^G4 ^F8 | E4 A4 B4- | B4 ^c8 |

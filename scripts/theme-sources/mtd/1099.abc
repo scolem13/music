@@ -1,0 +1,12 @@
+X:1099
+T:Symphony No. 6, in F, Op. 68, 3rd Movement - 1st Theme A
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1093, Barlow & Morgenstern B975, EDM 1099 (Musical Theme Dataset, CC BY 4.0)
+N:Lustiges Zusammensein der Landleute: Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=297
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c | f c d | c A B | A F G | A F G |{/F} A F G |{/D} F D E |{/A,} D A, A, | A, |

@@ -1,0 +1,12 @@
+X:6508
+T:Symphony No. 7, Op. 60, 1st Movement - 3rd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8139, Barlow & Morgenstern S905, EDM 6508 (Musical Theme Dataset, CC BY 4.0)
+N:War: Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=125
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E2 F3/2 E/ | B B z2 | F2 G3/2 F/ | C C z2 | E2 F3/2 E/ | c c z f | e d c B | A A |

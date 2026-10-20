@@ -1,0 +1,10 @@
+X:547
+%%from edm
+T:Adagio for Strings, Op. 11
+C:Samuel Barber
+%%composer Barber|Samuel
+% EDM 0547 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/2
+L:1/16
+K:Db
+B16- B4 =A4 B4 c4 | =A4 B4 c4 B4 c4 d4 B4 c4 | d4 c4 d4 e4 c16- | c8

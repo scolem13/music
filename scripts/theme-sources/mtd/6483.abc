@@ -1,0 +1,12 @@
+X:6483
+T:Symphony No. 5, Op. 47, 1st Movement - 1st Theme A
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8114, Barlow & Morgenstern S880, EDM 6483 (Musical Theme Dataset, CC BY 4.0)
+N:Moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=40
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z4 z2 z z/ d/ _b4- b7/2a/ | ^c4- c7/2=c/ g4- g7/2^f/ | ^d2 z2 =d3c/_B/ c3B/A/ B3A/G/ | A2 z2 A2A2 A2 z2 |

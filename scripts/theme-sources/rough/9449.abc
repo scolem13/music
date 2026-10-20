@@ -1,0 +1,10 @@
+X:9449
+%%from edm
+T:Concerto Grosso in G minor, Strings and Harpsichord, Op. 6, No. 8, Christmas Concerto, 1st Movement - Intro
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9449 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+b4 z2 g_g =gabg | c'4 z2 g_g =gabg | d'4 d'4 z2 d'2 | d'4 g4 c'4 | c'8 b4 |

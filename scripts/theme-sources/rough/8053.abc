@@ -1,0 +1,10 @@
+X:8053
+%%from edm
+T:Concertstuck, Op. 79, 3rd Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8053 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+g4 g3g g4 g4 | c'12 b3a | a2g2 f3e e4 e3d | c12

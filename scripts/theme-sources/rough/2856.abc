@@ -1,0 +1,10 @@
+X:2856
+%%from edm
+T:Mathis der Mahler Symphony, 1st Movement, Concert of Angels, Intro
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2856 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/4
+L:1/16
+K:C
+A12 ^A16 ^d8- | ^d4 =d32 | e12 f12 ^a4 =a6

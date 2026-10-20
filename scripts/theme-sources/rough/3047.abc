@@ -1,0 +1,10 @@
+X:3047
+%%from edm
+T:Symphony on a French Mountain Theme, Op. 25, 3rd Movement, 2nd Theme
+C:Vincent D'Indy
+%%composer D'Indy|Vincent
+% EDM 3047 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+f4 e4- | e4 c4 | d4 f4 | e8 | c4 d4 | c4 B4 | c4 A4 | =c4 B4- | B4

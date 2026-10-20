@@ -1,0 +1,10 @@
+X:2313
+%%from edm
+T:Sonata in D, Op. 1, No. 13, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2313 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d3A2<d2F2<E2c | d3A2<d2F2<E2c | def2 f4 g4 | fga2 a4 b4 |

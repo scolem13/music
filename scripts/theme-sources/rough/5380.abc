@@ -1,0 +1,10 @@
+X:5380
+%%from edm
+T:Adagio con Variazioni
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5380 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:B
+B6 c4<d4 f2 | g4 f6 e2 d4 | c6 d4<e4 f2 | g8 g2a2b2a2 | c'4 b4

@@ -1,0 +1,10 @@
+X:7140
+%%from edm
+T:Chant du Rossignol, 3rd Movement - Jeu du Rossignol Mecanique, 2nd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7140 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D2^C2 D4 E4 D2C2 | B,8 B,2^A,2 B,4 | C4 B,2^A,2 B,4 A,4 | B,8

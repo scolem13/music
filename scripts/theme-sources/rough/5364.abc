@@ -1,0 +1,11 @@
+X:5364
+%%from edm
+T:Quintet, in A, Op. 146, 2nd Movement - 2nd Theme
+C:Max Reger
+%%composer Reger|Max
+% EDM 5364 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+B8 d4 | g8 f4 | e8 d4 | ^c6 d2 B4 | A8 e4 | a8 g4 | f8 e4 | ^d8 c4 | B6

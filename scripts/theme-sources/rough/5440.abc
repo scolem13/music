@@ -1,0 +1,10 @@
+X:5440
+%%from edm
+T:Antar Symphony, Op. 9, 1st Movement - Intro, 2nd Theme
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% EDM 5440 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+c4 f6 g2 e2^d2 | c2G2A2G2 F2c2 ^d4- | ^d2d2 f4 c4 d4- | ^d2=c2 ^c8 G4 |

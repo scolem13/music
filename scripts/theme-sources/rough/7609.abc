@@ -1,0 +1,10 @@
+X:7609
+%%from edm
+T:Symphony No. 5, in E minor, Op. 64, 1st Movement - Intro.
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7609 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+G6 GG A6 GF | G8<E8 | B6 BB c6 BA | B4 G8 e4 | d4 c4 B4 A4 | G12 e4 | d4 c4 B4 A4 | G8

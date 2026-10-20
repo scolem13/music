@@ -1,0 +1,10 @@
+X:1798
+%%from edm
+T:Rhapsody in Blue, 5th Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1798 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+G4 A4 B4 B,4- | B,4 C4 D4 E4 | F16- | F16 | =G16- | =G16 | G16- | G16 |

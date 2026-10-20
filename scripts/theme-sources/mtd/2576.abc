@@ -1,0 +1,12 @@
+X:2576
+T:Quartet in G, Op. 76, No. 1, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4237, Barlow & Morgenstern H456, EDM 2576 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=205
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+af | e2 eg b2 ba | a4 d'2 af | e2 ef gfge | d4 A2 |

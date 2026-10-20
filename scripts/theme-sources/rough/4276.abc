@@ -1,0 +1,10 @@
+X:4276
+%%from edm
+T:Quartet in B-flat, K 458, 2nd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4276 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+B8 A4 | B4 c/2d/2c/2d/2c/2d/2B/2c/2 d3B | F8 g3f | f8

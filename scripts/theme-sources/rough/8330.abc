@@ -1,0 +1,10 @@
+X:8330
+%%from edm
+T:Suite, Viola and Orchestra, 2nd Movement - 3rd Movement
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8330 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 d'8- | d'4 b4 ^c'4 | d'2f'2 e'4 ^c'4 | d'4 b4 ^c'4 | ^g8

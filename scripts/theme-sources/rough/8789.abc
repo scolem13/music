@@ -1,0 +1,10 @@
+X:8789
+%%from edm
+T:Trio in A minor, Op. 114, Cl. or Viola, Cello and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8789 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+A4 c4 e4 a4 | g6 f2 e8- | e4 d2e2 c4 B4 | A8 E8 |

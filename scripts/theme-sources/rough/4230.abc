@@ -1,0 +1,10 @@
+X:4230
+%%from edm
+T:Marriage of Figaro, Overture, K 492, 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4230 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+e16 | ^d12 e4 | ^d12 e4 | f/2^g/2a3a2a2 a4

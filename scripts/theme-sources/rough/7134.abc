@@ -1,0 +1,10 @@
+X:7134
+%%from edm
+T:Capriccio, 3rd Movement - Coda
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7134 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+z4 G2B2 d2G2 | ^A2e2G2B2d2^G2 | d2e2A2c2=f2d2 |

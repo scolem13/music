@@ -1,0 +1,10 @@
+X:9332
+%%from edm
+T:Waltzes, Op. 18 in E-flat, C and D
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9332 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+g'8 =d'4 | e'4 a2a2 a4 | b'8 =g'4 | a'4 a2a2 a4 | a4 z4 a4 | z/2 a3-a/2 z2 g2 a4 | b4 z4 d'4 | g'12 |

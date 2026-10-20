@@ -1,0 +1,10 @@
+X:5850
+%%from edm
+T:Sonata in F, Op. 8, 4th Movement - 1st Theme
+C:Johann Schobert
+%%composer Schobert|Johann
+% EDM 5850 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f2c2 c4 z4 | d2c2 c4 z4 | f2c2 c4 z4 | b2a2 a4 z4 | f'4 a'g'f'e' d'c'=ba | g4 d'c'=ba gfed |

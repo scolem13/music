@@ -1,0 +1,12 @@
+X:8489
+T:Concerto in D, Op. 77, Vn. and Orchestra, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1492, Barlow & Morgenstern B1356, EDM 8489 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=81
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+D3 | F D B, | A,2 F, | A, D F | A2 F | D A, F | E3 |

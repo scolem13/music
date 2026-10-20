@@ -1,5 +1,5 @@
 const fs = require("fs"), vm = require("vm");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 for (const f of ["voicings.js", "band/harmony.js"]) vm.runInThisContext(fs.readFileSync(R + f, "utf8"));
 const H = BandHarmony, V = ChordVoicings, nn = H.noteName;
 for (const s of ["F7", "F13", "Bb7", "Cm7", "Bdim7", "Am7b5", "D7b9", "Fmaj7", "F6", "F", "Fm", "C7sus", "E7#9", "Caug", "G7alt", "C/E", "Fm6", "C9", "Gm11"]) {

@@ -1,0 +1,11 @@
+X:6824
+T:Perpetuum Mobile, Op. 257, Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8453, Barlow & Morgenstern S1215, EDM 6824 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=159
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+bgec | BPBAB | BPBGB | BPBFB | GA=AB | =Bc^cd |

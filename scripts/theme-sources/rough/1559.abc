@@ -1,0 +1,10 @@
+X:1559
+%%from edm
+T:A Toye, Fitzwilliam Virginal Book No. 270, Harpsichord
+C:Giles Farnaby
+%%composer Farnaby|Giles
+% EDM 1559 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+E4 E4 A8 | ^G4 E4 E8 | E4 E4 c8 | B4 E4 E8 | G4 G4 e8 | d4 G4 G6 AB | c4

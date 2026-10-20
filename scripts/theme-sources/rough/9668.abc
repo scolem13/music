@@ -1,0 +1,11 @@
+X:9668
+%%from edm
+T:Petite Suite, 2 Pianos - Cortege - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9668 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+g3/2a/2g3 fef g3/2a/2g2 gabd' | c'3/2d'/2c'2 c'bab c'd'e'g' f'd'c'a |

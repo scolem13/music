@@ -1,0 +1,13 @@
+X:1093
+T:Symphony No. 6, in F, Op. 68, 1st Movement - 3rd Theme B
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1087, Barlow & Morgenstern B969, EDM 1093 (Musical Theme Dataset, CC BY 4.0)
+N:Erwachen heiterer Empfindungen bei der Ankunft auf dem Lande: Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 97 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/4
+L:1/8
+Q:1/4=113
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c'2 =ba | g2 fe | edcd | e2 |

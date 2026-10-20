@@ -1,0 +1,12 @@
+X:7181
+%%from edm
+T:Petrouchka, Danse Russe, 3rd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7181 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/AfKK_QmGU0g?t=58s
+%%repaired octave
+M:2/4
+L:1/16
+K:A
+e2a2 gfb2 | a2b2a2g2 | b4 g2c'2 | b2gf e4 |

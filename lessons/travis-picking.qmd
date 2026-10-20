@@ -176,4 +176,14 @@ Chicken pickin' is a cousin of Travis picking that sounds very different. It is 
 
 {{< include _arrange-kit.qmd >}}
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Merle Travis." *Country Music Hall of Fame and Museum*. [countrymusichalloffame.org/hall-of-fame/merle-travis](https://countrymusichalloffame.org/hall-of-fame/merle-travis).
+
+"Travis picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Travis_picking](https://en.wikipedia.org/wiki/Travis_picking).
+:::
+<!-- /works-cited -->
+
 {{< include _pick-kit.qmd >}}

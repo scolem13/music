@@ -1,0 +1,11 @@
+X:7222
+%%from edm
+T:Suite No. 2, 2nd Movement - Waltz
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7222 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f4 b6 f2 | a12 | g2=c'2 f'4 g2c'2 | z/2 a'3/2e'2 a'2e'2 a'4 | f4 b6 f2 | g12 |

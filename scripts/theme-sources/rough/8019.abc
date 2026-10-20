@@ -1,0 +1,11 @@
+X:8019
+%%from edm
+T:Facade, Suite No. 1, Polka, 2nd Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8019 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+A,2B,2 =D4 B,2A2 E4 | e'2=d'e' d'c'b2 e'2c'd' c'ba2 |

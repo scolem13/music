@@ -1,7 +1,7 @@
 // robustness: every tune in the library through buildForm + bass + comp without throwing
 const { mulberry32 } = require('./load.js'); const fs = require('fs'), vm = require('vm');
 const H = BandHarmony;
-const src = fs.readFileSync('/Users/sean.coleman/Projects/everything-music-site/apps/tunes/tunes-object.js', 'utf8');
+const src = fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/tunes/tunes-object.js"), 'utf8');
 const tunesObject = vm.runInNewContext(src + '\n;tunesObject');
 let tunes = []; for (const k in tunesObject) String(tunesObject[k]).split(/\n(?=X:)/).forEach(t => { if (/^X:/m.test(t)) tunes.push(t); });
 const why = {}; let n = 0, withChords = 0, bars = 0, bad = 0, evB = 0, evC = 0, meters = {}, rangeBad = 0, t0 = Date.now(), emptyForm = 0;

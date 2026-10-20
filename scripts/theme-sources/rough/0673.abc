@@ -1,0 +1,10 @@
+X:673
+%%from edm
+T:Prometheus, Op. 43, Overture, 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% EDM 0673 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+G4 c4 d4 | e3-e/2d/2 c4 z4 | d4 f4 fede | d8

@@ -1,0 +1,13 @@
+X:6512
+%%from mtd
+T:Symphony No. 7, Op. 60, 3rd Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8143, Barlow & Morgenstern S909, EDM 6512 (Musical Theme Dataset, CC BY 4.0)
+N:My Native Field. Adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=72
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+D6- | D2 f4- | fe fg f2- | fe fg e/f/d/e/ | c4 B2 | B6 |

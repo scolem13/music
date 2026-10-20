@@ -1,0 +1,10 @@
+X:8206
+%%from edm
+T:Fantastic Symphony, Op. 14, 1st Movement - 1st Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8206 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+g2 g12- g2- | g6 c'4 g6 | e'2 e'8 f'6- | f'8- f'2 e'6- | e'2 e'8 d'6- | d'8- d'2 c'6- | c'2 c'12- c'2- | c'2 b4

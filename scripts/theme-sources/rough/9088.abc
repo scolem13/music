@@ -1,0 +1,11 @@
+X:9088
+%%from edm
+T:Symphonic Sketches, 3rd Theme B
+C:George W. Chadwick
+%%composer Chadwick|George W.
+% EDM 9088 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+c8 A4 c4 | e4 g6 ag e4 | g4 a4 b4 c'4 | b4 a6 ba g4 | e8<e8 | d4 c4

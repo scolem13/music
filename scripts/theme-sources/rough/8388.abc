@@ -1,0 +1,10 @@
+X:8388
+%%from edm
+T:Sonata in B-flat, 3rd Movement - 1st Theme
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8388 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+B8 d2f2 | z/2 f3/2e2 e8 | A8 c2e2 | z/2 e3/2d2 d8 |

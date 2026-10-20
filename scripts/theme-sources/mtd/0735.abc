@@ -1,0 +1,12 @@
+X:735
+T:Quartet in F minor, Op. 95, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0729, Barlow & Morgenstern B632, EDM 0735 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai vivace ma serioso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=149
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+a2za g6 f2 | e2ze =d6 c2 | B2zA G2zF E2z=D | C4 |

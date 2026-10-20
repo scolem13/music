@@ -1,0 +1,11 @@
+X:6985
+%%from edm
+T:Also Sprach Zarathustra, Op. 30, 7th Theme B
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6985 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+e12 | e12 | g e8- e3- | e12 | z12 | z4 e8- | e4 e8- | e4 a e6- e- | e12- | e4 z8 | z8 e4- | e8 e4- | e8 c'2 z2 | g6 e2 d4- | d2

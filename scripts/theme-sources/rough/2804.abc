@@ -1,0 +1,10 @@
+X:2804
+%%from edm
+T:Symphony in C, 1st Movement, 3rd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2804 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+dede d2b2 d2c2 z4 | cdcd c2a2 c2B2 z4 | d4 e2f2 e4 f2g2 | g4 f2e2 d2G2 G4 |

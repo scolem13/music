@@ -1,0 +1,10 @@
+X:326
+%%from edm
+T:"Air for the G String" - Gavotte - Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0326 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+D4<A4 B4- | B2 A8 B2 | c2d2c2 B2A2B2 | G2F2E2 F2D2

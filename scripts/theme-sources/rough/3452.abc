@@ -1,0 +1,10 @@
+X:3452
+%%from edm
+T:Hungarian Rhapsody No. 5 in E minor, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3452 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B,3/2B,/2 B,6 A,3/2G,/2 G,6 | ^D,3/2E,/2 F,6 z B,,C,D, E,F,G,A, | C3/2B,/2 B,6

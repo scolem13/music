@@ -1,0 +1,13 @@
+X:5593
+T:Carnaval des Animaux, Tortues (Theme from Orpheus in Hades - Offenbach)
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7228, Barlow & Morgenstern S9, EDM 5593 (Musical Theme Dataset, CC BY 4.0)
+N:Tortues  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 3 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/8
+Q:1/4=47
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B,4 CEDC | F2 F2 FGDE | C2 C2 CEDC | B,BAG FEDC |

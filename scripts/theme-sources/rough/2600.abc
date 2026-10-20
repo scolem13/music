@@ -1,0 +1,10 @@
+X:2600
+%%from edm
+T:Quartet in D, Op. 76, No. 5, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2600 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+A2d3c d2e2c2 | A2d2e2 f2 g4 | f2e3f e2b2g2 | e2dcec dBA2

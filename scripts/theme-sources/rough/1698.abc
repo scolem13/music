@@ -1,0 +1,10 @@
+X:1698
+%%from edm
+T:Symphonic Variations, Piano, Intro
+C:César Franck
+%%composer Franck|César
+% EDM 1698 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+z8 z3 F2<F2=G | =G4 z6 z =F2<F2^F | F4 z6 z ^D2<D2=C | =C3^C2<C2G,2<G,2A,2<A,2F, | F,8

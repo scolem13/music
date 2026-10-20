@@ -1,0 +1,10 @@
+X:8365
+%%from edm
+T:Quartet in A, Op. 33, No. 6, 4th Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8365 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+e'2a'2 c''b'a'g' | f'e'd'2 f'e'd'c' | bag2 bagf | ed c4

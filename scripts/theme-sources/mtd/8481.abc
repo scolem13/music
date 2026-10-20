@@ -1,0 +1,12 @@
+X:8481
+T:Concerto No. 2 in B-flat, Op. 83, Piano and Orchestra, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1484, Barlow & Morgenstern B1348, EDM 8481 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro appassionato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=219
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+D/E/D/E/ | F A d | a3- | a3- | a2 g | f2 g | f2 e | z e f | a2 g |

@@ -1,0 +1,10 @@
+X:5038
+%%from edm
+T:Sonata No. 7, Op. 83, 2nd Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5038 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+F,2=G,2 ^G,4 G,4 | A,2G,2C2C2B,2^A,2 | A,4 G,4 G,4 | A,2G,2D2D2C2B,2 | A,4 G,4

@@ -1,0 +1,10 @@
+X:1789
+%%from edm
+T:Concerto in F, 3rd Movement - 2nd Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1789 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+z2 c2 d2f2 | _e2d2c2B2 | ABAc z ABA | _A3=A C4 | z2 c2 d2f2 | _a2=a2f2d2 |

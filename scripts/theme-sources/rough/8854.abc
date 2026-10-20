@@ -1,0 +1,12 @@
+X:8854
+%%from mtd
+T:Phantasy-Quartet, Oboe, Vn., Viola and Vcl., 1st Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% MTD 1857, Barlow & Morgenstern B1711j, EDM 8854 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=105
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+F,,z/F,,/ (3A,,F,,A,, F,,z/F,,/ A,,2 | D,2 C,2 B,,2 A,,2 | G,,z/G,,/ (3F,,G,,F,, G,,z/G,,/ F,,2 | A,,2 G,,2 F,,2 E,,2 |

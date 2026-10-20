@@ -1,0 +1,11 @@
+X:9131
+%%from edm
+T:Concerto, 3rd Movement - 1st Theme
+C:Carlos Chávez
+%%composer Chávez|Carlos
+% EDM 9131 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+z efg z gfe | ^fBfb eBfb | e'b^f'b'

@@ -1,0 +1,10 @@
+X:4179
+%%from edm
+T:Divertimento in F, K 138, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4179 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+g8 f3e/2f/2 | f4 e4 z2 c^c | d2fa c4 d2ef | gfef e4

@@ -1,0 +1,10 @@
+X:5078
+%%from edm
+T:Fairy Queen, Rondeau
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5078 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d8 d4 | c2B2 c2d2 c4 | e8 e4 | d2c2 d2e2 d4 | g2a2 g2a2 b4 | d2e2 d2e2 f4 |

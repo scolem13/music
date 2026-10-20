@@ -1,0 +1,11 @@
+X:7843
+%%from edm
+T:Trio Sonata in G minor, Op. 1, No. 1, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7843 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/2
+L:1/16
+K:Bb
+B8 B8 B8 | =B8 B8 B8 | c24 | d8 d8 d8 | e24 | g8 g8 g8 | _a8 a8 a8 | _a8 a8 a8 | g8

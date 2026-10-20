@@ -1,0 +1,10 @@
+X:8166
+%%from edm
+T:Quartet in E minor, 2nd Movement, 2nd Theme
+C:Efrem Zimbalist
+%%composer Zimbalist|Efrem
+% EDM 8166 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z2 d2 c2d2 g2f2d2c2 | d4 c2d2 G2B2c2B2 | z2 d2 c2d2 g2a2f2d2 | g2d2f2d2 c2B2G2B2 | c4

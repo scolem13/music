@@ -1,0 +1,10 @@
+X:5215
+%%from edm
+T:Dardanus, Rigaudon, No. 2
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5215 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+d4 e4 d8 | c4 d4 c8 | B4 c4 B8 | A4 B2A2 G2_G2 =G4 | d4 d3D c4 BABc | B4

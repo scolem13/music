@@ -1,0 +1,11 @@
+X:8251
+%%from edm
+T:L'Arlesienne Suite No. 1, Orchestra - Countertheme to 2nd Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8251 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+E2F2A2c2e2f2 | a2c'2e'2f'2g'2a'2 | g'2f'2e'2c'2b2a2 | f2e2c2B2_d2F2 | G2 F4

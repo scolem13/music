@@ -1,0 +1,12 @@
+X:677
+T:Quartet in F, Op. 18, No. 1, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0671, Barlow & Morgenstern B575, EDM 0677 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=137
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+z2 z A TA2{GA} | c3 B GF | E3 B TB2{AB} | d3 c AG | F2 |

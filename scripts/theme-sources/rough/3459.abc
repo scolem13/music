@@ -1,0 +1,10 @@
+X:3459
+%%from edm
+T:Hungarian Rhapsody No. 8 in F-sharp minor
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3459 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F#
+A3B d2 (3cdc | =c2 (3^cdc A4 | G3A c2 (3BcB | A2 (3BcB G4 |

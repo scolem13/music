@@ -1,0 +1,11 @@
+X:6786
+%%from edm
+T:Concerto No. 8 in A minor, Op. 47, 3rd Movement - 2nd Theme
+C:Ludwig Spohr
+%%composer Spohr|Ludwig
+% EDM 6786 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+z4 B6 g2 d2e2 | c'8 b4 z4 | z4 b6 =b2 c'2a2 | _g4 =g4

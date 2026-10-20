@@ -1,0 +1,10 @@
+X:8592
+%%from edm
+T:Quintet in F minor, Op. 34, 2nd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8592 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+G2B2 A4<A4 | B2d2 c4<c4 | e2_g2f2g2f2e2 | =d2f2 e2_d2 z/2 z/2 ce2 |

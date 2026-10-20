@@ -1,0 +1,12 @@
+X:5674
+T:Septet, Op. 65, 1st Movement - Preambule
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7308, Barlow & Morgenstern S89, EDM 5674 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/z7-M8kcQmU8?t=66
+M:4/4
+L:1/4
+Q:1/4=142
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+z =a b d | e f g B | c d e G | F e2 d | e |

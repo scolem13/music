@@ -1,0 +1,12 @@
+X:7540
+T:The Nutcracker Suite, Op. 71a, Dance of the Reed Flutes
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9166, Barlow & Morgenstern T197, EDM 7540 (Musical Theme Dataset, CC BY 4.0)
+N:Dance of the Reed Pipes  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=69
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+dcdc d2c2 | e2 d/f/a/d'/ f'4 | g'f'g'f' e'd'fd | d4{/d} c4 |

@@ -1,0 +1,10 @@
+X:4431
+%%from edm
+T:Sonata in B-flat, K 570, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4431 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+E8 FEDE | c2B2 B4 B4 | B2e2d2_d2c2=B2 | B4

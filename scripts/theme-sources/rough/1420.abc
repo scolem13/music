@@ -1,0 +1,10 @@
+X:1420
+%%from edm
+T:Falstaff, Op. 68, Symphonic Study, 5th Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1420 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+d8<c8 | d4 c8 =e4- | =e4 d12 | _d4 c8 =e4- | =e4 d12 | =e4 d8 _g4- | _g4 =e12 | e4 d4

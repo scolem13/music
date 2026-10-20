@@ -1,0 +1,11 @@
+X:6263
+%%from edm
+T:Quartet in A minor, Op. 41, No. 1, 2nd Movement - 2nd Theme, Intermezzo
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6263 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+e8 g8- | g4 ^f4 d4 =f4 | e8 g8- | g4 ^f4 d4 =f4- | f4 e4 c4 e4- | e4 d4 B4 d4- | d4 c4

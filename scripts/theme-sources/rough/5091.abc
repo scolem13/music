@@ -1,0 +1,10 @@
+X:5091
+%%from edm
+T:Sonata No. 3, in A minor, 5th Movement
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5091 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:C
+e4 a2 g2e2c2 d2B2e2 | c3BA2 e4 e2 ^f3ef2 | g4 f2 f2e2e2

@@ -1,0 +1,10 @@
+X:6213
+%%from edm
+T:Concerto in D minor, 1st Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6213 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+d'16 | d12- d2d2 | b6 g2 a8- | a4 z12 | f'6 d'4<b4 g2 | c'12 c'4 | b16 |

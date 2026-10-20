@@ -1,0 +1,11 @@
+X:8904
+%%from edm
+T:Symphony No. 3 in D minor, 4th Movement - 1st Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8904 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:F
+_e16 | _e12 e4 | d16 | D8 z8 | e8 E6 e2 | e8 E8 |

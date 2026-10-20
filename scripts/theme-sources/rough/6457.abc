@@ -1,0 +1,11 @@
+X:6457
+%%from edm
+T:Quintet, Op. 57, 1st Movement - Prelude, 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6457 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+g8- gabc' d'e'f'2- | f'2 f'4 f'4 g'_a' g'a'f'2- | f'g'bc' d'g'ab c'f'be'

@@ -1,0 +1,10 @@
+X:8667
+%%from edm
+T:Sonata in F, Op. 99, Cello and Piano, 4th Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8667 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+c4 a4 g2a2 f4 | c2c2b2a2 g2a2 f4 | c2c2 _e4 f2c2 d4 | g2f2 e4

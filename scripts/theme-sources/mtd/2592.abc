@@ -1,0 +1,12 @@
+X:2592
+T:Quartet in C, Op. 76, No. 3, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4253, Barlow & Morgenstern H472, EDM 2592 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=174
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+g z a z | g z z c' | =b2 c' d' | e'2 d' z |

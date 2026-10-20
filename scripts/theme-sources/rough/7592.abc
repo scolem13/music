@@ -1,0 +1,11 @@
+X:7592
+%%from edm
+T:Symphony No. 3, in D, Op. 29, 4th Movement - 2nd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7592 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+d4 g4- | g6- gd | g3a ^a z3 | a4 g2 z2 | a4 d2 z2 | g4 ^d2 z2 | a4 d2

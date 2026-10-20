@@ -1,0 +1,10 @@
+X:6167
+%%from edm
+T:Symphony No. 3, Part II, Chorale and Toccata, 1st Theme, Chorale
+C:William Schuman
+%%composer Schuman|William
+% EDM 6167 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c'8 ^g4 =g4 | d4 e4 c4 A4 | A4 a4 ^c4 f'4 | b8<e'8 | e'4 ^f'4 f'4 d'4 | c'4 b4 g'8 |

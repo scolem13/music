@@ -1,0 +1,10 @@
+X:1834
+%%from edm
+T:Valse de Concert, Op. 47, 2nd Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1834 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 e4 f4 | g4 f8 | e4 d4 e4 | f4 B8 | A4 G4 A4 | B8 c4 | e4 f4 g4 | a8 b4 | f4

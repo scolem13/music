@@ -1,0 +1,11 @@
+X:7027
+%%from edm
+T:Burleske, 4th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7027 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+e6 d2 f4- | f2a2 g2c2 c'4 | e6 d2 f4- | f2a2 g2c2 c'4 | e6 d2 f4- | f2e4<g4 f2 | c'12- | c'4

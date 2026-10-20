@@ -1,0 +1,10 @@
+X:1475
+%%from edm
+T:Poeme Roumain, Op. 1, Symphonic Suite, 1st Movement - 3rd Theme
+C:Georges Enesco
+%%composer Enesco|Georges
+% EDM 1475 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+B16 | =d16 | e12 =g3b | a3=g e8 g3b | a3=g d8 g3b | a3g B8

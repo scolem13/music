@@ -1,5 +1,5 @@
 ---
-title: "Recording 7: Mono and Stereo"
+title: "Recording 9: Mono and Stereo"
 toc: true
 toc-depth: 2
 description: "Stereo pairs, one earbud and summing to mono, live sound, speaker placement, laptops and two subwoofers."
@@ -92,7 +92,7 @@ plus a late copy of the other. So:
 - **Stereo is used lightly**: reverbs and delays, a little spread on keyboards and overheads, panning a few degrees.
 - **Front fills, delay towers and side fills** cover the parts of the room the main speakers miss. Delay speakers are
   delayed to arrive just *after* the main PA (Haas again, 5–20 ms) so the sound still seems to come from the stage.
-- **Monitors** (wedges and in-ears) are separate mixes for each player ([Recording 4](rec-monitoring.qmd)). In-ears
+- **Monitors** (wedges and in-ears) are separate mixes for each player ([Recording 6](rec-monitoring.qmd)). In-ears
   are often stereo, for comfort and a sense of the band; wedges are mono.
 - **Feedback**: a mic in front of a speaker playing it howls. Keep mics behind the main PA, wedges in the mic's dead
   zone (behind a cardioid, at the sides of a supercardioid).
@@ -161,3 +161,30 @@ cancels in the sub.
 - [Gear 1: Power and Safety](gear-power.qmd)
 - [Recording 1: Gain Staging](rec-gain-staging.qmd)
 - [Sound 23: Stereo](sound-stereo.qmd) (hear pan, Haas and width in mono)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Comb filter." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Comb_filter](https://en.wikipedia.org/wiki/Comb_filter).
+
+**For teachers**
+
+Bartlett, Bruce, and Jenny Bartlett. *Practical Recording Techniques: The Step-by-Step Approach to Professional Audio Recording*. 7th ed., Routledge, 2017. Details from the Routledge listing.
+
+Brixen, Eddy Bøgh. "Stereo Recording Techniques and Setups." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/audio-production/stereo-recording-techniques-and-setups/](https://www.dpamicrophones.com/mic-university/audio-production/stereo-recording-techniques-and-setups/).
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Izhaki, Roey. *Mixing Audio: Concepts, Practices, and Tools*. 4th ed., Routledge, 2023. Details from the Routledge listing (O'Reilly's copy says 2024).
+
+Owsinski, Bobby. *The Mixing Engineer's Handbook*. 5th ed., BOMG Publishing, 2022. Details from retailer and Goodreads listings.
+
+Senior, Mike. *Mixing Secrets for the Small Studio*. 2nd ed., Routledge, 2018. Details from retailer and library listings.
+
+Welti, Todd. "Subwoofers: Optimum Number and Locations." Harman International. [www.harman.com/Documents/multsubs.pdf](https://www.harman.com/Documents/multsubs.pdf). The site's certificate fails in some checkers; downloaded and opening read.
+:::
+<!-- /works-cited -->
+

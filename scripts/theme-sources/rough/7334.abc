@@ -1,0 +1,10 @@
+X:7334
+%%from edm
+T:Sonatas, "Devil's Trill", 4th Movement - 1st Theme
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7334 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+g'2g'2d'2d'2 | b2b2g2g2 | b2b2g2g2 | d2d2d2d2 | g_g=g2 d2d2 | d4<d4 |

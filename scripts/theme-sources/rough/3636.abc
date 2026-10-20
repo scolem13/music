@@ -1,0 +1,10 @@
+X:3636
+%%from edm
+T:Suite No. 2, 1st Theme
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3636 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+E4 z8 B,4 | E4 z4 F4 z4 | G4 F4 E8- | E8 F4 z4 | D16 | B,4 z4 D4 z4 | E4 B,4

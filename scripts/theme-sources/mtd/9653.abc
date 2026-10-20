@@ -1,0 +1,12 @@
+X:9653
+T:Jeux De Vagues, 2nd Movement - 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2644, Barlow & Morgenstern D76, EDM 9653 (Musical Theme Dataset, CC BY 4.0)
+N:Jeux de vagues  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=125
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+Td4{/^^c} d2 | Td4{/^^c} d2- | d2- (3def (3fed |{/d} (3cBB (3B^AA{/G} (3ABc |

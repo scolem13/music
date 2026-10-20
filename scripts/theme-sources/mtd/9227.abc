@@ -1,0 +1,11 @@
+X:9227
+T:Mazurkas 24, Op. 33, No. 3
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2224, Barlow & Morgenstern C237, EDM 9227 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=83
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G2 | d2 e3 d |{/d} c>B c3 ^c | d>^d e3 =d |{/d} c>B c4 |

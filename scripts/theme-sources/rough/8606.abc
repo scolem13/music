@@ -1,0 +1,10 @@
+X:8606
+%%from edm
+T:Quintet in G, Op. 111, 4th Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8606 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+B^cBc d2 z2 | B^cBc d2 z2 | B^cBc dede | f4- fed^c | d

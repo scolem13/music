@@ -1,0 +1,11 @@
+X:6449
+%%from edm
+T:The Golden Age, Op. 22, 3rd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6449 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+f2 z2 ^gggg | ^g2f2 ^aaaa | ^a2f2^g2f2 | ^g2^a2 ^d'd'd'd' | ^d'2c'2 ^aaaa | ^a2f2

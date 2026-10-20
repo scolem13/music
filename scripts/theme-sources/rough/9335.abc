@@ -1,0 +1,10 @@
+X:9335
+%%from edm
+T:Waltzes, Op. 34, No. 1 in A-flat
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9335 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+b8 a4 | b6 a2 z/2 b2-b/2a | f6 f2 a2 z d' | f'8

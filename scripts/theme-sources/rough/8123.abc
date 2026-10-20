@@ -1,0 +1,10 @@
+X:8123
+%%from edm
+T:Concerto No. 2 in D minor, Op. 22, 1st Movement - 2nd Theme
+C:Henryk Wieniawski
+%%composer Wieniawski|Henryk
+% EDM 8123 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+c'4 (3b2a2g2 b8 | a2g2 (3a2g2f2 c8- | c4 (3d2c2B2 f8 | g8<a8 |

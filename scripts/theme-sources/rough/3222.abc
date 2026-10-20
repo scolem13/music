@@ -1,0 +1,13 @@
+X:3222
+%%from mtd
+T:Masquerade, Suite for Orchestra, 3rd Movement - Mazurka
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4877, Barlow & Morgenstern K51, EDM 3222 (Musical Theme Dataset, CC BY 4.0)
+N:Mazurka  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=187
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+(3Bce g2 fz/g/ | fz/e/ e4 | (3=Bce g2 fz/g/ | fz/e/ e4 | (3cde g2 (3cde | g2 |

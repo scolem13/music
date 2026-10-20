@@ -1,0 +1,10 @@
+X:3145
+%%from edm
+T:Petite Suite, 1st Movement, Petite Marche Militaire
+C:Joseph Jongen
+%%composer Jongen|Joseph
+% EDM 3145 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z4 D2 z D E8 | z4 D2 z D2<E2D E4 | z4 D2 z D E2 z E G2 z G | A2 z A (3c2B2A2 G2 z E D4 |

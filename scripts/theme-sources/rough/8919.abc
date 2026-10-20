@@ -1,0 +1,10 @@
+X:8919
+%%from edm
+T:Symphony No. 5 in B-flat, 1st Movement - Intro
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8919 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+B16- | B8 A8- | A4 c4 B4 A4 | B12 A2G2 | F8 E8- | E8 D8 |

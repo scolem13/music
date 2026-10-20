@@ -1,0 +1,10 @@
+X:3606
+%%from edm
+T:Thesee, Marche des Sacrificateurs
+C:Jean Baptiste Lully
+%%composer Lully|Jean Baptiste
+% EDM 3606 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+G4 c4 c2d2e2f2 | g4 e6 d2 c4 | G4 c4 c2d2e2d2 | e2f2 d8 G4 |

@@ -1,0 +1,11 @@
+X:5582
+%%from edm
+T:Valse Caprice, 1st Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5582 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+g4 a2g2 f2e2 | g4 a2g2 f2e2 | a4 b2a2 g2f2 | f'8 z4 | a4 b2a2 g2f2 | a4 b2a2 g2f2 | b4

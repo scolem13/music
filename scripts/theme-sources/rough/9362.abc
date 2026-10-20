@@ -1,0 +1,10 @@
+X:9362
+%%from edm
+T:Sonata in B-flat, Op. 47, No. 2, 3rd Movement - 1st Theme
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9362 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+f'=e'f'g' _e'f'd'e' | c'd'b2 b2c'b | abc'2 f2g2 | a2 b4

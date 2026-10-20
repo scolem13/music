@@ -1,0 +1,11 @@
+X:8326
+%%from edm
+T:Suite, Viola and Orchestra, 1st Movement - 2nd Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8326 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+z4 e2e2 a2a2g2f2 | e4 e2e2 a2a2 ^a4 | a4 g2f2 e4 c4 | e12

@@ -1,0 +1,10 @@
+X:1840
+%%from edm
+T:Capriccio Brilliant, on the Jota Aragonesa, 2nd Theme
+C:Mikhail Glinka
+%%composer Glinka|Mikhail
+% EDM 1840 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+F,8 G,4 | F,4 G,4 A,4 | C8 B,4 | G,4 z4 B,4 | C8 B,4 | G,4 B,4 E4 | E8 C4 | B,4

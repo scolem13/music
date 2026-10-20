@@ -1,0 +1,10 @@
+X:8554
+%%from edm
+T:Quartet in A, Op. 26, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8554 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e'4 f'4 b4 | d'4 e'4 a4 | c'4 d'4 c'2b2 | e'4 d'4 c'4 | e'4 f'4 b4 | d'4 e'4 a4 | c'4

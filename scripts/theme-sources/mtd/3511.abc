@@ -1,0 +1,11 @@
+X:3511
+T:Les Preludes, Symphonic Poem No. 3, 5th Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% MTD 5165, Barlow & Morgenstern L217, EDM 3511 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=118
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+z EA Bcf | ecB A/B/cA | z2 a gf a | fe a gf a | fe |

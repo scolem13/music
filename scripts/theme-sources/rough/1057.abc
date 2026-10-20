@@ -1,0 +1,13 @@
+X:1057
+%%from mtd
+T:Symphony No. 3, in E-flat, Op. 55, 4th Movement - 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1051, Barlow & Morgenstern B933, EDM 1057 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro molto - Poco andante - Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=132
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+d2 d>d | d2 d>d | d>cB>=A | B>cB>=A |{/=A} G>^FG>B | =A>Bc>A | ^F3/2 |

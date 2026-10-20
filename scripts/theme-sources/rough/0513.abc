@@ -1,0 +1,10 @@
+X:513
+%%from edm
+T:Symphony No. 1, in D, 2nd Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0513 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+e'3b b6 z b | b3c' b4 a3g | g4 f3c'2<b2a | a4 g2

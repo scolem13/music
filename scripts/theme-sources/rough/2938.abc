@@ -1,0 +1,10 @@
+X:2938
+%%from edm
+T:St. Paul's Suite, 2nd Movement, Ostinato
+C:Gustav Theodore Holst
+%%composer Holst|Gustav Theodore
+% EDM 2938 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+a8 c4 | g8 c4 | f4 A4 B4 | c4 g4 c'2b2 | a8 c4 | g8 c4 | f4 A4 B4 | c8

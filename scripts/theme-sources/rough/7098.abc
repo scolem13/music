@@ -1,0 +1,10 @@
+X:7098
+%%from edm
+T:Apollon Musagetes, Variation of Terpsichore
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7098 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:E
+^a3 b =g3/2g/2 | b3/2d'<f'e'<d'c'/2 | a3/2f/2 =d2

@@ -1,0 +1,10 @@
+X:3750
+%%from edm
+T:Le Cid, Ballet, 1st Movement - Castillane
+C:Jules Massenet
+%%composer Massenet|Jules
+% EDM 3750 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+e2f2gg g2a2^aa | ^a2c'2a4<=a4 | d2e2ff f2g2aa | a2b2a2 g4

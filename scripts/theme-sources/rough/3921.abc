@@ -1,0 +1,10 @@
+X:3921
+%%from edm
+T:Symphony No. 3, in A minor, Op. 56, "Scotch", 1st Movement - Intro
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3921 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+E8 A3B | c8 B4 | d8 A4 | B12 | A4 c4 e4 | e8 d4 | A4 c4 B3A | A4 ^G4

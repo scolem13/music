@@ -1,0 +1,10 @@
+X:2096
+%%from edm
+T:Two Elegaic Melodies, Op. 34, No. 2, Springtime
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2096 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B4 G2B2 e4 d2^c2 | d4 A2B4<c4 d2 | B12 G2A2 | B4 d8 ^c4 | c4 A2c2 =f4 e2^d2 | e4 B2c4<d4

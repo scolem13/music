@@ -1,0 +1,10 @@
+X:1730
+%%from edm
+T:Ricercar Cromatico Post II Credo, Organ
+C:Girolamo Frescobaldi
+%%composer Frescobaldi|Girolamo
+% EDM 1730 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+A16 | ^A8 B8 | ^F8 =F8 | E16 | D4 E4 F4 G4 | A4 D4 d8 |

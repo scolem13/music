@@ -1,0 +1,10 @@
+X:3156
+%%from edm
+T:Chamber Symphony, in B-flat, Op. 27, 2nd Movement
+C:Paul Juon
+%%composer Juon|Paul
+% EDM 3156 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+F,2G,2 A,2C2 B,2A,B, | C2C4<F,4 G,2 | A,2G,F, E,8 |

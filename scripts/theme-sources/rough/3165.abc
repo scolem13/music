@@ -1,0 +1,10 @@
+X:3165
+%%from edm
+T:Symphony No. 2, in C minor, Op. 19, 2nd Movement - Intro
+C:Dmitri Kabalevsky
+%%composer Kabalevsky|Dmitri
+% EDM 3165 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z4 B,2C2 D4 C2=B,2 | _D4 G,2A,2 B,2C2 D4 | z4 B,2C2 D4 C2=B,2 | B,4 G,2A,2 B,2C2 D4 |

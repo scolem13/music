@@ -1,0 +1,10 @@
+X:1652
+%%from edm
+T:Pastorale, Op. 19, Organ, 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1652 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+z c2<B2 dBB e2<B2 | f2<A2 GABB AGF z | G2<A2 G2<F2 G2<A2 | GFG F4

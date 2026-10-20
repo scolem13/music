@@ -1,0 +1,10 @@
+X:2999
+%%from edm
+T:Divertissement, 4th Movement, 2nd Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 2999 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+a2 z ^d a2- | a2 f2 ^f2 | b2 z ^g ^c'2- | ^c'2 b2 ^g2 | e'3 ^d' e'2- | e'a2<e'2 d' | ^d'3 =d' d'2 |

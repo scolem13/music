@@ -1,0 +1,12 @@
+X:3827
+T:Concerto in E minor, Op. 64, 3rd Movement - 1st Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5479, Barlow & Morgenstern M217, EDM 3827 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto non troppo - Allegro molto vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=154
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G/B/e/g/ | b^a/c'/ be' bgef | g^^f/=a/ gb ge Bd/c/ | B^f/d/ B |

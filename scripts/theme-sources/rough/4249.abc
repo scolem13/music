@@ -1,0 +1,10 @@
+X:4249
+%%from edm
+T:Quartet in G minor, K 4, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4249 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+f4 e2- | e2 d2 c2 | z/2 G/2 z/2 c/2 B2 A2 | z/2 B/2 z/2 c/2 d2

@@ -1,0 +1,13 @@
+X:1149
+%%from mtd
+T:Symphony No. 9, in D minor, Op. 125, 3rd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1142, Barlow & Morgenstern B1024, EDM 1149 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio molto e cantabile - Andante moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d4 A4 | B4 F3 E | D2 F2 B3 c | d2 fe c2 z2 |

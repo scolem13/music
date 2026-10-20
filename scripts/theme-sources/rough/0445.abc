@@ -1,0 +1,13 @@
+X:445
+%%from mtd
+T:Well-tempered Clavichord, Book II, Fugue No. 2
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0440, Barlow & Morgenstern B352, EDM 0445 (Musical Theme Dataset, CC BY 4.0)
+N:Fuga  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=50
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+z GEF GC FE/D/ | E2 DC B,2 =A,2 | G, |

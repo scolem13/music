@@ -1,0 +1,10 @@
+X:4887
+%%from edm
+T:Tre Canti, No. 3
+C:Aldebrando Pizzetti
+%%composer Pizzetti|Aldebrando
+% EDM 4887 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+z4 =F4 ^F4 B4 | z16 | z4 =F4 ^F4 B4 | z16 | z4 =F4 ^F4 B4 | d4 e4 f8- | f4 f4 g6 g2 | c'16 |

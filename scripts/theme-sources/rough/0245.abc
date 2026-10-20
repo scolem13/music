@@ -1,0 +1,10 @@
+X:245
+%%from edm
+T:Partita No. 6 in E minor, Tempo di Gavotta
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0245 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+ef g4 B3 g2<A2gf2- | f2cBA2f3 A2<G2BE2- | E2

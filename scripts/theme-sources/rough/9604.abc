@@ -1,0 +1,13 @@
+X:9604
+%%from mtd
+T:Golliwogg's Cake Walk - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2595, Barlow & Morgenstern D27, EDM 9604 (Musical Theme Dataset, CC BY 4.0)
+N:Golliwogg's Cakewalk  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=108
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B/AB/ FB | A/FE/ _CE | B,/B,=C/ B,B | B,4 |

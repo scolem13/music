@@ -1,0 +1,10 @@
+X:3926
+%%from edm
+T:Symphony No. 3, in A minor, Op. 56, 2nd Movement - 1st Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3926 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+CFGA cAGF | G2<A2 c2<f2 | c2<d2 d2<f2 | dc2 A4

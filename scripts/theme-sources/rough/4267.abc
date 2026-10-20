@@ -1,0 +1,10 @@
+X:4267
+%%from edm
+T:Quartet in D minor, K 421, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4267 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+A2 z2 A2 G2B2G2 | F4 G/2A/2F/2G/2 A2 z A,CF | A2 z CFA c2c2c2 |

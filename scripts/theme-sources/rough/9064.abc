@@ -1,0 +1,10 @@
+X:9064
+%%from edm
+T:Joyeuse March, Orchestra, Intro.
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9064 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c''2 z2 ^f'g'a'g' | c'2 z4 ^fg | agc z ffff | e2

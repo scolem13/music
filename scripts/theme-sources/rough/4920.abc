@@ -1,0 +1,10 @@
+X:4920
+%%from edm
+T:Toccato, 1st Theme
+C:Francis Poulenc
+%%composer Poulenc|Francis
+% EDM 4920 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+E4 A2F2 E4 A2F2 | E4 F4 G4 A4 | E4 A2F2 E4 A2F2 | b4 e'4 d'2c'2b2a2 |

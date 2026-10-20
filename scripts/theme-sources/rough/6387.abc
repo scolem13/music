@@ -1,0 +1,11 @@
+X:6387
+%%from edm
+T:Symphony No. 4 in D minor, Op. 120, 1st Movement - Intro.
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6387 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/yunhjIVTG_U?t=3s
+M:3/4
+L:1/16
+K:F
+a'8- a'2f2 | e2d2_d2=d2e2e2 | f2_d2=d2e2f2f2 | g2e2 f4 c'4 | g4 g4 a2

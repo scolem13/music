@@ -1,0 +1,11 @@
+X:9702
+%%from edm
+T:Quartet in G minor, 3rd Movement, 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9702 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/eJJiUeBx-IM?t=10m1s
+M:6/8
+L:1/16
+K:Db
+f2g3f f2a3f | fba2gf fef2d2 | e2f3e d=A=Bd2=e | e2f3e

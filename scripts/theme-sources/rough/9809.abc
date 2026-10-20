@@ -1,0 +1,11 @@
+X:9809
+%%from edm
+T:Quartet, No. 5, in E-flat, Str., 1st Movement
+C:Carl Ditters von Dittersdorf
+%%composer Dittersdorf|Carl Ditters von
+% EDM 9809 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+e6 d/2e/2f/2g/2 a2a2g2g2 | f2f2=e2e2 f2f2d2d2 | e6

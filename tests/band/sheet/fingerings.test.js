@@ -1,6 +1,6 @@
 // Chord Sheet fingerings (functions lifted out of the page): guitar fingers, piano fingers, hand split.
 const fs = require("fs"), assert = require("assert");
-const src = fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/tools/_chord-sheet.qmd", "utf8");
+const src = fs.readFileSync((require("path").join(__dirname, "../../..") + "/tools/_chord-sheet.qmd"), "utf8");
 const a = src.indexOf("// Fretting-hand fingers, one per string"), b = src.indexOf("// ===== VOICE LEADING =====");
 const mod12 = n => ((n % 12) + 12) % 12;
 const F = new Function("mod12", src.slice(a, b) + "\nreturn { computeFretboardFingerings, handFingers, leftFingers, leftHandCount, computeKeyboardFingerings };")(mod12);

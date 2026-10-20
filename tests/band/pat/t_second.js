@@ -1,7 +1,7 @@
 // A second chord instrument (opts.second, the part "comp2"): silent when unset, never disturbs the other parts or the
 // first guitarist's hand, hears every chord in every meter, and every style's suggestion for it names real things.
 const assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 ["tune-chart.js", "voicings.js", "band/harmony.js", "band/bass.js", "band/comp.js", "band/sounds.js", "band/catalog.js", "band/drums.js", "band/player.js", "band/midi.js"].forEach(f => require(R + f));
 function mb(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const M = { "4/4": ["1/4", "4", ["2", "2"], 4], "3/4": ["1/4", "3", ["2", ""], 3], "6/8": ["1/8", "6", ["3", "3"], 2] };

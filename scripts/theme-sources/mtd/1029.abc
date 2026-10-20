@@ -1,0 +1,12 @@
+X:1029
+T:Symphony No. 2, in D, Op. 36, 1st Movement - Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1023, Barlow & Morgenstern B905, EDM 1029 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio molto - Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=41
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d/ | !fermata!d3 fed | d2 c2 ^d2 | e3 fgb | d2 c z |

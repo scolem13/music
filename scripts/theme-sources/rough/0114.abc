@@ -1,0 +1,10 @@
+X:114
+%%from edm
+T:Art of the Fugue, Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0114 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+D8 A8 | F8 D8 | _D8 =D4 E4 | F8- F2G2F2E2 |

@@ -1,0 +1,10 @@
+X:4899
+%%from edm
+T:I Promessi Sposi, Opera, Overture, 1st Theme
+C:Amilcare Ponchielli
+%%composer Ponchielli|Amilcare
+% EDM 4899 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+c'4 c'4 | (3^a2b2c'2 d'3c' | e'4 d'3f | f4 e4 | a3g2<b2a | g3f f'4- | f'2-f'/2e'3/2

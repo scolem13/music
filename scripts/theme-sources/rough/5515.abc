@@ -1,0 +1,10 @@
+X:5515
+%%from edm
+T:La Cenerentola, Overture, 3rd Theme
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5515 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+c4 d4 | ^d4 e2 z2 | c4 d4 | ^d4 e2 z2 | c'6 g2 | a6 =f2 | f2e2d2c2 | e4 d2

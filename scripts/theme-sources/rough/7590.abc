@@ -1,0 +1,10 @@
+X:7590
+%%from edm
+T:Symphony No. 3, in D, Op. 29, 3rd Movement - 3rd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7590 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d6 c2 B4 | d6 c2 B4 | f4 d2d2 d2g2 | f4 d2f2 g2a2 | c'2b2 d'4 c'2b2 |

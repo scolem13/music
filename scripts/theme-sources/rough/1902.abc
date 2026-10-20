@@ -1,0 +1,10 @@
+X:1902
+%%from edm
+T:Sakuntala, Op. 13, Overture, 1st Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1902 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A,2B,2 C2 D4 C2- | C2A,2 B,2C2 D4 | C4 A,2B,2 C2D2- | D4 F2E2 D2D2- | D6 B,2 C2D2 | _E4 D4

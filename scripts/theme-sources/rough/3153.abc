@@ -1,0 +1,10 @@
+X:3153
+%%from edm
+T:Berceuse, Op. 28, No. 3, Vn. and Piano
+C:Paul Juon
+%%composer Juon|Paul
+% EDM 3153 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+c'4 g2g4<f4 g2 | c'2c'2g2g4<f4 g2 | c4 e2e2 f4 g2a2 | b2b2b2c'2 e'4

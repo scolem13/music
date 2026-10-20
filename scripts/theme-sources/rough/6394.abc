@@ -1,0 +1,11 @@
+X:6394
+%%from edm
+T:Symphony No. 4 in D minor, Op. 120, 4th Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6394 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+d'2 z2 d'2 z2 d'2 z6 | d'3f f2^g2 a4 z4 | =c'2 z2 c'2 z2 c'2 z6 | =c'3e e2f2 g4

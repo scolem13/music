@@ -30,7 +30,7 @@ Begin each phrase with a clean, balanced onset: air and tone together, with no c
 
 Sing this five-note scale on a single "ah", sliding nothing and dropping nothing between notes.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -45,7 +45,7 @@ Italian has five pure vowels: [i] as in *si*, [e] as in *che*, [a] as in *la*, [
 
 Sing them on one pitch, keeping the same space at the back of the mouth as the lips change shape.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/2
@@ -56,7 +56,7 @@ w: mi me ma mo mu
 
 Then sing them on a scale.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -73,7 +73,7 @@ A classical tone rings because the throat stays open and the soft palate is lift
 
 **Exercise:** sing an easy "ng" (as in *sing*) on a middle note, then open slowly to "ah" without moving the pitch. Keep the buzz you felt in the "ng".
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/2
@@ -88,7 +88,7 @@ Every voice has a lower register (**chest**) and a higher one (**head**), with a
 
 The arpeggio below climbs through the voice. Step it up a half step at a time, and as you near the top of your comfortable range, round the vowel and lighten the sound rather than push.
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -105,7 +105,7 @@ If the voice cracks around the passaggio, that's normal at first. Sing the same 
 
 Quick runs (*coloratura*) need a light, flexible voice with the breath still steady. This scale of nine notes up and down is a classic warm-up. Sing it slowly and clean at first, keeping each note distinct, never "ha-ha-ha".
 
-<div class="abc-ex" data-loop="up"><script type="text/plain">
+<div class="abc-ex" data-loop="up" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/8
@@ -119,7 +119,7 @@ w: Ah
 
 *Messa di voce* means "placing the voice": one long note that grows from soft to loud and back to soft, with the pitch and the vowel unchanged. It's the most demanding exercise in breath control, and a lifelong one.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -146,9 +146,9 @@ The [IPA chart](../tools/ipa-chart.qmd) gives each of these sounds with examples
 
 ## Reading and solfège
 
-Classical singers read music. [Tonal do re mi](tonal-do-re-mi.qmd) introduces solfège, which names the notes by their place in the key, so a singer can hear a line before singing it. Sing this phrase on solfège.
+Classical singers read music. [Tonal Sequences](../practice/tonal-sequences.qmd) practises solfège, which names the notes by their place in the key, so a singer can hear a line before singing it. Sing this phrase on solfège.
 
-<div class="abc-ex"><script type="text/plain">
+<div class="abc-ex" data-check><script type="text/plain">
 X:1
 M:4/4
 L:1/4
@@ -162,5 +162,41 @@ w: do re mi do mi fa sol sol la sol fa mi re do
 - [Pop singing](voice-pop.qmd): speech-level singing, mix, belt and runs.
 - [Jazz singing](voice-jazz.qmd): swing, scat and the changes.
 - The [IPA chart](../tools/ipa-chart.qmd) for diction in other languages.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Messa di voce." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Messa_di_voce](https://en.wikipedia.org/wiki/Messa_di_voce).
+
+Nave, Carl R. "The Singing Formant." *HyperPhysics*, Georgia State U, [hyperphysics.gsu.edu/hbase/Music/singfor.html](https://hyperphysics.gsu.edu/hbase/Music/singfor.html).
+
+"Passaggio." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Passaggio](https://en.wikipedia.org/wiki/Passaggio).
+
+"Vocal Registration." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vocal_registration](https://en.wikipedia.org/wiki/Vocal_registration).
+
+Wolfe, Joe, Maëva Garnier, and John Smith. "Voice Acoustics: An Introduction." *Music Acoustics*, U of New South Wales, [newt.phys.unsw.edu.au/jw/voice.html](https://newt.phys.unsw.edu.au/jw/voice.html). Formants, the F1–F2 vowel map, the singer's formant (2–4 kHz, F3–F5 clustered by lowering the larynx).
+
+**For teachers**
+
+Joliveau, Elodie, John Smith, and Joe Wolfe. "The Tuning of Vocal Tract Resonances by Sopranos." *Nature*, vol. 427, 2004, p. 116. Summary at [newt.phys.unsw.edu.au/jw/soprane.html](https://newt.phys.unsw.edu.au/jw/soprane.html). UNSW summary page read.
+
+Lester-Smith, Rosemary A., et al. "Characterization of Source-Filter Interactions in Vocal Vibrato Using a Neck-Surface Vibration Sensor: A Pilot Study." *Journal of Voice*, doi:10.1016/j.jvoice.2021.08.004. [pmc.ncbi.nlm.nih.gov/articles/PMC8995401](https://pmc.ncbi.nlm.nih.gov/articles/PMC8995401). Reviews vibrato rate in trained singers (about 5–7 Hz). Volume and year left out: PMC gives 2021 with vol. 38.
+
+McCoy, Scott. *Your Voice: An Inside View*. Inside View Press, 2004. Later editions 2012 and 2019.
+
+Miller, Richard. *The Structure of Singing: System and Art in Vocal Technique*. Schirmer Books, 1986. Chapters on onset, appoggio, vowel modification, registers, messa di voce, vibrato (from the catalogue contents).
+
+National Association of Teachers of Singing. "Science-Informed Voice Pedagogy Resources." *NATS*, [www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html](https://www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html). Syllabi, labs on registers, resonance, vowels and vibrato; belting articles; terminology document.
+
+Sundberg, Johan. "The Acoustics of the Singing Voice." *Scientific American*, vol. 236, no. 3, 1977, pp. 82–91. [acousticslab.org/RECA220/PMFiles/PMDownloads/Sundberg1977_SingingVoice.pdf](https://acousticslab.org/RECA220/PMFiles/PMDownloads/Sundberg1977_SingingVoice.pdf). Citation confirmed from JSTOR listing and citing pages; the singer's formant at about 2–3 kHz.
+
+Sundberg, Johan. *The Science of the Singing Voice*. Northern Illinois UP, 1987. Details from library catalogue records.
+
+Titze, Ingo R. *Principles of Voice Production*. Prentice Hall, 1994. Reprinted by the National Center for Voice and Speech, 2000.
+:::
+<!-- /works-cited -->
 
 {{< include _voice-kit.qmd >}}

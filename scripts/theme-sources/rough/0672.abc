@@ -1,0 +1,12 @@
+X:672
+%%from mtd
+T:Leonore, Nos. 2 and 3, Op. 72a, Overture - 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0666, Barlow & Morgenstern B570, EDM 0672 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/4
+Q:1/4=209
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+B4- | B2 ^c ^d | e2 ^f ^g | b a a2 | a2 ^g2 | =g4- | g4 |

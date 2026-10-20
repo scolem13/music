@@ -1,0 +1,10 @@
+X:8502
+%%from edm
+T:Hungarian Dances, Piano, 4 hands, No. 1, in G minor
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8502 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+d6 c2 | d6 c2 | e6 d2 | A6 B2 | G8 |

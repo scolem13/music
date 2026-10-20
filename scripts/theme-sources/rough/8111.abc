@@ -1,0 +1,10 @@
+X:8111
+%%from edm
+T:Trio in G minor, Op. 63, 2nd Movement - Intro.
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8111 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g4 g2g2 g4 | g4 g4 z4 | g4 g4 z4 | e'4 d'4 z4 | d'4 a4 d'4 | a4 d'4 a4 |

@@ -1,0 +1,10 @@
+X:4976
+%%from edm
+T:Lieutenant Kije, Op. 60, 3rd Movement - Kije's Wedding, 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4976 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+E4 G4 A4 c4 | =A4 B4 c4 e4 | B4 G4 A2G2 F4 | G8 B,6 z2 | E4 G4 A4 c4 | =A4 B4 f4 _d4 |

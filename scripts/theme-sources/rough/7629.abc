@@ -1,0 +1,10 @@
+X:7629
+%%from edm
+T:Symphony No. 6, in B minor, Op. 74, 2nd Movement - 2nd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7629 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/4
+L:1/16
+K:D
+f'6 f'2 f'8 e'4 | d'6 d'2 d'8 c'4 | b6 b2 d'8 c'4 | b6 b2 g8 f4 |

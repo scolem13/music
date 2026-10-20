@@ -1,0 +1,12 @@
+X:5259
+%%from mtd
+T:Concerto, 3rd Movement - 1st Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6897, Barlow & Morgenstern R130, EDM 5259 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=171
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+cB | A2 cB | A2 cB | Ad AB | cB A2 | cB cd | e^f gf | e2 |

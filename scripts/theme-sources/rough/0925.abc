@@ -1,0 +1,13 @@
+X:925
+%%from mtd
+T:Sonata No. 21, in C, Op. 53, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0919, Barlow & Morgenstern B801, EDM 0925 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=117
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+^g2 ^f e | ^d2 ^c2 | ^d2 e ^f | ^g2 ^f2 |

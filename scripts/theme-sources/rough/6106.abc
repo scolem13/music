@@ -1,0 +1,10 @@
+X:6106
+%%from edm
+T:Symphony No. 7 in C, “Great”, 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6106 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c6 G4<c4 d2 | c6 G4<c4 d2 | (3c4E4G4 (3c4e4g4 | (3E4G4c4 (3e4g4e4 |

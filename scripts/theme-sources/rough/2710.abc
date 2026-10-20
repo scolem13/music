@@ -1,0 +1,10 @@
+X:2710
+%%from edm
+T:Symphony in D, No. 93, "London 2", 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2710 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 d4 A4 | G2 z/2 z/2 G/2>A/2 B2 z6 | B4 G4 E4 | C2 z/2 z/2 C/2>E/2 D2

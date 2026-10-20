@@ -1,0 +1,11 @@
+X:7440
+%%from edm
+T:Quartet No. 2, 4th Movement - 2nd Theme
+C:Virgil Thomson
+%%composer Thomson|Virgil
+% EDM 7440 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+z4 b4 d'4 e'4 | d6- d=e _g8 | z4 g4 g'6 f'2 | f'2e'2d'2c'2 d'4 d2e2 | f6 d2 g2f2g2e2 | f8

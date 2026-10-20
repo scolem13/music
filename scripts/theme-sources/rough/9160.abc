@@ -1,0 +1,10 @@
+X:9160
+%%from edm
+T:Concerto No. 1 in E minor, Op. 11, Piano and Orchestra, 1st Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9160 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+B4 e6 ^d2 | e2g2 b4 b4 | b4 e'4 ^d'2e'2 | f'3e' e'4 ^d'4 |

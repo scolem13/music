@@ -1,0 +1,11 @@
+X:9174
+%%from edm
+T:Etudes, Op. 10 - No. 1, in C
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9174 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+z C,G,C eCGc e'cgc' e''c''g'c'' | e''c''g'c'' e'cGC eCG,C

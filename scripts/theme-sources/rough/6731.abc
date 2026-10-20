@@ -1,0 +1,11 @@
+X:6731
+%%from edm
+T:My Country, No. 4, From Bohemia's Meadows and Forests, 4th Theme
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% EDM 6731 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Bb
+d'2d'_d' =d'2d'b | c'2c'd' b_d'=d'2 | d'2d'_d' =d'2d'b | _d'2d'=d' b4 |

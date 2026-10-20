@@ -1,0 +1,10 @@
+X:80
+%%from edm
+T:Les Matelots, 1st Movement - 3rd Theme
+C:Georges Auric
+%%composer Auric|Georges
+% EDM 0080 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:B
+F2e2 c4- | c8 | F4 d4 | B8 | F4 e4 | f8 | g4 d2c2 | d'8 |

@@ -12,8 +12,15 @@
 //     data-on       the parts sounding at the start, e.g. "bass drums" (default all). Each part has a button to switch it.
 //     data-choices  JSON [{ "label": "...", "opts": { band options } }]: one button each; the first is on at the start.
 //                   The options go to player.setOpts while it plays (bassFeel, compRhythm, groove, voicing, octave ...).
+//                   A choice may also carry "chart" (its own chart; the band starts it from bar 1) or "charts" (a quiz picks one), and
+//                   "sections": [[1, "A1"], [9, "A2"], ...] (the bar each section starts on): the status strip then says "Bar 9 · A2".
 //     data-staves   which staves to write under the demo: "comp bass drums" (default: the parts that are on)
 //   Under the buttons the band's last four bars are written out (BandNotation), so what each player did can be read.
+//
+//   <div class="ar-quiz" data-style="hymn" data-charts="C|F|G|C;Am|Dm|E|Am" data-choices='[...]'></div>
+//     a listening quiz on the same band: "New" plays one of the choices (never the same twice running) over one of the charts,
+//     unnamed; the student picks its button. The notes are written out only after the answer. Takes data-tempo, data-comp, data-on,
+//     data-staves as a demo does; data-meter for every chart.
 //
 //   <div class="ar-organ"></div>   the organ: nine tonebars, registrations, chorus / vibrato, swell pedal, Leslie, a keyboard.
 //     Every control acts on the "hammond" sound globally (BandSounds.setTonebars / setControl / setAmp), so a .ar-demo with
@@ -49,7 +56,7 @@
   function hasPart(w, id) { var d = w.el.dataset; if (id === 'comp2') return !!d.second; if (id === 'congas') { var s = global.BandCatalog.byId(global.BandCatalog.styles, w.style); return !!((s && s.congas) || (w.choice && w.choice.congas && w.choice.congas !== 'none')); } return true; }
 
   function draw(w) {
-    if (!global.BandNotation || !global.ABCJS || !w.log.length) return;
+    if (!global.BandNotation || !global.ABCJS || !w.log.length || w.hide) return;
     var bars = w.log.slice(-4), show = {};
     var want = (w.el.dataset.staves || '').split(/\s+/).filter(Boolean);
     PARTS.forEach(function (p) { show[p.id] = want.length ? want.indexOf(p.id) >= 0 : (w.on[p.id] && hasPart(w, p.id)); });
@@ -61,10 +68,16 @@
 
   function stop() {
     if (player) player.stop();
-    if (now) { now.btn.textContent = '▶ Play'; now.btn.classList.remove('ar-on'); now = null; }
+    if (now) { now.btn.textContent = now.idle || '▶ Play'; now.btn.classList.remove('ar-on'); now = null; }
     var s = $('ar-stop'); if (s) s.disabled = true; status('');
   }
   function status(t) { var s = $('ar-status'); if (s) s.textContent = t; }
+  function secAt(w, bar) {   // " · A2" for the section a bar is in (a choice's "sections"), hidden in a quiz until it is answered
+    var s = w.secs; if (!s || w.hide) return '';
+    var n = w.chart.split('|').length, b = ((bar - 1) % n) + 1, name = '';
+    s.forEach(function (x) { if (b >= x[0]) name = x[1]; });
+    return name ? ' · ' + name : '';
+  }
   function play(w) {
     if (now === w) { stop(); return; }
     stop(); now = w; w.log = []; w.band = bandOf(w);
@@ -72,7 +85,7 @@
     var cfg = { parsed: parsed, tempo: b.tempo, transpose: 0, countIn: 1, choruses: 0, opts: b.opts, volumes: volumes(w),
       onState: function (s) { if (s === 'loading') status('Loading sounds…'); else if (s === 'playing') status(''); },
       onLoadProgress: function (d, t) { if (t) status('Loading sounds… ' + Math.round(100 * d / t) + '%'); },
-      onBar: function (info) { if (now && !info.countIn && info.index >= 0) status('Bar ' + (info.index + 1)); },
+      onBar: function (info) { if (now && !info.countIn && info.index >= 0) status('Bar ' + (info.index + 1) + secAt(now, info.index + 1)); },
       onBarEvents: function (rec) { var x = now; if (!x) return; x.log.push(rec); if (x.log.length % 4 === 0 || x.log.length < 4) draw(x); } };
     if (!player) player = global.BandPlayer.create(cfg);
     else { player.setChart(parsed); player.setTempo(b.tempo); player.setOpts(b.opts); PARTS.forEach(function (p) { player.setVolume(p.id, cfg.volumes[p.id]); }); }
@@ -108,14 +121,55 @@
       row.appendChild(el('span', 'ar-lbl', d.choiceLabel || 'Try:'));
       list.forEach(function (c, i) {
         var b = el('button', 'btn btn-sm btn-outline-secondary', c.label); b.type = 'button';
-        b.addEventListener('click', function () { w.choice = c.opts; Array.prototype.forEach.call(row.querySelectorAll('button'), function (x) { x.classList.toggle('ar-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
-          var cg = chips.querySelector('[data-part=congas]'); if (cg) cg.hidden = !hasPart(w, 'congas'); refresh(w); });
-        row.appendChild(b); if (i === 0) { w.choice = c.opts; b.classList.add('ar-on'); b.setAttribute('aria-pressed', 'true'); } else b.setAttribute('aria-pressed', 'false');
+        b.addEventListener('click', function () { w.choice = c.opts; w.secs = c.sections || null; Array.prototype.forEach.call(row.querySelectorAll('button'), function (x) { x.classList.toggle('ar-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
+          var cg = chips.querySelector('[data-part=congas]'); if (cg) cg.hidden = !hasPart(w, 'congas');
+          if (c.chart && c.chart !== w.chart) { w.chart = c.chart; if (now === w) { stop(); play(w); } return; }
+          refresh(w); });
+        row.appendChild(b); if (i === 0) { w.choice = c.opts; w.secs = c.sections || null; if (c.chart) w.chart = c.chart; b.classList.add('ar-on'); b.setAttribute('aria-pressed', 'true'); } else b.setAttribute('aria-pressed', 'false');
       });
       node.appendChild(row);
     }
     w.staff = el('div', 'ar-staff'); w.staff.appendChild(el('p', 'ar-hint', 'Press Play: the band\'s last four bars are written out here as it plays them.'));
     node.appendChild(w.staff);
+  }
+
+  function buildQuiz(node) {
+    var d = node.dataset, list = JSON.parse(d.choices || '[]'), charts = (d.charts || 'C|Am|F|G').split(';');
+    var w = { el: node, style: d.style || 'rock', chart: charts[0], on: {}, log: [], choice: null, hide: true, ask: -1 }, right = 0, done = 0, answered = true;
+    var on = (d.on || 'bass comp comp2 drums congas').split(/\s+/);
+    PARTS.forEach(function (p) { w.on[p.id] = on.indexOf(p.id) >= 0; });
+    var tools = el('div', 'ar-tools'), go = el('button', 'btn btn-sm btn-primary', '▶ New texture'), again = el('button', 'btn btn-sm btn-outline-secondary', '■ Stop');
+    go.type = again.type = 'button'; again.disabled = true; w.btn = again;
+    var score = el('span', 'ar-lbl', ''), fb = el('p', 'ar-hint ar-fb', 'Press New texture: the band plays one of these, and you name it.');
+    fb.setAttribute('aria-live', 'polite');
+    tools.appendChild(go); tools.appendChild(again); tools.appendChild(score); node.appendChild(tools);
+    var row = el('div', 'ar-tools ar-choices'); row.setAttribute('role', 'group'); row.setAttribute('aria-label', 'Your answer');
+    row.appendChild(el('span', 'ar-lbl', d.choiceLabel || 'It is:'));
+    var btns = list.map(function (c, i) {
+      var b = el('button', 'btn btn-sm btn-outline-secondary', c.label); b.type = 'button'; b.disabled = true;
+      b.addEventListener('click', function () { pickAns(i); }); row.appendChild(b); return b;
+    });
+    node.appendChild(row); node.appendChild(fb);
+    w.staff = el('div', 'ar-staff'); node.appendChild(w.staff);
+    function paintScore() { score.textContent = done ? right + ' / ' + done : ''; }
+    go.addEventListener('click', function () {
+      var n = list.length, k = n < 2 ? 0 : (w.ask + 1 + Math.floor(Math.random() * (n - 1))) % n;
+      var cc = list[k].charts || (list[k].chart ? [list[k].chart] : charts);
+      w.ask = k; w.choice = list[k].opts || {}; w.secs = list[k].sections || null; w.chart = cc[Math.floor(Math.random() * cc.length)]; w.hide = true; answered = false;
+      w.staff.innerHTML = ''; fb.textContent = 'Listen. Which is it?'; fb.className = 'ar-hint ar-fb';
+      btns.forEach(function (b) { b.disabled = false; b.classList.remove('ar-on', 'ar-right', 'ar-wrong'); });
+      if (now === w) stop(); play(w); again.disabled = false;
+    });
+    again.addEventListener('click', function () { if (now === w) stop(); else { play(w); } });
+    function pickAns(i) {
+      if (answered) return; answered = true; done++;
+      var ok = i === w.ask; if (ok) right++;
+      btns.forEach(function (b, j) { b.disabled = true; if (j === w.ask) b.classList.add('ar-on', 'ar-right'); else if (j === i) b.classList.add('ar-wrong'); });
+      fb.textContent = (ok ? 'Right: ' : 'No, it was: ') + list[w.ask].label + '.' + (list[w.ask].why ? ' ' + list[w.ask].why : '') + ' The notes the band just played are below.';
+      fb.className = 'ar-hint ar-fb ' + (ok ? 'ar-fb-ok' : 'ar-fb-no');
+      w.hide = false; draw(w); paintScore();
+    }
+    w.idle = '▶ Again';   // what stop() puts on the button
   }
   function compLabel(sound, style) {
     if (!sound) { var C = global.BandCatalog, s = C.byId(C.styles, style); return s && s.sound && s.sound.lead === 'guitar' ? 'Guitar' : 'Piano'; }
@@ -278,6 +332,7 @@
 
   function init() {
     Array.prototype.forEach.call(document.querySelectorAll('.ar-demo'), buildDemo);
+    Array.prototype.forEach.call(document.querySelectorAll('.ar-quiz'), buildQuiz);
     Array.prototype.forEach.call(document.querySelectorAll('.ar-organ'), mkOrgan);
     var t = $('ar-tempo'), tn = $('ar-tempo-n');
     function setT(v) { v = Math.max(40, Math.min(220, +v || 100)); tempoOverride = v; t.value = v; tn.value = v; if (player && now) player.setTempo(v); }

@@ -1,0 +1,12 @@
+X:5329
+%%from edm
+T:Tzigane, 1st Theme, B
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5329 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/d4POQh5KJPY?t=4m31s
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+f2g2 z/2 _a3-a/2- | _a2=a2 z/2 _a3/2f2 | z/2 e3/2d2 z/2 _a3-a/2- | _a=aba z/2 _a3/2f2 | e2d2 _affe | feed

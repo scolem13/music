@@ -1,0 +1,13 @@
+X:429
+T:Well-tempered Clavichord, Book I, Fugue No. 18
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0424, Barlow & Morgenstern B336, EDM 0429 (Musical Theme Dataset, CC BY 4.0)
+N:Fuga  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/8
+Q:1/4=67
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:B
+z2 G,2 ^^F,G,/A,/ B,A, | G,^^CD^F, G,G,A,A, | D,^E, F,2 |

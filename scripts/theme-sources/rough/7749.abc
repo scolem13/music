@@ -1,0 +1,11 @@
+X:7749
+%%from edm
+T:Quartet in E minor, 2nd Movement
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% EDM 7749 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+d2 z c ^d4 G4 | d2 z c ^d4 G4 | e3^d2<e2d2<e2d | e12 | f2 z e a4 g2 z2 | d2 z c f4 e2

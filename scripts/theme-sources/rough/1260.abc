@@ -1,0 +1,10 @@
+X:1260
+%%from edm
+T:Quintet, in E-flat, Op. 97, 2nd Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1260 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:B
+=a4 a4 b2a2 f4- | f4 e2f4<f4 e2 | =d4 B4 =A8- | =A4 B2c2 =d8 | e8 f4 =a4 | b4 =a2f2

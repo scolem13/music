@@ -1,0 +1,11 @@
+X:8279
+%%from edm
+T:Symphony No. 1 in C, 2nd Movement - 2nd Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8279 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:9/8
+L:1/16
+K:C
+G6 c6 e6 | g12 g4 a2 | b12 a6 | d'8 f'2d'2 b2a2g2 |

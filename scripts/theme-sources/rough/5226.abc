@@ -1,0 +1,10 @@
+X:5226
+%%from edm
+T:Pieces de Clavecin en Concert, No. 3, Tambourin, No. 1
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5226 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+A4 A4 A2a2A2 z/2 z/2 B | c2a2 z/2 z/2 cB2 A4 A4 | fedef2a2 d2d2 d4 | fedef2a2 c2c2c2

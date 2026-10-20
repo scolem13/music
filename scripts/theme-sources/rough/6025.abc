@@ -1,0 +1,13 @@
+X:6025
+%%from mtd
+T:Sonata in B-flat, 3rd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7657, Barlow & Morgenstern S438, EDM 6025 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/zD12AOCty0Q
+M:3/4
+L:1/4
+Q:1/4=271
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b a b | g a/b/c'/d'/ | b c'/b/a/g/ | f f f |

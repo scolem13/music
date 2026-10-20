@@ -1,0 +1,10 @@
+X:1760
+%%from edm
+T:Sonata in C minor, 2nd Movement
+C:Francesco Geminiani
+%%composer Geminiani|Francesco
+% EDM 1760 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+cdef g2a2 =B2d2F2A2 | DF=Bd fagf edcB c4 |

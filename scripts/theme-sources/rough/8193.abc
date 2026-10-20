@@ -1,0 +1,10 @@
+X:8193
+%%from edm
+T:King Lear, Overture, Op. 4, 5th Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8193 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+d'8 d'8 | d'8 ^c'8 | d'12 e4 | e8 z4 c'4 | b16 | a12 g4 | b16 | a4

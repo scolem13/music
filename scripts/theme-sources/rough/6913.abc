@@ -1,0 +1,12 @@
+X:6913
+%%from mtd
+T:Schatz Waltzer (Treasure Waltzes), Op. 418, No. 1
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8542, Barlow & Morgenstern S1304, EDM 6913 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=180
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z G/ z/ A/ z/ |{/B} A z/ E/ G | z G/ z/ A/ z/ |{/B} A z/ E/ G- | G E F | G e3/2 B/ | d c G | ^G{/B} A F | D |

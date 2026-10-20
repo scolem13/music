@@ -1,0 +1,14 @@
+X:1074
+T:Symphony No. 5, in C minor, Op. 67, 1st Movement - 1st Theme C
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1068, Barlow & Morgenstern B950, EDM 1074 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/fOk8Tm815lE?t=46s
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 34  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/4
+L:1/8
+Q:1/4=194
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+z B,B,B, | E,4 | F,4 | B,,4- | B,,4 |

@@ -1,0 +1,12 @@
+X:1316
+T:Slavonic Dances, Op. 72, No. 7, 3rd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2980, Barlow & Morgenstern D392, EDM 1316 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace [Kolo]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=155
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+d>e^fz/f/ | ^fz/f/fz/f/ | ^f>ef>g | e>de>^f |

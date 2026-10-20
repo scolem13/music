@@ -1,0 +1,10 @@
+X:2823
+%%from edm
+T:Trio No. 2 in F-sharp minor, 3rd Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2823 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F#
+e z/2 z/2 eg a2<a2 e2<c2 | e2<f2 d c6- c | c'2<b2 a z/2 z/2 g3 g3 | a2<e2 g

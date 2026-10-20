@@ -1,0 +1,10 @@
+X:290
+%%from edm
+T:Sonata No. 4 in C minor, Vn. and Piano, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0290 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+cdec d2G2 c2C2 e4- | edeg fedf e4

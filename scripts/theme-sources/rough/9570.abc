@@ -1,0 +1,10 @@
+X:9570
+%%from edm
+T:Recit de Chromhorne
+C:François Couperin
+%%composer Couperin|François
+% EDM 9570 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+f4 g4 a4 a4- | a2g2 a4 e2f2 g4 | d2e2 f4 a2b2 c'4 | ^c'2e'2 a4 a2=c'2^a2=a2 | g2f2e/2 z/2 (3def e3 d2 d4 |

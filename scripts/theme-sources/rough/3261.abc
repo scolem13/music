@@ -1,0 +1,10 @@
+X:3261
+%%from edm
+T:Much Ado About Nothing, Suite, Op. 11, 1st Movement, Madchen im Brautgemach, 1st Theme
+C:Erich Wolfgang Korngold
+%%composer Korngold|Erich Wolfgang
+% EDM 3261 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+B,,4 A,4 z/2 =G,/2=E,_G,_E, D4 | =B,2 z/2 B,/2_B, =B,=A,B,_A, G8 |

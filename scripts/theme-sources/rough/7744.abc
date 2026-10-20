@@ -1,0 +1,10 @@
+X:7744
+%%from edm
+T:Nabucodonosor, Overture, 1st Theme
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% EDM 7744 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+A4 d2e2 =f2d2 z4 | A4 d2e2 =f2d2 z4 | a4 =f2a2 g4 e2g2 | =f4 d2f2 e2A2

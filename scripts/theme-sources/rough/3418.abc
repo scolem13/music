@@ -1,0 +1,10 @@
+X:3418
+%%from edm
+T:Eight Grandes Etudes de Paganini, Etude No. 6 in A minor, (Paganini Caprice, No. 24) (Theme also used by Brahms and Rachmaninoff)
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3418 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+A2 z3/2 A/2 AcBA | e2 z3/2 E/2 E^G^FE | A2 z3/2 A/2 AcBA | e4 E2

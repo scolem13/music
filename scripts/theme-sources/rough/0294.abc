@@ -1,0 +1,10 @@
+X:294
+%%from edm
+T:Sonata No. 5 in F minor, Vn. and Piano, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0294 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+f8 g8 | a2gf =e2g2 c4 c'4- | c'2ba g2b2 =e2c2 f4 |

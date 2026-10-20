@@ -1,0 +1,10 @@
+X:9456
+%%from edm
+T:Concerto Grosso in B-flat, Op. 6, No. 11, Str. Orchestra, 1st Movement - 1st Theme - Preludio
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9456 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+b8 c'8- | c'2f2 b8 a4 | g8 c8 |

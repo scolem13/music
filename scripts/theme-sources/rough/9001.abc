@@ -1,0 +1,10 @@
+X:9001
+%%from edm
+T:Suite No. 2 in D minor, 3rd Movement - Minuet
+C:Louis de Caix d'Hervelois
+%%composer Caix d'Hervelois|Louis de
+% EDM 9001 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d6 _d2 =d4 | A4 B2A2 G2F2 | G4 E4 A4 | F6 E2 D4 |

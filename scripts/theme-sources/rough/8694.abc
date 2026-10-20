@@ -1,0 +1,11 @@
+X:8694
+%%from edm
+T:Sonata in A, Op. 100, 1st Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8694 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+^A6- AA c4 | ^A6- AA e4 | ^A6- AA2<B2B | c3c g6 =g2 | =g6

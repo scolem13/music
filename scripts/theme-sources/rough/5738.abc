@@ -1,0 +1,11 @@
+X:5738
+%%from edm
+T:Danses Espagnoles, Op. 21, No. 2, Habanera, 3rd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5738 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+e3/2a2c'/2 _a z =b z | z/2 =b/2 a6- a | e3/2a2c'/2 e' z _a z | z/2 =b/2 a6- a |

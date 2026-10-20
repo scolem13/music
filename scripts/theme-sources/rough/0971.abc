@@ -1,0 +1,13 @@
+X:971
+%%from mtd
+T:Sonata No. 32, in C minor, Op. 111, Piano, 1st Movement - Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0965, Barlow & Morgenstern B847, EDM 0971 (Musical Theme Dataset, CC BY 4.0)
+N:Maestoso - Allegro con brio e appassionato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=38
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E/ | ^F,7/2[K:treble] e/ e4- e7/2c/ c3=B/c/ | =B2 z2 c2 z2{DGB} d2 z2 z4 |

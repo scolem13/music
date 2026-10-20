@@ -1,0 +1,11 @@
+X:3238
+T:Galanta Dances, Orchestra, 4th Movement - 1st Theme
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% MTD 4893, Barlow & Morgenstern K67, EDM 3238 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=136
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z A2 ^G- | G A2 B- | B c2 B- | B A2 =G- | G F2 E | D/C/D/B,/ A,E |

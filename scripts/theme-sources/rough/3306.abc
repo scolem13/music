@@ -1,0 +1,10 @@
+X:3306
+%%from edm
+T:Concerto Russe, Op. 29, 1st Movement - Intro
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3306 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B,8 D6 C2 | C8 B,8 | G,8 A,6 B,2 | B,12 B,4 | D8 ^A,8 | B,8 G,6 E2 | E12- E2D2 | D8

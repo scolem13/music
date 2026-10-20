@@ -1,0 +1,10 @@
+X:5080
+%%from edm
+T:Fairy Queen, The Monkey's Dance
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5080 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+G2 B8- B2 | G2 d8- d2 | d2 (3e4-ee4- e f4- f | d2 g8- g2 | g2 (3f4-fg4- g e4- e | f2 (3d4-de4- e B4- B |

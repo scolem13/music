@@ -1,0 +1,10 @@
+X:4194
+%%from edm
+T:Divertimento in F, K 247, 5th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4194 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 f2e2 f2a2 | c'8 d'2=b2 | c'8 d'2=b2 | c'4

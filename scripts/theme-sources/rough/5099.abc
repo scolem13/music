@@ -1,0 +1,10 @@
+X:5099
+%%from edm
+T:Suite No. 1, in G, Prelude
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5099 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B2G2d2B2 D,2F,2A,2F2 | G2E2B2G2 B,,2D,2G,2D2 | E2C2G2E2 G,,2B,,2D,2B,2 | C2A,2E2C2

@@ -1,0 +1,11 @@
+X:9834
+%%from edm
+T:La Favorita, Overture - 1st Theme
+C:Gaetano Donizetti
+%%composer Donizetti|Gaetano
+% EDM 9834 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+z cde2<e2d | ccde2<e2d | c=Bce g4 | a4 gdfe | c

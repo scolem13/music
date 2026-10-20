@@ -1,0 +1,12 @@
+X:6884
+%%from mtd
+T:Kunstlerleben, Op. 316, Waltzes, No. 4, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8513, Barlow & Morgenstern S1275, EDM 6884 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=166
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g>e' e' z e' z | ^g>e' e' z e' z | a>f' f' z e' z | d'6 |

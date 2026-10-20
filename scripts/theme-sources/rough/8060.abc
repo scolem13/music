@@ -1,0 +1,10 @@
+X:8060
+%%from edm
+T:Der Freischutz, Overture, Intro. B
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8060 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+g8 e4 c2e2 | d6 z/2 e3/2 d4 z4 | e8 c4 e2g2 | g6 f2 e4 z4 | c'8 a4 f2a2 | g8 e4 c2e2 |

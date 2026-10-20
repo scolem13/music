@@ -1,0 +1,10 @@
+X:5964
+%%from edm
+T:Quartet No. 15 in G, Op. 161, 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5964 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d'2<b2 e' e'6- e'- | e'd'2 z8 z | c'2<a2 d' d'6- d'- | d'c'2 z8 z | ^a2<=a2 g d'4 e'3- | e'4- e' d'4

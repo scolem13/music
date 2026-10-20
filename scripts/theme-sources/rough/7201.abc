@@ -1,0 +1,11 @@
+X:7201
+%%from edm
+T:Pulcinella, Finale
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7201 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+c4 edef | g2a2g2f2 | c'4 edef | g2a2g2f2 | c'4 edef | g2a2g2f2 | c'4 g2a2 | g2d2

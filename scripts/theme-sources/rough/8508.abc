@@ -1,0 +1,12 @@
+X:8508
+%%from mtd
+T:Hungarian Dances, No. 5 in F-sharp minor, Piano, 4 hands, 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1511, Barlow & Morgenstern B1375, EDM 8508 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=129
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+C6 F2 | A6 F2 | ^E6 FG | F8 | D6 EF | C8 | B,A,A,G, G,2>C2 |

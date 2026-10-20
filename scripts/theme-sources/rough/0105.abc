@@ -1,0 +1,10 @@
+X:105
+%%from edm
+T:Quintet in D, No. 6, 3rd Movement - 2nd Theme
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0105 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+z2 a2 f2d2 | z/2 _d/2=Bd=d e2 z2 | z2 b2 g2e2 | z/2 f/2efg a2

@@ -1,0 +1,25 @@
+```{=html}
+<style>
+.cp-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+.cp-try{border:1px solid var(--site-border);border-radius:8px;padding:.7rem 1rem;margin:1rem 0;background:var(--site-surface)}
+.cp-try h4{margin:.1rem 0 .4rem;font-size:1rem}
+.cp-tools{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;margin:.5rem 0}
+.cp-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.cp-paper{background:#fff;border-radius:6px;overflow-x:auto;margin:.4rem 0;min-height:2rem}
+.cp-note{font-size:.88rem;color:var(--site-ink-2);min-height:1.3em}
+.cp-out{font-family:var(--font-mono);font-size:.8rem;white-space:pre-wrap;background:var(--site-surface);border:1px solid var(--site-border);border-radius:6px;padding:.5rem .7rem}
+.cp-field{display:block;margin:.5rem 0}
+.cp-field span{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);margin-bottom:.15rem}
+.cp-field input,.cp-field textarea,.cp-field select{width:100%;max-width:44rem}
+.cp-field textarea{min-height:4.5rem}
+.cp-good{color:var(--site-pass)}
+.cp-bad{color:var(--site-fail)}
+.cp-table{font-size:.9rem}
+.cp-table td,.cp-table th{padding:.25rem .5rem;vertical-align:top}
+</style>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script>window.AX_NO_VOICE = true;   // instrumental examples: no Your voice menu; staves fill the column</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=13"></script>
+<script src="/apps/shared/lessons/compose-kit.js?v=2"></script>
+```

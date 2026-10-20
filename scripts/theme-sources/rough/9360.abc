@@ -1,0 +1,10 @@
+X:9360
+%%from edm
+T:Sonata in B-flat, Piano, Op. 47, No. 2 - 1st Movement
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9360 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B2B2B2B2 B2B2 cBAB | f2f2f2f2 f2f2 gf=ef | b2b2b2b2 b2b2 c'bab | g'4 f'4

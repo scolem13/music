@@ -1,0 +1,10 @@
+X:4280
+%%from edm
+T:Quartet in A, K 464, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4280 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e4 e6 ^d2 | f2e2d2c2e2d2 | c2B2 A4 B4 | c4 d4

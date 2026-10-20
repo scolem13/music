@@ -1,0 +1,10 @@
+X:7213
+%%from edm
+T:Le Sacre du Printemps, Evocation of the Ancestors
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7213 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c8 c4 | c4 d4 c4 | d4 c8 | c4 c4 d4 | c8 c4 | c4 d4 c4 | d4 c4 ^d4 | d4 c8 | c4 c4

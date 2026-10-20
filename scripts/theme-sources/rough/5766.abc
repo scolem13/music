@@ -1,0 +1,10 @@
+X:5766
+%%from edm
+T:March de Cocagne
+C:Erik Satie
+%%composer Satie|Erik
+% EDM 5766 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c'4 d'4 a8 | g2gg g2d'2 d'4 z2 d'2 | e'2f'2e'2c'2 d'2^d'2=d'2^a2 | b3d'2<g'2d' g'4 z2 f'2 | e'2c'2 a4

@@ -1,0 +1,11 @@
+X:9177
+%%from edm
+T:Etudes, Op. 10 - No. 4, in C-sharp minor
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9177 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+gfed cd=c^c decd efde | fgef gagc' fgfc' efec' | dedc'

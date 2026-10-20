@@ -1,0 +1,11 @@
+X:9408
+%%from edm
+T:Concerto for Orchestra and Piano, 1st Movement - 1st Theme A
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9408 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:7/8
+L:1/16
+K:C
+B4<e4 ^f2e2 z2 | B2 e4 ^f2 d2 z2 B2 | e4 ^f2e2 f2d2 z2 | B2 e4 ^f2 d2 z2 B2 | ^f2d2

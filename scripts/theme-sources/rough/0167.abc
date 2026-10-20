@@ -1,0 +1,10 @@
+X:167
+%%from edm
+T:Concerto No. 3, in C minor, 2 Pfts. and Orchestra, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0167 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+c=BcG AFGE FDEC | D=B,C2 A2 z/2 z/2 A2<G2=A | dGc=B c2

@@ -1,0 +1,10 @@
+X:8405
+%%from edm
+T:La Dame Blanche, 3rd Theme
+C:François Boieldieu
+%%composer Boieldieu|François
+% EDM 8405 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+e4 a4 a4 a4 | c'4 c'4 e4 z4 | e4 b4 b4 b4 | d'4 d'4 e4 z4 | e4 e4 c'4 c'4 | c'4 c'4 f4

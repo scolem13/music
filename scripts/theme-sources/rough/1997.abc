@@ -1,0 +1,10 @@
+X:1997
+%%from edm
+T:Dance Caprice, Op. 28, No. 3, Piano, 1st Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 1997 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+E4 c8 | z/2 B3/2A2 c8 | z/2 A3/2G2 =G2e2 e4 | e4 e2E2 E4 | E4

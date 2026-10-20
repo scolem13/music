@@ -1,0 +1,11 @@
+X:9180
+%%from edm
+T:Etudes, Op. 10 - No. 7, in C
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9180 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/RZWjOzBl0zU
+M:6/8
+L:1/16
+K:C
+g2gc'^gd' fbd=g^da | ^gb

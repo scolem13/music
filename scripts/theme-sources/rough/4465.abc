@@ -1,0 +1,10 @@
+X:4465
+%%from edm
+T:Sonata in F, K 377, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4465 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+F4 A4 G4 | F4 z8 | z/2 z/2 d8 cBA | G4

@@ -1,0 +1,10 @@
+X:2004
+%%from edm
+T:Holberg Suite, Op. 40, 3rd Movement - 1st Theme - Gavotte
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2004 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+G4 A4 | A4 c4 | c4 e4 | e8 | d2c2 B4 | c4 A4 | B2c2A2G2 | z/2 F4- F3/2G2 | G8 |

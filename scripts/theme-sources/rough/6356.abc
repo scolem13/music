@@ -1,0 +1,11 @@
+X:6356
+%%from edm
+T:Symphony No. 1 in B-flat, Op. 38, 4th Movement - Intro.
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6356 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Bb
+f8 g8 | a4 b8 c'4 | d'8 =e'8 | f'16- | f'4

@@ -718,8 +718,8 @@
   function feelPart(part, name){
     var carry = null;
     function swingOf(ctx, tempo){
-      if (ctx.opts && ctx.opts.feel === "straight") return 0.5;
-      var P = global.BandPlayer; return (P && P.swingFor) ? P.swingFor(tempo) : 2 / 3;
+      var P = global.BandPlayer; if (!(P && P.swingAt) && ctx.opts && ctx.opts.feel === "straight") return 0.5;
+      return (P && P.swingAt) ? P.swingAt(ctx.opts, tempo).s : (P && P.swingFor) ? P.swingFor(tempo) : 2 / 3;
     }
     function warp(pos, s){ var b = Math.floor(pos), f = pos - b; return b + (f <= 0.5 ? f * (s / 0.5) : s + (f - 0.5) * ((1 - s) / 0.5)); }
     function back(ev, s, k, off){

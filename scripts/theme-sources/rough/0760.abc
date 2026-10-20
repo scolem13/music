@@ -1,0 +1,13 @@
+X:760
+%%from mtd
+T:Quartet in C-sharp minor, Op. 131, 7th Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0754, Barlow & Morgenstern B656, EDM 0760 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=271
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+c' | ^b2 a2 | g3 c' | ^b c' d' e' | d' z z |

@@ -1,0 +1,10 @@
+X:5508
+%%from edm
+T:La Boutique Fantasque, 6th Movement, Valse Lente
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5508 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d2^c2 d4<b4 | f2a2 g4<g'4 | f'2a'2 ^d'4<b'4 | e'2a'2 d'4<g'4 | b2e'2 a4<e'4 | ^a2e'2 b4<d'4 |

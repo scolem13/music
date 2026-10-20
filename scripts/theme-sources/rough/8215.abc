@@ -1,0 +1,11 @@
+X:8215
+%%from edm
+T:Fantastic Symphony, Op. 14, 5th Movement - 2nd Theme - Dies Irae
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8215 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Eb
+z4 e2 d4 e2 | (3c4-cd4- d B4- Bc2 | (3c4-ce4- e e4- ef2 | (3e4-ed4- d c4- cB2 | d4

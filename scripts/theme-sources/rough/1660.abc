@@ -1,0 +1,10 @@
+X:1660
+%%from edm
+T:Prelude, Aria, and Finale, Finale, 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1660 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+B,2^A,2A,2=A,2 A,2G,2G,2D2 | D2=D2D2C2 C2=C2^C2F2 | F2=F2F2E2 E2F2 ^F4 |

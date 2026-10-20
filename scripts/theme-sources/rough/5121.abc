@@ -1,0 +1,10 @@
+X:5121
+%%from edm
+T:A Children's Overture, 5th Theme, Sing a Song of Sixpence
+C:Roger Quilter
+%%composer Quilter|Roger
+% EDM 5121 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+z/2 z/2 ba2 g2f2 | b4 d4 | d2f2f2d2 | f8 | b2a2g2f2 | b4 d4 | c2g2g2_g2 | g4

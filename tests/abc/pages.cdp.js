@@ -40,7 +40,9 @@ const PROBE = `(() => {
     b.errors.length = 0; b.failed.length = 0;
     await b.goto(`http://127.0.0.1:${PORT}/${page}.html`);
     await b.sleep(2500);
-    return { probe: await b.eval(PROBE), errors: b.errors.slice().sort(), failed: b.failed.filter(f => /\/apps\//.test(f)).sort() };
+    // the frozen baseline predates AbcPitch.tonicPc, which the assessment's current app.js calls: not a difference in parsing
+    const errors = b.errors.filter(e => !(useOld && /AbcPitch\.tonicPc is not a function/.test(e)));
+    return { probe: await b.eval(PROBE), errors: errors.sort(), failed: b.failed.filter(f => /\/apps\//.test(f)).sort() };
   };
   let bad = 0;
   for (const page of PAGES){

@@ -1,0 +1,10 @@
+X:316
+%%from edm
+T:Suite No. 1 in C, Orchestra, Forlane
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0316 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:C
+c4 g8 g4 g6 a2 | ^a4 =a8 d4 d6 e2 | f4 B6 c2 d4 G6 g2 | f4 e6 f2 g4 c4

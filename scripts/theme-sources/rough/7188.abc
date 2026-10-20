@@ -1,0 +1,11 @@
+X:7188
+%%from edm
+T:Petrouchka, Waltz, La Ballerina et le Maure, 2nd Theme A
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7188 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:B
+z4 z/2 d'3-d'/2 z/2 d'3-d'/2 | z/2 d'3-d'/2 z4 f4 | z4 z/2 d'3-d'/2 z/2 d'3-d'/2 | z/2 d'3-d'/2 z4 f4 | z4 z/2 c'3-c'/2 z/2 d'3-d'/2 | z/2 e'3-e'/2 z4 g4 |

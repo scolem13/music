@@ -1,0 +1,10 @@
+X:5638
+%%from edm
+T:Havanaise, Op. 83, 3rd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5638 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+a4 b4 c'8 | d'16 | c'4 b4 a'8 | g'12 b4 | c'4 d'4 ^d'4 e'2f'2 | e'12 b4 | d'4 c'4 f6

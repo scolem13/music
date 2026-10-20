@@ -1,0 +1,13 @@
+X:3198
+%%from mtd
+T:Concerto, 3rd Movement - 1st Theme A
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4853, Barlow & Morgenstern K27, EDM 3198 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro brillante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=131
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+eE eE | eE eE | eE/F/ GA | Bc d^d |

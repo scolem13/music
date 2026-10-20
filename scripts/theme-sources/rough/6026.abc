@@ -1,0 +1,12 @@
+X:6026
+%%from mtd
+T:Sonata in B-flat, 4th Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7658, Barlow & Morgenstern S439, EDM 6026 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=146
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d | c=BBB | =Bc z e | c=BBB | =Bc z e | c_BBB |

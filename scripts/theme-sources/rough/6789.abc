@@ -1,0 +1,10 @@
+X:6789
+%%from edm
+T:La Vestale, Overture, 3rd Theme
+C:Gasparo Spontini
+%%composer Spontini|Gasparo
+% EDM 6789 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+e'8- e'2c'2 z/2 b3/2a2 | ^a4 b4 ^g4 e4 | e'4 f'2e'2 e'2d'2d'2c'2 | c'2b2^a2b2 a2b2c'2b2 |

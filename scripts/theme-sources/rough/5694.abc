@@ -1,0 +1,11 @@
+X:5694
+%%from edm
+T:Sonata No. 1, Op. 75, 1st Movement - 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5694 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:F
+c'6 a6 | g6 b6 | a6 f6 | g6 e6 | f6 g6 | a6 c'3b3 | a3b3 g6 | c'6

@@ -1,0 +1,12 @@
+X:1297
+T:Slavonic Dances, Op. 46, No. 8, 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2961, Barlow & Morgenstern D373, EDM 1297 (Musical Theme Dataset, CC BY 4.0)
+N:Presto in G Minor [Furiant]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=277
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d3 | B3 | A3 | G3 | A3 | B3 | e3 | d3 | c2 B | G3 | A3 | B3 |

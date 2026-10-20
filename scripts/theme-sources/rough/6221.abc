@@ -1,0 +1,10 @@
+X:6221
+%%from edm
+T:Davidsbundler, Op. 6, No. 9
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6221 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+^c'3d'2<c'2d' c'2c'2 | e'3d'2<c'2b2<a2g | a'3g'2<f'2e'

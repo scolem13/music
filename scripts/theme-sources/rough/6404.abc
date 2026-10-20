@@ -1,0 +1,11 @@
+X:6404
+%%from edm
+T:Toccata, Op. 7, 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6404 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+b4 g3e | d6- db | a3^d2<=d2^f | g2

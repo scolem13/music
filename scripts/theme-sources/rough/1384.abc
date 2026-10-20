@@ -1,0 +1,10 @@
+X:1384
+%%from edm
+T:Trio, Op. 90, 4th Movement - 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1384 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+E4 F4 G4 | A8- A2C2 | B,6 E6 | F4 D4 B,4 | z/2 G8- G3-G/2 |

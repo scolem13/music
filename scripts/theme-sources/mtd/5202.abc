@@ -1,0 +1,12 @@
+X:5202
+T:Symphony No. 2 in E minor, Op. 27, 4th Movement - 1st Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% MTD 6841, Barlow & Morgenstern R74, EDM 5202 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=175
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+(3:2:2e2 f (3ga^a b2- (3:2:2b2 b | (3c'bc' b2 (3:2:2b2 b (3c'bc' | (3:2:2a2 a (3bab (3:2:2g2 f (3gfg | e2 |

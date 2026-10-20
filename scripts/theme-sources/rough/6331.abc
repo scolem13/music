@@ -1,0 +1,10 @@
+X:6331
+%%from edm
+T:Sonata in D minor, Op. 121, 2nd Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6331 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+B2 z f f4 | d2 z b b4 | d'3c'/2b/2 c'2f2 | b3a/2g/2 f4 |

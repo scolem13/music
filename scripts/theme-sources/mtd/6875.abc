@@ -1,0 +1,11 @@
+X:6875
+T:Kaiser-Waltzer, Op. 437, No. 3, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8504, Barlow & Morgenstern S1266, EDM 6875 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=163
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e'6- | e'b d'3 c' | e'6- | e'2 a3 b | d'6- | d'2 g3 a | c'4 b z | b2 |

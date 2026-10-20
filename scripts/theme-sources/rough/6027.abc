@@ -1,0 +1,10 @@
+X:6027
+%%from edm
+T:Sonata in A minor, (Arpeggione), 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6027 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+a8 b6 c'2 | a8- a2b2c'2d'2 | e'6 a4<f'4 a2 | e'8

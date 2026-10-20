@@ -1,0 +1,10 @@
+X:8002
+%%from edm
+T:Concerto, Viola and Orchestra, 2nd Movement - 2nd Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8002 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+z4 aaaa | b2a2 z2 d'2 | ^c'2 z2 b2a2 | z2 g2 b2 z2 | a2

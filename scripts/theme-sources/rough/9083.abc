@@ -1,0 +1,11 @@
+X:9083
+%%from edm
+T:Le Roi Malgré Lui, Fête Polonaise - 2nd Theme
+C:Emmanuel Chabrier
+%%composer Chabrier|Emmanuel
+% EDM 9083 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+z2 ^g2 a2 z2 a2 z2 | d'2 z a a2 z2 a2 z2 | ^g2 z a a2 z2 a2 z2 | f8- f2 z2 | z3 ^g a4 d'2 z2 | d'8 a4 |

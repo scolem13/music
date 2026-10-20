@@ -1,0 +1,10 @@
+X:226
+%%from edm
+T:Partita No. 1 in B-flat, Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0226 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f4 B,4 B,,4 f4 | g4 _A4 G4 g4 | c4 _G4 F4 c4 | d8

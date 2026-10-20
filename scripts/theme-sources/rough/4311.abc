@@ -1,0 +1,10 @@
+X:4311
+%%from edm
+T:Quintet in A, K 581, 4th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4311 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+e4 e4 c4 c4 | d3e2<f2d B4 B4 | A4 A4 e4 e4 | c/2d/2c/2d/2c/2d/2c/2d/2c/2d/2c/2d/2Bc B8 |

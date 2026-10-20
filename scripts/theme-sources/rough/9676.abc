@@ -1,0 +1,11 @@
+X:9676
+%%from edm
+T:Pour le Piano, Suite - Sarabande
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9676 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+f4 a4 (3b2a2f2 | e2g2 g8 | f2g2 a4 (3b2a2f2 | e2g2 g8 |

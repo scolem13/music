@@ -1,0 +1,11 @@
+X:6535
+%%from edm
+T:Concerto, Op. 47, 1st Movement - 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6535 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:F
+z8 g8- | g6 a2 d8- | d12 d4 | f6 (3efe d8- | d12 a4 | c'6 =b4<a4 _a=a | d'12 e'4 | c'6 =b2 a4

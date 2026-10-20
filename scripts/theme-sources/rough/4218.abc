@@ -1,0 +1,10 @@
+X:4218
+%%from edm
+T:The Abduction From The Seraglio, Overture, K 384, 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4218 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Eb
+G2 c=B cd | e2 d2 z2 | f2 e2 z2 | d4 z/2 e/2c | e2 d2

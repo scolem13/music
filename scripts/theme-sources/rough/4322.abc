@@ -1,0 +1,10 @@
+X:4322
+%%from edm
+T:Quintet in G minor, K 516, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4322 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+G4 F2E2 A4 G2F2 | B6 cA2<G2A F2

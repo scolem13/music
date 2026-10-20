@@ -1,0 +1,10 @@
+X:4011
+%%from edm
+T:Pastorale, 1st Theme
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% EDM 4011 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+c8 A2^A2 c4 | d4 c4 f8 | f4 g2a2 g4 f4 | e4 f4 g8 |

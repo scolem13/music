@@ -1,0 +1,11 @@
+X:8089
+%%from edm
+T:Peter Schmoll und Seine Nachbarn, Overture, 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8089 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+e8- e2g2d2e2 | B8- B2g2d2e2 | B4 c'2b2 a2g2f2e2 | f8- f2

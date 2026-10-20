@@ -1,0 +1,11 @@
+X:7110
+%%from edm
+T:Le Baiser de la Fee, 3rd Movement - Au Moulin, 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7110 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+B8 c4- | c4 f6 e2 | g4 c8 | e8 d4 | f8 c4- | c4 f6 e2 | g8

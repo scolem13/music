@@ -1,0 +1,10 @@
+X:1251
+%%from edm
+T:Quintet, Op. 81, 2nd Movement - 1st Theme B
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1251 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+F4 c4- | c2B2A2c2 | B2FA G4- | G2 c4 B2 | A3B2<c2d | e4

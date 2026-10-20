@@ -1,0 +1,13 @@
+X:1145
+T:Symphony No. 9, in D minor, Op. 125, 2nd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1138, Barlow & Morgenstern B1020, EDM 1145 (Musical Theme Dataset, CC BY 4.0)
+N:Molto vivace - Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 9  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/4
+Q:1/4=338
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+a3/2 A/ A | d e f | e f g | f e d | f e d | c =B A | ^G A =B | A |

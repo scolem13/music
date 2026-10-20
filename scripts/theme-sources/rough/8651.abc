@@ -1,0 +1,11 @@
+X:8651
+%%from edm
+T:Sextet in G, Op. 36, 2nd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8651 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+b4 a8 | e8 f4 | d4 g8 | d8 b4 | g4 a8 | e8 f4 | d4 g8 |

@@ -1,0 +1,12 @@
+X:7155
+T:Dumbarton Oaks Concerto, 1st Movement - 2nd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% MTD 8781, Barlow & Morgenstern S1534b, EDM 7155 (Musical Theme Dataset, CC BY 4.0)
+N:Tempo giusto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=86
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A,2C2 | D4- D z3 | E4- E z3 | F2A2- AFDC | B,6 B,2 | A,B,CD G4 |

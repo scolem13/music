@@ -1,0 +1,10 @@
+X:1716
+%%from edm
+T:Sonata in D minor, 3rd Movement - Allemande
+C:François Francœur
+%%composer Francœur|François
+% EDM 1716 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d2<d2 _edcB AG2_G2 =G2A- | A D4 z GA BB2A G_G2d- | dB2 z/2 G3/2

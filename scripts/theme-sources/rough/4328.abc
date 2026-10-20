@@ -1,0 +1,10 @@
+X:4328
+%%from edm
+T:Quintet in D, K 593, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4328 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A4 F4 D4 | d4 B4 G4 | e4 d2c2 B2A2 | a4 f4 d4 |

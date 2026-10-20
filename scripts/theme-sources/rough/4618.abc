@@ -1,0 +1,10 @@
+X:4618
+%%from edm
+T:Symphony Concertante, in E-flat, K 364, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4618 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+f b6 z f d'6 z | bf'2=e'4<_e'4 f' e'd'c'b | =ab2

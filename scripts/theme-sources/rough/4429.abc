@@ -1,0 +1,10 @@
+X:4429
+%%from edm
+T:Sonata in C, K 445, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4429 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+g2g2 e4 | f2f2 d2 z2 | cdec ABc^c | defd cBAG |

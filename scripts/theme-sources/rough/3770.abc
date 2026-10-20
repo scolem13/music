@@ -1,0 +1,10 @@
+X:3770
+%%from edm
+T:Phedre, Overture, 2nd Theme
+C:Jules Massenet
+%%composer Massenet|Jules
+% EDM 3770 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+z4 G8 F2E2 | G2F2 E8 D2^C2 | E8- E2D2C2B,2 | B,8 A,8 |

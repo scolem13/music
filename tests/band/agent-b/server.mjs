@@ -7,7 +7,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
 
-export const ROOT = '/Users/sean.coleman/Projects/everything-music-site';
+export const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "../../..");
 export const HERE = path.dirname(fileURLToPath(import.meta.url));
 export const OUT = path.join(HERE, 'out');
 const PARTS = ['harmony', 'bass', 'comp', 'drums'];

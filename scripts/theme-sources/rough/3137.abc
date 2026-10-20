@@ -1,0 +1,10 @@
+X:3137
+%%from edm
+T:Sinfonietta, 2nd Movement - 2nd Theme
+C:Leoš Janáček
+%%composer Janáček|Leoš
+% EDM 3137 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:C
+B2 e2 ^f2 e2 | a8 | z/2 b3/2 a6 | ^g6 ^d2 | ^c6 BA | ^G8 |

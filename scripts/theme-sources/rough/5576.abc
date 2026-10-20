@@ -1,0 +1,10 @@
+X:5576
+%%from edm
+T:Melody in F, Op. 3, No. 1, 2nd Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5576 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+e2g2=b2a2 | g4 d2e2 | f2g2a2=b2 | c'4 c4 | e2g2=b2a2 | g4 d2e2 | f2g2a2=b2 | c'4 c2

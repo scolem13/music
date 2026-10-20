@@ -1,0 +1,10 @@
+X:4677
+%%from edm
+T:A Day in Venice, Op. 25, 1st Movement - Dawn, Intro
+C:Ethelbert Nevin
+%%composer Nevin|Ethelbert
+% EDM 4677 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+A4<e4 d4 | z6 A2 _A4 | A4<e4 d4- | d4 z2 d2 _d4 | d2 z/2 f3-f/2 e2 c'4- | c'2 z/2 e3-e/2 d2 b4- | b2

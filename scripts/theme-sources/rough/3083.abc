@@ -1,0 +1,10 @@
+X:3083
+%%from edm
+T:Concertino Pastorale, 1st Movement, Eclogue, 1st Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3083 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+z8 D4 E4- | E2d4<B4 A2 G2B,2 | D8- D2 D4 D2- | D4 z2 E2 G4 z2 F2 | D2E2G2F2 D2E2G2B2 | d4

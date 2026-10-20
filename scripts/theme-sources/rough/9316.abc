@@ -1,0 +1,10 @@
+X:9316
+%%from edm
+T:Sonata in G, Op. 65, Cello and Piano, 3rd Movement
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9316 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d8 e2d2 | c2g4<f4 e2 | d6 B2 B4 | z/2 z/2 d2c c4

@@ -1,0 +1,12 @@
+X:455
+T:Well-tempered Clavichord, Book II, Prelude No. 7
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0450, Barlow & Morgenstern B362, EDM 0455 (Musical Theme Dataset, CC BY 4.0)
+N:Præludium  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:9/8
+L:1/8
+Q:1/4=108
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B3 z3 z Ge |{e} d3 z3 z FG | ACE DFB B,FA |{A} G3 |

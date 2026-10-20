@@ -1,0 +1,10 @@
+X:6622
+%%from edm
+T:Symphony No. 2, in D, Op. 43, 2nd Movement - Intro.
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6622 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+D2 G2 B2 | A2 F2 A2 | G2 D2 E2 | F2 E2 D2 | E2 F2 G2 | B,6 |

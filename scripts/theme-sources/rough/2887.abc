@@ -1,0 +1,10 @@
+X:2887
+%%from edm
+T:Sonata No. 2, Piano, 1st Movement, 2nd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2887 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+F2^G2c2c2 | c4 ^d3=d | c4 f3^c | c4 ^dcdc | ^A2A2^c2A2 | ^G4

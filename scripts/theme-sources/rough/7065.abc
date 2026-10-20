@@ -1,0 +1,11 @@
+X:7065
+%%from edm
+T:Sonata in E-flat, Op. 18, 1st Movement - 1st Theme B
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7065 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+z2 g2 f2e2 e2d2e2f2 | B6 c2 _d8- | _d2B2c2d2 e8- | e4 f4 B8 |

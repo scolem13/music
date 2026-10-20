@@ -1,0 +1,13 @@
+X:909
+T:Sonata No. 17, in D minor, Op. 31, No. 2, 3rd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0903, Barlow & Morgenstern B785, EDM 0909 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 43 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/8
+L:1/8
+Q:1/4=126
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+Pfe | Pfe Pf |e Pfe | Pfe Pf |e f2- | fed | Pc=BA |

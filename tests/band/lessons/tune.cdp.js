@@ -114,7 +114,7 @@ const { launch } = require("../lead/cdp.js"); const assert = require("assert");
       window.__open = []; window.open = function (u){ __open.push(u); return null; }; 0`);
     const tb = `document.querySelector(".bl-step[data-tune] .bl-abc:not([hidden]) .btn")`;
     await ev(`${tb}.click(); 0`); await b.sleep(300); await ev(`${tb}.click(); 0`); await set("bl-feel", "boogaloo"); await ev(`${tb}.click(); 0`); await b.sleep(300); await ev(`${tb}.click(); 0`); await set("bl-feel", "swing");
-    assert.deepStrictEqual([...new Set(await ev(`window.__opt`))], [66, 0], "swing handed to abcjs");      // (with the local samples a start may fail and the second click start again)
+    assert.deepStrictEqual([...new Set(await ev(`window.__opt`))], [67, 0], "swing handed to abcjs");      // (the band's amount for Medium swing at 108 bpm, 0.675, was a fixed 66; boogaloo is even) // (with the local samples a start may fail and the second click start again)
     await ev(`LessonScore.stop(); 0`);
     await ev(`Array.prototype.filter.call(document.querySelectorAll(".bl-step[data-tune] .bl-tools .btn"), function (x){ return /Backing Track/.test(x.textContent); })[0].click(); 0`);
     assert.deepStrictEqual(await ev(`window.__open`), ["/tools/backing-track.html?from=chord-entry"]);

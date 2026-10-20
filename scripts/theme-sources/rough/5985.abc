@@ -1,0 +1,10 @@
+X:5985
+%%from edm
+T:Rondo in A, 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5985 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+A3c/2e/2 a2=f2 ^f3a/2c'/2 f'2a'2 | e3g/2b/2 e'2d'2 c'2 (3bd'f' a2g2 |

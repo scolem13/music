@@ -1,0 +1,10 @@
+X:1869
+%%from edm
+T:Air de Ballet, Act II, 3rd Movement
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1869 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+g2g_g =g2a2 d2 z2 | g2g_g =g2b2 d'2 z2 | z2 c'2 z2 b2 z/2 a2-a/2g | _g=ga_g d2

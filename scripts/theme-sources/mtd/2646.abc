@@ -1,0 +1,12 @@
+X:2646
+T:Sonata in D, No. 37, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4307, Barlow & Morgenstern H526, EDM 2646 (Musical Theme Dataset, CC BY 4.0)
+N:Largo e sostenuto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+D4 F6 E2 | D4- D(3D/E/^F/ G>A B4 | B4 A3(3G/=F/E/ F4 |{/EFG} F4 E8 |

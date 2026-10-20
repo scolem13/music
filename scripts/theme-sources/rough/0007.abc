@@ -1,0 +1,10 @@
+X:7
+%%from edm
+T:Si J'Étais Roi, Overture, 3rd Theme
+C:Adolphe Adam
+%%composer Adam|Adolphe
+% EDM 0007 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c z G z c4 | B z G z B4 | A z G z A z GA | B z c z A4 |

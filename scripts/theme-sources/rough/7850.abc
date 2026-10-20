@@ -1,0 +1,10 @@
+X:7850
+%%from edm
+T:Albumblatt
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7850 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+^f2a2 g2 e'4 d'2- | d'2 c'4 b6- | bbc'b ab d'4 c'2- | c'2 a4 g6- | g2f2 gf e4 f2- | f2 ^f4 g4 ^g2- | ^g2a2 b2

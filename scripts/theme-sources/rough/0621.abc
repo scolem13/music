@@ -1,0 +1,10 @@
+X:621
+%%from edm
+T:Sonata, 2nd Movement - 2nd Theme
+C:Arnold Bax
+%%composer Bax|Arnold
+% EDM 0621 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+G2A2 F4 | E2=B,2 _B4 | G,2A,2 C4- | C8 | E2=B,2_B,2G,2 | A,2B,2F,2D,2 | C,3F, F,4- | F,4

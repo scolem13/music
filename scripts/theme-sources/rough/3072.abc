@@ -1,0 +1,10 @@
+X:3072
+%%from edm
+T:Quartet, Op. 13, 1st Movement, Intro
+C:Michael Ippolitov-Ivanov
+%%composer Ippolitov-Ivanov|Michael
+% EDM 3072 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+e2 f4 a2 | B2 c4 e2 | F4 E2^D2 | D4 ^C2=C2 |

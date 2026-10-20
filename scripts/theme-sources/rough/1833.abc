@@ -1,0 +1,10 @@
+X:1833
+%%from edm
+T:Valse de Concert, Op. 47, 1st Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1833 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A12 | B4 c4 z/2 d3-d/2 | c8 A4 | F12 | F12- | F4 A4 c4 | z/2 B3-B/2 A4 F4 | D8

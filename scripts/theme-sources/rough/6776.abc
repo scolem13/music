@@ -1,0 +1,10 @@
+X:6776
+%%from edm
+T:The Thunderer, March, 3rd Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6776 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+z4 f'4 e'4 d'4 | c'4 =b4 _b4 g4 | f6 c2 f8- | f4 c4 f6 g2 | a6 c2 a8- | a4 f4 a4 c'4 |

@@ -1,0 +1,10 @@
+X:2380
+%%from edm
+T:Water Music, 14th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2380 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g4 d/2e/2d/2e/2d/2e/2d/2e/2 d/2e/2d/2e/2d/2e/2d/2e/2 | g6 a2 g4 | a4 d8 | g3a b4 a4 | c'4 b8 | e4 f4 g4 |

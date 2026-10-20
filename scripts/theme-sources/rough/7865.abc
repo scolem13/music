@@ -1,0 +1,11 @@
+X:7865
+%%from edm
+T:Lohengrin, Act III, Prelude, 1st Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7865 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:G
+(3d2g2b2 d'8 d'3^c'/2d'/2 | g'12- g'2f'e' | ^d'4 e'3=d' d'2c'2c'2b2 | b2a2=f'2e'2 d'2c'2b2a2 | a6- ab g4

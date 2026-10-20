@@ -1,0 +1,10 @@
+X:1497
+%%from edm
+T:Hunyadi Laszlo, Opera, Overture, 1st Theme
+C:Franz Erkel
+%%composer Erkel|Franz
+% EDM 1497 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+D8 _D6 =D2 | E2 E12- E2 | E8 D6 E2 | F16 | G8 F6 G2 | A2 A8- A2 B2A2 | G4 G4 F8 | E2

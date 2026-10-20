@@ -1,0 +1,12 @@
+X:9237
+%%from mtd
+T:Mazurkas 38, Op. 59, No. 3
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2234, Barlow & Morgenstern C247, EDM 9237 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=170
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+C2 | F3 GA^B | (3ded c2 f2 | (3cdc B2 f2 | (3BcB A2 c2 |

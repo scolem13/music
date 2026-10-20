@@ -1,0 +1,10 @@
+X:3567
+%%from edm
+T:Suite No. 1 in G minor, 1st Movement - Allemande
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3567 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d d4- d3/2d<g d/2 e4- e3/2e/2d- | d/2c/2 z/2 B/2 z/2 A/2G2 B3/2d<G B<Ad<_G A<=GB/2A- | A/2G<_G=E/2D2

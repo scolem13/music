@@ -1,0 +1,10 @@
+X:2862
+%%from edm
+T:Mathis der Mahler Symphony, 2nd Movement, Entombment, 1st Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2862 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+G4 z2 G2 G4 z2 AB | c4 z2 B2 A4 z2 ^Ac | ^c6 ^d4<e4 ^f^g | ^d4

@@ -1,0 +1,13 @@
+X:690
+%%from mtd
+T:Quartet in D, Op. 18, No. 3, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0684, Barlow & Morgenstern B588, EDM 0690 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=35
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B,DED | CEFE | DFGF | F/=E/D/C/ F>_E |

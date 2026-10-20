@@ -1,0 +1,10 @@
+X:3515
+%%from edm
+T:St. François De Paule Marchant Sur Les Flots
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3515 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+B,4 E4 C4 B,4 | A,4 G,6 A,2 B,2 z2 | E4 G4 E4 D4 | E4 E6 D2 C2

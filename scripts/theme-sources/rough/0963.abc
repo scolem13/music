@@ -1,0 +1,14 @@
+X:963
+%%from mtd
+T:Sonata No. 30, in E, Op. 109, Piano, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0957, Barlow & Morgenstern B839, EDM 0963 (Musical Theme Dataset, CC BY 4.0)
+N:Vivace ma non troppo - adagio espressivo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+% More than one voice in the score: the melody (voice 1) only. All voices: scripts/theme-sources/mtd-two-voice/0963.abc
+M:2/4
+L:1/4
+Q:1/4=107
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+G | B E | G C | E |

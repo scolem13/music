@@ -1,0 +1,10 @@
+X:7151
+%%from edm
+T:Concerto in D, 3rd Movement - Aria B
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7151 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+c'12 b/2c'/2b/2c'/2b/2c'/2b/2a/2 | b16- | b2-b/2b/2c'/2b/2 a/2 b6- b/2a2 g2f- | f=f'2^f'2 c'8- c'3- | c'

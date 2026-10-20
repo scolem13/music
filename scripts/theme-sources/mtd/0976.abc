@@ -1,0 +1,12 @@
+X:976
+T:Sonata No. 1, in D, Op. 12, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0970, Barlow & Morgenstern B852, EDM 0976 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=169
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A | f3 gec | ^g a2- a2 f | age gfd | e A2- A2 |

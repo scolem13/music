@@ -1,0 +1,10 @@
+X:1901
+%%from edm
+T:Im Fruhling, Op. 36, Overture, 2nd Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1901 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+G8 B4 | A8 c4 | B8 g4 | e8 B4 | A4 F2G2 A2F2 | G4 E4 ^D4 | C12 | E4 ^D2E2 F4 |

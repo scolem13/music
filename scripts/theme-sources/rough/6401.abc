@@ -1,0 +1,10 @@
+X:6401
+%%from edm
+T:Three Romances, Op. 94, No. 3, 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6401 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a4 d'4 g6 a2 | b4 =b4 c'6 _d'2 | d'4 g'4 c'6 c'2 | e'4 =b4 c'6

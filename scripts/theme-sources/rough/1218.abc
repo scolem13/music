@@ -1,0 +1,10 @@
+X:1218
+%%from edm
+T:Quartet in E-flat, Op. 87, 3rd Movement - 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1218 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+b b4 a2 z4 z | g g4 b2 z4 z | a a4 g2 z4 z | f f4 e2 z4 z | dd2e2 z/2 f3/2=e2 f2g- | g e4 a4

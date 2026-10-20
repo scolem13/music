@@ -1,0 +1,10 @@
+X:4943
+%%from edm
+T:Classical Symphony, Op. 25, 3rd Movement - Gavotte, 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4943 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+B2A2^G2A2 a4 A4 | g4 G4 f4 F4 | B4 ^d4 c2d2e2f2 | ^g4 ^a4 b4 =g4 |

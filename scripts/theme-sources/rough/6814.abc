@@ -1,0 +1,11 @@
+X:6814
+%%from edm
+T:Chant d'Amour, Op. 26, No. 3
+C:Sigismond Stojowski
+%%composer Stojowski|Sigismond
+% EDM 6814 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Gb
+z4 d8 e2g2 | b2f4<a4 e2 g2f2 | e6 d2 A4 =A4 | B4 =B2d2 =d2 e4

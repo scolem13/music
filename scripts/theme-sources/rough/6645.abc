@@ -1,0 +1,11 @@
+X:6645
+%%from edm
+T:Symphony No. 4, in A minor, Op. 63, 2nd Movement - 4th Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6645 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+A4 =B2B2 | c4 f2f2 | g4 b2b2 | a4 g2g2 | c'4 a2a2 | f4 g2g2 | a4 b2b2 | a4

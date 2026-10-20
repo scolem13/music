@@ -1,0 +1,10 @@
+X:1411
+%%from edm
+T:Concerto in B minor, Op. 61, 3rd Movement - 1st Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1411 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z4 a4 b4 d'4 | g4 a4 c'6 f2 | g4 b4 e4 f4 | a6 d2 e4 g4 | f2

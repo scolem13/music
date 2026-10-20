@@ -1,0 +1,10 @@
+X:4053
+%%from edm
+T:Concerto in B-flat, K 191, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4053 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+D2F2 B4 A2c2 e4 | z/2 d3/2cB A2B2 A2c2 e4 | z/2 d3/2cB A2B2 G2B2 g4 |

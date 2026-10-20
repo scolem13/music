@@ -1,0 +1,11 @@
+X:7778
+%%from edm
+T:Sonata in D, 3rd Movement
+C:Leonardo Vinci
+%%composer Vinci|Leonardo
+% EDM 7778 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f4 z/2 g3-g/2 f4 | e2^d2 e4 z4 | e4 f4 e4 | d2c2 B4 g4- | g2c2 f4 f4- | f2B4<e4 f2 | f8

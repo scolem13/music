@@ -1,0 +1,10 @@
+X:2265
+%%from edm
+T:Sonata in G, Op. 1, No. 5, 5th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2265 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+g4 d/2e/2d/2e/2d/2e/2d/2e/2 d/2e/2d/2e/2cd | a4 d/2e/2d/2e/2d/2e/2d/2e/2 d/2e/2d/2e/2cd | b4 a2b2 c'4 | b4 a2b2 g4 |

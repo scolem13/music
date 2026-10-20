@@ -1,0 +1,10 @@
+X:2070
+%%from edm
+T:Sonata in E minor, Op. 7, 3rd Movement
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2070 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+e4 B8 | (3d2c2B2 B8 | B4 F8 | (3E2F2G2 G8 | (3G2F2^D2 B8 | (3c2B2G2 e8 |

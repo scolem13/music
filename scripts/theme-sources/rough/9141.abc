@@ -1,0 +1,11 @@
+X:9141
+%%from edm
+T:Les Abencerages, 2nd Theme
+C:Maria Luigi Cherubini
+%%composer Cherubini|Maria Luigi
+% EDM 9141 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:D
+e2 a8 e4 z2 | a2 =c'8 a4 z2 | A4<d4 =f2 a4 z2 | A4<=c4 e2 a4 z2 | a2 B4 z/2 =c3/2 B2 B4 e2- | e2

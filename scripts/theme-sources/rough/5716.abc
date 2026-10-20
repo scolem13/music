@@ -1,0 +1,11 @@
+X:5716
+%%from edm
+T:Symphony No. 3, in C minor, Op. 78, 1st Movement - 4th Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5716 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/P2wNAWBPFiI?t=10m37s
+M:4/4
+L:1/16
+K:Db
+z4 A4 B4 d4 | B8 c4 e4 | A4 B4 d4 f4 | d4 e4 z4 a4 | a4 d4 e4 g4 | f8 c4 f4 | f4 B4 c4 e4 | d4

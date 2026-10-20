@@ -1,0 +1,10 @@
+X:2154
+%%from edm
+T:Concerto No. 7 in B-flat , Op. 7, No. 1, 4th Movement, Bouree
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2154 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+f3c d4 f3B c4 | f3A B4 B8 | b3b2<a2a2<g2g2<f2f | =e3e f4 f8 |

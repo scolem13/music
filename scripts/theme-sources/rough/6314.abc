@@ -1,0 +1,10 @@
+X:6314
+%%from edm
+T:Sonata No. 2, in G minor, Op. 22, 2nd Movement
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6314 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+^f6 f4- ff | a4- ag g6 | ^a6 =a4- aa | z/2 e'4- e'/2d' d'6- | d'3b3 c'3^g3 | z/2 b4- b/2a a6 |

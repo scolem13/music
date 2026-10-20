@@ -1,0 +1,10 @@
+X:7209
+%%from edm
+T:Le Sacre du Printemps, Procession of the Wise Men
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7209 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^g12 =g4 | ^g12 ^f4 | ^g12 ^f4 | ^g4 ^a4 ^c'4 a4 | ^g12

@@ -1,0 +1,10 @@
+X:4083
+%%from edm
+T:Concerto in E-flat, K 449, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4083 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+B4 e4 B4 c4 | G4 A4 F4 B,4 | B4 G4 E4 A,4 | c4 E4 D4

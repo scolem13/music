@@ -1,0 +1,10 @@
+X:5307
+%%from edm
+T:Rapsodie Espagnole, 3rd Movement - Habanera, 3rd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5307 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+z3 z/2 =f ^f2g3/2- | g/2ba z3/2 =f^f2g- | gba z3/2 =f^f2g/2- | g3/2ba z a/2a/2c2

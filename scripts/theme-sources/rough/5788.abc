@@ -1,0 +1,10 @@
+X:5788
+%%from edm
+T:Sonatas, Longo 263 in B minor
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5788 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+z4 f'd'b2 | b2^a2b2f2- | f2 z2 b2c'2 | d'e'd'2 c'2^a'2 | b'4 b2c'2 | d'e'd'2 c'2^a'2 | b'2

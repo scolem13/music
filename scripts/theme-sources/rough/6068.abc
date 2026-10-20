@@ -1,0 +1,10 @@
+X:6068
+%%from edm
+T:Symphony No. 3 in D, 2nd Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6068 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+b2a2g2b2 | d'3e' d'2c'2 | b2a2g2a2 | d4 z2 d2 | g2a2b2^c'2 | d'3e' f'2^g'2 | a'2f'2e'2f'2 | d'4

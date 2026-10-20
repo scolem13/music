@@ -1,0 +1,10 @@
+X:2321
+%%from edm
+T:Suite No. 1, in B-flat, 2nd Set, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2321 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a4 z/2 e/2f/2e/2f/2e/2f/2<e/2 z/2 z/2 f3- | f4 z/2 d3-d/2 d4 | z/2 _d6- d3/2 =dcde | d4

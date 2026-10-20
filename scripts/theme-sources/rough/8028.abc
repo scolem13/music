@@ -1,0 +1,11 @@
+X:8028
+%%from edm
+T:Facade, Suite No. 1, Tarantella-Sevillana, 1st Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8028 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:E
+(3B4-B=c4- c ^c4- c=d2 | (3d4-d=d4- d c4- c=c2 | B2=c2e2 ^a2b2c2 | c2c2=g2 =d'2^d'2d2 |

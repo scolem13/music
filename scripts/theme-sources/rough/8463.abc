@@ -1,0 +1,10 @@
+X:8463
+%%from edm
+T:Ballade in D minor, Op. 10, No. 2, Piano, 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8463 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f4 a4 f'4 a4 | f4 a4 f'6 a2 | d'4 c'4 b4 a2g2 | f6 ga e6 fg | f4

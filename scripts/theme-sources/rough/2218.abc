@@ -1,0 +1,10 @@
+X:2218
+%%from edm
+T:Concerto Grosso in F, Op. 6, No. 9, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2218 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+c2A3 GFG AFc2 C2 z2 | c2dB ABcG FGAF EFGD | CDE

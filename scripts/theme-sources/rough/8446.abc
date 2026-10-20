@@ -1,0 +1,10 @@
+X:8446
+%%from edm
+T:Symphony No. 2 in B minor, 2nd Movement - 2nd Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8446 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:1/1
+L:1/16
+K:F
+B4 _e8 f4 | z4 _g8 f4 | z4 _e8 _d4 | c4 f8 c4 |

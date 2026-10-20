@@ -1,0 +1,10 @@
+X:2793
+%%from edm
+T:Symphony in E-flat, No. 103, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2793 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+z4 e4 e4 e4 | e8 d4 c4 | B4 c2d2 e4 f4 | g4 z12 | z4 a4 a4 a4 | a8 g4 f4 | e2f2e2d2 c4 f4 |

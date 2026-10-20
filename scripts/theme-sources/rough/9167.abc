@@ -1,0 +1,11 @@
+X:9167
+%%from edm
+T:Concerto No. 2 in F minor, Op. 21, Piano and Orchestra, 1st Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9167 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/T_GecdMywPw?t=27s
+M:4/4
+L:1/16
+K:Ab
+f'2<a2 b c'8- c'3- | c'4- c' b8 a3- | a g4 z/2 f2-f/2 =e2<f2 ga3- | a f4

@@ -1,0 +1,11 @@
+X:667
+T:Leonore, No. 1, Op. 138, Overture, 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0661, Barlow & Morgenstern B565, EDM 0667 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/4
+Q:1/4=58
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G | A B c d/c/ | B3 c | d e f g | ^g a2 |

@@ -1,0 +1,13 @@
+X:2476
+%%from mtd
+T:Quartet in E-flat, Op. 33, No. 2, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4137, Barlow & Morgenstern H357, EDM 2476 (Musical Theme Dataset, CC BY 4.0)
+N:Largo e sostenuto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=51
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+F G F/>B/ |{F-} E2 D | C E D/>C/ | C2 z |

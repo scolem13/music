@@ -1,0 +1,10 @@
+X:4214
+%%from edm
+T:Minuet, K 1
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4214 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+b2g2 B4 c4 | d4 d4 c4 | a2f2 A4 B4 | c4 c4 B4 |

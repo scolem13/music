@@ -1,0 +1,10 @@
+X:2276
+%%from edm
+T:Sonata in B minor, Op. 1, No. 9, 6th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2276 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+f2d2 cBg2 B2 ^A4 B2 | c2d2 cd/2e/2d2 c2 B4

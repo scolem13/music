@@ -1,0 +1,12 @@
+X:5340
+%%from mtd
+T:La Valse, 8th Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6976, Barlow & Morgenstern R209, EDM 5340 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=137
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d'- | d'3- | d' c' b | d2 e/b/ | z e/b/ z | z b2- | b a g | ^c2 d/a/ | z d/a/ z |

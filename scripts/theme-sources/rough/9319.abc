@@ -1,0 +1,10 @@
+X:9319
+%%from edm
+T:Sonata in C minor, Op. 4, 3rd Movement
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9319 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/4
+L:1/16
+K:Ab
+c4 c4 =B4 c4 c4 | c4 c4 =B4 c4 c4 | c4 e4 a4 c'4 b4 | b4 a4

@@ -1,0 +1,11 @@
+X:5776
+%%from edm
+T:Sonatas, Longo 108 in D minor
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5776 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+d4 f4 a4 d'4 | d'c'2<b2 a2<g2 e2<f2 e z/2 g3/2- | gf2<e2 ed_d =dfa_d' =d'4 |

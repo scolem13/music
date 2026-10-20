@@ -1,0 +1,10 @@
+X:9090
+%%from edm
+T:Symphonic Sketches II, Noel
+C:George W. Chadwick
+%%composer Chadwick|George W.
+% EDM 9090 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+d'8 b4 | a6 f2 e2f2 | d8 c4 | B12 | d8 e4 | f4 b8 | f8 e4 | e12 |

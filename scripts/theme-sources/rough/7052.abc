@@ -1,0 +1,10 @@
+X:7052
+%%from edm
+T:Ein Heldenleben, Op. 40, 9th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7052 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:B
+z4 f4 b4 c'4 | f8- f2fg a2bc' | d'4 f4 d'4 e'4 | =g8 ^g2ab c'2d'e' | f'4

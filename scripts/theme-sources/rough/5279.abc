@@ -1,0 +1,11 @@
+X:5279
+%%from edm
+T:Gaspard de la Nuit, No. 3, Scarbo
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5279 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:B
+d2 e2 d'2- | d'3 c' b2 | a2 g2 d2 | d2 e2 a2 |

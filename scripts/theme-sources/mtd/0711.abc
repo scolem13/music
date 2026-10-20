@@ -1,0 +1,12 @@
+X:711
+T:Quartet in B-flat, Op. 18, No. 6, 4th Movement - La Malinconia - Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0705, Barlow & Morgenstern B608, EDM 0711 (Musical Theme Dataset, CC BY 4.0)
+N:La malinconia. Adagio - Allegretto quasi allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=27
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d2 dd | d2 B7/4c/4 | d7/4e/4 ff |{=efg} f4 |

@@ -1,0 +1,13 @@
+X:5759
+%%from mtd
+T:Gnossiennes, No. 2
+C:Erik Satie
+%%composer Satie|Erik
+% MTD 7392, Barlow & Morgenstern S173, EDM 5759 (Musical Theme Dataset, CC BY 4.0)
+N:2 (1893)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=110
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+de-e- e2 cdc | dcd _Bc-c- c2 | A_BA BAB G=B |B- B2- B |

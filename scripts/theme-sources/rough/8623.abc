@@ -1,0 +1,10 @@
+X:8623
+%%from edm
+T:Serenade in D, Op. 11, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8623 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d2e2 d2e2 f4 | _d4 =d4 b4 | _g4 =g4 e'4 | d'4 _d'4 =d'4 | a'4

@@ -1,0 +1,13 @@
+X:771
+T:Quartet in F, Op. 135, Str., 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0765, Barlow & Morgenstern B663b, EDM 0771 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+% More than one voice in the score: the melody (voice 1) only. All voices: scripts/theme-sources/mtd-two-voice/0771.abc
+M:2/4
+L:1/16
+Q:1/4=62
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c4- cfef | cdAB Abfg | A4- Ad^cd | ABFG FGEF | G |

@@ -1,0 +1,10 @@
+X:8462
+%%from edm
+T:Ballade in D minor, Op. 10, No. 1, Piano
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8462 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a'4 z/2 a'3-a'/2 f'2g'2 a'4 | d'4 e'6 a2 a4 | d'4 c'4 b2c'2 a4 | g4 d'4 c'4 a4- | a2g2 g4 _g4 f4 | e2f2 d4

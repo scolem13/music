@@ -1,0 +1,12 @@
+X:8476
+T:Concerto No. 1 in D minor, Op. 15, Piano and Orchestra - 3rd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1479, Barlow & Morgenstern B1343, EDM 8476 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=88
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+F2 GA | c2 G c | d2 (3def | f2 e z | A2 df | a3 a |

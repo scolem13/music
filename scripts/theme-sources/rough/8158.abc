@@ -1,0 +1,11 @@
+X:8158
+%%from edm
+T:Giuletta E Romeo, Symphonic Episode, 1st Theme
+C:Riccardo Zandonai
+%%composer Zandonai|Riccardo
+% EDM 8158 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+e/2a/2 f'8- f'e' z/2 [c'/2a/2] z/2 e/2f z z/2 a/2- | a e12- e2

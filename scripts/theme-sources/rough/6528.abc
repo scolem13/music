@@ -1,0 +1,10 @@
+X:6528
+%%from edm
+T:Three Fantastic Dances, Op. 1, No. 3
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6528 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+^d'c'^gc' d'2^g'2 | g'2d'2 f'd'bf | ^d'2=d'c' ^a4 | ^g4 =g4 |

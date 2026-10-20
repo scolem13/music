@@ -1,0 +1,10 @@
+X:8222
+%%from edm
+T:Harold in Italy, Op. 16, 1st Movement - 3rd Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8222 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+A,6 C6 | =F8- FAc2 | =f6 d6 | =f6 c4

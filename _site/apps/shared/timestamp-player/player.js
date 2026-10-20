@@ -39,6 +39,7 @@
   }
 
   function initPlayer(root) {
+    if (root._btp) return;      // (RecordingFollow.mount starts the ones it makes itself)
     var clock = root.querySelector(".btp-clock");
     var stage = root.querySelector(".btp-stage");
     var drop  = root.querySelector(".btp-drop");
@@ -70,6 +71,56 @@
       clock.classList.add("idle");
     }
 
+    // ---- Speed: slower or faster, at the same pitch ----
+    // A file (audio / video element) goes to any speed, preservesPitch on. YouTube's player keeps the pitch too, but only at its own
+    // steps (0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2): the nearest is taken. Following a tab has its own Speed menu.
+    // root._btpBpm = function (t) -> the recording's tempo at time t (the bar map), set by the page: then the row shows
+    // the tempo it plays at, and a tempo typed there sets the speed.
+    var rate = 1;
+    var speedRow = document.createElement("div");
+    speedRow.className = "btp-speed";
+    speedRow.innerHTML = '<label>Speed <input class="btp-speed-range" type="range" min="25" max="150" step="5" value="100"></label>' +
+      '<span class="btp-speed-pct">100%</span>' +
+      '<label class="btp-speed-bpm" hidden>= <input class="btp-speed-bpm-in" type="number" min="20" max="400" step="1"> bpm</label>' +
+      '<button type="button" class="btp-speed-reset" title="Back to the recording\'s own speed">1×</button>' +
+      '<span class="btp-speed-note"></span>';
+    var bar = root.querySelector(".btp-bar");
+    if (bar && bar.parentNode) bar.parentNode.insertBefore(speedRow, bar.nextSibling); else root.appendChild(speedRow);
+    var rangeIn = speedRow.querySelector(".btp-speed-range"), pctOut = speedRow.querySelector(".btp-speed-pct");
+    var bpmWrap = speedRow.querySelector(".btp-speed-bpm"), bpmIn = speedRow.querySelector(".btp-speed-bpm-in");
+    var speedNote = speedRow.querySelector(".btp-speed-note");
+    function origBpm() { try { var b = root._btpBpm && root._btpBpm(getTime ? getTime() : 0); return b > 0 ? b : null; } catch (e) { return null; } }
+    function applyRate() {
+      speedNote.textContent = "";
+      if (!mediaEl) return;
+      try {
+        if (mediaEl.setPlaybackRate) {                    // YouTube: its own steps
+          var steps = mediaEl.getAvailablePlaybackRates ? mediaEl.getAvailablePlaybackRates() : [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2];
+          var best = steps.reduce(function (a, b) { return Math.abs(b - rate) < Math.abs(a - rate) ? b : a; }, 1);
+          mediaEl.setPlaybackRate(best);
+          if (Math.abs(best - rate) > 1e-6) { rate = best; speedNote.textContent = "YouTube plays only at its own steps: " + Math.round(best * 100) + "%."; }
+        } else if ("playbackRate" in mediaEl && mediaEl.tagName) {
+          mediaEl.preservesPitch = true; mediaEl.mozPreservesPitch = true; mediaEl.webkitPreservesPitch = true;
+          mediaEl.playbackRate = rate;
+        } else speedNote.textContent = "Following a tab: use its Speed menu above.";
+      } catch (e) {}
+      showRate();
+    }
+    function showRate() {
+      rangeIn.value = String(Math.round(rate * 100));
+      pctOut.textContent = Math.round(rate * 100) + "%";
+      var b = origBpm();
+      bpmWrap.hidden = !b;
+      if (b && document.activeElement !== bpmIn) bpmIn.value = String(Math.round(b * rate));
+    }
+    function setRate(r) { rate = Math.max(0.25, Math.min(2, r)); applyRate(); }
+    rangeIn.addEventListener("input", function () { setRate(+rangeIn.value / 100); });
+    rangeIn.addEventListener("change", function () { rangeIn.blur(); });
+    bpmIn.addEventListener("keydown", function (e) { e.stopPropagation(); if (e.key === "Enter") bpmIn.blur(); });
+    bpmIn.addEventListener("change", function () { var b = origBpm(), v = +bpmIn.value; if (b && v > 0) setRate(v / b); });
+    speedRow.querySelector(".btp-speed-reset").addEventListener("click", function () { setRate(1); this.blur(); });
+    setInterval(showRate, 1000);                              // (the bar map's tempo changes as the recording moves)
+
     // What is loaded, for the log's export: { url } for YouTube (embedded or followed), { file } for a file.
     var source = null;
 
@@ -89,6 +140,7 @@
       stage.hidden = false;
       mediaEl = v;
       getTime = function () { return v.currentTime; };
+      applyRate();
       clock.classList.remove("idle");
       drop.hidden = true;
       v.play().catch(function () { /* autoplay may be blocked; controls are there */ });
@@ -120,6 +172,7 @@
               };
               clock.classList.remove("idle");
               mediaEl = ytPlayer;
+              applyRate();
             },
             onError: function (e) {
               getTime = null;
@@ -329,6 +382,8 @@
         } catch (e) { return false; }
       },
       toggle: togglePlay,
+      rate: function () { return rate; },
+      setRate: setRate,
       seek: seekTo,
       format: fmt,
       source: function () { return source; },
@@ -355,6 +410,8 @@
     var q = new URLSearchParams(location.search).get("v");
     if (q) { urlIn.value = q; loadUrl(); }
   }
+
+  window.TimestampPlayer = { init: initPlayer };
 
   function boot() {
     var roots = document.querySelectorAll(".btp");

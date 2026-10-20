@@ -1,0 +1,12 @@
+X:1173
+T:Trio in B-flat, Op. 97, 2nd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1166, Barlow & Morgenstern B1048, EDM 1173 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=195
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B,,/C,/ D, D, | D,/E,/ F,2 | F, G, A, | B,3 |

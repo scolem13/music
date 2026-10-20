@@ -1,0 +1,11 @@
+X:9516
+%%from edm
+T:Concert Royal, No. 2, 1st Movement, Prelude
+C:François Couperin
+%%composer Couperin|François
+% EDM 9516 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+d4 f/2 z/2 (3efg f3 e2 | d2f2 z/2 e3-e/2 z/2 c3-c/2 | z/2 A3-A/2 d4 g/2 z/2 (3fga g- | g2f2 e/2d/2e/2f/2e2 c4 |

@@ -1,0 +1,10 @@
+X:2201
+%%from edm
+T:Concerto Grosso in G minor, Op. 6, No. 6, 3rd Movement, 2nd Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2201 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+z4 E2F2 G2E2 | _A2<B2 A2<G2 A2<F2 | G2<_A2 G2<F2 G2<E2 | F2<E2 D2<C2 D2<B,2 |

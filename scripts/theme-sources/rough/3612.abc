@@ -1,0 +1,10 @@
+X:3612
+%%from edm
+T:Concerto No. 1, in A minor, Op. 15, 3rd Movement - 1st Theme
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3612 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+e^de2 a2e2 | fef2 e^de2 | d^cd2 =cBc2 | Bcd^d e4 |

@@ -1,0 +1,12 @@
+X:4514
+T:Symphony No. 28, in C, K 200, 2nd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6163, Barlow & Morgenstern M888, EDM 4514 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=49
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+F | cccc | c2 =B/c/d/e/ | ffff | f3/2e/4d/4 c2 |

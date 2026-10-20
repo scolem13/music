@@ -1,0 +1,11 @@
+X:1269
+%%from edm
+T:Serenade for Strings, in E, Op. 22, 2nd Movement - 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1269 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/0CXl91_eCsg
+M:3/4
+L:1/16
+K:A
+G4 g2a2 g2f2 | e2^d2 c8 | e4 c8 | e4 ^d8 | e4 c8 |

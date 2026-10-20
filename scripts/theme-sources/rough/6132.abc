@@ -1,0 +1,10 @@
+X:6132
+%%from edm
+T:Trio in B-flat, Op. 99, 4th Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6132 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+b8 | d'8 | d4 _g/2=g/2_g/2=g/2_g/2=g/2=e/2_g/2 | g8 | b3b2<b2c' | d'3g'2<d'2d' | d'3d'2<_d'2c' | b3

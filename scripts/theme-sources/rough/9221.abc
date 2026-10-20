@@ -1,0 +1,12 @@
+X:9221
+%%from mtd
+T:Mazurkas 14, Op. 24, No. 1
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2218, Barlow & Morgenstern C231, EDM 9221 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=108
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+A2- | Az/^F/ D2 F2 | G4 AB | cz/d/ e2 ^f2 | g d3 z2 |

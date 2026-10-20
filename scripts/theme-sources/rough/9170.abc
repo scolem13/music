@@ -1,0 +1,11 @@
+X:9170
+%%from edm
+T:Concerto No. 2 in F minor, Op. 21, 3rd Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9170 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Ab
+c4 c4 =d2=e2 | f2g2 a4 b2a2 | g4 z/2 c'3-c'/2 b2a2 | g2f2

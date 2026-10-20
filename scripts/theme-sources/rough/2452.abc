@@ -1,0 +1,10 @@
+X:2452
+%%from edm
+T:Quartet in F, Op. 3, No. 5, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2452 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 cdcB A4 | f4 abag f4 | c'8 bagf | c2B2 B2A2 A4 |

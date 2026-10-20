@@ -1,0 +1,10 @@
+X:5581
+%%from edm
+T:Valse in F
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5581 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+z4 =B4 c4 | d6 c2 c4 | z4 =B4 c4 | _e6 d2 d4 | z4 _d4 =d4 | c'6 b2 b4 | a6 g2 g4 | b6 a2 a4 |

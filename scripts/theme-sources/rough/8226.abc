@@ -1,0 +1,10 @@
+X:8226
+%%from edm
+T:Harold in Italy, Op. 16, 4th Movement - Orgy of the Brigands - 1st Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8226 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+d2 g4 z2 g2 b4 z2 | b2 d'4 e'2 e'2g2_g2d2- | d4 c4<e4 d2_g2 | g2_a2=a2b2 =b2 c'4

@@ -1,0 +1,13 @@
+X:4547
+%%from mtd
+T:Symphony No. 33, in B-flat, K 319, 4th Movement - 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6196, Barlow & Morgenstern M921, EDM 4547 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=198
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+FG | A2 AB | c2 cc | c2 dc | B2 BB | B2 cB | A2 AB | cBAG | F2 |

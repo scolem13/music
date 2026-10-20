@@ -1,0 +1,10 @@
+X:8666
+%%from edm
+T:Sonata in F, Op. 99, 3rd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8666 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+a6 g6 | e6 f6 | b6 a6 | g12 | c'6 b6 | g12 |

@@ -1,0 +1,10 @@
+X:310
+%%from edm
+T:Suite No. 2 in B minor, Fl. and Str., Overture - Minuet
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0310 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+B2c2 d2f2 b4 | g12- | g4 f4 e4 | d/2e/2d/2e/2d/2e/2d/2e/2 c2d2 B4 | g2f2e2^a2b2g2 | f4

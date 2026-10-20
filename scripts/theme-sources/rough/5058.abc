@@ -1,0 +1,10 @@
+X:5058
+%%from edm
+T:Symphony No. 5 in B-flat, Op. 100, 2nd Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5058 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+a4- agfe d4- de=fg | a2d'2^g2=f2 f2-f/2^f/2 z/2 =g/2 f4 | f4- fedc c8- | c6 A2 d8 |

@@ -1,0 +1,13 @@
+X:4239
+%%from mtd
+T:Quartet in D, K 285, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 5889, Barlow & Morgenstern M614, EDM 4239 (Musical Theme Dataset, CC BY 4.0)
+N:Rondeau  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=124
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+a6 d'2 | c'2b2 a4 | ^gaga gaba | a2=g2 f4 |

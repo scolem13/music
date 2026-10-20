@@ -1,0 +1,13 @@
+X:889
+%%from mtd
+T:Sonata No. 14, in C-sharp minor, Op. 27, No. 2, 2nd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0883, Barlow & Morgenstern B765, EDM 0889 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=192
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+F- | F2 G- | G2 e- | e c A | d f F- | F2 G- | G2 g- | g b c | e d |

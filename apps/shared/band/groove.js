@@ -32,7 +32,8 @@
 //                each where GrooveScribe writes it on the staff; T3 is a fourth drum between them.
 //     Stickings  R L   B both hands   c count
 //   Ours, in names GrooveScribe does not read:  Cg (conga) and Tb (tumba), the stroke letters of congas.js: H heel, T toe,
-//   S slap, O open, M muffled, B bass (the tumba: O M B).
+//   S slap, O open, M muffled, B bass (the tumba: O M B). Bo (bongos): H the high drum (macho), L the low one (hembra); written
+//   above the congas on the "Cga." line (high c', low a). Pieces bongoHi / bongoLo, in the congas bank (sounds.js).
 // A lane GrooveScribe's address leaves out is not empty there: H is every cell, S the even beats' backbeat, K the others.
 // parse() does the same, so a short link sounds as it does on that site. A lane of the wrong length is stretched or thinned
 // when it is out by a whole factor of two or more (an eighth-note lane on a sixteenth grid), else cut or padded with rests.
@@ -57,7 +58,7 @@
 // Without opts.swing, x.5 is left for the player to swing, as in drums.js.
 
 (function (global) {
-  var LANES = ["H", "S", "K", "T1", "T2", "T3", "T4", "Stickings", "Cg", "Tb"];
+  var LANES = ["H", "S", "K", "T1", "T2", "T3", "T4", "Stickings", "Cg", "Tb", "Bo"];
   var DIVS = [4, 8, 16, 32, 12, 24, 48];
   var MAX_BARS = 10;
   var LEVELS = { accent: 0.85, normal: 0.62, ghost: 0.24 };
@@ -76,12 +77,13 @@
     Stickings: { R: { label: "Right" }, L: { label: "Left" }, B: { label: "Both" }, c: { label: "Count" } },
     Cg: { H: cell("congaHeel", 0.34, "Heel"), T: cell("congaToe", 0.30, "Toe"), S: cell("congaSlap", 0.66, "Slap"), O: cell("congaOpen", 0.62, "Open tone"),
           M: cell("congaMute", 0.44, "Muffled tone"), B: cell("congaBass", 0.52, "Bass tone") },
-    Tb: { O: cell("tumbaOpen", 0.62, "Open tone"), M: cell("tumbaMute", 0.44, "Muffled tone"), B: cell("tumbaBass", 0.52, "Bass tone") }
+    Tb: { O: cell("tumbaOpen", 0.62, "Open tone"), M: cell("tumbaMute", 0.44, "Muffled tone"), B: cell("tumbaBass", 0.52, "Bass tone") },
+    Bo: { H: cell("bongoHi", 0.60, "High bongo (macho)"), L: cell("bongoLo", 0.60, "Low bongo (hembra)") }
   };
-  var KIT_LANES = ["H", "S", "K", "T1", "T2", "T3", "T4"], HAND_LANES = ["Cg", "Tb"];
+  var KIT_LANES = ["H", "S", "K", "T1", "T2", "T3", "T4"], HAND_LANES = ["Cg", "Tb", "Bo"];
   // letters read as another: what GrooveScribe takes without writing
   var ALIAS = { H: { R: "r", B: "b" }, T1: { x: "o" }, T2: { x: "o" }, T3: { x: "o" }, T4: { x: "o" }, Stickings: { r: "R", l: "L", b: "B" },
-                Cg: { h: "H", t: "T", s: "S", o: "O", m: "M", b: "B" }, Tb: { o: "O", m: "M", b: "B" } };
+                Cg: { h: "H", t: "T", s: "S", o: "O", m: "M", b: "B" }, Tb: { o: "O", m: "M", b: "B" }, Bo: { h: "H", l: "L" } };
 
   function compound(g){ return g.d === 8 && g.n >= 6 && g.n % 3 === 0; }
   function triplet(g){ return g.div % 3 === 0; }
@@ -89,6 +91,17 @@
   function beats(g){ return compound(g) ? g.n / 3 : g.n; }
   function perBeat(g){ return steps(g) / beats(g); }
   function swings(g){ return !compound(g) && (g.div === 8 || g.div === 16); }
+  // The swing a written groove is played with when its player gives none (opts.writtenSwing): its own if it has one (true);
+  // else the style's own or the listener's (BandPlayer.swingAt: opts.styleSwing / opts.swingSet) when that is on the groove's own
+  // grid (eighths for an eighth groove, sixteenths for a sixteenth one); else none. The tempo curve is NOT used: a groove somebody
+  // wrote down stays as written unless the style or the listener asks for swing.
+  function swingFor(g, opts, tempo){
+    if ((g.swing || 0) > 0) return true;
+    var P = global.BandPlayer, o = opts || {};
+    if (!P || !P.swingAt || (o.styleSwing == null && o.swingSet == null)) return true;
+    var sa = P.swingAt(o, tempo || 120);
+    return sa.div === g.div && sa.s > 0.5 ? sa.s : true;
+  }
   function ratioOf(g){ return 0.5 + Math.max(0, Math.min(60, g.swing || 0)) / 200; }
   function round6(x){ return Math.round(x * 1e6) / 1e6; }
 
@@ -236,7 +249,7 @@
           if (keep && keep.indexOf(piece) < 0) return;
           var e = { pos: p, piece: piece, vel: vel };
           if (c.art) e.art = c.art;
-          if (lane === "Cg" || lane === "Tb") e.stroke = ch;
+          if (lane === "Cg" || lane === "Tb" || lane === "Bo") e.stroke = ch;
           if (straight) e.straight = true;
           bar.push(e);
           if (opts.ornaments !== false && (c.art === "flam" || c.art === "drag" || c.art === "buzz")) bar.push.apply(bar, ornaments(e, g, opts, 1 / perBeat(g)));
@@ -264,7 +277,7 @@
     tomHi: function (){ return ["T1", "o"]; }, tomMid: function (){ return ["T2", "o"]; }, tom3: function (){ return ["T3", "o"]; }, tomLo: function (){ return ["T4", "o"]; },
     congaHeel: function (){ return ["Cg", "H"]; }, congaToe: function (){ return ["Cg", "T"]; }, congaSlap: function (){ return ["Cg", "S"]; }, congaOpen: function (){ return ["Cg", "O"]; },
     congaMute: function (){ return ["Cg", "M"]; }, congaBass: function (){ return ["Cg", "B"]; }, tumbaOpen: function (){ return ["Tb", "O"]; }, tumbaMute: function (){ return ["Tb", "M"]; },
-    tumbaBass: function (){ return ["Tb", "B"]; }
+    tumbaBass: function (){ return ["Tb", "B"]; }, bongoHi: function (){ return ["Bo", "H"]; }, bongoLo: function (){ return ["Bo", "L"]; }
   };
   // when two pieces of one lane fall on one cell, the one further left stays
   var RANK = { H: "cobrsmXx+nN", S: "fdbOoxg", K: "Xox" };
@@ -377,7 +390,7 @@
         var ch = g.lanes[lane][at]; if (ch === "-") return;
         var c = CELLS[lane][ch], list = lane === "K" && ch === "X" ? ["kick", "hatFoot"] : [c.piece];
         list.forEach(function (piece){
-          var w = lane === "Cg" ? ["e", HAND_HEAD[ch]] : lane === "Tb" ? ["A", HAND_HEAD[ch]] : WRITTEN[piece]; if (!w || seen[w[0]]) return;
+          var w = lane === "Cg" ? ["e", HAND_HEAD[ch]] : lane === "Tb" ? ["A", HAND_HEAD[ch]] : lane === "Bo" ? [ch === "H" ? "c'" : "a", ""] : WRITTEN[piece]; if (!w || seen[w[0]]) return;
           seen[w[0]] = 1; heads.push(w[1] + w[0]);
         });
         if (c.art === "accent") before = "!accent!" + before; else if (c.art === "ghost") before += '"<("">)"'; else if (c.art === "buzz") before = "!///!" + before;
@@ -410,7 +423,7 @@
       return ch === "-" ? "" : stick[ch] || (opts.count ? opts.count(b, i) : "");
     };
     var U = voice(["H", "S", "T1", "T2", "T3", "T4"], "z", under), D = voice(["K"], "x"), C = hands ? voice(HAND_LANES, "z", function (b, i){
-      var a = g.lanes.Cg[b * st + i], t = g.lanes.Tb[b * st + i]; return a !== "-" ? a : t !== "-" ? t : ""; }) : null;
+      var a = g.lanes.Cg[b * st + i], t = g.lanes.Tb[b * st + i], o = g.lanes.Bo[b * st + i]; return a !== "-" ? a : t !== "-" ? t : o !== "-" ? o : ""; }) : null;
     var body = [], per = under && U.some(function (l){ return /^w:/.test(l); }) ? 2 : 1, k = 0, uk = 0, ck = 0;
     for (; k < D.length; k++){
       body.push("V:U", U[uk++]); if (U[uk] && /^w:/.test(U[uk])) body.push(U[uk++]);
@@ -421,6 +434,6 @@
   }
 
   global.BandGroove = { parse: parse, stringify: stringify, create: create, toEvents: toEvents, congaEvents: congaEvents, fromEvents: fromEvents, set: set, resize: resize,
-    toAbc: toAbc, divsFor: divsFor, bpm: bpm, WRITTEN: WRITTEN, steps: steps, beats: beats, perBeat: perBeat, pos: pos, compound: compound, triplet: triplet, swings: swings, swingRatio: ratioOf,
+    toAbc: toAbc, divsFor: divsFor, bpm: bpm, WRITTEN: WRITTEN, steps: steps, beats: beats, perBeat: perBeat, pos: pos, compound: compound, triplet: triplet, swings: swings, swingRatio: ratioOf, swingFor: swingFor,
     LANES: LANES, KIT_LANES: KIT_LANES, HAND_LANES: HAND_LANES, CELLS: CELLS, DIVS: DIVS, LEVELS: LEVELS, MAX_BARS: MAX_BARS };
 })(typeof window !== "undefined" ? window : globalThis);

@@ -1,5 +1,5 @@
 // BandTuneScore.read against abcjs's own sequencer (setUpAudio): the pitch and length of every note of every tune in the library
-const fs = require('fs'), vm = require('vm'), R = '/Users/sean.coleman/Projects/everything-music-site/';
+const fs = require('fs'), vm = require('vm'), R = (require("path").join(__dirname, "../../..") + "/");
 global.window = global; global.document = { createElement: () => ({ style: {}, setAttribute() {}, appendChild() {} }), createElementNS: () => ({ style: {}, setAttribute() {}, appendChild() {} }) };
 global.navigator = { userAgent: 'node' };
 const load = f => vm.runInThisContext(fs.readFileSync(R + f, 'utf8'), { filename: f });

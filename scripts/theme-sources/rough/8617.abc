@@ -1,0 +1,11 @@
+X:8617
+%%from edm
+T:Rhapsody in E-flat, Op. 119, No. 4. Piano, 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8617 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+g4 f2g2 | a4 g2f2 | g4 f2e2 | f2B2 e4 | e4 e4 | e4 d2e2 | g4 f2e2 | d4

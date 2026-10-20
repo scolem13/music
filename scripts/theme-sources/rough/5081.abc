@@ -1,0 +1,10 @@
+X:5081
+%%from edm
+T:Three-Part Fantasia, No. 3
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5081 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+G16 | D8 B8- | B4 A2G2 _G4 =G4 | A4 B4 c4 A4 | B12 A2G2 | c8 d4 e4 | A12

@@ -1,0 +1,10 @@
+X:4332
+%%from edm
+T:Rondo in F, K 494
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4332 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+f8 a8 | a2g2g2e4<f4 a2 | a2g2g2e4<f4 a2 | c'2

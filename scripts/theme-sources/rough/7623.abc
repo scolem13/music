@@ -1,0 +1,11 @@
+X:7623
+%%from edm
+T:Symphony No. 5, in E minor, Op. 64, 4th Movement - 5th Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7623 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:G
+e'16- | e'8 d'2^c'2b2a2 | e'8 d'8- | d'8 d'8 | g'8 g'8 | g'8 f'8 | f'12 e'4 | d'4 ^c'4 b4 a4 |

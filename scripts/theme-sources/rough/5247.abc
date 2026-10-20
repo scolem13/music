@@ -1,0 +1,10 @@
+X:5247
+%%from edm
+T:Les Tourbillons
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5247 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+D4 E/2D/2E/2F/2E2 D4 C4 | D4 E/2D/2E/2F/2E2 D4 z4 | E2F2 G4 F4 E/2D/2E/2F/2E2 | D4 E2D2 C2B,2 A,4 |

@@ -1,0 +1,12 @@
+X:6190
+%%from edm
+T:Carnaval, Op. 9, Florestan
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6190 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/BzuLOqpr9Qo
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+A2e2c2=B2c2a2 | g2 z2 _g8 | A2e2c2=B2c2a2 | g2 z2 _g4

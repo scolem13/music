@@ -1,0 +1,12 @@
+X:9258
+T:Nocturnes, Op. 37, No. 2 in G (Theme A) (part 1)
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2255-1, Barlow & Morgenstern C268, EDM 9258 (Musical Theme Dataset, CC BY 4.0)
+N:Andantino  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/16
+Q:1/4=77
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+z4 z2 A2Bc^ce | d4 z2 |

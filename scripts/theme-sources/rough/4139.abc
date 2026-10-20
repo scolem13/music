@@ -1,0 +1,10 @@
+X:4139
+%%from edm
+T:Concerto in D, K 218, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4139 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+D4 D3D D4 D4 | D4 z2 F2 A4 z2 F2 | D2F2A2F2 D2F2A2F2 | D4

@@ -1,0 +1,11 @@
+X:6526
+%%from edm
+T:Three Fantastic Dances, Op. 1, No. 1
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6526 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+z3 B c2 z ^c ^d2 z ^g ^f2 z =f | ^d2 z f/2d/2 ^c2 z c =c8 | z2 (3c^cf ^g'2 (3=c'^c'f' g'2 (3g'f'c' =c'2a/2f/2^c/2=c/2 | B16 |

@@ -1,0 +1,11 @@
+X:7746
+%%from edm
+T:Nabucodonosor, Overture, 3rd Theme
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% EDM 7746 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:D
+d'12 f2g2 | a12 ^g2a2 | b12 a2g2 | f4 a4 d'4 z4 | d'12 f2g2 | a12 f2a2 | c'6 b4<a4 g2 | f4 a4 d'4

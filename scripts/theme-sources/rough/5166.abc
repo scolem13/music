@@ -1,0 +1,10 @@
+X:5166
+%%from edm
+T:Preludes, Op. 23, No. 1
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5166 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+z4 f8 e4 | d16 | z4 d8 =c3^c | c12 B4 | A16- | A4

@@ -1,0 +1,10 @@
+X:5322
+%%from edm
+T:Le Tombeau de Couperin, Rigaudon, 2nd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5322 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+z4 g4- | g8- | g6 f2 | bc'd'2 bc'd'2 | c'2e'2 g'4- | g'2b'2g'2b'2 | z/2 f'3/2e'2 g'4 |

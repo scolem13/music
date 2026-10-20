@@ -1,0 +1,10 @@
+X:1457
+%%from edm
+T:Symphony No. 1, in A-flat, Op. 55, 2nd Movement - 2nd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1457 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:1/2
+L:1/16
+K:A
+C4 C4 | C4 G3E | C3A,2<G,2F, | E,4 F,4 | A,6 G,2 | F,4 G,4 | B,6 A,2 | G,2F,E,F,2E,^D, | C,2

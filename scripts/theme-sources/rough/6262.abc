@@ -1,0 +1,10 @@
+X:6262
+%%from edm
+T:Quartet in A minor, Op. 41, No. 1, 2nd Movement - 1st Theme, Scherzo
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6262 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+eee2 z8 | eee2 z8 | eee2a2 ^g2b2a2 | d'2c'2f'2 e'2d'2c'2 | b2a2c'2 b2a2g2 | f2 e8- e2 |

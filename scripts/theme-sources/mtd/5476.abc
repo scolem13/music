@@ -1,0 +1,12 @@
+X:5476
+T:Scheherezade, Op. 35, 1st Movement - 3rd Theme
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% MTD 7111, Barlow & Morgenstern R341, EDM 5476 (Musical Theme Dataset, CC BY 4.0)
+N:The Sea and Sinbad's Ship  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/4
+L:1/4
+Q:1/4=188
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+_b a | d' c' g a{/c'} _b a | d' c' g a{/c'} _b a | d'6 | c'3 |

@@ -1,0 +1,10 @@
+X:8802
+%%from edm
+T:Trio in B, Op. 8, 4th Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8802 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+G4 z4 G3G | G8 F4 | =F4 z4 F3F | =F8 ^F4 | G4 z4 G3G | G8 F4 | =F4 z4 F3F | =F8 ^F4 | F4 A4 d4 | c4 A4 F4 | F4 =F4 B4 | B8 A4 |

@@ -1,0 +1,10 @@
+X:9113
+%%from edm
+T:Quartet, Op. 30, 2nd Movement - 1st Theme
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9113 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+D4 F4 A4 | B6 c2 d4 | d4 c2B2 A2c2 | B8 d2e2 | f4 e2d2 e2g2 | f4 e4 d4 |

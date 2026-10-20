@@ -1,0 +1,10 @@
+X:8660
+%%from edm
+T:Sonata in E minor, Op. 38, 3rd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8660 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+g4 f4 d4 g4 | f4 d2e2 d2^c2B2c2 | d6 e2 d2^c2B2c2 | d4

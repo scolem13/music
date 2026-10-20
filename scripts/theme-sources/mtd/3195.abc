@@ -1,0 +1,12 @@
+X:3195
+T:Concerto, 1st Movement - 2nd Theme
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4850, Barlow & Morgenstern K24, EDM 3195 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro ma non troppo e maestoso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=87
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+E z E3 G/A/ | B z B4 |{/e} d3 c d2 |{/d=d} e z B4 |{/AB} A3 G A2 | B=d BA G2 | E z |

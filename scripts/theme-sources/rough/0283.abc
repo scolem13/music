@@ -1,0 +1,10 @@
+X:283
+%%from edm
+T:Sonata No. 2 in A, Vn. and Piano, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0283 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+z2 c2 B2AG A2GF d2d2 | d2c2^d2=f2 ^f4

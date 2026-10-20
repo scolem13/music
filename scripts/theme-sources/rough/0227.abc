@@ -1,0 +1,10 @@
+X:227
+%%from edm
+T:Partita No. 2 in C minor, Piano, Prelude (Sinfonia)
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0227 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e4 z ed3/2e/2 f4 z ff3/2g/2 | a3a ag/2f<gd/2 e4

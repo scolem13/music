@@ -1,0 +1,10 @@
+X:4406
+%%from edm
+T:Sonata in D, K 311, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4406 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+a4 f2 z/2 d3/2c2d2 | z/2 d3/2c2d2 f4 e2 | z/2 g3-g/2e2 z/2 c3/2B2c2 | A2e2a2 g4 f2 |

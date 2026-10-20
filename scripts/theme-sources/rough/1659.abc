@@ -1,0 +1,10 @@
+X:1659
+%%from edm
+T:Prelude, Aria, and Finale, Aria
+C:César Franck
+%%composer Franck|César
+% EDM 1659 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+c4 e4 c4 B4 | A4 c4 B4 z4 | c8 d4 c4 | B4 B8 A4 |

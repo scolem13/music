@@ -1,0 +1,13 @@
+X:9641
+%%from mtd
+T:Reflets Dans L'Eau, from Images - 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2632, Barlow & Morgenstern D64, EDM 9641 (Musical Theme Dataset, CC BY 4.0)
+N:Reflets dans l'eau  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/8
+L:1/8
+Q:1/4=66
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+z3/2 __E/ _F>A | G>_F __E2- | __E2 _C2 | _E4 |

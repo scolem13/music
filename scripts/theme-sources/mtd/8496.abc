@@ -1,0 +1,12 @@
+X:8496
+T:Concerto in A minor, Op. 102, 1st Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1499, Barlow & Morgenstern B1363, EDM 8496 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=94
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+a | g/ z/ a e/ z/ f | g2 c/ z/ a | g/ z/ a e/ z/ f | d'2 c' d' | ^d' e' |

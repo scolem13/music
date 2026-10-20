@@ -1,0 +1,11 @@
+X:5832
+%%from edm
+T:A Victory Ball, 3rd Theme
+C:Ernest Schelling
+%%composer Schelling|Ernest
+% EDM 5832 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Db
+d4- d z/2 B<AB<dB<de/2 | f2a z a4 =g/2a/2g/2a/2fe | f2a z a4 =g/2a/2g/2a/2fe | d6

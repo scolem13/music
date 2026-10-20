@@ -1,0 +1,10 @@
+X:2735
+%%from edm
+T:Symphony in C, No. 97, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2735 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+G12 | z/2 A3/2G2 A2B2 A4 | B2c2d2e2^f2g2 | g2^f2e2d2c2A2 | G12 | z/2 c3/2B2 c2d2 e4 | d2

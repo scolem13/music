@@ -1,0 +1,10 @@
+X:1969
+%%from edm
+T:Colinette a la Cour, Opera, Tambourin
+C:André Grétry
+%%composer Grétry|André
+% EDM 1969 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+B4 e4 | g2<f2 e4 | g2<f2 e4 | b8 | c2c'2B2b2 | A2a2G2g2 | F2f2E2e2 | z/2 ^d3-d/2 B4 |

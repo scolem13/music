@@ -1,0 +1,10 @@
+X:8314
+%%from edm
+T:Quintet, Piano and Str., 2nd Movement - 2nd Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8314 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^f4 ^g2e2 f4 (3g2g2e2 | (3^f2f2a2 ^g2e2 f8 |

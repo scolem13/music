@@ -1,0 +1,10 @@
+X:6669
+%%from edm
+T:Symphony No. 6, in D minor, Op. 104, 1st Movement - 5th Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6669 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+^a8 ^g2^f2g2a2 | c'8 ^a2=a2^a2c'2 | ^a6

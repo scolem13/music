@@ -1,0 +1,11 @@
+X:6375
+%%from edm
+T:Symphony No. 2 in C, Op. 61, 4th Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6375 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+c8 d8 | ^d8 g8 | ^g12 ^a4 | ^g8 =g8 | c8 d8 | ^d8 g8 | ^g12 ^a4 | g16 |

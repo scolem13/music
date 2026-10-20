@@ -1,0 +1,10 @@
+X:4378
+%%from edm
+T:Serenade in C minor, K 388, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4378 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+g8 a4- | a4 g2f2 e2d2 | c4 c4 d/2e/2d/2e/2d/2e/2d/2e/2 | e4 e4 f4 | g4 c'4

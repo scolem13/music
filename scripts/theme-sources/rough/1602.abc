@@ -1,0 +1,10 @@
+X:1602
+%%from edm
+T:Sonata in A, Op. 13, Vn. and Piano, 1st Movement - 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1602 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+A4 B4- | B4 A4- | A4 E4 | A,8 | B,4 C4 | E8 | G4 B4- | B4 A4- | A4 c4- | c4 B4- | B4 F4 | B,8 | C4 D4 | F8 | ^A4 c4- | c4

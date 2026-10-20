@@ -1,0 +1,11 @@
+X:9228
+T:Mazurkas 25, Op. 33, No. 4
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2225, Barlow & Morgenstern C238, EDM 9228 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=123
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f2- | fb Pg2 fe |{/f} B6 | ce Pd2 c2 |{/d} B6 |

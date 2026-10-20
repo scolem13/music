@@ -1,0 +1,10 @@
+X:8608
+%%from edm
+T:Quintet in B minor, Op. 115, Cl. and Str., 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8608 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+f'6 g'f'e'f'g'e' | f'6 e'd'c'd'e'c' | (3d'4-d'c'4- c' ^a4- ab2 | (3a4-ag4- g =f4- f^f2 |

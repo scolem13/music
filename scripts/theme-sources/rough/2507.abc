@@ -1,0 +1,10 @@
+X:2507
+%%from edm
+T:Quartet in C, Op. 54, No. 2, 4th Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2507 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G,3G, C4 | E2F2 G3A/2G/2 | F2E2D2B,2 | C2^F,2 G,2

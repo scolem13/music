@@ -1,0 +1,10 @@
+X:5154
+%%from edm
+T:Fantasy, Suite No. 1, Op. 5, 2nd Movement - A Night for Love
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5154 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d6 c2 c2=c2 | =c2B2B2^A2A2=A2 | d6 c2 c2=c2 | =c2B2B2^A2A2=A2 | f6

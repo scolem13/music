@@ -1,0 +1,11 @@
+X:9443
+%%from edm
+T:El Salon Mexico, 7th Theme - Clarinet Solo
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9443 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+z6 ^a2b2^c'2 | ^d'2 b4 ^c'2b2c'2 | ^d'4<b4 b2^c'2 | ^d'2b2^c'2 d'2b2c'2 | ^d'2 b4

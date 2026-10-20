@@ -1,0 +1,10 @@
+X:675
+%%from edm
+T:Prometheus, Op. 43, Overture, 3rd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% EDM 0675 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z4 d4 g4 b4 | d'16- | d'4 d'8 c'4- | c'4 b8 c'4 | a4 ^f4 a4 c'4 | e'16 |

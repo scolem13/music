@@ -1,0 +1,11 @@
+X:5506
+%%from edm
+T:La Boutique Fantasque, 5th Movement, Can-Can, 1st Theme
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5506 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+c'2c'2g2g2 | ^g2g2^d2d2 | f2f2B2B2 | c2c2G2G2 | z2 a4 z/2 a3/2- | a2 a4 z/2 a3/2- | a2 z/2 a3/2 gfe2 | f2ga gec2 |

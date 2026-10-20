@@ -1,0 +1,12 @@
+X:1314
+T:Slavonic Dances, Op. 72, No. 7, 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2978, Barlow & Morgenstern D390, EDM 1314 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace [Kolo]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=143
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g3/2^f/4g/4 ae | geag |{gab} c'2 gg | g/e/f/g/ e2 |

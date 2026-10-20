@@ -1,0 +1,11 @@
+X:8634
+%%from edm
+T:Serenade in A, Op. 16, Str., 1st Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8634 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:A
+E8 A8 | F8 d8 | G8 e4 c4 | A8 f8 | B8 g8 | a8 c'8 | b8 ^d'8 | e'8

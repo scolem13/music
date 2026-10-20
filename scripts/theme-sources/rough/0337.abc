@@ -1,0 +1,10 @@
+X:337
+%%from edm
+T:English Suite No. 2, in A minor, Piano, Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0337 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+E2 A4 A2A2B2 | c2B2D2 B2E2F2 | D2C2E2 A2D2B2 | A2^G2

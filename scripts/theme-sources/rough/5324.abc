@@ -1,0 +1,10 @@
+X:5324
+%%from edm
+T:Le Tombeau de Couperin, Minuet, 2nd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5324 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+b8 a4 | g8 f4 | b8 d'4 | a4 b4 d4 | a8 b4 | a8 g4 | f4 g4 c4 | d12 |

@@ -1,0 +1,10 @@
+X:144
+%%from edm
+T:Concerto No. 8, in A minor, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0144 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+A,4 F4 E4 D4 | C8 B,8 | A,8 ^G,8 | A,8 B,8 | E,8

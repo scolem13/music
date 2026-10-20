@@ -1,0 +1,10 @@
+X:7303
+%%from edm
+T:Tarantella, Op. 28, No. 2, 2nd Theme
+C:Karol Szymanowski
+%%composer Szymanowski|Karol
+% EDM 7303 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+^A2^d2=f2 ^f2^g2^a2 | b2^a2^c'2 b2a2^g2 | f2^g2f2 =f2^f2=f2 | ^d2=f2d2 B2=d2^d2 |

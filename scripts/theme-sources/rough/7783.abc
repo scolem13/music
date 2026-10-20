@@ -1,0 +1,10 @@
+X:7783
+%%from edm
+T:Concerto No. 22, in A minor, 1st Movement - 3rd Theme
+C:Giovanni Viotti
+%%composer Viotti|Giovanni
+% EDM 7783 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+e2f2g2a2 b4 b4 | c'2^d'2 e'2 z/2 f'3/2 e'4 d'4 | z/2 e'3/2^d'2 z/2 c'2-c'/2b z/2 a3-a/2 a4 | g2f2 z/2 g3/2e2 g4 f4 |

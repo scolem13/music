@@ -1,0 +1,10 @@
+X:3009
+%%from edm
+T:Escales, 3rd Movement, Valencia, 2nd Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3009 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+F2 f2 de | f z z/2 d3/2 cd | e z z/2 B3 A/2 | B/2A/2G/2F/2 E2 z2 | F2 G4- | G2

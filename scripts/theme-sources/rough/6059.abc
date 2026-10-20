@@ -1,0 +1,11 @@
+X:6059
+%%from edm
+T:Symphony No. 2 in B-flat, 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6059 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+e16 | g8 b8 | b8 _a8- | _a8 g8 | f16 | _a8 c'8 | b12 (3c'2b2_a2 | g4

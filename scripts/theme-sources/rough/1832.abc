@@ -1,0 +1,10 @@
+X:1832
+%%from edm
+T:Stenka Razin, Op. 13, Symphonic Poem, 2nd Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1832 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+f4 d2e2 f4- | f2f2e2d2c2B2 | d4 B2c2 d4- | d2d2c2B2A2G2 | B4 G2A2 B4- | B2c2B2A2G2F2 |

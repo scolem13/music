@@ -1,0 +1,10 @@
+X:6460
+%%from edm
+T:Quintet, Op. 57, 3rd Movement - Scherzo, 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6460 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+b4 f4 b4 | f'4 d'4 b'4 | f'4 d'4 b4 | f4 f4 f4 | f4 f4 b4 | f4 f4 d'4 | f4 f4 f'4 | f4 f4 f4 |

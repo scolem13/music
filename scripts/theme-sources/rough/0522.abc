@@ -1,0 +1,10 @@
+X:522
+%%from edm
+T:Sonata in C, Harpsichord, 1st Movement
+C:Wilhelm Friedemann Bach
+%%composer Bach|Wilhelm Friedemann
+% EDM 0522 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z cec gec'g ecge c'gec | a2 a4 a2 a2g2 z4 | a2 d'4 f2 f2e2 z2 F2 | F/2G/2F/2G/2E2

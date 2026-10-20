@@ -1,0 +1,11 @@
+X:8983
+%%from edm
+T:Wolsey's Wilde, Harpsichord, Fitzwilliam Virginal Book, No. 157
+C:William Byrd
+%%composer Byrd|William
+% EDM 8983 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:C
+g2 c'4 g2 e2c2 f2e3 fg2 d4 | g2 c'4 g2 e2c2 e2d3 cd2 c4 |

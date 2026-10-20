@@ -1,0 +1,10 @@
+X:1844
+%%from edm
+T:The Lark, (Arr. by Balakirev), Piano
+C:Mikhail Glinka
+%%composer Glinka|Mikhail
+% EDM 1844 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+f4 b4 a4 g4 | f6 de f8 | e6 dc f6 f2 | B6 c2 d8 |

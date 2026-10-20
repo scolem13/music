@@ -1,0 +1,10 @@
+X:2854
+%%from edm
+T:Kleine Kammermusik, Op. 24, No. 2, 5th Movement, 3rd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2854 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+^f4 f4 f4 =f8 f4 | e12 ^A4 B4 ^c4 | ^d12 ^G4 ^A4 B4 | c4

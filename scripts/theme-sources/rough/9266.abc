@@ -1,0 +1,13 @@
+X:9266
+%%from mtd
+T:Nocturnes, Op. 62, No. 2 in E
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2262, Barlow & Morgenstern C275, EDM 9266 (Musical Theme Dataset, CC BY 4.0)
+N:Lento  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=84
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+B,2 | G3 A Bdec | B4 F3 G | E4 FGAB | c4 |

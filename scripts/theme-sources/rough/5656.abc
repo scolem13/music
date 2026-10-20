@@ -1,0 +1,10 @@
+X:5656
+%%from edm
+T:March Heroique, Op. 34, 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5656 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+F3G A4 G3F F4 | F8<F8 | F3G A8 A4 | G3F B12 | z4 e8 d4 | B2G4<c4 d2B2

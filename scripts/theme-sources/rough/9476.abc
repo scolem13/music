@@ -1,0 +1,10 @@
+X:9476
+%%from edm
+T:Sonata Da Camera, B-flat, Op. 2, No. 5, 3rd Movement - Sarabande
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9476 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d'4 f'4 f4 | b6 c'2 d'4 | g'4 a'4 b'4 | c'8 b4 | d'4 g'8 | c'4 f'8 | b6 c'2 a4 | g8 f4 |

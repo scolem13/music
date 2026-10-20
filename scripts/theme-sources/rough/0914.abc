@@ -1,0 +1,13 @@
+X:914
+%%from mtd
+T:Sonata No. 18, in E-flat, Op. 31, No. 3, 3rd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0908, Barlow & Morgenstern B790, EDM 0914 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto: Moderato e grazioso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=85
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+G2 | a4 A2 | b4 B2 | c3 BAG | FA/G/ F z |

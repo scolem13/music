@@ -1,0 +1,10 @@
+X:5113
+%%from edm
+T:Concerto in G, 1st Movement - 1st Theme A
+C:Johann Quantz
+%%composer Quantz|Johann
+% EDM 5113 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+G2GG BBdd g2b2g2d2 | fedc g4 fedc g4 | d2GG B2d2 g2b2g2d2 | c/2d/2c/2d/2BA a4

@@ -1,0 +1,10 @@
+X:5490
+%%from edm
+T:The Tsar's Bride, Overture, 1st Theme
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% EDM 5490 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+A2=B2_d2=d2 A4<d4 | _d2=d2e2f2 d4<f4 | g2a2d'2c'2 d'2c'2a2f2 | d2f2g2a2

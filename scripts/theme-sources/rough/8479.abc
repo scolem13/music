@@ -1,0 +1,13 @@
+X:8479
+%%from mtd
+T:Concerto No. 2 in B-flat, Op. 83, Piano and Orchestra, 1st Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1482, Barlow & Morgenstern B1346, EDM 8479 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=63
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+F2 | e2 fd c2 dB | A2 G2 c3 d | e2 f_d c2 dB | _A4 _G4 |

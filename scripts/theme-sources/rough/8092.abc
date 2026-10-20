@@ -1,0 +1,10 @@
+X:8092
+%%from edm
+T:Polacca Brillante, Op. 72, 2nd Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8092 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g8 f4 | b4 a4 g4 | f8 g4 | b4 a4 g4 | a4 e'4 c'4 | b8 ^a4- | ^a4 b4 g4 | g8 =g4 | f4

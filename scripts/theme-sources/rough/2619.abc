@@ -1,0 +1,10 @@
+X:2619
+%%from edm
+T:Quartet in F, Op. 77, No. 2, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2619 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+E8 F4 _G4 | G2c2e2c2 G2E2F2D2 | E8 F4 _G4 | G2=B2d2c2 e2c2G2E2 |

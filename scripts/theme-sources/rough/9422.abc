@@ -1,0 +1,10 @@
+X:9422
+%%from edm
+T:Dance Symphony - 3rd Movement - 2nd Theme
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9422 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+z2 D,2D,2 F,2D,2D,2 | D,2F,2D,2 F,2D,2D,2 | D,2A,2G,2 F,2D,2D,2 |

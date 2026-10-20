@@ -1,0 +1,12 @@
+X:6491
+T:Symphony No. 5, Op. 47, 2nd Movement - 2nd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8122, Barlow & Morgenstern S888, EDM 6491 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=150
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+g2z_a g2za f2zg | _e2zf e2zf d2ze | c2z_e =B2zd =A2zc | G4 |

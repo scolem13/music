@@ -1,0 +1,10 @@
+X:5265
+%%from edm
+T:Daphnis et Chloé, Ballet Suite No. 1, 2nd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5265 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Db
+e4- ec e4- ec | e8- e2c/2e/2c/2=A/2- | =A2c2 e8- | e8- e2c/2e/2c/2=A/2- | =A3B3 F2

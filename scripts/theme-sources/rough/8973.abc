@@ -1,0 +1,10 @@
+X:8973
+%%from edm
+T:Galliard, The Earl of Salisbury, from The Parthenia Harpsichord
+C:William Byrd
+%%composer Byrd|William
+% EDM 8973 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+a16 ^g8 | a6 b2 c'4 d'4 b8 | c'8 b16 | b8

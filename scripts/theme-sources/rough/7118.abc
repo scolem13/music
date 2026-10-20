@@ -1,0 +1,11 @@
+X:7118
+%%from edm
+T:Capriccio, 1st Movement - Intro., Part 1
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7118 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+e8 f2 z2 | e8 f2 z2 | e4 f2 z6 | d'4

@@ -1,0 +1,10 @@
+X:4769
+%%from edm
+T:Caprices, Op. 1, No. 20
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4769 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+f6 g2e2f2 | d6 A2a2g2 | f6 g2e2f2 | d6 A2f2g2 | a6 b2a2^g2 | a6 f2a2g2 | f4

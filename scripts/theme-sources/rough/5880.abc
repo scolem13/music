@@ -1,0 +1,11 @@
+X:5880
+%%from edm
+T:Deutsche Tanze, Op. 33, No. 7
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5880 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+d4 d6 c2 | c4 c4 d4 | e4 f8 | d4 f8 | d4

@@ -1,0 +1,10 @@
+X:7361
+%%from edm
+T:Fantasia, Harpsichord
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7361 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+b6 z/2 c'4- c'3/2 | b2a2g2 f2g2 z2 | f6 g6 | f2e2d2 c'2d2

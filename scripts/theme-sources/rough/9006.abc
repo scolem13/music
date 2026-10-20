@@ -1,0 +1,10 @@
+X:9006
+%%from edm
+T:Sinfonia in B-flat, 2nd Movement
+C:Christian Cannabich
+%%composer Cannabich|Christian
+% EDM 9006 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+z2 b2 b2g2 a2c'2 | b3g e2 z6 | c'6 =bc' bc'e'c' | b4 g2

@@ -1,0 +1,11 @@
+X:7179
+%%from edm
+T:Petrouchka, Danse Russe, 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7179 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+bc'd'2 e'd'c'b | a2a2 b4 | bc'd'e' d'2c'b | a2a2 b4 |

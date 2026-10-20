@@ -1,0 +1,10 @@
+X:6617
+%%from edm
+T:Symphony No. 1, in E minor, Op. 39, 4th Movement - 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6617 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e8 f4 e4 | e4 d4 ^c2d2e2d2 | c4 B2c2 d2 e4 z/2 f3/2 | e12- e2

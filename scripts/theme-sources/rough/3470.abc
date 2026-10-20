@@ -1,0 +1,10 @@
+X:3470
+%%from edm
+T:Hungarian Rhapsody No. 12 in C-sharp minor, 5th Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3470 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Db
+A2<f2 e2<g2 | c z/2 d3/2 d4 d- | db2b2 a3- | ag2 g4 g- | gd'2d'2 c'3 | b z/2 a3/2

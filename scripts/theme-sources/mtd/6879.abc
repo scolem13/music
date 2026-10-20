@@ -1,0 +1,12 @@
+X:6879
+T:Kunstlerleben (Artist's Life), Op. 316, Waltzes, No. 1, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8508, Barlow & Morgenstern S1270, EDM 6879 (Musical Theme Dataset, CC BY 4.0)
+%%bar 44 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/4
+Q:1/4=140
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e'/ | e' z e' | e'2- e'/d'/ | d'2 c' | e z z/ c'/ | c' z c' | c'2- c'/b/ | b2 a | d |

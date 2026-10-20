@@ -1,6 +1,6 @@
 // Pure zone-choice tests (node zones.test.cjs): the logic a recorded-sample set will rely on.
-require('/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/sounds.js');
-require('/Users/sean.coleman/Projects/everything-music-site/apps/shared/band/player.js');
+require((require("path").join(__dirname, "../../..") + "/apps/shared/band/sounds.js"));
+require((require("path").join(__dirname, "../../..") + "/apps/shared/band/player.js"));
 const assert = require('node:assert');
 const { pickZones, soundfontZones, soundfontKit, noteName } = BandSounds;
 let n = 0; const t = (name, fn) => { fn(); n++; };

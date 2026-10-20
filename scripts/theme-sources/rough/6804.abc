@@ -1,0 +1,10 @@
+X:6804
+%%from edm
+T:Sonata in D, 4th Movement
+C:Karl Stamitz
+%%composer Stamitz|Karl
+% EDM 6804 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+a8 g4 | f4 f'2d'2 a2f2 | a4 g4 f4 | f8 e4 | f8 g4 | a4 A2d2 f2a2 | a2g2 f4 e4 | d12 |

@@ -1,0 +1,11 @@
+X:6428
+%%from edm
+T:Sonata, No. 4, Op. 30, 1st Movement
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6428 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:F#
+d8- d2d2 | g8 d2f2 | c'12 | f4 e2 a6- | a4 a2 a4 =d2 | f4 =d2 ^d2=G2

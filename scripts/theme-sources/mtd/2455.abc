@@ -1,0 +1,12 @@
+X:2455
+T:Quartet in E-flat, Op. 20, No. 1, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4116, Barlow & Morgenstern H336, EDM 2455 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=99
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B2 cA G2 AF | E2 DC B,B,B,B, | B,3 C/D/ E/F/G/A/ B/c/d/e/ | B2 TA2 G2 z2 |

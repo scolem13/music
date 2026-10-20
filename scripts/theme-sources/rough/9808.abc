@@ -1,0 +1,11 @@
+X:9808
+%%from edm
+T:Hora Staccato (Arr. by Heifetz), Vn. and Piano, 2nd Theme
+C:Georgas Dinicu
+%%composer Dinicu|Georgas
+% EDM 9808 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+B3e e2e2 | e2e2 e4 | _g3=g g2g2 | z/2 b3/2_d'b =ag_ge |

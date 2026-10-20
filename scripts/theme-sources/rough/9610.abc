@@ -1,0 +1,12 @@
+X:9610
+%%from mtd
+T:Danse (Tarantelle Styrienne), 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2601, Barlow & Morgenstern D33, EDM 9610 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=216
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+e6 | f3- f2 e | a6 | g3- g2 f | e6 | f6 | ^c6 |

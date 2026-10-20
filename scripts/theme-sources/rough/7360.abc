@@ -1,0 +1,10 @@
+X:7360
+%%from edm
+T:Fantasias for Harpsichord, No. 5
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7360 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+g4 b4 a4 c'4 | b2e'2 d'8 c'4 | b4 g4 c'4 a4 | d'2b2 g8 c'4 | b4 g4 c'4 a4 | d'2b2 g8

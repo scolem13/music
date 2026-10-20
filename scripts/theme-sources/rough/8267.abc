@@ -1,0 +1,12 @@
+X:8267
+%%from mtd
+T:Carmen, Opera - (Act II) -  Danse Boheme
+C:Georges Bizet
+%%composer Bizet|Georges
+% MTD 1274, Barlow & Morgenstern B1138, EDM 8267 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=122
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+{/^a} b z{/=a} b z{/a} b z |{/^a} b/=a/g/a/ b/a/g/a/ b/a/g/a/ | b^c'^d'e'f'g' |

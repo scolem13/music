@@ -1,0 +1,13 @@
+X:951
+%%from mtd
+T:Sonata No. 28, in A, Op. 101, Piano, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0945, Barlow & Morgenstern B827, EDM 0951 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=94
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+G2 A B2 c | e2 d B2 A | a2 g f2 e | f2 e- ecB |

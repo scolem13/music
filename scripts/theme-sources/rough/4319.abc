@@ -1,0 +1,10 @@
+X:4319
+%%from edm
+T:Quintet in C, K 515, 4th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4319 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+g8 | c'8 | b2b2b2d'2 | f8 | e2e2e2g2 | c6 ^c2 | d2e2 z/2 f3/2ed | c2

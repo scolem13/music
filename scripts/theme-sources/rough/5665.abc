@@ -1,0 +1,11 @@
+X:5665
+%%from edm
+T:Samson et Dalila, Opera, Op. 47, Bacchanale, 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5665 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+_d=def defg | a2 a4 a2 | d'2c'b agfg | a6

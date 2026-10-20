@@ -1,0 +1,11 @@
+X:7521
+%%from edm
+T:The Seasons, Troika (November) Op. 37, No. 11, 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7521 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:E
+c2B2 e8 g2b2 | c'2b2 g8 e2c2 | g2f2 c8 c2B2 | f2e2 B8

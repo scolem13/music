@@ -1,0 +1,10 @@
+X:1940
+%%from edm
+T:In A Nutshell, 3rd Theme
+C:Percy Grainger
+%%composer Grainger|Percy
+% EDM 1940 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z/2 e6- e3/2 z/2 e6- e3/2 | ^f4 g4 d4 f4 | z/2 e6- e3/2 z/2 e6- e3/2 | ^f4 g4 a4 b4 | e8 a8 |

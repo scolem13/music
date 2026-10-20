@@ -1,0 +1,10 @@
+X:2342
+%%from edm
+T:Suite No. 7, in G minor, 4th Movement, Sarabande
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2342 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Bb
+d8 d8 z4 g4 | c8 c8 z4 d4 | G8 G8 z4 A4 | _G8 D8

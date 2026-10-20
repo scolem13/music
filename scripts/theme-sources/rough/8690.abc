@@ -1,0 +1,10 @@
+X:8690
+%%from edm
+T:Sonata in G, Op. 78, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8690 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d'2 z d' d'6 c'2 e'2g'2 | f'2e'4<d'4 c'2 d'2e'2 | b2a2 g3=e _g2a2 c'3a | b2d'2 g'4 _g'4

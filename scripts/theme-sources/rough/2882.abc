@@ -1,0 +1,10 @@
+X:2882
+%%from edm
+T:Der Schwanendreher Concerto on Old Folk Tunes, 2nd Movement, 1st Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2882 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+^C3^DE2 ^F2C2E2 | B,3A, B,4 A,2B,2 | ^C2A2^G2 ^F4 B2 | ^C3B,C2

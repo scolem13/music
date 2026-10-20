@@ -1,0 +1,10 @@
+X:8007
+%%from edm
+T:Concerto, Violin and Orchestra, 1st Movement - 2nd Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8007 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Gb
+e6 f4<a4 g2 | d'4 b2d'2 f'8- | f'4 b'4 f'4 e'4 | b4 a2b2 f'8 |

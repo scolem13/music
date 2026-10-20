@@ -1,0 +1,10 @@
+X:9200
+%%from edm
+T:Etudes, Op. 25 - No. 11 in A minor - "Winter Wind"
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9200 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e4 e3e e4 f4 | e4 c4 e8 | e4 e3e e4 f4 | e4 c4 e8 |

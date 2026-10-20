@@ -1,0 +1,10 @@
+X:4454
+%%from edm
+T:Sonata in G, K 301, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4454 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+a8 b/2c'/2b/2c'/2a2 b2^c'2 | d'2 a4 f2 b2 g4 e2 | a2 f4 d2 g2 e4 ^c2 |

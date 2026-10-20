@@ -1,0 +1,10 @@
+X:2040
+%%from edm
+T:Peer Gynt, Suite No. 2, Op. 55, 2nd Movement - Arabian Dance, 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2040 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+E4 e8- e2dc | B2cB A4 E4 z4 | E4 e2cd e6 dc | B2cB A4 E4

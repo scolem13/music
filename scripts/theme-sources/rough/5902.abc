@@ -1,0 +1,10 @@
+X:5902
+%%from edm
+T:Military Marches, Op. 51, No. 3, 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5902 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+c'3b/2c'/2 d'2c'4<b4 a2 | g2f2e2c'4<a4

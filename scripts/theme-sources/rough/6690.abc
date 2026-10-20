@@ -1,0 +1,10 @@
+X:6690
+%%from edm
+T:Symphony No. 7, in C, Op. 105, 8th Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6690 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Eb
+=B4 B4 B4 B4 c4 d4 | c4 d4 c4 d4 c4 d4 | e4 e4 f4 g4 =a4 b4 | c'4 b4 c'4 d'4 f'4 b'4 |

@@ -1,0 +1,10 @@
+X:2561
+%%from edm
+T:Quartet in F, Op. 74, No. 2, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2561 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+F8 A8 | c4 c4 c4 f4 | e2f2g2e2 c4 e4 | f4 f4 f2g2a2b2 | c'8 a4 f4 |

@@ -1,0 +1,10 @@
+X:160
+%%from edm
+T:Concerto No. 1, in C minor, 2 Pfts. and Orchestra, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0160 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Eb
+B6- Bc BABc D6- DC DEFG | AcBA2<f2e dcBA G

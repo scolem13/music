@@ -1,0 +1,10 @@
+X:4622
+%%from edm
+T:Trio in B-flat, K 502, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4622 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f6 =e2 g2f2 z2 d2 | g2f2e2d2 d4 z4 | d6 _d2 e2=d2 z2 B2 | e2d2c2B2 B4

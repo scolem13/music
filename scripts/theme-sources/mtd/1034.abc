@@ -1,0 +1,12 @@
+X:1034
+T:Symphony No. 2, in D, Op. 36, 2nd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1028, Barlow & Morgenstern B910, EDM 1034 (Musical Theme Dataset, CC BY 4.0)
+N:Larghetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=36
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+E | E>A c2>A2 | G>Bd2 z e | e>b d'2>b2 | a>c'e'2 |

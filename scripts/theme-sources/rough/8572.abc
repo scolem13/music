@@ -1,0 +1,10 @@
+X:8572
+%%from edm
+T:Quartet in A minor, Op. 51, No. 2, 4th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8572 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+g4 f'8 | d'4 c'4 b4 | d'4 g'8 | e'4 d'4 c'4 | c''4 ^a'8 | a'4 g'4 f'4 | d'4 c'8 | b4

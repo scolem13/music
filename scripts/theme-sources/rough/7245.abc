@@ -1,0 +1,11 @@
+X:7245
+%%from edm
+T:Banditenstreiche, Overture, 3rd Theme
+C:Franz von Suppé
+%%composer Suppé|Franz von
+% EDM 7245 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+g2c'c' c'c'c'c' | c'c'c'2 bc'd'2- | d'c'2<b2 d'b2- | bd' b4 z2 | c'2aa aaaa | aa

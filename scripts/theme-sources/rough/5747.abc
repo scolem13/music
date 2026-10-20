@@ -1,0 +1,11 @@
+X:5747
+%%from edm
+T:Danses Espagnoles, Op. 23, No. 2, Zapateado, 2nd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5747 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:A
+a2b2c'2 z2 c'4 | b2c'2d'2 z2 d'4 | c'2b2 z/2 c'3/2 z2 b2a2 | z2 b2 a8- | a4

@@ -1,0 +1,10 @@
+X:143
+%%from edm
+T:Concerto No. 8, in A minor, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0143 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+g4 a2 z/2 d3-d/2e2 | z/2 f/2>e/2f/2d'2 f4 e2 z2 | c'2b2^a3 =a/2g/2ab/2c'/2bc'/2d'/2 |

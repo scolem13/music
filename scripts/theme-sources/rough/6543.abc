@@ -1,0 +1,10 @@
+X:6543
+%%from edm
+T:En Saga, Op. 9, 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6543 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e4 e2 z2 e4 e2 z2 | e4 e2 z2 e4 e2^f2 | g4 a2 z2 g4 ^f2 z2 | g4 g2 z2 g4

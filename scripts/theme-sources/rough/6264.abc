@@ -1,0 +1,10 @@
+X:6264
+%%from edm
+T:Quartet in A minor, Op. 41, No. 1, 3rd Movement
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6264 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a'8 e'8 | f'8 g4 d'4 | d'4 c'6 _d'2 =d'2b2 | b4 a8

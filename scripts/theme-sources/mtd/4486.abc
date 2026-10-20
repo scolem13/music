@@ -1,0 +1,12 @@
+X:4486
+T:Symphony No. 1, in E-flat, K16, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6135, Barlow & Morgenstern M860, EDM 4486 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=41
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+z2 C,D, E,F,G,2 | z2 F,G, A,G,F,2 | z2 G,,=A,, =B,,C,D,2 | z2 C,D, E,D,C,2 |

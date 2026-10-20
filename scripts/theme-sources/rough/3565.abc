@@ -1,0 +1,10 @@
+X:3565
+%%from edm
+T:Sonata No. 7 in F, 5th Movement - Aria
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3565 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+f4 c'4 a4 g2f2 | =e4 f2g2 f4 c4 | a4 g2f2 g4 c4 | b4 a2g2 a4 f4 |

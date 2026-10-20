@@ -1,0 +1,10 @@
+X:2384
+%%from edm
+T:Water Music, 18th Movement, Minuet, 1st Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2384 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+G2A2 B4 A4 | G4 e4 d4 | c4 B4 A4 | G2_G2=G2A2B2c2 | d4

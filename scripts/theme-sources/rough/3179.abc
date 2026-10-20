@@ -1,0 +1,10 @@
+X:3179
+%%from edm
+T:Symphony No. 1, in G minor, 4th Movement - 1st Theme
+C:Basil Kalinnikov
+%%composer Kalinnikov|Basil
+% EDM 3179 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+B6 d2 e2d2c2e2 | d4 c2d2 B4 A2B2 | G6 B2 c2B2A2c2 | B4 A2B2 G4 F2G2 | E2F2G2D2 E2F2G2A2 | B2

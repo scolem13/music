@@ -1,0 +1,10 @@
+X:2316
+%%from edm
+T:Sonata in A, Op. 1, No. 14, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2316 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:A
+f16 f8 | g4 f4 =f4 ^d4 c4 B4 | A4 G8<F8 G4 | =F4 G4 c4

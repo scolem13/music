@@ -1,0 +1,10 @@
+X:145
+%%from edm
+T:Concerto No. 1, in D minor, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0145 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+DEF2E2D2 A2 d4 A2 | B2GEA2FD G2E_DA,2B2- | B2GEA,2

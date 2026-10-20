@@ -1,0 +1,10 @@
+X:2536
+%%from edm
+T:Quartet in G, Op. 64, No. 4, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2536 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+D2 z/2 G3/2F2 G2 A4 | d2 z/2 G3/2F2 G2 A4 | d2 z/2 G3/2F2 G2 c4 | e2d2f2 g2b2

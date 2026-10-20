@@ -1,0 +1,10 @@
+X:3410
+%%from edm
+T:Etude No. 2 in F minor, Piano
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3410 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+c2=e2f2_e2=A2B2 | d6 c2 =B2c2 | _G2F2 z/2 F3/2=E2 F2A2 | =E2F2 G2=B2 c2

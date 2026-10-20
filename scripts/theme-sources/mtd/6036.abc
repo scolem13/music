@@ -1,0 +1,12 @@
+X:6036
+T:Sonatina in G minor, Op. 137, No. 3, 2nd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7668, Barlow & Morgenstern S449, EDM 6036 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=35
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B2>e2 G2 z G | A2>c2 F2 z F | G2>E2 B>Gc>A | G3A/G/ F |

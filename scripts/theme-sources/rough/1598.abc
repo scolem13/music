@@ -1,0 +1,10 @@
+X:1598
+%%from edm
+T:Quartet in E minor, Op. 121, 1st Movement - 2nd Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1598 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+d8 e4 f4- | f4 g4 a4 b4- | b4 a2g2 g4 f2e2 | e4 d4 c4 B4 |

@@ -1,0 +1,10 @@
+X:5498
+%%from edm
+T:The Barber of Seville, Overture, 3rd Theme
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5498 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+z4 b2b2 b2b2 c'bab | c'2c'2c'2c'2 c'2c'2 d'c'bc' | d'2d'2d'2d'2 d'3e'/2f'/2 g'2g'2 | g'2f' z f'2e'

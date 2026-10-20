@@ -1,0 +1,14 @@
+X:9601
+%%from mtd
+T:Serenade of the Doll
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2592, Barlow & Morgenstern D24, EDM 9601 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/GsfRAYnBjCw
+N:Serenade for the Doll  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=183
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z2{/D} G z{/G} c z |{/C} F4{/D} G{/G}c |{/C} F z{/D} G z{/G,} C z |{/C} F6 |{/D} G6 |

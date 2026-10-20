@@ -1,0 +1,11 @@
+X:9035
+%%from edm
+T:Pupazzetti, 1st Movement - 2nd Theme
+C:Alfredo Casella
+%%composer Casella|Alfredo
+% EDM 9035 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+g4 g4 | g4 g4 | g2^a2 g4 | ^f2=f2 e4 | g4 g4 | g4 g4 | z/2 c'3/2g2 g4 | ^f2=f2 e4 |

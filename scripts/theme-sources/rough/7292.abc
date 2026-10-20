@@ -1,0 +1,11 @@
+X:7292
+%%from edm
+T:The Fountain of Arethusa, Op. 30, No. 1, 1st Theme
+C:Karol Szymanowski
+%%composer Szymanowski|Karol
+% EDM 7292 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/8
+L:1/16
+K:C
+a4- a3/2b- [c'/2-b/2]c' | ^g4 =g4 | ^f4 ^c4 | d2 f2 ^f4- | ^f3/2^g- [a/2-^g/2]a =f4 | e4 ^d4 | ^A2

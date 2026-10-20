@@ -1,0 +1,12 @@
+X:583
+T:Hungarian Sketches, No. 1, 1st Movement, 2nd Movement - Bear Dance
+C:Béla Bartók
+%%composer Bartók|Béla
+% MTD 0577, Barlow & Morgenstern B481, EDM 0583 (Musical Theme Dataset, CC BY 4.0)
+N:Medvetánc. Allegro vivace "Bear Dance"  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=282
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+^A A A2 |{/^A} ^d A A2 |{/^A} ^d A A ^G | F2 F2 |

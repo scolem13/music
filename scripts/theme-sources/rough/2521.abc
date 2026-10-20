@@ -1,0 +1,10 @@
+X:2521
+%%from edm
+T:Quartet in B-flat, Op. 55, No. 3, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2521 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+B,2<D2 F B4 z3 | F2<B2 d f4 f3- | f f4 f4 =e3 | g2<a2 b z/2 a6- a/2- | a

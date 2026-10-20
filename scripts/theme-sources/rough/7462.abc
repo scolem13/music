@@ -1,0 +1,11 @@
+X:7462
+%%from edm
+T:Capriccio Italien, Op. 45, 4th Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7462 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+a2 z2 b2 c'2 z2 c'2 | a2 z2 b2 c'2 z2 c'2 | a2 z2 b2 c'2b2a2 | g2 z2 f2 e6- | e6

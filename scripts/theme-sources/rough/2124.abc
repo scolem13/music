@@ -1,0 +1,10 @@
+X:2124
+%%from edm
+T:Concerto No. 1 in B-flat, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2124 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+z6 z f f6 z f | c3c2<d2B f6 z f | e3e2<d2e2<c2F d4- | d4 c8 B4 |

@@ -1,0 +1,10 @@
+X:3465
+%%from edm
+T:Hungarian Rhapsody No. 10 in E, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3465 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+ef^ga z/2 b/2^abd' | d'2 ^c'4 b2- | bef^g z/2 a/2gac' | b2 a4 a2 |

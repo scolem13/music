@@ -1,0 +1,10 @@
+X:4258
+%%from edm
+T:Quartet in G, K 80, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4258 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d12 | c'12 | b4 z/2 c'3-c'/2 z/2 a3-a/2 | g8 g4 | g4 a4 b4 |

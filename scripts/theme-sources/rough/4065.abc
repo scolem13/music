@@ -1,0 +1,10 @@
+X:4065
+%%from edm
+T:Concerto in C, K 299, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4065 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A2 z2 A2 z2 A2 z2 | G6- GE F2 z2 | ABcd cdef efef | B6- Bc/2d/2 c2

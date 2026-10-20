@@ -1,0 +1,11 @@
+X:6950
+%%from edm
+T:Dorfschwalben Aus Oesterreich, Op. 164, Waltzes, No. 5
+C:Joseph Strauss
+%%composer Strauss|Joseph
+% EDM 6950 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Ab
+c2 z2 c6 c2 | c2e2 A4 A4 | c2 z2 c6 d2 | e2c'2 a2 z2 a2 z2 | b12 | a12 | f12 | e12 |

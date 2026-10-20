@@ -1,0 +1,10 @@
+X:3093
+%%from edm
+T:A London Overture, 1st Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3093 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+B2d2 z8 z/2 B3/2A2 | B2d2 z6 B2 z/2 B3/2A2 | B2d2 z2 B2 B2e2 z2 B2 | B2f2 z6 B2 z/2 B3/2A2 | B2f2

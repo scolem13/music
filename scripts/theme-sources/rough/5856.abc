@@ -1,0 +1,10 @@
+X:5856
+%%from edm
+T:Six Little Piano Pieces, Op. 19, No. 5
+C:Arnold Schonberg
+%%composer Schonberg|Arnold
+% EDM 5856 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+f'2 c'a ^f^a | a4 ^g2 | ^f2 ^d3 e | f4- f^d | ^f4 gf | a6 |

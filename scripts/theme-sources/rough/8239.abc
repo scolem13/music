@@ -1,0 +1,10 @@
+X:8239
+%%from edm
+T:Jeremiah, Symphony - 1st Movement - Prophecy - 1st Theme
+C:Leonard Bernstein
+%%composer Bernstein|Leonard
+% EDM 8239 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/4
+L:1/16
+K:C
+^d8 ^A4 d4 A4 | ^G4 A4 ^A4 f4 ^d4 | d16

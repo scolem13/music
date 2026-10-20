@@ -1,0 +1,11 @@
+X:5646
+%%from edm
+T:Henry VIII, Gigue and Finale, 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5646 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Ab
+e2c2d2 e2e'2c'2 | z/2 b3/2a2b2 c'2a2f2 | e2c2d2 e2a2c2 | c2B2B2 B4

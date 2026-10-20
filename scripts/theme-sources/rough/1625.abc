@@ -1,0 +1,10 @@
+X:1625
+%%from edm
+T:Fatme (Zilda), Overture, 3rd Theme
+C:Friedrich von Flotow
+%%composer Flotow|Friedrich von
+% EDM 1625 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+E z C z/2 D/2 E4 | F z F z/2 G/2 E4 | F z F z/2 ^G/2 E2A2 | ^G2B2A2c2 |

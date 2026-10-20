@@ -1,0 +1,13 @@
+X:3655
+T:Symphony No. 1, in D, 1st Movement - 1st Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5307, Barlow & Morgenstern M47, EDM 3655 (Musical Theme Dataset, CC BY 4.0)
+N:Langsam. Schleppend  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 63 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/2
+L:1/4
+Q:1/4=157
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+D, A,, | D, E, F, G, | A,2 B, C/D/ | C B, A, F, | G,2 A, B,/C/ | B, A, G, E, | F,2 |

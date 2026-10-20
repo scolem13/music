@@ -1,0 +1,11 @@
+X:9727
+%%from edm
+T:Coppelia, Act I, 2nd Theme
+C:Clement Philibert Leo Delibes
+%%composer Delibes|Clement Philibert Leo
+% EDM 9727 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+g3f e4 e4 | e3f d6 c2 | B3d g4 b3c' | c'3d' a4

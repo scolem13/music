@@ -1,0 +1,13 @@
+X:783
+%%from mtd
+T:Rondo in G, Op. 129, "Rage Over the Lost Penny"
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0777, Barlow & Morgenstern B671, EDM 0783 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=215
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B2 dd | gg b2 | d'/c'/d'/c'/ a z | d'/c'/d'/c'/ a z |

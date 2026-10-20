@@ -1,0 +1,10 @@
+X:4458
+%%from edm
+T:Sonata in E minor, K 304, 2nd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4458 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+G4 G4 G4 | G4 G4 F4 | F4 F4 F4 | F4 c4 B4 |

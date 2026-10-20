@@ -1,0 +1,10 @@
+X:1386
+%%from edm
+T:Trio, Op. 90, 5th Movement - Intro
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1386 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/8
+L:1/16
+K:Eb
+g3 f/2e/2 d2 e2 | c4 G2 z G | G3 c/2B/2 G3 c/2B/2 | G6

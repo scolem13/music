@@ -1,0 +1,12 @@
+X:4354
+T:Serenade in D, K 320, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6003, Barlow & Morgenstern M728, EDM 4354 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio maestoso - Allegro con spirito  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=33
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d4 D2>D2{/DA} f6 f2 | a z d2f z A2d z F z A z D z |

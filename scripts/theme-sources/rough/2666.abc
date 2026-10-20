@@ -1,0 +1,10 @@
+X:2666
+%%from edm
+T:Symphony in D, No. 73, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2666 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+G2G2A2A2 | B2B3/2c/2 A4 | c2c3/2d/2 B2B2 | BAAG F2A2 |

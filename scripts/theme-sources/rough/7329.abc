@@ -1,0 +1,10 @@
+X:7329
+%%from edm
+T:Sonatas, Op. 1, in E minor, 3rd Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7329 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+e2e3 bge cB A6 | f2f3 c'af ^d^c B6 | ba2<b2 e'^d'/2e'/2e' c'bc'2 e'd'/2e'/2e'

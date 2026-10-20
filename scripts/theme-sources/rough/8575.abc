@@ -1,0 +1,10 @@
+X:8575
+%%from edm
+T:Quartet in C minor, Op. 60, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8575 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+e'2 e4 f2 z4 | e2 d4 =B2 z4 | c2 e4 f2g2g2 | =a2b2b2 a2b2

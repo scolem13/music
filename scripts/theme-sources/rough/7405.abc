@@ -1,0 +1,10 @@
+X:7405
+%%from edm
+T:Mignon, Opera, Overture, 1st Theme
+C:Ambroise Thomas
+%%composer Thomas|Ambroise
+% EDM 7405 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Ab
+c4- cd e6 | f4- fd B6 | z2 B2c2 d2f2d2 | e8- e2 z2 | c4 d2 e2a3g | g8

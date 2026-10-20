@@ -1,0 +1,13 @@
+X:1085
+T:Symphony No. 5, in C minor, Op. 67, 4th Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1079, Barlow & Morgenstern B961, EDM 1085 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 26  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/8
+Q:1/4=171
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c6 G2 | e6 d>c | d8- | d8 | d6 G2 | f6 e>d | d2 e6- | e8 |

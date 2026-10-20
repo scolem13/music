@@ -1,0 +1,10 @@
+X:2859
+%%from edm
+T:Mathis der Mahler Symphony, 1st Movement, 2nd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2859 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+g8- g2^f2e2d2 | c4 d4 f8- | f4 e4 b8 | a8 z4 b4 | d'4 ^a4 =a4 g2d2 | ^f12

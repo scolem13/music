@@ -1,0 +1,10 @@
+X:6215
+%%from edm
+T:Concerto in D minor, 2nd Movement
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6215 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d'4 c'2b2 e'3d' c'4 | g3c' b4 a3d' c'4 | b2f'2e'2d'2 g'3f' e'4 | b3e' d'4 c'3f' e'4 | d'4

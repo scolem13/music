@@ -1,0 +1,10 @@
+X:2127
+%%from edm
+T:Concerto No. 1 in B-flat, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2127 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+z2 BA B4 z4 | z2 AB c4 z4 | z2 Bc d4 z4 | z2 cd e8- | e6 e2 d2c2 | B4

@@ -1,0 +1,11 @@
+X:5628
+%%from edm
+T:Concertstuck, Op. 20, Intro.
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5628 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:A
+z4 e4 e4 e4 e4 e4 | e6 fg a4 a6 gf e4 |

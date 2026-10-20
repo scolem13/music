@@ -1,0 +1,10 @@
+X:9512
+%%from edm
+T:Concert No. 13, in G, 1st Movement - Prelude
+C:François Couperin
+%%composer Couperin|François
+% EDM 9512 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+z2 D2 G2D2 B2G2 dedc | z/2 z/2 BG2 dedc B2d2 G2FG | F2

@@ -1,0 +1,12 @@
+X:1037
+T:Symphony No. 2, in D, Op. 36, 3rd Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1031, Barlow & Morgenstern B913, EDM 1037 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo. Allegro - Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=294
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+d3 | f g a | e3 | g a b | E F G | e f g | f e d | d' c' d' |

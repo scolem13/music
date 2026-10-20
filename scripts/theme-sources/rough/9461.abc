@@ -1,0 +1,10 @@
+X:9461
+%%from edm
+T:Concerto Grosso in B-flat, Op. 6, No. 11, 3rd Movement
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9461 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d'6 c'2 b8 | a2d2 d'8 c'4- | c'2f4<b4 b2 _e'4- | _e'2f'2d'2c'2 d'4 c'4 | b4 d'8

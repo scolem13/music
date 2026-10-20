@@ -1,0 +1,10 @@
+X:4316
+%%from edm
+T:Quintet in C, K 515, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4316 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+C,,12 E,,2 z2 | G,,2 z2 C,2 z2 E,2 z2 G,2 z2 | C2 z2 E2 z8 z2 | g12- g2 z/2 z/2 c' | c'8 b4

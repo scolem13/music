@@ -1,0 +1,10 @@
+X:6220
+%%from edm
+T:Davidsbundler, Op. 6, No. 5
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6220 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+^a2b2c'2d'2 | e'2g'2f'2e'2 | d'2 z c' b2 z a | a4 d'4 |

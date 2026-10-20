@@ -1,0 +1,10 @@
+X:8911
+%%from edm
+T:Symphony No. 4 in E-flat, 2nd Movement - 2nd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8911 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+z4 g8 f2e2 | d4 e2f2 g2_g2=g2=a2 | b8 =a4 b2a2 | g4 =a/2b/2a/2b/2a/2b/2g/2a/2 b4

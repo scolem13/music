@@ -1,0 +1,10 @@
+X:5039
+%%from edm
+T:Sonata No. 7, Op. 83, 3rd Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5039 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:7/8
+L:1/16
+K:Bb
+B,4 z2 B,4 F,2F,2 | F,4 F,4 F,2G,2G,2 | A,4 z2 B,4 B,2B,2 | B,4 C4 C2C2C2 | C4 z2 E4 D2_D2 | D4

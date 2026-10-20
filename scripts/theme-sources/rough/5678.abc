@@ -1,0 +1,10 @@
+X:5678
+%%from edm
+T:Septet, Op. 65, 4th Movement - Gavotte and Finale
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5678 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+e'4 e4 e'4 d4 | e'4 c4 B8 | B4 c2d2 e2f2 g4 | f4 e4 d4 B4 |

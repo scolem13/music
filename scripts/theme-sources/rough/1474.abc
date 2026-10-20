@@ -1,0 +1,10 @@
+X:1474
+%%from edm
+T:Poeme Roumain, Op. 1, Symphonic Suite, 1st Movement - 2nd Theme
+C:Georges Enesco
+%%composer Enesco|Georges
+% EDM 1474 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e8 _d4 e2=e2 | e4 _d2=B2 _B8 | z4 e4 _d2e2_g2=e2 | e6 _d2 =B2_B2 B4 |

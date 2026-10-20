@@ -1,0 +1,11 @@
+X:7391
+%%from edm
+T:Trio Sonata in E minor, 2nd Mvt
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7391 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:E
+g2f2e2g2 | f2ed efe2 | g2f2e2g2 | f2f2 e2

@@ -1,0 +1,10 @@
+X:4189
+%%from edm
+T:Divertimento in F, K 247, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4189 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+f4 z2 c2 z/2 c3-c/2 B2A2 | B/2c/2d3 d2d2 c4 z4 | f4 z2 A2 z/2 A3-A/2 G2F2 | G/2A/2B3 B2B2 A4

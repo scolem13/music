@@ -1,0 +1,10 @@
+X:3721
+%%from edm
+T:Cantari Alla Madrigalesca, 1st Theme
+C:Francesco Malipiero
+%%composer Malipiero|Francesco
+% EDM 3721 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+G,6 z A2<B,2^C | D3F ^G,4- G,A,B,^C | DFA^c B2 z e2<^F2^G | A2

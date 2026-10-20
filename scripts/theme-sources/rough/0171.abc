@@ -1,0 +1,10 @@
+X:171
+%%from edm
+T:Concerto No. 2, in C, 3 Pfts. and Orchestra, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0171 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c2G2c2G2 c2BA G2AB | c2BA G2F2 EFGE CDE^F | G4

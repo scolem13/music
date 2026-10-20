@@ -1,0 +1,11 @@
+X:5296
+%%from edm
+T:Quartet in F, 2nd Movement - 1st Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5296 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+e'4 ^d'4 (3c'2d'2e'2 | f'4 c'4 f'4 | e'4 ^d'4 (3c'2d'2e'2 | g12 |

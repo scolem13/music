@@ -1,0 +1,10 @@
+X:3785
+%%from edm
+T:Scenes Pittoresques, Suite No. 4, I - March, 3rd Theme
+C:Jules Massenet
+%%composer Massenet|Jules
+% EDM 3785 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a2_a2=a2_a2 =a2d'2_d'2e'2 | d'_d'=d'e' d'_d'=d'e' d'_d'=d'e' d'2

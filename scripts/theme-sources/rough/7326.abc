@@ -1,0 +1,10 @@
+X:7326
+%%from edm
+T:Sonatas, A minor, 4th Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7326 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+a4 e'4 | c'2c'2b2a2 | g2a2b2e'2 | d'2c'2b2a2 | g2a2b2e'2 | d'2c'2b2a2 | g3a a/2b/2a/2b/2a/2b/2g/2a/2 | b4

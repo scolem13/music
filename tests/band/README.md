@@ -39,12 +39,19 @@ Folders keep the names of the worker that wrote them.
 `lead/cdp.js` is the Chrome driver. Do not navigate away inside an `eval` (it hangs), and note that a page `alert()` blocks every later call.
 `agent-b/run.mjs` renders audio offline and measures loudness (`node run.mjs all`); it needs ffmpeg.
 
-Paths: the scripts load engine files by absolute path under `/Users/sean.coleman/Projects/everything-music-site`.
+Paths: the scripts load engine files relative to the test file, under `<repo root>`.
 
 `agent-c/voicings.test.js` is the older copy of `sheet/voicings.test.js` and fails on the current style list; use `sheet/`.
 A server left running from an earlier session keeps serving its old render: check `lsof -iTCP:8500` before starting a new one.
 
 The sample CDN is sometimes unreachable. `node meter/fetch-samples.js` mirrors the samples into `lead/site/sf/` (git-ignored, lost on a clean render folder); when that folder exists `lead/cdp.js` points every page at it.
+
+## Samples in page tests
+Port 8500 is often held by another session's server; don't kill it or rely on it. A test that needs the band's samples serves
+`/sf/` itself from the mirror `tests/band/lead/site/sf/` (fill it with `node tests/band/meter/fetch-samples.js`) and points the page
+at it. `cdp.js` locks `getSoundfontUrl`, so override it with
+`Object.defineProperty(window, "getSoundfontUrl", { configurable: true, value: () => Promise.resolve(location.origin + "/sf/") })`.
+`tests/lessons/ornament-bends.cdp.js` is the example. `abc-ex` removes its `<script>` children once drawn: find examples by visible text.
 
 ## pat/ — ported patterns, ticked rhythms, Band section layout
 - `node tests/band/pat/t_patterns.js` — set comping patterns and set bass lines in every meter, rhythm sets ("a+b"), catalog/styles consistency.
@@ -114,6 +121,7 @@ The sample CDN is sometimes unreachable. `node meter/fetch-samples.js` mirrors t
 ## groove/ — written grooves and the Drumset draft
 - `node tests/band/groove/t_groove.js` ("GROOVE TEXT OK", "BAND GROOVES AS TEXT OK", "WRITTEN GROOVE PLAYED OK", "GRIDS AND TEMPO OK", "GROOVE NOTATION OK", "CLICK AND CONGAS OK"): `apps/shared/band/groove.js` (GrooveScribe's menu grooves read and written back, every letter, every grid and meter, swing, the band's grooves as text, the ABC and its bar lengths) and `opts.written` in `drums.js` / `congas.js`.
 - `tests/band/groove/editor.cdp.js` ("DRUMSET EDITOR OK", from `tests/band/lead` with the server; render `tools/drumset-b.qmd` into the test site first): the grid, the marks of a row, undo, the address as the save file, meters and grids, bars, the band's grooves, 300 random grooves drawn by abcjs, the drummer playing what is written (pieces, levels, loop length, swing, a change while playing, a muted row), a phone width. An argument saves pictures to `/tmp/drumset-b-*.png`.
+- `tests/band/groove/carried.cdp.js` ("DRUMSET CARRIED OK", same setup): what the draft carries over from the first Drumset page: `localStorage.tuneMeter`, the icon grid and its PNG export, custom count words, the bongo row, the synthesized ride, the standard patterns (`groove-library.js`; `t_groove.js` prints "BONGOS AND PATTERNS OK").
 - `node print.js [groove ids]` and `node abc.js "<groove text>"` there print the band's grooves as groove text, and the ABC of a groove.
 - `node tests/band/fills/t_grab.js` ("GRABBED CYMBAL OK"): `"^choke"` in the chart (a crash on beat 1 stopped by the hand before beat 2, in every kind of groove, other parts untouched) and the short ending (`opts.endChoke`).
 - `node tests/band/entry/t_entry.js` also prints "MELODY OK" (single-note line into written eighths, key spelling, ties); `tests/band/entry/melody.cdp.js` ("MELODY UI OK", from `tests/band/lead` with the server): a swung line recorded over the band on the Chord Entry page comes out as even eighths in the ABC and the notation.
@@ -145,3 +153,4 @@ The sample CDN is sometimes unreachable. `node meter/fetch-samples.js` mirrors t
 - `tests/band/entry/pickup.cdp.js` ("PICKUP WORDS OK", from `tests/band/lead` with the server): notes played in the count-in of a take that starts at the top of a section go at the end of the bar before, keeping what that bar had up to them; they take the section's first syllables (`lyr[k].lead`, the "Pickup notes before it" field), and the section before keeps its own words.
 - `node tests/band/lyrics/t_lyrics.js` ("LYRICS OK"): `apps/shared/lyric-align.js`, the browser twin of `~/Projects/carols/tools/lyrics_align.py`. `apps/shared/syllables-en.js` is generated: `cd ~/Projects/carols/tools && ../.venv/bin/python export_syllables.py ~/Projects/everything-music-site/apps/shared/syllables-en.js`.
 - `tests/band/lessons/patterns.cdp.js` ("PATTERNS OK"): every accompaniment-pattern lesson (lessons/patterns/, from `scripts/pattern-lessons.mjs`) plays its first demo; `ALL=1` plays every demo. Copy `_site/lessons/patterns` into `lead/site/lessons/` first; server on 8500.
+- `node tests/band/swing/t_swing.js` ("SWING OK"): `BandPlayer.swingAt` (Auto = the old tempo curve for every style, the listener's `swingSet`, a style's `swing`), `warp` at sixteenths, `BandMidi.swingOf`, and written drum / conga grooves taking the style's or listener's swing.

@@ -1,0 +1,11 @@
+X:6906
+T:Roses From the South, Waltzes, (from Queen's Lace Handkerchief), Op. 388, No. 1, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8535, Barlow & Morgenstern S1297, EDM 6906 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=178
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+c | A z c |{/c} b z a | A z c |{/c} g z f | A2 c | e2- e/d/ | d3 |

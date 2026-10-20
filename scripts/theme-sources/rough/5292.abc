@@ -1,0 +1,12 @@
+X:5292
+%%from mtd
+T:Pavane for a Dead Infanta
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6929, Barlow & Morgenstern R162, EDM 5292 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/8
+Q:1/4=51
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+G4- GAFE | D2 EF FE E2 | B4- BcAG | F2 GA- ABGF | E2 FG- GAFE | F4 |

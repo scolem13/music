@@ -1,0 +1,10 @@
+X:7381
+%%from edm
+T:Suite in A minor, Rondo
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% EDM 7381 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+ab c'2 b2 | a2 e'4 | a'2 ^g'2 g'2 | a'2 e'4 | g'2 c'2 c'd' | e'2 a2 c'2- | c'2 bc' d'c' | ba b2 e2 |

@@ -1,0 +1,10 @@
+X:5789
+%%from edm
+T:Sonatas, Longo 294 in F-sharp minor
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5789 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+f'4 e'2d'2 c'4 f'4 | e'4 a4 b4 d'4 | c'4 f4 g4 b4 | a4 g2f2 g4 f2=f2 | f4

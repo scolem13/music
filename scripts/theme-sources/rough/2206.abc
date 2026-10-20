@@ -1,0 +1,10 @@
+X:2206
+%%from edm
+T:Concerto Grosso in B-flat, Op. 6, No. 7, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2206 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+G4 z2 g2 d2b2- | b2b2a2g2_g2a2- | a2d4<g4 =e2 | f6 f2 e2d2 | e12 |

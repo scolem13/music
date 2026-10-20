@@ -1,0 +1,10 @@
+X:1442
+%%from edm
+T:Salut D'Amour, Op. 12, Orchestra
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1442 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+f4 A2f2 | e2d2c2d2 | g4 g4 | g4 A2 z2 | f4 ^A2f2 | e2d2c2d2 | e4 e4 | e6

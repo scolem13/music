@@ -1,0 +1,22 @@
+# Hummel, Ausführliche theoretisch-practische Anweisung zum Piano-Forte-Spiel (Vienna: Haslinger, 1828), Part III,
+# "Von den Verzierungen", pp. 393-402, read from Internet Archive ausfhrlichetheor00humm. Moved onto C, L:1/32.
+TABLES = [dict(id="hummel-1828", cols=("Hummel's name", "Written", "Played"), rows=[
+    dict(name="Triller", gloss="trill: \"begins with the main note and always ends with it too\", with a closing turn as fast as the trill",
+         sign="!trill!c16", played="cdcdcdcdcdcdcdBc", width=(90, 170),
+         note="p. 394: the upper-note start \"was made for the voice\"; on the piano the weight belongs on the main note."),
+    dict(name="Triller von oben", gloss="a start from above must be shown by a small added note", sign="{d}!trill!c16",
+         played="dcdcdcdcdcdcdcBc", width=(90, 170)),
+    dict(name="Triller von unten", gloss="and a start from below likewise", sign="{B}!trill!c16", played="BcdcdcdcdcdcdcBc", width=(90, 170)),
+    dict(name="Schneller", gloss="a short trill: main, upper, main, quick and on the beat", sign="!uppermordent!c8", played="c2d2c4",
+         note="p. 398; note values approximate."),
+    dict(name="Doppelschlag von oben", gloss="turn from the note above, \"lively, round and rather strong\"", sign="!turn!c8", played="dcBc c4",
+         note="pp. 398-399."),
+    dict(name="Doppelschlag von der Hauptnote", gloss="turn from the main note, shown by a small added note", sign="{c}!turn!c8", played="cdcBc c3"),
+    dict(name="Doppelschlag von unten", gloss="turn from the note below (the inverted sign)", sign="!invertedturn!c8", played="Bcdc c4"),
+    dict(name="Doppelschlag über dem Punkt", gloss="over a dot: the turn ends on the note just as the dot comes in",
+         sign='"^∽ on the dot"c12', lily=r'''<< { c''4. } { s4 <>\turn } >>''', played="c8 dcBc", note="Shape from p. 399; values approximate. (The sign sits after the note.)"),
+    dict(name="Langer Vorschlag", gloss="half of a plain note, two thirds of a dotted one, struck with the other voices",
+         sign="{d}c16", played="d8c8", width=(90, 150), note="pp. 399-401."),
+    dict(name="Kurzer Vorschlag", gloss="written as a crossed eighth: takes almost nothing; the accent is on the main note",
+         sign="{/d}c8", played="d1c7"),
+])]

@@ -1,0 +1,10 @@
+X:148
+%%from edm
+T:Concerto No. 2, in D, Piano and Orchestra, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0148 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+D2 z2 F2 z2 A2 z4 FG | A2FG A2d2 A2AG F2ED | G

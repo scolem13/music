@@ -1,0 +1,12 @@
+X:6016
+T:Sonata in B, Op. 147, 1st Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7648, Barlow & Morgenstern S429, EDM 6016 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro, ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=135
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+_B/>B/ | =B d g _e/>e/ | d B G |

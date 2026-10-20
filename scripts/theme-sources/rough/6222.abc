@@ -1,0 +1,10 @@
+X:6222
+%%from edm
+T:Davidsbundler, Op. 6, No. 13
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6222 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+f2^a2 b4 | ^a2b2 c'4 | b2c'2 d'4 | c'2d'2g'2d'2 | c'4

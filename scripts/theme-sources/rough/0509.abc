@@ -1,0 +1,10 @@
+X:509
+%%from edm
+T:Concerto in D, Orchestra, 1st Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0509 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+d4 d4 A4 d4 | c2B2A2G2 F2G2 A4- | A2 z2 f4 d4 f4 | a2g2f2e2 f2d2c2B2 | A2

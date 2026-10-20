@@ -1,0 +1,10 @@
+X:5564
+%%from edm
+T:Concerto No. 4, in D minor, Op. 70, 2nd Movement
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5564 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f'4 f'6- f'f' | e'12 | b4 b6- bb | a8 z3 a | d'8 c'3f | b8 a4 | d4 e2f2 g3g | g12 |

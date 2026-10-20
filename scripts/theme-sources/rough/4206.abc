@@ -1,0 +1,10 @@
+X:4206
+%%from edm
+T:Divertimento in D, K 334, 4th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4206 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+e4 z4 A4 z2 AG- | G3 A4 B4 z4 f- | f3 z4 G4 z3 GA- | A3 B4 c4

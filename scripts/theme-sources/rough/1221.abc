@@ -1,0 +1,10 @@
+X:1221
+%%from edm
+T:Quartet in E-flat, Op. 87, 4th Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1221 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+F8 ^d8- | ^d8 e6 d2 | ^d8 ^g8- | ^g4 e4 ^d4 c4 | B4 e4 ^d8- | ^d4 c4 ^A4 F4 | ^d16 |

@@ -1,0 +1,10 @@
+X:2864
+%%from edm
+T:Mathis der Mahler Symphony, 3rd Movement, Temptation of St. Anthony, Intro
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2864 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^G,6 =G,2 ^A,2D2^D2^F2 | ^A2=A2 E2 B,6- B,C^C3/2^G,/2- | ^G,/2-[^F/2^G,/2]A/2 z/2 ^F3 =F/2^D/2=D

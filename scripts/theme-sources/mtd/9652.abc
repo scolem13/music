@@ -1,0 +1,12 @@
+X:9652
+T:Jeux De Vagues (Play of the Waves), 2nd Movement - 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2643, Barlow & Morgenstern D75, EDM 9652 (Musical Theme Dataset, CC BY 4.0)
+N:Jeux de vagues  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=65
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z2 (3CDE^F2- | F6 | z2 (3CDE^F2- | (3^FGA{/A}G=F-(3FGA |{/A} G^F-(3FGA(3GFE | DCDE{/E}DC |

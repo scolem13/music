@@ -1,0 +1,13 @@
+X:6137
+T:Trio in E-flat, Op. 100, 3rd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7769, Barlow & Morgenstern S550, EDM 6137 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo, allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 72  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/4
+Q:1/4=176
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+E/G/ | B B B | B c/d/e/f/ | g e c | B2 e |

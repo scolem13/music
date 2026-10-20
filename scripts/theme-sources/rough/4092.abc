@@ -1,0 +1,10 @@
+X:4092
+%%from edm
+T:Concerto in F, K 459, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4092 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+f4 f3f f4 f4 | c'4 c'4 c'6 (3bag | f4 f3f f4 f4 | e4 g4

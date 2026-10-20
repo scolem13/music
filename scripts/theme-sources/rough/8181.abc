@@ -1,0 +1,11 @@
+X:8181
+%%from edm
+T:Benvenuto Cellini, Overture, Op. 23, 4th Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8181 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:G
+D2 z/2 G3/2F2G2 B2 z/2 d3/2^c2d2 | f2g2a2b2 a2g2f2e2 | d2 z/2 g3/2f2g2 c'2b2a2g2 | f2g2b2c'2 d'2

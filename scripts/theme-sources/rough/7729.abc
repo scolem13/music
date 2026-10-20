@@ -1,0 +1,13 @@
+X:7729
+%%from mtd
+T:Aida, Act I, Dance of the Priestesses, 2nd Theme
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% MTD 9354, Barlow & Morgenstern V65, EDM 7729 (Musical Theme Dataset, CC BY 4.0)
+N:Dance of the Priestesses  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=81
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+z{/f} ed B2{/f} ed | B2{/f} e>d (3Bed (3Bed | B2{/B} (3AGA (3B_cB (3AGB | A2 |

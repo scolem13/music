@@ -1,0 +1,10 @@
+X:4753
+%%from edm
+T:Minuet, Op. 14, No. 1, 2nd Theme
+C:Ignace Jan Paderewski
+%%composer Paderewski|Ignace Jan
+% EDM 4753 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+D4 A8- | A4 B8- | B4 c8 | ^c4 d8- | d4 a8- | a4 b8- | b4 c'8 | ^c'4 d'4

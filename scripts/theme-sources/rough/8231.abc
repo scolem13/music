@@ -1,0 +1,11 @@
+X:8231
+%%from edm
+T:Fancy Free Ballet - Theme
+C:Leonard Bernstein
+%%composer Bernstein|Leonard
+% EDM 8231 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+B4 e8 ^g4- | ^g4 b8 a4 | b8 a4 b4- | b4 a4 b8 | a4 b4- b3/2 a4- a-[a/2^c/2-]^c- | ^c4 B12- | B16- | B12

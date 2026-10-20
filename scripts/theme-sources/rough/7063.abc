@@ -1,0 +1,11 @@
+X:7063
+%%from edm
+T:Salome, Op. 54, Dance of the Seven Veils, 5th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7063 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+c'f' c'8- c'2- | c'2 g8 z2 | c'f' c'8- c'2- | c'2 g8 z2 | c'f' c'8- c'2- | c'2g'2<f'2 c'2<g2 f^f- | f2 d8- d2- | d2 ^d8

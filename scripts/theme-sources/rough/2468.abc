@@ -1,0 +1,13 @@
+X:2468
+%%from mtd
+T:Quartet in F minor, Op. 20, No. 5, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4129, Barlow & Morgenstern H349, EDM 2468 (Musical Theme Dataset, CC BY 4.0)
+N:Moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=118
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+F4- FA=EF | G4- GBDC | A4- Ac=EF |

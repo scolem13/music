@@ -1,0 +1,10 @@
+X:6415
+%%from edm
+T:Fantaisie, Op. 28, 1st Theme
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6415 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f4 g4- g3/2f2f/2 | f8 f4 | f4 b4- b3/2f2f/2 | f8 =f2>^f2 | g4 f'4 =f'd'/2-[d'/2b/2-]b/2^f/2-[g/2-f/2]g/2 | ^g4 f'4

@@ -1,6 +1,6 @@
 // Prints the band's grooves as groove text, for reading: node print.js [groove id ...]
 const fs = require("fs"), vm = require("vm");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 for (const f of ["band/groove.js", "band/drums.js"]) vm.runInThisContext(fs.readFileSync(R + f, "utf8"), { filename: f });
 function mb(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
 const ids = process.argv.slice(2).length ? process.argv.slice(2) : Object.keys(BandDrums.GROOVES).filter(id => id !== "none");

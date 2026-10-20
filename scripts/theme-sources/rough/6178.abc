@@ -1,0 +1,13 @@
+X:6178
+%%from mtd
+T:Album for the Young, Op. 68, The Strange Man
+C:Robert Schumann
+%%composer Schumann|Robert
+% MTD 7810, Barlow & Morgenstern S584g, EDM 6178 (Musical Theme Dataset, CC BY 4.0)
+N:Fremder Mann  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=149
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+D z D>E | F z E z | D z F>G | A z G z | F z A>=B | c>d e2- | e2 d2 | c>=B A2 |

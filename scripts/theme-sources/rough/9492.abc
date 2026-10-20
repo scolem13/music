@@ -1,0 +1,11 @@
+X:9492
+%%from edm
+T:Concert No. 8 in G, Dans Le Gout Theatral - 2nd Theme
+C:François Couperin
+%%composer Couperin|François
+% EDM 9492 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+z4 a4 a4 | d2^c2d2e2f2d2 | g2f2g2a2g2a2 | f/2 z/2 (3efg f3 f2 g2a2 | b4 b6

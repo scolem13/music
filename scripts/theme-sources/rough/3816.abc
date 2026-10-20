@@ -1,0 +1,10 @@
+X:3816
+%%from edm
+T:Concerto No. 2, in D minor, Op. 40, 1st Movement - Intro
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3816 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d16 | A8 F8 | D4 D4 D4 D4 | D6 _D4<E4 =D2 | D8

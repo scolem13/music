@@ -1,0 +1,10 @@
+X:2671
+%%from edm
+T:Symphony in C, No. 82, "L'Ours", 1st Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2671 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c4 e4 g4 | c'4 e'4 z4 | g4 c'4 z4 | e4 g4 z4 | B12 | c3d e2B2 c2A2 | G8 GFEF | E4

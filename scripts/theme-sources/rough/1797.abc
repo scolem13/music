@@ -1,0 +1,10 @@
+X:1797
+%%from edm
+T:Rhapsody in Blue, 4th Theme
+C:George Gershwin
+%%composer Gershwin|George
+% EDM 1797 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+D,2E,2 G,2 G,4 D,2 E,2D,2 | z/2 =F,6- F,3/2 E,4<D,4 | z/2 C,2B,,2- B,,/2 z/2 C,2-C,/2 A,,8 |

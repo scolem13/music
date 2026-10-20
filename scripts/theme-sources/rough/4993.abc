@@ -1,0 +1,10 @@
+X:4993
+%%from edm
+T:Quartet, Op. 50, 1st Movement - 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4993 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+^G,4 F,2F,2 C4 C,4- | C,4 E,4 F,4 A,4 | ^G,4 B,4 C2C2 A,4 | ^G,4 F,6

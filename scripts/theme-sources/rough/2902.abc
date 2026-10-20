@@ -1,0 +1,10 @@
+X:2902
+%%from edm
+T:Trauermusik, Orchestra, (Funeral Music) For George V of England, 1st Movement
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2902 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A4 z2 E2 G4 z2 FE | D4 z2 B,2 C3D2<E2^F | G6 A4<B4 ^G2 | G6

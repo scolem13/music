@@ -1,0 +1,10 @@
+X:1673
+%%from edm
+T:Quartet in D, 2nd Movement - 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1673 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:D
+D4 G2 | G4 F2 | F4 B2 | B4 A2 | A4 ^A2- | ^A2 d2 =f2- | =f2 e2 c2 | ^A2 G2 E2 |

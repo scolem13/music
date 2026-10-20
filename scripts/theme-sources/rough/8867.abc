@@ -1,0 +1,10 @@
+X:8867
+%%from edm
+T:Concerto No. 1 in G minor, Vn. and Orchestra, 1st Movement - Intro
+C:Max Bruch
+%%composer Bruch|Max
+% EDM 8867 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d'8 c'6 b2 | d'8 c'6 b2 | d'16 | G8- G2B2d2g2 | b6 a2 _g4 =g4 |

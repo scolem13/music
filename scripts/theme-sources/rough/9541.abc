@@ -1,0 +1,11 @@
+X:9541
+%%from edm
+T:Les Folies Françaises - 4th Movement, L'Esperance
+C:François Couperin
+%%composer Couperin|François
+% EDM 9541 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:9/8
+L:1/16
+K:D
+z2 d2e2 f2d2e2 f2g2f2 | z/2 z/2 e z16 | z2 d2c2 d2e2f2 e2f2d2 | z/2 z/2 c

@@ -1,0 +1,11 @@
+X:5033
+%%from edm
+T:Sonata No. 6, Op. 82, 4th Movement - 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5033 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/2HAV8-CxhoE
+M:2/4
+L:1/16
+K:C
+A,CE^D B, z CB, | A,CE^D B, z CB, | A,CE^D B, z CB, | A,6 G,F, | E,2E,2 F,2^F,^A, |

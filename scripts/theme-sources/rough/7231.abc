@@ -1,0 +1,10 @@
+X:7231
+%%from edm
+T:Symphony in Three Mvts., 2nd Movement - 3rd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7231 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z3 d d4- d3/2e<fe/2 | d4- d3/2e/2f3- f/2e/2d2 | e3/2f/2 g4 d3/2e/2 f4 | e3/2f/2g2 d3/2e/2f2 g2<f2 |

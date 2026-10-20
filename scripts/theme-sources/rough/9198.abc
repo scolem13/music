@@ -1,0 +1,10 @@
+X:9198
+%%from edm
+T:Etudes, Op. 25 - No. 10 in B minor -1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9198 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+b2^a2b2a2 =a2^g2a2g2 | a2^g2=g2f2 g2f2g2f2 | =f2e2^d2=d2 c2 B4

@@ -1,5 +1,5 @@
 const fs = require("fs"), vm = require("vm"), assert = require("assert");
-vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/voicings.js", "utf8"));
+vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/voicings.js"), "utf8"));
 const CV = ChordVoicings, mod12 = n => ((n % 12) + 12) % 12;
 const Q = { maj7:[0,4,7,11], "7":[0,4,7,10], m7:[0,3,7,10], m7b5:[0,3,6,10], dim7:[0,3,6,9], "6":[0,4,7,9], m6:[0,3,7,9],
   maj:[0,4,7], min:[0,3,7], dim:[0,3,6], aug:[0,4,8], "9":[0,4,7,10,14], "13":[0,4,7,10,14,21], "7b9":[0,4,7,10,13], "7#9":[0,4,7,10,15] };

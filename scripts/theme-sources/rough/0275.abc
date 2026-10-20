@@ -1,0 +1,10 @@
+X:275
+%%from edm
+T:Sonata No. 3 in C, Fugue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+G8 A4 G2F2 | E4 F4 G8 | D4 E4 F4 E4 | F4 G2F2 E4 F2G2 | A8

@@ -1,0 +1,10 @@
+X:238
+%%from edm
+T:Partita No. 5 in G, Piano, Preambule
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0238 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+dcBA G2 z2 D2 z2 | E2 z2 D2 z6 | dcBA GFED CB,A,G, | C2 z2 B,2

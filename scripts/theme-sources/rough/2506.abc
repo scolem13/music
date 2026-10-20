@@ -1,0 +1,10 @@
+X:2506
+%%from edm
+T:Quartet in C, Op. 54, No. 2, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2506 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+E4 E4 C2 z2 | G4 G4 E2 z2 | c4 c8 | B4 z/2 A3-A/2 G4 |

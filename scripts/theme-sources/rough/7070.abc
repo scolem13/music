@@ -1,0 +1,11 @@
+X:7070
+%%from edm
+T:Sonata in E-flat, Op. 18, 3rd Movement - Finale, 2nd Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7070 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+g4 g4 g4 | f2g2 b4 d4 | e4 c'4 b4 | a4 g4 f2 z2 | g4 g4 g4 | f2g2 b4 d4 | e4 e'4 d'4 | b4 c'4 f2

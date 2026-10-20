@@ -1,0 +1,10 @@
+X:3275
+%%from edm
+T:Liebsfreud, Old Viennese Song, 3rd Theme
+C:Fritz Kreisler
+%%composer Kreisler|Fritz
+% EDM 3275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c4 f8 | c4 z4 z/2 B3-B/2 | z2 A2 D8- | D4 z4 G2B2 | d2f z z/2 e6- e3/2- | e4 z/2 d6- d3/2- | d4 z/2 c6- c3/2- | c12 |

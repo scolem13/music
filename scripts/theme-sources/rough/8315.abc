@@ -1,0 +1,10 @@
+X:8315
+%%from edm
+T:Quintet, Piano and Str., 3rd Movement
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8315 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c z cc ccAA | c z cc ccAA | c z cc ccAA | cc^cc =c

@@ -1,0 +1,10 @@
+X:2436
+%%from edm
+T:Quartet in B-flat, Op. 1, No. 1, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2436 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+b4 z/2 g3/2 z/2 e3/2 d3e/2f/2 e4 | c'4 bagf b4 e'2G2 | B4 A/2B/2A/2B/2A/2B/2A/2B/2 G4

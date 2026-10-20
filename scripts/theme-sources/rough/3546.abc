@@ -1,0 +1,10 @@
+X:3546
+%%from edm
+T:A Pagan Poem (after Virgil), Op. 14, Intro
+C:Charles Martin Loeffler
+%%composer Loeffler|Charles Martin
+% EDM 3546 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+D,8 D8 | C16 | C,8 C8 | B,16 | B,,8 B,8 | _D,8 D8 |

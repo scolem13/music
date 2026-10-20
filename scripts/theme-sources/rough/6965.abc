@@ -1,0 +1,10 @@
+X:6965
+%%from edm
+T:Alpensinfonie, Op. 64, 4th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6965 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+G,4 E4 G4 B,4 | A3F B12 | c3d e4 c3d B4 | e3f g6

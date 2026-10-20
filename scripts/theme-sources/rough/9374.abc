@@ -1,0 +1,11 @@
+X:9374
+%%from edm
+T:Sonata No. 2 in B-flat, 2nd Movement - Tempo Di Menuetto
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9374 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+f12 | g12 | A2B2c2d2e2f2 | e8 d4 | z/2 b3-b/2 a2g2 f2=e2 | e3f/2e/2 d/2e2a2 c'2

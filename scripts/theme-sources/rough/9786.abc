@@ -1,0 +1,11 @@
+X:9786
+%%from edm
+T:Irmelin - Prelude, Orchestra
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9786 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F#
+A2c2d2e2 a4 d'4 | c'8<a8 | A2c2d2e2 a4 f'3d' | c'4 a8 g4 | (3e2g2a2 d8 c4 |

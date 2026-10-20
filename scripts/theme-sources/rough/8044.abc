@@ -1,0 +1,10 @@
+X:8044
+%%from edm
+T:Capriol, Suite for Orchestra, 4th Movement - Bransles
+C:Peter Warlock
+%%composer Warlock|Peter
+% EDM 8044 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+g4 g4 b4 b4 | a4 g4 f4 b4 | b4 a4 b4 b4 | g4 g4 b4 b4 | a4 g4 _g4 =g4 | g4 _g4 =g4 g4 |

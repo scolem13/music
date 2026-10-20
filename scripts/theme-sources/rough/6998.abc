@@ -1,0 +1,10 @@
+X:6998
+%%from edm
+T:Aus Italien, Symphonic Fantasy, Op. 16, Neapolitanisches Folk Life (Neapolitanisches Volksleben), 1st Theme A
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6998 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+g3g g4- | g3g f4- | f3f d4- | d3d2<e2e | B4 B4- | B3B2<A2G | G8 | z3 B2<A2G | G8 |

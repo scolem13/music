@@ -1,0 +1,10 @@
+X:137
+%%from edm
+T:Brandenburg Concerto No. 5, in D, 2nd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0137 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z2 F2 B2c3/2d/2 ^A2B3/2c/2 d2e3/2f/2 | c2F4<f4 e3/2d/2 c/2d/2Bc2 |

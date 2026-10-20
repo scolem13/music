@@ -1,0 +1,10 @@
+X:2542
+%%from edm
+T:Quartet in D, Op. 64, No. 5, 3rd Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2542 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+_D2=D2E2F2G2A2 | B2_A2=A2_A2=A2E2 | A2_G2=G2_G2=G2D2 | G2E2 F2E2 F2

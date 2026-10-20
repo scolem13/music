@@ -1,0 +1,12 @@
+X:5547
+T:Symphony No. 3, in G minor, Op. 42, 2nd Movement - 1st Theme
+C:Albert Roussel
+%%composer Roussel|Albert
+% MTD 7182, Barlow & Morgenstern R412, EDM 5547 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=38
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+dBD=B G3 c | F_BCE _BA=E=B, | F=E_GF _B,A=G_E |

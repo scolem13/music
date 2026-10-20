@@ -1,0 +1,10 @@
+X:5220
+%%from edm
+T:L'Indifferente
+C:Jean Philippe Rameau
+%%composer Rameau|Jean Philippe
+% EDM 5220 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+B2c2d2c2d2e2 | d4 g4 g4 | g4 _g2=g2 a2_g2 | g2f2e2d2c2B2 | e4 c4 e4 | d/2c/2d/2e/2d2 B4 d4 |

@@ -1,0 +1,10 @@
+X:3474
+%%from edm
+T:Hungarian Rhapsody No. 14 in F minor, 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3474 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+F,6 G,2 A,4<B,4 | C6 D2 C4<B,4 | A,6 G,4<G,4 F,2 | F,8

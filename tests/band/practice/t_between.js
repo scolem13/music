@@ -1,7 +1,7 @@
 // The bars a session generates: an intro made of chosen form bars, and what is played between two passes
 // (player.setBetween): a click, a vamp, the last bars of the loop, chosen bars. Also tempo steps and the last pass.
 const assert = require("assert");
-const R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 ["tune-chart.js", "voicings.js", "band/harmony.js", "band/bass.js", "band/comp.js", "band/drums.js", "band/player.js"].forEach(f => require(R + f));
 const CH = "C|Am|F|G|Dm|G|C|C".split("|");
 const parsed = TuneChart.parse("X:1\nM:4/4\nL:1/4\nK:C\n" + CH.map(c => `"${c}"z4`).join(" | ") + " |]");

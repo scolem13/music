@@ -1,0 +1,10 @@
+X:3228
+%%from edm
+T:Symphony No. 1, Op. 4, 1st Movement - 2nd Theme
+C:Tikhon Khrennikov
+%%composer Khrennikov|Tikhon
+% EDM 3228 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Db
+z4 z/2 F4- F3/2=Bc =dcB=A | B2 z B F6 F=A =GF=E_G | F2B,C D6

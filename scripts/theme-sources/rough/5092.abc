@@ -1,0 +1,10 @@
+X:5092
+%%from edm
+T:Sonata No. 6, in G minor (Also known as Chacon)
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5092 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d4 e6 e2 | e4 d4 g4- | gbag _g6 =g2 | _g6 g2 =g4 | a2g4<g4 _g2 | g4 b4 g4 | a4 d4

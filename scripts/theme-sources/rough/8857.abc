@@ -1,0 +1,12 @@
+X:8857
+%%from mtd
+T:Phantasy-Quartet, 4th Theme
+C:Benjamin Britten
+%%composer Britten|Benjamin
+% MTD 1860, Barlow & Morgenstern B1711m, EDM 8857 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=92
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z DEGAc | d d2 e (3Bdc | d d2 e (3Bdc | d d2 e2 f- | f g2 a (3egf | g g2 a |

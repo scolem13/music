@@ -64,5 +64,14 @@ connections do, and how to look after them.
 - [Gear 5: Setting Up and Packing Down](gear-setup.qmd)
 
 ```{=html}
-<script src="/apps/shared/lessons/gear-diagrams.js?v=4"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=5"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Roland. "Preventing Doubled Notes When Connected to a MIDI Sequencer (Local Control)." *GO:PIANO88 (GO-88PX) Reference Manual*. [static.roland.com/manuals/go-88px_reference/en-US/266294027.html](https://static.roland.com/manuals/go-88px_reference/en-US/266294027.html).
+:::
+<!-- /works-cited -->
+

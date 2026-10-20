@@ -1,0 +1,10 @@
+X:1725
+%%from edm
+T:Capriccio on the Cuckoo, Harpsichord
+C:Girolamo Frescobaldi
+%%composer Frescobaldi|Girolamo
+% EDM 1725 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D8 B,6 D2 | C4 B,4 C4 G,4 | A,2B,2C2A,2 D8 | G,4

@@ -1,0 +1,10 @@
+X:2559
+%%from edm
+T:Quartet in C, Op. 74, No. 1, 4th Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2559 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G2^F2G2A2 | c2B2 G2 z2 | d2A2 B2 z/2 c3/2 | BAG^F GAB2 |

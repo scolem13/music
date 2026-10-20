@@ -1,0 +1,13 @@
+X:6120
+T:Symphony No. 8 in B minor, "Unfinished", 1st Movement - Intro.
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7752, Barlow & Morgenstern S533, EDM 6120 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro moderato  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/4
+Q:1/4=106
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+B,,3 | C,2 D, | B,,3 | A,, F,, G,, | D,,2 C,, | F,,3- | F,,3- | F,,3 |

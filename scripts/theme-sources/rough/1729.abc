@@ -1,0 +1,10 @@
+X:1729
+%%from edm
+T:Fugue in G minor, Organ and Str.
+C:Girolamo Frescobaldi
+%%composer Frescobaldi|Girolamo
+% EDM 1729 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+G6 A2 B2_G2 =G4 | z2 ed e2e2 e2d2 z2 cB | cd=e_g =g2g2 g2_g2 z2 =gd | edcB A4

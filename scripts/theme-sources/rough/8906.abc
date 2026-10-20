@@ -1,0 +1,10 @@
+X:8906
+%%from edm
+T:Symphony No. 3 in D minor, 4th Movement - 3rd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8906 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Ab
+d'4 e'4 d'4 c'4 | d'4 c'4 d'4 d4 | e'4 f'4 e'4 d'4 | e'4 d'4 e'4 e4 |

@@ -1,0 +1,10 @@
+X:1418
+%%from edm
+T:Falstaff, Op. 68, Symphonic Study, 3rd Theme
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1418 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Eb
+=E,,4 =B,,8 z/2 C,3-C,/2 B,,4 =A,,4 | =B,,4 C,4 D,4 =E,4 z4 G,4 | _G,12 =E,12 | E,24 | =E,,4 =B,,8 z/2 C,3-C,/2 B,,4 =A,,4 | =B,,4 C,4 D,4 =E,4

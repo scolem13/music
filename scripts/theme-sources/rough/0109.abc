@@ -1,0 +1,10 @@
+X:109
+%%from edm
+T:Sinfonia in B-flat, 3rd Movement
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0109 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+F2 B4 | d2 B4 | d2 c2 z/2 c/2B | cd e4 | c2 f4 | dB b4 | fd f2 e2 | d2 c4 |

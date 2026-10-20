@@ -1,0 +1,10 @@
+X:6271
+%%from edm
+T:Quartet in F, Op. 41, No. 2, 4th Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6271 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+_a=ab=b bc'd'e' | g'f'c'b g'f'ba | _g=gab abc'd' | d'c'b'g' e'c'b_a |

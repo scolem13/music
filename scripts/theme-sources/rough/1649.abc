@@ -1,0 +1,10 @@
+X:1649
+%%from edm
+T:Grande Piece Symphonique, Op. 17, 4th Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1649 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:B
+d4 e4 f6 B2 | d4 e3=f ^f8 | =g4 g3d =f4 a3B | d4 e3c B4

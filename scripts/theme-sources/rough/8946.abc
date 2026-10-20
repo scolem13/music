@@ -1,0 +1,10 @@
+X:8946
+%%from edm
+T:Symphony No. 9 in D minor, 2nd Movement - 1st Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8946 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+e''4 _d''4 b'4 | _a'4 e'4 _d'4 | _a4 _d2e2 a2_d'2 | e'2_a'2 _d''4 z4 | _D4 _E4 =E4 | _A4 B4 _d4 | _e4 =e2

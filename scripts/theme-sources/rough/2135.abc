@@ -1,0 +1,10 @@
+X:2135
+%%from edm
+T:Concerto No. 1 in G minor, Op. 4, No. 1, 2nd Movement, 2nd Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2135 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+d4<^a4 c'4<=a4 | ^a4<g4 =a2f2 fga2 | d2

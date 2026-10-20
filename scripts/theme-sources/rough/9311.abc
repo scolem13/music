@@ -1,0 +1,11 @@
+X:9311
+%%from edm
+T:Scherzo in E, Op. 54, 2nd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9311 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+B,8 E4 | G4 B4 e4 | g12 | c'12 | b4 g4 a4 | f4 g4 e4 | c12 | d12 |

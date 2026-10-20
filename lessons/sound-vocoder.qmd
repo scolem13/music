@@ -66,4 +66,22 @@ and have it sing in chords.
 
 - [Sound 23: Stereo](sound-stereo.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Vocoder." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Vocoder](https://en.wikipedia.org/wiki/Vocoder).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: An Introduction To ESPs & Vocoders." *Sound On Sound*, July 2000. [www.soundonsound.com/techniques/introduction-esps-vocoders](https://www.soundonsound.com/techniques/introduction-esps-vocoders).
+
+Smith, Julius O., III. "Phase Vocoder." *Spectral Audio Signal Processing*, W3K Publishing, 2011. [ccrma.stanford.edu/~jos/sasp/Phase_Vocoder.html](https://ccrma.stanford.edu/~jos/sasp/Phase_Vocoder.html).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

@@ -1,0 +1,12 @@
+X:7894
+T:Siegfried, Waldweben, 6th Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% MTD 9517, Barlow & Morgenstern W48, EDM 7894 (Musical Theme Dataset, CC BY 4.0)
+N:Zweiter Aufzug. "Dass der mein Vater nicht ist" (Siegfried)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=80
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+z8 c'8 | (3b2g3f (3e2c2e2 (3g2e2g2 b4 | z8 c'8 | (3b2g3f eceg b2bb b4 |

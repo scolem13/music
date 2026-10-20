@@ -1,0 +1,12 @@
+X:8524
+%%from edm
+T:Intermezzo in E-flat, minor, Op. 118, No. 6, Piano, 1st Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8524 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/Z3jatzunJNs
+%%repaired octave
+M:3/8
+L:1/16
+K:Gb
+g3 f ge | gf ge fg | f4 e2- | e6 |

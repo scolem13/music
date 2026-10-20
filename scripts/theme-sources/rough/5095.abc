@@ -1,0 +1,10 @@
+X:5095
+%%from edm
+T:Sonata No. 9, in F, 2nd Movement
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5095 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:F
+z8 c8 c8 | c8 B8 _d8 | _d8 c8 f8 | f8 _e8 _a8 | _a8 g8 g8 | g8 f8

@@ -1,0 +1,11 @@
+X:9093
+T:The Flatterer, Piano
+C:Cécile Chaminade
+%%composer Chaminade|Cécile
+% MTD 2092, Barlow & Morgenstern C106, EDM 9093 (Musical Theme Dataset, CC BY 4.0)
+M:2/2
+L:1/8
+Q:1/4=136
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Gb
+DEF | A z G3 GGF | A z G3 DEF | AGdB AGFE | G z F3 |

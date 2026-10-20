@@ -1,0 +1,10 @@
+X:6706
+%%from edm
+T:Aus Meinem Leben, Quartet No. 1 in E minor, 1st Movement - 2nd Theme
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% EDM 6706 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+b16- | b4 c'4 b6 a2 | g2d'2g2a2 b2c'2b2c'2 | d'12 c'4 | b16- | b4 e'4 d'6 ^c'2 | b16 |

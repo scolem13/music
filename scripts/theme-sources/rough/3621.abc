@@ -1,0 +1,10 @@
+X:3621
+%%from edm
+T:Concerto No. 2, in D minor, Op. 23, 3rd Movement - 1st Theme
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3621 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+D8 E4 | F6 G2 A4 | B4 d4 _d4 | B2_d2 A4 G4 | F12- | F4 E4

@@ -1,0 +1,10 @@
+X:4272
+%%from edm
+T:Quartet in E-flat, K 428, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4272 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Ab
+E12 | E4<A4 G4- | G2 F6 E4- | E2 D6 C4 |

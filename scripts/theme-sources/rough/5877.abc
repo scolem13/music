@@ -1,0 +1,10 @@
+X:5877
+%%from edm
+T:Allegretto in C minor
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5877 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+c2c2e2 g2c'2e'2 | d'4<c'4 g2 z2 | g2g2a2 f2f2g2 | e2e2f2 d2 c4 |

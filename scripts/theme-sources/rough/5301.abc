@@ -1,0 +1,11 @@
+X:5301
+%%from edm
+T:Rapsodie Espagnole, 1st Movement - Prelude a la Nuit
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5301 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+a4 a8 | ^g4 g8 | (3^g2a2g2 e2f2 g2^c'2 | ^g4 g8 | ^c6 c6 | c4

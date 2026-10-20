@@ -1,0 +1,10 @@
+X:6456
+%%from edm
+T:Quartet, Op. 49, 4th Movement - 2nd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6456 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^A4 g8 g4- | g4 ^a8 a4- | ^a4 c8 c4- | c4 g8 g4- | g4 f8 g4 | ^A4 c2d2 ^d4 f4 |

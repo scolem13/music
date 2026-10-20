@@ -1,0 +1,10 @@
+X:8926
+%%from edm
+T:Symphony No. 5 in B-flat, 3rd Movement - 2nd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8926 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+a6 b2 c2c'2 | a6 f'2 c'2b2 | a6 b2 c2c'2 | b6 g'2 c'2b2 | a6

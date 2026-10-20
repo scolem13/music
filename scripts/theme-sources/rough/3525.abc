@@ -1,0 +1,10 @@
+X:3525
+%%from edm
+T:Years of Travel, Piano, Second Year, Sonnet 47 of Petrarch
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3525 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Db
+F4 F4 A4 D4 G4 E4 | B4 A2 z2 A8 F2

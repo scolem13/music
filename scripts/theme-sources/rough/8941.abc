@@ -1,0 +1,10 @@
+X:8941
+%%from edm
+T:Symphony No. 7 in E, 4th Movement - 2nd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8941 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:E
+g8 ^a8 | =c'8 b8 | ^a8 =a8 | ^a8 z8 | b8 c'8 | d'8 =d'8 | c'8 =c'8 | c'8

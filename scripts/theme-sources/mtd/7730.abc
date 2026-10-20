@@ -1,0 +1,12 @@
+X:7730
+T:Aida, Act II, Dance of the Moorish Slaves
+C:Giuseppe Verdi
+%%composer Verdi|Giuseppe
+% MTD 9355, Barlow & Morgenstern V66, EDM 7730 (Musical Theme Dataset, CC BY 4.0)
+N:Dance of the Moorish Slaves  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=145
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+g'g' d'f' c'e' | bd' ad'{/bc'} bg ad' | D2 |

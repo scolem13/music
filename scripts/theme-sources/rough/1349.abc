@@ -1,0 +1,10 @@
+X:1349
+%%from edm
+T:Symphony No. 2 in D minor, Op. 70, 4th Movement - 3rd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1349 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+e8 f4 e2d2 | c8 e4 d4 | c8 B4 A4 | G4 F2E2 d4 d4 |

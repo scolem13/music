@@ -1,0 +1,12 @@
+X:631
+T:Concerto No. 2 in B-flat, Op. 19, Piano, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0625, Barlow & Morgenstern B529, EDM 0631 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio (cadenza: Ludwig van Beethoven)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=141
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b3 .z/ B/ f>f d>d | B2 z2 z FdB | A3 B cdec | a4 b4 |

@@ -1,0 +1,10 @@
+X:3759
+%%from edm
+T:Les Erinnyes (Incidental Music), Prelude
+C:Jules Massenet
+%%composer Massenet|Jules
+% EDM 3759 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+D4 G4 A4 B4 | A2B2 G4 F4 B,4 | C4 D4 E4 D4- | D2C2B,2A,2 A,4

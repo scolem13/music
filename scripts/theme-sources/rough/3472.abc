@@ -1,0 +1,10 @@
+X:3472
+%%from edm
+T:Hungarian Rhapsody No. 13 in A minor, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3472 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+A2 A4 B2 | z/2 c3-c/2 B4 | e2e2 ^d4 | A2 A4 B2 | z/2 c3-c/2 B4 | AG^FA G2

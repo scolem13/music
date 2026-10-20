@@ -1,0 +1,10 @@
+X:1910
+%%from edm
+T:Symphony, Op. 26, "Rustic Wedding", 4th Movement - In the Garden - 1st Theme
+C:Karl Goldmark
+%%composer Goldmark|Karl
+% EDM 1910 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d8 c8- | c3G2<A2c F8 | G8 A4 c3B | B8 d8 | f4 d3B (3_G2=G2A2 B3A | c8

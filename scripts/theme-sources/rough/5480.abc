@@ -1,0 +1,13 @@
+X:5480
+%%from mtd
+T:Scheherezade, Op. 35, 3rd Movement - The Young Prince and the Young Princess, 1st Theme
+C:Nicolas Rimsky-Korsakov
+%%composer Rimsky-Korsakov|Nicolas
+% MTD 7115, Barlow & Morgenstern R345, EDM 5480 (Musical Theme Dataset, CC BY 4.0)
+N:The Young Prince and the Young Princess  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=57
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+Bc | d>ed B>AG | B3- B Bc | de/d/e/d/ c/B/c/B/A/G/ | B3 E EG | A>BA GFG | E3 |

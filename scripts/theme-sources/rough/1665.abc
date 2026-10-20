@@ -1,0 +1,10 @@
+X:1665
+%%from edm
+T:Prelude, Chorale and Fugue - Chorale, 2nd Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1665 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+c4 G4 A4 E4 | F4 G4 C8 | c4 G4 A4 E4 | F4 G4 C8 | e4 c4 c8 |

@@ -1,0 +1,11 @@
+X:6666
+%%from edm
+T:Symphony No. 6, in D minor, Op. 104, 1st Movement - 2nd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6666 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+c'4 b4 g4 d4 | e4 f4 a8- | a16- | a16 | d4 d4 e4 f4 | e4 d8

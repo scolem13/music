@@ -1,0 +1,13 @@
+X:989
+%%from mtd
+T:Sonata No. 5, Op. 24, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0983, Barlow & Morgenstern B865, EDM 0989 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio molto espressivo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=42
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+d8- de/d/cd | B8 F4 | B6 B2 TB2cd | d2fe e8 |

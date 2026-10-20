@@ -1,0 +1,13 @@
+X:2239
+%%from mtd
+T:Fireworks Music, 1st Movement, Overture, 1st Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% MTD 3901, Barlow & Morgenstern H120, EDM 2239 (Musical Theme Dataset, CC BY 4.0)
+N:Ouverture: Allegro – Lentement – Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=79
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A3 A | d3 d e>e ef/g/ | f2 ed a3 a | a2 fd |

@@ -1,0 +1,12 @@
+X:6608
+%%from edm
+T:Symphony No. 1, in E minor, Op. 39, 1st Movement - 1st Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6608 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/qWE7_imNOzk?t=1m29s
+%%repaired octave
+M:6/4
+L:1/16
+K:G
+g24- | g12 f8 d4 | (3e2B2e2 B8 z12 | z24 | e2 z f g16- g4- | g12 f8 d4 | (3e2B2e2 B8

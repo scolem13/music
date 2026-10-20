@@ -1,0 +1,11 @@
+X:6434
+%%from edm
+T:Symphony No. 3, Op. 43, "Le Divin Poeme", 3rd Movement - Jeu Divin, 1st Theme
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6434 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+G3F A3/2c3/2 z/2 e/2 g6- gg | g3e2<e2c c4

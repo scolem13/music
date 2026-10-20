@@ -1,0 +1,11 @@
+X:7160
+%%from edm
+T:Dumbarton Oaks Concerto, 3rd Movement - 2nd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7160 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+c2 z2 c8 d/2e/2d/2e/2d/2e/2d/2e/2 | e2 z2 e8 f/2g/2f/2g/2f/2g/2f/2g/2 | g2 z2 c'4 =b4 d'4 | f2 z2 f8 fefg | g2

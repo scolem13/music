@@ -1,0 +1,10 @@
+X:4736
+%%from edm
+T:Ciacona in D minor, Organ
+C:Johann Pachelbel
+%%composer Pachelbel|Johann
+% EDM 4736 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+F4 D4 F4 | E4 ^C4 E4 | D2^C2D2F2E2D2 | ^C6 B,2 C4 | F4 D4 F4 | G4 E4 G4 | A6

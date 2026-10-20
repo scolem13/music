@@ -1,0 +1,11 @@
+X:7956
+%%from edm
+T:Estudiantina, Op. 191, No. 3, 1st Theme
+C:Emil Waldteufel
+%%composer Waldteufel|Emil
+% EDM 7956 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+z/2 f3/2e2 f2g2 a4 | ^g2a2b2a2d'2c'2 | b2a2g2f2a2g2 | f2g2 b2g2 e4 |

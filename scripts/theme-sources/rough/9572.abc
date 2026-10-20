@@ -1,0 +1,11 @@
+X:9572
+%%from edm
+T:Offertoire Sur Les Grands Jeux, 2nd Theme
+C:François Couperin
+%%composer Couperin|François
+% EDM 9572 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Bb
+g8 c4 e4 | d12 d4 | f8 c4 d4 | e12 e4 | e8 d4 f4 | =B8 c8- | c8 =B8 | c8

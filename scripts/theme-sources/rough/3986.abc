@@ -1,0 +1,10 @@
+X:3986
+%%from edm
+T:Symphony No. 21, in F-sharp minor, Op. 51, 3rd Theme
+C:Nicolas Miaskovsky
+%%composer Miaskovsky|Nicolas
+% EDM 3986 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+c2=B4<c4 B2 c2f2 | c6 B2 G2A2=E2F2 | C2

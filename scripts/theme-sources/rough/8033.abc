@@ -1,0 +1,11 @@
+X:8033
+%%from edm
+T:Facade, Suite No. 2, Country Dance
+C:William Walton
+%%composer Walton|William
+% EDM 8033 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:E
+d'4 z/2 g3/2 | c6- | c2 d2 e2 | z/2 f2- f/2e d2 | b3 c' d'2 | g3 f b2 | g2 gf gb | c'4

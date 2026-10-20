@@ -1,0 +1,11 @@
+X:5743
+%%from edm
+T:Danses Espagnoles, Op. 22, No. 2, Jota Navarra, 2nd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5743 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:D
+B2 =c2 d2 | g2 gg g2 | f2 ff f2 | e2 ee e2 | d2 dd d2 | z/2 d/2c de d2- | d

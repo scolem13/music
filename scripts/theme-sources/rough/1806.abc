@@ -1,0 +1,10 @@
+X:1806
+%%from edm
+T:Concerto in A minor, Op. 82, 1st Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1806 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A,4 E6 F2 E2^D2 | C3B, D6 ^C2 =C2A,2- | A,2^G,4<B,4 C2 B,2A,2 | C3E G2^F4<F4 E2- | E2

@@ -9,6 +9,7 @@
 //   TuneLibrary.all() / .byId(id)
 //   TuneLibrary.facets()                // {tags, tonality, meter, key, chords, lyrics} → {value: count}
 //   TuneLibrary.filter({ text, tags, tonality, meter, key, hasChords, hasLyrics, needsMelody })
+//   TuneLibrary.renderPicker(el, { facets, onSelect, onResults })   // onResults(list): the page draws the results
 //   (tunes tagged needs-repair are left out unless crit.tags includes "needs-repair")
 // Depends on TuneChart (parsing) + ABCJS (splitting collections into tunes).
 
@@ -624,6 +625,8 @@
         updateFacetCounts(lf.el, facets(filter(otherCrit))[lf.name]);
       });
       count.textContent = lastRes.length + (lastRes.length === 1 ? " tune" : " tunes");
+      // opts.onResults(list): the page shows the results itself (Classical Themes); no list here
+      if (opts.onResults){ list.hidden = true; opts.onResults(lastRes.slice()); return; }
       list.innerHTML = "";
       if (!lastRes.length){ var e = document.createElement("li"); e.className = "tl-empty"; e.textContent = "No tunes match these filters."; list.appendChild(e); return; }
       lastRes.forEach(function (r){

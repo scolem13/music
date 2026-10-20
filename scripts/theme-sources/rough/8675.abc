@@ -1,0 +1,10 @@
+X:8675
+%%from edm
+T:Sonata in E-flat, Op. 120, No. 2, 2nd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8675 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+d12 | B4 c4 d4 | e8 d2B2 | d8 c2F2 | f12 | d4 f4 b4 | g8 f2e2 |

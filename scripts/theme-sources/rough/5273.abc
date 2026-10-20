@@ -1,0 +1,12 @@
+X:5273
+%%from edm
+T:Daphnis et Chloé, Ballet Suite No. 2, 3rd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5273 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/sYNlYMvFA5U?t=47m18s
+%%repaired octave
+M:4/4
+L:1/16
+K:A
+a/2b/2c'/2d'/2e'/2f'/2g'/2a'/2 g'8- g'2a'2 | f'2e'2 g'8- g'3/2a'-[a'/2f'/2-]f' | (3c'2e'2f'2 g'2 g'8 f'2 | g'2f'2 (3=f'^f'=f' (3e'f'e' c'4<c'4 |

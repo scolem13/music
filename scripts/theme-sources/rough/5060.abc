@@ -1,0 +1,10 @@
+X:5060
+%%from edm
+T:Symphony No. 5 in B-flat, Op. 100, 3rd Movement - 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5060 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f4 e4 f2e2 | d2c2 d2=B2 c4- | c2f2a2c'2e'2a'2 | =b2g'2 _b4 f'4 | a4

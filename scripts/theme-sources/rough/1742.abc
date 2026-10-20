@@ -1,0 +1,10 @@
+X:1742
+%%from edm
+T:Trio, Op. 42, 4th Movement - Theme A
+C:Niels Gade
+%%composer Gade|Niels
+% EDM 1742 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+C6- CC E6- EE | A6- AA c6- ce | g4 a4 b2_g2=g2e2 | c4

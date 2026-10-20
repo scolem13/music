@@ -1,0 +1,11 @@
+X:8635
+%%from edm
+T:Serenade in A, Op. 16, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8635 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+g2g2 e'4 e2f2 | d4 f2g2 e4 | a2a2 g4 e2f2 | d4 f2g2 e4 |

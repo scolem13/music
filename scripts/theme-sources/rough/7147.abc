@@ -1,0 +1,11 @@
+X:7147
+%%from edm
+T:Concerto in D, 1st Movement - 1st Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7147 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+dcde d2d2 | d2d2 dcde | d2d2d2d2 | d2d2 dcde | dcde f2f2 | f2f2

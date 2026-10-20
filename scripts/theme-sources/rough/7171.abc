@@ -1,0 +1,10 @@
+X:7171
+%%from edm
+T:Octet, 3rd Movement - Finale
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7171 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+g6 e2 | g2c2e2^F2- | ^F6 DE | F2FG A2d2 | ^G/2A/2G/2A/2G/2A/2G/2A/2 A z3 | B/2c/2B/2c/2B/2c/2B/2c/2 c z3 | d2ef edcB | AGF2

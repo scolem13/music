@@ -1,0 +1,10 @@
+X:3385
+%%from edm
+T:Kikimora, Op. 63, 1st Theme B
+C:Anatol Liadov
+%%composer Liadov|Anatol
+% EDM 3385 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B4 ^c4 d8 | ^d8 e8 | B4 ^c4 d8 | ^d8 e8- | e4 ^d4 e8- | e4 ^d4 e8- | e2

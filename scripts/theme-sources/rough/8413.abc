@@ -1,0 +1,10 @@
+X:8413
+%%from edm
+T:Quartet No. 1, in A, Str., 1st Movement - Intro
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8413 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+a4 c'4 | e8 | e4 a4 | b8 | b4 c'4 | b8 | b4 c'4- | c'8 |

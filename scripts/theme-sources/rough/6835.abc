@@ -1,0 +1,10 @@
+X:6835
+%%from edm
+T:Eine Nacht in Venedig, Overture, 4th Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% EDM 6835 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+e'8 f'2e'2 | d'8 c'2b2 | d'2c'2b2 d'2c'2e2 | f8 ^c2d2 | a8 ^c2d2 | b8 a2g2 |

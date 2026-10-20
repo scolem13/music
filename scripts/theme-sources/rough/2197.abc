@@ -1,0 +1,10 @@
+X:2197
+%%from edm
+T:Concerto Grosso in D, Op. 6, No. 5, 6th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2197 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d12 | e12 | f2g2 a4 b4 | c12 | d8 F2A2 | D8 d'4 | c'2a2 b4 ^g4 | a12 |

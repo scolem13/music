@@ -1,0 +1,11 @@
+X:1955
+T:Spanish Dance, No. 2, Piano, 1st Theme
+C:Enrique Granados
+%%composer Granados|Enrique
+% MTD 3617, Barlow & Morgenstern G206, EDM 1955 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=93
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+g' e' g'- | g' f' e' | f' f'/e'/ d' | z b2 |{abc} c' e' d' | c' d' b | g3 |

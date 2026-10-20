@@ -1,0 +1,11 @@
+X:5436
+%%from edm
+T:New Dance
+C:Wallingford Riegger
+%%composer Riegger|Wallingford
+% EDM 5436 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:7/4
+L:1/16
+K:C
+z c2d g8 z c2c cd2 g8- g | z2 ^a6- aggf c'g2 g12- g |

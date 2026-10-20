@@ -1,0 +1,13 @@
+X:8722
+%%from mtd
+T:Symphony No. 1 in C minor, Op. 68, 3rd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1725, Barlow & Morgenstern B1589, EDM 8722 (Musical Theme Dataset, CC BY 4.0)
+N:Un poco allegretto e grazioso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=77
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+g>fe>=d | c>BA>G | f>e=d>c | B>AG>F | e>BG>c | B2- B3/2 |

@@ -1,0 +1,10 @@
+X:8688
+%%from edm
+T:Sonata in G, Op. 78, 2nd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8688 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+g4 b2a2 | f3g g4 | e3f2<g2e- | ef2g2 b2a- | af2 g4- g |

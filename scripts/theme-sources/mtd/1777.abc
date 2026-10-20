@@ -1,0 +1,11 @@
+X:1777
+T:An American in Paris, 1st Theme
+C:George Gershwin
+%%composer Gershwin|George
+% MTD 3440, Barlow & Morgenstern G39, EDM 1777 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=132
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+{/=B} cD E2 |{/=B} cD E2 |{/=B} cD Ed | cC/D/ E2 |{/=B} cD E2 |{/=B} cD Ed | e/e/e/e/ ea | g2 f2 |

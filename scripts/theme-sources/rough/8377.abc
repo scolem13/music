@@ -1,0 +1,10 @@
+X:8377
+%%from edm
+T:Rondo, Cello and Piano, 3rd Theme
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8377 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+e3f/2e/2 d2c2 | c2=B2B2B2 | f3g/2f/2 e2d2 | d2c2 c4 |

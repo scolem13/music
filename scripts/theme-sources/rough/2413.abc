@@ -1,0 +1,10 @@
+X:2413
+%%from edm
+T:Three Variations on a Theme
+C:Roy Harris
+%%composer Harris|Roy
+% EDM 2413 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+^D8 C2 z4 C2 | E8 C2 z4 C2 | D8 F8 | G8 ^D2 z4 D2 | ^G8 c6

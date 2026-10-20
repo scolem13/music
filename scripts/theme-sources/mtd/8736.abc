@@ -1,0 +1,12 @@
+X:8736
+T:Symphony No. 2 in D, Op. 73, 1st Movement - 4th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1739, Barlow & Morgenstern B1603, EDM 8736 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/16
+Q:1/4=105
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+E2ze e'6 c2- | c2zd B4 E2ze | e'6 c2- c2zd | ^d2zd =d4 ^G4 | A4 |

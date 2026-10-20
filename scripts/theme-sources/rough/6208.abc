@@ -1,0 +1,10 @@
+X:6208
+%%from edm
+T:Concerto in A minor, Op. 54, 2nd Movement - Intermezzo, 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6208 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+z abc' d' z3 | z gab c' z3 | z agf2<f'2d' | =bg z/2 a/2g2<g'2e' | c'_d'=d'b a

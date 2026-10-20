@@ -1,0 +1,10 @@
+X:1800
+%%from edm
+T:The Queen's Command, Harpsichord
+C:Orlando Gibbons
+%%composer Gibbons|Orlando
+% EDM 1800 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:C
+e6 f2 g4 a8 g4 | f6 g2 e4 d8 d4 | e6 g2 c4 B6 d2 F4 | E6 G2 D8<C8 |

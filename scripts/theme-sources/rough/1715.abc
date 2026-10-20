@@ -1,0 +1,10 @@
+X:1715
+%%from edm
+T:Sonata in D minor, 2nd Movement - Courante
+C:François Francœur
+%%composer Francœur|François
+% EDM 1715 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:F
+d2 d12 g2 f2_e2 d2c2 | B2 z/2 A3- A/2 z/2 _G3- G/2 =G6 A4<A4 | G4<G4

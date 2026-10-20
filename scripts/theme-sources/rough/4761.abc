@@ -1,0 +1,10 @@
+X:4761
+%%from edm
+T:Caprices, Op. 1, No. 8
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4761 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e8 =B/2c/2B/2c/2B/2c/2B/2c/2 B/2c/2B/2c/2B/2c/2B/2c/2 | c12 z3 B | =A8 _A/2B/2A/2B/2A/2B/2A/2B/2 A/2B/2A/2B/2A/2B/2A/2B/2 | G12

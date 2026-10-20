@@ -1,0 +1,10 @@
+X:3401
+%%from edm
+T:Concerto No. 1 in E-flat, 3rd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3401 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e'2f'2 e'4 ^c'2d'2 d'4 | a2b2 a4 ^f2g2 g4 | e2f2e2d2 B2 A4 B2 | d2e2c2a2 g4

@@ -1,0 +1,10 @@
+X:7311
+%%from edm
+T:Arioso
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7311 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+e'2^d'2 e'4 b4 c'2e'2 | a'2c'2 c'4 b8 | e'2b2 z/2 z/2 a^g2 a2c'2b2^d'2 | f'2a2g2f2 e4

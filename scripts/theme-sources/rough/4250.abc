@@ -1,0 +1,10 @@
+X:4250
+%%from edm
+T:Quartet in G minor, K 4, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4250 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+B2c2^c2d2 e2d2 d4 | d4 g4 c8 | B4 e4 A8 | G4 F2A2 d4

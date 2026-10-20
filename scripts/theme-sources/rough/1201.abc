@@ -1,0 +1,10 @@
+X:1201
+%%from edm
+T:Concerto in A minor, Op. 53, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1201 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^d12 ^f4- | ^f4 =f8 f2^a2 | ^d12 ^f4- | ^f4 =f8- f2^a2 | a2^g2b2a2 g8 |

@@ -1,0 +1,11 @@
+X:6878
+T:Kaiser-Waltzer, Op. 437, No. 4, 2nd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8507, Barlow & Morgenstern S1269, EDM 6878 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=157
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+=B c c' | _b2 a | =B c a | g2 f | A c f | g2 a | c'3/2 b/ e | e2 z |

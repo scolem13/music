@@ -1,0 +1,10 @@
+X:1185
+%%from edm
+T:Bagtelles, Op. 47, 2nd Movement
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1185 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G3A2<A2B2<B2c | c3^c2<c2d2<d2e | e3f2<f2g2<g2a | a3b2<b2d'2<d'2c' |

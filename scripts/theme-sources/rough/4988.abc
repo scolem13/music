@@ -1,0 +1,10 @@
+X:4988
+%%from edm
+T:Peter and the Wolf, Op. 67, 4th Theme, The Cat
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4988 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D,2G,2 B,4 G,2D,2 ^C,4 | D,2G,2B,2D4<C4 B,2 | G,2A,2B,2A,2 ^F,2G,2A,2G,2 | E,2^F,2 G,8

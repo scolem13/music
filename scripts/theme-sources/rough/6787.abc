@@ -1,0 +1,11 @@
+X:6787
+%%from edm
+T:La Vestale, Overture, 1st Theme
+C:Gasparo Spontini
+%%composer Spontini|Gasparo
+% EDM 6787 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+f8- f2e2e2d2 | d6 _e2 =e4 z4 | g8- g2f2f2e2 | e6 f2 d4

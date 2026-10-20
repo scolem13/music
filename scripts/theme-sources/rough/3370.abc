@@ -1,0 +1,10 @@
+X:3370
+%%from edm
+T:Adagio, Op. 3, 2nd Theme
+C:Guillaume Lekeu
+%%composer Lekeu|Guillaume
+% EDM 3370 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:5/4
+L:1/16
+K:Eb
+=a4 A6 =B2 _d2=d2 =e2_g2 | _g6 a2 b2g2 _d6 z2 | b4 B6 c2 d2e2 f2g2 | g6 b2 =e2=a2

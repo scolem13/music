@@ -1,0 +1,11 @@
+X:8652
+%%from edm
+T:Sextet in G, Op. 36, 3rd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8652 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:G
+B4 e4 f4 b4 | a2g2 z/2 z/2 gf2 e4 c'4 | A4 d4 e4 a4 | g2f2 z/2 z/2 fe2 ^d4 f4 |

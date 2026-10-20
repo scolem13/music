@@ -1,0 +1,105 @@
+---
+title: "Recording 5: Miking a Voice"
+toc: true
+toc-depth: 2
+description: "Condenser or dynamic, for the room you have; distance, the pop filter, plosives and sibilance; height and angle; the room; singing on a mic, live and in the studio."
+instruments: [voice]
+topics: [recording]
+has: [interactive, svg]
+---
+
+A voice is the one instrument everyone knows the sound of: a vocal that's boomy, popping, hissing or
+boxy is heard at once. Most of the fixes are in where the mic goes, before any plug-in.
+
+## Which mic, for the room you have
+
+- **Large-diaphragm condenser**, 15–25 cm away: the studio sound, open and detailed. It also hears the
+  room, so it needs a quiet, **treated** room (or a well-made vocal booth).
+- **Dynamic** (SM7B, SM58 type), close (2–8 cm): hears much less of the room. The better choice in an
+  ordinary bedroom, for loud singers, and on stage. Many famous vocals were recorded on one.
+- Whichever you use, it's a **cardioid**: point its dead back at the noisy things (the computer, a
+  window, the headphones' spill) ([Recording 2: Polar patterns](rec-mics.qmd#polar-patterns)).
+
+## Distance
+
+Close is intimate and bass-heavy (the **proximity effect**), and every lip noise is there; further back
+is more natural and has more room in it. A singer who moves changes the level and the tone: keep a
+fixed distance (a hand's width is a handy measure with a condenser), or move on purpose, back for loud
+notes, in for quiet ones ([Recording 3: Distance](rec-placement.qmd#distance)).
+
+## Pops and esses
+
+<div class="gear-fig" data-fig="vocal-setup"></div>
+
+- **Plosives** (p, b, and some t, d, k) push a jet of air straight out of the mouth, a little downward.
+  A mic in that jet gets a thump of wind that no EQ removes cleanly. A **pop filter** (mesh or metal,
+  5–10 cm from the mouth) stops it. So does moving the mic **out of the jet**: a little above the mouth,
+  pointing down at it, or slightly to the side.
+- **Sibilance** (s, sh) is high and beams forward. A mic slightly above or to the side hears less of it.
+  A bright condenser makes it worse; a de-esser in the mix is the last resort.
+
+Drag the mic around the singer. Listen to the "p" at the start of each phrase and the "s" in the middle,
+then try the pop filter, the dynamic, and the three rooms:
+
+<div class="rk" data-w="vocalmic"></div>
+
+## Height and angle
+
+Start at mouth height or a little above, 15–20 cm away for a condenser, pointing at the mouth. Pointing
+at the nose gives more nasal sound; at the chest, more chest. Have the singer stand as they'll sing:
+a lyric sheet on a stand below the mic makes them look down and sing into the floor. Put it at eye height.
+
+## The room
+
+A condenser in a bare room records the room: a **boxy**, hollow sound from reflections close behind and
+beside the singer. The walls behind the **singer** matter most (that's where the mic's front points).
+A duvet or thick blanket hung behind the singer, a wardrobe full of clothes, rugs on the floor: all
+help. Foam squares on the wall only take the top off. A dynamic close up hears much less of it.
+
+## Headphones, level and takes
+
+- **Closed-back headphones**, not too loud: their spill gets into a sensitive mic ([Recording 6: Monitoring](rec-monitoring.qmd)).
+- Set the level on the **loudest** part of the song, with headroom ([Recording 1: Gain Staging](rec-gain-staging.qmd)).
+- Record several takes; singers warm up as they go (the [Vocal Warm-up](../tools/vocal-warmup.qmd) first).
+
+## On stage
+
+A handheld dynamic, close: lips a finger or two from the grille. Hold it by the **handle**, never the
+grille (cupping it turns it omni and it feeds back: [Recording 2](rec-mics.qmd#dont-cup-the-mic)). Keep
+its back toward the wedge monitor, and back off on loud notes ([Pop Singing: the mic](voice-pop.qmd)).
+
+## Next
+
+- [Recording 6: Monitoring and Headphones](rec-monitoring.qmd)
+
+{{< include _synth-kit.qmd >}}
+
+```{=html}
+<script src="/apps/shared/lessons/rec-kit-mic.js?v=3"></script>
+<script src="/apps/shared/lessons/gear-diagrams.js?v=5"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Brixen, Eddy Bøgh. "Proper Hand Placement on a Vocal Mic." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/audio-production/proper-hand-placement-on-a-vocal-mic/](https://www.dpamicrophones.com/mic-university/audio-production/proper-hand-placement-on-a-vocal-mic/).
+
+Nymand, Mikkel. "How to Mic Vocals in the Recording Studio." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/how-to-mic/how-to-mic-vocals-in-the-recording-studio/](https://www.dpamicrophones.com/mic-university/how-to-mic/how-to-mic-vocals-in-the-recording-studio/).
+
+**For teachers**
+
+Bartlett, Bruce, and Jenny Bartlett. *Practical Recording Techniques: The Step-by-Step Approach to Professional Audio Recording*. 7th ed., Routledge, 2017. Details from the Routledge listing.
+
+Brixen, Eddy Bøgh. "Proximity Effect in Microphones Explained: How It Affects Different Sound Sources." *DPA Mic University*, DPA Microphones. [www.dpamicrophones.com/mic-university/background-knowledge/proximity-effect-in-microphones-explained/](https://www.dpamicrophones.com/mic-university/background-knowledge/proximity-effect-in-microphones-explained/).
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+Owsinski, Bobby. *The Recording Engineer's Handbook*. 5th ed., BOMG Publishing, 2023. Details from retailer listings.
+
+Shure Notes Editors. "How to Control Feedback in a Sound System." *Shure Insights*, 25 Jan. 2013. [www.shure.com/en-US/insights/how-to-control-feedback-in-a-sound-system](https://www.shure.com/en-US/insights/how-to-control-feedback-in-a-sound-system).
+:::
+<!-- /works-cited -->
+

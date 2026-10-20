@@ -1,0 +1,10 @@
+X:6378
+%%from edm
+T:Symphony No. 3 in E-flat, Op. 97, 2nd Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6378 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+G,2C2 E2G3 AG2 | c2G2 E2C3 ED2 | G,2C2 E2G3 AG2 | e2c2 A2E3 ^FG2 |

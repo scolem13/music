@@ -1,0 +1,10 @@
+X:4634
+%%from edm
+T:Variations in C, K 265, Theme - "Ah, Vous Dirai-Je, Maman"
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4634 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c4 c4 | g4 g4 | a4 a4 | g4 g4 | f4 f4 | e4 e4 | d4 d3e | c8 |

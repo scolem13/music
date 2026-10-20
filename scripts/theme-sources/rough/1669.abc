@@ -1,0 +1,10 @@
+X:1669
+%%from edm
+T:Quartet in D, Str., 1st Movement - 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1669 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+z4 a4 f4 d4- | d4 f'4 e'4 d'4 | a4 g2b2 a4 z4 | z4 a4 f4 d4- | d4 f'4 d'4 c'4 | =c'4 ^g2=g2 =f4

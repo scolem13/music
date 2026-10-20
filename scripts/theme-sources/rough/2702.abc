@@ -1,0 +1,10 @@
+X:2702
+%%from edm
+T:Symphony in G, No. 92, "Oxford" 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2702 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d2 z2 d2 z2 d2 z2 | d12- | d4 c2B2 A2e2 | G4 F2 z6 | c2 z2 c2 z2 c2 z2 | c12- | c2e2d2c2B2A2 |

@@ -1,0 +1,10 @@
+X:3893
+%%from edm
+T:Andante and Rondo Capriccioso, Op. 14, Andante
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3893 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+g4 e4 B6 B2 | c4 z/2 z/2 de2 e4 d4 | z2 b2 a2g2 f2e2 dfec | B3=c2<^c2A G4

@@ -1,0 +1,11 @@
+X:7402
+%%from edm
+T:Hamlet - Act IV, La Freya, 1st Theme
+C:Ambroise Thomas
+%%composer Thomas|Ambroise
+% EDM 7402 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:F
+d'2g2 d'4 | z/2 c'3/2ab c'2f'2 | e'2d'c' d'2b2 | c'4 a2

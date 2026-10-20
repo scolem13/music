@@ -1,0 +1,10 @@
+X:8655
+%%from edm
+T:Sonata in E minor, Op. 38, Cello and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8655 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+E,8 G,6 B,2 | C8 B,8 | A,2B,A, G,2A,4<B,4 G,2 | E,8 F,8- | F,2^D,2F,2B,4<D4 F2 | F8

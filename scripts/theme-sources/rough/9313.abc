@@ -1,0 +1,10 @@
+X:9313
+%%from edm
+T:Sonata in G, Op. 65, Cello and Piano, 1st Movement
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9313 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+d'3c' b4 g4 _g4 | g3e d6 z/2 e3/2 d4 |

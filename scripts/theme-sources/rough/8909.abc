@@ -1,0 +1,11 @@
+X:8909
+%%from edm
+T:Symphony No. 4 in E-flat, 1st Movement - 3rd Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8909 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Eb
+z4 f2f2 A8- | A4 _g2g2 e4 a4 | z4 f2f2 A8- | A4 _g2g2 e4 a4 | f4 z4 c4 f4 | _d4

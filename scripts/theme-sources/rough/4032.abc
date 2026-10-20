@@ -1,0 +1,10 @@
+X:4032
+%%from edm
+T:Serenata, Op. 15, No. 1
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4032 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+f4 f4 | feg3/2f/2 e4 | d4 d4 | d2 z/2 ce/2 B z A

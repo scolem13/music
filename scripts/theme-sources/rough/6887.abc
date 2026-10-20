@@ -1,0 +1,12 @@
+X:6887
+%%from mtd
+T:Kunstlerleben, Op. 316, Waltzes, No. 5, 2nd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8516, Barlow & Morgenstern S1278, EDM 6887 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=177
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+C3 C | C z F z c2- | c2 C3 C | C z E z c2- | c2 C3 C | C z E z e2- | ee e3 e | f2 |

@@ -1,0 +1,10 @@
+X:3361
+%%from edm
+T:Trio-Sonata in D, Op. 2, No. 8, 4th Movement
+C:Jean-Marie Leclair
+%%composer Leclair|Jean-Marie
+% EDM 3361 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+a4 b4 | agfg a2b2 | z/2 a3/2gf z/2 g3/2fe | fdec d4 |

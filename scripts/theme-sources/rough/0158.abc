@@ -1,0 +1,10 @@
+X:158
+%%from edm
+T:Concerto No. 7, in G minor, Piano and Orchestra, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0158 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:Bb
+d2g2f2 e2d2c2 B2A2B2 | c2B2A2 B2G2A2 B2D2G2 | B2A2G2 A2_G2=G2 A2D2A2 | c2

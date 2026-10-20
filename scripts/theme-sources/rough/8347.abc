@@ -1,0 +1,11 @@
+X:8347
+%%from edm
+T:Concerto No. 2 in D, 3rd Movement - 1st Theme A
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8347 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:D
+f4 g2 | a2 a2 a2 | d4 e2 | f2 f2 f2 | B4 c2 | d2 d2 d2 | A2 g2 f2 | e2

@@ -1,0 +1,10 @@
+X:4464
+%%from edm
+T:Sonata in F, K 377, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4464 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+A2d2 z/2 z/2 f3 | d2e2 z/2 z/2 g3 | e2d2 z/2 z/2 f3 | d2 a4

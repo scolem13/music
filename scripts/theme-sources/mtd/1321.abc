@@ -1,0 +1,12 @@
+X:1321
+T:Slavonic Dances, Op. 72, No. 8, 4th Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2985, Barlow & Morgenstern D397, EDM 1321 (Musical Theme Dataset, CC BY 4.0)
+N:Grazioso e lento, ma non troppo, quasi tempo di valse [Sousedská]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=77
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+AG | FABAdA | BA f2 e2 | d4 AG | FABAdA | BA a2 c2 | d4 |

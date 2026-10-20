@@ -1,0 +1,10 @@
+X:4055
+%%from edm
+T:Concerto in B-flat, K 191, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4055 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+B8 c2d2 | f2e2 e8 | d2f2B2d2G2c2 | B2A2G2F2G2A2 | B8 c2d2 | f2e2 e8 |

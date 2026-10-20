@@ -1,0 +1,10 @@
+X:1651
+%%from edm
+T:Grande Piece Symphonique, Op. 17, 6th Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1651 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F#
+C4 A,4 E4 F4 | =D4 B,4 G4 E4 | E2G4<F4 E2 B,4- | B,2F4<C4 =C2 ^C2=D2 |

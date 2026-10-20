@@ -1,7 +1,8 @@
 // The hand-drum and microphone drawings, the proximity / off-axis widgets and the groove pictures, in headless Chrome.
 // Gear 9 draws congas, bongos, djembe and tabla (every part titled); Recording 2 and 3 draw the mic figures and build the
 // widgets, which sound and redraw when moved; a drum step and a conga step light their picture while the band plays
-// (skipped when the band's samples can't load). Run after rendering lessons/gear-drums, rec-mics, rec-placement,
+// (skipped when the band's samples can't load); Recording 4 and 5's amp and voice widgets. Run after rendering lessons/gear-drums,
+// rec-mics, rec-placement, rec-guitar-amp, rec-voice,
 // hihat-grooves, congas-basics: node tests/lessons/perc-mics.cdp.js   (screenshots: SHOTS=dir)
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
@@ -41,6 +42,22 @@ const U = p => "http://127.0.0.1:8527/lessons/" + p + ".html", SHOTS = process.e
   check("proximity: 3 cm boosts the bass far more than 1 m", bass(prox[1]) > 15 && bass(prox[0]) < 3, prox.map(bass).join(" / "));
   check("proximity: omni has none", Math.abs(bass(prox[2])) < 0.1, prox[2]);
   await shot("rec-placement");
+
+  await b.goto(U("rec-guitar-amp")); await b.sleep(600);
+  const amp = await b.eval(`(async () => { const h = document.querySelector(".rk[data-w=ampmic]"), btn = h.querySelector(".sk-head .btn"); btn.click(); await new Promise(r => setTimeout(r, 400));
+    const r = h.querySelector(".sk-ctls input[type=range]"), out = [];
+    for (const v of [0, 0.9]) { r.value = v; r.dispatchEvent(new Event("input")); out.push(h.querySelector(".sk-info").textContent); } btn.click();
+    return { figs: document.querySelectorAll(".gear-fig svg").length, out }; })()`);
+  const k3 = s => +s.match(/3 kHz ([+-][\d.]+)/)[1];
+  check("Recording 4: two figures; the cap is brighter than the edge", amp.figs === 2 && k3(amp.out[0]) > k3(amp.out[1]) + 6, amp.figs + " figs, 3 kHz " + amp.out.map(k3).join(" / "));
+  await shot("rec-guitar-amp");
+  await b.goto(U("rec-voice")); await b.sleep(600);
+  const voc = await b.eval(`(async () => { const h = document.querySelector(".rk[data-w=vocalmic]"), w = h.querySelector(".sk-w"), btn = h.querySelector(".sk-head .btn"); btn.click(); await new Promise(r => setTimeout(r, 400));
+    const pick = () => h.querySelector(".sk-info").textContent.match(/Plosives (\\w+)/)[1], out = [pick()];
+    [...h.querySelectorAll("button")].find(x => /Usual spot/.test(x.textContent)).click(); out.push(pick());
+    [...h.querySelectorAll("button")].find(x => /Pop filter/.test(x.textContent)).click(); out.push(pick()); btn.click(); return out; })()`);
+  check("Recording 5: straight ahead at 15 cm pops; the usual spot and the pop filter don't", voc[0] !== "none" && voc[1] === "none" && voc[2] === "none", voc.join(" / "));
+  await shot("rec-voice");
 
   for (const [page, kind] of [["hihat-grooves", "kit"], ["congas-basics", "congas"]]) {
     await b.goto(U(page)); await b.sleep(800);

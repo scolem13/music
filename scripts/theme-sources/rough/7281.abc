@@ -1,0 +1,11 @@
+X:7281
+%%from edm
+T:Carnival in Paris, Op. 9, 1st Theme
+C:Johan Severin Svendsen
+%%composer Svendsen|Johan Severin
+% EDM 7281 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:E
+e'6 d'2c'2b2 | g2f2e2 z6 | e'2=d'2e'2 d'2e'2d'2 | =f'2c'2f'2 c'2f'2c'2 | f'6 =f'2d'2c'2 | c'2b2a2

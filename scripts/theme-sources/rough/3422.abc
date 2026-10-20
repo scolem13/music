@@ -1,0 +1,10 @@
+X:3422
+%%from edm
+T:Faust Symphony, 1st Movement - 3rd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3422 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+E4- E=B,B,E EDD_D DCCB, | D6 _D2 C2A2G2_G2- | _G2=G2e2d2 z2 A2 G2D2 |

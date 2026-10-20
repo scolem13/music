@@ -1,0 +1,11 @@
+X:9474
+%%from edm
+T:Sonata Da Camera, B-flat, Op. 2, No. 5, 2 Vns., Viola Da Gamba, Harpsichord 1st Movement - Preludio
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9474 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+B4 c3d _e4 d4 | g4 f4 _e2fg2<f2e | d4 c3d _e4 d4 | c4 B8

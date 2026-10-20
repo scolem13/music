@@ -1,0 +1,10 @@
+X:6656
+%%from edm
+T:Symphony No. 5, in E-flat, Op. 82, 1st Movement - 3rd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6656 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:G
+z6 b8- ba3 c'3 b3 | a3b3 d'3 ^c'3 e'3^d'3 f'3 =f'3 | a'6 b'6 c''12 |

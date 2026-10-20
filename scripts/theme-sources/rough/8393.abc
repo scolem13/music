@@ -1,0 +1,11 @@
+X:8393
+%%from edm
+T:Suite Gothique, Op. 25, Organ, 1st Movement - Introduction-Choral
+C:Leon Boellmann
+%%composer Boellmann|Leon
+% EDM 8393 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Eb
+e'8 e8 | g4 a4 b8 | c'16 | b16 | g4 a4 b8 | c'4 d'4 e'8 | d'8 c'8 | e'16 |

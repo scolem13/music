@@ -1,0 +1,13 @@
+X:8759
+%%from mtd
+T:Symphony No. 3 in F, Op. 90, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1762, Barlow & Morgenstern B1626, EDM 8759 (Musical Theme Dataset, CC BY 4.0)
+N:Poco allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=36
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+C>D | E6 | G>FD2 C>D | E6 | B>AD2 D>E | F4 A>G | E4 |

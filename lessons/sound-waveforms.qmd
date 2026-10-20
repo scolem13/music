@@ -69,4 +69,26 @@ oscillator, which gets [its own lesson](sound-lfo.qmd).
 - [Sound 3: Noise](sound-noise.qmd)
 - [Sound 6: LFOs](sound-lfo.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+*Learning Synths*. Ableton. [learningsynths.ableton.com/](https://learningsynths.ableton.com/).
+
+"Pulse wave." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pulse_wave](https://en.wikipedia.org/wiki/Pulse_wave).
+
+**For teachers**
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: Synthesizing Strings: PWM & String Sounds." *Sound On Sound*, Mar. 2003. [www.soundonsound.com/techniques/synthesizing-strings-pwm-string-sounds](https://www.soundonsound.com/techniques/synthesizing-strings-pwm-string-sounds).
+
+Reid, Gordon. "Synth Secrets: What's In A Sound?." *Sound On Sound*, May 1999. [www.soundonsound.com/techniques/whats-sound](https://www.soundonsound.com/techniques/whats-sound).
+
+Smith, Julius O., III. *Mathematics of the Discrete Fourier Transform (DFT), with Audio Applications*. 2nd ed., W3K Publishing, 2007. [ccrma.stanford.edu/~jos/mdft/](https://ccrma.stanford.edu/~jos/mdft/).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

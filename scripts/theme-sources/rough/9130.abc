@@ -1,0 +1,11 @@
+X:9130
+%%from edm
+T:Concerto, 2nd Movement
+C:Carlos Chávez
+%%composer Chávez|Carlos
+% EDM 9130 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+b4<b4 a6 g2 | a8 b2 a4 g2- | g2 a8- a2 d2e2 | ^f2d2f2c2 f2B2f2G2 | F4<F4 G4<G4 |

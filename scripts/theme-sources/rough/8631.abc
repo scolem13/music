@@ -1,0 +1,10 @@
+X:8631
+%%from edm
+T:Serenade in D, Op. 11, 5th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8631 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+a8 a4 | f8 f4 | z/2 e3-e/2 d4 e4 | f8 f4 | a8 a4 | f8 f4 | z/2 e3-e/2 d4 e4 | f12 |

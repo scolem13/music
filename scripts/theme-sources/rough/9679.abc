@@ -1,0 +1,10 @@
+X:9679
+%%from edm
+T:La Plus Que Lente, Waltz, Piano, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9679 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+b6 =c'2 c'4- | =c'2b2 a2=g2 f4- | f2e2 =d2=c2 =B4- | B2d2 A2=A2 B4- | B4

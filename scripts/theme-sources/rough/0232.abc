@@ -1,0 +1,10 @@
+X:232
+%%from edm
+T:Partita No. 3 in A minor, Burlesca
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0232 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+A2B2 z/2 z/2 BAB c2^G2 | A4 E4 A4 | B2c2 z/2 z/2 cBc d2A2 |

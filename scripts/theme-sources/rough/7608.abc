@@ -1,0 +1,10 @@
+X:7608
+%%from edm
+T:Symphony No. 4, in F minor, Op. 36, 4th Movement - 3rd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7608 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+g'4 d'3f' f'2e'2 d'4 | c'4 d'3a a2b2 c'4 | d'4 e'3c' c'2d'2e'2b2 | a2b2c'2d'2 g2c'2

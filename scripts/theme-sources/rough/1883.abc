@@ -1,0 +1,10 @@
+X:1883
+%%from edm
+T:Iphigenia in Aulis, Act. I, Lento
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1883 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 d6 z A | f4 e4 z4 | A4 _d6 z e | g4 f4 z4 | f4 c'6 z b | z/2 a4- a3/2g2 f2e2 | d2g2 f4 e4 | e4 f8 |

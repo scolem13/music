@@ -1,0 +1,10 @@
+X:2732
+%%from edm
+T:Symphony in C minor, No. 95, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2732 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+e12 f2e2 | d8 g8 | c4 e4 f4 a4 | a8 g8 | f4 f4 z/2 z/2 f3 z4 | e4 e4 z/2 z/2 e3 z4 | d4 d4 z/2 B3-B/2A2G2 | c4

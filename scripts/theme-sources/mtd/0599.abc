@@ -1,0 +1,12 @@
+X:599
+T:Rhapsody No. 1, Vn. and Orchestra, 2nd Movement - 1st Theme
+C:Béla Bartók
+%%composer Bartók|Béla
+% MTD 0593, Barlow & Morgenstern B497, EDM 0599 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=98
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+EDEF GEGA B2BA G2>A2 | B2BA G2GA B2BA G2>F2 |

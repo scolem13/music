@@ -1,0 +1,10 @@
+X:5284
+%%from edm
+T:Introduction and Allegro, Allegro, 2nd Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% EDM 5284 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+b6 =b2 _b4- | b2a4<g4 a2 | g6 f2 e4 | f2g2 a4 e4 |

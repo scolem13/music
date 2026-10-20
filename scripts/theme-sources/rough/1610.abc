@@ -1,0 +1,10 @@
+X:1610
+%%from edm
+T:Sonata in A, Op. 13, 4th Movement - 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1610 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:A
+c8- c2d2 | c8- c2e2 | c8- c2B2 | c8- c2B2 | A8- A2G2 | (3F4-FG4- G A4- AB2 | c8- c2A2 |

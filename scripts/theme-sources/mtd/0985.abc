@@ -1,0 +1,12 @@
+X:985
+T:Sonata No. 4, in A minor, Op. 23, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0979, Barlow & Morgenstern B861, EDM 0985 (Musical Theme Dataset, CC BY 4.0)
+N:Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=206
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+{cd} e3 dcB | A2 z z2 z |{de} f3 edc | B2 z z2 z | E^GB e3 | Ace a3 |

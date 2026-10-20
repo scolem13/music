@@ -1,0 +1,10 @@
+X:4314
+%%from edm
+T:Quintet in E-flat, K 452, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4314 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:Bb
+f2 d2 f/2e/2d/2e/2 | f3/2d/2 fB df | b2 a2 g2 | g/2f/2e/2d/2 d2

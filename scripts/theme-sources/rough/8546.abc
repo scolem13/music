@@ -1,0 +1,11 @@
+X:8546
+%%from edm
+T:Quartet in G minor, Op. 25, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8546 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+B4 e4 d4 | e4 f4 d4 | e4 a4 g4 | f2c2 e4 d4- | d2

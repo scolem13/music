@@ -1,0 +1,11 @@
+X:4762
+%%from edm
+T:Caprices, Op. 1, No. 9, "La Chasse", (Liszt)
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4762 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/nsXlmnBQX50
+M:2/4
+L:1/16
+K:E
+bag2 gfe2 | bag2 gfe2 | efg2 fga2 | fab2 agf2 |

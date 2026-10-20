@@ -1,0 +1,10 @@
+X:2079
+%%from edm
+T:Sonata in C minor, Op. 45, No. 3, 1st Movement - Intro
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2079 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+C3=B,CD2<E2DCB, | G,3=B,CE G2 z3 c | c6 G2

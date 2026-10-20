@@ -1,0 +1,11 @@
+X:6464
+%%from edm
+T:Quintet, Op. 57, 5th Movement - Finale, 1st Theme B
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6464 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:G
+e2=f2 g12 | a2b2 c'4 b2a2 g4 | =f2e2d2c2 B2A2 G4- | G6

@@ -1,0 +1,10 @@
+X:2301
+%%from edm
+T:Sonata in E-flat, 4th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2301 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+B2e2EF G_A G4 | B2e2EF G_A G4 | e4 fe dcd2ed | cBc2F2

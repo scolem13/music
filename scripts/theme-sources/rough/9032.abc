@@ -1,0 +1,10 @@
+X:9032
+%%from edm
+T:La Giara, Ballet - General Dance
+C:Alfredo Casella
+%%composer Casella|Alfredo
+% EDM 9032 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e4 f4 g4 | ^g8 =g4 | ^g8 =g2^g2 | ^a2^g2 =g8- | g12- | g6 f2 g2^g2 | ^f4 ^c'4 ^g4 | g4 f4 ^d4 |

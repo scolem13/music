@@ -1,0 +1,11 @@
+X:7043
+%%from edm
+T:Ein Heldenleben, Op. 40, 2nd Theme A
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7043 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+e6 f2 d2_g2 e'4 | =e'4- e'a'_g'_e' _d'4- d'e'd'a | =b6 _ba g4 _g/2=g/2_g/2=g/2_g/2=g/2_g/2=g/2 | _g/2=g/2_g/2=g/2_g/2=g/2_g/2=g/2

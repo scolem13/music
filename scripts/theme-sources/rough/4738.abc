@@ -1,0 +1,10 @@
+X:4738
+%%from edm
+T:Fugue in D minor, (Dorian), Harpsichord
+C:Johann Pachelbel
+%%composer Pachelbel|Johann
+% EDM 4738 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D6 D2 ^C4 =C4 | B,4 ^A,4 =A,2B,2C2A,2 | E2E,2B,2C2 D2D,2A,2B,2 | C6 B,A, B,6 ^C2 | D8

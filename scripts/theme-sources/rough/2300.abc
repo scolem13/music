@@ -1,0 +1,10 @@
+X:2300
+%%from edm
+T:Sonata in E-flat, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2300 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Bb
+z4 c2d2 e2=B2 c2G2 e2f2 g2d2 | e12- e3d/2e/2 f2d2 e2c2 | f12- f3e/2f/2 g2e2 f2d2 |

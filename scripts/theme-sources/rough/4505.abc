@@ -1,0 +1,13 @@
+X:4505
+%%from mtd
+T:Symphony No. 25, in G minor, K 183, 1st Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6154, Barlow & Morgenstern M879, EDM 4505 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=154
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B16 | b16 | a/g/f3 f2f2 f4 z4 | a/g/f3 f2f2 f4 z4 |

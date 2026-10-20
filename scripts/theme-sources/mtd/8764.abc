@@ -1,0 +1,12 @@
+X:8764
+T:Symphony No. 3 in F, Op. 90, 4th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1767, Barlow & Morgenstern B1631, EDM 8764 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=113
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+E2 | E2 (3E D E | _F2 _G F | E2 |

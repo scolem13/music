@@ -1,0 +1,10 @@
+X:4364
+%%from edm
+T:Serenade in B-flat, K 361, 4th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4364 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+f4 b4 f4 | d4 e4 c4 | A4 B4 c4 | d3c c8 | d4 e6 g2 | c2e2 d8 |

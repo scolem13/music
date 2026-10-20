@@ -1,0 +1,11 @@
+X:3994
+T:Le Boeuf Sur Le Toit, 4th Theme, Entry of the Men
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% MTD 5645, Barlow & Morgenstern M377, EDM 3994 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=83
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A2 B2 | ^c3 c | B^cde | ^c3 c | B/BB/ AA | ^G G2 ^c |

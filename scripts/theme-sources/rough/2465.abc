@@ -1,0 +1,13 @@
+X:2465
+%%from mtd
+T:Quartet in D, Op. 20, No. 4, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4126, Barlow & Morgenstern H346, EDM 2465 (Musical Theme Dataset, CC BY 4.0)
+N:Un poco Adagio e affettuoso  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=50
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+A | d2 ef | ^cd B2 | Ad/>D/ E3/2F/4G/4 |{G} F/E/4D/4D z |

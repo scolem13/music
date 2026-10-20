@@ -1,0 +1,10 @@
+X:8528
+%%from edm
+T:Intermezzo in E minor, Op. 119, No. 2, 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8528 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+b4 c'6 g2 | b4 a6 f2 | b4 c'6 g2 | b4 d'8 | b4 g'6 d'2 | f'4 e'6 g2 | d'4 c'6 f2 | b4

@@ -1,0 +1,10 @@
+X:2650
+%%from edm
+T:Symphony in A, No. 28, 1st Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2650 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+e6 A2 A2A2 | A6 e2 e2e2 | d6 E2 E2E2 | E6 d2 d2d2 | c6

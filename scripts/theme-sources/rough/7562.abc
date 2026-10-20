@@ -1,0 +1,10 @@
+X:7562
+%%from edm
+T:Symphony No. 1, Op. 13, 2nd Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7562 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g8 =B4 g4 | B4 g4 a4 b4 | e16- | e4 b4 e4 f4 | g8 g4 g4 | f4 a4 g8 |

@@ -1,0 +1,11 @@
+X:5580
+%%from edm
+T:Toreador et Andalouse, Op. 103, No. 7, from Bal Costume, 2nd Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5580 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+G3A2<B2 c2<d2^d | e3f g4 c'bag | f3e f4 bagf | e3^d e4

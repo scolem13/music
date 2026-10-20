@@ -1,0 +1,13 @@
+X:425
+%%from mtd
+T:Well-tempered Clavichord, Book I, Fugue No. 16
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0420, Barlow & Morgenstern B332, EDM 0425 (Musical Theme Dataset, CC BY 4.0)
+N:Fuga  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=65
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+z D EG, ^F,2 G,2 | z A,/B,/ CB,/A,/ B,2 G,2 |

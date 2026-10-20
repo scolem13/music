@@ -1,0 +1,12 @@
+X:850
+T:Sonata No. 7, in D, Op. 10, No. 3, 3rd Movement - Minuetto
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0844, Barlow & Morgenstern B726, EDM 0850 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto: Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=214
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A- | A f e | d c e | d3- | d A B | A G A | G F G | F3 | E |

@@ -71,4 +71,24 @@ just two numbers: the ratio decides *where* they go and the index decides *how m
 
 - [Sound 9: Wavetable synthesis](sound-wavetable.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Frequency modulation synthesis." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Frequency_modulation_synthesis](https://en.wikipedia.org/wiki/Frequency_modulation_synthesis).
+
+**For teachers**
+
+Chowning, John M. "The Synthesis of Complex Audio Spectra by Means of Frequency Modulation." *Journal of the Audio Engineering Society*, vol. 21, no. 7, 1973, pp. 526-34. [ccrma.stanford.edu/papers/synthesis-of-complex-audio-spectra-means-of-frequency-modulation](https://ccrma.stanford.edu/papers/synthesis-of-complex-audio-spectra-means-of-frequency-modulation).
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: An Introduction To Frequency Modulation." *Sound On Sound*, Apr. 2000. [www.soundonsound.com/techniques/introduction-frequency-modulation](https://www.soundonsound.com/techniques/introduction-frequency-modulation).
+
+Reid, Gordon. "Synth Secrets: More On Frequency Modulation." *Sound On Sound*, May 2000. [www.soundonsound.com/techniques/more-frequency-modulation](https://www.soundonsound.com/techniques/more-frequency-modulation).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

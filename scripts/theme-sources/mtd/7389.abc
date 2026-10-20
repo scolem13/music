@@ -1,0 +1,12 @@
+X:7389
+T:Tafelmusik, Allegresse
+C:Georg Philipp Telemann
+%%composer Telemann|Georg Philipp
+% MTD 9015, Barlow & Morgenstern T85, EDM 7389 (Musical Theme Dataset, CC BY 4.0)
+N:Allegresse, vite  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=128
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+Bc | dc ed | gf b z | B3/2A/4B/4 cF | c3/2B/4c/4 dB | fg/f/ ed | cB/A/ B |

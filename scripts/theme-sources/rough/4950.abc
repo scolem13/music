@@ -1,0 +1,10 @@
+X:4950
+%%from edm
+T:Concerto No. 3, Op. 26, 2nd Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4950 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+B3B e8 f2e2 | ^d2=d2e2d2 ^c2=c2 B4 | e4 d4 c4 B4- | B16 |

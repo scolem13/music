@@ -1,0 +1,12 @@
+X:2642
+T:Sonata in C-sharp minor, No. 36, 2nd Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4303, Barlow & Morgenstern H522, EDM 2642 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzando: Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=106
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+Ec/A/ |{A} ^G^F/E/ ed | cB Ec/A/ | Fd/B/ Ge/c/ | A |

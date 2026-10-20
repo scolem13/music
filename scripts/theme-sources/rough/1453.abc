@@ -1,0 +1,10 @@
+X:1453
+%%from edm
+T:Symphony No. 1, in A-flat, Op. 55, 1st Movement - Intro
+C:Edward Elgar
+%%composer Elgar|Edward
+% EDM 1453 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+c12 B4 | A4 G4 e8- | e4 A4 B4 c4 | d12 d4- | d4 c4 B6 A2 | B12 B4- | B4 E8- E2

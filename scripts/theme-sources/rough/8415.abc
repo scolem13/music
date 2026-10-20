@@ -1,0 +1,10 @@
+X:8415
+%%from edm
+T:Quartet No. 1, in A, Str., 1st Movement - 2nd Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8415 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+G2A2^A2B2 | B2g3 B=c2 | =c2g3 cg2 | g2c'3 gf2 | f2a3 e^d2 | ^d2a3 cB2 |

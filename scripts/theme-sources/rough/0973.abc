@@ -1,0 +1,13 @@
+X:973
+%%from mtd
+T:Sonata No. 32, in C minor, Op. 111, 2nd Movement, Arietta
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0967, Barlow & Morgenstern B849, EDM 0973 (Musical Theme Dataset, CC BY 4.0)
+N:Arietta: Adagio molto, semplice e cantabile  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:9/16
+L:1/16
+Q:1/4=35
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c2G | G6 d2G | G6 G3 | G3 e3 c3 | c3 B3 B3 | c3 e3 g3 | g3 f3 |

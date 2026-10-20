@@ -1,0 +1,10 @@
+X:2217
+%%from edm
+T:Concerto Grosso in F, Op. 6, No. 9, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2217 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+d3ed2 d2 d4 | d3ef2 A2 c4 | F2 G4 A3BA2 | d3ed2 d2 d4 |

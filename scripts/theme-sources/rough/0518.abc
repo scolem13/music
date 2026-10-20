@@ -1,0 +1,10 @@
+X:518
+%%from edm
+T:Concerto in D minor - 1st Movement - Intro
+C:Wilhelm Friedemann Bach
+%%composer Bach|Wilhelm Friedemann
+% EDM 0518 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A2d2 cBAd cBAG | FEFB AGFB AGFE | D_D=D2

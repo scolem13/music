@@ -1,0 +1,10 @@
+X:385
+%%from edm
+T:French Suite No. 6, in E, Piano, Bouree
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0385 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:E
+G2A2 B4 G2B2 e4 | B4 f4 B4 g4 | B4 a4 g2a2b2a2 | g2f2a2g2 f2g2e2

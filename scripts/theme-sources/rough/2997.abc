@@ -1,0 +1,10 @@
+X:2997
+%%from edm
+T:Divertissement, 3rd Movement, Nocturne
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 2997 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z4 C,8 ^C,4- | ^C,4 B,,4 ^D,4 ^F,4- | ^F,4 A,4 C,4 ^A,4- | ^A,4 B,4 D,4 C4 |

@@ -1,0 +1,11 @@
+X:7846
+%%from edm
+T:Symphony in D, 1st Movement - 1st Theme
+C:Christoph Wagenseil
+%%composer Wagenseil|Christoph
+% EDM 7846 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+a/2g/2f/2e/2d2 d2d2 d2 d4 b2 | z2 a2 z2 g2 z2 f4 ag | fed2 d2d2 d2 d4 g2 | z2 f2 z2 c2 z2 d4

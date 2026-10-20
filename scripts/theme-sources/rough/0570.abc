@@ -1,0 +1,10 @@
+X:570
+%%from edm
+T:Contrasts, 2nd Movement - Relaxation
+C:Béla Bartók
+%%composer Bartók|Béla
+% EDM 0570 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A,8 C4 E4 | ^F4 E4 ^C4 ^A,4 | A,4 ^C4 B,8- | B,8

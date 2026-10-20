@@ -1,0 +1,10 @@
+X:5563
+%%from edm
+T:Concerto No. 4, in D minor, Op. 70, 1st Movement - 2nd Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5563 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+d'8 e8 | e4 f4 g4 a4 | b8 a6 _a2 | _a8 =a8 | d'8 e8 | e4 f4 g4 a4 | b4 =b4 c'6 _a2 | _a8 =a8 |

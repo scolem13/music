@@ -1,0 +1,11 @@
+X:7217
+%%from edm
+T:Suite No. 1, 1st Movement - Andante
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7217 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+b16 | f4 a4 b8 | a2g2f2a2 b8 | a8 b8 | A2g2f2g2 e4 c2e2 | f4 f4 a2g2f2g2 | e4 a2e2 f8 |

@@ -1,0 +1,11 @@
+X:9437
+%%from edm
+T:El Salon Mexico, 1st Theme
+C:Aaron Copland
+%%composer Copland|Aaron
+% EDM 9437 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+z4 B2d2 g2b2- | b2 b4 b4 b2 | b2b2c'2b2a2g2 | a4 a4 a4 | a2a2a2b2a2g2 | f2 g4 g4 g2- | g2

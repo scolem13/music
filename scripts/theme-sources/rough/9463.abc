@@ -1,0 +1,11 @@
+X:9463
+%%from edm
+T:Concerto Grosso in B-flat, Op. 6, No. 11, 5th Movement - Gigue
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9463 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:F
+f2d2c2 B2 f4 | b2 (3a4-ac4- c F4- F | f2g2f2 g2 _E4 | g2 (3f4-fB4- B D4- D |

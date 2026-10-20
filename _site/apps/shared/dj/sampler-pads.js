@@ -23,6 +23,16 @@
 //   mode, reverse, gate, level}], p.hit(i, vel?) (plays pad i now; recorded when recording), p.release(i), p.select(i), p.slice(kind),
 //   p.setSlice(i, startSec), p.render(i) -> AudioBuffer (what pad i plays), p.play(), p.stop(), p.record(on), p.pattern [{step, pad, vel}],
 //   p.tempo, p.bars, p.quant, p.playing, p.recording, p.active (voices sounding).
+// Multi-sample mode (the top menu, or data-kind="multi" to start in it; data-show then doesn't matter): one instrument from many
+//   recordings. Each recording is a zone: root note, lowest / highest key, softest / hardest velocity (a velocity layer) and a take
+//   number (round robin: takes of one zone alternate). A note plays the zone it falls in, pitched by (note - root). The key map draws
+//   keys across, velocity up; click it to play. "Load recordings…" takes several files and reads note, layer and take from their names
+//   (Piano_C#3_soft_rr2.wav, pluck-60-v100-2.wav), then Spread zones fills the keyboard between the roots. Velocity layers / Round robin /
+//   One sample only switch each idea off to hear why it's there. Demo: a plucked string synthesised here (C2 C3 C4 C5 × soft, hard × 3
+//   takes), its body resonances fixed in Hz so one sample stretched far sounds wrong. Keys: a w s e d f t g y h u j k o l p ; = C4..E5
+//   (z / x octave), MIDI any note with velocity. API: p.setMode("multi"|"chop"), p.mode, p.zones [{buf, name, root, lo, hi, vlo, vhi, layer,
+//   rr, tune, level}], p.noteOn(n, vel) -> {zone, takes, take, shift}, p.noteOff(n), p.pick(n, vel), p.autoMap(), p.loadZones(files),
+//   p.layersOn, p.rrOn, p.oneOnly. SamplerPads.parseName(fileName) -> {root, layer, rr}.
 // Output through one gain registered with window.AudioTap ("Sampler pads").
 (function () {
   "use strict";
@@ -47,11 +57,13 @@
       el.classList.add("sp-made"); el.tabIndex = 0; el.innerHTML = "";
       this.ui(); all.push(this);
       A().configSources(el); this.fillLib(); A().onSources(() => this.fillLib());
-      if (el.dataset.loop) this.load(el.dataset.loop);
+      this.mode = "chop"; if (el.dataset.kind === "multi") this.setMode("multi"); else if (el.dataset.loop) this.load(el.dataset.loop);
+      new ResizeObserver(() => this.mode === "multi" && this.drawMap()).observe(el);
     }
     get active() { return this.voices.size; }
     status(s) { this.statusEl.textContent = s; }
     async load(src) {
+      if (this.mode === "multi") this.setMode("chop");
       this.status("Loading…");
       try {
         const t = await A().getBuffer(src); if (!t) return null;
@@ -146,7 +158,9 @@
     async midi() {
       if (!navigator.requestMIDIAccess) { this.status("This browser has no Web MIDI (try Chrome)."); return; }
       try { const m = await navigator.requestMIDIAccess(); let n = 0;
-        m.inputs.forEach(inp => { n++; inp.onmidimessage = e => { const [st, note, vel] = e.data, i = note - 36; if (i < 0 || i > 15) return;
+        m.inputs.forEach(inp => { n++; inp.onmidimessage = e => { const [st, note, vel] = e.data, i = note - 36;
+          if (this.mode === "multi") { if ((st & 0xf0) === 0x90 && vel) this.noteOn(note, vel); else if ((st & 0xf0) === 0x80 || (st & 0xf0) === 0x90) this.noteOff(note); return; }
+          if (i < 0 || i > 15) return;
           if ((st & 0xf0) === 0x90 && vel) this.hit(i, vel / 127); else if ((st & 0xf0) === 0x80 || ((st & 0xf0) === 0x90 && !vel)) this.release(i); }; });
         this.status(n ? "MIDI: " + n + " input" + (n > 1 ? "s" : "") + " (notes 36–51 play the pads)" : "No MIDI inputs found.");
       } catch (e) { this.status("MIDI refused."); }
@@ -162,7 +176,10 @@
       const whole = btn("▶ Whole loop", "Play the loop as it is"); whole.onclick = () => this.playWhole();
       const mid = btn("Connect MIDI", "Play the pads from a MIDI controller (notes 36–51)"); mid.onclick = () => this.midi();
       const lib = h("span", "sp-libwrap"); lib.append(this.libSel, file); if (!this.show("library")) lib.hidden = true;
-      top.append(this.titleEl, lib, this.sliceSel, whole, mid, this.statusEl); el.append(top);
+      this.modeSel = h("select", "sp-sel"); for (const [v, t] of [["chop", "Chop a loop"], ["multi", "Multi-sample"]]) { const o = h("option", "", t); o.value = v; this.modeSel.append(o); }
+      this.modeSel.setAttribute("aria-label", "Sampler mode"); this.modeSel.onchange = () => this.setMode(this.modeSel.value);
+      const chopTop = h("span", "sp-libwrap"); chopTop.append(this.titleEl, lib, this.sliceSel, whole);
+      top.append(this.modeSel, chopTop, mid, this.statusEl); el.append(top);
       this.wave = h("canvas", "sp-wave"); this.wave.height = 80; if (!this.show("wave")) this.wave.hidden = true; el.append(this.wave); this.waveDrag();
       const mid2 = h("div", "sp-mid");
       this.grid = h("div", "sp-grid"); this.padEls = [];
@@ -189,9 +206,12 @@
       bar.append(this.playBtn, stopB, this.recBtn, undo, clear, lab("Tempo", this.tempoIn), lab("Bars", barsSel), lab("Quantize", qSel), lab("Click", ck));
       this.patC = h("canvas", "sp-patc"); this.patC.height = 54;
       pat.append(bar, this.patC); el.append(pat);
+      el.append(this.multiUi());
+      this.chopEls = [chopTop, this.wave, mid2, pat]; this.wave._showOff = !this.show("wave"); pat._showOff = !this.show("pattern");
       el.addEventListener("keydown", e => { if (e.target.tagName === "INPUT" || e.target.tagName === "SELECT" || e.metaKey || e.ctrlKey || e.altKey || e.repeat) return;
+        if (this.mode === "multi") { if (this.multiKey(e, true)) e.preventDefault(); return; }
         const i = KEYS.indexOf(e.key.toLowerCase()); if (i >= 0) { e.preventDefault(); this.hit(i); } });
-      el.addEventListener("keyup", e => { const i = KEYS.indexOf(e.key.toLowerCase()); if (i >= 0) this.release(i); });
+      el.addEventListener("keyup", e => { if (this.mode === "multi") { this.multiKey(e, false); return; } const i = KEYS.indexOf(e.key.toLowerCase()); if (i >= 0) this.release(i); });
       this.drawEdit(); this.drawPattern();
     }
     playWhole() { if (!this.buffer) return; const c = A().ctx(); if (this.whole) { try { this.whole.stop(); } catch (e) {} this.whole = null; return; }
@@ -237,6 +257,191 @@
       if (this.playing && this.posStep >= 0) { g.fillStyle = "#e03a2a"; g.fillRect(this.posStep / total * w, 0, 2, H); }
     }
   }
+  // ---- Multi-sample mode: one instrument from many recordings (key zones x velocity layers x round-robin takes) ----
+  const NOTE = ["C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"], nn = m => NOTE[((m % 12) + 12) % 12] + (Math.floor(m / 12) - 1);
+  const PKEYS = ["a", "w", "s", "e", "d", "f", "t", "g", "y", "h", "u", "j", "k", "o", "l", "p", ";"];   // C up to E, a piano row
+  const LO = 24, HI = 96;   // the key map shows C1..C7
+  // The demo instrument: a plucked, wooden-bodied string synthesised here. Its body resonances sit at fixed frequencies (about
+  // 600 Hz and 2.6 kHz) whatever note is played, as a real instrument's do, so one recording pitched far away moves them (the
+  // "chipmunk" sound). Hard notes are brighter with a knock; each take is slightly different (tuning, phases, knock).
+  function synthNote(c, midi, hard, seed) {
+    let s = seed * 9301 + midi * 49297 + (hard ? 233 : 0); const rnd = () => (s = (s * 16807) % 2147483647) / 2147483647;
+    const sr = c.sampleRate, N = Math.floor(sr * 2.2), out = new Float32Array(N), f0 = 440 * Math.pow(2, (midi - 69) / 12) * (1 + (rnd() - 0.5) * 0.004);
+    const body = f => 1 + 2.4 * Math.exp(-Math.pow(Math.log2(f / 600), 2) / 0.15) + 1.6 * Math.exp(-Math.pow(Math.log2(f / 2600), 2) / 0.1);
+    for (let k = 1; k <= 60; k++) {
+      const fk = k * f0 * Math.sqrt(1 + 0.0001 * k * k); if (fk > Math.min(sr / 2.2, 11000)) break;
+      const amp = body(fk) / Math.pow(k, hard ? 0.85 : 1.7) * (0.8 + 0.4 * rnd()), dec = 1.1 + fk / (hard ? 1100 : 650);
+      const r = Math.exp(-dec / sr), w = 2 * Math.PI * fk / sr, cr = r * Math.cos(w), ci = r * Math.sin(w), ph = rnd() * 6.283;
+      let re = Math.cos(ph) * amp, im = Math.sin(ph) * amp;
+      for (let n = 0; n < N; n++) { out[n] += im; const t = re * cr - im * ci; im = re * ci + im * cr; re = t; if ((n & 1023) === 0 && Math.abs(re) + Math.abs(im) < 1e-5) break; }
+    }
+    const att = Math.floor(sr * (hard ? 0.001 : 0.006)); for (let n = 0; n < att; n++) out[n] *= n / att;
+    if (hard) { let y = 0; const kn = Math.floor(sr * 0.02), a = 0.25; for (let n = 0; n < kn; n++) { y += a * ((rnd() * 2 - 1) - y); out[n] += y * 3 * (1 - n / kn) * (0.7 + 0.6 * rnd()); } }
+    let pk = 0; for (let n = 0; n < N; n++) pk = Math.max(pk, Math.abs(out[n]));
+    const g = (hard ? 0.9 : 0.45) / (pk || 1), fade = Math.floor(sr * 0.05); for (let n = 0; n < N; n++) out[n] *= g * (n > N - fade ? (N - n) / fade : 1);
+    const b = c.createBuffer(1, N, sr); b.copyToChannel(out, 0); return b;
+  }
+  // A file name like "Piano_C#3_soft_rr2.wav" or "pluck-60-v100-2.wav": root note, velocity layer, take.
+  function parseName(name) {
+    const base = name.replace(/\.[a-z0-9]+$/i, ""), r = { root: null, layer: null, rr: 1 };
+    const m = base.match(/(?:^|[^A-Za-z])([A-Ga-g])([#b]?)(-?\d)(?![0-9])/);
+    if (m) r.root = (NOTE.indexOf(m[1].toUpperCase()) + (m[2] === "#" ? 1 : m[2] === "b" ? -1 : 0)) + (+m[3] + 1) * 12;
+    else { const d = base.match(/(?:^|[^0-9v])(\d{2,3})(?![0-9])/); if (d && +d[1] < 128) r.root = +d[1]; }
+    const v = base.match(/(?:^|[^A-Za-z])(ppp|pp|p|mp|mf|ff|fff|f|soft|med|medium|hard|loud)(?![A-Za-z])/i) || base.match(/v(?:el)?(\d{1,3})/i);
+    if (v) { const w = v[1].toLowerCase(), order = { ppp: 10, pp: 25, p: 40, soft: 40, mp: 55, med: 64, medium: 64, mf: 75, f: 95, loud: 110, hard: 110, ff: 112, fff: 125 }; r.layer = order[w] != null ? order[w] : +w; }
+    const t = base.match(/(?:rr|take|t)[ _-]?(\d+)/i); if (t) r.rr = +t[1];
+    return r;
+  }
+  const MULTI = {
+    multiInit() {
+      if (this.zones) return; this.zones = []; this.rrOn = true; this.layersOn = true; this.oneOnly = false; this.mVel = 100; this.mOct = 0;
+      this.rrCount = {}; this.mHeld = {}; this.zSel = 0; this.lastPick = null;
+    },
+    setMode(m) {
+      this.mode = m === "multi" ? "multi" : "chop"; if (this.modeSel) this.modeSel.value = this.mode; const multi = this.mode === "multi";
+      for (const e of this.chopEls) e.hidden = multi || e._showOff; this.mPanel.hidden = !multi;
+      if (multi) { this.multiInit(); if (!this.zones.length) this.demoInstrument(); else this.drawMap(); }
+      else this.drawWave();
+    },
+    demoInstrument() {
+      this.status("Making the demo instrument…");
+      setTimeout(() => { const c = A().ctx(), z = [];
+        for (const [i, root] of [36, 48, 60, 72].entries()) for (const hard of [0, 1]) for (let rr = 1; rr <= 3; rr++)
+          z.push({ buf: synthNote(c, root, hard, rr), name: "Pluck " + nn(root) + (hard ? " hard" : " soft") + " take " + rr, root, lo: 0, hi: 127, vlo: 0, vhi: 127, layer: hard ? 110 : 40, rr, tune: 0, level: 1 });
+        this.zones = z; this.autoMap(); this.zSel = 0; this.mTitle.textContent = "Demo: plucked string, 4 notes × 2 layers × 3 takes = 24 recordings"; this.status(""); this.drawMap(); this.drawZone(); }, 10);
+    },
+    // Spread each root's zone halfway to its neighbours, and split velocity between the layers (by each zone's layer value).
+    autoMap() {
+      const roots = [...new Set(this.zones.map(z => z.root))].sort((a, b) => a - b);
+      roots.forEach((r, i) => { const lo = i ? Math.floor((roots[i - 1] + r) / 2) + 1 : 0, hi = i < roots.length - 1 ? Math.floor((r + roots[i + 1]) / 2) : 127;
+        const here = this.zones.filter(z => z.root === r), layers = [...new Set(here.map(z => z.layer))].sort((a, b) => a - b);
+        for (const z of here) { const j = layers.indexOf(z.layer); z.lo = lo; z.hi = hi;
+          z.vlo = j ? Math.floor((layers[j - 1] + layers[j]) / 2) + 1 : 0; z.vhi = j < layers.length - 1 ? Math.floor((layers[j] + layers[j + 1]) / 2) : 127; } });
+      this.rrCount = {};
+    },
+    // Which recording plays note n at velocity v (0..127): {zone, takes, take, shift}.
+    pick(n, v) {
+      let zs = this.zones; if (!zs.length) return null;
+      if (this.oneOnly) { const r = zs.reduce((b, z) => Math.abs(z.root - 60) < Math.abs(b.root - 60) ? z : b).root; zs = zs.filter(z => z.root === r); }
+      else zs = zs.filter(z => n >= z.lo && n <= z.hi);
+      if (!zs.length) return null;
+      if (!this.layersOn) { const top = Math.max(...zs.map(z => z.vhi)); zs = zs.filter(z => z.vhi === top); }
+      else { const at = zs.filter(z => v >= z.vlo && v <= z.vhi); if (at.length) zs = at; else return null; }
+      const takes = zs.slice().sort((a, b) => a.rr - b.rr), key = takes[0].root + ":" + takes[0].vlo;
+      let k = 0; if (this.rrOn && takes.length > 1) { k = (this.rrCount[key] || 0) % takes.length; this.rrCount[key] = k + 1; }
+      const z = takes[k]; return { zone: z, takes: takes.length, take: k + 1, shift: n - z.root + z.tune / 100 };
+    },
+    noteOn(n, vel = this.mVel) {
+      this.multiInit(); const c = A().ctx(), p = this.pick(n, vel); this.noteOff(n, true); this.lastNote = n; this.lastVel = vel;
+      if (!p) { this.lastPick = null; this.mInfo.textContent = nn(n) + " · velocity " + vel + " → no recording covers this"; this.drawMap(); return null; }
+      const s = c.createBufferSource(), g = c.createGain(), t = c.currentTime; s.buffer = p.zone.buf; s.playbackRate.value = Math.pow(2, p.shift / 12);
+      const v = vel / 127, gain = p.zone.level * (this.layersOn ? 0.45 + 0.55 * v : Math.pow(v, 1.6));
+      g.gain.setValueAtTime(gain, t); s.connect(g); g.connect(out()); s.start(t);
+      const voice = { s, g }; this.voices.add(voice); s.onended = () => this.voices.delete(voice); this.mHeld[n] = voice;
+      this.lastPick = p; this.zSel = this.zones.indexOf(p.zone);
+      const sh = Math.round(p.shift * 10) / 10;
+      this.mInfo.textContent = nn(n) + " · velocity " + vel + " → " + p.zone.name + (p.takes > 1 ? " (take " + p.take + " of " + p.takes + ")" : "") +
+        " · " + (sh ? (sh > 0 ? "+" : "") + sh + " semitones from its note" : "its own note");
+      this.drawMap(); this.drawZone(); return p;
+    },
+    noteOff(n, now) {
+      const v = this.mHeld && this.mHeld[n]; if (!v) return; const t = A().ctx().currentTime;
+      v.g.gain.cancelScheduledValues(t); v.g.gain.setTargetAtTime(0, t, now ? 0.01 : 0.12); try { v.s.stop(t + (now ? 0.06 : 0.8)); } catch (e) {} this.mHeld[n] = null;
+    },
+    async loadZones(files) {
+      this.multiInit(); const add = [];
+      for (const f of files) { try { const t = await A().getBuffer(f), r = parseName(f.name || "");
+        add.push({ buf: t.buffer, name: (f.name || "sample").replace(/\.[a-z0-9]+$/i, ""), root: r.root == null ? 60 : r.root, layer: r.layer == null ? 100 : r.layer, rr: r.rr, tune: 0, level: 1, lo: 0, hi: 127, vlo: 0, vhi: 127 }); }
+        catch (e) { this.status("Could not load " + f.name); } }
+      if (!add.length) return;
+      if (this.zones.length && this.zones[0].name.startsWith("Pluck ") && this.mTitle.textContent.startsWith("Demo")) this.zones = [];
+      this.zones.push(...add); this.autoMap(); this.mTitle.textContent = this.zones.length + " recordings (yours)"; this.zSel = this.zones.length - add.length; this.drawMap(); this.drawZone();
+      const guessed = add.filter((z, i) => parseName(files[i].name || "").root == null).length;
+      this.status(guessed ? guessed + " file" + (guessed > 1 ? "s" : "") + " had no note in the name: set to C4, change Root below." : "");
+    },
+    multiUi() {
+      const p = h("div", "sp-multi"); p.hidden = true; this.mPanel = p;
+      const bar = h("div", "sp-patbar"); this.mTitle = h("span", "sp-title", "");
+      const file = h("input"); file.type = "file"; file.accept = "audio/*"; file.multiple = true; file.hidden = true; file.onchange = () => { this.loadZones([...file.files]); file.value = ""; };
+      const load = btn("Load recordings…", "Choose several files: a note name in each (C3, F#4 or a MIDI number), optionally soft / hard / pp..ff / v100, and rr1 / take2");
+      load.onclick = () => file.click();
+      const demo = btn("Demo instrument", "Back to the built-in plucked string"); demo.onclick = () => this.demoInstrument();
+      const auto = btn("Spread zones", "Each note's zone halfway to the next, velocity split between the layers"); auto.onclick = () => { this.autoMap(); this.drawMap(); this.drawZone(); };
+      const lab = (t, inp, title) => { const l = h("label", "sp-lbl"); if (title) l.title = title; l.append(inp, " " + t); return l; };
+      const ck = (k, title) => { const c = h("input"); c.type = "checkbox"; c.checked = this[k]; c.onchange = () => { this[k] = c.checked; this.rrCount = {}; this.drawMap(); }; c.dataset.k = k; return c; };
+      this.multiInit();
+      bar.append(this.mTitle, load, file, demo, auto,
+        lab("Velocity layers", ck("layersOn"), "Off: always the loudest layer, just turned down"),
+        lab("Round robin", ck("rrOn"), "Off: always take 1 (the machine-gun sound on repeated notes)"),
+        lab("One sample only", ck("oneOnly"), "Play every key from the recording nearest middle C, pitched up and down"));
+      const vel = h("input"); vel.type = "range"; vel.min = 1; vel.max = 127; vel.value = this.mVel; const vv = h("span", "sp-val", String(this.mVel));
+      vel.oninput = () => { this.mVel = +vel.value; vv.textContent = vel.value; this.drawMap(); }; vel.setAttribute("aria-label", "Velocity for keys and clicks");
+      const vl = h("label", "sp-lbl"); vl.append("Velocity ", vel, vv); bar.append(vl);
+      this.mMap = h("canvas", "sp-map"); this.mMap.height = 150; this.mMap.setAttribute("aria-label", "Key map: keys across, velocity up; click to play");
+      this.mInfo = h("div", "sp-hint", "Keys A W S E D … play C to E (Z / X: octave down / up), or click the map: across is the key, up is how hard.");
+      this.mZone = h("div", "sp-edit sp-zone");
+      p.append(bar, this.mMap, this.mInfo, this.mZone); this.mapEvents(); return p;
+    },
+    mapAt(e) { const c = this.mMap, r = c.getBoundingClientRect(), x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height, kb = 22 / c.height;
+      return { n: Math.max(LO, Math.min(HI, Math.floor(LO + x * (HI - LO + 1)))), v: y > 1 - kb ? this.mVel : Math.max(1, Math.min(127, Math.round((1 - kb - y) / (1 - kb) * 127))) }; },
+    mapEvents() {
+      const c = this.mMap; let down = null;
+      c.addEventListener("pointerdown", e => { e.preventDefault(); this.el.focus({ preventScroll: true }); const a = this.mapAt(e); down = a.n; c.setPointerCapture(e.pointerId); this.noteOn(a.n, a.v); });
+      c.addEventListener("pointermove", e => { if (down == null) return; const a = this.mapAt(e); if (a.n !== down) { this.noteOff(down); down = a.n; this.noteOn(a.n, a.v); } });
+      const up = () => { if (down != null) this.noteOff(down); down = null; }; c.addEventListener("pointerup", up); c.addEventListener("pointercancel", up);
+    },
+    drawMap() {
+      const c = this.mMap; if (!c || this.mPanel.hidden) return; const w = c.clientWidth || 600; if (c.width !== w) c.width = w;
+      const g = c.getContext("2d"), H = c.height, kb = 22, mh = H - kb, nk = HI - LO + 1, kw = w / nk, X = n => (n - LO) * kw, Y = v => mh - v / 127 * mh;
+      g.fillStyle = "#1e1b18"; g.fillRect(0, 0, w, H);
+      const roots = [...new Set(this.zones.map(z => z.root))].sort((a, b) => a - b), hue = r => (roots.indexOf(r) * 67 + 20) % 360;
+      const sel = this.zones[this.zSel], lit = this.lastPick && this.lastPick.zone;
+      const show = this.oneOnly ? [] : this.zones;
+      for (const z of show) { if (z.rr !== Math.min(...this.zones.filter(q => q.root === z.root && q.vlo === z.vlo).map(q => q.rr))) continue;
+        const lo = Math.max(z.lo, LO), hi = Math.min(z.hi, HI); if (hi < lo) continue;
+        const vlo = this.layersOn ? z.vlo : 0, vhi = this.layersOn ? z.vhi : 127;
+        const on = lit && lit.root === z.root && lit.vlo === z.vlo;
+        g.fillStyle = "hsla(" + hue(z.root) + ",55%," + (on ? "58%,.85" : "45%,.45") + ")"; g.fillRect(X(lo) + 1, Y(vhi) + 1, (hi - lo + 1) * kw - 2, (vhi - vlo + 1) / 127 * mh - 2);
+        if (sel && sel.root === z.root && sel.vlo === z.vlo) { g.strokeStyle = "#e0b020"; g.lineWidth = 2; g.strokeRect(X(lo) + 1, Y(vhi) + 1, (hi - lo + 1) * kw - 2, (vhi - vlo + 1) / 127 * mh - 2); }
+        const n = this.zones.filter(q => q.root === z.root && q.vlo === z.vlo).length;
+        g.fillStyle = "#fff"; g.font = "10px monospace"; if ((hi - lo + 1) * kw > 40) g.fillText(nn(z.root) + (n > 1 ? " ×" + n : ""), X(lo) + 4, Y(vhi) + 12); }
+      if (this.oneOnly && this.zones.length) { const r = this.zones.reduce((b, z) => Math.abs(z.root - 60) < Math.abs(b.root - 60) ? z : b).root;
+        g.fillStyle = "hsla(" + hue(r) + ",55%,45%,.45)"; g.fillRect(0, 0, w, mh); g.fillStyle = "#fff"; g.font = "10px monospace"; g.fillText("every key from " + nn(r), 6, 12); }
+      for (const r of roots) if (r >= LO && r <= HI) { g.fillStyle = "#fff"; g.fillRect(X(r) + kw / 2 - 1, mh - 6, 2, 6); }
+      g.strokeStyle = "rgba(255,255,255,.35)"; g.setLineDash([3, 3]); g.beginPath(); g.moveTo(0, Y(this.mVel)); g.lineTo(w, Y(this.mVel)); g.stroke(); g.setLineDash([]);
+      for (let n = LO; n <= HI; n++) { const blk = [1, 3, 6, 8, 10].includes(n % 12); g.fillStyle = n === this.lastNote && this.mHeld[n] ? "#d0703a" : blk ? "#222" : "#eee";
+        g.fillRect(X(n) + 0.5, mh + (blk ? 0 : 2), kw - 1, blk ? kb - 8 : kb - 2); if (n % 12 === 0 && kw * 12 > 60) { g.fillStyle = "#666"; g.font = "9px monospace"; g.fillText("C" + (n / 12 - 1), X(n) + 1, H - 2); } }
+      if (this.lastPick && this.lastNote != null) { g.fillStyle = "#e03a2a"; g.beginPath(); g.arc(X(this.lastNote) + kw / 2, Y(this.lastVel), 4, 0, 7); g.fill(); }
+    },
+    drawZone() {
+      const e = this.mZone, z = this.zones[this.zSel]; e.innerHTML = ""; if (!z) return;
+      const pick = h("select"); this.zones.forEach((q, i) => { const o = h("option", "", q.name); o.value = i; pick.append(o); }); pick.value = this.zSel;
+      pick.onchange = () => { this.zSel = +pick.value; this.drawMap(); this.drawZone(); }; pick.setAttribute("aria-label", "Recording");
+      const t = h("div", "sp-edtitle"); t.append("Recording ", pick); e.append(t);
+      const row = (label, inp, val) => { const l = h("label", "sp-row"); l.append(h("span", "", label), inp); if (val) l.append(val); e.append(l); };
+      const num = (k, min, max, fmt, all) => { const r = h("input"); r.type = "range"; r.min = min; r.max = max; r.step = 1; r.value = z[k]; const v = h("span", "sp-val", fmt(z[k]));
+        r.oninput = () => { const old = z[k]; for (const q of all ? this.zones.filter(q => q.root === z.root && q.vlo === z.vlo && q.layer === z.layer) : [z]) q[k] = +r.value;
+          if (k === "root" && all) for (const q of this.zones) if (q.root === old) q.root = +r.value; v.textContent = fmt(+r.value); this.drawMap(); }; return [r, v]; };
+      row("Root note", ...num("root", 0, 127, x => nn(x) + " (" + x + ")", true));
+      row("Lowest key", ...num("lo", 0, 127, nn, true)); row("Highest key", ...num("hi", 0, 127, nn, true));
+      row("Softest", ...num("vlo", 0, 127, String, true)); row("Hardest", ...num("vhi", 0, 127, String, true));
+      row("Take", ...num("rr", 1, 8, String));
+      row("Fine tune", ...num("tune", -50, 50, x => (x > 0 ? "+" : "") + x + " ct"));
+      const lv = h("input"); lv.type = "range"; lv.min = 0; lv.max = 1.5; lv.step = 0.05; lv.value = z.level; const lvv = h("span", "sp-val", Math.round(z.level * 100) + "%");
+      lv.oninput = () => { z.level = +lv.value; lvv.textContent = Math.round(z.level * 100) + "%"; }; row("Level", lv, lvv);
+      const rm = btn("Remove", "Take this recording out"); rm.onclick = () => { this.zones.splice(this.zSel, 1); this.zSel = 0; this.rrCount = {}; this.drawMap(); this.drawZone(); };
+      const play = btn("▶ " + nn(z.root), "Play this recording at its own note"); play.onclick = () => { const c = A().ctx(), s = c.createBufferSource(); s.buffer = z.buf; const g = c.createGain(); g.gain.value = z.level; s.connect(g); g.connect(out()); s.start(); };
+      const r2 = h("div", "sp-row"); r2.append(play, rm); e.append(r2);
+      e.append(h("div", "sp-hint", "Key range, velocity range and root move every take of this note and layer together."));
+    },
+    multiKey(e, down) {
+      const k = e.key.toLowerCase();
+      if (down && (k === "z" || k === "x")) { this.mOct = Math.max(-3, Math.min(3, this.mOct + (k === "z" ? -1 : 1))); this.mInfo.textContent = "Keys start at C" + (4 + this.mOct); return true; }
+      const i = PKEYS.indexOf(k); if (i < 0) return false; const n = 60 + this.mOct * 12 + i;
+      if (down) this.noteOn(n); else this.noteOff(n); return true;
+    },
+  };
+  Object.assign(Pads.prototype, MULTI);
   function init(root) { (root || document).querySelectorAll(".sp-pads:not(.sp-made)").forEach(el => new Pads(el)); }
-  window.SamplerPads = { init, all, byId: id => all.find(p => p.id === id), KEYS };
+  window.SamplerPads = { init, all, byId: id => all.find(p => p.id === id), KEYS, parseName };
 })();

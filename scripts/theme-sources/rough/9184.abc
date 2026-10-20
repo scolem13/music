@@ -1,0 +1,11 @@
+X:9184
+%%from edm
+T:Etudes, Op. 10 - No. 10, in A-flat
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9184 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:Ab
+E2A2 a2B2 b2=B2 =b2c2 c'2d2 d'2=d2 | =d'2e2 e'2f2 f'2e2 e'2c2 c'2B2 b2c2 | c'2

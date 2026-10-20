@@ -1,0 +1,10 @@
+X:3538
+%%from edm
+T:Concerto Grosso, Op. 1, No. 2, 4th Movement
+C:Pietro Locatelli
+%%composer Locatelli|Pietro
+% EDM 3538 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+c16 | d16 | e12 g4 | f4 e4 d8 | c12 e4- | e4 d8 c4 | B4 G4 g8- | g8 _g8 | g4

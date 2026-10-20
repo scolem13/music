@@ -21,7 +21,7 @@ const srv = http.createServer((q, s) => {
   const ev = e => b.eval(e), U = p => "http://127.0.0.1:8528/lessons/" + p + ".html";
   const wait = async (expr, ms = 8000) => { const t = Date.now(); while (Date.now() - t < ms) { if (await ev(expr)) return true; await b.sleep(100); } return false; };
   await b.resize(1200, 900);
-  const pages = { "sampling-what": [1, 1], "sampling-chop": [1, 1], "sampling-pitch": [1, 1], "sampling-beat": [0, 2], "sampling-flip": [1, 2], "sampling-law": [0, 0],
+  const pages = { "sampling-what": [1, 1], "sampling-chop": [1, 1], "sampling-pitch": [1, 2], "sampling-beat": [0, 2], "sampling-flip": [1, 2], "sampling-law": [0, 0],
     "dj-gear": [1, 0], "dj-beatmatch": [1, 0], "dj-phrasing": [1, 0], "dj-eq": [1, 0], "dj-scratch": [2, 0], "dj-harmonic": [1, 0], "dj-set": [1, 0] };
   for (const [p, [nt, np]] of Object.entries(pages)) {
     await b.goto(U(p)); await b.sleep(200);
@@ -87,6 +87,23 @@ const srv = http.createServer((q, s) => {
   check("pattern: record two hits (quantized), Undo removes the pass, stop", pat === "2 true 0 false", pat);
   // phone width
   await b.resize(390, 800);
+  // multi-sample mode: zones, velocity layers, round robin, one sample only, file names
+  await b.goto(U("sampling-pitch"));
+  check("multi: demo instrument has 24 recordings", await wait(`SamplerPads.byId("sp-multi").zones.length === 24`));
+  const mz = await ev(`(() => { const p = SamplerPads.byId("sp-multi"), r = [];
+    const a = p.noteOn(62, 30), b2 = p.noteOn(62, 120); r.push(a.zone.root, a.zone.layer < b2.zone.layer, a.shift);
+    const t = [1, 2, 3, 4].map(() => p.noteOn(62, 120).take); r.push(t.join(""));
+    p.rrOn = false; r.push([1, 2, 3].map(() => p.noteOn(62, 120).take).join("")); p.rrOn = true;
+    p.layersOn = false; r.push(p.noteOn(62, 20).zone.layer); p.layersOn = true;
+    p.oneOnly = true; r.push(p.noteOn(40, 100).zone.root); p.oneOnly = false; p.noteOff(62); p.noteOff(40);
+    p.setMode("chop"); r.push(p.mPanel.hidden, !p.wave.hidden); p.setMode("multi");
+    return r; })()`);
+  check("multi: D4 from the C4 zone, soft and hard layers, +2 st", mz[0] === 60 && mz[1] === true && mz[2] === 2, JSON.stringify(mz.slice(0, 3)));
+  check("multi: round robin cycles takes, off repeats take 1", /^(123|231|312)/.test(mz[3]) && mz[4] === "111", mz[3] + " / " + mz[4]);
+  check("multi: layers off uses the loud layer; one sample only plays E2 from C4", mz[5] === 110 && mz[6] === 60, mz[5] + " " + mz[6]);
+  check("multi: mode menu swaps the panels", mz[7] === true && mz[8] === true);
+  const pn = await ev(`JSON.stringify([SamplerPads.parseName("Piano_C#3_soft_rr2.wav"), SamplerPads.parseName("pluck-60-v100-2.wav"), SamplerPads.parseName("Bass Eb1 ff.aif")])`);
+  check("multi: note, layer and take read from file names", pn === JSON.stringify([{ root: 49, layer: 40, rr: 2 }, { root: 60, layer: 100, rr: 1 }, { root: 27, layer: 112, rr: 1 }]), pn);
   for (const p of ["dj-eq", "sampling-beat"]) { await b.goto(U(p)); await b.sleep(400);
     check(p + ": no sideways page scroll at phone width", await ev(`document.documentElement.scrollWidth <= 390`), await ev(`document.documentElement.scrollWidth`)); }
   await b.close(); srv.close(); console.log(fails ? fails + " failed" : "all passed"); process.exit(fails ? 1 : 0);

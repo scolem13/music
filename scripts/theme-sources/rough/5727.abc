@@ -1,0 +1,10 @@
+X:5727
+%%from edm
+T:Sonata in G, 1st Movement
+C:Giovanni Sammartini
+%%composer Sammartini|Giovanni
+% EDM 5727 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+d2g2 g4 | fe z/2 e3/2 d4 | d2e2 e4 | dc z/2 c3/2 B4 | B2c2 c4 | BAA2 G4 |

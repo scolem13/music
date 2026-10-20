@@ -1,0 +1,10 @@
+X:503
+%%from edm
+T:Sonata No. 1, in G, Piano, 1st Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0503 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+G4 B<Ac<B | d<cB<A cBdg | G4 B<Ac<B | d<cB<A cBdg | f2

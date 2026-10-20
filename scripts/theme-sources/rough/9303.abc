@@ -1,0 +1,10 @@
+X:9303
+%%from edm
+T:Scherzo in B minor, Op. 20, 2nd Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9303 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:B
+d2f'2 d2f'2 d4 | e2f'2 e2f'2 d4 | c2f'2 c2f'2 e4 | g2f'2 g2f'2 f4 |

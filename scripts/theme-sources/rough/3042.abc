@@ -1,0 +1,10 @@
+X:3042
+%%from edm
+T:Suite en Parties, Op. 91, 4th Movement, Farandole
+C:Vincent D'Indy
+%%composer D'Indy|Vincent
+% EDM 3042 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:7/8
+L:1/16
+K:A
+A4<e4 f2e2f2 | e6 d4 A2B2- | B2e2 c4 B2A2 z2 | A4<e4 g2f2e2 | e6 d4 A2

@@ -1,0 +1,10 @@
+X:3442
+%%from edm
+T:Hungarian Rhapsody No. 1 in E, 3rd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3442 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+B,2E2 z B,C2 | D2E2F2G2 | A2B2 z/2 B/2^AB2 | z2 b2 z/2 b/2^ab2 |

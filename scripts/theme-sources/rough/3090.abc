@@ -1,0 +1,10 @@
+X:3090
+%%from edm
+T:Concerto in E-flat, 3rd Movement, 1st Theme
+C:John Ireland
+%%composer Ireland|John
+% EDM 3090 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+EFAG B2B2 | z/2 B3/2B2 e2_dc | B z FE B2B2 |

@@ -1,0 +1,13 @@
+X:1312
+%%from mtd
+T:Slavonic Dances, Op. 72, No. 6, 1st Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2976, Barlow & Morgenstern D388, EDM 1312 (Musical Theme Dataset, CC BY 4.0)
+N:Moderato, quasi minuetto [Polonaise]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=76
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b2 (3fdc Bc | d>f f2 d z | f2 (3dAG FG | Az/c/ c2 G z |

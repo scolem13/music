@@ -1,0 +1,10 @@
+X:4234
+%%from edm
+T:II Re Pastore, Overture, K 208, 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4234 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+B3B B4 c2B2A2B2 | c2A4<d4 B2 G4 | B2<G2 ^F2<E2 c2<A2 G2<F2 | e2<c2 B2G2 c2A2 d4 |

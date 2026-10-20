@@ -1,0 +1,11 @@
+X:7343
+%%from edm
+T:Variations on a Theme of Corelli, (Arr. by Kreisler)
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7343 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+c2f2 c2c/2d/2c/2d/2 c/2d/2c/2d/2 z/2 g3/2 c2c/2d/2c/2d/2 | c/2d/2c/2d/2 z/2 a3/2 fgag fa g6 | c2a2 fgaf edg2

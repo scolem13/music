@@ -1,0 +1,10 @@
+X:2431
+%%from edm
+T:Concerto in E-flat, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2431 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g8 f8 | e2 z2 B4 e4 _d4 | c2 z2 f2 z2 e2 z2 d2 z2 | e2

@@ -1,0 +1,10 @@
+X:6630
+%%from edm
+T:Symphony No. 2, in D, Op. 43, 4th Movement - 3rd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6630 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:D
+d8 e12 d2c2 | B16 B8 | z24 | A8 B12 A2^G2 | F24 |

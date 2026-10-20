@@ -1,0 +1,10 @@
+X:1518
+%%from edm
+T:Concerto in D, 2nd Movement - 2nd Theme
+C:Manuel de Falla
+%%composer Falla|Manuel de
+% EDM 1518 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 c4 d4 | f4 e2d2 c2e2 | d2c2 f4 e2d2 | g2c2a2f2d'2g2 | e'4

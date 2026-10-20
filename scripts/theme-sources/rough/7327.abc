@@ -1,0 +1,10 @@
+X:7327
+%%from edm
+T:Sonatas, Op. 1, in E minor, 1st Movement
+C:Giuseppe Tartini
+%%composer Tartini|Giuseppe
+% EDM 7327 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+e'4 b4 z2 g'2 f'2e'2 | ^d'4 b4 z2 c'2 b2a2 | g4 e4 z2 b2 e'2d'2 | c'4 b6

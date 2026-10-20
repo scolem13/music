@@ -1,0 +1,11 @@
+X:5921
+%%from edm
+T:Octet in F, Op. 166, 5th Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5921 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+c3d d6 c2 | B2d2 c4 A2 z2 | f3g g6 f2 | g2a2 a4 g2

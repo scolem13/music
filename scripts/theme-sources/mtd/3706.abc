@@ -1,0 +1,12 @@
+X:3706
+T:Symphony No. 9, in D, 2nd Movement - 3rd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5358, Barlow & Morgenstern M98, EDM 3706 (Musical Theme Dataset, CC BY 4.0)
+N:Im Tempo eines gemächlichen Ländlers. Etwas täppisch und sehr derb.  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=157
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+e z e z d2 | c z c z B2 | Az/G/ AB =c z | f z f3 e | =c6 | f z f3 e | B |

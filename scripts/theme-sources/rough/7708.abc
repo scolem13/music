@@ -1,0 +1,10 @@
+X:7708
+%%from edm
+T:The Wasps, 1st Movement - Overture, 3rd Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7708 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Eb
+e4 f4 e8 B8 | c4 e8<B8 B4 | e12 e4 f4 a4 | b8 b12 b4 | c'4 b4 g8 f4 e4 | f4 g4 c8

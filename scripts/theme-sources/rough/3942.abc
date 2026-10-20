@@ -1,0 +1,10 @@
+X:3942
+%%from edm
+T:Symphony No. 4, in A, Op. 90, 3rd Movement - 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3942 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+F2FF F8 | G4 F8 | G4 F3G A2 z ^A | B2 z c d2 z e f2 z g | a2 z ^a b8- | b4

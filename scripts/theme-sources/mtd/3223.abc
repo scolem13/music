@@ -1,0 +1,12 @@
+X:3223
+T:Masquerade, Suite for Orchestra, 4th Movement - Romance
+C:Aram Khachaturian
+%%composer Khachaturian|Aram
+% MTD 4878, Barlow & Morgenstern K52, EDM 3223 (Musical Theme Dataset, CC BY 4.0)
+N:Romance  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=59
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+F2 | F3 =A Bcdf | e2 _G2 z2 G2 | B3 =A Bcdf | e4- e z |

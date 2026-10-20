@@ -1,0 +1,11 @@
+X:6344
+%%from edm
+T:Symphony No. 1 in B-flat, Op. 38, 1st Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6344 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Bb
+b2b3 bb2 | b2g2a2b2 | b2g2a2b2 | d'd' f'4 d'2 |

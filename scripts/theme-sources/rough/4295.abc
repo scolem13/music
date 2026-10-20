@@ -1,0 +1,10 @@
+X:4295
+%%from edm
+T:Quartet in D, K 575, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4295 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+d16 | f8 a8 | z/2 g12- g3-g/2 | z/2 e6- e3/2 z/2 c6- c3/2 | d2e2f2c2 d2A2B2F2 | A12

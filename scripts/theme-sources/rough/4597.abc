@@ -1,0 +1,13 @@
+X:4597
+%%from mtd
+T:Symphony No. 39, in E-flat, K 543, 4th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6246, Barlow & Morgenstern M971, EDM 4597 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=146
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+ga | bagf e2f2 | B6 cd | edcB AGAB | G6 |

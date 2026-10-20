@@ -1,0 +1,11 @@
+X:9049
+%%from edm
+T:Sicillana E Burlesca, Vn., Cello, Piano, 1st Movement - Siciliana
+C:Alfredo Casella
+%%composer Casella|Alfredo
+% EDM 9049 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:Ab
+c'2 z/2 b3- b/2a2 b4 c'2 z/2 a3- a/2_g2 b4 | d'2 z/2 b2- b/2ab2 d'2c'2 a2 z/2 a3/2 _g2 f6- | f2

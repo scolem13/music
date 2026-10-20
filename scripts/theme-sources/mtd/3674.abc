@@ -1,0 +1,12 @@
+X:3674
+T:Symphony No. 2, in C minor, 3rd Movement - 3rd Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5326, Barlow & Morgenstern M66, EDM 3674 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo. In ruhig fließender Bewegung  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=77
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+FG | A2c2AG | F4 E2 | D2F2ED | C4 A,B, | C2DCDE | F2>G2A2 |

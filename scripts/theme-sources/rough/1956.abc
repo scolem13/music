@@ -1,0 +1,12 @@
+X:1956
+%%from mtd
+T:Spanish Dance, No. 2, Piano, 2nd Theme
+C:Enrique Granados
+%%composer Granados|Enrique
+% MTD 3618, Barlow & Morgenstern G207, EDM 1956 (Musical Theme Dataset, CC BY 4.0)
+M:6/8
+L:1/8
+Q:1/4=67
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+e2 e- e{def}ed | B2{/A} B- B3 | Ac{/B}c- c{=Bcd}cB | G2 G- G3 |

@@ -1,0 +1,12 @@
+X:924
+T:Sonata No. 21, in C, Op. 53, Piano, "Waldstein", 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0918, Barlow & Morgenstern B800, EDM 0924 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=153
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z E, E,E, E,E,E,E, | E,E,E,E, E,E,^F,F, | G,3 B,/A,/ G, z z2 | [K:treble]{/^c'} d'2- d'/=c'/b/a/ g2 z2 |

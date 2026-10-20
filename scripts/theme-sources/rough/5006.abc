@@ -1,0 +1,10 @@
+X:5006
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 4th Movement - Minuet, 2nd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5006 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+E2e2 =E2 F4 G2 | A2c2 d2 e4 f2- | f2 a4 f4 e2- | e2f2 a2 e4 d2- | d2 B4 A4

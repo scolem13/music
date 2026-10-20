@@ -1,0 +1,12 @@
+X:811
+T:Sonata in F, Op. 17, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0805, Barlow & Morgenstern B688, EDM 0811 (Musical Theme Dataset, CC BY 4.0)
+N:Poco adagio, quasi andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=26
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+F>F | A2Fz/F/ A2Fz/F/ | =E2G2 |

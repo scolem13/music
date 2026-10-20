@@ -1,0 +1,10 @@
+X:9818
+%%from edm
+T:Rhapsody, Op. 11, No. 3, Piano, 2nd Theme
+C:Erno von Dohnanyi
+%%composer Dohnanyi|Erno von
+% EDM 9818 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+d4 e4 | e6- e/2^f3/2- | ^f z/2 g2-g/2 a2-a/2b3/2- | b z/2 c'2-c'/2 d'2-d'/2e'3/2- | e' z/2 ^f'2-f'/2 g'4 | ^f'2e'2 f'4 | d'4 e'4 |

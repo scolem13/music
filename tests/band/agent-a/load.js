@@ -1,6 +1,6 @@
 // loads the browser-style IIFE modules into this Node global
 const fs = require('fs'), vm = require('vm');
-const ROOT = '/Users/sean.coleman/Projects/everything-music-site/apps/shared/';
+const ROOT = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 function load(rel){ vm.runInThisContext(fs.readFileSync(ROOT + rel, 'utf8'), { filename: rel }); }
 ['tune-chart.js', 'band/harmony.js', 'band/bass.js', 'band/comp.js'].forEach(f => { if (fs.existsSync(ROOT + f)) load(f); });
 function mulberry32(a){ return function(){ a |= 0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }

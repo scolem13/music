@@ -1,0 +1,10 @@
+X:5840
+%%from edm
+T:Rapsodie Viennoise, Op. 53, No. 3, 2nd Theme
+C:Florent Schmitt
+%%composer Schmitt|Florent
+% EDM 5840 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+b4 z4 b4- | b4 e2f2 g2a2 | b2c'2 b8- | b4 e2f2 g2a2 | b4 g2a2 b2c'2 | d'2c'2b2c'2d'2e'2 | f'6 d'2 b2=c'2 |

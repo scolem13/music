@@ -1,0 +1,10 @@
+X:508
+%%from edm
+T:Sonata No. 3, in F minor, 3rd Movement
+C:Karl Philipp Emanuel Bach
+%%composer Bach|Karl Philipp Emanuel
+% EDM 0508 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Ab
+c4 BABc | c3e/2d/2 c2 z f | fe2<e2 ddd | z/2 d3/2 c4

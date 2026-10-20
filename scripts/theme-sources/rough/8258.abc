@@ -1,0 +1,10 @@
+X:8258
+%%from edm
+T:L'Arlesienne Suite No. 2, Orchestra - 2nd Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8258 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g8 a4 g4 | c'8 b4 g4 | e4 d2e4<f4 z/2 g3/2 | f12

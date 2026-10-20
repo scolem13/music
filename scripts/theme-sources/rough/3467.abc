@@ -1,0 +1,11 @@
+X:3467
+%%from edm
+T:Hungarian Rhapsody No. 12 in C-sharp minor, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3467 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:E
+g2 z2 g2 z2 | g6 fe | d2e2 f4 | g6 fe | d2e2 f4 |

@@ -1,0 +1,10 @@
+X:4236
+%%from edm
+T:Der Schauspieldirektor, Overture, K 486, 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4236 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+d'12 b2g2 | d12 g4 | g2^f2 f4 z4 f4 | z4 ^f4 a4 d4 |

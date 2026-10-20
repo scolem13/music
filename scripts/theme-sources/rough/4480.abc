@@ -1,0 +1,10 @@
+X:4480
+%%from edm
+T:Sonata in E-flat, K 481, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4480 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+G2B z B2e2 | d2f z a4 | g2e2c2f2 | e4 d2

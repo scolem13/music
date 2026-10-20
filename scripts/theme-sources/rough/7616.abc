@@ -1,0 +1,11 @@
+X:7616
+%%from edm
+T:Symphony No. 5, in E minor, Op. 64, 2nd Movement - 3rd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7616 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+c6 ^g2 b2a2g2f2 | e4 d/2e/2d/2 (3e/2d/2e/2 d/2e/2d/2 c8 | B4- Bcdf c8 | B4- Bcd^g c8 |

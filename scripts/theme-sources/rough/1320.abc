@@ -1,0 +1,13 @@
+X:1320
+%%from mtd
+T:Slavonic Dances, Op. 72, No. 8, 3rd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2984, Barlow & Morgenstern D396, EDM 1320 (Musical Theme Dataset, CC BY 4.0)
+N:Grazioso e lento, ma non troppo, quasi tempo di valse [Sousedská]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=66
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+c =B c | c/f/ f2- | f e d | d c B | A G A | A/d/ d2- | d c B | A |

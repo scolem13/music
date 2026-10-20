@@ -1,0 +1,10 @@
+X:3004
+%%from edm
+T:Entr'Acte, 2nd Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3004 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e4 a4 g2a2 | b4 z/2 a3-a/2 g4 | e4 a4 g2a2 | b4 z/2 a3-a/2 g4 | e4 a2b2 c'4- | c'2b4<a4 b2 | g4

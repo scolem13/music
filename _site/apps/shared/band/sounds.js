@@ -14,6 +14,8 @@
 //   bank.load(["bass","piano","kit"], onProgress)      -> Promise (idempotent; onProgress(done,total))
 //   bank.play("bass",  { midi:41, vel:0.8, dur:0.45 }, when, destNode)
 //   bank.play("kit",   { piece:"ride", vel:0.6 },      when, destNode)
+//   bank.play("clguitar", { midi:72, dur:1, bend:[[0,0],[0.4,2]] }, when)   // spec.bend: a pitch path, [seconds from the
+//       note's start, semitones from spec.midi] in order, a straight slide between points (a bend, scoop, fall, shake); sampled only
 //   bank.play("congas", { piece:"congaSlap", vel:0.6 }, when, destNode)   // the congas are a kit of their own (pieces: see the definition)
 //   bank.choke("cymbals", when, damp)                  // damp ringing cymbals (a stop-time hit; damp = seconds, slower for a hand)
 //   bank.stopAll()                                     // fade + cut everything sounding or scheduled
@@ -183,12 +185,13 @@
       // files, which are fetched once. A first guess, not yet listened to. The conga is the higher drum, the tumba the lower.
       congas: { family: "congas", gain: 1.3,
                 zones: soundfontKit(sf, { congaOpen:63, congaSlap:62, congaMute:62, congaHeel:62, congaToe:62, congaBass:64,
-                                          tumbaOpen:64, tumbaMute:64, tumbaBass:64 }),
+                                          tumbaOpen:64, tumbaMute:64, tumbaBass:64, bongoHi:60, bongoLo:61 }),
                 // Each drum has one head. A hand that lands and stays (heel, toe, slap, muted, bass) stops the open tone
                 // that was ringing on that drum; an open tone struck again takes over from the last. The other drum rings on.
                 pieces: { congaOpen:{ gain:0.95, group:"conga", chokes:"conga", damp:0.03 }, congaSlap:{ gain:1.0, group:"conga", chokes:"conga" }, congaMute:{ gain:0.60, group:"conga", chokes:"conga" },
                           congaHeel:{ gain:0.30, rate:0.90, group:"conga", chokes:"conga" }, congaToe:{ gain:0.40, rate:1.12, group:"conga", chokes:"conga" }, congaBass:{ gain:0.50, rate:0.90, group:"conga", chokes:"conga" },
-                          tumbaOpen:{ gain:0.95, group:"tumba", chokes:"tumba", damp:0.03 }, tumbaMute:{ gain:0.50, group:"tumba", chokes:"tumba" }, tumbaBass:{ gain:0.50, rate:0.88, group:"tumba", chokes:"tumba" } } }
+                          tumbaOpen:{ gain:0.95, group:"tumba", chokes:"tumba", damp:0.03 }, tumbaMute:{ gain:0.50, group:"tumba", chokes:"tumba" }, tumbaBass:{ gain:0.50, rate:0.88, group:"tumba", chokes:"tumba" },
+                          bongoHi:{ gain:0.95 }, bongoLo:{ gain:0.95 } } }       // (the bongos, GM 60 / 61: for a written groove's Bo lane; levels not yet listened to)
     };
   }
 
@@ -292,9 +295,37 @@
     }
     return { buffer: buf, offset: offset };
   }
+  // A fetch that never answers used to leave "Loading the sounds…" up for ever. Each try now has FETCH_TIMEOUT ms (headers AND body)
+  // before it is aborted; a sample under the default soundfont host is then tried once at each fallback host (global.BAND_SOUND_FALLBACKS,
+  // a list of base URLs, replaces the built-in list). A sample that fails everywhere is skipped (the band plays without it) and
+  // recorded in BandSounds.failures and warned on the console; loadOne throws only when an instrument has no sample at all.
+  var FETCH_TIMEOUT = 15000;
+  var SF_FALLBACKS = ["https://gleitz.github.io/midi-js-soundfonts/MusyngKite/", "https://raw.githubusercontent.com/gleitz/midi-js-soundfonts/gh-pages/MusyngKite/"];
+  var failures = [];
+  function fetchOnce(url, ms){
+    var ctl = typeof AbortController === "function" ? new AbortController() : null, timer = null, timedOut = false;
+    var killer = new Promise(function (res, rej){ timer = setTimeout(function (){ timedOut = true; if (ctl) try { ctl.abort(); } catch (e) {} rej(new Error("timed out after " + (ms / 1000) + " s: " + url)); }, ms); });
+    var work = fetch(url, ctl ? { signal: ctl.signal } : undefined)
+      .then(function (r){ if (!r.ok) throw new Error(r.status + " " + url); return r.arrayBuffer(); });
+    work.catch(function (){});                                   // (the loser of the race must not be an unhandled rejection)
+    return Promise.race([work, killer]).then(function (ab){ clearTimeout(timer); return ab; },
+                                             function (e){ clearTimeout(timer); throw timedOut ? new Error("timed out after " + (ms / 1000) + " s: " + url) : e; });
+  }
+  function candidates(url){
+    var list = [url], fb = global.BAND_SOUND_FALLBACKS || SF_FALLBACKS;
+    if (url.indexOf(SF_DEFAULT) === 0) fb.forEach(function (b){ if (b !== SF_DEFAULT) list.push(b + url.slice(SF_DEFAULT.length)); });
+    return list;
+  }
+  function fetchAny(url){
+    var list = candidates(url), i = 0, last;
+    function next(){
+      if (i >= list.length) throw last;
+      return fetchOnce(list[i++], global.BAND_FETCH_TIMEOUT || FETCH_TIMEOUT).catch(function (e){ last = e; return next(); });
+    }
+    return Promise.resolve().then(next);
+  }
   function fetchBuffer(ctx, url){
-    if (!CACHE[url]) CACHE[url] = fetch(url)
-      .then(function (r){ if (!r.ok) throw new Error(r.status + " " + url); return r.arrayBuffer(); })
+    if (!CACHE[url]) CACHE[url] = fetchAny(url)
       .then(function (ab){ return decode(ctx, ab); })
       .then(function (buf){ return prepare(ctx, buf); })
       .catch(function (e){ delete CACHE[url]; throw e; });        // allow a retry
@@ -510,7 +541,7 @@
         if (z.make && !z.buffer){ z.buffer = brushBuffer(ctx, z.make); z.offset = 0; }
         if (z.buffer){ tick(); return null; }
         return fetchBuffer(ctx, z.url).then(function (r){ z.buffer = r.buffer; z.offset = r.offset; },
-                                            function (e){ if (global.console) console.warn("BandSounds: sample failed —", e && e.message); })
+                                            function (e){ failures.push({ url: z.url, message: e && e.message }); if (global.console) console.warn("BandSounds: sample failed (skipped) —", e && e.message); })
           .then(tick);
       })).then(function (){
         if (!def.zones.some(function (z){ return z.buffer; })) throw new Error("BandSounds: no samples loaded for " + name);
@@ -556,6 +587,11 @@
       var src = ctx.createBufferSource(); src.buffer = z.buffer;
       if (pc.rate) src.playbackRate.value = pc.rate;       // a piece played from another piece's sample, a little higher or lower
       if (spec.midi != null && z.midi != null) src.playbackRate.value = Math.pow(2, (spec.midi - z.midi) / 12);
+      if (spec.bend && spec.bend.length){                   // pitch path: slide the playback rate from point to point
+        var r0 = src.playbackRate.value;
+        src.playbackRate.setValueAtTime(r0 * Math.pow(2, (spec.bend[0][1] || 0) / 12), t);
+        spec.bend.forEach(function (b){ src.playbackRate.linearRampToValueAtTime(r0 * Math.pow(2, b[1] / 12), t + Math.max(0, b[0])); });
+      }
       var g = ctx.createGain(), tail = src; g.gain.value = 0;
       if (def.tone || spec.cutoff){                         // softer notes are darker (one sample layer, many dynamics); spec.cutoff = a fixed low-pass in Hz (a palm mute)
         var f = ctx.createBiquadFilter(); f.type = "lowpass"; f.Q.value = 0.5;
@@ -591,7 +627,7 @@
   }
 
   global.BandSounds = {
-    create: create, define: define, resolveBase: resolveBase, pieces: PIECES.slice(),
+    create: create, define: define, failures: failures, fetchBuffer: fetchBuffer, resolveBase: resolveBase, pieces: PIECES.slice(),
     family: family, sounds: sounds, setEQ: setEQ, getEQ: getEQ, setAmp: setAmp, getAmp: getAmp, stageKind: stageKind, setTonebars: setTonebars, getTonebars: getTonebars, setControl: setControl, getControl: getControl, tonewheelParts: tonewheelParts, EQ_DEFAULT: EQ_DEFAULT, EQ_TYPES: EQ_TYPES, soundfontZones: soundfontZones, soundfontKit: soundfontKit, pickZones: pickZones, noteName: noteName
   };
 })(typeof window !== "undefined" ? window : globalThis);

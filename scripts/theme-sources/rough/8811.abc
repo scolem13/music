@@ -1,0 +1,10 @@
+X:8811
+%%from edm
+T:Trio in C, Op. 87, 4th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8811 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c2c2B2B2 A4 z4 | e2e2e2e2 ^d4 z4 | c2c2B2B2 A2A2c2c2 | B2B2d2d2 e4

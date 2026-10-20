@@ -1,0 +1,11 @@
+X:6095
+%%from edm
+T:Symphony No. 6 in C, 1st Movement - Intro.
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6095 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+c'12 | e'4 f'4 z4 | c'12 | ^f'4 g'4 z4 | a2 z2 g2 z2 (3g2e2c2 | f2 z2 e2 z2 (3d2f2a2 | c8 e/2 (3f/2e/2d/2 e3/2d | c2

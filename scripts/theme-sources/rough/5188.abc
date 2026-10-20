@@ -1,0 +1,10 @@
+X:5188
+%%from edm
+T:Sonata in G minor, Op. 19, 4th Movement - 2nd Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5188 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+D,4 E,4 F,8- | F,4 E,4 F,8 | G,2F,2E,2D,2 A,8- | A,12 A,4 | B,4 A,2B,2 G,8- | G,2A,2 B,4 F,8- | F,2A,2 B,4 E,2D,2 E,4 |

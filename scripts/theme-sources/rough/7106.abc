@@ -1,0 +1,10 @@
+X:7106
+%%from edm
+T:Le Baiser de la Fee, 2nd Movement - Fête au Village, 3rd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7106 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+c'2a2 =f2^fg | a=d'^d'2 =g2^a=c' | c'd'e'2 b2c'b | ^ac'b2 g2e2 |

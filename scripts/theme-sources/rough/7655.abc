@@ -1,0 +1,11 @@
+X:7655
+%%from edm
+T:La Procession del Rocio, Triana en Fête, 1st Theme
+C:Joaquín Turina
+%%composer Turina|Joaquín
+% EDM 7655 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+z4 z/2 g3/2d2 g4 | d2g2 d4 g2f2 | z/2 e3/2d2 g2d2 g4 | d2g2 d4 g2f2 | z/2 e3/2^d2 e2f2 g2a2 | b2c'2 d'4

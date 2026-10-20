@@ -1,0 +1,10 @@
+X:3495
+%%from edm
+T:Rapsodie Espagnole, 2nd Theme, Jota Aragonesa
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3495 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:D
+d''2 z/2 f/2e fg | af ge d2 | d''2 fe fg | a^g ab a2 | z2 AB cd | e2 f2 g2 | bc' ba2

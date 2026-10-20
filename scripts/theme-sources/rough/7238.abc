@@ -1,0 +1,10 @@
+X:7238
+%%from edm
+T:Serenade, Op. 6, 2nd Movement - 2nd Theme
+C:Joseph Suk
+%%composer Suk|Joseph
+% EDM 7238 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Gb
+d8 g4 | g8 b4 | b4 d'4 g'4 | b'8 g'4 | d'12 | =b12 | b12- | b2 z e' d'2 z b g2 z e |

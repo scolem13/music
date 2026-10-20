@@ -1,0 +1,10 @@
+X:5367
+%%from edm
+T:Romance, Op. 87, No. 2
+C:Max Reger
+%%composer Reger|Max
+% EDM 5367 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+b4 b4 a2g2 | f4 e4 d4 | ^c4 ^d4 e3g | g4 ^g4 a3c' | c'8 e3d' | d'4 ^c'3g'2<g'2b' |

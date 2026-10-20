@@ -1,0 +1,12 @@
+X:800
+T:Sonata No. 2, in G minor, Op. 5, No. 2, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0794, Barlow & Morgenstern B680, EDM 0800 (Musical Theme Dataset, CC BY 4.0)
+N:Ib. Allegro molto più tosto presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=190
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+G, | G,2 A,/=B,/ | C D E | E D C | _B, G, |

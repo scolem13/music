@@ -1,0 +1,10 @@
+X:8518
+%%from edm
+T:Intermezzo in E-flat, Op. 117, No. 1,
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8518 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Eb
+b2e'2d'2 c'2 b4 | agf2e2 g2 b4 | c'd'e'2d'2 c'2 b4 | agb2e2 z/2 f3/2 e4 |

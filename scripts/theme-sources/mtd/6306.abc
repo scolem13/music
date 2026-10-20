@@ -1,0 +1,13 @@
+X:6306
+T:Scenes from Childhood, Op. 15, From Foreign Lands
+C:Robert Schumann
+%%composer Schumann|Robert
+% MTD 7938, Barlow & Morgenstern S711, EDM 6306 (Musical Theme Dataset, CC BY 4.0)
+N:Von fremden Ländern und Menschen  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:2/4
+L:1/4
+Q:1/4=63
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+B g | f/>e/ d | B g | f/>e/ d | B g | e/>d/ c | A d | B2 |

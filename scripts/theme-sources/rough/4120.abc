@@ -1,0 +1,10 @@
+X:4120
+%%from edm
+T:Concerto in C minor, K 491, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4120 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+G4 E4 E4 D4 | D4 C4 z8 | G4 c4 c4 e4 | _G4 =G4 z8 | G4 A4 A4 A4 | A4 z/2 c3-c/2

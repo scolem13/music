@@ -1,0 +1,13 @@
+X:3681
+%%from mtd
+T:Symphony No. 2, in C minor, 5th Movement - 5th Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5333, Barlow & Morgenstern M73, EDM 3681 (Musical Theme Dataset, CC BY 4.0)
+N:Im Tempo des Scherzo - Wild herausfahrend "Die Auferstehung"  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=66
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ebmin
+d3 B | c d e f | a3 g | f2 g e | d2 z d | a b/g/ f g/e/ | d2 |

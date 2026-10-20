@@ -1,0 +1,11 @@
+X:8255
+%%from edm
+T:L'Arlesienne Suite No. 2, Orchestra - Pastorale - 1st Theme
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8255 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/HAorq3xOfjA
+M:4/4
+L:1/16
+K:A
+a8 b2c'2e2f2 | g6 a2 b2c'2e2f2 | g6 ac' f'2e'd' c'2ba | b2c'b f2ga b6

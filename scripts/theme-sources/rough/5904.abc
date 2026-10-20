@@ -1,0 +1,13 @@
+X:5904
+%%from mtd
+T:Moments Musicals, Op. 94, No. 2, in A-flat, 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7536, Barlow & Morgenstern S317, EDM 5904 (Musical Theme Dataset, CC BY 4.0)
+N:Andantino in A-flat major  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:9/8
+L:1/8
+Q:1/4=71
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+c>dc | d6 c>dc | B6 c>dc | c>dc e3 |

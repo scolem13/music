@@ -1,0 +1,10 @@
+X:362
+%%from edm
+T:French Suite No. 1, in D minor, Piano, Minuet I
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0362 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+F4 G4 A4 | G4 F2E2 F4- | F2E2D2_D2=D2E2 | D2_D2 =B,2D2

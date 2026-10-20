@@ -1,0 +1,10 @@
+X:5160
+%%from edm
+T:Melodie, Op. 3, No. 3
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5160 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+E,8<F,8 | A,3G, G,8- G,2-G,/2G,3/2 | A,2>B,2 C8 C4 | D2E2 F4 G8 | F2>E2 E8

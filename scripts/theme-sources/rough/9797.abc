@@ -1,0 +1,11 @@
+X:9797
+%%from edm
+T:The Walk to the Paradise Garden, from a Village Romeo and Juliet, Orchestra, 1st Theme
+C:Frederick Delius
+%%composer Delius|Frederick
+% EDM 9797 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+B8 c2 e4 B2 | c4 e8 B4 | c8<e8 | e6 d2 d4 B4 | d6 g2 _d4 c4 | c8 =B8 | =B6 =e2 _B8 |

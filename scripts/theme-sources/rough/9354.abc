@@ -1,0 +1,12 @@
+X:9354
+%%from mtd
+T:Waltzes, Op. 70, No. 3 in D-flat
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2346, Barlow & Morgenstern C358, EDM 9354 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=130
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+BA | f4- fg | f3 f e2 | d3 cBe | TdcBc A |

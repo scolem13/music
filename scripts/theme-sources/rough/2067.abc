@@ -1,0 +1,10 @@
+X:2067
+%%from edm
+T:Sonata in E minor, Op. 7, 1st Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2067 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:G
+G4 F2 z G | A2F2 D4 | E2F2 D4 | E2F2 D4 | B4 ^A2 z B | ^c2^A2 F4 | G2A2 F4 | G2A2 F4 |

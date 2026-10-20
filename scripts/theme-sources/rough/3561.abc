@@ -1,0 +1,10 @@
+X:3561
+%%from edm
+T:Sonata No. 7 in F, 1st Movement
+C:Jean Baptiste Loeillet
+%%composer Loeillet|Jean Baptiste
+% EDM 3561 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a6 a2 g2c2 f3g | e6 f2 d2c2 B4 | A2 f4 e2 f2dc cBBA | A2 c4 =B2 c2

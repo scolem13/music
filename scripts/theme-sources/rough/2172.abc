@@ -1,0 +1,10 @@
+X:2172
+%%from edm
+T:Concerto Grosso in G, Op. 6, No. 1, 3rd Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2172 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+z4 G4 E4 | B12 | E4 F4 A4 | f12 | B4 e6 f2 | g2a2 g4 f3e | e4

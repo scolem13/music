@@ -1,0 +1,10 @@
+X:230
+%%from edm
+T:Partita No. 2 in C minor, Capriccio
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0230 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+z2 G2 c4 | c2dc =B=AGF | E2g2D2f2 | e

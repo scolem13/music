@@ -1,0 +1,13 @@
+X:2462
+%%from mtd
+T:Quartet in C, Op. 20, No. 2, 3rd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4123, Barlow & Morgenstern H343, EDM 2462 (Musical Theme Dataset, CC BY 4.0)
+N:Menuet. Allegretto e Trio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e3- | e f d- | d e g- | g f e- | e d e | f3- | f2{/g} f/4e/4f/4g/4 |

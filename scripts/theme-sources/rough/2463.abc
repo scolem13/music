@@ -1,0 +1,13 @@
+X:2463
+%%from mtd
+T:Quartet in C, Op. 20, No. 2, 4th Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4124, Barlow & Morgenstern H344, EDM 2463 (Musical Theme Dataset, CC BY 4.0)
+N:Fuga a quattro soggetti. Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=144
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+z GG g^f=f | ecB A2 d | G2 c Fff | fg/f/e/d/ eE/F/E/D/ | C2 |

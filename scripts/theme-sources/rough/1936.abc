@@ -1,0 +1,10 @@
+X:1936
+%%from edm
+T:Country Gardens, Eng. Morris Dance
+C:Percy Grainger
+%%composer Grainger|Percy
+% EDM 1936 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+e'4 e'3d' c'4 c'4 | b4 b3a g4 g3a | b4 e4 f4 a4 | g6 f2 e4

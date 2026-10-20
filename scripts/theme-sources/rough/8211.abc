@@ -1,0 +1,10 @@
+X:8211
+%%from edm
+T:Fantastic Symphony, Op. 14, 3rd Movement - 2nd Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8211 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+c'2c'2c'2 c'2c'2c'c' | =bc'a'3/2_a'/2g'2 f'2e'3/2_e'/2d'2 | c'2b3/2a/2g2 a2b2b2 | a2

@@ -1,0 +1,10 @@
+X:8545
+%%from edm
+T:Quartet in G minor, Op. 25, 2nd Movement - 3rd Theme - Trio
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8545 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:Ab
+e2 a4 c'4<e'4 c'4 | z2 e'6 c'4 z2 _g'4- | _g'2 e'4 z2 d'4 e'2 d'4- | d'2 c'6 b4 a2 g4- | g2 b6 e4

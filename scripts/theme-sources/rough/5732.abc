@@ -1,0 +1,11 @@
+X:5732
+%%from edm
+T:Caprice Basque, Op. 24, 2nd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5732 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:G
+d2e2 z3 d g z2 a | b8 g4 | e2f2 z3 g f z2 e | d12 |

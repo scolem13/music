@@ -1,0 +1,161 @@
+---
+title: "Triads: Practice for Chapter 6"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 6 of Hutchinson's Music Theory for the 21st-Century Classroom: triad qualities, lead-sheet symbols, slash chords, chords spread over the grand staff, and sus chords, with drills that grade you, musictheory.net's exercises and Open Music Theory's chapters."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=13"></script>
+```
+
+This page goes with **Chapter 6, Triads** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/Triads.html). Read each section there
+first: the book is the reference for the terms and symbols used here. Then practise below. Each section has:
+
+- a link to the book's section, and to the same topic on [musictheory.net](https://www.musictheory.net/lessons) and in
+  [Open Music Theory](https://viva.pressbooks.pub/openmusictheory/chapter/triads/), for a second explanation;
+- a **drill** from this site that grades every answer. You can type the answer, use the buttons, or (for naming chords) play it on a MIDI keyboard;
+- musictheory.net's own exercise, folded away under the drill.
+
+Every drill has **Settings**. Your teacher's link may set them for you; you can still change them, and **Back to the link's
+settings** undoes your changes. The same drills, with all their settings, are on the [Theory Drills](theory-drills.qmd) page.
+
+## 6.1 The four qualities
+
+A triad is three notes stacked in thirds: the **root**, the **third** and the **fifth**. Which thirds you stack decides the
+**quality**. Major and minor triads are everywhere, diminished ones less often, augmented ones rarely.
+[Read 6.1](https://musictheory.pugetsound.edu/mt21c/TriadsIntroduction.html) ·
+[musictheory.net: Introduction to Chords](https://www.musictheory.net/lessons/40) ·
+[Open Music Theory: Triads](https://viva.pressbooks.pub/openmusictheory/chapter/triads/)
+
+| Quality | Root to third | Third to fifth | Root to fifth | Symbol on C |
+|---|---|---|---|---|
+| Major | M3 (4 half steps) | m3 (3) | P5 (7) | C |
+| Minor | m3 (3) | M3 (4) | P5 (7) | Cm |
+| Diminished | m3 (3) | m3 (3) | d5 (6) | C° |
+| Augmented | M3 (4) | M3 (4) | A5 (8) | C+ |
+
+Start with roots that have no sharps or flats:
+
+<div class="drill" data-ex="triad" data-settings="quals=maj,min,dim,aug&roots=natural&inv=root&voicing=close&clef=treble"></div>
+
+::: {.callout-tip collapse="true"}
+## musictheory.net: Chord Identification
+
+Their exercise uses its own symbols (it may write a minor chord as *Cm* or *C min*). Under the gear icon you can choose the chord types.
+
+<iframe class="dr-embed" src="https://www.musictheory.net/exercises/chord" title="musictheory.net Chord Identification" loading="lazy"></iframe>
+:::
+
+## 6.2 Lead-sheet symbols
+
+A lead-sheet symbol names the root and the quality and leaves the voicing to the player: a capital letter for major (*F*), the letter
+and a small *m* for minor (*Gm*), a small circle for diminished (*D°*), and a plus for augmented (*C+*). In the book's example, the
+chords of Alicia Keys's "Girl on Fire" are written this way over the guitar tab.
+[Read 6.2](https://musictheory.pugetsound.edu/mt21c/LeadSheetSymbols.html) ·
+[Open Music Theory: Chord Symbols](https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/)
+
+::: {.callout-note collapse="true"}
+## Listen: "Girl on Fire" (the book's example)
+
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/J91ti_MpdHA?start=5&end=16&rel=0" title="Girl on Fire" loading="lazy" allowfullscreen></iframe>
+:::
+
+**Typing a symbol:** a capital letter is major (*A*), a small letter or a letter with *m* is minor (*a*, *Am*), *°* (or *o*) diminished, *+* augmented. Type `#` and `b` for ♯ and ♭.
+
+Now with any root, sharps and flats included (this is the book's exercise 1, without the sus chords):
+
+<div class="drill" data-ex="triad" data-settings="quals=maj,min,dim,aug&roots=any&inv=root&voicing=close&clef=treble,bass"></div>
+
+And the other way round: from the symbol to the notes (the book's exercise 2). Type the three notes, root first.
+
+<div class="drill" data-ex="spell" data-settings="quals=maj,min,dim,aug&roots=any&inv=root&task=write"></div>
+
+::: {.callout-tip collapse="true"}
+## musictheory.net: Chord Construction
+
+<iframe class="dr-embed" src="https://www.musictheory.net/exercises/chord-construction" title="musictheory.net Chord Construction" loading="lazy"></iframe>
+:::
+
+## 6.3 Inverted triads and slash chords
+
+The **root** is the bottom note when the chord is stacked in thirds; the **bass** is whatever note is actually lowest. When the third
+is in the bass the triad is in **first inversion**, when the fifth is, **second inversion**. A lead-sheet symbol shows an inversion with
+a slash: the chord, then the bass note. *C/E* is a C major triad with E at the bottom.
+[Read 6.3](https://musictheory.pugetsound.edu/mt21c/InvertedTriads.html) ·
+[musictheory.net: Triad Inversion](https://www.musictheory.net/lessons/42) ·
+[Open Music Theory: Inversion](https://viva.pressbooks.pub/openmusictheory/chapter/inversion/)
+
+Name these with slash symbols (the book's exercise 3):
+
+<div class="drill" data-ex="triad" data-settings="quals=maj,min,dim,aug&roots=any&inv=all&voicing=close&clef=treble,bass"></div>
+
+Write these, lowest note first (the book's exercise 4):
+
+<div class="drill" data-ex="spell" data-settings="quals=maj,min,dim,aug&roots=any&inv=inv&task=write"></div>
+
+## 6.4 Naming a chord spread over the staff
+
+In real music a triad is spread out, with notes doubled, across both staves. To name it: find the root (stack the notes in thirds), then
+the quality (measure the two thirds), then the bass (is the lowest note the root?). Then write the symbol, with a slash if it is inverted.
+[Read 6.4](https://musictheory.pugetsound.edu/mt21c/AnalyzingChords.html) ·
+[musictheory.net: Voicing Chords](https://www.musictheory.net/lessons/51)
+
+<div class="drill" data-ex="triad" data-settings="quals=maj,min,dim,aug&roots=any&inv=all&voicing=spread"></div>
+
+## 6.5 Sus chords
+
+In a **sus4** chord a perfect 4th takes the place of the third; in a **sus2** chord a major 2nd does. Both keep the perfect 5th.
+Without a third, a sus chord is neither major nor minor. The book does not invert sus chords, and neither does the drill.
+[Read 6.5](https://musictheory.pugetsound.edu/mt21c/SimpleSusChords.html) ·
+[Open Music Theory: Chord Symbols, "sus"](https://viva.pressbooks.pub/openmusictheory/chapter/chord-symbols/)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's sus4 and sus2 examples
+
+A sus4 chord in Chicago's "Hard to Say I'm Sorry" (Peter Cetera and David Foster):
+
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/kNlVIMrUU6w?start=0&end=13&rel=0" title="Hard to Say I'm Sorry" loading="lazy" allowfullscreen></iframe>
+
+A sus2 chord in Sara Bareilles's "Love Song":
+
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/qi7Yh16dA0w?start=7&end=16&rel=0" title="Love Song" loading="lazy" allowfullscreen></iframe>
+:::
+
+<div class="drill" data-ex="triad" data-settings="quals=maj,min,sus2,sus4&roots=any&inv=root&voicing=close&clef=treble"></div>
+
+## 6.6–6.7 Everything together
+
+All six kinds (major, minor, diminished, augmented, sus2, sus4), any root, inversions included: the book's practice exercises in one
+drill. Set **Questions** to 20 for a score you can copy into your journal or send to your teacher.
+[Summary table (6.6)](https://musictheory.pugetsound.edu/mt21c/SummaryOfTriadConstruction.html) ·
+[Practice exercises with answers (6.7)](https://musictheory.pugetsound.edu/mt21c/TriadsPracticeExercises.html)
+
+<div class="drill" data-ex="triad" data-settings="quals=maj,min,dim,aug,sus2,sus4&roots=any&inv=all&voicing=close&clef=treble,bass"></div>
+
+The book's exercise 5 gives misspelled triads to correct: the right sounds, written with the wrong letters. Here, write the correct
+spelling, root first:
+
+<div class="drill" data-ex="spell" data-settings="quals=maj,min,dim,aug&roots=any&inv=root&task=correct"></div>
+
+::: {.callout-tip collapse="true"}
+## musictheory.net: Chord Ear Training
+
+Hear the quality without seeing it. Under the gear icon choose the triads only.
+
+<iframe class="dr-embed" src="https://www.musictheory.net/exercises/ear-chord" title="musictheory.net Chord Ear Training" loading="lazy"></iframe>
+:::
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- Each drill's settings are in its `data-settings`. For a link that opens one drill on its own with your settings, open its **Settings**,
+  then **Copy a link with these settings** (it opens the [Theory Drills](theory-drills.qmd) page). Add `&lock=1` for a test, `&count=20` for a score.
+- The book's homework for this unit is a PDF linked from its [practice exercises page](https://musictheory.pugetsound.edu/mt21c/TriadsPracticeExercises.html).
+- musictheory.net's exercises are embedded with their own default settings. A [customized exercise](https://www.musictheory.net/exercises/customize)
+  link fixes the settings so students can't change them; paste it in place of the address above if you want that.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

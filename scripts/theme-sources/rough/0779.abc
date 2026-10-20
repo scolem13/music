@@ -1,0 +1,13 @@
+X:779
+%%from mtd
+T:Quintet in E-flat, Op. 16, 3rd Movement - Rondo
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0773, Barlow & Morgenstern B667d, EDM 0779 (Musical Theme Dataset, CC BY 4.0)
+N:Rondo. Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=133
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B, | E2 E E2 E | G2 F E3 | !turn!F3 A2 G | F2 |

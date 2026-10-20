@@ -1,0 +1,11 @@
+X:6096
+%%from edm
+T:Symphony No. 6 in C, 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6096 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:C
+g8 ^f4 g2a2 | g8- g2a2b2c'2 | z/2 d'3-d'/2 ^c'4 z/2 d'3-d'/2 c'4 | d'8 g4

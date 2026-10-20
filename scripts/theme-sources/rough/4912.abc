@@ -1,0 +1,10 @@
+X:4912
+%%from edm
+T:Mouvements Perpetuels, No. 2
+C:Francis Poulenc
+%%composer Poulenc|Francis
+% EDM 4912 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+D2E2F2G2 A2E2 D4 | D2E2F2G2 AEAE D4 | D2E2F2^A2 e2=A2F2F2 | D2E2F2^A2 e=AeA F2F2 |

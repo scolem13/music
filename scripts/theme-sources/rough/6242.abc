@@ -1,0 +1,11 @@
+X:6242
+%%from edm
+T:Papillons, Op. 29, No. 4
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6242 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:A
+c'4 c'2 | c'3 c' c'2 | f'6- | f'6 | e'2 c'2 ^a2 | b6 | b3 c' b2 | e6 |

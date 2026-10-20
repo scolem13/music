@@ -1,0 +1,10 @@
+X:6195
+%%from edm
+T:Carnaval, Op. 9, March of the Davidsbundler
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6195 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+a4 c'2=b2 c'4 | d'4 c'2b2 a4 | a4 g2f2 e4 | e4 f2g2 a2b2 | a4

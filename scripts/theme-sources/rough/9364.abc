@@ -1,0 +1,10 @@
+X:9364
+%%from edm
+T:Sonata in G minor, Piano, Didone Abbandonata, Op. 50, No. 3, 1st Movement - Intro
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9364 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+b3-b/2a/2 a3-a/2g/2 g3-g/2d/2 | d'8 z3/2 c'-[c'/2-c'/2]c' | z/2 c'b-[b/2a/2-]a b3-b/2 a/2a3-a/2b/2 | z/2 c'b-[b/2a/2-]a

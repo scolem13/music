@@ -1,0 +1,10 @@
+X:9454
+%%from edm
+T:Concerto Grosso in G minor, Op. 6, No. 8, Christmas Concerto, 4th Movement
+C:Arcangelo Corelli
+%%composer Corelli|Arcangelo
+% EDM 9454 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+g'4 _g'4 =g'4 d'4 | b'4 a'4 b'8 | d'4 d'4 d'4 _g4 | g/2a/2g/2a/2g/2a/2g/2a/2g/2a/2g/2a/2g/2a/2g/2a/2 _g8 |

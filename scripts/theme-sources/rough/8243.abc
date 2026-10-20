@@ -1,0 +1,11 @@
+X:8243
+%%from edm
+T:Jeremiah, Symphony - 2nd Movement - 2nd Theme
+C:Leonard Bernstein
+%%composer Bernstein|Leonard
+% EDM 8243 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+z8 ^d4 d4 | e3^d ^c2 =c4 c2 z2 d2- | ^d2 d4 e3 de2 ^f4 | B2

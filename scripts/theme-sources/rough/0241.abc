@@ -1,0 +1,10 @@
+X:241
+%%from edm
+T:Partita No. 5 in G, Passepied
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0241 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+D2 G/2F/2G/2A/2 G2 | G/2A/2B z/2 A3- A/2 | G2 F2 G2 | E2 D2 A2 | G2 F4 |

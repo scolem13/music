@@ -1,0 +1,12 @@
+X:5332
+%%from mtd
+T:La Valse, 1st Theme
+C:Maurice Ravel
+%%composer Ravel|Maurice
+% MTD 6969, Barlow & Morgenstern R202, EDM 5332 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=136
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A,2 D- | D2- D/A,/ | D2 A | z3 | z D2- | D F,2 | G,2 C | z C2 |

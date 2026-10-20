@@ -1,0 +1,10 @@
+X:2798
+%%from edm
+T:Symphony in D, No. 104, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2798 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d2f2 a4 a4 | b4 a4 a4 | ^g4 a4 a4 | d'2b2 a4 a4 | d2f2 g4 g4 | f4 e4 e4 | b4

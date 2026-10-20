@@ -1,0 +1,10 @@
+X:2074
+%%from edm
+T:Sonata in G, Op. 13, No. 2, 1st Movement - 2nd Theme
+C:Edvard Grieg
+%%composer Grieg|Edvard
+% EDM 2074 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+F4 B8 | ^c4 ^A8 | F4 B6 d2 | ^c4 ^A8 | F4 B6 d2 | ^c4 ^A4 F4 | ^A4 =A8- | A4 f4

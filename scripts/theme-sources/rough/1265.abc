@@ -1,0 +1,10 @@
+X:1265
+%%from edm
+T:Scherzo Capriccioso, Op. 66, 3rd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1265 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+A,12 | D8 E4 | D8 C4 | B,8 C4 | D8 F4 | A8 G4 | F12- | F12 |

@@ -1,0 +1,13 @@
+X:995
+%%from mtd
+T:Sonata No. 6, in A, Op. 30, No. 1, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0989, Barlow & Morgenstern B871, EDM 0995 (Musical Theme Dataset, CC BY 4.0)
+N:Allegretto con variazioni  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=175
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+E4 A4 | c6 A2 | B2 B2 AGFG | A6 E2- | E2 A4 c2 | e4- e^efc |

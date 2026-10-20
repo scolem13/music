@@ -1,0 +1,11 @@
+X:9481
+%%from edm
+T:Der Barbier Von Bagdad, Overture, 3rd Theme
+C:Peter Cornelius
+%%composer Cornelius|Peter
+% EDM 9481 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+f4 f2 z f b2 z b | e'2 z c' a2 z d' a2 z f | e4 d2 z e f2 z c | ^a2 z ^g f2 z g a2 z f |

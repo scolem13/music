@@ -1,0 +1,10 @@
+X:252
+%%from edm
+T:Partita No. 2 in D minor, Chaconne
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0252 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A6 A2 e4 | e6 e2 f4 | d6 c2 B4 | A4 GFEF GEFD |

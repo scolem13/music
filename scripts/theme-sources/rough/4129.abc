@@ -1,0 +1,10 @@
+X:4129
+%%from edm
+T:Concerto in D, K 537, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4129 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+d4 f3e | edd2 d z/2 c/2d^d | e4 g3f | ^dee2

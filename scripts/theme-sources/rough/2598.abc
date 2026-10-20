@@ -1,0 +1,10 @@
+X:2598
+%%from edm
+T:Quartet in B-flat, Op. 76, No. 4, 4th Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2598 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+f2e2 d4 e4 c4 | d2c2 B4 c4 z/2 z/2 F3 | G2A2 B4 c4 d4 | z/2 g3-g/2 z/2 c3/2B2 c2d2 c4 |

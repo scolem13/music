@@ -1,0 +1,10 @@
+X:8341
+%%from edm
+T:Concerto in B-flat, Cello and Orchestra, 1st Movement - 2nd Theme
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8341 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+c'2f'=e' d'c'c'2 c'4<c'4 | bab/2g/2a/2b/2 c'/2d'/2=e'/2f'/2f'g' c'bab =bc'c'2 |

@@ -1,0 +1,10 @@
+X:8139
+%%from edm
+T:Polonaise Brillante, Op. 4, 3rd Theme
+C:Henryk Wieniawski
+%%composer Wieniawski|Henryk
+% EDM 8139 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+f6 b2 d2e2 | f6 ef agfe | gfed gfed fedB | z/2 c3-c/2 z/2 z/2 B3

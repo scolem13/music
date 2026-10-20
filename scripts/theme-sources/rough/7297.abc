@@ -1,0 +1,10 @@
+X:7297
+%%from edm
+T:Mazurkas, Op. 50, No. 2, 2nd Theme
+C:Karol Szymanowski
+%%composer Szymanowski|Karol
+% EDM 7297 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+z3 =G =c4 d4 | e8 d2=f2 | =c3c ^c6 =fe | z3 =G =c4 d4 | e8 z/2 d3/2=f2 | c3c

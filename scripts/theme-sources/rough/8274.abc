@@ -1,0 +1,11 @@
+X:8274
+%%from edm
+T:Petite Suite, Op. 22, "Jeux D'Enfants", Galop (Le Bal)
+C:Georges Bizet
+%%composer Bizet|Georges
+% EDM 8274 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:E
+E2 z/2 A3/2 G2A2 | B2c2d2e2 | A2f2g2a2 | f4<b4 | a2g2e2a2 | g2f2d2g2 | f2e2

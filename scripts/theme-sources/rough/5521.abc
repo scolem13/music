@@ -1,0 +1,12 @@
+X:5521
+%%from edm
+T:L'Italiana in Algeri, Overture, 2nd Theme
+C:Gioacchino Antonio Rossini
+%%composer Rossini|Gioacchino Antonio
+% EDM 5521 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/2O6APyu868o?t=2m44s
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+d2b3 a ^f8 g2- | gd2<b2 a ^f8 g2- | gd2<b2 a (3a2g2^f2 (3a2g2f2 a3/2g/2- | g/2-[g/2^f/2-]^f (3f2e2d2 d8 c2 |

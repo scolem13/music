@@ -1,0 +1,10 @@
+X:2275
+%%from edm
+T:Sonata in B minor, Op. 1, No. 9, 5th Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+f12 e4 | d4 c4 d4 B4 | e4 c4 f4 e4 | d4 B4 d4 e4 | f4 c4 f8 |

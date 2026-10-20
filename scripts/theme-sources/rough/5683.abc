@@ -1,0 +1,10 @@
+X:5683
+%%from edm
+T:Sonata No. 1, in C minor, Op. 32, 3rd Movement - 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5683 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+G4 _G2c2 | G4 _G2c2 | G2 g4 _g2- | _g2 f4 e3/2d/2 | G4 _G2c2 | G4 _G2c2 |

@@ -1,0 +1,13 @@
+X:1151
+%%from mtd
+T:Symphony No. 9, in D minor, Op. 125, 4th Movement - Intro
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1144, Barlow & Morgenstern B1026, EDM 1151 (Musical Theme Dataset, CC BY 4.0)
+N:IVa. Presto - Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=203
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+B2- | B3 AAd | dffaad | dffAAd | dFFAAD | D |

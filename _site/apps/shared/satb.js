@@ -46,6 +46,12 @@
   // the upper-3 pitch-class multisets to try, with a doubling penalty each
   function doublings(ch){
     var R=ch.root, T=ch.third, F=ch.fifth, S=ch.seventh, out=[];
+    if (ch.bass !== R){                               // an inversion: the uppers are the other tones, plus one doubled
+      if (S != null) { out.push({ pcs:[R,T,F,S].filter(function (x){ return x !== ch.bass; }), pen:0 }); return out; }
+      if (ch.q === "dim") { out.push({ pcs:[R,F,ch.bass], pen:0 }); out.push({ pcs:[R,F,F], pen:6 }); return out; }   // vii°6: double the 3rd (the bass)
+      if (ch.bass === T) { out.push({ pcs:[R,F,R], pen:0 }); out.push({ pcs:[R,F,F], pen:4 }); out.push({ pcs:[R,F,T], pen:20 }); return out; }
+      out.push({ pcs:[R,T,F], pen:0 }); out.push({ pcs:[R,T,R], pen:6 }); return out;   // 6/4: double the bass (the 5th)
+    }
     if (S != null){                                   // 7th chord: prefer all four tones
       out.push({ pcs:[T,F,S], pen:0 });               // complete (bass=root)
       out.push({ pcs:[R,T,S], pen:8 });               // omit 5th, root doubled

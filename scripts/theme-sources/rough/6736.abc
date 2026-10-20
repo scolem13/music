@@ -1,0 +1,10 @@
+X:6736
+%%from edm
+T:Trio in G minor, Op. 15, 2nd Movement - 1st Theme A
+C:Bedřich Smetana
+%%composer Smetana|Bedřich
+% EDM 6736 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+D,2_G,2 =G,A,B,2 | A,2G,2_D2=D2 | =E2_G2 =GAB2 | A2 d4 _d2 | z Ac2 z/2 z/2 =BG2 | B2

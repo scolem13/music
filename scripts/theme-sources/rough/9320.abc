@@ -1,0 +1,11 @@
+X:9320
+%%from edm
+T:Sonata in B-flat minor, Op. 35, 1st Movement - 1st Theme
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9320 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:Db
+d2B2 z2 c2 d2B2 z4 | d2B2 z2 c2 d2B2 z4 | d2B2 z2 c2 d2b2

@@ -1,0 +1,13 @@
+X:1183
+%%from mtd
+T:Variations on a Waltz of Diabelli, Op. 120, Piano, 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1176, Barlow & Morgenstern B1058, EDM 1183 (Musical Theme Dataset, CC BY 4.0)
+N:Tema. Vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=233
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+{/d} c/B/ | c G G | G G G | G G G | G G{/e} d/^c/ | d |

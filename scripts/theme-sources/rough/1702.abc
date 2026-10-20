@@ -1,0 +1,10 @@
+X:1702
+%%from edm
+T:Symphony in D minor, 1st Movement - 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1702 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+D6 _D2 F4 z4 | F6 E2 A4 z4 | B2D4<_D4 A2 B4 | B2_D4<=D4 B2 A4 | a6- ag f6- fe | d6- dc =B6- B_B |

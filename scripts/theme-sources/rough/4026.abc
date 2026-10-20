@@ -1,0 +1,10 @@
+X:4026
+%%from edm
+T:Caprice Espagnol, Op. 37, 2nd Theme
+C:Moritz Moszkowski
+%%composer Moszkowski|Moritz
+% EDM 4026 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:C
+e2 ^d3 e | e2 f3 g | g2 A2 z2 | z2 f2 e2 | d2

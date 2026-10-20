@@ -1,0 +1,12 @@
+X:6903
+%%from mtd
+T:O Schoner Mai, Waltzes, Op. 375, No. 2, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8532, Barlow & Morgenstern S1294, EDM 6903 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=160
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d ^c e | d3 | d ^c e | d3 | d e f | g2 b | a b a | d3 |

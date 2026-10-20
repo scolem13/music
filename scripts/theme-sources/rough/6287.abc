@@ -1,0 +1,13 @@
+X:6287
+%%from mtd
+T:Quartet in E-flat, Op. 47, 2nd Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% MTD 7919, Barlow & Morgenstern S692, EDM 6287 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo: Molto Vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=226
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+B,C | DEDB,G,A, | B,CB,G,D,^F, | G,A,B,CDE | D |

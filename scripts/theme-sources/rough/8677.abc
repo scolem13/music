@@ -1,0 +1,11 @@
+X:8677
+%%from edm
+T:Sonata in F minor, Op. 5, Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8677 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Ab
+F,2 z2 a3g/2f/2 d'4 | =E,2 z2 d'3c'/2b/2 _g'4 | E,2 z2 _g3f/2e/2 b4 |

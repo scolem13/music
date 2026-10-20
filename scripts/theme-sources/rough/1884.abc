@@ -1,0 +1,10 @@
+X:1884
+%%from edm
+T:Iphigenia in Aulis, Act. II, March
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1884 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+G8 A6 A2 | B8 g8 | f8 e8 | d8 a6 a2 | g8 c'4 b4 | a8 g8 | f8 d6 d2 | d8

@@ -1,0 +1,10 @@
+X:9657
+%%from edm
+T:Nocturnes, Nuages, 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9657 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:D
+f'4 e'4 f'4 d'4 e'4 c'4 | f'4 e'4 f'4 d'4 e'4 c'4 | d'4 ^a4 c'4 ^g4 b8 | d'4 ^a4 c'4 ^g4 b8 |

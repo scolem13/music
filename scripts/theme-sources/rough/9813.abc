@@ -1,0 +1,11 @@
+X:9813
+%%from edm
+T:Quartet, No. 6, in A, 1st Movement
+C:Carl Ditters von Dittersdorf
+%%composer Dittersdorf|Carl Ditters von
+% EDM 9813 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:A
+e6 ^de fe=dc c2c2 | c2d2 z2 cd edcB B2B2 | =c2^c2

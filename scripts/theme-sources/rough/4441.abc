@@ -1,0 +1,10 @@
+X:4441
+%%from edm
+T:Sonata in D, K 448, 1st Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4441 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+d8 A8 | F6 ED A4 z3 (3A,/2B,/2C/2 | D4 A,3D E4 A,3E | F4 D3F A4

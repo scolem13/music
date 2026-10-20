@@ -1,0 +1,10 @@
+X:373
+%%from edm
+T:French Suite No. 3, in B minor, Piano, Anglaise
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0373 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+F4 B2^A2 B2c2d2B2 | g4 g2f2 e4 d4 | c4 B2^A2 B2c2d2e2 | f4

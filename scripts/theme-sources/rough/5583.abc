@@ -1,0 +1,10 @@
+X:5583
+%%from edm
+T:Valse Caprice, 2nd Theme
+C:Anton Rubinstein
+%%composer Rubinstein|Anton
+% EDM 5583 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+e'12 | f'12- | f'2e'2_d'2b2g2f2 | (3f2g2f2 e4 e4 | c'12 | d'12- | d'2c'2a2f2d2c2 | (3c2d2c2 B4 e4 |

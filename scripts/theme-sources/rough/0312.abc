@@ -1,0 +1,10 @@
+X:312
+%%from edm
+T:Suite No. 1 in C, Orchestra, Overture - 1st Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0312 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e8- edef gfga | d4- ddef gfef gefg | c3A/2B/2 c3d/2e/2 f6 f2 | f

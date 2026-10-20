@@ -1,0 +1,10 @@
+X:153
+%%from edm
+T:Concerto No. 5, in F minor, Piano and Orchestra, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0153 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Ab
+F2F3 cA=E | F=E2<F2 cAE | (3F_G=E F3 cAF | (3dB=A B3/2

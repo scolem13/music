@@ -1,0 +1,11 @@
+X:7406
+%%from edm
+T:Mignon, Overture, 2nd Theme
+C:Ambroise Thomas
+%%composer Thomas|Ambroise
+% EDM 7406 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:A
+e2e' z z/2 d'3c'/2 e'2a z | a z a z z/2 a/2gb z/2 d/2 f4 | f2f' z z/2 e'3d'/2 f'2g z | g z g

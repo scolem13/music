@@ -1,0 +1,10 @@
+X:7533
+%%from edm
+T:The Nutcracker Suite, Op. 71a, Overture Miniature, 2nd Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7533 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+a4 b4 | =b4 c'4 | =e'4 d'3b | a4 g4 | d'4

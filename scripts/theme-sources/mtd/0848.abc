@@ -1,0 +1,12 @@
+X:848
+T:Sonata No. 7, in D, Op. 10, No. 3, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0842, Barlow & Morgenstern B724, EDM 0848 (Musical Theme Dataset, CC BY 4.0)
+N:Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=310
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F2 | d4 f4 | d4 edcB | ^A2 A2 cBAB | c4 F2 |

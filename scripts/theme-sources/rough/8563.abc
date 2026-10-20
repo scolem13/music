@@ -1,0 +1,10 @@
+X:8563
+%%from edm
+T:Quartet in C minor, Op. 51, No. 1, 4th Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8563 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+c'4 a8 g2d'2 | d'2f'2 c'8 =b2d'2 | d'2=b'2 b'8 c''4 | g'4 f'4 e'4

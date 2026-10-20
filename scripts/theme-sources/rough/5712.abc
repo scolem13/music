@@ -1,0 +1,10 @@
+X:5712
+%%from edm
+T:Suite Algerienne, Op. 60, 4th Movement - Marche Militaire Française, 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5712 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+f8 c4 f4 | a2g2f2e2 f4 c4 | c'2^a2=a2g2 a4 f4 | d'12 c'4 | ^a4 d'4 =a4 d'4 | g4 ^a4 f4 a4 | e4 f2g2 f4

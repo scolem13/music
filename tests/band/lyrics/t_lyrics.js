@@ -1,5 +1,5 @@
 // LyricAlign: syllables, the places in a bar that take one, the drafted w: lines, and the checks.   node tests/band/lyrics/t_lyrics.js
-const assert = require("assert"), fs = require("fs"), vm = require("vm"), R = "/Users/sean.coleman/Projects/everything-music-site/apps/shared/";
+const assert = require("assert"), fs = require("fs"), vm = require("vm"), R = (require("path").join(__dirname, "../../..") + "/apps/shared/");
 require(R + "lyric-align.js"); const L = globalThis.LyricAlign;
 const kinds = (l, o, t) => L.slots(l, o, t).bars;
 // ---- the places ----

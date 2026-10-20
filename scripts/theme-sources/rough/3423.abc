@@ -1,0 +1,10 @@
+X:3423
+%%from edm
+T:Faust Symphony, 1st Movement - 4th Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3423 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g16 | f4 e6 d2 d4 | _d8 d3=e e4- | =e6 B2 _e2_d2 d4 | =B8

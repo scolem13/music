@@ -1,0 +1,12 @@
+X:9590
+%%from mtd
+T:Prelude A L'Apres- D'Un Faune (Afternoon of a Faun), 1st Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2581, Barlow & Morgenstern D13, EDM 9590 (Musical Theme Dataset, CC BY 4.0)
+M:9/8
+L:1/16
+Q:1/4=40
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+c6- c2-cB(3^A=AG =G2>A2B^B | c6- c2-cB(3^A=AG =G2>A2B^B | c2d2g2 e4 G2 B6- | B2B2c2 ^A4 |

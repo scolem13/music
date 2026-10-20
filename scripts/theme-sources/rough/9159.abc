@@ -1,0 +1,11 @@
+X:9159
+%%from edm
+T:Berceuse, Op. 57
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9159 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Db
+f6 e2a2f2 | e2f2d2 B2c2e2 | A2 d4

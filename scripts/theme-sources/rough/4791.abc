@@ -1,0 +1,10 @@
+X:4791
+%%from edm
+T:Sonata No. 11, Op. 3, No. 5, 2nd Movement
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4791 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+c'4 c'3/2d'<bc'/2 | a4 a3/2b<c'd'/2 | e'3e' f'3/2e'<d'f'/2 | e'3d' c'2

@@ -1,0 +1,11 @@
+X:6446
+%%from edm
+T:Concerto, Op. 35, 3rd Movement - Finale, 3rd Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6446 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:D
+d2c2d2B2 | d4 g4 | d2c2d2B2 | d4 g4 | ^g4 c4 | g4 =c4 | f2f2e2e2 | d2dd d2d2 |

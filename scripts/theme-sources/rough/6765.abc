@@ -1,0 +1,10 @@
+X:6765
+%%from edm
+T:Manhattan Beach March, 4th Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6765 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+f8 b4 a4 | g16 | f8 b4 c'4 | d'16 | b8 a4 g4 | f16 | a8 c'4 d'4 | e'16 | c'8

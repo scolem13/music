@@ -1,0 +1,10 @@
+X:5035
+%%from edm
+T:Sonata No. 6, Op. 82, 4th Movement - 3rd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5035 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:B
+g=g^g2 g2g2 | g2g2g2g2 | g2ga bgdb | gd =d6 |

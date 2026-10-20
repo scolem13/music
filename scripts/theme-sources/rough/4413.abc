@@ -1,0 +1,12 @@
+X:4413
+%%from mtd
+T:Sonata in A, K 331, 3rd Movement - 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6062, Barlow & Morgenstern M787, EDM 4413 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=117
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+BA^GA | c2 z2 dcBc | e2 z2 fe^de | ba^ga ba^ga | c'4 |

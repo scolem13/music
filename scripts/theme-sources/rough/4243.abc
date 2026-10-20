@@ -1,0 +1,10 @@
+X:4243
+%%from edm
+T:Quartet in A, K 298, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4243 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+A2G2A2E2 | c2B2c2A2 | e2^d2e2c2 | B2A2A2G2 | B2^A2 B2

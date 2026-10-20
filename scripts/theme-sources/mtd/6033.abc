@@ -1,0 +1,12 @@
+X:6033
+T:Sonatina in D, Op. 137, No. 1, 2nd Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7665, Barlow & Morgenstern S446, EDM 6033 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/8
+Q:1/4=48
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+c/>d/ | eeee |{f} a>e c z |{c} e>c A z | B2 c/>d/e/>c/ | B2 |

@@ -1,5 +1,5 @@
 ---
-title: "Recording 4: Monitoring and Headphones"
+title: "Recording 6: Monitoring and Headphones"
 toc: true
 toc-depth: 2
 description: "When to use headphones and when speakers, closed vs open, latency and direct monitoring, the cue mix."
@@ -83,10 +83,27 @@ Set each fader, add the reverb, then switch to speakers to see how much click an
 
 ## Next
 
-- [Recording 5: Mixing](rec-mixing.qmd)
+- [Recording 7: Mixing](rec-mixing.qmd)
 
 {{< include _synth-kit.qmd >}}
 
 ```{=html}
 <script src="/apps/shared/lessons/rec-kit-mix.js?v=1"></script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Bartlett, Bruce, and Jenny Bartlett. *Practical Recording Techniques: The Step-by-Step Approach to Professional Audio Recording*. 7th ed., Routledge, 2017. Details from the Routledge listing.
+
+Huber, David Miles, Emiliano Caballero, and Robert E. Runstein. *Modern Recording Techniques*. 10th ed., Focal Press, 2023. Details from publisher and library listings.
+
+National Institute for Occupational Safety and Health. *Criteria for a Recommended Standard: Occupational Noise Exposure*. Publication 98-126, 1998. [www.cdc.gov/niosh/docs/98-126/default.html](https://www.cdc.gov/niosh/docs/98-126/default.html). Page blocks automated fetches; title, number and the 85 dBA / 3 dB exchange rate confirmed from search listings of CDC pages.
+
+Owsinski, Bobby. *The Recording Engineer's Handbook*. 5th ed., BOMG Publishing, 2023. Details from retailer listings.
+
+Senior, Mike. *Mixing Secrets for the Small Studio*. 2nd ed., Routledge, 2018. Details from retailer and library listings.
+:::
+<!-- /works-cited -->
+

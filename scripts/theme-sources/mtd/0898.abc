@@ -1,0 +1,12 @@
+X:898
+T:Sonata No. 15, in D, Op. 28, 3rd Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0892, Barlow & Morgenstern B774, EDM 0898 (Musical Theme Dataset, CC BY 4.0)
+N:Scherzo: Allegro vivace - Trio / IV. Rondo: Allegro ma non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=321
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+f3 |{/e} d3/2 c/ B | B B ^A | B3 |

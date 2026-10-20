@@ -1,0 +1,13 @@
+X:4509
+%%from mtd
+T:Symphony No. 25, in G minor, K 183, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6158, Barlow & Morgenstern M883, EDM 4509 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=143
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d4 bg | gf f2 f2 | f2 c'2 b/a/g/f/ | gb d2 z2 |

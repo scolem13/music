@@ -1,0 +1,13 @@
+X:807
+%%from mtd
+T:Sonata No. 4, in C, Op. 102, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0801, Barlow & Morgenstern B686, EDM 0807 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio – Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/16
+Q:1/4=131
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e4 | a6 b2 c'6 d'2 | e'8- e'2zd' c'2zb | a2zf e2zd c2zB A2 |

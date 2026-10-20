@@ -1,0 +1,11 @@
+X:5425
+%%from edm
+T:Trittico Botticelliano, 1st Movement - La Primavera, 1st Theme
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5425 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:E
+b3b b6 a2 | g2f2 e4 e4 | b3b b6 a2 | g2e2 f4 f4 | f3g a6 a2 | g2f2 e4 b4 |

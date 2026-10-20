@@ -1,0 +1,11 @@
+X:7676
+%%from edm
+T:The Lark Ascending, 1st Theme
+C:Ralph Vaughan Williams
+%%composer Vaughan Williams|Ralph
+% EDM 7676 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:G
+d'6 b6 | a3ga2 b4 g2 | d8 e2f2 | e6 d3ef2 | e6- edBABd | z/2 e'4- e'3/2

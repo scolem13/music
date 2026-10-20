@@ -1,0 +1,10 @@
+X:2112
+%%from edm
+T:Grand Canyon Suite, 2nd Movement, Painted Desert
+C:Ferde Grofé
+%%composer Grofé|Ferde
+% EDM 2112 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G8 z/2 F<E^D3/2 | ^C12 | z3 ^C G8- | G12- | G4 G8 | z/2 F<E^D3/2 ^C6

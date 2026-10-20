@@ -1,0 +1,11 @@
+X:5740
+%%from edm
+T:Danses Espagnoles, Op. 22, No. 1, Romanza Andaluza, 2nd Theme
+C:Pablo Sarasate
+%%composer Sarasate|Pablo
+% EDM 5740 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:C
+a8 z/2 ^a/2=a^ac' | a4<a4 z/2 g/2^fga | f4<f4 edef | d2 A8- A2 |

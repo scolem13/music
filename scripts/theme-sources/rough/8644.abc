@@ -1,0 +1,10 @@
+X:8644
+%%from edm
+T:Sextet in B-flat, Op. 18, Str., 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8644 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:F
+A4<d4 | ef e6 | A4<f4 | z/2 g/2a g6 | G4<g4 | z/2 a/2b c'4

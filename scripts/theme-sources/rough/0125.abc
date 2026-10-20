@@ -1,0 +1,10 @@
+X:125
+%%from edm
+T:Brandenburg Concerto No. 1, in F, 4th Movement - 2nd Theme - Trio
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0125 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+f8 g4 | e8 f4 | d4 b8 | g/2a/2g/2a/2g/2a/2g/2a/2 g/2a/2g/2a/2fg a4 | d8 e4 | _d4 =B2A2 =d4 |

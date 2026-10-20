@@ -1,0 +1,10 @@
+X:4143
+%%from edm
+T:Concerto in D, K 218, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4143 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+g2a2b2 z/2 a3/2g2f2 | z/2 e3/2d2c2 d2e2f2 | g2a2b2 z/2 a3/2g2f2 | z/2 e3/2d2c2 d4

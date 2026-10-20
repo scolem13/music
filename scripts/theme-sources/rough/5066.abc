@@ -1,0 +1,10 @@
+X:5066
+%%from edm
+T:Symphony No. 5 in B-flat, Op. 100, 4th Movement - 3rd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5066 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Db
+z4 F,4 E,4 A,,4 | D,4 E,4 F,8- | F,4 G,4 A,8 | F8 E4 C4 | D4 F2D2 C4 A,4 | B,8 F,4 G,4 | A,8

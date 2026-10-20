@@ -1,0 +1,10 @@
+X:9569
+%%from edm
+T:Messe Pour Les Paroisses, Organ Fugue on the Kyrie
+C:François Couperin
+%%composer Couperin|François
+% EDM 9569 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+d8 ^c4 d4 | f8 e8 | d8 ^c4 d4 | B4 e4 d4 c4 | A4 d8

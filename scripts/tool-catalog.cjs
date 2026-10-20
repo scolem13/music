@@ -13,7 +13,7 @@ const FAM = {
   Effects: "distortion compressor delay glitch chorus phaser reverb eq sidechain gate transient tremolo rotary octaver harmonizer autotune stereo chain shimmer",
   "Tuning and pitch": "interval tuner bendboard drone calc in ladder pluck bands cents demod disc st temper wheel",
   "Amps and live sound": "amp pa",
-  Recording: "gainstage phantom polar proximity offaxis headmix latency multitrack loudness phase",
+  Recording: "gainstage phantom polar proximity offaxis ampmic vocalmic headmix latency multitrack loudness phase",
 };
 const famOf = {};
 for (const [f, ks] of Object.entries(FAM)) ks.split(" ").forEach(k => (famOf[k] = f));
@@ -28,6 +28,8 @@ const CLS = {
   "sw-tools": ["Swing reader", "Notation and ear"], "fm-lab": ["Formant lab", "Voice"], "gb-lab": ["Bend lab", "Tuning and pitch"],
   "mdaw": ["Mini DAW", "DAW"], "gear-fig": ["Gear figures", "Gear"], "pw-embed": ["Practice widget", "Tuning and pitch"],
   "dj-tt": ["Turntables", "DJ and sampling"], "turntables": ["Turntables", "DJ and sampling"], "sp-pads": ["Sampler pads", "DJ and sampling"],
+  "cp-motif": ["Motif lab", "Composing"], "cp-transpose": ["Transposer", "Composing"], "cp-journal": ["Process journal entry", "Composing"],
+  "cp-intent": ["Artistic intention builder", "Composing"], "cp-sort": ["Command terms", "Composing"],
 };
 const UP = { eq: "EQ", lfo: "LFO", fm: "FM synthesis", pa: "PA channel", st: "Strobe", in: "Inharmonicity" };
 const nice = k => UP[k] || k.charAt(0).toUpperCase() + k.slice(1);
@@ -35,10 +37,12 @@ const nice = k => UP[k] || k.charAt(0).toUpperCase() + k.slice(1);
 const lessons = [], tools = {};
 for (const f of fs.readdirSync(dir).filter(f => /^[a-z].*\.qmd$/.test(f) && f !== "index.qmd" && f !== "tools.qmd")) {
   const src = fs.readFileSync(path.join(dir, f), "utf8");
+  if (/^search:\s*false\s*$/m.test(src)) continue;   // delisted (work in progress) pages stay out of the catalogue
   const title = ((src.match(/^title:\s*"?(.*?)"?\s*$/m) || [])[1] || f).replace(/^Lesson:\s*/, "");
   const found = new Set();
   for (const m of src.matchAll(/data-w="([a-z ]+)"/g)) m[1].split(" ").forEach(k => found.add(nice(k) + "|" + (famOf[k] || "Other widgets")));
   for (const m of src.matchAll(/class="([a-z][a-z- ]*)"/g)) for (const c of m[1].split(" ")) if (CLS[c]) found.add(CLS[c].join("|"));
+  if (/id="ob-flow"/.test(src)) found.add("Ornament flow chart|Notation and ear");
   if (/iframe[^>]*notation\.html/.test(src) || /tools\/notation\.html/.test(src)) found.add("Notation page (framed)|Notation and ear");
   if (!found.size) continue;
   const href = f.replace(/\.qmd$/, ".html");

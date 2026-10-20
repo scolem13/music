@@ -1,0 +1,10 @@
+X:8183
+%%from edm
+T:The Corsair, Overture, Op. 21, 2nd Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8183 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+a4 c'8 b4 | =a2b2 _a3g g4 f z3 | b4 g4 f4 e2 z2 | g4 a2b2 c'4

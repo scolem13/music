@@ -1,0 +1,11 @@
+X:9190
+%%from edm
+T:Etudes, Op. 25 - No. 4 in A minor
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9190 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+z2 e2 z2 a2 z2 a2 z2 ^g2 | z2 e2 z2 c'2 z2 c'2 z2 b2 | z2 a2 z2 e'2 z2 d'2 z2 e'2 | z2 c'2 z2 ^g2 z2 a2 z2 c'2 |

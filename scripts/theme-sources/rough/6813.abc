@@ -1,0 +1,11 @@
+X:6813
+%%from edm
+T:Afro-American Symphony, 4th Movement - 2nd Theme
+C:William Grant Still
+%%composer Still|William Grant
+% EDM 6813 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Ab
+c'=b_b2e2 A2=d2e2 | c'=b_b2e2 A2=d2e2 | c'=b_b2e2 A2=d2e2 | d2=B2A2 A2_G2A2 |

@@ -1,0 +1,10 @@
+X:4640
+%%from edm
+T:Boris Godunov, Coronation Scene, 2nd Theme
+C:Modest Petrovich Mussorgsky
+%%composer Mussorgsky|Modest Petrovich
+% EDM 4640 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+z4 c4 G4 | c4 c4 d4 | e2g2 f4 e4 | d4 c4 d4 | e8 c4 |

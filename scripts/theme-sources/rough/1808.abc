@@ -1,0 +1,10 @@
+X:1808
+%%from edm
+T:Concerto in A minor, Op. 82, 3rd Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1808 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+A,4 D6 F2 | E3D A,2B,2 C2D2 | E4 F6 G2 | F2E4<A4

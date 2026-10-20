@@ -1,0 +1,13 @@
+X:1006
+%%from mtd
+T:Sonata No. 9, in A, Op. 47, 1st Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1000, Barlow & Morgenstern B882, EDM 1006 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio sostenuto – Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=282
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e | f3 A | ^G E E G | A E E A | B E E B | c A A c | c A A c | d4 | g4 | !fermata!e3 |

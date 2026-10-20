@@ -1,0 +1,10 @@
+X:4220
+%%from edm
+T:Cosi Fan Tutte, Opera, Overture, K 588, 1st Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4220 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c'4 z3 C C4 z4 | G8 c4 e4 | g8- g2ag fedc | c4 e3d d4

@@ -1,0 +1,10 @@
+X:9297
+%%from edm
+T:Preludes, Op. 28, No. 20
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9297 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g4 a4 g3f e4 | e4 f4 e3_d c4 | d4 =e4 g3f e4 | d4 g4 =b3=a g4 |

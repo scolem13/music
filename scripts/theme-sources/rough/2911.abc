@@ -1,0 +1,10 @@
+X:2911
+%%from edm
+T:Trio No. 2, 3rd Movement, 2nd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2911 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+^c8- c2^d2f2^f2 | f2^g2 g4 a6 c'2 | b8 a2e2B2a2 | g4 ^f4

@@ -1,0 +1,10 @@
+X:1828
+%%from edm
+T:Ouverture Solennelle, 4th Theme
+C:Alexander Glazunov
+%%composer Glazunov|Alexander
+% EDM 1828 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+F4 d8 c2d2 | c2B2 G4 F6 G2 | B2c2 d2 f4 g2 a2 z/2 b3/2 | a2g2 d12 |

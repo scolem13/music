@@ -1,0 +1,10 @@
+X:8466
+%%from edm
+T:Ballade in G minor, Op. 118, No. 3, 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8466 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:B
+b6 g4<b4 c'2 | d'6 b4<d'4 e'2 | f'6 d'4<c'4 d'2 | b6 a4<g4 d'2 |

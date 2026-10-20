@@ -1,0 +1,12 @@
+X:5405
+T:Fountains of Rome, The Fountains of Trevi at Mid-day
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% MTD 7040, Barlow & Morgenstern R273, EDM 5405 (Musical Theme Dataset, CC BY 4.0)
+N:La fontana di Trevi al meriggio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+G, | C2 D | _E/>_A,/ _B, C | _E3 | D3 | ^C2 z |

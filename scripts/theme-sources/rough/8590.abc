@@ -1,0 +1,10 @@
+X:8590
+%%from edm
+T:Quintet in F minor, Op. 34, 1st Movement - 4th Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8590 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+d'4 d6 e2 f2a2 | d'2e'2f'2e'2 f'2d'2b2_g2 | f2 z f b2 z b _g2 z g a2 z a |

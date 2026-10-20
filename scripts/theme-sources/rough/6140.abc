@@ -1,0 +1,10 @@
+X:6140
+%%from edm
+T:Trio in B-flat, (1817), 1st Movement
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 6140 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+f' b'6 a' g'f'2d'2 g'2e'- | e' c'4 d'2 z4 =e fgfc' | b d'4 e'2

@@ -242,4 +242,28 @@ Five to ten minutes a day, in this order. Move on when the step rings clean nine
 </script>
 ```
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Harmonic series (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Harmonic_series_(music)](https://en.wikipedia.org/wiki/Harmonic_series_(music)).
+
+"Pinch harmonic." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Pinch_harmonic](https://en.wikipedia.org/wiki/Pinch_harmonic).
+
+"String harmonic." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/String_harmonic](https://en.wikipedia.org/wiki/String_harmonic).
+
+Wolfe, Joe. "Strings, Standing Waves and Harmonics." *Music Acoustics*, University of New South Wales. [newt.phys.unsw.edu.au/jw/strings.html](https://newt.phys.unsw.edu.au/jw/strings.html).
+
+**For teachers**
+
+Fletcher, Neville H., and Thomas D. Rossing. *The Physics of Musical Instruments*. 2nd ed., Springer, 1998.
+
+Rossing, Thomas D., F. Richard Moore, and Paul A. Wheeler. *The Science of Sound*. 3rd ed., Addison-Wesley, 2002.
+
+Wolfe, Joe. "How Harmonic Are 'Harmonics'?" *Music Acoustics*, University of New South Wales. [newt.phys.unsw.edu.au/jw/harmonics.html](https://newt.phys.unsw.edu.au/jw/harmonics.html). Open strings; not guitar-specific.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

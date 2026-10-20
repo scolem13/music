@@ -1,0 +1,10 @@
+X:3353
+%%from edm
+T:Sonata in D, Op. 8, No. 3, 3rd Movement - Sarabande
+C:Jean-Marie Leclair
+%%composer Leclair|Jean-Marie
+% EDM 3353 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:F
+A8 d12 f4 | B12 A4 G4 F4 | E8 A8- A2G2F2E2 | z/2 z/2 F8- F3 E4 D8 |

@@ -1,0 +1,12 @@
+X:6920
+%%from mtd
+T:Thousand and One Nights, Op. 346, Waltzes, No. 1, 3rd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8549, Barlow & Morgenstern S1311, EDM 6920 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=178
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+eg c'3 b | g z f z e z | df a z z2 | df a2 BB | df c'3 b | a z g z f z | eg b z |

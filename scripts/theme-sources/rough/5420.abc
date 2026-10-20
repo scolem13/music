@@ -1,0 +1,11 @@
+X:5420
+%%from edm
+T:Rossiniana, 2nd Movement - Lament, 2nd Theme
+C:Ottorino Respighi
+%%composer Respighi|Ottorino
+% EDM 5420 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+B16- | B2 c4- cB B8 | z6 B2 c2d2e2f2 | g2g2g2g2 g2g2g2_g2 | g2e2G2c2 B4 A2

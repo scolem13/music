@@ -1,0 +1,13 @@
+X:1286
+%%from mtd
+T:Slavonic Dances, Op. 46, No. 3, 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% MTD 2950, Barlow & Morgenstern D362, EDM 1286 (Musical Theme Dataset, CC BY 4.0)
+N:Poco allegro [Polka]  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=141
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+f'2 z2 e'2 z2 | c'6 ba | gaga b2g2 | abab c'2a2 |

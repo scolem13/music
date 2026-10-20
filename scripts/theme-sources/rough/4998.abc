@@ -1,0 +1,10 @@
+X:4998
+%%from edm
+T:Quartet, Op. 50, 3rd Movement
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4998 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+F,6 A,2 D2B,2 | C2F,2B,2D2E2A,2 | F2A2 E3F E2A,2 | ^A,2F2 B,2GF E4 |

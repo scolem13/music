@@ -1,0 +1,10 @@
+X:291
+%%from edm
+T:Sonata No. 4 in C minor, Vn. and Piano, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0291 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+z4 B,4 E4- | E3C2<D2F A4- | A3F2<G2B c4 | D/2E/2D/2E/2D/2E/2D/2E/2 z/2 B,3-B,/2

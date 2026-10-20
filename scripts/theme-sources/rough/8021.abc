@@ -1,0 +1,11 @@
+X:8021
+%%from edm
+T:Facade, Suite No. 1, Valse, 1st Theme
+C:William Walton
+%%composer Walton|William
+% EDM 8021 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/8
+L:1/16
+K:C
+^g/2a/2c'/2^d'/2 e'3 c' | e2 g4- | g4 a2- | ab (3aba g2 | ab (3aba g2- | g6- | g2

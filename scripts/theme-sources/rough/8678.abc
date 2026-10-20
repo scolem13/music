@@ -1,0 +1,10 @@
+X:8678
+%%from edm
+T:Sonata in F minor, Op. 5, 1st Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8678 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+e4 =d2c2 d4 | f4 e2=d2 e4 | g2f2 a4 g2f2 | e2=d4<c4 d2 | =d12 |

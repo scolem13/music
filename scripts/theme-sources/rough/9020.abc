@@ -1,0 +1,11 @@
+X:9020
+%%from edm
+T:Adventures in a Perambulator, 5th Movement - 2nd Theme
+C:John Alden Carpenter
+%%composer Carpenter|John Alden
+% EDM 9020 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+^a4 g2^d2 z2 g2 c'4 | ^a2e'd' ^g2^c'2 a=c'^c'^d' =a2

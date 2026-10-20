@@ -1,0 +1,13 @@
+X:849
+%%from mtd
+T:Sonata No. 7, in D, Op. 10, No. 3, 2nd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0843, Barlow & Morgenstern B725, EDM 0849 (Musical Theme Dataset, CC BY 4.0)
+N:Largo e mesto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=26
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+D^CD FCD | D^CD GCD | FED ^C2 D | FE^F G2 |

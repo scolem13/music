@@ -1,0 +1,10 @@
+X:2714
+%%from edm
+T:Symphony in D, No. 93, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2714 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d4 c4 d4 | F4 G4 B4 | E4 ^D2E2 G2E2 | C2A,2 D4 F4 |

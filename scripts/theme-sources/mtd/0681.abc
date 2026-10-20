@@ -1,0 +1,12 @@
+X:681
+T:Quartet in G, Op. 18, No. 2, 1st Movement - 1st Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0675, Barlow & Morgenstern B579, EDM 0681 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=83
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d4 B/c/B/c/d/e/f/g/ | d4 z2 z3/2 B/ |{/d} c2z>c A2z>F | D4 |

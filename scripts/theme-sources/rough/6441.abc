@@ -1,0 +1,10 @@
+X:6441
+%%from edm
+T:Concerto, Op. 35, 1st Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% EDM 6441 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+g3e c8- c2de | d=BG4<A4 _B2 c2e2 | a2e'4<f'4 d'2 b4 | g3e b6 a2 g4 |

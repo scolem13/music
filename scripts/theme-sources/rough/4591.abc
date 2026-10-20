@@ -1,0 +1,13 @@
+X:4591
+%%from mtd
+T:Symphony No. 39, in E-flat, K 543, 1st Movement - 3rd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% MTD 6240, Barlow & Morgenstern M965, EDM 4591 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio - Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=136
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B6 | c6 | d2 g2 f2 | feeddc | c3 ^c d2 |

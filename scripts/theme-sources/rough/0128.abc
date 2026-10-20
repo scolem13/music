@@ -1,0 +1,10 @@
+X:128
+%%from edm
+T:Brandenburg Concerto No. 2, in F, 1st Movement - 2nd Theme
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0128 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+dedee/2f/2e/2f/2e/2f/2d/2e/2 f2FGABcA | dBGBEGcB ABcAF2

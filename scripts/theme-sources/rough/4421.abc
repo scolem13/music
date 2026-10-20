@@ -1,0 +1,10 @@
+X:4421
+%%from edm
+T:Fantaisie in C minor, K 475, Intro. to Sonata K 457
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4421 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+C6 E2 _G2=G2A2C2 | =B,2 z2 e2d z _g2=g

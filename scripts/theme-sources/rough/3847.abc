@@ -1,0 +1,10 @@
+X:3847
+%%from edm
+T:Octet, in E-flat, Op. 20, 1st Movement - 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% EDM 3847 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+B4 c4 d4 e4 | d2_d2 =d4 B2c2 d4 | e2d2d2c2 B2c2 B4 |

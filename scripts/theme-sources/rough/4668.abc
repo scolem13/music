@@ -1,0 +1,10 @@
+X:4668
+%%from edm
+T:Sonata No. 2, in D, 2nd Movement - 2nd Theme
+C:Pietro Nardini
+%%composer Nardini|Pietro
+% EDM 4668 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+E4 B2 z2 B8 | c4 e2^d2 =d8 | B4 c6 de2<d2c | B3A ^G4 A2B2 E4- | E4

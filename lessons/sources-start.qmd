@@ -1,0 +1,109 @@
+---
+title: "Sources 1: Where Did You Find That? (Grades 6–8)"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+description: "For grades 6–8: what a source is, how to tell a good one from a weak one, why a Google AI summary is not a source, and how to write down where you found something."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [research]
+---
+
+When you write about music, a **source** is where you found out something you didn't know before. It might be a
+book, a website, a video, a recording, a score, or a person you asked. Every time you write a fact you found
+somewhere, the reader should be able to ask "where did you find that?" and get an answer.
+
+## Kinds of sources
+
+| Kind | What it is | Example |
+|---|---|---|
+| The music itself | A recording or a printed score | The album, the sheet music |
+| The people who made it | The musicians, in their own words | An interview with the drummer, the album notes |
+| People who studied it | Writers who know a lot about the music | A book about the blues, a music encyclopedia |
+| Places that teach | Schools, museums, libraries | A music museum's website, a university page |
+
+The best research uses more than one kind. Listen to the music *and* read what people who know about it say.
+
+## Four questions to ask about any source
+
+1. **Who made it?** Is there a person's name or an organisation's name? Do they know about music?
+2. **How do they know?** Were they there? Did they study it? Do they say where *they* found it?
+3. **When was it made?** Old is fine for history. For gear and apps, you want something recent.
+4. **Can someone else find it again?** If your teacher can't find it, they can't check it.
+
+If a source can't answer the first question, be careful with it.
+
+## Google's AI summary is not a source
+
+::: {.callout-warning}
+## The box at the top of Google is not a source
+
+When you search, Google (and Bing, and other search sites) often shows a summary written by a computer at the top of
+the page. It might be called an **AI Overview**. Other apps, like chatbots, write answers the same way.
+
+**You can't cite it, and you shouldn't trust it.** Here's why:
+
+- **Nobody wrote it.** A computer made it by guessing which words come next. No person checked it.
+- **It makes mistakes.** In 2024 Google's AI Overviews told people to put glue on pizza and to eat a small rock
+  every day. It got the glue idea from a joke someone posted online.
+- **It changes.** Ask again tomorrow and you may get a different answer. Your teacher can't look up what you saw.
+:::
+
+**What to do instead:**
+
+1. Scroll past the AI summary.
+2. Click on a real web page in the results, from a person or a group you can name.
+3. Ask the four questions about that page.
+4. Find a second good source that says the same thing.
+5. Write down the **page** you used, not the summary.
+
+## What about Wikipedia?
+
+Wikipedia is a good place to **start**, but not to finish. Anyone can edit it, so it can be wrong for a while. At the
+bottom of each article is a list of **references**: the books and websites the article used. Click those. They are
+often better sources, and you can use them.
+
+## What about MuseScore, YouTube and other uploads?
+
+Anyone can upload sheet music to MuseScore or a video to YouTube. Some of it is excellent and some is full of mistakes.
+For sheet music, check whether it matches the recording, or ask your teacher for a published copy. For a video, ask
+who made it. A video from the band itself, a museum, or a music school is better than one from a stranger.
+
+## Writing down where you found it
+
+Every time you use a source, write down:
+
+- **Who** made it (the author or the organisation)
+- **What** it's called (the title)
+- **Where** it is (the website's name and the web address, or the book's publisher)
+- **When** it was made, if it says
+
+For music, also write down **where in the music**: a time in the recording ("at 1:24") or a bar number in the score
+("bar 12").
+
+For example:
+
+> Hanna, Abby. "Who Was Robert Johnson?" *Example Music Museum*, 2023, www.example.org/robert-johnson.
+
+(That page is made up, to show you the pattern. Your real one will have a real address.)
+
+## Try it
+
+Pick one question, such as "Who invented the electric guitar?" or "Where does the steel drum come from?"
+
+1. Search for it. Look at the AI summary, if there is one, and then **scroll past it**.
+2. Find two real web pages that answer the question. Ask the four questions about each one.
+3. Do they agree? If they don't, find a third.
+4. Write down both sources in the pattern above.
+5. Now look at the AI summary again. Did it match what your good sources said? Did it tell you where it got its answer?
+
+Next: [Sources 2: Checking and Citing](sources-check.qmd) (grades 9–10).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+*MLA Style Center*. Modern Language Association, [style.mla.org/](https://style.mla.org/).
+
+Williams, Rhiannon. "Why Google's AI Overviews Gets Things Wrong." *MIT Technology Review*, 31 May 2024, [www.technologyreview.com/2024/05/31/1093019/why-are-googles-ai-overviews-results-so-bad](https://www.technologyreview.com/2024/05/31/1093019/why-are-googles-ai-overviews-results-so-bad).
+:::
+<!-- /works-cited -->

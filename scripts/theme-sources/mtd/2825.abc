@@ -1,0 +1,12 @@
+X:2825
+T:Trio No. 3 in C, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4485, Barlow & Morgenstern H704, EDM 2825 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/16
+Q:1/4=84
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+cBAG F2F2 FAGF | E2E2 cBAG F2F2 FAGF | E2 |

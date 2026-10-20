@@ -1,0 +1,11 @@
+X:7173
+%%from edm
+T:Pastorale, Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7173 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F#
+e4 c4 B4 | z/2 A/2Bcd c2e2 c4 | z2 =e2 B4 A2 z2 | =c^c=c=e B4 A2

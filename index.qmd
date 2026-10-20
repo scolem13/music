@@ -5,109 +5,214 @@ toc: false
 
 ```{=html}
 <style>
-.home-intro {
-  font-size: 1.05rem; color: var(--site-ink-2); max-width: 48rem;
-  margin: 0 0 2rem; line-height: 1.7;
+.home-intro { font-size: 1.05rem; color: var(--site-ink-2); max-width: 48rem; margin: 0 0 1.25rem; line-height: 1.7; }
+.home-filter { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: 0 0 1.5rem; }
+.home-filter span { font-size: .8rem; color: var(--parch-dim); margin-right: .2rem; }
+.home-filter button {
+  font: inherit; font-size: .82rem; padding: .25rem .7rem; border-radius: 999px; cursor: pointer;
+  background: var(--parch-2); color: var(--parch-ink); border: 1px solid var(--parch-edge);
 }
-.home-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-  gap: 1rem; margin-bottom: 2rem;
+.home-filter button[aria-pressed="true"] { background: var(--site-accent); border-color: var(--site-accent); color: #fff; }
+.home-tasks { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.home-task {
+  background: var(--parch-2); border: 1px solid var(--parch-edge); border-radius: .5rem;
+  padding: 1rem 1.1rem .9rem; display: flex; flex-direction: column; gap: .5rem; min-width: 0;
 }
-.home-card {
-  background: var(--parch-2); border: 1px solid var(--parch-edge);
-  border-radius: .5rem; padding: 1rem 1.1rem;
-  text-decoration: none; color: inherit;
-  display: flex; flex-direction: column; gap: .3rem;
-  transition: border-color .15s, box-shadow .15s;
+.home-task[hidden] { display: none; }
+.home-task h2 {
+  font-family: var(--font-display); font-size: 1.02rem; font-weight: 650; margin: 0;
+  color: var(--parch-ink); border: 0; padding: 0;
 }
-.home-card:hover {
-  border-color: var(--site-accent); color: inherit;
-  box-shadow: 0 2px 8px rgba(63,194,180,.15);
-  text-decoration: none;
-}
-.home-card-eyebrow {
-  font-size: .7rem; font-weight: 700; letter-spacing: .08em;
-  text-transform: uppercase; color: var(--site-accent-dk);
-}
-.home-card-title {
-  font-weight: 600; font-size: .97rem; color: var(--parch-ink);
-}
-.home-card-desc {
-  font-size: .84rem; color: var(--site-ink-2); line-height: 1.5;
-}
-.home-section-head {
-  font-family: var(--font-display); font-size: .78rem; font-weight: 700;
-  letter-spacing: .1em; text-transform: uppercase; color: var(--parch-dim);
-  border-bottom: 1px solid var(--parch-edge); padding-bottom: .35rem;
-  margin: 1.75rem 0 .85rem;
-}
+.home-task ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .45rem; }
+.home-task li { font-size: .84rem; line-height: 1.45; color: var(--site-ink-2); }
+.home-task li a { font-weight: 600; color: var(--site-accent-dk); text-decoration: none; }
+.home-task li a:hover { text-decoration: underline; }
+.home-task li.more { font-size: .78rem; color: var(--parch-dim); border-top: 1px dashed var(--parch-edge); padding-top: .4rem; }
+.home-task li.more a { font-weight: 500; }
 </style>
 
 <p class="home-intro">
-  Rhythm, melody, and song — tools for music students from kindergarten through
-  high school. Practice on your own, or follow a session your teacher has set up.
+  What are you working on today? Pick the task closest to it; each one starts you on the
+  best page for the job, with a line on why.
 </p>
 
-<div class="home-section-head">Practice</div>
-<div class="home-grid">
-  <a class="home-card" href="practice/rhythm-sequences.html">
-    <div class="home-card-eyebrow">Rhythm</div>
-    <div class="home-card-title">Rhythm Sequences</div>
-    <div class="home-card-desc">Build rhythmic vocabulary pattern by pattern.</div>
-  </a>
-  <a class="home-card" href="practice/tonal-sequences.html">
-    <div class="home-card-eyebrow">Melody</div>
-    <div class="home-card-title">Tonal Sequences</div>
-    <div class="home-card-desc">Practice melodic patterns by ear and by sight.</div>
-  </a>
-  <a class="home-card" href="practice/songs.html">
-    <div class="home-card-eyebrow">Composition</div>
-    <div class="home-card-title">Song Builder</div>
-    <div class="home-card-desc">Assemble rhythm and melody cells into a short piece.</div>
-  </a>
-  <a class="home-card" href="practice/patterns.html">
-    <div class="home-card-eyebrow">Melody</div>
-    <div class="home-card-title">Tonal Patterns</div>
-    <div class="home-card-desc">Stepwise and harmonic patterns, major and minor.</div>
-  </a>
-  <a class="home-card" href="practice/rhythms.html">
-    <div class="home-card-eyebrow">Rhythm</div>
-    <div class="home-card-title">Rhythm Patterns</div>
-    <div class="home-card-desc">Notated rhythm reading and performance.</div>
-  </a>
+<div class="home-filter" role="group" aria-label="Show tasks for">
+  <span>Show for:</span>
+  <button type="button" data-f="all" aria-pressed="true">Everyone</button>
+  <button type="button" data-f="guitar" aria-pressed="false">Guitar</button>
+  <button type="button" data-f="piano" aria-pressed="false">Piano</button>
+  <button type="button" data-f="bass" aria-pressed="false">Bass</button>
+  <button type="button" data-f="drums" aria-pressed="false">Drums</button>
+  <button type="button" data-f="voice" aria-pressed="false">Voice</button>
+  <button type="button" data-f="producer" aria-pressed="false">Producer / DJ</button>
+  <button type="button" data-f="teacher" aria-pressed="false">Teacher</button>
 </div>
 
-<div class="home-section-head">Assessment</div>
-<div class="home-grid">
-  <a class="home-card" href="practice/assessment-tune.html">
-    <div class="home-card-eyebrow">Pitch &amp; Rhythm</div>
-    <div class="home-card-title">Tune Assessment</div>
-    <div class="home-card-desc">Perform a tune; get scored on pitch and rhythm accuracy.</div>
-  </a>
-  <a class="home-card" href="practice/assessment.html">
-    <div class="home-card-eyebrow">Melody</div>
-    <div class="home-card-title">Tonal Accuracy</div>
-    <div class="home-card-desc">Sing or play back tonal patterns on demand.</div>
-  </a>
-  <a class="home-card" href="practice/assessment-rhythm.html">
-    <div class="home-card-eyebrow">Rhythm</div>
-    <div class="home-card-title">Rhythmic Accuracy</div>
-    <div class="home-card-desc">Perform rhythm patterns and see your timing.</div>
-  </a>
+<div class="home-tasks">
+
+<section class="home-task" data-for="guitar piano bass drums voice">
+  <h2>Learn a song from a recording</h2>
+  <ul>
+    <li><a href="tools/timestamp-notes.html">Timestamp Notes</a> — load a YouTube link or file, stamp the sections, tap the bars, loop phrase by phrase.</li>
+    <li><a href="tools/tap-along.html">Tap Along</a> — the same mapping on a phone, while the song plays in another app.</li>
+    <li><a href="lessons/timestamp-player.html">Mapping a Recording</a> — the lesson that walks you through it.</li>
+    <li class="more">Also: <a href="lessons/section-labels.html">Naming sections</a>, <a href="tools/chunk-practice.html">Chunk Practice</a> for the fast bits</li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="guitar piano bass drums voice">
+  <h2>Play along with a band</h2>
+  <ul>
+    <li><a href="tools/backing-track.html">Backing Track</a> — type or paste chords, pick a style, and a full band plays them.</li>
+    <li><a href="styles/index.html">Styles</a> — swing to reggaeton: hear what each groove does before you choose.</li>
+    <li><a href="lessons/first-rock-song.html">Your first rock song</a> — a guided first session with the band.</li>
+    <li class="more">Also: <a href="tools/drumset.html">Drum Set</a>, <a href="tools/accomp-styles.html">Accompaniment styles</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="guitar piano bass drums voice teacher">
+  <h2>Write down a melody</h2>
+  <ul>
+    <li><a href="tools/notation.html">Notation</a> — play it in on a MIDI keyboard or type letters; add chords and words, then hear it.</li>
+    <li><a href="lessons/write-an-ending.html">Write an Ending</a> — finish an unfinished song's last two bars.</li>
+    <li><a href="practice/dictation.html">Dictation</a> — hear a line, write it, get it marked note by note.</li>
+    <li class="more">Also: <a href="lessons/notation-choices.html">Notation choices</a>, <a href="tools/notation-rules.html">Notation rules</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="guitar">
+  <h2>Tune and set up my guitar</h2>
+  <ul>
+    <li><a href="tools/guitar-tuning.html">Guitar Tuning</a> — tune by ear six ways, any tuning, with the mic as a check.</li>
+    <li><a href="tools/guitar-setup-check.html">Setup Check</a> — buzz, action, relief, intonation: what to adjust, and who should.</li>
+    <li><a href="lessons/guitar-tuning-ear.html">Tuning by ear</a> — why the ear comes first.</li>
+    <li class="more">Also: <a href="lessons/strobe-tuner.html">Strobe tuner</a>, <a href="lessons/guitar-harmonics.html">Harmonics</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="guitar piano bass">
+  <h2>Learn chords on my instrument</h2>
+  <ul>
+    <li><a href="tools/chord-library.html">Chord Library</a> — every shape, with the lessons that teach it.</li>
+    <li><a href="lessons/pop-changes-guitar.html">Pop changes: guitar</a>, <a href="lessons/pop-changes-piano.html">piano</a>, <a href="lessons/pop-changes-bass.html">bass</a> — the four-chord songs, on your instrument.</li>
+    <li><a href="lessons/chord-shapes-guitar.html">Guitar chord shapes</a> or <a href="lessons/chord-shapes-piano.html">piano chord shapes</a> — the first shapes and the hand that makes them.</li>
+    <li class="more">Also: <a href="lessons/inversions.html">Inversions</a>, <a href="tools/scales.html">Scales</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="voice">
+  <h2>Warm up and train my voice</h2>
+  <ul>
+    <li><a href="tools/vocal-warmup.html">Vocal Warm-up</a> — a routine built for you: stretches, breath, piano-led patterns, a groove.</li>
+    <li><a href="lessons/voice-pop.html">Pop voice</a> — mic, style and stamina for pop singing.</li>
+    <li><a href="lessons/vowel-formants.html">Vowels and formants</a> — drag a vowel and hear why it carries.</li>
+    <li class="more">Also: <a href="lessons/voice-jazz.html">Jazz voice</a>, <a href="lessons/voice-classical.html">Classical voice</a>, <a href="tools/ipa-chart.html">IPA chart</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="drums">
+  <h2>Get grooves into my hands</h2>
+  <ul>
+    <li><a href="lessons/hihat-grooves.html">Hi-hat grooves</a> — the kit drawn from above, lit as the band plays.</li>
+    <li><a href="lessons/congas-basics.html">Congas basics</a> — the tones and the tumbao, then play along.</li>
+    <li><a href="lessons/blues-drums.html">Blues drums</a> — shuffle and swing feels with the band.</li>
+    <li class="more">Also: <a href="lessons/drum-grips.html">Grips</a>, <a href="lessons/drum-brushes.html">Brushes</a>, <a href="lessons/cajon-basics.html">Cajón</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="guitar piano bass voice">
+  <h2>Understand harmony</h2>
+  <ul>
+    <li><a href="lessons/four-chord-loops.html">Four-chord loops</a> — the progressions behind a thousand songs.</li>
+    <li><a href="lessons/cadences.html">Cadences</a> — how phrases end, and how to hear it.</li>
+    <li><a href="lessons/blues-changes.html">Blues changes</a> — the twelve bars, and what players do with them.</li>
+    <li class="more">Also: <a href="lessons/borrowed-chords.html">Borrowed chords</a>, <a href="lessons/guide-tones.html">Guide tones</a>, <a href="lessons/reharmonize.html">Reharmonize</a>, <a href="tools/circle-of-fifths.html">Circle of fifths</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="guitar piano bass drums">
+  <h2>Improvise and arrange</h2>
+  <ul>
+    <li><a href="lessons/blues-improv.html">Blues improvisation</a> — your first solos over a band.</li>
+    <li><a href="lessons/arrange-band.html">Arranging for a band</a> — who plays what, and when to stay out.</li>
+    <li><a href="lessons/reading-swing.html">Reading swing</a> — play the written line; get graded on the feel.</li>
+    <li class="more">Also: <a href="lessons/arrange-organ.html">Organ parts</a>, <a href="lessons/stride-boogie.html">Stride and boogie</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="producer voice guitar">
+  <h2>Record and mix</h2>
+  <ul>
+    <li><a href="lessons/rec-gain-staging.html">Gain staging</a> — set levels before anything else.</li>
+    <li><a href="lessons/rec-mics.html">Microphones</a> and <a href="lessons/rec-voice.html">recording a voice</a> — pick and place a mic, hear it change.</li>
+    <li><a href="lessons/daw-timeline.html">DAW basics</a> — a small DAW in the page, up to <a href="lessons/daw-real.html">your first real session</a>.</li>
+    <li class="more">Also: <a href="lessons/rec-mixing.html">Mixing</a>, <a href="lessons/rec-mastering.html">Mastering</a>, <a href="lessons/gear-cables.html">Cables</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="producer">
+  <h2>DJ or make beats from samples</h2>
+  <ul>
+    <li><a href="lessons/dj-gear.html">DJ gear</a> — two decks and a mixer in the page; then <a href="lessons/dj-beatmatch.html">beatmatching</a>.</li>
+    <li><a href="lessons/sampling-what.html">What a sample is</a> — then chop one onto pads.</li>
+    <li><a href="lessons/sampling-beat.html">Build a beat</a> — chops, pads and a quantized pattern.</li>
+    <li class="more">Also: <a href="lessons/dj-set.html">Plan a set</a>, <a href="lessons/sampling-law.html">Sampling and the law</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="producer piano">
+  <h2>Design sounds with synths</h2>
+  <ul>
+    <li><a href="lessons/sound-harmonics.html">Harmonics</a> — where every sound starts.</li>
+    <li><a href="lessons/sound-subtractive.html">Subtractive synthesis</a> — oscillator, filter, envelope: the classic synth.</li>
+    <li><a href="lessons/sound-chain.html">Effects chain</a> — put EQ, compression and space in order.</li>
+    <li class="more">Also: <a href="lessons/sound-fm.html">FM</a>, <a href="lessons/sound-chiptune.html">Chiptune</a>, <a href="lessons/gear-amps.html">Amps</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="voice teacher guitar piano bass drums">
+  <h2>Build reading, rhythm and ear</h2>
+  <ul>
+    <li><a href="practice/rhythm-sequences.html">Rhythm Sequences</a> — rhythm vocabulary, pattern by pattern.</li>
+    <li><a href="practice/tonal-sequences.html">Tonal Sequences</a> — melodic patterns by ear and by sight.</li>
+    <li><a href="practice/reading-benchmarks.html">Reading Benchmarks</a> — graded lines to read at sight.</li>
+    <li class="more">Also: <a href="practice/patterns.html">Tonal Patterns</a>, <a href="practice/rhythms.html">Rhythm Patterns</a>, <a href="practice/songs.html">Song Builder</a></li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="voice teacher guitar piano bass drums">
+  <h2>Test my pitch and rhythm</h2>
+  <ul>
+    <li><a href="practice/assessment-tune.html">Tune Assessment</a> — perform a tune; scored on pitch and rhythm.</li>
+    <li><a href="practice/assessment.html">Tonal Accuracy</a> — sing or play back patterns on demand.</li>
+    <li><a href="practice/assessment-rhythm.html">Rhythmic Accuracy</a> — perform rhythms and see your timing.</li>
+  </ul>
+</section>
+
+<section class="home-task" data-for="teacher">
+  <h2>Set work and follow progress</h2>
+  <ul>
+    <li><a href="teacher/session-builder.html">Session Builder</a> — write a guided practice session and share the link.</li>
+    <li><a href="teacher/report.html">Teacher Report</a> — time on task, plays and notes, by student.</li>
+    <li><a href="lessons/index.html">All lessons</a> — filter by instrument and topic to find one to assign.</li>
+    <li class="more">Also: <a href="lessons/tools.html">Every interactive tool</a></li>
+  </ul>
+</section>
+
 </div>
 
-<div class="home-section-head">Teacher tools</div>
-<div class="home-grid">
-  <a class="home-card" href="teacher/session-builder.html">
-    <div class="home-card-eyebrow">Assign</div>
-    <div class="home-card-title">Session Builder</div>
-    <div class="home-card-desc">Write a guided practice session and share the link.</div>
-  </a>
-  <a class="home-card" href="teacher/report.html">
-    <div class="home-card-eyebrow">Review</div>
-    <div class="home-card-title">Teacher Report</div>
-    <div class="home-card-desc">Time on task, plays, and note interactions by student.</div>
-  </a>
-</div>
+<script>
+(function () {
+  var bar = document.querySelector('.home-filter'); if (!bar) return;
+  var tasks = document.querySelectorAll('.home-task');
+  function show(f) {
+    bar.querySelectorAll('button').forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.f === f)); });
+    tasks.forEach(function (t) { t.hidden = f !== 'all' && (' ' + t.dataset.for + ' ').indexOf(' ' + f + ' ') < 0; });
+    try { localStorage.setItem('home-for', f); } catch (e) {}
+  }
+  bar.addEventListener('click', function (e) { var b = e.target.closest('button'); if (b) show(b.dataset.f); });
+  var saved = null; try { saved = localStorage.getItem('home-for'); } catch (e) {}
+  if (saved && bar.querySelector('[data-f="' + saved + '"]')) show(saved);
+})();
+</script>
 ```

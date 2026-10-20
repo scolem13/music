@@ -1,0 +1,12 @@
+X:1176
+T:Trio in B-flat, Op. 97, 3rd Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1169, Barlow & Morgenstern B1051, EDM 1176 (Musical Theme Dataset, CC BY 4.0)
+N:Andante cantabile, ma pero con moto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=40
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F2 F3 E | E D2 DEF | G2 G3 F | F E2 |

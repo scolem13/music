@@ -1,0 +1,10 @@
+X:8672
+%%from edm
+T:Sonata in E-flat, Op. 120, No. 2, Cl. or Viola and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8672 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+e'6 d'2 f'2e'2g2c'2 | a8 d4 z2 c2 | e6 B2 b4 z2 d2 | f6 c2 c'4

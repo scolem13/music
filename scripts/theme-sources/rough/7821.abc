@@ -1,0 +1,10 @@
+X:7821
+%%from edm
+T:Concerto Grosso in A minor, Op. 3, No. 8, 3rd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7821 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+ae^f^g a2b2 c'2c'2 | c'/2d'/2c'/2d'/2b2 bebc' d'2d'2 | d'/2e'/2d'/2e'/2c'2 c'ec'd' e'2e'2 | e'/2f'/2e'/2f'/2d'2 d'ed'e' f'2f'2 | e'

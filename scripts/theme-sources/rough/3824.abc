@@ -1,0 +1,13 @@
+X:3824
+%%from mtd
+T:Concerto in E minor, Op. 64, 2nd Movement - 1st Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5476, Barlow & Morgenstern M214, EDM 3824 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=43
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+e3 fdB | a3 g3- | gfe dAf | e3 d2 z | Gce d2 B/A/ | Gce d2 |

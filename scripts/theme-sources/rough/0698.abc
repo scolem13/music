@@ -1,0 +1,13 @@
+X:698
+%%from mtd
+T:Quartet in C minor, Op. 18, No. 4, 3rd Movement - Minuet
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0692, Barlow & Morgenstern B596, EDM 0698 (Musical Theme Dataset, CC BY 4.0)
+N:Menuetto & Trio. Allegretto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/4
+Q:1/4=177
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+G,/>C/ | E2 F | G2 A | B2 e- | e d |

@@ -1,0 +1,10 @@
+X:4207
+%%from edm
+T:Divertimento in D, K 334, 5th Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4207 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+d'4 a4 a4 | a8 f4 | af z2 af z2 af z2 | ^d8 e4 |

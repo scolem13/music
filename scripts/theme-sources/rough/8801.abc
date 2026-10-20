@@ -1,0 +1,10 @@
+X:8801
+%%from edm
+T:Trio in B, Op. 8, 3rd Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8801 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:B
+d4 d6 =d2 ^d2c2 | d2B2 A4 d2B2 A4 | G2d2 f4 G2c2 e4 | F2B2 d3c B2c2 A4 |

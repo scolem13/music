@@ -1,0 +1,10 @@
+X:1588
+%%from edm
+T:Quartet in C minor, Op. 15, Piano and Str., 1st Movement - 1st Theme
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1588 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G2<C2 CB,2G, B,2<C2 | C2<E2 E2<F2 F2<G2 | G2<C2 C G4 F2E | D2<E2 E D6- D- | D

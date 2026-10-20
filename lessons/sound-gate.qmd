@@ -61,4 +61,22 @@ starting or fading. Try it on the **Synth riff** and on your **microphone** (cla
 
 - [Sound 16: Reverb](sound-reverb.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Gated reverb." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gated_reverb](https://en.wikipedia.org/wiki/Gated_reverb).
+
+"Noise gate." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Noise_gate](https://en.wikipedia.org/wiki/Noise_gate).
+
+**For teachers**
+
+Giannoulis, Dimitrios, Michael Massberg, and Joshua D. Reiss. "Digital Dynamic Range Compressor Design: A Tutorial and Analysis." *Journal of the Audio Engineering Society*, vol. 60, no. 6, 2012. [www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf](https://www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf).
+
+Reid, Gordon. "Synth Secrets: Envelopes, Gates & Triggers." *Sound On Sound*, Nov. 1999. [www.soundonsound.com/techniques/envelopes-gates-triggers](https://www.soundonsound.com/techniques/envelopes-gates-triggers).
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

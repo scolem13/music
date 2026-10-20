@@ -1,0 +1,10 @@
+X:176
+%%from edm
+T:Concerto No. 1, in A minor, Vn. and Orchestra, 3rd Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0176 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:C
+e2a2g2 f2e2d2 c2B2c2 | d2c2B2 c2A2B2 c2E2A2 | c2B2A2 B2^G2A2 B2E2B2 | d2c2

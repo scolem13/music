@@ -1,0 +1,10 @@
+X:6325
+%%from edm
+T:Sonata in A minor, Op. 105, 3rd Movement - 3rd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6325 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+=c'4 ^c'6 a2 a4 | g2ba a4 ^a2c'b b4 |

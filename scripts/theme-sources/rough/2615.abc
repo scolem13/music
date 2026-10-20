@@ -1,0 +1,10 @@
+X:2615
+%%from edm
+T:Quartet in G, Op. 77, No. 1, 3rd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2615 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+G,2A,2B,2C2D2B,2 | G,4 G8 | F4 d8 | z/2 z/2 d3 g4 b4 |

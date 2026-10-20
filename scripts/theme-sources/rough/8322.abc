@@ -1,0 +1,10 @@
+X:8322
+%%from edm
+T:Sonata, Vn. and Piano - 1st Movement
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8322 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+^d=dc2 ^d2 z2 d2 z2 | ^d2 z2 d=dcd ^d=dc2 | ^d2 z2 d2 z2 d=dc2 | ^d2

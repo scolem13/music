@@ -1,0 +1,11 @@
+X:5936
+%%from edm
+T:Quartet No. 8 in B-flat, Op. 168, 2nd Movement - 2nd Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5936 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Bb
+a3f c2c2 =efg_a | a3f c2c2 =efg_a | a3b c'4

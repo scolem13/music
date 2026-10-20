@@ -1,0 +1,10 @@
+X:5702
+%%from edm
+T:Suite Algerienne, Op. 60, 1st Movement - Prelude, en Vue d'Alger, 1st Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5702 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:C
+C8- C2D2 E2D2C2 | D4 E2 G12 | C8- C2D2 E2D2C2 | D4 E2 A12 | D4 E2 F2E2D2 A4 B2 | c4

@@ -1,0 +1,12 @@
+X:6905
+%%from mtd
+T:O Schoner Mai, Waltzes, Op. 375, No. 3
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8534, Barlow & Morgenstern S1296, EDM 6905 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=159
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+Pg ^f g | Pg ^f g | e'/ z/ z c'/ z/ | g2 f | e f g | b2 a | g f ^c | e2 d |

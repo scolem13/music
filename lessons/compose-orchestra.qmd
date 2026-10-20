@@ -1,0 +1,122 @@
+---
+title: "Composing 5: Arranging for Orchestra"
+toc: true
+toc-depth: 2
+description: "Melody, bass, harmony and countermelody: the four jobs in any arrangement, given to string quartet two ways, with doubling, spacing, passing the tune around, balance and rests, and a checklist for your own arrangement."
+instruments: [violin, piano, sax, other]
+topics: [composing]
+has: [notation, interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+Arranging means taking music that already exists, a melody with its chords, and deciding **who plays what**. The band version of this question is in
+[Arranging 1](arrange-band.qmd). This lesson asks it for orchestral instruments, starting with the smallest orchestral group that
+can do everything: the **string quartet** (two violins, viola, cello).
+
+**How to use the page.** ▶ plays each example on the piano (the site has no string samples), so listen for the **parts**:
+which line moves, which holds, which is on top. Then find a recording of a real quartet and listen for the same things.
+
+## 1. Four jobs
+
+Almost every arrangement gives out the same four jobs:
+
+| Job | What it does | Usually given to |
+|---|---|---|
+| **Melody** | the tune: what the listener follows | the highest part, or the instrument with the strongest sound in that register |
+| **Bass** | the lowest note of each chord, which tells the ear what the harmony is | cello, double bass, bassoon, tuba |
+| **Harmony** | the rest of the chord, filling the middle | inner parts: second violin, viola, horns, clarinets |
+| **Countermelody** | a second tune that moves when the melody holds still | a contrasting instrument in a different register |
+
+Not every job is needed all the time. Taking one away (no bass, or melody alone) is one of the strongest effects an arranger has.
+
+## 2. The same melody, two ways
+
+The melody is the period from [Composing 1](compose-melody.qmd#the-period). First as a **chorale**: the melody on top, the other three
+parts holding the chords. The texture is called **homophonic**: one tune, with chords moving in the same rhythm or slower.
+
+<div class="abc-ex" data-bpm="96" data-width="680"><script type="text/plain">
+X:1
+T:String quartet 1: melody and held chords
+M:4/4
+L:1/8
+Q:1/4=96
+K:C
+%%score [1 2 3 4]
+V:1 name="Violin I" clef=treble
+V:2 name="Violin II" clef=treble
+V:3 name="Viola" clef=alto
+V:4 name="Cello" clef=bass
+[V:1] E2 G2 c2 G2 | A2 F2 G4 | A2 c2 G2 E2 | D6 z2 | E2 G2 c2 G2 | A2 F2 G4 | A2 F2 D2 B,2 | C6 z2 |]
+[V:2] C8 | C4 C4 | C4 C4 | B,8 | C8 | C4 C4 | C4 B,4 | C6 z2 |]
+[V:3] G,8 | A,4 G,4 | A,4 G,4 | G,8 | G,8 | A,4 G,4 | A,4 F,4 | E,6 z2 |]
+[V:4] C,8 | F,4 C,4 | F,4 C,4 | G,,8 | C,8 | F,4 C,4 | F,4 G,,4 | C,6 z2 |]
+</script></div>
+
+Now with a **countermelody** in the second violin (it moves when the melody holds a long note, in bars 2, 4 and 6) and a bass that walks
+in quarter notes. The viola rests. Three lines that each have their own shape make a busier, more **polyphonic** texture.
+
+<div class="abc-ex" data-bpm="96" data-width="680"><script type="text/plain">
+X:1
+T:String quartet 2: melody, countermelody, walking bass
+M:4/4
+L:1/8
+Q:1/4=96
+K:C
+%%score [1 2 3]
+V:1 name="Violin I" clef=treble
+V:2 name="Violin II" clef=treble
+V:3 name="Cello" clef=bass
+[V:1] E2 G2 c2 G2 | A2 F2 G4 | A2 c2 G2 E2 | D6 z2 | E2 G2 c2 G2 | A2 F2 G4 | A2 F2 D2 B,2 | C6 z2 |]
+[V:2] C4 E4 | C4 E2 D2 | F4 C4 | G,2 B,2 D2 B,2 | C4 E4 | C4 E2 D2 | C4 G,4 | G,6 z2 |]
+[V:3] C,2 E,2 G,2 E,2 | F,2 A,2 C,2 E,2 | F,2 A,2 C,2 E,2 | G,,4 D,4 | C,2 E,2 G,2 E,2 | F,2 A,2 C,2 E,2 | F,2 A,2 G,2 F,2 | C,6 z2 |]
+</script></div>
+
+Neither is better. The first is calm and warm; the second has more going on, and the melody has to work harder to be heard. Choosing
+between them depends on what you want the listener to feel. Write that reason down: it is your **artistic choice**, and explaining it is
+half of MYP Criterion B (see [Process 2](process-crit-b.qmd)).
+
+## 3. Techniques
+
+**Doubling.** Two instruments play the same line, at the same pitch (unison) or an octave apart. Unison makes a new blended colour (flute and
+violin together sound like neither). Octaves make a line stronger and easier to hear. Doubling the melody is the simplest way to bring it out.
+
+**Spacing.** Leave wide gaps between the low notes and put the close intervals at the top, the way the harmonic series does (see
+[Sound 1](sound-harmonics.qmd)). Close chords low down sound muddy. In the first quartet, the cello sits an octave or more below the viola.
+
+**Passing the tune around.** Give the melody to a different instrument when it repeats: violin first, then cello an octave lower, then the
+clarinet. The listener hears the same tune in a new colour, and the players get a turn each.
+
+**Balance.** A melody in the middle of the texture is easily covered. Make the accompaniment quieter (mark it *p* when the melody is *mf*),
+thinner (fewer notes), or further away in register.
+
+**Rests.** Wind and brass players have to breathe, and every player needs to rest their lip, arm or hands. A part that plays every bar is tiring
+to play and to hear. Silence also makes an instrument's return noticeable.
+
+**Write for the instrument.** Check every part against the ranges in [Composing 4](compose-instruments.qmd), and write transposing parts in
+the player's key. The [transposer there](compose-instruments.qmd#try-it-the-transposer) does both.
+
+## 4. Arrange a melody
+
+Take a melody you know or have written: eight or sixteen bars with chords. Arrange it for the instruments your class has.
+
+1. List your players, their instruments and their ranges.
+2. Decide the four jobs for each section of the melody. **Change something when the melody repeats.**
+3. Write it in the [Notation page](/tools/notation.qmd) or a notation program. Check the ranges, transpose the parts.
+4. Have the players play it, or play it back. **Record it.** Write down what didn't work (a covered melody, a part too high, a muddy chord)
+   and what you changed.
+5. Keep the first version and the last version. The differences, and your reasons for them, are what your process journal shows.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Countermelody." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Countermelody](https://en.wikipedia.org/wiki/Countermelody).
+
+"Orchestra." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Orchestra](https://en.wikipedia.org/wiki/Orchestra).
+
+"String Quartet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/String_quartet](https://en.wikipedia.org/wiki/String_quartet).
+
+"Texture (Music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Texture_(music)](https://en.wikipedia.org/wiki/Texture_(music)).
+:::
+<!-- /works-cited -->

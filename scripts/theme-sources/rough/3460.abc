@@ -1,0 +1,10 @@
+X:3460
+%%from edm
+T:Hungarian Rhapsody No. 9 in E-flat, "Carnival in Pesth", 1st Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3460 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+B, E6- E G A4 =A3- | =A B8 e2 z2 B3- | B z/2 A3- A/2 z2 G2 A4 B3- | B G8

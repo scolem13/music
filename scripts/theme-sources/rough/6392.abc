@@ -1,0 +1,10 @@
+X:6392
+%%from edm
+T:Symphony No. 4 in D minor, Op. 120, 3rd Movement - 1st Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6392 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 d2d2 e2e2 | f2f2g2g2f2f2 | e2e2 d8 | z12 | a4 d'2d'2 a2a2 | b2b2a2a2f2f2 | d2d2

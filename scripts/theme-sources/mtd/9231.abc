@@ -1,0 +1,11 @@
+X:9231
+T:Mazurkas 30, Op. 50, No. 1
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2228, Barlow & Morgenstern C241, EDM 9231 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=131
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+D z FEDF | Az/B/ c4 | Bz/A/ G2 B2 | e2 d4 |

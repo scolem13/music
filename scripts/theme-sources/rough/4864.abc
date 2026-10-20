@@ -1,0 +1,10 @@
+X:4864
+%%from edm
+T:The Incredible Flutist, 9th Theme
+C:Walter Piston
+%%composer Piston|Walter
+% EDM 4864 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:C
+A2 d4 d2e3f | e2 d4 d2c3d | c4<^A4 =A4 | E4<^A4 =A2E2 | F2 G4 d2^c3d | e2

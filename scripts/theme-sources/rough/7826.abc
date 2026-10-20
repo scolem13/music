@@ -1,0 +1,11 @@
+X:7826
+%%from edm
+T:Concerto Grosso in B minor, Op. 3, No. 10, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7826 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:D
+a4 a6 a2 | a3B2<B2c2<^d2e | f3^d2<d2e2<f2g | a6- aa2<a2a | g4

@@ -1,0 +1,10 @@
+X:8671
+%%from edm
+T:Sonata in F minor, Op. 120, No. 1, Cl. Viola and Piano, 4th Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8671 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+f'8 f'8 | f'8- f'2c'2b2g2 | a2c'2b2d'4<c'4 g2 | a2c'2b2d'2 c'2e'2d'2f'2 | e'8

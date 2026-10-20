@@ -1,0 +1,12 @@
+X:5605
+T:Concerto No. 1, in A minor, Op. 33, 3rd Movement - 2nd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% MTD 7240, Barlow & Morgenstern S21, EDM 5605 (Musical Theme Dataset, CC BY 4.0)
+%%link https://youtu.be/0pNlo2XlOlQ?t=4m1s
+M:2/2
+L:1/4
+Q:1/4=116
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+C,, F,, A,, C, | _D, G, F, E, | F, A,, C, _D, | C,2- C,/ z/ z |

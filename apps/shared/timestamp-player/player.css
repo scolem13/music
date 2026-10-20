@@ -74,3 +74,19 @@
 }
 .btp .btp-bar input[type=file] { display: none; }
 .btp .btp-err { min-height: 1.2em; font-size: 0.7em; color: #e06c6c; }
+
+/* RecordingFollow (recording-follow.js): the player as a panel of another page */
+.rf { display: block; }
+.rf .rf-bar { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin: 0 0 .6rem; }
+.rf .rf-open-btn { display: inline-block; padding: .3rem .7rem; border: 1px solid currentColor; border-radius: 6px; cursor: pointer; font-size: .9rem; }
+.rf .rf-info { font-size: .85rem; opacity: .8; }
+.rf .rf-btp { font-size: 1rem; margin: 0 0 .6rem; align-items: flex-start; text-align: left; }
+.rf .rf-btp .btp-clock { font-size: 2rem; }
+.rf .rf-row { margin: .3rem 0; font-size: .9rem; }
+.rf .rf-off { width: 4rem; }
+
+.btp .btp-speed { display: flex; flex-wrap: wrap; align-items: center; gap: .5rem; margin: .35rem 0; font-size: .9rem; max-width: 900px; }
+.btp .btp-speed-range { width: 10rem; vertical-align: middle; }
+.btp .btp-speed-pct { min-width: 3em; font-variant-numeric: tabular-nums; }
+.btp .btp-speed-bpm-in { width: 4.5em; }
+.btp .btp-speed-note { color: #6c757d; }

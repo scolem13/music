@@ -1,0 +1,10 @@
+X:1280
+%%from edm
+T:Sextet, Op. 48, 4th Movement (Theme for Variations)
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1280 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+F4 d4 | F3E2<D2C | B,3E2<^D2=D | C4 A,2

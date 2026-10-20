@@ -1,0 +1,12 @@
+X:3237
+%%from mtd
+T:Galanta Dances, Orchestra, 3rd Movement
+C:Zoltán Kodály
+%%composer Kodály|Zoltán
+% MTD 4892, Barlow & Morgenstern K66, EDM 3237 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=107
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+ag f4 fg | f2fg fedf | gf e4 ef | e2ed cBA2 |

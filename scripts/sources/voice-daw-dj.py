@@ -1,0 +1,78 @@
+# Voice (voice-pop/jazz/classical), vowel-formants, and extra teacher/student sources for the DAW, DJ and
+# sampling lessons. Checked 18 Oct 2026: every URL fetched or loaded (HTTP 200); book details from publisher
+# pages, library catalogue records or bookseller listings found by web search. Books were not read in full.
+VP, VJ, VC, VF = "lessons/voice-pop.qmd", "lessons/voice-jazz.qmd", "lessons/voice-classical.qmd", "lessons/vowel-formants.qmd"
+VOICE = [VP, VJ, VC]
+DAW = ["lessons/daw-%s.qmd" % s for s in ("timeline", "beat", "pianoroll", "record", "mixer", "arrange", "export", "real")]
+DJ = ["lessons/dj-%s.qmd" % s for s in ("gear", "beatmatch", "eq", "phrasing", "harmonic", "scratch", "set")]
+SAMP = ["lessons/sampling-%s.qmd" % s for s in ("what", "chop", "pitch", "flip", "beat", "law")]
+SOURCES = [
+    # --- voice: teacher ---
+    book('Sundberg, Johan. *The Science of the Singing Voice*. Northern Illinois UP, 1987.', VOICE + [VF], who="teacher",
+         note="Details from library catalogue records."),
+    web('Sundberg, Johan. "The Acoustics of the Singing Voice." *Scientific American*, vol. 236, no. 3, 1977, pp. 82–91. URL.',
+        "https://acousticslab.org/RECA220/PMFiles/PMDownloads/Sundberg1977_SingingVoice.pdf", [VF, VC], who="teacher",
+        note="Citation confirmed from JSTOR listing and citing pages; the singer's formant at about 2–3 kHz."),
+    book('Titze, Ingo R. *Principles of Voice Production*. Prentice Hall, 1994.', VOICE + [VF], who="teacher",
+         note="Reprinted by the National Center for Voice and Speech, 2000."),
+    book('Miller, Richard. *The Structure of Singing: System and Art in Vocal Technique*. Schirmer Books, 1986.', [VC, VP], who="teacher",
+         note="Chapters on onset, appoggio, vowel modification, registers, messa di voce, vibrato (from the catalogue contents)."),
+    book('McCoy, Scott. *Your Voice: An Inside View*. Inside View Press, 2004.', VOICE + [VF], who="teacher",
+         note="Later editions 2012 and 2019."),
+    web('Joliveau, Elodie, John Smith, and Joe Wolfe. "The Tuning of Vocal Tract Resonances by Sopranos." *Nature*, vol. 427, 2004, p. 116. Summary at URL.',
+        "https://newt.phys.unsw.edu.au/jw/soprane.html", [VF, VC], who="teacher", note="UNSW summary page read."),
+    book('Popeil, Lisa. "The Multiplicity of Belting." *Journal of Singing*, vol. 64, no. 1, 2007.', [VP], who="teacher",
+         note="Listed in the NATS Science-Informed Voice Pedagogy Resources; the PDF there is a scan, not read."),
+    book('Sundberg, Johan, Margareta Thalén, and Lisa Popeil. "Substyles of Belting: Phonatory and Resonatory Characteristics." *Journal of Voice*, vol. 26, no. 1, 2012, pp. 44–50.',
+         [VP], who="teacher", note="Citation confirmed from reference lists; abstract not read."),
+    web('National Association of Teachers of Singing. "Science-Informed Voice Pedagogy Resources." *NATS*, URL.',
+        "https://www.nats.org/Science-Informed_Voice_Pedagogy_Resources.html", VOICE, who="teacher",
+        note="Syllabi, labs on registers, resonance, vowels and vibrato; belting articles; terminology document."),
+    web('Lester-Smith, Rosemary A., et al. "Characterization of Source-Filter Interactions in Vocal Vibrato Using a Neck-Surface Vibration Sensor: A Pilot Study." *Journal of Voice*, doi:10.1016/j.jvoice.2021.08.004. URL.',
+        "https://pmc.ncbi.nlm.nih.gov/articles/PMC8995401", [VC], who="teacher",
+        note="Reviews vibrato rate in trained singers (about 5–7 Hz). Volume and year left out: PMC gives 2021 with vol. 38."),
+    book('Friedwald, Will. *Jazz Singing: America\'s Great Voices from Bessie Smith to Bebop and Beyond*. Scribner, 1990.', [VJ], who="teacher"),
+    # --- voice: student ---
+    web('Wolfe, Joe, Maëva Garnier, and John Smith. "Voice Acoustics: An Introduction." *Music Acoustics*, U of New South Wales, URL.',
+        "https://newt.phys.unsw.edu.au/jw/voice.html", VOICE + [VF], who="student",
+        note="Formants, the F1–F2 vowel map, the singer's formant (2–4 kHz, F3–F5 clustered by lowering the larynx)."),
+    web('Nave, Carl R. "The Singing Formant." *HyperPhysics*, Georgia State U, URL.', "https://hyperphysics.gsu.edu/hbase/Music/singfor.html", [VF, VC], who="student"),
+    web('Truax, Barry, editor. "Formant." *Handbook for Acoustic Ecology*, Simon Fraser U, URL.', "https://www.sfu.ca/sonic-studio-webdav/handbook/Formant.html", [VF], who="student"),
+    wiki("Formant", "Formant", [VF], who="student"),
+    wiki("Vocal Registration", "Vocal_registration", [VC, VP], who="student"),
+    wiki("Passaggio", "Passaggio", [VC], who="student"),
+    wiki("Messa di voce", "Messa_di_voce", [VC], who="student"),
+    wiki("Belting (Music)", "Belting_(music)", [VP], who="student"),
+    wiki("Scat Singing", "Scat_singing", [VJ], who="student"),
+    web('Burrows, George. "Scooby Dooby Doo: Making Sense of Scat Singing." *The Conversation*, 26 Oct. 2018, URL.',
+        "https://theconversation.com/scooby-dooby-doo-making-sense-of-scat-singing-105190", [VJ], who="student"),
+    web('"Ella Fitzgerald\'s Signature Singing Style, Explained by Jazzmeia Horn." *NPR*, 5 Sept. 2019, URL.',
+        "https://www.npr.org/2019/09/05/757840971/ella-fitzgeralds-signature-singing-style-explained-by-jazzmeia-horn", [VJ], who="student",
+        note="Video feature; page timed out on fetch, details from search listing and member-station copies."),
+    # --- DAW / DJ / sampling: teacher ---
+    web('Bell, Adam Patrick. *Dawn of the DAW: The Studio as Musical Instrument*. Oxford UP, 2018. URL.', "https://academic.oup.com/book/2477", DAW, who="teacher"),
+    book('Schloss, Joseph G. *Making Beats: The Art of Sample-Based Hip-Hop*. Wesleyan UP, 2004.', SAMP + ["lessons/daw-beat.qmd"], who="teacher",
+         note="2nd ed. 2014, foreword by Jeff Chang."),
+    book('Katz, Mark. *Groove Music: The Art and Culture of the Hip-Hop DJ*. Oxford UP, 2012.', DJ + ["lessons/sampling-what.qmd"], who="teacher"),
+    book('Katz, Mark. *Capturing Sound: How Technology Has Changed Music*. Rev. ed., U of California P, 2010.', SAMP + ["lessons/dj-scratch.qmd"], who="teacher",
+         note="Ch. 7, \"Music in 1s and 0s: The Art and Politics of Digital Sampling\" (from a table of contents)."),
+    book('Brewster, Bill, and Frank Broughton. *Last Night a DJ Saved My Life: The History of the Disc Jockey*. Updated ed., Grove Press, 2014.', DJ, who="teacher"),
+    book('Butler, Mark J. *Unlocking the Groove: Rhythm, Meter, and Musical Design in Electronic Dance Music*. Indiana UP, 2006.',
+         ["lessons/dj-phrasing.qmd", "lessons/dj-set.qmd", "lessons/dj-beatmatch.qmd", "lessons/daw-arrange.qmd"], who="teacher"),
+    web('McLeod, Kembrew, and Peter DiCola. *Creative License: The Law and Culture of Digital Sampling*. Duke UP, 2011. URL.',
+        "https://www.dukeupress.edu/creative-license", ["lessons/sampling-law.qmd", "lessons/sampling-what.qmd"], who="teacher"),
+    web('Hesmondhalgh, David. "Digital Sampling and Cultural Inequality." *Social & Legal Studies*, vol. 15, no. 1, 2006, pp. 53–75, doi:10.1177/0964663906060973. URL.',
+        "https://eprints.whiterose.ac.uk/42739", ["lessons/sampling-law.qmd"], who="teacher", note="Repository record read; no free full text."),
+    book('Rose, Tricia. *Black Noise: Rap Music and Black Culture in Contemporary America*. UP of New England, 1994.', ["lessons/sampling-what.qmd", "lessons/sampling-flip.qmd"], who="teacher",
+         note="Sampling at pp. 73–80, 88–93 (per a catalogue record)."),
+    web('Hansen, Kjetil Falkenberg. *The Acoustics and Performance of DJ Scratching*. 2010. KTH Royal Institute of Technology, PhD dissertation. URL.',
+        "https://www.speech.kth.se/~hansen/files/thesis/KjetilFalkenbergHansen_2010_phdthesis.pdf", ["lessons/dj-scratch.qmd"], who="teacher",
+        note="Abstract and front matter read."),
+    # --- DAW / DJ / sampling: student ---
+    web('"Learning Music." *Ableton*, URL.', "https://learningmusic.ableton.com/", ["lessons/daw-beat.qmd", "lessons/daw-pianoroll.qmd", "lessons/daw-arrange.qmd"], who="student",
+        note="Free in-browser lessons: beats, chords, basslines, song structure."),
+    wiki("Digital Audio Workstation", "Digital_audio_workstation", DAW, who="student"),
+    wiki("Piano Roll", "Piano_roll", ["lessons/daw-pianoroll.qmd"], who="student"),
+    web('"Multimedia Examples from *The Acoustics and Performance of Scratching*." Kjetil Falkenberg Hansen, KTH, URL.',
+        "https://www.speech.kth.se/~hansen/thesis/index.php", ["lessons/dj-scratch.qmd"], who="student", note="Sound and video examples of named scratches."),
+]

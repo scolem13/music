@@ -251,3 +251,24 @@ Spend a few minutes on each step, slowly. Do not move on until the previous step
 <script>document.documentElement.setAttribute("data-tonality", "blues");</script>
 <script>BluesLesson.init({ instrument: "guitar", key: 9 });</script>
 ```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"How to Bend in Tune on Your Guitar like a Pro Every Time." *MusicRadar*. [www.musicradar.com/how-to/bend-in-tune-on-guitar](https://www.musicradar.com/how-to/bend-in-tune-on-guitar). Twelve tabbed licks; fret the target note first.
+
+Isaacs, Dave. "Guitar Lesson: Melodic String Bending." *ArtistWorks Blog*. [my.artistworks.com/blog/guitar-lesson-string-bending-dave-isaacs](https://my.artistworks.com/blog/guitar-lesson-string-bending-dave-isaacs).
+
+"String bending." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/String_bending](https://en.wikipedia.org/wiki/String_bending).
+
+Wolfe, Joe. "Strings, Standing Waves and Harmonics." *Music Acoustics*, University of New South Wales. [newt.phys.unsw.edu.au/jw/strings.html](https://newt.phys.unsw.edu.au/jw/strings.html).
+
+**For teachers**
+
+Fletcher, Neville H., and Thomas D. Rossing. *The Physics of Musical Instruments*. 2nd ed., Springer, 1998.
+:::
+<!-- /works-cited -->
+

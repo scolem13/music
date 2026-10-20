@@ -1,0 +1,118 @@
+---
+title: "Composing 4: Instruments, Ranges and Transposing"
+toc: true
+toc-depth: 2
+description: "The orchestra's families, each instrument's lowest and highest notes, clefs, and transposing instruments (clarinet, trumpet, horn, saxophones), with a transposer that writes the part a player reads and checks it fits the instrument."
+instruments: [violin, sax, piano, guitar, bass, other]
+topics: [composing, reading]
+has: [notation, interactive]
+---
+
+{{< include _compose-kit.qmd >}}
+
+When you write for a real player, you need to know three things about their instrument. **Which notes it can play** (its range), **how its
+part is written** (its clef, and whether it transposes), and **what is easy or hard** on it. This lesson covers the first two for the orchestra,
+the saxophones and the guitar. The next lesson uses them to arrange.
+
+## 1. The families
+
+The orchestra is described in four families:
+
+| Family | Instruments (high to low) | How the sound is made |
+|---|---|---|
+| **Woodwinds** | piccolo, flute, oboe, English horn, clarinet, bass clarinet, bassoon, contrabassoon | air across an edge (flutes), or a reed (one: clarinet, saxophone; two: oboe, bassoon) |
+| **Brass** | trumpet, horn, trombone, tuba | the player's lips buzzing in a cup-shaped mouthpiece |
+| **Percussion** | timpani, then everything struck, shaken or scraped; harp and piano are often placed nearby | striking |
+| **Strings** | violin (in two sections, firsts and seconds), viola, cello, double bass | a bow drawn across the string, or plucking (*pizzicato*) |
+
+Saxophones belong with the woodwinds (they have a single reed). They are not regular members of the orchestra, but some scores from the 19th century on use them.
+
+## 2. Ranges
+
+These are the **sounding** ranges: the notes the audience hears, with middle C as C4. The top notes are approximate: good players go higher,
+and young players should usually stay well below them.
+
+| Instrument | Lowest | Highest (about) | Clef |
+|---|---|---|---|
+| Violin | G3 | E7 | treble |
+| Viola | C3 | C6 | alto |
+| Cello | C2 | E5 | bass (tenor and treble for high notes) |
+| Double bass | E1 | B3 | bass, written an octave higher |
+| Flute | C4 | C7 | treble |
+| Oboe | B♭3 | F6 | treble |
+| English horn | E♭3 | B♭5 | treble, transposes |
+| Clarinet in B♭ | D3 | B♭6 | treble, transposes |
+| Bassoon | B♭1 | B♭5 | bass (tenor for high notes) |
+| Horn in F | B1 | F5 | treble (bass for low notes), transposes |
+| Trumpet in B♭ | E3 | B♭5 | treble, transposes |
+| Trombone (tenor) | E2 | B♭4 | bass |
+| Timpani | F2 | F4 | bass |
+| Alto saxophone | D♭3 | A♭5 | treble, transposes |
+| Tenor saxophone | A♭2 | E5 | treble, transposes |
+
+<div class="cp-tip">
+<strong>The middle is where it sounds best.</strong> The lowest notes of a flute are quiet and breathy; the highest notes of a trumpet are loud and
+tiring. If a part has to be heard, put it where the instrument is strong, not where it only just reaches.
+</div>
+
+## 3. Transposing instruments
+
+On a **transposing instrument** the written note is not the note that sounds. A clarinet in B♭ that reads C plays a B♭: everything sounds a
+major second lower than written. So the clarinet's part has to be **written a major second higher** than the music should sound.
+
+Why do it? So that one set of fingerings works for every size of the instrument. A player who learns the alto saxophone can pick up a tenor and
+read the same written notes with the same fingers; the tenor just sounds lower. Instruments that sound an octave away from their written notes
+(guitar, double bass, piccolo) are written that way to avoid a staff full of ledger lines.
+
+**Concert pitch** is what the piano plays: the sounding note. A score "in C" shows every part at concert pitch; a *transposed score*
+shows each part as its player reads it.
+
+| Instrument | A written C sounds | So write the part |
+|---|---|---|
+| Clarinet in B♭, trumpet in B♭ | B♭, a major 2nd lower | a major 2nd higher |
+| Horn in F, English horn | F, a perfect 5th lower | a perfect 5th higher |
+| Alto saxophone (E♭) | E♭, a major 6th lower | a major 6th higher |
+| Tenor saxophone (B♭) | B♭, a major 9th lower | a major 9th higher |
+| Guitar, double bass | C, an octave lower | an octave higher |
+| Piccolo | C, an octave higher | an octave lower |
+
+The key signature moves too. Music in F for the band is in G for the clarinets and trumpets (one flat becomes one sharp), and in D for the
+alto saxophones.
+
+## 4. Try it: the transposer
+
+Write the music as it should sound (in ABC, concert pitch), pick an instrument, and read the part its player would get. The check underneath says
+whether every note is inside that instrument's range.
+
+<div class="cp-try">
+<div class="cp-transpose"></div>
+</div>
+
+Try putting the melody in the bass clef range (add `,` after the letters to move notes down an octave) and pick the cello, then the
+trombone, then the alto saxophone. Notice which instruments can't reach it.
+
+<div class="cp-tip">
+<strong>Ask the player.</strong> The table gives the limits; a player can tell you what is comfortable at their level, which notes are awkward,
+and how long they can play before they need a rest. Recording a player trying your part, and writing down what they said, is some of the best
+evidence of developing a piece you can have (see [Process 1](process-journal.qmd)).
+</div>
+
+Next: [Composing 5: Arranging for Orchestra](compose-orchestra.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Alto Saxophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Alto_saxophone](https://en.wikipedia.org/wiki/Alto_saxophone).
+
+"Cor Anglais." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cor_anglais](https://en.wikipedia.org/wiki/Cor_anglais).
+
+Nave, R. "Playing Ranges of Instruments." *HyperPhysics*, Georgia State U, [hyperphysics.gsu.edu/hbase/Music/orchins.html](https://hyperphysics.gsu.edu/hbase/Music/orchins.html). The sounding ranges of the orchestral instruments (and the transposer's range check).
+
+"Orchestra." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Orchestra](https://en.wikipedia.org/wiki/Orchestra).
+
+"Tenor Saxophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tenor_saxophone](https://en.wikipedia.org/wiki/Tenor_saxophone).
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument).
+:::
+<!-- /works-cited -->

@@ -1,0 +1,12 @@
+X:5165
+%%from mtd
+T:Preludes, Op. 3, No. 2, 2nd Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% MTD 6804, Barlow & Morgenstern R37, EDM 5165 (Musical Theme Dataset, CC BY 4.0)
+M:4/4
+L:1/4
+Q:1/4=128
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:E
+E D =D C | E D =D C | G F A G | (3:2:2F E/ F (3:2:2E ^D/ E |

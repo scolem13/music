@@ -1,0 +1,11 @@
+X:8076
+T:Invitation to the Dance, Op. 65, 4th Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% MTD 9699, Barlow & Morgenstern W230, EDM 8076 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/4
+Q:1/4=259
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+f z z | =e z z | f z z | d z z | a z z | =g z z | a z z | e z z |

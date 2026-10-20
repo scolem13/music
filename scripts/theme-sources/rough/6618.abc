@@ -1,0 +1,10 @@
+X:6618
+%%from edm
+T:Symphony No. 1, in E minor, Op. 39, 4th Movement - 3rd Theme
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6618 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+z2 B,4 A,2 | ^G,2A,2B,2G,2 | A,B,^CB, A,B,A,^G, | ^F,^G,A,G, F,G,F,E, | ^D,2

@@ -28,14 +28,21 @@ def logic(title, slug, pages):
     return dict(mla=f'"{title}." *Logic Pro User Guide for Mac*, Apple, [support.apple.com/guide/logicpro/{slug}/mac](https://support.apple.com/guide/logicpro/{slug}/mac).', pages=pages)
 def bl(title, art, pages):
     return dict(mla=f'"{title}." *BandLab Help Center*, BandLab Technologies, [help.bandlab.com/hc/en-us/articles/{art}](https://help.bandlab.com/hc/en-us/articles/{art}).', pages=pages)
-def wiki(title, slug, pages, ref=None, note=""):
+def wiki(title, slug, pages, ref=None, note="", who=None):
     d = dict(mla=f'"{title}." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/{slug}](https://en.wikipedia.org/wiki/{slug}).', pages=pages, note=note)
     if ref: d["ref"] = ref
+    if who: d["who"] = who
     return d
-def web(mla, url, pages, ref=None, note=""):
+def web(mla, url, pages, ref=None, note="", who=None):
     shown = re.sub(r"^https?://", "", url)
     d = dict(mla=mla.replace("URL", f"[{shown}]({url})"), pages=pages, note=note)
     if ref: d["ref"] = ref
+    if who: d["who"] = who
+    return d
+def book(mla, pages, note="", who=None):
+    """A print source with no link (a book, a chapter, a journal article read in print)."""
+    d = dict(mla=mla, pages=pages, note=note)
+    if who: d["who"] = who
     return d
 
 SOURCES = [
@@ -187,6 +194,26 @@ SOURCES = [
     web('"Intonation and Compensation of Fretted String Instruments." *arXiv*, 2009, arXiv:0906.0127, URL.', "https://arxiv.org/pdf/0906.0127", [INH], "r30", "The title only; the points on stiffness versus stretch are from luthiers' forum posts."),
 ]
 
+# More sources, one file per group of pages: scripts/sources/*.py, each defining SOURCES = [...] with the helpers above
+# (wiki, web, book, live, logic, bl). `who`: "student" (a student can read it), "teacher" (for the teacher), or left out
+# (the page's own citations, listed without a heading). Page paths are written in full ("lessons/cadences.qmd").
+for f in sorted((ROOT / "scripts" / "sources").glob("*.py")):
+    ns = dict(wiki=wiki, web=web, book=book, live=live, logic=logic, bl=bl)
+    exec(f.read_text(), ns)
+    SOURCES += ns["SOURCES"]
+
+# the same source found for two groups of pages: one entry, with all its pages
+_seen = {}
+for s in list(SOURCES):
+    k = re.sub(r"\W", "", s["mla"].lower())
+    if k in _seen and "ref" not in s and "ref" not in _seen[k]:
+        first = _seen[k]
+        first["pages"] = list(dict.fromkeys(first["pages"] + s["pages"]))
+        if not first.get("note") and s.get("note"): first["note"] = s["note"]
+        SOURCES.remove(s)
+    else:
+        _seen.setdefault(k, s)
+
 def sortkey(s):
     return re.sub(r"[^a-z0-9 ]", "", re.sub(r"^\W*(the |a |an )?", "", s["mla"].lower().lstrip('"*')))
 
@@ -203,7 +230,15 @@ def block(page):
     mine = [s for s in SOURCES if page in s["pages"]]
     numbered = all("ref" in s for s in mine)
     mine.sort(key=(lambda s: int(s["ref"][1:])) if numbered else sortkey)
-    body = "\n\n".join(entry(s, numbered) for s in mine)
+    groups = [("", [s for s in mine if not s.get("who")]),
+              ("For students", [s for s in mine if s.get("who") == "student"]),
+              ("For teachers", [s for s in mine if s.get("who") == "teacher"])]
+    parts = []
+    for head, ss in groups:
+        if not ss: continue
+        if head and len([g for g in groups if g[1]]) > 1: parts.append(f"**{head}**")
+        parts += [entry(s, numbered) for s in ss]
+    body = "\n\n".join(parts)
     return f"<!-- works-cited: written by scripts/works-cited.py -->\n::: {{.works-cited}}\n{body}\n:::\n<!-- /works-cited -->"
 
 START, END = "<!-- works-cited", "<!-- /works-cited -->"
@@ -224,13 +259,19 @@ for page in pages:
     f.write_text(t)
 
 # the bibliography: every source, alphabetical, with the lessons that use it
+def delisted(p):
+    try: return bool(re.search(r"^search:\s*false\s*$", (ROOT / p).read_text(), re.M))
+    except OSError: return False
+
 lines = ['---', 'title: "Bibliography"', '---', '',
     'Every source cited on this site, in MLA style, with the lessons that use it. '
     'Each lesson lists its own sources at its end under **Works Cited**.', '',
     '<!-- written by scripts/works-cited.py: edit the sources there, not here -->', '', '::: {.works-cited}']
 for s in sorted(SOURCES, key=sortkey):
-    used = ", ".join(f"[{title_of(p)}]({p})" for p in sorted(s["pages"], key=pages.index))
-    lines += [s["mla"] + (f" {s['note']}" if s.get("note") else "") + f" \n[Used in: {used}]{{.wc-used}}", ""]
+    shown = [p for p in sorted(s["pages"], key=pages.index) if not delisted(p)]   # no links to delisted (work in progress) pages
+    used = ", ".join(f"[{title_of(p)}]({p})" for p in shown)
+    lvl = {"student": " (for students)", "teacher": " (for teachers)"}.get(s.get("who"), "")
+    lines += [s["mla"] + (f" {s['note']}" if s.get("note") else "") + (f" \n[Used in: {used}{lvl}]{{.wc-used}}" if shown else ""), ""]
 lines.append(":::")
 (ROOT / "bibliography.qmd").write_text("\n".join(lines) + "\n")
 print(f"{len(SOURCES)} sources, {len(pages)} pages, bibliography.qmd")

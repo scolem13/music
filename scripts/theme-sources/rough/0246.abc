@@ -1,0 +1,10 @@
+X:246
+%%from edm
+T:Partita No. 6 in E minor, Gigue
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0246 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/2
+L:1/16
+K:G
+z6 E4<F4 ^D4<c4 A4<B4 ^G2 | =f6 ^d4<e4 A2 G4 z4 ^FEFG F4 | E2

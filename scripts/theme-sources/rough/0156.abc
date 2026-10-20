@@ -1,0 +1,10 @@
+X:156
+%%from edm
+T:Concerto No. 7, in G minor, Piano and Orchestra, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0156 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+d2 g4 z2 | d2 e4 z2 | c2dc BdcB | AcB2 G2

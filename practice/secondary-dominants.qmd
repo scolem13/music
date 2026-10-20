@@ -1,0 +1,216 @@
+---
+title: "Secondary Dominants: Practice for Chapter 17"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 17 of Hutchinson's Music Theory for the 21st-Century Classroom: tonicization, secondary dominant triads and seventh chords in major and minor, analysing and writing them (V/V, V7/ii, V65/V ...), lead-sheet symbols, and irregular resolutions, with the book's listening examples."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=13"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+.rn-quiz details{font-size:.9rem}
+</style>
+```
+
+This page goes with **Chapter 17, Secondary Dominant Chords** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/SecondaryDominants.html). Read each section there
+first; the book is the reference for the terms used here. It builds on [Chapter 7, Roman Numerals](roman-numerals.qmd),
+[Chapter 8, Seventh Chords](seventh-chords.qmd) and [Chapter 9, Harmonic Progression](progressions.qmd).
+
+Every drill has **Settings**, and is also on the [Theory Drills](theory-drills.qmd) page. **▶ Hear it** plays the chord and then the
+chord it resolves to.
+
+**Typing a secondary dominant:** `V/V`, `V7/ii`, `V7/IV`. After the slash comes the chord being tonicized, and its case is its quality,
+as before: `ii` is minor, `IV` is major. Inversions use the figured-bass numbers the book uses: `V6/vi` and `V64/V` for triads, `V65/V`,
+`V43/IV` and `V42/ii` for seventh chords. `V6/5/V` and `V7 of ii` work too.
+
+## 17.1 Examples
+
+Secondary dominants are everywhere, in popular and classical music. Here are the book's examples. Listen for the chord that sounds
+"borrowed" from another key. Its chromatic note pulls toward the next chord. The rest of the chapter explains what it is.
+[Read 17.1](https://musictheory.pugetsound.edu/mt21c/ExamplesWithSecondaryDominants.html)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples
+
+::: {.rn-quiz}
+<figure><figcaption>The Beatles, "Yesterday"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/NrgmdOz227I?start=17&end=22&rel=0" title="Yesterday" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Norah Jones, "Don't Know Why" (Jesse Harris)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/tO4dxvguQDk?start=15&end=22&rel=0" title="Don't Know Why" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Cheap Trick, "I Want You to Want Me"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/-qgpewMCVjs?start=61&end=66&rel=0" title="I Want You to Want Me" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Chicago, "Saturday in the Park"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/vL7Op9ZQ3E0?start=15&end=26&rel=0" title="Saturday in the Park" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>CeeLo Green, "Forget You"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/awVi2QXC0ZE?start=0&end=9&rel=0" title="Forget You" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Verdi, <em>Rigoletto</em>, "La donna è mobile"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/8uMb3CnP6L8?start=32&end=38&rel=0" title="La donna è mobile" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Tchaikovsky, <em>The Nutcracker</em>, Miniature Overture</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/JRXIDEpquCg?start=0&end=6&rel=0" title="The Nutcracker Overture" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 17.2 Tonicization
+
+**Tonicization** treats a chord other than I as if it were a tonic for a moment, by putting its own dominant in front of it. That
+dominant is a **secondary dominant**: a major triad or a dominant seventh chord whose root is a **perfect 5th above** the root of the chord it
+resolves to. It is written **V/x**, said "V of x". In C major, D–F♯–A goes to G, the V chord, so it is **V/V**. D7 is **V7/V**.
+[Read 17.2](https://musictheory.pugetsound.edu/mt21c/Tonicization.html)
+
+Why not call D major "II" in C? Because ii in a major key is minor. A major chord on 2 is chromatic, and calling it V/V says what it
+does: it leads to V. **Diminished chords are never tonicized** (vii° in major, ii° and vii° in minor), because a diminished chord cannot
+sound like a tonic.
+
+Start with triads in C, G and F major. Which chord is it?
+
+<div class="drill" data-ex="secsym" data-settings="mode=major&most=1&kind=tri&dir=find"></div>
+
+## 17.3 Secondary dominants in major and minor
+
+Both kinds work as secondary dominants: the **major triad** and the **dominant (major–minor) seventh chord**. Usually the chromatic note is
+**raised**. It is the leading tone of the chord being tonicized. The exception in major is **V7/IV**: its seventh is **lowered** (B♭ in
+C major), the way the last flat added to a key signature is 4̂ of the new key.
+[Read 17.3](https://musictheory.pugetsound.edu/mt21c/SecondaryDominantsInMajorAndMinor.html)
+
+| C major: tonicized | V/x | V7/x | C minor: tonicized | V/x | V7/x |
+|---|---|---|---|---|---|
+| ii (Dm) | A | A7 | ii° (D°) | none | none |
+| iii (Em) | B | B7 | III (E♭) | B♭ (= VII) | B♭7 (= VII7) |
+| IV (F) | C (= I) | C7 | iv (Fm) | C | C7 |
+| V (G) | D | D7 | V (G) | D | D7 |
+| vi (Am) | E | E7 | VI (A♭) | E♭ (= III) | E♭7 |
+| vii° (B°) | none | none | VII (B♭) | F | F7 |
+
+The chords marked "=" use only notes of the key, so on their own they look like ordinary diatonic chords. Only what follows them shows
+that they are secondary dominants. The drills leave them out. The book points out one more case: in minor, F major before B♭ is V/VII,
+but before G (or B°) it is IV.
+
+Find the chord, in major and minor keys:
+
+<div class="drill" data-ex="secsym" data-settings="mode=both&most=3&kind=both&dir=find"></div>
+
+And the other way round. Given a chord and the chord it goes to, name it:
+
+<div class="drill" data-ex="secsym" data-settings="mode=both&most=3&kind=both&dir=name"></div>
+
+## 17.4 Analysing secondary dominants
+
+The book's two steps for a chord with a chromatic note:
+
+1. **Stack it in thirds** to find the root and the quality. If it isn't a major triad or a dominant seventh, it isn't a secondary dominant.
+2. **Go down a perfect 5th** from the root. If that note is the root of a major or minor chord in the key, the chord is V (or V7) of
+   that chord.
+
+The chord on the staff is followed by the chord it tonicizes. Name the first one:
+
+[Read 17.4](https://musictheory.pugetsound.edu/mt21c/AnalyzingSecondaryDominants.html)
+
+<div class="drill" data-ex="secdom" data-settings="mode=major&most=3&kind=both&inv=root&clef=treble,bass"></div>
+
+With inversions. The book's example is an F♯ major triad in first inversion. B, a perfect 5th below F♯, is 5̂ of the key, so the
+chord is **V6/V**. Read the bass note to choose the figure:
+
+<div class="drill" data-ex="secdom" data-settings="mode=both&most=4&kind=both&inv=all&clef=treble,bass"></div>
+
+## 17.5 Writing secondary dominants
+
+The book's procedure, worked here for **V43/V in B♭ major** (the book's own example is a different chord):
+
+1. Find the root of the chord after the slash: V in B♭ is **F**.
+2. Go up a perfect 5th: **C**.
+3. Build a major triad or a dominant seventh there: **C–E–G–B♭**.
+4. Put it in the inversion asked for. 43 means the 5th is in the bass: **G–B♭–C–E**.
+
+[Read 17.5](https://musictheory.pugetsound.edu/mt21c/WritingSecondaryDominants.html)
+
+<div class="drill" data-ex="secwrite" data-settings="mode=major&most=3&kind=both&inv=root"></div>
+
+With inversions, major and minor:
+
+<div class="drill" data-ex="secwrite" data-settings="mode=both&most=4&kind=both&inv=all"></div>
+
+## 17.6 Irregular resolutions
+
+A secondary dominant does not always go to the chord it names. The book's examples, with its analysis:
+
+- **V/V → IV**: "Yesterday", and V7/V → IV in "Forget You". IV can stand in for V in popular music.
+- **V/V → ♭VII**: "I Want You to Want Me" (in A major). ♭VII also stands in for V.
+- **V42/IV → V7/ii → ii**: "Baby Love" (in C major in the book's example: C7 over B♭, then A7, then Dm). The B♭ falls by half step to A as
+  expected, but A is the root of a new secondary dominant instead of the third of F.
+- **V7/vi → IV**: "(Sittin' On) The Dock of the Bay", "Imagine", and Beethoven's "Waldstein" Sonata. You can think of it as iii–IV with
+  a chromatic note, or as a deceptive resolution inside the key of vi.
+
+[Read 17.6](https://musictheory.pugetsound.edu/mt21c/IrregularResoltionsOfSecondaryDominants.html)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's irregular resolutions
+
+::: {.rn-quiz}
+<figure><figcaption>CeeLo Green, "Forget You": V7/V → IV</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/awVi2QXC0ZE?start=0&end=9&rel=0" title="Forget You" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Cheap Trick, "I Want You to Want Me": V/V → ♭VII</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/-qgpewMCVjs?start=61&end=66&rel=0" title="I Want You to Want Me" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>The Supremes, "Baby Love": V42/IV → V7/ii → ii</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/9_y6nFjoVp4?start=7&end=16&rel=0" title="Baby Love" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Otis Redding, "(Sittin' On) The Dock of the Bay": V7/vi → IV</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/rTVjnBo96Ug?start=57&end=68&rel=0" title="Dock of the Bay" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>John Lennon, "Imagine": V7/vi → IV</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/rAn-AWXtHv0?start=90&end=102&rel=0" title="Imagine" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Beethoven, Piano Sonata Op. 53 ("Waldstein"), I: V7/vi → IV</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/lbblMw6k1cU?start=52&end=56&rel=0" title="Waldstein Sonata" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 17.7 Everything together
+
+All secondary dominants, major and minor, all positions. Set **Questions** to 20 for a score.
+[Practice exercises with answers (17.7)](https://musictheory.pugetsound.edu/mt21c/SecondaryDominantPracticeExercises.html)
+
+The book's exercise 2, analysing:
+
+<div class="drill" data-ex="secdom" data-settings="mode=both&most=5&kind=both&inv=all&clef=treble,bass"></div>
+
+The book's exercise 4, writing:
+
+<div class="drill" data-ex="secwrite" data-settings="mode=both&most=5&kind=both&inv=all"></div>
+
+The book's exercise 1 approaches each chord with its secondary dominant seventh. As chord symbols, both directions:
+
+<div class="drill" data-ex="secsym" data-settings="mode=both&most=5&kind=sev&dir=both"></div>
+
+The book's exercises 3 and 5 ask for an accompaniment in **quarter notes** and in **afterbeats**: those textures are Chapter 14, and you
+can hear them on the band on the [Accompanimental Textures](accompaniment-textures.qmd) page.
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+- **Chords drilled:** V and V7 of every major and minor triad of the key: major ii iii IV V vi, minor III iv V VI VII. A chord made only
+  of the key's notes is left out (V/IV in major, which is I; V/III and V/VI in minor, which are VII and III; V7/III in minor, which is VII7).
+  This is because without a resolution they can't be told from diatonic chords. So IV is drilled only as V7/IV, and III in minor not at all.
+- **Resolution:** the naming drill always shows and plays the chord's regular resolution (to the chord it names), in root position.
+  Irregular resolutions (17.6) are taught by listening, not drilled.
+- **Voicing:** close position above the bass. The drills are for spelling and labelling, not for voice leading.
+- **Checked:** `node tests/lessons/secdom-drill.test.js` generates thousands of questions and checks each one by its own arithmetic. The
+  root must be a perfect 5th above the resolution's root, the quality and figure must be right, at least one note must be chromatic, and the
+  drawn notes must match the answer.
+- **Videos:** the clips use the book's YouTube links and start and end times. Each title was checked against YouTube.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

@@ -1,0 +1,10 @@
+X:5976
+%%from edm
+T:Quintet in C, Op. 163, 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5976 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+c'16- | c'16 | c'16- | c'8 d'/2e'/2d'/2c'/2d'2 ^d'4 | g12- g2a2 | a4 g6 c'2 e'2g'2 | f'4 z2 f'2 e'4 z2 e'2 | e'4 d'2

@@ -1,0 +1,10 @@
+X:6536
+%%from edm
+T:Concerto, Op. 47, 1st Movement - 2nd Theme A
+C:Jean Sibelius
+%%composer Sibelius|Jean
+% EDM 6536 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:Bb
+d8 c4 d4 e4 f4 | _g4 f4 B16- | B4 B4 A4 B4 c4 d4 | e4 d16- d4 |

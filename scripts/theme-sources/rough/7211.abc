@@ -1,0 +1,12 @@
+X:7211
+%%from edm
+T:Le Sacre du Printemps, Part II, The Sacrifice, Intro.
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7211 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/8EJUtDRIErw?t=1m42s
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+^c'6 b2 c'4 ^g2^f2 | b4 ^g4 ^c'6 b2 | ^c'4 ^g2^f2 b4 g4 |

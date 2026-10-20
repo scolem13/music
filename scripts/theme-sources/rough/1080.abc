@@ -1,0 +1,13 @@
+X:1080
+%%from mtd
+T:Symphony No. 5, in C minor, Op. 67, 2nd Movement - Coda
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1074, Barlow & Morgenstern B956, EDM 1080 (Musical Theme Dataset, CC BY 4.0)
+N:Andante con moto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/8
+L:1/16
+Q:1/4=50
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+CE | _G2GFEG | F4 DE | _F2FEDF | E4 |

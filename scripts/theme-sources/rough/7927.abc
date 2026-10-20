@@ -1,0 +1,11 @@
+X:7927
+%%from edm
+T:Tannhauser, Bacchanale (Venusberg Music), 1st Theme
+C:Richard Wagner
+%%composer Wagner|Richard
+% EDM 7927 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:E
+=g6- ga2<g2b2<g2b | =g6- ga2<g2d'2<g2b | a6- a=g2<a2=c'2<a2c' | a6- a=g2<a2=c'2<a2c' | =c'3b/2a/2

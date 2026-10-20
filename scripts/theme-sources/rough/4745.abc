@@ -1,0 +1,10 @@
+X:4745
+%%from edm
+T:Concerto in A minor, Op. 17, 2nd Movement
+C:Ignace Jan Paderewski
+%%composer Paderewski|Ignace Jan
+% EDM 4745 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+z2 G2 A/2d3-d/2- | dcGG A/2d3-d/2- | dcGA2<B2c | d2d3/2d/2 d/2g3-g/2 |

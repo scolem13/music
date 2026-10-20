@@ -1,0 +1,13 @@
+X:9718
+T:Suite Bergamasque, Piano, Prelude
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2709, Barlow & Morgenstern D141, EDM 9718 (Musical Theme Dataset, CC BY 4.0)
+N:Prélude  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/16
+Q:1/4=88
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+z8 g8- | gaba gbgf dfdc BGDE | GFGA G4- GFGA cAGF |

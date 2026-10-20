@@ -1,0 +1,11 @@
+X:6822
+%%from edm
+T:Doctrinen Waltzes, Op. 79, No. 4
+C:Eduard Strauss
+%%composer Strauss|Eduard
+% EDM 6822 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:Eb
+B2c2d2e2f2g2- | g2B2 z2 g4 =B2 | z2 g4 =B2 z2 z/2 f3/2 | =e2f2g2a2b2d'2- | d'6 c'2

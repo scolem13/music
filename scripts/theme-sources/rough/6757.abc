@@ -1,0 +1,11 @@
+X:6757
+%%from edm
+T:King Cotton March, 2nd Theme
+C:John Philip Sousa
+%%composer Sousa|John Philip
+% EDM 6757 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:Eb
+B2e2d2 e2g2 z2 | f2e2 z2 d2e2 z2 | g2 b4 a2f2 z2 | g2 e8- e2 | e2f2=e2 f2g2 z2 | f2e2

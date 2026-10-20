@@ -1,0 +1,12 @@
+X:3995
+%%from mtd
+T:Le Boeuf Sur Le Toit, 5th Theme, Dance of the Bookmakers
+C:Darius Milhaud
+%%composer Milhaud|Darius
+% MTD 5646, Barlow & Morgenstern M378, EDM 3995 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/8
+Q:1/4=107
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+F2 d>c | c/_BB/ B/AB/ | c2 G2 | c4 |

@@ -1,0 +1,10 @@
+X:7212
+%%from edm
+T:Le Sacre du Printemps, Mysterious Circles of the Adolescents
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7212 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+^g4 ^d2g2 ^f2=f2 | ^d4 ^f2d2 ^g4 | ^d2^g2 z/2 ^f3/2=f2 d4 | ^f2^d2 ^g4 d4 | B2^c2 ^d2^f2 d4 |

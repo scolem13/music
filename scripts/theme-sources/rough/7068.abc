@@ -1,0 +1,11 @@
+X:7068
+%%from edm
+T:Sonata in E-flat, Op. 18, 2nd Movement - Improvisation
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7068 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Ab
+E2 c4 B2- | B3d cBA2- | AA a4 g2- | g2fa gfe2- | e e4- e=d2- | =d3a eec2- | c

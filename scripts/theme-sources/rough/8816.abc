@@ -1,0 +1,10 @@
+X:8816
+%%from edm
+T:Trio in C minor, Op. 101, 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8816 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Eb
+c'4 d'2e'2 c'2g2f2g2 | e4 f2g2 e2c2B2c2 | A4 B2c2 A2E2D2E2 | C4

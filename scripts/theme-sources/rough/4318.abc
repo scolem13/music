@@ -1,0 +1,10 @@
+X:4318
+%%from edm
+T:Quintet in C, K 515, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4318 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+A4 A2A2 A2A2 | c4 B2d2 cBAG | F4 E2G2 A2B2 | c2

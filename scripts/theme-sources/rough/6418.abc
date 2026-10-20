@@ -1,0 +1,10 @@
+X:6418
+%%from edm
+T:Nocturne, (For Left Hand Alone)
+C:Alexander Scriabin
+%%composer Scriabin|Alexander
+% EDM 6418 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Db
+a6 =g4 a2 | f'6 d'6 | d'6 =b4 =a2 | =a6 a6 |

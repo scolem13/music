@@ -1,0 +1,10 @@
+X:7796
+%%from edm
+T:Concerto in A minor, 1st Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7796 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e^f^ga bc'd'e' ^f'^g'a'b' | a2a'2e2a'2e2^g2 | a4 z2 ab c'bc'b | a4 z2 ab c'bc'a |

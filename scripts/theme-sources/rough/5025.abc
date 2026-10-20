@@ -1,0 +1,10 @@
+X:5025
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 2, 6th Movement - Dance of the Maids From the Antilles, 1st Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5025 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+E2FE ^F2GF | ^G2B2^d2e2 | f2ge f2ec | d2cA E4 |

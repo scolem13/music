@@ -1,0 +1,10 @@
+X:4396
+%%from edm
+T:Sonata in G, K 283, 3rd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4396 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+a2 ^g2 b2 | a2 ^g2 b2 | a6- | a6- | a2 z2 fd | g2 z2 e^c | d2 z2 Af | e4

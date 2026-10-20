@@ -1,0 +1,10 @@
+X:9370
+%%from edm
+T:Sonata No. 1 in B-flat, 2nd Movement
+C:Muzio Clementi
+%%composer Clementi|Muzio
+% EDM 9370 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+b3c'/2d'/2 e'2e'2 | g'3f' e'd'/2e'/2f'/2e'/2d'/2c'/2 | =b3d'/2c'/2 f2_b2 | a4 g2

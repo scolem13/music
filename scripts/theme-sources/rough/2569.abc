@@ -1,0 +1,10 @@
+X:2569
+%%from edm
+T:Quartet in G minor, Op. 74, No. 3, 2nd Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2569 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+G8 F2 z2 E2 z2 | A12 z4 | G8 F2 z2 E2 z2 | c12 z4 | B8 ^A4 B4 | e12 d4 | g8

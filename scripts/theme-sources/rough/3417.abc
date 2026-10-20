@@ -1,0 +1,10 @@
+X:3417
+%%from edm
+T:Eight Grandes Etudes de Paganini, Etude No. 5 in E, ("La Chasse" Paganini Caprice, No. 9)
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3417 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+bag2 gfe2 | bag2 gfe2 | efg2 fga2 | fab2

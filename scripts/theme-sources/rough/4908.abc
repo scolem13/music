@@ -1,0 +1,10 @@
+X:4908
+%%from edm
+T:Sonata in G, 2nd Movement - Fugue
+C:Niccolo Porpora
+%%composer Porpora|Niccolo
+% EDM 4908 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+d4 e4 c3B/2c/2 d4 | z2 B2 c2Bc A2d2 B2 z2 | g

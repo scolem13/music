@@ -1,0 +1,10 @@
+X:9694
+%%from edm
+T:Primtemps, Symphonic Suite, 1st Movement, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% EDM 9694 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F#
+a4 c'8 | (3d'2f'2e'2 g'4 a'4 | a4 c'6 a2 | e4<d4 d4 | d4 g4 (3a2g2a2 | b4 a4 g4 | c'4 g8 |

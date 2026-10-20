@@ -1,0 +1,10 @@
+X:2989
+%%from edm
+T:Concerto, 1st Movement, 1st Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 2989 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G,B,2<C2 G,A,2- | A,CG,A, F,A,D2- | D2 E4 C2- | CG,E,A, FDA,G, | EFG2

@@ -1,0 +1,11 @@
+X:8901
+%%from edm
+T:Symphony No. 3 in D minor, 3rd Movement - 1st Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8901 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+d'2e'2d'2_d'2=d'2e'2 | d'2e'2d'2_d'2=d'2e'2 | d'4 a4 d4 | A4 D4 a4 | d'2a2 d4 a4 |

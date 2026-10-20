@@ -1,0 +1,10 @@
+X:3030
+%%from edm
+T:Sonata in C, Op. 59, 1st Movement, 3rd Theme
+C:Vincent D'Indy
+%%composer D'Indy|Vincent
+% EDM 3030 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:C
+G,8- G,2^G,2 =G,4 ^G,2 | G,8- G,2A,2 G,4 A,2 | (3G,8 A,8 E8 C2 | (3B,6- B, F6- F D6- DC2B,2 | D2C2

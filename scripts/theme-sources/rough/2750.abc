@@ -1,0 +1,10 @@
+X:2750
+%%from edm
+T:Symphony in B-flat, No. 98, 4th Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2750 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:Bb
+z2 f2g2 a2b2c'2 | b4 z8 | z2 C2D2 =E2F2G2 | A4

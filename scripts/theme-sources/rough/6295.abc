@@ -1,0 +1,11 @@
+X:6295
+%%from edm
+T:Quintet in E-flat, Op. 44, 1st Movement - 2nd Theme
+C:Robert Schumann
+%%composer Schumann|Robert
+% EDM 6295 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:Eb
+g8 c6 d2 | e4 f4 _g8 | g8 c6 d2 | e4 f4 _g8 | g8 c6 d2 | e4 =e4 f4 _d4 |

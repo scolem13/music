@@ -1,0 +1,10 @@
+X:2751
+%%from edm
+T:Symphony in E-flat, No. 99, London 10, "Imperial", 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2751 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+E8 g4 f3d | e4 B2 z c/2B/2 A2G2F2E2 | D8 a4 g3e | f4 B2

@@ -1,0 +1,10 @@
+X:4402
+%%from edm
+T:Sonata in A minor, K 310, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4402 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+c6 B2 | A6 ^G2 | A6 B2 | z/2 c3-c/2 B4 | d6 c2 | f6 e2 |

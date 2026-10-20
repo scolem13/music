@@ -1,6 +1,6 @@
 // Static server: project root at /, this scratch dir at /__c/.
 const http = require("http"), fs = require("fs"), path = require("path");
-const ROOT = "/Users/sean.coleman/Projects/everything-music-site", HERE = __dirname, PORT = +process.argv[2] || 8310;
+const ROOT = (require("path").join(__dirname, "../../..") + ""), HERE = __dirname, PORT = +process.argv[2] || 8310;
 const TYPES = { ".html":"text/html; charset=utf-8", ".js":"text/javascript; charset=utf-8", ".css":"text/css", ".png":"image/png", ".json":"application/json" };
 http.createServer((req, res) => {
   let p = decodeURIComponent(req.url.split("?")[0]);

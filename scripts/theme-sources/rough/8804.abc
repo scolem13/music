@@ -1,0 +1,10 @@
+X:8804
+%%from edm
+T:Trio in C, Op. 87, Vn., Cello and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8804 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c8 e3A | f8 d4 | B4 G4 g4 | g12- | g4 ^g4 a4 | a12- | a4 ^a4 b4 | b8

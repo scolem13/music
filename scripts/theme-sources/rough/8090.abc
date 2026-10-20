@@ -1,0 +1,10 @@
+X:8090
+%%from edm
+T:Peter Schmoll und Seine Nachbarn, Overture, 2nd Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8090 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+d'8 z/2 z/2 g'3 f'4 | c'8 z/2 z/2 g'3 f'4 | d'6 b2 g4 f'2e'2 | d'6 e'd' c'2

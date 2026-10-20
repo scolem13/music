@@ -1,0 +1,12 @@
+X:932
+T:Sonata No. 23, in F minor, Op. 57, 1st Movement - 2nd Theme
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0926, Barlow & Morgenstern B808, EDM 0932 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro assai  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:12/8
+L:1/16
+Q:1/4=147
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+C4- CE | A6 c4- cA G6 B4- BG | A6 E12 |

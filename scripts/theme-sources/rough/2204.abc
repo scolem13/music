@@ -1,0 +1,10 @@
+X:2204
+%%from edm
+T:Concerto Grosso in B-flat, Op. 6, No. 7, 1st Movement
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2204 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B,6 GF G4 z4 | A,6 FE F4 z4 | G,6 ED E6 F2 | D2C2 D4 C4

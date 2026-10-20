@@ -52,4 +52,20 @@ in mono: the side cancels out completely and the extra width simply disappears.
 
 - [Sound 24: The signal chain](sound-chain.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Panning (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Panning_(audio)](https://en.wikipedia.org/wiki/Panning_(audio)).
+
+"Precedence effect." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Precedence_effect](https://en.wikipedia.org/wiki/Precedence_effect).
+
+**For teachers**
+
+*DAFx Conference Paper Archive*. Digital Audio Effects Conference. [www.dafx.de/paper-archive/](https://www.dafx.de/paper-archive/). Searchable archive of peer-reviewed effect papers.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

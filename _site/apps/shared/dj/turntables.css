@@ -64,3 +64,6 @@
 /* "in other gear" tables */
 .dj-map{font-size:.88rem;overflow-x:auto;max-width:100%}
 .dj-map th:first-child{white-space:nowrap}
+.sp-map{display:block;width:100%;border-radius:4px;cursor:pointer;touch-action:none;margin:.2rem 0}
+.sp-zone{margin-top:.4rem;max-width:34rem}
+.sp-zone .sp-edtitle select{max-width:18rem}

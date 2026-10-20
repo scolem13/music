@@ -1,0 +1,11 @@
+X:4134
+%%from edm
+T:Concerto in G, K 216, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4134 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/CrpvZYkeM3s
+M:4/4
+L:1/16
+K:G
+g4 g6 fg fgfg | d4 d6 ^cd cdcd | B4 B6 c2 d2e2 | G2F2 F4

@@ -1,0 +1,10 @@
+X:4321
+%%from edm
+T:Quintet in G minor, K 516, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4321 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d4 c4 B4 | A4 G4 _g4 | g4 b8 | _d4 =d4

@@ -1,0 +1,11 @@
+X:6977
+%%from edm
+T:Also Sprach Zarathustra, Op. 30, 2nd Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 6977 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:C
+z3 z/2 ^F,<B,D/2F2- | ^F^C>DF/2B/2 b4- | b6 ^a^g | ^d2e>f ^g>^fB2- | B2 B4 ^c2 | e6 ^d2 | ^f8 |

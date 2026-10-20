@@ -1,0 +1,10 @@
+X:2359
+%%from edm
+T:Suite No. 8, in G, 2nd Set, 5th Movement, Minuet
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2359 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+G2 A/2B/2A/2G/2 A2 | B2 c/2B/2c/2d/2 c2 | d2 e/2d/2e/2f/2 e2 | F2 G/2A/2G/2A/2 G/2A/2G/2A/2 | A2 B4 | c2 z/2 z/2 B A2 | B2 cd Bc | AG FE D2 |

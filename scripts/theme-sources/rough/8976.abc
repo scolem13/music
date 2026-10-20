@@ -1,0 +1,10 @@
+X:8976
+%%from edm
+T:Miserere, Fitzwilliam Virginal Book, No. 177, 2nd Theme
+C:William Byrd
+%%composer Byrd|William
+% EDM 8976 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:F
+z4 a4 b4 f4 | a4 g6 a2 _g4 | g8 z8 | z4 a4 c'4 g4 | a4 b6 a2g2f2 |

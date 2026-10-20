@@ -1,0 +1,13 @@
+X:262
+%%from mtd
+T:Sonata No. 1 in B minor, Fl. and Harpsichord, 1st Movement
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0257, Barlow & Morgenstern B171, EDM 0262 (Musical Theme Dataset, CC BY 4.0)
+N:Andante  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/8
+Q:1/4=71
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+z B | f f2 e/4f/4g/ f f2 e/4f/4g/ | fgfe dc/d/ B z |

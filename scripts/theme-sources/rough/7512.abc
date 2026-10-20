@@ -1,0 +1,10 @@
+X:7512
+%%from edm
+T:Quartet in D, Op. 11, 2nd Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7512 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Bb
+b2d'2d'2b2 | e'4 d'4 | c'4 g2f2 | c'2b2 f4- | f4 f2d2 | g4 d4 |

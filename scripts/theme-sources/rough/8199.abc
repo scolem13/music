@@ -1,0 +1,10 @@
+X:8199
+%%from edm
+T:Romeo and Juliet, Overture, Op. 17, 2nd Movement, Romeo Alone, 1st Theme
+C:Hector Berlioz
+%%composer Berlioz|Hector
+% EDM 8199 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+g4 e'8 | d'4 c'8 | =b4 a3b c'4 | g4 f'8- | f'4 e'4

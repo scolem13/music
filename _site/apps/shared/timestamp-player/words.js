@@ -509,11 +509,15 @@
       });
     });
 
+    function phrasesAsChunks(doc) {
+      var ph = document.querySelector('.btp-phrases:not(.pc-shell)'), P = ph && ph._btpPhrases;
+      return P && P.asChunks ? P.asChunks(doc) : doc;
+    }
     q('.btp-send-notation').addEventListener('click', function () {
       var c = buildDoc();
       if (!c) { say('Nothing to send yet: paste the words and chords, then Convert.'); return; }
       if (remote('/tools/notation.html?remote=1', 'ts-notation', 'nt-ready',
-                 [{ type: 'nt-doc', doc: c.doc, title: c.title, tempo: c.bpm, host: 'Timestamp Notes' }]))
+                 [{ type: 'nt-doc', doc: phrasesAsChunks(c.doc), title: c.title, tempo: c.bpm, host: 'Timestamp Notes' }]))
         say('Sent to the Notation page' + (c.notes.length ? '. ' + c.notes.join(' ') : ': add the melody there.'));
     });
     q('.btp-send-band').addEventListener('click', function () {

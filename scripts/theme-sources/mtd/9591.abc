@@ -1,0 +1,11 @@
+X:9591
+T:Prelude A L'Apres- D'Un Faune, 2nd Theme
+C:Claude Debussy
+%%composer Debussy|Claude
+% MTD 2582, Barlow & Morgenstern D14, EDM 9591 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=37
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+a4 f2 | e3 d- dF | b2- b a2 f | e2- e d2 _c | =A2 |

@@ -1,0 +1,11 @@
+X:8333
+%%from edm
+T:Israel, Symphony - 2nd Theme
+C:Ernest Bloch
+%%composer Bloch|Ernest
+% EDM 8333 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:F
+a3b/2a/2 a3b/2a/2 d'3_e'/2c'/2 | a3b/2a/2 a3b/2a/2 _E3D |

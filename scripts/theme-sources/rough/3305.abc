@@ -1,0 +1,10 @@
+X:3305
+%%from edm
+T:Concerto in D minor, 3rd Movement
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3305 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+D2 E4 F2G2A2 | B2c2d2 e2f3F | F2 F8 F2 | E2D2C2 D2E2F2 | G2 z/2 A3/2G2 F2E2A,2 |

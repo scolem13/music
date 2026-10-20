@@ -1,0 +1,10 @@
+X:2114
+%%from edm
+T:Grand Canyon Suite, 3rd Movement, 2nd Theme
+C:Ferde Grofé
+%%composer Grofé|Ferde
+% EDM 2114 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:A
+C4 E12- | E16 | C4 E,12- | E,16 | C4 E4 A4 F4- | F8 E4 C2-C/2A,3/2- | A, z/2 F,2-F,/2 B,12- | B,16 |

@@ -1,0 +1,11 @@
+X:5779
+%%from edm
+T:Sonatas, Longo 152 in A
+C:Domenico Scarlatti
+%%composer Scarlatti|Domenico
+% EDM 5779 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:A
+^d6 e6 | ^d6 e6 | f2=g2f2 z/2 z/2 e^d2e2 | f2g2f2 e2^d2e2 |

@@ -109,6 +109,7 @@
       var p = create.apply(BP, arguments); rawVol = p.setVolume; rawKit = p.setKitVolume;
       p.setVolume = function(part, v){ fader[part] = v; sendVol(part); paintSoon(); };
       p.setKitVolume = function(piece, v){ if (curGroup) pieceGroup[piece] = curGroup; kitv[piece] = v; sendKit(piece); paintSoon(); };
+      if (D.swing != null && p.setSwing) p.setSwing(D.swing);                   // the Swing slot (PlayBar.swingSlot) chosen before the first play
       D.player = p; return p;
     };
   } });

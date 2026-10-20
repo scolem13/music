@@ -1,0 +1,10 @@
+X:8653
+%%from edm
+T:Sextet in G, Op. 36, 4th Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8653 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:9/8
+L:1/16
+K:G
+G2A2B4<c4 B6 | A2B2A2 G4 B4<d4 | d2e2f4<g4 d6 | z/2 z/2 BA2G2 d8- d2

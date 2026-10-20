@@ -1,0 +1,11 @@
+X:9175
+%%from edm
+T:Etudes, Op. 10 - No. 2, in A minor
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9175 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:C
+A^ABc ^cd^de f^fg^g =a^ab=c' | ^c'd'^d'e' f'e'd'=d' c'=c'b^a =a^gba |

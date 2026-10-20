@@ -1,0 +1,10 @@
+X:7038
+%%from edm
+T:Don Quixote, Op. 35, 4th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7038 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:D
+b2=c'2 d'4 f'8 | g'8<e'8 | b2=c'2 d'8 e'4- | e'2=c'2 a8- a2b2 | =c'2d'2 ^d'4 ^a'4 =a'4 | g'4 g'4 f'4

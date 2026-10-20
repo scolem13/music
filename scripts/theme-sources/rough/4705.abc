@@ -1,0 +1,10 @@
+X:4705
+%%from edm
+T:La Belle Helene, Opera, Overture, 1st Theme
+C:Jacques Offenbach
+%%composer Offenbach|Jacques
+% EDM 4705 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:E
+b2 z2 b2 z2 | b2eb c'2c'2 | b2gb d'2d'2 | b2gb e'2e'2 | d'2 z2 c'2 z2 | c'2b2b2g2 |

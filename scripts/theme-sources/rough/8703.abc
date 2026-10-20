@@ -1,0 +1,10 @@
+X:8703
+%%from edm
+T:Sonata in D minor, Op. 108, 2nd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8703 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:D
+f3 e fa | d4 f2 | e3 f gf | e3 f gb | f4 a2 | d3 c df | e3 f ^gf | e2

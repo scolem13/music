@@ -1,0 +1,10 @@
+X:4192
+%%from edm
+T:Divertimento in F, K 247, 3rd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4192 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+c4 f4 A4 | d4 =B4 c4 | B4 A4 F4 | z/2 G3-G/2 F4 E4 |

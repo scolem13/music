@@ -1,0 +1,10 @@
+X:1572
+%%from edm
+T:Dolly, Op. 56, Tendresse
+C:Gabriel Fauré
+%%composer Fauré|Gabriel
+% EDM 1572 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Db
+F4 G4 A4 | B3=B B4 _B4 | c4 d4 =A4 | A3=G F6 E2 | D4 C4 E4- | E3/2B,-[C/2-B,/2]C C6

@@ -1,0 +1,10 @@
+X:5893
+%%from edm
+T:Impromptus, Op. 142, No. 3, in B-flat. (Theme and Variations)
+C:Franz Schubert
+%%composer Schubert|Franz
+% EDM 5893 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+d'4 d'2d'2 b4 b4 | a4 a2a2 z/2 e'6- e'3/2 | d'4 d'2d'2 d'2g z g4 |

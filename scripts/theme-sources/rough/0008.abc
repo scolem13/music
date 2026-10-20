@@ -1,0 +1,10 @@
+X:8
+%%from edm
+T:Si J'Étais Roi, Overture, 4th Theme
+C:Adolphe Adam
+%%composer Adam|Adolphe
+% EDM 0008 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+Gcde z/2 d3/2c z | Gcef e2d z | dgde dGde | dgdf e2c

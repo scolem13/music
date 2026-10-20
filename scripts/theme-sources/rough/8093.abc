@@ -1,0 +1,11 @@
+X:8093
+%%from edm
+T:Preciosa, Overture, 1st Theme
+C:Carl Maria Von Weber
+%%composer Weber|Carl Maria Von
+% EDM 8093 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:3/4
+L:1/16
+K:C
+(3ABc (3cde e4 c4 | (3cde (3e^fg g4 e4 | (3e^fg (3gab c'2c'c' c'2c'2 | z/2 c'/2bc'e' d'8 |

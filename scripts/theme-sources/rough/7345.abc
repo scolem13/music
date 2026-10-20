@@ -1,0 +1,11 @@
+X:7345
+%%from edm
+T:Through the Looking Glass, Op. 12, 1st Movement - B, The Garden of Live Flowers, 1st Theme A
+C:Deems Taylor
+%%composer Taylor|Deems
+% EDM 7345 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Eb
+z C2<F2 G=EF | z c2<f2 g=ef | z c'2<f'2 g'=e'f' | d'e'c'_d' b=ba=a |

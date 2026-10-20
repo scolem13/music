@@ -1,0 +1,11 @@
+X:9181
+%%from edm
+T:Etudes, Op. 10 - No. 8, in F
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9181 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/pm9TZvCPP7k
+M:4/4
+L:1/16
+K:F
+c'4 z/2 a'/2g'f'c' AGFC, A,G,F,C, | A,,G,,F,,C,, F,,G,,A,,C, F,G,A,C FGAc | f'g'a'g'

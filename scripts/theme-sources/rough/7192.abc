@@ -1,0 +1,11 @@
+X:7192
+%%from edm
+T:Petrouchka, The Peasant and the Bear
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7192 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/4
+L:1/16
+K:C
+z2a/2^a/2 b/2^c'/2^d'2- ^d'/2=d'/2^c'/2b/2=a2a2 ^d'4z2 ^d'2^d'2^d'2|  ^c'^d'/2-[^d'/2=d'/2-]d'/2^c'/2- [^c'/2b/2-]b/2a2 a2a2b^c'

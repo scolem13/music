@@ -1,0 +1,13 @@
+X:3843
+T:Midsummer Night's Dream, Wedding March, Op. 61, No. 9, 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5495, Barlow & Morgenstern M233, EDM 3843 (Musical Theme Dataset, CC BY 4.0)
+N:Wedding March  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 25  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/16
+Q:1/4=178
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c8 c6 c2 | e4 d4 B4 G4 | G7 c c7 e | e4 d4 B4 G4 | G7 e e7 g | g8 f4 e4 |

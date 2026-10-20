@@ -1,0 +1,10 @@
+X:7610
+%%from edm
+T:Symphony No. 5, in E minor, Op. 64, 1st Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7610 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:G
+c2e2 z e e4 f2 | g2a2g2 f2 e4 | c2g2 z g g4 z f | f4 z e e6 |

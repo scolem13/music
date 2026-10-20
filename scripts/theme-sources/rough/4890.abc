@@ -1,0 +1,10 @@
+X:4890
+%%from edm
+T:Sonata No. 1 in E minor, 3rd Movement - Minuet, 1st Theme
+C:Giovanni Platti
+%%composer Platti|Giovanni
+% EDM 4890 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+B2G2E2b2g2e2 | e4<^d4 e4 | c2 a4 c2 d2A2 | B2f2 f4<g4 |

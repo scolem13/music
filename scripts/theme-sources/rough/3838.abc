@@ -1,0 +1,13 @@
+X:3838
+%%from mtd
+T:Midsummer Night's Dream, Intermezzo, Op. 61, No. 5, 2nd Theme
+C:Felix Mendelssohn
+%%composer Mendelssohn|Felix
+% MTD 5490, Barlow & Morgenstern M228, EDM 3838 (Musical Theme Dataset, CC BY 4.0)
+N:Entr'acte  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=205
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+c B2 c | e2 d c2 d | c2 f e2 f | a2 g f2 g | f3 e3 |

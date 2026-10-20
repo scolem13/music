@@ -1,0 +1,13 @@
+X:9264
+%%from mtd
+T:Nocturnes, Op. 55, No. 2 in E-flat
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2260, Barlow & Morgenstern C273, EDM 9264 (Musical Theme Dataset, CC BY 4.0)
+N:Lento  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:12/8
+L:1/8
+Q:1/4=93
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+b6{cde} d6{cd} | e3 a3 g3 =B3 | c3 |

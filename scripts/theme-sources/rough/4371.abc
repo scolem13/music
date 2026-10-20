@@ -1,0 +1,10 @@
+X:4371
+%%from edm
+T:Serenade in E-flat, K 375, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4371 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+e8 B3e | g8 e3g | b4 g4 e4 | B8 b4 | g2a2g2a2g2a2 | f8

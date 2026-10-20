@@ -1,0 +1,11 @@
+X:9329
+%%from edm
+T:Sonata in B minor, Op. 58, 3rd Movement
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% EDM 9329 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:B
+F3d d8 B3c | d3e d4 c3d e2 (3fed | e3f d8

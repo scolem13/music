@@ -1,0 +1,10 @@
+X:8893
+%%from edm
+T:Quintet in F, 4th Movement
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8893 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+z4 A8 B2=B2 | B2c2 d4 z2 A2 d4 | z4 A8 B2=B2 | B2c2 d4 z2 A2 d4 |

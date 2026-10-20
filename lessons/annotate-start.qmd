@@ -1,0 +1,90 @@
+---
+title: "Annotated Bibliography 1: What It Is and Why I Chose It (Grades 6–8)"
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+description: "For grades 6–8: what an annotated bibliography is, and a three-sentence recipe for each source (what it is, why you trust it, how you'll use it), with music examples."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [research]
+---
+
+A **bibliography** is a list of the sources you used. An **annotated** bibliography adds a few sentences under each
+source: what it is, whether it's any good, and how you'll use it. It shows your teacher that you didn't just find
+sources; you read them and thought about them.
+
+This builds on [Sources 1](sources-start.qmd), which covers how to find a good source in the first place.
+
+## The three-sentence recipe
+
+Under each source, write three sentences:
+
+1. **What is it?** Say in your own words what the source is and what it covers.
+2. **Why do I trust it?** Who made it, and how do they know? Is there anything to be careful about?
+3. **How will I use it?** What does it help you find out or do?
+
+## An example
+
+Say your project is about the jazz album *Kind of Blue*. Your annotated bibliography might start like this:
+
+> Davis, Miles. *Kind of Blue*. Columbia, 1959.
+>
+> This is the album itself, played by Miles Davis's band, with John Coltrane, Cannonball Adderley and Bill Evans. I
+> trust it because it's the real recording, not someone describing it. I'll listen to "So What" to find the places
+> where the band changes from one scale to another, and write down the times.
+
+> "Modal Jazz." *Wikipedia*, Wikimedia Foundation, en.wikipedia.org/wiki/Modal_jazz.
+>
+> This article explains what modal jazz is and names *Kind of Blue* as an important example. Anyone can edit
+> Wikipedia, so I'll only use it to start, and check its facts in the sources listed at the bottom of the page. I'll
+> use it to learn the words I need, like "mode", and to find better sources.
+
+The second example is honest: it says what the source is good for *and* what to be careful about. That's what a good
+annotation does.
+
+## Rules of thumb
+
+- **Use your own words.** Don't copy sentences from the source. Read it, look away, then write what you remember.
+  Then check that you got it right.
+- **Don't quote.** An annotation is about the source, not a copy of a piece of it.
+- **Put the list in alphabetical order** by the first word of each entry (usually the author's last name).
+- **Call it "Annotated Bibliography"** at the top.
+- **Different kinds of sources are better than many of the same kind.** A recording, a score and a book are better
+  than three websites.
+
+## Things that don't go on the list
+
+::: {.callout-warning}
+## The AI summary is not a source, so it can't go on your list
+
+The answer that Google, Bing or a chatbot writes at the top of your search was made by a computer. No person wrote
+it, it can be wrong, and it changes every time you ask. **It doesn't belong in your bibliography.** If it gave you
+an idea, find a real page or book that says the same thing, read it, and put *that* on your list.
+:::
+
+Also leave out anything you didn't actually read, watch or listen to.
+
+## Try it
+
+Pick a song or piece you like.
+
+1. Find three sources: the **recording**, **one page about the song or the artist** from a trusted website, and
+   **one more** (a video interview, a book from the library, or the sheet music).
+2. Write each one down with who made it, what it's called, where it is, and when it was made.
+3. Under each, write the three sentences: what is it, why do I trust it, how will I use it.
+4. Swap with a partner. Can they tell, from your annotations alone, which source is the most useful?
+
+Next: [Annotated Bibliography 2](annotate-check.qmd) (grades 9–10).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Annotated Bibliographies." *Purdue Online Writing Lab*, Purdue University, [owl.purdue.edu/owl/general_writing/common_writing_assignments/annotated_bibliographies/index.html](https://owl.purdue.edu/owl/general_writing/common_writing_assignments/annotated_bibliographies/index.html).
+
+Davis, Miles. *Kind of Blue*. Columbia, 1959. The recording.
+
+"Modal Jazz." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Modal_jazz](https://en.wikipedia.org/wiki/Modal_jazz).
+
+"What Guidance Should I Give My Students for Preparing an Annotated Bibliography?" *MLA Style Center*, Modern Language Association, 4 Nov. 2016, [style.mla.org/annotated-bibliographies/](https://style.mla.org/annotated-bibliographies/). Written for the eighth edition of the *MLA Handbook*.
+:::
+<!-- /works-cited -->

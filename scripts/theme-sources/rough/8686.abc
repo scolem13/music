@@ -1,0 +1,10 @@
+X:8686
+%%from edm
+T:Sonata in G, Op. 78, Vn. and Piano, 1st Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8686 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/4
+L:1/16
+K:G
+d'4 z2 d'4<d'4 c'2 b2g2 d4- | d8 z4 e4 z2 e2 e4- | e4 g4 z4 g4 z2 g2 g4- | g4 b4 z4 d'4 f4 a4- | a8

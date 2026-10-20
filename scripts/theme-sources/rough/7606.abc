@@ -1,0 +1,11 @@
+X:7606
+%%from edm
+T:Symphony No. 4, in F minor, Op. 36, 4th Movement - 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7606 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:F
+f'8 e'6 d'2 | c'ac'd' e'd'c'b afab c'bag | agfe fedc dcBA G2c2 | F2

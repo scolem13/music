@@ -1,0 +1,13 @@
+X:8731
+T:Symphony No. 1 in C minor, Op. 68, 4th Movement - 3rd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1734, Barlow & Morgenstern B1598, EDM 8731 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio - Più andante - Allegro non troppo, ma con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 134 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/4
+Q:1/4=122
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+d _e ^f | a g ^c d | _e ^f (3a g d | (3^c d g (3d' ^c' a | =c'3/2 |

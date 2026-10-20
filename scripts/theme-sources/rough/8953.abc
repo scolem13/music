@@ -1,0 +1,10 @@
+X:8953
+%%from edm
+T:Passacaglia, Organ
+C:Dietrich Buxtehude
+%%composer Buxtehude|Dietrich
+% EDM 8953 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:C
+z16 D8 | A16 ^C8 | D16 A,8 | ^A,24 | A,16

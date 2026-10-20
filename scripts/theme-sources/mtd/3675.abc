@@ -1,0 +1,12 @@
+X:3675
+T:Symphony No. 2, in C minor, "Urlicht" from Des Knaben Wunderhorn, 4th Movement - 1st Theme
+C:Gustav Mahler
+%%composer Mahler|Gustav
+% MTD 5327, Barlow & Morgenstern M67, EDM 3675 (Musical Theme Dataset, CC BY 4.0)
+N:"Urlicht". Sehr feierlich, aber schlicht - "O Röschen rot!"  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=70
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Db
+F G A2 | A B c2 | d2 c2 | B4 | A4 |

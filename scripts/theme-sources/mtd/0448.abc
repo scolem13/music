@@ -1,0 +1,13 @@
+X:448
+T:Well-tempered Clavichord, Book II, Fugue No. 3
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% MTD 0443, Barlow & Morgenstern B355, EDM 0448 (Musical Theme Dataset, CC BY 4.0)
+N:Praeludium & Fuge Nr. 3 Cis-Dur, BWV 872  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 1 one-score  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:4/4
+L:1/8
+Q:1/4=69
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C#
+z C,E,C, G, z F, z | E,/D,/C,- C,/D,/E,/C,/ F, z F,, z |

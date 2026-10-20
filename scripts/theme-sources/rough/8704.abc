@@ -1,0 +1,10 @@
+X:8704
+%%from edm
+T:Sonata in D minor, Op. 108, 3rd Movement
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8704 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:A
+f2f2 z2 a2 | f2f2 z2 a2 | f2f2 z2 a2 | f2a2g2f2 | =f2f2 z2 =g2 | =f2f2 z2 =g2 | e2e2 z2 f2 | ^d2

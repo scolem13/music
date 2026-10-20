@@ -1,0 +1,10 @@
+X:1616
+%%from edm
+T:Sonata in C minor, Op. 1, No. 3, 1st Movement
+C:John Field
+%%composer Field|John
+% EDM 1616 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+ce g4 =B2- | =B2 c4 z2 | C=B,CD CB,C2 | G,2A,2 G,2

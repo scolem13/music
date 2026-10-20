@@ -1,0 +1,10 @@
+X:5161
+%%from edm
+T:Moment Musical, Op. 16, No. 2
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5161 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Gb
+B2 =B4 B2 | B2 =c4 g2 | g2f2=e2_e2 | e2 =d4 =A2 | B2

@@ -1,0 +1,10 @@
+X:90
+%%from edm
+T:Concerto in C, Op. 7 No. 1, Piano and Str., 1st Movement
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0090 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+G2c2 f/2e/2d/2e/2c2 | f/2e/2d/2e/2 c4 CD | EFG2 G4 | cGG2 G4 | z/2 F/2Ec2

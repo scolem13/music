@@ -1,0 +1,10 @@
+X:3138
+%%from edm
+T:Sinfonietta, 3rd Movement
+C:Leoš Janáček
+%%composer Janáček|Leoš
+% EDM 3138 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+z6 ^d4<e4 d2 | ^c12- c2d2 | ^d6 ^A4<B4 ^G2 | ^A16 |

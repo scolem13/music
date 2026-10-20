@@ -1,0 +1,12 @@
+X:2813
+T:Trio No. 1 in G, 3rd Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% MTD 4474, Barlow & Morgenstern H693, EDM 2813 (Musical Theme Dataset, CC BY 4.0)
+N:Finale. Rondo, in the gypsy style  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=118
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:G
+d2 | g6 ba | aggf feed | d4 c2>B2 | B6 |

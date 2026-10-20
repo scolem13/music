@@ -1,0 +1,13 @@
+X:1160
+%%from mtd
+T:Trio in C minor, Op. 1, Str., 1st Movement - 1st Theme B
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 1153, Barlow & Morgenstern B1035, EDM 1160 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro con brio  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:3/4
+L:1/8
+Q:1/4=152
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+edc | c2 G edc | c2 G edc | c2 =B cde | f2 z |

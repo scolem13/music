@@ -1,0 +1,10 @@
+X:9011
+%%from edm
+T:Adventures in a Perambulator, 2nd Movement - The Policeman - 1st Theme
+C:John Alden Carpenter
+%%composer Carpenter|John Alden
+% EDM 9011 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+e'4 e'4 f'2e'd' | c'4 c'4 e'2d'c' | bge2 dfa2 gec2 | B8

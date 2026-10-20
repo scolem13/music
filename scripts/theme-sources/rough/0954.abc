@@ -1,0 +1,13 @@
+X:954
+%%from mtd
+T:Sonata No. 28, in A, Op. 101, 4th Movement
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0948, Barlow & Morgenstern B830, EDM 0954 (Musical Theme Dataset, CC BY 4.0)
+N:Adagio ma non troppo con affetto - Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=110
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+e'2 | c'4- c'd'e'f' | b4 z2 e'2 | a4- abc'd' | g4 |

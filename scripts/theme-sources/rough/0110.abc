@@ -1,0 +1,10 @@
+X:110
+%%from edm
+T:Sonata in G, Op. 5, No. 3, 1st Movement
+C:Johann Christian Bach
+%%composer Bach|Johann Christian
+% EDM 0110 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:G
+d4 cBAG G4- GABc | defg f8 e/2f/2e/2f/2e/2f/2e/2f/2 | z2 e2 dcBA A4- ABcd | efga c8 B4 |

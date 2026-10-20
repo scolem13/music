@@ -1,0 +1,10 @@
+X:8406
+%%from edm
+T:On the Steppes of Central Asia, Orchestra, 1st Theme
+C:Alexander Borodin
+%%composer Borodin|Alexander
+% EDM 8406 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+e'6 d'^c' | b4 ^c'4 | a4 e4 | b6 ^c'b | a4 e'4 | ^f'4 e'4 | d'4 ^f'4 | ^c'8 | e'8- | e'8 |

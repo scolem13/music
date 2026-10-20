@@ -1,0 +1,11 @@
+X:8344
+%%from edm
+T:Concerto No. 2 in D, Cello and Orchestra, 1st Movement
+C:Luigi Boccherini
+%%composer Boccherini|Luigi
+% EDM 8344 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/4
+L:1/16
+K:D
+d4 d4 d4- d/2 (3efg f/2 z/2 e/2 | (3def (3gfe (3def (3gfe edd2

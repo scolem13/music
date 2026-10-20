@@ -1,0 +1,10 @@
+X:7034
+%%from edm
+T:Don Juan, Op. 20, 6th Theme
+C:Richard Strauss
+%%composer Strauss|Richard
+% EDM 7034 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+G8 g8- | g12 f4 | e4 d2f2 e4 z4 | d12 e4 | d6 A2 G8- | G12 e4 | d6 A2 G8- | G12

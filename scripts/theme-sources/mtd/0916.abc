@@ -1,0 +1,12 @@
+X:916
+T:Sonata No. 18, in E-flat, Op. 31, No. 3, 4th Movement - 1st Theme - B
+C:Ludwig Van Beethoven
+%%composer Beethoven|Ludwig Van
+% MTD 0910, Barlow & Morgenstern B792, EDM 0916 (Musical Theme Dataset, CC BY 4.0)
+N:Presto con fuoco  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:6/8
+L:1/8
+Q:1/4=233
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Eb
+B,zB, | EzE B,zB, | EzE B,zB, | EzE B,zB, | F |

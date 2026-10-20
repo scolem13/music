@@ -1,0 +1,10 @@
+X:2251
+%%from edm
+T:Alcina, Sarabande, From Ballet
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2251 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d4 g6 a2 | _g/2=g/2_g/2=g/2_g/2=g/2_g/2=g/2 _g/2=g/2_g/2=g/2=e_g =g4 | d4 g6 a2 | _g6 =eg =g4 |

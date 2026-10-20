@@ -1,0 +1,10 @@
+X:3301
+%%from edm
+T:Concerto in D minor, 1st Movement - 1st Theme
+C:Édouard Lalo
+%%composer Lalo|Édouard
+% EDM 3301 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+D,4 F,A, D8- D2- | D2 F4- FE E8- | E4 D12 | D,3F, B,D F8- F2- | F2 D4- DB B8- | B4 E12 |

@@ -1,0 +1,10 @@
+X:4467
+%%from edm
+T:Sonata in B-flat, K 378, 2nd Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4467 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Eb
+B4 B4 B6 g2 | g6 af z/2 z/2 f3 e4 | e3

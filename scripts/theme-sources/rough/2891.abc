@@ -1,0 +1,10 @@
+X:2891
+%%from edm
+T:Sonata No. 2, Piano, 3rd Movement, 2nd Theme, Rondo
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2891 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:C
+d4 d8- d2g2 | ^f2g4<d4 d2e2d2 | ^c2e4<d4 d2c2B2 | ^A2^G2 =G8

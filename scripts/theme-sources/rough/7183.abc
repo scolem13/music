@@ -1,0 +1,11 @@
+X:7183
+%%from edm
+T:Petrouchka, Tableau 2, Chez Petrouchka, 2nd Theme A
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7183 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:4/8
+L:1/16
+K:D
+^g4 g4 | z/2 c'/2^g g z/2 b/2 f4 | cf B2 z/2 f/2B B2 |

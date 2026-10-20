@@ -1,0 +1,10 @@
+X:3611
+%%from edm
+T:Concerto No. 1, in A minor, Op. 15, 2nd Movement
+C:Edward MacDowell
+%%composer MacDowell|Edward
+% EDM 3611 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+g4 f4 (3e2f2g2 | a3g d4 e4 | d3d e2=g2 =c'3c' | b8 a4 |

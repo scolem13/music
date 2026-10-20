@@ -1,0 +1,10 @@
+X:8920
+%%from edm
+T:Symphony No. 5 in B-flat, 1st Movement - 1st Theme
+C:Anton Bruckner
+%%composer Bruckner|Anton
+% EDM 8920 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+B8 _d4 B3_A | _G12 F4 | =E8 F6- Fc | f4

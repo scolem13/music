@@ -1,0 +1,10 @@
+X:1275
+%%from edm
+T:Sextet, Op. 48, 1st Movement - 2nd Theme
+C:Antonin Dvořák
+%%composer Dvořák|Antonin
+% EDM 1275 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:A
+G4 ^d4 A2 z A c4 | F2G2A2B2 A4 G2 z2 | ^D4 G4 E2 z E G4 | ^D4 E2D4<C4

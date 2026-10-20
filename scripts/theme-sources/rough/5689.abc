@@ -1,0 +1,10 @@
+X:5689
+%%from edm
+T:Sonata No. 2, in F, Op. 123, 2nd Movement - Scherzo con Variazione
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5689 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+_D2=D2D2 F2A2A2 | B2A2A2 G2F2F2 | E2F2F2 E2D2D2 | E2_D2D2 =D2E2E2 |

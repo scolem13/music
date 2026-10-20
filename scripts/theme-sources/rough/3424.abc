@@ -1,0 +1,10 @@
+X:3424
+%%from edm
+T:Faust Symphony, 1st Movement - 5th Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3424 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:E
+B4 E4 F4 c4 | e8- e2 z4 z B | B4 E4 F4 c4 | e8- e2

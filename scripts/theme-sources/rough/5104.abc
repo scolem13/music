@@ -1,0 +1,10 @@
+X:5104
+%%from edm
+T:Suite No. 2, in G minor, Almand
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5104 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:Bb
+A2 B8- B3BA2- | A2A3A2<D2 G2<C2FB,2- | B, E4 B,2<A,2 D4 DC/2D/2C/2D/2 | C/2D/2C/2D/2 D6

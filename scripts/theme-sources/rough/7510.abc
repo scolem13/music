@@ -1,0 +1,12 @@
+X:7510
+%%from edm
+T:1812, Festival Overture, 4th Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7510 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/VbxgYlcNxE8?t=8m10s
+%%repaired octave
+M:4/4
+L:1/16
+K:Gb
+b2b=b _b2a2 g2g2a2e2 | g2g2 e4 g2fg a2e2 | b4

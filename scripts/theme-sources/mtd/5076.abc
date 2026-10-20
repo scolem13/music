@@ -1,0 +1,12 @@
+X:5076
+T:Dido and Aeneas, Sailor's Dance
+C:Henry Purcell
+%%composer Purcell|Henry
+% MTD 6716, Barlow & Morgenstern P330, EDM 5076 (Musical Theme Dataset, CC BY 4.0)
+N:The Sailors’ Dance (Orchestra)  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/4
+Q:1/4=161
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+b f g2 | f d e2 | c B/A/ d A/B/ | A F F2 | D F B F | G c B A | c f d g |

@@ -1,0 +1,12 @@
+X:5969
+T:Quintet in A, Op. 114, "Forellen", 1st Movement - 1st Theme
+C:Franz Schubert
+%%composer Schubert|Franz
+% MTD 7601, Barlow & Morgenstern S382, EDM 5969 (Musical Theme Dataset, CC BY 4.0)
+N:Allegro vivace  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:4/4
+L:1/4
+Q:1/4=122
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:A
+E2 ^D2 | E2 A2 |{Bc} d2 c B | B2 c z |

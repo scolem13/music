@@ -1,0 +1,11 @@
+X:9172
+T:Ecossaise No. 1, Op. 72, No. 3
+C:Frederic Chopin
+%%composer Chopin|Frederic
+% MTD 2170, Barlow & Morgenstern C184, EDM 9172 (Musical Theme Dataset, CC BY 4.0)
+M:2/4
+L:1/16
+Q:1/4=115
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+F2 | Az/b/az/G/ Az/b/az/F/ | Az/b/az/F/ Az/e'/d' |

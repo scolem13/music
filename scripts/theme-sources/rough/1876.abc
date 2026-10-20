@@ -1,0 +1,10 @@
+X:1876
+%%from edm
+T:Armide, Musette, from Ballet, Act IV
+C:Christoph Gluck
+%%composer Gluck|Christoph
+% EDM 1876 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:F
+a4 f8 f4- | f4 _g4 =g8 | b4 e4 e4 z/2 e3-e/2 | d2e2 f4 a4 c4 |

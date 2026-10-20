@@ -1,0 +1,11 @@
+X:8609
+%%from edm
+T:Quintet in B minor, Op. 115, 1st Movement - 2nd Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% EDM 8609 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:6/8
+L:1/16
+K:D
+b4 z b f6 | z4 z d e2f2d2 | g2e2f2 d2e2c2- | c2 d4

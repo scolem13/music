@@ -1,0 +1,10 @@
+X:7500
+%%from edm
+T:Hamlet, Fantasy Overture, Op. 67, 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% EDM 7500 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+e8 e6 B2 | d8<c8 | A2B2c2e4<d4 d2 | d16 |

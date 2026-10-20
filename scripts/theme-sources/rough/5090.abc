@@ -1,0 +1,10 @@
+X:5090
+%%from edm
+T:Sonata No. 3, in A minor, 4th Movement
+C:Henry Purcell
+%%composer Purcell|Henry
+% EDM 5090 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+A4 a4 e4 g4 | c4 e4 A2AB c2cd | e2e^f ^g2ab c'2ba =g2ga | b2e2

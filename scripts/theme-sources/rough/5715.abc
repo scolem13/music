@@ -1,0 +1,11 @@
+X:5715
+%%from edm
+T:Symphony No. 3, in C minor, Op. 78, 1st Movement - 3rd Theme
+C:Camille Saint-Saëns
+%%composer Saint-Saëns|Camille
+% EDM 5715 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/P2wNAWBPFiI?t=3m27s
+M:6/8
+L:1/16
+K:Eb
+(3f4-fa4- a b4- bg2 | (3f4-fa4- a b4- bg2 | a4 f'4 e'2d'2 | (3e'4-e'b4- b =b4- bc'2 | (3_d'4-d'a4- a c'4- c'b2 | b4 e4 a2_g2 |

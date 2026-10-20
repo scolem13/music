@@ -1,0 +1,10 @@
+X:5185
+%%from edm
+T:Sonata in G minor, Op. 19, 2nd Movement - 3rd Theme
+C:Sergei Rachmaninoff
+%%composer Rachmaninoff|Sergei
+% EDM 5185 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Ab
+C8 B,8 | C12 D4 | E4 D4 B,4 A,4 | C16- | C4 C4 D4 E4 | E4 F4 D8- | D4 E4 C4

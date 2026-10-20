@@ -1,0 +1,11 @@
+X:9143
+%%from edm
+T:Anacreon, Overture - Intro
+C:Maria Luigi Cherubini
+%%composer Cherubini|Maria Luigi
+% EDM 9143 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/2
+L:1/16
+K:D
+d d12 z3 | e e4 z4 a4 z3 | z f4 z8 z3 | g g12 z3 | a a4 z4 d'4 z3 | z b4

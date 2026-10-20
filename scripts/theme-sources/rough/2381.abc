@@ -1,0 +1,10 @@
+X:2381
+%%from edm
+T:Water Music, 15th Movement, Aria
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2381 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:G
+g4 f4 e4 d4 | c4 B8 A4- | A4 G8 d4- | d4 g2f2 g2a2 g4 | d4

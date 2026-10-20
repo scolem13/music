@@ -1,0 +1,10 @@
+X:2741
+%%from edm
+T:Symphony in B-flat, No. 98, "London 4", 1st Movement, Intro
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2741 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B,8 _D8 | F12 B4 | _G4 B4 E4 G4 | A,4 z3 f f4

@@ -1,0 +1,11 @@
+X:1687
+%%from edm
+T:Quintet in F minor, 3rd Movement - 1st Theme
+C:César Franck
+%%composer Franck|César
+% EDM 1687 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%link https://youtu.be/nJtVbbwKzXc?t=29m37s
+M:3/4
+L:1/16
+K:F
+C8- C3C | F8- F3F | _A12 | G12 | C8- C3C | _D8- D3D | C12 | A,8

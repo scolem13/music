@@ -1,0 +1,10 @@
+X:2440
+%%from edm
+T:Quartet in C, Op. 1, No. 6, 2nd Movement
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2440 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+c8 (3d2e2f2 | f2e2 a2g2 g4 | c'6- c'b2<a2g | z/2 f/2g/2f/2g/2f/2g/2f/2 g/2f/2g/2f/2g/2f/2g/2<f/2 e4 |

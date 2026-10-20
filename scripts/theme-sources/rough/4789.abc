@@ -1,0 +1,10 @@
+X:4789
+%%from edm
+T:Le Streghe, Op. 8, Theme
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4789 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+A4 f2 z e | d2 z c d2 z2 | A4 g2 z f | e2 z ^d e2 z2 | A4 f2 z e | d2 z c B2 z2 | e4 A2

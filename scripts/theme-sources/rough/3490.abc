@@ -1,0 +1,10 @@
+X:3490
+%%from edm
+T:Polonaise No. 1 in C minor, 2nd Theme
+C:Franz Liszt
+%%composer Liszt|Franz
+% EDM 3490 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Eb
+G4 _G4 =G4 | B8 F4 | B4 F4 c3B | B8 G4 |

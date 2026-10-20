@@ -1,0 +1,10 @@
+X:7100
+%%from edm
+T:Apollon Musagetes, Coda
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7100 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:E
+z4 ^A6 B2- | B4 =c6 ^c2 | b2g2e2 =c2d2^c2- | c4 ^A6 B2 | b2g2e2 =c2d2^c2 |

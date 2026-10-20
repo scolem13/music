@@ -1,0 +1,12 @@
+X:9850
+%%from mtd
+T:L'Apprenti Sorcier (The Sorcerer's Apprentice), Scherzo for Orchestra, Intro
+C:Paul Dukas
+%%composer Dukas|Paul
+% MTD 2841, Barlow & Morgenstern D262, EDM 9850 (Musical Theme Dataset, CC BY 4.0)
+M:9/8
+L:1/16
+Q:1/4=57
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Ab
+_c'4- c'b/c'/ a4- a=g/a/ f4- f=e/f/ | =d4- d |

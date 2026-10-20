@@ -1,0 +1,10 @@
+X:4242
+%%from edm
+T:Quartet in A, K 298, 2nd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4242 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:D
+a4 ^gaba =gfed | z/2 e/2def d2d2 d4 |

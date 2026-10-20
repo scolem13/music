@@ -1,0 +1,10 @@
+X:2879
+%%from edm
+T:Quartet, Op. 22, No. 3, 5th Movement, 3rd Theme
+C:Paul Hindemith
+%%composer Hindemith|Paul
+% EDM 2879 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+G4 ^F3G/2F/2 E4- | E4 ^F2G2 A2F2 | G4 ^F3G/2F/2 E4- | E4 ^F2G2 A2B2 | c6

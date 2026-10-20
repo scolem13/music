@@ -1,0 +1,10 @@
+X:3006
+%%from edm
+T:Escales, 1st Movement, Rome-Palerme, 2nd Theme
+C:Jacques Ibert
+%%composer Ibert|Jacques
+% EDM 3006 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:F
+G,3A,B,2 C3ED2 | B,3C_A,2 D3ED2 | B,3C_A,2 D3ED2 | B,3C_A,4<D4 |

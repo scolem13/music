@@ -1,0 +1,10 @@
+X:5008
+%%from edm
+T:Romeo and Juliet, Op. 64, Suite No. 1, 6th Movement - Romeo and Juliet
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 5008 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+^F,4 =F,4 E,4 G,4 | C4 c4 ^c4 e4 | d4 G4 c4 ^c4 | c4 ^d4 D8 |

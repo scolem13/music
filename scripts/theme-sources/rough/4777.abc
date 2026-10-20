@@ -1,0 +1,10 @@
+X:4777
+%%from edm
+T:Concerto No. 1 in D, Op. 6, 3rd Movement - 1st Theme
+C:Niccolò Paganini
+%%composer Paganini|Niccolò
+% EDM 4777 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:D
+A/2G/2F/2E/2D2 a2d'2 | e'2 f'4 d'2 | A/2G/2F/2E/2D2 a2d'2 | f'2 z/2 e'^d'<e'f/2e'2 |

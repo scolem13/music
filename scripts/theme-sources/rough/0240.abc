@@ -1,0 +1,10 @@
+X:240
+%%from edm
+T:Partita No. 5 in G, Sarabande
+C:Johann Sebastian Bach
+%%composer Bach|Johann Sebastian
+% EDM 0240 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:G
+d z/2 B2-B/2 c z/2 d3- d/2d3- | de3 =f z/2 d4- d3/2e- | e c4

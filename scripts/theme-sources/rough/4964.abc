@@ -1,0 +1,10 @@
+X:4964
+%%from edm
+T:Concerto No. 2, Op. 63, 3rd Movement - 3rd Theme
+C:Serge Prokofiev
+%%composer Prokofiev|Serge
+% EDM 4964 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Bb
+d2 z e d8- | d8 _d4 | c4 =B4 d4 | B4 A4 D4 | A4 =B4 d4 | B4 A4 D4 | G4

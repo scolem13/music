@@ -1,0 +1,10 @@
+X:7226
+%%from edm
+T:Symphony in Three Mvts., 1st Movement - 2nd Theme
+C:Igor Stravinsky
+%%composer Stravinsky|Igor
+% EDM 7226 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:C
+z4 G4 ^A4 g4 | ^A4 G4 A4 ^a4- | ^a16 |

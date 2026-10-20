@@ -1,0 +1,10 @@
+X:3299
+%%from edm
+T:Arlequin, 1st Theme
+C:Theodore Lack
+%%composer Lack|Theodore
+% EDM 3299 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/8
+L:1/16
+K:G
+BB G2 D2 | EE F2 GA | GG z/2 B3/2 AG | dd ^G2

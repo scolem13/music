@@ -1,0 +1,10 @@
+X:4577
+%%from edm
+T:Symphony No. 37, in G, K 444, 2nd Movement - 2nd Theme
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4577 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:Eb
+(3C,G,F, (3E,D,C, (3=B,,F,E, (3D,C,B,, | (3C,G,F, (3E,D,C, E,2 z2 | F,2 z2 (3G,DC (3=B,=A,G, | C

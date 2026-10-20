@@ -1,0 +1,10 @@
+X:7820
+%%from edm
+T:Concerto Grosso in A minor, Op. 3, No. 8, 2nd Movement
+C:Antonio Vivaldi
+%%composer Vivaldi|Antonio
+% EDM 7820 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:F
+d6 de fdef | e6 e2 fed_d | d6 ef gefd | _d/2=d/2_d/2=d/2_d/2=d/2=B A4

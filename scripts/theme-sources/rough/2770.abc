@@ -1,0 +1,10 @@
+X:2770
+%%from edm
+T:Symphony in D, No. 101, 1st Movement, 2nd Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2770 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:6/8
+L:1/16
+K:D
+e2d2c2 e2d2c2 | B4<A4 ^G2 z2 | f2e2d2 a2^g2f2 | e4<d4 c2

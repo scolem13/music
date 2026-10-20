@@ -1,0 +1,10 @@
+X:3140
+%%from edm
+T:Sinfonietta, 5th Movement
+C:Leoš Janáček
+%%composer Janáček|Leoš
+% EDM 3140 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/4
+L:1/16
+K:C
+^df^f2 f2f2 | ^g2^f3 =f^f=f | ^d4 ^c4 | ^A8 |

@@ -1,0 +1,13 @@
+X:8499
+%%from mtd
+T:Concerto in A minor, Op. 102, Vn. Cl. and Orchestra, 3rd Movement - 1st Theme
+C:Johannes Brahms
+%%composer Brahms|Johannes
+% MTD 1502, Barlow & Morgenstern B1366, EDM 8499 (Musical Theme Dataset, CC BY 4.0)
+N:Vivace non troppo  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/4
+L:1/16
+Q:1/4=93
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+A,2EE ^D2=DD | C2B,B, A,2E,E, | F,2E,E, A,2E,E, | F,2E,E, A,CEC |

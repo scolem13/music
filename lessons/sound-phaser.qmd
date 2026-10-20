@@ -57,4 +57,32 @@ Switch the source to **noise** on both pages and compare the spectrum.
 
 - [Sound 20: Tremolo and the rotary speaker](sound-tremolo.qmd)
 
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Flanging." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Flanging](https://en.wikipedia.org/wiki/Flanging).
+
+"Phaser (effect)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Phaser_(effect)](https://en.wikipedia.org/wiki/Phaser_(effect)).
+
+**For teachers**
+
+*DAFx Conference Paper Archive*. Digital Audio Effects Conference. [www.dafx.de/paper-archive/](https://www.dafx.de/paper-archive/). Searchable archive of peer-reviewed effect papers.
+
+Dattorro, Jon. "Effect Design, Part 1: Reverberator and Other Filters." *Journal of the Audio Engineering Society*, vol. 45, no. 9, 1997. [ccrma.stanford.edu/~dattorro/EffectDesignPart1.pdf](https://ccrma.stanford.edu/~dattorro/EffectDesignPart1.pdf).
+
+Puckette, Miller. *The Theory and Technique of Electronic Music*. World Scientific, 2007. [msp.ucsd.edu/techniques.htm](http://msp.ucsd.edu/techniques.htm). Free HTML/PDF from the author.
+
+Reid, Gordon. "Synth Secrets: Creative Synthesis With Delays." *Sound On Sound*, May 2004. [www.soundonsound.com/techniques/creative-synthesis-delays](https://www.soundonsound.com/techniques/creative-synthesis-delays).
+
+Reid, Gordon. "Synth Secrets: Of Filters & Phase Relationships." *Sound On Sound*, Aug. 1999. [www.soundonsound.com/techniques/filters-phase-relationships](https://www.soundonsound.com/techniques/filters-phase-relationships).
+
+Smith, Julius O., III. *Introduction to Digital Filters with Audio Applications*. W3K Publishing, 2007. [ccrma.stanford.edu/~jos/filters/](https://ccrma.stanford.edu/~jos/filters/).
+
+Smith, Julius O., III. *Physical Audio Signal Processing*. W3K Publishing, 2010. [ccrma.stanford.edu/~jos/pasp/](https://ccrma.stanford.edu/~jos/pasp/). See its chapters Artificial Reverberation, Flanging, Phasing with First-Order Allpass Filters, The Leslie.
+:::
+<!-- /works-cited -->
+
 {{< include _synth-kit.qmd >}}

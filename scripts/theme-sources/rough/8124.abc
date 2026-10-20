@@ -1,0 +1,10 @@
+X:8124
+%%from edm
+T:Concerto No. 2 in D minor, Op. 22, 2nd Movement - Romance
+C:Henryk Wieniawski
+%%composer Wieniawski|Henryk
+% EDM 8124 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+b12 a4- | a2 c'6 b8- | b4 f4 z2 f6 | _a16- | _a2 _g4 f2 g8- | _g16 | _g'12 f'4- | f'2 e'6 d'8- | d'8

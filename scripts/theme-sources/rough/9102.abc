@@ -1,0 +1,10 @@
+X:9102
+%%from edm
+T:Concerto in D, 3rd Movement - 1st Theme
+C:Ernest Chausson
+%%composer Chausson|Ernest
+% EDM 9102 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:Ab
+a8- a2g2- | g8 z4 | _g8- g2f2- | f8 z4 | f12- | f4 =e4- e3/2f-[=g/2-f/2]g | _g6 f4 e2 | d8

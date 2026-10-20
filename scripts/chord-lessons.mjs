@@ -79,12 +79,12 @@ const SCRIPTS = ['/apps/shared/tonality.js?v=10','/apps/shared/lessons/key-tonal
 const FENCE = '```{=html}\n';
 function render(c) {
   const scripts = (c.scripts || SCRIPTS).map(s => `<script src="${s}"></script>\n`).join('');
-  return `---\ntitle: ${JSON.stringify(c.title)}\ntoc: true\ntoc-depth: 2\n---\n\n` +
+  return `---\ntitle: ${JSON.stringify(c.title)}\ntoc: true\ntoc-depth: 2\n${c.front || ''}---\n\n` +
     FENCE + STYLE + '\n```\n\n' + c.body +
     FENCE + STRIP + '\n\n' + scripts + '<script>\nChordLesson.init(' + JSON.stringify(c.init, null, 1) + ');\n</script>\n```\n';
 }
 function extract(text) {
-  const m = text.match(/^---\ntitle: (".*")\ntoc: true\ntoc-depth: 2\n---\n\n/);
+  const m = text.match(/^---\ntitle: (".*")\ntoc: true\ntoc-depth: 2\n((?:[a-z-]+: .*\n)*)---\n\n/);
   if (!m) throw new Error('front matter differs');
   const rest = text.slice(m[0].length);
   const head = FENCE + STYLE + '\n```\n\n';
@@ -99,6 +99,7 @@ function extract(text) {
   const srcs = [...t.slice(0, si).matchAll(/<script src="([^"]+)"><\/script>\n/g)].map(x => x[1]);
   const js = t.slice(si + '<script>\nChordLesson.init('.length, t.lastIndexOf(');\n</script>\n```\n'));
   const c = { title: JSON.parse(m[1]), body, init: JSON.parse(js) };
+  if (m[2]) c.front = m[2];   // description, instruments, topics, has: added to the .qmd by the lesson index
   if (JSON.stringify(srcs) !== JSON.stringify(SCRIPTS)) c.scripts = srcs;
   return c;
 }

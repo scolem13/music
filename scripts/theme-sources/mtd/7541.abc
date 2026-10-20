@@ -1,0 +1,13 @@
+X:7541
+T:The Nutcracker Suite, Op. 71a, Waltz of the Flowers, 1st Theme
+C:Peter Ilyich Tchaikovsky
+%%composer Tchaikovsky|Peter Ilyich
+% MTD 9167, Barlow & Morgenstern T198, EDM 7541 (Musical Theme Dataset, CC BY 4.0)
+N:Waltz of the Flowers  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+%%bar 5  % bar of the complete movement (scripts/pdmx-match.py, PDMX score)
+M:3/4
+L:1/4
+Q:1/4=177
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:D
+A, D F | G2- G/>F/ | F3- | F3 | A, D F | G F7/4 E/4 | A2 D |

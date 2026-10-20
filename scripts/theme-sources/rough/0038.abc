@@ -1,0 +1,10 @@
+X:38
+%%from edm
+T:Suite No. 1, Op. 15, Valse, 1st Theme
+C:Anton Arensky
+%%composer Arensky|Anton
+% EDM 0038 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:C
+e12 | g8 c4 | e12 | ^d12 | z4 e6 g2 | a8 e4 | e12 | ^d12 |

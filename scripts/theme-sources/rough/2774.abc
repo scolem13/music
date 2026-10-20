@@ -1,0 +1,10 @@
+X:2774
+%%from edm
+T:Symphony in D, No. 101, 4th Movement, 1st Theme
+C:Franz Josef Haydn
+%%composer Haydn|Franz Josef
+% EDM 2774 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:2/2
+L:1/16
+K:D
+F8 G8 | A8 G2F2E2D2 | B4 c4 d4 e4 | d8 c8 | e8 f8 | g8- g2f2e2d2 |

@@ -1,0 +1,10 @@
+X:2208
+%%from edm
+T:Concerto Grosso in B-flat, Op. 6, No. 7, 5th Movement, Hornpipe
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2208 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/2
+L:1/16
+K:Bb
+f4 d8 B6 d2c2B2 | c2A2 F8 f8 d4 | g2e2 c'8 e8 d2c2 | f2d2 b8

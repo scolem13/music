@@ -1,0 +1,12 @@
+X:6503
+T:Symphony No. 6, Op. 53, 3rd Movement - 1st Theme
+C:Dmitri Shostakovich
+%%composer Shostakovich|Dmitri
+% MTD 8134, Barlow & Morgenstern S900, EDM 6503 (Musical Theme Dataset, CC BY 4.0)
+N:Presto  % the movement, from MusicBrainz (scripts/mtd-movements.py)
+M:2/2
+L:1/8
+Q:1/4=292
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:C
+^ff | ^f2 ff f2 ff | ^f2 b2 B2 ^cd | ed^cB A2 a2 | E2 EE E2 EE | E2 |

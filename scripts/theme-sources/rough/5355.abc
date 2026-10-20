@@ -1,0 +1,10 @@
+X:5355
+%%from edm
+T:Balletmusik, Op. 130, Waltz
+C:Max Reger
+%%composer Reger|Max
+% EDM 5355 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:E
+B4 c6 e2 | g12 | B4 c6 e2 | a12 | =d4 ^d6 f2 | a12 | =f4 ^f6 a2 | c'12 |

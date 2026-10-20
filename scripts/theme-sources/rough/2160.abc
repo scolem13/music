@@ -1,0 +1,10 @@
+X:2160
+%%from edm
+T:Concerto No. 11 in G minor, Op. 7, No. 5, 2nd Movement, 1st Theme
+C:George Frideric Handel
+%%composer Handel|George Frideric
+% EDM 2160 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B,2B2A2A,2 G,2G2F2D2 | E2e2d2B2 G2E2F2F,2 | B,4

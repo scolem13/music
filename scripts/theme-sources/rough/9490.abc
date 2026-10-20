@@ -1,0 +1,11 @@
+X:9490
+%%from edm
+T:La Commere
+C:François Couperin
+%%composer Couperin|François
+% EDM 9490 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+%%repaired octave
+M:2/4
+L:1/16
+K:Bb
+f2e2 z/2 z/2 dc2 | d2B2e2d2 | z/2 z/2 cB2 c/2B/2c/2d/2c2 | c/2B/2c/2d/2c2 z/2 B3-B/2 | b2a2 z/2 z/2 gf2 | g2a2 f4 |

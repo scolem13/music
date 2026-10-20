@@ -1,0 +1,89 @@
+---
+title: "Theory Drills"
+toc: false
+description: "Name notes, intervals and key signatures: on screen, from the computer keys, or by playing them on a MIDI keyboard. A teacher's link sets the starting settings; students can change them after."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=13"></script>
+<script src="/apps/shared/drills/motives.js?v=1"></script>
+<script src="/apps/shared/drills/mixture.js?v=1"></script>
+<script src="/apps/shared/drills/neapolitan.js?v=1"></script>
+<script src="/apps/shared/drills/jazz.js?v=1"></script>
+
+<div class="dr-pick" id="dr-pick">
+  <a class="btn btn-outline-secondary" href="?ex=note">Note names</a>
+  <a class="btn btn-outline-secondary" href="?ex=interval">Intervals</a>
+  <a class="btn btn-outline-secondary" href="?ex=keysig">Key signatures</a>
+  <a class="btn btn-outline-secondary" href="?ex=triad">Name the triad</a>
+  <a class="btn btn-outline-secondary" href="?ex=spell">Write the triad</a>
+  <a class="btn btn-outline-secondary" href="?ex=rn">Roman numerals</a>
+  <a class="btn btn-outline-secondary" href="?ex=rnwrite">Write from a numeral</a>
+  <a class="btn btn-outline-secondary" href="?ex=cadence">Cadences</a>
+  <a class="btn btn-outline-secondary" href="?ex=seventh">Name the seventh chord</a>
+  <a class="btn btn-outline-secondary" href="?ex=spell7">Write the seventh chord</a>
+  <a class="btn btn-outline-secondary" href="?ex=rn7">Numerals: sevenths</a>
+  <a class="btn btn-outline-secondary" href="?ex=rn7write">Write from a seventh numeral</a>
+  <a class="btn btn-outline-secondary" href="?ex=func">Harmonic function</a>
+  <a class="btn btn-outline-secondary" href="?ex=prog">Name the progression</a>
+  <a class="btn btn-outline-secondary" href="?ex=nct">Non-chord tones</a>
+  <a class="btn btn-outline-secondary" href="?ex=nctrule">Approached and left</a>
+  <a class="btn btn-outline-secondary" href="?ex=motive">Motivic alteration</a>
+  <a class="btn btn-outline-secondary" href="?ex=secdom">Secondary dominants</a>
+  <a class="btn btn-outline-secondary" href="?ex=secwrite">Write secondary dominants</a>
+  <a class="btn btn-outline-secondary" href="?ex=secsym">Secondary dominants as symbols</a>
+  <a class="btn btn-outline-secondary" href="?ex=secdim">Secondary diminished chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=secdimwrite">Write secondary diminished chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=secdimsym">Secondary diminished as symbols</a>
+  <a class="btn btn-outline-secondary" href="?ex=aug6">Augmented sixth chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=aug6write">Write augmented sixth chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=aug6sym">Augmented sixths as symbols</a>
+  <a class="btn btn-outline-secondary" href="?ex=aug6ear">Hear the pre-dominant</a>
+  <a class="btn btn-outline-secondary" href="?ex=neap">Neapolitan chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=neapwrite">Write the Neapolitan</a>
+  <a class="btn btn-outline-secondary" href="?ex=neapsym">Neapolitan as symbols</a>
+  <a class="btn btn-outline-secondary" href="?ex=neapear">Hear the Neapolitan</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzwrite">Write jazz chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzname">Name jazz chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzear">Hear jazz chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzguide">Guide tones</a>
+  <a class="btn btn-outline-secondary" href="?ex=jz251">ii–V–I in a key</a>
+  <a class="btn btn-outline-secondary" href="?ex=jztt">Tritone substitutes</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzscale">Name the scale</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzscalewrite">Write the scale</a>
+  <a class="btn btn-outline-secondary" href="?ex=jzchordscale">Chord-scale relationships</a>
+  <a class="btn btn-outline-secondary" href="?ex=mix">Borrowed chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=mixwrite">Write borrowed chords</a>
+  <a class="btn btn-outline-secondary" href="?ex=mixsym">Borrowed chords as symbols</a>
+  <a class="btn btn-outline-secondary" href="?ex=mixdc">Deceptive cadence: vi or ♭VI</a>
+  <a class="btn btn-outline-secondary" href="?ex=picardy">Picardy third</a>
+</div>
+<div class="drill" data-from-url></div>
+<script>
+(function () {
+  var m = /[?&]ex=(\w+)/.exec(location.search), ex = m && Drills.engines[m[1]] ? m[1] : "note";
+  document.querySelectorAll("#dr-pick a").forEach(function (a) { if (a.getAttribute("href") === "?ex=" + ex) a.classList.add("dr-on"); });
+  if (/[?&]lock=1\b/.test(location.search)) document.getElementById("dr-pick").hidden = true;
+})();
+</script>
+```
+
+Answer with the buttons, the computer keys, or a MIDI keyboard (press **Use a MIDI keyboard** once; Chrome or Edge). On a MIDI
+keyboard you play the answer: the note, the two notes of the interval, or the key's tonic or tonic chord. A keyboard can't tell
+F♯ from G♭, so the drill accepts either there.
+
+::: {.callout-note collapse="true"}
+## For teachers: links with your settings
+
+Open **Settings**, choose what you want, and press **Copy a link with these settings**. Students who open that link start with your
+settings and can still change them; their changes are kept in their own browser for that link only, so a new link from you starts
+them fresh. **Back to the link's settings** undoes their changes.
+
+- Add `&lock=1` to the link to hide the settings and the exercise menu (for a test).
+- Add `&count=20` (or choose *Questions*) for a fixed number of questions, then a score with the time per answer and what was missed,
+  which students can copy into their process journal or send you.
+- The settings are plain words in the address, so you can also write a link by hand, for example
+  `theory-drills.html?ex=interval&ints=m3,M3,P5&clef=treble,bass&shape=melodic&dir=both&show=both&count=20`.
+:::

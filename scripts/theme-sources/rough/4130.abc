@@ -1,0 +1,10 @@
+X:4130
+%%from edm
+T:Concerto in B-flat, K 595, 1st Movement
+C:Wolfgang Amadeus Mozart
+%%composer Mozart|Wolfgang Amadeus
+% EDM 4130 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:4/4
+L:1/16
+K:Bb
+B8 d8 | f6 =ef g2f2_e2d2 | d6 _d=d e2d2c2B2 | A2Bc B4

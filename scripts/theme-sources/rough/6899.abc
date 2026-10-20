@@ -1,0 +1,12 @@
+X:6899
+%%from mtd
+T:Morgenblatter Waltz, Op. 279, 3rd Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8528, Barlow & Morgenstern S1290, EDM 6899 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=196
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:F
+Pa2 d z Pg2 | d z Pf2 d z | cc'c'c'c'c' | c'2 c/f/ z f/a/ z | bc'c'c'c'c' | c'2 c/e/ z e/b/ z |

@@ -1,6 +1,6 @@
 const fs = require("fs"), vm = require("vm"), assert = require("assert"), path = require("path");
 const { open, clipShot, wait } = require("./lib.js");
-vm.runInThisContext(fs.readFileSync("/Users/sean.coleman/Projects/everything-music-site/apps/shared/voicings.js", "utf8"));
+vm.runInThisContext(fs.readFileSync((require("path").join(__dirname, "../../..") + "/apps/shared/voicings.js"), "utf8"));
 const CV = ChordVoicings, mod12 = n => ((n % 12) + 12) % 12;
 const SHOTS = path.join(__dirname, "shots"); fs.mkdirSync(SHOTS, { recursive: true });
 const PROGS = ["Dm7 G7 Cmaj7 A7", "F7 Bb7 Bdim7 Am7b5 D7b9"];

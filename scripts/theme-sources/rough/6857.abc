@@ -1,0 +1,12 @@
+X:6857
+%%from mtd
+T:Fruhlingsteimmen (Voices of Spring), Op. 410, Waltz, 1st Theme
+C:Johann, Jr. Strauss
+%%composer Strauss|Johann, Jr.
+% MTD 8486, Barlow & Morgenstern S1248, EDM 6857 (Musical Theme Dataset, CC BY 4.0)
+M:3/4
+L:1/8
+Q:1/4=193
+% Q: the tempo in MTD's recording (scripts/mtd-tempo.py)
+K:Bb
+=EF | GF=EFcB | AB_ed^cd | g2 z2 z _g | f2 z2 z =e | _e2 z2 z ^c | d2 z2 z =B | c6 |

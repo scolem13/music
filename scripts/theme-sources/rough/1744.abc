@@ -1,0 +1,10 @@
+X:1744
+%%from edm
+T:La Colombe (The Dove), Harpsichord
+C:Jacques de Gallot
+%%composer Gallot|Jacques de
+% EDM 1744 (midi2abc, from ../classical-music-themes), cleaned by scripts/clean-rough-themes.mjs
+M:3/4
+L:1/16
+K:A
+c4 c4 A4- | A2d2 c4 c4- | c2B2 c8 | c4 c6 d2 | B4 A8 | f4 f4 e4- | e2d4<c4
