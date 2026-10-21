@@ -1,0 +1,256 @@
+---
+aliases:
+  - ../practice/augmented-sixths.html
+title: "Augmented Sixth Chords: Practice for Chapter 21"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 21 of Hutchinson's Music Theory for the 21st-Century Classroom: Italian, French, German and enharmonic German sixth chords, writing them, naming them, lead-sheet symbols, telling them from V7/N by spelling and from iv6 and N6 by ear, the descending chromatic bass line, and the book's listening examples."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script>window.AX_NO_VOICE = true; window.AX_CAPTIONS = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=13"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+```
+
+This page goes with **Chapter 21, Augmented Sixth Chords** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/AugmentedSixthChords.html). Read each section
+there first; the book is the reference for the terms used here. It follows the other chromatic chords: secondary dominants
+([Chapter 17](secondary-dominants.qmd)) and secondary diminished chords ([Chapter 18](secondary-diminished.qmd)).
+
+Every drill has **Settings**, and is also on the [Theory Drills](theory-drills.qmd) page. **▶ Hear it** plays the chord and then where it
+goes: to V, or (German sixths) to I64 and then V.
+
+**Typing:** notes with spaces, bass first (`Ab C Eb F#`). Chord symbols as `Ab7`, `Ab7(b5)`, `Ab7(no5)`. The chords' names as `It`, `Fr`,
+`Ger`, `EnGer` (with or without `+6`).
+
+## 21.1 Augmented sixth chords
+
+An augmented sixth chord leads to the dominant from both sides at once. **♭6** in the bass falls a half step to 5, and **♯4** above it rises
+a half step to 5. The two notes are an **augmented sixth** apart, so they move outward to an octave. In C, that's A♭ and F♯ moving to the
+two Gs. In a minor key, ♭6 is already in the key signature, so only ♯4 needs an accidental. These chords do a pre-dominant's job: they come
+before V.
+[Read 21.1](https://musictheory.pugetsound.edu/mt21c/AugmentedSixthIntroduction.html)
+
+## 21.2 The three types
+
+All three start from the same three notes: **♭6, 1 and ♯4**. What's added decides the name:
+
+| Chord | Notes (scale degrees) | In C | In c minor |
+|---|---|---|---|
+| Italian, **It+6** | ♭6 1 ♯4 (1 is doubled in four parts) | A♭ C F♯ | A♭ C F♯ |
+| French, **Fr+6** | ♭6 1 **2** ♯4 | A♭ C D F♯ | A♭ C D F♯ |
+| German, **Ger+6** | ♭6 1 **♭3** ♯4 | A♭ C E♭ F♯ | A♭ C E♭ F♯ |
+| Enharmonic German, **EnGer+6** | ♭6 1 **♯2** ♯4 | A♭ C D♯ F♯ | (major only) |
+
+The **EnGer+6** sounds the same as the German sixth, but ♭3 is spelled ♯2, because it rises to 3 of a **major I64**. It only occurs in
+major keys. The book notes that the national names have no known reason behind them.
+[Read 21.2](https://musictheory.pugetsound.edu/mt21c/TypesOfAugmentedSixthChords.html)
+
+Write each chord, bass first. Start with C and keys near it:
+
+<div class="drill" data-ex="aug6write" data-settings="mode=both&most=1&types=It,Fr,Ger"></div>
+
+Then add the enharmonic German and more keys:
+
+<div class="drill" data-ex="aug6write" data-settings="mode=both&most=4&types=It,Fr,Ger,EnGer"></div>
+
+## 21.3 Analysing augmented sixth chords
+
+Stack any of these chords in thirds and you find a **diminished third** (A♭ C E♭ F♯ in C becomes F♯ A♭ C E♭, where F♯ to A♭ is a diminished
+3rd). No chord met before this chapter has one, so the book's rule is: **a diminished third means an augmented sixth chord**. Then find ♭6 and
+♯4, and the remaining note tells you the type.
+[Read 21.3](https://musictheory.pugetsound.edu/mt21c/AnalyzingAugmentedSixthChords.html)
+
+Name each chord on the staff (keys i, f, g, e):
+
+<div class="drill" data-ex="aug6" data-settings="mode=both&most=3&types=It,Fr,Ger,EnGer&clef=treble"></div>
+
+## 21.4 Lead-sheet symbols
+
+A chord symbol shows root, quality and inversion, not where notes go, and there is no chord symbol with a diminished third. So for
+lead-sheet symbols, the book treats each augmented sixth chord as a **dominant seventh on ♭6** whose seventh is misspelled (F♯ for G♭):
+
+- It+6 → **A♭7 (no 5th)**
+- Fr+6 → **A♭7(♭5)**
+- Ger+6 and EnGer+6 → **A♭7**
+
+That's how the chords are written in jazz and pop, and it matches how they sound.
+[Read 21.4](https://musictheory.pugetsound.edu/mt21c/LeadSheetAnalysisOfAugmentedSixthChords.html)
+
+From the name to the symbol:
+
+<div class="drill" data-ex="aug6sym" data-settings="mode=both&most=3&types=It,Fr,Ger,EnGer&dir=find"></div>
+
+And back. A plain 7th chord on ♭6 going to a major I64 can be spelled either way, so both German answers count there:
+
+<div class="drill" data-ex="aug6sym" data-settings="mode=both&most=3&types=It,Fr,Ger,EnGer&dir=name"></div>
+
+## 21.5 Examples
+
+The book's examples, cut where the book cuts them. The popular-music ones (Ellington, Coltrane, Mancini, Fiona Apple, Menken) spell the
+chord as a 7th chord on ♭6, as in 21.4. "Friend Like Me" repeats **Am – F7 – E**: i – Ger+6 – V.
+[Read 21.5](https://musictheory.pugetsound.edu/mt21c/ExamplesWithAugmentedSixthChords.html)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples
+
+::: {.rn-quiz}
+<figure><figcaption><strong>It+6.</strong> Beethoven, Symphony No. 5, I (C minor, written as an augmented sixth)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/_4IRMYuE1hI?start=12&end=21&rel=0" title="Beethoven's 5th Symphony" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>It+6</strong> spelled as a 7th chord without its 5th. Duke Ellington, "It Don't Mean a Thing (If It Ain't Got That Swing)" (Tony Bennett and Lady Gaga)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/LYfF9VKMp4w?start=18&end=23&rel=0" title="It Don't Mean A Thing" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>Fr+6.</strong> Schubert, <em>Winterreise</em>, "Der Wegweiser"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/xti0xkrIZjQ?start=0&end=14&rel=0" title="Der Wegweiser" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>Ger+6</strong> to I64. Rossini, <em>William Tell</em> Overture</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/oGPys3sKBHw?start=146&end=154&rel=0" title="William Tell Overture - Finale" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>Ger+6</strong> (as VI7) to V. John Coltrane, "Mr. P.C."</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/oHDsywpCHj4?start=18&end=22&rel=0" title="Mr. P.C." loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>Ger+6</strong> (as VI7). Henry Mancini, "The Pink Panther Theme"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/KEt_FkMkaO4?start=11&end=19&rel=0" title="The Pink Panther Theme" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>Ger+6</strong> (F7 in A minor). Fiona Apple, "Criminal"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/FFOzayDpWoI?start=55&end=66&rel=0" title="Criminal" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>Ger+6:</strong> Am – F7 – E. Alan Menken and Howard Ashman, "Friend Like Me" (<em>Aladdin</em>, Broadway cast)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/0HdwdptrmQQ?start=437&end=445&rel=0" title="Friend Like Me" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption><strong>EnGer+6.</strong> Schumann, <em>Dichterliebe</em>, "Am leuchtenden Sommermorgen"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/PMFUeLdhhuM?start=0&end=13&rel=0" title="Am leuchtenden Sommermorgen" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 21.6 Telling chromatic chords apart
+
+What to look for first, after the book's Table 21.6.1:
+
+| Chord | Look for | Labels |
+|---|---|---|
+| Secondary dominant | its quality: major triad or 7th chord | V/x, V7/x |
+| Secondary diminished | its quality: °, ø7 or °7 | vii°/x, viiø7/x, vii°7/x |
+| Mode mixture | lowered notes (borrowed from minor) | iv, ii°, iiø7, ♭VI, … |
+| Neapolitan | a major chord on ♭2 | N |
+| Augmented sixth | a diminished 3rd when stacked in thirds | It+6, Fr+6, Ger+6, EnGer+6 |
+[Read 21.6](https://musictheory.pugetsound.edu/mt21c/DistinguishingBetweenChromaticHarmonies.html)
+
+The German sixth and a dominant 7th on ♭6 **sound the same**. Only the spelling tells them apart:
+- A♭ C E♭ **F♯** in C is a Ger+6, going to V.
+- A♭ C E♭ **G♭** is a dominant 7th, V7 of D♭. D♭ is the Neapolitan in C, so the chord is **V7/N**. (Naming it V7/N is this site's
+  addition; the book's chapter on the Neapolitan is [Chapter 20](https://musictheory.pugetsound.edu/mt21c/Neapolitan.html).)
+
+This drill mixes the two in (key v):
+
+<div class="drill" data-ex="aug6" data-settings="mode=both&most=3&types=Ger,EnGer,V7N&clef=treble"></div>
+
+## 21.7 Descending chromatic bass lines
+
+A bass line that falls by half steps from 1 to 5 (**1 – 7 – ♭7 – 6 – ♭6 – 5**) turns up in music of every century since the 1600s, under
+many different chords. The book's table lists how each of its examples harmonizes it.
+[Read 21.7](https://musictheory.pugetsound.edu/mt21c/DescendingChromaticBassLines.html)
+
+Here is the harmonization the book lists for Beethoven's 32 Variations in C minor (i – V6 – V42/iv – IV6 – Ger+6 – i64), here with a V – i
+added to finish. The voicing is this site's, not Beethoven's:
+
+<div class="abc-ex" data-bpm="60"><script type="text/plain">
+X:1
+T:A descending chromatic bass in C minor, with the chords the book lists for Beethoven's WoO 80
+M:2/2
+L:1/2
+Q:1/2=60
+%%score {1 2}
+V:1 clef=treble
+V:2 clef=bass
+K:Cm
+[V:1] [Gce] [Gdg] | [Gc=eg] [F=Acf] | [^Fce] [Gce] | [G=Bd] [Gce] |]
+[V:2] "_i"C, "_V6"=B,, | "_V42/iv"_B,, "_IV6"=A,, | "_Ger+6"_A,, "_i64"G,, | "_V"G,, "_i"C, |]
+</script></div>
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples
+
+::: {.rn-quiz}
+<figure><figcaption>Purcell, <em>Dido and Aeneas</em>, "When I am laid in earth" (Dido's Lament)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/s-F19lgB0Ow?start=101&end=115&rel=0" title="When I am laid in earth" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>J. S. Bach, Mass in B minor, Crucifixus</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/hY7CGrR6sPc?start=39&end=54&rel=0" title="Crucifixus" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Beethoven, 32 Variations in C minor, WoO 80 (Glenn Gould)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/UoWXRlw9vBA?start=0&end=16&rel=0" title="32 Variations in C minor" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>George Harrison, "While My Guitar Gently Weeps" (the <em>Love</em> version)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/VJDJs9dumZI?start=3&end=12&rel=0" title="While My Guitar Gently Weeps" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Jimmy Page and Robert Plant, "Stairway to Heaven"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/iXQUu5Dti4g?start=0&end=9&rel=0" title="Stairway to Heaven" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Steven Tyler, "Dream On"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/89dGC8de0CA?start=12&end=23&rel=0" title="Dream On" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Robert DeLeo and Scott Weiland, "Interstate Love Song"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/yjJL9DGU7Gg?start=69&end=81&rel=0" title="Interstate Love Song" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Christina Perri, "Jar of Hearts"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/8v_4O44sfjM?start=134&end=148&rel=0" title="Jar of Hearts" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+## 21.8 Chromatic pre-dominant chords
+
+The chapters on chromatic chords add new members to the **pre-dominant** group. Besides IV and ii there are now V/V and vii°/V, the
+borrowed iv and iiø7, the Neapolitan N6, and the three augmented sixths.
+[Read 21.8](https://musictheory.pugetsound.edu/mt21c/ChromaticPreDominantChords.html)
+
+Five of them have ♭6 or 4 in the bass, so they are easy to confuse by ear. This drill plays **I – ? – I64 – V – I** and asks for the second
+chord. Things to listen for:
+- **iv6 and N6** are plain triads.
+- **It+6** is thin: only three different notes.
+- **Ger+6** sounds like a dominant 7th.
+- **Fr+6** has its own colour: all four of its notes belong to one whole-tone scale.
+
+Keys: v, n, i, f, g.
+
+<div class="drill" data-ex="aug6ear" data-settings="mode=minor&most=3&pds=iv6,It,Fr,Ger"></div>
+
+In major and minor, with the Neapolitan too:
+
+<div class="drill" data-ex="aug6ear" data-settings="mode=both&most=4&pds=iv6,N6,It,Fr,Ger"></div>
+
+## 21.9 Everything together
+
+The book's practice exercises: [21.9](https://musictheory.pugetsound.edu/mt21c/AugmentedSixthPracticeExercises.html). Here, all keys up to
+four sharps or flats:
+
+<div class="drill" data-ex="aug6" data-settings="mode=both&most=4&types=It,Fr,Ger,EnGer,V7N&clef=treble,bass"></div>
+
+<div class="drill" data-ex="aug6write" data-settings="mode=both&most=4&types=It,Fr,Ger,EnGer"></div>
+
+<div class="drill" data-ex="aug6sym" data-settings="mode=both&most=4&types=It,Fr,Ger,EnGer&dir=both"></div>
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+- **Chords drilled:** the book's Figure 21.2.1. It+6, Fr+6 and Ger+6 in major and minor; EnGer+6 in major only. Lead-sheet symbols as in
+  Figure 21.4.1. The It+6 is shown and asked for with three notes; a written answer with the doubled tonic is accepted.
+- **V7/N** (A♭ C E♭ G♭ in C) is the site's addition, for 21.6. It's off except in the 21.6 drill and the last one.
+- **Resolution:** ▶ Hear it plays It+6 and Fr+6 to V, Ger+6 and EnGer+6 to I64 then V, and V7/N to N6. The voicings are close position
+  above the bass: the drills are for spelling and labelling, not voice leading.
+- **The ear drill** voices every chord in four parts in C and moves it to the key. In minor, the tonic chords are minor. The frame
+  (I – ? – I64 – V – I) is the same for every answer, so the length gives nothing away.
+- **Checked:** `node tests/lessons/aug6-drill.test.js` generates over 10,000 questions and checks each one by its own arithmetic: the
+  scale degrees of every note, the augmented 6th, what is drawn against what is played, and which typed answers are accepted or refused.
+:::

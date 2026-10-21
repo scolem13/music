@@ -50,6 +50,9 @@ The 6 stands for the interval of a 6th above the bass note. In first inversion o
 
 With Roman numerals the figures go beside the numeral: I is a tonic triad in root position, I<span class="fb one"><span>6</span></span> is in first inversion, and I<span class="fb"><span>6</span><span>4</span></span> is in second inversion. In C major, I<span class="fb one"><span>6</span></span> is C/E and I<span class="fb"><span>6</span><span>4</span></span> is C/G.
 
+To see what each number points to on the staff, for triads and seventh chords in any key, try the inversion explorer on
+[Figured Bass: Practice for Chapter 16](../theory/figured-bass.qmd).
+
 ## Names: slash chords {#slash}
 
 Pop, rock and jazz players use a simpler system. They write the chord, a slash, and then the **bass note**. C/E means a C chord with E in the bass: first inversion. C/G means a C chord with G in the bass: second inversion. A plain C means the root is in the bass, although the player decides which notes go above.

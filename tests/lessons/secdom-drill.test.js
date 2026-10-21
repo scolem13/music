@@ -1,4 +1,4 @@
-// The secondary-dominant drills (Drills.engines.secdom / secwrite / secsym, practice/secondary-dominants.qmd) in Node. Each generated
+// The secondary-dominant drills (Drills.engines.secdom / secwrite / secsym, theory/secondary-dominants.qmd) in Node. Each generated
 // question is checked by arithmetic of its own: the chord's root is a perfect 5th above the root of the chord it resolves to, it is a
 // major triad or a dominant seventh, at least one note is outside the key signature, the target is a major or minor triad of the key,
 // the drawn ABC sounds the notes the answer names, and the typed forms the page promises are accepted.

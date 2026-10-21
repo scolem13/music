@@ -36,4 +36,19 @@ t("loop: from the lead-in to the next downbeat, clamped", () => {
   assert.strictEqual(l.leadIn, 7); near(l.start, 5 - 3.5); near(l.end, 13);
   near(P.loopOf(grid, ph, 5, 0).end, 1 + 2 * 19 + 2);                   // past the last tap: its beats at the typical beat
 });
+t("stop point: the loop runs past the last bar, two bars at most", () => {
+  const ph = P.split(secs, 4);
+  assert.strictEqual(P.maxTail(grid, ph, 1), 8);
+  const l = P.loopOf(grid, ph, 1, 0, 1.5);
+  assert.strictEqual(l.tail, 1.5); near(l.end, 13 + 0.75);
+  assert.strictEqual(P.loopOf(grid, ph, 1, 0, 99).tail, 8); near(P.loopOf(grid, ph, 1, 0, 99).end, 17);
+  near(P.loopOf(grid, ph, 5, 0, 2).end, 1 + 2 * 19 + 2 + 1);           // past the last tap: the typical beat
+});
+t("stop point before the bar line: a beat early, the phrase keeps a beat", () => {
+  const ph = P.split(secs, 4);
+  assert.strictEqual(P.minTail(grid, ph, 1), -15);
+  const l = P.loopOf(grid, ph, 1, 0, -1); assert.strictEqual(l.tail, -1); near(l.end, 13 - 0.5);
+  assert.strictEqual(P.loopOf(grid, ph, 1, 0, -99).tail, -15);
+  near(P.bpmOf(grid, ph[1]), 120);
+});
 console.log("phrases: " + n + " checks passed");

@@ -2,7 +2,7 @@
 
 - The Notation page (`tools/_notation.qmd`, model `apps/shared/notation-doc.js`): chunks, sections, voices, chords, words, takes.
   At its top, Play it in: takes from a MIDI keyboard (Space / sustain pedal; Shift+R redo, Shift+Backspace drop), each a chunk of its own;
-  notes in the count-in of the first take make a `Pickup` chunk (`chunk.pickup`, a short first bar, up to a bar less one eighth). The
+  Split at (`Q.split`, default C4) and Left hand (`Q.lh`): "chords" (symbols only), "notate" (the left hand written out in the voice after the recorded one, bass clef, made when missing: `lhVoice` / `lhTake`, chords kept as chords: a slot's `also: [midi]`, written `[CEG]`, read back from AbcEvents' `notes`), "both" (notated + symbols). With "chords" the left hand plays chords that are named and written over the bars (`takeChords`; a take is split only when the left hand struck two notes or more together, else it is all melody: `kindOf`); a phrase take that runs past its stop point writes the bars played on into the rest of the chunk and the chunks after it (`spillOn`, `chunk.draft`, shown "draft"; nt-back's `skip` passes them); the computer keys play only when Computer keys is the chosen input (never just because a take is recording); notes in the count-in of the first take make a `Pickup` chunk (`chunk.pickup`, a short first bar, up to a bar less one eighth). The
   other ways in (letters, rhythm bank, chords, words, the older Play it in time) are in the right sidebar.
   Keys act on the active note (red: the selection, else the first note without a pitch): letters, z rest, T tie to the note
   before (t: to the next), U unpitch, u undo, Space play from the active note to the chunk's end (Play through ticked: to the piece's end, from that bar's start), j/k or a click on a chunk make its first note active, r record a take (new chunk below), I insert at the start, yy / DD copy / cut the chunk (the first DD asks y/n:
@@ -38,6 +38,12 @@
   Timestamp Notes' `nt-goto` a Play it in take goes into that phrase, count-in notes into the bar before; `node tests/abc/phrase-seam.test.js`). It opens the Backing Track
   as a remote window (`bt-load`, `bt-focus`, and `bt-setup` reports back). Tests: `node tests/abc/notation-doc.test.js`,
   `node tests/abc/notation.cdp.js`.
+- Loop chunks (`#nt-loop`, `apps/shared/chunk-loop.js`, `ChunkLoop`): with a song file open in the Recording part, each chunk is found in the
+  map through its section (section start + the chunk's bar offset in it, so a split / join / bar added elsewhere moves nothing; ≈ no such
+  section in the map, ⚠ the section's bar count differs). Lead-in / stop: `chunk.loop` set here, else the song file's (`model.prefs`, Timestamp
+  Notes' leadIns / tails by key), else guessed (lead-in from the chunk's own pickup, stop = minus the next chunk's lead-in). Loop mode
+  (`Q.lmode`), each pass you play a take (`passStart`, as from Timestamp Notes), done / draft / empty per chunk. Keys `\` then p , . - = { } m Space a
+  (local when no Timestamp Notes opened the page, else sent there). Tests: `node tests/abc/chunk-loop.test.js`, `node tests/abc/chunk-loop.cdp.js`.
 - Dictation (`practice/dictation.qmd`, grader `apps/shared/dictation.js`): plays a Reading Benchmarks line, opens the Notation
   page as a remote window (`?dictation=1`: a scratch doc kept apart from the user's own; `dict-load`, `dict-replay`, `dict-submit`),
   grades the handed-in ABC note by note (pitch, rhythm, extra notes). Tests: `node tests/abc/dictation.test.js`,

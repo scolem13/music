@@ -15,7 +15,7 @@
 //   });
 //   typing.octave() / typing.setOctave(n) / typing.releaseAll() / typing.detach()
 //
-// Keys typed into a text box, a menu or a number field are left alone, as are keys held with Ctrl, Alt or Cmd.
+// Keys typed into a text box, a menu or a number field are left alone, as are keys held with Shift, Ctrl, Alt or Cmd.
 (function (global) {
   "use strict";
 
@@ -50,7 +50,7 @@
       Object.keys(down).forEach(function (c) { var m = down[c]; delete down[c]; if (cfg.onOff) cfg.onOff(m, t == null ? performance.now() : t); });
     }
     function keydown(e) {
-      if (!live || e.ctrlKey || e.metaKey || e.altKey || editable(e.target) || !on()) return;
+      if (!live || e.ctrlKey || e.metaKey || e.altKey || e.shiftKey || editable(e.target) || !on()) return;
       if (e.code === "ArrowUp" || e.code === "ArrowDown") {
         if (e.repeat) { e.preventDefault(); return; }
         e.preventDefault(); setOctave(octave + (e.code === "ArrowUp" ? 1 : -1)); return;

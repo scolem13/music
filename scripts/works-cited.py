@@ -159,7 +159,9 @@ SOURCES = [
     dict(mla="Teacher's handout on conga stroke types and the tumbao pattern. Unpublished classroom material.", pages=[CON]),
 
     # ---- Scales tool
-    web('Aebersold, Jamey. *Scale Syllabus*. Jamey Aebersold Jazz, URL.', "https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf", [SCA]),
+    web('Aebersold, Jamey. *Scale Syllabus*. Jamey Aebersold Jazz, URL.', "https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf", [SCA, "tools/scale-patterns.qmd"]),
+    web('Hanon, Charles-Louis. "Exercise No. 2." *The Virtuoso Pianist, Part I*, Hanon-Online, URL.', "https://hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g", ["tools/scale-patterns.qmd"], None, "Hanon's practice directions (lift the fingers, play each note distinctly, begin at 60)."),
+    web('Hanon, Charles-Louis. *The Virtuoso Pianist (Part I)*. 1873. Edited by Steve Taylor and Javier Ruiz-Alma after the Schirmer edition of 1900, Mutopia Project, 2015, URL.', "https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037", ["tools/scale-patterns.qmd"], None, "CC BY-SA 4.0. Exercises 1–20 read note for note into apps/shared/hanon-part1.js."),
 
     # ---- Inharmonicity (numbered; `ref` is the id used in the text)
     web('Fletcher, Harvey, et al. "Quality of Piano Tones." *The Journal of the Acoustical Society of America*, vol. 34, no. 6, 1962, pp. 749–61. URL.', "https://physics.byu.edu/docs/publication/1504", [INH], "r1", "Abstract and a summary read only."),

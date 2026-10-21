@@ -1,4 +1,4 @@
-// The augmented sixth drills (Drills.engines.aug6 / aug6write / aug6sym / aug6ear, practice/augmented-sixths.qmd) in Node. Each
+// The augmented sixth drills (Drills.engines.aug6 / aug6write / aug6sym / aug6ear, theory/augmented-sixths.qmd) in Node. Each
 // generated question is checked by arithmetic of its own, from the book's Figure 21.2.1: the bass is ♭6 of the key, an augmented 6th
 // (letter 6th, 10 half steps) below ♯4, and the remaining note is 1 (It), 2 (Fr), ♭3 (Ger) or ♯2 (EnGer, major only); V7/N has ♭5 for ♯4.
 // The drawn ABC sounds what is played, the typed forms the page promises are accepted, and the other types are refused.

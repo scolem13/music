@@ -1,7 +1,7 @@
-// build.mjs — scores with Roman-numeral analyses from the When in Rome corpus (Gotham et al., CC BY-SA 4.0), for practice/analysed-scores.qmd.
+// build.mjs — scores with Roman-numeral analyses from the When in Rome corpus (Gotham et al., CC BY-SA 4.0), for theory/analysed-scores/ (one page per piece).
 // Each piece: a Humdrum **kern score (Craig Sapp's encodings of public-domain editions) converted to ABC here, and one or more
-// RomanText analyses placed under the notes at their bar and beat. Writes practice/_analysed-scores-body.qmd (one section per
-// piece, a tab per analysis, each an .abc-ex the page plays through AbcPlay).
+// RomanText analyses placed under the notes at their bar and beat. Writes theory/analysed-scores/_<id>.qmd for each piece (a tab per
+// analysis when there is more than one; each score an .as-score the page plays through AbcPlay).
 //   node scripts/when-in-rome/build.mjs            (sources in scripts/when-in-rome/src, fetched from the URLs in PIECES)
 import fs from "fs";
 import path from "path";
@@ -250,10 +250,10 @@ let NHTlib = null;
 function nht() { if (!NHTlib) { require(ROOT + "/apps/shared/abc-core.js"); require(ROOT + "/apps/shared/abc-events.js"); require(ROOT + "/apps/shared/abc-nht.js"); NHTlib = globalThis.AbcNHT; } return NHTlib; }
 const PIECES = [
   { id: "bach-o-haupt", kern: "chor074.krn", title: "J. S. Bach, “O Haupt voll Blut und Wunden” (“O Sacred Head, Now Wounded”), BWV 244.54",
-    analyses: [["chor074-analysis.txt", "Dmitri Tymoczko"], ["chor074-analysis-BCMH.txt", "Bach Chorales Melody-Harmony Corpus (BCMH)"]],
+    analyses: [["chor074-analysis.txt", "Dmitri Tymoczko"]],   // a second, chor074-analysis-BCMH.txt (BCMH), was dropped from the page
     names: { "4.1": "Bass", "3.1": "Tenor", "2.1": "Alto", "1.1": "Soprano" }, prefer: ["4.1", "3.1", "2.1", "1.1"], bpm: 66, pickup: true },
   { id: "beethoven-moonlight-1", kern: "sonata14-1.krn", title: "Beethoven, Piano Sonata No. 14 in C♯ minor, Op. 27 No. 2 (“Moonlight”), I. Adagio sostenuto",
-    analyses: [["moon-analysis.txt", "Tsung-Ping Chen and Li Su (BPS dataset), proof-read by Mark Gotham"], ["moon-analysis-DT.txt", "Dmitri Tymoczko"]],
+    analyses: [["moon-analysis.txt", "Tsung-Ping Chen and Li Su (BPS dataset), proof-read by Mark Gotham"]],   // moon-analysis-DT.txt (Tymoczko) dropped
     names: {}, prefer: ["2.1", "2.2", "1.2", "1.1"], bpm: 54 }
 ];
 export function buildPiece(p) {
@@ -276,8 +276,9 @@ export function buildPiece(p) {
     for (let b = 0; b < nb; b += perLine) for (const id of order) body.push(`[V:${vname(id)}] ` + conv.bars[id].slice(b, b + perLine).join(" "));
     const NHT = nht(), chords = [];
     rt.events.forEach((e, i) => { const t = times0[i]; if (t == null) return; const name = rnChord(e.raw, e.key), c = name && NHT.chordPcs(name);
-      chords.push([+(t / W).toFixed(6), c ? c.pcs : null, e.raw, name]); });
-    return { chords, k: kk, who, file: f, abc: head.join("\n") + "\n" + body.join("\n") + "\n", misses: pl.misses, notes: rt.notes, vars: rt.vars, count: rt.events.length };
+      chords.push([+(t / W).toFixed(6), c ? c.pcs : null, e.raw, name, e.key]); });
+    const keys = []; chords.forEach(c => { if (c[4] && (!keys.length || keys[keys.length - 1][1] !== c[4])) keys.push([c[0], c[4]]); });   // [start (whole notes), key] at each key change
+    return { chords, keys, k: kk, who, file: f, abc: head.join("\n") + "\n" + body.join("\n") + "\n", misses: pl.misses, notes: rt.notes, vars: rt.vars, count: rt.events.length };
   });
   return { k, versions };
 }
@@ -288,14 +289,15 @@ if (process.argv[1] && process.argv[1].endsWith("build.mjs")) {
   for (const p of PIECES) {
     const { versions } = buildPiece(p);
     for (const v of versions) console.log(p.id, v.who.slice(0, 30), "unread numerals", v.chords.filter(c => !c[1]).map(c => c[2]).join(" ") || "none", "chords", v.count, "not placed", v.misses.length, v.misses.slice(0, 6).map(x => "m" + x.m + " b" + x.beat + " " + x.text).join(", "));
-    md += `::: {.panel-tabset}\n\n`;
+    const tabs = versions.length > 1;
+    if (tabs) md += `::: {.panel-tabset}\n\n`;
     for (const v of versions) {
-      md += `## ${v.who.split(" (")[0].split(",")[0]}\n\nAnalysis: ${v.who}.\n\n<div class="as-score" data-bpm="${p.bpm}" data-pickup="${p.pickup ? 1 : 0}" data-chords='${JSON.stringify(v.chords.map(c => [c[0], c[1]]))}'><script type="text/plain">\n${v.abc}</script></div>\n\n`;
+      md += (tabs ? `## ${v.who.split(" (")[0].split(",")[0]}\n\n` : "") + `Analysis: ${v.who}.\n\n<div class="as-score" data-piece="${p.id}" data-keys='${JSON.stringify(v.keys)}' data-bpm="${p.bpm}" data-pickup="${p.pickup ? 1 : 0}" data-chords='${JSON.stringify(v.chords.map(c => [c[0], c[1]]))}'><script type="text/plain">\n${v.abc}</script></div>\n\n`;
       if (v.misses.length) md += `*Not shown on the score (no note starts there):* ${v.misses.map(x => "bar " + x.m + " beat " + x.beat + ": " + x.text).join("; ")}.\n\n`;
       if (v.notes.length) md += "**The analyst's notes:**\n\n" + v.notes.map(n => "- " + n).join("\n") + "\n\n";
       if (v.vars.length) md += "**Other readings the analyst gives:**\n\n" + v.vars.map(x => `- Bar ${x.m}: ${x.text.split(/\s+/).filter(t => !/^b[\d.]+$/.test(t)).map(t => /:$/.test(t) ? PKEY(t) : PRETTY(t)).join(" ")}`).join("\n") + "\n\n";
     }
-    md += `:::\n\n`;
-    fs.writeFileSync(ROOT + `/practice/_analysed-${p.id}.qmd`, md); md = "<!-- Generated by scripts/when-in-rome/build.mjs. Do not edit. -->\n\n";
+    if (tabs) md += `:::\n\n`;
+    fs.writeFileSync(ROOT + `/theory/analysed-scores/_${p.id}.qmd`, md); md = "<!-- Generated by scripts/when-in-rome/build.mjs. Do not edit. -->\n\n";
   }
 }

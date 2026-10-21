@@ -3,6 +3,7 @@
 // Needs abc-core.js and abc-events.js loaded first.
 //
 // A doc:   { title, meter, key, keyConfirmed, voices: [{ name, clef }], together, chunks: [chunk] }
+//           a note slot may carry `also: [midi]`, the other notes of a chord sounding with its pitch (written [CEG])
 //   meter, key  the piece's opening meter and key (a chunk can change them from its start on).
 //   voices      one or more; voice 0 carries the chords and the words. together: all voices on one staff (stems up / down),
 //               else a staff each.
@@ -474,6 +475,7 @@
         if (last && last.tie && last.midi === n.midi && Math.abs(last.end - on) < 1e-6) { last.slot.durQ += n.dur * unitQ; last.end = on + n.dur; last.tie = n.tie; tpos = on + n.dur; return; }
         if (on > tpos + 1e-6) rhythm.push({ type: "rest", durQ: (on - tpos) * unitQ });
         const slot = { type: "note", durQ: n.dur * unitQ };
+        if (n.midis && n.midis.length > 1) slot.also = n.midis.filter(m => m !== n.midi);   // a chord in one voice: the other notes
         rhythm.push(slot); pitches.push(n.midi);
         last = { slot, midi: n.midi, end: on + n.dur, tie: n.tie };
         tpos = on + n.dur;
@@ -607,6 +609,7 @@
             let tok;
             if (slot.type === "rest") tok = "z" + LEN[pc];
             else if (slot.type === "space") tok = "x" + LEN[pc];
+            else if (filled && slot.also && slot.also.length) tok = "[" + [midi].concat(slot.also).sort((a, b) => a - b).map(m => spell(m, here.key, barAcc, m === midi ? slot.spell : undefined)).join("") + "]" + LEN[pc];
             else tok = filled ? spell(midi, here.key, barAcc, slot.spell) + LEN[pc] : "!style=rhythm!B" + LEN[pc];   // an empty slot: never an accidental
             const lastOfSlot = k === all.length - 1 && take === left;
             const item = { pre, tok, tail: slot.type === "note" && (!lastOfSlot || slot.tie) ? "-" : "", pos: piecePos, len: pc, note: slot.type === "note" };
@@ -820,7 +823,9 @@
         if (ev.kind === "rest") { p.rhythm.push({ type: ev.visible === false ? "space" : "rest", durQ }); return; }
         const slot = { type: "note", durQ }, rhy = (ev.decos || []).includes("style=rhythm"), mid = ev.pitches[0].midi;
         // a letter other than the plain spelling's (Fb, E#, B##) is kept on the slot
-        if (!rhy && ev.letter) { const kk = at(doc, ci).key || doc.key, plain = spell(mid, kk, {}).replace(/[\^_=,']/g, "").toUpperCase(); if (plain !== ev.letter) slot.spell = ev.letter + "@" + (((mid % 12) + 12) % 12); }
+        const allN = (ev.notes && ev.notes.length > 1) ? ev.notes : null;
+        if (!rhy && ev.letter && !allN) { const kk = at(doc, ci).key || doc.key, plain = spell(mid, kk, {}).replace(/[\^_=,']/g, "").toUpperCase(); if (plain !== ev.letter) slot.spell = ev.letter + "@" + (((mid % 12) + 12) % 12); }
+        if (!rhy && allN) slot.also = allN.filter(m => m !== mid);         // [CEG]: a chord in this voice
         p.rhythm.push(slot);
         p.pitches.push(rhy ? null : mid);
         if (ev.tieNext) held = slot;

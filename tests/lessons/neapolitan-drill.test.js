@@ -1,4 +1,4 @@
-// The Neapolitan drills (neapolitan.js: Drills.engines.neap / neapwrite / neapsym / neapear, practice/neapolitan.qmd) in Node.
+// The Neapolitan drills (neapolitan.js: Drills.engines.neap / neapwrite / neapsym / neapear, theory/neapolitan.qmd) in Node.
 // Each generated question is checked by arithmetic of its own, not by the engine's tables: N is a major triad whose root is a
 // minor 2nd above the tonic, spelled on the 2nd letter; N6 has scale degree 4 in the bass; no other drilled chord has the
 // lowered 2nd; the drawn ABC sounds what is played; the answer is the only one of the drill's answers that fits; the typed

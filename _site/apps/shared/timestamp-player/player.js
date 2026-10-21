@@ -382,6 +382,10 @@
         } catch (e) { return false; }
       },
       toggle: togglePlay,
+      // the recording silent (still playing, so loops and bars go on): phrases.js's Play alone passes
+      setMuted: function (on) {
+        try { if (!mediaEl) return; if (mediaEl.mute) { if (on) mediaEl.mute(); else mediaEl.unMute(); } else mediaEl.muted = !!on; } catch (e) {}
+      },
       rate: function () { return rate; },
       setRate: setRate,
       seek: seekTo,

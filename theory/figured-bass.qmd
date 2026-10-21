@@ -1,0 +1,187 @@
+---
+aliases:
+  - ../practice/figured-bass.html
+title: "Figured Bass: Practice for Chapter 16"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 16 of Hutchinson's Music Theory for the 21st-Century Classroom: figured-bass inversion symbols (6, 6/4, 7, 6/5, 4/3, 4/2), an interactive inversion explorer that shows what each number means, realizing figures, Roman numerals with figures, and the cadential, passing and pedal six-four chords."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/drills/figured.js?v=1"></script>
+<script src="/apps/shared/drills/fb-explorer.js?v=1"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+.fb-explorer{margin:1rem 0 1.5rem}
+</style>
+```
+
+This page goes with **Chapter 16, Figured Bass** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/FiguredBass.html). Read each section there
+first; the book is the reference for the terms used here. It builds on the Roman numerals of [Chapter 7](roman-numerals.qmd) and the
+seventh chords of [Chapter 8](seventh-chords.qmd), where inversions were written /3rd, /5th and /7th. From this chapter on, the
+book writes them with figures instead.
+
+Every drill has **Settings**, and is also on the [Theory Drills](theory-drills.qmd) page. Click a section's heading to fold it; the
+list on the right jumps to a section.
+
+## 16.1 Historical context
+
+In the Baroque era (roughly 1600–1750) a keyboard or lute player often read only a **bass line with numbers** under it, and filled in
+the chords. That shorthand is **figured bass** (also called thoroughbass). The numbers are **intervals above the bass note**, counted
+**in the key signature**. They say which notes to play, not how to space them, so players chose their own voicings, the way a pianist
+reading lead-sheet symbols does today. Modern editions often "realize" the figures: they write the chords out.
+Today theory classes use figured bass mostly as a shorthand for inversions, written after a Roman numeral.
+[Read 16.1](https://musictheory.pugetsound.edu/mt21c/FiguredBassHistoricalContext.html)
+
+::: {.rn-quiz}
+<figure><figcaption>Handel, Recorder Sonata in A minor, HWV 362, I. Larghetto (the book's Figure 16.1.3)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/ljj6URbK8Xg?start=0&end=13&rel=0" title="Handel, Recorder Sonata in A minor, HWV 362" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+**Counting an interval:** count letter names from the bass up to the note, counting both ends. From G up to E is G A B C D E, six
+letters: a **6th**. Octaves don't matter (a 13th still counts as a 6), and neither does which voice has the note.
+
+## 16.2 Figured bass inversion symbols
+
+Pick a chord and a bass note. Each bracket on the staff runs from the bass to one of the notes above it, with the interval it makes.
+The figures under the bass are in the colour of the chord member they land on: <span style="color:#d1495b">root</span>,
+<span style="color:#2e86ab">3rd</span>, <span style="color:#3c9d5d">5th</span>, <span style="color:#c77d0a">7th</span>. Faint figures in
+brackets are understood but not written. Hover over a line of the explanation to light up its note.
+[Read 16.2](https://musictheory.pugetsound.edu/mt21c/FiguredBassInversionSymbols.html)
+
+<div class="fb-explorer" data-key="C" data-mode="major" data-chord="0" data-inv="2"></div>
+
+The symbols, from the book's Figures 16.2.1–2:
+
+| Bass note | Triad | Every interval above the bass | Seventh chord | Every interval above the bass |
+|---|---|---|---|---|
+| Root | (none) | 5/3 | 7 | 7/5/3 |
+| 3rd | 6 | 6/3 | 6/5 | 6/5/3 |
+| 5th | 6/4 | 6/4 | 4/3 | 6/4/3 |
+| 7th | | | 4/2 | 6/4/2 |
+
+The short forms keep just the numbers that tell one position from another. Four rules from 16.2:
+
+- The figures go **after** the Roman numeral (I64, V65), not under the bass as in Baroque scores.
+- Compare the slash labels of earlier chapters: I/3rd = **I6**, I/5th = **I64**, V7/3rd = **V65**, V7/5th = **V43**, V7/7th = **V42**.
+- Since 6/5, 4/3 and 4/2 only ever mean seventh chords, an inverted seventh chord **drops the 7**: V65, not V7 65.
+- The quality signs stay: **IM43** (a major seventh chord), **viiø65**, **vii°42**.
+
+Given the numeral, write the notes, lowest first:
+
+<div class="drill" data-ex="fbwrite" data-settings="mode=major&most=3&kind=both&inv=inv"></div>
+
+Without Roman numerals: count up from the lowest note and choose the figure.
+
+<div class="drill" data-ex="fbfig" data-settings="mode=major&most=3&kind=both&clef=treble,bass"></div>
+
+### What the numbers mean, the other way round
+
+A Baroque player sees a bass note and figures and works out the notes: count each interval up from the bass, using the key
+signature's sharps and flats. In C major, **6/4 over D** is D, then a 4th up (G), then a 6th up (B): the G chord with its 5th in the
+bass. Type every note, bass first:
+
+<div class="drill" data-ex="fbreal" data-settings="mode=major&most=3&kind=triads&show=staff"></div>
+
+With seventh chords, and in minor keys (the notes come from the key signature, so V in a minor key comes out minor here; a real
+figured bass would add an accidental to raise the leading tone, as the explorer shows):
+
+<div class="drill" data-ex="fbreal" data-settings="mode=both&most=4&kind=both&show=staff"></div>
+
+## 16.3 The cadential six-four chord
+
+The **I64** that so often comes just before **V** at a cadence is called the **cadential six-four**. The bass stays on scale degree 5
+for both chords, and the 6th and 4th above it fall to a 5th and a 3rd: really V with two notes delayed. So the book counts it as
+**dominant** function, like the V after it. Earlier chapters called it I/5th.
+[Read 16.3](https://musictheory.pugetsound.edu/mt21c/TheCadentialSixFourChord.html)
+
+::: {.rn-quiz}
+<figure><figcaption>Mozart, Piano Sonata K. 331, I (the book's Figure 16.3.1)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/vp_h649sZ9A?start=14&end=25&rel=0" title="Mozart, Piano Sonata K. 331" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Key and Smith, "The Star-Spangled Banner" (the book's Figure 16.3.2)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/LGvW6jHUHiY?start=77&end=93&rel=0" title="The Star-Spangled Banner" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+In the explorer, choose **I**, then **5th 6/4**, then **V**, **root 5/3**: the bass doesn't move; the C and E above it step down to B
+and D.
+
+## 16.4 Other six-four chords
+
+A six-four chord (the 5th in the bass) turns up in only four situations in classical music:
+
+- **Cadential:** I64 before V over the same bass note (16.3).
+- **Passing:** the bass moves by step through three notes, and the middle chord is a six-four (I – V64 – I6, the bass going 1–2–3).
+- **Pedal:** the bass repeats one note three times, and the middle chord is a six-four (I – IV64 – I over a held tonic).
+- **Melodic bass:** the bass has the tune, and when the tune lands on the chord's 5th the chord is a six-four.
+
+[Read 16.4](https://musictheory.pugetsound.edu/mt21c/OtherOccurrencesofSixFourChords.html)
+
+Four chords, the second a six-four. Which kind? Watch (or hear) the bass:
+
+<div class="drill" data-ex="sixfour" data-settings="mode=major&most=3&show=both"></div>
+
+By ear, and in minor keys too:
+
+<div class="drill" data-ex="sixfour" data-settings="mode=both&most=3&show=ear"></div>
+
+## 16.5 Additional information
+
+In Baroque scores you'll sometimes see every interval written out (6/5/3 for 6/5, 6/4/3 for 4/3). The short symbols are
+abbreviations of those; the table in 16.2 gives both. Figures in real music can also carry **accidentals** for notes outside the key
+signature, such as the raised leading tone in a minor key. An accidental with no number beside it means the 3rd above the bass.
+Roman-numeral analysis leaves these accidentals out. To see one, set the explorer to a minor key and choose **V**.
+[Read 16.5](https://musictheory.pugetsound.edu/mt21c/FiguredBassAdditionalInformation.html)
+
+## 16.6 Practice exercises
+
+Set **Questions** to 20 for a score.
+[Practice exercises with answers (16.6)](https://musictheory.pugetsound.edu/mt21c/FiguredBassPracticeExercises.html)
+
+The book's exercise 1: triads, named with Roman numerals and figures (I64, vii°6, ii64). Type `o` for °.
+
+<div class="drill" data-ex="fbrn" data-settings="mode=major&most=4&kind=triads&inv=all&clef=treble,bass"></div>
+
+Exercises 2 and 3: seventh chords (iii65, V42, IM43, IVM7). Type `M` for a major 7th, `h` for ø.
+
+<div class="drill" data-ex="fbrn" data-settings="mode=both&most=4&kind=sevenths&inv=all&clef=treble,bass"></div>
+
+Exercise 4: write the chord from its numeral and figures.
+
+<div class="drill" data-ex="fbwrite" data-settings="mode=both&most=5&kind=both&inv=all"></div>
+
+Exercise 5 is an analysis of a Bach chorale, best done from the book's score:
+
+::: {.rn-quiz}
+<figure><figcaption>J. S. Bach, Chorale 175, "Jesus, meine Zuversicht" (the book's Figure 16.6.1)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/8QZ0WkwZ5Uc?start=21&end=32&rel=0" title="Bach, Jesus, meine Zuversicht" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+  The explorer takes `data-key`, `data-mode`, `data-chord` (0 = tonic), `data-seventh="1"` and `data-inv` (0–3) to open on a given chord.
+- **Answers accepted:** the figures (I64, V65, IM43, viiø42) and the older slash labels (I/5th, V7/3rd) both count. An inverted seventh chord
+  written with the 7 (V765) is not accepted, following 16.2.
+- **Chords drilled:** in minor, the book's common set (i ii° III iv V VI VII vii°, and i7 iiø7 IIIM7 iv7 V7 VIM7 vii°7).
+- **Realizing figures** uses the key signature only, as 16.1 describes; the minor-key V comes out minor there, and the explorer shows the
+  accidental a Baroque figure would add (a lone accidental for the 3rd).
+- **The six-four drill's voicings** are this site's own: IV – I64 – V – I (cadential), I – V64 – I6 – IV (passing, with a voice exchange
+  between bass and alto), I – IV64 – I – V (pedal). The melodic-bass six-four is not drilled.
+- **Checked:** `node tests/lessons/figured-drill.test.js` generates about nine thousand questions and checks each by its own arithmetic: the figure
+  is read from the sounding notes, realized notes count up the right number of letters in the key signature, each six-four type has the
+  book's bass shape (`NEG=1` breaks the engine on purpose and must fail).
+- **Not from the book (unverified against a source here):** two common-practice statements are the site's own: that a lone accidental in
+  a figure means the 3rd above the bass (16.5 only shows that figures can carry accidentals), and that the cadential six-four's 6th and
+  4th fall to a 5th and 3rd over the same bass (16.3 says only that it has dominant function).
+- **Videos:** the book's YouTube links with its start and end times, each checked against YouTube.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

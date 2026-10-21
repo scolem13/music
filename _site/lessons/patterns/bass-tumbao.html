@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Bass line: Tumbao – Music Practice</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -36,10 +42,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-7f4c960c75fa4a060886384c4ea271f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -87,12 +93,13 @@ ul.task-list li input[type="checkbox"] {
 <style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
 <!-- Click the number shown beside any slider to type a value. -->
 <script src="../../apps/shared/num-edit.js?v=1"></script>
-<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
 <style>
 svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
 svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
-svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
 </style>
 
 
@@ -122,6 +129,10 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   <li class="nav-item">
     <a class="nav-link" href="../../lessons/index.html"> 
 <span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../../theory/index.html"> 
+<span class="menu-text">Theory</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -165,74 +176,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
     <a class="dropdown-item" href="../../practice/dictation.html">
  <span class="dropdown-text">Dictation</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/theory-drills.html">
- <span class="dropdown-text">Theory Drills</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/exercise-builder.html">
- <span class="dropdown-text">Exercise Builder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/analysed-scores.html">
- <span class="dropdown-text">Analysed Scores</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/triads.html">
- <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/roman-numerals.html">
- <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/seventh-chords.html">
- <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/progressions.html">
- <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/non-chord-tones.html">
- <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/melodic-analysis.html">
- <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/pop-forms.html">
- <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/accompaniment-textures.html">
- <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/secondary-dominants.html">
- <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/secondary-diminished.html">
- <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/mode-mixture.html">
- <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/neapolitan.html">
- <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/augmented-sixths.html">
- <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../../practice/jazz-theory.html">
- <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
-  </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../../practice/lsa-practice.html">
@@ -269,6 +212,10 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../../tools/scales.html">
  <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../../tools/circle-of-fifths.html">
@@ -731,13 +678,14 @@ document.addEventListener('DOMContentLoaded', async function () {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

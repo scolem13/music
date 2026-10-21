@@ -1,0 +1,171 @@
+---
+aliases:
+  - ../practice/secondary-diminished.html
+title: "Secondary Diminished Chords: Practice for Chapter 18"
+toc: true
+toc-depth: 2
+description: "Exercises for Chapter 18 of Hutchinson's Music Theory for the 21st-Century Classroom: secondary leading-tone chords (vii°/x, viiø7/x, vii°7/x) in major and minor, analysing and writing them with figures 6, 64, 65, 43, 42, lead-sheet symbols, and the book's listening examples."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+```
+
+This page goes with **Chapter 18, Secondary Diminished Chords** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/SecondaryDiminishedChords.html). Read each section
+there first; the book is the reference for the terms used here. It follows [Chapter 17, Secondary Dominants](secondary-dominants.qmd), and
+uses the seventh-chord qualities of [Chapter 8](seventh-chords.qmd).
+
+Every drill has **Settings**, and is also on the [Theory Drills](theory-drills.qmd) page. **▶ Hear it** plays the chord and then the
+chord it resolves to.
+
+**Typing a secondary diminished chord:** `vii°/V`, `vii°7/ii`, `viiø7/IV`. Type `o` (or `dim`) for °, and `h` (or `Ø`) for ø. After the
+slash comes the chord being tonicized, and its case is its quality: `ii` is minor, `IV` is major. Inversions take the figures the book
+uses: `vii°6/V` and `vii°64/V` for triads, `viiø65/V`, `vii°43/iv` and `vii°42/vi` for seventh chords. `vii°6/5/V` and `vii°7 of iv`
+work too.
+
+## 18.1 Secondary diminished chords
+
+In Chapter 9, vii° is a **dominant-function** chord, like V: it leads to the tonic. So a leading-tone chord can be borrowed for any major or
+minor chord of the key, just as V was in Chapter 17. It sits a **half step below** the chord it tonicizes, and it can be a **diminished
+triad**, a **half-diminished seventh** (ø7) or a **fully-diminished seventh** (°7). It is written **vii°/x**, **viiø7/x** or **vii°7/x**.
+Its chromatic note is part of the chord, not a passing decoration.
+[Read 18.1](https://musictheory.pugetsound.edu/mt21c/SecondaryDiminishedChordSection.html)
+
+::: {.callout-note collapse="true"}
+## Listen: the book's examples
+
+::: {.rn-quiz}
+<figure><figcaption>J. S. Bach, Cantata BWV 147, "Jesu, Joy of Man's Desiring"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/9ayLUAWmatk?start=11&end=21&rel=0" title="Jesu, Joy of Man's Desiring" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Tchaikovsky, <em>The Nutcracker</em>, "Trepak"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/67maTrrSKjg?start=0&end=4&rel=0" title="Trepak" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>Billy Joel, "Just the Way You Are"</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/HaA3YZ6QdJU?start=7&end=16&rel=0" title="Just the Way You Are" loading="lazy" allowfullscreen></iframe></figure>
+
+<figure><figcaption>"Friends in Low Places" (Dewayne Blackwell and Earl Bud Lee)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Cw16cySo65Y?start=0&end=9&rel=0" title="Friends in Low Places" loading="lazy" allowfullscreen></iframe></figure>
+:::
+:::
+
+Start with the symbols. Given the numeral in C, G or F major, which chord is it?
+
+<div class="drill" data-ex="secdimsym" data-settings="mode=major&most=1&kind=both&dir=find"></div>
+
+## 18.2 In major and minor
+
+Which seventh chord? The book's rule: **a minor chord is tonicized by a fully-diminished seventh** (vii°7/ii in C is C♯–E–G–B♭), and **a
+major chord is usually tonicized by a half-diminished seventh** (viiø7/V in C is F♯–A–C–E), though °7 is also found before major chords.
+That matches the key each target would be the tonic of: vii°7 belongs to harmonic minor, viiø7 to major.
+[Read 18.2](https://musictheory.pugetsound.edu/mt21c/SecondaryDiminishedChordsInMajorAndMinor.html)
+
+| C major: tonicized | vii°/x | vii7/x | C minor: tonicized | vii°/x | vii7/x |
+|---|---|---|---|---|---|
+| ii (Dm) | C♯° | C♯°7 | III (E♭) | (D° = ii°) | (Dø7 = iiø7) |
+| iii (Em) | D♯° | D♯°7 | iv (Fm) | E° | E°7 |
+| IV (F) | E° | Eø7 | V (G) | F♯° | F♯°7 |
+| V (G) | F♯° | F♯ø7 | VI (A♭) | G° | Gø7 |
+| vi (Am) | G♯° | G♯°7 | VII (B♭) | A° | Aø7 |
+
+Diminished chords are not tonicized, as in Chapter 17. In minor, the chords for III use only the key's notes: the triad is ii°, which the
+book leaves out, and the seventh chord is iiø7, which the book lists but notes that it has no accidentals and is told apart from iiø7
+only by where it goes (iiø7 goes to V, viiø7/III to III). The drills leave both out, since on the staff they can't be told from ii° and
+iiø7. Every other chord in the table has an accidental.
+
+Find the chord, major and minor:
+
+<div class="drill" data-ex="secdimsym" data-settings="mode=both&most=3&kind=both&dir=find"></div>
+
+And the other way round. Given a chord and the chord it goes to, name it:
+
+<div class="drill" data-ex="secdimsym" data-settings="mode=both&most=3&kind=both&dir=name"></div>
+
+## 18.3 Analysing secondary diminished chords
+
+The book's two steps for a chord with a chromatic note:
+
+1. **Stack it in thirds** to find the root and the quality. If it isn't a diminished triad, a half-diminished seventh or a
+   fully-diminished seventh, it isn't a secondary diminished chord.
+2. **Go up a minor 2nd** from the root. If that note is the root of a major or minor chord in the key, the chord is vii of that chord.
+
+The book's example: in D major, a G♯ half-diminished seventh with B in the bass (first inversion). A minor 2nd above G♯ is **A**, the root of V, so
+the chord is **viiø65/V**.
+[Read 18.3](https://musictheory.pugetsound.edu/mt21c/AnalyzingSecondaryDiminishedChords.html)
+
+The chord on the staff is followed by the chord it tonicizes. Name the first one:
+
+<div class="drill" data-ex="secdim" data-settings="mode=major&most=3&kind=both&inv=root&clef=treble,bass"></div>
+
+With inversions. Read the bass note to choose the figure:
+
+<div class="drill" data-ex="secdim" data-settings="mode=both&most=4&kind=both&inv=all&clef=treble,bass"></div>
+
+## 18.4 Writing secondary diminished chords
+
+The book's procedure, worked here for **vii°43/ii in E♭ major** (the book's own example is a different chord):
+
+1. Find the root of the chord after the slash: ii in E♭ is **F** (F minor).
+2. Go down a minor 2nd: **E** (E natural, not E♭).
+3. Build the chord there. F minor is minor, so fully diminished: **E–G–B♭–D♭**.
+4. Put it in the inversion asked for. 43 means the 5th is in the bass: **B♭–D♭–E–G**.
+
+[Read 18.4](https://musictheory.pugetsound.edu/mt21c/WritingSecondaryDiminishedChords.html)
+
+<div class="drill" data-ex="secdimwrite" data-settings="mode=major&most=3&kind=both&inv=root"></div>
+
+With inversions, major and minor:
+
+<div class="drill" data-ex="secdimwrite" data-settings="mode=both&most=4&kind=both&inv=all"></div>
+
+## 18.5 Everything together
+
+All secondary diminished chords, major and minor, all positions. Set **Questions** to 20 for a score.
+[Practice exercises with answers (18.5)](https://musictheory.pugetsound.edu/mt21c/SecondaryDiminishedPracticeExercises.html)
+
+The book's exercise 1, analysing:
+
+<div class="drill" data-ex="secdim" data-settings="mode=both&most=5&kind=both&inv=all&clef=treble,bass"></div>
+
+The book's exercise 2, writing:
+
+<div class="drill" data-ex="secdimwrite" data-settings="mode=both&most=5&kind=both&inv=all"></div>
+
+Both exercises also ask for lead-sheet symbols. Both directions, seventh chords:
+
+<div class="drill" data-ex="secdimsym" data-settings="mode=both&most=5&kind=sev&dir=both"></div>
+
+The book's exercise 3 analyses a passage of "We Are the Champions" (F major), where an F♯°7 leads to D/F♯ and then G minor: **vii°7/ii**,
+then **V6/ii**, then **ii**. The secondary diminished chord and the secondary dominant both point at the same chord.
+
+::: {.rn-quiz}
+<figure><figcaption>Queen, "We Are the Champions" (Freddie Mercury)</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/04854XqcfCY?start=46&end=55&rel=0" title="We Are the Champions" loading="lazy" allowfullscreen></iframe></figure>
+:::
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Links with your settings:** open a drill's **Settings**, then **Copy a link with these settings**. Add `&lock=1` for a test, `&count=20` for a score.
+- **Chords drilled:** the book's Figures 18.2.1 and 18.2.2. vii°/x of every major and minor triad of the key (major ii iii IV V vi, minor
+  iv V VI VII); vii°7 before a minor triad, viiø7 before a major one. A chord made only of the key's notes is left out, as on the
+  Chapter 17 page: vii°/III in minor (ii°, which the book leaves out too) and viiø7/III in minor (iiø7, which the book lists). vii°7
+  before a major chord, which the book says also occurs, is not drilled: the drills keep to the book's tables so that each question has
+  one answer.
+- **Resolution:** the naming drill always shows and plays the chord's resolution (to the chord it names), in root position.
+- **Voicing:** close position above the bass. The drills are for spelling and labelling, not for voice leading.
+- **Checked:** `node tests/lessons/secdim-drill.test.js` generates thousands of questions and checks each one by its own arithmetic. The
+  root must be a half step below the resolution's root, the quality must be the one the tables give, the figure must match the bass, at
+  least one note must be chromatic, and the drawn notes must match the answer.
+- **Videos:** the clips use the book's YouTube links and start and end times. Each title was checked against YouTube. The "Friends in Low
+  Places" link the book uses is a recording on a "Brooks Jefferson" channel, not Garth Brooks's own channel.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::

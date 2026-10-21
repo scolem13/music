@@ -464,7 +464,7 @@ the tables until you can hear the difference without looking.
 ```{=html}
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
-<script src="/apps/shared/midi-feel.js"></script>
+<script src="/apps/shared/midi-feel.js?v=2"></script>
 <script>
 // Each .sw-ex holds an ABC tune in a <script type="text/plain">; render it and give it Play, Tempo and (unless
 // data-noslider) a Swing slider. Playback is abcjs's synth with its `swing` option (50 = even, 66 = triplet, 75 = dotted).

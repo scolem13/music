@@ -1,4 +1,4 @@
-// The non-chord tone drills (Drills.engines.nct / nctrule, practice/non-chord-tones.qmd) in Node: thousands of generated
+// The non-chord tone drills (Drills.engines.nct / nctrule, theory/non-chord-tones.qmd) in Node: thousands of generated
 // questions per type, each checked by abc-nht.js's own reading of the melody against its chord symbols (the marked note is
 // the type asked, every other note a chord tone) and for full bars in both voices.   node tests/lessons/nct-drill.test.js
 const fs = require("fs"), path = require("path"), vm = require("vm");

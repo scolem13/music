@@ -1,0 +1,5 @@
+# Theory pages get the same page setup as Practice (see ../practice/_metadata.yml).
+format:
+  html:
+    include-in-header:
+      - ../../_includes/embed-page.html

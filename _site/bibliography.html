@@ -2,17 +2,23 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
 <title>Bibliography – Music Practice</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -37,10 +43,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-7f4c960c75fa4a060886384c4ea271f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -88,12 +94,13 @@ ul.task-list li input[type="checkbox"] {
 <style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
 <!-- Click the number shown beside any slider to type a value. -->
 <script src="./apps/shared/num-edit.js?v=1"></script>
-<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
 <style>
 svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
 svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
-svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
 </style>
 
 
@@ -123,6 +130,10 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   <li class="nav-item">
     <a class="nav-link active" href="./lessons/index.html" aria-current="page"> 
 <span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./theory/index.html"> 
+<span class="menu-text">Theory</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -166,74 +177,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
     <a class="dropdown-item" href="./practice/dictation.html">
  <span class="dropdown-text">Dictation</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/theory-drills.html">
- <span class="dropdown-text">Theory Drills</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/exercise-builder.html">
- <span class="dropdown-text">Exercise Builder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/analysed-scores.html">
- <span class="dropdown-text">Analysed Scores</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/triads.html">
- <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/roman-numerals.html">
- <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/seventh-chords.html">
- <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/progressions.html">
- <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/non-chord-tones.html">
- <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/melodic-analysis.html">
- <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/pop-forms.html">
- <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/accompaniment-textures.html">
- <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/secondary-dominants.html">
- <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/secondary-diminished.html">
- <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/mode-mixture.html">
- <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/neapolitan.html">
- <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/augmented-sixths.html">
- <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="./practice/jazz-theory.html">
- <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
-  </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="./practice/lsa-practice.html">
@@ -270,6 +213,10 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="./tools/scales.html">
  <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./tools/circle-of-fifths.html">
@@ -1557,7 +1504,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>Ableton. <em>Tuning: An Introduction to Pitch and Tuning Systems</em>. <a href="https://tuning.ableton.com/">tuning.ableton.com/</a>. Glossary gives the 4:3 fourth vs.&nbsp;500-cent fourth used in the harmonics-method lesson. <span class="wc-used">Used in: <a href="./lessons/guitar-tuning-methods.html">Tuning 2: Fifth-Fret, Harmonics and Octaves</a>, <a href="./lessons/tuning-systems.html">Tuning Systems: Just Intonation and Equal Temperament</a> (for students)</span></p>
 <p>“Add Automation Points.” <em>Logic Pro User Guide for Mac</em>, Apple, <a href="https://support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac">support.apple.com/guide/logicpro/add-automation-points-lgcpb1a3327b/mac</a>. <span class="wc-used">Used in: <a href="./lessons/daw-mixer.html">DAW 5: The Mixer</a>, <a href="./lessons/daw-real.html">DAW 8: Your First Session in a Real DAW</a></span></p>
 <p>“Add, Remove, Move, and Copy Plug-ins.” <em>Logic Pro User Guide for Mac</em>, Apple, <a href="https://support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac">support.apple.com/guide/logicpro/add-remove-move-and-copy-plug-ins-lgcpbc218a22/mac</a>. <span class="wc-used">Used in: <a href="./lessons/daw-mixer.html">DAW 5: The Mixer</a>, <a href="./lessons/daw-real.html">DAW 8: Your First Session in a Real DAW</a></span></p>
-<p>Aebersold, Jamey. <em>Scale Syllabus</em>. Jamey Aebersold Jazz, <a href="https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf">www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf</a>. <span class="wc-used">Used in: <a href="./tools/scales.html">Scales</a></span></p>
+<p>Aebersold, Jamey. <em>Scale Syllabus</em>. Jamey Aebersold Jazz, <a href="https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf">www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf</a>. <span class="wc-used">Used in: <a href="./tools/scale-patterns.html">Scale Patterns</a>, <a href="./tools/scales.html">Scales</a></span></p>
 <p>“Akai MPC.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Akai_MPC">en.wikipedia.org/wiki/Akai_MPC</a>. <span class="wc-used">Used in: <a href="./lessons/sampling-beat.html">Sampling 4: A Beat from Chops</a>, <a href="./lessons/sampling-chop.html">Sampling 2: Chopping and Slicing</a>, <a href="./lessons/sampling-pitch.html">Sampling 3: Pitch and Time-Stretch</a></span></p>
 <p>Aldwell, Edward, Carl Schachter, and Allen Cadwallader. <em>Harmony and Voice Leading</em>. 5th ed., Cengage, 2019. <span class="wc-used">Used in: <a href="./lessons/borrowed-chords.html">Lesson: Borrowed Chords</a>, <a href="./lessons/cadences.html">Lesson: Cadences, and the One That Is Not</a>, <a href="./lessons/guide-tones.html">Lesson: Guide Tones</a>, <a href="./lessons/inversions.html">Inversions: Root Position, First and Second Inversion</a>, <a href="./lessons/minor-changes.html">Lesson: Changes in a Minor Key</a>, <a href="./lessons/reharmonize.html">Lesson: Reharmonizing a Melody</a>, <a href="./lessons/turnarounds.html">Lesson: Turnarounds and Rhythm Changes</a>, <a href="./lessons/write-an-ending.html">Lesson: Write an Ending</a> (for teachers)</span></p>
 <p>Allen, Jont B. “On the Aging of Steel Guitar Strings.” Post to the AUDITORY mailing list, 2005, <a href="https://auditory.org/mhonarc/2005/msg00041.html">auditory.org/mhonarc/2005/msg00041.html</a>. Describes Allen’s 1976 <em>Catgut Acoustical Society Newsletter</em> article (not retrieved) and cites J. C. Brown, <em>JASA</em> 95, 1994, p.&nbsp;2889 (not read). <span class="wc-used">Used in: <a href="./lessons/inharmonicity.html">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</a></span></p>
@@ -1625,7 +1572,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>“CDJ.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/CDJ">en.wikipedia.org/wiki/CDJ</a>. <span class="wc-used">Used in: <a href="./lessons/dj-gear.html">DJ 1: The Gear</a></span></p>
 <p>“Cent (music).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Cent_(music)">en.wikipedia.org/wiki/Cent_(music)</a>. <span class="wc-used">Used in: <a href="./lessons/guitar-tuning-methods.html">Tuning 2: Fifth-Fret, Harmonics and Octaves</a>, <a href="./lessons/strobe-tuner.html">How a Strobe Tuner Works</a>, <a href="./lessons/tuning-systems.html">Tuning Systems: Just Intonation and Equal Temperament</a> (for students)</span></p>
 <p>Chaffin, Roger, and Gabriela Imreh. “‘Pulling Teeth and Torture’: Musical Memory and Problem Solving.” <em>Thinking and Reasoning</em>, vol.&nbsp;3, no. 4, 1997, pp.&nbsp;315–36. <a href="https://musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf">musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf</a>. <span class="wc-used">Used in: <a href="./lessons/annotate-check.html">Annotated Bibliography 2: Summarise, Evaluate, Connect (Grades 9–10)</a>, <a href="./lessons/annotate-dp.html">Annotated Bibliography 3: DP Music (Grades 11–12)</a>, <a href="./tools/chunk-practice.html">Chunk Practice</a> (for teachers)</span></p>
-<p>Chen, Tsung-Ping, and Li Su. <em>BPS-FH: Beethoven Piano Sonata with Functional Harmony</em> dataset (ISMIR 2018). GitHub. <a href="https://github.com/Tsung-Ping/functional-harmony">github.com/Tsung-Ping/functional-harmony</a>. The source of the first Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome. <span class="wc-used">Used in: <a href="./practice/analysed-scores.html">Analysed Scores</a> (for students)</span></p>
+<p>Chen, Tsung-Ping, and Li Su. <em>BPS-FH: Beethoven Piano Sonata with Functional Harmony</em> dataset (ISMIR 2018). GitHub. <a href="https://github.com/Tsung-Ping/functional-harmony">github.com/Tsung-Ping/functional-harmony</a>. The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome. <span class="wc-used">Used in: <a href="./theory/analysed-scores/beethoven-moonlight-1.html">Beethoven: “Moonlight” Sonata, I</a>, <a href="./theory/analysed-scores/index.html">Analysed Scores</a> (for students)</span></p>
 <p>“Chiptune.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Chiptune">en.wikipedia.org/wiki/Chiptune</a>. <span class="wc-used">Used in: <a href="./lessons/sound-chiptune.html">Sound 25: Chiptune</a> (for students)</span></p>
 <p>“Chorus effect.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Chorus_effect">en.wikipedia.org/wiki/Chorus_effect</a>. <span class="wc-used">Used in: <a href="./lessons/sound-chorus.html">Sound 18: Chorus and Flanger</a> (for students)</span></p>
 <p>Chowning, John M. “The Synthesis of Complex Audio Spectra by Means of Frequency Modulation.” <em>Journal of the Audio Engineering Society</em>, vol.&nbsp;21, no. 7, 1973, pp.&nbsp;526-34. <a href="https://ccrma.stanford.edu/papers/synthesis-of-complex-audio-spectra-means-of-frequency-modulation">ccrma.stanford.edu/papers/synthesis-of-complex-audio-spectra-means-of-frequency-modulation</a>. <span class="wc-used">Used in: <a href="./lessons/sound-fm.html">Sound 8: FM Synthesis</a> (for teachers)</span></p>
@@ -1707,7 +1654,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>“Getting Started with the BandLab Studio.” <em>BandLab Help Center</em>, BandLab Technologies, <a href="https://help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio">help.bandlab.com/hc/en-us/articles/115002945153-Getting-Started-with-the-BandLab-Studio</a>. <span class="wc-used">Used in: <a href="./lessons/daw-real.html">DAW 8: Your First Session in a Real DAW</a>, <a href="./lessons/daw-timeline.html">DAW 1: The Timeline and the Transport</a></span></p>
 <p>Giannoulis, Dimitrios, Michael Massberg, and Joshua D. Reiss. “Digital Dynamic Range Compressor Design: A Tutorial and Analysis.” <em>Journal of the Audio Engineering Society</em>, vol.&nbsp;60, no. 6, 2012. <a href="https://www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf">www.eecs.qmul.ac.uk/~josh/documents/2012/GiannoulisMassbergReiss-dynamicrangecompression-JAES2012.pdf</a>. <span class="wc-used">Used in: <a href="./lessons/sound-compressor.html">Sound 13: The Compressor</a>, <a href="./lessons/sound-gate.html">Sound 15: Gates and Transients</a>, <a href="./lessons/sound-sidechain.html">Sound 14: Sidechain</a> (for teachers)</span></p>
 <p>Giordano, Nicholas J. “Explaining the Railsback Stretch in Terms of the Inharmonicity of Piano Tones and Sensory Dissonance.” 2015, <em>AUrora</em>, Auburn University, <a href="https://aurora.auburn.edu/handle/11200/48533">aurora.auburn.edu/handle/11200/48533</a>. With O. L. Railsback (1938), <em>JASA</em> 9(3) suppl., p.&nbsp;274, as cited in [4], and D. Koenig, <em>Spectral Analysis of Musical Sounds with Emphasis on the Piano</em>, Oxford UP, 2014 (abstract only). <span class="wc-used">Used in: <a href="./lessons/inharmonicity.html">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</a></span></p>
-<p>Gotham, Mark, et al.&nbsp;<em>When in Rome: A Meta-Corpus of Functional Harmony</em>. GitHub. <a href="https://github.com/MarkGotham/When-in-Rome">github.com/MarkGotham/When-in-Rome</a>. The analyses on this page (RomanText files), licensed CC BY-SA 4.0. <span class="wc-used">Used in: <a href="./practice/analysed-scores.html">Analysed Scores</a> (for students)</span></p>
+<p>Gordon, Stewart. <em>Beethoven’s 32 Piano Sonatas: A Handbook for Performers</em>. Oxford UP, 2017. Chapter on the Op. 27 set, p.&nbsp;161. The outline of the first movement’s form, summarised on this page. <span class="wc-used">Used in: <a href="./theory/analysed-scores/beethoven-moonlight-1.html">Beethoven: “Moonlight” Sonata, I</a> (for students)</span></p>
+<p>Gotham, Mark, et al.&nbsp;<em>When in Rome: A Meta-Corpus of Functional Harmony</em>. GitHub. <a href="https://github.com/MarkGotham/When-in-Rome">github.com/MarkGotham/When-in-Rome</a>. The analyses on this page (RomanText files), licensed CC BY-SA 4.0. <span class="wc-used">Used in: <a href="./theory/analysed-scores/bach-o-haupt.html">Bach: “O Haupt voll Blut und Wunden”</a>, <a href="./theory/analysed-scores/beethoven-moonlight-1.html">Beethoven: “Moonlight” Sonata, I</a>, <a href="./theory/analysed-scores/index.html">Analysed Scores</a> (for students)</span></p>
 <p>Gould, Elaine. <em>Behind Bars: The Definitive Guide to Music Notation</em>. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation. <span class="wc-used">Used in: <a href="./lessons/notation-choices.html">Writing Music Down: Choosing the Right Notation</a>, <a href="./lessons/notation-steps.html">Lesson: Using the Notation Page</a>, <a href="./lessons/ornaments-by-period.html">Ornaments by Period</a>, <a href="./lessons/reading-swing.html">Reading Swing from a Lead Sheet</a>, <a href="./lessons/sing-and-notate.html">Lesson: Sing it, then Notate it</a>, <a href="./lessons/write-an-ending.html">Lesson: Write an Ending</a> (for teachers)</span></p>
 <p>Gourse, Leslie, editor. <em>The Billie Holiday Companion</em>. Schirmer Books, 1997.</p>
 <p>“Grand Upright Music, Ltd.&nbsp;v. Warner Bros.&nbsp;Records Inc..” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Grand_Upright_Music,_Ltd._v._Warner_Bros._Records_Inc.">en.wikipedia.org/wiki/Grand_Upright_Music,_Ltd._v._Warner_Bros._Records_Inc.</a>. <span class="wc-used">Used in: <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a></span></p>
@@ -1719,6 +1667,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>“Hammer-on.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Hammer-on">en.wikipedia.org/wiki/Hammer-on</a>. <span class="wc-used">Used in: <a href="./lessons/hammer-ons-pull-offs.html">Hammer-ons and Pull-offs on Guitar</a> (for students)</span></p>
 <p>“Hammond organ.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Hammond_organ">en.wikipedia.org/wiki/Hammond_organ</a>. <span class="wc-used">Used in: <a href="./lessons/arrange-organ.html">Arranging 4: The Organ</a> (for students)</span></p>
 <p>“The Hammond Story.” Hammond Organ Company. <a href="https://hammondorganco.com/the-hammond-story">hammondorganco.com/the-hammond-story</a>. Manufacturer’s history page. <span class="wc-used">Used in: <a href="./lessons/arrange-organ.html">Arranging 4: The Organ</a> (for students)</span></p>
+<p>Hanon, Charles-Louis. “Exercise No.&nbsp;2.” <em>The Virtuoso Pianist, Part I</em>, Hanon-Online, <a href="https://hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g">hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g</a>. Hanon’s practice directions (lift the fingers, play each note distinctly, begin at 60). <span class="wc-used">Used in: <a href="./tools/scale-patterns.html">Scale Patterns</a></span></p>
+<p>Hanon, Charles-Louis. <em>The Virtuoso Pianist (Part I)</em>. 1873. Edited by Steve Taylor and Javier Ruiz-Alma after the Schirmer edition of 1900, Mutopia Project, 2015, <a href="https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037">www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037</a>. CC BY-SA 4.0. Exercises 1–20 read note for note into apps/shared/hanon-part1.js. <span class="wc-used">Used in: <a href="./tools/scale-patterns.html">Scale Patterns</a></span></p>
 <p>Hansen, Kjetil Falkenberg. <em>The Acoustics and Performance of DJ Scratching</em>. 2010. KTH Royal Institute of Technology, PhD dissertation. <a href="https://www.speech.kth.se/~hansen/files/thesis/KjetilFalkenbergHansen_2010_phdthesis.pdf">www.speech.kth.se/~hansen/files/thesis/KjetilFalkenbergHansen_2010_phdthesis.pdf</a>. Abstract and front matter read. <span class="wc-used">Used in: <a href="./lessons/dj-scratch.html">DJ 5: Scratching Basics</a> (for teachers)</span></p>
 <p>Hansen, Uwe J., and Thomas D. Rossing. “The Caribbean Steelpan and Some Offsprings.” <a href="https://www.hangblog.org/pdf/hansen_rossing_the-caribbean-steelpan-and-some-offsprings.pdf">www.hangblog.org/pdf/hansen_rossing_the-caribbean-steelpan-and-some-offsprings.pdf</a>. With Zarek, “Vibration of Steel Band Pans,” Institute of Acoustics. <span class="wc-used">Used in: <a href="./lessons/inharmonicity.html">Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums</a></span></p>
 <p>“Harmonic Mixing Guide.” <em>Mixed In Key</em>, <a href="https://mixedinkey.com/harmonic-mixing-guide/">mixedinkey.com/harmonic-mixing-guide/</a>. <span class="wc-used">Used in: <a href="./lessons/dj-harmonic.html">DJ 6: Harmonic Mixing</a>, <a href="./lessons/dj-set.html">DJ 7: Building a Set and Reading a Room</a></span></p>
@@ -1755,6 +1705,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>Hutchinson, Robert. “Introduction to Jazz Theory.” <em>Music Theory for the 21st-Century Classroom</em>, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/IntroductionToJazzTheory.html">musictheory.pugetsound.edu/mt21c/IntroductionToJazzTheory.html</a>. <span class="wc-used">Used in: <a href="./lessons/chord-shapes-guitar-hand.html">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</a>, <a href="./lessons/chord-shapes-guitar.html">Guitar Chord Shapes: From Pop and Rock Toward Jazz</a>, <a href="./lessons/chord-shapes-piano-hand.html">Piano Voicings by Hand: From Easy to Hard</a>, <a href="./lessons/chord-shapes-piano.html">Piano Chord Voicings: From Pop Triads Toward Jazz</a>, <a href="./lessons/guide-tones.html">Lesson: Guide Tones</a>, <a href="./lessons/reharmonize.html">Lesson: Reharmonizing a Melody</a>, <a href="./lessons/turnarounds.html">Lesson: Turnarounds and Rhythm Changes</a> (for students)</span></p>
 <p>Hutchinson, Robert. “Jazz Chord Voicings.” <em>Music Theory for the 21st-Century Classroom</em>, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/JazzChordVoicings.html">musictheory.pugetsound.edu/mt21c/JazzChordVoicings.html</a>. <span class="wc-used">Used in: <a href="./lessons/chord-shapes-guitar-hand.html">Guitar Chord Shapes by Hand: From Easy to Hard Fingerings</a>, <a href="./lessons/chord-shapes-guitar.html">Guitar Chord Shapes: From Pop and Rock Toward Jazz</a>, <a href="./lessons/chord-shapes-piano-hand.html">Piano Voicings by Hand: From Easy to Hard</a>, <a href="./lessons/chord-shapes-piano.html">Piano Chord Voicings: From Pop Triads Toward Jazz</a>, <a href="./lessons/guide-tones.html">Lesson: Guide Tones</a>, <a href="./lessons/reharmonize.html">Lesson: Reharmonizing a Melody</a>, <a href="./lessons/turnarounds.html">Lesson: Turnarounds and Rhythm Changes</a> (for students)</span></p>
 <p>Hutchinson, Robert. “Mode Mixture.” <em>Music Theory for the 21st-Century Classroom</em>, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/ModeMixture.html">musictheory.pugetsound.edu/mt21c/ModeMixture.html</a>. <span class="wc-used">Used in: <a href="./lessons/borrowed-chords.html">Lesson: Borrowed Chords</a> (for students)</span></p>
+<p>Hutchinson, Robert. “Modulation.” <em>Music Theory for the 21st-Century Classroom</em>, ch.&nbsp;22, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/Modulation.html">musictheory.pugetsound.edu/mt21c/Modulation.html</a>. Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation. <span class="wc-used">Used in: <a href="./theory/analysed-scores/bach-o-haupt.html">Bach: “O Haupt voll Blut und Wunden”</a>, <a href="./theory/analysed-scores/beethoven-moonlight-1.html">Beethoven: “Moonlight” Sonata, I</a>, <a href="./theory/modulation.html">Modulation: Practice for Chapter 22</a> (for students)</span></p>
 <p>Hutchinson, Robert. “Secondary Dominant Chords.” <em>Music Theory for the 21st-Century Classroom</em>, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/SecondaryDominants.html">musictheory.pugetsound.edu/mt21c/SecondaryDominants.html</a>. <span class="wc-used">Used in: <a href="./lessons/reharmonize.html">Lesson: Reharmonizing a Melody</a>, <a href="./lessons/turnarounds.html">Lesson: Turnarounds and Rhythm Changes</a> (for students)</span></p>
 <p>Hutchinson, Robert. “The Deceptive Cadence with ♭VI.” <em>Music Theory for the 21st-Century Classroom</em>, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/TheDeceptiveCadenceWithFlatSix.html">musictheory.pugetsound.edu/mt21c/TheDeceptiveCadenceWithFlatSix.html</a>. <span class="wc-used">Used in: <a href="./lessons/borrowed-chords.html">Lesson: Borrowed Chords</a>, <a href="./lessons/cadences.html">Lesson: Cadences, and the One That Is Not</a> (for students)</span></p>
 <p>Hutchinson, Robert. “The Picardy 3rd.” <em>Music Theory for the 21st-Century Classroom</em>, U of Puget Sound. <a href="https://musictheory.pugetsound.edu/mt21c/Picardy3rd.html">musictheory.pugetsound.edu/mt21c/Picardy3rd.html</a>. <span class="wc-used">Used in: <a href="./lessons/minor-changes.html">Lesson: Changes in a Minor Key</a> (for students)</span></p>
@@ -1842,7 +1793,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>“Newton v. Diamond.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Newton_v._Diamond">en.wikipedia.org/wiki/Newton_v._Diamond</a>. <span class="wc-used">Used in: <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a></span></p>
 <p>“Noise gate.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Noise_gate">en.wikipedia.org/wiki/Noise_gate</a>. <span class="wc-used">Used in: <a href="./lessons/sound-gate.html">Sound 15: Gates and Transients</a> (for students)</span></p>
 <p>“Noise-induced hearing loss.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Noise-induced_hearing_loss">en.wikipedia.org/wiki/Noise-induced_hearing_loss</a>. <span class="wc-used">Used in: <a href="./lessons/gear-setup.html">Gear 5: Setting Up, Packing Down and Your Ears</a> (for students)</span></p>
-<p>Nápoles López, Néstor, et al.&nbsp;<em>BCMH: The Bach Chorales Melody-Harmony Corpus</em>. GitHub. <a href="https://github.com/napulen/BCMH">github.com/napulen/BCMH</a>. The second chorale analysis (automated translation to RomanText). <span class="wc-used">Used in: <a href="./practice/analysed-scores.html">Analysed Scores</a> (for students)</span></p>
+<p>Nápoles López, Néstor, et al.&nbsp;<em>BCMH: The Bach Chorales Melody-Harmony Corpus</em>. GitHub. <a href="https://github.com/napulen/BCMH">github.com/napulen/BCMH</a>. A second analysis of the chorale (automated translation to RomanText), not shown on the site. <span class="wc-used">Used in: <a href="./theory/analysed-scores/index.html">Analysed Scores</a> (for teachers)</span></p>
 <p>“Numbered musical notation.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Jianpu">en.wikipedia.org/wiki/Jianpu</a>. <span class="wc-used">Used in: <a href="./lessons/notation-choices.html">Writing Music Down: Choosing the Right Notation</a> (for students)</span></p>
 <p>Nymand, Mikkel. “How to Mic Vocals in the Recording Studio.” <em>DPA Mic University</em>, DPA Microphones. <a href="https://www.dpamicrophones.com/mic-university/how-to-mic/how-to-mic-vocals-in-the-recording-studio/">www.dpamicrophones.com/mic-university/how-to-mic/how-to-mic-vocals-in-the-recording-studio/</a>. <span class="wc-used">Used in: <a href="./lessons/rec-voice.html">Recording 5: Miking a Voice</a> (for students)</span></p>
 <p>“Orchestra.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Orchestra">en.wikipedia.org/wiki/Orchestra</a>. <span class="wc-used">Used in: <a href="./lessons/compose-instruments.html">Composing 4: Instruments, Ranges and Transposing</a>, <a href="./lessons/compose-orchestra.html">Composing 5: Arranging for Orchestra</a> (for students)</span></p>
@@ -1933,8 +1884,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>Royer Labs. “Can Phantom Power Damage a Ribbon Mic?” <em>Royer Labs FAQ</em>. <a href="https://royerlabs.com/faq/can-phantom-power-damage-a-ribbon-mic/">royerlabs.com/faq/can-phantom-power-damage-a-ribbon-mic/</a>. <span class="wc-used">Used in: <a href="./lessons/rec-mics.html">Recording 2: Microphones and Phantom Power</a> (for students)</span></p>
 <p>Royer Labs. “Cross-Patching Microphone Tie Lines.” <em>Royer Labs FAQ</em>. <a href="https://royerlabs.com/faq/cross-patching-microphone-tie-lines/">royerlabs.com/faq/cross-patching-microphone-tie-lines/</a>. <span class="wc-used">Used in: <a href="./lessons/gear-power.html">Gear 1: Power and Safety</a>, <a href="./lessons/rec-mics.html">Recording 2: Microphones and Phantom Power</a> (for teachers)</span></p>
 <p>“Sampling (Music).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Sampling_(music)">en.wikipedia.org/wiki/Sampling_(music)</a>. <span class="wc-used">Used in: <a href="./lessons/sampling-chop.html">Sampling 2: Chopping and Slicing</a>, <a href="./lessons/sampling-flip.html">Sampling 5: Flipping a Sample</a>, <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a>, <a href="./lessons/sampling-what.html">Sampling 1: What a Sample Is</a></span></p>
-<p>Sapp, Craig Stuart, encoder. <em>370 Four-part Chorales by J. S. Bach in the Humdrum File Format</em>. GitHub. <a href="https://github.com/craigsapp/bach-370-chorales">github.com/craigsapp/bach-370-chorales</a>. The chorale’s notes (after Dörffel’s edition, Breitkopf &amp; Härtel, c.&nbsp;1875), converted to ABC for this page. <span class="wc-used">Used in: <a href="./practice/analysed-scores.html">Analysed Scores</a> (for students)</span></p>
-<p>Sapp, Craig Stuart, encoder. <em>Beethoven Piano Sonatas in the Humdrum File Format</em> (after the Durand 1915 edition, ed.&nbsp;Paul Dukas). GitHub. <a href="https://github.com/craigsapp/beethoven-piano-sonatas">github.com/craigsapp/beethoven-piano-sonatas</a>. The sonata’s notes, converted to ABC for this page. <span class="wc-used">Used in: <a href="./practice/analysed-scores.html">Analysed Scores</a> (for students)</span></p>
+<p>Sapp, Craig Stuart, encoder. <em>370 Four-part Chorales by J. S. Bach in the Humdrum File Format</em>. GitHub. <a href="https://github.com/craigsapp/bach-370-chorales">github.com/craigsapp/bach-370-chorales</a>. The chorale’s notes (after Dörffel’s edition, Breitkopf &amp; Härtel, c.&nbsp;1875), converted to ABC for this page. <span class="wc-used">Used in: <a href="./theory/analysed-scores/bach-o-haupt.html">Bach: “O Haupt voll Blut und Wunden”</a> (for students)</span></p>
+<p>Sapp, Craig Stuart, encoder. <em>Beethoven Piano Sonatas in the Humdrum File Format</em> (after the Durand 1915 edition, ed.&nbsp;Paul Dukas). GitHub. <a href="https://github.com/craigsapp/beethoven-piano-sonatas">github.com/craigsapp/beethoven-piano-sonatas</a>. The sonata’s notes, converted to ABC for this page. <span class="wc-used">Used in: <a href="./theory/analysed-scores/beethoven-moonlight-1.html">Beethoven: “Moonlight” Sonata, I</a> (for students)</span></p>
 <p>“Scat Singing.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Scat_singing">en.wikipedia.org/wiki/Scat_singing</a>. <span class="wc-used">Used in: <a href="./lessons/voice-jazz.html">Jazz Singing: Swing, Scat and the Changes</a> (for students)</span></p>
 <p>Schloss, Joseph G. <em>Making Beats: The Art of Sample-Based Hip-Hop</em>. Wesleyan UP, 2004. 2nd ed.&nbsp;2014, foreword by Jeff Chang. <span class="wc-used">Used in: <a href="./lessons/daw-beat.html">DAW 2: Programming a Beat</a>, <a href="./lessons/sampling-beat.html">Sampling 4: A Beat from Chops</a>, <a href="./lessons/sampling-chop.html">Sampling 2: Chopping and Slicing</a>, <a href="./lessons/sampling-flip.html">Sampling 5: Flipping a Sample</a>, <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a>, <a href="./lessons/sampling-pitch.html">Sampling 3: Pitch and Time-Stretch</a>, <a href="./lessons/sampling-what.html">Sampling 1: What a Sample Is</a> (for teachers)</span></p>
 <p>Schoenberg, Arnold. <em>Fundamentals of Musical Composition</em>. Edited by Gerald Strang with Leonard Stein, Faber and Faber, 1967. The classic treatment of the motive, its variation, and the sentence and period; not quoted here. <span class="wc-used">Used in: <a href="./lessons/compose-melody.html">Composing 1: Writing a Melody</a>, <a href="./lessons/compose-motif.html">Composing 2: Developing a Motif</a> (for teachers)</span></p>
@@ -2017,7 +1968,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 <p>Turabian, Kate L. <em>A Manual for Writers of Research Papers, Theses, and Dissertations</em>. 8th ed., U of Chicago P, 2013. The paraphrasing advice (pp.&nbsp;80–81) as quoted in the course book’s task references; edition assumed from the 2013 date. <span class="wc-used">Used in: <a href="./lessons/annotate-check.html">Annotated Bibliography 2: Summarise, Evaluate, Connect (Grades 9–10)</a>, <a href="./lessons/annotate-dp.html">Annotated Bibliography 3: DP Music (Grades 11–12)</a> (for teachers)</span></p>
 <p>“Turn On Input Monitoring for Audio Tracks.” <em>Logic Pro User Guide for Mac</em>, Apple, <a href="https://support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac">support.apple.com/guide/logicpro/turn-on-input-monitoring-for-audio-tracks-lgcpbfbefa96/mac</a>. <span class="wc-used">Used in: <a href="./lessons/daw-real.html">DAW 8: Your First Session in a Real DAW</a>, <a href="./lessons/daw-record.html">DAW 6: Recording Audio: Bleed and Headphones</a></span></p>
 <p>“Twelve-bar blues.” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Twelve-bar_blues">en.wikipedia.org/wiki/Twelve-bar_blues</a>. <span class="wc-used">Used in: <a href="./lessons/blues-bass.html">Blues for Bass: From Roots to a Walking Line</a>, <a href="./lessons/blues-changes.html">Lesson: Changing the Changes in a 12-Bar Blues</a>, <a href="./lessons/blues-drums.html">Blues for Drums: From Quarter Notes to the Shuffle</a>, <a href="./lessons/blues-guitar.html">Blues for Guitar: From Roots to Shell Chords</a>, <a href="./lessons/blues-improv.html">Improvising on a Blues: Blues in the Closet</a>, <a href="./lessons/blues-melody.html">Blues for Violin and Saxophone: Playing the Changes</a>, <a href="./lessons/blues-piano.html">Blues for Piano: From Roots to Rootless Voicings</a> (for students)</span></p>
-<p>Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No.&nbsp;2, in <em>When in Rome</em>. <a href="https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus">github.com/MarkGotham/When-in-Rome/tree/master/Corpus</a>. <span class="wc-used">Used in: <a href="./practice/analysed-scores.html">Analysed Scores</a> (for students)</span></p>
+<p>Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No.&nbsp;2, in <em>When in Rome</em>. <a href="https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus">github.com/MarkGotham/When-in-Rome/tree/master/Corpus</a>. The chorale’s analysis; his readings of the Moonlight are quoted where they differ from Chen and Su’s. <span class="wc-used">Used in: <a href="./theory/analysed-scores/bach-o-haupt.html">Bach: “O Haupt voll Blut und Wunden”</a>, <a href="./theory/analysed-scores/beethoven-moonlight-1.html">Beethoven: “Moonlight” Sonata, I</a>, <a href="./theory/modulation.html">Modulation: Practice for Chapter 22</a> (for students)</span></p>
 <p>United States Copyright Office. <em>Copyright Law of the United States</em>, Title 17, Chapter 1. <a href="https://www.copyright.gov/title17/92chap1.html">www.copyright.gov/title17/92chap1.html</a>. <span class="wc-used">Used in: <a href="./lessons/dj-set.html">DJ 7: Building a Set and Reading a Room</a>, <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a></span></p>
 <p>United States Copyright Office. <em>Copyright Registration for Sound Recordings</em> (Circular 56A). <a href="https://www.copyright.gov/circs/circ56a.pdf">www.copyright.gov/circs/circ56a.pdf</a>. <span class="wc-used">Used in: <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a></span></p>
 <p>United States Copyright Office. “U.S. Copyright Office Fair Use Index.” <a href="https://www.copyright.gov/fair-use/">www.copyright.gov/fair-use/</a>. <span class="wc-used">Used in: <a href="./lessons/sampling-law.html">Sampling 6: Clearing Samples and the Law</a></span></p>
@@ -2129,13 +2080,14 @@ document.addEventListener('DOMContentLoaded', async function () {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

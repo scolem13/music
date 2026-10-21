@@ -1,10 +1,14 @@
-// analysed-scores.js — the scores on practice/analysed-scores.qmd.
+// analysed-scores.js — the scores on theory/analysed-scores/ (one page per piece).
 //   <div class="as-score" data-bpm="66" data-pickup="1"><script type="text/plain">ABC</script></div>
 // Drawn as wide as their box, abcjs wrapping the bars to fit; a grip on the right edge resizes every box (double-click resets; kept in
 // localStorage). The first bar of each system is numbered (Classical Themes style). Figures written as superscript + subscript
 // (I⁶₄) are redrawn stacked. Sound: the band's piano from AbcPlay.ctx(), scheduled here from abcjs's timing, so playback can start
 // anywhere: ▶ / Space play from the lit position and pause; a click on a note or a Roman numeral moves the position there and sounds
 // the chord at that moment (held while the button is held; with Shift held until the next click; a quick click rings briefly).
+// Keys and form: data-keys (from the build script: [start in whole notes, key] at each change of key in the analysis) draws a strip
+// of coloured key areas above the score (click one: it is lit in the score and played). A table .as-form in the same section, rows
+// whose first cell gives the bars ("12–14", "Upbeat to 5–14"; or <tr data-bars="5-14" data-upbeat>), gets a ▶ in each row that lights and plays those bars in whichever tab's score is showing.
+// AnalysedScores.playBars(score, from, to, upbeat) does the same from other pages' links (?bars=7-9 on the address, too).
 (function (global) {
   var KEY = "as-score-width", SUP = "⁰¹²³⁴⁵⁶⁷⁸⁹", SUB = "₀₁₂₃₄₅₆₇₈₉", NS = "http://www.w3.org/2000/svg";
   function el(tag, cls, text) { var e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
@@ -18,7 +22,7 @@
     grip.title = "Drag to resize · double-click to reset"; grip.setAttribute("role", "separator"); grip.setAttribute("aria-orientation", "vertical");
     var play = el("button", "btn btn-sm btn-outline-secondary", "▶ Play"); play.type = "button"; S.btn = play;
     bar.appendChild(play); bar.appendChild(el("span", "as-help", "Space plays and pauses. Click a note or numeral to hear the chord there (hold, or Shift-click, to sustain)."));
-    host.innerHTML = ""; host.appendChild(bar); box.appendChild(paper); box.appendChild(grip); host.appendChild(box);
+    host.innerHTML = ""; host.appendChild(bar); S.strip = el("div", "as-keys"); host.appendChild(S.strip); box.appendChild(paper); box.appendChild(grip); host.appendChild(box);
     var w0 = store(); if (w0) box.style.width = w0 + "px";
     S.paper = paper;
     new ResizeObserver(function () { draw(S); }).observe(paper);
@@ -45,6 +49,7 @@
     stackFigures(S.paper);
     timing(S);
     light(S, S.pos);
+    if (S.hi) hiBars(S, S.hi[0], S.hi[1]);
   }
   // abcjs's timing: events (with their drawn elements) and every note's start, end and pitch, in ms
   function timing(S) {
@@ -56,6 +61,11 @@
     S.endMs = S.notes.reduce(function (a, n) { return Math.max(a, n.end); }, 0);
     // the analysis's chords: [start (whole notes), pitch classes] from data-chords (the build script, AbcNHT.chordPcs)
     var cs = []; try { cs = JSON.parse(S.host.getAttribute("data-chords") || "[]"); } catch (e) {}
+    S.msBar = msWhole * mf.num / mf.den; S.pickMs = 0;
+    if (+S.host.getAttribute("data-pickup")) { var first = S.events.find(function (e) { return e.measureStart && e.milliseconds > 0; }); if (first) S.pickMs = first.milliseconds; }
+    var ks = []; try { ks = JSON.parse(S.host.getAttribute("data-keys") || "[]"); } catch (e) {}
+    S.keys = ks.map(function (k, i) { return { ms: k[0] * msWhole, end: i + 1 < ks.length ? ks[i + 1][0] * msWhole : S.endMs, key: k[1] }; });
+    keyStrip(S);
     S.spans = cs.filter(function (c) { return c[1]; }).map(function (c) { return { ms: c[0] * msWhole, pcs: c[1] }; }).sort(function (a, b) { return a.ms - b.ms; });
   }
   function light(S, ms) {
@@ -71,19 +81,21 @@
   function start(S) {
     stopHeld(); scores.forEach(function (o) { if (o !== S && o.playing) pause(o); });
     if (S.pos >= S.endMs - 1) S.pos = 0;
+    if (!S.ranged) { S.stopAt = null; hiBars(S, 0, -1); } S.ranged = false;
     var from = S.pos, me = { raf: 0 }; S.playing = me; S.btn.textContent = "❚❚ Pause";
     bank().then(function (s) {
       if (S.playing !== me) return;
       var ac = s.ac, t0 = ac.currentTime + 0.1 - from / 1000; me.s = s; me.t0 = t0; me.ac = ac;
       S.notes.forEach(function (n) {
-        if (n.end <= from + 1) return;
+        if (n.end <= from + 1 || (S.stopAt != null && n.ms > S.stopAt)) return;
         var st = Math.max(n.ms, from);
         s.bank.play("piano", { midi: n.midi, vel: n.ms < from ? 0.4 : 0.7, dur: (n.end - st) / 1000 * 0.95 }, t0 + st / 1000, s.out);
       });
       (function tick() {
         if (S.playing !== me) return;
         var now = (ac.currentTime - t0) * 1000;
-        if (now >= from) { S.pos = now; light(S, now); follow(S); }
+        if (now >= from) { S.pos = now; light(S, now); follow(S); keyNow(S, now); }
+        if (S.stopAt != null && now > S.stopAt) { pause(S); S.stopAt = null; return; }
         if (now > S.endMs + 200) { S.playing = null; S.pos = 0; S.btn.textContent = "▶ Play"; light(S, -1); return; }
         me.raf = requestAnimationFrame(tick);
       })();
@@ -205,7 +217,81 @@
     r.addEventListener("input", function () { out.textContent = " " + r.value; try { localStorage.setItem(SPACE_KEY, r.value); } catch (e) {}
       scores.forEach(function (s) { s.lastW = 0; draw(s); }); });
   }
-  function init() { [].forEach.call(document.querySelectorAll(".as-score"), setup); spaceControl(); }
+  // ---- bars, keys and form
+  // the start of bar n (as numbered on the score) in ms; with a pickup, bar 1 is the first full bar
+  function barMs(S, n) { return S.pickMs ? S.pickMs + (n - 1) * S.msBar : (n - 1) * S.msBar; }
+  function barOf(S, ms) { return Math.floor((ms - S.pickMs) / S.msBar + 1e-6) + 1; }
+  // light bars a..b (the notes of those bars take the class as-hi); b < a clears
+  function hiBars(S, a, b) {
+    S.hi = b >= a ? [a, b] : null;
+    S.paper.querySelectorAll(".as-hi").forEach(function (n) { n.classList.remove("as-hi"); });
+    if (!S.hi) return;
+    var off = S.pickMs ? 0 : 1;
+    S.paper.querySelectorAll(".abcjs-note, .abcjs-rest").forEach(function (n) { var m = /abcjs-mm(\d+)/.exec(n.getAttribute("class")); if (m && +m[1] + off >= a && +m[1] + off <= b) n.classList.add("as-hi"); });
+  }
+  // play bars a..b (upbeat: from the last beat of bar a-1), lit; the score scrolled into view
+  function playBars(S, a, b, upbeat) {
+    if (!S || !S.msBar) return;
+    var from = barMs(S, a) - (upbeat ? S.msBar / (global.ABCJS ? S.tune.getMeterFraction().num : 4) : 0), to = barMs(S, b + 1) - 1;
+    from = Math.max(0, from);
+    if (S.playing) pause(S);
+    hiBars(S, a, b); active = S; S.pos = from; S.stopAt = to; S.ranged = true; light(S, from);
+    var r = S.host.getBoundingClientRect(); if (r.top < 0 || r.top > innerHeight * 0.6) S.host.scrollIntoView({ behavior: "smooth", block: "start" });
+    start(S);
+  }
+  // key names: "c#" -> c♯ (minor), "E" -> E; hue from the key's place on the circle of fifths (relative keys share it)
+  var FIFTHS = { C: 0, G: 1, D: 2, A: 3, E: 4, B: 5, "F#": 6, "C#": 7, "G#": 8, "D#": 9, "A#": 10, F: -1, Bb: -2, Eb: -3, Ab: -4, Db: -5, Gb: -6, Cb: -7, Fb: -8 };
+  function keyName(k) { return k.replace("#", "♯").replace(/(.)b$/, "$1♭") + (k[0] === k[0].toLowerCase() ? " minor" : " major"); }
+  function keyHue(k) { var minor = k[0] === k[0].toLowerCase(), t = k[0].toUpperCase() + k.slice(1), f = FIFTHS[t]; if (f == null) f = 0; if (minor) f -= 3; return ((f * 47) % 360 + 360 + 200) % 360; }
+  function keyStrip(S) {
+    var st = S.strip; if (!st) return; st.innerHTML = "";
+    if (!S.keys || !S.keys.length) { st.style.display = "none"; return; }
+    st.style.display = "";
+    var lab = el("div", "as-keys-h", "Keys in this analysis (click one to hear it)"), row = el("div", "as-keys-row"), total = S.endMs || 1;
+    st.appendChild(lab); st.appendChild(row);
+    S.keys.forEach(function (k) {
+      var a = barOf(S, k.ms), b = Math.max(a, barOf(S, k.end - 1)), seg = el("button", "as-key");
+      seg.type = "button"; seg.style.flexGrow = Math.max(0.0001, (k.end - k.ms) / total); seg.style.setProperty("--h", keyHue(k.key));
+      seg.textContent = k.key.replace("#", "♯").replace(/(.)b$/, "$1♭");
+      seg.title = keyName(k.key) + ": bar" + (a === b ? " " + a : "s " + a + "–" + b);
+      seg.addEventListener("click", function () { if (S.playing) pause(S); hiBars(S, a, b); active = S; S.pos = k.ms; S.stopAt = k.end - 1; S.ranged = true; light(S, k.ms); start(S); });
+      k.el = seg; row.appendChild(seg);
+    });
+  }
+  function keyNow(S, ms) { (S.keys || []).forEach(function (k) { if (k.el) k.el.classList.toggle("as-key-on", ms >= k.ms && ms < k.end); }); }
+  // the score showing in a section (the open tab)
+  // (a section with no score of its own, such as a form table under its own heading on a one-piece page, uses the page's)
+  function shownIn(root) { var list = scores.filter(function (s) { return root.contains(s.host); }); if (!list.length && root !== document.body) return shownIn(document.body);
+    return list.find(function (s) { return s.host.offsetParent; }) || list[0] || null; }
+  function forms() {
+    [].forEach.call(document.querySelectorAll(".as-form"), function (f) {
+      var root = f.closest("section.level2") || document.body;
+      f.querySelectorAll("tbody tr").forEach(function (tr) {   // bars from data-bars / data-upbeat, or the first cell ("Upbeat to 5–14")
+        var c0 = tr.querySelector("td"), txt = tr.getAttribute("data-bars") || (c0 ? c0.textContent : ""), m = /(\d+)(?:\s*[–-]\s*(\d+))?/.exec(txt);
+        if (!m) { if (c0 && c0.querySelector("strong")) tr.classList.add("as-sec"); return; }
+        var a = +m[1], b = +(m[2] || m[1]), up = tr.hasAttribute("data-upbeat") || /upbeat/i.test(txt);
+        var bt = el("button", "btn btn-sm btn-outline-primary as-form-play", "▶"); bt.type = "button"; bt.title = "Play bars " + a + (b > a ? "–" + b : "") + " in the score";
+        var cell = tr.querySelector("td"); if (cell) cell.insertBefore(bt, cell.firstChild);
+        bt.addEventListener("click", function () { f.querySelectorAll("tr.as-form-on").forEach(function (r) { r.classList.remove("as-form-on"); }); tr.classList.add("as-form-on"); playBars(shownIn(root), a, b, up); });
+      });
+    });
+    // bar links: <a class="as-bars" data-bars="7-9" data-piece="beethoven-moonlight-1">
+    document.addEventListener("click", function (e) {
+      var a = e.target.closest && e.target.closest("a.as-bars"); if (!a) return; e.preventDefault();
+      var m = /(\d+)(?:\D+(\d+))?/.exec(a.getAttribute("data-bars")), piece = a.getAttribute("data-piece");
+      var host = piece ? document.querySelector('.as-score[data-piece="' + piece + '"]') : null, root = host ? host.closest("section.level2") || document.body : document.body;
+      playBars(shownIn(root), +m[1], +(m[2] || m[1]), a.hasAttribute("data-upbeat"));
+    });
+    // ?piece=…&bars=7-9 from another page: light those bars (playing needs a click, so the ▶ is left to the reader)
+    var q = new URLSearchParams(location.search), bars = q.get("bars"), pc = q.get("piece");
+    if (bars && pc) setTimeout(function () {
+      var host = document.querySelector('.as-score[data-piece="' + pc + '"]'); if (!host) return;
+      var S = shownIn(host.closest("section.level2") || document.body), m = /(\d+)(?:\D+(\d+))?/.exec(bars); if (!S || !m) return;
+      var a = +m[1], b = +(m[2] || m[1]); hiBars(S, a, b); S.pos = barMs(S, a); light(S, S.pos); active = S;
+      var g = S.paper.querySelector(".as-hi"); (g || S.host).scrollIntoView({ block: "center" });
+    }, 600);
+  }
+  function init() { [].forEach.call(document.querySelectorAll(".as-score"), setup); spaceControl(); forms(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
-  global.AnalysedScores = { scores: function () { return scores; }, chordAt: chordAt, chordTones: chordTones };
+  global.AnalysedScores = { scores: function () { return scores; }, chordAt: chordAt, chordTones: chordTones, playBars: playBars, hiBars: hiBars, barMs: barMs };
 })(window);

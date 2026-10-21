@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Exercises for Chapter 19 of Hutchinson’s Music Theory for the 21st-Century Classroom: chords borrowed from the parallel minor (i, ii°, iiø7, ♭III, iv, v, ♭VI, ♭VII, ♭VII7, vii°7), naming and writing them with figures, lead-sheet symbols, the deceptive cadence to ♭VI, the Picardy third, and the book’s listening examples.">
+
+<title>Mode Mixture: Practice for Chapter 19 – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../theory/neapolitan.html" rel="next">
+<link href="../theory/secondary-diminished.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7f4c960c75fa4a060886384c4ea271f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../theory/index.html" aria-current="page"> 
+<span class="menu-text">Theory</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/triads.html">Hutchinson, Music Theory for the 21st-Century Classroom</a></li><li class="breadcrumb-item"><a href="../theory/mode-mixture.html">19. Mode Mixture</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Drills and Exercises</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/theory-drills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory Drills</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/exercise-builder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise Builder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Hutchinson, Music Theory for the 21st-Century Classroom</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/triads.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Triads</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/roman-numerals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Roman Numerals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/seventh-chords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Seventh Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/progressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Harmonic Progression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/non-chord-tones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Non-Chord Tones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/melodic-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Melodic Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/pop-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Form in Popular Music</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/accompaniment-textures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Accompanimental Textures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/figured-bass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Figured Bass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-dominants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Secondary Dominants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-diminished.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Secondary Diminished Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/mode-mixture.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">19. Mode Mixture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/neapolitan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. The Neapolitan Chord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/augmented-sixths.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Augmented Sixth Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/modulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Modulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/jazz-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Jazz Theory</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../theory/analysed-scores/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysed Scores</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/bach-o-haupt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bach: “O Haupt voll Blut und Wunden”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/beethoven-moonlight-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beethoven: “Moonlight” Sonata, I</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#mode-mixture" id="toc-mode-mixture" class="nav-link active" data-scroll-target="#mode-mixture">19.1 Mode mixture</a></li>
+  <li><a href="#which-chords-contain-the-borrowed-notes" id="toc-which-chords-contain-the-borrowed-notes" class="nav-link" data-scroll-target="#which-chords-contain-the-borrowed-notes">19.2 Which chords contain the borrowed notes</a></li>
+  <li><a href="#analysing-and-writing-borrowed-chords" id="toc-analysing-and-writing-borrowed-chords" class="nav-link" data-scroll-target="#analysing-and-writing-borrowed-chords">19.3 Analysing and writing borrowed chords</a></li>
+  <li><a href="#the-deceptive-cadence-with-vi" id="toc-the-deceptive-cadence-with-vi" class="nav-link" data-scroll-target="#the-deceptive-cadence-with-vi">19.4 The deceptive cadence with ♭VI</a></li>
+  <li><a href="#the-picardy-third" id="toc-the-picardy-third" class="nav-link" data-scroll-target="#the-picardy-third">19.5 The Picardy third</a></li>
+  <li><a href="#everything-together" id="toc-everything-together" class="nav-link" data-scroll-target="#everything-together">19.6 Everything together</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/triads.html">Hutchinson, Music Theory for the 21st-Century Classroom</a></li><li class="breadcrumb-item"><a href="../theory/mode-mixture.html">19. Mode Mixture</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Mode Mixture: Practice for Chapter 19</h1>
+</div>
+
+<div>
+  <div class="description">
+    Exercises for Chapter 19 of Hutchinson’s Music Theory for the 21st-Century Classroom: chords borrowed from the parallel minor (i, ii°, iiø7, ♭III, iv, v, ♭VI, ♭VII, ♭VII7, vii°7), naming and writing them with figures, lead-sheet symbols, the deceptive cadence to ♭VI, the Picardy third, and the book’s listening examples.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<link rel="stylesheet" href="../apps/shared/drills/drills.css?v=4">
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/drills/drills.js?v=14"></script>
+<script src="../apps/shared/drills/mixture.js?v=1"></script>
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+<p>This page goes with <strong>Chapter 19, Mode Mixture</strong> of Robert Hutchinson’s open textbook <a href="https://musictheory.pugetsound.edu/mt21c/ModeMixture.html"><em>Music Theory for the 21st-Century Classroom</em></a>. Read each section there first; the book is the reference for the terms used here. It follows <a href="../theory/secondary-diminished.html">Chapter 18, Secondary Diminished Chords</a>, and uses the Roman numerals of <a href="../theory/roman-numerals.html">Chapter 7</a> and the seventh chords of <a href="../theory/seventh-chords.html">Chapter 8</a>.</p>
+<p>Every drill has <strong>Settings</strong>, and is also on the <a href="../theory/theory-drills.html">Theory Drills</a> page.</p>
+<p><strong>Typing a borrowed chord:</strong> case and the sign after the numeral give the quality, as always: <code>iv</code>, <code>ii°</code>, <code>iiø7</code>, <code>vii°7</code>, <code>♭VI</code>, <code>♭VII7</code>. Type <code>b</code> for ♭ (<code>bVI</code>), <code>o</code> for °, <code>h</code> for ø. Inversions take the figures 6 and 64 for triads, 65, 43 and 42 for seventh chords: <code>iv6</code>, <code>♭VI64</code>, <code>iiø65</code>, <code>vii°42</code>.</p>
+<section id="mode-mixture" class="level2">
+<h2 class="anchored" data-anchor-id="mode-mixture">19.1 Mode mixture</h2>
+<p><strong>Mode mixture</strong> means using, in a major key, chords that belong to the <strong>parallel minor</strong> (the minor key on the same tonic). The book also calls them <strong>borrowed chords</strong>. You spot them by their lowered notes: most often <strong>♭6̂</strong> (A♭ in C major), sometimes <strong>♭3̂</strong> (E♭) and <strong>♭7̂</strong> (B♭). Listen for the sudden darkening when a minor-key chord appears in a major-key passage. <a href="https://musictheory.pugetsound.edu/mt21c/ModeMixtureSection.html">Read 19.1</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Lennon–McCartney, “Blackbird”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/4J5FPNitDc8?start=13&amp;end=24&amp;rel=0" title="Blackbird" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Richard Strauss, <em>Also sprach Zarathustra</em>: major I straight to minor i
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/IFPwm0e_K98?start=16&amp;end=36&amp;rel=0" title="Also sprach Zarathustra (1)" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Richard Strauss, <em>Also sprach Zarathustra</em>: a second borrowed chord
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/IFPwm0e_K98?start=69&amp;end=79&amp;rel=0" title="Also sprach Zarathustra (2)" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Linda Perry, “Beautiful”: bass 1̂–♭7̂–6̂–♭6̂
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/f1zLSpzCh9E?start=26&amp;end=39&amp;rel=0" title="Beautiful" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Hoyt Axton, “Joy to the World”: the same bass line
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/kyI1OImD7ow?start=13&amp;end=20&amp;rel=0" title="Joy to the World" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Ashman and Menken, “Part of Your World”: the same bass line again
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/SXKlJuO07eM?start=142&amp;end=153&amp;rel=0" title="Part of Your World" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Radiohead, “Creep”: IV, then the borrowed iv
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/XFkzRNyygfk?start=0&amp;end=21&amp;rel=0" title="Creep" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Kurt Cobain, “Lithium”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/pkcJEvMcnEg?start=0&amp;end=9&amp;rel=0" title="Lithium" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Brahms, Symphony No.&nbsp;3, III: I alternating with a borrowed chord
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/t9ndxDhgZBM?start=58&amp;end=73&amp;rel=0" title="Brahms Symphony 3, III" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Frank Loesser, “Inchworm”: I alternating with ♭VII7
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/6dd6e14ov2c?start=22&amp;end=34&amp;rel=0" title="Inchworm" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Tchaikovsky, <em>The Nutcracker</em>, “Waltz of the Flowers”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Kw0wLLVEMaA?start=63&amp;end=72&amp;rel=0" title="Waltz of the Flowers" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Joe Sample and Will Jennings, “One Day I’ll Fly Away”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/W4ROfyCjJeE?start=126&amp;end=133&amp;rel=0" title="One Day I'll Fly Away" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>Start with the symbols. Given the numeral in a major key, which chord is it?</p>
+<div class="drill" data-ex="mixsym" data-settings="most=1&amp;dir=find&amp;chords=iv,♭VI,♭VII,♭III,i">
+
+</div>
+</section>
+<section id="which-chords-contain-the-borrowed-notes" class="level2">
+<h2 class="anchored" data-anchor-id="which-chords-contain-the-borrowed-notes">19.2 Which chords contain the borrowed notes</h2>
+<p>Put a lowered note into the major key’s chords and their quality changes. The book lists each place ♭6̂, ♭3̂ and ♭7̂ can sit. In C major:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Borrowed note</th>
+<th>as root</th>
+<th>as 3rd</th>
+<th>as 5th</th>
+<th>as 7th</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>♭6̂ (A♭)</td>
+<td>♭VI (A♭ C E♭)</td>
+<td>iv (F A♭ C)</td>
+<td>ii° (D F A♭), iiø7 (D F A♭ C)</td>
+<td>vii°7 (B D F A♭), ♭VII7 (B♭ D F A♭)</td>
+</tr>
+<tr class="even">
+<td>♭3̂ (E♭)</td>
+<td>♭III (E♭ G B♭)</td>
+<td>i (C E♭ G)</td>
+<td>♭VI (A♭ C E♭)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>♭7̂ (B♭)</td>
+<td>♭VII (B♭ D F)</td>
+<td>v (G B♭ D)</td>
+<td>♭III (E♭ G B♭)</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The book’s advice: you don’t need to memorize the list. What matters is seeing that a minor-key note changes the quality of the chord it sits in. The drills add <strong>iv7</strong> (F A♭ C E♭), which is not in the book’s two figures. <a href="https://musictheory.pugetsound.edu/mt21c/HarmonizationOfBorrowedScaleDegrees.html">Read 19.2</a></p>
+<p>Find the chord, with every chord in the table:</p>
+<div class="drill" data-ex="mixsym" data-settings="most=3&amp;dir=find">
+
+</div>
+<p>And the other way round. Given the symbol, name it with a numeral:</p>
+<div class="drill" data-ex="mixsym" data-settings="most=3&amp;dir=name">
+
+</div>
+</section>
+<section id="analysing-and-writing-borrowed-chords" class="level2">
+<h2 class="anchored" data-anchor-id="analysing-and-writing-borrowed-chords">19.3 Analysing and writing borrowed chords</h2>
+<p>Analysing a borrowed chord is easier than analysing a secondary chord: there is no slash. You give its <strong>root, quality and inversion</strong>, as for any chord. The book’s example: in G major, the notes C–E♭–G–A stack in thirds as A–C–E♭–G. The root is A (2̂), the thirds are m3–m3–M3, so it is half-diminished, and C (the 3rd) is in the bass: <strong>iiø65</strong>.</p>
+<p>To write one, read the numeral’s quality carefully. The ♭ in <strong>♭VI</strong> means the root is a half step below the major key’s 6̂; it does not mean “write a flat”. In A major, 6̂ is F♯, so ♭VI is built on <strong>F♮</strong>: F–A–C. <a href="https://musictheory.pugetsound.edu/mt21c/AnalyzingAndWritingBorrowedChords.html">Read 19.3</a></p>
+<p>Name the chord on the staff:</p>
+<div class="drill" data-ex="mix" data-settings="most=3&amp;inv=root&amp;clef=treble,bass">
+
+</div>
+<p>With inversions. Stack it in thirds to find the root, then read the bass for the figure:</p>
+<div class="drill" data-ex="mix" data-settings="most=5&amp;inv=all&amp;clef=treble,bass">
+
+</div>
+<p>Write it, lowest note first:</p>
+<div class="drill" data-ex="mixwrite" data-settings="most=3&amp;inv=root">
+
+</div>
+<div class="drill" data-ex="mixwrite" data-settings="most=6&amp;inv=all">
+
+</div>
+</section>
+<section id="the-deceptive-cadence-with-vi" class="level2">
+<h2 class="anchored" data-anchor-id="the-deceptive-cadence-with-vi">19.4 The deceptive cadence with ♭VI</h2>
+<p>The usual deceptive cadence goes V–vi. Going instead to the major chord on ♭6̂, <strong>V–♭VI</strong>, is a stronger surprise. The book’s examples are endings of “The Star-Spangled Banner” as sung at Super Bowls and inaugurations, where ♭VI then moves to ♭VII and I. <a href="https://musictheory.pugetsound.edu/mt21c/TheDeceptiveCadenceWithFlatSix.html">Read 19.4</a></p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+“The Star-Spangled Banner”, Whitney Houston, Super Bowl 1991
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/KbkWuVUkPmY?start=105&amp;end=122&amp;rel=0" title="Star-Spangled Banner (Whitney Houston)" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+“The Star-Spangled Banner”, Beyoncé, Presidential Inauguration 2013
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/qGDH18R7GfA?start=121&amp;end=140&amp;rel=0" title="Star-Spangled Banner (Beyoncé)" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+“The Star-Spangled Banner”, Lady Gaga, Super Bowl 2016
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/GbXSZBnBOQ4?start=135&amp;end=165&amp;rel=0" title="Star-Spangled Banner (Lady Gaga)" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<p>By ear: the phrase is I, then IV or ii, then V, then either vi or ♭VI. Which one? (The staff appears after you answer.)</p>
+<div class="drill" data-ex="mixdc" data-settings="most=3&amp;show=ear">
+
+</div>
+</section>
+<section id="the-picardy-third" class="level2">
+<h2 class="anchored" data-anchor-id="the-picardy-third">19.5 The Picardy third</h2>
+<p>Borrowing the other way, from major into minor, is rare. The one common case is the <strong>last chord of a minor-key piece</strong>: a major I instead of i. Its raised 3rd is the <strong>Picardy third</strong>. The book notes it was most common in the Baroque, and is still used now and then. <a href="https://musictheory.pugetsound.edu/mt21c/Picardy3rd.html">Read 19.5</a></p>
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+J. S. Bach, French Suite No.&nbsp;1 in D minor, BWV 812, Sarabande
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/fTwkVsECg9w?start=141&amp;end=167&amp;rel=0" title="French Suite No. 1, Sarabande" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+<p>A minor-key phrase, i, then iv or VI, then V, then the tonic. Does it end minor or major?</p>
+<div class="drill" data-ex="picardy" data-settings="most=3&amp;show=ear">
+
+</div>
+</section>
+<section id="everything-together" class="level2">
+<h2 class="anchored" data-anchor-id="everything-together">19.6 Everything together</h2>
+<p>All borrowed chords, all positions. Set <strong>Questions</strong> to 20 for a score. <a href="https://musictheory.pugetsound.edu/mt21c/ModeMixturePracticeExercises.html">Practice exercises with answers (19.6)</a></p>
+<p>The book’s exercise 1, analysing (the book’s set also mixes in secondary chords; for those, see the <a href="../theory/secondary-dominants.html">Chapter 17</a> and <a href="../theory/secondary-diminished.html">Chapter 18</a> pages):</p>
+<div class="drill" data-ex="mix" data-settings="most=7&amp;inv=all&amp;clef=treble,bass">
+
+</div>
+<p>The book’s exercise 2, writing:</p>
+<div class="drill" data-ex="mixwrite" data-settings="most=7&amp;inv=all">
+
+</div>
+<p>Both exercises also ask for lead-sheet symbols:</p>
+<div class="drill" data-ex="mixsym" data-settings="most=7&amp;dir=both">
+
+</div>
+<p>The book’s exercise 3 analyses a passage of Chopin’s Nocturne in E♭ major, Op. 9 No.&nbsp;2.</p>
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Chopin, Nocturne in E♭ major, Op. 9 No.&nbsp;2
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/bVeOdm-29pU?start=1&amp;end=19&amp;rel=0" title="Nocturne Op. 9 No. 2" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For teachers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>Links with your settings:</strong> open a drill’s <strong>Settings</strong>, then <strong>Copy a link with these settings</strong>. Add <code>&amp;lock=1</code> for a test, <code>&amp;count=20</code> for a score.</li>
+<li><strong>Chords drilled:</strong> the book’s Figures 19.2.1 and 19.2.2: i, ii°, iiø7, ♭III, iv, v, ♭VI, ♭VII, ♭VII7 and vii°7, in major keys, plus iv7, which is not in those figures. Pick any of them under <strong>Settings → Chords</strong>. Every one has at least one note outside the key signature, and no two of them, nor any diatonic chord of the major key, have the same spelled notes, so each question has one answer. Keys that would need a double flat for a chord are skipped for that chord.</li>
+<li><strong>Numerals:</strong> as in the book: no slash, case and ° / ø for quality, ♭ before the numeral for a lowered root. vii°7 has no ♭, as in the book’s figure and its exercise 1 (D: vii°42).</li>
+<li><strong>Ear drills:</strong> four chords, one a bar, root in the bass and a close triad above. The deceptive cadence drill is I, IV or ii, V, then vi or ♭VI; the Picardy drill is i, iv or VI, V, then i or I.</li>
+<li><strong>Voicing:</strong> close position above the bass. The drills are for spelling and labelling, not for voice leading.</li>
+<li><strong>Checked:</strong> <code>node tests/lessons/mixture-drill.test.js</code> generates about 14,000 questions and checks each against its own table of the chords in C moved to the question’s key: the spelling, the figure, a chromatic note, one answer only, the drawn ABC sounding the same notes, and the typed forms the page promises.</li>
+<li><strong>Videos:</strong> the clips use the book’s YouTube links and start and end times; each was checked against YouTube. Some are covers or other recordings rather than the writers’ own: “Blackbird” is Sarah McLachlan’s recording, “Beautiful” is Christina Aguilera’s, “Joy to the World” is Three Dog Night’s, and “One Day I’ll Fly Away” is a lyrics video of the <em>Moulin Rouge!</em> version on a fan channel.</li>
+<li>The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../theory/secondary-diminished.html" class="pagination-link" aria-label="18. Secondary Diminished Chords">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">18. Secondary Diminished Chords</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../theory/neapolitan.html" class="pagination-link" aria-label="20. The Neapolitan Chord">
+        <span class="nav-page-text">20. The Neapolitan Chord</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

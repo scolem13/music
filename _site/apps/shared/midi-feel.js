@@ -210,7 +210,8 @@
   var subs = [], access = null, connecting = null, held = {};
   function emit(e) { subs.slice().forEach(function (f) { try { f(e); } catch (err) { console.error(err); } }); }
   function onMsg(ev) {
-    var d = ev.data, st = d[0] & 0xf0, t = ev.timeStamp || performance.now();
+    var d = ev.data, st = d[0] & 0xf0, now = performance.now(), t = ev.timeStamp;
+    if (!(t > 0) || Math.abs(t - now) > 1000) t = now;   // a stamp from another clock (some systems): use now
     if (st === 0x90 && d[2] > 0) emit({ type: "on", midi: d[1], vel: d[2], time: t });
     else if (st === 0x80 || (st === 0x90 && d[2] === 0)) emit({ type: "off", midi: d[1], vel: 0, time: t });
   }

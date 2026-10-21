@@ -1,4 +1,4 @@
-// The secondary diminished drills (Drills.engines.secdim / secdimwrite / secdimsym, practice/secondary-diminished.qmd) in Node. Each
+// The secondary diminished drills (Drills.engines.secdim / secdimwrite / secdimsym, theory/secondary-diminished.qmd) in Node. Each
 // generated question is checked by arithmetic of its own: the chord's root is a half step below the root of the chord it resolves to,
 // it is a diminished triad, or a fully-diminished seventh before a minor chord and a half-diminished seventh before a major one (the
 // book's Figures 18.2.1-2), the figure matches the bass, at least one note is outside the key signature, the drawn ABC sounds the

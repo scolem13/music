@@ -1,4 +1,4 @@
-// The mode-mixture drills (apps/shared/drills/mixture.js: mix / mixwrite / mixsym / mixdc / picardy, practice/mode-mixture.qmd) in
+// The mode-mixture drills (apps/shared/drills/mixture.js: mix / mixwrite / mixsym / mixdc / picardy, theory/mode-mixture.qmd) in
 // Node. Each question is checked against a table of its own, written out here in C major from the book's Figures 19.2.1-2 (plus iv7)
 // and moved to the question's key by letter steps and semitones: the notes are spelled as the table says, the figure matches the bass,
 // at least one note is outside the key signature, no other chord in the set (nor any diatonic triad or seventh of the major key) has

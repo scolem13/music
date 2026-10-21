@@ -1,0 +1,204 @@
+---
+aliases:
+  - ../practice/modulation.html
+title: "Modulation: Practice for Chapter 22"
+toc: true
+toc-depth: 2
+description: "Interactive practice for Chapter 22 of Hutchinson's Music Theory for the 21st-Century Classroom: tonicization against modulation, closely related keys, finding common (pivot) chords between two keys and hearing them, the kinds of modulation (diatonic and chromatic pivots, direct, common-tone, sequential), a which-kind quiz, and every modulation in the first movement of Beethoven's Moonlight Sonata."
+---
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-play.js?v=4"></script>
+<script src="/apps/shared/modulation.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.mod-row { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: .5rem 0; }
+.mod-row .form-select { width: auto; }
+.mod-rel { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: .4rem; margin: .5rem 0; }
+.mod-relkey { display: flex; flex-direction: column; align-items: flex-start; text-align: left; padding: .4rem .6rem; border-radius: 6px;
+  border: 1px solid rgba(128,128,128,.4); background: transparent; color: inherit; cursor: pointer; }
+.mod-relkey span { font-size: .8rem; opacity: .8; } .mod-relkey small { font-size: .75rem; opacity: .6; }
+.mod-relkey.mod-home { border-width: 2px; }
+.mod-relkey:hover, .mod-relkey.mod-on { border-color: #0d6efd; background: rgba(13,110,253,.08); }
+.mod-table td, .mod-table th { vertical-align: middle; }
+.mod-table tr.mod-common td { background: rgba(25,135,84,.10); font-weight: 600; }
+.mod-table tr.mod-on td { background: rgba(13,110,253,.15); }
+.mod-table-wrap { overflow-x: auto; }
+.mod-cap { font-size: .92rem; margin: .4rem 0; }
+.mod-good { color: #146c43; } .mod-warn { color: #b02a37; }
+@media (prefers-color-scheme: dark) { .mod-good { color: #75b798; } .mod-warn { color: #ea868f; } }
+.mod-stage { margin: .3rem 0 .8rem; }
+.mod-stage .mod-play { margin-bottom: .2rem; }
+.mod-stage .abc-on { fill: #0d6efd; color: #0d6efd; }
+.mod-ex { border-left: 3px solid rgba(128,128,128,.3); padding-left: .8rem; margin: .5rem 0 1.2rem; }
+.mod-choices { display: flex; flex-wrap: wrap; gap: .35rem; margin: .4rem 0; }
+.mod-score { margin-left: .6rem; opacity: .8; }
+</style>
+```
+
+This page goes with **Chapter 22, Modulation** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Read each section there
+first; the book is the reference for the terms used here. Everything on this page plays: the examples are written out in four parts
+with the Roman numerals under the bass, and a **pivot chord** shows both of its numerals, the old key's above the new one's (the book draws a
+bracket). Each section folds from its ▾; the list on the right jumps to any of them.
+
+The examples use the numerals of [Chapter 7](roman-numerals.qmd), the functions of [Chapter 9](progressions.qmd) (T tonic, TP tonic
+prolongation, PD pre-dominant, D dominant), and the chromatic chords of Chapters [17](secondary-dominants.qmd),
+[19](mode-mixture.qmd) and [20](neapolitan.qmd). [Analysed Scores](analysed-scores/beethoven-moonlight-1.qmd) has a whole movement full of
+modulations to listen to: see [the last section](#moonlight).
+
+## 22.1–22.2 Tonicization or modulation? {#tonicization}
+
+A **modulation** moves the music to a new key and stays there long enough to make it the key: in the book's words, it needs an
+eventual **cadence that confirms the new key**, often the full pre-dominant – I⁶₄ – V – I formula. A **tonicization** only borrows
+a chord's dominant for a moment (V/V – V, from [Chapter 17](secondary-dominants.qmd)) and the home key never goes away.
+
+Telling them apart is not always easy. A short passage ending with an authentic cadence in a new key could be either, and analysts
+disagree. The book's method: find the cadence in the new key, then work backwards to the point where the new key's chords begin; that is
+where to look for the pivot.
+
+**Hear the difference.** Both start in C. The first touches G (V/V – V) and comes home; the second goes to G and confirms it with a cadence.
+
+<div class="mod-ex" data-kind="tonicize"></div>
+<div class="mod-ex" data-kind="diatonic"></div>
+
+*In the Moonlight:* the B major chord at the start of the second theme (bars 15–19) is read **both ways** by two analysts in
+When in Rome: Chen and Su (on Analysed Scores) call it V/iv in B minor, a tonicization; Dmitri Tymoczko calls it V in E minor, a modulation. Nothing ever cadences in E minor.
+[See and hear it](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=15-19).
+
+## 22.3 Key relationships {#keys}
+
+**Closely related keys** have key signatures that differ by at most one sharp or flat. Every key has five: its relative major or minor,
+and the keys one sharp and one flat away, with their relatives. Any other key is **foreign** (distantly related). Classical
+composers most often go from a major key to its dominant and from a minor key to its relative major.
+
+Pick a home key, then click any of its relatives to hear a modulation there (the page finds a pivot chord for it; see 22.4).
+
+<div class="mod-related" data-key="C"></div>
+
+## 22.4 Modulations with diatonic pivot chords {#diatonic-pivot}
+
+A **pivot** (common) chord belongs to both keys: the same root, spelled the same, and the same quality. It is heard first in the old key
+and then reheard in the new one. Find candidates by listing the diatonic triads of both keys and matching them.
+
+The book's advice on choosing one:
+
+- a pivot that is **pre-dominant in the new key** (ii, IV, ii°, iv) makes the smoothest move;
+- one that is **dominant in the new key** is usually avoided: the change sounds abrupt;
+- in the old key the pivot is often **tonic or tonic prolongation** (I, vi, iii).
+
+Choose two keys. Shared chords are highlighted, with each one's function in both keys; **Pivot ▶** writes out and plays a modulation
+through that chord, confirmed by a cadence in the new key. Try C to G, C to a minor, c♯ minor to E major (the Moonlight's first
+move), and C to F♯ (no common chords).
+
+<div class="mod-pivot" data-from="C" data-to="G"></div>
+
+<div class="mod-ex" data-kind="diatonic"></div>
+
+*In the Moonlight:* bar 7. The F♯ minor chord is iv in c♯ minor and ii in E major, pre-dominant in the new key, followed by
+I⁶₄ – V⁷ – I in E.
+[See and hear it](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=5-9).
+In Tymoczko's reading, the f♯ minor chord in bar 25, i in f♯, becomes iv in c♯ on the way home.
+
+## 22.5 Recognising the new key {#recognise}
+
+Look for **accidentals that keep coming back** and add them to the key signature:
+
+- a new **flat** (or a natural cancelling a sharp) is usually the new key's scale degree 4;
+- a new **sharp** (or a natural cancelling a flat) is often its leading tone (scale degree 7): with several, take the one furthest along the
+  order of sharps;
+- accidentals that are **cancelled again** soon are only tonicizations or chromatic non-chord tones.
+
+*In the Moonlight:* bar 10. The G♯s become G♮ and stay that way: E major has become E minor. Then A♯ appears and keeps coming back,
+the leading tone of B minor (bars 12–14).
+
+## 22.6 Modulations with chromatic pivot chords {#chromatic-pivot}
+
+A pivot can be **chromatic** in one or both keys, which lets the music reach keys that share few or no diatonic chords.
+
+**Secondary common chord:** a secondary chord in both keys.
+
+<div class="mod-ex" data-kind="secondary"></div>
+
+**Borrowed common chord:** a chord borrowed from the parallel mode ([Chapter 19](mode-mixture.qmd)) in one key, ordinary in the other.
+The book's example is from Beethoven's Op. 110: a borrowed i⁶ in D♭ major, respelled as C♯ minor, becomes vi⁶ in E major.
+
+<div class="mod-ex" data-kind="borrowed"></div>
+
+**Neapolitan common chord:** the [Neapolitan](neapolitan.qmd) can link distantly related keys.
+
+<div class="mod-ex" data-kind="neapolitan"></div>
+
+**Augmented sixth common chord:** an augmented sixth chord reheard as a dominant seventh (or the other way round) is an
+*enharmonic* modulation, the subject of the book's next chapter.
+
+*In the Moonlight:* bars 11–14. Tymoczko hears V⁷/V in E minor become V⁷ in B minor, a secondary common chord. (Chen and Su, on Analysed Scores, turn to B minor on a G major chord, III in E minor and VI in B minor.)
+[See and hear it](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=11-14).
+
+## 22.7 Modulations without pivot chords {#direct}
+
+**Direct modulation** (also called **phrase modulation**): a phrase ends in one key and the next simply starts in another, with no
+pivot. The book's example is Schubert's "Kriegers Ahnung": a half cadence in C minor, then straight into A♭ major.
+
+<div class="mod-ex" data-kind="direct"></div>
+
+**Common-tone modulation:** two chords from different keys are joined by a single shared note, held while the rest moves. It often
+links **chromatic mediants**: chords whose roots are a third apart, of the same quality (both major or both minor), that share just
+one note. C major and E major share only E.
+
+<div class="mod-ex" data-kind="commontone"></div>
+
+**Sequential modulation:** a passage and its harmony are repeated at a new pitch, and the repetition settles in (or leads to) a new
+key. The book cites Mozart's Oboe Concerto, K. 314, III, which moves up by step from C major to D major to E minor.
+
+<div class="mod-ex" data-kind="sequential"></div>
+
+*In the Moonlight:* bars 9–10. E major turns into E minor with no pivot: a direct change of mode.
+[See and hear it](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=9-10).
+
+## Which kind is it? {#quiz}
+
+An example in a random key, without its numerals. Listen, look at where the key signature changes and what is happening just before it, and choose. The
+numerals appear once you answer.
+
+<div class="mod-quiz"></div>
+
+## In the Moonlight Sonata {#moonlight}
+
+The first movement of Beethoven's Op. 27 No. 2 travels from c♯ minor to E major, E minor, B minor and F♯ minor before coming home, and it
+uses almost every kind of modulation on this page. [Analysed Scores](analysed-scores/beethoven-moonlight-1.qmd) has the whole movement with Chen and Su's
+Roman numerals, a strip of the keys they hear, the form part by part, and a table of every modulation with links that play each one.
+
+| Bars | Move | Kind |
+|---|---|---|
+| [5–9](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=5-9) | c♯ → E | [Diatonic pivot](#diatonic-pivot): iv = ii |
+| [9–10](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=9-10) | E → e | [Direct](#direct), a change of mode |
+| [11–14](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=11-14) | e → b | [Diatonic pivot](#diatonic-pivot): III = VI (Chen and Su); [secondary common chord](#chromatic-pivot) (Tymoczko) |
+| [15–19](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=15-19) | B major: b or e? | [Tonicization or modulation](#tonicization) |
+| [19–23](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=19-23) | → f♯ | Through the new key's own dominant, confirmed by a cadence |
+| [23–27](analysed-scores/beethoven-moonlight-1.html?piece=beethoven-moonlight-1&bars=23-27) | f♯ → c♯ | [Diatonic pivot](#diatonic-pivot): i = iv (Tymoczko) |
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **The examples are this site's**, not the book's (the book's are recordings and score images), each written in four parts: the
+  bass, and three upper voices that move as little as possible from chord to chord. They are not checked for every
+  part-writing rule. The quiz transposes them to any key that needs no double sharps or flats and no more than six sharps or flats.
+- **Common chords** are the diatonic triads only. Minor keys list i ii° III iv v V VI VII vii° (both forms of the dominant
+  and of the 7th degree), so a chord made from the natural minor counts. A pivot is chosen automatically for the closely related key
+  buttons: pre-dominant in the new key if possible, never dominant there.
+- **Functions** follow Chapter 9: I and i are T; vi, VI, iii and III are TP; IV, iv, ii and ii° are PD; V, v, vii° and VII are D.
+  The book treats VII in minor and iii in major more carefully than this table does.
+- **The Moonlight links** open Analysed Scores with the bars lit; press ▶ there (or the bar links in its modulation table) to hear them.
+- The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation.
+
+Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's.
+:::
+<!-- /works-cited -->

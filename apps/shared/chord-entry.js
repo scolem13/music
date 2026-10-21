@@ -958,7 +958,8 @@
     if (!nav || !nav.requestMIDIAccess) return Promise.reject(new Error("no-web-midi"));
     return nav.requestMIDIAccess().then(function (a){
       function msg(e){
-        var d = e.data, cmd = d[0] & 0xf0, t = e.timeStamp || global.performance.now();
+        var d = e.data, cmd = d[0] & 0xf0, now = global.performance.now(), t = e.timeStamp;
+        if (!(t > 0) || Math.abs(t - now) > 1000) t = now;   // some systems stamp MIDI from another clock: hours off, a take of thousands of bars
         if (cmd === 0x90 && d[2] > 0) h.on(d[1], d[2] / 127, t); else if (cmd === 0x80 || cmd === 0x90) h.off(d[1], t);
       }
       function bind(){ var names = []; a.inputs.forEach(function (i){ i.onmidimessage = msg; names.push(i.name || "MIDI input"); }); if (h.inputs) h.inputs(names); }

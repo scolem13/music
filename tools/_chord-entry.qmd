@@ -293,13 +293,13 @@
 <script src="/apps/shared/tune-chart.js?v=31"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
-<script src="/apps/shared/chord-entry.js?v=10"></script>
+<script src="/apps/shared/chord-entry.js?v=11"></script>
 <script src="/apps/shared/lyric-align.js?v=3"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/band/tune-score.js?v=2"></script>
 <script src="/apps/shared/melody-dwim.js?v=1"></script>
-<script src="/apps/shared/musical-typing.js"></script>
+<script src="/apps/shared/musical-typing.js?v=2"></script>
 <script src="/apps/shared/band/harmony.js?v=33"></script>
 <script src="/apps/shared/band/bass.js?v=13"></script>
 <script src="/apps/shared/band/comp.js?v=27"></script>

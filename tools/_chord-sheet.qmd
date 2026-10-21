@@ -287,7 +287,7 @@ html.embed-super #establish-tonality-btn{display:none!important}
 
 <script src="/apps/shared/degree-names.js?v=1"></script>
 <script src="/apps/shared/voicings.js?v=5"></script>
-<script src="/apps/shared/chord-entry.js?v=2"></script>
+<script src="/apps/shared/chord-entry.js?v=11"></script>
 <script>
 (function(){
 'use strict';

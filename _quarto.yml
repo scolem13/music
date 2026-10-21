@@ -199,12 +199,63 @@ website:
             - lessons/timestamp-player.qmd
             - lessons/section-labels.qmd
         - bibliography.qmd
+    - id: theory
+      title: Theory
+      style: docked
+      collapse-level: 2
+      contents:
+        - theory/index.qmd
+        - section: "Drills and Exercises"
+          contents:
+            - theory/theory-drills.qmd
+            - theory/exercise-builder.qmd
+        - section: "Hutchinson, Music Theory for the 21st-Century Classroom"
+          contents:
+            - href: theory/triads.qmd
+              text: "6. Triads"
+            - href: theory/roman-numerals.qmd
+              text: "7. Roman Numerals"
+            - href: theory/seventh-chords.qmd
+              text: "8. Seventh Chords"
+            - href: theory/progressions.qmd
+              text: "9. Harmonic Progression"
+            - href: theory/non-chord-tones.qmd
+              text: "10. Non-Chord Tones"
+            - href: theory/melodic-analysis.qmd
+              text: "11. Melodic Analysis"
+            - href: theory/pop-forms.qmd
+              text: "12. Form in Popular Music"
+            - href: theory/accompaniment-textures.qmd
+              text: "14. Accompanimental Textures"
+            - href: theory/figured-bass.qmd
+              text: "16. Figured Bass"
+            - href: theory/secondary-dominants.qmd
+              text: "17. Secondary Dominants"
+            - href: theory/secondary-diminished.qmd
+              text: "18. Secondary Diminished Chords"
+            - href: theory/mode-mixture.qmd
+              text: "19. Mode Mixture"
+            - href: theory/neapolitan.qmd
+              text: "20. The Neapolitan Chord"
+            - href: theory/augmented-sixths.qmd
+              text: "21. Augmented Sixth Chords"
+            - href: theory/modulation.qmd
+              text: "22. Modulation"
+            - href: theory/jazz-theory.qmd
+              text: "31. Jazz Theory"
+        - section: "Analysed Scores"
+          href: theory/analysed-scores/index.qmd
+          contents:
+            - theory/analysed-scores/bach-o-haupt.qmd
+            - theory/analysed-scores/beethoven-moonlight-1.qmd
   navbar:
     left:
       - href: index.qmd
         text: Home
       - href: lessons/index.qmd
         text: Lessons
+      - href: theory/index.qmd
+        text: Theory
       - text: Practice
         menu:
           - practice/session.qmd
@@ -217,23 +268,6 @@ website:
           - practice/rhythms.qmd
           - practice/reading-benchmarks.qmd
           - practice/dictation.qmd
-          - practice/theory-drills.qmd
-          - practice/exercise-builder.qmd
-          - practice/analysed-scores.qmd
-          - practice/triads.qmd
-          - practice/roman-numerals.qmd
-          - practice/seventh-chords.qmd
-          - practice/progressions.qmd
-          - practice/non-chord-tones.qmd
-          - practice/melodic-analysis.qmd
-          - practice/pop-forms.qmd
-          - practice/accompaniment-textures.qmd
-          - practice/secondary-dominants.qmd
-          - practice/secondary-diminished.qmd
-          - practice/mode-mixture.qmd
-          - practice/neapolitan.qmd
-          - practice/augmented-sixths.qmd
-          - practice/jazz-theory.qmd
           - text: "---"
           - practice/lsa-practice.qmd
           - practice/lsa-practice-notated.qmd
@@ -245,6 +279,7 @@ website:
       - text: Tools
         menu:
           - tools/scales.qmd
+          - tools/scale-patterns.qmd
           - tools/circle-of-fifths.qmd
           - tools/chords-solfege.qmd
           - tools/chord-library.qmd

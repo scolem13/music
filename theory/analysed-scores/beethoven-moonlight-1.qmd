@@ -1,0 +1,81 @@
+---
+title: "Beethoven: \"Moonlight\" Sonata, I"
+subtitle: "Piano Sonata No. 14 in C♯ minor, Op. 27 No. 2, analysed by Tsung-Ping Chen and Li Su"
+toc: true
+toc-depth: 2
+description: "The whole first movement of Beethoven's \"Moonlight\" Sonata with Tsung-Ping Chen and Li Su's Roman-numeral analysis under the notes (When in Rome), a strip of the keys, the form part by part, and every modulation with links that play it."
+---
+
+{{< include _head.qmd >}}
+
+The whole first movement (Adagio sostenuto). Triplets run under a slow melody throughout. The harmony changes slowly, usually once or
+twice a bar, so this is a good piece for following an analysis by ear. How to read the labels and use the score:
+[Analysed Scores](index.qmd#reading-the-labels).
+
+Things to find:
+
+- the **Neapolitan** (N6) in bar 3 and again later;
+- the move to **E major** (the relative major) in bars 7–9;
+- the long stretch of dominant harmony (V7 and i64 taking turns, bars 28–41) before the return;
+- the **sections** the analysis marks: exposition, development, recapitulation, coda.
+
+Above the score, the **key strip** shows every key the analysts name, in order: c♯, E, e, b, f♯ and home. Click a key to light its bars
+and hear them.
+
+{{< include _beethoven-moonlight-1.qmd >}}
+
+## The form, part by part
+
+The outline below summarises a published guide to the movement (a page headed "The Opus 27 Set", p. 161). Press ▶ on a row to light
+those bars in the score above and hear them. "Upbeat to" means the part starts on the last beat of the bar before. The outline skips the
+first theme's return at bar 42, where the recapitulation begins.
+
+::: {.as-form}
+| Bars | What happens |
+|---|---|
+| **Exposition** | |
+| 1–4 | Introduction: the right hand's triplet figure is set going. |
+| Upbeat to 5–14 | The first theme, heard twice: first from c♯ minor to E major, then from e minor to b minor. |
+| Upbeat to 16–23 | The second theme, also twice, each time starting on a B major chord that sounds like a dominant of e minor that never resolves. The second statement is stretched to end the exposition with a cadence in f♯ minor. |
+| **Development** | |
+| Upbeat to 24–27 | The opening theme, now starting in f♯ minor, extended. |
+| 28–31 | A three-note fragment, perhaps taken from the shape of the second theme. |
+| 32–42 | Broken chords unfold: diminished seventh and tonic. |
+| 37–42 | Retransition: a melodic fragment in the rhythm of the second theme. Some details here are disputed (the stemming in bar 37, and the uneven phrase lengths in bars 37–39). |
+| **Recapitulation** | |
+| Upbeat to 52–60 | The second theme, now starting on C♯ major. It sounds like an unresolved dominant of f♯ minor, but the section ends in the home key. |
+| Upbeat to 61–69 | Coda: the first theme in the left hand, and a quiet close. |
+:::
+
+## The modulations, one by one
+
+The movement uses most of the kinds of modulation in [Chapter 22](../modulation.qmd). Click the bars to hear each one in the score. The
+[Modulation](../modulation.qmd) page explains each kind with short examples. The readings are Chen and Su's; where another analyst in
+When in Rome, Dmitri Tymoczko, hears it differently, the row says so.
+
+| Bars | From → to | How | Kind ([Ch. 22](../modulation.qmd)) |
+|---|---|---|---|
+| [▶ 5–9](#){.as-bars data-bars="5-9" data-piece="beethoven-moonlight-1"} | c♯ → E | In bar 7 the F♯ minor chord, iv in c♯, is labelled ii in E: pre-dominant in the new key. E is confirmed by I⁶₄–V⁷–I (bars 8–9). | [Diatonic pivot chord](../modulation.qmd#diatonic-pivot) |
+| [▶ 9–10](#){.as-bars data-bars="9-10" data-piece="beethoven-moonlight-1"} | E → e | Same tonic, and the G♯ becomes G♮. There is no pivot: the music simply turns minor. | [Direct](../modulation.qmd#direct) (a change of mode) |
+| [▶ 11–14](#){.as-bars data-bars="11-14" data-piece="beethoven-moonlight-1"} | e → b | Bar 11 is V⁴₃/VI in e. The analysis turns to b in bar 12 on a G major chord, VI in b (it is also III in e), and b is confirmed by vii°⁷–V⁶₅–i and i⁶₄–V. Tymoczko hears V⁷/V in e become V⁷ in b instead. | [Diatonic pivot chord](../modulation.qmd#diatonic-pivot); for Tymoczko, a [secondary common chord](../modulation.qmd#chromatic-pivot) |
+| [▶ 15–19](#){.as-bars data-bars="15-19" data-piece="beethoven-moonlight-1"} | B major: b or e? | The B major chord of the second theme, taking turns with N6: V/iv in b, a tonicization of e. Nothing cadences in e, which is why the guide calls it a dominant that never resolves. Tymoczko calls it V in e, a modulation. | [Tonicization or modulation?](../modulation.qmd#tonicization) |
+| [▶ 19–23](#){.as-bars data-bars="19-23" data-piece="beethoven-moonlight-1"} | → f♯ | f♯ is reached through its own vii°⁶₅ and V⁶₅ and confirmed by i⁶₄–V–i: an authentic cadence ends the exposition. | [Direct](../modulation.qmd#direct) (by the new key's dominant) |
+| [▶ 23–27](#){.as-bars data-bars="23-27" data-piece="beethoven-moonlight-1"} | f♯ → c♯ | After V⁶₅ in f♯ (bar 24), the analysis is back in c♯ at bar 25. Tymoczko reads the f♯ minor chord in bar 25 as i in f♯ and iv in c♯, a pivot. | [Direct](../modulation.qmd#direct); for Tymoczko, a [diatonic pivot](../modulation.qmd#diatonic-pivot) |
+| [▶ 42–51](#){.as-bars data-bars="42-51" data-piece="beethoven-moonlight-1"} | c♯ → E → c♯ | The recapitulation passes through E only briefly (bars 44–46) before the music returns home. | Compare with bars 5–9 |
+| [▶ 52–60](#){.as-bars data-bars="52-60" data-piece="beethoven-moonlight-1"} | C♯ major: f♯ or c♯? | The second theme returns a fourth higher, on C♯ major: V/iv, still in c♯. Tymoczko: V in f♯, back and forth. | [Tonicization or modulation?](../modulation.qmd#tonicization) |
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome.
+
+Gordon, Stewart. *Beethoven's 32 Piano Sonatas: A Handbook for Performers*. Oxford UP, 2017. Chapter on the Op. 27 set, p. 161. The outline of the first movement's form, summarised on this page.
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation.
+
+Sapp, Craig Stuart, encoder. *Beethoven Piano Sonatas in the Humdrum File Format* (after the Durand 1915 edition, ed. Paul Dukas). GitHub. [github.com/craigsapp/beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas). The sonata's notes, converted to ABC for this page.
+
+Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's.
+:::
+<!-- /works-cited -->

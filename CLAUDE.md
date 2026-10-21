@@ -13,6 +13,7 @@ Feature docs. A CLAUDE.md inside a folder loads by itself when you work there; t
 - Tap Along: `apps/shared/tap-along/CLAUDE.md`
 - ABC reading (abc-core, pitch/rhythm/tune), non-harmonic tones, the tune collection: `.claude/docs/abc.md`
 - Pitch detection, tuner, Mixer, AudioTap, audio pre-flight, MIDI feel / learn, Chunk Practice, Vocal Warm-up, Guitar Tuning: `.claude/docs/audio-pitch-midi.md`
+- Scale Patterns (`tools/scale-patterns.qmd`, `apps/shared/scale-patterns.js`: SCALES / PATTERNS / STYLES / INSTRUMENTS tables; Hanon 1-20 note for note in `hanon-part1.js`, read from Mutopia's LilyPond, CC BY-SA; instrument facts unverified until the band notes replace them): tests `node tests/scales/scale-patterns.test.js`, `tests/scales/scale-patterns.cdp.js`
 - Help-eye folding, click-to-type slider numbers: `.claude/docs/page-ui.md`
 - Lesson widgets (synth-kit, rec-kit, compose-kit, gear diagrams, sing check, chord-taught, tool catalogue): `apps/shared/lessons/CLAUDE.md`
 - Lesson pages (sidebar/listing/`has:`, Write an Ending, Sing and Notate, notation steps): `lessons/CLAUDE.md`

@@ -1,4 +1,4 @@
-// The jazz drills (apps/shared/drills/jazz.js, practice/jazz-theory.qmd) in Node. The chords and scales are checked against tables
+// The jazz drills (apps/shared/drills/jazz.js, theory/jazz-theory.qmd) in Node. The chords and scales are checked against tables
 // written out here by hand from the book's figures (31.4.1–8, Table 31.9.4), as half steps above the root; the chord-scale pairs
 // (Table 31.10.3) by the book's own principle: every chord tone is in the scale. Then every drill's generated questions: spelling,
 // what's drawn against what's played, and which typed answers are accepted or refused (the book's naming rules, 31.1–31.2).

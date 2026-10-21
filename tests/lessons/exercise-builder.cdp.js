@@ -1,19 +1,19 @@
-// The Exercise Builder (practice/exercise-builder.qmd) in headless Chrome: the link's seed gives the same set twice; every item is made;
+// The Exercise Builder (theory/exercise-builder.qmd) in headless Chrome: the link's seed gives the same set twice; every item is made;
 // abcjs plays each chorale's four voices as generated; right answers score full marks and wrong ones don't; the fill-in's typed notes are
 // drawn in the score and graded by the voice-leading checker; the answer key prints only when asked. Run after rendering:
-//   quarto render practice/exercise-builder.qmd; node tests/lessons/exercise-builder.cdp.js
+//   quarto render theory/exercise-builder.qmd; node tests/lessons/exercise-builder.cdp.js
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
 const type = f => f.endsWith(".js") ? "text/javascript" : f.endsWith(".css") ? "text/css" : "text/html";
 const PORT = 8541;
 const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURIComponent(q.url.split(/[?#]/)[0]));
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(PORT);
-const URL = q => `http://127.0.0.1:${PORT}/practice/exercise-builder.html${q}`;
+const URL = q => `http://127.0.0.1:${PORT}/theory/exercise-builder.html${q}`;
 (async () => {
   const b = await launch();
   let fails = 0; const check = (name, ok, info) => { console.log((ok ? "ok   " : "FAIL ") + name + (info !== undefined ? "  " + info : "")); if (!ok) fails++; };
   const ev = e => b.eval(e), errs = () => b.errors.filter(e => !/supabase|createClient|soundfont|fetch|load sound|favicon|sounds/i.test(e));
-  const Q = "?ch=7,10,11,13,16,17,18,19,20,21,31&types=rn,cad,period,fill,melodic,drills&n=24&seed=777&input=inline";
+  const Q = "?ch=7,10,11,13,16,17,18,19,20,21,31&types=rn,cad,period,fill,melodic,drills&n=24&seed=778&input=inline";   // a seed whose set has a "write a missing voice" item (the later checks need one)
   await b.goto(URL(Q)); await b.sleep(1500);
   const first = await ev(`[...document.querySelectorAll('.ex-item .ex-title')].map(x => x.textContent).join('|')`);
   const n = await ev(`document.querySelectorAll('.ex-item').length + ',' + document.getElementById('ex-builder')._ex.items().length`);
@@ -37,7 +37,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/exercise-builder.html${q}`;
       const boxes = li.querySelectorAll('.ex-blanks input'); if (boxes.length) it.answer.split(/\\s+/).forEach((a, k) => { if (boxes[k]) boxes[k].value = a; });
       const ai = li.querySelector('.ai-notes'); if (ai) { const m = /One good \\w+: (.*?)\\. Others/.exec(keyLis[i].textContent); ai.value = m[1]; ai.dispatchEvent(new Event('input')); }
       const groups = [...li.querySelectorAll('.ex-choices')], ans = it.answer.split('; ');
-      groups.forEach((g, k) => { const want = ans[k] || it.answer; const btn = [...g.querySelectorAll('button')].find(x => x.textContent === want); if (btn) btn.click(); });
+      groups.forEach((g, k) => { const want = ans[k] || it.answer; const btn = [...g.querySelectorAll('button')].find(x => x.textContent === want || want.endsWith('(' + x.textContent + ')')); if (btn) btn.click(); });
       const tx = li.querySelector('.ex-text'); if (tx) tx.value = it.answer.replace(/♭/g, 'b').replace(/♯/g, '#');
     });
     document.querySelector('#ex-builder .ex-check').click();

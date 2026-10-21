@@ -1,4 +1,4 @@
-// builder.js — the Exercise Builder (practice/exercise-builder.qmd): a set of exercises from the chapters chosen, answered on the page
+// builder.js — the Exercise Builder (theory/exercise-builder.qmd): a set of exercises from the chapters chosen, answered on the page
 // or printed with an answer key. The set comes from a seed in the address, so a teacher's link gives every student the same set:
 //   ?ch=7,16,17&types=rn,cad,period,fill,melodic,drills&n=10&seed=4821&input=inline
 // Items: Roman numerals under a generated chorale (chorale.js), the cadence of a phrase, the period type of two phrases (ch. 13),
@@ -11,7 +11,7 @@
     [19, "Mode mixture"], [20, "The Neapolitan"], [21, "Augmented sixth chords"], [31, "Jazz theory"]];
   var TYPES = { rn: "Roman numerals (chorale)", cad: "Cadences (chorale)", period: "Periods (two phrases, ch. 13)", fill: "Write a missing voice (notation)",
     melodic: "Melodic analysis (ch. 10–11)", drills: "Drill questions from the chapters" };
-  var DRILLS = { 5: ["interval"], 6: ["triad", "spell"], 7: ["rn", "rnwrite", "cadence"], 8: ["seventh", "spell7", "rn7", "rn7write"], 9: ["func", "prog"],
+  var DRILLS = { 5: ["interval"], 6: ["triad", "spell"], 7: ["rn", "rnwrite", "cadence"], 8: ["seventh", "spell7", "rn7", "rn7write"], 9: ["func", "prog"], 16: ["fbrn", "fbwrite", "fbreal"],
     17: ["secdom", "secwrite", "secsym"], 18: ["secdim", "secdimwrite", "secdimsym"], 19: ["mix", "mixwrite", "mixsym"], 20: ["neap", "neapwrite", "neapsym"],
     21: ["aug6", "aug6write", "aug6sym"], 31: ["jzwrite", "jzname", "jzscale", "jzchordscale", "jzguide", "jz251"] };
   var MELODIC = { 10: ["nct", "nctrule"], 11: ["motive"] };

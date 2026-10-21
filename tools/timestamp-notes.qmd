@@ -168,20 +168,23 @@ page-layout: full
     <p class="btp-log-empty btp-sec-empty">No sections yet: stamp one with <kbd>S</kbd>.</p>
   </details>
 
-  <details class="btp-fold ts-panel btp-phrases" id="ts-phrases" data-nav="Phrases" open>
-    <summary><h2>Phrases</h2></summary>
-    <p class="btp-log-note">Transcribe a phrase at a time. Each section is cut into phrases; a phrase loops from its <b>lead-in</b>
-       (the pickup: how many beats before its first downbeat the melody starts, up to two bars) to the next downbeat.
-       <kbd>P</kbd> loops the phrase under the playhead, <kbd>,</kbd> <kbd>.</kbd> the one before or after,
-       <kbd>-</kbd> <kbd>=</kbd> shorten or lengthen its lead-in, <kbd>T</kbd> (or <b>Notate</b>) goes to it on the Notation page,
-       whose <b>Back to the recording</b> loops the next one here. With <b>Phrases as chunks</b> each phrase is a chunk there (V1a, V1b ...),
-       and <kbd>Shift</kbd>+<kbd>Space</kbd> there plays this recording from the note being written. Slow it down with the player's speed.</p>
+  <details class="btp-fold ts-panel btp-phrases" id="ts-phrases" data-nav="Chunks" open>
+    <summary><h2>Chunks</h2></summary>
+    <p class="btp-log-note">Transcribe a chunk at a time. Each section is cut into chunks of a few bars; a chunk loops from its <b>lead-in</b>
+       (the pickup: how many beats before its first downbeat the melody starts, up to two bars) to its <b>stop</b> (the next downbeat, or
+       up to two bars later, or earlier: a beat early when the next chunk has a one-beat pickup).
+       <kbd>P</kbd> loops the chunk under the playhead, <kbd>,</kbd> <kbd>.</kbd> the one before or after,
+       <kbd>-</kbd> <kbd>=</kbd> shorten or lengthen its lead-in, <kbd>{</kbd> <kbd>}</kbd> move its stop, <kbd>T</kbd> (or <b>Notate</b>) goes to it on the Notation page,
+       whose <b>Back to the recording</b> loops the next one here. The Notation page cuts each section into the same chunks (V1a, V1b ...),
+       and <kbd>Shift</kbd>+<kbd>Space</kbd> there plays this recording from the note being written. Slow it down with the player's speed.
+       Open the song file on the Notation page to loop and record chunks there, without this page.</p>
     <div class="btp-log-buttons">
-      <label class="btp-beats-label">Bars a phrase <select class="btp-ph-size"><option>2</option><option selected>4</option><option>8</option></select></label>
-      <label class="btp-beats-label"><input type="checkbox" class="btp-ph-chunks" checked> Phrases as chunks on the Notation page</label>
+      <label class="btp-beats-label">Bars a chunk <select class="btp-ph-size"><option>2</option><option selected>4</option><option>8</option></select></label>
+      <label class="btp-beats-label" title="Listen: the recording. Play along: the recording and you, each pass a take on the Notation page. Play alone: the recording silent, a click, each pass a take. Listen, then play: the two by turns.">Loop <select class="btp-ph-mode"><option value="listen">Listen</option><option value="along">Play along</option><option value="alone">Play alone (click)</option><option value="cycle">Listen, then play</option></select></label>
+      <label class="btp-beats-label"><input type="checkbox" class="btp-ph-chunks" checked> Cut the sections into these chunks on the Notation page</label>
     </div>
     <ol class="btp-ph-rows"></ol>
-    <p class="btp-log-empty btp-ph-empty">No phrases yet: tap the bars and stamp the sections.</p>
+    <p class="btp-log-empty btp-ph-empty">No chunks yet: tap the bars and stamp the sections.</p>
     <p class="btp-ph-note btp-send-note" aria-live="polite"></p>
   </details>
 
@@ -243,7 +246,7 @@ page-layout: full
     <button class="btp-stamp-now" type="button">Stamp now</button>
     <button class="btp-sort" type="button">Sort by time</button>
     <button class="btp-copy-all" type="button">Copy all</button>
-    <button class="btp-clear" type="button" title="Everything for this song: stamps, bars, words and chords, chord timing, phrases. Save the song file first to keep it.">Clear all data</button>
+    <button class="btp-clear" type="button" title="Everything for this song: stamps, bars, words and chords, chord timing, chunks. Save the song file first to keep it.">Clear all data</button>
     <button class="btp-download" type="button" title="Everything on the page: stamps, bars, words, chords, chord timing and the link">Save song file</button>
     <label class="btp-import" title="A song file, or an older timestamps .txt or bar-map .json">Open file<input class="btp-import-file" type="file" accept=".json,.txt,application/json,text/plain"></label>
     <button class="btp-paste-open" type="button">Paste…</button>
@@ -279,20 +282,20 @@ page-layout: full
 </div>
 
 <script src="/apps/shared/panel-columns.js?v=1"></script>
-<script src="/apps/shared/timestamp-player/player.js?v=7"></script>
+<script src="/apps/shared/timestamp-player/player.js?v=8"></script>
 <script src="/apps/shared/timestamp-player/time-edit.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/player-log.js?v=16"></script>
-<script src="/apps/shared/timestamp-player/bar-map.js?v=17"></script>
+<script src="/apps/shared/timestamp-player/bar-map.js?v=18"></script>
 <script src="/apps/shared/abc-core.js?v=3"></script>
 <script src="/apps/shared/abc-events.js?v=3"></script>
-<script src="/apps/shared/notation-doc.js?v=10"></script>
+<script src="/apps/shared/notation-doc.js?v=11"></script>
 <script src="/apps/shared/ug-chordpro.js?v=4"></script>
 <script src="/apps/shared/timestamp-player/words.js?v=20"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
-<script src="/apps/shared/chord-entry.js?v=10"></script>
+<script src="/apps/shared/chord-entry.js?v=11"></script>
 <script src="/apps/shared/timestamp-player/live.js?v=20"></script>
-<script src="/apps/shared/timestamp-player/phrases.js?v=5"></script>
+<script src="/apps/shared/timestamp-player/phrases.js?v=8"></script>
 <script src="/apps/shared/timestamp-player/page-nav.js?v=3"></script>
 </div>
 ```

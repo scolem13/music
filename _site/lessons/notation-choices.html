@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.10.18">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -10,10 +10,16 @@
 
 <title>Writing Music Down: Choosing the Right Notation – Music Practice</title>
 <style>
-code{white-space: pre-wrap;}
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
 span.smallcaps{font-variant: small-caps;}
-div.columns{display: flex; gap: min(4vw, 1.5em);}
-div.column{flex: auto; overflow-x: auto;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
@@ -39,10 +45,10 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5423467e1dee74240c72b37b5e24071f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-7f4c960c75fa4a060886384c4ea271f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -90,12 +96,13 @@ ul.task-list li input[type="checkbox"] {
 <style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
 <!-- Click the number shown beside any slider to type a value. -->
 <script src="../apps/shared/num-edit.js?v=1"></script>
-<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text, crisp staff lines. -->
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
 <style>
 svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
 svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
-svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,svg[aria-label^="Sheet Music"] .abcjs-bar,svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
 </style>
 
 
@@ -125,6 +132,10 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
   <li class="nav-item">
     <a class="nav-link active" href="../lessons/index.html" aria-current="page"> 
 <span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../theory/index.html"> 
+<span class="menu-text">Theory</span></a>
   </li>  
   <li class="nav-item dropdown ">
     <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
@@ -168,74 +179,6 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
     <a class="dropdown-item" href="../practice/dictation.html">
  <span class="dropdown-text">Dictation</span></a>
   </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/theory-drills.html">
- <span class="dropdown-text">Theory Drills</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/exercise-builder.html">
- <span class="dropdown-text">Exercise Builder</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/analysed-scores.html">
- <span class="dropdown-text">Analysed Scores</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/triads.html">
- <span class="dropdown-text">Triads: Practice for Chapter 6</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/roman-numerals.html">
- <span class="dropdown-text">Roman Numerals: Practice for Chapter 7</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/seventh-chords.html">
- <span class="dropdown-text">Seventh Chords: Practice for Chapter 8</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/progressions.html">
- <span class="dropdown-text">Harmonic Progression: Practice for Chapter 9</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/non-chord-tones.html">
- <span class="dropdown-text">Non-Chord Tones: Practice for Chapter 10</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/melodic-analysis.html">
- <span class="dropdown-text">Melodic Analysis: Practice for Chapter 11</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/pop-forms.html">
- <span class="dropdown-text">Form in Popular Music: Practice for Chapter 12</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/accompaniment-textures.html">
- <span class="dropdown-text">Accompanimental Textures: Practice for Chapter 14</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/secondary-dominants.html">
- <span class="dropdown-text">Secondary Dominants: Practice for Chapter 17</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/secondary-diminished.html">
- <span class="dropdown-text">Secondary Diminished Chords: Practice for Chapter 18</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/mode-mixture.html">
- <span class="dropdown-text">Mode Mixture: Practice for Chapter 19</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/neapolitan.html">
- <span class="dropdown-text">The Neapolitan Chord: Practice for Chapter 20</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/augmented-sixths.html">
- <span class="dropdown-text">Augmented Sixth Chords: Practice for Chapter 21</span></a>
-  </li>  
-        <li>
-    <a class="dropdown-item" href="../practice/jazz-theory.html">
- <span class="dropdown-text">Jazz Theory: Practice for Chapter 31</span></a>
-  </li>  
         <li><hr class="dropdown-divider"></li>
         <li>
     <a class="dropdown-item" href="../practice/lsa-practice.html">
@@ -272,6 +215,10 @@ svg[aria-label^="Sheet Music"] .abcjs-staff,svg[aria-label^="Sheet Music"] .abcj
         <li>
     <a class="dropdown-item" href="../tools/scales.html">
  <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../tools/circle-of-fifths.html">
@@ -1580,12 +1527,12 @@ document.addEventListener('DOMContentLoaded', async function () {
 <span class="nc-note">Every example below is this same phrase.</span>
 </p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-IB: why notation choice matters in MYP and DP
+<span class="screen-reader-only">Note</span>IB: why notation choice matters in MYP and DP
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1661,12 +1608,12 @@ IB: why notation choice matters in MYP and DP
 <p>Its weaknesses: it assumes the 12 equal notes of a piano, so pitches <em>between</em> them (blue notes, Arabic maqām, Indian shruti, the slides of Chinese erhu playing) need extra signs or prose. It also needs training to read quickly.</p>
 <p><strong>Use it when:</strong> writing for Western instruments or ensembles; analysing harmony, voice leading or form in Western music; when exact rhythm and pitch must be communicated to a reader who will play it.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-MYP and DP notes: staff notation
+<span class="screen-reader-only">Note</span>MYP and DP notes: staff notation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1689,12 +1636,12 @@ MYP and DP notes: staff notation
 <p>It was spread in China in the early 20th century from a French numbered system, and is still how most Chinese musicians write and read folk songs, pop songs and parts for traditional instruments like the erhu, pipa and dizi. Because it writes <strong>scale degrees</strong>, not fixed pitches, the same page can be played in any key just by changing “1 =”.</p>
 <p><strong>Use it when:</strong> writing or studying Chinese music, or when the players read jianpu; writing a single melody with lyrics quickly; teaching melodies by scale degree (it pairs naturally with <a href="../practice/tonal-sequences.html">tonal solfège</a>).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-MYP and DP notes: jianpu
+<span class="screen-reader-only">Note</span>MYP and DP notes: jianpu
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1730,12 +1677,12 @@ MYP and DP notes: jianpu
 <p>The most important part of a rāga is <em>how</em> notes are approached: slides (mīnd), oscillations (gamaka), which notes are lingered on. The written swaras give the skeleton only, and students learn the rest by ear from a teacher. Many pieces are never written at all. So sargam notation is a reliable <strong>memory aid and teaching tool</strong>, not a complete score.</p>
 <p><strong>Use it when:</strong> studying, teaching or composing in an Indian tradition; showing the shape of a rāga; showing how a melody sits against a tāla cycle.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-MYP and DP notes: sargam
+<span class="screen-reader-only">Note</span>MYP and DP notes: sargam
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1763,12 +1710,12 @@ MYP and DP notes: sargam
 <p>What it’s bad at: it doesn’t tell the reader the key, the chords or the beat they should feel. It’s a picture to be <em>explained</em>, not something a performer can read. A wall of tiny clips means nothing without labels.</p>
 <p><strong>Use it when:</strong> the music was made in a DAW; showing production decisions (layers, effects, automation, edits); showing a process (before and after).</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-MYP and DP notes: DAW screenshots
+<span class="screen-reader-only">Note</span>MYP and DP notes: DAW screenshots
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1800,12 +1747,12 @@ MYP and DP notes: DAW screenshots
 <p>With one clean instrument, it can be surprisingly readable. With a full band it becomes a dense cloud from which notes, chords and rhythm are very hard to pick out. Specialists use it for voice (formants), acoustics, birdsong, and for music where pitch isn’t the point: electronic textures, noise music, extended techniques.</p>
 <p><strong>Use it when:</strong> your point is about timbre, a sound’s frequency content, vibrato or a texture with no clear notes, and only with labels that point at what to look at.</p>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-MYP and DP notes: waveforms and spectrograms
+<span class="screen-reader-only">Note</span>MYP and DP notes: waveforms and spectrograms
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -1829,12 +1776,12 @@ MYP and DP notes: waveforms and spectrograms
 <li><strong>Crop, label, cite.</strong> Short excerpts, bar numbers or timestamps, the source of every example.</li>
 </ol>
 <div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-MYP and DP notes: presenting evidence in general
+<span class="screen-reader-only">Note</span>MYP and DP notes: presenting evidence in general
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
@@ -2099,13 +2046,14 @@ MYP and DP notes: presenting evidence in general
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

@@ -1,0 +1,37 @@
+<!-- Scripts and styles for every Analysed Scores page. -->
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-play.js?v=4"></script>
+<script src="/apps/shared/analysed-scores.js?v=6"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+@font-face { font-family: "Bar Numbers Mono"; src: url(/apps/shared/fonts/BarNumbers-SourceSerif4-200.ttf) format("truetype"); font-display: swap; }
+.as-score .ct-barno { font-family: "Bar Numbers Mono", ui-monospace, monospace; font-size: 8.6px; font-weight: 400; fill: currentColor; }
+.as-score .abc-on { fill: #0d6efd; color: #0d6efd; }
+#as-space { margin: 0 0 1rem; font-size: .85rem; } #as-space input { width: 100%; }
+.as-help { font-size: .85rem; opacity: .75; margin-left: .6rem; }
+.as-box { position: relative; max-width: none; min-width: 320px; padding-right: 14px; }
+.as-paper { width: 100%; }
+.as-grip { position: absolute; top: 0; right: 0; bottom: 0; width: 12px; cursor: col-resize; touch-action: none; }
+.as-grip::before { content: ""; position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; margin-left: -1px; background: #dee2e6; border-radius: 1px; }
+.as-grip:hover::before { background: #0d6efd; width: 4px; margin-left: -2px; }
+body.as-resizing { cursor: col-resize; user-select: none; }
+.as-bar { margin: .3rem 0; }
+.as-score .as-hi { fill: #b8590a; color: #b8590a; }
+.as-score .as-hi.abc-on { fill: #0d6efd; color: #0d6efd; }
+.as-keys { margin: .2rem 0 .5rem; max-width: 100%; }
+.as-keys-h { font-size: .75rem; opacity: .7; margin-bottom: .15rem; }
+.as-keys-row { display: flex; gap: 2px; }
+.as-key { flex: 1 1 0; min-width: 0; overflow: hidden; white-space: nowrap; text-overflow: clip; border: 0; border-radius: 3px; padding: .15rem .1rem;
+  font-size: .72rem; background: hsl(var(--h) 60% 85%); color: #222; cursor: pointer; }
+.as-key:hover, .as-key.as-key-on { outline: 2px solid #0d6efd; outline-offset: -2px; background: hsl(var(--h) 65% 72%); }
+@media (prefers-color-scheme: dark) { .as-key { background: hsl(var(--h) 35% 32%); color: #eee; } .as-key:hover, .as-key.as-key-on { background: hsl(var(--h) 45% 42%); } }
+.as-form table { font-size: .9rem; }
+.as-form td:first-child { white-space: nowrap; }
+.as-form-play { padding: 0 .45rem; margin-right: .45rem; line-height: 1.4; }
+.as-form tr.as-form-on td { background: rgba(184, 89, 10, .12); }
+.as-form .as-sec td { font-weight: 600; font-style: italic; border-top: 2px solid currentColor; }
+</style>
+```

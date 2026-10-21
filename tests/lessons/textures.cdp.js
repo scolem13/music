@@ -1,8 +1,8 @@
-// The band pages for Chapters 12 and 14 (practice/pop-forms.qmd, practice/accompaniment-textures.qmd): every band demo plays and writes its staff, every choice can be
+// The band pages for Chapters 12 and 14 (theory/pop-forms.qmd, theory/accompaniment-textures.qmd): every band demo plays and writes its staff, every choice can be
 // switched while it plays, and the listening quiz (.ar-quiz, apps/shared/lessons/arrange-kit.js) hides the notes until the
 // answer, grades it, never asks the same texture twice running and asks all of them. Serves _site and the sample mirror itself
 // (tests/band/README.md, "Samples in page tests"). Run after rendering:
-//   quarto render practice/accompaniment-textures.qmd; node tests/lessons/textures.cdp.js
+//   quarto render theory/accompaniment-textures.qmd; node tests/lessons/textures.cdp.js
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/_site", SF = ROOT + "/tests/band/lead/site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
 const type = f => /\.js$/.test(f) ? "text/javascript" : /\.css$/.test(f) ? "text/css" : /\.mp3$/.test(f) ? "audio/mpeg" : /\.json$/.test(f) ? "application/json" : "text/html";

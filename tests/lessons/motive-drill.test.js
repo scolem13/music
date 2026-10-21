@@ -1,4 +1,4 @@
-// The motivic-alteration drill (apps/shared/drills/motives.js, Drills.engines.motive; practice/melodic-analysis.qmd) in Node.
+// The motivic-alteration drill (apps/shared/drills/motives.js, Drills.engines.motive; theory/melodic-analysis.qmd) in Node.
 // Each generated question is read back from its own ABC (letters, octaves, lengths) and the change from bar 1 to bar 2 is
 // classified here, independently of the engine: exactly one of the book's alterations (or a plain sequence) must fit, and it
 // must be the answer. Also: both bars fill 4/4, abcjs-free pitch reading (AbcEvents) = what the drill plays, every type appears.

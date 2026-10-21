@@ -20,7 +20,7 @@ Ableton. *Tuning: An Introduction to Pitch and Tuning Systems*. [tuning.ableton.
 [Used in: [DAW 5: The Mixer](lessons/daw-mixer.qmd), [DAW 8: Your First Session in a Real DAW](lessons/daw-real.qmd)]{.wc-used}
 
 Aebersold, Jamey. *Scale Syllabus*. Jamey Aebersold Jazz, [www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf](https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf). 
-[Used in: [Scales](tools/scales.qmd)]{.wc-used}
+[Used in: [Scale Patterns](tools/scale-patterns.qmd), [Scales](tools/scales.qmd)]{.wc-used}
 
 "Akai MPC." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Akai_MPC](https://en.wikipedia.org/wiki/Akai_MPC). 
 [Used in: [Sampling 4: A Beat from Chops](lessons/sampling-beat.qmd), [Sampling 2: Chopping and Slicing](lessons/sampling-chop.qmd), [Sampling 3: Pitch and Time-Stretch](lessons/sampling-pitch.qmd)]{.wc-used}
@@ -223,8 +223,8 @@ Caulfield, Mike. "SIFT (The Four Moves)." *Hapgood*, 19 June 2019, [hapgood.us/2
 Chaffin, Roger, and Gabriela Imreh. "'Pulling Teeth and Torture': Musical Memory and Problem Solving." *Thinking and Reasoning*, vol. 3, no. 4, 1997, pp. 315–36. [musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf](https://musiclab.uconn.edu/wp-content/uploads/sites/290/2013/10/Pulling-Teeth-Chaffin-1997.pdf). 
 [Used in: [Annotated Bibliography 2: Summarise, Evaluate, Connect (Grades 9–10)](lessons/annotate-check.qmd), [Annotated Bibliography 3: DP Music (Grades 11–12)](lessons/annotate-dp.qmd), [Chunk Practice](tools/chunk-practice.qmd) (for teachers)]{.wc-used}
 
-Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the first Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome. 
-[Used in: [Analysed Scores](practice/analysed-scores.qmd) (for students)]{.wc-used}
+Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome. 
+[Used in: [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Analysed Scores](theory/analysed-scores/index.qmd) (for students)]{.wc-used}
 
 "Chiptune." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Chiptune](https://en.wikipedia.org/wiki/Chiptune). 
 [Used in: [Sound 25: Chiptune](lessons/sound-chiptune.qmd) (for students)]{.wc-used}
@@ -466,8 +466,11 @@ Giannoulis, Dimitrios, Michael Massberg, and Joshua D. Reiss. "Digital Dynamic R
 Giordano, Nicholas J. "Explaining the Railsback Stretch in Terms of the Inharmonicity of Piano Tones and Sensory Dissonance." 2015, *AUrora*, Auburn University, [aurora.auburn.edu/handle/11200/48533](https://aurora.auburn.edu/handle/11200/48533). With O. L. Railsback (1938), *JASA* 9(3) suppl., p. 274, as cited in [4], and D. Koenig, *Spectral Analysis of Musical Sounds with Emphasis on the Piano*, Oxford UP, 2014 (abstract only). 
 [Used in: [Out-of-Tune Overtones: Strings, Winds, Voice, Bars, Bells and Drums](lessons/inharmonicity.qmd)]{.wc-used}
 
+Gordon, Stewart. *Beethoven's 32 Piano Sonatas: A Handbook for Performers*. Oxford UP, 2017. Chapter on the Op. 27 set, p. 161. The outline of the first movement's form, summarised on this page. 
+[Used in: [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd) (for students)]{.wc-used}
+
 Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0. 
-[Used in: [Analysed Scores](practice/analysed-scores.qmd) (for students)]{.wc-used}
+[Used in: [Bach: "O Haupt voll Blut und Wunden"](theory/analysed-scores/bach-o-haupt.qmd), [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Analysed Scores](theory/analysed-scores/index.qmd) (for students)]{.wc-used}
 
 Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation. 
 [Used in: [Writing Music Down: Choosing the Right Notation](lessons/notation-choices.qmd), [Lesson: Using the Notation Page](lessons/notation-steps.qmd), [Ornaments by Period](lessons/ornaments-by-period.qmd), [Reading Swing from a Lead Sheet](lessons/reading-swing.qmd), [Lesson: Sing it, then Notate it](lessons/sing-and-notate.qmd), [Lesson: Write an Ending](lessons/write-an-ending.qmd) (for teachers)]{.wc-used}
@@ -500,6 +503,12 @@ Hagerman, Bo, and Johan Sundberg. "Fundamental Frequency Adjustment in Barbersho
 
 "The Hammond Story." Hammond Organ Company. [hammondorganco.com/the-hammond-story](https://hammondorganco.com/the-hammond-story). Manufacturer's history page. 
 [Used in: [Arranging 4: The Organ](lessons/arrange-organ.qmd) (for students)]{.wc-used}
+
+Hanon, Charles-Louis. "Exercise No. 2." *The Virtuoso Pianist, Part I*, Hanon-Online, [hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g](https://hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g). Hanon's practice directions (lift the fingers, play each note distinctly, begin at 60). 
+[Used in: [Scale Patterns](tools/scale-patterns.qmd)]{.wc-used}
+
+Hanon, Charles-Louis. *The Virtuoso Pianist (Part I)*. 1873. Edited by Steve Taylor and Javier Ruiz-Alma after the Schirmer edition of 1900, Mutopia Project, 2015, [www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037). CC BY-SA 4.0. Exercises 1–20 read note for note into apps/shared/hanon-part1.js. 
+[Used in: [Scale Patterns](tools/scale-patterns.qmd)]{.wc-used}
 
 Hansen, Kjetil Falkenberg. *The Acoustics and Performance of DJ Scratching*. 2010. KTH Royal Institute of Technology, PhD dissertation. [www.speech.kth.se/~hansen/files/thesis/KjetilFalkenbergHansen_2010_phdthesis.pdf](https://www.speech.kth.se/~hansen/files/thesis/KjetilFalkenbergHansen_2010_phdthesis.pdf). Abstract and front matter read. 
 [Used in: [DJ 5: Scratching Basics](lessons/dj-scratch.qmd) (for teachers)]{.wc-used}
@@ -606,6 +615,9 @@ Hutchinson, Robert. "Jazz Chord Voicings." *Music Theory for the 21st-Century Cl
 
 Hutchinson, Robert. "Mode Mixture." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/ModeMixture.html](https://musictheory.pugetsound.edu/mt21c/ModeMixture.html). 
 [Used in: [Lesson: Borrowed Chords](lessons/borrowed-chords.qmd) (for students)]{.wc-used}
+
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation. 
+[Used in: [Bach: "O Haupt voll Blut und Wunden"](theory/analysed-scores/bach-o-haupt.qmd), [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Modulation: Practice for Chapter 22](theory/modulation.qmd) (for students)]{.wc-used}
 
 Hutchinson, Robert. "Secondary Dominant Chords." *Music Theory for the 21st-Century Classroom*, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/SecondaryDominants.html](https://musictheory.pugetsound.edu/mt21c/SecondaryDominants.html). 
 [Used in: [Lesson: Reharmonizing a Melody](lessons/reharmonize.qmd), [Lesson: Turnarounds and Rhythm Changes](lessons/turnarounds.qmd) (for students)]{.wc-used}
@@ -858,8 +870,8 @@ Neumann, Frederick. *Ornamentation in Baroque and Post-Baroque Music, with Speci
 "Noise-induced hearing loss." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Noise-induced_hearing_loss](https://en.wikipedia.org/wiki/Noise-induced_hearing_loss). 
 [Used in: [Gear 5: Setting Up, Packing Down and Your Ears](lessons/gear-setup.qmd) (for students)]{.wc-used}
 
-Nápoles López, Néstor, et al. *BCMH: The Bach Chorales Melody-Harmony Corpus*. GitHub. [github.com/napulen/BCMH](https://github.com/napulen/BCMH). The second chorale analysis (automated translation to RomanText). 
-[Used in: [Analysed Scores](practice/analysed-scores.qmd) (for students)]{.wc-used}
+Nápoles López, Néstor, et al. *BCMH: The Bach Chorales Melody-Harmony Corpus*. GitHub. [github.com/napulen/BCMH](https://github.com/napulen/BCMH). A second analysis of the chorale (automated translation to RomanText), not shown on the site. 
+[Used in: [Analysed Scores](theory/analysed-scores/index.qmd) (for teachers)]{.wc-used}
 
 "Numbered musical notation." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Jianpu](https://en.wikipedia.org/wiki/Jianpu). 
 [Used in: [Writing Music Down: Choosing the Right Notation](lessons/notation-choices.qmd) (for students)]{.wc-used}
@@ -1125,10 +1137,10 @@ Royer Labs. "Cross-Patching Microphone Tie Lines." *Royer Labs FAQ*. [royerlabs.
 [Used in: [Sampling 2: Chopping and Slicing](lessons/sampling-chop.qmd), [Sampling 5: Flipping a Sample](lessons/sampling-flip.qmd), [Sampling 6: Clearing Samples and the Law](lessons/sampling-law.qmd), [Sampling 1: What a Sample Is](lessons/sampling-what.qmd)]{.wc-used}
 
 Sapp, Craig Stuart, encoder. *370 Four-part Chorales by J. S. Bach in the Humdrum File Format*. GitHub. [github.com/craigsapp/bach-370-chorales](https://github.com/craigsapp/bach-370-chorales). The chorale's notes (after Dörffel's edition, Breitkopf & Härtel, c. 1875), converted to ABC for this page. 
-[Used in: [Analysed Scores](practice/analysed-scores.qmd) (for students)]{.wc-used}
+[Used in: [Bach: "O Haupt voll Blut und Wunden"](theory/analysed-scores/bach-o-haupt.qmd) (for students)]{.wc-used}
 
 Sapp, Craig Stuart, encoder. *Beethoven Piano Sonatas in the Humdrum File Format* (after the Durand 1915 edition, ed. Paul Dukas). GitHub. [github.com/craigsapp/beethoven-piano-sonatas](https://github.com/craigsapp/beethoven-piano-sonatas). The sonata's notes, converted to ABC for this page. 
-[Used in: [Analysed Scores](practice/analysed-scores.qmd) (for students)]{.wc-used}
+[Used in: [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd) (for students)]{.wc-used}
 
 "Scat Singing." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Scat_singing](https://en.wikipedia.org/wiki/Scat_singing). 
 [Used in: [Jazz Singing: Swing, Scat and the Changes](lessons/voice-jazz.qmd) (for students)]{.wc-used}
@@ -1373,8 +1385,8 @@ Turabian, Kate L. *A Manual for Writers of Research Papers, Theses, and Disserta
 "Twelve-bar blues." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Twelve-bar_blues](https://en.wikipedia.org/wiki/Twelve-bar_blues). 
 [Used in: [Blues for Bass: From Roots to a Walking Line](lessons/blues-bass.qmd), [Lesson: Changing the Changes in a 12-Bar Blues](lessons/blues-changes.qmd), [Blues for Drums: From Quarter Notes to the Shuffle](lessons/blues-drums.qmd), [Blues for Guitar: From Roots to Shell Chords](lessons/blues-guitar.qmd), [Improvising on a Blues: Blues in the Closet](lessons/blues-improv.qmd), [Blues for Violin and Saxophone: Playing the Changes](lessons/blues-melody.qmd), [Blues for Piano: From Roots to Rootless Voicings](lessons/blues-piano.qmd) (for students)]{.wc-used}
 
-Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). 
-[Used in: [Analysed Scores](practice/analysed-scores.qmd) (for students)]{.wc-used}
+Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's. 
+[Used in: [Bach: "O Haupt voll Blut und Wunden"](theory/analysed-scores/bach-o-haupt.qmd), [Beethoven: "Moonlight" Sonata, I](theory/analysed-scores/beethoven-moonlight-1.qmd), [Modulation: Practice for Chapter 22](theory/modulation.qmd) (for students)]{.wc-used}
 
 United States Copyright Office. *Copyright Law of the United States*, Title 17, Chapter 1. [www.copyright.gov/title17/92chap1.html](https://www.copyright.gov/title17/92chap1.html). 
 [Used in: [DJ 7: Building a Set and Reading a Room](lessons/dj-set.qmd), [Sampling 6: Clearing Samples and the Law](lessons/sampling-law.qmd)]{.wc-used}

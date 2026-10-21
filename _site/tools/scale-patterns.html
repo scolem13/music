@@ -1,0 +1,1110 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Scale exercises written out for any key, scale, meter, style and instrument: scales, broken intervals, groups, Hanon, arpeggios, jazz digital patterns and enclosures, with fingerings, slide positions, valves or strings under the notes.">
+
+<title>Scale Patterns – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7f4c960c75fa4a060886384c4ea271f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../theory/index.html"> 
+<span class="menu-text">Theory</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#settings" id="toc-settings" class="nav-link active" data-scroll-target="#settings">Settings</a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise">Exercise</a></li>
+  <li><a href="#practice-notes" id="toc-practice-notes" class="nav-link" data-scroll-target="#practice-notes">Practice notes</a></li>
+  <li><a href="#on-your-instrument" id="toc-on-your-instrument" class="nav-link" data-scroll-target="#on-your-instrument">On your instrument</a></li>
+  <li><a href="#how-it-works" id="toc-how-it-works" class="nav-link" data-scroll-target="#how-it-works">How it works</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Scale Patterns</h1>
+</div>
+
+<div>
+  <div class="description">
+    Scale exercises written out for any key, scale, meter, style and instrument: scales, broken intervals, groups, Hanon, arpeggios, jazz digital patterns and enclosures, with fingerings, slide positions, valves or strings under the notes.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/abc-play.js?v=4"></script>
+<script src="../apps/shared/scale-fingering.js?v=1"></script>
+<script src="../apps/shared/hanon-part1.js?v=1"></script>
+<script src="../apps/shared/scale-patterns.js?v=2"></script>
+<script src="../apps/shared/section-fold.js?v=1"></script>
+<style>
+.sp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem; margin: .4rem 0 .8rem; }
+.sp-grid label { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; margin: 0; }
+.sp-grid select, .sp-grid input[type=number] { font-size: .95rem; text-transform: none; letter-spacing: 0; }
+.sp-checks { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: .2rem 0 .6rem; font-size: .92rem; }
+.sp-checks label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; }
+.sp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.sp-bar .btn { white-space: nowrap; }
+.sp-bar input[type=range] { width: 10rem; }
+#sp-score { overflow-x: auto; }
+#sp-score svg { max-width: 100%; height: auto; }
+.sp-warn { color: #b45309; font-size: .9rem; }
+.sp-tips li { margin: .25rem 0; }
+.sp-muted { opacity: .75; font-size: .9rem; }
+@media print { .sp-noprint, #quarto-margin-sidebar, nav, header, footer { display: none !important; } }
+</style>
+<section id="settings" class="level2">
+<h2 class="anchored" data-anchor-id="settings">Settings</h2>
+<div class="sp-noprint">
+<div id="sp-settings">
+  <div class="sp-grid">
+    <label>Key <select id="sp-tonic" class="form-select"></select></label>
+    <label>Scale / tonality <select id="sp-scale" class="form-select"></select></label>
+    <label>Pattern <select id="sp-pattern" class="form-select"></select></label>
+    <label>Style <select id="sp-style" class="form-select"></select></label>
+    <label>Meter <select id="sp-meter" class="form-select">
+      <option>4/4</option><option>3/4</option><option>2/4</option><option>5/4</option>
+      <option>6/8</option><option>9/8</option><option>12/8</option><option>5/8</option><option>7/8</option></select></label>
+    <label>Note value <select id="sp-unit" class="form-select">
+      <option value="auto">Auto (from pattern)</option><option value="q">Quarters</option><option value="e">Eighths</option>
+      <option value="t">Eighth-note triplets</option><option value="s">Sixteenths</option></select></label>
+    <label>Instrument <select id="sp-inst" class="form-select"></select></label>
+    <label id="sp-hand-w">Hand <select id="sp-hand" class="form-select"><option value="rh">Right hand</option><option value="lh">Left hand</option></select></label>
+    <label>Octaves <select id="sp-oct" class="form-select"><option>1</option><option selected="">2</option><option>3</option></select></label>
+    <label>Direction <select id="sp-dir" class="form-select">
+      <option value="updown">Up, then down</option><option value="downup">Down, then up</option><option value="up">Up only</option><option value="down">Down only</option></select></label>
+    <label>Practice rhythm <select id="sp-rhythm" class="form-select">
+      <option value="even">Even</option><option value="longshort">Long-short (dotted)</option><option value="shortlong">Short-long (snapped)</option></select></label>
+    <label>Articulation <select id="sp-artic" class="form-select">
+      <option value="">The style's own</option><option value="slurgroup">Slur each group</option><option value="jazz">Jazz: tongue the off-beat, slur into the beat</option>
+      <option value="stacc">Staccato</option><option value="accent">Accent each group</option><option value="none">None</option></select></label>
+    <label>Register <select id="sp-shift" class="form-select"><option value="-1">An octave lower</option><option value="0" selected="">Best fit</option><option value="1">An octave higher</option></select></label>
+  </div>
+  <div class="sp-checks">
+    <label><input type="checkbox" id="sp-alt"> Alternate the figure (up one, down the next)</label>
+    <label><input type="checkbox" id="sp-mirror"> Mirror on the way down</label>
+    <label><input type="checkbox" id="sp-labels" checked=""> Fingerings / positions under the notes</label>
+    <label><input type="checkbox" id="sp-chords"> Chord symbols</label>
+  </div>
+</div>
+</div>
+</section>
+<section id="exercise" class="level2">
+<h2 class="anchored" data-anchor-id="exercise">Exercise</h2>
+<div class="sp-bar sp-noprint">
+  <button id="sp-play" class="btn btn-primary btn-sm">▶ Play</button>
+  <label class="sp-muted" style="display:inline-flex;gap:.4rem;align-items:center;margin:0"><input type="checkbox" id="sp-band"> with the band</label>
+  <label class="sp-muted" style="display:inline-flex;gap:.4rem;align-items:center;margin:0">Tempo <input type="range" id="sp-qpm" min="40" max="260" value="72"> <span id="sp-qpm-v">72</span></label>
+  <select id="sp-sound" class="form-select form-select-sm" style="width:auto">
+    <option value="piano">Piano</option><option value="epiano">Electric piano</option><option value="rhodes">Rhodes</option>
+    <option value="clguitar">Guitar</option><option value="ebass">Bass</option><option value="organ">Organ</option></select>
+  <button id="sp-next" class="btn btn-outline-secondary btn-sm" title="Same exercise, the next key round the circle of fourths">Next key (4ths) ▸</button>
+  <button id="sp-copy" class="btn btn-outline-secondary btn-sm">Copy link</button>
+  <button id="sp-print" class="btn btn-outline-secondary btn-sm">Print</button>
+</div>
+<div id="sp-warn" class="sp-warn"></div>
+<div id="sp-score"></div>
+<details class="sp-noprint"><summary class="sp-muted">ABC</summary><pre id="sp-abc" style="font-size:.78rem;white-space:pre-wrap"></pre></details>
+</section>
+<section id="practice-notes" class="level2">
+<h2 class="anchored" data-anchor-id="practice-notes">Practice notes</h2>
+<ul id="sp-tips" class="sp-tips"></ul>
+</section>
+<section id="on-your-instrument" class="level2">
+<h2 class="anchored" data-anchor-id="on-your-instrument">On your instrument</h2>
+<ul id="sp-inst-tips" class="sp-tips"></ul>
+<p class="sp-muted">The instrument notes are general teaching advice, not yet checked against a source; more on each band instrument is coming.</p>
+</section>
+<section id="how-it-works" class="level2">
+<h2 class="anchored" data-anchor-id="how-it-works">How it works</h2>
+<ul>
+<li><strong>Key and spelling.</strong> Every note takes its letter from the scale’s own degrees, so G♯ harmonic minor has its F𝄪 and the blues scale has both the ♭5 and the 5. The key signature is the scale’s mode on the tonic (Dorian on D: no sharps or flats); harmonic and melodic minor use the natural minor’s, as printed scale books do. Enharmonic keys (F♯ / G♭) are spelled with the fewer accidentals, and for a transposing instrument with the fewer in the key you read.</li>
+<li><strong>Transposing instruments</strong> read written pitch (B♭ instruments a step up, E♭ alto a sixth up, horn in F a fifth up, guitar and bass an octave up); playback sounds at concert pitch.</li>
+<li><strong>Patterns</strong> move up the scale one step at a time, then down. “Mirror” turns the figure upside down on the way down (Hanon’s way); off, the same shape moves down (the jazz way, so an enclosure still lands on its target from both sides).</li>
+<li><strong>Swing</strong> is written as straight eighths; the playback swings them, and with the band the band’s own swing feel plays.</li>
+<li><strong>Hanon.</strong> Nos. 1–20 (<em>The Virtuoso Pianist</em>, Part I) are played note for note, with Hanon’s fingering, from the Mutopia Project’s edition (after Schirmer, 1900), read by a script. They keep Hanon’s two octaves; on another scale the same degrees are used, and on a scale that isn’t seven notes the figure changes shape.</li>
+</ul>
+</section>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p>Aebersold, Jamey. <em>Scale Syllabus</em>. Jamey Aebersold Jazz, <a href="https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf">www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf</a>.</p>
+<p>Hanon, Charles-Louis. “Exercise No.&nbsp;2.” <em>The Virtuoso Pianist, Part I</em>, Hanon-Online, <a href="https://hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g">hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g</a>. Hanon’s practice directions (lift the fingers, play each note distinctly, begin at 60).</p>
+<p>Hanon, Charles-Louis. <em>The Virtuoso Pianist (Part I)</em>. 1873. Edited by Steve Taylor and Javier Ruiz-Alma after the Schirmer edition of 1900, Mutopia Project, 2015, <a href="https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037">www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037</a>. CC BY-SA 4.0. Exercises 1–20 read note for note into apps/shared/hanon-part1.js.</p>
+</div>
+<!-- /works-cited -->
+<script>
+(function () {
+  var SP = window.ScalePatterns, $ = function (id) { return document.getElementById(id); };
+  var KEYS = ["C", "D♭ / C♯", "D", "E♭ / D♯", "E", "F", "F♯ / G♭", "G", "A♭ / G♯", "A", "B♭ / A♯", "B"];
+  function fill(sel, list, grouped) {
+    var groups = {};
+    list.forEach(function (x) {
+      var o = document.createElement("option"); o.value = x.id; o.textContent = x.label;
+      if (grouped && x.group) { if (!groups[x.group]) { groups[x.group] = document.createElement("optgroup"); groups[x.group].label = x.group; sel.appendChild(groups[x.group]); } groups[x.group].appendChild(o); }
+      else sel.appendChild(o);
+    });
+  }
+  KEYS.forEach(function (k, i) { var o = document.createElement("option"); o.value = i; o.textContent = k; $("sp-tonic").appendChild(o); });
+  fill($("sp-scale"), SP.SCALES, true); fill($("sp-pattern"), SP.PATTERNS, true); fill($("sp-style"), SP.STYLES); fill($("sp-inst"), SP.INSTRUMENTS);
+  var SOUND = { piano: "piano", guitar: "clguitar", bass: "ebass" };
+
+  // settings <-> the address, so a link is the exercise
+  var FIELDS = { k: "sp-tonic", sc: "sp-scale", p: "sp-pattern", st: "sp-style", m: "sp-meter", u: "sp-unit", i: "sp-inst", h: "sp-hand",
+    o: "sp-oct", d: "sp-dir", r: "sp-rhythm", a: "sp-artic", sh: "sp-shift", q: "sp-qpm", snd: "sp-sound" };
+  var CHECKS = { alt: "sp-alt", mir: "sp-mirror", lab: "sp-labels", ch: "sp-chords", band: "sp-band" };
+  var q = new URLSearchParams(location.search), mirrorTouched = q.has("mir"), altTouched = q.has("alt");
+  Object.keys(FIELDS).forEach(function (k) { if (q.has(k)) $(FIELDS[k]).value = q.get(k); });
+  Object.keys(CHECKS).forEach(function (k) { if (q.has(k)) $(CHECKS[k]).checked = q.get(k) === "1"; });
+  function save() {
+    var p = new URLSearchParams();
+    Object.keys(FIELDS).forEach(function (k) { p.set(k, $(FIELDS[k]).value); });
+    Object.keys(CHECKS).forEach(function (k) { p.set(k, $(CHECKS[k]).checked ? "1" : "0"); });
+    history.replaceState(null, "", location.pathname + "?" + p.toString() + location.hash);
+  }
+  function patDefaults() {
+    var p = SP.PATTERNS.find(function (x) { return x.id === $("sp-pattern").value; });
+    if (!mirrorTouched) $("sp-mirror").checked = !!p.mirror;
+    if (!altTouched) $("sp-alt").checked = !!p.alternate;
+  }
+  function styleDefaults() {
+    var s = SP.STYLES.find(function (x) { return x.id === $("sp-style").value; });
+    $("sp-qpm").value = s.qpm; $("sp-qpm-v").textContent = s.qpm;
+  }
+
+  var cur = null, visual = null;
+  function opts(chords) {
+    return { tonic: +$("sp-tonic").value, scale: $("sp-scale").value, pattern: $("sp-pattern").value, style: $("sp-style").value,
+      meter: $("sp-meter").value, unit: $("sp-unit").value, inst: $("sp-inst").value, hand: $("sp-hand").value, octaves: +$("sp-oct").value,
+      dir: $("sp-dir").value, rhythm: $("sp-rhythm").value, artic: $("sp-artic").value || null, octaveShift: +$("sp-shift").value,
+      alternate: $("sp-alt").checked, mirror: $("sp-mirror").checked, labels: $("sp-labels").checked, chords: chords, qpm: +$("sp-qpm").value };
+  }
+  function list(el, items) { el.innerHTML = ""; items.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; el.appendChild(li); }); }
+  function render() {
+    stop();
+    $("sp-hand-w").style.display = $("sp-inst").value === "piano" ? "" : "none";
+    cur = SP.make(opts($("sp-chords").checked));
+    $("sp-abc").textContent = cur.abc;
+    visual = ABCJS.renderAbc("sp-score", cur.abc, { responsive: "resize", add_classes: true, staffwidth: 900, wrap: { minSpacing: 1.6, maxSpacing: 2.6, preferredMeasuresPerLine: 4 } })[0];
+    list($("sp-tips"), cur.tips); list($("sp-inst-tips"), cur.instTips.length ? cur.instTips : ["Nothing in this exercise needs special care on this instrument."]);
+    $("sp-warn").textContent = cur.warnings.join(" ");
+    save();
+  }
+
+  var handle = null;
+  function stop() { if (handle) { try { handle.stop(); } catch (e) {} handle = null; } $("sp-play").textContent = "▶ Play"; }
+  $("sp-play").addEventListener("click", function () {
+    if (handle) return stop();
+    var band = $("sp-band").checked && cur.band, qpm = +$("sp-qpm").value, done = function () { handle = null; $("sp-play").textContent = "▶ Play"; };
+    var common = { sound: $("sp-sound").value, qpm: qpm, transpose: -cur.semi, onEnd: done };
+    if (band) {
+      // the band reads chord symbols: play a version that has them, drawn off the page
+      var withCh = SP.make(opts(true)), div = document.createElement("div"); div.style.cssText = "position:absolute;left:-9999px;width:900px";
+      document.body.appendChild(div);
+      var v = ABCJS.renderAbc(div, withCh.abc)[0];
+      handle = AbcPlay.play(v, Object.assign({ abc: withCh.abc, style: cur.band, light: false }, common));
+      handle.done && handle.done.then(function () { div.remove(); });
+    } else if (cur.swing) {
+      var d2 = document.createElement("div"); d2.style.cssText = "position:absolute;left:-9999px;width:900px"; document.body.appendChild(d2);
+      var v2 = ABCJS.renderAbc(d2, cur.playAbc)[0];
+      handle = AbcPlay.play(v2, Object.assign({ light: false }, common));
+      handle.done && handle.done.then(function () { d2.remove(); });
+    } else handle = AbcPlay.play(visual, common);
+    $("sp-play").textContent = "■ Stop";
+  });
+  $("sp-qpm").addEventListener("input", function () { $("sp-qpm-v").textContent = this.value; });
+  $("sp-qpm").addEventListener("change", render);
+  $("sp-pattern").addEventListener("change", function () { mirrorTouched = altTouched = false; patDefaults(); render(); });
+  $("sp-style").addEventListener("change", function () { styleDefaults(); render(); });
+  $("sp-inst").addEventListener("change", function () { $("sp-sound").value = SOUND[$("sp-inst").value] || "piano"; render(); });
+  $("sp-mirror").addEventListener("change", function () { mirrorTouched = true; render(); });
+  $("sp-alt").addEventListener("change", function () { altTouched = true; render(); });
+  ["sp-tonic", "sp-scale", "sp-meter", "sp-unit", "sp-hand", "sp-oct", "sp-dir", "sp-rhythm", "sp-artic", "sp-shift", "sp-labels", "sp-chords", "sp-band", "sp-sound"]
+    .forEach(function (id) { $(id).addEventListener("change", render); });
+  $("sp-next").addEventListener("click", function () { $("sp-tonic").value = (+$("sp-tonic").value + 5) % 12; render(); });
+  $("sp-copy").addEventListener("click", function () { try { navigator.clipboard.writeText(location.href); this.textContent = "Copied"; var b = this; setTimeout(function () { b.textContent = "Copy link"; }, 1200); } catch (e) {} });
+  $("sp-print").addEventListener("click", function () { window.print(); });
+  if (!q.has("p")) patDefaults();
+  if (!q.has("q")) styleDefaults();
+  render();
+})();
+</script>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

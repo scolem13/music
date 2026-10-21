@@ -1,0 +1,67 @@
+---
+aliases:
+  - ../../practice/analysed-scores.html
+title: "Analysed Scores"
+toc: true
+toc-depth: 2
+description: "Real pieces with expert Roman-numeral analyses under the notes, from the When in Rome corpus, one piece per page: Bach's chorale \"O Haupt voll Blut und Wunden\" (\"O Sacred Head, Now Wounded\") and the first movement of Beethoven's \"Moonlight\" Sonata. Play along with the analysis."
+---
+
+{{< include _head.qmd >}}
+
+Real music, analysed by experts, with the Roman numerals under the notes where each chord begins. Each piece has its own page. The
+analyses come from [**When in Rome**](https://github.com/MarkGotham/When-in-Rome), a collection of harmonic analyses gathered by Mark
+Gotham and others.
+
+## The pieces
+
+- [**Bach: "O Haupt voll Blut und Wunden"**](bach-o-haupt.qmd) ("O Sacred Head, Now Wounded"), a four-part chorale from the *St Matthew
+  Passion*, analysed by Dmitri Tymoczko. Short, with a key change at nearly every phrase.
+- [**Beethoven: "Moonlight" Sonata, I**](beethoven-moonlight-1.qmd), the whole first movement, analysed by Tsung-Ping Chen and Li Su.
+  Slow harmony, the Neapolitan, a tour of keys, and the form part by part.
+
+## Reading the labels
+
+A key followed by a colon (`d:`) means the music has moved to that key (capital letter major, small letter minor); the numerals after it
+are in the new key. The figures are those of [Chapter 16](../figured-bass.qmd) (6, 64, 7, 65, 43, 42). ° is diminished and ø
+half-diminished, as in the book. `V/iv` and `vii°7/V` are the secondary chords of [Chapters 17](../secondary-dominants.qmd) and
+[18](../secondary-diminished.qmd); `N6` is the [Neapolitan](../neapolitan.qmd). A numeral sits under the bass where its chord starts;
+where the bass holds a note through a chord change, the note is written as tied notes so the label has a place (it sounds the same).
+
+## Using the scores
+
+- **Play:** Space plays and pauses. Click a note to move there.
+- **Resizing:** drag the line at the right edge of a score to make it wider or narrower (double-click it to reset); the bars re-flow to
+  fit, and the size is kept for every score.
+- **Keys:** above a score, the key strip shows every key the analyst names, in order, as wide as the time spent there. Click a key to light
+  its bars and hear them.
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Sources:** the analyses are When in Rome's RomanText files, CC BY-SA 4.0, shown as they are (signs written as in the book: ° ø, figures
+  run together). The scores are Craig Sapp's Humdrum encodings of public-domain editions, converted to ABC by
+  `scripts/when-in-rome/build.mjs`. That script also places each numeral at its bar and beat, and the browser test checks every
+  converted note against the original encoding.
+- **One analysis per piece:** the corpus has more than one analysis of both pieces (a second chorale analysis from the Bach Chorales
+  Melody-Harmony Corpus, and Tymoczko's Moonlight). The site shows one; `build.mjs` can show more, as tabs, by listing them in `PIECES`.
+- **Notes and other readings:** where an analyst left notes or alternative readings in the file, they are listed under the score.
+- **Not edited:** the analyses are not this site's, and some labels follow the analyst's conventions rather than the book's (Cad64, Imaj7,
+  I7).
+- **More pieces:** the corpus has hundreds more (all the Bach chorales, Beethoven's sonatas and quartets, 19th-century songs). The same
+  script can add them; each gets a page here.
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome.
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+**For teachers**
+
+Nápoles López, Néstor, et al. *BCMH: The Bach Chorales Melody-Harmony Corpus*. GitHub. [github.com/napulen/BCMH](https://github.com/napulen/BCMH). A second analysis of the chorale (automated translation to RomanText), not shown on the site.
+:::
+<!-- /works-cited -->

@@ -711,19 +711,19 @@
 </div>
 
 <link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=2">
-<script src="/apps/shared/timestamp-player/player.js?v=7"></script>
-<script src="/apps/shared/timestamp-player/recording-follow.js?v=3"></script>
+<script src="/apps/shared/timestamp-player/player.js?v=8"></script>
+<script src="/apps/shared/timestamp-player/recording-follow.js?v=4"></script>
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/audio-check.js"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
 <script src="/apps/shared/abc-transpose.js?v=4"></script>
 <script src="/apps/shared/tune-chart.js?v=31"></script>
-<script src="/apps/shared/chord-entry.js?v=9"></script>
-<script src="/apps/shared/musical-typing.js"></script>
+<script src="/apps/shared/chord-entry.js?v=11"></script>
+<script src="/apps/shared/musical-typing.js?v=2"></script>
 <script src="/apps/shared/melody-dwim.js?v=1"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/shared/abc-events.js?v=3"></script>
-<script src="/apps/shared/notation-doc.js?v=10"></script>
+<script src="/apps/shared/notation-doc.js?v=11"></script>
 <script src="/apps/shared/ug-chordpro.js?v=4"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/band/tune-score.js?v=2"></script>

@@ -59,6 +59,7 @@
     var guessed = {};       // bars put in from the tempo (Fill from the tempo), keyed as meters; not tapped
 
     function api() { return player._btp || null; }
+    var wrapFns = [];
     function fmt(t) {
       var m = Math.floor(t / 60), s = t - m * 60;
       return String(m).padStart(2, '0') + ':' + s.toFixed(1).padStart(4, '0');
@@ -610,7 +611,7 @@
     (function watch() {
       var a = api(), t = a && a.time();
       if (typeof t === 'number') {
-        if (loop && a.playing() && t >= loop.end - 0.03) a.seek(loop.start);
+        if (loop && a.playing() && t >= loop.end - 0.03) { a.seek(loop.start); var lw = loop; wrapFns.forEach(function (f) { try { f(lw); } catch (e) {} }); }
         var i = barAt(t), here = null;
         sections().forEach(function (s) { if (s.start <= t + 0.02) here = s; });
         var text = i >= 0 ? 'Bar ' + (i + 1) : bars.length ? 'Before bar 1' : '';
@@ -719,6 +720,8 @@
         render(); return true;
       },
       loop: function () { return loop ? { name: loop.name, start: loop.start, end: loop.end } : null; },
+      // f(loop) each time the playhead goes back to the loop's start (phrases.js counts passes with it)
+      onWrap: function (f) { wrapFns.push(f); },
       // the combined song file (player-log.js saves and opens it)
       state: function () { return JSON.parse(asJson()); },
       load: function (data) { if (!load(data)) return false; save(); render(); return true; }

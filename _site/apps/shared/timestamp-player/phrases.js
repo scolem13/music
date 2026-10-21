@@ -8,9 +8,10 @@
      p          loop the phrase under the playhead (again: stop)
      , .        loop the previous / next phrase
      - =        lead-in half a beat shorter / longer
+     { }        stop point half a beat earlier / later (the tail: how far past the phrase's last bar the loop runs, up to 2 bars)
      t          this phrase to the Notation page
 
-   Kept in localStorage (btp-phrases: { size, leadIns: { "verse 1#0@4": beats } }) and in the song file (phrases).
+   Kept in localStorage (btp-phrases: { size, leadIns: { "verse 1#0@4": beats }, tails: { key: beats } }) and in the song file (phrases).
    The plan (split, loop times, the lead-in limit) is TsPhrases, which loads in Node for tests. */
 (function (global) {
   "use strict";
@@ -69,10 +70,40 @@
     }
     return Math.max(0, two);
   }
-  // Where phrase i loops: { start, end, leadIn } in seconds (leadIn clamped).
-  function loopOf(grid, phrases, i, leadIn) {
+  // The time `beats` beats after the start of bar `to` (walking forward through the bars at their own tempo; past the last
+  // tapped bar at the typical beat).
+  function forwardFrom(grid, to, beats) {
+    var t = endOf(grid, to), left = beats, b = to;
+    while (left > 1e-6 && b + 1 < grid.bars.length) {
+      var per = (grid.bars[b + 1] - grid.bars[b]) / grid.beats[b], take = Math.min(left, grid.beats[b]);
+      t += take * per; left -= take; b++;
+    }
+    if (left > 1e-6) t += left * (grid.beatLen || 0.5);
+    return t;
+  }
+  // The longest tail (stop point past the phrase's last bar) phrase i may have, in beats: two bars.
+  function maxTail(grid, phrases, i) {
+    var ph = phrases[i], two = 0;
+    for (var b = ph.to; b < ph.to + 2; b++) two += grid.beats[b] || grid.beats[grid.beats.length - 1] || 4;
+    return two;
+  }
+  // The earliest stop (a negative tail: before the phrase's last downbeat-after), in beats: the phrase keeps a beat.
+  function minTail(grid, phrases, i) {
+    var ph = phrases[i], len = 0;
+    for (var b = ph.from; b < ph.to; b++) len += grid.beats[b] || 4;
+    return -Math.max(0, len - 1);
+  }
+  // The phrase's tapped tempo (bpm)
+  function bpmOf(grid, ph) {
+    var beats = 0; for (var b = ph.from; b < ph.to; b++) beats += grid.beats[b] || 4;
+    var secs = endOf(grid, ph.to) - grid.bars[ph.from];
+    return secs > 0 ? beats * 60 / secs : null;
+  }
+  // Where phrase i loops: { start, end, leadIn, tail } in seconds / beats (leadIn and tail clamped).
+  function loopOf(grid, phrases, i, leadIn, tail) {
     var ph = phrases[i], li = Math.max(0, Math.min(leadIn || 0, maxLeadIn(grid, phrases, i)));
-    return { start: backFrom(grid, ph.from, li), end: endOf(grid, ph.to), leadIn: li };
+    var tl = Math.max(minTail(grid, phrases, i), Math.min(tail || 0, maxTail(grid, phrases, i)));
+    return { start: backFrom(grid, ph.from, li), end: tl > 0 ? forwardFrom(grid, ph.to, tl) : tl < 0 ? backFrom(grid, ph.to, -tl) : endOf(grid, ph.to), leadIn: li, tail: tl };
   }
   // Cut each section of a Notation doc (NotationDoc D) into a chunk per phrase: phrases from split(), matched to the doc's
   // sections by name and occurrence. Chunks without notes keep their words on the section's first chunk. Relabels (I1a, V1b ...).
@@ -132,7 +163,7 @@
     });
     return doc;
   }
-  var api = { tempos: tempos, chunkDoc: chunkDoc, split: split, backFrom: backFrom, endOf: endOf, maxLeadIn: maxLeadIn, loopOf: loopOf };
+  var api = { tempos: tempos, chunkDoc: chunkDoc, split: split, backFrom: backFrom, endOf: endOf, maxLeadIn: maxLeadIn, maxTail: maxTail, minTail: minTail, bpmOf: bpmOf, forwardFrom: forwardFrom, loopOf: loopOf };
   global.TsPhrases = api;
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (typeof document === 'undefined') return;
@@ -145,10 +176,12 @@
     var player = document.querySelector('.btp');
     if (!root || !mapEl) return;
     var q = function (sel) { return PanelColumns.q(root, sel); };
+    var modeIn = q('.btp-ph-mode');
     var list = q('.btp-ph-rows'), empty = q('.btp-ph-empty'), sizeIn = q('.btp-ph-size'), note = q('.btp-ph-note');
-    var state = { size: 4, leadIns: {} };
-    try { var kept = JSON.parse(localStorage.getItem(STORE) || 'null'); if (kept) state = { size: kept.size || 4, leadIns: kept.leadIns || {} }; } catch (e) {}
+    var state = { size: 4, leadIns: {}, tails: {} };
+    try { var kept = JSON.parse(localStorage.getItem(STORE) || 'null'); if (kept) state = { size: kept.size || 4, leadIns: kept.leadIns || {}, tails: kept.tails || {}, mode: kept.mode }; } catch (e) {}
     sizeIn.value = String(state.size);
+    if (modeIn) modeIn.value = state.mode || 'listen';
 
     function M() { return mapEl._btpMap; }
     function W() { return wordsEl && wordsEl._btpWords; }
@@ -158,7 +191,7 @@
     function grid() { var m = M(); return m ? m.grid() : null; }
     function label(ph) { return ph.name + (ph.parts > 1 ? ' · ' + ph.part + '/' + ph.parts : ''); }
     function beatsText(b) { return b ? (b % 1 ? b.toFixed(1) : String(b)) + (b === 1 ? ' beat' : ' beats') : 'none'; }
-    function loopName(ph) { return label(ph) + ' (phrase)'; }
+    function loopName(ph) { return label(ph) + ' (chunk)'; }
     function current() {
       var m = M(), l = m && m.loop(), all = phrases();
       if (!l) return -1;
@@ -176,22 +209,24 @@
     function loopAt(i) {
       var all = phrases(), g = grid(), m = M();
       if (!all[i] || !g) return;
-      var l = loopOf(g, all, i, state.leadIns[all[i].key]);
+      var l = loopOf(g, all, i, state.leadIns[all[i].key], state.tails[all[i].key]);
+      pass = 0;
+      if (player && player._btp && player._btp.playing()) setTimeout(startPass, 60);
       if (m.setLoop({ name: loopName(all[i]), start: l.start, end: l.end }))
-        say('Looping ' + label(all[i]) + ', bars ' + (all[i].from + 1) + '–' + all[i].to + (l.leadIn ? ', from ' + beatsText(l.leadIn) + ' before' : '') + '.');
+        say('Looping ' + label(all[i]) + ', bars ' + (all[i].from + 1) + '–' + all[i].to + (l.leadIn ? ', from ' + beatsText(l.leadIn) + ' before' : '') + (l.tail > 0 ? ', to ' + beatsText(l.tail) + ' after' : l.tail < 0 ? ', stopping ' + beatsText(-l.tail) + ' early' : '') + '.');
       render();
     }
     function toggle() {
       var c = current();
       if (c >= 0) { M().setLoop(null); say('Stopped looping.'); render(); return; }
       var h = hereIndex();
-      if (h < 0) { say(phrases().length ? 'Before the first phrase.' : 'Tap the bars and stamp the sections first.'); return; }
+      if (h < 0) { say(phrases().length ? 'Before the first chunk.' : 'Tap the bars and stamp the sections first.'); return; }
       loopAt(h);
     }
     function step(d) {
       var c = current(); if (c < 0) c = hereIndex();
       var n = c + d, all = phrases();
-      if (n < 0 || n >= all.length) { say(d > 0 ? 'That was the last phrase.' : 'That is the first phrase.'); return; }
+      if (n < 0 || n >= all.length) { say(d > 0 ? 'That was the last chunk.' : 'That is the first chunk.'); return; }
       loopAt(n);
     }
     function nudge(i, d) {
@@ -201,21 +236,90 @@
       if (v) state.leadIns[k] = v; else delete state.leadIns[k];
       save();
       if (current() === i) loopAt(i); else render();
-      if (d > 0 && v === max) say('As far back as it goes: ' + (max ? beatsText(max) + ' (two bars at most, and the phrase before keeps a beat).' : 'there is no room before it.'));
+      if (d > 0 && v === max) say('As far back as it goes: ' + (max ? beatsText(max) + ' (two bars at most, and the chunk before keeps a beat).' : 'there is no room before it.'));
     }
+
+    function nudgeTail(i, d) {
+      var all = phrases(), g = grid();
+      if (!all[i] || !g) return;
+      var k = all[i].key, max = maxTail(g, all, i), min = minTail(g, all, i), v = Math.max(min, Math.min(max, (state.tails[k] || 0) + d));
+      if (v) state.tails[k] = v; else delete state.tails[k];
+      save();
+      if (current() === i) loopAt(i); else render();
+      if (d > 0 && v === max) say('As far as it goes: ' + beatsText(max) + ' (two bars at most).');
+      else if (d < 0 && v === min) say('As early as it goes: the chunk keeps a beat.');
+    }
+
+    // ---- loop modes: listen, play along, play alone (silent, a click), listen then play ----
+    // A pass you play is a take on the Notation page: it is told when the phrase's first downbeat sounds (nt-pass, in
+    // epoch ms, so the two windows share a clock) and records with no count-in of its own.
+    var pass = 0, actx = null, clickT = null;
+    function mode() { return (modeIn && modeIn.value) || 'listen'; }
+    function playing(n) { var md = mode(); return md === 'along' || md === 'alone' || (md === 'cycle' && n % 2 === 1); }
+    function silent(n) { var md = mode(); return md === 'alone' || (md === 'cycle' && n % 2 === 1); }
+    function startPass() {
+      var c = current(), a = player && player._btp; if (c < 0 || !a) return;
+      var all = phrases(), g = grid(), ph = all[c], lp = loopOf(g, all, c, state.leadIns[ph.key], state.tails[ph.key]);
+      a.setMuted && a.setMuted(silent(pass));
+      clickOn(silent(pass));
+      if (!playing(pass)) { say('Listening to ' + label(ph) + (mode() === 'cycle' ? '; you play the next pass.' : '.')); return; }
+      var w = W(), win = w && w.remoteWin && w.remoteWin('ts-notation');
+      if (!win) { say('Playing ' + label(ph) + '. Open it on the Notation page (T) to keep each pass as a take.'); return; }
+      var rate = a.rate ? a.rate() : 1, beats = 0;
+      for (var b = ph.from; b < ph.to; b++) beats += g.beats[b] || 4;
+      var beatSec = (endOf(g, ph.to) - g.bars[ph.from]) / beats / rate, now = a.time();
+      var downAt = Date.now() + (g.bars[ph.from] - now) / rate * 1000, endAt = Date.now() + (lp.end - now) / rate * 1000;
+      win.postMessage({ type: 'nt-pass', section: ph.name, nth: ph.nth, bar: ph.offset, bars: ph.to - ph.from, leadIn: lp.leadIn, tail: lp.tail,
+        label: label(ph), downAt: downAt, endAt: endAt, beatSec: beatSec, host: 'Timestamp Notes' }, location.origin);
+      say('Your turn: ' + label(ph) + (silent(pass) ? ' (recording silent)' : '') + '. This pass is a take on the Notation page.');
+    }
+    // a click on each tapped beat while the recording is silent
+    function clickOn(on) {
+      clearInterval(clickT); clickT = null; if (!on) return;
+      var last = -1;
+      clickT = setInterval(function () {
+        var a = player && player._btp, g = grid(); if (!a || !g || !a.playing()) return;
+        var t = a.time(), b = -1; for (var i = 0; i < g.bars.length; i++) if (g.bars[i] <= t) b = i;
+        if (b < 0) return;
+        var len = endOf(g, b + 1) - g.bars[b], k = Math.floor((t - g.bars[b]) / len * g.beats[b]), id = b * 64 + k;
+        if (id === last) return; last = id; tick1(k === 0);
+      }, 10);
+    }
+    function tick1(down) {
+      try {
+        if (!actx) { actx = new (window.AudioContext || window.webkitAudioContext)(); if (window.AudioTap) AudioTap.register(actx); }
+        var o = actx.createOscillator(), gn = actx.createGain(), t = actx.currentTime;
+        o.frequency.value = down ? 1500 : 1000; gn.gain.setValueAtTime(0.25, t); gn.gain.exponentialRampToValueAtTime(0.001, t + 0.05);
+        o.connect(gn); gn.connect(actx.destination); o.start(t); o.stop(t + 0.06);
+      } catch (e) {}
+    }
+    if (M() && M().onWrap) M().onWrap(function (l) { if (current() < 0) return; pass++; startPass(); });
+    if (modeIn) modeIn.addEventListener('change', function () { state.mode = modeIn.value; save(); pass = 0; var a = player && player._btp; if (a && a.setMuted) a.setMuted(false); clickOn(false); modeIn.blur(); });
+    // a loop started (or the player started on one): its first pass
+    var wasOn = false;
+    setInterval(function () {
+      var a = player && player._btp, on = !!(a && a.playing() && current() >= 0);
+      if (on && !wasOn) startPass();
+      if (!on && wasOn) { clickOn(false); if (a && a.setMuted && current() < 0) a.setMuted(false); }
+      wasOn = on;
+    }, 100);
 
     // ---- to the Notation page and back ----
     // The phrase is asked for by section name and bar; a Notation page without that section answers nt-need-doc, and only
     // then is the piece sent (so a transcription already there is never replaced unasked).
     var lastGoto = null;
-    function toNotation(i) {
+    function toNotation(i, quiet) {
       var all = phrases(), w = W();
       if (i == null) { i = current(); if (i < 0) i = hereIndex(); }
-      if (!all[i]) { say('No phrase here: tap the bars and stamp the sections first.'); return; }
+      if (!all[i]) { say('No chunk here: tap the bars and stamp the sections first.'); return; }
       if (!w || !w.remote) { say('The words part is not loaded.'); return; }
-      var ph = all[i], g = grid(), li = loopOf(g, all, i, state.leadIns[ph.key]).leadIn;
-      lastGoto = { type: 'nt-goto', section: ph.name, nth: ph.nth, bar: ph.offset, bars: ph.to - ph.from, leadIn: li,
+      var ph = all[i], g = grid(), lp = loopOf(g, all, i, state.leadIns[ph.key], state.tails[ph.key]), li = lp.leadIn;
+      var a0 = player && player._btp;
+      lastGoto = { type: 'nt-goto', section: ph.name, nth: ph.nth, bar: ph.offset, bars: ph.to - ph.from, leadIn: li, tail: lp.tail,
+                   bpm: bpmOf(g, ph), rate: a0 && a0.rate ? a0.rate() : 1,
                    label: label(ph), host: 'Timestamp Notes' };
+      var open = quiet && w.remoteWin && w.remoteWin('ts-notation');
+      if (open) { open.postMessage(lastGoto, location.origin); return; }        // from the Notation page's keys: no window switching
       if (w.remote('/tools/notation.html?remote=1', 'ts-notation', 'nt-ready', [lastGoto]))
         say('To the Notation page: ' + label(ph) + (li ? ', with a lead-in of ' + beatsText(li) : '') + '.');
     }
@@ -263,13 +367,35 @@
       if (!a.playing()) a.toggle();
       say('From the Notation page: bar ' + (b + 1) + '.');
     });
+    // nt-loop { action } from the Notation page (its \ keys): the loop driven from there; the answer (nt-loop-state) is what
+    // this page said, and a phrase changed is sent there as nt-goto so the takes follow
+    window.addEventListener('message', function (e) {
+      if (e.origin !== location.origin || !e.data || e.data.type !== 'nt-loop') return;
+      var w = W(), win = w && w.remoteWin('ts-notation');
+      if (!win || e.source !== win) return;
+      var a = player && player._btp, c = current(), was = c, act = e.data.action;
+      if (c < 0) c = hereIndex();
+      if (act === 'toggle') toggle();
+      else if (act === 'prev') step(-1);
+      else if (act === 'next') step(1);
+      else if (act === 'again') { if (c >= 0) loopAt(c); if (a && !a.playing()) a.toggle(); }
+      else if (act === 'leadLess' && c >= 0) nudge(c, -0.5);
+      else if (act === 'leadMore' && c >= 0) nudge(c, 0.5);
+      else if (act === 'tailLess' && c >= 0) nudgeTail(c, -0.5);
+      else if (act === 'tailMore' && c >= 0) nudgeTail(c, 0.5);
+      else if (act === 'mode' && modeIn) { var o = modeIn.options, k = (modeIn.selectedIndex + 1) % o.length; modeIn.value = o[k].value; modeIn.dispatchEvent(new Event('change')); say('Loop mode: ' + o[k].textContent + '.'); }
+      else if (act === 'play' && a) a.toggle();
+      var now = current();
+      if (now >= 0 && now !== was && (act === 'prev' || act === 'next' || act === 'toggle')) toNotation(now, true);
+      try { win.postMessage({ type: 'nt-loop-state', text: note.textContent }, location.origin); } catch (err) {}
+    });
     window.addEventListener('message', function (e) {
       if (e.origin !== location.origin || !e.data || e.data.type !== 'nt-back') return;
       var w = W();
       if (!w || e.source !== w.remoteWin('ts-notation')) return;
       try { window.focus(); } catch (err) {}
       var c = current(); if (c < 0) c = hereIndex();
-      step(e.data.again ? 0 : 1);
+      step(e.data.again ? 0 : 1 + Math.max(0, e.data.skip | 0));     // skip: phrases a take already ran on into
       if (c < 0 && !e.data.again) loopAt(0);
     });
 
@@ -298,11 +424,21 @@
         minus.addEventListener('click', function () { nudge(i, -0.5); minus.blur(); });
         plus.addEventListener('click', function () { nudge(i, 0.5); plus.blur(); });
         lead.appendChild(minus); lead.appendChild(val); lead.appendChild(plus);
+        var tail = document.createElement('span'); tail.className = 'btp-ph-lead btp-ph-tail';
+        var tv = g ? loopOf(g, all, i, 0, state.tails[ph.key]).tail : 0;
+        var tm = document.createElement('button'), tp = document.createElement('button'), tval = document.createElement('span');
+        tm.type = tp.type = 'button'; tm.textContent = '−'; tp.textContent = '+';
+        tm.title = 'Stop half a beat earlier ({); before the bar line too, e.g. a beat early when the next chunk has a one-beat pickup'; tp.title = 'Stop half a beat later, past the last bar (})';
+        tm.setAttribute('aria-label', 'Earlier stop for ' + label(ph)); tp.setAttribute('aria-label', 'Later stop for ' + label(ph));
+        tval.textContent = 'stop ' + (tv > 0 ? '+' + beatsText(tv) : tv < 0 ? '−' + beatsText(-tv) : 'at the bar');
+        tm.addEventListener('click', function () { nudgeTail(i, -0.5); tm.blur(); });
+        tp.addEventListener('click', function () { nudgeTail(i, 0.5); tp.blur(); });
+        tail.appendChild(tm); tail.appendChild(tval); tail.appendChild(tp);
         var send = document.createElement('button');
         send.type = 'button'; send.className = 'btp-ph-send'; send.textContent = 'Notate';
-        send.title = 'Go to this phrase on the Notation page (T)';
+        send.title = 'Go to this chunk on the Notation page (T)';
         send.addEventListener('click', function () { toNotation(i); send.blur(); });
-        [go, name, where, lead, send].forEach(function (el) { li.appendChild(el); });
+        [go, name, where, lead, tail, send].forEach(function (el) { li.appendChild(el); });
         list.appendChild(li);
       });
     }
@@ -319,6 +455,8 @@
       else if (e.key === '.') { step(1); e.preventDefault(); }
       else if (e.key === '-' && c >= 0) { nudge(c, -0.5); e.preventDefault(); }
       else if ((e.key === '=' || e.key === '+') && c >= 0) { nudge(c, 0.5); e.preventDefault(); }
+      else if (e.key === '{' && c >= 0) { nudgeTail(c, -0.5); e.preventDefault(); }
+      else if (e.key === '}' && c >= 0) { nudgeTail(c, 0.5); e.preventDefault(); }
       else if (e.key === 't' || e.key === 'T') { toNotation(); e.preventDefault(); }
     });
     // the bar map and stamps change under it: redraw now and then (cheap)
@@ -333,8 +471,8 @@
 
     root._btpPhrases = {
       state: function () { return JSON.parse(JSON.stringify(state)); },
-      load: function (d) { if (!d) return; state = { size: d.size || 4, leadIns: d.leadIns || {} }; sizeIn.value = String(state.size); save(); render(); },
-      phrases: phrases, asChunks: asChunks, loopAt: loopAt, toNotation: toNotation, nudge: nudge
+      load: function (d) { if (!d) return; state = { size: d.size || 4, leadIns: d.leadIns || {}, tails: d.tails || {}, mode: d.mode || state.mode }; sizeIn.value = String(state.size); save(); render(); },
+      phrases: phrases, asChunks: asChunks, loopAt: loopAt, toNotation: toNotation, nudge: nudge, nudgeTail: nudgeTail
     };
     render();
   }

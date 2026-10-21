@@ -1,0 +1,227 @@
+---
+title: "Scale Patterns"
+description: "Scale exercises written out for any key, scale, meter, style and instrument: scales, broken intervals, groups, Hanon, arpeggios, jazz digital patterns and enclosures, with fingerings, slide positions, valves or strings under the notes."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-play.js?v=4"></script>
+<script src="/apps/shared/scale-fingering.js?v=1"></script>
+<script src="/apps/shared/hanon-part1.js?v=1"></script>
+<script src="/apps/shared/scale-patterns.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.sp-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem; margin: .4rem 0 .8rem; }
+.sp-grid label { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; opacity: .85; margin: 0; }
+.sp-grid select, .sp-grid input[type=number] { font-size: .95rem; text-transform: none; letter-spacing: 0; }
+.sp-checks { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: .2rem 0 .6rem; font-size: .92rem; }
+.sp-checks label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; }
+.sp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.sp-bar .btn { white-space: nowrap; }
+.sp-bar input[type=range] { width: 10rem; }
+#sp-score { overflow-x: auto; }
+#sp-score svg { max-width: 100%; height: auto; }
+.sp-warn { color: #b45309; font-size: .9rem; }
+.sp-tips li { margin: .25rem 0; }
+.sp-muted { opacity: .75; font-size: .9rem; }
+@media print { .sp-noprint, #quarto-margin-sidebar, nav, header, footer { display: none !important; } }
+</style>
+```
+
+## Settings
+
+::: {.sp-noprint}
+```{=html}
+<div id="sp-settings">
+  <div class="sp-grid">
+    <label>Key <select id="sp-tonic" class="form-select"></select></label>
+    <label>Scale / tonality <select id="sp-scale" class="form-select"></select></label>
+    <label>Pattern <select id="sp-pattern" class="form-select"></select></label>
+    <label>Style <select id="sp-style" class="form-select"></select></label>
+    <label>Meter <select id="sp-meter" class="form-select">
+      <option>4/4</option><option>3/4</option><option>2/4</option><option>5/4</option>
+      <option>6/8</option><option>9/8</option><option>12/8</option><option>5/8</option><option>7/8</option></select></label>
+    <label>Note value <select id="sp-unit" class="form-select">
+      <option value="auto">Auto (from pattern)</option><option value="q">Quarters</option><option value="e">Eighths</option>
+      <option value="t">Eighth-note triplets</option><option value="s">Sixteenths</option></select></label>
+    <label>Instrument <select id="sp-inst" class="form-select"></select></label>
+    <label id="sp-hand-w">Hand <select id="sp-hand" class="form-select"><option value="rh">Right hand</option><option value="lh">Left hand</option></select></label>
+    <label>Octaves <select id="sp-oct" class="form-select"><option>1</option><option selected>2</option><option>3</option></select></label>
+    <label>Direction <select id="sp-dir" class="form-select">
+      <option value="updown">Up, then down</option><option value="downup">Down, then up</option><option value="up">Up only</option><option value="down">Down only</option></select></label>
+    <label>Practice rhythm <select id="sp-rhythm" class="form-select">
+      <option value="even">Even</option><option value="longshort">Long-short (dotted)</option><option value="shortlong">Short-long (snapped)</option></select></label>
+    <label>Articulation <select id="sp-artic" class="form-select">
+      <option value="">The style's own</option><option value="slurgroup">Slur each group</option><option value="jazz">Jazz: tongue the off-beat, slur into the beat</option>
+      <option value="stacc">Staccato</option><option value="accent">Accent each group</option><option value="none">None</option></select></label>
+    <label>Register <select id="sp-shift" class="form-select"><option value="-1">An octave lower</option><option value="0" selected>Best fit</option><option value="1">An octave higher</option></select></label>
+  </div>
+  <div class="sp-checks">
+    <label><input type="checkbox" id="sp-alt"> Alternate the figure (up one, down the next)</label>
+    <label><input type="checkbox" id="sp-mirror"> Mirror on the way down</label>
+    <label><input type="checkbox" id="sp-labels" checked> Fingerings / positions under the notes</label>
+    <label><input type="checkbox" id="sp-chords"> Chord symbols</label>
+  </div>
+</div>
+```
+:::
+
+## Exercise
+
+```{=html}
+<div class="sp-bar sp-noprint">
+  <button id="sp-play" class="btn btn-primary btn-sm">▶ Play</button>
+  <label class="sp-muted" style="display:inline-flex;gap:.4rem;align-items:center;margin:0"><input type="checkbox" id="sp-band"> with the band</label>
+  <label class="sp-muted" style="display:inline-flex;gap:.4rem;align-items:center;margin:0">Tempo <input type="range" id="sp-qpm" min="40" max="260" value="72"> <span id="sp-qpm-v">72</span></label>
+  <select id="sp-sound" class="form-select form-select-sm" style="width:auto">
+    <option value="piano">Piano</option><option value="epiano">Electric piano</option><option value="rhodes">Rhodes</option>
+    <option value="clguitar">Guitar</option><option value="ebass">Bass</option><option value="organ">Organ</option></select>
+  <button id="sp-next" class="btn btn-outline-secondary btn-sm" title="Same exercise, the next key round the circle of fourths">Next key (4ths) ▸</button>
+  <button id="sp-copy" class="btn btn-outline-secondary btn-sm">Copy link</button>
+  <button id="sp-print" class="btn btn-outline-secondary btn-sm">Print</button>
+</div>
+<div id="sp-warn" class="sp-warn"></div>
+<div id="sp-score"></div>
+<details class="sp-noprint"><summary class="sp-muted">ABC</summary><pre id="sp-abc" style="font-size:.78rem;white-space:pre-wrap"></pre></details>
+```
+
+## Practice notes
+
+```{=html}
+<ul id="sp-tips" class="sp-tips"></ul>
+```
+
+## On your instrument
+
+```{=html}
+<ul id="sp-inst-tips" class="sp-tips"></ul>
+<p class="sp-muted">The instrument notes are general teaching advice, not yet checked against a source; more on each band instrument is coming.</p>
+```
+
+## How it works
+
+- **Key and spelling.** Every note takes its letter from the scale's own degrees, so G♯ harmonic minor has its F𝄪 and the
+  blues scale has both the ♭5 and the 5. The key signature is the scale's mode on the tonic (Dorian on D: no sharps or flats);
+  harmonic and melodic minor use the natural minor's, as printed scale books do. Enharmonic keys (F♯ / G♭) are spelled with
+  the fewer accidentals, and for a transposing instrument with the fewer in the key you read.
+- **Transposing instruments** read written pitch (B♭ instruments a step up, E♭ alto a sixth up, horn in F a fifth up, guitar
+  and bass an octave up); playback sounds at concert pitch.
+- **Patterns** move up the scale one step at a time, then down. "Mirror" turns the figure upside down on the way down
+  (Hanon's way); off, the same shape moves down (the jazz way, so an enclosure still lands on its target from both sides).
+- **Swing** is written as straight eighths; the playback swings them, and with the band the band's own swing feel plays.
+- **Hanon.** Nos. 1–20 (*The Virtuoso Pianist*, Part I) are played note for note, with Hanon's fingering, from the Mutopia
+  Project's edition (after Schirmer, 1900), read by a script. They keep Hanon's two octaves; on another scale the same degrees are
+  used, and on a scale that isn't seven notes the figure changes shape.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Aebersold, Jamey. *Scale Syllabus*. Jamey Aebersold Jazz, [www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf](https://www.jazzbooks.com/mm5/download/FREE-scale-syllabus.pdf).
+
+Hanon, Charles-Louis. "Exercise No. 2." *The Virtuoso Pianist, Part I*, Hanon-Online, [hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g](https://hanon-online.com/the-virtuoso-pianist-part-i/hanon-exercise-n-2/hanon-exercise-n-2-in-g). Hanon's practice directions (lift the fingers, play each note distinctly, begin at 60).
+
+Hanon, Charles-Louis. *The Virtuoso Pianist (Part I)*. 1873. Edited by Steve Taylor and Javier Ruiz-Alma after the Schirmer edition of 1900, Mutopia Project, 2015, [www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037](https://www.mutopiaproject.org/cgibin/piece-info.cgi?id=2037). CC BY-SA 4.0. Exercises 1–20 read note for note into apps/shared/hanon-part1.js.
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script>
+(function () {
+  var SP = window.ScalePatterns, $ = function (id) { return document.getElementById(id); };
+  var KEYS = ["C", "D♭ / C♯", "D", "E♭ / D♯", "E", "F", "F♯ / G♭", "G", "A♭ / G♯", "A", "B♭ / A♯", "B"];
+  function fill(sel, list, grouped) {
+    var groups = {};
+    list.forEach(function (x) {
+      var o = document.createElement("option"); o.value = x.id; o.textContent = x.label;
+      if (grouped && x.group) { if (!groups[x.group]) { groups[x.group] = document.createElement("optgroup"); groups[x.group].label = x.group; sel.appendChild(groups[x.group]); } groups[x.group].appendChild(o); }
+      else sel.appendChild(o);
+    });
+  }
+  KEYS.forEach(function (k, i) { var o = document.createElement("option"); o.value = i; o.textContent = k; $("sp-tonic").appendChild(o); });
+  fill($("sp-scale"), SP.SCALES, true); fill($("sp-pattern"), SP.PATTERNS, true); fill($("sp-style"), SP.STYLES); fill($("sp-inst"), SP.INSTRUMENTS);
+  var SOUND = { piano: "piano", guitar: "clguitar", bass: "ebass" };
+
+  // settings <-> the address, so a link is the exercise
+  var FIELDS = { k: "sp-tonic", sc: "sp-scale", p: "sp-pattern", st: "sp-style", m: "sp-meter", u: "sp-unit", i: "sp-inst", h: "sp-hand",
+    o: "sp-oct", d: "sp-dir", r: "sp-rhythm", a: "sp-artic", sh: "sp-shift", q: "sp-qpm", snd: "sp-sound" };
+  var CHECKS = { alt: "sp-alt", mir: "sp-mirror", lab: "sp-labels", ch: "sp-chords", band: "sp-band" };
+  var q = new URLSearchParams(location.search), mirrorTouched = q.has("mir"), altTouched = q.has("alt");
+  Object.keys(FIELDS).forEach(function (k) { if (q.has(k)) $(FIELDS[k]).value = q.get(k); });
+  Object.keys(CHECKS).forEach(function (k) { if (q.has(k)) $(CHECKS[k]).checked = q.get(k) === "1"; });
+  function save() {
+    var p = new URLSearchParams();
+    Object.keys(FIELDS).forEach(function (k) { p.set(k, $(FIELDS[k]).value); });
+    Object.keys(CHECKS).forEach(function (k) { p.set(k, $(CHECKS[k]).checked ? "1" : "0"); });
+    history.replaceState(null, "", location.pathname + "?" + p.toString() + location.hash);
+  }
+  function patDefaults() {
+    var p = SP.PATTERNS.find(function (x) { return x.id === $("sp-pattern").value; });
+    if (!mirrorTouched) $("sp-mirror").checked = !!p.mirror;
+    if (!altTouched) $("sp-alt").checked = !!p.alternate;
+  }
+  function styleDefaults() {
+    var s = SP.STYLES.find(function (x) { return x.id === $("sp-style").value; });
+    $("sp-qpm").value = s.qpm; $("sp-qpm-v").textContent = s.qpm;
+  }
+
+  var cur = null, visual = null;
+  function opts(chords) {
+    return { tonic: +$("sp-tonic").value, scale: $("sp-scale").value, pattern: $("sp-pattern").value, style: $("sp-style").value,
+      meter: $("sp-meter").value, unit: $("sp-unit").value, inst: $("sp-inst").value, hand: $("sp-hand").value, octaves: +$("sp-oct").value,
+      dir: $("sp-dir").value, rhythm: $("sp-rhythm").value, artic: $("sp-artic").value || null, octaveShift: +$("sp-shift").value,
+      alternate: $("sp-alt").checked, mirror: $("sp-mirror").checked, labels: $("sp-labels").checked, chords: chords, qpm: +$("sp-qpm").value };
+  }
+  function list(el, items) { el.innerHTML = ""; items.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; el.appendChild(li); }); }
+  function render() {
+    stop();
+    $("sp-hand-w").style.display = $("sp-inst").value === "piano" ? "" : "none";
+    cur = SP.make(opts($("sp-chords").checked));
+    $("sp-abc").textContent = cur.abc;
+    visual = ABCJS.renderAbc("sp-score", cur.abc, { responsive: "resize", add_classes: true, staffwidth: 900, wrap: { minSpacing: 1.6, maxSpacing: 2.6, preferredMeasuresPerLine: 4 } })[0];
+    list($("sp-tips"), cur.tips); list($("sp-inst-tips"), cur.instTips.length ? cur.instTips : ["Nothing in this exercise needs special care on this instrument."]);
+    $("sp-warn").textContent = cur.warnings.join(" ");
+    save();
+  }
+
+  var handle = null;
+  function stop() { if (handle) { try { handle.stop(); } catch (e) {} handle = null; } $("sp-play").textContent = "▶ Play"; }
+  $("sp-play").addEventListener("click", function () {
+    if (handle) return stop();
+    var band = $("sp-band").checked && cur.band, qpm = +$("sp-qpm").value, done = function () { handle = null; $("sp-play").textContent = "▶ Play"; };
+    var common = { sound: $("sp-sound").value, qpm: qpm, transpose: -cur.semi, onEnd: done };
+    if (band) {
+      // the band reads chord symbols: play a version that has them, drawn off the page
+      var withCh = SP.make(opts(true)), div = document.createElement("div"); div.style.cssText = "position:absolute;left:-9999px;width:900px";
+      document.body.appendChild(div);
+      var v = ABCJS.renderAbc(div, withCh.abc)[0];
+      handle = AbcPlay.play(v, Object.assign({ abc: withCh.abc, style: cur.band, light: false }, common));
+      handle.done && handle.done.then(function () { div.remove(); });
+    } else if (cur.swing) {
+      var d2 = document.createElement("div"); d2.style.cssText = "position:absolute;left:-9999px;width:900px"; document.body.appendChild(d2);
+      var v2 = ABCJS.renderAbc(d2, cur.playAbc)[0];
+      handle = AbcPlay.play(v2, Object.assign({ light: false }, common));
+      handle.done && handle.done.then(function () { d2.remove(); });
+    } else handle = AbcPlay.play(visual, common);
+    $("sp-play").textContent = "■ Stop";
+  });
+  $("sp-qpm").addEventListener("input", function () { $("sp-qpm-v").textContent = this.value; });
+  $("sp-qpm").addEventListener("change", render);
+  $("sp-pattern").addEventListener("change", function () { mirrorTouched = altTouched = false; patDefaults(); render(); });
+  $("sp-style").addEventListener("change", function () { styleDefaults(); render(); });
+  $("sp-inst").addEventListener("change", function () { $("sp-sound").value = SOUND[$("sp-inst").value] || "piano"; render(); });
+  $("sp-mirror").addEventListener("change", function () { mirrorTouched = true; render(); });
+  $("sp-alt").addEventListener("change", function () { altTouched = true; render(); });
+  ["sp-tonic", "sp-scale", "sp-meter", "sp-unit", "sp-hand", "sp-oct", "sp-dir", "sp-rhythm", "sp-artic", "sp-shift", "sp-labels", "sp-chords", "sp-band", "sp-sound"]
+    .forEach(function (id) { $(id).addEventListener("change", render); });
+  $("sp-next").addEventListener("click", function () { $("sp-tonic").value = (+$("sp-tonic").value + 5) % 12; render(); });
+  $("sp-copy").addEventListener("click", function () { try { navigator.clipboard.writeText(location.href); this.textContent = "Copied"; var b = this; setTimeout(function () { b.textContent = "Copy link"; }, 1200); } catch (e) {} });
+  $("sp-print").addEventListener("click", function () { window.print(); });
+  if (!q.has("p")) patDefaults();
+  if (!q.has("q")) styleDefaults();
+  render();
+})();
+</script>
+```

@@ -2,7 +2,7 @@
 // students change them afterwards, and their changes are kept per link, so a new link from the teacher starts fresh.
 //
 //   <div class="drill" data-ex="note|interval|keysig" data-settings="clef=treble,bass&ledger=1"></div>   (inline in a lesson)
-//   practice/theory-drills.qmd: one .drill whose exercise and settings come from the address:
+//   theory/theory-drills.qmd: one .drill whose exercise and settings come from the address:
 //     ?ex=interval&clef=treble&ints=m3,M3,P5&dir=up&shape=harmonic&show=staff&count=20&lock=1
 //   Every setting is name=value (lists joined by commas); names and values are the exercise's SETTINGS below.
 //   lock=1 hides the settings (a test). Settings changed by the student: localStorage "drills-v1:" + ex + ":" + the link's settings.
@@ -1202,7 +1202,7 @@
     function changed() { store(KEY, s); restart(); }
     resetB.addEventListener("click", function () { s = JSON.parse(JSON.stringify(linkS)); store(KEY, null); buildForm(); restart(); msg.textContent = "Back to the link's settings."; });
     linkB.addEventListener("click", function () {
-      var url = location.origin + "/practice/theory-drills.html?" + settingsString(ex, s);
+      var url = location.origin + "/theory/theory-drills.html?" + settingsString(ex, s);
       if (navigator.clipboard) navigator.clipboard.writeText(url).then(function () { msg.textContent = "Copied. Add &lock=1 to hide the settings."; }, function () { msg.textContent = url; });
       else msg.textContent = url;
     });

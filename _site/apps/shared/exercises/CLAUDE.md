@@ -1,6 +1,6 @@
 # Exercise Builder
 
-- Page: `practice/exercise-builder.qmd` (Practice sidebar, after Theory Drills). App: `builder.js` (`ExerciseBuilder`). Settings live in the
+- Page: `theory/exercise-builder.qmd` (Theory sidebar, after Theory Drills). App: `builder.js` (`ExerciseBuilder`). Settings live in the
   address (`?ch=7,16,17&types=rn,cad,period,fill,melodic,drills&n=10&seed=4821&input=inline`); each item is made under a seeded
   `Math.random` (seed × 1000 + index), so one link = one set for everyone. Print: `@media print` hides the controls; the answer key
   (`.ex-key`) prints only with `body.ex-with-key`.

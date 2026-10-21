@@ -5,7 +5,8 @@
 
      var rf = RecordingFollow.mount(el, { onLoad(model), onSource(src) });   // builds the panel into el
      rf.load(text | object)         read a song file / bar map (the panel's Open button does this); -> model or null
-     rf.model()                     { title, bars: [seconds], beats: [per bar], sections: [{ name, bar (0-based), time }], source, stamps } | null
+     rf.model()                     { title, bars: [seconds], beats: [per bar], sections: [{ name, bar (0-based), time }], source, stamps,
+                                      prefs (the song file's chunk settings: { size, leadIns, tails, mode }) } | null
      rf.offset()                    how many bars of the recording come before the host's bar 1 (the panel's number box)
      rf.seekHostBar(i) / seekMapBar(i) / seekSection(name, nth)    move the recording (true when it could)
      rf.seekHostAt(x)               x: the host's bar and fraction (2.5 = halfway through bar 3); before bar 1 at bar 1's pace
@@ -21,7 +22,7 @@
 
   function Model(d) {
     var bars = (d.bars || []).map(Number).filter(isFinite);
-    var m = { title: d.title || "", bars: bars, beats: [], sections: [], source: d.source || null, stamps: d.stamps || [], beatsPerBar: d.beatsPerBar || 4 };
+    var m = { title: d.title || "", bars: bars, beats: [], sections: [], source: d.source || null, stamps: d.stamps || [], beatsPerBar: d.beatsPerBar || 4, prefs: d.prefs || null };
     for (var i = 0; i < bars.length; i++) m.beats.push(d.beats && d.beats[i] > 0 ? d.beats[i] : m.beatsPerBar);
     (d.sections || []).forEach(function (s) {
       var bar = s.bar != null ? s.bar - 1 : -1;                            // (the file counts from 1)
@@ -73,7 +74,7 @@
     if (d.app === "timestamp-notes") {
       var bm = d.barMap;
       if (!bm || !Array.isArray(bm.bars) || !bm.bars.length) return null;
-      return Model({ title: d.title, source: d.source, stamps: d.stamps, bars: bm.bars, beats: bm.beats, beatsPerBar: bm.beatsPerBar, sections: bm.sections });
+      return Model({ title: d.title, source: d.source, stamps: d.stamps, bars: bm.bars, beats: bm.beats, beatsPerBar: bm.beatsPerBar, sections: bm.sections, prefs: d.phrases || null });
     }
     if (Array.isArray(d.bars) && d.bars.length) return Model(d);
     return null;

@@ -1,15 +1,15 @@
-// The Theory Drills (practice/theory-drills.qmd, apps/shared/drills/drills.js) in headless Chrome: hundreds of generated
+// The Theory Drills (theory/theory-drills.qmd, apps/shared/drills/drills.js) in headless Chrome: hundreds of generated
 // questions are checked against abcjs's own reading of the drawn ABC (the note's pitch, the interval's size, the signature's
 // sharps or flats), the link's settings load and a student's change is kept for that link only, keys and MIDI-style answers
 // are graded, lock=1 hides the settings, and count=N ends with a score. Run after rendering:
-//   quarto render practice/theory-drills.qmd; node tests/lessons/drills.cdp.js
+//   quarto render theory/theory-drills.qmd; node tests/lessons/drills.cdp.js
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/_site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
 const type = f => f.endsWith(".js") ? "text/javascript" : f.endsWith(".css") ? "text/css" : "text/html";
 const PORT = 8536;
 const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURIComponent(q.url.split(/[?#]/)[0]));
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); s.end(); return; } s.writeHead(200, { "content-type": type(f) }); s.end(d); }); }).listen(PORT);
-const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
+const URL = q => `http://127.0.0.1:${PORT}/theory/theory-drills.html${q}`;
 (async () => {
   const b = await launch();
   let fails = 0; const check = (name, ok, info) => { console.log((ok ? "ok   " : "FAIL ") + name + (info !== undefined ? "  " + info : "")); if (!ok) fails++; };
@@ -107,7 +107,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return [bad, E.check(fake, 'B D F#'), E.check(fake, 'b d f♯'), E.check(fake, 'B D Gb'), E.check(fake, 'D F# B')]; })()`);
   check("200 spellings / corrections: own answer accepted, misspelled chord sounds right", sp[0].length === 0, sp[0].slice(0, 3).join(" | "));
   check("spelling: 'B D F#' and 'b d f♯' right; 'B D Gb' and wrong order not", sp.slice(1).join() === "true,true,false,false", sp.slice(1).join());
-  await b.goto(`http://127.0.0.1:${PORT}/practice/triads.html`); await b.sleep(1200);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/triads.html`); await b.sleep(1200);
   const pg = await ev(`(async () => { const ds = [...document.querySelectorAll('.drill')], d = ds[0], box = d.querySelector('.dr-text');
     box.value = d.getAttribute('data-answer'); box.dispatchEvent(new KeyboardEvent('keydown', { key: 'Enter', bubbles: true }));
     await new Promise(r => setTimeout(r, 100)); const ok = d.getAttribute('data-right');
@@ -168,7 +168,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
   check("8.3 tables: C: IM7 ii7 iii7 IVM7 V7 vi7 viiø7; a: i7 iiø7 IIIM7 iv7 V7 VIM7 vii°7", b8[1] === "IM7 ii7 iii7 IVM7 V7 vi7 viiø7" && b8[2] === "i7 iiø7 IIIM7 iv7 V7 VIM7 vii°7", b8[1] + " / " + b8[2]);
   check("seventh symbols: book's labels; small root = minor (b7 = Bm7, cmaj7 refused)", b8[3] === "D:dom7 G:maj7 D♯:hdim7 B:min7/D C♯:dim7/E E:maj7/G♯ A:hdim7 B:dim7 B:min7 B:min7 C♯:dim7/E x C:hdim7", b8[3]);
   check("seventh numerals: maj7/Δ7 = M7, h = ø, 65 43 42 2, a triad and iiøM7 refused", b8[4] === "V7 IVM7 IVM7 iiø7 iiø7 iii7/3rd iii7/3rd vii°7/3rd V7/7th V7/7th V7/5th   vii°7/7th", JSON.stringify(b8[4]));
-  await b.goto(`http://127.0.0.1:${PORT}/practice/seventh-chords.html`); await b.sleep(1200);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/seventh-chords.html`); await b.sleep(1200);
   const pg8 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x.querySelector('.dr-paper svg, .dr-symbol')).length].join()`);
   check("seventh-chords page: every drill has a question", /^(\d+),\1$/.test(pg8) && pg8 !== "0,0", pg8);
 
@@ -195,12 +195,12 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
   check("9.9 ex. 1: B minor circle ... VII = A-C♯-E, ii° = C♯-E-G, V = F♯-A♯-C♯", b9[1] === "B-D-F♯ E-G-B A-C♯-E D-F♯-A G-B-D C♯-E-G F♯-A♯-C♯ B-D-F♯", b9[1]);
   check("♭VII in F is E♭ G B♭; progression answers: dashes ok, case matters, length matters, symbols with a = minor, bVII", b9.slice(2).join() === "E♭-G-B♭,true,true,false,false,true,true,false,true", b9.slice(2).join());
 
-  await b.goto(`http://127.0.0.1:${PORT}/practice/progressions.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/progressions.html`); await b.sleep(1500);
   const pg9 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("progressions page: every drill has a question", /^(\d+),\1$/.test(pg9) && pg9 !== "0,0", pg9);
 
   // ch. 10: the drawn melody (abcjs's pitches) = the notes the drill made; answering by key and button; the feedback explains
-  await b.goto(`http://127.0.0.1:${PORT}/practice/non-chord-tones.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/non-chord-tones.html`); await b.sleep(1500);
   const pg10 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("non-chord-tones page: every drill has a question", /^(\d+),\1$/.test(pg10) && pg10 !== "0,0", pg10);
   const p10 = await ev(`(() => { const D = Drills, E = D.engines.nct, bad = [], s = D.parseSettings('nct', 'mode=both&most=5');
@@ -216,7 +216,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return [/^Right/.test(fb), /approached by/.test(fb), h.querySelectorAll('.dr-ans').length, h.querySelector('.dr-ans').textContent].join(); })()`);
   check("10.3 drill: answer by key, feedback says how it was approached; two buttons with names", f10 === "true,true,2,Passing tone", f10);
   // ch. 17: abcjs plays the two chords the drill made; typed answers are graded through the page
-  await b.goto(`http://127.0.0.1:${PORT}/practice/secondary-dominants.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/secondary-dominants.html`); await b.sleep(1500);
   const pg17 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("secondary-dominants page: every drill has a question", /^(\d+),\1$/.test(pg17) && pg17 !== "0,0", pg17);
   const p17 = await ev(`(() => { const D = Drills, E = D.engines.secdom, bad = [], s = D.parseSettings('secdom', 'mode=both&most=6&kind=both&inv=all');
@@ -231,7 +231,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return out.join(); })()`);
   check("17.3 drill: the typed answer is right, a wrong one is not", /^Right,No/.test(t17), t17);
   // ch. 18: the same for secondary diminished chords
-  await b.goto(`http://127.0.0.1:${PORT}/practice/secondary-diminished.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/secondary-diminished.html`); await b.sleep(1500);
   const pg18 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("secondary-diminished page: every drill has a question", /^(\d+),\1$/.test(pg18) && pg18 !== "0,0", pg18);
   const p18 = await ev(`(() => { const D = Drills, E = D.engines.secdim, bad = [], s = D.parseSettings('secdim', 'mode=both&most=6&kind=both&inv=all');
@@ -247,7 +247,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return out.join(); })()`);
   check("18.2 and 18.3 drills: the typed answer (o / h for ° / ø on the staff drill) is right, a wrong one is not", /^Right,No.*,Right,No/.test(t18), t18);
   // ch. 21: augmented sixths: abcjs plays the drawn chord as the drill made it; typed, button and ear answers
-  await b.goto(`http://127.0.0.1:${PORT}/practice/augmented-sixths.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/augmented-sixths.html`); await b.sleep(1500);
   const pg21 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("augmented-sixths page: every drill has a question", pg21 === "11,11", pg21);
   const p21 = await ev(`(() => { const E = Drills.engines.aug6, bad = [], s = Drills.parseSettings('aug6', 'mode=both&most=4&types=It,Fr,Ger,EnGer,V7N&clef=treble,bass');
@@ -265,7 +265,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return out.join(); })()`);
   check("21.4 typed symbol right / wrong; 21.3 and 21.8 answered by button", /^Right,No.*,Right,Right$/.test(t21), t21);
   // ch. 19: mode mixture (mixture.js): abcjs plays what each drill made; typed and ear answers graded through the page
-  await b.goto(`http://127.0.0.1:${PORT}/practice/mode-mixture.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/mode-mixture.html`); await b.sleep(1500);
   const pg19 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("mode-mixture page: every drill has a question", /^(\d+),\1$/.test(pg19) && pg19 !== "0,0", pg19);
   const p19 = await ev(`(() => { const D = Drills, bad = [];
@@ -285,7 +285,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return out.join(); })()`);
   check("19.3 drill: typed answer (b / o / h) right, a wrong one not; 19.4 ear drill answered by key", /^Right,No: V,Right$/.test(t19), t19);
   // ch. 20: the Neapolitan drills (neapolitan.js) on their page: abcjs plays what the drills made; typed and button answers graded
-  await b.goto(`http://127.0.0.1:${PORT}/practice/neapolitan.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/neapolitan.html`); await b.sleep(1500);
   const pg20 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("neapolitan page: every drill has a question", /^(\d+),\1$/.test(pg20) && pg20 !== "0,0", pg20);
   const p20 = await ev(`(() => { const D = Drills, bad = [], pitches = abc => ABCJS.renderAbc(document.createElement('div'), abc)[0].setUpAudio().tracks.flat().filter(e => e.cmd === 'note').map(e => e.pitch).sort((a, b) => a - b).join();
@@ -304,7 +304,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return out.join(); })()`);
   check("20.1 and 20.3 drills: the typed answer (bII for N) is right, a wrong one is not; the ear drill: three buttons, sound only", t20 === "Right,No: V,Right,No: V,Right,3,true", t20);
   // ch. 31: jazz chords (jazz.js): abcjs plays the drawn grand-staff chord and the scale as the drill made them; typed and button answers
-  await b.goto(`http://127.0.0.1:${PORT}/practice/jazz-theory.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/jazz-theory.html`); await b.sleep(1500);
   const pg31 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("jazz-theory page: every drill has a question", pg31 === "19,19", pg31);
   const p31 = await ev(`(() => { const bad = [], s = Drills.parseSettings('jzname', 'groups=add,dom,maj,min,hdim,sus,alt,other&roots=all'), s2 = Drills.parseSettings('jzscale', 'roots=all');
@@ -325,7 +325,7 @@ const URL = q => `http://127.0.0.1:${PORT}/practice/theory-drills.html${q}`;
     return out.join(); })()`);
   check("31.6 typed name right (maj for Δ) / wrong; 31.7 ear and 31.9 scale by button", /^Right,No.*,Right,Right$/.test(t31), t31);
   // ch. 11: the motive drill (motives.js) on its page: abcjs plays what the drill made; answering by key
-  await b.goto(`http://127.0.0.1:${PORT}/practice/melodic-analysis.html`); await b.sleep(1500);
+  await b.goto(`http://127.0.0.1:${PORT}/theory/melodic-analysis.html`); await b.sleep(1500);
   const pg11 = await ev(`[document.querySelectorAll('.drill').length, [...document.querySelectorAll('.drill')].filter(x => x._drill && x._drill.question()).length].join()`);
   check("melodic-analysis page: every drill has a question", /^(\d+),\1$/.test(pg11) && pg11 !== "0,0", pg11);
   const p11 = await ev(`(() => { const E = Drills.engines.motive, bad = [], s = Drills.parseSettings('motive', 'mode=both');

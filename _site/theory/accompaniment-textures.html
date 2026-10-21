@@ -1,0 +1,1830 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="Hear and try the accompaniment patterns of Chapter 14 of Hutchinson’s Music Theory for the 21st-Century Classroom on the site’s backing band: chorale texture, arpeggios and Alberti bass, block chords in the 1 (2) &amp; and Barbara Ann rhythms, repeated chords, afterbeats and off-beats, the 3–2 son clave and 3+3+2, and riff bass lines, with a listening quiz and the book’s examples.">
+
+<title>Accompanimental Textures: Practice for Chapter 14 – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../theory/figured-bass.html" rel="next">
+<link href="../theory/pop-forms.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-7f4c960c75fa4a060886384c4ea271f6.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../theory/index.html" aria-current="page"> 
+<span class="menu-text">Theory</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/triads.html">Hutchinson, Music Theory for the 21st-Century Classroom</a></li><li class="breadcrumb-item"><a href="../theory/accompaniment-textures.html">14. Accompanimental Textures</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Drills and Exercises</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/theory-drills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory Drills</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/exercise-builder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise Builder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Hutchinson, Music Theory for the 21st-Century Classroom</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/triads.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Triads</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/roman-numerals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Roman Numerals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/seventh-chords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Seventh Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/progressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Harmonic Progression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/non-chord-tones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Non-Chord Tones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/melodic-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Melodic Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/pop-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Form in Popular Music</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/accompaniment-textures.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">14. Accompanimental Textures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/figured-bass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Figured Bass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-dominants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Secondary Dominants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-diminished.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Secondary Diminished Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/mode-mixture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Mode Mixture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/neapolitan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. The Neapolitan Chord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/augmented-sixths.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Augmented Sixth Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/modulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Modulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/jazz-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Jazz Theory</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../theory/analysed-scores/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysed Scores</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/bach-o-haupt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bach: “O Haupt voll Blut und Wunden”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/beethoven-moonlight-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beethoven: “Moonlight” Sonata, I</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#texture" id="toc-texture" class="nav-link active" data-scroll-target="#texture">14.1 Texture</a></li>
+  <li><a href="#chorale-texture" id="toc-chorale-texture" class="nav-link" data-scroll-target="#chorale-texture">14.2 Chorale texture</a></li>
+  <li><a href="#arpeggiated-accompaniments" id="toc-arpeggiated-accompaniments" class="nav-link" data-scroll-target="#arpeggiated-accompaniments">14.3 Arpeggiated accompaniments</a></li>
+  <li><a href="#block-chord-accompaniments" id="toc-block-chord-accompaniments" class="nav-link" data-scroll-target="#block-chord-accompaniments">14.4 Block chord accompaniments</a></li>
+  <li><a href="#afterbeats-and-off-beats" id="toc-afterbeats-and-off-beats" class="nav-link" data-scroll-target="#afterbeats-and-off-beats">14.5 Afterbeats and off-beats</a></li>
+  <li><a href="#the-32-son-clave-and-332" id="toc-the-32-son-clave-and-332" class="nav-link" data-scroll-target="#the-32-son-clave-and-332">14.6 The 3–2 son clave and 3+3+2</a></li>
+  <li><a href="#distinctive-bass-lines" id="toc-distinctive-bass-lines" class="nav-link" data-scroll-target="#distinctive-bass-lines">14.7 Distinctive bass lines</a></li>
+  <li><a href="#quiz" id="toc-quiz" class="nav-link" data-scroll-target="#quiz">Quiz: name the texture</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/triads.html">Hutchinson, Music Theory for the 21st-Century Classroom</a></li><li class="breadcrumb-item"><a href="../theory/accompaniment-textures.html">14. Accompanimental Textures</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Accompanimental Textures: Practice for Chapter 14</h1>
+</div>
+
+<div>
+  <div class="description">
+    Hear and try the accompaniment patterns of Chapter 14 of Hutchinson’s Music Theory for the 21st-Century Classroom on the site’s backing band: chorale texture, arpeggios and Alberti bass, block chords in the 1 (2) &amp; and Barbara Ann rhythms, repeated chords, afterbeats and off-beats, the 3–2 son clave and 3+3+2, and riff bass lines, with a listening quiz and the book’s examples.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>This page goes with <strong>Chapter 14, Accompanimental Textures</strong> of Robert Hutchinson’s open textbook <a href="https://musictheory.pugetsound.edu/mt21c/AccompanimentalTexture.html"><em>Music Theory for the 21st-Century Classroom</em></a>. Read each section there first. The book shows each texture in notation and in recordings. Here you can <strong>play</strong> each one: the site’s backing band plays the same chords in each texture, and you switch between textures while it plays.</p>
+<p><strong>How the demos work:</strong> press <strong>▶ Play</strong>, then try the buttons under it. The band keeps going and changes texture at the next bar. <strong>Who plays</strong> turns each part on and off. Under the buttons the last four bars the band played are written out, so you can see what you hear. Tempo and Stop are in the strip at the bottom of the page. The <a href="#quiz">quiz</a> at the end plays a texture without naming it, and you say which one it is.</p>
+<section id="texture" class="level2">
+<h2 class="anchored" data-anchor-id="texture">14.1 Texture</h2>
+<p>The book looks at texture two ways. <strong>Vertically</strong>: how many notes sound at once (how full the chords are, how many voices there are). <strong>Horizontally</strong>: how busy the rhythm is (are the most common note values long or short?). <a href="https://musictheory.pugetsound.edu/mt21c/Texture.html">Read 14.1</a></p>
+<p>Below are the same four chords played three ways. Held chords are full but slow. Repeated eighth notes keep the same notes and make the rhythm busy. An arpeggio is busy too, but it plays one note at a time, so it is thinner at any one moment.</p>
+<div class="ar-demo" data-style="hymn" data-chart="C|Am|F|G" data-tempo="80" data-on="bass comp" data-staves="comp bass" data-choice-label="Texture:" data-choices="[{&quot;label&quot;:&quot;Held chords&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;hymn&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Repeated eighths&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;eighths&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Arpeggio&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;arp&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s two examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Samuel Barber, <em>Adagio for Strings</em>: many voices, long notes
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/b8G9vRqq3RI?start=0&amp;end=15&amp;rel=0" title="Adagio for Strings" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Mozart, String Quartet K. 428, IV: four voices, mostly sixteenth notes
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/rLLYRLqUl68?start=103&amp;end=110&amp;rel=0" title="Mozart K. 428" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="chorale-texture" class="level2">
+<h2 class="anchored" data-anchor-id="chorale-texture">14.2 Chorale texture</h2>
+<p>In a <strong>chorale texture</strong> there is a new chord for (nearly) every melody note, so all the parts move in the same rhythm. This is also called <strong>homorhythmic</strong>. A hymn played on the piano is the plainest case. The band’s hymn style below holds each chord until the next one, with three voices over the bass. With a melody on top, it would be a chorale texture. <a href="https://musictheory.pugetsound.edu/mt21c/ChoraleTexture.html">Read 14.2</a> · <a href="../lessons/patterns/chords-hymn.html">Pattern lesson: Hymn, four parts</a></p>
+<div class="ar-demo" data-style="hymn" data-chart="C F|C G|Am Dm|G C" data-tempo="72" data-on="bass comp" data-staves="comp bass" data-choice-label="Played on:" data-choices="[{&quot;label&quot;:&quot;Piano&quot;,&quot;opts&quot;:{&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Quarter-note chords&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;quarters&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<p>The second button is the book’s <strong>quarter-note texture</strong>: a chord on every beat. The book’s practice exercises ask for it (17.7, exercise 3).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s chorale examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+“The Star-Spangled Banner”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/uBS-F944zYc?start=0&amp;end=8&amp;rel=0" title="The Star-Spangled Banner" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Schubert, <em>Winterreise</em>, “Die Nebensonnen”: the melody sometimes moves apart from the chords
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/2n2YIxXJXac?start=0&amp;end=17&amp;rel=0" title="Die Nebensonnen" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+fun., “Some Nights”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/qQkBeOisNM0?start=62&amp;end=71&amp;rel=0" title="Some Nights" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="arpeggiated-accompaniments" class="level2">
+<h2 class="anchored" data-anchor-id="arpeggiated-accompaniments">14.3 Arpeggiated accompaniments</h2>
+<p>An <strong>arpeggio</strong> plays a chord’s notes one after another instead of all together. The bass usually holds the root underneath, as in the book’s first example, Beethoven’s <em>Moonlight Sonata</em>. The band can arpeggiate up and back down, or rock between the lowest and highest notes. <strong>Alberti bass</strong> goes low, high, middle, high, again and again. <a href="https://musictheory.pugetsound.edu/mt21c/ArpeggiatedAccompaniments.html">Read 14.3</a> · Pattern lessons: <a href="../lessons/patterns/chords-arp.html">Arpeggio, up and down</a> · <a href="../lessons/patterns/chords-arp2.html">Arpeggio, low and high</a> · <a href="../lessons/patterns/chords-alberti.html">Alberti bass</a></p>
+<div class="ar-demo" data-style="hymn" data-chart="Am|Dm|E7|Am" data-tempo="76" data-on="bass comp" data-staves="comp bass" data-choice-label="Pattern:" data-choices="[{&quot;label&quot;:&quot;Up and down&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;arp&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Low and high&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;arp2&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Alberti bass&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;alberti&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<p>The book points out the Alberti pattern in a Mozart sonata, and the same pattern lower down and in E minor in “Pipeline”. Here is Alberti bass on its own, in major (bass off: the pattern supplies its own low note):</p>
+<div class="ar-demo" data-style="hymn" data-chart="C|G7|C|G7 C" data-tempo="100" data-on="comp" data-staves="comp" data-choices="[{&quot;label&quot;:&quot;Alberti bass&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;alberti&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s arpeggio examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Beethoven, <em>Moonlight Sonata</em>, Op. 27 No.&nbsp;2, I
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/4Tr0otuiQuU?start=0&amp;end=23&amp;rel=0" title="Moonlight Sonata" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Alicia Keys, “If I Ain’t Got You”: descending arpeggios
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Ju8Hr50Ckwk?start=0&amp;end=23&amp;rel=0" title="If I Ain't Got You" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Chicago, “Colour My World”: up and down
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/cWkXmx-0phc?start=4&amp;end=14&amp;rel=0" title="Colour My World" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Rihanna, “Love on the Brain”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/zA-upjFaHvw?start=31&amp;end=42&amp;rel=0" title="Love on the Brain" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Adele, “Someone Like You”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/hLQl3WQQoQ0?start=73&amp;end=81&amp;rel=0" title="Someone Like You" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+OneRepublic, “Secrets”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/qHm9MG9xw1o?start=8&amp;end=24&amp;rel=0" title="Secrets" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+TLC, “No Scrubs”: arpeggios in sixteenth notes
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/FrLequ6dUdM?start=8&amp;end=19&amp;rel=0" title="No Scrubs" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Mozart, Piano Sonata K. 545, I: Alberti bass
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/5NkzTTkqTB4?start=0&amp;end=8&amp;rel=0" title="Mozart K. 545" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Chantays, “Pipeline”: the same Alberti pattern, lower, in E minor
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/L6zR7qJ9frA?start=13&amp;end=21&amp;rel=0" title="Pipeline" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="block-chord-accompaniments" class="level2">
+<h2 class="anchored" data-anchor-id="block-chord-accompaniments">14.4 Block chord accompaniments</h2>
+<p><strong>Block chords</strong> strike all the notes of the chord together. What makes one block-chord accompaniment different from another is its <strong>rhythm</strong>. The book names four:</p>
+<ul>
+<li><strong>“1 (2) &amp;”</strong>: two chords a bar, on beat 1 and on the and of 2. Count it aloud and stay silent on the number in brackets.</li>
+<li><strong>The “Barbara Ann” rhythm</strong>, over two bars: <strong>1 2 3 (4) &amp; | (1) &amp; (2) &amp; 3</strong>.</li>
+<li><strong>Repeated eighth-note chords</strong>: a chord on every eighth note, in classical music and in rock.</li>
+<li><strong>Repeated quarter-note chords</strong>: a chord on every beat.</li>
+</ul>
+<p><a href="https://musictheory.pugetsound.edu/mt21c/BlockChordAccompaniments.html">Read 14.4</a> · Pattern lessons: <a href="../lessons/patterns/chords-charleston.html">Charleston (the 1 (2) &amp; rhythm)</a> · <a href="../lessons/patterns/chords-barbara.html">Barbara Ann</a> · <a href="../lessons/patterns/chords-eighths.html">Driving eighths</a> · <a href="../lessons/patterns/chords-quarters.html">Quarter-note chords</a></p>
+<div class="ar-demo" data-style="motown" data-chart="C|Am|F|G" data-tempo="100" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Rhythm:" data-choices="[{&quot;label&quot;:&quot;1 (2) &amp;&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;charleston&quot;,&quot;bassFeel&quot;:&quot;dotted&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Barbara Ann&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;barbara&quot;,&quot;bassFeel&quot;:&quot;motown&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Repeated eighths&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;eighths&quot;,&quot;bassFeel&quot;:&quot;eighths&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Repeated quarters&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;quarters&quot;,&quot;bassFeel&quot;:&quot;roots&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<p>The band calls the “1 (2) &amp;” rhythm the <strong>Charleston</strong>: jazz musicians use that name for the same two hits. The book points out that the bass in “Let’s Get It On” and “Thinking Out Loud” has a similar rhythm. The bass here plays the dotted 1, and of 2, 3 line with it. Turn the drums and bass off to hear the chords alone.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: “1 (2) &amp;” and Barbara Ann
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Marvin Gaye, “Let’s Get It On”: 1 (2) &amp;
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/x6QZn9xiuOE?start=0&amp;end=16&amp;rel=0" title="Let's Get It On" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Ed Sheeran, “Thinking Out Loud”: 1 (2) &amp;
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/fdz_cabS9BU?start=24&amp;end=37&amp;rel=0" title="Thinking Out Loud" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Simple Minds, “Don’t You (Forget About Me)”: 1 (2) &amp;
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/CdqoNKCCt7A?start=6&amp;end=14&amp;rel=0" title="Don't You (Forget About Me)" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Justin Bieber, “Love Yourself”: 1 (2) &amp; twice as fast (in diminution)
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/oyEuk8j8imI?start=10&amp;end=20&amp;rel=0" title="Love Yourself" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Beach Boys, “Barbara Ann”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/-bSnI-a0BSc?start=0&amp;end=21&amp;rel=0" title="Barbara Ann" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Supremes, “You Can’t Hurry Love”: the Barbara Ann rhythm
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/uZj032MNIx4?start=0&amp;end=20&amp;rel=0" title="You Can't Hurry Love" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Katrina and the Waves, “Walking on Sunshine”: the Barbara Ann rhythm
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/iPUmE-tne5U?start=9&amp;end=27&amp;rel=0" title="Walking on Sunshine" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Deep Purple, “Smoke on the Water”: a slower version
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/_zO6lWfvM0g?start=0&amp;end=18&amp;rel=0" title="Smoke on the Water" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: repeated eighths and quarters
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Mozart, Piano Sonata K. 310, I: repeated eighths
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/bZZqSZqJz4Y?start=11&amp;end=19&amp;rel=0" title="Mozart K. 310" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Schubert, <em>Winterreise</em>, “Gute Nacht”: repeated eighths
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/5kaA3X2qSPU?start=0&amp;end=20&amp;rel=0" title="Gute Nacht" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Schumann, <em>Dichterliebe</em>, “Ich grolle nicht”: repeated eighths
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/lOdjXYp13-Y?start=0&amp;end=8&amp;rel=0" title="Ich grolle nicht" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Pat Benatar, “Heartbreaker”: repeated eighths in rock
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/9JtlCuIqcrM?start=12&amp;end=25&amp;rel=0" title="Heartbreaker" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+fun., “We Are Young”: repeated eighths
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Sv6dMFF_yts?start=48&amp;end=70&amp;rel=0" title="We Are Young" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Handel, <em>Serse</em>, “Ombra mai fù”: repeated quarters
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/X9yTjXM6m50?start=0&amp;end=16&amp;rel=0" title="Ombra mai fu" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Billy Joel, “She’s Got a Way”: repeated quarters
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/uuumirxhmAw?start=0&amp;end=19&amp;rel=0" title="She's Got a Way" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Police, “Roxanne”: repeated quarters
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/3T1c7GkzRQQ?start=5&amp;end=15&amp;rel=0" title="Roxanne" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="afterbeats-and-off-beats" class="level2">
+<h2 class="anchored" data-anchor-id="afterbeats-and-off-beats">14.5 Afterbeats and off-beats</h2>
+<p><strong>Afterbeats</strong> is Arnold Schoenberg’s word for repeated chords that come <em>after</em> the downbeat. <strong>Off-beats</strong> are chords that keep to the upbeats and stay off the downbeats. The book looks at two styles built on off-beats: <strong>polka</strong> and <strong>reggae</strong>. <a href="https://musictheory.pugetsound.edu/mt21c/AfterbeatsOffbeats.html">Read 14.5</a> · Pattern lessons: <a href="../lessons/patterns/chords-oompah.html">Boom-chick</a> · <a href="../lessons/patterns/chords-upbeats.html">Every off-beat</a></p>
+<p>Polka: the bass on the beat and the chord in between. The band counts the bar in four, so the chords fall on 2 and 4. Counted in a fast two, those are the off-beats.</p>
+<div class="ar-demo" data-style="folk" data-chart="C|G7|G7|C" data-tempo="120" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choices="[{&quot;label&quot;:&quot;Bass and chords take turns&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;alt&quot;,&quot;compRhythm&quot;:&quot;oompah&quot;}},{&quot;label&quot;:&quot;Bass on every beat&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;polka&quot;,&quot;compRhythm&quot;:&quot;oompah&quot;}}]">
+
+</div>
+<p>Reggae: short chords on the and of every beat, often on electric guitar, over a drum part (the one-drop) that leaves beat 1 empty.</p>
+<div class="ar-demo" data-style="reggae" data-chart="C|Am|F|G" data-tempo="76" data-comp="guitar" data-on="bass comp drums" data-staves="comp drums">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s afterbeat, polka and reggae examples
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Beethoven, Piano Sonata Op. 2 No.&nbsp;1, IV: afterbeats
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/pfwIAozfjoI?start=122&amp;end=134&amp;rel=0" title="Beethoven Op. 2 No. 1" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Mozart, Piano Sonata K. 279, III: afterbeats as passing figures in thirds
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/ZixdOZh7zo4?start=638&amp;end=646&amp;rel=0" title="Mozart K. 279" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Frankie Yankovic, “Beer Barrel Polka”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/jF-5zBjEIDM?start=89&amp;end=107&amp;rel=0" title="Beer Barrel Polka" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Bob Marley, “Could You Be Loved”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/g3t6YDnGXAc?start=14&amp;end=33&amp;rel=0" title="Could You Be Loved" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Police, “Walking on the Moon”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/mbv-LcdLY-Y?start=30&amp;end=44&amp;rel=0" title="Walking on the Moon" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+UB40, “Red Red Wine”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/zXt56MB-3vc?start=45&amp;end=56&amp;rel=0" title="Red Red Wine" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Jason Mraz, “I’m Yours”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/EkHTsc9PU2A?start=69&amp;end=82&amp;rel=0" title="I'm Yours" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+MAGIC!, “Rude”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/PIh2xe4jnpk?start=14&amp;end=27&amp;rel=0" title="Rude" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-32-son-clave-and-332" class="level2">
+<h2 class="anchored" data-anchor-id="the-32-son-clave-and-332">14.6 The 3–2 son clave and 3+3+2</h2>
+<p>The <strong>3–2 son clave</strong> is a two-bar rhythm at the root of Afro-Cuban music: three strokes in the first bar and two in the second. Its first bar divides eight eighth notes into <strong>3+3+2</strong>. In popular music it is also called the <strong>Bo Diddley beat</strong>. The 3+3+2 bar on its own is everywhere in pop. In sixteenth notes it is called <strong>tresillo</strong>, and the book follows it into the habanera and the reggaeton beat. <a href="https://musictheory.pugetsound.edu/mt21c/ThreeTwoClave.html">Read 14.6</a> · Pattern lessons: <a href="../lessons/patterns/chords-clave32.html">3–2 clave in the chords</a> · <a href="../lessons/patterns/chords-tresillo.html">3+3+2</a> · <a href="../lessons/patterns/drums-bodiddley.html">The Bo Diddley beat on drums</a> · <a href="../lessons/patterns/drums-dembow.html">Dembow (reggaeton)</a></p>
+<div class="ar-demo" data-style="dance" data-chart="C|Am|F|G" data-tempo="104" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Chords:" data-choices="[{&quot;label&quot;:&quot;3–2 son clave&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;clave32&quot;,&quot;groove&quot;:&quot;bodiddley&quot;,&quot;bassFeel&quot;:&quot;held&quot;}},{&quot;label&quot;:&quot;3+3+2 every bar&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;tresillo&quot;,&quot;groove&quot;:&quot;dance&quot;,&quot;bassFeel&quot;:&quot;octaves&quot;}},{&quot;label&quot;:&quot;3+3+3+3+2+2 over two bars&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;g333322&quot;,&quot;groove&quot;:&quot;dance&quot;,&quot;bassFeel&quot;:&quot;octaves&quot;}}]">
+
+</div>
+<p>The habanera bass (Bizet, <em>Carmen</em>) and the reggaeton beat: long chords, the bass on 3+3+2, the dembow on the drums.</p>
+<div class="ar-demo" data-style="reggaeton" data-chart="Dm|Dm|A7|A7" data-tempo="92" data-on="bass comp drums" data-staves="bass drums" data-choice-label="Bass:" data-choices="[{&quot;label&quot;:&quot;3+3+2&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;tresillo&quot;}},{&quot;label&quot;:&quot;Habanera&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;tango&quot;}}]">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: clave and 3+3+2, from the book’s list
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+A demonstration of the son clave, 3–2 and 2–3
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/dxVeiPQ1juo?start=3&amp;end=20&amp;rel=0" title="Son Clave 3-2 and 2-3" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Strangeloves, “I Want Candy”: the Bo Diddley beat
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/5OOcnPVdKrs?start=0&amp;end=19&amp;rel=0" title="I Want Candy" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+George Michael, “Faith”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/6Cs3Pvmmv0E?start=59&amp;end=80&amp;rel=0" title="Faith" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+U2, “Desire”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/z8rQ575DWD8?start=28&amp;end=47&amp;rel=0" title="Desire" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Survivor, “Eye of the Tiger”: 3+3+2 in the introduction
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/btPJPFnesV4?start=8&amp;end=28&amp;rel=0" title="Eye of the Tiger" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+John Legend, “All of Me”: (3+3+2)+(3+3+2) in sixteenths
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/450p7goxZqg?start=0&amp;end=16&amp;rel=0" title="All of Me" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Ed Sheeran, “Shape of You”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/JGwWNGJdvx8?start=5&amp;end=16&amp;rel=0" title="Shape of You" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Coldplay, “Clocks”: (3+3+2)+(3+3+2) in eighths
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/d020hcWA_Wg?start=8&amp;end=22&amp;rel=0" title="Clocks" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Bizet, <em>Carmen</em>, Habanera
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/iqlUlr2yzY8?start=0&amp;end=15&amp;rel=0" title="Carmen Habanera" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Shabba Ranks, “Dem Bow”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/VQqwea8ZSbk?start=0&amp;end=22&amp;rel=0" title="Dem Bow" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Luis Fonsi, “Despacito”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/kJQP7kiw5Fk?start=82&amp;end=96&amp;rel=0" title="Despacito" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+<p>The book’s section has more than thirty examples. The full list, with notation of each rhythm, is in <a href="https://musictheory.pugetsound.edu/mt21c/ThreeTwoClave.html">14.6</a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="distinctive-bass-lines" class="level2">
+<h2 class="anchored" data-anchor-id="distinctive-bass-lines">14.7 Distinctive bass lines</h2>
+<p>Some songs are known by their <strong>riff</strong>: a short bass (or guitar) figure repeated under the chords. The band’s bass lines are not those riffs. They are general patterns that fit any chords. But they show how much of a style’s character comes from a repeating bass figure. Drums and bass only: <a href="https://musictheory.pugetsound.edu/mt21c/DistinctiveBassLines.html">Read 14.7</a></p>
+<div class="ar-demo" data-style="motown" data-chart="C|C|F|G" data-tempo="104" data-on="bass drums" data-staves="bass" data-choice-label="Bass:" data-choices="[{&quot;label&quot;:&quot;Motown: root, fifth, octave&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;motown&quot;}},{&quot;label&quot;:&quot;Disco octaves&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;octaves&quot;,&quot;groove&quot;:&quot;dance&quot;}},{&quot;label&quot;:&quot;Boogaloo riff&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;riff&quot;,&quot;groove&quot;:&quot;funk&quot;}},{&quot;label&quot;:&quot;Root eighths (rock)&quot;,&quot;opts&quot;:{&quot;bassFeel&quot;:&quot;eighths&quot;,&quot;groove&quot;:&quot;rock&quot;}}]">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Listen: the book’s riffs
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<div class="rn-quiz">
+<figure class="figure">
+<figcaption>
+Glenn Miller, “Little Brown Jug”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/YOG89TrL4Vk?start=0&amp;end=23&amp;rel=0" title="Little Brown Jug" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Beatles, “Day Tripper”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/eeFpUDCyTUo?start=0&amp;end=14&amp;rel=0" title="Day Tripper" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Chic, “Good Times”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/Er9xGRolrT4?start=0&amp;end=28&amp;rel=0" title="Good Times" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Queen, “Another One Bites the Dust”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/rY0WxgSXdEE?start=4&amp;end=15&amp;rel=0" title="Another One Bites the Dust" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Rick James, “Super Freak”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/QYHxGBH6o4M?start=0&amp;end=16&amp;rel=0" title="Super Freak" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+Queen and David Bowie, “Under Pressure”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/a01QQZyl-_I?start=5&amp;end=15&amp;rel=0" title="Under Pressure" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+The Kinks, “You Really Got Me”: a guitar riff with the bass
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/fTTsY-oz6Go?start=0&amp;end=14&amp;rel=0" title="You Really Got Me" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+<figure class="figure">
+<figcaption>
+AC/DC, “Back in Black”
+</figcaption>
+<iframe class="dr-yt" src="https://www.youtube-nocookie.com/embed/pAgnJDJN4VA?start=4&amp;end=27&amp;rel=0" title="Back in Black" loading="lazy" allowfullscreen="">
+</iframe>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="quiz" class="level2">
+<h2 class="anchored" data-anchor-id="quiz">Quiz: name the texture</h2>
+<p>Press <strong>New texture</strong>. The band plays a progression in one of the textures below without naming it, and you pick which one. Listen for two things: are the notes sounding together or one at a time, and where in the bar do the chords fall? The notes appear after you answer. <strong>▶ Again</strong> replays the same one.</p>
+<p>Piano textures (14.2, 14.3, 14.4):</p>
+<div class="ar-quiz" data-style="hymn" data-tempo="84" data-on="bass comp" data-staves="comp bass" data-charts="C|Am|F|G;C|F|G|C;Am|Dm|E|Am;F|Dm|Bb|C;G|Em|C|D" data-choices="[{&quot;label&quot;:&quot;Chorale (held chords)&quot;,&quot;why&quot;:&quot;One chord struck and held for each harmony.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;hymn&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Quarter-note chords&quot;,&quot;why&quot;:&quot;The whole chord on every beat.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;quarters&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Repeated eighths&quot;,&quot;why&quot;:&quot;The whole chord on every eighth note.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;eighths&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Arpeggio&quot;,&quot;why&quot;:&quot;One note at a time, up the chord and back down.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;arp&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Alberti bass&quot;,&quot;why&quot;:&quot;One note at a time: low, high, middle, high.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;alberti&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<p>Rhythms (14.4, 14.5, 14.6). The chords play the rhythm over held bass notes, with no drums, so the rhythm is all in the chords:</p>
+<div class="ar-quiz" data-style="hymn" data-tempo="96" data-on="bass comp" data-staves="comp" data-charts="C|Am|F|G;C|F|G|C;Am|Dm|E|Am;F|Dm|Bb|C;G|Em|C|D" data-choices="[{&quot;label&quot;:&quot;1 (2) &amp;&quot;,&quot;why&quot;:&quot;Beat 1 and the and of 2.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;charleston&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Barbara Ann&quot;,&quot;why&quot;:&quot;1 2 3 (4) &amp; | (1) &amp; (2) &amp; 3.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;barbara&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Off-beats&quot;,&quot;why&quot;:&quot;The and of every beat, never on a beat.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;upbeats&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;Boom-chick (2 and 4)&quot;,&quot;why&quot;:&quot;Chords on 2 and 4, between the bass notes.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;oompah&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;3+3+2&quot;,&quot;why&quot;:&quot;Beat 1, the and of 2, beat 4: eight eighths grouped 3+3+2.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;tresillo&quot;,&quot;calm&quot;:false}},{&quot;label&quot;:&quot;3–2 son clave&quot;,&quot;why&quot;:&quot;1, the and of 2, 4 | 2, 3.&quot;,&quot;opts&quot;:{&quot;compRhythm&quot;:&quot;clave32&quot;,&quot;calm&quot;:false}}]">
+
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>For teachers
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ul>
+<li><strong>The band:</strong> the demos run on the site’s <a href="../tools/backing-track.html">Backing Track</a> band. Each button changes one band setting (comping rhythm, bass line or drum groove) and the change takes effect at the next bar. The same patterns, each with a step-by-step lesson, are on the <a href="../lessons/patterns/index.html">Pattern lessons</a> pages.</li>
+<li><strong>Names:</strong> the band’s names for some rhythms differ from the book’s. The book’s “1 (2) &amp;” is the band’s <em>Charleston</em>, its afterbeats in polka are the band’s <em>boom-chick</em>, and its reggae off-beats are the band’s <em>every off-beat</em>. The quiz uses the book’s names.</li>
+<li><strong>Not here:</strong> the band does not play the book’s specific songs or riffs (14.7), afterbeats as passing figures in thirds (the Mozart example in 14.5), or 3+3+2 in sixteenth notes against a slow beat. The book’s listening lists are much longer than the selections here.</li>
+<li><strong>Videos:</strong> the clips use the book’s YouTube links and start and end times. Each title was checked against YouTube. “Pretty Thing” (14.6) is no longer available there, so it is left out.</li>
+<li><strong>Not checked by ear:</strong> the patterns were checked in notation and by the band’s tests. Whether each one sounds like the book’s examples has not been checked by listening.</li>
+<li>The text on this page is written for the site, not copied from the book (the book is under the GNU Free Documentation License).</li>
+</ul>
+</div>
+</div>
+</div>
+<link rel="stylesheet" href="../apps/shared/drills/drills.css?v=4">
+<style>
+.rn-quiz{display:grid;gap:1rem;margin:1rem 0}
+.rn-quiz figure{margin:0}
+.rn-quiz figcaption{font-size:.9rem;margin:.3rem 0}
+</style>
+<style>
+.ar-demo{margin:1rem 0 1.8rem;padding:.8rem 1rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
+.ar-tools{display:flex;flex-wrap:wrap;align-items:center;gap:.4rem;margin-bottom:.5rem}
+.ar-tools .btn{font-family:var(--font-mono);font-size:.8rem}
+.ar-parts{display:inline-flex;flex-wrap:wrap;gap:.3rem}
+.ar-lbl{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2);margin:0 .2rem 0 .5rem}
+.ar-on,.ar-tools .btn.ar-on,.ao-seg .btn.ar-on,.ao-row .btn.ar-on{background:var(--site-accent-dk);border-color:var(--site-accent-dk);color:#fff}
+.ar-chip:not(.ar-on){text-decoration:line-through;opacity:.75}
+.ar-staff{min-height:3rem;overflow-x:auto}
+.ar-quiz{margin:1rem 0 1.8rem;padding:.8rem 1rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
+.ar-quiz .ar-right{background:#2e7d32;border-color:#2e7d32;color:#fff}
+.ar-quiz .ar-wrong{background:#b3261e;border-color:#b3261e;color:#fff;text-decoration:line-through}
+.ar-fb{font-size:.95rem}.ar-fb-ok{color:#2e7d32}.ar-fb-no{color:#b3261e}
+.ar-hint,.ao-hint{font-size:.82rem;color:var(--site-ink-2);margin:.3rem 0}
+.ar-organ{margin:1rem 0 1.8rem;padding:1rem;border:1px solid var(--site-border);border-radius:8px;background:var(--site-surface)}
+.ao-top{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-end}
+.ao-bars{display:flex;gap:.35rem;padding:.6rem;border-radius:6px;background:#2a2420}
+.ao-bar{display:flex;flex-direction:column;align-items:center;width:2.1rem}
+.ao-bar input{writing-mode:vertical-lr;direction:rtl;height:9rem;width:1.6rem;margin:.2rem 0}
+.ao-brown input{accent-color:#8a4b2a}.ao-white input{accent-color:#e8e2d6}.ao-black input{accent-color:#111}
+.ao-num{font-family:var(--font-mono);font-size:.9rem;color:#f5efe2}
+.ao-feet{font-family:var(--font-mono);font-size:.68rem;color:#d8cfc0}
+.ao-spec{flex:1 1 300px;min-width:240px}
+.ao-spec svg{width:100%;height:auto;max-height:11rem}
+.ao-grid{stroke:var(--site-border);stroke-width:1}
+.ao-ax{font-family:var(--font-mono);font-size:8px;fill:var(--site-ink-2);text-anchor:middle}
+.ao-line{stroke-width:5;stroke-linecap:round}
+.ao-lbrown{stroke:#8a4b2a}.ao-lwhite{stroke:var(--site-accent-dk)}.ao-lblack{stroke:#333}
+.ao-row{display:flex;flex-wrap:wrap;align-items:center;gap:.6rem;margin:.6rem 0}
+.ao-reg{max-width:22rem}
+.ao-what{margin:.2rem 0 .6rem;font-size:.9rem;min-height:1.2em}
+.ao-keys{display:flex;position:relative;height:7rem;margin:.8rem 0;user-select:none;touch-action:none;max-width:100%;overflow-x:auto}
+.ao-key{border:1px solid #555;border-radius:0 0 4px 4px;padding:0;cursor:pointer}
+.ao-wht{flex:0 0 2.2rem;height:100%;background:#fff;z-index:1}
+.ao-blk{flex:0 0 1.4rem;height:62%;margin:0 -.7rem;background:#222;z-index:2}
+.ao-key.ao-down{background:var(--site-accent)}
+.ao-ctl{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));gap:.8rem}
+.ao-group{border:1px solid var(--site-border);border-radius:6px;padding:.4rem .8rem .6rem}
+.ao-group legend{float:none;width:auto;font-size:.95rem;font-weight:600;padding:0 .3rem;margin:0}
+.ao-seg{display:flex;flex-wrap:wrap;gap:.3rem;margin:.3rem 0}
+.ao-seg .btn{font-size:.8rem}
+.ao-auto{font-size:.82rem;display:block;margin:.3rem 0}
+.ao-ends{display:flex;justify-content:space-between;font-size:.72rem;color:var(--site-ink-2)}
+.ao-base{fill:#555}.ao-shoe{fill:#333}.ao-pivot{fill:#999}
+.ao-cab{fill:#6b4a2f;stroke:#3e2a1a}.ao-ring{fill:none;stroke:#c8b89a;stroke-dasharray:3 3}
+.ao-hornp{fill:#e8e2d6}.ao-dummy{fill:#a89a80}.ao-drump{fill:#c8b89a;opacity:.85}.ao-hub{fill:#222}
+.ao-rotor .ao-ax{fill:#f5efe2}
+.ao-rpm{font-family:var(--font-mono);font-size:.75rem;color:var(--site-ink-2)}
+#ar-bar label{font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:var(--parch-dim);margin-right:.3rem}
+#ar-bar input[type=number]{width:4.2rem;font-size:.85rem;padding:.15rem .3rem;border:1px solid var(--parch-edge);border-radius:4px;background:#fff}
+#ar-bar input[type=range]{width:7rem;vertical-align:middle}
+#ar-status{font-family:var(--font-mono);font-size:.75rem;color:var(--parch-dim);width:11rem;overflow:hidden;text-overflow:ellipsis}
+</style>
+<div id="ar-bar">
+  <span data-pri="1"><label for="ar-tempo">Tempo</label><input type="range" id="ar-tempo" min="40" max="220" step="2"> <input type="number" id="ar-tempo-n" min="40" max="220" step="2" aria-label="Tempo in beats per minute"></span>
+  <button type="button" class="btn btn-sm btn-outline-secondary" id="ar-stop" disabled="">■ Stop</button>
+  <span id="ar-status" aria-live="polite" data-pri="2"></span>
+</div>
+<script src="../apps/shared/soundfont.js"></script>
+<script src="../apps/shared/playbar.js?v=2"></script>
+<script src="../apps/shared/abcjs-basic.js"></script>
+<script src="../apps/shared/abc-core.js?v=1"></script>
+<script src="../apps/tune-assessment/abc-tune.js?v=3"></script>
+<script src="../apps/shared/abc-transpose.js?v=4"></script>
+<script src="../apps/shared/tune-chart.js?v=31"></script>
+<script src="../apps/shared/voicings.js?v=5"></script>
+<script src="../apps/shared/band/harmony.js?v=33"></script>
+<script src="../apps/shared/band/bass.js?v=15"></script>
+<script src="../apps/shared/band/comp.js?v=30"></script>
+<script src="../apps/shared/band/catalog.js?v=37"></script>
+<script src="../apps/shared/band/drums.js?v=17"></script>
+<script src="../apps/shared/band/congas.js?v=3"></script>
+<script src="../apps/shared/band/sounds.js?v=15"></script>
+<script src="../apps/shared/band/player.js?v=118"></script>
+<script src="../apps/shared/band/notation.js?v=12"></script>
+<script src="../apps/shared/lessons/arrange-kit.js?v=4"></script>
+<script>ArrangeLesson.init();</script>
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../theory/pop-forms.html" class="pagination-link" aria-label="12. Form in Popular Music">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">12. Form in Popular Music</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../theory/figured-bass.html" class="pagination-link" aria-label="16. Figured Bass">
+        <span class="nav-page-text">16. Figured Bass</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

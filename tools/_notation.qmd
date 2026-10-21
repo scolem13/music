@@ -117,6 +117,16 @@
 #nt-root #nt-cells .abcjs-staff{display:none}
 #nt-root #nt-pending .abcjs-stem,#nt-root .nt-pitchonly .abcjs-stem{display:none}
 #nt-root .nt-crow{margin:0 0 .35rem}
+#nt-root .nt-loop-rows{list-style:none;padding:0;margin:.4rem 0;max-height:22rem;overflow:auto}
+#nt-root .nt-loop-rows li{display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;padding:.15rem .3rem;border-radius:4px}
+#nt-root .nt-loop-rows li.is-cur{background:rgba(127,127,127,.12)}
+#nt-root .nt-loop-rows li.is-on{outline:2px solid #3fc2b4}
+#nt-root .nt-loop-rows .nt-lname{min-width:4.5em;font-weight:600;cursor:pointer}
+#nt-root .nt-loop-rows .nt-lbars{opacity:.7;font-size:.85em;min-width:6em}
+#nt-root .nt-loop-rows .nt-lset button{padding:0 .4em}
+#nt-root .nt-lstat{font-size:.75em;padding:0 .4em;border-radius:3px;border:1px solid currentColor}
+#nt-root .nt-lstat.is-empty{opacity:.5}#nt-root .nt-lstat.is-draft{border-style:dashed}
+#nt-root .nt-draft{margin-left:.5em;padding:0 .4em;border:1px dashed currentColor;border-radius:3px;font-size:.75em;opacity:.75}
 #nt-root .nt-cline{display:flex;align-items:center}
 #nt-root .nt-nl{border:0;background:none;color:#b3261e;font-size:1.2rem;line-height:1;padding:0 .3rem;cursor:pointer}
 #nt-root .nt-nl:hover{color:#000}
@@ -236,13 +246,15 @@
             <div class="nt-field"><label for="nt-q-res">Shortest note</label><select id="nt-q-res"><option value="1">Eighth</option><option value="0.5">Sixteenth</option></select></div>
             <div class="nt-field"><label for="nt-q-feel">Feel</label><select id="nt-q-feel"><option value="straight">Straight</option><option value="swing">Swing</option></select></div>
             <div class="nt-field"><label for="nt-q-trip">Triplets</label><select id="nt-q-trip"><option value="off">Off</option><option value="auto">Find them</option></select></div>
+            <div class="nt-field"><label for="nt-q-split" title="Notes below this key are the left hand; this key and above the right hand (the melody).">Split at</label><select id="nt-q-split"><option value="60">C4 (middle C)</option><option value="55">G3</option><option value="53">F3</option><option value="48">C3</option><option value="0">No split</option></select></div>
+            <div class="nt-field"><label for="nt-q-lh" title="Chord symbols: the left hand's chords named over the bars. Notated: the left hand written out on a bass staff (a voice of its own), with or without chord symbols.">Left hand</label><select id="nt-q-lh"><option value="chords">Chord symbols</option><option value="notate">Notated (bass staff)</option><option value="both">Notated + chord symbols</option></select></div>
             <div class="nt-field"><label for="nt-q-quiet">Ends after</label><select id="nt-q-quiet"><option value="2">2 quiet bars</option><option value="1">1 quiet bar</option><option value="4">4 quiet bars</option><option value="0">Only when stopped</option></select></div>
           </div>
           <div class="nt-row">
             <button type="button" class="nt-btn" id="nt-q-redo" disabled>Redo the last take</button>
             <button type="button" class="nt-btn" id="nt-q-drop" disabled>Drop the last take</button>
           </div>
-          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
+          <p class="nt-hint">Each take is a chunk of its own, after the selected one, in the selected voice. The right hand plays the melody; when the left hand plays chords (two notes or more together below the <strong>Left hand</strong> key) they are named and written over the bars; a take with no left-hand chords is all melody. Notes played in the last bar of the count-in of the piece's first take make a <strong>pickup</strong>, up to almost a whole bar. <kbd>r</kbd> or the sustain pedal records, <kbd>Space</kbd>, the pedal or <kbd>Esc</kbd> stops, <kbd>Shift</kbd>+<kbd>R</kbd> redoes the last take, <kbd>Shift</kbd>+<kbd>Backspace</kbd> drops it.</p>
           <p class="nt-hint" id="nt-q-status" aria-live="polite"></p>
         </div>
       </details>
@@ -279,7 +291,7 @@
             </div>
             <p class="nt-hint"><kbd>Shift</kbd>+click a second note to select everything between (one voice), then copy (<kbd>Ctrl</kbd>/<kbd>⌘</kbd>+<kbd>C</kbd>), cut (<kbd>X</kbd>), paste after it (<kbd>V</kbd>) or <kbd>Delete</kbd>. Click a note, then <kbd>↑</kbd> <kbd>↓</kbd> move it to the next note in the key, <kbd>Shift</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by a half step, <kbd>Alt</kbd>+<kbd>↑</kbd> <kbd>↓</kbd> by an octave. <kbd>←</kbd> <kbd>→</kbd> pick the note before or after, <kbd>Esc</kbd> lets go. Slashes are rhythm with no note yet.</p>
             <p class="nt-status" id="nt-status" aria-live="polite"></p>
-            <p class="nt-phrase" id="nt-phrase" hidden><span id="nt-phrase-label"></span> <button type="button" class="nt-btn is-main" id="nt-back" title="Back to Timestamp Notes, looping the next phrase">Back to the recording, next phrase</button> <button type="button" class="nt-btn" id="nt-back-again" title="Back to Timestamp Notes, this phrase again">This phrase again</button> <button type="button" class="nt-btn" id="nt-seam-keep" hidden title="Where the pickup and the end of the phrase before both sounded, keep the phrase before's notes">Keep the earlier notes</button></p>
+            <p class="nt-phrase" id="nt-phrase" hidden><span id="nt-phrase-label"></span> <button type="button" class="nt-btn is-main" id="nt-back" title="Back to Timestamp Notes, looping the next phrase">Back to the recording, next phrase</button> <button type="button" class="nt-btn" id="nt-back-again" title="Back to Timestamp Notes, this phrase again">This phrase again</button> <span id="nt-passes" class="nt-passes" hidden title="Each pass of the loop you played is a take: pick the one to keep"></span> <button type="button" class="nt-btn" id="nt-seam-keep" hidden title="Where the pickup and the end of the phrase before both sounded, keep the phrase before's notes">Keep the earlier notes</button></p>
           </div>
         </details>
 
@@ -483,6 +495,20 @@
           </div>
         </details>
 
+      <details class="nt-panel" id="nt-loop" open>
+          <summary><h2>Loop chunks</h2><span class="nt-sum" id="nt-loop-sum"></span></summary>
+          <div class="nt-body">
+            <div class="nt-row">
+              <div class="nt-field"><label for="nt-loop-mode" title="Listen: the recording. Play along: the recording and you, each pass a take. Play alone: the recording silent, a click, each pass a take. Listen, then play: the two by turns.">Loop</label><select id="nt-loop-mode"><option value="listen">Listen</option><option value="along">Play along</option><option value="alone">Play alone (click)</option><option value="cycle">Listen, then play</option></select></div>
+              <button type="button" class="nt-btn" id="nt-loop-go">Loop this chunk</button>
+            </div>
+            <ol class="nt-loop-rows" id="nt-loop-rows"></ol>
+            <p class="nt-hint" id="nt-loop-empty">Open the song file from Timestamp Notes in the Recording part: each chunk is found in the recording through its section, and loops from its <b>lead-in</b> to its <b>stop</b>.</p>
+            <p class="nt-hint">Keys: <kbd>\</kbd> then <kbd>p</kbd> loop on/off, <kbd>,</kbd> <kbd>.</kbd> the chunk before / after, <kbd>-</kbd> <kbd>=</kbd> lead-in, <kbd>{</kbd> <kbd>}</kbd> stop, <kbd>m</kbd> loop mode, <kbd>Space</kbd> play/pause, <kbd>a</kbd> this chunk again. Every pass you play is a take of the chunk (Play it in's settings: split, left hand); run on past the stop and the next chunks get drafts. A split or joined chunk keeps its timing: it comes from the bars. ≈: the map has no such section (its bar number is used); ⚠: the section's bars here and in the map differ.</p>
+            <p class="nt-hint" id="nt-loop-note" role="status"></p>
+          </div>
+        </details>
+
       <details class="nt-panel" id="nt-take" open>
           <summary><h2>Play it in time: more</h2><span class="nt-sum" id="nt-take-sum"></span></summary>
           <div class="nt-body">
@@ -524,8 +550,8 @@
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
 <script src="/apps/shared/rhythm-cells.js"></script>
-<script src="/apps/shared/musical-typing.js"></script>
-<script src="/apps/shared/chord-entry.js?v=10"></script>
+<script src="/apps/shared/musical-typing.js?v=2"></script>
+<script src="/apps/shared/chord-entry.js?v=11"></script>
 <script src="/apps/shared/lyric-align.js?v=3"></script>
 <script src="/apps/shared/melody-dwim.js?v=2"></script>
 <script src="/apps/shared/vim-textarea.js?v=1"></script>
@@ -533,10 +559,12 @@
 <script src="/apps/shared/abc-events.js?v=3"></script>
 <script src="/apps/shared/phrase-seam.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
-<script src="/apps/shared/notation-doc.js?v=10"></script>
+<script src="/apps/shared/notation-doc.js?v=11"></script>
 <link rel="stylesheet" href="/apps/shared/timestamp-player/player.css?v=2">
-<script src="/apps/shared/timestamp-player/player.js?v=7"></script>
-<script src="/apps/shared/timestamp-player/recording-follow.js?v=3"></script>
+<script src="/apps/shared/timestamp-player/player.js?v=8"></script>
+<script src="/apps/shared/timestamp-player/recording-follow.js?v=4"></script>
+<script src="/apps/shared/timestamp-player/phrases.js?v=8"></script>
+<script src="/apps/shared/chunk-loop.js?v=1"></script>
 <script>
 (function () {
   "use strict";
@@ -833,6 +861,7 @@
       o.value = sc.name + "\u0001" + nth; o.textContent = sc.name + " (bar " + (sc.bar + 1) + ")"; s.appendChild(o);
     });
     $("nt-rec-sum").textContent = m.bars.length + " bars";
+    lpRender();
   }
   if (recPanel) $("nt-rec-sec").onchange = function () {
     var v = this.value.split("\u0001"); if (v.length < 2) return;
@@ -843,6 +872,124 @@
   // the map's tempo for form bar idx while the band follows the recording (else null: the piece's own)
   function recTempo(idx) { return recPanel && recPanel.model() && $("nt-rec-follow").checked ? recPanel.bpmForHostBar(idx, "smooth") : null; }
   window.__ntRec = recPanel;       // for tests
+
+  // ---- Loop chunks: the recording's bars under each chunk (ChunkLoop), looped from lead-in to stop; every pass you play a take ----
+  // lp: the chunk looping { ci, start, end (s), pass }. A chunk's lead-in / stop set here live on it (chunk.loop); unset, they come
+  // from the song file (Timestamp Notes' settings) or are guessed (ChunkLoop.leadIn / tail).
+  var CL = window.ChunkLoop, lp = null, lpWas = false, lpClickT = null;
+  function lpModel() { return recPanel && recPanel.model(); }
+  function lpSpans() { var m = lpModel(); return m && CL ? CL.spans(doc, D, m, recPanel.offset()) : []; }
+  function lpRate() { var p = recPanel && recPanel.player(); return p && p.rate ? p.rate() : 1; }
+  function lpSet(sp, k) { var m = lpModel(), pr = m && m.prefs; return { li: CL.leadIn(doc, D, sp, k, pr, m), tl: CL.tail(doc, D, sp, k, pr, m) }; }
+  function lpIndex(sp, ci) { for (var k = 0; k < sp.length; k++) if (sp[k].ci === ci) return k; for (k = 0; k < sp.length; k++) if (sp[k].ci > ci) return k; return sp.length - 1; }
+  function lpSay(t) { $("nt-loop-note").textContent = t || ""; if (t) status(t); }
+  function beatsText(b) { var a = Math.abs(b); return (a % 1 ? a.toFixed(1) : String(a)) + (a === 1 ? " beat" : " beats"); }
+  function lpLoop(k) {
+    var sp = lpSpans(), m = lpModel();
+    if (!m) { lpSay("Open the song file in the Recording part first."); return; }
+    if (!sp[k]) return;
+    var s = sp[k], st = lpSet(sp, k), w = CL.window(m, sp, k, st.li, st.tl, lpRate()), p = recPanel.player();
+    if (!lp || lp.ci !== s.ci) { passTakes = []; renderPasses(); }
+    lp = { ci: s.ci, start: w.start, end: w.end, pass: 0 };
+    cur = s.ci; sel = null; spillPhrases = 0;
+    phrase = { ci: s.ci, bar: 0, bars: s.bars, leadIn: st.li, tail: st.tl, bpm: w.bpm, rate: lpRate(), label: s.label, local: true };
+    if (p && p.seek) p.seek(w.start);
+    if (recPanel.playing()) lpPass(); else recPanel.play();
+    render();
+    lpSay("Looping " + s.label + ", bars " + (s.from + 1) + "\u2013" + s.to + (st.li ? ", from " + beatsText(st.li) + " before" : "") + (st.tl > 0 ? ", to " + beatsText(st.tl) + " after" : st.tl < 0 ? ", stopping " + beatsText(st.tl) + " early" : "") + ".");
+  }
+  function lpStop() {
+    lp = null; lpClick(false); var p = recPanel && recPanel.player(); if (p && p.setMuted) p.setMuted(false);
+    render(); lpSay("Stopped looping.");
+  }
+  function lpCurK() { var sp = lpSpans(); return { sp: sp, k: lpIndex(sp, lp ? lp.ci : cur) }; }
+  function lpToggle() { if (lp) lpStop(); else lpLoop(lpCurK().k); }
+  function lpStep(d) {
+    var x = lpCurK(), n = x.k + d;
+    if (n < 0 || n >= x.sp.length) { lpSay(d > 0 ? "That was the last chunk." : "That is the first chunk."); return; }
+    lpLoop(n);
+  }
+  function lpNudge(what, d, k) {
+    var x = lpCurK(); if (k == null) k = x.k; var s = x.sp[k]; if (!s) return;
+    var st = lpSet(x.sp, k), ch = doc.chunks[s.ci];
+    change(function () { ch.loop = Object.assign({}, ch.loop || {}); if (what === "lead") ch.loop.leadIn = Math.max(0, st.li + d); else ch.loop.tail = st.tl + d; });
+    var st2 = lpSet(lpSpans(), k);
+    if (what === "lead" && d > 0 && st2.li === st.li) lpSay("As far back as it goes (two bars, and the chunk before keeps a beat).");
+    else if (what === "tail" && st2.tl === st.tl) lpSay(d > 0 ? "As far as it goes (two bars)." : "As early as it goes: the chunk keeps a beat.");
+    if (lp && lp.ci === s.ci) lpLoop(k);
+  }
+  function lpMode() {
+    var sl = $("nt-loop-mode"), o = sl.options; sl.selectedIndex = (sl.selectedIndex + 1) % o.length; sl.onchange(); lpSay("Loop mode: " + o[sl.selectedIndex].textContent + ".");
+  }
+  function lpPass() {
+    if (!lp) return;
+    var md = $("nt-loop-mode").value, n = lp.pass, play = md === "along" || md === "alone" || (md === "cycle" && n % 2 === 1), quiet = md === "alone" || (md === "cycle" && n % 2 === 1);
+    var p = recPanel.player(); if (p && p.setMuted) p.setMuted(quiet);
+    lpClick(quiet);
+    if (!play) { lpSay("Listening" + (md === "cycle" ? "; you play the next pass." : ".")); return; }
+    if (rec) return;
+    var sp = lpSpans(), k = lpIndex(sp, lp.ci), st = lpSet(sp, k), rate = lpRate(), w = CL.window(lpModel(), sp, k, st.li, st.tl, rate), t = recPanel.time();
+    if (t == null) return;
+    cur = lp.ci; phrase.ci = lp.ci; phrase.rate = rate;
+    passStart({ downAt: Date.now() + (w.down - t) / rate * 1000, endAt: Date.now() + (w.end - t) / rate * 1000 - 30, beatSec: w.beatSec, label: phrase.label });
+    lpSay("Your turn: " + phrase.label + (quiet ? " (recording silent)" : "") + ". This pass is a take.");
+  }
+  // a click on the map's beats while the recording is silent
+  function lpClick(on) {
+    clearInterval(lpClickT); lpClickT = null; if (!on) return;
+    var last = -1;
+    lpClickT = setInterval(function () {
+      var m = lpModel(), t = recPanel.time(); if (!m || t == null || !recPanel.playing()) return;
+      var b = m.barAt(t); if (b < 0) return;
+      var len = m.lenOf(b), k = Math.floor((t - m.bars[b]) / len * m.beats[b]), id = b * 64 + k;
+      if (id === last || !(len > 0)) return; last = id;
+      try { if (!actx) { actx = new (window.AudioContext || window.webkitAudioContext)(); if (window.AudioTap) AudioTap.register(actx); } click(actx.currentTime + 0.005, k === 0); } catch (e) {}
+    }, 10);
+  }
+  setInterval(function () {
+    if (!lp || !recPanel) return;
+    var on = recPanel.playing(), t = recPanel.time();
+    if (on && !lpWas) lpPass();
+    if (on && t != null && t >= lp.end - 0.03) { var p = recPanel.player(); if (p && p.seek) p.seek(lp.start); lp.pass++; lpPass(); }
+    if (!on && lpWas) lpClick(false);
+    lpWas = on;
+  }, 20);
+  function lpRender() {
+    var box = $("nt-loop-rows"); if (!box || !CL) return;
+    var m = lpModel(), sp = lpSpans();
+    $("nt-loop-empty").hidden = !!m; box.innerHTML = "";
+    if (!m) { $("nt-loop-sum").textContent = ""; return; }
+    var cnt = { empty: 0, draft: 0, done: 0 };
+    sp.forEach(function (s, k) {
+      var st = lpSet(sp, k), stat = CL.status(doc, D, s.ci); cnt[stat]++;
+      var li = document.createElement("li"); li.className = (s.ci === cur ? "is-cur" : "") + (lp && lp.ci === s.ci ? " is-on" : "");
+      var go = document.createElement("button"); go.type = "button"; go.className = "nt-btn"; go.textContent = lp && lp.ci === s.ci ? "Looping" : "Loop";
+      go.onclick = function () { if (lp && lp.ci === s.ci) lpStop(); else lpLoop(k); go.blur(); };
+      var nm = document.createElement("span"); nm.className = "nt-lname"; nm.textContent = s.label; nm.onclick = function () { toChunkStart(s.ci); render(); };
+      var bars = document.createElement("span"); bars.className = "nt-lbars";
+      bars.textContent = (s.guessed ? "\u2248 " : "") + (s.bars > 1 ? "bars " + (s.from + 1) + "\u2013" + s.to : "bar " + (s.from + 1)) + (s.mismatch ? " \u26a0" : "");
+      if (s.mismatch) bars.title = "This section has " + s.mismatch.doc + " bars here and " + s.mismatch.map + " in the recording's map.";
+      if (s.guessed) bars.title = "The map has no section " + (s.sec || "") + ": taken from the bar number.";
+      function setter(what, val, txt) {
+        var w = document.createElement("span"); w.className = "nt-lset";
+        var a = document.createElement("button"), b = document.createElement("button"), v = document.createElement("span");
+        a.type = b.type = "button"; a.textContent = "\u2212"; b.textContent = "+"; v.textContent = txt;
+        a.setAttribute("aria-label", (what === "lead" ? "Shorter lead-in for " : "Earlier stop for ") + s.label);
+        b.setAttribute("aria-label", (what === "lead" ? "Longer lead-in for " : "Later stop for ") + s.label);
+        a.onclick = function () { lpNudge(what, -0.5, k); }; b.onclick = function () { lpNudge(what, 0.5, k); };
+        w.appendChild(a); w.appendChild(v); w.appendChild(b); return w;
+      }
+      var lead = setter("lead", st.li, "lead-in " + (st.li ? beatsText(st.li) : "none"));
+      var stop = setter("tail", st.tl, "stop " + (st.tl > 0 ? "+" + beatsText(st.tl) : st.tl < 0 ? "\u2212" + beatsText(st.tl) : "at the bar"));
+      var badge = document.createElement("span"); badge.className = "nt-lstat is-" + stat; badge.textContent = stat;
+      [go, nm, bars, lead, stop, badge].forEach(function (e) { li.appendChild(e); });
+      box.appendChild(li);
+    });
+    $("nt-loop-sum").textContent = cnt.done + " done \u00b7 " + cnt.draft + " draft \u00b7 " + cnt.empty + " empty";
+  }
+  $("nt-loop-go").onclick = function () { lpToggle(); this.blur(); };
+  setTimeout(function () { $("nt-loop-mode").value = Q.lmode || "listen"; }, 0);      // (Q is set further down)
+  $("nt-loop-mode").onchange = function () { Q.lmode = this.value; qSave(); if (lp) lp.pass = 0; var p = recPanel && recPanel.player(); if (p && p.setMuted) p.setMuted(false); lpClick(false); this.blur(); };
   // Shift+Space: the recording from the active note (this page's Recording panel, else Timestamp Notes when it opened this page).
   // Again on the same note while it plays: pause.
   // where: { host (form bar + fraction, from bar 1), section, nth, bar (bars into the section) }
@@ -1285,6 +1432,7 @@
     drawChunks(shown, h);
     renderSelTools();
     $("nt-pending-wrap").hidden = true;
+    lpRender();
   }
 
   // ---- the score: one line per chunk, bars the same width on every line ------------------------------------------------
@@ -1303,6 +1451,7 @@
       if (ch.heading) { var hd = document.createElement("div"); hd.className = "nt-csec"; hd.textContent = ch.heading; paper.appendChild(hd); }
       var row = document.createElement("div"); row.className = "nt-crow" + (ci === cur ? " is-cur" : ""); row.dataset.chunk = ci;
       var lab = document.createElement("div"); lab.className = "nt-clab"; lab.textContent = cname(ci);
+      if (ch.draft) { var dm = document.createElement("span"); dm.className = "nt-draft"; dm.textContent = "draft"; dm.title = "Written from a take that ran on past its phrase. Check it, or play this phrase in again."; lab.appendChild(dm); }
       lab.onclick = function () { if (cur !== ci) { toChunkStart(ci); msg(""); render(); } };
       var box = document.createElement("div"); row.appendChild(lab); row.appendChild(box); paper.appendChild(row);
       var sub = JSON.parse(JSON.stringify(doc)), c = sub.chunks[ci];
@@ -1959,7 +2108,7 @@
   }
 
   MusicalTyping.attach({
-    enabled: function () { return (mode === "piano" || rec || chordsIn) && !sel; },
+    enabled: function () { return mode === "piano" && !sel; },   // only when Computer keys is chosen
     onOn: noteOn, onOff: noteOff,
     onOctave: function (o) { status("Computer keys start on C" + (o + 1) + "."); }
   });
@@ -2051,6 +2200,33 @@
     }
     tryOp(function () { return op === "J" ? D.merge(doc, cur) : D.combine(doc, cur, voice); });
   }
+  // The recording's loop from here (Timestamp Notes opened this page): \ then a key, sent as nt-loop { action }.
+  //   p loop on/off · , . previous / next phrase · - = lead-in · { } (or [ ]) stop point · m loop mode · Space play/pause · a this phrase from its lead-in
+  var LOOPKEYS = { p: "toggle", ",": "prev", ".": "next", "-": "leadLess", "=": "leadMore", "+": "leadMore", "{": "tailLess", "[": "tailLess", "}": "tailMore", "]": "tailMore", m: "mode", " ": "play", a: "again" };
+  var loopLeader = 0;
+  function lpAction(act) {
+    if (act === "toggle") lpToggle(); else if (act === "prev") lpStep(-1); else if (act === "next") lpStep(1);
+    else if (act === "again") lpLoop(lpCurK().k);
+    else if (act === "leadLess") lpNudge("lead", -0.5); else if (act === "leadMore") lpNudge("lead", 0.5);
+    else if (act === "tailLess") lpNudge("tail", -0.5); else if (act === "tailMore") lpNudge("tail", 0.5);
+    else if (act === "mode") lpMode();
+    else if (act === "play") { if (recPanel.playing()) recPanel.pause(); else recPanel.play(); }
+  }
+  document.addEventListener("keydown", function (e) {
+    var t = e.target;
+    if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable)) return;
+    var remote = !!(window.opener && REMOTE_TS);
+    if (e.ctrlKey || e.metaKey || e.altKey || (!remote && !lpModel())) return;
+    if (e.key === "\\" && !loopLeader) { loopLeader = Date.now(); status("Loop: p on/off · , . phrase · - = lead-in · { } stop · m mode · Space play · a again"); e.preventDefault(); e.stopImmediatePropagation(); return; }
+    if (!loopLeader) return;
+    var fresh = Date.now() - loopLeader < 2500; loopLeader = 0;
+    if (!fresh || e.key === "Shift") { if (e.key === "Shift") loopLeader = Date.now(); return; }
+    e.preventDefault(); e.stopImmediatePropagation();
+    var act = LOOPKEYS[e.key];
+    if (!act) { status("No loop key " + e.key + "."); return; }
+    if (!remote) { lpAction(act); return; }
+    try { window.opener.postMessage({ type: "nt-loop", action: act }, location.origin); } catch (err) {}
+  }, true);
   document.addEventListener("keydown", function (e) {
     var t = e.target;
     if (t && (t.tagName === "INPUT" || t.tagName === "TEXTAREA" || t.tagName === "SELECT" || t.isContentEditable)) return;
@@ -2379,12 +2555,39 @@
   // last bar of the count-in of the piece's first take make a pickup chunk (chunk.pickup), up to a whole bar less one shortest note.
   // a phrase from Timestamp Notes (nt-goto): { ci, bar, bars, leadIn (beats), label }. Takes then go into its bars, notes in the
   // count-in into the bar(s) before (NotationDoc.writeLeadIn). seamAlt: the doc with the earlier notes kept where both sounded.
-  var phrase = null, seamAlt = null;
-  var QSTORE = "ntQuick", Q = { bpm: 90, count: "1", pickup: "auto", res: "1", feel: "straight", trip: "off", quiet: "2" }, lastQuick = null;
+  // spillPhrases: how many phrases after it the last take ran on into (Back skips past them)
+  var phrase = null, seamAlt = null, spillPhrases = 0;
+  var QSTORE = "ntQuick", Q = { bpm: 90, count: "1", pickup: "auto", res: "1", feel: "straight", trip: "off", quiet: "2", split: "60", lh: "chords" }, lastQuick = null;
   try { Object.assign(Q, JSON.parse(localStorage.getItem(QSTORE) || "{}")); } catch (e) {}
   function qSave() { try { localStorage.setItem(QSTORE, JSON.stringify(Q)); } catch (e) {} }
   function pieceBpm() { return Math.max(30, Math.min(240, here().tempo || 90)); }
-  function takeBpm() { return Q.bpmOwn || pieceBpm(); }
+  // in a phrase from Timestamp Notes: the phrase's tapped tempo, at the speed the recording is playing
+  function takeBpm() { if (Q.bpmOwn) return Q.bpmOwn; if (phrase && phrase.bpm && inPhrase()) return Math.max(30, Math.min(240, Math.round(phrase.bpm * (phrase.rate || 1)))); return pieceBpm(); }
+  // left hand below the split key: chords (ChordEntry.take kind "both"), right hand the melody
+  // A take is split only when the left hand played a chord (two notes or more below the split struck within 80 ms):
+  // otherwise every note is melody, so a tune that dips below the split key is not lost.
+  var takeKind = "melody";
+  function qKind() { return takeKind; }
+  function lhNotated() { return +Q.split && (Q.lh === "notate" || Q.lh === "both"); }
+  function isLow(e) { return +Q.split && e.n < +Q.split; }
+  function kindOf(events, beatSec) {
+    var sp = +Q.split; if (!sp) return "melody";
+    if (Q.lh === "both") return "both";                                   // notated + symbols: low notes feed the chord names too
+    if (Q.lh === "notate") return "melody";                               // (the low notes are left out of the melody take)
+    var lows = events.filter(function (e) { return e.k === "on" && e.n < sp; }).map(function (e) { return e.beat * beatSec; }).sort(function (a, b) { return a - b; });
+    for (var i = 1; i < lows.length; i++) if (lows[i] - lows[i - 1] < 0.08) return "both";
+    return "melody";
+  }
+  // the chords a take heard in its bars b0 .. b0+nb-1 -> [{ at, name }] in quarters, the first of those bars at offQ
+  function takeChords(tk, unitQ, b0, nb, offQ) {
+    var out = [], bars = tk.grid.bars(), t = offQ || 0;
+    for (var b = b0; b < b0 + nb; b++) {
+      var bar = bars[b] || {};
+      Object.keys(bar).forEach(function (p) { var nm = bar[p]; if (nm && typeof nm === "object") nm = nm.name || nm.sym; if (nm) out.push({ at: Math.round((t + (+p) * unitQ) * 1e6) / 1e6, name: String(nm) }); });
+      t += tk.grid.geo(b).per * unitQ;
+    }
+    return out;
+  }
   function qStatus(t) { $("nt-q-status").textContent = t || ""; }
   function qGeo() { var mi = D.meterInfo(here().meter) || D.meterInfo("4/4"); return { mi: mi, g: CE.geoOf(mi.n, mi.d) }; }
   function isEmpty(ch) {
@@ -2409,7 +2612,7 @@
       $("nt-q-key").innerHTML = options(KEYS, "C (not chosen)", KEYNAME);
     }
     setSel($("nt-q-meter"), doc.meter || ""); setSel($("nt-q-key"), doc.keyConfirmed && doc.key ? doc.key : "");
-    ["count", "res", "feel", "trip", "quiet"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
+    ["count", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) { $("nt-q-" + k).value = Q[k]; });
     if (document.activeElement !== $("nt-q-bpm")) $("nt-q-bpm").value = takeBpm();
     qPickupOptions();
     var g = qGeo().g, dots = $("nt-q-beats");
@@ -2457,13 +2660,61 @@
     }, 20);
     renderQuick();
   }
+  // A pass of a phrase loop on Timestamp Notes (nt-pass): a take timed by the recording, not a click. Each pass's result is kept
+  // (passTakes: { doc, cur, phrase, notes }) so the best one can be picked; the newest is on the page.
+  var passTakes = [];
+  function passStart(m) {
+    if (!D.meterInfo(here().meter)) { qStatus("Choose a meter for this chunk first."); return; }
+    connectMidi(); sel = null;
+    var q = qGeo(), beatSec = +m.beatSec || 60 / takeBpm(), downPerf = m.downAt - performance.timeOrigin, endPerf = m.endAt - performance.timeOrigin;
+    var before = JSON.stringify(doc), phB = JSON.stringify(phrase), cur0 = cur;
+    rec = { quick: true, pass: true, redo: false, mi: q.mi, g: q.g, beatSec: beatSec, count: q.g.bpb, countBeats: 0, downPerf: downPerf, next: 0,
+      events: [], held: {}, lastOff: null, heard: [],
+      on: function (n, t) { var b = ((t == null ? performance.now() : t) - downPerf) / 1000 / beatSec; this.events.push({ k: "on", n: n, beat: b }); this.held[n] = 1; },
+      off: function (n, t) { if (!this.held[n]) return; var b = ((t == null ? performance.now() : t) - downPerf) / 1000 / beatSec; delete this.held[n]; this.events.push({ k: "off", n: n, beat: b }); this.lastOff = b; }
+    };
+    var r = rec;
+    $("nt-q-state").textContent = "Pass " + (passTakes.length + 1); $("nt-q-heard").textContent = "";
+    r.timer = setInterval(function () {
+      var now = performance.now(), bt = (now - downPerf) / 1000 / beatSec;
+      qBeat(bt < 0 ? -1 : Math.floor(bt) % r.count);
+      if (now >= endPerf - 10) {
+        rec = null; clearInterval(r.timer); qBeat(-1); $("nt-q-state").textContent = "Ready";
+        var end = (now - downPerf) / 1000 / beatSec;
+        Object.keys(r.held).forEach(function (n) { r.events.push({ k: "off", n: +n, beat: end }); lightKey(+n, false); });
+        r.events = r.events.filter(function (e) { var slack = 600 / r.beatSec; return e.beat >= -slack && e.beat <= end + slack; });   // near the pass only
+        if (!r.events.some(function (e) { return e.k === "on"; })) { qStatus("Pass: nothing played."); return; }
+        // each pass starts from the doc as it was before the first pass, so passes don't pile up
+        if (passTakes.length) { doc = D.upgrade(JSON.parse(passTakes[0].before)); cur = passTakes[0].cur0; phrase = JSON.parse(passTakes[0].phB); }
+        else passTakes.base = { before: before, cur0: cur0, phB: phB };
+        var base = passTakes.length ? passTakes[0] : passTakes.base;
+        phraseApply(r, r.events);
+        passTakes.push({ before: base.before, cur0: base.cur0, phB: base.phB, doc: JSON.stringify(doc), cur: cur, ph: JSON.stringify(phrase), notes: r.events.filter(function (e) { return e.k === "on"; }).length });
+        renderPasses();
+      }
+    }, 20);
+  }
+  function renderPasses() {
+    var box = $("nt-passes"); if (!box) return;
+    box.innerHTML = ""; box.hidden = passTakes.length < 2;
+    passTakes.forEach(function (p, i) {
+      var b = document.createElement("button"); b.type = "button"; b.className = "nt-btn";
+      b.textContent = "Pass " + (i + 1); b.title = p.notes + " notes";
+      b.setAttribute("aria-pressed", i === passTakes.length - 1 && !passTakes.picked || passTakes.picked === i ? "true" : "false");
+      b.onclick = function () { change(function () { doc = D.upgrade(JSON.parse(p.doc)); cur = p.cur; phrase = JSON.parse(p.ph); sel = null; }); passTakes.picked = i; renderPasses(); qStatus("Kept pass " + (i + 1) + "."); b.blur(); };
+      box.appendChild(b);
+    });
+  }
   function quickStop() {
-    var r = rec; if (!r || !r.quick) return;
+    var r = rec; if (!r || !r.quick || r.pass) return;      // a loop pass ends with the loop
     rec = null; clearInterval(r.timer);
     $("nt-q-go").classList.remove("is-on"); $("nt-q-go").innerHTML = "&#9679; Record<small>r / pedal</small>";
     $("nt-q-state").textContent = "Ready"; $("nt-q-state").classList.remove("is-count"); qBeat(-1);
     var end = (performance.now() - r.downPerf) / 1000 / r.beatSec;
     Object.keys(r.held).forEach(function (n) { r.events.push({ k: "off", n: +n, beat: end }); lightKey(+n, false); r.lastOff = end; });
+    // only notes inside the time the take ran (a stamp from a wrong clock would make thousands of empty bars)
+    r.events = r.events.filter(function (e) { var slack = 600 / r.beatSec; return e.beat >= -r.countBeats - slack && e.beat <= end + slack; });   // 10 minutes either side
+    r.lastOff = r.events.reduce(function (a, e) { return e.k === "off" && (a == null || e.beat > a) ? e.beat : a; }, null);
     var ons = r.events.filter(function (e) { return e.k === "on"; });
     if (!ons.length) { qStatus("Nothing was played."); renderQuick(); return; }
     quickApply(r, r.events);
@@ -2471,6 +2722,7 @@
   // a finished take (events in beats from the first downbeat) -> a chunk after the selected one (or the selected one, when empty)
   function inPhrase() { return !!phrase && cur === phrase.ci && phrase.ci < doc.chunks.length; }
   function quickApply(r, events) {
+    takeKind = kindOf(events, r.beatSec);
     if (inPhrase() || (r.redo && lastQuick && lastQuick.phrase)) { phraseApply(r, events); return; }
     var g = r.g, mi = r.mi, count = r.count, unitQ = 4 / Math.max(8, mi.d), unitBeats = (+Q.res) / g.beat;
     if (r.redo && lastQuick) { doc = D.upgrade(JSON.parse(lastQuick.before)); cur = lastQuick.cur; }
@@ -2482,10 +2734,12 @@
       else pk = +Q.pickup / g.beat;
     }
     var tk = CE.take({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: count, key: here().key || "C", slash: true, res: +Q.res,
-      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, split: 60, pickup: pk ? "auto" : "off", pickupBeats: pk || null });
+      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, kind: qKind(), split: +Q.split || 60, pickup: pk ? "auto" : "off", pickupBeats: pk || null });
+    var allEv = events; if (lhNotated() && Q.lh === "notate") events = events.filter(function (e) { return !isLow(e); });
     events.slice().sort(function (a, b) { return a.beat - b.beat; }).forEach(function (e) { var t = e.beat * r.beatSec * 1000; if (e.k === "on") tk.on(e.n, 0.8, t); else tk.off(e.n, t); });
     tk.finish();
     var got = tk.pickup(), mel = tk.grid.melody() || [], lastEnd = r.lastOff != null ? r.lastOff : 0;
+    var melL = lhNotated() ? lhTake(r, allEv, got ? { pickup: "auto", pickupBeats: got } : {}) : null;
     var nb = Math.max(1, Math.ceil(lastEnd / count - 0.02)), log = tk.log();
     var short = got && got < count - 1e-6, before = JSON.stringify(doc), at0 = cur;
     // a whole bar before the downbeat is no pickup: one more bar
@@ -2495,10 +2749,13 @@
       if (into === cur && isEmpty(chunk())) doc.chunks.splice(cur, 1);
       var ch = D.newChunk("Take " + n), p = D.part(ch, voice);
       p.rhythm = w.rhythm; p.pitches = w.pitches;
+      if (melL) { var lv = lhVoice(), pl = D.part(ch, lv), wl = short ? D.fromTakeBars(melL.slice(1), g.per, unitQ, nb) : D.fromTakeBars(melL, g.per, unitQ, nb + (got ? 1 : 0)); pl.rhythm = wl.rhythm; pl.pitches = wl.pitches; }
+      ch.chords = takeChords(tk, unitQ, short ? 1 : 0, nb + (!short && got ? 1 : 0), 0);
       doc.chunks.splice(into, 0, ch); cur = into;
       if (short) {
         var pc = D.newChunk("Pickup"), pp = D.part(pc, voice), pw = D.fromTakeBars([mel[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1);
-        pc.pickup = true; pp.rhythm = pw.rhythm; pp.pitches = pw.pitches;
+        pc.pickup = true; pp.rhythm = pw.rhythm; pp.pitches = pw.pitches; pc.chords = takeChords(tk, unitQ, 0, 1, 0);
+        if (melL) { var plp = D.part(pc, lhVoice()), wlp = D.fromTakeBars([melL[0]], Math.round(got * g.beat * 1e6) / 1e6, unitQ, 1); plp.rhythm = wlp.rhythm; plp.pitches = wlp.pitches; }
         doc.chunks.splice(into, 0, pc); cur = into + 1;
         // kept for DWIM (apps/shared/NOTATION-DWIM.md): the log's bar 0 is the pickup, its bar 1 the take's first
         D.keepTake(doc, into, voice, log, 0, 1, 0);
@@ -2517,12 +2774,14 @@
   }
   // a take into the phrase's bars; notes started in the count-in are its lead-in, written into the bar(s) before
   function phraseApply(r, events) {
+    takeKind = kindOf(events, r.beatSec);
     var g = r.g, mi = r.mi, count = r.count, unitQ = 4 / Math.max(8, mi.d), unitBeats = (+Q.res) / g.beat, qpb = mi.barQ / count;
     if (r.redo && lastQuick) { doc = D.upgrade(JSON.parse(lastQuick.before)); cur = lastQuick.cur; phrase = JSON.parse(lastQuick.phrase); }
     var ph = phrase, before = JSON.stringify(doc), phBefore = JSON.stringify(ph), cut = -unitBeats / 2;
     var sorted = events.slice().sort(function (a, b) { return a.beat - b.beat; }), open = {}, lead = [], body = [], isLead = {};
     sorted.forEach(function (e) {
-      if (e.k === "on") { isLead[e.n] = e.beat < cut; open[e.n] = e.beat; if (!isLead[e.n]) body.push(e); return; }
+      if (Q.lh === "notate" && lhNotated() && isLow(e)) return;           // the left hand: a take of its own (below)
+      if (e.k === "on") { isLead[e.n] = e.beat < cut && !(qKind() === "both" && e.n < +Q.split); open[e.n] = e.beat; if (!isLead[e.n]) body.push(e); return; }
       if (open[e.n] == null) return;
       if (isLead[e.n]) {
         var on = Math.round(open[e.n] / unitBeats) * unitBeats, off = Math.max(on + unitBeats, Math.round(e.beat / unitBeats) * unitBeats);
@@ -2531,25 +2790,75 @@
       delete open[e.n];
     });
     var tk = CE.take({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: count, key: here().key || "C", slash: true, res: +Q.res,
-      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, split: 60, pickup: "off" });
+      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, kind: qKind(), split: +Q.split || 60, pickup: "off" });
     body.forEach(function (e) { var t = e.beat * r.beatSec * 1000; if (e.k === "on") tk.on(e.n, 0.8, t); else tk.off(e.n, t); });
     tk.finish();
-    var mel = tk.grid.melody() || [], nb = ph.bars, w = D.fromTakeBars(mel, g.per, unitQ, nb), log = tk.log(), res = null, alt = null;
+    var mel = tk.grid.melody() || [], nb = ph.bars, w = D.fromTakeBars(mel, g.per, unitQ, nb), log = tk.log(), res = null, alt = null, spill = null;
+    var melL = lhNotated() ? lhTake(r, events.filter(function (e) { return e.beat >= cut || e.k === "off"; })) : null;
     change(function () {
       D.replaceBars(doc, ph.ci, voice, ph.bar, ph.bar + nb - 1, w.rhythm, w.pitches);
+      delete doc.chunks[ph.ci].draft;                                     // played in directly: no longer a draft
+      if (melL) { var wl = D.fromTakeBars(melL, g.per, unitQ, nb); D.replaceBars(doc, ph.ci, lhVoice(), ph.bar, ph.bar + nb - 1, wl.rhythm, wl.pitches); }
+      // played on past the stop point: the bars after the phrase, into the chunks after it (drafts, to be checked)
+      var stopBeat = nb * count + (ph.tail || 0), lastOn = -1;
+      sorted.forEach(function (e) { if (e.k === "on" && e.beat >= cut && e.beat > lastOn) lastOn = e.beat; });
+      spill = lastOn >= stopBeat ? spillOn(tk, mel, g, unitQ, ph, nb, Math.floor(lastOn / count) + 1 - nb, mi, melL) : null;
+      var hc = takeChords(tk, unitQ, 0, nb, ph.bar * mi.barQ);
+      if (hc.length) {                                                     // the left hand played: its chords replace the phrase's
+        var pc0 = doc.chunks[ph.ci], c0 = ph.bar * mi.barQ, c1 = (ph.bar + nb) * mi.barQ;
+        pc0.chords = pc0.chords.filter(function (c) { return c.at < c0 - 1e-6 || c.at >= c1 - 1e-6; }).concat(hc).sort(function (a, b) { return a.at - b.at; });
+      }
       D.keepTake(doc, ph.ci, voice, log, ph.bar, nb);                      // kept for DWIM (apps/shared/NOTATION-DWIM.md)
       var mid = JSON.stringify(doc);
       res = D.writeLeadIn(doc, ph.ci, voice, ph.bar, lead);
       if (res.conflicts.length) { var d2 = D.upgrade(JSON.parse(mid)); D.writeLeadIn(d2, ph.ci, voice, ph.bar, lead, { prefer: "a" }); alt = JSON.stringify(d2); }
       ph.ci += res.inserted; cur = ph.ci; sel = null;
+      spillPhrases = spill ? spill.chunks : 0;
     });
     if (r.redo && lastQuick) history.splice(history.length - 1, 1, lastQuick.before);
     lastQuick = { before: r.redo && lastQuick ? lastQuick.before : before, cur: r.redo && lastQuick ? lastQuick.cur : cur - res.inserted, phrase: r.redo && lastQuick ? lastQuick.phrase : phBefore, hist: history.length };
     seamAlt = alt; $("nt-seam-keep").hidden = !alt;
     var pk = lead.length ? lead.length + " pickup note" + (lead.length === 1 ? "" : "s") + (res.line && res.line.t == null ? " (a Pickup chunk)" : " in the bar before") : "";
     qStatus(ph.label + ": " + nb + " bar" + (nb === 1 ? "" : "s") + (pk ? ", " + pk : "") +
+      (spill ? "; you played on: " + spill.bars + " more bar" + (spill.bars === 1 ? "" : "s") + " written into " + (spill.chunks ? spill.chunks + " chunk" + (spill.chunks === 1 ? "" : "s") + " after it (marked draft: check them)" : "the bars after it") : "") +
       (res.conflicts.length ? "; where the pickup and the phrase before both sounded the pickup was kept" : "") + ".");
     renderQuick();
+  }
+  // The left hand notated: its notes (below the split) as a take of their own, chords kept as chords (poly), into the voice
+  // after the one being recorded (made, bass clef, when there is none). opts: pickup / pickupBeats as the right hand's take.
+  function lhVoice() {
+    var lv = voice + 1;
+    while (doc.voices.length <= lv) doc.voices.push({ name: doc.voices.length === voice + 1 ? "LH" : String(doc.voices.length + 1), clef: "bass" });
+    doc.together = true;
+    return lv;
+  }
+  function lhTake(r, events, opts) {
+    var mi = r.mi, lows = events.filter(isLow);
+    if (!lows.length) return null;
+    var tk = CE.take(Object.assign({ kind: "melody", n: mi.n, d: mi.d, bars: 256, beatSec: r.beatSec, count: r.count, key: here().key || "C", slash: true, res: +Q.res, poly: true,
+      swing: Q.feel === "swing" ? CE.swingFor(60 / r.beatSec) : 0, triplets: Q.trip, pickup: "off" }, opts || {}));
+    lows.slice().sort(function (a, b) { return a.beat - b.beat; }).forEach(function (e) { var t = e.beat * r.beatSec * 1000; if (e.k === "on") tk.on(e.n, 0.8, t); else tk.off(e.n, t); });
+    tk.finish();
+    return tk.grid.melody() || [];
+  }
+  // A take that ran on past its phrase: `extra` bars after the phrase's nb, written bar by bar into the rest of the phrase's chunk
+  // and the chunks after it (same meter only; Pickup chunks skipped). Chunks it writes into are marked draft. -> { bars, chunks }
+  function spillOn(tk, mel, g, unitQ, ph, nb, extra, mi, melL) {
+    var ci = ph.ci, b = ph.bar + nb, src = nb, left = Math.max(0, extra), done = 0, touched = 0;
+    while (left > 0 && ci < doc.chunks.length) {
+      var ch = doc.chunks[ci], cb = Math.ceil(D.info(doc, ci).bars - 1e-6);
+      if (ch.pickup || b >= cb) { ci++; b = 0; continue; }
+      var m2 = D.meterInfo(D.at(doc, ci).meter);
+      if (!m2 || Math.abs(m2.barQ - mi.barQ) > 1e-6) break;
+      var n = Math.min(left, cb - b), w = D.fromTakeBars(mel.slice(src), g.per, unitQ, n);
+      D.replaceBars(doc, ci, voice, b, b + n - 1, w.rhythm, w.pitches);
+      if (melL) { var wl = D.fromTakeBars(melL.slice(src), g.per, unitQ, n); D.replaceBars(doc, ci, lhVoice(), b, b + n - 1, wl.rhythm, wl.pitches); }
+      var hc = takeChords(tk, unitQ, src, n, b * mi.barQ), c0 = b * mi.barQ, c1 = (b + n) * mi.barQ;
+      if (hc.length) ch.chords = ch.chords.filter(function (c) { return c.at < c0 - 1e-6 || c.at >= c1 - 1e-6; }).concat(hc).sort(function (x, y) { return x.at - y.at; });
+      if (ci !== ph.ci) { ch.draft = true; touched++; }
+      left -= n; src += n; b += n; done += n;
+    }
+    return done ? { bars: done, chunks: touched } : null;
   }
   $("nt-seam-keep").onclick = function () {
     if (!seamAlt) return;
@@ -2965,6 +3274,15 @@
       // nt-goto { section, nth, bar, bars, leadIn, label }: a phrase from Timestamp Notes (phrases.js). Its section here, by name and
       // occurrence; none -> nt-need-doc (Timestamp Notes then sends nt-doc and asks again)
       if (m.host === "Timestamp Notes") REMOTE_TS = true;
+      // nt-pass { ...nt-goto, downAt, endAt (epoch ms), beatSec }: a loop pass played along with the recording: a take of the phrase
+      if (m.type === "nt-pass") {
+        if (rec) return;
+        var samePh = phrase && inPhrase() && phrase.label === (m.label || m.section);
+        if (!samePh) { var g2 = Object.assign({}, m, { type: "nt-goto" }); window.dispatchEvent(new MessageEvent("message", { data: g2, origin: location.origin, source: window.opener })); }
+        if (phrase && inPhrase()) passStart(m);
+        return;
+      }
+      if (m.type === "nt-loop-state") { status(m.text || ""); return; }
       if (m.type === "nt-goto") {
         var low = String(m.section || "").trim().toLowerCase();
         var sc = D.sections(doc).filter(function (x) { return x.name.trim().toLowerCase() === low; })[m.nth | 0];
@@ -2973,7 +3291,9 @@
         while (ci + 1 < sc.end && acc + D.info(doc, ci).bars <= (m.bar | 0) + 1e-6) { acc += D.info(doc, ci).bars; ci++; }
         cur = ci; voice = 0; sel = null;
         var lead = +m.leadIn || 0;
-        phrase = { ci: ci, bar: (m.bar | 0) - acc, bars: Math.max(1, m.bars | 0), leadIn: lead, label: m.label || m.section };
+        phrase = { ci: ci, bar: (m.bar | 0) - acc, bars: Math.max(1, m.bars | 0), leadIn: lead, tail: +m.tail || 0, bpm: +m.bpm || null, rate: +m.rate || 1, label: m.label || m.section };
+        Q.bpmOwn = null;
+        spillPhrases = 0;
         seamAlt = null; $("nt-seam-keep").hidden = true;
         $("nt-phrase-label").textContent = (m.label || m.section) + ": " + (m.bars | 0) + (m.bars === 1 ? " bar" : " bars") +
           (lead ? "; its pickup (" + lead + (lead === 1 ? " beat" : " beats") + ") goes in the bar before" + (ci === 0 && phrase.bar === 0 ? " (a Pickup chunk)" : "") : "") +
@@ -2981,6 +3301,7 @@
         $("nt-phrase").hidden = false;
         render();
         status("Phrase " + (m.label || m.section) + " from " + (m.host || "Timestamp Notes") + ".");
+        passTakes = []; renderPasses();
         try { window.focus(); } catch (err) {}
         return;
       }
@@ -2994,7 +3315,7 @@
     });
     // back to the recording: Timestamp Notes loops the next phrase (or this one again)
     ["nt-back", "nt-back-again"].forEach(function (id) {
-      $(id).onclick = function () { try { window.opener.postMessage({ type: "nt-back", again: id === "nt-back-again" }, location.origin); window.opener.focus(); } catch (err) {} this.blur(); };
+      $(id).onclick = function () { try { window.opener.postMessage({ type: "nt-back", again: id === "nt-back-again", skip: id === "nt-back" ? spillPhrases : 0 }, location.origin); window.opener.focus(); } catch (err) {} this.blur(); };
     });
     try { window.opener.postMessage({ type: "nt-ready" }, location.origin); } catch (e) {}
   }
@@ -3015,7 +3336,7 @@
   $("nt-c-tempo").onchange = function () { var v = Math.round(+this.value) || null; if (v) v = Math.max(20, Math.min(320, v)); change(function () { if (cur === 0) doc.tempo = v; else chunk().tempo = v; }); this.blur(); };
   ["nt-meter", "nt-c-meter", "nt-q-meter"].forEach(function (id) { meterPicker($(id)); });
   ["nt-key", "nt-c-key", "nt-q-key"].forEach(function (id) { keyPicker($(id)); });
-  ["bpm", "count", "pickup", "res", "feel", "trip", "quiet"].forEach(function (k) {
+  ["bpm", "count", "pickup", "res", "feel", "trip", "quiet", "split", "lh"].forEach(function (k) {
     $("nt-q-" + k).onchange = function () {
       // the take's tempo: the piece's at this chunk, unless one is typed here (then the take's chunk gets it)
       if (k === "bpm") { var v = Math.round(+this.value); Q.bpmOwn = v ? Math.max(30, Math.min(240, v)) : null; if (Q.bpmOwn === pieceBpm()) Q.bpmOwn = null; renderQuick(); this.blur(); return; }
@@ -3043,7 +3364,7 @@
   if (!ENDING) connectMidi();
   window.NotationPage = { makeBand: makeBand, loadBand: loadBand, tuneSrc: function () { return tuneSrc; }, phrase: function (p) { if (p !== undefined) phrase = p; return phrase; }, bt: function () { return bt; }, dwimRun: dwimRun, clip: function () { return clip; }, doc: function () { return doc; }, sel: function () { return sel; }, map: function () { return map; }, cur: function () { return cur; },
     voice: function () { return voice; }, takeCfg: takeCfg, applyTake: applyTake, chordHeard: chordHeard,
-    quickStart: quickStart, quickStop: quickStop, rec: function () { return rec; }, Q: Q,
+    quickStart: quickStart, quickStop: quickStop, rec: function () { return rec; }, Q: Q, lpLoop: lpLoop, lpStop: lpStop, lpAction: lpAction, lp: function () { return lp; }, lpSpans: lpSpans, takeBpm: takeBpm, passStart: passStart, passTakes: function () { return passTakes; }, spill: function () { return spillPhrases; },
     setCur: function (c) { cur = c; sel = null; render(); }, render: function () { render(); },
     clickEntry: function (m, ev) { clickScore({ startChar: m.start, endChar: m.end }, null, null, null, null, ev || null); } };   // for tests
 })();

@@ -1,0 +1,50 @@
+---
+title: "Theory"
+toc: true
+toc-depth: 2
+description: "Music theory practice: drills and printable exercise sets, a page for each chapter of Robert Hutchinson's open textbook Music Theory for the 21st-Century Classroom, and real scores with expert Roman-numeral analyses."
+---
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```
+
+Music theory practice, in three parts. Use the list on the left to move around, or **Previous** and **Next** at the foot of each page to
+go through it like a book.
+
+## Drills and exercises
+
+- [**Theory Drills**](theory-drills.qmd): every drill on the site in one place: notes, intervals, key signatures, chords, Roman numerals
+  and more. Each has its own settings, and a link can open a drill with your settings.
+- [**Exercise Builder**](exercise-builder.qmd): choose chapters and build a set of exercises, answered on the page or printed.
+
+## The textbook, chapter by chapter
+
+Each page goes with a chapter of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/). Read the chapter there first, then practise
+here.
+
+| Chapter | Page |
+|---|---|
+| 6 | [Triads](triads.qmd) |
+| 7 | [Roman Numerals](roman-numerals.qmd) |
+| 8 | [Seventh Chords](seventh-chords.qmd) |
+| 9 | [Harmonic Progression](progressions.qmd) |
+| 10 | [Non-Chord Tones](non-chord-tones.qmd) |
+| 11 | [Melodic Analysis](melodic-analysis.qmd) |
+| 12 | [Form in Popular Music](pop-forms.qmd) |
+| 14 | [Accompanimental Textures](accompaniment-textures.qmd) |
+| 16 | [Figured Bass](figured-bass.qmd) |
+| 17 | [Secondary Dominants](secondary-dominants.qmd) |
+| 18 | [Secondary Diminished Chords](secondary-diminished.qmd) |
+| 19 | [Mode Mixture](mode-mixture.qmd) |
+| 20 | [The Neapolitan Chord](neapolitan.qmd) |
+| 21 | [Augmented Sixth Chords](augmented-sixths.qmd) |
+| 22 | [Modulation](modulation.qmd) |
+| 31 | [Jazz Theory](jazz-theory.qmd) |
+
+## Analysed scores
+
+[**Analysed Scores**](analysed-scores/index.qmd): real pieces with experts' Roman numerals under the notes, one piece per page, to play
+along with: [Bach's "O Haupt voll Blut und Wunden"](analysed-scores/bach-o-haupt.qmd) and the first movement of
+[Beethoven's "Moonlight" Sonata](analysed-scores/beethoven-moonlight-1.qmd).
