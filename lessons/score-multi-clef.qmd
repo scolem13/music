@@ -1,0 +1,100 @@
+---
+title: "Score Reading 2: Instruments with Several Clefs"
+toc: true
+toc-depth: 2
+description: "Which instruments switch clefs and when: cello, bassoon, trombone, viola, double bass, horn, bass clarinet, keyboards and harp, plus the old octave conventions that still catch readers out."
+instruments: [violin, bass, piano, other]
+topics: [notation, reading]
+has: [notation, interactive]
+---
+
+{{< include _score-kit.qmd >}}
+
+Most instruments live in one clef. A few move between two, three or even four, choosing whichever keeps
+the notes on the staff. When you read a score you have to follow the switches, and for a handful of
+instruments you also have to know an old convention that changes the octave.
+
+## 1. The clef map
+
+| Instrument | Main clef | Also | When it switches |
+|---|---|---|---|
+| **Viola** | alto | treble | long high passages |
+| **Cello** | bass | tenor, treble | tenor for the upper register, treble for the highest |
+| **Double bass** | bass | tenor, treble | solo and very high writing; *sounds an octave lower in every clef* |
+| **Bassoon** | bass | tenor, (treble) | tenor for high passages; treble is rare |
+| **Trombone** | bass | tenor, alto | tenor for high tenor-trombone parts; alto clef for the alto trombone and in older scores |
+| **Euphonium** | bass (concert) | tenor; *or* treble in B♭ | treble clef parts are a transposition, not a clef change (see [lesson 3](score-transposition.qmd)) |
+| **Horn** | treble | bass | low notes; see the octave trap below |
+| **Bass clarinet** | treble | bass | depends on the edition: see below |
+| **Piano, harp, celesta** | treble + bass | either clef on either staff | a hand moves into the other range |
+| **Organ** | treble + bass + pedal staff | | the pedals get their own bass-clef staff |
+
+## 2. Following a cello part
+
+A clef change in the middle of a line is drawn small, just before the note it affects. It lasts
+until the next change. This cello line climbs from bass clef through tenor into treble:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:D clef=bass
+D,, F,, A,, D, | [K:clef=tenor] F, A, D F | [K:clef=treble] A B c d | [K:clef=bass] D,4 |]
+</script></div>
+
+Notice that each switch happens where the old clef would have needed ledger lines. A good part changes
+clef as rarely as it can: one long passage in tenor clef is easier than switching every bar.
+
+## 3. The octave traps
+
+Three conventions change the octave, and editions disagree about them. When in doubt, check the
+edition's preface or compare with another part playing the same line.
+
+**Old-style cello treble clef.** In some 18th- and 19th-century editions, when a cello part moved into
+treble clef straight from bass clef, the treble-clef notes were meant **an octave lower** than written.
+Modern editions write treble clef at its real pitch. If a cello treble passage looks implausibly high,
+this may be why.
+
+**Horn in bass clef, "old notation".** Horn parts in bass clef come in two kinds. In *new notation* the
+horn in F sounds a fifth lower than written, in bass clef just as in treble. In *old notation* the
+bass-clef notes are written an octave lower, so they sound **a fourth higher** than written. Composers
+disagreed for a long time; many modern parts say "new notation" in a footnote because both are still met.
+
+**Bass clarinet, French and German.** The bass clarinet in B♭ is now usually written in treble clef
+and sounds a major ninth lower (the "French" way), so it reads exactly like a B♭ clarinet. Older German
+scores (Wagner, Strauss, Mahler) often use bass clef, sounding only a major second lower, and may mix the
+two in one part.
+
+## 4. Double bass, guitar and tenor voice
+
+These read in their normal clefs but sound an **octave lower**. That is not a clef switch, it is an
+octave transposition, and it is so standard that a concert-pitch score keeps it. The guitar's and
+tenor's clef is often drawn with a small 8 under the treble clef to say so. More in
+[lesson 3](score-transposition.qmd).
+
+## 5. Check yourself
+
+Clefs shuffle at random. Aim for 20 in a row without a mistake before moving on.
+
+<div class="sq" data-quiz="clefs"></div>
+
+Next: [Score Reading 3: Transposing Instruments](score-transposition.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Clef." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clef](https://en.wikipedia.org/wiki/Clef).
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

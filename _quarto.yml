@@ -110,6 +110,14 @@ website:
             - lessons/tuning-systems.qmd
             - lessons/strobe-tuner.qmd
             - lessons/inharmonicity.qmd
+        - section: "Score Reading"
+          contents:
+            - lessons/score-clefs.qmd
+            - lessons/score-multi-clef.qmd
+            - lessons/score-transposition.qmd
+            - lessons/score-history.qmd
+            - lessons/score-names.qmd
+            - lessons/score-practice.qmd
         - section: "Sound Design"
           contents:
             - lessons/sound-harmonics.qmd
@@ -280,6 +288,7 @@ website:
         menu:
           - tools/scales.qmd
           - tools/scale-patterns.qmd
+          - tools/part-reader.qmd
           - tools/circle-of-fifths.qmd
           - tools/chords-solfege.qmd
           - tools/chord-library.qmd

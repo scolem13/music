@@ -1,0 +1,144 @@
+---
+title: "Score Reading 4: Why Transpositions Exist, and Horns in Every Key"
+toc: true
+toc-depth: 2
+description: "Natural horns and trumpets, crooks, valves, clarinets in B♭ and A, Sax's matched families and brass-band treble clef: why transposing parts exist, and how to read horn and trumpet parts in any key."
+instruments: [sax, other]
+topics: [notation, reading, classical]
+has: [notation, interactive]
+---
+
+{{< include _score-kit.qmd >}}
+
+Transposing parts look like a puzzle invented to annoy conductors. They are actually a solution, and
+each one solved a real problem for players. Knowing the history also explains why an 1800 symphony asks
+for "horns in E♭" in one movement and "horns in C" in the next.
+
+## 1. Natural horns and trumpets
+
+Before valves, a horn or trumpet was a single long tube. It could play only the notes of **one harmonic
+series**: the fundamental and its overtones. On a tube built for C that means C, G, C, E, G, B♭, C, D,
+E… and nothing in between, except what horn players could bend with a hand in the bell (**hand-stopping**,
+which also changes the tone).
+
+To play in another key, the player changed the length of the tube by fitting a **crook**, an extra coil of
+tubing. A longer crook gave a lower series. Crooks were in common use by about 1740, and a horn player
+carried a set: B♭ alto, A, G, F, E, E♭, D, C, B♭ basso and more.
+
+## 2. Why the part stayed in C
+
+Whatever crook was fitted, the player's lips worked the same way: the third harmonic felt like the third
+harmonic. So composers wrote the part **as if the horn were in C**, and named the crook: "Corno in E♭".
+The player fitted the E♭ crook and read the same written notes with the same feel; the instrument did the
+transposing. Many such parts have **no key signature**: the few notes needed outside the harmonic series
+were written in with accidentals.
+
+That is why the horn and trumpet parts of Haydn, Mozart, Beethoven and Brahms are "in" so many keys,
+sometimes changing between movements while the player swapped crooks.
+
+## 3. Valves, and the horn in F
+
+Valves (Heinrich Stölzel applied them to the horn in 1814) let one instrument switch tube length
+instantly, so one horn could play every note. Players settled on the horn in F, and later the
+double horn in F and B♭, but composers kept writing for horn in E, D, E♭ well into the century. Today's
+players still meet all of them, and read them on the F horn by transposing at sight.
+
+## 4. Reading horn parts on the F horn
+
+Work out the distance from F to the part's key, and move every written note by that much:
+
+| Part says horn in | Read each written note | Example: written C becomes |
+|---|---|---|
+| B♭ alto | up a perfect 4th | F |
+| A | up a major 3rd | E |
+| A♭ | up a minor 3rd | E♭ |
+| G | up a major 2nd | D |
+| **F** | **as written** | C |
+| E | down a minor 2nd | B |
+| E♭ | down a major 2nd | B♭ |
+| D | down a minor 3rd | A |
+| D♭ | down a major 3rd | A♭ |
+| C (basso) | down a perfect 4th | G |
+| B♭ basso | down a perfect 5th | F |
+
+Here is a short horn call written for horn in E♭ (no key signature, the old way), and the same notes as an
+F-horn player reads them:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Written for horn in E♭
+M:4/4
+L:1/4
+K:C
+C E G c | e2 c2 | G E C E | G4 |]
+</script></div>
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Read on the F horn: everything a major 2nd lower
+M:4/4
+L:1/4
+K:C
+_B, D F _B | d2 _B2 | F D _B, D | F4 |]
+</script></div>
+
+<div class="sq" data-quiz="sound" data-only="horn"></div>
+
+## 5. Trumpets in every key
+
+Trumpet parts went through the same history: natural trumpets in D, E♭, F and others, with parts written in
+C. Modern players read them on a B♭ or C trumpet, or pick a smaller trumpet (D, E♭, piccolo) for high
+Baroque parts. On a B♭ trumpet: a part in C reads up a major 2nd, in D up a major 3rd, in E♭ up a perfect 4th.
+Careful with old trumpet parts "in F": they sound a 4th *above* written, unlike the horn in F.
+
+<div class="sq" data-quiz="sound" data-only="tpt"></div>
+
+## 6. Clarinets in B♭ and A
+
+Early clarinets had few keys and could not play chromatically, so they were limited to keys close to their
+own. Builders made clarinets in several keys, and the composer chose the one that made the part easy:
+a concert-sharp key went to the A clarinet, a flat key to the B♭. Keywork improved, the C clarinet faded,
+but remote keys stayed awkward, so orchestral clarinettists still keep a B♭ and an A clarinet side by side
+and parts still switch between them ("muta in A", change to A).
+
+## 7. One fingering for a whole family
+
+Adolphe Sax patented the saxophone in 1846, as families in E♭/B♭ and C/F. Every size uses the same
+fingering, so a written note means the same finger pattern on soprano, alto, tenor or baritone. Writing them
+as transposing instruments lets a player switch sizes without relearning anything. The E♭/B♭ family won.
+
+British brass bands took the idea furthest: every instrument except the bass trombone reads treble clef as a
+transposing instrument, so a player can move from cornet to tenor horn to euphonium to bass with the same
+fingerings for the same written notes.
+
+## 8. Octave transpositions: just ledger lines
+
+The last reason is the simplest. Piccolo, glockenspiel, double bass and guitar would spend their lives on
+ledger lines at sounding pitch, so their parts are moved by whole octaves to sit on the staff.
+
+Next: [Score Reading 5: Strange Names](score-names.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Brass instrument valve." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Brass_instrument_valve](https://en.wikipedia.org/wiki/Brass_instrument_valve). Stölzel's valves on the horn, 1814.
+
+"Clarinet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clarinet](https://en.wikipedia.org/wiki/Clarinet). Why B♭ and A clarinets remain; C clarinet fell out of favour.
+
+"Natural horn." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Natural_horn](https://en.wikipedia.org/wiki/Natural_horn). Crooks in common use by 1740; hand-stopping.
+
+"Saxophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Saxophone](https://en.wikipedia.org/wiki/Saxophone). Patent of 28 June 1846; E♭/B♭ and C/F families; one fingering for all sizes.
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

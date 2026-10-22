@@ -1,0 +1,150 @@
+---
+title: "Part Reader"
+description: "Pick an instrument and the key signature on its part (or in the score) and get the concert key, how far every note moves, which clefs to expect, and the scale drawn as written and as it sounds."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<style>
+.pr-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.7rem 1rem;margin:.6rem 0 1rem}
+.pr-form label{display:block;font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--site-ink-2)}
+.pr-form select{width:100%}
+.pr-out{border:1px solid var(--site-border);border-radius:8px;padding:.8rem 1rem;background:var(--site-surface)}
+.pr-out h3{font-size:1.05rem;margin:.2rem 0 .5rem}
+.pr-big{font-size:1.25rem;font-weight:600;margin:.2rem 0 .6rem}
+.pr-out ol{margin:.3rem 0 .2rem;padding-left:1.3rem}
+.pr-note{font-size:.88rem;color:var(--site-ink-2)}
+.pr-staves{display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:1rem}
+.pr-staves figcaption{font-family:var(--font-mono);font-size:.75rem;color:var(--site-ink-2)}
+.pr-staves .btn{font-family:var(--font-mono);font-size:.8rem}
+</style>
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-play.js?v=4"></script>
+<script src="/apps/shared/score-reading.js?v=1"></script>
+```
+
+Tell the page what is in front of you, and it tells you how to read it. The lessons behind it start at
+[Alto and Tenor Clefs](/lessons/score-clefs.qmd).
+
+## Your part
+
+<div class="pr-form">
+<div><label for="pr-inst">Instrument named on the part</label><select id="pr-inst"></select></div>
+<div><label for="pr-var">In (its key)</label><select id="pr-var"></select></div>
+<div><label for="pr-from">The key signature I have is</label><select id="pr-from">
+<option value="part">on the part (written)</option><option value="concert">in a concert-pitch score (sounding)</option></select></div>
+<div><label for="pr-key">Key signature</label><select id="pr-key"></select></div>
+<div><label for="pr-play">I will play it on</label><select id="pr-play"></select></div>
+</div>
+
+## How to read it
+
+<div class="pr-out" id="pr-out"></div>
+
+## Written and sounding
+
+<div class="pr-staves">
+<figure><figcaption id="pr-cap-w">As written on the part</figcaption><div id="pr-w"></div></figure>
+<figure><figcaption id="pr-cap-s">As it sounds (concert pitch)</figcaption><div id="pr-s"></div><button class="btn btn-sm btn-outline-secondary" id="pr-hear">▶ Hear it</button></figure>
+</div>
+
+The sounding staff is at its real octave, so a big transposition (tuba, double bass, glockenspiel) shows
+ledger lines that the written part was made to avoid. That is the point of the octave transposition.
+
+```{=html}
+<script>
+(function () {
+  var S = ScoreReading, $ = function (id) { return document.getElementById(id); };
+  var inst = $("pr-inst"), vr = $("pr-var"), from = $("pr-from"), key = $("pr-key"), play = $("pr-play");
+  var fam = {}; S.INSTRUMENTS.forEach(function (i) { (fam[i.family] = fam[i.family] || []).push(i); });
+  function fill(sel, withConcert) {
+    if (withConcert) sel.add(new Option("a concert-pitch instrument (piano, voice…)", ""));
+    Object.keys(fam).forEach(function (f) {
+      var g = document.createElement("optgroup"); g.label = f;
+      fam[f].forEach(function (i) { i.variants.forEach(function (v, k) {
+        if (withConcert || k === 0) g.appendChild(new Option(withConcert ? i.name + (i.variants.length > 1 || v.key !== "C" ? " in " + v.key : "") : i.name, withConcert ? i.id + ":" + k : i.id));
+      }); });
+      sel.appendChild(g);
+    });
+  }
+  fill(inst, false); fill(play, true);
+  for (var f = -7; f <= 7; f++) key.add(new Option(S.sigName(f) + " (" + S.keyName(f) + " / " + S.keyName(f, true) + ")", f));
+  key.value = 0;
+  try { var saved = JSON.parse(localStorage.getItem("part-reader") || "null"); } catch (e) {}
+  function variants() {
+    var i = S.find(inst.value); vr.innerHTML = "";
+    i.variants.forEach(function (v, k) { vr.add(new Option(v.key, k)); });
+  }
+  inst.value = (saved && saved.inst) || "clar"; variants();
+  if (saved) { vr.value = saved.v || 0; from.value = saved.from || "part"; key.value = saved.key || 0; play.value = saved.play || ""; }
+  [inst, vr, from, key, play].forEach(function (e) { e.addEventListener("change", function () { if (e === inst) variants(); go(); }); });
+
+  var lastSound = null, hearH = null;
+  function draw(id, abc) { return ABCJS.renderAbc(id, abc, { responsive: "resize", add_classes: true, paddingtop: 0, paddingbottom: 0 })[0]; }
+
+  function go() {
+    var i = S.find(inst.value), v = i.variants[+vr.value], semis = v.semis, k = +key.value;
+    try { localStorage.setItem("part-reader", JSON.stringify({ inst: inst.value, v: vr.value, from: from.value, key: key.value, play: play.value })); } catch (e) {}
+    var written = from.value === "part" ? k : S.moveKey(k, -semis);
+    var concert = S.moveKey(written, semis);
+    var who = i.name + (v.key !== "C" || i.variants.length > 1 ? " in " + v.key : "");
+    var h = "";
+    h += "<div class='pr-big'>" + (from.value === "part"
+      ? "Part in " + S.keyName(written) + " → sounds in " + S.keyName(concert)
+      : "Concert " + S.keyName(concert) + " → the " + who + " part is in " + S.keyName(written)) + "</div>";
+    h += "<p>(Minor keys: " + S.keyName(written, true) + " on the part = " + S.keyName(concert, true) + " concert.) ";
+    h += "Every note of the " + who + " part sounds <b>" + S.intervalName(semis) + "</b> than written" + (semis ? "" : "") + ".</p>";
+    h += "<h3>Steps</h3><ol>";
+    if (from.value === "concert") h += "<li>The part shows " + S.sigName(written) + ". To get there from the score, move the key and every note " + S.intervalName(-semis).replace(/ lower$/, " down").replace(/ higher$/, " up") + ".</li>";
+    // the instrument actually played
+    var p = play.value ? play.value.split(":") : null, pi = p ? S.find(p[0]) : null, pv = pi ? pi.variants[+p[1]] : { key: "C", semis: 0, clefs: v.clefs };
+    var playName = pi ? pi.name + " in " + pv.key : "a concert-pitch instrument";
+    var shift = semis - pv.semis, pk = S.moveKey(written, shift);
+    if (!pi || pi.id !== i.id || pv !== v) {
+      h += "<li>You are playing it on " + playName + ". Read each written note " + (shift ? S.intervalName(shift).replace(/ lower$/, " lower").replace(/ higher$/, " higher") : "as written") +
+        (shift ? ", and think in the key of <b>" + S.keyName(pk) + "</b> (" + S.sigName(pk) + ")" : "") + ".";
+      if (Math.abs(shift) >= 12 && pi) h += " Most of that is octave: drop the octave part and play where the instrument sits comfortably.";
+      if (!pi && Math.abs(semis) >= 12) h += " If your instrument can't reach that octave, play it an octave nearer and say so.";
+      h += "</li>";
+    } else h += "<li>Your instrument matches the part: read it as written, in " + S.sigName(written) + ".</li>";
+    h += "<li>Clefs you may meet on this part:<ul>" + v.clefs.map(function (c) { return "<li>" + S.CLEF_TIPS[c] + "</li>"; }).join("") + "</ul></li>";
+    if (/basso|alto/.test(v.key)) h += "<li><i>Basso</i> and <i>alto</i> tell you which octave: B♭ basso sounds a 9th below the written note, B♭ alto only a 2nd below.</li>";
+    if (i.id === "horn" && semis !== -7) h += "<li>Horn players read this on the F horn by moving every note " + S.intervalName(semis + 7).replace(/^a /, "") + ". Older horn parts often have no key signature: the accidentals are written in front of each note.</li>";
+    if (i.id === "tpt" && v.key !== "B♭" && v.key !== "C") h += "<li>Older trumpet parts were also often written without a key signature. Check the accidentals.</li>";
+    h += "</ol>";
+    if (v.note) h += "<p class='pr-note'>" + v.note + "</p>";
+    $("pr-out").innerHTML = h;
+
+    var ws = S.writtenAndSounding(written, semis, v.clefs[0]);
+    draw("pr-w", ws.written); lastSound = draw("pr-s", ws.sounding);
+    $("pr-cap-w").textContent = "As written on the " + who + " part";
+  }
+  $("pr-hear").addEventListener("click", function () {
+    if (hearH) { hearH.stop(); hearH = null; this.textContent = "▶ Hear it"; return; }
+    var b = this; b.textContent = "■ Stop";
+    hearH = AbcPlay.play(lastSound, { sound: "piano", qpm: 100, onEnd: function () { hearH = null; b.textContent = "▶ Hear it"; } });
+  });
+  go();
+})();
+</script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

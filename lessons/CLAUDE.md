@@ -22,3 +22,7 @@
   (`st-ready`, `st-load {show, doc, rhythm}`, `st-change {doc, abc}`; store `ntStageDoc`): only the panels a step lists are shown,
   keys for hidden parts do nothing, and the step's target (rhythm slots, `want`) unlocks the next. Add steps to its `STEPS` list.
   The page also has Save to file / Open file (`.notation.json`: `{ kind: "notation-doc", version: 1, doc }`, or ABC).
+- Score Reading (`lessons/score-{clefs,multi-clef,transposition,history,names,practice}.qmd`, sidebar part Score Reading) and the
+  Part Reader tool (`tools/part-reader.qmd`): the instrument/transposition table and key maths are `apps/shared/score-reading.js`
+  (`semis` = sounding minus written); drills are `<div class="sq" data-quiz>` from `apps/shared/lessons/score-quiz.js` (kinds at its
+  top), included via `lessons/_score-kit.qmd`. Sources `scripts/sources/score-reading.py`. Test: `node tests/lessons/score-reading.cdp.js`.

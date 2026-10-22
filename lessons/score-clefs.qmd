@@ -1,0 +1,150 @@
+---
+title: "Score Reading 1: Alto and Tenor Clefs"
+toc: true
+toc-depth: 2
+description: "The movable C clef: alto clef for viola, tenor clef for cello, bassoon and trombone, why they exist, two quick ways to read them, and note-naming drills."
+instruments: [violin, other]
+topics: [notation, reading]
+has: [notation, interactive]
+---
+
+{{< include _score-kit.qmd >}}
+
+Open an orchestral score and the viola line looks wrong: a strange bracket-shaped clef, and notes that
+make no sense if you read them as treble or bass. That is the **alto clef**. A few staves lower, the
+cello and bassoon may switch to the **tenor clef** for their high passages. Both are the same sign, the
+**C clef**, placed on a different line. This lesson teaches you to read both.
+
+## 1. One sign, movable: the C clef
+
+Every clef is a letter that names one line. The treble clef is a G, and its curl wraps the line that is
+G above middle C. The bass clef is an F, and its two dots sit either side of the line that is F below
+middle C. The **C clef** points, with the middle of its bracket, at the line that is **middle C**.
+
+The C clef can sit on any line. Two of those positions survive in everyday use:
+
+| Clef | Middle C is on | Used by |
+|---|---|---|
+| **Alto** | the middle (3rd) line | viola; alto trombone; older music for alto voice |
+| **Tenor** | the 4th line from the bottom | cello, bassoon and tenor trombone in their high range; sometimes double bass and euphonium |
+
+Older music also has soprano clef (C on the bottom line), mezzo-soprano (2nd line) and baritone clef.
+You meet them in early editions and in score-reading exams, rarely anywhere else.
+
+Here is middle C in four clefs. Same sound, four different places on the staff:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+L:1/1
+K:C clef=treble
+C | [K:clef=alto] C | [K:clef=tenor] C | [K:clef=bass] C |]
+</script></div>
+
+## 2. Why bother with another clef?
+
+The answer is **ledger lines**. A viola's range runs from the C below middle C up through the middle
+of the treble staff. In treble clef its lowest notes need three or four ledger lines below; in bass
+clef its upper notes climb above the staff. The alto clef centres the staff on middle C, which is
+roughly the middle of the viola, so almost everything it plays sits on the five lines.
+
+The tenor clef does the same for the cello and bassoon's upper register: the passage that would hover
+above the bass staff sits inside the tenor staff instead. Here is the same cello line in bass clef and
+in tenor clef:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Bass clef
+M:4/4
+L:1/4
+K:D clef=bass
+A, B, C D | E F G A | F2 E2 | D4 |]
+</script></div>
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Tenor clef, same notes
+M:4/4
+L:1/4
+K:D clef=tenor
+A, B, C D | E F G A | F2 E2 | D4 |]
+</script></div>
+
+## 3. Reading alto clef
+
+**The anchor.** The middle line is middle C. Learn the notes next to it: the space above is D, the
+space below is B, the line above is E, the line below is A.
+
+**The shortcut.** Read the note as if it were treble clef, then go **one letter up and an octave
+down**. A note on the middle line would be B in treble clef; in alto clef it is C (the one below).
+
+**Landmarks.** Bottom line F (below middle C), top line G (above middle C). Bottom space G, top space F.
+
+Here is a familiar tune in alto clef, at viola pitch. Name the first four notes before you press ▶:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C clef=alto
+E E F G | G F E D | C C D E | E3/2 D/2 D2 |]
+</script></div>
+
+<div class="sq" data-quiz="alto"></div>
+
+## 4. Reading tenor clef
+
+**The anchor.** The fourth line (one below the top) is middle C.
+
+**Shortcut one.** Read it as bass clef, then go **up a fifth**. The middle line in bass clef is D; in
+tenor clef it is A, a fifth higher.
+
+**Shortcut two.** Read it as treble clef, then **one letter down and an octave lower**. The middle line
+is B in treble; in tenor clef it is the A below middle C.
+
+**Landmarks.** Bottom line D (an octave and a step below middle C), top line E (above middle C).
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G clef=tenor
+B, B, C D | D C B, A, | G, G, A, B, | B,3/2 A,/2 A,2 |]
+</script></div>
+
+<div class="sq" data-quiz="tenor"></div>
+
+<div class="sr-tip">
+
+**Do not read clefs by converting.** The shortcuts get you started. Real fluency comes from knowing
+each clef's landmarks directly, the way you know treble clef. Ten minutes a day of the drills below,
+for two weeks, does it.
+
+</div>
+
+## 5. All four clefs, mixed
+
+Score reading means switching clef every staff. This drill shows treble, bass, alto or tenor at random.
+
+<div class="sq" data-quiz="clefs"></div>
+
+Next: [Score Reading 2](score-multi-clef.qmd), instruments that change clef mid-part. For the
+complete drill set, see [Score Reading 6: Practice](score-practice.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Clef." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clef](https://en.wikipedia.org/wiki/Clef).
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

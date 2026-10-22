@@ -1,0 +1,154 @@
+---
+title: "Score Reading 3: Transposing Instruments"
+toc: true
+toc-depth: 2
+description: "What 'clarinet in B♭' means, how far each instrument transposes, how key signatures move, octave transpositions, and the difference between transposed and concert-pitch scores."
+instruments: [sax, other, bass, guitar]
+topics: [notation, reading]
+has: [notation, interactive]
+---
+
+{{< include _score-kit.qmd >}}
+
+A clarinettist and a pianist both read a C, and they play different notes. That is not a mistake.
+The clarinet is a **transposing instrument**: its part is written at a different pitch from the one
+that sounds. This lesson explains how to work out what sounds, and how scores show it.
+
+## 1. What "in B♭" means
+
+The key in an instrument's name is **the note that sounds when the player reads a written C**.
+
+- **Clarinet in B♭**: written C sounds B♭, a major 2nd lower. Every note sounds a major 2nd lower.
+- **Horn in F**: written C sounds F, a perfect 5th lower.
+- **Alto saxophone in E♭**: written C sounds the E♭ a major 6th lower.
+- **Clarinet in E♭**: written C sounds the E♭ a minor 3rd *higher*. The name gives the note, not the
+  direction: small instruments usually sound up, large ones down.
+
+An instrument "in C" (flute, oboe, violin, piano, trombone, voice) is **non-transposing**: it sounds
+what it reads.
+
+Here is concert middle C, the same sound, as it is written for five instruments:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+L:1/1
+T:Concert C4 as written for: flute · B♭ clarinet · horn in F · alto sax · tenor sax
+K:C
+C | D | G | A | d |]
+</script></div>
+
+## 2. The common transpositions
+
+| Instrument | Written C sounds | Interval |
+|---|---|---|
+| Piccolo, xylophone, celesta | C | an octave higher |
+| Glockenspiel | C | two octaves higher |
+| Clarinet in E♭, trumpet in E♭ | E♭ | minor 3rd higher |
+| Trumpet in D, clarinet in D | D | major 2nd higher |
+| Clarinet, trumpet, cornet, flugelhorn, soprano sax in B♭ | B♭ | major 2nd lower |
+| Clarinet in A | A | minor 3rd lower |
+| Alto flute in G | G | perfect 4th lower |
+| Horn in F, cor anglais | F | perfect 5th lower |
+| Alto sax, tenor horn (alto horn) in E♭ | E♭ | major 6th lower |
+| Guitar, bass guitar, double bass, contrabassoon, tenor voice | C | an octave lower |
+| Tenor sax, bass clarinet, euphonium and brass-band trombone (treble clef) in B♭ | B♭ | major 9th lower (an octave + a 2nd) |
+| Baritone sax, E♭ bass (brass band) | E♭ | an octave + a major 6th lower |
+| BB♭ bass (brass band) | B♭ | two octaves + a major 2nd lower |
+
+The [Part Reader](/tools/part-reader.qmd) has the full list, including every horn and trumpet key.
+
+## 3. Moving the key signature
+
+The part's key moves **the opposite way** from the sound. If the instrument sounds a major 2nd lower,
+its part is written a major 2nd higher.
+
+- Concert **C major** → B♭ clarinet part in **D major** (2 sharps).
+- Concert **F major** → horn in F part in **C major**.
+- Concert **E♭ major** → alto sax part in **C major**.
+
+A quick rule for keys: a B♭ instrument's part has **two more sharps (or two fewer flats)** than the
+concert key; an E♭ instrument's has **three more sharps**; an F instrument's has **one more sharp**; an A
+instrument's has **three more flats**.
+
+<div class="sq" data-quiz="keysig"></div>
+
+<div class="sq" data-quiz="reverse"></div>
+
+## 4. Notes, one at a time
+
+To find the sounding note, move the written note by the instrument's interval. Keep the octave
+in mind, but for naming notes the letter and accidental are what count.
+
+<div class="sq" data-quiz="sound"></div>
+
+## 5. Octave transpositions and octave discrepancies
+
+Some instruments transpose only by octaves. Their parts keep the concert key signature; only the
+register is moved, so the notes sit on the staff instead of on a ladder of ledger lines.
+
+- **Sound higher:** piccolo (8va), xylophone and celesta (8va), glockenspiel (two octaves).
+- **Sound lower:** double bass, guitar, bass guitar, contrabassoon, tenor voice (8vb).
+
+**Octave discrepancies to watch:**
+
+- **Same key, different octave.** Soprano sax and tenor sax are both "in B♭", and the B♭ clarinet and
+  bass clarinet too. The bigger one sounds an **octave lower** than its smaller sibling. The name says
+  the key, not the octave.
+- **Doublings that are not unisons.** A cello and double bass reading the same written line play in
+  octaves, not in unison. A flute and piccolo on the same written line do too.
+- **Guitar and tenor.** A guitar's written middle C sounds the C below. A score that shows the guitar
+  at sounding pitch in plain treble clef would have its notes an octave lower than the player reads, deep in ledger lines.
+- **Bass clarinet and horn bass clef**: the old conventions in
+  [lesson 2](score-multi-clef.qmd#the-octave-traps).
+
+## 6. Transposed scores and concert-pitch scores
+
+A conductor's score comes in one of two forms.
+
+**Transposed score.** Every staff is written as the player reads it. The clarinet staff has a different
+key signature from the violins; the horn's notes look a fifth higher than they sound. This is the
+traditional form, and it lets the conductor see exactly what each player sees, which helps in rehearsal
+("clarinets, your written F♯ in bar 12").
+
+**Concert-pitch score (C score).** Every staff is at sounding pitch, all with the same key signature.
+Harmony is far easier to see. Some composers have written whole orchestral scores this way, Prokofiev
+among them. Most film, jazz-band and study scores, and the "concert pitch" view in notation software,
+work like this too.
+
+**What a concert score still transposes.** Even a C score usually keeps the octave transpositions:
+piccolo, glockenspiel, xylophone, celesta, double bass, guitar and contrabassoon are still written in
+their own octave, because writing them at sounding pitch would bury them in ledger lines. Always check
+the score's preface; it usually says "Score in C" and lists the exceptions.
+
+**How to tell which one you have.** Look at the key signatures at the start. If the clarinets, horns
+and trumpets have a different key from the strings, it is transposed. If every staff matches, it is in C
+(or the music has no key signature, in which case look for a note at the top of the first page).
+
+<div class="sr-tip">
+
+**Writing parts from a concert score.** Notation software will do it, but check every part: look for
+awkward keys (a concert B major gives a B♭ clarinet C♯ major, seven sharps, and you may prefer D♭ major
+with five flats), and look for notes outside the instrument's written range.
+
+</div>
+
+Next: [Score Reading 4: Why Transpositions Exist](score-history.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+"Tuba." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tuba](https://en.wikipedia.org/wiki/Tuba). BB♭ and CC from an archaic English variant of Helmholtz notation; tube lengths; concert pitch vs brass-band treble clef.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

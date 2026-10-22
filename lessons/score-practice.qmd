@@ -1,0 +1,131 @@
+---
+title: "Score Reading 6: Practice"
+toc: true
+toc-depth: 2
+description: "Drills and short score excerpts for everything in the series: note naming in four clefs, sounding pitches, key signatures both ways, horn in any key, and reading chords from a transposed score."
+instruments: [violin, sax, piano, other]
+topics: [notation, reading]
+has: [notation, interactive]
+---
+
+{{< include _score-kit.qmd >}}
+
+Every drill makes a new question each time you press **Next**. Do a few minutes of each, every day,
+rather than one long session. For any part you meet in real life, the [Part Reader](/tools/part-reader.qmd)
+gives step-by-step instructions.
+
+## 1. Clefs
+
+Aim for speed: name each note in under two seconds.
+
+<div class="sq" data-quiz="alto"></div>
+<div class="sq" data-quiz="tenor"></div>
+<div class="sq" data-quiz="clefs"></div>
+
+## 2. Sounding pitches
+
+<div class="sq" data-quiz="sound"></div>
+<div class="sq" data-quiz="sound" data-only="horn"></div>
+
+## 3. Key signatures
+
+From part to concert, and from concert to part:
+
+<div class="sq" data-quiz="keysig"></div>
+<div class="sq" data-quiz="reverse"></div>
+
+## 4. Read a chord from a transposed score
+
+Four instruments each hold one note. Work out what each one sounds, then name the chord. Open the answer
+when you have it.
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+L:1/1
+%%score 1 2 3 4
+V:1 name="Clarinet in B♭" clef=treble
+V:2 name="Alto sax" clef=treble
+V:3 name="Horn in F" clef=treble
+V:4 name="Viola" clef=alto
+K:C
+[V:1] d |]
+[V:2] e |]
+[V:3] B |]
+[V:4] C |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Clarinet written D5 sounds C5 (a 2nd lower). Alto sax written E5 sounds G4 (a 6th lower). Horn written B4
+sounds E4 (a 5th lower). Viola reads at pitch: middle C. The chord is **C major**: C4, E4, G4, C5.
+:::
+
+## 5. Unison or not?
+
+A flute, a B♭ clarinet and a horn in F play this bar from a transposed score. Do they play the same notes?
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+%%score 1 2 3
+V:1 name="Flute" clef=treble
+V:2 name="Clarinet in B♭" clef=treble
+V:3 name="Horn in F" clef=treble
+K:G
+[V:1] G A B c |]
+[V:2] [K:A] A B c d |]
+[V:3] [K:D] d e f g |]
+</script></div>
+
+::: {.callout-tip collapse="true"}
+## Answer
+
+Yes. Concert key G major: the clarinet part is in A major (a 2nd up) and the horn in D major (a 5th up).
+All three sound G4, A4, B4, C5: a unison.
+:::
+
+## 6. Read the alto and tenor lines
+
+Sing or play each line before pressing ▶, then check yourself.
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Viola (alto clef)
+M:3/4
+L:1/4
+K:F clef=alto
+F A c | B G E | F2 C | F3 |]
+</script></div>
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Cello (tenor clef)
+M:4/4
+L:1/4
+K:G clef=tenor
+G, B, D G | F D E C | B, D A, C | G,4 |]
+</script></div>
+
+## 7. Make your own
+
+Pick an instrument in the [Part Reader](/tools/part-reader.qmd), choose a key, and before reading its answer,
+write down the concert key, the interval and which clefs to expect. Then check.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+

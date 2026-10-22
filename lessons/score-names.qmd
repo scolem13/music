@@ -1,0 +1,103 @@
+---
+title: "Score Reading 5: Strange Names (BB♭ Tuba and Friends)"
+toc: true
+toc-depth: 2
+description: "BB♭ and CC tubas, E♭ bass, tenor horn or alto horn, cor anglais, basso and alto, and the German, French and Italian names in scores (B means B♭, H means B)."
+instruments: [other, sax]
+topics: [notation, reading]
+has: [interactive]
+---
+
+{{< include _score-kit.qmd >}}
+
+Instrument names in scores mix several languages and several centuries. Some are misleading, and one
+of them (the German "B") can make you play every note a semitone wrong.
+
+## 1. BB♭, CC and E♭ tubas
+
+Tubas are named by the length of their open tube, given as the note of its fundamental:
+
+| Name | Built in | Size |
+|---|---|---|
+| **F tuba** | F | bass tuba (about 12 ft of tubing) |
+| **E♭ tuba / E♭ bass** | E♭ | bass tuba (about 13 ft) |
+| **CC tuba** | C | contrabass (about 16 ft) |
+| **BB♭ tuba / BB♭ bass / "double B"** | B♭ | contrabass (about 18 ft) |
+
+The doubled letter comes from an old English way of naming octaves, where the octave below the bass staff
+was written with double capitals: CC, DD … BB. "BB♭" means the low B♭, telling the contrabass apart from a
+smaller instrument "in B♭" such as the euphonium.
+
+**What that means for reading.** In orchestras, wind bands and most of the world, **every tuba reads bass
+clef at concert pitch**. The F, E♭, CC or BB♭ is only which instrument you hold; the player learns each one's
+fingerings. In British-style brass bands the E♭ and BB♭ basses read **treble clef** as transposing
+instruments: the E♭ bass sounds an octave and a major 6th below written, the BB♭ two octaves and a major
+2nd below.
+
+## 2. Names that mislead
+
+| Name | What it is |
+|---|---|
+| **Cor anglais / English horn** | An alto oboe in F. Not English, not a horn. |
+| **Tenor horn** (UK) = **alto horn** (US) | The same E♭ brass instrument, named for its part in the band. |
+| **Baritone** | In the UK a smaller-bore B♭ brass instrument next to the euphonium; in the US often the euphonium itself; also a saxophone and a voice. |
+| **French horn** | Just "horn" in scores and to horn players. |
+| **Basso / alto** after a horn key | Which octave: horn in B♭ basso sounds a major 9th below written, B♭ alto a major 2nd below. |
+| **Bass clarinet in B♭** | Same key as the clarinet, an octave lower, and see the treble/bass clef question in [lesson 2](score-multi-clef.qmd#the-octave-traps). |
+| **Piccolo trumpet in B♭** | Sounds a minor 7th *above* written, an octave above the ordinary B♭ trumpet. |
+
+## 3. Note names in other languages
+
+Scores keep the composer's language. German letter names are the most dangerous, because they look like ours:
+
+| English | German | French | Italian |
+|---|---|---|---|
+| C | C | ut / do | do |
+| D | D | ré | re |
+| E♭ | Es | mi bémol | mi bemolle |
+| E | E | mi | mi |
+| F | F | fa | fa |
+| G | G | sol | sol |
+| A♭ | As | la bémol | la bemolle |
+| A | A | la | la |
+| **B♭** | **B** | si bémol | si bemolle |
+| **B** | **H** | si | si |
+| F♯ | Fis | fa dièse | fa diesis |
+| D♭ | Des | ré bémol | re bemolle |
+
+So **"Klarinette in B"** is the B♭ clarinet, **"Horn in H"** is horn in B natural, and **"Trompete in Es"** is
+the E♭ trumpet. German adds *-is* for sharp and *-es* (or just *-s*) for flat. French scores say *en ut*
+(in C), *en si bémol*; Italian ones *in Do*, *in Si♭*.
+
+Common instrument names: *Horn / Corno / Cor*, *Trompete / Tromba / Trompette*, *Posaune / Trombone*,
+*Fagott / Fagotto / Basson*, *Kontrabass / Contrabbasso / Contrebasse*, *Bratsche / Viola / Alto* (French
+"alto" is the viola!), *Englischhorn / Corno inglese / Cor anglais*.
+
+## 4. Check yourself
+
+Mixed questions across all the instruments in this series:
+
+<div class="sq" data-quiz="sound"></div>
+
+<div class="sq" data-quiz="sound" data-only="tuba,euph,tenhorn"></div>
+
+Next: [Score Reading 6: Practice](score-practice.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
+
+"Tuba." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tuba](https://en.wikipedia.org/wiki/Tuba). BB♭ and CC from an archaic English variant of Helmholtz notation; tube lengths; concert pitch vs brass-band treble clef.
+
+**For teachers**
+
+Adler, Samuel. *The Study of Orchestration*. 4th ed., W. W. Norton, 2016. Instrument ranges, clefs and transpositions.
+
+Gould, Elaine. *Behind Bars: The Definitive Guide to Music Notation*. Faber Music, 2011. Grace notes, trills and other ornaments in modern notation.
+:::
+<!-- /works-cited -->
+
