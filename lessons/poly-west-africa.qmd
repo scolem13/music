@@ -1,0 +1,77 @@
+---
+title: "West African Bell Patterns and Cross-Rhythm"
+toc: true
+toc-depth: 2
+description: "The 12-pulse bell pattern, 3 against 2 (and 4 against 3) as the ground of much sub-Saharan African drumming, layered parts in an Ewe-style ensemble, and how to hear the beat."
+instruments: [percussion, any]
+topics: [rhythm, polyrhythm, world]
+has: [interactive, svg]
+---
+
+{{< include _poly-kit.qmd >}}
+
+In much music of West and Central Africa, a drum ensemble is built from several short parts that repeat,
+each fitting the same cycle in its own way. No part is "the" rhythm: the music is the way they lock together.
+The Ewe people of Ghana and Togo are the example most often studied, and this page uses an Ewe-style texture.
+It is a simplified model for practice, not a transcription of a particular piece.
+
+## The cycle: twelve pulses
+
+Many of these pieces run on a cycle of twelve fast pulses. Twelve divides by 2, 3, 4 and 6, so it holds
+four beats of three *and* three beats of four at once. That is why the music can feel like 12/8 and 3/4 at
+the same time.
+
+<div class="poly" data-layers="4;3" data-names="Four beats (feet);Three beats" data-sounds="kick;wood" data-bpm="60" data-beat="0"></div>
+
+Dancers often step the four beats. Listen to the four, then let the three pull against it.
+
+## The bell pattern
+
+The part that holds the ensemble together is usually an iron bell (in Ewe music the double bell
+*gankogui*). Its most widespread pattern is seven strokes in twelve pulses, often called the
+**standard pattern**:
+
+`x . x . x x . x . x . x`
+
+<div class="poly" data-layers="x.x.xx.x.x.x;4" data-names="Bell;Four beats" data-sounds="bell;kick" data-bpm="60" data-beat="1"></div>
+
+The pattern is uneven on purpose: long and short gaps (2 2 1 2 2 2 1). Players and listeners use it as the
+reference for where every other part goes, the way a jazz drummer's ride cymbal works.
+
+**Try it.** Mute the bell and clap it against the four beats. Then mute the beats and step them while the bell
+plays.
+
+## Layering the ensemble
+
+Add parts one at a time: the bell, a shaker on every pulse with an accent each beat, a low drum on the four,
+and a high drum playing three.
+
+<div class="poly" data-layers="x.x.xx.x.x.x;X..X..X..X..;4;3" data-names="Bell;Shaker;Low drum (4);High drum (3)" data-sounds="bell;shaker;kick;hi" data-bpm="60" data-beat="2"></div>
+
+Mute layers in turn. With only the bell and the three, the music seems to be in three; with the bell and the
+four, in four. With all of them it is both.
+
+## Hearing it from the inside
+
+A useful exercise from many teachers: keep the four beats with your feet, clap the bell, and say the three.
+Start very slowly. When it feels stable, change which part you clap. The goal is to hear each part as a
+line in its own right, not as an off-beat of something else.
+
+## Unverified, to check
+
+The facts on this page are from memory and have not yet been checked against a source: the name
+*gankogui*, the term "standard pattern" (usually credited to A. M. Jones), and the dancers' four-beat step.
+They are listed in the sources file as unverified.
+
+Next: [Clave and 6/8 in Afro-Cuban Music](poly-afro-cuban.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Bell pattern." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bell_pattern](https://en.wikipedia.org/wiki/Bell_pattern). Unverified: the 12-pulse standard pattern, gankogui, A. M. Jones's term. Not yet re-read.
+
+"Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+:::
+<!-- /works-cited -->
+

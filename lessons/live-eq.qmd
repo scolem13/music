@@ -1,0 +1,91 @@
+---
+title: "Live Sound 3: Low Cut and EQ"
+toc: true
+toc-depth: 2
+description: "The X32 low cut and four-band EQ: rumble, mud, boom, harshness and fizz, and how to find a bad frequency by sweeping."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive, svg]
+---
+
+EQ on a live desk is mostly about **removing** things: rumble the mic picks up from the stage, the boom of a
+mic held too close, a harsh ring that hurts. Cut first; boost only a little, and only if you must.
+
+## Low cut first
+
+The **Low Cut** on the X32 sits in the Config/Preamp section, before the gate and the EQ. It removes everything
+below its frequency (20–400 Hz), at 12, 18 or 24 dB per octave. Almost every channel that isn't a kick drum,
+bass or floor tom wants it on: vocals around 80–150 Hz, guitars around 80–120 Hz. It takes away stage rumble,
+footsteps, handling thumps and wind, and gives the amplifiers less useless work.
+
+## The X32's four bands
+
+Each channel's EQ has four bands. Choose a band (**Low, Lo Mid, Hi Mid, High**), then:
+
+- **Type**: `LCut` (low cut), `LShv` (low shelf), `PEQ` (a bell), `VEQ` (a vintage-style bell), `HShv` (high
+  shelf), `HCut` (high cut).
+- **Freq**: where (20 Hz – 20 kHz).
+- **Gain**: how much, ±15 dB.
+- **Q**: how wide (0.3 is very wide, 10 is very narrow).
+
+| Region | Sounds like | Usual fix |
+|---|---|---|
+| below 80 Hz | rumble, thumps (on a vocal) | Low Cut |
+| 200–400 Hz | mud, boom, "boxy" | cut a few dB |
+| 2–5 kHz | harsh, piercing, "honky" | cut, narrow |
+| 7–10 kHz and up | fizz, hiss, sibilance | high shelf down or HCut |
+
+## Finding the bad frequency: sweep
+
+When you can hear something wrong but not where it is:
+
+1. Choose a PEQ band, set **Gain +10 dB** and a narrow **Q** (around 4–6).
+2. Turn **Freq** slowly. When the problem jumps out and sounds *awful*, that's it.
+3. Now turn the **Gain** down to a cut, −4 to −10 dB, and widen the Q a little.
+
+Keep the speakers low while you sweep a boost.
+
+## Try it: a boomy vocal
+
+A singer with the mic right on their lips (the proximity effect boosts the bass), on a stage with rumble, and
+two thumps where they knock the stand.
+
+<div class="lk" data-w="strip" data-source="mud" data-show="pre eq fader" data-goal="eq"
+  data-tries="Flat:lc=0;Low cut only:lc=1,lcf=100;Low cut + mud cut:lc=1,lcf=100,e2t=2,e2f=280,e2g=-6,e2q=1.5"></div>
+
+Switch on **LOW CUT** first and set it around 100 Hz: the rumble and thumps go. Then sweep the **Lo Mid** band
+for the boom (the graph helps) and cut it. Press **Check my channel**.
+
+## Try it: a harsh guitar
+
+An electric guitar with a piercing peak and a fizzy top.
+
+<div class="lk" data-w="strip" data-source="guitar" data-show="pre eq fader" data-goal="eq"
+  data-tries="Flat:lc=0;Fixed:lc=1,lcf=90,e3t=2,e3f=3200,e3g=-8,e3q=3,e4t=4,e4f=8000,e4g=-6"></div>
+
+Sweep the **Hi Mid** band with a narrow boost until it hurts, then cut. Use the **High** band (HShv) or an HCut
+for the fizz.
+
+## Next
+
+- [Live Sound 4: Gates](live-gate.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+"Equalization (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Equalization_(audio)](https://en.wikipedia.org/wiki/Equalization_(audio)).
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)).
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _live-kit.qmd >}}

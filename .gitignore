@@ -12,3 +12,4 @@ tests/band/**/*.png
 
 # Test renders leak into the real site via the apps/** resource glob (see tests/band/README.md)
 /_site/tests/
+research_notes/mlt-sources/

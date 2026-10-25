@@ -1,0 +1,124 @@
+---
+title: "Play the Band on the MODX"
+description: "Play the band through a Yamaha MODX over USB: connect, set the timing, compare each site sound against the MODX by ear, and send the winners to the board."
+toc: true
+toc-depth: 2
+toc-title: "On this page"
+---
+
+```{=html}
+<script src="/apps/shared/band/modx.js?v=1"></script>
+<script src="/apps/shared/band/sounds.js?v=17"></script>
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<style>
+.mx-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; margin: .5rem 0; }
+.mx-note { font-size: .88rem; opacity: .8; }
+.mx-status { font-weight: 600; }
+.mx-status.ok { color: #2a9d8f; } .mx-status.bad { color: #c0392b; }
+.mx-table { border-collapse: collapse; font-size: .9rem; width: 100%; }
+.mx-table th, .mx-table td { padding: .3rem .5rem; border-bottom: 1px solid rgba(128,128,128,.25); text-align: left; vertical-align: middle; }
+.mx-table input[type=number] { width: 4.2rem; }
+.mx-v button { font-size: .8rem; padding: .1rem .45rem; }
+.mx-v button.on { background: #2a9d8f; color: #fff; border-color: #2a9d8f; }
+.mx-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 1rem; }
+.mx-modes { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: .8rem; }
+.mx-modes > div { border: 1px solid rgba(128,128,128,.3); border-radius: 8px; padding: .6rem .8rem; font-size: .9rem; }
+</style>
+```
+
+Send the band's notes to a Yamaha MODX over USB instead of playing the site's own samples, one instrument at a time. Works in
+Chrome or Edge (Web MIDI). Nothing changes for anyone without a MODX: until you switch it on here, every page sounds as before.
+
+## Connect
+
+```{=html}
+<div class="mx-row">
+  <button type="button" id="mx-connect">Connect</button>
+  <label>Port <select id="mx-port"><option>(not connected)</option></select></label>
+  <label><input type="checkbox" id="mx-on"> Use the MODX on every band page</label>
+  <span id="mx-status" class="mx-status bad">Not connected</span>
+</div>
+<p class="mx-note">Plug the MODX in by USB and switch it on first. The browser asks once whether this site may use MIDI.
+With the box ticked, every Backing Track, lesson and tool that uses the band connects by itself and sends the instruments
+ticked under <a href="#routing">Routing</a> to the MODX.</p>
+<div class="mx-modes">
+  <div><b>Site only</b><br>Box unticked. The site's samples, as before.</div>
+  <div><b>Sound module</b><br>Box ticked, some instruments routed. Those play on the MODX; the rest stay on the site.</div>
+  <div><b>Play along</b><br>Sound module, with Local Control on (the board's default): you play the MODX keys over the band.</div>
+</div>
+```
+
+## The Site Band Performance
+
+```{=html}
+<p>Make this once on the board and save it in a User slot. Each Part listens on its own channel, so the site can play several
+instruments at once without touching the board again.</p>
+<table class="mx-table">
+  <tr><th>Part</th><th>Channel</th><th>Put on it</th><th>Site instruments</th></tr>
+  <tr><td>1</td><td>1</td><td>Electric or upright bass</td><td>bass, electric bass</td></tr>
+  <tr><td>2</td><td>2</td><td>Grand piano or electric piano</td><td>piano, electric pianos</td></tr>
+  <tr><td>3</td><td>3</td><td>Organ with rotary speaker</td><td>tonewheel organ, church organ</td></tr>
+  <tr><td>4</td><td>4</td><td>Guitar</td><td>every guitar</td></tr>
+  <tr><td>10</td><td>10</td><td>Drum kit</td><td>drums, brushes</td></tr>
+  <tr><td>11</td><td>11</td><td>Latin percussion kit</td><td>congas, bongos</td></tr>
+</table>
+<p class="mx-note">Then, in Utility → Settings → MIDI, check that the MODX receives Bank Select and Program Change, so the button below
+can call the Performance up. Bank and number: in the Performance list, the User bank is shown with the number of each slot.
+The defaults below (MSB 63, LSB 32, program 0 = User 1, first slot) are from memory of Yamaha's MIDI tables and not yet checked on the board.</p>
+<div class="mx-row">
+  <label>Channel <input type="number" id="mx-pch" min="1" max="16"></label>
+  <label>Bank MSB <input type="number" id="mx-msb" min="0" max="127"></label>
+  <label>LSB <input type="number" id="mx-lsb" min="0" max="127"></label>
+  <label>Program <input type="number" id="mx-pc" min="0" max="127"></label>
+  <button type="button" id="mx-perf">Call it up</button>
+  <label><input type="checkbox" id="mx-perf-auto"> on connect</label>
+</div>
+```
+
+## Timing
+
+```{=html}
+<p>The computer's speakers and the MODX's are late by different amounts. Press Start: the site plays a stick click and the MODX
+a rim click at the same time. Move the slider until you hear one click instead of two. Use the speakers or headphones you'll play with.</p>
+<div class="mx-row">
+  <button type="button" id="mx-sync">Start</button>
+  <label>MODX offset <input type="range" id="mx-off" min="-150" max="250" step="1"> <span id="mx-off-n"></span> ms</label>
+</div>
+<p class="mx-note">More than zero holds the MODX back; less than zero sends it earlier (only as far as the site's own delay allows).</p>
+```
+
+## Compare
+
+```{=html}
+<p>Each row plays the same phrase twice, the site and then the MODX (with the Site Band Performance loaded), so you can pick
+the better one. Your choices are kept. <b>Route the winners</b> sends every instrument where the MODX won to the board.</p>
+<div class="mx-row"><button type="button" id="mx-stop">Stop</button> <button type="button" id="mx-win">Route the winners</button> <span id="mx-win-msg" class="mx-note"></span></div>
+<table class="mx-table" id="mx-compare"></table>
+```
+
+## Routing
+
+```{=html}
+<p>Which instruments go to the MODX, and on which channel. Instruments sharing a channel share a Part.</p>
+<table class="mx-table" id="mx-routes"></table>
+<div class="mx-row">
+  <label>Pitch-bend range <input type="number" id="mx-pb" min="1" max="24"> semitones</label>
+  <label>Rotary speed CC <input type="number" id="mx-les" min="0" max="127"></label>
+  <button type="button" id="mx-reset">Reset everything here</button>
+</div>
+<p class="mx-note">The pitch-bend range must match the Part's (2 is the usual default) or slides land on the wrong note.
+The rotary speed CC is what the organ's slow/fast switch sends: 1 (the mod wheel) is a guess, so check which control your organ
+Performance uses for it.</p>
+```
+
+## Drum maps
+
+```{=html}
+<p>Which MODX key each drum is on. These start as the General MIDI layout, which Yamaha's standard kits mostly follow. Press ▶
+to hear one on the MODX and change the number if it's the wrong drum.</p>
+<div class="mx-grid"><table class="mx-table" id="mx-kit"></table><table class="mx-table" id="mx-congas"></table></div>
+```
+
+```{=html}
+<script src="/apps/shared/band/modx-page.js?v=2"></script>
+```

@@ -81,7 +81,9 @@
   const meterQuarters = m => { const p = meterKey(m).split("/"); return (+p[0] / +p[1]) * 4; };
   function rhythmBarsAll(rhythmObject) {
     const out = [], seen = {};
-    tunes(rhythmObject).forEach(t => {
+    // the sets copied from the MLT books (DMTI, JRI, Mullen; apps/rhythms/rhythm-pattern-object.js) are practice sets, not part of this familiar bank:
+    // their sixteenths, swing and ties would multiply the two-bar candidates
+    tunes(rhythmObject).filter(t => !/^(dmti[123]-|jri-recorder-|musicplay-|mullen-)/.test(t.coll)).forEach(t => {
       const mm = /^M:\s*(\d+\s*\/\s*\d+)/m.exec(t.abc); if (!mm) return;
       const meter = meterKey(mm[1]); let ev;
       try { ev = Events.fromAbc(t.abc); } catch (e) { return; }

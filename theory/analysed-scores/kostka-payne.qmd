@@ -1,0 +1,46 @@
+---
+title: "Kostka and Payne: Tonal Harmony"
+subtitle: "Modulation examples from chapters 18 and 19, with Roman numerals under the notes"
+toc: true
+toc-depth: 2
+description: "Fifteen modulation examples from chapters 18 and 19 of Kostka, Payne and Almén's Tonal Harmony, from Bach, Mozart, Beethoven, Schubert, Dvořák and Tchaikovsky, with the Roman-numeral analysis under the notes (When in Rome). Play each one."
+---
+
+{{< include _head.qmd >}}
+
+Fifteen examples from Stefan Kostka, Dorothy Payne and Byron Almén's *Tonal Harmony*: chapter 18, "Modulations Using Diatonic Common
+Chords", and chapter 19, "Some Other Modulatory Techniques". Most are from real pieces (Bach, Mozart, Beethoven, Schubert, Dvořák,
+Tchaikovsky); 18-2, 18-3a and 18-3b are short progressions.
+
+How to read the labels and use the scores: [Analysed Scores](index.qmd#reading-the-labels). For modulation itself, see
+[Chapter 22](../modulation.qmd).
+
+{{< include _kostka-payne.qmd >}}
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Source:** the notes and analyses are the DDMAL Key Modulation Dataset's encodings of the book's examples (Néstor Nápoles López and
+  others), translated automatically to RomanText and copied into When in Rome. `scripts/when-in-rome/build.mjs` reads the MusicXML
+  (`src/kostka`), and every note was checked against music21's reading of the same files.
+- **Copyright:** the book is in copyright. The pieces are public domain; 18-2, 18-3a and 18-3b are progressions as encoded in the
+  dataset, and 19-12 is the book's simplification of bars 6–16 of Mozart's Fantasia, K. 475.
+- **Not shown:** grace notes (19-1, 19-3) are left out of the scores.
+- **Not edited:** the analyses are an automated translation and are shown as they are.
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation.
+
+Kostka, Stefan, Dorothy Payne, and Byron Almén. *Tonal Harmony*. 8th ed., McGraw-Hill, 2018. Table of contents. [highered.mheducation.com/sites/0078025141/information_center_view0/table_of_contents.html](https://highered.mheducation.com/sites/0078025141/information_center_view0/table_of_contents.html). Chapters 18 (Modulations Using Diatonic Common Chords) and 19 (Some Other Modulatory Techniques), the source of the examples on the Kostka and Payne page.
+
+**For teachers**
+
+Nápoles López, Néstor, et al. *Key Modulation Dataset*. GitHub (DDMAL). [github.com/DDMAL/key_modulation_dataset](https://github.com/DDMAL/key_modulation_dataset). The encodings and analyses of the textbook examples, translated to RomanText by Nápoles López and copied into When in Rome.
+:::
+<!-- /works-cited -->

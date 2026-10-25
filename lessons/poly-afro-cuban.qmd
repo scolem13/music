@@ -1,0 +1,78 @@
+---
+title: "Clave and 6/8 in Afro-Cuban Music"
+toc: true
+toc-depth: 2
+description: "Tresillo, son clave and rumba clave over a steady pulse, the 6/8 bell against four, and how 3 against 2 lives inside Cuban rhythm."
+instruments: [percussion, any]
+topics: [rhythm, polyrhythm, latin, world]
+has: [interactive, svg]
+---
+
+{{< include _poly-kit.qmd >}}
+
+Afro-Cuban music grew from West African and Spanish traditions, and much of its rhythm keeps the
+West African tension between three and two. The key pattern is the **clave**, played on two sticks
+(*claves*), which all the other parts line up with.
+
+## Tresillo: three over two
+
+The **tresillo** divides eight pulses 3 + 3 + 2:
+
+<div class="poly" data-layers="x..x..x.;2" data-names="Tresillo;Two beats" data-sounds="wood;kick" data-bpm="70" data-beat="1"></div>
+
+It is not an even polyrhythm (the three notes are not equal), but it is heard as three against the two beats,
+and it is everywhere from Cuban son to New Orleans and pop.
+
+## Son clave
+
+Son clave is two bars: a tresillo-like "three side" and a "two side".
+
+`x . . x . . x . | . . x . x . . .`  (3-2)
+
+<div class="poly" data-layers="x..x..x...x.x...;4" data-names="Son clave 3-2;Four beats" data-sounds="wood;kick" data-bpm="80" data-beat="1"></div>
+
+Played starting from the second half it is **2-3 clave**. Which side comes first is fixed by the song, and
+the other parts are written to fit it.
+
+## Rumba clave
+
+Rumba clave moves the last note of the three side one pulse later, which pulls harder against the beat:
+
+<div class="poly" data-layers="x..x...x..x.x...;x..x..x...x.x...;4" data-names="Rumba clave;Son clave;Four beats" data-sounds="wood;hi;kick" data-bpm="80" data-beat="2"></div>
+
+Mute one clave at a time to hear the one note that differs.
+
+## 6/8: the bell against four
+
+In Afro-Cuban 6/8 styles (often called *bembé*), the bell plays the same 12-pulse pattern as in the
+[West African lesson](poly-west-africa.qmd), and the band moves between feeling four beats and six.
+
+<div class="poly" data-layers="x.x.xx.x.x.x;4;6" data-names="6/8 bell;Four beats;Six (dotted)" data-sounds="bell;kick;wood" data-bpm="60" data-beat="1"></div>
+
+Mute the four, then the six. The bell sits comfortably over both, which is 3 against 2 at the level of beats:
+a hemiola.
+
+## Practice
+
+1. Step four beats and clap son clave. Then rumba clave.
+2. Step four beats and clap the 6/8 bell.
+3. In the [Polyrhythm tool](../tools/polyrhythm.qmd), type your own variation of clave and hear it against four.
+
+## Unverified, to check
+
+From memory, not yet checked: the term *bembé* for the 6/8 style, and tresillo's spread into New Orleans music.
+
+Next: [Polyrhythm in Jazz](poly-jazz.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Bell pattern." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Bell_pattern](https://en.wikipedia.org/wiki/Bell_pattern). Unverified: the 12-pulse standard pattern, gankogui, A. M. Jones's term. Not yet re-read.
+
+"Clave (rhythm)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clave_(rhythm)](https://en.wikipedia.org/wiki/Clave_(rhythm)). Unverified: son and rumba clave, 3-2 / 2-3, tresillo. Not yet re-read.
+
+"Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+:::
+<!-- /works-cited -->
+

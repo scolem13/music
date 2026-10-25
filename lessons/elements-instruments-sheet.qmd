@@ -1,0 +1,137 @@
+---
+title: "Instruments on One Page"
+toc: true
+toc-depth: 2
+description: "Every instrumentation term on one revision sheet: ensemble sizes, voices, the four orchestral families with an instrument from each to play, rock, pop and jazz line-ups, and the roles instruments take. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, arranging]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Instruments](elements-instruments.qmd) on one sheet. Every ▶ plays the instrument named. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Instruments: who is playing, and what they do"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### How many
+<p>1 solo · 2 duet · 3 trio · 4 quartet · 5 quintet. A <strong>string quartet</strong>: two violins, viola, cello. A <strong>piano trio</strong>: piano, violin, cello.</p>
+:::::
+
+::::: {.el-card}
+#### Voices
+<p>High to low: <strong>soprano</strong>, <strong>alto</strong>, <strong>tenor</strong>, <strong>baritone</strong>, <strong>bass</strong>. <strong>Treble</strong>: a boy's high voice. <strong>Countertenor</strong>: a man in the alto range. An <strong>SATB</strong> choir: soprano, alto, tenor, bass.</p>
+:::::
+
+::::: {.el-card}
+#### Woodwind
+<p>Piccolo, flute, oboe, clarinet, bassoon. Air across a hole (flute) or through a reed. Top of the score.</p>
+<div class="abc-ex" data-width="190" data-sound="flute" data-bpm="96"><script type="text/plain">
+X:1
+T:Flute
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Brass
+<p>Trumpet, French horn, trombone, tuba. Lips buzzing into a mouthpiece.</p>
+<div class="abc-ex" data-width="190" data-sound="trumpet" data-bpm="96"><script type="text/plain">
+X:1
+T:Trumpet
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Percussion
+<p>Timpani, snare drum, cymbals, xylophone, glockenspiel… Struck, shaken or scraped.</p>
+<div class="abc-ex" data-width="190" data-sound="timpani" data-bpm="96"><script type="text/plain">
+X:1
+T:Timpani, two notes
+M:4/4
+L:1/4
+K:G clef=bass
+G, D, G, D,|G,4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Strings
+<p>Violin, viola, cello, double bass. Bowed or plucked. Bottom of the score.</p>
+<div class="abc-ex" data-width="190" data-sound="violin" data-bpm="96"><script type="text/plain">
+X:1
+T:Violin
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### The low end
+<p>Each family has its bass: bassoon, tuba, timpani, cello and double bass.</p>
+<div class="abc-ex" data-width="190" data-sound="tuba" data-bpm="96"><script type="text/plain">
+X:1
+T:Tuba
+M:4/4
+L:1/4
+K:G clef=bass
+D, B,, G,, B,,|C, A,, F,, A,,|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Band line-ups
+<ul>
+<li><strong>Rock / pop</strong>: vocals, guitars, bass guitar, drums, keys</li>
+<li><strong>Folk</strong>: voice, acoustic guitar, fiddle, banjo</li>
+<li><strong>Jazz combo</strong>: rhythm section (piano, bass, drums) + front line (sax, trumpet)</li>
+<li><strong>Big band</strong>: sax, trumpet, trombone sections + rhythm section</li></ul>
+:::::
+
+::::: {.el-card}
+#### What each one does
+<ul>
+<li><strong>Melody</strong>: the tune</li>
+<li><strong>Accompaniment</strong>: chords, rhythm</li>
+<li><strong>Countermelody</strong>: a second tune</li>
+<li><strong>Bass line</strong>: the lowest part</li>
+<li><strong>Solo</strong>: one instrument featured</li></ul>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="instruments"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing instruments
+
+- Name the instrument *and* say what it is doing: "the melody is on the **violins**, the **cellos** play a slow bass
+  line, the **horns** hold chords".
+- More instruments to hear: [Instruments](elements-instruments.qmd) passes one tune round the whole orchestra.
+
+- The longer lesson, with fuller examples: [Elements 4: Instruments](elements-instruments.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

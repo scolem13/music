@@ -45,3 +45,4 @@
   buzz map, action, nut, 12th-fret intonation (mic) -> what to adjust and who (you / teacher / tech). Lessons
   `lessons/guitar-tuning-{ear,methods,tuners}.qmd`, `lessons/guitar-harmonics.qmd`. Pages' `window.TEST_MIC_SOURCE` replaces the mic.
   Test: `node tests/lessons/guitar-tuning.cdp.js` (after rendering both tools).
+- Guitar Input Check (`tools/guitar-in.qmd`, `apps/shared/guitar-in.js` `window.GuitarIn`, page script `guitar-in-page.js`): a guitar through mic/DI graded against an expected note or chord (plan and limits: `scripts/guitar-di/GUITAR-IN.md`). Tests: `node tests/guitar-in/guitar-in.test.js`, `tests/guitar-in/guitar-in.cdp.js`.

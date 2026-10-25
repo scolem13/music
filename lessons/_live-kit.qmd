@@ -1,0 +1,6 @@
+```{=html}
+<!-- the Live Sound lessons: apps/shared/lessons/live-kit.js makes an X32 input channel from every <div class="lk" data-w="strip"> -->
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/lessons/live-kit.js?v=1"></script>
+```

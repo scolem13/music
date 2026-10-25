@@ -1,0 +1,68 @@
+---
+title: "Polyrhythm in Jazz"
+toc: true
+toc-depth: 2
+description: "Swing's built-in 3 against 2, dotted-quarter figures that cross the bar, 3 against 4 in comping and drum solos, and how to practise playing across the time without losing it."
+instruments: [any, drums, piano]
+topics: [rhythm, polyrhythm, jazz]
+has: [interactive, svg]
+---
+
+{{< include _poly-kit.qmd >}}
+
+Jazz rhythm sits on a steady four, but a great deal of it plays *against* that four. The tension is part of
+its West African inheritance through the blues and New Orleans music.
+
+## Swing: three inside two
+
+A swung eighth note is close to a triplet: the beat is felt in three while the bass walks in four and the
+music is counted in two-beat halves. The ride cymbal pattern "ding, ding-a ding" sits on triplets:
+
+<div class="poly" data-layers="X..X.x;2" data-names="Ride (triplets);Two beats" data-sounds="bell;kick" data-bpm="70" data-beat="1"></div>
+
+Swing ratios vary with tempo and player; the even triplet here is a starting point only.
+
+## Three-beat figures across the bar
+
+A common jazz device is a phrase that repeats every three eighth notes (or every dotted quarter) over 4/4.
+It goes round the bar, landing on a different beat each time, and meets the downbeat again after three bars.
+This is polymeter: same pulse, different lengths.
+
+<div class="poly" data-layers="X..;X.x.x.x." data-names="Dotted-quarter figure;4/4 (eighths)" data-sounds="hi;kick" data-bpm="100" data-beat="1" data-polymeter></div>
+
+Pianists use it in comping and solos; horn sections in big band riffs.
+
+## 3 against 4 and 4 against 3
+
+Drummers and pianists also play true even polyrhythms over the beat, such as three half-note triplets
+across a 4/4 bar or quarter-note triplets (three against two beats).
+
+<div class="poly" data-layers="4;3" data-names="Four beats;Half-note triplets" data-sounds="kick;hi" data-bpm="80" data-beat="0"></div>
+
+<div class="poly" data-layers="2;3" data-names="Two beats;Quarter-note triplets" data-sounds="kick;hi" data-bpm="80" data-beat="0"></div>
+
+## Players to hear
+
+Drummers known for playing across the time include Elvin Jones (with John Coltrane's quartet), Max Roach,
+Tony Williams and Jack DeJohnette; pianists include McCoy Tyner and Brad Mehldau. This list is from memory and
+is a starting point for listening, not a checked claim about particular recordings.
+
+## Practice
+
+1. Keep the four with your foot. Clap the dotted-quarter figure until you can stop on any downbeat without losing it.
+2. Mute the figure in the player and play it on your instrument over the four.
+3. Play quarter-note triplets for one bar, then back to quarter notes, without the beat moving.
+
+The skill is to keep the time *steady* while the figure crosses it: if the four moves to follow the figure,
+the effect is gone.
+
+Next: [Polymeter and Polyrhythm in Math Rock](poly-math-rock.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+:::
+<!-- /works-cited -->
+

@@ -21,7 +21,7 @@ toc-title: "On this page"
 <script src="/apps/shared/band/catalog.js?v=37"></script>
 <script src="/apps/shared/band/drums.js?v=17"></script>
 <script src="/apps/shared/band/congas.js?v=3"></script>
-<script src="/apps/shared/band/sounds.js?v=15"></script>
+<script src="/apps/shared/band/sounds.js?v=17"></script>
 <script src="/apps/shared/band/player.js?v=118"></script>
 <script src="/apps/shared/lessons/sections.js?v=1"></script>
 ```
@@ -42,6 +42,8 @@ piano playing every pattern a half step higher each time, and the band joining i
     <select id="vw-length"><option value="5">5 minutes</option><option value="10" selected>10 minutes</option><option value="15">15 minutes</option><option value="20">20 minutes</option><option value="30">Long (20 minutes or more)</option></select></label>
   <label>Singing for
     <select id="vw-focus"><option value="general">Anything</option><option value="pop">Pop, rock, musical theatre</option><option value="classical">Classical</option><option value="choir">Choir</option></select></label>
+  <label>Style
+    <select id="vw-style"><option value="standard" selected>Standard</option><option value="fun">Fun (class: sound effects, tongue twisters, pizza)</option></select></label>
   <label>How the voice feels
     <select id="vw-energy"><option value="gentle">Just woke up / tired</option><option value="normal" selected>Normal</option><option value="perform">Performing soon</option></select></label>
   <label>Pace
@@ -98,11 +100,15 @@ Every step of the warm-up you built. Click one to jump to it.
 - **Gentle** routines stay lower, shorter and softer; **Performing soon** adds agility and a wider top, and ends ready rather than
   cooled down.
 
+- **Fun** swaps in sound-effect sirens, a countdown shake, tongue twisters (spoken, then sung) and bouncy "pizza" staccatos.
+  The English twister avoids r/l, f/p, v/b, z/j and th, which are hard for speakers of Korean and some other languages,
+  and there is one in Japanese and one in Korean, so other students get to lead.
+
 ::: {.callout-warning}
 Stop if anything hurts, tickles or feels tight. Warm-ups should feel easy: if a note strains, let the pattern go by and come back on
 the way down. Sip water between steps.
 :::
 
 ```{=html}
-<script src="/apps/shared/vocal-warmup.js?v=1"></script>
+<script src="/apps/shared/vocal-warmup.js?v=2"></script>
 ```

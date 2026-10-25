@@ -1,0 +1,44 @@
+---
+title: "Tchaikovsky: Guide to the Practical Study of Harmony"
+subtitle: "The modulation examples, with Roman numerals under the notes"
+toc: true
+toc-depth: 2
+description: "The 25 modulation examples from Tchaikovsky's Guide to the Practical Study of Harmony (1872), short four-voice progressions from C major to keys near and far, with the Roman-numeral analysis under the notes (When in Rome). Play each one."
+---
+
+{{< include _head.qmd >}}
+
+Tchaikovsky wrote his harmony textbook in 1871 from his lectures at the Moscow Conservatory; Jurgenson published it in 1872, and
+in English in 1900. These are its modulation examples: each starts in C major and reaches another key, near or far, in a few chords. They
+are grouped by the book's example number.
+
+How to read the labels and use the scores: [Analysed Scores](index.qmd#reading-the-labels). For modulation itself, see
+[Chapter 22](../modulation.qmd).
+
+{{< include _tchaikovsky-harmony.qmd >}}
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Source:** the notes and analyses are the DDMAL Key Modulation Dataset's encodings of the book's examples (Néstor Nápoles López and
+  others), translated automatically to RomanText and copied into When in Rome. `scripts/when-in-rome/build.mjs` reads the MusicXML
+  (`src/tchaikovsky`), and every note was checked against music21's reading of the same files.
+- **Example 185a** uses `im7`, a minor seventh chord on the tonic of the new key; it is shown as written.
+- **Not edited:** the analyses are an automated translation and are shown as they are.
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation.
+
+Tchaikovsky Research. "Guide to the Practical Study of Harmony." [en.tchaikovsky-research.net/pages/Guide_to_the_Practical_Study_of_Harmony](https://en.tchaikovsky-research.net/pages/Guide_to_the_Practical_Study_of_Harmony). When and how Tchaikovsky wrote the book (1871, from his Moscow Conservatory lectures); Jurgenson, 1872; English translation by Emil Krall and James Liebling, 1900.
+
+**For teachers**
+
+Nápoles López, Néstor, et al. *Key Modulation Dataset*. GitHub (DDMAL). [github.com/DDMAL/key_modulation_dataset](https://github.com/DDMAL/key_modulation_dataset). The encodings and analyses of the textbook examples, translated to RomanText by Nápoles López and copied into When in Rome.
+:::
+<!-- /works-cited -->

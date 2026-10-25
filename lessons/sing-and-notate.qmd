@@ -109,10 +109,10 @@ The rhythm and the pitches are checked separately, each confirmed once. Octave d
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
 <script src="/apps/shared/abc-core.js"></script>
 <script src="/apps/shared/abc-events.js"></script>
-<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/patterns/pattern-object.js"></script>
 <script src="/apps/tunes/tunes-object.js"></script>
-<script src="/apps/shared/sing-notate.js?v=2"></script>
+<script src="/apps/shared/sing-notate.js?v=3"></script>
 <script src="/apps/shared/lessons/sections.js?v=1"></script>
 <script>
 (function () {

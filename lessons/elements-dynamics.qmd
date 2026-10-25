@@ -1,0 +1,139 @@
+---
+title: "Elements 2: Dynamics"
+toc: true
+toc-depth: 2
+description: "How loud or quiet the music is: the markings from pp to ff, crescendo and diminuendo, sforzando, where dynamics are written for instruments, piano and voices, how each period used them, and how to describe what you hear."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Dynamics** are the volume of the music: how loud or quiet it is, and how that changes.
+
+## 1. The markings
+
+Dynamics are written as Italian words, shortened to letters.
+
+| Marking | Italian | Meaning |
+|---|---|---|
+| ***pp*** | pianissimo | very quiet |
+| ***p*** | piano | quiet |
+| ***mp*** | mezzo piano | moderately quiet |
+| ***mf*** | mezzo forte | moderately loud |
+| ***f*** | forte | loud |
+| ***ff*** | fortissimo | very loud |
+| **cresc.** or a widening hairpin `<` | crescendo | getting gradually louder |
+| **dim.** / **decresc.** or a closing hairpin `>` | diminuendo / decrescendo | getting gradually quieter |
+| ***sfz*** or ***sf*** | sforzando | a sudden strong accent on one note |
+
+*Piano* is the Italian for quiet; the instrument's full name, *pianoforte*, means "quiet-loud", because it could play both.
+
+The same phrase at three levels:
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:p, then mf, then ff
+M:4/4
+L:1/4
+K:F
+!p!F A c A|F4|!mf!F A c A|F4|!ff!F A c A|F4|]
+</script></div>
+
+## 2. Crescendo and diminuendo
+
+A **hairpin** opens as the music gets louder and closes as it gets quieter. Always say where it starts *and* where it
+ends up: a crescendo from ***p*** to ***f*** is a different thing from one from ***mf*** to ***ff***.
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:Crescendo from pp to ff, then a diminuendo back down
+M:4/4
+L:1/4
+K:C
+!pp!!crescendo(!C D E F|G A B !crescendo)!!ff!c|!diminuendo(!c B A G|F E D !diminuendo)!!pp!C|]
+</script></div>
+
+A **sforzando** hits one note hard and drops back at once:
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:p, with a sforzando on the third beat of each measure
+M:3/4
+L:1/4
+K:Dm
+!p!D F !sfz!A|D F !sfz!A|D F !sfz!A|D3|]
+</script></div>
+
+## 3. Where they go on the score
+
+- For an instrument on one [staff]{.nn}: **under** the [staff]{.nn}.
+- For piano: **between the two staves**, so one marking covers both hands.
+- For voices: **above** the [staff]{.nn}, so the dynamics don't get mixed up with the words underneath.
+
+## 4. Dynamics through history
+
+| Period | Dynamics |
+|---|---|
+| **Baroque** (about 1600–1750) | few markings, mostly ***p*** and ***f***; **terraced dynamics**: sudden steps between loud and quiet sections (often by more or fewer instruments playing), not gradual changes |
+| **Classical** (about 1750–1820) | more markings, crescendos and diminuendos, used for contrast; the new piano could play both quiet and loud |
+| **Romantic** (about 1800–1910) | a huge range, from ***ppp*** to ***fff***, with constant crescendos and diminuendos for expression |
+
+Terraced against gradual:
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="110" data-sound="harpsichord"><script type="text/plain">
+X:1
+T:Terraced: a loud phrase, then its quiet echo
+M:4/4
+L:1/8
+K:D
+!f!d2 fd A2 dA|F2 AF D4|!p!d2 fd A2 dA|F2 AF D4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="110"><script type="text/plain">
+X:1
+T:Gradual: the same notes, one long crescendo
+M:4/4
+L:1/8
+K:D
+!p!!crescendo(!d2 fd A2 dA|F2 AF D4|d2 fd A2 dA|F2 AF !crescendo)!!f!D4|]
+</script></div>
+:::
+
+## 5. Describing what you hear
+
+When you describe dynamics in a listening question, **describe the changes in order**. One word for the whole piece is not
+enough unless it really never changes.
+
+> The music starts ***p***... then a gradual crescendo to ***f*** when the brass come in... a sudden drop to ***pp*** for
+> the quiet middle section... then it ends ***ff***.
+
+Useful words: *sudden*, *gradual*, *a wide range*, *a narrow range*, *contrast*, *terraced*, *fades out*.
+
+## 6. Writing your own
+
+- Give every entry a starting dynamic.
+- A crescendo needs somewhere to go: mark where it ends.
+- Contrast is what the ear notices. A piece that is ***mf*** throughout sounds flat, however good the notes.
+
+## 7. Check yourself
+
+<div class="eq" data-set="dynamics"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Classical period (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Classical_period_(music)](https://en.wikipedia.org/wiki/Classical_period_(music)). Classical roughly 1750–1820; Baroque c. 1600–1750; Romantic c. 1800–1910; melody over a subordinate accompaniment such as an Alberti bass.
+
+"Dynamics (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dynamics_(music)](https://en.wikipedia.org/wiki/Dynamics_(music)). Sforzando / sforzato (sf, sfz): suddenly loud on one note; terraced dynamics from contrasting small and large groups; hairpins below the staff, between piano staves, above in vocal music.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

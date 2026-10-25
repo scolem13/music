@@ -19,7 +19,19 @@ page-layout: full
    deck. This is an ordinary page, so the component is given a base size of its
    own -- and the clock the size the thing is named for. */
 .btp { font-size: 1.25rem; margin: 1.5rem 0 1.5rem; }
-.btp .btp-clock { font-size: clamp(3rem, 11vw, 7rem); }
+/* the big clock, in a part of its own (clock-panel.js moves it out of the Player) */
+.ts-bigclock { text-align: center; }
+.ts-bigclock .btp-clock {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-variant-numeric: tabular-nums;
+  font-weight: 700; line-height: 1; letter-spacing: -0.02em; user-select: all;
+  font-size: clamp(3rem, 11vw, 7rem);
+}
+.ts-bigclock .btp-clock.idle { opacity: 0.35; }
+#ts-clock > summary .ts-clock-float { margin-left: auto; font-size: .75rem; padding: .05rem .5rem; }
+#ts-clock.is-floating { position: fixed; z-index: 1050; width: min(360px, 90vw); background: var(--bs-body-bg, #fff);
+  box-shadow: 0 6px 24px rgba(0,0,0,.18); }
+#ts-clock.is-floating > summary { cursor: move; }
+#ts-clock.is-floating .btp-clock { font-size: 4rem; }
 .btp .btp-stage,
 .btp .btp-drop,
 .btp .btp-bar { max-width: 900px; }
@@ -30,7 +42,7 @@ page-layout: full
 
 <ol class="btp-steps">
   <li><b>Audio</b>: a YouTube link or a file.</li>
-  <li><b>Words and chords</b>: paste them from Ultimate Guitar and Convert.</li>
+  <li><b>Words and chords</b>: paste them from Ultimate Guitar and Convert &mdash; or open a SALAMI chords file (McGill Billboard <code>salami_chords.txt</code>) with <b>Open file</b> or <b>Paste…</b> in Timestamps: its sections, bars and chords come in already timed.</li>
   <li><b>Sections, bars, chords</b>: <kbd>S</kbd> as each section starts, <kbd>B</kbd> on every downbeat, <kbd>N</kbd> on every chord change
       &mdash; or all three at once from a MIDI keyboard.</li>
   <li><b>Send on</b>: to the Notation page for the melody, or the Backing Track for a style.</li>
@@ -43,10 +55,15 @@ page-layout: full
 
 <div class="btp-main">
 
+<details class="btp-fold ts-panel" id="ts-clock" data-nav="Clock" open>
+<summary><h2>Clock</h2><button type="button" class="ts-clock-float" title="Float it over the page, to drag anywhere">Float</button></summary>
+<div class="ts-bigclock"></div>
+</details>
+
 <details class="btp-fold ts-panel" id="ts-player" data-nav="Player" open>
 <summary><h2>Player</h2></summary>
 <div class="btp">
-  <div class="btp-clock idle">00:00</div>
+  <div class="btp-clock idle" data-num-edit="off">00:00</div>
   <div class="btp-stage" hidden></div>
   <div class="btp-drop">Drop a video or audio file here</div>
   <div class="btp-bar">
@@ -247,8 +264,9 @@ page-layout: full
     <button class="btp-sort" type="button">Sort by time</button>
     <button class="btp-copy-all" type="button">Copy all</button>
     <button class="btp-clear" type="button" title="Everything for this song: stamps, bars, words and chords, chord timing, chunks. Save the song file first to keep it.">Clear all data</button>
+    <button class="btp-save-cho" type="button" title="The ChordPro box with all the timing in it (x_ directives other ChordPro apps skip): words, chords, sections, bars and the link in one .cho">Save as ChordPro</button>
     <button class="btp-download" type="button" title="Everything on the page: stamps, bars, words, chords, chord timing and the link">Save song file</button>
-    <label class="btp-import" title="A song file, or an older timestamps .txt or bar-map .json">Open file<input class="btp-import-file" type="file" accept=".json,.txt,application/json,text/plain"></label>
+    <label class="btp-import" title="A song file, a ChordPro (.cho, timed or not), a SALAMI chords .txt (McGill Billboard), or an older timestamps .txt or bar-map .json">Open file<input class="btp-import-file" type="file" accept=".json,.txt,.cho,.chopro,.chordpro,.crd,application/json,text/plain"></label>
     <button class="btp-paste-open" type="button">Paste…</button>
   </div>
   <div class="btp-paste" hidden>
@@ -283,6 +301,7 @@ page-layout: full
 
 <script src="/apps/shared/panel-columns.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/player.js?v=8"></script>
+<script src="/apps/shared/timestamp-player/clock-panel.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/time-edit.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/section-labels.js?v=1"></script>
 <script src="/apps/shared/timestamp-player/player-log.js?v=16"></script>
@@ -297,6 +316,8 @@ page-layout: full
 <script src="/apps/shared/timestamp-player/live.js?v=20"></script>
 <script src="/apps/shared/timestamp-player/phrases.js?v=8"></script>
 <script src="/apps/shared/timestamp-player/page-nav.js?v=3"></script>
+<script src="/apps/shared/timestamp-player/chordpro-timing.js?v=1"></script>
+<script src="/apps/shared/timestamp-player/salami-chords.js?v=2"></script>
 </div>
 ```
 :::

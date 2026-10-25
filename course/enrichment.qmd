@@ -1,0 +1,71 @@
+---
+title: "Enrichment"
+description: "Your own path through the music course: a shared core of audiation every week, plus enrichment you choose as performer, creator, producer, technician, reader or researcher, with your growth shown through the Music Learning Theory skill levels."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/course/course.css?v=1">
+<script src="/apps/shared/course/course-common.js?v=1"></script>
+<script src="/apps/shared/course/enrichment-data.js?v=1"></script>
+<script src="/apps/shared/course/enrichment.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+::: {.crs}
+<div id="en-viewing"></div>
+:::
+
+Everyone in a class works on the same unit and hands in the same four tasks; that is on your [pathway](pathway.qmd). Beyond
+that you come in with different instruments, interests and experience, so you also choose **enrichment**: things you work on
+to grow as a musician in your own direction. Click any heading to fold its section.
+
+## How it works
+
+- **Everyone does the common core.** A few minutes of tonal and rhythm patterns each week, one song by ear each unit, and the unit's
+  words. This is how everyone grows in audiation, whatever else they choose.
+- **Choose one or two options each unit.** Pick from any strand. Set each one to *Planning*, *Working on it* or *Done*, and note what you
+  did or made: that note is evidence you can use.
+- **Enrichment can feed your assessed work.** Each option says where it can show up: a technique to explore in Bi, a skill for your
+  Criterion C piece, research for Ai, or a DP component.
+- **Watch your growth.** Every option is tagged with the Music Learning Theory level it mostly trains. The ladder at the bottom shows
+  the levels you have reached and suggests what to try next.
+
+## The common core
+
+::: {.crs}
+<div id="en-core"></div>
+:::
+
+## Choose your enrichment
+
+::: {.crs}
+<div id="en-choose"></div>
+:::
+
+## Your growth through the MLT levels
+
+Gordon's skill learning sequence (*Learning Sequences in Music*, Table 17, p. 230) runs from learning by ear, through naming and
+reading, to the inference levels where you teach yourself: working out unfamiliar music, creating, and explaining. You don't
+climb it once: a new tonality, meter or instrument starts lower down again. Gordon also lets students *bridge* across to the
+inference levels as soon as they are ready, so creating does not have to wait until you can read. The tags on the options are
+this course's reading of what each activity mostly asks of you.
+
+::: {.crs}
+<div id="en-ladder"></div>
+:::
+
+## Share your plan
+
+::: {.crs}
+<div id="en-share"></div>
+:::
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+:::
+<!-- /works-cited -->

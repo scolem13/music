@@ -1,0 +1,286 @@
+---
+title: "The Saxophone"
+toc: true
+toc-depth: 2
+description: "Everything a beginning saxophonist needs: where the sax came from, the family, the parts, putting it together, holding it, your embouchure and first note, an interactive fingering chart and trill chart, fixing tone problems, tuning, vibrato, care, and players to listen to."
+instruments: [saxophone]
+topics: [instruments, technique]
+has: [fingering, interactive, svg]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/sax/sax-chart.js?v=2"></script>
+<script src="/apps/shared/sax/sax-page.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+The saxophone is a **woodwind** made of brass. It counts as a woodwind because its sound starts at a **reed**
+vibrating against a mouthpiece, like a clarinet, not at your lips buzzing, like a trumpet.
+This page follows the alto sax, the one most beginners start on, but the fingerings work on the tenor and baritone too.
+
+Want to practise patterns by ear with these fingerings? Try [Sax Patterns by Ear](../practice/sax-patterns-by-ear.qmd).
+
+## Where it came from {#history}
+
+- **Adolphe Sax**, a Belgian instrument maker who played flute and clarinet, invented it in the 1840s and patented it in **1846**,
+  after moving to Paris in 1842.
+- He wanted an instrument **between the woodwinds and the brass**: the mellow tone of a clarinet with some of the power and
+  brilliance of a trumpet. Woodwinds got more volume; brass got more agility.
+- His patent covered **two families of seven saxophones each**. The ones in **B♭ and E♭** were for military bands and caught on;
+  today's saxophones come from them. The ones in **C and F**, for orchestras, never did.
+- When the patent ran out in **1866**, other makers changed the design: a longer bell and extra keys for lower notes, then more keys
+  and alternate fingerings for the high notes.
+- It is the **youngest** woodwind, and the only one that has **never been made of wood**.
+
+## The saxophone family {#family}
+
+| Saxophone | Key | Notes |
+|---|---|---|
+| Sopranino | E♭ | The smallest: under 20 inches long. Rare. |
+| Soprano | B♭ | Usually straight. Not a good first sax. |
+| **Alto** | **E♭** | **The usual first saxophone.** |
+| Tenor | B♭ | Has a curve in the neck. Big in jazz. |
+| Baritone ("bari") | E♭ | The low voice of the band; has a spit valve. |
+| Bass | B♭ | Used in 1920s jazz records (it recorded better than a tuba or double bass); rarely written for now. |
+| Contrabass | E♭ | The largest: about six and a half feet. |
+
+At first the sax was mostly a **military band** instrument. In the 1900s it became central to **concert bands, big bands and jazz**,
+which use alto, tenor and baritone.
+
+**Why start on alto?** Alto parts are often harder than tenor and bari parts, so alto builds your technique and reading. Many
+bands let players take turns on the bigger saxes. Starting on soprano is not recommended.
+
+**Same fingers, different sound.** The saxophones are **transposing instruments**: a written note is fingered the same way on all of
+them, but each one *sounds* a different pitch. Written C sounds as concert E♭ on alto (a major 6th lower), concert B♭ on tenor (a
+major 9th lower) and concert E♭ on bari (an octave and a 6th lower). The fingering chart below shows both.
+
+## The parts {#parts}
+
+From the end you blow into, down to the bell:
+
+- **Reed**: a thin strip of cane. The thin tip vibrates against the mouthpiece and makes the sound.
+- **Mouthpiece**: holds the reed. Its cap protects the reed when you aren't playing.
+- **Ligature**: the metal or fabric band with screws that clamps the reed to the mouthpiece.
+- **Cork**: on the end of the neck. The mouthpiece pushes onto it; how far it goes on tunes the sax.
+- **Neck**: the curved tube between the mouthpiece and the body. Holds the **octave key** pad.
+- **Neck screw**: tightens the neck into the body.
+- **Body**: the big conical tube with all the keys, and the **bell** at the bottom. The neck strap hooks onto a ring on the back,
+  and there are two **thumb rests**: left thumb on top, right thumb underneath.
+
+## Putting it together {#assembly}
+
+::: {.sxp-steps}
+1. **Wet the reed**: put its thin end in your mouth. If the cork is dry, put a little cork grease on it.
+2. **Mouthpiece on the neck**: twist it on gently, with the flat side of the mouthpiece lined up with the bottom of the neck.
+3. **Ligature**: loosen its screws, slide it up a little, slip the reed in behind it, then slide it back down.
+4. **Line up the reed**: centered on the flat part, with just a hairline of mouthpiece showing above the tip of the reed. Tighten
+   the screws until snug, no tighter.
+5. **Neck strap**: put it around your neck and hook it to the sax.
+6. **Neck into body**: slide the neck into the top of the body and tighten the neck screw.
+:::
+
+## Holding it {#posture}
+
+1. Sit up straight near the **front edge of the chair**, on its **right side**, feet flat on the floor.
+2. **Right thumb** under the lower thumb rest, kept straight. **Left thumb** on the upper rest at about a 45° angle (so it can roll
+   onto the octave key).
+3. The sax sits on your **right side**.
+4. Adjust the neck strap, neck and mouthpiece so your **head stays straight**: bring the sax to you, not you to the sax.
+5. Curve your fingers into a relaxed "C", as if holding a tennis ball. **Wrists straight.**
+6. Relax. **Chin level** with the floor, **elbows away** from your body.
+
+Left hand on top (first three fingers on the B, A and G keys, pinky on the table of four small keys), right hand below (F, E, D keys,
+pinky on the two low keys, the side of the hand on the side keys).
+
+## Embouchure and your first note {#embouchure}
+
+Your **embouchure** (*OM-boo-shur*) is the shape of your mouth on the mouthpiece.
+
+1. Take the neck and mouthpiece off the body.
+2. Slide a piece of paper between the reed and mouthpiece, down from the tip until it stops.
+3. Put your thumb tip on the reed just below the line the paper makes. That's where your **lower lip** goes.
+4. Hold your thumb there and take the paper out. Shape your mouth as if you're saying "whee" and then "too".
+5. Roll a **little** of your lower lip over your bottom teeth.
+6. Put the mouthpiece in until your lower lip touches your thumb. **Top teeth rest right on top of the mouthpiece.** Close your lips
+   around it like a drawstring bag. **Chin flat and pointed.** Check in a mirror.
+7. Take a full breath through your mouth and play a long, steady note. With the whole sax together, the first note is
+   **G♯** on alto, **E** on tenor and bari (find them in the chart below).
+
+**Checklist** (have a friend or teacher watch): sitting straight · sax on your right · neck strap right · thumbs in place ·
+fingers curved · wrists straight · elbows out · head up · right amount of mouthpiece · top teeth on the mouthpiece · chin flat and
+pointed · even pressure all round the mouthpiece · breathing low and full · a good, steady tone.
+
+## Fingering chart {#fingering-chart}
+
+Pick a note. **Dark keys are pressed down**, white keys are open. Hover over a key (or long-press on a phone) for its name. Where there's
+more than one fingering, the first is the usual one; the others (**alternate fingerings**) make some fast passages easier.
+
+```{=html}
+<div id="sx-explorer"></div>
+```
+
+How to read the diagram: the **teardrop** on the left is the octave key (left thumb). The big circles are the left hand (top three)
+and right hand (bottom three) first, second and third fingers; the small circle between 1 and 2 is the **bis** key. The ovals at the
+top right are the **palm keys** (high D, E♭, F), the circle above them all is the **front F** key. On the right: the left pinky table
+(G♯, low C♯, low B, low B♭). On the left: the right hand **side keys** (high E, C, B♭) and the **alternate F♯** key; at the bottom, the
+right pinky keys (low E♭ above the line, low C below).
+
+## Build a fingering {#build}
+
+Press keys on the diagram yourself. In **What note is this?** the page names the note your fingering makes. In the **Quiz** it gives you
+a note and you build its fingering.
+
+```{=html}
+<div id="sx-builder"></div>
+```
+
+## Trill chart {#trills}
+
+A **trill** is a fast wobble between two notes. Some trills are awkward with the normal fingerings, so there are special ones:
+hold the dark keys down and move only the **gray** key(s).
+
+```{=html}
+<div id="sx-trills"></div>
+```
+
+## Voicing and the altissimo {#altissimo}
+
+Above high F there is a whole extra register called the **altissimo** (Italian for "highest"). There are no keys for it.
+You reach it by choosing an **overtone**: every note the saxophone plays is really a stack of pitches, and with the right
+shape inside your mouth you can make the horn jump to one of the higher ones.
+
+Donald Sinta calls that skill **voicing**. In his book with Denise Dabney, voicing means being aware of, and controlling, the
+muscles and soft tissue inside your mouth and throat: mostly where your tongue sits. It is *not* biting harder or pinching the
+reed. Sinta's idea is that if you can hear the pitch in your head before you play it, your mouth learns to find it.
+
+### Overtone ladder
+
+Finger low B♭ and don't change it. Then try to make the notes below come out, one at a time, using only your tongue and
+throat. Listen first, sing the note, then play it.
+
+```{=html}
+<div id="sx-overtones"></div>
+```
+
+Tips (from Jack Thorpe's altissimo articles):
+
+- **Airy, dull, low note?** Your tongue is probably too low or the air too fast. Raise the middle and back of your tongue a little.
+- **Squeak above the note?** Your tongue is too high or the air too slow.
+- Altissimo needs a slightly slower, warmer air stream than you'd guess. Keep your jaw relaxed: don't bite.
+- Check your tuning against a drone. Practise slurring up from palm-key F♯ before trying altissimo G.
+
+### Altissimo fingerings (alto)
+
+These are for alto (and soprano). Tenor and bari often need different ones. The ★ fingering is **Crunch G**, named for the way
+you "crunch" up your right hand: right first finger on F while the side of your hand presses the side B♭ and alternate F♯ keys.
+Many players learn it as their first altissimo note.
+
+```{=html}
+<div id="sx-altissimo"></div>
+```
+
+Altissimo fingerings change from horn to horn, so if one won't speak, try another. The Woodwind Fingering Guide lists dozens.
+
+## When the tone goes wrong {#tone-problems}
+
+| What it sounds like | Probably because… | Try this |
+|---|---|---|
+| **Choked**, pinched | Biting: too much lower-lip pressure | Relax, make your mouth more of an "O" |
+| | Too little mouthpiece in your mouth | Take in a bit more |
+| | Mouthpiece too closed for you | Ask about a mouthpiece that blows more easily |
+| | Ligature too high on the reed | Move it down |
+| **Rough, squawky** | Too much mouthpiece in your mouth | Take in a bit less |
+| | Embouchure too loose | Firm up into more of an "oo" shape |
+| | Reed too hard | Use a softer reed |
+| **Nasal**, thin | Air too slow | More support, faster air |
+| | Reed too soft | Use a stronger reed |
+| **Wobbly** | Top lip on the mouthpiece instead of top teeth | Put your top teeth on the mouthpiece |
+| **Hard to blow** | Reed too hard | Use a softer reed |
+| | Reed too high on the mouthpiece | Line it up with a sliver of mouthpiece showing |
+| | Ligature too high | Move it down |
+| | Leaking pads | Take it to a repair shop |
+
+**Loud and soft.** Like most woodwinds, the sax tends to go **flat when you play loud** and **sharp when you play soft**. Firm the
+embouchure as you get louder and relax it as you get softer. Practise **long tones**: hold one note for four bars, growing from
+*pp* to *ff* and back to *pp*, watching a tuner to keep the pitch still.
+
+## Playing in tune {#tuning}
+
+You can't tune a bad tone: **good tone first.** Saxophones are built to play in tune at A = 440.
+
+1. Push the mouthpiece about **halfway onto the cork**.
+2. Play written **G, then F♯** (both on the top of the staff, then both an octave lower), holding each.
+3. Check the **F♯** on a tuner (the navbar has one). **Sharp?** Pull the mouthpiece out a little. **Flat?** Push it further on.
+
+Some notes are out of tune on most saxophones, so listen for them and adjust:
+
+- tends to be **flat**: written **C♯5** (middle C♯, no keys pressed);
+- tend to be **sharp**: written **D5** (with the octave key) and **A5**.
+
+## Vibrato {#vibrato}
+
+**Vibrato** is a small, quick, even wobble in pitch that makes a note warmer. It never replaces a solid tone, and you should always be in
+control of how fast and how wide it is. Saxophonists make it with the **jaw**, as if saying "ya-ya-ya".
+
+1. Metronome at **76**. Hold a comfortable note, such as B on the middle line.
+2. Move your jaw slightly as if saying "ya" **once** on each click.
+3. Then **twice** per click ("ya-ya"), evenly.
+4. Then **three** times, then **four**. Four per beat at 76 suits most music.
+5. Use it on slow scales in whole notes, then in simple melodies.
+
+## Looking after it {#care}
+
+After every practice:
+
+1. **Bari only**: press the spit valve and shake out the water.
+2. Take off the ligature and reed. Put the reed in a **reed holder** to dry, never left on the mouthpiece.
+3. Wipe the inside of the mouthpiece with a soft clean cloth. Ligature and cap back on.
+4. Take off the neck, shake it, and dry it with the wool end of the neck cleaner.
+5. **Alto and tenor**: drop the weighted swab into the bell end, turn the sax over, and pull the swab through the body.
+6. Put each part back in its own place in the case as you finish with it. Latch the case.
+
+## Players to listen to {#listening}
+
+Ask your teacher before you look these up: not every recording is suitable for school.
+
+**Classical saxophone**: Daniel Deffayet, Fred Hemke, Guy Lacour, Marcel Mule, Eugene Rousseau, John Sampen, Donald Sinta.
+
+**Jazz saxophone**: Pepper Adams, Cannonball Adderley, Sidney Bechet, Jane Ira Bloom, Anthony Braxton, Michael Brecker, Harry Carney,
+Benny Carter, Ornette Coleman, John Coltrane, Stan Getz, Johnny Hodges, Dave Liebman, Gerry Mulligan, Charlie Parker, Cecil Payne,
+Sonny Rollins, David Sanborn, Wayne Shorter, Lester Young.
+
+```{=html}
+<script>
+SaxPage.explorer(document.getElementById("sx-explorer"));
+SaxPage.builder(document.getElementById("sx-builder"));
+SaxPage.trills(document.getElementById("sx-trills"));
+SaxPage.overtones(document.getElementById("sx-overtones"));
+SaxPage.altissimo(document.getElementById("sx-altissimo"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Saxophone Fingerings to Help You Break into Altissimo." <em>DANSR</em>, 28 Feb. 2024, [www.dansr.com/resources/saxophone-fingerings-to-help-you-break-into-altissimo](https://www.dansr.com/resources/saxophone-fingerings-to-help-you-break-into-altissimo). Front-F E, F and altissimo F♯, G, G♯ for soprano/alto (redrawn).
+
+"Saxophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Saxophone](https://en.wikipedia.org/wiki/Saxophone). Unverified: the transpositions (alto M6, tenor M9, bari octave + M6 below written). Not yet re-read.
+
+Thorpe, Jack. "How to Play Your First Saxophone Altissimo Note: Part Three." <em>DANSR</em>, 14 Dec. 2023, [www.dansr.com/resources/how-to-play-your-first-saxophone-altissimo-note-part-three](https://www.dansr.com/resources/how-to-play-your-first-saxophone-altissimo-note-part-three). Crunch G fingering and the name; tongue/air advice.
+
+**For teachers**
+
+Jones, Emma. "Short Summary of the Books." <em>Learning the Altissimo Register of the Saxophone</em>, Research Catalogue, 2017, [www.researchcatalogue.net/view/216638/340512](https://www.researchcatalogue.net/view/216638/340512). Summary of Sinta's Voicing: voicing as control of the oral cavity and vocal tract; aural anticipation.
+
+"Lower Altissimo: Alternate Fingering Chart for Saxophone." <em>The Woodwind Fingering Guide</em>, [www.wfg.woodwind.org/sax/sax_alt_4.html](https://www.wfg.woodwind.org/sax/sax_alt_4.html). Cross-check of the altissimo fingerings; key names from its Fingering Scheme page.
+
+Pimentel, Bret. "Saxophone Altissimo Books: Raschèr vs. Rousseau." 19 Nov. 2013, [bretpimentel.com/saxophone-altissimo-books-rascher-vs-rousseau](https://bretpimentel.com/saxophone-altissimo-books-rascher-vs-rousseau). Further reading: Raschèr's Top-Tones and Rousseau's Saxophone High Tones compared. Their own dates not verified.
+
+"Saxophone." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 140-59. History, family, parts, assembly, posture, embouchure, care, checklist, tone problems, tuning, vibrato, listening list, fingering chart (p. 158) and trill chart (p. 159). Retold in the page's own words; charts redrawn from the book's key template.
+
+Sinta, Donald J., and Denise C. Dabney. <em>Voicing: An Approach to the Saxophone's Third Register</em>. Sintafest Music, 1992. Not read directly. Year, publisher (Laurel, MD) and co-author from the East Carolina University catalogue record (one listing names Blaris Publications); the definition of voicing as quoted in Jones's summary below.
+:::
+<!-- /works-cited -->

@@ -1,0 +1,170 @@
+---
+title: "X32: Drums on One Fader"
+description: "Assign every miked piece of a drum kit to one DCA fader, and make a mute group that silences the whole kit with one button."
+toc: true
+toc-depth: 2
+---
+
+A miked drum kit takes up eight or nine channels. During a show you want to turn the **whole kit** up or
+down with one hand, and mute it with one button. The X32 has two tools for this:
+
+| Tool | What it does | How many |
+|---|---|---|
+| **DCA group** | One fader that moves the level of every channel assigned to it | 8 (DCA 1–8) |
+| **Mute group** | One button that mutes every channel assigned to it | 6 (Mute Group 1–6) |
+
+Page numbers below are the PDF pages of the Behringer *X32 Preliminary User Manual* (links in Works Cited).
+
+## Before you start: a channel plan
+
+Plug the drum mics into neighbouring channels and name them. A typical kit:
+
+| Ch | Mic | Name on the scribble strip |
+|---|---|---|
+| 1 | Kick (inside) | KICK IN |
+| 2 | Kick (outside) | KICK OUT |
+| 3 | Snare top | SNARE T |
+| 4 | Snare bottom | SNARE B |
+| 5 | Hi-hat | HAT |
+| 6 | Rack tom | TOM 1 |
+| 7 | Floor tom | TOM 2 |
+| 8 | Overhead left | OH L |
+| 9 | Overhead right | OH R |
+
+Your kit may have fewer mics; the steps are the same. Set each drum's gain, low cut, gate and EQ first
+(Live Sound lessons [2](../lessons/live-gain.qmd)–[5](../lessons/live-comp.qmd)) and get a rough balance
+between them on their own faders. The DCA then moves that balance up and down as one.
+
+## DCA or group bus?
+
+A **DCA** (digitally controlled amplifier) does not mix the drums into a new signal. It just moves every
+assigned channel's level at once, so each drum still has its own fader for small fixes (manual p. 32).
+
+A **group** is a mix bus that the channels feed at unity gain: the drums really are summed into one signal.
+Use one when you want to process the whole kit together, for example one compressor across all the drums,
+which "would not be possible with a DCA group" (manual p. 32–33). For one fader to ride the kit during a
+show, use a DCA. You can use both.
+
+## Overheads on a noisy stage
+
+The overheads (channels 8 and 9) are the hardest mics on the kit. They hang over the cymbals, a long way from
+any drum, so they also hear the guitar amps, the bass rig, the wedges and the singer. On a loud stage that
+bleed can make up more of their signal than the drums do. Push the DRUMS DCA up and the whole band gets louder
+with it.
+
+**Use directional mics.** Use cardioid or hypercardioid overheads, not omnis. With hypercardioids, watch for
+"hot spots" when they point straight down (La Cerra). Omnis only work set low and close over the kit.
+
+**Pick a height.** La Cerra's starting point is "approximately six feet high, pointing either straight down
+to the floor or angled toward the center of the kit." Higher gives a more even blend of the cymbals.
+Lower and closer gives more drum and less stage. On a noisy stage, start low, just above the cymbals' reach,
+and raise them only as far as the blend needs.
+
+**Aim the dead side at the noise.** A cardioid hears least from directly behind. Angling the overheads
+slightly toward the audience "increase[s] rejection of the drum monitors" (La Cerra). Do the same for a
+guitar amp or a wedge that sits close to the kit: turn the back of the mic toward it.
+
+**Keep them in step.** Two mics at different distances from the snare cause phase trouble (thin, hollow
+drums). Measure from the centre of the snare to each overhead and make the two distances equal. Then press
+the X32's **mono** button in the monitor section and listen: if the kit goes thin when both are up, move
+one mic. The **3:1 rule** (mics at least three times as far from each other as from their source) is a
+rough guide for spaced mics often quoted by engineers (unverified: no source checked yet).
+
+**Clean them up on the console.**
+
+- **Low cut** high. The kick and toms have their own mics, so the overheads only need cymbals and some snare.
+  Try 150–300 Hz; the X32 goes up to 400 Hz (Maillot p. 26).
+- **No gate.** Cymbals ring for a long time and a gate chops them off
+  ([Live Sound 4](../lessons/live-gate.qmd)).
+- **Less fader.** In a small, loud room the cymbals carry on their own. Bring the overheads up only until the
+  cymbals sit right in the PA. Sometimes the right level is very low, or one overhead, or none.
+
+**Turn the stage down.** No mic choice fixes everything. Ask the guitarist to point the amp away from the kit
+or turn it down. Turn down the drummer's wedge, or fill it with less of everything else. A quieter stage
+helps every mic, not only the overheads.
+
+## Make the DCA
+
+1. On the right-hand fader section, press **GROUP DCA 1-8** so the eight faders there are DCAs (p. 16, 32).
+2. **Hold** the **Select** button of DCA 1.
+3. While holding it, press **Select** on every drum channel: 1 through 9. If the channels are on another
+   layer (17–32), switch the left-hand layer while still holding DCA 1's Select. Inputs, aux channels,
+   FX returns and bus masters can all go in a DCA (p. 32).
+4. Let go. To check, press DCA 1's **Select** again: the Select buttons of its channels light up (p. 8, 32).
+5. To take a channel out, hold DCA 1's Select and press that channel's Select again (it toggles; not stated in
+   the manual, so check that the light goes off).
+
+**Name it.** Press **SETUP**, page right to **DCA GROUPS**, turn the first encoder to DCA 1 and press it.
+Pick a colour, an icon and the name `DRUMS`, then press the sixth encoder to leave (p. 32).
+
+**Use it.** Leave DCA 1 at **0 dB** (unity) while you build the drum balance on the channel faders. In the
+show, ride DCA 1. Its **Mute** button mutes the DCA and its **Solo** solos all its channels (p. 16).
+Solo on a DCA is PFL unless you choose **DCA Group AFL** in the monitor's solo preferences (p. 31).
+
+<div class="callout callout-style-simple callout-note"><div class="callout-body">
+**Monitor mixes.** A DCA works by moving channel levels after the fader. Sends to the stage monitors that
+are set **pre-fader** should not follow it; **post-fader** sends (reverb, for example) should. The manual
+does not spell this out: check it once by watching a monitor bus meter while you move DCA 1.
+</div></div>
+
+## Make the mute group
+
+A mute group has a safety step so you can't mute channels by accident while you set it up (p. 8):
+
+1. Press **MUTE GRP** next to the main screen. The screen shows the mute group view, and the channel Mute
+   buttons stop muting while you assign (p. 32, 59).
+2. **Hold** Mute Group button **1** (bottom right of the console, beside the Main LR fader).
+3. While holding it, press **Select** on drum channels 1–9 (any layer, inputs or outputs) (p. 59).
+4. Let go, and press **MUTE GRP** again. The buttons work normally again (p. 32).
+5. Press **Mute Group 1** to mute the whole kit; press it again to bring it back (p. 32).
+
+Good uses: mute the drums between songs or while the drummer is setting up; put the drum reverb return in
+the same mute group so the reverb tail mutes too.
+
+<div class="sk-tip">Mute Group 1 mutes the drums wherever they go. Muting DCA 1 does the same job from the
+DCA fader. Pick one and tell the other people who run the board, so nobody wonders why the drums won't
+come back.</div>
+
+## Save it
+
+Store a **scene** once it works (the Scenes buttons, p. 17). The DCA names and assignments live in the
+console's setup, and the manual says DCA group settings "are stored with the Scene data" (p. 28).
+Load the scene at the start of the next rehearsal, and press DCA 1's Select to check the drums are still in it.
+
+## If it doesn't work
+
+| Problem | Check |
+|---|---|
+| Pressing channel Selects just selects them | You let go of the DCA's (or mute group's) button too soon. Hold it the whole time. |
+| The faders on the right are buses, not DCAs | Press **GROUP DCA 1-8** (p. 16). |
+| Mute group buttons mute nothing | MUTE GRP is still on (assign mode). Press it again (p. 32). |
+| Drums silent and nothing looks muted | Check DCA 1's Mute and Mute Group 1. Both can mute the kit. |
+| The drum balance changed | Someone moved a channel fader. The DCA keeps the channels' balance; it doesn't store it. |
+
+## For the curious: what the console stores
+
+In Maillot's OSC reference, each channel keeps its groups as two numbers: `/ch/01/grp/dca` (8 bits, one per
+DCA) and `/ch/01/grp/mute` (6 bits, one per mute group) (p. 28). Each DCA has its own `on`, `fader`,
+`name`, `icon` and `color` (p. 39). The **Config → Mute System** preferences include "Hard Mutes" and
+"DCA groups" (p. 56); the reference names them but doesn't say what they do, so leave them alone unless
+you've tested them.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+La Cerra, Steve. "Sweet Sounds From the Stage." *Mix*, 1 Nov. 2007, [www.mixonline.com/live-sound/sweet-sounds-stage-368579](https://www.mixonline.com/live-sound/sweet-sounds-stage-368579). Live drum overheads: about six feet up, directional patterns, hypercardioid hot spots, angling toward the audience to reject the drum monitors.
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

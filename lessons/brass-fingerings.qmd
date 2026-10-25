@@ -1,0 +1,103 @@
+---
+title: "Trumpet and Tuba Fingering Charts"
+toc: true
+toc-depth: 2
+description: "How valves change the pitch of a brass instrument, and interactive trumpet and tuba fingering charts: pick a note, press valves to see which notes they play, quiz yourself, and switch the staff and note names on and off."
+instruments: [trumpet, tuba]
+topics: [instruments, technique]
+has: [fingering, interactive, svg, notation]
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/brass/brass.css?v=1">
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/brass/brass-chart.js?v=1"></script>
+<script src="/apps/shared/brass/brass-page.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+Trumpet and tuba are **brass** instruments: the sound starts with your **lips buzzing** in a cup-shaped mouthpiece, and the tube of
+the instrument decides which pitches come out. The charts on this page are redrawn from two printed fingering charts (see the Works Cited).
+Use the controls above each chart to show or hide the **staff** and the **letter names**, so you can practise reading
+notes, hearing notes, or matching a fingering to a name.
+
+## How the valves work {#valves}
+
+- A brass instrument is a long tube. With **no valves pressed** the player can buzz only the notes of that tube's **harmonic series**
+  (the **partials**): for a trumpet written C4, G4, C5, E5, G5 and so on. Tighter lips and faster air go to a higher partial.
+- Each **valve** opens a short extra loop of tubing. A longer tube means a **lower** pitch.
+- The usual pattern on a three-valve instrument: **valve 2** lowers the note by a **half step**, **valve 1** by a **whole step**, and
+  **valve 3** by a **step and a half**. Combinations add up (1 + 2 = a step and a half; 1 + 2 + 3 = three whole steps).
+  Those sizes are the standard ones, but they are not printed on these charts (see "What is unverified").
+- That is why **one fingering plays many notes**: a note is a *fingering* (which valves) plus a *partial* (how your lips and air are set).
+  The charts print the partials in rows: the row number is the **partial** and the column is the **fingering**.
+- A **tuba** often has a **fourth valve**. On the tuba chart, valve **4** is printed as an alternate for the notes of **1 + 3**, and **2 + 4** as an alternate
+  for **1 + 2 + 3**.
+
+## Explore the chart {#explore}
+
+Pick an instrument, then a note. The card shows the staff, the valves (dark = pressed down), any alternate fingering, and the other
+notes the same fingering plays. **Hear it** plays a synthesized brass-like buzz.
+
+* **Trumpet** is a transposing instrument: the chart is for a **B♭ trumpet**. The staff and names show **written** pitch (what the player reads); choose
+  **Concert pitch** to see what you hear: a whole step lower.
+* **Tuba** is read in the **bass clef**. This chart does not say which tuba it is for; the page shows it as **B♭ tuba at concert pitch**.
+
+```{=html}
+<div id="br-explorer"></div>
+```
+
+## Press valves: which notes? {#build}
+
+Press valves and the page lists every note on the chart that fingering can play (low to high). In the quiz you are given a note
+and press its valves. On the trumpet quiz the note is a **written** note.
+
+```{=html}
+<div id="br-builder"></div>
+```
+
+## The printed chart, as a table {#table}
+
+Each column is a valve combination. Each row is one of the chart's partials. This is the same information as the printed charts. Click a note to hear it.
+
+```{=html}
+<div id="br-table"></div>
+```
+
+## What is unverified {#unverified}
+
+These are the things this page is not sure of. Check them with your teacher.
+
+- The tuba chart does not say whether it is for a **B♭, C, E♭ or F tuba**. The notes it prints fit a **B♭ tuba** (open notes B♭, F, B♭, D, F), so that is how the page
+  shows it. Other tubas use the same valve patterns for different note names.
+- The charts number the partials from "1st" at the lowest row they print. Acoustically those are not the 1st partial of the tube (the **pedal tone** is below them), so
+  the numbers are the chart's own.
+- The sizes of what each valve does (half step, whole step, step and a half, perfect fourth for the tuba's 4th valve) and the trumpet's
+  B♭ transposition are standard textbook facts, listed in the Works Cited, but not printed on the two charts.
+- The footnote "move the 3rd valve slide out for low D and C♯" is on the trumpet chart; the page shows the star but not how far to move the slide.
+- Valve-4 fingerings are shown for the tuba notes F, C (with 4) and E, B (with 2 + 4) only, as the chart prints them.
+- The sounds are a synthesized buzz, not a recording of a real trumpet or tuba.
+
+```{=html}
+<script>
+BrassPage.explorer(document.getElementById("br-explorer"));
+BrassPage.builder(document.getElementById("br-builder"));
+BrassPage.chartTable(document.getElementById("br-table"));
+</script>
+```
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Trumpet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Trumpet](https://en.wikipedia.org/wiki/Trumpet). Unverified: the valve intervals (valve 2 half step, 1 whole step, 3 step and a half) and the B-flat trumpet's written-to-concert whole step. Not yet re-read.
+
+"Tuba." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tuba](https://en.wikipedia.org/wiki/Tuba). Unverified: that B-flat tubas (BBb) and C tubas exist and that the 4th valve lowers a perfect fourth. Not yet re-read.
+
+**For teachers**
+
+"Essential Range Tuba Fingering Chart." StepWise Flashcards, [www.fingeringcharts.org](https://www.fingeringcharts.org). One-page chart (file name tubaFingeringChart.pdf), 'Correlates with StepWise Flashcards, www.fingeringcharts.org'. Bass clef, valves 0-123 and the valve-4 alternates (4, 24). The chart does not say which tuba it is for; the page reads it as B-flat tuba at concert pitch (unverified). Year and author not printed.
+
+"Trumpet Fingering Chart." StepWise Flashcards, StepWise Publications, 2022, [stepwisepublications.com](https://stepwisepublications.com). One-page chart (file name 2022_new_trumpet_fingering_chart.pdf), (c) stepwisepublications.com, 'Correlates with NinGenius Music StepWise Flashcards'. Redrawn: every fingering, the printed partial rows, the 'skipped partial (too flat)' note and the 3rd-valve-slide footnote for low D and C-sharp. URL is the one printed on the chart, not a link to the chart itself (unverified).
+:::
+<!-- /works-cited -->

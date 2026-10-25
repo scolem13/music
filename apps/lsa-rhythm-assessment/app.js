@@ -456,9 +456,22 @@ async function ensureAudio(){
   await audioCtx.resume();
 }
 let activeOscs = [];
+let activeChants = [];
 function stopAllTones(){
   for (const osc of activeOscs){ try { osc.stop(); } catch(e){} }
   activeOscs = [];
+  for (const h of activeChants){ try { h.stop(); } catch(e){} }
+  activeChants = [];
+}
+// "Conversational": the MODEL pattern chanted by RhythmChant (apps/shared/rhythm-chant.js) on this page's clock at the times the clicks /
+// woodblocks would have sounded. Only the sound changes; metronome, recording window and grading are untouched.
+function chantThis(startCtx, spl, gain){
+  if (!window.RhythmChant || !RhythmChant.enabled()) return false;
+  try {
+    activeChants.push(RhythmChant.play(currentAbc, { ctx: audioCtx, when: startCtx, secPerQuarter: spl / target.lQuarters,
+      triple: isTriple, macroQuarters: macroLUnits * target.lQuarters, gain: gain, jitterMs: 0 }));   // onsets exactly on the grid
+    return true;
+  } catch(e){ console.warn("RhythmChant:", e); return false; }
 }
 function click(midi, start, dur, gain){
   const osc = audioCtx.createOscillator(), g = audioCtx.createGain();
@@ -508,6 +521,7 @@ const WB_BEAT_GAIN     = 0.26;
 function maybeEchoOnsets(onsets, startCtx, spl, durSec){
   if (Math.random() >= 0.4) return false;
   const echoStart = startCtx + durSec;
+  if (chantThis(echoStart, spl, 0.4)) return true;     // Conversational: the echo is chanted, quieter
   for (const on of onsets) woodblockB(echoStart + on*spl, 0.05, WB_ECHO_GAIN);
   return true;
 }
@@ -591,7 +605,7 @@ async function hearPattern(){
   const perfMacrobeats = Math.round(target.total / macroLUnits);
   scheduleMetronome(ctxNow, perfNow, N + perfMacrobeats, [0, N], spm, lat);
   const downbeat = ctxNow + INITIAL_DELAY + N*spm;
-  for (const on of target.onsets) click(88, downbeat + on*spl, 0.07, 0.22);
+  if (!chantThis(downbeat, spl)) for (const on of target.onsets) click(88, downbeat + on*spl, 0.07, 0.22);
   setFlow("listened");
 }
 
@@ -651,6 +665,11 @@ async function recordAttempt(){
 }
 
 document.getElementById("play").addEventListener("click", hearPattern);
+// "Conversational" checkbox beside Hear pattern; off by default (graded echo page: the click model is the precise one)
+if (window.RhythmChant){
+  RhythmChant.scope("lsa-rhythm-assessment", false);
+  RhythmChant.checkbox(null, { after: document.getElementById("play"), onchange: stopAllTones });
+}
 document.getElementById("record").addEventListener("click", recordAttempt);
 document.getElementById("mic").addEventListener("click", enableMic);
 
@@ -772,7 +791,7 @@ async function runRegularCycle(){
 
   scheduleMetronome(ctxNow, perfNow, 2*pm, [0, pm], spm, lat);
   const modelDownbeat = ctxNow + INITIAL_DELAY;
-  for (const on of target.onsets) click(88, modelDownbeat + on*spl, 0.07, 0.22);
+  if (!chantThis(modelDownbeat, spl)) for (const on of target.onsets) click(88, modelDownbeat + on*spl, 0.07, 0.22);
 
   perfT0 = perfNow + (INITIAL_DELAY + pm*spm + lat) * 1000;
   collecting = true;
@@ -834,7 +853,7 @@ async function runLsaCycle(){
   // Teaching / listen: the pattern, as a woodblock, straight away -- 40% chance
   // of a quiet "someone plays along" echo.
   const listenStart = ctxNow + INITIAL_DELAY;
-  for (const on of target.onsets) woodblockA(listenStart + on*spl, 0.05, WB_PATTERN_GAIN);
+  if (!chantThis(listenStart, spl)) for (const on of target.onsets) woodblockA(listenStart + on*spl, 0.05, WB_PATTERN_GAIN);
   const echoed = maybeEchoOnsets(target.onsets, listenStart, spl, patternDur);
   const listenDur = patternDur * (echoed ? 2 : 1);
 

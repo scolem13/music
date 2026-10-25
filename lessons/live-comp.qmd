@@ -1,0 +1,74 @@
+---
+title: "Live Sound 5: Compression"
+toc: true
+toc-depth: 2
+description: "The X32 compressor on a vocal and a bass: threshold, ratio, knee, attack, release, makeup gain, and pre or post EQ."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive, svg]
+---
+
+A singer sings the verse softly and belts the chorus. A bass player pops some notes. In the mix, the quiet
+parts vanish and the loud parts jump out. A **compressor** turns the loud parts down automatically so the
+level stays more even; then you turn the whole channel back up.
+
+## The X32 compressor
+
+Press **Comp** (the Dynamics button) and turn its threshold. On the Dyn page:
+
+- **Threshold** (−60 to 0 dB): above this level it starts turning down.
+- **Ratio**: the X32 offers 1.1, 1.3, 1.5, 2, 2.5, 3, 4, 5, 7, 10, 20 and 100 to 1. At 4:1, a signal 8 dB over
+  the threshold comes out only 2 dB over. 2–4:1 for vocals; 10:1 and up is limiting.
+- **Knee** (0–5): 0 starts compressing suddenly at the threshold; higher numbers ease in.
+- **Attack** (0–120 ms) and **Release** (5 ms – 4 s): how fast it turns down, and how fast it lets go. A very
+  fast attack flattens every consonant and pluck; 5–20 ms keeps the start of each note.
+- **Gain** (0–24 dB): makeup gain, to bring the level back up.
+- **Det**: PEAK reacts to every peak; RMS to the average loudness (smoother, more like the ear).
+- **Pos**: before (PRE) or after (POST) the EQ.
+
+The channel's **gain reduction** meter shows how hard it is working; on the fader strip a light shows it.
+
+## Try it: the vocal
+
+The verse is about 18 dB quieter than the chorus.
+
+<div class="lk" data-w="strip" data-source="vocal" data-show="pre dyn fader" data-goal="comp"
+  data-tries="Off:dyn=0;Gentle:dyn=1,dthr=-34,dratio=6,datt=10,drel=150,dgain=12;Squashed:dyn=1,dthr=-50,dratio=11,datt=0,drel=50,dgain=18"></div>
+
+Bring the **Threshold** down until the gain-reduction meter moves on the chorus but hardly on the verse, try a
+ratio of 3:1 or 4:1, then add makeup **Gain** until it's as loud as before. Press **Check my channel**.
+**Squashed** shows going too far: flat, lifeless, and the breaths and room come up with it.
+
+## Try it: the bass
+
+Some notes are popped, about 12 dB louder than the rest.
+
+<div class="lk" data-w="strip" data-source="bass" data-show="pre dyn fader" data-goal="comp"
+  data-tries="Off:dyn=0;Even:dyn=1,dthr=-26,dratio=6,datt=5,drel=100,dgain=6"></div>
+
+## Compressor or fader?
+
+A compressor reacts in milliseconds; you can't. But it doesn't know the song. Use the compressor to keep the
+level in a sensible window, and still ride the fader for the big changes (a solo, a quiet verse).
+
+## Next
+
+- [Live Sound 6: Monitors and Feedback](live-feedback.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+"Dynamic range compression." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dynamic_range_compression](https://en.wikipedia.org/wiki/Dynamic_range_compression).
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _live-kit.qmd >}}

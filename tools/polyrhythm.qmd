@@ -1,0 +1,33 @@
+---
+title: "Polyrhythm"
+toc: true
+description: "Play two to four rhythms at once: even divisions (3 against 2, 4 against 3, 5 against 4) or x/. patterns (bells, clave, riffs), as polyrhythm or polymeter, drawn on a circle and a grid."
+---
+
+{{< include ../lessons/_poly-kit.qmd >}}
+
+## Player
+
+<div class="poly" data-layers="3;2" data-sounds="hi;lo" data-bpm="60" data-edit data-presets></div>
+
+## How to use it
+
+- **Layers.** Each layer is a number (that many even hits per cycle) or a pattern: `x` a hit, `X` an accent, `.` a rest.
+  `x.x.xx.x.x.x` is the 12-pulse bell pattern; `x..x..x...x.x...` is son clave.
+- **Beat.** The tempo counts the hits of the layer marked *beat*. For a pattern it counts the pattern's main beats
+  (12 pulses are four beats of three; 16 pulses four beats of four).
+- **Polymeter.** Ticked, every step of every layer is the same length, so a 5-step riff against a 4-step bar drifts and
+  lines up again only after 20 steps. Unticked, each layer is stretched over one cycle: a polyrhythm.
+- **Mute.** Click a layer's name to mute it, then clap or play that layer yourself.
+
+The lessons that use this player are in the **Polyrhythm** part of the Lessons sidebar, starting with
+[What Is a Polyrhythm?](../lessons/poly-basics.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+:::
+<!-- /works-cited -->
+

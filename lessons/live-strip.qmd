@@ -1,0 +1,73 @@
+---
+title: "Live Sound 1: The X32 Channel Strip"
+toc: true
+toc-depth: 2
+description: "Every input channel on the X32, top to bottom: preamp, low cut, gate, EQ, compressor, fader."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive, svg]
+---
+
+The **Behringer X32** is our main mixing desk. It has 32 input channels, and every one of them is the same
+strip of tools, in the same order. Learn one channel and you know all 32.
+
+## The strip, in order
+
+Press a channel's **Select** button and the knobs in the middle of the desk (the *channel strip*) all work on
+that channel. The X32 manual lists its sections in signal order:
+
+1. **Config / Preamp**: **Gain** (how much the mic signal is amplified, −12 to +60 dB), **48 V** phantom power
+   for condenser mics, **Ø** polarity flip, and the **Low Cut** filter (20–400 Hz).
+2. **Gate** and **Dynamics**: the noise gate turns the channel *down* when it's quiet; the compressor turns the
+   loud parts down.
+3. **Equalizer**: four bands (Low, Lo Mid, Hi Mid, High), each with Type, Freq, Gain and Q.
+4. **Bus Sends** and **Main Bus**: monitor mixes, effects, and the send to the main speakers (pan, and the
+   fader at the bottom of the strip).
+
+Each section has a button that switches it on (lit) or off (dark), and a **View** button that opens all its
+settings on the screen. The compressor can sit before or after the EQ (the **Pos** setting on the Dyn page).
+
+<div class="sk-tip">On the fader strip itself you also get <b>Mute</b>, <b>Solo</b>, a small input meter, and
+two little lights that show when the <b>gate</b> and <b>compressor</b> are working on that channel.</div>
+
+## Try it: one X32 channel
+
+This is one channel of the X32, laid out left to right instead of top to bottom. The knobs have the X32's
+ranges. Drag a knob up or down (Shift for fine), use the mouse wheel or the arrow keys; double-click to reset.
+
+<div class="lk" data-w="strip" data-source="vocal" data-goal="auto"></div>
+
+- **Speakers** is *your* volume, not part of the desk.
+- The **input meter** next to Gain shows the level after the preamp, with the X32's marks (−54 to clip).
+- The graph under the EQ shows the EQ curve (amber) over what is coming out (blue).
+- The strip at the bottom shows the last 4 seconds: grey is the level the gate sees, amber what comes out,
+  and dashed lines for the gate and compressor thresholds when they're on.
+- **⤓ WAV** saves the source sound so you can play it through the real desk (see
+  [Live Sound 7](live-soundcheck.qmd#practice-on-the-real-x32)).
+
+Every source here has something wrong with it on purpose. The next lessons fix them one at a time.
+
+## Gain is not volume
+
+The single most common mistake on a live desk: using the **Gain** knob as a volume control, or the fader as
+a fix for bad gain. They do different jobs. [Live Sound 2](live-gain.qmd) is all about it.
+
+## Next
+
+- [Live Sound 2: Gain vs. Volume](live-gain.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _live-kit.qmd >}}

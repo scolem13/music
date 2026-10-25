@@ -1,0 +1,163 @@
+---
+title: "Elements 6: Metre and Time Signatures"
+toc: true
+toc-depth: 2
+description: "How the beats are grouped into measures: time signatures, simple and compound time, duple, triple and quadruple, common and cut time, and how to tell them apart by ear."
+instruments: [piano, guitar, bass, drums, violin, sax, voice, other]
+topics: [elements, rhythm, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Metre** is how the steady beat (the **pulse**) is grouped. The strong beat comes round regularly: every 2, 3 or 4 beats.
+Each group is a [measure]{.nn}.
+
+## 1. Time signatures
+
+A time signature is written at the start of the music, and again wherever it changes.
+
+- The **top number** says how many beats in each [measure]{.nn} (in simple time).
+- The **bottom number** says what kind of note gets the beat: 4 = [quarter note]{.nn}, 2 = [half note]{.nn}, 8 =
+  [eighth note]{.nn}.
+
+**C** is short for 4/4, called **common time**. **C with a line through it** is 2/2, **cut time** (*alla breve*).
+
+## 2. Simple time
+
+In **simple time** each beat splits into **two** equal halves.
+
+| Time signature | Beats in a [measure]{.nn} | Name | Often heard in |
+|---|---|---|---|
+| 2/4 | 2 [quarter notes]{.nn} | simple duple | marches, polkas |
+| 3/4 | 3 [quarter notes]{.nn} | simple triple | waltzes, minuets |
+| 4/4 | 4 [quarter notes]{.nn} | simple quadruple | most pop, rock and jazz |
+
+Listen for where the strong beat (the accent) falls:
+
+<div class="abc-ex" data-bpm="112" data-style="pop"><script type="text/plain">
+X:1
+T:2/4: ONE two, ONE two
+M:2/4
+L:1/8
+K:C
+"C"!>!c2 G2|"G"!>!B2 G2|"C"!>!c2 e2|"G"!>!d4|"C"!>!c2 G2|"G"!>!B2 D2|"C"!>!C4|z4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="132" data-style="waltz"><script type="text/plain">
+X:1
+T:3/4: ONE two three
+M:3/4
+L:1/4
+K:G
+"G"!>!G B d|"D"!>!A F D|"G"!>!G B d|"C"!>!c2 B|"D"!>!A F A|"G"!>!G3|]
+</script></div>
+
+<div class="abc-ex" data-bpm="100" data-style="rock"><script type="text/plain">
+X:1
+T:4/4: ONE two three four
+M:4/4
+L:1/4
+K:A
+"A"!>!A c e c|"D"!>!d f a f|"E"!>!e B G B|"A"!>!A4|]
+</script></div>
+
+## 3. Compound time
+
+In **compound time** each beat is a dotted note and splits into **three**. The top number counts the
+[eighth notes]{.nn}, not the beats: divide it by three to get the beats.
+
+| Time signature | [Eighth notes]{.nn} | Beats (dotted [quarter notes]{.nn}) | Name |
+|---|---|---|---|
+| 6/8 | 6 | 2 | compound duple |
+| 9/8 | 9 | 3 | compound triple |
+| 12/8 | 12 | 4 | compound quadruple |
+
+The same tune in 2/4 and in 6/8. Both have two beats in a [measure]{.nn}; listen to how each beat divides:
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:2/4: each beat in two
+M:2/4
+L:1/16
+K:D
+!>!A2B2 !>!A2F2|!>!E2F2 !>!E2C2|!>!A2B2 !>!A2F2|!>!E4 !>!D4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:6/8: each beat in three
+M:6/8
+L:1/8
+Q:3/8=100
+K:D
+!>!ABA !>!F2D|!>!EFE !>!C3|!>!ABA !>!F2A|!>!E3 !>!D3|]
+</script></div>
+:::
+
+12/8 is the slow, rolling feel of many blues and soul ballads: four beats, each in three.
+
+<div class="abc-ex" data-bpm="60" data-style="ballad"><script type="text/plain">
+X:1
+T:12/8
+M:12/8
+L:1/8
+Q:3/8=60
+K:C
+"C"E2G c2G E2G c2G|"F"F2A c2A "G"G2B d3|"C"c12|]
+</script></div>
+
+## 4. Hearing the metre
+
+1. Tap the pulse with your foot.
+2. Listen for the strongest beat, often where the bass note or the chord changes, and count from it: **1** 2 3 **1** 2 3...
+3. Listen *between* the beats. If the beat naturally splits in two, it is simple time; if it splits in three (a
+   lilting, "jig" feel), it is compound.
+
+A march is usually in two (left, right, left, right). A waltz is a dance in three.
+
+## 5. Regular and irregular metres
+
+A **regular** metre divides into equal groups of two or three beats (2/4, 3/4, 4/4, 6/8, 9/8, 12/8). An **irregular**
+metre can't: 5/4 is counted 3 + 2 (or 2 + 3), 7/8 as 2 + 2 + 3. Some music also **changes** metre as it goes, which is a
+good way to make contrast in your own pieces.
+
+<div class="abc-ex" data-bpm="160"><script type="text/plain">
+X:1
+T:5/4, grouped 3 + 2
+M:5/4
+L:1/4
+K:Em
+"Em"!>!E G B !>!A G|"Am"!>!A c e !>!d c|"B7"!>!B ^d f !>!e d|"Em"!>!E3 !>!E2|]
+</script></div>
+
+## 6. Recordings to try
+
+Find these and count along. Metres from the school handout, not yet checked against the scores:
+
+| Metre | Piece |
+|---|---|
+| 2/4 | *Slaidburn* (William Rimmer), a brass band march |
+| 3/4 | Shostakovich, *Waltz No. 2* |
+| 4/4 | *All That Jazz* from the musical *Chicago* |
+| 5/4 | Dave Brubeck Quartet, *Take Five* |
+| 7/4 | Pink Floyd, *Money* (the opening bass riff) |
+| 6/8 | Queen, *We Are the Champions* |
+| 12/8 | Michael Jackson, *The Way You Make Me Feel* (count 1-&-a 2-&-a 3-&-a 4-&-a) |
+
+## 7. Writing your own
+
+Every [measure]{.nn} must add up to the time signature: check each one before you hand it in. Changing metre for one section is a simple way to make contrast.
+
+## 8. Check yourself
+
+<div class="eq" data-set="metre"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

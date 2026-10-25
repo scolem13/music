@@ -23,6 +23,13 @@ listing:
     - drum-grips.qmd
     - drum-brushes.qmd
     - cajon-basics.qmd
+    - saxophone.qmd
+    - brass-fingerings.qmd
+    - poly-basics.qmd
+    - poly-west-africa.qmd
+    - poly-afro-cuban.qmd
+    - poly-jazz.qmd
+    - poly-math-rock.qmd
     - first-rock-song.qmd
     - pop-changes.qmd
     - pop-changes-guitar.qmd
@@ -37,6 +44,9 @@ listing:
     - guitar-bends.qmd
     - guitar-harmonics.qmd
     - travis-picking.qmd
+    - guitar-picking.qmd
+    - guitar-for-bassists.qmd
+    - bass-for-guitarists.qmd
     - chord-shapes-piano.qmd
     - chord-shapes-piano-hand.qmd
     - inversions.qmd
@@ -65,6 +75,27 @@ listing:
     - process-journal.qmd
     - process-crit-b.qmd
     - notation-choices.qmd
+    - elements-articulation.qmd
+    - elements-articulation-sheet.qmd
+    - elements-dynamics.qmd
+    - elements-dynamics-sheet.qmd
+    - elements-harmony.qmd
+    - elements-harmony-sheet.qmd
+    - elements-instruments.qmd
+    - elements-instruments-sheet.qmd
+    - elements-melody.qmd
+    - elements-melody-sheet.qmd
+    - elements-metre.qmd
+    - elements-metre-sheet.qmd
+    - elements-rhythm.qmd
+    - elements-rhythm-sheet.qmd
+    - elements-structure.qmd
+    - elements-structure-sheet.qmd
+    - elements-style.qmd
+    - elements-style-sheet.qmd
+    - elements-texture.qmd
+    - elements-texture-sheet.qmd
+    - elements-quiz.qmd
     - score-clefs.qmd
     - score-multi-clef.qmd
     - score-transposition.qmd
@@ -116,6 +147,13 @@ listing:
     - rec-mixing.qmd
     - rec-mastering.qmd
     - rec-stereo.qmd
+    - live-strip.qmd
+    - live-gain.qmd
+    - live-eq.qmd
+    - live-gate.qmd
+    - live-comp.qmd
+    - live-feedback.qmd
+    - live-soundcheck.qmd
     - daw-timeline.qmd
     - daw-beat.qmd
     - daw-pianoroll.qmd
@@ -177,6 +215,8 @@ listing:
   <button type="button" data-inst="congas">Congas</button>
   <button type="button" data-inst="violin">Violin</button>
   <button type="button" data-inst="sax">Saxophone</button>
+  <button type="button" data-inst="trumpet">Trumpet</button>
+  <button type="button" data-inst="tuba">Tuba</button>
   <button type="button" data-inst="voice">Voice</button>
   <button type="button" data-inst="other">Another instrument</button>
 </div>
@@ -190,9 +230,11 @@ listing:
   <button type="button" data-topic="rhythm">Rhythm</button>
   <button type="button" data-topic="improv">Improvising</button>
   <button type="button" data-topic="reading">Reading</button>
+  <button type="button" data-topic="elements">Elements of music</button>
   <button type="button" data-topic="composing">Composing</button>
   <button type="button" data-topic="sound">Sound and synths</button>
   <button type="button" data-topic="recording">Recording</button>
+  <button type="button" data-topic="live-sound">Live sound</button>
   <button type="button" data-topic="daw">DAWs</button>
   <button type="button" data-topic="sampling">Sampling</button>
   <button type="button" data-topic="dj">DJing</button>

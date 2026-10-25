@@ -1,0 +1,160 @@
+---
+title: "Elements 5: Melody"
+toc: true
+toc-depth: 2
+description: "Describing a tune: direction, steps and leaps, range, repetition, sequence, imitation, ostinato, triadic, scalic and chromatic melody, ornaments, intervals and the names of the scale degrees."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, composing, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The **melody** is the tune: the line you would sing back. These are the words for describing one.
+
+## 1. Direction and movement
+
+| Word | Meaning |
+|---|---|
+| **Rising / ascending** | going up |
+| **Falling / descending** | going down |
+| **Conjunct** | moving by step, to the next note up or down |
+| **Disjunct** | moving by leap, jumping over notes |
+| **Range** | the distance from the lowest note to the highest: *narrow* or *wide* |
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Conjunct, narrow range
+M:4/4
+L:1/4
+K:C
+C D E F|E D E C|D E D C|C4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Disjunct, wide range
+M:4/4
+L:1/4
+K:C
+C c G, e|A, a E c'|G, g C,2|C4|]
+</script></div>
+:::
+
+## 2. Repetition and its relatives
+
+| Word | Meaning |
+|---|---|
+| **Repetition** | the same idea again, unchanged |
+| **Sequence** | the same idea again, starting on a higher or lower note |
+| **Imitation** | one part copies an idea another part has just played, often at a different pitch |
+| **Ostinato** | a short idea repeated over and over (in the bass it is a *ground bass* or a *riff*) |
+| **Contrast** | something completely different |
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Sequence: the same shape, a step higher each time
+M:4/4
+L:1/8
+K:C
+CDEC D2 z2|DEFD E2 z2|EFGE F2 z2|G8|]
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Imitation: the lower part copies the upper
+M:4/4
+L:1/8
+K:C
+V:1
+GABG c2 G2|ABcA d2 A2|G8|
+V:2 clef=bass
+z8|G,A,B,G, C2 G,2|A,B,CA, D4|
+</script></div>
+:::
+
+<div class="abc-ex" data-bpm="104" data-style="rock"><script type="text/plain">
+X:1
+T:Ostinato: one measure, four times, while the chords change
+M:4/4
+L:1/8
+K:Am
+"Am"A,2 CE A2 GE|"F"A,2 CE A2 GE|"C"A,2 CE A2 GE|"G"A,2 CE A2 GE|]
+</script></div>
+
+## 3. What the melody is made of
+
+| Word | Meaning |
+|---|---|
+| **Scalic** | runs up and down the scale |
+| **Triadic** | uses the notes of the chords (broken chords) |
+| **Chromatic** | uses notes outside the key, often moving by [half step]{.nn} |
+| **Pentatonic** | uses only five notes |
+| **Ornamented** | decorated with trills, mordents, turns, grace notes |
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Triadic
+M:4/4
+L:1/4
+K:C
+"C"C E G c|"G"B G D G|"C"c G E C|]
+</script></div>
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Chromatic
+M:4/4
+L:1/8
+K:C
+E ^D E ^F G ^G A ^A|B c ^c d ^d e2 z|]
+</script></div>
+:::
+
+Ornaments, with how each period played them: [Grace Notes and Ornaments](grace-notes-ornaments.qmd),
+[Ornaments by Period](ornaments-by-period.qmd).
+
+## 4. Intervals
+
+An **interval** is the distance between two notes. Count the letter names, **including both the first and the last**:
+C up to E is C-D-E, three letters, a 3rd.
+
+<div class="abc-ex" data-bpm="80"><script type="text/plain">
+X:1
+T:From C: 2nd, 3rd, 4th, 5th, 6th, 7th, octave
+M:4/4
+L:1/4
+K:C
+C D C E|C F C G|C A C B|C c3|]
+</script></div>
+
+## 5. Scale degrees
+
+Every note of the scale has a number and a name:
+
+| 1 | 2 | 3 | 4 | 5 | 6 | 7 |
+|---|---|---|---|---|---|---|
+| tonic | supertonic | mediant | subdominant | dominant | submediant | leading note (leading tone) |
+
+The tonic is home; the leading note pulls up to it; the dominant is the strongest note after the tonic. The same numbers
+in Roman numerals name the chords built on them (see [Harmony](elements-harmony.qmd#chords)).
+
+## 6. Writing your own
+
+The [Melody](compose-melody.qmd) and [Motif](compose-motif.qmd) lessons build a tune from these tools: a shape with one
+high point, mostly steps with a few leaps, a motif repeated and sequenced, and an ending on the tonic.
+
+## 7. Check yourself
+
+<div class="eq" data-set="melody"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

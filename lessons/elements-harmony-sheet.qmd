@@ -1,0 +1,190 @@
+---
+title: "Harmony on One Page"
+toc: true
+toc-depth: 2
+description: "Every harmony and tonality term on one revision sheet: key signatures, major and minor, modal, pentatonic and atonal, modulation, triads and seventh chords, the four cadences and the Picardy third, each with a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, other]
+topics: [elements, harmony, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Harmony](elements-harmony.qmd) on one sheet. Every ▶ plays the example; the cadences play with chords. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Harmony: chords and keys"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Key signatures
+<p>The sharps or flats at the start of each line. Each major key shares one with its <strong>relative minor</strong>, three [half steps]{.nn} lower.</p>
+<ul><li>none: C / A minor</li><li>1♯: G / E minor</li><li>2♯: D / B minor</li><li>1♭: F / D minor</li><li>2♭: B♭ / G minor</li></ul>
+:::::
+
+::::: {.el-card}
+#### Major
+<p>Often sounds bright. Look at the last note and chord: usually the tonic.</p>
+<div class="abc-ex" data-width="190" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"C"E G c G|"G"D B, "C"C2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Minor
+<p>Often darker. The same signature as its relative major, plus the raised 7th (here G♯).</p>
+<div class="abc-ex" data-width="190" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:Am
+"Am"A, C E C|"E"E ^G, "Am"A,2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Modal, pentatonic, atonal
+<ul>
+<li><strong>Modal</strong>: built on an older scale (Dorian, Mixolydian…)</li>
+<li><strong>Pentatonic</strong>: five notes, C D E G A (heard here)</li>
+<li><strong>Atonal</strong>: no key, no home note</li></ul>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+E2 G2 A2 G2|E2 D2 C4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Modulation
+<p>A change of key mid-piece: often to the dominant or the relative minor; in pop, the last chorus up a step.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"C"E G "G"D C|[K:D]"D"F A "A"E D|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Triads
+<p>Three notes a 3rd apart: root, 3rd, 5th. Numbered I–vii°: capitals major, small letters minor. In C: I C, ii Dm, IV F, V G, vi Am.</p>
+<div class="abc-ex" data-width="190" data-bpm="72"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"I"[CEG]2 "IV"[FAc]2|"V"[GBd]2 "I"[CEG]2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Sevenths and beyond
+<p>Another 3rd on top makes a <strong>seventh</strong> (G7 = G B D F); more make <strong>extended chords</strong> (9ths, 11ths), common in jazz.</p>
+<div class="abc-ex" data-width="190" data-bpm="70"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"G"[GBd]2 "G7"[GBdf]2|"G9"[GBdfa]4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### [Authentic cadence]{.nn}
+<p>V → I. Finished: a full stop.</p>
+<div class="abc-ex" data-width="190" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+"C"E "F"F|"G"D "C"C|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Plagal cadence
+<p>IV → I. Finished, softer: the "Amen" of hymns.</p>
+<div class="abc-ex" data-width="190" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+"C"E "G"D|"F"C "C"C|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### [Half cadence]{.nn}
+<p>Anything → V. Unfinished: a comma, or a question.</p>
+<div class="abc-ex" data-width="190" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+"C"E "F"F|"C"E "G"D|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### [Deceptive cadence]{.nn}
+<p>V → vi (usually). A surprise: you expect I and get a minor chord.</p>
+<div class="abc-ex" data-width="190" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+"C"E "F"F|"G"D "Am"C|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Picardy third
+<p>A minor-key piece that ends on a <strong>major</strong> tonic chord.</p>
+<div class="abc-ex" data-width="190" data-bpm="76" data-style="hymn"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:Dm
+"Dm"F "Gm"G|"A"E "D"^F|]
+</script></div>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="harmony"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing harmony
+
+- Say the tonality first (major, minor, modal…), then anything that changes: a modulation, a Picardy third at the end.
+- The cadence names follow the **British note names** switch: *perfect*, *imperfect* and *interrupted* are the British
+  *authentic*, *half* and *deceptive*.
+
+- The longer lesson, with fuller examples: [Elements 3: Harmony and Tonality](elements-harmony.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Cadence." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cadence](https://en.wikipedia.org/wiki/Cadence). Authentic V–I, plagal IV–I ('Amen'), half cadence on V, deceptive V to any chord but I, most often vi; Picardy third.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

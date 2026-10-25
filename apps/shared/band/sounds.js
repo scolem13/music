@@ -45,6 +45,8 @@
 //       "stop", "swell" = 0..1 (the pedal), "click" = 0..1 (key click, from the next note). bank.control(name, control, value, when, glide) is the same at a time on the
 //       bank's clock, which is how the player works the pedal and the switch while the band plays.
 //
+// The MODX: an instrument routed to it (modx.js, the MODX page) is sent out as MIDI instead of sounding here.
+//
 // An instrument may be SYNTHESIZED instead of sampled (def.synth "tonewheel", ORGAN.md beside this file): no zones, nothing
 // to load. An instrument may have an AMP CHAIN (def.chain): its notes are summed and sent through the chain's
 // stages before they reach the mix, one chain for the instrument and not one per note. That is what an
@@ -423,6 +425,7 @@
       strips.forEach(function (s){ if (s.inst === name){ tuneEQ(s); tuneAmp(s); } }); return true; });
     // a control of an instrument's chain, at a time: the swell pedal's position, the rotary speaker's speed
     function control2(inst, name, value, when, glide){
+      if (global.BandModx) global.BandModx.control(inst, name, value, when, ctx);
       strips.forEach(function (s){ if (s.inst === inst) s.amp.forEach(function (n){ if (n.ctl) n.ctl(name, value, Math.max(when || 0, ctx.currentTime), glide || 0); }); });
     }
     // The scanner vibrato: a delay swept up and back by a triangle wave (the scanner runs along a delay line and returns);
@@ -574,6 +577,7 @@
     // spec = { midi | piece, vel?, dur? (seconds; omit = let the sample ring), release? }
     function play(inst, spec, when, dest){
       var def = defs && defs[inst];
+      if (def && global.BandModx && global.BandModx.routed(inst, ctx)) return global.BandModx.play(inst, spec, when, ctx);   // played on the MODX (modx.js)
       if (!def || !ready[inst]){ if (defs && def) load([inst]).catch(function (){}); return null; }   // lazy-load, skip this hit
       var vel = clamp(spec.vel == null ? 0.7 : spec.vel, 0, 1); if (!(vel > 0)) return null;
       if (def.synth === "tonewheel") return spec.midi == null ? null : tonewheel(inst, def, spec, Math.max(when || 0, ctx.currentTime), ampFor(inst, def, dest || ctx.destination));
@@ -617,6 +621,7 @@
 
     function stopAll(){
       var now = ctx.currentTime;
+      if (global.BandModx) global.BandModx.stop();
       live.forEach(function (v){
         try { v.g.gain.cancelScheduledValues(now); v.g.gain.setTargetAtTime(0, now, 0.01); v.src.stop(now + 0.08); } catch (e) {}
       });
@@ -630,4 +635,11 @@
     create: create, define: define, failures: failures, fetchBuffer: fetchBuffer, resolveBase: resolveBase, pieces: PIECES.slice(),
     family: family, sounds: sounds, setEQ: setEQ, getEQ: getEQ, setAmp: setAmp, getAmp: getAmp, stageKind: stageKind, setTonebars: setTonebars, getTonebars: getTonebars, setControl: setControl, getControl: getControl, tonewheelParts: tonewheelParts, EQ_DEFAULT: EQ_DEFAULT, EQ_TYPES: EQ_TYPES, soundfontZones: soundfontZones, soundfontKit: soundfontKit, pickZones: pickZones, noteName: noteName
   };
+  // The MODX (modx.js), once switched on from its page: loaded from beside this file on every band page
+  try {
+    if (!global.BandModx && global.document && global.localStorage && global.localStorage.getItem("modx.on") === "1"){
+      var me = global.document.currentScript && global.document.currentScript.src;
+      if (me){ var sc = global.document.createElement("script"); sc.src = me.replace(/sounds\.js.*$/, "modx.js?v=1"); global.document.head.appendChild(sc); }
+    }
+  } catch (e) {}
 })(typeof window !== "undefined" ? window : globalThis);

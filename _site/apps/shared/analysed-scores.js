@@ -21,7 +21,16 @@
     var box = el("div", "as-box"), paper = el("div", "as-paper"), grip = el("div", "as-grip"), bar = el("div", "as-bar");
     grip.title = "Drag to resize · double-click to reset"; grip.setAttribute("role", "separator"); grip.setAttribute("aria-orientation", "vertical");
     var play = el("button", "btn btn-sm btn-outline-secondary", "▶ Play"); play.type = "button"; S.btn = play;
-    bar.appendChild(play); bar.appendChild(el("span", "as-help", "Space plays and pauses. Click a note or numeral to hear the chord there (hold, or Shift-click, to sustain)."));
+    bar.appendChild(play);
+    // two settings for every score on the page, kept in localStorage: beams (the build writes beam groups as ABC backticks; off, they
+    // become spaces) and, on four-part scores (soprano and alto above, tenor and bass below), the tenor on the treble staff (keyboard style)
+    S.base = S.abc; S.four = /^%%score \(s1v1 s1v2\) \(s2v1 s2v2\)$/m.test(S.abc);
+    if (/`/.test(S.abc)) { S.beamBtn = el("button", "btn btn-sm btn-outline-secondary as-beam"); S.beamBtn.type = "button"; bar.appendChild(S.beamBtn);
+      S.beamBtn.addEventListener("click", function () { setting("as-beams", !setting("as-beams")); }); }
+    if (S.four) { S.tenorBtn = el("button", "btn btn-sm btn-outline-secondary as-tenor"); S.tenorBtn.type = "button"; bar.appendChild(S.tenorBtn);
+      S.tenorBtn.addEventListener("click", function () { setting("as-tenor-up", !setting("as-tenor-up")); }); }
+    view(S);
+    bar.appendChild(el("span", "as-help", "Space plays and pauses. Click a note or numeral to hear the chord there (hold, or Shift-click, to sustain)."));
     host.innerHTML = ""; host.appendChild(bar); S.strip = el("div", "as-keys"); host.appendChild(S.strip); box.appendChild(paper); box.appendChild(grip); host.appendChild(box);
     var w0 = store(); if (w0) box.style.width = w0 + "px";
     S.paper = paper;
@@ -37,6 +46,32 @@
     });
     grip.addEventListener("dblclick", function () { store(null); scores.forEach(function (s) { s.host.querySelector(".as-box").style.width = ""; }); });
     scores.push(S);
+  }
+
+  // keyboard style: soprano, alto and tenor share the treble staff (stems: soprano up, alto and tenor down), the bass alone below
+  function keyboardStyle(abc) {
+    return abc.replace("%%score (s1v1 s1v2) (s2v1 s2v2)", "%%score (s1v1 s1v2 s2v1) s2v2")
+      .replace(/^V:s1v1 clef=treble(.*)$/m, "V:s1v1 clef=treble$1 stem=up").replace(/^V:s1v2 clef=treble(.*)$/m, "V:s1v2 clef=treble$1 stem=down")
+      .replace(/^V:s2v1 clef=bass(.*)$/m, "V:s2v1 clef=treble$1 stem=down").replace(/^V:s2v2 clef=bass(.*)$/m, "V:s2v2 clef=bass$1 stem=auto");
+  }
+  // a setting: read (one argument) or set and redraw every score
+  function setting(key, v) {
+    if (v === undefined) { try { return localStorage.getItem(key) === "1"; } catch (e) { return false; } }
+    try { localStorage.setItem(key, v ? "1" : "0"); } catch (e) {}
+    settings[key] = v; scores.forEach(function (S) { if (view(S)) { S.lastW = 0; draw(S); } });
+  }
+  var settings = {};
+  function on(key) { return key in settings ? settings[key] : setting(key); }
+  // the ABC a score shows under the current settings, and its buttons' labels; true if it changed
+  function view(S) {
+    var a = S.base, tenor = S.four && on("as-tenor-up"), beams = on("as-beams");
+    if (tenor) a = keyboardStyle(a);
+    if (!beams) a = a.replace(/`/g, " ");
+    if (S.tenorBtn) { S.tenorBtn.textContent = tenor ? "Tenor: treble staff" : "Tenor: bass staff"; S.tenorBtn.setAttribute("aria-pressed", tenor ? "true" : "false");
+      S.tenorBtn.title = tenor ? "Move the tenor back to the bass staff (chorale style)" : "Move the tenor to the treble staff (keyboard style)"; }
+    if (S.beamBtn) { S.beamBtn.textContent = beams ? "Beams: on" : "Beams: off"; S.beamBtn.setAttribute("aria-pressed", beams ? "true" : "false");
+      S.beamBtn.title = beams ? "Show every note with its own flag" : "Beam short notes by the beat"; }
+    var changed = a !== S.abc; S.abc = a; return changed;
   }
 
   function draw(S) {
@@ -206,7 +241,7 @@
   var SPACE_KEY = "as-staffsep";
   function space() { try { var v = localStorage.getItem(SPACE_KEY); return v == null ? 60 : +v; } catch (e) { return 60; } }
   function spaceControl() {
-    var side = document.getElementById("quarto-margin-sidebar") || document.querySelector(".as-score"); if (!side) return;
+    var side = document.getElementById("as-space-slot") || document.getElementById("quarto-margin-sidebar") || document.querySelector(".as-score"); if (!side) return;   // a page can give it a place: #as-space-slot
     var box = el("div"), lab = el("label", null, "Space between systems"), r = el("input"), out = el("span", null, " " + space());
     box.id = "as-space"; r.type = "range"; r.min = 0; r.max = 200; r.step = 10; r.value = space();
     lab.appendChild(out); box.appendChild(lab); box.appendChild(r);
@@ -293,5 +328,7 @@
   }
   function init() { [].forEach.call(document.querySelectorAll(".as-score"), setup); spaceControl(); forms(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
-  global.AnalysedScores = { scores: function () { return scores; }, chordAt: chordAt, chordTones: chordTones, playBars: playBars, hiBars: hiBars, barMs: barMs };
+  // add / remove: scores made after the page loaded (the Modulation Finder's results)
+  global.AnalysedScores = { add: function (host) { setup(host); }, remove: function (host) { if (active && active.host === host) { if (active.playing) pause(active); active = null; } scores = scores.filter(function (S) { if (S.host !== host) return true; if (S.playing) pause(S); return false; }); },
+    scores: function () { return scores; }, chordAt: chordAt, chordTones: chordTones, playBars: playBars, hiBars: hiBars, barMs: barMs };
 })(window);

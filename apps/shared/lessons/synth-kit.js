@@ -321,7 +321,7 @@
   var bandScript = null, banks = [];
   function bandBank(c, name) {
     if (!bandScript) bandScript = window.BandSounds ? Promise.resolve() : new Promise(function (res, rej) {
-      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=14"; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
+      var sc = document.createElement("script"); sc.src = "/apps/shared/band/sounds.js?v=17"; sc.onload = res; sc.onerror = rej; document.head.appendChild(sc); });
     var got = bandScript.then(function () {
       var b = banks.filter(function (x) { return x.c === c; })[0]; if (!b) { b = { c: c, bank: BandSounds.create(c) }; banks.push(b); }
       return b.bank.load([name]).then(function () { return b.bank.has(name) ? b.bank : null; });

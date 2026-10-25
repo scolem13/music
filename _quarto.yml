@@ -56,6 +56,17 @@ website:
             - lessons/drum-grips.qmd
             - lessons/drum-brushes.qmd
             - lessons/cajon-basics.qmd
+        - section: "Wind Instruments"
+          contents:
+            - lessons/saxophone.qmd
+            - lessons/brass-fingerings.qmd
+        - section: "Polyrhythm"
+          contents:
+            - lessons/poly-basics.qmd
+            - lessons/poly-west-africa.qmd
+            - lessons/poly-afro-cuban.qmd
+            - lessons/poly-jazz.qmd
+            - lessons/poly-math-rock.qmd
         - section: "Guitar Technique"
           contents:
             - lessons/guitar-tuning-ear.qmd
@@ -67,6 +78,9 @@ website:
             - lessons/guitar-bends.qmd
             - lessons/guitar-harmonics.qmd
             - lessons/travis-picking.qmd
+            - lessons/guitar-picking.qmd
+            - lessons/guitar-for-bassists.qmd
+            - lessons/bass-for-guitarists.qmd
         - section: "Piano Technique"
           contents:
             - lessons/chord-shapes-piano.qmd
@@ -110,6 +124,29 @@ website:
             - lessons/tuning-systems.qmd
             - lessons/strobe-tuner.qmd
             - lessons/inharmonicity.qmd
+        - section: "Elements of Music"
+          contents:
+            - lessons/elements-articulation.qmd
+            - lessons/elements-articulation-sheet.qmd
+            - lessons/elements-dynamics.qmd
+            - lessons/elements-dynamics-sheet.qmd
+            - lessons/elements-harmony.qmd
+            - lessons/elements-harmony-sheet.qmd
+            - lessons/elements-instruments.qmd
+            - lessons/elements-instruments-sheet.qmd
+            - lessons/elements-melody.qmd
+            - lessons/elements-melody-sheet.qmd
+            - lessons/elements-metre.qmd
+            - lessons/elements-metre-sheet.qmd
+            - lessons/elements-rhythm.qmd
+            - lessons/elements-rhythm-sheet.qmd
+            - lessons/elements-structure.qmd
+            - lessons/elements-structure-sheet.qmd
+            - lessons/elements-style.qmd
+            - lessons/elements-style-sheet.qmd
+            - lessons/elements-texture.qmd
+            - lessons/elements-texture-sheet.qmd
+            - lessons/elements-quiz.qmd
         - section: "Score Reading"
           contents:
             - lessons/score-clefs.qmd
@@ -156,6 +193,15 @@ website:
             - lessons/rec-mixing.qmd
             - lessons/rec-mastering.qmd
             - lessons/rec-stereo.qmd
+        - section: "Live Sound"
+          contents:
+            - lessons/live-strip.qmd
+            - lessons/live-gain.qmd
+            - lessons/live-eq.qmd
+            - lessons/live-gate.qmd
+            - lessons/live-comp.qmd
+            - lessons/live-feedback.qmd
+            - lessons/live-soundcheck.qmd
         - section: "DAWs"
           contents:
             - lessons/daw-timeline.qmd
@@ -207,6 +253,14 @@ website:
             - lessons/timestamp-player.qmd
             - lessons/section-labels.qmd
         - bibliography.qmd
+    - id: course
+      title: Course
+      style: docked
+      contents:
+        - course/index.qmd
+        - course/pathway.qmd
+        - course/enrichment.qmd
+        - course/glossary.qmd
     - id: theory
       title: Theory
       style: docked
@@ -217,6 +271,10 @@ website:
           contents:
             - theory/theory-drills.qmd
             - theory/exercise-builder.qmd
+        - section: "Concepts"
+          contents:
+            - theory/modes-three-ways.qmd
+            - theory/meter-taxonomy.qmd
         - section: "Hutchinson, Music Theory for the 21st-Century Classroom"
           contents:
             - href: theory/triads.qmd
@@ -254,12 +312,154 @@ website:
         - section: "Analysed Scores"
           href: theory/analysed-scores/index.qmd
           contents:
+            - theory/analysed-scores/modulation-finder.qmd
             - theory/analysed-scores/bach-o-haupt.qmd
             - theory/analysed-scores/beethoven-moonlight-1.qmd
+            - theory/analysed-scores/reger-modulation.qmd
+            - theory/analysed-scores/rimsky-korsakov-harmony.qmd
+            - theory/analysed-scores/tchaikovsky-harmony.qmd
+            - theory/analysed-scores/aldwell-schachter.qmd
+            - theory/analysed-scores/kostka-payne.qmd
+    - id: practice
+      title: "Practice"
+      style: docked
+      collapse-level: 1
+      contents:
+        - practice/session.qmd
+        - section: "Practise"
+          contents:
+            - practice/rhythm-sequences.qmd
+            - practice/tonal-sequences.qmd
+            - practice/songs.qmd
+            - practice/tunes.qmd
+            - practice/patterns.qmd
+            - practice/patterns-by-ear.qmd
+            - practice/sax-patterns-by-ear.qmd
+            - practice/rhythms.qmd
+            - practice/reading-benchmarks.qmd
+            - practice/dictation.qmd
+        - section: "LSA practice"
+          contents:
+            - practice/audiation.qmd
+            - practice/lsa-practice.qmd
+            - practice/lsa-practice-notated.qmd
+            - practice/lsa-rhythm-assessment.qmd
+        - section: "Assessments"
+          contents:
+            - practice/assessment-tune.qmd
+            - practice/assessment.qmd
+            - practice/assessment-rhythm.qmd
+    - id: tools
+      title: "Tools"
+      style: docked
+      collapse-level: 1
+      contents:
+        - tools/index.qmd
+        - section: "Play with a band"
+          contents:
+            - tools/backing-track.qmd
+            - tools/accomp-styles.qmd
+            - tools/drumset.qmd
+            - tools/sequencers.qmd
+            - tools/arranger.qmd
+            - tools/polyrhythm.qmd
+        - section: "Chords and harmony"
+          contents:
+            - tools/chord-library.qmd
+            - tools/chord-sheet.qmd
+            - tools/chord-entry.qmd
+            - tools/chords-solfege.qmd
+            - tools/circle-of-fifths.qmd
+        - section: "Scales and reading"
+          contents:
+            - tools/scales.qmd
+            - tools/scale-patterns.qmd
+            - tools/part-reader.qmd
+            - tools/classical-themes.qmd
+        - section: "Write music down"
+          contents:
+            - tools/notation.qmd
+            - tools/notation-rules.qmd
+        - section: "Learn from a recording"
+          contents:
+            - tools/timestamp-notes.qmd
+            - tools/tap-along.qmd
+            - tools/tap-latency.qmd
+            - tools/chunk-practice.qmd
+        - section: "Voice"
+          contents:
+            - tools/vocal-warmup.qmd
+            - tools/ipa-chart.qmd
+        - section: "Guitar and bass"
+          contents:
+            - tools/guitar-tuning.qmd
+            - tools/guitar-setup-check.qmd
+            - tools/guitar-in.qmd
+        - section: "Style Notes"
+          href: styles/index.qmd
+          contents:
+            - styles/ballad.qmd
+            - styles/boogaloo.qmd
+            - styles/boogie.qmd
+            - styles/bossa.qmd
+            - styles/calypso.qmd
+            - styles/carol.qmd
+            - styles/chacha.qmd
+            - styles/dance.qmd
+            - styles/doowop.qmd
+            - styles/emo.qmd
+            - styles/folk.qmd
+            - styles/freylekhs.qmd
+            - styles/hymn.qmd
+            - styles/jump.qmd
+            - styles/montuno.qmd
+            - styles/motown.qmd
+            - styles/pop.qmd
+            - styles/prine.qmd
+            - styles/ragtime.qmd
+            - styles/reggae.qmd
+            - styles/reggaeton.qmd
+            - styles/rock.qmd
+            - styles/stride.qmd
+            - styles/strum.qmd
+            - styles/swing.qmd
+            - styles/tango.qmd
+            - styles/train.qmd
+            - styles/waltz.qmd
+    - id: gear
+      title: "MIS Gear"
+      style: docked
+      collapse-level: 1
+      contents:
+        - gear/index.qmd
+        - gear/x32-drums-dca.qmd
+        - gear/using-a-mic.qmd
+        - gear/modx.qmd
+        - gear/modx-band.qmd
+    - id: teacher
+      title: "Teacher"
+      style: docked
+      collapse-level: 1
+      contents:
+        - teacher/session-builder.qmd
+        - teacher/report.qmd
+        - section: "LSA"
+          contents:
+            - teacher/lsa-directory.qmd
+            - teacher/lsa-instructions.qmd
+            - teacher/lsa-chart.qmd
+            - teacher/lsa-analysis.qmd
   navbar:
     left:
       - href: index.qmd
         text: Home
+      - text: Course
+        menu:
+          - course/index.qmd
+          - text: "---"
+          - course/pathway.qmd
+          - course/enrichment.qmd
+          - course/glossary.qmd
       - href: lessons/index.qmd
         text: Lessons
       - href: theory/index.qmd
@@ -273,10 +473,13 @@ website:
           - practice/songs.qmd
           - practice/tunes.qmd
           - practice/patterns.qmd
+          - practice/patterns-by-ear.qmd
+          - practice/sax-patterns-by-ear.qmd
           - practice/rhythms.qmd
           - practice/reading-benchmarks.qmd
           - practice/dictation.qmd
           - text: "---"
+          - practice/audiation.qmd
           - practice/lsa-practice.qmd
           - practice/lsa-practice-notated.qmd
           - practice/lsa-rhythm-assessment.qmd
@@ -286,29 +489,57 @@ website:
           - practice/assessment-rhythm.qmd
       - text: Tools
         menu:
+          - text: "All tools"
+            href: tools/index.qmd
+          - text: "---"
+          - text: "Play with a band"
+          - tools/backing-track.qmd
+          - styles/index.qmd
+          - tools/accomp-styles.qmd
+          - tools/drumset.qmd
+          - tools/sequencers.qmd
+          - tools/arranger.qmd
+          - tools/polyrhythm.qmd
+          - text: "---"
+          - text: "Chords and harmony"
+          - tools/chord-library.qmd
+          - tools/chord-sheet.qmd
+          - tools/chord-entry.qmd
+          - tools/chords-solfege.qmd
+          - tools/circle-of-fifths.qmd
+          - text: "---"
+          - text: "Scales and reading"
           - tools/scales.qmd
           - tools/scale-patterns.qmd
           - tools/part-reader.qmd
-          - tools/circle-of-fifths.qmd
-          - tools/chords-solfege.qmd
-          - tools/chord-library.qmd
-          - tools/chord-sheet.qmd
-          - tools/drumset.qmd
-          - tools/accomp-styles.qmd
-          - styles/index.qmd
-          - tools/backing-track.qmd
-          - tools/chord-entry.qmd
+          - tools/classical-themes.qmd
+          - text: "---"
+          - text: "Write music down"
           - tools/notation.qmd
           - tools/notation-rules.qmd
-          - tools/ipa-chart.qmd
-          - tools/vocal-warmup.qmd
-          - tools/guitar-tuning.qmd
-          - tools/guitar-setup-check.qmd
+          - text: "---"
+          - text: "Learn from a recording"
           - tools/timestamp-notes.qmd
           - tools/tap-along.qmd
           - tools/tap-latency.qmd
           - tools/chunk-practice.qmd
-          - tools/classical-themes.qmd
+          - text: "---"
+          - text: "Voice"
+          - tools/vocal-warmup.qmd
+          - tools/ipa-chart.qmd
+          - text: "---"
+          - text: "Guitar and bass"
+          - tools/guitar-tuning.qmd
+          - tools/guitar-setup-check.qmd
+          - tools/guitar-in.qmd
+      - text: MIS Gear
+        menu:
+          - gear/index.qmd
+          - text: "---"
+          - gear/x32-drums-dca.qmd
+          - gear/using-a-mic.qmd
+          - gear/modx.qmd
+          - gear/modx-band.qmd
       - text: Teacher
         menu:
           - teacher/session-builder.qmd
@@ -334,3 +565,6 @@ format:
       - _includes/track.html
       # The floating Metronome and Drone, in the navbar on every page:
       - _includes/practice-widgets.html
+      # Hide/show the left sidebar (remembered), and only the current page's navbar tab blue:
+      - _includes/sidebar-toggle.html
+      - _includes/nav-current.html

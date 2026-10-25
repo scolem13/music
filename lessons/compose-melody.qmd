@@ -5,7 +5,7 @@ toc-depth: 2
 description: "Shape, steps and leaps, a climax, rhythm that repeats, and two classic eight-bar plans (the period and the sentence), each heard on the staff, then a melody of your own in the Notation page."
 instruments: [piano, guitar, violin, sax, voice, other]
 topics: [composing]
-has: [notation, interactive]
+has: [notation]
 ---
 
 {{< include _compose-kit.qmd >}}

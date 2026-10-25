@@ -1,0 +1,180 @@
+---
+title: "Elements 9: Style and Genre"
+toc: true
+toc-depth: 2
+description: "Recognising a style from its features: the Baroque, Classical and Romantic periods, jazz and blues, musical theatre, film music, pop and rock, and minimalism, each with the features to listen for and a short example."
+instruments: [piano, guitar, bass, drums, violin, sax, voice, other]
+topics: [elements, history]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+A **style** or **genre** is recognised by its features: the instruments, the harmony, the rhythm, the textures it likes.
+Naming the style is only half the answer. Say *which features* told you.
+
+## 1. Western classical music
+
+| | **Baroque** (about 1600–1750) | **Classical** (about 1750–1820) | **Romantic** (about 1800–1910) |
+|---|---|---|---|
+| Composers | Bach, Vivaldi, Handel | Haydn, Mozart, early Beethoven | Schubert, Chopin, Wagner, late Beethoven |
+| Instruments | harpsichord, small orchestra (mostly strings), **basso continuo** | the **piano** replaces the harpsichord; the orchestra grows (clarinets, horns) | a large orchestra, more brass and percussion; piano music for virtuosos |
+| Dynamics | **terraced** (sudden loud/quiet) | a wider range, crescendos | a huge range, constant change |
+| Melody | long, decorated with **ornaments** | balanced, regular phrases (4 + 4 [measures]{.nn}); elegant | long, expressive; the **leitmotif** |
+| Harmony | major and minor keys settled in | simple, clear chords; **Alberti bass** | **chromatic** chords, unusual key changes |
+| Texture | often **polyphonic** (counterpoint) | mostly **melody and accompaniment** | rich and full |
+| Tempo | steady | steady | **rubato** (pushing and pulling the tempo) |
+
+The periods overlap. Beethoven is the usual bridge between Classical and Romantic.
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="harpsichord" data-bpm="96"><script type="text/plain">
+X:1
+T:Baroque: harpsichord, ornaments, a busy bass
+M:4/4
+L:1/16
+K:D
+V:1
+d2fe dcBA TB4 A4|G2BA GFED TE4 D4|]
+V:2 clef=bass
+D,2F,2 A,2D2 G,2B,2 A,2C2|B,,2D,2 G,2B,2 A,,2C,2 D,4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="120"><script type="text/plain">
+X:1
+T:Classical: tune over an Alberti bass
+M:4/4
+L:1/8
+K:C
+V:1
+c4 e2 g2|B4 c2 d2|c4 G2 E2|C8|]
+V:2 clef=bass
+C,G,E,G, C,G,E,G,|D,G,F,G, C,G,E,G,|C,A,F,A, B,,G,D,G,|C,G,E,G, C,4|]
+</script></div>
+:::
+
+<div class="abc-ex" data-bpm="66"><script type="text/plain">
+X:1
+T:Romantic: chromatic harmony under a singing tune
+M:3/4
+L:1/8
+K:Ab
+"Ab"e4 c2|"Fm"f4 e2|"Db"_f4 e2|"Bbm7"d2 c2 B2|"Eb7"=d3 e c2|"Ab"A6|]
+</script></div>
+
+More: [Ornaments by Period](ornaments-by-period.qmd), [Score Reading: History](score-history.qmd).
+
+## 2. Jazz and blues
+
+- **Swung rhythm**: pairs of [eighth notes]{.nn} played long-short ([Reading Swing](reading-swing.qmd)).
+- **Blue notes**: the 3rd, 5th and 7th of the scale bent down, by anything from a quarter tone to a [half step]{.nn}.
+- The **12-bar blues** chord pattern ([Blues Changes](blues-changes.qmd)).
+- **Extended chords**: 7ths, 9ths and more.
+- **Improvisation**: players make up their parts as they perform.
+- A **rhythm section** (drums, double bass, piano or guitar) and a **front line** (saxophones, trumpets, trombones).
+- **Walking bass**: a steady line of [quarter notes]{.nn} walking up and down through the chords.
+
+<div class="abc-ex" data-bpm="132" data-style="swing"><script type="text/plain">
+X:1
+T:Blues with blue notes, swung
+M:4/4
+L:1/8
+K:C
+"C7"G2 _B2 c2 _B G|"F7"_E2 F2 G4|"C7"G2 _B2 c2 _B G|"G7"F2 _E2 "C7"C4|]
+</script></div>
+
+## 3. Musical theatre
+
+A story told through music, singing, acting and dance.
+
+| Word | Meaning |
+|---|---|
+| **Overture** | the music before the show begins, usually built from its main tunes |
+| **Solo / duet / chorus number** | a song for one character, two characters, or the whole company |
+| **Recitative** | speech-like singing that moves the story on, in shows that are all sung |
+| Kinds of show | book musicals (songs between spoken scenes), **sung-through** (no speaking), **jukebox** (built from existing hit songs), film-to-stage |
+
+Composers: Leonard Bernstein (*West Side Story*), Stephen Sondheim, Andrew Lloyd Webber, Lin-Manuel Miranda.
+
+## 4. Film music
+
+Film music supports what is on screen. Ask how each feature fits the scene:
+
+| Scene | Features you might hear |
+|---|---|
+| Car chase | fast tempo, loud, driving ostinato, sudden changes |
+| War film | military snare drum, brass fanfares; a lone instrument (monophonic) for isolation |
+| Horror | dissonant chords, a repeated pattern building tension, sudden loud stabs |
+| Romance | strings, legato melody, rich harmony, rubato |
+
+A **leitmotif** is a short idea tied to a character or thing that returns whenever it appears. Composers: John Williams,
+Hans Zimmer, Howard Shore, Jerry Goldsmith.
+
+## 5. Pop and rock
+
+**Pop** is commercial music written to appeal to lots of people. **Rock** is usually harder and louder, built on guitars
+and drums, though it includes rock ballads. Both are mostly in verse–chorus [form](elements-structure.qmd#popular-song-forms),
+often with a **riff**, a repeated pattern that makes a song memorable.
+
+| Section | What it does |
+|---|---|
+| Intro | sets the mood, often instruments only |
+| Verse | tells the story: same tune, new words each time |
+| Chorus | the main message: same tune and words each time |
+| Bridge / middle 8 | a contrasting section, often 8 [measures]{.nn} |
+| Outro | finishes the song |
+
+<div class="abc-ex" data-bpm="112" data-style="rock"><script type="text/plain">
+X:1
+T:A rock riff
+M:4/4
+L:1/8
+K:E
+"E"E,2 G,A, B,2 A,G,|"E"E,2 G,A, B,2 D2|"A"A,2 CD E2 DC|"E"E,2 G,A, B,2 z2|]
+</script></div>
+
+More: [Your First Rock Song](first-rock-song.qmd), [Four-Chord Loops](four-chord-loops.qmd).
+
+## 6. Minimalism
+
+From the 1960s, mostly in the USA. Composers: Steve Reich, Philip Glass, Terry Riley, John Adams.
+
+- Built on **repetition** of short patterns.
+- The patterns change **gradually**, one note or one beat at a time.
+- **Slow-changing harmony**, often one chord for a long time.
+- Layers that drift in and out of line with each other (*phasing*).
+
+<div class="abc-ex" data-bpm="140"><script type="text/plain">
+X:1
+T:One cell, growing a note at a time
+M:4/4
+L:1/8
+K:C
+c e g e c e g e|c e g a c e g a|c e g a b e g a|c e g a b d' g a|]
+</script></div>
+
+## 7. Check yourself
+
+<div class="eq" data-set="style"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Alberti bass." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). Lowest, highest, middle, highest; Classical era; Mozart K. 545.
+
+"Basso continuo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Basso_continuo](https://en.wikipedia.org/wiki/Basso_continuo). Chord instruments (harpsichord, organ, lute, theorbo…) and bass instruments (cello, double bass, bass viol, bassoon); figured bass.
+
+"Blue note." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Blue_note](https://en.wikipedia.org/wiki/Blue_note). Lowered 3rd, 5th and 7th; between a quarter tone and a semitone.
+
+"Classical period (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Classical_period_(music)](https://en.wikipedia.org/wiki/Classical_period_(music)). Classical roughly 1750–1820; Baroque c. 1600–1750; Romantic c. 1800–1910; melody over a subordinate accompaniment such as an Alberti bass.
+
+"Minimal music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Minimal_music](https://en.wikipedia.org/wiki/Minimal_music). US West Coast, late 1950s–early 1960s; Young, Riley, Reich, Glass, Adams; repetition, phase shifting, additive process, consonant harmony.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

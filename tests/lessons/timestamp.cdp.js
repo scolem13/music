@@ -293,7 +293,7 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
   check("ChordPro alone: one wide box", await ev(`getComputedStyle(document.querySelector('.btp-ug')).display`) === "none" && await ev(`document.querySelector('.btp-cho').getBoundingClientRect().width`) > 400);
   await ev(`document.querySelector('button[data-view=both]').click()`);
   // the sidebar: every part listed; Fold all folds the player, the words being played and the log too; a click opens one
-  check("the sidebar lists every part", await ev(`[...document.querySelectorAll('.ts-nav a')].map(a => a.textContent).join('|')`).then(x => /^Player\|Chord grid\|Chord timing and MIDI\|Words and chords.*\|Now playing\|Timestamps$/.test(x)));
+  check("the sidebar lists every part", await ev(`[...document.querySelectorAll('.ts-nav a')].map(a => a.textContent).join('|')`).then(x => /^Clock\|Player\|Chord grid\|Chord timing and MIDI\|Words and chords.*\|Now playing\|Timestamps$/.test(x)));
   await ev(`document.querySelector('[data-all=fold]').click()`);
   check("Fold all folds everything", await ev(`!document.querySelector('#ts-player').open && document.querySelector('#ts-now').classList.contains('is-shut') && document.querySelector('#ts-log').classList.contains('is-shut') && getComputedStyle(document.querySelector('#ts-now .ts-fold-body')).display === 'none'`));
   await ev(`document.querySelector('.ts-nav a[data-for=ts-log]').click()`);

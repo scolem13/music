@@ -4,7 +4,7 @@
 <script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
 <script src="/apps/shared/abc-play.js?v=4"></script>
-<script src="/apps/shared/analysed-scores.js?v=6"></script>
+<script src="/apps/shared/analysed-scores.js?v=9"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <style>
 @font-face { font-family: "Bar Numbers Mono"; src: url(/apps/shared/fonts/BarNumbers-SourceSerif4-200.ttf) format("truetype"); font-display: swap; }

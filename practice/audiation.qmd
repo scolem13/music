@@ -1,0 +1,172 @@
+---
+title: "Hear, Compare, Translate"
+description: "Partial synthesis, same or different, translating into solfège, reading familiar and unfamiliar patterns, and answering with patterns of your own: the skill learning sequence from discrimination into inference, Mullen's order."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/abc-events.js"></script>
+<script src="/apps/shared/abc-play.js?v=5"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+<script src="/apps/shared/rhythm-chant.js?v=2"></script>
+<script src="/apps/shared/syllable-detect.js?v=1"></script>
+<script src="/apps/shared/syllable-check.js?v=1"></script>
+<script src="/apps/patterns/audiation.js?v=6"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.au-panel { --au-line: var(--site-line, #ced4da); --au-mute: var(--site-ink-2, #6c757d); --au-acc: var(--site-accent, #2780e3);
+  --au-good: #2f9e44; --au-bad: #e03131;
+  border: 1px solid var(--au-line); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1.2rem; background: var(--site-surface-2, #f8f9fa); }
+.au-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: .5rem 1rem; margin-bottom: .7rem; }
+.au-grid label { display: flex; flex-direction: column; gap: .2rem; margin: 0; font-size: .76rem; text-transform: uppercase; letter-spacing: .05em; color: var(--au-mute); }
+.au-grid select { font-size: .95rem; text-transform: none; letter-spacing: 0; max-width: 100%; }
+.au-bar, .au-row { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.au-panel button { padding: .4rem .9rem; border-radius: .4rem; border: 1px solid var(--au-line); background: var(--site-surface, #fff); color: inherit; cursor: pointer; }
+.au-panel button:disabled { opacity: .45; cursor: default; }
+.au-panel button.au-go { background: var(--au-acc); border-color: var(--au-acc); color: #fff; font-weight: 600; }
+.au-panel button.au-choice { min-width: 6.5rem; font-weight: 600; }
+.au-panel button.au-good { background: var(--au-good); border-color: var(--au-good); color: #fff; }
+.au-panel button.au-bad { background: var(--au-bad); border-color: var(--au-bad); color: #fff; }
+.au-n { min-width: 5.5rem; font-weight: 600; }
+.au-status { min-height: 1.5em; font-weight: 600; margin: .3rem 0; }
+.au-solf { font-size: clamp(1.4rem, 5vw, 2.1rem); font-weight: 800; min-height: 1.2em; letter-spacing: .02em; }
+.au-explain p { margin: .3rem 0; }
+.au-hint { color: var(--au-mute); font-size: .92rem; }
+.au-warn { color: var(--au-bad); font-weight: 600; }
+.au-score { color: var(--au-mute); font-size: .9rem; margin-top: .4rem; }
+.au-gate { display: flex; gap: .5rem; align-items: flex-start; margin: 0 0 .5rem; font-size: .95rem; }
+.au-gate input { margin-top: .3rem; }
+.au-src { font-size: .9rem; color: var(--au-mute); }
+.au-paper { background: var(--site-surface, #fff); border: 1px solid var(--au-line, #ced4da); border-radius: .4rem; min-height: 90px; margin: .5rem 0; padding: .2rem .4rem; max-width: 520px; }
+.au-paper svg { width: 100%; height: auto; }
+</style>
+```
+
+Five levels of the skill learning sequence. The first three are by ear only and come before reading; *Read it*
+adds notation, and the last asks for patterns of your own. Use headphones or speakers, sing and chant out loud, and take a breath before you answer.
+
+The order follows Andy Mullen's: familiar patterns first, then unfamiliar ones. Where Edwin Gordon disagrees, the
+note under each section says so.
+
+## Partial synthesis: name the tonality or meter
+
+You hear two series of familiar patterns with **no tonality or meter set up first**. Name the tonality (or meter)
+of each. This is still discrimination learning, so the page teaches: after you answer, or when you press
+*Tell me*, it explains what to audiate.
+
+<div class="au-panel" id="au-ps"></div>
+
+::: {.au-src}
+**Sources.** Gordon: at partial synthesis the teacher does *not* establish tonality or meter, sings the series on
+a neutral syllable, and gives the answers; to leave them out would wrongly bridge to generalization-verbal
+(*Learning Sequences in Music*, pp. 113, 116; *Reference Handbook*, Tonal Unit 6, pp. 48–49). Both series share one
+keyality, so only the resting tone changes. Mullen's objective: "aurally name tonality of a series of familiar
+patterns with teacher guidance" (*MLT Any Music Teacher Can Du…De*, p. 74). The meter explanation names the
+microbeats you audiate (DU DE or DU DA DI), as Mullen does (p. 85).
+:::
+
+## Same or different (generalization-aural/oral)
+
+The tonality or meter is set up, then you hear two patterns, **once each**, and say whether they were the same.
+Start with familiar patterns; add unfamiliar ones when that is easy.
+
+<div class="au-panel" id="au-sd"></div>
+
+::: {.au-src}
+**Sources.** Gordon: the teacher establishes tonality on a neutral syllable and performs two patterns or sets; at an
+inference level the pattern is heard only once, and a student who can't do it goes back to aural/oral
+(*Learning Sequences in Music*, pp. 131–132). Gordon uses familiar and unfamiliar patterns here; Mullen starts with
+familiar ones, "Ss can identify if patterns are the same or different" right after the aural/oral objectives
+(*MLT Any Music Teacher Can Du…De*, pp. 66, 74). Students find *same* easier to hear than *different* (Gordon, p. 219).
+:::
+
+## Translate to solfège (generalization-verbal)
+
+You hear the tonality or meter set up, then one pattern on a neutral syllable. **Sing or chant it back in
+syllables**, then check. It opens only when the verbal association objective for the same content is done.
+
+<div class="au-panel" id="au-tr"></div>
+
+::: {.au-src}
+**Sources.** Gordon warns against this at the verbal association level ("it is not appropriate at this level…");
+it belongs to generalization-verbal, where students repeat the teacher's neutral-syllable pattern "using tonal
+syllables or rhythm syllables instead" (*Learning Sequences in Music*, pp. 108, 132; *Reference Handbook*, Tonal Unit 9,
+Criteria 2–3, pp. 52–54). If students can't, instruction goes back to verbal association; the teacher guides but
+does not give the answer first (p. 132). Gordon uses familiar **and unfamiliar** patterns; Mullen practises the
+skill with **familiar** patterns first ("students need practice with that skill using familiar patterns before they
+try it with unfamiliar patterns", p. 66) and calls it translation (*The Literate Musician*, Rhythm Lessons 8, 9.3,
+10.3; Harmony Lesson 9). This page follows Mullen and offers Gordon's unfamiliar patterns as the next step.
+
+**Not checked by the page:** your syllables. You judge them against the answer. Rhythm syllables are the
+Gordon/Froseth system: duple DU DE (divisions DU TA DE TA), triple DU DA DI (divisions DU TA DA TA DI TA).
+:::
+
+## Read it (symbolic association and generalization-symbolic)
+
+A pattern appears in notation, drawn the way the pattern sets write it: no stems, no rhythm, no syllables. Read it
+in syllables, out loud, then hear it and check. Start with **familiar patterns in a new order**; move to
+**unfamiliar** ones once you can read the familiar ones yourself. The *name it* choices mix two tonalities or
+meters and set neither up first, so you name it from the page.
+
+<div class="au-panel" id="au-gs"></div>
+
+::: {.au-src}
+**Sources.** Reading comes after aural/oral, verbal association and partial synthesis, and students first read
+patterns they already audiate; tonal patterns are shown on the staff without syllables or rhythm, with DO found from
+the DO signature (Gordon, *Learning Sequences in Music*, pp. 117–123). Generalization-symbolic is reading "one
+unfamiliar pattern of a mix of familiar and unfamiliar" patterns without the teacher's help and naming the tonality or
+meter; if students can't, go back to symbolic association or composite synthesis (pp. 133–134). Mullen: "read
+unfamiliar patterns (on the basis of familiar patterns)" (*MLT Any Music Teacher Can Du…De*, p. 39), and reading
+familiar patterns in unfamiliar order in a new DO signature (*The Literate Musician*, Reading Lesson 3.1, pp. 122–123).
+:::
+
+## Answer with your own pattern (creativity/improvisation)
+
+You hear a pattern; answer it out loud with one of your own. *Create* asks only for something different in the same
+tonality or meter. *Improvise* adds a rule: the same function, the other function, or (in rhythm) a division. There
+is no single right answer: the page can play or list answers from the set that fit, and you judge your own.
+
+<div class="au-panel" id="au-ci"></div>
+
+::: {.au-src}
+**Sources.** Creativity sets few restrictions; improvisation adds more, such as function (Gordon, *Learning Sequences
+in Music*, p. 136; Mullen, *MLT Any Music Teacher Can Du…De*, pp. 40–41, from exploration through creativity and
+improvisation to composition). A tonal answer has as many patterns as the teacher's; a rhythm answer need not
+(Gordon, pp. 138–139). Answering on a neutral syllable is creativity/improvisation-aural/oral, which Mullen bridges to
+straight after aural/oral; answering in syllables comes after verbal association (Mullen, pp. 66–67, 74). Gordon's
+*Reference Handbook* places no restriction on a creative response beyond being tonal, sets function rules for
+improvisation, and asks the teacher to be lenient, because bridging to an inference level reinforces the discrimination
+level it came from (Tonal Unit 3, pp. 43–45).
+:::
+
+## About the patterns and sound
+
+- **Tonal, familiar:** Mullen's familiar patterns in a familiar order (FPIFO), major and minor tonic and dominant,
+  15 each (*The Literate Musician*, pp. 57, 59). They are also on [Tonal Patterns](patterns.qmd) as
+  *mullen-fpifo-major* and *mullen-fpifo-minor*, with solfège, for verbal association practice.
+- **Tonal, unfamiliar:** the site's Register-style sets (*322a*, *322b*, *322b-major*), tonic and dominant only.
+- **Dorian and Mixolydian:** the site's tonic/subtonic sets (*323a*, *324a*).
+- **Rhythm:** the site's duple (2/4) and triple (6/8) macro/microbeat and division sets, chanted on one pitch.
+- Tonality is set with the tonal sequence 5 6 5 4 3 2 7 1 at double speed (Gordon, *Reference Handbook*, p. 33;
+  Mullen, p. 79). Meter is set with two bars of microbeats and two of macrobeats; that chant is this site's own.
+- Every pitch in a tonal pattern has the same length and every rhythm pattern uses one pitch, as in learning
+  sequence activities (Gordon, p. 223). Resting tones stay between D and G above middle C, in the singing range
+  Gordon gives (*Reference Handbook*, p. 32).
+- The instruments stand in for the neutral syllables "bum" and "bah".
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001. Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch ("A Quick Course on Rhythm" and "Techniques for Teaching Class Patterns").
+
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher's Guide to "The Literate Musician."* The Improving Musician, 2021. Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); the tonal sequence (p. 79); partial synthesis in rhythm by naming the microbeat (p. 85); rhythm patterns kept conversational, inflected with style and panache (p. 84).
+
+Mullen, Andy. *The Literate Musician: How to Hear, Speak, Think, Read & Write the Language of Music*. Revised 2nd ed., The Improving Musician, 2020. FPIFO, major and minor tonic and dominant (pp. 57, 59), copied into mullen-fpifo-major / -minor in apps/patterns/pattern-set.js; FPIFO in the Dorian, Mixolydian, Phrygian, Lydian, Aeolian and Locrian tonalities (pp. 22–27), mullen-fpifo-dorian … -locrian, with the keys moved so that C is the book's resting tone; Major and Minor Subdominant FPIFO (p. 293), mullen-subdominant-major / -minor; the stepwise sets (pp. 71–72) are the site's major-stepwise / minor-stepwise; rhythm patterns by lesson (duple and triple macrobeat and microbeat, pp. 37, 39–40; divisions, pp. 45, 47; elongation cells, pp. 48–49), copied into the mullen-rhythm-* sets of apps/rhythms/rhythm-pattern-object.js; translation lessons (Rhythm 8, 9.3, 10.3; Harmony 9). Reproduced with permission.
+:::
+<!-- /works-cited -->

@@ -26,3 +26,13 @@
   Part Reader tool (`tools/part-reader.qmd`): the instrument/transposition table and key maths are `apps/shared/score-reading.js`
   (`semis` = sounding minus written); drills are `<div class="sq" data-quiz>` from `apps/shared/lessons/score-quiz.js` (kinds at its
   top), included via `lessons/_score-kit.qmd`. Sources `scripts/sources/score-reading.py`. Test: `node tests/lessons/score-reading.cdp.js`.
+- Elements of Music (`lessons/elements-{articulation,dynamics,harmony,instruments,melody,metre,rhythm,structure,style,texture,quiz}.qmd`,
+  sidebar part Elements of Music, topic `elements`), from a school handout in its order. `apps/shared/lessons/elements.js`: the
+  British-names switch (US default; `[quarter note]{.nn}` spans and `.ax-cap` captions; localStorage `el-names`), quizzes
+  `<div class="eq" data-set="texture|…|all">` (bank `Q` at its top), and orchestral sounds added to BandSounds (`violin`, `flute`,
+  `timpani`, …; the kit loads `sounds.js` first). Staccato must be heard through a `data-bend` list (the player ignores it).
+  Running notes, handout corrections, what's unchecked and the grade 6–10 plan: `lessons/ELEMENTS-NOTES.md`.
+  One-page sheets (`elements-<element>-sheet.qmd`, all ten): `::: {.el-sheet data-title}` > `.el-grid` > `.el-card` boxes; elements.js adds
+  Full screen, zooms the grid to fit the screen, shrinks staves to their card. `AX_PARTS` (abc-ex.js): click a note to play
+  from its measure, Show checkboxes per voice, and a Show notation switch.
+  Sources `scripts/sources/elements.py`. Test: `node tests/lessons/elements.cdp.js` (after rendering the twelve pages).

@@ -1,0 +1,115 @@
+---
+title: "Elements 8: Structure and Form"
+toc: true
+toc-depth: 2
+description: "How a piece is put together in sections: phrases, binary, ternary, rondo and strophic form, minuet and trio, verse and chorus, and theme and variations, each heard as a short piece with its sections labelled."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, composing]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Structure** (or **form**) is how a piece is built from sections. Sections are named with letters: the first idea is
+**A**, a different one **B**, the next new one **C**. When A comes back it keeps its letter.
+
+## 1. Phrases and sections
+
+A **phrase** is a musical sentence, usually 2, 4 or 8 [measures]{.nn}, ending in a [cadence](elements-harmony.qmd#cadences).
+Phrases join into **sections**. To find the sections, listen for where the music *changes*: a new tune, a new key, new
+instruments, a new texture or a different mood.
+
+## 2. Binary form: A B
+
+Two sections. B contrasts with A in some way (a new key, a new tune), and usually **both are repeated**: A A B B.
+Common in Baroque dances.
+
+<div class="abc-ex" data-bpm="110"><script type="text/plain">
+X:1
+T:Binary: A (repeated) moves to the dominant, B (repeated) comes home
+M:3/4
+L:1/4
+K:G
+|:"^A""G"G B d|"D7"c A F|"G"G B d|"D"A3|"G"B G B|"Am"c A c|"D"d2 ^c|"D"d3:|
+|:"^B""D"d f a|"G"g e c|"D"A d f|"A"e3|"D"f d B|"D7"c A F|"D"A2 F|"G"G3:|]
+</script></div>
+
+## 3. Ternary form: A B A
+
+Three sections: A, a contrasting B, then A again. The return can be exact or slightly changed (A B A′).
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Ternary: A in C major, B in A minor, A again
+M:4/4
+L:1/4
+K:C
+"^A""C"E G c G|"F"A F "G"D B,|"C"E G c G|"G"D B, "C"C2|
+"^B""Am"A, C E A|"Dm"F D "E"E ^G,|"Am"A, C E A|"E"^G, B, "Am"A,2|
+"^A""C"E G c G|"F"A F "G"D B,|"C"E G c G|"G"D B, "C"C2|]
+</script></div>
+
+## 4. Rondo form: A B A C A
+
+The opening section, the **refrain**, keeps coming back, with contrasting sections called **episodes** in between.
+
+<div class="abc-ex" data-bpm="120"><script type="text/plain">
+X:1
+T:Rondo: A B A C A
+M:2/4
+L:1/8
+K:F
+"^A""F"c2 A2|"C"G2 E2|"F"F A c f|"C"e2 "F"f2|
+"^B""Dm"d2 f2|"Gm"g2 B2|"A"^c e a g|"Dm"f2 d2|
+"^A""F"c2 A2|"C"G2 E2|"F"F A c f|"C"e2 "F"f2|
+"^C""Bb"B,2 D2|"F"F2 A2|"C"G E C E|"F"F4|
+"^A""F"c2 A2|"C"G2 E2|"F"F A c f|"C"e2 "F"f2|]
+</script></div>
+
+## 5. Strophic form: A A A
+
+The same music for every **verse** (every *strophe*), with new words each time. Hymns, folk songs, ballads and many
+children's songs.
+
+When the music *never* repeats and keeps changing to follow the words or the story, the opposite of strophic, it is
+**through-composed**.
+
+## 6. Minuet and trio
+
+A **minuet** is a dance in 3/4 at a moderate tempo, from 17th- and 18th-century Europe. In the Classical period it was
+paired with a second, contrasting minuet called the **trio** (once played by just three instruments). Each is in binary
+form; then the minuet comes back without its repeats. Overall it is ternary:
+
+| Minuet | Trio | Minuet |
+|---|---|---|
+| A (repeated) B (repeated) | C (repeated) D (repeated) | A B (no repeats) |
+| tonic key | a related key, lighter or thinner scoring | tonic key |
+
+## 7. Popular song forms
+
+| Form | Sections |
+|---|---|
+| **Verse–chorus** | intro, verse, chorus, verse, chorus, bridge, chorus, outro |
+| **AABA (32-bar song)** | A A B A, each 8 [measures]{.nn}; B is the *bridge* or *middle eight* |
+| **12-bar blues** | the same 12-[measure]{.nn} chord pattern, repeated ([Blues Changes](blues-changes.qmd)) |
+| **Theme and variations** | a tune, then changed versions of it (new rhythm, harmony, key, instruments) |
+
+Naming the parts of a song and marking them in a recording: [Section Labels](section-labels.qmd).
+
+## 8. Check yourself
+
+<div class="eq" data-set="structure"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Minuet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Minuet](https://en.wikipedia.org/wiki/Minuet). Usually 3/4; French social dance, into opera via Lully; binary sections; 'trio' named from a middle section scored for three instruments; A–B–A overall.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

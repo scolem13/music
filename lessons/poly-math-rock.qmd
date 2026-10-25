@@ -1,0 +1,75 @@
+---
+title: "Polymeter and Polyrhythm in Math Rock"
+toc: true
+toc-depth: 2
+description: "Odd-length riffs over steady drums, 5 and 7 against 4, guitars in different cycles, and the difference between a polyrhythm and a riff that drifts until it lines up again."
+instruments: [guitar, bass, drums, any]
+topics: [rhythm, polyrhythm, rock]
+has: [interactive, svg]
+---
+
+{{< include _poly-kit.qmd >}}
+
+**Math rock** is a style of rock from the late 1980s and 1990s on, built on odd meters, changing meters,
+and riffs that run against the beat. Much of what sounds like "polyrhythm" in it is **polymeter**: riffs of
+different lengths on the same pulse.
+
+## A riff in five over four
+
+The guitar repeats a five-step riff while the drums keep a four-step bar. Every step is the same length, so
+the riff starts one step earlier in each new bar, and the two meet again after 20 steps.
+
+<div class="poly" data-layers="X.x.x;X.x.;x" data-names="Guitar riff (5);Kick and snare (4);Hi-hat" data-sounds="hi;kick;shaker" data-bpm="90" data-beat="1" data-polymeter></div>
+
+**Try it.** Mute the guitar and play the riff on your instrument (any five-note figure works) while the drums
+play. Count "1 2 3 4 5" for the riff and feel the drums' "1 2 3 4" at the same time.
+
+## Seven over four
+
+<div class="poly" data-layers="X.x.xx.;X.x.;x" data-names="Riff (7);Kick and snare (4);Hi-hat" data-sounds="hi;kick;shaker" data-bpm="90" data-beat="1" data-polymeter></div>
+
+Seven and four meet after 28 steps. Long cycles like this sound unpredictable but are fully fixed.
+
+## Two guitars in two cycles
+
+A trick heard in math rock and in progressive rock before it: two guitars play riffs of different lengths at the
+same time. Here one guitar is in 5 and the other in 6, over drums in 4.
+
+<div class="poly" data-layers="X.xx.;X..x.x;X.x." data-names="Guitar 1 (5);Guitar 2 (6);Drums (4)" data-sounds="hi;mid;kick" data-bpm="80" data-beat="2" data-polymeter></div>
+
+All three line up after 60 steps. Mute layers to hear each pair.
+
+## True polyrhythm: 3 and 5 against 4
+
+Math rock also uses even polyrhythms, for example a guitar playing five even notes over a drummer's
+four beats, both starting together each bar.
+
+<div class="poly" data-layers="4;5;3" data-names="Four beats;Five;Three" data-sounds="kick;hi;wood" data-bpm="70" data-beat="0"></div>
+
+The difference from the riffs above: here every layer starts again on each bar. In polymeter, the layers drift
+and meet only after many bars.
+
+## Bands to hear
+
+From memory, as a listening list rather than checked claims about particular songs: Don Caballero, Hella,
+Battles, Tera Melos, toe and Covet. King Crimson's early-1980s albums (*Discipline*) are often cited for two
+guitars in different cycles, and Meshuggah, a metal band, for long riffs over a steady 4/4 hi-hat.
+
+## Write your own
+
+In the [Polyrhythm tool](../tools/polyrhythm.qmd), tick **Polymeter**, keep a 4-step drum layer, and type a riff
+of 3, 5, 7 or 9 steps. Then add a second riff of another length. The line under the grid tells you when they
+all line up again: that is the length of your section.
+
+Back to the start: [What Is a Polyrhythm?](poly-basics.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Math rock." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Math_rock](https://en.wikipedia.org/wiki/Math_rock). Unverified: the style's dates and the band list. Not yet re-read.
+
+"Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+:::
+<!-- /works-cited -->
+

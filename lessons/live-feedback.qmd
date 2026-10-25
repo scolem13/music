@@ -1,0 +1,69 @@
+---
+title: "Live Sound 6: Monitors and Feedback"
+toc: true
+toc-depth: 2
+description: "Monitor mixes on the X32's mix buses, pre-fader sends to wedges, and how to stop a mic from feeding back."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive]
+---
+
+The players on stage hear themselves through **monitors** (wedges on the floor, or in-ear monitors). On the X32
+every monitor is a **mix bus**: each channel has a send to each bus, and the bus goes to a wedge.
+
+## Monitor sends on the X32
+
+- In the **Bus Sends** section of the channel strip, choose a bank and turn the send for that wedge. The screen
+  (View) shows every send.
+- Monitor sends are usually **pre-fader**: when you move a channel's fader for the audience, the singer's wedge
+  doesn't change. The X32 lets each bus take its signal pre-EQ, pre-fader or post-fader.
+- Ask each player what they need *more of*. Their own voice or instrument usually comes first.
+
+## Feedback
+
+A mic hears the wedge, the wedge plays the mic, the mic hears that louder... and one frequency starts to
+ring and grow into a howl. That is **feedback**. The fixes, best first:
+
+1. **Aim it.** A cardioid mic is deaf at the back: point that side at the wedge.
+2. **Closer.** The closer the singer is to the mic, the less gain the channel needs.
+3. **Less.** Turn down the send. Everyone wants more; the room has a limit.
+4. **Cut the ringing frequency** with a narrow EQ cut (on the bus, so the main mix isn't affected). The X32’s
+   effects include 31-band graphic EQs (GEQ) you can insert on a bus.
+
+## Try it: a mixer channel with a wedge
+
+This is the simpler mixer channel from [Gear 3](gear-amps.qmd), with a monitor send into a wedge that the mic
+can hear. Keep your speakers low. **Feedback** shows it happening; the two **Fixed** presets show two cures.
+
+<div class="sk" data-w="pa" data-preset="Start here"></div>
+
+## Ringing out a monitor
+
+Before the band arrives, with the mic in its place:
+
+1. Turn the wedge send up slowly until it just starts to ring.
+2. Find the frequency (sweep a narrow EQ on the bus, or a graphic EQ: the slider that makes it stop).
+3. Cut it 3–6 dB, narrow. Turn up a little more until the next one rings. Two or three cuts is plenty;
+   more and the wedge sounds hollow.
+
+## Next
+
+- [Live Sound 7: Soundcheck](live-soundcheck.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Audio feedback." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Audio_feedback](https://en.wikipedia.org/wiki/Audio_feedback).
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _synth-kit.qmd >}}

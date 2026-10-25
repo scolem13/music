@@ -1,0 +1,140 @@
+---
+title: "Time Signatures: Two Ways to Sort Them"
+toc: true
+toc-depth: 2
+description: "The classical grid of simple and compound, duple, triple and quadruple meters, and Music Learning Theory's usual and unusual meters (duple, triple, combined; paired and unpaired), with a table that translates between them."
+---
+
+```{=html}
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+There are two common ways to sort meters. **Classical theory** reads the time signature and sorts by two questions: *how many beats
+in a bar* and *how is each beat divided*. **Music Learning Theory (MLT)** sorts by what you hear and move to: *how the big beats are
+divided*, and *whether the big beats are all the same length*. The two systems often give different names to the same music.
+
+Click any heading to fold its section.
+
+## The classical grid: simple/compound × duple/triple/quadruple
+
+Two questions, two words (Hutchinson, "Meter"):
+
+1. **How is the beat divided?** Into two parts: **simple**. Into three parts: **compound**.
+2. **How many beats in a bar?** Two: **duple**. Three: **triple**. Four: **quadruple**.
+
+| | Duple (2 beats) | Triple (3 beats) | Quadruple (4 beats) |
+|---|---|---|---|
+| **Simple** (beat ÷ 2) | 2/4, 2/2, 2/8 | 3/4, 3/8, 3/2 | 4/4, 4/2 |
+| **Compound** (beat ÷ 3) | 6/8, 6/4, 6/16 | 9/8, 9/4 | 12/8, 12/4 |
+
+**The quick rule:** if the top number is 6, 9 or 12, the meter is compound, and the beat is a dotted note. Divide the top number by 3
+to get the number of beats: 6/8 has two dotted-quarter beats, so it is **compound duple**. Otherwise the top number is the number of
+beats: 3/4 is **simple triple**.
+
+**Meters that don't fit the grid.** Signatures such as 5/8 and 7/8 have beats of unequal length (5/8 is usually felt as 2+3 or 3+2
+eighths; 7/8 as 2+2+3 or another order). Textbooks call these *asymmetrical*, *irregular* or *complex* meters, and the names vary
+from book to book *(these names are from general use and not yet checked against a source)*.
+
+**The classical question:** *What does the time signature say?* You can answer it by looking, without hearing the music.
+
+## The MLT way: usual and unusual meter
+
+Gordon builds meter from two layers you feel in your body: **macrobeats** (big beats; tap them with your heels) and **microbeats**
+(the smaller beats that divide them; tap them with your hands) (Gordon 175).
+
+### Usual meter: big beats all the same length
+
+When the macrobeats are equal and come in pairs, the meter is **usual**. Then the question is *how is each macrobeat divided?*
+(Gordon 175–176):
+
+- **Usual duple:** each macrobeat divides into **2** microbeats. Chant: *du de du de*.
+- **Usual triple:** each macrobeat divides into **3** microbeats. Chant: *du da di du da di*.
+- **Usual combined:** some macrobeats divide into 2 and some into 3, while the macrobeats stay the same length.
+
+(Rhythm syllables: Gordon 105.)
+
+### Unusual meter: big beats of different lengths
+
+When the macrobeats are **not** all the same length, the meter is **unusual**. Now the question is *how are the macrobeats grouped?*
+(Gordon 179–180):
+
+- **Unusual paired:** two macrobeats in a group, one longer than the other. Five microbeats as 2+3 or 3+2, often written 5/8.
+- **Unusual unpaired:** three macrobeats in a group, of unequal lengths, such as 2+2+3, often written 7/8. Two of them form a pair and
+  one is left over; the listener decides which.
+- **Intact:** in **unusual paired intact** and **unusual unpaired intact** meters, the macrobeats are felt without being divided into
+  microbeats.
+
+Gordon sums up the difference: "In usual meter, microbeats establish meter, and macrobeats establish tempo. In unusual meter,
+macrobeats establish meter, and microbeats establish tempo" (Gordon 180).
+
+### The meter is heard, not read
+
+Gordon says "there is no direct relation between notation, particularly measure signatures and meter." He calls the textbook label
+of 6/8 as "duple compound meter" "inaccurate": in 6/8 you hear two macrobeats, each divided into three, which is **usual triple**
+(Gordon 176). Three more things that, for Gordon, do **not** change the meter (Gordon 176–177):
+
+- **Tempo:** fast or slow macrobeats are still the same meter.
+- **Accents:** a waltz is usual triple whichever beats a dancer or band accents.
+- **Smaller divisions:** sixteenth-note triplets in 2/4 don't make it triple; sixteenths in 6/8 don't make it duple.
+
+**The MLT question:** *Move to it. Are the big beats equal? Then how many small beats fit in each?* You answer it by listening and
+moving, before you have seen any notation.
+
+## The two systems side by side
+
+The same signatures, sorted both ways. The MLT column is what you would *usually* hear; for Gordon the music, not the signature,
+decides.
+
+| Signature | Classical | MLT (usually) | Why they differ |
+|---|---|---|---|
+| 2/4 | simple duple | usual duple | they agree |
+| 4/4 | simple quadruple | usual duple | MLT doesn't count beats per bar; the macrobeats divide in 2 |
+| 3/4 (a waltz) | simple triple | usual triple | classical counts 3 beats in the bar; MLT hears one macrobeat per bar divided in 3, paired with the next bar |
+| 6/8 | compound duple | usual triple | classical counts 2 beats; MLT names the division of each beat (3) |
+| 9/8 | compound triple | usual triple | classical counts 3 beats; MLT hears each divided in 3 |
+| 12/8 | compound quadruple | usual triple | same reason |
+| 6/8 with some beats split in 2 | compound duple with duplets | usual combined | MLT has a name for the mix |
+| 5/8 (2+3) | irregular / asymmetrical | unusual paired | MLT asks how many big beats are grouped (2) |
+| 7/8 (2+2+3) | irregular / asymmetrical | unusual unpaired | three big beats, one left unpaired |
+
+**The key difference:**
+
+- In **classical** names, **duple / triple / quadruple** counts **beats in a bar**, and **simple / compound** names how each beat
+  divides.
+- In **MLT** names, **duple / triple** names how each **macrobeat divides** (that is, what classical theory calls simple and
+  compound), and **paired / unpaired** counts **macrobeats in a group**, which only matters when they are unequal.
+
+So the classical word *triple* and the MLT word *triple* answer different questions. "Simple triple" (3/4) and "compound duple" (6/8)
+are different meters in classical theory, but both are **usual triple** in MLT.
+
+## Check yourself
+
+For each, give the classical name and the MLT name. Answers are below.
+
+1. "Row, Row, Row Your Boat" written in 6/8.
+2. A march in 2/2.
+3. A minuet in 3/4.
+4. A tune in 7/8 grouped 3+2+2.
+5. A jig in 12/8.
+
+::: {.callout-tip collapse="true"}
+## Answers
+1. Compound duple; usual triple.
+2. Simple duple; usual duple.
+3. Simple triple; usual triple (one macrobeat per bar, divided in 3).
+4. Irregular (asymmetrical); unusual unpaired.
+5. Compound quadruple; usual triple.
+:::
+
+Practise hearing the MLT meters with the [Rhythm Patterns](../practice/rhythms.qmd) and
+[Audiation](../practice/audiation.qmd) pages. Related: [Modes: Three Meanings of One Word](modes-three-ways.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "Meter." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/meter.html](https://musictheory.pugetsound.edu/mt21c/meter.html). Simple and compound, duple, triple and quadruple, with example signatures.
+:::
+<!-- /works-cited -->

@@ -20,6 +20,9 @@
 // Needs abcjs and soundfont.js (getSoundfontUrl). ▶ plays the band's samples (abc-play.js); data-sound picks one (default piano),
 // data-bpm the tempo (else Q:, else abcjs's default). With chord symbols the band plays them with the melody (data-style, a
 // BandCatalog style, default pop), and a "▶ Chords" button plays only the chords, held on the piano.
+// With window.AX_PARTS = true (the Backing Track's chart habits): clicking a note or rest plays from the start of its measure
+// (or jumps there while playing), and an example with more than one V: voice gets "Show" checkboxes, one per part: a hidden
+// part is still heard (the full tune plays, the shown parts light up). body.ax-hide-notes hides every staff (pages add the switch).
 (function (global) {
   var VOICES = [["-12", "Bass (an octave lower)"], ["-7", "Baritone / low alto"], ["-3", "Alto / tenor"], ["0", "Middle voice, as written"], ["3", "Mezzo"], ["5", "Soprano"]];
   var KEY = "abc-ex-voice";
@@ -33,19 +36,20 @@
   function abcPlay() {
     if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
     return playJs || (playJs = new Promise(function (res, rej) {
-      var sc = document.createElement("script"); sc.src = "/apps/shared/abc-play.js?v=4"; sc.onload = function () { res(global.AbcPlay); };
+      var sc = document.createElement("script"); sc.src = "/apps/shared/abc-play.js?v=5"; sc.onload = function () { res(global.AbcPlay); };
       sc.onerror = function () { playJs = null; rej(); }; document.head.appendChild(sc);
     }));
   }
   function stop() { if (playing) { var p = playing; playing = null; try { p.synth.stop(); } catch (e) {} p.btn.textContent = p.label; } }
-  function play(ex, extra, btn, label) {
-    var was = playing && playing.btn === btn; stop(); if (was) return;
-    if (ex.bend) return playBend(ex, extra, btn, label);
+  function play(ex, extra, btn, label, fromBar) {
+    var was = playing && playing.btn === btn; stop(); if (was && fromBar == null) return;
+    if (ex.bend) return playBend(ex, extra, btn, label, fromBar);
+    var hid = ex.fullTune && !ex.playTune;
     var me = { btn: btn, label: label, synth: { stop: function () {} } }; playing = me;
     btn.textContent = "■ Stop";
     abcPlay().then(function (AP) {
       if (playing !== me) return;
-      var h = AP.play(ex.playTune || ex.tune, { transpose: extra || 0, light: !ex.playTune, sound: ex.host.getAttribute("data-sound") || "piano",
+      var h = AP.play(ex.playTune || (hid ? ex.fullTune : ex.tune), { transpose: extra || 0, light: !ex.playTune, fromBar: fromBar || 0, lightTune: hid ? ex.tune : null, sound: ex.host.getAttribute("data-sound") || "piano",
         abc: ex.playTune ? ex.playAbc : ex.abc, style: ex.host.getAttribute("data-style") || "pop",
         qpm: +ex.host.getAttribute("data-bpm") || 0, onEnd: function () { if (playing === me) stop(); } });
       me.synth.stop = function () { h.stop(); };
@@ -64,7 +68,8 @@
     }).catch(function () { if (playing === me) stop(); });
   }
 
-  function playBend(ex, extra, btn, label) {
+  function playBend(ex, extra, btn, label, fromBar) {
+    var mf = ex.tune && ex.tune.getMeterFraction ? ex.tune.getMeterFraction() : { num: 4, den: 4 }, skip = (fromBar || 0) * mf.num * 4 / mf.den;
     var spec = ex.bend, sound = spec.sound || "clguitar", spb = 60 / (spec.bpm || 96), me = { btn: btn, label: label, synth: { stop: function () {} } };
     playing = me; btn.textContent = "■ Stop";
     abcPlay().then(function (AP) { return AP.ctx(); }).then(function (b) {
@@ -73,9 +78,10 @@
         if (playing !== me) return;
         var t0 = b.ac.currentTime + 0.1, end = 0, shift2 = shift + (extra || 0);
         spec.notes.forEach(function (n) {
+          if (n.t < skip - 1e-3) return;
           b.bank.play(sound, { midi: n.midi + shift2, vel: n.vel == null ? 0.75 : n.vel, dur: n.d * spb,
-            bend: n.bend ? n.bend.map(function (p) { return [p[0] * spb, p[1]]; }) : null }, t0 + n.t * spb, b.out);
-          end = Math.max(end, n.t + n.d);
+            bend: n.bend ? n.bend.map(function (p) { return [p[0] * spb, p[1]]; }) : null }, t0 + (n.t - skip) * spb, b.out);
+          end = Math.max(end, n.t - skip + n.d);
         });
         setTimeout(function () { if (playing === me) stop(); }, end * spb * 1000 + 400);
       });
@@ -137,7 +143,13 @@
       o = { scale: 0.9, visualTranspose: shift, add_classes: true, paddingleft: 0, paddingright: 26, paddingtop: 0, paddingbottom: 0,
         staffwidth: +ex.host.getAttribute("data-width") || (ex.host.closest(".ax-pair") ? 260 : 380) };
     }
-    ex.tune = ABCJS.renderAbc(ex.staff, ex.abc, o)[0];
+    if (global.AX_PARTS) o.clickListener = function (abcElem) {
+      var s = abcElem && abcElem.abselem && abcElem.abselem.elemset && abcElem.abselem.elemset[0]; if (!s) return;
+      var k = barIndex(ex.tune.setTiming(), s); if (k >= 0) play(ex, ex.step || 0, ex.playBtn, "▶ Play", k);
+    };
+    var hidden = (ex.parts || []).filter(function (p) { return !p.on; }).map(function (p) { return p.id; });
+    ex.tune = ABCJS.renderAbc(ex.staff, hidden.length ? withoutVoices(ex.abc, hidden) : ex.abc, o)[0];
+    ex.fullTune = hidden.length ? ABCJS.renderAbc(el("div"), ex.abc, { visualTranspose: shift })[0] : null;   // still heard whole
     if (global.AX_CAPTIONS) align(ex.host);
     if (ex.playAbc) ex.playTune = ABCJS.renderAbc(el("div"), ex.playAbc, { visualTranspose: shift })[0];   // drawn off-page, only heard
     ex.step = 0; if (ex.stepBtn) ex.stepBtn.textContent = "Step up ▲";
@@ -161,6 +173,39 @@
   }
   function alignAll() { document.querySelectorAll(".ax-pair, tr").forEach(function (g) { var h = g.querySelector(".abc-ex"); if (h) align(h); }); }
 
+  // the measure a drawn note is in (repeats counted as played: abcjs marks each measure's first event), as AbcPlay.barIndex
+  function barIndex(timing, svgEl) {
+    var idx = -1;
+    for (var i = 0; i < timing.length; i++) {
+      var e = timing[i]; if (e.type !== "event") continue;
+      if (e.measureStart || idx < 0) idx++;
+      if ((e.elements || []).some(function (g) { return (g || []).indexOf(svgEl) >= 0; })) return idx;
+    }
+    return -1;
+  }
+  // the V: voices of a tune, in order, with a name for the Show checkboxes (from name=, else the clef and the order)
+  function voicesOf(abc) {
+    var out = [], seen = {};
+    abc.split("\n").forEach(function (l) {
+      var m = l.match(/^V:\s*(\S+)(.*)$/); if (!m || seen[m[1]]) return; seen[m[1]] = 1;
+      var nm = m[2].match(/(?:name|nm)="([^"]*)"/), bass = /clef=bass/.test(m[2]), perc = /clef=perc/.test(m[2]);
+      out.push({ id: m[1], name: nm ? nm[1] : null, bass: bass, perc: perc, on: true });
+    });
+    var trebles = out.filter(function (v) { return !v.bass && !v.perc && !v.name; });
+    trebles.forEach(function (v, i) { v.name = trebles.length === 1 ? "Top" : i === 0 ? "Top" : i === trebles.length - 1 ? "Lower" : "Middle"; });
+    var basses = out.filter(function (v) { return v.bass && !v.name; });
+    basses.forEach(function (v, i) { v.name = basses.length > 1 ? "Bass " + (i + 1) : "Bass"; });
+    out.forEach(function (v) { if (!v.name) v.name = v.perc ? "Drums" : "Part " + v.id; });
+    return out;
+  }
+  function withoutVoices(abc, ids) {
+    var cur = null;
+    return abc.split("\n").filter(function (l) {
+      var m = l.match(/^V:\s*(\S+)/); if (m) cur = m[1];
+      return !(cur && ids.indexOf(cur) >= 0);
+    }).join("\n");
+  }
+
   function build(host) {
     var src = host.querySelector('script[type="text/plain"]:not([data-play]):not([data-bend])'), abc = (src ? src.textContent : host.getAttribute("data-abc") || "").trim();
     var pl = host.querySelector('script[type="text/plain"][data-play]');
@@ -172,7 +217,7 @@
     var bar = el("div", "ax-bar");
     var b = el("button", "btn btn-sm btn-outline-secondary", "▶ Play"); b.type = "button";
     b.addEventListener("click", function () { play(ex, 0, b, "▶ Play"); });
-    bar.appendChild(b);
+    bar.appendChild(b); ex.playBtn = b;
     if ((abc.replace(/^[A-Za-z]:.*$/mg, "").replace(/%.*$/mg, "").match(/"[^"]*"/g) || []).some(function (q) { return /^"[A-G]/.test(q); })) {   // chord symbols: a Chords button
       var cb = el("button", "btn btn-sm btn-outline-secondary ax-chords", "▶ Chords"); cb.type = "button";
       cb.title = "Just the chords, held on the piano: no bass, drums or melody";
@@ -194,6 +239,22 @@
       var lab = el("label", "ax-count"); ex.count = document.createElement("input"); ex.count.type = "checkbox"; ex.count.checked = true;
       lab.appendChild(ex.count); lab.appendChild(document.createTextNode(" count-in click"));
       bar.appendChild(cb); bar.appendChild(lab);
+    }
+    if (global.AX_PARTS && !bend) {
+      var vs = voicesOf(abc);
+      if (vs.length > 1) {
+        ex.parts = vs; var box = el("span", "ax-parts"); box.appendChild(el("span", "ax-parts-l", "Show"));
+        vs.forEach(function (v) {
+          var lab = el("label"), cb2 = document.createElement("input"); cb2.type = "checkbox"; cb2.checked = true;
+          cb2.addEventListener("change", function () {
+            v.on = cb2.checked;
+            if (!vs.some(function (x) { return x.on; })) { v.on = cb2.checked = true; return; }   // one part always shows
+            stop(); draw(ex); global.dispatchEvent(new Event("resize"));
+          });
+          lab.appendChild(cb2); lab.appendChild(document.createTextNode(" " + v.name)); box.appendChild(lab);
+        });
+        bar.appendChild(box);
+      }
     }
     host.textContent = "";
     if (cap) host.appendChild(el("div", "ax-cap", cap));
@@ -230,9 +291,14 @@
       ".ax-pair{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;max-width:44rem}.ax-pair .abc-ex{margin:.6rem 0 1rem;min-width:0}.abc-ex svg{max-width:100%;height:auto}" +
       ".ax-table{border-collapse:collapse;width:100%;margin:.8rem 0 1.4rem;font-size:.9rem}.ax-table th,.ax-table td{border-bottom:1px solid var(--site-border);padding:.3rem .6rem;vertical-align:top;text-align:left}" +
       ".ax-table .abc-ex{margin:0}.ax-table td.ax-n,.ax-table th.ax-n{width:1%;white-space:nowrap;padding-right:.3rem}.ax-table td:nth-child(2){min-width:8.5rem}.ax-table th{font-weight:600}" +
+      ".ax-parts{display:inline-flex;flex-wrap:wrap;align-items:center;gap:.15rem .5rem;font-size:.75rem;color:var(--site-ink-2)}.ax-parts label{display:inline-flex;align-items:center;gap:.2rem;cursor:pointer}" +
+      ".ax-parts-l{font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.06em;font-size:.68rem}" +
+      "body.ax-parts-on .abc-ex .abcjs-note,body.ax-parts-on .abc-ex .abcjs-rest{cursor:pointer}" +
+      "body.ax-hide-notes .ax-staff,body.ax-hide-notes .ax-parts{display:none}" +
       "@media (max-width:600px){.ax-pair{grid-template-columns:1fr;gap:0}}";
     document.head.appendChild(css);
     if (!global.AX_NO_VOICE) voiceMenu();
+    if (global.AX_PARTS) document.body.classList.add("ax-parts-on");
     if (global.AX_CAPTIONS) { var rt; global.addEventListener("resize", function () { clearTimeout(rt); rt = setTimeout(alignAll, 150); });
       if (document.fonts && document.fonts.ready) document.fonts.ready.then(alignAll); }
     document.querySelectorAll(".abc-ex").forEach(build);

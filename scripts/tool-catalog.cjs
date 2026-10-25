@@ -30,6 +30,7 @@ const CLS = {
   "dj-tt": ["Turntables", "DJ and sampling"], "turntables": ["Turntables", "DJ and sampling"], "sp-pads": ["Sampler pads", "DJ and sampling"],
   "cp-motif": ["Motif lab", "Composing"], "cp-transpose": ["Transposer", "Composing"], "cp-journal": ["Process journal entry", "Composing"],
   "cp-intent": ["Artistic intention builder", "Composing"], "cp-sort": ["Command terms", "Composing"],
+  "lk": ["X32 channel strip", "Live sound"],
 };
 const UP = { eq: "EQ", lfo: "LFO", fm: "FM synthesis", pa: "PA channel", st: "Strobe", in: "Inharmonicity" };
 const nice = k => UP[k] || k.charAt(0).toUpperCase() + k.slice(1);

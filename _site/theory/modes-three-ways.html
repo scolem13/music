@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.10.18">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="description" content="What musicians mean by “mode” in Music Learning Theory (a tonality, heard from its resting tone), in classical theory (church modes and the major and minor modes) and in jazz (a scale chosen to fit one chord). The same notes, three answers.">
+
+<title>Modes: Three Meanings of One Word – Music Practice</title>
+<style>
+/* Default styles provided by pandoc.
+** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+*/
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: 1.5em;}
+div.column{flex: auto;}
+@media screen {
+div.columns{gap: min(4vw, 1.5em);}
+div.column{overflow-x: auto;}
+}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../theory/meter-taxonomy.html" rel="next">
+<link href="../theory/exercise-builder.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-64a204ab8560d761af7679ceaba22944.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-0c7587e6f6df4385ac2d543e81c42bfa.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [],
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<!-- Injected into <head> of every page by _quarto.yml -->
+<!-- Display + mono fonts used throughout the site and in the chord chart -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+<script src="../config.js"></script>
+<script>
+  // One shared Supabase client for the whole site. The auth widget and the
+  // tracker both reuse window.sb so there's a single session.
+  window.sb = window.supabase.createClient(CONFIG.URL, CONFIG.ANON);
+</script>
+<!-- Session navigation: sets window.TOOL_CONFIG from URL params before any
+     tool scripts run; injects a step banner when a session is active. -->
+<script src="../apps/shared/session-nav.js"></script>
+<!-- Where the site's own sound can be listened to (the navbar Tuner): sound sources register their output here. -->
+<script src="../apps/shared/audio-tap.js?v=1"></script>
+<!-- Long instruction paragraphs (*-hint, *-note) folded behind an eye button. -->
+<script src="../apps/shared/help-eye.js?v=1"></script>
+<!-- MIDI learn: a pedal or key presses any button on the page (navbar "MIDI buttons"). -->
+<script src="../apps/shared/midi-learn.js?v=1" defer=""></script>
+<script>if(/\/lessons\//.test(location.pathname)){for(const f of["tool-catalog-data.js","tool-links.js"]){const s=document.createElement("script");s.src="/apps/shared/lessons/"+f+"?v=1";s.async=false;document.head.appendChild(s)}}</script>
+<style>.tool-links{margin:2.5rem 0 1rem;padding:1rem 1.2rem;border:1px solid var(--bs-border-color);border-radius:.5rem;font-size:.92rem}.tool-links h2{font-size:1.05rem;margin:0 0 .5rem;border:0}.tool-links ul{margin:0 0 .5rem;padding-left:1.1rem}</style>
+<!-- Click the number shown beside any slider to type a value. -->
+<script src="../apps/shared/num-edit.js?v=1"></script>
+<!-- Sheet music (abcjs) everywhere looks like the Notation page's score: Source Serif 4 text (crisp staff lines are opt-in: html.abc-crisp). -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&amp;display=swap">
+<style>
+svg[aria-label^="Sheet Music"] text,svg[aria-label^="Sheet Music"] tspan{font-family:"Source Serif 4",Georgia,serif!important;font-weight:400!important}
+svg[aria-label^="Sheet Music"] .abcjs-title,svg[aria-label^="Sheet Music"] .abcjs-title tspan{font-weight:500!important}
+/* Crisp staff lines: off (abcjs default drawing); some monitors drop or thicken lines with it. Add class "abc-crisp" to <html> to turn it back on. */
+html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff-extra path,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-bar,html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-ledger{shape-rendering:crispEdges}
+</style>
+<!-- App pages (Tools/Practice): small edge margin so full-bleed apps don't
+     grind against the window. -->
+<style>
+  .column-screen, .column-screen-inset { padding-left: 3px; padding-right: 3px; box-sizing: border-box; }
+  [id$="-root"] { padding: 3px; box-sizing: border-box; }
+
+  /* Sticky bars that assumed no parent navbar — offset them below the Quarto
+     navbar (~56px mobile, ~64px desktop) so they don't slide behind it. */
+  .chord-banner { top: 56px !important; }
+  .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 56px !important; }
+  @media (min-width: 992px) {
+    .chord-banner { top: 64px !important; }
+    .keyboard-diagram-studio_mobileToolDock__dsAU8 { top: 64px !important; }
+  }
+</style>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">Music Practice</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-course" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Course</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-course">    
+        <li>
+    <a class="dropdown-item" href="../course/index.html">
+ <span class="dropdown-text">Your Music Course</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../course/pathway.html">
+ <span class="dropdown-text">Your Pathway</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/enrichment.html">
+ <span class="dropdown-text">Enrichment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../course/glossary.html">
+ <span class="dropdown-text">Glossary</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../lessons/index.html"> 
+<span class="menu-text">Lessons</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="../theory/index.html" aria-current="page"> 
+<span class="menu-text">Theory</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-practice" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Practice</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-practice">    
+        <li>
+    <a class="dropdown-item" href="../practice/session.html">
+ <span class="dropdown-text">Session</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/rhythm-sequences.html">
+ <span class="dropdown-text">Rhythm Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tonal-sequences.html">
+ <span class="dropdown-text">Tonal Sequences</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/songs.html">
+ <span class="dropdown-text">Song Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/tunes.html">
+ <span class="dropdown-text">Tunes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns.html">
+ <span class="dropdown-text">Tonal Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/patterns-by-ear.html">
+ <span class="dropdown-text">Patterns by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/sax-patterns-by-ear.html">
+ <span class="dropdown-text">Sax Patterns by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/rhythms.html">
+ <span class="dropdown-text">Rhythm Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/reading-benchmarks.html">
+ <span class="dropdown-text">Reading Benchmarks</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/dictation.html">
+ <span class="dropdown-text">Dictation</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/audiation.html">
+ <span class="dropdown-text">Hear, Compare, Translate</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice.html">
+ <span class="dropdown-text">LSA Practice</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-practice-notated.html">
+ <span class="dropdown-text">LSA Practice (Notated)</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/lsa-rhythm-assessment.html">
+ <span class="dropdown-text">LSA Rhythm Assessment</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-tune.html">
+ <span class="dropdown-text">Tune Assessment</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment.html">
+ <span class="dropdown-text">Tonal Accuracy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/assessment-rhythm.html">
+ <span class="dropdown-text">Rhythmic Accuracy</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-tools" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Tools</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-tools">    
+        <li>
+    <a class="dropdown-item" href="../tools/index.html">
+ <span class="dropdown-text">All tools</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Play with a band</li>
+        <li>
+    <a class="dropdown-item" href="../tools/backing-track.html">
+ <span class="dropdown-text">Backing Track</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../styles/index.html">
+ <span class="dropdown-text">Style Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/accomp-styles.html">
+ <span class="dropdown-text">Accompaniment Styles</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/drumset.html">
+ <span class="dropdown-text">Drumset</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/sequencers.html">
+ <span class="dropdown-text">Sequencers &amp; Arpeggiators</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/arranger.html">
+ <span class="dropdown-text">Style Arranger</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/polyrhythm.html">
+ <span class="dropdown-text">Polyrhythm</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Chords and harmony</li>
+        <li>
+    <a class="dropdown-item" href="../tools/chord-library.html">
+ <span class="dropdown-text">Chord Library</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-sheet.html">
+ <span class="dropdown-text">Chord Sheet</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chord-entry.html">
+ <span class="dropdown-text">Chord Entry</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chords-solfege.html">
+ <span class="dropdown-text">Chords and Solfège</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/circle-of-fifths.html">
+ <span class="dropdown-text">Circle of Fifths</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Scales and reading</li>
+        <li>
+    <a class="dropdown-item" href="../tools/scales.html">
+ <span class="dropdown-text">Scales</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/scale-patterns.html">
+ <span class="dropdown-text">Scale Patterns</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/part-reader.html">
+ <span class="dropdown-text">Part Reader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/classical-themes.html">
+ <span class="dropdown-text">Classical Themes</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Write music down</li>
+        <li>
+    <a class="dropdown-item" href="../tools/notation.html">
+ <span class="dropdown-text">Notation</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/notation-rules.html">
+ <span class="dropdown-text">Notation Rules</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Learn from a recording</li>
+        <li>
+    <a class="dropdown-item" href="../tools/timestamp-notes.html">
+ <span class="dropdown-text">Timestamp Notes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-along.html">
+ <span class="dropdown-text">Tap Along</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/tap-latency.html">
+ <span class="dropdown-text">Tap Latency</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/chunk-practice.html">
+ <span class="dropdown-text">Chunk Practice</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Voice</li>
+        <li>
+    <a class="dropdown-item" href="../tools/vocal-warmup.html">
+ <span class="dropdown-text">Vocal Warm-up</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/ipa-chart.html">
+ <span class="dropdown-text">IPA Chart for Singers</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li class="dropdown-header">Guitar and bass</li>
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-tuning.html">
+ <span class="dropdown-text">Tune Your Guitar by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-setup-check.html">
+ <span class="dropdown-text">Guitar and Bass Setup Check</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../tools/guitar-in.html">
+ <span class="dropdown-text">Guitar Input Check</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-mis-gear" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">MIS Gear</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-mis-gear">    
+        <li>
+    <a class="dropdown-item" href="../gear/index.html">
+ <span class="dropdown-text">MIS Gear</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../gear/x32-drums-dca.html">
+ <span class="dropdown-text">X32: Drums on One Fader</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/using-a-mic.html">
+ <span class="dropdown-text">Using a Mic: A Guide for Speakers</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/modx.html">
+ <span class="dropdown-text">Yamaha MODX</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../gear/modx-band.html">
+ <span class="dropdown-text">Play the Band on the MODX</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-teacher" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Teacher</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-teacher">    
+        <li>
+    <a class="dropdown-item" href="../teacher/session-builder.html">
+ <span class="dropdown-text">Session Builder</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/report.html">
+ <span class="dropdown-text">Teacher Report</span></a>
+  </li>  
+        <li><hr class="dropdown-divider"></li>
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-directory.html">
+ <span class="dropdown-text">LSA Directory</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-instructions.html">
+ <span class="dropdown-text">LSA Instructions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-chart.html">
+ <span class="dropdown-text">Evaluation Chart</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../teacher/lsa-analysis.html">
+ <span class="dropdown-text">LSA Data Analysis</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/modes-three-ways.html">Concepts</a></li><li class="breadcrumb-item"><a href="../theory/modes-three-ways.html">Modes: Three Meanings of One Word</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Drills and Exercises</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/theory-drills.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Theory Drills</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/exercise-builder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Exercise Builder</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">Concepts</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/modes-three-ways.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Modes: Three Meanings of One Word</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/meter-taxonomy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Time Signatures: Two Ways to Sort Them</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Hutchinson, Music Theory for the 21st-Century Classroom</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/triads.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">6. Triads</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/roman-numerals.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">7. Roman Numerals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/seventh-chords.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">8. Seventh Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/progressions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">9. Harmonic Progression</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/non-chord-tones.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">10. Non-Chord Tones</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/melodic-analysis.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">11. Melodic Analysis</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/pop-forms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">12. Form in Popular Music</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/accompaniment-textures.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">14. Accompanimental Textures</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/figured-bass.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">16. Figured Bass</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-dominants.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">17. Secondary Dominants</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/secondary-diminished.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">18. Secondary Diminished Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/mode-mixture.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">19. Mode Mixture</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/neapolitan.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">20. The Neapolitan Chord</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/augmented-sixths.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">21. Augmented Sixth Chords</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/modulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">22. Modulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/jazz-theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">31. Jazz Theory</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../theory/analysed-scores/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analysed Scores</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/modulation-finder.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Modulation Finder</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/bach-o-haupt.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bach: “O Haupt voll Blut und Wunden”</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/beethoven-moonlight-1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Beethoven: “Moonlight” Sonata, I</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/reger-modulation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Reger: On the Theory of Modulation</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/rimsky-korsakov-harmony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rimsky-Korsakov: Practical Manual of Harmony</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/tchaikovsky-harmony.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tchaikovsky: Guide to the Practical Study of Harmony</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/aldwell-schachter.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Aldwell and Schachter: Harmony and Voice Leading</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../theory/analysed-scores/kostka-payne.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Kostka and Payne: Tonal Harmony</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul class="collapse">
+  <li><a href="#the-shared-starting-point" id="toc-the-shared-starting-point" class="nav-link active" data-scroll-target="#the-shared-starting-point">The shared starting point</a></li>
+  <li><a href="#music-learning-theory-mode-tonality" id="toc-music-learning-theory-mode-tonality" class="nav-link" data-scroll-target="#music-learning-theory-mode-tonality">1. Music Learning Theory: mode = tonality</a></li>
+  <li><a href="#classical-theory-church-modes-then-major-and-minor" id="toc-classical-theory-church-modes-then-major-and-minor" class="nav-link" data-scroll-target="#classical-theory-church-modes-then-major-and-minor">2. Classical theory: church modes, then major and minor</a></li>
+  <li><a href="#jazz-a-scale-for-each-chord" id="toc-jazz-a-scale-for-each-chord" class="nav-link" data-scroll-target="#jazz-a-scale-for-each-chord">3. Jazz: a scale for each chord</a></li>
+  <li><a href="#same-notes-three-answers" id="toc-same-notes-three-answers" class="nav-link" data-scroll-target="#same-notes-three-answers">Same notes, three answers</a></li>
+  <li><a href="#words-to-keep-straight" id="toc-words-to-keep-straight" class="nav-link" data-scroll-target="#words-to-keep-straight">Words to keep straight</a></li>
+  <li><a href="#works-cited" id="toc-works-cited" class="nav-link" data-scroll-target="#works-cited">Works Cited</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+<!-- Auth: injects sign-in controls into the navbar right side via JS.
+     No visible strip — auth lives in a navbar dropdown instead. -->
+<script>
+function _authEsc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+async function authSignIn() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signInWithPassword({ email, password: pass });
+  if (error) alert(error.message); else location.reload();
+}
+async function authSignUp() {
+  const email = (document.getElementById('auth-email') || {}).value || '';
+  const pass  = (document.getElementById('auth-pass')  || {}).value || '';
+  const { error } = await window.sb.auth.signUp({ email, password: pass });
+  alert(error ? error.message : 'Account created — now sign in.');
+}
+async function authGoogle() {
+  await window.sb.auth.signInWithOAuth({
+    provider: 'google',
+    options: { redirectTo: window.location.origin + window.location.pathname }
+  });
+}
+async function authSignOut() {
+  await window.sb.auth.signOut();
+  location.reload();
+}
+
+document.addEventListener('DOMContentLoaded', async function () {
+  let session = null;
+  try {
+    const { data } = await window.sb.auth.getSession();
+    session = data.session;
+  } catch (e) {}
+
+  // Find the navbar collapse container and append a right-side auth nav list
+  const collapse = document.getElementById('navbarCollapse')
+    || document.querySelector('.navbar-collapse');
+  if (!collapse) return;
+
+  const ul = document.createElement('ul');
+  ul.className = 'navbar-nav ms-auto';
+  ul.id = 'navbar-auth';
+
+  if (session) {
+    const u = session.user;
+    const name = (u.user_metadata && u.user_metadata.full_name)
+      ? u.user_metadata.full_name.split(' ')[0]
+      : u.email.split('@')[0];
+    ul.innerHTML =
+      '<li class="nav-item dropdown">' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" aria-expanded="false">' +
+          _authEsc(name) +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end">' +
+          '<li><span class="dropdown-item-text auth-email-label">' +
+            _authEsc(u.email) +
+          '</span></li>' +
+          '<li><hr class="dropdown-divider"></li>' +
+          '<li><button class="dropdown-item" onclick="authSignOut()">Sign out</button></li>' +
+        '</ul>' +
+      '</li>';
+  } else {
+    ul.innerHTML =
+      '<li class="nav-item dropdown" id="auth-signin-item" hidden>' +
+        '<a class="nav-link dropdown-toggle" href="#" role="button"' +
+        '   data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">' +
+          'Sign in' +
+        '</a>' +
+        '<ul class="dropdown-menu dropdown-menu-end auth-signin-menu">' +
+          '<li>' +
+            '<input id="auth-email" type="email" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Email"' +
+            '       onkeydown="if(event.key===\'Enter\')document.getElementById(\'auth-pass\').focus()">' +
+            '<input id="auth-pass" type="password" class="form-control form-control-sm mb-2"' +
+            '       placeholder="Password"' +
+            '       onkeydown="if(event.key===\'Enter\')authSignIn()">' +
+            '<button class="btn btn-primary btn-sm w-100 mb-2" onclick="authSignIn()">Sign in</button>' +
+            '<button class="btn btn-outline-secondary btn-sm w-100 mb-2" onclick="authSignUp()">Create account</button>' +
+            '<hr class="my-1">' +
+            '<button class="btn btn-outline-secondary btn-sm w-100" onclick="authGoogle()">Sign in with Google</button>' +
+          '</li>' +
+        '</ul>' +
+      '</li>';
+  }
+
+  collapse.appendChild(ul);
+});
+</script>
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../theory/modes-three-ways.html">Concepts</a></li><li class="breadcrumb-item"><a href="../theory/modes-three-ways.html">Modes: Three Meanings of One Word</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Modes: Three Meanings of One Word</h1>
+</div>
+
+<div>
+  <div class="description">
+    What musicians mean by “mode” in Music Learning Theory (a tonality, heard from its resting tone), in classical theory (church modes and the major and minor modes) and in jazz (a scale chosen to fit one chord). The same notes, three answers.
+  </div>
+</div>
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<script src="../apps/shared/section-fold.js?v=1"></script>
+<p>You will hear the word <strong>mode</strong> used by three groups of musicians, and they don’t mean the same thing. A choir teacher trained in Music Learning Theory, a classical theory textbook and a jazz teacher can all look at the same notes and give three different answers to “what mode is this?” None of them is wrong. They are answering three different questions:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Who’s asking</th>
+<th>The question they mean</th>
+<th>Where the answer comes from</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Music Learning Theory</strong></td>
+<td>Which note does the music <em>rest</em> on, and how do the other notes feel around it?</td>
+<td>Your ear: the <strong>resting tone</strong> you audiate</td>
+</tr>
+<tr class="even">
+<td><strong>Classical theory</strong></td>
+<td>Which ordering of whole and half steps does this melody or piece use?</td>
+<td>The scale, its <strong>final</strong> (last note) and its history</td>
+</tr>
+<tr class="odd">
+<td><strong>Jazz</strong></td>
+<td>Which scale fits <em>this chord</em>, right now?</td>
+<td>The <strong>chord symbol</strong>, one chord at a time</td>
+</tr>
+</tbody>
+</table>
+<p>Click any heading to fold its section.</p>
+<section id="the-shared-starting-point" class="level2">
+<h2 class="anchored" data-anchor-id="the-shared-starting-point">The shared starting point</h2>
+<p>All three begin with the same seven-note families. Play only the white keys of a piano and start and end on different notes, and you get the seven modes by their Greek names:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Start on</th>
+<th>Name</th>
+<th>Steps (W = whole, H = half)</th>
+<th>Compared with major on the same note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>C</td>
+<td>Ionian (= major)</td>
+<td>W W H W W W H</td>
+<td>—</td>
+</tr>
+<tr class="even">
+<td>D</td>
+<td>Dorian</td>
+<td>W H W W W H W</td>
+<td>♭3, ♭7</td>
+</tr>
+<tr class="odd">
+<td>E</td>
+<td>Phrygian</td>
+<td>H W W W H W W</td>
+<td>♭2, ♭3, ♭6, ♭7</td>
+</tr>
+<tr class="even">
+<td>F</td>
+<td>Lydian</td>
+<td>W W W H W W H</td>
+<td>♯4</td>
+</tr>
+<tr class="odd">
+<td>G</td>
+<td>Mixolydian</td>
+<td>W W H W W H W</td>
+<td>♭7</td>
+</tr>
+<tr class="even">
+<td>A</td>
+<td>Aeolian (= natural minor)</td>
+<td>W H W W H W W</td>
+<td>♭3, ♭6, ♭7</td>
+</tr>
+<tr class="odd">
+<td>B</td>
+<td>Locrian</td>
+<td>H W W H W W W</td>
+<td>♭2, ♭3, ♭5, ♭6, ♭7</td>
+</tr>
+</tbody>
+</table>
+<p>What the three traditions disagree about is <em>what makes a piece “in” one of these</em>.</p>
+</section>
+<section id="music-learning-theory-mode-tonality" class="level2">
+<h2 class="anchored" data-anchor-id="music-learning-theory-mode-tonality">1. Music Learning Theory: mode = tonality</h2>
+<p>In Edwin Gordon’s Music Learning Theory (MLT) the word <strong>tonality</strong> is used for what most people call a mode. Gordon says tonality “best refers to what is usually called a mode,” and adds that people forget “major and minor are also modes.” He lists at least eight tonalities: <strong>major, harmonic minor, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian</strong> (Gordon 149). Notice that <em>harmonic</em> minor gets its own place, separate from Aeolian.</p>
+<p><strong>A tonality is something you hear.</strong> It is defined by its <strong>resting tone</strong>, the note the music feels “at home” on. Gordon keeps three ideas apart (Gordon xiii, 150):</p>
+<ul>
+<li><strong>Tonality</strong>: the kind of home (major, Dorian, Mixolydian…), named by its resting tone in solfège.</li>
+<li><strong>Keyality</strong>: which pitch that home is on (C, G, E♭…), called the <strong>tonic</strong>. Gordon made up the word to keep it separate from:</li>
+<li><strong>Key signature</strong>: the sharps and flats you <em>see</em>. One sharp could be G major, E minor, A Dorian or D Mixolydian. “A key signature is seen”; keyality is heard.</li>
+</ul>
+<p>“A tonality may be in any keyality and a keyality may be in any tonality” (Gordon 150): Dorian on C, Dorian on F, major on C, all different combinations.</p>
+<p><strong>How you name it.</strong> MLT teaches movable <em>do</em> with a <em>la</em>-based minor, so a syllable always names the same relation to the other notes. The resting tone of each tonality then gets its own syllable:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Tonality</th>
+<th>Resting tone</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Major</td>
+<td>do</td>
+</tr>
+<tr class="even">
+<td>Minor (harmonic) and Aeolian</td>
+<td>la</td>
+</tr>
+<tr class="odd">
+<td>Dorian</td>
+<td>re</td>
+</tr>
+<tr class="even">
+<td>Phrygian</td>
+<td>mi</td>
+</tr>
+<tr class="odd">
+<td>Lydian</td>
+<td>fa</td>
+</tr>
+<tr class="even">
+<td>Mixolydian</td>
+<td>so</td>
+</tr>
+<tr class="odd">
+<td>Locrian</td>
+<td>ti</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The MLT question:</strong> <em>Sing the resting tone.</em> If you can, you have heard the tonality. You don’t need to know a scale, a key signature or a chord to answer. Music can stay in one tonality (<strong>unitonal</strong>) or move between them (<strong>multitonal</strong>), for example from harmonic minor to Mixolydian while staying in E♭ keyality (Gordon 152, 157).</p>
+<p>The order matters in MLT: you learn to hear and sing major and minor tonalities first, then other tonalities, and only later learn their names and notation. See <a href="../practice/audiation.html">Audiation</a> and the <a href="../practice/patterns.html">Tonal Patterns</a> page, which has pattern sets in every tonality.</p>
+</section>
+<section id="classical-theory-church-modes-then-major-and-minor" class="level2">
+<h2 class="anchored" data-anchor-id="classical-theory-church-modes-then-major-and-minor">2. Classical theory: church modes, then major and minor</h2>
+<p>In classical theory, “mode” has a history with two layers.</p>
+<p><strong>The church modes.</strong> Medieval chant was sorted into <strong>eight modes</strong>, in four pairs. Each pair shares a <strong>final</strong> (the note a chant ends on). An <strong>authentic</strong> mode runs up an octave from the final; its <strong>plagal</strong> partner (with the prefix <em>hypo-</em>, as in Hypodorian) uses the same final but sits lower, with the range moved down. Today the eight are often numbered 1–8. In 1547 the Swiss theorist Heinrich Glarean, in his book <em>Dodecachordon</em>, added four more: <strong>Aeolian</strong> and <strong>Ionian</strong> with their plagal partners (“Mode (music)”).</p>
+<p><strong>Major mode and minor mode.</strong> Ionian is our major scale and Aeolian our natural minor. As the major/minor system took over, “mode” came to mean simply <strong>major mode or minor mode</strong>, and the older modes became a special colour composers reached for: the sound of the church, or of folk music (“Mode (music)”). That is why a classical textbook can say a piece in C minor is “in the minor mode,” and why <a href="../theory/mode-mixture.html">mode mixture</a> means borrowing chords from the <em>parallel</em> minor mode.</p>
+<p><strong>How a classical student finds the mode.</strong> Look at the notes used and the final (or the tonic chord), then match the pattern of whole and half steps. Two ways of learning modes are both common:</p>
+<ul>
+<li><strong>Relative (white-key) way:</strong> D Dorian is “C major from D to D.” Quick for spelling, but it makes Dorian sound like a part of C major.</li>
+<li><strong>Parallel way:</strong> C Dorian is “C major with ♭3 and ♭7.” This keeps the home note fixed and asks what changes, which is closer to how the mode sounds (the right-hand column of the table above).</li>
+</ul>
+<p><strong>The classical question:</strong> <em>What scale, final and step pattern does this music use?</em> The answer can come from the page, without playing a note, though a good analyst checks it by ear.</p>
+</section>
+<section id="jazz-a-scale-for-each-chord" class="level2">
+<h2 class="anchored" data-anchor-id="jazz-a-scale-for-each-chord">3. Jazz: a scale for each chord</h2>
+<p>In jazz, “mode” usually means a <strong>scale you play over one chord</strong> while it lasts. This is called <strong>chord-scale theory</strong>. When the chord changes, the scale changes.</p>
+<p>Robert Hutchinson’s open textbook gives the method: write all the notes of the chord, including any extensions and alterations, then fill the gaps between them “with the most logical choices, avoiding augmented seconds and consecutive half steps.” His table of the usual pairs (Hutchinson, “How to Determine Chord-Scale Relationships”):</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Chord</th>
+<th>Scale</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>CΔ7 (major seventh)</td>
+<td>C major (Ionian) or C Lydian</td>
+</tr>
+<tr class="even">
+<td>Cm7</td>
+<td>C Dorian or C natural minor (Aeolian)</td>
+</tr>
+<tr class="odd">
+<td>C7</td>
+<td>C Mixolydian</td>
+</tr>
+<tr class="even">
+<td>Cø7 (half-diminished)</td>
+<td>C Locrian or C Locrian ♯2</td>
+</tr>
+<tr class="odd">
+<td>CmΔ7</td>
+<td>C melodic minor (ascending)</td>
+</tr>
+<tr class="even">
+<td>C7♯11</td>
+<td>C Lydian dominant</td>
+</tr>
+<tr class="odd">
+<td>C°7</td>
+<td>C octatonic, whole–half</td>
+</tr>
+</tbody>
+</table>
+<p><strong>The jazz question:</strong> <em>What notes sound good over this chord?</em> Every new chord gets a new answer, named from <strong>its own root</strong>.</p>
+</section>
+<section id="same-notes-three-answers" class="level2">
+<h2 class="anchored" data-anchor-id="same-notes-three-answers">Same notes, three answers</h2>
+<p>Take the most common jazz progression in C major: <strong>Dm7 – G7 – CΔ7</strong> (ii–V–I). Every chord uses only the white keys.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>Dm7</th>
+<th>G7</th>
+<th>CΔ7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Jazz</strong> says</td>
+<td>D Dorian</td>
+<td>G Mixolydian</td>
+<td>C Ionian</td>
+</tr>
+<tr class="even">
+<td><strong>Classical</strong> says</td>
+<td>ii</td>
+<td>V7</td>
+<td>I, all in C major</td>
+</tr>
+<tr class="odd">
+<td><strong>MLT</strong> says</td>
+<td>one tonality, major, with <em>do</em> (C) as the resting tone, throughout</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>The jazz musician names <strong>three</strong> modes, because each is a scale built on a different chord root. Yet the notes never change. The classical and MLT answers agree here: one key, one home. For a piece to be <em>in Dorian</em> in the classical or MLT sense, D itself has to feel like home for the whole passage, not just for one chord.</p>
+<p>Now the other way round: a folk tune uses only the white keys and ends on D, and the tune clearly rests on D.</p>
+<ul>
+<li><strong>MLT:</strong> Dorian tonality, D keyality. Resting tone <em>re</em>.</li>
+<li><strong>Classical:</strong> D Dorian (mode 1, authentic, if it ranges an octave up from D).</li>
+<li><strong>Jazz:</strong> a jazz player would likely hear it as a long Dm chord and play D Dorian over it. Here, for once, all three agree.</li>
+</ul>
+</section>
+<section id="words-to-keep-straight" class="level2">
+<h2 class="anchored" data-anchor-id="words-to-keep-straight">Words to keep straight</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Word</th>
+<th>MLT</th>
+<th>Classical</th>
+<th>Jazz</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Mode</td>
+<td>Tonality (a heard home)</td>
+<td>Scale type, church mode, or major/minor mode</td>
+<td>Scale chosen for one chord</td>
+</tr>
+<tr class="even">
+<td>Home note</td>
+<td>Resting tone (a syllable) and tonic (a letter)</td>
+<td>Final or tonic</td>
+<td>Chord root (changes with each chord)</td>
+</tr>
+<tr class="odd">
+<td>Key signature</td>
+<td>Only a symbol; can’t tell you the tonality</td>
+<td>Points to a key, checked against the final</td>
+<td>Rarely used to name a mode</td>
+</tr>
+<tr class="even">
+<td>“Minor”</td>
+<td>Usually harmonic minor; Aeolian is separate</td>
+<td>Natural, harmonic and melodic forms of one minor mode</td>
+<td>Dorian, Aeolian or melodic minor, by chord</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Try it:</strong> play a recording you know, sing the note it rests on, and decide the tonality (MLT). Then find the final and step pattern (classical). Then look at the chord symbols and name a scale for each (jazz). Where do the answers agree, and where not?</p>
+<p>Related pages: <a href="../theory/jazz-theory.html">Jazz Theory</a> (chord-scale drills), <a href="../theory/mode-mixture.html">Mode Mixture</a>, <a href="../theory/meter-taxonomy.html">Time Signatures: Two Ways to Sort Them</a>.</p>
+</section>
+<section id="works-cited" class="level2">
+<h2 class="anchored" data-anchor-id="works-cited">Works Cited</h2>
+<!-- works-cited: written by scripts/works-cited.py -->
+<div class="works-cited">
+<p>Gordon, Edwin E. <em>Learning Sequences in Music: A Contemporary Music Learning Theory</em>. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp.&nbsp;111–117), the verbal association warning (p.&nbsp;108), generalization-aural/oral and -verbal (pp.&nbsp;131–133); same is easier to hear than different (p.&nbsp;219); tonal and rhythm patterns kept apart (p.&nbsp;223); rhythm patterns chanted with vocal inflection like speech (p.&nbsp;101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp.&nbsp;187–190).; Theory Concepts pages: Keyality versus key signature (p.&nbsp;xiii); tonality “best refers to what is usually called a mode,” the eight tonalities (p.&nbsp;149); movable-do with la-based minor and the rhythm syllables du de, du da di (p.&nbsp;105); resting tone and tonic, a tonality in any keyality (p.&nbsp;150); unitonal and multitonal music (pp.&nbsp;152, 157); usual duple, triple and combined meter (pp.&nbsp;175–176); no direct relation between measure signatures and meter, 6/8 as “duple compound” called inaccurate (p.&nbsp;176); accents and microbeat divisions do not make meter (pp.&nbsp;176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp.&nbsp;179–180).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp.&nbsp;3, 9); notation as a window (p.&nbsp;8); patterns as units of meaning (pp.&nbsp;99–100); the aural/oral level and the pause (pp.&nbsp;101–102); discrimination and inference learning, theory delayed (p.&nbsp;106); levels of the skill learning sequence (from pp.&nbsp;111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp.&nbsp;230–231).</p>
+<p>Hutchinson, Robert. “How to Determine Chord-Scale Relationships.” <em>Music Theory for the 21st-Century Classroom</em>, University of Puget Sound, <a href="https://musictheory.pugetsound.edu/mt21c/HowToDetermineChord-ScaleRelationships.html">musictheory.pugetsound.edu/mt21c/HowToDetermineChord-ScaleRelationships.html</a>. The method (chord tones, then fill the gaps avoiding augmented seconds and consecutive half steps) and the table of chord-scale pairs.</p>
+<p>“Mode (music).” <em>Wikipedia</em>, Wikimedia Foundation, <a href="https://en.wikipedia.org/wiki/Mode_(music)">en.wikipedia.org/wiki/Mode_(music)</a>. Eight church modes in authentic and plagal pairs sharing a final; Glarean’s <em>Dodecachordon</em> (1547) adding Aeolian and Ionian; modern modes as rotations of the major scale.</p>
+</div>
+<!-- /works-cited -->
+
+
+</section>
+
+</main> <!-- /main -->
+<!-- Injected before </body> on every page. Loads the tracker. -->
+<script src="../track.js"></script>
+<!-- Metronome, Drone and Circle in the navbar of every page; and the circle of fifths for any page that asks for one
+     (<div class="cof-widget" ...>, see apps/shared/circle-of-fifths.js). -->
+<script src="../apps/shared/degree-names.js?v=1"></script>
+<script src="../apps/shared/circle-of-fifths.js?v=2"></script>
+<script src="../apps/shared/practice-widgets.js?v=8"></script>
+<!-- A button at the left of the navbar that folds the docked sidebar away on
+     every page, and remembers the choice. Below 992px Quarto already tucks the
+     sidebar behind its own toggle, so the button is hidden there. -->
+<script>
+(function () {
+  "use strict";
+
+  var KEY = 'site-nav';
+
+  function boot() {
+    var bar = document.querySelector('#quarto-header .navbar-container');
+    if (!bar || !document.getElementById('quarto-sidebar')) return;
+
+    var button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'sidebar-toggle';
+    var icon = document.createElement('i');
+    icon.className = 'bi bi-layout-sidebar';
+    button.appendChild(icon);
+    bar.insertBefore(button, bar.firstChild);
+
+    function set(hidden) {
+      document.body.classList.toggle('sidebar-hidden', hidden);
+      var label = hidden ? 'Show menu' : 'Hide menu';
+      button.title = label;
+      button.setAttribute('aria-label', label);
+      button.setAttribute('aria-expanded', String(!hidden));
+    }
+
+    try { set(localStorage.getItem(KEY) === 'hidden'); }
+    catch (e) { set(false); }
+
+    button.addEventListener('click', function () {
+      var hidden = !document.body.classList.contains('sidebar-hidden');
+      set(hidden);
+      try { localStorage.setItem(KEY, hidden ? 'hidden' : 'shown'); } catch (e) {}
+      button.blur();
+      // Anything laid out against the old width (the player's splitter) re-measures.
+      window.dispatchEvent(new Event('resize'));
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot);
+  } else {
+    boot();
+  }
+})();
+</script>
+<!-- Marks the navbar tab whose link is this page with .nav-current, so only
+     that tab is coloured. Quarto's own .active also lights a tab for pages
+     beneath it, which is quietened in the stylesheet. -->
+<script>
+(function () {
+  "use strict";
+  function norm(path) { return path.replace(/\/index\.html$/, '/').replace(/\.html$/, ''); }
+  function boot() {
+    var here = norm(location.pathname);
+    // A dropdown tab's own link is "#" (it would match every page): it is current when its menu holds this page.
+    function isHere(a) {
+      var h = a.getAttribute('href');
+      if (!h || h.charAt(0) === '#') return false;
+      return norm(new URL(h, location.href).pathname) === here;
+    }
+    document.querySelectorAll('#quarto-header .navbar-nav .nav-link[href]').forEach(function (a) {
+      var menu = a.classList.contains('dropdown-toggle') && a.parentNode.querySelector('.dropdown-menu');
+      var current = menu ? Array.prototype.some.call(menu.querySelectorAll('a.dropdown-item[href]'), isHere) : isHere(a);
+      if (current) {
+        a.classList.add('nav-current');
+        a.setAttribute('aria-current', 'page');
+      } else {
+        a.classList.remove('nav-current');
+        a.removeAttribute('aria-current');
+      }
+    });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
+})();
+</script>
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../theory/exercise-builder.html" class="pagination-link" aria-label="Exercise Builder">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Exercise Builder</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../theory/meter-taxonomy.html" class="pagination-link" aria-label="Time Signatures: Two Ways to Sort Them">
+        <span class="nav-page-text">Time Signatures: Two Ways to Sort Them</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

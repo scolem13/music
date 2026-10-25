@@ -1,0 +1,155 @@
+---
+title: "Rhythm on One Page"
+toc: true
+toc-depth: 2
+description: "Every rhythm and tempo term on one revision sheet: note and rest lengths, dots, ties, triplets, syncopation, the fermata, Italian tempo words with BPM, accelerando and ritardando, each with a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, reading, rhythm]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Rhythm](elements-rhythm.qmd) on one sheet. Every ▶ plays the example. Tick **British note names** for crotchets and quavers. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Rhythm: note lengths and speed"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Note lengths
+<p>In beats: [whole note]{.nn} 4 · [half note]{.nn} 2 · [quarter note]{.nn} 1 · [eighth note]{.nn} ½ · [sixteenth note]{.nn} ¼.</p>
+<div class="abc-ex" data-width="190" data-bpm="80"><script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:C
+c8 c4 c2c2|cccc cccc c4 z4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Rests
+<p>Every note length has a matching rest: a silence of the same length.</p>
+<div class="abc-ex" data-width="190" data-bpm="80"><script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:C
+c4 z4 c2 z2 c z c z|c8 z8|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Dots
+<p>A dot adds half the note's value again: a dotted [half note]{.nn} is 3 beats, a dotted [quarter note]{.nn} 1½.</p>
+<div class="abc-ex" data-width="190" data-bpm="90"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:G
+G6 B2|d3 c B2 A2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Ties
+<p>Joins two notes of the same pitch into one longer note, often across a [measure]{.nn} line.</p>
+<div class="abc-ex" data-width="190" data-bpm="90"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:G
+G4- G2 A2|B8|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Triplets
+<p>Three notes played evenly in the time of two, marked 3.</p>
+<div class="abc-ex" data-width="190" data-bpm="90"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:G
+(3BcB (3AGA G4|(3GAB (3cde d4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Syncopation
+<p>The accent <strong>off</strong> the beat, often a note tied over the strong beat. Pop, funk, Latin, jazz.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+c2 c c- c2 c2|z G G2- G4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### [Fermata]{.nn}
+<p>Hold the note longer than written; the pulse waits.</p>
+<div class="abc-ex" data-width="190" data-bpm="90"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:F
+F A c A|!fermata!G4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Tempo words
+<p>BPM = beats per minute. A rough guide:</p><ul>
+<li><strong>Lento, adagio</strong>: slow, under 70</li>
+<li><strong>Andante</strong>: walking pace, 75–100</li>
+<li><strong>Moderato</strong>: moderate, 100–120</li>
+<li><strong>Allegro</strong>: fast, 120–160</li>
+<li><strong>Vivace, presto</strong>: very fast, 160+</li></ul>
+:::::
+
+::::: {.el-card}
+#### Changing tempo
+<p><strong>Accelerando</strong>: getting faster. <strong>Ritardando / rallentando</strong>: slower. <strong>A tempo</strong>: back to speed. <strong>Rubato</strong>: stretching the tempo for expression.</p>
+<div class="abc-ex" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+Q:1/4=80
+K:C
+"^accel."C E G E|[Q:1/4=112]C E G E|[Q:1/4=140]"^rit."C E G E|[Q:1/4=100]C E G E|[Q:1/4=70]C4|]
+</script></div>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="rhythm"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing rhythm and tempo
+
+- Name the tempo with a word *and* a rough BPM, then any changes: "allegro, about 140 BPM, with a ritardando at the end".
+- To find a tempo by ear, tap along: the [Tap Along](../tools/tap-along.qmd) tool counts it for you.
+
+- The longer lesson, with fuller examples: [Elements 7: Rhythm and Tempo](elements-rhythm.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Tempo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tempo](https://en.wikipedia.org/wiki/Tempo). Rough BPM ranges, slowest to fastest: lento/adagio, andante (walking pace, below moderato), moderato, allegretto, allegro, vivace; 'very rough approximations'.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

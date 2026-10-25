@@ -13,8 +13,9 @@ first. The book draws on John Covach's essay "Form in Rock Music" and analyses r
 plays each form on made-up chord progressions, so you can hear how it is built without a melody or lyrics.
 
 **How the demos work:** press **▶ Play**. The strip at the bottom of the page shows the bar and the **section** the band is in
-("Bar 9 · A2"). The buttons change the form; the band starts the new one from bar 1. The last four bars the band played are
-written out under each demo. Most forms here are **32 bars**, about a minute at this tempo. Listen through at least once.
+("Bar 9 · A2"). Each demo shows its chord grid with the sections labelled, the whole form at once (or one section at a time:
+pick it above the grid). The bar being played lights up. The buttons change the form; the band starts the new one from bar 1. As soon as
+the band starts, what it will play the whole way through is written out under the grid, section by section, so you can read ahead. Most forms here are **32 bars**, about a minute at this tempo. Listen through at least once.
 
 ## 12.1 Verse–chorus form
 
@@ -28,7 +29,7 @@ The book separates **simple** verse–chorus form (the verse and chorus use the 
 tell them apart) from **contrasting** verse–chorus form (the chorus has its own progression). Here are both, as verse, chorus, verse,
 chorus:
 
-<div class="ar-demo" data-style="rock" data-tempo="116" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Form:" data-choices='[{"label":"Contrasting verse–chorus","chart":"Am|F|C|G|Am|F|C|G|F|G|C|Am|F|G|C|C|Am|F|C|G|Am|F|C|G|F|G|C|Am|F|G|C|C","sections":[[1,"Verse"],[9,"Chorus"],[17,"Verse"],[25,"Chorus"]],"opts":{}},{"label":"Simple verse–chorus","chart":"C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F","sections":[[1,"Verse"],[9,"Chorus"],[17,"Verse"],[25,"Chorus"]],"opts":{}}]'></div>
+<div class="ar-demo" data-view="grid" data-style="rock" data-tempo="116" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Form:" data-choices='[{"label":"Contrasting verse–chorus","chart":"Am|F|C|G|Am|F|C|G|F|G|C|Am|F|G|C|C|Am|F|C|G|Am|F|C|G|F|G|C|Am|F|G|C|C","sections":[[1,"Verse"],[9,"Chorus"],[17,"Verse"],[25,"Chorus"]],"opts":{}},{"label":"Simple verse–chorus","chart":"C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F|C|G|Am|F","sections":[[1,"Verse"],[9,"Chorus"],[17,"Verse"],[25,"Chorus"]],"opts":{}}]'></div>
 
 In the simple form, nothing in the chords tells you where the chorus starts. The singer's melody and the words would do that, and a
 band usually plays the chorus fuller and louder. In the contrasting form you can hear the change of progression at bar 9.
@@ -41,7 +42,7 @@ the **bridge** or "middle eight", is the contrast. The whole 32 bars is sometime
 songs put a **verse** in front of it.
 [Read 12.2](https://musictheory.pugetsound.edu/mt21c/AABAForm.html)
 
-<div class="ar-demo" data-style="swing" data-tempo="150" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choices='[{"label":"AABA, 32 bars","chart":"C|Am|Dm|G7|C|Am|Dm G7|C|C|Am|Dm|G7|C|Am|Dm G7|C|E7|E7|Am|Am|D7|D7|Dm|G7|C|Am|Dm|G7|C|Am|Dm G7|C","sections":[[1,"A1"],[9,"A2"],[17,"B (bridge)"],[25,"A3"]],"opts":{}}]'></div>
+<div class="ar-demo" data-view="grid" data-style="swing" data-tempo="150" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choices='[{"label":"AABA, 32 bars","chart":"C|Am|Dm|G7|C|Am|Dm G7|C|C|Am|Dm|G7|C|Am|Dm G7|C|E7|E7|Am|Am|D7|D7|Dm|G7|C|Am|Dm|G7|C|Am|Dm G7|C","sections":[[1,"A1"],[9,"A2"],[17,"B (bridge)"],[25,"A3"]],"opts":{}}]'></div>
 
 Notice where the bridge goes: it leaves C, moves through other keys (E7 to Am, D7 to G), and ends on **G7**, the V chord. That makes the
 return of A sound like coming home.
@@ -53,7 +54,7 @@ Christmas", "Someday My Prince Will Come", "When I Fall in Love" and "Star Dust"
 B and ends differently.
 [Read 12.3](https://musictheory.pugetsound.edu/mt21c/ABACForm.html)
 
-<div class="ar-demo" data-style="swing" data-tempo="150" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choices='[{"label":"ABAC, 32 bars","chart":"C|A7|Dm|G7|C|A7|D7|G7|E7|E7|Am|Am|D7|D7|Dm|G7|C|A7|Dm|G7|C|A7|D7|G7|F|Fm|C|A7|Dm|G7|C|C","sections":[[1,"A"],[9,"B"],[17,"A"],[25,"C"]],"opts":{}}]'></div>
+<div class="ar-demo" data-view="grid" data-style="swing" data-tempo="150" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choices='[{"label":"ABAC, 32 bars","chart":"C|A7|Dm|G7|C|A7|D7|G7|E7|E7|Am|Am|D7|D7|Dm|G7|C|A7|Dm|G7|C|A7|D7|G7|F|Fm|C|A7|Dm|G7|C|C","sections":[[1,"A"],[9,"B"],[17,"A"],[25,"C"]],"opts":{}}]'></div>
 
 The first A ends on G7, so it is open and leads on. Only C, the last section, really ends.
 
@@ -65,7 +66,7 @@ into swing ("In the Mood") and early rock and roll ("Johnny B. Goode", "Hound Do
 [Read 12.4](https://musictheory.pugetsound.edu/mt21c/TwelveBarBlues.html) ·
 The site's [blues lessons](../lessons/blues-changes.qmd) go further: the quick change, turnarounds and the jazz blues.
 
-<div class="ar-demo" data-style="rock" data-tempo="140" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Played as:" data-choices='[{"label":"Rock and roll","chart":"C7|C7|C7|C7|F7|F7|C7|C7|G7|F7|C7|C7","sections":[[1,"Line 1: I"],[5,"Line 2: IV I"],[9,"Line 3: V IV I"]],"opts":{}},{"label":"Boogie-woogie","chart":"C7|C7|C7|C7|F7|F7|C7|C7|G7|F7|C7|C7","sections":[[1,"Line 1: I"],[5,"Line 2: IV I"],[9,"Line 3: V IV I"]],"opts":{"bassFeel":"boogie","compRhythm":"boogie","groove":"shuffle","feel":"swing"}}]'></div>
+<div class="ar-demo" data-view="grid" data-style="rock" data-tempo="140" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Played as:" data-choices='[{"label":"Rock and roll","chart":"C7|C7|C7|C7|F7|F7|C7|C7|G7|F7|C7|C7","sections":[[1,"Line 1: I"],[5,"Line 2: IV I"],[9,"Line 3: V IV I"]],"opts":{}},{"label":"Boogie-woogie","chart":"C7|C7|C7|C7|F7|F7|C7|C7|G7|F7|C7|C7","sections":[[1,"Line 1: I"],[5,"Line 2: IV I"],[9,"Line 3: V IV I"]],"opts":{"bassFeel":"boogie","compRhythm":"boogie","groove":"shuffle","feel":"swing"}}]'></div>
 
 ## 12.5 Harmonically closed and open sections
 
@@ -82,7 +83,7 @@ Typical places, from the book:
 
 The same eight bars, closed and then open. Only the last two bars change:
 
-<div class="ar-demo" data-style="rock" data-tempo="112" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Ending:" data-choices='[{"label":"Closed (ends on I)","chart":"C|Am|F|G|C|Am|G|C","opts":{}},{"label":"Open (ends on V)","chart":"C|Am|F|G|C|Am|Dm|G","opts":{}}]'></div>
+<div class="ar-demo" data-view="grid" data-style="rock" data-tempo="112" data-comp="piano" data-on="bass comp drums" data-staves="comp bass" data-choice-label="Ending:" data-choices='[{"label":"Closed (ends on I)","chart":"C|Am|F|G|C|Am|G|C","opts":{}},{"label":"Open (ends on V)","chart":"C|Am|F|G|C|Am|Dm|G","opts":{}}]'></div>
 
 ## Quizzes {#quiz}
 

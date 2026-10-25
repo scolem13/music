@@ -85,7 +85,7 @@
     if (global.BandSounds) return start();
     if (!myScript){ bankState = 3; return; }
     const sc = document.createElement("script");
-    sc.src = myScript.replace(/audio\.js.*$/, "band/sounds.js?v=14");
+    sc.src = myScript.replace(/audio\.js.*$/, "band/sounds.js?v=17");
     sc.onload = start; sc.onerror = () => { bankState = 3; };
     document.head.appendChild(sc);
   }

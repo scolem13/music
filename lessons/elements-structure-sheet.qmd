@@ -1,0 +1,119 @@
+---
+title: "Structure on One Page"
+toc: true
+toc-depth: 2
+description: "Every structure term on one revision sheet: phrases and sections, binary, ternary, rondo and strophic form, through-composed, minuet and trio, verse–chorus, AABA, 12-bar blues and theme and variations, with short examples to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, composing]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Structure](elements-structure.qmd) on one sheet. Each example is a miniature of the form, its sections labelled with letters. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Structure: how a piece is built"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Phrases and sections
+<p>A <strong>phrase</strong> is a musical sentence, usually 2, 4 or 8 [measures]{.nn}, ending in a cadence. Sections change: new tune, key, instruments, texture or mood. The first idea is <strong>A</strong>, the next new one <strong>B</strong>.</p>
+:::::
+
+::::: {.el-card}
+#### Binary: A B
+<p>Two sections, usually both repeated (A A B B). Baroque dances.</p>
+<div class="abc-ex" data-width="190" data-bpm="110"><script type="text/plain">
+X:1
+M:3/4
+L:1/4
+K:G
+|:"^A""G"G B d|"D"A3:||:"^B""D"d f a|"G"g3:|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Ternary: A B A
+<p>A, a contrasting B, then A again (exact, or changed: A B A′).</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"^A""C"E G c2|"^B""Am"A, C E2|"^A""C"E G c2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Rondo: A B A C A
+<p>A <strong>refrain</strong> keeps coming back, with contrasting <strong>episodes</strong> between.</p>
+<div class="abc-ex" data-width="190" data-bpm="120"><script type="text/plain">
+X:1
+M:2/4
+L:1/8
+K:F
+"^A"c2 A2|"^B"d2 f2|"^A"c2 A2|"^C"B,2 D2|"^A"F4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Strophic: A A A
+<p>The same music for every verse, new words each time: hymns, folk songs. The opposite, music that keeps changing to follow the words, is <strong>through-composed</strong>.</p>
+:::::
+
+::::: {.el-card}
+#### Minuet and trio
+<p>A dance in 3/4. Minuet (A A B B), a contrasting <strong>trio</strong> (C C D D), then the minuet again without repeats (A B). Ternary overall.</p>
+:::::
+
+::::: {.el-card}
+#### Theme and variations
+<p>A tune, then changed versions of it: new rhythm, harmony, key or instruments.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+C2C2 G2G2|CECE GBGB|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Song forms
+<ul>
+<li><strong>Verse–chorus</strong>: intro, verse, chorus, verse, chorus, bridge, chorus, outro</li>
+<li><strong>AABA</strong> (32-bar song): four 8-[measure]{.nn} sections; B is the <em>bridge</em> or <em>middle eight</em></li>
+<li><strong>12-bar blues</strong>: one 12-[measure]{.nn} chord pattern, repeated</li></ul>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="structure"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing structure
+
+- Label the sections with letters as they come, and say what changes at each new letter.
+- Marking sections in a recording: [Section Labels](section-labels.qmd).
+
+- The longer lesson, with fuller examples: [Elements 8: Structure](elements-structure.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Minuet." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Minuet](https://en.wikipedia.org/wiki/Minuet). Usually 3/4; French social dance, into opera via Lully; binary sections; 'trio' named from a middle section scored for three instruments; A–B–A overall.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

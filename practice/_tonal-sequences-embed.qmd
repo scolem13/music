@@ -1,5 +1,4 @@
 ```{=html}
-<link rel="stylesheet" href="/apps/shared/abcjs-audio.css">
 
 <style>
 #ts-root {
@@ -59,7 +58,6 @@
 
 <script>
 	let activeCells_ts = [];
-	let synthControl_ts;
 	let tsVisTranspose = 0;
 
 	const MINOR_MODE_ts = /^(m|min|minor|aeo|aeolian|dor|dorian|phr|phrygian|loc|locrian)$/;
@@ -226,18 +224,6 @@
 
 		const abcOptions = { add_classes: true, visualTranspose: tsVisTranspose };
 		const visualObj = ABCJS.renderAbc("paper-ts", abcString, abcOptions)[0];
-		document.querySelector("#ts-root .midi").innerHTML = ABCJS.synth.getMidiFile(abcString);
-
-		getSoundfontUrl().then(function(sfUrl) {
-			return new ABCJS.synth.CreateSynth().init({
-				visualObj: visualObj,
-				options: { soundFontUrl: sfUrl }
-			});
-		}).then(function() {
-			if (synthControl_ts) {
-				synthControl_ts.setTune(visualObj, userAction).catch(function(error) { console.warn("Audio problem:", error); });
-			}
-		}).catch(function(error) { console.warn("Audio problem:", error); });
 	}
 
 	let editTimeout_ts;
@@ -250,6 +236,7 @@
 
 	function load_ts() {
 		const selectCollection = document.getElementById("collection-selector-ts");
+		if (window.TonalPatternGen) TonalPatternGen.loadSaved(patternObject);
 		for (const key in patternObject) {
 			const option = document.createElement("option");
 			option.textContent = key;
@@ -259,20 +246,14 @@
 
 		const TS_CFG = window.TOOL_CONFIG || {};
 		if (TS_CFG.collections && TS_CFG.collections.length)
-			Array.from(selectCollection.options).forEach(function(o) { if (TS_CFG.collections.indexOf(o.value) === -1) o.remove(); });
+			Array.from(selectCollection.options).forEach(function(o) { if (TS_CFG.collections.indexOf(o.value) === -1 && !/^★ /.test(o.value)) o.remove(); });
 		if (TS_CFG.lockCollections || selectCollection.options.length <= 1)
 			(selectCollection.closest('.sq-group') || selectCollection).style.display = 'none';
 
-		if (ABCJS.synth.supportsAudio()) {
-			synthControl_ts = new ABCJS.synth.SynthController();
-			synthControl_ts.load("#audio-ts", cursorControl_ts, {
-				displayLoop: true, displayRestart: true,
-				displayPlay: true, displayProgress: true, displayWarp: true
-			});
-		} else {
-			document.querySelector("#audio-ts").innerHTML =
-				"<div class='audio-error'>Audio is not supported in this browser.</div>";
-		}
+		window.player_ts = PatternPlay.bar(document.getElementById("audio-ts"), {
+			abc: function () { return document.getElementById("abc-editor-ts").value; },
+			transpose: function () { return tsVisTranspose; }
+		});
 
 		loadCollection_ts();
 
@@ -305,7 +286,8 @@
 				<span class="sq-label">Collection</span>
 				<select id="collection-selector-ts" onchange="loadCollection_ts()"></select>
 			</div>
-			<div id="audio-ts"></div>
+			</div>
+		<div class="sq-row" style="margin-top:.6rem"><div id="audio-ts"></div>
 			<button type="button" class="sq-btn" onclick="clearSequence_ts()">Clear</button>
 		</div>
 	</div>
@@ -324,13 +306,13 @@
 	<textarea id="abc-editor-ts" spellcheck="false" oninput="editSequence_ts()"></textarea>
 </div>
 
-<script src="/apps/shared/soundfont.js"></script>
 <script src="/apps/shared/abcjs-basic.js"></script>
-<script src="/apps/patterns/pattern-set.js"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
-<script src="/apps/shared/cursor-synth.js"></script>
+<script src="/apps/shared/abc-play.js?v=5"></script>
+<script src="/apps/patterns/pattern-play.js?v=1"></script>
+<script src="/apps/patterns/pattern-gen.js?v=3"></script>
 <script>
-	const cursorControl_ts = new CursorControl();
 	load_ts();
 </script>
 ```

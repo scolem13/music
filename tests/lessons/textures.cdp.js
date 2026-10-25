@@ -25,6 +25,22 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     await ev(`${D}.querySelector('.ar-play').click()`);
     let svg = 0; for (let t = 0; t < 40 && !svg; t++) { await wait(400); svg = await ev(`${D}.querySelectorAll('.ar-staff svg').length`); }
     const nc = await ev(`${D}.querySelectorAll('.ar-choices button').length`);
+    if (await ev(`${D}.dataset.view`) === "grid") {   // data-view="grid": chord grid, sections, the whole pass written ahead
+      const bars = await ev(`JSON.parse(${D}.dataset.choices)[0].chart.split('|').length`), cells = await ev(`${D}.querySelectorAll('.ar-gbar').length`);
+      const secs = await ev(`(JSON.parse(${D}.dataset.choices)[0].sections || []).length`);
+      check(`demo ${i + 1}: grid has every bar, sections labelled`, cells === bars && (secs < 2 || await ev(`${D}.querySelectorAll('.ar-glbl').length`) === secs), cells + "/" + bars);
+      let ok = false; for (let t = 0; t < 20 && !ok; t++) { await wait(300); ok = await ev(`${D}.querySelectorAll('.ar-staff .abcjs-bar').length > 0 && !!${D}.querySelector('.ar-gnow')`); }
+      const early = JSON.parse(await ev(`JSON.stringify((() => { const st = document.getElementById('ar-status').textContent.match(/Bar (\\d+)/); return { n: ${D}.querySelectorAll('.ar-staff svg').length, bar: st ? +st[1] : 0 }; })())`));
+      check(`demo ${i + 1}: whole pass written before it is played`, ok && early.n === Math.max(1, secs) && early.bar < bars, JSON.stringify(early));
+      if (secs > 1) { await ev(`${D}.querySelectorAll('.ar-tabs button')[2].click()`); await wait(300);
+        check(`demo ${i + 1}: section tab shows one section`, await ev(`${D}.querySelectorAll('.ar-gsec').length === 1 && ${D}.querySelectorAll('.ar-staff svg').length === 1`));
+        await ev(`${D}.querySelectorAll('.ar-tabs button')[0].click()`); }
+    } else {   // no grid: the whole pass is still written ahead (one staff block for the chart)
+      const chart = await ev(`(JSON.parse(${D}.dataset.choices || '[]')[0] || {}).chart || ${D}.dataset.chart || ''`), bars = chart.split('|').length;
+      let nb = 0; for (let t = 0; t < 20 && nb < bars; t++) { await wait(300); nb = await ev(`${D}.querySelectorAll('.ar-staff .abcjs-bar').length`); }
+      const at = await ev(`(() => { const st = document.getElementById('ar-status').textContent.match(/Bar (\\d+)/); return st ? +st[1] : 0; })()`);
+      check(`demo ${i + 1}: whole pass written before it is played`, nb >= bars - 1 && at < bars, nb + " bars drawn at bar " + at + " of " + bars);
+    }
     for (let c = 1; c < nc; c++) { await ev(`${D}.querySelectorAll('.ar-choices button')[${c}].click()`); await wait(700); }
     const label = await ev(`(${D}.previousElementSibling ? ${D}.previousElementSibling.textContent : '').slice(0, 40)`);
     if (/sections/.test(await ev(`${D}.dataset.choices || ''`))) {

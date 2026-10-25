@@ -1,0 +1,88 @@
+---
+title: "Live Sound 2: Gain vs. Volume"
+toc: true
+toc-depth: 2
+description: "Preamp gain sets the level into the X32; the fader sets how loud it is in the mix. Clipping, headroom and the fader at +10."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive, svg]
+---
+
+**Gain** and **volume** both make a channel louder, so they are easy to confuse. On the X32 they are at
+opposite ends of the strip, and for a good reason.
+
+- **Gain** (top of the strip, in Config/Preamp) sets how much the *microphone* signal is amplified *before*
+  anything else happens. It decides the level going into the gate, the EQ, the compressor and the
+  converter. Set it once, at the sound check.
+- **The fader** (bottom of the strip) sets how loud that channel is *in the mix*. You ride it during the show.
+
+## Why gain comes first
+
+The X32's preamps have a 72 dB gain range and clip at +23 dBu. Past that, the converter writes the biggest
+number it can and cuts the top off the wave. That is **clipping**, and nothing later in the strip can undo it,
+the fader included: a clipped signal turned down is just a quieter clipped signal.
+
+Too little gain is a problem too. The fader only goes to **+10 dB**. If the gain is far too low you run out
+of fader, and the gate and compressor, whose thresholds are set in dB, never see the level they expect.
+
+<div class="sk-care">Rule of thumb: set the gain so the <b>loudest</b> part of the song peaks around
+<b>−12 to −6</b> on the channel meter, never in the red. Then bring the fader up to around 0 dB. If the fader
+ends up near the top or the bottom to get a good balance, go back and fix the gain.</div>
+
+## Try it: the quiet talker
+
+A speaker at a podium, quietly, a little far from the mic. The Gain starts much too low.
+
+<div class="lk" data-w="strip" data-source="speech" data-show="pre fader" data-goal="gain" data-set="gain=22,fdb=10"
+  data-tries="Too low, fader at +10:gain=22,fdb=10;Way too hot, fader down:gain=72,fdb=-20;Too hot:gain=66,fdb=0;Right:gain=52,fdb=0"></div>
+
+1. Press ▶. The fader is already at **+10**, the top, and it's still quiet; the meter barely moves.
+2. Pull the fader back to 0 dB and raise the **Gain** until the peaks sit between −12 and −6. Press **Check my
+   channel**.
+3. Try **Way too hot, fader down**: the output meter looks safe, but the **CLIP** light has latched and it
+   sounds broken. Turning down the fader didn't help.
+
+Notice the hiss: with the gain very high (around +60), the preamp's own noise comes up with it.
+
+## Gain moves everything after it
+
+Change the gain *after* setting a gate or a compressor and they stop working properly, because their
+thresholds stay where they were while the signal moves. On this kick drum the gate is set well.
+
+<div class="lk" data-w="strip" data-source="kick" data-show="pre gate fader" data-goal="gate"
+  data-set="gate=1,gthr=-32,gatt=0.5,ghold=20,grel=120"
+  data-tries="Gate set well:gain=24;Then gain −10:gain=14;Then gain +10:gain=34"></div>
+
+With the gain 10 dB lower, quieter kicks fall below the threshold and get lost; 10 dB higher and the snare
+bleed starts opening the gate. That is why the order is always: **gain first**, then everything else.
+
+## On the X32
+
+- The **gain** knob is at the top left of the channel strip. Its LED collar shows the setting; the screen
+  (View) shows the number.
+- The **meter** next to it, and the meter on the fader strip, are the input level. The screen meter goes up to
+  **clip**.
+- Mute a channel before switching **48 V** on or off (the manual's advice), and don't touch the gain right after:
+  it can pop.
+- Gain on the X32 is for the local inputs and stage boxes. If a channel comes from USB or a card, its trim is
+  digital (±18 dB).
+
+## Next
+
+- [Live Sound 3: Low Cut and EQ](live-eq.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _live-kit.qmd >}}

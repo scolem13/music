@@ -1,0 +1,201 @@
+---
+title: "Sequencers & Arpeggiators"
+description: "Every kind of sequencer and arpeggiator as a small working instrument on one clock: arpeggiators, step and x0x grids, acid bass, analog knobs, conditional trigs, Euclidean, polymetric, Cartesian, Turing Machine, Markov, Game of Life, piano roll, tracker and loop recording. Play any two side by side."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/band/sounds.js?v=17"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/band/phrase.js?v=2"></script>
+<script src="/apps/shared/sequencers.js?v=2"></script>
+<script src="/apps/shared/motif-arp.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.sq-row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: flex-end; margin: .4rem 0; }
+.sq-ctl { display: flex; flex-direction: column; gap: .15rem; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; margin: 0; opacity: .9; }
+.sq-ctl select, .sq-ctl input { text-transform: none; letter-spacing: 0; font-size: .88rem; }
+.sq-ctl input[type=range] { width: 9rem; }
+.sq-chk { display: inline-flex; gap: .3rem; align-items: center; font-size: .88rem; margin: 0; }
+.sq-note { font-size: .85rem; opacity: .75; margin: .3rem 0; }
+.sq-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 470px), 1fr)); gap: 1rem; }
+.sq-card { border: 1px solid rgba(128,128,128,.3); border-radius: 10px; padding: .8rem 1rem; background: rgba(128,128,128,.04); min-width: 0; }
+.sq-head { display: flex; align-items: center; gap: .6rem; }
+.sq-head h3 { font-size: 1.08rem; margin: 0; flex: 1; }
+.sq-fam { font-size: .7rem; padding: .1rem .45rem; border-radius: 99px; text-transform: uppercase; letter-spacing: .05em; color: #fff; }
+.f-arp { background: #7c3aed; } .f-step { background: #0369a1; } .f-math { background: #b45309; } .f-gen { background: #047857; } .f-linear { background: #be185d; }
+.sq-blurb { margin: .4rem 0; font-size: .93rem; }
+.sq-more { margin-top: .5rem; font-size: .88rem; } .sq-more dt { font-weight: 600; } .sq-more dd { margin: 0 0 .3rem; }
+.sq-scroll { overflow-x: auto; }
+.sq-grid { display: flex; flex-direction: column; gap: 3px; overflow-x: auto; }
+.sq-gline { display: flex; gap: 3px; align-items: center; }
+.sq-glab { width: 5.6rem; flex: none; font-size: .78rem; white-space: nowrap; overflow: hidden; }
+.sq-cell { flex: 1 1 0; min-width: 18px; height: 24px; border: 1px solid rgba(128,128,128,.4); border-radius: 4px; background: transparent; padding: 0; font-size: .6rem; line-height: 1; }
+.sq-cell.beat { border-color: rgba(128,128,128,.8); }
+.sq-cell.on { background: #2563eb; color: #fff; border-color: #2563eb; }
+.sq-cell.dis { opacity: .15; }
+.sq-cell.now { outline: 2px solid #f59e0b; outline-offset: 0; }
+.sq-cell.sel { box-shadow: 0 0 0 2px #f43f5e inset; }
+.sq-trig { height: 30px; }
+.sq-chips { display: flex; flex-wrap: wrap; gap: 4px; margin: .4rem 0; }
+.sq-chip { padding: .15rem .45rem; border-radius: 6px; border: 1px solid rgba(128,128,128,.4); font-size: .82rem; font-variant-numeric: tabular-nums; }
+.sq-chip.now, .sq-knob.now, .sq-acol.now, .sq-ccell.now, tr.now { background: #f59e0b !important; color: #111 !important; }
+.sq-acid { display: flex; gap: 3px; }
+.sq-acol, .sq-knob { display: flex; flex-direction: column; align-items: center; gap: 2px; padding: 3px 2px; border-radius: 6px; min-width: 30px; }
+.sq-acol.beat { background: rgba(128,128,128,.1); }
+.sq-an { font-size: .74rem; white-space: nowrap; }
+.sq-mini { padding: 0 .3rem !important; font-size: .65rem !important; line-height: 1.3 !important; border: 1px solid rgba(128,128,128,.4) !important; }
+.sq-t { width: 24px; height: 20px; padding: 0; font-size: .7rem; border: 1px solid rgba(128,128,128,.4); border-radius: 4px; background: transparent; }
+.sq-t.on { background: #2563eb; color: #fff; } .sq-t.acc.on { background: #dc2626; } .sq-t.sld.on { background: #059669; }
+.sq-knobs { display: flex; gap: .4rem; flex-wrap: wrap; }
+.sq-knob.dis { opacity: .3; }
+.sq-vknob { writing-mode: vertical-lr; direction: rtl; height: 110px; width: 26px; }
+.sq-two { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+.sq-euclid { width: 220px; max-width: 100%; }
+.sq-euclid .ring { fill: none; stroke: rgba(128,128,128,.35); }
+.sq-euclid .dot { fill: rgba(128,128,128,.5); }
+.sq-euclid .dot.on.r0 { fill: #2563eb; } .sq-euclid .dot.on.r1 { fill: #dc2626; } .sq-euclid .dot.on.r2 { fill: #059669; }
+.sq-euclid .dot.now { stroke: #f59e0b; stroke-width: 3; }
+.sq-rings { display: flex; flex-direction: column; gap: .5rem; flex: 1; min-width: 200px; }
+.sq-ringctl { display: flex; flex-wrap: wrap; gap: .3rem .8rem; border-left: 4px solid; padding-left: .5rem; }
+.sq-ringctl.r0 { border-color: #2563eb; } .sq-ringctl.r1 { border-color: #dc2626; } .sq-ringctl.r2 { border-color: #059669; }
+.sq-ringctl input[type=range] { width: 6rem; }
+.sq-cart { display: grid; grid-template-columns: repeat(4, 54px); gap: 5px; }
+.sq-ccell { height: 54px; border-radius: 8px; border: 1px solid rgba(128,128,128,.5); background: rgba(37,99,235,.12); font-size: .8rem; }
+.sq-ccell.muted { background: transparent; opacity: .5; }
+.sq-bits { display: flex; gap: 3px; margin: .4rem 0; }
+.sq-bit { width: 20px; height: 20px; border-radius: 50%; border: 1px solid rgba(128,128,128,.5); }
+.sq-bit.on { background: #059669; } .sq-bit.dis { opacity: .15; }
+.sq-hist { display: flex; align-items: flex-end; gap: 2px; height: 60px; border-bottom: 1px solid rgba(128,128,128,.4); margin: .4rem 0; }
+.sq-hist i { flex: 1; background: #059669; border-radius: 2px 2px 0 0; }
+.sq-mk { border-collapse: collapse; font-size: .8rem; }
+.sq-mk th { padding: 2px 6px; font-weight: 600; text-align: center; }
+.sq-mk td { padding: 1px; }
+.sq-mk button { width: 30px; height: 26px; border: 1px solid rgba(128,128,128,.3); border-radius: 4px; background: transparent; font-size: .75rem; }
+.sq-mk .w1 { background: rgba(5,150,105,.25); } .sq-mk .w2 { background: rgba(5,150,105,.55); } .sq-mk .w3 { background: rgba(5,150,105,.9); color: #fff; }
+.sq-mk tr.from th { background: #f59e0b; color: #111; }
+.sq-mk td.now button { outline: 2px solid #f59e0b; }
+.sq-rollwrap { display: flex; gap: 4px; }
+.sq-rlabs { display: flex; flex-direction: column; width: 2.6rem; font-size: .66rem; }
+.sq-rlabs span { flex: 1; display: flex; align-items: center; }
+.sq-roll { position: relative; flex: 1; height: 300px; border: 1px solid rgba(128,128,128,.4); touch-action: none; cursor: crosshair;
+  background-image: linear-gradient(to right, rgba(128,128,128,.35) 1px, transparent 1px), linear-gradient(to right, rgba(128,128,128,.12) 1px, transparent 1px), linear-gradient(to bottom, rgba(128,128,128,.15) 1px, transparent 1px);
+  background-size: calc(100% / 8) 100%, calc(100% / var(--cols)) 100%, 100% calc(100% / var(--rows)); }
+.sq-rn { position: absolute; background: #be185d; border-radius: 3px; border: 1px solid rgba(0,0,0,.3); cursor: pointer; }
+.sq-rhead { position: absolute; top: 0; bottom: 0; width: 2px; background: #f59e0b; display: none; pointer-events: none; }
+.sq-trk { font-family: ui-monospace, Menlo, monospace; font-size: .8rem; border-collapse: collapse; }
+.sq-trk th { padding: 2px 6px; font-size: .72rem; }
+.sq-trk td { padding: 0 2px; } .sq-trk td.rn { opacity: .6; padding-right: 6px; }
+.sq-trk tr.beat td.rn { opacity: 1; font-weight: 700; }
+.sq-trk input { font: inherit; border: 1px solid transparent; background: rgba(128,128,128,.08); color: inherit; padding: 0 2px; text-transform: uppercase; }
+.sq-trk tr.now input { background: transparent; }
+.sq-keys { display: flex; gap: 4px; margin: .4rem 0; }
+.sq-key { flex: 1; height: 56px; border-radius: 6px; border: 1px solid rgba(128,128,128,.5); background: rgba(190,24,93,.1); white-space: pre; font-size: .8rem; touch-action: manipulation; }
+.sq-key.down { background: #be185d; color: #fff; }
+.sq-tl { position: relative; height: 90px; border: 1px solid rgba(128,128,128,.4); border-radius: 6px;
+  background-image: linear-gradient(to right, rgba(128,128,128,.35) 1px, transparent 1px); background-size: 12.5% 100%; }
+.sq-tl b { position: absolute; width: 8px; height: 8px; margin-left: -4px; border-radius: 50%; background: #be185d; }
+.sq-tl .ph { position: absolute; top: 0; bottom: 0; width: 2px; background: #f59e0b; }
+.sq-input { border: 1px solid rgba(128,128,128,.3); border-radius: 10px; padding: .6rem 1rem; }
+.sq-held { font-size: .9rem; margin: .4rem 0 .2rem; }
+.sq-piano { display: flex; height: 80px; margin: .3rem 0; user-select: none; position: relative; }
+.sq-piano .pk { border: 1px solid #888; padding: 0; }
+.sq-piano .wht { flex: 1; background: #fafafa; border-radius: 0 0 4px 4px; }
+.sq-piano .blk { width: 0; flex: 0 0 0; position: relative; z-index: 2; background: transparent; border: 0; }
+.sq-piano .blk::after { content: ""; position: absolute; left: -9px; top: 0; width: 18px; height: 50px; background: #222; border-radius: 0 0 3px 3px; }
+.sq-piano .wht.on { background: #a78bfa; } .sq-piano .blk.on::after { background: #7c3aed; }
+.sq-pair { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 470px), 1fr)); gap: 1rem; }
+.sq-table th { cursor: pointer; white-space: nowrap; }
+.sq-table td { font-size: .85rem; }
+.sq-wide { grid-column: 1 / -1; }
+.ma-parts { display: flex; flex-direction: column; gap: .6rem; margin-top: .5rem; }
+.ma-part { border-left: 4px solid #7c3aed; padding: .3rem .6rem; background: rgba(124,58,237,.05); border-radius: 0 8px 8px 0; min-width: 0; }
+.ma-part.off { opacity: .55; border-color: rgba(128,128,128,.5); }
+.ma-phead { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: flex-end; }
+.ma-lamp { width: 12px; height: 12px; border-radius: 50%; background: rgba(128,128,128,.35); align-self: center; }
+.ma-lamp.now { background: #f59e0b; }
+.ma-more { font-size: .88rem; margin: .3rem 0; }
+.ma-score { overflow-x: auto; max-width: 640px; }
+.ma-score svg { color: inherit; }
+.btn.active { background: rgba(128,128,128,.25); }
+</style>
+```
+
+Every sequencer answers the same two questions in its own way: **which note next** and **when**. This page has one of each
+main kind, all running on the same clock, so you can hear them against each other. Hold a chord below, then press ▶ on any card,
+or run two at once in *Compare two*. The cards that read the held chord are the arpeggiators and a few sequencers that follow
+the chords; the rest use the key and scale.
+
+## Input and tempo
+
+::: {#sq-input}
+:::
+
+## Compare two
+
+Pick any two kinds. They start together on the next beat, A in the left ear and B in the right, with their own controls.
+
+::: {#sq-compare}
+:::
+
+## Arpeggiators
+
+An arpeggiator needs a chord held down: it decides the **order** and the **rate**, you decide the notes.
+
+::: {#sq-arp}
+:::
+
+## Step sequencers
+
+You write each step by hand. The pattern loops exactly, except where a step carries a rule.
+
+::: {#sq-step}
+:::
+
+## Pattern math
+
+The pattern comes from a rule or a shape: spread hits evenly, let tracks of different lengths drift, walk a grid.
+
+::: {#sq-math}
+:::
+
+## Generative
+
+You set the odds; the machine picks the notes. Good for music that keeps changing without anyone touching it.
+
+::: {#sq-gen}
+:::
+
+## Linear and recorded
+
+No looping grid as the starting point: notes laid out in time, typed in rows, or played in and kept.
+
+::: {#sq-linear}
+:::
+
+## Side-by-side table
+
+Click a heading to sort, a family to filter, a name to jump to its card.
+
+::: {#sq-table}
+:::
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Arp Settings Basics." *Yamaha Synth Forum*, Montage series. [yamahasynth.com/community/montage-series-synthesizers/arp-settings-basics](https://yamahasynth.com/community/montage-series-synthesizers/arp-settings-basics). Forum answer by Bad Mister: the five key modes, and Velocity Mode Original (as recorded) or Thru (your velocity influences each note).
+
+Bad Mister. "Arpeggiator Key Modes." *Yamaha Synth*, Yamaha Corporation of America. [yamahasynth.com/learn/moxf-series-music-production-synthesizers/arpeggiator-key-modes-moxf/](https://yamahasynth.com/learn/moxf-series-music-production-synthesizers/arpeggiator-key-modes-moxf/). Written for the MOXF; the source for what Sort, Thru, Direct, Sort+Direct and Thru+Direct sound, and velocity limits splitting one arp across parts.
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script>
+SeqPage.init({ input: document.getElementById("sq-input"), compare: document.getElementById("sq-compare"),
+  table: document.getElementById("sq-table"),
+  sections: { arp: document.getElementById("sq-arp"), step: document.getElementById("sq-step"), math: document.getElementById("sq-math"),
+    gen: document.getElementById("sq-gen"), linear: document.getElementById("sq-linear") } });
+</script>
+```

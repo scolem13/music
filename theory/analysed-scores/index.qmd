@@ -4,7 +4,7 @@ aliases:
 title: "Analysed Scores"
 toc: true
 toc-depth: 2
-description: "Real pieces with expert Roman-numeral analyses under the notes, from the When in Rome corpus, one piece per page: Bach's chorale \"O Haupt voll Blut und Wunden\" (\"O Sacred Head, Now Wounded\") and the first movement of Beethoven's \"Moonlight\" Sonata. Play along with the analysis."
+description: "Real pieces with expert Roman-numeral analyses under the notes, from the When in Rome corpus, one piece per page: Bach's chorale \"O Haupt voll Blut und Wunden\" (\"O Sacred Head, Now Wounded\") and the first movement of Beethoven's \"Moonlight\" Sonata, and every example in Reger's book of modulations. Play along with the analysis."
 ---
 
 {{< include _head.qmd >}}
@@ -19,6 +19,16 @@ Gotham and others.
   Passion*, analysed by Dmitri Tymoczko. Short, with a key change at nearly every phrase.
 - [**Beethoven: "Moonlight" Sonata, I**](beethoven-moonlight-1.qmd), the whole first movement, analysed by Tsung-Ping Chen and Li Su.
   Slow harmony, the Neapolitan, a tour of keys, and the form part by part.
+- [**Reger: *On the Theory of Modulation***](reger-modulation.qmd), all 100 short examples from Max Reger's 1903 book of
+  modulations, from one key to any other in a few chords, analysed by Néstor Nápoles López and others.
+- [**Modulation Finder**](modulation-finder.qmd): about 800 modulations in one list, sorted by the starting and ending key's mode and
+  the distance between them in half steps: the 200 textbook examples below, and short passages around the key changes in Bach's
+  chorales and 19th-century songs.
+- **More modulation examples from harmony textbooks**, also analysed by Nápoles López and others:
+  - [**Rimsky-Korsakov: *Practical Manual of Harmony***](rimsky-korsakov-harmony.qmd), 37 short four-voice modulations from C major or A minor.
+  - [**Tchaikovsky: *Guide to the Practical Study of Harmony***](tchaikovsky-harmony.qmd), 25 modulations from C major.
+  - [**Aldwell and Schachter: *Harmony and Voice Leading***](aldwell-schachter.qmd), seven examples: Bach chorales, Mozart and a progression.
+  - [**Kostka and Payne: *Tonal Harmony***](kostka-payne.qmd), 15 examples from Bach, Mozart, Beethoven, Schubert, Dvořák and Tchaikovsky.
 
 ## Reading the labels
 
@@ -56,9 +66,19 @@ where the bass holds a note through a chord change, the note is written as tied 
 ::: {.works-cited}
 **For students**
 
+Aldwell, Edward, Carl Schachter, and Allen Cadwallader. *Harmony and Voice Leading*. Chapter 27, the source of the examples on the Aldwell and Schachter page. The dataset names the three authors but not the edition, which has not been checked.
+
 Chen, Tsung-Ping, and Li Su. *BPS-FH: Beethoven Piano Sonata with Functional Harmony* dataset (ISMIR 2018). GitHub. [github.com/Tsung-Ping/functional-harmony](https://github.com/Tsung-Ping/functional-harmony). The source of the Moonlight analysis, converted to RomanText and proof-read by Mark Gotham for When in Rome.
 
 Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Kostka, Stefan, Dorothy Payne, and Byron Almén. *Tonal Harmony*. 8th ed., McGraw-Hill, 2018. Table of contents. [highered.mheducation.com/sites/0078025141/information_center_view0/table_of_contents.html](https://highered.mheducation.com/sites/0078025141/information_center_view0/table_of_contents.html). Chapters 18 (Modulations Using Diatonic Common Chords) and 19 (Some Other Modulatory Techniques), the source of the examples on the Kostka and Payne page.
+
+Reger, Max. *Beiträge zur Modulationslehre*. C. F. Kahnt Nachfolger, 1903. Translated by John Bernhoff as *On the Theory of Modulation*, Kahnt, [1904?]; reprinted as *Supplement to the Theory of Modulation*, Dover, 2007. The book whose 100 examples are shown on the Reger page. Public domain (Reger died in 1916).
+
+Rimsky-Korsakov, Nikolay. *Practical Manual of Harmony*. A. Büttner, 1886. IMSLP. [imslp.org/wiki/Practical_Manual_of_Harmony_(Rimsky-Korsakov,_Nikolay)](https://imslp.org/wiki/Practical_Manual_of_Harmony_(Rimsky-Korsakov,_Nikolay)). The book whose modulation examples are on the Rimsky-Korsakov page; IMSLP has scans of later editions.
+
+Tchaikovsky Research. "Guide to the Practical Study of Harmony." [en.tchaikovsky-research.net/pages/Guide_to_the_Practical_Study_of_Harmony](https://en.tchaikovsky-research.net/pages/Guide_to_the_Practical_Study_of_Harmony). When and how Tchaikovsky wrote the book (1871, from his Moscow Conservatory lectures); Jurgenson, 1872; English translation by Emil Krall and James Liebling, 1900.
 
 **For teachers**
 

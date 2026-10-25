@@ -1,0 +1,95 @@
+---
+title: "Yamaha MODX"
+description: "The basics of our Yamaha MODX synthesizer, and how to use it as an audio interface: one USB cable to the computer."
+toc: true
+toc-depth: 2
+---
+
+The **Yamaha MODX** is a synthesizer keyboard. It has pianos, organs, strings, synths and drum kits built in.
+It can also be a **sound card for the computer**. Plug in one USB cable, and the computer can record the
+MODX and play sound back through it. You don't need a separate audio interface.
+
+## The parts you'll use
+
+| Part | What it's for |
+|---|---|
+| **Touch screen** | Choose sounds (a sound is called a *Performance*), change settings |
+| **Super Knob** (the big knob) | Changes several settings at once. Turn it while you play to change the sound |
+| **Scene buttons** | Up to 8 saved versions of the current sound. Press one to switch |
+| **CATEGORY SEARCH** | Find a sound by type: Piano, Keyboard, Organ, Strings, Synth Lead, Drum… |
+| **[EXIT]** | Goes back one screen. Press it again and again to get home |
+| **Back panel: OUTPUT L/MONO, R** | Two 1/4" jacks to the mixer or speakers. Use only L for mono |
+| **Back panel: A/D INPUT** | Plug in a mic or guitar here to send it through the MODX |
+| **Back panel: USB TO HOST** | USB cable to the computer, for MIDI and audio |
+| **PHONES** | Headphones. Turn the master volume down before you put them on |
+
+## Find a sound
+
+1. Press **[CATEGORY SEARCH]**.
+2. Touch a category (for example *Piano*), then touch a sound in the list.
+3. Play. Turn the Super Knob to hear how the sound changes.
+4. Press **[EXIT]** when you're done.
+
+You don't need to save to play a sound. Save only if you change one and want to keep it.
+
+## Using the MODX as an audio interface
+
+This is the easiest way to record a keyboard part. **One USB cable carries everything:** the notes you play
+(MIDI), the sound of the MODX (audio into the computer), and the computer's sound (audio back out of the
+MODX's outputs and headphones).
+
+### Setup
+
+1. Connect **USB TO HOST** on the MODX to the computer with a USB cable (USB-A to USB-B).
+2. Turn the MODX on.
+3. On the computer, open your DAW's audio settings:
+   - **Input device:** Yamaha MODX
+   - **Output device:** Yamaha MODX
+   - **Sample rate:** 44.1 kHz
+4. Make an audio track. Set its input to the first stereo pair (1–2). Arm it and press record.
+5. Plug headphones into the MODX, or run its outputs to the mixer. You hear the computer and the
+   keyboard together, from one place.
+
+That's all. No extra boxes, no extra cables, no mic stand.
+
+### Why it's easy
+
+- **One cable.** A normal setup needs a keyboard, an audio interface, two audio cables and a USB cable. The
+  MODX does all of it.
+- **Clean sound.** The audio stays digital from the MODX into the computer. Nothing to hum, no gain knob to
+  set too high or too low.
+- **One place to listen.** The computer's playback comes out of the MODX's headphone jack, so you hear the
+  backing track and your playing together, with no lag.
+- **Mic or guitar too.** Plug a mic or guitar into **A/D INPUT** and it goes to the computer over the same
+  USB cable.
+
+### Things to check if it doesn't work
+
+| Problem | Try |
+|---|---|
+| The computer doesn't list "Yamaha MODX" | Use a different USB cable (some only charge). Plug straight into the computer, not a hub |
+| Windows: no MODX audio device | Install the **Yamaha Steinberg USB Driver** from Yamaha's website |
+| You hear yourself twice, a little late | Turn off *input monitoring* on the DAW track. You already hear the MODX directly |
+| No sound from the computer | Check the DAW's output device is the MODX, and the MODX master volume is up |
+| Recording is silent | Check the track's input is 1–2 and the track is armed |
+
+::: {.callout-note}
+**Unverified:** Yamaha community forums disagree on whether a Mac needs the Yamaha driver or works without
+one, and on the exact number of USB audio channels (often quoted as 10 out to the computer and 4 back, at
+44.1 kHz). Check the MODX Owner's Manual before relying on these.
+:::
+
+## Play the site's band on it
+
+The [MODX band page](modx-band.qmd) sends the Backing Track band's notes to the MODX, so its bass, keys, guitar or
+drums play on the board instead of in the browser. It compares each sound side by side so you can pick which
+instruments to send. If the computer's sound also comes out of the MODX (set the computer's output to the MODX), both
+come out of the same speakers, and the timing is easier to line up.
+
+## Manuals
+
+- Yamaha, *MODX Owner's Manual* and *MODX Reference Manual*: on Yamaha's website under Support → Manuals.
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

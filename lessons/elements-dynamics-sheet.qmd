@@ -1,0 +1,145 @@
+---
+title: "Dynamics on One Page"
+toc: true
+toc-depth: 2
+description: "Every dynamics term on one revision sheet: pp to ff, crescendo, diminuendo, sforzando, where the markings go, terraced and gradual dynamics, and how each period used them, each with a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Dynamics](elements-dynamics.qmd) on one sheet. Every ▶ plays the example at the volumes marked. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Dynamics: how loud, and how it changes"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### From pp to ff
+<p><em>pp</em> very quiet · <em>p</em> quiet · <em>mp</em> moderately quiet · <em>mf</em> moderately loud · <em>f</em> loud · <em>ff</em> very loud.</p>
+<div class="abc-ex" data-width="190" data-bpm="80"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+!pp!C !p!D !mp!E !mf!F|!f!G !ff!A c2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Crescendo
+<p><em>cresc.</em> or an opening hairpin <code>&lt;</code>: getting gradually louder. Say where it starts and where it ends up.</p>
+<div class="abc-ex" data-width="190" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+!p!!crescendo(!C D E F|G A B !crescendo)!!f!c|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Diminuendo
+<p><em>dim.</em> or <em>decresc.</em>, or a closing hairpin <code>&gt;</code>: getting gradually quieter.</p>
+<div class="abc-ex" data-width="190" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+!f!!diminuendo(!c B A G|F E D !diminuendo)!!p!C|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Sforzando
+<p><em>sfz</em> or <em>sf</em>: one note hit hard, then straight back to the dynamic before.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:3/4
+L:1/4
+K:Dm
+!p!D F !sfz!A|D F !sfz!A|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Terraced
+<p>Sudden steps between loud and quiet, often by more or fewer players. Baroque.</p>
+<div class="abc-ex" data-width="190" data-bpm="110" data-sound="harpsichord"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:D
+!f!d2 fd A2 dA|!p!d2 fd A2 dA|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Gradual
+<p>The same notes with one long crescendo. Classical and Romantic.</p>
+<div class="abc-ex" data-width="190" data-bpm="110"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:D
+!p!!crescendo(!d2 fd A2 dA|F2 AF !crescendo)!!f!D4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Where they go
+<ul>
+<li>One instrument: <strong>under</strong> the [staff]{.nn}</li>
+<li>Piano: <strong>between</strong> the two staves</li>
+<li>Voices: <strong>above</strong> the [staff]{.nn}, clear of the words</li>
+</ul>
+:::::
+
+::::: {.el-card}
+#### Through history
+<ul>
+<li><strong>Baroque</strong> (about 1600–1750): few marks, <em>p</em> and <em>f</em>, terraced</li>
+<li><strong>Classical</strong> (about 1750–1820): crescendos and diminuendos, for contrast</li>
+<li><strong>Romantic</strong> (about 1800–1910): <em>ppp</em> to <em>fff</em>, always changing</li>
+</ul>
+:::::
+
+::::: {.el-card}
+#### Describing dynamics
+<p>Describe the changes <strong>in order</strong>: "starts <em>p</em>, a gradual crescendo to <em>f</em>, a sudden drop to <em>pp</em>, ends <em>ff</em>". Useful words: <em>sudden, gradual, wide range, contrast, terraced, fades out</em>.</p>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="dynamics"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing dynamics
+
+- One word for a whole piece is only enough if it never changes.
+- *Piano* is the Italian for quiet; *pianoforte*, the instrument's full name, means "quiet-loud".
+
+- The longer lesson, with fuller examples: [Elements 2: Dynamics](elements-dynamics.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Classical period (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Classical_period_(music)](https://en.wikipedia.org/wiki/Classical_period_(music)). Classical roughly 1750–1820; Baroque c. 1600–1750; Romantic c. 1800–1910; melody over a subordinate accompaniment such as an Alberti bass.
+
+"Dynamics (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Dynamics_(music)](https://en.wikipedia.org/wiki/Dynamics_(music)). Sforzando / sforzato (sf, sfz): suddenly loud on one note; terraced dynamics from contrasting small and large groups; hairpins below the staff, between piano staves, above in vocal music.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

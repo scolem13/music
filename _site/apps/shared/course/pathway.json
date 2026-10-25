@@ -1,0 +1,636 @@
+{
+ "generated": "scripts/course-pathway.mjs from Task Sheets — Steps and Decisions.org",
+ "strands": [
+  "Ai",
+  "Aii",
+  "Bi",
+  "Bii",
+  "C",
+  "Di",
+  "Dii"
+ ],
+ "units": [
+  {
+   "id": "myp1",
+   "label": "MYP1 Voices in Harmony",
+   "name": "Voices in Harmony",
+   "year": 1,
+   "short": {
+    "Ai": "sources, not opinion",
+    "Aii": null,
+    "Bi": "show at three stages",
+    "Bii": "intention sentence",
+    "C": "sing with techniques",
+    "Di": "strength and limitation",
+    "Dii": null
+   },
+   "detail": {
+    "Ai": {
+     "kind": "new",
+     "text": "Find three sources and write the genre's context from them, in your own words but not from your own opinion, and list the sources at the end. Use the correct names for the elements (rhythm, structure, tempo). One sentence says how the genre connects to the statement of inquiry."
+    },
+    "Bi": {
+     "kind": "new",
+     "text": "Practise a technique and show it on video at three stages, as the IB guidance requires: at the beginning, the middle, and towards the end of the process. Each clip shows the technique being practised or used in the song; a spoken or written sentence explains it."
+    },
+    "Bii": {
+     "kind": "new",
+     "text": "The intention sentence: \"My artistic intention is to perform … so that …. This connects to the statement of inquiry because ….\" Then describe the choices (songs, techniques, staging)."
+    },
+    "C": {
+     "kind": "new",
+     "text": "Perform a finished song using the unit's techniques, recorded on video."
+    },
+    "Di": {
+     "kind": "new",
+     "text": "For each heading, name one strength and one limitation of the finished performance, with one piece of evidence from the recording. Di is about the final work; what you did along the way does not count here."
+    }
+   },
+   "notes": [
+    {
+     "label": "Top band to aim at",
+     "text": "relevant information (Ai), describes choices (Bii), analyses own work (Di)."
+    },
+    {
+     "label": "Not met this year",
+     "text": "Aii and Dii."
+    }
+   ],
+   "title": "Voices in Harmony",
+   "rubric": 1
+  },
+  {
+   "id": "myp2",
+   "label": "MYP2 Symphonic Pop",
+   "name": "Symphonic Pop",
+   "year": 2,
+   "short": {
+    "Ai": "in-text citations, compare",
+    "Aii": "time stamps",
+    "Bi": null,
+    "Bii": "give reasons",
+    "C": "play in an ensemble",
+    "Di": null,
+    "Dii": "then, now and why"
+   },
+   "detail": {
+    "Ai": {
+     "kind": "adds",
+     "text": "In-text citations for every borrowed fact, and a comparison of two genres under the same headings (the old classical/pop table)."
+    },
+    "Aii": {
+     "kind": "new",
+     "text": "Respond to one piece. Every point has a time stamp. Cover an element, a technique and the context."
+    },
+    "Bii": {
+     "kind": "adds",
+     "text": "A reason for each choice (\"… because …\"). This is the move from describe to explain."
+    },
+    "C": {
+     "kind": "adds",
+     "text": "Play a part in an ensemble: stay in time, balance and blend."
+    },
+    "Dii": {
+     "kind": "new",
+     "text": "\"At the start I …. Now I …. What caused the change was ….\" This is the move from describe to analyse."
+    }
+   },
+   "notes": [
+    {
+     "label": "Not met this year",
+     "text": "Bi and Di."
+    }
+   ],
+   "title": "Symphonic Pop",
+   "rubric": 3
+  },
+  {
+   "id": "myp3",
+   "label": "MYP3 Techno Remix",
+   "name": "Techno Remix",
+   "year": 3,
+   "short": {
+    "Ai": null,
+    "Aii": "annotated extracts, effect",
+    "Bi": "tried, problem, decided",
+    "Bii": null,
+    "C": "DAW track, own material",
+    "Di": "weigh and improve",
+    "Dii": "explicit then-and-now"
+   },
+   "detail": {
+    "Aii": {
+     "kind": "adds",
+     "text": "Annotated extracts or screenshots as evidence, and for each feature the effect it has on the listener (feature → effect)."
+    },
+    "Bi": {
+     "kind": "adds",
+     "text": "Annotations on the three-stage evidence that follow one pattern: what was tried, what the problem was, what was decided. DAW screenshots are the evidence; the annotations stay short and support the work rather than replace it."
+    },
+    "C": {
+     "kind": "adds",
+     "text": "Build a finished track in a DAW from material you made or reshaped yourself, not from pre-made loops left as they are."
+    },
+    "Di": {
+     "kind": "adds",
+     "text": "Weigh each element (strength against limitation), give a time stamp, and say what you would change. This is the move from analyse to evaluate."
+    },
+    "Dii": {
+     "kind": "adds",
+     "text": "State outright how one musical skill changed (what I could not do, what I can do now, what changed it), using feedback from a peer and the teacher as evidence."
+    }
+   },
+   "notes": [
+    {
+     "label": "Not met this year",
+     "text": "Ai and Bii."
+    }
+   ],
+   "title": "Techno Remix",
+   "rubric": 3
+  },
+  {
+   "id": "myp4.1",
+   "label": "MYP4.1 Blues to Jazz",
+   "name": "Blues to Jazz",
+   "year": 4,
+   "short": {
+    "Ai": "SOI as an argued section",
+    "Aii": "critique from specific detail",
+    "Bi": "try several ideas in depth",
+    "Bii": "justify per element",
+    "C": "perform or compose + DAW",
+    "Di": "judge effectiveness",
+    "Dii": "discuss, more than one factor"
+   },
+   "detail": {
+    "Ai": {
+     "kind": "adds",
+     "text": "The link to the statement of inquiry becomes its own section with argued points and examples, not one sentence. Coverage widens to how the genre evolved and who shaped it, without biography."
+    },
+    "Aii": {
+     "kind": "adds",
+     "text": "Critique: after the element-by-element analysis, judge which artistic choices work and which do not, and tie every judgment to a specific moment in the piece (a time stamp, a bar, a quoted lyric). General praise does not count; the IB examiner marked exemplar 18 down for generalisations."
+    },
+    "Bi": {
+     "kind": "adds",
+     "text": "More than one idea tried in practice, each far enough to hear whether it works, with the evidence at the three stages. Describing alternatives in writing is not exploring them; exemplar 18 did that and was marked \"substantial\", not \"extensive and varied\"."
+    },
+    "Bii": {
+     "kind": "adds",
+     "text": "One justified choice per musical element, in a fixed list of elements. Justified means the specific action (what, where in the piece, how) plus a reason that can be checked. \"I will add my own interpretation\" is not a justification."
+    },
+    "C": {
+     "kind": "adds",
+     "text": "A performance or an original jazz/blues song; a performance includes DAW elements."
+    },
+    "Di": {
+     "kind": "adds",
+     "text": "Judge how effective each aspect of the work is for a listener, with evidence, using the same element headings as Bii. Showing that the plan was carried out is not enough."
+    },
+    "Dii": {
+     "kind": "adds",
+     "text": "Discuss: more than one factor, what did not go well alongside what did, and a conclusion with evidence."
+    }
+   },
+   "notes": [
+    {
+     "label": "Note",
+     "text": "Criterion A for this unit was due on 16 Sep 2026, so the Ai and Aii additions apply to this year's cohort only from the next unit."
+    }
+   ],
+   "title": "From Blues to Jazz",
+   "rubric": 5
+  },
+  {
+   "id": "myp4.2",
+   "label": "MYP4.2 Rock and Pop",
+   "name": "Rock and Pop",
+   "year": 4,
+   "short": {
+    "Ai": null,
+    "Aii": "one piece, techniques judged",
+    "Bi": "one idea, several versions",
+    "Bii": "purpose, mood, audience",
+    "C": "original song",
+    "Di": "overall verdict",
+    "Dii": null
+   },
+   "detail": {
+    "Aii": {
+     "kind": "adds",
+     "text": "The student chooses one piece and judges its techniques as well as its elements: what the performers or producers do, and how well it works. One piece in depth, not two in outline."
+    },
+    "Bi": {
+     "kind": "adds",
+     "text": "One idea developed through at least three versions, each one changed for a stated reason, with the audio or notation of every version kept as evidence. This is depth, to go with the variety added in Unit 1."
+    },
+    "Bii": {
+     "kind": "adds",
+     "text": "Purpose, mood and target audience stated before the element choices, and the link to the global context as well as the statement of inquiry."
+    },
+    "C": {
+     "kind": "adds",
+     "text": "An original song with lyrics."
+    },
+    "Di": {
+     "kind": "adds",
+     "text": "An overall verdict on the whole work and how well it does what it set out to do, using feedback from outside the class as one piece of evidence."
+    }
+   },
+   "notes": [
+    {
+     "label": "Last chance before the practice run",
+     "text": "Aii, Bi and Bii are not assessed again in MYP4."
+    }
+   ],
+   "title": "Rock and the Pop Ballads",
+   "rubric": 5
+  },
+  {
+   "id": "myp4.3",
+   "label": "MYP4.3 Trance",
+   "name": "Trance",
+   "year": 4,
+   "short": {
+    "Ai": "technology and wider context",
+    "Aii": null,
+    "Bi": null,
+    "Bii": null,
+    "C": "produce to a time limit",
+    "Di": "why it works or fails",
+    "Dii": "named musical skills, next steps"
+   },
+   "detail": {
+    "Ai": {
+     "kind": "adds",
+     "text": "The effect of technology and of the wider world on the genre, and a full bibliography from independent research."
+    },
+    "C": {
+     "kind": "adds",
+     "text": "Produce a finished track of original material to a fixed time limit."
+    },
+    "Di": {
+     "kind": "adds",
+     "text": "For each judgment, explain why the thing works or fails for a listener, not only that it does. This is the step from evaluating to evaluating perceptively."
+    },
+    "Dii": {
+     "kind": "adds",
+     "text": "Discuss development in named musical skills (for example a production technique, a vocal or instrumental technique, harmony writing): where each started, what changed it, what is still weak, and specific next steps. ATL skills and learner profile are not the focus."
+    }
+   },
+   "notes": [
+    {
+     "label": "Last chance before the practice run",
+     "text": "Ai and Dii."
+    }
+   ],
+   "title": "Trance Music",
+   "rubric": 5
+  },
+  {
+   "id": "myp5.1",
+   "label": "MYP5.1 Art of Connection",
+   "name": "Art of Connection",
+   "year": 5,
+   "short": {
+    "Ai": "full run",
+    "Aii": "full run",
+    "Bi": "full run",
+    "Bii": "full run",
+    "C": "full run",
+    "Di": "full run",
+    "Dii": "full run"
+   },
+   "detail": {},
+   "notes": [],
+   "title": "The Art of Connection",
+   "rubric": 5,
+   "fullRun": [
+    "Nothing new is taught. All seven strands are done in ePortfolio format, with the same file types and limits as the real thing and no step-by-step sheet.",
+    "One thread runs through the four tasks: the piece studied in Task 1 feeds the ideas in Task 2, the same two or three named skills are followed through Tasks 2, 3 and 4, and Task 4 measures the result against the Task 2 intention.",
+    "Each student marks the checklist below. Anything not secure is the list to fix before the partially completed unit planner is released."
+   ]
+  }
+ ],
+ "checklist": [
+  {
+   "task": 1,
+   "strand": "Ai",
+   "id": "Ai-0",
+   "text": "Sources found, own words, reference list",
+   "unit": "myp1"
+  },
+  {
+   "task": 1,
+   "strand": "Ai",
+   "id": "Ai-1",
+   "text": "In-text citations",
+   "unit": "myp2"
+  },
+  {
+   "task": 1,
+   "strand": "Ai",
+   "id": "Ai-2",
+   "text": "Statement of inquiry link as an argued section",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 1,
+   "strand": "Ai",
+   "id": "Ai-3",
+   "text": "Evolution and key figures without biography",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 1,
+   "strand": "Ai",
+   "id": "Ai-4",
+   "text": "Technology and the wider world",
+   "unit": "myp4.3"
+  },
+  {
+   "task": 1,
+   "strand": "Aii",
+   "id": "Aii-0",
+   "text": "Time stamps for every point",
+   "unit": "myp2"
+  },
+  {
+   "task": 1,
+   "strand": "Aii",
+   "id": "Aii-1",
+   "text": "Element, technique and context all covered",
+   "unit": "myp2"
+  },
+  {
+   "task": 1,
+   "strand": "Aii",
+   "id": "Aii-2",
+   "text": "Annotated extracts; feature → effect",
+   "unit": "myp3"
+  },
+  {
+   "task": 1,
+   "strand": "Aii",
+   "id": "Aii-3",
+   "text": "Critique: judgments tied to specific moments in the piece",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 1,
+   "strand": "Aii",
+   "id": "Aii-4",
+   "text": "One piece in depth, techniques judged as well as elements",
+   "unit": "myp4.2"
+  },
+  {
+   "task": 2,
+   "strand": "Bi",
+   "id": "Bi-0",
+   "text": "Practical evidence at the beginning, the middle, and towards the end of the process",
+   "unit": "myp1"
+  },
+  {
+   "task": 2,
+   "strand": "Bi",
+   "id": "Bi-1",
+   "text": "Short annotations on that evidence: tried → problem → decided",
+   "unit": "myp3"
+  },
+  {
+   "task": 2,
+   "strand": "Bi",
+   "id": "Bi-2",
+   "text": "More than one idea tried in practice, in depth",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 2,
+   "strand": "Bi",
+   "id": "Bi-3",
+   "text": "One idea developed through several versions",
+   "unit": "myp4.2"
+  },
+  {
+   "task": 2,
+   "strand": "Bii",
+   "id": "Bii-0",
+   "text": "Intention sentence tied to the statement of inquiry",
+   "unit": "myp1"
+  },
+  {
+   "task": 2,
+   "strand": "Bii",
+   "id": "Bii-1",
+   "text": "A reason for each choice",
+   "unit": "myp2"
+  },
+  {
+   "task": 2,
+   "strand": "Bii",
+   "id": "Bii-2",
+   "text": "A justified choice per element: specific action plus a checkable reason",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 2,
+   "strand": "Bii",
+   "id": "Bii-3",
+   "text": "Purpose, mood, audience, global context",
+   "unit": "myp4.2"
+  },
+  {
+   "task": 3,
+   "strand": "C",
+   "id": "C-0",
+   "text": "Finished performance on video",
+   "unit": "myp1"
+  },
+  {
+   "task": 3,
+   "strand": "C",
+   "id": "C-1",
+   "text": "Ensemble skills",
+   "unit": "myp2"
+  },
+  {
+   "task": 3,
+   "strand": "C",
+   "id": "C-2",
+   "text": "DAW track from original material",
+   "unit": "myp3"
+  },
+  {
+   "task": 3,
+   "strand": "C",
+   "id": "C-3",
+   "text": "Performance or composition with DAW elements",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 3,
+   "strand": "C",
+   "id": "C-4",
+   "text": "Original song",
+   "unit": "myp4.2"
+  },
+  {
+   "task": 3,
+   "strand": "C",
+   "id": "C-5",
+   "text": "Original material finished to a time limit",
+   "unit": "myp4.3"
+  },
+  {
+   "task": 4,
+   "strand": "Di",
+   "id": "Di-0",
+   "text": "Strength and limitation of the finished work, not the process, with evidence",
+   "unit": "myp1"
+  },
+  {
+   "task": 4,
+   "strand": "Di",
+   "id": "Di-1",
+   "text": "Weighed, time-stamped, with an improvement",
+   "unit": "myp3"
+  },
+  {
+   "task": 4,
+   "strand": "Di",
+   "id": "Di-2",
+   "text": "Effectiveness of each aspect judged, with evidence",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 4,
+   "strand": "Di",
+   "id": "Di-3",
+   "text": "Overall verdict on the whole work, with outside feedback as evidence",
+   "unit": "myp4.2"
+  },
+  {
+   "task": 4,
+   "strand": "Di",
+   "id": "Di-4",
+   "text": "Why each thing works or fails, not only that it does",
+   "unit": "myp4.3"
+  },
+  {
+   "task": 4,
+   "strand": "Dii",
+   "id": "Dii-0",
+   "text": "Then, now and why",
+   "unit": "myp2"
+  },
+  {
+   "task": 4,
+   "strand": "Dii",
+   "id": "Dii-1",
+   "text": "Explicit then-and-now for a musical skill, with feedback as evidence",
+   "unit": "myp3"
+  },
+  {
+   "task": 4,
+   "strand": "Dii",
+   "id": "Dii-2",
+   "text": "Discussion with more than one factor",
+   "unit": "myp4.1"
+  },
+  {
+   "task": 4,
+   "strand": "Dii",
+   "id": "Dii-3",
+   "text": "Development in named musical skills, with specific next steps",
+   "unit": "myp4.3"
+  }
+ ],
+ "rubric": {
+  "Ai": {
+   "top": {
+    "1": "relevant information",
+    "3": "comprehensive, relevant",
+    "5": "comprehensive, relevant"
+   },
+   "newAt": {
+    "3": "Relevant is now only 5–6; the top band needs comprehensive coverage",
+    "5": "No change"
+   }
+  },
+  "Aii": {
+   "top": {
+    "1": "describes two features",
+    "3": "analyses element, technique and context",
+    "5": "critiques, all three"
+   },
+   "newAt": {
+    "3": "Describe is now 5–6. Top band: analyse (break down, show how the parts relate, reach a conclusion), and cover an element, a technique and the context, not any two",
+    "5": "Analyse is now 5–6. Top band: critique (a critical review of the whole piece). All three of element, technique and context are needed from 5–6 up"
+   }
+  },
+  "Bi": {
+   "top": {
+    "1": "substantial and varied",
+    "3": "extensive and varied",
+    "5": "extensive and varied"
+   },
+   "newAt": {
+    "3": "Top band: extensive and varied",
+    "5": "No change"
+   }
+  },
+  "Bii": {
+   "top": {
+    "1": "describes choices",
+    "3": "explains choices",
+    "5": "justifies choices"
+   },
+   "newAt": {
+    "3": "Describe is now 5–6. Top band: explain choices (give reasons). The link to the SOI is needed from 3–4 up, not 5–6",
+    "5": "Explain is now 5–6. Top band: justify choices (valid reasons or evidence). The link to the SOI is expected even at 1–2"
+   }
+  },
+  "C": {
+   "top": {
+    "1": "consistently effective",
+    "3": "consistently effective",
+    "5": "consistently effective"
+   },
+   "newAt": {
+    "3": "No change in wording; harder skills",
+    "5": "No change in wording; harder skills"
+   }
+  },
+  "Di": {
+   "top": {
+    "1": "analyses own work",
+    "3": "evaluates",
+    "5": "thoroughly and perceptively evaluates"
+   },
+   "newAt": {
+    "3": "Analyse is now 5–6. Top band: evaluate (weigh strengths and limitations)",
+    "5": "Evaluate is now 5–6. Top band: thoroughly and perceptively evaluate"
+   }
+  },
+  "Dii": {
+   "top": {
+    "1": "describes development",
+    "3": "analyses",
+    "5": "discusses"
+   },
+   "newAt": {
+    "3": "Describe is now 5–6. Top band: analyse",
+    "5": "Analyse is now 5–6. Top band: discuss (a considered, balanced review of a range of factors, with conclusions supported by evidence)"
+   }
+  }
+ },
+ "pattern": "For Aii, Bii, Di and Dii the descriptors slide up one band at each stage: the work that earns 7–8 in Year 1 earns 5–6 in Year 3 and 3–4 in Year 5. A student who keeps doing what worked last stage drops two marks. Ai and Bi change once (Year 1 → Year 3) and then stay the same. C never changes; its rise comes only from the skills each unit teaches.",
+ "rubricStage": {
+  "myp1": 1,
+  "myp2": 3,
+  "myp3": 3,
+  "myp4": 5,
+  "myp5": 5
+ }
+}

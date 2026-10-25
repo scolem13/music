@@ -450,10 +450,24 @@ async function ensureAudio(){
   await audioCtx.resume();
 }
 let activeOscs = [];   // scheduled oscillators, so STOP can silence them at once
+let activeChants = [];  // RhythmChant handles, so STOP can silence them too
 function stopAllTones(){
   for (const osc of activeOscs){ try { osc.stop(); } catch(e){} }
   activeOscs = [];
+  for (const h of activeChants){ try { h.stop(); } catch(e){} }
+  activeChants = [];
 }
+// "Conversational": the MODEL pattern chanted by RhythmChant (apps/shared/rhythm-chant.js) on this page's own clock, at the same times the
+// clicks/woodblocks would have sounded. Only the sound changes; the metronome, the recording window and the grading are not touched.
+function chantModel(abc, startCtx, spl, lq, mlu, triple, gain){
+  if (!window.RhythmChant || !RhythmChant.enabled()) return false;
+  try {
+    activeChants.push(RhythmChant.play(abc, { ctx: audioCtx, when: startCtx, secPerQuarter: spl / lq,
+      triple: !!triple, macroQuarters: mlu * lq, gain: gain, jitterMs: 0 }));   // jitterMs 0: onsets exactly on the grid
+    return true;
+  } catch(e){ console.warn("RhythmChant:", e); return false; }
+}
+const chantThis = (startCtx, spl, gain) => chantModel(currentAbc, startCtx, spl, target.lQuarters, macroLUnits, isTriple, gain);
 function click(midi, start, dur, gain){
   const osc = audioCtx.createOscillator(), g = audioCtx.createGain();
   osc.type = "square"; osc.frequency.value = midiToFreqHz(midi);
@@ -561,7 +575,7 @@ async function hearPattern(){
   const perfMacrobeats = Math.round(target.total / macroLUnits);
   scheduleMetronome(ctxNow, perfNow, N + perfMacrobeats, [0, N], spm, lat);
   const downbeat = ctxNow + INITIAL_DELAY + N*spm;
-  for (const on of target.onsets) click(88, downbeat + on*spl, 0.07, 0.22);
+  if (!chantThis(downbeat, spl)) for (const on of target.onsets) click(88, downbeat + on*spl, 0.07, 0.22);
   setFlow("listened");
 }
 
@@ -622,6 +636,12 @@ async function recordAttempt(){
 }
 
 document.getElementById("play").addEventListener("click", hearPattern);
+// the "Conversational" checkbox beside Hear pattern. Default off on the Rhythm Assessment (a graded echo: the click model is the precise one),
+// on in the LSA Practice pages (RA_SEQUENCE), which imitate a teacher's learning sequence activity.
+if (window.RhythmChant){
+  RhythmChant.scope(RA_SEQUENCE ? "lsa-practice" : "rhythm-assessment", !!RA_SEQUENCE);
+  RhythmChant.checkbox(null, { after: document.getElementById("play"), onchange: stopAllTones });
+}
 document.getElementById("record").addEventListener("click", recordAttempt);
 document.getElementById("mic").addEventListener("click", enableMic);
 
@@ -768,9 +788,10 @@ window.LSA_SILENCE_MACROBEATS = 2;
 // class patterns and an individual pattern's teaching/listen phase -- never its
 // evaluation/record phase (only the gentle beat-keeping click there). Returns
 // whether it fired, so callers can extend their own timing to make room for it.
-function maybeEchoOnsets(onsets, startCtx, spl, durSec){
+function maybeEchoOnsets(onsets, startCtx, spl, durSec, chant){
   if (Math.random() >= 0.4) return false;
   const echoStart = startCtx + durSec;
+  if (chant && chantModel(chant.abc, echoStart, spl, chant.lq, chant.mlu, chant.triple, 0.4)) return true;   // Conversational: the echo is chanted, quieter
   for (const on of onsets) woodblockB(echoStart + on*spl, 0.05, WB_ECHO_GAIN);
   return true;
 }
@@ -797,9 +818,10 @@ function playLsaInterlude(items, onDone, startCtx){
     const mlu = AbcRhythm.macrobeatLUnits(item.abc, !!item.isTriple);
     const spl = spm / mlu;
     const start = ctxCursor;
-    for (const on of t.onsets) woodblockA(start + on*spl, 0.05, WB_PATTERN_GAIN);
+    const chant = { abc: item.abc, lq: t.lQuarters, mlu, triple: !!item.isTriple };
+    if (!chantModel(chant.abc, start, spl, chant.lq, mlu, chant.triple)) for (const on of t.onsets) woodblockA(start + on*spl, 0.05, WB_PATTERN_GAIN);
     const durSec = Math.round(t.total / mlu) * spm;
-    const echoed = maybeEchoOnsets(t.onsets, start, spl, durSec);
+    const echoed = maybeEchoOnsets(t.onsets, start, spl, durSec, chant);
     const delayMs = (start - ctxNow) * 1000;
     visualTimers.push(setTimeout(() => renderPatternAbc(item.abc), Math.max(0, delayMs)));
     ctxCursor += durSec * (echoed ? 2 : 1);
@@ -832,8 +854,9 @@ async function runGradedCycleForSequence(){
 
   // Teaching / listen: the pattern, as a woodblock, straight away.
   const listenStart = ctxNow + INITIAL_DELAY;
-  for (const on of target.onsets) woodblockA(listenStart + on*spl, 0.05, WB_PATTERN_GAIN);
-  const echoed = maybeEchoOnsets(target.onsets, listenStart, spl, patternDur);
+  if (!chantThis(listenStart, spl)) for (const on of target.onsets) woodblockA(listenStart + on*spl, 0.05, WB_PATTERN_GAIN);
+  const echoed = maybeEchoOnsets(target.onsets, listenStart, spl, patternDur,
+    { abc: currentAbc, lq: target.lQuarters, mlu: macroLUnits, triple: isTriple });
   const listenDur = patternDur * (echoed ? 2 : 1);
 
   // Evaluation / record: a quiet, different woodblock keeps the beat -- no
@@ -889,7 +912,7 @@ async function runContinuousCycle(){
   // The 2-beat turnaround after the recording is silent (clicks muted).
   scheduleMetronome(ctxNow, perfNow, 2*pm, [0, pm], spm, lat);
   const modelDownbeat = ctxNow + INITIAL_DELAY;
-  for (const on of target.onsets) click(88, modelDownbeat + on*spl, 0.07, 0.22);
+  if (!chantThis(modelDownbeat, spl)) for (const on of target.onsets) click(88, modelDownbeat + on*spl, 0.07, 0.22);
 
   perfT0 = perfNow + (INITIAL_DELAY + pm*spm + lat) * 1000;   // record downbeat
   collecting = true;

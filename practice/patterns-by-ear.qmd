@@ -1,0 +1,161 @@
+---
+title: "Patterns by Ear"
+description: "Piano with a MIDI keyboard, no notation: learn the first tonal patterns of a set from finger numbers on the keys, then play the rest back by ear and see how many you got on the first try."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/abc-play.js?v=5"></script>
+<script src="/apps/shared/midi-feel.js?v=2"></script>
+<script src="/apps/shared/musical-typing.js"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
+<script src="/apps/patterns/pattern-gen.js?v=3"></script>
+<script src="/apps/patterns/ear-piano.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+#ep-root { --ep-ink: var(--site-ink, #212529); --ep-mute: var(--site-ink-2, #6c757d); --ep-line: var(--site-line, #ced4da);
+  --ep-surf: var(--site-surface, #fff); --ep-surf2: var(--site-surface-2, #f8f9fa); --ep-acc: var(--site-accent, #2780e3);
+  --ep-good: #2f9e44; --ep-bad: #e03131; --ep-key-w: #fff; --ep-key-b: #222; }
+@media (prefers-color-scheme: dark) { #ep-root { --ep-key-w: #f1f3f5; --ep-key-b: #111; } }
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem; margin: .4rem 0 .8rem; }
+.ep-grid label { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ep-mute); margin: 0; }
+.ep-grid select, .ep-grid input[type=number], .ep-grid input[type=range] { font-size: .95rem; text-transform: none; letter-spacing: 0; }
+.ep-checks { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: .3rem 0 .7rem; font-size: .92rem; }
+.ep-checks label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; }
+.ep-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.ep-panel { border: 1px solid var(--ep-line); border-radius: .5rem; padding: .8rem 1rem; background: var(--ep-surf2); margin: .4rem 0 1rem; }
+.ep-head { font-weight: 700; font-size: 1.05rem; }
+.ep-solf { font-size: clamp(1.4rem, 5vw, 2.2rem); font-weight: 800; letter-spacing: .02em; min-height: 1.2em; }
+.ep-chord { color: var(--ep-mute); font-size: .95rem; }
+.ep-msg { min-height: 1.6em; font-size: 1.05rem; font-weight: 600; margin: .4rem 0; }
+.ep-msg.ep-good { color: var(--ep-good); } .ep-msg.ep-bad { color: var(--ep-bad); }
+.ep-kb { margin: .5rem 0; } .ep-kb svg { width: 100%; height: auto; display: block; max-height: 230px; }
+.ep-k.ep-w { fill: var(--ep-key-w); stroke: #555; stroke-width: 1; } .ep-k.ep-b { fill: var(--ep-key-b); stroke: #000; }
+.ep-k.ep-target.ep-w { fill: #d0e3fb; } .ep-k.ep-target.ep-b { fill: #1c5aa6; }
+.ep-k.ep-on { fill: #ffd43b !important; } .ep-k.ep-good { fill: #8ce99a !important; } .ep-k.ep-bad { fill: #ffa8a8 !important; }
+.ep-c { font-size: 9px; fill: #868e96; font-family: var(--font-mono, monospace); }
+.ep-mark circle { fill: var(--ep-acc); stroke: #fff; stroke-width: 1.5; }
+.ep-mark text { fill: #fff; font-weight: 700; font-size: 13px; font-family: system-ui, sans-serif; }
+.ep-mark text.ep-ord { fill: var(--ep-mute); font-size: 9px; font-weight: 600; }
+.ep-fing { font-family: var(--font-mono, monospace); font-size: .9rem; color: var(--ep-mute); }
+.ep-dots { display: flex; flex-wrap: wrap; gap: 4px; margin: .3rem 0; }
+.ep-dot { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid #adb5bd; background: transparent; }
+.ep-dot-learn { border-radius: 3px; } .ep-dot-done { background: #adb5bd; }
+.ep-dot-first { background: var(--ep-good); border-color: var(--ep-good); } .ep-dot-later { background: #94d82d; border-color: #94d82d; }
+.ep-dot-shown { background: var(--ep-bad); border-color: var(--ep-bad); } .ep-dot-skipped { background: #dee2e6; }
+.ep-dot-cur { outline: 2px solid var(--ep-acc); outline-offset: 2px; }
+#ep-midi-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #adb5bd; margin-right: .3rem; }
+#ep-midi-dot.on { background: var(--ep-good); }
+.ep-big { font-size: 1.05rem; font-weight: 600; padding: .45rem 1.1rem; }
+.ep-table .ep-r-first td:nth-child(4) { color: var(--ep-good); font-weight: 600; } .ep-table .ep-r-shown td:nth-child(4) { color: var(--ep-bad); font-weight: 600; }
+.ep-muted { color: var(--ep-mute); font-size: .9rem; }
+</style>
+<div id="ep-root">
+```
+
+No notes on a staff here: patterns are learned from the keys and by listening.
+The first few patterns of a set are taught with finger numbers on an on-screen keyboard. Then the page plays the rest, one at a time,
+and you play each back on your keyboard.
+
+## Set up {#setup}
+
+```{=html}
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="ep-connect">Connect MIDI keyboard</button>
+  <span><span id="ep-midi-dot"></span><span id="ep-midi-status" class="ep-muted">Not connected. Chrome or Edge, keyboard plugged in by USB.</span></span>
+</div>
+<div class="ep-grid">
+  <label>Pattern set <select id="ep-set" class="form-select form-select-sm"></select></label>
+  <label>Key <select id="ep-key" class="form-select form-select-sm"></select></label>
+  <label>Hand <select id="ep-hand" class="form-select form-select-sm"><option value="R">Right hand</option><option value="L">Left hand (octave lower)</option></select></label>
+  <label>Teach the first <input type="number" id="ep-teach" class="form-control form-control-sm" value="3" min="1" max="12"></label>
+  <label>Right in a row to learn one <input type="number" id="ep-need" class="form-control form-control-sm" value="2" min="1" max="5"></label>
+  <label>Tries by ear <input type="number" id="ep-tries" class="form-control form-control-sm" value="3" min="1" max="6"></label>
+  <label>Tempo <input type="range" id="ep-tempo" min="50" max="140" value="80"></label>
+</div>
+<div class="ep-checks">
+  <label><input type="checkbox" id="ep-anyoct" checked> Any octave counts</label>
+  <label><input type="checkbox" id="ep-shuffle"> Shuffle the by-ear patterns</label>
+  <label><input type="checkbox" id="ep-echo" checked> Sound my keys (turn off for a digital piano with its own sound)</label>
+  <label><input type="checkbox" id="ep-typing" checked> Computer keys play notes (Z X C… white keys, S D G… black, Z = middle C)</label>
+  <label><input type="checkbox" id="ep-solf-learn" checked> Solfège while learning</label>
+  <label><input type="checkbox" id="ep-solf-ear"> Solfège by ear</label>
+  <label><input type="checkbox" id="ep-show-kb" checked> Keyboard on screen by ear</label>
+</div>
+<p id="ep-set-info" class="ep-muted"></p>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary ep-big" id="ep-start">▶ Start</button>
+  <button type="button" class="btn btn-outline-secondary" id="ep-skip-learn">Skip to by ear</button>
+</div>
+<p class="ep-muted">Sets you make on <a href="patterns.html">Tonal Patterns</a> (Make a set) show up here with a ★.</p>
+```
+
+## Learn {#learn}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="ep-dots"></div>
+  <div class="ep-head" id="ep-learn-head">Press Start above.</div>
+  <div class="ep-solf" id="ep-learn-solf"></div>
+  <div class="ep-chord" id="ep-learn-chord"></div>
+  <div class="ep-kb" id="ep-kb-learn"></div>
+  <div class="ep-fing" id="ep-learn-fing"></div>
+  <div class="ep-msg" id="ep-learn-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="ep-learn-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-primary" id="ep-to-ear" hidden>Go on: by ear ▶</button>
+  </div>
+  <p class="ep-muted">Blue keys and numbers: which keys, which finger (1 = thumb), and the small number above is the order.
+  The page can hear the notes, not the fingers, so watch your hand.</p>
+</div>
+```
+
+## By ear {#by-ear}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="ep-dots2"></div>
+  <div class="ep-head" id="ep-ear-head">Learn the first patterns, then come here.</div>
+  <div class="ep-solf" id="ep-ear-solf"></div>
+  <div class="ep-kb" id="ep-kb-ear"></div>
+  <div class="ep-msg" id="ep-ear-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="ep-ear-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-outline-secondary" id="ep-ear-key">Hear the key</button>
+    <button type="button" class="btn btn-outline-secondary" id="ep-ear-show">Show me</button>
+    <button type="button" class="btn btn-outline-secondary" id="ep-ear-skip">Skip</button>
+    <button type="button" class="btn btn-primary" id="ep-ear-next" hidden>Next ▶</button>
+  </div>
+  <p class="ep-muted">The key is played first (I – V7 – I). Then each pattern: listen, then play it back. A wrong note stops the
+  try and the pattern plays again. "Show me" and running out of tries count as a miss.</p>
+</div>
+```
+
+## Results {#results}
+
+```{=html}
+<p id="ep-res-sum" class="ep-muted">Results show here when the by-ear patterns are done.</p>
+<div id="ep-res-table"></div>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="ep-again" hidden>Try the missed ones again</button>
+  <button type="button" class="btn btn-outline-secondary" id="ep-restart">Start the set over</button>
+</div>
+```
+
+## How it works {#how}
+
+- **The sets.** The same sets as Tonal Patterns: the stepwise and I–V sets, the 322–324 sets, and any set you make there.
+  The first patterns of a set use the same chords as the rest, so learning them gives you the sound of each chord before you're tested.
+- **Fingering.** The page works out the fingers itself. It keeps the hand in one position (no thumb-under, as these patterns are short),
+  goes with the letter steps (C E G is 1 3 5), and keeps the thumb off black keys where it can. This is a rule of thumb, not taken
+  from a method book: a teacher may prefer other fingers.
+- **What counts.** The notes in order. Rhythm and fingers are not checked. With *Any octave counts* on, the whole pattern may be an
+  octave up or down. Stopping for more than four seconds starts the try again.
+- **No MIDI keyboard?** The computer keys play notes (bottom row white keys from Z = middle C, the row above black keys; ↑ ↓ change octave).
+
+```{=html}
+</div>
+<script>EarPiano.mount(document.getElementById("ep-root"));</script>
+```

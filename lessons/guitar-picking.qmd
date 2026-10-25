@@ -1,0 +1,129 @@
+---
+title: "Picking: Alternate, Economy, Sweep and Hybrid"
+toc: true
+toc-depth: 2
+description: "The four ways to move a pick across the strings: strict alternate picking, economy picking, sweep picking (arpeggios in one stroke, with the rolls and muting that keep it clean) and hybrid picking (pick plus fingers), with tab, faults and a practice plan."
+instruments: [guitar]
+topics: [technique]
+has: []
+---
+
+How the pick moves from one note to the next decides how fast and how even a line can be. There are four main ways: **alternate**, **economy**, **sweep** and **hybrid** picking. The first three are about the *direction* of each stroke; the fourth adds the fingers. (You may hear "sweet picking": it's a mishearing of **sweep** picking, not a separate technique.) Click a section's heading to fold it; the "On this page" bar at the right jumps to any section.
+
+**How to read the page.** Tab has one line a string, high E on top. **⊓** = down-stroke, **V** = up-stroke; **m** and **a** = middle and ring finger.
+
+```{=html}
+<style>
+.gp-tab{font-size:.85rem;line-height:1.25}
+.gp-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+</style>
+```
+
+## 1. Alternate picking {#alternate}
+
+Down, up, down, up, every note, whatever string comes next. The hand moves like strumming: down on the beat, up on the off-beat. Its strength is **time**: the strokes line up with the rhythm, so fast lines stay even.
+
+<pre class="gp-tab">
+   ⊓ V ⊓ V ⊓ V ⊓ V
+e|-----------------|
+B|-----------------|
+G|-----------2-4-5-|
+D|-----2-4-5-------|
+A|-3-5-------------|
+E|-----------------|
+</pre>
+
+The hard part is **string crossing**. Going from an up-stroke on one string to a down-stroke on the next higher string (toward the floor) means hopping *over* the string: "outside" picking. The reverse is "inside" picking, the pick trapped between the two strings. Practise both slowly.
+
+## 2. Economy picking {#economy}
+
+Alternate picking, except that when you **change string**, the pick keeps going the same way it was already moving. Down-stroke on the A string, next note on the D string: another down-stroke, one movement through both. Fewer and shorter movements, which is why it is called economy picking. The same three-notes-a-string scale as above:
+
+<pre class="gp-tab">
+   ⊓ V ⊓ ⊓ V ⊓ ⊓ V ⊓
+G|-------------4-5-7-|
+D|-------3-5-7-------|
+A|-3-5-7-------------|
+</pre>
+
+That shape, three notes a string, gives down-up-down then down again on the next string. Economy picking is a halfway step to sweeping: the string change *is* a small sweep. Frank Gambale's book *Speed Picking* is the standard text on it.
+
+## 3. Sweep picking {#sweep}
+
+**One note a string, one stroke for several strings.** The pick drags across the strings in a single slow push, down for higher strings, up for lower, and the fretting hand plays one note on each, letting each go before the next sounds. The result is an arpeggio fast enough to sound like a harp glissando. It became the trademark of 1980s shred players.
+
+A three-string A minor shape, then a five-string one (A minor at the 12th fret: A, E, A, C, E):
+
+<pre class="gp-tab">
+   ⊓ ⊓ ⊓ V V               ⊓  ⊓  ⊓  ⊓  ⊓  V  V  V  V
+e|-------5-8p5----|     |-------------12-15p12----------|
+B|-----5-----5----|     |----------13----------13-------|
+G|---5---------5--|     |-------14----------------14----|
+D|----------------|     |----14----------------------14-|
+A|----------------|     |-12----------------------------|
+</pre>
+
+The pull-off (p) at the top turns the stroke around without an extra pick.
+
+**What makes it clean** is not the pick but the **fretting hand**:
+
+- **One note at a time.** Each finger presses only while its note sounds, then lifts (keeping contact) as the next string is picked. Held down together, the notes ring as a strummed chord.
+- **Rolling.** When two neighbouring strings are on the same fret, one finger plays both by **rolling**: the tip presses the first string, then the finger flattens to press the next while the tip lifts off the first.
+- **Palm muting.** The picking hand's palm rests lightly on the strings already played, so they stop as the pick moves on.
+- **A push, not a strum.** The pick moves at the speed of the notes and rests briefly against each next string before going through it: a rest stroke with a pick.
+
+<div class="gp-tip">Start so slowly that every note is a separate event. If two notes overlap, the fretting hand is late letting go.</div>
+
+## 4. Hybrid picking {#hybrid}
+
+Hold the pick between thumb and index as usual and pluck higher strings with the **middle and ring fingers** (sometimes the little finger too). The pick takes the low strings, the fingers the high ones, so you can play notes on non-neighbouring strings **at the same time** or skip strings without a jump.
+
+- **Double stops and chords.** Pick on the D string, m on the B string at the same time: a sixth, the country-and-soul sound.
+- **Banjo-style rolls**: pick, m, a across three strings, over and over.
+- **Chicken picking**: the finger snaps the string up so it slaps the fretboard, and the pick plays muted notes between them; the cluck of country lead guitar.
+- **String skipping**: the pick plays the low note, a finger the high one, instead of the pick jumping across.
+
+<pre class="gp-tab">
+   pick m  pick m  pick a  pick m
+e|-------------------5---------|
+B|-----5-------6-----------5---|
+G|-----------------------------|
+D|-5-------7-------5-------5---|
+A|-----------------------------|
+</pre>
+
+Hybrid picking is how pick players get the fingerstyle sound of the [Guitar for Bassists](guitar-for-bassists.qmd#fingerpicking) lesson without putting the pick down. Fingerstyle players without a pick, Wes Montgomery most famously, plucked everything with the side of the thumb: there is more than one right answer.
+
+## 5. Which to use {#which}
+
+| Technique | Good for | Watch out for |
+|---|---|---|
+| Alternate | Even time, scales, tremolo, rhythm parts | Clumsy string crossings |
+| Economy | Three-notes-a-string runs | Rushing on the string change |
+| Sweep | Arpeggios, one note a string | Notes ringing together |
+| Hybrid | Double stops, string skips, country | Pick and finger out of balance in volume |
+
+Most players mix them in one solo.
+
+## 6. A practice plan {#practice}
+
+1. **Alternate:** a scale at 60 bpm, eighths, strict down-up; raise 4 bpm a day.
+2. **Economy:** the same scale with three notes a string; listen for even spacing at the string changes.
+3. **Sweep:** the three-string shape at 50 bpm, one note a click. Only add the five-string shape when the three-string one is clean.
+4. **Hybrid:** the double-stop example, until the pick and finger sound as one.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Alternate picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Alternate_picking](https://en.wikipedia.org/wiki/Alternate_picking).
+
+"Economy picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Economy_picking](https://en.wikipedia.org/wiki/Economy_picking).
+
+"Hybrid picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hybrid_picking](https://en.wikipedia.org/wiki/Hybrid_picking).
+
+"Sweep picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Sweep_picking](https://en.wikipedia.org/wiki/Sweep_picking).
+
+"Wes Montgomery." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wes_Montgomery](https://en.wikipedia.org/wiki/Wes_Montgomery).
+:::
+<!-- /works-cited -->

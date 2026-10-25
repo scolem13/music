@@ -1,0 +1,39 @@
+---
+title: "MIS Gear"
+description: "How-to guides for the gear we use, starting with the Behringer X32 mixer."
+toc: true
+---
+
+Guides for the equipment in our room. Most of them are about the **Behringer X32** digital mixer.
+
+## X32
+
+- [Drums on one fader: DCA groups and mute groups](x32-drums-dca.qmd): put every drum mic on one fader,
+  and mute the whole kit with one button.
+- The Live Sound lessons teach the X32 channel strip itself:
+  [gain](../lessons/live-gain.qmd), [EQ](../lessons/live-eq.qmd), [gates](../lessons/live-gate.qmd),
+  [compression](../lessons/live-comp.qmd), [feedback](../lessons/live-feedback.qmd),
+  [sound check](../lessons/live-soundcheck.qmd).
+
+## Yamaha MODX
+
+- [Yamaha MODX](modx.qmd): finding sounds, and using it as an audio interface: one USB cable
+  records the keyboard and plays the computer back.
+- [Play the band on the MODX](modx-band.qmd): the site's backing band plays its bass, keys, guitar or drums
+  on the MODX, steered from the browser. Compare each sound and pick the better one.
+
+## Speaking
+
+- [Using a mic: a guide for speakers](using-a-mic.qmd): slow down, say every consonant, and what the
+  engineer can and can't fix.
+
+## Manuals
+
+- Behringer, *X32 Digital Mixer Preliminary User Manual*
+  ([PDF](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf)).
+- Patrick-Gilles Maillot, *Unofficial X32/M32 OSC Remote Protocol*
+  ([PDF](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf)): every setting and its range.
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

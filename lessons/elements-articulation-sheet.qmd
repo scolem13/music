@@ -1,0 +1,165 @@
+---
+title: "Articulation on One Page"
+toc: true
+toc-depth: 2
+description: "Every articulation term on one revision sheet: staccato, legato, slurs and ties, accents, tenuto and marcato, glissando, pizzicato and arco, and the other playing techniques, each with a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Articulation](elements-articulation.qmd) on one sheet. Every ▶ plays the example (staccato and legato are played with exact note lengths). Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Articulation: how each note is played"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Staccato
+<p>Short and detached: a gap after each note. A dot over or under the notehead.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+.C .E .G .c|.G .E .C z|]
+</script><script type="text/plain" data-bend>
+{"bpm":100,"sound":"piano","notes":[{"t":0,"d":0.35,"midi":60},{"t":1,"d":0.35,"midi":64},{"t":2,"d":0.35,"midi":67},{"t":3,"d":0.35,"midi":72},{"t":4,"d":0.35,"midi":67},{"t":5,"d":0.35,"midi":64},{"t":6,"d":0.35,"midi":60}]}
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Legato
+<p>Smooth, no gaps. A <strong>slur</strong> (a curve over <em>different</em> notes) asks for it.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+(C E G c|G E C) z|]
+</script><script type="text/plain" data-bend>
+{"bpm":100,"sound":"piano","notes":[{"t":0,"d":1.08,"midi":60},{"t":1,"d":1.08,"midi":64},{"t":2,"d":1.08,"midi":67},{"t":3,"d":1.08,"midi":72},{"t":4,"d":1.08,"midi":67},{"t":5,"d":1.08,"midi":64},{"t":6,"d":1,"midi":60}]}
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Slur or tie?
+<p>A curve over different pitches is a <strong>slur</strong>: play them smoothly. A curve joining two of the <em>same</em> pitch is a <strong>tie</strong>: one note, held for both.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+(C E G) c-|c4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Accent
+<p><code>&gt;</code>: a strong start to the note. Marks combine: a dot <em>and</em> an accent is short and strong.</p>
+<div class="abc-ex" data-width="190" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+!>!G B d B|!>!.G .B !>!.d z|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Tenuto and marcato
+<p><strong>Tenuto</strong> (a short line): hold the full length, with a little weight. <strong>Marcato</strong> (<code>^</code>): stronger than an accent.</p>
+<div class="abc-ex" data-width="190" data-bpm="88"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+!tenuto!G !tenuto!B !tenuto!d2|!tenuto!c !tenuto!A G2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Glissando
+<p>A slide from one note to another. Violin, trombone, voice: through every pitch. Piano, harp: a sweep across keys or strings.</p>
+<div class="abc-ex" data-width="190" data-bpm="70"><script type="text/plain">
+X:1
+M:4/4
+L:1/2
+K:C
+!slide!D A|]
+</script><script type="text/plain" data-bend>
+{"bpm":70,"sound":"violin","notes":[{"t":0,"d":3.6,"midi":62,"bend":[[0,0],[1.2,0],[2,7]]}]}
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Arco
+<p>Strings, played with the bow (the normal way). Written <em>arco</em> after a pizzicato passage.</p>
+<div class="abc-ex" data-width="190" data-sound="violin" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:D
+D F A d|A F D2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Pizzicato
+<p><em>pizz.</em>: strings plucked with a finger instead of bowed.</p>
+<div class="abc-ex" data-width="190" data-sound="pizzicato_strings" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:D
+D F A d|A F D2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Other techniques
+<ul>
+<li><strong>Double stopping</strong>: two strings at once</li>
+<li><strong>Con sordino</strong>: with a mute (<em>senza sord.</em> takes it off)</li>
+<li><strong>Tremolo</strong>: one note repeated very fast</li>
+<li><strong>Vibrato</strong>: the pitch wavers a little, for warmth</li>
+<li><strong>Falsetto</strong>: a light, high voice above the normal range</li>
+</ul>
+:::::
+
+::::: {.el-card}
+#### How players slur
+<ul>
+<li><strong>Strings</strong>: many notes in one bow stroke</li>
+<li><strong>Wind, brass</strong>: tongue only the first note</li>
+<li><strong>Voice</strong>: one breath, the vowel kept going</li>
+<li><strong>Piano</strong>: hold each key until the next is down</li>
+</ul>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="articulation"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing articulation
+
+- Name the mark and say what it does to the sound: "the strings play **pizzicato**, so the notes are short and light".
+- Articulation is how a note is played, not how loud it is: that is [dynamics](elements-dynamics-sheet.qmd).
+
+- The longer lesson, with fuller examples: [Elements 1: Articulation](elements-articulation.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

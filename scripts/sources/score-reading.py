@@ -7,7 +7,8 @@ SR = ["lessons/score-clefs.qmd", "lessons/score-multi-clef.qmd", "lessons/score-
 SOURCES = [
     wiki("Transposing instrument", "Transposing_instrument", SR, who="student",
          note="Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭."),
-    wiki("Clef", "Clef", ["lessons/score-clefs.qmd", "lessons/score-multi-clef.qmd"], who="student"),
+    wiki("Clef", "Clef", ["lessons/score-clefs.qmd", "lessons/score-multi-clef.qmd"], who="student",
+         note="Choir clefs (checked 22 Oct 2026): octave treble clef for tenors in SATB and TTBB, the 8 sometimes left out; double treble clef; tenor in bass clef on a shared staff; C clefs once used for choral parts."),
     wiki("Tuba", "Tuba", ["lessons/score-names.qmd", "lessons/score-transposition.qmd"], who="student",
          note="BB♭ and CC from an archaic English variant of Helmholtz notation; tube lengths; concert pitch vs brass-band treble clef."),
     wiki("Natural horn", "Natural_horn", ["lessons/score-history.qmd"], who="student", note="Crooks in common use by 1740; hand-stopping."),

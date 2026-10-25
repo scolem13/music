@@ -66,7 +66,7 @@ roster once this is wired to Supabase.
   <div id="lsa-phone-grid" class="lsa-phone-grid"></div>
 
   <script src="/apps/patterns/pattern-object.js"></script>
-  <script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+  <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
   <script src="/apps/shared/abcjs-basic.js"></script>
   <script src="/apps/shared/tonality.js"></script>
   <script src="/apps/shared/audio.js"></script>

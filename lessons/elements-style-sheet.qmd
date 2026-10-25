@@ -1,0 +1,147 @@
+---
+title: "Style on One Page"
+toc: true
+toc-depth: 2
+description: "Every style on one revision sheet: Baroque, Classical and Romantic, jazz and blues, musical theatre, film music, pop and rock, and minimalism, each with its features and a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, history]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Style](elements-style.qmd) on one sheet. Every ▶ plays a few measures in that style. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Style: telling styles apart by their features"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Baroque (about 1600–1750)
+<p>Bach, Vivaldi, Handel. Harpsichord, <strong>basso continuo</strong>, mostly strings; terraced dynamics; ornaments; often polyphonic.</p>
+<div class="abc-ex" data-width="190" data-sound="harpsichord" data-bpm="96"><script type="text/plain">
+X:1
+M:4/4
+L:1/16
+K:D
+V:1
+d2fe dcBA TB4 A4|]
+V:2 clef=bass
+D,2F,2 A,2D2 G,2B,2 A,2C2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Classical (about 1750–1820)
+<p>Haydn, Mozart, early Beethoven. Piano; balanced 4 + 4 phrases; simple chords, <strong>Alberti bass</strong>; melody and accompaniment.</p>
+<div class="abc-ex" data-width="190" data-bpm="120"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+V:1
+c4 e2 g2|B4 c2 d2|]
+V:2 clef=bass
+C,G,E,G, C,G,E,G,|D,G,F,G, C,G,E,G,|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Romantic (about 1800–1910)
+<p>Schubert, Chopin, Wagner. Big orchestra; huge dynamic range; <strong>chromatic</strong> harmony; long expressive melody; <strong>rubato</strong>; leitmotifs.</p>
+<div class="abc-ex" data-width="190" data-bpm="66"><script type="text/plain">
+X:1
+M:3/4
+L:1/8
+K:Ab
+"Ab"e4 c2|"Fm"f4 e2|"Db"_f4 e2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Jazz and blues
+<p>Swing, <strong>blue notes</strong> (3rd, 5th, 7th bent down), 12-bar blues, 7th chords, improvisation, walking bass, rhythm section and front line.</p>
+<div class="abc-ex" data-width="190" data-bpm="132" data-style="swing"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+"C7"G2 _B2 c2 _B G|"F7"_E2 F2 G4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Pop and rock
+<p>Verse–chorus form, a memorable <strong>riff</strong>, guitars, bass and drums. Rock is usually louder and harder.</p>
+<div class="abc-ex" data-width="190" data-bpm="112" data-style="rock"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:E
+"E"E,2 G,A, B,2 A,G,|"E"E,2 G,A, B,2 D2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Minimalism
+<p>From the 1960s: Reich, Glass, Riley, Adams. Short patterns repeated, changing gradually; slow-changing harmony; phasing.</p>
+<div class="abc-ex" data-width="190" data-bpm="140"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+c e g e c e g e|c e g a c e g a|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Musical theatre
+<p>A story in songs, acting and dance. <strong>Overture</strong>; solo, duet and chorus numbers; <strong>recitative</strong>; book, sung-through and jukebox musicals. Bernstein, Sondheim, Lloyd Webber.</p>
+:::::
+
+::::: {.el-card}
+#### Film music
+<p>Fits the scene. A <strong>leitmotif</strong> returns with its character.</p><ul>
+<li>Chase: fast, loud, driving ostinato</li>
+<li>Horror: dissonance, building tension, stabs</li>
+<li>Romance: strings, legato, rubato</li></ul>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="style"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing style
+
+- Name the style, then give the features that told you: "Baroque: a harpsichord, a busy bass line and lots of ornaments".
+- The periods overlap; Beethoven is the usual bridge from Classical to Romantic.
+
+- The longer lesson, with fuller examples: [Elements 9: Style](elements-style.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Alberti bass." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). Lowest, highest, middle, highest; Classical era; Mozart K. 545.
+
+"Basso continuo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Basso_continuo](https://en.wikipedia.org/wiki/Basso_continuo). Chord instruments (harpsichord, organ, lute, theorbo…) and bass instruments (cello, double bass, bass viol, bassoon); figured bass.
+
+"Blue note." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Blue_note](https://en.wikipedia.org/wiki/Blue_note). Lowered 3rd, 5th and 7th; between a quarter tone and a semitone.
+
+"Classical period (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Classical_period_(music)](https://en.wikipedia.org/wiki/Classical_period_(music)). Classical roughly 1750–1820; Baroque c. 1600–1750; Romantic c. 1800–1910; melody over a subordinate accompaniment such as an Alberti bass.
+
+"Minimal music." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Minimal_music](https://en.wikipedia.org/wiki/Minimal_music). US West Coast, late 1950s–early 1960s; Young, Riley, Reich, Glass, Adams; repetition, phase shifting, additive process, consonant harmony.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

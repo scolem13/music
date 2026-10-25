@@ -1,0 +1,174 @@
+---
+title: "Elements 10: Texture"
+toc: true
+toc-depth: 2
+description: "How many layers there are and how they fit together: monophonic, octaves, homophonic, melody and accompaniment, polyphonic, call and response, antiphonal, pedal and drone, Alberti bass and basso continuo, all on the same tune."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, composing, arranging]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Texture** is how many layers of sound there are and how they relate to each other. Thin or thick is part of it, but the
+names below describe the *relationship* between the parts.
+
+Almost every example on this page uses the same tune (*Twinkle, Twinkle*), so you hear only the texture change.
+
+## 1. Monophonic
+
+One line, and nothing else. Any number of people can play or sing it, as long as they all play the same part.
+No chords.
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:Monophonic
+M:4/4
+L:1/4
+K:G
+G G d d|e e d2|c c B B|A A G2|]
+</script></div>
+
+## 2. Octaves
+
+Two or more parts playing the same tune an **octave** apart: the same note names at a different pitch. Still one line,
+but heavier.
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:In octaves
+M:4/4
+L:1/4
+K:G
+[G,G] [G,G] [Dd] [Dd]|[Ee] [Ee] [Dd]2|[Cc] [Cc] [B,B] [B,B]|[A,A] [A,A] [G,G]2|]
+</script></div>
+
+## 3. Homophonic
+
+All the parts move **together, in the same rhythm**, making chords, like a hymn. (*Homo-phonic* = "same sound".)
+
+<div class="abc-ex" data-bpm="80"><script type="text/plain">
+X:1
+T:Homophonic: four parts, one rhythm
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|e e d2|c c B B|A A G2|]
+V:2
+D D G G|G G F2|E E D G|G F D2|]
+V:3 clef=bass
+B, B, B, B,|C C A,2|G, A, G, D|E D B,2|]
+V:4 clef=bass
+G, G, G, G,|C, C, D,2|E, C, G, G,|C, D, G,,2|]
+</script></div>
+
+## 4. Melody and accompaniment
+
+A tune with chords or a pattern underneath that supports it. The most common texture in pop music and Classical-period
+music. An **Alberti bass** is a Classical piano accompaniment: each chord broken into four equal notes, usually lowest,
+highest, middle, highest.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Melody over an Alberti bass
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|e e d2|c c B B|A A G2|]
+V:2 clef=bass
+L:1/8
+G,DB,D G,DB,D|C,G,E,G, G,DB,D|A,,E,C,E, G,DB,D|D,A,F,A, G,DB,D|]
+</script></div>
+
+## 5. Polyphonic
+
+Two or more **independent** lines at once, each a tune in its own right (*poly-phonic* = "many sounds"). Also called
+**counterpoint**. When the lines copy each other it is **imitation**; a **round** (*Frère Jacques*) and a **canon** are
+strict imitation.
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:Polyphonic: Frère Jacques as a round, the second voice two measures behind
+M:4/4
+L:1/4
+K:G
+V:1
+G A B G|G A B G|B c d2|B c d2|
+V:2
+z4|z4|G A B G|G A B G|]
+</script></div>
+
+A **countermelody** is a second tune that fits with the main one, as in a descant over a hymn.
+
+## 6. Call and response, antiphonal
+
+**Call and response**: one performer (or group) plays or sings a phrase, and another answers. Common in African music,
+blues, gospel, work songs and pop.
+
+**Antiphonal**: two groups answering each other from **different places**, such as two choirs on either side of a church.
+
+<div class="abc-ex" data-bpm="104"><script type="text/plain">
+X:1
+T:Call (top) and response (bottom)
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|z4|c c B B|z4|]
+V:2 clef=bass
+z4|E, E, D,2|z4|A,, A,, G,,2|]
+</script></div>
+
+## 7. Pedal and drone
+
+A **pedal** is a long or repeated note, usually in the bass, held while the harmony changes above it. A **drone** is long
+or repeated notes, usually two a 5th apart, as on bagpipes.
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:The tune over a drone on G and D
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|e e d2|c c B B|A A G2|]
+V:2 clef=bass
+[G,,D,]4|[G,,D,]4|[G,,D,]4|[G,,D,]4|]
+</script></div>
+
+## 8. Basso continuo
+
+In the Baroque period, the **basso continuo** played the bass line and filled in the chords under the melody. The bass
+was played by a cello, bass viol or bassoon; the chords by a harpsichord, organ or lute, read from a **figured bass**
+(numbers under the bass notes showing the chords).
+
+## 9. Describing texture
+
+- Name it, then describe it: *thin* or *thick*, *sparse* or *dense*, how many parts.
+- Say what changes: "It starts **monophonic** (a solo flute), becomes **homophonic** when the choir comes in, and the
+  middle section is **polyphonic**, with the voices entering one after another in **imitation**."
+- Which instruments have the melody and which accompany: see [Instruments and Voices](elements-instruments.qmd#what-is-each-instrument-doing).
+
+## 10. Check yourself
+
+<div class="eq" data-set="texture"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Alberti bass." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). Lowest, highest, middle, highest; Classical era; Mozart K. 545.
+
+"Basso continuo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Basso_continuo](https://en.wikipedia.org/wiki/Basso_continuo). Chord instruments (harpsichord, organ, lute, theorbo…) and bass instruments (cello, double bass, bass viol, bassoon); figured bass.
+
+"Classical period (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Classical_period_(music)](https://en.wikipedia.org/wiki/Classical_period_(music)). Classical roughly 1750–1820; Baroque c. 1600–1750; Romantic c. 1800–1910; melody over a subordinate accompaniment such as an Alberti bass.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

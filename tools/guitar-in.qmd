@@ -1,0 +1,111 @@
+---
+title: "Guitar Input Check"
+toc: true
+---
+
+```{=html}
+<style>
+.gi-card{border:1px solid var(--site-border);border-radius:10px;background:var(--site-surface);padding:.8rem 1rem;margin:.6rem 0}
+.gi-row{display:flex;flex-wrap:wrap;align-items:center;gap:.45rem .8rem;margin:.4rem 0}
+.gi-lab{font-family:var(--font-mono);font-size:.72rem;text-transform:uppercase;letter-spacing:.05em;color:var(--site-ink-2)}
+.gi-card select{font-size:.88rem;padding:.12rem .35rem;border:1px solid var(--site-border);border-radius:4px;background:var(--site-surface);color:var(--site-ink)}
+.gi-card .btn{font-family:var(--font-mono);font-size:.8rem}
+.gi-on{background:var(--site-accent-dk)!important;border-color:var(--site-accent-dk)!important;color:#fff!important}
+.gi-ask{font-family:var(--font-display);font-size:1.5rem;margin:.3rem 0}
+.gi-ask small{font-family:var(--font-mono);font-size:.8rem;color:var(--site-ink-2);display:block}
+.gi-board svg{width:100%;height:auto;display:block}
+.gi-wood{fill:color-mix(in srgb,#8b5a2b 22%,var(--site-surface))}
+.gi-fret{stroke:var(--site-ink-2);stroke-width:2}.gi-nut{stroke:var(--site-ink);stroke-width:6}
+.gi-str{stroke:var(--site-ink-2)}.gi-inlay{fill:var(--site-border)}
+.gi-t{font-family:var(--font-mono);font-size:11px;fill:var(--site-ink-2)}
+.gi-dot{fill:var(--site-accent);stroke:var(--site-ink);stroke-width:1.2}
+.gi-open{fill:var(--site-surface);stroke:var(--site-accent-dk);stroke-width:2.5}
+.gi-dt{font-family:var(--font-mono);font-size:10px;font-weight:700;fill:var(--site-ink);text-anchor:middle;dominant-baseline:central}
+.gi-x{font-family:var(--font-mono);font-size:14px;font-weight:700;fill:var(--site-ink-2);text-anchor:middle;dominant-baseline:central}
+.gi-hit .gi-dot,.gi-hit .gi-open{fill:#2e9e5b;stroke:#1d6b3c}
+.gi-miss .gi-dot,.gi-miss .gi-open{fill:#c0392b;stroke:#7a2318}
+.gi-heard{fill:none;stroke:#d9a52b;stroke-width:2.5;stroke-dasharray:4 3}
+.gi-meter{height:.5rem;width:12rem;border:1px solid var(--site-border);border-radius:3px;overflow:hidden}
+.gi-meter div{height:100%;width:0;background:#2e9e5b;transition:width .05s}
+#gi-say{min-height:1.5em;font-size:1rem;margin:.4rem 0}
+.gi-good{color:#2e9e5b;font-weight:700}.gi-bad{color:#c0392b;font-weight:700}
+.gi-note{font-size:.86rem;color:var(--site-ink-2)}
+</style>
+<script src="/apps/shared/audio-check.js"></script>
+<script src="/apps/shared/pitch-detect.js?v=2"></script>
+<script src="/apps/shared/guitar-in.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+Play a note or a chord on your guitar and the page says whether it heard what it asked for, the way a drill reads a MIDI keyboard.
+The fretboard shows exactly what it expects: which string, which fret, and which strings stay silent.
+
+## Set up
+
+```{=html}
+<div class="gi-card">
+  <div class="gi-row">
+    <button class="btn btn-sm btn-primary" id="gi-listen" type="button">Listening: off</button>
+    <span class="gi-lab">Level</span><div class="gi-meter"><div id="gi-level"></div></div>
+  </div>
+  <p class="gi-note">Tune first (the <a href="/tools/guitar-tuning.html">Guitar Tuning</a> page): a guitar 30 cents flat is read wrong about
+  half the time. A DI box or audio interface works better than a microphone across the room. Standard tuning (E A D G B E). Let the
+  note or chord ring: the page listens to about a third of a second, starting just after the pick.</p>
+</div>
+```
+
+## Play this note
+
+```{=html}
+<div class="gi-card" id="gi-note-card">
+  <div class="gi-row">
+    <button class="btn btn-sm btn-outline-secondary gi-mode" data-mode="note" type="button">Use this one</button>
+    <label class="gi-lab" for="gi-frets">Frets</label>
+    <select id="gi-frets"><option value="3">0–3</option><option value="5" selected>0–5</option><option value="12">0–12</option></select>
+    <label class="gi-lab" for="gi-strs">Strings</label>
+    <select id="gi-strs"><option value="all">all six</option><option value="6">6 (low E)</option><option value="5">5 (A)</option><option value="4">4 (D)</option>
+      <option value="3">3 (G)</option><option value="2">2 (B)</option><option value="1">1 (high E)</option></select>
+  </div>
+</div>
+```
+
+## Play this chord
+
+```{=html}
+<div class="gi-card" id="gi-chord-card">
+  <div class="gi-row">
+    <button class="btn btn-sm btn-outline-secondary gi-mode" data-mode="chord" type="button">Use this one</button>
+    <label class="gi-lab" for="gi-chord">Chord</label> <select id="gi-chord"></select>
+  </div>
+</div>
+```
+
+## What the page expects
+
+```{=html}
+<div class="gi-card">
+  <div class="gi-ask" id="gi-ask"></div>
+  <div class="gi-board" id="gi-board"></div>
+  <p id="gi-say" aria-live="polite"></p>
+  <div class="gi-row">
+    <button class="btn btn-sm btn-outline-secondary" id="gi-play" type="button">▶ Hear it</button>
+    <button class="btn btn-sm btn-primary" id="gi-new" type="button">New one →</button>
+    <span class="gi-lab" id="gi-score"></span>
+  </div>
+  <p class="gi-note">Green: heard. Red: not heard. A dashed amber ring: a note the page heard that it didn't ask for (on the string
+  where it's most likely). Strings marked × should be silent: mute them. With speakers, the page stops listening while ▶ plays.</p>
+</div>
+```
+
+## How it listens
+
+When the sound gets suddenly louder (a pick or strum), the page waits 80 ms for the attack to pass, takes the next 16,384 samples, and
+looks for the notes whose harmonics carry the most energy, one at a time. A single note is graded on the exact note, octave included. A chord
+is graded the way a MIDI chord is: every pitch class asked for, the right bass, and nothing else.
+
+This is the basic version of the plan in `scripts/guitar-di/GUITAR-IN.md`. Its accuracy numbers come from synthetic plucked strings
+(about 8 chords in 10 read exactly), not yet from a real guitar. If it gets one wrong, re-strum and let it ring.
+
+```{=html}
+<script src="/apps/shared/guitar-in-page.js?v=1"></script>
+```

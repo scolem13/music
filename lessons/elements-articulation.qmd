@@ -1,0 +1,152 @@
+---
+title: "Elements 1: Articulation"
+toc: true
+toc-depth: 2
+description: "How each note is started, held and let go: staccato, accent, legato and slurs, tenuto and glissando, with how string, wind and brass players make them, and the techniques that change an instrument's sound (pizzicato, mutes, tremolo, vibrato)."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Articulation** is *how* a note is played: how it starts, how long it lasts and how it joins the next one. It is not how
+loud it is (that is [dynamics](elements-dynamics.qmd)). The same eight notes can sound bouncy, smooth or
+aggressive depending on articulation alone.
+
+## 1. Staccato and legato
+
+**Staccato** means short and detached. You hear a gap after each note. It is written as a dot above or below the notehead
+(on the opposite side from the stem).
+
+**Legato** means smooth, with no breaks between the notes. A **slur** (a curved line over or under notes of *different*
+pitches) asks for legato.
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Staccato
+M:4/4
+L:1/4
+K:C
+.C .E .G .c|.G .E .C z|]
+</script><script type="text/plain" data-bend>
+{"bpm":100,"sound":"piano","notes":[{"t":0,"d":0.35,"midi":60},{"t":1,"d":0.35,"midi":64},{"t":2,"d":0.35,"midi":67},{"t":3,"d":0.35,"midi":72},{"t":4,"d":0.35,"midi":67},{"t":5,"d":0.35,"midi":64},{"t":6,"d":0.35,"midi":60}]}
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Legato (slurred)
+M:4/4
+L:1/4
+K:C
+(C E G c|G E C) z|]
+</script><script type="text/plain" data-bend>
+{"bpm":100,"sound":"piano","notes":[{"t":0,"d":1.08,"midi":60},{"t":1,"d":1.08,"midi":64},{"t":2,"d":1.08,"midi":67},{"t":3,"d":1.08,"midi":72},{"t":4,"d":1.08,"midi":67},{"t":5,"d":1.08,"midi":64},{"t":6,"d":1,"midi":60}]}
+</script></div>
+:::
+
+<div class="el-recap">
+<strong>Slur or tie?</strong> Both are curves. A curve joining two notes of the <em>same</em> pitch is a <strong>tie</strong>: play
+one note, held for both lengths. A curve over <em>different</em> pitches is a <strong>slur</strong>: play them all, smoothly.
+</div>
+
+**How players make a slur**
+
+| Instrument | Legato / slurred | Detached |
+|---|---|---|
+| Strings (violin, cello…) | all the slurred notes in one bow stroke, no change of direction | a new bow stroke (or a lifted bow) for each note |
+| Woodwind and brass | tongue only the first note; the rest change by fingers (or slide) alone | tongue every note |
+| Voice | one breath, the vowel kept going between notes | a little stop of the breath or a consonant on each note |
+| Piano | hold each key until the next one is down | lift each finger early |
+
+## 2. Accents and other marks
+
+An **accent** (`>`) asks for extra force on the start of the note. Marks can be combined: a staccato dot *and* an accent
+means short and strong.
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:Accents on the first beat of each measure, then staccato and accented together
+M:4/4
+L:1/4
+K:G
+!>!G B d B|!>!c A F A|!>!.G .B !>!.d z|]
+</script></div>
+
+| Sign | Name | Meaning |
+|---|---|---|
+| `.` over/under the notehead | staccato | short, detached |
+| `>` | accent | strong start |
+| `-` (a short line) | tenuto | hold for its full length, a slight weight |
+| `^` | marcato | stronger than an accent |
+| curve over different notes | slur | legato |
+| straight or wavy line between two notes, often marked *gliss.* | glissando | slide from one to the other |
+
+## 3. Glissando
+
+A **glissando** is a slide from one note to another. On a violin, trombone or voice it is a smooth slide through every
+pitch in between. On a piano or harp it is a sweep across the keys or strings.
+
+<div class="abc-ex" data-bpm="70"><script type="text/plain">
+X:1
+T:A violin slides up a fifth
+M:4/4
+L:1/2
+K:C
+!slide!D A|]
+</script><script type="text/plain" data-bend>
+{"bpm":70,"sound":"violin","notes":[{"t":0,"d":3.6,"midi":62,"bend":[[0,0],[1.2,0],[2,7]]}]}
+</script></div>
+
+## 4. Playing techniques
+
+Some articulations change the *kind* of sound an instrument makes. Each is a word above the staff.
+
+| Technique | Who | What it is |
+|---|---|---|
+| **Pizzicato** (*pizz.*) | strings | pluck the strings; *arco* goes back to the bow |
+| **Double stopping** | strings | two strings at once |
+| **Con sordino** (*con sord.*) | strings, brass | play with a mute; *senza sord.* takes it off |
+| **Tremolo** | strings (and others) | repeat one note very fast (a trembling sound) |
+| **Vibrato** | strings, voice, wind, brass | let the pitch waver a little, for warmth |
+| **Falsetto** | voice | a light, high register above the normal voice, used mostly by men |
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="violin" data-bpm="96"><script type="text/plain">
+X:1
+T:Arco (bowed)
+M:4/4
+L:1/4
+K:D
+D F A d|A F D2|]
+</script></div>
+
+<div class="abc-ex" data-sound="pizzicato_strings" data-bpm="96"><script type="text/plain">
+X:1
+T:Pizzicato (plucked)
+M:4/4
+L:1/4
+K:D
+D F A d|A F D2|]
+</script></div>
+:::
+
+## 5. Writing your own
+
+- Choose the articulation for what you want the listener to feel: staccato for light or playful, legato for calm or sad,
+  accents to push the beat or make a rhythm stand out.
+- Put articulation *on the notes*; [dynamics](elements-dynamics.qmd) go under the staff.
+- Check each mark with a player of that instrument: a slur on a trumpet is easy, a slur across a big leap on a trombone is not.
+
+## 6. Check yourself
+
+<div class="eq" data-set="articulation"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

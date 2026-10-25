@@ -1,0 +1,73 @@
+---
+title: "Live Sound 4: Gates"
+toc: true
+toc-depth: 2
+description: "The X32 gate on a kick and toms: threshold, range, attack, hold, release, and the expander modes."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive, svg]
+---
+
+A drum mic hears the whole kit. Between kick hits, the kick mic is picking up the snare, the hats and the
+cymbals: **bleed**. A **gate** closes the channel when the level falls below a threshold, and opens it again
+when the drum is hit.
+
+## The X32 gate
+
+Press **Gate** on the channel strip to switch it on and turn its threshold knob. On the screen (View) there is
+more:
+
+- **Mode**: `GATE` closes all the way down to the Range. `EXP2`, `EXP3`, `EXP4` are **expanders**: below the
+  threshold they turn down gradually (by 2, 3 or 4 times as much as the signal drops), which sounds more natural.
+  (`DUCK` does the opposite, turning down when something else is loud; not used here.)
+- **Threshold** (−80 to 0 dB): the level that opens it. Above the bleed, below the quietest hit you want.
+- **Range** (3–60 dB): how far it closes. 60 dB is nearly silent; 10–20 dB just tucks the bleed down.
+- **Attack** (0–120 ms): how fast it opens. On drums, as fast as possible, or the start of each hit is lost.
+- **Hold** (up to 2 s): how long it stays open after the level drops.
+- **Release** (5 ms – 4 s): how fast it closes. Too short chops the drum's ring; too long lets the bleed back in.
+
+The fader strip's **gate light** shows when it's working.
+
+## Try it: the kick
+
+<div class="lk" data-w="strip" data-source="kick" data-show="pre gate fader" data-goal="gate"
+  data-tries="No gate:gate=0;Threshold too high:gate=1,gthr=-14;Threshold too low:gate=1,gthr=-45;Slow attack:gate=1,gthr=-30,gatt=30;Good:gate=1,gthr=-30,gatt=0,ghold=20,grel=120"></div>
+
+Watch the strip at the bottom: the grey line is the level the gate sees, the dashed green line its threshold.
+The kicks are the tall spikes; the snare bleed the smaller ones in between. Put the threshold between them.
+Careful: one kick near the end is played softly (a ghost note), and it must still get through.
+
+## Try it: the toms
+
+Toms ring for a long time, and a tom mic sits right next to the snare and under the cymbals.
+
+<div class="lk" data-w="strip" data-source="toms" data-show="pre gate fader" data-goal="gate"
+  data-tries="No gate:gate=0;Release too short:gate=1,gthr=-24,ghold=2,grel=10;Gentle expander:gate=1,gmode=1,gthr=-17,grange=20,ghold=60,grel=300"></div>
+
+Here the **Release** matters: set it short and every tom hit is cut to a click. A longer Hold and Release keep
+the ring. Try **EXP3** with a Range of about 20 dB too: it's less "on/off".
+
+<div class="sk-tip">Gating every drum isn't always right. In a small room the kit is loud on its own, and
+the bleed is part of the sound. Gate the toms and maybe the kick; leave the overheads alone.</div>
+
+## Next
+
+- [Live Sound 5: Compression](live-comp.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+"Noise gate." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Noise_gate](https://en.wikipedia.org/wiki/Noise_gate).
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _live-kit.qmd >}}

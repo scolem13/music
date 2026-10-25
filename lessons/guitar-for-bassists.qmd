@@ -1,0 +1,190 @@
+---
+title: "Guitar for Bassists"
+toc: true
+toc-depth: 2
+description: "What changes when a bassist picks up the guitar: two more strings and the B-string shift, chords and strumming, fingerpicking (free and rest strokes, p-i-m-a, patterns, Travis picking, hybrid picking), and every kind of muting (palm mute, fret-hand mute, thumb over the top, chucks, string skipping), plus a practice plan."
+instruments: [guitar, bass]
+topics: [technique]
+has: []
+---
+
+The guitar's four lowest strings are your bass's E A D G, an octave higher, so the bottom half of the neck is already yours. What is new is two more strings, **chords**, a right hand that plays several strings at once, and a different kind of muting: on bass you mute so one note sounds; on guitar you mute so the *right* notes of a chord sound, and to make rhythm out of strings that don't. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section.
+
+**How to read the page.** Strings are numbered 1 (high E) to 6 (low E); tab has one line a string, high E on top. Right-hand fingers: **p** thumb, **i** index, **m** middle, **a** ring.
+
+```{=html}
+<style>
+.gb-tab{font-size:.85rem;line-height:1.25}
+.gb-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+</style>
+```
+
+## 1. The job changes {#job}
+
+You are no longer the floor; you are the middle. The guitar fills in the harmony and the rhythm between the bass and the voice. A bassist's habits help here: you already listen to the kick drum and stop notes on time. What to drop is the instinct to always play the root on the bottom: in a band the bass has it, so a guitar part is often clearer **without** the low strings.
+
+## 2. The fretboard: two more strings and one odd one {#neck}
+
+- The 2nd and 1st strings (B and high E) sit above your G. Every pair of neighbouring strings is a **fourth** apart, like on bass, **except G to B, a major third**. Any shape that crosses from the G string to the B string moves up one fret on the B and above. That is why the chord shapes look irregular.
+- The frets are narrower, so **one finger per fret** works everywhere. Light gauge strings need much less pressure than bass strings: if your fingertips go white, you are squeezing too hard.
+- The thumb often comes **over the top of the neck** in open chords and to fret or mute the low E. Bassists keep it behind; on guitar both are right, depending on the shape.
+
+The [chord shapes lesson](chord-shapes-guitar.qmd) covers the open chords; start with E minor, A minor, E, A, D, G and C.
+
+## 3. Strumming {#strum}
+
+- **Down-up all the time.** The hand moves down on the beats and up on the "and"s whether it hits the strings or not; rhythm comes from which strokes touch the strings. That steady arm is a bassist's metronome sense, moved to the wrist.
+- **Loose wrist, light pick** (thinner than a bass pick), held with only a few millimetres showing.
+- **Aim.** Down-strokes on low strings, up-strokes on the top three or four. You don't have to hit all six.
+
+<pre class="gb-tab">
+   1   +   2   +   3   +   4   +
+   D       D   U       U   D   U      (the "folk strum")
+</pre>
+
+## 4. Fingerpicking {#fingerpicking}
+
+This is the biggest change. On bass you pluck one string at a time with alternating i and m, usually rest strokes, pulling across the string. Guitar fingerpicking gives **each finger its own string**.
+
+### The hand
+
+- **p** (thumb) plays the three bass strings, 6, 5 and 4. It moves **down** through the string, toward the floor, with the side of the thumb, and stays to the left of the fingers (toward the neck).
+- **i**, **m**, **a** play strings 3, 2 and 1, one finger a string. They pluck **up** toward the palm, from the knuckle, not the fingertip joint.
+- The wrist is still and slightly arched; the hand does not bounce. Fingers move; the hand stays put.
+- The little finger does nothing, or rests lightly on the top of the guitar to steady the hand (classical players don't; many folk players do).
+
+### Free stroke and rest stroke
+
+- **Free stroke** (*tirando*): the finger plucks and curls up into the air above the next string, missing it. This is the normal guitar stroke, because the next string is usually part of the chord and must ring.
+- **Rest stroke** (*apoyando*): the finger plucks and lands on the next string, as on bass. Louder and fuller; used for melody notes, scales, and to bring out a tune over an accompaniment. The thumb has its own rest stroke, landing on the next higher string.
+
+Your bass rest stroke is a strength, but on guitar it **mutes the string it lands on**. In an arpeggio that is the note you wanted to ring.
+
+### Nails or flesh
+
+Nails, shaped slightly and kept smooth, give a bright, clear sound (classical and much fingerstyle); the flesh of the fingertip gives a soft, round one (the sound most bassists already have). Both are right; try plucking with the side where nail and flesh meet.
+
+### Patterns to start
+
+Hold a C chord. Thumb on the root, then the fingers.
+
+<pre class="gb-tab">
+   p   i   m   a   m   i        (arpeggio up and back)
+e|-----------0-----------|
+B|-------1-------1-------|
+G|---0---------------0---|
+D|-----------------------|
+A|-3---------------------|
+E|-----------------------|
+
+</pre>
+
+- **p-i-m-a, a-m-i** arpeggio (above).
+- **Pinch**: thumb and a finger pluck at the same time, a bass note and a melody note together.
+- **Block chord**: p, i, m and a all together, like a piano chord.
+
+Practise each slowly with a metronome until the thumb never drifts onto the fingers' strings.
+
+**Thumb only.** Wes Montgomery played single lines, octaves and chords with the side of his thumb, no pick and no fingers: a warm, round sound a bassist's thumb already knows.
+
+### Travis picking
+
+The thumb alternates between two bass strings on every beat, like a bassist playing root-fifth, while the fingers play off the beat on the top strings. This is where your bass playing pays off: the thumb *is* a bass line. The [Travis picking lesson](travis-picking.qmd) teaches it step by step.
+
+### Hybrid picking
+
+Hold the pick between thumb and index, and pluck higher strings with **m** and **a** at the same time as the pick plays a bass note. Country and rock players use it for double stops and chicken-picking. The [Picking lesson](guitar-picking.qmd#hybrid) covers it, along with alternate, economy and sweep picking.
+
+## 5. Every kind of muting {#muting}
+
+### Palm muting
+
+The edge of the picking hand rests on the strings **right at the bridge saddles** while you pick. Low strings thud with a short, chunky pitch: the sound of rock and metal rhythm guitar. Exactly as on bass, nearer the saddles rings more, further in thuds more. Written **P.M.** with a dashed line over the notes. Keep the palm there between notes; lifting it for an accent is a sound of its own.
+
+<pre class="gb-tab">
+P.M.- - - - - - -|         P.M.- - -|
+e|-----------------|-----------------|
+B|-----------------|-----------------|
+G|-----------------|-----------------|
+D|-----------------|-----------------|
+A|-----------------|-----------------|
+E|0-0-0-0-0-0-3-3--|0-0-0-0-5---3----|
+</pre>
+
+### Fret-hand muting: releasing
+
+Exactly as on bass: ease the pressure on a fretted note or chord and it stops, the fingers still touching. Strum a barre chord, release, strum, release: a staccato rhythm part (reggae and funk "skank").
+
+### Fret-hand muting: unplayed strings
+
+A full strum hits all six strings, so chords that use fewer must mute the rest with the fretting hand:
+
+- **Fingertip lean**: in a D chord (strings 4 to 1), the **thumb** comes over the neck to touch the low E, and the tip of the finger nearest the A string leans back to touch it.
+- **Underside of a finger**: the flat part of a finger lies across a string it isn't fretting. In a power chord on the 5th string, the fretting finger's tip touches the low E, and the underside of the fingers lies across the higher strings, so you can strum hard and only two notes sound.
+- **Thumb over the top** mutes or frets the low E.
+
+### Chucks and scratches
+
+Lay the fretting fingers lightly across **all** the strings without pressing, and strum: a pitchless "chk", written **x**. In a strum pattern it lands on the backbeat or fills the gaps:
+
+<pre class="gb-tab">
+   1   +   2   +   3   +   4   +
+   D   U   D   U   D   U   D   U
+   C   C   x   C   C   C   x   C       (C = chord, x = muted chuck)
+</pre>
+
+Funk rhythm guitar is sixteenth notes of this: the hand never stops, the left hand presses for chords and relaxes for scratches.
+
+### Right-hand chuck (slap strum)
+
+On acoustic, the side of the strumming hand comes down on the strings on the backbeat, muting them with a percussive slap, in place of a down-stroke. Many solo singers use it to stand in for a snare drum.
+
+### Muting while picking single notes
+
+The right-hand tricks you know from bass all transfer: the picking hand's palm rests on the lower strings, the fretting hand's free fingers cover the higher ones. With gain, this matters even more than on bass, because every open string feeds back.
+
+### Fingerstyle damping
+
+In fingerpicking, a plucking finger or the thumb **placed back on a string** stops it: the thumb returns to the bass string to cut a note short, the fingers replant on the top strings at the end of a phrase. Rest strokes damp the next string automatically, which you can use on purpose.
+
+<div class="gb-tip">Test: strum hard with the chord shape held and listen for any string you did not want. Then the same with a chuck: there should be no pitch at all.</div>
+
+## 6. Bends, hammer-ons, pull-offs and slides on both instruments {#expression}
+
+{{< include _bass-guitar-expression.qmd >}}
+
+## 7. Things bassists get wrong {#faults}
+
+| Fault | Fix |
+|---|---|
+| Rest strokes in arpeggios kill notes | Free stroke: curl the finger up past the next string |
+| Thumb and fingers on the same strings | p on 6-5-4, i-m-a on 3-2-1, one finger a string |
+| Fretting too hard, sharp chords | Light pressure, just behind the fret |
+| Every chord has a low root | In a band, leave the low strings to the bass |
+| Strumming arm stops on rests | Keep it moving down-up; miss the strings instead |
+| Unwanted strings in a strum | Fingertip lean, underside of a finger, thumb over |
+
+## 8. A practice plan {#practice}
+
+1. **Week 1:** E minor, A minor, D, G, C. Change on beat 1, folk strum.
+2. **Week 2:** the same chords with chucks on 2 and 4; then palm-muted eighths on the low E.
+3. **Week 3:** p-i-m-a arpeggios over each chord, free strokes, metronome at 60.
+4. **Week 4:** the thumb alternating bass notes under a held chord, then start the [Travis picking lesson](travis-picking.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Apoyando." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Apoyando](https://en.wikipedia.org/wiki/Apoyando).
+
+"Fingerstyle guitar." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Fingerstyle_guitar](https://en.wikipedia.org/wiki/Fingerstyle_guitar).
+
+"Hybrid picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Hybrid_picking](https://en.wikipedia.org/wiki/Hybrid_picking).
+
+"Palm mute." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Palm_mute](https://en.wikipedia.org/wiki/Palm_mute).
+
+"Travis picking." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Travis_picking](https://en.wikipedia.org/wiki/Travis_picking).
+
+"Wes Montgomery." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Wes_Montgomery](https://en.wikipedia.org/wiki/Wes_Montgomery).
+:::
+<!-- /works-cited -->

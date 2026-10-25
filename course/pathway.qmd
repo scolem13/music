@@ -1,0 +1,68 @@
+---
+title: "Your Pathway"
+description: "Where you are in the MYP and DP music course: what each unit adds to each strand of the rubric, what you have already learned and should keep doing, what comes next, and the decisions ahead."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/course/course.css?v=1">
+<script src="/apps/shared/course/course-common.js?v=1"></script>
+<script src="/apps/shared/course/pathway.js?v=1"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+Every unit from MYP1 to MYP5 is a small version of the ePortfolio: Task 1 is Criterion A, Task 2 is B, Task 3 is C and Task 4 is
+D. Each unit keeps the skills from earlier units and adds **one new skill** in each strand it assesses. Pick your unit to see
+what is new, what you should already be doing, and where it goes next. Tick the skills you can do; your ticks stay in this
+browser. Click any heading to fold its section.
+
+## Where you are
+
+::: {.crs}
+<div id="pw-picker" class="pw-picker" role="group" aria-label="Choose your year and unit"></div>
+<p class="crs-count" id="pw-progress"></p>
+<div id="pw-where">Loading…</div>
+:::
+
+## Decisions ahead
+
+::: {.crs}
+<div id="pw-decisions"></div>
+:::
+
+## The rubric climbs
+
+The MYP uses three rubrics: Year 1 in MYP1, Year 3 in MYP2–3 and Year 5 in MYP4–5. Keep doing what earned top marks last stage
+and you drop two marks. The verbs link to the [glossary](glossary.qmd#command-term-ladders).
+
+::: {.crs}
+<div id="pw-rubric"></div>
+:::
+
+## The whole sequence
+
+The one new skill each unit adds, strand by strand. A dash means the strand is not assessed in that unit.
+
+::: {.crs}
+<div id="pw-sequence"></div>
+:::
+
+## Share your pathway
+
+::: {.crs}
+<div id="pw-share"></div>
+:::
+
+## Beyond the rubric
+
+The rubric is the part everyone shares. Each of you also chooses your own [enrichment](enrichment.qmd) to grow as a musician
+in the directions you care about.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+International Baccalaureate Organization. *MYP Arts Guide*. For use from September 2022/January 2023, International Baccalaureate Organization. Key concepts and arts related concepts with their arts elaborations (as collected on the MYP concepts site); the command terms and their definitions, as quoted in the course's task-sheet notes (page numbers not checked); the Year 1, 3 and 5 assessment criteria behind the pathway's rubric tables (pp. 39–46). Publication year not printed in the excerpt held.
+:::
+<!-- /works-cited -->

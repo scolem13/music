@@ -1,0 +1,169 @@
+---
+title: "Bass for Guitarists"
+toc: true
+toc-depth: 2
+description: "What changes when a guitarist picks up the bass: the job in the band, the one-finger-per-fret hand, fingerstyle with two fingers and the thumb, playing with a pick, and every kind of muting (left-hand, floating thumb, moveable anchor, palm mute, ghost notes), plus a practice plan."
+instruments: [bass, guitar]
+topics: [technique]
+has: []
+---
+
+You already know the fretboard: the bass's four strings are tuned E A D G, the same as the guitar's lowest four, an octave lower. So the notes are where you expect them. What is new is the **job**, the **size** of everything, and above all **silence**: on bass, the notes you stop matter as much as the notes you play. This lesson covers the hands, fingerstyle and pick playing, and every kind of muting bassists use. Click a section's heading to fold it; the "On this page" bar at the right jumps to any section.
+
+**How to read the page.** Strings are numbered 1 (G) to 4 (low E). Tab has one line a string, G on top. Fingers: **i** index, **m** middle, **p** thumb (the classical letters).
+
+```{=html}
+<style>
+.bg-tab{font-size:.85rem;line-height:1.25}
+.bg-tip{border-left:3px solid var(--site-accent);padding:.4rem .9rem;margin:.8rem 0;background:var(--site-surface);font-size:.95rem}
+</style>
+```
+
+## 1. The job changes {#job}
+
+On guitar you fill the middle of the sound with chords and lines. On bass you hold up the floor: you lock with the kick drum, play the **root** of each chord on the beat where it changes, and lead the band from one chord to the next. A guitarist's first habit to drop is playing *more*: one well-placed, well-stopped note a beat is often the whole part.
+
+- **Time first.** Where the note starts and where it stops are both part of the groove. A note held into the next beat blurs the kick drum.
+- **Roots, then fifths, then the walk.** Root on beat 1, the fifth or the octave on the way, a step or half step into the next root. The [Blues Bass](blues-bass.qmd) and [Pop Changes on Bass](pop-changes-bass.qmd) lessons build these lines.
+- **Fewer chords, never full ones.** Low notes close together sound muddy; two-note shapes (root and tenth, root and fifth up high) are about as far as most bass parts go.
+
+## 2. The fretting hand {#fretting}
+
+The frets on a 34-inch bass are far wider than on a guitar, so the guitar habit of reaching with the fingers strains the hand.
+
+- **One finger per fret, below the 5th fret, is too wide for most hands.** Many players use the **1-2-4** system low on the neck: index, middle and little finger cover three frets, the ring finger helps the little finger push. Higher up, one finger per fret works.
+- **Thumb behind the neck**, roughly behind the middle finger, not wrapped over the top as for guitar bends and thumb-over chords.
+- **Press just behind the fret, no harder than needed.** Heavier strings need firmer pressure than guitar, but squeezing the neck tires the hand in one song.
+- **Shift, don't stretch.** Move the whole hand along the neck; keep fingers hovering close to the strings.
+
+## 3. Fingerstyle: two fingers {#fingers}
+
+Most electric bass is played with the fingers, and the motion is not guitar fingerpicking.
+
+1. **Rest the thumb.** Lay it on the pickup, or on the E string when you play higher strings (see section 6).
+2. **Pull across, into the next string: the rest stroke.** The index or middle finger plucks the string with the side of the fingertip, moving toward you, and comes to rest on the next lower string (lower in pitch is *toward* you: pluck the G, land on the D). The guitar free stroke, curling up into the palm, makes a thinner sound and leaves the string ringing unstopped.
+3. **Alternate i and m**, like alternate picking. Don't always start with the same finger; for string changes, the finger nearer the next string usually takes it.
+4. **Where you pluck changes the tone**: near the neck it is round and deep, near the bridge it is tight and punchy.
+
+<pre class="bg-tab">
+   i m i m  i m i m      (alternate, evenly, every note)
+G|---------|---------|
+D|---------|---------|
+A|---------|3-3-3-3--|
+E|3-3-3-3--|---------|
+</pre>
+
+**Rakes.** Moving down to a lower string (toward you), let the same finger play both notes in one movement, the way a guitarist sweeps: pluck the D string with m, let it fall onto the A string and pluck that with m too.
+
+**One finger is enough.** James Jamerson, the bassist on most of Motown's 1960s hits, plucked almost everything with his right index finger alone (the finger earned its own nickname, "the Hook"), resting his other fingers on the pickup cover. Two fingers are the usual way, not the only one.
+
+**The thumb.** Plucking down with the side of the thumb gives a soft, dark sound (many players use it for warm ballad parts). The [slap](#slap) section has the thumb's percussive cousin.
+
+## 4. With a pick {#pick}
+
+A pick is a fine bass sound, not a guitarist's crutch: punchy and clear, and used on countless rock, punk and studio records. Carol Kaye, who played on hundreds of 1960s sessions, used one.
+
+- Use a **heavier pick** than for guitar and a steady **alternate** down-up stroke, or all downstrokes for driving eighths (punk and metal).
+- **Pick near the bridge** for attack, over the neck for a rounder note.
+- **Palm muting** with a pick is a whole sound of its own (section 6).
+
+## 5. Why bass needs so much muting {#why-mute}
+
+A low string vibrates for a long time and sets the other open strings ringing in sympathy, and the low notes cover each other. On guitar a little leftover ringing becomes part of the chord; on bass it becomes a wash of mud under the band. So a bassist mutes in two ways at once:
+
+- **Stopping the note you played** so it ends exactly where the rhythm says (note length).
+- **Keeping every other string quiet** so only one note sounds at a time (unwanted noise).
+
+The left hand mostly does the first; the right hand mostly does the second.
+
+## 6. Every kind of muting {#muting}
+
+### Left-hand release
+
+To end a note, **ease the pressure** on the fretted note without lifting the finger off the string. The string leaves the fret and is damped by the finger still resting on it. Lifting off completely lets it ring as an open string.
+
+**Open strings** need a different finger: lay any free finger (often the ring or little finger, or the side of the index) on the string to stop it.
+
+### Left-hand blanket
+
+The fingers not in use rest lightly across the higher strings, and the underside of the fretting finger touches the string below. A fretted note on the A string: the index's tip leans on the E string, the other fingers rest across D and G. Only the fretted string can ring.
+
+### Right-hand: the moveable anchor
+
+The thumb moves with the plucking hand. Playing the E string, rest the thumb on the pickup. Playing the A string, rest the thumb **on the E string**: it anchors the hand and mutes the E at once. Playing D, the thumb moves to the A string, and now the E is left uncovered: that gap is why the next method exists.
+
+### Right-hand: the floating thumb
+
+The thumb lies **along** the strings below the one you're playing, its side touching all of them, sliding up and down with the hand. Playing the G string, the thumb covers D, A and E. Players with five- and six-string basses depend on it.
+
+### Right-hand: the resting finger
+
+With rest strokes (section 3), the plucking finger ends on the next string down, muting it. Combined with the thumb, every string on both sides of the one you play is touched.
+
+### Palm muting
+
+The side of the picking hand (the outer edge of the palm, below the little finger) rests on the strings **right at the bridge saddles**, and you pick as normal. The note thuds and dies fast: the 1970s pick-and-palm-mute sound. Closer to the saddles is more ring, further onto the strings more thud. With the fingers, the same edge of the palm rests on the strings while the **thumb** plucks: a short, upright-bass-like tone.
+
+### Foam and string mutes
+
+Many old basses had a foam pad under the bridge cover. A piece of foam under the strings near the bridge, or a clip-on string mute, gives the same short, dead note for a whole song.
+
+### Ghost notes
+
+A **ghost note** is a pluck on a string that the left hand is touching but not pressing: a pitchless click that keeps the rhythm moving, written **x** in tab. Funk lines live on them.
+
+<pre class="bg-tab">
+   1 e + a 2 e + a 3 e + a 4 e + a
+G|---------------|---------------|
+D|------5-x-5----|------5-x-5----|
+A|3-x-3-------x--|3-x-3-------x--|
+E|---------------|---------------|
+</pre>
+
+### Rests that you play
+
+Count rests as carefully as notes. A quarter note followed by a quarter rest is not a half note: stop it on the beat with the left-hand release.
+
+<div class="bg-tip">Test: play a line, then stop dead. If anything at all is still sounding, find which hand should have covered it.</div>
+
+## 7. Slap and pop, briefly {#slap}
+
+The thumb strikes the E or A string with its bony side near the end of the neck and bounces off (**slap**, written T); the index or middle finger hooks under the D or G string and snaps it against the frets (**pop**, written P). Muting holds it together: left-hand fingers make ghosted "hammer" slaps (**x**) between the notes. Start slowly with octaves: thumb on the E string 3rd fret, pop the D string 5th fret.
+
+## 8. Bends, hammer-ons, pull-offs and slides on both instruments {#expression}
+
+{{< include _bass-guitar-expression.qmd >}}
+
+## 9. Things guitarists get wrong {#faults}
+
+| Fault | Fix |
+|---|---|
+| Notes ring into the next one | Left-hand release on the beat; count the note's length |
+| Open strings hum while playing up high | Floating thumb, or anchor on the string below |
+| Hand aches after a song | 1-2-4 fingering low on the neck; lighter fretting pressure |
+| Guitar-style free stroke, thin tone | Rest stroke, finger lands on the next string |
+| Too many notes | Root on the chord change, then one note a beat |
+| Strumming two-note "power chords" low down | Single notes; save double stops for high on the neck |
+
+## 10. A practice plan {#practice}
+
+1. **Week 1:** one note a beat, roots only, through a song you know, stopping each note exactly on the next beat. Metronome on 2 and 4.
+2. **Week 2:** alternate i-m on every string, with the moveable anchor. Then the floating thumb.
+3. **Week 3:** the ghost-note line above at 70 bpm, then 90.
+4. **Week 4:** a pick line with palm muting; then the same line with the fingers. Record both and listen to how long the notes are.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Carol Kaye." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Carol_Kaye](https://en.wikipedia.org/wiki/Carol_Kaye).
+
+"Ghost note." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Ghost_note](https://en.wikipedia.org/wiki/Ghost_note).
+
+"James Jamerson." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/James_Jamerson](https://en.wikipedia.org/wiki/James_Jamerson).
+
+"Palm mute." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Palm_mute](https://en.wikipedia.org/wiki/Palm_mute).
+
+"Slapping (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Slapping_(music)](https://en.wikipedia.org/wiki/Slapping_(music)).
+:::
+<!-- /works-cited -->

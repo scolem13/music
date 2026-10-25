@@ -1,0 +1,84 @@
+---
+title: "Live Sound 7: Soundcheck"
+toc: true
+toc-depth: 2
+description: "The X32 sound check order, a mystery-channel ear-training game, and practice files to play through the real desk."
+instruments: [bass, guitar, piano, drums, violin, sax, voice, other]
+topics: [live-sound]
+has: [interactive, svg]
+---
+
+Everything so far, in the order you'd do it on the X32 before a show.
+
+## The order on the X32
+
+The X32 manual's own steps for a microphone on a channel:
+
+1. Plug in; mute the channel and switch **48 V** on if it's a condenser.
+2. **Gain**, using the input meter (loudest part around −12 to −6).
+3. **Low Cut**, to remove rumble or wind.
+4. **EQ**.
+5. **Gate** and **Compressor**.
+6. **Stereo Bus** on, and **Pan**.
+7. The channel **fader** to around 0 dB, then slowly bring up the **Main LR** fader.
+
+Then the monitor sends ([Live Sound 6](live-feedback.qmd)), one channel at a time, and finally the whole band
+together, listened to from where the audience will be.
+
+<div class="sk-tip">When it's right, <b>save a scene</b> (Scenes, View, Save). Next week you can recall it and
+start from there instead of from zero.</div>
+
+## Mystery channel
+
+Each problem is one of these channels with one thing wrong. Listen, look at the meters, and say what it needs
+first. Then fix it and press **Check my channel**.
+
+<div class="lk" data-w="strip" data-quiz></div>
+
+## Practice on the real X32
+
+Every channel in these lessons can be played through the real desk. On a channel above, choose a source and
+press **⤓ WAV**: 32 seconds of that sound, raw, with the problem still in it.
+
+| File | What's wrong | Lesson |
+|---|---|---|
+| Podium speech | quiet talker: needs a lot of gain | [2](live-gain.qmd) |
+| Boomy vocal | rumble, thumps, boom | [3](live-eq.qmd) |
+| Harsh guitar | 3 kHz peak, fizz | [3](live-eq.qmd) |
+| Kick drum mic | snare, hat and crash bleed | [4](live-gate.qmd) |
+| Rack tom mic | ring and bleed | [4](live-gate.qmd) |
+| Lead vocal | soft verse, loud chorus | [5](live-comp.qmd) |
+| Bass DI | popped notes | [5](live-comp.qmd) |
+
+<div class="lk" data-w="strip" data-source="kick" data-show="pre" data-title="Download a practice file"></div>
+
+How to get them into a channel with the full strip:
+
+- **From a laptop or phone**: its headphone output into a **DI box**, and the DI into any input 1–32. The DI
+  turns it into a mic-level signal, so you set the Gain just like a mic.
+- **Over USB** (if the desk has the X-USB card): play the file from the computer and patch the card's returns
+  to input channels on the Routing screen.
+- The X32's **USB stick player** comes back on the **Aux 7/8** channels. Aux In channels have EQ but no
+  gate or compressor, so it's fine for the EQ files and not for the gate and compressor ones.
+
+The files peak at −12 dBFS. Start with the gain low, the fader down, and work through the strip.
+
+## Next
+
+- Back to [Live Sound 1](live-strip.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Behringer. *X32 Digital Mixer Preliminary User Manual*. Music Tribe, [media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf](https://media.vsl-uk.com/manuals/sound/Behringer_X32_User_Manual.pdf). Channel strip sections and order, preamps (72 dB range, +23 dBu), set-up steps for a mic, USB 2-track recorder (Aux 7/8), scenes, GEQ effects.
+
+**For teachers**
+
+Maillot, Patrick-Gilles. *Unofficial X32/M32 OSC Remote Protocol*. 2020, [tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf](https://tostibroeders.nl/wp-content/uploads/2020/02/X32-OSC.pdf). Ranges of gain, low cut, gate, compressor, EQ and fader; the fader law; Aux In channels have no gate or dynamics.
+:::
+<!-- /works-cited -->
+
+{{< include _live-kit.qmd >}}

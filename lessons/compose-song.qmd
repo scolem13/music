@@ -5,7 +5,7 @@ toc-depth: 2
 description: "Writing a song: putting stressed syllables on strong beats (prosody), rhyme and line length, verse, pre-chorus, chorus and bridge, the hook, and making the chorus sound different from the verse."
 instruments: [voice, guitar, piano, other]
 topics: [composing, pop]
-has: [notation, band, interactive]
+has: [notation]
 ---
 
 {{< include _compose-kit.qmd >}}

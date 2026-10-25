@@ -1,0 +1,39 @@
+/* sax.css — fingering diagrams (sax-chart.js) and the saxophone page widgets (sax-page.js, ear-sax.js) */
+.sxc { width: 100%; height: auto; display: block; }
+.sxc .sxc-k { fill: var(--sx-open, #fff); stroke: var(--sx-ink, #231f20); stroke-width: 3; transition: fill .12s; }
+.sxc .sxc-k.sxc-down { fill: var(--sx-ink, #231f20); }
+.sxc .sxc-k.sxc-trill { fill: #9aa0a6; }
+.sxc .sxc-deco line { stroke: var(--sx-ink, #231f20); stroke-width: 3; }
+.sxc-live .sxc-k { cursor: pointer; }
+.sxc-live .sxc-k:hover { stroke: var(--site-accent, #2780e3); stroke-width: 6; }
+.sxc-small .sxc-k, .sxc-small .sxc-deco line { stroke-width: 5; }
+@media (prefers-color-scheme: dark) { :root { --sx-open: #f1f3f5; } }
+
+.sxp-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .4rem 0; }
+.sxp-bar select { width: auto; }
+.sxp-lab { display: inline-flex; gap: .4rem; align-items: center; margin: 0; font-size: .9rem; }
+.sxp-strip { margin: .4rem 0; }
+.sxp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.sxp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 9.5rem; }
+.sxp-nb { min-width: 2.6rem; padding: .15rem .35rem; font-size: .85rem; }
+.sxp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.sxp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.sxp-staff svg { max-width: 100%; }
+.sxp-staff-s { min-height: 60px; }
+.sxp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.sxp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.sxp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.sxp-fig { margin: 0; text-align: center; }
+.sxp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; }
+.sxp-d { width: 120px; }
+.sxp-d-big { width: min(230px, 45vw); flex: none; }
+.sxp-d-s { width: 62px; margin: .3rem auto; }
+.sxp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.sxp-side { flex: 1 1 240px; }
+.sxp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.sxp-out { min-height: 1.6em; font-size: 1.05rem; margin: .4rem 0; }
+.sxp-good { color: #2f9e44; font-weight: 700; } .sxp-bad { color: #e03131; font-weight: 700; }
+.sxp-tgrid { display: grid; grid-template-columns: repeat(auto-fill, minmax(118px, 1fr)); gap: .6rem; }
+.sxp-tcard { border: 1px solid var(--site-line, #ced4da); border-radius: .4rem; padding: .4rem; text-align: center; }
+.sxp-tlab { font-weight: 700; font-size: .9rem; }
+.sxp-steps li { margin-bottom: .25rem; }

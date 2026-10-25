@@ -100,10 +100,14 @@ function check(abc) {
   const warns = (r.warnings || []).map(w => w.replace(/<[^>]*>/g, ""));
   const mt = r.getMeterFraction ? r.getMeterFraction() : { num: 4, den: 4 };
   const barLen = mt.num / mt.den, lens = [];
-  let cur = 0;
+  let cur = 0, tup = 1;   // tup: abcjs leaves tuplet notes unscaled; startTriplet carries the multiplier, endTriplet closes it
   for (const line of r.lines || []) for (const st of line.staff || []) for (const v of st.voices || [])
     for (const e of v) {
-      if (e.el_type === "note") cur += e.duration || 0;
+      if (e.el_type === "note") {
+        if (e.startTriplet && e.tripletMultiplier) tup = e.tripletMultiplier;
+        cur += (e.duration || 0) * tup;
+        if (e.endTriplet) tup = 1;
+      }
       else if (e.el_type === "bar") { if (cur > 0) lens.push(cur); cur = 0; }
     }
   if (cur > 0) lens.push(cur);

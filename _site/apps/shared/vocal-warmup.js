@@ -196,7 +196,7 @@
   var S = {};
   function settings() {
     var v = function (id) { return $(id).value; }, c = function (id) { return $(id).checked; };
-    var s = { voice: v("vw-voice"), length: +v("vw-length"), focus: v("vw-focus"), energy: v("vw-energy"), pace: v("vw-pace"), shift: +v("vw-shift"),
+    var s = { voice: v("vw-voice"), length: +v("vw-length"), focus: v("vw-focus"), style: v("vw-style"), energy: v("vw-energy"), pace: v("vw-pace"), shift: +v("vw-shift"),
               stretch: c("vw-stretch"), breath: c("vw-breath"), band: c("vw-band"), auto: c("vw-auto") };
     try { localStorage.setItem(KEY, JSON.stringify(s)); } catch (e) {}
     return s;
@@ -204,7 +204,7 @@
   function restore() {
     var s; try { s = JSON.parse(localStorage.getItem(KEY) || "null"); } catch (e) {}
     if (!s) return;
-    ["voice", "length", "focus", "energy", "pace", "shift"].forEach(function (k) { if (s[k] != null) $("vw-" + k).value = s[k]; });
+    ["voice", "length", "focus", "style", "energy", "pace", "shift"].forEach(function (k) { if (s[k] != null) $("vw-" + k).value = s[k]; });
     ["stretch", "breath", "band", "auto"].forEach(function (k) { if (s[k] != null) $("vw-" + k).checked = s[k]; });
   }
 
@@ -214,7 +214,7 @@
     var tier = L <= 5 ? 0 : L <= 10 ? 1 : L <= 15 ? 2 : L <= 20 ? 3 : 4;
     var keys = [4, 6, 9, 12, 16][tier], steps = [];
     var add = function (cond, st, kind) { if (cond) { st.kind = kind; steps.push(st); } };
-    var pop = s.focus === "pop", classical = s.focus === "classical", choir = s.focus === "choir";
+    var fun = s.style === "fun", pop = s.focus === "pop", classical = s.focus === "classical", choir = s.focus === "choir";
 
     // body
     if (s.stretch) {
@@ -226,7 +226,9 @@
         cues: [[12, "Massage the jaw hinge (in front of the ears) in small circles"], [8, "Let the jaw hang open, loose, and wobble it with your hand"], [8, "Big surprised face… then scrunch everything small"], [6, "Blow the lips out like a horse"]] }), "stretch");
       add(tier >= 2, timed({ title: "Tongue", how: "The root of the tongue sits on the larynx, so a tight tongue makes a tight voice.",
         cues: [[8, "Tongue out and down towards the chin, then relax"], [8, "Tongue tip behind the bottom teeth, roll the middle forward"], [10, "Trace circles around the outside of your teeth with the tongue"]] }), "stretch");
-      add(tier >= 3, timed({ title: "Shake it out", how: "Loosens everything before you sing.",
+      add(fun, timed({ title: "Countdown shake", how: "Count out loud together: it wakes up the voice too. Each round is shorter and faster.",
+        cues: [[6, "Shake the right hand, count 8"], [6, "Left hand, 8"], [6, "Right foot, 8"], [6, "Left foot, 8"], [10, "Now 4 each… then 2 each… then 1 each"], [4, "Hands up and shout: 'Yay!'"]] }), "stretch");
+      add(!fun && tier >= 3, timed({ title: "Shake it out", how: "Loosens everything before you sing.",
         cues: [[8, "Shake the hands, then the arms"], [8, "Shake each leg"], [8, "Bounce gently on the knees and sigh out on 'haaa'"]] }), "stretch");
     }
     // breath
@@ -245,9 +247,18 @@
       degs: [1, 2, 3, 2, 1], syl: "mm", d: 1, end: 2, keys: keys, hi: -3, legato: true }), "voice");
     add(true, sing({ title: "Lip trill", how: "Loose lips, blow so they flutter (a horse's 'brrr'). If they won't trill, press a finger into each cheek. Can't? Hum instead.",
       degs: [1, 2, 3, 4, 5, 4, 3, 2, 1], syl: "brr", d: 0.5, end: 2, keys: keys, hi: -1, legato: true }), "voice");
-    add(tier >= 1, timed({ title: "Sirens", how: "Slide on 'ng' (as in sing) or an 'oo' from the bottom of your voice to the top and back, like a siren. Smooth through the breaks; let it flip if it wants to.",
+    add(fun, timed({ title: "Sound effects", how: "Copy the teacher, or make up your own. Slide smoothly from the bottom of your voice to the top and back.",
+      cues: [[8, "Fire engine: 'ng' up and down, up and down"], [8, "Ghost: a high 'oooo' that slides all the way down"], [10, "Roller coaster: s-l-o-w-l-y up the hill on 'ee'… then whoosh down!"], [8, "An owl 'hoo' up high, then a cow 'moo' down low"]] }), "voice");
+    add(!fun && tier >= 1, timed({ title: "Sirens", how: "Slide on 'ng' (as in sing) or an 'oo' from the bottom of your voice to the top and back, like a siren. Smooth through the breaks; let it flip if it wants to.",
       ref: async function (tok) { cue("Your range for today: " + noteName(S.lo) + " to " + noteName(S.hi)); piano([S.lo], 1.5, 0.5); await wait(tok, 1.2); piano([S.hi], 1.5, 0.5); await wait(tok, 1.6); },
       cues: [[8, "Slide up on 'ng'… and down"], [8, "Again, a little higher"], [8, "Now on 'oo'"], [8, "Little loops in the middle"]] }), "voice");
+    // fun: tongue twisters built on sounds every language in the room has (no r/l, f/p, v/b, z/j or th), and one in Korean
+    add(fun, timed({ title: "Tongue twisters", how: "Speak them: slowly first, then faster. Keep the jaw loose and the lips and tongue busy. Mistakes are the funny part.",
+      cues: [[8, "Slowly: ma me mi mo mu · pa pe pi po pu"], [8, "Faster: ta te ti to tu · ka ke ki ko ku"], [10, "Slowly: Kitty caught the kitten in the kitchen"], [10, "Now say it three times, faster each time"], [12, "Japanese: nama mugi, nama gome, nama tamago (raw wheat, raw rice, raw egg)"], [15, "Korean: 간장 공장 공장장은 강 공장장이고, 된장 공장 공장장은 공 공장장이다. Korean speakers, teach the class!"]] }), "voice");
+    add(fun, sing({ title: "Sing the twister", how: "Sing 'Kitty caught the kitten in the kitchen' up the scale and back down, getting faster as the key goes up. Crisp consonants, easy voice.",
+      degs: [1, 2, 3, 4, 5, 4, 3, 2, 1], syl: ["kit", "ty", "caught", "the", "kit", "ten", "in the", "kitch", "en"], d: 0.5, end: 2, keys: Math.max(3, keys - 2), hi: -2 }), "voice");
+    add(fun, sing({ title: "Pizza!", how: "Short, bouncy notes from the belly: 'piz-za, piz-za…' and land on a happy 'yum!'.",
+      degs: [1, 3, 5, 8, 5, 3, 1], syl: ["piz", "za", "piz", "za", "piz", "za", "yum!"], d: 0.5, end: 1.5, keys: keys - 1 }), "voice");
     // open vowels
     if (classical || choir) add(true, sing({ title: "Five vowels on one note", how: "Keep the same tall space for every vowel; only the tongue and lips change. The sound should stay one line.",
       degs: [1, 1, 1, 1, 1], syl: ["mee", "meh", "mah", "moh", "moo"], d: 1, end: 2, keys: keys - 1, hi: -6, legato: true }), "voice");
@@ -257,7 +268,7 @@
       degs: [1, 8, 1], syl: ["whee", "ee-oo", "oo"], d: 1.5, end: 2, keys: keys - 1, legato: true }), "voice");
     add(tier >= 1, sing({ title: "Arpeggio on 'ah'", how: "Keep the jaw loose and the 'ah' tall. Lighten as you go up, don't reach.",
       degs: [1, 3, 5, 8, 5, 3, 1], syl: classical ? "ah" : "yah", d: 1, end: 2, keys: keys }), "voice");
-    add(tier >= 2 && (perform || pop || tier >= 3), sing({ title: "Staccato 'ha'", how: "Short, light notes, each one a little kick from the belly like the breath pulses. No pushing from the throat.",
+    add(!fun && tier >= 2 && (perform || pop || tier >= 3), sing({ title: "Staccato 'ha'", how: "Short, light notes, each one a little kick from the belly like the breath pulses. No pushing from the throat.",
       degs: [1, 3, 5, 8, 5, 3, 1], syl: "ha", d: 0.5, end: 1, keys: keys - 1 }), "voice");
     add(tier >= 3, sing({ title: "Nine-note scale", how: "Up the scale and down in one breath. Smooth and connected; no bumps where the voice shifts.",
       degs: [1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6, 5, 4, 3, 2, 1], syl: classical ? "ah" : "noo", sylNums: false, d: 0.5, end: 2, keys: keys - 2, hi: 0, legato: true }), "voice");

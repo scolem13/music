@@ -87,7 +87,7 @@
       '<div class="rf-bar"><label class="rf-open"><span class="rf-open-btn">Open song file or bar map</span><input type="file" class="rf-song" accept=".json,application/json" hidden></label>' +
       '<span class="rf-info" role="status"></span></div>' +
       '<div class="btp rf-btp">' +
-      '<div class="btp-clock idle">00:00</div><div class="btp-stage" hidden></div><div class="btp-drop">Drop a video or audio file here</div>' +
+      '<div class="btp-clock idle" data-num-edit="off">00:00</div><div class="btp-stage" hidden></div><div class="btp-drop">Drop a video or audio file here</div>' +
       '<div class="btp-bar"><input class="btp-url" type="text" placeholder="Paste a YouTube link…" spellcheck="false"><button class="btp-load" type="button">Load</button>' +
       '<button class="btp-follow-btn" type="button" title="Play it in YouTube\'s own tab and keep the clock here">Follow in a tab</button>' +
       '<label class="btp-filebtn">Choose file<input class="btp-file" type="file" accept="video/*,audio/*"></label></div><div class="btp-err"></div></div>' +

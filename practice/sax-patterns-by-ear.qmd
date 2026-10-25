@@ -1,0 +1,191 @@
+---
+title: "Sax Patterns by Ear"
+description: "Saxophone, no notation to read: learn the first tonal patterns of a set from fingering diagrams, then play the rest back by ear on your sax (the page listens through the microphone) and see how many you got on the first try."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/sax/sax.css?v=1">
+<script src="/apps/shared/abc-core.js"></script>
+<script src="/apps/shared/midi-feel.js?v=2"></script>
+<script src="/apps/shared/musical-typing.js"></script>
+<script src="/apps/shared/pitch-detect.js"></script>
+<script src="/apps/patterns/pattern-set.js?v=4"></script>
+<script src="/apps/patterns/pattern-gen.js?v=3"></script>
+<script src="/apps/patterns/ear-piano.js?v=2"></script>
+<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/sax/sax-chart.js?v=2"></script>
+<script src="/apps/shared/sax/sax-page.js?v=2"></script>
+<script src="/apps/patterns/ear-sax.js?v=2"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+#ep-root { --ep-ink: var(--site-ink, #212529); --ep-mute: var(--site-ink-2, #6c757d); --ep-line: var(--site-line, #ced4da);
+  --ep-surf: var(--site-surface, #fff); --ep-surf2: var(--site-surface-2, #f8f9fa); --ep-acc: var(--site-accent, #2780e3);
+  --ep-good: #2f9e44; --ep-bad: #e03131; --ep-key-w: #fff; --ep-key-b: #222; }
+@media (prefers-color-scheme: dark) { #ep-root { --ep-key-w: #f1f3f5; --ep-key-b: #111; } }
+.ep-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: .6rem 1rem; margin: .4rem 0 .8rem; }
+.ep-grid label { display: flex; flex-direction: column; gap: .2rem; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--ep-mute); margin: 0; }
+.ep-grid select, .ep-grid input[type=number], .ep-grid input[type=range] { font-size: .95rem; text-transform: none; letter-spacing: 0; }
+.ep-checks { display: flex; flex-wrap: wrap; gap: .4rem 1.2rem; margin: .3rem 0 .7rem; font-size: .92rem; }
+.ep-checks label { display: inline-flex; gap: .35rem; align-items: center; margin: 0; }
+.ep-bar { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.ep-panel { border: 1px solid var(--ep-line); border-radius: .5rem; padding: .8rem 1rem; background: var(--ep-surf2); margin: .4rem 0 1rem; }
+.ep-head { font-weight: 700; font-size: 1.05rem; }
+.ep-solf { font-size: clamp(1.4rem, 5vw, 2.2rem); font-weight: 800; letter-spacing: .02em; min-height: 1.2em; }
+.ep-chord { color: var(--ep-mute); font-size: .95rem; }
+.ep-msg { min-height: 1.6em; font-size: 1.05rem; font-weight: 600; margin: .4rem 0; }
+.ep-msg.ep-good { color: var(--ep-good); } .ep-msg.ep-bad { color: var(--ep-bad); }
+.ep-kb { margin: .5rem 0; } .ep-kb svg { width: 100%; height: auto; display: block; max-height: 230px; }
+.ep-k.ep-w { fill: var(--ep-key-w); stroke: #555; stroke-width: 1; } .ep-k.ep-b { fill: var(--ep-key-b); stroke: #000; }
+.ep-k.ep-target.ep-w { fill: #d0e3fb; } .ep-k.ep-target.ep-b { fill: #1c5aa6; }
+.ep-k.ep-on { fill: #ffd43b !important; } .ep-k.ep-good { fill: #8ce99a !important; } .ep-k.ep-bad { fill: #ffa8a8 !important; }
+.ep-c { font-size: 9px; fill: #868e96; font-family: var(--font-mono, monospace); }
+.ep-mark circle { fill: var(--ep-acc); stroke: #fff; stroke-width: 1.5; }
+.ep-mark text { fill: #fff; font-weight: 700; font-size: 13px; font-family: system-ui, sans-serif; }
+.ep-mark text.ep-ord { fill: var(--ep-mute); font-size: 9px; font-weight: 600; }
+.ep-fing { font-family: var(--font-mono, monospace); font-size: .9rem; color: var(--ep-mute); }
+.ep-dots { display: flex; flex-wrap: wrap; gap: 4px; margin: .3rem 0; }
+.ep-dot { width: 13px; height: 13px; border-radius: 50%; border: 1.5px solid #adb5bd; background: transparent; }
+.ep-dot-learn { border-radius: 3px; } .ep-dot-done { background: #adb5bd; }
+.ep-dot-first { background: var(--ep-good); border-color: var(--ep-good); } .ep-dot-later { background: #94d82d; border-color: #94d82d; }
+.ep-dot-shown { background: var(--ep-bad); border-color: var(--ep-bad); } .ep-dot-skipped { background: #dee2e6; }
+.ep-dot-cur { outline: 2px solid var(--ep-acc); outline-offset: 2px; }
+#es-in-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; background: #adb5bd; margin-right: .3rem; }
+#es-in-dot.on { background: var(--ep-good); }
+.ep-big { font-size: 1.05rem; font-weight: 600; padding: .45rem 1.1rem; }
+.ep-table .ep-r-first td:nth-child(4) { color: var(--ep-good); font-weight: 600; } .ep-table .ep-r-shown td:nth-child(4) { color: var(--ep-bad); font-weight: 600; }
+.ep-muted { color: var(--ep-mute); font-size: .9rem; }
+</style>
+<style>
+.es-fings { display: flex; flex-wrap: wrap; gap: .8rem; margin: .5rem 0; }
+.es-fig { width: 92px; } .es-d { width: 70px; margin: 0 auto; } .es-staff { height: 62px; overflow: hidden; }
+</style>
+<div id="ep-root">
+```
+
+The sax version of [Patterns by Ear](patterns-by-ear.qmd). The first few patterns of a set are taught with fingering diagrams.
+Then the page plays the rest, one at a time, and you play each back on your saxophone. New to the fingerings? See the
+[fingering chart](../lessons/saxophone.qmd#fingering-chart).
+
+## Set up {#setup}
+
+```{=html}
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="es-mic">🎤 Listen to my sax</button>
+  <button type="button" class="btn btn-outline-secondary" id="es-midi">Connect MIDI (keyboard or wind controller)</button>
+  <span><span id="es-in-dot" class="es-dot"></span><span id="es-in-status" class="ep-muted">Not listening yet. Use headphones if you can, so the page doesn't hear itself.</span></span>
+</div>
+<p id="es-heard" class="ep-muted"></p>
+<div class="ep-grid">
+  <label>Saxophone <select id="es-inst" class="form-select form-select-sm"><option value="alto">E♭ alto</option><option value="tenor">B♭ tenor</option><option value="bari">E♭ baritone</option></select></label>
+  <label>Pattern set <select id="es-set" class="form-select form-select-sm"></select></label>
+  <label>Written key <select id="es-key" class="form-select form-select-sm"></select></label>
+  <label>Teach the first <input type="number" id="es-teach" class="form-control form-control-sm" value="3" min="1" max="12"></label>
+  <label>Right in a row to learn one <input type="number" id="es-need" class="form-control form-control-sm" value="2" min="1" max="5"></label>
+  <label>Tries by ear <input type="number" id="es-tries" class="form-control form-control-sm" value="3" min="1" max="6"></label>
+  <label>Tempo <input type="range" id="es-tempo" min="40" max="120" value="72"></label>
+</div>
+<div class="ep-checks">
+  <label><input type="checkbox" id="es-anyoct" checked> Any octave counts</label>
+  <label><input type="checkbox" id="es-shuffle"> Shuffle the by-ear patterns</label>
+  <label><input type="checkbox" id="es-echo" checked> Sound MIDI / computer keys</label>
+  <label><input type="checkbox" id="es-typing" checked> Computer keys play notes (Z = written C4)</label>
+  <label><input type="checkbox" id="es-solf-learn" checked> Solfège while learning</label>
+  <label><input type="checkbox" id="es-solf-ear"> Solfège by ear</label>
+</div>
+<p id="es-set-info" class="ep-muted"></p>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary ep-big" id="es-start">▶ Start</button>
+  <button type="button" class="btn btn-outline-secondary" id="es-skip-learn">Skip to by ear</button>
+</div>
+<p class="ep-muted">Sets you make on <a href="patterns.html">Tonal Patterns</a> (Make a set) show up here with a ★.</p>
+```
+
+## Learn {#learn}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="es-dots"></div>
+  <div class="ep-head" id="es-learn-head">Press Start above.</div>
+  <div class="ep-solf" id="es-learn-solf"></div>
+  <div class="ep-chord" id="es-learn-chord"></div>
+  <div class="es-fings" id="es-learn-fing"></div>
+  <div class="ep-msg" id="es-learn-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="es-learn-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-primary" id="es-to-ear" hidden>Go on: by ear ▶</button>
+  </div>
+  <p class="ep-muted">One diagram per note, in order (dark = pressed). The page hears the notes, not your fingers, so watch your hands.</p>
+</div>
+```
+
+## By ear {#by-ear}
+
+```{=html}
+<div class="ep-panel">
+  <div class="ep-dots" id="es-dots2"></div>
+  <div class="ep-head" id="es-ear-head">Learn the first patterns, then come here.</div>
+  <div class="ep-solf" id="es-ear-solf"></div>
+  <div class="es-fings" id="es-ear-fing"></div>
+  <div class="ep-msg" id="es-ear-msg" aria-live="polite"></div>
+  <div class="ep-bar">
+    <button type="button" class="btn btn-outline-primary" id="es-ear-hear">🔊 Hear it again</button>
+    <button type="button" class="btn btn-outline-secondary" id="es-ear-key">Hear the key</button>
+    <button type="button" class="btn btn-outline-secondary" id="es-ear-show">Show me</button>
+    <button type="button" class="btn btn-outline-secondary" id="es-ear-skip">Skip</button>
+    <button type="button" class="btn btn-primary" id="es-ear-next" hidden>Next ▶</button>
+  </div>
+  <p class="ep-muted">The key is played first (I – V7 – I). Then each pattern: listen, then play it back. A wrong note stops the
+  try and the pattern plays again. "Show me" and running out of tries count as a miss.</p>
+</div>
+```
+
+## Results {#results}
+
+```{=html}
+<p id="es-res-sum" class="ep-muted">Results show here when the by-ear patterns are done.</p>
+<div id="es-res-table"></div>
+<div class="ep-bar">
+  <button type="button" class="btn btn-primary" id="es-again" hidden>Try the missed ones again</button>
+  <button type="button" class="btn btn-outline-secondary" id="es-restart">Start the set over</button>
+</div>
+```
+
+## How it works {#how}
+
+- **Written notes.** Everything on this page is in *written* pitch, the notes on your part. The page plays them at the
+  pitch your saxophone really sounds (alto a major 6th lower, tenor a 9th, bari an octave and a 6th), and the microphone turns what it
+  hears back into written notes. So pick your saxophone above.
+- **Range.** Each set is moved to the written key you pick and placed between written D4 and C6, where no low pinky keys or palm keys are
+  needed, when it fits.
+- **Fingerings.** The usual fingering from the [fingering chart](../lessons/saxophone.qmd#fingering-chart). Your teacher may prefer an
+  alternate (for example the bis key for B♭).
+- **What counts.** The notes in order; rhythm isn't checked. Each new note must hold steady for about a tenth of a second. To play the
+  same note twice, stop the sound briefly between them (tongue it). With *Any octave counts* on, the whole pattern may be an octave away.
+  Stopping for more than four seconds starts the try again.
+- **The microphone** ignores everything while the page is playing. Headphones still help: a loud room can confuse it.
+- **No sax handy?** A MIDI keyboard or wind controller, or the computer keys, count as written notes.
+
+```{=html}
+</div>
+<script>EarSax.mount(document.getElementById("ep-root"));</script>
+```
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Saxophone." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Saxophone](https://en.wikipedia.org/wiki/Saxophone). Unverified: the transpositions (alto M6, tenor M9, bari octave + M6 below written). Not yet re-read.
+
+**For teachers**
+
+"Saxophone." Teacher resource book, Neil A. Kjos Music Company (item W74; title and authors unverified), pp. 140-59. History, family, parts, assembly, posture, embouchure, care, checklist, tone problems, tuning, vibrato, listening list, fingering chart (p. 158) and trill chart (p. 159). Retold in the page's own words; charts redrawn from the book's key template.
+:::
+<!-- /works-cited -->
+
+
+<!-- works-cited: written by scripts/works-cited.py -->
+<!-- /works-cited -->

@@ -1,4 +1,9 @@
-# GuitarIn: guitar chords through a DI, read like MIDI (plan, not built)
+# GuitarIn: guitar chords through a DI, read like MIDI (basic version built 2026-10-23)
+
+Built: `apps/shared/guitar-in.js` (onset, 80 ms skip, the multi-f0 below, `expect` verification; one note graded on the exact
+note via YIN), test page `tools/guitar-in.qmd` ("play this note" / "play this chord" with the fretboard). Not yet: calibration
+strum, `refCents`, drills `midiMatch` hookup, real DI recordings. Tests: `node tests/guitar-in/guitar-in.test.js`,
+`node tests/guitar-in/guitar-in.cdp.js` (after `sh scripts/render-test-page.sh tools/guitar-in.qmd`).
 
 Goal: a student plays a chord on guitar (DI box or audio interface, not a mic) and a drill reads it the way it reads a
 MIDI keyboard (`Drills` `midiMatch(q, notes)`).

@@ -1,0 +1,95 @@
+---
+title: "What Is a Polyrhythm?"
+toc: true
+toc-depth: 2
+description: "Two rhythms at once: 3 against 2, 4 against 3 and 5 against 4, the grid that holds them, how to clap them, and how a polyrhythm differs from polymeter and hemiola."
+instruments: [any]
+topics: [rhythm, polyrhythm]
+has: [interactive, svg]
+---
+
+{{< include _poly-kit.qmd >}}
+
+A **polyrhythm** is two or more rhythms played at the same time that divide the same span of time into
+different numbers of even parts. In **3 against 2**, one part plays three even notes while another plays two,
+and both start together. Each player on this page draws the cycle as a circle (the hand goes round once per
+cycle) and as a grid (time runs left to right). Click a layer's name to mute it.
+
+## 3 against 2
+
+<div class="poly" data-layers="3;2" data-names="Three;Two" data-sounds="hi;lo" data-bpm="50"></div>
+
+The two layers meet only on the first beat. In between, the notes fall at different places: the "two" lands
+exactly between the second and third "three". A common way to say it is **"nice cup of tea"**:
+
+Count six even pulses. The three falls on pulses 1, 3 and 5; the two on 1 and 4. Together they sound on
+pulses 1, 3, 4 and 5, one syllable each: *nice* (both), *cup* (three), *of* (two), *tea* (three).
+
+**Try it.** Tap the three with your right hand on your knee and the two with your left. Mute one layer
+and play it yourself; then mute the other.
+
+## The grid underneath: least common multiple
+
+To write two even layers on one grid, you need a pulse that both fit into. That pulse count is the
+**least common multiple** of the two numbers.
+
+| Polyrhythm | Grid | Layer A hits on pulse | Layer B hits on pulse |
+|---|---|---|---|
+| 3 : 2 | 6 | 1, 3, 5 | 1, 4 |
+| 4 : 3 | 12 | 1, 4, 7, 10 | 1, 5, 9 |
+| 5 : 4 | 20 | every 4th | every 5th |
+| 5 : 3 | 15 | every 3rd | every 5th |
+
+Below the player, the line under the grid shows the pulse count for whatever is playing.
+
+## 4 against 3
+
+<div class="poly" data-layers="3;4" data-names="Three (beat);Four" data-sounds="lo;hi" data-bpm="60" data-beat="0"></div>
+
+A common saying for 4 against 3 is **"pass the golden butter"**, said evenly over twelve pulses.
+Hear the three as the beat first (it is the lower sound), then switch: mute the three, feel the four as the beat,
+and the three becomes the cross-rhythm.
+
+## 5 against 4 and beyond
+
+<div class="poly" data-layers="4;5" data-names="Four (beat);Five" data-sounds="lo;hi" data-bpm="60" data-beat="0"></div>
+
+With bigger numbers no one counts the grid. Players hear the outer layer as a steady line that slides
+against the beat and meets it again at the start of the cycle.
+
+## Polyrhythm, polymeter and hemiola
+
+These three words are often mixed up:
+
+- **Polyrhythm**: different even divisions of the *same span* (3 notes and 2 notes in one bar).
+- **Polymeter**: patterns of *different lengths* on the *same pulse* (a 5-step riff over 4-step bars). They
+  drift apart and meet again after a while. The [math rock lesson](poly-math-rock.qmd) is about this.
+- **Hemiola**: three groups of two heard against two groups of three, as in 6/8 heard as 3/4. It is
+  3 against 2 at the level of beats.
+
+<div class="poly" data-layers="X.x.x;X..." data-names="5-step riff;4-step bar" data-sounds="hi;kick" data-bpm="80" data-polymeter></div>
+
+This one is polymeter: every step is the same length. Watch the 5-step pattern start in a different
+place each bar until it lines up after 20 steps.
+
+## Make your own
+
+The [Polyrhythm tool](../tools/polyrhythm.qmd) lets you type layers, choose sounds and switch between
+polyrhythm and polymeter.
+
+## Lessons in this part
+
+1. What Is a Polyrhythm? (this page)
+2. [West African Bell Patterns and Cross-Rhythm](poly-west-africa.qmd)
+3. [Clave and 6/8 in Afro-Cuban Music](poly-afro-cuban.qmd)
+4. [Polyrhythm in Jazz](poly-jazz.qmd)
+5. [Polymeter and Polyrhythm in Math Rock](poly-math-rock.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Polyrhythm." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Polyrhythm](https://en.wikipedia.org/wiki/Polyrhythm). Unverified: definitions, 3:2 and 4:3, cross-rhythm. Not yet re-read.
+:::
+<!-- /works-cited -->
+

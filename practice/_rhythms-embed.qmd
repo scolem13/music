@@ -170,6 +170,12 @@
 					"<div class='audio-error'>Audio is not supported in this browser.</div>";
 			}
 
+			if (window.RhythmChant) {   // "Conversational": chant the pattern instead of the abcjs player (off by default on this bank)
+				RhythmChant.scope("rhythm-patterns", false);
+				const audioEl = document.getElementById("audio");
+				RhythmChant.mountBar(audioEl.parentNode, { getAbc: () => window.rcAbc, hide: [audioEl] });
+			}
+
 			setTune(false);
 		}
 
@@ -201,6 +207,7 @@
 			if (r) lines.push("");
 
 			abcString = lines.join("\n");
+			window.rcAbc = abcString;   // the ABC now shown, for the Conversational chant (rhythm-chant.js)
 
 			const abcOptions = { add_classes: true, clickListener: clickListener };
 			const seekControls = document.querySelector(".seek-controls");
@@ -284,7 +291,10 @@
 	</div>
 	<script src="/apps/shared/soundfont.js"></script>
 	<script src="/apps/shared/abcjs-basic.js"></script>
-	<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+	<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
+	<script src="/apps/shared/abc-core.js?v=1"></script>
+	<script src="/apps/shared/abc-events.js?v=1"></script>
+	<script src="/apps/shared/rhythm-chant.js?v=2"></script>
 	<script src="/apps/shared/cursor-synth.js"></script>
 	<script>
 		const cursorControl = new CursorControl();

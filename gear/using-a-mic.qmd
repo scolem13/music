@@ -1,0 +1,111 @@
+---
+title: "Using a Mic: A Guide for Speakers"
+description: "For anyone who speaks into a mic: announcements, presentations, readings, assemblies. Slow down, say every consonant, and know what the sound engineer can and can't fix."
+toc: true
+toc-depth: 2
+---
+
+This guide is for people who **speak** through a microphone: announcements, assemblies, presentations,
+readings, introducing a band. You don't need to know anything about the sound system. A few habits matter
+much more than the gear.
+
+## The two most important things
+
+**1. Slow down.** You will feel like you are speaking far too slowly. You aren't. A hall full of people
+echoes: every word you say bounces around the room for a moment after you've said it. If the next word
+comes too fast, it lands on top of that echo and both get smeared. "Clear speech," the kind people use to be
+understood, has "a slower speaking rate, more and longer pauses" (Wikipedia, "Intelligibility").
+Pause at the end of each sentence. Let the room go quiet before the next one.
+
+**2. Say every consonant.** Vowels (a, e, o) are long and loud and survive the echo. Consonants (t, k, p, s,
+d) are short and quiet, and the echo covers them up: reverberation favours "vowels with steady states, while
+masking stops, glides and vowel transitions" (Wikipedia, "Intelligibility"). But the consonants are what
+tell "fifteen" from "fifty," and "can" from "can't." Clear speech has "increased consonant intensity compared
+to adjacent vowels" (same source). Finish the ends of words. Over-pronounce a little: what sounds fussy up
+close sounds normal at the back of the room.
+
+<div class="sk-tip">Try it: read one sentence at your normal speed, then again at about two-thirds the speed,
+hitting every final t and d. Record both on your phone from across the room and listen back.</div>
+
+Numbers, names and times are the easiest things to lose. Say them slowly, and say the important ones twice:
+"Room two-oh-four. That's two, oh, four."
+
+## Holding a handheld mic
+
+- **Close, and the same distance all the time.** A few centimetres to about a hand's width from your mouth.
+  The closer the mic, the more of you and the less of the room it hears (Wikipedia, "Gain before feedback").
+  The level changes fast with distance: halve the distance and you are about 6 dB louder. Keep the
+  distance steady and the engineer can set you once.
+- **Point it at your mouth**, not at your chin or chest. Most mics hear from the end, not the side.
+- **Turn your head with the mic.** If you look at someone on your left, take the mic with you.
+- **Very close sounds boomy.** Right on your lips the mic adds bass (the **proximity effect**: Wikipedia,
+  "Proximity effect"). A little is warm; a lot is muddy.
+- **Pops.** "P" and "b" push a puff of air into the mic and it thumps. Hold the mic slightly below or to the
+  side of your mouth, so you speak across it, not straight into it.
+- **Hold the handle**, not the ball at the top. Covering the grille muffles the sound and can cause feedback.
+- **Don't tap it or blow into it** to check it's on. Just say "Good morning" at your normal level.
+
+## On a stand or a lectern
+
+Adjust the stand before you start, not halfway through. Bring the mic to your mouth, not your mouth to the mic.
+At a lectern, keep the same distance when you look down at your notes: lean with the mic, or lift your notes.
+If you move away from the lectern, you have left the mic.
+
+## Clip-on (lavalier) and headset mics
+
+- A clip-on mic goes in the middle of your chest, a hand's width below your chin, on the outside of your
+  clothes. Scarves, jackets and lanyards rubbing on it are very loud.
+- Turning your head away from it makes you quieter. Talk forward.
+- Before you go on: ask where the mute switch is. Assume the mic is always on. People in the hall hear
+  backstage conversations.
+
+## Walking around
+
+Don't walk in front of the loudspeakers with a live mic. A mic pointed at a speaker hears itself,
+the sound goes round the loop, and it squeals: **feedback** (Wikipedia, "Audio feedback"). If it starts
+squealing, step back behind the speakers or turn the mic away. Don't cover it with your hand.
+
+## What the sound engineer can and can't do
+
+The engineer has a lot of tools, but they all work on the sound that reaches the mic. They can't put back
+what the mic never heard.
+
+| The engineer **can** | The engineer **can't** |
+|---|---|
+| Set your level so you are clear, if you stay at a steady distance | Make you loud when the mic is far away. Turning up a distant mic turns up the room too, and it squeals before you are loud enough (Wikipedia, "Gain before feedback") |
+| Take some boominess out of your voice with EQ, and cut low rumble | Make a mumbled word clear, or separate two words you ran together |
+| Smooth out some loud/soft swings with a compressor | Keep up with a sudden shout after a whisper. Shouting into the mic just distorts. Step back instead |
+| Reduce pops a little with a low cut | Remove a pop completely. Speak across the mic |
+| Turn you up for the room, and mute you between speakers | Know you're about to speak. Tell them your cue, and don't start until you hear yourself |
+| Fix feedback by turning you down | Turn you back up while you're standing in front of the speakers |
+| Help you before the event, at a sound check | Fix in the moment what a two-minute sound check would have caught |
+
+The engineer can only turn up what's there. A clear, steady voice can be made bigger. A muddled one only
+becomes louder and muddled.
+
+## Before you speak: a checklist
+
+1. **Sound check.** Say a sentence or two at the level you'll really use (not quieter, and not "check one two").
+2. Ask the engineer: is the mic on now? Who switches it on?
+3. Find your distance and keep it.
+4. Mark slow-down and pause points in your notes.
+5. Practise the names and numbers out loud.
+6. Water nearby. A dry mouth loses consonants first.
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+"Audio feedback." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Audio_feedback](https://en.wikipedia.org/wiki/Audio_feedback).
+
+"Gain before feedback." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Gain_before_feedback](https://en.wikipedia.org/wiki/Gain_before_feedback). Mic distance; halving it gives about 6 dB.
+
+"Intelligibility (communication)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Intelligibility_(communication)](https://en.wikipedia.org/wiki/Intelligibility_(communication)). Clear speech: slower rate, more pauses, stronger consonants; reverberation masks stops and transitions.
+
+"Proximity effect (audio)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Proximity_effect_(audio)](https://en.wikipedia.org/wiki/Proximity_effect_(audio)).
+:::
+<!-- /works-cited -->
+
+```{=html}
+<script src="/apps/shared/lessons/sections.js?v=1"></script>
+```

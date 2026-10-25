@@ -15,7 +15,10 @@
 //                   A choice may also carry "chart" (its own chart; the band starts it from bar 1) or "charts" (a quiz picks one), and
 //                   "sections": [[1, "A1"], [9, "A2"], ...] (the bar each section starts on): the status strip then says "Bar 9 · A2".
 //     data-staves   which staves to write under the demo: "comp bass drums" (default: the parts that are on)
-//   Under the buttons the band's last four bars are written out (BandNotation), so what each player did can be read.
+//   Under the buttons the band's whole pass of the form is written out (BandNotation) as soon as Play is pressed, before it sounds (the player's write-ahead mode); a quiz shows nothing, so the answer is not given away.
+//     data-view="grid"  instead: a chord grid of the whole chart with its sections labelled (Whole tune, or one section at a
+//                   time on tabs), the bar sounding lit; the band writes a pass ahead (player ahead mode) and the whole pass is
+//                   written out, section by section, before it is played.
 //
 //   <div class="ar-quiz" data-style="hymn" data-charts="C|F|G|C;Am|Dm|E|Am" data-choices='[...]'></div>
 //     a listening quiz on the same band: "New" plays one of the choices (never the same twice running) over one of the charts,
@@ -55,7 +58,64 @@
   function volumes(w) { var v = {}; PARTS.forEach(function (p) { v[p.id] = w.on[p.id] ? 1 : 0; }); return v; }
   function hasPart(w, id) { var d = w.el.dataset; if (id === 'comp2') return !!d.second; if (id === 'congas') { var s = global.BandCatalog.byId(global.BandCatalog.styles, w.style); return !!((s && s.congas) || (w.choice && w.choice.congas && w.choice.congas !== 'none')); } return true; }
 
+  // ---- data-view="grid": chord grid, sections, the whole pass written out ahead
+  function secList(w) {   // [{ name, from, to }] in 0-based bars
+    var n = w.chart.split('|').length, s = (w.secs || []).slice().sort(function (a, b) { return a[0] - b[0]; });
+    if (!s.length) return [{ name: '', from: 0, to: n - 1 }];
+    var out = s.map(function (x, i) { return { name: x[1], from: x[0] - 1, to: (s[i + 1] ? s[i + 1][0] - 1 : n) - 1 }; });
+    if (out[0].from > 0) out.unshift({ name: '', from: 0, to: out[0].from - 1 });
+    return out;
+  }
+  function shownSecs(w) { var all = secList(w); return w.tab == null || !all[w.tab] ? all : [all[w.tab]]; }
+  function buildGrid(w) {
+    var all = secList(w), bars = w.chart.split('|');
+    if (w.tab != null && !all[w.tab]) w.tab = null;
+    w.tabs.innerHTML = ''; w.tabs.hidden = all.length < 2;
+    if (all.length > 1) {
+      w.tabs.appendChild(el('span', 'ar-lbl', 'Show:'));
+      [{ k: null, t: 'Whole tune' }].concat(all.map(function (x, i) { return { k: i, t: x.name || 'Bars ' + (x.from + 1) + '–' + (x.to + 1) }; })).forEach(function (o) {
+        var b = el('button', 'btn btn-sm btn-outline-secondary', o.t); b.type = 'button'; var on = o.k === w.tab;
+        b.classList.toggle('ar-on', on); b.setAttribute('aria-pressed', String(on));
+        b.addEventListener('click', function () { w.tab = o.k; buildGrid(w); w.drawn = null; draw(w); });
+        w.tabs.appendChild(b);
+      });
+    }
+    w.grid.innerHTML = ''; w.cells = {};
+    shownSecs(w).forEach(function (x) {
+      var row = el('div', 'ar-gsec'); row.appendChild(el('div', 'ar-glbl', x.name));
+      var g = el('div', 'ar-gbars');
+      for (var i = x.from; i <= x.to; i++) {
+        var c = el('div', 'ar-gbar'); c.appendChild(el('span', 'ar-gnum', String(i + 1)));
+        c.appendChild(el('span', 'ar-gch', bars[i].trim().split(/\s+/).join('  ')));
+        g.appendChild(c); w.cells[i] = c;
+      }
+      row.appendChild(g); w.grid.appendChild(row);
+    });
+    lightBar(w);
+  }
+  function lightBar(w) {
+    Object.keys(w.cells || {}).forEach(function (k) { w.cells[k].classList.toggle('ar-gnow', now === w && +k === w.cur); });
+  }
+  function drawPass(w) {
+    var pass = w.passes[w.showCh] || [], key = w.showCh + '/' + w.tab + '/' + JSON.stringify(w.on);
+    var secs = shownSecs(w), ready = secs.every(function (x) { for (var i = x.from; i <= x.to; i++) if (!pass[i]) return false; return true; });
+    if (!ready || w.drawn === key) return;
+    w.drawn = key; w.staff.innerHTML = '';
+    var want = (w.el.dataset.staves || '').split(/\s+/).filter(Boolean), show = {};
+    PARTS.forEach(function (p) { show[p.id] = want.length ? want.indexOf(p.id) >= 0 : (w.on[p.id] && hasPart(w, p.id)); });
+    var names = { comp: compName(w.band.opts.compSound), comp2: w.band.opts.second ? compName(w.band.opts.second.compSound) : undefined };
+    w.staff.appendChild(el('p', 'ar-hint', 'What the band will play this time through' + (w.showCh ? ' (pass ' + (w.showCh + 1) + ')' : '') + ', written out before it sounds:'));
+    secs.forEach(function (x) {
+      if (x.name) w.staff.appendChild(el('div', 'ar-ssec', x.name + ' · bars ' + (x.from + 1) + '–' + (x.to + 1)));
+      var box = el('div'); w.staff.appendChild(box);
+      try { global.ABCJS.renderAbc(box, global.BandNotation.toAbc(pass.slice(x.from, x.to + 1), { key: 'C', straight: w.band.opts.feel === 'straight', drums: show.drums, congas: show.congas, show: show, names: names, barsPerLine: 4 }), { responsive: 'resize', add_classes: true }); }
+      catch (e) { if (global.console) console.warn('ArrangeLesson: notation', e); }
+    });
+  }
+  function soon(w) { if (w.timer) return; w.timer = setTimeout(function () { w.timer = null; draw(w); }, 30); }
+
   function draw(w) {
+    if (w.ahead) { if (w.passes && w.band) drawPass(w); return; }
     if (!global.BandNotation || !global.ABCJS || !w.log.length || w.hide) return;
     var bars = w.log.slice(-4), show = {};
     var want = (w.el.dataset.staves || '').split(/\s+/).filter(Boolean);
@@ -68,7 +128,7 @@
 
   function stop() {
     if (player) player.stop();
-    if (now) { now.btn.textContent = now.idle || '▶ Play'; now.btn.classList.remove('ar-on'); now = null; }
+    if (now) { var was = now; now.btn.textContent = now.idle || '▶ Play'; now.btn.classList.remove('ar-on'); now = null; if (was.gridView) lightBar(was); }
     var s = $('ar-stop'); if (s) s.disabled = true; status('');
   }
   function status(t) { var s = $('ar-status'); if (s) s.textContent = t; }
@@ -80,16 +140,21 @@
   }
   function play(w) {
     if (now === w) { stop(); return; }
-    stop(); now = w; w.log = []; w.band = bandOf(w);
+    stop(); now = w; w.log = []; w.band = bandOf(w); w.passes = {}; w.showCh = 0; w.cur = -1; w.drawn = null;
     var parsed = global.TuneChart.parse(abcOf(w.chart, w.el.dataset.meter)), b = w.band;
     var cfg = { parsed: parsed, tempo: b.tempo, transpose: 0, countIn: 1, choruses: 0, opts: b.opts, volumes: volumes(w),
       onState: function (s) { if (s === 'loading') status('Loading sounds…'); else if (s === 'playing') status(''); },
       onLoadProgress: function (d, t) { if (t) status('Loading sounds… ' + Math.round(100 * d / t) + '%'); },
-      onBar: function (info) { if (now && !info.countIn && info.index >= 0) status('Bar ' + (info.index + 1) + secAt(now, info.index + 1)); },
-      onBarEvents: function (rec) { var x = now; if (!x) return; x.log.push(rec); if (x.log.length % 4 === 0 || x.log.length < 4) draw(x); } };
+      onBar: function (info) { var x = now; if (!x || info.countIn || info.index < 0) return; status('Bar ' + (info.index + 1) + secAt(x, info.index + 1));
+        if (x.ahead) { x.cur = info.index; lightBar(x); if (info.chorus !== x.showCh) { x.showCh = info.chorus; delete x.passes[info.chorus - 2]; draw(x); } } },
+      onBarEvents: function (rec) { var x = now; if (!x) return;
+        if (x.ahead) { if (rec.ending) return; (x.passes[rec.chorus] = x.passes[rec.chorus] || [])[rec.index] = rec; if (rec.chorus === x.showCh) { x.drawn = null; soon(x); } return; }
+        x.log.push(rec); if (x.log.length % 4 === 0 || x.log.length < 4) draw(x); },
+      onRewind: function (bar) { var x = now; if (!x || !x.passes) return;
+        Object.keys(x.passes).forEach(function (c) { x.passes[c].forEach(function (r, i) { if (r && r.bar >= bar) delete x.passes[c][i]; }); }); x.drawn = null; } };
     if (!player) player = global.BandPlayer.create(cfg);
     else { player.setChart(parsed); player.setTempo(b.tempo); player.setOpts(b.opts); PARTS.forEach(function (p) { player.setVolume(p.id, cfg.volumes[p.id]); }); }
-    player.setInstruments(b.instruments);
+    player.setInstruments(b.instruments); if (player.setAhead) player.setAhead(!!w.ahead);
     w.btn.textContent = '■ Stop'; w.btn.classList.add('ar-on'); var s = $('ar-stop'); if (s) s.disabled = false;
     var t = $('ar-tempo'); if (t && !tempoOverride) { t.value = b.tempo; $('ar-tempo-n').value = b.tempo; }
     // (the player is made once; its callbacks go to whichever demo is playing now)
@@ -113,7 +178,7 @@
       var b = el('button', 'btn btn-sm btn-outline-secondary ar-chip', p.id === 'comp' ? compLabel(d.comp, w.style) : p.id === 'comp2' ? compLabel(d.second) : p.label); b.type = 'button';
       b.dataset.part = p.id; if (p.id === 'congas' && !hasPart(w, 'congas')) b.hidden = true;
       function paint() { b.setAttribute('aria-pressed', String(!!w.on[p.id])); b.classList.toggle('ar-on', !!w.on[p.id]); }
-      b.addEventListener('click', function () { w.on[p.id] = !w.on[p.id]; paint(); refresh(w); draw(w); }); paint(); chips.appendChild(b);
+      b.addEventListener('click', function () { w.on[p.id] = !w.on[p.id]; paint(); refresh(w); w.drawn = null; draw(w); }); paint(); chips.appendChild(b);
     });
     tools.appendChild(el('span', 'ar-lbl', 'Who plays:')); tools.appendChild(chips); node.appendChild(tools);
     if (d.choices) {
@@ -123,13 +188,20 @@
         var b = el('button', 'btn btn-sm btn-outline-secondary', c.label); b.type = 'button';
         b.addEventListener('click', function () { w.choice = c.opts; w.secs = c.sections || null; Array.prototype.forEach.call(row.querySelectorAll('button'), function (x) { x.classList.toggle('ar-on', x === b); x.setAttribute('aria-pressed', String(x === b)); });
           var cg = chips.querySelector('[data-part=congas]'); if (cg) cg.hidden = !hasPart(w, 'congas');
-          if (c.chart && c.chart !== w.chart) { w.chart = c.chart; if (now === w) { stop(); play(w); } return; }
+          if (c.chart && c.chart !== w.chart) { w.chart = c.chart; if (w.gridView) buildGrid(w); if (now === w) { stop(); play(w); } return; }
+          if (w.gridView) buildGrid(w); w.drawn = null;
           refresh(w); });
         row.appendChild(b); if (i === 0) { w.choice = c.opts; w.secs = c.sections || null; if (c.chart) w.chart = c.chart; b.classList.add('ar-on'); b.setAttribute('aria-pressed', 'true'); } else b.setAttribute('aria-pressed', 'false');
       });
       node.appendChild(row);
     }
-    w.staff = el('div', 'ar-staff'); w.staff.appendChild(el('p', 'ar-hint', 'Press Play: the band\'s last four bars are written out here as it plays them.'));
+    if (d.view === 'grid') {
+      w.gridView = true; w.tab = null;
+      w.tabs = el('div', 'ar-tools ar-tabs'); w.tabs.setAttribute('role', 'group'); w.tabs.setAttribute('aria-label', 'Show');
+      w.grid = el('div', 'ar-grid'); node.appendChild(w.tabs); node.appendChild(w.grid); buildGrid(w);
+    }
+    w.ahead = true;   // a demo writes the whole pass out before it sounds (a quiz does not: it would give the answer away)
+    w.staff = el('div', 'ar-staff'); w.staff.appendChild(el('p', 'ar-hint', 'Press Play: what the band will play is written out here, a whole time through, before it plays it.'));
     node.appendChild(w.staff);
   }
 

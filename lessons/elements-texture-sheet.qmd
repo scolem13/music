@@ -1,0 +1,235 @@
+---
+title: "Texture on One Page"
+toc: true
+toc-depth: 2
+description: "Every texture term on one revision sheet, each with a short example to play: monophonic, octaves, homophonic, melody and accompaniment, polyphonic, the instruments' roles, call and response, antiphonal, pedal, drone, Alberti bass and basso continuo. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, composing, arranging]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Texture](elements-texture.qmd) on one sheet, the way the school handout lays it out. Every ▶ plays the
+example; most use the same two [measures]{.nn} of *Twinkle, Twinkle* so you hear only the texture change. Press
+**Full screen** to put the sheet on the whole screen for revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Texture: how the layers fit together"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Monophonic
+<p>One line only. Any number of players, as long as they all play the same part. No chords.</p>
+<div class="abc-ex" data-bpm="96" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+G G d d|e e d2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Octaves
+<p>The same tune in two parts, an octave apart: same note names, different pitch. Still one line, heavier.</p>
+<div class="abc-ex" data-bpm="96" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+[G,G] [G,G] [Dd] [Dd]|[Ee] [Ee] [Dd]2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Homophonic
+<p>All parts move <strong>together in the same rhythm</strong>, as chords. Like a hymn. <em>Homo-phonic</em>: "same sound".</p>
+<div class="abc-ex" data-bpm="80" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+[DG] [DG] [Gd] [Gd]|[Ge] [Ge] [Fd]2|]
+V:2 clef=bass
+[G,,B,] [G,,B,] [G,,B,] [G,,B,]|[C,C] [C,C] [D,A,]2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Melody and accompaniment
+<p>A tune, with chords or a pattern underneath supporting it. The most common texture in pop.</p>
+<div class="abc-ex" data-bpm="96" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|e e d2|]
+V:2 clef=bass
+[G,,D,]2 [G,,D,]2|[C,G,]2 [G,,D,]2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Polyphonic
+<p>Two or more <strong>independent</strong> lines, each a tune (counterpoint). Copying each other is <strong>imitation</strong>; a round is strict imitation.</p>
+<div class="abc-ex" data-bpm="100" data-width="190"><script type="text/plain">
+X:1
+T:Frère Jacques as a round
+M:4/4
+L:1/4
+K:G
+V:1
+G A B G|B c d2|]
+V:2
+z4|G A B G|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Who does what
+<ul>
+<li><strong>Melody</strong>: the tune</li>
+<li><strong>Accompaniment</strong>: the parts supporting it</li>
+<li><strong>Countermelody</strong>: a second tune that fits with the main one</li>
+<li><strong>Bass line</strong>: the lowest part</li>
+</ul>
+<div class="abc-ex" data-bpm="96" data-width="190"><script type="text/plain">
+X:1
+T:Tune, countermelody above, bass line
+M:4/4
+L:1/4
+K:G
+V:1
+b2 a2|g2 f2|]
+V:2
+G G d d|e e d2|]
+V:3 clef=bass
+G,,2 B,,2|C,2 D,2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Call and response
+<p>One performer or group plays a phrase; another answers. Blues, gospel, work songs, African music, pop.</p>
+<div class="abc-ex" data-bpm="104" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|z4|]
+V:2 clef=bass
+z4|E, E, D,2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Antiphonal
+<p>Two groups answering each other from <strong>different places</strong>, such as two choirs on opposite sides of a church.</p>
+<div class="abc-ex" data-bpm="100" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+[GB] [GB] [Ad] [Ad]|z4|[GB] [Ac] [Bd]2|z4|]
+V:2
+z4|[GB] [GB] [Ad] [Ad]|z4|[GB] [Ac] [Bd]2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Pedal
+<p>A long or repeated note, usually in the bass, held while the chords change above it.</p>
+<div class="abc-ex" data-bpm="96" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+[GB] [GB] [Ac] [Ac]|[FA] [FA] [GB]2|]
+V:2 clef=bass
+D, D, D, D,|D, D, D,2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Drone
+<p>Long or repeated notes, usually two a 5th apart, as on bagpipes.</p>
+<div class="abc-ex" data-bpm="96" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|e e d2|]
+V:2 clef=bass
+[G,,D,]4|[G,,D,]4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Alberti bass
+<p>A Classical piano accompaniment: each chord broken into four equal notes, <strong>lowest, highest, middle, highest</strong>.</p>
+<div class="abc-ex" data-bpm="100" data-width="190"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:G
+V:1
+G G d d|e e d2|]
+V:2 clef=bass
+L:1/8
+G,DB,D G,DB,D|C,G,E,G, G,DB,D|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Basso continuo
+<p>Baroque: a bass instrument (cello, bass viol, bassoon) plays the bass line while a harpsichord, organ or lute fills in chords, read from <strong>figured bass</strong>.</p>
+<div class="abc-ex" data-bpm="92" data-width="190" data-sound="harpsichord"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:G
+V:1
+d2 BG TA3 G|G8|]
+V:2 clef=bass
+[G,,G,]2 [B,,D]2 [C,E]2 [D,C]2|[G,,B,]8|]
+</script></div>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="texture"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing texture
+
+- Name it, then describe it: *thin* or *thick*, *sparse* or *dense*, how many parts.
+- Say what changes, in order: "It starts **monophonic** (a solo flute), becomes **homophonic** when the choir comes in,
+  and the middle is **polyphonic**, the voices entering one by one in **imitation**."
+- The longer lesson, with fuller examples: [Elements 10: Texture](elements-texture.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Alberti bass." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Alberti_bass](https://en.wikipedia.org/wiki/Alberti_bass). Lowest, highest, middle, highest; Classical era; Mozart K. 545.
+
+"Basso continuo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Basso_continuo](https://en.wikipedia.org/wiki/Basso_continuo). Chord instruments (harpsichord, organ, lute, theorbo…) and bass instruments (cello, double bass, bass viol, bassoon); figured bass.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

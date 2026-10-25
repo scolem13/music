@@ -1,0 +1,102 @@
+---
+title: "Modulation Finder"
+subtitle: "Textbook modulations and passages from Bach's chorales and 19th-century songs, sorted by where they start and where they go"
+toc: false
+description: "Search about 800 analysed modulations by the starting key's mode, the final key's mode and the distance between the two tonics in half steps: the textbook examples of Reger, Rimsky-Korsakov, Tchaikovsky, Aldwell and Schachter, and Kostka and Payne, and short passages from Bach's chorales and the OpenScore Lieder. Each result plays, with the Roman numerals under the notes."
+---
+
+{{< include _head.qmd >}}
+
+Pick the mode of the starting key, the mode of the key it ends in, and how far apart the two tonics are, counted in half steps up
+from the first tonic (7 half steps: C major to G major, or A minor to E minor). The bars show how many examples there are at each
+distance; click one to list them. Each result shows the whole path of keys the analysis names, and plays like the scores on the book
+pages. How to read the labels: [Analysed Scores](index.qmd#reading-the-labels).
+
+There are two kinds of example. The **textbook** ones are written to show a modulation, a few chords long. The **real pieces** are
+short passages, two bars before a key change to three after, from Bach's four-part chorales and from 19th-century songs; their
+headings give the bars, and the link opens the full analysis.
+
+```{=html}
+<div id="mf" class="mf">
+  <div class="mf-filters">
+    <label for="mf-start">Starts in <select id="mf-start" class="form-select form-select-sm"><option value="">major or minor</option><option value="major">a major key</option><option value="minor">a minor key</option></select></label>
+    <label for="mf-end">Ends in <select id="mf-end" class="form-select form-select-sm"><option value="">major or minor</option><option value="major">a major key</option><option value="minor">a minor key</option></select></label>
+    <label for="mf-book">From <select id="mf-book" class="form-select form-select-sm"></select></label>
+    <button type="button" id="mf-reset" class="btn btn-sm btn-outline-secondary">Clear</button>
+  </div>
+  <div class="mf-dist-wrap"><div class="mf-dist-h">Distance from the first tonic up to the last, in half steps</div><div id="mf-dist" class="mf-dists"></div></div>
+  <div class="mf-row"><p id="mf-summary" class="mf-summary" aria-live="polite"></p><div id="as-space-slot" class="mf-space"></div></div>
+  <div id="mf-results"></div>
+  <button type="button" id="mf-more" class="btn btn-outline-secondary" hidden></button>
+</div>
+<style>
+.mf-filters { display: flex; flex-wrap: wrap; gap: .6rem 1.2rem; align-items: end; margin: 1rem 0; }
+.mf-filters label { display: grid; gap: .2rem; font-size: .85rem; }
+.mf-dist-h { font-size: .8rem; opacity: .75; margin-bottom: .3rem; }
+.mf-dists { display: flex; gap: 3px; flex-wrap: wrap; }
+.mf-d { display: grid; justify-items: center; gap: 2px; min-width: 2.6rem; padding: .3rem .2rem; border: 1px solid #dee2e6; border-radius: 4px; background: transparent; color: inherit; font-size: .8rem; cursor: pointer; }
+.mf-d.mf-any { min-width: 6.5rem; align-content: end; }
+.mf-d[aria-pressed="true"] { border-color: #0d6efd; background: rgba(13, 110, 253, .1); }
+.mf-d:disabled { opacity: .35; cursor: default; }
+.mf-bar { display: flex; align-items: end; height: 42px; width: 14px; }
+.mf-bar span { display: block; width: 100%; background: #b8590a; border-radius: 2px 2px 0 0; min-height: 0; }
+.mf-n { font-variant-numeric: tabular-nums; font-weight: 600; }
+.mf-l { opacity: .7; }
+.mf-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: .5rem 2rem; margin: 1rem 0 .5rem; }
+.mf-summary { font-weight: 600; margin: 0; }
+.mf-loading { font-size: .85rem; opacity: .75; }
+.mf-space { min-width: 0; flex: 0 1 260px; font-size: .85rem; }
+.mf-card { border-top: 1px solid #dee2e6; padding-top: .8rem; margin-bottom: 1.2rem; }
+.mf-card h3 { font-size: 1.05rem; margin: 0; }
+.mf-meta { font-size: .85rem; opacity: .8; margin: .15rem 0 .4rem; }
+.mf-path { font-weight: 600; }
+@media (prefers-color-scheme: dark) { .mf-d, .mf-card { border-color: #444; } }
+</style>
+```
+
+{{< include _modulation-finder-data.qmd >}}
+
+```{=html}
+<script src="/apps/shared/modulation-finder.js?v=3"></script>
+```
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Which keys count:** the start is the example's first key and the end its last, as the book's title names them where it does
+  (Reger, Rimsky-Korsakov, Tchaikovsky and the textbooks' own progressions); otherwise the analysis's first and last keys. An example that
+  goes out and comes back (Kostka 19-4, C → E♭ → G♭ → C) counts as 0 half steps; its path shows where it went.
+- **Distance** is counted up from the first tonic, so 7 is a 5th up or a 4th down. Enharmonic keys count the same (C to D♭ and C to C♯
+  are both 1).
+- **Data:** the textbook examples are written by `scripts/when-in-rome/build.mjs` with the book pages, so they always match them
+  (Reger's example 41 has no notes in the corpus and is left out). The passages from real pieces are written by
+  `scripts/when-in-rome/corpus.mjs` to `apps/shared/data/modulation-corpus.json`, loaded after the page shows.
+- **Which key changes become passages:** the old key lasted at least 2 bars and the new one lasts at least 2, so a chord or two
+  tonicizing a key is not counted; at most 2 a piece. A passage is kept only if the analysis fits its notes: at three quarters or
+  more of the numerals, at least two of the chord's notes are sounding. That threw out the passages whose bar numbers did not line up.
+- **Analysts differ:** the chorales are Dmitri Tymoczko's analyses, which name a new key at most cadences; the songs are by
+  contributors to the *Working in Harmony* app, proof-read by Mark Gotham. Some keys they name, a teacher might call a tonicization.
+- **Left out of the songs:** the words, and grace notes.
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation.
+
+OpenScore. *OpenScore Lieder Corpus*. GitHub. [github.com/OpenScore/Lieder](https://github.com/OpenScore/Lieder). The songs' notes (MusicXML, CC0), from which the finder's song passages are cut; the words are left out.
+
+Sapp, Craig Stuart, encoder. *370 Four-part Chorales by J. S. Bach in the Humdrum File Format*. GitHub. [github.com/craigsapp/bach-370-chorales](https://github.com/craigsapp/bach-370-chorales). The chorale's notes (after Dörffel's edition, Breitkopf & Härtel, c. 1875), converted to ABC for this page.
+
+Tymoczko, Dmitri, analyst. Roman-numeral analyses of the Bach chorales and of Beethoven, Piano Sonata Op. 27 No. 2, in *When in Rome*. [github.com/MarkGotham/When-in-Rome/tree/master/Corpus](https://github.com/MarkGotham/When-in-Rome/tree/master/Corpus). The chorale's analysis; his readings of the Moonlight are quoted where they differ from Chen and Su's.
+
+**For teachers**
+
+Nápoles López, Néstor, et al. *Key Modulation Dataset*. GitHub (DDMAL). [github.com/DDMAL/key_modulation_dataset](https://github.com/DDMAL/key_modulation_dataset). The encodings and analyses of the textbook examples, translated to RomanText by Nápoles López and copied into When in Rome.
+
+*Working in Harmony* (app). Fourscore and More. [fourscoreandmore.org/apps/working-in-harmony/](https://fourscoreandmore.org/apps/working-in-harmony/). Where the song analyses in When in Rome were made, by contributors, and proof-read by Mark Gotham.
+:::
+<!-- /works-cited -->

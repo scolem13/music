@@ -32,6 +32,71 @@ const srv = http.createServer((q, s) => { const f = path.join(SITE, decodeURICom
       check(`${p.id} (${versions[j].who.slice(0, 22)}): every chord of the analysis labelled`, labels === versions[j].count && !versions[j].misses.length, labels + " of " + versions[j].count);
     }
   }
+  for (const book of B.BOOKS) {   // the textbooks: every example of a book on one page, each checked the same way
+    const html = fs.readFileSync(SITE + `/theory/analysed-scores/${book.page}.html`, "utf8"), exs = B.bookExamples(book);
+    const abcs = new Map([...html.matchAll(/<div class="as-score" data-piece="([^"]+)"[^>]*>\s*<script type="text\/plain">([\s\S]*?)<\/script>/g)].map(m => [m[1], m[2].replace(/&quot;/g, '"').replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")]));
+    let bad = [], labelsBad = [];
+    for (const ex of exs) {
+      if (ex.empty) { if (abcs.has(ex.id)) bad.push(ex.label + " (should have no score)"); continue; }
+      const abc = abcs.get(ex.id); if (!abc) { bad.push(ex.label + " (no score)"); continue; }
+      const v = B.buildPiece(ex.p).versions[0], want = [];
+      for (const evs of ex.p.score.voices.values()) for (const e of evs) if (!e.rest) for (const n of e.notes) if (!n.tieMid && !n.tieEnd) want.push((e.t / B.W).toFixed(4) + ":" + (12 * (n.o + 1) + NAT[n.l] + n.a));
+      want.sort();
+      const plain = abc.replace(/:\|/g, "|").replace(/\|:/g, "|");   // repeats played once, to match the source's notes
+      const got = await b.eval(`(() => { const v = ABCJS.renderAbc(document.createElement('div'), ${JSON.stringify(plain)})[0], out = [];
+        v.setUpAudio().tracks.forEach(t => t.forEach(e => { if (e.cmd === 'note') out.push(e.start.toFixed(4) + ':' + e.pitch); })); return out.sort(); })()`);
+      if (got.join() !== want.join()) bad.push(ex.label + ` (${got.filter(x => !want.includes(x)).slice(0, 3)} / ${want.filter(x => !got.includes(x)).slice(0, 3)})`);
+      if ((abc.match(/"_[^"]+"/g) || []).length !== v.count || v.misses.length) labelsBad.push(ex.label);
+    }
+    check(`${book.key}: abcjs plays the source's notes in all ${exs.filter(e => !e.empty).length} examples`, !bad.length, bad.join(" "));
+    check(`${book.key}: every chord of every analysis labelled`, !labelsBad.length, labelsBad.join(" "));
+    b.errors.length = 0;
+    await b.goto(page(book.page)); await b.sleep(4000);
+    const n = await b.eval(`document.querySelectorAll('.as-score svg').length`), keys = await b.eval(`document.querySelectorAll('.as-keys').length`);
+    check(`${book.key}: all scores drawn, each with its key strip`, n === abcs.size && keys === abcs.size, n + " drawn, " + keys + " key strips, of " + abcs.size);
+    check(`${book.key}: no page errors`, !errs().length, errs().slice(0, 3).join(" | "));
+  }
+  {   // the beam and tenor buttons (one setting for the page), and the Modulation Finder
+    b.errors.length = 0;
+    await b.goto(page("kostka-payne")); await b.sleep(3000);
+    const r = await b.eval(`(async () => {
+      const S = AnalysedScores.scores().find(x => x.beamBtn && x.tenorBtn), beams = () => S.paper.querySelectorAll('.abcjs-beam-elem').length, staffOf = () => S.abc.includes('%%score (s1v1 s1v2 s2v1) s2v2');
+      const all = AnalysedScores.scores().length, b0 = beams(), n0 = S.notes.length;
+      document.querySelector('.as-beam').click(); await new Promise(r => setTimeout(r, 400));
+      const b1 = beams(), n1 = S.notes.length, label = document.querySelector('.as-beam').textContent;
+      document.querySelector('.as-tenor').click(); await new Promise(r => setTimeout(r, 400));
+      const four = AnalysedScores.scores().filter(x => x.tenorBtn).length, up = AnalysedScores.scores().filter(x => x.abc.includes('%%score (s1v1 s1v2 s2v1) s2v2')).length, n2 = S.notes.length;
+      document.querySelector('.as-tenor').click(); document.querySelector('.as-beam').click(); await new Promise(r => setTimeout(r, 400));
+      return { all: four, b0, b1, n0, n1, n2, up, label, back: beams() === b0 && !staffOf() };
+    })()`);
+    check("beam button: beams drawn when on, gone when off, same notes", r.b0 === 0 && r.b1 > 0 && r.n0 === r.n1 && r.label === "Beams: on" && r.back, JSON.stringify(r));
+    check("tenor button: every four-part score on the page switches, same notes", r.up === r.all && r.n2 === r.n0, r.up + " of " + r.all);
+    try { await b.eval(`localStorage.removeItem('as-beams'); localStorage.removeItem('as-tenor-up')`); } catch (e) {}
+    // the passages from real pieces (scripts/when-in-rome/corpus.mjs + corpus-verify.cjs), loaded by the page after it shows
+    const CORPUS = JSON.parse(fs.readFileSync(ROOT + "/apps/shared/data/modulation-corpus.json", "utf8"));
+    const PC = k => (({ C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 })[k[0].toUpperCase()] + (k.slice(1).match(/#/g) || []).length - (k.slice(1).match(/b/g) || []).length + 24) % 12;
+    await b.goto(`http://127.0.0.1:${PORT}/theory/analysed-scores/modulation-finder.html?start=major&end=major&dist=7`); await b.sleep(4000);
+    const want = B.BOOKS.flatMap(bk => B.bookExamples(bk)).filter(ex => !ex.empty).filter(ex => {
+      const pc = k => (({ C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 })[k[0].toUpperCase()] + (/#/.test(k) ? 1 : 0) * (k.length - 1) - (/b/.test(k.slice(1)) ? k.length - 1 : 0) + 24) % 12;
+      return ex.from[0] === ex.from[0].toUpperCase() && ex.to[0] === ex.to[0].toUpperCase() && (pc(ex.to) - pc(ex.from) + 12) % 12 === 7; }).length
+      + CORPUS.filter(x => x.from[0] === x.from[0].toUpperCase() && x.to[0] === x.to[0].toUpperCase() && (PC(x.to) - PC(x.from) + 12) % 12 === 7).length;
+    const f = await b.eval(`({ summary: document.getElementById('mf-summary').textContent, cards: document.querySelectorAll('.mf-card').length,
+      drawn: document.querySelectorAll('.mf-card .as-score svg').length, scores: AnalysedScores.scores().length, notes: AnalysedScores.scores().every(S => S.notes.length > 0) })`);
+    check("finder: major to major, 7 half steps lists the right examples", parseInt(f.summary) === want && want > 0, f.summary + " (expected " + want + ")");
+    check("finder: the first results are drawn and playable", f.cards === Math.min(8, want) && f.drawn === f.cards && f.scores === f.cards && f.notes, JSON.stringify(f));
+    await b.eval(`document.getElementById('mf-more').hidden || document.getElementById('mf-more').click()`); await b.sleep(800);
+    const g = await b.eval(`({ cards: document.querySelectorAll('.mf-card').length, scores: AnalysedScores.scores().length })`);
+    check("finder: Show more adds the next scores", g.cards === Math.min(16, want) && g.scores === g.cards, JSON.stringify(g));
+    await b.eval(`document.getElementById('mf-reset').click()`); await b.sleep(800);
+    const h = await b.eval(`({ summary: document.getElementById('mf-summary').textContent, scores: AnalysedScores.scores().length, url: location.search })`);
+    check(`finder: Clear lists all ${200 + CORPUS.length} (textbooks and real pieces) and forgets the old scores`, parseInt(h.summary) === 200 + CORPUS.length && h.scores === 8 && h.url === "", JSON.stringify(h));
+    await b.eval(`(() => { const s = document.getElementById('mf-book'); s.value = '@real'; s.dispatchEvent(new Event('change')); })()`); await b.sleep(1500);
+    const r2 = await b.eval(`({ summary: document.getElementById('mf-summary').textContent, drawn: document.querySelectorAll('.mf-card .as-score svg').length,
+      link: (document.querySelector('.mf-card h3 a') || {}).href || "", notes: AnalysedScores.scores().every(S => S.notes.length > 0) })`);
+    check("finder: real pieces only: all of them, drawn, playable, linked to their analysis", parseInt(r2.summary) === CORPUS.length && r2.drawn === 8 && r2.notes && /When-in-Rome/.test(r2.link), JSON.stringify(r2));
+    check("finder: no page errors", !errs().length, errs().slice(0, 3).join(" | "));
+  }
+  await b.goto(page(B.PIECES[0].id)); await b.sleep(1500);
   const drawn = await b.eval(`document.querySelectorAll('.as-score svg').length`);
   check("the score is drawn", drawn >= 1, drawn);
   // stacked figures, bar numbers, Space, clicking a note

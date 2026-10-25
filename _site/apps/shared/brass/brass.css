@@ -1,0 +1,41 @@
+/* brass.css — valve diagrams (brass-chart.js) and the brass page widgets (brass-page.js) */
+.brc { width: 100%; height: auto; display: block; }
+.brc .brc-k { fill: var(--br-open, #fff); stroke: var(--br-ink, #231f20); stroke-width: 3; transition: fill .12s; }
+.brc .brc-n { font: 700 22px system-ui, sans-serif; fill: var(--br-ink, #231f20); pointer-events: none; }
+.brc .brc-down .brc-k { fill: var(--br-ink, #231f20); }
+.brc .brc-down .brc-n { fill: var(--br-open, #fff); }
+.brc-live .brc-v { cursor: pointer; outline: none; }
+.brc-live .brc-v:hover .brc-k, .brc-live .brc-v:focus-visible .brc-k { stroke: var(--site-accent, #2780e3); stroke-width: 6; }
+@media (prefers-color-scheme: dark) { :root { --br-open: #f1f3f5; } }
+
+.brp-bar { display: flex; flex-wrap: wrap; gap: .5rem .9rem; align-items: center; margin: .4rem 0; }
+.brp-bar select { width: auto; max-width: 100%; }
+.brp-chk { display: inline-flex; gap: .3rem; align-items: center; margin: 0; font-size: .9rem; }
+.brp-strip { margin: .4rem 0; }
+.brp-row { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; margin: 3px 0; }
+.brp-rowlab { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: var(--site-ink-2, #6c757d); width: 8rem; }
+.brp-nb { min-width: 2.9rem; padding: .15rem .35rem; font-size: .85rem; }
+.brp-nb sub { font-size: .65em; bottom: -.1em; }
+.brp-card { border: 1px solid var(--site-line, #ced4da); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1rem; background: var(--site-surface-2, #f8f9fa); }
+.brp-head { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; }
+.brp-staff svg { max-width: 100%; }
+.brp-big { font-size: 1.8rem; font-weight: 800; line-height: 1.1; }
+.brp-muted { color: var(--site-ink-2, #6c757d); font-size: .9rem; margin: .3rem 0; }
+.brp-diags { display: flex; flex-wrap: wrap; gap: 1.2rem; margin-top: .6rem; }
+.brp-fig { margin: 0; text-align: center; }
+.brp-fig figcaption { font-size: .85rem; color: var(--site-ink-2, #6c757d); margin-top: .2rem; max-width: 12rem; }
+.brp-valtxt { font-size: 1.4rem; font-weight: 800; }
+.brp-d { width: 170px; max-width: 100%; }
+.brp-d-big { width: min(260px, 70vw); flex: none; }
+.brp-build { display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; }
+.brp-side { flex: 1 1 240px; }
+.brp-ask { font-size: 1.05rem; margin-bottom: .3rem; }
+.brp-out { min-height: 1.6em; margin: .4rem 0; }
+.brp-valbig { font-size: 1.3rem; font-weight: 800; }
+.brp-notes { margin: .3rem 0; padding-left: 1.4rem; }
+.brp-nname { font-weight: 700; }
+.brp-good { color: #2f9e44; font-weight: 700; } .brp-bad { color: #e03131; font-weight: 700; }
+.brp-table-wrap { overflow-x: auto; }
+.brp-table { border-collapse: collapse; margin: .3rem 0; }
+.brp-table th, .brp-table td { border: 1px solid var(--site-line, #ced4da); padding: .2rem .35rem; text-align: center; font-size: .85rem; }
+.brp-table td .btn { padding: .1rem .3rem; min-width: 2.6rem; }

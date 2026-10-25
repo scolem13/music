@@ -10,6 +10,9 @@
 //   opts.light      true (default) lights each note as it sounds with the class opts.litClass ("abc-on"; styled here);
 //                   only for a tune drawn on the page (an off-page tune has nothing to light)
 //   opts.onEnd      called once when it ends or is stopped
+//   opts.fromBar    start at this measure (0 = the first full measure or the pickup; counted in played order, repeats included)
+//   opts.lightTune  another drawn visualObj with the same bars (the score with some parts hidden): its notes are lit instead
+//   AbcPlay.barStartMs(timing, k) -> ms where measure k starts in a setTiming() list (AbcPlay.barIndex(timing, svgEl) the reverse)
 //   AbcPlay.stop()  stops whatever is playing;  AbcPlay.playing() -> the handle or null
 //   AbcPlay.ctx()   -> Promise of { ac, bank } (the shared AudioContext, registered with AudioTap, and its bank)
 //
@@ -24,7 +27,7 @@
 //       no bass, no drums, no melody.   AbcPlay.hasChords(abc) -> true when the text has chord symbols.
 // If the samples can't load within 12 s, abcjs's own synth plays instead (same tune, same cursor).
 (function (global) {
-  var SOUNDS = "/apps/shared/band/sounds.js?v=15", shared = null, cur = null, styled = false;
+  var SOUNDS = "/apps/shared/band/sounds.js?v=17", shared = null, cur = null, styled = false;
 
   function ctx() {
     if (shared) return shared;
@@ -144,12 +147,13 @@
       var so = BandCatalog.styleOpts(opts.style || "pop", "piano"), o = Object.assign({}, so.opts, { melodyLevel: 0.85 }), vol = { bass: 0.8, comp: 0.85, drums: 0.6 };
       if (chordsOnly) { o = Object.assign(o, { compRhythm: "pad", groove: "none", melody: false, fills: "none" }); vol = { bass: 0, comp: 1, drums: 0 }; }
       var at = null, done = false;
-      var p = BandPlayer.create({ parsed: parsed, tempo: bpm, transpose: tr, countIn: (pick && !chordsOnly) ? 1 : 0, choruses: 1, opts: o,
+      var fb = Math.max(0, (opts.fromBar | 0) - k0);
+      var p = BandPlayer.create({ parsed: parsed, tempo: bpm, transpose: tr, countIn: (pick && !chordsOnly && !fb) ? 1 : 0, choruses: 1, opts: o,
         instruments: chordsOnly ? [so.opts.compSound || "piano"] : so.instruments, volumes: vol, humanize: chordsOnly ? 0 : 0.5,
         onBar: function (info) { at = { idx: info.countIn ? -1 : info.index, beat: 0, t: performance.now() }; },
         onBeat: function (info) { if (at) { at.beat = info.beat; at.t = performance.now(); } },
         onEnd: function () { done = true; } });
-      me._band = p;
+      me._band = p; if (fb) p.setStartBar(fb);
       return p.play().then(function () { return { p: p, lists: lists, bpm: bpm, at: function () { return at; }, done: function () { return done; } }; });
     });
   }
@@ -172,7 +176,7 @@
   }
   function playBand(v, opts, chordsOnly) {
     opts = opts || {}; stop();
-    var lit = opts.litClass || "abc-on", light = opts.light !== false && !chordsOnly, on = [], resolveDone;
+    var lit = opts.litClass || "abc-on", light = opts.light !== false && !chordsOnly && !opts.lightTune, on = [], resolveDone;
     var me = { done: new Promise(function (r) { resolveDone = r; }), _ended: false };
     function unlight() { on.forEach(function (n) { n.classList.remove(lit); }); on.length = 0; }
     function end() {
@@ -218,8 +222,17 @@
     if (light) style();
 
     try { v.setUpAudio({}); } catch (e) {}                    // fills each event's midiPitches (no sound)
-    var q = qpmOf(v, opts), events = (q ? v.setTiming(q / (v.getBeatLength() * 4)) : v.setTiming())
-      .filter(function (e) { return e.type === "event" && (e.midiPitches || e.midiGraceNotePitches); });
+    var q = qpmOf(v, opts), timing = q ? v.setTiming(q / (v.getBeatLength() * 4)) : v.setTiming();
+    var from = opts.fromBar > 0 ? barStartMs(timing, opts.fromBar) : 0;
+    var events = timing.filter(function (e) { return e.type === "event" && (e.midiPitches || e.midiGraceNotePitches) && e.milliseconds >= from - 1; })
+      .map(function (e) { return Object.assign({}, e, { milliseconds: e.milliseconds - from }); });
+    var lights = events;
+    if (opts.lightTune && light) {
+      var lq = qpmOf(opts.lightTune, opts), lt = lq ? opts.lightTune.setTiming(lq / (opts.lightTune.getBeatLength() * 4)) : opts.lightTune.setTiming();
+      var lf = opts.fromBar > 0 ? barStartMs(lt, opts.fromBar) : 0;
+      lights = lt.filter(function (e) { return e.type === "event" && e.milliseconds >= lf - 1; })
+        .map(function (e) { return Object.assign({}, e, { milliseconds: e.milliseconds - lf }); });
+    }
     if (!events.length) { end(); return me; }
     var mf = v.getMeterFraction ? v.getMeterFraction() : { num: 4, den: 4 }, msBar = v.millisecondsPerMeasure ? v.millisecondsPerMeasure() : 2000;
     var secPerWhole = msBar / 1000 / ((mf.num || 4) / (mf.den || 4)), tr = opts.transpose || 0;
@@ -229,10 +242,10 @@
       (function tick() {
         if (ended) return;
         var now = (ac.currentTime - t0) * 1000;
-        if (light && i + 1 < events.length && events[i + 1].milliseconds <= now) {
-          while (i + 1 < events.length && events[i + 1].milliseconds <= now) i++;
+        if (light && i + 1 < lights.length && lights[i + 1].milliseconds <= now) {
+          while (i + 1 < lights.length && lights[i + 1].milliseconds <= now) i++;
           unlight();
-          (events[i].elements || []).forEach(function (g) { (g || []).forEach(function (n) { if (n && n.classList) { n.classList.add(lit); on.push(n); } }); });
+          (lights[i].elements || []).forEach(function (g) { (g || []).forEach(function (n) { if (n && n.classList) { n.classList.add(lit); on.push(n); } }); });
         }
         if (now > endMs + 150) { end(); return; }
         raf = requestAnimationFrame(tick);
@@ -274,5 +287,24 @@
     return me;
   }
 
-  global.AbcPlay = { play: play, chords: function (v, o) { return playBand(v, o, true); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
+  // measures in a setTiming() list: abcjs marks the first event of each measure (measureStart), repeats included
+  function barStartMs(timing, k) {
+    var idx = -1;
+    for (var i = 0; i < timing.length; i++) {
+      var e = timing[i]; if (e.type !== "event") continue;
+      if (e.measureStart || idx < 0) { idx++; if (idx === k) return e.milliseconds; }
+    }
+    return 0;
+  }
+  function barIndex(timing, svgEl) {
+    var idx = -1;
+    for (var i = 0; i < timing.length; i++) {
+      var e = timing[i]; if (e.type !== "event") continue;
+      if (e.measureStart || idx < 0) idx++;
+      if ((e.elements || []).some(function (g) { return (g || []).indexOf(svgEl) >= 0; })) return idx;
+    }
+    return -1;
+  }
+
+  global.AbcPlay = { barStartMs: barStartMs, barIndex: barIndex, play: play, chords: function (v, o) { return playBand(v, o, true); }, hasChords: hasChords, stop: stop, ctx: ctx, playing: function () { return cur; } };
 })(window);

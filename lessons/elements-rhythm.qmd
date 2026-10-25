@@ -1,0 +1,155 @@
+---
+title: "Elements 7: Rhythm and Tempo"
+toc: true
+toc-depth: 2
+description: "Note lengths and rests, dotted notes, ties, triplets, syncopation and the fermata; tempo, beats per minute, the Italian tempo words, and speeding up and slowing down."
+instruments: [piano, guitar, bass, drums, violin, sax, voice, other]
+topics: [elements, rhythm, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Rhythm** is the pattern of long and short sounds and silences. **Tempo** is the speed of the beat.
+
+## 1. Note lengths
+
+Counted in [quarter-note]{.nn} beats:
+
+| Beats | Note | Rest |
+|---|---|---|
+| 4 | [whole note]{.nn} | [whole rest]{.nn} |
+| 2 | [half note]{.nn} | [half rest]{.nn} |
+| 1 | [quarter note]{.nn} | [quarter rest]{.nn} |
+| ½ | [eighth note]{.nn} | [eighth rest]{.nn} |
+| ¼ | [sixteenth note]{.nn} | [sixteenth rest]{.nn} |
+
+Each note, then its rest, from the longest to the shortest:
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:Longest to shortest: each note, then its rest
+M:4/4
+L:1/16
+K:C
+c16|z16|c8 z8|c4 z4 c4 z4|c2 z2 c2 z2 c2 z2 c2 z2|c z c z c z c z c z c z c z c z|]
+</script></div>
+
+The American names count fractions of a whole note. The British names are older: *semibreve* (whole), *minim* (half),
+*crotchet* (quarter), *quaver* (eighth), *semiquaver* (sixteenth). Tick **British note names** at the top to read this
+page with them.
+
+## 2. Dots, ties and triplets
+
+A **dot** after a note adds half its value again.
+
+| Note | Value | With a dot |
+|---|---|---|
+| [half note]{.nn} | 2 | 2 + 1 = **3** |
+| [quarter note]{.nn} | 1 | 1 + ½ = **1½** |
+| [eighth note]{.nn} | ½ | ½ + ¼ = **¾** |
+
+A **tie** joins two notes of the same pitch into one longer note (often across a [measure]{.nn} line).
+
+A **triplet** is three notes played evenly in the time of two, marked with a 3.
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Dotted half note; dotted quarter note and eighth note; a tie; a triplet
+M:4/4
+L:1/8
+K:G
+G6 B2|d3 c B2 A2|G4- G2 A2|(3BcB (3AGA G4|]
+</script></div>
+
+## 3. Syncopation
+
+**Syncopation** puts the accent *off* the beat: on the "and", or on a weak beat, often with a note tied over the strong
+beat. It is the push in a lot of pop, funk, Latin music and jazz.
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:On the beat
+M:4/4
+L:1/8
+K:C
+c2 c2 c2 c2|G2 G2 G4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Syncopated
+M:4/4
+L:1/8
+K:C
+c2 c c- c2 c2|z G G2- G4|]
+</script></div>
+:::
+
+For swing rhythm, where pairs of [eighth notes]{.nn} are played long-short: [Reading Swing](reading-swing.qmd).
+
+## 4. The fermata
+
+A **[fermata]{.nn}** over a note means hold it longer than written; the pulse stops until the performer (or conductor)
+moves on.
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:A fermata on the last note of the first phrase
+M:4/4
+L:1/4
+K:F
+F A c A|!fermata!G4|F A G E|F4|]
+</script></div>
+
+## 5. Tempo
+
+**Tempo** is the speed of the pulse, measured in **beats per minute (BPM)**. 60 BPM is one beat a second; 120 BPM is two.
+A metronome marking such as ♩ = 120 means 120 [quarter-note]{.nn} beats per minute.
+
+To work out a tempo by ear: tap the pulse quietly (your toes, not your whole foot) and ask how fast you are tapping.
+The [Tap Along](../tools/tap-along.qmd) tool counts it for you.
+
+| Marking | Meaning | Roughly |
+|---|---|---|
+| **Lento** / **Adagio** | slow | under 70 BPM |
+| **Andante** | at a walking pace | 75–100 |
+| **Moderato** | moderate | 100–120 |
+| **Allegretto** | fairly fast (not as fast as allegro) | 110–120 |
+| **Allegro** | fast, lively | 120–160 |
+| **Vivace** / **Presto** | very fast | 160 and up |
+| **Accelerando** (*accel.*) | gradually getting faster | |
+| **Ritardando** (*rit.*) / **Rallentando** (*rall.*) | gradually getting slower | |
+| **A tempo** | back to the original speed | |
+| **Rubato** | stretching and pushing the tempo for expression | |
+
+The BPM figures are a guide only: composers and periods used these words differently.
+
+<div class="abc-ex"><script type="text/plain">
+X:1
+T:Accelerando, then ritardando
+M:4/4
+L:1/4
+Q:1/4=80
+K:C
+"^accel."C E G E|[Q:1/4=100]C E G E|[Q:1/4=124]C E G E|[Q:1/4=148]C E G E|[Q:1/4=120]"^rit."C E G E|[Q:1/4=96]C E G E|[Q:1/4=72]C4|]
+</script></div>
+
+## 6. Check yourself
+
+<div class="eq" data-set="rhythm"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Tempo." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Tempo](https://en.wikipedia.org/wiki/Tempo). Rough BPM ranges, slowest to fastest: lento/adagio, andante (walking pace, below moderato), moderato, allegretto, allegro, vivace; 'very rough approximations'.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

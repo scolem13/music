@@ -1,0 +1,159 @@
+---
+title: "Melody on One Page"
+toc: true
+toc-depth: 2
+description: "Every melody term on one revision sheet: conjunct and disjunct, range, repetition, sequence, imitation, ostinato, triadic, scalic and chromatic melody, intervals and scale degrees, each with a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, composing, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Melody](elements-melody.qmd) on one sheet. Every ▶ plays the example. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Melody: describing a tune"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Conjunct
+<p>Moving by step, to the next note up or down. A <strong>narrow</strong> range.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C D E F|E D C2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Disjunct
+<p>Moving by leap, jumping over notes. A <strong>wide</strong> range.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C c G, e|A, a E c'|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Sequence
+<p>The same idea again, starting higher or lower. (<strong>Repetition</strong>: again, unchanged.)</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+CDEC D2 z2|DEFD E2 z2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Imitation
+<p>One part copies an idea another part has just played, often at a different pitch.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+V:1
+GABG c2 G2|ABcA d2 A2|]
+V:2 clef=bass
+z8|G,A,B,G, C2 G,2|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Ostinato
+<p>A short idea repeated over and over. In the bass: a <em>ground bass</em> or a <em>riff</em>.</p>
+<div class="abc-ex" data-width="190" data-bpm="104" data-style="rock"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:Am
+"Am"A,2 CE A2 GE|"F"A,2 CE A2 GE|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Scalic
+<p>Runs up and down the scale.</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C D E F|G A B c|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Triadic
+<p>Uses the notes of the chords (broken chords).</p>
+<div class="abc-ex" data-width="190" data-bpm="100"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+"C"C E G c|"G"B G D G|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Chromatic
+<p>Notes outside the key, often moving by [half step]{.nn}. (<strong>Pentatonic</strong>: only five notes.)</p>
+<div class="abc-ex" data-width="190" data-bpm="90"><script type="text/plain">
+X:1
+M:4/4
+L:1/8
+K:C
+E ^D E ^F G ^G A ^A|B c ^c d ^d e2 z|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Intervals
+<p>Count the letter names, <strong>both ends included</strong>: C to E is C-D-E, a 3rd. Here: 2nd, 3rd, 4th, 5th.</p>
+<div class="abc-ex" data-width="190" data-bpm="80"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:C
+C D C E|C F C G|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Scale degrees
+<p>1 tonic · 2 supertonic · 3 mediant · 4 subdominant · 5 dominant · 6 submediant · 7 leading note. The tonic is home; the leading note pulls up to it.</p>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="melody"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing a melody
+
+- Shape (rising, falling, an arch), movement (conjunct or disjunct), range (narrow or wide), then what it is made of
+  (scalic, triadic, chromatic) and how ideas come back (repetition, sequence, imitation).
+- Ornaments (trills, mordents, turns): [Grace Notes and Ornaments](grace-notes-ornaments.qmd).
+
+- The longer lesson, with fuller examples: [Elements 5: Melody](elements-melody.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

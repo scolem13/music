@@ -1,0 +1,61 @@
+---
+title: "Reger: On the Theory of Modulation"
+subtitle: "All 100 examples from *Beiträge zur Modulationslehre* (1903), with Roman numerals under the notes"
+toc: true
+toc-depth: 2
+description: "Every example from Max Reger's modulation handbook (Beiträge zur Modulationslehre, 1903; in English as On the Theory of Modulation), from C major, C♯ major, A minor, C♭ major, D♭ minor and A♯ minor to every other key, each a few chords long, with the Roman-numeral analysis under the notes (When in Rome). Play each one."
+---
+
+{{< include _head.qmd >}}
+
+In 1903 Max Reger published a short book of modulations: one hundred examples, each a few chords long, that get from one key to
+another, often a distant one, as quickly as possible. Most go by a pivot chord: a chord that belongs to both keys, very often the
+[Neapolitan](../neapolitan.qmd) (N⁶) or a dominant of the dominant (V/V). Each new key is then confirmed with a cadence:
+Cad⁶₄ (I⁶₄), V, I.
+
+The examples are grouped by the key they start from, in the book's order. Where an example has an A and a B version, B goes to the
+minor key with the same tonic. How to read the labels and use the scores: [Analysed Scores](index.qmd#reading-the-labels).
+
+## Things to find
+
+- **The pivot:** in each example, find the first chord after the new key is named. Which chord is it in the old key?
+- **The Neapolitan:** N⁶ appears in 45 of the examples, mostly the far ones (from C major to the sharp keys, 6–12 and 24–31, and
+  all of 86–99 except 98). V/V appears in 25. In each, is it the pivot, or does it come after the new key is reached?
+- **Enharmonic spellings:** the far keys are written as they are named, so C♭ major and A♯ minor appear with all their flats and
+  sharps. The keys B𝄫 major (21) and E♯ minor (30) are spelled out too.
+
+{{< include _reger-modulation.qmd >}}
+
+::: {.callout-note collapse="true"}
+## For teachers
+
+- **Source:** the notes and analyses are the DDMAL Key Modulation Dataset's encodings of Reger's examples (Néstor Nápoles López and
+  others), translated automatically to RomanText and copied into When in Rome. `scripts/when-in-rome/build.mjs` reads the MusicXML
+  (`src/reger`), and every note was checked against music21's reading of the same files.
+- **Example 41** (C major to C♭ minor) has no notes in the corpus, only its analysis, which is printed in its place.
+- **46A and 46B** number their first bar 0 in the analysis; the build counts it as bar 1, where its notes are.
+- **Two corrections:** in 38 the analysis names D♭ minor for the last three chords, where the notes (and the book's title) are A♭
+  minor; in 45B it writes the last key as major, then labels its chord i. Both are corrected on the page, with a note under the
+  example, by `REGER_FIX` in `build.mjs`; the corpus files are unchanged.
+- **Otherwise not edited:** the analyses are an automated translation and are shown as they are. In 56 and 70 they label every
+  chord in the new key, without naming the starting key.
+- **Headings** take both keys from the book's titles, not from the analysis.
+:::
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+Gotham, Mark, et al. *When in Rome: A Meta-Corpus of Functional Harmony*. GitHub. [github.com/MarkGotham/When-in-Rome](https://github.com/MarkGotham/When-in-Rome). The analyses on this page (RomanText files), licensed CC BY-SA 4.0.
+
+Hutchinson, Robert. "Modulation." *Music Theory for the 21st-Century Classroom*, ch. 22, U of Puget Sound. [musictheory.pugetsound.edu/mt21c/Modulation.html](https://musictheory.pugetsound.edu/mt21c/Modulation.html). Tonicization against modulation, closely related keys, diatonic and chromatic pivot chords, and direct, common-tone and sequential modulation.
+
+Reger, Max. *Beiträge zur Modulationslehre*. C. F. Kahnt Nachfolger, 1903. Translated by John Bernhoff as *On the Theory of Modulation*, Kahnt, [1904?]; reprinted as *Supplement to the Theory of Modulation*, Dover, 2007. The book whose 100 examples are shown on the Reger page. Public domain (Reger died in 1916).
+
+**For teachers**
+
+Nápoles López, Néstor, et al. *Key Modulation Dataset*. GitHub (DDMAL). [github.com/DDMAL/key_modulation_dataset](https://github.com/DDMAL/key_modulation_dataset). The encodings and analyses of the textbook examples, translated to RomanText by Nápoles López and copied into When in Rome.
+
+Reger-Werkausgabe. "1903." *Max Reger: Biography*. Max-Reger-Institut. [www.maxreger.info/biography/1903](https://www.maxreger.info/biography/1903). When Reger wrote the book and how it came to be published by Kahnt.
+:::
+<!-- /works-cited -->

@@ -28,7 +28,7 @@
   function abcPlay() {
     if (global.AbcPlay) return Promise.resolve(global.AbcPlay);
     return playJs || (playJs = new Promise(function (res, rej) {
-      var sc = document.createElement("script"); sc.src = "/apps/shared/abc-play.js?v=4"; sc.onload = function () { res(global.AbcPlay); };
+      var sc = document.createElement("script"); sc.src = "/apps/shared/abc-play.js?v=5"; sc.onload = function () { res(global.AbcPlay); };
       sc.onerror = function () { playJs = null; rej(); }; document.head.appendChild(sc);
     }));
   }

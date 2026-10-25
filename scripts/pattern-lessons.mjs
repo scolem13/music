@@ -265,7 +265,7 @@ function page(kind, e) {
   L.push(`This is a lesson on one ${kindWord[kind]} the [Backing Track](../../tools/backing-track.qmd) band plays: **${e.label}**. ` +
     (ladder.length ? `It is built up from ${ladder.length === 1 ? "a simpler pattern" : ladder.length + " simpler patterns"}, one step at a time, and every step is played by the band and written out as it plays.` :
       "It is one of the first patterns to learn, so this page starts from it and takes it into the band.") +
-    ` How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read the band's last four bars on the staff underneath. The tempo slider at the bottom of the page slows everything down.`, "");
+    ` How the examples work: press ▶ Play, switch players in and out with the buttons beside it, and read what the band will play on the staff underneath: the whole pass is written out when Play starts, before it sounds. The tempo slider at the bottom of the page slows everything down.`, "");
   L.push(`[All the accompaniment patterns](index.qmd) · [${K.noun}s](index.qmd#${K.dir})`, "");
 
   L.push("## The pattern", "", e.desc, "");

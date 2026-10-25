@@ -1,0 +1,196 @@
+---
+title: "Elements 3: Harmony and Tonality"
+toc: true
+toc-depth: 2
+description: "The chords and keys of a piece: key signatures, major and minor, modulation, tonal, modal, atonal and pentatonic music, triads and seventh chords, the four cadences, and the Picardy third."
+instruments: [piano, guitar, bass, other]
+topics: [elements, harmony, reading]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Harmony** is the chords. **Tonality** is the key: which note feels like home, and whether the music is major, minor, or
+something else.
+
+## 1. Key signatures
+
+The sharps or flats at the start of every line show the key. Each major key shares its signature with a **relative minor**,
+three [half steps]{.nn} below it.
+
+| Signature | Major key | Relative minor |
+|---|---|---|
+| none | C | A minor |
+| 1♯ (F♯) | G | E minor |
+| 2♯ (F♯ C♯) | D | B minor |
+| 3♯ | A | F♯ minor |
+| 1♭ (B♭) | F | D minor |
+| 2♭ (B♭ E♭) | B♭ | G minor |
+| 3♭ | E♭ | C minor |
+
+**Major or minor?** The signature alone doesn't tell you. Look at the last note and chord (usually the tonic), and in
+minor look for the raised 7th: music in A minor uses G♯, a sharp that is *not* in the key signature.
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:C major
+M:4/4
+L:1/4
+K:C
+"C"E G c G|"F"A F "G"D B,|"C"C4|]
+</script></div>
+
+<div class="abc-ex" data-bpm="96"><script type="text/plain">
+X:1
+T:A minor: same signature, G♯ added
+M:4/4
+L:1/4
+K:Am
+"Am"A, C E C|"Dm"D F "E"E ^G,|"Am"A,4|]
+</script></div>
+:::
+
+## 2. Major, minor, modal, atonal
+
+| Tonality | What you hear |
+|---|---|
+| **Major** | in a major key; often sounds bright |
+| **Minor** | in a minor key; often sounds darker or sadder |
+| **Modal** | built on a **mode**, an older scale such as Dorian or Mixolydian; folk songs, medieval music, a lot of rock |
+| **Pentatonic** | uses only five notes (C D E G A, the black keys of a piano); folk music round the world, blues, pop |
+| **Atonal** | no key at all, no note that feels like home; some 20th-century classical music, film horror |
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Pentatonic: only C D E G A
+M:4/4
+L:1/8
+K:C
+E2 G2 A2 G2|E2 D2 C4|D2 E2 G2 A2|c2 A2 G4|]
+</script></div>
+
+## 3. Modulation
+
+A **modulation** is a change of key in the middle of a piece. The most common moves are to the **dominant** (the key a
+5th up, C to G) and to the **relative major or minor** (C major to A minor). In pop songs the last chorus often
+modulates up a [half step]{.nn} or [whole step]{.nn} for a lift.
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:A phrase in C, then the same phrase a whole step higher in D
+M:4/4
+L:1/4
+K:C
+"C"E G "F"A G|"G"F D "C"C2|"A7"z4|[K:D]"D"F A "G"B A|"A"G E "D"D2|]
+</script></div>
+
+## 4. Chords
+
+A **triad** is a chord of three notes, each a 3rd apart: root, 3rd and 5th. Built on each note of the scale, triads are
+numbered with Roman numerals: capitals for major, small letters for minor.
+
+| | I | ii | iii | IV | V | vi | vii° |
+|---|---|---|---|---|---|---|---|
+| In C | C | Dm | Em | F | G | Am | B° |
+| Name | tonic | supertonic | mediant | subdominant | dominant | submediant | leading note |
+
+Adding another 3rd on top makes a **seventh chord** (G7 = G B D F). Adding more makes **extended chords** (9ths, 11ths,
+13ths), common in jazz.
+
+<div class="abc-ex" data-bpm="70"><script type="text/plain">
+X:1
+T:Triad, seventh, ninth on G
+M:4/4
+L:1/2
+K:C
+"G"[GBd]2|"G7"[GBdf]2|"G9"[GBdfa]2|]
+</script></div>
+
+For the rest of this: [Inversions](inversions.qmd), [Borrowed Chords](borrowed-chords.qmd).
+
+## 5. Cadences
+
+A **cadence** is the last two chords of a phrase, like punctuation. Two sound finished, two don't.
+
+| Cadence | Chords | Sounds |
+|---|---|---|
+| [Authentic cadence]{.nn} | V → I | finished, a full stop |
+| **Plagal** | IV → I | finished, softer: the "Amen" of hymns |
+| [Half cadence]{.nn} | anything → V | unfinished, a comma or a question |
+| [Deceptive cadence]{.nn} | V → vi (usually) | a surprise: you expect I and get a minor chord |
+
+The names in this table follow the *British names* switch at the top of the page. The US and UK names differ here: the
+British *perfect*, *imperfect* and *interrupted* are the American *authentic*, *half* and *deceptive*.
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+T:V–I
+M:4/4
+L:1/2
+K:C
+"C"E "F"F|"G"D "C"C|]
+</script></div>
+
+<div class="abc-ex" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+T:IV–I
+M:4/4
+L:1/2
+K:C
+"C"E "G"D|"F"C "C"C|]
+</script></div>
+:::
+
+::: {.ax-pair}
+<div class="abc-ex" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+T:I–V
+M:4/4
+L:1/2
+K:C
+"C"E "F"F|"C"E "G"D|]
+</script></div>
+
+<div class="abc-ex" data-bpm="80" data-style="hymn"><script type="text/plain">
+X:1
+T:V–vi
+M:4/4
+L:1/2
+K:C
+"C"E "F"F|"G"D "Am"C|]
+</script></div>
+:::
+
+**The Picardy third** (*Tierce de Picardie*): a piece in a minor key that ends on a **major** tonic chord instead of the
+minor one you expect.
+
+<div class="abc-ex" data-bpm="76" data-style="hymn"><script type="text/plain">
+X:1
+T:D minor, ending on D major
+M:4/4
+L:1/2
+K:Dm
+"Dm"F "Gm"G|"A"E "D"^F|]
+</script></div>
+
+More: [Cadences](cadences.qmd), [Write an Ending](write-an-ending.qmd).
+
+## 6. Check yourself
+
+<div class="eq" data-set="harmony"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+**For students**
+
+"Cadence." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Cadence](https://en.wikipedia.org/wiki/Cadence). Authentic V–I, plagal IV–I ('Amen'), half cadence on V, deceptive V to any chord but I, most often vi; Picardy third.
+
+**For teachers**
+
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

@@ -1,0 +1,109 @@
+---
+title: "Tools"
+description: "Every tool on the site, grouped by what you're doing."
+toc: false
+---
+
+```{=html}
+<style>
+.home-intro { font-size: 1.05rem; color: var(--site-ink-2); max-width: 48rem; margin: 0 0 1.25rem; line-height: 1.7; }
+.home-filter { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin: 0 0 1.5rem; }
+.home-filter span { font-size: .8rem; color: var(--parch-dim); margin-right: .2rem; }
+.home-filter button {
+  font: inherit; font-size: .82rem; padding: .25rem .7rem; border-radius: 999px; cursor: pointer;
+  background: var(--parch-2); color: var(--parch-ink); border: 1px solid var(--parch-edge);
+}
+.home-filter button[aria-pressed="true"] { background: var(--site-accent); border-color: var(--site-accent); color: #fff; }
+.home-tasks { display: grid; grid-template-columns: repeat(auto-fill, minmax(290px, 1fr)); gap: 1rem; margin-bottom: 2rem; }
+.home-task {
+  background: var(--parch-2); border: 1px solid var(--parch-edge); border-radius: .5rem;
+  padding: 1rem 1.1rem .9rem; display: flex; flex-direction: column; gap: .5rem; min-width: 0;
+}
+.home-task[hidden] { display: none; }
+.home-task h2 {
+  font-family: var(--font-display); font-size: 1.02rem; font-weight: 650; margin: 0;
+  color: var(--parch-ink); border: 0; padding: 0;
+}
+.home-task ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: .45rem; }
+.home-task li { font-size: .84rem; line-height: 1.45; color: var(--site-ink-2); }
+.home-task li a { font-weight: 600; color: var(--site-accent-dk); text-decoration: none; }
+.home-task li a:hover { text-decoration: underline; }
+.home-task li.more { font-size: .78rem; color: var(--parch-dim); border-top: 1px dashed var(--parch-edge); padding-top: .4rem; }
+.home-task li.more a { font-weight: 500; }
+</style>
+
+<p class="home-intro">Pick the group closest to what you're doing; each tool has a line on what it's for. Not sure where to start? The <a href="/index.html">home page</a> starts from the task.</p>
+
+<div class="home-tasks">
+
+<section class="home-task">
+  <h2>Play with a band</h2>
+  <ul>
+    <li><a href="/tools/backing-track.html">Backing Track</a> — type or paste chords, pick a style, and a full band plays them.</li>
+    <li><a href="/styles/index.html">Style Notes</a> — what each groove does, swing to reggaeton, before you choose one.</li>
+    <li><a href="/tools/accomp-styles.html">Accompaniment Styles</a> — named comping rhythms, from the Charleston on, each described and played.</li>
+    <li><a href="/tools/drumset.html">Drumset</a> — build a drum groove piece by piece and play it.</li>
+    <li><a href="/tools/sequencers.html">Sequencers & Arpeggiators</a> — every kind of step sequencer and arpeggiator on one clock.</li>
+    <li><a href="/tools/arranger.html">Style Arranger</a> — an arranger keyboard: hold a chord and an eight-part band follows it through intro, four mains, fills, break and ending.</li>
+    <li><a href="/tools/polyrhythm.html">Polyrhythm</a> — two to four rhythms at once, as polyrhythm or polymeter, on a circle and a grid.</li>
+  </ul>
+</section>
+
+<section class="home-task">
+  <h2>Chords and harmony</h2>
+  <ul>
+    <li><a href="/tools/chord-library.html">Chord Library</a> — every shape, with the lessons that teach it.</li>
+    <li><a href="/tools/chord-sheet.html">Chord Sheet</a> — type chords and get diagrams for your instruments, with notation and playback.</li>
+    <li><a href="/tools/chord-entry.html">Chord Entry</a> — play chords on a MIDI keyboard and get a chart for the band.</li>
+    <li><a href="/tools/chords-solfege.html">Chords and Solfège</a> — play notes and see the chord, its Roman numeral, and each note in solfège, degrees or Sargam.</li>
+    <li><a href="/tools/circle-of-fifths.html">Circle of Fifths</a> — keys, signatures and related chords on one wheel.</li>
+  </ul>
+</section>
+
+<section class="home-task">
+  <h2>Scales and reading</h2>
+  <ul>
+    <li><a href="/tools/scales.html">Scales</a> — any scale in any key, drawn and played.</li>
+    <li><a href="/tools/scale-patterns.html">Scale Patterns</a> — scale exercises written out for any key, style and instrument, Hanon included.</li>
+    <li><a href="/tools/part-reader.html">Part Reader</a> — what a transposing part's key and notes are in concert pitch.</li>
+    <li><a href="/tools/classical-themes.html">Classical Themes</a> — 2,067 themes from the repertoire to read and hear.</li>
+  </ul>
+</section>
+
+<section class="home-task">
+  <h2>Write music down</h2>
+  <ul>
+    <li><a href="/tools/notation.html">Notation</a> — play or type a melody; add chords and words, then hear it.</li>
+    <li><a href="/tools/notation-rules.html">Notation Rules</a> — how the entry pages decide what to write from the keys you play.</li>
+  </ul>
+</section>
+
+<section class="home-task">
+  <h2>Learn from a recording</h2>
+  <ul>
+    <li><a href="/tools/timestamp-notes.html">Timestamp Notes</a> — stamp the sections, tap the bars, loop phrase by phrase.</li>
+    <li><a href="/tools/tap-along.html">Tap Along</a> — the same mapping on a phone while the song plays.</li>
+    <li><a href="/tools/tap-latency.html">Tap Latency</a> — how late your taps land, so Tap Along can allow for it.</li>
+    <li><a href="/tools/chunk-practice.html">Chunk Practice</a> — break a fast passage into chunks and build it up to speed.</li>
+  </ul>
+</section>
+
+<section class="home-task">
+  <h2>Voice</h2>
+  <ul>
+    <li><a href="/tools/vocal-warmup.html">Vocal Warm-up</a> — a routine built for your voice and your time.</li>
+    <li><a href="/tools/ipa-chart.html">IPA Chart for Singers</a> — the sounds of sung vowels and consonants.</li>
+  </ul>
+</section>
+
+<section class="home-task">
+  <h2>Guitar and bass</h2>
+  <ul>
+    <li><a href="/tools/guitar-tuning.html">Guitar Tuning</a> — tune by ear six ways, any tuning, with the mic as a check.</li>
+    <li><a href="/tools/guitar-setup-check.html">Setup Check</a> — buzz, action, relief, intonation: what to adjust, and who should.</li>
+    <li><a href="/tools/guitar-in.html">Guitar Input Check</a> — play a note or chord and the page says whether it heard what it asked for.</li>
+  </ul>
+</section>
+
+</div>
+```

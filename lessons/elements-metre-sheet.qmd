@@ -1,0 +1,142 @@
+---
+title: "Metre on One Page"
+toc: true
+toc-depth: 2
+description: "Every metre term on one revision sheet: time signatures, common and cut time, simple duple, triple and quadruple, compound 6/8, 9/8 and 12/8, irregular metres, and how to hear them, each with a short example to play. Opens full screen."
+instruments: [piano, guitar, bass, violin, sax, voice, other]
+topics: [elements, reading, rhythm]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+The whole of [Metre](elements-metre.qmd) on one sheet. Every ▶ plays the example, with the strong beats accented. Press **Full screen** to put the sheet on the whole screen for
+revision or for the class board.
+
+## The sheet
+
+::::::: {.el-sheet .column-page data-title="Metre: how the beats are grouped"}
+:::::: {.el-grid}
+
+::::: {.el-card}
+#### Time signatures
+<p><strong>Top</strong>: how many beats in a [measure]{.nn}. <strong>Bottom</strong>: which note gets the beat (4 = [quarter note]{.nn}, 2 = [half note]{.nn}, 8 = [eighth note]{.nn}). <strong>C</strong> = 4/4, common time. <strong>C with a line</strong> = 2/2, cut time.</p>
+:::::
+
+::::: {.el-card}
+#### 2/4 simple duple
+<p>ONE two. Marches, polkas.</p>
+<div class="abc-ex" data-width="190" data-bpm="112" data-style="pop"><script type="text/plain">
+X:1
+M:2/4
+L:1/8
+K:C
+"C"!>!c2 G2|"G"!>!B2 G2|"C"!>!c2 e2|"G"!>!d4|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### 3/4 simple triple
+<p>ONE two three. Waltzes, minuets.</p>
+<div class="abc-ex" data-width="190" data-bpm="132" data-style="waltz"><script type="text/plain">
+X:1
+M:3/4
+L:1/4
+K:G
+"G"!>!G B d|"D"!>!A F D|"G"!>!G3|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### 4/4 simple quadruple
+<p>ONE two three four. Most pop, rock and jazz.</p>
+<div class="abc-ex" data-width="190" data-bpm="100" data-style="rock"><script type="text/plain">
+X:1
+M:4/4
+L:1/4
+K:A
+"A"!>!A c e c|"D"!>!d f a f|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### 6/8 compound duple
+<p>Two dotted-[quarter-note]{.nn} beats, each split in <strong>three</strong>. A lilting, jig feel.</p>
+<div class="abc-ex" data-width="190"><script type="text/plain">
+X:1
+M:6/8
+L:1/8
+Q:3/8=100
+K:D
+!>!ABA !>!F2D|!>!EFE !>!C3|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### 9/8 compound triple
+<p>Three beats, each in three.</p>
+<div class="abc-ex" data-width="190"><script type="text/plain">
+X:1
+M:9/8
+L:1/8
+Q:3/8=96
+K:G
+!>!GAB !>!c2B !>!A3|!>!GBd !>!c2A !>!G3|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### 12/8 compound quadruple
+<p>Four beats, each in three. Blues and soul ballads.</p>
+<div class="abc-ex" data-width="190" data-style="ballad"><script type="text/plain">
+X:1
+M:12/8
+L:1/8
+Q:3/8=60
+K:C
+"C"E2G c2G E2G c2G|"F"F2A c2A "G"G2B d3|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Irregular
+<p>Can't divide into equal twos or threes: 5/4 is 3 + 2, 7/8 is 2 + 2 + 3.</p>
+<div class="abc-ex" data-width="190" data-bpm="160"><script type="text/plain">
+X:1
+M:5/4
+L:1/4
+K:Em
+"Em"!>!E G B !>!A G|"Am"!>!A c e !>!d c|]
+</script></div>
+:::::
+
+::::: {.el-card}
+#### Hearing it
+<ol>
+<li>Tap the pulse.</li>
+<li>Find the strongest beat (where the bass or chord changes) and count from it.</li>
+<li>Listen between beats: split in two is <strong>simple</strong>, in three is <strong>compound</strong>.</li></ol>
+:::::
+
+::::: {.el-card .el-wide}
+#### Check yourself
+<div class="eq" data-set="metre"></div>
+:::::
+
+::::::
+:::::::
+
+## Describing metre
+
+- Give the time signature *and* its name: "3/4, simple triple, like a waltz".
+- In compound time, divide the top number by three to get the beats.
+
+- The longer lesson, with fuller examples: [Elements 6: Metre](elements-metre.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

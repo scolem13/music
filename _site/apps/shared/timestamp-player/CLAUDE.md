@@ -34,3 +34,8 @@
   "band follows the recording's tempo" sets `player.setTempo` from `onBar` per bar (bar by bar / smoothed / steady) and gives the page's tempo
   back on stop; "Start the recording with the band's first bar". Notation: choosing a chunk or a section seeks (pickup chunk not a bar), and
   with follow on `makeBand` takes the map's tempo per bar. Tests: `node tests/lessons/recording-follow.cdp.js` (after rendering both pages).
+- Timed ChordPro (`chordpro-timing.js`, `TsChordProTiming`): Save as ChordPro writes the ChordPro box with `x_` directives
+  (`x_at` after each heading = its section stamp, `x_bars` bar starts in s with `/n` for a meter change, `x_note`, `x_section`,
+  `x_source`, `x_beats_per_bar`); Open file / Paste read it back (an untimed .cho opens as words only). SALAMI chords files
+  (McGill Billboard `salami_chords.txt`, `salami-chords.js`, `SalamiChords`) open the same way; its hooks route both.
+  The big clock is its own part (`clock-panel.js`, #ts-clock, Float), `data-num-edit="off"` so num-edit.js leaves it alone.

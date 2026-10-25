@@ -1,0 +1,172 @@
+---
+title: "Modes: Three Meanings of One Word"
+toc: true
+toc-depth: 2
+description: "What musicians mean by \"mode\" in Music Learning Theory (a tonality, heard from its resting tone), in classical theory (church modes and the major and minor modes) and in jazz (a scale chosen to fit one chord). The same notes, three answers."
+---
+
+```{=html}
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+You will hear the word **mode** used by three groups of musicians, and they don't mean the same thing. A choir teacher trained in
+Music Learning Theory, a classical theory textbook and a jazz teacher can all look at the same notes and give three different
+answers to "what mode is this?" None of them is wrong. They are answering three different questions:
+
+| Who's asking | The question they mean | Where the answer comes from |
+|---|---|---|
+| **Music Learning Theory** | Which note does the music *rest* on, and how do the other notes feel around it? | Your ear: the **resting tone** you audiate |
+| **Classical theory** | Which ordering of whole and half steps does this melody or piece use? | The scale, its **final** (last note) and its history |
+| **Jazz** | Which scale fits *this chord*, right now? | The **chord symbol**, one chord at a time |
+
+Click any heading to fold its section.
+
+## The shared starting point
+
+All three begin with the same seven-note families. Play only the white keys of a piano and start and end on different notes, and you
+get the seven modes by their Greek names:
+
+| Start on | Name | Steps (W = whole, H = half) | Compared with major on the same note |
+|---|---|---|---|
+| C | Ionian (= major) | W W H W W W H | — |
+| D | Dorian | W H W W W H W | ♭3, ♭7 |
+| E | Phrygian | H W W W H W W | ♭2, ♭3, ♭6, ♭7 |
+| F | Lydian | W W W H W W H | ♯4 |
+| G | Mixolydian | W W H W W H W | ♭7 |
+| A | Aeolian (= natural minor) | W H W W H W W | ♭3, ♭6, ♭7 |
+| B | Locrian | H W W H W W W | ♭2, ♭3, ♭5, ♭6, ♭7 |
+
+What the three traditions disagree about is *what makes a piece "in" one of these*.
+
+## 1. Music Learning Theory: mode = tonality
+
+In Edwin Gordon's Music Learning Theory (MLT) the word **tonality** is used for what most people call a mode. Gordon says tonality
+"best refers to what is usually called a mode," and adds that people forget "major and minor are also modes." He lists at least eight
+tonalities: **major, harmonic minor, Dorian, Phrygian, Lydian, Mixolydian, Aeolian and Locrian** (Gordon 149). Notice that
+*harmonic* minor gets its own place, separate from Aeolian.
+
+**A tonality is something you hear.** It is defined by its **resting tone**, the note the music feels "at home" on. Gordon keeps
+three ideas apart (Gordon xiii, 150):
+
+- **Tonality**: the kind of home (major, Dorian, Mixolydian...), named by its resting tone in solfège.
+- **Keyality**: which pitch that home is on (C, G, E♭...), called the **tonic**. Gordon made up the word to keep it separate from:
+- **Key signature**: the sharps and flats you *see*. One sharp could be G major, E minor, A Dorian or D Mixolydian. "A key signature
+  is seen"; keyality is heard.
+
+"A tonality may be in any keyality and a keyality may be in any tonality" (Gordon 150): Dorian on C, Dorian on F, major on C, all
+different combinations.
+
+**How you name it.** MLT teaches movable *do* with a *la*-based minor, so a syllable always names the same relation to the other
+notes. The resting tone of each tonality then gets its own syllable:
+
+| Tonality | Resting tone |
+|---|---|
+| Major | do |
+| Minor (harmonic) and Aeolian | la |
+| Dorian | re |
+| Phrygian | mi |
+| Lydian | fa |
+| Mixolydian | so |
+| Locrian | ti |
+
+**The MLT question:** *Sing the resting tone.* If you can, you have heard the tonality. You don't need to know a scale, a key
+signature or a chord to answer. Music can stay in one tonality (**unitonal**) or move between them (**multitonal**), for example from
+harmonic minor to Mixolydian while staying in E♭ keyality (Gordon 152, 157).
+
+The order matters in MLT: you learn to hear and sing major and minor tonalities first, then other tonalities, and only later learn
+their names and notation. See [Audiation](../practice/audiation.qmd) and the [Tonal Patterns](../practice/patterns.qmd) page, which
+has pattern sets in every tonality.
+
+## 2. Classical theory: church modes, then major and minor
+
+In classical theory, "mode" has a history with two layers.
+
+**The church modes.** Medieval chant was sorted into **eight modes**, in four pairs. Each pair shares a **final** (the note a chant
+ends on). An **authentic** mode runs up an octave from the final; its **plagal** partner (with the prefix *hypo-*, as in
+Hypodorian) uses the same final but sits lower, with the range moved down. Today the eight are often numbered 1–8. In 1547 the Swiss
+theorist Heinrich Glarean, in his book *Dodecachordon*, added four more: **Aeolian** and **Ionian** with their plagal partners
+("Mode (music)").
+
+**Major mode and minor mode.** Ionian is our major scale and Aeolian our natural minor. As the major/minor system took over, "mode"
+came to mean simply **major mode or minor mode**, and the older modes became a special colour composers reached for: the sound of
+the church, or of folk music ("Mode (music)"). That is why a classical textbook can say a piece in C minor is "in the minor mode," and
+why [mode mixture](mode-mixture.qmd) means borrowing chords from the *parallel* minor mode.
+
+**How a classical student finds the mode.** Look at the notes used and the final (or the tonic chord), then match the pattern of
+whole and half steps. Two ways of learning modes are both common:
+
+- **Relative (white-key) way:** D Dorian is "C major from D to D." Quick for spelling, but it makes Dorian sound like a part of
+  C major.
+- **Parallel way:** C Dorian is "C major with ♭3 and ♭7." This keeps the home note fixed and asks what changes, which is closer to
+  how the mode sounds (the right-hand column of the table above).
+
+**The classical question:** *What scale, final and step pattern does this music use?* The answer can come from the page, without
+playing a note, though a good analyst checks it by ear.
+
+## 3. Jazz: a scale for each chord
+
+In jazz, "mode" usually means a **scale you play over one chord** while it lasts. This is called **chord-scale theory**. When the chord
+changes, the scale changes.
+
+Robert Hutchinson's open textbook gives the method: write all the notes of the chord, including any extensions and alterations, then
+fill the gaps between them "with the most logical choices, avoiding augmented seconds and consecutive half steps." His table of the
+usual pairs (Hutchinson, "How to Determine Chord-Scale Relationships"):
+
+| Chord | Scale |
+|---|---|
+| CΔ7 (major seventh) | C major (Ionian) or C Lydian |
+| Cm7 | C Dorian or C natural minor (Aeolian) |
+| C7 | C Mixolydian |
+| Cø7 (half-diminished) | C Locrian or C Locrian ♯2 |
+| CmΔ7 | C melodic minor (ascending) |
+| C7♯11 | C Lydian dominant |
+| C°7 | C octatonic, whole–half |
+
+**The jazz question:** *What notes sound good over this chord?* Every new chord gets a new answer, named from **its own root**.
+
+## Same notes, three answers
+
+Take the most common jazz progression in C major: **Dm7 – G7 – CΔ7** (ii–V–I). Every chord uses only the white keys.
+
+| | Dm7 | G7 | CΔ7 |
+|---|---|---|---|
+| **Jazz** says | D Dorian | G Mixolydian | C Ionian |
+| **Classical** says | ii | V7 | I, all in C major |
+| **MLT** says | one tonality, major, with *do* (C) as the resting tone, throughout |
+
+The jazz musician names **three** modes, because each is a scale built on a different chord root. Yet the notes never change. The
+classical and MLT answers agree here: one key, one home. For a piece to be *in Dorian* in the classical or MLT sense, D itself has to
+feel like home for the whole passage, not just for one chord.
+
+Now the other way round: a folk tune uses only the white keys and ends on D, and the tune clearly rests on D.
+
+- **MLT:** Dorian tonality, D keyality. Resting tone *re*.
+- **Classical:** D Dorian (mode 1, authentic, if it ranges an octave up from D).
+- **Jazz:** a jazz player would likely hear it as a long Dm chord and play D Dorian over it. Here, for once, all three agree.
+
+## Words to keep straight
+
+| Word | MLT | Classical | Jazz |
+|---|---|---|---|
+| Mode | Tonality (a heard home) | Scale type, church mode, or major/minor mode | Scale chosen for one chord |
+| Home note | Resting tone (a syllable) and tonic (a letter) | Final or tonic | Chord root (changes with each chord) |
+| Key signature | Only a symbol; can't tell you the tonality | Points to a key, checked against the final | Rarely used to name a mode |
+| "Minor" | Usually harmonic minor; Aeolian is separate | Natural, harmonic and melodic forms of one minor mode | Dorian, Aeolian or melodic minor, by chord |
+
+**Try it:** play a recording you know, sing the note it rests on, and decide the tonality (MLT). Then find the final and step pattern
+(classical). Then look at the chord symbols and name a scale for each (jazz). Where do the answers agree, and where not?
+
+Related pages: [Jazz Theory](jazz-theory.qmd) (chord-scale drills), [Mode Mixture](mode-mixture.qmd), [Time Signatures: Two
+Ways to Sort Them](meter-taxonomy.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "How to Determine Chord-Scale Relationships." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/HowToDetermineChord-ScaleRelationships.html](https://musictheory.pugetsound.edu/mt21c/HowToDetermineChord-ScaleRelationships.html). The method (chord tones, then fill the gaps avoiding augmented seconds and consecutive half steps) and the table of chord-scale pairs.
+
+"Mode (music)." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Mode_(music)](https://en.wikipedia.org/wiki/Mode_(music)). Eight church modes in authentic and plagal pairs sharing a final; Glarean's *Dodecachordon* (1547) adding Aeolian and Ionian; modern modes as rotations of the major scale.
+:::
+<!-- /works-cited -->

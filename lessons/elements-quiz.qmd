@@ -1,0 +1,47 @@
+---
+title: "Elements 11: Mixed Review"
+toc: true
+toc-depth: 2
+description: "Listening and reading questions on all ten elements of music, mixed, the way a listening test asks them, with tips for writing about a piece you have just heard."
+instruments: [piano, guitar, bass, drums, violin, sax, voice, other]
+topics: [elements, reading]
+has: [interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+Questions from all ten Elements lessons, mixed. Each ▶ Listen plays a short example; answer as many as you like, and
+press **Next** for another.
+
+## 1. Mixed questions
+
+<div class="eq" data-set="all"></div>
+
+<div class="eq" data-set="all"></div>
+
+<div class="eq" data-set="all"></div>
+
+## 2. Writing about a piece
+
+When a question asks you to describe a piece you have just heard:
+
+1. **Go through the elements one at a time.** A checklist helps: Articulation, Dynamics, Harmony and tonality, Instruments,
+   Melody, Metre, Rhythm and tempo, Structure, Style, Texture.
+2. **Describe changes, in order.** "It starts quiet, then..." beats one word for the whole piece.
+3. **Use the right word, then say where.** "A **sequence** in the violins at the start of the second section."
+4. **Back up a style with features.** Not just "Baroque", but "Baroque: a harpsichord, terraced dynamics, a busy
+   polyphonic texture".
+
+The lessons: [Articulation](elements-articulation.qmd) · [Dynamics](elements-dynamics.qmd) ·
+[Harmony and Tonality](elements-harmony.qmd) · [Instruments and Voices](elements-instruments.qmd) ·
+[Melody](elements-melody.qmd) · [Metre](elements-metre.qmd) · [Rhythm and Tempo](elements-rhythm.qmd) ·
+[Structure](elements-structure.qmd) · [Style and Genre](elements-style.qmd) · [Texture](elements-texture.qmd)
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->
+

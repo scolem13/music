@@ -1371,3 +1371,23 @@ history pages.
   groove's grid (=BandGroove.swingFor=); an eighth swing leaves a sixteenth groove straight. The Auto tempo curve never applies to a written groove.
 - =lessons/reading-swing.qmd= tables now quote the band's curve (62-68% medium, 55-60% up-tempo). Still abcjs's own slider; step 4 (lesson) not started.
 ** VERIFY BY EAR: the Swing menu at 50 / 62 / 75% against the band and the notation together (Blues in the Closet); that Auto is unchanged.
+
+* Round: the band through a Yamaha MODX (2026-10-24)
+- apps/shared/band/modx.js (BandModx): Web MIDI out. sounds.js play() asks BandModx.routed(inst, ctx) first; routed notes go out as MIDI
+  on the instrument's channel (never from an OfflineAudioContext). Queue sends ~150 ms ahead, stamped from getOutputTimestamp + cfg.offsetMs,
+  so Stop (stopAll -> BandModx.stop) takes back what hasn't left. control(): swell -> CC11, leslie -> cfg.leslieCC. Settings in localStorage
+  "modx.cfg"; "modx.on" = 1 makes sounds.js load modx.js by itself on every band page (sounds.js now v=17 everywhere).
+- gear/modx-band.qmd + modx-page.js: connect, Site Band Performance (Part/channel table, Bank/PC), timing by ear (stick vs rim click), Compare
+  (each sound site then MODX, verdicts in "modx.verdicts", Route the winners), Routing, Drum maps. gear/modx.qmd links to it.
+- Tests: node tests/band/modx/modx.test.js ("modx.test: ok"); node tests/band/modx/modx.cdp.js ("MODX UI OK", serves _site on 8517 and the
+  sample mirror on 8500 itself, fake MIDI port).
+** VERIFY with the board: nothing has been played on a real MODX. Bank MSB 63 / LSB 32 for User, pitch-bend range 2, GM drum keys on Yamaha
+   kits, CC 1 for rotary speed, whether Program Change on a Part channel swaps the whole Performance. The default offset is 0.
+** TODO Sampling mode (record the MODX over USB audio into zone lists) not built: check Yamaha's licence before any samples are published.
+** TODO Brushes go to the GM snare keys of whatever kit Part 10 has; a MODX brush kit needs its own map or channel.
+- (2026-10-24) MODX page moved to MIS Gear: gear/modx-band.qmd ("Play the Band on the MODX").
+** IDEA A second board (user: probably a Yamaha YC, for the organs; the MODX organs "leave much to be desired"). Not built, asked to note only.
+   Plan: a port per route (cfg.routes[inst].port) instead of one output; one offset per port (Timing section, a slider each);
+   Compare with three columns (site / MODX / YC) for the organ rows; organs default to a port whose name has "YC".
+   Swell / rotary to the YC's own CCs, and the site's tonebars (setTonebars) to the YC's drawbars over MIDI if it takes them:
+   CC numbers unverified, editable like leslieCC. Both boards by USB (powered hub fine); the YC needs its own mixer channel.

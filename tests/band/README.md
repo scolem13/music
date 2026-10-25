@@ -20,6 +20,8 @@ Folders keep the names of the worker that wrote them.
 | `sheet/` | `fingerings.test.js` | Chord Sheet guitar and piano fingerings, hand split |
 | `practice/` | `t_between.js` | the bars a session generates: an intro of chosen form bars, the break between repeats (click, vamp, last bars, chosen bars), tempo steps before it, none after the last pass or in hold mode |
 | `agent-c/`, `sheet/` | `voicings.test.js`, `piano-styles.test.js` | shared voicing library (`sheet/` has the current style lists) |
+| (top) | `phrase.test.js` | BandPhrase: stored phrases with velocity, resolve/schedule, ABC (bar lengths, triplets, ties, dynamics, accents, drum map) |
+| (top) | `style-engine.test.js`, `arranger-styles.test.js` | Style Arranger: chord recognition, NTR/NTT conversion (the manuals' examples), every style follows the CM7 recording rules and draws |
 
 `lead/music.print.js` prints a chorus of bass, voicings and drum figures as note names.
 
@@ -154,3 +156,4 @@ at it. `cdp.js` locks `getSoundfontUrl`, so override it with
 - `node tests/band/lyrics/t_lyrics.js` ("LYRICS OK"): `apps/shared/lyric-align.js`, the browser twin of `~/Projects/carols/tools/lyrics_align.py`. `apps/shared/syllables-en.js` is generated: `cd ~/Projects/carols/tools && ../.venv/bin/python export_syllables.py ~/Projects/everything-music-site/apps/shared/syllables-en.js`.
 - `tests/band/lessons/patterns.cdp.js` ("PATTERNS OK"): every accompaniment-pattern lesson (lessons/patterns/, from `scripts/pattern-lessons.mjs`) plays its first demo; `ALL=1` plays every demo. Copy `_site/lessons/patterns` into `lead/site/lessons/` first; server on 8500.
 - `node tests/band/swing/t_swing.js` ("SWING OK"): `BandPlayer.swingAt` (Auto = the old tempo curve for every style, the listener's `swingSet`, a style's `swing`), `warp` at sixteenths, `BandMidi.swingOf`, and written drum / conga grooves taking the style's or listener's swing.
+- `node tests/band/modx/modx.test.js` ("modx.test: ok") and `node tests/band/modx/modx.cdp.js` ("MODX UI OK"; starts its own servers on 8517 and 8500): the MODX MIDI routing, with a fake MIDI port.

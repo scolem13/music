@@ -77,7 +77,7 @@ toc: false
 <script src="/apps/shared/pitch-spelling.js"></script>
 <script src="/apps/shared/tonality.js?v=10"></script>
 <script src="/apps/shared/tune-chart.js?v=11"></script>
-<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/shared/rhythm-cells.js?v=1"></script>
 <script src="/apps/shared/tune-library.js?v=18"></script>
 <script src="/apps/shared/audio.js?v=10"></script>

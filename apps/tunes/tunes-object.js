@@ -432,7 +432,6 @@ M:4/4
 L:1/8
 Q:1/4=130
 %%id toss-the-feathers
-%%tags needs-repair
 K:Edor
 "Em"EBB2 "Bm"dBB2|"Em"EBB2 "D"F3A|"Em"BEE2 BABc|"D"d2fe dBAF:|
 "Em"(3Bcd ed e3e|"D"fede "Em"fee2|(3gfe be (3gfe be|"D"fede "Em"fee2|
@@ -1976,7 +1975,6 @@ L:1/8
 M:3/4
 I:linebreak $
 %%id bury-me-not-on-the-lone-prairie
-%%tags needs-repair
 K:Em
 Q: "Slowly"
 %%pagewidth 16cm
@@ -3216,7 +3214,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id wydleeump
-%%tags needs-repair
 K:Dmix
 I:linebreak $
 D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D2 A,2 | D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D4 |
@@ -7868,7 +7865,6 @@ M:4/4
 L:1/8
 Q:1/4=172
 %%id azule-serape
-%%tags needs-repair
 K:F
 I:linebreak $
 |: "^Bass Intro, Latin Feel"F3 c2 F2 E | _E2 B2 E2 =E2 | F3 c2 F2 E |1 _E2 B2 E2 =E2 :|2 $
@@ -8092,7 +8088,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id k-c-blues
-%%tags needs-repair
 K:C
 I:linebreak $
 "^Swing"C || "C"G2- (3GFE F G2 C | "Dm7"GG- (3GF_E "Cdim7"F G2 C | "C"G2- (3GFE FE C_B,- | $
@@ -8174,7 +8169,6 @@ M:4/4
 L:1/8
 Q:1/4=100
 %%id kids-are-pretty-people
-%%tags needs-repair
 K:F
 I:linebreak $
 "^(Swing)"z g (3ecG |: "Dm"d4- "A7"dc (3A/B/A/G | "Dm"AD z2 "Cm7""F7"z4 | "Bb7"z2 cc- "A7"c3 A/G/ | $
@@ -8471,7 +8465,6 @@ M:4/4
 L:1/8
 Q:1/4=100
 %%id let-there-be-love
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "^Swing Ballade"(3G2A2B2 |: "Ebmaj7"B8- | "Gm7"B2 G2 (3G2A2B2 | "Cm7b5"B8- | $
@@ -8845,7 +8838,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id look-to-the-sky
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Ebmaj7""^Bossa"(3D2B,2C2 D4- | (3D2B,2C2 (3D2F2E2 | "Ebm7"_D3 C (3F2E2D2 | "Ab7"C8 | $
@@ -8968,7 +8960,6 @@ M:4/4
 L:1/8
 Q:1/4=110
 %%id lullaby-of-the-leaves
-%%tags needs-repair
 K:Eb
 I:linebreak $
 |: "Cm""^Swing"C3 D "Am7b5"E3 F | "D7"^F2 G2 "G7#5"e3 d | "Gm7"c3 d "C7"c3 G | "Fm7"B2 A2 "Eb9"E2 F2 | $
@@ -9005,7 +8996,6 @@ M:4/4
 L:1/8
 Q:1/4=96
 %%id lush-life
-%%tags needs-repair
 K:Db
 I:linebreak $
 "^Swing Ballade"A, |: "Db6"DD DD "Cb9"EE EE | "Dbmaj7"(3F2F2F2- "Cb9"FF EE | "Dbmaj7"(3F2F2F2- "Cb9"FF EE | $
@@ -9857,7 +9847,6 @@ M:4/4
 L:1/8
 Q:1/4=184
 %%id april
-%%tags needs-repair
 K:G
 I:linebreak $
 "G""^Swing""^(Bop)"z2 BG E _E2 G/E/ | D ^C2 G/C/D EG _B | "C7"=Bd eg (3fgf (3dfd | AE z2 z4 | $
@@ -9881,7 +9870,6 @@ M:4/4
 L:1/8
 Q:1/4=144
 %%id april-in-paris
-%%tags needs-repair
 K:C
 I:linebreak $
 "Fm""G7b9sus4""^(Med.""^Swing)"(3F2F2F2 ^D2 E2- | "C"E8 | "Dm7b5"(3F2F2F2 ^D2 E2- | "G7"E8 | $
@@ -10055,7 +10043,6 @@ M:4/4
 L:1/8
 Q:1/4=70
 %%id autumn-in-new-york
-%%tags needs-repair
 K:F
 I:linebreak $
 "Gm7""^(Ballade)""^Swing"AG- (3GFD "Am7"C4 | "Bb6"z D- (3DFB "C7"d d2 c | "F"d4 "Gm7"A4 | "Am7""D7b9"z8 | $
@@ -10441,7 +10428,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id birk-s-works-2
-%%tags needs-repair
 K:Ab
 I:linebreak $
 "^Swing)""^(March"FA B |: "Fm"=Bc (3B/c/B/_B AF AB | "Gm7b5"B2 Ac "C7#5"z FA B | "Fm"=Bc (3B/c/B/_B AF AB | $
@@ -10577,7 +10563,6 @@ M:4/4
 L:1/8
 Q:1/4=80
 %%id blame-it-on-my-youth
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Ebmaj7""^A""^(Med. Ballade)""^Swing"G4 "Fm7"AB (3GAB- | "Gm7"B2 B,2 "Cm7"C2 E2 | "Fm7"F4 "Edim7"GA (3FGA- | "Fm7""Bb7"A8 | $
@@ -10748,7 +10733,6 @@ M:4/4
 L:1/8
 Q:1/4=92
 %%id blueberry-hill
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Eb7""^(Med.""^Swing)"E2 G2 B2 |: "Ab"e8- | e2 c2 (3A2E2c2 | "Eb"B8- | $
@@ -10853,7 +10837,6 @@ M:4/4
 L:1/8
 Q:1/4=144
 %%id boplicity
-%%tags needs-repair
 K:F
 I:linebreak $
 |: "Gm7""^(Bop)""^Swing"D F2 c- "Am7"(3c2A2F2 | "Bb"(3G2F2G2 "C7"A2 z C- | "F"C2 AE- EF Ac | "Cm7"dB/G/ _E^c "F7#5#9"z2 z A | $
@@ -10910,7 +10893,6 @@ M:4/4
 L:1/8
 Q:1/4=210
 %%id both-sides-of-the-coin
-%%tags needs-repair
 K:F#
 I:linebreak $
 "F#13b9""^(Bright Latin/Rock)""^Straight"dA =G=E "F#9"(3^G=AG F"F/F#"e | z F "G#5/F#"f6 | "F#13b9"dA =G=E "F#9"(3^GAG FF- | F8 | $
@@ -10974,7 +10956,6 @@ M:4/4
 L:1/8
 Q:1/4=144
 %%id bud-powell
-%%tags needs-repair
 K:F
 I:linebreak $
 "Bm7b5""^(Medium Up""^Swing)"z8 | "E7"z8 | "Am7"z8 | "D7"z8 | $
@@ -11199,7 +11180,6 @@ M:4/4
 L:1/8
 Q:1/4=172
 %%id celia
-%%tags needs-repair
 K:Bb
 I:linebreak $
 |: "Bb""^(Med. Up""^Swing)"(3B,CB, F,B, F3 E | "B7"z E z E z _D =B,2 | "Bb"(3B,CB, F,B, F3 E |1 "B7"z =B, z2 z E E2 :|2 $
@@ -11231,7 +11211,6 @@ M:4/4
 L:1/8
 Q:1/4=126
 %%id ceora
-%%tags needs-repair
 K:Ab
 I:linebreak $
 |: "Ab""^(Medium Bossa)""^Straight"z E=d e z E z e/d/ | "Bbm7""Eb7b9"d8 | z "Ab"E=B c z E z _B- | "Ebm""Ab13"B8 | $
@@ -11717,7 +11696,6 @@ M:4/4
 L:1/8
 Q:1/4=92
 %%id d-natural-blues
-%%tags needs-repair
 K:D
 I:linebreak $
 "^(Slow""^Swing)"A || "D7"dd (3dA=c- c3 D/=F/ | "G7"GG (3GD=F- F2 A=c | "D9#5"d=f- f2 d=c AD | $
@@ -11805,7 +11783,6 @@ M:4/4
 L:1/8
 Q:1/4=132
 %%id dat-dere
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "^(Med.Swing)"C |: "Cm"FG (3CFE- "Eb7"E3 C | "Am7b5"FG (3CFE- "Ab7"(3ECD (3EG=A | "Cm"d2 (3cGE "Ab7"FE (3FEG- | $
@@ -11862,7 +11839,6 @@ M:4/4
 L:1/8
 Q:1/4=144
 %%id dear-old-stockholm
-%%tags needs-repair
 K:F
 I:linebreak $
 |: "^Intro""^Swing)""^(Med.""Bb#11/A"z2 z F,A, B,E F,A, B,E | F,A, B,E F,A, B,E z F,A, B,E z | z2 z F,A, B,E F,A, B,E | F,A, B,E F,A, B,E z F,A, B,E z [K:treble]"Dm6""^A"z D2 E F2 GA- | $
@@ -12044,7 +12020,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id dindi
-%%tags needs-repair
 K:Eb
 I:linebreak $
 |: "Eb""^Intro""^(Slow bossa)""^Straight"G3 G (3G2G2G2 | "Db"F3 F/F/ (3A2A2A2 | "Eb"G G2 G (3G2G2G2 | "Db"F8 | $
@@ -12126,7 +12101,6 @@ M:4/4
 L:1/8
 Q:1/4=210
 %%id donna-lee
-%%tags needs-repair
 K:Ab
 I:linebreak $
 "Ab""^A""^(Up Tempo)""^Swing"z4 (3gag f=e | "F7"ed cB =AC EF | "Bb7"(3_GAG FE =DF Ac | GF z2 z2 =E=D | $
@@ -12188,7 +12162,6 @@ M:4/4
 L:1/8
 Q:1/4=60
 %%id don-t-go-to-strangers
-%%tags needs-repair
 K:Bb
 I:linebreak $
 |: "Bb""^A""^(Med. Ballade)""^Swing"B2 c2 "Bb9"c2- (3cBG | "Eb9"A2 BB- B3 A | "Bb"G2 A2 A2- (3AGD | "Dm7b5"F2 G"C"G- "G7"G4 | $
@@ -12227,7 +12200,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id doodlin
-%%tags needs-repair
 K:Db
 I:linebreak $
 |: "Db""^(March.""^Swing)"z2 (3D/E/D/A, CD- D2 | (3D/E/D/A, CD- D2 (3D/E/D/A, | C D3 (3D/E/D/A, CD- | "Db7"D6 z2 | $
@@ -12316,7 +12288,6 @@ M:4/4
 L:1/8
 Q:1/4=160
 %%id east-of-the-sun
-%%tags needs-repair
 K:G
 I:linebreak $
 "G""^(Med.""^Swing)"(3D2D2D2 F4- | "C7#11"F4 E4 | "Bm7"(3B,2B,2B,2 F4- | "E7"F8 | $
@@ -12337,7 +12308,6 @@ M:4/4
 L:1/8
 Q:1/4=100
 %%id easy-living
-%%tags needs-repair
 K:F
 I:linebreak $
 |: "F""^A""^(Med.""^Swing)"(3A2d2c2 "F#dim7"_E4 | "Gm7"z DG B"G#dim7"d f2 e | "F/A"(3=B2d2c2 "Cm7""F7"F4 | "Bb"z DF A "Eb7"c2 BB |1 $
@@ -12527,7 +12497,6 @@ M:4/4
 L:1/8
 Q:1/4=186
 %%id eronel
-%%tags needs-repair
 K:G
 I:linebreak $
 |: "G""^(Bop)""^Swing"dB ce "Am7"z3 d/B/ | "Bm7"F2 FE "E7"z2 z2 | "Bbm7"z A (3_B_d=f "Eb7"_ec de | "Bbm7""Eb7"z6 z e- | $
@@ -12778,7 +12747,6 @@ M:2/2
 L:1/8
 Q:1/2=120
 %%id falling-grace
-%%tags needs-repair
 K:C
 I:linebreak $
 |: "Ab""^(Fast""^Swing)"_e8- | e4- (3e2d2c2 | "D7/F#"d6- dc | "Gm7"d6- dc | $
@@ -13195,7 +13163,6 @@ M:4/4
 L:1/8
 Q:1/4=168
 %%id for-regulars-only
-%%tags needs-repair
 K:Db
 I:linebreak $
 "^Swing""^Intro"A- |: "Ebm7"AA (3AAA "Em7"=AA z "Fm7"B- | B2 B2 "F#m7"=B2 z "Fm7"_B- | B2 (3BBB "Em7"=AA z "Ebm7"_A- |1 $
@@ -13378,7 +13345,6 @@ M:4/4
 L:1/8
 Q:1/4=190
 %%id friday-night-at-the-cadillac-club
-%%tags needs-repair
 K:C
 I:linebreak $
 "C91113sus4""^(Med. Up Shuffle)""^Swing"CC |: C,2 "C13"G,,2 C,2 B,,2 | "Bb91113sus4"_B,,B,, "Bb13"E,,2 F,,2 =B,,2 | "C91113sus4"C,2 "C13"G,2 G,,2 C,2 | $
@@ -13469,7 +13435,6 @@ M:4/4
 L:1/8
 Q:1/4=60
 %%id gee-baby-ain-t-i-good-to-you
-%%tags needs-repair
 K:Bb
 I:linebreak $
 "C7""^Swing Bluesy)""^(Med. Slow"c2- (3cG_A "Ab7"B E2 F | "G7"G2- (3G_A^F "C7"G4 | "F7"_G2 GE "Bb7"(3GGF- FE | "Eb6"E4 "G7"z G3 | $
@@ -13540,7 +13505,6 @@ M:4/4
 L:1/8
 Q:1/4=114
 %%id getting-to-know-you
-%%tags needs-repair
 K:F
 I:linebreak $
 "^Swing)""^(Med."(3EFG || "C"c4 "C7"c4 | "C6"(3EFG c2 c3 E | "Dm"G4 G4- | $
@@ -13706,7 +13670,6 @@ M:4/4
 L:1/8
 Q:1/4=144
 %%id gone-with-the-wind
-%%tags needs-repair
 K:Eb
 I:linebreak $
 |: "Fm7""^(Med.""^Swing)"c4 "Bb7"B3 B | "Eb""G7""C7"G8 | "Fm7"c2 cc "Bb7"(3B2B2B2 | "Eb"B3 B G4 | $
@@ -13777,7 +13740,6 @@ M:4/4
 L:1/8
 Q:1/4=60
 %%id good-bye-pork-pie-hat
-%%tags needs-repair
 K:Ab
 I:linebreak $
 "^Swing""^(Ballade)"C |: "F7"FA- (3AFA "Db7"B A2 F/E/ | "Gb"F A2 F/E/ "B7"F3 C | "Eb7"FA- (3AFA "Db7"_c B2 F/E/ | $
@@ -14142,7 +14104,6 @@ M:4/4
 L:1/8
 Q:1/4=144
 %%id how-deep-is-the-ocean
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Cm7""^(Easy""^Swing"z2 E2 (3E2D2E2 | "Bother"G2 G6 | "Eb6/Bb"z2 E2 (3E2D2E2 | "Am7b5""D7"G8 | $
@@ -14219,7 +14180,6 @@ M:3/4
 L:1/8
 Q:1/4=114
 %%id how-my-heart-sings
-%%tags needs-repair
 K:C
 I:linebreak $
 "^(Jazz Waltz)""^Swing"^fa |: "Em7"g4 B2 | "Am7"c4 de | "Dm7"f4 A2 | $
@@ -14378,7 +14338,6 @@ M:4/4
 L:1/8
 Q:1/4=160
 %%id i-cover-the-waterfront
-%%tags needs-repair
 K:G
 I:linebreak $
 |: "Em7""^Swing)""^(Med. Up"z2 "A7"B2 (3A2G2A2 | "Am7"B2 BB- "D7"B4 | "G"z2 d2 "Am7"(3d2B2G2 | "Bm7""Bbother"F6 EF | $
@@ -14638,7 +14597,6 @@ M:4/4
 L:1/8
 Q:1/4=114
 %%id i-should-care
-%%tags needs-repair
 K:C
 I:linebreak $
 |: "Dm7""^(Med.""^Swing)""G9sus4"c6 B2 | "Em7""A7"B8 | "Dm7"z2 AB "G9sus4"(3c2B2A2 | "C"B2 B6 | $
@@ -14689,7 +14647,6 @@ M:4/4
 L:1/8
 Q:1/4=114
 %%id i-wish-you-love
-%%tags needs-repair
 K:F
 I:linebreak $
 "^(Bossa)"B,2 |: "Ebm""Ebmaj"B8- | B2 "Ebm7"_cB "Ebm6"_A_G FG | "Fm7b5"_A8 | $
@@ -15183,7 +15140,6 @@ M:4/4
 L:1/8
 Q:1/4=100
 %%id if-you-never-come-to-me
-%%tags needs-repair
 K:C
 I:linebreak $
 |: "C""^""^(Bossa)"G8 | "B13"^G8 | "Bbb5"A8- | "A7b9#5"A4 (3AGF (3EFG | $
@@ -15373,7 +15329,6 @@ M:4/4
 L:1/8
 Q:1/4=70
 %%id indian-summer
-%%tags needs-repair
 K:G
 I:linebreak $
 "G""^(Swing Ballade)"B, D3- D4 | "Am7"z4 "D7"z E (3FEF | "G"B, D3- D4 | "C7#11"z4 (3zDE (3FEF | $
@@ -15470,7 +15425,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id invitation
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Cm9""^(Latin Ballade)"(3D2E2d2 =A4- | A2 GB (3=A2G2C2 | D4 D4- | D4 (3D2C2G2 | $
@@ -15494,7 +15448,6 @@ M:4/4
 L:1/8
 Q:1/4=80
 %%id isfahan
-%%tags needs-repair
 K:Db
 I:linebreak $
 "^(Swing Ballade)"z c (3AFD |: "Db""^A"C6 D2 | "Bb"=A4 "Bb7#5"B4 | "Eb9"(3BcF- F6 | $
@@ -15854,7 +15807,6 @@ M:4/4
 L:1/8
 Q:1/4=140
 %%id joy-spring
-%%tags needs-repair
 K:F
 I:linebreak $
 "^(Med. Swing)"CF c- || "F"c4- cA (3G/A/G/F | "Gm7"G3 A "C7"z4 | "F"z CF dc A(3G/A/G/ F | $
@@ -16094,7 +16046,6 @@ M:4/4
 L:1/8
 Q:1/4=210
 %%id alors-voil
-%%tags needs-repair
 K:G
 I:linebreak $
 "^Swing"!3!^C (3!3!D2!1!d2!1!B2 || "G"!2!A3 !2!G- !2!G2 x !2!G | !2!F3 x (3!3!E2!1!B2!2!F2 | !3!E!3!E x !3!E- !3!E4 | $
@@ -16262,7 +16213,6 @@ M:4/4
 L:1/8
 Q:1/4=100
 %%id bei-dir-war-immer-so-sch-n
-%%tags needs-repair
 K:G
 I:linebreak $
 "^Swing"!3!B,4 || "C"!1!B8- | "Cm"(3!1!B2!1!A2!2!G2 (3!2!F2!2!G2!1!A2 | "G"!1!A8- | $
@@ -16431,7 +16381,6 @@ M:4/4
 L:1/8
 Q:1/4=180
 %%id blues-en-mineur
-%%tags needs-repair
 K:C
 I:linebreak $
 "^Swing""Am"!5!A,,2 x2 x !5!C,!4!E, !3!A, | !3!B,4 !3!A,2 !6!^G,,!5!A,, | x4 x !5!C,!4!E, !3!A, | !2!B,4 !3!A,2 !6!^G,,!5!A,, | $
@@ -16772,7 +16721,6 @@ M:3/4
 L:1/8
 Q:1/4=210
 %%id chez-jacquet
-%%tags needs-repair
 K:D
 I:linebreak $
 "^Waltz"(3ABA || "D69"F4 (3DED | "C#9"B,4 _B,2 | "D69"A,6- | $
@@ -17098,7 +17046,6 @@ M:4/4
 L:1/8
 Q:1/4=100
 %%id cr-puscule
-%%tags needs-repair
 K:F
 I:linebreak $
 "^Swing"c2 _g2 || "F""^A""C7"f8 | "F"z4 "C7"c2 a2 | "F"a8 | $
@@ -17343,7 +17290,6 @@ M:4/4
 L:1/8
 Q:1/4=160
 %%id diminishing
-%%tags needs-repair
 K:C
 I:linebreak $
 "^Swing"F |: "D9#5""^A"^F^A .=F2 E3 F | ^F^A .=F2 E3 F | ^F^A .=F2 E3 F | $
@@ -17467,7 +17413,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id don-t-worry-about-me
-%%tags needs-repair
 K:D
 I:linebreak $
 "^Swing"A2 || "Em7b5"(3a2a2a2 a4- | "A7"a4 "A7b9"g4 | "D"f3 f f4- | $
@@ -18128,7 +18073,6 @@ M:4/4
 L:1/8
 Q:1/4=160
 %%id i-cover-the-waterfront-2
-%%tags needs-repair
 K:G
 I:linebreak $
 |: "Em7""^A""^Swing"z2 "A7"B2 (3A2G2A2 | "Am7"B2 BB- "D7"B4 | "G"z2 d2 "Am7"(3d2B2G2 | "Bm7""Bbother"F6 EF | $
@@ -18811,7 +18755,6 @@ M:4/4
 L:1/8
 Q:1/4=170
 %%id blues-after-dark
-%%tags needs-repair
 K:F
 I:linebreak $
 "_Intro"z4 z cd z | "F7"f z z2 _e z z2 | "F7"d z2 =B2 c/B/F A || "F7"z8 |: $
@@ -18850,7 +18793,6 @@ M:4/4
 L:1/8
 Q:1/4=250
 %%id blues-on-sunday
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Eb7"g2 eB A_g z2 | "Ab7"A2 fe z4 | "Eb7""^Bass Fill"z8 | z2 e4- eE | $
@@ -18869,7 +18811,6 @@ M:4/4
 L:1/8
 Q:1/4=200
 %%id blues-on-the-corner
-%%tags needs-repair
 K:Bb
 I:linebreak $
 F |: "Bb7"(3^cdF (3cdF =c2 z E | "Eb7"(3BcE (3B"Edim7"cE _d G2 F | "Bb7"(3^cdF (3cdF B"Bb7"e- "Ab7"(3e_A_d | $
@@ -18887,7 +18828,6 @@ M:4/4
 L:1/8
 Q:1/4=96
 %%id blues-in-h
-%%tags needs-repair
 K:D
 I:linebreak $
 "^Start With 'Cool' Vibes Intro"z F (3ABz |: "B13"B2 AF z B, (3DEz | "E7"E2 DB, z F (3ABz | "B13"B2 A F2 G/F/E F- | $
@@ -18905,7 +18845,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id blues-march
-%%tags needs-repair
 K:Bb
 I:linebreak $
 F |: "Bb7"B4 (3dBz z B | "Eb7"_d4 (3edz z F | "Bb7"B6 dd | $
@@ -19566,7 +19505,6 @@ M:4/4
 L:1/8
 Q:1/4=175
 %%id cryin-blues
-%%tags needs-repair
 K:C
 I:linebreak $
 z4 z2 z _e- | "F7"e2- e(3_c/_B/_A/ F2- F_E | "Bb7"F_E F2 _A2 z _e- | "F7"e2- e(3_c/_B/_A/ F_E F2 | $
@@ -20463,7 +20401,6 @@ M:4/4
 L:1/8
 Q:1/4=200
 %%id haitian-fight-song
-%%tags needs-repair
 K:Bb
 I:linebreak $
 |: "_Sick Bass Solo"z8 z8 | z8 | z8 | z8 :| $
@@ -20705,7 +20642,6 @@ M:4/4
 L:1/8
 Q:1/4=150
 %%id high-seas
-%%tags needs-repair
 K:Gb
 I:linebreak $
 z z E/G/ z/ A/A G (3zED |: E8 | z2 E/G/ z/ A/=A/_A/ G (3zED | E8 | $
@@ -20925,7 +20861,6 @@ M:3/4
 L:1/8
 Q:1/4=150
 %%id i-don-t-want-no-one-but-you
-%%tags needs-repair
 K:C
 I:linebreak $
 z2 z z (3B,DE |: "Em7"D2 z2 (3B,DE | "A7"G,2 z2 (3B,DE | "Em7"D2 z2 (3B,DE | $
@@ -21126,7 +21061,6 @@ M:4/4
 L:1/8
 Q:1/4=300
 %%id isn-t-she-lovely
-%%tags needs-repair
 K:C
 I:linebreak $
 z2 (3e2f2e2 |: "Am7"d4 c4 | "D7"z2 z2 (3e2f2e2 | "Dm7"d4 "G7"c2 A-A | $
@@ -21187,7 +21121,6 @@ M:4/4
 L:1/8
 Q:1/4=96
 %%id it-aint-necessarily-so
-%%tags needs-repair
 K:Gb
 I:linebreak $
 "Ebm7""Db"z8 | "B""Bb7"z8 | "Ebm7"z8 | "B"z4 "Bb7"z B (3def |: $
@@ -22588,7 +22521,6 @@ M:4/4
 L:1/8
 Q:1/4=200
 %%id no-problem
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "^Lively Latin Lullaby""_Bass Intro"(3C2E2G2 |: "Cm7""^A"(3c2d2c2 G4- | "Cmaj"G4 (3B2G2F2 | "Cm"G8- | $
@@ -22892,7 +22824,6 @@ M:4/4
 L:1/8
 Q:1/4=96
 %%id out-of-nowhere
-%%tags needs-repair
 K:G
 I:linebreak $
 |: "Gmaj7""^A"(3D2E2F2 A4- | A G3 D2 E=F- | "Bbm7"F3 =F- F4- | "Eb7"F6 _E2 | $
@@ -23448,7 +23379,6 @@ M:4/4
 L:1/8
 Q:1/4=150
 %%id rio-funk
-%%tags needs-repair
 K:Bb
 I:linebreak $
 |: "^Free Blowing Intro"z8 :| z4 z =E,F, _G, |: z "Bb"FG FB B z/ Gc =eF Bd | z FG FB G z F/F/ | $
@@ -23533,7 +23463,6 @@ M:4/4
 L:1/8
 Q:1/4=96
 %%id s-k-j
-%%tags needs-repair
 K:Db
 I:linebreak $
 "Db7"(3zd=B (3AGD (3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- D2 | "Db7"(3zd=B (3AGD (3=EGD- DA, | "Abm7"=B,3 "Db7"D- D4 | $
@@ -24001,7 +23930,6 @@ M:4/4
 L:1/8
 Q:1/4=150
 %%id soft-impressions
-%%tags needs-repair
 K:C
 I:linebreak $
 "Am7""^Drunkish Piano Intro""C/G"z8 | "F7""E7"z8 | "Am7""C/G"z8 | "F7""E7"z8 | $
@@ -24261,7 +24189,6 @@ M:4/4
 L:1/8
 Q:1/4=200
 %%id soul-station
-%%tags needs-repair
 K:Eb
 I:linebreak $
 z _G (3=GBc |: "Eb7"e2 _d2 BA z _G | "Bb7"z2 z2 z _G (3=GBc | "Eb7"e2 _d2 BA z _G | $
@@ -24387,7 +24314,6 @@ M:4/4
 L:1/8
 Q:1/4=90
 %%id soulville
-%%tags needs-repair
 K:Bb
 I:linebreak $
 |: "Bb""_A"B,2 z2 z2 (3E/F/E/_D | E4 _D3 B,- | B,2 z6 | z F, z F, _A,2 B,2 | $
@@ -25341,7 +25267,6 @@ M:4/4
 L:1/8
 Q:1/4=300
 %%id tricrotism
-%%tags needs-repair
 K:Cmin
 I:linebreak $
 B |: "Ebmaj7"cd cB z2 z G | FG FE z2 z G | "F7"dc =AG =EF Ad | $
@@ -26120,7 +26045,6 @@ M:4/4
 L:1/8
 Q:1/4=96
 %%id gone-home
-%%tags needs-repair
 K:C
 I:linebreak $
 z c'2 z _b2 z ^f- | f z =f2 z2 _e2 | z2 ^f2 z =f2 z | _e2 z2 z2 c2 | $
@@ -26173,7 +26097,6 @@ M:4/4
 L:1/8
 Q:1/4=150
 %%id is-there-a-place
-%%tags needs-repair
 K:Eb
 I:linebreak $
 "Ebmaj7"d4 z cB G | "Am7"D6 "D7"z C | "Fm7"FF- F4 z C | "Eb13"G4 (3zGA (3Bc^c | $
@@ -31120,7 +31043,6 @@ N:Source: 50 Tunes for Teaching (Andy Mullen)
 M:4/4
 L:1/8
 %%id the-doll
-%%tags needs-repair
 K:C
 I:linebreak $
 "^Broadly, with a lilt"x6 (3G,A,B, |: "^C""^I"z2 c2 AG Ac | E E2 E- E2 (3G,A,B, | z2 c2 AG Ac | $
@@ -31384,7 +31306,6 @@ M:4/4
 L:1/8
 Q:1/4=120
 %%id wydleeump-omr-pilot
-%%tags needs-repair
 K:G
 I:linebreak $
 D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D2 A,2 | D(3D/D/D/ DD F2 A2 | D(3D/D/D/ CC D4 |
@@ -31860,5 +31781,415 @@ K:C
 I:linebreak $
 B/B/B/B/BB | BB B2- | BB B/B/B | B4 | BB B/B/B $
 BB B2- | B/B/B/B/BB | B2- B/B/B/B/ | B/B/BBB | B4 |]
+`,
+
+"jri-recorder":
+`X:1
+T:Triple Twinkle
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 270.
+M:6/8
+L:1/8
+Q:3/8=63
+%%id triple-twinkle
+K:Eb
+|: "Eb" E2 E B2 B | "Ab" c2 c "Eb" B3 | "Bb7" A2 A "Eb" G2 G | "Bb7" F2 F "Eb" E3 !fine! :|
+"Eb" B2 B "Bb7" A2 A | "Eb" G2 G "Bb7" F3 | "Eb" B2 B "Bb7" A2 A | "Eb" G2 G "Bb7" F3 !D.C.! |]
+
+X:2
+T:Triple Pierrot
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 272.
+M:6/8
+L:1/8
+Q:3/8=72
+%%id triple-pierrot
+K:Eb
+"Eb" E2 E E2 "Bb7" F | "Eb" G3 "Bb7" F3 | "Eb" E2 G "Bb7" F2 F | "Eb" E6 |
+"Eb" E2 E E2 "Bb7" F | "Eb" G3 "Bb7" F3 | "Eb" E2 G "Bb7" F2 F | "Eb" E6 |]
+
+X:3
+T:Patsy, Ory, Ory, Aye
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 273-274.
+M:6/8
+L:1/8
+Q:3/8=116
+%%id patsy-ory-ory-aye
+K:F
+"F" A2 A A2 A | A2 B c3 | "C7" G2 G G2 G | G2 A B3 |
+"F" A2 A A2 A | A2 B c2 A | "C7" G2 B A2 G | "F" F3 F3 |
+"F" A2 A A2 A | A2 B c3 | "C7" G2 G G2 G | G2 A B3 |
+"F" A2 A A2 A | A2 B c2 A | "Bb" G2 B "C7" A2 G | "F" F3 F3 |]
+
+X:4
+T:Baa, Baa, Black Sheep
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 275-276.
+M:2/4
+L:1/8
+Q:1/4=100
+%%id baa-baa-black-sheep
+K:Eb
+"Eb" E E B B | "Ab" c/c/c/c/ "Eb" B2 | "Bb7" A A "Eb" G G | "Bb7" F F "Eb" E2 |
+"Eb" B B/B/ "Bb7" A A | "Eb" G G/G/ "Bb7" F2 | "Eb" B B/B/ "Bb7" A/A/A/A/ | "Eb" G G/G/ "Bb7" F2 |
+"Eb" E E B B | "Ab" c/c/c/c/ "Eb" B2 | "Bb7" A A "Eb" G G | "Bb7" F F "Eb" E2 |]
+
+X:5
+T:Oats, Peas, Beans
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 277.
+M:6/8
+L:1/8
+Q:3/8=108
+%%id oats-peas-beans
+K:F
+"F" A2 A A2 "C7" G | "F" F2 F F3 | "C7" B2 B B2 A | G2 G G2 G |
+"F" A2 "C7" B c2 B | "F" A A B c2 A | "Bb" G2 B "C7" A2 G | "F" F2 F F3 |]
+
+X:6
+T:Clementine
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 280.
+M:3/4
+L:1/8
+Q:1/4=92
+%%id clementine
+K:Eb
+E3/2 E/ | "Eb" E2 B,2 G3/2 G/ | G2 E2 E3/2 G/ | B3 B A G | "Bb7" F4 F3/2 G/ |
+"Bb7" A2 A2 G3/2 F/ | "Eb" G2 E2 E3/2 G/ | "Bb7" F2 B,2 D3/2 F/ | "Eb" E4 |]
+
+X:7
+T:Hush Little Baby
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 282.
+M:2/4
+L:1/16
+Q:1/4=48
+%%id hush-little-baby
+K:Eb
+"Eb" B,2 GG G2 A2 | "Bb7" G2 FF F4 | B,B,FF F2 FG | "Eb" F2 E2 E4 |
+"Eb" B,2 G2 G2 A2 | "Bb7" G2 F2 F4 | B,B,FF F2 FG | "Eb" F2 E2 E4 |]
+
+X:8
+T:Coventry Carol
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 285.
+M:6/8
+L:1/8
+Q:1/8=92
+%%id coventry-carol
+K:Cm
+"Cm" C C =B, C2 E | "G7" D2 C =B,3 | "Cm" C D E "Fm" F2 D | "Cm" C3- C2 G |
+"Fm" F2 E D2 E | "Fm" D2 C "G7" =B,3 | "Cm" C =B, C "Fm" F2 D | "C" =E6 |]
+
+X:9
+T:Snake Dance
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 286.
+M:4/4
+L:1/8
+Q:1/4=92
+%%id snake-dance
+K:Cm
+C D | "Cm" E2 "G7" D2 "Cm" C2 C D | "Cm" E G "G7" D E "Cm" C2 E F | "Cm" G/G/G/G/ G A G F D E | "G7" F/F/F/F/ F G F E C D |
+"Cm" E2 "G7" D2 "Cm" C2 C D | "Cm" E G "G7" D E "Cm" C2 |]
+
+X:10
+T:This Old Hammer
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 287-288.
+M:2/4
+L:1/16
+Q:1/4=58
+%%id this-old-hammer
+K:Cm
+C2 E2 | "Cm" G G3- G4- | G4 G2 F2 | E C3- C4- | C4 C2 E2 |
+"Fm" G F3- F4- | F4 G2 F2 | "Cm" E C3- C4- | C4 C2 E2 |
+"Cm" G G3- G4- | G4 G2 F2 | E C3- C4- | C4 C2 C2 |
+"G7" E D3- D4- | D4 E2 E2 | "Cm" C4- "Fm" C4- | "Cm" C4 |]
+
+X:11
+T:America
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 289-290.
+M:3/4
+L:1/8
+Q:1/4=80
+%%id america
+K:Eb
+"Eb" E2 E2 F2 | "Bb7" D3 E F2 | "Eb" G2 G2 "Ab" A2 | "Eb" G3 F E2 |
+"Ab" F2 "Eb/Bb" E2 "Bb7" D2 | "Eb" E6 | "Eb" B2 B2 B2 | B3 A G2 |
+"Bb7" A2 A2 A2 | A3 G F2 | "Eb" G2 A G F E | G3 A B2 |
+"Ab" c A "Eb/Bb" G2 "Bb7" F2 | "Eb" E6 |]
+
+X:12
+T:Sleep, Baby, Sleep
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 292.
+M:C|
+L:1/4
+Q:1/2=52
+%%id sleep-baby-sleep
+K:Eb
+"Eb" G2 "Bb7" F F | "Eb" E3 B, | "Eb" G G "Bb7" F F | "Eb" E3 B, |
+"Bb7" A A F F | "Eb" B B G G | "Bb7" A A F F | "Eb" B B G2 |
+"Eb" G2 "Bb7" F F | "Eb" E3 z | "Eb" G2 "Bb7" F F | "Eb" E4 |]
+
+X:13
+T:Little Brown Jug
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 293-294.
+M:2/4
+L:1/8
+Q:1/4=84
+%%id little-brown-jug
+K:G
+D | "G" B, D D D | "C" C E E E/E/ | "D7" F/F/F E F | "G" G A B2 |
+"G" B, D D D | "C" C E E E | "D7" F/F/F E F | "G" G G G2 |
+"G" B, D D2 | "C" C E E2 | "D7" F/F/F E F | "G" G A B2 |
+"G" B, D D2 | "C" C E E2 | "D7" F/F/F E F | "G" G G G |]
+
+X:14
+T:Simple Gifts
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 295.
+M:4/4
+L:1/8
+Q:1/4=92
+%%id simple-gifts
+K:Eb
+B, B, | "Eb" E2 E F G E G A | B2 B A G2 F E | "Bb7" F2 B,2 F2 B,2 | F G F D B,2 B,2 |
+"Eb" E D E F (G E) G A | B2 (B A) G2 (F E) | "Bb7" F2 F F G2 G F | "Ab" E2 E3/2 E/ "Eb" E2 |]
+
+X:15
+T:Long, Long Ago
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 296.
+M:4/4
+L:1/8
+Q:1/4=92
+%%id long-long-ago
+K:Eb
+"Eb" E2 E F G2 G A | B2 c B G4 | "Bb7" B2 A G F4 | A2 G F "Eb" E4 |
+"Eb" E2 E F G2 G A | B2 c B G4 | "Bb7" B2 A G F2 G3/2 F/ | "Eb" E8 |]
+
+X:16
+T:O Susanna
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 297-298.
+M:2/4
+L:1/8
+Q:1/4=100
+%%id o-susanna
+K:Eb
+E/F/ | "Eb" G B B3/2 c/ | B G E3/2 F/ | G G F E | "Bb7" F3 E/F/ |
+"Eb" G B B3/2 c/ | B G E3/2 F/ | G G "Bb7" F F | "Eb" E3 E/F/ |
+"Eb" G B B3/2 c/ | B G E3/2 F/ | G G F E | "Bb7" F3 E/F/ |
+"Eb" G B B3/2 c/ | B G E3/2 F/ | G G "Bb7" F F | "Eb" E3 z |
+"Ab" A2 A2 | c c2 c | "Eb" B B G E | "Bb7" F3 E/F/ |
+"Eb" G B B3/2 c/ | B G E3/2 F/ | G G "Bb7" F F | "Eb" E3 |]
+
+X:17
+T:A La Nanita Nana
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 299.
+M:3/8
+L:1/16
+Q:1/8=88
+%%id a-la-nanita-nana
+K:Cm
+|: "Cm" C2 C D E F | G2 G G "Fm" A F | "Cm" G2 G G "Fm" A F | "Cm" c2 G4 |
+"Fm" F2 G A B A | "Cm" G F E F G E | "G7" F E D E F D | "Cm" (E D) C4 :|
+
+X:18
+T:Morning Song
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 300.
+M:2/4
+L:1/8
+Q:1/4=63
+%%id morning-song
+K:Ddor
+|: "Dm" D E F F | "C" E D C C | "Dm" D F A A | "G" B2 z2 |
+"Dm" A G F2 | "C" G F E2 | "Dm" D F "C" E C | "Dm" D2 z2 :|
+
+X:19
+T:Drunken Sailor
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 301-302.
+M:C|
+L:1/4
+Q:1/2=104
+%%id drunken-sailor
+K:Ddor
+"Dm" A A/A/ A A/A/ | A D F A | "C" G G/G/ G G/G/ | G C E G |
+"Dm" A A/A/ A A/A/ | A B c d | "C" c A G E | "Dm" D2 D2 |
+"Dm" A2 A3/2 A/ | A D F A | "C" G2 G3/2 G/ | G C E G |
+"Dm" A2 A3/2 A/ | A B c d | "C" c A G E | "Dm" D2 D2 |]
+
+X:20
+T:Old Joe Clark
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 303-304.
+M:2/4
+L:1/8
+Q:1/4=108
+%%id old-joe-clark
+K:Cmix
+"C" C3/2 C/ C2 | G F E2 | C3/2 C/ D C | "Bb" B,2 z2 |
+"C" C3/2 C/ C2 | G F E3/2 C/ | "Bb" E E D D | "C" C2 z2 |
+"C" G A B A | G F E2 | G A B A | G2 z2 | "C" G A B A | G F E C |
+"C" E E "Bb" D D | "C" C2 z2 | C3/2 C/ C2 | G F E2 | C3/2 C/ D C |
+"Bb" B,2 z2 | "C" C3/2 C/ C2 | G F E3/2 C/ | "Bb" E E D D | "C" C2 z2 |]
+
+X:21
+T:Peasant Dance
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 309.
+M:5/8
+L:1/8
+Q:1/8=200
+%%id peasant-dance
+K:Ddor
+"Dm" D F A "C" G G/E/ | "C" C E C "Dm" D2 | "Dm" D F A "G" G G/E/ | "C" F E C "Dm" D2 |
+"Dm" A A/F/ "C" G E D | "C" G G/E/ "Dm" F E D | "Dm" D F A "C" G G/E/ | "C" C E C "Dm" D2 |]
+
+X:22
+T:Three Young Men from Volos
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), pp. 312-313.
+N:Printed tempo: dotted quarter + quarter + quarter = 40; Q: below reads that as one eighth = 120. Not confirmed.
+M:7/8
+L:1/8
+Q:1/8=120
+%%id three-young-men-from-volos
+K:Em
+|: "Em" B3 G2 B2 | E2 B, E2 F G | B2 B G2 _B2 |1 "Em" =B3- B2 z2 :|2 "B" =B3- B2 z B, |
+"Em" E2 E F2 G2 | "Am" A3 A2 A2 | "Em" B2 B G2 B2 | "Em" E3- E2 z B, |
+"Em" E2 E F2 G2 | "Am" A3 A2 _B2 | "Em" =B B B G2 B2 | E3- E2 z2 |]
+
+X:23
+T:Monkey Song
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 314.
+M:2/4
+L:1/8
+Q:1/4=66
+%%id monkey-song
+K:G
+D | "G" (3GGG (3GFE | "D7" F F D D | "D7" A A G A | "G" B2- (3:2:2B2D |
+"G" (3GGG (3GFE | "D7" F F D D | "D7" A A B A | "G" G2- G :|
+
+X:24
+T:The Banks of Newfoundland
+C:Trad.
+N:Source: Jump Right In: Recorder Teacher's Guide (GIA, 1999), p. 315.
+M:6/8
+L:1/8
+Q:3/8=56
+%%id the-banks-of-newfoundland
+K:Eb
+c | "Eb" (2:3:2Bc G2 F | (2:3:2GB, "Ab" C B, C | "Eb" (2:3:2EF G2 c | B3- B2 c |
+"Eb" B2 c (2:3:2GF | "Ab" G2 B, C2 E/F/ | "Eb" (2:3:2GG "Bb7" G2 F | "Eb" E3- E2 |]
+`,
+
+"dmti":
+`X:1
+T:Mary Ann
+C:Trad.
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), p. 17.
+N:Unit 2 repertoire. Major tonality, duple meter (Latin style). No tempo printed. Bars 1-8 are repeated.
+M:4/4
+L:1/8
+%%id dmti-mary-ann
+K:C
+|: "C"e2 g2 c2 e2 | "G7"e d/f/- f6 | "G7"d2 f f B2 d2 | "C"d c/e/- e6 |
+"C"e e g g c2 e e | "G7"e d/f/- f6 | "G7"d2 f f B2 d2 | "C"d c/c/- c6 :|
+
+X:2
+T:Joshua
+C:Trad. Spiritual
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), p. 33.
+N:Unit 3 repertoire. Minor tonality (tonic and dominant), duple meter, swing style. No tempo printed. Form: play to Fine, then the B section (starting with the two-eighth pick-up "You may" printed after Fine), then D.C. al Fine. The pick-up is written here in the Fine bar so that the bar adds up.
+M:4/4
+L:1/8
+%%id dmti-joshua
+K:Dm
+"Dm"d ^c d e f e (f g) | a a2 a- a2 z2 | "A7"g g2 g- g2 z2 | "Dm"a a2 a- a g f e |
+"Dm"d ^c d e f e (f g) | a a2 a- a2 f g | "A7"a2 g2 f2 e2 | "Dm"d6 "^Fine"d d |
+"Dm"d A A A A2 A2 | A A A4 A A | "Dm"A A G G F G3 | A4 z2 d2 |
+"Dm"d2 A2 A A3 | A2 A4 F G | "A7"A A G2 F2 E2 | "Dm"D4 z4 "^D.C. al Fine"|]
+
+X:3
+T:Down by the Riverside
+C:American Folk Song
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 1 (GIA), p. 69.
+N:Unit 5 repertoire. Major tonality (tonic, subdominant, dominant), duple meter. No tempo printed. Starts with a pick-up of three eighths.
+M:4/4
+L:1/8
+%%id dmti-down-by-the-riverside
+K:F
+"F"a a ^g | a2 c4 d2 | f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f4 |
+"C7"z2 g2 g3 ^f | g f2 e- e4 | "F"z2 a2 a3 ^g | a g2 f- f a a ^g | a2 c4 d2 |
+f f2 a- a4 | z2 a2 a3 ^g | a g2 f- f z f2 | "C7"a2 g4 _b2 | a4 g4 |
+"F"f8 | z2 f2 g2 a a | "Bb"_b _b3 _b2 _b _b- | _b z _b2 c'2 _b _b | "F"a a3 a2 g f- | f4 z4 |]
+
+X:4
+T:When the Saints Go Marching In
+C:Trad.
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 2 (GIA), p. 1.
+N:Unit 1 repertoire. Major tonality (tonic, subdominant, dominant), duple meter (2/4). No tempo printed. The last bar is the final eighth that completes the pick-up.
+M:2/4
+L:1/8
+%%id dmti-when-the-saints
+K:Bb
+B d e | "Bb"f4- | f B d e | f4- | f B d e |
+f2 d2 | B2 d2 | "F7"c4- | c d d c | "Bb"B3 B | d2 f f |
+"Eb"f e3- | e2 d e | "Bb"f2 d2 | B2 "F7"c2 | "Bb"B4- | B |]
+
+X:5
+T:Motherless Child
+C:Trad. Spiritual
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 2 (GIA), p. 39.
+N:Unit 3 repertoire. Minor tonality (tonic, subdominant, dominant), duple meter (common time). No tempo printed. The book prints the melody doubled at the octave; the lower octave is given here.
+M:C
+L:1/8
+%%id dmti-motherless-child
+K:Dm
+"Dm"F A2 F A2 F G | A G F D- D4 | "Gm"G G2 F "A7"G2 F G | "Dm"_A G F D- D4 |
+A d2 _A G2 F G | A G F D- D3 D | "Dm"F3 D "A7"C A, ^C2 | "Gm"E3 D F3 D |
+"Dm/A"F3 D "A7"C A, ^C2 | "Dm"D8 |]
+
+X:6
+T:Transformation
+C:Christopher Azzara
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 3 (GIA), p. 23.
+N:Unit 2 repertoire. Major tonality (tonic, supertonic, mediant, subdominant, dominant, submediant, passing diminished chords), duple meter, swing style. No tempo printed. The book prints the melody doubled at the octave; the lower octave is given here. The last eighth note is a pick-up to the repeat.
+M:C
+L:1/8
+%%id dmti-transformation
+K:Bb
+"Bb"D2 F2 "Gm7"B3 F | "Cm7"E2 B A- "F7"A2 G F- | "Dm7"F4 "G7"G F D E- | "Cm7"E c B A- "F7"A2 F B- |
+"Bb6"B2 c _A "Bb7"G F2 G- | "Eb6"G2 A B "Edim7"A G2 F- | "Bb/F"F D z E "G7"F G F =E | "Cm7"E D E F "F7"_A _G F E |
+"Bb"D2 F2 "Gm7"B3 F | "Cm7"E2 B A- "F7"A2 G F- | "Dm7"F4 "G7"G F D E- | "Cm7"E c B A- "F7"A2 F B- |
+"Bb6"B2 c _A "Bb7"G F2 G- | "Eb6"G2 A B "Edim7"A G2 F- | "Bb/F"F D z E "F7"F G A B- | "Bb6"B2 z2 z4 |
+"D7"z2 D2 =E3 D | =E2 =B A- A3 D |]
+
+X:7
+T:Red Wings
+C:Christopher Azzara
+N:Source: Azzara & Grunow, Developing Musicianship through Improvisation, Book 3 (GIA), pp. 47-48.
+N:Unit 3 repertoire. Major tonality (tonic, supertonic, mediant and others, with chromatic and diminished chords), duple meter, swing style. No tempo printed. The book prints the melody doubled at the octave; the lower octave is given here. Bars 23-32 are on p. 48.
+M:C
+L:1/8
+%%id dmti-red-wings
+K:F
+"F6"d c A F- F2 G A- | A4 z C D E | "Gm7"G F E F "C7"A2 c G- | "FMaj7"G4 z C D E | "F6"G F G F- F2 z2 |
+"Abdim7"G F G F- F2 z2 | "Gm7"E D ^C D F2 A c- | "C7"c4 z2 ^c d- | "Gm7"d3 B A G2 c- | c4 "Daug7"z2 A B- |
+"Gm7"B3 D ^C D2 A- | "C7"A6 z c | "Gm7"z B2 D F A G F | "C7"E2 z2 d c A F- | "F6"F2 z2 z4 | z8 |
+"F9"c A3 z2 d2 | c A3 z4 | "Eb9"z2 c d _e e d _d | "D7"c B A G ^F d c A | "Gm7"B G3 z2 c2 | B G3 z4 |
+"Gm7"z D F c B2 z D | "C13sus4"F A G F "C7(b9)"E2 z2 | "F6"d c A F- F2 A B- | "Gm7"B D ^C D "C7"A2 c G- | "Am7(b5)"G8 |
+"Am7(b5)"z A G F "D7(b9)"^F _E D C | "Gm7"B, D F A G3 F | "C7"E F G B d c A F- | "F"F2 z2 z4 | z8 |]
 `
 };

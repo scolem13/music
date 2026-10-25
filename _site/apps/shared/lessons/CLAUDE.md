@@ -44,3 +44,10 @@
   (`CpKit`; `cp-motif` motif lab, `cp-transpose` transposer with range check, `cp-journal` entry builder, `cp-intent` intention builder,
   `cp-sort` command terms; documented at its top), included via `lessons/_compose-kit.qmd` (with `abc-ex.js`). Ranges: HyperPhysics.
   Sources `scripts/sources/composing.py`. Test: `node tests/lessons/compose.cdp.js` (after rendering the seven pages).
+- The Live Sound lessons (`lessons/live-{strip,gain,eq,gate,comp,feedback,soundcheck}.qmd`, sidebar part Live Sound, topic `live-sound`):
+  one Behringer X32 input channel, `<div class="lk" data-w="strip">` from `apps/shared/lessons/live-kit.js` (attributes and sources
+  documented at its top; included via `lessons/_live-kit.qmd`). The DSP runs in an AudioWorklet that plays the generated "problem"
+  source itself and measures the gate / compressor where the hits, bleed and loud/quiet parts are (`host.lk.stats`); `data-goal` adds
+  "Check my channel", `data-quiz` is the mystery-channel game, ⤓ WAV saves the raw source for the real desk. Live Sound 6 reuses
+  synth-kit's `pa`. X32 ranges from the X32 user manual and Maillot's OSC protocol (`scripts/sources/live-sound.py`; annotated copies
+  in ~/Documents/Manuals). Test: `node tests/lessons/live-kit.cdp.js` (after rendering the seven pages; about 3 minutes).

@@ -2,8 +2,8 @@
 title: "Score Reading 2: Instruments with Several Clefs"
 toc: true
 toc-depth: 2
-description: "Which instruments switch clefs and when: cello, bassoon, trombone, viola, double bass, horn, bass clarinet, keyboards and harp, plus the old octave conventions that still catch readers out."
-instruments: [violin, bass, piano, other]
+description: "Which instruments switch clefs and when: cello, bassoon, trombone, viola, double bass, horn, bass clarinet, keyboards, harp and choir (the tenor's octave treble clef), plus the old octave conventions that still catch readers out."
+instruments: [violin, bass, piano, voice, other]
 topics: [notation, reading]
 has: [notation, interactive]
 ---
@@ -28,6 +28,7 @@ instruments you also have to know an old convention that changes the octave.
 | **Bass clarinet** | treble | bass | depends on the edition: see below |
 | **Piano, harp, celesta** | treble + bass | either clef on either staff | a hand moves into the other range |
 | **Organ** | treble + bass + pedal staff | | the pedals get their own bass-clef staff |
+| **Choir** | soprano, alto: treble · tenor: octave treble · bass: bass | tenor in bass clef | in closed score (two staves) the tenor shares the bass staff; see [section 5](#choir-scores-and-the-tenors-clef) |
 
 ## 2. Following a cello part
 
@@ -72,7 +73,75 @@ octave transposition, and it is so standard that a concert-pitch score keeps it.
 tenor's clef is often drawn with a small 8 under the treble clef to say so. More in
 [lesson 3](score-transposition.qmd).
 
-## 5. Check yourself
+## 5. Choir scores and the tenor's clef
+
+A choir score has four parts, **soprano, alto, tenor and bass** (SATB), laid out in one of two ways.
+
+**Open score: one staff per voice.** Soprano and alto read treble clef, bass reads bass clef, and the
+tenor reads the **octave treble clef**: a treble clef with a small **8 underneath**. The 8 means "sounds an
+octave lower than written". A tenor's written G on the second line sings the G below middle C, and the
+middle C a tenor sings is written in the third space. Without the clef the tenor line would sit in the
+bass staff's top ledger lines or hover across middle C; with it, the line sits in the middle of a staff.
+Because the old C tenor clef has dropped out of choral music, singers often call this octave treble clef
+"the tenor clef" too. Ask which one is meant.
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Open score: tenor in octave treble clef
+M:4/4
+L:1/4
+K:G
+V:S name="Soprano" clef=treble
+V:A name="Alto" clef=treble
+V:T name="Tenor" clef=treble-8
+V:B name="Bass" clef=bass
+[V:S] B A G2 | A B c B | A2 G2 |]
+[V:A] G F G2 | F G E G | F2 D2 |]
+[V:T] d d B2 | d d c d | d2 B2 |]
+[V:B] G, D, E,2 | D, G, A, G, | D,2 G,,2 |]
+</script></div>
+
+**Closed score: two staves**, as in a hymnal. Soprano and alto share the treble staff (soprano stems up,
+alto stems down); tenor and bass share the bass staff (tenor up, bass down). Here the tenor is written
+**at sounding pitch in bass clef**, so the same tenor notes look an octave lower on the page than in open
+score, and sit in the bass staff's upper half. Same music, same sound:
+
+<div class="abc-ex" data-sound="piano"><script type="text/plain">
+X:1
+T:Closed score: tenor in bass clef
+M:4/4
+L:1/4
+%%score (S A) (T B)
+K:G
+V:S clef=treble stem=up
+V:A clef=treble stem=down
+V:T clef=bass stem=up
+V:B clef=bass stem=down
+[V:S] B A G2 | A B c B | A2 G2 |]
+[V:A] G F G2 | F G E G | F2 D2 |]
+[V:T] D D B,2 | D D C D | D2 B,2 |]
+[V:B] G, D, E,2 | D, G, A, G, | D,2 G,,2 |]
+</script></div>
+
+**Reading tenor parts.**
+
+- **The notes read like treble clef, an octave down.** A tenor reads the names exactly as in treble
+  clef; only the sound moves. Nothing changes in the key signature.
+- **Not every edition draws the 8.** Many choral editions print a plain treble clef on the tenor staff
+  and expect you to know. A treble staff labelled *Tenor* (or *T.*, or *Men* in a men's part) is sung an
+  octave lower, 8 or no 8. Some older editions use a **double treble clef** (two treble clefs side by
+  side) for the same meaning.
+- **Older scores use the C clef.** Choral music printed before the 20th century often put the tenor in
+  the **tenor clef** (the C clef on the fourth line, [lesson 1](score-clefs.qmd#reading-tenor-clef)), and
+  the alto and soprano in their own C clefs too. Modern editions replaced them with treble and octave
+  treble.
+- **Switching between scores.** A tenor who sings from a hymnal (bass clef, closed score) and from an
+  octave-edition (octave treble, open score) sees the same notes in two places. Find middle C in each:
+  third space in octave treble, first ledger line above the bass staff in bass clef.
+- **Accompanists and conductors** reading open score at the piano play the tenor line an octave below
+  what the treble clef shows; played as written, the tenors' notes would sound above the altos'.
+
+## 6. Check yourself
 
 Clefs shuffle at random. Aim for 20 in a row without a mistake before moving on.
 
@@ -86,7 +155,7 @@ Next: [Score Reading 3: Transposing Instruments](score-transposition.qmd).
 ::: {.works-cited}
 **For students**
 
-"Clef." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clef](https://en.wikipedia.org/wiki/Clef).
+"Clef." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Clef](https://en.wikipedia.org/wiki/Clef). Choir clefs (checked 22 Oct 2026): octave treble clef for tenors in SATB and TTBB, the 8 sometimes left out; double treble clef; tenor in bass clef on a shared staff; C clefs once used for choral parts.
 
 "Transposing Instrument." *Wikipedia*, Wikimedia Foundation, [en.wikipedia.org/wiki/Transposing_instrument](https://en.wikipedia.org/wiki/Transposing_instrument). Concert-pitch scores (Prokofiev), horn bass clef ambiguity, crooks, brass-band trombone in B♭.
 

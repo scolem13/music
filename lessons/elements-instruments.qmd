@@ -1,0 +1,211 @@
+---
+title: "Elements 4: Instruments and Voices"
+toc: true
+toc-depth: 2
+description: "Which instruments and voices you can hear and what each is doing: ensemble sizes, SATB and other voice types, the four families of the orchestra from high to low, rock and pop line-ups, and how to describe orchestration."
+instruments: [piano, guitar, bass, drums, violin, sax, voice, other]
+topics: [elements, instruments]
+has: [notation, interactive]
+---
+
+{{< include _elements-kit.qmd >}}
+
+**Instrumentation** (also called **orchestration** or **timbre**) is which instruments and voices you hear and what each
+one is doing. Every ▶ on this page plays the instrument named.
+
+## 1. How many performers
+
+| Players | Name |
+|---|---|
+| 1 | solo |
+| 2 | duet (or duo) |
+| 3 | trio |
+| 4 | quartet |
+| 5 | quintet |
+
+A **string quartet** is two violins, a viola and a cello. A **piano trio** is piano, violin and cello. A **choir** is
+singers; an **orchestra** is a large group of strings, woodwind, brass and percussion; a **band** usually means a rock,
+pop, jazz or wind band.
+
+## 2. Voices
+
+| Voice | Who | Range |
+|---|---|---|
+| **Soprano** | women, girls | highest |
+| **Treble** | boys before their voice changes | high |
+| **Alto** (contralto) | women | lower |
+| **Countertenor** | men singing in the alto range | alto range |
+| **Tenor** | men | high men's voice |
+| **Baritone** | men | middle men's voice |
+| **Bass** | men | lowest |
+
+An **SATB choir** is soprano, alto, tenor and bass. Sopranos and altos are written in the treble clef; tenors in the treble
+clef an octave higher than they sound; basses in the bass clef.
+
+More on voices: [Pop](voice-pop.qmd), [Jazz](voice-jazz.qmd) and [Classical](voice-classical.qmd) singing.
+
+## 3. The orchestra
+
+Four families, each listed from high to low. In a score they are printed in this order, woodwind at the top.
+
+| Family | High → low | How the sound is made |
+|---|---|---|
+| **Woodwind** | piccolo, flute, oboe, clarinet, bassoon | air across a hole (flute) or through a reed |
+| **Brass** | trumpet, French horn, trombone, tuba | lips buzzing into a mouthpiece |
+| **Percussion** | timpani, snare drum, cymbals, xylophone, glockenspiel… | struck, shaken or scraped |
+| **Strings** | violin, viola, cello, double bass | bowed or plucked strings |
+
+Listen to one tune passed round each family:
+
+<div class="abc-ex" data-sound="flute" data-bpm="96"><script type="text/plain">
+X:1
+T:Flute
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|G2 B2|d4|]
+</script></div>
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="oboe" data-bpm="96"><script type="text/plain">
+X:1
+T:Oboe
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|G2 B2|d4|]
+</script></div>
+
+<div class="abc-ex" data-sound="clarinet" data-bpm="96"><script type="text/plain">
+X:1
+T:Clarinet (an octave lower)
+M:4/4
+L:1/4
+K:G
+D B, G, B,|C A, F, A,|G,2 B,2|D4|]
+</script></div>
+:::
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="trumpet" data-bpm="96"><script type="text/plain">
+X:1
+T:Trumpet
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|G2 B2|d4|]
+</script></div>
+
+<div class="abc-ex" data-sound="french_horn" data-bpm="96"><script type="text/plain">
+X:1
+T:French horn (an octave lower)
+M:4/4
+L:1/4
+K:G
+D B, G, B,|C A, F, A,|G,2 B,2|D4|]
+</script></div>
+:::
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="trombone" data-bpm="96"><script type="text/plain">
+X:1
+T:Trombone
+M:4/4
+L:1/4
+K:G clef=bass
+D B, G, B,|C A, F, A,|G,2 B,2|D4|]
+</script></div>
+
+<div class="abc-ex" data-sound="tuba" data-bpm="96"><script type="text/plain">
+X:1
+T:Tuba (two octaves lower)
+M:4/4
+L:1/4
+K:G clef=bass
+D, B,, G,, B,,|C, A,, F,, A,,|G,,2 B,,2|D,4|]
+</script></div>
+:::
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="violin" data-bpm="96"><script type="text/plain">
+X:1
+T:Violin
+M:4/4
+L:1/4
+K:G
+d B G B|c A F A|G2 B2|d4|]
+</script></div>
+
+<div class="abc-ex" data-sound="cello" data-bpm="96"><script type="text/plain">
+X:1
+T:Cello (an octave lower)
+M:4/4
+L:1/4
+K:G clef=bass
+D B, G, B,|C A, F, A,|G,2 B,2|D4|]
+</script></div>
+:::
+
+::: {.ax-pair}
+<div class="abc-ex" data-sound="contrabass" data-bpm="96"><script type="text/plain">
+X:1
+T:Double bass, an octave below the cello (written here as it sounds)
+M:4/4
+L:1/4
+K:G clef=bass
+D, B,, G,, B,,|C, A,, F,, A,,|G,,2 B,,2|D,4|]
+</script></div>
+
+<div class="abc-ex" data-sound="timpani" data-bpm="96"><script type="text/plain">
+X:1
+T:Timpani: just the two notes G and D
+M:4/4
+L:1/4
+K:G clef=bass
+G, D, G, D,|G, z D, z|G,4|]
+</script></div>
+:::
+
+More: [Compose for the Orchestra](compose-orchestra.qmd), [Score Reading](score-clefs.qmd).
+
+## 4. Rock, pop and jazz line-ups
+
+| Group | Usual instruments |
+|---|---|
+| **Rock / pop band** | lead vocals, electric guitar(s), bass guitar, drum kit, keyboards |
+| **Acoustic / folk** | voice, acoustic guitar, maybe fiddle, banjo, mandolin |
+| **Jazz combo** | a **rhythm section** (piano or guitar, double bass, drums) and a **front line** (saxophone, trumpet, trombone) |
+| **Big band** | saxes, trumpets and trombones in sections, plus the rhythm section |
+
+Gear and how each works: [Guitar](gear-guitar.qmd), [Keyboards](gear-keyboards.qmd), [Drums](gear-drums.qmd),
+[Sax](gear-sax.qmd), [Violin](gear-violin.qmd).
+
+## 5. What is each instrument doing?
+
+Naming the instrument is half the answer. Say what it is doing, too:
+
+| Role | Meaning |
+|---|---|
+| **Melody** | the tune |
+| **Accompaniment** | the parts that support the tune (chords, rhythm) |
+| **Countermelody** | a second tune that fits with the main one |
+| **Bass line** | the lowest part |
+| **Solo** | one instrument featured, often improvising |
+
+> The melody is on the **violins**, with **cellos** playing a slow bass line and the **horns** holding chords. In the
+> second section the melody passes to the **flute**, and the strings change to **pizzicato**.
+
+The techniques that change an instrument's sound (pizzicato, mutes, tremolo, vibrato, falsetto) are in
+[Articulation](elements-articulation.qmd#playing-techniques).
+
+## 6. Check yourself
+
+<div class="eq" data-set="instruments"></div>
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Elements of Music. School handout, 10 pp., n.d. The source handout these lessons were built from; its order is kept. Corrections are listed in lessons/ELEMENTS-NOTES.md.
+:::
+<!-- /works-cited -->

@@ -4689,4 +4689,1229 @@ L:1/8
 K: clef=none
 B/B/B/B/B/-z/B/
 `,
+
+// ---- Rhythm patterns from the MLT books (DMTI 1-3, JRI Recorder Teacher's Guide, Mullen, JRI Music Play); checked by tests/patterns/source-sets.test.js ----
+// Sets already in the site (JRI Recorder macro/micro, upbeat, 5/8 and combined-meter sets) are not repeated. Measures that are not full are pickups or
+// one-beat tails as printed.
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 1: C Instruments (Treble Clef) (GIA, 2006), Unit 1 "Long, Long Ago", Echo Rhythm Patterns in duple meter (macrobeat = quarter note), p. 2; the same eight patterns with rhythm syllables on p. vii.
+"dmti1-unit1-rhythm":
+`X:1
+M:4/4
+L:1/4
+K: clef=none
+B B/B/ B B/B/ |
+
+X:2
+M:4/4
+L:1/4
+K: clef=none
+B/B/ B B/B/ B |
+
+X:3
+M:4/4
+L:1/4
+K: clef=none
+B/B/B/B/ B/B/ B |
+
+X:4
+M:4/4
+L:1/4
+K: clef=none
+B/B/B/B/ B/B/B/B/ |
+
+X:5
+M:4/4
+L:1/4
+K: clef=none
+B/B/B/B/ B B/B/ |
+
+X:6
+M:4/4
+L:1/4
+K: clef=none
+B B B/B/ B |
+
+X:7
+M:4/4
+L:1/4
+K: clef=none
+B/B/ B B B |
+
+X:8
+M:4/4
+L:1/4
+K: clef=none
+B B/B/ B/B/ B |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 1: C Instruments (Treble Clef) (GIA, 2006), Unit 2 "Mary Ann", Echo Rhythm Patterns in duple meter, Latin style (macrobeat = quarter note; sixteenth notes DU TA DE TA), p. 18; with rhythm syllables on p. viii.
+"dmti1-unit2-rhythm":
+`X:1
+M:4/4
+L:1/4
+K: clef=none
+B B/B/ B B |
+
+X:2
+M:4/4
+L:1/4
+K: clef=none
+B/B/B/B/ B B/B/ |
+
+X:3
+M:4/4
+L:1/4
+K: clef=none
+B/B/4B/4 B B/4B/4B/ B/B/ |
+
+X:4
+M:4/4
+L:1/4
+K: clef=none
+B3/2 B/ B/4B/4B/4B/4 B |
+
+X:5
+M:4/4
+L:1/4
+K: clef=none
+B/ B B/ B3/4B/4 B/B/ |
+
+X:6
+M:4/4
+L:1/4
+K: clef=none
+B/ B/4 B/4- B B/B/ B |
+
+X:7
+M:4/4
+L:1/4
+K: clef=none
+B/B/ z z/ B/ B/B/ |
+
+X:8
+M:4/4
+L:1/4
+K: clef=none
+B/4B/ B/4 B/B/ B3/4B/4 B/B/ |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 1: C Instruments (Treble Clef) (GIA, 2006), Unit 3 "Joshua", Echo Rhythm Patterns in duple meter, swing style (macrobeat = half note, so two macrobeats a measure; paired eighth notes are swung, syllables DU DI DE DI), p. 34; with rhythm syllables on p. viii.
+// Written there in 4/4 marked 2 macrobeats; here as 2/2, the same durations.
+"dmti1-unit3-rhythm":
+`X:1
+M:2/2
+L:1/4
+K: clef=none
+B B B B | B B B2 |
+
+X:2
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/ B B | B/B/ B2 B |
+
+X:3
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/B/B/B/B/ | B/ B B/- B z |
+
+X:4
+M:2/2
+L:1/4
+K: clef=none
+B B B/ B3/2 | B/ B B/- B B |
+
+X:5
+M:2/2
+L:1/4
+K: clef=none
+B/ B B/- B z | B/ B B/- B/ B/B/B/ |
+
+X:6
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/ B/ B3/2 | B2 B B |
+
+X:7
+M:2/2
+L:1/4
+K: clef=none
+B/B/ B B B/B/ | B B B B |
+
+X:8
+M:2/2
+L:1/4
+K: clef=none
+B/B/ B B2 | B B B2 |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 1: C Instruments (Treble Clef) (GIA, 2006), Unit 4 "Simple Gifts", Echo Rhythm Patterns in duple meter (macrobeat = half note, eighth notes DU TA DE TA), p. 52; with rhythm syllables on p. ix. Patterns 1-4, 7 and 8 begin with a pickup, so the last measure is short.
+// Written there in 4/4 marked 2 macrobeats; here as 2/2, the same durations.
+"dmti1-unit4-rhythm":
+`X:1
+M:2/2
+L:1/4
+K: clef=none
+B/B/ | B B/B/ B/B/B/B/ | B B/B/ B |
+
+X:2
+M:2/2
+L:1/4
+K: clef=none
+B/B/ | B B B B | B/B/B/B/ B |
+
+X:3
+M:2/2
+L:1/4
+K: clef=none
+B/ | B B/B/ B B/B/ | B B/B/ B z/ |
+
+X:4
+M:2/2
+L:1/4
+K: clef=none
+B | B/B/B/B/ B B/B/ | B B B |
+
+X:5
+M:2/2
+L:1/4
+K: clef=none
+B2 B3/2 B/ | B/B/B/B/ B B |
+
+X:6
+M:2/2
+L:1/4
+K: clef=none
+B2 B2 | B/B/ B B2 |
+
+X:7
+M:2/2
+L:1/4
+K: clef=none
+B | B/B/B/B/ B/B/B/B/ | B B B |
+
+X:8
+M:2/2
+L:1/4
+K: clef=none
+B/ | B B B B/B/ | B B B z/ |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 1: C Instruments (Treble Clef) (GIA, 2006), Unit 5 "Down by the Riverside", Echo Rhythm Patterns in duple meter, swing style (macrobeat = half note, paired eighth notes swung, syllables DU DI DE DI), p. 71; with rhythm syllables on p. ix. Pattern 3 begins with a three-eighth pickup, so its last measure is short.
+// Written there in 4/4 marked 2 macrobeats; here as 2/2, the same durations.
+"dmti1-unit5-rhythm":
+`X:1
+M:2/2
+L:1/4
+K: clef=none
+B2 B B | B B B B |
+
+X:2
+M:2/2
+L:1/4
+K: clef=none
+z B B3/2 B/ | B/ B B/- B/ z/ z |
+
+X:3
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/ | B B2 B | B/ B B/- B/ |
+
+X:4
+M:2/2
+L:1/4
+K: clef=none
+B B B/ B B/ | B/B/B/B/ B B |
+
+X:5
+M:2/2
+L:1/4
+K: clef=none
+B B B2- | B2 B B |
+
+X:6
+M:2/2
+L:1/4
+K: clef=none
+B2 B B- | B B B2 |
+
+X:7
+M:2/2
+L:1/4
+K: clef=none
+B/ B3/2 B B/B/- | B/B/ B B2 |
+
+X:8
+M:2/2
+L:1/4
+K: clef=none
+B/ B3/2 B B- | B/ B B/ B B |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 2: C Instruments (2nd ed., GIA, 2010), Unit 1 "When the Saints Go Marching In", Echo Rhythm Patterns in duple meter (macrobeat = quarter note), p. 2; the same patterns with rhythm syllables on p. vii. Most begin with a pickup, so the last measure is short.
+"dmti2-unit1-rhythm":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B/ B/B/ | B2- | B/B/ B/B/ | B2- | B/ |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B/ B/B/ | B B | B B | B2- | B/ |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B3/2 B/ | B B | B2- | B z |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B/ B/B/ | B3/2 B/ | B B/B/ | B/ B3/2- | B/ |
+
+X:5
+M:2/4
+L:1/4
+K: clef=none
+B/B/ | B/ B B/ | B B/B/ | B2- | B |
+
+X:6
+M:2/4
+L:1/4
+K: clef=none
+B | B2 | B B | B B | B |
+
+X:7
+M:2/4
+L:1/4
+K: clef=none
+B/B/ | B3/2 B/ | B/ B3/2 | B B/B/ | B |
+
+X:8
+M:2/4
+L:1/4
+K: clef=none
+B/B/ | B B | B B | B2- | B |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 2: C Instruments (2nd ed., GIA, 2010), Unit 2 "Amazing Grace", Echo Rhythm Patterns in triple meter (3/4 with one macrobeat, the dotted half note, to the measure), p. 22; the same patterns with rhythm syllables on p. viii. Patterns 1-5 begin with a pickup quarter, so the last measure is short.
+"dmti2-unit2-rhythm":
+`X:1
+M:3/4
+L:1/4
+K: clef=none
+B | B2 B/B/ | B2 B | B2 B | B2 |
+
+X:2
+M:3/4
+L:1/4
+K: clef=none
+B | B2 B/B/ | B2 B/B/ | B2 B | B2 |
+
+X:3
+M:3/4
+L:1/4
+K: clef=none
+B | B2 B/B/ | B2 B | B3- | B2 |
+
+X:4
+M:3/4
+L:1/4
+K: clef=none
+B | B3/2 B/ B/B/ | B2 B | B2 B/B/ | B2 |
+
+X:5
+M:3/4
+L:1/4
+K: clef=none
+B | B3/2 B/ B/B/ | B3/2 B/ B/B/ | B B B | B2 |
+
+X:6
+M:3/4
+L:1/4
+K: clef=none
+B2 B | B2 B | B B B | B3 |
+
+X:7
+M:3/4
+L:1/4
+K: clef=none
+B B B | B2 B | B B B | B3 |
+
+X:8
+M:3/4
+L:1/4
+K: clef=none
+B3/2 B/ B/B/ | B B B | B3/2 B/ B/B/ | B B B |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 2: C Instruments (2nd ed., GIA, 2010), Unit 3 "Motherless Child", Echo Rhythm Patterns in duple meter with triplets (macrobeat = quarter note; triplet syllables DU DA DI), p. 40; with rhythm syllables on p. viii. Triplets are written (3 in ABC.
+"dmti2-unit3-rhythm":
+`X:1
+M:4/4
+L:1/4
+K: clef=none
+B/ B B/ B B/B/ | B/B/B/B/- B2 |
+
+X:2
+M:4/4
+L:1/4
+K: clef=none
+B B/B/ B/ B B/ | (3BBB B z |
+
+X:3
+M:4/4
+L:1/4
+K: clef=none
+B/ | B3/2 B/ B/B/ B | B3/2 B/ B3/2 |
+
+X:4
+M:4/4
+L:1/4
+K: clef=none
+B/ | B3/2 B/ B/B/ B | B3- B/ |
+
+X:5
+M:4/4
+L:1/4
+K: clef=none
+B/4B/4B/4B/4 B z (3B/B/B/ | B/B/ B z2 |
+
+X:6
+M:4/4
+L:1/4
+K: clef=none
+B3/2 B/ B B | B/B/B/B/- B B |
+
+X:7
+M:4/4
+L:1/4
+K: clef=none
+(3z/B/B/ B (3B/B/B/- B | B/B/B/B/- B2 |
+
+X:8
+M:4/4
+L:1/4
+K: clef=none
+B3/2 B/ B3/2 B/ | B B B z |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 3: C Instruments (GIA, 2010), Unit 1 "Saint Louis Blues", Echo Rhythm Patterns in duple meter, swing style (macrobeat = half note, paired eighths swung, syllables DU DI DE DI), p. 3; the same patterns with rhythm syllables on p. vii. Patterns 1-3 and 5 end with a one-beat measure.
+"dmti3-unit1-rhythm":
+`X:1
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/- B2 | z/ B/ B/B/ B3/2 B/ | B |
+
+X:2
+M:2/2
+L:1/4
+K: clef=none
+z/ B/ B/B/- B2 | z/ B/ B/B/ B3/2 B/ | B |
+
+X:3
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/- B/ B3/2 | z B/B/ B3/2 B/ | B |
+
+X:4
+M:2/2
+L:1/4
+K: clef=none
+z/ B/ B/B/- B/ B3/2 | z/ B/ B/B/ B B/B/- | B |
+
+X:5
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/- B2 | z/ B B/ B B/B/- | B |
+
+X:6
+M:2/2
+L:1/4
+K: clef=none
+z B/B/ B/B/ B | B/B/B/B/- B B |
+
+X:7
+M:2/2
+L:1/4
+K: clef=none
+B2 B B | B/B/B/B/- B/B/ B |
+
+X:8
+M:2/2
+L:1/4
+K: clef=none
+B B B/B/B/B/- | B B B z |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 3: C Instruments (GIA, 2010), Unit 2 "Transformation", Echo Rhythm Patterns in duple meter, swing style, p. 24; with rhythm syllables on p. viii. Pattern 3 ends with a one-beat measure; patterns 5 and 7 begin with a pickup (5) or half rest (7).
+"dmti3-unit2-rhythm":
+`X:1
+M:2/2
+L:1/4
+K: clef=none
+B B B3/2 B/ | B B/B/- B z |
+
+X:2
+M:2/2
+L:1/4
+K: clef=none
+z B/B/ B/ B B/- | B B/B/ B/ B3/2 |
+
+X:3
+M:2/2
+L:1/4
+K: clef=none
+z z/ B/ B/B/B/B/ | B/B/B/B/B/B/B/B/ | B |
+
+X:4
+M:2/2
+L:1/4
+K: clef=none
+z B B3/2 B/ | B B/B/- B3/2 z/ |
+
+X:5
+M:2/2
+L:1/4
+K: clef=none
+B/ | B/B/B/B/ B B/B/- | B z B z |
+
+X:6
+M:2/2
+L:1/4
+K: clef=none
+B z B B/B/- | B2 B/B/B/B/ |
+
+X:7
+M:2/2
+L:1/4
+K: clef=none
+z2 B/B/B/B/- | B/B/B/B/- B B/B/ |
+
+X:8
+M:2/2
+L:1/4
+K: clef=none
+z B/B/ B/ B B/- | B/B/ z/ B/ B/B/B/B/ |
+`,
+
+// Azzara & Grunow, Developing Musicianship through Improvisation, Book 3: C Instruments (GIA, 2010), Unit 3 "Red Wings", Echo Rhythm Patterns in duple meter, swing style, p. 48; with rhythm syllables on p. viii. Patterns 2-4 begin with a pickup.
+"dmti3-unit3-rhythm":
+`X:1
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/- B B/B/- | B2 z2 |
+
+X:2
+M:2/2
+L:1/4
+K: clef=none
+B/ B/B/ | B/B/B/B/ B B/B/- | B2 z2 |
+
+X:3
+M:2/2
+L:1/4
+K: clef=none
+B/ B/- | B3/2 B/ B/ B B/- | B2 z2 |
+
+X:4
+M:2/2
+L:1/4
+K: clef=none
+B/ B/B/ | B/B/B/B/- B z | B/B/B/B/- B z |
+
+X:5
+M:2/2
+L:1/4
+K: clef=none
+B/ B3/2 z B | B/ B3/2 z2 |
+
+X:6
+M:2/2
+L:1/4
+K: clef=none
+B/B/B/B/ B3/2 B/ | B/B/B/B/B/B/B/B/ |
+
+X:7
+M:2/2
+L:1/4
+K: clef=none
+z B/B/ B/B/B/B/ | B/B/B/B/ B/B/ B |
+
+X:8
+M:2/2
+L:1/4
+K: clef=none
+z/ B/ B/B/ B/B/B/B/ | B/B/B/B/ B B |
+`,
+
+// Grunow, Gordon, Azzara, Jump Right In: The Instrumental Series, Recorder Teacher's Guide (GIA, 1999), Rhythm Patterns from Student Book Two, printed p. 328 (PDF p. 329), 'Macrobeats, Microbeats, Divisions, Elongations, Rests, and Upbeats in Triple Meter', 8 patterns, all with an upbeat so first and last measures are partial, as in the book.
+"jri-recorder-rhythm-triple-divisions-elongations-rests-upbeats":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+B | BBB B2 B | BBB B2 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+B/ | B3/2 B/ B B3 | B/B/B/B/B/B/ B2- B/ |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+B2 | B B2 B2 B | B B B B |
+
+X:4
+M:6/8
+L:1/8
+K: clef=none
+B B | BBB z3 | B3- B |
+
+X:5
+M:6/8
+L:1/8
+K: clef=none
+B | B/ B B B/ B3 | B/ B B B/ B2 |
+
+X:6
+M:6/8
+L:1/8
+K: clef=none
+B/B/ | z2 B BBB | B2 B B2 |
+
+X:7
+M:6/8
+L:1/8
+K: clef=none
+B3 | B/B/ B B B B/B/ B | B B B/B/ |
+
+X:8
+M:6/8
+L:1/8
+K: clef=none
+B | z B B z B B | B/B/B/B/ B B2 |
+`,
+
+// Grunow, Gordon, Azzara, Jump Right In: The Instrumental Series, Recorder Teacher's Guide (GIA, 1999), Rhythm Patterns from Student Book Two, printed p. 329 (PDF p. 330), 'Macrobeats, Microbeats, Divisions, Elongations, Rests, Upbeats, and Ties in Duple Meter', 8 patterns (the last has an upbeat).
+"jri-recorder-rhythm-duple-ties":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B- | B B/B/ |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B/B/ z/ B/- | B/ B/ B |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B B/B/- | B/ B/ B |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/ B/B/4B/4- | B/4B/4B/ B |
+
+X:5
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B- | B/ B/ B |
+
+X:6
+M:2/4
+L:1/4
+K: clef=none
+B3/4 B/4 B/ B/- | B/4 B/ B/4 B/B/ |
+
+X:7
+M:2/4
+L:1/4
+K: clef=none
+B B/B/- | B B/B/ |
+
+X:8
+M:2/4
+L:1/4
+K: clef=none
+B/ | B/4 B/ B/4 B/4 B/ B/4- | B/ B/- B/ |
+`,
+
+// Grunow, Gordon, Azzara, Jump Right In: The Instrumental Series, Recorder Teacher's Guide (GIA, 1999), Rhythm Patterns from Student Book Two, printed p. 330 (PDF p. 331), 'Macrobeats, Microbeats, Divisions, Elongations, Rests, Upbeats, and Ties in Triple Meter', 8 patterns (the last has an upbeat).
+"jri-recorder-rhythm-triple-ties":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+BBB B3- | B BB B3 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+BBB z2 B- | B BB B3 |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+B3 BBB- | B3 BBB |
+
+X:4
+M:6/8
+L:1/8
+K: clef=none
+B/B/B B/B/ B/B/B B/B/- | B/B/B/B/B/B/ B B B |
+
+X:5
+M:6/8
+L:1/8
+K: clef=none
+BBB B3- | B3 BBB |
+
+X:6
+M:6/8
+L:1/8
+K: clef=none
+B/ B B B/ B B B- | B/ B B B/ B3 |
+
+X:7
+M:6/8
+L:1/8
+K: clef=none
+B3 BBB- | B BB B3 |
+
+X:8
+M:6/8
+L:1/8
+K: clef=none
+B | z B B z B B- | B/ B/ B/ B/ B B2 |
+`,
+
+// Grunow, Gordon, Azzara, Jump Right In: The Instrumental Series, Recorder Teacher's Guide (GIA, 1999), Rhythm Patterns from Student Book Two, printed p. 332 (PDF p. 333), 'Macrobeats, Microbeats, and Divisions in Unusual Paired Meter', 8 patterns in 5/8.
+"jri-recorder-rhythm-unusual-paired-divisions":
+`X:1
+M:5/8
+L:1/8
+K: clef=none
+B/B/ B B B/B/ B | B B B B B |
+
+X:2
+M:5/8
+L:1/8
+K: clef=none
+B B B B2 | B B/B/B/B/ B B |
+
+X:3
+M:5/8
+L:1/8
+K: clef=none
+B/B/B/B/ B B B/B/ | B/B/B/B/ B B2 |
+
+X:4
+M:5/8
+L:1/8
+K: clef=none
+B/B/ B B/B/ B2 | B3 B/B/ B |
+
+X:5
+M:5/8
+L:1/8
+K: clef=none
+B B B/B/ B B | B B B/B/ B B |
+
+X:6
+M:5/8
+L:1/8
+K: clef=none
+B/B/B/B/ B3 | B/B/B/B/ B B B |
+
+X:7
+M:5/8
+L:1/8
+K: clef=none
+B2 B/B/B/B/B/B/ | B2 B3 |
+
+X:8
+M:5/8
+L:1/8
+K: clef=none
+B/B/B/B/ B/B/B/B/B/B/ | B/B/B/B/ B B B |
+`,
+
+// Grunow, Gordon, Azzara, Jump Right In: The Instrumental Series, Recorder Teacher's Guide (GIA, 1999), Rhythm Patterns from Student Book Two, printed p. 333 (PDF p. 334), 'Macrobeats and Microbeats in Unusual Unpaired Meter', 8 patterns in 7/8 (three macrobeats of 3+2+2, 2+3+2 or 2+2+3 eighths); syllables printed Du Ba Bi / Du Be.
+"jri-recorder-rhythm-unusual-unpaired":
+`X:1
+M:7/8
+L:1/8
+K: clef=none
+BBB BB BB | BBB B2 BB |
+
+X:2
+M:7/8
+L:1/8
+K: clef=none
+BBB BB B2 | B3 B2 B2 |
+
+X:3
+M:7/8
+L:1/8
+K: clef=none
+B3 BB BB | B3 BB B2 |
+
+X:4
+M:7/8
+L:1/8
+K: clef=none
+B3 B2 B2 | BBB BB BB |
+
+X:5
+M:7/8
+L:1/8
+K: clef=none
+BB BBB BB | B2 B3 B2 |
+
+X:6
+M:7/8
+L:1/8
+K: clef=none
+BB B3 BB | B2 BBB B2 |
+
+X:7
+M:7/8
+L:1/8
+K: clef=none
+BB BB BBB | BB B2 B3 |
+
+X:8
+M:7/8
+L:1/8
+K: clef=none
+B2 BB BBB | BB B2 BBB |
+`,
+
+// Duple Meter, Macrobeats and Microbeats (Lesson 2 / Lesson 4, 8 patterns, 2/4): Mullen, The Literate Musician, 2nd ed., p. 37 (notation) and p. 39 (with Du De syllables).
+"mullen-rhythm-duple-macro-micro":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B B | B B |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B/B/ | B/B/ B/B/ |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B B/B/ | B/B/ B |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B B/B/ | B B/B/ |
+
+X:5
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B | B/B/ B |
+
+X:6
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B/B/ | B/B/ B |
+
+X:7
+M:2/4
+L:1/4
+K: clef=none
+B B | B/B/ B |
+
+X:8
+M:2/4
+L:1/4
+K: clef=none
+B B/B/ | B B |
+`,
+
+// Triple Meter, Macrobeats and Microbeats (Lesson 3 / Lesson 5, 8 patterns, 6/8): Mullen, The Literate Musician, 2nd ed., p. 37 (notation) and p. 40 (with Du Da Di syllables).
+"mullen-rhythm-triple-macro-micro":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+B3 B3 | B3 B3 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+BBB BBB | BBB BBB |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+B3 BBB | BBB B3 |
+
+X:4
+M:6/8
+L:1/8
+K: clef=none
+B3 BBB | B3 BBB |
+
+X:5
+M:6/8
+L:1/8
+K: clef=none
+BBB B3 | BBB B3 |
+
+X:6
+M:6/8
+L:1/8
+K: clef=none
+BBB BBB | BBB B3 |
+
+X:7
+M:6/8
+L:1/8
+K: clef=none
+B3 B3 | BBB B3 |
+
+X:8
+M:6/8
+L:1/8
+K: clef=none
+B3 BBB | B3 B3 |
+`,
+
+// Macrobeats, Microbeats and Divisions in Duple Meter (Lesson 9, 12 patterns, 2/4; Ta = division): Mullen, The Literate Musician, 2nd ed., p. 45. B/4 is a sixteenth.
+"mullen-rhythm-duple-divisions":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B B | B/4B/4B/4B/4 B |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B B/4B/4B/4B/4 | B/B/ B |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B | B/4B/4B/4B/4 B |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/4B/4 B/B/ | B/B/ B |
+
+X:5
+M:2/4
+L:1/4
+K: clef=none
+B B/4B/4B/4B/4 | B/4B/4B/4B/4 B |
+
+X:6
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/4B/4 B/4B/4B/4B/4 | B B |
+
+X:7
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/ B/4B/4B/ | B/B/ B |
+
+X:8
+M:2/4
+L:1/4
+K: clef=none
+B/ B/4B/4 B/ B/4B/4 | B/B/ B |
+
+X:9
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/ B | B/ B/4B/4 B |
+
+X:10
+M:2/4
+L:1/4
+K: clef=none
+B/ B/4B/4 B/4B/4B/ | B/4B/4B/4B/4 B |
+
+X:11
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/4B/4 B/4B/4B/ | B/ B/4B/4 B/4B/4B/4B/4 |
+
+X:12
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/ B/4B/4B/4B/4 | B/ B/4B/4 B |
+`,
+
+// Macrobeats, Microbeats and Divisions in Triple Meter (Lesson 10, 8 patterns, 6/8; Ta = division): Mullen, The Literate Musician, 2nd ed., p. 47. B/ is a sixteenth (L:1/8).
+"mullen-rhythm-triple-divisions":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+B/B/ B B B3 | B/B/ B B B3 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+B B/B/ B B B/B/ B | B B/B/ B B3 |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+B3 B B B/B/ | B B B/B/ B3 |
+
+X:4
+M:6/8
+L:1/8
+K: clef=none
+B B B B/B/ B/B/ B/B/ | B B B B3 |
+
+X:5
+M:6/8
+L:1/8
+K: clef=none
+B/B/ B B B3 | B B/B/ B B3 |
+
+X:6
+M:6/8
+L:1/8
+K: clef=none
+B B B/B/ B/B/ B/B/ B/B/ | B B/B/ B B3 |
+
+X:7
+M:6/8
+L:1/8
+K: clef=none
+B B B/B/ B B/B/ B | B/B/ B B B3 |
+
+X:8
+M:6/8
+L:1/8
+K: clef=none
+B/B/ B B B/B/ B/B/ B/B/ | B B B/B/ B B B |
+`,
+
+// Duple Elongation Rhythm Cells (Lesson 12; four one-measure cells in 2/4): Mullen, The Literate Musician, 2nd ed., p. 48.
+"mullen-rhythm-duple-elongation-cells":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B3/2 B/ |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B/ B3/2 |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B/ B B/ |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B2 |
+`,
+
+// Triple Elongation Rhythm Cells (Lesson 13; three one-measure cells in 6/8): Mullen, The Literate Musician, 2nd ed., p. 49.
+"mullen-rhythm-triple-elongation-cells":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+B2 B B3 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+B B2 B3 |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+B6 |
+`,
+
+// Reynolds, Valerio, Bolton, Taggart and Gordon, The Early Childhood Music Curriculum: Guide for Parents, Teachers and Caregivers (Music Play) (GIA, 1998), Part 6, 'Rhythm Acculturation Patterns without Words: Stages 1-3', printed p. 32 (PDF p. 36), Usual Duple Meter: six one-measure (two-macrobeat) patterns, written with quarter-note macrobeats.
+"musicplay-acculturation-rhythm-duple":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B3/4 B/4 B |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/4B/4 B |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B/ B/4B/4 B |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B/4B/4B/ B |
+
+X:5
+M:2/4
+L:1/4
+K: clef=none
+B/4 B3/4 B |
+
+X:6
+M:2/4
+L:1/4
+K: clef=none
+B/4 B/ B/4 B |
+`,
+
+// Reynolds, Valerio, Bolton, Taggart and Gordon, The Early Childhood Music Curriculum: Guide for Parents, Teachers and Caregivers (Music Play) (GIA, 1998), Part 6, 'Rhythm Acculturation Patterns without Words: Stages 1-3', printed p. 32 (PDF p. 36), Usual Triple Meter: five one-measure patterns, dotted-quarter macrobeats.
+"musicplay-acculturation-rhythm-triple":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+B3/2 B/ B B3 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+B/ B3/2 B B3 |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+B B/ B3/2 B3 |
+
+X:4
+M:6/8
+L:1/8
+K: clef=none
+B B3/2 B/ B3 |
+
+X:5
+M:6/8
+L:1/8
+K: clef=none
+B/B/B/B/B/B/ B3 |
+`,
+
+// Reynolds, Valerio, Bolton, Taggart and Gordon, The Early Childhood Music Curriculum: Guide for Parents, Teachers and Caregivers (Music Play) (GIA, 1998), Part 6, 'Rhythm Imitation and Assimilation Patterns without Words: Stages 4-7', printed p. 36 (PDF p. 40), Usual Duple Meter: four two-measure (four-macrobeat) patterns.
+"musicplay-imitation-rhythm-duple":
+`X:1
+M:2/4
+L:1/4
+K: clef=none
+B B | B/B/ B |
+
+X:2
+M:2/4
+L:1/4
+K: clef=none
+B B | B/4B/4B/4B/4 B |
+
+X:3
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B/B/ | B/4B/4B/4B/4 B |
+
+X:4
+M:2/4
+L:1/4
+K: clef=none
+B/B/ B/B/ | B/ B/4B/4 B |
+`,
+
+// Reynolds, Valerio, Bolton, Taggart and Gordon, The Early Childhood Music Curriculum: Guide for Parents, Teachers and Caregivers (Music Play) (GIA, 1998), Part 6, 'Rhythm Imitation and Assimilation Patterns without Words: Stages 4-7', printed p. 36 (PDF p. 40), Usual Triple Meter: four two-measure patterns.
+"musicplay-imitation-rhythm-triple":
+`X:1
+M:6/8
+L:1/8
+K: clef=none
+B3 B3 | B/B/B/B/B/B/ B3 |
+
+X:2
+M:6/8
+L:1/8
+K: clef=none
+B3 B3 | B3/2 B/ B B3 |
+
+X:3
+M:6/8
+L:1/8
+K: clef=none
+BBB BBB | B/ B3/2 B B3 |
+
+X:4
+M:6/8
+L:1/8
+K: clef=none
+BBB BBB | B/B/ B B B3 |
+`,
 }

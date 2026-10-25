@@ -56,7 +56,7 @@ Units with no chips haven't been digitized into the pattern library yet.
 </div>
 
 <script src="/apps/patterns/pattern-object.js"></script>
-<script src="/apps/rhythms/rhythm-pattern-object.js"></script>
+<script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/lsa/toc.js"></script>
 <script src="/apps/lsa/curriculum.js"></script>
 <script src="/apps/lsa/instructions.js"></script>
