@@ -60,7 +60,7 @@ for (const block of text.split(/^(?=\*{1,2} )/m)) {
   for (const m of block.matchAll(/^:([A-Z_0-9]+):[ \t]*(.*)$/gm)) props[m[1]] = m[2].trim();
   const body = block.replace(/^\*\* .*\n/, '').replace(/:PROPERTIES:[\s\S]*?:END:\n?/, '');
   const slug = props.SLUG || slugify(title);
-  let levels = (props.LEVELS || 'all').split(/\s+/).flatMap(l => l === 'all' ? LEVELS : l === 'myp' ? LEVELS.slice(0, 5) : [l]);
+  let levels = (props.LEVELS || 'all').split(/\s+/).flatMap(l => l === 'all' ? LEVELS : l === 'myp' ? LEVELS.slice(0, 5) : l === 'none' ? [] : [l]);
   levels = [...new Set(levels)];
   for (const l of levels) if (!LEVELS.includes(l)) errors.push(`${slug}: unknown level ${l}`);
   const sources = [props.SOURCE, props.SOURCE_2, props.SOURCE_3].filter(Boolean);

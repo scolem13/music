@@ -10,7 +10,8 @@ and stops with an error if a :SEE: link, a TOK concept or a source key is wrong.
   - :SLUG: the anchor (glossary.html#slug); made from the title if left out
   - :SHORT: one sentence, used in pop-ups and the compact view
   - :IMPORTANCE: core | enriching | expert
-  - :LEVELS: any of myp1 myp2 myp3 myp4 myp5 dp, or myp (all MYP years), or all
+  - :LEVELS: the years whose units teach it: any of myp1 myp2 myp3 myp4 myp5 dp, or myp (all MYP years),
+    all, or none (not taught in any unit: shown only when no year is picked)
   - :CATS: space-separated filter tags
   - :SEE: related slugs
   - :LINK: a page on this site that teaches it (/lessons/...html)
@@ -30,7 +31,7 @@ and stops with an error if a :SEE: link, a TOK concept or a source key is wrong.
 :SLUG: a-cappella
 :SHORT: Vocal music performed without instrumental accompaniment.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/A_cappella
 :END:
@@ -44,7 +45,7 @@ sacred music, barbershop, and contemporary a cappella groups.
 :SLUG: accelerando
 :SHORT: Gradually getting faster.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Accelerando
 :END:
@@ -59,7 +60,7 @@ is ritardando (or rallentando): gradually slowing down.
 :SLUG: acciaccatura
 :SHORT: A very short ornamental note played just before the main note.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Acciaccatura
 :END:
@@ -76,7 +77,7 @@ main note's value and falls on the beat.
 :SLUG: acoustic-instrument
 :SHORT: An instrument that produces sound by acoustic (non-electronic) means.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Acoustic_music
 :END:
@@ -94,7 +95,7 @@ electronically).
 :SLUG: adagio
 :SHORT: Slow and stately; a slow tempo marking.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Tempo
 :END:
@@ -109,7 +110,7 @@ describe a slow movement (e.g., "the adagio of the symphony").
 :SLUG: adsr
 :SHORT: The four stages of a synthesizer envelope: Attack, Decay, Sustain, Release.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: myp3 myp4 dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Envelope_(music)
 :END:
@@ -127,7 +128,7 @@ typically control amplitude, filter cutoff, and pitch.
 :SLUG: aerophone
 :SHORT: An instrument that produces sound through a vibrating column of air.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Aerophone
 :END:
@@ -144,7 +145,7 @@ oboe), where the air column is enclosed.
 :SLUG: alap
 :SHORT: The slow, unmetered introductory section of a raga performance.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Alap
 :END:
@@ -160,7 +161,7 @@ establishes the raga's mood (rasa) before the metered sections begin.
 :SLUG: aleatoric-aleatory-music
 :SHORT: Music incorporating elements of chance or unpredictability in its composition or performance.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Aleatoric_music
 :END:
@@ -179,7 +180,7 @@ framework.
 :SLUG: allegretto
 :SHORT: Moderately fast; slightly slower than allegro.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Tempo
 :END:
@@ -194,7 +195,7 @@ andante. Often implies a lighter character than allegro.
 :SLUG: allegro
 :SHORT: Fast and lively; one of the most common tempo markings.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Tempo
 :END:
@@ -210,7 +211,7 @@ much), allegro vivace (fast and vivacious), and allegro moderato.
 :SLUG: antiphonal
 :SHORT: Involving alternation between two groups of performers.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Antiphony
 :END:
@@ -227,7 +228,7 @@ performance.
 :SLUG: appoggiatura
 :SHORT: An ornamental note on the beat that displaces the main note and resolves by step.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Appoggiatura
 :END:
@@ -244,7 +245,7 @@ rhythmic weight — it is heard clearly rather than crushed through.
 :SLUG: arco
 :SHORT: A direction to resume playing with the bow (after pizzicato).
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Arco
 :END:
@@ -259,7 +260,7 @@ pizzicato (plucked) playing.
 :SLUG: aria
 :SHORT: A self-contained song for solo voice in an opera, oratorio, or cantata.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Aria
 :END:
@@ -276,7 +277,7 @@ Common forms include the Baroque da capo aria (A–B–A structure).
 :SLUG: arpeggio
 :SHORT: The notes of a chord played in succession rather than simultaneously.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 myp4 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Arpeggio
 :END:
@@ -293,7 +294,7 @@ the consistent direction of movement.
 :SLUG: atonal
 :SHORT: Music that avoids establishing a tonal center.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Atonality
 :END:
@@ -311,7 +312,7 @@ implying a home key.
 :SLUG: augmentation
 :SHORT: Restating a theme with all note values lengthened.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Augmentation_(music)
 :END:
@@ -327,7 +328,7 @@ in fugue and in development sections.
 :SLUG: augmented
 :SHORT: An interval or chord enlarged by a half step beyond its major or perfect form.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Augmented_interval
 :END:
@@ -344,7 +345,7 @@ third and an augmented fifth.
 :SLUG: authentic-perfect-cadence
 :SHORT: A cadence moving from V to I — the strongest harmonic close in tonal music.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Cadence_(music)
 :END:
@@ -362,7 +363,7 @@ fundamental engine of tonal music.
 :SLUG: balophone
 :SHORT: A West African xylophone-like instrument with gourd resonators beneath wooden bars.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Balafon
 :END:
@@ -379,7 +380,7 @@ xylophone, it produces a warm, resonant tone.
 :SLUG: balungan
 :SHORT: The core melodic framework of a Javanese gamelan composition.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Balungan
 :END:
@@ -396,7 +397,7 @@ metallophone instruments such as the saron and slenthem.
 :SLUG: bandish
 :SHORT: A fixed, composed piece within Hindustani classical music, providing the rhythmic and melodic framework for improvisation.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Bandish
 :END:
@@ -413,7 +414,7 @@ metered playing.
 :SLUG: bansuri
 :SHORT: A transverse bamboo flute used in North Indian classical music.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Bansuri
 :END:
@@ -428,7 +429,7 @@ most celebrated modern exponents.
 :SLUG: bass
 :SHORT: The lowest register of pitch; also a family of low-pitched instruments.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 myp4 dp
 :CATS: homograph
 :SOURCE: https://en.wikipedia.org/wiki/Bass_(music)
 :END:
@@ -448,7 +449,7 @@ inline bracket syntax [[text][/ipa/]] for fish references in source files.
 :SLUG: basso-continuo
 :SHORT: The harmonic bass-line foundation of Baroque music, typically played by keyboard and bass instrument together.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Basso_continuo
 :END:
@@ -466,7 +467,7 @@ Baroque ensemble music.
 :SLUG: beat
 :SHORT: The basic unit of musical time that listeners tap along to.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Beat_(music)
 :END:
@@ -483,7 +484,7 @@ backbeat).
 :SLUG: binary-form
 :SHORT: A two-part musical structure: A–B.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Binary_form
 :END:
@@ -500,7 +501,7 @@ Baroque dance movements (sarabande, allemande, etc.).
 :SLUG: blue-notes
 :SHORT: Flattened or bent pitches (particularly the 3rd, 5th, and 7th) characteristic of the blues.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Blue_note
 :END:
@@ -518,7 +519,7 @@ expressive ambiguity between major and minor.
 :SLUG: broken-chord
 :SHORT: The notes of a chord played one at a time rather than simultaneously.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Arpeggio
 :END:
@@ -534,7 +535,7 @@ chord may move in a freer or repeating pattern (e.g., Alberti bass).
 :SLUG: cadence
 :SHORT: A harmonic progression that creates a sense of arrival, pause, or conclusion.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Cadence_(music)
 :END:
@@ -551,7 +552,7 @@ vi or another unexpected chord).
 :SLUG: cadenza
 :SHORT: An unaccompanied virtuosic passage for the soloist, typically near the end of a concerto movement.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Cadenza
 :END:
@@ -569,7 +570,7 @@ later composers wrote them out.
 :SLUG: canon
 :SHORT: A contrapuntal form in which the same melody is imitated by subsequent voices at a fixed time interval.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Canon_(music)
 :END:
@@ -587,7 +588,7 @@ at the unison or octave.
 :SLUG: cantabile
 :SHORT: In a singing, lyrical style.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Cantabile
 :END:
@@ -601,7 +602,7 @@ the quality and flow of a singing voice.
 :SLUG: cantata
 :SHORT: A multi-movement vocal work for voices and instruments.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Cantata
 :END:
@@ -618,7 +619,7 @@ and (often) liturgical function.
 :SLUG: chorale
 :SHORT: A hymn tune, especially one harmonized in four voices; also a choir.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Chorale
 :END:
@@ -634,7 +635,7 @@ ensemble or the choral section of a larger work.
 :SLUG: chordophone
 :SHORT: An instrument that produces sound through vibrating strings.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Chordophone
 :END:
@@ -651,7 +652,7 @@ lyres). Includes guitar, violin, piano, harp, and sitar.
 :SLUG: chromatic
 :SHORT: Using notes or intervals outside the prevailing diatonic scale.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Chromatic_scale
 :END:
@@ -668,7 +669,7 @@ and jazz harmony.
 :SLUG: coda
 :SHORT: A concluding section added to the end of a formal structure.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Coda_(music)
 :END:
@@ -685,7 +686,7 @@ and popular music to indicate a jump to a concluding section.
 :SLUG: compound-metre
 :SHORT: A metre in which each beat divides into three equal parts (e.g. 6/8, 9/8, 12/8).
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Metre_(music)
 :END:
@@ -702,7 +703,7 @@ foundational to jigs, barcarolles, and many folk traditions.
 :SLUG: con-arco
 :SHORT: With the bow (resume bowed playing).
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Arco
 :END:
@@ -716,7 +717,7 @@ with the bow after a pizzicato passage. Equivalent to arco.
 :SLUG: concerto
 :SHORT: A multi-movement work for soloist and orchestra.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Concerto
 :END:
@@ -733,7 +734,7 @@ dialogue is central to the form.
 :SLUG: concerto-grosso
 :SHORT: A Baroque form contrasting a small group of soloists with a larger orchestra.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Concerto_grosso
 :END:
@@ -749,7 +750,7 @@ are central examples of the genre.
 :SLUG: consonance
 :SHORT: An interval or chord that sounds stable and resolved.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Consonance_and_dissonance
 :END:
@@ -766,7 +767,7 @@ and musical cultures.
 :SLUG: con-sordino
 :SHORT: With mute.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Mute_(music)
 :END:
@@ -782,7 +783,7 @@ senza sordino ("without mute").
 :SLUG: counterpoint
 :SHORT: The technique of combining two or more independent melodic voices simultaneously.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Counterpoint
 :END:
@@ -799,7 +800,7 @@ fugue, canon, and much of Western classical composition.
 :SLUG: crescendo
 :SHORT: Gradually getting louder.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Dynamics_(music)
 :END:
@@ -815,7 +816,7 @@ the process of getting louder, not the arrival.
 :SLUG: cross-rhythms
 :SHORT: Conflicting rhythmic patterns that create tension against the prevailing metre.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Cross-rhythm
 :END:
@@ -832,7 +833,7 @@ metres. Central to African drumming, Latin music, and jazz.
 :SLUG: daw
 :SHORT: Digital audio workstation — software for recording, editing, and producing audio.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Digital_audio_workstation
 :END:
@@ -853,7 +854,7 @@ prefer the spelled-out version.
 :SLUG: decrescendo
 :SHORT: Gradually getting softer.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Dynamics_(music)
 :END:
@@ -867,7 +868,7 @@ diminuendo. Notated by the reverse hairpin symbol (>).
 :SLUG: development
 :SHORT: (1) The middle section of sonata form; (2) the manipulation and transformation of musical material.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general myp-key-concept
 :SOURCE: https://en.wikipedia.org/wiki/Development_(music)
 :SOURCE_2: myp-arts-guide
@@ -888,7 +889,7 @@ Development is the act or process of growth, progress or evolution, sometimes th
 :SLUG: diatonic
 :SHORT: Belonging to, or derived from, the notes of a major or minor scale.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Diatonic_scale
 :END:
@@ -904,7 +905,7 @@ Contrasted with chromatic, which introduces notes from outside the scale.
 :SLUG: diatonic-harmony
 :SHORT: Harmony using only the chords naturally occurring within a given key.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Diatonic_function
 :END:
@@ -921,7 +922,7 @@ notes or chords from outside the key.
 :SLUG: diminuendo
 :SHORT: Gradually getting softer; synonymous with decrescendo.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Dynamics_(music)
 :END:
@@ -935,7 +936,7 @@ volume. Synonymous with decrescendo. Abbreviated dim.
 :SLUG: diminution
 :SHORT: Restating a theme with all note values shortened.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Diminution
 :END:
@@ -950,7 +951,7 @@ intensification or forward drive. The opposite of augmentation.
 :SLUG: dissonance
 :SHORT: An interval or chord that creates tension and feels unstable, requiring resolution.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Consonance_and_dissonance
 :END:
@@ -968,7 +969,7 @@ of tension and release in tonal music.
 :SLUG: dolce
 :SHORT: Sweetly; softly and gently.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/List_of_Italian_musical_terms_used_in_English
 :END:
@@ -981,7 +982,7 @@ quality rather than merely quiet dynamics.
 :SLUG: dominant
 :SHORT: The fifth scale degree; the chord built on it is the most harmonically active in tonal music.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Dominant_(music)
 :END:
@@ -998,7 +999,7 @@ resolution. The term also refers to the fifth scale degree itself.
 :SLUG: drone
 :SHORT: A sustained pitch held continuously beneath changing melody or harmony.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Drone_(music)
 :END:
@@ -1016,7 +1017,7 @@ structural.
 :SLUG: dynamics
 :SHORT: The variation in loudness in music, and the markings that indicate these variations.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Dynamics_(music)
 :END:
@@ -1034,7 +1035,7 @@ fortepiano (fp).
 :SLUG: enharmonic
 :SHORT: Pitches that sound the same but are spelled differently (e.g. F# and Gb).
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Enharmonic
 :END:
@@ -1051,7 +1052,7 @@ relate to those that do (fretless strings, voice).
 :SLUG: envelope-curve
 :SHORT: The shape of a sound's amplitude over time, described in four stages: Attack, Decay, Sustain, Release.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Envelope_(music)
 :END:
@@ -1068,7 +1069,7 @@ shaping synthesized sounds.
 :SLUG: eq
 :SHORT: Equalization — adjusting the balance of specific frequency ranges in an audio signal.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Equalization_(audio)
 :END:
@@ -1086,7 +1087,7 @@ tools in audio production.
 :SLUG: ewi
 :SHORT: Electronic wind instrument — a wind-controller that produces MIDI output.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Electronic_wind_instrument
 :END:
@@ -1103,7 +1104,7 @@ jazz-fusion players such as Michael Brecker and Bob Mintzer.
 :SLUG: exposition
 :SHORT: The opening section of a fugue or sonata form presenting the main themes.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: form
 :SOURCE: https://en.wikipedia.org/wiki/Exposition_(music)
 :END:
@@ -1119,7 +1120,7 @@ in each voice in turn.
 :SLUG: falsetto
 :SHORT: A register above normal voice range produced by partial vibration of the vocal cords.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp4 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Falsetto
 :END:
@@ -1136,7 +1137,7 @@ falsetto in men is related to but distinct from the head voice.
 :SLUG: figured-bass
 :SHORT: A Baroque notational shorthand in which numbers below a bass line indicate the harmonies to be played above it.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Figured_bass
 :END:
@@ -1154,7 +1155,7 @@ of the style.
 :SLUG: fm-synthesis
 :SHORT: Frequency modulation synthesis — generating complex timbres by modulating one oscillator's frequency with another.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Frequency_modulation_synthesis
 :END:
@@ -1172,7 +1173,7 @@ produces characteristically bright, metallic, and bell-like sounds.
 :SLUG: form
 :SHORT: The overall structure of a piece — how its sections are organized and relate to each other.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 myp5 dp
 :CATS: general myp-key-concept
 :SOURCE: https://en.wikipedia.org/wiki/Musical_form
 :SOURCE_2: myp-arts-guide
@@ -1192,7 +1193,7 @@ Form is the shape and underlying structure of an entity or piece of work, includ
 :SLUG: fugue
 :SHORT: A contrapuntal composition in which a theme (subject) is introduced and developed through imitation across voices.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Fugue
 :END:
@@ -1211,7 +1212,7 @@ Clavier.
 :SLUG: glissando
 :SHORT: A slide between two pitches.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Glissando
 :END:
@@ -1229,7 +1230,7 @@ technique.
 :SLUG: granular-synthesis
 :SHORT: A synthesis method that breaks sound into tiny fragments (grains) and reassembles them to create new textures.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Granular_synthesis
 :SOURCE_2: https://blog.native-instruments.com/granular-synthesis/
@@ -1250,7 +1251,7 @@ time-stretch and pitch-shift algorithms.
 :SLUG: ground-bass
 :SHORT: A repeating bass pattern over which variations are composed.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Ground_bass
 :END:
@@ -1267,7 +1268,7 @@ passacaglia and chaconne.
 :SLUG: harmonic
 :SHORT: An overtone — a frequency that is a whole-number multiple of a fundamental pitch.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Harmonic
 :END:
@@ -1286,7 +1287,7 @@ tones, natural harmonics).
 :SLUG: harmonic-rhythm
 :SHORT: The rate at which chords change within a piece.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Harmonic_rhythm
 :END:
@@ -1303,7 +1304,7 @@ understanding a piece's pacing and energy.
 :SLUG: hemiola
 :SHORT: A rhythmic effect in which three beats in duple metre are temporarily felt as two in triple, or vice versa.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Hemiola
 :END:
@@ -1320,7 +1321,7 @@ throughout African and Latin rhythmic traditions.
 :SLUG: heterophonic
 :SHORT: A texture in which multiple voices simultaneously perform variations of the same melody.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Heterophony
 :END:
@@ -1338,7 +1339,7 @@ lines) and homophony (melody with harmonic support).
 :SLUG: homophonic
 :SHORT: A texture in which one voice carries the melody while others provide harmonic support.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Homophony
 :END:
@@ -1355,7 +1356,7 @@ equal voices) and monophony (single voice with no accompaniment).
 :SLUG: idiophone
 :SHORT: An instrument that produces sound through the vibration of its own body.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Idiophone
 :END:
@@ -1372,7 +1373,7 @@ castanets, and steel drums.
 :SLUG: imitation
 :SHORT: The repetition of a melodic idea in a different voice shortly after its first appearance.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Imitation_(music)
 :END:
@@ -1389,7 +1390,7 @@ imitation adjusts them to stay within the key.
 :SLUG: improvising
 :SHORT: Creating music spontaneously in performance, within a given harmonic or stylistic framework.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Musical_improvisation
 :END:
@@ -1407,7 +1408,7 @@ though the two overlap.
 :SLUG: interval
 :SHORT: The pitch distance between two notes.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Interval_(music)
 :END:
@@ -1424,7 +1425,7 @@ Intervals are the building blocks of melody, harmony, and counterpoint.
 :SLUG: inversion
 :SHORT: (1) A chord with a note other than the root in the bass; (2) a melody flipped upside down.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Inversion_(music)
 :END:
@@ -1442,7 +1443,7 @@ important in counterpoint and tonal harmony.
 :SLUG: key-change
 :SHORT: A shift from one tonal center to another within a piece.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Modulation_(music)
 :END:
@@ -1459,7 +1460,7 @@ tone near the end of a song.
 :SLUG: layering
 :SHORT: Building up a texture by combining multiple simultaneous parts or sounds.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Arrangement_(music)
 :END:
@@ -1476,7 +1477,7 @@ or blended drum sounds.
 :SLUG: leading-note
 :SHORT: The seventh scale degree, a half step below the tonic, with strong upward tendency.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Leading-tone
 :END:
@@ -1493,7 +1494,7 @@ subtonic); raising it to a semitone creates the harmonic minor scale.
 :SLUG: lead
 :SHORT: The primary melody or melodic voice.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp4 dp
 :CATS: homograph
 :SOURCE: https://en.wikipedia.org/wiki/Lead_sheet
 :END:
@@ -1507,7 +1508,7 @@ main melody. Distinct from lead (the metal, rhyming with "bed").
 :SLUG: lfo
 :SHORT: Low-frequency oscillator — a slow-cycling modulation source in a synthesizer.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: myp3 myp4 dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Low-frequency_oscillation
 :END:
@@ -1524,7 +1525,7 @@ determines the speed of the modulation; LFO depth determines its amount.
 :SLUG: libretto
 :SHORT: The text of an opera, oratorio, or other large-scale vocal work.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Libretto
 :END:
@@ -1540,7 +1541,7 @@ partnerships include da Ponte and Mozart, and Boito and Verdi.
 :SLUG: loop
 :SHORT: A segment of audio edited to repeat seamlessly when played end to end.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Loop_(music)
 :END:
@@ -1557,7 +1558,7 @@ loop pedals or DAW features.
 :SLUG: maqam
 :SHORT: A melodic mode in Arabic and Middle Eastern music, combining scale, characteristic phrases, and expressive character.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Maqam
 :END:
@@ -1574,7 +1575,7 @@ region, many using intervals smaller than a semitone.
 :SLUG: melisma
 :SHORT: The singing of multiple notes on a single syllable.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Melisma
 :END:
@@ -1590,7 +1591,7 @@ syllabic singing, in which each syllable receives a single note.
 :SLUG: metre
 :SHORT: The recurring pattern of strong and weak beats that organizes rhythm in music.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Metre_(music)
 :END:
@@ -1607,7 +1608,7 @@ non-standard groupings (5/4, 7/8, etc.).
 :SLUG: microtone
 :SHORT: Any interval smaller than a semitone.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Microtone
 :END:
@@ -1624,7 +1625,7 @@ in 20th- and 21st-century composed music (Partch, Scelsi, Haas).
 :SLUG: midi
 :SHORT: Musical Instrument Digital Interface — a protocol for communication between electronic instruments and computers.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/MIDI
 :END:
@@ -1641,7 +1642,7 @@ sound; the actual sound depends on the playback device or software.
 :SLUG: midi-controller
 :SHORT: A hardware or software device that sends MIDI data to control electronic instruments.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/MIDI_controller
 :END:
@@ -1658,7 +1659,7 @@ produce sound itself; it controls sound sources.
 :SLUG: minuet
 :SHORT: A stately French dance in triple metre; also a standard movement in Classical symphonies.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Minuet
 :END:
@@ -1675,7 +1676,7 @@ faster scherzo.
 :SLUG: mixing
 :SHORT: Combining and balancing multi-track recordings into a final stereo or surround output.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Audio_mixing
 :END:
@@ -1692,7 +1693,7 @@ appropriate space in the frequency spectrum and stereo field.
 :SLUG: modulation-in-music
 :SHORT: A change of key within a piece of music.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Modulation_(music)
 :END:
@@ -1709,7 +1710,7 @@ change. Modulation creates tonal variety and dramatic effect.
 :SLUG: motif
 :SHORT: A short, distinctive musical idea — melodic, rhythmic, or harmonic — used as a building block.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Motif_(music)
 :END:
@@ -1727,7 +1728,7 @@ material.
 :SLUG: non-tonal
 :SHORT: Music that does not organize pitch around a central tonic.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Atonality
 :END:
@@ -1744,7 +1745,7 @@ center but outside major/minor tonality.
 :SLUG: notation
 :SHORT: Any system of symbols used to represent music visually.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Musical_notation
 :END:
@@ -1759,7 +1760,7 @@ symbols, and various non-Western notations.
 :SLUG: ostinato
 :SHORT: A persistently repeated melodic, rhythmic, or harmonic pattern.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 myp3 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Ostinato
 :END:
@@ -1776,7 +1777,7 @@ styles.
 :SLUG: overdubbing
 :SHORT: Recording additional tracks onto an existing recording to layer multiple performances.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Overdubbing
 :END:
@@ -1793,7 +1794,7 @@ separately. Pioneered in the 1940s by Les Paul.
 :SLUG: passing-tone
 :SHORT: A non-chord tone that moves by step between two chord tones.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Nonchord_tone
 :END:
@@ -1810,7 +1811,7 @@ melodic writing and counterpoint.
 :SLUG: pedal-tone
 :SHORT: A sustained or repeated note (usually in the bass) held while harmonies change above it.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Pedal_point
 :END:
@@ -1827,7 +1828,7 @@ used in upper voices (an inverted pedal).
 :SLUG: pelog
 :SHORT: One of the two main tuning systems in Javanese and Balinese gamelan music.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/P%C3%A9log
 :END:
@@ -1844,7 +1845,7 @@ more open-sounding slendro.
 :SLUG: pentatonic
 :SHORT: A five-note scale, common across many world music traditions.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Pentatonic_scale
 :END:
@@ -1861,7 +1862,7 @@ pentatonic.
 :SLUG: phasing
 :SHORT: A compositional technique in which the same pattern in two voices gradually moves out of synchronisation.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Phase_music
 :END:
@@ -1879,7 +1880,7 @@ gradually re-align. Key works include Reich's *Piano Phase* (1967) and
 :SLUG: pizzicato
 :SHORT: Plucking the strings of a bowed instrument with the fingers.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Pizzicato
 :END:
@@ -1895,7 +1896,7 @@ arco or con arco marks the return to bowing.
 :SLUG: plagal-cadence
 :SHORT: A cadence moving from IV to I, often called the "Amen" cadence.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Cadence_(music)
 :END:
@@ -1911,7 +1912,7 @@ music, hence its informal name.
 :SLUG: polyphony
 :SHORT: A texture of two or more independent melodic lines sounding simultaneously.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Polyphony
 :END:
@@ -1928,7 +1929,7 @@ fugue represent the highest development of Western polyphonic writing.
 :SLUG: polyrhythm
 :SHORT: Two or more different rhythmic patterns performed simultaneously.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Polyrhythm
 :END:
@@ -1945,7 +1946,7 @@ appears throughout jazz, contemporary classical, and global traditions.
 :SLUG: portamento
 :SHORT: A smooth, expressive slide between two notes.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Portamento
 :END:
@@ -1963,7 +1964,7 @@ the pitch shifts between played notes.
 :SLUG: quantization
 :SHORT: Snapping recorded notes to the nearest rhythmic grid position in a DAW.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Quantization_(music)
 :END:
@@ -1981,7 +1982,7 @@ quantization (bit depth), though the term is shared.
 :SLUG: quarter-tones
 :SHORT: Intervals half the size of a semitone, used in microtonal music and many non-Western traditions.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Quarter_tone
 :END:
@@ -1999,7 +2000,7 @@ producible on fretless string instruments, voice, and certain winds.
 :SLUG: raga
 :SHORT: A melodic framework in Indian classical music combining scale, characteristic phrases, and emotional character.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Raga
 :END:
@@ -2016,7 +2017,7 @@ guide to melodic improvisation within a tradition.
 :SLUG: recapitulation
 :SHORT: The third section of sonata form, restating the exposition's themes in the home key.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: form
 :SOURCE: https://en.wikipedia.org/wiki/Recapitulation_(music)
 :END:
@@ -2032,7 +2033,7 @@ recapitulation follows the development section.
 :SLUG: recitative
 :SHORT: A vocal style that follows speech rhythms, used in opera and oratorio to advance the narrative.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Recitative
 :END:
@@ -2050,7 +2051,7 @@ orchestra.
 :SLUG: relative-major-minor
 :SHORT: A major and minor key sharing the same key signature.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Relative_key
 :END:
@@ -2067,7 +2068,7 @@ third below it.
 :SLUG: retrograde
 :SHORT: A theme played backwards — the last note becomes first.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Retrograde_(music)
 :END:
@@ -2083,7 +2084,7 @@ and mirror-image pitch transformation simultaneously.
 :SLUG: reverb
 :SHORT: The persistence of sound caused by multiple reflections in a space, decaying gradually.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Reverberation
 :SOURCE_2: https://splice.com/blog/what-is-reverb/
@@ -2103,7 +2104,7 @@ reverb, reflections blend into a continuous wash.
 :SLUG: riff
 :SHORT: A short, repeating melodic or rhythmic figure, especially in jazz, blues, and rock.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Riff
 :END:
@@ -2120,7 +2121,7 @@ more groove-oriented.
 :SLUG: rondo-form
 :SHORT: A form in which a main theme (A) alternates with contrasting episodes: ABACA or ABACABA.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Rondo
 :SOURCE_2: https://www.britannica.com/art/rondo
@@ -2139,7 +2140,7 @@ sonatas. Emerged from the French Baroque keyboard rondeau.
 :SLUG: rubato
 :SHORT: Flexible tempo; slight speeding up and slowing down for expressive effect.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Tempo_rubato
 :END:
@@ -2156,7 +2157,7 @@ that enhances rather than distorts the musical line.
 :SLUG: sampling
 :SHORT: Reusing a portion of an existing recording in a new composition.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Sampling_(music)
 :END:
@@ -2173,7 +2174,7 @@ Legally, sampling of commercial recordings generally requires licensing.
 :SLUG: scherzo
 :SHORT: A lively, often humorous movement, typically in triple metre, common in Classical and Romantic symphonies.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Scherzo
 :END:
@@ -2190,7 +2191,7 @@ surprising character. The form is typically A–B–A (scherzo–trio–scherzo)
 :SLUG: sequence
 :SHORT: Immediate repetition of a melodic or harmonic pattern at a different pitch level.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Sequence_(music)
 :END:
@@ -2207,7 +2208,7 @@ extending and developing musical ideas.
 :SLUG: sforzando
 :SHORT: A sudden, strong accent on a single note or chord.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Dynamics_(music)
 :END:
@@ -2223,7 +2224,7 @@ forzando (fz), which carries a similar meaning.
 :SLUG: slendro
 :SHORT: One of the two main tuning systems in Javanese and Balinese gamelan, with five roughly equal pitches per octave.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: non-western
 :SOURCE: https://en.wikipedia.org/wiki/Sl%C3%A9ndro
 :END:
@@ -2240,7 +2241,7 @@ within the same gamelan rather than to an external standard.
 :SLUG: solf-ge
 :SHORT: A method of assigning syllables (do, re, mi…) to scale degrees to aid sight-singing.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Solf%C3%A8ge
 :END:
@@ -2258,7 +2259,7 @@ Theory (MLT) through the use of tonal patterns.
 :SLUG: sonata
 :SHORT: A multi-movement instrumental work, typically for one or two instruments.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Sonata
 :END:
@@ -2276,7 +2277,7 @@ from Classical and Romantic ones.
 :SLUG: sonata-form
 :SHORT: A large-scale form in three sections: exposition, development, and recapitulation.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Sonata_form
 :END:
@@ -2295,7 +2296,7 @@ preceded by a slow introduction and followed by a coda.
 :SLUG: soprano
 :SHORT: The highest standard singing voice type.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 dp
 :CATS: vocal
 :SOURCE: https://en.wikipedia.org/wiki/Soprano
 :END:
@@ -2311,7 +2312,7 @@ frequently cast as the heroine.
 :SLUG: staccato
 :SHORT: A direction to play notes short and detached.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Staccato
 :END:
@@ -2327,7 +2328,7 @@ The opposite of legato (smooth and connected).
 :SLUG: stringendo
 :SHORT: Pressing forward; urgently accelerating.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/List_of_Italian_musical_terms_used_in_English
 :END:
@@ -2342,7 +2343,7 @@ to accelerando but with a stronger connotation of dramatic urgency.
 :SLUG: strophic-form
 :SHORT: A song structure in which the same music is repeated for each verse.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 myp4 dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Strophic_form
 :END:
@@ -2358,7 +2359,7 @@ form, in which new music is written for each section.
 :SLUG: subtractive-synthesis
 :SHORT: Synthesis that starts with a harmonically rich waveform and removes frequencies using filters.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: myp3 myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Subtractive_synthesis
 :END:
@@ -2376,7 +2377,7 @@ resonance are the primary timbral controls.
 :SLUG: sul-ponticello
 :SHORT: Bowing near the bridge of a string instrument to produce a glassy, nasal tone.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Sul_ponticello
 :END:
@@ -2392,7 +2393,7 @@ fingerboard), which produces a softer, flutier sound.
 :SLUG: suspensions
 :SHORT: Non-chord tones held over from a previous chord that resolve by step.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Suspension_(music)
 :END:
@@ -2410,7 +2411,7 @@ prominent in Renaissance and Baroque counterpoint.
 :SLUG: syncopation
 :SHORT: Placing rhythmic accents on normally weak beats or between beats.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 myp4 dp
 :CATS: harmony
 :SOURCE: https://en.wikipedia.org/wiki/Syncopation
 :END:
@@ -2427,7 +2428,7 @@ Western art music as well.
 :SLUG: synthesis
 :SHORT: The generation of sound using electronic hardware or software.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Sound_synthesis
 :END:
@@ -2444,7 +2445,7 @@ they generate and shape waveforms.
 :SLUG: temperament
 :SHORT: A tuning system that adjusts pure intervals to allow playing in multiple keys.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Musical_temperament
 :END:
@@ -2462,7 +2463,7 @@ well temperament made some keys purer at the expense of others.
 :SLUG: tempo
 :SHORT: The speed of the beat, measured in beats per minute (BPM).
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Tempo
 :END:
@@ -2479,7 +2480,7 @@ may be gradual (accelerando, ritardando) or sudden.
 :SLUG: tenor
 :SHORT: The highest standard adult male singing voice.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Tenor
 :END:
@@ -2496,7 +2497,7 @@ and heldentenor.
 :SLUG: tenuto
 :SHORT: Hold the note for its full value; often with slight emphasis.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Tenuto
 :END:
@@ -2512,7 +2513,7 @@ Distinct from staccato (short) and accent (forceful).
 :SLUG: ternary-form
 :SHORT: A three-part musical structure: A–B–A.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Ternary_form
 :END:
@@ -2530,7 +2531,7 @@ return of the opening material.
 :SLUG: tessitura
 :SHORT: The range within which a voice or instrument most comfortably and characteristically sits.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 dp
 :CATS: vocal
 :SOURCE: https://en.wikipedia.org/wiki/Tessitura
 :END:
@@ -2547,7 +2548,7 @@ sustained performance. The term comes from the Italian for "texture."
 :SLUG: texture
 :SHORT: The way melodic, rhythmic, and harmonic elements are combined in a piece.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Musical_texture
 :END:
@@ -2566,7 +2567,7 @@ dynamics.
 :SLUG: through-composed
 :SHORT: A form in which new music is written for each section, with no large-scale repetition.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Through-composed_music
 :END:
@@ -2584,7 +2585,7 @@ song) and opera.
 :SLUG: tierce-de-picardie
 :SHORT: Ending a minor-key piece on a major tonic chord.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Picardy_third
 :END:
@@ -2599,7 +2600,7 @@ the French name is uncertain.
 :SLUG: timbre
 :SHORT: The characteristic tone color or quality of a sound that distinguishes it from others at the same pitch.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp2 myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Timbre
 :END:
@@ -2616,7 +2617,7 @@ from a flute playing the same note, and is sometimes called "tone color."
 :SLUG: tonal-tonality
 :SHORT: The organization of music around a central pitch (the tonic) using major or minor scales.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Tonality
 :END:
@@ -2634,7 +2635,7 @@ described as atonal or non-tonal.
 :SLUG: tremolo
 :SHORT: A rapid fluctuation in volume, or rapid reiteration of a note.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Tremolo
 :SOURCE_2: https://www.masterclass.com/articles/vibrato-voice
@@ -2655,7 +2656,7 @@ incorrectly called a "tremolo arm" — it actually produces pitch variation
 :SLUG: trill
 :SHORT: Rapid alternation between a note and the note a step above it.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Trill_(music)
 :END:
@@ -2672,7 +2673,7 @@ vary by historical period and style.
 :SLUG: tuning
 :SHORT: The process of adjusting an instrument's pitches to match a standard or system.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp5 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Musical_tuning
 :END:
@@ -2689,7 +2690,7 @@ etc.) used as a reference.
 :SLUG: unison
 :SHORT: Two or more voices or instruments performing the same pitch simultaneously.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Unison
 :END:
@@ -2705,7 +2706,7 @@ reinforce a melody across sections.
 :SLUG: variation
 :SHORT: A modified restatement of a theme, changing some but not all of its features.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Variation_(music)
 :END:
@@ -2722,7 +2723,7 @@ variation also occurs informally within improvised jazz.
 :SLUG: verismo
 :SHORT: A late 19th-century Italian operatic style depicting realistic, everyday subjects.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Verismo_(music)
 :END:
@@ -2738,7 +2739,7 @@ vocal writing, and vivid orchestration.
 :SLUG: vibrato
 :SHORT: A rapid, slight fluctuation of pitch used to add warmth and expression to a note.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp1 myp4 dp
 :CATS: italian
 :SOURCE: https://en.wikipedia.org/wiki/Vibrato
 :SOURCE_2: https://www.masterclass.com/articles/vibrato-voice
@@ -2759,7 +2760,7 @@ laryngeal oscillation in singing.
 :SLUG: vocoder
 :SHORT: A device that imposes the spectral characteristics of one sound (usually voice) onto another.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Vocoder
 :END:
@@ -2778,7 +2779,7 @@ be widely used.
 :SLUG: voicing
 :SHORT: The specific arrangement of notes within a chord, including register and spacing.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp2 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Voicing_(music)
 :END:
@@ -2797,7 +2798,7 @@ skill in arranging, piano comping, and choral writing.
 :SLUG: vst
 :SHORT: Virtual Studio Technology — a standard for software audio plugins.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 dp
 :CATS: technology
 :SOURCE: https://en.wikipedia.org/wiki/Virtual_Studio_Technology
 :END:
@@ -2813,7 +2814,7 @@ of commercial and free instruments and effects available.
 :SLUG: walking-bass
 :SHORT: A bass line of steady quarter notes that outlines the chord changes.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Bassline
 :SOURCE_2: https://jazznightschool.org/pages/walking-bass-lines-introduction-part-1
@@ -2833,7 +2834,7 @@ footstep-like regularity of the rhythm.
 :SLUG: wavetable-synthesis
 :SHORT: A synthesis method that cycles through stored digital waveforms to produce sound.
 :IMPORTANCE: expert
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Wavetable_synthesis
 :SOURCE_2: https://blog.native-instruments.com/what-is-wavetable-synthesis/
@@ -2854,7 +2855,7 @@ Instruments Massive and Xfer Serum.
 :SLUG: wet-dry-signal
 :SHORT: Dry = unprocessed audio; wet = audio with effects applied.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: myp3 myp4 myp5 dp
 :CATS: general
 :SOURCE: https://www.differencebetween.net/technology/difference-between-wet-and-dry-signals-or-sounds/
 :SOURCE_2: https://asmr.education/faq/music-mixing/dry-signal-vs-wet-signal
@@ -2873,7 +2874,7 @@ of effect without replacing the source sound entirely.
 :SLUG: 12-bar-blues
 :SHORT: A repeating 12-measure harmonic framework foundational to blues, jazz, and rock.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp4 dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Twelve-bar_blues
 :END:
@@ -2891,7 +2892,7 @@ I (bars 11–12). Countless variations exist, particularly in jazz
 :SLUG: 12-note-techniques
 :SHORT: A compositional method using a fixed ordering of all twelve chromatic pitches as the basis for a piece.
 :IMPORTANCE: enriching
-:LEVELS: all
+:LEVELS: dp
 :CATS: general
 :SOURCE: https://en.wikipedia.org/wiki/Twelve-tone_technique
 :END:
@@ -2912,7 +2913,7 @@ Dallapiccola, and others.
 :SLUG: vii
 :SHORT: The seventh scale degree or a chord built on it.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -2927,7 +2928,7 @@ minor.
 :SLUG: vi
 :SHORT: The sixth scale degree or a chord built on it.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp4 myp5 dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -2941,7 +2942,7 @@ keys and as a chromatic alteration.
 :SLUG: iv
 :SHORT: The subdominant — the fourth scale degree or a chord built on it.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 myp4 myp5 dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -2954,7 +2955,7 @@ directly to the tonic (I), the latter producing a plagal cadence.
 :SLUG: v
 :SHORT: The dominant — the fifth scale degree or a chord built on it.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 myp4 myp5 dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -2968,7 +2969,7 @@ The V–I progression is the foundation of tonal cadential motion.
 :SLUG: iii
 :SHORT: The mediant — the third scale degree or a chord built on it.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -2982,7 +2983,7 @@ minor keys.
 :SLUG: ii
 :SHORT: The supertonic — the second scale degree or a chord built on it.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -2996,7 +2997,7 @@ frequently as a secondary dominant or in modal contexts.
 :SLUG: i
 :SHORT: The tonic — the home chord, built on the first scale degree.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp2 myp4 myp5 dp
 :CATS: roman-numeral
 :SOURCE: https://en.wikipedia.org/wiki/Roman_numeral_analysis
 :END:
@@ -3012,7 +3013,7 @@ keys it is minor (i).
 :SLUG: aesthetics
 :SHORT: Aesthetics deals with the characteristics, creation, meaning and perception of beauty and taste.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp4 myp5
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3025,7 +3026,7 @@ Aesthetics deals with the characteristics, creation, meaning and perception of b
 :SLUG: change
 :SHORT: Change is a conversion, transformation or movement from one form, state or value to another.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp3
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3038,7 +3039,7 @@ Change is a conversion, transformation or movement from one form, state or value
 :SLUG: communication
 :SHORT: Communication is the exchange or transfer of signals, facts, ideas and symbols.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp2 myp4 myp5
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3051,7 +3052,7 @@ Communication is the exchange or transfer of signals, facts, ideas and symbols. 
 :SLUG: communities
 :SHORT: Communities are groups that exist in proximity defined by space, time or relationship.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3062,7 +3063,7 @@ Communities are groups that exist in proximity defined by space, time or relatio
 :SLUG: connections
 :SHORT: Connections are links, bonds and relationships among people, objects, organisms or ideas.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3073,7 +3074,7 @@ Connections are links, bonds and relationships among people, objects, organisms 
 :SLUG: creativity
 :SHORT: Creativity is the process of generating novel ideas and considering existing ideas from new perspectives.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3084,7 +3085,7 @@ Creativity is the process of generating novel ideas and considering existing ide
 :SLUG: culture
 :SHORT: Culture encompasses a range of learned and shared beliefs, values, interests, attitudes, products, ways of knowing and patterns of behaviour created by human communities.
 :IMPORTANCE: enriching
-:LEVELS: myp dp
+:LEVELS: dp
 :CATS: myp-key-concept tok tok-concept
 :SOURCE: myp-arts-guide
 :SOURCE_2: tok-site
@@ -3098,7 +3099,7 @@ Culture encompasses a range of learned and shared beliefs, values, interests, at
 :SLUG: global-interactions
 :SHORT: Global interactions, as a concept, focuses on the connections between individuals and communities, as well as their relationships with built and natural environments, from the perspective of the world as a whole.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: myp4
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3109,7 +3110,7 @@ Global interactions, as a concept, focuses on the connections between individual
 :SLUG: identity
 :SHORT: Identity refers to the particular features that define individuals, groups, things, eras, places, symbols and styles.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp1
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3122,7 +3123,7 @@ Identity refers to the particular features that define individuals, groups, thin
 :SLUG: logic
 :SHORT: Logic is a method of reasoning and a system of principles used to build arguments and reach conclusions.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3133,7 +3134,7 @@ Logic is a method of reasoning and a system of principles used to build argument
 :SLUG: perspective
 :SHORT: Perspective is the position from which we observe situations, objects, facts, ideas and opinions.
 :IMPORTANCE: enriching
-:LEVELS: myp dp
+:LEVELS: dp
 :CATS: myp-key-concept tok tok-concept
 :SOURCE: myp-arts-guide
 :SOURCE_2: tok-site
@@ -3147,7 +3148,7 @@ Perspective is the position from which we observe situations, objects, facts, id
 :SLUG: relationships
 :SHORT: Relationships are the connections and associations between properties, objects, people and ideas—including the human community's connections with the world in which we live.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3158,7 +3159,7 @@ Relationships are the connections and associations between properties, objects, 
 :SLUG: systems
 :SHORT: Systems are sets of interacting or interdependent components.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3169,7 +3170,7 @@ Systems are sets of interacting or interdependent components. Systems provide st
 :SLUG: time-place-and-space
 :SHORT: The intrinsically linked concept of time, place and space refers to the absolute or relative position of people, objects and ideas.
 :IMPORTANCE: enriching
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-key-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3182,7 +3183,7 @@ The intrinsically linked concept of time, place and space refers to the absolute
 :SLUG: audience
 :SHORT: An individual or group who receive and/or respond to arts.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3193,7 +3194,7 @@ The intrinsically linked concept of time, place and space refers to the absolute
 :SLUG: boundaries
 :SHORT: The parameters that define a personality, a culture, an environment, civil law, a skill set or a belief structure.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3204,7 +3205,7 @@ The intrinsically linked concept of time, place and space refers to the absolute
 :SLUG: composition
 :SHORT: The intentional organization or contrast, balance, arrangement or awareness of the principles of art for a particular purpose in the creation of art.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3215,7 +3216,7 @@ The intrinsically linked concept of time, place and space refers to the absolute
 :SLUG: expression
 :SHORT: The representation of feelings and emotions, ideas, thoughts, beliefs, values and opinions in the process of visual or physical articulation.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp1 myp4
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3226,7 +3227,7 @@ The intrinsically linked concept of time, place and space refers to the absolute
 :SLUG: genre
 :SHORT: A type or category of art that can be identified through a particular set of characteristics, techniques and/or conventions.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp3 myp4
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3241,7 +3242,7 @@ Examples of genres include tragedy, melodrama, jazz, blues, satire, pop art.
 :SLUG: innovation
 :SHORT: An altered interpretation of, or experimentation with, ideas, techniques and media.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp3
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3252,7 +3253,7 @@ Examples of genres include tragedy, melodrama, jazz, blues, satire, pop art.
 :SLUG: interpretation
 :SHORT: The understanding of an artwork's meaning, as determined by the context of the artist, artwork or audience.
 :IMPORTANCE: core
-:LEVELS: all
+:LEVELS: myp1 myp4 dp
 :CATS: myp-related-concept tok tok-concept
 :SEE: performer
 :SOURCE: myp-arts-guide
@@ -3269,7 +3270,7 @@ A distinctive personal performance or re-creation of an existing artwork.
 :SLUG: narrative
 :SHORT: A spoken, written or visual account of connected events; a story, which may be fictional or non-fictional.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp2 myp5
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3280,7 +3281,7 @@ A distinctive personal performance or re-creation of an existing artwork.
 :SLUG: play
 :SHORT: Play can occur in an artistic process or product.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept performing-arts
 :SOURCE: myp-arts-guide
 :END:
@@ -3297,7 +3298,7 @@ In product, play can be a collective creation of a theatre piece or a pre-existi
 :SLUG: presentation
 :SHORT: The choice of medium, tool and exhibition or performance space that contributes to audience understanding of the meaning or purpose of the artwork.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: myp4 myp5
 :CATS: myp-related-concept
 :SOURCE: myp-arts-guide
 :END:
@@ -3308,7 +3309,7 @@ In product, play can be a collective creation of a theatre piece or a pre-existi
 :SLUG: representation
 :SHORT: The description, depiction or portrayal of a person, group, place or item in a particular way or as being of a particular nature.
 :IMPORTANCE: expert
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept visual-arts
 :SOURCE: myp-arts-guide
 :END:
@@ -3319,7 +3320,7 @@ In product, play can be a collective creation of a theatre piece or a pre-existi
 :SLUG: role
 :SHORT: The development, adoption and portrayal of a character or style by a performer.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept performing-arts
 :SOURCE: myp-arts-guide
 :END:
@@ -3332,7 +3333,7 @@ Role can also refer to the different responsibilities related to the presentatio
 :SLUG: structure
 :SHORT: This refers to the shape, timing and organization of the art and the factors that determine how a piece or performance is shaped.
 :IMPORTANCE: core
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept performing-arts
 :SOURCE: myp-arts-guide
 :END:
@@ -3343,7 +3344,7 @@ Role can also refer to the different responsibilities related to the presentatio
 :SLUG: style
 :SHORT: A type of art characteristic of a group of people, a person or period of time and belonging to a shared tradition or set of conventions.
 :IMPORTANCE: expert
-:LEVELS: myp
+:LEVELS: myp4
 :CATS: myp-related-concept visual-arts
 :SOURCE: myp-arts-guide
 :END:
@@ -3354,7 +3355,7 @@ Role can also refer to the different responsibilities related to the presentatio
 :SLUG: visual-culture
 :SHORT: A field of study that generally includes some combination of cultural studies, art history, critical theory, philosophy and anthropology by focusing on aspects of culture that rely on visual images.
 :IMPORTANCE: expert
-:LEVELS: myp
+:LEVELS: none
 :CATS: myp-related-concept visual-arts
 :SOURCE: myp-arts-guide
 :END:
@@ -4458,9 +4459,6 @@ Music theory comes at the end of the sequence, not the beginning (p. 106). From 
 ** aesthetics
 - How are artistic standards developed and maintained? :: power | dp-guide-9
 
-** procedural-knowledge
-- Is kinaesthetic learning a way to acquire knowledge? :: evidence | dp-guide-9
-
 ** experimenting-with-music
 - How is knowledge constructed through artistic processes and actions? :: explanation | dp-guide-9
 - Why might we be more concerned with process rather than product in the search for knowledge? :: values | dp-guide-9
@@ -4480,31 +4478,12 @@ Music theory comes at the end of the sequence, not the beginning (p. 106). From 
 
 ** global-context
 - To what extent does context have an impact on musical developments, and vice versa? :: culture | dp-guide-9
-- Can you understand music from an unfamiliar culture without learning that culture's own words for it? :: culture | site
-
-** area-of-inquiry
-- What, if anything, do the different subjects that make up the arts have in common? :: explanation | dp-guide-9
-
-** aesthetic-value
-- Are certain ways of knowing employed in radically different ways in the arts as opposed to other areas of knowledge? :: perspective | dp-guide-9
 
 ** consonance
 - Is the difference between consonance and dissonance in the sound itself, or in what a listener's culture has taught them to expect? :: culture | site
 
-** resting-tone
-- Music Learning Theory, classical theory and jazz can each name the mode of the same notes differently. Can all three be right? :: perspective | site
-
 ** notation
 - What does a score leave out, and who decides how to fill it in? :: interpretation | site
-
-** audiation
-- Gordon writes that the meaning we give to sounds differs from person to person. If two people audiate the same melody differently, is one of them wrong? :: objectivity | site
-
-** temperament
-- Equal temperament makes every key usable by putting most intervals slightly out of tune. Is "in tune" a fact about sound or an agreement between musicians? :: truth | site
-
-** improvising
-- If an improvisation is never played the same way twice, what exactly is "the piece"? :: explanation | site
 
 ** critique
 - Can a critique be objective when it rests on the critic's taste? What would make it more than opinion? :: objectivity | site
@@ -4520,12 +4499,3 @@ Music theory comes at the end of the sequence, not the beginning (p. 106). From 
 
 ** performer
 - Can a performance of older music be "authentic" when nobody alive heard the original? :: truth | site
-
-** 12-bar-blues
-- When the blues is taught as a fixed twelve-bar pattern, whose version of the blues becomes the standard? :: power | site
-
-** artistic-intention
-- If a listener hears something in your piece that you did not intend, is it still in the piece? :: interpretation | site
-
-** primary-source
-- When a musician describes their own work in an interview, how much should that count as evidence of what the music means? :: evidence | site

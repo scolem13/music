@@ -5,7 +5,17 @@
 // SPACE starts / stops (ignored while typing).
 (function (global) {
   var SOUNDS = [["piano", "Piano"], ["flute", "Flute"], ["clarinet", "Clarinet"], ["trumpet", "Trumpet"],
-                ["violin", "Violin"], ["cello", "Cello"], ["trombone", "Trombone"]];
+                ["violin", "Violin"], ["cello", "Cello"], ["trombone", "Trombone"], ["solfege", "Voice (solfège)"]];
+  // "Voice (solfège)" sings the pattern on its syllables (apps/shared/solfege-sing.js, loaded on first use), in the written key: movable do.
+  var singJs = null;
+  function singer() {
+    if (global.SolfegeSing) return Promise.resolve(global.SolfegeSing);
+    return singJs || (singJs = new Promise(function (res, rej) {
+      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=3", "/apps/shared/solfege-sing.js?v=3"].filter(Boolean);
+      (function next() { if (!need.length) return res(global.SolfegeSing);
+        var sc = document.createElement("script"); sc.src = need.shift(); sc.onload = next; sc.onerror = function () { singJs = null; rej(); }; document.head.appendChild(sc); })();
+    }));
+  }
 
   // "C0" / "^F,0" -> a beat each; "||" between cells becomes a short rest so the patterns stay apart.
   function playable(abc, beats) {
@@ -31,16 +41,24 @@
     function stop() { run++; if (h) { var x = h; h = null; x.stop(); } show(false); }
     function play() {
       stop(); var me = ++run;
-      if (!global.AbcPlay) return;
       var src = playable(o.abc(), +el.querySelector(".pp-len").value);
+      function ended() {
+        if (me !== run) return; h = null;
+        if (el.querySelector(".pp-loop").checked) setTimeout(function () { if (me === run) play(); }, 600);
+        else { show(false); if (o.onEnd) o.onEnd(); }
+      }
+      if (el.querySelector(".pp-sound").value === "solfege") {
+        show(true);
+        singer().then(function (S) { if (me !== run) return;
+          h = S.play(src.replace(/^M:none$/m, "M:4/4"), { qpm: +tempo.value, transpose: o.transpose ? o.transpose() : 0, voice: "low", onEnd: ended }); },
+          function () { if (me === run) show(false); });
+        return;
+      }
+      if (!global.AbcPlay) return;
       var v = ABCJS.renderAbc(el.querySelector(".pp-off"), src)[0];
       show(true);
       h = AbcPlay.play(v, { sound: el.querySelector(".pp-sound").value, qpm: +tempo.value, transpose: o.transpose ? o.transpose() : 0,
-        light: false, onEnd: function () {
-          if (me !== run) return; h = null;
-          if (el.querySelector(".pp-loop").checked) setTimeout(function () { if (me === run) play(); }, 600);
-          else { show(false); if (o.onEnd) o.onEnd(); }
-        } });
+        light: false, onEnd: ended });
     }
     btn.onclick = function () { h ? stop() : play(); };
     document.addEventListener("keydown", function (e) {

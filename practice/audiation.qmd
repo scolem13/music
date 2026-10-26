@@ -6,17 +6,17 @@ toc-depth: 2
 ---
 
 ```{=html}
-<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=2"></script>
 <script src="/apps/shared/abc-core.js"></script>
 <script src="/apps/shared/abc-events.js"></script>
 <script src="/apps/shared/abc-play.js?v=5"></script>
 <script src="/apps/patterns/pattern-set.js?v=4"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/shared/pitch-detect.js?v=2"></script>
-<script src="/apps/shared/rhythm-chant.js?v=2"></script>
+<script src="/apps/shared/rhythm-chant.js?v=18"></script>
 <script src="/apps/shared/syllable-detect.js?v=1"></script>
 <script src="/apps/shared/syllable-check.js?v=1"></script>
-<script src="/apps/patterns/audiation.js?v=6"></script>
+<script src="/apps/patterns/audiation.js?v=10"></script>
 <script src="/apps/shared/section-fold.js?v=1"></script>
 <style>
 .au-panel { --au-line: var(--site-line, #ced4da); --au-mute: var(--site-ink-2, #6c757d); --au-acc: var(--site-accent, #2780e3);
@@ -44,11 +44,21 @@ toc-depth: 2
 .au-src { font-size: .9rem; color: var(--au-mute); }
 .au-paper { background: var(--site-surface, #fff); border: 1px solid var(--au-line, #ced4da); border-radius: .4rem; min-height: 90px; margin: .5rem 0; padding: .2rem .4rem; max-width: 520px; }
 .au-paper svg { width: 100%; height: auto; }
+.au-series { display: flex; flex-wrap: wrap; gap: .4rem; }
+.au-series .au-mini { flex: 1 1 140px; max-width: 220px; min-height: 60px; margin: 0; }
+.au-slots, .au-cards { display: flex; flex-wrap: wrap; gap: .4rem; margin: .5rem 0; }
+.au-cards { border-top: 1px dashed var(--au-line); padding-top: .5rem; }
+.au-panel button.au-card { padding: .1rem; width: 120px; min-height: 56px; background: var(--site-surface, #fff); }
+.au-panel button.au-card svg { width: 100%; height: auto; }
+.au-panel button.au-slot { width: 150px; border-width: 2px; }
+.au-panel button.au-empty { color: var(--au-mute); font-weight: 700; border-style: dashed; }
+.au-panel button.au-card.au-good { border-color: var(--au-good); background: var(--site-surface, #fff); }
+.au-panel button.au-card.au-bad { border-color: var(--au-bad); background: var(--site-surface, #fff); }
 </style>
 ```
 
-Five levels of the skill learning sequence. The first three are by ear only and come before reading; *Read it*
-adds notation, and the last asks for patterns of your own. Use headphones or speakers, sing and chant out loud, and take a breath before you answer.
+Six levels of the skill learning sequence. The first three are by ear only and come before reading; *Read it*
+and the series section add notation, and the last asks for patterns of your own. Use headphones or speakers, sing and chant out loud, and take a breath before you answer.
 
 The order follows Andy Mullen's: familiar patterns first, then unfamiliar ones. Where Edwin Gordon disagrees, the
 note under each section says so.
@@ -125,6 +135,27 @@ unfamiliar patterns (on the basis of familiar patterns)" (*MLT Any Music Teacher
 familiar patterns in unfamiliar order in a new DO signature (*The Literate Musician*, Reading Lesson 3.1, pp. 122–123).
 :::
 
+## Read and write a series (composite synthesis)
+
+Now several familiar patterns at once, and you name the tonality or meter while you read or write them. **Read**: a
+series appears; with a *name it* choice nothing is set up, so you name it from the page, then sing or chant it
+straight through. **Write from dictation**: hear the series, name it, then write it by choosing each pattern's
+notation in order. **Write from memory**: the series shows for three seconds a pattern, then you write it.
+
+<div class="au-panel" id="au-cs"></div>
+
+::: {.au-src}
+**Sources.** Composite synthesis joins partial synthesis and symbolic association: students "audiate tonality or meter
+of one or more series of familiar tonal patterns or rhythm patterns in familiar or unfamiliar order as they read and
+write patterns", and "read with contextual comprehension"; patterns are still read as tonal or rhythm patterns, never
+combined into melodic patterns (Gordon, *Learning Sequences in Music*, pp. 126–127). It comes before generalization-symbolic,
+and students who struggle there go back to it (pp. 129, 133). Mullen lists the "can do" objectives used here: read a
+series of familiar patterns in familiar or unfamiliar order; write a series from dictation; write a series from memory
+after seeing it; give the tonality or meter to a series in notation and from dictation (*How to Teach the Language of
+Music*, p. 36). **Not the same as real writing:** the page has you choose each pattern's notation from the set rather
+than draw it on the staff, so it checks recognition of the notation, not handwriting.
+:::
+
 ## Answer with your own pattern (creativity/improvisation)
 
 You hear a pattern; answer it out loud with one of your own. *Create* asks only for something different in the same
@@ -163,7 +194,7 @@ level it came from (Tonal Unit 3, pp. 43–45).
 ::: {.works-cited}
 Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001. Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch ("A Quick Course on Rhythm" and "Techniques for Teaching Class Patterns").
 
-Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
 
 Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher's Guide to "The Literate Musician."* The Improving Musician, 2021. Bridging and familiar patterns before unfamiliar ones at generalization (pp. 65–67); the audiation-foundation objectives (p. 74); the tonal sequence (p. 79); partial synthesis in rhythm by naming the microbeat (p. 85); rhythm patterns kept conversational, inflected with style and panache (p. 84).
 

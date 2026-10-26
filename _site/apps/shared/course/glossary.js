@@ -14,6 +14,7 @@
 
   function fmtDate(d) { var x = new Date(d + "T12:00:00"); return isNaN(x) ? d : x.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }); }
   function levelText(lv) {
+    if (!lv.length) return "Not in a unit";
     var m = lv.filter(function (l) { return l !== "dp"; }).map(function (l) { return +l.slice(3); });
     var s = m.length === 5 ? "MYP1–5" : m.length > 1 && m[m.length - 1] - m[0] === m.length - 1 ? "MYP" + m[0] + "–" + m[m.length - 1] : m.map(function (n) { return "MYP" + n; }).join(", ");
     return [s, lv.indexOf("dp") >= 0 ? "DP" : ""].filter(Boolean).join(" · ");
@@ -225,7 +226,7 @@
 
   function init() {
     if (!document.getElementById("gl-results")) return;
-    K.json("/apps/shared/course/glossary.json?v=1").then(function (data) {
+    K.json("/apps/shared/course/glossary.json?v=2").then(function (data) {
       if (!data) { document.getElementById("gl-results").textContent = "The glossary could not be loaded."; return; }
       D = data; D.terms.forEach(function (t) { bySlug[t.slug] = t; });
       st = readState(); controls(); render(); tokSection(); ladders(); wire();

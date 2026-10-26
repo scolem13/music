@@ -165,7 +165,7 @@
   function renderAll() { picker(); where(); decisions(); rubric(); sequence(); share(); }
   function init() {
     if (!document.getElementById("pw-where")) return;
-    Promise.all([K.json("/apps/shared/course/pathway.json?v=1"), K.json("/apps/shared/course/glossary.json?v=1")]).then(function (r) {
+    Promise.all([K.json("/apps/shared/course/pathway.json?v=1"), K.json("/apps/shared/course/glossary.json?v=2")]).then(function (r) {
       P = r[0]; G = r[1];
       if (!P) { document.getElementById("pw-where").textContent = "The pathway could not be loaded."; return; }
       (G ? G.terms : []).forEach(function (t) { gl[t.slug] = t; });

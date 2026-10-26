@@ -3,7 +3,11 @@
 MO = "theory/modes-three-ways.qmd"
 ME = "theory/meter-taxonomy.qmd"
 SOURCES = [
-    web('Hutchinson, Robert. "Meter." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/meter.html", [ME],
+    web('Hutchinson, Robert. "Major Scales and Key Signatures." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/MajorScalesAndKeySignatures.html", ["theory/major-scales.qmd"],
+        note="Chapter 2: half and whole steps, the major scale, major key signatures."),
+    web('Hutchinson, Robert. "Basics of Rhythm." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/BasicsOfRhythm.html", ["theory/rhythm-basics.qmd"],
+        note="Chapter 4: time signature, durational symbols, dots and ties, meter, tuplets, common notation errors."),
+    web('Hutchinson, Robert. "Meter." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/meter.html", [ME, "theory/rhythm-basics.qmd"],
         note="Simple and compound, duple, triple and quadruple, with example signatures."),
     web('Hutchinson, Robert. "How to Determine Chord-Scale Relationships." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, URL.', "https://musictheory.pugetsound.edu/mt21c/HowToDetermineChord-ScaleRelationships.html", [MO],
         note="The method (chord tones, then fill the gaps avoiding augmented seconds and consecutive half steps) and the table of chord-scale pairs."),

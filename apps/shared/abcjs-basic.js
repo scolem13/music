@@ -26625,7 +26625,7 @@ var layout = function layout(renderer, abctune, width, space, expandToWidest, ti
     if (abcLine.staff) {
       // console.log("=== line", i)
       var thisWidth;
-      if (timeBasedLayout !== undefined) thisWidth = layoutInGrid(renderer, abcLine.staffGroup, timeBasedLayout);else thisWidth = setXSpacing(renderer, maxWidth, space, abcLine.staffGroup, abctune.formatting, i === abctune.lines.length - 1, false);
+      if (timeBasedLayout !== undefined) thisWidth = layoutInGrid(renderer, abcLine.staffGroup, timeBasedLayout);else thisWidth = setXSpacing(renderer, maxWidth, space, abcLine.staffGroup, abctune.formatting, i === abctune.lines.length - 1, false, i === abctune.lines.length - 1 ? lastLineShare(abctune.lines, i) : null);
       // console.log(thisWidth, maxWidth)
       if (Math.round(thisWidth) > Math.round(maxWidth)) {
         // to take care of floating point weirdness
@@ -26667,7 +26667,27 @@ var layout = function layout(renderer, abctune, width, space, expandToWidest, ti
   return maxWidth;
 };
 // Do the x-axis positioning for a single line (a group of related staffs)
-var setXSpacing = function setXSpacing(renderer, width, space, staffGroup, formatting, isLastLine, debug) {
+// everything-music-site: the last line's share of the width = its bars / the bars on the line before (so its bars are as wide as theirs).
+function countBars(line) { var v = line.staff && line.staff[0] && line.staff[0].voices && line.staff[0].voices[0], n = 0, notes = false;
+  if (!v) return 0; v.forEach(function (e) { if (e.el_type === 'bar') { if (notes) n++; notes = false; } else if (e.el_type === 'note') notes = true; }); return n + (notes ? 1 : 0); }
+function lastLineShare(lines, i) { var j = i - 1; while (j >= 0 && !lines[j].staff) j--; if (j < 0) return null;
+  var a = countBars(lines[i]), b = countBars(lines[j]); return a && b ? Math.min(1, a / b) : null; }
+var setXSpacing = function setXSpacing(renderer, width, space, staffGroup, formatting, isLastLine, debug, share) {
+  if (isLastLine && share && formatting.stretchlast === undefined) {
+    var leftEdge0 = getLeftEdgeOfStaff(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
+    var target = leftEdge0 + (width + renderer.padding.left - leftEdge0) * share, sp = space;
+    for (var it0 = 0; it0 < 8; it0++) {
+      var r0 = layoutStaffGroup(sp, renderer.minPadding, debug, staffGroup, leftEdge0);
+      if (staffGroup.w >= target - 2 && it0 === 0) break;              // already that wide: leave it
+      sp = calcHorizontalSpacing(false, undefined, target, staffGroup.w, sp, r0.spacingUnits, r0.minSpace, 0);
+      if (sp === null) break;
+    }
+    centerWholeRests(staffGroup.voices);
+    return staffGroup.w - leftEdge0;
+  }
+  return setXSpacing0(renderer, width, space, staffGroup, formatting, isLastLine, debug);
+};
+var setXSpacing0 = function (renderer, width, space, staffGroup, formatting, isLastLine, debug) {
   var leftEdge = getLeftEdgeOfStaff(renderer, staffGroup.getTextSize, staffGroup.voices, staffGroup.brace, staffGroup.bracket);
   var newspace = space;
   //dumpGroup("before", staffGroup)

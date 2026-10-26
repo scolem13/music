@@ -87,17 +87,24 @@
   // ---------- rhythm ----------
   var RHYTHM = { "duple": "Duple-M-m-2-4", "triple": "Triple-M-m-6/8", "duple-d": "Duple-M-m-D-2/4", "triple-d": "Triple-M-m-D-6/8" };
   function rhythmSyllables(abc) {
+    var RC0 = global.RhythmChant || (typeof require === "function" ? (function () { try { return require("../shared/rhythm-chant.js"); } catch (x) { return null; } })() : null);
+    if (RC0 && RC0.syllables) return RC0.syllables(abc).replace(/ \| /g, " | ");
     abc = abc.replace(/([A-Ga-gz][,']*)\/\/(?![0-9])/g, "$1/4");          // "B//" (a sixteenth) is read as B/4
     var r = Events.fromAbc(abc), triple = /M:\s*6\/8/.test(abc), mac = triple ? 1.5 : 1, out = [], bar = -1, eps = 1e-6;
+    // macrobeats from RhythmChant.beats (rhythm-chant.js), so the "Du"s are the notes the chant stresses; without it, quarters / dotted quarters
+    var RC = global.RhythmChant || (typeof require === "function" ? (function () { try { return require("../shared/rhythm-chant.js"); } catch (x) { return null; } })() : null);
+    var B = RC && RC.beats ? RC.beats(abc) : null;
     var barOf = {}; r.written.forEach(function (w) { barOf[w.id] = w.bar; });
     r.sounding.forEach(function (e) {
       var b = e.bar !== undefined ? e.bar : barOf[(e.from || [e.id])[0]];
       if (b !== undefined && b !== bar && bar >= 0) out.push("|");
       if (b !== undefined) bar = b;
-      var f = ((e.t_on % mac) + mac) % mac / mac, syl = "?";
+      var f = ((e.t_on % mac) + mac) % mac / mac, syl = "?", tr = triple;
+      if (B) { var k = B.length - 1; while (k > 0 && e.t_on < B[k].t - eps) k--; f = (e.t_on - B[k].t) / B[k].len; tr = B[k].triple; if (f > 1 - eps) f = 0; }
+      var triple_ = tr;
       function at(x) { return Math.abs(f - x) < eps; }
       if (at(0)) syl = "Du";
-      else if (!triple) syl = at(0.5) ? "De" : (at(0.25) || at(0.75)) ? "Ta" : "?";
+      else if (!triple_) syl = at(0.5) ? "De" : (at(0.25) || at(0.75)) ? "Ta" : "?";
       else syl = at(1 / 3) ? "Da" : at(2 / 3) ? "Di" : (at(1 / 6) || at(0.5) || at(5 / 6)) ? "Ta" : "?";
       out.push(syl);
     });
@@ -591,6 +598,144 @@
     yes.onclick = function () { mark(true, yes); }; no.onclick = function () { mark(false, no); };
   }
 
+  // ---------- composite synthesis: read or write a series, and name its tonality or meter ----------
+  function composite(root) {
+    var get = controls(root, [
+      { id: "content", label: "Content", choices: [["mm", "Major or minor: name it"], ["major", "Major tonic and dominant"], ["minor", "Minor tonic and dominant"],
+        ["dt", "Duple or triple: name it"], ["duple", "Duple macro/microbeats"], ["triple", "Triple macro/microbeats"], ["duple-d", "Duple divisions"], ["triple-d", "Triple divisions"]], value: "mm" },
+      { id: "way", label: "Task", choices: [["r", "Read a series (CS-reading)"], ["d", "Write from dictation (CS-writing)"], ["m", "Write from memory after seeing it"]], value: "r" },
+      { id: "count", label: "Patterns in a series", choices: [["3", "3"], ["4", "4"]], value: "3" },
+      keyOpt(), tempoOpt(), soundOpt()]);
+    var gate = el("label", "au-gate", "<input type='checkbox' class='au-ready'> I can read <b>single</b> familiar patterns on my own (symbolic association, in <i>Read it</i> above).");
+    root.appendChild(gate);
+    var bar = el("div", "au-bar"), go = el("button", "au-go", "Start a series"), hear = el("button", null, "Hear it"), syl = el("button", null, "Show the syllables");
+    [go, hear, syl].forEach(function (b) { b.type = "button"; bar.appendChild(b); });
+    root.appendChild(bar);
+    var status = el("div", "au-status"); root.appendChild(status);
+    var name = el("div", "au-row"); root.appendChild(name);
+    var paper = el("div", "au-series"); root.appendChild(paper);
+    var slots = el("div", "au-slots"); root.appendChild(slots);
+    var palette = el("div", "au-cards"); root.appendChild(palette);
+    var ans = el("div", "au-solf"); root.appendChild(ans);
+    var row = el("div", "au-row"), yes = el("button", "au-choice", "I read it right"), no = el("button", "au-choice", "Not yet");
+    [yes, no].forEach(function (b) { b.type = "button"; b.disabled = true; row.appendChild(b); });
+    root.appendChild(row);
+    var explain = el("div", "au-explain"); root.appendChild(explain);
+    var score = scoreLine(root), round = null, misses = 0, ready = gate.querySelector("input"), timer = null;
+
+    function draw(box, p, r, scale) {
+      var src = r.rhythm ? p.abc.replace(/^K:.*$/m, "K:C clef=none") : displayAbc(p.abc);
+      ABCJS.renderAbc(box, src, { scale: scale, staffwidth: r.rhythm ? 220 : 130, visualTranspose: r.rhythm ? 0 : r.rest - r.set.rest, paddingtop: 2, paddingbottom: 10, paddingleft: 2, paddingright: 2 });
+    }
+    function drawSeries(list, r) {
+      paper.innerHTML = "";
+      list.forEach(function (p) { var b = el("div", "au-paper au-mini"); paper.appendChild(b); draw(b, p, r, 1.5); });
+    }
+    function items(r, list, withSyl) {
+      var it = r.rhythm ? rhythmItems(r.set, list, r.macro) : tonalItems(r.set, list, r.rest, +get("tempo"));
+      if (withSyl) it.forEach(function (x) { x.syl = true; });
+      return it;
+    }
+    function setup(r) { return r.rhythm ? rhythmSeqItem(r.set.meter, r.macro) : tonalSeqItem(r.set.mode, r.rest, +get("tempo")); }
+    function askName(r, then) {
+      name.innerHTML = "<span class='au-n'>It's</span>";
+      r.choices.forEach(function (ch) {
+        var b = el("button", "au-choice", LABEL[ch]); b.type = "button";
+        b.onclick = function () {
+          if (r.named) return; r.named = true; var ok = ch === r.which; r.namedOk = ok; b.classList.add(ok ? "au-good" : "au-bad");
+          explain.innerHTML = "<p>" + LABEL[r.which] + (r.rhythm ? " meter." : " tonality.") + (ok ? "" : r.rhythm ? " Listen for how the macrobeats divide: in twos (duple) or threes (triple)." : " Listen for where the series comes to rest: DO (major) or LA (minor).") + "</p>";
+          if (then) then();
+        };
+        name.appendChild(b);
+      });
+    }
+    function start() {
+      if (!ready.checked) { status.innerHTML = "Composite synthesis comes after you can read single familiar patterns; tick the box when that's true (Gordon, <i>Learning Sequences in Music</i>, pp. 126–127)."; return; }
+      clearTimeout(timer);
+      var c = get("content"), mixed = c === "mm" || c === "dt", way = get("way");
+      var choices = c === "mm" ? ["major", "minor"] : c === "dt" ? ["duple", "triple"] : [c];
+      var which = pick(choices), rhythm = /^(duple|triple)/.test(which);
+      var set = rhythm ? rhythmSet(which) : tonalSet(which);
+      var r = round = { set: set, which: which, choices: choices, mixed: mixed, rhythm: rhythm, way: way, rest: restFor(get("key"), set), macro: +get("tempo") * 0.75,
+                        list: series(set, +get("count")), named: !mixed, answered: false, written: [] };
+      [name, paper, slots, palette, explain].forEach(function (x) { x.innerHTML = ""; }); ans.textContent = "";
+      [yes, no].forEach(function (x) { x.disabled = true; x.className = "au-choice"; });
+      yes.textContent = way === "r" ? "I read it right" : "Check"; no.textContent = way === "r" ? "Not yet" : "Give up";
+      var what = rhythm ? "meter" : "tonality", sing = rhythm ? "chant it in rhythm syllables" : "sing it in solfège";
+      if (way === "r") {
+        drawSeries(r.list, r);
+        if (mixed) { status.textContent = "Nothing is set up. Read the whole series silently, audiate it, name the " + what + ", then " + sing + "."; askName(r); }
+        else { status.textContent = "Audiate the " + what + ", then " + sing + " straight through, without stopping between patterns."; playList([setup(r)], { sound: get("sound") }); }
+        hear.textContent = "Hear it";
+      } else if (way === "d") {
+        status.textContent = "Listen to the whole series" + (mixed ? " (nothing set up first)" : "") + ", then write it: choose each pattern in order.";
+        playList((mixed ? [] : [setup(r)]).concat(items(r, r.list)), { sound: get("sound"), gap: 700, onEnd: afterHearing });
+        hear.textContent = "Hear it again";
+      } else {
+        status.textContent = "Read the series and remember it. It disappears in " + (r.list.length * 3) + " seconds.";
+        drawSeries(r.list, r);
+        timer = setTimeout(function () { paper.innerHTML = ""; afterHearing(); }, r.list.length * 3000);
+        hear.textContent = "Hear it";
+      }
+    }
+    function afterHearing() {
+      var r = round; if (!r || r.way === "r" || r.shown) return; r.shown = true;
+      if (r.mixed && !r.named) { status.textContent = "First name the " + (r.rhythm ? "meter" : "tonality") + ", then write the series."; askName(r, buildWrite); }
+      else buildWrite();
+    }
+    function buildWrite() {
+      var r = round; status.textContent = "Choose the patterns in the order you " + (r.way === "d" ? "heard" : "saw") + " them. Click a filled box to clear it.";
+      drawSlots();
+      palette.innerHTML = "";
+      r.set.patterns.forEach(function (p) {
+        var b = el("button", "au-card"); b.type = "button"; palette.appendChild(b); draw(b, p, r, 1);
+        b.onclick = function () { if (r.answered || r.written.length >= r.list.length) return; r.written.push(p); drawSlots(); };
+      });
+      yes.disabled = no.disabled = false;
+    }
+    function drawSlots() {
+      var r = round; slots.innerHTML = "";
+      for (var i = 0; i < r.list.length; i++) (function (i) {
+        var p = r.written[i], b = el("button", "au-card au-slot" + (p ? "" : " au-empty"), p ? "" : String(i + 1)); b.type = "button"; slots.appendChild(b);
+        if (p) { draw(b, p, r, 1); b.onclick = function () { if (!r.answered) { r.written.splice(i, 1); drawSlots(); } }; }
+      })(i);
+    }
+    function key(p) { return p.midis ? p.midis.join() : p.abc; }
+    function check() {
+      var r = round; if (r.answered) return;
+      if (r.written.length < r.list.length) { status.textContent = "Fill every box first (" + r.written.length + " of " + r.list.length + ")."; return; }
+      r.answered = true;
+      var right = r.list.filter(function (p, i) { return key(p) === key(r.written[i]); }).length, ok = right === r.list.length;
+      Array.prototype.forEach.call(slots.children, function (b, i) { b.classList.add(key(r.list[i]) === key(r.written[i]) ? "au-good" : "au-bad"); });
+      yes.classList.add(ok ? "au-good" : "au-bad"); score.add(ok && (!r.mixed || r.namedOk !== false));
+      drawSeries(r.list, r);
+      explain.innerHTML += "<p>" + right + " of " + r.list.length + " in the right place. The series was <b>" + r.list.map(sylOf).join(" · ") + "</b>.</p>";
+      warn(ok);
+    }
+    function sylOf(p) { return round.rhythm ? p.syl : p.sol.toUpperCase(); }
+    function warn(ok) {
+      misses = ok ? 0 : misses + 1;
+      if (misses >= 2) explain.innerHTML += "<p class='au-warn'>Two in a row not yet. Go back a step: single patterns in <i>Read it</i> (symbolic association), or series by ear in <i>Partial synthesis</i> (Gordon, p. 126).</p>";
+    }
+    hear.onclick = function () {
+      var r = round; if (!r) return;
+      playList(items(r, r.list, r.way === "r"), { sound: get("sound"), gap: 700 });
+      if (r.way === "r") yes.disabled = no.disabled = false;
+    };
+    syl.onclick = function () { var r = round; if (!r) return; ans.textContent = r.list.map(sylOf).join("  ·  "); if (r.way === "r") yes.disabled = no.disabled = false; };
+    go.onclick = start;
+    yes.onclick = function () {
+      var r = round; if (!r) return;
+      if (r.way !== "r") return check();
+      if (r.answered) return; r.answered = true; yes.classList.add("au-good"); score.add(r.namedOk !== false); warn(r.namedOk !== false);
+    };
+    no.onclick = function () {
+      var r = round; if (!r || r.answered) return;
+      if (r.way !== "r") { r.written = r.list.slice(0, 0); r.answered = true; no.classList.add("au-bad"); score.add(false); drawSeries(r.list, r); explain.innerHTML += "<p>The series was <b>" + r.list.map(sylOf).join(" · ") + "</b>.</p>"; warn(false); return; }
+      r.answered = true; no.classList.add("au-bad"); score.add(false); warn(false);
+    };
+  }
+
   // ---------- creativity / improvisation, by ear ----------
   function fits(task, given, q) {
     if (q === given) return false;
@@ -663,7 +808,7 @@
   }
 
   function init() {
-    var map = { "au-ps": partialSynthesis, "au-sd": sameDifferent, "au-tr": translate, "au-gs": reading, "au-ci": improvise };
+    var map = { "au-ps": partialSynthesis, "au-sd": sameDifferent, "au-tr": translate, "au-gs": reading, "au-cs": composite, "au-ci": improvise };
     Object.keys(map).forEach(function (id) { var r = document.getElementById(id); if (r) map[id](r); });
     // "Syllables" only where hearing them gives nothing away: Read it (after reading) and the example answers. Never in partial synthesis, same or different, translate.
     if (global.RhythmChant) ["au-gs", "au-ci"].forEach(function (id) { var r = document.getElementById(id), g = r && r.querySelector(".au-grid"); if (g) { RhythmChant.scope("audiation", false); RhythmChant.syllablesBox(g, { label: "Syllables (Du De Da Di Ta)" }); } });

@@ -71,7 +71,7 @@ toc: false
   <div id="ct-list"></div>
   <div class="ct-pager"><button type="button" id="ct-prev2">← Previous</button><span class="ct-pagelab"></span><button type="button" id="ct-next2">Next →</button></div>
 </div>
-<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=2"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/tune-assessment/abc-tune.js?v=3"></script>
 <script src="/apps/shared/pitch-spelling.js"></script>

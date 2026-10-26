@@ -277,6 +277,10 @@ website:
             - theory/meter-taxonomy.qmd
         - section: "Hutchinson, Music Theory for the 21st-Century Classroom"
           contents:
+            - href: theory/major-scales.qmd
+              text: "2. Major Scales and Key Signatures"
+            - href: theory/rhythm-basics.qmd
+              text: "4. Basics of Rhythm"
             - href: theory/triads.qmd
               text: "6. Triads"
             - href: theory/roman-numerals.qmd

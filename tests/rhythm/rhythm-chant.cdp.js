@@ -5,6 +5,7 @@
 // Run: node tests/rhythm/rhythm-chant.cdp.js   (serves /apps live from the repo and the pages from tests/band/lead/site)
 const http = require("http"), fs = require("fs"), path = require("path");
 const ROOT = path.resolve(__dirname, "../.."), SITE = ROOT + "/tests/band/lead/site", { launch } = require(ROOT + "/tests/band/lead/cdp.js");
+const RC_DEF = require(ROOT + "/apps/shared/rhythm-chant.js").RULES;
 const TYPES = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".json": "application/json", ".svg": "image/svg+xml", ".woff2": "font/woff2", ".ico": "image/x-icon" };
 const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.split(/[?#]/)[0]), base = /^\/(apps\/|config\.js|track\.js)/.test(u) ? ROOT : SITE, f = path.join(base, u);
   fs.readFile(f, (e, d) => { if (e) { s.writeHead(404); return s.end(); } s.writeHead(200, { "content-type": TYPES[path.extname(f)] || "application/octet-stream", "cache-control": "no-store" }); s.end(d); }); });
@@ -13,7 +14,7 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
   const b = await launch({ args: ["--autoplay-policy=no-user-gesture-required"] });
   let fails = 0; const check = (n, ok, info) => { console.log((ok ? "ok   " : "FAIL ") + n + (info !== undefined ? "  " + info : "")); if (!ok) fails++; };
   const ev = e => b.eval(e), sleep = ms => new Promise(r => setTimeout(r, ms));
-  const spy = `window.__rc=[];var P=RhythmChant.play;RhythmChant.play=function(abc,o){__rc.push({abc:abc,ctx:!!o.ctx,when:o.when,spq:o.secPerQuarter,qpm:o.qpm,gain:o.gain});
+  const spy = `window.__rc=[];var P=RhythmChant.play;RhythmChant.play=function(abc,o){__rc.push({abc:abc,ctx:!!o.ctx,when:o.when,spq:o.secPerQuarter,qpm:o.qpm,gain:o.gain,emph:o.emphasis,syl:o.syllables,len:o.lengthRatio,vmac:o.vowelMacro,vweak:o.vowelWeak,endLength:o.endLength,pitchVar:o.pitchVar,arcHeight:o.arcHeight,arcPeak:o.arcPeak,arcEnd:o.arcEnd,dynamics:o.dynamics,question:o.question,cons:o.consonant,ta:o.taLevel,sound:o.sound});
     var h=P.apply(this,arguments);return h;};true`;
 
   // ---- pages on rhythm-assessment/app.js and its fork: the checkbox beside Hear pattern; ticked, Hear pattern chants the model on the page's clock
@@ -45,6 +46,39 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     const r = JSON.parse(await ev(`JSON.stringify(__rc)`));
     console.log("   rc calls:", JSON.stringify(r).slice(0, 200));
     check(`${pg}: Chant plays the pattern shown`, r.length === 1 && /M:/.test(r[0].abc), (r[0] || {}).abc && r[0].abc.split("\n").slice(-2).join(" / "));
+    check(`${pg}: Chant passes the Macrobeat emphasis (default 1)`, r[0] && r[0].emph === 1, r[0] && r[0].emph);
+    // Show syllables writes Du ... under the notes; the emphasis slider and Hear syllables reach the chant
+    await ev(`document.querySelector(".rc-showsyl-box").click(); true`); await sleep(800);
+    check(`${pg}: Show syllables draws them under the notes`, await ev(`/Du/.test(Array.from(document.querySelectorAll("#paper .abcjs-lyric")).map(e=>e.textContent).join(" "))`),
+      await ev(`Array.from(document.querySelectorAll("#paper .abcjs-lyric")).slice(0,8).map(e=>e.textContent).join(" ")`));
+    await ev(`(function(){var g=document.querySelector(".rc-emph");g.value=180;g.dispatchEvent(new Event("input"));document.querySelector(".rc-live .rc-syl-box").click();__rc.length=0;document.querySelector(".rc-play").click();return true})()`); await sleep(400);
+    const r2 = JSON.parse(await ev(`JSON.stringify(__rc)`));
+    check(`${pg}: slider at 180% and Hear syllables reach the chant`, r2[0] && Math.abs(r2[0].emph - 1.8) < 1e-9 && r2[0].syl === "rhythm", JSON.stringify(r2[0] && { emph: r2[0].emph, syl: r2[0].syl }));
+    await ev(`(function(){[["rc-len",200],["rc-vmac",0],["rc-vweak",100]].forEach(function(p){var g=document.querySelector("."+p[0]);g.value=p[1];g.dispatchEvent(new Event("input"));});__rc.length=0;document.querySelector(".rc-play").click();return true})()`); await sleep(300);
+    const r3 = JSON.parse(await ev(`JSON.stringify(__rc)`));
+    await ev(`(function(){[["rc-endlen",200],["rc-pvar",0],["rc-arch",150],["rc-arcpk",50],["rc-arcend",100]].forEach(function(p){var g=document.querySelector("."+p[0]);g.value=p[1];g.dispatchEvent(new Event("input"));});__rc.length=0;document.querySelector(".rc-play").click();return true})()`); await sleep(300);
+    const r4 = JSON.parse(await ev(`JSON.stringify(__rc)`))[0] || {};
+    check(`${pg}: Last-note length, pitch variance and the arc sliders reach the chant`, r4.endLength === 2 && r4.pitchVar === 0 && r4.arcHeight === 1.5 && r4.arcPeak === 0.5 && r4.arcEnd === 100, JSON.stringify(r4).slice(0, 160));
+    await ev(`(function(){[["rc-dyn",150],["rc-quest",100],["rc-cons",50],["rc-ta",40]].forEach(function(p){var g=document.querySelector("."+p[0]);g.value=p[1];g.dispatchEvent(new Event("input"));});__rc.length=0;document.querySelector(".rc-play").click();return true})()`); await sleep(300);
+    const r5 = JSON.parse(await ev(`JSON.stringify(__rc)`))[0] || {};
+    check(`${pg}: Dynamics and Question ending reach the chant`, r5.dynamics === 1.5 && r5.question === 1 && r5.cons === 0.5 && r5.ta === 0.4, JSON.stringify({ d: r5.dynamics, q: r5.question, c: r5.cons }));
+    await ev(`document.querySelector(".rc-reset").click(); __rc.length=0; document.querySelector(".rc-play").click(); true`); await sleep(300);
+    const r6 = JSON.parse(await ev(`JSON.stringify(__rc)`))[0] || {};
+    check(`${pg}: Reset sliders puts the defaults back`, r6.emph === 1 && r6.endLength === RC_DEF.endLength && r6.len === RC_DEF.lengthRatio && await ev(`document.querySelector(".rc-emph").value === "100"`), JSON.stringify({ e: r6.emph, end: r6.endLength, len: r6.len }));
+    // the user, 2026-10-25: sliders folded away behind Settings; a Sound choice (woodblock); clicking a note is silent
+    await ev(`localStorage.removeItem("rc-sliders-open:" + "${pg === "rhythms" ? "rhythm-patterns" : "rhythm-sequences"}"); true`);
+    check(`${pg}: sliders hidden until Settings is opened`, await ev(`getComputedStyle(document.querySelector(".rc-sliders")).display === "none" || document.querySelector(".rc-more").getAttribute("aria-expanded") === "true"`));
+    await ev(`if (document.querySelector(".rc-more").getAttribute("aria-expanded") !== "true") document.querySelector(".rc-more").click(); true`);
+    check(`${pg}: Settings shows them`, await ev(`getComputedStyle(document.querySelector(".rc-sliders")).display !== "none" && !!document.querySelector(".rc-sliders .rc-emph")`));
+    await ev(`(function(){var s=document.querySelector(".rc-sound");s.value="woodblock";s.dispatchEvent(new Event("change"));__rc.length=0;document.querySelector(".rc-play").click();return true})()`); await sleep(300);
+    const r7 = JSON.parse(await ev(`JSON.stringify(__rc)`))[0] || {};
+    check(`${pg}: Sound: Woodblock reaches the chant`, r7.sound === "woodblock", r7.sound);
+    await ev(`(function(){var s=document.querySelector(".rc-sound");s.value="voice";s.dispatchEvent(new Event("change"));return true})()`);
+    await ev(`window.__pe=0; ABCJS.synth.playEvent=function(){__pe++;return Promise.resolve();}; var n=document.querySelector("#paper .abcjs-note"); if(n) n.dispatchEvent(new MouseEvent("mousedown",{bubbles:true})), n.dispatchEvent(new MouseEvent("mouseup",{bubbles:true})), n.dispatchEvent(new MouseEvent("click",{bubbles:true})); true`); await sleep(200);
+    check(`${pg}: clicking a note plays nothing`, await ev(`__pe === 0 && !!document.querySelector("#paper .abcjs-note")`));
+    check(`${pg}: Length ratio and both vowel sliders reach the chant`, r3[0] && r3[0].len === 2 && r3[0].vmac === 0 && r3[0].vweak === 1, JSON.stringify(r3[0] && { len: r3[0].len, vmac: r3[0].vmac, vweak: r3[0].vweak }));
+    await ev(`document.querySelector(".rc-showsyl-box").click(); true`); await sleep(500);
+    check(`${pg}: Show syllables off again`, await ev(`document.querySelectorAll("#paper .abcjs-lyric").length === 0`));
     await ev(`document.querySelector(".rc-stop").click(); document.querySelector(".rc-conv-box").click(); true`);
     check(`${pg}: unticked, the abcjs control is back`, await ev(`getComputedStyle(document.getElementById("audio")).display !== "none"`));
   }
@@ -102,7 +136,7 @@ const srv = http.createServer((q, s) => { const u = decodeURIComponent(q.url.spl
     var sw=await render("X:1\\nM:2/4\\nL:1/4\\nK:C clef=none\\nB3/2 B/ | B B |");
     var dc=await render("X:1\\nM:2/4\\nL:1/4\\nK:C clef=none\\nB B | B B |");
     var t0=0.02, n=sw.p.notes[0];
-    var swEarly=sw.rms(t0+0.15,t0+0.45), swLate=sw.rms(t0+n.dur-0.3,t0+n.dur-0.03);
+    var swEarly=sw.rms(t0+0.15,t0+0.45), swLate=sw.rms(t0+(n.cut||n.dur)-0.3,t0+(n.cut||n.dur)-0.03);
     var dcEarly=dc.rms(t0+0.0,t0+0.12), dcLate=dc.rms(t0+0.4,t0+0.9);
     var max=0; for(var i=0;i<sw.d.length;i++) max=Math.max(max,Math.abs(sw.d[i]));
     return JSON.stringify({shape:n.shape,swEarly:swEarly,swLate:swLate,dcEarly:dcEarly,dcLate:dcLate,max:max});})()`));

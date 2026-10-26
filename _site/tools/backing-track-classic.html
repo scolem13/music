@@ -2318,7 +2318,7 @@ document.addEventListener('DOMContentLoaded', async function () {
   function loadAbcjs(){
     if (window.ABCJS) return Promise.resolve();
     if (!abcjsLoad) abcjsLoad = new Promise(function(res, rej){ var sc = document.createElement("script");
-      sc.src = "/apps/shared/abcjs-basic.js"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
+      sc.src = "/apps/shared/abcjs-basic.js?v=2"; sc.onload = res; sc.onerror = function(){ abcjsLoad = null; rej(); }; document.head.appendChild(sc); });
     return abcjsLoad;
   }
   var drawnFirst = null;

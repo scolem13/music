@@ -452,7 +452,7 @@
 		</main>
 	</div>
 	<script src="/apps/shared/soundfont.js"></script>
-	<script src="/apps/shared/abcjs-basic.js"></script>
+	<script src="/apps/shared/abcjs-basic.js?v=2"></script>
 	<script src="/apps/tunes/tunes-object.js"></script>
 	<script src="/apps/shared/cursor-synth.js"></script>
 	<script src="/apps/shared/tonality.js?v=10"></script>

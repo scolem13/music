@@ -1,0 +1,173 @@
+---
+title: "Rhythm Notation from Du De: Note Values and Time Signatures"
+toc: true
+toc-depth: 2
+description: "Chapter 4 of Hutchinson's Music Theory for the 21st-Century Classroom for students who already read and write rhythm with MLT syllables: note-value names, dots and ties, time signatures and tuplets as new names for what they already chant."
+---
+
+```{=html}
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script>window.AX_NO_VOICE = true;</script>
+<script src="/apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 4, Basics of Rhythm** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/BasicsOfRhythm.html).
+
+**You already know this.** You move to macrobeats and microbeats, chant rhythm patterns on **du de** (usual duple) and **du da di**
+(usual triple) (Gordon 86, 105), and read and write those patterns. This chapter gives the textbook's **names** for the symbols you
+already read. Gordon's warning applies: a player who only knows the time-value names "resort[s] to counting", and the tempo and meter
+suffer (Gordon 38). So keep chanting: the names are for talking about the notation, not for performing from it.
+
+Press ▶ to hear an example. Click any heading to fold its section.
+
+## What you know → what the book calls it
+
+| You say (MLT) | The book says (Hutchinson ch. 4) |
+|---|---|
+| macrobeat | the beat (in simple meter); the dotted beat (in compound meter) |
+| microbeat | the division of the beat |
+| du, de, du da di, ta | note values: quarter, eighth, sixteenth … |
+| an elongation (a note longer than a microbeat) | a longer value, a dotted note, or a tie |
+| usual duple / usual triple | simple / compound meter (see [Meter: Two Ways](meter-taxonomy.qmd)) |
+| a triple division inside duple meter (usual combined) | a triplet (a tuplet) |
+| the measure signature | the time signature |
+
+## 4.1 and 4.4 Time signatures and meter
+
+The book reads the time signature as two numbers: how many beats in a bar, and what kind of note gets the beat.
+[Read 4.1](https://musictheory.pugetsound.edu/mt21c/TimeSignature.html) ·
+[Read 4.4](https://musictheory.pugetsound.edu/mt21c/meter.html)
+
+The two systems sort meters differently, and this is the one place in the chapter where they disagree. The full comparison is on
+[Meter: Two Ways to Sort Time Signatures](meter-taxonomy.qmd). The short version:
+
+- **Simple** meter (2/4, 3/4, 4/4): each beat divides in **2**. You chant it **du de**: usual duple.
+- **Compound** meter (6/8, 9/8, 12/8): each beat divides in **3**. You chant it **du da di**: usual triple.
+- The book's *duple / triple / quadruple* counts **beats in a bar**. Your *duple / triple* names **how each beat divides**. So 6/8 is
+  "compound duple" in the book and "usual triple" to you (Gordon 176).
+
+## 4.2 Note values: naming what you chant
+
+Here is one bar of usual duple in 2/4 and one of usual triple in 6/8, with your syllables under the notes.
+[Read 4.2](https://musictheory.pugetsound.edu/mt21c/DurationalSymbols.html)
+
+<div class="abc-ex" data-bpm="80" data-sing="off"><script type="text/plain">
+X:1
+T:Usual duple in 2/4
+M:2/4
+L:1/16
+K:C
+B4 B4 | B2B2 B2B2 | BBBB BBBB | B8 |]
+w:du du du de du de du ta de ta du ta de ta du
+</script></div>
+
+| In 2/4 you chant | The book's name | US / UK name |
+|---|---|---|
+| du (a macrobeat) | quarter note, the beat | quarter / crotchet |
+| du de (two microbeats) | two eighth notes | eighth / quaver |
+| du ta de ta | four sixteenth notes | sixteenth / semiquaver |
+| du held through two macrobeats | half note | half / minim |
+
+<div class="abc-ex" data-bpm="60" data-sing="off"><script type="text/plain">
+X:1
+T:Usual triple in 6/8
+M:6/8
+L:1/8
+K:C
+B3 B3 | BBB BBB | B2B B2B | B6 |]
+w:du du du da di du da di du di du di du
+</script></div>
+
+| In 6/8 you chant | The book's name |
+|---|---|
+| du (a macrobeat) | dotted quarter note, the beat |
+| du da di | three eighth notes |
+| du … di (long-short) | quarter then eighth |
+| du held through two macrobeats | dotted half note |
+
+**The thing to notice:** in 2/4 the macrobeat is a quarter note; in 6/8 it is a **dotted** quarter. That is why compound meters need
+dots: a plain note can't be split evenly into three.
+
+## 4.3 Dots and ties: names for elongations
+
+A note longer than a microbeat is an **elongation**. You already read them. The book has two ways to write them.
+[Read 4.3](https://musictheory.pugetsound.edu/mt21c/DotsAndTies.html)
+
+- A **dot** adds half the note's value. In 2/4, a dotted quarter + eighth is the pattern you chant **du — de**, held through the first
+  microbeat of the next beat.
+- A **tie** joins two notes into one sound. Use it when the sound crosses a barline, or a beat the reader needs to see.
+
+<div class="abc-ex" data-bpm="80" data-sing="off"><script type="text/plain">
+X:1
+T:Dotted quarter + eighth, then the same with a tie
+M:2/4
+L:1/8
+K:C
+B3 B | B2 B2 | B2- B B | B4 |]
+w:du de du du du _ de du
+</script></div>
+
+## 4.5 Tuplets: usual combined
+
+When a duple beat is split into three, you chant **du da di** inside usual duple: Gordon calls the mix **usual combined** (Gordon
+175–176). The book writes it as a **triplet**, with a 3 over the notes.
+[Read 4.5](https://musictheory.pugetsound.edu/mt21c/Tuplets.html)
+
+<div class="abc-ex" data-bpm="72" data-sing="off"><script type="text/plain">
+X:1
+T:Du de, then a triplet: du da di
+M:2/4
+L:1/8
+K:C
+B B (3BBB | B B (3BBB | B2 B2 |]
+w:du de du da di du de du da di du du
+</script></div>
+
+## 4.6 Writing rhythms the reader can audiate
+
+The book's list of common errors is mostly one rule: **show the beat**. Beam notes so each macrobeat's microbeats are grouped together,
+and tie across the middle of the bar rather than hiding it inside one long note. If you can see where each **du** falls, you can
+chant it at sight.
+[Read 4.6](https://musictheory.pugetsound.edu/mt21c/CommonRhythmicNotationErrors.html)
+
+## Bridging: from syllables to names
+
+1. **Chant first.** Chant the pattern on du de or du da di, moving to the macrobeats.
+2. **Find du.** Every du is a macrobeat. Say which note value it is: quarter in 2/4, 3/4 and 4/4; dotted quarter in 6/8.
+3. **Name the rest from du.** A de is half of it, a ta a quarter of it. A note held through a du is an elongation: name it as a longer
+   note, a dot or a tie.
+4. **Go the other way.** Given "write four eighths and a half note in 2/4", chant it first (du de du de | du), then write it.
+
+## Check yourself
+
+1. In 3/4, what note value is du?
+2. In 6/8, you chant du da di. What are the three notes called?
+3. In 2/4, you chant du ta de ta. Name the notes.
+4. What does the book call usual combined meter's triple division inside a duple beat?
+5. Why does 6/8 need a dotted quarter for its beat?
+
+::: {.callout-tip collapse="true"}
+## Answers
+1. A quarter note.
+2. Eighth notes.
+3. Four sixteenth notes.
+4. A triplet (a kind of tuplet).
+5. Its beat divides in three eighths; only a dotted quarter lasts three eighths.
+:::
+
+Practise reading and chanting with [Rhythm Patterns](../practice/rhythms.qmd). Related: [Major Scales and Key Signatures](major-scales.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "Basics of Rhythm." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/BasicsOfRhythm.html](https://musictheory.pugetsound.edu/mt21c/BasicsOfRhythm.html). Chapter 4: time signature, durational symbols, dots and ties, meter, tuplets, common notation errors.
+
+Hutchinson, Robert. "Meter." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/meter.html](https://musictheory.pugetsound.edu/mt21c/meter.html). Simple and compound, duple, triple and quadruple, with example signatures.
+:::
+<!-- /works-cited -->

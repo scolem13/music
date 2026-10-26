@@ -1,0 +1,180 @@
+---
+title: "Major Scales and Key Signatures: From Do to the Names"
+toc: true
+toc-depth: 2
+description: "Chapter 2 of Hutchinson's Music Theory for the 21st-Century Classroom for students who already read and write in major with movable do: half and whole steps, scale degrees, and key signatures as new names for what they already audiate."
+---
+
+```{=html}
+<link rel="stylesheet" href="/apps/shared/drills/drills.css?v=4">
+<script src="/apps/shared/soundfont.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=2"></script>
+<script src="/apps/shared/lessons/abc-ex.js?v=15"></script>
+<script src="/apps/shared/drills/drills.js?v=14"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+```
+
+This page goes with **Chapter 2, Major Scales and Key Signatures** of Robert Hutchinson's open textbook
+[*Music Theory for the 21st-Century Classroom*](https://musictheory.pugetsound.edu/mt21c/MajorScalesAndKeySignatures.html).
+
+**You already know this.** You can sing in major tonality on movable do, find do on the staff, and read and write tonal patterns.
+This chapter adds no new sounds. It gives **names** to things you already hear and write. Each section below starts from what you
+know, then gives the textbook's word for it.
+
+Press ▶ to hear an example, or **▶ Sing** to hear it sung on syllables. Click any heading to fold its section.
+
+## What you know → what the book calls it
+
+| You say (MLT) | The book says (Hutchinson ch. 2) |
+|---|---|
+| major tonality | major key, major scale |
+| do, the resting tone | tonic, scale degree 1 (written 1̂) |
+| do re mi fa so la ti | scale degrees 1̂ 2̂ 3̂ 4̂ 5̂ 6̂ 7̂ |
+| the close steps mi–fa and ti–do | half steps |
+| every other step (do–re, re–mi …) | whole steps |
+| keyality (where you sing do, e.g. G) | the key's name: "G major" |
+| the do signature | the key signature |
+
+## 2.1 Half steps and whole steps
+
+Sing the major scale up on syllables and listen to the size of each step. Two of them are smaller: **mi–fa** and **ti–do**. The book
+calls a small step a **half step** (on a keyboard, the very next key) and a big one a **whole step** (two half steps).
+[Read 2.1](https://musictheory.pugetsound.edu/mt21c/HalfStepsAndWholeSteps.html)
+
+<div class="abc-ex" data-bpm="90"><script type="text/plain">
+X:1
+T:Do to do: the half steps are mi–fa and ti–do
+M:4/4
+L:1/4
+K:C
+C D E F | G A B c |]
+w:do re mi fa so la ti do
+</script></div>
+
+So the pattern of steps in every major scale is **W W H W W W H**. That isn't a new rule to learn: it's the shape of the scale you
+already sing, written down.
+
+**On the staff.** In C, the half steps fall on E–F and B–C, where there is no black key between. That's why C major needs no sharps
+or flats. Start the same pattern on another note and some letters have to change to keep the half steps on mi–fa and ti–do. That
+is all a key signature is.
+
+## 2.2 Scale degrees and their names
+
+The book numbers the notes of the scale from do: **1̂** to **7̂**. Each also has a name.
+[Read 2.2](https://musictheory.pugetsound.edu/mt21c/TheMajorScale.html)
+
+| Syllable | Degree | Name |
+|---|---|---|
+| do | 1̂ | tonic |
+| re | 2̂ | supertonic |
+| mi | 3̂ | mediant |
+| fa | 4̂ | subdominant |
+| so | 5̂ | dominant |
+| la | 6̂ | submediant |
+| ti | 7̂ | leading tone |
+
+*(The degree names are standard; Hutchinson's own list is in [3.3 Scale Degree Names](https://musictheory.pugetsound.edu/mt21c/ScaleDegreeNames.html).)*
+
+You already sing **tonic** and **dominant** patterns: do–mi–so is a tonic pattern, so–ti–re a dominant pattern. Those words come
+from these degree names: the patterns are built on do (the tonic) and so (the dominant).
+
+**Do and the tonic.** Usually the same note in major, but not always the same idea. *Do* is a syllable and moves with the keyality.
+*Tonic* is the resting tone of whatever key you are in. In minor you rest on **la**, and the book will call la the tonic of the minor
+key (Chapter 3).
+
+## 2.3 Key signatures are do signatures
+
+You already find do from the key signature. Gordon calls a key signature a **do signature**: it shows where do is on the staff, and
+nothing more. The same signature can be major, minor, Dorian and so on, depending on which note the music rests on (Gordon 155–156).
+[Read 2.3](https://musictheory.pugetsound.edu/mt21c/MajorKeySignatures.html)
+
+The book reads a signature as the name of a **major key**, which is the same as asking "where is do?":
+
+- **Sharps:** the last sharp is **ti**. Do is the next note up. Last sharp F♯ → do is G → **G major**.
+- **Flats:** the last flat is **fa**. Do is four notes down (or five up). With two or more flats, the second-to-last flat is do:
+  B♭ E♭ → do is B♭ → **B♭ major**. One flat (B♭) → do is F.
+
+Here is the same tune with three different do signatures. Your syllables stay the same, only the letters change:
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Do on C: no sharps or flats
+M:4/4
+L:1/4
+K:C
+C E G E | F D B, C |]
+w:do mi so mi fa re ti do
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Do on G: one sharp, F♯ is ti
+M:4/4
+L:1/4
+K:G
+G B d B | c A F G |]
+w:do mi so mi fa re ti do
+</script></div>
+
+<div class="abc-ex" data-bpm="100"><script type="text/plain">
+X:1
+T:Do on E♭: three flats, A♭ is fa
+M:4/4
+L:1/4
+K:Eb
+E G B G | A F D E |]
+w:do mi so mi fa re ti do
+</script></div>
+
+**Where the book and MLT disagree.** Hutchinson reads three flats as "E♭ major or C minor". Gordon reads it as do on E♭, and the
+music decides the rest: E♭ major if it rests on do, C minor if it rests on la, F Dorian if on re (Gordon 155–156). Both are
+right; the book names the two keys you'll meet most often.
+
+### Practise: name the major key
+
+Name the major key from the signature (that is, find do). Start with up to three sharps and flats in treble clef, then open
+**Settings** and add more.
+
+<div class="drill" data-ex="keysig" data-settings="mode=major&kinds=both&most=3&clef=treble"></div>
+
+## Bridging: from syllables to letters
+
+The book expects you to **write** scales and key signatures from letter names. You can already write tonal patterns from a familiar
+do signature (Gordon 125). To get from there to the book's tasks:
+
+1. **Name do.** Look at the signature and say the letter of do aloud ("do is D").
+2. **Sing, then spell.** Sing do re mi fa so la ti do, and say each letter as you go: D E F♯ G A B C♯ D. If a letter sounds wrong for
+   the syllable, it needs an accidental.
+3. **Check the half steps.** mi–fa and ti–do should be the only neighbours with no key between them.
+4. **Go the other way.** Given "write A♭ major", put do on A♭, sing up, and write each letter. Then collect the accidentals: that's
+   the key signature.
+
+## Check yourself
+
+1. In D major, which letters are mi and fa?
+2. Name the major key with four sharps.
+3. Name the major key with four flats.
+4. Which scale degree is so? What is its name?
+5. Write the steps (W or H) between each note of A major.
+
+::: {.callout-tip collapse="true"}
+## Answers
+1. F♯ and G.
+2. E major (last sharp D♯ is ti).
+3. A♭ major (second-to-last flat).
+4. 5̂, the dominant.
+5. W W H W W W H, the same as every major scale: A B C♯ D E F♯ G♯ A.
+:::
+
+All the key-signature drills are on [Theory Drills](theory-drills.qmd?ex=keysig). Next: [Meter: Two Ways to Sort Time Signatures](meter-taxonomy.qmd)
+and [Rhythm Notation from Du De](rhythm-basics.qmd). Related: [Modes: Three Meanings of One Word](modes-three-ways.qmd).
+
+## Works Cited
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).
+
+Hutchinson, Robert. "Major Scales and Key Signatures." *Music Theory for the 21st-Century Classroom*, University of Puget Sound, [musictheory.pugetsound.edu/mt21c/MajorScalesAndKeySignatures.html](https://musictheory.pugetsound.edu/mt21c/MajorScalesAndKeySignatures.html). Chapter 2: half and whole steps, the major scale, major key signatures.
+:::
+<!-- /works-cited -->

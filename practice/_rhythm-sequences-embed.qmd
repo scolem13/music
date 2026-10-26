@@ -529,7 +529,8 @@
 		if (window.RhythmChant) {   // "Conversational": chant the pattern instead of the abcjs player (off by default on this bank)
 			RhythmChant.scope("rhythm-sequences", false);
 			const audioEl = document.getElementById("audio");
-			RhythmChant.mountBar(audioEl.parentNode, { getAbc: () => window.rcAbc, hide: [audioEl], btnClass: "sq-btn" });
+			RhythmChant.mountBar(audioEl.parentNode, { getAbc: () => window.rcAbc, hide: [audioEl], btnClass: "sq-btn",
+				syllables: true, onShowSyllables: () => { if (window.rcAbc) renderTune(window.rcAbc, false); } });   // Show / Hear syllables, Macrobeat emphasis
 		}
 
 		setTune(false);
@@ -558,12 +559,12 @@
 		window.rcAbc = abcString;   // the ABC now shown, for the Conversational chant (rhythm-chant.js)
 		document.getElementById("abc-editor").value = abcString;
 
-		const abcOptions = { add_classes: true, clickListener: clickListener };
+		const abcOptions = { add_classes: true, clickListener: function () {} };   // clicking a note makes no sound on the rhythm pages
 		const seekControls = document.querySelector("#rs-root .seek-controls");
 		seekControls.classList.add("disabled");
 		synthControl.disable(true);
 
-		const visualObj = ABCJS.renderAbc("paper", abcString, abcOptions)[0];
+		const visualObj = ABCJS.renderAbc("paper", (window.RhythmChant && RhythmChant.showSyllablesOn() ? RhythmChant.withSyllables(abcString) : abcString), abcOptions)[0];   // "Show syllables": Du De ... under the notes
 		document.querySelector("#rs-root .midi").innerHTML = ABCJS.synth.getMidiFile(abcString);
 
 		const synthOpts = { midiTranspose: -11 };
@@ -700,11 +701,11 @@
 </div>
 
 <script src="/apps/shared/soundfont.js"></script>
-<script src="/apps/shared/abcjs-basic.js"></script>
+<script src="/apps/shared/abcjs-basic.js?v=2"></script>
 <script src="/apps/rhythms/rhythm-pattern-object.js?v=2"></script>
 <script src="/apps/shared/abc-core.js?v=1"></script>
 <script src="/apps/shared/abc-events.js?v=1"></script>
-<script src="/apps/shared/rhythm-chant.js?v=2"></script>
+<script src="/apps/shared/rhythm-chant.js?v=18"></script>
 <script src="/apps/shared/cursor-synth.js"></script>
 <script>
 	const cursorControl = new CursorControl();

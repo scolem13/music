@@ -3,13 +3,13 @@
 AU = "practice/audiation.qmd"
 RP = ["practice/rhythms.qmd", "practice/rhythm-sequences.qmd", "practice/assessment-rhythm.qmd", "practice/lsa-practice.qmd", "practice/lsa-practice-notated.qmd", "practice/lsa-rhythm-assessment.qmd"]   # the Conversational chant (apps/shared/rhythm-chant.js)
 SOURCES = [
-    book('Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012.', [AU] + RP + ["theory/modes-three-ways.qmd", "theory/meter-taxonomy.qmd", "course/glossary.qmd", "course/enrichment.qmd"],
+    book('Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012.', [AU] + RP + ["theory/modes-three-ways.qmd", "theory/meter-taxonomy.qmd", "theory/major-scales.qmd", "theory/rhythm-basics.qmd", "course/glossary.qmd", "course/enrichment.qmd"],
          "Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); "
          "same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); "
          "rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190)." "; Theory Concepts pages: "
          "Keyality versus key signature (p. xiii); tonality \"best refers to what is usually called a mode,\" the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); "
          "usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as \"duple compound\" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); "
-         "unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180)." "; Course pages (glossary, enrichment): "
+         "unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125)." "; Course pages (glossary, enrichment): "
          "audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); "
          "the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); "
          "levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231)."),

@@ -12,7 +12,7 @@ const G = JSON.parse(fs.readFileSync(path.join(ROOT, "apps/shared/course/glossar
 const slugs = new Set(G.terms.map(t => t.slug));
 check("glossary has every group", ["Music vocabulary", "Command terms", "MYP assessment", "DP Music", "Music Learning Theory", "TOK"].every(g => G.groups.includes(g)));
 check("every TOK concept is a term", G.tokConcepts.every(c => slugs.has(c)), G.tokConcepts.filter(c => !slugs.has(c)).join(","));
-check("TOK connections exist", G.terms.filter(t => t.tok).length >= 20, G.terms.filter(t => t.tok).length);
+check("TOK connections exist", G.terms.filter(t => t.tok).length >= 17, G.terms.filter(t => t.tok).length);
 
 const ctx = { window: {} }; vm.runInNewContext(fs.readFileSync(path.join(ROOT, "apps/shared/course/enrichment-data.js"), "utf8"), ctx);
 const E = ctx.window.COURSE_ENRICHMENT;

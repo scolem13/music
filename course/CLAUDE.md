@@ -5,7 +5,7 @@ Scripts and data in `apps/shared/course/`; shared helpers `course-common.js` (lo
 links `?p=<packed>`), styles `course.css` (site tokens; light and dark come from `custom.css`).
 
 ## Glossary
-- Source: `course/glossary.org` (format in its header). Build: `node scripts/course-glossary.mjs` → `apps/shared/course/glossary.json`.
+- Source: `course/glossary.org` (format in its header; `:LEVELS:` lists only the years whose units teach the term, `none` for MYP concepts no unit uses). Build: `node scripts/course-glossary.mjs` → `apps/shared/course/glossary.json`.
   It stops on a broken `:SEE:`, an unknown source key, a TOK concept that is not one of the twelve, or a `:LINK:` with no page.
 - Imported once (Oct 2026) from `~/Projects/website/music-website/music-dictionary.org`, `myp-concepts-website` and
   `tok-website/glossary.yml`; those are not read again. Command terms, MYP assessment, DP Music, MLT and TOK connections were

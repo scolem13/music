@@ -113,6 +113,25 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       assert.strictEqual(await b.eval(`__plays.length`), 0, "nothing played before naming");
       assert.deepStrictEqual(await b.eval(`[].map.call(document.querySelectorAll("#au-gs .au-row")[0].querySelectorAll(".au-choice"),function(x){return x.textContent})`), ["Major", "Minor"]);
     });
+    await check(`[${w}] composite synthesis: needs the box; reading a series asks the name first; dictation writes by cards`, async () => {
+      await b.eval(`__plays=[];document.querySelector("#au-cs .au-go").click()`);
+      assert.ok(/single familiar patterns/.test(await b.eval(`document.querySelector("#au-cs .au-status").textContent`)));
+      await b.eval(`document.querySelector("#au-cs .au-ready").checked=true;__plays=[];document.querySelector("#au-cs .au-go").click()`);
+      await wait(400);
+      assert.strictEqual(await b.eval(`__plays.length`), 0, "nothing set up before naming");
+      assert.strictEqual(await b.eval(`document.querySelectorAll("#au-cs .au-series .au-mini").length`), 3);
+      assert.ok(await b.eval(`[].every.call(document.querySelectorAll("#au-cs .au-mini"),function(m){return m.querySelector(".abcjs-notehead")&&!m.querySelector(".abcjs-stem")})`));
+      await b.eval(`document.querySelector("#au-cs .au-content").value="major";document.querySelector("#au-cs .au-way").value="d";__plays=[];document.querySelector("#au-cs .au-go").click()`);
+      await until(b, `document.querySelectorAll("#au-cs .au-cards .au-card").length > 0`);
+      const p = JSON.parse(await b.eval(`JSON.stringify(__plays)`)); assert.strictEqual(p.length, 4, "tonal sequence + 3 patterns"); assert.strictEqual(p[0].n, 8);
+      assert.strictEqual(await b.eval(`document.querySelectorAll("#au-cs .au-cards .au-card").length`), 15);
+      assert.strictEqual(await b.eval(`document.querySelector("#au-cs .au-series").children.length`), 0, "series hidden while writing");
+      await b.eval(`var c=document.querySelector("#au-cs .au-cards .au-card");c.click();c.click();c.click();c.click()`);
+      assert.strictEqual(await b.eval(`document.querySelectorAll("#au-cs .au-slots .au-empty").length`), 0);
+      await b.eval(`[].find.call(document.querySelectorAll("#au-cs .au-row .au-choice"),function(x){return x.textContent==="Check"}).click()`);
+      assert.ok(/of 3 in the right place/.test(await b.eval(`document.querySelector("#au-cs .au-explain").textContent`)));
+      assert.strictEqual(await b.eval(`document.querySelectorAll("#au-cs .au-series .au-mini").length`), 3, "answer shown");
+    });
     await check(`[${w}] answer with your own: context then one pattern; examples fit the rule`, async () => {
       await b.eval(`document.querySelector("#au-ci .au-task").value="swap";__plays=[];document.querySelector("#au-ci .au-go").click()`);
       await until(b, `!document.querySelector("#au-ci .au-choice").disabled`);

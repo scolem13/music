@@ -22,7 +22,9 @@
 // BandCatalog style, default pop), and a "▶ Chords" button plays only the chords, held on the piano.
 // With window.AX_PARTS = true (the Backing Track's chart habits): clicking a note or rest plays from the start of its measure
 // (or jumps there while playing), and an example with more than one V: voice gets "Show" checkboxes, one per part: a hidden
-// part is still heard (the full tune plays, the shown parts light up). body.ax-hide-notes hides every staff (pages add the switch).
+// part is still heard (the full tune plays, the shown parts light up).
+// A single-voice exercise (no V:, no data-play / data-bend) also gets "▶ Sing": the melody sung on solfège (solfege-sing.js, movable do,
+// la-based minor), moved by Your voice and Step up. data-sing="off" on the exercise, or window.AX_NO_SING = true, leaves it out. body.ax-hide-notes hides every staff (pages add the switch).
 (function (global) {
   var VOICES = [["-12", "Bass (an octave lower)"], ["-7", "Baritone / low alto"], ["-3", "Alto / tenor"], ["0", "Middle voice, as written"], ["3", "Mezzo"], ["5", "Soprano"]];
   var KEY = "abc-ex-voice";
@@ -52,6 +54,28 @@
       var h = AP.play(ex.playTune || (hid ? ex.fullTune : ex.tune), { transpose: extra || 0, light: !ex.playTune, fromBar: fromBar || 0, lightTune: hid ? ex.tune : null, sound: ex.host.getAttribute("data-sound") || "piano",
         abc: ex.playTune ? ex.playAbc : ex.abc, style: ex.host.getAttribute("data-style") || "pop",
         qpm: +ex.host.getAttribute("data-bpm") || 0, onEnd: function () { if (playing === me) stop(); } });
+      me.synth.stop = function () { h.stop(); };
+    }).catch(function () { if (playing === me) stop(); });
+  }
+
+  // ▶ Sing: the melody on solfège syllables (apps/shared/solfege-sing.js, loaded on first use), at the pitch the staff shows
+  var singJs = null;
+  function singer() {
+    if (global.SolfegeSing && global.AbcEvents) return Promise.resolve(global.SolfegeSing);
+    return singJs || (singJs = new Promise(function (res, rej) {
+      var need = [global.AbcCore ? null : "/apps/shared/abc-core.js?v=3", global.AbcEvents ? null : "/apps/shared/abc-events.js?v=3", global.SolfegeSing ? null : "/apps/shared/solfege-sing.js?v=3"].filter(Boolean);
+      (function next() { if (!need.length) return res(global.SolfegeSing);
+        var sc = document.createElement("script"); sc.src = need.shift(); sc.onload = next; sc.onerror = function () { singJs = null; rej(); }; document.head.appendChild(sc); })();
+    }));
+  }
+  function sing(ex, extra, btn, label) {
+    var was = playing && playing.btn === btn; stop(); if (was) return;
+    var me = { btn: btn, label: label, synth: { stop: function () {} } }; playing = me;
+    btn.textContent = "■ Stop";
+    singer().then(function (S) {
+      if (playing !== me) return;
+      var bpm = +ex.host.getAttribute("data-bpm"), h = S.play(ex.abc, { transpose: shift + (extra || 0), voice: "auto", qpm: bpm || undefined,
+        onEnd: function () { if (playing === me) stop(); } });
       me.synth.stop = function () { h.stop(); };
     }).catch(function () { if (playing === me) stop(); });
   }
@@ -223,6 +247,12 @@
       cb.title = "Just the chords, held on the piano: no bass, drums or melody";
       cb.addEventListener("click", function () { playChords(ex, ex.step || 0, cb, "▶ Chords"); });
       bar.appendChild(cb);
+    }
+    if (!global.AX_NO_SING && host.getAttribute("data-sing") !== "off" && !bend && !pl && !/^V:/m.test(abc) && /\n\s*[^A-Za-z%\s]*[A-Ga-g]/.test(abc)) {
+      var sg = el("button", "btn btn-sm btn-outline-secondary ax-sing", "▶ Sing"); sg.type = "button";
+      sg.title = "Sung on solfège syllables (movable do) by a synthesized voice, in your voice's range";
+      sg.addEventListener("click", function () { sing(ex, ex.step || 0, sg, "▶ Sing"); });
+      bar.appendChild(sg);
     }
     if (host.getAttribute("data-loop") === "up") {
       var up = el("button", "btn btn-sm btn-outline-secondary", "Step up ▲"); up.type = "button"; ex.stepBtn = up;

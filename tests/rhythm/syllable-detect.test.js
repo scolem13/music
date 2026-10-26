@@ -27,7 +27,7 @@ function run(opts) {
   let n = 0, hit = 0;
   for (let k = 0; k < opts.reps; k++) {
     const abc = pats[Math.floor(R() * pats.length)], V = VOICES[opts.voice], macro = opts.macro;
-    const p = RC.plan(abc, { macroBpm: macro, syllables: "rhythm", seed: 100 + k, voice: V.s > 1 ? "high" : "low", f0: V.f0, formantScale: V.s, vowels: tab(V), jitterMs: 3 });
+    const p = RC.plan(abc, { macroBpm: macro, syllables: "rhythm", seed: 100 + k, voice: V.s > 1 ? "high" : "low", f0: V.f0, formantScale: V.s, vowels: tab(V), jitterMs: 3, consonant: 1, taLevel: 1, tLength: 0.045, question: 0 });   // a student chanting: plain consonants and Ta, not the teacher model's quieter ones
     if (!p.syllables) continue;
     let x = RC.render(p, sr);
     if (opts.room) x = room(x, opts.room === true ? 1 : opts.room);
