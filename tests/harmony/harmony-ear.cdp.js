@@ -20,7 +20,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     await b.goto(host + "/practice/harmony-ear.html"); await wait(1000);
     await b.eval(`localStorage.removeItem("harmonyEar.v1")`); await b.goto(host + "/practice/harmony-ear.html"); await wait(1000);
     // stub BandSounds: record notes, play instantly fast
-    await b.eval(`window.__notes=[];BandSounds.create=function(){return{load:function(){return Promise.resolve()},play:function(s,o){__notes.push([s,o.midi])},stopAll:function(){}}}`);
+    await b.eval(`window.__notes=[];BandSounds.create=function(){return{load:function(){return Promise.resolve()},play:function(s,o,w,d){__notes.push([s,o.midi,o.vel,w,d&&d.pan?d.pan.value:null])},stopAll:function(){}}}`);
     const setSel = (label, v) => b.eval(`(function(){var l=[].find.call(document.querySelectorAll("#harmony-ear label"),x=>x.firstChild.textContent==${JSON.stringify(label)});var s=l.querySelector("select");s.value=${JSON.stringify(String(v))};s.dispatchEvent(new Event("change"))})()`);
     const answerAll = right => b.eval(`(function(){var q=HarmonyEar._cur().q,n=document.querySelectorAll("#harmony-ear .he-slot").length;
        for(var i=0;i<n;i++){var c=HarmonyEar._cur(); if(c.checked)break; if(c.filled[i])continue; var want=q.answer[i];
@@ -28,7 +28,7 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
          bs[ch.indexOf(pick)].click();}
        var c=HarmonyEar._cur(); if(!c.checked) document.querySelector("#harmony-ear .he-bar button:nth-child(4)").click(); return document.querySelector("#harmony-ear .he-result").textContent})()`);
     await setSel("Tempo", 132); await setSel("Beats per chord", 1);
-    const cases = [["mlt", "A1", "rn"], ["mlt", "B2", "func"], ["mlt", "C5", "mode"], ["rock", "R5", "bass"], ["jazz", "J1", "next"], ["jazz", "J6", "same"], ["classical", "K6", "change"], ["mlt", "E2", "rn"], ["classical", "K2", "inv"], ["jazz", "J4", "bass"]];
+    const cases = [["mlt", "A1", "rn"], ["mlt", "B2", "func"], ["mlt", "C5", "mode"], ["rock", "R5", "bass"], ["jazz", "J1", "next"], ["jazz", "J6", "same"], ["classical", "K6", "change"], ["mlt", "E2", "rn"], ["classical", "K2", "inv"], ["jazz", "J4", "bass"], ["mlt", "B2", "voice"]];
     for (const [p, lv, k] of cases) {
       await check(`[${w}] ${p}/${lv}/${k}: right then wrong`, async () => {
         await setSel("Path", p); await setSel("Level", lv); await setSel("Question", k);
@@ -43,12 +43,12 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
     await check(`[${w}] ▶ per chord plays one chord; bass alone plays one note`, async () => {
       await setSel("Path", "mlt"); await setSel("Level", "B2"); await setSel("Question", "rn");
       await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(150);
-      const n = await b.eval(`document.querySelectorAll("#harmony-ear .he-one").length`);
+      const n = await b.eval(`document.querySelectorAll("#harmony-ear .he-one:not(.he-spacing)").length`);
       assert.strictEqual(n, await b.eval(`HarmonyEar._cur().q.progs[0].length`));
-      await b.eval(`__notes=[];document.querySelectorAll("#harmony-ear .he-one")[1].click()`); await wait(100);
+      await b.eval(`__notes=[];document.querySelectorAll("#harmony-ear .he-one:not(.he-spacing)")[1].click()`); await wait(100);
       assert.strictEqual(await b.eval(`__notes.length`), 4, "bass + 3 upper");
       await b.eval(`document.querySelector("#harmony-ear .he-bassonly").click()`);
-      await b.eval(`__notes=[];document.querySelectorAll("#harmony-ear .he-one")[1].click()`); await wait(100);
+      await b.eval(`__notes=[];document.querySelectorAll("#harmony-ear .he-one:not(.he-spacing)")[1].click()`); await wait(100);
       assert.strictEqual(await b.eval(`JSON.stringify(__notes.map(x=>x[0]))`), JSON.stringify(["bass"]));
       await b.eval(`document.querySelector("#harmony-ear .he-bassonly").click()`);
     });
@@ -60,6 +60,71 @@ const wait = ms => new Promise(r => setTimeout(r, ms));
       await b.eval(`document.querySelectorAll("#harmony-ear .he-choice")[0].click()`);
       assert.strictEqual(await b.eval(`[].map.call(document.querySelectorAll("#harmony-ear .he-choice"),b=>b.textContent).join()`), "Root,Not the root");
       await setSel("First chord", "first");
+    });
+    await check(`[${w}] silence between chords, bring out, arpeggio, pan, spacing buttons`, async () => {
+      await setSel("Path", "mlt"); await setSel("Level", "B2"); await setSel("Question", "rn"); await setSel("Voices", 4); await setSel("Establish the key", "none");
+      await setSel("Beats per chord", 1); await setSel("Tempo", 60);
+      await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(150); await b.eval(`document.querySelector("#harmony-ear .he-bar button:nth-child(5)").click()`);
+      const times = async () => { await b.eval(`__notes=[];document.querySelector("#harmony-ear .he-bar button:nth-child(2)").click()`); await wait(200);
+        return b.eval(`JSON.stringify(__notes)`).then(JSON.parse); };
+      let n = await times(); const starts = [...new Set(n.map(x => x[3].toFixed(2)))];
+      await setSel("Silence between chords", "2"); n = await times(); const s2 = [...new Set(n.map(x => x[3].toFixed(2)))];
+      assert(Math.abs((s2[1] - s2[0]) - (starts[1] - starts[0]) - 2) < 0.02, "2 s more between chords: " + starts + " / " + s2);
+      await setSel("Silence between chords", "0");
+      await setSel("Bring out", "s"); n = await times(); const ch = n.slice(0, 4).sort((a, b) => a[1] - b[1]);
+      assert(ch[3][2] > ch[2][2] && ch[3][2] > 0.8, "soprano loudest: " + JSON.stringify(ch));
+      await setSel("Bring out", "3rd"); n = await times(); assert(n.some(x => x[2] > 0.85), "3rd brought out");
+      await setSel("Bring out", "");
+      await setSel("Arpeggiate", "up"); n = await times(); const a4 = n.slice(0, 4); assert(a4[0][3] < a4[3][3] && a4[0][0] === "bass", "bass first, notes apart");
+      await setSel("Arpeggiate", "off");
+      await setSel("Pan the voices", 1); n = await times();
+      if (n[0][4] != null) assert.deepStrictEqual(n.slice(0, 4).sort((a, b) => a[1] - b[1]).map(x => x[4]).map(x => Math.round(x * 10) / 10), [-0.5, -0.2, 0.2, 0.5]);
+      await setSel("Pan the voices", 0);
+      await b.eval(`__notes=[];document.querySelectorAll("#harmony-ear .he-spacing")[1].click()`); await wait(200);
+      const op = await b.eval(`JSON.stringify(__notes)`).then(JSON.parse), up = op.slice(1, 4).map(x => x[1]);
+      assert(Math.max(...up) - Math.min(...up) > 12, "Open button plays open voicing: " + up);
+      await setSel("Establish the key", "cadence"); await setSel("Tempo", 132);
+    });
+    await check(`[${w}] typing fills boxes; Backspace undoes; no text field on the page panel`, async () => {
+      await setSel("Path", "mlt"); await setSel("Level", "B2"); await setSel("Question", "rn"); await setSel("First chord", "none");
+      await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(150);
+      assert.strictEqual(await b.eval(`document.querySelectorAll("#harmony-ear input, #harmony-ear textarea").length`), 0);
+      const key = k => b.eval(`document.dispatchEvent(new KeyboardEvent("keydown",{key:${JSON.stringify(k)},bubbles:true}))`);
+      const ans = await b.eval(`JSON.stringify(HarmonyEar._cur().q.answer)`).then(JSON.parse);
+      for (const ch of ans[0]) await key(ch);
+      if (await b.eval(`!HarmonyEar._cur().filled[0]`)) await key("Enter");
+      assert.strictEqual(await b.eval(`HarmonyEar._cur().filled[0]`), ans[0], "first box typed");
+      await key("Backspace"); assert.strictEqual(await b.eval(`HarmonyEar._cur().filled[0] || null`), null, "undone");
+      await key("x"); assert.strictEqual(await b.eval(`document.querySelector("#harmony-ear .he-next").textContent`), "?", "a key no answer starts with is refused");
+      await setSel("First chord", "first");
+    });
+    await check(`[${w}] ▶ My answer plays the entered chords; drone, half speed, new key on repeat`, async () => {
+      await setSel("Question", "rn"); await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(150);
+      await b.eval(`document.querySelector("#harmony-ear .he-bar button:nth-child(5)").click()`);
+      await b.eval(`__notes=[];document.querySelector("#harmony-ear .he-mine").click()`); await wait(200);
+      assert.strictEqual(await b.eval(`__notes.length`), 4, "only the given first chord sounds (4 voices)");
+      await setSel("Drone", "fifth"); await setSel("First hearing", 1); await setSel("Play each", 2); await setSel("Repeats", "new");
+      await b.eval(`window.__osc=0;var _o=AudioContext.prototype.createOscillator;AudioContext.prototype.createOscillator=function(){__osc++;return _o.call(this)}`);
+      await b.eval(`__notes=[];document.querySelector("#harmony-ear .he-go").click()`); await wait(5000);
+      assert(await b.eval(`__osc>=2`), "drone oscillators started");
+      for (const [k, v] of [["Drone", "off"], ["First hearing", 0], ["Play each", 1], ["Repeats", "same"]]) await setSel(k, v);
+      await b.eval(`document.querySelector("#harmony-ear .he-bar button:nth-child(5)").click()`);
+    });
+    await check(`[${w}] notation: toggle shows the grand staff, numerals after answering, notes lit`, async () => {
+      await setSel("Path", "mlt"); await setSel("Level", "B2"); await setSel("Question", "rn");
+      await b.eval(`document.querySelector("#harmony-ear .he-go").click()`); await wait(150);
+      assert.strictEqual(await b.eval(`document.querySelector("#harmony-ear .he-nota").style.display`), "none");
+      await b.eval(`document.querySelector("#harmony-ear .he-notabtn").click()`); await wait(200);
+      assert(await b.eval(`document.querySelectorAll("#harmony-ear .he-nota .abcjs-staff").length >= 2`), "two staves drawn");
+      assert(!(await b.eval(`/"_/.test(document.querySelector("#harmony-ear .he-nota").dataset.abc)`)), "no numerals before answering");
+      const n = await b.eval(`HarmonyEar._cur().q.progs[0].length`);
+      assert.strictEqual(await b.eval(`document.querySelectorAll("#harmony-ear .he-nota .abcjs-v1.abcjs-note").length`), n, "one bass-staff chord per chord");
+      await b.eval(`document.querySelectorAll("#harmony-ear .he-one:not(.he-spacing)")[1].click()`); await wait(120);
+      assert(await b.eval(`document.querySelectorAll("#harmony-ear .he-nota .he-lit").length >= 1`), "the sounding chord is lit");
+      await answerAll(true);
+      assert(await b.eval(`/"_/.test(document.querySelector("#harmony-ear .he-nota").dataset.abc)`), "numerals after answering");
+      await b.eval(`document.querySelector("#harmony-ear .he-notabtn").click()`);
+      assert.strictEqual(await b.eval(`document.querySelector("#harmony-ear .he-nota").style.display`), "none");
     });
     await check(`[${w}] custom path with ticked chords, three voices`, async () => {
       await setSel("Path", "custom"); await setSel("Voices", 3); await setSel("Question", "rn");

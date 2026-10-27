@@ -353,6 +353,9 @@ website:
           contents:
             - practice/audiation.qmd
             - practice/harmony-ear.qmd
+            - practice/bass-ear.qmd
+            - practice/prog-ear.qmd
+            - practice/blues-ear.qmd
             - practice/lsa-practice.qmd
             - practice/lsa-practice-notated.qmd
             - practice/lsa-rhythm-assessment.qmd
@@ -494,6 +497,9 @@ website:
           - text: "---"
           - practice/audiation.qmd
           - practice/harmony-ear.qmd
+          - practice/bass-ear.qmd
+          - practice/prog-ear.qmd
+          - practice/blues-ear.qmd
           - practice/lsa-practice.qmd
           - practice/lsa-practice-notated.qmd
           - practice/lsa-rhythm-assessment.qmd

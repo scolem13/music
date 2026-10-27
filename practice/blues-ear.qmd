@@ -1,0 +1,117 @@
+---
+title: "Blues Changes by Ear"
+description: "Three choruses of the 12-bar blues in three band styles: two use the same changes, one makes a different choice. The quick change, bar 10, jazz ii–V's, passing chords, turnarounds, tritone substitutes, the backdoor, Bird blues and minor blues."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-play.js?v=6"></script>
+<script src="/apps/patterns/prog-ear.js?v=6"></script>
+<script src="/apps/patterns/blues-ear.js?v=3"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.pe-panel { --pe-line: var(--site-line, #ced4da); --pe-mute: var(--site-ink-2, #6c757d); --pe-acc: var(--site-accent, #2780e3);
+  --pe-good: #2f9e44; --pe-bad: #e03131;
+  border: 1px solid var(--pe-line); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1.2rem; background: var(--site-surface-2, #f8f9fa); }
+.pe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .5rem 1rem; margin-bottom: .6rem; }
+.pe-grid label { display: flex; flex-direction: column; gap: .2rem; margin: 0; min-width: 0; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; color: var(--pe-mute); }
+.pe-grid select { font-size: 1rem; text-transform: none; letter-spacing: 0; width: 100%; min-width: 0; padding: .25rem; }
+.pe-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .6rem; margin-bottom: .4rem; }
+.pe-group { border: 1px solid var(--pe-line); border-radius: .45rem; padding: .3rem .7rem .5rem; margin: 0; min-width: 0; }
+.pe-group legend { float: none; width: auto; font-size: .8rem; font-weight: 700; padding: 0 .3rem; margin: 0; color: var(--pe-acc); }
+.pe-group .pe-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); margin-bottom: 0; }
+.pe-bar, .pe-choices { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.pe-panel button { padding: .55rem 1rem; border-radius: .45rem; border: 1px solid var(--pe-line); background: var(--site-surface, #fff); color: inherit; cursor: pointer; font-size: 1rem; touch-action: manipulation; }
+.pe-panel button:disabled { opacity: .45; cursor: default; }
+.pe-panel button.pe-go { background: var(--pe-acc); border-color: var(--pe-acc); color: #fff; font-weight: 600; }
+.pe-panel button.pe-now { outline: 3px solid var(--pe-acc); }
+.pe-panel button.pe-choice { min-width: 8rem; min-height: 3rem; font-weight: 700; font-size: 1.05rem; }
+.pe-panel button.pe-right { border-color: var(--pe-good); color: var(--pe-good); opacity: 1; }
+.pe-panel button.pe-wrong { border-color: var(--pe-bad); color: var(--pe-bad); opacity: 1; }
+.pe-panel button.pe-mini { padding: .1rem .5rem; margin-left: .5rem; font-size: .85rem; }
+.pe-prompt { font-weight: 700; font-size: 1.05rem; margin-top: .4rem; }
+.pe-status { min-height: 1.4em; color: var(--pe-acc); font-weight: 600; }
+.pe-result { margin: .5rem 0; } .pe-ok { color: var(--pe-good); font-weight: 700; } .pe-no { color: var(--pe-bad); font-weight: 700; }
+.pe-prog { margin: .4rem 0; font-family: var(--bs-font-monospace, monospace); font-size: .9rem; overflow-wrap: anywhere; }
+.pe-prog .pe-oddrow { color: var(--pe-bad); }
+.pe-hint { color: var(--pe-mute); font-size: .92rem; } .pe-note { margin: .2rem 0 .4rem; }
+.pe-clip { background: #fff; color: #222; border: 1px solid var(--pe-line); border-radius: .4rem; padding: .3rem .5rem; margin: .4rem 0; }
+.pe-clip.pe-oddclip { border-color: var(--pe-bad); }
+.pe-range { display: flex; align-items: center; gap: .3rem; } .pe-range input { width: 4.2rem; font-size: 1rem; padding: .2rem; }
+.pe-scratch { position: absolute; left: -9999px; width: 600px; height: 1px; overflow: hidden; }
+@media (max-width: 560px) { .pe-panel { padding: .6rem; } .pe-grid, .pe-group .pe-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+```
+
+## Trainer
+
+Choose **major** or **minor blues**, a **level**, and press **Start**. You hear three choruses of the blues, A, B and C, each in its own
+band style. Two use the same changes; the third makes one different choice somewhere in the twelve bars. Which is different?
+**Space** plays all three again, **A** / **B** / **C** answer, **N** shows or hides notation, **Enter** goes on.
+
+<div id="blues-ear"></div>
+
+**Bars** sets how much of the chorus you hear:
+
+- **Four: the phrase with the change** (the default): bars 1–4, 5–8 or 9–12, whichever holds the difference. At levels 1–2 that is
+  usually bars 1–4 (the quick change) or 9–12 (bar 10, the turnaround); at level 4 it is bars 1–4 or 5–8 (the passing chords); at
+  levels 5–7 it is nearly always bars 9–12 (the turnaround). When a change runs across phrases (Bird changes at level 8), you hear
+  the phrase where it starts.
+- **Any four bars**: four bars in a row starting anywhere (bars 3–6, 8–11...), always including a bar that changes. The start is not a
+  phrase start, so finding your place is part of the task.
+- **All 12**: the whole chorus.
+- **Bars I choose**: type the first and last bar (1–12). Questions are then made only from changes inside those bars; if no change at
+  the level falls inside them (bars 1–4 at level 5, say), you are told so.
+
+**Busyness** (under **The band**) calms the band down when a style gets too busy to hear the chords through: **Less busy** drops the
+drum fills, has the bass play a two-feel (swing styles) or roots on beats 1 and 3, and the chords played steadily on the beat;
+**Calm** holds each bass note and chord for its whole length over light brushes.
+
+## What can change
+
+A version of the blues is a set of choices on top of the basic twelve bars (in F: F7 for I7, Bb7 for IV7, C7 for V7):
+
+| Where | The choices |
+|---|---|
+| Bar 2 | stay on I7, or the **quick change** to IV7 |
+| Bar 4 | I7, or **v7 I7**, a ii–V into IV |
+| Bar 6 | IV7, or **#iv°7**, a passing diminished chord leading back to I |
+| Bar 8 | I7, or **VI7**, the V of ii |
+| Bars 9–10 | **V7 IV7** (the blues way down), **V7 V7**, the jazz **ii7 V7**, or the **backdoor**: ii7, then iv7 bVII7 |
+| Bars 11–12 | no turnaround, **V7** in bar 12, **I VI7 \| ii V**, or **I bIII7 \| bVI7 bII7** (the Tadd Dameron turnaround) |
+| Tritone substitutes | **bII7** for the last V7, **bVI7** for the turnaround's VI7: the bass moves by semitone instead of by fifth |
+| Bird blues | bars 1–10 as in Charlie Parker's "Blues for Alice": Imaj7, then ii–V's stepping down to IV, then down again to ii |
+| Minor blues | i7 and iv7; bars 9–10 **bVI7 V7** or **iiø7 V7**; turnaround **V7** or **i bVI7 \| iiø7 V7**; **bII7** for the last V7 |
+
+*Unverified:* these are the common jazz-blues reharmonisations as they are usually taught, written here from memory, and the Bird
+changes are from memory of "Blues for Alice" (Parker, 1951). Neither is yet checked against a source.
+
+## The levels
+
+| Level | Counts as the same | What the different one changes |
+|---|---|---|
+| 1 · The basic blues | style | the quick change in bar 2, or IV / V in bar 10 |
+| 2 · Turnarounds | style | bars 11–12, or bar 10 |
+| 3 · The jazz ii–V | 9ths and 13ths | V7 IV7 or ii7 V7 in bars 9–10; the turnaround |
+| 4 · Passing chords | 9ths and 13ths | a ii–V into IV, #iv°7, or VI7 added or left out |
+| 5 · Tritone substitutes | also 7b9, 7#9 on dominants | bII7 for V7, bVI7 for VI7 |
+| 6 · Turnaround and backdoor | all the colours | backdoor, Tadd Dameron turnaround, tritone sub |
+| 7 · Bird blues | all the colours | the turnaround after Bird changes |
+| 8 · Anything | all the colours | any choice in any bar |
+
+Minor blues has three levels: bar 2 and the turnaround; bars 9–10; substitutes.
+
+Levels 1–2 use blues and rock styles (jump blues, boogie-woogie, rock, swing, doo-wop, Motown), with plain 7th chords. From level 4
+the styles are jazz: swing, jazz ballad, bossa nova, boogaloo, stride. **The band → Styles** overrides this.
+
+## Listening tips
+
+- Count the bars. Most changes are in bars 2, 4–6, 8, or 9–12; mark where the chorus turns around.
+- A tritone substitute keeps the same sound but slides: the bass goes down by semitone into I instead of by a fifth.
+- **A tune on top** plays the same melody over all three choruses, so only the chords underneath change.
+- **Notation** (block voicings with a bass line, and the tune when it is on) can be shown at any time; chord symbols appear after you
+  answer, or always if you set **Notation → Chord symbols** to Always.
+
+Related: [Odd Progression Out](prog-ear.qmd), [Hearing Harmony](harmony-ear.qmd), [Bass Lines by Ear](bass-ear.qmd).

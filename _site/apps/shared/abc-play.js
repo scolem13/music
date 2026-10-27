@@ -25,6 +25,8 @@
 // as the Notation page does), one clock, the cursor from its onBar / onBeat. A pickup is sounded in one bar of count-in.
 //   AbcPlay.chords(visualObj, { abc, qpm, transpose, onEnd }) -> handle: only the chords, held on the piano (rhythm "pad"),
 //       no bass, no drums, no melody.   AbcPlay.hasChords(abc) -> true when the text has chord symbols.
+//   opts.drums = false   the band without drums;  opts.bandOpts  extra BandPlayer options merged over the style's (e.g. { voicing });
+//   opts.melody = false  the chords alone (the tune's notes are drawn but not played).
 // If the samples can't load within 12 s, abcjs's own synth plays instead (same tune, same cursor).
 (function (global) {
   var SOUNDS = "/apps/shared/band/sounds.js?v=17", shared = null, cur = null, styled = false;
@@ -145,6 +147,9 @@
         lists[fi + 1].forEach(function (n, i, a) { n.end = i + 1 < a.length ? a[i + 1].pos : beats; });
       });
       var so = BandCatalog.styleOpts(opts.style || "pop", "piano"), o = Object.assign({}, so.opts, { melodyLevel: 0.85 }), vol = { bass: 0.8, comp: 0.85, drums: 0.6 };
+      if (opts.bandOpts) o = Object.assign(o, opts.bandOpts);
+      if (opts.drums === false) { o = Object.assign(o, { groove: "none", fills: "none" }); vol.drums = 0; }
+      if (opts.melody === false) o.melody = false;
       if (chordsOnly) { o = Object.assign(o, { compRhythm: "pad", groove: "none", melody: false, fills: "none" }); vol = { bass: 0, comp: 1, drums: 0 }; }
       var at = null, done = false;
       var fb = Math.max(0, (opts.fromBar | 0) - k0);
@@ -192,7 +197,7 @@
       .catch(function (err) {
         if (global.console) console.warn("AbcPlay: the band could not play this tune:", err && err.message || err);
         if (me._ended) return;
-        if (chordsOnly) { end(); return; }
+        if (chordsOnly || opts.melody === false) { end(); return; }   // nothing of the tune itself to fall back on
         cur = null; var h = play(v, Object.assign({}, opts, { abc: null })); me.stop = function () { h.stop(); end(); };   // no band: the melody alone
       });
     return me;

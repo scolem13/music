@@ -37,7 +37,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../practice/lsa-practice.html" rel="next">
+<link href="../practice/bass-ear.html" rel="next">
 <link href="../practice/audiation.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -238,6 +238,18 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
         <li>
     <a class="dropdown-item" href="../practice/harmony-ear.html">
  <span class="dropdown-text">Hearing Harmony</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/bass-ear.html">
+ <span class="dropdown-text">Bass Lines by Ear</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/prog-ear.html">
+ <span class="dropdown-text">Odd Progression Out</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../practice/blues-ear.html">
+ <span class="dropdown-text">Blues Changes by Ear</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="../practice/lsa-practice.html">
@@ -588,6 +600,24 @@ html.abc-crisp svg[aria-label^="Sheet Music"] .abcjs-staff,html.abc-crisp svg[ar
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="../practice/bass-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bass Lines by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/prog-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Odd Progression Out</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../practice/blues-ear.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Blues Changes by Ear</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="../practice/lsa-practice.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">LSA Practice</span></a>
   </div>
@@ -772,10 +802,11 @@ document.addEventListener('DOMContentLoaded', async function () {
 </header>
 
 
+<script src="../apps/shared/abcjs-basic.js?v=3"></script>
 <script src="../apps/shared/band/sounds.js?v=17"></script>
 <script src="../apps/shared/satb.js?v=2"></script>
 <script src="../apps/shared/degree-names.js?v=1"></script>
-<script src="../apps/patterns/harmony-ear.js?v=3"></script>
+<script src="../apps/patterns/harmony-ear.js?v=8"></script>
 <script src="../apps/shared/section-fold.js?v=1"></script>
 <style>
 .he-panel { --he-line: var(--site-line, #ced4da); --he-mute: var(--site-ink-2, #6c757d); --he-acc: var(--site-accent, #2780e3);
@@ -807,6 +838,13 @@ document.addEventListener('DOMContentLoaded', async function () {
 .he-pair { display: flex; gap: .3rem; align-items: center; border: 1px solid var(--he-line); border-radius: .5rem; padding: .25rem .35rem; }
 .he-pairn { font-size: .8rem; color: var(--he-mute); min-width: .9rem; text-align: center; }
 .he-panel .he-pair button.he-slot { min-width: 3.2rem; }
+.he-keys { margin: .2rem 0 .4rem; font-size: .85rem; }
+@media (hover: none), (pointer: coarse) { .he-keys { display: none; } }
+.he-panel button.he-nope { animation: he-shake .25s; border-color: var(--he-bad); }
+@keyframes he-shake { 25% { transform: translateX(-3px); } 75% { transform: translateX(3px); } }
+.he-nota { background: var(--site-surface, #fff); border: 1px solid var(--he-line); border-radius: .4rem; margin: .5rem 0; padding: .2rem .3rem; max-width: 800px; overflow: hidden; box-sizing: border-box; }
+.he-nota svg { max-width: 100%; height: auto; }
+.he-nota .he-lit { fill: var(--he-acc); }
 .he-prompt { font-weight: 700; font-size: 1.1rem; margin-top: .4rem; }
 .he-status { min-height: 1.4em; color: var(--he-acc); font-weight: 600; }
 .he-result { margin: .5rem 0; } .he-ok { color: var(--he-good); font-weight: 700; } .he-no { color: var(--he-bad); font-weight: 700; }
@@ -871,13 +909,17 @@ document.addEventListener('DOMContentLoaded', async function () {
 <h2 class="anchored" data-anchor-id="the-questions">The questions</h2>
 <p>They follow Gordon’s four stages of readiness for hearing harmony. At stage 1 you don’t notice that a chord changed. At stage 2 you notice the change but not what kind it is. At stage 3 you know what kind it is. At stage 4 you can also guess what comes next (<em>Learning Sequences in Music</em>, p.&nbsp;305).</p>
 <ul>
-<li><strong>Did the chord change?</strong> Two chords. Stage 2.</li>
-<li><strong>Name each function</strong> (tonic, dominant, subdominant, subtonic…), <strong>each bass note</strong> in solfège (or the scale degrees or sargam chosen site-wide), or <strong>each chord</strong> as a Roman numeral. Stage 3. By default the first chord is given, as a starting point.</li>
-<li><strong>Same or different?</strong> Two progressions, at most one chord apart.</li>
-<li><strong>What comes next?</strong> You hear all but the last chord. Stage 4.</li>
-<li><strong>Which tonality?</strong> On levels that mix major, minor or modes.</li>
-<li><strong>Inversions: the bass, then root or not.</strong> Two steps a chord. First name the lowest note in solfège, then say whether it is the chord’s root. With <strong>Inversion step 2</strong> set to <em>Root, 3rd, 5th or 7th</em>, say which chord member it is instead. The answer shows the book’s figures (I6, I64, V65, V43, V42).</li>
+<li><p><strong>Did the chord change?</strong> Two chords. Stage 2.</p></li>
+<li><p><strong>Name each function</strong> (tonic, dominant, subdominant, subtonic…), <strong>each bass note</strong> in solfège (or the scale degrees or sargam chosen site-wide), or <strong>each chord</strong> as a Roman numeral. Stage 3. By default the first chord is given, as a starting point.</p></li>
+<li><p><strong>Same or different?</strong> Two progressions, at most one chord apart.</p></li>
+<li><p><strong>What comes next?</strong> You hear all but the last chord. Stage 4.</p></li>
+<li><p><strong>Which tonality?</strong> On levels that mix major, minor or modes.</p></li>
+<li><p><strong>Inversions: the bass, then root or not.</strong> Two steps a chord. First name the lowest note in solfège, then say whether it is the chord’s root. With <strong>Inversion step 2</strong> set to <em>Root, 3rd, 5th or 7th</em>, say which chord member it is instead. The answer shows the book’s figures (I6, I64, V65, V43, V42).</p></li>
+<li><p><strong>Follow a voice.</strong> Name the note the soprano (or alto, tenor, bass: <strong>Voice to follow</strong> under <em>Sound and options</em>) sings in each chord, in solfège. Turn on <strong>Bring out</strong> for the same voice at first.</p></li>
 </ul>
+<p><strong>▶ My answer</strong> plays what you have entered so far, at any time, before or after checking. Empty boxes stay silent. Named functions play the level’s chord with that function. In <em>Inversions</em>, “Root” plays the chord with that root and “Not the root” puts your bass under the real chord.</p>
+<p><strong>Notation.</strong> <strong>♫ Show notation</strong> (in the button bar, or <em>Notation</em> under <em>Sound and options</em>: hidden, after answering, always) draws the exercise on a grand staff, exactly as voiced, with the notes lit as they sound. The Roman numerals, with inversion figures, appear under it once you have answered. Each chord is spelled from its numeral (V7 in A minor has G♯), and the key signature is that of DO.</p>
+<p><strong>Entering answers.</strong> Tap the buttons: each fills the outlined box and moves to the next. Tap a filled box to empty it. On a computer you can also type into the outlined box: numerals as written (<code>V7</code>, <code>ii</code>, <code>bVII</code>, <code>viio</code> for vii°, <code>viih7</code> for viiø7; capitals matter), syllables (<code>do</code>, <code>so</code>), functions (<code>tonic</code>, <code>dom</code>…), <code>r</code> or <code>n</code> for root or not. An answer fills in as soon as only one button fits. Otherwise press <strong>Enter</strong> (<code>V</code> waits, because <code>V7</code> also starts with V). <strong>Backspace</strong> undoes and <strong>Space</strong> plays it again. There is no text box, so a phone never opens its keyboard.</p>
 <p>Under the answer boxes, <strong>▶ 1, ▶ 2…</strong> play one chord at a time. Turn on <strong>Bass alone</strong> and they play only its bass note, which helps with inversions. Before you answer <em>What comes next?</em>, the last chord has no button.</p>
 <p>After each answer you see the progression, its key, its bass line in solfège and each chord’s function. <strong>↻ Again</strong> plays it once more. Ten answers with eight right marks a level as done; nothing is locked.</p>
 </section>
@@ -888,6 +930,19 @@ document.addEventListener('DOMContentLoaded', async function () {
 <li><strong>Voices.</strong> <em>Three</em>: the bass and two notes above it (3rd and 7th of a seventh chord). <em>Four</em>: the bass and three above, voice-led like a chorale (the site’s <code>satb.js</code>).</li>
 <li><strong>Key.</strong> A random key each time, or one key.</li>
 <li><strong>Tempo</strong> and <strong>beats per chord</strong>.</li>
+<li><strong>Silence between chords</strong>: from none to 5 seconds after each chord, time to think or sing the bass. The chord’s own length is still <em>beats per chord</em>.</li>
+<li><strong>Bring out</strong>: one voice louder and the rest softer (soprano, alto, tenor or bass; with three voices: top, middle or bass), or a chord member wherever it lies (the root, 3rd, 5th or 7th). <em>The 3rd</em> is good for hearing major against minor.</li>
+<li><strong>Leave out</strong>: drop one voice, to hear what the others do without it.</li>
+<li><strong>Arpeggiate</strong>: play the notes of each chord together, rolled, up from the bass, or down from the top.</li>
+<li><strong>Pan the voices</strong>: four voices S +50, A +20, T −20, B −50 (right is +); three voices top +50, middle 0, bass −50. With headphones, each voice has its own place.</li>
+<li><strong>Spacing</strong>: voice-led (the smoothest motion, the default), close (upper voices within an octave) or open (wider than an octave). The <strong>Close</strong>, <strong>Open</strong> and <strong>Voice-led</strong> buttons under the answer replay the current exercise in that spacing without changing the setting.</li>
+<li><strong>Drone</strong>: the resting tone (or the resting tone and its 5th) held low under the progression, to hear each chord against home.</li>
+<li><strong>Repeats</strong>: with <em>Play each: twice</em>, the second time can be in a new key (with its own cadence first). You track the function, not the pitch.</li>
+<li><strong>First hearing</strong>: at tempo, or the first play of each new question at half speed (replays at tempo).</li>
+<li><strong>Top voice sound</strong>: give the soprano its own sound (the electric pianos or the organs) so its line stands out by colour as well as loudness.</li>
+<li><strong>Voice to follow</strong>: for the <em>Follow a voice</em> question.</li>
+<li><strong>Notes</strong>: held, or short and detached.</li>
+<li><strong>Chord register</strong>: the upper voices an octave lower or higher (the bass stays).</li>
 <li><strong>Chords</strong>: the length of progressions on levels that make their own (<em>Make your own</em>, and levels such as F2).</li>
 <li><strong>Establish the key</strong>: a cadence, the tonic chord, or nothing (harder).</li>
 <li><strong>Inversions</strong>: off (every chord in root position), some, or many. This works with every question: <em>Name each bass note</em> then asks for the real lowest note. The last chord always stays in root position.</li>
@@ -909,7 +964,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 </ul>
 <!-- works-cited: written by scripts/works-cited.py -->
 <div class="works-cited">
-<p>Gordon, Edwin E. <em>Learning Sequences in Music: A Contemporary Music Learning Theory</em>. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp.&nbsp;111–117), the verbal association warning (p.&nbsp;108), generalization-aural/oral and -verbal (pp.&nbsp;131–133); same is easier to hear than different (p.&nbsp;219); tonal and rhythm patterns kept apart (p.&nbsp;223); rhythm patterns chanted with vocal inflection like speech (p.&nbsp;101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp.&nbsp;187–190).; Theory Concepts pages: Keyality versus key signature (p.&nbsp;xiii); tonality “best refers to what is usually called a mode,” the eight tonalities (p.&nbsp;149); movable-do with la-based minor and the rhythm syllables du de, du da di (p.&nbsp;105); resting tone and tonic, a tonality in any keyality (p.&nbsp;150); unitonal and multitonal music (pp.&nbsp;152, 157); usual duple, triple and combined meter (pp.&nbsp;175–176); no direct relation between measure signatures and meter, 6/8 as “duple compound” called inaccurate (p.&nbsp;176); accents and microbeat divisions do not make meter (pp.&nbsp;176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp.&nbsp;179–180); key signatures as do signatures, one signature for many tonalities (pp.&nbsp;155–156); rhythm syllables by beat function (p.&nbsp;86); time-value names lead to counting (p.&nbsp;38); writing tonal patterns from a familiar do signature (p.&nbsp;125); letter names and time-value names as the alphabet of music (pp.&nbsp;36–37); interval names learned in context of tonality and keyality (p.&nbsp;65); the raised seventh of harmonic minor as si (p.&nbsp;70); mi si ti re as a harmonic minor dominant pattern (p.&nbsp;100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp.&nbsp;3, 9); notation as a window (p.&nbsp;8); patterns as units of meaning (pp.&nbsp;99–100); the aural/oral level and the pause (pp.&nbsp;101–102); discrimination and inference learning, theory delayed (p.&nbsp;106); levels of the skill learning sequence (from pp.&nbsp;111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp.&nbsp;230–231).; Hearing Harmony: four stages of readiness for chord changes (p.&nbsp;305); harmonic patterns I V7 I, I IV I, I II V7 I, I II7 V7 I (p.&nbsp;313); I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp.&nbsp;318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p.&nbsp;320).</p>
+<p>Gordon, Edwin E. <em>Learning Sequences in Music: A Contemporary Music Learning Theory</em>. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp.&nbsp;111–117), the verbal association warning (p.&nbsp;108), generalization-aural/oral and -verbal (pp.&nbsp;131–133); same is easier to hear than different (p.&nbsp;219); tonal and rhythm patterns kept apart (p.&nbsp;223); rhythm patterns chanted with vocal inflection like speech (p.&nbsp;101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp.&nbsp;187–190).; Theory Concepts pages: Keyality versus key signature (p.&nbsp;xiii); tonality “best refers to what is usually called a mode,” the eight tonalities (p.&nbsp;149); movable-do with la-based minor and the rhythm syllables du de, du da di (p.&nbsp;105); resting tone and tonic, a tonality in any keyality (p.&nbsp;150); unitonal and multitonal music (pp.&nbsp;152, 157); usual duple, triple and combined meter (pp.&nbsp;175–176); no direct relation between measure signatures and meter, 6/8 as “duple compound” called inaccurate (p.&nbsp;176); accents and microbeat divisions do not make meter (pp.&nbsp;176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp.&nbsp;179–180); key signatures as do signatures, one signature for many tonalities (pp.&nbsp;155–156); rhythm syllables by beat function (p.&nbsp;86); time-value names lead to counting (p.&nbsp;38); writing tonal patterns from a familiar do signature (p.&nbsp;125); letter names and time-value names as the alphabet of music (pp.&nbsp;36–37); interval names learned in context of tonality and keyality (p.&nbsp;65); the raised seventh of harmonic minor as si (p.&nbsp;70); mi si ti re as a harmonic minor dominant pattern (p.&nbsp;100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp.&nbsp;3, 9); notation as a window (p.&nbsp;8); patterns as units of meaning (pp.&nbsp;99–100); the aural/oral level and the pause (pp.&nbsp;101–102); discrimination and inference learning, theory delayed (p.&nbsp;106); levels of the skill learning sequence (from pp.&nbsp;111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp.&nbsp;230–231).; Hearing Harmony: four stages of readiness for chord changes (p.&nbsp;305); harmonic patterns I V7 I, I IV I, I II V7 I, I II7 V7 I (p.&nbsp;313); I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp.&nbsp;318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p.&nbsp;320).; Bass Lines by Ear: macrobeats in usual duple and triple meter (pp.&nbsp;175–176); same is easier to hear than different (p.&nbsp;219).</p>
 <p>Mullen, Andy. <em>The Literate Musician: How to Hear, Speak, Think, Read &amp; Write the Language of Music</em>. Revised 2nd ed., The Improving Musician, 2020. FPIFO, major and minor tonic and dominant (pp.&nbsp;57, 59), copied into mullen-fpifo-major / -minor in apps/patterns/pattern-set.js; FPIFO in the Dorian, Mixolydian, Phrygian, Lydian, Aeolian and Locrian tonalities (pp.&nbsp;22–27), mullen-fpifo-dorian … -locrian, with the keys moved so that C is the book’s resting tone; Major and Minor Subdominant FPIFO (p.&nbsp;293), mullen-subdominant-major / -minor; the stepwise sets (pp.&nbsp;71–72) are the site’s major-stepwise / minor-stepwise; rhythm patterns by lesson (duple and triple macrobeat and microbeat, pp.&nbsp;37, 39–40; divisions, pp.&nbsp;45, 47; elongation cells, pp.&nbsp;48–49), copied into the mullen-rhythm-* sets of apps/rhythms/rhythm-pattern-object.js; translation lessons (Rhythm 8, 9.3, 10.3; Harmony 9); Hearing Harmony: Harmony lessons 2–5 (major and minor tonic and dominant, pp.&nbsp;53–58), 7 (comparing major and minor, p.&nbsp;62), the Harmonic Loops by tonality (pp.&nbsp;20–27). Reproduced with permission.</p>
 </div>
 <!-- /works-cited -->
@@ -1413,8 +1468,8 @@ document.addEventListener('DOMContentLoaded', async function () {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../practice/lsa-practice.html" class="pagination-link" aria-label="LSA Practice">
-        <span class="nav-page-text">LSA Practice</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../practice/bass-ear.html" class="pagination-link" aria-label="Bass Lines by Ear">
+        <span class="nav-page-text">Bass Lines by Ear</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

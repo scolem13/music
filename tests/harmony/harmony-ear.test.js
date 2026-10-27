@@ -11,6 +11,11 @@ assert.equal(H.syllable(0, "minor"), "La"); assert.equal(H.syllable(7, "major"),
 assert.equal(H.syllable(10, "mixolydian"), "Fa");
 assert.equal(H.figured("I", 1), "I6"); assert.equal(H.figured("I", 2), "I64"); assert.equal(H.figured("V7", 1), "V65");
 assert.equal(H.figured("V7", 2), "V43"); assert.equal(H.figured("V7", 3), "V42"); assert.equal(H.figured("ii7", 3), "ii42"); assert.equal(H.figured("V7/V", 1), "V65/V");
+// spelled syllables: raised for secondary dominants, lowered for borrowed chords
+assert.equal(H.spelledSyl("V7/V", 1, "major"), "Fi"); assert.equal(H.spelledSyl("V7/ii", 1, "major"), "Di"); assert.equal(H.spelledSyl("V7", 1, "minor"), "Si");
+assert.equal(H.spelledSyl("bVII", 0, "major"), "Te"); assert.equal(H.spelledSyl("bVI", 0, "major"), "Le"); assert.equal(H.spelledSyl("iv", 1, "major"), "Le");
+assert.equal(H.spelledSyl("bVII", 0, "mixolydian"), "Fa"); assert.equal(H.spelledSyl("i", 0, "dorian"), "Re"); assert.equal(H.spelledSyl("bII", 0, "minor"), "Te");
+for (const x of ["Fi", "Di", "Si", "Te", "Le", "Ra"]) assert.notEqual(H.sylToRel(x, "major"), null, x);
 let n = 0;
 for (const p of H.PATHS) for (const lv of p.levels) {
   for (const m of lv.modes) {
@@ -29,7 +34,7 @@ for (const p of H.PATHS) for (const lv of p.levels) {
       if (k.id === "inv") {
         assert.equal(q.answer.length, q.progs[0].length * 2);
         if (q.progs[0].length > 1) assert.ok(q.invs[0].some(x => x), "inv question has an inverted chord");
-        q.progs[0].forEach((t, j) => assert.equal(q.answer[2 * j], H.syllable(H.parse(t).pcs[q.invs[0][j]], q.mode), "bass step"));
+        q.progs[0].forEach((t, j) => assert.equal(H.sylToRel(q.answer[2 * j], q.mode), H.parse(t).pcs[q.invs[0][j]], "bass step names the bass"));
       }
       for (const v of [3, 4]) for (const pr of q.progs) {
         const iv = q.invs[q.progs.indexOf(pr)], vs = H.voice(pr, 5, { voices: v, inv: iv });
@@ -46,4 +51,18 @@ for (const p of H.PATHS) for (const lv of p.levels) {
     }
   }
 }
+// close and open spacing: upper voices within an octave, or wider
+for (const toks of [["I", "IV", "V7", "I"], ["i", "iv", "V7", "i"], ["Imaj7", "vi7", "ii7", "V7"]]) for (const v of [3, 4]) {
+  const close = H.voice(toks, 2, { voices: v, spacing: "close" }), open = H.voice(toks, 2, { voices: v, spacing: "open" });
+  close.forEach(c => assert.ok(c.upper[c.upper.length - 1] - c.upper[0] <= 12, "close " + c.upper));
+  open.forEach(c => assert.ok(c.upper[c.upper.length - 1] - c.upper[0] > 12, "open " + c.upper));
+  close.concat(open).forEach((c, i) => assert.equal(c.bass % 12, c.pcs[0], "root in the bass"));
+}
+// notation: spelled from the numeral, key signature of DO, no stray bars
+{ const t = ["i", "iv", "V7", "i"], abc = H.toAbc([t], [H.voice(t, 9, { voices: 4, own: true })], [[0, 0, 0, 0]], { restPc: 9, mode: "minor", numerals: true });
+  assert.ok(/K:C\n/.test(abc) && /\^G/.test(abc) && /"_V7"/.test(abc) && !/\| \|\]/.test(abc), abc);
+  const m = ["I", "bVII", "I"], abc2 = H.toAbc([m], [H.voice(m, 2, { voices: 3 })], [[0, 0, 0]], { restPc: 2, mode: "mixolydian" });
+  assert.ok(/K:G\n/.test(abc2) && !/[_^=]C|[_^=]c/.test(abc2), "bVII in D Mixolydian is C natural, in the signature: " + abc2);
+  const e = ["I", "V7/V", "V7", "I"], abc3 = H.toAbc([e], [H.voice(e, 0, { voices: 4, own: true })], [[0, 0, 0, 0]], { restPc: 0, mode: "major" });
+  assert.ok(/\^F/.test(abc3), "V7/V in C has F#: " + abc3); }
 console.log("harmony-ear: ok,", n, "questions");

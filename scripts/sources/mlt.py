@@ -4,7 +4,7 @@ AU = "practice/audiation.qmd"
 HE = "practice/harmony-ear.qmd"
 RP = ["practice/rhythms.qmd", "practice/rhythm-sequences.qmd", "practice/assessment-rhythm.qmd", "practice/lsa-practice.qmd", "practice/lsa-practice-notated.qmd", "practice/lsa-rhythm-assessment.qmd"]   # the Conversational chant (apps/shared/rhythm-chant.js)
 SOURCES = [
-    book('Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012.', [AU, HE] + RP + ["theory/modes-three-ways.qmd", "theory/meter-taxonomy.qmd", "theory/major-scales.qmd", "theory/rhythm-basics.qmd", "theory/pitch-basics.qmd", "theory/minor-scales.qmd", "theory/intervals.qmd", "course/glossary.qmd", "course/enrichment.qmd"],
+    book('Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012.', [AU, HE] + RP + ["practice/bass-ear.qmd", "theory/modes-three-ways.qmd", "theory/meter-taxonomy.qmd", "theory/major-scales.qmd", "theory/rhythm-basics.qmd", "theory/pitch-basics.qmd", "theory/minor-scales.qmd", "theory/intervals.qmd", "course/glossary.qmd", "course/enrichment.qmd"],
          "Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); "
          "same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); "
          "rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190)." "; Theory Concepts pages: "
@@ -15,7 +15,8 @@ SOURCES = [
          "the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); "
          "levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231)."
          "; Hearing Harmony: four stages of readiness for chord changes (p. 305); harmonic patterns I V7 I, I IV I, I II V7 I, I II7 V7 I (p. 313); "
-         "I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp. 318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p. 320)."),
+         "I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp. 318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p. 320)."
+         "; Bass Lines by Ear: macrobeats in usual duple and triple meter (pp. 175–176); same is easier to hear than different (p. 219)."),
     book('Gordon, Edwin E. *Jump Right In: The Music Curriculum. Reference Handbook for Using Learning Sequence Activities*. 2001 revision, GIA Publications, 2001.', [AU] + RP,
          "Tonal sequences (p. 33) and range (p. 32); Tonal Unit 6, partial synthesis (pp. 48–49); Tonal Unit 9, generalization-verbal (pp. 52–54); rhythm patterns and sequences chanted with expressive inflection on one pitch, all durations without pitch (\"A Quick Course on Rhythm\" and \"Techniques for Teaching Class Patterns\")."),
     book('Mullen, Andy. *MLT Any Music Teacher Can Du…De: Teacher\'s Guide to "The Literate Musician."* The Improving Musician, 2021.', [AU] + RP,

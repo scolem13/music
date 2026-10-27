@@ -1,0 +1,114 @@
+---
+title: "Bass Lines by Ear"
+description: "Hear a tune's melody over a bass line, then a bass line alone: same or different? Levels from a different chord root up to walking lines a semitone apart, in rock, jazz, MLT or classical style, over 135 tunes from the Tune Library."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/band/sounds.js?v=17"></script>
+<script src="/apps/patterns/bass-ear-tunes.js?v=1"></script>
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/patterns/bass-ear.js?v=3"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.be-panel { --be-line: var(--site-line, #ced4da); --be-mute: var(--site-ink-2, #6c757d); --be-acc: var(--site-accent, #2780e3);
+  --be-good: #2f9e44; --be-bad: #e03131;
+  border: 1px solid var(--be-line); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1.2rem; background: var(--site-surface-2, #f8f9fa); }
+.be-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .5rem 1rem; margin-bottom: .6rem; }
+.be-grid label { display: flex; flex-direction: column; gap: .2rem; margin: 0; min-width: 0; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; color: var(--be-mute); }
+.be-grid select { font-size: 1rem; text-transform: none; letter-spacing: 0; width: 100%; min-width: 0; padding: .25rem; }
+.be-more { margin: .2rem 0 .6rem; } .be-more summary { cursor: pointer; color: var(--be-mute); margin-bottom: .4rem; }
+.be-bar, .be-choices { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.be-panel button { padding: .55rem 1rem; border-radius: .45rem; border: 1px solid var(--be-line); background: var(--site-surface, #fff); color: inherit; cursor: pointer; font-size: 1rem; touch-action: manipulation; }
+.be-panel button:disabled { opacity: .45; cursor: default; }
+.be-panel button.be-go { background: var(--be-acc); border-color: var(--be-acc); color: #fff; font-weight: 600; }
+.be-panel button.be-choice { min-width: 7rem; min-height: 3rem; font-weight: 700; font-size: 1.1rem; }
+.be-prompt { font-weight: 700; font-size: 1.05rem; margin-top: .4rem; }
+.be-status { min-height: 1.4em; color: var(--be-acc); font-weight: 600; }
+.be-result { margin: .5rem 0; } .be-ok { color: var(--be-good); font-weight: 700; } .be-no { color: var(--be-bad); font-weight: 700; }
+.be-nota { margin: .5rem 0; background: #fff; color: #222; border-radius: .4rem; padding: .3rem .5rem; } .be-nota .be-hint { color: #555; margin-top: .3rem; }
+.be-hint { color: var(--be-mute); font-size: .92rem; } .be-note { margin: .2rem 0 .4rem; }
+@media (max-width: 560px) { .be-panel { padding: .6rem; } .be-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+```
+
+## Trainer
+
+Choose a **style**, a **level** and where the **bass** plays, then press **Start**. You hear the melody with a bass line under it
+(no chords), then a bass line alone. Was it the same line? **Space** plays both again, **S** / **D** answer, **Enter** goes on.
+Your settings and your last ten answers at each level stay in this browser.
+
+<div id="bass-ear"></div>
+
+## The levels
+
+| Level | Where the bass plays | What may differ |
+|---|---|---|
+| 1 · Chord roots | chord changes, always (the style and **Bass on** are ignored) | one chord on another root of the key |
+| 2 · Roots: a different chord | chord changes | one chord's root, a third away (I for vi, IV for ii, V for iii) |
+| 3 · Roots: inversions | chord changes | the 3rd or 5th of a chord in the bass instead of the root, or a different root |
+| 4 · Macrobeats: chord tones | each macrobeat | one note goes to another note of the same chord |
+| 5 · An embellishment in or out | each macrobeat | one embellishment added or taken away |
+| 6 · Which embellishment? | every beat | one embellishment swapped for another |
+| 7 · Walking: a step apart | every beat | one note a scale step away |
+| 8 · Walking: a semitone apart | every beat | one note a semitone away (a chromatic approach from above instead of below) |
+| 9 · Anything | left to chance | any of these, any tune |
+
+Half the questions are "same". **♫ Show notation** (any time; it stays on until you turn it off) shows the first line with
+the melody and chord symbols on a grand staff. The second line appears after you answer, with the changed notes marked ▼; before
+you answer, a button shows it early. The bass is written an octave above where it sounds, as bass parts are. After you answer you see what changed and where, the tune and its chords, and you can hear each bass
+line alone. Levels 1–3 use the easiest tunes, 7–8 the harder ones; **Tune** can pick any tune or one tune.
+
+## Where the bass plays
+
+**Bass on** overrides the level:
+
+- **Only on chord changes**: one note a chord, held. Best for hearing reharmonisations and inversions.
+- **Each downbeat and change**: a note at the start of every bar as well.
+- **Each macrobeat**: in 2/4 every quarter, in 4/4 and 2/2 every half, in 3/4 every bar (dotted half), in 6/8 every dotted quarter.
+  This is Gordon's macrobeat in usual duple and triple meter (*Learning Sequences in Music*, pp. 175–176).
+- **Every beat**: every quarter (every dotted quarter in 6/8). In the jazz style this walks.
+- **Leave it to chance**: the changes, and about half of the other beats.
+
+With fewer notes the embellishment levels have less to work with, so a question may fall back to an inversion or a different root.
+
+## The styles
+
+Each style has its own embellishments. The lines are made fresh each time from the tune's chord symbols, in the style's idiom: they are
+this site's inventions, not transcriptions. *Unverified:* the descriptions of each idiom below are from memory and not yet checked
+against a source.
+
+| Style | Embellishments it uses |
+|---|---|
+| **MLT (Gordon)** | roots and fifths on the macrobeats, an octave, a passing tone now and then |
+| **Rock and pop** | roots, eighth-note pumping, octaves, a fifth, a scale step into the next chord |
+| **Jazz** | two-feel roots and fifths, chord tones, walking steps, a chromatic approach on the last beat before a change |
+| **Classical** | passing and neighbour tones, the bass by step, first inversions to smooth the line |
+
+## The tunes
+
+135 tunes from the [Tune Library](tunes.qmd), the first eight bars of each, chosen by `scripts/bass-ear-corpus.mjs` from the
+786 with chord symbols that it can read. A tune is left out when it has only one chord, unreadable chord symbols, chords that begin
+late, or a meter other than 2/4, 3/4, 4/4, 2/2 or 6/8. Each is put in a tier:
+
+- **Tier 1**: two or three chords, all in the key, at most one change a bar (Lightly Row, Bell Horses, Lucy Locket).
+- **Tier 2**: more chords or faster changes, at most one outside the key (many standards).
+- **Tier 3**: chords outside the key, slash chords, extended jazz harmony.
+
+Within a tier, tunes with a change every bar or so, a melody that is not too busy and a melody well above the bass come first.
+
+## For teachers
+
+- Same is easier to hear than different (*Learning Sequences in Music*, p. 219). Start at level 1 (chord roots only), then
+  move to macrobeats before the walking levels.
+- Melody on the band's piano (or a guitar), bass on the band's bass. No chords, no drums. **Second time** can play the melody again
+  with the second line, which is harder: the melody has to be heard past.
+- Not yet: the tune's own written bass lines (none of the tunes in the library has a bass part), and
+  saving results to a class account.
+
+<!-- works-cited: written by scripts/works-cited.py -->
+::: {.works-cited}
+Gordon, Edwin E. *Learning Sequences in Music: A Contemporary Music Learning Theory*. 2012 ed., GIA Publications, 2012. Skill learning sequence: partial synthesis (pp. 111–117), the verbal association warning (p. 108), generalization-aural/oral and -verbal (pp. 131–133); same is easier to hear than different (p. 219); tonal and rhythm patterns kept apart (p. 223); rhythm patterns chanted with vocal inflection like speech (p. 101); macrobeats stressed, not accented, and approached with a decrescendo, expression found between macrobeats, anacruses given special attention, weight and flow, displaced energy in rests and long durations (pp. 187–190).; Theory Concepts pages: Keyality versus key signature (p. xiii); tonality "best refers to what is usually called a mode," the eight tonalities (p. 149); movable-do with la-based minor and the rhythm syllables du de, du da di (p. 105); resting tone and tonic, a tonality in any keyality (p. 150); unitonal and multitonal music (pp. 152, 157); usual duple, triple and combined meter (pp. 175–176); no direct relation between measure signatures and meter, 6/8 as "duple compound" called inaccurate (p. 176); accents and microbeat divisions do not make meter (pp. 176–177); unusual meter, paired and unpaired, intact, macrobeats versus microbeats establishing meter (pp. 179–180); key signatures as do signatures, one signature for many tonalities (pp. 155–156); rhythm syllables by beat function (p. 86); time-value names lead to counting (p. 38); writing tonal patterns from a familiar do signature (p. 125); letter names and time-value names as the alphabet of music (pp. 36–37); interval names learned in context of tonality and keyality (p. 65); the raised seventh of harmonic minor as si (p. 70); mi si ti re as a harmonic minor dominant pattern (p. 100).; Course pages (glossary, enrichment): audiation defined and compared with imitation (Introduction; pp. 3, 9); notation as a window (p. 8); patterns as units of meaning (pp. 99–100); the aural/oral level and the pause (pp. 101–102); discrimination and inference learning, theory delayed (p. 106); levels of the skill learning sequence (from pp. 111, 117, 126, 129, 136, 141); stepwise and bridging movement, Table 17 (pp. 230–231).; Hearing Harmony: four stages of readiness for chord changes (p. 305); harmonic patterns I V7 I, I IV I, I II V7 I, I II7 V7 I (p. 313); I V7 I, then I IV I, then I IV V7 I and I V7 IV I in three sung parts, then harmonic minor (pp. 318–319); easy and moderately difficult harmonic patterns, the supertonic delayed (p. 320).; Bass Lines by Ear: macrobeats in usual duple and triple meter (pp. 175–176); same is easier to hear than different (p. 219).
+:::
+<!-- /works-cited -->

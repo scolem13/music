@@ -1,0 +1,131 @@
+---
+title: "Odd Progression Out"
+description: "Hear one chord progression three ways: two versions are the same progression in different band styles, one is slightly different. Which one? Levels from a chord of another function up to extended jazz voicings and tritone substitutes, by band or by a single melodic line."
+toc: true
+toc-depth: 2
+---
+
+```{=html}
+<script src="/apps/shared/abcjs-basic.js?v=3"></script>
+<script src="/apps/shared/abc-play.js?v=6"></script>
+<script src="/apps/patterns/prog-ear.js?v=6"></script>
+<script src="/apps/shared/section-fold.js?v=1"></script>
+<style>
+.pe-panel { --pe-line: var(--site-line, #ced4da); --pe-mute: var(--site-ink-2, #6c757d); --pe-acc: var(--site-accent, #2780e3);
+  --pe-good: #2f9e44; --pe-bad: #e03131;
+  border: 1px solid var(--pe-line); border-radius: .5rem; padding: .8rem 1rem; margin: .5rem 0 1.2rem; background: var(--site-surface-2, #f8f9fa); }
+.pe-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: .5rem 1rem; margin-bottom: .6rem; }
+.pe-grid label { display: flex; flex-direction: column; gap: .2rem; margin: 0; min-width: 0; font-size: .74rem; text-transform: uppercase; letter-spacing: .05em; color: var(--pe-mute); }
+.pe-grid select { font-size: 1rem; text-transform: none; letter-spacing: 0; width: 100%; min-width: 0; padding: .25rem; }
+.pe-groups { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: .6rem; margin-bottom: .4rem; }
+.pe-group { border: 1px solid var(--pe-line); border-radius: .45rem; padding: .3rem .7rem .5rem; margin: 0; min-width: 0; }
+.pe-group legend { float: none; width: auto; font-size: .8rem; font-weight: 700; padding: 0 .3rem; margin: 0; color: var(--pe-acc); }
+.pe-group .pe-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); margin-bottom: 0; }
+.pe-bar, .pe-choices { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .5rem 0; }
+.pe-panel button { padding: .55rem 1rem; border-radius: .45rem; border: 1px solid var(--pe-line); background: var(--site-surface, #fff); color: inherit; cursor: pointer; font-size: 1rem; touch-action: manipulation; }
+.pe-panel button:disabled { opacity: .45; cursor: default; }
+.pe-panel button.pe-go { background: var(--pe-acc); border-color: var(--pe-acc); color: #fff; font-weight: 600; }
+.pe-panel button.pe-now { outline: 3px solid var(--pe-acc); }
+.pe-panel button.pe-choice { min-width: 8rem; min-height: 3rem; font-weight: 700; font-size: 1.05rem; }
+.pe-panel button.pe-right { border-color: var(--pe-good); color: var(--pe-good); opacity: 1; }
+.pe-panel button.pe-wrong { border-color: var(--pe-bad); color: var(--pe-bad); opacity: 1; }
+.pe-panel button.pe-mini { padding: .1rem .5rem; margin-left: .5rem; font-size: .85rem; }
+.pe-prompt { font-weight: 700; font-size: 1.05rem; margin-top: .4rem; }
+.pe-status { min-height: 1.4em; color: var(--pe-acc); font-weight: 600; }
+.pe-result { margin: .5rem 0; } .pe-ok { color: var(--pe-good); font-weight: 700; } .pe-no { color: var(--pe-bad); font-weight: 700; }
+.pe-prog { margin: .4rem 0; font-family: var(--bs-font-monospace, monospace); font-size: .9rem; overflow-wrap: anywhere; }
+.pe-prog .pe-oddrow { color: var(--pe-bad); }
+.pe-hint { color: var(--pe-mute); font-size: .92rem; } .pe-note { margin: .2rem 0 .4rem; }
+.pe-clip { background: #fff; color: #222; border: 1px solid var(--pe-line); border-radius: .4rem; padding: .3rem .5rem; margin: .4rem 0; }
+.pe-clip.pe-oddclip { border-color: var(--pe-bad); }
+.pe-scratch { position: absolute; left: -9999px; width: 600px; height: 1px; overflow: hidden; }
+@media (max-width: 560px) { .pe-panel { padding: .6rem; } .pe-grid, .pe-group .pe-grid { grid-template-columns: 1fr 1fr; } }
+</style>
+```
+
+## Trainer
+
+Choose **the band** or **a melody line**, a **tonality**, a **level**, and press **Start**. You hear three versions, A, B and C. Two of them are the same
+chord progression played two different ways; the third is a slightly different progression in a third way. Pick the different one.
+**Space** plays all three again, **A** / **B** / **C** answer, **N** shows or hides notation, **Enter** goes on.
+
+Notation can be shown at any time (before you answer the chord symbols stay hidden unless you set **Notation → Chord symbols** to Always).
+
+<div id="prog-ear"></div>
+
+**Busyness** (under **The band**) calms the band down when a style gets too busy to hear the chords through: **Less busy** drops the
+drum fills, has the bass play a two-feel (swing styles) or roots on beats 1 and 3, and the chords played steadily on the beat;
+**Calm** holds each bass note and chord for its whole length over light brushes.
+
+## The levels: the band
+
+Each version is played by the Backing Track band in its own style (piano ballad, rock, acoustic strum, Motown, bossa nova, swing...),
+with or without drums. The two same versions differ in style, and at higher levels in voicing too.
+
+| Level | Counts as the same | What the different one changes |
+|---|---|---|
+| 1 · Triads: another function | style | one chord to a chord with another job (IV for V) |
+| 2 · Triads: a third away | style | one chord to a chord sharing two notes (vi for I, ii for IV) |
+| 3 · Inversions are the same | inversions (3rd or 5th in the bass) | a third away, or another function |
+| 4 · Sevenths are the same | sevenths added or left out | a third away |
+| 5 · Reharmonised (borrowed chords off) | sevenths, inversions | another chord of the key that still holds the melody's notes |
+| 5 · Borrowed and applied chords (on) | sevenths, inversions | IV to iv, ii to II7 (V/V), vi to VI7, V to bVII |
+| 6 · Extensions are the same | 6, 9, 11, 13, 6/9, sus4 (two chords a bar) | a third away, or borrowed/applied |
+| 7 · Reharmonised, in colour (off) | all the colours, jazz and Latin styles | a diatonic reharmonisation, or a chord a third away |
+| 7 · Jazz colour: substitutes (on) | all the colours, jazz and Latin styles | bII7 for V (tritone substitute), a passing #iv°7, bVI for vi |
+| 8 · Anything | everything | anything |
+
+## Borrowed chords and reharmonising
+
+**Borrowed chords** is off unless you turn it on. Off, every chord stays in the key (the tonality), and the "slightly different"
+progression at levels 5 and 7 is a **reharmonisation**: another chord of the key that still holds the melody's notes there. A melody
+resting on *so* that usually gets V could instead get I or iii (both hold *so*) and still fit. It could get IV, with *so* as IV's 9th:
+the chord is played as IV(add9) for a gospel sound. On, those levels bring in borrowed, applied and chromatic chords instead.
+
+With **A tune on top**, the band plays the same tune in all three clips. The difference is then only under the tune: listen for the
+chord changing while the melody stays the same. Without it, the reharmonised chord still shares the 3rd or 5th of the chord it
+replaces: the note a melody would hold there.
+
+## Tonalities
+
+Every level works in each of the eight tonalities in *Learning Sequences in Music* (Gordon, p. 149): major, harmonic minor, Dorian,
+Phrygian, Lydian, Mixolydian, Aeolian and Locrian, or **Any tonality** for a mix. Each has its own progressions, built on the chords
+that make it sound like itself:
+
+| Tonality | Typical progressions | "Cousin" change at levels 5+ (borrowed chords on) |
+|---|---|---|
+| Major | I–vi–IV–V, I–IV–V–I, ii–V–I | IV→iv, ii→II7, V→bVII |
+| Harmonic minor | i–iv–V–i, i–bVI–bIII–bVII, i–ii°–V–i | iv→IV, V→v, ii°→ii; bII (Neapolitan) as a chromatic change |
+| Dorian | i–IV–i–IV, i–bVII–IV–i | IV→iv (now Aeolian), v→V |
+| Phrygian | i–bII–i–bII, i–bvii–bVI–bII | bII→ii°, bvii→bVII |
+| Lydian | I–II–I–II, I–II–vii–I | II→IV or ii (now major) |
+| Mixolydian | I–bVII–IV–I, I–v–IV–I | bVII→V, v→V (now major) |
+| Aeolian | i–bVI–bIII–bVII, i–iv–v–i | v→V (now harmonic minor), iv→IV |
+| Locrian | i°–bII–i°–bII, i°–bV–bII–i° | i°→i, bV→v |
+
+Harmonic minor progressions also use the natural 7th's chords (bIII, bVII), as minor-key music does. In a tonality other than major, a
+level whose own kind of change has no chord to work on falls back to a chord a third away or one with another function. The progressions
+are this site's inventions in each tonality's idiom; the "typical" column is not taken from a source.
+
+## The levels: a melody line
+
+One line with no accompaniment, each version on its own instrument. The two same versions are different melodies over the same chords.
+
+| Level | The line |
+|---|---|
+| 1 · Chord tones only | one chord tone a beat, the root or third on each downbeat |
+| 2 · Passing tones | a passing tone may fill a third on a weak beat |
+| 3 · Neighbour tones | eighth notes, passing and neighbour tones, sevenths in the line |
+| 4 · Appoggiaturas and suspensions | non-chord tones on strong beats that resolve by step; two chords a bar |
+| 5 · Anything | anticipations, escape tones, chromatic neighbours, chromatic chords |
+
+After you answer, the melody notation labels each non-chord tone (P, N, CN, A, S, Ant, E).
+
+## For teachers
+
+- The progressions are common patterns in each tonality, written as Roman numerals and played in a random key; the voicings, styles and melodies
+  are made fresh each time. They are this site's inventions, not transcriptions.
+- At levels 1–3 the band's styles are pop, rock and folk; jazz styles voice chords with extensions of their own, so they come in at level 4
+  (**The band → Styles** overrides this).
+- Your last ten answers at each level stay in this browser; eight of ten suggests moving on.
+- Related: [Hearing Harmony](harmony-ear.qmd) (naming progressions), [Bass Lines by Ear](bass-ear.qmd).
